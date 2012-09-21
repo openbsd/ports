@@ -1,15 +1,10 @@
-$OpenBSD: patch-src_main_c,v 1.4 2012/06/28 09:33:06 dcoppa Exp $
+$OpenBSD: patch-src_main_c,v 1.5 2012/09/21 17:16:14 dcoppa Exp $
 
 OpenBSD lacks POSIX shared memory support (shm_open() and friends)
 
-From 6146f39b8a253bc84bc5ce1feb2e3cabc50d71ba Mon Sep 17 00:00:00 2001
-From: Michael Stapelberg <michael@stapelberg.de>
-Date: Mon, 25 Jun 2012 19:43:41 +0000
-Subject: when using i3 -C, don't send remaining arguments via IPC
-
---- src/main.c.orig	Wed Apr 25 23:21:25 2012
-+++ src/main.c	Thu Jun 28 10:55:31 2012
-@@ -220,11 +220,13 @@ static void i3_exit(void) {
+--- src/main.c.orig	Wed Sep 19 18:08:09 2012
++++ src/main.c	Thu Sep 20 11:56:52 2012
+@@ -219,11 +219,13 @@ static void i3_exit(void) {
      ev_loop_destroy(main_loop);
  #endif
  
@@ -23,7 +18,7 @@ Subject: when using i3 -C, don't send remaining arguments via IPC
  }
  
  /*
-@@ -235,10 +237,12 @@ static void i3_exit(void) {
+@@ -234,10 +236,12 @@ static void i3_exit(void) {
   */
  static void handle_signal(int sig, siginfo_t *info, void *data) {
      fprintf(stderr, "Received signal %d, terminating\n", sig);
@@ -36,7 +31,7 @@ Subject: when using i3 -C, don't send remaining arguments via IPC
      fflush(stderr);
      raise(sig);
  }
-@@ -264,8 +268,10 @@ int main(int argc, char *argv[]) {
+@@ -266,8 +270,10 @@ int main(int argc, char *argv[]) {
          {"force-xinerama", no_argument, 0, 0},
          {"force_xinerama", no_argument, 0, 0},
          {"disable-signalhandler", no_argument, 0, 0},
@@ -47,26 +42,26 @@ Subject: when using i3 -C, don't send remaining arguments via IPC
          {"get-socketpath", no_argument, 0, 0},
          {"get_socketpath", no_argument, 0, 0},
          {"fake_outputs", required_argument, 0, 0},
-@@ -299,8 +305,10 @@ int main(int argc, char *argv[]) {
-      * determine whether this is a git version or a release version. */
-     debug_build = ((strchr(i3_version, '(') - i3_version) > 10);
+@@ -292,8 +298,10 @@ int main(int argc, char *argv[]) {
+      * (file) logging. */
+     init_logging();
  
 +#if !defined(__OpenBSD__)
      /* On non-release builds, disable SHM logging by default. */
-     shmlog_size = (debug_build ? 25 * 1024 * 1024 : 0);
+     shmlog_size = (is_debug_build() ? 25 * 1024 * 1024 : 0);
 +#endif
  
      start_argv = argv;
  
-@@ -358,6 +366,7 @@ int main(int argc, char *argv[]) {
+@@ -357,6 +365,7 @@ int main(int argc, char *argv[]) {
                      }
  
-                     return 1;
+                     exit(EXIT_FAILURE);
 +#if !defined(__OpenBSD__)
                  } else if (strcmp(long_options[option_index].name, "shmlog-size") == 0 ||
                             strcmp(long_options[option_index].name, "shmlog_size") == 0) {
                      shmlog_size = atoi(optarg);
-@@ -366,6 +375,7 @@ int main(int argc, char *argv[]) {
+@@ -365,6 +374,7 @@ int main(int argc, char *argv[]) {
                      init_logging();
                      LOG("Limiting SHM log size to %d bytes\n", shmlog_size);
                      break;
@@ -88,15 +83,6 @@ Subject: when using i3 -C, don't send remaining arguments via IPC
                  fprintf(stderr, "If you pass plain text arguments, i3 will interpret them as a command\n"
                                  "to send to a currently running i3 (like i3-msg). This allows you to\n"
                                  "use nice and logical commands, such as:\n"
-@@ -417,7 +429,7 @@ int main(int argc, char *argv[]) {
-     /* If the user passes more arguments, we act like i3-msg would: Just send
-      * the arguments as an IPC message to i3. This allows for nice semantic
-      * commands such as 'i3 border none'. */
--    if (optind < argc) {
-+    if (!only_check_config && optind < argc) {
-         /* We enable verbose mode so that the user knows what’s going on.
-          * This should make it easier to find mistakes when the user passes
-          * arguments by mistake. */
 @@ -471,8 +483,10 @@ int main(int argc, char *argv[]) {
          return 0;
      }
@@ -107,4 +93,4 @@ Subject: when using i3 -C, don't send remaining arguments via IPC
 +#endif
  
      /* Try to enable core dumps by default when running a debug build */
-     if (debug_build) {
+     if (is_debug_build()) {

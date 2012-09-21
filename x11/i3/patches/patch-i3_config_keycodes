@@ -1,16 +1,11 @@
-$OpenBSD: patch-i3_config_keycodes,v 1.8 2012/05/18 08:26:05 dcoppa Exp $
+$OpenBSD: patch-i3_config_keycodes,v 1.9 2012/09/21 17:16:14 dcoppa Exp $
 
 Fix keycodes for the "Left", "Down", "Up" and "Right" keys: they're
 different between Linux and OpenBSD.
 
-From 7d657a6a65fb3d5b1a4392132fcd40a7afd18373 Mon Sep 17 00:00:00 2001
-From: David Coppa <dcoppa@gmail.com>
-Date: Thu, 17 May 2012 10:31:36 +0000
-Subject: Fix errors in i3.config.keycodes (bindsym -> bindcode)
-
---- i3.config.keycodes.orig	Wed Apr 25 23:21:25 2012
-+++ i3.config.keycodes	Thu May 10 11:00:55 2012
-@@ -17,13 +17,13 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-is
+--- i3.config.keycodes.orig	Wed Sep 19 18:08:09 2012
++++ i3.config.keycodes	Fri Sep 21 14:10:09 2012
+@@ -23,13 +23,13 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-is
  floating_modifier $mod
  
  # start a terminal
@@ -26,7 +21,7 @@ Subject: Fix errors in i3.config.keycodes (bindsym -> bindcode)
  
  # change focus
  bindcode $mod+44 focus left
-@@ -32,10 +32,10 @@ bindcode $mod+46 focus up
+@@ -38,10 +38,10 @@ bindcode $mod+46 focus up
  bindcode $mod+47 focus right
  
  # alternatively, you can use the cursor keys:
@@ -41,7 +36,7 @@ Subject: Fix errors in i3.config.keycodes (bindsym -> bindcode)
  
  # move focused window
  bindcode $mod+Shift+44 move left
-@@ -44,10 +44,10 @@ bindcode $mod+Shift+46 move up
+@@ -50,10 +50,10 @@ bindcode $mod+Shift+46 move up
  bindcode $mod+Shift+47 move right
  
  # alternatively, you can use the cursor keys:
@@ -56,14 +51,14 @@ Subject: Fix errors in i3.config.keycodes (bindsym -> bindcode)
  
  # split in horizontal orientation
  bindcode $mod+43 split h
-@@ -120,10 +120,10 @@ mode "resize" {
+@@ -126,10 +126,10 @@ mode "resize" {
          bindcode 47 resize grow width 10 px or 10 ppt
  
          # same bindings, but for the arrow keys
--        bindsym 113 resize shrink width 10 px or 10 ppt
--        bindsym 116 resize grow height 10 px or 10 ppt
--        bindsym 111 resize shrink height 10 px or 10 ppt
--        bindsym 114 resize grow width 10 px or 10 ppt
+-        bindcode 113 resize shrink width 10 px or 10 ppt
+-        bindcode 116 resize grow height 10 px or 10 ppt
+-        bindcode 111 resize shrink height 10 px or 10 ppt
+-        bindcode 114 resize grow width 10 px or 10 ppt
 +        bindcode 100 resize shrink width 10 px or 10 ppt
 +        bindcode 104 resize grow height 10 px or 10 ppt
 +        bindcode 98 resize shrink height 10 px or 10 ppt
@@ -71,10 +66,3 @@ Subject: Fix errors in i3.config.keycodes (bindsym -> bindcode)
  
          # back to normal: Enter or Escape
          bindcode 36 mode "default"
-@@ -135,5 +135,5 @@ bindcode $mod+27 mode "resize"
- # Start i3bar to display a workspace bar (plus the system information i3status
- # finds out, if available)
- bar {
--        status_command i3status
-+        status_command ${LOCALBASE}/bin/i3status
- }

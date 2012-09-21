@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.45 2012/09/16 22:05:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2012/09/21 17:16:13 dcoppa Exp $
 
 COMMENT =	improved dynamic tiling window manager
 
-DISTNAME =	i3-4.2
-REVISION =	11
+DISTNAME =	i3-4.3
 CATEGORIES =	x11
 
 EXTRACT_SUFX =	.tar.bz2
@@ -17,17 +16,20 @@ PERMIT_PACKAGE_FTP =     Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =   Yes
 
-WANTLIB =	X11 X11-xcb Xau Xcursor Xdmcp Xfixes \
-		Xrender c ev m pcre pthread-stubs \
-		startup-notification-1 xcb xcb-atom \
-		xcb-aux xcb-event xcb-icccm \
-		xcb-keysyms xcb-property xcb-randr \
-		xcb-xinerama yajl
+WANTLIB =	GL X11 Xcursor Xrender c cairo ev expat \
+		fontconfig freetype glib-2.0 gobject-2.0 m \
+		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
+		pixman-1 png pthread pthread-stubs \
+		startup-notification-1 xcb xcb-atom xcb-aux \
+		xcb-event xcb-icccm xcb-keysyms xcb-property \
+		xcb-randr xcb-render xcb-shm xcb-xinerama yajl z
 
-MODULES =	converters/libiconv
+MODULES =	converters/libiconv \
+		devel/gettext
 
 LIB_DEPENDS =	devel/libev \
 		devel/libyajl>=2.0.0 \
+		devel/pango \
 		devel/pcre \
 		devel/startup-notification
 
@@ -45,7 +47,8 @@ NO_REGRESS =	Yes
 MAKE_FLAGS =	CC="${CC}" \
 		BISON="${LOCALBASE}/bin/bison" \
 		FLEX="${LOCALBASE}/bin/gflex" \
-		SYSCONFDIR=${SYSCONFDIR}
+		SYSCONFDIR=${SYSCONFDIR} \
+		V=1
 
 .if defined(DEBUG)
 MAKE_FLAGS +=	DEBUG=1
@@ -61,11 +64,12 @@ post-configure:
 	${SUBST_CMD} ${WRKSRC}/i3.config \
 		${WRKSRC}/i3.config.keycodes \
 		${WRKSRC}/src/cfgparse.y \
-		${WRKSRC}/src/config.c
+		${WRKSRC}/src/commands.c \
+		${WRKSRC}/src/config.c \
+		${WRKSRC}/src/key_press.c
 
 post-install:
-	${INSTALL_MAN} ${WRKBUILD}/{i3bar/doc,man}/*.1 \
-		${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKBUILD}/man/*.1 ${PREFIX}/man/man1/
 	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} \
 		-c ${WRKBUILD}/man/i3-config-wizard.1 \
 			${PREFIX}/man/man1/i3-config-wizard.1
@@ -73,7 +77,6 @@ post-install:
 		-c ${WRKBUILD}/man/i3.1 \
 			${PREFIX}/man/man1/i3.1
 	@rm ${PREFIX}/man/man1/i3-dump-log.1 \
-		${PREFIX}/man/man1/i3-sensible*.1 \
-			${PREFIX}/man/man1/i3-wsbar.1
+		${PREFIX}/man/man1/i3-sensible*.1
 
 .include <bsd.port.mk>

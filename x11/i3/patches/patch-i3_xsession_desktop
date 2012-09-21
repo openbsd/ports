@@ -1,0 +1,17 @@
+$OpenBSD: patch-i3_xsession_desktop,v 1.1 2012/09/21 17:16:14 dcoppa Exp $
+
+From 9fa0dc657b44118fae0d016fb85fa1f4c425503f Mon Sep 17 00:00:00 2001
+From: Kacper Kowalik (Xarthisius) <xarthisius@gentoo.org>
+Date: Wed, 19 Sep 2012 18:00:28 +0000
+Subject: Fix xsession.desktop to comply to fdo standard
+
+--- i3.xsession.desktop.orig	Fri Sep 21 13:42:09 2012
++++ i3.xsession.desktop	Fri Sep 21 13:42:30 2012
+@@ -1,6 +1,5 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=i3
+ Comment=improved dynamic tiling window manager
+ Exec=i3
+-Type=XSession
++Type=Application

@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_x_c,v 1.5 2012/05/09 11:56:49 dcoppa Exp $
+$OpenBSD: patch-src_x_c,v 1.6 2012/09/21 17:16:14 dcoppa Exp $
 
 OpenBSD lacks POSIX shared memory support (shm_open() and friends)
 
---- src/x.c.orig	Wed Apr 25 23:21:25 2012
-+++ src/x.c	Wed May  9 12:27:20 2012
-@@ -1019,8 +1019,10 @@ void x_set_i3_atoms(void) {
-                         current_socketpath);
+--- src/x.c.orig	Wed Sep 19 18:08:09 2012
++++ src/x.c	Thu Sep 20 14:12:10 2012
+@@ -1037,8 +1037,10 @@ void x_set_i3_atoms(void) {
+     xcb_change_property(conn, XCB_PROP_MODE_REPLACE, root, A_I3_PID, XCB_ATOM_CARDINAL, 32, 1, &pid);
      xcb_change_property(conn, XCB_PROP_MODE_REPLACE, root, A_I3_CONFIG_PATH, A_UTF8_STRING, 8,
                          strlen(current_configpath), current_configpath);
 +#if !defined(__OpenBSD__)

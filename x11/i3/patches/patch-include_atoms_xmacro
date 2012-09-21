@@ -1,13 +1,14 @@
-$OpenBSD: patch-include_atoms_xmacro,v 1.1 2012/05/09 11:56:49 dcoppa Exp $
+$OpenBSD: patch-include_atoms_xmacro,v 1.2 2012/09/21 17:16:14 dcoppa Exp $
 
 OpenBSD lacks POSIX shared memory support (shm_open() and friends)
 
---- include/atoms.xmacro.orig	Wed Apr 25 23:21:25 2012
-+++ include/atoms.xmacro	Wed May  9 12:11:48 2012
-@@ -26,4 +26,6 @@ xmacro(WM_WINDOW_ROLE)
+--- include/atoms.xmacro.orig	Wed Sep 19 18:08:09 2012
++++ include/atoms.xmacro	Thu Sep 20 14:12:10 2012
+@@ -26,5 +26,7 @@ xmacro(WM_WINDOW_ROLE)
  xmacro(I3_SOCKET_PATH)
  xmacro(I3_CONFIG_PATH)
  xmacro(I3_SYNC)
 +#if !defined(__OpenBSD__)
  xmacro(I3_SHMLOG_PATH)
 +#endif
+ xmacro(I3_PID)

@@ -1,12 +1,12 @@
-$OpenBSD: patch-include_log_h,v 1.1 2012/05/09 11:56:49 dcoppa Exp $
+$OpenBSD: patch-include_log_h,v 1.2 2012/09/21 17:16:14 dcoppa Exp $
 
 OpenBSD lacks POSIX shared memory support (shm_open() and friends)
 
---- include/log.h.orig	Wed Apr 25 23:21:25 2012
-+++ include/log.h	Wed May  9 12:12:28 2012
-@@ -21,8 +21,10 @@
+--- include/log.h.orig	Wed Sep 19 18:08:09 2012
++++ include/log.h	Thu Sep 20 14:12:10 2012
+@@ -28,8 +28,10 @@
+ #define DLOG(fmt, ...) debuglog("%s:%s:%d - " fmt, I3__FILE__, __FUNCTION__, __LINE__, ##__VA_ARGS__)
  
- extern char *loglevels[];
  extern char *errorfilename;
 +#if !defined(__OpenBSD__)
  extern char *shmlogname;
