@@ -1,10 +1,11 @@
-$OpenBSD: patch-lgi_core_c,v 1.1 2012/09/20 20:56:34 jasper Exp $
+$OpenBSD: patch-lgi_core_c,v 1.2 2012/09/21 13:57:32 jasper Exp $
 
 commit 44676d0ec67ac19385917eb537423f235d5d3a7b
 Author: Jasper Lievisse Adriaanse <jasper@humppa.nl>
 Date:   Thu Sep 20 22:41:59 2012 +0200
+Subject: Unbreak loading of shared objects/modules on OpenBSD.
 
-    Unbreak loading of shared objects/modules on OpenBSD.
+https://github.com/pavouk/lgi/commit/44676d0ec67ac19385917eb537423f235d5d3a7b
 
 --- lgi/core.c.orig	Mon Jun 25 10:25:21 2012
 +++ lgi/core.c	Thu Sep 20 22:29:55 2012
