@@ -1,13 +1,11 @@
-@comment $OpenBSD: PLIST-main,v 1.26 2012/01/25 13:26:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.27 2012/09/21 13:23:06 ajacoutot Exp $
 @conflict libgda-db4-*
 @conflict libgda-ldap-<4.2.8p0v0
+@conflict libgda-ui-<5.1.1
 @pkgpath x11/gnome/libgda,-mdb
 @pkgpath x11/gnome/libgda,-odbc
-bin/gda-list-config
 @bin bin/gda-list-config-${GDA_MAJOR}
-bin/gda-list-server-op
 @bin bin/gda-list-server-op-${GDA_MAJOR}
-bin/gda-sql
 @bin bin/gda-sql-${GDA_MAJOR}
 @bin bin/gda-test-connection-${GDA_MAJOR}
 include/libgda-${GDA_MAJOR}/
@@ -123,18 +121,13 @@ include/libgda-${GDA_MAJOR}/libgda/virtual/gda-virtual-provider.h
 include/libgda-${GDA_MAJOR}/libgda/virtual/gda-vprovider-data-model.h
 include/libgda-${GDA_MAJOR}/libgda/virtual/gda-vprovider-hub.h
 include/libgda-${GDA_MAJOR}/libgda/virtual/libgda-virtual.h
-lib/girepository-1.0/Gda-${GDA_MAJOR}.typelib
 lib/libgda-${GDA_MAJOR}/
 lib/libgda-${GDA_MAJOR}.la
 @lib lib/libgda-${GDA_MAJOR}.so.${LIBgda-5.0_VERSION}
 lib/libgda-${GDA_MAJOR}/providers/
-@comment lib/libgda-${GDA_MAJOR}/providers/libgda-bdb.la
 lib/libgda-${GDA_MAJOR}/providers/libgda-bdb.so
-@comment lib/libgda-${GDA_MAJOR}/providers/libgda-sqlcipher.la
 lib/libgda-${GDA_MAJOR}/providers/libgda-sqlcipher.so
-@comment lib/libgda-${GDA_MAJOR}/providers/libgda-sqlite.la
 lib/libgda-${GDA_MAJOR}/providers/libgda-sqlite.so
-@comment lib/libgda-${GDA_MAJOR}/providers/libgda-web.la
 lib/libgda-${GDA_MAJOR}/providers/libgda-web.so
 lib/libgda-report-${GDA_MAJOR}.la
 @lib lib/libgda-report-${GDA_MAJOR}.so.${LIBgda-report-5.0_VERSION}
@@ -148,14 +141,12 @@ lib/pkgconfig/libgda-sqlite-${GDA_MAJOR}.pc
 lib/pkgconfig/libgda-web-${GDA_MAJOR}.pc
 lib/pkgconfig/libgda-xslt-${GDA_MAJOR}.pc
 @man man/man1/gda-sql-${GDA_MAJOR}.1
-@man man/man1/gda-sql.1
 share/examples/libgda/
 @sample ${SYSCONFDIR}/libgda-${GDA_MAJOR}/
 share/examples/libgda/config
 @sample ${SYSCONFDIR}/libgda-${GDA_MAJOR}/config
 share/examples/libgda/sales_test.db
 @sample ${SYSCONFDIR}/libgda-${GDA_MAJOR}/sales_test.db
-share/gir-1.0/Gda-${GDA_MAJOR}.gir
 share/gnome/
 share/gnome/help/
 share/gnome/help/gda-sql/
@@ -224,7 +215,6 @@ share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaVproviderHub.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdauiBasicForm.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdauiCloud.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdauiCombo.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/GdauiDataEntry.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdauiDataFilter.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdauiDataProxy.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdauiDataProxyInfo.html
@@ -262,35 +252,35 @@ share/gtk-doc/html/libgda-${GDA_MAJOR}/ch12s13.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/ch13.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/ch21.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/ch22.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/ch33.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/ch36.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/ch37s02.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/ch37s03.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/ch35.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/ch38.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/ch39s02.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/ch40s02.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/ch40s03.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/ch40s04.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/ch41.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/ch39s03.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/ch41s02.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/ch42s02.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/ch42s03.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/ch42s04.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/ch42s05.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/ch42s06.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/ch42s07.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/ch42s08.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/ch42s10.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/ch45s02.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/ch48s02.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/ch48s03.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/ch48s04.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/ch48s05.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/ch48s06.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/ch48s07.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/ch48s08.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/ch49s02.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/ch49s03.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/ch49s04.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/ch49s05.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/ch43.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/ch44s02.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/ch44s03.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/ch44s04.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/ch44s05.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/ch44s06.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/ch44s07.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/ch44s08.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/ch44s10.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/ch47s02.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/ch50s02.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/ch50s03.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/ch50s04.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/ch50s05.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/ch50s06.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/ch50s07.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/ch50s08.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/ch51s02.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/ch51s03.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/ch51s04.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/ch51s05.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/compiling.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/connection.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/connections.html
@@ -320,6 +310,7 @@ share/gtk-doc/html/libgda-${GDA_MAJOR}/fdl-section9.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/fdl-using.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/fdl.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/features.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/gda-data-model-writing.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/gda-dict.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/gda-sql-graph.png
 share/gtk-doc/html/libgda-${GDA_MAJOR}/gda-sql-manual-dsn.html
@@ -354,6 +345,7 @@ share/gtk-doc/html/libgda-${GDA_MAJOR}/index-4-2.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index-5-0-2.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index-5-0-3.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index-5-0.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/index-5-2-0.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index-deprecated.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index.sgml
@@ -425,6 +417,9 @@ share/gtk-doc/html/libgda-${GDA_MAJOR}/migration-3.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/misc.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/multi-threading.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/null_handling.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/other-languages-introduction.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/other-languages-vala.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/other-languages.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/other_examples.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/parser_gen.png
 share/gtk-doc/html/libgda-${GDA_MAJOR}/parser_prov.png
@@ -442,7 +437,7 @@ share/gtk-doc/html/libgda-${GDA_MAJOR}/provider_notes_ldap.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/provider_notes_sqlcipher.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/provider_notes_sqlite.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/psupport.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/pt08.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/pt09.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/right.png
 share/gtk-doc/html/libgda-${GDA_MAJOR}/stmt-compound.png
 share/gtk-doc/html/libgda-${GDA_MAJOR}/stmt-insert1.png
@@ -486,7 +481,10 @@ share/libgda-${GDA_MAJOR}/gda_trml2pdf/__init__.py
 share/libgda-${GDA_MAJOR}/gda_trml2pdf/color.py
 share/libgda-${GDA_MAJOR}/gda_trml2pdf/trml2pdf.py
 share/libgda-${GDA_MAJOR}/gda_trml2pdf/utils.py
+share/libgda-${GDA_MAJOR}/import_encodings.xml
 share/libgda-${GDA_MAJOR}/information_schema.xml
+share/libgda-${GDA_MAJOR}/language-specs/
+share/libgda-${GDA_MAJOR}/language-specs/gda-sql.lang
 share/libgda-${GDA_MAJOR}/php/
 share/libgda-${GDA_MAJOR}/php/README
 share/libgda-${GDA_MAJOR}/php/gda-clean.php

@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST-pgsql,v 1.5 2011/07/26 15:36:27 ajacoutot Exp $
-@comment lib/libgda-${GDA_MAJOR}/providers/libgda-postgres.la
+@comment $OpenBSD: PLIST-pgsql,v 1.6 2012/09/21 13:23:06 ajacoutot Exp $
 lib/libgda-${GDA_MAJOR}/providers/libgda-postgres.so
 lib/pkgconfig/libgda-postgres-${GDA_MAJOR}.pc
 share/libgda-${GDA_MAJOR}/postgres_specs_add_column.xml

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ui,v 1.19 2012/06/15 08:30:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST-ui,v 1.20 2012/09/21 13:23:06 ajacoutot Exp $
 @conflict libgda-<4.2.8p1v2
 @bin bin/gda-browser-${GDA_MAJOR}
 @bin bin/gda-control-center-${GDA_MAJOR}
@@ -31,7 +31,6 @@ include/libgda-${GDA_MAJOR}/libgda-ui/gdaui-rt-editor.h
 include/libgda-${GDA_MAJOR}/libgda-ui/gdaui-server-operation.h
 include/libgda-${GDA_MAJOR}/libgda-ui/gdaui-tree-store.h
 include/libgda-${GDA_MAJOR}/libgda-ui/libgda-ui.h
-lib/girepository-1.0/Gdaui-${GDA_MAJOR}.typelib
 lib/libgda-${GDA_MAJOR}/plugins/
 lib/libgda-${GDA_MAJOR}/plugins/gdaui-entry-filesel-spec.xml
 lib/libgda-${GDA_MAJOR}/plugins/gdaui-entry-format-spec.xml
@@ -39,14 +38,12 @@ lib/libgda-${GDA_MAJOR}/plugins/gdaui-entry-password.xml
 lib/libgda-${GDA_MAJOR}/plugins/gdaui-entry-pict-spec.xml
 lib/libgda-${GDA_MAJOR}/plugins/gdaui-entry-pict-spec_string.xml
 lib/libgda-${GDA_MAJOR}/plugins/gdaui-entry-text-spec.xml
-@comment lib/libgda-${GDA_MAJOR}/plugins/libgda-ui-plugins.la
 lib/libgda-${GDA_MAJOR}/plugins/libgda-ui-plugins.so
 lib/libgda-ui-${GDA_MAJOR}.la
 @lib lib/libgda-ui-${GDA_MAJOR}.so.${LIBgda-ui-5.0_VERSION}
 lib/pkgconfig/libgda-ui-${GDA_MAJOR}.pc
 share/applications/gda-browser-${GDA_MAJOR}.desktop
 share/applications/gda-control-center-${GDA_MAJOR}.desktop
-share/gir-1.0/Gdaui-${GDA_MAJOR}.gir
 share/gnome/help/gda-browser/
 share/gnome/help/gda-browser/C/
 share/gnome/help/gda-browser/C/actions.page
@@ -81,7 +78,6 @@ share/gnome/help/gda-browser/C/figures/trans-begin.png
 share/gnome/help/gda-browser/C/figures/trans-commit.png
 share/gnome/help/gda-browser/C/figures/trans-rollback.png
 share/gnome/help/gda-browser/C/figures/virtual-cnc-2.png
-share/gnome/help/gda-browser/C/figures/virtual-cnc-3.png
 share/gnome/help/gda-browser/C/figures/virtual-cnc-4.png
 share/gnome/help/gda-browser/C/figures/virtual-cnc-5.png
 share/gnome/help/gda-browser/C/figures/virtual-cnc.png
@@ -129,7 +125,6 @@ share/gnome/help/gda-browser/de/figures/trans-begin.png
 share/gnome/help/gda-browser/de/figures/trans-commit.png
 share/gnome/help/gda-browser/de/figures/trans-rollback.png
 share/gnome/help/gda-browser/de/figures/virtual-cnc-2.png
-share/gnome/help/gda-browser/de/figures/virtual-cnc-3.png
 share/gnome/help/gda-browser/de/figures/virtual-cnc-4.png
 share/gnome/help/gda-browser/de/figures/virtual-cnc-5.png
 share/gnome/help/gda-browser/de/figures/virtual-cnc.png
@@ -177,7 +172,6 @@ share/gnome/help/gda-browser/el/figures/trans-begin.png
 share/gnome/help/gda-browser/el/figures/trans-commit.png
 share/gnome/help/gda-browser/el/figures/trans-rollback.png
 share/gnome/help/gda-browser/el/figures/virtual-cnc-2.png
-share/gnome/help/gda-browser/el/figures/virtual-cnc-3.png
 share/gnome/help/gda-browser/el/figures/virtual-cnc-4.png
 share/gnome/help/gda-browser/el/figures/virtual-cnc-5.png
 share/gnome/help/gda-browser/el/figures/virtual-cnc.png
@@ -225,7 +219,6 @@ share/gnome/help/gda-browser/es/figures/trans-begin.png
 share/gnome/help/gda-browser/es/figures/trans-commit.png
 share/gnome/help/gda-browser/es/figures/trans-rollback.png
 share/gnome/help/gda-browser/es/figures/virtual-cnc-2.png
-share/gnome/help/gda-browser/es/figures/virtual-cnc-3.png
 share/gnome/help/gda-browser/es/figures/virtual-cnc-4.png
 share/gnome/help/gda-browser/es/figures/virtual-cnc-5.png
 share/gnome/help/gda-browser/es/figures/virtual-cnc.png
@@ -273,7 +266,6 @@ share/gnome/help/gda-browser/gl/figures/trans-begin.png
 share/gnome/help/gda-browser/gl/figures/trans-commit.png
 share/gnome/help/gda-browser/gl/figures/trans-rollback.png
 share/gnome/help/gda-browser/gl/figures/virtual-cnc-2.png
-share/gnome/help/gda-browser/gl/figures/virtual-cnc-3.png
 share/gnome/help/gda-browser/gl/figures/virtual-cnc-4.png
 share/gnome/help/gda-browser/gl/figures/virtual-cnc-5.png
 share/gnome/help/gda-browser/gl/figures/virtual-cnc.png
@@ -288,6 +280,53 @@ share/gnome/help/gda-browser/gl/table-insert-data.page
 share/gnome/help/gda-browser/gl/transactions.page
 share/gnome/help/gda-browser/gl/variables.page
 share/gnome/help/gda-browser/gl/virtual-connections.page
+share/gnome/help/gda-browser/id/
+share/gnome/help/gda-browser/id/actions.page
+share/gnome/help/gda-browser/id/data-manager-perspective.page
+share/gnome/help/gda-browser/id/data-manager-source-editor.page
+share/gnome/help/gda-browser/id/data-manager-xml-syntax.page
+share/gnome/help/gda-browser/id/declaredfk.page
+share/gnome/help/gda-browser/id/diagram.page
+share/gnome/help/gda-browser/id/features.page
+share/gnome/help/gda-browser/id/figures/
+share/gnome/help/gda-browser/id/figures/action-1.png
+share/gnome/help/gda-browser/id/figures/action-2.png
+share/gnome/help/gda-browser/id/figures/action-3.png
+share/gnome/help/gda-browser/id/figures/action-4.png
+share/gnome/help/gda-browser/id/figures/cnc_open.png
+share/gnome/help/gda-browser/id/figures/data-man-mode.png
+share/gnome/help/gda-browser/id/figures/data-man-persp.png
+share/gnome/help/gda-browser/id/figures/data-man-uicompose.png
+share/gnome/help/gda-browser/id/figures/data-man-xmlcompose.png
+share/gnome/help/gda-browser/id/figures/declaredfk-dialog.png
+share/gnome/help/gda-browser/id/figures/declaredfk.png
+share/gnome/help/gda-browser/id/figures/diagram.png
+share/gnome/help/gda-browser/id/figures/ldap-browser-persp.png
+share/gnome/help/gda-browser/id/figures/ldap-classes.png
+share/gnome/help/gda-browser/id/figures/ldap-search.png
+share/gnome/help/gda-browser/id/figures/ldap-table-mapping.png
+share/gnome/help/gda-browser/id/figures/mainwin.png
+share/gnome/help/gda-browser/id/figures/query-exec-persp.png
+share/gnome/help/gda-browser/id/figures/schema-browser-persp.png
+share/gnome/help/gda-browser/id/figures/table-insert-data.png
+share/gnome/help/gda-browser/id/figures/trans-begin.png
+share/gnome/help/gda-browser/id/figures/trans-commit.png
+share/gnome/help/gda-browser/id/figures/trans-rollback.png
+share/gnome/help/gda-browser/id/figures/virtual-cnc-2.png
+share/gnome/help/gda-browser/id/figures/virtual-cnc-4.png
+share/gnome/help/gda-browser/id/figures/virtual-cnc-5.png
+share/gnome/help/gda-browser/id/figures/virtual-cnc.png
+share/gnome/help/gda-browser/id/general-ui.page
+share/gnome/help/gda-browser/id/index.page
+share/gnome/help/gda-browser/id/ldap-browser-perspective.page
+share/gnome/help/gda-browser/id/ldap-connections.page
+share/gnome/help/gda-browser/id/legal.xml
+share/gnome/help/gda-browser/id/query-execution-perspective.page
+share/gnome/help/gda-browser/id/schema-browser-perspective.page
+share/gnome/help/gda-browser/id/table-insert-data.page
+share/gnome/help/gda-browser/id/transactions.page
+share/gnome/help/gda-browser/id/variables.page
+share/gnome/help/gda-browser/id/virtual-connections.page
 share/gnome/help/gda-browser/sl/
 share/gnome/help/gda-browser/sl/actions.page
 share/gnome/help/gda-browser/sl/data-manager-perspective.page
@@ -321,7 +360,6 @@ share/gnome/help/gda-browser/sl/figures/trans-begin.png
 share/gnome/help/gda-browser/sl/figures/trans-commit.png
 share/gnome/help/gda-browser/sl/figures/trans-rollback.png
 share/gnome/help/gda-browser/sl/figures/virtual-cnc-2.png
-share/gnome/help/gda-browser/sl/figures/virtual-cnc-3.png
 share/gnome/help/gda-browser/sl/figures/virtual-cnc-4.png
 share/gnome/help/gda-browser/sl/figures/virtual-cnc-5.png
 share/gnome/help/gda-browser/sl/figures/virtual-cnc.png
@@ -369,7 +407,6 @@ share/gnome/help/gda-browser/zh_CN/figures/trans-begin.png
 share/gnome/help/gda-browser/zh_CN/figures/trans-commit.png
 share/gnome/help/gda-browser/zh_CN/figures/trans-rollback.png
 share/gnome/help/gda-browser/zh_CN/figures/virtual-cnc-2.png
-share/gnome/help/gda-browser/zh_CN/figures/virtual-cnc-3.png
 share/gnome/help/gda-browser/zh_CN/figures/virtual-cnc-4.png
 share/gnome/help/gda-browser/zh_CN/figures/virtual-cnc-5.png
 share/gnome/help/gda-browser/zh_CN/figures/virtual-cnc.png
@@ -389,19 +426,19 @@ share/gtk-doc/html/gda-browser/BrowserConnection.html
 share/gtk-doc/html/gda-browser/BrowserCore.html
 share/gtk-doc/html/gda-browser/BrowserPerspective.html
 share/gtk-doc/html/gda-browser/BrowserWindow.html
-share/gtk-doc/html/gda-browser/CcGrayBar.html
 share/gtk-doc/html/gda-browser/MgrFavorites.html
 share/gtk-doc/html/gda-browser/UILayout.png
 share/gtk-doc/html/gda-browser/code_orga.html
 share/gtk-doc/html/gda-browser/core.html
 share/gtk-doc/html/gda-browser/extrawidgets.html
-share/gtk-doc/html/gda-browser/gda-browser-browser-favorites.html
 share/gtk-doc/html/gda-browser/gda-browser-BrowserPage.html
 share/gtk-doc/html/gda-browser/gda-browser-Data-Manager-perspective.html
 share/gtk-doc/html/gda-browser/gda-browser-Query-Exec-perspective.html
 share/gtk-doc/html/gda-browser/gda-browser-Schema-Browser-perspective.html
 share/gtk-doc/html/gda-browser/gda-browser-Support-functions.html
 share/gtk-doc/html/gda-browser/gda-browser-UiFormgrid.html
+share/gtk-doc/html/gda-browser/gda-browser-browser-favorites.html
+share/gtk-doc/html/gda-browser/gda-browser-gdaui-bar.html
 share/gtk-doc/html/gda-browser/gda-browser-popup-container.html
 share/gtk-doc/html/gda-browser/gda-browser.devhelp2
 share/gtk-doc/html/gda-browser/home.png
@@ -434,10 +471,12 @@ share/libgda-${GDA_MAJOR}/demo/ddl_queries.c
 share/libgda-${GDA_MAJOR}/demo/demo_db.db
 share/libgda-${GDA_MAJOR}/demo/form.c
 share/libgda-${GDA_MAJOR}/demo/form_data_layout.c
+share/libgda-${GDA_MAJOR}/demo/form_model_change.c
 share/libgda-${GDA_MAJOR}/demo/form_pict.c
 share/libgda-${GDA_MAJOR}/demo/form_rw.c
 share/libgda-${GDA_MAJOR}/demo/grid.c
 share/libgda-${GDA_MAJOR}/demo/grid_data_layout.c
+share/libgda-${GDA_MAJOR}/demo/grid_model_change.c
 share/libgda-${GDA_MAJOR}/demo/grid_pict.c
 share/libgda-${GDA_MAJOR}/demo/grid_rw.c
 share/libgda-${GDA_MAJOR}/demo/linked_grid_form.c
@@ -480,9 +519,6 @@ share/libgda-${GDA_MAJOR}/icons/hicolor/scalable/actions/
 share/libgda-${GDA_MAJOR}/icons/hicolor/scalable/actions/bookmark-view.svg
 share/libgda-${GDA_MAJOR}/icons/hicolor/scalable/actions/glade.svg
 share/libgda-${GDA_MAJOR}/icons/hicolor/scalable/actions/history-view.svg
-share/libgda-${GDA_MAJOR}/import_encodings.xml
-share/libgda-${GDA_MAJOR}/language-specs/
-share/libgda-${GDA_MAJOR}/language-specs/gda-sql.lang
 share/libgda-${GDA_MAJOR}/pixmaps/
 share/libgda-${GDA_MAJOR}/pixmaps/bin-attachment-16x16.png
 share/libgda-${GDA_MAJOR}/pixmaps/gda-browser-action.png
@@ -520,6 +556,7 @@ share/libgda-${GDA_MAJOR}/server_operation.glade
 share/libgda-${GDA_MAJOR}/ui/
 share/libgda-${GDA_MAJOR}/ui/gdaui-entry-number.xml
 share/libgda-${GDA_MAJOR}/ui/gdaui-entry-string.xml
+share/pixmaps/
 share/pixmaps/gda-browser-${GDA_MAJOR}.png
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

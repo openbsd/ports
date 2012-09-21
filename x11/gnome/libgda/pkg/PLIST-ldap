@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST-ldap,v 1.6 2011/06/02 15:54:10 ajacoutot Exp $
-@comment lib/libgda-${GDA_MAJOR}/providers/libgda-ldap.la
+@comment $OpenBSD: PLIST-ldap,v 1.7 2012/09/21 13:23:06 ajacoutot Exp $
 lib/libgda-${GDA_MAJOR}/providers/libgda-ldap.so
 lib/pkgconfig/libgda-ldap-${GDA_MAJOR}.pc
 share/libgda-${GDA_MAJOR}/ldap_specs_auth.xml

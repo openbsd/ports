@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.65 2012/09/01 14:36:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2012/09/21 13:23:06 ajacoutot Exp $
+
+# XXX add vala to MODGNOME_TOOLS on update
 
 SHARED_ONLY=		Yes
 
@@ -9,23 +11,17 @@ COMMENT-pgsql=		PostreSQL backend for libgda
 COMMENT-ui=		GTK+ extension and tools for libgda
 
 GNOME_PROJECT=		libgda
-GNOME_VERSION=		5.0.3
+GNOME_VERSION=		5.1.1
 
 # NOTE: when GDA_MAJOR changes, increment GDA_MAJOR accordingly and bump:
 # x11/gnome/libgdamm
-GDA_MAJOR=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+GDA_MAJOR=		5.0
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-ldap=		libgda-ldap-${GNOME_VERSION}
 PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}
 PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
 PKGNAME-ui=		libgda-ui-${GNOME_VERSION}
-
-REVISION-main =		1
-REVISION-ui=		4
-REVISION-ldap =		1
-REVISION-mysql =	1
-REVISION-pgsql =	1
 
 EPOCH-main=		2
 EPOCH-ldap=		0
@@ -34,10 +30,10 @@ EPOCH-pgsql=		0
 
 CATEGORIES=		databases
 
-SHARED_LIBS +=  gda-5.0                   0.0 # 5.0
-SHARED_LIBS +=  gda-report-5.0            0.0 # 5.0
-SHARED_LIBS +=  gda-ui-5.0                0.0 # 5.0
-SHARED_LIBS +=  gda-xslt-5.0              0.0 # 5.0
+SHARED_LIBS +=  gda-5.0                   1.0 # 5.1
+SHARED_LIBS +=  gda-report-5.0            1.0 # 5.1
+SHARED_LIBS +=  gda-ui-5.0                1.0 # 5.1
+SHARED_LIBS +=  gda-xslt-5.0              1.0 # 5.1
 
 HOMEPAGE=		http://www.gnome-db.org/
 
@@ -50,7 +46,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += m pcre z gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 xml2 dbus-1 gcrypt gnome-keyring
-WANTLIB += gpg-error ffi
+WANTLIB += gpg-error ffi pthread
 
 MODULES=		devel/gettext \
 			x11/gnome
@@ -74,8 +70,6 @@ BUILD_DEPENDS=		databases/db/v4
 
 REGRESS_DEPENDS=	devel/check
 
-# XXX check if still necessary when updating to >5.0.3:
-# vala should be added but this tarball misses a few needed files
 MODGNOME_TOOLS= 	goi yelp
 
 LIBTOOL_FLAGS=		--tag=disable-static
@@ -95,7 +89,7 @@ CONFIGURE_ENV=		LIBCRYPTO_CFLAGS="-I/usr/include/ssl" \
 
 FAKE_FLAGS=		configdir="${PREFIX}/share/examples/libgda"
 
-WANTLIB-main += ${WANTLIB} c gcrypt gpg-error ncurses pthread
+WANTLIB-main += ${WANTLIB} c gcrypt gpg-error ncurses
 WANTLIB-main += readline soup-2.4 crypto gdk_pixbuf-2.0 png xslt
 
 RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS} \
@@ -117,10 +111,11 @@ CONFIGURE_ARGS+=	--with-graphviz=no
 WANTLIB-ui += ${WANTLIB}
 WANTLIB-ui += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB-ui += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo
-WANTLIB-ui += cairo-gobject drm expat fontconfig freetype gda-5.0
+WANTLIB-ui += cairo-gobject drm expat fontconfig freetype gda-${GDA_MAJOR}
 WANTLIB-ui += gdk-3 gdk_pixbuf-2.0 goocanvas-2.0 gtk-3 gtksourceview-3.0
 WANTLIB-ui += pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB-ui += pthread pthread-stubs xcb xcb-render xcb-shm stdc++
+WANTLIB-ui += pthread-stubs xcb xcb-render xcb-shm stdc++ icuuc
+WANTLIB-ui += ICE SM atk-bridge-2.0 atspi harfbuzz icudata icule
 LIB_DEPENDS-ui=		${LIB_DEPENDS} \
 			x11/gnome/libgda \
 			x11/gtksourceview3 \
@@ -166,5 +161,8 @@ LIBdb_VERSION=	5.0
 SUBST_VARS+=	LIBdb_VERSION
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure
+
+post-install:
+	rm ${PREFIX}/lib/libgda-${GDA_MAJOR}/providers/*.la
 
 .include <bsd.port.mk>
