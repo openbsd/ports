@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2012/07/09 06:01:01 bentley Exp $
+# $OpenBSD: Makefile,v 1.4 2012/09/21 13:21:44 ajacoutot Exp $
 
 COMMENT =		emulator for Nintendo Game Boy (Color/Advance)
 
 DISTNAME =		vbam-1.8.0.1054-src
 PKGNAME =		${DISTNAME:S/-src//}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES =		emulators
 

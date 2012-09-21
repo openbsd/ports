@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2012/09/01 14:35:06 landry Exp $
+# $OpenBSD: Makefile,v 1.81 2012/09/21 13:21:44 ajacoutot Exp $
 
 COMMENT =	Mozilla web browser
 
@@ -8,7 +8,7 @@ MOZILLA_PROJECT =	firefox35
 MOZILLA_DIST =		firefox
 MOZILLA_CODENAME =	browser
 
-REVISION =		14
+REVISION =		15
 
 SO_VERSION =	24.0
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -40,6 +40,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES =	www/mozilla devel/gettext lang/python
 
 MODPY_RUNDEP =	No
+
+# EXTRA_DSO_LDOPTS += -lpangox-1.0
+RUN_DEPENDS +=		devel/pangox-compat
 
 # Regression tests are too hard to adapt to run here
 NO_REGRESS =	Yes

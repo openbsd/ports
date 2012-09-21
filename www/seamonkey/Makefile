@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2012/09/10 11:13:07 landry Exp $
+# $OpenBSD: Makefile,v 1.109 2012/09/21 13:21:44 ajacoutot Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
@@ -12,6 +12,7 @@ MOZILLA_CODENAME =	suite
 
 MULTI_PACKAGES =	-main -lightning -enigmail
 PKGNAME-main =		${PKGNAME}
+REVISION-main =		0
 PKGNAME-lightning =	lightning-seamonkey-1.7beta1
 ENIG_V =		1.4.4
 PKGNAME-enigmail =	enigmail-seamonkey-${ENIG_V}
@@ -44,6 +45,9 @@ DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} \
 
 MODULES=	www/mozilla devel/gettext lang/python
 BUILD_DEPENDS+=	archivers/unzip
+
+# EXTRA_DSO_LDOPTS += -lpangox-1.0
+RUN_DEPENDS-main +=		devel/pangox-compat
 
 USE_GROFF =	Yes
 NO_REGRESS=	Yes

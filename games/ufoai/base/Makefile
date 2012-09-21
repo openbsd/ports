@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2012/03/28 20:53:58 kirby Exp $
+# $OpenBSD: Makefile,v 1.6 2012/09/21 13:21:44 ajacoutot Exp $
 
 SHARED_ONLY = 		Yes
 
@@ -10,7 +10,7 @@ DISTNAME =		ufoai-${V}-source
 PKGNAME-main =		${DISTNAME:S/-source//}
 REVISION-main = 	3
 PKGNAME-editor = 	uforadiant-${V}
-REVISION-editor = 	3
+REVISION-editor = 	4
 
 EXTRACT_SUFX =		.tar.bz2
 

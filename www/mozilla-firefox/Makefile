@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.209 2012/09/09 19:50:31 landry Exp $
+# $OpenBSD: Makefile,v 1.210 2012/09/21 13:21:44 ajacoutot Exp $
 
 COMMENT =	Mozilla web browser
 BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
@@ -10,6 +10,7 @@ MOZILLA_VERSION =	15.0.1
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
+REVISION =		0
 
 SO_VERSION =	34.0
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -48,6 +49,9 @@ WANTLIB += gmodule-2.0 gstapp-0.10 gstbase-0.10 gstreamer-0.10
 WANTLIB += gstvideo-0.10 xml2
 
 RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-good
+
+# EXTRA_DSO_LDOPTS += -lpangox-1.0
+RUN_DEPENDS +=		devel/pangox-compat
 
 .if ${MACHINE_ARCH:Msparc64}
 CONFIGURE_ARGS +=	--disable-tracejit --disable-methodjit

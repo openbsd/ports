@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2012/09/01 14:35:06 landry Exp $
+# $OpenBSD: Makefile,v 1.45 2012/09/21 13:21:44 ajacoutot Exp $
 
 COMMENT =		Mozilla calendar
 
@@ -10,7 +10,7 @@ MOZILLA_BRANCH =	1.9.2
 MOZILLA_CODENAME =	calendar
 
 EPOCH =			0
-REVISION =		19
+REVISION =		20
 
 HOMEPAGE =	http://www.mozilla.org/projects/calendar/sunbird/
 
@@ -35,6 +35,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES =	www/mozilla devel/gettext lang/python
 MODPY_RUN_DEP =	No
+
+# EXTRA_DSO_LDOPTS += -lpangox-1.0
+RUN_DEPENDS +=		devel/pangox-compat
 
 # Regression tests are too hard to adapt to run here
 NO_REGRESS =	Yes

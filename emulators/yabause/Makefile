@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/04/01 21:57:26 jeremy Exp $
+# $OpenBSD: Makefile,v 1.3 2012/09/21 13:21:44 ajacoutot Exp $
 
 COMMENT =	Sega Saturn emulator
 
 DISTNAME =	yabause-0.9.10
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	emulators games
 HOMEPAGE =	http://yabause.org/

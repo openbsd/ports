@@ -1,0 +1,35 @@
+$OpenBSD: patch-src_fonts_c,v 1.1 2012/09/21 13:21:45 ajacoutot Exp $
+
+Adapt after pangox removal from devel/pango.
+
+--- src/fonts.c.orig	Sat Sep  1 10:47:01 2012
++++ src/fonts.c	Fri Sep 21 14:23:30 2012
+@@ -53,9 +53,6 @@
+ # define PANGO_ENABLE_BACKEND
+ # include <pango/pango.h>
+ # undef PANGO_ENABLE_BACKEND
+-# ifdef HAVE_PANGO_X
+-#  include <pango/pangox.h>
+-# endif
+ # ifdef HAVE_PANGO_XFT
+ #  define PANGO_ENABLE_ENGINE
+ #  include <pango/pangoxft.h>
+@@ -429,8 +426,6 @@ pango_load (Lisp_Font *f)
+ 
+ #ifdef HAVE_PANGO_XFT
+ 	pango_context = pango_xft_get_context (dpy, screen_num);
+-#else
+-	pango_context = pango_x_get_context (dpy, screen_num);
+ #endif
+ 
+ 	langname = g_strdup (setlocale (LC_CTYPE, NULL));
+@@ -514,9 +509,7 @@ pango_draw_line (XftDraw *draw, Window id, GC gc, XftC
+ #ifdef HAVE_PANGO_XFT
+ 	if (PANGO_XFT_IS_FONT (font))
+ 	    pango_xft_render (draw, xft_color, font, glyphs, x, y);
+-	else
+ #endif
+-	    pango_x_render (dpy, id, gc, font, glyphs, x, y);
+ 
+ 	x += rect.width / PANGO_SCALE;
+     }

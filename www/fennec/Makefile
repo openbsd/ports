@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2012/09/01 14:35:06 landry Exp $
+# $OpenBSD: Makefile,v 1.27 2012/09/21 13:21:44 ajacoutot Exp $
 
 COMMENT =	Mozilla mobile web browser
 
@@ -7,7 +7,7 @@ MOZILLA_BRANCH =	esr10
 MOZILLA_PROJECT =	fennec
 MOZILLA_CODENAME =	mobile
 PKGNAME =	${MOZILLA_PROJECT}-${MOZILLA_VERSION:S/esr//}
-REVISION =	0
+REVISION =	1
 
 SO_VERSION =	6.0
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -45,6 +45,9 @@ WANTLIB +=	event
 .if ${MACHINE_ARCH:Msparc64}
 CONFIGURE_ARGS +=	--disable-tracejit --disable-methodjit
 .endif
+
+# EXTRA_DSO_LDOPTS += -lpangox-1.0
+RUN_DEPENDS +=		devel/pangox-compat
 
 # ensure we depend on cairo with tee backend enabled
 LIB_DEPENDS =	graphics/cairo>=1.10.2p0
