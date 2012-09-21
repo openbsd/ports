@@ -1,4 +1,9 @@
-$OpenBSD: patch-farstream_fs-stream_c,v 1.1 2012/09/21 07:02:07 jasper Exp $
+$OpenBSD: patch-farstream_fs-stream_c,v 1.2 2012/09/21 10:27:22 jasper Exp $
+
+From 39450457190675716c8e66700e35b05334a6a1a0 Mon Sep 17 00:00:00 2001
+From: Olivier Crte <olivier.crete@collabora.com>
+Date: Fri, 25 May 2012 21:06:59 +0000
+Subject: Gtk-doc tags belong after the description
 
 From 462fd20e8174f59cf8835871a0f3fed5eb75c5c6 Mon Sep 17 00:00:00 2001
 From: Olivier Crête <olivier.crete@collabora.com>
@@ -6,7 +11,63 @@ Date: Tue, 07 Aug 2012 22:37:00 +0000
 Subject: Fix annotations to make new gir happier
 
 --- farstream/fs-stream.c.orig	Tue Jan 10 21:34:46 2012
-+++ farstream/fs-stream.c	Fri Sep 21 08:57:10 2012
++++ farstream/fs-stream.c	Fri Sep 21 12:18:41 2012
+@@ -176,13 +176,13 @@ fs_stream_class_init (FsStreamClass *klass)
+   /**
+    * FsStream:remote-codecs:
+    *
+-   * Type: GLib.List(FsCodec)
+-   * Transfer: full
+-   *
+    * This is the list of remote codecs for this stream. They must be set by the
+    * user as soon as they are known using fs_stream_set_remote_codecs()
+    * (generally through external signaling). It is a #GList of #FsCodec.
+    *
++   * Type: GLib.List(FsCodec)
++   * Transfer: full
++   *
+    */
+   g_object_class_install_property (gobject_class,
+       PROP_REMOTE_CODECS,
+@@ -195,15 +195,15 @@ fs_stream_class_init (FsStreamClass *klass)
+   /**
+    * FsStream:negotiated-codecs:
+    *
+-   * Type: GLib.List(FsCodec)
+-   * Transfer: full
+-   *
+    * This is the list of negotiatied codecs, it is the same list as the list
+    * of #FsCodec from the parent #FsSession, except that the codec config data
+    * has been replaced with the data from the remote codecs for this stream.
+    * This is the list of #FsCodec used to receive data from this stream.
+    * It is a #GList of #FsCodec.
+    *
++   * Type: GLib.List(FsCodec)
++   * Transfer: full
++   *
+    */
+   g_object_class_install_property (gobject_class,
+       PROP_NEGOTIATED_CODECS,
+@@ -216,9 +216,6 @@ fs_stream_class_init (FsStreamClass *klass)
+   /**
+    * FsStream:current-recv-codecs:
+    *
+-   * Type: GLib.List(FsCodec)
+-   * Transfer: full
+-   *
+    * This is the list of codecs that have been received by this stream.
+    * The user must free the list if fs_codec_list_destroy().
+    * The "farstream-recv-codecs-changed" message is send on the #GstBus
+@@ -228,6 +225,9 @@ fs_stream_class_init (FsStreamClass *klass)
+    * also be emitted if the pad already exists, but the source material that
+    * will come to it is different.
+    *
++   * Type: GLib.List(FsCodec)
++   * Transfer: full
++   *
+    */
+   g_object_class_install_property (gobject_class,
+       PROP_CURRENT_RECV_CODECS,
 @@ -602,8 +602,7 @@ fs_stream_iterate_src_pads (FsStream *stream)
   * @transmitter: Name of the type of transmitter to use for this stream
   * @stream_transmitter_n_parameters: Number of parametrs passed to the stream

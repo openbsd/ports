@@ -1,4 +1,9 @@
-$OpenBSD: patch-farstream_fs-session_c,v 1.1 2012/09/21 07:02:07 jasper Exp $
+$OpenBSD: patch-farstream_fs-session_c,v 1.2 2012/09/21 10:27:22 jasper Exp $
+
+From 39450457190675716c8e66700e35b05334a6a1a0 Mon Sep 17 00:00:00 2001
+From: Olivier Crte <olivier.crete@collabora.com>
+Date: Fri, 25 May 2012 21:06:59 +0000
+Subject: Gtk-doc tags belong after the description
 
 From 462fd20e8174f59cf8835871a0f3fed5eb75c5c6 Mon Sep 17 00:00:00 2001
 From: Olivier Crête <olivier.crete@collabora.com>
@@ -6,7 +11,67 @@ Date: Tue, 07 Aug 2012 22:37:00 +0000
 Subject: Fix annotations to make new gir happier
 
 --- farstream/fs-session.c.orig	Tue Mar  6 22:47:43 2012
-+++ farstream/fs-session.c	Fri Sep 21 08:57:10 2012
++++ farstream/fs-session.c	Fri Sep 21 12:18:10 2012
+@@ -270,9 +270,6 @@ fs_session_class_init (FsSessionClass *klass)
+   /**
+    * FsSession:codec-preferences:
+    *
+-   * Type: GLib.List(FsCodec)
+-   * Transfer: full
+-   *
+    * This is the current preferences list for the local codecs. It is
+    * set by the user to specify the codec options and priorities. The user may
+    * change its value with fs_session_set_codec_preferences() at any time
+@@ -283,6 +280,9 @@ fs_session_class_init (FsSessionClass *klass)
+    * or %FS_CODEC_ID_ANY. If the encoding name is "reserve-pt", then the
+    * payload type of the codec will be "reserved" and not be used by any
+    * dynamically assigned payload type.
++   *
++   * Type: GLib.List(FsCodec)
++   * Transfer: full
+    */
+   g_object_class_install_property (gobject_class,
+       PROP_CODEC_PREFERENCES,
+@@ -296,9 +296,6 @@ fs_session_class_init (FsSessionClass *klass)
+   /**
+    * FsSession:codecs:
+    *
+-   * Type: GLib.List(FsCodec)
+-   * Transfer: full
+-   *
+    * This is the list of codecs used for this session. It will include the
+    * codecs and payload type used to receive media on this session. It will
+    * also include any configuration parameter that must be transmitted reliably
+@@ -317,6 +314,9 @@ fs_session_class_init (FsSessionClass *klass)
+    * It is a #GList of #FsCodec. User must free this codec list using
+    * fs_codec_list_destroy() when done.
+    *
++   * Type: GLib.List(FsCodec)
++   * Transfer: full
++   *
+    */
+   g_object_class_install_property (gobject_class,
+       PROP_CODECS,
+@@ -329,9 +329,6 @@ fs_session_class_init (FsSessionClass *klass)
+   /**
+    * FsSession:codecs-without-config:
+    *
+-   * Type: GLib.List(FsCodec)
+-   * Transfer: full
+-   *
+    * This is the same list of codecs as #FsSession:codecs without
+    * the configuration information that describes the data sent. It is suitable
+    * for configurations where a list of codecs is shared by many senders.
+@@ -349,6 +346,9 @@ fs_session_class_init (FsSessionClass *klass)
+    * It is a #GList of #FsCodec. User must free this codec list using
+    * fs_codec_list_destroy() when done.
+    *
++   * Type: GLib.List(FsCodec)
++   * Transfer: full
++   *
+    */
+   g_object_class_install_property (gobject_class,
+       PROP_CODECS_WITHOUT_CONFIG,
 @@ -378,7 +378,7 @@ fs_session_class_init (FsSessionClass *klass)
          G_PARAM_READABLE | G_PARAM_STATIC_STRINGS));
  
