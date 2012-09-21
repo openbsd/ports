@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2012/09/19 13:03:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2012/09/21 14:48:06 ajacoutot Exp $
 
 COMMENT=	framework for granting privileged operations to users
 
@@ -62,6 +62,12 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-examples \
 		--with-os-type=openbsd \
 		--with-authfw=bsdauth
+
+# If one of these tools is found at configure stage, it might be used,
+# no matter whether we use --disable-gtk-doc or not.
+CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
+		ac_cv_path_GTKDOC_REBASE="" \
+		ac_cv_path_GTKDOC_MKPDF=""
 
 USE_GMAKE=	Yes
 USE_GROFF=	Yes

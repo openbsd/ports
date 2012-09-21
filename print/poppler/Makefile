@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2012/09/02 15:21:17 kili Exp $
+# $OpenBSD: Makefile,v 1.67 2012/09/21 14:48:06 ajacoutot Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt=	qt interface to PDF rendering library
@@ -104,6 +104,12 @@ CONFIGURE_ARGS+= --disable-gtk-doc \
 
 CONFIGURE_ENV+= CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+# If one of these tools is found at configure stage, it might be used,
+# no matter whether we use --disable-gtk-doc or not.
+CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
+		ac_cv_path_GTKDOC_REBASE="" \
+		ac_cv_path_GTKDOC_MKPDF=""
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes

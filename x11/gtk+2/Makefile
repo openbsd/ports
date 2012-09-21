@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.150 2012/09/21 13:24:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.151 2012/09/21 14:48:06 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -87,6 +87,12 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-introspection \
 		--with-xinput \
 		--disable-papi
+
+# If one of these tools is found at configure stage, it might be used,
+# no matter whether we use --disable-gtk-doc or not.
+CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
+		ac_cv_path_GTKDOC_REBASE="" \
+		ac_cv_path_GTKDOC_MKPDF=""
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/gtk+2
 

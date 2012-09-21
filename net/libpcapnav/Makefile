@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/21 17:20:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2012/09/21 14:48:06 ajacoutot Exp $
 
 COMMENT=	library for navigating to arbitrary packets in a trace file
 
@@ -21,5 +21,11 @@ WANTLIB=		pcap
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc/libpcapnav
+
+# If one of these tools is found at configure stage, it might be used,
+# no matter whether we use --disable-gtk-doc or not.
+CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
+		ac_cv_path_GTKDOC_REBASE="" \
+		ac_cv_path_GTKDOC_MKPDF=""
 
 .include <bsd.port.mk>

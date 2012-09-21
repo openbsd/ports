@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1 2012/09/06 12:57:49 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2012/09/21 14:48:06 ajacoutot Exp $
 
 # Most frequent usage of the GStreamer packages:
 # core		base library
@@ -73,6 +73,12 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--disable-gtk-doc \
 			--disable-valgrind \
 			--disable-static
+
+# If one of these tools is found at configure stage, it might be used,
+# no matter whether we use --disable-gtk-doc or not.
+CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
+		ac_cv_path_GTKDOC_REBASE="" \
+		ac_cv_path_GTKDOC_MKPDF=""
 
 CPPFLAGS +=		-I${LOCALBASE}/include \
 			-I${LOCALBASE}/include/libpng \

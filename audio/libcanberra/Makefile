@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2012/08/25 17:10:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2012/09/21 14:48:05 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -101,6 +101,12 @@ CONFIGURE_ARGS= 	${CONFIGURE_SHARED} \
 			--disable-udev
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+# If one of these tools is found at configure stage, it might be used,
+# no matter whether we use --disable-gtk-doc or not.
+CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
+		ac_cv_path_GTKDOC_REBASE="" \
+		ac_cv_path_GTKDOC_MKPDF=""
 
 pre-configure:
 	cp ${FILESDIR}/sndio.c ${WRKSRC}/src

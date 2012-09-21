@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2012/08/19 11:10:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2012/09/21 14:48:06 ajacoutot Exp $
 
 COMMENT=	library for loading and enumurating of PKCS\#11 modules
 
@@ -31,6 +31,12 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 
 # no translation yet
 CONFIGURE_ARGS += --disable-nls
+
+# If one of these tools is found at configure stage, it might be used,
+# no matter whether we use --disable-gtk-doc or not.
+CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
+		ac_cv_path_GTKDOC_REBASE="" \
+		ac_cv_path_GTKDOC_MKPDF=""
 
 FAKE_FLAGS=	exampledir=${PREFIX}/share/examples/p11-kit/pkcs11
 

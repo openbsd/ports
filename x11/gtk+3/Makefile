@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2012/09/21 13:20:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2012/09/21 14:48:06 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -92,6 +92,12 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-packagekit \
 		--enable-introspection \
 		--with-xml-catalog=${LOCALBASE}/share/xml/catalog
+
+# If one of these tools is found at configure stage, it might be used,
+# no matter whether we use --disable-gtk-doc or not.
+CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
+		ac_cv_path_GTKDOC_REBASE="" \
+		ac_cv_path_GTKDOC_MKPDF=""
 
 # Do not build gtk-update-icon-cache and other shared tools.
 CONFIGURE_ARGS += --enable-gtk2-dependency

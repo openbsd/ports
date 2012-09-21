@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2012/06/15 08:32:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2012/09/21 14:48:05 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -59,5 +59,11 @@ CONFIGURE_ARGS = --enable-introspection \
 		 --enable-gtk-doc-html=no
 CONFIGURE_ENV =	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+# If one of these tools is found at configure stage, it might be used,
+# no matter whether we use --disable-gtk-doc or not.
+CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
+		ac_cv_path_GTKDOC_REBASE="" \
+		ac_cv_path_GTKDOC_MKPDF=""
 
 .include <bsd.port.mk>

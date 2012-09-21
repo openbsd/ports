@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/11/03 22:21:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2012/09/21 14:48:06 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -47,6 +47,12 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-gtk-doc=no
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include"
+
+# If one of these tools is found at configure stage, it might be used,
+# no matter whether we use --disable-gtk-doc or not.
+CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
+		ac_cv_path_GTKDOC_REBASE="" \
+		ac_cv_path_GTKDOC_MKPDF=""
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		misc/shared-mime-info \

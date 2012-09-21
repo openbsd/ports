@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2012/09/20 17:49:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2012/09/21 14:48:06 ajacoutot Exp $
 
 # XXX check why our getopt_long(3) fails the configure test
 # + rm patch-gl_unistd_in_h
@@ -58,6 +58,12 @@ CONFIGURE_ARGS += --without-tpm
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+# If one of these tools is found at configure stage, it might be used,
+# no matter whether we use --disable-gtk-doc or not.
+CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
+		ac_cv_path_GTKDOC_REBASE="" \
+		ac_cv_path_GTKDOC_MKPDF=""
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gnutls

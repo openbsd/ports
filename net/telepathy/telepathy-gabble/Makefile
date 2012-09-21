@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2012/08/29 17:50:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.53 2012/09/21 14:48:06 ajacoutot Exp $
 
 COMMENT=		flexible communications framework, xmpp component
 
@@ -35,5 +35,11 @@ CONFIGURE_ARGS=		--with-ca-certificates=/etc/ssl/cert.pem \
 			--enable-plugins
 
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/lib/ext/wocky
+
+# If one of these tools is found at configure stage, it might be used,
+# no matter whether we use --disable-gtk-doc or not.
+CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
+		ac_cv_path_GTKDOC_REBASE="" \
+		ac_cv_path_GTKDOC_MKPDF=""
 
 .include <bsd.port.mk>

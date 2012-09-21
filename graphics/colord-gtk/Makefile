@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/08/04 14:59:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2012/09/21 14:48:05 ajacoutot Exp $
 
 COMMENT=	GTK+ support library for colord
 
@@ -48,6 +48,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-introspection \
 		--disable-gtk-doc
+
+# If one of these tools is found at configure stage, it might be used,
+# no matter whether we use --disable-gtk-doc or not.
+CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
+		ac_cv_path_GTKDOC_REBASE="" \
+		ac_cv_path_GTKDOC_MKPDF=""
 
 pre-configure:
 	perl -pi -e 's,-Wclobbered,,g;' \

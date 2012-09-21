@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2012/09/06 12:38:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.72 2012/09/21 14:48:06 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -39,6 +39,12 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lX11" \
 		ac_cv_path_FLEX=${LOCALBASE}/bin/gflex
+
+# If one of these tools is found at configure stage, it might be used,
+# no matter whether we use --disable-gtk-doc or not.
+CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
+		ac_cv_path_GTKDOC_REBASE="" \
+		ac_cv_path_GTKDOC_MKPDF=""
 
 LIBTOOL_FLAGS =	--tag=disable-static
 CONFIGURE_ARGS+=${CONFIGURE_SHARED} \

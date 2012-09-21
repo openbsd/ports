@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2012/06/06 07:58:57 giovanni Exp $
+# $OpenBSD: Makefile,v 1.38 2012/09/21 14:48:05 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -87,6 +87,12 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--without-graphviz \
 		--without-libv4l \
 		--without-libspiro
+
+# If one of these tools is found at configure stage, it might be used,
+# no matter whether we use --disable-gtk-doc or not.
+CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
+		ac_cv_path_GTKDOC_REBASE="" \
+		ac_cv_path_GTKDOC_MKPDF=""
 
 # XXX https://bugzilla.gnome.org/show_bug.cgi?id=673580
 #BUILD_DEPENDS += lang/vala \

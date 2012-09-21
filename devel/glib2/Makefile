@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.185 2012/09/21 13:16:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.186 2012/09/21 14:48:05 ajacoutot Exp $
 
 COMMENT=		general-purpose utility library
 
@@ -69,6 +69,12 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+# If one of these tools is found at configure stage, it might be used,
+# no matter whether we use --disable-gtk-doc or not.
+CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
+		ac_cv_path_GTKDOC_REBASE="" \
+		ac_cv_path_GTKDOC_MKPDF=""
 
 ### kqueue(2) backend ##################################################
 # https://bugzilla.gnome.org/show_bug.cgi?id=679793

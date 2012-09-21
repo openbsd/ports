@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2012/09/04 09:06:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2012/09/21 14:48:06 ajacoutot Exp $
 
 ONLY_FOR_ARCHS =${APM_ARCHS}
 
@@ -33,6 +33,13 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+# If one of these tools is found at configure stage, it might be used,
+# no matter whether we use --disable-gtk-doc or not.
+CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
+		ac_cv_path_GTKDOC_REBASE="" \
+		ac_cv_path_GTKDOC_MKPDF=""
+
 FAKE_FLAGS =	sysconfdir=${PREFIX}/share/examples/upower
 
 USE_GMAKE =	Yes
