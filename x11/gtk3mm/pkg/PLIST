@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/09/02 10:37:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2012/09/21 13:22:10 ajacoutot Exp $
 %%SHARED%%
 include/gdkmm-3.0/
 include/gdkmm-3.0/gdkmm/
@@ -148,12 +148,14 @@ include/gtkmm-3.0/gtkmm/infobar.h
 include/gtkmm-3.0/gtkmm/invisible.h
 include/gtkmm-3.0/gtkmm/label.h
 include/gtkmm-3.0/gtkmm/layout.h
+include/gtkmm-3.0/gtkmm/levelbar.h
 include/gtkmm-3.0/gtkmm/linkbutton.h
 include/gtkmm-3.0/gtkmm/liststore.h
 include/gtkmm-3.0/gtkmm/listviewtext.h
 include/gtkmm-3.0/gtkmm/main.h
 include/gtkmm-3.0/gtkmm/menu.h
 include/gtkmm-3.0/gtkmm/menubar.h
+include/gtkmm-3.0/gtkmm/menubutton.h
 include/gtkmm-3.0/gtkmm/menuitem.h
 include/gtkmm-3.0/gtkmm/menushell.h
 include/gtkmm-3.0/gtkmm/menutoolbutton.h
@@ -270,11 +272,13 @@ include/gtkmm-3.0/gtkmm/private/infobar_p.h
 include/gtkmm-3.0/gtkmm/private/invisible_p.h
 include/gtkmm-3.0/gtkmm/private/label_p.h
 include/gtkmm-3.0/gtkmm/private/layout_p.h
+include/gtkmm-3.0/gtkmm/private/levelbar_p.h
 include/gtkmm-3.0/gtkmm/private/linkbutton_p.h
 include/gtkmm-3.0/gtkmm/private/liststore_p.h
 include/gtkmm-3.0/gtkmm/private/main_p.h
 include/gtkmm-3.0/gtkmm/private/menu_p.h
 include/gtkmm-3.0/gtkmm/private/menubar_p.h
+include/gtkmm-3.0/gtkmm/private/menubutton_p.h
 include/gtkmm-3.0/gtkmm/private/menuitem_p.h
 include/gtkmm-3.0/gtkmm/private/menushell_p.h
 include/gtkmm-3.0/gtkmm/private/menutoolbutton_p.h
@@ -317,6 +321,7 @@ include/gtkmm-3.0/gtkmm/private/scalebutton_p.h
 include/gtkmm-3.0/gtkmm/private/scrollable_p.h
 include/gtkmm-3.0/gtkmm/private/scrollbar_p.h
 include/gtkmm-3.0/gtkmm/private/scrolledwindow_p.h
+include/gtkmm-3.0/gtkmm/private/searchentry_p.h
 include/gtkmm-3.0/gtkmm/private/selectiondata_p.h
 include/gtkmm-3.0/gtkmm/private/separator_p.h
 include/gtkmm-3.0/gtkmm/private/separatormenuitem_p.h
@@ -393,6 +398,7 @@ include/gtkmm-3.0/gtkmm/scalebutton.h
 include/gtkmm-3.0/gtkmm/scrollable.h
 include/gtkmm-3.0/gtkmm/scrollbar.h
 include/gtkmm-3.0/gtkmm/scrolledwindow.h
+include/gtkmm-3.0/gtkmm/searchentry.h
 include/gtkmm-3.0/gtkmm/selectiondata.h
 include/gtkmm-3.0/gtkmm/selectiondata_private.h
 include/gtkmm-3.0/gtkmm/separator.h
