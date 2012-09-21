@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2012/03/23 11:58:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2012/09/21 13:17:46 jasper Exp $
 
 COMMENT=	implementation of basic iCAL protocols
 
 DISTNAME=	libical-0.48
+REVISION=	0
 
 SHARED_LIBS +=  ical                 2.0      # 48.0
 SHARED_LIBS +=  icalss               2.0      # 48.0

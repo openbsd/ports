@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2011/09/16 11:41:41 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2012/09/21 13:17:46 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		Ruby interface to hyperestraier
 
 DISTNAME=		hyperestraier-1.4.13
 PKGNAME=		ruby-hyperestraier-1.0.0
-REVISION =		21
+REVISION =		22
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://hyperestraier.sourceforge.net/
@@ -43,6 +43,11 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 CONFIGURE_ENV =		RUBY=${RUBY} RDOC=`echo ${RUBY} | sed s/ruby/rdoc/`
 
 WRKSRC=			${WRKDIST}/rubynative
+
+SUBST_VARS +=		RUBY
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/estcmd.rb
 
 post-install:
 .if ${FLAVOR:L:Mruby19}

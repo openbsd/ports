@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.4 2012/03/23 11:58:23 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.5 2012/09/21 13:17:46 jasper Exp $
 
 Don't use built-in timezone, but the system one.
 
@@ -15,40 +15,3 @@ Don't use built-in timezone, but the system one.
  *)
      use_builtin_timezone=yes
      os_win32=no
-@@ -16235,8 +16239,8 @@ _ACEOF
- 
- case "${host}" in
-         *-*-freebsdelf4* )
--		{ $as_echo "$as_me:$LINENO: result: checking for pthread_create in -lpthread... -pthread (FreeBSD 4.x style)" >&5
--$as_echo "checking for pthread_create in -lpthread... -pthread (FreeBSD 4.x style)" >&6; }
-+		{ $as_echo "$as_me:$LINENO: result: checking for pthread_create in -pthread... -pthread (FreeBSD 4.x style)" >&5
-+$as_echo "checking for pthread_create in -pthread... -pthread (FreeBSD 4.x style)" >&6; }
- 
- cat >>confdefs.h <<\_ACEOF
- #define HAVE_PTHREAD /**/
-@@ -16245,13 +16249,13 @@ _ACEOF
- 		PTHREAD_LIBS=-pthread;;
- 
- 	*)
--	{ $as_echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
--$as_echo_n "checking for pthread_create in -lpthread... " >&6; }
-+	{ $as_echo "$as_me:$LINENO: checking for pthread_create in -pthread" >&5
-+$as_echo_n "checking for pthread_create in -pthread... " >&6; }
- if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then
-   $as_echo_n "(cached) " >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lpthread  $LIBS"
-+LIBS="-pthread  $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -16320,7 +16324,7 @@ cat >>confdefs.h <<\_ACEOF
- #define HAVE_PTHREAD /**/
- _ACEOF
- 
--	   PTHREAD_LIBS=-lpthread
-+	   PTHREAD_LIBS=-pthread
- 	fi;;
- esac
- 
