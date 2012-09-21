@@ -1,19 +1,16 @@
-# $OpenBSD: Makefile,v 1.46 2012/09/01 14:37:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2012/09/21 13:20:19 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	multi-platform graphical toolkit
 COMMENT-cups=	gtk+3 CUPS print backend
 
-V=		3.4.4
+V=		3.5.18
 DISTNAME=	gtk+-${V}
 EXTRACT_SUFX=	.tar.xz
 
 PKGNAME-main=	gtk+3-${V}
 PKGNAME-cups=	gtk+3-cups-${V}
-
-REVISION-main=	2
-REVISION-cups=	1
 
 # grep ^GTK_BINARY_VERSION ${WRKSRC}/Makefile (after do-configure)
 GTK_BINARY_VERSION=3.0.0
@@ -24,9 +21,9 @@ SUBST_VARS=	GTK_BINARY_VERSION
 
 CATEGORIES=	x11 devel
 
-SHARED_LIBS +=  gdk-3                320.0      # 400.0
-SHARED_LIBS +=  gtk-3                320.0      # 400.0
-SHARED_LIBS +=  gailutil-3           0.0        # 0.0
+SHARED_LIBS +=  gdk-3                600.0    # 600.0
+SHARED_LIBS +=  gtk-3                600.0    # 600.0
+SHARED_LIBS +=  gailutil-3           0.0      # 0.0
 
 HOMEPAGE=	http://www.gtk.org/
 
@@ -43,7 +40,8 @@ WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo cairo-gobject
 WANTLIB += drm expat ffi fontconfig freetype gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs
-WANTLIB += xcb xcb-render xcb-shm z stdc++
+WANTLIB += ICE SM dbus-1 harfbuzz icudata icule icuuc pthread
+WANTLIB += xcb xcb-render xcb-shm z stdc++ atk-bridge-2.0 atspi
 
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/gtk+/${V:C/^([0-9]+\.[0-9]+).*/\1/}/}
 
@@ -54,17 +52,21 @@ MODULES=	devel/gettext \
 
 BUILD_DEPENDS=	devel/gobject-introspection
 
+# man pages
+BUILD_DEPENDS +=textproc/docbook \
+		textproc/libxslt
+
 RUN_DEPENDS-main= ${RUN_DEPENDS} \
 		x11/hicolor-icon-theme \
 		misc/shared-mime-info
 
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
-		devel/pango>=1.29.5 \
-		devel/atk>=2.3.93 \
-		graphics/gdk-pixbuf2>=2.26.0
+		devel/pango>=1.31.2 \
+		graphics/gdk-pixbuf2 \
+		x11/gnome/at-spi2-atk>=2.5.92
 
 WANTLIB-main += ${WANTLIB}
-WANTLIB-main += c pthread
+WANTLIB-main += c
 
 RUN_DEPENDS-cups= # empty
 LIB_DEPENDS-cups= ${LIB_DEPENDS} \
@@ -89,7 +91,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-papi \
 		--disable-packagekit \
 		--enable-introspection \
-		--without-xml-catalog
+		--with-xml-catalog=${LOCALBASE}/share/xml/catalog
 
 # Do not build gtk-update-icon-cache and other shared tools.
 CONFIGURE_ARGS += --enable-gtk2-dependency
@@ -100,5 +102,6 @@ FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/gtk+3
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/gtk-3.0/modules
+	rm ${PREFIX}/lib/gtk-3.0/${GTK_BINARY_VERSION}/{printbackends,immodules}/*.{a,la}
 
 .include <bsd.port.mk>
