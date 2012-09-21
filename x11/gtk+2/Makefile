@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.149 2012/09/03 22:18:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.150 2012/09/21 13:24:09 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,6 +10,8 @@ DISTNAME=	gtk+-${V}
 
 PKGNAME-main=	gtk+2-${V}
 PKGNAME-guic=	gtk-update-icon-cache-${V}
+
+REVISION-main=	0
 
 CATEGORIES=	x11 devel
 
@@ -56,6 +58,7 @@ WANTLIB-main += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB-main += Xi Xinerama Xrandr Xrender Xxf86vm cairo drm expat
 WANTLIB-main += fontconfig freetype pixman-1 pthread-stubs stdc++ xcb
 WANTLIB-main += xcb-render xcb-shm png asn1 crypto cups gssapi krb5 ssl
+WANTLIB-main += harfbuzz icudata icule icuuc
 
 # python is only used by gtk-builder-convert, so let's not enforce the
 # dependency
