@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2012/09/21 13:19:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2012/09/21 14:01:54 ajacoutot Exp $
 
 COMMENT=		modular geoinformation service on top of D-Bus
 
 DISTNAME=		geoclue-0.12.99
+REVISION=		0
 SHARED_LIBS +=  geoclue              1.1      # .0.0
 CATEGORIES=		geo devel
 
@@ -33,10 +34,10 @@ USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--enable-gtk-doc=no \
-			--enable-gtk=no
-#CONFIGURE_ARGS+=	--enable-system-bus
+CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
+			--disable-gtk-doc \
+			--disable-gtk \
+			--disable-connman
 CONFIGURE_ENV=          CPPFLAGS="-I${LOCALBASE}/include" \
                         LDFLAGS="-L${LOCALBASE}/lib"
 
