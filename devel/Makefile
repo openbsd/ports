@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1071 2012/09/20 13:42:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1072 2012/09/21 13:19:36 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1001,6 +1001,7 @@
      SUBDIR += p5-prefork
      SUBDIR += pango
      SUBDIR += pangomm
+     SUBDIR += pangox-compat
      SUBDIR += pccts
      SUBDIR += pcre
      SUBDIR += pcre++
