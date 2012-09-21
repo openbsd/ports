@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/04/04 10:03:12 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/09/21 13:19:01 jasper Exp $
 %%SHARED%%
 include/geoclue/
 include/geoclue/gc-iface-address.h
@@ -38,6 +38,9 @@ lib/pkgconfig/geoclue.pc
 @bin libexec/geoclue-plazes
 @bin libexec/geoclue-skyhook
 @bin libexec/geoclue-yahoo
+share/GConf/
+share/GConf/gsettings/
+share/GConf/gsettings/geoclue
 share/dbus-1/
 share/dbus-1/services/
 share/dbus-1/services/org.freedesktop.Geoclue.Master.service
@@ -64,8 +67,7 @@ share/geoclue-providers/geoclue-nominatim.provider
 share/geoclue-providers/geoclue-plazes.provider
 share/geoclue-providers/geoclue-skyhook.provider
 share/geoclue-providers/geoclue-yahoo.provider
-share/gtk-doc/
-share/gtk-doc/html/
+share/glib-2.0/schemas/org.freedesktop.Geoclue.gschema.xml
 share/gtk-doc/html/geoclue/
 share/gtk-doc/html/geoclue/Address.html
 share/gtk-doc/html/geoclue/Geoclue.html
@@ -88,7 +90,6 @@ share/gtk-doc/html/geoclue/geoclue-geoclue-accuracy.html
 share/gtk-doc/html/geoclue/geoclue-geoclue-address-details.html
 share/gtk-doc/html/geoclue/geoclue-geoclue-error.html
 share/gtk-doc/html/geoclue/geoclue-geoclue-types.html
-share/gtk-doc/html/geoclue/geoclue.devhelp
 share/gtk-doc/html/geoclue/geoclue.devhelp2
 share/gtk-doc/html/geoclue/home.png
 share/gtk-doc/html/geoclue/index.html
@@ -101,3 +102,5 @@ share/gtk-doc/html/geoclue/simple-example.html
 share/gtk-doc/html/geoclue/simple-master-example.html
 share/gtk-doc/html/geoclue/style.css
 share/gtk-doc/html/geoclue/up.png
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
