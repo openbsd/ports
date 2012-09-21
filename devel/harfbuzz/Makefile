@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/09/20 13:42:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2012/09/21 06:31:27 ajacoutot Exp $
 
 COMMENT=	text shaping library
 
 DISTNAME=	harfbuzz-0.9.4
 EXTRACT_SUFX=	.tar.bz2
+REVISION=	0
 
 SHARED_LIBS +=  harfbuzz                  0.0 # 904.0
 
@@ -36,7 +37,6 @@ LIB_DEPENDS=	graphics/cairo \
 		textproc/icu4c
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	FREETYPE_LIBS="$$(pkg-config --libs freetype2) -lz"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 pre-configure:
