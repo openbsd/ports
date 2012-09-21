@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.184 2012/09/18 13:05:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.185 2012/09/21 13:16:49 ajacoutot Exp $
 
 COMMENT=		general-purpose utility library
 
-V=			2.32.4
+V=			2.33.14
 DISTNAME=		glib-${V}
 PKGNAME=		${DISTNAME:S/glib/glib2/}
 EXTRACT_SUFX=		.tar.xz
-
-REVISION=		3
 
 CATEGORIES=		devel
 
@@ -15,11 +13,11 @@ HOMEPAGE=		http://www.gtk.org/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
-SHARED_LIBS +=  glib-2.0             3200.0   # 3200.0
-SHARED_LIBS +=  gmodule-2.0          3200.0   # 3200.0
-SHARED_LIBS +=  gthread-2.0          3200.0   # 3200.0
-SHARED_LIBS +=  gobject-2.0          3200.0   # 3200.0
-SHARED_LIBS +=  gio-2.0              3200.0   # 3200.0
+SHARED_LIBS +=  glib-2.0             3400.0   # 3400.0
+SHARED_LIBS +=  gmodule-2.0          3400.0   # 3400.0
+SHARED_LIBS +=  gthread-2.0          3400.0   # 3400.0
+SHARED_LIBS +=  gobject-2.0          3400.0   # 3400.0
+SHARED_LIBS +=  gio-2.0              3400.0   # 3400.0
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -37,6 +35,10 @@ MODULES=		devel/gettext \
 MODPY_ADJ_FILES=	glib/gtester-report \
 			gio/gdbus-2.0/codegen/gdbus-codegen.in \
 			gio/tests/gdbus-testserver.py
+
+# man pages
+BUILD_DEPENDS +=	textproc/docbook \
+			textproc/libxslt
 
 LIB_DEPENDS=		devel/pcre \
 			devel/libelf \
@@ -56,10 +58,10 @@ USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
+			--with-xml-catalog=${LOCALBASE}/share/xml/catalog \
 			--enable-static \
 			--with-pcre=system \
 			--disable-gtk-doc \
-			--disable-Bsymbolic \
 			--disable-fam \
 			--disable-selinux \
 			--disable-systemtap \

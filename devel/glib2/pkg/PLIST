@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2012/09/18 13:05:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2012/09/21 13:16:49 ajacoutot Exp $
 @conflict glib2-docs-*
 @conflict glib2-fam-*
 @pkgpath devel/glib2,-docs
@@ -120,6 +120,7 @@ include/glib-2.0/gio/goutputstream.h
 include/glib-2.0/gio/gpermission.h
 include/glib-2.0/gio/gpollableinputstream.h
 include/glib-2.0/gio/gpollableoutputstream.h
+include/glib-2.0/gio/gpollableutils.h
 include/glib-2.0/gio/gproxy.h
 include/glib-2.0/gio/gproxyaddress.h
 include/glib-2.0/gio/gproxyaddressenumerator.h
@@ -147,6 +148,7 @@ include/glib-2.0/gio/gsocketservice.h
 include/glib-2.0/gio/gsrvtarget.h
 include/glib-2.0/gio/gtcpconnection.h
 include/glib-2.0/gio/gtcpwrapperconnection.h
+include/glib-2.0/gio/gtestdbus.h
 include/glib-2.0/gio/gthemedicon.h
 include/glib-2.0/gio/gthreadedsocketservice.h
 include/glib-2.0/gio/gtlsbackend.h
@@ -346,8 +348,8 @@ share/bash-completion/completions/gsettings
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/gdb/
 share/gdb/auto-load/
-share/gdb/auto-load/libglib-2.0.so.0.3200.4-gdb.py
-share/gdb/auto-load/libgobject-2.0.so.0.3200.4-gdb.py
+share/gdb/auto-load/libglib-2.0.so.0.3314.0-gdb.py
+share/gdb/auto-load/libgobject-2.0.so.0.3314.0-gdb.py
 share/glib-2.0/
 share/glib-2.0/gdb/
 share/glib-2.0/gdb/glib.py
@@ -456,6 +458,7 @@ share/gtk-doc/html/gio/GSocketService.html
 share/gtk-doc/html/gio/GSrvTarget.html
 share/gtk-doc/html/gio/GTcpConnection.html
 share/gtk-doc/html/gio/GTcpWrapperConnection.html
+share/gtk-doc/html/gio/GTestDBus.html
 share/gtk-doc/html/gio/GThemedIcon.html
 share/gtk-doc/html/gio/GThreadedSocketService.html
 share/gtk-doc/html/gio/GTlsBackend.html
@@ -488,6 +491,7 @@ share/gtk-doc/html/gio/api-index-2-26.html
 share/gtk-doc/html/gio/api-index-2-28.html
 share/gtk-doc/html/gio/api-index-2-30.html
 share/gtk-doc/html/gio/api-index-2-32.html
+share/gtk-doc/html/gio/api-index-2-34.html
 share/gtk-doc/html/gio/api-index-deprecated.html
 share/gtk-doc/html/gio/api-index-full.html
 share/gtk-doc/html/gio/application.html
@@ -495,22 +499,22 @@ share/gtk-doc/html/gio/async.html
 share/gtk-doc/html/gio/ch01.html
 share/gtk-doc/html/gio/ch02.html
 share/gtk-doc/html/gio/ch03.html
-share/gtk-doc/html/gio/ch27.html
-share/gtk-doc/html/gio/ch28.html
-share/gtk-doc/html/gio/ch28s02.html
-share/gtk-doc/html/gio/ch28s03.html
 share/gtk-doc/html/gio/ch29.html
-share/gtk-doc/html/gio/ch29s02.html
-share/gtk-doc/html/gio/ch29s03.html
-share/gtk-doc/html/gio/ch29s04.html
-share/gtk-doc/html/gio/ch29s05.html
-share/gtk-doc/html/gio/ch29s06.html
-share/gtk-doc/html/gio/ch29s07.html
 share/gtk-doc/html/gio/ch30.html
 share/gtk-doc/html/gio/ch30s02.html
 share/gtk-doc/html/gio/ch30s03.html
-share/gtk-doc/html/gio/ch30s04.html
-share/gtk-doc/html/gio/ch30s05.html
+share/gtk-doc/html/gio/ch31.html
+share/gtk-doc/html/gio/ch31s02.html
+share/gtk-doc/html/gio/ch31s03.html
+share/gtk-doc/html/gio/ch31s04.html
+share/gtk-doc/html/gio/ch31s05.html
+share/gtk-doc/html/gio/ch31s06.html
+share/gtk-doc/html/gio/ch31s07.html
+share/gtk-doc/html/gio/ch32.html
+share/gtk-doc/html/gio/ch32s02.html
+share/gtk-doc/html/gio/ch32s03.html
+share/gtk-doc/html/gio/ch32s04.html
+share/gtk-doc/html/gio/ch32s05.html
 share/gtk-doc/html/gio/conversion.html
 share/gtk-doc/html/gio/extending-gio.html
 share/gtk-doc/html/gio/extending.html
@@ -546,6 +550,7 @@ share/gtk-doc/html/gio/gio-Owning-Bus-Names.html
 share/gtk-doc/html/gio/gio-TLS-Overview.html
 share/gtk-doc/html/gio/gio-Unix-Mounts.html
 share/gtk-doc/html/gio/gio-Watching-Bus-Names.html
+share/gtk-doc/html/gio/gio-gpollableutils.html
 share/gtk-doc/html/gio/gio-hierarchy.html
 share/gtk-doc/html/gio/gio-querymodules.html
 share/gtk-doc/html/gio/gio.devhelp2
@@ -570,9 +575,11 @@ share/gtk-doc/html/gio/pt02.html
 share/gtk-doc/html/gio/resolver.html
 share/gtk-doc/html/gio/resources.html
 share/gtk-doc/html/gio/right.png
+share/gtk-doc/html/gio/running-gio-apps.html
 share/gtk-doc/html/gio/settings.html
 share/gtk-doc/html/gio/streaming.html
 share/gtk-doc/html/gio/style.css
+share/gtk-doc/html/gio/testing.html
 share/gtk-doc/html/gio/tls.html
 share/gtk-doc/html/gio/tools.html
 share/gtk-doc/html/gio/types.html
@@ -594,6 +601,7 @@ share/gtk-doc/html/glib/api-index-2-26.html
 share/gtk-doc/html/glib/api-index-2-28.html
 share/gtk-doc/html/glib/api-index-2-30.html
 share/gtk-doc/html/glib/api-index-2-32.html
+share/gtk-doc/html/glib/api-index-2-34.html
 share/gtk-doc/html/glib/api-index-2-4.html
 share/gtk-doc/html/glib/api-index-2-6.html
 share/gtk-doc/html/glib/api-index-2-8.html
@@ -679,6 +687,7 @@ share/gtk-doc/html/glib/glib-cross-compiling.html
 share/gtk-doc/html/glib/glib-data-types.html
 share/gtk-doc/html/glib/glib-fundamentals.html
 share/gtk-doc/html/glib/glib-gettextize.html
+share/gtk-doc/html/glib/glib-programming.html
 share/gtk-doc/html/glib/glib-regex-syntax.html
 share/gtk-doc/html/glib/glib-resources.html
 share/gtk-doc/html/glib/glib-running.html
@@ -714,13 +723,13 @@ share/gtk-doc/html/gobject/api-index-2-26.html
 share/gtk-doc/html/gobject/api-index-2-28.html
 share/gtk-doc/html/gobject/api-index-2-30.html
 share/gtk-doc/html/gobject/api-index-2-32.html
+share/gtk-doc/html/gobject/api-index-2-34.html
 share/gtk-doc/html/gobject/api-index-2-4.html
 share/gtk-doc/html/gobject/api-index-2-6.html
 share/gtk-doc/html/gobject/api-index-2-8.html
 share/gtk-doc/html/gobject/api-index-deprecated.html
 share/gtk-doc/html/gobject/api-index-full.html
 share/gtk-doc/html/gobject/ch01s02.html
-share/gtk-doc/html/gobject/ch06s03.html
 share/gtk-doc/html/gobject/chapter-gobject.html
 share/gtk-doc/html/gobject/chapter-gtype.html
 share/gtk-doc/html/gobject/chapter-intro.html
@@ -755,6 +764,8 @@ share/gtk-doc/html/gobject/howto-gobject-destruction.html
 share/gtk-doc/html/gobject/howto-gobject-methods.html
 share/gtk-doc/html/gobject/howto-gobject.html
 share/gtk-doc/html/gobject/howto-interface-implement.html
+share/gtk-doc/html/gobject/howto-interface-override.html
+share/gtk-doc/html/gobject/howto-interface-prerequisite.html
 share/gtk-doc/html/gobject/howto-interface-properties.html
 share/gtk-doc/html/gobject/howto-interface.html
 share/gtk-doc/html/gobject/howto-signals.html
