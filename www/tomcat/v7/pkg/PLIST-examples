@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.7 2012/07/09 08:16:54 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.8 2012/09/21 05:07:22 dcoppa Exp $
 @conflict jakarta-tomcat-examples-*
 @pkgpath www/jakarta-tomcat/v7,-examples
 @owner _tomcat
@@ -43,6 +43,7 @@ webapps/docs/api/org/
 webapps/docs/api/org/apache/
 webapps/docs/api/org/apache/catalina/
 webapps/docs/api/org/apache/catalina/AccessLog.html
+webapps/docs/api/org/apache/catalina/AsyncDispatcher.html
 webapps/docs/api/org/apache/catalina/Authenticator.html
 webapps/docs/api/org/apache/catalina/CatalinaFactory.html
 webapps/docs/api/org/apache/catalina/Cluster.html
@@ -721,6 +722,7 @@ webapps/docs/api/org/apache/catalina/users/package-tree.html
 webapps/docs/api/org/apache/catalina/util/
 webapps/docs/api/org/apache/catalina/util/Base64.html
 webapps/docs/api/org/apache/catalina/util/CharsetMapper.html
+webapps/docs/api/org/apache/catalina/util/ConcurrentMessageDigest.html
 webapps/docs/api/org/apache/catalina/util/ContextName.html
 webapps/docs/api/org/apache/catalina/util/Conversions.html
 webapps/docs/api/org/apache/catalina/util/CustomObjectInputStream.html
@@ -869,6 +871,7 @@ webapps/docs/api/org/apache/coyote/http11/AbstractHttp11Protocol.html
 webapps/docs/api/org/apache/coyote/http11/AbstractInputBuffer.html
 webapps/docs/api/org/apache/coyote/http11/AbstractOutputBuffer.html
 webapps/docs/api/org/apache/coyote/http11/Constants.html
+webapps/docs/api/org/apache/coyote/http11/HeadersTooLargeException.html
 webapps/docs/api/org/apache/coyote/http11/Http11AprProcessor.html
 webapps/docs/api/org/apache/coyote/http11/Http11AprProtocol.Http11ConnectionHandler.html
 webapps/docs/api/org/apache/coyote/http11/Http11AprProtocol.html
@@ -1410,7 +1413,10 @@ webapps/docs/api/org/apache/tomcat/util/bcel/classfile/ConstantFieldref.html
 webapps/docs/api/org/apache/tomcat/util/bcel/classfile/ConstantFloat.html
 webapps/docs/api/org/apache/tomcat/util/bcel/classfile/ConstantInteger.html
 webapps/docs/api/org/apache/tomcat/util/bcel/classfile/ConstantInterfaceMethodref.html
+webapps/docs/api/org/apache/tomcat/util/bcel/classfile/ConstantInvokeDynamic.html
 webapps/docs/api/org/apache/tomcat/util/bcel/classfile/ConstantLong.html
+webapps/docs/api/org/apache/tomcat/util/bcel/classfile/ConstantMethodHandle.html
+webapps/docs/api/org/apache/tomcat/util/bcel/classfile/ConstantMethodType.html
 webapps/docs/api/org/apache/tomcat/util/bcel/classfile/ConstantMethodref.html
 webapps/docs/api/org/apache/tomcat/util/bcel/classfile/ConstantNameAndType.html
 webapps/docs/api/org/apache/tomcat/util/bcel/classfile/ConstantPool.html
