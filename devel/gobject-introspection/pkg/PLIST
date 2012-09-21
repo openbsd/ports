@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2012/03/29 06:29:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2012/09/21 13:19:40 jasper Exp $
 bin/g-ir-annotation-tool
 @bin bin/g-ir-compiler
 @bin bin/g-ir-generate
@@ -55,6 +55,9 @@ lib/gobject-introspection/giscanner/annotationmain.pyo
 lib/gobject-introspection/giscanner/annotationparser.py
 lib/gobject-introspection/giscanner/annotationparser.pyc
 lib/gobject-introspection/giscanner/annotationparser.pyo
+lib/gobject-introspection/giscanner/annotationpatterns.py
+lib/gobject-introspection/giscanner/annotationpatterns.pyc
+lib/gobject-introspection/giscanner/annotationpatterns.pyo
 lib/gobject-introspection/giscanner/ast.py
 lib/gobject-introspection/giscanner/ast.pyc
 lib/gobject-introspection/giscanner/ast.pyo
