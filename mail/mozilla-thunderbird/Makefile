@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.157 2012/09/21 13:21:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.158 2012/09/22 10:30:17 landry Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
@@ -15,7 +15,7 @@ MOZILLA_CODENAME =	mail
 
 MULTI_PACKAGES =	-main -lightning -enigmail
 PKGNAME-main =		${PKGNAME}
-REVISION-main =		0
+REVISION-main =		1
 PKGNAME-lightning =	lightning-1.7beta1
 ENIG_V =		1.4.4
 PKGNAME-enigmail =	enigmail-${ENIG_V}
@@ -73,9 +73,6 @@ CONFIGURE_ENV +=	CPPFLAGS=-I${X11BASE}/include
 .if ${MACHINE_ARCH} == "powerpc"
 CONFIGURE_ENV +=	MOZ_DEBUG_FLAGS="-Os"
 .endif
-
-# EXTRA_DSO_LDOPTS += -lpangox-1.0
-RUN_DEPENDS-main +=	devel/pangox-compat
 
 LIB_DEPENDS-main =	${LIB_DEPENDS}
 WANTLIB-main =		${WANTLIB}

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2012/09/21 13:21:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2012/09/22 10:30:17 landry Exp $
 
 COMMENT =	Mozilla web browser
 
 # Don't forget to update devel/xulrunner/1.9 if patches changes.
 
 MOZILLA_VERSION =	3.6.28
-REVISION =		4
+REVISION =		5
 MOZILLA_BRANCH =	1.9.2
 MOZILLA_PROJECT =	firefox36
 MOZILLA_DIST =		firefox
@@ -32,9 +32,6 @@ BUILD_DEPENDS +=	graphics/netpbm
 MODULES =	www/mozilla devel/gettext lang/python
 
 MODPY_RUNDEP =	No
-
-# EXTRA_DSO_LDOPTS += -lpangox-1.0
-RUN_DEPENDS +=		devel/pangox-compat
 
 USE_GROFF =	Yes
 # Regression tests are too hard to adapt to run here
