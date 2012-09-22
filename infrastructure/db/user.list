@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.195 2012/09/15 13:52:35 fgsch Exp $
+$OpenBSD: user.list,v 1.196 2012/09/22 07:49:24 landry Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -212,3 +212,4 @@ id  user		group		port options
 701 _polkitd		_polkitd	sysutils/polkit
 702 _riak		_riak		databases/riak
 703 _ngircd		_ngircd		net/ngircd
+704 _gophernicus	_gophernicus	net/gophernicus
