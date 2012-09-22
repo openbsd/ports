@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.4 2012/09/22 09:22:45 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2012/09/22 09:25:06 ajacoutot Exp $
 
 # Most frequent usage of the GStreamer packages:
 # core		base library
@@ -9,11 +9,11 @@
 # plugins-libav	divx, mpeg4, h264, vp8 (same decoding capabilities as FFmpeg)
 #
 # i.e. applications that use GStreamer require:
-#     gstreamer-plugins-base and gstreamer-plugins-good
+#     gstreamer1-plugins-base and gstreamer1-plugins-good
 # audio/video support for MP3 decoding requires:
-#     gstreamer-plugins-ugly
+#     gstreamer1-plugins-ugly
 # support for most video codecs is provided by
-#     gstreamer-plugins-libav
+#     gstreamer1-plugins-libav
 
 SHARED_ONLY=		Yes
 
