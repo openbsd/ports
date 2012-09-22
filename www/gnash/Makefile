@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2012/06/15 08:32:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2012/09/22 17:33:29 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -49,7 +49,8 @@ LIB_DEPENDS=	audio/speex \
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
-CONFIGURE_STYLE= gnu
+AUTOCONF_VERSION=2.64
+CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS=	--disable-cygnal \
 		--disable-jemalloc \
 		--enable-renderer=agg \
