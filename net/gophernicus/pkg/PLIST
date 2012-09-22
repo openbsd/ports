@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/09/22 07:58:28 landry Exp $
+@newgroup _gophernicus:704
+@newuser _gophernicus:704:704:daemon:Gophernicus Gopher Server:/nonexistent:/sbin/nologin
+@bin sbin/in.gophernicus
+share/doc/gophernicus/
+share/doc/gophernicus/ChangeLog
+share/doc/gophernicus/INSTALL
+share/doc/gophernicus/LICENSE
+share/doc/gophernicus/README
+share/doc/gophernicus/README.Gophermap
+share/doc/gophernicus/TODO
+share/doc/gophernicus/gophertag
+@owner root
+@group daemon
+@mode 755
+@sample /var/gopher/
+@mode
+@owner
+@group
+share/examples/gophernicus/
+share/examples/gophernicus/gophermap
+@sample /var/gopher/gophermap
+share/doc/pkg-readmes/${FULLPKGNAME}

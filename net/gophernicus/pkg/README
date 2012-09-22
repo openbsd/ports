@@ -1,0 +1,22 @@
+$OpenBSD: README,v 1.1.1.1 2012/09/22 07:58:28 landry Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Setting up a gopher site
+========================
+
+After installing the gophernicus package, edit /etc/inetd.conf and add
+the following, all on one line:
+
+gopher stream tcp nowait _gophernicus ${TRUEPREFIX}/sbin/in.gophernicus	in.gophernicus -h "hostname"
+
+Replace "hostname" with the system's hostname, this should be valid
+and resolvable as it is used to construct links.
+
+By default Gophernicus serves documents from /var/gopher and will
+only serve files which are world-readable; being readable by the
+server process is not enough.
+
+For more information, see ${TRUEPREFIX}/share/doc/gophernicus/README.
