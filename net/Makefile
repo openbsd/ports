@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.770 2012/09/15 17:53:15 jeremy Exp $
+# $OpenBSD: Makefile,v 1.771 2012/09/22 07:59:35 landry Exp $
 
      SUBDIR =
      SUBDIR += BitTorrent
@@ -103,6 +103,7 @@
      SUBDIR += gnaughty
      SUBDIR += gnugk
      SUBDIR += gopher
+     SUBDIR += gophernicus
      SUBDIR += gotthard
      SUBDIR += gpodder
      SUBDIR += grake
