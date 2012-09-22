@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2012/09/01 14:36:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2012/09/22 06:08:31 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -52,7 +52,7 @@ AUTOCONF_VERSION=	2.69
 CONFIGURE_STYLE=	autoconf
 
 # We only enable the strict minimum for basic volume control support.
-# aucat(1) is the default sound server on OpenBSD and pulseaudio is only
+# sndiod(1) is the default sound server on OpenBSD and pulseaudio is only
 # needed for a couple of use cases (volume control, media-keys)
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-static \
