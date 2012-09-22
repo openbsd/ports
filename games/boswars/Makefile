@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2012/08/05 19:28:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2012/09/22 08:41:01 sthen Exp $
 
 COMMENT=	real-time strategy game
 
 V=		2.6.1
 DISTNAME=	boswars-${V}-src
 PKGNAME=	boswars-${V}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.boswars.org/
