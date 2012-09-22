@@ -1,0 +1,32 @@
+$OpenBSD: patch-ext_Makefile_am,v 1.1 2012/09/22 07:34:44 ajacoutot Exp $
+--- ext/Makefile.am.orig	Fri Sep 21 18:05:01 2012
++++ ext/Makefile.am	Fri Sep 21 18:05:27 2012
+@@ -4,6 +4,12 @@ else
+ ALSA_DIR=
+ endif
+ 
++if USE_SNDIO
++SNDIO_DIR = sndio
++else
++SNDIO_DIR =
++endif
++
+ if USE_CDPARANOIA
+ CDPARANOIA_DIR=cdparanoia
+ else
+@@ -50,6 +56,7 @@ endif
+ 
+ SUBDIRS = \
+   $(ALSA_DIR) \
++  $(SNDIO_DIR) \
+   $(CDPARANOIA_DIR) \
+   $(LIBVISUAL_DIR) \
+   $(OGG_DIR) \
+@@ -59,6 +66,7 @@ SUBDIRS = \
+ 
+ DIST_SUBDIRS = \
+   alsa \
++  sndio \
+   cdparanoia \
+   libvisual \
+   ogg \
