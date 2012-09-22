@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2012/09/18 07:54:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2012/09/22 06:09:43 ajacoutot Exp $
 
 # XXX ossaudio(3) is only enabled to be used as a mixing device by
 # audio/pulseaudio and x11/xfce4/xfce4-mixer
@@ -12,6 +12,8 @@ PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-good-${V}
 
 PKGNAME-main=		${PKGNAME}
 PKGNAME-pulse=		${GST_PKGNAME_PREFIX}-plugins-pulse-${V}
+
+REVISION-main=		0
 
 WANTLIB += ffi glib-2.0 gmodule-2.0 gobject-2.0 gstaudio-1.0 gstbase-1.0
 WANTLIB += gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
@@ -57,26 +59,7 @@ CONFIGURE_ARGS=		--disable-aalib \
 			--disable-sunaudio \
 			--disable-waveform
 
-### SNDIO ###
-CONFIGURE_ARGS +=	--disable-sndio # XXX someone will need to port this
-CONFIGURE_STYLE +=	gnu
-AUTOMAKE_VERSION=	1.12
-BUILD_DEPENDS +=	${MODGNU_AUTOMAKE_DEPENDS} \
-			${MODGNU_AUTOCONF_DEPENDS}
-BUILD_DEPENDS +=	devel/libtool # needs needs libtoolize
-
-post-extract:
-	cp -R ${FILESDIR} ${WRKSRC}/ext/sndio
-
-# autopoint(1) uses HOME, make sure it exists
 pre-configure:
-	cd ${WRKSRC} && HOME=${WRKDIST} \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		AUTOMAKE=automake-${AUTOMAKE_VERSION} \
-		NOCONFIGURE="true" \
-		${CONFIGURE_ENV} ./autogen.sh ${CONFIGURE_ARGS}
-### END SNDIO ###
 	perl -pi -e 's,/dev/dsp,/dev/audio,g' \
 		${WRKSRC}/docs/plugins/gst-plugins-good-plugins.args \
 		${WRKSRC}/docs/plugins/html/gst-plugins-good-plugins-osssink.html \
