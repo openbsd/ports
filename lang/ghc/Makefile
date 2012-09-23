@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2012/09/20 16:38:16 kili Exp $
+# $OpenBSD: Makefile,v 1.79 2012/09/23 20:26:57 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -35,7 +35,8 @@ PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
 PKG_ARCH-doc =		*
-BUILD_DEPENDS =		textproc/dblatex \
+BUILD_DEPENDS =		archivers/gtar \
+			textproc/dblatex \
 			textproc/docbook>=4.5 \
 			textproc/docbook-xsl \
 			textproc/libxslt
@@ -178,12 +179,7 @@ BOOTSTRAP_DATE =	20120917
 # Create a bootstrapper. This compiles a stripped-down version of
 # ghc and creates a `bindist', i.e. a tarball with binaries that
 # can be used for bootstrapping.
-# You have to install gtar in order to run this target!
 bootstrap: patch
-	@if [ ! -x ${LOCALBASE}/bin/gtar ]; then \
-		echo Please pkg_add gtar.; \
-		false; \
-	fi
 	cd ${WRKDIR} && rm -rf bin
 
 	echo HSCOLOUR_SRCS=NO > ${WRKSRC}/mk/build.mk
