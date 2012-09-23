@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: imake.port.mk,v 1.6 2011/10/23 22:06:01 matthieu Exp $
+# $OpenBSD: imake.port.mk,v 1.7 2012/09/23 08:03:55 matthieu Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -15,16 +15,15 @@ XMKMF +=		-DPorts
 IGNORE =	"uses imake, but ${X11BASE} not found"
 .endif
 
+MODIMAKE_DEPENDS = \
+				 devel/imake \
+				 devel/imake-cf
+
+BUILD_DEPENDS += ${MODIMAKE_DEPENDS}
+
 MODIMAKE_configure = \
-	if [ -e ${X11BASE}/lib/X11/config/ports.cf ] || \
-		fgrep >/dev/null 2>/dev/null Ports \
-			${X11BASE}/lib/X11/config/OpenBSD.cf; then \
-		cd ${WRKSRC} && ${_SYSTRACE_CMD} ${SETENV} ${MAKE_ENV} ${XMKMF}; \
-	else \
-		echo >&2 "Error: your X installation is incomplete"; \
-		echo >&2 "Please install the xshare tarball"; \
-		exit 1; \
-	fi
+		cd ${WRKSRC} && ${_SYSTRACE_CMD} ${SETENV} ${MAKE_ENV} ${XMKMF};
+
 # Kludge
 .if ${CONFIGURE_STYLE:Mimake}
 MODIMAKE_pre-install = \
