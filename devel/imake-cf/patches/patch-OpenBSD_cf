@@ -1,7 +1,7 @@
-$OpenBSD: patch-OpenBSD_cf,v 1.2 2012/09/02 14:37:49 ajacoutot Exp $
---- OpenBSD.cf.orig	Thu Jan  6 05:31:00 2011
-+++ OpenBSD.cf	Mon Aug  6 13:01:09 2012
-@@ -26,6 +26,8 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
+$OpenBSD: patch-OpenBSD_cf,v 1.3 2012/09/23 07:58:50 matthieu Exp $
+--- OpenBSD.cf.orig	Fri Oct 16 23:45:42 2009
++++ OpenBSD.cf	Sun Sep  2 20:30:21 2012
+@@ -26,10 +26,12 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
  #define LibDir			/usr/local/lib/X11
  #define UsrLibDir		/usr/local/lib
  #define ManDirectoryRoot	/usr/local/man
@@ -10,6 +10,11 @@ $OpenBSD: patch-OpenBSD_cf,v 1.2 2012/09/02 14:37:49 ajacoutot Exp $
  #define LdPreLib		-L/usr/X11R6/lib -L/usr/local/lib
  #define XpmLibDir		/usr/X11R6/lib
  #define XpmIncDir		/usr/X11R6/include
+-#define ConfigDir		/usr/X11R6/lib/X11/config
++#define ConfigDir		${LOCALBASE}/lib/X11/config
+ #define IncRoot			/usr/local/include
+ #define TopXInclude		-I/usr/X11R6/include
+ #define ImakeCmd		imake -DPorts
 @@ -244,9 +246,22 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
  /*
   * Documentation formatting
