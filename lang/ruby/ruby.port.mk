@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.50 2011/12/09 21:41:43 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.51 2012/09/23 16:56:15 jeremy Exp $
 
 # ruby module
 
@@ -16,20 +16,23 @@ MODRUBY_HANDLE_FLAVORS ?= No
 # the same port directory for gem and extconf based ports.  It does this
 # by adding FLAVORS automatically, unless FLAVORS are already defined
 # or the port defines MODRUBY_REV to tie the port to a specific ruby
-# version.  For example, JDBC gem ports want to set MODRUBY_REV=jruby,
+# version.  For example, JDBC gem ports want to set FLAVOR=jruby,
 # since they don't work on ruby 1.8 or ruby 1.9.
 .if !defined(MODRUBY_REV)
 .  if ${MODRUBY_HANDLE_FLAVORS:L:Myes}
+
+# If ruby.pork.mk should handle FLAVORs, define a separate FLAVOR
+# for each ruby interpreter
 .    if !defined(FLAVORS)
-FLAVORS?=		ruby19 rbx jruby
+FLAVORS?=		ruby18 ruby19 rbx jruby
 .    endif
 
 # Instead of adding flavors to the end of the package name, we use
 # different package stems for ruby 1.8, ruby 1.9, and jruby packages.
 # ruby 1.8 uses the historical ruby-* package stem, ruby 1.9 uses
-# ruby19-* and jruby uses jruby-*.  In most cases, PKGNAME in the port
-# should be set to the same as DISTNAME, and this will insert the
-# correct package prefix.
+# ruby19-*, jruby uses jruby-*, and rubinius uses rbx.  In most cases,
+# PKGNAME in the port should be set to the same as DISTNAME, and this
+# will insert the correct package prefix.
 FULLPKGNAME?=		${MODRUBY_PKG_PREFIX}-${PKGNAME}
 
 # If the port can work on both ruby 1.9 and another version of ruby,
@@ -43,23 +46,38 @@ FULLPKGNAME?=		${MODRUBY_PKG_PREFIX}-${PKGNAME}
 SUBST_VARS+=		GEM_BIN_SUFFIX GEM_MAN_SUFFIX
 
 FLAVOR?=
-# Without a FLAVOR, assume the use of ruby 1.8.
+# Without a FLAVOR, assume the use of ruby 1.9.
 .     if empty(FLAVOR)
-MODRUBY_REV=		1.8
+FLAVOR =		ruby19
+.     endif
+
 # Check for conflicting FLAVORs and set MODRUBY_REV appropriately based
 # on the FLAVOR.
+.    if ${FLAVOR:L:Mruby18}
+.      if ${FLAVOR:L:Mruby19} || ${FLAVOR:L:Mjruby} || ${FLAVOR:L:Mrbx}
+ERRORS+=		"Fatal: Conflicting flavors used: ${FLAVOR}"
+.      endif
+MODRUBY_REV=		1.8
+
+# Handle updates from older ruby 1.8 ports that didn't use the ruby18
+# FLAVOR by adding a @pkgpath entry to the PLIST.
+SUBST_VARS+=	PKGPATH
+PKG_ARGS+=	-f ${PORTSDIR}/lang/ruby/ruby18.PLIST
+
 .    elif ${FLAVOR:L:Mruby19}
-.      if ${FLAVOR:L:Mjruby} || ${FLAVOR:L:Mrbx}
+.      if ${FLAVOR:L:Mruby18} || ${FLAVOR:L:Mjruby} || ${FLAVOR:L:Mrbx}
 ERRORS+=		"Fatal: Conflicting flavors used: ${FLAVOR}"
 .      endif
 MODRUBY_REV=		1.9
+
 .    elif ${FLAVOR:L:Mjruby}
-.      if ${FLAVOR:L:Mruby19} || ${FLAVOR:L:Mrbx}
+.      if ${FLAVOR:L:Mruby18} || ${FLAVOR:L:Mruby19} || ${FLAVOR:L:Mrbx}
 ERRORS+=		"Fatal: Conflicting flavors used: ${FLAVOR}"
 .      endif
 MODRUBY_REV=		jruby
+
 .    elif ${FLAVOR:L:Mrbx}
-.      if ${FLAVOR:L:Mruby19} || ${FLAVOR:L:Mjruby}
+.      if ${FLAVOR:L:Mruby18} || ${FLAVOR:L:Mruby19} || ${FLAVOR:L:Mjruby}
 ERRORS+=		"Fatal: Conflicting flavors used: ${FLAVOR}"
 .      endif
 MODRUBY_REV=		rbx
@@ -89,7 +107,7 @@ GEM_BIN_SUFFIX =
 MODRUBY_LIBREV=		1.8
 MODRUBY_BINREV=		18
 MODRUBY_PKG_PREFIX=	ruby
-MODRUBY_FLAVOR =	
+MODRUBY_FLAVOR =	ruby18
 GEM_MAN_SUFFIX =	
 .elif ${MODRUBY_REV} == 1.9
 MODRUBY_LIBREV=		1.9.1
@@ -342,15 +360,11 @@ GEM_BASE_BIN=	${GEM_BASE_LIB}/bin
 # We purposely do not install documentation for ruby gems, because
 # the filenames are generated differently on different ruby versions,
 # and most use 1 file per method, which is insane.
-GEM_FLAGS=	--local --no-rdoc --no-ri --no-force --verbose --backtrace \
+GEM_FLAGS+=	--local --no-rdoc --no-ri --no-force --verbose --backtrace \
 		--user-install
 _GEM_CONTENT=	${WRKDIR}/gem-content
 _GEM_DATAFILE=	${_GEM_CONTENT}/data.tar.gz
 _GEM_PATCHED=	${DISTNAME}${EXTRACT_SUFX}
-
-.  if ${CONFIGURE_STYLE:L:Mformat-executable}
-GEM_FLAGS+=	--format-executable
-.  endif
 
 # Unpack the gem into WRKDIST so it can be patched.  Include the gem metadata
 # under WRKDIST so it can be patched easily to remove or change dependencies.
