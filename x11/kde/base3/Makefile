@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2012/09/01 14:37:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.110 2012/09/23 08:08:49 matthieu Exp $
 
 COMMENT-main = 		K Desktop Environment, basic applications
 COMMENT-samba =		K Desktop Environment, samba support
@@ -26,6 +26,8 @@ MULTI_PACKAGES =	-main -samba
 FLAVORS =		debug
 
 MODULES =	x11/kde devel/gettext
+
+BUILD_DEPENDS = devel/imake
 
 LIB_DEPENDS =	x11/kde/libs3
 WANTLIB = ICE SM X11 Xext Xrender art_lgpl_2 idn jpeg \
