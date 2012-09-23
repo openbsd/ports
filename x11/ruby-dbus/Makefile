@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2011/09/16 12:29:17 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2012/09/23 17:14:45 jeremy Exp $
 
 COMMENT=	Ruby implementation of the D-Bus protocol
 
 DISTNAME=	ruby-dbus-0.2.1
-REVISION=	3
+PKGNAME=	ruby19-dbus-0.2.1
 
 CATEGORIES=	x11 devel
 
@@ -16,6 +16,7 @@ PERMIT_DISTFILES_FTP=	yes
 MASTER_SITES=	https://trac.luon.net/data/ruby-dbus/releases/
 
 MODULES=	lang/ruby
+MODRUBY_REV=	1.9
 
 CONFIGURE_STYLE=ruby setup
 
