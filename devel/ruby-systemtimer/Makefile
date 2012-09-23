@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2011/12/02 19:34:42 jeremy Exp $
+# $OpenBSD: Makefile,v 1.14 2012/09/23 17:00:49 jeremy Exp $
 
 COMMENT=	a ruby timer based on SIGALRM
 
 DISTNAME=	SystemTimer-1.2.3
 PKGNAME=	${DISTNAME:L}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 
 # ruby or gpl
@@ -16,6 +16,9 @@ PERMIT_DISTFILES_FTP=	yes
 MODULES=	lang/ruby
 
 CONFIGURE_STYLE=ruby gem ext
+
+FLAVORS=	ruby18
+FLAVOR=		ruby18
 
 # Regress tests not enabled, as they depend on ruby-dust,
 # which is dead upstream and won't be imported.  You can

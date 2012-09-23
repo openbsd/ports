@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2011/11/09 00:17:38 jeremy Exp $
+# $OpenBSD: Makefile,v 1.17 2012/09/23 17:00:49 jeremy Exp $
 
 COMMENT=	ruby bindings for RRDtool
 
 V=		0.6.0
 DISTNAME=	RubyRRDtool-$V
 PKGNAME=	rrdtool-$V
-REVISION=	9
+REVISION=	10
 CATEGORIES=	net
 
 HOMEPAGE=	http://rubyrrdtool.rubyforge.org/
@@ -17,6 +17,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	art_lgpl_2 freetype png rrd z
+
+FLAVORS=	ruby18
+FLAVOR=		ruby18
 
 MODULES=	lang/ruby
 

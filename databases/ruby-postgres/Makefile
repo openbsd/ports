@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2011/09/16 08:48:05 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2012/09/23 17:00:49 jeremy Exp $
 
 COMMENT=	access a PostgreSQL database from ruby
 
 DISTNAME=	postgres-0.7.9.2008.01.28
-REVISION =	5
+REVISION =	6
 CATEGORIES=	databases
 
 MAINTAINER=	Jeremy Evans <jeremy@openbsd.org> 
@@ -13,6 +13,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+FLAVORS =	ruby18
+FLAVOR =	ruby18
 
 WANTLIB=	pq>=2
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2011/11/09 00:17:38 jeremy Exp $
+# $OpenBSD: Makefile,v 1.15 2012/09/23 17:00:49 jeremy Exp $
 
 COMMENT =	extracts the parse tree for an entire class or a method
 
 DISTNAME =	ParseTree-3.0.4
 PKGNAME =	${DISTNAME:L}
-REVISION =	5
+REVISION =	6
 CATEGORIES =	devel
 
 HOMEPAGE =	http://www.zenspider.com/ZSS/Products/ParseTree/
@@ -18,6 +18,9 @@ PERMIT_DISTFILES_FTP =	Yes
 MODULES =		lang/ruby
 
 CONFIGURE_STYLE =	ruby gem
+
+FLAVORS =		ruby18
+FLAVOR =		ruby18
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/ruby-rubyinline,${MODRUBY_FLAVOR}>=3.7.0 \
