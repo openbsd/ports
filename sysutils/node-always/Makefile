@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/07/12 21:44:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/09/23 17:31:19 jasper Exp $
 
 COMMENT =	run a Node.js process, restarting on file changes or crashes
 
-NPM_VERSION =	1.1.1
+NPM_VERSION =	2.0.0
 NPM_NAME =	always
 CATEGORIES =	sysutils
 
