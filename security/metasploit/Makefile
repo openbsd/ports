@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/16 11:41:39 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2012/09/23 17:19:51 jeremy Exp $
 
 COMMENT-main = 	penetration testing resources
 COMMENT-mysql = penetration testing resources (mysql backend)
@@ -10,7 +10,7 @@ PKGNAME-main =	metasploit-${V}
 PKGNAME-mysql =	metasploit-mysql-${V}
 PKGNAME-pgsql =	metasploit-pgssql-${V}
 DISTNAME =	framework-${V}
-REVISION =	0
+REVISION =	1
 
 EXTRACT_SUFX =	.tar.bz2
 
@@ -36,8 +36,8 @@ RUN_DEPENDS-main =	${MODRUBY_ICONV_DEPENDS} \
 			devel/ruby-gems \
 			devel/nasm \
 			net/nmap \
-			net/ruby-pcaprub-msf
-RUN_DEPENDS-mysql =	databases/ruby-mysql \
+			net/ruby-pcaprub-msf,${MODRUBY_FLAVOR}
+RUN_DEPENDS-mysql =	databases/ruby-mysql,${MODRUBY_FLAVOR} \
 			security/metasploit
 RUN_DEPENDS-pgsql =	databases/ruby-postgres \
 			security/metasploit
