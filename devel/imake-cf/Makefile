@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2012/09/02 18:01:48 matthieu Exp $
+# $OpenBSD: Makefile,v 1.4 2012/09/23 07:59:29 matthieu Exp $
 
 PKG_ARCH = 	*
 COMMENT =  	config files for imake
@@ -7,7 +7,7 @@ DISTNAME = 	xorg-cf-files-1.0.4
 PKGNAME = 	imake-cf-1.0.4
 MASTER_SITES = 	http://ftp.x.org/pub/individual/util/
 
-REVISION =	1
+REVISION =	2
 
 PERMIT_DISTFILES_CDROM = 	Yes
 PERMIT_DISTFILES_FTP = 		Yes
@@ -33,6 +33,8 @@ do-install:
 	for f in ${WRKSRC}/*.{cf,def,rules,tmpl}; do \
 		${INSTALL_DATA} $$f ${XCONFDIR}; \
 	done
+	rm -f ${XCONFIGDIR}/Motif.rules
+	rm -f ${XCONFIGDIR}/Motif.tmpl
 	touch ${XCONFDIR}/host.def
 	touch ${XCONFDIR}/date.def
 	touch ${XCONFDIR}/version.def
