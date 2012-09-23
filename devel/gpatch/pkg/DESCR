@@ -1,0 +1,9 @@
+GNU patch is the Free Software Foundation's version of the patch(1)
+command.
+
+Patch takes a patch file containing a difference listing produced
+by the diff program and applies those differences to one or more
+original files, producing patched versions.
+
+The patch binary is prefixed with the letter g to differentiate it
+from the standard application with the same name.
