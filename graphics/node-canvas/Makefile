@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/09/23 17:29:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2012/09/23 17:30:16 jasper Exp $
 
 COMMENT =	Cairo-backed Canvas implementation for Node.js
 
@@ -14,6 +14,9 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
+WANTLIB += GL X11 Xrender cairo crypto expat fontconfig freetype
+WANTLIB += glib-2.0 gobject-2.0 pixman-1 png pthread pthread-stubs
+WANTLIB += ssl xcb xcb-render xcb-shm z
 
 MODULES =		devel/gettext \
 			lang/node
