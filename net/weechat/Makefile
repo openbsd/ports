@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2012/09/19 08:15:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2012/09/23 17:05:49 jeremy Exp $
 
 COMMENT-main=	fast, light and extensible chat client
 COMMENT-lua=	Lua bindings for weechat
@@ -16,7 +16,7 @@ REVISION-lua=	1
 PKGNAME-python=	weechat-python-${V}
 REVISION-python=0
 PKGNAME-ruby=	weechat-ruby-${V}
-REVISION-ruby=	0
+REVISION-ruby=	1
 PKGNAME-tcl=	weechat-tcl-${V}
 REVISION-tcl=	0
 
@@ -54,6 +54,7 @@ MODULES=	devel/cmake \
 MODLUA_RUNDEP=	No
 MODPY_RUNDEP=	No
 MODRUBY_RUNDEP=	No
+MODRUBY_REV=	1.9
 
 LIB_DEPENDS=	security/libgcrypt \
 		security/gnutls \
