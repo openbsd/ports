@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2010/11/07 19:52:00 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2012/09/23 08:05:53 matthieu Exp $
 @conflict lesstif-*
 @pkgpath x11/openmotif
 @bin bin/mwm
@@ -282,9 +282,7 @@ lib/X11/bindings/tek
 lib/X11/bindings/xmbind.alias
 lib/X11/config/
 lib/X11/config/Motif.rules
-@sample /usr/X11R6/lib/X11/config/Motif.rules
 lib/X11/config/Motif.tmpl
-@sample /usr/X11R6/lib/X11/config/Motif.tmpl
 lib/X11/system.mwmrc
 lib/libMrm.a
 lib/libMrm.la
