@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/07/17 09:55:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/09/23 17:52:27 jasper Exp $
 
 COMMENT =	GObject Introspection bindings for Node.js
 
-NPM_VERSION =	0.0.2
+NPM_VERSION =	0.1.0
 NPM_NAME =	gir
 CATEGORIES =	devel
 
@@ -19,8 +19,8 @@ PERMIT_DISTFILES_FTP =	Yes
 MODULES =		devel/gettext \
 			lang/node
 
-WANTLIB += ffi girepository-1.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 pcre
+WANTLIB += crypto girepository-1.0 glib-2.0 gobject-2.0 pthread
+WANTLIB += ssl z
 
 LIB_DEPENDS =		devel/gobject-introspection
 
