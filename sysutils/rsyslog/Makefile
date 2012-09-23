@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2012/01/25 11:03:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2012/09/23 19:33:02 jasper Exp $
 
 SHARED_ONLY =		Yes
 
@@ -15,9 +15,9 @@ PKGNAME-mysql =		rsyslog-mysql-$V
 PKGNAME-pgsql =		rsyslog-pgsql-$V
 CATEGORIES =		sysutils
 
-REVISION-main =		4
-REVISION-mysql =	1
-REVISION-pgsql =	1
+REVISION-main =		5
+REVISION-mysql =	2
+REVISION-pgsql =	2
 
 HOMEPAGE =		http://www.rsyslog.com/
 
@@ -29,7 +29,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		devel/gettext
 
-WANTLIB-main +=		c gmp hogweed nettle gnutls pthread
+WANTLIB-main +=		c gmp hogweed nettle gnutls pthread p11-kit
 WANTLIB-main +=		relp tasn1 z ${MODGETTEXT_WANTLIB}
 WANTLIB-mysql +=	crypto m mysqlclient ssl z
 WANTLIB-pgsql +=	crypto com_err pq ssl

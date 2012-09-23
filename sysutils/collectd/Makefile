@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2012/04/28 10:52:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2012/09/23 19:33:02 jasper Exp $
 
 COMMENT-main =		system metrics collection engine
 COMMENT-mysql =		collectd mysql plugin
@@ -15,11 +15,11 @@ PKGNAME-rrdtool =	collectd-rrdtool-$V
 PKGNAME-snmp =		collectd-snmp-$V
 CATEGORIES =		sysutils
 
-REVISION-main=		2
-REVISION-mysql =	0
-REVISION-pgsql =	0
-REVISION-rrtool =	0
-REVISION-snmp =		0
+REVISION-main=		3
+REVISION-mysql =	1
+REVISION-pgsql =	1
+REVISION-rrtool =	1
+REVISION-snmp =		1
 
 HOMEPAGE =		http://www.collectd.org/
 SHARED_LIBS +=		collectdclient 0.0
@@ -37,19 +37,19 @@ MODULES =		devel/gettext
 
 MULTI_PACKAGES =	-main -mysql -pgsql -rrdtool -snmp
 
-WANTLIB-mysql =		crypto m ssl z mysqlclient
+WANTLIB-mysql =		crypto m ssl z mysqlclient pthread
 LIB_DEPENDS-mysql =	databases/mysql
 RUN_DEPENDS-mysql =	collectd-$V:${BASE_PKGPATH},-main
 
-WANTLIB-pgsql =		pq
+WANTLIB-pgsql =		pq com_err crypto pthread ssl
 LIB_DEPENDS-pgsql =	databases/postgresql
 RUN_DEPENDS-pgsql =	collectd-$V:${BASE_PKGPATH},-main
 
-WANTLIB-rrdtool =	art_lgpl_2 freetype m png z rrd_th
+WANTLIB-rrdtool =	art_lgpl_2 freetype m png z rrd_th pthread
 LIB_DEPENDS-rrdtool =	net/rrdtool
 RUN_DEPENDS-rrdtool =	collectd-$V:${BASE_PKGPATH},-main
 
-WANTLIB-snmp =		crypto netsnmp
+WANTLIB-snmp =		crypto netsnmp m pthread
 LIB_DEPENDS-snmp =	net/net-snmp
 RUN_DEPENDS-snmp =	collectd-$V:${BASE_PKGPATH},-main
 

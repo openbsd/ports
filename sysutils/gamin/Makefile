@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.34 2012/09/01 14:36:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2012/09/23 19:33:02 jasper Exp $
 
-# XXX fix building with glib2 >= 2.29 (G_CONST_RETURN is deprecated)	
+# XXX fix building with glib2 >= 2.29 (G_CONST_RETURN is deprecated)
 CFLAGS +=	"-DG_CONST_RETURN=const"
 
 COMMENT-main=	file and directory monitoring system
@@ -12,8 +12,8 @@ GNOME_VERSION=	0.1.10
 PKGNAME-main=	${DISTNAME}
 PKGNAME-python=	py-gamin-${GNOME_VERSION}
 
-REVISION-main=	19
-REVISION-python=7
+REVISION-main=	20
+REVISION-python=8
 
 SHARED_LIBS +=  gamin-1              0.0      # .1.10
 SHARED_LIBS +=  fam                  1.0      # .0.0
@@ -52,7 +52,7 @@ LIB_DEPENDS-python = 	${BUILD_PKGPATH},-main
 
 .if ${BUILD_PACKAGES:M-python}
 MODULES +=		lang/python
-WANTLIB-python += 	gamin-1
+WANTLIB-python += 	gamin-1 pthread
 RUN_DEPENDS-python += 	${MODPY_RUN_DEPENDS}
 .else
 CONFIGURE_ARGS += 	--without-python
