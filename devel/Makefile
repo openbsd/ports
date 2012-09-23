@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1072 2012/09/21 13:19:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1073 2012/09/23 08:04:23 matthieu Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -263,6 +263,8 @@
      SUBDIR += hudson
      SUBDIR += hyena
      SUBDIR += id-utils
+     SUBDIR += imake
+     SUBDIR += imake-cf
      SUBDIR += iniparser
      SUBDIR += intellij
      SUBDIR += ipython
