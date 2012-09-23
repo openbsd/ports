@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2011/11/17 16:08:00 jeremy Exp $
+# $OpenBSD: Makefile,v 1.23 2012/09/23 17:02:42 jeremy Exp $
 
 COMMENT=	ruby make
 
 DISTNAME=	rake-0.9.2.2
+REVISION =	0
 CATEGORIES=	devel
 
 # MIT License
@@ -15,11 +16,13 @@ HOMEPAGE=       http://rake.rubyforge.org/
 
 MODULES=	lang/ruby
 
-CONFIGURE_STYLE=ruby gem format-executable
+CONFIGURE_STYLE=ruby gem
+GEM_FLAGS=	--format-executable
 
 # ruby 1.9, jruby, and rubinius all ship with rake, so
-# force the empty (ruby 1.8) FLAVOR.
-FLAVOR=
+# force the ruby18 FLAVOR.
+FLAVORS=	ruby18
+FLAVOR=		ruby18
 
 REGRESS_DEPENDS=${FULLPKGNAME}:${BUILD_PKGPATH} \
 		devel/ruby-rcov \
