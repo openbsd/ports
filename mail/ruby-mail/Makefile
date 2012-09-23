@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2011/12/13 17:54:16 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2012/09/23 16:57:34 jeremy Exp $
 
 COMMENT=	easy email delivery and testing for ruby
 
 DISTNAME=	mail-2.3.0
+REVISION =	0
 CATEGORIES=	mail
 
 # MIT License

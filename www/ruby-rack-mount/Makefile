@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2011/12/13 17:59:06 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2012/09/23 16:57:35 jeremy Exp $
 
 COMMENT=		stackable dynamic tree based Rack router
 
 DISTNAME=		rack-mount-0.8.3
+REVISION =		0
 CATEGORIES=		www
 
 HOMEPAGE=		https://github.com/josh/rack-mount

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2011/09/16 08:48:04 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2012/09/23 16:57:32 jeremy Exp $
 
 COMMENT =	ruby Object Relational Mapper
 
 DISTNAME =	data_mapper-${VERSION}
-REVISION =	1
+REVISION =	2
 
 RUN_DEPENDS =	databases/ruby-datamapper/core,${MODRUBY_FLAVOR}=${VERSION} \
 		databases/ruby-datamapper/aggregates,${MODRUBY_FLAVOR}=${VERSION} \

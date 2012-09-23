@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2011/09/16 11:41:41 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2012/09/23 16:57:35 jeremy Exp $
 
 COMMENT=		alternative to ruby ri command-line tool
 
 DISTNAME=		fastri-0.3.1.1
-REVISION =		5
+REVISION =		6
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://rubyforge.org/projects/fastri/

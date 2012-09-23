@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/12/02 19:34:42 jeremy Exp $
+# $OpenBSD: Makefile,v 1.3 2012/09/23 16:57:33 jeremy Exp $
 
 COMMENT =		simple helper for creating rubygem projects
 
 DISTNAME =		jeweler-1.6.4
+REVISION =		0
 CATEGORIES =		devel
 
 HOMEPAGE =		https://github.com/technicalpickles/jeweler

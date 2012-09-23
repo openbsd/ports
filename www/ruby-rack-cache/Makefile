@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/12/13 17:38:07 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2012/09/23 16:57:35 jeremy Exp $
 
 COMMENT =	HTTP Caching for Rack
 
 DISTNAME =	rack-cache-1.1
+REVISION =	0
 CATEGORIES =	www
 
 HOMEPAGE =	http://rtomayko.github.com/rack-cache/

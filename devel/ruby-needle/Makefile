@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2011/09/16 09:24:57 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2012/09/23 16:57:34 jeremy Exp $
 
 COMMENT =	dependency-injection/inversion-of-control container for Ruby
 
 DISTNAME =	needle-1.3.0
-REVISION =	5
+REVISION =	6
 CATEGORIES =	devel
 
 # bsd/ruby

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/12/13 17:39:09 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2012/09/23 16:57:35 jeremy Exp $
 
 COMMENT =	force SSL/TLS in your rack app
 
 DISTNAME =	rack-ssl-1.3.2
+REVISION =	0
 CATEGORIES =	www
 
 HOMEPAGE =	https://github.com/josh/rack-ssl

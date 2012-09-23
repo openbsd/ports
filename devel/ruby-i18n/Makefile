@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2011/12/13 17:52:28 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2012/09/23 16:57:33 jeremy Exp $
 
 COMMENT =	ruby internationalization and localization solution
 
 DISTNAME =	i18n-0.6.0
+REVISION =	0
 CATEGORIES =	devel
 
 HOMEPAGE=	https://github.com/svenfuchs/i18n

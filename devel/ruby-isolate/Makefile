@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2011/11/17 17:31:39 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2012/09/23 16:57:33 jeremy Exp $
 
 COMMENT =	very simple RubyGems sandbox
 
 DISTNAME =	isolate-3.2.1
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel
 
 HOMEPAGE=	http://github.com/jbarnette/isolate

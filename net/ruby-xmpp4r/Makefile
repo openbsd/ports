@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2011/09/16 11:13:40 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2012/09/23 16:57:35 jeremy Exp $
 
 COMMENT=	Ruby XMPP/Jabber library
 
 DISTNAME=	xmpp4r-0.4
-REVISION=	4
+REVISION=	5
 CATEGORIES=	net
 
 MAINTAINER=	joshua stein <jcs@openbsd.org>

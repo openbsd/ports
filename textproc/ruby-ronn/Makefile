@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2012/09/15 07:01:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2012/09/23 16:57:35 jeremy Exp $
 
 COMMENT =		builds man pages
 
 DISTNAME =		ronn-0.7.3
-REVISION =		0
+REVISION =		1
 CATEGORIES =		textproc
 
 HOMEPAGE =		http://rtomayko.github.com/ronn/

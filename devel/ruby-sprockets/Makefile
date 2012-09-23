@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/12/13 17:37:06 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2012/09/23 16:57:34 jeremy Exp $
 
 COMMENT =	rack-based asset packaging system
 
 DISTNAME =	sprockets-2.0.3
+REVISION =	0
 CATEGORIES =	devel	
 
 HOMEPAGE =	https://github.com/sstephenson/sprockets

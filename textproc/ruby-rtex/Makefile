@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/16 11:41:42 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2012/09/23 16:57:35 jeremy Exp $
 
 COMMENT =	ruby library to the LaTeX typesetting system
 
 DISTNAME =	rtex-2.1.1
-REVISION=	0
+REVISION=	1
 CATEGORIES =	textproc
 
 # MIT

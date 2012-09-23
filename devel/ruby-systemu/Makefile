@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/12/21 19:27:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/09/23 16:57:34 jeremy Exp $
 
 COMMENT=		portable replacement for popen4
 
 DISTNAME=		systemu-2.4.2
+REVISION =		0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://rubyforge.org/projects/codeforpeople/

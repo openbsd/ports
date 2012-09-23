@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2011/09/16 08:48:04 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2012/09/23 16:57:32 jeremy Exp $
 
 COMMENT =	CouchDB persistence layer written in Ruby
 
 DISTNAME =	couch_potato-0.2.12
-REVISION =	4
+REVISION =	5
 CATEGORIES =	databases
 
 HOMEPAGE =	http://github.com/langalex/couch_potato/

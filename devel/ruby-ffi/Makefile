@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2011/12/02 19:34:42 jeremy Exp $
+# $OpenBSD: Makefile,v 1.10 2012/09/23 16:57:33 jeremy Exp $
 
 COMMENT =	cross-platform dynamic library loading for ruby
 
 DISTNAME =	ffi-1.0.9
 CATEGORIES =	devel
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE=	http://github.com/ffi/ffi
 

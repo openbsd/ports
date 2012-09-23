@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2011/09/16 09:24:58 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2012/09/23 16:57:34 jeremy Exp $
 
 COMMENT=		embed C/++ external module code in your Ruby script
 
 DISTNAME=		RubyInline-3.8.3
 PKGNAME=		${DISTNAME:L}
-REVISION=		4
+REVISION=		5
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.zenspider.com/ZSS/Products/RubyInline/

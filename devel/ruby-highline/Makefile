@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2012/01/22 16:46:41 jeremy Exp $
+# $OpenBSD: Makefile,v 1.12 2012/09/23 16:57:33 jeremy Exp $
 
 COMMENT =		high-level IO library for Ruby
 
 DISTNAME =		highline-1.6.9
+REVISION =		0
 CATEGORIES =		devel
 
 HOMEPAGE =		http://highline.rubyforge.org/

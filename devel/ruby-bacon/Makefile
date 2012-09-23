@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2011/09/16 09:24:57 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2012/09/23 16:57:33 jeremy Exp $
 
 COMMENT=		small RSpec clone
 
 DISTNAME=		bacon-1.1.0
-REVISION =		4
+REVISION =		5
 CATEGORIES=		devel
 
 HOMEPAGE=		http://chneukirchen.org/repos/bacon/README

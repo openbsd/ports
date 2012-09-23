@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2012/04/06 19:28:22 jeremy Exp $
+# $OpenBSD: Makefile,v 1.13 2012/09/23 16:57:32 jeremy Exp $
 
 COMMENT =	unified Ruby API for popular databases
 
 DISTNAME =	data_objects-0.10.8
+REVISION =	0
 CATEGORIES =	databases
 
 # MIT

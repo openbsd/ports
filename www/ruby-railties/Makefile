@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2011/12/13 18:00:24 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2012/09/23 16:57:36 jeremy Exp $
 
 COMMENT=	glues the Ruby on Rails framework together
 
 VERSION=	3.1.3
 DISTNAME=	railties-${VERSION}
+REVISION =	0
 CATEGORIES=	www
 
 # MIT License

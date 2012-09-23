@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/16 09:24:57 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2012/09/23 16:57:34 jeremy Exp $
 
 COMMENT =	paper_trail lets you track changes to your models' data
 
 DISTNAME =	paper_trail-1.6.4
-REVISION=		0
+REVISION=		1
 CATEGORIES =	devel
 
 # MIT

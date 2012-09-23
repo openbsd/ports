@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2011/12/13 18:10:55 jeremy Exp $
+# $OpenBSD: Makefile,v 1.14 2012/09/23 16:57:33 jeremy Exp $
 
 COMMENT=	optimized replacement for Ruby thread.rb primitives
 
 DISTNAME=	fastthread-1.0.7
-REVISION=	5
+REVISION=	6
 CATEGORIES=	devel
 
 # Ruby's license
@@ -22,7 +22,7 @@ MODRUBY_REGRESS_TARGET=-rubygems test/test_all.rb
 
 FLAVOR?=
 
-.if ${FLAVOR:Mruby19}
+.if ${FLAVOR:Mruby19} || empty(FLAVOR)
 FASTTHREAD_EXT=	.rb
 .else
 FASTTHREAD_EXT=	.so

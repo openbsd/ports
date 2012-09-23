@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2011/11/17 16:08:00 jeremy Exp $
+# $OpenBSD: Makefile,v 1.4 2012/09/23 16:57:35 jeremy Exp $
 
 COMMENT =	discount implementation of John Gruber's Markdown
 
 DISTNAME =	rdiscount-1.6.5
-REVISION=	0
+REVISION=	1
 CATEGORIES =	textproc
 
 # BSD

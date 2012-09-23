@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/11/17 15:30:08 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2012/09/23 16:57:35 jeremy Exp $
 
 COMMENT =		logic-free template language
 
 DISTNAME =		mustache-0.99.4
+REVISION =		0
 CATEGORIES =		textproc
 
 # MIT

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2011/09/16 09:24:58 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2012/09/23 16:57:34 jeremy Exp $
 
 COMMENT =	generic active transaction support for ruby objects
 
 DISTNAME =	transaction-simple-1.4.0
-REVISION =	6
+REVISION =	7
 CATEGORIES =	devel
 
 # mit

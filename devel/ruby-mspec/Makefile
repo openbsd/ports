@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2011/11/17 16:08:00 jeremy Exp $
+# $OpenBSD: Makefile,v 1.4 2012/09/23 16:57:34 jeremy Exp $
 
 COMMENT =	specialized test framework for running RubySpecs
 
 DISTNAME =	mspec-1.5.17
-REVISION=		0
+REVISION=		1
 CATEGORIES =	devel
 
 HOMEPAGE =	http://www.rubyspec.org/projects/show/mspec

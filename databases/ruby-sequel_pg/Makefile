@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2012/07/12 21:00:57 jeremy Exp $
+# $OpenBSD: Makefile,v 1.16 2012/09/23 16:57:33 jeremy Exp $
 
 COMMENT =	faster SELECTs when using ruby-sequel with ruby-pg
 
 DISTNAME =	sequel_pg-1.5.0
+REVISION =	0
 CATEGORIES =	databases
 
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>

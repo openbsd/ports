@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/16 08:48:04 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2012/09/23 16:57:32 jeremy Exp $
 
 COMMENT =	aggregates support for DataMapper
 
 DISTNAME =	dm-aggregates-${VERSION}
-REVISION =	1
+REVISION =	2
 
 RUN_DEPENDS =	databases/ruby-datamapper/core,${MODRUBY_FLAVOR}${DM_REL_VER_SPEC}
 

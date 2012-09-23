@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/16 09:24:57 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2012/09/23 16:57:34 jeremy Exp $
 
 COMMENT=	open processes with handles on pid, stdin, stdout, stderr
 
 DISTNAME=	open4-0.9.6
-REVISION=	5
+REVISION=	6
 CATEGORIES=	devel
 
 # Ruby license

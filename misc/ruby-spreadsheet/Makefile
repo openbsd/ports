@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/16 10:31:23 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2012/09/23 16:57:34 jeremy Exp $
 
 COMMENT =	generate and parse Excel compatible spreadsheets
 
 DISTNAME =	spreadsheet-0.6.5.0
-REVISION=		0
+REVISION=		1
 CATEGORIES =	misc
 
 # GPLv3

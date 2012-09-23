@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2011/11/09 00:17:38 jeremy Exp $
+# $OpenBSD: Makefile,v 1.16 2012/09/23 16:57:35 jeremy Exp $
 
 COMMENT =	module for using Textile in Ruby
 
 DISTNAME =	RedCloth-4.2.7
 PKGNAME =	${DISTNAME:L}
-REVISION=	1
+REVISION=	2
 CATEGORIES =	textproc
 
 HOMEPAGE =	http://redcloth.org/

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2011/09/16 08:48:04 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2012/09/23 16:57:32 jeremy Exp $
 
 COMMENT =	extra types for DataMapper models
 
 DISTNAME =	dm-types-${VERSION}
-REVISION =	1
+REVISION =	2
 
 RUN_DEPENDS =	databases/ruby-datamapper/core,${MODRUBY_FLAVOR}${DM_REL_VER_SPEC} \
 		converters/ruby-json,${MODRUBY_FLAVOR}>=1.4,<2.0 \

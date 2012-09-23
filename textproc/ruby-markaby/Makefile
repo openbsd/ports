@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2011/09/16 11:41:42 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2012/09/23 16:57:35 jeremy Exp $
 
 COMMENT=	HTML templating language for Ruby
 
 DISTNAME=	markaby-0.5
-REVISION =	7
+REVISION =	8
 CATEGORIES=	textproc devel
 
 HOMEPAGE=	http://code.whytheluckystiff.net/markaby/

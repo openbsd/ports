@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2011/11/17 15:35:45 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2012/09/23 16:57:33 jeremy Exp $
 
 COMMENT=		ruby application dependency manager
 
 DISTNAME=		bundler-1.0.21
+REVISION =		0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://gembundler.com/

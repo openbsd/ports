@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2011/11/17 16:08:00 jeremy Exp $
+# $OpenBSD: Makefile,v 1.13 2012/09/23 16:57:33 jeremy Exp $
 
 COMMENT =	Ruby extensions serving DataMapper and DataObjects
 
 DISTNAME =	extlib-0.9.15
-REVISION =	1
+REVISION =	2
 CATEGORIES =	devel
 
 # MIT
