@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.22 2012/04/21 11:30:53 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.23 2012/09/23 18:13:32 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -195,7 +195,7 @@ sub end_lock
 
 sub build
 {
-	my ($self, $v, $core, $special, $lock, $final_sub) = @_;
+	my ($self, $v, $core, $special, $parallel, $lock, $final_sub) = @_;
 	my $start = time();
 	my $log = $self->logger->make_logs($v);
 
@@ -205,10 +205,13 @@ sub build
 	close($fh);
 
 	my $job;
-	$job = DPB::Job::Port->new($log, $v, $self, $special,
+	$job = DPB::Job::Port->new($log, $v, $self, $special, $parallel,
 	    sub {$self->end_lock($lock, $core, $job); $self->report($v, $job, $core); &$final_sub;});
 	$job->{lock} = $lock;
 	$core->start_job($job, $v);
+	if ($job->{parallel}) {
+		$core->can_swallow($job->{parallel}-1);
+	}
 	print $lock "host=", $core->hostname, "\n",
 	    "pid=$core->{pid}\n",
 	    "start=$start (", DPB::Util->time2string($start), ")\n";

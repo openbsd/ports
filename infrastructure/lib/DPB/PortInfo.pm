@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortInfo.pm,v 1.18 2012/01/14 12:26:21 espie Exp $
+# $OpenBSD: PortInfo.pm,v 1.19 2012/09/23 18:13:32 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -236,6 +236,8 @@ my %adder = (
 	REGRESS_IS_INTERACTIVE => "AddYesNo",
 	SUBPACKAGE => "AddInfo",
 	MULTI_PACKAGES => "AddList",
+	BUILD_PACKAGES => "AddList",
+	DPB_PROPERTIES => "AddList",
 	EXTRA => "Extra",
 	EXTRA2 => "Extra",
 	BEXTRA => "Extra",

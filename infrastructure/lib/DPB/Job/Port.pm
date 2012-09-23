@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.33 2012/07/18 10:31:18 espie Exp $
+# $OpenBSD: Port.pm,v 1.34 2012/09/23 18:13:32 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -73,6 +73,9 @@ sub run
 	    "FETCH_PACKAGES=No",
 	    "PREPARE_CHECK_ONLY=Yes",
 	    "REPORT_PROBLEM='exit 1'", "BULK=No");
+	if ($job->{parallel}) {
+		push(@args, "MAKE_JOBS=$job->{parallel}");
+	}
 	if ($job->{special}) {
 		push(@args, "WRKOBJDIR=/tmp/ports");
 	}
@@ -443,6 +446,8 @@ sub finalize
 	$self->SUPER::finalize($core);
 }
 
+package DPB::Task::Port::VerifyPackages;
+
 package DPB::Port::TaskFactory;
 my $repo = {
 	default => 'DPB::Task::Port',
@@ -455,6 +460,7 @@ my $repo = {
 	'show-size' => 'DPB::Task::Port::ShowSize',
 	'show-fake-size' => 'DPB::Task::Port::ShowFakeSize',
 	'junk' => 'DPB::Task::Port::Uninstall',
+	'final-check' => "DPB::Task::Port::VerifyPackages",
 };
 
 sub create
@@ -472,7 +478,7 @@ use Time::HiRes qw(time);
 
 sub new
 {
-	my ($class, $log, $v, $builder, $special, $endcode) = @_;
+	my ($class, $log, $v, $builder, $special, $parallel, $endcode) = @_;
 	my $e;
 	if ($builder->{rebuild}) {
 		$e = sub { $builder->register_built($v); &$endcode; };
@@ -485,6 +491,10 @@ sub new
 	    special => $special,  current => '',
 	    builder => $builder, endcode => $e},
 		$class;
+
+	if ($parallel && $v->{info}{DPB_PROPERTIES}{parallel}) {
+		$job->{parallel} = $parallel;
+	}
 
 	if ($builder->{rebuild}) {
 		push(@{$job->{tasks}},
@@ -527,6 +537,7 @@ sub add_normal_tasks
 	if (!$dontclean) {
 		push @todo, 'clean';
 	}
+#	push @todo, 'final-check';
 	$self->add_tasks(map {DPB::Port::TaskFactory->create($_)} @todo);
 }
 
@@ -576,6 +587,7 @@ sub totaltime
 		next if $plus->notime;
 		$t += $plus->elapsed;
     	}
+	$t *= $self->{parallel} if $self->{parallel};
 	return sprintf("%.2f", $t);
 }
 

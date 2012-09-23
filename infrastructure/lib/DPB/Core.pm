@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.13 2012/07/08 09:59:31 jasper Exp $
+# $OpenBSD: Core.pm,v 1.14 2012/09/23 18:13:32 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -153,6 +153,12 @@ sub memory
 {
 	my $self = shift;
 	return $self->prop->{memory};
+}
+
+sub parallel
+{
+	my $self = shift;
+	return $self->prop->{parallel};
 }
 
 sub hostname
@@ -501,9 +507,14 @@ sub one_core
 {
 	my ($core, $time) = @_;
 	my $hostname = $core->hostname;
-	return $core->job->name." [$core->{pid}]".
+		
+	my $s = $core->job->name." [$core->{pid}]".
 	    (DPB::Host->name_is_localhost($hostname) ? "" : " on ".$hostname).
 	    $core->job->watched($time, $core);
+	if (defined $core->{swallowed}) {
+		$s = (scalar(@{$core->{swallowed}})+1).'*'.$s;
+	}
+    	return $s;
 }
 
 sub report
@@ -563,10 +574,47 @@ sub available
 	return $available;
 }
 
+sub can_swallow
+{
+	my ($core, $n) = @_;
+	$core->{swallow} = $n;
+	$core->{swallowed} = [];
+	$core->host->{swallow}{$core} = $core;
+
+	# try to reswallow freed things right away.
+	if (@$available > 0) {
+		my @l = @$available;
+		$available = [];
+		$core->mark_available(@l);
+	}
+}
+
 sub mark_available
 {
 	my $self = shift;
-	push(@{$self->available}, @_);
+	LOOP: for my $core (@_) {
+		# okay, if this core swallowed stuff, then we release 
+		# the swallowed stuff first
+		if (defined $core->{swallowed}) {
+			$self->mark_available(@{$core->{swallowed}});
+			delete $core->{swallowed};
+			delete $core->host->{swallow}{$core};
+			delete $core->{swallow};
+		}
+
+		# if this host has cores that swallow things, let us 
+		# be swallowed
+		if (defined $core->host->{swallow}) {
+			for my $c (values %{$core->host->{swallow}}) {
+				push(@{$c->{swallowed}}, $core);
+				if (--$c->{swallow} == 0) {
+					delete $core->host->{swallow}{$c};
+				}
+				next LOOP;
+			}
+		}
+		push(@{$self->available}, $core);
+	}
 }
 
 sub running
