@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2012/09/10 09:16:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2012/09/23 17:11:34 jeremy Exp $
 
 COMMENT=	overview of your Puppet ecosystem
 
 V=		1.2.4
 DISTNAME=	puppet-dashboard-bundled-gems-${V}
 PKGNAME=	puppet-dashboard-${V}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	www sysutils
 
 HOMEPAGE=	http://www.puppetlabs.com/puppet/related-projects/dashboard/
@@ -21,9 +21,9 @@ MODULES=	lang/ruby
 MASTER_SITES=	http://blade2k.humppa.hu/distfiles/ \
 		http://puppetlabs.com/downloads/dashboard/
 
-RUN_DEPENDS=	databases/ruby-mysql \
-		devel/ruby-rake \
-		devel/ruby-rdoc \
+RUN_DEPENDS=	databases/ruby-mysql,${MODRUBY_FLAVOR} \
+		devel/ruby-rake,${MODRUBY_FLAVOR} \
+		devel/ruby-rdoc,${MODRUBY_FLAVOR} \
 		${MODRUBY_ICONV_DEPENDS}
 
 PKG_ARCH=	*
