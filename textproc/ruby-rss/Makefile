@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2011/09/16 11:41:42 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2012/09/23 17:09:11 jeremy Exp $
 
 COMMENT=	improved ruby RSS and Atom parser
 
 DISTNAME=	rss-0.2.4
-PKGNAME=	ruby-${DISTNAME}
-REVISION=	2
+PKGNAME=	ruby19-${DISTNAME}
+REVISION=	3
 CATEGORIES=	textproc devel
 
 # ruby
@@ -16,6 +16,7 @@ PERMIT_DISTFILES_FTP=	yes
 MASTER_SITES=	http://www.cozmixng.org/~kou/download/
 
 MODULES=	lang/ruby
+MODRUBY_REV =	1.9
 
 CONFIGURE_STYLE=ruby setup
 
