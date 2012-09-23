@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/23 13:26:41 claudio Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/09/23 17:03:36 jeremy Exp $
 ${GEM_BIN}/oletool${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -8,8 +8,6 @@ ${GEM_LIB}/gems/${DISTNAME}/README
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/bin/
 ${GEM_LIB}/gems/${DISTNAME}/bin/oletool
-${GEM_LIB}/gems/${DISTNAME}/data/
-${GEM_LIB}/gems/${DISTNAME}/data/propids.yaml
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/ole/
 ${GEM_LIB}/gems/${DISTNAME}/lib/ole/base.rb
