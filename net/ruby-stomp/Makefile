@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2011/09/16 11:13:40 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2012/09/23 16:59:49 jeremy Exp $
 
 COMMENT = 	streaming text orientated messaging protocol ruby client
 
 DISTNAME = 	stomp-1.1
-REVISION =	4
+REVISION =	5
 CATEGORIES = 	net
 
 HOMEPAGE =	http://stomp.codehaus.org/Ruby
-
-MAINTAINER =	Mathieu Sauve-Frankel <msf@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM = Yes

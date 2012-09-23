@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2011/09/16 11:13:40 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2012/09/23 16:59:49 jeremy Exp $
 
 COMMENT =	super simple job queue over AMQP
 
 DISTNAME =	minion-0.1.10
-REVISION =	4
+REVISION =	5
 CATEGORIES =	net
-
-MAINTAINER =	Mathieu Sauve-Frankel <msf@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
