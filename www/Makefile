@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.574 2012/09/15 17:53:15 jeremy Exp $
+# $OpenBSD: Makefile,v 1.575 2012/09/23 17:20:41 jeremy Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -436,27 +436,27 @@
      SUBDIR += ruby-mechanize
      SUBDIR += ruby-mongrel
      SUBDIR += ruby-passenger
-     SUBDIR += ruby-passenger,ruby19
+     SUBDIR += ruby-passenger,ruby18
      SUBDIR += ruby-rack
      SUBDIR += ruby-rack-cache
      SUBDIR += ruby-rack-mount
      SUBDIR += ruby-rack-ssl
      SUBDIR += ruby-rack-test
      SUBDIR += ruby-rails
-     SUBDIR += ruby-rails,ruby19
+     SUBDIR += ruby-rails,ruby18
      SUBDIR += ruby-railties
      SUBDIR += ruby-rainbows
-     SUBDIR += ruby-rainbows,ruby19
+     SUBDIR += ruby-rainbows,ruby18
      SUBDIR += ruby-raindrops
-     SUBDIR += ruby-raindrops,ruby19
+     SUBDIR += ruby-raindrops,ruby18
      SUBDIR += ruby-rest-client
      SUBDIR += ruby-sanitize
      SUBDIR += ruby-sinatra
      SUBDIR += ruby-thin
-     SUBDIR += ruby-thin,ruby19
+     SUBDIR += ruby-thin,ruby18
      SUBDIR += ruby-thin_http
      SUBDIR += ruby-unicorn
-     SUBDIR += ruby-unicorn,ruby19
+     SUBDIR += ruby-unicorn,ruby18
      SUBDIR += sabredav
      SUBDIR += sarg
      SUBDIR += seamonkey

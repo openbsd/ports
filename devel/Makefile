@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1074 2012/09/23 12:33:56 rpe Exp $
+# $OpenBSD: Makefile,v 1.1075 2012/09/23 17:20:41 jeremy Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1164,7 +1164,7 @@
      SUBDIR += ruby-extlib
      SUBDIR += ruby-fastthread
      SUBDIR += ruby-ffi
-     SUBDIR += ruby-ffi,ruby19
+     SUBDIR += ruby-ffi,ruby18
      SUBDIR += ruby-ffi-inliner
      SUBDIR += ruby-flexmock
      SUBDIR += ruby-gem_plugin
@@ -1175,12 +1175,12 @@
      SUBDIR += ruby-highline
      SUBDIR += ruby-hike
      SUBDIR += ruby-hoe
-     SUBDIR += ruby-home_run
+     SUBDIR += ruby-home_run,ruby18
      SUBDIR += ruby-i18n
      SUBDIR += ruby-isolate
      SUBDIR += ruby-jeweler
      SUBDIR += ruby-kgio
-     SUBDIR += ruby-kgio,ruby19
+     SUBDIR += ruby-kgio,ruby18
      SUBDIR += ruby-linecache
      SUBDIR += ruby-locale
      SUBDIR += ruby-minitest
@@ -1194,11 +1194,11 @@
      SUBDIR += ruby-parsetree
      SUBDIR += ruby-polyglot
      SUBDIR += ruby-prof
-     SUBDIR += ruby-prof,ruby19
+     SUBDIR += ruby-prof,ruby18
      SUBDIR += ruby-rake
      SUBDIR += ruby-rake-compiler
      SUBDIR += ruby-rcov
-     SUBDIR += ruby-rcov,ruby19
+     SUBDIR += ruby-rcov,ruby18
      SUBDIR += ruby-rdoc
      SUBDIR += ruby-rspec
      SUBDIR += ruby-ruby2ruby
@@ -1209,7 +1209,7 @@
      SUBDIR += ruby-sprockets
      SUBDIR += ruby-stringex
      SUBDIR += ruby-subset_sum
-     SUBDIR += ruby-subset_sum,ruby19
+     SUBDIR += ruby-subset_sum,ruby18
      SUBDIR += ruby-systemtimer
      SUBDIR += ruby-systemu
      SUBDIR += ruby-term-ansicolor
