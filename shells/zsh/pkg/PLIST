@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2012/04/10 11:53:21 pea Exp $
+@comment $OpenBSD: PLIST,v 1.36 2012/09/24 19:33:50 pea Exp $
 @pkgpath shells/zsh,-main
 @shell bin/zsh
 %%SHARED%%
@@ -68,6 +68,8 @@ share/zsh/${V}/functions/_awk
 share/zsh/${V}/functions/_axi-cache
 share/zsh/${V}/functions/_bash_completions
 share/zsh/${V}/functions/_baz
+share/zsh/${V}/functions/_be_name
+share/zsh/${V}/functions/_beadm
 share/zsh/${V}/functions/_bind_addresses
 share/zsh/${V}/functions/_bindkey
 share/zsh/${V}/functions/_bison
@@ -177,6 +179,7 @@ share/zsh/${V}/functions/_dpkg-cross
 share/zsh/${V}/functions/_dpkg-repack
 share/zsh/${V}/functions/_dpkg_source
 share/zsh/${V}/functions/_dput
+share/zsh/${V}/functions/_dtrace
 share/zsh/${V}/functions/_du
 share/zsh/${V}/functions/_dumpadm
 share/zsh/${V}/functions/_dumper
@@ -217,6 +220,8 @@ share/zsh/${V}/functions/_first
 share/zsh/${V}/functions/_flasher
 share/zsh/${V}/functions/_flex
 share/zsh/${V}/functions/_floppy
+share/zsh/${V}/functions/_flowadm
+share/zsh/${V}/functions/_fmadm
 share/zsh/${V}/functions/_fortune
 share/zsh/${V}/functions/_freebsd-update
 share/zsh/${V}/functions/_fsh
@@ -252,6 +257,7 @@ share/zsh/${V}/functions/_gpg
 share/zsh/${V}/functions/_gphoto2
 share/zsh/${V}/functions/_gprof
 share/zsh/${V}/functions/_gqview
+share/zsh/${V}/functions/_gradle
 share/zsh/${V}/functions/_graphicsmagick
 share/zsh/${V}/functions/_grep
 share/zsh/${V}/functions/_grep-excuses
@@ -285,6 +291,7 @@ share/zsh/${V}/functions/_initctl
 share/zsh/${V}/functions/_invoke-rc.d
 share/zsh/${V}/functions/_ionice
 share/zsh/${V}/functions/_ip
+share/zsh/${V}/functions/_ipadm
 share/zsh/${V}/functions/_ipset
 share/zsh/${V}/functions/_iptables
 share/zsh/${V}/functions/_irssi
@@ -366,6 +373,7 @@ share/zsh/${V}/functions/_module-assistant
 share/zsh/${V}/functions/_modutils
 share/zsh/${V}/functions/_mondo
 share/zsh/${V}/functions/_monotone
+share/zsh/${V}/functions/_mosh
 share/zsh/${V}/functions/_most_recent_file
 share/zsh/${V}/functions/_mount
 share/zsh/${V}/functions/_mozilla
@@ -385,6 +393,7 @@ share/zsh/${V}/functions/_nedit
 share/zsh/${V}/functions/_net_interfaces
 share/zsh/${V}/functions/_netcat
 share/zsh/${V}/functions/_netscape
+share/zsh/${V}/functions/_netstat
 share/zsh/${V}/functions/_newsgroups
 share/zsh/${V}/functions/_next_label
 share/zsh/${V}/functions/_next_tags
@@ -434,6 +443,7 @@ share/zsh/${V}/functions/_pine
 share/zsh/${V}/functions/_ping
 share/zsh/${V}/functions/_piuparts
 share/zsh/${V}/functions/_pkg-config
+share/zsh/${V}/functions/_pkg5
 share/zsh/${V}/functions/_pkg_instance
 share/zsh/${V}/functions/_pkgadd
 share/zsh/${V}/functions/_pkginfo
@@ -455,7 +465,9 @@ share/zsh/${V}/functions/_printenv
 share/zsh/${V}/functions/_printers
 share/zsh/${V}/functions/_procstat
 share/zsh/${V}/functions/_prompt
+share/zsh/${V}/functions/_prstat
 share/zsh/${V}/functions/_ps
+share/zsh/${V}/functions/_ps1234
 share/zsh/${V}/functions/_pscp
 share/zsh/${V}/functions/_pspdf
 share/zsh/${V}/functions/_psutils
@@ -519,6 +531,7 @@ share/zsh/${V}/functions/_signals
 share/zsh/${V}/functions/_sisu
 share/zsh/${V}/functions/_slrn
 share/zsh/${V}/functions/_smit
+share/zsh/${V}/functions/_snoop
 share/zsh/${V}/functions/_socket
 share/zsh/${V}/functions/_sockstat
 share/zsh/${V}/functions/_softwareupdate
@@ -549,7 +562,7 @@ share/zsh/${V}/functions/_svcs
 share/zsh/${V}/functions/_svcs_fmri
 share/zsh/${V}/functions/_svn-buildpackage
 share/zsh/${V}/functions/_sysctl
-share/zsh/${V}/functions/_systemctl
+share/zsh/${V}/functions/_systemd
 share/zsh/${V}/functions/_tags
 share/zsh/${V}/functions/_tar
 share/zsh/${V}/functions/_tar_archive
@@ -689,6 +702,7 @@ share/zsh/${V}/functions/_zdump
 share/zsh/${V}/functions/_zed
 share/zsh/${V}/functions/_zfs
 share/zsh/${V}/functions/_zfs_dataset
+share/zsh/${V}/functions/_zfs_keysource_props
 share/zsh/${V}/functions/_zfs_pool
 share/zsh/${V}/functions/_zftp
 share/zsh/${V}/functions/_zip
@@ -696,6 +710,8 @@ share/zsh/${V}/functions/_zle
 share/zsh/${V}/functions/_zlogin
 share/zsh/${V}/functions/_zmodload
 share/zsh/${V}/functions/_zmv
+share/zsh/${V}/functions/_zoneadm
+share/zsh/${V}/functions/_zones
 share/zsh/${V}/functions/_zpool
 share/zsh/${V}/functions/_zpty
 share/zsh/${V}/functions/_zsh-mime-handler
