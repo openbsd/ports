@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2012/07/07 17:45:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2012/09/24 20:53:48 jasper Exp $
 
 COMMENT=	clutter widget toolkit
 
-V=		1.4.6
-DISTNAME=	mx-${V}
-EXTRACT_SUFX=	.tar.xz
+V=		1.4.7
+HASH=		32cb530
+DISTNAME=	clutter-project-mx-${V}-0-g32cb530
+PKGNAME=	mx-${V}
 
-REVISION=	0
-
-SHARED_LIBS +=  mx-1.0                    0.0 # 406.0
+SHARED_LIBS +=  mx-1.0                    0.0 # 407.0
 SHARED_LIBS +=  mx-gtk-1.0                0.0 # 0.0
 
-MASTER_SITES=	http://source.clutter-project.org/sources/mx/${V:C/^([0-9]+\.[0-9]+).*/\1/}/
+MASTER_SITES=	http://distfiles.nl/
 
 WANTLIB += GL X11 X11-xcb Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
@@ -22,6 +21,7 @@ WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 json-glib-1.0 m
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs startup-notification-1 stdc++
 WANTLIB += xcb xcb-aux xcb-render xcb-shm z
+WANTLIB += harfbuzz icudata icule icuuc
 
 MODGNOME_TOOLS=		goi
 
@@ -32,4 +32,16 @@ LIB_DEPENDS=		devel/startup-notification \
 
 CONFIGURE_ARGS=		--without-glade
 
+WRKDIST=		${WRKDIR}/clutter-project-mx-${HASH}/
+
+# XXX: Remove when updating to a real release tarball, instead of a git tag
+BUILD_DEPENDS=		devel/libtool # for AC_PROG_LIBTOOL
+AUTOMAKE_VERSION=	1.12
+AUTOCONF_VERSION=	2.69
+
+pre-configure:
+	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autogen.sh
+
 .include <bsd.port.mk>
+

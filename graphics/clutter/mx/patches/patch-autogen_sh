@@ -1,0 +1,20 @@
+$OpenBSD: patch-autogen_sh,v 1.1 2012/09/24 20:53:48 jasper Exp $
+
+Fix build when not running as root.
+override r--r--r--  root/bin for gtk-doc.make?
+
+--- autogen.sh.orig	Mon Sep 24 22:40:17 2012
++++ autogen.sh	Mon Sep 24 22:40:22 2012
+@@ -25,10 +25,10 @@ else
+         gtkdocize || exit $?
+         sed -e 's#) --mode=compile#) --tag=CC --mode=compile#' gtk-doc.make \
+           > gtk-doc.temp \
+-                && mv gtk-doc.temp gtk-doc.make
++                && mv -f gtk-doc.temp gtk-doc.make
+         sed -e 's#) --mode=link#) --tag=CC --mode=link#' gtk-doc.make \
+           > gtk-doc.temp \
+-                && mv gtk-doc.temp gtk-doc.make
++                && mv -f gtk-doc.temp gtk-doc.make
+ fi
+ 
+ AUTORECONF=`which autoreconf`
