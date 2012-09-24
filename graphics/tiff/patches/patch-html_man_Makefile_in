@@ -1,7 +1,7 @@
-$OpenBSD: patch-html_man_Makefile_in,v 1.6 2012/04/09 17:21:05 naddy Exp $
---- html/man/Makefile.in.orig	Sat Feb 18 23:27:08 2012
-+++ html/man/Makefile.in	Mon Apr  9 19:13:44 2012
-@@ -226,7 +226,7 @@ build_vendor = @build_vendor@
+$OpenBSD: patch-html_man_Makefile_in,v 1.7 2012/09/24 19:51:04 naddy Exp $
+--- html/man/Makefile.in.orig	Sat Sep 22 18:08:19 2012
++++ html/man/Makefile.in	Mon Sep 24 21:30:29 2012
+@@ -253,7 +253,7 @@ build_vendor = @build_vendor@
  builddir = @builddir@
  datadir = @datadir@
  datarootdir = @datarootdir@

@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.9 2005/12/27 16:42:43 steven Exp $
-@lib lib/libtiff.so.${LIBtiff_VERSION}
-@lib lib/libtiffxx.so.${LIBtiffxx_VERSION}

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2012/06/27 14:27:02 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.20 2012/09/24 19:51:04 naddy Exp $
 @bin bin/bmp2tiff
 @bin bin/fax2ps
 @bin bin/fax2tiff
@@ -28,10 +28,11 @@ include/tiffio.h
 include/tiffio.hxx
 include/tiffvers.h
 lib/libtiff.a
-%%SHARED%%
 lib/libtiff.la
+@lib lib/libtiff.so.${LIBtiff_VERSION}
 lib/libtiffxx.a
 lib/libtiffxx.la
+@lib lib/libtiffxx.so.${LIBtiffxx_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/libtiff-4.pc
 @man man/man1/bmp2tiff.1
@@ -63,6 +64,12 @@ lib/pkgconfig/libtiff-4.pc
 @man man/man3/TIFFClose.3
 @man man/man3/TIFFDataWidth.3
 @man man/man3/TIFFError.3
+@man man/man3/TIFFFieldDataType.3
+@man man/man3/TIFFFieldName.3
+@man man/man3/TIFFFieldPassCount.3
+@man man/man3/TIFFFieldReadCount.3
+@man man/man3/TIFFFieldTag.3
+@man man/man3/TIFFFieldWriteCount.3
 @man man/man3/TIFFFlush.3
 @man man/man3/TIFFGetField.3
 @man man/man3/TIFFOpen.3
@@ -138,6 +145,12 @@ share/doc/tiff/man/
 share/doc/tiff/man/TIFFClose.3tiff.html
 share/doc/tiff/man/TIFFDataWidth.3tiff.html
 share/doc/tiff/man/TIFFError.3tiff.html
+share/doc/tiff/man/TIFFFieldDataType.3tiff.html
+share/doc/tiff/man/TIFFFieldName.3tiff.html
+share/doc/tiff/man/TIFFFieldPassCount.3tiff.html
+share/doc/tiff/man/TIFFFieldReadCount.3tiff.html
+share/doc/tiff/man/TIFFFieldTag.3tiff.html
+share/doc/tiff/man/TIFFFieldWriteCount.3tiff.html
 share/doc/tiff/man/TIFFFlush.3tiff.html
 share/doc/tiff/man/TIFFGetField.3tiff.html
 share/doc/tiff/man/TIFFOpen.3tiff.html
@@ -172,6 +185,7 @@ share/doc/tiff/man/TIFFsize.3tiff.html
 share/doc/tiff/man/TIFFstrip.3tiff.html
 share/doc/tiff/man/TIFFswab.3tiff.html
 share/doc/tiff/man/TIFFtile.3tiff.html
+share/doc/tiff/man/bmp2tiff.1.html
 share/doc/tiff/man/fax2ps.1.html
 share/doc/tiff/man/fax2tiff.1.html
 share/doc/tiff/man/gif2tiff.1.html

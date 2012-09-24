@@ -1,11 +1,11 @@
-$OpenBSD: patch-libtiff_Makefile_in,v 1.12 2012/04/14 15:09:55 naddy Exp $
+$OpenBSD: patch-libtiff_Makefile_in,v 1.13 2012/09/24 19:51:04 naddy Exp $
 
 * Avoid picking up an old libtiff in ${LOCALBASE}.
 * Do not record inter-library dependencies.
 
---- libtiff/Makefile.in.orig	Sat Feb 18 23:02:56 2012
-+++ libtiff/Makefile.in	Wed Apr 11 19:06:03 2012
-@@ -254,10 +254,10 @@ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+--- libtiff/Makefile.in.orig	Sat Sep 22 18:08:19 2012
++++ libtiff/Makefile.in	Mon Sep 24 21:30:29 2012
+@@ -288,10 +288,10 @@ INSTALL_PROGRAM = @INSTALL_PROGRAM@
  INSTALL_SCRIPT = @INSTALL_SCRIPT@
  INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
  LD = @LD@
