@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2012/09/15 10:27:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2012/09/24 12:34:20 jasper Exp $
 
 COMMENT=	perl module for parsing huge XML documents
 
 DISTNAME=	XML-Twig-3.41
+REVISION=	0
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://www.xmltwig.com/xmltwig/
@@ -20,7 +21,9 @@ CPAN_AUTHOR=	MIROD
 
 USE_GROFF =	Yes
 
-RUN_DEPENDS=	textproc/p5-XML-Parser \
+RUN_DEPENDS=	devel/p5-Tie-IxHash \
+		textproc/p5-XML-Parser \
+		textproc/p5-XML-XPathEngine \
 		www/p5-HTML-Tidy \
 		www/p5-HTML-Tree
 BUILD_DEPENDS=	${RUN_DEPENDS}
