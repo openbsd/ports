@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.11 2011/07/25 08:10:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST-docs,v 1.12 2012/09/24 03:20:51 ajacoutot Exp $
 @option no-default-conflict
 @conflict libsigc++-docs->=2
 share/devhelp/
@@ -14,6 +14,7 @@ share/doc/libsigc++-${V}/reference/
 share/doc/libsigc++-${V}/reference/html/
 share/doc/libsigc++-${V}/reference/html/annotated.html
 share/doc/libsigc++-${V}/reference/html/bc_s.png
+share/doc/libsigc++-${V}/reference/html/bdwn.png
 share/doc/libsigc++-${V}/reference/html/classes.html
 share/doc/libsigc++-${V}/reference/html/classsigc_1_1bound__argument-members.html
 share/doc/libsigc++-${V}/reference/html/classsigc_1_1bound__argument.html
@@ -314,8 +315,28 @@ share/doc/libsigc++-${V}/reference/html/classsigc_1_1volatile__mem__functor7-mem
 share/doc/libsigc++-${V}/reference/html/classsigc_1_1volatile__mem__functor7.html
 share/doc/libsigc++-${V}/reference/html/classsigc_1_1volatile__mem__functor7__inherit__graph.png
 share/doc/libsigc++-${V}/reference/html/closed.png
+share/doc/libsigc++-${V}/reference/html/dir_0bd3c8d814eb03171de012519d7a2ccd.html
+share/doc/libsigc++-${V}/reference/html/dir_5c02128c554eaa40138b2e605fc08970.html
+share/doc/libsigc++-${V}/reference/html/dir_5fbc72877197f8c6013d0f619df5433c.html
+share/doc/libsigc++-${V}/reference/html/dir_ea4abdd77c05d5873cecf571a6d96de7.html
 share/doc/libsigc++-${V}/reference/html/doxygen.css
 share/doc/libsigc++-${V}/reference/html/doxygen.png
+share/doc/libsigc++-${V}/reference/html/ftv2blank.png
+share/doc/libsigc++-${V}/reference/html/ftv2cl.png
+share/doc/libsigc++-${V}/reference/html/ftv2doc.png
+share/doc/libsigc++-${V}/reference/html/ftv2folderclosed.png
+share/doc/libsigc++-${V}/reference/html/ftv2folderopen.png
+share/doc/libsigc++-${V}/reference/html/ftv2lastnode.png
+share/doc/libsigc++-${V}/reference/html/ftv2link.png
+share/doc/libsigc++-${V}/reference/html/ftv2mlastnode.png
+share/doc/libsigc++-${V}/reference/html/ftv2mnode.png
+share/doc/libsigc++-${V}/reference/html/ftv2mo.png
+share/doc/libsigc++-${V}/reference/html/ftv2node.png
+share/doc/libsigc++-${V}/reference/html/ftv2ns.png
+share/doc/libsigc++-${V}/reference/html/ftv2plastnode.png
+share/doc/libsigc++-${V}/reference/html/ftv2pnode.png
+share/doc/libsigc++-${V}/reference/html/ftv2splitbar.png
+share/doc/libsigc++-${V}/reference/html/ftv2vertline.png
 share/doc/libsigc++-${V}/reference/html/functions.html
 share/doc/libsigc++-${V}/reference/html/functions_0x62.html
 share/doc/libsigc++-${V}/reference/html/functions_0x63.html
@@ -393,6 +414,7 @@ share/doc/libsigc++-${V}/reference/html/inherit_graph_29.png
 share/doc/libsigc++-${V}/reference/html/inherit_graph_3.png
 share/doc/libsigc++-${V}/reference/html/inherit_graph_30.png
 share/doc/libsigc++-${V}/reference/html/inherit_graph_31.png
+share/doc/libsigc++-${V}/reference/html/inherit_graph_32.png
 share/doc/libsigc++-${V}/reference/html/inherit_graph_4.png
 share/doc/libsigc++-${V}/reference/html/inherit_graph_5.png
 share/doc/libsigc++-${V}/reference/html/inherit_graph_6.png
@@ -420,6 +442,7 @@ share/doc/libsigc++-${V}/reference/html/namespacemembers_func_0x76.html
 share/doc/libsigc++-${V}/reference/html/namespaces.html
 share/doc/libsigc++-${V}/reference/html/namespacesigc.html
 share/doc/libsigc++-${V}/reference/html/nav_f.png
+share/doc/libsigc++-${V}/reference/html/nav_g.png
 share/doc/libsigc++-${V}/reference/html/nav_h.png
 share/doc/libsigc++-${V}/reference/html/open.png
 share/doc/libsigc++-${V}/reference/html/structsigc_1_1adaptor__base.html
@@ -449,6 +472,8 @@ share/doc/libsigc++-${V}/reference/html/structsigc_1_1dereference__trait-members
 share/doc/libsigc++-${V}/reference/html/structsigc_1_1dereference__trait.html
 share/doc/libsigc++-${V}/reference/html/structsigc_1_1functor__base.html
 share/doc/libsigc++-${V}/reference/html/structsigc_1_1functor__base__inherit__graph.png
+share/doc/libsigc++-${V}/reference/html/structsigc_1_1functor__trait-members.html
+share/doc/libsigc++-${V}/reference/html/structsigc_1_1functor__trait.html
 share/doc/libsigc++-${V}/reference/html/structsigc_1_1hide__functor_3-1_00_01T__functor_01_4-members.html
 share/doc/libsigc++-${V}/reference/html/structsigc_1_1hide__functor_3-1_00_01T__functor_01_4.html
 share/doc/libsigc++-${V}/reference/html/structsigc_1_1hide__functor_3-1_00_01T__functor_01_4__inherit__graph.png
