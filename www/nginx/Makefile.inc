@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1 2012/09/11 16:01:45 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2012/09/24 19:29:05 jeremy Exp $
 
 COMMENT=	robust and small HTTP server and mail proxy server
 
@@ -59,8 +59,8 @@ LUADISTFILES+=		chaoslawful-lua-nginx-module-v0.6.1-0-ge282c1c.tar.gz:0
 SUBSTFILES=		conf/nginx.conf
 
 .if ${FLAVOR:L:Mpassenger}
-CONFIGURE_ARGS+=	--add-module=${LOCALBASE}/lib/phusion-passenger/ext/nginx
-BUILD_DEPENDS+=		www/ruby-passenger,-main
+CONFIGURE_ARGS+=	--add-module=${LOCALBASE}/lib/phusion-passenger19/ext/nginx
+BUILD_DEPENDS+=		www/ruby-passenger,-main,ruby19
 RUN_DEPENDS+=		ruby-passenger-*|ruby19-passenger-*:www/ruby-passenger,-main
 WANTLIB+=		m pthread stdc++
 .endif
