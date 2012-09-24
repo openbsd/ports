@@ -1,0 +1,11 @@
+$OpenBSD: patch-pool_select_walker_c,v 1.1 2012/09/24 19:39:59 pea Exp $
+--- pool_select_walker.c.orig	Sun Sep 16 12:30:03 2012
++++ pool_select_walker.c	Sun Sep 16 12:30:16 2012
+@@ -22,6 +22,7 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <unistd.h>
++#include <stdint.h>
+ 
+ #include "pool.h"
+ #include "pool_config.h"

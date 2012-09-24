@@ -1,0 +1,11 @@
+$OpenBSD: patch-pool_memqcache_c,v 1.1 2012/09/24 19:39:59 pea Exp $
+--- pool_memqcache.c.orig	Sun Sep 16 12:23:15 2012
++++ pool_memqcache.c	Sun Sep 16 12:23:26 2012
+@@ -36,6 +36,7 @@
+ #include <ctype.h>
+ #include <arpa/inet.h>
+ #include <dirent.h>
++#include <stdint.h>
+ 
+ #ifdef USE_MEMCACHED
+ #include <libmemcached/memcached.h>

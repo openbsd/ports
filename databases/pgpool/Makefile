@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2012/06/18 11:39:47 pea Exp $
+# $OpenBSD: Makefile,v 1.3 2012/09/24 19:39:59 pea Exp $
 
 COMMENT= 	connection pool server for PostgreSQL
 
-DISTNAME= 	pgpool-II-3.1.3
+DISTNAME= 	pgpool-II-3.2.0
 
 CATEGORIES= 	databases
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_CDROM= Yes
 
 MASTER_SITES=		http://www.pgpool.net/mediawiki/images/
 
-WANTLIB= 		c crypto m pq ssl
+WANTLIB= 		c crypto m pq ssl pthread
 
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS= 	--with-openssl 
