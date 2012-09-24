@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.14 2012/09/23 18:13:32 espie Exp $
+# $OpenBSD: Core.pm,v 1.15 2012/09/24 20:41:57 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -596,10 +596,16 @@ sub mark_available
 		# okay, if this core swallowed stuff, then we release 
 		# the swallowed stuff first
 		if (defined $core->{swallowed}) {
-			$self->mark_available(@{$core->{swallowed}});
+			my $l = $core->{swallowed};
+
+			# first prevent the recursive call from taking us into
+			# account
 			delete $core->{swallowed};
 			delete $core->host->{swallow}{$core};
 			delete $core->{swallow};
+
+			# then free up our swallowed jobs
+			$self->mark_available(@$l);
 		}
 
 		# if this host has cores that swallow things, let us 
