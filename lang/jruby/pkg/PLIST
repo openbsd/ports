@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2012/05/04 20:15:53 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.16 2012/09/24 17:07:39 jeremy Exp $
 bin/jruby
 jruby/
 jruby/bin/
@@ -1541,6 +1541,8 @@ jruby/lib/ruby/site_ruby/1.8/rubygems/package/tar_writer.rb
 jruby/lib/ruby/site_ruby/1.8/rubygems/package_task.rb
 jruby/lib/ruby/site_ruby/1.8/rubygems/path_support.rb
 jruby/lib/ruby/site_ruby/1.8/rubygems/platform.rb
+jruby/lib/ruby/site_ruby/1.8/rubygems/psych_additions.rb
+jruby/lib/ruby/site_ruby/1.8/rubygems/psych_tree.rb
 jruby/lib/ruby/site_ruby/1.8/rubygems/remote_fetcher.rb
 jruby/lib/ruby/site_ruby/1.8/rubygems/require_paths_builder.rb
 jruby/lib/ruby/site_ruby/1.8/rubygems/requirement.rb
