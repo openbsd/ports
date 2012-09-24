@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2012/07/08 08:01:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2012/09/24 19:22:27 jasper Exp $
 
 COMMENT=		OpenGL-based interactive canvas library
 
@@ -24,9 +24,6 @@ LIB_DEPENDS=		devel/json-glib \
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
-
-CONFIGURE_ENV=          CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-                        LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 CONFIGURE_ARGS=		--enable-x11-backend
 
