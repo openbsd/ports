@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1189 2012/09/22 19:00:04 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1190 2012/09/24 15:49:00 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -94,7 +94,7 @@ DPB_PROPERTIES ?=
 # All variables relevant to the port's description
 _ALL_VARIABLES = BUILD_DEPENDS IS_INTERACTIVE \
 	SUBPACKAGE MULTI_PACKAGES FLAVOR BUILD_PACKAGES \
-	DPB_PROPERTIES \
+	DPB_PROPERTIES
 # and stuff needing to be MULTI_PACKAGE'd
 _ALL_VARIABLES_INDEXED = FULLPKGNAME RUN_DEPENDS LIB_DEPENDS \
 	PKG_ARCH IGNORE 
