@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/09/21 07:49:16 giovanni Exp $
+# $OpenBSD: Makefile,v 1.8 2012/09/24 06:51:59 jasper Exp $
 
 COMMENT=	little and fast Web crawler
 
@@ -9,10 +9,10 @@ CATEGORIES=	www
 HOMEPAGE=	http://larbin.sourceforge.net/index-eng.html
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes 
+PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes 
-PERMIT_DISTFILES_FTP=	Yes 
+PERMIT_DISTFILES_CDROM= Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += adns>=1 c m pthread stdc++
 

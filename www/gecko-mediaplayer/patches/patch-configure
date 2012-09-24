@@ -1,6 +1,4 @@
-$OpenBSD: patch-configure,v 1.10 2012/03/26 14:41:51 dcoppa Exp $
-
-Use '-pthread' instead of '-lpthread' for libpthread linkage
+$OpenBSD: patch-configure,v 1.11 2012/09/24 06:51:59 jasper Exp $
 
 Remove -ldl
 
@@ -15,7 +13,7 @@ Fix GECKO_CFLAGS and GECKO_LIBS
 -	GECKO_CFLAGS="-I$XULRUNNER_SDK_PREFIX/include -I$XULRUNNER_SDK_PREFIX/include/plugin -I$XULRUNNER_SDK_PREFIX/include/nspr -I$XULRUNNER_SDK_PREFIX/include/xpcom -I$XULRUNNER_SDK_PREFIX/include/string -I$XULRUNNER_SDK_PREFIX/include/java"
 -	GECKO_LIBS="-L$XULRUNNER_SDK_PREFIX/lib -lxpcomglue_s -lxul -lxpcom -lplds4 -lplc4 -lnspr4 -lpthread -ldl"
 +	GECKO_CFLAGS="-I$XULRUNNER_SDK_PREFIX/include -DOPENBSD"
-+	GECKO_LIBS="-L$XULRUNNER_SDK_PREFIX -lxpcomglue_s -lxul -lxpcom -lplds4 -lplc4 -lnspr4 -pthread"
++	GECKO_LIBS="-L$XULRUNNER_SDK_PREFIX -lxpcomglue_s -lxul -lxpcom -lplds4 -lplc4 -lnspr4 -lpthread"
  
  fi
  
