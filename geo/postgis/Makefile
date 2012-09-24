@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/09/21 14:13:32 pea Exp $
+# $OpenBSD: Makefile,v 1.12 2012/09/24 19:54:54 pea Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,6 +9,8 @@ CATEGORIES=	geo databases
 HOMEPAGE=	http://www.postgis.org/
 
 MAINTAINER=	Eric Faurot <eric@openbsd.org>
+
+BROKEN=		Doesn't build with PostgreSQL 9.2
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
