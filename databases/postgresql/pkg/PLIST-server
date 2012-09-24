@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST-server,v 1.21 2011/09/23 09:46:14 pea Exp $
+@comment $OpenBSD: PLIST-server,v 1.22 2012/09/24 19:57:02 pea Exp $
 @conflict pgsql-*
 @conflict pgsql-clients-*
 @conflict postgresql-clients-*
 @conflict postgresql-server-*
 @conflict postgresql-*
-@ask-update postgresql-server-<9.1 Make sure your existing database is backed up
+@ask-update postgresql-server-<9.2 Make sure your existing database is backed up
 @newgroup _postgresql:503
 @newuser _postgresql:503:_postgresql:daemon:PostgreSQL Manager:/var/postgresql:/bin/sh
 @bin bin/initdb
@@ -38,6 +38,8 @@ include/postgresql/server/access/rmgr.h
 include/postgresql/server/access/sdir.h
 include/postgresql/server/access/skey.h
 include/postgresql/server/access/slru.h
+include/postgresql/server/access/spgist.h
+include/postgresql/server/access/spgist_private.h
 include/postgresql/server/access/subtrans.h
 include/postgresql/server/access/sysattr.h
 include/postgresql/server/access/transam.h
@@ -107,10 +109,12 @@ include/postgresql/server/catalog/pg_opfamily.h
 include/postgresql/server/catalog/pg_pltemplate.h
 include/postgresql/server/catalog/pg_proc.h
 include/postgresql/server/catalog/pg_proc_fn.h
+include/postgresql/server/catalog/pg_range.h
 include/postgresql/server/catalog/pg_rewrite.h
 include/postgresql/server/catalog/pg_seclabel.h
 include/postgresql/server/catalog/pg_shdepend.h
 include/postgresql/server/catalog/pg_shdescription.h
+include/postgresql/server/catalog/pg_shseclabel.h
 include/postgresql/server/catalog/pg_statistic.h
 include/postgresql/server/catalog/pg_tablespace.h
 include/postgresql/server/catalog/pg_trigger.h
@@ -133,6 +137,7 @@ include/postgresql/server/commands/collationcmds.h
 include/postgresql/server/commands/comment.h
 include/postgresql/server/commands/conversioncmds.h
 include/postgresql/server/commands/copy.h
+include/postgresql/server/commands/createas.h
 include/postgresql/server/commands/dbcommands.h
 include/postgresql/server/commands/defrem.h
 include/postgresql/server/commands/discard.h
@@ -153,6 +158,8 @@ include/postgresql/server/commands/user.h
 include/postgresql/server/commands/vacuum.h
 include/postgresql/server/commands/variable.h
 include/postgresql/server/commands/view.h
+include/postgresql/server/datatype/
+include/postgresql/server/datatype/timestamp.h
 include/postgresql/server/dynloader.h
 include/postgresql/server/executor/
 include/postgresql/server/executor/execdebug.h
@@ -173,6 +180,7 @@ include/postgresql/server/executor/nodeFunctionscan.h
 include/postgresql/server/executor/nodeGroup.h
 include/postgresql/server/executor/nodeHash.h
 include/postgresql/server/executor/nodeHashjoin.h
+include/postgresql/server/executor/nodeIndexonlyscan.h
 include/postgresql/server/executor/nodeIndexscan.h
 include/postgresql/server/executor/nodeLimit.h
 include/postgresql/server/executor/nodeLockRows.h
@@ -296,27 +304,21 @@ include/postgresql/server/pg_config_os.h
 include/postgresql/server/pg_trace.h
 include/postgresql/server/pgstat.h
 include/postgresql/server/pgtime.h
+include/postgresql/server/plpgsql.h
 include/postgresql/server/port/
 include/postgresql/server/port.h
 include/postgresql/server/port/aix.h
-include/postgresql/server/port/bsdi.h
 include/postgresql/server/port/cygwin.h
 include/postgresql/server/port/darwin.h
-include/postgresql/server/port/dgux.h
 include/postgresql/server/port/freebsd.h
 include/postgresql/server/port/hpux.h
 @comment include/postgresql/server/port/irix.h
 include/postgresql/server/port/linux.h
 include/postgresql/server/port/netbsd.h
-include/postgresql/server/port/nextstep.h
 include/postgresql/server/port/openbsd.h
 include/postgresql/server/port/osf.h
 include/postgresql/server/port/sco.h
 include/postgresql/server/port/solaris.h
-include/postgresql/server/port/sunos4.h
-include/postgresql/server/port/svr4.h
-include/postgresql/server/port/ultrix4.h
-include/postgresql/server/port/univel.h
 include/postgresql/server/port/unixware.h
 @comment include/postgresql/server/port/win32/
 include/postgresql/server/port/win32.h
@@ -350,6 +352,7 @@ include/postgresql/server/postmaster/bgwriter.h
 include/postgresql/server/postmaster/fork_process.h
 include/postgresql/server/postmaster/pgarch.h
 include/postgresql/server/postmaster/postmaster.h
+include/postgresql/server/postmaster/startup.h
 include/postgresql/server/postmaster/syslogger.h
 include/postgresql/server/postmaster/walwriter.h
 include/postgresql/server/regex/
@@ -363,6 +366,7 @@ include/postgresql/server/replication/syncrep.h
 include/postgresql/server/replication/walprotocol.h
 include/postgresql/server/replication/walreceiver.h
 include/postgresql/server/replication/walsender.h
+include/postgresql/server/replication/walsender_private.h
 include/postgresql/server/rewrite/
 include/postgresql/server/rewrite/prs2lock.h
 include/postgresql/server/rewrite/rewriteDefine.h
@@ -409,6 +413,7 @@ include/postgresql/server/snowball/libstemmer/stem_UTF_8_swedish.h
 include/postgresql/server/snowball/libstemmer/stem_UTF_8_turkish.h
 include/postgresql/server/storage/
 include/postgresql/server/storage/backendid.h
+include/postgresql/server/storage/barrier.h
 include/postgresql/server/storage/block.h
 include/postgresql/server/storage/buf.h
 include/postgresql/server/storage/buf_internals.h
@@ -492,6 +497,7 @@ include/postgresql/server/utils/hsearch.h
 include/postgresql/server/utils/inet.h
 include/postgresql/server/utils/int8.h
 include/postgresql/server/utils/inval.h
+include/postgresql/server/utils/json.h
 include/postgresql/server/utils/logtape.h
 include/postgresql/server/utils/lsyscache.h
 include/postgresql/server/utils/memutils.h
@@ -499,6 +505,7 @@ include/postgresql/server/utils/nabstime.h
 include/postgresql/server/utils/numeric.h
 include/postgresql/server/utils/palloc.h
 include/postgresql/server/utils/pg_crc.h
+include/postgresql/server/utils/pg_crc_tables.h
 include/postgresql/server/utils/pg_locale.h
 include/postgresql/server/utils/pg_lzcompress.h
 include/postgresql/server/utils/pg_rusage.h
@@ -506,14 +513,17 @@ include/postgresql/server/utils/plancache.h
 include/postgresql/server/utils/portal.h
 include/postgresql/server/utils/probes.h
 include/postgresql/server/utils/ps_status.h
+include/postgresql/server/utils/rangetypes.h
 include/postgresql/server/utils/rbtree.h
 include/postgresql/server/utils/rel.h
 include/postgresql/server/utils/relcache.h
 include/postgresql/server/utils/relmapper.h
+include/postgresql/server/utils/reltrigger.h
 include/postgresql/server/utils/resowner.h
 include/postgresql/server/utils/selfuncs.h
 include/postgresql/server/utils/snapmgr.h
 include/postgresql/server/utils/snapshot.h
+include/postgresql/server/utils/sortsupport.h
 include/postgresql/server/utils/spccache.h
 include/postgresql/server/utils/syscache.h
 include/postgresql/server/utils/timestamp.h

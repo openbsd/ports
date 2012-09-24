@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-contrib,v 1.8 2011/09/23 09:46:14 pea Exp $
+@comment $OpenBSD: PLIST-contrib,v 1.9 2012/09/24 19:57:02 pea Exp $
 @conflict postgresql-uuid-*
 @conflict postgresql-server-<8.4.3
 @pkgpath devel/uuid,-pgsql
@@ -6,6 +6,7 @@
 @bin bin/pg_archivecleanup
 @bin bin/pg_standby
 @bin bin/pg_test_fsync
+@bin bin/pg_test_timing
 @bin bin/pg_upgrade
 @bin bin/pgbench
 @bin bin/vacuumlo
@@ -43,9 +44,18 @@ lib/postgresql/refint.so
 lib/postgresql/seg.so
 lib/postgresql/sslinfo.so
 lib/postgresql/tablefunc.so
+lib/postgresql/tcn.so
 lib/postgresql/timetravel.so
 lib/postgresql/tsearch2.so
 lib/postgresql/uuid-ossp.so
+@man man/man1/oid2name.1
+@man man/man1/pg_archivecleanup.1
+@man man/man1/pg_standby.1
+@man man/man1/pg_test_fsync.1
+@man man/man1/pg_test_timing.1
+@man man/man1/pg_upgrade.1
+@man man/man1/pgbench.1
+@man man/man1/vacuumlo.1
 share/postgresql/extension/adminpack--1.0.sql
 share/postgresql/extension/adminpack.control
 share/postgresql/extension/autoinc--1.0.sql
@@ -83,7 +93,8 @@ share/postgresql/extension/file_fdw.control
 share/postgresql/extension/fuzzystrmatch--1.0.sql
 share/postgresql/extension/fuzzystrmatch--unpackaged--1.0.sql
 share/postgresql/extension/fuzzystrmatch.control
-share/postgresql/extension/hstore--1.0.sql
+share/postgresql/extension/hstore--1.0--1.1.sql
+share/postgresql/extension/hstore--1.1.sql
 share/postgresql/extension/hstore--unpackaged--1.0.sql
 share/postgresql/extension/hstore.control
 share/postgresql/extension/insert_username--1.0.sql
@@ -116,7 +127,8 @@ share/postgresql/extension/pg_buffercache.control
 share/postgresql/extension/pg_freespacemap--1.0.sql
 share/postgresql/extension/pg_freespacemap--unpackaged--1.0.sql
 share/postgresql/extension/pg_freespacemap.control
-share/postgresql/extension/pg_stat_statements--1.0.sql
+share/postgresql/extension/pg_stat_statements--1.0--1.1.sql
+share/postgresql/extension/pg_stat_statements--1.1.sql
 share/postgresql/extension/pg_stat_statements--unpackaged--1.0.sql
 share/postgresql/extension/pg_stat_statements.control
 share/postgresql/extension/pg_trgm--1.0.sql
@@ -143,6 +155,8 @@ share/postgresql/extension/sslinfo.control
 share/postgresql/extension/tablefunc--1.0.sql
 share/postgresql/extension/tablefunc--unpackaged--1.0.sql
 share/postgresql/extension/tablefunc.control
+share/postgresql/extension/tcn--1.0.sql
+share/postgresql/extension/tcn.control
 share/postgresql/extension/test_parser--1.0.sql
 share/postgresql/extension/test_parser--unpackaged--1.0.sql
 share/postgresql/extension/test_parser.control

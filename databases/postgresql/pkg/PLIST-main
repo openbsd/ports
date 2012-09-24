@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.21 2011/09/23 09:46:14 pea Exp $
+@comment $OpenBSD: PLIST-main,v 1.22 2012/09/24 19:57:02 pea Exp $
 @conflict pgsql-*
 @conflict pgsql-clients-*
 @conflict postgresql-*
@@ -15,6 +15,7 @@
 @bin bin/pg_config
 @bin bin/pg_dump
 @bin bin/pg_dumpall
+@bin bin/pg_receivexlog
 @bin bin/pg_restore
 @bin bin/psql
 @bin bin/reindexdb
@@ -99,6 +100,7 @@ lib/postgresql/pgxs/src/test/regress/
 @man man/man1/pg_config.1
 @man man/man1/pg_dump.1
 @man man/man1/pg_dumpall.1
+@man man/man1/pg_receivexlog.1
 @man man/man1/pg_restore.1
 @man man/man1/psql.1
 @man man/man1/reindexdb.1
@@ -133,6 +135,7 @@ lib/postgresql/pgxs/src/test/regress/
 @man man/man3/SPI_gettypeid.3
 @man man/man3/SPI_getvalue.3
 @man man/man3/SPI_is_cursor_plan.3
+@man man/man3/SPI_keepplan.3
 @man man/man3/SPI_modifytuple.3
 @man man/man3/SPI_palloc.3
 @man man/man3/SPI_pfree.3
