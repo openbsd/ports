@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_camera_CameraTable_vala,v 1.2 2012/02/27 19:41:55 ajacoutot Exp $
---- src/camera/CameraTable.vala.orig	Sun Feb 26 15:04:33 2012
-+++ src/camera/CameraTable.vala	Sun Feb 26 15:09:13 2012
+$OpenBSD: patch-src_camera_CameraTable_vala,v 1.3 2012/09/24 20:32:49 jasper Exp $
+
+--- src/camera/CameraTable.vala.orig	Wed Sep 19 21:08:59 2012
++++ src/camera/CameraTable.vala	Mon Sep 24 21:30:15 2012
 @@ -26,7 +26,6 @@ public class CameraTable {
      
      private static CameraTable instance = null;
@@ -18,7 +19,7 @@ $OpenBSD: patch-src_camera_CameraTable_vala,v 1.2 2012/02/27 19:41:55 ajacoutot 
          volume_monitor = VolumeMonitor.get();
          volume_monitor.volume_changed.connect(on_volume_changed);
          volume_monitor.volume_added.connect(on_volume_changed);
-@@ -105,30 +102,6 @@ public class CameraTable {
+@@ -112,30 +109,6 @@ public class CameraTable {
      private string[] get_all_usb_cameras() {
          string[] cameras = new string[0];
          
@@ -49,7 +50,7 @@ $OpenBSD: patch-src_camera_CameraTable_vala,v 1.2 2012/02/27 19:41:55 ajacoutot 
          
          return cameras;
      }
-@@ -206,24 +179,6 @@ public class CameraTable {
+@@ -213,24 +186,6 @@ public class CameraTable {
              "/dev/bus/usb/%s".printf(port.substring(4).replace(",", "/")) : null;
      }
      
@@ -74,7 +75,7 @@ $OpenBSD: patch-src_camera_CameraTable_vala,v 1.2 2012/02/27 19:41:55 ajacoutot 
      private void update_camera_table() throws GPhotoError {
          // need to do this because virtual ports come and go in the USB world (and probably others)
          GPhoto.PortInfoList port_info_list;
-@@ -313,23 +268,6 @@ public class CameraTable {
+@@ -335,23 +290,6 @@ public class CameraTable {
                  continue;
              }
              
@@ -98,7 +99,7 @@ $OpenBSD: patch-src_camera_CameraTable_vala,v 1.2 2012/02/27 19:41:55 ajacoutot 
              if (null == display_name) {
                  // Default to GPhoto detected name.
                  display_name = name;
-@@ -367,13 +305,7 @@ public class CameraTable {
+@@ -396,13 +334,7 @@ public class CameraTable {
          }
      }
      
