@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2012/08/08 10:44:44 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.23 2012/09/24 17:55:36 brad Exp $
 @conflict kqemu-*
 @conflict qemu-*
 @pkgpath emulators/kqemu
@@ -20,6 +20,7 @@
 @bin bin/qemu-system-mips64
 @bin bin/qemu-system-mips64el
 @bin bin/qemu-system-mipsel
+@bin bin/qemu-system-or32
 @bin bin/qemu-system-ppc
 @bin bin/qemu-system-ppc64
 @bin bin/qemu-system-ppcemb
@@ -28,6 +29,7 @@
 @bin bin/qemu-system-sh4eb
 @bin bin/qemu-system-sparc
 @bin bin/qemu-system-sparc64
+@bin bin/qemu-system-unicore32
 @bin bin/qemu-system-x86_64
 @bin bin/qemu-system-xtensa
 @bin bin/qemu-system-xtensaeb
@@ -57,6 +59,7 @@ share/qemu/bios.bin
 share/qemu/cpus-x86_64.conf
 share/qemu/keymaps/
 share/qemu/keymaps/ar
+share/qemu/keymaps/bepo
 share/qemu/keymaps/common
 share/qemu/keymaps/da
 share/qemu/keymaps/de
@@ -93,7 +96,6 @@ share/qemu/keymaps/th
 share/qemu/keymaps/tr
 share/qemu/kvmvapic.bin
 share/qemu/linuxboot.bin
-share/qemu/mpc8544ds.dtb
 share/qemu/multiboot.bin
 share/qemu/openbios-ppc
 share/qemu/openbios-sparc32

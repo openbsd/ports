@@ -1,18 +1,13 @@
-# $OpenBSD: Makefile,v 1.90 2012/09/03 08:47:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.91 2012/09/24 17:55:36 brad Exp $
 
-ONLY_FOR_ARCHS=	amd64 arm hppa i386 mips64 mips64el powerpc sparc sparc64
-BROKEN-hppa=	compiler bug with gcc 4.2
+ONLY_FOR_ARCHS=	amd64 arm i386 mips64 mips64el powerpc sparc sparc64
 
 COMMENT=	multi system emulator
 
-DISTNAME=	qemu-1.1.1-1
-PKGNAME=	qemu-1.1.1
+DISTNAME=	qemu-1.2.0
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	1
-
-WRKDIST=	${WRKDIR}/qemu-1.1.1
 
 HOMEPAGE=	http://www.qemu.org/
 

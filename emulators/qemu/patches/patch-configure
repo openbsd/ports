@@ -1,14 +1,14 @@
-$OpenBSD: patch-configure,v 1.24 2012/08/08 10:44:44 sthen Exp $
---- configure.orig	Tue Jul 17 14:11:14 2012
-+++ configure	Wed Jul 18 11:40:41 2012
-@@ -2854,10 +2854,6 @@ fi
+$OpenBSD: patch-configure,v 1.25 2012/09/24 17:55:36 brad Exp $
+--- configure.orig	Fri Aug 24 05:09:49 2012
++++ configure	Fri Aug 24 05:10:05 2012
+@@ -2995,10 +2995,6 @@ fi
  # End of CC checks
  # After here, no more $cc or $ld runs
  
 -if test "$debug" = "no" ; then
--  CFLAGS="-O2 $CFLAGS"
+-  CFLAGS="-O2 -D_FORTIFY_SOURCE=2 $CFLAGS"
 -fi
 -
- # Consult white-list to determine whether to enable werror
- # by default.  Only enable by default for git builds
- z_version=`cut -f3 -d. $source_path/VERSION`
+ # Disable zero malloc errors for official releases unless explicitly told to
+ # enable/disable
+ if test -z "$zero_malloc" ; then
