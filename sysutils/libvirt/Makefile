@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2012/09/14 13:59:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2012/09/24 12:36:08 jasper Exp $
 
 COMMENT=		tool/library for managing platform virtualization
 
-DISTNAME=		libvirt-0.10.1
-REVISION=		1
+DISTNAME=		libvirt-0.10.2
 CATEGORIES=		sysutils devel
 
-SHARED_LIBS +=  virt-qemu                 0.0 # 10.1
-SHARED_LIBS +=  virt                      0.0 # 10.1
+SHARED_LIBS +=  virt-qemu                 0.1 # 10.2
+SHARED_LIBS +=  virt                      0.1 # 10.2
 
 HOMEPAGE=		http://libvirt.org/
 
@@ -38,9 +37,7 @@ LIB_DEPENDS=		net/avahi \
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 
-AUTOCONF_VERSION=	2.68
-
-CONFIGURE_STYLE=	autoconf
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-avahi \
 			--with-libssh2 \

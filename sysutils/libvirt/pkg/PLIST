@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/09/04 14:41:15 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/09/24 12:36:08 jasper Exp $
 @bin bin/virsh
 @bin bin/virt-host-validate
 bin/virt-pki-validate
@@ -8,14 +8,12 @@ include/libvirt/libvirt-qemu.h
 include/libvirt/libvirt.h
 include/libvirt/virterror.h
 @comment lib/charset.alias
-lib/libvirt/
 lib/libvirt-qemu.a
 lib/libvirt-qemu.la
 @lib lib/libvirt-qemu.so.${LIBvirt-qemu_VERSION}
 lib/libvirt.a
 lib/libvirt.la
 @lib lib/libvirt.so.${LIBvirt_VERSION}
-lib/libvirt/connection-driver/
 lib/pkgconfig/libvirt.pc
 lib/python${MODPY_VERSION}/site-packages/libvirt.py
 lib/python${MODPY_VERSION}/site-packages/libvirt_qemu.py

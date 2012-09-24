@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2012/09/04 14:41:15 jasper Exp $
---- src/Makefile.in.orig	Tue Sep  4 13:24:18 2012
-+++ src/Makefile.in	Tue Sep  4 13:24:33 2012
-@@ -6723,9 +6723,6 @@ libvirt_qemu.def: $(srcdir)/libvirt_qemu.syms
+$OpenBSD: patch-src_Makefile_in,v 1.2 2012/09/24 12:36:08 jasper Exp $
+--- src/Makefile.in.orig	Mon Sep 24 06:40:14 2012
++++ src/Makefile.in	Mon Sep 24 14:12:34 2012
+@@ -6791,9 +6791,6 @@ libvirt_qemu.def: $(srcdir)/libvirt_qemu.syms
  
  install-data-local:
  	$(MKDIR_P) "$(DESTDIR)$(localstatedir)/cache/libvirt"
