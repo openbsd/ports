@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2012/09/24 20:53:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2012/09/24 20:57:51 jasper Exp $
 
 COMMENT=	clutter widget toolkit
 
@@ -6,8 +6,9 @@ V=		1.4.7
 HASH=		32cb530
 DISTNAME=	clutter-project-mx-${V}-0-g32cb530
 PKGNAME=	mx-${V}
+REVISION=	0
 
-SHARED_LIBS +=  mx-1.0                    0.0 # 407.0
+SHARED_LIBS +=  mx-1.0                    0.0 # 406.0
 SHARED_LIBS +=  mx-gtk-1.0                0.0 # 0.0
 
 MASTER_SITES=	http://distfiles.nl/

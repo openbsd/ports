@@ -1,0 +1,16 @@
+$OpenBSD: patch-mx_mx-texture-frame_c,v 1.1 2012/09/24 20:57:51 jasper Exp $
+
+Replace GL data types with equivalent glib types.
+https://github.com/clutter-project/mx/commit/92e456a
+
+--- mx/mx-texture-frame.c.orig	Mon Sep 24 22:51:15 2012
++++ mx/mx-texture-frame.c	Mon Sep 24 22:51:24 2012
+@@ -200,7 +200,7 @@ mx_texture_frame_paint (ClutterActor *self)
+ 
+ 
+   {
+-    GLfloat rectangles[] =
++    gfloat rectangles[] =
+     {
+       /* top left corner */
+       0, 0,

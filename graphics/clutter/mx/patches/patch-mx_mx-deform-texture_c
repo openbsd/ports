@@ -1,0 +1,30 @@
+$OpenBSD: patch-mx_mx-deform-texture_c,v 1.1 2012/09/24 20:57:51 jasper Exp $
+
+Replace GL data types with equivalent glib types.
+https://github.com/clutter-project/mx/commit/92e456a
+
+--- mx/mx-deform-texture.c.orig	Mon Sep 24 22:51:34 2012
++++ mx/mx-deform-texture.c	Mon Sep 24 22:51:53 2012
+@@ -493,9 +493,9 @@ mx_deform_texture_class_init (MxDeformTextureClass *kl
+ static void
+ mx_deform_texture_init_arrays (MxDeformTexture *self)
+ {
+-  GLushort *idx, *bf_idx;
++  gushort *idx, *bf_idx;
+   gint x, y, direction;
+-  GLushort *static_indices, *static_bf_indices;
++  gushort *static_indices, *static_bf_indices;
+   MxDeformTexturePrivate *priv = self->priv;
+ 
+   mx_deform_texture_free_arrays (self);
+@@ -503,8 +503,8 @@ mx_deform_texture_init_arrays (MxDeformTexture *self)
+   priv->n_indices = (2 + 2 * priv->tiles_x) *
+                     priv->tiles_y +
+                     (priv->tiles_y - 1);
+-  static_indices = g_new (GLushort, priv->n_indices);
+-  static_bf_indices = g_new (GLushort, priv->n_indices);
++  static_indices = g_new (gushort, priv->n_indices);
++  static_bf_indices = g_new (gushort, priv->n_indices);
+ 
+ #define MESH_INDEX(X, Y) (Y) * (priv->tiles_x + 1) + (X)
+ 
