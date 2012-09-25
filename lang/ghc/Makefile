@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2012/09/23 20:26:57 kili Exp $
+# $OpenBSD: Makefile,v 1.80 2012/09/25 19:26:36 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -36,7 +36,6 @@ PERMIT_DISTFILES_FTP =		Yes
 
 PKG_ARCH-doc =		*
 BUILD_DEPENDS =		archivers/gtar \
-			textproc/dblatex \
 			textproc/docbook>=4.5 \
 			textproc/docbook-xsl \
 			textproc/libxslt
@@ -99,6 +98,8 @@ MAKE_FLAGS +=		HADDOCK_DOCS=NO \
 			BUILD_DOCBOOK_HTML=NO \
 			BUILD_DOCBOOK_PDF=NO \
 			BUILD_DOCBOOK_PS=NO
+.else
+BUILD_DEPENDS +=	textproc/dblatex
 .endif
 
 # Thank god that they're only building compilers and no nuclear
