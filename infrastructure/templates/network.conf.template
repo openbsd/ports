@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.174 2012/07/04 09:18:42 sthen Exp $
+# $OpenBSD: network.conf.template,v 1.175 2012/09/25 20:52:15 sthen Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -55,19 +55,14 @@ MASTER_SITE_BACKUP?=	\
 
 # Popular master sites, most useful sites come first.
 MASTER_SITE_GNU+=	\
+	http://ftpmirror.gnu.org/ \
 	http://ftp.gnu.org/gnu/ \
 	http://ftp.funet.fi/pub/gnu/prep/ \
-	http://mirrors.usc.edu/pub/gnu/ \
 	ftp://ftp.gnu.org/gnu/ \
 	ftp://ftp.cs.tu-berlin.de/pub/gnu/ \
-	ftp://aeneas.mit.edu/pub/gnu/ \
 	http://mirrors.dotsrc.org/gnu/ \
 	http://ftp.ibiblio.org/pub/mirrors/gnu/ftp/gnu/ \
 	http://ftp.kddilabs.jp/GNU/ \
-	ftp://ftp.informatik.hu-berlin.de/pub/gnu/ \
-	http://ftp.ist.utl.pt/pub/GNU/gnu/gnu/ \
-	ftp://mirror.cict.fr/gnu/ \
-	ftp://ftp.wayne.edu/pub/gnu/ \
 	ftp://ftp.sunet.se/pub/gnu/ \
 	ftp://ftp.nluug.nl/pub/gnu/
 
