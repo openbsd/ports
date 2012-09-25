@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2012/09/21 13:17:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2012/09/25 22:45:32 ajacoutot Exp $
 @conflict glib2mm-docs-*
 @pkgpath devel/glib2mm,-main
 @pkgpath devel/glib2mm,-docs
@@ -21,6 +21,8 @@ include/giomm-${V}/giomm/cancellable.h
 include/giomm-${V}/giomm/charsetconverter.h
 include/giomm-${V}/giomm/contenttype.h
 include/giomm-${V}/giomm/converter.h
+include/giomm-${V}/giomm/converterinputstream.h
+include/giomm-${V}/giomm/converteroutputstream.h
 include/giomm-${V}/giomm/credentials.h
 include/giomm-${V}/giomm/datainputstream.h
 include/giomm-${V}/giomm/dataoutputstream.h
@@ -82,6 +84,8 @@ include/giomm-${V}/giomm/mountoperation.h
 include/giomm-${V}/giomm/networkaddress.h
 include/giomm-${V}/giomm/networkservice.h
 include/giomm-${V}/giomm/outputstream.h
+include/giomm-${V}/giomm/pollableinputstream.h
+include/giomm-${V}/giomm/pollableoutputstream.h
 include/giomm-${V}/giomm/private/
 include/giomm-${V}/giomm/private/action_p.h
 include/giomm-${V}/giomm/private/actiongroup_p.h
@@ -97,6 +101,8 @@ include/giomm-${V}/giomm/private/bufferedoutputstream_p.h
 include/giomm-${V}/giomm/private/cancellable_p.h
 include/giomm-${V}/giomm/private/charsetconverter_p.h
 include/giomm-${V}/giomm/private/converter_p.h
+include/giomm-${V}/giomm/private/converterinputstream_p.h
+include/giomm-${V}/giomm/private/converteroutputstream_p.h
 include/giomm-${V}/giomm/private/credentials_p.h
 include/giomm-${V}/giomm/private/datainputstream_p.h
 include/giomm-${V}/giomm/private/dataoutputstream_p.h
@@ -157,6 +163,8 @@ include/giomm-${V}/giomm/private/mountoperation_p.h
 include/giomm-${V}/giomm/private/networkaddress_p.h
 include/giomm-${V}/giomm/private/networkservice_p.h
 include/giomm-${V}/giomm/private/outputstream_p.h
+include/giomm-${V}/giomm/private/pollableinputstream_p.h
+include/giomm-${V}/giomm/private/pollableoutputstream_p.h
 include/giomm-${V}/giomm/private/proxy_p.h
 include/giomm-${V}/giomm/private/proxyaddress_p.h
 include/giomm-${V}/giomm/private/proxyresolver_p.h
@@ -444,6 +452,12 @@ share/doc/glibmm-${V}/reference/html/classGio_1_1CharsetConverter.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1CharsetConverter__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGio_1_1Converter-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1Converter.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1ConverterInputStream-members.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1ConverterInputStream.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1ConverterInputStream__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGio_1_1ConverterOutputStream-members.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1ConverterOutputStream.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1ConverterOutputStream__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGio_1_1Converter__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGio_1_1Credentials-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1Credentials.html
@@ -616,6 +630,12 @@ share/doc/glibmm-${V}/reference/html/classGio_1_1NetworkService__inherit__graph.
 share/doc/glibmm-${V}/reference/html/classGio_1_1OutputStream-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1OutputStream.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1OutputStream__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGio_1_1PollableInputStream-members.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1PollableInputStream.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1PollableInputStream__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGio_1_1PollableOutputStream-members.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1PollableOutputStream.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1PollableOutputStream__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGio_1_1Proxy-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1Proxy.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1ProxyAddress-members.html
@@ -1149,6 +1169,8 @@ share/doc/glibmm-${V}/reference/html/classGlib_1_1ustring__Iterator.html
 share/doc/glibmm-${V}/reference/html/classes.html
 share/doc/glibmm-${V}/reference/html/classresize__policy.html
 share/doc/glibmm-${V}/reference/html/classresize__policy__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classsigc_1_1trackable.html
+share/doc/glibmm-${V}/reference/html/classsigc_1_1trackable__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/closed.png
 share/doc/glibmm-${V}/reference/html/deprecated.html
 share/doc/glibmm-${V}/reference/html/dir_02fef2a40270467d72a7f717cf991d8a.html
