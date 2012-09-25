@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/15 19:45:58 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2012/09/25 22:05:22 brad Exp $
 
 COMMENT=	C++ GUI library designed for games
 
@@ -32,8 +32,8 @@ LIB_DEPENDS=	devel/sdl
 USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="`sdl-config --cflags`" \
-		LDFLAGS="`sdl-config --libs`"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-allegro=no
 
