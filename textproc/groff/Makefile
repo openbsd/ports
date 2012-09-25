@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.18 2012/05/28 13:23:28 schwarze Exp $
+# $OpenBSD: Makefile,v 1.19 2012/09/25 19:31:59 sthen Exp $
 
 COMMENT =		GNU troff typesetter
 DISTNAME =		groff-1.21
 REVISION =		8
 
 CATEGORIES =		textproc
+DPB_PROPERTIES =	parallel
+
 HOMEPAGE =		http://www.gnu.org/software/groff/
 MAINTAINER =		Ingo Schwarze <schwarze@openbsd.org>
 
