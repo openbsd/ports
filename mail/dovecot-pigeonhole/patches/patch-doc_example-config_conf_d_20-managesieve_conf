@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_example-config_conf_d_20-managesieve_conf,v 1.1.1.1 2011/05/23 22:49:00 sthen Exp $
---- doc/example-config/conf.d/20-managesieve.conf.orig	Thu Mar 10 14:28:00 2011
-+++ doc/example-config/conf.d/20-managesieve.conf	Thu Mar 10 14:28:10 2011
+$OpenBSD: patch-doc_example-config_conf_d_20-managesieve_conf,v 1.2 2012/09/25 20:07:12 brad Exp $
+--- doc/example-config/conf.d/20-managesieve.conf.orig	Sun Aug 12 12:13:41 2012
++++ doc/example-config/conf.d/20-managesieve.conf	Tue Sep 18 20:49:47 2012
 @@ -3,18 +3,18 @@
  ##
  
@@ -10,10 +10,11 @@ $OpenBSD: patch-doc_example-config_conf_d_20-managesieve_conf,v 1.1.1.1 2011/05/
  
  # Service definitions
  
- service managesieve-login {
+-#service managesieve-login {
 -  #inet_listener sieve {
 -  #  port = 4190
 -  #}
++service managesieve-login {
 +  inet_listener sieve {
 +    port = 4190
 +  }
@@ -27,3 +28,12 @@ $OpenBSD: patch-doc_example-config_conf_d_20-managesieve_conf,v 1.1.1.1 2011/05/
  
    # Number of connections to handle before starting a new process. Typically
    # the only useful values are 0 (unlimited) or 1. 1 is more secure, but 0
+@@ -26,7 +26,7 @@
+ 
+   # If you set service_count=0, you probably need to grow this.
+   #vsz_limit = 64M
+-#}
++}
+ 
+ #service managesieve {
+   # Max. number of ManageSieve processes (connections)
