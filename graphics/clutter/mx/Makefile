@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2012/09/25 14:45:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2012/09/25 23:50:13 brad Exp $
 
 COMMENT=	clutter widget toolkit
 
@@ -44,7 +44,7 @@ AUTOCONF_VERSION=	2.69
 
 pre-configure:
 	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autogen.sh
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
 
 .include <bsd.port.mk>
 
