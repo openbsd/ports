@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/03/30 13:16:33 phessler Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/09/25 22:00:00 brad Exp $
+@bin bin/bd_info
 include/libbluray/
 include/libbluray/bluray-version.h
 include/libbluray/bluray.h
@@ -11,5 +12,4 @@ include/libbluray/overlay.h
 lib/libbluray.a
 lib/libbluray.la
 @lib lib/libbluray.so.${LIBbluray_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/libbluray.pc

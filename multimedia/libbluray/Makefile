@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2012/08/27 09:34:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2012/09/25 22:00:00 brad Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		library supporting Blu-ray playback
 
-V =			0.2.2
+V =			0.2.3
 DISTNAME =		libbluray-${V}
-REVISION =		0
 CATEGORIES =		multimedia
 
 HOMEPAGE =		http://www.videolan.org/developers/libbluray.html
@@ -23,8 +22,8 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-SHARED_LIBS +=		bluray		0.0	# 0.0
-WANTLIB +=		m pthread xml2 z
+SHARED_LIBS +=		bluray		1.0	# 3.0
+WANTLIB +=		c m pthread xml2 z
 
 MODULES =		converters/libiconv
 
@@ -34,6 +33,7 @@ BUILD_DEPENDS =		devel/bison \
 
 MAKE_FLAGS =		CFLAGS="${CFLAGS}"
 
+SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
 USE_LIBTOOL =		yes
 YACC =			${LOCALBASE}/bin/bison -y
