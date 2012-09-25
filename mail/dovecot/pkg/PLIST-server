@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.34 2012/08/05 09:15:51 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.35 2012/09/25 20:05:46 brad Exp $
 @conflict dovecot-sqlite-*
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
@@ -401,6 +401,7 @@ lib/dovecot/lib20_expire_plugin.so
 lib/dovecot/lib20_fts_plugin.so
 lib/dovecot/lib20_listescape_plugin.so
 lib/dovecot/lib20_mail_log_plugin.so
+lib/dovecot/lib20_mailbox_alias_plugin.so
 lib/dovecot/lib20_replication_plugin.so
 lib/dovecot/lib20_virtual_plugin.so
 lib/dovecot/lib20_zlib_plugin.so
