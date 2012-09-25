@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1 2012/09/25 21:58:47 sthen Exp $
+@option no-default-conflict
+@conflict asterisk-moh-opsound-*-${MODAS_CODEC}
+@conflict asterisk-<1.8.16.0p0
+share/asterisk/
+${MODAS_INST}/
+@comment ${MODAS_INST}/CHANGES-asterisk-moh-opsound${FLAVORS}
+@comment ${MODAS_INST}/CREDITS-asterisk-moh-opsound${FLAVORS}
+@comment ${MODAS_INST}/LICENSE-asterisk-moh-opsound${FLAVORS}
+${MODAS_INST}/macroform-cold_day.${MODAS_CODEC}
+${MODAS_INST}/macroform-robot_dity.${MODAS_CODEC}
+${MODAS_INST}/macroform-the_simplicity.${MODAS_CODEC}
+${MODAS_INST}/manolo_camp-morning_coffee.${MODAS_CODEC}
+${MODAS_INST}/reno_project-system.${MODAS_CODEC}

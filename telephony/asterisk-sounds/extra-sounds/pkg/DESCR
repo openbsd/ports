@@ -1,0 +1,13 @@
+This package contains an assortment of useful and not so useful
+${MODAS_LANGNAME} sound files for Asterisk in ${MODAS_CODEC} format.
+
+Codecs currently available via FLAVORs are as follows:
+
+gsm:	GSM compression. Small files, but low quality. "Asterisk default".
+wav:	RIFF WAV files. 8KHz.
+ulaw:	ITU G.711 mu-law. Common in countries using T1 lines
+	(N.America and Japan).
+alaw:	ITU G.711 A-law. Common in most other countries.
+g722:	ITU G.722. Wide-band codec.
+sln16:	Signed Linear 16 KHz. Not normally used natively, but providing
+	CPU is sufficient to transcode this avoids loss in quality.

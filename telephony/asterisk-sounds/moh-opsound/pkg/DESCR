@@ -1,0 +1,13 @@
+This package contains freely licensed music from the opsound.org
+collection, intended for use as hold music for the Asterisk PBX.
+
+Codecs currently available via FLAVORs are as follows:
+
+gsm:	GSM compression. Small files, but low quality.
+wav:	RIFF WAV files. 8KHz. "Asterisk default" for MOH.
+ulaw:	ITU G.711 mu-law. Common in countries using T1 lines
+	(N.America and Japan).
+alaw:	ITU G.711 A-law. Common in most other countries.
+g722:	ITU G.722. Wide-band codec.
+sln16:	Signed Linear 16 KHz. Not normally used natively, but providing
+	CPU is sufficient to transcode this avoids loss in quality.
