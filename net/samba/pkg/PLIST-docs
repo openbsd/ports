@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.18 2012/06/27 07:29:17 sthen Exp $
+@comment $OpenBSD: PLIST-docs,v 1.19 2012/09/25 20:11:11 brad Exp $
 @conflict samba-<3.6.0
 @pkgpath net/samba,-docs,ads
 @pkgpath net/samba,-docs,cups
@@ -51,7 +51,6 @@ share/examples/samba/VFS/configure
 share/examples/samba/VFS/configure.in
 share/examples/samba/VFS/install-sh
 share/examples/samba/VFS/module_config.h.in
-share/examples/samba/VFS/module_config.h.in~
 share/examples/samba/VFS/shadow_copy_test.c
 share/examples/samba/VFS/skel_opaque.c
 share/examples/samba/VFS/skel_transparent.c

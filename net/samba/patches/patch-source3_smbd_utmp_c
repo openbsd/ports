@@ -1,7 +1,7 @@
-$OpenBSD: patch-source3_smbd_utmp_c,v 1.1 2012/04/10 22:01:20 sthen Exp $
---- source3/smbd/utmp.c.orig	Sat Apr  7 14:23:20 2012
-+++ source3/smbd/utmp.c	Tue Apr 10 22:56:36 2012
-@@ -253,14 +253,58 @@ static char *uw_pathname(TALLOC_CTX *ctx,
+$OpenBSD: patch-source3_smbd_utmp_c,v 1.2 2012/09/25 20:11:11 brad Exp $
+--- source3/smbd/utmp.c.orig	Mon Jul 30 13:13:16 2012
++++ source3/smbd/utmp.c	Thu Sep 13 20:29:38 2012
+@@ -253,14 +253,59 @@ static char *uw_pathname(TALLOC_CTX *ctx,
  }
  
  #ifndef HAVE_PUTUTLINE
@@ -22,19 +22,19 @@ $OpenBSD: patch-source3_smbd_utmp_c,v 1.1 2012/04/10 22:01:20 sthen Exp $
 +               return;
 +
 +       if (!setttyent())
-+               return;
++               goto error;
 +
 +       for (topslot = 0; getttyent() != (struct ttyent *)NULL; )
 +               topslot++;
 +
 +      if (!endttyent())
-+               return;
-+               
++               goto error;
++
 +       (void) lseek(fd, (off_t)(topslot * sizeof(struct utmp)), SEEK_SET);
 +       
 +       DEBUG(1,("pututline(%s, %s, %d); topslot=%d\n",
 +           u->ut_line, u->ut_name, claim, topslot));
-+       
++
 +       while (1) {
 +               if (read(fd, &ubuf, sizeof(ubuf)) == sizeof(ubuf)) {
 +                       if ((claim && !ubuf.ut_name[0]) ||
@@ -51,13 +51,14 @@ $OpenBSD: patch-source3_smbd_utmp_c,v 1.1 2012/04/10 22:01:20 sthen Exp $
 +                       break;
 +               }
 +       }
-+                                   
++
 +       if (!claim) {
 +               memset((char *)&u->ut_name, '\0', sizeof(u->ut_name));
 +               memset((char *)&u->ut_host, '\0', sizeof(u->ut_host));
 +       }
 +       (void) write(fd, u, sizeof(struct utmp));
-+                           
++
++error:
 +       (void) close(fd);
  }
  #endif /* HAVE_PUTUTLINE */
