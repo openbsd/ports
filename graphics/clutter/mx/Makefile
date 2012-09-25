@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/09/24 20:57:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2012/09/25 14:45:31 jasper Exp $
 
 COMMENT=	clutter widget toolkit
 
@@ -36,7 +36,9 @@ CONFIGURE_ARGS=		--without-glade
 WRKDIST=		${WRKDIR}/clutter-project-mx-${HASH}/
 
 # XXX: Remove when updating to a real release tarball, instead of a git tag
-BUILD_DEPENDS=		devel/libtool # for AC_PROG_LIBTOOL
+BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool # for AC_PROG_LIBTOOL
 AUTOMAKE_VERSION=	1.12
 AUTOCONF_VERSION=	2.69
 
