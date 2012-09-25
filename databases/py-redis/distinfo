@@ -1,5 +1,2 @@
-MD5 (py-redis/redis-2.4.13.tar.gz) = mW0qOPGsamx+dS+4fzJl7Q==
-RMD160 (py-redis/redis-2.4.13.tar.gz) = nkKh0i5jDMrr/C6h4OGUTV6hz78=
-SHA1 (py-redis/redis-2.4.13.tar.gz) = cCZke/y8nO5jv81lsNgHIsCHvHs=
-SHA256 (py-redis/redis-2.4.13.tar.gz) = NlKF4WE5U0Ttximi4Qj2uwmD6W2bUBLasfds7CN5oJo=
-SIZE (py-redis/redis-2.4.13.tar.gz) = 29329
+SHA256 (py-redis/redis-2.6.2.tar.gz) = IZb/imsM5QXTlypYxJ2ELwMSYK9m8uOWDgzgaKt1mOU=
+SIZE (py-redis/redis-2.6.2.tar.gz) = 34942
