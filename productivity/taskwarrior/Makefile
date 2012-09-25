@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2012/09/19 08:15:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2012/09/25 18:52:14 abieber Exp $
 
 COMMENT =	command line todo list manager
 
-VERSION =	2.1.1
+VERSION =	2.1.2
 DISTNAME =	task-${VERSION}
 PKGNAME =	taskwarrior-${VERSION}
-REVISION =	2
 CATEGORIES =	productivity
 
 HOMEPAGE =	http://www.taskwarrior.org/
