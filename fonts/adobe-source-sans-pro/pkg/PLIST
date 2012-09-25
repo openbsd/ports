@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1 2012/08/19 14:35:33 matthieu Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/09/25 22:47:52 ajacoutot Exp $
 lib/X11/fonts/
-lib/X11/fonts/adobe-source-sans-pro/
+@fontdir lib/X11/fonts/adobe-source-sans-pro/
 lib/X11/fonts/adobe-source-sans-pro/SourceSansPro-Black.ttf
 lib/X11/fonts/adobe-source-sans-pro/SourceSansPro-BlackIt.ttf
 lib/X11/fonts/adobe-source-sans-pro/SourceSansPro-Bold.ttf

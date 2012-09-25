@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2012/08/19 14:35:33 matthieu Exp $
+# $OpenBSD: Makefile,v 1.2 2012/09/25 22:47:52 ajacoutot Exp $
 
 COMMENT =	set of OpenType fonts designed for user interfaces
 PKG_ARCH =	*
@@ -7,6 +7,7 @@ DISTNAME =	SourceSansPro_FontsOnly-${VERSION}
 PKGNAME =	adobe-source-sans-pro-${VERSION}
 CATEGORIES =	fonts x11
 EXTRACT_SUFX =	.zip
+REVISION =	0
 
 HOMEPAGE =	http://sourceforge.net/projects/sourcesans.adobe/
 
