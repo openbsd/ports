@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2011/11/13 13:54:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2012/09/25 19:51:31 kili Exp $
 
 COMMENT=	ICC compatible color management system
 
 V=		1.1.0-20100201
 DISTNAME=	hargyllcms-${V}
 PKGNAME=	argyll-${V:S/-/./}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	graphics sysutils
 
