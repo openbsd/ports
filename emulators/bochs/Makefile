@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.55 2012/01/12 17:01:47 giovanni Exp $
+# $OpenBSD: Makefile,v 1.56 2012/09/25 23:21:47 brad Exp $
 
 COMMENT=	x86 machine simulator
 
-DISTNAME=	bochs-2.5.1
+DISTNAME=	bochs-2.6
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bochs/}
 
 HOMEPAGE=	http://bochs.sourceforge.net/
 
-# LGPLv2.1+
+# LGPLv2.1+ and MIT
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -20,10 +20,14 @@ USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--enable-all-optimizations \
 		--enable-avx \
+		--enable-e1000 \
+		--enable-es1370 \
 		--enable-large-ramfile \
 		--enable-ne2000 \
 		--enable-pci \
+		--enable-pnic \
 		--enable-smp \
+		--enable-svm \
 		--enable-x86-64 \
 		--enable-usb \
 		--enable-usb-ohci \
@@ -44,8 +48,12 @@ WANTLIB+=	curses readline
 .if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS+=--with-nogui
 .else
-CONFIGURE_ARGS+=--with-x11
-WANTLIB+=	ICE SM X11 Xext Xpm Xrandr Xrender xcb
+MODULES=	converters/libiconv
+LIB_DEPENDS+=	devel/sdl
+CONFIGURE_ARGS+=--with-sdl \
+		--with-x11
+WANTLIB+=	SDL X11 Xext Xpm Xrandr Xrender pthread sndio usbhid \
+		xcb
 .endif
 
 NO_REGRESS=	Yes

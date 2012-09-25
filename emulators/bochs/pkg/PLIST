@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2011/11/29 17:22:01 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.21 2012/09/25 23:21:47 brad Exp $
 @bin bin/bochs
 @bin bin/bxcommit
 @bin bin/bximage
@@ -34,7 +34,8 @@ share/bochs/keymaps/x11-pc-uk.map
 share/bochs/keymaps/x11-pc-us.map
 share/doc/bochs/
 @comment share/doc/bochs/CHANGES
-@comment share/doc/bochs/COPYING
+share/doc/bochs/COPYING
+share/doc/bochs/LICENSE
 share/doc/bochs/README
 @comment share/doc/bochs/TODO
 share/doc/bochs/bxdebugger.html

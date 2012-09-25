@@ -1,7 +1,7 @@
-$OpenBSD: patch-_bochsrc,v 1.8 2012/01/12 17:01:47 giovanni Exp $
---- .bochsrc.orig	Fri Jan  6 13:51:12 2012
-+++ .bochsrc	Sat Jan  7 13:22:57 2012
-@@ -384,13 +384,13 @@ vgaromimage: file=$BXSHARE/VGABIOS-lgpl-latest
+$OpenBSD: patch-_bochsrc,v 1.9 2012/09/25 23:21:47 brad Exp $
+--- .bochsrc.orig	Mon Aug 20 05:05:45 2012
++++ .bochsrc	Sun Aug 26 13:13:34 2012
+@@ -412,13 +412,13 @@ vgaromimage: file=$BXSHARE/VGABIOS-lgpl-latest
  # The optional parameter 'write_protected' can be used to control the media
  # write protect switch. By default it is turned off.
  #=======================================================================
@@ -17,7 +17,7 @@ $OpenBSD: patch-_bochsrc,v 1.8 2012/01/12 17:01:47 giovanni Exp $
  
  #=======================================================================
  # FLOPPYB:
-@@ -529,7 +529,7 @@ boot: disk
+@@ -561,7 +561,7 @@ boot: disk
  # 
  # Default value are sync=none, time0=local
  #=======================================================================
@@ -26,7 +26,7 @@ $OpenBSD: patch-_bochsrc,v 1.8 2012/01/12 17:01:47 giovanni Exp $
  
  
  #=======================================================================
-@@ -553,8 +553,8 @@ floppy_bootsig_check: disabled=0
+@@ -585,8 +585,8 @@ floppy_bootsig_check: disabled=0
  #   log: ./bochs.out
  #   log: /dev/tty
  #=======================================================================
