@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/09/22 07:58:28 landry Exp $
+@comment $OpenBSD: PLIST,v 1.1.1.2 2012/09/25 12:12:33 sthen Exp $
 @newgroup _gophernicus:704
 @newuser _gophernicus:704:704:daemon:Gophernicus Gopher Server:/nonexistent:/sbin/nologin
 @bin sbin/in.gophernicus
@@ -10,14 +10,14 @@ share/doc/gophernicus/README
 share/doc/gophernicus/README.Gophermap
 share/doc/gophernicus/TODO
 share/doc/gophernicus/gophertag
+@mode 755
 @owner root
 @group daemon
-@mode 755
 @sample /var/gopher/
 @mode
 @owner
 @group
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/gophernicus/
 share/examples/gophernicus/gophermap
 @sample /var/gopher/gophermap
-share/doc/pkg-readmes/${FULLPKGNAME}
