@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2012/05/13 13:50:17 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.5 2012/09/26 07:36:09 dcoppa Exp $
 
 COMMENT=	event notification library
 
-V=		2.0.19
+V=		2.0.20
 DISTNAME=	libevent-$V-stable
 PKGNAME=	libevent-$V
 CATEGORIES=	devel
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	https://github.com/downloads/libevent/libevent/
 
-WANTLIB=	crypto ssl
+WANTLIB=	crypto pthread ssl
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
