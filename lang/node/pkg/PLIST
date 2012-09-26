@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/09/14 22:40:20 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.9 2012/09/26 17:22:37 abieber Exp $
 @pkgpath www/node
 @bin bin/node
 bin/node-gyp
@@ -843,6 +843,7 @@ lib/node_modules/npm/node_modules/npm-registry-client
 lib/node_modules/npm/node_modules/npmconf
 lib/node_modules/npm/node_modules/npmlog
 lib/node_modules/npm/node_modules/once
+lib/node_modules/npm/node_modules/opener
 lib/node_modules/npm/node_modules/osenv
 lib/node_modules/npm/node_modules/read
 lib/node_modules/npm/node_modules/read-installed
@@ -865,6 +866,7 @@ lib/node_modules/npm/scripts/release.sh
 lib/node_modules/npm/scripts/relocate.sh
 lib/node_modules/npmconf/
 lib/node_modules/npmconf/.npmignore
+lib/node_modules/npmconf/LICENSE
 lib/node_modules/npmconf/README.md
 lib/node_modules/npmconf/config-defs.js
 lib/node_modules/npmconf/node_modules/
@@ -893,6 +895,11 @@ lib/node_modules/once/LICENSE
 lib/node_modules/once/README.md
 lib/node_modules/once/once.js
 lib/node_modules/once/package.json
+lib/node_modules/opener/
+lib/node_modules/opener/LICENSE.txt
+lib/node_modules/opener/README.md
+lib/node_modules/opener/opener.js
+lib/node_modules/opener/package.json
 lib/node_modules/osenv/
 lib/node_modules/osenv/LICENSE
 lib/node_modules/osenv/README.md
