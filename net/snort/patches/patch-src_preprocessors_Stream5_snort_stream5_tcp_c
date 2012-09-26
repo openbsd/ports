@@ -1,18 +1,7 @@
-$OpenBSD: patch-src_preprocessors_Stream5_snort_stream5_tcp_c,v 1.4 2010/07/12 19:38:40 sthen Exp $
---- src/preprocessors/Stream5/snort_stream5_tcp.c.orig	Thu Mar 18 18:50:59 2010
-+++ src/preprocessors/Stream5/snort_stream5_tcp.c	Tue May  4 20:30:20 2010
-@@ -143,8 +143,10 @@ extern tSfPolicyUserContextId s5_swap_config;
- #define SEQ_GEQ(a,b) ((int)((a) - (b)) >= 0)
- #define SEQ_EQ(a,b)  ((int)((a) - (b)) == 0)
- 
-+/* already in sys/param.h
- #define MIN(a,b)  (((a)<(b)) ? (a):(b))
- #define MAX(a,b)  (((a)>(b)) ? (a):(b))
-+*/
- 
- #define PAWS_WINDOW         60
- #define PAWS_24DAYS         2073600         /* 24 days in seconds */
-@@ -7077,7 +7079,7 @@ static int ProcessTcp(Stream5LWSession *lwssn, Packet 
+$OpenBSD: patch-src_preprocessors_Stream5_snort_stream5_tcp_c,v 1.5 2012/09/26 02:11:05 lteo Exp $
+--- src/preprocessors/Stream5/snort_stream5_tcp.c.orig	Wed Jun  6 16:49:28 2012
++++ src/preprocessors/Stream5/snort_stream5_tcp.c	Sat Aug 11 17:32:11 2012
+@@ -7760,7 +7760,7 @@ static int ProcessTcp(Stream5LWSession *lwssn, Packet 
                      char src_addr[17];
                      char dst_addr[17];
                      bzero((char *)timestamp, TIMEBUF_SIZE);

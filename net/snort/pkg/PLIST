@@ -1,7 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.20 2012/07/09 12:58:16 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.21 2012/09/26 02:11:05 lteo Exp $
+@pkgpath net/snort[,flexresp][,mysql][,prelude][,postgresql]
 @newgroup _snort:557
 @newuser _snort:557:_snort:daemon:Snort Account:/nonexistent:/sbin/nologin
 @bin bin/snort
+@bin bin/u2boat
+@bin bin/u2spewfoo
 lib/pkgconfig/snort.pc
 lib/snort_dynamicengine/
 lib/snort_dynamicengine/libsf_engine.a
@@ -11,18 +14,36 @@ lib/snort_dynamicpreprocessor/
 lib/snort_dynamicpreprocessor/libsf_dce2_preproc.a
 @comment lib/snort_dynamicpreprocessor/libsf_dce2_preproc.la
 lib/snort_dynamicpreprocessor/libsf_dce2_preproc.so
-lib/snort_dynamicpreprocessor/libsf_dcerpc_preproc.a
-@comment lib/snort_dynamicpreprocessor/libsf_dcerpc_preproc.la
-lib/snort_dynamicpreprocessor/libsf_dcerpc_preproc.so
+lib/snort_dynamicpreprocessor/libsf_dnp3_preproc.a
+@comment lib/snort_dynamicpreprocessor/libsf_dnp3_preproc.la
+lib/snort_dynamicpreprocessor/libsf_dnp3_preproc.so
 lib/snort_dynamicpreprocessor/libsf_dns_preproc.a
 @comment lib/snort_dynamicpreprocessor/libsf_dns_preproc.la
 lib/snort_dynamicpreprocessor/libsf_dns_preproc.so
 lib/snort_dynamicpreprocessor/libsf_ftptelnet_preproc.a
 @comment lib/snort_dynamicpreprocessor/libsf_ftptelnet_preproc.la
 lib/snort_dynamicpreprocessor/libsf_ftptelnet_preproc.so
+lib/snort_dynamicpreprocessor/libsf_gtp_preproc.a
+@comment lib/snort_dynamicpreprocessor/libsf_gtp_preproc.la
+lib/snort_dynamicpreprocessor/libsf_gtp_preproc.so
+lib/snort_dynamicpreprocessor/libsf_imap_preproc.a
+@comment lib/snort_dynamicpreprocessor/libsf_imap_preproc.la
+lib/snort_dynamicpreprocessor/libsf_imap_preproc.so
+lib/snort_dynamicpreprocessor/libsf_modbus_preproc.a
+@comment lib/snort_dynamicpreprocessor/libsf_modbus_preproc.la
+lib/snort_dynamicpreprocessor/libsf_modbus_preproc.so
+lib/snort_dynamicpreprocessor/libsf_pop_preproc.a
+@comment lib/snort_dynamicpreprocessor/libsf_pop_preproc.la
+lib/snort_dynamicpreprocessor/libsf_pop_preproc.so
+lib/snort_dynamicpreprocessor/libsf_reputation_preproc.a
+@comment lib/snort_dynamicpreprocessor/libsf_reputation_preproc.la
+lib/snort_dynamicpreprocessor/libsf_reputation_preproc.so
 lib/snort_dynamicpreprocessor/libsf_sdf_preproc.a
 @comment lib/snort_dynamicpreprocessor/libsf_sdf_preproc.la
 lib/snort_dynamicpreprocessor/libsf_sdf_preproc.so
+lib/snort_dynamicpreprocessor/libsf_sip_preproc.a
+@comment lib/snort_dynamicpreprocessor/libsf_sip_preproc.la
+lib/snort_dynamicpreprocessor/libsf_sip_preproc.so
 lib/snort_dynamicpreprocessor/libsf_smtp_preproc.a
 @comment lib/snort_dynamicpreprocessor/libsf_smtp_preproc.la
 lib/snort_dynamicpreprocessor/libsf_smtp_preproc.so
@@ -34,6 +55,7 @@ lib/snort_dynamicpreprocessor/libsf_ssl_preproc.a
 lib/snort_dynamicpreprocessor/libsf_ssl_preproc.so
 lib/snort_dynamicrules/
 @man man/man8/snort.8
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/snort/
 share/doc/snort/AUTHORS
 share/doc/snort/BUGS
@@ -42,23 +64,22 @@ share/doc/snort/INSTALL
 share/doc/snort/NEWS
 share/doc/snort/PROBLEMS
 share/doc/snort/README
-share/doc/snort/README.ARUBA
-share/doc/snort/README.FLEXRESP
-share/doc/snort/README.FLEXRESP2
-share/doc/snort/README.INLINE
+share/doc/snort/README.GTP
 share/doc/snort/README.PLUGINS
 share/doc/snort/README.PerfProfiling
 share/doc/snort/README.SMTP
 share/doc/snort/README.UNSOCK
 @comment share/doc/snort/README.WIN32
+share/doc/snort/README.active
 share/doc/snort/README.alert_order
 share/doc/snort/README.asn1
+share/doc/snort/README.counts
 share/doc/snort/README.csv
-share/doc/snort/README.database
-share/doc/snort/README.dcerpc
+share/doc/snort/README.daq
 share/doc/snort/README.dcerpc2
 share/doc/snort/README.decode
 share/doc/snort/README.decoder_preproc_rules
+share/doc/snort/README.dnp3
 share/doc/snort/README.dns
 share/doc/snort/README.event_queue
 share/doc/snort/README.filters
@@ -67,33 +88,35 @@ share/doc/snort/README.frag3
 share/doc/snort/README.ftptelnet
 share/doc/snort/README.gre
 share/doc/snort/README.http_inspect
+share/doc/snort/README.imap
 share/doc/snort/README.ipip
 share/doc/snort/README.ipv6
+share/doc/snort/README.modbus
 share/doc/snort/README.multipleconfigs
+share/doc/snort/README.normalize
 share/doc/snort/README.pcap_readmode
+share/doc/snort/README.pop
 share/doc/snort/README.ppm
 share/doc/snort/README.reload
+share/doc/snort/README.reputation
+share/doc/snort/README.rzb_saac
 share/doc/snort/README.sensitive_data
 share/doc/snort/README.sfportscan
+share/doc/snort/README.sip
 share/doc/snort/README.ssh
 share/doc/snort/README.ssl
 share/doc/snort/README.stream5
 share/doc/snort/README.tag
 share/doc/snort/README.thresholding
+share/doc/snort/README.u2boat
+share/doc/snort/README.unified2
 share/doc/snort/README.variables
-share/doc/snort/README.wireless
 share/doc/snort/TODO
 share/doc/snort/USAGE
 share/doc/snort/WISHLIST
-share/doc/snort/create_db2
-share/doc/snort/create_mssql
-share/doc/snort/create_mysql
-share/doc/snort/create_oracle.sql
-share/doc/snort/create_postgresql
 share/doc/snort/faq.pdf
 share/doc/snort/generators
 share/doc/snort/snort_manual.pdf
-share/doc/snort/snort_schema_v106.pdf
 share/examples/snort/
 @sample ${SYSCONFDIR}/snort/
 @sample ${SYSCONFDIR}/snort/rules/
@@ -110,8 +133,6 @@ share/examples/snort/preprocessor.rules
 @sample ${SYSCONFDIR}/snort/preproc_rules/preprocessor.rules
 share/examples/snort/reference.config
 @sample ${SYSCONFDIR}/snort/reference.config
-share/examples/snort/sid-msg.map
-@sample ${SYSCONFDIR}/snort/sid-msg.map
 share/examples/snort/snort.conf
 @sample ${SYSCONFDIR}/snort/snort.conf
 share/examples/snort/threshold.conf

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_dynamic-preprocessors_Makefile_in,v 1.5 2010/07/12 19:38:40 sthen Exp $
---- src/dynamic-preprocessors/Makefile.in.orig	Fri Mar 19 20:39:38 2010
-+++ src/dynamic-preprocessors/Makefile.in	Tue May  4 20:13:09 2010
-@@ -636,8 +636,8 @@ maintainer-clean-generic:
+$OpenBSD: patch-src_dynamic-preprocessors_Makefile_in,v 1.6 2012/09/26 02:11:05 lteo Exp $
+--- src/dynamic-preprocessors/Makefile.in.orig	Tue Jul 31 18:17:13 2012
++++ src/dynamic-preprocessors/Makefile.in	Sat Aug 11 17:32:10 2012
+@@ -989,8 +989,8 @@ maintainer-clean-generic:
  	@echo "This command is intended for maintainers to use"
  	@echo "it deletes files that may require special tools to rebuild."
  	-test -z "$(BUILT_SOURCES)" || rm -f $(BUILT_SOURCES)
@@ -11,8 +11,8 @@ $OpenBSD: patch-src_dynamic-preprocessors_Makefile_in,v 1.5 2010/07/12 19:38:40 
 +install-data-local:
  clean: clean-recursive
  
- clean-am: clean-generic clean-libtool clean-local mostlyclean-am
-@@ -838,20 +838,6 @@ include/plugin_enum.h: $(srcdir)/../plugin_enum.h
+ clean-am: clean-generic clean-libtool clean-local \
+@@ -1297,20 +1297,7 @@ include/sf_seqnums.h: $(top_srcdir)/src/sfutil/sf_seqn
  clean-local:
  	rm -rf include build
  
@@ -23,13 +23,13 @@ $OpenBSD: patch-src_dynamic-preprocessors_Makefile_in,v 1.5 2010/07/12 19:38:40 
 -@HAVE_DYNAMIC_PLUGINS_TRUE@		if test -f $(srcdir)/$$f; then p=$(srcdir)/$$f; else p=$$f; fi; \
 -@HAVE_DYNAMIC_PLUGINS_TRUE@		$(INSTALL_DATA) $$p $(DESTDIR)$(srcinstdir)/$$truefile; \
 -@HAVE_DYNAMIC_PLUGINS_TRUE@	done
--
+ 
 -@HAVE_DYNAMIC_PLUGINS_TRUE@uninstall-local:
 -@HAVE_DYNAMIC_PLUGINS_TRUE@	@for f in $(exported_files); do \
 -@HAVE_DYNAMIC_PLUGINS_TRUE@		truefile=`echo $$f | sed -e "s/.*\///"`; \
 -@HAVE_DYNAMIC_PLUGINS_TRUE@		$(mkinstalldirs) $(DESTDIR)$(srcinstdir); \
--@HAVE_DYNAMIC_PLUGINS_TRUE@		$(RM) -f $(DESTDIR)$(srcinstdir)/$$truefile; \
+-@HAVE_DYNAMIC_PLUGINS_TRUE@		rm -f $(DESTDIR)$(srcinstdir)/$$truefile; \
 -@HAVE_DYNAMIC_PLUGINS_TRUE@	done
+ 
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
- .NOEXPORT:

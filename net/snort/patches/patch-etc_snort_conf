@@ -1,17 +1,10 @@
-$OpenBSD: patch-etc_snort_conf,v 1.5 2010/07/12 19:38:40 sthen Exp $
---- etc/snort.conf.orig	Fri Mar 19 20:41:00 2010
-+++ etc/snort.conf	Mon Apr 26 20:16:23 2010
-@@ -42,6 +42,9 @@ var SQL_SERVERS $HOME_NET
- # List of telnet servers on your network
- var TELNET_SERVERS $HOME_NET
- 
-+# Ports you run ssh servers on
-+portvar SSH_PORTS 22
-+
- # List of ports you run web servers on
- portvar HTTP_PORTS  [80,2301,3128,7777,7779,8000,8008,8028,8080,8180,8888,9999]
- 
-@@ -57,9 +60,9 @@ var AIM_SERVERS [64.12.24.0/23,64.12.28.0/23,64.12.161
+$OpenBSD: patch-etc_snort_conf,v 1.6 2012/09/26 02:11:05 lteo Exp $
+
+reputation preprocessor disabled, still experimental
+
+--- etc/snort.conf.orig	Tue Jul 31 18:21:16 2012
++++ etc/snort.conf	Tue Sep 11 23:02:31 2012
+@@ -101,17 +101,17 @@ ipvar AIM_SERVERS [64.12.24.0/23,64.12.28.0/23,64.12.1
  # Path to your rules files (this can be a relative path)
  # Note for Windows users:  You are advised to make this an absolute path,
  # such as:  c:\snort\rules
@@ -22,5 +15,42 @@ $OpenBSD: patch-etc_snort_conf,v 1.5 2010/07/12 19:38:40 sthen Exp $
 +var SO_RULE_PATH ${SYSCONFDIR}/snort/so_rules
 +var PREPROC_RULE_PATH ${SYSCONFDIR}/snort/preproc_rules
  
+ # If you are using reputation preprocessor set these
+ # Currently there is a bug with relative paths, they are relative to where snort is
+ # not relative to snort.conf like the above variables
+ # This is completely inconsistent with how other vars work, BUG 89986
+ # Set the absolute path appropriately
+-var WHITE_LIST_PATH ../rules
+-var BLACK_LIST_PATH ../rules
++var WHITE_LIST_PATH ${SYSCONFDIR}/snort/rules
++var BLACK_LIST_PATH ${SYSCONFDIR}/snort/rules
+ 
  ###################################################
  # Step #2: Configure the decoder.  For more information, see README.decode
+@@ -158,6 +158,7 @@ config checksum_mode: all
+ #
+ # config daq: <type>
+ # config daq_dir: <dir>
++config daq_dir: ${PREFIX}/lib/daq/
+ # config daq_mode: <mode>
+ # config daq_var: <var>
+ #
+@@ -503,12 +504,12 @@ preprocessor dnp3: ports { 20000 } \
+    check_crc
+ 
+ # Reputation preprocessor. For more information see README.reputation
+-preprocessor reputation: \
+-   memcap 500, \
+-   priority whitelist, \
+-   nested_ip inner, \
+-   whitelist $WHITE_LIST_PATH/white_list.rules, \
+-   blacklist $BLACK_LIST_PATH/black_list.rules 
++#preprocessor reputation: \
++#   memcap 500, \
++#   priority whitelist, \
++#   nested_ip inner, \
++#   whitelist $WHITE_LIST_PATH/white_list.rules, \
++#   blacklist $BLACK_LIST_PATH/black_list.rules 
+ 
+ ###################################################
+ # Step #6: Configure output plugins

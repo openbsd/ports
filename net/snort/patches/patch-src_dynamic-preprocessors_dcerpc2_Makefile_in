@@ -1,21 +1,21 @@
-$OpenBSD: patch-src_dynamic-preprocessors_dcerpc2_Makefile_in,v 1.2 2010/07/12 19:38:40 sthen Exp $
---- src/dynamic-preprocessors/dcerpc2/Makefile.in.orig	Fri Mar 19 20:39:38 2010
-+++ src/dynamic-preprocessors/dcerpc2/Makefile.in	Mon Apr 26 20:14:12 2010
-@@ -205,7 +205,7 @@ sysconfdir = @sysconfdir@
- target_alias = @target_alias@
+$OpenBSD: patch-src_dynamic-preprocessors_dcerpc2_Makefile_in,v 1.3 2012/09/26 02:11:05 lteo Exp $
+--- src/dynamic-preprocessors/dcerpc2/Makefile.in.orig	Tue Jul 31 18:17:13 2012
++++ src/dynamic-preprocessors/dcerpc2/Makefile.in	Sat Aug 11 17:52:33 2012
+@@ -234,7 +234,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
  AUTOMAKE_OPTIONS = foreign no-dependencies
  lib_LTLIBRARIES = libsf_dce2_preproc.la
--libsf_dce2_preproc_la_LDFLAGS = -module
-+libsf_dce2_preproc_la_LDFLAGS = -module -avoid-version
- BUILT_SOURCES = \
- sf_dynamic_preproc_lib.c \
- sf_ip.c \
-@@ -428,7 +428,7 @@ distdir: $(DISTFILES)
+-libsf_dce2_preproc_la_LDFLAGS = -export-dynamic -module @XCCFLAGS@
++libsf_dce2_preproc_la_LDFLAGS = -export-dynamic -module -avoid-version @XCCFLAGS@
+ @SO_WITH_STATIC_LIB_TRUE@libsf_dce2_preproc_la_LIBADD = ../libsf_dynamic_preproc.la
+ @SO_WITH_STATIC_LIB_FALSE@nodist_libsf_dce2_preproc_la_SOURCES = \
+ @SO_WITH_STATIC_LIB_FALSE@../include/sf_dynamic_preproc_lib.c \
+@@ -473,7 +473,7 @@ distdir: $(DISTFILES)
+ 	done
  check-am: all-am
- check: $(BUILT_SOURCES)
- 	$(MAKE) $(AM_MAKEFLAGS) check-am
+ check: check-am
 -all-am: Makefile $(LTLIBRARIES) all-local
 +all-am: Makefile $(LTLIBRARIES)
  installdirs:
  	for dir in "$(DESTDIR)$(libdir)"; do \
- 	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \

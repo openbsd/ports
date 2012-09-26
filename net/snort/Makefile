@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.67 2012/07/09 21:10:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.68 2012/09/26 02:11:05 lteo Exp $
 
 SHARED_ONLY = 		Yes
 
 COMMENT =		highly flexible sniffer/NIDS
 
-# Original URL http://dl.snort.org/downloads/14 redirects to a
+# Original URL http://dl.snort.org/downloads/1862 redirects to a
 # time-limited Amazon S3 url. This would mean a bad distfile name.
 # The following hack allows it to work but XXX if updating, the
 # MASTER_SITES URL will need to be adjusted, not just DISTNAME.
-DISTNAME = 		snort-2.8.6
-REVISION=		3
-MASTER_SITES = 		http://dl.snort.org/downloads/14?/ \
-			http://distfiles.nl/
+DISTNAME = 		snort-2.9.3.1
+MASTER_SITES = 		http://www.snort.org/downloads/1862?/
 
 CATEGORIES =		net security
 
@@ -24,7 +22,7 @@ PERMIT_PACKAGE_CDROM = 	Yes
 PERMIT_PACKAGE_FTP =   	Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP = 	Yes
-WANTLIB =		c m pcap
+WANTLIB =		c daq dnet m pcap pcre pthread z
 
 USE_LIBTOOL =		Yes
 USE_GROFF =		Yes
@@ -32,47 +30,21 @@ USE_GROFF =		Yes
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--enable-dynamicplugin \
-			--enable-ipv6
+			--disable-static-daq
 
 MAKE_FLAGS =		mandir=${TRUEPREFIX}/man
 
-LIB_DEPENDS =		devel/pcre
-WANTLIB +=		pcre
-
-FLAVORS =		postgresql mysql flexresp
-FLAVOR ?=	
-
-.if ${FLAVOR:L:Mflexresp}
-LIB_DEPENDS +=		net/libdnet
-WANTLIB +=		dnet=1
-CONFIGURE_ARGS +=	--enable-flexresp2
-.endif
-
-.if ${FLAVOR:L:Mpostgresql}
-LIB_DEPENDS +=		databases/postgresql
-WANTLIB +=		pq>=2
-CONFIGURE_ARGS +=	--with-postgresql="${LOCALBASE}"
-.endif
-
-.if ${FLAVOR:L:Mmysql}
-LIB_DEPENDS +=		databases/mysql
-WANTLIB +=		lib/mysql/mysqlclient>=10
-CONFIGURE_ARGS +=	--with-mysql-libraries="${LOCALBASE}/lib" \
-			--with-mysql-includes="${LOCALBASE}/include"
-WANTLIB +=		z
-.endif
+LIB_DEPENDS =		devel/pcre \
+			net/libdnet \
+			net/daq
 
 CONFIGS	=		classification.config gen-msg.map reference.config \
-			sid-msg.map snort.conf threshold.conf unicode.map
+			snort.conf threshold.conf unicode.map
 
 PREPROC =		decoder.rules preprocessor.rules
 
 DOCS =			AUTHORS CREDITS README README.* *.pdf TODO USAGE \
 			WISHLIST
-
-SCHEMAS = 		create_db2 create_mssql create_mysql \
-			create_oracle.sql create_postgresql
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/etc/snort.conf
@@ -91,9 +63,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/snort
 .for i in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${PREFIX}/share/doc/snort
-.endfor
-.for i in ${SCHEMAS}
-	${INSTALL_DATA} ${WRKSRC}/schemas/${i} ${PREFIX}/share/doc/snort
 .endfor
 
 NO_REGRESS =		Yes
