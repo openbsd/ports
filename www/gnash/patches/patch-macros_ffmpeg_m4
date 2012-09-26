@@ -1,0 +1,143 @@
+$OpenBSD: patch-macros_ffmpeg_m4,v 1.3 2012/09/26 19:19:56 brad Exp $
+--- macros/ffmpeg.m4.orig	Thu Jan 19 14:17:49 2012
++++ macros/ffmpeg.m4	Tue Sep 25 23:08:43 2012
+@@ -416,56 +416,6 @@ dnl   AC_EGREP_HEADER(avcodec_decode_audio2, ${avcodec
+   dnl
+   if test x"${ac_cv_path_ffmpeg_lib}" != x; then
+ 
+-    dnl Look for the DTS library, which is required on some systems. {
+-    dnl
+-    dnl TODO: skip this if -ldts is already in due to pkg-config 
+-    dnl
+-    AC_MSG_CHECKING([for libdts library])
+-    if test x"$PKG_CONFIG" != x -a x${cross_compiling} = xno; then
+-      $PKG_CONFIG --exists libdts && libdts=`$PKG_CONFIG --libs-only-l libdts`
+-    else
+-      libdts=""
+-    fi
+-    if test x"${libdts}" = x; then
+-      if test -f ${top_lib_dir}/libdts.a -o -f ${top_lib_dir}/libdts.${shlibext}; then
+-        ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -ldts"
+-        AC_MSG_RESULT(${top_lib_dir}/libdts)
+-      else
+-        AC_MSG_RESULT(no)
+-        if test x${cross_compiling} = xno; then
+-          AC_CHECK_LIB(dts, dts_init, [ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -ldts"])
+-        fi
+-      fi
+-    else
+-      AC_MSG_RESULT(${libdts})
+-      ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} ${libdts}"      
+-    fi
+-    dnl End of DTS library looking }
+-	
+-    dnl Look for the VORBISENC library, which is required on some systems. {
+-    AC_MSG_CHECKING([for libvorbisenc library])
+-    if test x"$PKG_CONFIG" != x -a x${cross_compiling} = xno; then
+-      $PKG_CONFIG --exists vorbisenc && libvorbisenc=`$PKG_CONFIG --libs-only-l vorbisenc`
+-    else
+-      libvorbisenc=""
+-    fi
+-    if test x"${libvorbisenc}" = x; then
+-      if test -f ${top_lib_dir}/libvorbisenc.a -o -f ${top_lib_dir}/libvorbisenc.${shlibext}; then
+-        ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -lvorbisenc"
+-        AC_MSG_RESULT(${top_lib_dir}/libvorbisenc)
+-      else
+-        AC_MSG_RESULT(no)
+-        if test x${cross_compiling} = xno; then
+-          AC_CHECK_LIB(vorbisenc, vorbis_encode_init, [ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -lvorbisenc"])
+-        fi
+-      fi
+-    else
+-      AC_MSG_RESULT(${libvorbisenc})
+-      ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} ${libvorbisenc}"
+-    fi
+-    dnl End of VORBINSEC library looking }
+-	
+-
+     dnl Look for the AVFORMAT library {
+     dnl
+     dnl TODO: libavformat be mandatory, thus linked in already ?
+@@ -523,82 +473,6 @@ dnl   AC_EGREP_HEADER(avcodec_decode_audio2, ${avcodec
+     fi
+     dnl End of AVUTIL library looking }
+ 	
+-    dnl Look for the THEORA library, which is required on some systems. {
+-    dnl
+-    dnl TODO: skip this if -ltheora is already in due to pkg-config 
+-    dnl
+-    AC_MSG_CHECKING([for libtheora library])
+-    if test x"$PKG_CONFIG" != x -a x${cross_compiling} = xno; then
+-      $PKG_CONFIG --exists theora && libtheora=`$PKG_CONFIG --libs-only-l theora`
+-    else
+-      libtheora=""
+-    fi
+-    if test x"${libtheora}" = x; then
+-      if test -f ${top_lib_dir}/libtheora.a -o -f ${top_lib_dir}/libtheora.${shlibext}; then
+-        ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -ltheora"
+-        AC_MSG_RESULT(${top_lib_dir}/libtheora)
+-      else
+-        AC_MSG_RESULT(no)
+-        if test x${cross_compiling} = xno; then
+-          AC_CHECK_LIB(theora, theora_encode_init, [ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -ltheora"])
+-        fi
+-      fi
+-    else
+-      AC_MSG_RESULT(${libtheora})
+-      ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} ${libtheora}"      
+-    fi
+-    dnl End of THEORA library looking }
+-
+-    dnl Look for the GSM library, which is required on some systems. {
+-    AC_MSG_CHECKING([for libgsm library])
+-    if test x"$PKG_CONFIG" != x -a x${cross_compiling} = xno; then
+-      $PKG_CONFIG --exists gsm && libgsm=`$PKG_CONFIG --libs-only-l gsm`
+-    else
+-      libgsm=""
+-    fi
+-
+-    if test x"${libgsm}" = x; then
+-      if test -f ${top_lib_dir}/libgsm.a -o -f ${top_lib_dir}/libgsm.${shlibext}; then
+-        ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -lgsm"
+-        AC_MSG_RESULT(${top_lib_dir}/libgsm)
+-      else
+-        AC_MSG_RESULT(no)
+-        if test x${cross_compiling} = xno; then
+-          AC_CHECK_LIB(gsm, gsm_destroy, [ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -lgsm"])
+-        fi
+-      fi
+-    fi
+-
+-    AC_MSG_RESULT(${libgsm})
+-    ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} ${libgsm}"
+-    dnl End of GSM library looking }
+-    
+-    dnl Look for the DC1394 library, which is required on some systems. {
+-    dnl
+-    dnl TODO: skip this if -ldc1394 is already in due to pkg-config 
+-    dnl
+-    AC_MSG_CHECKING([for libdc1394 library])
+-    if test x"$PKG_CONFIG" != x -a x${cross_compiling} = xno; then
+-      $PKG_CONFIG --exists libdc  && libdc=`$PKG_CONFIG --libs-only-l libdc1394`
+-    else
+-      libtdc=""
+-    fi
+-    if test x"${libdc}" = x; then
+-      if test -f ${top_lib_dir}/libdc1394.a -o -f ${top_lib_dir}/libdc1394.${shlibext}; then
+-        ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -ldc1394"
+-        AC_MSG_RESULT(${top_lib_dir}/libdc1394)
+-      else
+-        AC_MSG_RESULT(no)
+-        if test x${cross_compiling} = xno; then
+-          AC_CHECK_LIB(dc1394_control, dc1394_is_camera, [ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -ldc1394_control"])
+-        fi
+-      fi
+-    else
+-      AC_MSG_RESULT(${libdc})
+-      ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} ${libdc}"
+-    fi
+-    dnl End of DC1394 library looking }
+-
+     dnl Look for the SWSCALE library {
+     dnl
+     dnl This is required on some system if ffmpeg is
