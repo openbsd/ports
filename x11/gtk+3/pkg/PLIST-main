@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2012/09/21 13:20:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2012/09/26 21:38:48 ajacoutot Exp $
 @conflict gtk+3-docs-*
 @pkgpath x11/gtk+3,-docs
 @unexec-delete rm -f ${SYSCONFDIR}/gtk-3.0/gtk.immodules
@@ -304,32 +304,6 @@ lib/girepository-1.0/Gdk-3.0.typelib
 lib/girepository-1.0/GdkX11-3.0.typelib
 lib/girepository-1.0/Gtk-3.0.typelib
 lib/gtk-3.0/
-@comment lib/gtk-3.0/${GTK_BINARY_VERSION}/immodules/im-am-et.a
-@comment lib/gtk-3.0/${GTK_BINARY_VERSION}/immodules/im-am-et.la
-@comment lib/gtk-3.0/${GTK_BINARY_VERSION}/immodules/im-cedilla.a
-@comment lib/gtk-3.0/${GTK_BINARY_VERSION}/immodules/im-cedilla.la
-@comment lib/gtk-3.0/${GTK_BINARY_VERSION}/immodules/im-cyrillic-translit.a
-@comment lib/gtk-3.0/${GTK_BINARY_VERSION}/immodules/im-cyrillic-translit.la
-@comment lib/gtk-3.0/${GTK_BINARY_VERSION}/immodules/im-inuktitut.a
-@comment lib/gtk-3.0/${GTK_BINARY_VERSION}/immodules/im-inuktitut.la
-@comment lib/gtk-3.0/${GTK_BINARY_VERSION}/immodules/im-ipa.a
-@comment lib/gtk-3.0/${GTK_BINARY_VERSION}/immodules/im-ipa.la
-@comment lib/gtk-3.0/${GTK_BINARY_VERSION}/immodules/im-multipress.a
-@comment lib/gtk-3.0/${GTK_BINARY_VERSION}/immodules/im-multipress.la
-@comment lib/gtk-3.0/${GTK_BINARY_VERSION}/immodules/im-thai.a
-@comment lib/gtk-3.0/${GTK_BINARY_VERSION}/immodules/im-thai.la
-@comment lib/gtk-3.0/${GTK_BINARY_VERSION}/immodules/im-ti-er.a
-@comment lib/gtk-3.0/${GTK_BINARY_VERSION}/immodules/im-ti-er.la
-@comment lib/gtk-3.0/${GTK_BINARY_VERSION}/immodules/im-ti-et.a
-@comment lib/gtk-3.0/${GTK_BINARY_VERSION}/immodules/im-ti-et.la
-@comment lib/gtk-3.0/${GTK_BINARY_VERSION}/immodules/im-viqr.a
-@comment lib/gtk-3.0/${GTK_BINARY_VERSION}/immodules/im-viqr.la
-@comment lib/gtk-3.0/${GTK_BINARY_VERSION}/immodules/im-xim.a
-@comment lib/gtk-3.0/${GTK_BINARY_VERSION}/immodules/im-xim.la
-@comment lib/gtk-3.0/${GTK_BINARY_VERSION}/printbackends/libprintbackend-file.a
-@comment lib/gtk-3.0/${GTK_BINARY_VERSION}/printbackends/libprintbackend-file.la
-@comment lib/gtk-3.0/${GTK_BINARY_VERSION}/printbackends/libprintbackend-lpr.a
-@comment lib/gtk-3.0/${GTK_BINARY_VERSION}/printbackends/libprintbackend-lpr.la
 lib/gtk-3.0/${GTK_BINARY_VERSION}/
 lib/gtk-3.0/${GTK_BINARY_VERSION}/immodules/
 lib/gtk-3.0/${GTK_BINARY_VERSION}/immodules/im-am-et.so
@@ -368,7 +342,9 @@ lib/pkgconfig/gtk+-x11-3.0.pc
 share/aclocal/gtk-3.0.m4
 share/examples/gtk+3/
 share/examples/gtk+3/gtk-3.0/
+@sample ${SYSCONFDIR}/gtk-3.0/
 share/examples/gtk+3/gtk-3.0/im-multipress.conf
+@sample ${SYSCONFDIR}/gtk-3.0/im-multipress.conf
 share/gir-1.0/Gdk-3.0.gir
 share/gir-1.0/GdkX11-3.0.gir
 share/gir-1.0/Gtk-3.0.gir
@@ -398,6 +374,8 @@ share/gtk-3.0/demo/css_multiplebgs.c
 share/gtk-3.0/demo/css_multiplebgs.css
 share/gtk-3.0/demo/css_pixbufs.c
 share/gtk-3.0/demo/css_pixbufs.css
+share/gtk-3.0/demo/css_shadows.c
+share/gtk-3.0/demo/css_shadows.css
 share/gtk-3.0/demo/cssview.css
 share/gtk-3.0/demo/demo.ui
 share/gtk-3.0/demo/dialog.c
@@ -1222,6 +1200,10 @@ share/locale/ko/LC_MESSAGES/gtk30-properties.mo
 share/locale/ko/LC_MESSAGES/gtk30.mo
 share/locale/ku/LC_MESSAGES/gtk30-properties.mo
 share/locale/ku/LC_MESSAGES/gtk30.mo
+share/locale/ky/
+share/locale/ky/LC_MESSAGES/
+share/locale/ky/LC_MESSAGES/gtk30-properties.mo
+share/locale/ky/LC_MESSAGES/gtk30.mo
 share/locale/lg/
 share/locale/lg/LC_MESSAGES/
 share/locale/lg/LC_MESSAGES/gtk30-properties.mo
@@ -1341,7 +1323,6 @@ share/themes/Default/gtk-3.0/gtk-keys.css
 share/themes/Emacs/
 share/themes/Emacs/gtk-3.0/
 share/themes/Emacs/gtk-3.0/gtk-keys.css
-@sample ${SYSCONFDIR}/gtk-3.0/
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/gtk-query-immodules-3.0 > %D/lib/gtk-3.0/${GTK_BINARY_VERSION}/immodules.cache
