@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.39 2012/03/27 22:01:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2012/09/26 19:41:55 gonzalo Exp $
 
 COMMENT=		lightweight Emacs clone
-DISTNAME=		zile-2.4.7
+DISTNAME=		zile-2.4.8
 CATEGORIES=		editors
 HOMEPAGE=		http://www.gnu.org/software/zile/
 
-MAINTAINER=		Gonzalo L. R. <gonzalo@x61.com.ar>
+MAINTAINER=		Gonzalo L. R. <gonzalo@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
