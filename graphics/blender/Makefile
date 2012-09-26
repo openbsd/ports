@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.44 2012/05/14 18:31:43 pascal Exp $
+# $OpenBSD: Makefile,v 1.45 2012/09/26 16:26:01 landry Exp $
 
 COMMENT =	3D creation software
+BROKEN-sparc64 = error: cast from 'ccl::uchar*' to 'CUdeviceptr' loses precision
 
 DISTNAME =	blender-2.63a
 
