@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.773 2012/09/26 01:43:23 lteo Exp $
+# $OpenBSD: Makefile,v 1.774 2012/09/26 15:46:36 sthen Exp $
 
      SUBDIR =
      SUBDIR += BitTorrent
@@ -521,8 +521,6 @@
      SUBDIR += smokeping
      SUBDIR += snmptt
      SUBDIR += snort
-     SUBDIR += snort,mysql
-     SUBDIR += snort,postgresql
      SUBDIR += socat
      SUBDIR += softflowd
      SUBDIR += spectrum
