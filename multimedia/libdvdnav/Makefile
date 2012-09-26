@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.18 2012/09/05 08:09:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2012/09/26 00:04:09 brad Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	DVD navigation library
 
 DISTNAME=	libdvdnav-4.2.0
-REVISION=	1
+REVISION=	2
 EPOCH=		0
 CATEGORIES=	multimedia
 MASTER_SITES=	${HOMEPAGE}releases/
 EXTRACT_SUFX=	.tar.bz2
 
-SHARED_LIBS=	dvdnav		6.1 \
-		dvdnavmini	6.1
+SHARED_LIBS=	dvdnav		6.2 \
+		dvdnavmini	6.2
 
 HOMEPAGE=	http://dvdnav.mplayerhq.hu/
 
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB += dvdread pthread
+WANTLIB=	dvdread pthread
 
 AUTOCONF_VERSION= 2.61
 AUTOMAKE_VERSION= 1.10
