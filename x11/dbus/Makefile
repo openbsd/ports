@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2012/09/07 12:41:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.88 2012/09/26 15:04:09 sthen Exp $
 
 COMMENT=	message bus system
 
@@ -9,6 +9,7 @@ EPOCH=		0
 SHARED_LIBS +=  dbus-1               10.2     # 10.2
 
 CATEGORIES=	x11
+DPB_PROPERTIES=	parallel
 
 HOMEPAGE=	http://dbus.freedesktop.org/
 

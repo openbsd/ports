@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2012/09/01 14:36:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2012/09/26 15:04:09 sthen Exp $
 
 COMMENT=		vector graphics library
 
@@ -7,6 +7,7 @@ SHARED_LIBS+=		cairo 12.0
 SHARED_LIBS+=		cairo-gobject 1.0
 SHARED_LIBS+=		cairo-script-interpreter 1.0
 CATEGORIES=		graphics
+DPB_PROPERTIES=		parallel
 EXTRACT_SUFX=		.tar.xz
 REVISION=		2
 

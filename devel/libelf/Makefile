@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/05/19 08:24:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2012/09/26 15:04:09 sthen Exp $
 
 COMMENT=	read, modify, create ELF files on any arch
 
@@ -8,6 +8,7 @@ REVISION=	1
 SHARED_LIBS=	elf 1.1
 
 CATEGORIES=	devel
+DPB_PROPERTIES=	parallel
 
 # The actual homepage is in german, this points to it.
 HOMEPAGE=	http://directory.fsf.org/all/libelf.html
