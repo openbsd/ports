@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2012/09/21 13:17:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2012/09/26 19:49:39 sthen Exp $
 
 COMMENT=		International Components for Unicode
 
@@ -12,6 +12,7 @@ SHARED_LIBS+=		${_lib} ${SO_VERSION}
 .endfor
 SUBST_VARS+=		VERSION
 CATEGORIES=		textproc devel
+DPB_PROPERTIES=		parallel
 
 HOMEPAGE=		http://www.icu-project.org
 
