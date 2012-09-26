@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2012/06/23 12:23:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2012/09/26 19:20:59 brad Exp $
 
 COMMENT=		compact speech synthesizer
 
 DISTNAME=		espeak-1.46.02-source
 PKGNAME=		${DISTNAME:S/-source//}
+REVISION=		0
 SHARED_LIBS=		espeak 1.0
 
 CATEGORIES=		audio devel

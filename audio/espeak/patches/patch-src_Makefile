@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Makefile,v 1.8 2012/08/22 20:14:06 naddy Exp $
---- src/Makefile.orig	Tue Nov 22 22:46:08 2011
-+++ src/Makefile	Mon Aug 20 17:46:20 2012
+$OpenBSD: patch-src_Makefile,v 1.9 2012/09/26 19:20:59 brad Exp $
+--- src/Makefile.orig	Tue Nov 22 16:46:08 2011
++++ src/Makefile	Wed Aug 22 17:43:42 2012
 @@ -1,20 +1,20 @@
  # remove -fno-exceptions  if it causes problems with stdio library on some platforms (ARM)
  
@@ -67,7 +67,7 @@ $OpenBSD: patch-src_Makefile,v 1.8 2012/08/22 20:14:06 naddy Exp $
  $(LIB_NAME): $(OBJS2)
 -	$(CXX) $(LDFLAGS) -shared $(SONAME_OPT)$(LIB_NAME).$(LIB_VERSION) -o $@ \
 -	$(OBJS2) $(LIBS2)
-+	$(CXX) $(LDFLAGS) -shared -fPIC $(SONAME_OPT)$(LIB_NAME).$(LIB_VERSION) -o $@ \
++	$(CXX) $(LDFLAGS) -shared -fPIC -o $@ \
 +	$(OBJS2) $(LIBS2) $(EXTRA_FLAGS)
  	mv $(LIB_NAME) $(LIB_NAME).$(LIBTAG)
 -	$(LN_SF) $(LIB_NAME).$(LIBTAG) $(LIB_NAME).$(LIB_VERSION)
