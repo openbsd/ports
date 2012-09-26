@@ -1,0 +1,26 @@
+$OpenBSD: patch-api_daq_common_h,v 1.1.1.1 2012/09/26 01:40:32 lteo Exp $
+--- api/daq_common.h.orig	Wed Jan  4 06:54:49 2012
++++ api/daq_common.h	Sat Aug 11 14:55:42 2012
+@@ -25,6 +25,10 @@
+ #include <unistd.h>
+ #ifndef WIN32
+ #include <sys/time.h>
++#if defined(__OpenBSD__)
++/* for struct bpf_timeval */
++#include <net/bpf.h>
++#endif
+ #else
+ /* for struct timeavl */
+ #include <winsock2.h>
+@@ -89,7 +93,11 @@
+ #define DAQ_PKTHDR_FLOOD    -2  /* Egress is flooding */
+ typedef struct _daq_pkthdr
+ {
++#if defined(__OpenBSD__)
++    struct bpf_timeval ts;      /* Timestamp */
++#else
+     struct timeval ts;      /* Timestamp */
++#endif
+     uint32_t caplen;        /* Length of the portion present */
+     uint32_t pktlen;        /* Length of this packet (off wire) */
+     int32_t ingress_index;  /* Index of the inbound interface. */

@@ -1,0 +1,2 @@
+DAQ, or Data Acquisition library, is a library for packet I/O.  The DAQ
+replaces direct calls to PCAP functions with an abstraction layer.
