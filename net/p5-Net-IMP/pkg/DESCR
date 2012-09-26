@@ -1,0 +1,3 @@
+IMP is a protocol for inspection, modification and rejection of
+data between two sides (client and server) using an analyzer
+implementing this interface.
