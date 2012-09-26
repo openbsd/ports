@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2012/08/04 15:06:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2012/09/26 18:23:04 naddy Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	i386 amd64
@@ -90,6 +90,10 @@ WANTLIB=	X11 Xext Xi Xtst Xrender c freetype m pthread sndio stdc++ z
 
 USE_GMAKE=	Yes
 
+# Don't call make -jN, instead pass MAKE_JOBS to HOTSPOT_BUILD_JOBS
+PARALLEL_BUILD=         No
+
+
 MAKE_ENV=	ALT_BOOTDIR=${ALT_BOOTDIR} \
 		ALT_FREETYPE_HEADERS_PATH=${X11BASE}/include \
 		ALT_FREETYPE_LIB_PATH=${X11BASE}/lib \
@@ -104,7 +108,7 @@ MAKE_ENV=	ALT_BOOTDIR=${ALT_BOOTDIR} \
 		MILESTONE=fcs \
 		BUILD_NUMBER=b04 \
 		JDK_UPDATE_VERSION=03 \
-		HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS}
+		HOTSPOT_BUILD_JOBS=${MAKE_JOBS}
 
 #ALL_TARGET=	debug_build
 
