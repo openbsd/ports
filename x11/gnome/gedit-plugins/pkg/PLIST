@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2012/03/29 07:09:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2012/09/27 14:15:05 jasper Exp $
 lib/gedit/plugins/bookmarks.plugin
 lib/gedit/plugins/bracketcompletion.plugin
 lib/gedit/plugins/bracketcompletion.py
@@ -38,6 +38,9 @@ lib/gedit/plugins/commander/commands/completion.pyo
 lib/gedit/plugins/commander/commands/exceptions.py
 lib/gedit/plugins/commander/commands/exceptions.pyc
 lib/gedit/plugins/commander/commands/exceptions.pyo
+lib/gedit/plugins/commander/commands/metamodule.py
+lib/gedit/plugins/commander/commands/metamodule.pyc
+lib/gedit/plugins/commander/commands/metamodule.pyo
 lib/gedit/plugins/commander/commands/method.py
 lib/gedit/plugins/commander/commands/method.pyc
 lib/gedit/plugins/commander/commands/method.pyo
@@ -103,9 +106,6 @@ lib/gedit/plugins/multiedit.plugin
 lib/gedit/plugins/multiedit/__init__.py
 lib/gedit/plugins/multiedit/__init__.pyc
 lib/gedit/plugins/multiedit/__init__.pyo
-lib/gedit/plugins/multiedit/constants.py
-lib/gedit/plugins/multiedit/constants.pyc
-lib/gedit/plugins/multiedit/constants.pyo
 lib/gedit/plugins/multiedit/documenthelper.py
 lib/gedit/plugins/multiedit/documenthelper.pyc
 lib/gedit/plugins/multiedit/documenthelper.pyo
@@ -148,9 +148,6 @@ lib/gedit/plugins/textsize.plugin
 lib/gedit/plugins/textsize/__init__.py
 lib/gedit/plugins/textsize/__init__.pyc
 lib/gedit/plugins/textsize/__init__.pyo
-lib/gedit/plugins/textsize/constants.py
-lib/gedit/plugins/textsize/constants.pyc
-lib/gedit/plugins/textsize/constants.pyo
 lib/gedit/plugins/textsize/documenthelper.py
 lib/gedit/plugins/textsize/documenthelper.pyc
 lib/gedit/plugins/textsize/documenthelper.pyo

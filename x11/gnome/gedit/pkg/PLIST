@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2012/05/24 13:35:44 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.26 2012/09/27 14:14:54 jasper Exp $
 @bin bin/gedit
 bin/gnome-text-editor
 include/gedit-3.0/
@@ -171,7 +171,6 @@ share/gedit/gir-1.0/Gedit-3.0.gir
 share/gedit/logo/
 share/gedit/logo/gedit-logo.png
 share/gedit/plugins/
-share/gedit/plugins/changecase/
 share/gedit/plugins/externaltools/
 share/gedit/plugins/externaltools/tools/
 share/gedit/plugins/externaltools/tools/build
