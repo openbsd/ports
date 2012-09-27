@@ -1,0 +1,28 @@
+$OpenBSD: patch-lib_FlashVideo_Site_Youtube_pm,v 1.7 2012/09/27 23:35:49 sthen Exp $
+
+https://github.com/pder/get-flash-videos/commit/46f4dae05a1ad33dd0561c23d185fca1663bb4cf
+
+--- lib/FlashVideo/Site/Youtube.pm.orig	Fri Sep 28 00:30:06 2012
++++ lib/FlashVideo/Site/Youtube.pm	Fri Sep 28 00:32:57 2012
+@@ -178,6 +178,7 @@ sub parse_youtube_url_encoded_fmt_stream_map {
+     
+     my $format = "";
+     my $url = "";
++    my $sig = "";
+     
+     foreach my $pair (split /&/, $params) {
+       my ($name, $value) = split /=/, $pair;
+@@ -185,10 +186,12 @@ sub parse_youtube_url_encoded_fmt_stream_map {
+         $format = $value;
+       } elsif ($name eq "url") {
+         $url = uri_unescape($value);
++      } elsif ($name eq "sig") {
++        $sig = $value;
+       }
+     }
+     
+-    $map->{$format} = $url;
++    $map->{$format} = "$url&signature=$sig";
+   }
+   
+   return $map;
