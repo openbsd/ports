@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# $OpenBSD: ziproxy.rc,v 1.1 2012/09/27 13:17:12 gonzalo Exp $
+
+daemon="${TRUEPREFIX}/bin/ziproxy"
+daemon_flags="-d > /var/run/ziproxy.pid"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1
