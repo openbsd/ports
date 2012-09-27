@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_progress_c,v 1.7 2012/03/29 11:44:21 ajacoutot Exp $
+$OpenBSD: patch-src_progress_c,v 1.8 2012/09/27 08:00:06 jasper Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=653468
 --auto-close broken by fix for #540560
 
---- src/progress.c.orig	Tue Aug 16 15:52:42 2011
-+++ src/progress.c	Thu Mar 29 13:42:33 2012
-@@ -183,7 +183,7 @@ zenity_progress_handle_stdin (GIOChannel   *channel,
+--- src/progress.c.orig	Wed Sep 26 00:46:11 2012
++++ src/progress.c	Wed Sep 26 09:22:29 2012
+@@ -179,7 +179,7 @@ zenity_progress_handle_stdin (GIOChannel   *channel,
      g_string_free (string, TRUE);
    }
  
