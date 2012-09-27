@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2012/09/04 03:40:34 jeremy Exp $
+# $OpenBSD: Makefile,v 1.10 2012/09/27 17:26:05 ajacoutot Exp $
 
 COMMENT=	front-end to an XSL toolchain
 
 DISTNAME=	xmlto-0.0.18
-REVISION=	3
+REVISION=	4
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	textproc
 
@@ -18,8 +18,6 @@ MASTER_SITES=	http://cyberelk.net/tim/data/xmlto/stable/
 
 RUN_DEPENDS=	shells/bash \
 		misc/gnugetopt \
-		textproc/libxml \
-		textproc/libxslt \
 		textproc/docbook-xsl
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		textproc/docbook

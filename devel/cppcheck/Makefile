@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/09/20 19:35:09 gsoares Exp $
+# $OpenBSD: Makefile,v 1.15 2012/09/27 17:26:05 ajacoutot Exp $
 
 COMMENT =		C/C++ static checker
 
@@ -18,8 +18,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c m pcre stdc++
 
-BUILD_DEPENDS =		textproc/docbook-xsl \
-			textproc/libxslt
+BUILD_DEPENDS =		textproc/docbook-xsl
 
 LIB_DEPENDS =		devel/pcre
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2012/06/15 08:30:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2012/09/27 17:26:05 ajacoutot Exp $
 
 COMMENT=		terminal emulator for X
 
@@ -32,8 +32,7 @@ LIB_DEPENDS=		devel/vte3 \
 			x11/dbus-glib \
 			devel/libglade2 
 
-BUILD_DEPENDS=		textproc/docbook-xsl \
-			textproc/libxslt
+BUILD_DEPENDS=		textproc/docbook-xsl
 
 RUN_DEPENDS=		devel/desktop-file-utils \
 			x11/gnome/librsvg \

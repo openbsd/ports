@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2012/09/02 20:09:08 kili Exp $
+# $OpenBSD: Makefile,v 1.25 2012/09/27 17:26:05 ajacoutot Exp $
 
 COMMENT =	lexical analyser generator for Haskell
 
@@ -26,9 +26,7 @@ AUTOCONF_DIR =		${WRKSRC}/doc
 WRKCONF =		${AUTOCONF_DIR}
 
 BUILD_DEPENDS +=	devel/hs-QuickCheck>=2 \
-			textproc/docbook \
-			textproc/docbook-xsl \
-			textproc/libxslt
+			textproc/docbook-xsl
 
 LIB_DEPENDS =		devel/gmp
 

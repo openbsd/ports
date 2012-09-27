@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/10/17 12:57:39 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2012/09/27 17:26:05 ajacoutot Exp $
 
 COMMENT =	modular, cross-platform and multi-threaded benchmark tool
 DISTNAME =	sysbench-0.4.8
@@ -17,8 +17,7 @@ WANTLIB =		m c pthread
 
 MAINTAINER =		Jung <moorang@gmail.com>
 
-BUILD_DEPENDS =		textproc/libxslt \
-			textproc/docbook-xsl
+BUILD_DEPENDS =		textproc/docbook-xsl
 NO_REGRESS =		Yes
 
 CONFIGURE_STYLE =	gnu

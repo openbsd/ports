@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2012/03/19 10:28:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2012/09/27 17:26:05 ajacoutot Exp $
 
 COMMENT=	GTK C code documentation system
 
 GNOME_VERSION=	1.18
 GNOME_PROJECT=	gtk-doc
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=    	textproc devel
 
@@ -30,9 +30,7 @@ PKG_ARCH=		*
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		textproc/openjade \
-			textproc/docbook \
 			textproc/docbook-xsl \
-			textproc/libxslt \
 			editors/vim,no_x11
 
 REGRESS_DEPENDS=	shells/bash

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2012/09/25 19:26:36 kili Exp $
+# $OpenBSD: Makefile,v 1.81 2012/09/27 17:26:05 ajacoutot Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -36,9 +36,7 @@ PERMIT_DISTFILES_FTP =		Yes
 
 PKG_ARCH-doc =		*
 BUILD_DEPENDS =		archivers/gtar \
-			textproc/docbook>=4.5 \
-			textproc/docbook-xsl \
-			textproc/libxslt
+			textproc/docbook-xsl
 LIB_DEPENDS-doc =
 LIB_DEPENDS-main =	${LIB_DEPENDS} devel/gmp
 RUN_DEPENDS-doc =

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2012/09/03 17:35:25 kili Exp $
+# $OpenBSD: Makefile,v 1.40 2012/09/27 17:26:05 ajacoutot Exp $
 
 COMMENT-main =	documentation-generation tool for Haskell libraries
 COMMENT-lib =	haddock library
@@ -38,9 +38,7 @@ WANTLIB-main =		${WANTLIB} \
 
 BUILD_DEPENDS +=	devel/hs-ghc-paths \
 			lang/ghc,-doc \
-			textproc/docbook \
 			textproc/docbook-xsl \
-			textproc/libxslt \
 			${RUN_DEPENDS}
 
 RUN_DEPENDS-lib =	${RUN_DEPENDS} \

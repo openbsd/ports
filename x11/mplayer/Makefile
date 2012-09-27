@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.209 2012/08/27 06:19:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.210 2012/09/27 17:26:05 ajacoutot Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
@@ -62,9 +62,6 @@ LIB_DEPENDS =	graphics/png \
 
 BUILD_DEPENDS =	net/livemedia \
 		audio/rtunes>=0.8 \
-		textproc/libxml \
-		textproc/libxslt \
-		textproc/docbook \
 		textproc/docbook-xsl \
 		audio/ladspa
 # mplayer uses non-public interfaces to ffmpeg, so we still need

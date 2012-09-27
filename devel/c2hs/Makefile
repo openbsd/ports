@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2012/08/18 12:41:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2012/09/27 17:26:05 ajacoutot Exp $
 
 COMMENT=		interface generator for Haskell to C bindings
 
@@ -28,8 +28,6 @@ BUILD_DEPENDS=		devel/alex \
 			devel/happy \
 			devel/hs-language-c \
 			textproc/docbook-xsl \
-			textproc/libxml \
-			textproc/libxslt \
 			textproc/sgmlformat
 
 USE_GMAKE=		Yes

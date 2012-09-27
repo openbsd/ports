@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2011/09/29 09:38:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.71 2012/09/27 17:26:05 ajacoutot Exp $
 
 COMMENT=	tty-based e-mail client, development version
 
@@ -19,9 +19,7 @@ CONFIGURE_ARGS= --enable-hcache \
 		--without-gdbm
 
 LIB_DEPENDS=	databases/qdbm
-BUILD_DEPENDS+=	textproc/docbook \
-		textproc/docbook-xsl \
-		textproc/libxslt
+BUILD_DEPENDS+=	textproc/docbook-xsl
 
 .if ${FLAVOR:L:Msasl}
 CONFIGURE_ARGS+= --with-sasl=${LOCALBASE}

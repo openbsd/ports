@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2012/04/15 20:03:16 kirby Exp $
+# $OpenBSD: Makefile,v 1.23 2012/09/27 17:26:05 ajacoutot Exp $
 
 COMMENT-main=		GPS waypoint, track, and route conversion tool
 COMMENT-tk=		Tk front-end to gpsbabel
@@ -41,9 +41,7 @@ MULTI_PACKAGES=		-main -tk -qt
 
 MODULES=		x11/tk x11/qt4
 
-BUILD_DEPENDS=		textproc/libxslt \
-			textproc/docbook \
-			textproc/docbook-xsl
+BUILD_DEPENDS=		textproc/docbook-xsl
 LIB_DEPENDS-main=	devel/libusb-compat \
 			devel/shapelib
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2012/09/21 14:48:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2012/09/27 17:26:05 ajacoutot Exp $
 
 COMMENT=	framework for granting privileged operations to users
 
@@ -39,8 +39,7 @@ BUILD_DEPENDS+=	devel/libtool
 
 # We do no want to depends on gtk-doc as it creates a dependency loop:
 # polkit -> gtk-doc -> yelp -> gconf2 -> polkit
-BUILD_DEPENDS+=	textproc/libxslt \
-		textproc/docbook-xsl
+BUILD_DEPENDS+=	textproc/docbook-xsl
 
 LIB_DEPENDS=	devel/glib2
 

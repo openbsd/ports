@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2012/08/23 17:51:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2012/09/27 17:26:05 ajacoutot Exp $
 
 COMMENT-main=		service daemon that monitors one or more GPSes
 COMMENT-x11=		GUI test apps using gpsd
@@ -44,9 +44,7 @@ FLAVOR?=
 
 MULTI_PACKAGES=		-main -php
 
-BUILD_DEPENDS=		textproc/libxslt \
-			textproc/docbook \
-			textproc/docbook-xsl
+BUILD_DEPENDS=		textproc/docbook-xsl
 
 RUN_DEPENDS-main=	${MODPY_RUN_DEPENDS}
 

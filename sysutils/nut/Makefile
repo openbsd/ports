@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2012/08/09 12:05:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.64 2012/09/27 17:26:05 ajacoutot Exp $
 
 COMMENT-main=		UPS monitoring program supporting many brands
 COMMENT-cgi=		CGIs for monitoring Nut-based UPSs
@@ -39,7 +39,6 @@ MODULES=		devel/gettext \
 			lang/python
 MODPY_RUNDEP=		No
 BUILD_DEPENDS+=		textproc/asciidoc \
-			textproc/docbook \
 			textproc/docbook-xsl
 
 WEB_ROOT=		/var/www

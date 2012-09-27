@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2012/09/27 12:47:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2012/09/27 17:26:05 ajacoutot Exp $
 
 COMMENT=	interfaces for interacting with online accounts
 
@@ -34,7 +34,7 @@ WANTLIB += atk-bridge-2.0 atspi harfbuzz icule secret-1
 MODULES=		devel/gettext \
 			x11/gnome
 
-# man pages; also adds textproc/libxslt
+# man pages
 BUILD_DEPENDS += textproc/docbook-xsl
 
 LIB_DEPENDS=		devel/json-glib \

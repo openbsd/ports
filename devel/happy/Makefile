@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2012/09/02 20:10:36 kili Exp $
+# $OpenBSD: Makefile,v 1.25 2012/09/27 17:26:05 ajacoutot Exp $
 
 COMMENT=		parser generator for Haskell
 
@@ -19,9 +19,7 @@ MODULES=		lang/ghc converters/libiconv
 MODGHC_BUILD=		cabal hackage nort
 
 BUILD_DEPENDS+=		devel/hs-mtl>=1.0 \
-			textproc/docbook \
-			textproc/docbook-xsl \
-			textproc/libxslt
+			textproc/docbook-xsl
 
 LIB_DEPENDS =		devel/gmp
 
