@@ -1,0 +1,12 @@
+$OpenBSD: patch-gtk_channel-display_c,v 1.1.1.1 2012/09/27 14:57:59 jasper Exp $
+--- gtk/channel-display.c.orig	Mon Sep 17 17:52:03 2012
++++ gtk/channel-display.c	Mon Sep 17 17:52:15 2012
+@@ -19,6 +19,8 @@
+ #include "config.h"
+ #endif
+ 
++#include <sys/types.h>
++
+ #ifdef HAVE_SYS_SHM_H
+ #include <sys/shm.h>
+ #endif
