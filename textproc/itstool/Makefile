@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2012/09/27 10:53:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2012/09/27 10:56:56 ajacoutot Exp $
+
+PKG_ARCH=	*
 
 COMMENT=	translate XML documents with PO files
 
