@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.187 2012/09/24 04:11:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.188 2012/09/27 17:38:18 ajacoutot Exp $
 
 COMMENT=		general-purpose utility library
 
@@ -58,7 +58,6 @@ USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--with-xml-catalog=${LOCALBASE}/share/xml/catalog \
 			--enable-static \
 			--with-pcre=system \
 			--disable-gtk-doc \

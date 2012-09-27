@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2012/09/27 13:03:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.79 2012/09/27 17:38:17 ajacoutot Exp $
 
 COMMENT-main=	GNOME Virtual File System
 COMMENT-smb=	samba module for GVFS
@@ -37,7 +37,7 @@ WANTLIB-main += stdc++ xcb xcb-render xcb-shm
 
 MODGNOME_DESKTOP_FILE=	Yes
 
-# man pages; also adds textproc/libxslt
+# man pages
 BUILD_DEPENDS += textproc/docbook-xsl
 
 LIB_DEPENDS-main= ${LIB_DEPENDS} \

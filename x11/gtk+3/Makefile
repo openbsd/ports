@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2012/09/26 21:38:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2012/09/27 17:38:18 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -90,8 +90,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-gtk-doc \
 		--disable-papi \
 		--disable-packagekit \
-		--enable-introspection \
-		--with-xml-catalog=${LOCALBASE}/share/xml/catalog
+		--enable-introspection
 
 # If one of these tools is found at configure stage, it might be used,
 # no matter whether we use --disable-gtk-doc or not.
