@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/07/07 17:59:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2012/09/27 13:00:40 jasper Exp $
 
 COMMENT=	library for using real 3D models within a Clutter scene
 
 V=		0.2.0
 DISTNAME=	mash-${V}
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 SHARED_LIBS +=  mash-0.2                  0.0 # 0.0
 

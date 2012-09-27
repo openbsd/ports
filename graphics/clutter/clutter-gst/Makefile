@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2012/09/27 11:49:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2012/09/27 13:00:40 jasper Exp $
 
 COMMENT=		clutter GStreamer integration library
 
 GNOME_PROJECT=		clutter-gst
 GNOME_VERSION=		1.9.92
+REVISION=		0
 
 API_VERSION=		2.0
 
