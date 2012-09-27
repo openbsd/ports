@@ -1,22 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.11 2012/06/15 08:30:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2012/09/27 07:46:28 jasper Exp $
 @conflict gnome-applets2-<=2.22.0
 include/libgweather-3.0/
 include/libgweather-3.0/libgweather/
 include/libgweather-3.0/libgweather/gweather-enum-types.h
-include/libgweather-3.0/libgweather/gweather-gconf.h
+include/libgweather-3.0/libgweather/gweather-enums.h
 include/libgweather-3.0/libgweather/gweather-location.h
-include/libgweather-3.0/libgweather/gweather-prefs.h
 include/libgweather-3.0/libgweather/gweather-timezone.h
+include/libgweather-3.0/libgweather/gweather-weather.h
 include/libgweather-3.0/libgweather/gweather-xml.h
 include/libgweather-3.0/libgweather/location-entry.h
 include/libgweather-3.0/libgweather/timezone-menu.h
-include/libgweather-3.0/libgweather/weather.h
 lib/girepository-1.0/GWeather-3.0.typelib
 lib/libgweather-3.a
 lib/libgweather-3.la
 @lib lib/libgweather-3.so.${LIBgweather-3_VERSION}
 lib/pkgconfig/gweather-3.0.pc
 share/gir-1.0/GWeather-3.0.gir
+share/glib-2.0/schemas/org.gnome.GWeather.enums.xml
+share/glib-2.0/schemas/org.gnome.GWeather.gschema.xml
 share/gtk-doc/html/libgweather-3.0/
 share/gtk-doc/html/libgweather-3.0/GWeatherLocation.html
 share/gtk-doc/html/libgweather-3.0/GWeatherLocationEntry.html
@@ -31,10 +32,8 @@ share/gtk-doc/html/libgweather-3.0/index.html
 share/gtk-doc/html/libgweather-3.0/index.sgml
 share/gtk-doc/html/libgweather-3.0/left.png
 share/gtk-doc/html/libgweather-3.0/libgweather-3.0.devhelp2
-share/gtk-doc/html/libgweather-3.0/libgweather-gweather-gconf.html
-share/gtk-doc/html/libgweather-3.0/libgweather-gweather-prefs.html
+share/gtk-doc/html/libgweather-3.0/libgweather-GWeatherInfo.html
 share/gtk-doc/html/libgweather-3.0/libgweather-gweather-xml.html
-share/gtk-doc/html/libgweather-3.0/libgweather-weather.html
 share/gtk-doc/html/libgweather-3.0/object-tree.html
 share/gtk-doc/html/libgweather-3.0/right.png
 share/gtk-doc/html/libgweather-3.0/style.css
@@ -633,9 +632,7 @@ share/locale/xh/LC_MESSAGES/libgweather-3.0.mo
 share/locale/zh_CN/LC_MESSAGES/libgweather-3.0.mo
 share/locale/zh_HK/LC_MESSAGES/libgweather-3.0.mo
 share/locale/zh_TW/LC_MESSAGES/libgweather-3.0.mo
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
-${SCHEMAS_INSTDIR}/
-${SCHEMAS_INSTDIR}/gweather.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/gnome
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/gnome
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
