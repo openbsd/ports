@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.89 2012/05/14 13:52:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.90 2012/09/27 18:13:34 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		components for the GNOME desktop
 
 GNOME_PROJECT=		gnome-desktop
-GNOME_VERSION=		3.4.2 # sync with meta/gnome "V" variable
+GNOME_VERSION=		3.6.0.1 # sync with meta/gnome "V" variable
 
-SHARED_LIBS +=  gnome-desktop-3      1.0      # 2.1
+SHARED_LIBS +=  gnome-desktop-3      2.0      # 4.0
 
 CATEGORIES=		x11
 
@@ -23,13 +23,15 @@ WANTLIB += drm expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-3 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread-stubs xcb xcb-render xcb-shm z stdc++
+WANTLIB += ICE SM atk-bridge-2.0 atspi c dbus-1 harfbuzz icudata
+WANTLIB += icule icuuc pthread xkbfile
 
 MODULES=		devel/gettext \
 			x11/gnome
 
-BUILD_DEPENDS=		devel/gsettings-desktop-schemas
-RUN_DEPENDS=		devel/gsettings-desktop-schemas
-LIB_DEPENDS=		x11/gtk+3
+BUILD_DEPENDS=		devel/gsettings-desktop-schemas>=3.6.0
+RUN_DEPENDS=		devel/gsettings-desktop-schemas>=3.6.0
+LIB_DEPENDS=		x11/gtk+3>=3.6.0
 
 MODGNOME_TOOLS= 	goi yelp
 
