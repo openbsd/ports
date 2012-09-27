@@ -1,0 +1,14 @@
+$OpenBSD: patch-platform-demos_Makefile_in,v 1.1 2012/09/27 14:52:36 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=682987
+
+--- platform-demos/Makefile.in.orig	Thu Sep 27 15:10:45 2012
++++ platform-demos/Makefile.in	Thu Sep 27 15:10:52 2012
+@@ -438,7 +438,6 @@ DOC_FIGURES = \
+ 	media/02_jsgrid_08.png		\
+ 	media/03_jssignal_01.png		\
+ 	media/03_jssignal_02.png		\
+-	media/03_jssignal_02b.png		\
+ 	media/03_jssignal_03.png		\
+ 	media/03_jssignal_04.png		\
+ 	media/aboutdialog_GMenu.png		\
