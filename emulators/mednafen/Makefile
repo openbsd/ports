@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/06 19:21:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2012/09/27 04:13:17 jeremy Exp $
 
 COMMENT =	emulates numerous game consoles
 
-DISTNAME =	mednafen-0.8.D.3
-PKGNAME =	mednafen-0.8.3
+DISTNAME =	mednafen-0.9.24-wip
+PKGNAME =	mednafen-0.9.24
 
 CATEGORIES =	emulators games
 HOMEPAGE =	http://mednafen.sourceforge.net/
@@ -21,8 +21,7 @@ EXTRACT_SUFX =	.tar.bz2
 
 MODULES =	devel/gettext
 
-WANTLIB += SDL SDL_net c cdio m pthread sndfile sndio stdc++ usbhid
-WANTLIB += z
+WANTLIB += SDL c cdio m pthread sndfile sndio stdc++ usbhid z
 
 USE_GMAKE =	Yes
 
