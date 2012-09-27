@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2012/09/18 12:43:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2012/09/27 05:36:33 ajacoutot Exp $
 
 COMMENT=	library for storing and retrieving passwords and secrets
 
@@ -25,6 +25,8 @@ MODULES=	devel/gettext \
 MODGNOME_TOOLS=	goi vala
 MODPY_BUILDDEP=	No
 MODPY_RUNDEP=	No
+
+BUILD_DEPENDS=	textproc/docbook-xsl
 
 LIB_DEPENDS=	devel/glib2 \
 		security/libgcrypt
