@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.62 2012/09/11 09:28:56 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.63 2012/09/27 14:14:31 ajacoutot Exp $
 #
 # Module for GNOME related ports
 
@@ -54,8 +54,8 @@ USE_GMAKE?=		Yes
 #         or "page" files under share/help/ in the PLIST that are opened
 #         with yelp -- gnome-doc-utils is here to make sure we have a
 #         dependency on rarian (and legacy scrollkeeper-*) and have
-#         access to the gnome-doc-* tools (not always needed but easier);
-#         same goes with itstool.
+#         access to the gnome-doc-* tools (legacy);
+#         same goes with yelp-tools which gives us itstool.
 # Please note that if you're using multi-packages, you have to use the
 # MODGNOME_RUN_DEPENDS_${tool} in your multi package RUN_DEPENDS.
 
@@ -66,7 +66,7 @@ MODGNOME_CONFIGURE_ARGS_vala=--disable-vala --disable-vala-bindings
 .if defined(MODGNOME_TOOLS)
 .   if ${MODGNOME_TOOLS:Mgoi}
         MODGNOME_CONFIGURE_ARGS_goi=--enable-introspection
-        MODGNOME_BUILD_DEPENDS+=devel/gobject-introspection>=1.32.0
+        MODGNOME_BUILD_DEPENDS+=devel/gobject-introspection>=1.34.0
 .   endif
 
 .   if ${MODGNOME_TOOLS:Mgtk-doc}
@@ -76,12 +76,12 @@ MODGNOME_CONFIGURE_ARGS_vala=--disable-vala --disable-vala-bindings
 
 .   if ${MODGNOME_TOOLS:Mvala}
         MODGNOME_CONFIGURE_ARGS_vala=--enable-vala --enable-vala-bindings
-        MODGNOME_BUILD_DEPENDS+=lang/vala>=0.17.5
+        MODGNOME_BUILD_DEPENDS+=lang/vala>=0.18.0
 .   endif
 
 .   if ${MODGNOME_TOOLS:Myelp}
-        MODGNOME_BUILD_DEPENDS+=textproc/itstool
-        MODGNOME_BUILD_DEPENDS+=x11/gnome/doc-utils>=0.20.10
+        MODGNOME_BUILD_DEPENDS+=x11/gnome/yelp-tools
+        MODGNOME_BUILD_DEPENDS+=x11/gnome/doc-utils
         _yelp_depend=x11/gnome/yelp
         MODGNOME_RUN_DEPENDS+=${_yelp_depend}
         MODGNOME_RUN_DEPENDS_yelp=${_yelp_depend}
