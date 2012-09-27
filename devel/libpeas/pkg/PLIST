@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2012/06/15 08:32:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2012/09/27 07:07:00 jasper Exp $
 @bin bin/peas-demo
 include/libpeas-1.0/
 include/libpeas-1.0/libpeas/
@@ -50,10 +50,6 @@ lib/peas-demo/plugins/secondtime/secondtime.plugin
 lib/peas-demo/plugins/seedhello/
 lib/peas-demo/plugins/seedhello/seedhello.js
 lib/peas-demo/plugins/seedhello/seedhello.plugin
-lib/peas-demo/plugins/valahello/
-@comment lib/peas-demo/plugins/valahello/libvalahello.la
-lib/peas-demo/plugins/valahello/libvalahello.so
-lib/peas-demo/plugins/valahello/valahello.plugin
 lib/pkgconfig/libpeas-1.0.pc
 lib/pkgconfig/libpeas-gtk-1.0.pc
 share/gir-1.0/Peas-1.0.gir
@@ -93,6 +89,7 @@ share/locale/as/LC_MESSAGES/libpeas.mo
 share/locale/ast/LC_MESSAGES/libpeas.mo
 share/locale/be/LC_MESSAGES/libpeas.mo
 share/locale/bg/LC_MESSAGES/libpeas.mo
+share/locale/bn_IN/LC_MESSAGES/libpeas.mo
 share/locale/ca/LC_MESSAGES/libpeas.mo
 share/locale/ca@valencia/LC_MESSAGES/libpeas.mo
 share/locale/cs/LC_MESSAGES/libpeas.mo
@@ -119,6 +116,7 @@ share/locale/ko/LC_MESSAGES/libpeas.mo
 share/locale/lt/LC_MESSAGES/libpeas.mo
 share/locale/lv/LC_MESSAGES/libpeas.mo
 share/locale/ml/LC_MESSAGES/libpeas.mo
+share/locale/mr/LC_MESSAGES/libpeas.mo
 share/locale/nb/LC_MESSAGES/libpeas.mo
 share/locale/nds/LC_MESSAGES/libpeas.mo
 share/locale/nl/LC_MESSAGES/libpeas.mo

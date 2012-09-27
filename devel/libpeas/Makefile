@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.20 2012/06/15 08:32:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2012/09/27 07:07:00 jasper Exp $
 
 COMMENT=	gobject-based plugins engine
 
 GNOME_PROJECT=	libpeas
-GNOME_VERSION=	1.4.0
-REVISION=	0
+GNOME_VERSION=	1.6.0
 
 CATEGORIES=	devel
 
-SHARED_LIBS +=  peas-1.0             400.0      # 400.0
-SHARED_LIBS +=  peas-gtk-1.0         400.0      # 400.0
+SHARED_LIBS +=  peas-1.0             400.1      # 599.1
+SHARED_LIBS +=  peas-gtk-1.0         400.1      # 599.1
 
 HOMEPAGE=	http://live.gnome.org/Libpeas
 
@@ -34,7 +33,7 @@ WANTLIB += javascriptcoregtk-3.0 jpeg m mozjs185 ncurses nspr4
 WANTLIB += orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 plc4 plds4 png pthread pthread-stubs seed-gtk3
 WANTLIB += soup-2.4 sqlite3 stdc++ util webkitgtk-3.0 xcb xcb-render
-WANTLIB += xcb-shm xml2 xslt z
+WANTLIB += xcb-shm xml2 xslt z atk-bridge-2.0 atspi harfbuzz icule
 WANTLIB += ${MODPY_WANTLIB}
 
 MODULES=	devel/gettext \
@@ -44,7 +43,6 @@ MODULES=	devel/gettext \
 RUN_DEPENDS=	devel/py-gobject3
 BUILD_DEPENDS=	devel/py-gobject3
 
-MODGNOME_TOOLS= vala
 MODGNOME_ICON_CACHE=	Yes
 
 LIB_DEPENDS=	devel/gobject-introspection \
