@@ -1,0 +1,21 @@
+$OpenBSD: patch-bindings_perl_src_CMakeLists_txt,v 1.1 2012/09/27 08:01:04 dcoppa Exp $
+--- bindings/perl/src/CMakeLists.txt.orig	Mon Jun  6 23:44:37 2011
++++ bindings/perl/src/CMakeLists.txt	Mon Sep 24 15:39:04 2012
+@@ -4,7 +4,7 @@ include_directories( ${PERL_INCLUDE_PATH} ${CMAKE_SOUR
+ add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/Libproxy.c
+                    COMMAND ${PERL_EXECUTABLE} ARGS ${CMAKE_CURRENT_SOURCE_DIR}/doxsubpp.pl
+                            ${PERL_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/Libproxy.xs ${CMAKE_CURRENT_BINARY_DIR}/Libproxy.c
+-                   DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/Libproxy.xs libproxy
++                   DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/Libproxy.xs proxy
+                    WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
+ 
+ set(Libproxy_LIB_SRCS Libproxy.c)
+@@ -12,7 +12,7 @@ set(Libproxy_LIB_SRCS Libproxy.c)
+ set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/perl/blib/arch/auto/Net)
+ add_library(PLlibproxy SHARED ${Libproxy_LIB_SRCS})
+ 
+-target_link_libraries(PLlibproxy ${PERL_LIBRARY} libproxy)
++target_link_libraries(PLlibproxy ${PERL_LIBRARY} proxy)
+ set_target_properties(PLlibproxy PROPERTIES OUTPUT_NAME "Libproxy")
+ set_target_properties(PLlibproxy PROPERTIES PREFIX "")
+ 

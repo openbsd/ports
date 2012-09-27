@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2012/09/01 14:36:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2012/09/27 08:01:04 dcoppa Exp $
 
 SHARED_ONLY=		Yes
 
@@ -13,7 +13,7 @@ PKGNAME-main=		libproxy-${VERSION}
 PKGNAME-mozilla=	libproxy-mozilla-${VERSION}
 PKGNAME-webkit=		libproxy-webkit-${VERSION}
 
-REVISION-main=		1
+REVISION-main=		2
 REVISION-mozilla=	1
 REVISION-webkit=	1
 
@@ -79,6 +79,7 @@ WANTLIB-webkit += webkitgtk-3.0 xcb xcb-render xcb-shm z
 
 CONFIGURE_ARGS=		-DCMAKE_C_FLAGS="${CFLAGS}" \
 			-DCMAKE_CXX_FLAGS="${CXXFLAGS}" \
+			-DCMAKE_BUILD_TYPE:STRING=Release \
 			-DWITH_PYTHON:BOOL=ON \
 			-DWITH_PERL:BOOL=ON \
 			-DWITH_GNOME3:BOOL=ON \
@@ -101,8 +102,5 @@ CONFIGURE_ARGS +=	-DWITH_WEBKIT3:BOOL=ON
 .else
 CONFIGURE_ARGS +=	-DWITH_WEBKIT:BOOL=OFF
 .endif
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/libproxy/cmake/libproxy.cmk
 
 .include <bsd.port.mk>

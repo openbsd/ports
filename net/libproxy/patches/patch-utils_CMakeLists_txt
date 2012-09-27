@@ -1,0 +1,13 @@
+$OpenBSD: patch-utils_CMakeLists_txt,v 1.1 2012/09/27 08:01:04 dcoppa Exp $
+--- utils/CMakeLists.txt.orig	Mon Jun  6 23:44:37 2011
++++ utils/CMakeLists.txt	Mon Sep 24 15:42:42 2012
+@@ -1,5 +1,6 @@
+ include_directories("../libproxy")
+ 
+-add_executable(proxy proxy.c)
+-target_link_libraries(proxy libproxy)
+-install(TARGETS proxy RUNTIME DESTINATION ${BIN_INSTALL_DIR})
++add_executable(proxyutil proxy.c)
++target_link_libraries(proxyutil proxy)
++set_target_properties(proxyutil PROPERTIES OUTPUT_NAME proxy)
++install(TARGETS proxyutil RUNTIME DESTINATION ${BIN_INSTALL_DIR})
