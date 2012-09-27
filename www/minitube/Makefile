@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2012/09/10 13:21:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2012/09/27 20:35:49 dcoppa Exp $
 
 COMMENT =	standalone YouTube.com video browser/player
 
-DISTNAME =	minitube-1.8
-REVISION =	1
+DISTNAME =	minitube-1.9
 
 CATEGORIES =	www multimedia
 
@@ -26,8 +25,7 @@ WANTLIB +=	ICE QtDBus QtGui QtNetwork QtXml SM X11
 WANTLIB +=	Xext Xi Xinerama Xrender c fontconfig
 WANTLIB +=	freetype m phonon pthread stdc++
 
-RUN_DEPENDS =	multimedia/gstreamer-0.10/plugins-base \
-		multimedia/gstreamer-0.10/plugins-good \
+RUN_DEPENDS =	multimedia/gstreamer-0.10/plugins-good \
 		multimedia/gstreamer-0.10/plugins-ffmpeg \
 		x11/gnome/icon-theme \
 		devel/desktop-file-utils \
