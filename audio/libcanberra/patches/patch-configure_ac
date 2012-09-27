@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.10 2012/08/24 12:14:47 ajacoutot Exp $
---- configure.ac.orig	Tue May 15 12:09:53 2012
-+++ configure.ac	Fri Aug 24 14:01:44 2012
-@@ -295,6 +295,36 @@ else
+$OpenBSD: patch-configure_ac,v 1.11 2012/09/27 06:17:08 ajacoutot Exp $
+--- configure.ac.orig	Tue Sep 25 02:21:07 2012
++++ configure.ac	Thu Sep 27 07:58:59 2012
+@@ -296,6 +296,36 @@ else
      HAVE_OSS=0
  fi
  
@@ -38,7 +38,7 @@ $OpenBSD: patch-configure_ac,v 1.10 2012/08/24 12:14:47 ajacoutot Exp $
  ### PulseAudio (optional) ####
  
  AC_ARG_ENABLE([pulse],
-@@ -596,6 +626,7 @@ BUILTIN_DSO=0
+@@ -597,6 +627,7 @@ BUILTIN_DSO=0
  BUILTIN_PULSE=0
  BUILTIN_ALSA=0
  BUILTIN_OSS=0
@@ -46,7 +46,7 @@ $OpenBSD: patch-configure_ac,v 1.10 2012/08/24 12:14:47 ajacoutot Exp $
  BUILTIN_GSTREAMER=0
  BUILTIN_NULL=0
  
-@@ -608,6 +639,7 @@ case "x$with_builtin" in
+@@ -609,6 +640,7 @@ case "x$with_builtin" in
          BUILTIN_PULSE=1
          HAVE_ALSA=0
  	HAVE_OSS=0
@@ -54,7 +54,7 @@ $OpenBSD: patch-configure_ac,v 1.10 2012/08/24 12:14:47 ajacoutot Exp $
  	HAVE_GSTREAMER=0
          HAVE_NULL=0
       ;;
-@@ -619,6 +651,7 @@ case "x$with_builtin" in
+@@ -620,6 +652,7 @@ case "x$with_builtin" in
  
          BUILTIN_ALSA=1
  	HAVE_OSS=0
@@ -62,7 +62,7 @@ $OpenBSD: patch-configure_ac,v 1.10 2012/08/24 12:14:47 ajacoutot Exp $
          HAVE_PULSE=0
  	HAVE_GSTREAMER=0
          HAVE_NULL=0
-@@ -632,6 +665,7 @@ case "x$with_builtin" in
+@@ -633,6 +666,7 @@ case "x$with_builtin" in
          BUILTIN_GSTREAMER=1
          HAVE_ALSA=0
  	HAVE_OSS=0
@@ -70,7 +70,7 @@ $OpenBSD: patch-configure_ac,v 1.10 2012/08/24 12:14:47 ajacoutot Exp $
          HAVE_PULSE=0
          HAVE_NULL=0
       ;;
-@@ -643,11 +677,25 @@ case "x$with_builtin" in
+@@ -644,11 +678,25 @@ case "x$with_builtin" in
  
  	BUILTIN_OSS=1
  	HAVE_ALSA=0
@@ -96,7 +96,7 @@ $OpenBSD: patch-configure_ac,v 1.10 2012/08/24 12:14:47 ajacoutot Exp $
       xnull)
          if test "x$HAVE_NULL" != x1 ; then
                  AC_MSG_ERROR([*** Null output selected for builtin driver, but not enabled. ***])
-@@ -655,6 +703,7 @@ case "x$with_builtin" in
+@@ -656,6 +704,7 @@ case "x$with_builtin" in
  
          BUILTIN_NULL=1
          HAVE_PULSE=0
@@ -104,7 +104,7 @@ $OpenBSD: patch-configure_ac,v 1.10 2012/08/24 12:14:47 ajacoutot Exp $
          HAVE_ALSA=0
  	HAVE_OSS=0
  	HAVE_GSTREAMER=0
-@@ -670,7 +719,7 @@ case "x$with_builtin" in
+@@ -671,7 +720,7 @@ case "x$with_builtin" in
          AC_MSG_ERROR([*** Unknown driver $with_builtin selected for builtin ***])
  esac
  
@@ -113,7 +113,7 @@ $OpenBSD: patch-configure_ac,v 1.10 2012/08/24 12:14:47 ajacoutot Exp $
     AC_MSG_ERROR([*** No backend enabled. ***])
  fi
  
-@@ -678,23 +727,27 @@ AC_SUBST(HAVE_DSO)
+@@ -679,23 +728,27 @@ AC_SUBST(HAVE_DSO)
  AC_SUBST(HAVE_PULSE)
  AC_SUBST(HAVE_ALSA)
  AC_SUBST(HAVE_OSS)
@@ -141,7 +141,7 @@ $OpenBSD: patch-configure_ac,v 1.10 2012/08/24 12:14:47 ajacoutot Exp $
  AM_CONDITIONAL([BUILTIN_GSTREAMER], [test "x$BUILTIN_GSTREAMER" = x1])
  AM_CONDITIONAL([BUILTIN_NULL], [test "x$BUILTIN_NULL" = x1])
  
-@@ -753,6 +806,15 @@ if test "x$BUILTIN_OSS" = "x1" ; then
+@@ -754,6 +807,15 @@ if test "x$BUILTIN_OSS" = "x1" ; then
      ENABLE_BUILTIN_OSS=yes
  fi
  
@@ -157,7 +157,7 @@ $OpenBSD: patch-configure_ac,v 1.10 2012/08/24 12:14:47 ajacoutot Exp $
  ENABLE_GSTREAMER=no
  if test "x$HAVE_GSTREAMER" = "x1" ; then
     ENABLE_GSTREAMER=yes
-@@ -813,6 +875,8 @@ echo "
+@@ -814,6 +876,8 @@ echo "
      Builtin ALSA:           ${ENABLE_BUILTIN_ALSA}
      Enable OSS:             ${ENABLE_OSS}
      Builtin OSS:            ${ENABLE_BUILTIN_OSS}
