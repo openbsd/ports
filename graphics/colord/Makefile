@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2012/09/21 14:48:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2012/09/27 06:55:04 ajacoutot Exp $
 
 COMMENT=	device color profile management daemon
 
-DISTNAME=	colord-0.1.22
+DISTNAME=	colord-0.1.23
 EXTRACT_SUFX=	.tar.xz
 
 SHARED_LIBS +=  colord               0.1      # 1.11
@@ -72,6 +72,6 @@ pre-configure:
 		${WRKSRC}/configure
 
 post-install:
-	rm -r ${WRKINST}/lib
+	rm -r ${WRKINST}/rules.d
 
 .include <bsd.port.mk>
