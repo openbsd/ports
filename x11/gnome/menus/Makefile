@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.59 2012/09/01 14:36:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2012/09/27 18:27:55 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		implementation of the FreeDesktop Desktop Menu Spec
 
 GNOME_PROJECT=		gnome-menus
-GNOME_VERSION=		3.4.2
-REVISION=	0
+GNOME_VERSION=		3.6.0
 
 SHARED_LIBS +=  gnome-menu-3         0.0      # 0.0
 
@@ -17,7 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += pcre z
+WANTLIB += pcre pthread z
 
 MODULES=		devel/gettext \
 			lang/python \
