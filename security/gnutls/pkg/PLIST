@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2012/09/05 07:15:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2012/09/27 06:35:08 ajacoutot Exp $
 %%SHARED%%
 @bin bin/certtool
 @bin bin/crywrap
@@ -204,6 +204,12 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_hash_get_len.3
 @man man/man3/gnutls_hash_init.3
 @man man/man3/gnutls_hash_output.3
+@man man/man3/gnutls_heartbeat_allowed.3
+@man man/man3/gnutls_heartbeat_enable.3
+@man man/man3/gnutls_heartbeat_get_timeout.3
+@man man/man3/gnutls_heartbeat_ping.3
+@man man/man3/gnutls_heartbeat_pong.3
+@man man/man3/gnutls_heartbeat_set_timeouts.3
 @man man/man3/gnutls_hex2bin.3
 @man man/man3/gnutls_hex_decode.3
 @man man/man3/gnutls_hex_encode.3
@@ -780,6 +786,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_x509_privkey_generate.3
 @man man/man3/gnutls_x509_privkey_get_key_id.3
 @man man/man3/gnutls_x509_privkey_get_pk_algorithm.3
+@man man/man3/gnutls_x509_privkey_get_pk_algorithm2.3
 @man man/man3/gnutls_x509_privkey_import.3
 @man man/man3/gnutls_x509_privkey_import2.3
 @man man/man3/gnutls_x509_privkey_import_dsa_raw.3

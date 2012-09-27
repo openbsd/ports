@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.62 2012/09/21 14:48:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2012/09/27 06:35:07 ajacoutot Exp $
 
 # XXX check why our getopt_long(3) fails the configure test
 # + rm patch-gl_unistd_in_h
 
 COMMENT=	GNU Transport Layer Security library
 
-DISTNAME=	gnutls-3.1.1
+DISTNAME=	gnutls-3.1.2
 EXTRACT_SUFX=	.tar.xz
-REVISION=	0
 
 CATEGORIES=	security
 
-SHARED_LIBS +=  gnutls               39.0     # 40.0
-SHARED_LIBS +=  gnutlsxx             29.0     # 29.0
+SHARED_LIBS +=  gnutls               39.1     # 40.0
+SHARED_LIBS +=  gnutlsxx             29.1     # 29.0
 SHARED_LIBS +=  gnutls-openssl       27.2     # 27.2
 
 HOMEPAGE=	http://www.gnutls.org/
@@ -34,7 +33,7 @@ MASTER_SITES=	http://ftp.gnu.org/gnu/gnutls/ \
 MODULES=	devel/gettext
 
 LIB_DEPENDS=	devel/libidn \
-		security/libtasn1 \
+		security/libtasn1>=2.14 \
 		security/libnettle>=2.5 \
 		security/p11-kit
 
