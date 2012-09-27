@@ -1,30 +1,21 @@
-$OpenBSD: patch-editor_Makefile_in,v 1.6 2012/05/01 06:17:38 ajacoutot Exp $
---- editor/Makefile.in.orig	Tue May  1 07:09:12 2012
-+++ editor/Makefile.in	Tue May  1 07:28:38 2012
-@@ -55,7 +55,7 @@ am_dconf_editor_OBJECTS = dconf-editor.$(OBJEXT) dconf
- 	dconf-schema.$(OBJEXT) dconf-view.$(OBJEXT)
+$OpenBSD: patch-editor_Makefile_in,v 1.7 2012/09/27 08:32:05 ajacoutot Exp $
+--- editor/Makefile.in.orig	Thu Sep 27 09:29:41 2012
++++ editor/Makefile.in	Thu Sep 27 09:30:08 2012
+@@ -72,7 +72,7 @@ am_dconf_editor_OBJECTS = dconf_editor-dconf-editor.$(
+ 	dconf_editor-dconf-view.$(OBJEXT)
  dconf_editor_OBJECTS = $(am_dconf_editor_OBJECTS)
  am__DEPENDENCIES_1 =
--dconf_editor_DEPENDENCIES = ../client/libdconf.so.0 \
+-dconf_editor_DEPENDENCIES = ../client/libdconf.so.1 \
 +dconf_editor_DEPENDENCIES = ../client/libdconf.so.${LIBdconf_VERSION} \
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
  	$(am__DEPENDENCIES_1)
- DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
-@@ -124,7 +124,7 @@ AUTOMAKE = @AUTOMAKE@
- AWK = @AWK@
- CC = @CC@
- CCDEPMODE = @CCDEPMODE@
--CFLAGS = @CFLAGS@ -Wno-error -Wno-unused-but-set-variable \
-+CFLAGS = @CFLAGS@ -Wno-error \
- 	-Wno-unused-variable
- CPPFLAGS = @CPPFLAGS@
- CYGPATH_W = @CYGPATH_W@
-@@ -232,7 +232,7 @@ top_builddir = @top_builddir@
- top_srcdir = @top_srcdir@
- AM_CFLAGS = $(gtk_CFLAGS) $(gmodule_CFLAGS) $(libxml_CFLAGS) -I$(top_srcdir)/common -I$(top_srcdir)/client -DPKGDATADIR=\"@datadir@/dconf-editor\"
- AM_VALAFLAGS = --vapidir ../client --pkg gtk+-3.0 --pkg gmodule-2.0 --pkg libxml-2.0 --pkg dconf
--dconf_editor_LDADD = ../client/libdconf.so.0 $(gtk_LIBS) $(gmodule_LIBS) $(gee_LIBS) $(libxml_LIBS)
-+dconf_editor_LDADD = ../client/libdconf.so.${LIBdconf_VERSION} $(gtk_LIBS) $(gmodule_LIBS) $(gee_LIBS) $(libxml_LIBS)
- dconf_editor_SOURCES = config.vapi dconf-editor.vala dconf-model.vala dconf-schema.vala dconf-view.vala
- desktopdir = $(datadir)/applications
- desktop_in_files = dconf-editor.desktop.in.in
+ dconf_editor_LINK = $(CCLD) $(dconf_editor_CFLAGS) $(CFLAGS) \
+@@ -297,7 +297,7 @@ TEST_PROGS = 
+ INCLUDES = -I$(top_srcdir) -I$(top_srcdir)/client
+ dconf_editor_VALAFLAGS = --vapidir ../client --pkg gtk+-3.0 --pkg gmodule-2.0 --pkg libxml-2.0 --pkg dconf
+ dconf_editor_LDADD = \
+-	../client/libdconf.so.1		\
++	../client/libdconf.so.${LIBdconf_VERSION}		\
+ 	$(gtk_LIBS)			\
+ 	$(gee_LIBS)			\
+ 	$(gmodule_LIBS)			\

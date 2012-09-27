@@ -1,0 +1,22 @@
+$OpenBSD: patch-tests_Makefile_in,v 1.1 2012/09/27 08:32:05 ajacoutot Exp $
+--- tests/Makefile.in.orig	Thu Sep 27 09:21:40 2012
++++ tests/Makefile.in	Thu Sep 27 09:21:48 2012
+@@ -349,8 +349,7 @@ changeset_SOURCES = changeset.c
+ shm_CFLAGS = $(glib_CFLAGS)
+ shm_LDADD = \
+ 	../shm/libdconf-shm.a			\
+-	$(glib_LIBS)				\
+-	-ldl
++	$(glib_LIBS)
+ 
+ shm_SOURCES = \
+ 	shm.c					\
+@@ -395,7 +394,7 @@ engine_LDADD = \
+ 	../common/libdconf-common.a		\
+ 	libdconf-mock.a				\
+ 	$(glib_LIBS)				\
+-	-ldl -lm
++	-lm
+ 
+ engine_SOURCES = engine.c
+ client_CFLAGS = $(gio_CFLAGS) -DSRCDIR=\"$(abs_srcdir)\"
