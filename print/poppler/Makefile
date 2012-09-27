@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.67 2012/09/21 14:48:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2012/09/27 18:45:34 ajacoutot Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt=	qt interface to PDF rendering library
 COMMENT-qt4=	qt4 interface to PDF rendering library
 COMMENT-utils=	PDF conversion tools and utilities
 
-V=		0.20.3
+V=		0.20.4
 DISTNAME=	poppler-$V
 CATEGORIES=	print
 PKGNAME-main=	poppler-$V
@@ -14,11 +14,12 @@ PKGNAME-qt=	poppler-qt-$V
 PKGNAME-qt4=	poppler-qt4-$V
 OLDSHIT = poppler-0.16.7
 
-SHARED_LIBS +=	poppler              13.0
-SHARED_LIBS +=  poppler-cpp          2.0
-SHARED_LIBS +=	poppler-glib         10.0
-SHARED_LIBS +=	poppler-qt           9.0
-SHARED_LIBS +=	poppler-qt4          9.0
+SHARED_LIBS +=  poppler              14.0     # 28.0
+SHARED_LIBS +=  poppler-glib         10.0     # 12.0
+SHARED_LIBS +=  poppler-qt           9.0      # 3.0
+SHARED_LIBS +=  poppler-qt4          10.0      # 4.0
+SHARED_LIBS +=  poppler-cpp          2.0      # 2.0
+
 DISTFILES = ${DISTNAME}${EXTRACT_SUFX} ${OLDSHIT}${EXTRACT_SUFX}
 
 HOMEPAGE=	http://poppler.freedesktop.org/
@@ -43,7 +44,7 @@ MULTI_PACKAGES=-main -qt -qt4 -utils
 
 .include <bsd.port.arch.mk>
 
-cWANTLIB=	expat freetype fontconfig jpeg m tiff z stdc++
+cWANTLIB=	expat freetype fontconfig jpeg m pthread tiff z stdc++
 
 .if ${BUILD_PACKAGES:M-qt}
 MODULES+=	x11/qt3
@@ -94,7 +95,7 @@ WANTLIB-utils=	GL X11 Xau Xdamage Xdmcp Xext Xfixes Xrender Xxf86vm \
 		openjpeg poppler z ${cWANTLIB} ${MODGETTEXT_WANTLIB}
 
 CONFIGURE_STYLE=autoconf
-AUTOCONF_VERSION=2.68
+AUTOCONF_VERSION=2.69
 CONFIGURE_ARGS+= --disable-gtk-doc \
 		--enable-xpdf-headers \
 		--enable-poppler-cpp \
