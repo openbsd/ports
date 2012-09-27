@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.45 2012/09/01 14:36:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2012/09/27 09:47:58 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	keyboard configuration library
 
 GNOME_PROJECT=	libgnomekbd
-GNOME_VERSION=	3.4.0.2
-REVISION=	0
+GNOME_VERSION=	3.6.0
 
-SHARED_LIBS +=  gnomekbd             7.0      # 7.0
-SHARED_LIBS +=  gnomekbdui           7.0      # 7.0
+SHARED_LIBS +=  gnomekbd             8.0      # 8.0
+SHARED_LIBS +=  gnomekbdui           8.0      # 8.0
 
 CATEGORIES=		devel
 
@@ -26,6 +25,8 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-3 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread pthread-stubs xcb xcb-render xcb-shm
 WANTLIB += xkbfile xklavier xml2 z ffi stdc++
+WANTLIB += ICE SM atk-bridge-2.0 atspi dbus-1 harfbuzz icudata
+WANTLIB += icule icuuc
 
 MODULES=	devel/gettext \
 		x11/gnome \
