@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/04/16 11:57:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2012/09/27 09:01:40 ajacoutot Exp $
 %%SHARED%%
 include/gnome-keyring-1/
 include/gnome-keyring-1/gnome-keyring-memory.h
@@ -59,6 +59,9 @@ share/locale/bg/LC_MESSAGES/libgnome-keyring.mo
 share/locale/bn/
 share/locale/bn/LC_MESSAGES/
 share/locale/bn/LC_MESSAGES/libgnome-keyring.mo
+share/locale/bn_IN/
+share/locale/bn_IN/LC_MESSAGES/
+share/locale/bn_IN/LC_MESSAGES/libgnome-keyring.mo
 share/locale/ca/LC_MESSAGES/libgnome-keyring.mo
 share/locale/ca@valencia/
 share/locale/ca@valencia/LC_MESSAGES/
@@ -111,6 +114,9 @@ share/locale/ml/LC_MESSAGES/libgnome-keyring.mo
 share/locale/mn/
 share/locale/mn/LC_MESSAGES/
 share/locale/mn/LC_MESSAGES/libgnome-keyring.mo
+share/locale/mr/
+share/locale/mr/LC_MESSAGES/
+share/locale/mr/LC_MESSAGES/libgnome-keyring.mo
 share/locale/ms/
 share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/libgnome-keyring.mo
@@ -159,3 +165,6 @@ share/locale/vi/LC_MESSAGES/libgnome-keyring.mo
 share/locale/zh_CN/LC_MESSAGES/libgnome-keyring.mo
 share/locale/zh_HK/LC_MESSAGES/libgnome-keyring.mo
 share/locale/zh_TW/LC_MESSAGES/libgnome-keyring.mo
+share/vala/
+share/vala/vapi/
+share/vala/vapi/gnome-keyring-1.vapi
