@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_util_c,v 1.9 2012/09/11 14:42:37 ajacoutot Exp $
+$OpenBSD: patch-src_util_c,v 1.10 2012/09/27 05:53:43 ajacoutot Exp $
 
 We don't use /proc on OpenBSD.
 
---- src/util.c.orig	Thu Jun 28 17:28:15 2012
-+++ src/util.c	Thu Jul  5 09:01:58 2012
-@@ -32,11 +32,20 @@
+--- src/util.c.orig	Mon Sep 10 20:15:59 2012
++++ src/util.c	Thu Sep 27 07:47:35 2012
+@@ -32,11 +32,19 @@
  
  #include <polkit/polkit.h>
  
@@ -13,7 +13,6 @@ We don't use /proc on OpenBSD.
 +#include <sys/types.h>
 +#include <sys/sysctl.h>
 +#include <kvm.h>
-+kvm_t *kd;
 +#endif
 +
  #include "util.h"
@@ -22,14 +21,15 @@ We don't use /proc on OpenBSD.
  get_cmdline_of_pid (GPid pid)
  {
 +#ifndef __OpenBSD__
-   gchar *ret;
+   gchar *ret = NULL;
    gchar *filename;
    gchar *contents;
-@@ -70,7 +79,30 @@ get_cmdline_of_pid (GPid pid)
+@@ -70,7 +78,31 @@ get_cmdline_of_pid (GPid pid)
   out:
    g_free (filename);
    g_free (contents);
 +#else /* OpenBSD */
++  kvm_t *kd;
 +  gchar *ret = NULL;
 +  int nproc;
 +  struct kinfo_proc *kp;
