@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.32 2012/07/16 09:42:24 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.33 2012/09/27 00:17:51 brad Exp $
 @pkgpath ${BASE_PKGPATH},altivec
-%%SHARED%%
 bin/gimp
 @bin bin/gimp-2.8
 bin/gimp-console
@@ -240,24 +239,15 @@ lib/gimp/2.0/interpreters/
 lib/gimp/2.0/interpreters/default.interp
 lib/gimp/2.0/interpreters/pygimp.interp
 lib/gimp/2.0/modules/
-lib/gimp/2.0/modules/libcolor-selector-cmyk.a
-lib/gimp/2.0/modules/libcolor-selector-cmyk.la
-lib/gimp/2.0/modules/libcolor-selector-water.a
-lib/gimp/2.0/modules/libcolor-selector-water.la
-lib/gimp/2.0/modules/libcolor-selector-wheel.a
-lib/gimp/2.0/modules/libcolor-selector-wheel.la
-lib/gimp/2.0/modules/libcontroller-midi.a
-lib/gimp/2.0/modules/libcontroller-midi.la
-lib/gimp/2.0/modules/libdisplay-filter-color-blind.a
-lib/gimp/2.0/modules/libdisplay-filter-color-blind.la
-lib/gimp/2.0/modules/libdisplay-filter-gamma.a
-lib/gimp/2.0/modules/libdisplay-filter-gamma.la
-lib/gimp/2.0/modules/libdisplay-filter-high-contrast.a
-lib/gimp/2.0/modules/libdisplay-filter-high-contrast.la
-lib/gimp/2.0/modules/libdisplay-filter-lcms.a
-lib/gimp/2.0/modules/libdisplay-filter-lcms.la
-lib/gimp/2.0/modules/libdisplay-filter-proof.a
-lib/gimp/2.0/modules/libdisplay-filter-proof.la
+lib/gimp/2.0/modules/libcolor-selector-cmyk.so
+lib/gimp/2.0/modules/libcolor-selector-water.so
+lib/gimp/2.0/modules/libcolor-selector-wheel.so
+lib/gimp/2.0/modules/libcontroller-midi.so
+lib/gimp/2.0/modules/libdisplay-filter-color-blind.so
+lib/gimp/2.0/modules/libdisplay-filter-gamma.so
+lib/gimp/2.0/modules/libdisplay-filter-high-contrast.so
+lib/gimp/2.0/modules/libdisplay-filter-lcms.so
+lib/gimp/2.0/modules/libdisplay-filter-proof.so
 lib/gimp/2.0/plug-ins/
 @bin lib/gimp/2.0/plug-ins/alien-map
 @bin lib/gimp/2.0/plug-ins/align-layers
@@ -337,6 +327,7 @@ lib/gimp/2.0/plug-ins/file-openraster.py
 @bin lib/gimp/2.0/plug-ins/file-pix
 @bin lib/gimp/2.0/plug-ins/file-png
 @bin lib/gimp/2.0/plug-ins/file-pnm
+@bin lib/gimp/2.0/plug-ins/file-ps
 @bin lib/gimp/2.0/plug-ins/file-psd-load
 @bin lib/gimp/2.0/plug-ins/file-psd-save
 @bin lib/gimp/2.0/plug-ins/file-psp
@@ -444,14 +435,10 @@ lib/gimp/2.0/plug-ins/text-brush.py
 @bin lib/gimp/2.0/plug-ins/whirl-pinch
 @bin lib/gimp/2.0/plug-ins/wind
 lib/gimp/2.0/python/
-lib/gimp/2.0/python/_gimpenums.a
-lib/gimp/2.0/python/_gimpenums.la
-lib/gimp/2.0/python/_gimpui.a
-lib/gimp/2.0/python/_gimpui.la
-lib/gimp/2.0/python/gimp.a
-lib/gimp/2.0/python/gimp.la
-lib/gimp/2.0/python/gimpcolor.a
-lib/gimp/2.0/python/gimpcolor.la
+lib/gimp/2.0/python/_gimpenums.so
+lib/gimp/2.0/python/_gimpui.so
+lib/gimp/2.0/python/gimp.so
+lib/gimp/2.0/python/gimpcolor.so
 lib/gimp/2.0/python/gimpenums.py
 lib/gimp/2.0/python/gimpenums.pyc
 lib/gimp/2.0/python/gimpenums.pyo
@@ -464,30 +451,38 @@ lib/gimp/2.0/python/gimpplugin.pyo
 lib/gimp/2.0/python/gimpshelf.py
 lib/gimp/2.0/python/gimpshelf.pyc
 lib/gimp/2.0/python/gimpshelf.pyo
-lib/gimp/2.0/python/gimpthumb.a
-lib/gimp/2.0/python/gimpthumb.la
+lib/gimp/2.0/python/gimpthumb.so
 lib/gimp/2.0/python/gimpui.py
 lib/gimp/2.0/python/gimpui.pyc
 lib/gimp/2.0/python/gimpui.pyo
 lib/gimp/2.0/python/pygimp-logo.png
 lib/libgimp-2.0.a
 lib/libgimp-2.0.la
+@lib lib/libgimp-2.0.so.${LIBgimp-2.0_VERSION}
 lib/libgimpbase-2.0.a
 lib/libgimpbase-2.0.la
+@lib lib/libgimpbase-2.0.so.${LIBgimpbase-2.0_VERSION}
 lib/libgimpcolor-2.0.a
 lib/libgimpcolor-2.0.la
+@lib lib/libgimpcolor-2.0.so.${LIBgimpcolor-2.0_VERSION}
 lib/libgimpconfig-2.0.a
 lib/libgimpconfig-2.0.la
+@lib lib/libgimpconfig-2.0.so.${LIBgimpconfig-2.0_VERSION}
 lib/libgimpmath-2.0.a
 lib/libgimpmath-2.0.la
+@lib lib/libgimpmath-2.0.so.${LIBgimpmath-2.0_VERSION}
 lib/libgimpmodule-2.0.a
 lib/libgimpmodule-2.0.la
+@lib lib/libgimpmodule-2.0.so.${LIBgimpmodule-2.0_VERSION}
 lib/libgimpthumb-2.0.a
 lib/libgimpthumb-2.0.la
+@lib lib/libgimpthumb-2.0.so.${LIBgimpthumb-2.0_VERSION}
 lib/libgimpui-2.0.a
 lib/libgimpui-2.0.la
+@lib lib/libgimpui-2.0.so.${LIBgimpui-2.0_VERSION}
 lib/libgimpwidgets-2.0.a
 lib/libgimpwidgets-2.0.la
+@lib lib/libgimpwidgets-2.0.so.${LIBgimpwidgets-2.0_VERSION}
 lib/pkgconfig/gimp-2.0.pc
 lib/pkgconfig/gimpthumb-2.0.pc
 lib/pkgconfig/gimpui-2.0.pc
@@ -1950,8 +1945,6 @@ share/locale/cs/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/cs/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/cs/LC_MESSAGES/gimp20-tips.mo
 share/locale/cs/LC_MESSAGES/gimp20.mo
-share/locale/csb/
-share/locale/csb/LC_MESSAGES/
 share/locale/csb/LC_MESSAGES/gimp20.mo
 share/locale/da/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/da/LC_MESSAGES/gimp20-python.mo

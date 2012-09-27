@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.81 2012/07/16 09:42:24 giovanni Exp $
+# $OpenBSD: Makefile,v 1.82 2012/09/27 00:17:51 brad Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
+SHARED_ONLY=	Yes
+
 DISTNAME=	gimp-2.8.0
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS+=	gimp-2.0	272.0	# 800.0
 SHARED_LIBS+=	gimpbase-2.0	272.0	# 800.0
@@ -39,6 +41,7 @@ LIB_DEPENDS=	x11/gtk+2 \
 		graphics/libmng \
 		graphics/tiff \
 		graphics/libwmf \
+		print/ghostscript/gnu \
 		print/poppler \
 		graphics/gegl>=0.2 \
 		graphics/openjpeg \
@@ -53,7 +56,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	ICE SM X11 Xext Xmu Xpm Xrender Xt atk-1.0 c \
 		Xcomposite Xdamage pcre crypto idn ssl \
 		fontconfig freetype glib-2.0 gmodule-2.0 \
-		gobject-2.0 jpeg>=62 lcms>=1 m pango-1.0 \
+		gobject-2.0 jpeg>=62 lcms lcms2 m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pixman-1 png>=4 \
 		pthread ncurses xml2 z cairo dbus-1 \
 		Xau Xcursor Xdmcp Xfixes Xi Xinerama Xrandr \
@@ -64,7 +67,8 @@ WANTLIB=	ICE SM X11 Xext Xmu Xpm Xrender Xt atk-1.0 c \
 		gtk-x11-2.0 tiff>=35 aa>=1.3 dbus-glib-1 \
 		exif mng poppler>=3 wmf-0.2 wmflite-0.2 \
 		poppler-glib>=3 gegl-0.2 openjpeg>=4 curl \
-		GL Xxf86vm drm xcb-shm ffi stdc++
+		GL Xxf86vm drm xcb-shm ffi stdc++ harfbuzz \
+		icudata icule icuuc
 
 MODULES=	devel/gettext \
 		textproc/intltool \
@@ -73,11 +77,15 @@ MODULES=	devel/gettext \
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
-CONFIGURE_ARGS+=--without-gvfs \
+CONFIGURE_ARGS+=--enable-gimp-console \
 		--with-libcurl \
-		--without-webkit --enable-gimp-console
+		--without-gvfs \
+		--without-webkit
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+
+post-install:
+	@rm ${PREFIX}/lib/gimp/2.0/modules/*.{a,la}
+	@rm ${PREFIX}/lib/gimp/2.0/python/*.{a,la}
 
 .include <bsd.port.mk>
