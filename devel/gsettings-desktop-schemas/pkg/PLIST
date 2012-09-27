@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2012/07/08 11:49:53 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2012/09/27 08:35:45 ajacoutot Exp $
 include/gsettings-desktop-schemas/
 include/gsettings-desktop-schemas/gdesktop-enums.h
 lib/girepository-1.0/
@@ -16,6 +16,7 @@ share/glib-2.0/schemas/org.gnome.desktop.a11y.mouse.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.background.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.default-applications.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.enums.xml
+share/glib-2.0/schemas/org.gnome.desktop.input-sources.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.interface.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.lockdown.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.media-handling.gschema.xml
@@ -28,20 +29,39 @@ share/glib-2.0/schemas/org.gnome.desktop.wm.keybindings.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.wm.preferences.gschema.xml
 share/glib-2.0/schemas/org.gnome.system.locale.gschema.xml
 share/glib-2.0/schemas/org.gnome.system.proxy.gschema.xml
+share/locale/as/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/cs/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/da/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/de/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/el/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/en_GB/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/eo/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/es/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/fi/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/fr/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/gl/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/gu/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/hi/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/hu/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/id/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/it/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/ja/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/lt/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/nb/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/or/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/pa/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/pl/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/pt/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/pt_BR/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/sl/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/sr/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/sr@latin/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/sv/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/uk/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/vi/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/zh_CN/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/zh_HK/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/zh_TW/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/pkgconfig/
 share/pkgconfig/gsettings-desktop-schemas.pc
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
