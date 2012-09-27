@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.23 2012/04/16 23:16:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.24 2012/09/27 13:03:01 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 %%SHARED%%
 @bin bin/gvfs-cat
@@ -23,12 +23,6 @@ include/gvfs-client/
 include/gvfs-client/gvfs/
 include/gvfs-client/gvfs/gvfsurimapper.h
 include/gvfs-client/gvfs/gvfsuriutils.h
-@comment lib/gio/modules/libgioremote-volume-monitor.a
-@comment lib/gio/modules/libgioremote-volume-monitor.la
-@comment lib/gio/modules/libgvfsdbus.a
-@comment lib/gio/modules/libgvfsdbus.la
-lib/libgvfscommon-dnssd.a
-lib/libgvfscommon-dnssd.la
 lib/libgvfscommon.a
 lib/libgvfscommon.la
 @bin libexec/gvfsd
@@ -44,12 +38,35 @@ lib/libgvfscommon.la
 @bin libexec/gvfsd-localtest
 @bin libexec/gvfsd-metadata
 @bin libexec/gvfsd-network
+@bin libexec/gvfsd-recent
 @bin libexec/gvfsd-sftp
 @bin libexec/gvfsd-trash
+@man man/man1/gvfs-cat.1
+@man man/man1/gvfs-copy.1
+@man man/man1/gvfs-info.1
+@man man/man1/gvfs-ls.1
+@man man/man1/gvfs-mime.1
+@man man/man1/gvfs-mkdir.1
+@man man/man1/gvfs-monitor-dir.1
+@man man/man1/gvfs-monitor-file.1
+@man man/man1/gvfs-mount.1
+@man man/man1/gvfs-move.1
+@man man/man1/gvfs-open.1
+@man man/man1/gvfs-rename.1
+@man man/man1/gvfs-rm.1
+@man man/man1/gvfs-save.1
+@man man/man1/gvfs-set-attribute.1
+@man man/man1/gvfs-trash.1
+@man man/man1/gvfs-tree.1
+@man man/man1/gvfsd-fuse.1
+@man man/man1/gvfsd-metadata.1
+@man man/man1/gvfsd.1
+@man man/man7/gvfs.7
 share/GConf/
 share/GConf/gsettings/
 share/GConf/gsettings/gvfs-dns-sd.convert
 share/applications/mount-archive.desktop
+share/bash-completion/completions/gvfs
 share/dbus-1/
 share/dbus-1/services/
 share/dbus-1/services/gvfs-daemon.service
@@ -57,9 +74,6 @@ share/dbus-1/services/gvfs-metadata.service
 share/glib-2.0/schemas/org.gnome.system.dns_sd.gschema.xml
 share/glib-2.0/schemas/org.gnome.system.gvfs.enums.xml
 share/gvfs/
-@sample ${SYSCONFDIR}/bash_completion.d/
-share/gvfs/gvfs-bash-completion.sh
-@sample ${SYSCONFDIR}/bash_completion.d/gvfs-bash-completion.sh
 share/gvfs/mounts/
 share/gvfs/mounts/afp-browse.mount
 share/gvfs/mounts/afp.mount
@@ -73,6 +87,7 @@ share/gvfs/mounts/ftp.mount
 share/gvfs/mounts/http.mount
 share/gvfs/mounts/localtest.mount
 share/gvfs/mounts/network.mount
+share/gvfs/mounts/recent.mount
 share/gvfs/mounts/sftp.mount
 share/gvfs/mounts/trash.mount
 share/gvfs/remote-volume-monitors/
