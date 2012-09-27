@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2012/09/27 05:36:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2012/09/27 06:37:09 jasper Exp $
 
 COMMENT=	docbook XSL modular stylesheet
 
@@ -18,7 +18,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=docbook/}
 
 BUILD_DEPENDS=	textproc/libxml
 RUN_DEPENDS=	textproc/libxml \
-		textproclibxslt
+		textproc/libxslt
 
 NO_REGRESS=	Yes
 PKG_ARCH=	*
