@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/09/24 12:36:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2012/09/27 17:59:37 ajacoutot Exp $
 
 COMMENT=		tool/library for managing platform virtualization
 
@@ -27,6 +27,8 @@ WANTLIB += avahi-client avahi-common c crypto curl dbus-1 gcrypt
 WANTLIB += gmp gnutls gpg-error hogweed idn m ncurses nettle p11-kit
 WANTLIB += pthread readline ssh2 ssl tasn1 util xml2 z
 
+BUILD_DEPENDS=		textproc/docbook
+
 LIB_DEPENDS=		net/avahi \
 			net/curl \
 			security/gnutls \
@@ -42,7 +44,6 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-avahi \
 			--with-libssh2 \
 			--with-python \
-			--with-xml-catalog-file=${LOCALBASE}/share/xml/catalog \
 			--without-yajl \
 			--without-netcf \
 			--without-network
