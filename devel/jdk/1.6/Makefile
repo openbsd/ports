@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2012/09/26 18:23:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2012/09/27 21:49:58 naddy Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS= 	amd64 i386
@@ -13,6 +13,7 @@ PKGNAME-jre=		jre-${V}
 REVISION-jre =		17
 
 CATEGORIES=		devel/jdk java
+DPB_PROPERTIES=		parallel
 
 MULTI_PACKAGES= 	-main -jre
 
