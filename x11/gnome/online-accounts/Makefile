@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.21 2012/09/27 12:26:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2012/09/27 12:47:54 jasper Exp $
 
 COMMENT=	interfaces for interacting with online accounts
 
 GNOME_PROJECT=	gnome-online-accounts
-GNOME_VERSION=	3.4.2
-REVISION=	0
+GNOME_VERSION=	3.6.0
 
-SHARED_LIBS +=  goa-1.0              0.0      # .0.0
-SHARED_LIBS +=  goa-backend-1.0      0.0      # .0.0
+SHARED_LIBS +=  goa-1.0              1.0      # .0.0
+SHARED_LIBS +=  goa-backend-1.0      1.0      # .0.0
 
 HOMEPAGE=	https://live.gnome.org/OnlineAccounts
 
@@ -30,6 +29,7 @@ WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += rest-0.7 soup-2.4 soup-gnome-2.4 sqlite3 stdc++ webkitgtk-3.0
 WANTLIB += xcb xcb-render xcb-shm xml2 xslt z
 WANTLIB += dbus-glib-1 geoclue gstaudio-0.10 gstfft-0.10
+WANTLIB += atk-bridge-2.0 atspi harfbuzz icule secret-1
 
 MODULES=		devel/gettext \
 			x11/gnome
@@ -40,6 +40,7 @@ BUILD_DEPENDS += textproc/docbook-xsl
 LIB_DEPENDS=		devel/json-glib \
 			devel/libnotify \
 			net/librest \
+			x11/gnome/libsecret \
 			www/webkit,gtk3
 
 MODGNOME_TOOLS= 	goi
