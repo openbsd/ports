@@ -1,26 +1,27 @@
-# $OpenBSD: Makefile,v 1.14 2012/09/06 12:38:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2012/09/27 11:49:04 jasper Exp $
 
 COMMENT=		clutter GStreamer integration library
 
 GNOME_PROJECT=		clutter-gst
-GNOME_VERSION=		1.6.0
-REVISION=		2
+GNOME_VERSION=		1.9.92
 
-SHARED_LIBS +=  clutter-gst-1.0    0.0      # 406.0
+API_VERSION=		2.0
+
+SHARED_LIBS +=  clutter-gst-2.0    0.0      # 999.0
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo cairo-gobject
 WANTLIB += clutter-1.0 cogl cogl-pango drm expat ffi fontconfig
 WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gstaudio-0.10 gstbase-0.10 gstinterfaces-0.10
-WANTLIB += gstpbutils-0.10 gstreamer-0.10 gsttag-0.10 gstvideo-0.10
-WANTLIB += gthread-2.0 json-glib-1.0 m orc-0.4 pango-1.0 pangocairo-1.0
+WANTLIB += gobject-2.0 gstaudio-1.0 gstbase-1.0 gstreamer-1.0
+WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 harfbuzz icudata
+WANTLIB += icule icuuc json-glib-1.0 m orc-0.4 pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += stdc++ xcb xcb-render xcb-shm xml2 z
+WANTLIB += stdc++ xcb xcb-render xcb-shm z
 
 MODGNOME_TOOLS=		goi
 
 LIB_DEPENDS=		graphics/clutter/core>=${MAJOR} \
-			multimedia/gstreamer-0.10/plugins-base
+			multimedia/gstreamer1/plugins-base>=1.0.0
 
 .include <bsd.port.mk>
