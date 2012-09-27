@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2012/09/27 08:31:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2012/09/27 12:26:01 ajacoutot Exp $
 
 COMMENT=	library for storing and retrieving passwords and secrets
 
@@ -26,8 +26,8 @@ MODGNOME_TOOLS=	goi vala
 MODPY_BUILDDEP=	No
 MODPY_RUNDEP=	No
 
-# man pages
-BUILD_DEPENDS += textproc/docbook-xsl # adds textproc/libxslt
+# man pages; also adds textproc/libxslt
+BUILD_DEPENDS += textproc/docbook-xsl
 
 LIB_DEPENDS=	devel/glib2 \
 		security/libgcrypt

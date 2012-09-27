@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2012/06/15 08:30:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2012/09/27 12:26:01 ajacoutot Exp $
 
 COMMENT=	interfaces for interacting with online accounts
 
@@ -34,7 +34,9 @@ WANTLIB += dbus-glib-1 geoclue gstaudio-0.10 gstfft-0.10
 MODULES=		devel/gettext \
 			x11/gnome
 
-BUILD_DEPENDS=		textproc/docbook-xsl
+# man pages; also adds textproc/libxslt
+BUILD_DEPENDS += textproc/docbook-xsl
+
 LIB_DEPENDS=		devel/json-glib \
 			devel/libnotify \
 			net/librest \
