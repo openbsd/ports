@@ -1,0 +1,30 @@
+$OpenBSD: patch-pith_pine_hlp,v 1.1.1.1 2012/09/27 15:09:53 ajacoutot Exp $
+--- pith/pine.hlp.orig	Sat Oct  2 10:37:57 2010
++++ pith/pine.hlp	Sun Sep 23 09:52:20 2012
+@@ -26351,7 +26351,7 @@ argument (see the &quot;lynx&quot; example below).
+ So, here are some example entries:
+ <PRE>
+ url-viewers = _TEST(&quot;test -n '$&#123;DISPLAY}'&quot;)_  /usr/local/bin/netscape
+-              &quot;/usr/local/bin/lynx _URL_&quot;
++              &quot;/usr/bin/lynx _URL_&quot;
+               C:&#92;BIN&#92;NETSCAPE.BAT
+ </PRE>
+ <P>
+@@ -26359,7 +26359,7 @@ This example shows that for the first viewer in the li
+ the environment variable &quot;DISPLAY&quot; must be defined.  If it
+ is, then the path and file &quot;/usr/local/bin/netscape&quot; must exist.  
+ If neither condition is met,
+-then the path and file &quot;/usr/local/bin/lynx&quot; must exist.  
++then the path and file &quot;/usr/bin/lynx&quot; must exist.  
+ If it does, then the &quot;_URL_&quot; token is replaced by the selected URL. 
+ If the path to &quot;lynx&quot; is invalid,
+ then the final path and file C:&#92;BIN&#92;NETSCAPE.BAT must exist.  
+@@ -26455,7 +26455,7 @@ because of its length, but should all appear on one li
+ url-viewers = _TEST("test -L /myhomedir/.netscape/lock")_ &quot;/usr/local/bin/netscape -remote 'openURL(_URL_,  new-window)' &amp;&quot;<BR>
+ 
+ _TEST(&quot;test -n '$&#123;DISPLAY}'&quot;)_ &quot;/usr/local/bin/netscape &amp;&quot;<BR>
+-              &quot;/usr/local/bin/lynx '_URL_'&quot;
++              &quot;/usr/bin/lynx '_URL_'&quot;
+ <P>
+ <!--chtml endif-->
+ <P>
