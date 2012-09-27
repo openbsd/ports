@@ -1,12 +1,15 @@
-# $OpenBSD: Makefile,v 1.17 2012/09/21 14:48:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2012/09/27 06:22:50 ajacoutot Exp $
 
 COMMENT=		Abstract Syntax Notation One structure parser library
 
-DISTNAME=		libtasn1-2.13
+DISTNAME=		libtasn1-2.14
 CATEGORIES=		security
-SHARED_LIBS +=  tasn1                2.0      # .4.15
+
+SHARED_LIBS +=  tasn1                2.1      # 5.0
 
 HOMEPAGE=		http://www.gnu.org/software/gnutls/
+
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/10/09 23:04:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/09/27 06:22:50 ajacoutot Exp $
 %%SHARED%%
 @bin bin/asn1Coding
 @bin bin/asn1Decoding
@@ -39,6 +39,7 @@ lib/pkgconfig/libtasn1.pc
 @man man/man3/asn1_parser2tree.3
 @man man/man3/asn1_perror.3
 @man man/man3/asn1_print_structure.3
+@man man/man3/asn1_read_node_value.3
 @man man/man3/asn1_read_tag.3
 @man man/man3/asn1_read_value.3
 @man man/man3/asn1_strerror.3
