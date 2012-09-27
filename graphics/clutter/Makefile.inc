@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.9 2012/07/07 12:48:00 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.10 2012/09/27 11:47:13 jasper Exp $
 
 SHARED_ONLY?=		Yes
 
@@ -23,5 +23,5 @@ CONFIGURE_STYLE?=	gnu
 CONFIGURE_ARGS +=	--disable-static
 
 API_VERSION?=		1.0
-MAJOR?=			1.10
+MAJOR?=			1.12
 SUBST_VARS?=		MAJOR API_VERSION
