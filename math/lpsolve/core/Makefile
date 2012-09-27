@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2012/05/11 23:29:30 edd Exp $
+# $OpenBSD: Makefile,v 1.3 2012/09/27 17:44:20 landry Exp $
+
+BROKEN-sparc64 =	relocation overflow when linking liblpsolve55.so.0.0
 
 COMMENT =		mixed integer linear programming solver
 
