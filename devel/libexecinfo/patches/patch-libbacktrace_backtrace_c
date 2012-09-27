@@ -1,11 +1,28 @@
-$OpenBSD: patch-libbacktrace_backtrace_c,v 1.1 2011/11/16 15:12:53 jasper Exp $
+$OpenBSD: patch-libbacktrace_backtrace_c,v 1.2 2012/09/27 15:45:42 jasper Exp $
 
-__builtin_return_address() and __builtin_frame_address()
-can't have a !0 argument on mips.
+- BT_MAX_DEPTH and struct bt_frame should not be exposed in a public header
+  since they're internal to libbacktrace.
 
---- libbacktrace/backtrace.c.orig	Wed Nov 16 16:00:58 2011
-+++ libbacktrace/backtrace.c	Wed Nov 16 16:01:38 2011
-@@ -59,6 +59,7 @@ bt_create_backtrace(void **buffer, int depth, int flag
+- __builtin_return_address() and __builtin_frame_address()
+  can't have a !0 argument on mips.
+
+--- libbacktrace/backtrace.c.orig	Fri Sep 10 14:19:27 2010
++++ libbacktrace/backtrace.c	Wed Sep 26 12:54:22 2012
+@@ -35,7 +35,13 @@ __attribute__((unused)) static const char *cvstag = "$
+ 
+ #define BT_GET_DEPTH		(1)
+ #define BT_ADD_CR		(1)
++#define BT_MAX_DEPTH            (128)
+ 
++struct bt_frame {
++	Dl_info			bt_dlinfo;
++	unsigned int		line;
++};
++
+ #define HANDLE_FRAME(depth, idx, btaddr)				\
+ 	case depth:							\
+ 		if (!__builtin_frame_address(depth + 1))		\
+@@ -59,6 +65,7 @@ bt_create_backtrace(void **buffer, int depth, int flag
  		/* number of HANDLE_FRAME must match BT_MAX_DEPTH */
  		switch (i) {
  		HANDLE_FRAME(0, i, addr);
@@ -13,7 +30,7 @@ can't have a !0 argument on mips.
  		HANDLE_FRAME(1, i, addr);
  		HANDLE_FRAME(2, i, addr);
  		HANDLE_FRAME(3, i, addr);
-@@ -186,6 +187,7 @@ bt_create_backtrace(void **buffer, int depth, int flag
+@@ -186,6 +193,7 @@ bt_create_backtrace(void **buffer, int depth, int flag
  		HANDLE_FRAME(125, i, addr);
  		HANDLE_FRAME(126, i, addr);
  		HANDLE_FRAME(127, i, addr);

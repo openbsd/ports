@@ -1,7 +1,11 @@
-$OpenBSD: patch-libbacktrace_backtrace_h,v 1.1 2011/11/14 19:14:18 sthen Exp $
+$OpenBSD: patch-libbacktrace_backtrace_h,v 1.2 2012/09/27 15:45:42 jasper Exp $
+
+- BT_MAX_DEPTH and struct bt_frame should not be exposed in a public header
+  since they're internal to libbacktrace.
+
 --- libbacktrace/backtrace.h.orig	Fri Sep 10 00:23:45 2010
-+++ libbacktrace/backtrace.h	Mon Nov 14 00:11:25 2011
-@@ -16,10 +16,19 @@
++++ libbacktrace/backtrace.h	Wed Sep 26 12:54:25 2012
+@@ -16,18 +16,26 @@
   * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
   */
  
@@ -16,12 +20,15 @@ $OpenBSD: patch-libbacktrace_backtrace_h,v 1.1 2011/11/14 19:14:18 sthen Exp $
  #error "this library must be compiled with gcc"
  #endif
  
+-#define BT_MAX_DEPTH            (128)
 +#include <dlfcn.h>
-+
- #define BT_MAX_DEPTH            (128)
  
- struct bt_frame {
-@@ -31,3 +40,9 @@ struct bt_frame {
+-struct bt_frame {
+-	Dl_info			bt_dlinfo;
+-	unsigned int		line;
+-};
+-
+ /* compatability functions with libexecinfo and glibc */
  int			backtrace(void **, int);
  char			**backtrace_symbols(void *const *, int);
  void			backtrace_symbols_fd(void *const *, int, int);

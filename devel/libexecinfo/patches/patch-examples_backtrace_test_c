@@ -1,0 +1,12 @@
+$OpenBSD: patch-examples_backtrace_test_c,v 1.1 2012/09/27 15:45:42 jasper Exp $
+--- examples/backtrace_test.c.orig	Wed Sep 26 12:59:42 2012
++++ examples/backtrace_test.c	Wed Sep 26 12:59:47 2012
+@@ -26,6 +26,8 @@
+ 
+ #include "backtrace.h"
+ 
++#define BT_MAX_DEPTH            (128)
++
+ void
+ f2(void)
+ {
