@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/03/28 15:37:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/09/27 09:18:49 jasper Exp $
 @conflict gnome-utils-*
 @bin bin/gnome-screenshot
 @man man/man1/gnome-screenshot.1
@@ -7,8 +7,6 @@ share/GConf/gsettings/
 share/GConf/gsettings/gnome-screenshot.convert
 share/applications/gnome-screenshot.desktop
 share/glib-2.0/schemas/org.gnome.gnome-screenshot.gschema.xml
-share/gnome-screenshot/
-share/gnome-screenshot/gnome-screenshot.ui
 share/locale/af/LC_MESSAGES/gnome-screenshot.mo
 share/locale/am/LC_MESSAGES/gnome-screenshot.mo
 share/locale/ar/LC_MESSAGES/gnome-screenshot.mo
