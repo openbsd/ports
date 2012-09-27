@@ -1,0 +1,12 @@
+$OpenBSD: patch-clutter_clutter-actor_c,v 1.1 2012/09/27 11:48:23 jasper Exp $
+--- clutter/clutter-actor.c.orig	Tue Sep 25 11:34:26 2012
++++ clutter/clutter-actor.c	Tue Sep 25 11:34:48 2012
+@@ -15772,7 +15772,7 @@ clutter_actor_set_transform_internal (ClutterActor    
+   was_set = info->transform_set;
+ 
+   info->transform = *transform;
+-  info->transform_set = cogl_matrix_is_identity (&info->transform);
++  info->transform_set = !cogl_matrix_is_identity (&info->transform);
+ 
+   self->priv->transform_valid = FALSE;
+ 

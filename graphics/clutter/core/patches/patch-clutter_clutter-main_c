@@ -1,0 +1,19 @@
+$OpenBSD: patch-clutter_clutter-main_c,v 1.1 2012/09/27 11:48:23 jasper Exp $
+
+From 48b3e9ca8b81080bb75869c85f213b8c415fba6f Mon Sep 17 00:00:00 2001
+From: Emmanuele Bassi <ebassi@gnome.org>
+Date: Wed, 26 Sep 2012 09:45:46 +0100
+Subject: [PATCH] main: Do not release the lock if it hasn't been acquired
+
+https://bugzilla.gnome.org/show_bug.cgi?id=679439
+
+--- clutter/clutter-main.c.orig	Thu Sep 27 12:57:55 2012
++++ clutter/clutter-main.c	Thu Sep 27 12:58:21 2012
+@@ -226,6 +226,7 @@ clutter_threads_impl_lock (void)
+ static void
+ clutter_threads_impl_unlock (void)
+ {
++  g_mutex_trylock (&clutter_threads_mutex);
+   g_mutex_unlock (&clutter_threads_mutex);
+ }
+ 
