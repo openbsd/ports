@@ -1,0 +1,12 @@
+Unix's 'time' utility is a simple and often effective way of measuring how
+long a command takes to run ('wall time'). Unfortunately, running a command
+once can give misleading timings: the process may create a cache on its first
+execution, running faster subsequently; other processes may cause the command
+to be starved of CPU or IO time; etc. It is common to see people run 'time'
+several times and take whichever values they feel most comfortable with.
+Inevitably, this causes problems.
+
+multitime is, in essence, a simple extension to time which runs a command
+multiple times and prints the timing means, standard deviations, mins,
+medians, and maxes having done so. This can give a much better understanding
+of the command's performance.
