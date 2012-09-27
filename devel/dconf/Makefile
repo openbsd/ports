@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2012/09/27 08:45:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.42 2012/09/27 12:48:30 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,6 +11,7 @@ GNOME_VERSION=	0.14.0
 PKGNAME-main=	${DISTNAME}
 PKGNAME-editor=	dconf-editor-${GNOME_VERSION}
 
+REVISION-main=	0
 REVISION-editor=0
 
 SHARED_LIBS+=	dconf        1.0 # 1.0.0
@@ -67,8 +68,6 @@ LIB_DEPENDS-editor=	${MODGETTEXT_LIB_DEPENDS} \
 
 CONFIGURE_STYLE=gnu
 MODGNOME_LDFLAGS=	-pthread
-
-FAKE_FLAGS=	completiondir=${PREFIX}/share/examples/dconf/bash_completion.d
 
 .include <bsd.port.arch.mk>
 

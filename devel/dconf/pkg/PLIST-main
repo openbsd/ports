@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2012/09/27 08:32:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2012/09/27 12:48:30 ajacoutot Exp $
 @conflict vala-<0.10
 @pkgpath devel/dconf
 @extraunexec rm -rf ${SYSCONFDIR}/dconf/db/*
@@ -23,12 +23,8 @@ lib/pkgconfig/dconf.pc
 @man man/man1/dconf-service.1
 @man man/man1/dconf.1
 @man man/man7/dconf.7
+share/bash-completion/completions/dconf
 share/dbus-1/services/ca.desrt.dconf.service
-share/examples/dconf/
-share/examples/dconf/bash_completion.d/
-@sample ${SYSCONFDIR}/bash_completion.d/
-share/examples/dconf/bash_completion.d/dconf
-@sample ${SYSCONFDIR}/bash_completion.d/dconf
 share/gtk-doc/html/dconf/
 share/gtk-doc/html/dconf/DConfClient.html
 share/gtk-doc/html/dconf/annotation-glossary.html
