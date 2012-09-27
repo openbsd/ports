@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2012/09/21 14:48:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2012/09/27 15:51:15 ajacoutot Exp $
 
 COMMENT=	glib bindings for dbus message system
 
 DISTNAME=	dbus-glib-0.100
-REVISION=	0
+REVISION=	1
 EPOCH=		0
 
 SHARED_LIBS+=	dbus-glib-1	4.3 # .4.2
@@ -47,6 +47,8 @@ CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
 		ac_cv_path_GTKDOC_REBASE="" \
 		ac_cv_path_GTKDOC_MKPDF=""
 
-FAKE_FLAGS=	completiondir="${PREFIX}/share/examples/dbus-glib"
+post-install:
+	rm ${WRKINST}/etc/bash_completion.d/dbus-bash-completion.sh
+	rmdir ${WRKINST}/etc/bash_completion.d/
 
 .include <bsd.port.mk>
