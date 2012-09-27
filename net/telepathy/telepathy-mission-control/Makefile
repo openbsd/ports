@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2012/09/25 12:10:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.38 2012/09/27 10:42:30 ajacoutot Exp $
 
 COMMENT=		abstraction layer between apps and connection managers
 
@@ -27,7 +27,6 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-gtk-doc \
 			--disable-gnome-keyring \
 			--disable-upower \
-			--enable-mcclient-so6 \
 			--with-connectivity=no
 
 # If one of these tools is found at configure stage, it might be used,
