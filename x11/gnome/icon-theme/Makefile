@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2012/09/27 07:18:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.54 2012/09/27 07:40:09 ajacoutot Exp $
 
 PKG_ARCH=	*
 
@@ -6,6 +6,7 @@ COMMENT=	base icon theme for GNOME
 
 GNOME_PROJECT=	gnome-icon-theme
 GNOME_VERSION=	3.6.0
+REVISION=	0
 
 CATEGORIES=	x11
 
@@ -32,6 +33,9 @@ RUN_DEPENDS +=		x11/gnome/librsvg
 USE_LIBTOOL=	No
 CONFIGURE_ARGS=	--enable-icon-mapping \
 		--disable-nls
+
+# don't run gtk-update-icon-cache, the package takes care of it
+CONFIGURE_ENV += ac_cv_path_GTK_UPDATE_ICON_CACHE=/usr/bin/true
 
 EXAMPLEDIR=	${PREFIX}/share/examples/${GNOME_PROJECT}
 
