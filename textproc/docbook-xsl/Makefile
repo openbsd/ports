@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2012/09/27 06:37:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2012/09/27 17:13:42 ajacoutot Exp $
 
 COMMENT=	docbook XSL modular stylesheet
 
 DISTNAME=	docbook-xsl-1.68.1
-REVISION =	4
+REVISION =	5
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://docbook.sourceforge.net/projects/xsl/
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=   Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=docbook/}
 
 BUILD_DEPENDS=	textproc/libxml
-RUN_DEPENDS=	textproc/libxml \
+RUN_DEPENDS=	textproc/docbook \
 		textproc/libxslt
 
 NO_REGRESS=	Yes
