@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.575 2012/09/23 17:20:41 jeremy Exp $
+# $OpenBSD: Makefile,v 1.576 2012/09/27 15:52:18 landry Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -106,6 +106,7 @@
      SUBDIR += mediawiki-httpauth
      SUBDIR += mhonarc
      SUBDIR += midori
+     SUBDIR += midori,gtk3
      SUBDIR += mimetex
      SUBDIR += mindterm
      SUBDIR += minitube
