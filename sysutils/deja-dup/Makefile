@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2012/09/01 14:36:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2012/09/27 07:35:56 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	simple encrypted backup tool for GNOME
 
-GNOME_VERSION=	23.90
+GNOME_VERSION=	24.0
 GNOME_PROJECT=	deja-dup
-REVISION=	0
 
 CATEGORIES=	sysutils x11/gnome
 
@@ -28,11 +27,10 @@ WANTLIB += glib-2.0 gmodule-2.0 gnome-keyring gobject-2.0 gpg-error
 WANTLIB += gthread-2.0 gtk-3 m nautilus-extension notify pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre peas-1.0 pixman-1
 WANTLIB += png pthread pthread-stubs stdc++ xcb xcb-render xcb-shm
-WANTLIB += z
+WANTLIB += ICE SM atk-bridge-2.0 atspi harfbuzz icudata icule
+WANTLIB += z icuuc
 
-# XXX devel release
-#MASTER_SITES=	https://launchpad.net/deja-dup/${GNOME_VERSION:C/^([0-9]+).*/\1/}/${GNOME_VERSION}/+download/
-MASTER_SITES=	https://launchpad.net/deja-dup/24/23.90/+download/
+MASTER_SITES=	https://launchpad.net/deja-dup/${GNOME_VERSION:C/^([0-9]+).*/\1/}/${GNOME_VERSION}/+download/
 
 MODULES=	devel/dconf \
 		devel/gettext \
