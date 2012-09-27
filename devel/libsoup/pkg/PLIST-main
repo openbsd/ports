@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2011/09/27 07:58:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2012/09/27 09:58:38 ajacoutot Exp $
 @pkgpath devel/libsoup
 @pkgpath devel/libsoup,ssl
-%%SHARED%%
 include/libsoup-${API_VERSION}/
 include/libsoup-${API_VERSION}/libsoup/
 include/libsoup-${API_VERSION}/libsoup/soup-address.h
@@ -25,6 +24,7 @@ include/libsoup-${API_VERSION}/libsoup/soup-message-headers.h
 include/libsoup-${API_VERSION}/libsoup/soup-message.h
 include/libsoup-${API_VERSION}/libsoup/soup-method.h
 include/libsoup-${API_VERSION}/libsoup/soup-misc.h
+include/libsoup-${API_VERSION}/libsoup/soup-multipart-input-stream.h
 include/libsoup-${API_VERSION}/libsoup/soup-multipart.h
 include/libsoup-${API_VERSION}/libsoup/soup-password-manager.h
 include/libsoup-${API_VERSION}/libsoup/soup-portability.h
@@ -43,17 +43,17 @@ include/libsoup-${API_VERSION}/libsoup/soup-session-sync.h
 include/libsoup-${API_VERSION}/libsoup/soup-session.h
 include/libsoup-${API_VERSION}/libsoup/soup-socket.h
 include/libsoup-${API_VERSION}/libsoup/soup-status.h
+include/libsoup-${API_VERSION}/libsoup/soup-tld.h
 include/libsoup-${API_VERSION}/libsoup/soup-types.h
 include/libsoup-${API_VERSION}/libsoup/soup-uri.h
 include/libsoup-${API_VERSION}/libsoup/soup-value-utils.h
 include/libsoup-${API_VERSION}/libsoup/soup-xmlrpc.h
 include/libsoup-${API_VERSION}/libsoup/soup.h
-lib/girepository-1.0/
 lib/girepository-1.0/Soup-${API_VERSION}.typelib
 lib/libsoup-${API_VERSION}.a
 lib/libsoup-${API_VERSION}.la
+@lib lib/libsoup-${API_VERSION}.so.${LIBsoup-2.4_VERSION}
 lib/pkgconfig/libsoup-${API_VERSION}.pc
-share/gir-1.0/
 share/gir-1.0/Soup-${API_VERSION}.gir
 share/gtk-doc/html/libsoup-${API_VERSION}/
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupAddress.html
@@ -73,6 +73,7 @@ share/gtk-doc/html/libsoup-${API_VERSION}/SoupMessage.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupMessageBody.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupMessageHeaders.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupMultipart.html
+share/gtk-doc/html/libsoup-${API_VERSION}/SoupMultipartInputStream.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupProxyResolverDefault.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupProxyURIResolver.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupRequest.html
@@ -103,6 +104,7 @@ share/gtk-doc/html/libsoup-${API_VERSION}/left.png
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-GValue-Support.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-HTML-Form-Support.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-Soup-Miscellaneous-Utilities.html
+share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-Top-Level-Domain-utils.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-XMLRPC-Support.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-soup-gnome-features.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-soup-method.html
@@ -114,3 +116,50 @@ share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-server-howto.html
 share/gtk-doc/html/libsoup-${API_VERSION}/right.png
 share/gtk-doc/html/libsoup-${API_VERSION}/style.css
 share/gtk-doc/html/libsoup-${API_VERSION}/up.png
+share/locale/as/LC_MESSAGES/libsoup.mo
+share/locale/be/LC_MESSAGES/libsoup.mo
+share/locale/bg/LC_MESSAGES/libsoup.mo
+share/locale/bn_IN/LC_MESSAGES/libsoup.mo
+share/locale/cs/LC_MESSAGES/libsoup.mo
+share/locale/da/LC_MESSAGES/libsoup.mo
+share/locale/de/LC_MESSAGES/libsoup.mo
+share/locale/el/LC_MESSAGES/libsoup.mo
+share/locale/en_GB/LC_MESSAGES/libsoup.mo
+share/locale/eo/LC_MESSAGES/libsoup.mo
+share/locale/es/LC_MESSAGES/libsoup.mo
+share/locale/et/LC_MESSAGES/libsoup.mo
+share/locale/fa/LC_MESSAGES/libsoup.mo
+share/locale/fr/LC_MESSAGES/libsoup.mo
+share/locale/gl/LC_MESSAGES/libsoup.mo
+share/locale/gu/LC_MESSAGES/libsoup.mo
+share/locale/he/LC_MESSAGES/libsoup.mo
+share/locale/hi/LC_MESSAGES/libsoup.mo
+share/locale/hu/LC_MESSAGES/libsoup.mo
+share/locale/id/LC_MESSAGES/libsoup.mo
+share/locale/it/LC_MESSAGES/libsoup.mo
+share/locale/ja/LC_MESSAGES/libsoup.mo
+share/locale/ko/LC_MESSAGES/libsoup.mo
+share/locale/lt/LC_MESSAGES/libsoup.mo
+share/locale/lv/LC_MESSAGES/libsoup.mo
+share/locale/ml/LC_MESSAGES/libsoup.mo
+share/locale/mr/LC_MESSAGES/libsoup.mo
+share/locale/nb/LC_MESSAGES/libsoup.mo
+share/locale/pa/LC_MESSAGES/libsoup.mo
+share/locale/pl/LC_MESSAGES/libsoup.mo
+share/locale/pt/LC_MESSAGES/libsoup.mo
+share/locale/pt_BR/LC_MESSAGES/libsoup.mo
+share/locale/ro/LC_MESSAGES/libsoup.mo
+share/locale/ru/LC_MESSAGES/libsoup.mo
+share/locale/sl/LC_MESSAGES/libsoup.mo
+share/locale/sr/LC_MESSAGES/libsoup.mo
+share/locale/sr@latin/LC_MESSAGES/libsoup.mo
+share/locale/sv/LC_MESSAGES/libsoup.mo
+share/locale/ta/LC_MESSAGES/libsoup.mo
+share/locale/te/LC_MESSAGES/libsoup.mo
+share/locale/th/LC_MESSAGES/libsoup.mo
+share/locale/tr/LC_MESSAGES/libsoup.mo
+share/locale/uk/LC_MESSAGES/libsoup.mo
+share/locale/vi/LC_MESSAGES/libsoup.mo
+share/locale/zh_CN/LC_MESSAGES/libsoup.mo
+share/locale/zh_HK/LC_MESSAGES/libsoup.mo
+share/locale/zh_TW/LC_MESSAGES/libsoup.mo
