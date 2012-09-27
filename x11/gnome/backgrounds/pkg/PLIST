@@ -1,24 +1,24 @@
-@comment $OpenBSD: PLIST,v 1.10 2012/03/29 07:03:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2012/09/27 07:43:03 jasper Exp $
 share/backgrounds/
 share/backgrounds/gnome/
-share/backgrounds/gnome/Aqua.jpg
 share/backgrounds/gnome/Blinds.jpg
 share/backgrounds/gnome/BlueMarbleWest.jpg
+share/backgrounds/gnome/Chmiri.jpg
+share/backgrounds/gnome/Fabric.jpg
 share/backgrounds/gnome/FootFall.png
-share/backgrounds/gnome/FreshFlower.jpg
-share/backgrounds/gnome/Garden.jpg
-share/backgrounds/gnome/GreenMeadow.jpg
-share/backgrounds/gnome/Spaceflare-nova.jpg
-share/backgrounds/gnome/Spaceflare-supernova.jpg
+share/backgrounds/gnome/Mirror.jpg
+share/backgrounds/gnome/Road.jpg
+share/backgrounds/gnome/Sandstone.jpg
 share/backgrounds/gnome/Spaceflare.jpg
 share/backgrounds/gnome/Stripes.jpg
-share/backgrounds/gnome/SundownDunes.jpg
-share/backgrounds/gnome/Terraform-blue.jpg
+share/backgrounds/gnome/Stripes34.jpg
+share/backgrounds/gnome/Sunset.jpg
 share/backgrounds/gnome/Terraform-green.jpg
-share/backgrounds/gnome/Terraform-orange.jpg
-share/backgrounds/gnome/TwoWings.jpg
+share/backgrounds/gnome/Tulip.jpg
+share/backgrounds/gnome/UnderLit.jpg
+share/backgrounds/gnome/Waves.jpg
 share/backgrounds/gnome/Wood.jpg
-share/backgrounds/gnome/YellowFlower.jpg
+share/backgrounds/gnome/ZvonecKonec.jpg
 share/gnome-background-properties/
 share/gnome-background-properties/gnome-backgrounds.xml
 share/locale/
