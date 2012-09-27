@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2012/09/27 08:32:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2012/09/27 08:45:52 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,6 +10,8 @@ GNOME_VERSION=	0.14.0
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-editor=	dconf-editor-${GNOME_VERSION}
+
+REVISION-editor=0
 
 SHARED_LIBS+=	dconf        1.0 # 1.0.0
 SHARED_LIBS+=	dconf-dbus-1 1.0 # 1.0.0
@@ -60,7 +62,7 @@ LIB_DEPENDS-main=	devel/glib2 \
 RUN_DEPENDS-editor=	${RUN_DEPENDS} \
 			devel/desktop-file-utils
 LIB_DEPENDS-editor=	${MODGETTEXT_LIB_DEPENDS} \
-			${BASE_PKGPATH},-main \
+			${BASE_PKGPATH},-main=${GNOME_VERSION} \
 			x11/gtk+3
 
 CONFIGURE_STYLE=gnu
