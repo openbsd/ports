@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
-# $OpenBSD: register-plist,v 1.6 2011/11/11 11:35:32 espie Exp $
-# Copyright (c) 2005
+# $OpenBSD: register-plist,v 1.7 2012/09/27 14:46:37 espie Exp $
+# Copyright (c) 2005,2012
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions
@@ -201,12 +201,10 @@ sub compare
 	if (ref($self) ne ref($self2)) {
 		return 1;
 	}
-	if ($self->{def} eq 'def' && $self2->{def} eq 'def') {
-		return 0;
+	if ($self->{pkgpath} ne $self2->{pkgpath}) {
+		return 1;
 	}
-	if ($self2->{def} eq 'def' && $self->{def} ne 'def') {
-		return 2;
-	}
+
 	my $c = OpenBSD::PackageName->from_string($self->{def})->compare(
 	    OpenBSD::PackageName->from_string($self2->{def}));
 	if (!defined $c || $c < 0) {
