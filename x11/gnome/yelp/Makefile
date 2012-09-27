@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.84 2012/09/06 08:28:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.85 2012/09/27 11:04:02 ajacoutot Exp $
 
 COMMENT=		GNOME help browser
 
 GNOME_PROJECT=		yelp
-GNOME_VERSION=		3.4.2
-REVISION=		1
+GNOME_VERSION=		3.6.0
 
 SHARED_LIBS +=  yelp                      0.0 # 0.0
 
@@ -27,15 +26,16 @@ WANTLIB += gstvideo-0.10 gthread-2.0 gtk-3 icudata icui18n icuuc
 WANTLIB += javascriptcoregtk-3.0 jpeg lzma m orc-0.4 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs soup-2.4 sqlite3 stdc++ webkitgtk-3.0
+WANTLIB += atk-bridge-2.0 atspi harfbuzz icule
 WANTLIB += xcb xcb-render xcb-shm xml2 xslt z
 
 MODULES=		devel/gettext \
 			x11/gnome \
 			devel/dconf
 
-BUILD_DEPENDS=		x11/gnome/yelp-xsl>=3.2.0 \
+BUILD_DEPENDS=		x11/gnome/yelp-xsl>=3.6.0 \
 			textproc/itstool
-RUN_DEPENDS=		x11/gnome/yelp-xsl>=3.2.0
+RUN_DEPENDS=		x11/gnome/yelp-xsl>=3.6.0
 
 LIB_DEPENDS=		archivers/xz \
 			www/webkit,gtk3
