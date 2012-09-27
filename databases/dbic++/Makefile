@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2012/04/23 17:15:17 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2012/09/27 07:23:55 dcoppa Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		C++ database API
 
 DISTNAME=		deepfryed-dbicpp-v0.6.0
 PKGNAME=		dbic++-0.6.0
-REVISION =		0
+REVISION =		1
 CATEGORIES=		databases
 HOMEPAGE=		https://github.com/deepfryed/dbicpp
 
@@ -27,14 +27,17 @@ WANTLIB =		e2fs-uuid m mysqlclient pcrecpp pq stdc++ sqlite3
 
 MASTER_SITES=		http://distfiles.bsdfrog.org/
 
-BUILD_DEPENDS=		devel/cmake \
-			shells/bash
+MODULES =		devel/cmake
+
 LIB_DEPENDS=		mysql-client->=5:databases/mysql \
 			postgresql-client->=8.4:databases/postgresql \
 			devel/pcre \
 			sysutils/e2fsprogs
 
-CONFIGURE_STYLE=	none
+CONFIGURE_ARGS+=	-DCMAKE_MYSQL_VERSION=${LIBdbdmysql_VERSION} \
+			-DCMAKE_PG_VERSION=${LIBdbdpg_VERSION} \
+			-DCMAKE_SQLITE3_VERSION=${LIBdbdsqlite3_VERSION}
+
 WRKDIST=		${WRKDIR}/deepfryed-dbicpp
 
 NO_REGRESS=		Yes
@@ -43,13 +46,6 @@ post-extract:
 	mv ${WRKDIR}/deepfryed-dbicpp-* ${WRKDIR}/deepfryed-dbicpp
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/{CMakeLists.txt,inc/dbic++.h,src/dbic++.cc,pkgconfig/dbic++.pc}
-
-do-build:
-	cd ${WRKSRC} && ${SET_ENV} ${MAKE_ENV} ${LOCALBASE}/bin/bash build
-
-do-install:
-	cd ${WRKSRC} && ${SET_ENV} ${MAKE_ENV} \
-		${LOCALBASE}/bin/bash build -i
+	${SUBST_CMD} ${WRKSRC}/{inc/dbic++.h,src/dbic++.cc,pkgconfig/dbic++.pc}
 
 .include <bsd.port.mk>
