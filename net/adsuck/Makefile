@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.22 2012/02/17 14:21:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2012/09/27 18:20:41 gonzalo Exp $
 
 COMMENT=		DNS relay for ad blocking
 
-DISTNAME=		adsuck-2.4.2
+DISTNAME=		adsuck-2.4.3
 CATEGORIES=		net
 
 HOMEPAGE=		http://opensource.conformal.com/wiki/Adsuck
-MAINTAINER=		Gonzalo L. R. <gonzalo@x61.com.ar>
+MAINTAINER=		Gonzalo L. R. <gonzalo@openbsd.org>
 EXTRACT_SUFX=		.tgz
 
 # BSD
