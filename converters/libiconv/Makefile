@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2012/03/29 13:38:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2012/09/27 23:39:33 brad Exp $
 
 COMMENT=	character set conversion library
 
@@ -32,7 +32,6 @@ CONFIGURE_ARGS= ${CONFIGURE_SHARED} \
 		--disable-nls \
 		--enable-extra-encodings \
 		--enable-static
-CONFIGURE_ENV=	am_cv_proto_iconv='extern size_t iconv (iconv_t cd, char * *inbuf, size_t *inbytesleft, char * *outbuf, size_t *outbytesleft);'
 
 pre-configure:
 	@cd ${WRKSRC}; \
