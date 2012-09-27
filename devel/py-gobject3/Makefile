@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2012/07/20 07:14:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2012/09/27 08:43:51 ajacoutot Exp $
 
 COMMENT=	Python bindings for glib2 gobject
 
 GNOME_PROJECT=	pygobject
-GNOME_VERSION=	3.2.2
-REVISION=	0
+GNOME_VERSION=	3.4.0
 
 PKGNAME=	py-gobject3-${GNOME_VERSION}
 
@@ -25,8 +24,8 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += GL X11 Xau Xdamage Xdmcp Xext Xfixes Xrender Xxf86vm
 WANTLIB += cairo drm expat ffi fontconfig freetype gio-2.0 girepository-1.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 m pcre
-WANTLIB += pixman-1 png pthread-stubs stdc++ xcb xcb-render xcb-shm
-WANTLIB += z
+WANTLIB += pixman-1 png pthread pthread-stubs stdc++ xcb xcb-render
+WANTLIB += xcb-shm z
 
 MODULES=	devel/gettext \
 		lang/python \
@@ -34,7 +33,7 @@ MODULES=	devel/gettext \
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	graphics/py-cairo
-LIB_DEPENDS=	devel/gobject-introspection>=1.31.20
+LIB_DEPENDS=	devel/gobject-introspection>=1.34.0
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-cairo
@@ -43,6 +42,7 @@ REGRESS_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH}
 REGRESS_IS_INTERACTIVE= x11
 
 post-install:
+	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/gi/{,_glib,_gobject}/*.{a,la}
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${PREFIX}/share/pygobject/2.0/codegen
 
