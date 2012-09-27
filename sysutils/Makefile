@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.270 2012/09/15 17:53:15 jeremy Exp $
+# $OpenBSD: Makefile,v 1.271 2012/09/27 15:06:46 edd Exp $
 
      SUBDIR =
      SUBDIR += LPRng
@@ -103,6 +103,7 @@
      SUBDIR += moreutils
      SUBDIR += mtools
      SUBDIR += multitail
+     SUBDIR += multitime
      SUBDIR += ncdu
      SUBDIR += ndesk-dbus
      SUBDIR += ndesk-dbus-glib
