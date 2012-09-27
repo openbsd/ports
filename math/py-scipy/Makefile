@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2011/11/15 14:45:46 rpointel Exp $
+# $OpenBSD: Makefile,v 1.17 2012/09/27 17:42:16 landry Exp $
+
+BROKEN-sparc64 =	ICE in scipy/optimize/minpack/qrsolv.f:189
 
 COMMENT=		maths, science and engineering modules for Python
 
