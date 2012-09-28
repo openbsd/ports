@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2012/08/27 22:43:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2012/09/28 20:37:54 rpe Exp $
 
 COMMENT=	dancers shell or distributed shell
 
-DISTNAME=	dsh-0.25.7
+DISTNAME=	dsh-0.25.9
 CATEGORIES=	sysutils net
-REVISION=	0
 
-HOMEPAGE=	http://www.netfort.gr.jp/~dancer/software/
+HOMEPAGE=	http://www.netfort.gr.jp/~dancer/software/dsh.html.en
 MASTER_SITES=	${HOMEPAGE}downloads/
 
 # GPLv2
