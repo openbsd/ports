@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2012/05/11 18:26:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2012/09/28 10:23:23 ajacoutot Exp $
 @conflict nautilus-sendto-pidgin-*
 @pkgpath x11/gnome/nautilus-sendto,-main
 @bin bin/nautilus-sendto
@@ -6,15 +6,10 @@ include/nautilus-sendto/
 include/nautilus-sendto/nautilus-sendto-plugin.h
 lib/nautilus-sendto/
 lib/nautilus-sendto/plugins/
-@comment lib/nautilus-sendto/plugins/libnstevolution.la
 lib/nautilus-sendto/plugins/libnstevolution.so
-@comment lib/nautilus-sendto/plugins/libnstgajim.la
 lib/nautilus-sendto/plugins/libnstgajim.so
-@comment lib/nautilus-sendto/plugins/libnstpidgin.la
 lib/nautilus-sendto/plugins/libnstpidgin.so
-@comment lib/nautilus-sendto/plugins/libnstremovable_devices.la
 lib/nautilus-sendto/plugins/libnstremovable_devices.so
-@comment lib/nautilus-sendto/plugins/libnstupnp.la
 lib/nautilus-sendto/plugins/libnstupnp.so
 lib/pkgconfig/nautilus-sendto.pc
 @man man/man1/nautilus-sendto.1
