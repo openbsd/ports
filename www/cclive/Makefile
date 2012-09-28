@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2012/07/13 09:16:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2012/09/28 00:07:13 sthen Exp $
 
 COMMENT =		media download tool
 
-DISTNAME =		cclive-0.7.7
-REVISION =		0
+DISTNAME =		cclive-0.7.10
+EXTRACT_SUFX =		.tar.xz
 
 CATEGORIES =		www
 
