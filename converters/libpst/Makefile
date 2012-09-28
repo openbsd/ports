@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2012/09/11 20:42:21 landry Exp $
+# $OpenBSD: Makefile,v 1.26 2012/09/28 11:38:48 jasper Exp $
 
 BROKEN-hppa=		linking .libs/python-libpst.o fails
 
@@ -73,8 +73,6 @@ FAKE_FLAGS+=		htmldir="${PREFIX}/share/doc/libpst/" \
 			htmldeveldir="${PREFIX}/share/doc/libpst/devel/"
 
 pre-configure:
-	perl -pi -e 's,!!MODPY_VERSION!!,${MODPY_VERSION},;' \
-		-e 's,!!LOCALBASE!!,${LOCALBASE},' \
-		${WRKSRC}/configure
+	${SUBST_CMD} ${WRKSRC}/configure
 
 .include <bsd.port.mk>
