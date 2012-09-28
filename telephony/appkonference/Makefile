@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2012/08/23 17:07:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2012/09/28 00:04:17 sthen Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	conferencing application for asterisk
@@ -7,6 +7,7 @@ COMMENT=	conferencing application for asterisk
 ONLY_FOR_ARCHS=	i386 amd64
 
 DISTNAME=	appkonference-2.2
+REVISION=	0
 
 CATEGORIES=	telephony
 
@@ -26,7 +27,7 @@ NO_REGRESS=	Yes
 USE_GMAKE=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	telephony/asterisk>=1.8,<1.9
+RUN_DEPENDS=	telephony/asterisk>=10.0,<=11.0
 
 MAKE_FLAGS+=	LOCALBASE=${LOCALBASE} \
 		DEBUG="${CFLAGS}" \
