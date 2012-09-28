@@ -1,7 +1,7 @@
-$OpenBSD: patch-transmitters_multicast_fs-multicast-transmitter_c,v 1.1.1.1 2012/04/05 16:02:30 jasper Exp $
---- transmitters/multicast/fs-multicast-transmitter.c.orig	Wed Apr  4 22:48:14 2012
-+++ transmitters/multicast/fs-multicast-transmitter.c	Wed Apr  4 22:48:35 2012
-@@ -53,7 +53,10 @@
+$OpenBSD: patch-transmitters_multicast_fs-multicast-transmitter_c,v 1.2 2012/09/28 14:26:11 jasper Exp $
+--- transmitters/multicast/fs-multicast-transmitter.c.orig	Tue Sep 25 22:23:53 2012
++++ transmitters/multicast/fs-multicast-transmitter.c	Fri Sep 28 14:27:29 2012
+@@ -55,7 +55,10 @@
  #else /*G_OS_WIN32*/
  # include <netdb.h>
  # include <sys/socket.h>

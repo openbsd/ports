@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2012/09/28 13:07:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2012/09/28 14:26:11 jasper Exp $
 
 COMMENT=		audio/video communications framework
 
-DISTNAME=		farstream-0.1.2
+DISTNAME=		farstream-0.2.0
 CATEGORIES=		net devel
-REVISION=		4
 
-SHARED_LIBS +=  farstream-0.1        0.0      # 0.1
+SHARED_LIBS +=	farstream-0.2        0.0      # 2.0
 
-API_VERSION=		0.1
+API_VERSION=		0.2
 SUBST_VARS+=		API_VERSION
 
 HOMEPAGE=		http://www.freedesktop.org/wiki/Software/Farstream
@@ -27,15 +26,13 @@ MODULES=		devel/gettext \
 MODPY_ADJ_FILES=	configure
 
 WANTLIB += e2fs-uuid ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gssdp-1.0 gstbase-0.10 gstnetbuffer-0.10 gstreamer-0.10
-WANTLIB += gstrtp-0.10 gthread-2.0 gupnp-1.0 gupnp-igd-1.0 m nice
-WANTLIB += pcre soup-2.4 xml2 z
+WANTLIB += gssdp-1.0 gstbase-1.0 gstnet-1.0 gstreamer-1.0 gstrtp-1.0
+WANTLIB += gthread-2.0 gupnp-1.0 gupnp-igd-1.0 m nice pcre pthread
+WANTLIB += soup-2.4 xml2 z
 
-BUILD_DEPENDS=		devel/gobject-introspection \
-			multimedia/gstreamer-0.10/py-gstreamer
-LIB_DEPENDS=		multimedia/gstreamer-0.10/plugins-base \
-			net/libnice>=0.1.2
-RUN_DEPENDS=		multimedia/gstreamer-0.10/py-gstreamer
+BUILD_DEPENDS=		devel/gobject-introspection
+LIB_DEPENDS=		multimedia/gstreamer1/plugins-base \
+			net/libnice>=0.1.3
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
@@ -46,7 +43,6 @@ AUTOCONF_VERSION=	2.68
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-gupnp \
-			--enable-python \
 			--enable-introspection
 
 post-install:
