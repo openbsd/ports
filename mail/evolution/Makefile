@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.171 2012/09/28 14:34:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.172 2012/09/28 14:37:27 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -10,6 +10,8 @@ GNOME_VERSION=		3.6.0
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}
+
+REVISION-main=		0
 
 # NOTE: when R changes, increment EVO_VERSION accordingly and bump:
 # mail/evolution-ews
@@ -85,7 +87,8 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			security/nss \
 			x11/gnome/desktop>=3.6.0 \
 			databases/openldap \
-			audio/libcanberra,-gtk3
+			audio/libcanberra,-gtk3 \
+			www/webkit,gtk3
 
 RUN_DEPENDS-main=	${RUN_DEPENDS} \
 			x11/gnome/icon-theme \
