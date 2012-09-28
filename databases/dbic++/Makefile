@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2012/09/27 07:23:55 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.10 2012/09/28 07:52:14 dcoppa Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		C++ database API
 
 DISTNAME=		deepfryed-dbicpp-v0.6.0
 PKGNAME=		dbic++-0.6.0
-REVISION =		1
+REVISION =		2
 CATEGORIES=		databases
 HOMEPAGE=		https://github.com/deepfryed/dbicpp
 

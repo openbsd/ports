@@ -1,9 +1,15 @@
-$OpenBSD: patch-pkgconfig_dbic++_pc,v 1.1 2011/03/14 18:30:33 jeremy Exp $
---- pkgconfig/dbic++.pc.orig	Wed Jan 12 18:27:58 2011
-+++ pkgconfig/dbic++.pc	Wed Jan 19 11:05:22 2011
+$OpenBSD: patch-pkgconfig_dbic++_pc,v 1.2 2012/09/28 07:52:14 dcoppa Exp $
+--- pkgconfig/dbic++.pc.orig	Thu Mar 29 07:09:47 2012
++++ pkgconfig/dbic++.pc	Fri Sep 28 09:28:49 2012
 @@ -1,4 +1,4 @@
 -prefix=/usr
 +prefix=${LOCALBASE}
  exec_prefix=${prefix}
  libdir=${exec_prefix}/lib
  includedir=${prefix}/include
+@@ -8,4 +8,4 @@ Description: C++ database API
+ Version: 0.2.6
+ Requires:
+ Cflags: -I${includedir}/
+-Libs: -L${libdir} -ldbic++ -lpcrecpp -luuid -ldl -rdynamic
++Libs: -L${libdir} -ldbic++ -lpcrecpp -le2fs-uuid -rdynamic
