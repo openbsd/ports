@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2011/11/11 18:33:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2012/09/28 18:55:27 sthen Exp $
 
 COMMENT=	gdb for arm-elf cross-development
 
 DISTNAME=	gdb-7.1
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	http://www.gnu.org/software/gdb/
 

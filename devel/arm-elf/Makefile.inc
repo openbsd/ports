@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.5 2011/11/08 12:43:25 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2012/09/28 18:55:27 sthen Exp $
 
 CONFIG=		arm-elf
 PKGNAME?=	${CONFIG}-${DISTNAME}
 CATEGORIES+=	devel devel/arm-elf
-
-MAINTAINER=	Sebastian Trahm <basti@schleifi.com>
 
 # GPLv3
 # For newlib: multiple copyrights, but basically BSD.

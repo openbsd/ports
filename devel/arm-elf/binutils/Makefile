@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2011/11/11 18:33:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2012/09/28 18:55:27 sthen Exp $
 
 COMMENT=	binutils for arm-elf cross-development
 
 V=		2.20
+REVISION=	0
 DISTNAME=	binutils-${V}
 
 HOMEPAGE=	http://www.gnu.org/software/binutils/

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2011/11/01 19:22:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2012/09/28 18:55:27 sthen Exp $
 
 COMMENT=	newlib for arm-elf cross-development
 
 DISTNAME=	newlib-1.18.0
+REVISION=	0
 BROKEN-amd64 =	as: unrecognized option -mfpu=softfpa
 
 HOMEPAGE=	http://sourceware.org/newlib/

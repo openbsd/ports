@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2012/03/29 13:38:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2012/09/28 18:55:27 sthen Exp $
 
 COMMENT=	gcc for arm-elf cross-development
 
 VERSION=	4.4.4
+REVISION=	0
 DISTNAME=	gcc-${VERSION}
 PKGNAME=	${CONFIG}-gcc-${VERSION}
 
