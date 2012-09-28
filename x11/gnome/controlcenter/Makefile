@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2012/09/28 09:34:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.73 2012/09/28 09:40:30 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -47,16 +47,16 @@ LIB_DEPENDS=		x11/gnome/desktop>=3.6.0 \
 			audio/libcanberra,-gtk3 \
 			graphics/colord
 
-# XXX when the user account panel is re-enabled
-BUILD_DEPENDS +=	security/libpwquality
-#LIB_DEPENDS +=		security/libpwquality
-
 BUILD_DEPENDS=		x11/gnome/settings-daemon>=3.6.0 \
 			devel/iso-codes \
 			devel/gsettings-desktop-schemas
 RUN_DEPENDS=		x11/gnome/settings-daemon>=3.6.0 \
 			devel/iso-codes \
 			devel/gsettings-desktop-schemas
+
+# XXX when the user account panel is re-enabled
+BUILD_DEPENDS +=	security/libpwquality
+#LIB_DEPENDS +=		security/libpwquality
 
 # NOTE that a11y dependencies (e.g. mousetweaks, caribou...) are not
 # enforced on purpose.
