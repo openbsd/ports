@@ -1,9 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.10 2012/08/12 20:51:02 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.11 2012/09/28 17:21:29 jasper Exp $
 @bin bin/rygel
 @bin bin/rygel-preferences
 include/rygel-1.0/
-include/rygel-1.0/rygel.h
-lib/pkgconfig/rygel-1.0.pc
+include/rygel-1.0/rygel-core.h
+include/rygel-1.0/rygel-renderer.h
+include/rygel-1.0/rygel-server.h
+lib/librygel-core-1.0.la
+@lib lib/librygel-core-1.0.so.${LIBrygel-core-1.0_VERSION}
+lib/librygel-renderer-1.0.la
+@lib lib/librygel-renderer-1.0.so.${LIBrygel-renderer-1.0_VERSION}
+lib/librygel-server-1.0.la
+@lib lib/librygel-server-1.0.so.${LIBrygel-server-1.0_VERSION}
+lib/pkgconfig/rygel-core-1.0.pc
+lib/pkgconfig/rygel-renderer-1.0.pc
 lib/rygel-1.0/
 @comment lib/rygel-1.0/librygel-external.la
 lib/rygel-1.0/librygel-external.so
@@ -45,10 +54,12 @@ share/locale/en_GB/LC_MESSAGES/rygel.mo
 share/locale/eo/LC_MESSAGES/rygel.mo
 share/locale/es/LC_MESSAGES/rygel.mo
 share/locale/et/LC_MESSAGES/rygel.mo
+share/locale/fi/LC_MESSAGES/rygel.mo
 share/locale/fr/LC_MESSAGES/rygel.mo
 share/locale/gl/LC_MESSAGES/rygel.mo
 share/locale/gu/LC_MESSAGES/rygel.mo
 share/locale/he/LC_MESSAGES/rygel.mo
+share/locale/hi/LC_MESSAGES/rygel.mo
 share/locale/hu/LC_MESSAGES/rygel.mo
 share/locale/id/LC_MESSAGES/rygel.mo
 share/locale/it/LC_MESSAGES/rygel.mo
@@ -87,6 +98,17 @@ share/rygel/icons/120x120/rygel.png
 share/rygel/icons/48x48/
 share/rygel/icons/48x48/rygel.jpg
 share/rygel/icons/48x48/rygel.png
+share/rygel/presets/
+share/rygel/presets/GstFaac.prs
+share/rygel/presets/GstLameMP3Enc.prs
+share/rygel/presets/GstMP4Mux.prs
+share/rygel/presets/GstTwoLame.prs
+share/rygel/presets/GstX264Enc.prs
+share/rygel/presets/ffenc_aac.prs
+share/rygel/presets/ffenc_mp2.prs
+share/rygel/presets/ffenc_mpeg2video.prs
+share/rygel/presets/ffenc_wmav1.prs
+share/rygel/presets/ffenc_wmv1.prs
 share/rygel/rygel-preferences.ui
 share/rygel/xml/
 share/rygel/xml/AVTransport2.xml
@@ -96,8 +118,8 @@ share/rygel/xml/MediaRenderer2.xml
 share/rygel/xml/MediaServer2.xml
 share/rygel/xml/RenderingControl2.xml
 share/rygel/xml/X_MS_MediaReceiverRegistrar1.xml
-share/vala/vapi/rygel-1.0.deps
-share/vala/vapi/rygel-1.0.vapi
+share/vala/vapi/rygel-core-1.0.deps
+share/vala/vapi/rygel-core-1.0.vapi
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
