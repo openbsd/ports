@@ -1,16 +1,27 @@
-@comment $OpenBSD: PLIST,v 1.12 2012/07/07 14:06:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2012/09/28 07:51:54 jasper Exp $
 lib/eog/plugins/exif-display.plugin
+lib/eog/plugins/export-to-folder.plugin
+lib/eog/plugins/export-to-folder.py
+lib/eog/plugins/export-to-folder.pyc
+lib/eog/plugins/export-to-folder.pyo
 lib/eog/plugins/fit-to-width.plugin
 lib/eog/plugins/fullscreenbg.plugin
 lib/eog/plugins/fullscreenbg.py
 lib/eog/plugins/fullscreenbg.pyc
 lib/eog/plugins/fullscreenbg.pyo
+lib/eog/plugins/hide-titlebar.plugin
 @comment lib/eog/plugins/libexif-display.a
 @comment lib/eog/plugins/libexif-display.la
 lib/eog/plugins/libexif-display.so
 @comment lib/eog/plugins/libfit-to-width.a
 @comment lib/eog/plugins/libfit-to-width.la
 lib/eog/plugins/libfit-to-width.so
+@comment lib/eog/plugins/libhide-titlebar.a
+@comment lib/eog/plugins/libhide-titlebar.la
+lib/eog/plugins/libhide-titlebar.so
+@comment lib/eog/plugins/liblight-theme.a
+@comment lib/eog/plugins/liblight-theme.la
+lib/eog/plugins/liblight-theme.so
 @comment lib/eog/plugins/libmap.a
 @comment lib/eog/plugins/libmap.la
 lib/eog/plugins/libmap.so
@@ -20,6 +31,7 @@ lib/eog/plugins/libpostasa.so
 @comment lib/eog/plugins/libsend-by-mail.a
 @comment lib/eog/plugins/libsend-by-mail.la
 lib/eog/plugins/libsend-by-mail.so
+lib/eog/plugins/light-theme.plugin
 lib/eog/plugins/map.plugin
 lib/eog/plugins/postasa.plugin
 lib/eog/plugins/pythonconsole/
@@ -42,6 +54,8 @@ share/eog/plugins/
 share/eog/plugins/exif-display/
 share/eog/plugins/exif-display/exif-display-config.ui
 share/eog/plugins/exif-display/exif-display.ui
+share/eog/plugins/export-to-folder/
+share/eog/plugins/export-to-folder/preferences_dialog.ui
 share/eog/plugins/fullscreenbg/
 share/eog/plugins/fullscreenbg/preferences_dialog.ui
 share/eog/plugins/postasa/
@@ -50,6 +64,7 @@ share/eog/plugins/postasa/postasa-uploads.xml
 share/eog/plugins/pythonconsole/
 share/eog/plugins/pythonconsole/config.ui
 share/glib-2.0/schemas/org.gnome.eog.plugins.exif-display.gschema.xml
+share/glib-2.0/schemas/org.gnome.eog.plugins.export-to-folder.gschema.xml
 share/glib-2.0/schemas/org.gnome.eog.plugins.fullscreenbg.gschema.xml
 share/glib-2.0/schemas/org.gnome.eog.plugins.pythonconsole.gschema.xml
 share/locale/ar/LC_MESSAGES/eog-plugins.mo
