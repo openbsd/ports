@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.43 2012/09/01 14:36:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2012/09/28 11:44:05 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		binary editor
 
 GNOME_PROJECT=		ghex
-GNOME_VERSION=		3.4.1
-REVISION=		1
+GNOME_VERSION=		3.6.0
 
 SHARED_LIBS +=  gtkhex-3                  0.0 # 0.0
 
@@ -27,6 +26,8 @@ WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 gtk-3 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs xcb xcb-render
 WANTLIB += xcb-shm z ffi stdc++
+WANTLIB += ICE SM atk-bridge-2.0 atspi dbus-1 harfbuzz icudata
+WANTLIB += icule icuuc
 
 MODULES=		devel/dconf \
 			devel/gettext \

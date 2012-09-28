@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2012/06/15 08:30:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2012/09/28 11:44:05 jasper Exp $
 @bin bin/ghex
 include/gtkhex-3/
 include/gtkhex-3/gtkhex.h
@@ -43,6 +43,12 @@ share/gnome/help/ghex/fr/figures/ghex_window_empty.png
 share/gnome/help/ghex/fr/figures/ghex_window_open.png
 share/gnome/help/ghex/fr/ghex.xml
 share/gnome/help/ghex/fr/legal.xml
+share/gnome/help/ghex/id/
+share/gnome/help/ghex/id/figures/
+share/gnome/help/ghex/id/figures/ghex_window_empty.png
+share/gnome/help/ghex/id/figures/ghex_window_open.png
+share/gnome/help/ghex/id/ghex.xml
+share/gnome/help/ghex/id/legal.xml
 share/gnome/help/ghex/it/
 share/gnome/help/ghex/it/figures/
 share/gnome/help/ghex/it/figures/ghex_window_empty.png
@@ -166,6 +172,7 @@ share/omf/ghex/ghex-cs.omf
 share/omf/ghex/ghex-de.omf
 share/omf/ghex/ghex-es.omf
 share/omf/ghex/ghex-fr.omf
+share/omf/ghex/ghex-id.omf
 share/omf/ghex/ghex-it.omf
 share/omf/ghex/ghex-ja.omf
 share/omf/ghex/ghex-ko.omf
