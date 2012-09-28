@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2012/09/28 14:32:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2012/09/28 15:37:38 ajacoutot Exp $
 
 COMMENT-main=	GNOME desktop meta-package (base installation)
 COMMENT-extra=	GNOME desktop meta-package (full installation)
@@ -10,6 +10,7 @@ PKGNAME-main=	gnome-${V}
 PKGNAME-extra=	gnome-extra-${V}
 
 REVISION-main=	0
+REVISION-extra=	0
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 		Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -89,7 +90,6 @@ RUN_DEPENDS-extra += \
 		x11/gnome/icon-theme-extras \
 		x11/gnome/nautilus-sendto \
 		x11/gnome/totem,-nautilus \
-		x11/gnome/tracker,-evolution \
 		x11/gnome/vinagre \
 		x11/gnome/vino
 
