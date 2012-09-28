@@ -1,0 +1,32 @@
+$OpenBSD: patch-modules_text-highlight_e-mail-formatter-text-highlight_c,v 1.1 2012/09/28 14:27:10 ajacoutot Exp $
+
+XXX push uptream
+e-mail-formatter-text-highlight.c:190: error: expected identifier or '(' before '&' token
+
+--- modules/text-highlight/e-mail-formatter-text-highlight.c.orig	Fri Sep 28 16:25:37 2012
++++ modules/text-highlight/e-mail-formatter-text-highlight.c	Fri Sep 28 16:26:11 2012
+@@ -187,7 +187,7 @@ emfe_text_highlight_format (EMailFormatterExtension *e
+ 		return TRUE;
+ 
+ 	} else if (context->mode == E_MAIL_FORMATTER_MODE_RAW) {
+-		gint stdin, stdout;
++		gint ev_stdin, ev_stdout;
+ 		GPid pid;
+ 		CamelStream *read, *write, *utf8;
+ 		CamelDataWrapper *dw;
+@@ -262,12 +262,12 @@ emfe_text_highlight_format (EMailFormatterExtension *e
+ 			NULL, (gchar **) argv, NULL,
+ 			G_SPAWN_SEARCH_PATH |
+ 			G_SPAWN_DO_NOT_REAP_CHILD,
+-			NULL, NULL, &pid, &stdin, &stdout, NULL, NULL)) {
++			NULL, NULL, &pid, &ev_stdin, &ev_stdout, NULL, NULL)) {
+ 			return FALSE;
+ 		}
+ 
+-		write = camel_stream_fs_new_with_fd (stdin);
+-		read = camel_stream_fs_new_with_fd (stdout);
++		write = camel_stream_fs_new_with_fd (ev_stdin);
++		read = camel_stream_fs_new_with_fd (ev_stdout);
+ 
+ 		/* Decode the content of mime part to the 'utf8' stream */
+ 		utf8 = camel_stream_mem_new ();
