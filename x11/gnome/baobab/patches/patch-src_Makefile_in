@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2012/09/28 07:19:59 ajacoutot Exp $
+
+cc1: error: unrecognized command line option "-Wno-unused-but-set-variable"
+
+--- src/Makefile.in.orig	Fri Sep 28 09:12:17 2012
++++ src/Makefile.in	Fri Sep 28 09:12:26 2012
+@@ -320,7 +320,6 @@ baobab_SOURCES = \
+ AM_CFLAGS = \
+ 	$(gtk_CFLAGS)			\
+ 	-Wall				\
+-	-Wno-unused-but-set-variable	\
+ 	-Wno-unused-variable		\
+ 	$(NULL)
+ 
