@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/09/28 11:11:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2012/09/28 17:09:49 ajacoutot Exp $
 
 COMMENT=	framework for making media discovery and browsing easy
 
@@ -36,8 +36,6 @@ LIB_DEPENDS=	devel/libsoup \
 		x11/gtk+3
 
 MODGNOME_TOOLS= goi vala
-
-CONFIGURE_ARGS+=--enable-grl-net
 
 SUBST_VARS+=	API
 
