@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2012/09/27 04:13:17 jeremy Exp $
+# $OpenBSD: Makefile,v 1.4 2012/09/28 16:21:03 jeremy Exp $
 
 COMMENT =	emulates numerous game consoles
 
 DISTNAME =	mednafen-0.9.24-wip
 PKGNAME =	mednafen-0.9.24
+REVISION =	0
 
 CATEGORIES =	emulators games
 HOMEPAGE =	http://mednafen.sourceforge.net/
@@ -27,8 +28,7 @@ USE_GMAKE =	Yes
 
 LIB_DEPENDS =	audio/libcdio \
 		audio/libsndfile \
-		devel/sdl \
-		devel/sdl-net
+		devel/sdl
 		
 WRKDIST =	${WRKDIR}/mednafen
 
