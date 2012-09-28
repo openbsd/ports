@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2012/07/05 17:46:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2012/09/28 15:57:27 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 @bin bin/tracker-control
 @bin bin/tracker-explorer
@@ -57,50 +57,30 @@ lib/pkgconfig/tracker-miner-${MAJ_V}.pc
 lib/pkgconfig/tracker-sparql-${MAJ_V}.pc
 lib/tracker-${MAJ_V}/
 lib/tracker-${MAJ_V}/extract-modules/
-@comment lib/tracker-${MAJ_V}/extract-modules/libextract-abw.la
 lib/tracker-${MAJ_V}/extract-modules/libextract-abw.so
-@comment lib/tracker-${MAJ_V}/extract-modules/libextract-epub.la
 lib/tracker-${MAJ_V}/extract-modules/libextract-epub.so
-@comment lib/tracker-${MAJ_V}/extract-modules/libextract-gif.la
 lib/tracker-${MAJ_V}/extract-modules/libextract-gif.so
-@comment lib/tracker-${MAJ_V}/extract-modules/libextract-gstreamer.la
 lib/tracker-${MAJ_V}/extract-modules/libextract-gstreamer.so
-@comment lib/tracker-${MAJ_V}/extract-modules/libextract-html.la
 lib/tracker-${MAJ_V}/extract-modules/libextract-html.so
-@comment lib/tracker-${MAJ_V}/extract-modules/libextract-icon.la
 lib/tracker-${MAJ_V}/extract-modules/libextract-icon.so
-@comment lib/tracker-${MAJ_V}/extract-modules/libextract-jpeg.la
 lib/tracker-${MAJ_V}/extract-modules/libextract-jpeg.so
-@comment lib/tracker-${MAJ_V}/extract-modules/libextract-mp3.la
 lib/tracker-${MAJ_V}/extract-modules/libextract-mp3.so
-@comment lib/tracker-${MAJ_V}/extract-modules/libextract-msoffice-xml.la
 lib/tracker-${MAJ_V}/extract-modules/libextract-msoffice-xml.so
-@comment lib/tracker-${MAJ_V}/extract-modules/libextract-msoffice.la
 lib/tracker-${MAJ_V}/extract-modules/libextract-msoffice.so
-@comment lib/tracker-${MAJ_V}/extract-modules/libextract-oasis.la
 lib/tracker-${MAJ_V}/extract-modules/libextract-oasis.so
-@comment lib/tracker-${MAJ_V}/extract-modules/libextract-pdf.la
 lib/tracker-${MAJ_V}/extract-modules/libextract-pdf.so
-@comment lib/tracker-${MAJ_V}/extract-modules/libextract-playlist.la
 lib/tracker-${MAJ_V}/extract-modules/libextract-playlist.so
-@comment lib/tracker-${MAJ_V}/extract-modules/libextract-png.la
 lib/tracker-${MAJ_V}/extract-modules/libextract-png.so
-@comment lib/tracker-${MAJ_V}/extract-modules/libextract-ps.la
 lib/tracker-${MAJ_V}/extract-modules/libextract-ps.so
-@comment lib/tracker-${MAJ_V}/extract-modules/libextract-text.la
 lib/tracker-${MAJ_V}/extract-modules/libextract-text.so
-@comment lib/tracker-${MAJ_V}/extract-modules/libextract-tiff.la
 lib/tracker-${MAJ_V}/extract-modules/libextract-tiff.so
-@comment lib/tracker-${MAJ_V}/extract-modules/libextract-xmp.la
 lib/tracker-${MAJ_V}/extract-modules/libextract-xmp.so
 lib/tracker-${MAJ_V}/libtracker-common.la
 @lib lib/tracker-${MAJ_V}/libtracker-common.so.${LIBtracker-common_VERSION}
 lib/tracker-${MAJ_V}/libtracker-data.la
 @lib lib/tracker-${MAJ_V}/libtracker-data.so.${LIBtracker-data_VERSION}
 lib/tracker-${MAJ_V}/writeback-modules/
-@comment lib/tracker-${MAJ_V}/writeback-modules/libwriteback-taglib.la
 lib/tracker-${MAJ_V}/writeback-modules/libwriteback-taglib.so
-@comment lib/tracker-${MAJ_V}/writeback-modules/libwriteback-xmp.la
 lib/tracker-${MAJ_V}/writeback-modules/libwriteback-xmp.so
 @bin libexec/tracker-extract
 @bin libexec/tracker-miner-flickr
