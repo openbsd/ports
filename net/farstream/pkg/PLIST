@@ -1,128 +1,108 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/04/08 15:39:51 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/09/28 13:07:52 jasper Exp $
 @conflict farsight2-*
 @pkgpath net/farsight2
-include/farstream-0.1/
-include/farstream-0.1/farstream/
-include/farstream-0.1/farstream/fs-candidate.h
-include/farstream-0.1/farstream/fs-codec.h
-include/farstream-0.1/farstream/fs-conference.h
-include/farstream-0.1/farstream/fs-element-added-notifier.h
-include/farstream-0.1/farstream/fs-enumtypes.h
-include/farstream-0.1/farstream/fs-participant.h
-include/farstream-0.1/farstream/fs-plugin.h
-include/farstream-0.1/farstream/fs-rtp.h
-include/farstream-0.1/farstream/fs-session.h
-include/farstream-0.1/farstream/fs-stream-transmitter.h
-include/farstream-0.1/farstream/fs-stream.h
-include/farstream-0.1/farstream/fs-transmitter.h
-include/farstream-0.1/farstream/fs-utils.h
-lib/farstream-0.1/
-@comment lib/farstream-0.1/libmulticast-transmitter.a
-@comment lib/farstream-0.1/libmulticast-transmitter.la
-lib/farstream-0.1/libmulticast-transmitter.so
-@comment lib/farstream-0.1/libnice-transmitter.a
-@comment lib/farstream-0.1/libnice-transmitter.la
-lib/farstream-0.1/libnice-transmitter.so
-@comment lib/farstream-0.1/librawudp-transmitter.a
-@comment lib/farstream-0.1/librawudp-transmitter.la
-lib/farstream-0.1/librawudp-transmitter.so
-@comment lib/farstream-0.1/libshm-transmitter.a
-@comment lib/farstream-0.1/libshm-transmitter.la
-lib/farstream-0.1/libshm-transmitter.so
-lib/girepository-1.0/Farstream-0.1.typelib
-@comment lib/gstreamer-0.10/libfsfunnel.a
-@comment lib/gstreamer-0.10/libfsfunnel.la
-lib/gstreamer-0.10/libfsfunnel.so
-@comment lib/gstreamer-0.10/libfsmsnconference.a
-@comment lib/gstreamer-0.10/libfsmsnconference.la
-lib/gstreamer-0.10/libfsmsnconference.so
-@comment lib/gstreamer-0.10/libfsrawconference.a
-@comment lib/gstreamer-0.10/libfsrawconference.la
-lib/gstreamer-0.10/libfsrawconference.so
-@comment lib/gstreamer-0.10/libfsrtcpfilter.a
-@comment lib/gstreamer-0.10/libfsrtcpfilter.la
-lib/gstreamer-0.10/libfsrtcpfilter.so
-@comment lib/gstreamer-0.10/libfsrtpconference.a
-@comment lib/gstreamer-0.10/libfsrtpconference.la
-lib/gstreamer-0.10/libfsrtpconference.so
-@comment lib/gstreamer-0.10/libfsvideoanyrate.a
-@comment lib/gstreamer-0.10/libfsvideoanyrate.la
-lib/gstreamer-0.10/libfsvideoanyrate.so
-lib/libfarstream-0.1.a
-lib/libfarstream-0.1.la
-@lib lib/libfarstream-0.1.so.${LIBfarstream-0.1_VERSION}
-lib/pkgconfig/farstream-0.1.pc
+include/farstream-${API_VERSION}/
+include/farstream-${API_VERSION}/farstream/
+include/farstream-${API_VERSION}/farstream/fs-candidate.h
+include/farstream-${API_VERSION}/farstream/fs-codec.h
+include/farstream-${API_VERSION}/farstream/fs-conference.h
+include/farstream-${API_VERSION}/farstream/fs-element-added-notifier.h
+include/farstream-${API_VERSION}/farstream/fs-enumtypes.h
+include/farstream-${API_VERSION}/farstream/fs-participant.h
+include/farstream-${API_VERSION}/farstream/fs-plugin.h
+include/farstream-${API_VERSION}/farstream/fs-rtp.h
+include/farstream-${API_VERSION}/farstream/fs-session.h
+include/farstream-${API_VERSION}/farstream/fs-stream-transmitter.h
+include/farstream-${API_VERSION}/farstream/fs-stream.h
+include/farstream-${API_VERSION}/farstream/fs-transmitter.h
+include/farstream-${API_VERSION}/farstream/fs-utils.h
+lib/farstream-${API_VERSION}/
+lib/farstream-${API_VERSION}/libmulticast-transmitter.so
+lib/farstream-${API_VERSION}/libnice-transmitter.so
+lib/farstream-${API_VERSION}/librawudp-transmitter.so
+lib/farstream-${API_VERSION}/libshm-transmitter.so
+lib/girepository-1.0/Farstream-${API_VERSION}.typelib
+lib/gstreamer-${API_VERSION}0/libfsfunnel.so
+lib/gstreamer-${API_VERSION}0/libfsmsnconference.so
+lib/gstreamer-${API_VERSION}0/libfsrawconference.so
+lib/gstreamer-${API_VERSION}0/libfsrtcpfilter.so
+lib/gstreamer-${API_VERSION}0/libfsrtpconference.so
+lib/gstreamer-${API_VERSION}0/libfsvideoanyrate.so
+lib/libfarstream-${API_VERSION}.a
+lib/libfarstream-${API_VERSION}.la
+@lib lib/libfarstream-${API_VERSION}.so.${LIBfarstream-0.1_VERSION}
+lib/pkgconfig/farstream-${API_VERSION}.pc
 @comment lib/python${MODPY_VERSION}/site-packages/farstream.a
 @comment lib/python${MODPY_VERSION}/site-packages/farstream.la
 lib/python${MODPY_VERSION}/site-packages/farstream.so
 share/farstream/
-share/farstream/0.1/
-share/farstream/0.1/fsrawconference/
-share/farstream/0.1/fsrawconference/default-element-properties
-share/farstream/0.1/fsrtpconference/
-share/farstream/0.1/fsrtpconference/default-codec-preferences
-share/farstream/0.1/fsrtpconference/default-element-properties
-share/gir-1.0/Farstream-0.1.gir
-share/gtk-doc/html/farstream-libs-0.10/
-share/gtk-doc/html/farstream-libs-0.10/FsConference.html
-share/gtk-doc/html/farstream-libs-0.10/FsElementAddedNotifier.html
-share/gtk-doc/html/farstream-libs-0.10/FsParticipant.html
-share/gtk-doc/html/farstream-libs-0.10/FsSession.html
-share/gtk-doc/html/farstream-libs-0.10/FsStream.html
-share/gtk-doc/html/farstream-libs-0.10/FsStreamTransmitter.html
-share/gtk-doc/html/farstream-libs-0.10/FsTransmitter.html
-share/gtk-doc/html/farstream-libs-0.10/ch01.html
-share/gtk-doc/html/farstream-libs-0.10/ch02.html
-share/gtk-doc/html/farstream-libs-0.10/ch03.html
-share/gtk-doc/html/farstream-libs-0.10/ch04.html
-share/gtk-doc/html/farstream-libs-0.10/ch05.html
-share/gtk-doc/html/farstream-libs-0.10/farstream-libs-0.10.devhelp2
-share/gtk-doc/html/farstream-libs-0.10/farstream-libs-FsCandidate.html
-share/gtk-doc/html/farstream-libs-0.10/farstream-libs-FsCodec.html
-share/gtk-doc/html/farstream-libs-0.10/farstream-libs-FsPlugin.html
-share/gtk-doc/html/farstream-libs-0.10/farstream-libs-RTP-Specific-types.html
-share/gtk-doc/html/farstream-libs-0.10/farstream-libs-Utility-functions.html
-share/gtk-doc/html/farstream-libs-0.10/home.png
-share/gtk-doc/html/farstream-libs-0.10/index.html
-share/gtk-doc/html/farstream-libs-0.10/index.sgml
-share/gtk-doc/html/farstream-libs-0.10/left.png
-share/gtk-doc/html/farstream-libs-0.10/pt01.html
-share/gtk-doc/html/farstream-libs-0.10/pt02.html
-share/gtk-doc/html/farstream-libs-0.10/right.png
-share/gtk-doc/html/farstream-libs-0.10/style.css
-share/gtk-doc/html/farstream-libs-0.10/up.png
-share/gtk-doc/html/farstream-plugins-0.1/
-share/gtk-doc/html/farstream-plugins-0.1/ch01.html
-share/gtk-doc/html/farstream-plugins-0.1/ch02.html
-share/gtk-doc/html/farstream-plugins-0.1/ch03.html
-share/gtk-doc/html/farstream-plugins-0.1/farstream-plugins-0.10.devhelp2
-share/gtk-doc/html/farstream-plugins-0.1/farstream-plugins-FsFunnel.html
-share/gtk-doc/html/farstream-plugins-0.1/farstream-plugins-FsMsnCamCamRecvConference.html
-share/gtk-doc/html/farstream-plugins-0.1/farstream-plugins-FsMsnCamSendConference.html
-share/gtk-doc/html/farstream-plugins-0.1/farstream-plugins-FsMsnConference.html
-share/gtk-doc/html/farstream-plugins-0.1/farstream-plugins-FsMsnParticipant.html
-share/gtk-doc/html/farstream-plugins-0.1/farstream-plugins-FsMsnSession.html
-share/gtk-doc/html/farstream-plugins-0.1/farstream-plugins-FsMsnStream.html
-share/gtk-doc/html/farstream-plugins-0.1/farstream-plugins-FsMulticastStreamTransmitter.html
-share/gtk-doc/html/farstream-plugins-0.1/farstream-plugins-FsNiceStreamTransmitter.html
-share/gtk-doc/html/farstream-plugins-0.1/farstream-plugins-FsRawConference.html
-share/gtk-doc/html/farstream-plugins-0.1/farstream-plugins-FsRawParticipant.html
-share/gtk-doc/html/farstream-plugins-0.1/farstream-plugins-FsRawSession.html
-share/gtk-doc/html/farstream-plugins-0.1/farstream-plugins-FsRawStream.html
-share/gtk-doc/html/farstream-plugins-0.1/farstream-plugins-FsRawUdpStreamTransmitter.html
-share/gtk-doc/html/farstream-plugins-0.1/farstream-plugins-FsRtpConference.html
-share/gtk-doc/html/farstream-plugins-0.1/farstream-plugins-FsRtpParticipant.html
-share/gtk-doc/html/farstream-plugins-0.1/farstream-plugins-FsRtpSession.html
-share/gtk-doc/html/farstream-plugins-0.1/farstream-plugins-FsRtpStream.html
-share/gtk-doc/html/farstream-plugins-0.1/farstream-plugins-FsShmStreamTransmitter.html
-share/gtk-doc/html/farstream-plugins-0.1/farstream-plugins-GstVideoanyrate.html
-share/gtk-doc/html/farstream-plugins-0.1/home.png
-share/gtk-doc/html/farstream-plugins-0.1/index.html
-share/gtk-doc/html/farstream-plugins-0.1/index.sgml
-share/gtk-doc/html/farstream-plugins-0.1/left.png
-share/gtk-doc/html/farstream-plugins-0.1/pt01.html
-share/gtk-doc/html/farstream-plugins-0.1/pt02.html
-share/gtk-doc/html/farstream-plugins-0.1/pt03.html
-share/gtk-doc/html/farstream-plugins-0.1/right.png
-share/gtk-doc/html/farstream-plugins-0.1/style.css
-share/gtk-doc/html/farstream-plugins-0.1/up.png
+share/farstream/${API_VERSION}/
+share/farstream/${API_VERSION}/fsrawconference/
+share/farstream/${API_VERSION}/fsrawconference/default-element-properties
+share/farstream/${API_VERSION}/fsrtpconference/
+share/farstream/${API_VERSION}/fsrtpconference/default-codec-preferences
+share/farstream/${API_VERSION}/fsrtpconference/default-element-properties
+share/gir-1.0/Farstream-${API_VERSION}.gir
+share/gtk-doc/html/farstream-libs-${API_VERSION}0/
+share/gtk-doc/html/farstream-libs-${API_VERSION}0/FsConference.html
+share/gtk-doc/html/farstream-libs-${API_VERSION}0/FsElementAddedNotifier.html
+share/gtk-doc/html/farstream-libs-${API_VERSION}0/FsParticipant.html
+share/gtk-doc/html/farstream-libs-${API_VERSION}0/FsSession.html
+share/gtk-doc/html/farstream-libs-${API_VERSION}0/FsStream.html
+share/gtk-doc/html/farstream-libs-${API_VERSION}0/FsStreamTransmitter.html
+share/gtk-doc/html/farstream-libs-${API_VERSION}0/FsTransmitter.html
+share/gtk-doc/html/farstream-libs-${API_VERSION}0/ch01.html
+share/gtk-doc/html/farstream-libs-${API_VERSION}0/ch02.html
+share/gtk-doc/html/farstream-libs-${API_VERSION}0/ch03.html
+share/gtk-doc/html/farstream-libs-${API_VERSION}0/ch04.html
+share/gtk-doc/html/farstream-libs-${API_VERSION}0/ch05.html
+share/gtk-doc/html/farstream-libs-${API_VERSION}0/farstream-libs-${API_VERSION}0.devhelp2
+share/gtk-doc/html/farstream-libs-${API_VERSION}0/farstream-libs-FsCandidate.html
+share/gtk-doc/html/farstream-libs-${API_VERSION}0/farstream-libs-FsCodec.html
+share/gtk-doc/html/farstream-libs-${API_VERSION}0/farstream-libs-FsPlugin.html
+share/gtk-doc/html/farstream-libs-${API_VERSION}0/farstream-libs-RTP-Specific-types.html
+share/gtk-doc/html/farstream-libs-${API_VERSION}0/farstream-libs-Utility-functions.html
+share/gtk-doc/html/farstream-libs-${API_VERSION}0/home.png
+share/gtk-doc/html/farstream-libs-${API_VERSION}0/index.html
+share/gtk-doc/html/farstream-libs-${API_VERSION}0/index.sgml
+share/gtk-doc/html/farstream-libs-${API_VERSION}0/left.png
+share/gtk-doc/html/farstream-libs-${API_VERSION}0/pt01.html
+share/gtk-doc/html/farstream-libs-${API_VERSION}0/pt02.html
+share/gtk-doc/html/farstream-libs-${API_VERSION}0/right.png
+share/gtk-doc/html/farstream-libs-${API_VERSION}0/style.css
+share/gtk-doc/html/farstream-libs-${API_VERSION}0/up.png
+share/gtk-doc/html/farstream-plugins-${API_VERSION}/
+share/gtk-doc/html/farstream-plugins-${API_VERSION}/ch01.html
+share/gtk-doc/html/farstream-plugins-${API_VERSION}/ch02.html
+share/gtk-doc/html/farstream-plugins-${API_VERSION}/ch03.html
+share/gtk-doc/html/farstream-plugins-${API_VERSION}/farstream-plugins-${API_VERSION}0.devhelp2
+share/gtk-doc/html/farstream-plugins-${API_VERSION}/farstream-plugins-FsFunnel.html
+share/gtk-doc/html/farstream-plugins-${API_VERSION}/farstream-plugins-FsMsnCamCamRecvConference.html
+share/gtk-doc/html/farstream-plugins-${API_VERSION}/farstream-plugins-FsMsnCamSendConference.html
+share/gtk-doc/html/farstream-plugins-${API_VERSION}/farstream-plugins-FsMsnConference.html
+share/gtk-doc/html/farstream-plugins-${API_VERSION}/farstream-plugins-FsMsnParticipant.html
+share/gtk-doc/html/farstream-plugins-${API_VERSION}/farstream-plugins-FsMsnSession.html
+share/gtk-doc/html/farstream-plugins-${API_VERSION}/farstream-plugins-FsMsnStream.html
+share/gtk-doc/html/farstream-plugins-${API_VERSION}/farstream-plugins-FsMulticastStreamTransmitter.html
+share/gtk-doc/html/farstream-plugins-${API_VERSION}/farstream-plugins-FsNiceStreamTransmitter.html
+share/gtk-doc/html/farstream-plugins-${API_VERSION}/farstream-plugins-FsRawConference.html
+share/gtk-doc/html/farstream-plugins-${API_VERSION}/farstream-plugins-FsRawParticipant.html
+share/gtk-doc/html/farstream-plugins-${API_VERSION}/farstream-plugins-FsRawSession.html
+share/gtk-doc/html/farstream-plugins-${API_VERSION}/farstream-plugins-FsRawStream.html
+share/gtk-doc/html/farstream-plugins-${API_VERSION}/farstream-plugins-FsRawUdpStreamTransmitter.html
+share/gtk-doc/html/farstream-plugins-${API_VERSION}/farstream-plugins-FsRtpConference.html
+share/gtk-doc/html/farstream-plugins-${API_VERSION}/farstream-plugins-FsRtpParticipant.html
+share/gtk-doc/html/farstream-plugins-${API_VERSION}/farstream-plugins-FsRtpSession.html
+share/gtk-doc/html/farstream-plugins-${API_VERSION}/farstream-plugins-FsRtpStream.html
+share/gtk-doc/html/farstream-plugins-${API_VERSION}/farstream-plugins-FsShmStreamTransmitter.html
+share/gtk-doc/html/farstream-plugins-${API_VERSION}/farstream-plugins-GstVideoanyrate.html
+share/gtk-doc/html/farstream-plugins-${API_VERSION}/home.png
+share/gtk-doc/html/farstream-plugins-${API_VERSION}/index.html
+share/gtk-doc/html/farstream-plugins-${API_VERSION}/index.sgml
+share/gtk-doc/html/farstream-plugins-${API_VERSION}/left.png
+share/gtk-doc/html/farstream-plugins-${API_VERSION}/pt01.html
+share/gtk-doc/html/farstream-plugins-${API_VERSION}/pt02.html
+share/gtk-doc/html/farstream-plugins-${API_VERSION}/pt03.html
+share/gtk-doc/html/farstream-plugins-${API_VERSION}/right.png
+share/gtk-doc/html/farstream-plugins-${API_VERSION}/style.css
+share/gtk-doc/html/farstream-plugins-${API_VERSION}/up.png

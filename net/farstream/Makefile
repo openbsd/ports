@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2012/09/21 07:02:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2012/09/28 13:07:52 jasper Exp $
 
 COMMENT=		audio/video communications framework
 
@@ -7,6 +7,9 @@ CATEGORIES=		net devel
 REVISION=		4
 
 SHARED_LIBS +=  farstream-0.1        0.0      # 0.1
+
+API_VERSION=		0.1
+SUBST_VARS+=		API_VERSION
 
 HOMEPAGE=		http://www.freedesktop.org/wiki/Software/Farstream
 
@@ -45,5 +48,8 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-gupnp \
 			--enable-python \
 			--enable-introspection
+
+post-install:
+	rm ${PREFIX}/lib/farstream-${API_VERSION}/*.{a,la}
 
 .include <bsd.port.mk>
