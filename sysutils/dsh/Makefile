@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/09/28 20:37:54 rpe Exp $
+# $OpenBSD: Makefile,v 1.5 2012/09/28 22:14:28 naddy Exp $
 
 COMMENT=	dancers shell or distributed shell
 
@@ -6,7 +6,7 @@ DISTNAME=	dsh-0.25.9
 CATEGORIES=	sysutils net
 
 HOMEPAGE=	http://www.netfort.gr.jp/~dancer/software/dsh.html.en
-MASTER_SITES=	${HOMEPAGE}downloads/
+MASTER_SITES=	http://www.netfort.gr.jp/~dancer/software/downloads/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
