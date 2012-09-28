@@ -1,7 +1,7 @@
-$OpenBSD: patch-pbx_pbx_spool_c,v 1.1 2012/03/17 23:08:20 sthen Exp $
---- pbx/pbx_spool.c.orig	Tue Oct 25 20:08:04 2011
-+++ pbx/pbx_spool.c	Sat Mar 17 22:57:23 2012
-@@ -716,6 +716,12 @@ static void *scan_thread(void *unused)
+$OpenBSD: patch-pbx_pbx_spool_c,v 1.2 2012/09/28 00:03:57 sthen Exp $
+--- pbx/pbx_spool.c.orig	Mon Feb 13 22:03:33 2012
++++ pbx/pbx_spool.c	Thu Mar 29 21:47:56 2012
+@@ -723,6 +723,12 @@ static void *scan_thread(void *unused)
  		queue_created_files();
  #else
  			struct timespec ts2 = { next - now, 0 };

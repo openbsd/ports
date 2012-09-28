@@ -1,0 +1,13 @@
+$OpenBSD: patch-configs_res_odbc_conf_sample,v 1.1 2012/09/28 00:03:57 sthen Exp $
+--- configs/res_odbc.conf.sample.orig	Thu Sep 20 13:29:33 2012
++++ configs/res_odbc.conf.sample	Thu Sep 20 13:30:00 2012
+@@ -19,8 +19,7 @@
+ ; If not specified, it is assumed the section is enabled.
+ enabled => no
+ ;
+-; This value should match an entry in /etc/odbc.ini
+-; (or /usr/local/etc/odbc.ini, on FreeBSD and similar systems).
++; This value should match an entry in /etc/iodbc/odbc.ini
+ dsn => asterisk
+ ;
+ ; Username for connecting to the database.  The default user is "root".
