@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.187 2012/08/16 13:14:30 stsp Exp $
+# $OpenBSD: Makefile,v 1.188 2012/09/28 11:02:58 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += anjuta
@@ -32,7 +32,6 @@
      SUBDIR += gcalctool
      SUBDIR += gcr
      SUBDIR += gdl
-     SUBDIR += gdl1
      SUBDIR += gdlmm
      SUBDIR += gdm
      SUBDIR += gedit
