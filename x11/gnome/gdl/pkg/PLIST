@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/03/29 07:17:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2012/09/28 10:56:53 jasper Exp $
 %%SHARED%%
 include/libgdl-3.0/
 include/libgdl-3.0/gdl/
@@ -26,19 +26,32 @@ share/gtk-doc/html/gdl-3.0/
 share/gtk-doc/html/gdl-3.0/GdlDock.html
 share/gtk-doc/html/gdl-3.0/GdlDockBar.html
 share/gtk-doc/html/gdl-3.0/GdlDockItem.html
+share/gtk-doc/html/gdl-3.0/GdlDockItemButtonImage.html
+share/gtk-doc/html/gdl-3.0/GdlDockItemGrip.html
 share/gtk-doc/html/gdl-3.0/GdlDockLayout.html
 share/gtk-doc/html/gdl-3.0/GdlDockMaster.html
+share/gtk-doc/html/gdl-3.0/GdlDockNotebook.html
 share/gtk-doc/html/gdl-3.0/GdlDockObject.html
+share/gtk-doc/html/gdl-3.0/GdlDockPaned.html
 share/gtk-doc/html/gdl-3.0/GdlDockPlaceholder.html
+share/gtk-doc/html/gdl-3.0/GdlDockTablabel.html
+share/gtk-doc/html/gdl-3.0/GdlPreviewWindow.html
+share/gtk-doc/html/gdl-3.0/GdlSwitcher.html
+share/gtk-doc/html/gdl-3.0/annotation-glossary.html
+share/gtk-doc/html/gdl-3.0/api-index-full.html
+share/gtk-doc/html/gdl-3.0/api.html
+share/gtk-doc/html/gdl-3.0/core.html
+share/gtk-doc/html/gdl-3.0/deprecated.html
 share/gtk-doc/html/gdl-3.0/gdl-3.0.devhelp2
-share/gtk-doc/html/gdl-3.0/gdl-main.html
 share/gtk-doc/html/gdl-3.0/home.png
 share/gtk-doc/html/gdl-3.0/index.html
 share/gtk-doc/html/gdl-3.0/index.sgml
 share/gtk-doc/html/gdl-3.0/left.png
+share/gtk-doc/html/gdl-3.0/private.html
 share/gtk-doc/html/gdl-3.0/right.png
 share/gtk-doc/html/gdl-3.0/style.css
 share/gtk-doc/html/gdl-3.0/up.png
+share/gtk-doc/html/gdl-3.0/widget.html
 share/locale/am/
 share/locale/am/LC_MESSAGES/
 share/locale/am/LC_MESSAGES/gdl-3.mo
