@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_defaults_h,v 1.1 2012/09/01 00:00:32 pascal Exp $
---- gcc/defaults.h.orig	Thu Aug 30 10:05:31 2012
-+++ gcc/defaults.h	Thu Aug 30 10:06:01 2012
-@@ -1413,6 +1413,10 @@ see the files COPYING3 and COPYING.RUNTIME respectivel
+$OpenBSD: patch-gcc_defaults_h,v 1.2 2012/09/28 18:45:42 pascal Exp $
+--- gcc/defaults.h.orig	Tue Aug 14 15:59:04 2012
++++ gcc/defaults.h	Mon Sep 24 16:32:09 2012
+@@ -1418,6 +1418,10 @@ see the files COPYING3 and COPYING.RUNTIME respectivel
  #define SWITCHABLE_TARGET 0
  #endif
  

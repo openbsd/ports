@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2012/09/28 15:02:29 pascal Exp $
+# $OpenBSD: Makefile,v 1.18 2012/09/28 18:45:42 pascal Exp $
 
-ONLY_FOR_ARCHS = amd64 i386 powerpc sparc sparc64
+ONLY_FOR_ARCHS = amd64 i386 powerpc sparc64
 BROKEN-sparc64 = ICE in libgcc
 
-V = 4.7.1
+V = 4.7.2
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
 BOOTSTRAP_GEN = 0
@@ -21,13 +21,6 @@ PKGNAME-ada =   gnat-${FULL_PKGVERSION}
 # needs [gs]etcontext
 #PKGNAME-go =	gccgo-${FULL_PKGVERSION}
 PKGSPEC-main = gcc->=4.7,<4.8
-
-REVISION-main =	4
-REVISION-c++ =	4
-REVISION-estdc = 3
-REVISION-f95 =	4
-REVISION-objc = 4
-REVISION-ada =	4
 
 SHARED_LIBS =	estdc++		15.0 \
 		gfortran	4.0 \
@@ -48,6 +41,8 @@ ONLY_FOR_ARCHS-ada = i386
 ONLY_FOR_ARCHS-java = amd64 i386 sparc64
 
 MULTI_PACKAGES = -main -f95 -objc -c++ -estdc -ada
+
+MAINTAINER =	Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
 .include <bsd.port.arch.mk>
 
