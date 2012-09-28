@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.78 2012/08/04 14:50:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.79 2012/09/28 07:09:22 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	GNOME settings daemon
 
 GNOME_PROJECT=	gnome-settings-daemon
-GNOME_VERSION=	3.4.2
-REVISION=	2
+GNOME_VERSION=	3.6.0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -25,14 +24,15 @@ WANTLIB += nspr4 nss3 nssutil3 ogg pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
 WANTLIB += pulse pulse-mainloop-glib smime3 sndfile softokn3 sqlite3
 WANTLIB += ssl ssl3 stdc++ upower-glib vorbis vorbisfile xcb xcb-render
-WANTLIB += xcb-shm xkbfile xklavier xml2 z
+WANTLIB += xcb-shm xkbfile xklavier xml2 z icuuc
+WANTLIB += ICE SM atk-bridge-2.0 atspi harfbuzz icudata icule
 
 MODULES=	devel/gettext \
 		x11/gnome
 
-LIB_DEPENDS=	devel/libnotify>=0.7.2 \
-		x11/gnome/desktop \
-		x11/gnome/libgnomekbd \
+LIB_DEPENDS=	devel/libnotify \
+		x11/gnome/desktop>=3.6.0 \
+		x11/gnome/libgnomekbd>=3.6.0 \
 		security/nss \
 		print/cups,-libs \
 		audio/pulseaudio \
@@ -40,14 +40,14 @@ LIB_DEPENDS=	devel/libnotify>=0.7.2 \
 		sysutils/upower \
 		graphics/colord
 
-BUILD_DEPENDS=	devel/gsettings-desktop-schemas
-RUN_DEPENDS=	devel/gsettings-desktop-schemas
+BUILD_DEPENDS=	devel/gsettings-desktop-schemas>=3.6.0
+RUN_DEPENDS=	devel/gsettings-desktop-schemas>=3.6.0
 
 # share/polkit-1/actions/org.gnome.settings-daemon.plugins.power.policy
 RUN_DEPENDS +=	sysutils/polkit
 
 # otherwise we end up without icons on minimal install
-RUN_DEPENDS+=	x11/gnome/icon-theme
+RUN_DEPENDS +=	x11/gnome/icon-theme
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
@@ -62,20 +62,11 @@ CONFIGURE_ARGS=	--disable-static \
 		--disable-gudev \
 		--disable-systemd
 
-FAKE_FLAGS+=	desktopdir=${PREFIX}/share/examples/gnome-settings-daemon/xdg/autostart \
+# XXX requires ibus >= 1.4.99
+CONFIGURE_ARGS += --disable-ibus
+
+FAKE_FLAGS=	desktopdir=${PREFIX}/share/examples/gnome-settings-daemon/xdg/autostart \
 		sysconfdir=${PREFIX}/share/examples/gnome-settings-daemon \
 		DBUS_SYS_DIR=${PREFIX}/share/examples/gnome-settings-daemon/dbus-1/system.d
-
-AUTOCONF_VERSION=	2.68
-AUTOMAKE_VERSION=	1.11
-BUILD_DEPENDS +=devel/autoconf/${AUTOCONF_VERSION} \
-		devel/automake/${AUTOMAKE_VERSION} \
-		devel/libtool
-
-pre-configure:
-	@cd ${WRKSRC} && \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		autoreconf -i
 
 .include <bsd.port.mk>
