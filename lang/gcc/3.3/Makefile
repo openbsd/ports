@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2012/09/01 00:00:32 pascal Exp $
+# $OpenBSD: Makefile,v 1.63 2012/09/28 15:02:28 pascal Exp $
 
 ONLY_FOR_ARCHS =	alpha amd64 i386 m68k sparc sparc64 powerpc vax
 
@@ -68,7 +68,7 @@ DISTFILES =  		${DISTNAME}.tar.bz2
 SUPDISTFILES =		${ADASTRAP}:0
 
 MASTER_SITES =	${MASTER_SITE_GCC:=releases/gcc-$(FULL_VERSION)/}
-MASTER_SITES0 =	ftp://quatramaran.ens.fr/pub/espie/
+MASTER_SITES0 =	http://distfiles.tmux.org/adastrap/
 
 CONFIGURE_STYLE =	gnu
 MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC} ${WRKSRC}/gcc
