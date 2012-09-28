@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/08/16 13:50:09 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/09/28 11:11:21 jasper Exp $
 %%SHARED%%
 @bin bin/grilo-simple-playlist
 @bin bin/grilo-test-ui-${API}
 @bin bin/grl-inspect-${API}
 include/grilo-${API}/
 include/grilo-${API}/grilo.h
+include/grilo-${API}/grl-caps.h
 include/grilo-${API}/grl-config.h
 include/grilo-${API}/grl-data.h
 include/grilo-${API}/grl-definitions.h
@@ -13,17 +14,19 @@ include/grilo-${API}/grl-log.h
 include/grilo-${API}/grl-media-audio.h
 include/grilo-${API}/grl-media-box.h
 include/grilo-${API}/grl-media-image.h
-include/grilo-${API}/grl-media-plugin.h
-include/grilo-${API}/grl-media-source.h
 include/grilo-${API}/grl-media-video.h
 include/grilo-${API}/grl-media.h
 include/grilo-${API}/grl-metadata-key.h
-include/grilo-${API}/grl-metadata-source.h
 include/grilo-${API}/grl-multiple.h
+include/grilo-${API}/grl-operation-options.h
 include/grilo-${API}/grl-operation.h
-include/grilo-${API}/grl-plugin-registry.h
+include/grilo-${API}/grl-plugin.h
+include/grilo-${API}/grl-range-value.h
+include/grilo-${API}/grl-registry.h
 include/grilo-${API}/grl-related-keys.h
+include/grilo-${API}/grl-source.h
 include/grilo-${API}/grl-util.h
+include/grilo-${API}/grl-value-helper.h
 include/grilo-${API}/net/
 include/grilo-${API}/net/grl-net-wc.h
 include/grilo-${API}/net/grl-net.h
@@ -37,6 +40,7 @@ lib/libgrlnet-${API}.la
 lib/pkgconfig/
 lib/pkgconfig/grilo-${API}.pc
 lib/pkgconfig/grilo-net-${API}.pc
+@man man/man1/grl-inspect.1
 share/gir-1.0/
 share/gir-1.0/Grl-${API}.gir
 share/gir-1.0/GrlNet-${API}.gir
