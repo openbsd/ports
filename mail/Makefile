@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.284 2012/09/27 15:12:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.285 2012/09/28 14:08:59 ajacoutot Exp $
  
      SUBDIR =
      SUBDIR += abook
@@ -47,7 +47,6 @@
      SUBDIR += elm
      SUBDIR += evolution
      SUBDIR += evolution-ews
-     SUBDIR += evolution-exchange
      SUBDIR += evolution-rss
      SUBDIR += exim
      SUBDIR += exim,ldap
