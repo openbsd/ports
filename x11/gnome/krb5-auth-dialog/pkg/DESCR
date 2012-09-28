@@ -1,2 +1,0 @@
-krb5-auth-dialog is a simple dialog that monitors kerberos tickets, and
-pops up a dialog when they are about to expire.

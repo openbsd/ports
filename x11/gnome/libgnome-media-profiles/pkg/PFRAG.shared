@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/07/25 16:30:55 ajacoutot Exp $
-@lib lib/libgnome-media-profiles-3.0.so.${LIBgnome-media-profiles-3.0_VERSION}
