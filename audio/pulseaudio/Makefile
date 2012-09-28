@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2012/09/22 06:08:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2012/09/28 17:09:03 eric Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		cross-platform networked sound server
 
 VERSION=		2.0
 DISTNAME=		pulseaudio-${VERSION}
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  pulse                1.1      # .14.2
 SHARED_LIBS +=  pulse-simple         0.0      # .0.3
@@ -26,7 +26,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c crypto execinfo gdbm glib-2.0 json ltdl m ossaudio
-WANTLIB += pcre pthread sndfile speexdsp ssl stdc++
+WANTLIB += pcre pthread sndfile sndio speexdsp ssl stdc++
 
 MASTER_SITES=		http://freedesktop.org/software/pulseaudio/releases/
 TAR=			${LOCALBASE}/bin/gtar
@@ -94,7 +94,22 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 
 FAKE_FLAGS=		pulseconfdir="${PREFIX}/share/examples/pulseaudio/pulse/"
 
+### SNDIO ###
+CONFIGURE_STYLE=	gnu
+AUTOMAKE_VERSION=	1.12
+BUILD_DEPENDS +=	${MODGNU_AUTOMAKE_DEPENDS} \
+			${MODGNU_AUTOCONF_DEPENDS}
+BUILD_DEPENDS +=	devel/libtool # needs needs libtoolize
+
+post-extract:
+	cp ${FILESDIR}/module-sndio*.{c,h} ${WRKSRC}/src/modules/
+
 pre-configure:
+	cd ${WRKSRC} && \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		autoreconf -i
+### END SNDIO ###
 	${SUBST_CMD} ${WRKSRC}/src/daemon/default.pa.in \
 			${WRKSRC}/src/pulse/util.c
 

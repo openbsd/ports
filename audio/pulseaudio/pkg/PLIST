@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2012/05/14 17:45:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2012/09/28 17:09:03 eric Exp $
 @newgroup _pulse:683
 @newgroup _pulse-access:684
 @newuser _pulse:683:683:daemon:PulseAudio System Daemon:/var/run/pulse:/sbin/nologin
@@ -110,6 +110,7 @@ lib/pulse-${VERSION}/modules/module-simple-protocol-tcp.so
 lib/pulse-${VERSION}/modules/module-simple-protocol-unix.so
 lib/pulse-${VERSION}/modules/module-sine-source.so
 lib/pulse-${VERSION}/modules/module-sine.so
+lib/pulse-${VERSION}/modules/module-sndio.so
 lib/pulse-${VERSION}/modules/module-stream-restore.so
 lib/pulse-${VERSION}/modules/module-suspend-on-idle.so
 lib/pulse-${VERSION}/modules/module-switch-on-connect.so
