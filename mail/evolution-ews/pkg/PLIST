@@ -1,34 +1,38 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/03/29 06:59:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/09/28 14:07:55 ajacoutot Exp $
 include/evolution-data-server-${EVO_VERSION}/ews/
 include/evolution-data-server-${EVO_VERSION}/ews/e-ews-connection.h
+include/evolution-data-server-${EVO_VERSION}/ews/e-ews-enums.h
+include/evolution-data-server-${EVO_VERSION}/ews/e-ews-enumtypes.h
 include/evolution-data-server-${EVO_VERSION}/ews/e-ews-folder.h
 include/evolution-data-server-${EVO_VERSION}/ews/e-ews-item-change.h
 include/evolution-data-server-${EVO_VERSION}/ews/e-ews-item.h
 include/evolution-data-server-${EVO_VERSION}/ews/e-ews-message.h
+include/evolution-data-server-${EVO_VERSION}/ews/e-ews-oof-settings.h
 include/evolution-data-server-${EVO_VERSION}/ews/ews-errors.h
 lib/evolution-data-server-${EVO_VERSION}/
 lib/evolution-data-server-${EVO_VERSION}/libeews-1.2.la
 @lib lib/evolution-data-server-${EVO_VERSION}/libeews-1.2.so.${LIBeews-1.2_VERSION}
 lib/evolution-data-server-${EVO_VERSION}/libewsutils.la
 @lib lib/evolution-data-server-${EVO_VERSION}/libewsutils.so.${LIBewsutils_VERSION}
-@comment lib/evolution-data-server/addressbook-backends/libebookbackendews.la
 lib/evolution-data-server/addressbook-backends/libebookbackendews.so
-@comment lib/evolution-data-server/calendar-backends/libecalbackendews.la
 lib/evolution-data-server/calendar-backends/libecalbackendews.so
-lib/evolution-data-server/camel-providers/libcamelews.la
 lib/evolution-data-server/camel-providers/libcamelews.so
 lib/evolution-data-server/camel-providers/libcamelews.urls
-@comment lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-exchange-ews.la
-lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-exchange-ews.so
-lib/evolution/${EVO_VERSION}/plugins/org-gnome-exchange-ews.eplug
+lib/evolution-data-server/registry-modules/module-ews-backend.so
+lib/evolution/${EVO_VERSION}/modules/module-ews-configuration.so
 lib/liblzx.la
 @lib lib/liblzx.so.${LIBlzx_VERSION}
 lib/pkgconfig/libeews-1.2.pc
+share/evolution/${EVO_VERSION}/errors/module-ews-configuration.error
 share/locale/cs/LC_MESSAGES/evolution-ews.mo
 share/locale/da/LC_MESSAGES/evolution-ews.mo
 share/locale/de/LC_MESSAGES/evolution-ews.mo
+share/locale/en_GB/LC_MESSAGES/evolution-ews.mo
 share/locale/es/LC_MESSAGES/evolution-ews.mo
+share/locale/fr/LC_MESSAGES/evolution-ews.mo
+share/locale/gl/LC_MESSAGES/evolution-ews.mo
 share/locale/hu/LC_MESSAGES/evolution-ews.mo
+share/locale/lv/LC_MESSAGES/evolution-ews.mo
 share/locale/nb/LC_MESSAGES/evolution-ews.mo
 share/locale/pl/LC_MESSAGES/evolution-ews.mo
 share/locale/pt_BR/LC_MESSAGES/evolution-ews.mo
