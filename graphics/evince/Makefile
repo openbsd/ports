@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2012/09/01 14:36:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.83 2012/09/28 11:44:52 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ COMMENT-dvi=	evince document viewer backend for dvi documents
 COMMENT-nautilus= evince plugin for nautilus
 
 GNOME_PROJECT=	evince
-GNOME_VERSION=	3.4.0
+GNOME_VERSION=	3.6.0
 
 MAJ_V=		3.0
 SUBST_VARS=	MAJ_V
@@ -19,11 +19,6 @@ PKGNAME-main=	${DISTNAME}
 PKGNAME-djvu=	evince-djvu-${GNOME_VERSION}
 PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}
 PKGNAME-nautilus= nautilus-evince-${GNOME_VERSION}
-
-REVISION-main=	2
-REVISION-djvu=	1
-REVISION-dvi=	0
-REVISION-nautilus=0
 
 SHARED_LIBS +=  evdocument3               0.0 # 3.0
 SHARED_LIBS +=  evview3                   0.0 # 3.0
@@ -54,6 +49,7 @@ WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gtk-3 pango-1.0 Xau Xdmcp Xxf86vm
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs
 WANTLIB += GL xcb-shm xcb xcb-render z gthread-2.0 cairo-gobject m ffi
+WANTLIB += atk-bridge-2.0 atspi harfbuzz icudata icule icuuc
 
 MODGNOME_TOOLS= goi yelp
 
@@ -74,7 +70,8 @@ RUN_DEPENDS-main= ${RUN_DEPENDS} \
 		x11/gnome/icon-theme \
 		${MODGNOME_RUN_DEPENDS_yelp}
 
-WANTLIB-djvu=	${WANTLIB} jpeg evdocument3 djvulibre
+WANTLIB-djvu=	${WANTLIB} jpeg evdocument3 djvulibre ICE SM \
+		 dbus-1 pthread
 # port-lib-depends-check misses these ones because the depending lib
 # is under lib/evince/3/backends/
 LIB_DEPENDS-djvu= ${LIB_DEPENDS} \
@@ -90,7 +87,8 @@ LIB_DEPENDS-dvi= ${LIB_DEPENDS} \
 		print/texlive/base \
 		print/libspectre
 
-WANTLIB-nautilus= ${WANTLIB} gthread-2.0 nautilus-extension evdocument3
+WANTLIB-nautilus= ${WANTLIB} gthread-2.0 nautilus-extension evdocument3 \
+		ICE SM dbus-1 pthread
 LIB_DEPENDS-nautilus= ${BASE_PKGPATH} \
 		${LIB_DEPENDS} \
 		x11/gnome/nautilus
