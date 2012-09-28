@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.69 2012/09/01 14:36:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2012/09/28 18:56:55 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
-GNOME_VERSION=		3.4.4
-REVISION=		1
+GNOME_VERSION=		3.6.0
 
 SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 
@@ -42,29 +41,28 @@ WANTLIB += svn_ra-1 svn_ra_local-1 svn_ra_neon-1 svn_ra_svn-1
 WANTLIB += svn_repos-1 svn_subr-1 svn_wc-1 util vala-0.18 vte2_90
 WANTLIB += webkitgtk-3.0 xcb xcb-render xcb-shm xml2 xslt z
 WANTLIB += dbus-1 dbus-glib-1 javascriptcoregtk-3.0 magic
-WANTLIB += gcrypt gda-5.0 gnome-keyring gpg-error
-WANTLIB += geoclue gstaudio-0.10 gstfft-0.10 proxy
+WANTLIB += gcrypt gda-5.0 gpg-error atk-bridge-2.0 atspi harfbuzz
+WANTLIB += geoclue gstaudio-0.10 gstfft-0.10 proxy icule secret-1
 WANTLIB += ${MODPY_WANTLIB}
 
 BUILD_DEPENDS=		devel/autogen>=5.6.5 \
 			devel/bison
-RUN_DEPENDS=		misc/shared-mime-info
+RUN_DEPENDS=		misc/shared-mime-info \
+			devel/subversion,-gnome-keyring
 LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			devel/glade \
 			devel/subversion \
 			devel/vte3 \
-			lang/vala>=0.15.2 \
+			lang/vala>=0.18.0 \
 			textproc/icu4c \
 			x11/gnome/devhelp \
 			x11/gnome/gdl \
 			x11/gtksourceview3 \
-			x11/gnome/libgda
+			x11/gnome/libgda \
+			x11/gnome/libsecret
 
 # needed by plugins/class-gen/plugin.c
-RUN_DEPENDS += devel/autogen
-
-# we already depend on libgnome-keyring so it's cheap
-RUN_DEPENDS += devel/subversion,-gnome-keyring
+RUN_DEPENDS +=		devel/autogen
 
 LIBTOOL_FLAGS=		--tag=disable-static
 MODGNOME_DESKTOP_FILE=	Yes
@@ -77,14 +75,12 @@ YACC=			bison -y
 CONFIGURE_ARGS+=	--disable-static \
 			--enable-plugin-subversion \
 			--with-symbol-db-shm=/tmp
+# XXX: configure can't find c++???
+CONFIGURE_ENV+=		ac_ct_CXX=/usr/bin/c++
 
-# adds dependency on libgnomeui
-CONFIGURE_ARGS+=	--disable-graphviz
-
-# XXX: Remove when updating to the next release
+# XXX: needed because of patch-m4_intltool_m4
 AUTOCONF_VERSION=	2.68
 CONFIGURE_STYLE=	autoconf
-######
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/plugins/project-wizard/templates/pygtk.wiz.in \
