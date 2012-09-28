@@ -1,9 +1,9 @@
-$OpenBSD: patch-panels_user-accounts_Makefile_am,v 1.1 2012/06/18 11:30:50 ajacoutot Exp $
+$OpenBSD: patch-panels_user-accounts_Makefile_am,v 1.2 2012/09/28 09:34:33 ajacoutot Exp $
 
 On OpenBSD, crypt() is part of libc.
 
---- panels/user-accounts/Makefile.am.orig	Mon Jun 18 13:05:02 2012
-+++ panels/user-accounts/Makefile.am	Mon Jun 18 13:05:29 2012
+--- panels/user-accounts/Makefile.am.orig	Mon Sep 24 17:39:34 2012
++++ panels/user-accounts/Makefile.am	Fri Sep 28 10:32:43 2012
 @@ -10,7 +10,7 @@ ccpanels_LTLIBRARIES = libuser-accounts.la
  AM_CPPFLAGS =						\
  	-DDATADIR=\""$(datadir)"\"			\
@@ -12,11 +12,11 @@ On OpenBSD, crypt() is part of libc.
 +	-DLIBLOCALEDIR=\""/usr/share/locale"\" 		\
  	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"        \
  	-DUM_PIXMAP_DIR=\""$(pkgdatadir)/pixmaps"\"	\
- 	-I$(srcdir)/../common/				\
-@@ -56,7 +56,6 @@ libuser_accounts_la_LIBADD = 		\
- 	$(PANEL_LIBS)			\
+ 	-DHAVE_LIBPWQUALITY				\
+@@ -67,7 +67,6 @@ libuser_accounts_la_LIBADD = 		\
  	$(USER_ACCOUNTS_PANEL_LIBS)	\
  	$(top_builddir)/panels/common/liblanguage.la \
+ 	-lpwquality			\
 -	-lcrypt				\
  	-lm
  

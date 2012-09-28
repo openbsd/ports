@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2012/06/15 08:30:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2012/09/28 09:34:33 ajacoutot Exp $
 @conflict control-center-1*
 @conflict control-center2-*
 @conflict gnome-media-<2.91.2p3
@@ -8,36 +8,21 @@
 @bin bin/gnome-sound-applet
 lib/control-center-1/
 lib/control-center-1/panels/
-@comment lib/control-center-1/panels/libbackground.la
 lib/control-center-1/panels/libbackground.so
-@comment lib/control-center-1/panels/libcolor.la
 lib/control-center-1/panels/libcolor.so
-@comment lib/control-center-1/panels/libdate_time.la
 lib/control-center-1/panels/libdate_time.so
-@comment lib/control-center-1/panels/libdisplay.la
 lib/control-center-1/panels/libdisplay.so
-@comment lib/control-center-1/panels/libinfo.la
 lib/control-center-1/panels/libinfo.so
-@comment lib/control-center-1/panels/libkeyboard.la
 lib/control-center-1/panels/libkeyboard.so
-@comment lib/control-center-1/panels/libmouse-properties.la
 lib/control-center-1/panels/libmouse-properties.so
-@comment lib/control-center-1/panels/libonline-accounts.la
 lib/control-center-1/panels/libonline-accounts.so
-@comment lib/control-center-1/panels/libpower.la
 lib/control-center-1/panels/libpower.so
-@comment lib/control-center-1/panels/libprinters.la
 lib/control-center-1/panels/libprinters.so
-@comment lib/control-center-1/panels/libregion.la
 lib/control-center-1/panels/libregion.so
-@comment lib/control-center-1/panels/libscreen.la
 lib/control-center-1/panels/libscreen.so
-@comment lib/control-center-1/panels/libsound.la
 lib/control-center-1/panels/libsound.so
-@comment lib/control-center-1/panels/libuniversal-access.la
 lib/control-center-1/panels/libuniversal-access.so
-@comment lib/control-center-1/panels/libuser-accounts.la
-lib/control-center-1/panels/libuser-accounts.so
+@man man/man1/gnome-control-center.1
 share/applications/gnome-background-panel.desktop
 share/applications/gnome-color-panel.desktop
 share/applications/gnome-control-center.desktop
@@ -53,7 +38,6 @@ share/applications/gnome-region-panel.desktop
 share/applications/gnome-screen-panel.desktop
 share/applications/gnome-sound-panel.desktop
 share/applications/gnome-universal-access-panel.desktop
-share/applications/gnome-user-accounts-panel.desktop
 share/desktop-directories/gnomecc.directory
 share/examples/gnome-control-center/
 share/examples/gnome-control-center/xdg/
@@ -123,116 +107,125 @@ share/gnome-control-center/icons/hicolor/48x48/devices/audio-subwoofer-testing.s
 share/gnome-control-center/icons/hicolor/48x48/devices/audio-subwoofer.svg
 share/gnome-control-center/keybindings/
 share/gnome-control-center/keybindings/00-multimedia.xml
+share/gnome-control-center/keybindings/01-input-sources.xml
 share/gnome-control-center/keybindings/01-launchers.xml
 share/gnome-control-center/keybindings/01-screenshot.xml
 share/gnome-control-center/keybindings/01-system.xml
 share/gnome-control-center/keybindings/50-accessibility.xml
-share/gnome-control-center/pixmaps/
-share/gnome-control-center/pixmaps/double-click-maybe.png
-share/gnome-control-center/pixmaps/double-click-off.png
-share/gnome-control-center/pixmaps/double-click-on.png
-share/gnome-control-center/pixmaps/gnome-about-me-lock-open.png
-share/gnome-control-center/pixmaps/gnome-about-me-lock.png
-share/gnome-control-center/pixmaps/left-index-finger.png
-share/gnome-control-center/pixmaps/left-index-finger.svg
-share/gnome-control-center/pixmaps/left-little-finger.png
-share/gnome-control-center/pixmaps/left-little-finger.svg
-share/gnome-control-center/pixmaps/left-middle-finger.png
-share/gnome-control-center/pixmaps/left-middle-finger.svg
-share/gnome-control-center/pixmaps/left-ring-finger.png
-share/gnome-control-center/pixmaps/left-ring-finger.svg
-share/gnome-control-center/pixmaps/left-thumb.png
-share/gnome-control-center/pixmaps/left-thumb.svg
-share/gnome-control-center/pixmaps/print_error.png
-share/gnome-control-center/pixmaps/print_error.svg
-share/gnome-control-center/pixmaps/print_ok.png
-share/gnome-control-center/pixmaps/print_ok.svg
-share/gnome-control-center/pixmaps/right-index-finger.png
-share/gnome-control-center/pixmaps/right-index-finger.svg
-share/gnome-control-center/pixmaps/right-little-finger.png
-share/gnome-control-center/pixmaps/right-little-finger.svg
-share/gnome-control-center/pixmaps/right-middle-finger.png
-share/gnome-control-center/pixmaps/right-middle-finger.svg
-share/gnome-control-center/pixmaps/right-ring-finger.png
-share/gnome-control-center/pixmaps/right-ring-finger.svg
-share/gnome-control-center/pixmaps/right-thumb.png
-share/gnome-control-center/pixmaps/right-thumb.svg
 share/gnome-control-center/sounds/
 share/gnome-control-center/sounds/gnome-sounds-default.xml
 share/gnome-control-center/ui/
 share/gnome-control-center/ui/GnomeLogoVerticalMedium.svg
 share/gnome-control-center/ui/background/
 share/gnome-control-center/ui/background/background.ui
-share/gnome-control-center/ui/background/display-base.png
-share/gnome-control-center/ui/background/display-overlay.png
 share/gnome-control-center/ui/color.ui
 share/gnome-control-center/ui/datetime/
 share/gnome-control-center/ui/datetime/bg.png
+share/gnome-control-center/ui/datetime/bg_dim.png
 share/gnome-control-center/ui/datetime/cc.png
 share/gnome-control-center/ui/datetime/datetime.ui
 share/gnome-control-center/ui/datetime/pin.png
 share/gnome-control-center/ui/datetime/timezone_-1.png
 share/gnome-control-center/ui/datetime/timezone_-10.png
+share/gnome-control-center/ui/datetime/timezone_-10_dim.png
 share/gnome-control-center/ui/datetime/timezone_-11.png
+share/gnome-control-center/ui/datetime/timezone_-11_dim.png
+share/gnome-control-center/ui/datetime/timezone_-1_dim.png
 share/gnome-control-center/ui/datetime/timezone_-2.png
+share/gnome-control-center/ui/datetime/timezone_-2_dim.png
 share/gnome-control-center/ui/datetime/timezone_-3.5.png
+share/gnome-control-center/ui/datetime/timezone_-3.5_dim.png
 share/gnome-control-center/ui/datetime/timezone_-3.png
+share/gnome-control-center/ui/datetime/timezone_-3_dim.png
 share/gnome-control-center/ui/datetime/timezone_-4.5.png
+share/gnome-control-center/ui/datetime/timezone_-4.5_dim.png
 share/gnome-control-center/ui/datetime/timezone_-4.png
+share/gnome-control-center/ui/datetime/timezone_-4_dim.png
 share/gnome-control-center/ui/datetime/timezone_-5.5.png
+share/gnome-control-center/ui/datetime/timezone_-5.5_dim.png
 share/gnome-control-center/ui/datetime/timezone_-5.png
+share/gnome-control-center/ui/datetime/timezone_-5_dim.png
 share/gnome-control-center/ui/datetime/timezone_-6.png
+share/gnome-control-center/ui/datetime/timezone_-6_dim.png
 share/gnome-control-center/ui/datetime/timezone_-7.png
+share/gnome-control-center/ui/datetime/timezone_-7_dim.png
 share/gnome-control-center/ui/datetime/timezone_-8.png
+share/gnome-control-center/ui/datetime/timezone_-8_dim.png
 share/gnome-control-center/ui/datetime/timezone_-9.5.png
+share/gnome-control-center/ui/datetime/timezone_-9.5_dim.png
 share/gnome-control-center/ui/datetime/timezone_-9.png
+share/gnome-control-center/ui/datetime/timezone_-9_dim.png
 share/gnome-control-center/ui/datetime/timezone_0.png
+share/gnome-control-center/ui/datetime/timezone_0_dim.png
 share/gnome-control-center/ui/datetime/timezone_1.png
 share/gnome-control-center/ui/datetime/timezone_10.5.png
+share/gnome-control-center/ui/datetime/timezone_10.5_dim.png
 share/gnome-control-center/ui/datetime/timezone_10.png
+share/gnome-control-center/ui/datetime/timezone_10_dim.png
 share/gnome-control-center/ui/datetime/timezone_11.5.png
+share/gnome-control-center/ui/datetime/timezone_11.5_dim.png
 share/gnome-control-center/ui/datetime/timezone_11.png
+share/gnome-control-center/ui/datetime/timezone_11_dim.png
 share/gnome-control-center/ui/datetime/timezone_12.75.png
+share/gnome-control-center/ui/datetime/timezone_12.75_dim.png
 share/gnome-control-center/ui/datetime/timezone_12.png
+share/gnome-control-center/ui/datetime/timezone_12_dim.png
 share/gnome-control-center/ui/datetime/timezone_13.png
+share/gnome-control-center/ui/datetime/timezone_13_dim.png
 share/gnome-control-center/ui/datetime/timezone_14.png
+share/gnome-control-center/ui/datetime/timezone_14_dim.png
+share/gnome-control-center/ui/datetime/timezone_1_dim.png
 share/gnome-control-center/ui/datetime/timezone_2.png
+share/gnome-control-center/ui/datetime/timezone_2_dim.png
 share/gnome-control-center/ui/datetime/timezone_3.5.png
+share/gnome-control-center/ui/datetime/timezone_3.5_dim.png
 share/gnome-control-center/ui/datetime/timezone_3.png
+share/gnome-control-center/ui/datetime/timezone_3_dim.png
 share/gnome-control-center/ui/datetime/timezone_4.5.png
+share/gnome-control-center/ui/datetime/timezone_4.5_dim.png
 share/gnome-control-center/ui/datetime/timezone_4.png
+share/gnome-control-center/ui/datetime/timezone_4_dim.png
 share/gnome-control-center/ui/datetime/timezone_5.5.png
+share/gnome-control-center/ui/datetime/timezone_5.5_dim.png
 share/gnome-control-center/ui/datetime/timezone_5.75.png
+share/gnome-control-center/ui/datetime/timezone_5.75_dim.png
 share/gnome-control-center/ui/datetime/timezone_5.png
+share/gnome-control-center/ui/datetime/timezone_5_dim.png
 share/gnome-control-center/ui/datetime/timezone_6.5.png
+share/gnome-control-center/ui/datetime/timezone_6.5_dim.png
 share/gnome-control-center/ui/datetime/timezone_6.png
+share/gnome-control-center/ui/datetime/timezone_6_dim.png
 share/gnome-control-center/ui/datetime/timezone_7.png
+share/gnome-control-center/ui/datetime/timezone_7_dim.png
 share/gnome-control-center/ui/datetime/timezone_8.75.png
+share/gnome-control-center/ui/datetime/timezone_8.75_dim.png
 share/gnome-control-center/ui/datetime/timezone_8.png
+share/gnome-control-center/ui/datetime/timezone_8_dim.png
 share/gnome-control-center/ui/datetime/timezone_9.5.png
+share/gnome-control-center/ui/datetime/timezone_9.5_dim.png
 share/gnome-control-center/ui/datetime/timezone_9.png
+share/gnome-control-center/ui/datetime/timezone_9_dim.png
 share/gnome-control-center/ui/display-capplet.ui
 share/gnome-control-center/ui/gnome-keyboard-panel.ui
 share/gnome-control-center/ui/gnome-mouse-properties.ui
-share/gnome-control-center/ui/gnome-region-panel-layout-chooser.ui
-share/gnome-control-center/ui/gnome-region-panel-options-dialog.ui
+share/gnome-control-center/ui/gnome-mouse-test.ui
+share/gnome-control-center/ui/gnome-region-panel-input-chooser.ui
 share/gnome-control-center/ui/gnome-region-panel.ui
 share/gnome-control-center/ui/info.ui
 share/gnome-control-center/ui/language-chooser.ui
 share/gnome-control-center/ui/online-accounts.ui
 share/gnome-control-center/ui/power.ui
 share/gnome-control-center/ui/printers/
+share/gnome-control-center/ui/printers/jobs-dialog.ui
 share/gnome-control-center/ui/printers/new-printer-dialog.ui
+share/gnome-control-center/ui/printers/options-dialog.ui
+share/gnome-control-center/ui/printers/ppd-selection-dialog.ui
 share/gnome-control-center/ui/printers/printers.ui
 share/gnome-control-center/ui/screen.ui
+share/gnome-control-center/ui/scroll-test-gegl.svg
+share/gnome-control-center/ui/scroll-test.svg
 share/gnome-control-center/ui/shell.ui
 share/gnome-control-center/ui/uap.ui
-share/gnome-control-center/ui/user-accounts/
-share/gnome-control-center/ui/user-accounts/account-dialog.ui
-share/gnome-control-center/ui/user-accounts/account-fingerprint.ui
-share/gnome-control-center/ui/user-accounts/password-dialog.ui
-share/gnome-control-center/ui/user-accounts/photo-dialog.ui
-share/gnome-control-center/ui/user-accounts/user-accounts-dialog.ui
 share/gnome-control-center/ui/zoom-options.ui
 share/icons/hicolor/16x16/apps/gnome-power-manager.png
 share/icons/hicolor/16x16/apps/goa-panel.png
@@ -449,34 +442,10 @@ share/locale/zh_HK/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-control-center-2.0-timezones.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/zu/LC_MESSAGES/gnome-control-center-2.0.mo
-share/pixmaps/
-share/pixmaps/faces/
-share/pixmaps/faces/astronaut.jpg
-share/pixmaps/faces/baseball.png
-share/pixmaps/faces/butterfly.png
-share/pixmaps/faces/cat-eye.jpg
-share/pixmaps/faces/chess.jpg
-share/pixmaps/faces/coffee.jpg
-share/pixmaps/faces/dice.jpg
-share/pixmaps/faces/energy-arc.jpg
-share/pixmaps/faces/fish.jpg
-share/pixmaps/faces/flake.jpg
-share/pixmaps/faces/flower.jpg
-share/pixmaps/faces/grapes.jpg
-share/pixmaps/faces/guitar.jpg
-share/pixmaps/faces/launch.jpg
-share/pixmaps/faces/leaf.jpg
-share/pixmaps/faces/lightning.jpg
-share/pixmaps/faces/penguin.jpg
-share/pixmaps/faces/puppy.jpg
-share/pixmaps/faces/sky.jpg
-share/pixmaps/faces/soccerball.png
-share/pixmaps/faces/sunflower.jpg
-share/pixmaps/faces/sunset.jpg
-share/pixmaps/faces/tennis-ball.png
-share/pixmaps/faces/yellow-rose.jpg
 share/pkgconfig/gnome-keybindings.pc
 share/polkit-1/actions/org.gnome.controlcenter.datetime.policy
+share/polkit-1/rules.d/
+share/polkit-1/rules.d/gnome-control-center.rules
 share/sounds/gnome/
 share/sounds/gnome/default/
 share/sounds/gnome/default/alerts/

@@ -1,23 +1,14 @@
-$OpenBSD: patch-panels_Makefile_am,v 1.2 2012/05/25 11:50:42 ajacoutot Exp $
+$OpenBSD: patch-panels_Makefile_am,v 1.3 2012/09/28 09:34:33 ajacoutot Exp $
 
-From 0b782b5633249a1f8c15a24399a833ac2e41c6d5 Mon Sep 17 00:00:00 2001
-From: Antoine Jacoutot <ajacoutot@gnome.org>
-Date: Thu, 24 May 2012 07:50:52 +0000
-Subject: disable wacom on s390/s390x and non Linux platforms
+XXX our krb5 is tool old, so disable the user account panel for the time beeing.
 
---- panels/Makefile.am.orig	Mon Mar  5 15:04:55 2012
-+++ panels/Makefile.am	Thu May 24 09:23:10 2012
-@@ -13,8 +13,11 @@ SUBDIRS= \
+--- panels/Makefile.am.orig	Fri Sep 28 11:02:59 2012
++++ panels/Makefile.am	Fri Sep 28 11:03:06 2012
+@@ -12,7 +12,6 @@ SUBDIRS= \
+ 	sound \
  	keyboard \
  	universal-access \
- 	user-accounts \
--	datetime \
--	wacom
-+	datetime
-+
-+if BUILD_WACOM
-+SUBDIRS += wacom
-+endif
+-	user-accounts \
+ 	datetime
  
- if BUILD_PRINTERS
- SUBDIRS += printers
+ if BUILD_WACOM
