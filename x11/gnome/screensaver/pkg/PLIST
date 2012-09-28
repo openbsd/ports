@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2012/04/14 20:19:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2012/09/28 15:24:24 ajacoutot Exp $
 @bin bin/gnome-screensaver
 @bin bin/gnome-screensaver-command
 @mode u+s
@@ -6,9 +6,6 @@
 @mode
 @man man/man1/gnome-screensaver-command.1
 @man man/man1/gnome-screensaver.1
-share/doc/gnome-screensaver/
-share/doc/gnome-screensaver/spec/
-share/doc/gnome-screensaver/spec/gnome-screensaver.html
 share/examples/gnome-xscreensaver/
 share/examples/gnome-xscreensaver/xdg/
 @sample ${SYSCONFDIR}/xdg/
