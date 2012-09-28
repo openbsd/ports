@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2012/09/28 15:57:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.116 2012/09/28 16:02:21 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -103,6 +103,8 @@ WANTLIB-nautilus += atk-1.0 cairo cairo-gobject e2fs-uuid gdk-3 gdk_pixbuf-2.0
 WANTLIB-nautilus += gtk-3 nautilus-extension pango-1.0 pangocairo-1.0 dbus-1
 WANTLIB-nautilus += pangoft2-1.0 png sqlite3 tracker-sparql-0.14 stdc++
 
+BUILD_DEPENDS=		lang/vala
+
 LIB_DEPENDS=		converters/libunistring
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
@@ -132,7 +134,7 @@ LIB_DEPENDS-nautilus=	${LIB_DEPENDS} \
 
 LIBTOOL_FLAGS=	--tag=disable-static
 
-MODGNOME_TOOLS= 	goi vala
+MODGNOME_TOOLS= 	goi
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 MODPY_BUILDDEP=		No
