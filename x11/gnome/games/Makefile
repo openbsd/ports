@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.64 2012/09/01 14:36:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2012/09/28 11:24:45 jasper Exp $
 
 COMMENT=		collection of games for the GNOME desktop
 
 GNOME_PROJECT=		gnome-games
-GNOME_VERSION=		3.4.2
-REVISION=		2
-
-SHARED_LIBS +=  games-support-gi          1.0 # 0.0
+GNOME_VERSION=		3.6.0.2
 
 CATEGORIES=		games
 
@@ -27,7 +24,8 @@ WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 gtk-3
 WANTLIB += json-glib-1.0 ltdl m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs rsvg-2 sqlite3
 WANTLIB += stdc++ vorbis vorbisfile xcb xcb-render xcb-shm xml2
-WANTLIB += z
+WANTLIB += ICE SM atk-bridge-2.0 atspi dbus-1 harfbuzz icudata
+WANTLIB += icule icuuc z
 
 MODULES=		devel/dconf \
 			devel/gettext \
@@ -41,7 +39,6 @@ LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 RUN_DEPENDS=		games/gnuchess \
 			multimedia/gstreamer-0.10/plugins-good \
 			devel/py-gobject3
-REGRESS_DEPENDS=	devel/check
 
 MODGNOME_TOOLS= 	goi yelp
 
