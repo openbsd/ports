@@ -1,15 +1,10 @@
-# $OpenBSD: Makefile,v 1.68 2012/09/26 02:11:05 lteo Exp $
+# $OpenBSD: Makefile,v 1.69 2012/09/28 19:30:54 sthen Exp $
 
-SHARED_ONLY = 		Yes
+SHARED_ONLY =		Yes
 
 COMMENT =		highly flexible sniffer/NIDS
 
-# Original URL http://dl.snort.org/downloads/1862 redirects to a
-# time-limited Amazon S3 url. This would mean a bad distfile name.
-# The following hack allows it to work but XXX if updating, the
-# MASTER_SITES URL will need to be adjusted, not just DISTNAME.
-DISTNAME = 		snort-2.9.3.1
-MASTER_SITES = 		http://www.snort.org/downloads/1862?/
+DISTNAME =		snort-2.9.3.1
 
 CATEGORIES =		net security
 
@@ -18,11 +13,14 @@ HOMEPAGE =		http://www.snort.org/
 MAINTAINER =		Markus Lude <markus.lude@gmx.de>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM = 	Yes
-PERMIT_PACKAGE_FTP =   	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP = 	Yes
+PERMIT_DISTFILES_FTP =	Yes
+
 WANTLIB =		c daq dnet m pcap pcre pthread z
+
+MASTER_SITES =		http://www.snort.org/dl/snort-current/
 
 USE_LIBTOOL =		Yes
 USE_GROFF =		Yes
