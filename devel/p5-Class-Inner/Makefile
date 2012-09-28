@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/12/03 11:44:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2012/09/28 18:56:56 sthen Exp $
 
 COMMENT=	perlish implementation of Java like inner classes
 
 DISTNAME=	Class-Inner-0.1
-REVISION=	1
+REVISION=	2
 CATEGORIES=	devel
-USE_GROFF =	Yes
-
-MAINTAINER=	Sebastian Trahm <basti@schleifi.com>
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
