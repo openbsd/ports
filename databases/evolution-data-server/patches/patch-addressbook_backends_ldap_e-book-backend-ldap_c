@@ -1,10 +1,10 @@
-$OpenBSD: patch-addressbook_backends_ldap_e-book-backend-ldap_c,v 1.7 2012/03/29 06:45:21 ajacoutot Exp $
+$OpenBSD: patch-addressbook_backends_ldap_e-book-backend-ldap_c,v 1.8 2012/09/28 06:35:36 ajacoutot Exp $
 
 On OpenBSD, time_t is an int.
 
---- addressbook/backends/ldap/e-book-backend-ldap.c.orig	Tue Feb 28 06:01:01 2012
-+++ addressbook/backends/ldap/e-book-backend-ldap.c	Fri Mar 23 23:05:19 2012
-@@ -1248,7 +1248,7 @@ create_dn_from_contact (EContact *contact,
+--- addressbook/backends/ldap/e-book-backend-ldap.c.orig	Sun Sep 16 17:41:56 2012
++++ addressbook/backends/ldap/e-book-backend-ldap.c	Thu Sep 27 20:30:27 2012
+@@ -1264,7 +1264,7 @@ create_dn_from_contact (EContact *contact,
  		}
  	}
  

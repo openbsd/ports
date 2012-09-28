@@ -1,15 +1,15 @@
-$OpenBSD: patch-camel_camel-lock_c,v 1.5 2011/12/29 09:23:19 ajacoutot Exp $
+$OpenBSD: patch-camel_camel-lock_c,v 1.6 2012/09/28 06:35:36 ajacoutot Exp $
 
 On OpenBSD, time_t is an int.
 
---- camel/camel-lock.c.orig	Mon Sep 19 07:03:01 2011
-+++ camel/camel-lock.c	Thu Dec 29 09:12:01 2011
+--- camel/camel-lock.c.orig	Fri Sep 28 07:55:00 2012
++++ camel/camel-lock.c	Fri Sep 28 07:55:10 2012
 @@ -128,7 +128,7 @@ camel_lock_dot (const gchar *path,
  		/* check for stale lock, kill it */
  		if (g_stat (lock, &st) == 0) {
  			time_t now = time (NULL);
--			(printf("There is an existing lock %ld seconds old\n", now-st.st_ctime));
-+			(printf("There is an existing lock %d seconds old\n", now-st.st_ctime));
+-			(printf ("There is an existing lock %ld seconds old\n", now - st.st_ctime));
++			(printf ("There is an existing lock %d seconds old\n", now - st.st_ctime));
  			if (st.st_ctime < now - CAMEL_LOCK_DOT_STALE) {
- 				d(printf("Removing it now\n"));
+ 				d (printf ("Removing it now\n"));
  				unlink (lock);

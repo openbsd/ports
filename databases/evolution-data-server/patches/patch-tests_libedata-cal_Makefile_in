@@ -1,13 +1,15 @@
-$OpenBSD: patch-tests_libedata-cal_Makefile_in,v 1.7 2012/06/18 11:15:22 jasper Exp $
---- tests/libedata-cal/Makefile.in.orig	Mon Jun 18 00:11:20 2012
-+++ tests/libedata-cal/Makefile.in	Mon Jun 18 13:06:32 2012
-@@ -477,8 +477,7 @@ test_intervaltree_coverage_LDADD = \
- 	$(top_builddir)/calendar/libedata-cal/libedata-cal-1.2.la	\
- 	$(top_builddir)/calendar/libecal/libecal-1.2.la			\
+$OpenBSD: patch-tests_libedata-cal_Makefile_in,v 1.8 2012/09/28 06:35:36 ajacoutot Exp $
+
+XXX push upstream
+
+--- tests/libedata-cal/Makefile.in.orig	Fri Sep 28 07:49:11 2012
++++ tests/libedata-cal/Makefile.in	Fri Sep 28 07:51:23 2012
+@@ -458,7 +458,7 @@ test_intervaltree_coverage_LDADD = \
  	$(top_builddir)/libedataserver/libedataserver-1.2.la		\
--	$(EVOLUTION_CALENDAR_LIBS)					\
+ 	$(EVOLUTION_CALENDAR_LIBS)					\
+ 	$(CAMEL_LIBS)							\
 -	-lgcov
-+	$(EVOLUTION_CALENDAR_LIBS)
++	$(CODE_COVERAGE_LDFLAGS)
  
  all: all-am
  
