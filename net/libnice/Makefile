@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2012/04/30 09:38:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2012/09/28 14:25:54 jasper Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	GLib ICE implementation
 
-DISTNAME =	libnice-0.1.2
-SHARED_LIBS +=  nice                 1.1      # 10.2
+DISTNAME =	libnice-0.1.3
+SHARED_LIBS +=  nice                 2.0      # 11.0
 CATEGORIES =	net
 
 HOMEPAGE =	http://nice.freedesktop.org/
@@ -20,19 +20,22 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += c e2fs-uuid ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gssdp-1.0 gstbase-0.10 gstreamer-0.10 gthread-2.0 gupnp-1.0
-WANTLIB += gupnp-igd-1.0 m pcre soup-2.4 xml2 z
+WANTLIB += gupnp-igd-1.0 m pcre soup-2.4 xml2 z pthread
+WANTLIB += gstbase-1.0 gstreamer-1.0
 
 MASTER_SITES =		${HOMEPAGE}/releases/
 
 MODULES =		devel/gettext
 
 LIB_DEPENDS =		multimedia/gstreamer-0.10/core \
+			multimedia/gstreamer1/core \
 			net/gupnp/igd
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS = 	${CONFIGURE_SHARED} \
 			--disable-static \
-			--with-gstreamer
+			--with-gstreamer \
+			--without-gstreamer-0.10
 
 USE_GMAKE =		Yes
 USE_LIBTOOL =		Yes
