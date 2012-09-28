@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_fr-command-cpio_c,v 1.4 2011/09/12 07:26:20 ajacoutot Exp $
---- src/fr-command-cpio.c.orig	Tue Mar  1 19:51:35 2011
-+++ src/fr-command-cpio.c	Mon May 23 10:20:44 2011
-@@ -240,7 +240,7 @@ fr_command_cpio_get_capabilities (FrCommand  *comm,
- 	FrCommandCap capabilities;
+$OpenBSD: patch-src_fr-command-cpio_c,v 1.5 2012/09/28 09:10:40 jasper Exp $
+--- src/fr-command-cpio.c.orig	Fri Sep 28 10:03:27 2012
++++ src/fr-command-cpio.c	Fri Sep 28 10:03:36 2012
+@@ -233,7 +233,7 @@ fr_command_cpio_get_capabilities (FrArchive  *archive,
+ 	FrArchiveCap capabilities;
  
- 	capabilities = FR_COMMAND_CAN_ARCHIVE_MANY_FILES;
--	if (is_program_available ("cpio", check_command))
-+	if (is_program_available ("gcpio", check_command))
- 		capabilities |= FR_COMMAND_CAN_READ;
+ 	capabilities = FR_ARCHIVE_CAN_STORE_MANY_FILES;
+-	if (_g_program_is_available ("cpio", check_command))
++	if (_g_program_is_available ("gcpio", check_command))
+ 		capabilities |= FR_ARCHIVE_CAN_READ;
  
  	return capabilities;
