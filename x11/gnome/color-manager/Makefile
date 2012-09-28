@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2012/08/04 15:12:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2012/09/28 08:29:41 ajacoutot Exp $
 
 COMMENT=	color profile manager for GNOME
 
 GNOME_PROJECT=	gnome-color-manager
-GNOME_VERSION=	3.4.2
-REVISION=	3
+GNOME_VERSION=	3.6.0
 
 CATEGORIES=	graphics
 
@@ -23,19 +22,19 @@ WANTLIB += gnome-desktop-3 gobject-2.0 gthread-2.0 gtk-3 jpeg
 WANTLIB += json-glib-1.0 lcms2 ltdl m mash-0.2 ncurses ogg pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs stdc++ tiff util vorbis vorbisfile vte2_90
-WANTLIB += xcb xcb-render xcb-shm z
+WANTLIB += xcb xcb-render xcb-shm z icudata icule icuuc xkbfile
+WANTLIB += ICE SM atk-bridge-2.0 atspi colord-gtk dbus-1 harfbuzz
 
 MODULES=	devel/gettext \
 		x11/gnome
-
 LIB_DEPENDS=	audio/libcanberra,-gtk3 \
 		devel/vte3 \
-		graphics/clutter/clutter-gtk>=1.2.0 \
+		graphics/clutter/clutter-gtk>=1.3.2 \
 		graphics/clutter/mash \
-		graphics/colord \
+		graphics/colord-gtk>=0.1.23 \
 		graphics/exiv2 \
 		graphics/libexif \
-		x11/gnome/desktop
+		x11/gnome/desktop>=3.6.0
 
 RUN_DEPENDS=	graphics/argyll \
 		graphics/shared-color-profiles,-extra \
@@ -45,11 +44,10 @@ MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 MODGNOME_TOOLS=	yelp
 
-CONFIGURE_ARGS=	--enable-exiv \
-		--disable-packagekit
+CONFIGURE_ARGS=	--disable-packagekit
 
 # XXX the --disable-man-pages switch exists but does nothing
-CONFIGURE_ARGS += --disable-man-pages
+CONFIGURE_ARGS +=--disable-man-pages
 CONFIGURE_ENV += ac_cv_path_DOCBOOK2MAN=no
 
 pre-configure:
