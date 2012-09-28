@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.189 2012/09/28 14:30:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.190 2012/09/28 14:51:53 jasper Exp $
 
      SUBDIR =
      SUBDIR += anjuta
@@ -53,7 +53,6 @@
      SUBDIR += icon-theme
      SUBDIR += icon-theme-extras
      SUBDIR += icon-theme-symbolic
-     SUBDIR += js-common
      SUBDIR += keyring
      SUBDIR += latexila
      SUBDIR += libbonobo
@@ -97,7 +96,6 @@
      SUBDIR += seahorse-nautilus
      SUBDIR += seahorse-sharing
      SUBDIR += search-tool
-     SUBDIR += seed
      SUBDIR += session
      SUBDIR += settings-daemon
      SUBDIR += shell
