@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/09/28 07:18:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2012/09/28 12:57:10 ajacoutot Exp $
 
 COMMENT=		GNOME tool to search files
 
@@ -26,7 +26,6 @@ MODULES=		devel/dconf \
 			devel/gettext \
 			x11/gnome
 
-MODGCONF2_SCHEMAS_DIR=	gnome-search-tool
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_TOOLS=		yelp
 
