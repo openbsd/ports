@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.121 2012/09/01 14:36:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.122 2012/09/28 08:38:39 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	GNOME panel
 
 GNOME_PROJECT=	gnome-panel
-GNOME_VERSION=	3.4.2.1
-REVISION=	1
+GNOME_VERSION=	3.6.0
 
-SHARED_LIBS=	panel-applet-4            1.0 # 0.0
+SHARED_LIBS=	panel-applet-4            1.1 # 1.1
 
 CATEGORIES=	x11
 
@@ -23,8 +22,8 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += GL ICE SM X11 X11-xcb XRes Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
 WANTLIB += asn1 atk-1.0 c cairo cairo-gobject camel-1.2 com_err
-WANTLIB += croco-0.6 crypto dbus-1 dbus-glib-1 dconf drm ebook-1.2
-WANTLIB += ecal-1.2 edataserver-1.2 edataserverui-3.0 expat ffi
+WANTLIB += croco-0.6 crypto dbus-1 dbus-glib-1 dconf drm
+WANTLIB += ecal-1.2 edataserver-1.2 expat ffi
 WANTLIB += fontconfig freetype gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gnome-desktop-3 gnome-keyring
 WANTLIB += gnome-menu-3 gobject-2.0 gpg-error gssapi gthread-2.0
@@ -34,9 +33,10 @@ WANTLIB += plc4 plds4 png polkit-gobject-1 pthread pthread-stubs
 WANTLIB += rsvg-2 smime3 softokn3 soup-2.4 soup-gnome-2.4 sqlite3
 WANTLIB += ssl3 startup-notification-1 stdc++ telepathy-glib wnck-3
 WANTLIB += xcb xcb-aux xcb-render xcb-shm xml2 z
+WANTLIB += atk-bridge-2.0 atspi gck-1 gconf-2 gcr-base-3 harfbuzz
+WANTLIB += icudata icule icuuc nssutil3 p11-kit xkbfile
 
 MODULES=	devel/dconf \
-		devel/gconf2 \
 		devel/gettext \
 		x11/gnome
 
@@ -46,12 +46,12 @@ MODULES+=	lang/python
 MODPY_RUNDEP=	No
 
 BUILD_DEPENDS=	devel/gobject-introspection
-LIB_DEPENDS=	databases/evolution-data-server \
+LIB_DEPENDS=	databases/evolution-data-server>=3.6.0 \
 		devel/libwnck3 \
 		net/telepathy/telepathy-glib \
 		sysutils/polkit \
 		x11/gnome/desktop \
-		x11/gnome/libgweather \
+		x11/gnome/libgweather>=3.6.0 \
 		x11/gnome/menus>=3.2.0 \
 		x11/gnome/librsvg
 RUN_DEPENDS=	x11/gnome/icon-theme-symbolic
@@ -68,7 +68,6 @@ RUN_DEPENDS+=	x11/gnome/user-docs
 MODGNOME_TOOLS= goi yelp
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
-MODGCONF2_SCHEMAS_DIR=	gnome-panel
 
 FAKE_FLAGS=	dbus_confdir=${PREFIX}/share/examples/gnome-panel/dbus-1/system.d
 
