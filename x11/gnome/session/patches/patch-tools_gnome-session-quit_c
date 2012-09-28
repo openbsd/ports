@@ -1,0 +1,70 @@
+$OpenBSD: patch-tools_gnome-session-quit_c,v 1.1 2012/09/28 07:34:24 ajacoutot Exp $
+
+XXX push upstream
+gnome-session-quit.c:48: error: 'reboot' redeclared as different kind of symbol
+/usr/include/unistd.h:480: error: previous declaration of 'reboot' was here
+
+--- tools/gnome-session-quit.c.orig	Fri Sep 28 09:26:07 2012
++++ tools/gnome-session-quit.c	Fri Sep 28 09:28:54 2012
+@@ -43,18 +43,18 @@ enum {
+         GSM_LOGOUT_MODE_FORCE
+ };
+ 
+-static gboolean logout = FALSE;
+-static gboolean power_off = FALSE;
+-static gboolean reboot = FALSE;
+-static gboolean no_prompt = FALSE;
+-static gboolean force = FALSE;
++static gboolean gs_logout = FALSE;
++static gboolean gs_power_off = FALSE;
++static gboolean gs_reboot = FALSE;
++static gboolean gs_no_prompt = FALSE;
++static gboolean gs_force = FALSE;
+ 
+ static GOptionEntry options[] = {
+-        {"logout", '\0', 0, G_OPTION_ARG_NONE, &logout, N_("Log out"), NULL},
+-        {"power-off", '\0', 0, G_OPTION_ARG_NONE, &power_off, N_("Power off"), NULL},
+-        {"reboot", '\0', 0, G_OPTION_ARG_NONE, &reboot, N_("Reboot"), NULL},
+-        {"force", '\0', 0, G_OPTION_ARG_NONE, &force, N_("Ignoring any existing inhibitors"), NULL},
+-        {"no-prompt", '\0', 0, G_OPTION_ARG_NONE, &no_prompt, N_("Don't prompt for user confirmation"), NULL},
++        {"gs_logout", '\0', 0, G_OPTION_ARG_NONE, &gs_logout, N_("Log out"), NULL},
++        {"gs_power-off", '\0', 0, G_OPTION_ARG_NONE, &gs_power_off, N_("Power off"), NULL},
++        {"gs_reboot", '\0', 0, G_OPTION_ARG_NONE, &gs_reboot, N_("Reboot"), NULL},
++        {"gs_force", '\0', 0, G_OPTION_ARG_NONE, &gs_force, N_("Ignoring any existing inhibitors"), NULL},
++        {"gs_no-prompt", '\0', 0, G_OPTION_ARG_NONE, &gs_no_prompt, N_("Don't prompt for user confirmation"), NULL},
+         {NULL}
+ };
+ 
+@@ -193,25 +193,25 @@ main (int argc, char *argv[])
+         }
+ 
+         conflicting_options = 0;
+-        if (logout)
++        if (gs_logout)
+                 conflicting_options++;
+-        if (power_off)
++        if (gs_power_off)
+                 conflicting_options++;
+-        if (reboot)
++        if (gs_reboot)
+                 conflicting_options++;
+         if (conflicting_options > 1)
+                 display_error (_("Program called with conflicting options"));
+ 
+-        if (power_off) {
++        if (gs_power_off) {
+                 do_power_off ("Shutdown");
+-        } else if (reboot) {
++        } else if (gs_reboot) {
+                 do_power_off ("Reboot");
+         } else {
+                 /* default to logout */
+ 
+-                if (force)
++                if (gs_force)
+                         do_logout (GSM_LOGOUT_MODE_FORCE);
+-                else if (no_prompt)
++                else if (gs_no_prompt)
+                         do_logout (GSM_LOGOUT_MODE_NO_CONFIRMATION);
+                 else
+                         do_logout (GSM_LOGOUT_MODE_NORMAL);
