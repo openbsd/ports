@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2012/09/27 07:07:00 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.12 2012/09/28 14:43:43 jasper Exp $
 @bin bin/peas-demo
 include/libpeas-1.0/
 include/libpeas-1.0/libpeas/
@@ -25,8 +25,6 @@ lib/libpeas-1.0/loaders/
 lib/libpeas-1.0/loaders/libgjsloader.so
 @comment lib/libpeas-1.0/loaders/libpythonloader.la
 lib/libpeas-1.0/loaders/libpythonloader.so
-@comment lib/libpeas-1.0/loaders/libseedloader.la
-lib/libpeas-1.0/loaders/libseedloader.so
 lib/libpeas-gtk-1.0.la
 @lib lib/libpeas-gtk-1.0.so.${LIBpeas-gtk-1.0_VERSION}
 lib/peas-demo/
@@ -47,9 +45,6 @@ lib/peas-demo/plugins/secondtime/
 @comment lib/peas-demo/plugins/secondtime/libsecondtime.la
 lib/peas-demo/plugins/secondtime/libsecondtime.so
 lib/peas-demo/plugins/secondtime/secondtime.plugin
-lib/peas-demo/plugins/seedhello/
-lib/peas-demo/plugins/seedhello/seedhello.js
-lib/peas-demo/plugins/seedhello/seedhello.plugin
 lib/pkgconfig/libpeas-1.0.pc
 lib/pkgconfig/libpeas-gtk-1.0.pc
 share/gir-1.0/Peas-1.0.gir
