@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.18 2012/07/05 06:10:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2012/09/28 14:46:11 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		RSS reader plugin for evolution
 
 GNOME_PROJECT=		evolution-rss
-GNOME_VERSION=		0.3.91
-REVISION=		0
+GNOME_VERSION=		0.3.92
 
 CATEGORIES=		mail
 
-EVO_VERSION=		3.4
+EVO_VERSION=		3.6
 SUBST_VARS=		EVO_VERSION
 
 HOMEPAGE=		http://gnome.eu.org/evo/index.php/Evolution_RSS_Reader_Plugin
@@ -40,7 +39,8 @@ WANTLIB += m nspr4 nss3 nssutil3 orc-0.4 pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png pthread pthread-stubs
 WANTLIB += smime3 softokn3 soup-2.4 soup-gnome-2.4 sqlite3 ssl3
 WANTLIB += stdc++ webkitgtk-3.0 xcb xcb-render xcb-shm xml2 xslt
-WANTLIB += z
+WANTLIB += atk-bridge-2.0 atspi gck-1 gcr-base-3 harfbuzz icule
+WANTLIB += p11-kit xkbfile z
 WANTLIB += lib/evolution/${EVO_VERSION}/email-engine
 WANTLIB += lib/evolution/${EVO_VERSION}/email-utils
 WANTLIB += lib/evolution/${EVO_VERSION}/emiscwidgets
@@ -53,25 +53,25 @@ WANTLIB += lib/evolution/${EVO_VERSION}/filter
 WANTLIB += lib/evolution/${EVO_VERSION}/gnomecanvas
 WANTLIB += lib/evolution/${EVO_VERSION}/menus
 
-# tarball from Fedora evolution-rss-0.3.91-1.fc18.src.rpm
-MASTER_SITES=		http://distfiles.bsdfrog.org/
-#MASTER_SITES=		http://gnome.eu.org/
+MASTER_SITES=		http://gnome.eu.org/
 
 MODULES=		devel/gettext \
-			x11/gnome \
-			devel/gconf2
+			devel/dconf \
+			x11/gnome
 
 LIB_DEPENDS=		devel/libsoup,-gnome \
-			mail/evolution,-main>=3.4.0 \
+			mail/evolution,-main>=3.6.0 \
 			www/webkit,gtk3
 
 MODGNOME_DESKTOP_FILE=		Yes
-MODGCONF2_SCHEMAS_DIR=	evolution-rss
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=		--disable-gecko \
 			--with-primary-render=webkit
+
+post-install:
+	rm ${PREFIX}/lib/evolution/${EVO_VERSION}/{plugins,modules}/*.{a,la}
 
 .include <bsd.port.mk>
