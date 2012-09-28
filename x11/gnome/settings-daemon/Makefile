@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2012/09/28 07:09:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2012/09/28 08:28:02 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	GNOME settings daemon
 
 GNOME_PROJECT=	gnome-settings-daemon
 GNOME_VERSION=	3.6.0
+REVISION=	0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -68,5 +69,8 @@ CONFIGURE_ARGS += --disable-ibus
 FAKE_FLAGS=	desktopdir=${PREFIX}/share/examples/gnome-settings-daemon/xdg/autostart \
 		sysconfdir=${PREFIX}/share/examples/gnome-settings-daemon \
 		DBUS_SYS_DIR=${PREFIX}/share/examples/gnome-settings-daemon/dbus-1/system.d
+
+post-install:
+	rm ${PREFIX}/lib/gnome-settings-daemon-3.0/*.la
 
 .include <bsd.port.mk>

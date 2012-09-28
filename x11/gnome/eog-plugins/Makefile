@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2012/09/28 07:51:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.38 2012/09/28 08:28:02 ajacoutot Exp $
 
 COMMENT=		plugins for EOG
 
 GNOME_PROJECT=		eog-plugins
 GNOME_VERSION=		3.6.0
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -43,7 +44,11 @@ RUN_DEPENDS=		x11/gnome/eog>=${GNOME_VERSION}
 
 AUTOCONF_VERSION=	2.68
 CONFIGURE_STYLE= 	autoconf
+# XXX the "postr" plugin needs postr which hasn't been ported yet
 CONFIGURE_ARGS+=	--enable-python \
 			--with-plugins=all
+
+post-install:
+	rm ${PREFIX}/lib/eog/plugins/*.{a,la}
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2012/09/28 07:51:54 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2012/09/28 08:28:02 ajacoutot Exp $
 lib/eog/plugins/exif-display.plugin
 lib/eog/plugins/export-to-folder.plugin
 lib/eog/plugins/export-to-folder.py
@@ -10,26 +10,12 @@ lib/eog/plugins/fullscreenbg.py
 lib/eog/plugins/fullscreenbg.pyc
 lib/eog/plugins/fullscreenbg.pyo
 lib/eog/plugins/hide-titlebar.plugin
-@comment lib/eog/plugins/libexif-display.a
-@comment lib/eog/plugins/libexif-display.la
 lib/eog/plugins/libexif-display.so
-@comment lib/eog/plugins/libfit-to-width.a
-@comment lib/eog/plugins/libfit-to-width.la
 lib/eog/plugins/libfit-to-width.so
-@comment lib/eog/plugins/libhide-titlebar.a
-@comment lib/eog/plugins/libhide-titlebar.la
 lib/eog/plugins/libhide-titlebar.so
-@comment lib/eog/plugins/liblight-theme.a
-@comment lib/eog/plugins/liblight-theme.la
 lib/eog/plugins/liblight-theme.so
-@comment lib/eog/plugins/libmap.a
-@comment lib/eog/plugins/libmap.la
 lib/eog/plugins/libmap.so
-@comment lib/eog/plugins/libpostasa.a
-@comment lib/eog/plugins/libpostasa.la
 lib/eog/plugins/libpostasa.so
-@comment lib/eog/plugins/libsend-by-mail.a
-@comment lib/eog/plugins/libsend-by-mail.la
 lib/eog/plugins/libsend-by-mail.so
 lib/eog/plugins/light-theme.plugin
 lib/eog/plugins/map.plugin

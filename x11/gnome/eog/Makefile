@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.87 2012/09/28 07:51:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.88 2012/09/28 08:28:02 ajacoutot Exp $
 
 COMMENT=		Eye of GNOME, image viewing and cataloging program
 
 GNOME_PROJECT=		eog
 GNOME_VERSION=		3.6.0
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -48,5 +49,8 @@ MODGNOME_ICON_CACHE=	Yes
 
 CONFIGURE_ARGS+=	--with-xmp \
 			--with-libexif
+
+post-install:
+	rm ${PREFIX}/lib/eog/plugins/*.{a,la}
 
 .include <bsd.port.mk>
