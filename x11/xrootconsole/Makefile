@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/22 08:37:06 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2012/09/28 18:58:59 sthen Exp $
 
 COMMENT=		writes any log live onto the background
 V=			0.6
 DISTNAME=		xrootconsole-${V}
-REVISION=		1
-CATEGORIES=		x11	
-
-MAINTAINER=		Sebastian Trahm <basti@schleifi.com>
+REVISION=		2
+CATEGORIES=		x11
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -14,7 +12,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=        	X11 c util
+WANTLIB=		X11 c util
 
 MASTER_SITES=           ${MASTER_SITE_SOURCEFORGE:=xrootconsole/}
 
@@ -29,7 +27,7 @@ do-build:
 	cd ${WRKSRC} && \
 	${CC} ${CFLAGS} -c main.c -DXROOTCONSOLE_VERSION=\"${V}\"; \
 	${CC} ${CFLAGS} -c util.c -DXROOTCONSOLE_VERSION=\"${V}\"; \
-	${CC} ${LDFLAGS} ${OBJS} -L$(X11BASE)/lib -lX11 -lutil -o xrootconsole; 
+	${CC} ${LDFLAGS} ${OBJS} -L$(X11BASE)/lib -lX11 -lutil -o xrootconsole
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xrootconsole ${PREFIX}/bin
