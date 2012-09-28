@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/09/18 07:54:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/09/28 10:18:24 ajacoutot Exp $
 include/gstreamer-${VERSION}/gst/basecamerabinsrc/
 include/gstreamer-${VERSION}/gst/basecamerabinsrc/gstbasecamerasrc.h
 include/gstreamer-${VERSION}/gst/basecamerabinsrc/gstcamerabin-enum.h
@@ -57,6 +57,7 @@ lib/gstreamer-${VERSION}/libgstsdpelem.so
 lib/gstreamer-${VERSION}/libgstsegmentclip.so
 lib/gstreamer-${VERSION}/libgstsiren.so
 lib/gstreamer-${VERSION}/libgstsmooth.so
+lib/gstreamer-${VERSION}/libgstsoundtouch.so
 lib/gstreamer-${VERSION}/libgstspeed.so
 lib/gstreamer-${VERSION}/libgstvideoparsersbad.so
 lib/gstreamer-${VERSION}/libgsty4mdec.so
@@ -120,8 +121,6 @@ share/locale/hu/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/id/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/it/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/ja/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
-share/locale/ky/
-share/locale/ky/LC_MESSAGES/
 share/locale/ky/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/lt/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/lv/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
