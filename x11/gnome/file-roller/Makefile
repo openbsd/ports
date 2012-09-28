@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2012/09/28 09:10:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.73 2012/09/28 09:48:44 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -39,12 +39,15 @@ WANTLIB-main=		${WANTLIB} bz2 c lzma archive json-glib-1.0 notify
 RUN_DEPENDS-main=	archivers/gcpio \
 			archivers/gtar \
 			archivers/p7zip \
-			archivers/unrar \
 			archivers/unzip \
 			archivers/xz \
 			archivers/zip \
 			sysutils/cdrtools \
 			${RUN_DEPENDS}
+
+# "The Unarchiver" has not been ported to OpenBSD yet
+RUN_DEPENDS-main +=	archivers/unrar
+
 LIB_DEPENDS-main=	archivers/libarchive \
 			devel/json-glib \
 			devel/libnotify \
