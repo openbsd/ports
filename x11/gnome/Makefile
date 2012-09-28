@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.188 2012/09/28 11:02:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.189 2012/09/28 14:30:36 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += anjuta
@@ -55,7 +55,6 @@
      SUBDIR += icon-theme-symbolic
      SUBDIR += js-common
      SUBDIR += keyring
-     SUBDIR += krb5-auth-dialog
      SUBDIR += latexila
      SUBDIR += libbonobo
      SUBDIR += libbonoboui
@@ -64,7 +63,6 @@
      SUBDIR += libgdamm
      SUBDIR += libgnome
      SUBDIR += libgnome-keyring
-     SUBDIR += libgnome-media-profiles
      SUBDIR += libgnomecanvas
      SUBDIR += libgnomecanvasmm
      SUBDIR += libgnomekbd
@@ -73,7 +71,6 @@
      SUBDIR += librsvg
      SUBDIR += libsecret
      SUBDIR += libxklavier
-     SUBDIR += media
      SUBDIR += menus
      SUBDIR += metacity
      SUBDIR += mime-data
