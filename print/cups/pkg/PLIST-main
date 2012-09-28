@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2012/09/27 10:07:55 giovanni Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2012/09/28 10:19:28 ajacoutot Exp $
 @conflict LPRng-*
 @pkgpath print/cups
 @pkgpath print/cups,ldap
@@ -609,7 +609,7 @@ share/locale/es/
 share/locale/es/cups_es.po
 share/locale/ja/
 share/locale/ja/cups_ja.po
-@exec-update rm -f /var/cache/cups/* 2>/dev/null
+@exec-update rm -f /var/cache/cups/* 2>/dev/null || true
 @extraunexec rm -rf /var/cache/cups
 @extraunexec rm -rf /var/spool/cups
 @rcscript ${RCDIR}/cupsd
