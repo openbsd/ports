@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2012/09/28 17:19:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2012/09/28 17:22:54 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -48,21 +48,8 @@ LIBTOOL_FLAGS=	--tag=disable-static
 
 MODGNOME_LDFLAGS=-Wl,-rpath,${TRUEPREFIX}/lib/tracker-${TRACKER_VERSION}
 
-CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
-		--disable-static \
-		--enable-localmetadata \
-		--enable-vimeo \
-		--enable-apple-trailers \
-		--enable-metadata-store \
-		--enable-podcasts \
-		--enable-upnp \
-		--enable-lastfm-albumart \
-		--enable-jamendo \
-		--enable-flickr \
-		--enable-bliptv \
-		--enable-filesystem \
-		--enable-youtube \
-		--enable-shoutcast
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--disable-static
 
 post-install:
 	rm ${PREFIX}/lib/grilo-${API}/*.la
