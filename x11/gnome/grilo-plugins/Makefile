@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2012/09/28 16:51:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2012/09/28 17:19:24 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -21,16 +21,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += lib/tracker-${TRACKER_VERSION}/tracker-common
-WANTLIB += lib/tracker-${TRACKER_VERSION}/tracker-data
 WANTLIB += archive bz2 c crypto curl dbus-1 e2fs-uuid expat ffi
 WANTLIB += gcrypt gdata gio-2.0 glib-2.0 gmime-2.6 gmodule-2.0
 WANTLIB += gnome-keyring gobject-2.0 gpg-error grilo-0.2 grlnet-0.2
 WANTLIB += gssdp-1.0 gthread-2.0 gupnp-1.0 gupnp-av-1.0 idn kvm
 WANTLIB += lua5.1 lzma m nspr4 nss3 oauth pcre plc4 plds4 quvi
 WANTLIB += rest-0.7 smime3 softokn3 soup-2.4 soup-gnome-2.4 sqlite3
-WANTLIB += ssl ssl3 totem-plparser tracker-sparql-0.14 unistring
-WANTLIB += xml2 z pthread
+WANTLIB += ssl ssl3 totem-plparser xml2 z pthread unistring 
+WANTLIB += tracker-sparql-${TRACKER_VERSION}
+WANTLIB += lib/tracker-${TRACKER_VERSION}/tracker-common
+WANTLIB += lib/tracker-${TRACKER_VERSION}/tracker-data
 
 MODULES=	devel/gettext \
 		x11/gnome
