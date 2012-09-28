@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/01/26 08:03:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/09/28 11:40:39 gonzalo Exp $
 @newgroup _mirmon:651
 @newuser _mirmon:651:_mirmon:daemon:mirmon user:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/db/mirmon/*
@@ -16,10 +16,6 @@ share/examples/mirmon/countries.list
 @sample /var/www/htdocs/mirmon/
 @owner
 @sample /var/db/mirmon/countries.list
-share/examples/mirmon/mirmon.db
-@owner _mirmon
-@sample /var/db/mirmon/mirmon.db
-@owner
 share/examples/mirmon/icons/
 @sample /var/www/htdocs/mirmon/icons/
 share/examples/mirmon/icons/bar.gif
@@ -235,3 +231,6 @@ share/examples/mirmon/icons/vbrw.gif
 @sample /var/www/htdocs/mirmon/icons/vbrw.gif
 share/examples/mirmon/mirmon.conf
 @sample /etc/mirmon.conf
+share/examples/mirmon/mirmon.db
+@owner _mirmon
+@sample /var/db/mirmon/mirmon.db

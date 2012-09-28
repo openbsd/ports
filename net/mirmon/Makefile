@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2012/01/26 08:03:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2012/09/28 11:40:39 gonzalo Exp $
 
 COMMENT=	monitors the status of mirrors
 
-DISTNAME=	mirmon-2.4
-REVISION=	0
+DISTNAME=	mirmon-2.6
 
 CATEGORIES=	net
 HOMEPAGE=	http://people.cs.uu.nl/henkp/mirmon/
@@ -22,7 +21,6 @@ MODULES=	perl
 ICONDIR=	${PREFIX}/share/examples/mirmon/icons
 
 RUN_DEPENDS=	net/rsync net/wget
-USE_GROFF =	Yes
 NO_REGRESS=	Yes
 PKG_ARCH=	*
 
