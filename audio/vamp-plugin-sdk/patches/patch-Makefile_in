@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2009/03/14 03:48:07 jakemsr Exp $
---- Makefile.in.orig	Mon Dec  1 03:48:41 2008
-+++ Makefile.in	Fri Mar 13 19:39:36 2009
+$OpenBSD: patch-Makefile_in,v 1.2 2012/09/28 01:47:02 brad Exp $
+--- Makefile.in.orig	Mon Dec  1 06:48:41 2008
++++ Makefile.in	Wed Aug 22 18:50:43 2012
 @@ -75,15 +75,15 @@ INSTALL_SDK_LIBS	  := $(INSTALL_PREFIX)/lib
  INSTALL_PLUGINS		  := $(INSTALL_PREFIX)/lib/vamp
  INSTALL_BINARIES	  := $(INSTALL_PREFIX)/bin 
@@ -23,15 +23,19 @@ $OpenBSD: patch-Makefile_in,v 1.1 2009/03/14 03:48:07 jakemsr Exp $
  INSTALL_HOSTSDK_STATIC    := libvamp-hostsdk.a
  INSTALL_HOSTSDK_LA        := libvamp-hostsdk.la
  
-@@ -91,7 +91,7 @@ INSTALL_PKGCONFIG	  := $(INSTALL_PREFIX)/lib/pkgconfig
+@@ -91,9 +91,9 @@ INSTALL_PKGCONFIG	  := $(INSTALL_PREFIX)/lib/pkgconfig
  
  # Flags required to tell the compiler to create a dynamically loadable object
  #
 -DYNAMIC_LDFLAGS		= -static-libgcc -shared -Wl,-Bsymbolic
-+DYNAMIC_LDFLAGS		= -shared -fPIC
- SDK_DYNAMIC_LDFLAGS	= $(DYNAMIC_LDFLAGS) -Wl,-soname=$(INSTALL_SDK_LINK_ABI)
- HOSTSDK_DYNAMIC_LDFLAGS	= $(DYNAMIC_LDFLAGS) -Wl,-soname=$(INSTALL_HOSTSDK_LINK_ABI)
+-SDK_DYNAMIC_LDFLAGS	= $(DYNAMIC_LDFLAGS) -Wl,-soname=$(INSTALL_SDK_LINK_ABI)
+-HOSTSDK_DYNAMIC_LDFLAGS	= $(DYNAMIC_LDFLAGS) -Wl,-soname=$(INSTALL_HOSTSDK_LINK_ABI)
++DYNAMIC_LDFLAGS		= -shared -fPIC -Wl,-Bsymbolic
++SDK_DYNAMIC_LDFLAGS	= $(DYNAMIC_LDFLAGS)
++HOSTSDK_DYNAMIC_LDFLAGS	= $(DYNAMIC_LDFLAGS)
  
+ # Additional flags for making a plugin.  This version script tells the
+ # GNU linker to make all symbols in the library hidden except for the
 @@ -157,10 +157,10 @@ HOSTSDK_STATIC	= \
  		$(SRCDIR)/libvamp-hostsdk.a
  
