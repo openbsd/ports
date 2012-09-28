@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/05/24 11:52:38 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/09/28 16:51:21 jasper Exp $
 lib/grilo-${API}/
 lib/grilo-${API}/grl-apple-trailers.xml
 lib/grilo-${API}/grl-bliptv.xml
@@ -12,39 +12,25 @@ lib/grilo-${API}/grl-local-metadata.xml
 lib/grilo-${API}/grl-metadata-store.xml
 lib/grilo-${API}/grl-optical-media.xml
 lib/grilo-${API}/grl-podcasts.xml
+lib/grilo-${API}/grl-shoutcast.xml
 lib/grilo-${API}/grl-tracker.xml
 lib/grilo-${API}/grl-upnp.xml
 lib/grilo-${API}/grl-vimeo.xml
 lib/grilo-${API}/grl-youtube.xml
-@comment lib/grilo-${API}/libgrlappletrailers.la
 lib/grilo-${API}/libgrlappletrailers.so
-@comment lib/grilo-${API}/libgrlbliptv.la
 lib/grilo-${API}/libgrlbliptv.so
-@comment lib/grilo-${API}/libgrlbookmarks.la
 lib/grilo-${API}/libgrlbookmarks.so
-@comment lib/grilo-${API}/libgrlfilesystem.la
 lib/grilo-${API}/libgrlfilesystem.so
-@comment lib/grilo-${API}/libgrlflickr.la
 lib/grilo-${API}/libgrlflickr.so
-@comment lib/grilo-${API}/libgrlgravatar.la
 lib/grilo-${API}/libgrlgravatar.so
-@comment lib/grilo-${API}/libgrljamendo.la
 lib/grilo-${API}/libgrljamendo.so
-@comment lib/grilo-${API}/libgrllastfm-albumart.la
 lib/grilo-${API}/libgrllastfm-albumart.so
-@comment lib/grilo-${API}/libgrllocalmetadata.la
 lib/grilo-${API}/libgrllocalmetadata.so
-@comment lib/grilo-${API}/libgrlmetadatastore.la
 lib/grilo-${API}/libgrlmetadatastore.so
-@comment lib/grilo-${API}/libgrloptical-media.la
 lib/grilo-${API}/libgrloptical-media.so
-@comment lib/grilo-${API}/libgrlpodcasts.la
 lib/grilo-${API}/libgrlpodcasts.so
-@comment lib/grilo-${API}/libgrltracker.la
+lib/grilo-${API}/libgrlshoutcast.so
 lib/grilo-${API}/libgrltracker.so
-@comment lib/grilo-${API}/libgrlupnp.la
 lib/grilo-${API}/libgrlupnp.so
-@comment lib/grilo-${API}/libgrlvimeo.la
 lib/grilo-${API}/libgrlvimeo.so
-@comment lib/grilo-${API}/libgrlyoutube.la
 lib/grilo-${API}/libgrlyoutube.so
