@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_daemon_default_pa_in,v 1.6 2012/09/29 09:32:52 ajacoutot Exp $
+--- src/daemon/default.pa.in.orig	Mon Mar 19 09:44:02 2012
++++ src/daemon/default.pa.in	Sat Sep 22 11:39:34 2012
+@@ -63,6 +63,8 @@ ifelse(@HAVE_MKFIFO@, 1, [dnl
+ #load-module module-pipe-sink
+ ])dnl
+ 
++load-module module-sndio.so record="false"
++
+ ### Automatically load driver modules depending on the hardware available
+ ifelse(@HAVE_UDEV@, 1, [dnl
+ .ifexists module-udev-detect@PA_SOEXT@
+@@ -73,11 +75,11 @@ load-module module-udev-detect
+ load-module module-hal-detect
+ .else
+ ], [dnl
+-.ifexists module-detect@PA_SOEXT@
++#.ifexists module-detect@PA_SOEXT@
+ ])dnl
+ ### Use the static hardware detection module (for systems that lack udev/hal support)
+-load-module module-detect
+-.endif
++#load-module module-detect
++#.endif
+ 
+ ### Automatically connect sink and source if JACK server is present
+ .ifexists module-jackdbus-detect@PA_SOEXT@
