@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST-tracker,v 1.1 2012/02/18 23:05:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST-tracker,v 1.2 2012/09/29 10:38:11 jasper Exp $
 include/folks/folks-tracker.h
 lib/folks/${API_V}/backends/tracker/
-@comment lib/folks/${API_V}/backends/tracker/tracker.a
-@comment lib/folks/${API_V}/backends/tracker/tracker.la
 lib/folks/${API_V}/backends/tracker/tracker.so
 lib/libfolks-tracker.a
 lib/libfolks-tracker.la

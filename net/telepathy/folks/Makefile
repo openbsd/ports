@@ -1,32 +1,32 @@
-# $OpenBSD: Makefile,v 1.39 2012/08/29 17:50:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2012/09/29 10:38:11 jasper Exp $
 
 COMMENT-main=		people aggregation library
 COMMENT-tracker=	(meta-)tracker backend for folks
 
 GNOME_PROJECT=		folks
-GNOME_VERSION=		0.7.0
-REVISION=		0
-API_V=			33
+GNOME_VERSION=		0.7.4.1
+API_V=			37
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-tracker=	${GNOME_PROJECT}-meta-tracker-${GNOME_VERSION}
 
-SHARED_LIBS +=  folks-telepathy           5.0 # 33.0
-SHARED_LIBS +=  folks                     5.1 # 33.0
-SHARED_LIBS +=  folks-eds                 0.1 # 33.0
-SHARED_LIBS +=  folks-libsocialweb        0.0 # 33.0
-SHARED_LIBS +=  folks-tracker             0.0 # 33.0
+SHARED_LIBS +=  folks-telepathy           5.0 # 37.0
+SHARED_LIBS +=  folks                     5.1 # 37.0
+SHARED_LIBS +=  folks-eds                 0.1 # 37.0
+SHARED_LIBS +=  folks-libsocialweb        0.0 # 37.0
+SHARED_LIBS +=  folks-tracker             0.0 # 37.0
 
 TRACKER_VERSION=	0.14
 SUBST_VARS=		API_V TRACKER_VERSION
 
 HOMEPAGE=		${HOMEPAGE_TP:=Folks}
 
-MODULES=		devel/gettext \
+MODULES=		devel/dconf \
+			devel/gettext \
 			x11/gnome
 
-WANTLIB += dbus-1 dbus-glib-1 ffi gconf-2 gee gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 m pcre sqlite3
+WANTLIB += ffi gee gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB += m pcre sqlite3
 
 MULTI_PACKAGES=		-main -tracker
 
@@ -34,21 +34,23 @@ WANTLIB-main += ${WANTLIB}
 WANTLIB-main += asn1 c camel-1.2 com_err crypto ebook-1.2 edataserver-1.2
 WANTLIB-main += gssapi krb5 ncurses nspr4 nss3 socialweb-client plc4 plds4
 WANTLIB-main += pthread readline smime3 softokn3 soup-2.4 ssl3 telepathy-glib
-WANTLIB-main += xml2 z
+WANTLIB-main += xml2 z gck-1 gcr-base-3 gcrypt gnome-keyring gpg-error
+WANTLIB-main += nssutil3 p11-kit zeitgeist-1.0 dbus-1 dbus-glib-1
 
 LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
 			databases/evolution-data-server \
 			devel/libgee06 \
 			net/telepathy/telepathy-glib>=0.15.5 \
-			net/libsocialweb
+			net/libsocialweb \
+			productivity/libzeitgeist
 RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS} \
 			net/telepathy/telepathy-mission-control
 
 WANTLIB-tracker += ${WANTLIB}
 WANTLIB-tracker += lib/tracker-${TRACKER_VERSION}/tracker-common
 WANTLIB-tracker += lib/tracker-${TRACKER_VERSION}/tracker-data
-WANTLIB-tracker += e2fs-uuid folks icui18n icuuc kvm tracker-sparql-0.14
-WANTLIB-tracker += z
+WANTLIB-tracker += e2fs-uuid folks kvm tracker-sparql-0.14
+WANTLIB-tracker += z pthread unistring
 
 RUN_DEPENDS-tracker=	${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-tracker=	${MODGETTEXT_LIB_DEPENDS} \
@@ -65,5 +67,7 @@ CONFIGURE_ARGS+=	--enable-import-tool \
 			--enable-tracker-backend \
 			--enable-libsocialweb-backend \
 			--enable-eds-backend
+post-install:
+	rm ${PREFIX}/lib/folks/${API_V}/backends/*/*.{a,la}
 
 .include <bsd.port.mk>
