@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2012/07/07 16:43:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2012/09/29 16:24:43 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 @pkgpath x11/gnome/totem,xine
 @bin bin/totem
@@ -13,23 +13,24 @@ include/totem/1.0/totem-plugin.h
 include/totem/1.0/totem-video-list.h
 include/totem/1.0/totem.h
 lib/girepository-1.0/Totem-1.0.typelib
-lib/libtotem.a
 lib/libtotem.la
 @lib lib/libtotem.so.${LIBtotem_VERSION}
 lib/pkgconfig/totem.pc
 lib/totem/
 lib/totem/plugins/
+lib/totem/plugins/apple-trailers/
+lib/totem/plugins/apple-trailers/apple-trailers.plugin
+lib/totem/plugins/apple-trailers/libapple-trailers.so
+lib/totem/plugins/autoload-subtitles/
+lib/totem/plugins/autoload-subtitles/autoload-subtitles.plugin
+lib/totem/plugins/autoload-subtitles/libautoload-subtitles.so
 lib/totem/plugins/brasero-disc-recorder/
 lib/totem/plugins/brasero-disc-recorder/brasero-disc-recorder.plugin
-@comment lib/totem/plugins/brasero-disc-recorder/libbrasero-disc-recorder.a
-@comment lib/totem/plugins/brasero-disc-recorder/libbrasero-disc-recorder.la
 lib/totem/plugins/brasero-disc-recorder/libbrasero-disc-recorder.so
 lib/totem/plugins/chapters/
 lib/totem/plugins/chapters/chapters-edit.ui
 lib/totem/plugins/chapters/chapters-list.ui
 lib/totem/plugins/chapters/chapters.plugin
-@comment lib/totem/plugins/chapters/libchapters.a
-@comment lib/totem/plugins/chapters/libchapters.la
 lib/totem/plugins/chapters/libchapters.so
 lib/totem/plugins/dbus/
 lib/totem/plugins/dbus/dbusservice.plugin
@@ -39,40 +40,18 @@ lib/totem/plugins/dbus/dbusservice.pyo
 lib/totem/plugins/grilo/
 lib/totem/plugins/grilo/grilo.plugin
 lib/totem/plugins/grilo/grilo.ui
-@comment lib/totem/plugins/grilo/libgrilo.a
-@comment lib/totem/plugins/grilo/libgrilo.la
 lib/totem/plugins/grilo/libgrilo.so
 lib/totem/plugins/grilo/totem-grilo.conf
 lib/totem/plugins/gromit/
 lib/totem/plugins/gromit/gromit.plugin
-@comment lib/totem/plugins/gromit/libgromit.a
-@comment lib/totem/plugins/gromit/libgromit.la
 lib/totem/plugins/gromit/libgromit.so
 lib/totem/plugins/im-status/
-@comment lib/totem/plugins/im-status/libtotem-im-status.a
-@comment lib/totem/plugins/im-status/libtotem-im-status.la
 lib/totem/plugins/im-status/libtotem-im-status.so
 lib/totem/plugins/im-status/totem-im-status.plugin
-lib/totem/plugins/iplayer/
-lib/totem/plugins/iplayer/iplayer.plugin
-lib/totem/plugins/iplayer/iplayer.py
-lib/totem/plugins/iplayer/iplayer.pyc
-lib/totem/plugins/iplayer/iplayer.pyo
-lib/totem/plugins/iplayer/iplayer.ui
-lib/totem/plugins/iplayer/iplayer2.py
-lib/totem/plugins/iplayer/iplayer2.pyc
-lib/totem/plugins/iplayer/iplayer2.pyo
-lib/totem/plugins/iplayer/listparser.py
-lib/totem/plugins/iplayer/listparser.pyc
-lib/totem/plugins/iplayer/listparser.pyo
 lib/totem/plugins/media-player-keys/
-@comment lib/totem/plugins/media-player-keys/libmedia_player_keys.a
-@comment lib/totem/plugins/media-player-keys/libmedia_player_keys.la
 lib/totem/plugins/media-player-keys/libmedia_player_keys.so
 lib/totem/plugins/media-player-keys/media-player-keys.plugin
 lib/totem/plugins/ontop/
-@comment lib/totem/plugins/ontop/libontop.a
-@comment lib/totem/plugins/ontop/libontop.la
 lib/totem/plugins/ontop/libontop.so
 lib/totem/plugins/ontop/ontop.plugin
 lib/totem/plugins/opensubtitles/
@@ -85,16 +64,8 @@ lib/totem/plugins/opensubtitles/opensubtitles.pyc
 lib/totem/plugins/opensubtitles/opensubtitles.pyo
 lib/totem/plugins/opensubtitles/opensubtitles.ui
 lib/totem/plugins/properties/
-@comment lib/totem/plugins/properties/libmovie-properties.a
-@comment lib/totem/plugins/properties/libmovie-properties.la
 lib/totem/plugins/properties/libmovie-properties.so
 lib/totem/plugins/properties/movie-properties.plugin
-lib/totem/plugins/publish/
-@comment lib/totem/plugins/publish/libpublish.a
-@comment lib/totem/plugins/publish/libpublish.la
-lib/totem/plugins/publish/libpublish.so
-lib/totem/plugins/publish/publish-plugin.ui
-lib/totem/plugins/publish/publish.plugin
 lib/totem/plugins/pythonconsole/
 lib/totem/plugins/pythonconsole/console.py
 lib/totem/plugins/pythonconsole/console.pyc
@@ -103,42 +74,34 @@ lib/totem/plugins/pythonconsole/pythonconsole.plugin
 lib/totem/plugins/pythonconsole/pythonconsole.py
 lib/totem/plugins/pythonconsole/pythonconsole.pyc
 lib/totem/plugins/pythonconsole/pythonconsole.pyo
+lib/totem/plugins/recent/
+lib/totem/plugins/recent/librecent.so
+lib/totem/plugins/recent/recent.plugin
 lib/totem/plugins/rotation/
-@comment lib/totem/plugins/rotation/librotation.a
-@comment lib/totem/plugins/rotation/librotation.la
 lib/totem/plugins/rotation/librotation.so
 lib/totem/plugins/rotation/rotation.plugin
 lib/totem/plugins/save-file/
-@comment lib/totem/plugins/save-file/libsave-file.a
-@comment lib/totem/plugins/save-file/libsave-file.la
 lib/totem/plugins/save-file/libsave-file.so
 lib/totem/plugins/save-file/save-file.plugin
 lib/totem/plugins/screensaver/
-@comment lib/totem/plugins/screensaver/libscreensaver.a
-@comment lib/totem/plugins/screensaver/libscreensaver.la
 lib/totem/plugins/screensaver/libscreensaver.so
 lib/totem/plugins/screensaver/screensaver.plugin
 lib/totem/plugins/screenshot/
 lib/totem/plugins/screenshot/gallery.ui
-lib/totem/plugins/screenshot/gnome-screenshot.ui
-@comment lib/totem/plugins/screenshot/libscreenshot.a
-@comment lib/totem/plugins/screenshot/libscreenshot.la
 lib/totem/plugins/screenshot/libscreenshot.so
 lib/totem/plugins/screenshot/screenshot.plugin
 lib/totem/plugins/skipto/
-@comment lib/totem/plugins/skipto/libskipto.a
-@comment lib/totem/plugins/skipto/libskipto.la
 lib/totem/plugins/skipto/libskipto.so
 lib/totem/plugins/skipto/skipto.plugin
 lib/totem/plugins/skipto/skipto.ui
-@comment lib/totem/plugins/thumbnail/libthumbnail.a
-@comment lib/totem/plugins/thumbnail/libthumbnail.la
+lib/totem/plugins/zeitgeist-dp/
+lib/totem/plugins/zeitgeist-dp/libtotem-zeitgeist-dp-plugin.so
+lib/totem/plugins/zeitgeist-dp/zeitgeist-dp.plugin
 libexec/totem/
 libexec/totem/totem-bugreport.py
 @man man/man1/totem-video-thumbnailer.1
 @man man/man1/totem.1
 share/GConf/gsettings/opensubtitles.convert
-share/GConf/gsettings/publish.convert
 share/GConf/gsettings/pythonconsole.convert
 share/GConf/gsettings/totem.convert
 share/applications/totem.desktop
@@ -146,8 +109,8 @@ share/gir-1.0/Totem-1.0.gir
 share/glib-2.0/schemas/org.gnome.totem.enums.xml
 share/glib-2.0/schemas/org.gnome.totem.gschema.xml
 share/glib-2.0/schemas/org.gnome.totem.plugins.opensubtitles.gschema.xml
-share/glib-2.0/schemas/org.gnome.totem.plugins.publish.gschema.xml
 share/glib-2.0/schemas/org.gnome.totem.plugins.pythonconsole.gschema.xml
+share/gnome/help/
 share/gnome/help/totem/
 share/gnome/help/totem/C/
 share/gnome/help/totem/C/figures/
@@ -531,8 +494,6 @@ share/locale/fr/LC_MESSAGES/totem.mo
 share/locale/ga/LC_MESSAGES/totem.mo
 share/locale/gl/LC_MESSAGES/totem.mo
 share/locale/gu/LC_MESSAGES/totem.mo
-share/locale/gv/
-share/locale/gv/LC_MESSAGES/
 share/locale/gv/LC_MESSAGES/totem.mo
 share/locale/he/LC_MESSAGES/totem.mo
 share/locale/hi/LC_MESSAGES/totem.mo
@@ -589,6 +550,7 @@ share/locale/zh_CN/LC_MESSAGES/totem.mo
 share/locale/zh_HK/LC_MESSAGES/totem.mo
 share/locale/zh_TW/LC_MESSAGES/totem.mo
 share/locale/zu/LC_MESSAGES/totem.mo
+share/omf/
 share/omf/totem/
 share/omf/totem/totem-C.omf
 share/omf/totem/totem-bg.omf
@@ -618,7 +580,6 @@ share/omf/totem/totem-uk.omf
 share/omf/totem/totem-zh_CN.omf
 share/omf/totem/totem-zh_HK.omf
 share/omf/totem/totem-zh_TW.omf
-share/thumbnailers/
 share/thumbnailers/totem.thumbnailer
 share/totem/
 share/totem/filmholes-big-left.png
@@ -628,6 +589,7 @@ share/totem/fullscreen.ui
 share/totem/mozilla-viewer.css
 share/totem/mozilla-viewer.ui
 share/totem/playlist.ui
+share/totem/preferences.ui
 share/totem/properties.ui
 share/totem/totem.ui
 share/totem/uri.ui
