@@ -1,16 +1,15 @@
-$OpenBSD: patch-daemon_gdm-session-record_c,v 1.1 2011/09/12 07:39:21 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-session-record_c,v 1.2 2012/09/29 19:28:15 ajacoutot Exp $
 
-implicit declaration of function 'logwtmp'
-implicit declaration of function 'login'
+XXX push upstream
+(login(3), logout(3), logwtmp(3))
 
---- daemon/gdm-session-record.c.orig	Fri Jun 17 15:02:07 2011
-+++ daemon/gdm-session-record.c	Fri Jun 17 15:02:27 2011
-@@ -33,6 +33,8 @@
+--- daemon/gdm-session-record.c.orig	Thu Sep  6 20:33:20 2012
++++ daemon/gdm-session-record.c	Sat Sep 29 19:46:32 2012
+@@ -31,6 +31,7 @@
+ 
+ #if defined(HAVE_UTMP_H)
  #include <utmp.h>
++#include <util.h>
  #endif
  
-+#include <util.h>
-+
  #include <glib.h>
- #include <glib/gi18n.h>
- #include <glib/gstdio.h>

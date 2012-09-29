@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.128 2012/09/13 08:38:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.129 2012/09/29 19:28:15 ajacoutot Exp $
 
 BROKEN=			needs pam(3)
 
@@ -7,11 +7,11 @@ SHARED_ONLY=		Yes
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
-GNOME_VERSION=		3.4.1
+GNOME_VERSION=		3.6.0
 
 HOMEPAGE=		http://projects.gnome.org/gdm/
 
-SHARED_LIBS +=  gdmgreeter                0.0 # 1.0
+SHARED_LIBS +=  gdm                       0.0 # 1.0
 SHARED_LIBS +=  gdmsimplegreeter          0.0 # 1.0
 
 # GPLv2
@@ -29,7 +29,8 @@ WANTLIB += gobject-2.0 gthread-2.0 gtk-3 ltdl m nspr4 nss3 nssutil3
 WANTLIB += ogg pam pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 plc4 plds4 png pthread pthread-stubs smime3
 WANTLIB += softokn3 sqlite3 ssl3 stdc++ upower-glib util vorbis
-WANTLIB += vorbisfile xcb xcb-render xcb-shm xkbfile xklavier xml2 z
+WANTLIB += vorbisfile xcb xcb-render xcb-shm z icuuc
+WANTLIB += ICE SM atk-bridge-2.0 atspi harfbuzz icudata icule
 
 MODULES=		devel/gettext \
 			x11/gnome \
@@ -42,8 +43,7 @@ LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			devel/libexecinfo \
 			security/nss \
 			sysutils/accountsservice \
-			sysutils/upower \
-			x11/gnome/libxklavier 
+			sysutils/upower
 # XXX 
 #LIB_DEPENDS +=		security/openpam
 
@@ -95,7 +95,6 @@ pre-configure:
 
 post-install:
 	rm ${PREFIX}/lib/gdm/simple-greeter/extensions/*.la
-	rm -r ${WRKINST}/etc/pam.d
 	rm -rf ${WRKINST}/var/run/gdm
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gdm/{etc/pam.d,var/db}
 	${INSTALL_DATA} ${FILESDIR}/gdm-* \

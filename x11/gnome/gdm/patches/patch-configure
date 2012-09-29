@@ -1,16 +1,20 @@
-$OpenBSD: patch-configure,v 1.21 2012/09/10 13:19:04 ajacoutot Exp $
---- configure.orig	Sat Apr 14 20:55:27 2012
-+++ configure	Mon Sep 10 14:58:05 2012
-@@ -22896,6 +22896,8 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
- #ifdef __cplusplus
- extern "C"
- #endif
-+int allow_severity = 1;
-+int deny_severity = 1;
- char hosts_ctl ();
- int
- main ()
-@@ -24704,6 +24706,12 @@ else
+$OpenBSD: patch-configure,v 1.22 2012/09/29 19:28:15 ajacoutot Exp $
+
+Fix DATADIRNAME: see LOCALBASE/share/aclocal/{glib-gettext.m4,intltool.m4}
+
+--- configure.orig	Tue Sep 25 20:04:03 2012
++++ configure	Sat Sep 29 20:17:23 2012
+@@ -16948,6 +16948,9 @@ else
+ fi
+ 
+     ;;
++    *-*-openbsd*)
++    DATADIRNAME=share
++    ;;
+     *)
+     DATADIRNAME=lib
+     ;;
+@@ -26390,6 +26395,12 @@ else
    am__EXEEXT_TRUE='#'
    am__EXEEXT_FALSE=
  fi
