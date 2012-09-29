@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/08/18 08:50:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2012/09/29 06:25:48 landry Exp $
 
 SHARED_ONLY =		Yes
 COMMENT =		digital audio workstation
@@ -50,7 +50,8 @@ MODSCONS_ENV=	CC="${CC}" \
 		FREEDESKTOP=1 \
 		SYSLIBS=1
 
-BUILD_DEPENDS = 	devel/boost
+BUILD_DEPENDS = 	devel/boost \
+			${RUN_DEPENDS}
 RUN_DEPENDS = 		devel/desktop-file-utils \
 			x11/gtk+2,-guic \
 			misc/shared-mime-info
