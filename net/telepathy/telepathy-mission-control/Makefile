@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2012/09/28 11:58:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2012/09/29 14:01:54 ajacoutot Exp $
 
 COMMENT=		abstraction layer between apps and connection managers
 
@@ -24,9 +24,10 @@ LIBTOOL_FLAGS=		--tag=disable-static
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-static \
-			--disable-gtk-doc \
-			--disable-gnome-keyring \
-			--disable-upower \
+			--disable-gtk-doc
+
+# both are dependant
+CONFIGURE_ARGS+=	--disable-upower \
 			--with-connectivity=no
 
 # If one of these tools is found at configure stage, it might be used,
