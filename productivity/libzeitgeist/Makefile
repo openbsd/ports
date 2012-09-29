@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/09/29 10:29:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/09/29 15:55:58 jasper Exp $
 
 COMMENT=		Zeitgeist client library
 
 DISTNAME=		libzeitgeist-0.3.18
+REVISION=		0
 SHARED_LIBS +=	zeitgeist-1.0        0.0      # 2.4
 
 HOMEPAGE=		https://launchpad.net/libzeitgeist
@@ -28,6 +29,8 @@ WANTLIB += ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += pcre pthread z
 
 LIB_DEPENDS=		devel/glib2
+
+RUN_DEPENDS=		productivity/zeitgeist
 
 CONFIGURE_STYLE=	gnu
 
