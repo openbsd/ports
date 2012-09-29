@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2012/03/30 17:57:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2012/09/29 15:22:21 jasper Exp $
 
 COMMENT=	expose media content over D-Bus for Rygel to consume
 
 GNOME_PROJECT=	grilo-mediaserver2
-GNOME_VERSION=	0.0.1	# git clone of ac5bf0a9a44939fd43a87998bcbccaf4cdbcf99e
-REVISION=	0
+GNOME_VERSION=	0.0.2	# git clone of 4614b1969dcdea2c254af3178b70966282468c07
 
 SHARED_LIBS +=  mediaserver2              0.0 # 0.0
 
@@ -22,7 +21,7 @@ MODULES=	devel/gettext \
 		x11/gnome
 
 WANTLIB += c dbus-1 dbus-glib-1 ffi gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 grilo-0.1 gthread-2.0 m pcre pthread xml2
+WANTLIB += gobject-2.0 grilo-0.2 gthread-2.0 m pcre pthread xml2
 WANTLIB += z
 
 LIB_DEPENDS=	x11/gnome/grilo \
