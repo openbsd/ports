@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2012/09/27 09:30:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2012/09/29 17:36:25 ajacoutot Exp $
 
 COMMENT=	library for bits of crypto UI and parsing
 
 GNOME_PROJECT=	gcr
 GNOME_VERSION=	3.6.0
+REVISION=	0
 
 SHARED_LIBS +=  gck-1                     1.0 # 0.0
 SHARED_LIBS +=  gcr-3                     2.0 # 1.0
@@ -37,7 +38,7 @@ MODGNOME_ICON_CACHE=	Yes
 # gck/tests/test-gck-attributes.c:34: first defined here
 USE_LIBTOOL=	gnu
 
-# only required during build for parsing ASN.1 files
+# asn1Parser(1) is used by configure for parsing ASN.1 files
 BUILD_DEPENDS += security/libtasn1
 
 RUN_DEPENDS=	misc/shared-mime-info
@@ -50,7 +51,6 @@ CONFIGURE_ARGS=	--disable-update-mime
 
 pre-configure:
 	find ${WRKSRC} -name Makefile.in | xargs \
-		perl -pi -e 's|sed -i -e|perl -pi -e|g;' \
-			 -e 's|sed -i|perl -pi -e|g'
+		perl -pi -e 's|sed -i|perl -pi|g'
 
 .include <bsd.port.mk>
