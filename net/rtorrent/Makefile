@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.35 2012/07/15 10:20:07 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.36 2012/09/29 07:25:40 landry Exp $
+
+BROKEN-hppa =		undefined references to __sync atomic ops
 
 COMMENT=		ncurses BitTorrent client based on libTorrent
 
