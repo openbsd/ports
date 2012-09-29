@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.775 2012/09/26 18:44:27 bluhm Exp $
+# $OpenBSD: Makefile,v 1.776 2012/09/29 12:35:03 fgsch Exp $
 
      SUBDIR =
      SUBDIR += BitTorrent
@@ -233,6 +233,7 @@
      SUBDIR += netsed
      SUBDIR += nfdump
      SUBDIR += nfsen
+     SUBDIR += ngircd
      SUBDIR += ngrep
      SUBDIR += nicotine
      SUBDIR += nload
