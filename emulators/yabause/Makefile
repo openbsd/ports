@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2012/09/21 13:21:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2012/09/29 05:13:01 brad Exp $
 
 COMMENT =	Sega Saturn emulator
 
@@ -32,6 +32,7 @@ WANTLIB += pangox-1.0 pixman-1 png pthread pthread-stubs xcb xcb-render
 WANTLIB += xcb-shm z
 
 CONFIGURE_STYLE =	gnu
+CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include"
 
 LIB_DEPENDS =	devel/sdl \
 		x11/gtkglext
