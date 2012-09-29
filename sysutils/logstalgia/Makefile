@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/10/20 10:58:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/09/29 05:12:07 brad Exp $
 
 COMMENT =	website access log visualization
 
@@ -21,6 +21,8 @@ WANTLIB += ftgl GL GLU SDL SDL_image c jpeg m pcre png pthread stdc++
 MODULES =	converters/libiconv
 
 CONFIGURE_STYLE =gnu
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib"
 
 LIB_DEPENDS =	graphics/ftgl \
 		devel/pcre \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/09/21 09:15:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2012/09/29 05:07:24 brad Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -29,8 +29,8 @@ USE_GROFF=	Yes
 NO_REGRESS=	Yes
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ENV=CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include" 
-CONFIGURE_ENV+=LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include -I${X11BASE}/include" 
+CONFIGURE_ENV+=LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 CONFIGURE_ARGS+=	--disable-alsatest
 CONFIGURE_ARGS+=	--disable-opengl
 
