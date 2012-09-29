@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/09/12 07:28:53 jasper Exp $
-@comment lib/nautilus/extensions-3.0/libnautilus-open-terminal.la
+@comment $OpenBSD: PLIST,v 1.6 2012/09/29 10:52:28 ajacoutot Exp $
 lib/nautilus/extensions-3.0/libnautilus-open-terminal.so
 share/locale/ar/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/as/LC_MESSAGES/nautilus-open-terminal.mo

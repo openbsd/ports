@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.55 2012/09/01 14:36:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2012/09/29 10:52:28 ajacoutot Exp $
 
 COMMENT=	GNOME component and compound document system
 
 GNOME_PROJECT=	libbonobo
 GNOME_VERSION=	2.32.1
-
-REVISION=	3
+REVISION=	4
 
 SHARED_LIBS +=	bonobo-activation    6.0      # .4.0
 SHARED_LIBS +=	bonobo-2             2.0      # .0.0
@@ -41,5 +40,9 @@ FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/libbonobo
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/activation-server/bonobo-activation-server.1
+
+post-install:
+	rm ${PREFIX}/lib/bonobo/monikers/*.{a,la}
+	rm ${PREFIX}/lib/orbit-2.0/*.{a,la}
 
 .include <bsd.port.mk>

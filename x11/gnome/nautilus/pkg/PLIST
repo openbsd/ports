@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.39 2012/09/28 07:45:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.40 2012/09/29 10:52:28 ajacoutot Exp $
 %%SHARED%%
 @bin bin/nautilus
 @bin bin/nautilus-autorun-software
@@ -21,8 +21,6 @@ lib/libnautilus-extension.a
 lib/libnautilus-extension.la
 lib/nautilus/
 lib/nautilus/extensions-3.0/
-@comment lib/nautilus/extensions-3.0/libnautilus-sendto.a
-@comment lib/nautilus/extensions-3.0/libnautilus-sendto.la
 lib/pkgconfig/
 lib/pkgconfig/libnautilus-extension.pc
 @bin libexec/nautilus-convert-metadata

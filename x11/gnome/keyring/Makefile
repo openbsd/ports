@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2012/09/27 09:39:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2012/09/29 10:52:27 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	password agent for the GNOME project
 
 GNOME_PROJECT=	gnome-keyring
 GNOME_VERSION=	3.6.0
+REVISION=	0
 
 HOMEPAGE=	https://live.gnome.org/GnomeKeyring
 
@@ -46,5 +47,7 @@ FAKE_FLAGS=	configdir=${PREFIX}/share/examples/gnome-keyring/pkcs11/modules
 
 post-install:
 	mv ${WRKINST}/etc/xdg ${PREFIX}/share/examples/gnome-keyring
+	rm ${PREFIX}/lib/gnome-keyring/devel/*.{a,la}
+	rm ${PREFIX}/lib/pkcs11/*.{a,la}
 
 .include <bsd.port.mk>

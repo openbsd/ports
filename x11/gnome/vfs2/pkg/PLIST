@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2011/01/18 20:03:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2012/09/29 10:52:28 ajacoutot Exp $
 @pkgpath x11/gnome/vfs2
 @pkgpath x11/gnome/vfs2,-main
 @pkgpath x11/gnome/vfs2,-smb
@@ -69,41 +69,17 @@ lib/gnome-vfs-2.0/
 lib/gnome-vfs-2.0/include/
 lib/gnome-vfs-2.0/include/gnome-vfs-file-size.h
 lib/gnome-vfs-2.0/modules/
-@comment lib/gnome-vfs-2.0/modules/libbzip2.a
-@comment lib/gnome-vfs-2.0/modules/libbzip2.la
 lib/gnome-vfs-2.0/modules/libbzip2.so
-@comment lib/gnome-vfs-2.0/modules/libcomputer.a
-@comment lib/gnome-vfs-2.0/modules/libcomputer.la
 lib/gnome-vfs-2.0/modules/libcomputer.so
-@comment lib/gnome-vfs-2.0/modules/libdns-sd.a
-@comment lib/gnome-vfs-2.0/modules/libdns-sd.la
 lib/gnome-vfs-2.0/modules/libdns-sd.so
-@comment lib/gnome-vfs-2.0/modules/libfile.a
-@comment lib/gnome-vfs-2.0/modules/libfile.la
 lib/gnome-vfs-2.0/modules/libfile.so
-@comment lib/gnome-vfs-2.0/modules/libftp.a
-@comment lib/gnome-vfs-2.0/modules/libftp.la
 lib/gnome-vfs-2.0/modules/libftp.so
-@comment lib/gnome-vfs-2.0/modules/libgzip.a
-@comment lib/gnome-vfs-2.0/modules/libgzip.la
 lib/gnome-vfs-2.0/modules/libgzip.so
-@comment lib/gnome-vfs-2.0/modules/libhttp.a
-@comment lib/gnome-vfs-2.0/modules/libhttp.la
 lib/gnome-vfs-2.0/modules/libhttp.so
-@comment lib/gnome-vfs-2.0/modules/libnetwork.a
-@comment lib/gnome-vfs-2.0/modules/libnetwork.la
 lib/gnome-vfs-2.0/modules/libnetwork.so
-@comment lib/gnome-vfs-2.0/modules/libnntp.a
-@comment lib/gnome-vfs-2.0/modules/libnntp.la
 lib/gnome-vfs-2.0/modules/libnntp.so
-@comment lib/gnome-vfs-2.0/modules/libsftp.a
-@comment lib/gnome-vfs-2.0/modules/libsftp.la
 lib/gnome-vfs-2.0/modules/libsftp.so
-@comment lib/gnome-vfs-2.0/modules/libtar.a
-@comment lib/gnome-vfs-2.0/modules/libtar.la
 lib/gnome-vfs-2.0/modules/libtar.so
-@comment lib/gnome-vfs-2.0/modules/libvfs-test.a
-@comment lib/gnome-vfs-2.0/modules/libvfs-test.la
 lib/gnome-vfs-2.0/modules/libvfs-test.so
 lib/libgnomevfs-2.a
 lib/libgnomevfs-2.la

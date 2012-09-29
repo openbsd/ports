@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2012/07/13 16:35:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2012/09/29 10:52:28 ajacoutot Exp $
 
 COMMENT=	GNOME Python bindings
 
@@ -7,7 +7,7 @@ GNOME_VERSION=	2.28.1
 EXTRACT_SUFX=	.tar.bz2
 PKGNAME=	py-gnome-${VERSION}
 
-REVISION=	12
+REVISION=	13
 
 HOMEPAGE=	http://www.pygtk.org/
 
@@ -53,6 +53,11 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-gnome
 	cp -R ${WRKSRC}/examples/* ${PREFIX}/share/doc/py-gnome
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/py-gnome
+	rm ${PREFIX}/lib/gnome-vfs-2.0/modules/*.la
+	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/gtk-2.0/*.la
+	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/gtk-2.0/bonobo/*.la
+	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gnome/*.la
+	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gnomevfs/*.la
 	
 do-regress: fake
 	cd ${WRKSRC}/tests && \

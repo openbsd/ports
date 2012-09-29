@@ -1,12 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/09/28 21:28:40 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2012/09/29 10:52:28 ajacoutot Exp $
 lib/anjuta/anjuta-editor.plugin
 lib/anjuta/anjuta-sample.plugin
 lib/anjuta/anjuta-scratchbox.plugin
-@comment lib/anjuta/libanjuta-editor.la
 lib/anjuta/libanjuta-editor.so
-@comment lib/anjuta/libanjuta-sample.la
 lib/anjuta/libanjuta-sample.so
-@comment lib/anjuta/libanjuta-scratchbox.la
 lib/anjuta/libanjuta-scratchbox.so
 share/anjuta/glade/anjuta-editor-scintilla.ui
 share/anjuta/glade/anjuta-scratchbox-panel.png

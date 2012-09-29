@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2012/09/28 07:45:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.112 2012/09/29 10:52:28 ajacoutot Exp $
 
 COMMENT=		GNOME file manager
 
@@ -16,6 +16,7 @@ COMMENT=		GNOME file manager
 
 GNOME_PROJECT=		nautilus
 GNOME_VERSION=		3.6.0
+REVISION=		0
 
 SHARED_LIBS +=  nautilus-extension   3.0      # 5.0
 
@@ -79,5 +80,8 @@ FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/nautilus
 # needs 'org.gnome.nautilus.preferences'
 REGRESS_DEPENDS=	${BASE_PKGPATH}
 REGRESS_IS_INTERACTIVE=	x11
+
+post-install:
+	rm ${PREFIX}/lib/nautilus/extensions-3.0/*.{a,la}
 
 .include <bsd.port.mk>

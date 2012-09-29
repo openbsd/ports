@@ -1,27 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.31 2012/09/27 09:39:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.32 2012/09/29 10:52:27 ajacoutot Exp $
 bin/gnome-keyring
 @bin bin/gnome-keyring-3
 @bin bin/gnome-keyring-daemon
 lib/gnome-keyring/
 lib/gnome-keyring/devel/
-@comment lib/gnome-keyring/devel/gkm-gnome2-store-standalone.a
-@comment lib/gnome-keyring/devel/gkm-gnome2-store-standalone.la
 lib/gnome-keyring/devel/gkm-gnome2-store-standalone.so
-@comment lib/gnome-keyring/devel/gkm-roots-store-standalone.a
-@comment lib/gnome-keyring/devel/gkm-roots-store-standalone.la
 lib/gnome-keyring/devel/gkm-roots-store-standalone.so
-@comment lib/gnome-keyring/devel/gkm-secret-store-standalone.a
-@comment lib/gnome-keyring/devel/gkm-secret-store-standalone.la
 lib/gnome-keyring/devel/gkm-secret-store-standalone.so
-@comment lib/gnome-keyring/devel/gkm-ssh-store-standalone.a
-@comment lib/gnome-keyring/devel/gkm-ssh-store-standalone.la
 lib/gnome-keyring/devel/gkm-ssh-store-standalone.so
-@comment lib/gnome-keyring/devel/gkm-xdg-store-standalone.a
-@comment lib/gnome-keyring/devel/gkm-xdg-store-standalone.la
 lib/gnome-keyring/devel/gkm-xdg-store-standalone.so
 lib/pkcs11/
-@comment lib/pkcs11/gnome-keyring-pkcs11.a
-@comment lib/pkcs11/gnome-keyring-pkcs11.la
 lib/pkcs11/gnome-keyring-pkcs11.so
 share/GConf/gsettings/org.gnome.crypto.cache.convert
 share/dbus-1/services/org.freedesktop.secrets.service

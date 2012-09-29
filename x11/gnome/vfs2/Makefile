@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2012/01/01 09:03:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.72 2012/09/29 10:52:28 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,10 +6,9 @@ COMMENT=		GNOME Virtual File System
 
 GNOME_PROJECT=		gnome-vfs
 GNOME_VERSION=		2.24.4
-
 PKGNAME=		gnome-vfs2-${VERSION}
 
-REVISION=		3
+REVISION=		4
 
 SHARED_LIBS +=	gnomevfs-2           2400.0   # .2400.0
 
@@ -51,5 +50,8 @@ post-extract:
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/libgnomevfs/xdgmime.c
+
+post-install:
+	rm ${PREFIX}/lib/gnome-vfs-2.0/modules/*.{a,la}
 
 .include <bsd.port.mk>

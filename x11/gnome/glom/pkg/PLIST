@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2012/06/15 08:30:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2012/09/29 10:53:42 ajacoutot Exp $
 @bin bin/glom
 @bin bin/glom_create_from_example
 @bin bin/glom_export_po
@@ -70,8 +70,6 @@ lib/libglom-${API_V}.a
 lib/libglom-${API_V}.la
 @lib lib/libglom-${API_V}.so.${LIBglom-1.22_VERSION}
 lib/pkgconfig/glom-${API_V}.pc
-@comment lib/python${MODPY_VERSION}/site-packages/glom_1_22.a
-@comment lib/python${MODPY_VERSION}/site-packages/glom_1_22.la
 lib/python${MODPY_VERSION}/site-packages/glom_1_22.so
 share/applications/glom.desktop
 share/devhelp/books/libglom-${API_V}/

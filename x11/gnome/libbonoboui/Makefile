@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.56 2012/08/11 15:16:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2012/09/29 10:52:28 ajacoutot Exp $
 
 COMMENT=	user interface components for bonobo
 
 GNOME_PROJECT=	libbonoboui
 GNOME_VERSION=	2.24.5
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS +=	bonoboui-2	3.0        # .0.0
 
@@ -37,5 +37,8 @@ LIB_DEPENDS=	devel/popt \
 MODGNOME_DESKTOP_FILE=	Yes
 
 REGRESS_IS_INTERACTIVE= x11
+
+post-install:
+	rm ${PREFIX}/lib/libglade/2.0/*.{a,la}
 
 .include <bsd.port.mk>

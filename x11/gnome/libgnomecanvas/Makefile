@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2012/08/11 15:16:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2012/09/29 10:52:28 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,8 +6,9 @@ COMMENT=	graphics library for GNOME
 
 GNOME_PROJECT=	libgnomecanvas
 GNOME_VERSION=	2.30.3
+REVISION=	2
+
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	1
 
 SHARED_LIBS +=	gnomecanvas-2        2002.0   # .2001.0
 
@@ -37,5 +38,8 @@ CONFIGURE_ARGS=	--enable-glade
 MODGNOME_LDFLAGS=-L${X11BASE}/lib
 
 REGRESS_IS_INTERACTIVE= x11
+
+post-install:
+	rm ${PREFIX}/lib/libglade/2.0/*.{a,la}
 
 .include <bsd.port.mk>

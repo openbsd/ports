@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.55 2011/10/29 08:12:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2012/09/29 10:52:28 ajacoutot Exp $
 
 COMMENT=		user interface components for GNOME
 
 GNOME_PROJECT=		libgnomeui
 GNOME_VERSION=		2.24.5
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS +=	gnomeui-2      2400.0         # .2400.2
 
@@ -37,5 +37,8 @@ LIB_DEPENDS=	x11/gnome/libgnome-keyring \
 		x11/gnome/libbonoboui
 
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
+
+post-install:
+	rm ${PREFIX}/lib/libglade/2.0/*.{a,la}
 
 .include <bsd.port.mk>

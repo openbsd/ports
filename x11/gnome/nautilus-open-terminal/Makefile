@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.25 2011/11/04 09:56:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2012/09/29 10:52:28 ajacoutot Exp $
 
-# dlopen() module
 SHARED_ONLY=	Yes
 
 COMMENT=	open terminal from a nautilus folder
 
 GNOME_PROJECT=	nautilus-open-terminal
 GNOME_VERSION=	0.19
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	sysutils
 
@@ -39,5 +38,8 @@ MODGCONF2_SCHEMAS_DIR= nautilus-open-terminal
 LIBTOOL_FLAGS=	--tag=disable-static
 
 CONFIGURE_ARGS=	--disable-static
+
+post-install:
+	rm ${PREFIX}/lib/nautilus/extensions-3.0/*.la
 
 .include <bsd.port.mk>

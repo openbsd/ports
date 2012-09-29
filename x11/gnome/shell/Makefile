@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2012/09/07 07:19:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2012/09/29 10:52:28 ajacoutot Exp $
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		3.4.2
-REVISION=		1
+REVISION=		2
 
 HOMEPAGE=		http://live.gnome.org/GnomeShell
 
@@ -83,5 +83,9 @@ pre-configure:
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoheader
 	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} automake
+
+post-install:
+	rm ${PREFIX}/lib/gnome-shell/*.la
+	rm ${PREFIX}/mozilla/plugins/*.la
 
 .include <bsd.port.mk>

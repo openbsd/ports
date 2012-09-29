@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.51 2011/10/29 08:12:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2012/09/29 10:52:28 ajacoutot Exp $
 
 COMMENT=	libraries for the GNOME project
 
 GNOME_PROJECT=	libgnome
 GNOME_VERSION=	2.32.1
-
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS +=	gnome-2		2402.0   # .3000.0
 
@@ -38,5 +37,8 @@ MODGCONF2_SCHEMAS_DIR= libgnome
 CONFIGURE_ARGS+= --disable-esd
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/libgnome/
+
+post-install:
+	rm ${PREFIX}/lib/bonobo/monikers/*.{a,la}
 
 .include <bsd.port.mk>

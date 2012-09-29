@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.51 2012/06/15 08:30:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2012/09/29 10:52:28 ajacoutot Exp $
 
 COMMENT=		project management application
 
 GNOME_PROJECT=		planner
 GNOME_VERSION=		0.14.6
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		productivity
 
@@ -57,5 +57,9 @@ CONFIGURE_ARGS+= 	--disable-update-mimedb \
 			--with-database=no
 
 CONFIGURE_ENV=		UPDATE_DESKTOP_DATABASE="/usr/bin/false"
+
+post-install:
+	rm ${PREFIX}/lib/planner/{file-modules,plugins,storage-modules}/*.{a,la}
+	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/*.{a,la}
 
 .include <bsd.port.mk>

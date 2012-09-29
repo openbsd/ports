@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/07/09 18:01:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/09/29 10:52:28 ajacoutot Exp $
 @bin bin/gnome-shell
 bin/gnome-shell-extension-prefs
 bin/gnome-shell-extension-tool
@@ -7,13 +7,10 @@ lib/gnome-shell/Gvc-1.0.typelib
 lib/gnome-shell/Shell-0.1.typelib
 lib/gnome-shell/ShellJS-0.1.typelib
 lib/gnome-shell/St-1.0.typelib
-@comment lib/gnome-shell/libgnome-shell-js.la
 lib/gnome-shell/libgnome-shell-js.so
-@comment lib/gnome-shell/libgnome-shell.la
 lib/gnome-shell/libgnome-shell.so
 lib/mozilla/
 lib/mozilla/plugins/
-@comment lib/mozilla/plugins/libgnome-shell-browser-plugin.la
 lib/mozilla/plugins/libgnome-shell-browser-plugin.so
 @bin libexec/gnome-shell-calendar-server
 @bin libexec/gnome-shell-hotplug-sniffer

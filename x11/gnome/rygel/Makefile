@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2012/09/28 17:21:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2012/09/29 10:52:28 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		home media solution that allows easy media sharing
 
 GNOME_PROJECT=		rygel
 GNOME_VERSION=		0.16.0
+REVISION=		1
 
 SHARED_LIBS +=	rygel-core-1.0            0.0 # 0.0
 SHARED_LIBS +=	rygel-renderer-1.0        0.0 # 0.0
@@ -65,5 +66,8 @@ CONFIGURE_ARGS+=	--disable-static \
 			--disable-mediathek-plugin
 
 FAKE_FLAGS+=		sysconfdir=${PREFIX}/share/examples/rygel/
+
+post-install:
+	rm ${PREFIX}/lib/rygel-1.0/*.la
 
 .include <bsd.port.mk>

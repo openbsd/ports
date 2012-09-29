@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2012/06/15 08:30:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2012/09/29 10:53:42 ajacoutot Exp $
 
 COMMENT=		GNOME database designer and user interface
 
 GNOME_PROJECT=		glom
 GNOME_VERSION=		1.22.0
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  glom-1.22                 0.0 # 0.0
 
@@ -67,5 +67,8 @@ CONFIGURE_ENV+= 	ac_cv_path_DOT= \
 CONFIGURE_ARGS+=	--disable-update-mime-database
 
 REGRESS_IS_INTERACTIVE=	x11
+
+post-install:
+	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/*.{a,la}
 
 .include <bsd.port.mk>
