@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2012/09/28 17:09:03 eric Exp $
+@comment $OpenBSD: PLIST,v 1.11 2012/09/29 09:32:05 ajacoutot Exp $
 @newgroup _pulse:683
 @newgroup _pulse-access:684
 @newuser _pulse:683:683:daemon:PulseAudio System Daemon:/var/run/pulse:/sbin/nologin
@@ -63,7 +63,6 @@ lib/pkgconfig/libpulse.pc
 lib/pulse-${VERSION}/
 lib/pulse-${VERSION}/modules/
 lib/pulse-${VERSION}/modules/libcli.so
-lib/pulse-${VERSION}/modules/liboss-util.so
 lib/pulse-${VERSION}/modules/libprotocol-cli.so
 lib/pulse-${VERSION}/modules/libprotocol-http.so
 lib/pulse-${VERSION}/modules/libprotocol-native.so
@@ -96,7 +95,6 @@ lib/pulse-${VERSION}/modules/module-native-protocol-tcp.so
 lib/pulse-${VERSION}/modules/module-native-protocol-unix.so
 lib/pulse-${VERSION}/modules/module-null-sink.so
 lib/pulse-${VERSION}/modules/module-null-source.so
-lib/pulse-${VERSION}/modules/module-oss.so
 lib/pulse-${VERSION}/modules/module-pipe-sink.so
 lib/pulse-${VERSION}/modules/module-pipe-source.so
 lib/pulse-${VERSION}/modules/module-position-event-sounds.so
@@ -129,7 +127,6 @@ libexec/pulse/
 @man man/man1/pacat.1
 @man man/man1/pacmd.1
 @man man/man1/pactl.1
-@man man/man1/padsp.1
 @man man/man1/paplay.1
 @man man/man1/pasuspender.1
 @man man/man1/pulseaudio.1

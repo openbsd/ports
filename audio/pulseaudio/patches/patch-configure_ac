@@ -1,9 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.5 2012/05/14 17:45:16 ajacoutot Exp $
-
-- Fix path to soundcard.h
-- Fix path to DBus machine-id
-- Use /var/db instead of /var/lib
-
+$OpenBSD: patch-configure_ac,v 1.6 2012/09/29 09:32:05 ajacoutot Exp $
 --- configure.ac.orig	Fri May 11 13:43:03 2012
 +++ configure.ac	Mon May 14 16:18:28 2012
 @@ -161,7 +161,7 @@ esac
@@ -15,15 +10,6 @@ $OpenBSD: patch-configure_ac,v 1.5 2012/05/14 17:45:16 ajacoutot Exp $
      [], [-pedantic -Werror])
  
  # Only enable fastpath asserts when doing a debug build, e.g. from bootstrap.sh.
-@@ -687,7 +687,7 @@ AC_ARG_ENABLE([oss-wrapper],
-     AS_HELP_STRING([--disable-oss-wrapper],[Disable optional OSS wrapper support]))
- 
- AS_IF([test "x$enable_oss_output" != "xno" -o "x$enable_oss_wrapper" != "xno"],
--    [AC_CHECK_HEADERS([sys/soundcard.h], HAVE_OSS=1, HAVE_OSS=0)],
-+    [AC_CHECK_HEADERS([soundcard.h], HAVE_OSS=1, HAVE_OSS=0)],
-     HAVE_OSS=0)
- 
- AS_IF([test "x$enable_oss_output" = "xyes" -o "x$enable_oss_wrapper" = "xyes" && test "x$HAVE_OSS" = "x0"],
 @@ -945,7 +945,7 @@ AC_SUBST(HAVE_DBUS)
  AM_CONDITIONAL([HAVE_DBUS], [test "x$HAVE_DBUS" = x1])
  AS_IF([test "x$HAVE_DBUS" = "x1"], AC_DEFINE([HAVE_DBUS], 1, [Have D-Bus.]))

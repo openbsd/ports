@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_modules_module-detect_c,v 1.4 2011/10/07 08:03:44 ajacoutot Exp $
+$OpenBSD: patch-src_modules_module-detect_c,v 1.5 2012/09/29 09:32:05 ajacoutot Exp $
 --- src/modules/module-detect.c.orig	Thu Sep  1 10:28:14 2011
 +++ src/modules/module-detect.c	Fri Oct  7 09:47:06 2011
 @@ -48,7 +48,6 @@ PA_MODULE_DESCRIPTION("Detect available audio hardware
@@ -9,45 +9,3 @@ $OpenBSD: patch-src_modules_module-detect_c,v 1.4 2011/10/07 08:03:44 ajacoutot 
  
  static const char* const valid_modargs[] = {
      "just-one",
-@@ -118,6 +117,7 @@ static int detect_alsa(pa_core *c, int just_one) {
- #endif
- 
- #ifdef HAVE_OSS_OUTPUT
-+#if !defined(__OpenBSD__)
- static int detect_oss(pa_core *c, int just_one) {
-     FILE *f;
-     int n = 0, b = 0;
-@@ -175,6 +175,33 @@ static int detect_oss(pa_core *c, int just_one) {
-     fclose(f);
-     return n;
- }
-+#else
-+static int detect_oss(pa_core *c, int just_one) {
-+    struct stat s;
-+    const char *dev;
-+    char args[64];
-+
-+    dev = getenv("AUDIODEVICE");
-+    if (!dev)
-+        dev = "/dev/audio";
-+
-+    if (stat(dev, &s) < 0) {
-+        if (errno != ENOENT)
-+            pa_log_error("failed to open device %s: %s", dev, pa_cstrerror(errno));
-+        return -1;
-+    }
-+
-+    if (!S_ISCHR(s.st_mode))
-+        return 0;
-+
-+    pa_snprintf(args, sizeof(args), "device=%s", dev);
-+
-+    if (!pa_module_load(c, "module-oss", args))
-+        return 0;
-+
-+    return 1;
-+}
-+#endif
- #endif
- 
- #ifdef HAVE_SOLARIS

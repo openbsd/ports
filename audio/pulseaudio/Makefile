@@ -1,4 +1,12 @@
-# $OpenBSD: Makefile,v 1.24 2012/09/28 17:09:03 eric Exp $
+# $OpenBSD: Makefile,v 1.25 2012/09/29 09:32:05 ajacoutot Exp $
+
+# XXX
+# fix autospawn lock (patch-src_daemon_main_c)
+# sndio: what to do with (channel) map
+# sndio: check sample format
+# sndio: support for recording
+# sndio: make module-detect properly detects the sndio module
+# sndio: implement hardware mixer
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +14,7 @@ COMMENT=		cross-platform networked sound server
 
 VERSION=		2.0
 DISTNAME=		pulseaudio-${VERSION}
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS +=  pulse                1.1      # .14.2
 SHARED_LIBS +=  pulse-simple         0.0      # .0.3
@@ -25,7 +33,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c crypto execinfo gdbm glib-2.0 json ltdl m ossaudio
+WANTLIB += c crypto execinfo gdbm glib-2.0 json ltdl m
 WANTLIB += pcre pthread sndfile sndio speexdsp ssl stdc++
 
 MASTER_SITES=		http://freedesktop.org/software/pulseaudio/releases/
@@ -64,7 +72,7 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--with-database=gdbm \
 			--without-fftw \
 			--without-caps \
-			--enable-oss-output \
+			--disable-oss-output \
 			--disable-oss-wrapper \
 			--disable-x11 \
 			--disable-adrian-aec \
@@ -117,7 +125,8 @@ pre-configure:
 post-install:
 	cd ${PREFIX} && \
 		rm man/man1/pax11publish.1 \
-		man/man1/start-pulseaudio-kde.1 \
-		man/man1/start-pulseaudio-x11.1
+			man/man1/padsp.1 \
+			man/man1/start-pulseaudio-kde.1 \
+			man/man1/start-pulseaudio-x11.1
 
 .include <bsd.port.mk>

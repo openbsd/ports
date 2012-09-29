@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Makefile_am,v 1.1 2012/09/28 17:09:03 eric Exp $
+$OpenBSD: patch-src_Makefile_am,v 1.2 2012/09/29 09:32:05 ajacoutot Exp $
 --- src/Makefile.am.orig	Fri Apr 27 09:37:37 2012
-+++ src/Makefile.am	Sat Sep 22 09:46:55 2012
++++ src/Makefile.am	Fri Sep 28 19:19:30 2012
 @@ -602,7 +602,7 @@ libpulsecommon_@PA_MAJORMINOR@_la_SOURCES = \
  
  libpulsecommon_@PA_MAJORMINOR@_la_CFLAGS = $(AM_CFLAGS) $(LIBSNDFILE_CFLAGS)
@@ -28,13 +28,7 @@ $OpenBSD: patch-src_Makefile_am,v 1.1 2012/09/28 17:09:03 eric Exp $
  		module-alsa-sink-symdef.h \
  		module-alsa-source-symdef.h \
  		module-alsa-card-symdef.h \
-@@ -1592,11 +1596,17 @@ module_x11_cork_request_la_LIBADD = $(MODULE_LIBADD) $
- 
- liboss_util_la_SOURCES = modules/oss/oss-util.c modules/oss/oss-util.h
- liboss_util_la_LDFLAGS = -avoid-version
--liboss_util_la_LIBADD = $(MODULE_LIBADD)
-+liboss_util_la_LIBADD = $(MODULE_LIBADD) -lossaudio
- 
+@@ -1597,6 +1601,12 @@ liboss_util_la_LIBADD = $(MODULE_LIBADD)
  module_oss_la_SOURCES = modules/oss/module-oss.c
  module_oss_la_LDFLAGS = $(MODULE_LDFLAGS)
  module_oss_la_LIBADD = $(MODULE_LIBADD) liboss-util.la
