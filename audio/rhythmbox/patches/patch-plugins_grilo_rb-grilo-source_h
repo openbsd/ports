@@ -1,0 +1,18 @@
+$OpenBSD: patch-plugins_grilo_rb-grilo-source_h,v 1.1 2012/09/29 12:20:14 ajacoutot Exp $
+
+From 86eb47f705b2f0e6e8ba8d90073c961d47dbfb95 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Fri, 17 Aug 2012 13:28:05 +0000
+Subject: grilo: Port to the grilo 0.2 API
+
+--- plugins/grilo/rb-grilo-source.h.orig	Thu Apr 26 12:31:19 2012
++++ plugins/grilo/rb-grilo-source.h	Sat Sep 29 14:05:14 2012
+@@ -72,7 +72,7 @@ typedef struct
+ } RBGriloEntryData;
+ 
+ RBSource *		rb_grilo_source_new	(GObject *plugin,
+-						 GrlMediaSource *grilo_source);
++						 GrlSource *grilo_source);
+ GType			rb_grilo_source_get_type (void);
+ void			_rb_grilo_source_register_type	(GTypeModule *module);
+ 

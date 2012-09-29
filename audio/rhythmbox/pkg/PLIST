@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2012/06/15 08:32:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.35 2012/09/29 12:20:14 ajacoutot Exp $
 @bin bin/rhythmbox
 @bin bin/rhythmbox-client
 include/rhythmbox/
@@ -106,7 +106,6 @@ lib/rhythmbox/plugins/artsearch/oldcache.pyc
 lib/rhythmbox/plugins/artsearch/oldcache.pyo
 lib/rhythmbox/plugins/audioscrobbler/
 lib/rhythmbox/plugins/audioscrobbler/audioscrobbler.plugin
-@comment lib/rhythmbox/plugins/audioscrobbler/libaudioscrobbler.la
 lib/rhythmbox/plugins/audioscrobbler/libaudioscrobbler.so
 lib/rhythmbox/plugins/context/
 lib/rhythmbox/plugins/context/AlbumTab.py
@@ -133,15 +132,12 @@ lib/rhythmbox/plugins/context/context.pyc
 lib/rhythmbox/plugins/context/context.pyo
 lib/rhythmbox/plugins/dbus-media-server/
 lib/rhythmbox/plugins/dbus-media-server/dbus-media-server.plugin
-@comment lib/rhythmbox/plugins/dbus-media-server/libdbus-media-server.la
 lib/rhythmbox/plugins/dbus-media-server/libdbus-media-server.so
 lib/rhythmbox/plugins/generic-player/
 lib/rhythmbox/plugins/generic-player/generic-player.plugin
-@comment lib/rhythmbox/plugins/generic-player/libgeneric-player.la
 lib/rhythmbox/plugins/generic-player/libgeneric-player.so
 lib/rhythmbox/plugins/grilo/
 lib/rhythmbox/plugins/grilo/grilo.plugin
-@comment lib/rhythmbox/plugins/grilo/libgrilo.la
 lib/rhythmbox/plugins/grilo/libgrilo.so
 lib/rhythmbox/plugins/im-status/
 lib/rhythmbox/plugins/im-status/im-status.plugin
@@ -150,11 +146,9 @@ lib/rhythmbox/plugins/im-status/im-status.pyc
 lib/rhythmbox/plugins/im-status/im-status.pyo
 lib/rhythmbox/plugins/ipod/
 lib/rhythmbox/plugins/ipod/ipod.plugin
-@comment lib/rhythmbox/plugins/ipod/libipod.la
 lib/rhythmbox/plugins/ipod/libipod.so
 lib/rhythmbox/plugins/iradio/
 lib/rhythmbox/plugins/iradio/iradio.plugin
-@comment lib/rhythmbox/plugins/iradio/libiradio.la
 lib/rhythmbox/plugins/iradio/libiradio.so
 lib/rhythmbox/plugins/lyrics/
 lib/rhythmbox/plugins/lyrics/AstrawebParser.py
@@ -203,19 +197,15 @@ lib/rhythmbox/plugins/magnatune/magnatune.py
 lib/rhythmbox/plugins/magnatune/magnatune.pyc
 lib/rhythmbox/plugins/magnatune/magnatune.pyo
 lib/rhythmbox/plugins/mmkeys/
-@comment lib/rhythmbox/plugins/mmkeys/libmmkeys.la
 lib/rhythmbox/plugins/mmkeys/libmmkeys.so
 lib/rhythmbox/plugins/mmkeys/mmkeys.plugin
 lib/rhythmbox/plugins/mpris/
-@comment lib/rhythmbox/plugins/mpris/libmpris.la
 lib/rhythmbox/plugins/mpris/libmpris.so
 lib/rhythmbox/plugins/mpris/mpris.plugin
 lib/rhythmbox/plugins/notification/
-@comment lib/rhythmbox/plugins/notification/libnotification.la
 lib/rhythmbox/plugins/notification/libnotification.so
 lib/rhythmbox/plugins/notification/notification.plugin
 lib/rhythmbox/plugins/power-manager/
-@comment lib/rhythmbox/plugins/power-manager/libpower-manager.la
 lib/rhythmbox/plugins/power-manager/libpower-manager.so
 lib/rhythmbox/plugins/power-manager/power-manager.plugin
 lib/rhythmbox/plugins/python-console/
@@ -240,6 +230,11 @@ lib/rhythmbox/plugins/rb/rb.pyo
 lib/rhythmbox/plugins/rb/stringmatch.py
 lib/rhythmbox/plugins/rb/stringmatch.pyc
 lib/rhythmbox/plugins/rb/stringmatch.pyo
+lib/rhythmbox/plugins/rbzeitgeist/
+lib/rhythmbox/plugins/rbzeitgeist/rbzeitgeist.plugin
+lib/rhythmbox/plugins/rbzeitgeist/rbzeitgeist.py
+lib/rhythmbox/plugins/rbzeitgeist/rbzeitgeist.pyc
+lib/rhythmbox/plugins/rbzeitgeist/rbzeitgeist.pyo
 lib/rhythmbox/plugins/replaygain/
 lib/rhythmbox/plugins/replaygain/config.py
 lib/rhythmbox/plugins/replaygain/config.pyc
