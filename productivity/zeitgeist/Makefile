@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/09/29 10:28:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/09/29 12:00:59 ajacoutot Exp $
 
 COMMENT =		event logging framework
 
 V =			0.8.2
 DISTNAME =		zeitgeist-${V}
+REVISION =		0
 
 CATEGORIES =		productivity
 
@@ -27,7 +28,8 @@ BUILD_DEPENDS =		textproc/p5-XML-Parser \
 			textproc/py-rdflib \
 			textproc/raptor \
 
-RUN_DEPENDS =		databases/py-sqlite \
+RUN_DEPENDS =		databases/py-sqlite2 \
+			devel/py-gobject \
 			devel/py-xdg \
 			x11/dbus-python \
 
