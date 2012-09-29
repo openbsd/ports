@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2012/09/29 10:52:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.81 2012/09/29 17:23:11 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -30,7 +30,7 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/dconf
 
-# only required during build for parsing ASN.1 files
+# asn1Parser(1) is used by configure for parsing ASN.1 files
 BUILD_DEPENDS += security/libtasn1
 
 LIB_DEPENDS=	x11/gnome/gcr>=3.6.0
