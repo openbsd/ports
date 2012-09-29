@@ -1,12 +1,20 @@
-$OpenBSD: patch-XTar_tmpl,v 1.1 2007/10/26 22:00:31 ajacoutot Exp $
---- XTar.tmpl.orig	Mon Jul 17 14:04:17 1995
-+++ XTar.tmpl	Fri Oct 26 23:58:56 2007
-@@ -27,7 +27,7 @@ CCOPTIONS = -Ae
- XMINC = -I/usr/include/Motif1.2
- XMLIB = -L/usr/lib/Motif1.2 -lXm -lPW
- #else
--XMLIB = -lXm
-+XMLIB = ${MOTIFLIB}
+$OpenBSD: patch-XTar_tmpl,v 1.2 2012/09/29 09:27:00 landry Exp $
+--- XTar.tmpl.orig	Mon Jul 17 06:04:17 1995
++++ XTar.tmpl	Sat Sep 29 03:20:01 2012
+@@ -20,15 +20,7 @@ CC = gcc
+ CDEBUGFLAGS = -O
  #endif
  
+-#ifdef HPArchitecture
+-#ifndef UseGCC
+-CCOPTIONS = -Ae
+-#endif
+-XMINC = -I/usr/include/Motif1.2
+-XMLIB = -L/usr/lib/Motif1.2 -lXm -lPW
+-#else
+-XMLIB = -lXm
+-#endif
++XMLIB = ${MOTIFLIB}
+ 
  #ifdef SunArchitecture
+ #ifndef UseGCC
