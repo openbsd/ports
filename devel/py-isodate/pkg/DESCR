@@ -1,0 +1,5 @@
+Python module that implements ISO 8601 date, time and duration parsing.
+The implementation follows ISO8601:2004 standard, and implements only
+date/time representations mentioned in the standard. If something is not
+mentioned there, then it is treated as non existent, and not as an
+allowed option.
