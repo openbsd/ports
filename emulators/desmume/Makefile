@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/09/21 13:21:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2012/09/29 05:08:26 brad Exp $
 
 COMMENT =	Nintendo DS emulator
 
@@ -36,8 +36,8 @@ LIB_DEPENDS =	archivers/zziplib \
 		textproc/libxml \
 		x11/gtkglext
 
-CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -liconv"
+CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 MODULES =	devel/gettext \
 		textproc/intltool
