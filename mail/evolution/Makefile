@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.172 2012/09/28 14:37:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.173 2012/09/29 07:21:49 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -11,7 +11,8 @@ GNOME_VERSION=		3.6.0
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}
 
-REVISION-main=		0
+REVISION-main=		1
+REVISION-plugins=	0
 
 # NOTE: when R changes, increment EVO_VERSION accordingly and bump:
 # mail/evolution-ews
@@ -70,53 +71,51 @@ WANTLIB-plugins += lib/evolution/${R}/evolution-mail
 
 MULTI_PACKAGES=		-main -plugins
 
-MODULES=		devel/gettext \
-			x11/gnome \
-			devel/dconf
+MODULES=		devel/dconf \
+			devel/gettext \
+			x11/gnome
 
 BUILD_DEPENDS=		devel/bison \
-			x11/gnome/icon-theme \
+			devel/gsettings-desktop-schemas>=3.6.0 \
 			devel/iso-codes \
-			devel/gsettings-desktop-schemas>=3.6.0
+			x11/gnome/icon-theme
 
 LIB_DEPENDS=		databases/evolution-data-server>=${GNOME_VERSION} \
 			devel/libnotify \
 			www/gtkhtml4>=3.6.0
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			security/nss \
-			x11/gnome/desktop>=3.6.0 \
-			databases/openldap \
 			audio/libcanberra,-gtk3 \
-			www/webkit,gtk3
+			databases/openldap \
+			security/nss \
+			www/webkit,gtk3 \
+			x11/gnome/desktop>=3.6.0
 
 RUN_DEPENDS-main=	${RUN_DEPENDS} \
-			x11/gnome/icon-theme \
-			devel/gsettings-desktop-schemas>=3.6.0
+			devel/gsettings-desktop-schemas>=3.6.0 \
+			x11/gnome/icon-theme
 
 # gstreamer1(-plugins-base) is needed for the audio-inline plugin
 BUILD_DEPENDS +=	multimedia/gstreamer1/core
-RUN_DEPENDS-plugins=	multimedia/gstreamer1/plugins-base
+RUN_DEPENDS-main=	multimedia/gstreamer1/plugins-base
 
 LIB_DEPENDS-plugins=	${LIB_DEPENDS} \
 			mail/evolution,-main=${GNOME_VERSION} \
 			converters/libpst
 
-LIBTOOL_FLAGS=		--tag=disable-static
-
 MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
-
-YACC=			bison
-
-AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.9
-CONFIGURE_STYLE=	autoconf
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include -DBOGOFILTER_BINARY="\\\"${LOCALBASE}/bin/bogofilter\\\""
 # without --as-needed, evolution takes 20 minutes (yes, 20!) to start
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib -Wl,-rpath,${TRUEPREFIX}/lib/evolution/${R}:${TRUEPREFIX}/lib \
 				-Wl,--as-needed
+
+LIBTOOL_FLAGS=		--tag=disable-static
+YACC=			bison
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.9
+CONFIGURE_STYLE=	autoconf
 
 CONFIGURE_ARGS=		--disable-static \
 			--with-openldap="${LOCALBASE}" \
@@ -131,15 +130,6 @@ FAKE_FLAGS=		autostartdir=${PREFIX}/share/examples/evolution/xdg/autostart
 # https://bugzilla.gnome.org/show_bug.cgi?id=591436
 # This is needed because OpenBSD cannot link to unversioned SOLIBS
 # (evolution-rss needs to link to eutil, eshell, email-engine...).
-.for _lib in \
-composer eabutil econtacteditor econtactlisteditor email-engine \
-email-utils emformat emiscwidgets eshell essmime etable etext \
-etimezonedialog eutil evolution-a11y evolution-addressbook-importers \
-evolution-calendar-importers evolution-calendar \
-evolution-mail-importers evolution-mail \
-evolution-smime filter gnomecanvas menus
-SHARED_LIBS+=   ${_lib} ${SO_VERSION}
-.endfor
 REVERT_BZ591436=a11y/Makefile.in \
 		addressbook/gui/contact-editor/Makefile.in \
 		addressbook/gui/contact-list-editor/Makefile.in \
