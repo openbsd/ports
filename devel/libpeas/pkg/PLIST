@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2012/09/28 14:43:43 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.13 2012/09/29 13:14:05 ajacoutot Exp $
 @bin bin/peas-demo
 include/libpeas-1.0/
 include/libpeas-1.0/libpeas/
@@ -21,9 +21,7 @@ lib/libpeas-1.0/
 lib/libpeas-1.0.la
 @lib lib/libpeas-1.0.so.${LIBpeas-1.0_VERSION}
 lib/libpeas-1.0/loaders/
-@comment lib/libpeas-1.0/loaders/libgjsloader.la
 lib/libpeas-1.0/loaders/libgjsloader.so
-@comment lib/libpeas-1.0/loaders/libpythonloader.la
 lib/libpeas-1.0/loaders/libpythonloader.so
 lib/libpeas-gtk-1.0.la
 @lib lib/libpeas-gtk-1.0.so.${LIBpeas-gtk-1.0_VERSION}
@@ -34,7 +32,6 @@ lib/peas-demo/plugins/gjshello/gjshello.js
 lib/peas-demo/plugins/gjshello/gjshello.plugin
 lib/peas-demo/plugins/helloworld/
 lib/peas-demo/plugins/helloworld/helloworld.plugin
-@comment lib/peas-demo/plugins/helloworld/libhelloworld.la
 lib/peas-demo/plugins/helloworld/libhelloworld.so
 lib/peas-demo/plugins/pythonhello/
 lib/peas-demo/plugins/pythonhello/pythonhello.plugin
@@ -42,7 +39,6 @@ lib/peas-demo/plugins/pythonhello/pythonhello.py
 lib/peas-demo/plugins/pythonhello/pythonhello.pyc
 lib/peas-demo/plugins/pythonhello/pythonhello.pyo
 lib/peas-demo/plugins/secondtime/
-@comment lib/peas-demo/plugins/secondtime/libsecondtime.la
 lib/peas-demo/plugins/secondtime/libsecondtime.so
 lib/peas-demo/plugins/secondtime/secondtime.plugin
 lib/pkgconfig/libpeas-1.0.pc

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2012/09/28 11:44:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.84 2012/09/29 13:14:04 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,6 +19,11 @@ PKGNAME-main=	${DISTNAME}
 PKGNAME-djvu=	evince-djvu-${GNOME_VERSION}
 PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}
 PKGNAME-nautilus= nautilus-evince-${GNOME_VERSION}
+
+REVISION-main=	0
+REVISION-djvu=	0
+REVISION-dvi=	0
+REVISION-nautilus=0
 
 SHARED_LIBS +=  evdocument3               0.0 # 3.0
 SHARED_LIBS +=  evview3                   0.0 # 3.0
@@ -122,5 +127,9 @@ CONFIGURE_ARGS+= --enable$s
 CONFIGURE_ARGS+= --disable$s
 .  endif
 .endfor
+
+post-install:
+	rm ${PREFIX}/lib/nautilus/extensions-${MAJ_V}/*.la
+	rm ${PREFIX}/lib/evince/4/backends/*.la
 
 .include <bsd.port.mk>

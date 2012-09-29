@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.49 2012/09/21 13:51:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.50 2012/09/29 13:14:04 ajacoutot Exp $
 
 COMMENT=	user interface builder for the gtk+3 toolkit
 
 GNOME_VERSION=	3.14.0
 GNOME_PROJECT= 	glade
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -49,5 +50,8 @@ MODGNOME_TOOLS= goi yelp
 CONFIGURE_STYLE=	gnu
 MODGNOME_CPPFLAGS=	-pthread
 MODGNOME_LDFLAGS=	-pthread -lutil
+
+post-install:
+	rm ${PREFIX}/lib/glade/modules/*.{a,la}
 
 .include <bsd.port.mk>

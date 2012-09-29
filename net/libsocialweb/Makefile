@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/09/21 07:01:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2012/09/29 13:14:05 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		social web services integration framework
 
 GNOME_PROJECT=		libsocialweb
 GNOME_VERSION=		0.25.20
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  socialweb-client          2.0 # 2.0
 SHARED_LIBS +=  socialweb-keyfob          0.0 # 0.0
@@ -44,5 +44,8 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-static \
 			--enable-all-services \
 			--with-online=always # Other choices are ConnMan and NM
+
+post-install:
+	rm ${PREFIX}/lib/libsocialweb/services/*.la
 
 .include <bsd.port.mk>

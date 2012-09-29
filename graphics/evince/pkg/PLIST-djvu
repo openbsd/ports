@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-djvu,v 1.8 2012/03/29 07:03:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST-djvu,v 1.9 2012/09/29 13:14:04 ajacoutot Exp $
 lib/evince/4/backends/djvudocument.evince-backend
-@comment lib/evince/3/backends/libdjvudocument.la
 lib/evince/4/backends/libdjvudocument.so

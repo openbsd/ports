@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2012/09/28 14:43:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2012/09/29 13:14:05 ajacoutot Exp $
 
 COMMENT=	gobject-based plugins engine
 
 GNOME_PROJECT=	libpeas
 GNOME_VERSION=	1.6.0
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 
@@ -52,8 +52,10 @@ LIBTOOL_FLAGS=	--tag=disable-static
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-static \
 		--disable-glade-catalog \
-		--enable-gjs \
-		--disable-seed \
-		--enable-python
+		--disable-seed
+
+post-install:
+	rm ${PREFIX}/lib/libpeas-1.0/loaders/*.la
+	rm ${PREFIX}/lib/peas-demo/plugins/{helloworld,secondtime}/*.la
 
 .include <bsd.port.mk>

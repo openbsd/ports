@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.62 2012/09/24 18:46:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.63 2012/09/29 13:14:05 ajacoutot Exp $
 
 COMMENT=		GObject Introspection
 
 GNOME_VERSION=		1.34.0
 GNOME_PROJECT=		gobject-introspection
+REVISION=		0
+
 CATEGORIES=		devel
 
 SHARED_LIBS +=  girepository-1.0     3.0      # 1.0
@@ -50,5 +52,8 @@ MODPY_ADJ_FILES=	giscanner/scannermain.py \
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/giscanner/{dumper,scannermain,sourcescanner}.py
+
+post-install:
+	rm ${PREFIX}/lib/gobject-introspection/giscanner/*.{a,la}
 
 .include <bsd.port.mk>

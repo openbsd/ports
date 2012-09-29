@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2012/09/21 13:51:17 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.20 2012/09/29 13:14:04 ajacoutot Exp $
 @conflict glade3-<3.8.0p1
 @bin bin/glade
 @bin bin/glade-previewer
@@ -39,11 +39,7 @@ include/libgladeui-2.0/gladeui/glade.h
 lib/girepository-1.0/Gladeui-2.0.typelib
 lib/glade/
 lib/glade/modules/
-@comment lib/glade/modules/libgladegtk.a
-@comment lib/glade/modules/libgladegtk.la
 lib/glade/modules/libgladegtk.so
-@comment lib/glade/modules/libgladepython.a
-@comment lib/glade/modules/libgladepython.la
 lib/glade/modules/libgladepython.so
 lib/libgladeui-2.a
 lib/libgladeui-2.la

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2012/06/15 08:32:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2012/09/29 13:14:04 ajacoutot Exp $
 
 COMMENT =		user interface builder for the GTK2+ toolkit
 SHARED_ONLY =		Yes
 
 GNOME_VERSION =		3.8.2
 GNOME_PROJECT = 	glade3
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 SHARED_LIBS +=  gladeui-1            1.0      # 10.0
@@ -50,5 +50,8 @@ MODGNOME_LDFLAGS =	-pthread
 # make it possible to install alongside devel/glade
 MAKE_FLAGS =		DOC_ID=glade3 \
 			TARGET_DIR=${PREFIX}/share/gtk-doc/html/gladeui3
+
+post-install:
+	rm ${PREFIX}/lib/glade3/modules/*.{a,la}
 
 .include <bsd.port.mk>

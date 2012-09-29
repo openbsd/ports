@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2012/04/30 14:50:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.77 2012/09/29 13:14:05 ajacoutot Exp $
 
 COMMENT-main=	configuration database system for GNOME
 COMMENT-polkit=	PolicyKit integration for GConf2
@@ -10,7 +10,7 @@ PKGNAME=	gconf2-${GNOME_VERSION}
 PKGNAME-main=	gconf2-${GNOME_VERSION}
 PKGNAME-polkit=	gconf2-polkit-${GNOME_VERSION}
 
-REVISION-main=	1
+REVISION-main=	2
 
 SHARED_LIBS +=	gconf-2              6.2      # 5.5
 
@@ -76,5 +76,7 @@ pre-configure:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/schemas/
+	rm ${PREFIX}/lib/GConf/2/*.{a,la}
+	rm ${PREFIX}/lib/gio/modules/*.{a,la}
 
 .include <bsd.port.mk>

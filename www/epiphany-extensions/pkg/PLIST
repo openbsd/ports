@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2012/04/03 15:41:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2012/09/29 13:14:04 ajacoutot Exp $
 lib/epiphany/
 lib/epiphany/${M}/
 lib/epiphany/${M}/extensions/
@@ -9,29 +9,17 @@ lib/epiphany/${M}/extensions/extensions-manager-ui.ephy-extension
 lib/epiphany/${M}/extensions/gestures.ephy-extension
 lib/epiphany/${M}/extensions/greasemonkey.ephy-extension
 lib/epiphany/${M}/extensions/html5tube.ephy-extension
-@comment lib/epiphany/${M}/extensions/libactionsextension.la
 lib/epiphany/${M}/extensions/libactionsextension.so
-@comment lib/epiphany/${M}/extensions/libadblockextension.la
 lib/epiphany/${M}/extensions/libadblockextension.so
-@comment lib/epiphany/${M}/extensions/libautoreloadextension.la
 lib/epiphany/${M}/extensions/libautoreloadextension.so
-@comment lib/epiphany/${M}/extensions/libextensionsmanageruiextension.la
 lib/epiphany/${M}/extensions/libextensionsmanageruiextension.so
-@comment lib/epiphany/${M}/extensions/libgesturesextension.la
 lib/epiphany/${M}/extensions/libgesturesextension.so
-@comment lib/epiphany/${M}/extensions/libgreasemonkeyextension.la
 lib/epiphany/${M}/extensions/libgreasemonkeyextension.so
-@comment lib/epiphany/${M}/extensions/libhtml5tubeextension.la
 lib/epiphany/${M}/extensions/libhtml5tubeextension.so
-@comment lib/epiphany/${M}/extensions/libpushscrollerextension.la
 lib/epiphany/${M}/extensions/libpushscrollerextension.so
-@comment lib/epiphany/${M}/extensions/librssextension.la
 lib/epiphany/${M}/extensions/librssextension.so
-@comment lib/epiphany/${M}/extensions/libsoupflyextension.la
 lib/epiphany/${M}/extensions/libsoupflyextension.so
-@comment lib/epiphany/${M}/extensions/libtabkeytabnavigateextension.la
 lib/epiphany/${M}/extensions/libtabkeytabnavigateextension.so
-@comment lib/epiphany/${M}/extensions/libtabstatesextension.la
 lib/epiphany/${M}/extensions/libtabstatesextension.so
 lib/epiphany/${M}/extensions/push-scroller.ephy-extension
 lib/epiphany/${M}/extensions/rss.ephy-extension

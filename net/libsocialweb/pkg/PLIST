@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/09/28 15:08:15 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/09/29 13:14:05 ajacoutot Exp $
 include/libsocialweb/
 include/libsocialweb/interfaces/
 include/libsocialweb/interfaces/sw-avatar-ginterface.h
@@ -52,27 +52,16 @@ lib/libsocialweb-keystore.la
 lib/libsocialweb.la
 @lib lib/libsocialweb.so.${LIBsocialweb_VERSION}
 lib/libsocialweb/services/
-@comment lib/libsocialweb/services/libfacebook.la
 lib/libsocialweb/services/libfacebook.so
-@comment lib/libsocialweb/services/libflickr.la
 lib/libsocialweb/services/libflickr.so
-@comment lib/libsocialweb/services/liblastfm.la
 lib/libsocialweb/services/liblastfm.so
-@comment lib/libsocialweb/services/libmyspace.la
 lib/libsocialweb/services/libmyspace.so
-@comment lib/libsocialweb/services/libphotobucket.la
 lib/libsocialweb/services/libphotobucket.so
-@comment lib/libsocialweb/services/libplurk.la
 lib/libsocialweb/services/libplurk.so
-@comment lib/libsocialweb/services/libsina.la
 lib/libsocialweb/services/libsina.so
-@comment lib/libsocialweb/services/libsmugmug.la
 lib/libsocialweb/services/libsmugmug.so
-@comment lib/libsocialweb/services/libtwitter.la
 lib/libsocialweb/services/libtwitter.so
-@comment lib/libsocialweb/services/libvimeo.la
 lib/libsocialweb/services/libvimeo.so
-@comment lib/libsocialweb/services/libyoutube.la
 lib/libsocialweb/services/libyoutube.so
 lib/pkgconfig/libsocialweb-client.pc
 lib/pkgconfig/libsocialweb-keyfob.pc
