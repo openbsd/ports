@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2012/09/04 07:04:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2012/09/29 10:29:59 jasper Exp $
 
      SUBDIR =
      SUBDIR += bruce
@@ -16,6 +16,7 @@
      SUBDIR += homebank
      SUBDIR += impressive
      SUBDIR += ledger
+     SUBDIR += zeitgeist
      SUBDIR += osmo
      SUBDIR += palm2ical
      SUBDIR += qhacc
@@ -37,6 +38,7 @@
      SUBDIR += xinvest
      SUBDIR += xquote
      SUBDIR += yokadi
+     SUBDIR += zeitgeist
      SUBDIR += zim
 
 .include <bsd.port.subdir.mk>

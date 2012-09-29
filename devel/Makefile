@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1076 2012/09/27 14:56:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.1077 2012/09/29 10:26:19 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1066,6 +1066,7 @@
      SUBDIR += py-hg-git
      SUBDIR += py-html5lib
      SUBDIR += py-iniparse
+     SUBDIR += py-isodate
      SUBDIR += py-kid
      SUBDIR += py-liblarch
      SUBDIR += py-liblarch_gtk
