@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2012/09/01 14:36:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2012/09/29 12:12:30 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	document manager for GNOME
 
 GNOME_PROJECT=	gnome-documents
-GNOME_VERSION=	0.4.2
-REVISION=	0
+GNOME_VERSION=	3.6.0
 
 HOMEPAGE=	https://live.gnome.org/GnomeDocuments
 
@@ -31,6 +30,8 @@ WANTLIB += mozjs185 nspr4 nss3 oauth pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png pthread pthread-stubs
 WANTLIB += smime3 softokn3 soup-2.4 soup-gnome-2.4 sqlite3 ssl
 WANTLIB += ssl3 stdc++ tracker-sparql-0.14 unistring xcb xcb-render
+WANTLIB += ICE SM atk-bridge-2.0 atspi gck-1 gcr-base-3 harfbuzz
+WANTLIB += icudata icule icuuc p11-kit rest-0.7 xkbfile zapojit-0.0
 WANTLIB += xcb-shm xml2 z
 WANTLIB += lib/tracker-${TRACKER_VERSION}/tracker-data
 WANTLIB += lib/tracker-${TRACKER_VERSION}/tracker-common
@@ -40,8 +41,9 @@ MODULES=	devel/gettext \
 		x11/gnome
 
 LIB_DEPENDS=	graphics/clutter/clutter-gtk \
-		graphics/evince \
-		x11/gnome/gjs \
+		graphics/evince>=3.6.0 \
+		x11/gnome/gjs>=1.34.0 \
+		x11/gnome/libzapojit \
 		x11/gnome/tracker
 
 MODGNOME_ICON_CACHE=	Yes
@@ -50,5 +52,8 @@ MODGNOME_DESKTOP_FILE=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 
 CONFIGURE_ARGS=	--disable-static
+
+post-install:
+	rm ${PREFIX}/lib/gnome-documents/*.la
 
 .include <bsd.port.mk>
