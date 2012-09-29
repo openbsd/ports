@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2012/09/05 10:03:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2012/09/29 10:10:45 ajacoutot Exp $
 
 COMMENT=	input assistive technology
 
 GNOME_PROJECT=	caribou
 GNOME_VERSION=	0.4.4
+REVISION=	0
 
 SHARED_LIBS +=  caribou                   0.0 # 0.0
 
@@ -58,5 +59,6 @@ FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/caribou
 # XXX until they come up with a proper icon
 post-install:
 	echo "NoDisplay=true" >> ${PREFIX}/share/applications/caribou.desktop
+	rm ${PREFIX}/lib/gtk-{2,3}.0/modules/*.la
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2012/06/15 08:30:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2012/09/29 10:10:45 ajacoutot Exp $
 bin/f-spot
 bin/f-spot-sqlite-upgrade
 lib/f-spot/
@@ -93,7 +93,6 @@ lib/f-spot/gio-sharp.dll.config
 lib/f-spot/gkeyfile-sharp.dll
 lib/f-spot/gtk-sharp-beans.dll
 lib/f-spot/gtk-sharp-beans.dll.config
-@comment lib/f-spot/libfspot.la
 lib/f-spot/libfspot.so
 lib/f-spot/unique-sharp.dll
 lib/f-spot/unique-sharp.dll.config

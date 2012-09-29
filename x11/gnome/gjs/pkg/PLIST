@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/09/27 07:06:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/09/29 10:10:46 ajacoutot Exp $
 bin/gjs
 @bin bin/gjs-console
 include/gjs-1.0/
@@ -35,23 +35,14 @@ include/gjs-1.0/gjs/native.h
 include/gjs-1.0/gjs/type-module.h
 lib/gjs/
 lib/gjs-1.0/
-@comment lib/gjs-1.0/cairoNative.la
 lib/gjs-1.0/cairoNative.so
-@comment lib/gjs-1.0/console.la
 lib/gjs-1.0/console.so
-@comment lib/gjs-1.0/dbusNative.la
 lib/gjs-1.0/dbusNative.so
-@comment lib/gjs-1.0/debugger.la
 lib/gjs-1.0/debugger.so
-@comment lib/gjs-1.0/formatNative.la
 lib/gjs-1.0/formatNative.so
-@comment lib/gjs-1.0/gettextNative.la
 lib/gjs-1.0/gettextNative.so
-@comment lib/gjs-1.0/langNative.la
 lib/gjs-1.0/langNative.so
-@comment lib/gjs-1.0/mainloop.la
 lib/gjs-1.0/mainloop.so
-@comment lib/gjs-1.0/system.la
 lib/gjs-1.0/system.so
 lib/gjs/girepository-1.0/
 lib/gjs/girepository-1.0/GjsPrivate-1.0.typelib

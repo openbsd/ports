@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/08/15 08:04:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2012/09/29 10:10:45 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	themes design plugin for Gedit
 
 GNOME_PROJECT=	gedit-cossa
 GNOME_VERSION=	3.2.0
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	editors
 
@@ -36,5 +36,8 @@ LIB_DEPENDS=	devel/libpeas \
 LIBTOOL_FLAGS=	--tag=disable-static
 
 CONFIGURE_ARGS=	--disable-static
+
+post-install:
+	rm ${PREFIX}/lib/gedit/plugins/*.la
 
 .include <bsd.port.mk>

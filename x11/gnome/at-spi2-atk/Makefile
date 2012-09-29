@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2012/09/28 07:57:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2012/09/29 10:10:45 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	atk-bridge for at-spi2
 
 GNOME_PROJECT=	at-spi2-atk
 GNOME_VERSION=	2.6.0
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  atk-bridge-2.0            0.0 # 0.0
 
@@ -32,5 +32,8 @@ MODGNOME_CPPFLAGS=-I${X11BASE}/include
 
 # connects to DBus
 REGRESS_IS_INTERACTIVE=	x11
+
+post-install:
+	rm ${PREFIX}/lib/gtk-2.0/modules/*.{a,la}
 
 .include <bsd.port.mk>

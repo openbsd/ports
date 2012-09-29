@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.102 2012/09/10 10:47:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.103 2012/09/29 10:10:45 ajacoutot Exp $
 
 COMMENT= 		Telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		3.4.2
-REVISION=		5
+REVISION=		6
 
 CATEGORIES=		net
 
@@ -87,6 +87,8 @@ CONFIGURE_ARGS +=	--disable-geocode
 # needs connman or network-manager
 CONFIGURE_ARGS+=	--without-connectivity
 
-USE_GROFF=		Yes
+post-install:
+	rm ${PREFIX}/lib/mission-control-plugins.0/*.{a,la}
+	rm ${PREFIX}/lib/lib/nautilus-sendto/plugins/*.{a,la}
 
 .include <bsd.port.mk>

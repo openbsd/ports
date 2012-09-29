@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2012/09/06 12:38:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2012/09/29 10:10:45 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	music management and playback application for GNOME
 
 GNOME_VERSION=	2.4.1
 GNOME_PROJECT=	banshee
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	audio
 
@@ -97,5 +97,9 @@ DLLMAP_FILES=	src/Hyena/Hyena/Hyena.dll.config \
 .if !target(do-install)
 MAKE_FLAGS +=	INSTALL_DATA='/usr/bin/install -c -m 444'
 .endif
+
+post-install:
+	rm ${PREFIX}/lib/banshee/Backends/*.la
+	rm ${PREFIX}/lib/banshee/*.la
 
 .include <bsd.port.mk>

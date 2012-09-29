@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/06/15 08:30:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/09/29 10:10:45 ajacoutot Exp $
 bin/bamz
 bin/banshee
 bin/muinshee
@@ -14,7 +14,6 @@ lib/banshee/Backends/Banshee.NowPlaying.X11.dll.mdb
 lib/banshee/Backends/Banshee.Unix.dll
 lib/banshee/Backends/Banshee.Unix.dll.config
 lib/banshee/Backends/Banshee.Unix.dll.mdb
-@comment lib/banshee/Backends/libbnpx11.la
 lib/banshee/Backends/libbnpx11.so
 lib/banshee/Banshee.CollectionIndexer.dll
 lib/banshee/Banshee.CollectionIndexer.dll.mdb
@@ -129,9 +128,7 @@ lib/banshee/MusicBrainz.dll.mdb
 lib/banshee/Nereid.exe
 lib/banshee/Nereid.exe.mdb
 lib/banshee/gconf-schema-extractor.exe
-@comment lib/banshee/libbanshee.la
 lib/banshee/libbanshee.so
-@comment lib/banshee/libossifer.la
 lib/banshee/libossifer.so
 lib/monodoc/sources/banshee-docs.source
 lib/monodoc/sources/banshee-docs.tree

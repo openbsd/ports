@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.51 2012/09/27 14:15:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.52 2012/09/29 10:10:46 ajacoutot Exp $
 
 COMMENT=		plugins for Gedit
 
 GNOME_PROJECT=		gedit-plugins
 GNOME_VERSION=		3.6.0
+REVISION=		0
 
 CATEGORIES=		editors
 
@@ -47,5 +48,8 @@ CONFIGURE_ARGS+=	--disable-static \
 # needed for the Vte plugin (-lvte2_90)
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include -pthread
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib -pthread
+
+post-install:
+	rm ${PREFIX}/lib/gedit/plugins/*.la
 
 .include <bsd.port.mk>

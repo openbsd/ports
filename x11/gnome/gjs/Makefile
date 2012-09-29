@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/09/27 07:06:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2012/09/29 10:10:46 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		Javascript bindings for GNOME
 
 GNOME_PROJECT=		gjs
 GNOME_VERSION=		1.34.0
+REVISION=		0
 
 SHARED_LIBS +=  gjs                  2.0      # 0.0
 SHARED_LIBS +=  gjs-dbus             2.0      # 0.0
@@ -52,5 +53,6 @@ REGRESS_DEPENDS +=	${MODPY_RUN_DEPENDS} # scripts/make-tests needs python to run
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gjs/
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${PREFIX}/share/examples/gjs/
+	rm ${PREFIX}/lib/gjs-1.0/*.la
 
 .include <bsd.port.mk>

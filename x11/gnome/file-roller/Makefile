@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2012/09/28 09:48:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.74 2012/09/29 10:10:45 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -10,6 +10,8 @@ GNOME_VERSION=		3.6.0
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-nautilus=	nautilus-${DISTNAME}
+
+REVISION-nautilus=	0
 
 CATEGORIES=		archivers
 
@@ -61,5 +63,8 @@ MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=		Yes
 
 CONFIGURE_ARGS=		--disable-packagekit
+
+post-install:
+	rm ${PREFIX}/lib/nautilus/extensions-3.0/*.{a,la}
 
 .include <bsd.port.mk>

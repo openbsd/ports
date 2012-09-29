@@ -1,15 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.12 2012/08/25 13:30:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2012/09/29 10:10:45 ajacoutot Exp $
 @bin bin/ekiga
 bin/ekiga-config-tool
 @bin bin/ekiga-helper
 lib/ekiga/
 lib/ekiga/${GNOME_VERSION}/
-@comment lib/ekiga/${GNOME_VERSION}/libekiga.la
 lib/ekiga/${GNOME_VERSION}/libekiga.so
 lib/ekiga/${GNOME_VERSION}/plugins/
-@comment lib/ekiga/${GNOME_VERSION}/plugins/libgmevolution.la
 lib/ekiga/${GNOME_VERSION}/plugins/libgmevolution.so
-@comment lib/ekiga/${GNOME_VERSION}/plugins/libgmldap.la
 lib/ekiga/${GNOME_VERSION}/plugins/libgmldap.so
 @man man/man1/ekiga.1
 share/applications/ekiga.desktop

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2012/09/28 18:56:55 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.25 2012/09/29 10:10:45 ajacoutot Exp $
 @conflict gnome-build-*
 @pkgpath x11/gnome/build
 @bin bin/anjuta
@@ -156,88 +156,49 @@ lib/anjuta/git.plugin
 lib/anjuta/js-support-plugin.plugin
 lib/anjuta/js_debugger.plugin
 lib/anjuta/language-manager.plugin
-@comment lib/anjuta/libam-project.la
 lib/anjuta/libam-project.so
-@comment lib/anjuta/libanjuta-build-basic-autotools.la
 lib/anjuta/libanjuta-build-basic-autotools.so
-@comment lib/anjuta/libanjuta-class-gen.la
 lib/anjuta/libanjuta-class-gen.so
-@comment lib/anjuta/libanjuta-cvs-plugin.la
 lib/anjuta/libanjuta-cvs-plugin.so
-@comment lib/anjuta/libanjuta-debug-manager.la
 lib/anjuta/libanjuta-debug-manager.so
-@comment lib/anjuta/libanjuta-devhelp.la
 lib/anjuta/libanjuta-devhelp.so
-@comment lib/anjuta/libanjuta-document-manager.la
 lib/anjuta/libanjuta-document-manager.so
-@comment lib/anjuta/libanjuta-file-wizard.la
 lib/anjuta/libanjuta-file-wizard.so
-@comment lib/anjuta/libanjuta-gdb.la
 lib/anjuta/libanjuta-gdb.so
-@comment lib/anjuta/libanjuta-git.la
 lib/anjuta/libanjuta-git.so
-@comment lib/anjuta/libanjuta-glade.la
 lib/anjuta/libanjuta-glade.so
-@comment lib/anjuta/libanjuta-indentation-c-style.la
 lib/anjuta/libanjuta-indentation-c-style.so
-@comment lib/anjuta/libanjuta-indentation-python-style.la
 lib/anjuta/libanjuta-indentation-python-style.so
-@comment lib/anjuta/libanjuta-language-cpp-java.la
 lib/anjuta/libanjuta-language-cpp-java.so
-@comment lib/anjuta/libanjuta-language-support-python.la
 lib/anjuta/libanjuta-language-support-python.so
-@comment lib/anjuta/libanjuta-language-vala.la
 lib/anjuta/libanjuta-language-vala.so
-@comment lib/anjuta/libanjuta-loader.la
 lib/anjuta/libanjuta-loader.so
-@comment lib/anjuta/libanjuta-message-view.la
 lib/anjuta/libanjuta-message-view.so
-@comment lib/anjuta/libanjuta-parser-cxx.la
 lib/anjuta/libanjuta-parser-cxx.so
-@comment lib/anjuta/libanjuta-patch.la
 lib/anjuta/libanjuta-patch.so
-@comment lib/anjuta/libanjuta-project-import.la
 lib/anjuta/libanjuta-project-import.so
-@comment lib/anjuta/libanjuta-project-manager.la
 lib/anjuta/libanjuta-project-manager.so
-@comment lib/anjuta/libanjuta-project-wizard.la
 lib/anjuta/libanjuta-project-wizard.so
-@comment lib/anjuta/libanjuta-python-loader.la
 lib/anjuta/libanjuta-python-loader.so
-@comment lib/anjuta/libanjuta-run-program.la
 lib/anjuta/libanjuta-run-program.so
-@comment lib/anjuta/libanjuta-snippets-manager.la
 lib/anjuta/libanjuta-snippets-manager.so
-@comment lib/anjuta/libanjuta-sourceview.la
 lib/anjuta/libanjuta-sourceview.so
-@comment lib/anjuta/libanjuta-starter.la
 lib/anjuta/libanjuta-starter.so
-@comment lib/anjuta/libanjuta-subversion.la
 lib/anjuta/libanjuta-subversion.so
-@comment lib/anjuta/libanjuta-symbol-db.la
 lib/anjuta/libanjuta-symbol-db.so
-@comment lib/anjuta/libanjuta-terminal.la
 lib/anjuta/libanjuta-terminal.so
-@comment lib/anjuta/libanjuta-tools.la
 lib/anjuta/libanjuta-tools.so
-@comment lib/anjuta/libdir-project.la
 lib/anjuta/libdir-project.so
-@comment lib/anjuta/libfile-manager.la
 lib/anjuta/libfile-manager.so
-@comment lib/anjuta/libjs-support-plugin.la
 lib/anjuta/libjs-support-plugin.so
-@comment lib/anjuta/libjs_debugger.la
 lib/anjuta/libjs_debugger.so
-@comment lib/anjuta/liblanguage-manager.la
 lib/anjuta/liblanguage-manager.so
-@comment lib/anjuta/libmk-project.la
 lib/anjuta/libmk-project.so
 lib/anjuta/mk-project.plugin
 lib/anjuta/sourceview.plugin
 lib/anjuta/symbol-db.plugin
 lib/girepository-1.0/Anjuta-3.0.typelib
 lib/girepository-1.0/IAnjuta-3.0.typelib
-@comment lib/glade/modules/libgladeanjuta.la
 lib/glade/modules/libgladeanjuta.so
 lib/libanjuta-3.la
 @lib lib/libanjuta-3.so.${LIBanjuta-3_VERSION}

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/09/21 13:24:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/09/29 10:10:45 ajacoutot Exp $
 @conflict at-spi-<=1.32.0p3
 include/at-spi2-atk/
 include/at-spi2-atk/2.0/
@@ -8,8 +8,6 @@ lib/gnome-settings-daemon-3.0/gtk-modules/
 lib/gnome-settings-daemon-3.0/gtk-modules/at-spi2-atk.desktop
 lib/gtk-2.0/
 lib/gtk-2.0/modules/
-@comment lib/gtk-2.0/modules/libatk-bridge.a
-@comment lib/gtk-2.0/modules/libatk-bridge.la
 lib/gtk-2.0/modules/libatk-bridge.so
 lib/libatk-bridge-2.0.a
 lib/libatk-bridge-2.0.la
