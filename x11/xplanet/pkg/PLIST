@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/01/06 09:24:48 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/09/29 09:35:33 rpointel Exp $
 @bin bin/xplanet
 @man man/man1/xplanet.1
 share/xplanet/
@@ -45,10 +45,10 @@ share/xplanet/satellites/
 share/xplanet/satellites/README
 share/xplanet/satellites/iss
 share/xplanet/satellites/iss.tle
-share/xplanet/scripts/
-share/xplanet/scripts/convertCassini.perl
-share/xplanet/scripts/convertCassini2.perl
-share/xplanet/scripts/openbsd_markers.sh
+share/xplanet/scattering/
+share/xplanet/scattering/README
+share/xplanet/scattering/earthRayleigh
+share/xplanet/scripts
 share/xplanet/spice/
 share/xplanet/spice/README
 share/xplanet/spice/asteroids
