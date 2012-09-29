@@ -1,7 +1,18 @@
-$OpenBSD: patch-Imakefile,v 1.2 2004/01/09 21:10:34 sturm Exp $
---- Imakefile.orig	1995-12-22 13:05:52.000000000 +0100
-+++ Imakefile	2004-01-09 22:05:46.000000000 +0100
-@@ -122,7 +122,7 @@ FONT = thefont
+$OpenBSD: patch-Imakefile,v 1.3 2012/09/29 08:16:50 landry Exp $
+--- Imakefile.orig	Fri Dec 22 05:05:52 1995
++++ Imakefile	Sat Sep 29 02:10:31 2012
+@@ -51,10 +51,6 @@ XCOMM Allow debugging?
+ XCOMM CDEBUGFLAGS = -g STATICDEBUG
+ XCOMM debug event loop?
+ XCOMM CDEBUGFLAGS += -DDEBUGEVENTLOOP
+-#ifdef HPArchitecture
+-CCOPTIONS = -Aa -D_HPUX_SOURCE
+-EXTRA_LOAD_FLAGS = -lV3
+-#endif
+ 
+ XCOMM system environment
+ XCOMM
+@@ -122,7 +118,7 @@ FONT = thefont
  
  #ifndef InstallDefaultGardens
  #ifdef InstallAppDefFiles
@@ -10,7 +21,7 @@ $OpenBSD: patch-Imakefile,v 1.2 2004/01/09 21:10:34 sturm Exp $
  #endif
  #endif
  
-@@ -296,9 +296,9 @@ NormalProgramTarget(xmris,$(MRISOBJS),$(
+@@ -296,9 +292,9 @@ NormalProgramTarget(xmris,$(MRISOBJS),$(DEPLIBS),$(LOC
  
  InstallProgramWithFlags(xmris,$(THEBINDIR),$(INSTMRISFLAGS))
  
@@ -23,7 +34,7 @@ $OpenBSD: patch-Imakefile,v 1.2 2004/01/09 21:10:34 sturm Exp $
  
  #endif /* transputerbuild */
  
-@@ -345,16 +345,16 @@ Xmris.ad : Xmris-ad.src
+@@ -345,16 +341,16 @@ Xmris.ad : Xmris-ad.src
  
  XCOMM score directory install
  install ::
@@ -45,7 +56,7 @@ $OpenBSD: patch-Imakefile,v 1.2 2004/01/09 21:10:34 sturm Exp $
  	*) echo unknown option '$$1' ;; \
  	esac ; \
  	shift ; \
-@@ -363,11 +363,11 @@ install ::
+@@ -363,11 +359,11 @@ install ::
  #ifdef InstallDefaultGardens
  XCOMM install default gardens
  install :: $(GARDENS)
