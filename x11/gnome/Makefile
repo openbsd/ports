@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.190 2012/09/28 14:51:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.191 2012/09/29 12:10:17 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += anjuta
@@ -70,6 +70,7 @@
      SUBDIR += librsvg
      SUBDIR += libsecret
      SUBDIR += libxklavier
+     SUBDIR += libzapojit
      SUBDIR += menus
      SUBDIR += metacity
      SUBDIR += mime-data
