@@ -1,4 +1,4 @@
-$OpenBSD: patch-dbus-1_Makefile_in,v 1.7 2012/09/27 08:32:05 ajacoutot Exp $
+$OpenBSD: patch-dbus-1_Makefile_in,v 1.8 2012/09/29 19:27:33 ajacoutot Exp $
 --- dbus-1/Makefile.in.orig	Thu Sep 27 09:27:23 2012
 +++ dbus-1/Makefile.in	Thu Sep 27 09:29:28 2012
 @@ -55,7 +55,7 @@ POST_UNINSTALL = :
@@ -15,7 +15,7 @@ $OpenBSD: patch-dbus-1_Makefile_in,v 1.7 2012/09/27 08:32:05 ajacoutot Exp $
  	$(glib_LIBS)
  
 -libdconf_dbus_1_so_0_0_0_LDFLAGS = -shared -Wl,-soname=libdconf-dbus-1.so.0
-+libdconf_dbus_1_so_0_0_0_LDFLAGS = -shared
++libdconf_dbus_1_so_0_0_0_LDFLAGS = -shared -Wl,-soname=libdconf-dbus-1.so.${LIBdconf_VERSION}
  libdconf_dbus_1_so_0_0_0_SOURCES = dconf-dbus-1.c
 -nodist_noinst_DATA = libdconf-dbus-1.so libdconf-dbus-1.so.0
 +nodist_noinst_DATA =

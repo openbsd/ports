@@ -1,4 +1,4 @@
-$OpenBSD: patch-client_Makefile_in,v 1.9 2012/09/27 08:32:05 ajacoutot Exp $
+$OpenBSD: patch-client_Makefile_in,v 1.10 2012/09/29 19:27:33 ajacoutot Exp $
 --- client/Makefile.in.orig	Wed Sep 26 20:07:41 2012
 +++ client/Makefile.in	Thu Sep 27 10:04:02 2012
 @@ -55,7 +55,7 @@ POST_UNINSTALL = :
@@ -24,7 +24,7 @@ $OpenBSD: patch-client_Makefile_in,v 1.9 2012/09/27 08:32:05 ajacoutot Exp $
  	$(gio_LIBS)
  
 -libdconf_so_1_0_0_LDFLAGS = -shared -Wl,-soname=libdconf.so.1
-+libdconf_so_1_0_0_LDFLAGS = -shared
++libdconf_so_1_0_0_LDFLAGS = -shared -Wl,-soname=libdconf.so.${LIBdconf_VERSION}
  libdconf_so_1_0_0_SOURCES = $(libdconf_client_a_SOURCES)
  EXTRA_DIST = dconf.vapi dconf.deps
  vapi_DATA = dconf.vapi dconf.deps
