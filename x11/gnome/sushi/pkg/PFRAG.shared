@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2012/07/08 08:59:43 ajacoutot Exp $
-@lib lib/libsushi-1.0.so.${LIBsushi-1.0_VERSION}
