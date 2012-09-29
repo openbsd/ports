@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2012/04/02 15:59:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2012/09/29 07:42:40 ajacoutot Exp $
 include/libgdata/
 include/libgdata/gdata/
 include/libgdata/gdata/app/
@@ -41,6 +41,7 @@ include/libgdata/gdata/gdata-download-stream.h
 include/libgdata/gdata/gdata-entry.h
 include/libgdata/gdata/gdata-enums.h
 include/libgdata/gdata/gdata-feed.h
+include/libgdata/gdata/gdata-goa-authorizer.h
 include/libgdata/gdata/gdata-oauth1-authorizer.h
 include/libgdata/gdata/gdata-parsable.h
 include/libgdata/gdata/gdata-query.h
@@ -69,6 +70,7 @@ include/libgdata/gdata/services/contacts/gdata-contacts-query.h
 include/libgdata/gdata/services/contacts/gdata-contacts-service.h
 include/libgdata/gdata/services/documents/
 include/libgdata/gdata/services/documents/gdata-documents-document.h
+include/libgdata/gdata/services/documents/gdata-documents-drawing.h
 include/libgdata/gdata/services/documents/gdata-documents-entry.h
 include/libgdata/gdata/services/documents/gdata-documents-enums.h
 include/libgdata/gdata/services/documents/gdata-documents-feed.h
@@ -78,6 +80,7 @@ include/libgdata/gdata/services/documents/gdata-documents-query.h
 include/libgdata/gdata/services/documents/gdata-documents-service.h
 include/libgdata/gdata/services/documents/gdata-documents-spreadsheet.h
 include/libgdata/gdata/services/documents/gdata-documents-text.h
+include/libgdata/gdata/services/documents/gdata-documents-upload-query.h
 include/libgdata/gdata/services/picasaweb/
 include/libgdata/gdata/services/picasaweb/gdata-picasaweb-album.h
 include/libgdata/gdata/services/picasaweb/gdata-picasaweb-comment.h
@@ -126,6 +129,7 @@ share/gtk-doc/html/gdata/GDataContactsGroup.html
 share/gtk-doc/html/gdata/GDataContactsQuery.html
 share/gtk-doc/html/gdata/GDataContactsService.html
 share/gtk-doc/html/gdata/GDataDocumentsDocument.html
+share/gtk-doc/html/gdata/GDataDocumentsDrawing.html
 share/gtk-doc/html/gdata/GDataDocumentsEntry.html
 share/gtk-doc/html/gdata/GDataDocumentsFeed.html
 share/gtk-doc/html/gdata/GDataDocumentsFolder.html
@@ -134,6 +138,7 @@ share/gtk-doc/html/gdata/GDataDocumentsQuery.html
 share/gtk-doc/html/gdata/GDataDocumentsService.html
 share/gtk-doc/html/gdata/GDataDocumentsSpreadsheet.html
 share/gtk-doc/html/gdata/GDataDocumentsText.html
+share/gtk-doc/html/gdata/GDataDocumentsUploadQuery.html
 share/gtk-doc/html/gdata/GDataDownloadStream.html
 share/gtk-doc/html/gdata/GDataEntry.html
 share/gtk-doc/html/gdata/GDataFeed.html
@@ -155,6 +160,7 @@ share/gtk-doc/html/gdata/GDataGDWhen.html
 share/gtk-doc/html/gdata/GDataGDWhere.html
 share/gtk-doc/html/gdata/GDataGDWho.html
 share/gtk-doc/html/gdata/GDataGenerator.html
+share/gtk-doc/html/gdata/GDataGoaAuthorizer.html
 share/gtk-doc/html/gdata/GDataLink.html
 share/gtk-doc/html/gdata/GDataMediaCategory.html
 share/gtk-doc/html/gdata/GDataMediaContent.html
@@ -222,6 +228,8 @@ share/gtk-doc/html/gdata/ix11.html
 share/gtk-doc/html/gdata/ix12.html
 share/gtk-doc/html/gdata/ix13.html
 share/gtk-doc/html/gdata/ix14.html
+share/gtk-doc/html/gdata/ix15.html
+share/gtk-doc/html/gdata/ix16.html
 share/gtk-doc/html/gdata/left.png
 share/gtk-doc/html/gdata/pt01.html
 share/gtk-doc/html/gdata/pt02.html
@@ -264,6 +272,7 @@ share/locale/lv/LC_MESSAGES/gdata.mo
 share/locale/ml/LC_MESSAGES/gdata.mo
 share/locale/mr/LC_MESSAGES/gdata.mo
 share/locale/nb/LC_MESSAGES/gdata.mo
+share/locale/nl/LC_MESSAGES/gdata.mo
 share/locale/or/LC_MESSAGES/gdata.mo
 share/locale/pa/LC_MESSAGES/gdata.mo
 share/locale/pl/LC_MESSAGES/gdata.mo
