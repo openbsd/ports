@@ -1,12 +1,12 @@
-$OpenBSD: patch-lpsolve55_ccc,v 1.2 2012/05/11 23:29:30 edd Exp $
+$OpenBSD: patch-lpsolve55_ccc,v 1.3 2012/09/29 05:02:50 brad Exp $
 
 * We don't use -ldl
 * Don't use platform specific paths
 * Honour CFLAGS and CC
 * Don't write to /tmp during build
 
---- lpsolve55/ccc.orig	Wed Mar 25 00:27:18 2009
-+++ lpsolve55/ccc	Fri May 11 15:16:45 2012
+--- lpsolve55/ccc.orig	Tue Mar 24 20:27:18 2009
++++ lpsolve55/ccc	Thu Sep 27 19:46:21 2012
 @@ -1,50 +1,50 @@
  :
  src='../lp_MDO.c ../shared/commonlib.c ../shared/mmio.c ../shared/myblas.c ../ini.c ../fortify.c ../colamd/colamd.c ../lp_rlp.c ../lp_crash.c ../bfp/bfp_LUSOL/lp_LUSOL.c ../bfp/bfp_LUSOL/LUSOL/lusol.c ../lp_Hash.c ../lp_lib.c ../lp_wlp.c ../lp_matrix.c ../lp_mipbb.c ../lp_MPS.c ../lp_params.c ../lp_presolve.c ../lp_price.c ../lp_pricePSE.c ../lp_report.c ../lp_scale.c ../lp_simplex.c ../lp_SOS.c ../lp_utils.c ../yacc_read.c'
@@ -73,9 +73,10 @@ $OpenBSD: patch-lpsolve55_ccc,v 1.2 2012/05/11 23:29:30 edd Exp $
  
  if [ "$so" != "" ]
  then
-   $c -fpic -s -c -I.. -I../shared -I../bfp -I../bfp/bfp_LUSOL -I../bfp/bfp_LUSOL/LUSOL -I../colamd -I. $opts $NOISNAN -DYY_NEVER_INTERACTIVE -DPARSER_LP -DINVERSE_ACTIVE=INVERSE_LUSOL -DRoleIsExternalInvEngine $src
+-  $c -fpic -s -c -I.. -I../shared -I../bfp -I../bfp/bfp_LUSOL -I../bfp/bfp_LUSOL/LUSOL -I../colamd -I. $opts $NOISNAN -DYY_NEVER_INTERACTIVE -DPARSER_LP -DINVERSE_ACTIVE=INVERSE_LUSOL -DRoleIsExternalInvEngine $src
 -  $c -shared -Wl,-Bsymbolic -Wl,-soname,liblpsolve55.so -o bin/$PLATFORM/liblpsolve55.so `echo $src|sed s/[.]c/.o/g|sed 's/[^ ]*\///g'` -lc -lm -ldl
-+  $c -shared -Wl,-Bsymbolic -Wl,-soname,liblpsolve55.so.${LIBlpsolve55_VERSION} -o bin/liblpsolve55.so.${LIBlpsolve55_VERSION} `echo $src|sed s/[.]c/.o/g|sed 's/[^ ]*\///g'` -lc -lm ${dl}
++  $c -fPIC -s -c -I.. -I../shared -I../bfp -I../bfp/bfp_LUSOL -I../bfp/bfp_LUSOL/LUSOL -I../colamd -I. $opts $NOISNAN -DYY_NEVER_INTERACTIVE -DPARSER_LP -DINVERSE_ACTIVE=INVERSE_LUSOL -DRoleIsExternalInvEngine $src
++  $c -shared -fPIC -Wl,-Bsymbolic -o bin/liblpsolve55.so.${LIBlpsolve55_VERSION} `echo $src|sed s/[.]c/.o/g|sed 's/[^ ]*\///g'` -lc -lm ${dl}
  fi
  
  rm *.o 2>/dev/null

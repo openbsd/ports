@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2012/09/27 17:44:20 landry Exp $
-
-BROKEN-sparc64 =	relocation overflow when linking liblpsolve55.so.0.0
+# $OpenBSD: Makefile,v 1.4 2012/09/29 05:02:50 brad Exp $
 
 COMMENT =		mixed integer linear programming solver
 
 DISTNAME =		lp_solve_${V}_source
 PKGNAME =		lpsolve-${V}
+REVISION =		0
 WRKDIST =		${WRKDIR}/lp_solve_${V_MAJOR}
 
 SHARED_LIBS =		lpsolve55	0.0	# unversioned upstream
