@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/10/20 10:56:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/09/29 05:10:43 brad Exp $
 
 COMMENT =	software version control visualization tool
 
@@ -15,6 +15,9 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	${HOMEPAGE}/files/
+
+# gource automake Makefiles are broken; CPPFLAGS does not work.
+CFLAGS+=	-I${LOCALBASE}/include
 
 CONFIGURE_STYLE =	gnu noman
 
