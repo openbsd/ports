@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2012/09/29 09:35:33 rpointel Exp $
+# $OpenBSD: Makefile,v 1.51 2012/09/29 20:09:43 kili Exp $
 
 COMMENT=	draw pictures of the earth textured by an image
 
@@ -44,6 +44,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/openbsd_markers \
 			${PREFIX}/share/xplanet/config/
+	${INSTALL_PROGRAM_DIR} ${PREFIX}/share/xplanet/scripts
 	${INSTALL_SCRIPT} ${FILESDIR}/openbsd_markers.sh \
 			${PREFIX}/share/xplanet/scripts/
 
