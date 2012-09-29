@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# $OpenBSD: ngircd.rc,v 1.1.1.1 2012/09/29 12:32:01 fgsch Exp $
+
+daemon="${TRUEPREFIX}/sbin/ngircd"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1

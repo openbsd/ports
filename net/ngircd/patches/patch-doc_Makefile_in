@@ -1,0 +1,22 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2012/09/29 12:32:01 fgsch Exp $
+--- doc/Makefile.in.orig	Tue Jun 19 11:36:41 2012
++++ doc/Makefile.in	Sat Sep 15 23:23:24 2012
+@@ -588,16 +588,13 @@ maintainer-clean-local:
+ all: $(generated_docs)
+ 
+ install-data-hook: $(static_docs) $(toplevel_docs) $(generated_docs)
+-	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)
+-	if [ ! -f $(DESTDIR)$(sysconfdir)/ngircd.conf ]; then \
+-	  $(INSTALL) -m 600 -c sample-ngircd.conf $(DESTDIR)$(sysconfdir)/ngircd.conf; \
+-	 fi
+ 	$(mkinstalldirs) $(DESTDIR)$(docdir)
+ 	for f in $(static_docs) $(toplevel_docs); do \
+ 	  $(INSTALL) -m 644 -c $(srcdir)/$$f $(DESTDIR)$(docdir)/; \
+ 	 done
++	$(mkinstalldirs) $(DESTDIR)${datarootdir}/examples/${PACKAGE_TARNAME}
+ 	for f in $(generated_docs); do \
+-	  $(INSTALL) -m 644 -c $$f $(DESTDIR)$(docdir)/; \
++	  $(INSTALL) -m 644 -c $$f $(DESTDIR)${datarootdir}/examples/${PACKAGE_TARNAME}; \
+ 	 done
+ 
+ uninstall-hook:
