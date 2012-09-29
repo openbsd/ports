@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure,v 1.1 2012/09/29 09:15:10 landry Exp $
+Fix packaging on hppa
+--- configure.orig	Sat Sep 29 02:32:55 2012
++++ configure	Sat Sep 29 02:33:12 2012
+@@ -6606,8 +6606,6 @@ _ACEOF
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking module extension" >&5
+ $as_echo_n "checking module extension... " >&6; }
+ case $host in
+-  hp*|HP*)
+-	SO=.sl;;
+   *cygwin*)
+ 	SO=.dll;;
+   *)
