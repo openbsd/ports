@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.289 2012/09/23 17:20:41 jeremy Exp $
+# $OpenBSD: Makefile,v 1.290 2012/09/29 12:11:28 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -84,6 +84,7 @@
      SUBDIR += libmpd
      SUBDIR += libmpdclient
      SUBDIR += libmusicbrainz
+     SUBDIR += libmusicbrainz5
      SUBDIR += libnjb
      SUBDIR += libofa
      SUBDIR += libogg
