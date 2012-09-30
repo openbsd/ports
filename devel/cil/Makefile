@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.22 2012/08/26 20:17:42 avsm Exp $
+# $OpenBSD: Makefile,v 1.23 2012/09/30 09:16:36 sthen Exp $
 
 # until tested on others, even though bytecode is produced
-.include <bsd.port.arch.mk>
 ONLY_FOR_ARCHS =	${OCAML_NATIVE_ARCHS}
 
 COMMENT=	framework for analysis and transformation of C

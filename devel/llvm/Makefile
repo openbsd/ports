@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2012/09/05 23:19:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2012/09/30 09:16:36 sthen Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -18,7 +18,6 @@ HOMEPAGE =	http://www.llvm.org/
 
 VMEM_WARNING =	Yes
 
-.include <bsd.port.arch.mk>
 ONLY_FOR_ARCHS = ${LLVM_ARCHS}
 #
 # there is some chance of building on other GCC4 arch, but is known to be
