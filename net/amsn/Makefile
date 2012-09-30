@@ -1,11 +1,11 @@
-#$OpenBSD: Makefile,v 1.24 2012/09/28 14:25:06 jasper Exp $
+#$OpenBSD: Makefile,v 1.25 2012/09/30 07:49:04 jasper Exp $
 
 COMMENT=	open source MSN Messenger clone
 
 V=		0.98.9
 DISTNAME=	amsn-$V-src
 PKGNAME=	${DISTNAME:S/-src//}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.amsn-project.net/
@@ -21,8 +21,7 @@ PERMIT_DISTFILES_FTP=   Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=project/amsn/amsn/${V}/}
 EXTRACT_SUFX=	.tar.bz2
 
-WANTLIB=	ICE SM X11 m stdc++ z glib-2.0 gmodule-2.0 gobject-2.0 \
-		gthread-2.0 gstbase-0.10 gstreamer-0.10 xml2 jpeg png
+WANTLIB += ICE SM X11 jpeg m png stdc++ z
 
 LIB_DEPENDS=	graphics/jpeg \
 		graphics/png
