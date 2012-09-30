@@ -1,7 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/03/29 09:00:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/09/30 18:27:50 jasper Exp $
 @bin bin/gnome-contacts
+@bin libexec/gnome-contacts-search-provider
 share/applications/gnome-contacts.desktop
+share/dbus-1/
+share/dbus-1/services/
+share/dbus-1/services/org.gnome.Contacts.SearchProvider.service
 share/glib-2.0/schemas/org.gnome.Contacts.gschema.xml
+share/gnome-shell/
+share/gnome-shell/search-providers/
+share/gnome-shell/search-providers/gnome-contacts-search-provider.ini
 share/locale/af/LC_MESSAGES/gnome-contacts.mo
 share/locale/ar/LC_MESSAGES/gnome-contacts.mo
 share/locale/as/LC_MESSAGES/gnome-contacts.mo
@@ -31,11 +38,13 @@ share/locale/hu/LC_MESSAGES/gnome-contacts.mo
 share/locale/id/LC_MESSAGES/gnome-contacts.mo
 share/locale/it/LC_MESSAGES/gnome-contacts.mo
 share/locale/ja/LC_MESSAGES/gnome-contacts.mo
+share/locale/kn/LC_MESSAGES/gnome-contacts.mo
 share/locale/ko/LC_MESSAGES/gnome-contacts.mo
 share/locale/lt/LC_MESSAGES/gnome-contacts.mo
 share/locale/lv/LC_MESSAGES/gnome-contacts.mo
 share/locale/mk/LC_MESSAGES/gnome-contacts.mo
 share/locale/ml/LC_MESSAGES/gnome-contacts.mo
+share/locale/mr/LC_MESSAGES/gnome-contacts.mo
 share/locale/nb/LC_MESSAGES/gnome-contacts.mo
 share/locale/nl/LC_MESSAGES/gnome-contacts.mo
 share/locale/or/LC_MESSAGES/gnome-contacts.mo
