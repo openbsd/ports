@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.89 2012/09/27 21:29:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.90 2012/09/30 07:51:33 ajacoutot Exp $
+
+# DPB: not parallel-safe
 
 COMMENT=	message bus system
 
-DISTNAME=	dbus-1.6.4
-REVISION=	1
+DISTNAME=	dbus-1.6.8
 EPOCH=		0
 
 SHARED_LIBS +=  dbus-1               10.2     # 10.2
 
 CATEGORIES=	x11
-# DPB: not parallel-safe
+DPB_PROPERTIES=	parallel
 
 HOMEPAGE=	http://dbus.freedesktop.org/
 
@@ -25,18 +26,15 @@ WANTLIB += ICE SM X11 c expat pthread xcb
 
 MASTER_SITES=	${HOMEPAGE}/releases/dbus/
 
-SEPARATE_BUILD=	Yes
-
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 
-CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.69
+AUTOCONF_VERSION=2.68
+CONFIGURE_STYLE=autoconf
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-dbus-user=_dbus \
 		--with-xml=expat \
-		--with-x \
 		--enable-kqueue \
 		--disable-xml-docs \
 		--disable-doxygen-docs \

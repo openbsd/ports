@@ -1,21 +1,10 @@
-$OpenBSD: patch-configure_ac,v 1.1 2012/09/04 06:32:52 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2012/09/30 07:51:33 ajacoutot Exp $
 
-pthread_* chunk is from:
 https://bugs.freedesktop.org/show_bug.cgi?id=47239
 
---- configure.ac.orig	Wed Jul 18 13:05:04 2012
-+++ configure.ac	Mon Sep  3 13:25:41 2012
-@@ -766,7 +766,8 @@ dnl needed on darwin for NAME_MAX
- AC_CHECK_HEADERS(sys/syslimits.h)
- 
- dnl Make it easy to check if we have MSG_NOSIGNAL without actually having to include sys/socket.h
--AC_CHECK_DECLS([MSG_NOSIGNAL], [], [], [[ #include <sys/socket.h> ]])
-+AC_CHECK_DECLS([MSG_NOSIGNAL], [], [], [[ #include <sys/types.h>
-+#include <sys/socket.h> ]])
- 
- dnl check for flavours of varargs macros (test from GLib)
- AC_MSG_CHECKING(for ISO C99 varargs macros in C)
-@@ -952,15 +953,53 @@ AC_SUBST([XML_CFLAGS])
+--- configure.ac.orig	Fri Sep 28 21:41:40 2012
++++ configure.ac	Sun Sep 30 09:42:04 2012
+@@ -953,15 +953,53 @@ AC_SUBST([XML_CFLAGS])
  AC_SUBST([XML_LIBS])
  
  # Thread lib detection
@@ -76,7 +65,7 @@ https://bugs.freedesktop.org/show_bug.cgi?id=47239
  #include <pthread.h>
  ]], [[
  struct timespec monotonic_timer;
-@@ -969,15 +1008,18 @@ pthread_condattr_init (&attr);
+@@ -970,15 +1008,18 @@ pthread_condattr_init (&attr);
  pthread_condattr_setclock (&attr, CLOCK_MONOTONIC);
  clock_getres (CLOCK_MONOTONIC,&monotonic_timer);
  ]])],
@@ -104,11 +93,3 @@ https://bugs.freedesktop.org/show_bug.cgi?id=47239
  LIBS="$save_libs"
  
  AC_SUBST([THREAD_LIBS])
-@@ -1220,6 +1262,7 @@ AC_SUBST([ADT_LIBS])
- # Check for SCM_RIGHTS
- AC_MSG_CHECKING([for SCM_RIGHTS])
- AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
-+#include <sys/types.h>
- #include <sys/socket.h>
- #include <sys/un.h>
- static int x = SCM_RIGHTS;
