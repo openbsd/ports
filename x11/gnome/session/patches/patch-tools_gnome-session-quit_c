@@ -1,6 +1,9 @@
-$OpenBSD: patch-tools_gnome-session-quit_c,v 1.3 2012/09/30 16:01:38 ajacoutot Exp $
+$OpenBSD: patch-tools_gnome-session-quit_c,v 1.4 2012/09/30 16:55:11 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=685121
+From 765827a72d276622fb41ce053582c730c71c48b4 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Sun, 30 Sep 2012 15:53:02 +0000
+Subject: rename some generic names to prevent redeclaration on some OS
 
 --- tools/gnome-session-quit.c.orig	Tue Jul 17 03:40:05 2012
 +++ tools/gnome-session-quit.c	Sun Sep 30 17:54:45 2012
