@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.21 2012/04/07 10:55:04 naddy Exp $
+@comment $OpenBSD: PLIST-main,v 1.22 2012/09/30 19:53:10 naddy Exp $
 @pkgpath net/transmission
 @newgroup _transmission:662
 @newuser _transmission:662:662:daemon:Transmission Account:/var/transmission:/sbin/nologin
@@ -37,6 +37,7 @@ share/transmission/web/javascript/jquery/jquery.min.js
 share/transmission/web/javascript/jquery/jquery.transmenu.min.js
 share/transmission/web/javascript/jquery/jqueryui-1.8.16.min.js
 share/transmission/web/javascript/jquery/json2.min.js
+share/transmission/web/javascript/notifications.js
 share/transmission/web/javascript/prefs-dialog.js
 share/transmission/web/javascript/remote.js
 share/transmission/web/javascript/torrent-row.js

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-gtk,v 1.7 2012/06/15 08:32:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST-gtk,v 1.8 2012/09/30 19:53:10 naddy Exp $
 @pkgpath net/transmission,-gui
 @bin bin/transmission-gtk
 @man man/man1/transmission-gtk.1
@@ -126,6 +126,9 @@ share/locale/ko/LC_MESSAGES/transmission-gtk.mo
 share/locale/ku/
 share/locale/ku/LC_MESSAGES/
 share/locale/ku/LC_MESSAGES/transmission-gtk.mo
+share/locale/ky/
+share/locale/ky/LC_MESSAGES/
+share/locale/ky/LC_MESSAGES/transmission-gtk.mo
 share/locale/li/
 share/locale/li/LC_MESSAGES/
 share/locale/li/LC_MESSAGES/transmission-gtk.mo
@@ -148,6 +151,9 @@ share/locale/ms/LC_MESSAGES/transmission-gtk.mo
 share/locale/mt/
 share/locale/mt/LC_MESSAGES/
 share/locale/mt/LC_MESSAGES/transmission-gtk.mo
+share/locale/my/
+share/locale/my/LC_MESSAGES/
+share/locale/my/LC_MESSAGES/transmission-gtk.mo
 share/locale/nb/LC_MESSAGES/transmission-gtk.mo
 share/locale/nds/
 share/locale/nds/LC_MESSAGES/
@@ -175,6 +181,9 @@ share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/transmission-gtk.mo
 share/locale/sr/LC_MESSAGES/transmission-gtk.mo
 share/locale/sv/LC_MESSAGES/transmission-gtk.mo
+share/locale/sw/
+share/locale/sw/LC_MESSAGES/
+share/locale/sw/LC_MESSAGES/transmission-gtk.mo
 share/locale/ta_LK/
 share/locale/ta_LK/LC_MESSAGES/
 share/locale/ta_LK/LC_MESSAGES/transmission-gtk.mo

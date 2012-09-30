@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.77 2012/06/15 08:32:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.78 2012/09/30 19:53:09 naddy Exp $
 
 COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
 COMMENT-qt=	BitTorrent client with Qt interface
 
-VER=		2.52
+VER=		2.71
 DISTNAME=	transmission-${VER}
 PKGNAME-main=	transmission-${VER}
 PKGNAME-gtk=	transmission-gtk-${VER}
 PKGNAME-qt=	transmission-qt-${VER}
 CATEGORIES=	net
 HOMEPAGE=	http://www.transmissionbt.com/
-
-REVISION-gtk=	0
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -38,11 +36,13 @@ FLAVOR?=
 
 WANTLIB=	c crypto curl event_core event_extra idn m miniupnpc \
 		natpmp pthread ssl z
-WANTLIB-gtk=	${WANTLIB} X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
-		Xfixes Xi Xinerama Xrandr Xrender Xxf86vm GL atk-1.0 cairo \
-		cairo-gobject drm expat ffi fontconfig freetype \
+WANTLIB-gtk=	${WANTLIB} ICE SM X11 Xau Xcomposite Xcursor Xdamage \
+		Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm \
+		GL atk-1.0 atk-bridge-2.0 atspi cairo cairo-gobject \
+		dbus-1 drm expat ffi fontconfig freetype \
 		gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 \
-		gobject-2.0 gthread-2.0 gtk-3 pango-1.0 pangoft2-1.0 \
+		gobject-2.0 gthread-2.0 gtk-3 \
+		harfbuzz icudata icule icuuc pango-1.0 pangoft2-1.0 \
 		pangocairo-1.0 pixman-1 png pcre pthread-stubs stdc++ xcb \
 		xcb-render xcb-shm
 WANTLIB-qt=	${WANTLIB} ICE SM QtCore QtDBus QtGui QtNetwork QtXml \
@@ -91,6 +91,9 @@ QMAKE_ARGS=	QMAKE_CXX="${CXX}" \
 .if !${BUILD_PACKAGES:M-gtk}
 CONFIGURE_ARGS+=--without-gtk
 .endif
+
+pre-patch:
+	@cd ${WRKSRC}/third-party/libutp; perl -pi -e 's/\r$$//' *.h *.cpp
 
 .if ${BUILD_PACKAGES:M-qt}
 post-build:

@@ -1,0 +1,19 @@
+$OpenBSD: patch-third-party_libutp_utypes_h,v 1.3 2012/09/30 19:53:10 naddy Exp $
+
+tr-utp.c:66: error: conflicting types for 'UTP_Write'
+(https://trac.transmissionbt.com/ticket/4528)
+
+--- third-party/libutp/utypes.h.orig	Wed Aug 29 14:11:31 2012
++++ third-party/libutp/utypes.h	Wed Aug 29 14:12:28 2012
+@@ -36,7 +36,11 @@ typedef const char * cstr;
+ typedef char * str;
+ 
+ #ifndef __cplusplus
++#ifdef HAVE_STDBOOL_H
++#include <stdbool.h>
++#else
+ typedef uint8 bool;
++#endif
+ #endif
+ 
+ #endif //__UTYPES_H__
