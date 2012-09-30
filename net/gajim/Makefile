@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.55 2012/06/15 08:32:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2012/09/30 14:28:43 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	jabber client written in pygtk
-DISTNAME=	gajim-0.15
-REVISION=	3
+DISTNAME=	gajim-0.15.1
 CATEGORIES=	net x11
 
 MASTER_SITES=	${HOMEPAGE}/downloads/0.15/
@@ -22,7 +21,7 @@ PERMIT_PACKAGE_FTP=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} 
+CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
@@ -42,7 +41,6 @@ RUN_DEPENDS=	databases/py-sqlite2 \
 		security/py-crypto \
 		net/avahi,-gui,no_mono,no_qt3,no_qt4 \
 		textproc/gtkspell \
-		net/farstream \
 		devel/py-notify \
 		x11/gtk+2,-guic
 
