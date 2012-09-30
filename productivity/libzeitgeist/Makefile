@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2012/09/29 16:12:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2012/09/30 14:50:51 jasper Exp $
 
 COMMENT=		Zeitgeist client library
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES=		http://distfiles.nl/
+MASTER_SITES=		https://launchpad.net/libzeitgeist/0.3/0.3.18/+download/
 
 MODULES=		devel/gettext
 
