@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2012/09/29 11:49:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2012/09/30 09:52:10 jasper Exp $
 
      SUBDIR =
      SUBDIR += bruce
@@ -16,6 +16,7 @@
      SUBDIR += homebank
      SUBDIR += impressive
      SUBDIR += ledger
+     SUBDIR += libqzeitgeist
      SUBDIR += libzeitgeist
      SUBDIR += osmo
      SUBDIR += palm2ical
