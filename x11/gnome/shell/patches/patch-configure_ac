@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure_ac,v 1.6 2012/09/30 14:45:23 jasper Exp $
+$OpenBSD: patch-configure_ac,v 1.7 2012/09/30 20:56:42 jasper Exp $
 
 Make Network Manager support optional.
 https://bugzilla.gnome.org/show_bug.cgi?id=679871
 
---- configure.ac.orig	Sun Sep 30 13:18:28 2012
-+++ configure.ac	Sun Sep 30 13:18:56 2012
+--- configure.ac.orig	Tue Sep 25 12:02:07 2012
++++ configure.ac	Sun Sep 30 21:41:37 2012
 @@ -96,7 +96,7 @@ PKG_CHECK_MODULES(GNOME_SHELL, gio-unix-2.0 >= $GIO_MI
                                 telepathy-glib >= $TELEPATHY_GLIB_MIN_VERSION
                                 telepathy-logger-0.2 >= $TELEPATHY_LOGGER_MIN_VERSION
@@ -14,7 +14,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=679871
                                 gcr-3 >= $GCR_MIN_VERSION
                                 gnome-desktop-3.0 >= $GNOME_DESKTOP_REQUIRED_VERSION)
  
-@@ -138,6 +138,22 @@ PKG_CHECK_EXISTS([gnome-bluetooth-1.0 >= 3.1.0],
+@@ -138,6 +138,24 @@ PKG_CHECK_EXISTS([gnome-bluetooth-1.0 >= 3.1.0],
  	[AC_DEFINE([HAVE_BLUETOOTH],[0])
  	 AC_SUBST([HAVE_BLUETOOTH],[0])
  	 AC_MSG_RESULT([no])])
@@ -22,12 +22,14 @@ https://bugzilla.gnome.org/show_bug.cgi?id=679871
 +network_manager=false
 +AC_MSG_CHECKING([for Network Manager support])
 +PKG_CHECK_EXISTS([libnm-glib libnm-util],
-+        [ NM_LIBS=`$PKG_CONFIG --libs libnm-glib libnm-util`
++        [NM_LIBS=`$PKG_CONFIG --libs libnm-glib libnm-util`
++	 NM_CFLAGS=`$PKG_CONFIG --cflags libnm-glib libnm-util`
 +	 AC_SUBST([NM_LIBS],["$NM_LIBS"])
++	 AC_SUBST([NM_CFLAGS],["$NM_CFLAGS"])
 +	 AC_DEFINE([HAVE_NETWORK_MANAGER],[1],[Define to 1 if you have Network Manager])
 +	 AC_SUBST([HAVE_NETWORK_MANAGER],[1])
 +	 AC_MSG_RESULT([yes])
-+	 $network_manager=true],
++	 network_manager=true],
 +	[AC_DEFINE([HAVE_NETWORK_MANAGER],[0])
 +	 AC_SUBST([HAVE_NETWORK_MANAGER],[0])
 +	 AC_MSG_RESULT([no])])
