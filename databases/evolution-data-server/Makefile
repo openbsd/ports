@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2012/09/28 08:10:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.118 2012/09/30 07:55:54 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
 GNOME_VERSION=		3.6.0
-REVISION=		0
+REVISION=		1
 
 # Only get the first x.y which is needed in the PLIST.
 R=			${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -55,13 +55,14 @@ MODULES=		devel/gettext \
 
 BUILD_DEPENDS=		devel/bison \
 			devel/gperf
+
 LIB_DEPENDS= 		databases/db/v4 \
 			databases/openldap \
+			devel/libgdata \
 			net/liboauth \
 			textproc/libical \
 			x11/gnome/gcr>=3.6.0 \
 			x11/gnome/libgweather \
-			devel/libgdata>=0.10.1 \
 			x11/gnome/online-accounts
 
 YACC=			bison
