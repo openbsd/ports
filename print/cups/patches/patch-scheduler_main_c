@@ -1,6 +1,6 @@
-$OpenBSD: patch-scheduler_main_c,v 1.7 2012/08/04 14:37:04 ajacoutot Exp $
+$OpenBSD: patch-scheduler_main_c,v 1.8 2012/09/30 09:28:04 ajacoutot Exp $
 
-XXX push upstream
+https://www.cups.org/str.php?L4197
 
 --- scheduler/main.c.orig	Mon Apr 23 21:19:19 2012
 +++ scheduler/main.c	Thu Jul 26 10:00:31 2012

@@ -1,7 +1,6 @@
-$OpenBSD: patch-filter_raster_c,v 1.3 2012/08/04 14:37:04 ajacoutot Exp $
+$OpenBSD: patch-filter_raster_c,v 1.4 2012/09/30 09:28:04 ajacoutot Exp $
 
-XXX push upstream
-raster.c:154: error: 'intptr_t' undeclared (first use in this function)
+https://www.cups.org/str.php?L4195
 
 --- filter/raster.c.orig	Fri Oct  7 22:21:45 2011
 +++ filter/raster.c	Sat Feb  4 10:36:51 2012
