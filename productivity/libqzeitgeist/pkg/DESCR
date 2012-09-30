@@ -1,0 +1,3 @@
+libQZeitgeist is a wrapper library around the Zeitgeist D-Bus API for
+Qt, and is brought to you by Collabora in cooperation with the Zeitgeist
+team and KDE.
