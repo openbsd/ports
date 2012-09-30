@@ -1,5 +1,5 @@
 #!${MODLUA_BIN}
--- $OpenBSD: yt.lua,v 1.35 2012/08/06 09:47:20 sthen Exp $
+-- $OpenBSD: yt.lua,v 1.36 2012/09/30 02:45:04 jsg Exp $
 -- Fetch videos from YouTube.com/Videos.Google.com, and convert to MPEG.
 -- Written by Pedro Martelletto and Martynas Venckus.  Public domain.
 -- Example: lua yt.lua http://www.youtube.com/watch?v=c5uoo1Kl_uA
@@ -113,6 +113,11 @@ for i = 1, table.getn(urls) do
       body = table.concat(t)
       body = url_decode(body)
       encurl = string.match(body, "url=(http[^,=&]-cache.-type.-)[&;]")
+      -- signature
+      sig = string.match(body, "sig=(.-)&")
+      if sig then
+         encurl = encurl .. "&signature=" .. sig
+      end
       url = string.format("\"%s\"", encurl)
    else
       -- We assume it's Google Video URL.
