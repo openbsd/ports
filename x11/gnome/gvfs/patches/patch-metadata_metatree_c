@@ -1,15 +1,18 @@
-$OpenBSD: patch-metadata_metatree_c,v 1.6 2012/04/16 23:16:52 ajacoutot Exp $
+$OpenBSD: patch-metadata_metatree_c,v 1.7 2012/09/30 09:02:13 ajacoutot Exp $
 
-XXX push upstream.
+https://bugzilla.gnome.org/show_bug.cgi?id=685126
 
---- metadata/metatree.c.orig	Mon Apr  4 16:49:12 2011
-+++ metadata/metatree.c	Mon Apr  4 19:37:55 2011
-@@ -302,7 +302,7 @@ is_on_nfs (char *filename)
+--- metadata/metatree.c.orig	Mon Sep 24 15:04:39 2012
++++ metadata/metatree.c	Sun Sep 30 10:42:21 2012
+@@ -302,7 +302,11 @@ is_on_nfs (char *filename)
  			  sizeof (statfs_buffer), 0);
  # endif
    if (statfs_result == 0)
--    res = statfs_buffer.f_type == 0x6969;
++#ifdef __OpenBSD__
 +    res = strcmp(statfs_buffer.f_fstypename, MOUNT_NFS) == 0;
++#else
+     res = statfs_buffer.f_type == 0x6969;
++#endif
  
  #elif defined(USE_STATVFS) && defined(HAVE_STRUCT_STATVFS_F_BASETYPE)
    statfs_result = statvfs (dirname, &statfs_buffer);

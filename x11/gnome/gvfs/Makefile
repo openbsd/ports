@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2012/09/27 17:38:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2012/09/30 09:02:13 ajacoutot Exp $
 
 COMMENT-main=	GNOME Virtual File System
 COMMENT-smb=	samba module for GVFS
@@ -8,6 +8,9 @@ GNOME_VERSION=	1.14.0
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-smb=	${GNOME_PROJECT}-smb-${GNOME_VERSION}
+
+REVISION-main=	0
+REVISION-smb=	0
 
 SHARED_LIBS +=  gvfscommon           4.0      # .0.0
 
@@ -21,24 +24,29 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/dconf
 
-WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += pcre pthread util z
+WANTLIB += c ffi gcrypt gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpg-error
+WANTLIB += gthread-2.0 pcre pthread secret-1 util z
 
 WANTLIB-main +=	${WANTLIB}
-WANTLIB-main += bz2 m lzma soup-2.4 sqlite3 expat avahi-common
-WANTLIB-main += xml2 archive soup-gnome-2.4 avahi-client avahi-glib
 WANTLIB-main += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
-WANTLIB-main += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
-WANTLIB-main += atk-bridge-2.0 atspi cairo cairo-gobject dbus-1 drm
-WANTLIB-main += fontconfig freetype gcrypt gdk-3 gdk_pixbuf-2.0 gnome-keyring
-WANTLIB-main += gpg-error gtk-3 harfbuzz icudata icule icuuc pango-1.0
+WANTLIB-main += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm archive
+WANTLIB-main += atk-1.0 atk-bridge-2.0 atspi avahi-client avahi-common
+WANTLIB-main += avahi-glib bz2 cairo cairo-gobject dbus-1 drm expat
+WANTLIB-main += fontconfig freetype gdk-3 gdk_pixbuf-2.0 gnome-keyring
+WANTLIB-main += gtk-3 harfbuzz icudata icule icuuc lzma m pango-1.0
 WANTLIB-main += pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread-stubs
-WANTLIB-main += stdc++ xcb xcb-render xcb-shm
+WANTLIB-main += soup-2.4 soup-gnome-2.4 sqlite3 stdc++ xcb xcb-render
+WANTLIB-main += xcb-shm xml2
+
+WANTLIB-smb += ${WANTLIB}
+WANTLIB-smb += gvfscommon smbclient execinfo talloc tdb wbclient
 
 MODGNOME_DESKTOP_FILE=	Yes
 
 # man pages
 BUILD_DEPENDS += textproc/docbook-xsl
+
+LIB_DEPENDS=	x11/gnome/libsecret
 
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		archivers/libarchive \
@@ -46,7 +54,6 @@ LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		net/avahi \
 		x11/gtk+3
 
-WANTLIB-smb += ${WANTLIB} gvfscommon smbclient execinfo talloc tdb wbclient
 RUN_DEPENDS-smb= ${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-smb= ${LIB_DEPENDS} \
 		${BASE_PKGPATH},-main=${GNOME_VERSION} \
