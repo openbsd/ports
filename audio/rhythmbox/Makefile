@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.106 2012/09/29 12:20:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.107 2012/09/30 14:58:38 ajacoutot Exp $
+
+SHARED_ONLY=		Yes
 
 COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
-GNOME_VERSION=		2.97
-REVISION=		4
+GNOME_VERSION=		2.98
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
 
@@ -42,7 +43,6 @@ MODULES=		devel/gettext \
 			devel/dconf
 
 BUILD_DEPENDS=		audio/libmusicbrainz \
-			devel/gobject-introspection \
 			devel/py-gobject3
 
 # needed for the tests
@@ -67,21 +67,20 @@ RUN_DEPENDS+=		multimedia/gstreamer-0.10/plugins-good
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
-MODGNOME_TOOLS= 	yelp
-
+MODGNOME_TOOLS= 	goi vala yelp
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 
+LIBTOOL_FLAGS=		--tag=disable-static
+
 CONFIGURE_STYLE= 	gnu
-CONFIGURE_ARGS=		--without-brasero \
+CONFIGURE_ARGS=		--disable-static \
+			--without-brasero \
 			--without-hal \
 			--without-gudev \
 			--without-webkit \
 			--disable-fm-radio \
 			--disable-lirc
-
-# Don't compile the vala (useless) sample plugin.
-CONFIGURE_ARGS +=	--disable-vala
 
 # XXX requires libdmapsharing
 CONFIGURE_ARGS +=	--disable-daap --without-mdns
@@ -100,6 +99,6 @@ CONFIGURE_ENV +=	MOZILLA_PLUGINDIR=${PREFIX}/lib/mozilla-plugins
 REGRESS_IS_INTERACTIVE=	x11
 
 post-install:
-	rm ${PREFIX}/lib/rhythmbox/plugins/*/*.la
+	rm ${PREFIX}/lib/rhythmbox/{,sample-}plugins/*/*.la
 
 .include <bsd.port.mk>
