@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/04/13 15:18:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2012/09/30 06:16:27 ajacoutot Exp $
 
 COMMENT=	C++ binding for gdl
 
 GNOME_PROJECT=	gdlmm
 GNOME_VERSION=	3.3.2
+REVISION=	0
 
 SHARED_LIBS +=  gdlmm-3.0                 0.0 # 1.0
 
@@ -21,6 +22,8 @@ WANTLIB += giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 gtk-3 gtkmm-3.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pangomm-1.4 pcre pixman-1 png pthread-stubs
 WANTLIB += sigc-2.0 stdc++ xcb xcb-render xcb-shm xml2 z
+WANTLIB += ICE SM atk-bridge-2.0 atspi dbus-1 harfbuzz icudata
+WANTLIB += icule icuuc pthread
 
 MODULES=	devel/gettext \
 		x11/gnome

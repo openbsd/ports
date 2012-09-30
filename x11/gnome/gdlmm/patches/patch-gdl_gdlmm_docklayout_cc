@@ -1,0 +1,18 @@
+$OpenBSD: patch-gdl_gdlmm_docklayout_cc,v 1.1 2012/09/30 06:16:27 ajacoutot Exp $
+
+Fix build with gdl >=3.6.0 (Fedora)
+
+--- gdl/gdlmm/docklayout.cc.orig	Wed Nov 23 18:47:10 2011
++++ gdl/gdlmm/docklayout.cc	Sun Sep 30 08:10:13 2012
+@@ -180,11 +180,6 @@ bool DockLayout::is_dirty() const
+   return gdl_dock_layout_is_dirty(const_cast<GdlDockLayout*>(gobj()));
+ }
+ 
+-Gtk::Widget* DockLayout::get_layouts_ui()
+-{
+-  return Glib::wrap(gdl_dock_layout_get_layouts_ui(gobj()));
+-}
+-
+ 
+ #ifdef GLIBMM_PROPERTIES_ENABLED
+ Glib::PropertyProxy_ReadOnly<bool> DockLayout::property_dirty() const
