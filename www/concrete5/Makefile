@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2012/09/10 09:16:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2012/09/30 19:24:35 robert Exp $
 
 COMMENT=	building material for websites
 
-V=		5.0.0
-DISTNAME=	concrete${V}_2
+V=		5.6.0.2
+DISTNAME=	concrete${V}
 PKGNAME=	concrete5-${V}
-REVISION=	4
 EXTRACT_SUFX=	.zip
 CATEGORIES=	www
 HOMEPAGE=	http://www.concrete5.org/
@@ -16,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=concretecms/}
+MASTER_SITES=	http://www.concrete5.org/download_file/-/view/44326/8497/
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
@@ -32,7 +31,7 @@ BUILD_DEPENDS=	archivers/unzip
 RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-mysql
 
 do-install:
-	@cd ${PREFIX} && ${UNZIP} -oq ${FULLDISTDIR}/${DISTFILES}
-	@mv ${PREFIX}/concrete5.0.0 ${PREFIX}/concrete5
+	cd ${PREFIX} && ${UNZIP} -oq ${FULLDISTDIR}/${DISTFILES}
+	mv ${PREFIX}/concrete${V} ${PREFIX}/concrete5
 
 .include <bsd.port.mk>
