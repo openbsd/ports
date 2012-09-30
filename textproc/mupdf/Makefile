@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2012/09/12 21:32:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2012/09/30 10:22:54 landry Exp $
 
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
@@ -32,6 +32,10 @@ LIB_DEPENDS =	graphics/jbig2dec \
 
 USE_GMAKE =	Yes
 NO_REGRESS =	Yes
+
+.if ${MACHINE_ARCH} == "hppa"
+CFLAGS +=	-ffunction-sections
+.endif
 
 # -I flags prepend mupdf's own, to allow building with previous ver installed
 MAKE_ENV +=	CFLAGS="${CFLAGS} -I$(WRKSRC)/fitz -I$(WRKSRC)/pdf -I$(WRKSRC)/xps" \
