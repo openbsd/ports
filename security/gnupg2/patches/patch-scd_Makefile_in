@@ -1,12 +1,21 @@
-$OpenBSD: patch-scd_Makefile_in,v 1.2 2012/08/08 15:10:02 dcoppa Exp $
+$OpenBSD: patch-scd_Makefile_in,v 1.3 2012/09/30 16:28:07 dcoppa Exp $
 --- scd/Makefile.in.orig	Tue Mar 27 10:22:48 2012
-+++ scd/Makefile.in	Tue Aug  7 12:40:15 2012
++++ scd/Makefile.in	Thu Sep 27 16:02:27 2012
 @@ -227,7 +227,7 @@ KSBA_CONFIG = @KSBA_CONFIG@
  KSBA_LIBS = @KSBA_LIBS@
  LDAPLIBS = @LDAPLIBS@
  LDAP_CPPFLAGS = @LDAP_CPPFLAGS@
 -LDFLAGS = @LDFLAGS@
-+LDFLAGS = @LDFLAGS@ -pthread -Wl,--export-dynamic
++LDFLAGS = @LDFLAGS@ -Wl,--export-dynamic
  LIBASSUAN_CFLAGS = @LIBASSUAN_CFLAGS@
  LIBASSUAN_CONFIG = @LIBASSUAN_CONFIG@
  LIBASSUAN_LIBS = @LIBASSUAN_LIBS@
+@@ -504,7 +504,7 @@ clean-libexecPROGRAMS:
+ 	-test -z "$(libexec_PROGRAMS)" || rm -f $(libexec_PROGRAMS)
+ gnupg-pcsc-wrapper$(EXEEXT): $(gnupg_pcsc_wrapper_OBJECTS) $(gnupg_pcsc_wrapper_DEPENDENCIES) 
+ 	@rm -f gnupg-pcsc-wrapper$(EXEEXT)
+-	$(gnupg_pcsc_wrapper_LINK) $(gnupg_pcsc_wrapper_OBJECTS) $(gnupg_pcsc_wrapper_LDADD) $(LIBS)
++	$(gnupg_pcsc_wrapper_LINK) $(gnupg_pcsc_wrapper_OBJECTS) $(gnupg_pcsc_wrapper_LDADD) -lpthread $(LIBS)
+ scdaemon$(EXEEXT): $(scdaemon_OBJECTS) $(scdaemon_DEPENDENCIES) 
+ 	@rm -f scdaemon$(EXEEXT)
+ 	$(LINK) $(scdaemon_OBJECTS) $(scdaemon_LDADD) $(LIBS)
