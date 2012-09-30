@@ -1,0 +1,39 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/09/30 14:40:34 bluhm Exp $
+${P5SITE}/Net/Inspect/
+${P5SITE}/Net/Inspect.pm
+${P5SITE}/Net/Inspect/Connection.pm
+${P5SITE}/Net/Inspect/Debug.pm
+${P5SITE}/Net/Inspect/Flow.pm
+${P5SITE}/Net/Inspect/L2/
+${P5SITE}/Net/Inspect/L2/Pcap.pm
+${P5SITE}/Net/Inspect/L3/
+${P5SITE}/Net/Inspect/L3/IP.pm
+${P5SITE}/Net/Inspect/L4/
+${P5SITE}/Net/Inspect/L4/TCP.pm
+${P5SITE}/Net/Inspect/L4/UDP.pm
+${P5SITE}/Net/Inspect/L5/
+${P5SITE}/Net/Inspect/L5/GuessProtocol.pm
+${P5SITE}/Net/Inspect/L5/NoData.pm
+${P5SITE}/Net/Inspect/L5/Socks.pm
+${P5SITE}/Net/Inspect/L5/Unknown.pm
+${P5SITE}/Net/Inspect/L7/
+${P5SITE}/Net/Inspect/L7/HTTP/
+${P5SITE}/Net/Inspect/L7/HTTP.pm
+${P5SITE}/Net/Inspect/L7/HTTP/Request/
+${P5SITE}/Net/Inspect/L7/HTTP/Request/InspectChain.pm
+${P5SITE}/Net/Inspect/L7/HTTP/Request/Simple.pm
+@man man/man3p/Net::Inspect.3p
+@man man/man3p/Net::Inspect::Connection.3p
+@man man/man3p/Net::Inspect::Debug.3p
+@man man/man3p/Net::Inspect::Flow.3p
+@man man/man3p/Net::Inspect::L2::Pcap.3p
+@man man/man3p/Net::Inspect::L3::IP.3p
+@man man/man3p/Net::Inspect::L4::TCP.3p
+@man man/man3p/Net::Inspect::L4::UDP.3p
+@man man/man3p/Net::Inspect::L5::GuessProtocol.3p
+@man man/man3p/Net::Inspect::L5::NoData.3p
+@man man/man3p/Net::Inspect::L5::Socks.3p
+@man man/man3p/Net::Inspect::L5::Unknown.3p
+@man man/man3p/Net::Inspect::L7::HTTP.3p
+@man man/man3p/Net::Inspect::L7::HTTP::Request::InspectChain.3p
+@man man/man3p/Net::Inspect::L7::HTTP::Request::Simple.3p

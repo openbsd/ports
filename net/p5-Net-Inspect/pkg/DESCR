@@ -1,0 +1,7 @@
+The Net::Inspect module allows to inspect data on various network
+layers.
+
+The idea of Net::Inspect is to plug various layers of network
+inspection together to analyze data.  This is kind of what wireshark
+or IDS do, exept this is in perl and therefore slower to execute
+but faster to develop and maybe more flexibel too.
