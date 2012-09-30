@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2012/09/29 10:10:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2012/09/30 07:01:14 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	music management and playback application for GNOME
 
-GNOME_VERSION=	2.4.1
+GNOME_VERSION=	2.6.0
 GNOME_PROJECT=	banshee
-REVISION=	3
 
-CATEGORIES=	audio
+CATEGORIES=	audio multimedia
 
 HOMEPAGE=	http://banshee.fm/
 
@@ -26,11 +25,12 @@ WANTLIB += geoclue gio-2.0 glib-2.0 gmodule-2.0 gnome-keyring
 WANTLIB += gobject-2.0 gpg-error gstapp-0.10 gstaudio-0.10 gstbase-0.10
 WANTLIB += gstcdda-0.10 gstcontroller-0.10 gstdataprotocol-0.10
 WANTLIB += gstfft-0.10 gstinterfaces-0.10 gstpbutils-0.10 gstreamer-0.10
-WANTLIB += gsttag-0.10 gstvideo-0.10 gthread-2.0 gtk-x11-2.0 icudata
-WANTLIB += icui18n icuuc javascriptcoregtk-1.0 jpeg m orc-0.4
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread-stubs soup-2.4 soup-gnome-2.4 sqlite3 stdc++
-WANTLIB += webkitgtk-1.0 xcb xcb-render xcb-shm xml2 xslt z
+WANTLIB += gsttag-0.10 gstvideo-0.10 gthread-2.0 gtk-x11-2.0 harfbuzz
+WANTLIB += icudata icui18n icule icuuc javascriptcoregtk-1.0 jpeg
+WANTLIB += m orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 png pthread pthread-stubs soup-2.4 soup-gnome-2.4
+WANTLIB += sqlite3 stdc++ webkitgtk-1.0 xcb xcb-render xcb-shm
+WANTLIB += xml2 xslt z
 
 MODULES=	x11/gnome \
 		lang/mono \
@@ -44,7 +44,6 @@ RUN_DEPENDS=	devel/mono-notify \
 		devel/libmtp \
 		devel/mono-addins \
 		devel/mono-gdata \
-		lang/boo \
 		net/mono-zeroconf \
 		shells/bash \
 		multimedia/gstreamer-0.10/plugins-good # libgstgconfelements
@@ -62,9 +61,6 @@ MODGNOME_TOOLS=		yelp
 LIBTOOL_FLAGS=	--tag=disable-static
 
 CONFIGURE_ARGS=	--disable-static \
-		--enable-release \
-		--enable-gapless-playback \
-		--enable-user-help \
 		--with-vendor-build-id="OpenBSD Ports" \
 		--disable-upnp \
 		--disable-gst-sharp \
@@ -76,6 +72,9 @@ CONFIGURE_ARGS=	--disable-static \
 		--disable-meego \
 		--disable-ubuntuone \
 		--disable-shave
+
+# XXX lang/boo is marked as BROKEN
+CONFIGURE_ARGS += --disable-boo
 
 # requires gio-sharp
 CONFIGURE_ARGS += --disable-gio
