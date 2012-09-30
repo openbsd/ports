@@ -1,6 +1,9 @@
-$OpenBSD: patch-tests_libedata-cal_Makefile_in,v 1.9 2012/09/30 09:12:11 ajacoutot Exp $
+$OpenBSD: patch-tests_libedata-cal_Makefile_in,v 1.10 2012/09/30 15:16:16 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=685127
+From e7d2d2268ceb0bc194a1ac0dbd399a2c5780a82e Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Sun, 30 Sep 2012 09:10:13 +0000
+Subject: do not hardcode -lgcov
 
 --- tests/libedata-cal/Makefile.in.orig	Fri Sep 28 07:49:11 2012
 +++ tests/libedata-cal/Makefile.in	Fri Sep 28 07:51:23 2012
