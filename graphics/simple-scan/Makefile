@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2012/09/10 08:40:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2012/09/30 07:19:18 ajacoutot Exp $
 
 COMMENT=	simple scanning utility
 
 GNOME_PROJECT=	simple-scan
-GNOME_VERSION=	3.4.2
-REVISION=	4
+GNOME_VERSION=	3.6.0
 
 CATEGORIES=	graphics
 
@@ -41,7 +40,7 @@ MODGNOME_TOOLS= 	yelp
 
 USE_GMAKE=	Yes
 
-AUTOCONF_VERSION=2.68
+AUTOCONF_VERSION=2.69
 CONFIGURE_STYLE=autoconf
 
 .include <bsd.port.mk>
