@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.191 2012/09/29 12:10:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.192 2012/09/30 13:50:55 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += anjuta
@@ -10,6 +10,7 @@
      SUBDIR += baker
      SUBDIR += baobab
      SUBDIR += caribou
+     SUBDIR += clocks
      SUBDIR += color-manager
      SUBDIR += common
      SUBDIR += contacts
