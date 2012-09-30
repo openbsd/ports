@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2012/07/07 17:59:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2012/09/30 08:56:58 jasper Exp $
 
     SUBDIR =
     SUBDIR += cogl
@@ -6,6 +6,5 @@
     SUBDIR += clutter-gst
     SUBDIR += clutter-gtk
     SUBDIR += mash
-    SUBDIR += mx
 
 .include <bsd.port.subdir.mk>
