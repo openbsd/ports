@@ -1,24 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/06/15 08:32:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/09/30 16:17:36 jasper Exp $
 @bin bin/osm2go
 share/applications/osm2go.desktop
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/osm2go.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/osm2go.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/osm2go.png
-share/icons/hicolor/64x64/
-share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/osm2go.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/osm2go.svg
 share/osm2go/
+share/osm2go/COPYING
 share/osm2go/colours.txt
 share/osm2go/demo/
 share/osm2go/demo/demo.osm
@@ -41,8 +30,10 @@ share/osm2go/icons/node_add.png
 share/osm2go/icons/node_add_thumb.png
 share/osm2go/icons/ok.png
 share/osm2go/icons/ok_thumb.png
+share/osm2go/icons/osm2go.32.png
 share/osm2go/icons/osm2go.png
-share/osm2go/icons/paypal.png
+share/osm2go/icons/paypal.32.png
+share/osm2go/icons/paypal.64.png
 share/osm2go/icons/presets/
 share/osm2go/icons/presets/Hockey.png
 share/osm2go/icons/presets/JusticeScales.png
@@ -99,7 +90,9 @@ share/osm2go/icons/presets/cricket.png
 share/osm2go/icons/presets/crossing.png
 share/osm2go/icons/presets/cycleway.png
 share/osm2go/icons/presets/cycling.png
+share/osm2go/icons/presets/dentist.png
 share/osm2go/icons/presets/diy_store.png
+share/osm2go/icons/presets/doctor.png
 share/osm2go/icons/presets/dollar.png
 share/osm2go/icons/presets/douane.png
 share/osm2go/icons/presets/drag_lift.png
@@ -131,6 +124,7 @@ share/osm2go/icons/presets/hiking_grade6.png
 share/osm2go/icons/presets/historic.png
 share/osm2go/icons/presets/hospital.png
 share/osm2go/icons/presets/hostel.png
+share/osm2go/icons/presets/housenumber.png
 share/osm2go/icons/presets/hunting_stand.png
 share/osm2go/icons/presets/information.png
 share/osm2go/icons/presets/island.png
@@ -507,6 +501,7 @@ share/osm2go/icons/styles/standard/vehicle/toll_station.png
 share/osm2go/icons/styles/standard/vehicle/turning_circle.png
 share/osm2go/icons/styles/standard/vehicle/viaduct.png
 share/osm2go/icons/styles/standard/vehicle/zebra_crossing.png
+share/osm2go/icons/submenu_arrow.png
 share/osm2go/icons/trash-full.png
 share/osm2go/icons/trash.png
 share/osm2go/icons/trash_thumb.png

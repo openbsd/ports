@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2012/06/15 08:32:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2012/09/30 16:17:36 jasper Exp $
 
 COMMENT =	Openstreetmap editor for handheld devices
 
-VERSION =	0.7.22
+VERSION =	0.8.3
 DISTNAME =	osm2go_${VERSION}-maemo1
 PKGNAME =	osm2go-${VERSION}
-REVISION=	7
 
 WRKDIST =	${WRKDIR}/osm2go-${VERSION}
 CATEGORIES =	geo x11
@@ -32,6 +31,8 @@ LIB_DEPENDS =	x11/gnome/libgnome \
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+2,-guic
+
+NO_REGRESS =	Yes
 
 WANTLIB += GL ORBit-2 X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 bonobo-2 bonobo-activation
