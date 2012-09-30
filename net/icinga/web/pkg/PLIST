@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/06/19 10:01:52 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/09/30 18:09:50 sthen Exp $
 @conflict icinga-api-*
 @pkgpath net/icinga/core,-api
 app/
@@ -934,6 +934,11 @@ app/modules/Cronks/actions/System/ViewProc/SendCommandAction.class.php
 app/modules/Cronks/actions/System/ViewProcAction.class.php
 app/modules/Cronks/actions/Tackle/
 app/modules/Cronks/actions/Tackle/CronkAction.class.php
+app/modules/Cronks/actions/Util/
+app/modules/Cronks/actions/Util/OpenAction.class.php
+app/modules/Cronks/cache/
+app/modules/Cronks/cache/Util/
+app/modules/Cronks/cache/Util/Open.xml
 app/modules/Cronks/config/
 app/modules/Cronks/config/autoload.xml
 app/modules/Cronks/config/config_handlers.xml
@@ -994,7 +999,6 @@ app/modules/Cronks/lib/js/Cronk.js
 app/modules/Cronks/lib/js/CronkBuilder.js
 app/modules/Cronks/lib/js/CronkTabpanel.js
 app/modules/Cronks/lib/js/CronkTrigger.js
-app/modules/Cronks/lib/js/CronkUtil.js
 app/modules/Cronks/lib/js/Cronks/
 app/modules/Cronks/lib/js/Cronks/CronkListingPanel.js
 app/modules/Cronks/lib/js/Cronks/CronkPortal.js
@@ -1046,7 +1050,6 @@ app/modules/Cronks/lib/js/FilterHandler.js
 app/modules/Cronks/lib/js/Portlet.js
 app/modules/Cronks/lib/js/SlidingTabs.js
 app/modules/Cronks/lib/js/StaticContentUtil.js
-app/modules/Cronks/lib/js/Tabhelper.js
 app/modules/Cronks/lib/js/grid/
 app/modules/Cronks/lib/js/grid/GridPanel.js
 app/modules/Cronks/lib/js/grid/GridUtil.js
@@ -1065,6 +1068,10 @@ app/modules/Cronks/lib/js/grid/renderer/StatusMapColumnRenderer.js
 app/modules/Cronks/lib/js/rmd160.js
 app/modules/Cronks/lib/js/search/
 app/modules/Cronks/lib/js/search/SearchHandler.js
+app/modules/Cronks/lib/js/util/
+app/modules/Cronks/lib/js/util/CronkOpener.js
+app/modules/Cronks/lib/js/util/CronkTabhelper.js
+app/modules/Cronks/lib/js/util/CronkUtil.js
 app/modules/Cronks/lib/js/widgets/
 app/modules/Cronks/lib/js/widgets/Ext.ux.form.MultiSelect.Override.js
 app/modules/Cronks/lib/model/
@@ -1124,6 +1131,8 @@ app/modules/Cronks/templates/System/ViewProc/
 app/modules/Cronks/templates/System/ViewProc/AjaxGridLayoutSuccess.php
 app/modules/Cronks/templates/Tackle/
 app/modules/Cronks/templates/Tackle/CronkSuccess.php
+app/modules/Cronks/templates/Util/
+app/modules/Cronks/templates/Util/OpenSuccess.php
 app/modules/Cronks/validate/
 app/modules/Cronks/validate/Example/
 app/modules/Cronks/validate/Example/HelloWorld.xml
@@ -1152,6 +1161,8 @@ app/modules/Cronks/validate/System/ViewProc/MetaInformation.xml
 app/modules/Cronks/validate/System/ViewProc/SendCommand.xml
 app/modules/Cronks/validate/Tackle/
 app/modules/Cronks/validate/Tackle/Cronk.xml
+app/modules/Cronks/validate/Util/
+app/modules/Cronks/validate/Util/Open.xml
 app/modules/Cronks/views/
 app/modules/Cronks/views/Example/
 app/modules/Cronks/views/Example/HelloWorldSuccessView.class.php
@@ -1180,6 +1191,8 @@ app/modules/Cronks/views/System/ViewProc/SendCommandSuccessView.class.php
 app/modules/Cronks/views/System/ViewProcSuccessView.class.php
 app/modules/Cronks/views/Tackle/
 app/modules/Cronks/views/Tackle/CronkSuccessView.class.php
+app/modules/Cronks/views/Util/
+app/modules/Cronks/views/Util/OpenSuccessView.class.php
 app/modules/Reporting/
 app/modules/Reporting/actions/
 app/modules/Reporting/actions/Cronk/
@@ -1503,6 +1516,8 @@ etc/schema/updates/mysql_v1-5_to_v1-6.sql
 etc/schema/updates/mysql_v1-6-2_to_v1-7.sql
 etc/schema/updates/mysql_v1-6_to_v1-6-2.sql
 etc/schema/updates/mysql_v1-7-0_to_v1-7-1.sql
+etc/schema/updates/mysql_v1-7-1_to_v1-7-2.sql
+etc/schema/updates/mysql_v1-7-x_to_v1-8-0.sql
 etc/schema/updates/oracle_v1-0-3_to_v1-2.sql
 etc/schema/updates/oracle_v1-2_to_1-3.sql
 etc/schema/updates/oracle_v1-3_to_1-4.sql
@@ -1511,6 +1526,8 @@ etc/schema/updates/oracle_v1-5_to_v1-6.sql
 etc/schema/updates/oracle_v1-6-2_to_v1-7.sql
 etc/schema/updates/oracle_v1-6_to_v1-6-2.sql
 etc/schema/updates/oracle_v1-7-0_to_v1-7-1.sql
+etc/schema/updates/oracle_v1-7-1_to_v1-7-2.sql
+etc/schema/updates/oracle_v1-7-x_to_v1-8-0.sql
 etc/schema/updates/pgsql_v1-0-3_to_v1-2.sql
 etc/schema/updates/pgsql_v1-2_to_v1-3.sql
 etc/schema/updates/pgsql_v1-3_to_1-4.sql
@@ -1519,6 +1536,8 @@ etc/schema/updates/pgsql_v1-5_to_v1-6.sql
 etc/schema/updates/pgsql_v1-6-2_to_v1-7.sql
 etc/schema/updates/pgsql_v1-6_to_v1-6-2.sql
 etc/schema/updates/pgsql_v1-7-0_to_v1-7-1.sql
+etc/schema/updates/pgsql_v1-7-1_to_v1-7-2.sql
+etc/schema/updates/pgsql_v1-7-x_to_v1-8-0.sql
 lib/
 lib/agavi/
 lib/agavi/src/
