@@ -1,0 +1,19 @@
+$OpenBSD: patch-glines_Makefile_in,v 1.1 2012/09/30 08:18:28 ajacoutot Exp $
+
+From 03ba7f6a58dc2ca0ef59a689c06ab1cf18f57ec4 Mon Sep 17 00:00:00 2001
+From: Robert Ancell <robert.ancell@canonical.com>
+Date: Tue, 22 May 2012 04:26:33 +0000
+Subject: Fix data directories pointing to old locations
+(+ local modification: s/pixmaps/themes)
+
+--- glines/Makefile.in.orig	Sun Sep 30 10:09:14 2012
++++ glines/Makefile.in	Sun Sep 30 10:09:27 2012
+@@ -147,7 +147,7 @@ target_alias = @target_alias@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-pixmapdir = $(datadir)/gnome-games/glines/pixmaps
++pixmapdir = $(datadir)/glines/themes
+ pixmap_DATA = classic.png dots.png gumball.png pulse.png
+ EXTRA_DIST = $(pixmap_DATA)
+ all: all-am

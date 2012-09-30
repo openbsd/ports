@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2012/07/08 08:19:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2012/09/30 08:18:28 ajacoutot Exp $
 
 COMMENT=		extra themes and artwork for GNOME games
 
 GNOME_PROJECT=		gnome-games-extra-data
 GNOME_VERSION=		3.2.0
+REVISION=		0
 
 CATEGORIES=		games
 
