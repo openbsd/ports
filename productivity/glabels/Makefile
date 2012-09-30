@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.27 2012/09/18 06:31:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2012/09/30 09:54:01 jasper Exp $
+
+# XXX: https://bugzilla.gnome.org/show_bug.cgi?id=685130
+BROKEN =	needs to be ported to new EDS ESource API
 
 COMMENT =	labels and business card designer
 
