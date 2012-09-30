@@ -1,6 +1,6 @@
-$OpenBSD: patch-tests_libedata-cal_Makefile_in,v 1.8 2012/09/28 06:35:36 ajacoutot Exp $
+$OpenBSD: patch-tests_libedata-cal_Makefile_in,v 1.9 2012/09/30 09:12:11 ajacoutot Exp $
 
-XXX push upstream
+https://bugzilla.gnome.org/show_bug.cgi?id=685127
 
 --- tests/libedata-cal/Makefile.in.orig	Fri Sep 28 07:49:11 2012
 +++ tests/libedata-cal/Makefile.in	Fri Sep 28 07:51:23 2012
