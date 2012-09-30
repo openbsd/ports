@@ -1,15 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2012/09/21 13:25:27 ajacoutot Exp $
-
-# XXX remove on next update
-MASTER_SITES0=		http://distfiles.bsdfrog.org/
-PATCHFILES=		mutter-XXX.diff:0
-PATCH_DIST_STRIP=	-p1
+# $OpenBSD: Makefile,v 1.5 2012/09/30 12:42:04 jasper Exp $
 
 COMMENT=		window and compositing manager
 
 GNOME_PROJECT=		mutter
-GNOME_VERSION=		3.4.1
-REVISION=		1
+GNOME_VERSION=		3.6.0
 
 SHARED_LIBS +=  mutter                    0.0 # 0.0
 
@@ -40,7 +34,7 @@ MODGNOME_TOOLS=		goi
 
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			devel/startup-notification \
-			graphics/clutter/core>=1.6.14 \
+			graphics/clutter/core>=1.12.0 \
 			devel/gobject-introspection
 BUILD_DEPENDS=		${RUN_DEPENDS} \
 			x11/gnome/doc-utils
