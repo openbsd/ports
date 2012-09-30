@@ -1,8 +1,6 @@
-$OpenBSD: patch-tools_gnome-session-quit_c,v 1.1 2012/09/28 07:34:24 ajacoutot Exp $
+$OpenBSD: patch-tools_gnome-session-quit_c,v 1.2 2012/09/30 08:27:02 ajacoutot Exp $
 
-XXX push upstream
-gnome-session-quit.c:48: error: 'reboot' redeclared as different kind of symbol
-/usr/include/unistd.h:480: error: previous declaration of 'reboot' was here
+https://bugzilla.gnome.org/show_bug.cgi?id=685121
 
 --- tools/gnome-session-quit.c.orig	Fri Sep 28 09:26:07 2012
 +++ tools/gnome-session-quit.c	Fri Sep 28 09:28:54 2012
