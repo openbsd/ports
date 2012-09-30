@@ -1,7 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.27 2012/09/29 10:10:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.28 2012/09/30 19:17:52 jasper Exp $
 @bin bin/empathy
 @bin bin/empathy-accounts
 @bin bin/empathy-debugger
+lib/empathy/
+lib/empathy/lib${FULLPKGNAME}.so
+lib/empathy/libempathy-gtk-3.6.0.so
+lib/empathy/libempathy-gtk.a
+lib/empathy/libempathy-gtk.la
+lib/empathy/libempathy-gtk.so
+lib/empathy/libempathy.a
+lib/empathy/libempathy.la
+lib/empathy/libempathy.so
 lib/mission-control-plugins.0/
 lib/mission-control-plugins.0/mcp-account-manager-goa.so
 lib/nautilus-sendto/
@@ -13,7 +22,42 @@ lib/nautilus-sendto/plugins/libnstempathy.so
 @man man/man1/empathy-accounts.1
 @man man/man1/empathy.1
 share/GConf/gsettings/empathy.convert
-share/applications/empathy-accounts.desktop
+share/adium/
+share/adium/message-styles/
+share/adium/message-styles/Boxes.AdiumMessageStyle/
+share/adium/message-styles/Boxes.AdiumMessageStyle/Contents/
+share/adium/message-styles/Boxes.AdiumMessageStyle/Contents/Info.plist
+share/adium/message-styles/Boxes.AdiumMessageStyle/Contents/Resources/
+share/adium/message-styles/Boxes.AdiumMessageStyle/Contents/Resources/Incoming/
+share/adium/message-styles/Boxes.AdiumMessageStyle/Contents/Resources/Incoming/Content.html
+share/adium/message-styles/Boxes.AdiumMessageStyle/Contents/Resources/Incoming/NextContent.html
+share/adium/message-styles/Boxes.AdiumMessageStyle/Contents/Resources/Status.html
+share/adium/message-styles/Boxes.AdiumMessageStyle/Contents/Resources/Variants/
+share/adium/message-styles/Boxes.AdiumMessageStyle/Contents/Resources/Variants/Blue.css
+share/adium/message-styles/Boxes.AdiumMessageStyle/Contents/Resources/Variants/Clean.css
+share/adium/message-styles/Boxes.AdiumMessageStyle/Contents/Resources/Variants/Simple.css
+share/adium/message-styles/Boxes.AdiumMessageStyle/Contents/Resources/main.css
+share/adium/message-styles/Classic.AdiumMessageStyle/
+share/adium/message-styles/Classic.AdiumMessageStyle/Contents/
+share/adium/message-styles/Classic.AdiumMessageStyle/Contents/Info.plist
+share/adium/message-styles/Classic.AdiumMessageStyle/Contents/Resources/
+share/adium/message-styles/Classic.AdiumMessageStyle/Contents/Resources/Content.html
+share/adium/message-styles/Classic.AdiumMessageStyle/Contents/Resources/Status.html
+share/adium/message-styles/Classic.AdiumMessageStyle/Contents/Resources/main.css
+share/adium/message-styles/PlanetGNOME.AdiumMessageStyle/
+share/adium/message-styles/PlanetGNOME.AdiumMessageStyle/Contents/
+share/adium/message-styles/PlanetGNOME.AdiumMessageStyle/Contents/Info.plist
+share/adium/message-styles/PlanetGNOME.AdiumMessageStyle/Contents/Resources/
+share/adium/message-styles/PlanetGNOME.AdiumMessageStyle/Contents/Resources/Images/
+share/adium/message-styles/PlanetGNOME.AdiumMessageStyle/Contents/Resources/Images/corners.png
+share/adium/message-styles/PlanetGNOME.AdiumMessageStyle/Contents/Resources/Images/horizontal.png
+share/adium/message-styles/PlanetGNOME.AdiumMessageStyle/Contents/Resources/Images/nipple.png
+share/adium/message-styles/PlanetGNOME.AdiumMessageStyle/Contents/Resources/Images/vertical.png
+share/adium/message-styles/PlanetGNOME.AdiumMessageStyle/Contents/Resources/Incoming/
+share/adium/message-styles/PlanetGNOME.AdiumMessageStyle/Contents/Resources/Incoming/Content.html
+share/adium/message-styles/PlanetGNOME.AdiumMessageStyle/Contents/Resources/Incoming/NextContent.html
+share/adium/message-styles/PlanetGNOME.AdiumMessageStyle/Contents/Resources/Status.html
+share/adium/message-styles/PlanetGNOME.AdiumMessageStyle/Contents/Resources/main.css
 share/applications/empathy.desktop
 share/dbus-1/services/org.freedesktop.Telepathy.Client.Empathy.Auth.service
 share/dbus-1/services/org.freedesktop.Telepathy.Client.Empathy.Call.service
@@ -40,7 +84,6 @@ share/empathy/empathy-chat.ui
 share/empathy/empathy-chatroom-manager.dtd
 share/empathy/empathy-chatrooms-window.ui
 share/empathy/empathy-contact-blocking-dialog.ui
-share/empathy/empathy-contact-dialogs.ui
 share/empathy/empathy-contact-groups.dtd
 share/empathy/empathy-contact-widget.ui
 share/empathy/empathy-ft-manager.ui
@@ -49,7 +92,6 @@ share/empathy/empathy-individual-widget.ui
 share/empathy/empathy-irc-networks.dtd
 share/empathy/empathy-log-window.html
 share/empathy/empathy-log-window.ui
-share/empathy/empathy-map-view.ui
 share/empathy/empathy-new-chatroom-dialog.ui
 share/empathy/empathy-preferences.ui
 share/empathy/empathy-roster-window-menubar.ui
@@ -58,7 +100,7 @@ share/empathy/empathy-search-bar.ui
 share/empathy/empathy-status-icon.ui
 share/empathy/empathy-status-preset-dialog.ui
 share/empathy/empathy-status-presets.dtd
-share/empathy/empathy-streamed-media-window.ui
+share/empathy/empathy.css
 share/empathy/icons/
 share/empathy/icons/hicolor/
 share/empathy/icons/hicolor/16x16/
@@ -249,8 +291,6 @@ share/empathy/icons/hicolor/scalable/status/user-idle.svg
 share/empathy/icons/hicolor/scalable/status/user-offline.svg
 share/empathy/irc-networks.xml
 share/glib-2.0/schemas/org.gnome.Empathy.gschema.xml
-share/help/
-share/help/C/
 share/help/C/empathy/
 share/help/C/empathy/account-irc.page
 share/help/C/empathy/account-jabber.page
@@ -309,7 +349,6 @@ share/help/C/empathy/set-custom-status.page
 share/help/C/empathy/share-desktop.page
 share/help/C/empathy/status-icons.page
 share/help/C/empathy/video-call.page
-share/help/ca/
 share/help/ca/empathy/
 share/help/ca/empathy/account-irc.page
 share/help/ca/empathy/account-jabber.page
@@ -368,7 +407,6 @@ share/help/ca/empathy/set-custom-status.page
 share/help/ca/empathy/share-desktop.page
 share/help/ca/empathy/status-icons.page
 share/help/ca/empathy/video-call.page
-share/help/cs/
 share/help/cs/empathy/
 share/help/cs/empathy/account-irc.page
 share/help/cs/empathy/account-jabber.page
@@ -427,7 +465,6 @@ share/help/cs/empathy/set-custom-status.page
 share/help/cs/empathy/share-desktop.page
 share/help/cs/empathy/status-icons.page
 share/help/cs/empathy/video-call.page
-share/help/de/
 share/help/de/empathy/
 share/help/de/empathy/account-irc.page
 share/help/de/empathy/account-jabber.page
@@ -486,7 +523,6 @@ share/help/de/empathy/set-custom-status.page
 share/help/de/empathy/share-desktop.page
 share/help/de/empathy/status-icons.page
 share/help/de/empathy/video-call.page
-share/help/el/
 share/help/el/empathy/
 share/help/el/empathy/account-irc.page
 share/help/el/empathy/account-jabber.page
@@ -604,7 +640,6 @@ share/help/en_GB/empathy/set-custom-status.page
 share/help/en_GB/empathy/share-desktop.page
 share/help/en_GB/empathy/status-icons.page
 share/help/en_GB/empathy/video-call.page
-share/help/es/
 share/help/es/empathy/
 share/help/es/empathy/account-irc.page
 share/help/es/empathy/account-jabber.page
@@ -663,7 +698,6 @@ share/help/es/empathy/set-custom-status.page
 share/help/es/empathy/share-desktop.page
 share/help/es/empathy/status-icons.page
 share/help/es/empathy/video-call.page
-share/help/eu/
 share/help/eu/empathy/
 share/help/eu/empathy/account-irc.page
 share/help/eu/empathy/account-jabber.page
@@ -722,7 +756,6 @@ share/help/eu/empathy/set-custom-status.page
 share/help/eu/empathy/share-desktop.page
 share/help/eu/empathy/status-icons.page
 share/help/eu/empathy/video-call.page
-share/help/fi/
 share/help/fi/empathy/
 share/help/fi/empathy/account-irc.page
 share/help/fi/empathy/account-jabber.page
@@ -781,7 +814,6 @@ share/help/fi/empathy/set-custom-status.page
 share/help/fi/empathy/share-desktop.page
 share/help/fi/empathy/status-icons.page
 share/help/fi/empathy/video-call.page
-share/help/fr/
 share/help/fr/empathy/
 share/help/fr/empathy/account-irc.page
 share/help/fr/empathy/account-jabber.page
@@ -840,7 +872,6 @@ share/help/fr/empathy/set-custom-status.page
 share/help/fr/empathy/share-desktop.page
 share/help/fr/empathy/status-icons.page
 share/help/fr/empathy/video-call.page
-share/help/gl/
 share/help/gl/empathy/
 share/help/gl/empathy/account-irc.page
 share/help/gl/empathy/account-jabber.page
@@ -899,7 +930,6 @@ share/help/gl/empathy/set-custom-status.page
 share/help/gl/empathy/share-desktop.page
 share/help/gl/empathy/status-icons.page
 share/help/gl/empathy/video-call.page
-share/help/hu/
 share/help/hu/empathy/
 share/help/hu/empathy/account-irc.page
 share/help/hu/empathy/account-jabber.page
@@ -1135,7 +1165,6 @@ share/help/lv/empathy/set-custom-status.page
 share/help/lv/empathy/share-desktop.page
 share/help/lv/empathy/status-icons.page
 share/help/lv/empathy/video-call.page
-share/help/pl/
 share/help/pl/empathy/
 share/help/pl/empathy/account-irc.page
 share/help/pl/empathy/account-jabber.page
@@ -1253,7 +1282,6 @@ share/help/ru/empathy/set-custom-status.page
 share/help/ru/empathy/share-desktop.page
 share/help/ru/empathy/status-icons.page
 share/help/ru/empathy/video-call.page
-share/help/sl/
 share/help/sl/empathy/
 share/help/sl/empathy/account-irc.page
 share/help/sl/empathy/account-jabber.page
@@ -1312,7 +1340,6 @@ share/help/sl/empathy/set-custom-status.page
 share/help/sl/empathy/share-desktop.page
 share/help/sl/empathy/status-icons.page
 share/help/sl/empathy/video-call.page
-share/help/sv/
 share/help/sv/empathy/
 share/help/sv/empathy/account-irc.page
 share/help/sv/empathy/account-jabber.page
@@ -1430,7 +1457,6 @@ share/help/te/empathy/set-custom-status.page
 share/help/te/empathy/share-desktop.page
 share/help/te/empathy/status-icons.page
 share/help/te/empathy/video-call.page
-share/help/zh_CN/
 share/help/zh_CN/empathy/
 share/help/zh_CN/empathy/account-irc.page
 share/help/zh_CN/empathy/account-jabber.page

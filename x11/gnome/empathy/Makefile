@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.103 2012/09/29 10:10:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.104 2012/09/30 19:17:52 jasper Exp $
 
 COMMENT= 		Telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
-GNOME_VERSION=		3.4.2
-REVISION=		6
+GNOME_VERSION=		3.6.0
+
+SHARED_LIBS +=	empathy              0.0      # unknown
+SHARED_LIBS +=	empathy-gtk          0.0      # unknown
 
 CATEGORIES=		net
 
@@ -16,33 +18,32 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm asn1
-WANTLIB += atk-1.0 c cairo cairo-gobject camel-1.2 canberra canberra-gtk3
-WANTLIB += com_err crypto dbus-1 dbus-glib-1 drm ebook-1.2 edataserver-1.2
-WANTLIB += enchant execinfo expat ffi folks folks-telepathy fontconfig
-WANTLIB += freetype gailutil-3 gck-1 gconf-2 gcr-3 gcr-base-3
-WANTLIB += gcrypt gdbm gdk-3 gdk_pixbuf-2.0 gee geoclue gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gmp gnome-keyring gnutls goa-1.0
-WANTLIB += gobject-2.0 gpg-error gssapi gstapp-0.10 gstaudio-0.10
-WANTLIB += gstbase-0.10 gstfft-0.10 gstinterfaces-0.10
-WANTLIB += gstpbutils-0.10 gstreamer-0.10 gstvideo-0.10 gthread-2.0
-WANTLIB += gtk-3 hogweed icudata icui18n icuuc javascriptcoregtk-3.0
-WANTLIB += jpeg json krb5 ltdl m mission-control-plugins nettle
-WANTLIB += notify nspr4 nss3 ogg orc-0.4 p11-kit pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png pthread pthread-stubs
-WANTLIB += pulse pulse-mainloop-glib smime3 sndfile softokn3 soup-2.4
-WANTLIB += sqlite3 ssl3 stdc++ tasn1 telepathy-farstream telepathy-glib
-WANTLIB += telepathy-logger vorbis vorbisfile webkitgtk-3.0 xcb
-WANTLIB += xcb-render xcb-shm xml2 xslt z farstream-0.1
-WANTLIB += champlain-0.12 champlain-gtk-0.12 clutter-1.0 clutter-gst-1.0
-WANTLIB += clutter-gtk-1.0 cogl cogl-pango gsttag-0.10
-WANTLIB += json-glib-1.0 soup-gnome-2.4 memphis-0.2
-
 MODULES=		devel/dconf \
 			devel/gettext \
 			lang/python \
 			x11/gnome
+
+WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm atk-1.0
+WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject canberra
+WANTLIB += canberra-gtk3 champlain-0.12 champlain-gtk-0.12 clutter-1.0
+WANTLIB += clutter-gst-2.0 clutter-gtk-1.0 cogl cogl-pango dbus-1
+WANTLIB += dbus-glib-1 drm enchant execinfo expat farstream-0.2
+WANTLIB += ffi folks folks-telepathy fontconfig freetype gailutil-3
+WANTLIB += gck-1 gcr-3 gcr-base-3 gcrypt gdbm gdk-3 gdk_pixbuf-2.0
+WANTLIB += gee geoclue gio-2.0 glib-2.0 gmodule-2.0 gmp gnome-keyring
+WANTLIB += gnutls goa-1.0 gobject-2.0 gpg-error gstapp-0.10 gstaudio-0.10
+WANTLIB += gstaudio-1.0 gstbase-0.10 gstbase-1.0 gstfft-0.10 gstinterfaces-0.10
+WANTLIB += gstpbutils-0.10 gstreamer-0.10 gstreamer-1.0 gsttag-1.0
+WANTLIB += gstvideo-0.10 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
+WANTLIB += hogweed icudata icui18n icule icuuc javascriptcoregtk-3.0
+WANTLIB += jpeg json json-glib-1.0 ltdl m memphis-0.2 mission-control-plugins
+WANTLIB += nettle notify ogg orc-0.4 p11-kit pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += pulse pulse-mainloop-glib secret-1 sndfile soup-2.4
+WANTLIB += soup-gnome-2.4 sqlite3 stdc++ tasn1 telepathy-farstream
+WANTLIB += telepathy-glib telepathy-logger vorbis vorbisfile webkitgtk-3.0
+WANTLIB += xcb xcb-render xcb-shm xml2 xslt z zeitgeist-1.0
 
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/iso-codes \
@@ -51,9 +52,9 @@ LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			audio/pulseaudio>=2.0 \
 			geo/geoclue \
 			geo/libchamplain>=0.12.2 \
-			graphics/clutter/clutter-gst>=1.6.0 \
+			graphics/clutter/clutter-gst>=1.9.92 \
 			net/telepathy/folks \
-			net/telepathy/telepathy-farstream \
+			net/telepathy/telepathy-farstream>=0.6.0 \
 			net/telepathy/telepathy-logger \
 			textproc/enchant \
 			x11/gnome/gcr \
@@ -68,7 +69,7 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			x11/gnome/icon-theme
 
 # gst-pulse (src/empathy-audio-sink.c)
-#RUN_DEPENDS +=		multimedia/gstreamer1/plugins-good,-pulse
+RUN_DEPENDS +=		multimedia/gstreamer1/plugins-good,-pulse
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
@@ -88,7 +89,8 @@ CONFIGURE_ARGS +=	--disable-geocode
 CONFIGURE_ARGS+=	--without-connectivity
 
 post-install:
-	rm ${PREFIX}/lib/mission-control-plugins.0/*.{a,la}
-	rm ${PREFIX}/lib/lib/nautilus-sendto/plugins/*.{a,la}
+	#XXX: Disabled until M-C is updated to >= 5.13.1
+	#rm ${PREFIX}/lib/mission-control-plugins.0/*.{a,la}
+	rm ${PREFIX}/lib/nautilus-sendto/plugins/*.{a,la}
 
 .include <bsd.port.mk>
