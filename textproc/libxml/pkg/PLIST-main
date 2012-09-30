@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2009/10/11 10:39:42 steven Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2012/09/30 12:22:05 jasper Exp $
 @pkgpath textproc/libxml
 %%SHARED%%
 bin/xml2-config
@@ -130,6 +130,7 @@ share/doc/libxml2/html/html/libxml-xmlwriter.html
 share/doc/libxml2/html/html/libxml-xpath.html
 share/doc/libxml2/html/html/libxml-xpathInternals.html
 share/doc/libxml2/html/html/libxml-xpointer.html
+share/doc/libxml2/html/html/libxml-xzlib.html
 share/doc/libxml2/html/html/right.png
 share/doc/libxml2/html/html/up.png
 share/doc/libxml2/html/libxml.gif
