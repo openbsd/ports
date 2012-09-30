@@ -1,24 +1,26 @@
-$OpenBSD: patch-js_ui_panel_js,v 1.3 2012/08/29 11:56:27 jasper Exp $
+$OpenBSD: patch-js_ui_panel_js,v 1.4 2012/09/30 14:45:23 jasper Exp $
 
 Make Network Manager support optional.
 https://bugzilla.gnome.org/show_bug.cgi?id=679871
 
---- js/ui/panel.js.orig	Sat Jul 14 11:20:43 2012
-+++ js/ui/panel.js	Sat Jul 14 11:21:06 2012
-@@ -44,10 +44,12 @@ const STANDARD_STATUS_AREA_SHELL_IMPLEMENTATION = {
- if (Config.HAVE_BLUETOOTH)
-     STANDARD_STATUS_AREA_SHELL_IMPLEMENTATION['bluetooth'] = imports.ui.status.bluetooth.Indicator;
+--- js/ui/panel.js.orig	Sun Sep 30 13:24:41 2012
++++ js/ui/panel.js	Sun Sep 30 13:25:31 2012
+@@ -910,11 +910,13 @@ if (Config.HAVE_BLUETOOTH)
+     PANEL_ITEM_IMPLEMENTATIONS['bluetooth'] =
+         imports.ui.status.bluetooth.Indicator;
  
 -try {
--    STANDARD_STATUS_AREA_SHELL_IMPLEMENTATION['network'] = imports.ui.status.network.NMApplet;
+-    PANEL_ITEM_IMPLEMENTATIONS['network'] =
+-        imports.ui.status.network.NMApplet;
 -} catch(e) {
 -    log('NMApplet is not supported. It is possible that your NetworkManager version is too old');
 +if (Config.HAVE_NETWORK_MANAGER) {
-+	try {
-+	    STANDARD_STATUS_AREA_SHELL_IMPLEMENTATION['network'] = imports.ui.status.network.NMApplet;
-+	} catch(e) {
-+	    log('NMApplet is not supported. It is possible that your NetworkManager version is too old');
-+	}
++    try {
++        PANEL_ITEM_IMPLEMENTATIONS['network'] =
++            imports.ui.status.network.NMApplet;
++    } catch(e) {
++        log('NMApplet is not supported. It is possible that your NetworkManager version is too old');
++    }
  }
  
- const GDM_STATUS_AREA_ORDER = ['a11y', 'display', 'keyboard', 'volume', 'battery', 'powerMenu'];
+ const Panel = new Lang.Class({

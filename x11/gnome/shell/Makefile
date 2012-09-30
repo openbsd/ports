@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2012/09/29 10:52:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2012/09/30 14:45:23 jasper Exp $
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
-GNOME_VERSION=		3.4.2
-REVISION=		2
+GNOME_VERSION=		3.6.0
 
 HOMEPAGE=		http://live.gnome.org/GnomeShell
 
@@ -16,22 +15,21 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
-WANTLIB += asn1 atk-1.0 c cairo cairo-gobject camel-1.2 canberra
-WANTLIB += canberra-gtk3 clutter-1.0 cogl cogl-pango com_err croco-0.6
-WANTLIB += crypto dbus-1 dbus-glib-1 drm ebook-1.2 ecal-1.2 edataserver-1.2
-WANTLIB += edataserverui-3.0 execinfo expat ffi folks fontconfig
-WANTLIB += freetype gck-1 gconf-2 gcr-3 gcr-base-3 gcrypt gdbm
-WANTLIB += gdk-3 gdk_pixbuf-2.0 gee gio-2.0 girepository-1.0 gjs
-WANTLIB += glib-2.0 gmodule-2.0 gnome-keyring gnome-menu-3 gobject-2.0
-WANTLIB += gpg-error gssapi gstbase-0.10 gstreamer-0.10 gthread-2.0
-WANTLIB += gtk-3 ical icalss icalvcal json json-glib-1.0 krb5
-WANTLIB += ltdl m mozjs185 mutter ncurses nspr4 nss3 ogg p11-kit
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += plc4 plds4 png polkit-agent-1 polkit-gobject-1 pthread
-WANTLIB += pthread-stubs pulse pulse-mainloop-glib smime3 sndfile
-WANTLIB += softokn3 soup-2.4 sqlite3 ssl3 startup-notification-1
-WANTLIB += stdc++ telepathy-glib telepathy-logger vorbis vorbisfile
-WANTLIB += xcb xcb-aux xcb-render xcb-shm xml2 z
+WANTLIB += asn1 atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
+WANTLIB += canberra canberra-gtk3 clutter-1.0 cogl cogl-pango
+WANTLIB += com_err croco-0.6 crypto dbus-1 dbus-glib-1 drm execinfo
+WANTLIB += expat ffi fontconfig freetype gck-1 gcr-3 gcr-base-3
+WANTLIB += gcrypt gdbm gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
+WANTLIB += gjs glib-2.0 gmodule-2.0 gnome-keyring gnome-menu-3
+WANTLIB += gobject-2.0 gpg-error gssapi gthread-2.0 gtk-3 harfbuzz
+WANTLIB += icudata icule icuuc json json-glib-1.0 krb5 ltdl m
+WANTLIB += mozjs185 mutter ncurses nspr4 ogg p11-kit pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4
+WANTLIB += png polkit-agent-1 polkit-gobject-1 pthread pthread-stubs
+WANTLIB += pulse pulse-mainloop-glib sndfile soup-2.4 sqlite3
+WANTLIB += startup-notification-1 stdc++ telepathy-glib telepathy-logger
+WANTLIB += vorbis vorbisfile xcb xcb-aux xcb-render xcb-shm xkbfile
+WANTLIB += xml2 z
 
 MODULES=		devel/dconf \
 			devel/gettext \
@@ -41,7 +39,6 @@ MODULES=		devel/dconf \
 MODGNOME_TOOLS=		goi
 
 LIB_DEPENDS=		audio/pulseaudio \
-			net/telepathy/folks \
 			net/telepathy/telepathy-logger \
 			sysutils/polkit \
 			www/libcroco \
@@ -86,6 +83,6 @@ pre-configure:
 
 post-install:
 	rm ${PREFIX}/lib/gnome-shell/*.la
-	rm ${PREFIX}/mozilla/plugins/*.la
+	rm ${PREFIX}/lib/mozilla/plugins/*.la
 
 .include <bsd.port.mk>

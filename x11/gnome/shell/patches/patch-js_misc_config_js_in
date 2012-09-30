@@ -1,16 +1,16 @@
-$OpenBSD: patch-js_misc_config_js_in,v 1.1 2012/08/29 11:56:27 jasper Exp $
+$OpenBSD: patch-js_misc_config_js_in,v 1.2 2012/09/30 14:45:23 jasper Exp $
 
 Make Network Manager support optional.
 https://bugzilla.gnome.org/show_bug.cgi?id=679871
 
---- js/misc/config.js.in.orig	Sat Jul 14 10:22:10 2012
-+++ js/misc/config.js.in	Sat Jul 14 10:22:40 2012
-@@ -8,6 +8,8 @@ const PACKAGE_VERSION = '@PACKAGE_VERSION@';
- const GJS_VERSION = '@GJS_VERSION@';
+--- js/misc/config.js.in.orig	Sun Sep 30 13:20:18 2012
++++ js/misc/config.js.in	Sun Sep 30 13:20:32 2012
+@@ -6,6 +6,8 @@ const PACKAGE_NAME = '@PACKAGE_NAME@';
+ const PACKAGE_VERSION = '@PACKAGE_VERSION@';
  /* 1 if gnome-bluetooth is available, 0 otherwise */
  const HAVE_BLUETOOTH = @HAVE_BLUETOOTH@;
 +/* 1 if Network Manager is available, 0 otherwise */
 +const HAVE_NETWORK_MANAGER = @HAVE_NETWORK_MANAGER@;
- /* The system TLS CA list */
- const SHELL_SYSTEM_CA_FILE = '@SHELL_SYSTEM_CA_FILE@';
  /* gettext package */
+ const GETTEXT_PACKAGE = '@GETTEXT_PACKAGE@';
+ /* locale dir */
