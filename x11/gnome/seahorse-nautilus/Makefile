@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2012/09/28 15:18:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2012/09/30 08:38:20 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -43,10 +43,7 @@ CONFIGURE_ARGS=	--disable-static
 
 post-install:
 	rm ${PREFIX}/lib/nautilus/extensions-3.0/*.la
-# XXX push upstream
-# /usr/local/share/glib-2.0/schemas/org.gnome.seahorse.window.gschema.xml:
-# Error on line 3 char 1: <schema id='org.gnome.seahorse.window'> already specified.
-# This entire file has been ignored.
+# https://bugzilla.gnome.org/show_bug.cgi?id=685124
 	rm ${PREFIX}/share/glib-2.0/schemas/org.gnome.seahorse.nautilus.window.gschema.xml
 
 .include <bsd.port.mk>
