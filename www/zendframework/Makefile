@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2012/09/10 09:16:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2012/10/01 14:22:06 sthen Exp $
 
 COMMENT=		framework for developing PHP web applications
 
-V=			1.10.8
+V=			1.12.0
 DISTNAME=		zendframework-${V}
 DISTFILES=		ZendFramework-${V}.tar.gz
-
-REVISION=		6
 
 CATEGORIES=		www devel
 
@@ -20,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${HOMEPAGE}releases/ZendFramework-${V}/
+MASTER_SITES=		http://packages.zendframework.com/releases/ZendFramework-${V}/
 
 MODULES=		lang/php
 NO_BUILD=		Yes
