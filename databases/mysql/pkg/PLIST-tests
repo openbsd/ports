@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.51 2012/08/10 07:31:38 giovanni Exp $
+@comment $OpenBSD: PLIST-tests,v 1.52 2012/10/01 09:44:51 giovanni Exp $
 @man man/man1/mysql-stress-test.pl.1
 @man man/man1/mysql-test-run.pl.1
 @man man/man1/mysql_client_test.1
@@ -2287,7 +2287,6 @@ share/mysql-test/suite/engines/rr_trx/t/rr_u_10-19_nolimit.test
 share/mysql-test/suite/engines/rr_trx/t/rr_u_4.test
 share/mysql-test/suite/federated/
 share/mysql-test/suite/federated/disabled.def
-share/mysql-test/suite/federated/federated.inc
 share/mysql-test/suite/federated/federated.result
 share/mysql-test/suite/federated/federated.test
 share/mysql-test/suite/federated/federated_archive.result
@@ -2298,7 +2297,6 @@ share/mysql-test/suite/federated/federated_bug_25714.result
 share/mysql-test/suite/federated/federated_bug_25714.test
 share/mysql-test/suite/federated/federated_bug_35333.result
 share/mysql-test/suite/federated/federated_bug_35333.test
-share/mysql-test/suite/federated/federated_cleanup.inc
 share/mysql-test/suite/federated/federated_debug-master.opt
 share/mysql-test/suite/federated/federated_debug.result
 share/mysql-test/suite/federated/federated_debug.test
@@ -2313,7 +2311,10 @@ share/mysql-test/suite/federated/federated_server.test
 share/mysql-test/suite/federated/federated_transactions-slave.opt
 share/mysql-test/suite/federated/federated_transactions.result
 share/mysql-test/suite/federated/federated_transactions.test
-share/mysql-test/suite/federated/have_federated_db.inc
+share/mysql-test/suite/federated/include/
+share/mysql-test/suite/federated/include/federated.inc
+share/mysql-test/suite/federated/include/federated_cleanup.inc
+share/mysql-test/suite/federated/include/have_federated_db.inc
 share/mysql-test/suite/federated/my.cnf
 share/mysql-test/suite/funcs_1/
 share/mysql-test/suite/funcs_1/README.txt
@@ -2935,6 +2936,7 @@ share/mysql-test/suite/innodb_plugin/r/innodb_cmp_drop_table.result
 share/mysql-test/suite/innodb_plugin/r/innodb_file_format.result
 share/mysql-test/suite/innodb_plugin/r/innodb_gis.result
 share/mysql-test/suite/innodb_plugin/r/innodb_information_schema.result
+share/mysql-test/suite/innodb_plugin/r/innodb_information_schema_buffer.result
 share/mysql-test/suite/innodb_plugin/r/innodb_lock_wait_timeout_1.result
 share/mysql-test/suite/innodb_plugin/r/innodb_misc1.result
 share/mysql-test/suite/innodb_plugin/r/innodb_multi_update.result
@@ -3042,6 +3044,7 @@ share/mysql-test/suite/innodb_plugin/t/innodb_file_format-master.opt
 share/mysql-test/suite/innodb_plugin/t/innodb_file_format.test
 share/mysql-test/suite/innodb_plugin/t/innodb_gis.test
 share/mysql-test/suite/innodb_plugin/t/innodb_information_schema.test
+share/mysql-test/suite/innodb_plugin/t/innodb_information_schema_buffer.test
 share/mysql-test/suite/innodb_plugin/t/innodb_lock_wait_timeout_1-master.opt
 share/mysql-test/suite/innodb_plugin/t/innodb_lock_wait_timeout_1.test
 share/mysql-test/suite/innodb_plugin/t/innodb_misc1-master.opt

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.208 2012/08/10 07:31:38 giovanni Exp $
+# $OpenBSD: Makefile,v 1.209 2012/10/01 09:44:51 giovanni Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 
-VERSION=	5.1.65
+VERSION=	5.1.66
 DISTNAME=	mysql-${VERSION}
 PKGNAME-main=	mysql-client-${VERSION}
 PKGNAME-server=	mysql-server-${VERSION}
