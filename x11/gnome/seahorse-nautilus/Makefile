@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/09/30 08:38:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2012/10/01 10:49:51 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	GnuPG extension for nautilus(1)
 
 GNOME_PROJECT=	seahorse-nautilus
 GNOME_VERSION=	3.6.0
+REVISION=	0
 
 CATEGORIES=	security
 
@@ -43,7 +44,5 @@ CONFIGURE_ARGS=	--disable-static
 
 post-install:
 	rm ${PREFIX}/lib/nautilus/extensions-3.0/*.la
-# https://bugzilla.gnome.org/show_bug.cgi?id=685124
-	rm ${PREFIX}/share/glib-2.0/schemas/org.gnome.seahorse.nautilus.window.gschema.xml
 
 .include <bsd.port.mk>

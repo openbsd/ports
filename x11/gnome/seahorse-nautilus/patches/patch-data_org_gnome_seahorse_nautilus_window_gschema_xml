@@ -1,0 +1,13 @@
+$OpenBSD: patch-data_org_gnome_seahorse_nautilus_window_gschema_xml,v 1.1 2012/10/01 10:49:51 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=685124
+
+--- data/org.gnome.seahorse.nautilus.window.gschema.xml.orig	Fri Jun 29 09:22:47 2012
++++ data/org.gnome.seahorse.nautilus.window.gschema.xml	Mon Oct  1 12:45:01 2012
+@@ -1,5 +1,5 @@
+ <schemalist>
+-	<schema id="org.gnome.seahorse.window">
++	<schema id="org.gnome.seahorse.nautilus.window">
+ 		<key name="width" type="i">
+ 			<default>-1</default>
+ 			<summary>Width of the window</summary>
