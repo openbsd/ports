@@ -1,19 +1,19 @@
-$OpenBSD: patch-src_test_pl,v 1.1 2011/09/17 16:06:32 edd Exp $
+$OpenBSD: patch-src_test_pl,v 1.2 2012/10/01 21:16:00 edd Exp $
 
-threading regression tests fail to terminate. disable them while we figure out
-why. Dialog started with upstream:
-http://www.swi-prolog.org/bugzilla/show_bug.cgi?id=11
+This test appears to use >64MB of stack!?
 
---- src/test.pl.orig	Sat Sep 17 17:17:28 2011
-+++ src/test.pl	Sat Sep 17 17:17:49 2011
-@@ -2616,8 +2616,8 @@ testdir('Tests/library').
- testdir('Tests/charset').
- testdir('Tests/clp').
- testdir('Tests/GC').
--testdir('Tests/thread') :-
--	current_prolog_flag(threads, true).
-+%testdir('Tests/thread') :-
-+%	current_prolog_flag(threads, true).
- 
- :- dynamic
- 	failed/1,
+--- src/test.pl.orig	Thu Sep 27 19:43:34 2012
++++ src/test.pl	Sat Sep 29 13:30:54 2012
+@@ -582,10 +582,10 @@ gmp(shift-1) :-
+ gmp(shift-2) :-
+ 	A is 1<<55, B is A<<8,
+ 	B =:= 9223372036854775808.
+-gmp(shift-3) :-
++/*gmp(shift-3) :-
+ 	var(A),
+ 	forall(between(1, 100, X),
+-	       catch(A is 1<<(1<<X), error(resource_error(stack), _), true)).
++		catch(A is 1<<(1<<X), error(resource_error(stack), _), true)).*/
+ gmp(fac-1) :-
+ 	fac(25, X),
+ 	X == 15511210043330985984000000. % computed with bc
