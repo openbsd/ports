@@ -1,7 +1,7 @@
-$OpenBSD: patch-youtube-dl,v 1.9 2012/03/07 22:00:07 dcoppa Exp $
---- youtube-dl.orig	Wed Mar  7 14:51:21 2012
-+++ youtube-dl	Wed Mar  7 14:52:02 2012
-@@ -899,7 +899,7 @@ class FileDownloader(object):
+$OpenBSD: patch-youtube_dl_FileDownloader_py,v 1.1 2012/10/01 08:57:12 dcoppa Exp $
+--- youtube_dl/FileDownloader.py.orig	Sat Sep 29 18:31:36 2012
++++ youtube_dl/FileDownloader.py	Sat Sep 29 18:31:44 2012
+@@ -511,7 +511,7 @@ class FileDownloader(object):
  		# Download using rtmpdump. rtmpdump returns exit code 2 when
  		# the connection was interrumpted and resuming appears to be
  		# possible. This is part of rtmpdump's normal usage, AFAIK.

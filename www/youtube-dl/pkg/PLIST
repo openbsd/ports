@@ -1,2 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/26 19:30:51 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/10/01 08:57:12 dcoppa Exp $
 bin/youtube-dl
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/
+lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/FileDownloader.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/FileDownloader.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/InfoExtractors.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/InfoExtractors.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/PostProcessor.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/PostProcessor.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/__init__.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/__main__.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/__main__.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/utils.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/utils.pyc
