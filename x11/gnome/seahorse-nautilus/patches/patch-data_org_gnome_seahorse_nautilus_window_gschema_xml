@@ -1,6 +1,9 @@
-$OpenBSD: patch-data_org_gnome_seahorse_nautilus_window_gschema_xml,v 1.1 2012/10/01 10:49:51 ajacoutot Exp $
+$OpenBSD: patch-data_org_gnome_seahorse_nautilus_window_gschema_xml,v 1.2 2012/10/01 11:28:44 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=685124
+From 8f48809c0fb6633bb45eac2144c1125f79933053 Mon Sep 17 00:00:00 2001
+From: Stef Walter <stefw@gnome.org>
+Date: Mon, 01 Oct 2012 08:15:13 +0000
+Subject: Fix the schema identifier for GSettings window settings
 
 --- data/org.gnome.seahorse.nautilus.window.gschema.xml.orig	Fri Jun 29 09:22:47 2012
 +++ data/org.gnome.seahorse.nautilus.window.gschema.xml	Mon Oct  1 12:45:01 2012
