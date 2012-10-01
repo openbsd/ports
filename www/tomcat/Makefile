@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2011/10/31 08:26:42 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.6 2012/10/01 07:10:28 dcoppa Exp $
 
      SUBDIR =
-     SUBDIR += v5
      SUBDIR += v6
      SUBDIR += v7
 
