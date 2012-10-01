@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.122 2012/09/28 08:38:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.123 2012/10/01 15:01:14 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	GNOME panel
 
 GNOME_PROJECT=	gnome-panel
 GNOME_VERSION=	3.6.0
+REVISION=	0
 
 SHARED_LIBS=	panel-applet-4            1.1 # 1.1
 
@@ -23,7 +24,7 @@ WANTLIB += GL ICE SM X11 X11-xcb XRes Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
 WANTLIB += asn1 atk-1.0 c cairo cairo-gobject camel-1.2 com_err
 WANTLIB += croco-0.6 crypto dbus-1 dbus-glib-1 dconf drm
-WANTLIB += ecal-1.2 edataserver-1.2 expat ffi
+WANTLIB += ecal-1.2 edataserver-1.2 expat ffi secret-1
 WANTLIB += fontconfig freetype gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gnome-desktop-3 gnome-keyring
 WANTLIB += gnome-menu-3 gobject-2.0 gpg-error gssapi gthread-2.0
