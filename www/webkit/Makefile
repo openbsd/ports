@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2012/09/21 14:48:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.73 2012/10/01 17:49:26 naddy Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -8,6 +8,7 @@ V =		1.8.3
 DISTNAME =	webkit-${V}
 EPOCH =		0
 CATEGORIES =	www
+DPB_PROPERTIES =parallel
 EXTRACT_SUFX=	.tar.xz
 REVISION=	2
 
