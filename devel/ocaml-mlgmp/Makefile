@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2012/08/18 22:16:27 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2012/10/01 21:20:55 edd Exp $
 
 COMMENT =		GMP bindings for OCaml
 
 V =			0.13
-REVISION =		0
+REVISION =		1
 DISTNAME =		mlgmp-${V}
 PKGNAME =		ocaml-mlgmp-${V}
 
@@ -28,7 +28,7 @@ USE_GMAKE =		Yes
 # overide their site specific include/lib paths
 MAKE_FLAGS += GMP_LIBDIR=${LOCALBASE}/lib
 MAKE_FLAGS += GMP_INCLUDES=-I${LOCALBASE}/include
-MAKE_FLAGS += CFLAGS_MISC="${CFLAGS}"
+MAKE_FLAGS += CFLAGS_MISC="${CFLAGS} -fPIC"
 
 # build does not support just bytecode, but we can
 # deal with this my calling certain make targets
