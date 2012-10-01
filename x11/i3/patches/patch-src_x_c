@@ -1,9 +1,33 @@
-$OpenBSD: patch-src_x_c,v 1.6 2012/09/21 17:16:14 dcoppa Exp $
+$OpenBSD: patch-src_x_c,v 1.7 2012/10/01 08:12:17 dcoppa Exp $
+
+From a082cf8c65225678af782187e4b6f3ba85a0701a Mon Sep 17 00:00:00 2001
+From: Michael Stapelberg <michael@stapelberg.de>
+Date: Fri, 28 Sep 2012 17:46:50 +0000
+Subject: Bugfix: Draw h-split indicator at the right position
+
 
 OpenBSD lacks POSIX shared memory support (shm_open() and friends)
 
 --- src/x.c.orig	Wed Sep 19 18:08:09 2012
-+++ src/x.c	Thu Sep 20 14:12:10 2012
++++ src/x.c	Mon Oct  1 09:44:02 2012
+@@ -446,7 +446,7 @@ void x_draw_decoration(Con *con) {
+             xcb_change_gc(conn, con->pm_gc, XCB_GC_FOREGROUND, (uint32_t[]){ p->color->indicator });
+             if (con_orientation(con->parent) == HORIZ)
+                 xcb_poly_fill_rectangle(conn, con->pixmap, con->pm_gc, 1, (xcb_rectangle_t[]){
+-                        { r->width + br.width + br.x, 0, r->width, r->height + br.height } });
++                        { r->width + br.width + br.x, br.y, r->width, r->height + br.height } });
+             else
+                 xcb_poly_fill_rectangle(conn, con->pixmap, con->pm_gc, 1, (xcb_rectangle_t[]){
+                         { br.x, r->height + br.height + br.y, r->width - (2 * br.x), r->height } });
+@@ -792,7 +792,7 @@ static void x_push_node_unmaps(Con *con) {
+         }
+ 
+         cookie = xcb_unmap_window(conn, con->frame);
+-        DLOG("unmapping container (serial %d)\n", cookie.sequence);
++        DLOG("unmapping container %p / %s (serial %d)\n", con, con->name, cookie.sequence);
+         /* we need to increase ignore_unmap for this container (if it
+          * contains a window) and for every window "under" this one which
+          * contains a window */
 @@ -1037,8 +1037,10 @@ void x_set_i3_atoms(void) {
      xcb_change_property(conn, XCB_PROP_MODE_REPLACE, root, A_I3_PID, XCB_ATOM_CARDINAL, 32, 1, &pid);
      xcb_change_property(conn, XCB_PROP_MODE_REPLACE, root, A_I3_CONFIG_PATH, A_UTF8_STRING, 8,
