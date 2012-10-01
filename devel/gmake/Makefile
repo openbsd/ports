@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.47 2012/03/29 13:38:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2012/10/01 17:47:44 naddy Exp $
 
 COMMENT=	GNU make
 
 DISTNAME=	make-3.82
 PKGNAME=	g${DISTNAME}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=make/}
 
