@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/08/25 11:30:19 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/10/01 07:56:40 brad Exp $
 @pkgpath audio/audacious-plugins,-main
 lib/audacious/
 lib/audacious/Container/
@@ -193,6 +193,7 @@ share/audacious/ui/
 share/audacious/ui/equalizer.ui
 share/audacious/ui/mainwin.ui
 share/audacious/ui/playlist.ui
+share/locale/be/LC_MESSAGES/audacious-plugins.mo
 share/locale/ca/LC_MESSAGES/audacious-plugins.mo
 share/locale/cs/LC_MESSAGES/audacious-plugins.mo
 share/locale/de/LC_MESSAGES/audacious-plugins.mo
@@ -210,6 +211,7 @@ share/locale/ko/LC_MESSAGES/audacious-plugins.mo
 share/locale/lt/LC_MESSAGES/audacious-plugins.mo
 share/locale/lv/LC_MESSAGES/audacious-plugins.mo
 share/locale/pl/LC_MESSAGES/audacious-plugins.mo
+share/locale/pt_BR/LC_MESSAGES/audacious-plugins.mo
 share/locale/pt_PT/LC_MESSAGES/audacious-plugins.mo
 share/locale/ru/LC_MESSAGES/audacious-plugins.mo
 share/locale/sk/LC_MESSAGES/audacious-plugins.mo

@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.16 2012/08/25 11:30:19 dcoppa Exp $
---- configure.ac.orig	Fri Aug 24 10:53:03 2012
-+++ configure.ac	Fri Aug 24 10:54:28 2012
+$OpenBSD: patch-configure_ac,v 1.17 2012/10/01 07:56:40 brad Exp $
+--- configure.ac.orig	Sun Sep 23 09:05:12 2012
++++ configure.ac	Sat Sep 29 04:33:40 2012
 @@ -43,9 +43,6 @@ PKG_CHECK_MODULES(AUDACIOUS, [audacious >= 3.3],
      [AC_MSG_ERROR([Cannot find Audacious 3.3; have you installed Audacious yet?])]
  )
@@ -11,15 +11,6 @@ $OpenBSD: patch-configure_ac,v 1.16 2012/08/25 11:30:19 dcoppa Exp $
  dnl Default Set of Plugins
  dnl ======================
  
-@@ -882,7 +879,7 @@ AC_ARG_ENABLE(filewriter_mp3,
- )
- 
- if test "x$enable_filewriter_mp3" = "xyes"; then
--   AC_CHECK_LIB(mp3lame -lm, lame_get_id3v2_tag, [have_lame=yes], [have_lame=no])
-+   AC_CHECK_LIB(mp3lame, lame_get_id3v2_tag, [have_lame=yes], [have_lame=no])
-    if test "x$have_lame" = "xyes"; then
-       AC_DEFINE(FILEWRITER_MP3, 1, [Define if MP3 output part should be built])
- 	  FILEWRITER_LIBS="$FILEWRITER_LIBS -lmp3lame"
 @@ -1013,6 +1010,9 @@ if test "x$enable_lyricwiki" = "xyes"; then
  fi
  
