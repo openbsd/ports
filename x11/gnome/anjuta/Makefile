@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2012/09/29 10:10:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.72 2012/10/01 15:17:29 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
 GNOME_VERSION=		3.6.0
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 
@@ -59,8 +59,7 @@ LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			x11/gnome/devhelp \
 			x11/gnome/gdl \
 			x11/gtksourceview3 \
-			x11/gnome/libgda \
-			x11/gnome/libsecret
+			x11/gnome/libgda
 
 # needed by plugins/class-gen/plugin.c
 RUN_DEPENDS +=		devel/autogen
