@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2012/10/01 17:49:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.74 2012/10/01 18:12:34 naddy Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -90,6 +90,8 @@ BUILD_DEPENDS =	devel/bison \
 		devel/flex \
 		devel/gperf \
 		devel/gobject-introspection
+# required for parallel building
+BUILD_DEPENDS+=	gmake->=3.82p2:devel/gmake
 
 FLAVORS = gtk3
 FLAVOR ?=

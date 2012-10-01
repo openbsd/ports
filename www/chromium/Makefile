@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2012/10/01 17:49:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.106 2012/10/01 18:12:34 naddy Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 
@@ -52,6 +52,8 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		shells/bash \
 		sysutils/flock \
 		x11/gnome/libgnome-keyring
+# required for parallel building
+BUILD_DEPENDS+= gmake->=3.82p2:devel/gmake
 LIB_DEPENDS=	devel/libexecinfo \
 		archivers/bzip2 \
 		devel/libusb-compat \
