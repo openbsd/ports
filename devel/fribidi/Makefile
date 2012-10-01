@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2011/11/07 09:15:56 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.11 2012/10/01 07:46:47 brad Exp $
 
 COMMENT=	library implementing the Unicode Bidirectional Algorithm
 
-DISTNAME=	fribidi-0.19.2
+DISTNAME=	fribidi-0.19.4
 CATEGORIES=	devel
 MASTER_SITES=	${HOMEPAGE}download/
+EXTRACT_SUFX=	.tar.bz2
 
-SHARED_LIBS=	fribidi	1.0
+SHARED_LIBS=	fribidi	2.0
 
 HOMEPAGE=	http://fribidi.org/
 
@@ -22,6 +23,7 @@ USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--enable-static \
 		--without-glib
 
 post-install:
