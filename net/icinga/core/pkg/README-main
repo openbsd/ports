@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.7 2012/05/27 19:42:42 sthen Exp $
+$OpenBSD: README-main,v 1.8 2012/10/01 23:05:01 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -51,7 +51,7 @@ Web User-Interfaces
 
 Two web-based user interfaces are available for Icinga:
 
-- icinga-cga: the classic (but improved) Nagios-style interface
+- icinga-cgi: the classic (but improved) Nagios-style interface
 - icinga-web: new API-based interface
 
 At the time of writing, porting and packaging of icinga-web is
