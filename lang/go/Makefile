@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2012/09/19 21:10:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2012/10/01 06:20:09 jsing Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		Go programming language
 
-VERSION =		1.0.2
-REVISION =		0
+VERSION =		1.0.3
 EXTRACT_SUFX =		.src.tar.gz
 DISTNAME = 		go${VERSION}
 PKGNAME = 		go-${VERSION}
@@ -71,7 +70,7 @@ do-build:
 do-regress:
 	@cd ${WRKSRC} && \
 		ulimit -n 256 -d 2097152 && \
-		PATH=${PATH}:${WRKDIST}/bin GOROOT=${WRKDIST} ./run.bash
+		PATH=${WRKDIST}/bin:${PATH} GOROOT=${WRKDIST} ./run.bash
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/bin/go{,doc,fmt} ${PREFIX}/bin
@@ -83,7 +82,7 @@ do-install:
 			-exec ${INSTALL_DATA} {} \
 			${GOROOT} \;
 
-.	for dir in doc include lib src pkg
+.	for dir in doc include lib misc src pkg
 		@cd ${WRKDIST} && \
 			find ${dir} -type d \
 				-exec ${INSTALL_DATA_DIR} \
