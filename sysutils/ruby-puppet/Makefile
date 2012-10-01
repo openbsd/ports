@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.43 2012/09/23 17:08:06 jeremy Exp $
+# $OpenBSD: Makefile,v 1.44 2012/10/01 09:26:18 jasper Exp $
 
 COMMENT=	centralised configuration management for networks
 
 VERSION=	2.7.19
 DISTNAME=	puppet-${VERSION}
 PKGNAME=	ruby-${DISTNAME}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	sysutils net
 
 HOMEPAGE=	http://reductivelabs.com/projects/puppet/
@@ -30,6 +30,7 @@ NO_REGRESS=	Yes
 NO_BUILD=	Yes
 
 do-install:
+	${SUBST_CMD} ${WRKSRC}/lib/puppet/defaults.rb
 	${INSTALL_DATA_DIR} ${MODRUBY_EXAMPLEDIR}/puppet
 	@cd ${WRKSRC} && ${ALL_FAKE_FLAGS} ${RUBY} install.rb
 	for f in `ls -1 ${WRKSRC}/examples/etc/puppet/*.conf`; do \

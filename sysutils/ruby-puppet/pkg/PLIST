@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2012/09/19 09:56:01 robert Exp $
+@comment $OpenBSD: PLIST,v 1.23 2012/10/01 09:26:18 jasper Exp $
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
 @extraunexec rm -rf ${SYSCONFDIR}/puppet/*
@@ -917,6 +917,7 @@ sbin/puppetqd
 sbin/puppetrun
 ${MODRUBY_RELEXAMPLEDIR}/puppet/
 @sample ${SYSCONFDIR}/puppet/
+@sample ${SYSCONFDIR}/puppet/modules/
 ${MODRUBY_RELEXAMPLEDIR}/puppet/fileserver.conf
 @sample ${SYSCONFDIR}/puppet/fileserver.conf
 ${MODRUBY_RELEXAMPLEDIR}/puppet/namespaceauth.conf

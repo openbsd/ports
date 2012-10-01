@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_puppet_defaults_rb,v 1.6 2012/04/13 08:18:30 jasper Exp $
---- lib/puppet/defaults.rb.orig	Tue Apr 10 20:23:15 2012
-+++ lib/puppet/defaults.rb	Fri Apr 13 09:29:03 2012
+$OpenBSD: patch-lib_puppet_defaults_rb,v 1.7 2012/10/01 09:26:18 jasper Exp $
+--- lib/puppet/defaults.rb.orig	Tue Aug 21 23:41:17 2012
++++ lib/puppet/defaults.rb	Mon Oct  1 11:03:48 2012
 @@ -466,8 +466,8 @@ EOT
    )
  
@@ -12,3 +12,12 @@ $OpenBSD: patch-lib_puppet_defaults_rb,v 1.6 2012/04/13 08:18:30 jasper Exp $
      :manifestdir => ["$confdir/manifests", "Where puppet master looks for its manifests."],
      :manifest => ["$manifestdir/site.pp", "The entry-point manifest for puppet master."],
      :code => ["", "Code to parse directly.  This is essentially only used
+@@ -508,7 +508,7 @@ EOT
+     ],
+     :ca => [true, "Whether the master should function as a certificate authority."],
+     :modulepath => {
+-      :default => "$confdir/modules#{File::PATH_SEPARATOR}/usr/share/puppet/modules",
++      :default => "$confdir/modules#{File::PATH_SEPARATOR}${SYSCONFDIR}/puppet/modules",
+       :desc => "The search path for modules, as a list of directories separated by the system path separator character. (The POSIX path separator is ':', and the Windows path separator is ';'.)",
+       :type => :setting # We don't want this to be considered a file, since it's multiple files.
+     },
