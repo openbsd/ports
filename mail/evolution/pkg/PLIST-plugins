@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-plugins,v 1.12 2012/09/28 13:49:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST-plugins,v 1.13 2012/10/01 14:09:12 ajacoutot Exp $
 @conflict evolution-<=3.2.2p0
 lib/evolution/${R}/plugins/liborg-gnome-evolution-bbdb.so
 lib/evolution/${R}/plugins/liborg-gnome-save-calendar.so
@@ -29,7 +29,11 @@ share/evolution/${R}/errors/org-gnome-attachment-reminder.error
 share/evolution/${R}/errors/org-gnome-face.error
 share/evolution/${R}/errors/org-gnome-external-editor.error
 share/evolution/${R}/ui/org-gnome-email-custom-header.ui
-share/glib-2.0/schemas/org.gnome.evolution.plugin.templates.gschema.xml
+share/glib-2.0/schemas/org.gnome.evolution.plugin.attachment-reminder.gschema.xml
+share/glib-2.0/schemas/org.gnome.evolution.plugin.email-custom-header.gschema.xml
 share/glib-2.0/schemas/org.gnome.evolution.plugin.external-editor.gschema.xml
+share/glib-2.0/schemas/org.gnome.evolution.plugin.face-picture.gschema.xml
+share/glib-2.0/schemas/org.gnome.evolution.plugin.mail-notification.gschema.xml
+share/glib-2.0/schemas/org.gnome.evolution.plugin.templates.gschema.xml
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
