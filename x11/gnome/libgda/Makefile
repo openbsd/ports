@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2012/09/21 13:23:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2012/10/01 12:49:19 ajacoutot Exp $
 
 # XXX add vala to MODGNOME_TOOLS on update
 
@@ -23,6 +23,12 @@ PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}
 PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
 PKGNAME-ui=		libgda-ui-${GNOME_VERSION}
 
+REVISION-main=		0
+REVISION-ldap=		0
+REVISION-mysql=		0
+REVISION-pgsql=		0
+REVISION-ui=		0
+
 EPOCH-main=		2
 EPOCH-ldap=		0
 EPOCH-mysql=		0
@@ -45,8 +51,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += m pcre z gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 xml2 dbus-1 gcrypt gnome-keyring
-WANTLIB += gpg-error ffi pthread
+WANTLIB += gthread-2.0 xml2 gcrypt secret-1 gpg-error ffi pthread
 
 MODULES=		devel/gettext \
 			x11/gnome
@@ -64,7 +69,8 @@ FLAVOR?=
 MULTI_PACKAGES=		-main
 
 LIB_DEPENDS=		devel/glib2 \
-			textproc/libxml
+			textproc/libxml \
+			x11/gnome/libsecret
 
 BUILD_DEPENDS=		databases/db/v4
 
@@ -97,9 +103,7 @@ RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS} \
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			devel/libsoup \
 			textproc/libxslt \
-			x11/gnome/libgnome-keyring \
-			graphics/gdk-pixbuf2 \
-			x11/dbus
+			graphics/gdk-pixbuf2
 
 .if ${FLAVOR:L:Mno_ui}
 CONFIGURE_ARGS+=	--without-ui
@@ -115,11 +119,12 @@ WANTLIB-ui += cairo-gobject drm expat fontconfig freetype gda-${GDA_MAJOR}
 WANTLIB-ui += gdk-3 gdk_pixbuf-2.0 goocanvas-2.0 gtk-3 gtksourceview-3.0
 WANTLIB-ui += pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB-ui += pthread-stubs xcb xcb-render xcb-shm stdc++ icuuc
-WANTLIB-ui += ICE SM atk-bridge-2.0 atspi harfbuzz icudata icule
+WANTLIB-ui += ICE SM atk-bridge-2.0 atspi harfbuzz icudata icule dbus-1
 LIB_DEPENDS-ui=		${LIB_DEPENDS} \
+			graphics/goocanvas2 \
+			x11/dbus \
 			x11/gnome/libgda \
-			x11/gtksourceview3 \
-			graphics/goocanvas2
+			x11/gtksourceview3
 .endif
 
 .if ${FLAVOR:L:Mno_mysql}
@@ -152,7 +157,8 @@ RUN_DEPENDS-ldap=	${MODGETTEXT_RUN_DEPENDS}
 MULTI_PACKAGES+=	-ldap
 WANTLIB-ldap=		${WANTLIB} crypto gda-${GDA_MAJOR} gssapi krb5 lber-2.4 \
 			ldap-2.4 sasl2 ssl asn1 com_err
-LIB_DEPENDS-ldap=	x11/gnome/libgda \
+LIB_DEPENDS-ldap=	${LIB_DEPENDS} \
+			x11/gnome/libgda \
 			databases/openldap
 CONFIGURE_ARGS+=	--with-ldap
 
