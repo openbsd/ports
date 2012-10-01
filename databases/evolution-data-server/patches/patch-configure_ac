@@ -1,0 +1,70 @@
+$OpenBSD: patch-configure_ac,v 1.10 2012/10/01 15:00:18 ajacoutot Exp $
+
+From af70f1bec73b2c2ff72300cce93ffbd9c4b9d6ad Mon Sep 17 00:00:00 2001
+From: Stef Walter <stefw@gnome.org>
+Date: Mon, 16 Jul 2012 13:01:24 +0000
+Subject: Bug 679914 - Replace libgnomekeyring with libsecret
+
+--- configure.ac.orig	Mon Oct  1 14:51:14 2012
++++ configure.ac	Mon Oct  1 14:52:23 2012
+@@ -36,7 +36,7 @@ dnl Required Package Versions
+ m4_define([glib_minimum_version], [2.32])
+ m4_define([gtk_minimum_version], [3.2])
+ m4_define([gcr_minimum_version], [3.4])
+-m4_define([gnome_keyring_minimum_version], [2.20.1])
++m4_define([libsecret_minimum_version], [0.5])
+ m4_define([libxml_minimum_version], [2.0.0])		dnl XXX Just a Guess
+ m4_define([libsoup_minimum_version], [2.38.1])
+ m4_define([libgdata_minimum_version], [0.10])
+@@ -385,11 +385,11 @@ dnl ***********************************
+ dnl Check for GNOME Keyring.
+ dnl ***********************************
+ if test x$os_win32 = xno; then
+-	PKG_CHECK_MODULES(GNOME_KEYRING,
+-		[gnome-keyring-1 >= gnome_keyring_minimum_version])
++	PKG_CHECK_MODULES(LIBSECRET,
++		[libsecret-unstable >= libsecret_minimum_version])
+ fi
+-AC_SUBST(GNOME_KEYRING_CFLAGS)
+-AC_SUBST(GNOME_KEYRING_LIBS)
++AC_SUBST(LIBSECRET_CFLAGS)
++AC_SUBST(LIBSECRET_LIBS)
+ 
+ dnl **********************************************************
+ dnl gcr-base is needed for secure password exchange over D-Bus
+@@ -1285,7 +1285,7 @@ PKG_CHECK_MODULES(SQLITE3, [sqlite3 >= sqlite_minimum_
+ dnl ******************************
+ dnl libedataserver flags
+ dnl ******************************
+-E_DATA_SERVER_DEPS="gio-2.0 gmodule-2.0 gnome-keyring-1 libxml-2.0 libsoup-2.4 $mozilla_nspr"
++E_DATA_SERVER_DEPS="gio-2.0 gmodule-2.0 libsecret-1 libxml-2.0 libsoup-2.4 $mozilla_nspr"
+ 
+ EVO_SET_COMPILE_FLAGS(E_DATA_SERVER, $E_DATA_SERVER_DEPS, $MANUAL_NSPR_CFLAGS, $MANUAL_NSPR_LIBS)
+ AC_SUBST(E_DATA_SERVER_CFLAGS)
+@@ -1307,7 +1307,7 @@ if test "x$enable_maintainer_mode" = "xyes" ; then
+ 	AC_SUBST(FACTORY_GTK_LIBS)
+ fi
+ 
+-E_BACKEND_DEPS="gio-2.0 gmodule-2.0 gnome-keyring-1 libsoup-2.4 libxml-2.0"
++E_BACKEND_DEPS="gio-2.0 gmodule-2.0 libsecret-1 libsoup-2.4 libxml-2.0"
+ 
+ dnl ******************************
+ dnl libebackend flags
+@@ -1319,7 +1319,7 @@ AC_SUBST(E_BACKEND_LIBS)
+ dnl ******************************
+ dnl evolution-addressbook flags
+ dnl ******************************
+-EVOLUTION_ADDRESSBOOK_DEPS="gio-2.0 libxml-2.0 libsoup-2.4 gnome-keyring-1"
++EVOLUTION_ADDRESSBOOK_DEPS="gio-2.0 libxml-2.0 libsoup-2.4 libsecret-1"
+ 
+ EVO_SET_COMPILE_FLAGS(EVOLUTION_ADDRESSBOOK, $EVOLUTION_ADDRESSBOOK_DEPS)
+ AC_SUBST(EVOLUTION_ADDRESSBOOK_CFLAGS)
+@@ -1328,7 +1328,7 @@ AC_SUBST(EVOLUTION_ADDRESSBOOK_LIBS)
+ dnl ******************************
+ dnl evolution-calendar flags
+ dnl ******************************
+-EVOLUTION_CALENDAR_DEPS="gio-2.0 libical >= libical_minimum_version libsoup-2.4 libxml-2.0 gnome-keyring-1"
++EVOLUTION_CALENDAR_DEPS="gio-2.0 libical >= libical_minimum_version libsoup-2.4 libxml-2.0 libsecret-1"
+ 
+ dnl *****
+ dnl libical.pc from libical-0.43 has a bug in it's CFlags.

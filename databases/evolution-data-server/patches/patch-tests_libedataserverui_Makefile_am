@@ -1,0 +1,27 @@
+$OpenBSD: patch-tests_libedataserverui_Makefile_am,v 1.1 2012/10/01 15:00:19 ajacoutot Exp $
+
+From af70f1bec73b2c2ff72300cce93ffbd9c4b9d6ad Mon Sep 17 00:00:00 2001
+From: Stef Walter <stefw@gnome.org>
+Date: Mon, 16 Jul 2012 13:01:24 +0000
+Subject: Bug 679914 - Replace libgnomekeyring with libsecret
+
+--- tests/libedataserverui/Makefile.am.orig	Mon Oct  1 14:51:14 2012
++++ tests/libedataserverui/Makefile.am	Mon Oct  1 14:52:23 2012
+@@ -14,7 +14,7 @@ TEST_EDATASERVERUI_CPPFLAGS=						\
+ 	-DLOCALEDIR=\""$(localedir)"\"					\
+ 	-DG_LOG_DOMAIN=\"e-data-server-ui\"				\
+ 	$(CAMEL_CFLAGS)							\
+-	$(GNOME_KEYRING_CFLAGS)						\
++	$(LIBSECRET_CFLAGS)						\
+ 	$(E_DATA_SERVER_UI_CFLAGS)
+ 
+ TEST_EDATASERVERUI_LDFLAGS =						\
+@@ -25,7 +25,7 @@ TEST_EDATASERVERUI_LDFLAGS =						\
+ 	$(top_builddir)/libedataserver/libedataserver-1.2.la		\
+ 	$(top_builddir)/libedataserverui/libedataserverui-3.0.la	\
+ 	$(CAMEL_LIBS)							\
+-	$(GNOME_KEYRING_LIBS)						\
++	$(LIBSECRET_LIBS)						\
+ 	$(E_DATA_SERVER_UI_LIBS)
+ 
+ evolution_source_viewer_CPPFLAGS = $(TEST_EDATASERVERUI_CPPFLAGS)

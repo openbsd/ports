@@ -1,0 +1,27 @@
+$OpenBSD: patch-services_evolution-calendar-factory_Makefile_am,v 1.1 2012/10/01 15:00:19 ajacoutot Exp $
+
+From af70f1bec73b2c2ff72300cce93ffbd9c4b9d6ad Mon Sep 17 00:00:00 2001
+From: Stef Walter <stefw@gnome.org>
+Date: Mon, 16 Jul 2012 13:01:24 +0000
+Subject: Bug 679914 - Replace libgnomekeyring with libsecret
+
+--- services/evolution-calendar-factory/Makefile.am.orig	Mon Oct  1 14:51:14 2012
++++ services/evolution-calendar-factory/Makefile.am	Mon Oct  1 14:52:23 2012
+@@ -19,7 +19,7 @@ evolution_calendar_factory_CPPFLAGS = \
+ 	-I$(top_builddir) \
+ 	-I$(top_builddir)/calendar \
+ 	$(EVOLUTION_CALENDAR_CFLAGS) \
+-	$(GNOME_KEYRING_CFLAGS) \
++	$(LIBSECRET_CFLAGS) \
+ 	$(FACTORY_GTK_CFLAGS) \
+ 	$(CAMEL_CFLAGS) \
+ 	$(SOUP_CFLAGS) \
+@@ -36,7 +36,7 @@ evolution_calendar_factory_LDADD = \
+ 	$(top_builddir)/libebackend/libebackend-1.2.la \
+ 	$(top_builddir)/libedataserver/libedataserver-1.2.la \
+ 	$(EVOLUTION_CALENDAR_LIBS) \
+-	$(GNOME_KEYRING_LIBS) \
++	$(LIBSECRET_LIBS) \
+ 	$(FACTORY_GTK_LIBS) \
+ 	$(CAMEL_CFLAGS) \
+ 	$(SOUP_LIBS) \

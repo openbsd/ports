@@ -1,0 +1,33 @@
+$OpenBSD: patch-libebackend_e-authentication-session_h,v 1.1 2012/10/01 15:00:18 ajacoutot Exp $
+
+From af70f1bec73b2c2ff72300cce93ffbd9c4b9d6ad Mon Sep 17 00:00:00 2001
+From: Stef Walter <stefw@gnome.org>
+Date: Mon, 16 Jul 2012 13:01:24 +0000
+Subject: Bug 679914 - Replace libgnomekeyring with libsecret
+
+--- libebackend/e-authentication-session.h.orig	Sun Sep 16 17:42:01 2012
++++ libebackend/e-authentication-session.h	Mon Oct  1 14:52:23 2012
+@@ -25,10 +25,6 @@
+ 
+ #include <gio/gio.h>
+ 
+-/* This needs to be in the public header since we're
+- * reusing the GnomeKeyringResult enum for error codes. */
+-#include <gnome-keyring.h>
+-
+ #include <libedataserver/libedataserver.h>
+ 
+ #include <libebackend/e-backend-enums.h>
+@@ -55,9 +51,9 @@
+ /**
+  * E_AUTHENTICATION_SESSION_KEYRING_ERROR:
+  *
+- * Error domain for password storage and retrieval.  Error codes in this
+- * domain are defined by the #GnomeKeyringResult enumeration.  See #GError
+- * for information on error domains.
++ * Error domain for password storage and retrieval.
++ *
++ * No longer used.
+  *
+  * Since: 3.6
+  **/
