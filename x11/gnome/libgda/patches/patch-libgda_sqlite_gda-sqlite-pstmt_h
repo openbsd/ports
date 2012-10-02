@@ -1,4 +1,9 @@
-$OpenBSD: patch-libgda_sqlite_gda-sqlite-pstmt_h,v 1.2 2012/04/25 09:48:10 jasper Exp $
+$OpenBSD: patch-libgda_sqlite_gda-sqlite-pstmt_h,v 1.3 2012/10/02 06:33:07 jasper Exp $
+
+From 7f6c54ad5d4b4f8dc692758da72baf469bf69e4d Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Tue, 02 Oct 2012 06:28:41 +0000
+Subject: Fix inclusion of sqlite headers due to HAVE_SQLITE and STATIC_SQLITE confusion
 
 https://bugzilla.gnome.org/show_bug.cgi?id=674781
 
