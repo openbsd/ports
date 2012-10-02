@@ -1,12 +1,7 @@
-$OpenBSD: patch-plug-ins_common_Makefile_in,v 1.1 2012/07/16 09:42:24 giovanni Exp $
---- plug-ins/common/Makefile.in.orig	Wed May  2 10:56:41 2012
-+++ plug-ins/common/Makefile.in	Mon Jul 16 09:41:22 2012
-@@ -111,11 +111,11 @@ libexec_PROGRAMS = alien-map$(EXEEXT) align-layers$(EX
- 	whirl-pinch$(EXEEXT) wind$(EXEEXT)
- EXTRA_PROGRAMS = file-aa$(EXEEXT) file-jp2-load$(EXEEXT) \
- 	file-mng$(EXEEXT) file-pdf-load$(EXEEXT) \
--	file-pdf-save$(EXEEXT) file-png$(EXEEXT) file-ps$(EXEEXT) \
-+	file-pdf-save$(EXEEXT) file-png$(EXEEXT) \
+$OpenBSD: patch-plug-ins_common_Makefile_in,v 1.2 2012/10/02 13:10:44 giovanni Exp $
+--- plug-ins/common/Makefile.in.orig	Wed May  2 04:56:41 2012
++++ plug-ins/common/Makefile.in	Wed Sep 26 20:42:58 2012
+@@ -115,7 +115,7 @@ EXTRA_PROGRAMS = file-aa$(EXEEXT) file-jp2-load$(EXEEX
  	file-psp$(EXEEXT) file-svg$(EXEEXT) file-tiff-load$(EXEEXT) \
  	file-tiff-save$(EXEEXT) file-wmf$(EXEEXT) file-xmc$(EXEEXT) \
  	file-xpm$(EXEEXT) lcms$(EXEEXT) mail$(EXEEXT) \

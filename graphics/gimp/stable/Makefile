@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.82 2012/09/27 00:17:51 brad Exp $
+# $OpenBSD: Makefile,v 1.83 2012/10/02 13:10:44 giovanni Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
 SHARED_ONLY=	Yes
 
-DISTNAME=	gimp-2.8.0
-REVISION=	2
+DISTNAME=	gimp-2.8.2
 
 SHARED_LIBS+=	gimp-2.0	272.0	# 800.0
 SHARED_LIBS+=	gimpbase-2.0	272.0	# 800.0
@@ -53,22 +52,18 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	ICE SM X11 Xext Xmu Xpm Xrender Xt atk-1.0 c \
-		Xcomposite Xdamage pcre crypto idn ssl \
-		fontconfig freetype glib-2.0 gmodule-2.0 \
-		gobject-2.0 jpeg>=62 lcms lcms2 m pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 pixman-1 png>=4 \
-		pthread ncurses xml2 z cairo dbus-1 \
-		Xau Xcursor Xdmcp Xfixes Xi Xinerama Xrandr \
-		expat Xcomposite Xdamage gthread-2.0 pcre \
-		croco-0.6 gio-2.0 rsvg-2 babl-0.1 \
-		pthread-stubs xcb execinfo xcb-render \
-		gdk-x11-2.0 gdk_pixbuf-2.0 bz2 jasper \
-		gtk-x11-2.0 tiff>=35 aa>=1.3 dbus-glib-1 \
-		exif mng poppler>=3 wmf-0.2 wmflite-0.2 \
-		poppler-glib>=3 gegl-0.2 openjpeg>=4 curl \
-		GL Xxf86vm drm xcb-shm ffi stdc++ harfbuzz \
-		icudata icule icuuc
+WANTLIB=	GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
+		Xext Xfixes Xi Xinerama Xmu Xpm Xrandr Xrender Xt Xxf86vm \
+		aa asn1 atk-1.0 babl-0.1 bz2 c cairo croco-0.6 crypto \
+		cups cupsimage curl dbus-1 dbus-glib-1 drm execinfo \
+		exif expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
+		gegl-0.2 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gs \
+		gssapi gthread-2.0 gtk-x11-2.0 harfbuzz icudata icule \
+		icuuc idn ijs jasper jbig2dec jpeg krb5 lcms lcms2 \
+		m mng ncurses openjpeg pango-1.0 pangocairo-1.0 pangoft2-1.0 \
+		pcre pixman-1 png poppler poppler-glib pthread pthread-stubs \
+		rsvg-2 ssl stdc++ tiff wmf-0.2 wmflite-0.2 xcb xcb-render \
+		xcb-shm xml2 z
 
 MODULES=	devel/gettext \
 		textproc/intltool \
