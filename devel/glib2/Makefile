@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.188 2012/09/27 17:38:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.189 2012/10/02 20:56:18 landry Exp $
 
 COMMENT=		general-purpose utility library
 
@@ -37,7 +37,7 @@ MODPY_ADJ_FILES=	glib/gtester-report \
 			gio/tests/gdbus-testserver.py
 
 # man pages
-BUILD_DEPENDS +=	textproc/docbook \
+BUILD_DEPENDS +=	textproc/docbook>=4.5p1 \
 			textproc/libxslt
 
 LIB_DEPENDS=		devel/pcre \
