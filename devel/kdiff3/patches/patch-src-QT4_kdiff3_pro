@@ -1,8 +1,8 @@
-$OpenBSD: patch-src-QT4_kdiff3_pro,v 1.1 2011/09/21 08:08:18 ajacoutot Exp $
---- src-QT4/kdiff3.pro.orig	Thu Sep  1 20:40:51 2011
-+++ src-QT4/kdiff3.pro	Thu Sep  1 20:41:55 2011
-@@ -56,11 +56,11 @@ win32 {
- 
+$OpenBSD: patch-src-QT4_kdiff3_pro,v 1.2 2012/10/02 01:54:47 lteo Exp $
+--- src-QT4/kdiff3.pro.orig	Sat Jul 14 06:27:14 2012
++++ src-QT4/kdiff3.pro	Thu Sep 27 00:29:53 2012
+@@ -64,11 +64,11 @@ os2 {
+ }
  
  unix {
 -  documentation.path = /usr/local/share/doc/kdiff3
