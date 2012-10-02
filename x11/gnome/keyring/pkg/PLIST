@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2012/09/29 10:52:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.33 2012/10/02 15:58:02 ajacoutot Exp $
 bin/gnome-keyring
 @bin bin/gnome-keyring-3
 @bin bin/gnome-keyring-daemon
@@ -16,9 +16,7 @@ share/dbus-1/services/org.freedesktop.secrets.service
 share/dbus-1/services/org.gnome.keyring.service
 share/examples/gnome-keyring/
 share/examples/gnome-keyring/pkcs11/
-@sample ${SYSCONFDIR}/pkcs11/
 share/examples/gnome-keyring/pkcs11/modules/
-@sample ${SYSCONFDIR}/pkcs11/modules/
 share/examples/gnome-keyring/pkcs11/modules/gnome-keyring.module
 @sample ${SYSCONFDIR}/pkcs11/modules/gnome-keyring.module
 share/examples/gnome-keyring/xdg/
