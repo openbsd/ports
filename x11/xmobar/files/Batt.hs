@@ -1,7 +1,5 @@
 module Plugins.Monitors.Batt where
 
-import Control.Monad
-
 import Plugins.Monitors.Common
 import Plugins.Monitors.Batt.Binding
 
