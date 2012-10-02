@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2012/09/29 10:10:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2012/10/02 06:31:37 ajacoutot Exp $
 
 COMMENT=	input assistive technology
 
 GNOME_PROJECT=	caribou
 GNOME_VERSION=	0.4.4
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  caribou                   0.0 # 0.0
 
@@ -16,14 +16,15 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xtst Xxf86vm atk-1.0 cairo
-WANTLIB += cairo-gobject drm expat ffi fontconfig freetype gdk-3
-WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gee gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gthread-2.0 gtk-3 gtk-x11-2.0 m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs
-WANTLIB += stdc++ xcb xcb-render xcb-shm xkbfile xklavier xml2
-WANTLIB += z pthread
+WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xtst Xxf86vm
+WANTLIB += atk-1.0 atk-bridge-2.0 atspi cairo cairo-gobject dbus-1
+WANTLIB += drm expat ffi fontconfig freetype gdk-3 gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 gee gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gthread-2.0 gtk-3 gtk-x11-2.0 harfbuzz icudata icule
+WANTLIB += icuuc m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 png pthread pthread-stubs stdc++ xcb xcb-render
+WANTLIB += xcb-shm xkbfile xklavier xml2 z
 
 MODULES=	devel/gettext \
 		devel/dconf \

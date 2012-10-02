@@ -1,6 +1,9 @@
-$OpenBSD: patch-bin_caribou-preferences_in,v 1.1.1.1 2012/07/08 08:58:44 ajacoutot Exp $
+$OpenBSD: patch-bin_caribou-preferences_in,v 1.2 2012/10/02 06:31:37 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=679583
+From c80067412ed9aa434f4bbe2aabed88a21b8cf71f Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Sun, 08 Jul 2012 08:32:44 +0000
+Subject: portability: allow the use of /bin/sh instead of /bin/bash
 
 --- bin/caribou-preferences.in.orig	Sat Sep  3 05:36:58 2011
 +++ bin/caribou-preferences.in	Sun Jul  8 10:11:06 2012

@@ -1,6 +1,9 @@
-$OpenBSD: patch-bin_antler-keyboard_in,v 1.1.1.1 2012/07/08 08:58:44 ajacoutot Exp $
+$OpenBSD: patch-bin_antler-keyboard_in,v 1.2 2012/10/02 06:31:37 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=679583
+From c80067412ed9aa434f4bbe2aabed88a21b8cf71f Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Sun, 08 Jul 2012 08:32:44 +0000
+Subject: portability: allow the use of /bin/sh instead of /bin/bash
 
 --- bin/antler-keyboard.in.orig	Fri Sep 16 04:48:56 2011
 +++ bin/antler-keyboard.in	Sun Jul  8 10:11:01 2012
