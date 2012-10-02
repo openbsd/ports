@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/12/06 16:21:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2012/10/02 17:14:13 naddy Exp $
 
 COMMENT=		Window Maker dock.app clock
 
@@ -16,6 +16,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		X11 Xau Xdmcp Xext Xpm c
+
+BUILD_DEPENDS=		devel/imake
 
 NO_REGRESS=		Yes
 CONFIGURE_STYLE=	simple
