@@ -1,0 +1,17 @@
+$OpenBSD: patch-include_HsNetworkConfig_h_in,v 1.1 2012/10/02 13:35:40 dcoppa Exp $
+
+ucred is sockpeercred on OpenBSD
+
+--- include/HsNetworkConfig.h.in.orig	Mon Oct  1 20:33:21 2012
++++ include/HsNetworkConfig.h.in	Mon Oct  1 20:33:39 2012
+@@ -89,8 +89,8 @@
+ /* Define to 1 if `sa_len' is member of `struct sockaddr'. */
+ #undef HAVE_STRUCT_SOCKADDR_SA_LEN
+ 
+-/* Define to 1 if you have both SO_PEERCRED and struct ucred. */
+-#undef HAVE_STRUCT_UCRED
++/* Define to 1 if you have both SO_PEERCRED and struct sockpeercred. */
++#undef HAVE_STRUCT_SOCKPEERCRED
+ 
+ /* Define to 1 if you have the `symlink' function. */
+ #undef HAVE_SYMLINK
