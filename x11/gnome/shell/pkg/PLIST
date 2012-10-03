@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/09/30 14:45:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/10/03 15:56:49 ajacoutot Exp $
 @bin bin/gnome-shell
 bin/gnome-shell-extension-prefs
 bin/gnome-shell-extension-tool
@@ -26,6 +26,8 @@ share/dbus-1/interfaces/org.gnome.ShellSearchProvider.xml
 share/dbus-1/services/org.gnome.Shell.CalendarServer.service
 share/dbus-1/services/org.gnome.Shell.HotplugSniffer.service
 share/glib-2.0/schemas/org.gnome.shell.gschema.xml
+share/gnome-control-center/keybindings/50-gnome-shell-screenshot.xml
+share/gnome-control-center/keybindings/50-gnome-shell-system.xml
 share/gnome-shell/
 share/gnome-shell/js/
 share/gnome-shell/js/extensionPrefs/

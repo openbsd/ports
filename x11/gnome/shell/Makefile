@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2012/10/01 06:44:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2012/10/03 15:56:49 ajacoutot Exp $
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		3.6.0
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://live.gnome.org/GnomeShell
 
@@ -32,7 +32,7 @@ WANTLIB += pixman-1 plc4 plds4 png polkit-agent-1 polkit-gobject-1
 WANTLIB += pthread pthread-stubs pulse pulse-mainloop-glib smime3
 WANTLIB += sndfile softokn3 soup-2.4 sqlite3 ssl3 startup-notification-1
 WANTLIB += stdc++ telepathy-glib telepathy-logger vorbis vorbisfile
-WANTLIB += xcb xcb-aux xcb-render xcb-shm xkbfile xml2 z
+WANTLIB += xcb xcb-aux xcb-render xcb-shm xkbfile xml2 z secret-1
 
 MODULES=		devel/dconf \
 			devel/gettext \
@@ -41,8 +41,11 @@ MODULES=		devel/dconf \
 
 MODGNOME_TOOLS=		goi
 
+# gnome-keybindings.pc
+BUILD_DEPENDS +=	x11/gnome/controlcenter
+
 LIB_DEPENDS=		audio/pulseaudio \
-			databases/evolution-data-server \
+			databases/evolution-data-server>=3.6.0p3 \
 			multimedia/gstreamer1/core \
 			net/telepathy/telepathy-logger \
 			sysutils/polkit \
