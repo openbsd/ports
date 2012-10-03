@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.129 2012/09/29 19:28:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.130 2012/10/03 16:20:09 ajacoutot Exp $
 
 BROKEN=			needs pam(3)
 
@@ -36,7 +36,7 @@ MODULES=		devel/gettext \
 			x11/gnome \
 			devel/dconf
 
-# bring _all_ runtime dependencies (including sysutils/consolekit)
+# bring _all_ runtime dependencies (including sysutils/consolekit and zenity)
 RUN_DEPENDS=		x11/gnome/session
 
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
