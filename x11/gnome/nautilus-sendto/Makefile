@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2012/10/01 15:01:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2012/10/03 15:57:18 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	applications integration into Nautilus
 
 GNOME_PROJECT=	nautilus-sendto
 GNOME_VERSION=	3.6.0
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	misc net
 
@@ -23,7 +23,7 @@ WANTLIB += camel-1.2 com_err crypto db dbus-1 dbus-glib-1 drm
 WANTLIB += e2fs-uuid ebackend-1.2 ebook-1.2 ecal-1.2 edataserver-1.2
 WANTLIB += edataserverui-3.0 expat ffi fontconfig freetype gck-1
 WANTLIB += gcr-base-3 gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gnome-keyring gobject-2.0 gpg-error gssapi
+WANTLIB += gmodule-2.0 gobject-2.0 gpg-error gssapi
 WANTLIB += gssdp-1.0 gthread-2.0 gtk-3 gupnp-1.0 harfbuzz ical
 WANTLIB += icalss icalvcal icudata icule icuuc krb5 m nspr4 nss3
 WANTLIB += nssutil3 p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
@@ -40,7 +40,7 @@ BUILD_DEPENDS=	net/gajim \
 RUN_DEPENDS=	archivers/zip \
 		archivers/bzip2 \
 		x11/gnome/nautilus>=3.6.0
-LIB_DEPENDS=	databases/evolution-data-server>=3.6.0 \
+LIB_DEPENDS=	databases/evolution-data-server>=3.6.0p3 \
 		net/gupnp/core
 
 CONFIGURE_ARGS+= --disable-static \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.123 2012/10/01 15:01:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.124 2012/10/03 15:57:18 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	GNOME panel
 
 GNOME_PROJECT=	gnome-panel
 GNOME_VERSION=	3.6.0
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS=	panel-applet-4            1.1 # 1.1
 
@@ -47,7 +47,8 @@ MODULES+=	lang/python
 MODPY_RUNDEP=	No
 
 BUILD_DEPENDS=	devel/gobject-introspection
-LIB_DEPENDS=	databases/evolution-data-server>=3.6.0 \
+LIB_DEPENDS=	databases/evolution-data-server>=3.6.0p3 \
+		devel/gconf2 \
 		devel/libwnck3 \
 		net/telepathy/telepathy-glib \
 		sysutils/polkit \

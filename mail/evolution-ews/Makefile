@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2012/09/28 14:07:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2012/10/03 15:57:18 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	evolution connector for MS Exchange via EWS
 
 GNOME_PROJECT=	evolution-ews
 GNOME_VERSION=	3.6.0
+REVISION=	0
 
 CATEGORIES=	mail
 
@@ -45,15 +46,23 @@ WANTLIB += nss3 nssutil3 ogg orc-0.4 p11-kit pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png pthread pthread-stubs
 WANTLIB += smime3 softokn3 soup-2.4 soup-gnome-2.4 sqlite3 ssl3
 WANTLIB += stdc++ vorbis vorbisfile webkitgtk-3.0 xcb xcb-render
-WANTLIB += xcb-shm xkbfile xml2 xslt z
+WANTLIB += xcb-shm xkbfile xml2 xslt z secret-1
+WANTLIB += lib/evolution/${EVO_VERSION}/composer
+WANTLIB += lib/evolution/${EVO_VERSION}/eabutil
+WANTLIB += lib/evolution/${EVO_VERSION}/econtacteditor
+WANTLIB += lib/evolution/${EVO_VERSION}/econtactlisteditor
 WANTLIB += lib/evolution/${EVO_VERSION}/email-engine
 WANTLIB += lib/evolution/${EVO_VERSION}/email-utils
+WANTLIB += lib/evolution/${EVO_VERSION}/emformat
 WANTLIB += lib/evolution/${EVO_VERSION}/emiscwidgets
 WANTLIB += lib/evolution/${EVO_VERSION}/eshell
+WANTLIB += lib/evolution/${EVO_VERSION}/essmime
 WANTLIB += lib/evolution/${EVO_VERSION}/etable
 WANTLIB += lib/evolution/${EVO_VERSION}/etext
 WANTLIB += lib/evolution/${EVO_VERSION}/eutil
 WANTLIB += lib/evolution/${EVO_VERSION}/evolution-a11y
+WANTLIB += lib/evolution/${EVO_VERSION}/evolution-mail
+WANTLIB += lib/evolution/${EVO_VERSION}/evolution-smime
 WANTLIB += lib/evolution/${EVO_VERSION}/filter
 WANTLIB += lib/evolution/${EVO_VERSION}/gnomecanvas
 WANTLIB += lib/evolution/${EVO_VERSION}/menus
