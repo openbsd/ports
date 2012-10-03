@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.777 2012/09/30 14:51:11 bluhm Exp $
+# $OpenBSD: Makefile,v 1.778 2012/10/03 19:27:18 bluhm Exp $
 
      SUBDIR =
      SUBDIR += BitTorrent
@@ -328,6 +328,7 @@
      SUBDIR += p5-Net-Patricia
      SUBDIR += p5-Net-Pcap
      SUBDIR += p5-Net-Pcap-Reassemble
+     SUBDIR += p5-Net-PcapWriter
      SUBDIR += p5-Net-Ping-External
      SUBDIR += p5-Net-Radius
      SUBDIR += p5-Net-RawIP
