@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2012/03/23 20:14:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2012/10/03 08:16:30 ajacoutot Exp $
 
 COMMENT=		library implementing the OAuth Core RFC 5849 standard
 
-DISTNAME=		liboauth-0.9.6
-SHARED_LIBS +=  oauth                8.3      # 8.3
+DISTNAME=		liboauth-0.9.7
+SHARED_LIBS +=  oauth                8.3      # 8.4
 CATEGORIES=		net
 
 HOMEPAGE=		http://liboauth.sourceforge.net/
@@ -24,8 +24,6 @@ LIB_DEPENDS=		net/curl \
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--enable-curl \
-			--enable-libcurl \
 			--enable-nss
 CONFIGURE_ENV=		ac_cv_path_DOT="" \
 			ac_cv_path_DOXYGEN=""
