@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2012/07/08 14:54:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2012/10/03 13:14:00 ajacoutot Exp $
 bin/gnome-tweak-tool
 lib/python${MODPY_VERSION}/site-packages/gtweak/
 lib/python${MODPY_VERSION}/site-packages/gtweak/__init__.py
@@ -16,6 +16,9 @@ lib/python${MODPY_VERSION}/site-packages/gtweak/gsettings.pyo
 lib/python${MODPY_VERSION}/site-packages/gtweak/gshellwrapper.py
 lib/python${MODPY_VERSION}/site-packages/gtweak/gshellwrapper.pyc
 lib/python${MODPY_VERSION}/site-packages/gtweak/gshellwrapper.pyo
+lib/python${MODPY_VERSION}/site-packages/gtweak/gtksettings.py
+lib/python${MODPY_VERSION}/site-packages/gtweak/gtksettings.pyc
+lib/python${MODPY_VERSION}/site-packages/gtweak/gtksettings.pyo
 lib/python${MODPY_VERSION}/site-packages/gtweak/mainwindow.py
 lib/python${MODPY_VERSION}/site-packages/gtweak/mainwindow.pyc
 lib/python${MODPY_VERSION}/site-packages/gtweak/mainwindow.pyo
@@ -44,6 +47,9 @@ lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_shell_extensions.py
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_test.py
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_test.pyc
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_test.pyo
+lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_typing.py
+lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_typing.pyc
+lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_typing.pyo
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_windows.py
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_windows.pyc
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_windows.pyo
@@ -59,7 +65,12 @@ lib/python${MODPY_VERSION}/site-packages/gtweak/widgets.pyo
 share/applications/gnome-tweak-tool.desktop
 share/gnome-tweak-tool/
 share/gnome-tweak-tool/shell.ui
-share/gnome-tweak-tool/welcome.png
+share/icons/hicolor/16x16/apps/gnome-tweak-tool.png
+share/icons/hicolor/22x22/apps/gnome-tweak-tool.png
+share/icons/hicolor/24x24/apps/gnome-tweak-tool.png
+share/icons/hicolor/256x256/apps/gnome-tweak-tool.png
+share/icons/hicolor/32x32/apps/gnome-tweak-tool.png
+share/icons/hicolor/48x48/apps/gnome-tweak-tool.png
 share/locale/ar/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/ca/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-tweak-tool.mo
@@ -67,6 +78,7 @@ share/locale/cs/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/da/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/de/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/el/LC_MESSAGES/gnome-tweak-tool.mo
+share/locale/en_GB/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/eo/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/es/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/eu/LC_MESSAGES/gnome-tweak-tool.mo
@@ -76,6 +88,7 @@ share/locale/fr/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/gl/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/he/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/hu/LC_MESSAGES/gnome-tweak-tool.mo
+share/locale/id/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/it/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/ja/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/ko/LC_MESSAGES/gnome-tweak-tool.mo
@@ -98,5 +111,7 @@ share/locale/vi/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-tweak-tool.mo
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

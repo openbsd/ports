@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2012/09/29 07:37:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2012/10/03 13:14:00 ajacoutot Exp $
 
 PKG_ARCH=	*
 
 COMMENT=	tweak hidden GTK/GNOME settings
 
 GNOME_PROJECT=	gnome-tweak-tool
-GNOME_VERSION=	3.4.0.1
-REVISION=	1
+GNOME_VERSION=	3.6.0
 
 CATEGORIES=	sysutils
 
@@ -34,6 +33,7 @@ RUN_DEPENDS=	devel/gsettings-desktop-schemas \
 
 MODPY_ADJ_FILES=gnome-tweak-tool
 
-MODGNOME_DESKTOP_FILE=		Yes
+MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_ICON_CACHE=	Yes
 
 .include <bsd.port.mk>
