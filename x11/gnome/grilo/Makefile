@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2012/09/28 17:09:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2012/10/03 08:31:51 jasper Exp $
 
 COMMENT=	framework for making media discovery and browsing easy
 
 GNOME_PROJECT=	grilo
-GNOME_VERSION=	0.2.0
+GNOME_VERSION=	0.2.1
 API=		0.2
 
-SHARED_LIBS +=  grilo-0.2            0.0      # 1.0
-SHARED_LIBS +=  grlnet-0.2           0.0      # 0.1
+SHARED_LIBS +=  grilo-0.2            0.0      # 1.1
+SHARED_LIBS +=  grlnet-0.2           0.0      # 0.2
 
 CATEGORIES+=	multimedia
 
