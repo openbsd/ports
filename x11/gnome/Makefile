@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.192 2012/09/30 13:50:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.193 2012/10/03 08:06:26 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += anjuta
@@ -25,7 +25,6 @@
      SUBDIR += empathy
      SUBDIR += eog
      SUBDIR += eog-plugins
-     SUBDIR += f-spot
      SUBDIR += file-roller
      SUBDIR += font-viewer
      SUBDIR += games
@@ -76,7 +75,6 @@
      SUBDIR += metacity
      SUBDIR += mime-data
      SUBDIR += mono-gnome
-     SUBDIR += mono-keyring
      SUBDIR += moserial
      SUBDIR += mousetweaks
      SUBDIR += mutter
