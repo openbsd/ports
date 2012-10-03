@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/09/05 15:06:14 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/10/03 08:38:16 jasper Exp $
 %%SHARED%%
 ${P5ARCH}/Sys/
 ${P5ARCH}/Sys/Virt/
@@ -36,6 +36,8 @@ share/examples/p5-Sys-Virt/auth.pl
 share/examples/p5-Sys-Virt/devices.pl
 share/examples/p5-Sys-Virt/dump-info.pl
 share/examples/p5-Sys-Virt/dump-xml.pl
+share/examples/p5-Sys-Virt/emulator-pin.pl
+share/examples/p5-Sys-Virt/events.pl
 share/examples/p5-Sys-Virt/hv-stat.pl
 share/examples/p5-Sys-Virt/node-cpu.pl
 share/examples/p5-Sys-Virt/open-console.pl
