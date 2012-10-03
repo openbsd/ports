@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1077 2012/09/29 10:26:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.1078 2012/10/03 08:07:41 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -388,7 +388,6 @@
      SUBDIR += mm
      SUBDIR += mm-common
      SUBDIR += mono-addins
-     SUBDIR += mono-flickrnet
      SUBDIR += mono-gdata
      SUBDIR += mono-notify
      SUBDIR += monodevelop
