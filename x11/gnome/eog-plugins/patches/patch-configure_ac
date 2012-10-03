@@ -1,16 +1,20 @@
-$OpenBSD: patch-configure_ac,v 1.4 2011/09/27 07:56:18 jasper Exp $
+$OpenBSD: patch-configure_ac,v 1.5 2012/10/03 11:32:20 jasper Exp $
 
-Fix some stupid egrep(1) misusage causing this function to always
-return 1.
+From 5076859fb215d77514c6cde826407960f6a23130 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Wed, 03 Oct 2012 11:30:55 +0000
+Subject: Use a more portable grep construct.
 
---- configure.ac.orig	Tue Sep 27 09:25:50 2011
-+++ configure.ac	Tue Sep 27 09:26:09 2011
+https://bugzilla.gnome.org/show_bug.cgi?id=685356
+
+--- configure.ac.orig	Wed Sep 19 18:36:52 2012
++++ configure.ac	Wed Oct  3 12:36:22 2012
 @@ -174,7 +174,7 @@ disabled_plugins=
  # *******************
  
  check_plugin_defined() {
 -	if echo "$2" | egrep "\b($1)\b" > /dev/null;
-+	if echo "$2" | egrep "$1" > /dev/null;
++	if echo "$2" | grep -w "$1" > /dev/null;
  	then
  		return 1
  	else
