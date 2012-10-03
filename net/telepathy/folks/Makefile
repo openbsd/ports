@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2012/10/01 15:01:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2012/10/03 07:02:18 ajacoutot Exp $
 
 COMMENT-main=		people aggregation library
 COMMENT-tracker=	(meta-)tracker backend for folks
@@ -51,7 +51,7 @@ RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS} \
 WANTLIB-tracker += ${WANTLIB}
 WANTLIB-tracker += lib/tracker-${TRACKER_VERSION}/tracker-common
 WANTLIB-tracker += lib/tracker-${TRACKER_VERSION}/tracker-data
-WANTLIB-tracker += e2fs-uuid folks kvm tracker-sparql-0.14
+WANTLIB-tracker += e2fs-uuid folks kvm tracker-sparql-${TRACKER_VERSION}
 WANTLIB-tracker += z pthread unistring
 
 RUN_DEPENDS-tracker=	${MODGETTEXT_RUN_DEPENDS}
