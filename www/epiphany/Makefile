@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2012/09/28 14:50:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.85 2012/10/03 06:36:23 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,7 +11,7 @@ COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
 GNOME_VERSION=	3.4.3
-REVISION=	3
+REVISION=	4
 
 # NOTE: when M changes, increment M accordingly and bump:
 # www/epiphany-extensions
@@ -57,6 +57,10 @@ LIB_DEPENDS=	textproc/libxslt \
 		devel/libsoup,-gnome \
 		net/avahi \
 		www/webkit,gtk3
+
+# webkit browsing
+RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-ffmpeg \
+		multimedia/gstreamer-0.10/plugins-good
 
 MODULES=	devel/dconf \
 		devel/gettext \

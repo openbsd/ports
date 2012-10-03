@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.53 2012/09/26 17:44:56 landry Exp $
+# $OpenBSD: Makefile,v 1.54 2012/10/03 06:36:23 ajacoutot Exp $
 
 COMMENT =	lightweight web browser
 
 XFCE_VERSION =	0.4.7
 XFCE_GOODIE =	midori
+REVISION =	0
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 CATEGORIES =	www
@@ -42,6 +43,10 @@ LIB_DEPENDS +=	devel/libnotify \
 		devel/libsoup>=2.28.0
 
 RUN_DEPENDS =	xfce4-icon-theme-*|tango-icon-theme-*|gnome-icon-theme-*:x11/tango-icon-theme
+
+# webkit browsing
+RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-ffmpeg \
+		multimedia/gstreamer-0.10/plugins-good
 
 BUILD_DEPENDS =	textproc/py-docutils \
 		lang/vala \

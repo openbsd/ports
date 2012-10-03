@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2012/09/18 20:34:30 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.6 2012/10/03 06:36:23 ajacoutot Exp $
 
 COMMENT=		vi-like minimalists web browser
 DISTNAME=		xombrero-1.3.1
 CATEGORIES=		www
+REVISION=		0
 EPOCH=			1
 
 HOMEPAGE=		http://opensource.conformal.com/wiki/xombrero
@@ -29,6 +30,10 @@ MASTER_SITES=		http://opensource.conformal.com/snapshots/xombrero/
 
 LIB_DEPENDS=		www/webkit,gtk3
 RUN_DEPENDS=		devel/desktop-file-utils
+
+# webkit browsing
+RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-ffmpeg \
+		multimedia/gstreamer-0.10/plugins-good
 
 EXTRACT_SUFX=		.tgz
 
