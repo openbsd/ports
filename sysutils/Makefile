@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.271 2012/09/27 15:06:46 edd Exp $
+# $OpenBSD: Makefile,v 1.272 2012/10/03 07:59:37 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += LPRng
@@ -79,7 +79,6 @@
      SUBDIR += knutclient
      SUBDIR += krename
      SUBDIR += ktsuss
-     SUBDIR += lat
      SUBDIR += libretto-config
      SUBDIR += librelp
      SUBDIR += libstatgrab
