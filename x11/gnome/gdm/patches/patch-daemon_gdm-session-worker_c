@@ -1,0 +1,88 @@
+$OpenBSD: patch-daemon_gdm-session-worker_c,v 1.1 2012/10/03 06:40:50 ajacoutot Exp $
+
+From 0fbe5f38740cb59d542241dae3457d6c0dcf2880 Mon Sep 17 00:00:00 2001
+From: Ray Strode <rstrode@redhat.com>
+Date: Mon, 01 Oct 2012 21:51:23 +0000
+Subject: worker: fix compiler warning
+
+From 01c334ed94b64a3b2e9119e95e968db24dac5a31 Mon Sep 17 00:00:00 2001
+From: Ray Strode <rstrode@redhat.com>
+Date: Mon, 01 Oct 2012 21:51:47 +0000
+Subject: worker: create program session log file as root
+
+--- daemon/gdm-session-worker.c.orig	Mon Sep 17 22:41:25 2012
++++ daemon/gdm-session-worker.c	Tue Oct  2 10:42:02 2012
+@@ -1530,10 +1530,10 @@ gdm_session_worker_accredit_user (GdmSessionWorker  *w
+         return ret;
+ }
+ 
+-static char **
++static const char * const *
+ gdm_session_worker_get_environment (GdmSessionWorker *worker)
+ {
+-        return pam_getenvlist (worker->priv->pam_handle);
++        return (const char * const *) pam_getenvlist (worker->priv->pam_handle);
+ }
+ 
+ static void
+@@ -1775,11 +1775,19 @@ gdm_session_worker_start_session (GdmSessionWorker  *w
+         }
+ 
+         if (session_pid == 0) {
+-                char **environment;
++                const char * const * environment;
+                 char  *kerberos_cache;
+                 char  *home_dir;
+                 int    fd;
+ 
++                fd = open ("/dev/null", O_RDWR);
++                dup2 (fd, STDIN_FILENO);
++                close (fd);
++
++                if (worker->priv->is_program_session) {
++                        fd = _open_program_session_log (worker->priv->log_file);
++                }
++
+                 if (setuid (worker->priv->uid) < 0) {
+                         g_debug ("GdmSessionWorker: could not reset uid: %s", g_strerror (errno));
+                         _exit (1);
+@@ -1791,7 +1799,6 @@ gdm_session_worker_start_session (GdmSessionWorker  *w
+                         _exit (2);
+                 }
+ 
+-
+                 kerberos_cache = gdm_session_worker_get_environment_variable (worker, "KRB5CCNAME");
+ 
+                 if (kerberos_cache == NULL) {
+@@ -1823,13 +1830,7 @@ gdm_session_worker_start_session (GdmSessionWorker  *w
+                         g_chdir ("/");
+                 }
+ 
+-                fd = open ("/dev/null", O_RDWR);
+-                dup2 (fd, STDIN_FILENO);
+-                close (fd);
+-
+-                if (worker->priv->is_program_session) {
+-                        fd = _open_program_session_log (worker->priv->log_file);
+-                } else {
++                if (!worker->priv->is_program_session) {
+                         if (home_dir != NULL && home_dir[0] != '\0') {
+                                 char *cache_dir;
+                                 char *log_dir;
+@@ -1869,6 +1870,7 @@ gdm_session_worker_start_session (GdmSessionWorker  *w
+ 
+                 gdm_session_execute (worker->priv->arguments[0],
+                                      worker->priv->arguments,
++                                     (char **)
+                                      environment,
+                                      TRUE);
+ 
+@@ -2693,7 +2695,7 @@ reauthentication_request_new (GdmSessionWorker      *w
+                               GDBusMethodInvocation *invocation)
+ {
+         ReauthenticationRequest *request;
+-        char **environment;
++        const char * const * environment;
+         char *address;
+ 
+         environment = gdm_session_worker_get_environment (worker);

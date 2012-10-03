@@ -1,0 +1,57 @@
+$OpenBSD: patch-daemon_gdm-slave_c,v 1.1 2012/10/03 06:40:50 ajacoutot Exp $
+
+From 189cd818bf1592b5b8607793575bcf4e71ba8008 Mon Sep 17 00:00:00 2001
+From: Ray Strode <rstrode@redhat.com>
+Date: Mon, 01 Oct 2012 21:52:33 +0000
+Subject: slave: let initial-setup have access to its display
+
+--- daemon/gdm-slave.c.orig	Mon Sep 24 16:08:48 2012
++++ daemon/gdm-slave.c	Tue Oct  2 10:42:23 2012
+@@ -545,11 +545,15 @@ gdm_slave_setup_xhost_auth (XHostAddress *host_entries
+         si_entries[0].typelength  = strlen ("localuser");
+         si_entries[1].type        = "localuser";
+         si_entries[1].typelength  = strlen ("localuser");
++        si_entries[2].type        = "localuser";
++        si_entries[2].typelength  = strlen ("localuser");
+ 
+         si_entries[0].value       = "root";
+         si_entries[0].valuelength = strlen ("root");
+         si_entries[1].value       = GDM_USERNAME;
+         si_entries[1].valuelength = strlen (GDM_USERNAME);
++        si_entries[2].value       = "gnome-initial-setup";
++        si_entries[2].valuelength = strlen ("gnome-initial-setup");
+ 
+         host_entries[0].family    = FamilyServerInterpreted;
+         host_entries[0].address   = (char *) &si_entries[0];
+@@ -557,6 +561,9 @@ gdm_slave_setup_xhost_auth (XHostAddress *host_entries
+         host_entries[1].family    = FamilyServerInterpreted;
+         host_entries[1].address   = (char *) &si_entries[1];
+         host_entries[1].length    = sizeof (XServerInterpretedAddress);
++        host_entries[2].family    = FamilyServerInterpreted;
++        host_entries[2].address   = (char *) &si_entries[2];
++        host_entries[2].length    = sizeof (XServerInterpretedAddress);
+ }
+ 
+ static void
+@@ -672,8 +679,8 @@ gdm_slave_connect_to_x11_display (GdmSlave *slave)
+                 g_warning ("Unable to connect to display %s", slave->priv->display_name);
+                 ret = FALSE;
+         } else if (slave->priv->display_is_local) {
+-                XServerInterpretedAddress si_entries[2];
+-                XHostAddress              host_entries[2];
++                XServerInterpretedAddress si_entries[3];
++                XHostAddress              host_entries[3];
+ 
+                 g_debug ("GdmSlave: Connected to display %s", slave->priv->display_name);
+                 ret = TRUE;
+@@ -909,8 +916,8 @@ gdm_slave_add_user_authorization (GdmSlave   *slave,
+                                   const char *username,
+                                   char      **filenamep)
+ {
+-        XServerInterpretedAddress si_entries[2];
+-        XHostAddress              host_entries[2];
++        XServerInterpretedAddress si_entries[3];
++        XHostAddress              host_entries[3];
+         gboolean                  res;
+         GError                   *error;
+         char                     *filename;

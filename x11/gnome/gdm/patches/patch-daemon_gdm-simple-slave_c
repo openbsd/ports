@@ -1,0 +1,95 @@
+$OpenBSD: patch-daemon_gdm-simple-slave_c,v 1.1 2012/10/03 06:40:50 ajacoutot Exp $
+
+From 5479f2542c79873d3f36968bf081274ab9c241fd Mon Sep 17 00:00:00 2001
+From: Matthias Clasen <mclasen@redhat.com>
+Date: Fri, 28 Sep 2012 23:56:51 +0000
+Subject: Fix errors in the setup code for gnome-initial-setup
+
+From 6eeb747f1b056e6c10ad4390001ae094575d9c94 Mon Sep 17 00:00:00 2001
+From: Matthias Clasen <mclasen@redhat.com>
+Date: Sat, 29 Sep 2012 03:19:27 +0000
+Subject: Don't try to delete a NULL user
+
+From 71f07f3aa22e3f6382d525d1a0104a9a792090f9 Mon Sep 17 00:00:00 2001
+From: Matthias Clasen <mclasen@redhat.com>
+Date: Sat, 29 Sep 2012 03:20:18 +0000
+Subject: Install polkit rules to the right place
+
+From c32fef1406287ed324b1223837e7e7a539b86866 Mon Sep 17 00:00:00 2001
+From: Ray Strode <rstrode@redhat.com>
+Date: Mon, 01 Oct 2012 21:54:59 +0000
+Subject: slave: don't delete initial-setup user until after initial-setup is finished
+
+--- daemon/gdm-simple-slave.c.orig	Tue Sep 25 19:57:35 2012
++++ daemon/gdm-simple-slave.c	Tue Oct  2 10:41:36 2012
+@@ -115,6 +115,8 @@ static void     gdm_simple_slave_open_reauthentication
+                                                                 gpointer              user_data,
+                                                                 GCancellable         *cancellable);
+ 
++static gboolean wants_initial_setup (GdmSimpleSlave *slave);
++static void destroy_initial_setup_user (GdmSimpleSlave *slave);
+ G_DEFINE_TYPE (GdmSimpleSlave, gdm_simple_slave, GDM_TYPE_SLAVE)
+ 
+ static void create_new_session (GdmSimpleSlave  *slave);
+@@ -842,6 +844,9 @@ on_greeter_environment_session_stopped (GdmLaunchEnvir
+         if (slave->priv->start_session_service_name == NULL) {
+                 gdm_slave_stop (GDM_SLAVE (slave));
+         } else {
++                if (wants_initial_setup (slave)) {
++                        destroy_initial_setup_user (slave);
++                }
+                 start_session (slave);
+         }
+ 
+@@ -1118,7 +1123,7 @@ start_greeter (GdmSimpleSlave *slave)
+         start_launch_environment (slave, GDM_USERNAME, NULL);
+ }
+ 
+-#define RULES_DIR LOCALSTATEDIR "/lib/polkit-1/localauthority/10-vendor.d/"
++#define RULES_DIR DATADIR "/polkit-1/rules.d/"
+ #define RULES_FILE "20-gnome-initial-setup.rules"
+ 
+ static const gboolean
+@@ -1147,12 +1152,14 @@ create_initial_setup_user (GdmSimpleSlave *slave)
+                         ret = FALSE;
+                         goto out;
+                 }
++
++                g_clear_error (&error);
+         } else {
+                 g_object_unref (user);
+         }
+ 
+         /* Now, make sure the PolicyKit policy is in place */
+-        src_file = g_file_new_for_path (DATADIR "/gnome-initial-setup" RULES_FILE);
++        src_file = g_file_new_for_path (DATADIR "/gnome-initial-setup/" RULES_FILE);
+         dest_file = g_file_new_for_path (RULES_DIR RULES_FILE);
+ 
+         if (!g_file_copy (src_file,
+@@ -1195,12 +1202,13 @@ destroy_initial_setup_user (GdmSimpleSlave *slave)
+ 
+         error = NULL;
+         user = act_user_manager_get_user (act, INITIAL_SETUP_USERNAME);
+-        if (!act_user_manager_delete_user (act, user, TRUE, &error)) {
+-                g_warning ("Failed to delete user '%s': %s", INITIAL_SETUP_USERNAME, error->message);
+-                g_error_free (error);
++        if (user != NULL) {
++                if (!act_user_manager_delete_user (act, user, TRUE, &error)) {
++                        g_warning ("Failed to delete user '%s': %s", INITIAL_SETUP_USERNAME, error->message);
++                        g_error_free (error);
++                }
++                g_object_unref (user);
+         }
+-
+-        g_object_unref (user);
+ }
+ 
+ static void
+@@ -1208,7 +1216,6 @@ start_initial_setup (GdmSimpleSlave *slave)
+ {
+         create_initial_setup_user (slave);
+         start_launch_environment (slave, INITIAL_SETUP_USERNAME, "gnome-initial-setup");
+-        destroy_initial_setup_user (slave);
+ }
+ 
+ static gboolean
