@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.56 2012/08/18 21:49:16 avsm Exp $
+# $OpenBSD: Makefile,v 1.57 2012/10/04 07:45:26 ajacoutot Exp $
 
 # XXX Don't even think of updating ocaml alone.
 # Do check that the ports that depend on it still work, or repair them. 
 
 NOT_FOR_ARCHS=	hppa
+
+BROKEN-powerpc=	'struct sigcontext' has no member named 'regs'
 
 COMMENT=	ML language based on complete class-based objective system
 
