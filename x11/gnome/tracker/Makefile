@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2012/09/28 16:02:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.117 2012/10/04 07:21:57 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -17,7 +17,7 @@ PKGNAME-main=		meta-tracker-${VERSION}
 PKGNAME-evolution=	evolution-meta-tracker-${VERSION}
 PKGNAME-nautilus=	nautilus-meta-tracker-${VERSION}
 
-REVISION-main=		6
+REVISION-main=		7
 REVISION-evolution=	4
 REVISION-nautilus=	4
 
@@ -120,7 +120,8 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			graphics/libexif \
 			graphics/libungif \
 			audio/libcue \
-			converters/enca
+			converters/enca \
+			audio/taglib
 
 RUN_DEPENDS-evolution=	${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-evolution=	${LIB_DEPENDS} \
