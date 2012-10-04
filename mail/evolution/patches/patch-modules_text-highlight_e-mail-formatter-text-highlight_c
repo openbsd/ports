@@ -1,7 +1,6 @@
-$OpenBSD: patch-modules_text-highlight_e-mail-formatter-text-highlight_c,v 1.1 2012/09/28 14:27:10 ajacoutot Exp $
+$OpenBSD: patch-modules_text-highlight_e-mail-formatter-text-highlight_c,v 1.2 2012/10/04 07:03:40 ajacoutot Exp $
 
-XXX push uptream
-e-mail-formatter-text-highlight.c:190: error: expected identifier or '(' before '&' token
+https://bugzilla.gnome.org/show_bug.cgi?id=685471
 
 --- modules/text-highlight/e-mail-formatter-text-highlight.c.orig	Fri Sep 28 16:25:37 2012
 +++ modules/text-highlight/e-mail-formatter-text-highlight.c	Fri Sep 28 16:26:11 2012
