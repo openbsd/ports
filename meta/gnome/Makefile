@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2012/09/28 15:37:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2012/10/04 07:07:16 ajacoutot Exp $
 
 COMMENT-main=	GNOME desktop meta-package (base installation)
 COMMENT-extra=	GNOME desktop meta-package (full installation)
@@ -9,7 +9,7 @@ PKGNAME=	gnome-${V}
 PKGNAME-main=	gnome-${V}
 PKGNAME-extra=	gnome-extra-${V}
 
-REVISION-main=	0
+REVISION-main=	1
 REVISION-extra=	0
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
@@ -61,6 +61,7 @@ RUN_DEPENDS-main += \
 
 # "Make it fancy!"
 RUN_DEPENDS-main += \
+		x11/gnome/clocks \
 		x11/gnome/documents \
 		x11/gnome/eog-plugins \
 		x11/gnome/gedit-plugins \
