@@ -1,6 +1,6 @@
-$OpenBSD: patch-aksetup_helper_py,v 1.1 2011/06/26 06:34:01 ajacoutot Exp $
+$OpenBSD: patch-aksetup_helper_py,v 1.2 2012/10/04 09:17:31 dcoppa Exp $
 --- aksetup_helper.py.orig	Tue Jul 20 04:38:24 2010
-+++ aksetup_helper.py	Sun Jun 26 08:26:33 2011
++++ aksetup_helper.py	Tue Oct  2 22:15:41 2012
 @@ -1,11 +1,11 @@
  # dealings with ez_setup ------------------------------------------------------
 -import distribute_setup
@@ -16,3 +16,11 @@ $OpenBSD: patch-aksetup_helper_py,v 1.1 2011/06/26 06:34:01 ajacoutot Exp $
      print "-------------------------------------------------------------------------"
      print "Setuptools conflict detected."
      print "-------------------------------------------------------------------------"
+@@ -190,7 +190,6 @@ def hack_distutils(debug=False, fast_link=True):
+             if debug:
+                 cflags.append("-g")
+             else:
+-                cflags.append("-O3")
+                 cflags.append("-DNDEBUG")
+             cvars['OPT'] = str.join(' ', cflags)
+             cvars["CFLAGS"] = cvars["BASECFLAGS"] + " " + cvars["OPT"]
