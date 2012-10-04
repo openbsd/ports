@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2012/09/10 08:05:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.89 2012/10/04 07:39:51 ajacoutot Exp $
 
 # XXX ossaudio(3) is only enabled to be used as a mixing device by
 # audio/pulseaudio and x11/xfce4/xfce4-mixer
@@ -57,6 +57,9 @@ WANTLIB-dv += dv gstaudio-0.10 gstinterfaces-0.10 gstpbutils-0.10
 
 RUN_DEPENDS=		${BUILD_PKGPATH}
 LIB_DEPENDS=		${P}/core
+
+# needed for ${WRKSRC}/tests/
+BUILD_DEPENDS += x11/gtk+2
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			${MODGCONF2_LIB_DEPENDS} \
