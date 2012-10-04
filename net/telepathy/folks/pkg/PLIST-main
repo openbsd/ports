@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2012/09/29 10:38:11 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2012/10/04 09:14:24 jasper Exp $
 @pkgpath ${BASE_PKGPATH}
 @bin bin/folks-import
 @bin bin/folks-inspect
@@ -41,7 +41,10 @@ share/glib-2.0/schemas/org.freedesktop.folks.gschema.xml
 share/locale/ar/LC_MESSAGES/folks.mo
 share/locale/as/LC_MESSAGES/folks.mo
 share/locale/be/LC_MESSAGES/folks.mo
+share/locale/ca/LC_MESSAGES/folks.mo
+share/locale/ca@valencia/LC_MESSAGES/folks.mo
 share/locale/cs/LC_MESSAGES/folks.mo
+share/locale/da/LC_MESSAGES/folks.mo
 share/locale/de/LC_MESSAGES/folks.mo
 share/locale/el/LC_MESSAGES/folks.mo
 share/locale/en_GB/LC_MESSAGES/folks.mo
@@ -53,20 +56,27 @@ share/locale/gl/LC_MESSAGES/folks.mo
 share/locale/gu/LC_MESSAGES/folks.mo
 share/locale/he/LC_MESSAGES/folks.mo
 share/locale/hi/LC_MESSAGES/folks.mo
+share/locale/hu/LC_MESSAGES/folks.mo
 share/locale/id/LC_MESSAGES/folks.mo
 share/locale/it/LC_MESSAGES/folks.mo
+share/locale/ja/LC_MESSAGES/folks.mo
+share/locale/kn/LC_MESSAGES/folks.mo
+share/locale/ko/LC_MESSAGES/folks.mo
 share/locale/lt/LC_MESSAGES/folks.mo
 share/locale/lv/LC_MESSAGES/folks.mo
+share/locale/ml/LC_MESSAGES/folks.mo
 share/locale/mr/LC_MESSAGES/folks.mo
 share/locale/nb/LC_MESSAGES/folks.mo
 share/locale/pa/LC_MESSAGES/folks.mo
 share/locale/pl/LC_MESSAGES/folks.mo
+share/locale/pt/LC_MESSAGES/folks.mo
 share/locale/pt_BR/LC_MESSAGES/folks.mo
 share/locale/ru/LC_MESSAGES/folks.mo
 share/locale/sl/LC_MESSAGES/folks.mo
 share/locale/sr/LC_MESSAGES/folks.mo
 share/locale/sr@latin/LC_MESSAGES/folks.mo
 share/locale/sv/LC_MESSAGES/folks.mo
+share/locale/ta/LC_MESSAGES/folks.mo
 share/locale/uk/LC_MESSAGES/folks.mo
 share/locale/vi/LC_MESSAGES/folks.mo
 share/locale/zh_CN/LC_MESSAGES/folks.mo
