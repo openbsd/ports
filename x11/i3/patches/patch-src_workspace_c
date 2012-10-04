@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_workspace_c,v 1.8 2012/10/04 12:21:38 dcoppa Exp $
+
+From 507898484f2d4ccf7e1077cf8881d4655745ac8c Mon Sep 17 00:00:00 2001
+From: Sascha Kruse <knopwob@googlemail.com>
+Date: Wed, 03 Oct 2012 01:52:57 +0000
+Subject: set workspace_layout in create_workspace_on_output
+
+Otherwise i3 doesn't respect the workspace_layout setting.
+
+--- src/workspace.c.orig	Thu Oct  4 11:52:49 2012
++++ src/workspace.c	Thu Oct  4 11:57:33 2012
+@@ -212,6 +212,7 @@ Con *create_workspace_on_output(Output *output, Con *c
+ 
+     ws->fullscreen_mode = CF_OUTPUT;
+ 
++    ws->workspace_layout = config.default_layout;
+     _workspace_apply_default_orientation(ws);
+ 
+     return ws;
