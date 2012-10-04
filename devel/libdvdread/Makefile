@@ -1,10 +1,11 @@
-#$OpenBSD: Makefile,v 1.20 2012/05/03 06:51:07 ajacoutot Exp $
+#$OpenBSD: Makefile,v 1.21 2012/10/04 07:23:17 brad Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	accessing DVD files
 
 DISTNAME =	libdvdread-4.2.0
+REVISION =	0
 CATEGORIES =	devel
 MASTER_SITES =	${HOMEPAGE}releases/
 EXTRACT_SUFX =	.tar.bz2
