@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2012/09/30 14:58:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.108 2012/10/05 17:00:51 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		2.98
+REVISION=		0
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
 
@@ -63,7 +64,9 @@ RUN_DEPENDS=		audio/libmusicbrainz \
 			x11/dbus-python
 
 # needed for sndio(7) support
-RUN_DEPENDS+=		multimedia/gstreamer-0.10/plugins-good
+RUN_DEPENDS +=		multimedia/gstreamer-0.10/plugins-good
+# needed for mp3 support
+RUN_DEPENDS +=		multimedia/gstreamer-0.10/plugins-ugly
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
