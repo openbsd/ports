@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2012/09/06 12:37:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/10/05 07:40:49 nigel Exp $
 @conflict gstreamer-plugins-bad-<0.10.17
 @conflict gstreamer-cdda-*
 @conflict gstreamer-gnome-*
@@ -8,6 +8,7 @@
 @conflict gstreamer-vorbis-*
 @pkgpath ${BASE_PKGPATH},-cdda
 @pkgpath ${BASE_PKGPATH},-gnome
+@pkgpath ${BASE_PKGPATH},-main
 @pkgpath ${BASE_PKGPATH},-ogg
 @pkgpath ${BASE_PKGPATH},-pango
 @pkgpath ${BASE_PKGPATH},-theora
