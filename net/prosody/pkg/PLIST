@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/01/26 16:28:48 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/10/05 14:38:09 jasper Exp $
 @newgroup _prosody:638
 @newuser _prosody:638:_prosody:daemon:prosody user:/nonexistent:/sbin/nologin
 %%SHARED%%
@@ -127,7 +127,7 @@ share/examples/prosody/certs/
 share/examples/prosody/certs/Makefile
 @sample ${SYSCONFDIR}/prosody/certs/Makefile
 share/examples/prosody/certs/localhost.cert
-@sample ${SYSCONFDIR}/prosody/certs/localhost.cert
+@sample ${SYSCONFDIR}/prosody/certs/localhost.crt
 share/examples/prosody/certs/localhost.key
 @sample ${SYSCONFDIR}/prosody/certs/localhost.key
 share/examples/prosody/certs/openssl.cnf
