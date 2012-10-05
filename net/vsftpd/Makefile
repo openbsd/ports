@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2011/07/04 18:28:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2012/10/05 02:27:50 brad Exp $
 
-COMMENT=		ftp daemon which aims to be secure
+COMMENT=		FTP daemon which aims to be secure
 
-DISTNAME=		vsftpd-2.3.4
-REVISION=		0
+DISTNAME=		vsftpd-3.0.2
 CATEGORIES=		net
 
 HOMEPAGE =		http://vsftpd.beasts.org/
@@ -16,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c crypto util ssl wrap
+WANTLIB=		c crypto ssl util wrap
 
 MASTER_SITES=		https://security.appspot.com/downloads/
 
@@ -25,8 +24,7 @@ ALL_TARGET=		vsftpd
 MAKE_FLAGS=		CC="${CC}" \
 			CFLAGS="${CFLAGS}"
 
-USE_GROFF =		Yes
-NO_REGRESS =		Yes
+NO_REGRESS=		Yes
 
 do-configure:
 	@perl -pi -e "s,%%SYSCONFDIR%%,${SYSCONFDIR}," ${WRKSRC}/defs.h
