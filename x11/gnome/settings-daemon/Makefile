@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2012/09/28 08:28:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.81 2012/10/05 11:25:54 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -43,6 +43,9 @@ LIB_DEPENDS=	devel/libnotify \
 
 BUILD_DEPENDS=	devel/gsettings-desktop-schemas>=3.6.0
 RUN_DEPENDS=	devel/gsettings-desktop-schemas>=3.6.0
+
+# man pages
+BUILD_DEPENDS += textproc/docbook-xsl
 
 # share/polkit-1/actions/org.gnome.settings-daemon.plugins.power.policy
 RUN_DEPENDS +=	sysutils/polkit
