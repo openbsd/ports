@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2012/09/30 12:42:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2012/10/05 07:13:47 landry Exp $
+
+BROKEN-sparc64=	cast increases required alignment of target type
 
 COMMENT=		window and compositing manager
 
