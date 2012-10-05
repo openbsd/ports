@@ -1,7 +1,13 @@
-# $OpenBSD: Makefile,v 1.81 2012/09/27 17:26:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.82 2012/10/05 19:28:12 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
+
+# Note: please never ever set DPB_PROPERTIES=parallel (or some other
+# magic that enables parallel builds) for this port! Not even if it
+# appears to work. (search the upstream bug tracker for terms like
+# "non-dterministic", "unresolved symbol", "signature mismatch" etc. to
+# find the appropriate bug tickets)
 
 DISTNAME =		ghc-${MODGHC_VER}
 PKGNAME-main =		ghc-${MODGHC_VER}
