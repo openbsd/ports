@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2012/04/30 13:06:51 landry Exp $
+# $OpenBSD: Makefile,v 1.43 2012/10/06 10:00:43 landry Exp $
 
      SUBDIR =
      SUBDIR += exo
@@ -17,7 +17,6 @@
      SUBDIR += thunar-archive
      SUBDIR += thunar-media-tags
      SUBDIR += thunar-vcs
-     SUBDIR += thunar-vfs
      SUBDIR += tumbler
      SUBDIR += xfce4-appfinder
      SUBDIR += xfce4-battery
