@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2012/08/19 21:00:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2012/10/06 09:22:36 landry Exp $
+
+# .libs/libmecab.so.0.0: undefined reference to `__sync_val_compare_and_swap_4'
+# .libs/libmecab.so.0.0: undefined reference to `__sync_add_and_fetch_4'
+BROKEN-hppa =	undefined refs to __sync operations
 
 COMMENT-main =	japanese morphological analyzer engine
 COMMENT-ipadic = IPA japanese dictionary for mecab
