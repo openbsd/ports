@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2012/09/29 09:32:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2012/10/06 08:34:07 landry Exp $
 
 # XXX
 # fix autospawn lock (patch-src_daemon_main_c)
@@ -7,6 +7,11 @@
 # sndio: support for recording
 # sndio: make module-detect properly detects the sndio module
 # sndio: implement hardware mixer
+
+# hppa doesnt have native atomic operations
+# PA can use/detect libatomic_ops as a fallback
+# but in that case linking fails..
+BROKEN-hppa =	lack of atomic ops
 
 SHARED_ONLY=		Yes
 
