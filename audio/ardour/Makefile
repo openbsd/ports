@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2012/09/29 06:25:48 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2012/10/06 10:55:42 landry Exp $
 
+ONLY_FOR_ARCHS =	amd64 i386 powerpc
 SHARED_ONLY =		Yes
 COMMENT =		digital audio workstation
 DISTNAME =		ardour-2.8.14
