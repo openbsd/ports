@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.29 2012/08/15 09:05:05 espie Exp $
+# $OpenBSD: Vars.pm,v 1.30 2012/10/06 15:38:14 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -49,7 +49,7 @@ sub get
 	pipe(my $rh, my $wh);
 	my $pid = fork();
 	if ($pid == 0) {
-		print $wh "all:\n";
+		print $wh "print-data:\n";
 		for my $_ (@names) {
 			print $wh "\t\@echo \${$_}\n";
 		}
@@ -65,6 +65,7 @@ WRKOBJDIR=
 IGNORE=Yes
 _MAKEFILE_INC_DONE=Yes
 ECHO_MSG=:
+.PHONY: print-data
 .include <bsd.port.mk>
 EOT
 		close $wh;
@@ -83,7 +84,7 @@ EOT
 		close STDIN;
 		chdir('/');
 		open(STDIN, '<&', $rh);
-		exec {$make} ('make', '-f', '-');
+		exec {$make} ('make', '-f', '-', 'print-data');
 		die "oops couldn't exec $make";
     	}
 	return @list;
