@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2012/09/22 10:30:17 landry Exp $
+# $OpenBSD: Makefile,v 1.29 2012/10/06 07:55:55 ajacoutot Exp $
 
 COMMENT =	Mozilla mobile web browser
 
@@ -7,7 +7,7 @@ MOZILLA_BRANCH =	esr10
 MOZILLA_PROJECT =	fennec
 MOZILLA_CODENAME =	mobile
 PKGNAME =	${MOZILLA_PROJECT}-${MOZILLA_VERSION:S/esr//}
-REVISION =	2
+REVISION =	3
 
 SO_VERSION =	6.0
 # NOTE: Must bump minor version if any shlib's are removed from the
