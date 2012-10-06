@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.189 2012/10/02 20:56:18 landry Exp $
+# $OpenBSD: Makefile,v 1.190 2012/10/06 13:53:46 ajacoutot Exp $
 
 COMMENT=		general-purpose utility library
 
@@ -91,8 +91,6 @@ AUTO_ENV=		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 post-patch:
 	cd ${WRKSRC} && ${AUTO_ENV} autoreconf --force --install
 ### end of kqueue(1) backend ###########################################
-
-.include <bsd.port.arch.mk>
 
 pre-configure:
 	perl -pi -e "s,/usr/local,${LOCALBASE},g;" \
