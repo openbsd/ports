@@ -1,0 +1,13 @@
+$OpenBSD: patch-engines_draci_draci_h,v 1.1 2012/10/06 19:24:32 jsg Exp $
+--- engines/draci/draci.h.orig	Sun Oct  7 00:35:56 2012
++++ engines/draci/draci.h	Sun Oct  7 00:42:40 2012
+@@ -121,8 +121,7 @@ enum {
+ 	kDraciWalkingDebugLevel   = 1 << 6
+ };
+ 
+-// Macro to simulate lround() for non-C99 compilers
+-static inline long scummvm_lround(double val) { return (long)floor(val + 0.5); }
++#define scummvm_lround lround
+ 
+ } // End of namespace Draci
+ 
