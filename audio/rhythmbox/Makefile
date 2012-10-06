@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2012/10/05 17:00:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.109 2012/10/06 07:33:30 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		2.98
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
 
@@ -54,6 +54,7 @@ LIB_DEPENDS=		audio/libgpod \
 			devel/json-glib \
 			devel/libnotify>=0.7.2 \
 			devel/libpeas \
+			multimedia/gstreamer-0.10/plugins-base \
 			x11/gnome/grilo \
 			x11/gnome/totem-pl-parser
 
