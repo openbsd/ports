@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_config_openbsd_h,v 1.1.1.1 2012/04/23 15:56:42 pascal Exp $
+$OpenBSD: patch-gcc_config_openbsd_h,v 1.2 2012/10/07 20:09:45 landry Exp $
 --- gcc/config/openbsd.h.orig	Tue Oct 18 01:31:25 2011
-+++ gcc/config/openbsd.h	Sat Apr 14 13:14:06 2012
++++ gcc/config/openbsd.h	Sat Oct  6 12:46:28 2012
 @@ -109,9 +109,9 @@ while (0)
     This two-stage defines makes it easy to pick that for targets that
     have subspecs.  */
@@ -13,7 +13,7 @@ $OpenBSD: patch-gcc_config_openbsd_h,v 1.1.1.1 2012/04/23 15:56:42 pascal Exp $
  #endif
  
  #undef LIB_SPEC
-@@ -279,6 +279,12 @@ do {									 \
+@@ -279,6 +279,16 @@ do {									 \
  #endif
  
  /* Storage layout.  */
@@ -23,6 +23,10 @@ $OpenBSD: patch-gcc_config_openbsd_h,v 1.1.1.1 2012/04/23 15:56:42 pascal Exp $
 + * making them easier to spot in the object files.
 + */
 +#define NO_UNSAFE_BUILTINS
++
++/* The system headers on OpenBSD are C++-aware.  */
++#undef NO_IMPLICIT_EXTERN_C
++#define NO_IMPLICIT_EXTERN_C
  
  
  #define HAVE_ENABLE_EXECUTE_STACK

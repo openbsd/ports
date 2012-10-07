@@ -1,9 +1,13 @@
-$OpenBSD: patch-gcc_config_sparc_openbsd64_h,v 1.1 2012/09/01 00:00:32 pascal Exp $
---- gcc/config/sparc/openbsd64.h.orig	Fri Aug 31 16:10:51 2012
-+++ gcc/config/sparc/openbsd64.h	Fri Aug 31 16:12:07 2012
-@@ -54,11 +54,19 @@ along with GCC; see the file COPYING3.  If not see
- #undef NO_IMPLICIT_EXTERN_C
+$OpenBSD: patch-gcc_config_sparc_openbsd64_h,v 1.2 2012/10/07 20:09:44 landry Exp $
+--- gcc/config/sparc/openbsd64.h.orig	Sat Sep  1 17:28:30 2007
++++ gcc/config/sparc/openbsd64.h	Sat Oct  6 12:27:35 2012
+@@ -50,15 +50,20 @@ along with GCC; see the file COPYING3.  If not see
+ #undef MD_EXEC_PREFIX
+ #undef MD_STARTFILE_PREFIX
  
+-/* Inherited from sp64-elf.  */
+-#undef NO_IMPLICIT_EXTERN_C
+-
  #undef ASM_SPEC
 +#ifdef PIE_DEFAULT
  #define ASM_SPEC "\

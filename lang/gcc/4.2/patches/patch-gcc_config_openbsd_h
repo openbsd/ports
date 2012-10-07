@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_config_openbsd_h,v 1.4 2012/04/23 14:12:19 pascal Exp $
+$OpenBSD: patch-gcc_config_openbsd_h,v 1.5 2012/10/07 20:09:44 landry Exp $
 --- gcc/config/openbsd.h.orig	Sat Sep  1 17:28:30 2007
-+++ gcc/config/openbsd.h	Thu Apr 12 14:34:24 2012
++++ gcc/config/openbsd.h	Sat Oct  6 12:37:31 2012
 @@ -72,6 +72,37 @@ along with GCC; see the file COPYING3.  If not see
  
  /* Controlling the compilation driver.  */
@@ -76,7 +76,7 @@ $OpenBSD: patch-gcc_config_openbsd_h,v 1.4 2012/04/23 14:12:19 pascal Exp $
  #undef LIB_SPEC
  #define LIB_SPEC OBSD_LIB_SPEC
  #endif
-@@ -281,15 +309,14 @@ do {									 \
+@@ -281,16 +309,15 @@ do {									 \
  /* Storage layout.  */
  
  
@@ -89,9 +89,27 @@ $OpenBSD: patch-gcc_config_openbsd_h,v 1.4 2012/04/23 14:12:19 pascal Exp $
     work.  On the other hand, we don't define HANDLE_PRAGMA_WEAK directly,
     as this depends on a few other details as well...  */
  #define HANDLE_SYSV_PRAGMA 1
-+
+ 
 +/* Define this so we can compile MS code for use with WINE.  */
 +#define HANDLE_PRAGMA_PACK_PUSH_POP
- 
++
  /* Stack is explicitly denied execution rights on OpenBSD platforms.  */
  #define ENABLE_EXECUTE_STACK						\
+ extern void __enable_execute_stack (void *);				\
+@@ -305,6 +332,16 @@ __enable_execute_stack (void *addr)					\
+   if (mprotect (page, end - page, PROT_READ | PROT_WRITE | PROT_EXEC) < 0) \
+     perror ("mprotect of trampoline code");				\
+ }
++
++/*
++ * Disable the use of unsafe builtin functions, (strcat, strcpy, stpcpy),
++ * making them easier to spot in the object files.
++ */
++#define NO_UNSAFE_BUILTINS
++
++/* The system headers on OpenBSD are C++-aware.  */
++#undef NO_IMPLICIT_EXTERN_C
++#define NO_IMPLICIT_EXTERN_C
+ 
+ #include <sys/types.h>
+ #include <sys/mman.h>
