@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_main_inc_php_dist,v 1.17 2012/08/10 15:25:49 sthen Exp $
---- config/main.inc.php.dist.orig	Mon Aug  6 17:18:13 2012
-+++ config/main.inc.php.dist	Wed Aug  8 12:58:47 2012
-@@ -355,7 +355,7 @@ $rcmail_config['identities_level'] = 0;
+$OpenBSD: patch-config_main_inc_php_dist,v 1.18 2012/10/07 11:15:44 sthen Exp $
+--- config/main.inc.php.dist.orig	Fri Oct  5 18:14:22 2012
++++ config/main.inc.php.dist	Sun Oct  7 10:47:37 2012
+@@ -356,7 +356,7 @@ $rcmail_config['identities_level'] = 0;
  $rcmail_config['client_mimetypes'] = null;  # null == default
  
  // mime magic database
@@ -10,7 +10,7 @@ $OpenBSD: patch-config_main_inc_php_dist,v 1.17 2012/08/10 15:25:49 sthen Exp $
  
  // path to imagemagick identify binary
  $rcmail_config['im_identify_path'] = null;
-@@ -457,7 +457,7 @@ $rcmail_config['spellcheck_dictionary'] = false;
+@@ -458,7 +458,7 @@ $rcmail_config['spellcheck_dictionary'] = false;
  
  // Set the spell checking engine. 'googie' is the default. 'pspell' is also available,
  // but requires the Pspell extensions. When using Nox Spell Server, also set 'googie' here.
