@@ -1,9 +1,10 @@
-$OpenBSD: patch-Source_JavaScriptCore_wtf_Platform_h,v 1.5 2012/08/07 09:35:38 landry Exp $
+$OpenBSD: patch-Source_JavaScriptCore_wtf_Platform_h,v 1.6 2012/10/07 09:24:18 landry Exp $
 
 Allow webkit to build and run on mips64
+Recognize hppa
 
---- Source/JavaScriptCore/wtf/Platform.h.orig	Wed Aug  1 09:55:05 2012
-+++ Source/JavaScriptCore/wtf/Platform.h	Fri Aug  3 16:33:41 2012
+--- Source/JavaScriptCore/wtf/Platform.h.orig	Mon Aug 20 10:30:25 2012
++++ Source/JavaScriptCore/wtf/Platform.h	Sat Oct  6 02:51:40 2012
 @@ -76,9 +76,14 @@
  
  /* CPU(MIPS) - MIPS 32-bit */
@@ -21,7 +22,19 @@ Allow webkit to build and run on mips64
  #if defined(__MIPSEB__)
  #define WTF_CPU_BIG_ENDIAN 1
  #endif
-@@ -295,7 +300,7 @@
+@@ -118,6 +123,11 @@
+ #define WTF_CPU_SH4 1
+ #endif
+ 
++/* CPU(HPPA) - HP-PA */
++#if defined(__hppa__)
++#define WTF_CPU_HPPA 1
++#endif
++
+ /* CPU(SPARC32) - SPARC 32-bit */
+ #if defined(__sparc) && !defined(__arch64__) || defined(__sparcv8)
+ #define WTF_CPU_SPARC32 1
+@@ -295,7 +305,7 @@
  
  #endif /* ARM */
  
@@ -30,7 +43,7 @@ Allow webkit to build and run on mips64
  #define WTF_CPU_NEEDS_ALIGNED_ACCESS 1
  #endif
  
-@@ -899,7 +904,8 @@
+@@ -899,7 +909,8 @@
      || CPU(ALPHA) \
      || CPU(SPARC64) \
      || CPU(S390X) \
