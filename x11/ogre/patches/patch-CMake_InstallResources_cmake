@@ -1,0 +1,15 @@
+$OpenBSD: patch-CMake_InstallResources_cmake,v 1.1 2012/10/07 09:37:46 dcoppa Exp $
+
+Install *.cfg files in the right directory
+
+--- CMake/InstallResources.cmake.orig	Thu Oct  4 10:31:22 2012
++++ CMake/InstallResources.cmake	Thu Oct  4 10:31:54 2012
+@@ -50,7 +50,7 @@ elseif (UNIX)
+   set(OGRE_PLUGIN_DIR_DBG "${CMAKE_INSTALL_PREFIX}/${OGRE_LIB_DIRECTORY}/OGRE")
+   set(OGRE_SAMPLES_DIR_REL "${CMAKE_INSTALL_PREFIX}/${OGRE_LIB_DIRECTORY}/OGRE/Samples")
+   set(OGRE_SAMPLES_DIR_DBG "${CMAKE_INSTALL_PREFIX}/${OGRE_LIB_DIRECTORY}/OGRE/Samples")
+-  set(OGRE_CFG_INSTALL_PATH "share/OGRE")
++  set(OGRE_CFG_INSTALL_PATH "share/examples/OGRE")
+ endif ()
+ 
+ # configure plugins.cfg

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-samples,v 1.2 2012/03/18 15:11:37 pascal Exp $
+@comment $OpenBSD: PLIST-samples,v 1.3 2012/10/07 09:37:46 dcoppa Exp $
 @bin bin/SampleBrowser
 lib/OGRE/Samples/
 lib/OGRE/Samples/Sample_BSP.so
@@ -488,7 +488,10 @@ share/OGRE/media/thumbnails/thumb_texfx.png
 share/OGRE/media/thumbnails/thumb_trans.png
 share/OGRE/media/thumbnails/thumb_voltex.png
 share/OGRE/media/thumbnails/thumb_water.png
-share/OGRE/plugins.cfg
-share/OGRE/quakemap.cfg
-share/OGRE/resources.cfg
-share/OGRE/samples.cfg
+@sample ${SYSCONFDIR}/OGRE/
+share/examples/OGRE/quakemap.cfg
+@sample ${SYSCONFDIR}/OGRE/quakemap.cfg
+share/examples/OGRE/resources.cfg
+@sample ${SYSCONFDIR}/OGRE/resources.cfg
+share/examples/OGRE/samples.cfg
+@sample ${SYSCONFDIR}/OGRE/samples.cfg

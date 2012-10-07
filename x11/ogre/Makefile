@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/08/13 10:38:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2012/10/07 09:37:45 dcoppa Exp $
 
 SHARED_ONLY =		Yes
 
@@ -9,6 +9,9 @@ V =			1.7.4
 DISTNAME =		ogre_src_v${V:S/./-/g}
 PKGNAME-main =		ogre-${V}
 PKGNAME-samples =	ogre-samples-${V}
+
+REVISION-main =		0
+REVISION-samples =	0
 
 MULTI_PACKAGES =	-main -samples
 
@@ -42,7 +45,8 @@ WANTLIB-samples += OgreTerrain
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=ogre/}
 EXTRACT_SUFX =		.tar.bz2
 
-CONFIGURE_ARGS +=	-DOGRE_INSTALL_SAMPLES=1
+CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE:STRING=Release \
+			-DOGRE_INSTALL_SAMPLES=1
 
 VMEM_WARNING =		Yes
 
