@@ -1,9 +1,9 @@
-$OpenBSD: patch-PlugIns_OctreeZone_CMakeLists_txt,v 1.1 2012/10/07 09:37:46 dcoppa Exp $
+$OpenBSD: patch-PlugIns_OctreeZone_CMakeLists_txt,v 1.2 2012/10/07 19:53:05 dcoppa Exp $
 
 Shared modules cannot be linked into another target
 
 --- PlugIns/OctreeZone/CMakeLists.txt.orig	Sat Jan 14 18:40:39 2012
-+++ PlugIns/OctreeZone/CMakeLists.txt	Sun Oct  7 10:34:42 2012
++++ PlugIns/OctreeZone/CMakeLists.txt	Sun Oct  7 20:16:59 2012
 @@ -24,6 +24,22 @@ set (HEADER_FILES
  )
  
@@ -15,12 +15,12 @@ Shared modules cannot be linked into another target
 +  ${CMAKE_CURRENT_SOURCE_DIR}/../PCZSceneManager/src/OgrePCZCamera.cpp
 +  ${CMAKE_CURRENT_SOURCE_DIR}/../PCZSceneManager/src/OgrePCZFrustum.cpp
 +  ${CMAKE_CURRENT_SOURCE_DIR}/../PCZSceneManager/src/OgrePCZLight.cpp
++  ${CMAKE_CURRENT_SOURCE_DIR}/../PCZSceneManager/src/OgrePCZone.cpp
++  ${CMAKE_CURRENT_SOURCE_DIR}/../PCZSceneManager/src/OgrePCZoneFactory.cpp
 +  ${CMAKE_CURRENT_SOURCE_DIR}/../PCZSceneManager/src/OgrePCZPlugin.cpp
 +  ${CMAKE_CURRENT_SOURCE_DIR}/../PCZSceneManager/src/OgrePCZSceneManager.cpp
 +  ${CMAKE_CURRENT_SOURCE_DIR}/../PCZSceneManager/src/OgrePCZSceneNode.cpp
 +  ${CMAKE_CURRENT_SOURCE_DIR}/../PCZSceneManager/src/OgrePCZSceneQuery.cpp
-+  ${CMAKE_CURRENT_SOURCE_DIR}/../PCZSceneManager/src/OgrePCZone.cpp
-+  ${CMAKE_CURRENT_SOURCE_DIR}/../PCZSceneManager/src/OgrePCZoneFactory.cpp
 +  ${CMAKE_CURRENT_SOURCE_DIR}/../PCZSceneManager/src/OgrePortal.cpp
 +  ${CMAKE_CURRENT_SOURCE_DIR}/../PCZSceneManager/src/OgrePortalBase.cpp
 +  ${CMAKE_CURRENT_SOURCE_DIR}/../PCZSceneManager/src/OgreSegment.cpp
