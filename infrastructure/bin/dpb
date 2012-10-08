@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.53 2012/09/23 18:13:32 espie Exp $
+# $OpenBSD: dpb,v 1.54 2012/10/08 12:41:03 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -163,9 +163,9 @@ sub handle_options
 		},
 	};
 
-	$state->SUPER::handle_options('acemqrRstuUvh:xA:C:f:F:I:j:J:M:p:P:b:L:S:',
+	$state->SUPER::handle_options('acemqrRsuUvh:xA:C:f:F:I:j:J:M:p:P:b:L:S:',
     "[-acemrRsuUvx] [-A arch] [-C plist] [-f N] [-F N] [-I plist] [-J p] [-j N]",
-    "[-P plist] [-h hosts] [-L logdir] [-b log] [-t ctimeout] [-M threshold]",
+    "[-p parallel] [-P plist] [-h hosts] [-L logdir] [-b log] [-M threshold]",
     "[path ...]");
     	$state->{fullrepo} = join("/", $state->{repo}, $state->arch, "all");
 	$state->{logdir} //= $ENV{LOGDIR} // '%p/logs/%a';
@@ -180,6 +180,7 @@ sub handle_options
 	}
 	$state->{opt}{f} //= 2;
 	$state->{opt}{J} //= 250;
+	$state->{opt}{p} //= '/2';
 	if (defined $state->opt('j')) {
 		if ($state->localarch ne $state->arch) {
 			$state->usage(
@@ -224,37 +225,42 @@ sub handle_options
 	$state->{logger} = DPB::Logger->new($state->logdir, $state->opt('c'));
 	$state->heuristics->set_logger($state->logger);
 	$state->{display_timeout} =
-	    $state->{subst}->value('DISPLAY_TIMEOUT') // $state->opt('T') // 10;
+	    $state->{subst}->value('DISPLAY_TIMEOUT') // 10;
     	$state->{connection_timeout} =
-	    $state->{subst}->value('CONNECTION_TIMEOUT') // $state->opt('t');
+	    $state->{subst}->value('CONNECTION_TIMEOUT');
 	$state->{stuck_timeout} = $state->{subst}->value('STUCK_TIMEOUT');
 	$state->{build_once} = $state->{all};
 	if ($state->defines("DONT_BUILD_ONCE")) {
 		$state->{build_once} = 0;
 	}
+	$state->{concurrent} = $state->{logger}->open("concurrent");
 }
 
 sub start_cores
 {
 	my $state = shift;
 
-	if ($state->{config}) {
-		DPB::Core->parse_hosts_file($state->{config}, $state);
-	}
+	my $default_prop = {};
 
-	my $prop = {};
 	if ($state->opt('j')) {
-		$prop->{jobs} = $state->opt('j');
+		$default_prop->{jobs} = $state->opt('j');
 	}
 	if ($state->opt('p')) {
-		$prop->{parallel} = $state->opt('p');
+		$default_prop->{parallel} = $state->opt('p');
 	}
 	if ($state->{stuck_timeout}) {
-		$prop->{stuck} = $state->{stuck_timeout};
+		$default_prop->{stuck} = $state->{stuck_timeout};
+	}
+	if ($state->opt('J')) {
+		$default_prop->{junk} = $state->opt('J');
 	}
 
-	if ($state->opt('j') || !$state->{config}) {
-		DPB::Core::Factory->new('localhost', $prop);
+	if ($state->{config}) {
+		DPB::Core->parse_hosts_file($state->{config}, $state, $default_prop);
+	}
+
+	if (!$state->{config}) {
+		DPB::Core::Factory->new('localhost', $default_prop);
 	}
 	DPB::Core::Factory->init_cores($state);
 }
@@ -564,8 +570,9 @@ sub handle_non_waiting_jobs
 		}
 		$state->engine->start_new_fetch;
 	}
+	my $current = time();
+	DPB::Core->log_concurrency($current, $state->{concurrent});
 	if ($need_clock) {
-		my $current = time();
 		if ($current >= $last_time + $state->{display_timeout} ||
 		    $reaped) {
 			$reporter->report;

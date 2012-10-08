@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.15 2012/09/24 20:41:57 espie Exp $
+# $OpenBSD: Core.pm,v 1.16 2012/10/08 12:41:03 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -476,6 +476,26 @@ my $available = [];
 my %stopped = ();
 
 my $logdir;
+my $lastcount = 0;
+
+sub log_concurrency
+{
+	my ($class, $time, $fh) = @_;
+	my $j = 0;
+	while (my ($k, $c) = each %{$class->repository}) {
+		$j++;
+		if (defined $c->{swallow}) {
+			$j += $c->{swallow};
+		}
+		if (defined $c->{swallowed}) {
+			$j += scalar(@{$c->{swallowed}});
+		}
+	}
+	if ($j != $lastcount) {
+		print $fh "$$ $time $j\n";
+		$lastcount = $j;
+	}
+}
 
 sub set_logdir
 {
@@ -579,6 +599,7 @@ sub can_swallow
 	my ($core, $n) = @_;
 	$core->{swallow} = $n;
 	$core->{swallowed} = [];
+	$core->{realjobs} = $n+1;
 	$core->host->{swallow}{$core} = $core;
 
 	# try to reswallow freed things right away.
@@ -674,7 +695,7 @@ sub has_sf
 
 sub parse_hosts_file
 {
-	my ($class, $filename, $state) = @_;
+	my ($class, $filename, $state, $default) = @_;
 	open my $fh, '<', $filename or
 		$state->fatal("Can't read host files #1: #2", $filename, $!);
 	my $_;
@@ -688,7 +709,8 @@ sub parse_hosts_file
 			$state->{startup_script} = $1;
 			next;
 		}
-		my $prop = {};
+		# copy default [properties
+		my $prop = { %$default };
 		my ($host, @properties) = split(/\s+/, $_);
 		for my $_ (@properties) {
 			if (m/^(.*?)=(.*)$/) {

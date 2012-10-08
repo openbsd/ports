@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.34 2012/09/23 18:13:32 espie Exp $
+# $OpenBSD: Port.pm,v 1.35 2012/10/08 12:41:03 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -478,7 +478,7 @@ use Time::HiRes qw(time);
 
 sub new
 {
-	my ($class, $log, $v, $builder, $special, $parallel, $endcode) = @_;
+	my ($class, $log, $v, $builder, $special, $core, $endcode) = @_;
 	my $e;
 	if ($builder->{rebuild}) {
 		$e = sub { $builder->register_built($v); &$endcode; };
@@ -492,22 +492,34 @@ sub new
 	    builder => $builder, endcode => $e},
 		$class;
 
-	if ($parallel && $v->{info}{DPB_PROPERTIES}{parallel}) {
-		$job->{parallel} = $parallel;
+	my $prop = $core->prop;
+	if ($prop->{parallel} =~ m/^\/(\d+)$/) {
+		if ($prop->{jobs} == 1) {
+			$prop->{parallel} = 0;
+		} else {
+			$prop->{parallel} = int($prop->{jobs}/$1);
+			if ($prop->{parallel} < 2) {
+				$prop->{parallel} = 2;
+			}
+		}
+	}
+	if ($prop->{parallel} && $v->{info}{DPB_PROPERTIES}{parallel}) {
+		$job->{parallel} = $prop->{parallel};
 	}
 
 	if ($builder->{rebuild}) {
 		push(@{$job->{tasks}},
 		    DPB::Task::Port::Signature->new('signature'));
 	} else {
-		$job->add_normal_tasks($builder->{dontclean}{$v->pkgpath});
+		$job->add_normal_tasks($builder->{dontclean}{$v->pkgpath},
+		    $prop);
 	}
 	return $job;
 }
 
 sub add_normal_tasks
 {
-	my ($self, $dontclean) = @_;
+	my ($self, $dontclean, $hostprop) = @_;
 
 	my @todo;
 	my $builder = $self->{builder};
@@ -515,9 +527,9 @@ sub add_normal_tasks
 		push @todo, "clean";
 	}
 	push(@todo, qw(depends prepare show-prepare-results));
-	if ($builder->{junk}) {
-		if ($builder->{junk_count}++ >= $builder->{junk}) {
-			$builder->{junk_count} = 0;
+	if ($hostprop->{junk}) {
+		if ($hostprop->{junk_count}++ >= $hostprop->{junk}) {
+			$hostprop->{junk_count} = 0;
 			push(@todo, 'junk');
 		}
 	}

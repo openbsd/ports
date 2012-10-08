@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.23 2012/09/23 18:13:32 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.24 2012/10/08 12:41:03 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -34,7 +34,6 @@ sub new
 	    dontclean => $state->{dontclean},
 	    fetch => $state->opt('f'),
 	    size => $state->opt('s'),
-	    junk => $state->opt('J'),
 	    rebuild => $state->opt('R'),
 	    fullrepo => $state->fullrepo,
 	    heuristics => $state->heuristics}, $class;
@@ -158,6 +157,9 @@ sub report
 	return if $job->{signature_only};
 	my $pkgpath = $v->fullpkgpath;
 	my $host = $core->fullhostname;
+	if ($core->{realjobs}) {
+		$host .= '*'.$core->{realjobs};
+	}
 	my $log = $self->{global};
 	my $sz = (stat $self->logger->log_pkgpath($v))[7];
 	if (defined $job->{offset}) {
@@ -195,7 +197,7 @@ sub end_lock
 
 sub build
 {
-	my ($self, $v, $core, $special, $parallel, $lock, $final_sub) = @_;
+	my ($self, $v, $core, $special, $lock, $final_sub) = @_;
 	my $start = time();
 	my $log = $self->logger->make_logs($v);
 
@@ -205,7 +207,7 @@ sub build
 	close($fh);
 
 	my $job;
-	$job = DPB::Job::Port->new($log, $v, $self, $special, $parallel,
+	$job = DPB::Job::Port->new($log, $v, $self, $special, $core,
 	    sub {$self->end_lock($lock, $core, $job); $self->report($v, $job, $core); &$final_sub;});
 	$job->{lock} = $lock;
 	$core->start_job($job, $v);

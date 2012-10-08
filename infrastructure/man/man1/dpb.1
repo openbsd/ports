@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.41 2012/08/31 17:27:50 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.42 2012/10/08 12:41:03 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: August 31 2012 $
+.Dd $Mdocdate: October 8 2012 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -237,6 +237,11 @@ Architecture of the concerned host.
 currently this has to be set manually on heterogeneous networks.)
 .It jobs=n
 Number of jobs to run on that host, defaults to hw.ncpu.
+.It junk=n
+Junk unused packages each n steps.
+See
+.Fl J
+option.
 .It memory=thr
 Builds everything below that wrkdir threshold in /tmp, assuming
 it is a memory filesystem.
@@ -244,6 +249,11 @@ Avoid for now, as
 .Xr mfs 8
 has serious race conditions which yield
 random errors under stress conditions such as bulk build.
+.It parallel=p
+Run big ports on several cores.
+See
+.Fl p
+option.
 .It sf=n
 Speed factor.
 An estimate of that machine's speed with that number of jobs
@@ -276,6 +286,9 @@ List of
 to install, on the local box.
 This will also add them to the list of things to build.
 .It Fl J Ar p
+Default value for the
+.Dq junk
+propery.
 Delete unneeded installed packages during the build.
 Each
 .Ar prepare
@@ -314,7 +327,7 @@ Defaults to
 Can be disabled by setting to
 .Ar 0 .
 .It Fl j Ar n
-Number of concurrent local jobs to run (defaults to hw.ncpu if no hosts file).
+Number of jobs to run on a single host (defaults to hw.ncpu).
 .It Fl L Ar logdir
 Choose a log directory.
 .Po
@@ -334,6 +347,34 @@ Force tty-style reporting.
 Read list of
 .Xr pkgpath 7
 from file.
+.It Fl p Ar parallel
+Default value for the
+.Dq parallel
+property.
+.Pp
+Run big jobs on several cores on the same host, by using
+MAKE_JOBS=k .
+.Pp
+Once such a job has started,
+.Nm
+will not start new jobs on the same host until the big job has
+stolen enough cores from other finishing jobs.
+.Pp
+Only big ports which are safe for parallel building (annotated with
+DPB_PROPERTIES = parallel in their Makefile will be affected.
+.Pp
+It is advisable to set k to an integral fraction of the
+number of cores available on a given host.
+.Ar parameter
+can be an integer, or of the form
+.Sq /n ,
+in which case, 
+.Nm 
+will set k to a fraction of the total number of jobs
+on the machine, but never below 2.
+.Pp
+Defaults to
+.Sq /2 .
 .It Fl q
 Don't quit while errors/locks are around.
 .It Fl r
