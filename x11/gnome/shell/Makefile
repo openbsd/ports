@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2012/10/08 11:33:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2012/10/08 17:16:20 ajacoutot Exp $
 
 COMMENT=		next generation GNOME shell
 
@@ -70,7 +70,6 @@ LIBTOOL_FLAGS= 		--tag=disable-static
 
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		--disable-static \
-			--with-ca-certificates=/etc/ssl/cert.pem \
 			--without-systemd
 
 AUTOCONF_VERSION=	2.69
