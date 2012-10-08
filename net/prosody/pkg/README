@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.6 2012/09/14 21:51:19 jasper Exp $
+$OpenBSD: README,v 1.7 2012/10/08 09:11:35 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -16,7 +16,12 @@ Using Prosody in an OpenBSD environment
 
    to your liking.
 
-2) Prosody includes an rc script for starting and stopping. You can
+2) In order to allow for secured connections, SSL certificates need to
+   be generated. A Makefile is located in ${SYSCONFDIR}/prosody/certs/.
+   Please note that if you wish to use this file, the 'gmake' package
+   needs to be installed.
+
+3) Prosody includes an rc script for starting and stopping. You can
    start it by running:
 
    # ${RCDIR}/prosody start
@@ -24,7 +29,7 @@ Using Prosody in an OpenBSD environment
    You can have it start automatically on boot by adding 'prosody' to your
    pkg_scripts line in /etc/rc.conf.local
 
-3) Prosody comes with prosodyctl script for controlling the daemon. Run
+4) Prosody comes with prosodyctl script for controlling the daemon. Run
    it without parameters to get list of commands:
 
    # ${TRUEPREFIX}/sbin/prosodyctl
@@ -33,7 +38,7 @@ Using Prosody in an OpenBSD environment
 
    # ${TRUEPREFIX}/sbin/prosodyctl adduser username@domain.tld
 
-4) In case you decide to enable 'mod_storage_sql', the default SQLite3
+5) In case you decide to enable 'mod_storage_sql', the default SQLite3
    driver has already been installed. If you like to use MySQL or
    PostgreSQL for the database, please install luadbi-mysql,${FLAVOR}
    or luadbi-postgresql,${FLAVOR} respectively.
