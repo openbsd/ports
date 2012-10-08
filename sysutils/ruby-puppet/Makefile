@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2012/10/08 08:48:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.46 2012/10/08 08:52:49 jasper Exp $
 
 COMMENT=	centralised configuration management for networks
 
@@ -13,7 +13,7 @@ MASTER_SITES=	http://reductivelabs.com/downloads/puppet/
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
-# GPLv2
+# Apache
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

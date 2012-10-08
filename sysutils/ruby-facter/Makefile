@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2012/10/08 08:49:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2012/10/08 08:52:48 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 HOMEPAGE=	http://reductivelabs.com/projects/facter/
 MASTER_SITES=	http://reductivelabs.com/downloads/facter/
 
-# GPL license
+# Apache
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
