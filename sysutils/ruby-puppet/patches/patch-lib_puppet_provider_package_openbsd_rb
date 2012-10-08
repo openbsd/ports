@@ -1,0 +1,31 @@
+$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.1 2012/10/08 08:48:01 jasper Exp $
+
+If no source was set, fallback to /etc/pkg.conf.
+https://projects.puppetlabs.com/issues/16752
+
+--- lib/puppet/provider/package/openbsd.rb.orig	Tue Oct  2 15:59:02 2012
++++ lib/puppet/provider/package/openbsd.rb	Tue Oct  2 15:59:17 2012
+@@ -56,8 +56,21 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+     should = @resource.should(:ensure)
+ 
+     unless @resource[:source]
+-      raise Puppet::Error,
+-      "You must specify a package source for BSD packages"
++      if File.exist?("/etc/pkg.conf")
++        pkgconf = File.open("/etc/pkg.conf", "rb").readlines {|f| f.read}
++        installpath = pkgconf.grep(/^installpath/).first
++        if (installpath)
++          installpath.sub!(/installpath\s+=\s+/, '')
++          installpath.sub!(/\n/, '')
++          @resource[:source] = installpath
++        else
++          raise Puppet::Error,
++          "No valid installpath found in /etc/pkg.conf and no source was set for BSD packages."
++        end
++      else
++        raise Puppet::Error,
++        "You must specify a package source for BSD packages"
++      end
+     end
+ 
+     if @resource[:source][-1,1] == ::File::SEPARATOR
