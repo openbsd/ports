@@ -1,2 +1,5 @@
 Checks your Puppet manifests against the Puppetlabs style guide and
 alerts you to any discrepancies.
+
+Pleaes refer to http://puppet-lint.com/checks/ for a description of each
+check and to get some help in fixing the errors.
