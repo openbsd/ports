@@ -1,0 +1,72 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/08 15:14:25 rpe Exp $
+bin/guards
+bin/quilt
+@man man/man1/guards.1
+@man man/man1/quilt.1
+share/doc/quilt/
+share/doc/quilt/README
+share/doc/quilt/README.MAIL
+share/doc/quilt/quilt.pdf
+share/emacs/site-lisp/quilt.el
+share/examples/quilt/
+share/examples/quilt/bash_completion.d/
+@sample ${SYSCONFDIR}/bash_completion.d/
+share/examples/quilt/bash_completion.d/quilt
+@sample ${SYSCONFDIR}/bash_completion.d/quilt
+share/examples/quilt/quilt.quiltrc
+@sample ${SYSCONFDIR}/quilt.quiltrc
+share/locale/de/LC_MESSAGES/quilt.mo
+share/locale/fr/LC_MESSAGES/quilt.mo
+share/locale/ja/LC_MESSAGES/quilt.mo
+share/locale/ru/LC_MESSAGES/quilt.mo
+share/quilt/
+share/quilt/add
+share/quilt/annotate
+share/quilt/applied
+share/quilt/compat/
+share/quilt/compat/awk
+share/quilt/compat/date
+share/quilt/compat/diff
+share/quilt/compat/find
+share/quilt/compat/getopt
+share/quilt/compat/grep
+share/quilt/compat/patch
+share/quilt/compat/sed
+share/quilt/compat/sendmail
+share/quilt/delete
+share/quilt/diff
+share/quilt/edit
+share/quilt/files
+share/quilt/fold
+share/quilt/fork
+share/quilt/graph
+share/quilt/grep
+share/quilt/header
+share/quilt/import
+share/quilt/mail
+share/quilt/new
+share/quilt/next
+share/quilt/patches
+share/quilt/pop
+share/quilt/previous
+share/quilt/push
+share/quilt/refresh
+share/quilt/remove
+share/quilt/rename
+share/quilt/revert
+share/quilt/scripts/
+share/quilt/scripts/backup-files
+share/quilt/scripts/dependency-graph
+share/quilt/scripts/edmail
+share/quilt/scripts/inspect
+share/quilt/scripts/patchfns
+share/quilt/scripts/remove-trailing-ws
+share/quilt/scripts/utilfns
+share/quilt/series
+share/quilt/setup
+share/quilt/snapshot
+share/quilt/top
+share/quilt/unapplied
+share/quilt/upgrade
+share/quilt/wrapper/
+share/quilt/wrapper/patch
