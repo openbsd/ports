@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/08/06 13:20:48 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.2 2012/10/08 09:19:52 dcoppa Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	USB Chip/Smart Card Interface Devices driver
 
-DISTNAME =	ccid-1.4.7
+DISTNAME =	ccid-1.4.8
 
 CATEGORIES =	security
 
 HOMEPAGE =	http://pcsclite.alioth.debian.org/ccid.html
 
-MASTER_SITES =	https://alioth.debian.org/frs/download.php/3730/
+MASTER_SITES =	https://alioth.debian.org/frs/download.php/3768/
 
 EXTRACT_SUFX =	.tar.bz2
 
@@ -22,7 +22,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WANTLIB =	pcsclite usb-1.0
+WANTLIB =	pcsclite pthread usb-1.0
 
 LIB_DEPENDS =	devel/libusb1 \
 		security/pcsc-lite>=1.8.3
