@@ -1,17 +1,17 @@
-$OpenBSD: patch-src_print_battery_info_c,v 1.6 2012/10/08 11:12:54 jasper Exp $
+$OpenBSD: patch-src_print_battery_info_c,v 1.7 2012/10/08 11:26:48 jasper Exp $
 
 - fix the battery status printing in %status.
 - fix remaining time when we're charging.
 - use colors to indicate battery status
 
 --- src/print_battery_info.c.orig	Wed Oct  3 13:44:44 2012
-+++ src/print_battery_info.c	Mon Oct  8 15:09:53 2012
++++ src/print_battery_info.c	Mon Oct  8 15:23:17 2012
 @@ -228,7 +228,7 @@ void print_battery_info(yajl_gen json_gen, char *buffe
  	 * probing acpi(4) devices.
  	 */
  	struct apm_power_info apm_info;
 -	int apm_fd, ac_status, charging;
-+	int apm_fd, charging, seconds_remaining;
++	int apm_fd;
  
  	apm_fd = open("/dev/apm", O_RDONLY);
  	if (apm_fd < 0) {
@@ -42,7 +42,7 @@ $OpenBSD: patch-src_print_battery_info_c,v 1.6 2012/10/08 11:12:54 jasper Exp $
 +			START_COLOR("color_bad");
 +			colorful_output = true;
 +		} else if (strncmp(threshold_type, "time", strlen(threshold_type)) == 0
-+			   && apm_info.minutes_left < low_threshold) {
++			   && apm_info.minutes_left < (u_int) low_threshold) {
 +			START_COLOR("color_bad");
 +			colorful_output = true;
 +		}
