@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.22 2012/08/30 14:28:22 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.23 2012/10/08 10:20:32 robert Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,7 +10,7 @@ CATEGORIES+=	mail/zarafa
 
 HOMEPAGE?=	http://community.zarafa.com/
 
-MAINTAINER?=	Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER?=	Robert Nagy <robert@openbsd.org>
 
 # AGPLv3 (GNU Affero Public License) with exceptions
 PERMIT_PACKAGE_CDROM?=	Yes
