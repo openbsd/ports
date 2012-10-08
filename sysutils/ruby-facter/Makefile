@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.23 2012/09/04 03:42:17 jeremy Exp $
+# $OpenBSD: Makefile,v 1.24 2012/10/08 08:49:06 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Ruby library for retrieving facts from operating systems
 
-VERSION=	1.6.8
+VERSION=	1.6.13
 DISTNAME=	facter-${VERSION}
 PKGNAME=	ruby-${DISTNAME}
-REVISION=	0
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://reductivelabs.com/projects/facter/
@@ -21,16 +20,18 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	lang/ruby
 
+USE_GROFF=	Yes
 NO_BUILD=	Yes
 
 REGRESS_DEPENDS= devel/ruby-mocha,${MODRUBY_FLAVOR}
-BUILD_DEPENDS +=	${MODRUBY_BUILD_DEPENDS}
+BUILD_DEPENDS += ${MODRUBY_BUILD_DEPENDS}
 
 do-install:
 	${INSTALL_DATA_DIR} ${MODRUBY_EXAMPLEDIR}/facter
 	@cd ${WRKSRC} && ${ALL_FAKE_FLAGS} ${RUBY} install.rb
 	${INSTALL_DATA} ${WRKSRC}/etc/facter.conf \
 			${MODRUBY_EXAMPLEDIR}/facter
+	cd ${PREFIX}/man/man8 && gunzip facter.8.gz
 
 MODRUBY_REGRESS = rake rspec2
 

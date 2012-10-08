@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/05/05 19:29:49 robert Exp $
+@comment $OpenBSD: PLIST,v 1.8 2012/10/08 08:49:07 jasper Exp $
 bin/facter
 ${MODRUBY_SITEDIR}/facter/
 ${MODRUBY_SITEDIR}/facter.rb
@@ -23,8 +23,12 @@ ${MODRUBY_SITEDIR}/facter/kernel.rb
 ${MODRUBY_SITEDIR}/facter/kernelmajversion.rb
 ${MODRUBY_SITEDIR}/facter/kernelrelease.rb
 ${MODRUBY_SITEDIR}/facter/kernelversion.rb
-${MODRUBY_SITEDIR}/facter/lsb.rb
+${MODRUBY_SITEDIR}/facter/lsbdistcodename.rb
+${MODRUBY_SITEDIR}/facter/lsbdistdescription.rb
+${MODRUBY_SITEDIR}/facter/lsbdistid.rb
+${MODRUBY_SITEDIR}/facter/lsbdistrelease.rb
 ${MODRUBY_SITEDIR}/facter/lsbmajdistrelease.rb
+${MODRUBY_SITEDIR}/facter/lsbrelease.rb
 ${MODRUBY_SITEDIR}/facter/macaddress.rb
 ${MODRUBY_SITEDIR}/facter/macosx.rb
 ${MODRUBY_SITEDIR}/facter/manufacturer.rb
@@ -68,6 +72,7 @@ ${MODRUBY_SITEDIR}/facter/util/plist.rb
 ${MODRUBY_SITEDIR}/facter/util/plist/generator.rb
 ${MODRUBY_SITEDIR}/facter/util/plist/parser.rb
 ${MODRUBY_SITEDIR}/facter/util/processor.rb
+${MODRUBY_SITEDIR}/facter/util/registry.rb
 ${MODRUBY_SITEDIR}/facter/util/resolution.rb
 ${MODRUBY_SITEDIR}/facter/util/uptime.rb
 ${MODRUBY_SITEDIR}/facter/util/values.rb
@@ -75,9 +80,11 @@ ${MODRUBY_SITEDIR}/facter/util/virtual.rb
 ${MODRUBY_SITEDIR}/facter/util/vlans.rb
 ${MODRUBY_SITEDIR}/facter/util/wmi.rb
 ${MODRUBY_SITEDIR}/facter/util/xendomains.rb
+${MODRUBY_SITEDIR}/facter/version.rb
 ${MODRUBY_SITEDIR}/facter/virtual.rb
 ${MODRUBY_SITEDIR}/facter/vlans.rb
 ${MODRUBY_SITEDIR}/facter/xendomains.rb
+@man man/man8/facter.8
 ${MODRUBY_RELEXAMPLEDIR}/
 ${MODRUBY_RELEXAMPLEDIR}/facter/
 ${MODRUBY_RELEXAMPLEDIR}/facter/facter.conf
