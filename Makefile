@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2012/09/04 19:05:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.73 2012/10/08 08:42:23 jasper Exp $
 
 PKGPATH =
 MIRROR_MK ?= ${.CURDIR}/distfiles/Makefile
@@ -73,7 +73,7 @@ SUBDIR += x11
 
 index:
 	@rm -f ${.CURDIR}/INDEX
-	@${_MAKE} ${.CURDIR}/INDEX
+	@${_MAKE} USE_CCACHE=No ${.CURDIR}/INDEX
 
 ${.CURDIR}/INDEX:
 	@echo "Generating INDEX..."
