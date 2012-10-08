@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.48 2012/10/03 06:40:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.49 2012/10/08 10:05:16 ajacoutot Exp $
 @comment starts a full gnome-session as _gdm which requires a valid homedir
 @newgroup _gdm:676
 @newuser _gdm:676:_gdm:daemon:GNOME Display Manager:/var/db/gdm:/sbin/nologin
@@ -29,6 +29,7 @@ lib/gdm/simple-greeter/extensions/
 lib/gdm/simple-greeter/extensions/libfingerprint.so
 lib/gdm/simple-greeter/extensions/libpassword.so
 lib/gdm/simple-greeter/extensions/libsmartcard.so
+lib/girepository-1.0/Gdm-1.0.typelib
 lib/libgdm.la
 @lib lib/libgdm.so.${LIBgdm_VERSION}
 lib/libgdmsimplegreeter.la
@@ -150,6 +151,7 @@ share/gdm/simple-greeter/extensions/smartcard/
 share/gdm/simple-greeter/extensions/smartcard/page.ui
 share/gdm/simple-greeter/extensions/unified/
 share/gdm/simple-greeter/extensions/unified/page.ui
+share/gir-1.0/Gdm-1.0.gir
 share/glib-2.0/schemas/org.gnome.login-screen.gschema.xml
 share/gnome-session/sessions/gdm-fallback.session
 share/gnome-session/sessions/gdm-shell.session

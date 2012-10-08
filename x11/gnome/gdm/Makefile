@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.130 2012/10/03 16:20:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.131 2012/10/08 10:05:16 ajacoutot Exp $
 
 BROKEN=			needs pam(3)
 
@@ -49,7 +49,7 @@ LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 
 LIBTOOL_FLAGS=		--tag=disable-static
 
-MODGNOME_TOOLS= 	yelp
+MODGNOME_TOOLS= 	goi yelp
 MODGNOME_ICON_CACHE=	Yes
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include -DHAS_SA_LEN
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
