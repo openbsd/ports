@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.131 2012/10/08 10:05:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.132 2012/10/08 21:47:04 ajacoutot Exp $
 
 BROKEN=			needs pam(3)
 
@@ -86,8 +86,7 @@ pre-configure:
 	perl -pi -e 's,/bin/true,/usr/bin/true,g' \
 		${WRKSRC}/data/applications/mime-dummy-handler.desktop \
 		${WRKSRC}/configure \
-		${WRKSRC}/data/00-upstream-settings \
-		${WRKSRC}/data/session-setup.entries
+		${WRKSRC}/data/00-upstream-settings
 .for i in gdm-simple-greeter gnome-session-check-accelerated gnome-settings-daemon
 	perl -pi -e 's,/usr/libexec,${PREFIX},g' \
 		${WRKSRC}/data/applications/gdm-simple-greeter.desktop.in
