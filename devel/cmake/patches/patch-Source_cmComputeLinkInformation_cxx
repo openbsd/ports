@@ -1,0 +1,30 @@
+$OpenBSD: patch-Source_cmComputeLinkInformation_cxx,v 1.5 2012/10/08 07:23:09 dcoppa Exp $
+--- Source/cmComputeLinkInformation.cxx.orig	Thu Aug  9 20:15:19 2012
++++ Source/cmComputeLinkInformation.cxx	Wed Sep 26 11:45:53 2012
+@@ -1059,12 +1059,21 @@ void cmComputeLinkInformation::AddTargetItem(std::stri
+     this->SharedLibrariesLinked.insert(target);
+     }
+ 
+-  // Handle case of an imported shared library with no soname.
+-  if(this->NoSONameUsesPath &&
+-     target->IsImportedSharedLibWithoutSOName(this->Config))
++  if(this->OpenBSD)
+     {
+-    this->AddSharedLibNoSOName(item);
+-    return;
++    if(target->GetType() == cmTarget::SHARED_LIBRARY)
++      {
++      this->AddSharedLibNoSOName(item);
++      return;
++      }
++    } else {
++    // Handle case of an imported shared library with no soname.
++    if(this->NoSONameUsesPath &&
++       target->IsImportedSharedLibWithoutSOName(this->Config))
++      {
++      this->AddSharedLibNoSOName(item);
++      return;
++      }
+     }
+ 
+   // If this platform wants a flag before the full path, add it.
