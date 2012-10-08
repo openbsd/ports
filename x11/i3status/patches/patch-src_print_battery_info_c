@@ -1,10 +1,11 @@
-$OpenBSD: patch-src_print_battery_info_c,v 1.4 2012/10/08 10:20:50 jasper Exp $
+$OpenBSD: patch-src_print_battery_info_c,v 1.5 2012/10/08 10:33:39 jasper Exp $
 
 - fix the battery status printing in %status.
 - fix remaining time when we're charging.
+- use colors to indicate battery status (currently only implemented for "threshold_type=percentage"
 
 --- src/print_battery_info.c.orig	Wed Oct  3 13:44:44 2012
-+++ src/print_battery_info.c	Mon Oct  8 14:16:30 2012
++++ src/print_battery_info.c	Mon Oct  8 14:29:50 2012
 @@ -228,7 +228,7 @@ void print_battery_info(yajl_gen json_gen, char *buffe
  	 * probing acpi(4) devices.
  	 */
@@ -14,7 +15,7 @@ $OpenBSD: patch-src_print_battery_info_c,v 1.4 2012/10/08 10:20:50 jasper Exp $
  
  	apm_fd = open("/dev/apm", O_RDONLY);
  	if (apm_fd < 0) {
-@@ -249,14 +249,14 @@ void print_battery_info(yajl_gen json_gen, char *buffe
+@@ -249,26 +249,38 @@ void print_battery_info(yajl_gen json_gen, char *buffe
  
  	switch(apm_info.ac_state) {
  	case APM_AC_OFF:
@@ -32,20 +33,31 @@ $OpenBSD: patch-src_print_battery_info_c,v 1.4 2012/10/08 10:20:50 jasper Exp $
  		break;
  	}
  
-@@ -264,11 +264,11 @@ void print_battery_info(yajl_gen json_gen, char *buffe
+ 	(void)snprintf(statusbuf, sizeof(statusbuf), "%s", BATT_STATUS_NAME(status));
          (void)snprintf(percentagebuf, sizeof(percentagebuf), "%02d%%", apm_info.battery_life);
  
++	if (status == CS_DISCHARGING && low_threshold > 0) {
++		/* XXX: Implement for "time" too. */
++		if (strncmp(threshold_type, "percentage", strlen(threshold_type)) == 0
++		    && apm_info.battery_life < low_threshold) {
++			START_COLOR("color_bad");
++			colorful_output = true;
++		}
++	}
++
  	/* Can't give a meaningful value for remaining minutes if we're charging. */
 -	if (ac_status == CS_CHARGING)
 -		charging = 1;
--
--	(void)snprintf(remainingbuf, sizeof(remainingbuf), (charging ? "%s" : "%d"),
--		       (charging ? "(CHR)" : apm_info.minutes_left));
 +	if (status != CS_CHARGING) {
 +		(void)snprintf(remainingbuf, sizeof(remainingbuf), "%d", apm_info.minutes_left);
 +	} else {
 +		(void)snprintf(remainingbuf, sizeof(remainingbuf), "%s", "(CHR)");
 +	}
+ 
+-	(void)snprintf(remainingbuf, sizeof(remainingbuf), (charging ? "%s" : "%d"),
+-		       (charging ? "(CHR)" : apm_info.minutes_left));
++	if (colorful_output)
++		END_COLOR;
  #endif
  
  #define EAT_SPACE_FROM_OUTPUT_IF_EMPTY(_buf) \
