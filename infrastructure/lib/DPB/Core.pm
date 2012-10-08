@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.16 2012/10/08 12:41:03 espie Exp $
+# $OpenBSD: Core.pm,v 1.17 2012/10/08 14:16:36 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -624,6 +624,7 @@ sub mark_available
 			delete $core->{swallowed};
 			delete $core->host->{swallow}{$core};
 			delete $core->{swallow};
+			delete $core->{realjobs};
 
 			# then free up our swallowed jobs
 			$self->mark_available(@$l);
