@@ -1,4 +1,4 @@
-/* $OpenBSD: module-sndio.c,v 1.1 2012/09/28 17:09:03 eric Exp $ */
+/* $OpenBSD: module-sndio.c,v 1.2 2012/10/08 17:19:57 eric Exp $ */
 /*
  * Copyright (c) 2012 Eric Faurot <eric@openbsd.org>
  *
@@ -36,6 +36,7 @@
 #include <pulsecore/poll.h>
 
 #include "module-sndio-symdef.h"
+#include "module-sndio-sysex.h"
 
 /*
  * TODO
@@ -95,7 +96,148 @@ struct userdata {
 
 	int		 sink_running;
 	unsigned int	 volume;
+
+	pa_rtpoll_item	*rtpoll_item_mio;
+	struct mio_hdl	*mio;
+	int		 master;
+	int		 mst;
+	int		 midx;
+	int		 mlen;
+	int		 mready;
+#define MSGMAX		0x100
+	uint8_t		 mmsg[MSGMAX];
 };
+
+static void
+sndio_midi_message(struct userdata *u, const char *msg, size_t len)
+{
+	struct sysex	*x = (struct sysex *)msg;
+
+	if (len == SYSEX_SIZE(master) &&
+	    x->start == SYSEX_START &&
+	    x->type == SYSEX_TYPE_RT &&
+	    x->id0 == SYSEX_CONTROL &&
+	    x->id1 == SYSEX_MASTER) {
+		u->master = x->u.master.coarse;
+		pa_log_debug("MIDI master level is %i", u->master);
+		return;
+	}
+
+	if (len == SYSEX_SIZE(empty) &&
+	    x->start == SYSEX_START &&
+	    x->type == SYSEX_TYPE_EDU &&
+	    x->id0 == SYSEX_AUCAT &&
+	    x->id1 == SYSEX_AUCAT_DUMPEND) {
+		pa_log_debug("MIDI config done");
+		u->mready = 1;
+		return;
+	}
+}
+
+static void
+sndio_midi_input(struct userdata *u, const unsigned char *buf, unsigned int len)
+{
+	static unsigned int voice_len[] = { 3, 3, 3, 3, 2, 2, 3 };
+	static unsigned int common_len[] = { 0, 2, 3, 2, 0, 0, 1, 1 };
+	unsigned int c;
+
+	for (; len > 0; len--) {
+		c = *buf;
+		buf++;
+
+		if (c >= 0xf8) {
+			/* clock events not used yet */
+		} else if (c >= 0xf0) {
+			if (u->mst == SYSEX_START &&
+			    c == SYSEX_END &&
+			    u->midx < MSGMAX) {
+				u->mmsg[u->midx++] = c;
+				sndio_midi_message(u, u->mmsg, u->midx);
+				continue;
+			}
+			u->mmsg[0] = c;
+			u->mlen = common_len[c & 7];
+			u->mst = c;
+			u->midx = 1;
+		} else if (c >= 0x80) {
+			u->mmsg[0] = c;
+			u->mlen = voice_len[(c >> 4) & 7];
+			u->mst = c;
+			u->midx = 1;
+		} else if (u->mst) {
+			if (u->midx == MSGMAX)
+				continue;	       
+			if (u->midx == 0)
+				u->mmsg[u->midx++] = u->mst;
+			u->mmsg[u->midx++] = c;
+			if (u->midx == u->mlen) {
+				sndio_midi_message(u, u->mmsg, u->midx);
+				u->midx = 0;
+			}
+		}
+	}
+}
+
+static int
+sndio_midi_setup(struct userdata *u)
+{
+	static const unsigned char dumpreq[] = {
+		SYSEX_START,
+		SYSEX_TYPE_EDU,
+		0,   
+		SYSEX_AUCAT,
+		SYSEX_AUCAT_DUMPREQ,
+		SYSEX_END
+	};
+	size_t		s;
+	struct pollfd	fds[10];
+	int		r, n;
+	unsigned char	buf[MSGMAX];
+
+	u->mio = mio_open("snd/0", MIO_IN | MIO_OUT, 1);
+	if (u->mio == NULL) {
+		pa_log("mio_open failed");
+		return (-1);
+	}
+	n = mio_nfds(u->mio);
+	if (n > 10) {
+		pa_log("mio_nfds");
+		return (-1);
+	}
+
+	u->rtpoll_item_mio = pa_rtpoll_item_new(u->rtpoll, PA_RTPOLL_NEVER, n);
+	if (u->rtpoll_item_mio == NULL) {
+		pa_log("could not allocate mio poll item");
+		return (-1);
+	}
+
+	mio_pollfd(u->mio, fds, POLLOUT);
+	r = poll(fds, n, 5000);
+	if (r <= 0) {
+		pa_log("mio POLLOUT");
+		return (-1);
+	}
+
+	s = mio_write(u->mio, dumpreq, sizeof(dumpreq));
+	pa_log_debug("mio_write: %zu / %zu", s, sizeof(dumpreq));
+	while (!u->mready) {
+		mio_pollfd(u->mio, fds, POLLIN);
+		r = poll(fds, n, 5000);
+		if (r <= 0) {
+			pa_log("mio POLLIN");
+			return (-1);
+		}
+		s = mio_read(u->mio, buf, sizeof buf);
+		pa_log_debug("mio_read: %zu", s);
+		if (s == 0) {
+			pa_log("mio_read()");
+			return (-1);
+		}
+		sndio_midi_input(u, buf, s);
+	}
+
+	return (0);
+}
 
 static void
 sndio_on_volume(void *arg, unsigned int vol)
@@ -112,7 +254,7 @@ sndio_get_volume(pa_sink *s)
 	int		 i;
 	uint32_t	 v;
 
-	if (u->volume >= SIO_MAXVOL)
+	if (u->master >= SIO_MAXVOL)
 		v = PA_VOLUME_NORM;
 	else
 		v = PA_CLAMP_VOLUME((u->volume * PA_VOLUME_NORM) / SIO_MAXVOL);
@@ -125,6 +267,7 @@ static void
 sndio_set_volume(pa_sink *s)
 {
 	struct userdata *u = s->userdata;
+	struct sysex	 msg;
 	unsigned int	 vol;
 
 	if (s->real_volume.values[0] >= PA_VOLUME_NORM)
@@ -132,7 +275,20 @@ sndio_set_volume(pa_sink *s)
 	else
 		vol = (s->real_volume.values[0] * SIO_MAXVOL) / PA_VOLUME_NORM;
 
+/*
 	sio_setvol(u->hdl, vol);
+*/
+
+	msg.start = SYSEX_START;
+	msg.type = SYSEX_TYPE_RT;
+	msg.id0 = SYSEX_CONTROL;
+	msg.id1 = SYSEX_MASTER;
+	msg.u.master.fine = 0;
+	msg.u.master.coarse = vol;
+	msg.u.master.end = SYSEX_END;
+	/* XXX do better */
+	if (mio_write(u->mio, &msg, SYSEX_SIZE(master)) != SYSEX_SIZE(master))
+		pa_log("set_volume: couldn't write message");
 }
 
 static int
@@ -143,44 +299,45 @@ sndio_sink_message(pa_msgobject *o, int code, void *data, int64_t offset,
 	pa_sink_state_t	 state;
 	int		 ret;
 
-	printf("sndio_sink_msg: obj=%p code=%i data=%p offset=%lli chunk=%p\n",
+	pa_log_debug(
+	    "sndio_sink_msg: obj=%p code=%i data=%p offset=%lli chunk=%p",
 	    o, code, data, offset, chunk);
 	switch (code) {
 	case PA_SINK_MESSAGE_GET_LATENCY:
-		printf("sink:PA_SINK_MESSAGE_GET_LATENCY\n");
+		pa_log_debug("sink:PA_SINK_MESSAGE_GET_LATENCY");
 		*(pa_usec_t*)data = pa_bytes_to_usec(u->par.bufsz,
 		    &u->sink->sample_spec);
 		return (0);
 	case PA_SINK_MESSAGE_SET_STATE:
-		printf("sink:PA_SINK_MESSAGE_SET_STATE ");
+		pa_log_debug("sink:PA_SINK_MESSAGE_SET_STATE ");
 		state = (pa_sink_state_t)(data);
 		switch (state) {
 		case PA_SINK_SUSPENDED:
-			printf("SUSPEND\n");
+			pa_log_debug("SUSPEND");
 			if (u->sink_running == 1)
 				sio_stop(u->hdl);
 			u->sink_running = 0;
 			break;
 		case PA_SINK_IDLE:
 		case PA_SINK_RUNNING:
-			printf((code == PA_SINK_IDLE) ? "IDLE\n" : "RUNNING\n");
+			pa_log_debug((code == PA_SINK_IDLE) ? "IDLE":"RUNNING");
 			if (u->sink_running == 0)
 				sio_start(u->hdl);
 			u->sink_running = 1;
 			break;
 		case PA_SINK_INVALID_STATE:
-			printf("INVALID_STATE\n");
+			pa_log_debug("INVALID_STATE");
 			break;
 		case PA_SINK_UNLINKED:
-			printf("UNLINKED\n");
+			pa_log_debug("UNLINKED");
 			break;
 		case PA_SINK_INIT:
-			printf("INIT\n");
+			pa_log_debug("INIT");
 			break;
 		}
 		break;
 	default:
-		printf("sink:PA_SINK_???\n");
+		pa_log_debug("sink:PA_SINK_???");
 	}
 
 	ret = pa_sink_process_msg(o, code, data, offset, chunk);
@@ -196,40 +353,41 @@ sndio_source_message(pa_msgobject *o, int code, void *data, int64_t offset,
 	pa_source_state_t	 state;
 	int			 ret;
 
-	printf("sndio_source_msg: obj=%p code=%i data=%p offset=%lli chunk=%p\n",
+	pa_log_debug(
+	    "sndio_source_msg: obj=%p code=%i data=%p offset=%lli chunk=%p",
 	    o, code, data, offset, chunk);
 	switch (code) {
 	case PA_SOURCE_MESSAGE_GET_LATENCY:
-		printf("source:PA_SOURCE_MESSAGE_GET_LATENCY\n");
+		pa_log_debug("source:PA_SOURCE_MESSAGE_GET_LATENCY");
 		*(pa_usec_t*)data = pa_bytes_to_usec(u->bufsz,
 		    &u->source->sample_spec);
 		return (0);
 	case PA_SOURCE_MESSAGE_SET_STATE:
-		printf("source:PA_SOURCE_MESSAGE_SET_STATE ");
+		pa_log_debug("source:PA_SOURCE_MESSAGE_SET_STATE ");
 		state = (pa_source_state_t)(data);
 		switch (state) {
 		case PA_SOURCE_SUSPENDED:
-			printf("SUSPEND\n");
+			pa_log_debug("SUSPEND");
 			sio_stop(u->hdl);
 			break;
 		case PA_SOURCE_IDLE:
 		case PA_SOURCE_RUNNING:
-			printf((code == PA_SOURCE_IDLE) ? "IDLE\n":"RUNNING\n");
+			pa_log_debug((code == PA_SOURCE_IDLE)?"IDLE":"RUNNING");
 			sio_start(u->hdl);
 			break;
 		case PA_SOURCE_INVALID_STATE:
-			printf("INVALID_STATE\n");
+			pa_log_debug("INVALID_STATE");
 			break;
 		case PA_SOURCE_UNLINKED:
-			printf("UNLINKED\n");
+			pa_log_debug("UNLINKED");
 			break;
 		case PA_SOURCE_INIT:
-			printf("INIT\n");
+			pa_log_debug("INIT");
 			break;
 		}
 		break;
 	default:
-		printf("source:PA_SOURCE_???\n");
+		pa_log_debug("source:PA_SOURCE_???");
 	}
 
 	ret = pa_source_process_msg(o, code, data, offset, chunk);
@@ -243,20 +401,22 @@ sndio_thread(void *arg)
 	struct userdata	*u = arg;
 	int		 ret;
 	short		 revents, events;
-	struct pollfd	*pollfds;
+	struct pollfd	*fds_sio, *fds_mio;
 	size_t		 w, r, l;
 	char		*p;
+	char		 buf[256];
 	struct pa_memchunk memchunk;
 
 	pa_log_debug("sndio thread starting up");
 
 	pa_thread_mq_install(&u->thread_mq);
 
-	pollfds = pa_rtpoll_item_get_pollfd(u->rtpoll_item, NULL);
+	fds_sio = pa_rtpoll_item_get_pollfd(u->rtpoll_item, NULL);
+	fds_mio = pa_rtpoll_item_get_pollfd(u->rtpoll_item_mio, NULL);
 
 	revents = 0;
 	for (;;) {
-		printf("sndio_thread: loop\n");
+		pa_log_debug("sndio_thread: loop");
 
 		/* ??? oss does that. */
 		if (u->sink
@@ -268,12 +428,13 @@ sndio_thread(void *arg)
 		    PA_SINK_IS_OPENED(u->sink->thread_info.state)
 		    && (revents & POLLOUT)) {
 			if (u->memchunk.length <= 0)
-                        	pa_sink_render(u->sink, u->bufsz, &u->memchunk);
+				pa_sink_render(u->sink, u->bufsz, &u->memchunk);
 			p = pa_memblock_acquire(u->memchunk.memblock);
 			w = sio_write(u->hdl, p + u->memchunk.index,
 			    u->memchunk.length);
 			pa_memblock_release(u->memchunk.memblock);
-			pa_log("wrote %zu bytes of %zu", w, u->memchunk.length);
+			pa_log_debug("wrote %zu bytes of %zu", w,
+			    u->memchunk.length);
 			u->memchunk.index += w;
 			u->memchunk.length -= w;
 			if (u->memchunk.length <= 0) {
@@ -293,7 +454,7 @@ sndio_thread(void *arg)
 			p = pa_memblock_acquire(memchunk.memblock);
 			r = sio_read(u->hdl, p, l);
 			pa_memblock_release(memchunk.memblock);
-			pa_log("read %zu bytes of %zu", r, l);
+			pa_log_debug("read %zu bytes of %zu", r, l);
 			memchunk.index = 0;
 			memchunk.length = r;
 			pa_source_post(u->source, &memchunk);
@@ -307,16 +468,34 @@ sndio_thread(void *arg)
 		if (u->sink &&
 		    PA_SINK_IS_OPENED(u->sink->thread_info.state))
 			events |= POLLOUT;
-		sio_pollfd(u->hdl, pollfds, events);
+		sio_pollfd(u->hdl, fds_sio, events);
+
+		mio_pollfd(u->mio, fds_mio, POLLIN);
 
 		if ((ret = pa_rtpoll_run(u->rtpoll, TRUE)) < 0)
-            		goto fail;
+	    		goto fail;
 		if (ret == 0)
-            		goto finish;
+	    		goto finish;
 
-		revents = sio_revents(u->hdl, pollfds);
+		revents = mio_revents(u->mio, fds_mio);
+		if (revents & POLLHUP) {
+			pa_log("mio POLLHUP!");
+			break;
+		}
+		if (revents && POLLIN) {
+			r = mio_read(u->mio, buf, sizeof buf);
+			if (mio_eof(u->mio)) {
+				pa_log("mio error");
+				break;
+			}
+			if (r)
+				sndio_midi_input(u, buf, r);
+		}
 
-		printf("sndio_thread: loop ret=%i, revents=%x\n", ret, (int)revents);
+		revents = sio_revents(u->hdl, fds_sio);
+
+		pa_log_debug("sndio_thread: loop ret=%i, revents=%x", ret,
+		    (int)revents);
 
 		if (revents & POLLHUP) {
 			pa_log("POLLHUP!");
@@ -580,7 +759,7 @@ pa__init(pa_module *m)
 			goto fail;
 		}
 
-        	u->source->userdata = u;
+		u->source->userdata = u;
 		u->source->parent.process_msg = sndio_source_message;
 		pa_source_set_asyncmsgq(u->source, u->thread_mq.inq);
 		pa_source_set_rtpoll(u->source, u->rtpoll);
@@ -590,10 +769,13 @@ pa__init(pa_module *m)
 */
 	}
 
-	pa_log("buffer: frame=%zu bytes=%zu msec=%zu", u->par.bufsz, u->bufsz, 
-		pa_bytes_to_usec(u->bufsz, &u->sink->sample_spec));
+	pa_log_debug("buffer: frame=%u bytes=%zu msec=%u", u->par.bufsz,
+	    u->bufsz,  pa_bytes_to_usec(u->bufsz, &u->sink->sample_spec));
 
 	pa_memchunk_reset(&u->memchunk);
+
+	if (sndio_midi_setup(u) == -1)
+		goto fail;
 
 	if ((u->thread = pa_thread_new("sndio", sndio_thread, u)) == NULL) {
 		pa_log("Failed to create sndio thread.");
@@ -630,7 +812,7 @@ pa__done(pa_module *m)
 	if (u->source)
 		pa_source_unlink(u->source);
 	if (u->thread) {
-        	pa_asyncmsgq_send(u->thread_mq.inq, NULL, PA_MESSAGE_SHUTDOWN,
+		pa_asyncmsgq_send(u->thread_mq.inq, NULL, PA_MESSAGE_SHUTDOWN,
 		    NULL, 0, NULL);
 		pa_thread_free(u->thread);
 	}
@@ -644,9 +826,13 @@ pa__done(pa_module *m)
 		pa_memblock_unref(u->memchunk.memblock);
 	if (u->rtpoll_item)
 		pa_rtpoll_item_free(u->rtpoll_item);
+	if (u->rtpoll_item_mio)
+		pa_rtpoll_item_free(u->rtpoll_item_mio);
 	if (u->rtpoll)
 		pa_rtpoll_free(u->rtpoll);
 	if (u->hdl)
 		sio_close(u->hdl);
+	if (u->mio)
+		mio_close(u->mio);
 	free(u);
 }
