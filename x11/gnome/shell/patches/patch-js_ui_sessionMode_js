@@ -1,0 +1,15 @@
+$OpenBSD: patch-js_ui_sessionMode_js,v 1.1 2012/10/08 11:33:21 ajacoutot Exp $
+
+XXX fix this the correct way (if HAVE_NETWORK_MANAGER) and push it upstream
+
+--- js/ui/sessionMode.js.orig	Mon Oct  8 14:59:38 2012
++++ js/ui/sessionMode.js	Mon Oct  8 15:00:06 2012
+@@ -91,7 +91,7 @@ const _modes = {
+         isLocked: false,
+         isPrimary: true,
+         unlockDialog: imports.ui.unlockDialog.UnlockDialog,
+-        components: ['networkAgent', 'polkitAgent', 'telepathyClient',
++        components: ['polkitAgent', 'telepathyClient',
+                      'keyring', 'recorder', 'autorunManager', 'automountManager'],
+         panel: {
+             left: ['activities', 'appMenu'],
