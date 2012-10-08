@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2012/07/07 08:26:29 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.27 2012/10/08 22:28:34 kirby Exp $
 @pkgpath games/wesnoth,tinygui
 !%%lite%%
 @bin bin/campaignd
@@ -11763,6 +11763,7 @@ share/wesnoth/data/tools/unit_tree/html_output.py
 share/wesnoth/data/tools/unit_tree/menu.js
 share/wesnoth/data/tools/unit_tree/overview.py
 share/wesnoth/data/tools/unit_tree/style.css
+share/wesnoth/data/tools/unit_tree/wiki_output.py
 share/wesnoth/data/tools/vim/
 share/wesnoth/data/tools/vim/formulaai.vim
 share/wesnoth/data/tools/wesnoth/
