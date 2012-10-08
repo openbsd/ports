@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2012/08/25 14:45:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2012/10/08 10:39:24 ajacoutot Exp $
 
 COMMENT=	C++ class library for working with Internet mail
 
@@ -7,7 +7,7 @@ DISTNAME=	libvmime-${VMIME_V}+svn603
 EXTRACT_SUFX=	.tar.bz2
 
 PKGNAME=	libvmime-${VMIME_V}
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS+=  vmime    2.0     # 0.0
 
@@ -27,7 +27,7 @@ CATEGORIES=	devel mail
 
 HOMEPAGE=	http://www.vmime.org/
 
-MAINTAINER=	Antoine Jacoutot <ajacoutot@bsdfrog.org>
+MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
