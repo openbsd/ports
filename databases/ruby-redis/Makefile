@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2012/09/23 16:57:33 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2012/10/08 08:19:46 dcoppa Exp $
 
 COMMENT =	client library for the Redis key-value store
 
-VERSION =	3.0.1
+VERSION =	3.0.2
 DISTNAME =	redis-${VERSION}
-REVISION =	0
 CATEGORIES =	databases
 
 HOMEPAGE =	http://redis-rb.keyvalue.org/
@@ -26,7 +25,7 @@ MODRUBY_REGRESS =	rake
 REGRESS_DEPENDS =	databases/redis
 
 # Be sure to have a redis server running with the command:
-# cd ${WRKSRC} && sudo redis-server ./test/test.conf
+# cd $(make show=WRKBUILD) && sudo redis-server ./test/test.conf
 REGRESS_IS_INTERACTIVE =Yes
 
 post-install:
