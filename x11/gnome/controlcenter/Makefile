@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.75 2012/10/05 11:25:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.76 2012/10/08 17:19:42 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
-GNOME_VERSION=		3.6.0
+GNOME_VERSION=		3.6.1
 
 CATEGORIES=		x11
 
@@ -47,10 +47,10 @@ LIB_DEPENDS=		x11/gnome/desktop>=3.6.0 \
 			audio/libcanberra,-gtk3 \
 			graphics/colord
 
-BUILD_DEPENDS=		x11/gnome/settings-daemon>=3.6.0 \
+BUILD_DEPENDS=		x11/gnome/settings-daemon>=3.6.1 \
 			devel/iso-codes \
 			devel/gsettings-desktop-schemas
-RUN_DEPENDS=		x11/gnome/settings-daemon>=3.6.0 \
+RUN_DEPENDS=		x11/gnome/settings-daemon>=3.6.1 \
 			devel/iso-codes \
 			devel/gsettings-desktop-schemas
 

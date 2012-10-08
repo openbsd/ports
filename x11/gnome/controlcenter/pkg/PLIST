@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2012/09/28 09:34:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2012/10/08 17:19:42 ajacoutot Exp $
 @conflict control-center-1*
 @conflict control-center2-*
 @conflict gnome-media-<2.91.2p3
@@ -112,6 +112,8 @@ share/gnome-control-center/keybindings/01-launchers.xml
 share/gnome-control-center/keybindings/01-screenshot.xml
 share/gnome-control-center/keybindings/01-system.xml
 share/gnome-control-center/keybindings/50-accessibility.xml
+share/gnome-control-center/pixmaps/
+share/gnome-control-center/pixmaps/noise-texture-light.png
 share/gnome-control-center/sounds/
 share/gnome-control-center/sounds/gnome-sounds-default.xml
 share/gnome-control-center/ui/
@@ -355,12 +357,14 @@ share/locale/ja/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/ka/LC_MESSAGES/gnome-control-center-2.0-timezones.mo
 share/locale/ka/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/kk/LC_MESSAGES/gnome-control-center-2.0.mo
+share/locale/km/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/kn/LC_MESSAGES/gnome-control-center-2.0-timezones.mo
 share/locale/kn/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/ko/LC_MESSAGES/gnome-control-center-2.0-timezones.mo
 share/locale/ko/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/ku/LC_MESSAGES/gnome-control-center-2.0-timezones.mo
 share/locale/ku/LC_MESSAGES/gnome-control-center-2.0.mo
+share/locale/ky/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/lo/LC_MESSAGES/gnome-control-center-2.0-timezones.mo
 share/locale/lt/LC_MESSAGES/gnome-control-center-2.0-timezones.mo
 share/locale/lt/LC_MESSAGES/gnome-control-center-2.0.mo
