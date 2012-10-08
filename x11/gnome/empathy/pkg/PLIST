@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.29 2012/10/03 11:53:53 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.30 2012/10/08 15:05:57 jasper Exp $
 @bin bin/empathy
 @bin bin/empathy-accounts
 @bin bin/empathy-debugger
 lib/empathy/
 lib/empathy/lib${FULLPKGNAME}.so
-lib/empathy/libempathy-gtk-3.6.0.1.so
+lib/empathy/libempathy-gtk-3.6.0.3.so
 lib/empathy/libempathy-gtk.a
 lib/empathy/libempathy-gtk.la
 lib/empathy/libempathy-gtk.so
@@ -1564,6 +1564,7 @@ share/locale/id/LC_MESSAGES/empathy.mo
 share/locale/it/LC_MESSAGES/empathy.mo
 share/locale/ja/LC_MESSAGES/empathy.mo
 share/locale/kk/LC_MESSAGES/empathy.mo
+share/locale/km/LC_MESSAGES/empathy.mo
 share/locale/kn/LC_MESSAGES/empathy.mo
 share/locale/ko/LC_MESSAGES/empathy.mo
 share/locale/ku/LC_MESSAGES/empathy.mo
