@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2012/09/26 20:45:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2012/10/09 10:20:05 jeremy Exp $
 
 COMMENT =		text-based presentation program
 
 DISTNAME =		tpp-1.3.1
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		misc productivity
 
