@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.132 2012/10/08 21:47:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.133 2012/10/09 13:18:00 ajacoutot Exp $
 
 BROKEN=			needs pam(3)
 
@@ -71,6 +71,7 @@ CONFIGURE_ARGS=		--disable-static \
 			--with-group=_gdm \
 			--with-console-kit \
 			--with-xauth-dir=/var/run/gdm \
+			--with-initial-vt=05 \
 			--without-systemd \
 			--without-tcp-wrappers \
 			--disable-console-helper

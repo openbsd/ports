@@ -1,7 +1,7 @@
-# $OpenBSD: gdm-launch-environment,v 1.1 2012/10/08 21:47:04 ajacoutot Exp $
+# $OpenBSD: gdm-launch-environment,v 1.2 2012/10/09 13:18:00 ajacoutot Exp $
 
 auth		required	pam_permit.so
 account		required	pam_nologin.so
-account		include		system-auth
-password	include		system-auth
-session		include		system-auth
+account		include		system
+password	include		system
+session		include		system
