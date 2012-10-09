@@ -1,4 +1,5 @@
-@comment $OpenBSD: PFRAG.native,v 1.5 2011/01/19 23:36:18 jasper Exp $
+@comment $OpenBSD: PFRAG.native,v 1.6 2012/10/09 09:22:24 dcoppa Exp $
+%%dynlink%%
 lib/ocaml/lablgtk2/gAction.cmx
 lib/ocaml/lablgtk2/gAssistant.cmx
 lib/ocaml/lablgtk2/gBin.cmx
@@ -34,45 +35,71 @@ lib/ocaml/lablgtk2/glib.cmx
 lib/ocaml/lablgtk2/gobject.cmx
 lib/ocaml/lablgtk2/gpointer.cmx
 lib/ocaml/lablgtk2/gtk.cmx
+lib/ocaml/lablgtk2/gtkActionProps.cmx
 lib/ocaml/lablgtk2/gtkAssistant.cmx
+lib/ocaml/lablgtk2/gtkAssistantProps.cmx
 lib/ocaml/lablgtk2/gtkBase.cmx
+lib/ocaml/lablgtk2/gtkBaseProps.cmx
 lib/ocaml/lablgtk2/gtkBin.cmx
+lib/ocaml/lablgtk2/gtkBinProps.cmx
 lib/ocaml/lablgtk2/gtkBroken.cmx
+lib/ocaml/lablgtk2/gtkBrokenProps.cmx
 lib/ocaml/lablgtk2/gtkButton.cmx
+lib/ocaml/lablgtk2/gtkButtonProps.cmx
 lib/ocaml/lablgtk2/gtkData.cmx
 lib/ocaml/lablgtk2/gtkEdit.cmx
+lib/ocaml/lablgtk2/gtkEditProps.cmx
 lib/ocaml/lablgtk2/gtkEnums.cmx
 lib/ocaml/lablgtk2/gtkFile.cmx
+lib/ocaml/lablgtk2/gtkFileProps.cmx
 lib/ocaml/lablgtk2/gtkInit.cmx
 lib/ocaml/lablgtk2/gtkInit.o
 lib/ocaml/lablgtk2/gtkList.cmx
+lib/ocaml/lablgtk2/gtkListProps.cmx
 lib/ocaml/lablgtk2/gtkMain.cmx
 lib/ocaml/lablgtk2/gtkMenu.cmx
+lib/ocaml/lablgtk2/gtkMenuProps.cmx
 lib/ocaml/lablgtk2/gtkMisc.cmx
+lib/ocaml/lablgtk2/gtkMiscProps.cmx
 lib/ocaml/lablgtk2/gtkObject.cmx
 lib/ocaml/lablgtk2/gtkPack.cmx
+lib/ocaml/lablgtk2/gtkPackProps.cmx
 lib/ocaml/lablgtk2/gtkRange.cmx
+lib/ocaml/lablgtk2/gtkRangeProps.cmx
 lib/ocaml/lablgtk2/gtkSignal.cmx
 lib/ocaml/lablgtk2/gtkSourceView2.cmx
 lib/ocaml/lablgtk2/gtkStock.cmx
 lib/ocaml/lablgtk2/gtkText.cmx
+lib/ocaml/lablgtk2/gtkTextProps.cmx
 lib/ocaml/lablgtk2/gtkThread.cmx
 lib/ocaml/lablgtk2/gtkThread.o
 lib/ocaml/lablgtk2/gtkTree.cmx
+lib/ocaml/lablgtk2/gtkTreeProps.cmx
 lib/ocaml/lablgtk2/gtkWindow.cmx
 lib/ocaml/lablgtk2/gutf8.cmx
 lib/ocaml/lablgtk2/lablglade.a
 lib/ocaml/lablgtk2/lablglade.cmxa
-@bin lib/ocaml/lablgtk2/lablglade.cmxs
 lib/ocaml/lablgtk2/lablgtk.a
 lib/ocaml/lablgtk2/lablgtk.cmxa
-@bin lib/ocaml/lablgtk2/lablgtk.cmxs
 lib/ocaml/lablgtk2/lablgtksourceview2.a
 lib/ocaml/lablgtk2/lablgtksourceview2.cmxa
-@bin lib/ocaml/lablgtk2/lablgtksourceview2.cmxs
 lib/ocaml/lablgtk2/lablrsvg.a
 lib/ocaml/lablgtk2/lablrsvg.cmxa
-@bin lib/ocaml/lablgtk2/lablrsvg.cmxs
+lib/ocaml/lablgtk2/ogtkActionProps.cmx
+lib/ocaml/lablgtk2/ogtkAssistantProps.cmx
+lib/ocaml/lablgtk2/ogtkBaseProps.cmx
+lib/ocaml/lablgtk2/ogtkBinProps.cmx
+lib/ocaml/lablgtk2/ogtkBrokenProps.cmx
+lib/ocaml/lablgtk2/ogtkButtonProps.cmx
+lib/ocaml/lablgtk2/ogtkEditProps.cmx
+lib/ocaml/lablgtk2/ogtkFileProps.cmx
+lib/ocaml/lablgtk2/ogtkListProps.cmx
+lib/ocaml/lablgtk2/ogtkMenuProps.cmx
+lib/ocaml/lablgtk2/ogtkMiscProps.cmx
+lib/ocaml/lablgtk2/ogtkPackProps.cmx
+lib/ocaml/lablgtk2/ogtkRangeProps.cmx
+lib/ocaml/lablgtk2/ogtkTextProps.cmx
+lib/ocaml/lablgtk2/ogtkTreeProps.cmx
 lib/ocaml/lablgtk2/pango.cmx
 lib/ocaml/lablgtk2/pangoEnums.cmx
 lib/ocaml/lablgtk2/rsvg.cmx

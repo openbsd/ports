@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile,v 1.1.1.1 2009/05/28 09:18:24 giovanni Exp $
---- src/Makefile.orig	Fri Dec 26 05:28:27 2008
-+++ src/Makefile	Tue May 19 18:38:19 2009
-@@ -46,7 +46,7 @@ CUSTOM = -custom
+$OpenBSD: patch-src_Makefile,v 1.2 2012/10/09 09:22:24 dcoppa Exp $
+--- src/Makefile.orig	Thu Aug 23 12:37:48 2012
++++ src/Makefile	Fri Aug 24 12:06:15 2012
+@@ -48,7 +48,7 @@ CUSTOM = -custom
  #MLLINK += -cclib -lcamlrund
  MLBYTEFLAGS = -g -dtypes
  else
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_Makefile,v 1.1.1.1 2009/05/28 09:18:24 giovanni Exp $
  ifneq ($(TOOLCHAIN),msvc)
  CFLAGS += -O
  endif
-@@ -61,7 +61,7 @@ endif
+@@ -63,7 +63,7 @@ endif
  THLINK = unix.cma threads.cma
  
  ifdef USE_CC
