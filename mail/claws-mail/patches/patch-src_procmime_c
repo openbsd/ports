@@ -1,9 +1,10 @@
-$OpenBSD: patch-src_procmime_c,v 1.7 2012/06/29 14:02:54 landry Exp $
+$OpenBSD: patch-src_procmime_c,v 1.8 2012/10/09 17:01:16 sthen Exp $
 http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2640
 http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2641
 http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2642
---- src/procmime.c.orig	Fri Dec 16 09:09:32 2011
-+++ src/procmime.c	Tue Apr  3 14:59:40 2012
+http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2743
+--- src/procmime.c.orig	Wed Jun 27 11:05:22 2012
++++ src/procmime.c	Tue Oct  9 18:51:08 2012
 @@ -562,16 +562,29 @@ gboolean procmime_encode_content(MimeInfo *mimeinfo, E
  			g_free(tmp_file);
  		}
@@ -164,3 +165,12 @@ http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2642
  	} else {
  		debug_print("using 7bit\n");
  		return ENC_7BIT;
+@@ -1753,6 +1814,8 @@ static void parse_parameters(const gchar *parameters, 
+ 			continue;
+ 
+ 		charset = value;
++		if (charset == NULL)
++			continue;
+ 		lang = strchr(charset, '\'');
+ 		if (lang == NULL)
+ 			continue;
