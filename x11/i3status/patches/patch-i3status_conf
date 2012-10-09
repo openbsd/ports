@@ -1,10 +1,10 @@
-$OpenBSD: patch-i3status_conf,v 1.8 2012/10/09 13:19:48 jasper Exp $
+$OpenBSD: patch-i3status_conf,v 1.9 2012/10/09 16:02:07 jasper Exp $
 
 Adjust config file to be reasonably useful on OpenBSD out of the box.
 
 --- i3status.conf.orig	Wed Oct  3 13:44:44 2012
-+++ i3status.conf	Tue Oct  9 17:12:12 2012
-@@ -1,41 +1,37 @@
++++ i3status.conf	Tue Oct  9 19:44:34 2012
+@@ -1,41 +1,43 @@
  general {
 +        output_format = "i3bar"
          colors = true
@@ -22,18 +22,24 @@ Adjust config file to be reasonably useful on OpenBSD out of the box.
  order += "battery 0"
  order += "load"
  order += "time"
-+order += "cpu_temperature acpitz0" # device is not configureable...
++order += "cpu_temperature cpu0" 
++order += "cpu_temperature acpitz0"
 +order += "volume master"
  
 -wireless wlan0 {
 -        format_up = "W: (%quality at %essid) %ip"
 -        format_down = "W: down"
-+cpu_temperature acpitz0 {
-+        format = "TZ: %degrees C" 
++cpu_temperature cpu0 {
++        format = "C: %degrees C"
++        path = "cpu0"
  }
  
 -ethernet eth0 {
 -        # if you use %speed, i3status requires root privileges
++cpu_temperature acpitz0 {
++        format = "TZ: %degrees C" 
++}
++
 +#wireless iwn0 {
 +#        format_up = "W: (%signal at %essid) %ip"
 +#        format_down = "W: down"
@@ -60,7 +66,7 @@ Adjust config file to be reasonably useful on OpenBSD out of the box.
  time {
          format = "%Y-%m-%d %H:%M:%S"
  }
-@@ -46,4 +42,8 @@ load {
+@@ -46,4 +48,8 @@ load {
  
  disk "/" {
          format = "%free (or: %percentage_used used, %percentage_used_of_avail used of avail, %percentage_free free, %percentage_avail avail)"

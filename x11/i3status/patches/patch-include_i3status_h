@@ -1,22 +1,28 @@
-$OpenBSD: patch-include_i3status_h,v 1.5 2012/10/09 13:19:48 jasper Exp $
+$OpenBSD: patch-include_i3status_h,v 1.6 2012/10/09 16:02:07 jasper Exp $
 
 Default to acpitz(4) for temperature readings, instead of cpu(4).
 The acpitz(4) values are eventually used by the kernel to determine if the machine
 is getting too hot.
 
---- include/i3status.h.orig	Tue Oct  9 17:10:15 2012
-+++ include/i3status.h	Tue Oct  9 17:10:22 2012
-@@ -31,9 +31,11 @@ enum { O_DZEN2, O_XMOBAR, O_I3BAR, O_NONE } output_for
-  * Due to the fact there are various ways to obtain a temperature reading, THERMAL_ZONE will need
-  * to be adjustable enough for those situations. As it can either be hw.sensors.cpu%d.temp0, or
-  * hw.sensors.acpitz%d.temp0 or even something different entirely within hw.sensors.%s.temp0.
-- * XXX: For now just check cpu%d.temp0. Adjust this later.
-+ * XXX:
-+ * Due to the fact the i3status API only allows to set the THERMAL_ZONE parameter to an integer,
-+ * we can't make this fully configureable (yet?).
-  */
--#define THERMAL_ZONE "cpu%d"
-+#define THERMAL_ZONE "acpitz%d"
+Other devices can be used by setting 'path' in the config file to the sysctl(3) 
+device node.
+
+--- include/i3status.h.orig	Wed Oct  3 13:44:44 2012
++++ include/i3status.h	Tue Oct  9 19:39:37 2012
+@@ -27,14 +27,8 @@ enum { O_DZEN2, O_XMOBAR, O_I3BAR, O_NONE } output_for
+ #define BATT_STATE "hw.acpi.battery.state"
  
+ #elif defined(__OpenBSD__)
+-/*
+- * Due to the fact there are various ways to obtain a temperature reading, THERMAL_ZONE will need
+- * to be adjustable enough for those situations. As it can either be hw.sensors.cpu%d.temp0, or
+- * hw.sensors.acpitz%d.temp0 or even something different entirely within hw.sensors.%s.temp0.
+- * XXX: For now just check cpu%d.temp0. Adjust this later.
+- */
+-#define THERMAL_ZONE "cpu%d"
+-
++/* Default to acpitz(4) if no path is set. */
++#define THERMAL_ZONE "acpitz%d"
  #endif
  
+ #if defined(__FreeBSD_kernel__) && defined(__GLIBC__)
