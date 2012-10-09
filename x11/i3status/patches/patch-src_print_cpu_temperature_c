@@ -1,0 +1,43 @@
+$OpenBSD: patch-src_print_cpu_temperature_c,v 1.3 2012/10/09 13:19:48 jasper Exp $
+
+Default to acpitz(4) for temperature readings, instead of cpu(4).
+The acpitz(4) values are eventually used by the kernel to determine if the machine
+is getting too hot.
+
+--- src/print_cpu_temperature.c.orig	Tue Oct  9 17:09:57 2012
++++ src/print_cpu_temperature.c	Tue Oct  9 17:10:07 2012
+@@ -88,18 +88,19 @@ void print_cpu_temperature_info(yajl_gen json_gen, cha
+ 			goto error;
+ 		}
+ 		/*
+-		 * 'path' is actually the node within the full path (eg, cpu0).
++		 * 'path' is actually the node within the full path (currently always acpitz0).
+ 		 * XXX: Extend the API to allow a string instead of just an int for path, this would
+-		 * allow us to have a path of 'acpitz0' for example.
++		 * allow us to build an arbitrary path.
+ 		 */
+ 		if (strncmp(sensordev.xname, path, strlen(path)) == 0) {
+ 			mib[3] = SENSOR_TEMP;
+ 			for (numt = 0; numt < sensordev.maxnumt[SENSOR_TEMP]; numt++) {
+ 				mib[4] = numt;
+ 				if (sysctl(mib, 5, &sensor, &slen, NULL, 0) == -1) {
+-					if (errno != ENOENT)
++					if (errno != ENOENT) {
+ 						warn("sysctl");
+-					continue;
++						continue;
++					}
+ 				}
+ 				outwalk += sprintf(outwalk, "%.2f", (sensor.value - 273150000) / 1000000.0 );
+ 			}
+@@ -109,9 +110,9 @@ void print_cpu_temperature_info(yajl_gen json_gen, cha
+                         walk += strlen("degrees");
+                 }
+         }
++error:
+         OUTPUT_FULL_TEXT(buffer);
+         return;
+-error:
+ #endif
+         OUTPUT_FULL_TEXT("cant read temp");
+         (void)fputs("i3status: Cannot read temperature. Verify that you have a thermal zone in /sys/class/thermal or disable the cpu_temperature module in your i3status config.\n", stderr);
