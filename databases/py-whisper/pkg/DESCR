@@ -1,0 +1,5 @@
+py-whisper is a fixed-size database, similar in design and purpose to
+RRD (round-robin-database). It provides fast, reliable storage of
+numeric data over time. Whisper allows for higher resolution (seconds
+per point) of recent data to degrade into lower resolutions for
+long-term retention of historical data.
