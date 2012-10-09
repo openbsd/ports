@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/11/04 08:21:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2012/10/09 15:52:51 naddy Exp $
 
 COMMENT=	IBM 3270 terminal emulator for the X Window System
 
@@ -21,6 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xt c crypto ssl \
 			util
 
+BUILD_DEPENDS=		devel/imake
 RUN_DEPENDS=		comms/c3270
 
 USE_GROFF =		Yes
