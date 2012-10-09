@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2012/08/30 18:41:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2012/10/09 16:23:15 robert Exp $
 
 COMMENT =	full-text search engine library
 CATEGORIES =	textproc
 DISTNAME =	clucene-core-2.3.3.4
+
+REVISION =	0
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=clucene/}
 
