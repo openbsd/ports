@@ -1,19 +1,4 @@
-@comment $OpenBSD: PLIST-spamassassin,v 1.4 2011/01/15 09:21:31 sthen Exp $
-@pkgpath mail/sylpheed-claws,-spamassassin
-@pkgpath mail/sylpheed-claws,-spamassassin,compface
-@pkgpath mail/sylpheed-claws,-spamassassin,pgpmime
-@pkgpath mail/sylpheed-claws,-spamassassin,jpilot
-@pkgpath mail/sylpheed-claws,-spamassassin,ldap
-@pkgpath mail/sylpheed-claws,-spamassassin,compface,pgpmime
-@pkgpath mail/sylpheed-claws,-spamassassin,compface,jpilot
-@pkgpath mail/sylpheed-claws,-spamassassin,compface,ldap
-@pkgpath mail/sylpheed-claws,-spamassassin,pgpmime,jpilot
-@pkgpath mail/sylpheed-claws,-spamassassin,pgpmime,ldap
-@pkgpath mail/sylpheed-claws,-spamassassin,jpilot,ldap
-@pkgpath mail/sylpheed-claws,-spamassassin,compface,pgpmime,jpilot
-@pkgpath mail/sylpheed-claws,-spamassassin,compface,pgpmime,ldap
-@pkgpath mail/sylpheed-claws,-spamassassin,compface,jpilot,ldap
-@pkgpath mail/sylpheed-claws,-spamassassin,pgpmime,jpilot,ldap
-@pkgpath mail/sylpheed-claws,-spamassassin,compface,pgpmime,jpilot,ldap
+@comment $OpenBSD: PLIST-spamassassin,v 1.5 2012/10/09 16:41:29 sthen Exp $
+@pkgpath mail/sylpheed-claws,-spamassassin[,compface][,pgpmime][,jpilot][,ldap]
 lib/claws-mail/plugins/spamassassin.la
 lib/claws-mail/plugins/spamassassin.so
