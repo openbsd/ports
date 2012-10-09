@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/09 20:08:21 jasper Exp $
+@bin bin/yad
+@man man/man1/yad.1
+share/aclocal/yad.m4
+share/icons/hicolor/128x128/apps/yad.png
+share/icons/hicolor/16x16/apps/yad.png
+share/icons/hicolor/24x24/apps/yad.png
+share/icons/hicolor/32x32/apps/yad.png
+share/icons/hicolor/48x48/apps/yad.png
+share/icons/hicolor/96x96/apps/yad.png
+share/locale/de/LC_MESSAGES/yad.mo
+share/locale/fr/LC_MESSAGES/yad.mo
+share/locale/ru/LC_MESSAGES/yad.mo
+share/locale/sk/LC_MESSAGES/yad.mo
+share/locale/uk/LC_MESSAGES/yad.mo
+share/locale/zh_TW/LC_MESSAGES/yad.mo
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
