@@ -1,15 +1,49 @@
-$OpenBSD: patch-src_print_cpu_temperature_c,v 1.4 2012/10/09 16:02:07 jasper Exp $
+$OpenBSD: patch-src_print_cpu_temperature_c,v 1.5 2012/10/09 17:12:31 jasper Exp $
 
-Default to acpitz(4) for temperature readings, instead of cpu(4).
-The acpitz(4) values are eventually used by the kernel to determine if the machine
-is getting too hot.
+- Default to acpitz(4) for temperature readings, instead of cpu(4).
+  The acpitz(4) values are eventually used by the kernel to determine if the machine
+  is getting too hot.
 
-Other devices can be used by setting 'path' in the config file to the sysctl(3)
-device node.
+  Other devices can be used by setting 'path' in the config file to the sysctl(3)
+  device node.
+
+- Temperature sensors can now set a 'max_threshold' value to color the
+  output red if exceeded.
 
 --- src/print_cpu_temperature.c.orig	Wed Oct  3 13:44:44 2012
-+++ src/print_cpu_temperature.c	Tue Oct  9 19:41:02 2012
-@@ -87,19 +87,17 @@ void print_cpu_temperature_info(yajl_gen json_gen, cha
++++ src/print_cpu_temperature.c	Tue Oct  9 20:36:23 2012
+@@ -23,6 +23,8 @@
+ #include <sys/sensors.h>
+ #include <errno.h>
+ #include <err.h>
++
++#define MUKTOC(v) ((v - 273150000) / 1000000.0)
+ #endif
+ 
+ static char *thermal_zone;
+@@ -32,11 +34,11 @@ static char *thermal_zone;
+  * returns the temperature in degree celcius.
+  *
+  */
+-void print_cpu_temperature_info(yajl_gen json_gen, char *buffer, int zone, const char *path, const char *format) {
++void print_cpu_temperature_info(yajl_gen json_gen, char *buffer, int zone, const char *path, const char *format, int max_threshold) {
+ #ifdef THERMAL_ZONE
+         const char *walk;
+         char *outwalk = buffer;
+-        static char buf[16];
++	bool colorful_output;
+ 
+         if (path == NULL)
+                 asprintf(&thermal_zone, THERMAL_ZONE, zone);
+@@ -54,6 +56,7 @@ void print_cpu_temperature_info(yajl_gen json_gen, cha
+ 
+                 if (BEGINS_WITH(walk+1, "degrees")) {
+ #if defined(LINUX)
++		        static char buf[16];
+                         long int temp;
+                         if (!slurp(path, buf, sizeof(buf)))
+                                 goto error;
+@@ -87,21 +90,27 @@ void print_cpu_temperature_info(yajl_gen json_gen, cha
  				break;
  			goto error;
  		}
@@ -33,9 +67,20 @@ device node.
 +						continue;
 +					}
  				}
- 				outwalk += sprintf(outwalk, "%.2f", (sensor.value - 273150000) / 1000000.0 );
+-				outwalk += sprintf(outwalk, "%.2f", (sensor.value - 273150000) / 1000000.0 );
++				if ((int)MUKTOC(sensor.value) >= max_threshold) {
++					START_COLOR("color_bad");
++					colorful_output = true;
++				}
++
++				outwalk += sprintf(outwalk, "%.2f", MUKTOC(sensor.value));
++
++				if (colorful_output)
++					END_COLOR;
  			}
-@@ -109,9 +107,9 @@ void print_cpu_temperature_info(yajl_gen json_gen, cha
+ 		}
+ 	}
+@@ -109,9 +118,9 @@ void print_cpu_temperature_info(yajl_gen json_gen, cha
                          walk += strlen("degrees");
                  }
          }

@@ -1,0 +1,24 @@
+$OpenBSD: patch-man_i3status_man,v 1.3 2012/10/09 17:12:31 jasper Exp $
+
+- Temperature sensors can now set a 'max_threshold' value to color the
+  output red if exceeded.
+
+--- man/i3status.man.orig	Tue Oct  9 20:35:35 2012
++++ man/i3status.man	Tue Oct  9 20:35:43 2012
+@@ -224,11 +224,15 @@ colored red. The low_threshold type can be of threshol
+ 
+ === CPU-Temperature
+ 
+-Gets the temperature of the given thermal zone.
++Gets the temperature of the given thermal zone. It is possible to
++define a max_threshold that will color the temperature red in case the
++specified thermal zone is getting too hot. Defaults to 75 degrees C.
+ 
+ *Example order*: +cpu_temperature 0+
+ 
+ *Example format*: +T: %degrees °C+
++
++*Example max_threshold*: +42+
+ 
+ === CPU Usage
+ 
