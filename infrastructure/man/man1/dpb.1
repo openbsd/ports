@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.42 2012/10/08 12:41:03 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.43 2012/10/09 20:35:57 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: October 8 2012 $
+.Dd $Mdocdate: October 9 2012 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -361,7 +361,7 @@ will not start new jobs on the same host until the big job has
 stolen enough cores from other finishing jobs.
 .Pp
 Only big ports which are safe for parallel building (annotated with
-DPB_PROPERTIES = parallel in their Makefile will be affected.
+DPB_PROPERTIES = parallel in their Makefile) will be affected.
 .Pp
 It is advisable to set k to an integral fraction of the
 number of cores available on a given host.
