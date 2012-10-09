@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.501 2012/09/27 14:58:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.502 2012/10/09 20:08:56 jasper Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -364,6 +364,7 @@
      SUBDIR += xwit
      SUBDIR += xwrits
      SUBDIR += xzoom
+     SUBDIR += yad
      SUBDIR += yakuake
      SUBDIR += yeahlaunch
 
