@@ -1,9 +1,12 @@
-$OpenBSD: patch-src_print_wireless_info_c,v 1.1 2012/10/08 18:07:06 jasper Exp $
+$OpenBSD: patch-src_print_wireless_info_c,v 1.2 2012/10/09 11:29:24 jasper Exp $
 
 - implement %signal and %essid
+- handle down wireless interfaces just like ethernet interfaces (e.g. colors!)
+  (added bonus of this approach is that you still get nwid and signal strength
+  info of the interface, for example when it's part of a trunk device.)
 
---- src/print_wireless_info.c.orig	Mon Oct  8 22:01:00 2012
-+++ src/print_wireless_info.c	Mon Oct  8 22:01:10 2012
+--- src/print_wireless_info.c.orig	Wed Oct  3 13:44:44 2012
++++ src/print_wireless_info.c	Tue Oct  9 15:15:53 2012
 @@ -25,6 +25,17 @@
  #define IW_ESSID_MAX_SIZE IEEE80211_NWID_LEN
  #endif
@@ -22,11 +25,10 @@ $OpenBSD: patch-src_print_wireless_info_c,v 1.1 2012/10/08 18:07:06 jasper Exp $
  #include "i3status.h"
  
  #define WIRELESS_INFO_FLAG_HAS_ESSID                    (1 << 0)
-@@ -219,6 +230,70 @@ static int get_wireless_info(const char *interface, wi
-         }
+@@ -220,6 +231,70 @@ static int get_wireless_info(const char *interface, wi
  
          return 1;
-+#endif
+ #endif
 +#ifdef __OpenBSD__
 +	struct ifreq ifr;
 +	struct ieee80211_bssid bssid;
@@ -90,6 +92,41 @@ $OpenBSD: patch-src_print_wireless_info_c,v 1.1 2012/10/08 18:07:06 jasper Exp $
 +
 +	close(s);
 +	return 1;
- #endif
++#endif
  	return 0;
+ }
+ 
+@@ -230,6 +305,13 @@ void print_wireless_info(yajl_gen json_gen, char *buff
+ 
+         INSTANCE(interface);
+ 
++	const char *ip_address = get_ip_addr(interface);
++	if (ip_address == NULL) {
++		START_COLOR("color_bad");
++		outwalk += sprintf(outwalk, "%s", format_down);
++		goto out;
++	}
++
+         if (get_wireless_info(interface, &info)) {
+                 walk = format_up;
+                 if (info.flags & WIRELESS_INFO_FLAG_HAS_QUALITY)
+@@ -291,9 +373,8 @@ void print_wireless_info(yajl_gen json_gen, char *buff
+                 }
+ 
+                 if (BEGINS_WITH(walk+1, "ip")) {
+-                        const char *ip_address = get_ip_addr(interface);
+-                        outwalk += sprintf(outwalk, "%s", (ip_address ? ip_address : "no IP"));
+-                        walk += strlen("ip");
++			outwalk += sprintf(outwalk, "%s", ip_address);
++			walk += strlen("ip");
+                 }
+ 
+ #ifdef LINUX
+@@ -308,6 +389,7 @@ void print_wireless_info(yajl_gen json_gen, char *buff
+ #endif
+         }
+ 
++out:
+         END_COLOR;
+         OUTPUT_FULL_TEXT(buffer);
  }
