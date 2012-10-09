@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1080 2012/10/08 15:43:48 rpe Exp $
+# $OpenBSD: Makefile,v 1.1081 2012/10/09 17:12:06 sthen Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -871,6 +871,7 @@
      SUBDIR += p5-Sub-Name
      SUBDIR += p5-Sub-Override
      SUBDIR += p5-Sub-Uplevel
+     SUBDIR += p5-Switch
      SUBDIR += p5-Sys-SigAction
      SUBDIR += p5-System-Command
      SUBDIR += p5-TAP-Harness-Archive
