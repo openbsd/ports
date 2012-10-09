@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/08/06 10:59:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/10/09 07:36:50 kirby Exp $
 bin/ode-config
 include/ode/
 include/ode/collision.h
@@ -20,6 +20,7 @@ include/ode/odecpp.h
 include/ode/odecpp_collision.h
 include/ode/odeinit.h
 include/ode/odemath.h
+include/ode/odemath_legacy.h
 include/ode/rotation.h
 include/ode/timer.h
 lib/libode.a
@@ -31,39 +32,40 @@ share/doc/ode/
 share/doc/ode/LICENSE
 share/doc/ode/README
 share/examples/ode/
-share/examples/ode/demo_I
-share/examples/ode/demo_basket
-share/examples/ode/demo_boxstack
-share/examples/ode/demo_buggy
-share/examples/ode/demo_cards
-share/examples/ode/demo_chain1
-share/examples/ode/demo_chain2
-share/examples/ode/demo_collision
-share/examples/ode/demo_convex_cd
-share/examples/ode/demo_crash
-share/examples/ode/demo_cyl
-share/examples/ode/demo_cylvssphere
-share/examples/ode/demo_feedback
-share/examples/ode/demo_friction
-share/examples/ode/demo_gyroscopic
-share/examples/ode/demo_heightfield
-share/examples/ode/demo_hinge
-share/examples/ode/demo_jointPR
-share/examples/ode/demo_jointPU
-share/examples/ode/demo_joints
-share/examples/ode/demo_kinematic
-share/examples/ode/demo_motion
-share/examples/ode/demo_motor
-share/examples/ode/demo_moving_convex
-share/examples/ode/demo_moving_trimesh
-share/examples/ode/demo_ode
-share/examples/ode/demo_piston
-share/examples/ode/demo_plane2d
-share/examples/ode/demo_slider
-share/examples/ode/demo_space
-share/examples/ode/demo_space_stress
-share/examples/ode/demo_step
-share/examples/ode/demo_trimesh
+@bin share/examples/ode/demo_I
+@bin share/examples/ode/demo_basket
+@bin share/examples/ode/demo_boxstack
+@bin share/examples/ode/demo_buggy
+@bin share/examples/ode/demo_cards
+@bin share/examples/ode/demo_chain1
+@bin share/examples/ode/demo_chain2
+@bin share/examples/ode/demo_collision
+@bin share/examples/ode/demo_convex_cd
+@bin share/examples/ode/demo_crash
+@bin share/examples/ode/demo_cyl
+@bin share/examples/ode/demo_cylvssphere
+@bin share/examples/ode/demo_feedback
+@bin share/examples/ode/demo_friction
+@bin share/examples/ode/demo_gyroscopic
+@bin share/examples/ode/demo_heightfield
+@bin share/examples/ode/demo_hinge
+@bin share/examples/ode/demo_jointPR
+@bin share/examples/ode/demo_jointPU
+@bin share/examples/ode/demo_joints
+@bin share/examples/ode/demo_kinematic
+@bin share/examples/ode/demo_motion
+@bin share/examples/ode/demo_motor
+@bin share/examples/ode/demo_moving_convex
+@bin share/examples/ode/demo_moving_trimesh
+@bin share/examples/ode/demo_ode
+@bin share/examples/ode/demo_piston
+@bin share/examples/ode/demo_plane2d
+@bin share/examples/ode/demo_slider
+@bin share/examples/ode/demo_space
+@bin share/examples/ode/demo_space_stress
+@bin share/examples/ode/demo_step
+@bin share/examples/ode/demo_tracks
+@bin share/examples/ode/demo_trimesh
 share/examples/ode/textures/
 share/examples/ode/textures/checkered.ppm
 share/examples/ode/textures/ground.ppm

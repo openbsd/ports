@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2011/09/11 12:11:05 armani Exp $
+# $OpenBSD: Makefile,v 1.6 2012/10/09 07:36:49 kirby Exp $
 
 COMMENT =	high performance library for simulating rigid body dynamics
-SHARED_LIBS +=  ode                  0.0      # .2.1
-DISTNAME =	ode-0.11.1
-REVISION = 	2
+SHARED_LIBS += 	ode	1.0	# 3.0
+DISTNAME = 	ode-0.12
 CATEGORIES =	devel
 
 HOMEPAGE =	http://www.ode.org/
 
+MAINTAINER = 	Kirill Bychkov <kirby@openbsd.org>
+
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=opende/}
-EXTRACT_SUFX =	.tar.bz2
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
@@ -17,8 +17,8 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += GL GLU ICE SM X11 Xau Xdamage Xdmcp Xext Xfixes Xxf86vm c drm m 
-WANTLIB += pthread pthread-stubs stdc++ xcb 
+WANTLIB += GL GLU X11 Xdamage Xext Xfixes Xxf86vm c drm m 
+WANTLIB += pthread stdc++ xcb 
 
 USE_LIBTOOL = 		Yes
 
@@ -33,7 +33,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/LICENSE.TXT ${PREFIX}/share/doc/ode/LICENSE
 	${INSTALL_DATA} ${WRKSRC}/README.txt ${PREFIX}/share/doc/ode/README
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ode/
-	${INSTALL_DATA} ${WRKSRC}/ode/demo/.libs/demo_* \
+	${INSTALL_PROGRAM} ${WRKSRC}/ode/demo/.libs/demo_* \
 		 ${PREFIX}/share/examples/ode/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ode/textures/
 	${INSTALL_DATA} ${WRKSRC}/drawstuff/textures/* \

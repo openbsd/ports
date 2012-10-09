@@ -1,7 +1,7 @@
-$OpenBSD: patch-ode_demo_Makefile_in,v 1.1 2009/08/06 10:59:21 jasper Exp $
---- ode/demo/Makefile.in.orig	Tue Aug  4 17:53:23 2009
-+++ ode/demo/Makefile.in	Tue Aug  4 17:54:36 2009
-@@ -459,7 +459,7 @@ top_build_prefix = @top_build_prefix@
+$OpenBSD: patch-ode_demo_Makefile_in,v 1.2 2012/10/09 07:36:50 kirby Exp $
+--- ode/demo/Makefile.in.orig	Sun Feb 12 02:15:05 2012
++++ ode/demo/Makefile.in	Sun May 13 11:14:46 2012
+@@ -475,7 +475,7 @@ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  AM_CPPFLAGS = -I$(abs_top_srcdir)/include \
