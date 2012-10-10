@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2012/08/27 06:19:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2012/10/10 08:11:09 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -34,7 +34,8 @@ CONFIGURE_ARGS=	--disable-cups \
 		--with-ssl-dir=/usr \
 		--with-uams-path=${PREFIX}/lib/netatalk/uams \
 		--without-acls \
-		--without-ldap
+		--without-ldap \
+		--without-pam
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
