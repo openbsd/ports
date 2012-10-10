@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# $OpenBSD: minidlna.rc,v 1.1.1.1 2012/10/10 10:45:05 sthen Exp $
+
+daemon="${TRUEPREFIX}/sbin/minidlna"
+daemon_user="_minidlna"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_pre() {
+	install -d -o _minidlna /var/run/minidlna
+}
+
+rc_cmd $1

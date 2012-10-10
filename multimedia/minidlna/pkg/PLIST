@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/10 10:45:05 sthen Exp $
+@newgroup _minidlna:705
+@newuser _minidlna:705:_minidlna:daemon:minidlna user:/nonexistent:/sbin/nologin
+@extraunexec rm -rf /var/db/minidlna/*
+@extraunexec rm -rf /var/log/minidlna/*
+@bin sbin/minidlna
+share/examples/minidlna/
+share/examples/minidlna/minidlna.conf
+@sample ${SYSCONFDIR}/minidlna.conf
+@owner _minidlna
+@sample /var/db/minidlna/
+@sample /var/log/minidlna/
+@owner
+@rcscript ${RCDIR}/minidlna

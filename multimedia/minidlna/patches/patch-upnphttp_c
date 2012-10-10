@@ -1,0 +1,40 @@
+$OpenBSD: patch-upnphttp_c,v 1.1.1.1 2012/10/10 10:45:05 sthen Exp $
+--- upnphttp.c.orig	Sat Jun 30 01:31:43 2012
++++ upnphttp.c	Sat Sep 22 01:35:09 2012
+@@ -58,7 +58,9 @@
+ #include <sys/stat.h>
+ #include <fcntl.h>
+ #include <errno.h>
++#if defined(__linux__)
+ #include <sys/sendfile.h>
++#endif
+ #include <arpa/inet.h>
+ #include <sys/time.h>
+ #include <sys/resource.h>
+@@ -1316,6 +1318,7 @@ send_file(struct upnphttp * h, int sendfd, off_t offse
+ 
+ 	while( offset < end_offset )
+ 	{
++#if defined(__linux__)
+ 		if( try_sendfile )
+ 		{
+ 			send_size = ( ((end_offset - offset) < MAX_BUFFER_SIZE) ? (end_offset - offset + 1) : MAX_BUFFER_SIZE);
+@@ -1335,6 +1338,7 @@ send_file(struct upnphttp * h, int sendfd, off_t offse
+ 				continue;
+ 			}
+ 		}
++#endif
+ 		/* Fall back to regular I/O */
+ 		if( !buf )
+ 			buf = malloc(MIN_BUFFER_SIZE);
+@@ -1411,6 +1415,10 @@ SendResp_icon(struct upnphttp * h, char * icon)
+ 	                                       "Server: " MINIDLNA_SERVER_STRING "\r\n\r\n",
+ 	                                       mime, size, date);
+ 
++#ifndef MSG_MORE
++/* linux uses this to combine multiple send() calls into a single packet */
++#define MSG_MORE 0
++#endif
+ 	if( send_data(h, header, ret, MSG_MORE) == 0 )
+ 	{
+  		if( h->req_command != EHead )
