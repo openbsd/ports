@@ -1,0 +1,11 @@
+$OpenBSD: patch-configure,v 1.1 2012/10/10 22:09:29 stu Exp $
+--- configure.orig	Mon Apr 30 12:41:06 2012
++++ configure	Mon Apr 30 12:41:39 2012
+@@ -11462,6 +11462,7 @@ $as_echo "$as_me: tk support not found/disabled" >&6;}
+    file=${tk_prefix}/tkConfig.sh
+    . $file
+       eval TK_INCLUDE_SPEC="\"${TK_INCLUDE_SPEC} ${TK_XINCLUDES}\""
++      eval TK_LIB_SPEC="\"${TK_LIB_SPEC} ${TK_LIBS}\""
+ 
+    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for tk headers" >&5
+ $as_echo_n "checking for tk headers... " >&6; }

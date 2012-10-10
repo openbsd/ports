@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2012/10/10 22:09:29 stu Exp $
+--- src/Makefile.in.orig	Tue Oct  9 01:01:16 2012
++++ src/Makefile.in	Tue Oct  9 01:01:38 2012
+@@ -104,7 +104,7 @@ $(ELWISH): $(elwishobjs) $(commonobjs)
+ #
+ lib$(ELPKG).la: $(pkgobjs)
+ 	$(LTLD) -avoid-version -o $@ $(CFLAGS) $(pkgobjs)		\
+-		$(addprefix -XCClinker ,$(TCLSTUB_LDFLAGS))		\
++		$(TCLSTUB_LDFLAGS)		\
+ 		-rpath $(datadir) $(LDFLAGS) $(EL_LDFLAGS)
+ 
+ # object files

@@ -1,0 +1,38 @@
+$OpenBSD: patch-tcl_init_tcl,v 1.1 2012/10/10 22:09:29 stu Exp $
+
+Adjust for OpenBSD-specific Tcl package path layout.
+
+--- tcl/init.tcl.orig	Thu Jun 16 11:17:42 2011
++++ tcl/init.tcl	Wed Oct 10 01:40:07 2012
+@@ -30,10 +30,24 @@
+ #
+ 
+ # Make packages in that directory available
+-eval lappend auto_path $eltcl_pkgPath
++set na {}
++foreach p $auto_path {
++	lappend na [file normalize $p]
++}
++foreach p $eltcl_pkgPath {
++	if {[set np [file normalize $p]] ni $na} {
++		lappend auto_path $p
++		lappend na $np
++	}
++}
+ if { [info exists env(ELTCLLIBPATH)] } {
+-    eval lappend auto_path $env(ELTCLLIBPATH)
++	foreach p $env(ELTCLLIBPATH) {
++		if {[file normalize $p] ni $na} {
++			lappend auto_path $p
++		}
++	}
+ }
++unset na p np
+ 
+ # Install default signal handlers (if the signal command exists)
+ if { [info command signal] != "" } { namespace eval el {
+@@ -82,3 +96,4 @@ if {[info exists ::argv]} {
+     unset i
+     catch { unset pkgname }
+ }
++unset m

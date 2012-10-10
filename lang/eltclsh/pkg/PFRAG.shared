@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2012/10/10 22:09:29 stu Exp $
+lib/tcl/eltcl/libeltclsh.so

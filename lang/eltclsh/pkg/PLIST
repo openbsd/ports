@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/10/23 21:49:06 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/10/10 22:09:29 stu Exp $
+%%SHARED%%
 @bin bin/eltclsh
 @bin bin/elwish
+lib/tcl/
+lib/tcl/eltcl/
+lib/tcl/eltcl/complete.tcl
+lib/tcl/eltcl/init.tcl
+lib/tcl/eltcl/pkgIndex.tcl
+lib/tcl/eltcl/tools.tcl
 @man man/man1/eltclsh.1
-share/eltcl/
-share/eltcl/complete.tcl
-share/eltcl/init.tcl
-share/eltcl/pkgIndex.tcl
-share/eltcl/tools.tcl
