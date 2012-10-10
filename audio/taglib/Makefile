@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2012/10/01 07:31:17 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.25 2012/10/10 10:51:01 dcoppa Exp $
 
 COMMENT=	managing meta-data of audio formats
 DISTNAME=	taglib-1.8
+REVISION=	0
 CATEGORIES=	audio devel
 
 MASTER_SITES=	https://github.com/downloads/taglib/taglib/

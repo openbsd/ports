@@ -1,0 +1,17 @@
+$OpenBSD: patch-taglib_flac_flacfile_cpp,v 1.1 2012/10/10 10:51:02 dcoppa Exp $
+
+Corrupted FLAC files scan can result in heavy CPU consumption: fix
+it by considering a file as being invalid if a 0 length block is
+found (upstream git commit ad9ffc62e6fac5c47f46eb96b39c614e32742eb5)
+
+--- taglib/flac/flacfile.cpp.orig	Wed Oct 10 12:21:53 2012
++++ taglib/flac/flacfile.cpp	Wed Oct 10 12:22:25 2012
+@@ -425,7 +425,7 @@ void FLAC::File::scan()
+     length = header.mid(1, 3).toUInt();
+ 
+     ByteVector data = readBlock(length);
+-    if(data.size() != length) {
++    if(data.size() != length || length == 0) {
+       debug("FLAC::File::scan() -- FLAC stream corrupted");
+       setValid(false);
+       return;

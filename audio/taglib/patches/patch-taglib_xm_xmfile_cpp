@@ -1,0 +1,16 @@
+$OpenBSD: patch-taglib_xm_xmfile_cpp,v 1.1 2012/10/10 10:51:02 dcoppa Exp $
+
+Fix a crash when saving xm files
+(upstream git commit 2d7414733eaa3263868c74abfa6cff38a8afe8d3)
+
+--- taglib/xm/xmfile.cpp.orig	Wed Oct 10 12:24:15 2012
++++ taglib/xm/xmfile.cpp	Wed Oct 10 12:24:40 2012
+@@ -443,7 +443,7 @@ bool XM::File::save()
+       return false;
+ 
+     uint len = std::min(22UL, instrumentHeaderSize - 4U);
+-    if(i > lines.size())
++    if(i >= lines.size())
+       writeString(String::null, len);
+     else
+       writeString(lines[i], len);
