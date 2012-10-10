@@ -1,4 +1,9 @@
-$OpenBSD: patch-scd_Makefile_in,v 1.3 2012/09/30 16:28:07 dcoppa Exp $
+$OpenBSD: patch-scd_Makefile_in,v 1.4 2012/10/10 11:47:21 dcoppa Exp $
+
+Link gnupg-pcsc-wrapper with -lpthread: recent pthread work enforces
+that a program dlopen()ing a library which uses pthread functions
+is itself linked with the thread library.
+
 --- scd/Makefile.in.orig	Tue Mar 27 10:22:48 2012
 +++ scd/Makefile.in	Thu Sep 27 16:02:27 2012
 @@ -227,7 +227,7 @@ KSBA_CONFIG = @KSBA_CONFIG@
