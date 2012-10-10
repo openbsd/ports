@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.49 2012/08/18 07:58:20 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.50 2012/10/10 10:55:33 espie Exp $
 # ex:ts=4 sw=4 filetype=make:
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
@@ -24,59 +24,59 @@ PKGPATH =${.CURDIR}
 # Code to invoke to split dir,-multi,flavor
 
 _pflavor_fragment = \
-	unset FLAVOR SUBPACKAGE || true; \
-	multi=''; flavor=''; space=''; sawflavor=$${_fullpath}; \
+	broken() { \
+	  echo 1>&2 ">> Broken dependency: $$@ $$extra_msg"; \
+	  reported=true; \
+	} ; \
+	multi=''; flavor=''; space=''; \
 	reported=false; found_dir=false; sawmulti=false; \
 	case "$$subdir" in \
 	"") \
-		echo 1>&2 ">> Broken dependency: empty directory $$extra_msg"; \
-		reported=true;; \
+		broken "empty directory";; \
 	*,*) \
 		esubdir=$$subdir,; IFS=,; first=true; \
 		for i in $$esubdir; do \
 			if $$first; then \
-				dir=$$i; first=false; \
-			else \
-				case X"$$i" in \
-					X-*) \
-						if $$sawmulti; then \
-							echo 1>&2 ">> Broken dependency: several subpackages in $$subdir $$extra_msg"; \
-							reported=true; \
-						fi; \
-						multi="$$i"; sawmulti=true;; \
-					,) \
-						sawflavor=true;; \
-					*) \
-						sawflavor=true; \
-						flavor="$$flavor$$space$$i"; \
-						space=' ';; \
-				esac \
+				dir=$$i; first=false; continue; \
 			fi; \
+			case X"$$i" in \
+				X-*) \
+					if $$sawmulti; then \
+						broken "several subpackages in $$subdir"; \
+					fi; \
+					multi="$$i"; sawmulti=true;; \
+				,) \
+					sawflavor=true;; \
+				*) \
+					sawflavor=true; \
+					flavor="$$flavor$$space$$i"; \
+					space=' ';; \
+			esac \
 		done; \
 		unset IFS;; \
 	*) \
 		dir=$$subdir;; \
 	esac; \
 	toset="PKGPATH=$$dir ARCH=${ARCH}"; \
-	case X$$multi in "X");; *) \
-		toset="$$toset SUBPACKAGE=\"$$multi\"";; \
+	case X"$$multi" in \
+		X) unset SUBPACKAGE || true;; \
+		*) toset="$$toset SUBPACKAGE=\"$$multi\"";; \
 	esac; \
 	case $$dir in \
-	*/) echo 1>&2 ">> Broken dependency, $$dir ends with / - $$extra_msg"; \
-		reported=true;; \
-	*//*) echo 1>&2 ">> Broken dependency, $$dir contains // - $$extra_msg"; \
-		reported=true;; \
+	*/) broken "$$dir ends with /";; \
+	*//*) broken "$$dir contains //";; \
 	esac; \
 	if $$sawflavor; then \
 		toset="$$toset FLAVOR=\"$$flavor\""; \
+	else \
+		unset FLAVOR||true; \
 	fi; \
 	if ! $$reported; then \
 		IFS=:; bases=${PORTSDIR_PATH}; \
 		for base in $$bases; do \
 			cd $$base 2>/dev/null || continue; \
 			if [ -L $$dir ]; then \
-				echo 1>&2 ">> Broken dependency: $$base/$$dir is a symbolic link $$extra_msg"; \
-				reported=true; \
+				broken "$$base/$$dir is a symbolic link"; \
 				break; \
 			fi; \
 			if cd $$dir 2>/dev/null; then \
@@ -85,11 +85,10 @@ _pflavor_fragment = \
 			fi; \
 		done; unset IFS; \
 	fi; \
-	$$found_dir || $$reported || \
-	    echo 1>&2 ">> Broken dependency: $$dir non existent $$extra_msg"; \
+	$$found_dir || $$reported || broken "$$dir non existent"; \
 	$$found_dir
 
-_flavor_fragment = _fullpath=false; ${_pflavor_fragment}
+_flavor_fragment = sawflavor=false; ${_pflavor_fragment}
 
 _depfile_fragment = \
 	case X$${_DEPENDS_FILE} in \

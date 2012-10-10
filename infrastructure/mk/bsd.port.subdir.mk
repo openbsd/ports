@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.108 2012/05/28 09:38:04 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.109 2012/10/10 10:55:33 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -111,7 +111,6 @@ _subdir_fragment = \
 	_STARTDIR_SEEN=${_STARTDIR_SEEN}; \
 	unset SUBDIR SUBDIRLIST || true; \
 	export _STARTDIR_SEEN; \
-	_fullpath=${_FULLPATH}; \
 	for subdir in ${_FULLSUBDIR:QL}; do \
 		if ! $${_STARTDIR_SEEN}; then \
 			case "${STARTDIR}" in \
@@ -124,6 +123,7 @@ _subdir_fragment = \
 			esac; \
 		fi; \
 		${_SKIP_STUFF}; \
+		sawflavor=${_FULLPATH}; \
 		if ${_pflavor_fragment}; then \
 			eval $${echo_msg} "===\> $$subdir"; \
 			if ! (eval $$toset exec ${MAKE} $$target); then \
