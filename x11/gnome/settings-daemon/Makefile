@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2012/10/08 17:12:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.83 2012/10/10 12:56:32 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	GNOME settings daemon
 
 GNOME_PROJECT=	gnome-settings-daemon
 GNOME_VERSION=	3.6.1
+REVISION=	0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -47,6 +48,9 @@ BUILD_DEPENDS += textproc/docbook-xsl
 
 # share/polkit-1/actions/org.gnome.settings-daemon.plugins.power.policy
 RUN_DEPENDS +=	sysutils/polkit
+
+# plugins/mouse/gsd-mouse-manager.c
+RUN_DEPENDS += x11/gnome/mousetweaks
 
 # otherwise we end up without icons on minimal install
 RUN_DEPENDS +=	x11/gnome/icon-theme
