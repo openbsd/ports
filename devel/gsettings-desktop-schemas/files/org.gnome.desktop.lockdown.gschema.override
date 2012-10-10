@@ -1,0 +1,5 @@
+# $OpenBSD: org.gnome.desktop.lockdown.gschema.override,v 1.1 2012/10/10 12:49:17 ajacoutot Exp $
+
+# cannot run >1 instance of X(7) under OpenBSD at default securelevel(7)
+[org.gnome.desktop.lockdown]
+disable-user-switching=true

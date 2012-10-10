@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2012/09/27 08:35:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2012/10/10 12:49:17 ajacoutot Exp $
 
 COMMENT=	collection of shared GSettings schemas
 
 GNOME_PROJECT=	gsettings-desktop-schemas
 GNOME_VERSION=	3.6.0
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -26,5 +27,9 @@ MODGNOME_TOOLS=	goi
 USE_LIBTOOL=	No
 
 CONFIGURE_STYLE=gnu
+
+post-install:
+	${INSTALL_DATA} ${FILESDIR}/org.gnome.desktop.* \
+		${PREFIX}/share/glib-2.0/schemas
 
 .include <bsd.port.mk>
