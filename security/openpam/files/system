@@ -1,0 +1,15 @@
+#
+# System-wide defaults
+#
+
+# auth
+auth		required	pam_bsdauth.so		no_warn try_first_pass nullok
+
+# account
+account		required	pam_bsdauth.so
+
+# session
+session		required	pam_bsdauth.so		no_fail
+
+# password
+password	required	pam_bsdauth.so		no_warn try_first_pass

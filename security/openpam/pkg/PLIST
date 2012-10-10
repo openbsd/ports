@@ -1,0 +1,36 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/10 08:26:55 robert Exp $
+include/security/
+include/security/openpam.h
+include/security/openpam_attr.h
+include/security/openpam_version.h
+include/security/pam_appl.h
+include/security/pam_constants.h
+include/security/pam_mod_misc.h
+include/security/pam_modules.h
+include/security/pam_types.h
+lib/libpam.a
+@lib lib/libpam.so.${LIBpam_VERSION}
+lib/libpam_p.a
+lib/security/
+lib/security/pam_bsdauth.so
+lib/security/pam_deny.so
+lib/security/pam_echo.so
+lib/security/pam_exec.so
+lib/security/pam_group.so
+lib/security/pam_nologin.so
+lib/security/pam_permit.so
+lib/security/pam_rootok.so
+lib/security/pam_self.so
+@man man/man8/pam_bsdauth.8
+@man man/man8/pam_deny.8
+@man man/man8/pam_echo.8
+@man man/man8/pam_exec.8
+@man man/man8/pam_group.8
+@man man/man8/pam_nologin.8
+@man man/man8/pam_permit.8
+@man man/man8/pam_rootok.8
+@man man/man8/pam_self.8
+share/examples/pam/
+@sample ${SYSCONFDIR}/pam.d/
+share/examples/pam/system
+@sample ${SYSCONFDIR}/pam.d/system
