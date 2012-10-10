@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2012/10/08 17:16:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2012/10/10 08:42:40 ajacoutot Exp $
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		3.6.0
-REVISION=		2
+REVISION=		3
 
 HOMEPAGE=		http://live.gnome.org/GnomeShell
 
@@ -63,6 +63,10 @@ RUN_DEPENDS=		devel/py-gobject3 \
 # because most users want to be able to choose their PIM. Evolution can
 # be installed separately or as part of the "gnome-extra" meta-package.
 #RUN_DEPENDS +=		mail/evolution
+
+# add required introspection libs that are not in the dependency chain
+RUN_DEPENDS +=	inputmethods/ibus \
+		x11/gnome/gdm
 
 MODGNOME_DESKTOP_FILE=	Yes
 
