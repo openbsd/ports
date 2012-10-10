@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.298 2012/09/23 17:20:41 jeremy Exp $
+# $OpenBSD: Makefile,v 1.299 2012/10/10 08:27:49 robert Exp $
 
      SUBDIR =
      SUBDIR += ADMfzap
@@ -118,6 +118,7 @@
      SUBDIR += onesixtyone
      SUBDIR += opencdk
      SUBDIR += openct
+     SUBDIR += openpam
      SUBDIR += opensc
      SUBDIR += ophcrack
      SUBDIR += otpcalc
