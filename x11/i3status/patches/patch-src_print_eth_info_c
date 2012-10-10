@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_print_eth_info_c,v 1.1 2012/10/08 14:45:10 jasper Exp $
+$OpenBSD: patch-src_print_eth_info_c,v 1.2 2012/10/10 07:20:16 jasper Exp $
 
-Implement the %speed option for ethernet blocks.
+From 11c4ab9870174505786696b0da0331d53067fe1f Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Mon, 08 Oct 2012 20:13:47 +0000
+Subject: Implement %speed for Ethernet on OpenBSD.
 
 --- src/print_eth_info.c.orig	Mon Oct  8 18:39:07 2012
 +++ src/print_eth_info.c	Mon Oct  8 18:39:23 2012

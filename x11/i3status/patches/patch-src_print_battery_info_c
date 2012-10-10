@@ -1,8 +1,14 @@
-$OpenBSD: patch-src_print_battery_info_c,v 1.7 2012/10/08 11:26:48 jasper Exp $
+$OpenBSD: patch-src_print_battery_info_c,v 1.8 2012/10/10 07:20:16 jasper Exp $
+
+From 8da0452d2c51826fd871520f7a8ba7a43a59401c Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@openbsd.org>
+Date: Mon, 08 Oct 2012 11:30:38 +0000
+Subject: Various fixes for the OpenBSD section of the battery backend.
 
 - fix the battery status printing in %status.
 - fix remaining time when we're charging.
-- use colors to indicate battery status
+- use colors to indicate battery status.
+- small cleanups.
 
 --- src/print_battery_info.c.orig	Wed Oct  3 13:44:44 2012
 +++ src/print_battery_info.c	Mon Oct  8 15:23:17 2012
