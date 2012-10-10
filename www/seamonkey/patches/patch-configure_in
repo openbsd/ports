@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure_in,v 1.15 2012/09/01 14:10:03 landry Exp $
+$OpenBSD: patch-configure_in,v 1.16 2012/10/10 21:03:40 landry Exp $
 Force-disable gconf, configure arg not used
---- configure.in.orig	Mon Aug 27 06:44:23 2012
-+++ configure.in	Sat Sep  1 02:00:10 2012
-@@ -4940,14 +4940,7 @@ dnl ==================================================
+--- configure.in.orig	Fri Aug 31 07:51:01 2012
++++ configure.in	Sun Sep  2 12:45:40 2012
+@@ -4887,14 +4887,7 @@ dnl ==================================================
  
  # The GNOME component is built if one of
  # gnome-vfs, gio, gconf or libnotify is available.

@@ -1,25 +1,22 @@
-# $OpenBSD: Makefile,v 1.111 2012/10/06 07:55:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.112 2012/10/10 21:03:40 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
 COMMENT-enigmail =	Mozilla Seamonkey GnuPG extension
 BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
 
-MOZILLA_VERSION=	2.12.1
+MOZILLA_VERSION=	2.13
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	suite
 
 MULTI_PACKAGES =	-main -lightning -enigmail
 PKGNAME-main =		${PKGNAME}
-REVISION-main =		2
-PKGNAME-lightning =	lightning-seamonkey-1.7beta1
-ENIG_V =		1.4.4
+PKGNAME-lightning =	lightning-seamonkey-1.8beta1
+ENIG_V =		1.4.5
 PKGNAME-enigmail =	enigmail-seamonkey-${ENIG_V}
 EPOCH-lightning =	0
-REVISION-lightning =	0
 EPOCH-enigmail =	0
-REVISION-enigmail =	0
 
 SO_VERSION=	26.0
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -34,6 +31,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+#MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_PROJECT}/nightly/${MOZILLA_VERSION}-candidates/build1/source/
 MASTER_SITES0 =	http://www.mozilla-enigmail.org/download/source/
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
@@ -80,7 +78,6 @@ CONFIGURE_ENV +=	MOZ_DEBUG_FLAGS="-Os"
 ALL_TARGET=	default
 
 MOZILLA_AUTOCONF_DIRS =	ldap/sdks/c-sdk mozilla mozilla/js/src
-MOZILLA_SUBST_FILES +=	configure
 
 ENIGMAIL_DIR =	mailnews/extensions/enigmail
 

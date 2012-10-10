@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_gfx_thebes_gfxPlatform_cpp,v 1.4 2012/09/01 14:10:03 landry Exp $
---- mozilla/gfx/thebes/gfxPlatform.cpp.orig	Mon Aug 27 06:49:13 2012
-+++ mozilla/gfx/thebes/gfxPlatform.cpp	Sat Sep  1 02:00:11 2012
-@@ -443,6 +443,7 @@ void SourceBufferDestroy(void *srcBuffer)
+$OpenBSD: patch-mozilla_gfx_thebes_gfxPlatform_cpp,v 1.5 2012/10/10 21:03:40 landry Exp $
+--- mozilla/gfx/thebes/gfxPlatform.cpp.orig	Fri Aug 31 07:56:24 2012
++++ mozilla/gfx/thebes/gfxPlatform.cpp	Sun Sep  2 12:45:41 2012
+@@ -496,6 +496,7 @@ void SourceBufferDestroy(void *srcBuffer)
    static_cast<SourceSurface*>(srcBuffer)->Release();
  }
  
@@ -9,7 +9,7 @@ $OpenBSD: patch-mozilla_gfx_thebes_gfxPlatform_cpp,v 1.4 2012/09/01 14:10:03 lan
  void SourceSnapshotDetached(cairo_surface_t *nullSurf)
  {
    gfxImageSurface* origSurf =
-@@ -450,6 +451,7 @@ void SourceSnapshotDetached(cairo_surface_t *nullSurf)
+@@ -503,6 +504,7 @@ void SourceSnapshotDetached(cairo_surface_t *nullSurf)
  
    origSurf->SetData(&kSourceSurface, NULL, NULL);
  }
@@ -17,7 +17,7 @@ $OpenBSD: patch-mozilla_gfx_thebes_gfxPlatform_cpp,v 1.4 2012/09/01 14:10:03 lan
  
  RefPtr<SourceSurface>
  gfxPlatform::GetSourceSurfaceForSurface(DrawTarget *aTarget, gfxASurface *aSurface)
-@@ -544,6 +546,7 @@ gfxPlatform::GetSourceSurfaceForSurface(DrawTarget *aT
+@@ -597,6 +599,7 @@ gfxPlatform::GetSourceSurfaceForSurface(DrawTarget *aT
  
      }
  
@@ -25,7 +25,7 @@ $OpenBSD: patch-mozilla_gfx_thebes_gfxPlatform_cpp,v 1.4 2012/09/01 14:10:03 lan
      cairo_surface_t *nullSurf =
  	cairo_null_surface_create(CAIRO_CONTENT_COLOR_ALPHA);
      cairo_surface_set_user_data(nullSurf,
-@@ -552,6 +555,7 @@ gfxPlatform::GetSourceSurfaceForSurface(DrawTarget *aT
+@@ -605,6 +608,7 @@ gfxPlatform::GetSourceSurfaceForSurface(DrawTarget *aT
                                  NULL);
      cairo_surface_attach_snapshot(imgSurface->CairoSurface(), nullSurf, SourceSnapshotDetached);
      cairo_surface_destroy(nullSurf);

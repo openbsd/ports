@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.3 2011/08/23 20:25:25 landry Exp $
+$OpenBSD: README-main,v 1.4 2012/10/10 21:03:40 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -9,7 +9,7 @@ To disable anti-aliasing (xft) set GDK_USE_XFT=0 in the environment.
 Plugins
 =======
 Seamonkey looks for plugins in ~/.mozilla/plugins and
-${LOCALBASE}/lib/mozilla-plugins.
+${LOCALBASE}/lib/mozilla/plugins.
 If the environment variable MOZ_PLUGIN_PATH is specified, this
 location will be overridden.
 
@@ -23,6 +23,6 @@ favorite Language/Content pack.
 Debugging
 =========
 If you encounter crashes, you might want to build the debug FLAVOR of
-this package, and run 'seamonkey -g' to run seamonkey inside gdb, so
-that you can gather debugging logs and traces.
+this package, and run seamonkey inside gdb, so that you can gather
+debugging logs and traces (for all threads !).
 Bug reports without that information will be ignored.
