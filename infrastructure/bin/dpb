@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.54 2012/10/08 12:41:03 espie Exp $
+# $OpenBSD: dpb,v 1.55 2012/10/10 11:44:11 rpe Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -119,7 +119,8 @@ sub interpret_paths
 			my $_;
 			while (<$fh>) {
 				chomp;
-				next if m/^\#/;
+				s/\s*(?:\#.*)?$//;
+				next if m/^$/;
 				$state->interpret_path($_, $do, $scale);
 			}
 		} else {
