@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.23 2012/10/03 06:40:50 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.24 2012/10/10 12:34:35 ajacoutot Exp $
 
 Fix DATADIRNAME: see LOCALBASE/share/aclocal/{glib-gettext.m4,intltool.m4}
 
@@ -14,16 +14,3 @@ Fix DATADIRNAME: see LOCALBASE/share/aclocal/{glib-gettext.m4,intltool.m4}
      *)
      DATADIRNAME=lib
      ;;
-@@ -26390,6 +26393,12 @@ else
-   am__EXEEXT_TRUE='#'
-   am__EXEEXT_FALSE=
- fi
-+
-+case $host in
-+    i386-*-openbsd*|amd64-*-openbsd*)
-+        X_CONFIG_OPTIONS="$X_CONFIG_OPTIONS vt5"
-+        ;;
-+esac
- 
- if test -z "${MAINTAINER_MODE_TRUE}" && test -z "${MAINTAINER_MODE_FALSE}"; then
-   as_fn_error $? "conditional \"MAINTAINER_MODE\" was never defined.
