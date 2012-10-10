@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.10 2012/07/12 11:58:15 ajacoutot Exp $
+$OpenBSD: README-main,v 1.11 2012/10/10 08:42:18 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -11,9 +11,8 @@ The GNOME desktop is composed of 2 meta-packages:
     * gnome-extra, for a full GNOME installation
 
 The "gnome" package is focused on generic usage to give the user the
-choice to install his favorite applications for daily usage (i.e.
-accessibility, development, PIM and office type packages have been left
-out on purpose).
+choice to install his favorite applications for daily usage (i.e. PIM,
+office and development type packages have been left out on purpose).
 
 Starting GNOME
 ==============
@@ -37,18 +36,6 @@ To make use of it, rc.conf.local(5) needs to contain the following line:
     multicast_host=YES
 and "avahi_daemon" needs to be added to the "pkg_scripts" variable
 _after_ "dbus_daemon".
-
-A note about accessibility
-==========================
-Dependency on a11y packages is never enforced so to activate a specific
-assistive technology that is not included by default, you need to
-explicitely install the corresponding package(s):
-    * mousetweaks - mouse accessibility enhancements
-    * orca - assistive technology for visually impaired
-
-Note that "caribou", the input assistive technology (i.e. virtual
-keyboard) is installed automatically with gnome-shell and therefore with
-this "gnome" package.
 
 Cheat sheet
 ===========
