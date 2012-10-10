@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/10/10 10:41:36 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2012/10/10 11:19:45 jeremy Exp $
 
 SHARED_ONLY =		Yes
 
@@ -26,7 +26,7 @@ MASTER_SITES =		http://pgfoundry.org/frs/download.php/2401/
 
 MODULES =		lang/lua
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		postgresql-server-*>=9.2,<9.3:databases/postgresql,-server
+RUN_DEPENDS =		postgresql-server->=9.2,<9.3:databases/postgresql,-server
 
 USE_GMAKE =		Yes
 
