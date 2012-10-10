@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_daemon_c,v 1.20 2012/09/20 11:30:31 ajacoutot Exp $
+$OpenBSD: patch-src_daemon_c,v 1.21 2012/10/10 10:10:57 ajacoutot Exp $
 
 In default_excludes[], add any ports and system users that has a login
 shell.
@@ -11,8 +11,18 @@ The commit is wrong, since we're only interested in local users.
 http://bugs.freedesktop.org/show_bug.cgi?id=41747
 (XXX we need a way to only get local users)
 
---- src/daemon.c.orig	Thu Aug 16 21:03:51 2012
-+++ src/daemon.c	Thu Sep 20 13:17:37 2012
+From 3d15e1ebb5ee844979d0aae5937a812bb056af5b Mon Sep 17 00:00:00 2001
+From: Matthias Clasen <mclasen@redhat.com>
+Date: Sat, 29 Sep 2012 00:03:56 +0000
+Subject: Refuse to delete uid 0
+
+From e82517ae69d976d649580535d732df5c43237e24 Mon Sep 17 00:00:00 2001
+From: Matthias Clasen <mclasen@redhat.com>
+Date: Sat, 29 Sep 2012 00:10:17 +0000
+Subject: Fix the previous commit
+
+--- src/daemon.c.orig	Wed Oct 10 13:58:31 2012
++++ src/daemon.c	Wed Oct 10 13:58:54 2012
 @@ -35,6 +35,10 @@
  #include <utmpx.h>
  #endif
@@ -158,3 +168,15 @@ http://bugs.freedesktop.org/show_bug.cgi?id=41747
          }
          else {
                  argv[1] = "--";
+@@ -1283,6 +1354,11 @@ daemon_delete_user (AccountsAccounts      *accounts,
+ {
+         Daemon *daemon = (Daemon*)accounts;
+         DeleteUserData *data;
++
++        if (uid == 0) {
++                throw_error (context, ERROR_FAILED, "Refuse to delete root user");
++                return TRUE;
++        }
+ 
+         data = g_new0 (DeleteUserData, 1);
+         data->uid = uid;
