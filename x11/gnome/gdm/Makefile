@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.133 2012/10/09 13:18:00 ajacoutot Exp $
-
-BROKEN=			needs pam(3)
+# $OpenBSD: Makefile,v 1.134 2012/10/10 08:47:14 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -37,15 +35,17 @@ MODULES=		devel/gettext \
 			devel/dconf
 
 # bring _all_ runtime dependencies (including sysutils/consolekit and zenity)
-RUN_DEPENDS=		x11/gnome/session
+RUN_DEPENDS +=		x11/gnome/session
+
+# orca-autostart.desktop
+RUN_DEPENDS +=		x11/gnome/orca
 
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			devel/libexecinfo \
 			security/nss \
+			security/openpam \
 			sysutils/accountsservice \
 			sysutils/upower
-# XXX 
-#LIB_DEPENDS +=		security/openpam
 
 LIBTOOL_FLAGS=		--tag=disable-static
 
