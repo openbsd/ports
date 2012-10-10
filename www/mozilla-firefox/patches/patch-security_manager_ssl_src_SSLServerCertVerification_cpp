@@ -1,8 +1,8 @@
-$OpenBSD: patch-security_manager_ssl_src_SSLServerCertVerification_cpp,v 1.3 2012/09/01 13:56:45 landry Exp $
+$OpenBSD: patch-security_manager_ssl_src_SSLServerCertVerification_cpp,v 1.4 2012/10/10 20:56:14 landry Exp $
 https://bugzilla.mozilla.org/show_bug.cgi?id=706955, only needed on ppc ?
 xpcshell hang during fake
---- security/manager/ssl/src/SSLServerCertVerification.cpp.orig	Wed Aug 15 07:48:16 2012
-+++ security/manager/ssl/src/SSLServerCertVerification.cpp	Sun Aug 19 13:50:38 2012
+--- security/manager/ssl/src/SSLServerCertVerification.cpp.orig	Tue Aug 28 17:34:40 2012
++++ security/manager/ssl/src/SSLServerCertVerification.cpp	Sun Sep  2 00:10:39 2012
 @@ -128,23 +128,25 @@ NS_DEFINE_CID(kNSSComponentCID, NS_NSSCOMPONENT_CID);
  NSSCleanupAutoPtrClass(CERTCertificate, CERT_DestroyCertificate)
  NSSCleanupAutoPtrClass_WithParam(PRArenaPool, PORT_FreeArena, FalseParam, false)
@@ -39,7 +39,7 @@ xpcshell hang during fake
    // TODO: tuning, make parameters preferences
    // XXX: instantiate nsThreadPool directly, to make this more bulletproof.
    // Currently, the nsThreadPool.h header isn't exported for us to do so.
-@@ -172,10 +174,19 @@ InitializeSSLServerCertVerificationThreads()
+@@ -173,10 +175,19 @@ InitializeSSLServerCertVerificationThreads()
  // nsNSSShutdownPreventionLock where needed (not here) to prevent that.
  void StopSSLServerCertVerificationThreads()
  {

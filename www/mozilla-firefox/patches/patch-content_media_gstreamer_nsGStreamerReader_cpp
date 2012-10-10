@@ -1,14 +1,17 @@
-$OpenBSD: patch-content_media_gstreamer_nsGStreamerReader_cpp,v 1.1 2012/09/03 13:33:05 landry Exp $
-https://bugzilla.mozilla.org/show_bug.cgi?id=761030
-https://hg.mozilla.org/mozilla-central/rev/b8c6c7c773c3
---- content/media/gstreamer/nsGStreamerReader.cpp.orig	Sat Aug 25 00:55:23 2012
-+++ content/media/gstreamer/nsGStreamerReader.cpp	Mon Sep  3 15:30:10 2012
-@@ -452,6 +452,8 @@ bool nsGStreamerReader::DecodeVideoFrame(bool &aKeyFra
-         i, height);
-     b.mPlanes[i].mWidth = gst_video_format_get_component_width(format,
-         i, width);
-+    b.mPlanes[i].mOffset = 0;
-+    b.mPlanes[i].mSkip = 0;
-   }
+$OpenBSD: patch-content_media_gstreamer_nsGStreamerReader_cpp,v 1.2 2012/10/10 20:56:14 landry Exp $
+https://bugzilla.mozilla.org/show_bug.cgi?id=777696
+Tentative fix for powerpc
+--- content/media/gstreamer/nsGStreamerReader.cpp.orig	Wed Jul 25 15:15:20 2012
++++ content/media/gstreamer/nsGStreamerReader.cpp	Wed Jul 25 15:20:34 2012
+@@ -131,7 +131,11 @@ nsresult nsGStreamerReader::Init(nsBuiltinDecoderReade
  
-   bool isKeyframe = !GST_BUFFER_FLAG_IS_SET(buffer,
+   mAudioSink = gst_parse_bin_from_description("capsfilter name=filter ! "
+         "appsink name=audiosink sync=true caps=audio/x-raw-float,"
++#ifdef IS_LITTLE_ENDIAN
+         "channels={1,2},rate=44100,width=32,endianness=1234", TRUE, NULL);
++#else
++        "channels={1,2},rate=44100,width=32,endianness=4321", TRUE, NULL);
++#endif
+   mAudioAppSink = GST_APP_SINK(gst_bin_get_by_name(GST_BIN(mAudioSink),
+         "audiosink"));
+   gst_app_sink_set_callbacks(mAudioAppSink, &mSinkCallbacks,

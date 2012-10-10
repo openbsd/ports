@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.6 2012/08/07 08:55:40 landry Exp $
+$OpenBSD: README,v 1.7 2012/10/10 20:56:14 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -17,7 +17,7 @@ switch, which disables extensions and themes for your session.
 To disable anti-aliasing (xft) set GDK_USE_XFT=0 in the environment.
 
 Using mailto: links
-
+===================
 To enable mailto: links in Firefox to open in your mail program,
 you may have to set a mailto protocol handler. Type "about:config"
 in Firefox's URL text field.  Type "mailto" in the filter.  If there
@@ -31,14 +31,14 @@ right click, choose New String. Set the name to
 your mailer.
 
 Plugins
-
+=======
 Firefox looks for plugins in ~/.mozilla/plugins and
 ${TRUEPREFIX}/lib/mozilla/plugins.
 If the environment variable MOZ_PLUGIN_PATH is specified, this
 location will be overridden.
 
 Enabling ECC cipher suites
-
+==========================
 Open the URL about:config and type security.ssl3 in the search
 filter. This will bring up a list of all available cipher suites.
 Double-click on any cipher to toggle its state. For example, to
@@ -47,13 +47,13 @@ security.ssl3.ecdhe_ecdsa_aes128_sha until its boolean entry in the
 Value column changes to true.
 
 Debugging
-
+=========
 If you encounter crashes, you might want to build the debug FLAVOR of
-this package, and run 'firefox -g' to run firefox inside gdb, so
-that you can gather debugging logs and traces.
+this package, and run firefox inside gdb, so that you can gather
+debugging logs and traces (for all threads!).
 Bug reports without that information will be ignored.
 
 H.264 support
-
+=============
 Due to licensing reasons, you have to manually install the
 gstreamer-ffmpeg package to play H.264 videos.

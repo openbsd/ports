@@ -1,28 +1,18 @@
-$OpenBSD: patch-extensions_spellcheck_hunspell_src_mozHunspell_cpp,v 1.10 2012/09/01 13:56:45 landry Exp $
---- extensions/spellcheck/hunspell/src/mozHunspell.cpp.orig	Wed Aug 15 07:47:22 2012
-+++ extensions/spellcheck/hunspell/src/mozHunspell.cpp	Sun Aug 19 13:30:27 2012
-@@ -64,6 +64,7 @@
- #include "nsISimpleEnumerator.h"
- #include "nsIDirectoryEnumerator.h"
- #include "nsIFile.h"
-+#include "nsILocalFile.h"
- #include "nsDirectoryServiceUtils.h"
- #include "nsDirectoryServiceDefs.h"
- #include "mozISpellI18NManager.h"
-@@ -398,6 +399,16 @@ mozHunspell::LoadDictionaryList()
-       appDir->AppendNative(NS_LITERAL_CSTRING("dictionaries"));
-       LoadDictionariesFromDir(appDir);
+$OpenBSD: patch-extensions_spellcheck_hunspell_src_mozHunspell_cpp,v 1.11 2012/10/10 20:56:14 landry Exp $
+--- extensions/spellcheck/hunspell/src/mozHunspell.cpp.orig	Tue Aug 28 17:34:09 2012
++++ extensions/spellcheck/hunspell/src/mozHunspell.cpp	Sun Sep  2 11:40:20 2012
+@@ -400,6 +400,14 @@ mozHunspell::LoadDictionaryList()
      }
-+  }
-+
-+  // try to load the generic mozilla/dictionaries
-+  nsCOMPtr<nsIFile> mozillaDir;
-+  nsCOMPtr<nsILocalFile> localFile;
-+  rv = NS_NewNativeLocalFile(nsDependentCString(
-+    "${LOCALBASE}/share/mozilla-dicts"), PR_TRUE, getter_AddRefs(localFile));
-+  if (localFile && NS_SUCCEEDED(rv)) {
-+    localFile->QueryInterface(NS_GET_IID(nsIFile), getter_AddRefs(mozillaDir));
-+    LoadDictionariesFromDir(mozillaDir);
    }
  
++  // try to load the generic mozilla/dictionaries
++  nsCOMPtr<nsIFile> mozillaDir;
++  rv = NS_NewNativeLocalFile(nsDependentCString(
++    "${LOCALBASE}/share/mozilla-dicts"), true, getter_AddRefs(mozillaDir));
++  if (mozillaDir && NS_SUCCEEDED(rv)) {
++    LoadDictionariesFromDir(mozillaDir);
++  }
++
    // find dictionaries from extensions requiring restart
+   nsCOMPtr<nsISimpleEnumerator> dictDirs;
+   rv = dirSvc->Get(DICTIONARY_SEARCH_DIRECTORY_LIST,
