@@ -1,16 +1,16 @@
-$OpenBSD: patch-misc_conf_zabbix_server_conf,v 1.6 2010/12/27 17:19:17 ajacoutot Exp $
---- misc/conf/zabbix_server.conf.orig	Thu Dec 23 17:51:28 2010
-+++ misc/conf/zabbix_server.conf	Mon Dec 27 16:19:44 2010
-@@ -36,8 +36,6 @@
+$OpenBSD: patch-conf_zabbix_server_conf,v 1.1 2012/10/10 22:04:57 robert Exp $
+--- conf/zabbix_server.conf.orig	Wed Oct 10 19:57:03 2012
++++ conf/zabbix_server.conf	Wed Oct 10 19:58:00 2012
+@@ -36,7 +36,7 @@
  # Default:
  # LogFile=
  
 -LogFile=/tmp/zabbix_server.log
--
++# LogFile=/tmp/zabbix_server.log
+ 
  ### Option: LogFileSize
  #	Maximum size of log file in MB.
- #	0 - disable automatic log rotation.
-@@ -66,6 +64,7 @@ LogFile=/tmp/zabbix_server.log
+@@ -66,6 +66,7 @@ LogFile=/tmp/zabbix_server.log
  # Mandatory: no
  # Default:
  # PidFile=/tmp/zabbix_server.pid
@@ -18,7 +18,7 @@ $OpenBSD: patch-misc_conf_zabbix_server_conf,v 1.6 2010/12/27 17:19:17 ajacoutot
  
  ### Option: DBHost
  #	Database host name.
-@@ -99,7 +98,7 @@ DBName=zabbix
+@@ -100,7 +101,7 @@ DBName=zabbix
  # Default:
  # DBUser=
  
@@ -27,7 +27,7 @@ $OpenBSD: patch-misc_conf_zabbix_server_conf,v 1.6 2010/12/27 17:19:17 ajacoutot
  
  ### Option: DBPassword
  #	Database password. Ignored for SQLite.
-@@ -115,6 +114,7 @@ DBUser=root
+@@ -116,6 +117,7 @@ DBUser=root
  # Mandatory: no
  # Default:
  # DBSocket=/tmp/mysql.sock
@@ -35,23 +35,23 @@ $OpenBSD: patch-misc_conf_zabbix_server_conf,v 1.6 2010/12/27 17:19:17 ajacoutot
  
  ### Option: DBPort
  #	Database port when not using local socket. Ignored for SQLite.
-@@ -346,6 +346,7 @@ DBUser=root
+@@ -388,6 +390,7 @@ DBUser=root
  # Mandatory: no
  # Default:
- # AlertScriptsPath=/home/zabbix/bin/
+ # AlertScriptsPath=${datadir}/zabbix/alertscripts
 +AlertScriptsPath=${SYSCONFDIR}/zabbix/scripts/
  
  ### Option: ExternalScripts
- #	Location of external scripts
-@@ -353,6 +354,7 @@ DBUser=root
+ #	Full path to location of external scripts.
+@@ -396,6 +399,7 @@ DBUser=root
  # Mandatory: no
  # Default:
- # ExternalScripts=/etc/zabbix/externalscripts
+ # ExternalScripts=${datadir}/zabbix/externalscripts
 +ExternalScripts=${SYSCONFDIR}/zabbix/externalscripts
  
  ### Option: FpingLocation
  #	Location of fping.
-@@ -361,6 +363,7 @@ DBUser=root
+@@ -404,6 +408,7 @@ DBUser=root
  # Mandatory: no
  # Default:
  # FpingLocation=/usr/sbin/fping
@@ -59,11 +59,11 @@ $OpenBSD: patch-misc_conf_zabbix_server_conf,v 1.6 2010/12/27 17:19:17 ajacoutot
  
  ### Option: Fping6Location
  #	Location of fping6.
-@@ -370,6 +373,7 @@ DBUser=root
+@@ -413,6 +418,7 @@ DBUser=root
  # Mandatory: no
  # Default:
  # Fping6Location=/usr/sbin/fping6
 +Fping6Location=${LOCALBASE}/sbin/fping6
  
  ### Option: SSHKeyLocation
- #	Location of public keys for SSH checks
+ #	Location of public and private keys for SSH checks and actions

@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_libs_zbxsysinfo_openbsd_proc_c,v 1.3 2012/01/08 18:53:23 robert Exp $
---- src/libs/zbxsysinfo/openbsd/proc.c.orig	Sun Jan  8 19:40:59 2012
-+++ src/libs/zbxsysinfo/openbsd/proc.c	Sun Jan  8 19:48:19 2012
+$OpenBSD: patch-src_libs_zbxsysinfo_openbsd_proc_c,v 1.4 2012/10/10 22:04:57 robert Exp $
+--- src/libs/zbxsysinfo/openbsd/proc.c.orig	Tue Jul 31 11:16:46 2012
++++ src/libs/zbxsysinfo/openbsd/proc.c	Tue Oct  2 21:08:50 2012
 @@ -29,7 +29,7 @@
  
  #define ARGS_START_SIZE 64
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_libs_zbxsysinfo_openbsd_proc_c,v 1.3 2012/01/08 18:53:23 rob
  #	define ZBX_P_COMM	p_comm
  #	define ZBX_P_PID	p_pid
  #	define ZBX_P_STAT	p_stat
-@@ -119,13 +119,12 @@ int     PROC_MEM(const char *cmd, const char *param, u
+@@ -116,13 +116,12 @@ int     PROC_MEM(const char *cmd, const char *param, u
  
  	struct passwd		*usrinfo;
  
@@ -26,7 +26,7 @@ $OpenBSD: patch-src_libs_zbxsysinfo_openbsd_proc_c,v 1.3 2012/01/08 18:53:23 rob
  
  	char	**argv = NULL, *args = NULL;
  	size_t	argv_alloc = 0, args_alloc = 0;
-@@ -187,40 +186,24 @@ int     PROC_MEM(const char *cmd, const char *param, u
+@@ -184,40 +183,24 @@ int     PROC_MEM(const char *cmd, const char *param, u
  		mib[3] = 0;
  	}
  
@@ -73,7 +73,7 @@ $OpenBSD: patch-src_libs_zbxsysinfo_openbsd_proc_c,v 1.3 2012/01/08 18:53:23 rob
  
  	for (i = 0; i < count; i++)
  	{
-@@ -288,13 +271,12 @@ int	PROC_NUM(const char *cmd, const char *param, unsig
+@@ -285,13 +268,12 @@ int	PROC_NUM(const char *cmd, const char *param, unsig
  
  	struct passwd		*usrinfo;
  
@@ -89,7 +89,7 @@ $OpenBSD: patch-src_libs_zbxsysinfo_openbsd_proc_c,v 1.3 2012/01/08 18:53:23 rob
  
  	char	**argv = NULL, *args = NULL;
  	size_t	argv_alloc = 0, args_alloc = 0;
-@@ -354,40 +336,25 @@ int	PROC_NUM(const char *cmd, const char *param, unsig
+@@ -351,40 +333,25 @@ int	PROC_NUM(const char *cmd, const char *param, unsig
  		mib[3] = 0;
  	}
  

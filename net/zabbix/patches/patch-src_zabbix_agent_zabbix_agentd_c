@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_zabbix_agent_zabbix_agentd_c,v 1.1 2012/10/10 22:04:57 robert Exp $
+--- src/zabbix_agent/zabbix_agentd.c.orig	Wed Oct 10 23:46:28 2012
++++ src/zabbix_agent/zabbix_agentd.c	Wed Oct 10 23:46:48 2012
+@@ -46,7 +46,7 @@ const char	*progname = NULL;
+ #ifdef _WINDOWS
+ 	static char	DEFAULT_CONFIG_FILE[]	= "C:\\zabbix_agentd.conf";
+ #else
+-	static char	DEFAULT_CONFIG_FILE[]	= SYSCONFDIR "/zabbix_agentd.conf";
++	static char	DEFAULT_CONFIG_FILE[]	= SYSCONFDIR "/zabbix/zabbix_agentd.conf";
+ #endif
+ 
+ /* application TITLE */

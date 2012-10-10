@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_zabbix_agent_zabbix_agent_c,v 1.1 2012/10/10 22:04:57 robert Exp $
+--- src/zabbix_agent/zabbix_agent.c.orig	Wed Oct 10 23:46:33 2012
++++ src/zabbix_agent/zabbix_agent.c	Wed Oct 10 23:46:57 2012
+@@ -58,7 +58,7 @@ void	child_signal_handler(int sig)
+ 	exit(FAIL);
+ }
+ 
+-static char	DEFAULT_CONFIG_FILE[] = SYSCONFDIR "/zabbix_agent.conf";
++static char	DEFAULT_CONFIG_FILE[] = SYSCONFDIR "/zabbix/zabbix_agent.conf";
+ 
+ /******************************************************************************
+  *                                                                            *

@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.5 2011/08/21 09:21:02 ajacoutot Exp $
+$OpenBSD: README-server,v 1.6 2012/10/10 22:04:57 robert Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -83,12 +83,11 @@ Connect to MySQL, and create a user and database for Zabbix;
 Then initialize the database from the files installed in
 ${TRUEPREFIX}/share/examples/zabbix:
 
-    $ cd ${TRUEPREFIX}/share/zabbix/schema
-    $ mysql -uzabbix -p[password] zabbix < mysql.sql
+    $ cd ${TRUEPREFIX}/share/zabbix/schema/mysql
+    $ mysql -uzabbix -p[password] zabbix < schema.sql
 The following steps are not required for setting up a Zabbix Proxy.
-    $ cd ../data
+    $ mysql -uzabbix -p[password] zabbix < images.sql
     $ mysql -uzabbix -p[password] zabbix < data.sql
-    $ mysql -uzabbix -p[password] zabbix < images_mysql.sql
 
 PostgreSQL
 ==========
@@ -102,12 +101,11 @@ you can create the 'zabbix' user and database like this:
 
 And initialize the database:
 
-    $ cd ${TRUEPREFIX}/share/zabbix/schema
-    $ cat postgresql.sql | psql -U zabbix zabbix
+    $ cd ${TRUEPREFIX}/share/zabbix/schema/postgresql
+    $ cat schema.sql | psql -U zabbix zabbix
 The following steps are not required for setting up a Zabbix Proxy.
-    $ cd ../data
+    $ cat images.sql | psql -U zabbix zabbix
     $ cat data.sql | psql -U zabbix zabbix
-    $ cat images_pgsql.sql | psql -U zabbix zabbix
 
 SQLite3
 =======
@@ -117,9 +115,8 @@ automatically created and initialized if it does not exist. Note that
 for obvious performance reasons, it is NOT encouraged to use the SQLite
 backend for a server.
 
-    $ cd ${TRUEPREFIX}/share/zabbix/schema
-    $ cat sqlite.sql | sudo -u _zabbix sqlite3 /var/db/zabbix/zabbix.db
+    $ cd ${TRUEPREFIX}/share/zabbix/schema/sqlite3
+    $ sudo -u _zabbix sqlite3 /var/db/zabbix/zabbix.db < schema.sql
 The following steps are not required for setting up a Zabbix Proxy.
-    $ cd ../data
-    $ cat data.sql | sudo -u _zabbix sqlite3 /var/db/zabbix/zabbix.db
-    $ cat images_sqlite3.sql | sudo -u _zabbix sqlite3 /var/db/zabbix/zabbix.db
+    $ sudo -u _zabbix sqlite3 /var/db/zabbix/zabbix.db < images.sql
+    $ sudo -u _zabbix sqlite3 /var/db/zabbix/zabbix.db < data.sql

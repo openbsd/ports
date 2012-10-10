@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.11 2010/12/27 17:19:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST-server,v 1.12 2012/10/10 22:04:57 robert Exp $
 @conflict zabbix-agent-<=1.8.3p5
 @man man/man8/zabbix_proxy.8
 @man man/man8/zabbix_server.8
@@ -19,34 +19,9 @@ share/examples/zabbix/zabbix_server.conf
 @mode
 @group
 share/zabbix/
+share/zabbix/alertscripts/
 share/zabbix/data/
-share/zabbix/data/data.sql
 share/zabbix/data/images/
-share/zabbix/data/images/Hub.png
-share/zabbix/data/images/Hub_small.png
-share/zabbix/data/images/Network.png
-share/zabbix/data/images/Network_small.png
-share/zabbix/data/images/Notebook.png
-share/zabbix/data/images/Notebook_small.png
-share/zabbix/data/images/Phone.png
-share/zabbix/data/images/Phone_small.png
-share/zabbix/data/images/Printer.png
-share/zabbix/data/images/Printer_small.png
-share/zabbix/data/images/Router.png
-share/zabbix/data/images/Router_small.png
-share/zabbix/data/images/Satellite.png
-share/zabbix/data/images/Satellite_small.png
-share/zabbix/data/images/Server.png
-share/zabbix/data/images/Server_small.png
-share/zabbix/data/images/UPS.png
-share/zabbix/data/images/UPS_small.png
-share/zabbix/data/images/Workstation.png
-share/zabbix/data/images/Workstation_small.png
-share/zabbix/data/images_ibm_db2.sql
-share/zabbix/data/images_mysql.sql
-share/zabbix/data/images_oracle.sql
-share/zabbix/data/images_pgsql.sql
-share/zabbix/data/images_sqlite3.sql
 share/zabbix/dbpatches/
 share/zabbix/dbpatches/1.6/
 share/zabbix/dbpatches/1.6/mysql/
@@ -55,20 +30,42 @@ share/zabbix/dbpatches/1.6/oracle/
 share/zabbix/dbpatches/1.6/oracle/patch.sql
 share/zabbix/dbpatches/1.6/postgresql/
 share/zabbix/dbpatches/1.6/postgresql/patch.sql
+share/zabbix/dbpatches/1.8/
+share/zabbix/dbpatches/1.8/mysql/
+share/zabbix/dbpatches/1.8/mysql/patch.sql
+share/zabbix/dbpatches/1.8/mysql/upgrade
+share/zabbix/dbpatches/1.8/oracle/
+share/zabbix/dbpatches/1.8/oracle/patch.sql
+share/zabbix/dbpatches/1.8/postgresql/
+share/zabbix/dbpatches/1.8/postgresql/patch.sql
 share/zabbix/dbpatches/${MAJV}/
+share/zabbix/dbpatches/${MAJV}/ibm_db2/
+share/zabbix/dbpatches/${MAJV}/ibm_db2/patch.sql
+share/zabbix/dbpatches/${MAJV}/ibm_db2/rc4_rc5.sql
 share/zabbix/dbpatches/${MAJV}/mysql/
 share/zabbix/dbpatches/${MAJV}/mysql/patch.sql
+share/zabbix/dbpatches/${MAJV}/mysql/rc4_rc5.sql
 share/zabbix/dbpatches/${MAJV}/mysql/upgrade
 share/zabbix/dbpatches/${MAJV}/oracle/
 share/zabbix/dbpatches/${MAJV}/oracle/patch.sql
+share/zabbix/dbpatches/${MAJV}/oracle/rc4_rc5.sql
 share/zabbix/dbpatches/${MAJV}/postgresql/
 share/zabbix/dbpatches/${MAJV}/postgresql/patch.sql
+share/zabbix/dbpatches/${MAJV}/postgresql/rc4_rc5.sql
+share/zabbix/externalscripts/
 share/zabbix/schema/
-share/zabbix/schema/ibm_db2.sql
-share/zabbix/schema/mysql.sql
-share/zabbix/schema/oracle.sql
-share/zabbix/schema/postgresql.sql
-share/zabbix/schema/sqlite.sql
+share/zabbix/schema/mysql/
+share/zabbix/schema/mysql/data.sql
+share/zabbix/schema/mysql/images.sql
+share/zabbix/schema/mysql/schema.sql
+share/zabbix/schema/postgresql/
+share/zabbix/schema/postgresql/data.sql
+share/zabbix/schema/postgresql/images.sql
+share/zabbix/schema/postgresql/schema.sql
+share/zabbix/schema/sqlite3/
+share/zabbix/schema/sqlite3/data.sql
+share/zabbix/schema/sqlite3/images.sql
+share/zabbix/schema/sqlite3/schema.sql
 @mode 750
 @owner _zabbix
 @group _zabbix

@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.6 2012/06/26 12:30:37 jasper Exp $
---- configure.orig	Tue Mar 20 12:21:39 2012
-+++ configure	Tue Mar 20 12:23:20 2012
-@@ -5901,6 +5904,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
+$OpenBSD: patch-configure,v 1.7 2012/10/10 22:04:57 robert Exp $
+--- configure.orig	Tue Jul 31 11:17:05 2012
++++ configure	Tue Oct  2 21:08:50 2012
+@@ -6011,6 +6011,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
  $as_echo_n "checking for field ss_family in struct sockaddr_storage... " >&6; }
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
@@ -9,7 +9,7 @@ $OpenBSD: patch-configure,v 1.6 2012/06/26 12:30:37 jasper Exp $
  #include <sys/socket.h>
  int
  main ()
-@@ -8332,7 +8336,7 @@ $as_echo "yes" >&6; }
+@@ -8517,7 +8518,7 @@ $as_echo "yes" >&6; }
  
  			 JABBER_INCDIR="$IKSEMEL_CPPFLAGS"
  			 JABBER_LIBDIR="$IKSEMEL_LDFLAGS"
@@ -18,7 +18,7 @@ $OpenBSD: patch-configure,v 1.6 2012/06/26 12:30:37 jasper Exp $
  
  fi
         else
-@@ -8342,7 +8346,7 @@ $as_echo_n "checking for iksemel support... " >&6; }
+@@ -8527,7 +8528,7 @@ $as_echo_n "checking for iksemel support... " >&6; }
                 if test -f $_libiksemel_with/include/iksemel.h; then
                         JABBER_INCDIR="-I$_libiksemel_with/include"
                         JABBER_LIBDIR="-L$_libiksemel_with/lib"
@@ -27,7 +27,7 @@ $OpenBSD: patch-configure,v 1.6 2012/06/26 12:30:37 jasper Exp $
  		       { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
  $as_echo "yes" >&6; }
                 else
-@@ -10079,7 +10083,7 @@ $as_echo "no" >&6; }
+@@ -10361,7 +10362,7 @@ $as_echo "no" >&6; }
  
         if test "x$found_ldap" != "xno"; then
                 if test "x$enable_static" = "xyes"; then
@@ -36,7 +36,7 @@ $OpenBSD: patch-configure,v 1.6 2012/06/26 12:30:37 jasper Exp $
                 fi
  
                 LDAP_CPPFLAGS="-I$LDAP_INCDIR"
-@@ -10138,13 +10142,13 @@ else
+@@ -10420,13 +10421,13 @@ else
    as_fn_error $? "Not found GnuTLS library" "$LINENO" 5
  fi
  
@@ -53,7 +53,7 @@ $OpenBSD: patch-configure,v 1.6 2012/06/26 12:30:37 jasper Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -10173,7 +10177,7 @@ if test "x$ac_cv_lib_pthread_main" = xyes; then :
+@@ -10455,7 +10456,7 @@ if test "x$ac_cv_lib_pthread_main" = xyes; then :
  #define HAVE_LIBPTHREAD 1
  _ACEOF
  

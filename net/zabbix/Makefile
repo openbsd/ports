@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.75 2012/09/03 16:14:59 robert Exp $
+# $OpenBSD: Makefile,v 1.76 2012/10/10 22:04:57 robert Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
 COMMENT-web =		network and application monitoring - web frontend
 
-VERSION =		1.8.15
+VERSION =		2.0.2
 DISTNAME =		zabbix-${VERSION}
 FULLPKGNAME-main =	zabbix-agent-${VERSION}
 FULLPKGPATH-main =	net/zabbix,-main
@@ -37,14 +37,15 @@ FLAVORS =		mysql pgsql sqlite3
 
 SUBST_VARS +=		PREFIX-web ZABBIX_WEB MAJV
 
-WANTLIB =		c kvm m execinfo lber ldap
+WANTLIB =		c kvm m execinfo lber ldap crypto ssl z curl idn intl
+
 LIB_DEPENDS =		databases/openldap \
-			devel/libexecinfo
+			devel/libexecinfo \
+			net/curl
 
 RUN_DEPENDS-main =	${MODLIBICONV_RUN_DEPENDS}
 
 LIB_DEPENDS-server =	${LIB_DEPENDS} \
-			net/curl \
 			net/net-snmp \
 			textproc/iksemel
 RUN_DEPENDS-server =	net/fping
@@ -89,7 +90,7 @@ WANTLIB-server += mysqlclient
 .elif ${BACKEND} == "pgsql"
 MULTI_PACKAGES += -server
 LIB_DEPENDS-server +=	databases/postgresql,-main
-CONFIGURE_ARGS +=	--with-pgsql
+CONFIGURE_ARGS +=	--with-postgresql
 WANTLIB-server += pq
 .elif ${BACKEND} == "sqlite3"
 MULTI_PACKAGES += -server
@@ -103,8 +104,8 @@ ERRORS +=		"Fatal: Conflicting flavors: ${FLAVOR}";
 .endif
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/misc/conf/zabbix_server.conf \
-		${WRKSRC}/misc/conf/zabbix_proxy.conf
+	${SUBST_CMD} ${WRKSRC}/conf/zabbix_server.conf \
+		${WRKSRC}/conf/zabbix_proxy.conf
 
 post-install:
 	${INSTALL_DATA_DIR} ${DESTDIR}${PREFIX-web}/zabbix
@@ -123,17 +124,18 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zabbix/schema
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zabbix/data
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zabbix/data/images
-	${INSTALL_DATA} ${WRKBUILD}/create/schema/*.sql \
-		${PREFIX}/share/zabbix/schema
-	${INSTALL_DATA} ${WRKBUILD}/create/data/*.sql \
-		${PREFIX}/share/zabbix/data
-	${INSTALL_DATA} ${WRKBUILD}/create/data/images/*.png \
-		${PREFIX}/share/zabbix/data/images
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/zabbix
-	${INSTALL_DATA} ${WRKBUILD}/misc/conf/*.conf \
+	${INSTALL_DATA} ${WRKBUILD}/conf/*.conf \
 		${PREFIX}/share/examples/zabbix
+	# Database schemas
+	cd ${WRKSRC}/database/ && tar -cf - mysql postgresql sqlite3 | \
+		tar -C ${PREFIX}/share/zabbix/schema -xf -
 	# Script to easy upgrading from previous major version
 	cd ${WRKSRC}/upgrades/ && tar -cf - dbpatches | \
 		tar -C ${PREFIX}/share/zabbix -xf -
+
+	@find ${PREFIX}/share/zabbix/schema -name data.sql -exec \
+		perl -pi -e "s,/bin/ping,/sbin/ping,g;" \
+			"s,/usr/bin/traceroute,/usr/sbin/traceroute,g" {} \;
 
 .include <bsd.port.mk>

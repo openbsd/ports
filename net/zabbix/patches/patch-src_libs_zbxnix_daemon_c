@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_libs_zbxnix_daemon_c,v 1.8 2012/03/20 12:00:37 robert Exp $
---- src/libs/zbxnix/daemon.c.orig	Tue Mar 20 10:15:16 2012
-+++ src/libs/zbxnix/daemon.c	Tue Mar 20 12:21:24 2012
+$OpenBSD: patch-src_libs_zbxnix_daemon_c,v 1.9 2012/10/10 22:04:57 robert Exp $
+--- src/libs/zbxnix/daemon.c.orig	Tue Jul 31 11:16:46 2012
++++ src/libs/zbxnix/daemon.c	Tue Oct  2 21:08:50 2012
 @@ -194,7 +194,7 @@ int	daemon_start(int allow_root)
  	pid_t			pid;
  	struct passwd		*pwd;
@@ -8,5 +8,5 @@ $OpenBSD: patch-src_libs_zbxnix_daemon_c,v 1.8 2012/03/20 12:00:37 robert Exp $
 -	char			user[7] = "zabbix";
 +	char			user[8] = "_zabbix";
  
- 	/* running as root ? */
- 	if (0 == allow_root && (0 == getuid() || 0 == getgid()))
+ 	if (0 == allow_root && (0 == getuid() || 0 == getgid()))	/* running as root? */
+ 	{
