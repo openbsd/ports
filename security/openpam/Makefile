@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/10/10 08:26:55 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2012/10/10 08:31:42 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,6 +7,7 @@ COMMENT=	Pluggable Authentication Module
 V=		20121009
 DISTNAME=	freebsd_pam-${V}
 PKGNAME=	openpam-${V}
+REVISION=	0
 
 CATEGORIES=	security
 
