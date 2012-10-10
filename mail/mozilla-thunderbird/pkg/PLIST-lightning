@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-lightning,v 1.12 2012/09/01 14:22:45 landry Exp $
+@comment $OpenBSD: PLIST-lightning,v 1.13 2012/10/10 21:08:05 landry Exp $
 @conflict lightning-<=1.0b1
 @pkgpath productivity/sunbird,-lightning
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/calendar-timezones@mozilla.org/
@@ -241,6 +241,7 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a4
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/calendar/skin/calendar/calendar-unifinder.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/calendar/skin/calendar/calendar-views.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/calendar/skin/calendar/checkbox-images.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/calendar/skin/calendar/classification.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/calendar/skin/calendar/common/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/calendar/skin/calendar/common/calendar-daypicker.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/calendar/skin/calendar/common/calendar-management.css

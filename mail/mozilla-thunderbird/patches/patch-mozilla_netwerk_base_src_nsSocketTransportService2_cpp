@@ -1,6 +1,6 @@
-$OpenBSD: patch-mozilla_netwerk_base_src_nsSocketTransportService2_cpp,v 1.3 2012/09/01 14:22:45 landry Exp $
---- mozilla/netwerk/base/src/nsSocketTransportService2.cpp.orig	Sat Aug 25 02:31:26 2012
-+++ mozilla/netwerk/base/src/nsSocketTransportService2.cpp	Sat Sep  1 01:59:39 2012
+$OpenBSD: patch-mozilla_netwerk_base_src_nsSocketTransportService2_cpp,v 1.4 2012/10/10 21:08:05 landry Exp $
+--- mozilla/netwerk/base/src/nsSocketTransportService2.cpp.orig	Wed Aug 29 02:16:03 2012
++++ mozilla/netwerk/base/src/nsSocketTransportService2.cpp	Sat Sep  1 23:54:16 2012
 @@ -21,14 +21,6 @@
  
  #include "mozilla/FunctionTimer.h"
@@ -16,8 +16,8 @@ $OpenBSD: patch-mozilla_netwerk_base_src_nsSocketTransportService2_cpp,v 1.3 201
  using namespace mozilla;
  
  #if defined(PR_LOGGING)
-@@ -584,8 +576,6 @@ nsSocketTransportService::Run()
- {
+@@ -586,8 +578,6 @@ nsSocketTransportService::Run()
+ 
      SOCKET_LOG(("STS thread init\n"));
  
 -    psm::InitializeSSLServerCertVerificationThreads();
@@ -25,7 +25,7 @@ $OpenBSD: patch-mozilla_netwerk_base_src_nsSocketTransportService2_cpp,v 1.3 201
      gSocketThread = PR_GetCurrentThread();
  
      // add thread event to poll list (mThreadEvent may be NULL)
-@@ -644,8 +634,6 @@ nsSocketTransportService::Run()
+@@ -646,8 +636,6 @@ nsSocketTransportService::Run()
      NS_ProcessPendingEvents(thread);
  
      gSocketThread = nsnull;

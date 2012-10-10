@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.158 2012/09/22 10:30:17 landry Exp $
+# $OpenBSD: Makefile,v 1.159 2012/10/10 21:08:03 landry Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
@@ -8,21 +8,18 @@ BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
 # Don't forget to bump mail/thunderbird-i18n after updates.
 # Don't forget to update productivity/sunbird if patches changes.
 
-MOZILLA_VERSION =	15.0.1
+MOZILLA_VERSION =	16.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	mail
 
 MULTI_PACKAGES =	-main -lightning -enigmail
 PKGNAME-main =		${PKGNAME}
-REVISION-main =		1
-PKGNAME-lightning =	lightning-1.7beta1
-ENIG_V =		1.4.4
+PKGNAME-lightning =	lightning-1.8beta1
+ENIG_V =		1.4.5
 PKGNAME-enigmail =	enigmail-${ENIG_V}
 EPOCH-lightning =	0
-REVISION-lightning =	0
 EPOCH-enigmail =	0
-REVISION-enigmail =	0
 
 #MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_PROJECT}/nightly/${MOZILLA_VERSION}-candidates/build1/source/
 MASTER_SITES0 =	http://www.mozilla-enigmail.org/download/source/
@@ -30,7 +27,7 @@ DISTFILES +=	${MOZILLA_PROJECT}-${MOZILLA_VERSION}.source.tar.bz2 \
 		enigmail-${ENIG_V}.tar.gz:0
 EXTRACT_CASES =	enigmail-*.tar.gz) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | tar -C comm-${MOZILLA_BRANCH}/mailnews/extensions/ -xf -;;
 
-SO_VERSION =	25.0
+SO_VERSION =	26.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 
@@ -95,7 +92,6 @@ CONFIGURE_ARGS +=	--enable-calendar \
 ALL_TARGET =	default
 
 MOZILLA_AUTOCONF_DIRS =		ldap/sdks/c-sdk mozilla mozilla/js/src
-MOZILLA_SUBST_FILES +=		config/autoconf.mk.in
 
 ENIGMAIL_DIR =	mailnews/extensions/enigmail
 
