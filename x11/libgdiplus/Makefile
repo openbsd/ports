@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/03/14 08:44:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2012/10/10 16:43:18 robert Exp $
 
 COMMENT=	GDI+ comptible API
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://www.mono-project.com/Libgdiplus
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
-# GPLv2 and Mozilla Public License 1.1 
+# GPLv2 and Mozilla Public License 1.1
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
