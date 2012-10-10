@@ -1,0 +1,16 @@
+$OpenBSD: README,v 1.1.1.1 2012/10/10 10:41:36 jeremy Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Installing PL/Lua Into A PostgreSQL Database
+============================================
+
+To install the PL/Lua language in a PostgreSQL database, run
+the following code:
+
+  psql -f ${TRUEPREFIX}/share/postgresql/contrib/pllua.sql $database
+
+This loads both the pllua (trusted) and plluau (untrusted)
+procedural languages into the database.
