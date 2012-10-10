@@ -1,2 +1,7 @@
 The GNOME Display Manager is a system service that is responsible for
 providing graphical log-ins and managing local and remote displays.
+
+Note that GDM runs a full gnome-session when starting, but dependency on
+the gnome-session package is not enforced in this package to prevent a
+dependency loop:
+    gdm -> gnome-session -> gnome-shell -> gdm
