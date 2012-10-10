@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2012/06/18 12:18:45 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2012/10/10 09:49:20 rpe Exp $
 
 # NOTE for FLAVOR=src
 # - you can have up-to-date ${BSDSRCDIR}/distrib/sets/lists 
@@ -16,7 +16,7 @@ COMMENT =		database of packages for use with locate(1)
 
 # locate data is NOT MI, unfortunately
 # PKG_ARCH = ${ARCH}....
-DISTNAME =		pkglocatedb-0.5
+DISTNAME =		pkglocatedb-0.6
 DISTFILES =
 
 CATEGORIES =		databases
