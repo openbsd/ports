@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.248 2012/09/04 09:30:20 landry Exp $
+# $OpenBSD: Makefile,v 1.249 2012/10/11 17:57:27 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += abuse
@@ -136,6 +136,7 @@
      SUBDIR += opensonic
      SUBDIR += openttd
      SUBDIR += openxcom
+     SUBDIR += pacman-arena
      SUBDIR += pathological
      SUBDIR += pingus
      SUBDIR += pioneers
