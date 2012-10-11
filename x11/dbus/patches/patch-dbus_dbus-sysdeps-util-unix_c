@@ -1,24 +1,78 @@
-$OpenBSD: patch-dbus_dbus-sysdeps-util-unix_c,v 1.4 2012/08/15 08:03:43 ajacoutot Exp $
+$OpenBSD: patch-dbus_dbus-sysdeps-util-unix_c,v 1.5 2012/10/11 07:25:20 ajacoutot Exp $
 
-Don't try to use /proc; we don't provide a replacement because this
-function is only called once for logging purpose, its return code is not
-checked and as the code says: "This string <...> may not be trusted".
+XXX push upstream
 
---- dbus/dbus-sysdeps-util-unix.c.orig	Thu Jun 28 16:49:23 2012
-+++ dbus/dbus-sysdeps-util-unix.c	Wed Aug 15 09:51:07 2012
-@@ -1104,6 +1104,7 @@ _dbus_command_for_pid (unsigned long  pid,
-                        int            max_len,
-                        DBusError     *error)
- {
-+#ifndef __OpenBSD__
+--- dbus/dbus-sysdeps-util-unix.c.orig	Fri Sep 28 21:17:25 2012
++++ dbus/dbus-sysdeps-util-unix.c	Thu Oct 11 09:19:52 2012
+@@ -55,6 +55,12 @@
+ #include <sys/syslimits.h>
+ #endif
+ 
++#ifdef __OpenBSD__
++#include <sys/param.h>
++#include <sys/sysctl.h>
++#include <kvm.h>
++#endif
++
+ #ifndef O_BINARY
+ #define O_BINARY 0
+ #endif
+@@ -1107,7 +1113,14 @@ _dbus_command_for_pid (unsigned long  pid,
    /* This is all Linux-specific for now */
    DBusString path;
    DBusString cmdline;
-@@ -1163,4 +1164,7 @@ fail:
++#ifndef __OpenBSD__
+   int fd;
++#else
++  int nproc;
++  struct kinfo_proc *kp;
++  kvm_t *kd;
++  char **argv;
++#endif
+   
+   if (!_dbus_string_init (&path)) 
+     {
+@@ -1121,7 +1134,8 @@ _dbus_command_for_pid (unsigned long  pid,
+       _dbus_string_free (&path);
+       return FALSE;
+     }
+-  
++
++#ifndef __OpenBSD__
+   if (!_dbus_string_append_printf (&path, "/proc/%ld/cmdline", pid))
+     goto oom;
+   
+@@ -1148,6 +1162,24 @@ _dbus_command_for_pid (unsigned long  pid,
+   
+   if (!_dbus_close (fd, error))
+     goto fail;
++#else
++  if ((kd = kvm_openfiles(NULL, NULL, NULL, KVM_NO_FILES, NULL)) == NULL)
++    goto fail;
++
++  if ((kp = kvm_getprocs(kd, KERN_PROC_PID, pid, sizeof(*kp), &nproc)) == NULL)
++    goto fail;
++
++  if ((kp->p_flag & P_SYSTEM) != 0)
++    goto fail;
++
++  if ((argv = kvm_getargv(kd, kp, 0)) == NULL)
++    goto fail;
++
++  if (!_dbus_string_append_printf (&cmdline, *argv))
++    goto fail;
++  else
++    kvm_close(kd);
++#endif
+   
+   string_squash_nonprintable (&cmdline);  
+ 
+@@ -1162,5 +1194,8 @@ oom:
+ fail:
    _dbus_string_free (&cmdline);
    _dbus_string_free (&path);
-   return FALSE;
-+#else // OpenBSD
-+  return FALSE;
++#ifdef __OpenBSD__
++  kvm_close(kd);
 +#endif
+   return FALSE;
  }
