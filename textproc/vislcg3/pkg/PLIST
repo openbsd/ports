@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/11 16:42:57 bentley Exp $
+%%SHARED%%
+@bin bin/cg-comp
+@bin bin/cg-conv
+@bin bin/cg-proc
+bin/cg3-autobin.pl
+@bin bin/vislcg3
+lib/libcg3.a
