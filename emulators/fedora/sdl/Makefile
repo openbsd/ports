@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/21 15:21:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2012/10/11 13:57:35 ajacoutot Exp $
+
+BROKEN=		needs an update to Fedora 10
 
 COMMENT=	Linux SDL package based on Fedora Core 4
 
