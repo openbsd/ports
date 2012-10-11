@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.36 2012/10/11 07:38:39 espie Exp $
+# $OpenBSD: Port.pm,v 1.37 2012/10/11 08:38:05 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -111,12 +111,18 @@ sub notime { 0 }
 sub make_sure_we_have_packages
 {
 	my ($self, $job) = @_;
-	my $check = -f $job->{builder}->pkgfile($job->{v});
+	open my $log, '>>', $job->{log};
+	my $check = 1;
 	# check ALL BUILD_PACKAGES
 	for my $w ($job->{v}->build_path_list) {
-		$check &&= -f $job->{builder}->pkgfile($w);
+		my $f = $job->{builder}->pkgfile($w);
+		unless (-f $f) {
+			$check = 0;
+			print $log ">>> Missing $f\n";
+		}
 	}
 	if (!$check) {
+		print $log ">>> waiting 10 seconds\n";
 		$job->add_tasks(DPB::Task::Port::VerifyPackages->new(
 		    'waiting'.$job->{waiting}++));
 	}
