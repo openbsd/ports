@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.37 2012/10/11 08:38:05 espie Exp $
+# $OpenBSD: Port.pm,v 1.38 2012/10/11 09:03:34 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -108,6 +108,7 @@ sub run
 
 sub notime { 0 }
 
+# this code is only necessary thanks to NFS's brain-damage...
 sub make_sure_we_have_packages
 {
 	my ($self, $job) = @_;
