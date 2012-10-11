@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.34 2012/10/11 07:38:39 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.35 2012/10/11 17:35:19 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -220,7 +220,7 @@ sub merge_depends
 	}
 	if (defined $multi) {
 		for my $v (values %$h) {
-			$v->{info}{MULTI_PACKAGES} = $multi;
+			$v->{info}{BUILD_PACKAGES} = $multi;
 		}
 	}
 }
