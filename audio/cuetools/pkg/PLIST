@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/11 14:17:17 sthen Exp $
+@bin bin/cuebreakpoints
+@bin bin/cueconvert
+@bin bin/cueprint
+bin/cuetag
+@man man/man1/cuebreakpoints.1
+@man man/man1/cueconvert.1
+@man man/man1/cueprint.1

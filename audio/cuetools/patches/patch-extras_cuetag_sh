@@ -1,0 +1,30 @@
+$OpenBSD: patch-extras_cuetag_sh,v 1.1.1.1 2012/10/11 14:17:17 sthen Exp $
+--- extras/cuetag.sh.orig	Wed Feb 15 01:10:02 2006
++++ extras/cuetag.sh	Thu Oct 11 12:36:59 2012
+@@ -63,7 +63,7 @@ vorbis()
+ 	(for field in $fields; do
+ 		value=""
+ 		for conv in `eval echo \\$$field`; do
+-			value=`$CUEPRINT -n $1 -t "$conv\n" $cue_file`
++			value=`$CUEPRINT -n $1 -t "$conv\n" "$cue_file"`
+ 
+ 			if [ -n "$value" ]; then
+ 				echo "$field=$value"
+@@ -96,7 +96,7 @@ id3()
+ 	for field in $fields; do
+ 		value=""
+ 		for conv in `eval echo \\$$field`; do
+-			value=`$CUEPRINT -n $1 -t "$conv\n" $cue_file`
++			value=`$CUEPRINT -n $1 -t "$conv\n" "$cue_file"`
+ 
+ 			if [ -n "$value" ]; then
+ 				break
+@@ -141,7 +141,7 @@ main()
+ 	cue_file=$1
+ 	shift
+ 
+-	ntrack=`cueprint -d '%N' $cue_file`
++	ntrack=`cueprint -d '%N' "$cue_file"`
+ 	trackno=1
+ 
+ 	if [ $# -ne $ntrack ]; then
