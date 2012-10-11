@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2012/07/06 10:22:17 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2012/10/11 08:19:02 espie Exp $
 
 CATEGORIES =		databases
 V =			2.3
@@ -9,8 +9,8 @@ COMMENT =		sqlite database of ports
 COMMENT-main =		${COMMENT}, user version
 COMMENT-compact =	${COMMENT}, program version
 MAINTAINER =		Marc Espie <espie@openbsd.org>
-FULLPKGNAME-compact =	sqlports-compact-$V
-FULLPKGNAME-main =	sqlports-$V
+PKGNAME-compact =	sqlports-compact-$V
+PKGNAME-main =		sqlports-$V
 
 
 PERMIT_PACKAGE_CDROM =	Yes
