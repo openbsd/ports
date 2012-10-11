@@ -1,0 +1,99 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/11 18:00:30 jasper Exp $
+@newgroup _graphite:706
+@newuser _graphite:706:_graphite:daemon:Graphite and Carbon user:/nonexistent:/sbin/nologin
+bin/carbon-aggregator.py
+bin/carbon-cache.py
+bin/carbon-client.py
+bin/carbon-relay.py
+bin/validate-storage-schemas.py
+lib/python${MODPY_VERSION}/site-packages/carbon/
+lib/python${MODPY_VERSION}/site-packages/carbon-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/carbon/__init__.py
+lib/python${MODPY_VERSION}/site-packages/carbon/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/carbon/aggregator/
+lib/python${MODPY_VERSION}/site-packages/carbon/aggregator/__init__.py
+lib/python${MODPY_VERSION}/site-packages/carbon/aggregator/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/carbon/aggregator/buffers.py
+lib/python${MODPY_VERSION}/site-packages/carbon/aggregator/buffers.pyc
+lib/python${MODPY_VERSION}/site-packages/carbon/aggregator/receiver.py
+lib/python${MODPY_VERSION}/site-packages/carbon/aggregator/receiver.pyc
+lib/python${MODPY_VERSION}/site-packages/carbon/aggregator/rules.py
+lib/python${MODPY_VERSION}/site-packages/carbon/aggregator/rules.pyc
+lib/python${MODPY_VERSION}/site-packages/carbon/amqp0-8.xml
+lib/python${MODPY_VERSION}/site-packages/carbon/amqp_listener.py
+lib/python${MODPY_VERSION}/site-packages/carbon/amqp_listener.pyc
+lib/python${MODPY_VERSION}/site-packages/carbon/amqp_publisher.py
+lib/python${MODPY_VERSION}/site-packages/carbon/amqp_publisher.pyc
+lib/python${MODPY_VERSION}/site-packages/carbon/cache.py
+lib/python${MODPY_VERSION}/site-packages/carbon/cache.pyc
+lib/python${MODPY_VERSION}/site-packages/carbon/client.py
+lib/python${MODPY_VERSION}/site-packages/carbon/client.pyc
+lib/python${MODPY_VERSION}/site-packages/carbon/conf.py
+lib/python${MODPY_VERSION}/site-packages/carbon/conf.pyc
+lib/python${MODPY_VERSION}/site-packages/carbon/events.py
+lib/python${MODPY_VERSION}/site-packages/carbon/events.pyc
+lib/python${MODPY_VERSION}/site-packages/carbon/hashing.py
+lib/python${MODPY_VERSION}/site-packages/carbon/hashing.pyc
+lib/python${MODPY_VERSION}/site-packages/carbon/instrumentation.py
+lib/python${MODPY_VERSION}/site-packages/carbon/instrumentation.pyc
+lib/python${MODPY_VERSION}/site-packages/carbon/log.py
+lib/python${MODPY_VERSION}/site-packages/carbon/log.pyc
+lib/python${MODPY_VERSION}/site-packages/carbon/management.py
+lib/python${MODPY_VERSION}/site-packages/carbon/management.pyc
+lib/python${MODPY_VERSION}/site-packages/carbon/manhole.py
+lib/python${MODPY_VERSION}/site-packages/carbon/manhole.pyc
+lib/python${MODPY_VERSION}/site-packages/carbon/protocols.py
+lib/python${MODPY_VERSION}/site-packages/carbon/protocols.pyc
+lib/python${MODPY_VERSION}/site-packages/carbon/regexlist.py
+lib/python${MODPY_VERSION}/site-packages/carbon/regexlist.pyc
+lib/python${MODPY_VERSION}/site-packages/carbon/relayrules.py
+lib/python${MODPY_VERSION}/site-packages/carbon/relayrules.pyc
+lib/python${MODPY_VERSION}/site-packages/carbon/rewrite.py
+lib/python${MODPY_VERSION}/site-packages/carbon/rewrite.pyc
+lib/python${MODPY_VERSION}/site-packages/carbon/routers.py
+lib/python${MODPY_VERSION}/site-packages/carbon/routers.pyc
+lib/python${MODPY_VERSION}/site-packages/carbon/service.py
+lib/python${MODPY_VERSION}/site-packages/carbon/service.pyc
+lib/python${MODPY_VERSION}/site-packages/carbon/state.py
+lib/python${MODPY_VERSION}/site-packages/carbon/state.pyc
+lib/python${MODPY_VERSION}/site-packages/carbon/storage.py
+lib/python${MODPY_VERSION}/site-packages/carbon/storage.pyc
+lib/python${MODPY_VERSION}/site-packages/carbon/util.py
+lib/python${MODPY_VERSION}/site-packages/carbon/util.pyc
+lib/python${MODPY_VERSION}/site-packages/carbon/writer.py
+lib/python${MODPY_VERSION}/site-packages/carbon/writer.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/
+lib/python${MODPY_VERSION}/site-packages/twisted/plugins/
+lib/python${MODPY_VERSION}/site-packages/twisted/plugins/carbon_aggregator_plugin.py
+lib/python${MODPY_VERSION}/site-packages/twisted/plugins/carbon_aggregator_plugin.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/plugins/carbon_cache_plugin.py
+lib/python${MODPY_VERSION}/site-packages/twisted/plugins/carbon_cache_plugin.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/plugins/carbon_relay_plugin.py
+lib/python${MODPY_VERSION}/site-packages/twisted/plugins/carbon_relay_plugin.pyc
+share/examples/graphite/
+@sample ${SYSCONFDIR}/graphite/
+share/examples/graphite/aggregation-rules.conf.example
+@sample ${SYSCONFDIR}/graphite/aggregation-rules.conf
+share/examples/graphite/blacklist.conf.example
+@sample ${SYSCONFDIR}/graphite/blacklist.conf
+share/examples/graphite/carbon.amqp.conf.example
+@sample ${SYSCONFDIR}/graphite/amqp.conf
+share/examples/graphite/carbon.conf.example
+@sample ${SYSCONFDIR}/graphite/carbon.conf
+share/examples/graphite/relay-rules.conf.example
+@sample ${SYSCONFDIR}/graphite/relay-rules.conf
+share/examples/graphite/rewrite-rules.conf.example
+@sample ${SYSCONFDIR}/graphite/rewrite-rules.conf
+share/examples/graphite/storage-aggregation.conf.example
+@sample ${SYSCONFDIR}/graphite/store-aggregation.conf
+share/examples/graphite/storage-schemas.conf.example
+@sample ${SYSCONFDIR}/graphite/storage-schemas.conf
+share/examples/graphite/whitelist.conf.example
+@sample ${SYSCONFDIR}/graphite/whitelist.conf
+@group _graphite
+@owner _graphite
+@sample /var/graphite/storage/
+@sample /var/graphite/storage/whisper/
+@sample /var/graphite/storage/lists/
+@sample /var/graphite/storage/log/
+@sample /var/graphite/storage/rrd/

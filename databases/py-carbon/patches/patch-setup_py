@@ -1,0 +1,27 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2012/10/11 18:00:30 jasper Exp $
+
+Remove this warning:
+	UserWarning: Unknown distribution option: 'install_requires'
+
+We already make sure the dependencies are present.
+
+--- setup.py.orig	Thu May 31 22:32:28 2012
++++ setup.py	Wed Oct 10 19:45:01 2012
+@@ -14,7 +14,7 @@ else:
+ 
+ storage_dirs = [ ('storage/whisper',[]), ('storage/lists',[]),
+                  ('storage/log',[]), ('storage/rrd',[]) ]
+-conf_files = [ ('conf', glob('conf/*.example')) ]
++conf_files = [ ('${GRAPHITE_EGDIR}', glob('conf/*.example')) ]
+ #XXX Need a way to have these work for bdist_rpm but be left alone for everything else
+ #init_scripts = [ ('/etc/init.d', ['distro/redhat/init.d/carbon-cache',
+ #                                  'distro/redhat/init.d/carbon-relay',
+@@ -32,7 +32,6 @@ setup(
+   package_dir={'' : 'lib'},
+   scripts=glob('bin/*'),
+   package_data={ 'carbon' : ['*.xml'] },
+-  data_files=storage_dirs + conf_files, # + init_scripts,
+-  install_requires=['twisted', 'txamqp'],
++  data_files=conf_files, # + init_scripts,
+   **setup_kwargs
+ )
