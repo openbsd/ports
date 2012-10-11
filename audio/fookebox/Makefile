@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/10/11 07:14:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/10/11 07:48:59 jasper Exp $
 
 COMMENT=		jukebox frontend to mpd
 
 MODPY_EGG_VERSION=	0.6.1
 DISTNAME=		fookebox-${MODPY_EGG_VERSION}
+REVISION=		0
 CATEGORIES=		audio www
 
 HOMEPAGE=		http://fookebox.googlecode.com/
