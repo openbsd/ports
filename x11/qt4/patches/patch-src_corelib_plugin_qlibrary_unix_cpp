@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_corelib_plugin_qlibrary_unix_cpp,v 1.1 2012/10/11 01:18:09 sthen Exp $
+--- src/corelib/plugin/qlibrary_unix.cpp.orig	Mon Oct  1 16:44:39 2012
++++ src/corelib/plugin/qlibrary_unix.cpp	Mon Oct  1 16:45:05 2012
+@@ -143,9 +143,8 @@ bool QLibraryPrivate::load_sys()
+ #endif // Q_OS_AIX
+         if (!fullVersion.isEmpty()) {
+             suffixes << QString::fromLatin1(".so.%1").arg(fullVersion);
+-        } else {
+-            suffixes << QLatin1String(".so");
+         }
++        suffixes << QLatin1String(".so");
+ #endif
+ # ifdef Q_OS_MAC
+         if (!fullVersion.isEmpty()) {
