@@ -1,9 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2011/09/21 15:22:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2012/10/11 10:14:29 robert Exp $
 
 SUBDIR =
 SUBDIR += base
 SUBDIR += cups
-SUBDIR += motif
-SUBDIR += sdl
 
 .include <bsd.port.subdir.mk>
