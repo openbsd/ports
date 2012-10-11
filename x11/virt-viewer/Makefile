@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2012/09/27 14:58:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2012/10/11 10:04:01 jasper Exp $
 
 COMMENT=	graphics viewer for KVM guest displays
 
 DISTNAME=	virt-viewer-0.5.4
-REVISION=	0
+REVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
