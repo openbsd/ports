@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2012/10/11 12:02:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2012/10/11 12:11:04 ajacoutot Exp $
 
 COMMENT=	Linux compatibility package based on Fedora Core 4
 
@@ -95,7 +95,7 @@ post-install:
 
 # fix up the loader
 	cd ${FEDORADIR} && ${PATCH} -p0 --forward --quiet -E < \
-		${PATCHDIR}/patch-ldd
+		${FILESDIR}/patch-ldd
 	echo -e '/lib\n/usr/lib\n${X11BASE}/lib' >> \
 		${FEDORADIR}/etc/ld.so.conf
 	touch ${FEDORADIR}/etc/ld.so.cache
