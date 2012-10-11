@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.24 2012/09/24 06:51:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2012/10/11 10:39:08 jeremy Exp $
 
 COMMENT-main =		Nginx module for deploying ruby applications
 COMMENT-standalone =	ruby web application server
 
 PASS_VERSION =		3.0.11
-NGINX_VERSION =		1.0.11
+NGINX_VERSION =		1.2.3
 DISTNAME =		passenger-${PASS_VERSION}
-REVISION =		1
+REVISION =		2
 FULLPKGNAME-main =	${MODRUBY_PKG_PREFIX}-${DISTNAME}
 FULLPKGNAME-standalone = ${MODRUBY_PKG_PREFIX}-passenger-standalone-${PASS_VERSION}.${NGINX_VERSION}
 FULLPKGPATH-main =	${BASE_PKGPATH},-main
@@ -40,9 +40,9 @@ WANTLIB-standalone =	c crypto m pthread stdc++ z ${MODRUBY_WANTLIB}
 # Make devel/gmake a BUILD_DEPEND instead of USE_GMAKE, as the port
 # also uses BSD make.
 BUILD_DEPENDS =		${RUN_DEPENDS-main} \
-			net/curl \
 			devel/gmake
 RUN_DEPENDS-main =	${MODRUBY_RAKE_DEPENDS} \
+			net/curl \
 			devel/ruby-fastthread,${MODRUBY_FLAVOR}>=1.0.1 \
 			devel/ruby-daemon_controller,${MODRUBY_FLAVOR}>=0.2.5 \
 			www/ruby-rack,${MODRUBY_FLAVOR}
@@ -61,6 +61,9 @@ pre-configure:
 		${WRKSRC}/build/packaging.rb \
 		${WRKSRC}/ext/common/ResourceLocator.h \
 		${WRKSRC}/lib/phusion_passenger.rb
+	${MODRUBY_RUBY_ADJ} ${WRKSRC}/bin/passenger* \
+		${WRKSRC}/dev/*.rb \
+		${WRKSRC}/helper-scripts/p*
 
 post-build:
 	cd ${PASS_DIR} && ${SETENV} ${MAKE_ENV} \
