@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2012/10/11 12:02:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2012/10/11 12:16:18 ajacoutot Exp $
 @unexec-delete rm -f %D/emul/fedora/usr/share/man/whatis.db
 emul/
 emul/fedora/
@@ -82,14 +82,14 @@ emul/fedora/etc/pki/
 emul/fedora/etc/pki/rpm-gpg/
 emul/fedora/etc/pki/rpm-gpg/RPM-GPG-KEY-fedora
 emul/fedora/etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-10-primary
-emul/fedora/etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-${MACHINE_ARCH}
+emul/fedora/etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-i386
 emul/fedora/etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-ia64
 emul/fedora/etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-ppc
 emul/fedora/etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-ppc64
 emul/fedora/etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-primary
 emul/fedora/etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-test
 emul/fedora/etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-test-10-primary
-emul/fedora/etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-test-${MACHINE_ARCH}
+emul/fedora/etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-test-i386
 emul/fedora/etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-test-ia64
 emul/fedora/etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-test-ppc
 emul/fedora/etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-test-ppc64
@@ -710,9 +710,9 @@ emul/fedora/usr/sbin/capsh
 emul/fedora/usr/sbin/chroot
 emul/fedora/usr/sbin/getcap
 emul/fedora/usr/sbin/getpcaps
-emul/fedora/usr/sbin/glibc_post_upgrade.${MACHINE_ARCH}
+emul/fedora/usr/sbin/glibc_post_upgrade.i386
 emul/fedora/usr/sbin/iconvconfig
-emul/fedora/usr/sbin/iconvconfig.${MACHINE_ARCH}
+emul/fedora/usr/sbin/iconvconfig.i386
 emul/fedora/usr/sbin/libgcc_post_upgrade
 emul/fedora/usr/sbin/setcap
 emul/fedora/usr/sbin/tzdata-update

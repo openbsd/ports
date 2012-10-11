@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2012/10/11 12:11:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2012/10/11 12:16:18 ajacoutot Exp $
 
 COMMENT=	Linux compatibility package based on Fedora Core 4
 
