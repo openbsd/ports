@@ -1,0 +1,9 @@
+$OpenBSD: patch-docs_examples_apache_fookebox_wsgi,v 1.1.1.1 2012/10/11 07:14:21 jasper Exp $
+--- docs/examples/apache/fookebox.wsgi.orig	Wed Oct 10 13:44:55 2012
++++ docs/examples/apache/fookebox.wsgi	Wed Oct 10 13:44:46 2012
+@@ -1,4 +1,4 @@
+-BASE_PATH = '/usr/share/fookebox'
++BASE_PATH = '${MODPY_SITEPKG}/fookebox'
+ APP_CONFIG = '/etc/fookebox/config.ini'
+ 
+ import sys
