@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2012/08/18 12:41:38 ajacoutot Exp $ 
+# $OpenBSD: Makefile,v 1.20 2012/10/11 15:14:02 ajacoutot Exp $ 
+
+BROKEN-powerpc=	fails to build
 
 COMMENT=	library for machine-independent, array-oriented data access
 
