@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2012/06/19 20:40:10 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.17 2012/10/11 14:23:50 dcoppa Exp $
 
 COMMENT =		modern tiling window manager
 
 DISTNAME =		bluetile-0.6
-REVISION =		0
+REVISION =		1
 CATEGORIES =		x11
 HOMEPAGE =		http://www.bluetile.org/
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xft Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0
-WANTLIB += glib-2.0 gmp gobject-2.0 gthread-2.0 gtk-x11-2.0 m
+WANTLIB += glib-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 m
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB += pthread pthread-stubs util xcb xcb-render xcb-shm xml2
 WANTLIB += z
@@ -34,8 +34,7 @@ BUILD_DEPENDS =		devel/hs-ConfigFile \
 			x11/hs-xmonad-contrib>=0.10 \
 			x11/xmonad,-lib>=0.10
 
-LIB_DEPENDS =		devel/gmp \
-			devel/libglade2
+LIB_DEPENDS =		devel/libglade2
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/bluetile.1 ${PREFIX}/man/man1
