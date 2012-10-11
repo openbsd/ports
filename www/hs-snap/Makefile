@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2012/09/02 21:51:15 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2012/10/11 14:45:53 dcoppa Exp $
 
 COMMENT =		Snap project starter and glue code library
 
 DISTNAME =		snap-0.8.1
+REVISION =		0
 CATEGORIES =		www
 HOMEPAGE =		http://snapframework.com/
 
@@ -23,7 +24,7 @@ MODGHC_BUILD =		cabal hackage haddock register
 # Support dynamic project reloading via hint.
 MODGHC_SETUP_CONF_ARGS =-f hint
 
-WANTLIB +=		c gmp m pthread util z
+WANTLIB +=		c m pthread util z
 
 RUN_DEPENDS +=		devel/hs-MonadCatchIO-transformers>=0.2,<0.4 \
 			devel/hs-aeson>=0.6,<0.7 \
