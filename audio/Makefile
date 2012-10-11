@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.291 2012/10/11 07:15:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.292 2012/10/11 14:18:00 sthen Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -30,6 +30,7 @@
      SUBDIR += cmu-sphinxbase
      SUBDIR += cmus
      SUBDIR += cplay
+     SUBDIR += cuetools
      SUBDIR += daapd
      SUBDIR += deadbeef
      SUBDIR += disc-cover
