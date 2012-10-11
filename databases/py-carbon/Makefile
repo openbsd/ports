@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/10/11 18:00:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/10/11 18:13:51 jasper Exp $
 
 COMMENT=		backend data caching and persistence daemon for Graphite
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION=	0.9.10
 
 DISTNAME=		carbon-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 CATEGORIES=		databases
 
 # Apache
@@ -18,7 +19,8 @@ MODULES=		lang/python
 
 MASTER_SITES=		${MASTER_SITE_PYPI:=c/carbon/}
 
-BUILD_DEPENDS=		databases/py-whisper \
+BUILD_DEPENDS=		${RUN_DEPENDS}
+RUN_DEPENDS=		databases/py-whisper \
 			devel/py-twisted/core
 
 BIN_FILES=		carbon-aggregator.py carbon-cache.py carbon-client.py \
