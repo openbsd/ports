@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.8 2012/09/21 05:07:22 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.9 2012/10/11 10:17:27 dcoppa Exp $
 @conflict jakarta-tomcat-examples-*
 @pkgpath www/jakarta-tomcat/v7,-examples
 @owner _tomcat
@@ -1492,6 +1492,11 @@ webapps/docs/api/org/apache/tomcat/util/buf/UEncoder.html
 webapps/docs/api/org/apache/tomcat/util/buf/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/buf/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/buf/package-tree.html
+webapps/docs/api/org/apache/tomcat/util/collections/
+webapps/docs/api/org/apache/tomcat/util/collections/ConcurrentCache.html
+webapps/docs/api/org/apache/tomcat/util/collections/package-frame.html
+webapps/docs/api/org/apache/tomcat/util/collections/package-summary.html
+webapps/docs/api/org/apache/tomcat/util/collections/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/digester/
 webapps/docs/api/org/apache/tomcat/util/digester/AbstractObjectCreationFactory.html
 webapps/docs/api/org/apache/tomcat/util/digester/ArrayStack.html
@@ -1620,6 +1625,7 @@ webapps/docs/api/org/apache/tomcat/util/http/parser/HttpParserConstants.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/HttpParserTokenManager.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/HttpParserTreeConstants.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/JJTHttpParserState.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/MediaTypeCache.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/Node.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/ParseException.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/SimpleCharStream.html
