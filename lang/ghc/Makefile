@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2012/10/05 19:28:12 kili Exp $
+# $OpenBSD: Makefile,v 1.83 2012/10/11 07:51:10 dcoppa Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -11,7 +11,7 @@ COMMENT-doc =		documentation for GHC
 
 DISTNAME =		ghc-${MODGHC_VER}
 PKGNAME-main =		ghc-${MODGHC_VER}
-REVISION-main =		0
+REVISION-main =		1
 PKGNAME-doc =		ghc-doc-${MODGHC_VER}
 CATEGORIES =		lang devel
 HOMEPAGE =		http://www.haskell.org/ghc/
@@ -44,11 +44,11 @@ PKG_ARCH-doc =		*
 BUILD_DEPENDS =		archivers/gtar \
 			textproc/docbook-xsl
 LIB_DEPENDS-doc =
-LIB_DEPENDS-main =	${LIB_DEPENDS} devel/gmp
+LIB_DEPENDS-main =	${LIB_DEPENDS}
 RUN_DEPENDS-doc =
 RUN_DEPENDS-main =
 
-WANTLIB-main =		${WANTLIB} c gmp m ncursesw pthread util
+WANTLIB-main =		${WANTLIB} c m ncursesw pthread util
 
 WANTLIB-doc =
 
@@ -78,9 +78,7 @@ USE_GMAKE =		Yes
 USE_GROFF =		Yes
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--with-gmp-includes=${LOCALBASE}/include \
-			--with-gmp-libraries=${LOCALBASE}/lib \
-			--with-iconv-includes=${LOCALBASE}/include \
+CONFIGURE_ARGS +=	--with-iconv-includes=${LOCALBASE}/include \
 			--with-iconv-libraries=${LOCALBASE}/lib
 CONFIGURE_ENV =		CONF_CC_OPTS_STAGE0="-fno-pie -nopie" \
 			CONF_CC_OPTS_STAGE1="-fno-pie -nopie" \
