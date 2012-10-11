@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortInfo.pm,v 1.20 2012/10/11 07:38:39 espie Exp $
+# $OpenBSD: PortInfo.pm,v 1.21 2012/10/11 08:05:03 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -227,28 +227,16 @@ sub add
 
 package DPB::PortInfo;
 my %adder = (
+# actual info from dump-vars
 	FULLPKGNAME => "AddInfoShow",
 	RUN_DEPENDS => "AddDepends",
 	BUILD_DEPENDS => "AddDepends",
 	LIB_DEPENDS => "AddDepends",
-	REGRESS_DEPENDS => "AddRegressDepends",
-	NO_REGRESS => "AddYesNo",
-	REGRESS_IS_INTERACTIVE => "AddYesNo",
 	SUBPACKAGE => "AddInfo",
 	BUILD_PACKAGES => "AddList",
 	DPB_PROPERTIES => "AddList",
-	EXTRA => "Extra",
-	EXTRA2 => "Extra",
-	BEXTRA => "Extra",
-	DEPENDS => "AddDepends",
-	BDEPENDS => "AddDepends",
-	RDEPENDS => "AddDepends",
-	DIST => "AddDepends",
-	FDEPENDS => "AddDepends",
 	IGNORE => "AddIgnore",
 	FLAVOR => "AddList",
-	NEEDED_BY => "AddDepends",
-	BNEEDED_BY => "AddDepends",
 	DISTFILES => 'AddList',
 	PATCHFILES => 'AddList',
 	SUPDISTFILES => 'AddList',
@@ -269,6 +257,21 @@ my %adder = (
 	MASTER_SITES9 => 'AddOrderedList',
 	PERMIT_DISTFILES_FTP => 'AddNegative',
 	PERMIT_DISTFILES_CDROM => 'AddNegative',
+# not yet used, provision for regression
+	REGRESS_DEPENDS => "AddRegressDepends",
+	NO_REGRESS => "AddYesNo",
+	REGRESS_IS_INTERACTIVE => "AddYesNo",
+# extra stuff we're generating
+	DEPENDS => "AddDepends",	# all BUILD_DEPENDS/LIB_DEPENDS
+	EXTRA => "Extra",	# extract stuff and things in DEPENDS
+	EXTRA2 => "Extra",	# extract stuff and things in REGRESS_DEPENDS
+	BEXTRA => "Extra",	# EXTRA moved from todo to done
+	BDEPENDS => "AddDepends",# DEPENDS moved from todo to done
+	RDEPENDS => "AddDepends",# RUN_DEPENDS moved from todo to done
+	DIST => "AddDepends",	# all DISTFILES with all info
+	FDEPENDS => "AddDepends",# DISTFILES too, but after DISTIGNORE, 
+				 # and shrinking
+	# DISTIGNORE should be there ?
 );
 
 sub wanted
