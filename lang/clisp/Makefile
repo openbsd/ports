@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2012/08/30 20:54:59 pascal Exp $
+# $OpenBSD: Makefile,v 1.41 2012/10/11 18:12:53 pascal Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64
 
@@ -48,7 +48,7 @@ CFLAGS +=		-DSAFETY=2 -DNO_ASM -mcmodel=medany
 
 .if ${MACHINE_ARCH} == "powerpc"
 CONFIGURE_ARGS +=	--with-gmalloc
-CFLAGS +=		-fno-pie
+CFLAGS +=		-fno-pie -nopie
 LDFLAGS +=		-nopie
 .else
 CONFIGURE_ARGS +=	--without-gmalloc
