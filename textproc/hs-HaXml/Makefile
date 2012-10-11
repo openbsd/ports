@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.15 2012/09/02 21:22:55 kili Exp $
+# $OpenBSD: Makefile,v 1.16 2012/10/11 14:06:34 dcoppa Exp $
 
 COMMENT =		utilities for manipulating XML documents
 
 DISTNAME =		HaXml-1.23.3
+REVISION =		0
 CATEGORIES =		textproc
 HOMEPAGE =		http://projects.haskell.org/HaXml/
 
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
 
-WANTLIB =		c gmp m pthread util
+WANTLIB =		c m pthread util
 
 # GPLv2 / LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes

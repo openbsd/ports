@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2012/09/18 17:12:56 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.24 2012/10/11 14:06:34 dcoppa Exp $
 
 COMMENT =		command line podcast aggregator
 
 DISTNAME =		hpodder-1.1.6
-REVISION =		3
+REVISION =		4
 CATEGORIES =		net
 HOMEPAGE =		http://wiki.github.com/jgoerzen/hpodder/
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		c gmp m pthread sqlite3 util
+WANTLIB =		c m pthread sqlite3 util
 
 MODULES =		lang/ghc converters/libiconv
 
@@ -25,7 +25,6 @@ BUILD_DEPENDS =		devel/hs-ConfigFile \
 			devel/hs-mtl \
 			textproc/hs-HaXml>=1.22,<1.24 \
 			databases/hs-HDBC-sqlite3>=1.1.0
-LIB_DEPENDS =		devel/gmp
 RUN_DEPENDS =		net/curl>=7.15.5 \
 			audio/py-mutagen>=1.9
 
