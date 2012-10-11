@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.17 2012/10/08 14:16:36 espie Exp $
+# $OpenBSD: Core.pm,v 1.18 2012/10/11 07:40:30 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -696,12 +696,13 @@ sub has_sf
 
 sub parse_hosts_file
 {
-	my ($class, $filename, $state, $default) = @_;
+	my ($class, $filename, $state, $override) = @_;
 	open my $fh, '<', $filename or
 		$state->fatal("Can't read host files #1: #2", $filename, $!);
 	my $_;
 	my $sf;
 	my $cores = {};
+	my $default = {};
 	while (<$fh>) {
 		chomp;
 		s/\s*\#.*$//;
@@ -710,7 +711,7 @@ sub parse_hosts_file
 			$state->{startup_script} = $1;
 			next;
 		}
-		# copy default [properties
+		# copy default properties
 		my $prop = { %$default };
 		my ($host, @properties) = split(/\s+/, $_);
 		for my $_ (@properties) {
@@ -724,15 +725,16 @@ sub parse_hosts_file
 		if (defined $prop->{mem}) {
 			$prop->{memory} = $prop->{mem};
 		}
+		if ($host eq 'DEFAULT') {
+			$default = { %$prop };
+			next;
+		}
+		while (my ($k, $v) = each %$override) {
+			$prop->{$k} = $v;
+		}
 		$sf //= $prop->{sf};
 		if (defined $prop->{sf} && $prop->{sf} != $sf) {
 			$has_sf = 1;
-		}
-		if (defined $state->{connection_timeout}) {
-			$prop->{timeout} //= $state->{connection_timeout};
-		}
-		if (defined $state->{stuck_timeout}) {
-			$prop->{stuck} //= $state->{stuck_timeout};
 		}
 		$state->heuristics->calibrate(DPB::Core::Factory->new($host,
 		    $prop));

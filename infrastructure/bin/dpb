@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.55 2012/10/10 11:44:11 rpe Exp $
+# $OpenBSD: dpb,v 1.56 2012/10/11 07:40:30 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -227,9 +227,6 @@ sub handle_options
 	$state->heuristics->set_logger($state->logger);
 	$state->{display_timeout} =
 	    $state->{subst}->value('DISPLAY_TIMEOUT') // 10;
-    	$state->{connection_timeout} =
-	    $state->{subst}->value('CONNECTION_TIMEOUT');
-	$state->{stuck_timeout} = $state->{subst}->value('STUCK_TIMEOUT');
 	$state->{build_once} = $state->{all};
 	if ($state->defines("DONT_BUILD_ONCE")) {
 		$state->{build_once} = 0;
@@ -241,27 +238,30 @@ sub start_cores
 {
 	my $state = shift;
 
-	my $default_prop = {};
+	my $override_prop = {};
 
 	if ($state->opt('j')) {
-		$default_prop->{jobs} = $state->opt('j');
+		$override_prop->{jobs} = $state->opt('j');
 	}
 	if ($state->opt('p')) {
-		$default_prop->{parallel} = $state->opt('p');
+		$override_prop->{parallel} = $state->opt('p');
 	}
-	if ($state->{stuck_timeout}) {
-		$default_prop->{stuck} = $state->{stuck_timeout};
+	if (my $t = $state->{subst}->value('STUCK_TIMEOUT')) {
+		$override_prop->{stuck} = $t;
 	}
+	if (my $t = $state->{subst}->value('CONNECTION_TIMEOUT')) {
+		$override_prop->{timeout} = $t;
+    	}
 	if ($state->opt('J')) {
-		$default_prop->{junk} = $state->opt('J');
+		$override_prop->{junk} = $state->opt('J');
 	}
 
 	if ($state->{config}) {
-		DPB::Core->parse_hosts_file($state->{config}, $state, $default_prop);
+		DPB::Core->parse_hosts_file($state->{config}, $state, $override_prop);
 	}
 
 	if (!$state->{config}) {
-		DPB::Core::Factory->new('localhost', $default_prop);
+		DPB::Core::Factory->new('localhost', $override_prop);
 	}
 	DPB::Core::Factory->init_cores($state);
 }

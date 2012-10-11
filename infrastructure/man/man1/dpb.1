@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.43 2012/10/09 20:35:57 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.44 2012/10/11 07:40:30 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: October 9 2012 $
+.Dd $Mdocdate: October 11 2012 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -197,7 +197,7 @@ Disable reading/saving of default build stats under
 .It Ar STUCK_TIMEOUT
 Timeout (in seconds * speed factor) after which tasks that don't show
 any progress will be killed.
-This can be set on a per-core basis as the
+This can be instead set on a per-core basis as the
 .Sq stuck
 property.
 Note that this will always be divided by the core's speed factor.
@@ -226,9 +226,23 @@ information.
 .It Fl h Ar hosts
 File with hosts to use for building.
 One host per line, plus properties, such as:
-.Bd -literal
+.Bd -literal -offset indent
 espie@aeryn jobs=4 arch=i386
 .Ed
+.Pp
+The special hostname
+.Ar DEFAULT
+can be used to preset defaults.
+It should be used at the start of the file.
+.Pp
+Use 
+.Ar localhost 
+to specify the local machine.
+.Nm
+will special-case it and not use
+.Xr ssh 1
+to connect.
+.Pp
 Properties are as follows:
 .Bl -tag -width memory=150
 .It arch=value
@@ -269,12 +283,14 @@ will get killed.
 .It timeout=s
 Defines a specific connection timeout for ssh to that host.
 .El
+.Pp
 The
 .Ar hosts
 file can also define a start-up script, as
-.Bd -literal
+.Bd -literal -offset indent
 STARTUP=path
 .Ed
+.Pp
 which will be run at start-up on each machine.
 There are no fine-grained options to control
 .Xr ssh 1
@@ -286,9 +302,9 @@ List of
 to install, on the local box.
 This will also add them to the list of things to build.
 .It Fl J Ar p
-Default value for the
+Override value for the
 .Dq junk
-propery.
+property.
 Delete unneeded installed packages during the build.
 Each
 .Ar prepare
@@ -348,7 +364,7 @@ Read list of
 .Xr pkgpath 7
 from file.
 .It Fl p Ar parallel
-Default value for the
+Override value for the
 .Dq parallel
 property.
 .Pp
@@ -673,6 +689,10 @@ and finishes at
 .Sq package .
 .It Pa clean.log
 Paths that do not clean correctly, and required sudo to clean the directory.
+.It Pa concurrent.log
+Shows the actual concurrency achieved as a result of job starvation / 
+parallel handling.
+Only gets a new line when the value changes: pid timestamp jobs
 .It Pa dependencies.log
 List of pkgpath frequencies, filled at end of LISTING if
 .Fl a .
@@ -696,7 +716,11 @@ pkgpath ignored, either directly, or indirectly because a dependency was
 ignored.
 End of the line states reason why ignored.
 .It B
-pkgpath built.
+pkgpath built / distfile found.
+.It E
+error in build or fetch.
+.It F
+distfile queued for download.
 .It I
 pkgpath can be installed.
 .It J
@@ -712,7 +736,7 @@ built package is no longer required for anything.
 .It Q
 pkgpath queued as buildable whenever a slot is free.
 .It T
-pkgpath to build.
+pkgpath to build / distfile to download.
 .It V
 pkgpath put back in the buildable queue, after job that was running in
 the same directory returned.
