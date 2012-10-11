@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.369 2012/09/29 10:27:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.370 2012/10/11 16:43:44 bentley Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -361,6 +361,7 @@
      SUBDIR += urlview,slang
      SUBDIR += validate
      SUBDIR += vgrind
+     SUBDIR += vislcg3
      SUBDIR += wdg-sgml-lib
      SUBDIR += wdiff
      SUBDIR += xerces
