@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2012/10/11 07:51:10 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.84 2012/10/11 11:05:02 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -183,8 +183,6 @@ BOOTSTRAP_DATE =	20120917
 # ghc and creates a `bindist', i.e. a tarball with binaries that
 # can be used for bootstrapping.
 bootstrap: patch
-	cd ${WRKDIR} && rm -rf bin
-
 	echo HSCOLOUR_SRCS=NO > ${WRKSRC}/mk/build.mk
 	echo GhcLibHcOpts=-O -fasm >> ${WRKSRC}/mk/build.mk
 	echo GhcStage1HcOpts=-O -fasm >> ${WRKSRC}/mk/build.mk
@@ -209,10 +207,5 @@ bootstrap: patch
 
 	env MAKE_ENV="AUTOCONF_VERSION=2.61 AUTOMAKE_VERSION=1.4" \
 	${MAKE} build ALL_TARGET="all binary-dist" \
-
-	cd ${WRKSRC} && \
-	pre=ghc-${MODGHC_VER}.$$(cat VERSION_DATE) && \
-	suf=unknown-openbsd.tar.bz2 && \
-	mv "$$pre-x86_64-$$suf" "$$pre-amd64-$$suf" || true
 
 .include <bsd.port.mk>
