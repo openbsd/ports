@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.33 2012/08/22 07:49:00 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.34 2012/10/11 07:38:39 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -166,8 +166,8 @@ sub merge_depends
 			}
 		}
 		# share !
-		if (defined $info->{MULTI_PACKAGES}) {
-			$multi = $info->{MULTI_PACKAGES};
+		if (defined $info->{BUILD_PACKAGES}) {
+			$multi = $info->{BUILD_PACKAGES};
 		}
 		# XXX don't grab dependencies for IGNOREd stuff
 		next if defined $info->{IGNORE};
@@ -223,6 +223,27 @@ sub merge_depends
 			$v->{info}{MULTI_PACKAGES} = $multi;
 		}
 	}
+}
+
+sub build_path_list
+{
+	my ($v) = @_;
+	my @l = ($v);
+	my $stem = $v->pkgpath_and_flavors;
+	my $w = DPB::PkgPath->new($stem);
+	if ($w ne $v) {
+		push(@l, $w);
+	}
+	if (defined $v->{info}) {
+		for my $m (keys %{$v->{info}{BUILD_PACKAGES}}) {
+			next if $m eq '-';
+			my $w = DPB::PkgPath->new("$stem,$m");
+			if ($w ne $v) {
+				push(@l, $w);
+			}
+		}
+	}
+	return @l;
 }
 
 sub break

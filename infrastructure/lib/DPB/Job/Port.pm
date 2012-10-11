@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.35 2012/10/08 12:41:03 espie Exp $
+# $OpenBSD: Port.pm,v 1.36 2012/10/11 07:38:39 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -107,6 +107,20 @@ sub run
 }
 
 sub notime { 0 }
+
+sub make_sure_we_have_packages
+{
+	my ($self, $job) = @_;
+	my $check = -f $job->{builder}->pkgfile($job->{v});
+	# check ALL BUILD_PACKAGES
+	for my $w ($job->{v}->build_path_list) {
+		$check &&= -f $job->{builder}->pkgfile($w);
+	}
+	if (!$check) {
+		$job->add_tasks(DPB::Task::Port::VerifyPackages->new(
+		    'waiting'.$job->{waiting}++));
+	}
+}
 
 package DPB::Task::Port::Serialized;
 our @ISA = qw(DPB::Task::Port);
@@ -444,9 +458,23 @@ sub finalize
 		return 1;
 	}
 	$self->SUPER::finalize($core);
+	$self->make_sure_we_have_packages($core->job);
+#	$core->job->add_tasks(DPB::Task::Port::VerifyPackages->new('waiting'));
 }
 
 package DPB::Task::Port::VerifyPackages;
+our @ISA = qw(DPB::Task::Port);
+sub finalize
+{
+	my ($self, $core) = @_;
+	$self->make_sure_we_have_packages($core->job);
+}
+
+sub run
+{
+	sleep 10;
+	exit(0);
+}
 
 package DPB::Port::TaskFactory;
 my $repo = {
@@ -460,7 +488,6 @@ my $repo = {
 	'show-size' => 'DPB::Task::Port::ShowSize',
 	'show-fake-size' => 'DPB::Task::Port::ShowFakeSize',
 	'junk' => 'DPB::Task::Port::Uninstall',
-	'final-check' => "DPB::Task::Port::VerifyPackages",
 };
 
 sub create
@@ -549,7 +576,6 @@ sub add_normal_tasks
 	if (!$dontclean) {
 		push @todo, 'clean';
 	}
-#	push @todo, 'final-check';
 	$self->add_tasks(map {DPB::Port::TaskFactory->create($_)} @todo);
 }
 
@@ -633,7 +659,7 @@ sub set_watch
 {
 	my ($self, $logger, $v) = @_;
 	my $expected;
-	for my $w ($logger->pathlist($v)) {
+	for my $w ($v->build_path_list) {
 		if (defined $logsize->{$w}) {
 			$expected = $logsize->{$w};
 			last;

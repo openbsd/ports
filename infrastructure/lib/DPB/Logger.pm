@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Logger.pm,v 1.8 2012/07/10 09:38:37 espie Exp $
+# $OpenBSD: Logger.pm,v 1.9 2012/10/11 07:38:38 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -84,27 +84,6 @@ sub link
 	symlink($src, $b);
 }
 
-sub pathlist
-{
-	my ($self, $v) = @_;
-	my @l = ($v);
-	my $stem = $v->pkgpath_and_flavors;
-	my $w = DPB::PkgPath->new($stem);
-	if ($w ne $v) {
-		push(@l, $w);
-	}
-	if (defined $v->{info}) {
-		for my $m (keys %{$v->{info}{MULTI_PACKAGES}}) {
-			next if $m eq '-';
-			my $w = DPB::PkgPath->new("$stem,$m");
-			if ($w ne $v) {
-				push(@l, $w);
-			}
-		}
-	}
-	return @l;
-}
-
 sub make_logs
 {
 	my ($self, $v) = @_;
@@ -112,7 +91,7 @@ sub make_logs
 	if ($self->{clean}) {
 		unlink($log);
 	}
-	for my $w ($self->pathlist($v)) {
+	for my $w ($v->build_path_list) {
 		$self->link($log, $self->log_pkgname($w));
 	}
 	return $log;
