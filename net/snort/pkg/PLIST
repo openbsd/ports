@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2012/09/26 02:11:05 lteo Exp $
+@comment $OpenBSD: PLIST,v 1.22 2012/10/11 02:40:48 lteo Exp $
 @pkgpath net/snort[,flexresp][,mysql][,prelude][,postgresql]
 @newgroup _snort:557
 @newuser _snort:557:_snort:daemon:Snort Account:/nonexistent:/sbin/nologin
@@ -143,3 +143,4 @@ share/examples/snort/unicode.map
 @group _snort
 @sample /var/snort/
 @sample /var/snort/log/
+@rcscript ${RCDIR}/snort

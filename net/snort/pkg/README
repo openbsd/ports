@@ -1,16 +1,55 @@
-$OpenBSD: README,v 1.1 2012/09/26 02:11:05 lteo Exp $
+$OpenBSD: README,v 1.2 2012/10/11 02:40:48 lteo Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
 An up-to-date set of rules is needed for Snort to be useful as an IDS.
-These can be downloaded manually or net/oinkmaster can be used to
-download the latest rules from several different sources.
+By default, these rules are expected to be present in the
+${SYSCONFDIR}/snort/rules directory as defined by RULE_PATH in
+${SYSCONFDIR}/snort/snort.conf.
 
-It is recommended that snort be run as an unprivileged chrooted user.
+The two most common sources of Snort rules are the official Snort rules
+and the Emerging Threats rules.  To download the official Snort rules,
+you will first need to sign up for an "oinkcode" at
+https://www.snort.org/signup since they are distributed under a
+commercial license.  Emerging Threats rules can be downloaded without
+signing up.
+
+The easiest way to download these rules is to use a rule manager such as
+the oinkmaster package.  You can set up oinkmaster's config file to
+download one or more Snort rulesets and extract them automatically.
+Please refer to the documentation in the oinkmaster package for more
+details.
+
+If you prefer to obtain the rules manually without using a rule manager,
+you can use the following example commands to download and extract them
+to the correct directory:
+
+* Official Snort rules (replace <oinkcode> with yours):
+
+    ftp -o snortrules-snapshot-${V}.tar.gz \
+        http://www.snort.org/reg-rules/snortrules-snapshot-${V}.tar.gz/<oinkcode>
+    tar -C /etc/snort -xzf snortrules-snapshot-${V}.tar.gz rules preproc_rules
+
+* Emerging Threats rules:
+
+    ftp http://rules.emergingthreats.net/open/snort-2.9.0/emerging.rules.tar.gz
+    tar -C /etc/snort -xzf emerging.rules.tar.gz
+
+  If you use Emerging Threats rules, you will need to uncomment its
+  include line in ${SYSCONFDIR}/snort/snort.conf and edit
+  ${SYSCONFDIR}/snort/rules/emerging.conf for Snort to load them.
+
+It is important that you review the rules carefully to ensure that you
+use the rules that apply to your environment.  You should also modify
+${SYSCONFDIR}/snort/snort.conf to define the relevant variables such as
+HOME_NET to match your network.
+
+It is recommended that Snort be run as an unprivileged chrooted user.
 A _snort user/group and a log directory have been created for this
-purpose. You should start snort with the following options to take
-advantage of this:
+purpose. You should start Snort with the ${RCDIR}/snort script to take
+advantage of this.
 
-  -c /etc/snort/snort.conf -u _snort -g _snort -t /var/snort -l /var/snort/log
+For more details on setting up Snort, please refer to its user manual at
+${TRUEPREFIX}/share/doc/snort/snort_manual.pdf

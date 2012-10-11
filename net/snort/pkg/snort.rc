@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# $OpenBSD: snort.rc,v 1.1 2012/10/11 02:40:48 lteo Exp $
+
+daemon="${TRUEPREFIX}/bin/snort -D"
+daemon_flags="-c ${SYSCONFDIR}/snort/snort.conf -u _snort -g _snort -t /var/snort -l /var/snort/log"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1
