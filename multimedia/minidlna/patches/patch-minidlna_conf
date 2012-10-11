@@ -1,10 +1,21 @@
-$OpenBSD: patch-minidlna_conf,v 1.1.1.1 2012/10/10 10:45:05 sthen Exp $
+$OpenBSD: patch-minidlna_conf,v 1.2 2012/10/11 17:59:05 sthen Exp $
 
 default directories, plus we don't use inotify
 
 --- minidlna.conf.orig	Tue Feb 14 19:26:53 2012
-+++ minidlna.conf	Tue Oct  9 22:20:18 2012
-@@ -17,22 +17,18 @@ media_dir=/opt
++++ minidlna.conf	Thu Oct 11 19:57:58 2012
+@@ -1,8 +1,9 @@
+ # port for HTTP (descriptions, SOAP, media transfer) traffic
++# if firewalling, this TCP port, as well as UDP port 1900, must be open.
+ port=8200
+ 
+ # network interfaces to serve, comma delimited
+-#network_interface=eth0
++#network_interface=em0
+ 
+ # set this to the directory you want scanned.
+ # * if have multiple directories, you can have multiple media_dir= lines
+@@ -17,22 +18,18 @@ media_dir=/opt
  #friendly_name=My DLNA Server
  
  # set this if you would like to specify the directory where you want MiniDLNA to store its database and album art cache
