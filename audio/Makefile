@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.290 2012/09/29 12:11:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.291 2012/10/11 07:15:38 jasper Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -44,6 +44,7 @@
      SUBDIR += flac
      SUBDIR += flite
      SUBDIR += fluidsynth
+     SUBDIR += fookebox
      SUBDIR += freealut
      SUBDIR += gimmix
      SUBDIR += gmpc
