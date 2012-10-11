@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2011/04/11 13:06:14 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2012/10/11 14:39:45 dcoppa Exp $
 
 BROKEN =		overlapping instances with hs-parsec >= 3.0
 COMMENT =		Perl 6 Implementation
 
 DISTNAME =		Pugs-6.2.13.15
-REVISION =		2
+REVISION =		3
 CATEGORIES =		lang devel
 HOMEPAGE =		http://pugscode.org/
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 VMEM_WARNING =		Yes
 
-WANTLIB =		c gmp m ncursesw perl pthread util
+WANTLIB =		c m ncursesw perl pthread util
 
 MODULES =		lang/ghc converters/libiconv
 
@@ -33,7 +33,5 @@ BUILD_DEPENDS =		devel/hs-binary \
 			devel/hs-pugs-compat>=0.0.5 \
 			devel/hs-pugs-DrIFT>=2.2.3.0 \
 			devel/hs-stringtable-atom>=0.0.4
-
-LIB_DEPENDS =		devel/gmp
 
 .include <bsd.port.mk>
