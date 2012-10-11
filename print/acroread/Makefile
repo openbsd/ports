@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2011/09/16 11:13:41 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2012/10/11 10:13:56 robert Exp $
 
 ONLY_FOR_ARCHS=	i386
 SHARED_ONLY=	Yes
+
+BROKEN=		broken with fedora 10 packages, needs an update at least
 
 COMMENT-main=	view, distribute and print PDF documents
 COMMENT-plugins=further plugins for acrobat reader
