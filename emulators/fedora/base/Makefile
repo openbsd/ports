@@ -1,121 +1,105 @@
-# $OpenBSD: Makefile,v 1.16 2011/09/21 15:22:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2012/10/11 10:16:29 robert Exp $
 
 COMMENT=	Linux compatibility package based on Fedora Core 4
 
-PKGNAME=	fedora_base-4.0
-REVISION=	9
+PKGNAME=	fedora_base-10.0
+
 # clean up after make plist:
 #	- perl -pi -e "s,^\@lib ,," pkg/PLIST
-#	- change the 2nd LIBXaw_version to LIBXaw7_version in pkg/PLIST
-SHARED_LIBS=	FS	6.0 \
-		GL	1.2 \
-		GLU     1.3 \
-		GLw	1.0 \
-		I810XvMC 1.0 \
-		ICE	6.3 \
-		OSMesa	4.0 \
-		SM	6.0 \
-		X11	6.2 \
-		XRes	1.0 \
-		XTrap	6.4 \
-		Xaw	6.1 \
-		Xaw7	7.0 \
-		Xcomposite 1.0 \
-		Xdamage	1.0 \
-		Xevie	1.0 \
-		Xext	6.4 \
-		Xfixes	3.0 \
-		Xfont	1.5 \
-		Xft	1.1 \
-		Xi	6.0 \
-		Xinerama 1.0 \
-		Xmu	6.2 \
-		Xmuu	1.0 \
-		Xp	6.2 \
-		Xpm	4.11 \
-		Xrandr	2.0 \
-		Xss	1.0 \
-		Xt	6.0 \
-		Xtst	6.1 \
-		Xv	1.0 \
-		XvMC	1.0 \
-		Xxf86dga 1.0 \
-		Xxf86misc 1.1 \
-		Xxf86rush 1.0 \
-		Xxf86vm	1.0 \
-		dps	1.0 \
-		dpstk	1.0 \
-		fontenc	1.0 \
-		form	5.4 \
-		formw	5.4 \
-		history	5.0 \
-		menu	5.4 \
-		menuw	5.4 \
-		ncurses	5.4 \
-		ncursesw 5.4 \
-		panel	5.4 \
-		panelw	5.4 \
-		psres	1.0 \
-		qt-mt	3.3 \
-		qui	1.0 \
-		readline 5.0 \
-		xkbfile	1.0 \
-		xkbui	1.0
+SHARED_LIBS +=  cap                       2.10
+SHARED_LIBS +=  blkid                     1.0
+SHARED_LIBS +=  com_err                   2.1
+SHARED_LIBS +=  e2p                       2.3
+SHARED_LIBS +=  ext2fs                    2.4
+SHARED_LIBS +=  ss                        2.0
+SHARED_LIBS +=  uuid                      1.2
 
-MASTER_SITES=	${MASTER_SITE_FEDORA:=4/i386/os/Fedora/RPMS/}
-MASTER_SITES0=	${MASTER_SITE_FEDORA:=updates/4/i386/}
+MASTER_SITES=	${MASTER_SITE_FEDORA:=10/}
 
 DISTFILES=	${RPMS}
 
 RPMDIR=		${FULLDISTDIR}
 
-RPMS=		atk-1.9.1-1.i386.rpm \
-		bash-3.0-31.i386.rpm \
-		binutils-2.15.94.0.2.2-2.1.i386.rpm:0 \
-		compat-libstdc++-296-2.96-132.fc4.i386.rpm \
-		compat-libstdc++-33-3.2.3-47.fc4.i386.rpm \
-		expat-1.95.8-6.i386.rpm \
-		file-4.16-fc4.1.i386.rpm:0 \
-		fontconfig-2.2.3-13.i386.rpm \
-		freetype-2.1.9-2.i386.rpm \
-		gdk-pixbuf-0.22.0-18.fc4.2.i386.rpm:0 \
-		glib-1.2.10-16.i386.rpm \
-		glib2-2.6.6-1.i386.rpm:0 \
-		glibc-2.3.6-3.i386.rpm:0 \
-		glibc-common-2.3.6-3.i386.rpm:0 \
-		gtk+-1.2.10-39.i386.rpm \
-		gtk2-2.6.10-2.fc4.4.i386.rpm:0 \
-		libacl-2.2.32-1.FC4.2.i386.rpm:0 \
-		libattr-2.4.24-1.FC4.1.i386.rpm:0 \
-		libgcc-4.0.2-8.fc4.i386.rpm:0 \
-		libjpeg-6b-34.i386.rpm \
-		libmng-1.0.9-1.i386.rpm \
-		libpng-1.2.8-2.i386.rpm \
-		libstdc++-4.0.2-8.fc4.i386.rpm:0 \
-		libtermcap-2.0.8-41.i386.rpm \
-		libtiff-3.7.1-6.fc4.3.i386.rpm:0 \
-		libxml2-2.6.20-1.FC4.i386.rpm:0 \
-		ncurses-5.4-19.fc4.i386.rpm:0 \
-		pango-1.8.1-2.i386.rpm \
-		qt-3.3.4-15.5.i386.rpm:0 \
-		readline-5.0-3.i386.rpm \
-		termcap-5.4-7fc4.noarch.rpm:0 \
-		xorg-x11-deprecated-libs-6.8.2-37.FC4.49.2.1.i386.rpm:0 \
-		xorg-x11-libs-6.8.2-37.FC4.49.2.1.i386.rpm:0 \
-		xorg-x11-Mesa-libGL-6.8.2-37.FC4.49.2.1.i386.rpm:0 \
-		xorg-x11-Mesa-libGLU-6.8.2-37.FC4.49.2.1.i386.rpm:0 \
-		zlib-1.2.2.2-5.fc4.i386.rpm:0
+RPMS=		basesystem-10.0-1.noarch.rpm \
+		compat-libstdc++-296-2.96-141.i386.rpm \
+		compat-libstdc++-33-3.2.3-64.i386.rpm \
+		coreutils-6.12-20.fc10.i386.rpm \
+		db4-4.7.25-7.fc10.i386.rpm \
+		e2fsprogs-libs-1.41.4-6.fc10.i386.rpm \
+		elfutils-0.142-1.fc10.i386.rpm \
+		fedora-release-10-1.noarch.rpm \
+		filesystem-2.4.19-1.fc10.i386.rpm \
+		freetype-2.3.7-3.fc10.i386.rpm \
+		glibc-2.9-3.i386.rpm \
+		glibc-common-2.9-3.i386.rpm \
+		info-4.12-4.fc10.i386.rpm \
+		keyutils-libs-1.2-3.fc9.i386.rpm \
+		libacl-2.2.47-3.fc10.i386.rpm \
+		libattr-2.4.43-2.fc10.i386.rpm \
+		libcap-2.10-2.fc10.i386.rpm \
+		libgcc-4.3.2-7.i386.rpm \
+		libidn-0.6.14-8.i386.rpm \
+		libselinux-2.0.78-1.fc10.i386.rpm \
+		libsepol-2.0.33-1.fc10.i386.rpm \
+		libstdc++-4.3.2-7.i386.rpm \
+		setserial-2.17-22.fc9.i386.rpm \
+		setup-2.7.4-4.fc10.noarch.rpm \
+		fontconfig-2.6.0-3.fc10.i386.rpm \
+		expat-2.0.1-5.i386.rpm \
+		zlib-1.2.3-18.fc9.i386.rpm \
+		libfontenc-1.0.4-6.fc10.i386.rpm \
+		libFS-1.0.1-2.fc10.i386.rpm \
+		libICE-1.0.4-4.fc10.i386.rpm \
+		libSM-1.1.0-2.fc10.i386.rpm \
+		libX11-1.1.5-4.fc10.i386.rpm \
+		libXau-1.0.4-1.fc10.i386.rpm \
+		libXaw-1.0.4-3.fc10.i386.rpm \
+		libxcb-1.1.91-5.fc10.i386.rpm \
+		libXcomposite-0.4.0-5.fc10.i386.rpm \
+		libXcursor-1.1.9-3.fc10.i386.rpm \
+		libXdamage-1.1.1-4.fc9.i386.rpm \
+		libXdmcp-1.0.2-6.fc10.i386.rpm \
+		libXevie-1.0.2-4.fc10.i386.rpm \
+		libXext-1.0.4-1.fc9.i386.rpm \
+		libXfixes-4.0.3-4.fc10.i386.rpm \
+		libXfont-1.3.3-1.fc10.i386.rpm \
+		libXft-2.1.13-1.fc10.i386.rpm \
+		libXi-1.1.3-4.fc9.i386.rpm \
+		libXinerama-1.0.3-2.fc10.i386.rpm \
+		libxkbfile-1.0.4-5.fc9.i386.rpm \
+		libXmu-1.0.4-1.fc9.i386.rpm \
+		libXp-1.0.0-11.fc9.i386.rpm \
+		libXpm-3.5.7-4.fc9.i386.rpm \
+		libXrandr-1.2.3-1.fc10.i386.rpm \
+		libXrender-0.9.4-3.fc9.i386.rpm \
+		libXres-1.0.3-5.fc10.i386.rpm \
+		libXScrnSaver-1.1.3-1.fc10.i386.rpm \
+		libXt-1.0.5-1.fc10.i386.rpm \
+		libXTrap-1.0.0-6.fc10.i386.rpm \
+		libXtst-1.0.3-3.fc9.i386.rpm \
+		libXv-1.0.4-1.fc10.i386.rpm \
+		libXvMC-1.0.4-5.fc10.i386.rpm \
+		libXxf86dga-1.0.2-3.fc10.i386.rpm \
+		libXxf86misc-1.0.1-6.fc10.i386.rpm \
+		libXxf86vm-1.0.2-1.fc10.i386.rpm \
+		mesa-libGLw-6.5.1-5.fc9.i386.rpm
 
-REMOVE_DIRS=	usr/X11R6/man /usr/doc /usr/info /usr/man /usr/share/doc \
-		/usr/share/man /usr/share/zoneinfo
-REMOVE_FILES=	/etc/localtime
+REMOVE_DIRS=	boot dev etc/fonts home initrd media root tmp var/log var/run var/tmp \
+		usr/local usr/tmp usr/share/fonts etc/fonts
+
+REMOVE_FILES=	bin/df bin/su etc/exports etc/group etc/localtime \
+		etc/motd etc/passwd etc/printcap etc/services \
+		etc/protocols usr/bin/fc-cache usr/share/man/man1/fc-cache.1.gz
+
+ADD_DIRS=	usr/X11R6/share usr/X11R6/man usr/X11R6/lib/tls \
+		usr/X11R6/include usr/X11R6/bin
 
 PATCH_LIST=
 
 do-install:
 	${INSTALL_DATA_DIR} ${FEDORADIR}
 .for rpm in ${RPMS:S/:0//}
-	cd ${FEDORADIR}; rpm2cpio ${RPMDIR}/${rpm} | cpio -id
+	cd ${FEDORADIR}; rpm2cpio ${RPMDIR}/${rpm} | ${LOCALBASE}/bin/gcpio -id
 .endfor
 
 # get rid of some unnecessary files and directories
@@ -125,6 +109,11 @@ do-install:
 .for F in ${REMOVE_FILES}
 	rm -f ${FEDORADIR}/${F}
 .endfor
+.for D in ${ADD_DIRS}
+	mkdir -p ${FEDORADIR}/${D}
+.endfor
+
+	ln -s ${SYSCONFDIR}/fonts ${FEDORADIR}/etc/fonts
 
 	mkdir ${FEDORADIR}/dev; \
 		ln -s /dev/console ${FEDORADIR}/dev/tty0; \
@@ -139,19 +128,14 @@ do-install:
 # fix up the loader
 	cd ${FEDORADIR} && ${PATCH} -p0 --forward --quiet -E < \
 		${PATCHDIR}/patch-ldd
-	${INSTALL_DATA} ${FILESDIR}/ld.so.conf ${FEDORADIR}/etc
+	echo -e '/lib\n/usr/lib\n${X11BASE}/lib' >> \
+		${FEDORADIR}/etc/ld.so.conf
+	touch ${FEDORADIR}/etc/ld.so.cache
 	mv ${FEDORADIR}/sbin/ldconfig ${FEDORADIR}/sbin/ldconfig.bin
 	${INSTALL_SCRIPT} ${FILESDIR}/ldconfig ${FEDORADIR}/sbin
-	cp -p ${FEDORADIR}/lib/ld-2.3.6.so ${FEDORADIR}/usr/bin/ld-2.3.6-elf.so
-	perl ${FILESDIR}/fix-ldd.pl ${FEDORADIR}/usr/bin/ld-2.3.6-elf.so
+	cp -p ${FEDORADIR}/lib/ld-2.9.so ${FEDORADIR}/usr/bin/ld-2.9-elf.so
+	perl ${FILESDIR}/fix-ldd.pl ${FEDORADIR}/usr/bin/ld-2.9-elf.so
 
-# need old linuxthreads libraries
-	rm ${FEDORADIR}/lib/libpthread*
-	mv ${FEDORADIR}/lib/obsolete/linuxthreads/* ${FEDORADIR}/lib
-	rm -fr ${FEDORADIR}/lib/obsolete
-# fix fontconfig search path
-	cd ${FEDORADIR}/etc/fonts && ${PATCH} -p0 --forward --quiet -E < \
-		${PATCHDIR}/patch-etc_fonts_fonts_conf
 # better safe than sorry
 	find ${FEDORADIR} -perm -4000 | xargs -r chmod u-s
 	find ${FEDORADIR} \( -user 37 -o -user 5041 -o -group 37 \) -print | \
