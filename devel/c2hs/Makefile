@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2012/09/27 17:26:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2012/10/11 13:31:28 dcoppa Exp $
 
 COMMENT=		interface generator for Haskell to C bindings
 
 V=			0.16.3
 DISTNAME=		c2hs-${V}
-REVISION=		2
+REVISION=		3
 CATEGORIES=		devel
 MAINTAINER=		Matthias Kilian <kili@openbsd.org>
 HOMEPAGE=		http://www.cse.unsw.edu.au/~chak/haskell/c2hs/
@@ -20,9 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c gmp m pthread util
-
-LIB_DEPENDS=		devel/gmp
+WANTLIB=		c m pthread util
 
 BUILD_DEPENDS=		devel/alex \
 			devel/happy \

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2012/09/02 21:35:29 kili Exp $
+# $OpenBSD: Makefile,v 1.13 2012/10/11 13:31:29 dcoppa Exp $
 
 COMMENT=		source code suggestions for Haskell
 
 DISTNAME=		hlint-1.8.29
+REVISION=		0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://community.haskell.org/~ndm/hlint/
@@ -15,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c gmp m pthread util
+WANTLIB += c m pthread util
 
 MODULES=		converters/libiconv \
 			lang/ghc
@@ -29,7 +30,6 @@ RUN_DEPENDS=		devel/cpphs,-lib>=1.11,<1.14 \
 			devel/hs-transformers>=0.0,<0.4 \
 			devel/hs-uniplate>=1.5,<1.7 \
 			lang/hs-haskell-src-exts>=1.11,<1.14
-LIB_DEPENDS=		devel/gmp
 
 post-install:
 	${SUBST_CMD} -c ${WRKSRC}/data/hlint.1 ${PREFIX}/man/man1/hlint.1

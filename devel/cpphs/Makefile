@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2012/09/02 20:30:51 kili Exp $
+# $OpenBSD: Makefile,v 1.31 2012/10/11 13:31:28 dcoppa Exp $
 
 COMMENT-main =	liberalised reimplementation of cpp in Haskell
 COMMENT-lib =	cpphs library
@@ -8,6 +8,7 @@ ONLY_FOR_ARCHS-lib =	i386 amd64
 DISTNAME =	cpphs-1.13.3
 PKGNAME-main =	${DISTNAME}
 PKGNAME-lib =	hs-${DISTNAME}
+REVISION-main =	0
 CATEGORIES =	devel
 MAINTAINER =	Matthias Kilian <kili@openbsd.org>
 
@@ -24,11 +25,11 @@ SUBST_VARS +=		DISTNAME
 
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
 # GHC: use cabal to build both the executable and the library.
-WANTLIB-main +=		gmp util
+WANTLIB-main +=		util
 MODULES =		lang/ghc converters/libiconv
 USE_GROFF =		Yes
 MODGHC_BUILD =		hackage cabal haddock register
-LIB_DEPENDS-main =	${LIB_DEPENDS} devel/gmp
+LIB_DEPENDS-main =	${LIB_DEPENDS}
 RUN_DEPENDS-main =
 LIB_DEPENDS-lib =
 WANTLIB-lib =

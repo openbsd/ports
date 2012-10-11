@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2012/09/27 17:26:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2012/10/11 13:31:29 dcoppa Exp $
 
 COMMENT-main =	documentation-generation tool for Haskell libraries
 COMMENT-lib =	haddock library
@@ -6,6 +6,7 @@ COMMENT-lib =	haddock library
 DISTNAME =	haddock-2.11.0
 PKGNAME-main =	${DISTNAME}
 PKGNAME-lib =	hs-${DISTNAME}
+REVISION-main =	0
 CATEGORIES =	devel
 
 HOMEPAGE =	http://www.haskell.org/haddock/
@@ -29,12 +30,11 @@ DISTFILES =
 BUILD_DEPENDS +=	lang/ghc:patch
 
 LIB_DEPENDS-lib =
-LIB_DEPENDS-main =	${LIB_DEPENDS} \
-			devel/gmp
+LIB_DEPENDS-main =	${LIB_DEPENDS}
 
 WANTLIB-lib =
 WANTLIB-main =		${WANTLIB} \
-			c gmp m pthread util
+			c m pthread util
 
 BUILD_DEPENDS +=	devel/hs-ghc-paths \
 			lang/ghc,-doc \

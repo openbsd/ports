@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2012/09/27 17:26:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2012/10/11 13:31:29 dcoppa Exp $
 
 COMMENT=		parser generator for Haskell
 
 DISTNAME=		happy-1.18.9
+REVISION=		0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.haskell.org/happy/
@@ -13,15 +14,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c gmp m
+WANTLIB=		c m
 
 MODULES=		lang/ghc converters/libiconv
 MODGHC_BUILD=		cabal hackage nort
 
 BUILD_DEPENDS+=		devel/hs-mtl>=1.0 \
 			textproc/docbook-xsl
-
-LIB_DEPENDS =		devel/gmp
 
 # Required for building the documentation and for the regression tests:
 USE_GMAKE=		Yes

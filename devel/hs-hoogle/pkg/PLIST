@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/01/15 17:21:48 kili Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/10/11 13:31:29 dcoppa Exp $
 @newgroup _hoogle:689
 @newuser _hoogle:689:_hoogle:daemon:Hoogle account:/nonexistent:/sbin/nologin
 @bin bin/hoogle
@@ -82,7 +82,7 @@ share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif
 share/doc/hs-${DISTNAME}/html/synopsis.png
-share/doc/pkg-readmes/hs-${DISTNAME}
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/hs-${DISTNAME}/
 share/hs-${DISTNAME}/databases
 share/hs-${DISTNAME}/resources/

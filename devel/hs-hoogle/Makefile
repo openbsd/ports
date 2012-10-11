@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2012/09/02 21:51:55 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2012/10/11 13:31:29 dcoppa Exp $
 
 COMMENT =		Haskell API search engine
 
 DISTNAME =		hoogle-4.2.11
+REVISION =		0
 CATEGORIES =		devel
 HOMEPAGE =		http://www.haskell.org/hoogle/
 
@@ -18,7 +19,7 @@ MODULES =		lang/ghc converters/libiconv
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-WANTLIB =		c gmp m pthread util
+WANTLIB =		c m pthread util
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/hs-case-insensitive>=0.2,<0.5 \
