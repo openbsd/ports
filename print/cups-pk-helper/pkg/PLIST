@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/03/28 09:07:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/10/12 15:47:15 ajacoutot Exp $
 @bin libexec/cups-pk-helper-mechanism
 share/dbus-1/
 share/dbus-1/system-services/
@@ -13,19 +13,27 @@ share/examples/cups-pk-helper/dbus-1/system.d/org.opensuse.CupsPkHelper.Mechanis
 share/locale/cs/LC_MESSAGES/cups-pk-helper.mo
 share/locale/de/LC_MESSAGES/cups-pk-helper.mo
 share/locale/eo/LC_MESSAGES/cups-pk-helper.mo
+share/locale/es/LC_MESSAGES/cups-pk-helper.mo
+share/locale/fi/LC_MESSAGES/cups-pk-helper.mo
 share/locale/fr/LC_MESSAGES/cups-pk-helper.mo
 share/locale/gl/LC_MESSAGES/cups-pk-helper.mo
 share/locale/hu/LC_MESSAGES/cups-pk-helper.mo
 share/locale/id/LC_MESSAGES/cups-pk-helper.mo
 share/locale/it/LC_MESSAGES/cups-pk-helper.mo
 share/locale/ja/LC_MESSAGES/cups-pk-helper.mo
+share/locale/ka/
+share/locale/ka/LC_MESSAGES/
+share/locale/ka/LC_MESSAGES/cups-pk-helper.mo
 share/locale/ko/LC_MESSAGES/cups-pk-helper.mo
+share/locale/lv/LC_MESSAGES/cups-pk-helper.mo
 share/locale/nl/LC_MESSAGES/cups-pk-helper.mo
 share/locale/pl/LC_MESSAGES/cups-pk-helper.mo
+share/locale/pt_BR/LC_MESSAGES/cups-pk-helper.mo
 share/locale/sk/LC_MESSAGES/cups-pk-helper.mo
 share/locale/sl/LC_MESSAGES/cups-pk-helper.mo
 share/locale/tr/LC_MESSAGES/cups-pk-helper.mo
 share/locale/uk/LC_MESSAGES/cups-pk-helper.mo
+share/locale/zh_CN/LC_MESSAGES/cups-pk-helper.mo
 share/locale/zh_TW/LC_MESSAGES/cups-pk-helper.mo
 share/polkit-1/
 share/polkit-1/actions/
