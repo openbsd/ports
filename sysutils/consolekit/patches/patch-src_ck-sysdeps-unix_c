@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_ck-sysdeps-unix_c,v 1.9 2011/05/14 12:13:13 ajacoutot Exp $
+$OpenBSD: patch-src_ck-sysdeps-unix_c,v 1.10 2012/10/12 14:55:42 ajacoutot Exp $
 --- src/ck-sysdeps-unix.c.orig	Tue May  3 01:51:07 2011
-+++ src/ck-sysdeps-unix.c	Sat May 14 14:11:10 2011
++++ src/ck-sysdeps-unix.c	Fri Oct 12 16:17:55 2012
 @@ -36,6 +36,10 @@
  #include <linux/kd.h>
  #endif
@@ -43,13 +43,14 @@ $OpenBSD: patch-src_ck-sysdeps-unix_c,v 1.9 2011/05/14 12:13:13 ajacoutot Exp $
          kb_ok = (ioctl (fd, VT_GETSTATE, &vts) == 0);
  #elif defined(__FreeBSD__)
          kb_ok = (ioctl (fd, CONS_GETVERS, &vers) == 0);
-@@ -199,6 +207,13 @@ ck_get_a_console_fd (void)
+@@ -199,6 +207,14 @@ ck_get_a_console_fd (void)
          if (fd >= 0) {
                  goto done;
          }
 +#endif
 +
 +#if defined(__OpenBSD__)
++	/* On OpenBSD, first try wsdisplay device. */
 +	fd = open_a_console ("/dev/ttyC0");
 +	if (fd >= 0) {
 +		goto done;

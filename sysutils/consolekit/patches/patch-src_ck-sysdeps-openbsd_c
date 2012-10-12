@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.11 2012/07/09 09:23:22 sthen Exp $
---- src/ck-sysdeps-openbsd.c.orig	Mon Jul  9 00:16:43 2012
-+++ src/ck-sysdeps-openbsd.c	Mon Jul  9 00:17:46 2012
-@@ -0,0 +1,429 @@
+$OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.12 2012/10/12 14:55:42 ajacoutot Exp $
+--- src/ck-sysdeps-openbsd.c.orig	Fri Oct 12 16:30:06 2012
++++ src/ck-sysdeps-openbsd.c	Fri Oct 12 16:30:21 2012
+@@ -0,0 +1,438 @@
 +/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*-
 + *
 + * Copyright (C) 2006 William Jon McCann <mccann@jhu.edu>
@@ -199,7 +199,7 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.11 2012/07/09 09:23:22 sthen Exp $
 +        }
 +
 +        if (p.p_tdev == NODEV) {
-+		/* XXX nasty hack */
++		/* XXX how do we associate X with its tty? */
 +#if defined(__i386__) || defined(__amd64__)
 +                memcpy (P->tty_text, "/dev/ttyC4", sizeof P->tty_text);
 +#else
@@ -249,24 +249,28 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.11 2012/07/09 09:23:22 sthen Exp $
 +GHashTable *
 +ck_unix_pid_get_env_hash (pid_t pid)
 +{
-+        GHashTable       *hash;
++        GHashTable       *hash = NULL;
 +        char            **penv;
++        char              errbuf[_POSIX2_LINE_MAX];
 +        kvm_t            *kd;
 +        struct kinfo_proc p;
 +        int               i;
 +
-+        kd = kvm_openfiles (NULL, NULL, NULL, O_RDONLY, NULL);
++        kd = kvm_openfiles (NULL, NULL, NULL, O_RDONLY, errbuf);
 +        if (kd == NULL) {
++		g_warning ("kvm_openfiles failed: %s", errbuf);
 +                return NULL;
 +        }
 +
 +        if (! get_kinfo_proc (pid, &p)) {
-+                return NULL;
++		g_warning ("get_kinfo_proc failed: %s", g_strerror (errno));
++		goto fail;
 +        }
 +
 +        penv = kvm_getenvv (kd, &p, 0);
 +        if (penv == NULL) {
-+                return NULL;
++		g_warning ("kvm_getenvv failed: %s", kvm_geterr (kd));
++		goto fail;
 +        }
 +
 +        hash = g_hash_table_new_full (g_str_hash,
@@ -277,6 +281,8 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.11 2012/07/09 09:23:22 sthen Exp $
 +        for (i = 0; penv[i] != NULL; i++) {
 +                char **vals;
 +
++                if (!penv[i][0]) continue;
++
 +                vals = g_strsplit (penv[i], "=", 2);
 +                if (vals != NULL) {
 +                        g_hash_table_insert (hash,
@@ -286,6 +292,7 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.11 2012/07/09 09:23:22 sthen Exp $
 +                }
 +        }
 +
++fail:
 +        kvm_close (kd);
 +
 +        return hash;
@@ -296,7 +303,7 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.11 2012/07/09 09:23:22 sthen Exp $
 +                     const char *var)
 +{
 +        GHashTable *hash;
-+        char       *val;
++        char       *val = NULL;
 +
 +        /*
 +         * Would probably be more efficient to just loop through the
@@ -304,6 +311,8 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.11 2012/07/09 09:23:22 sthen Exp $
 +         * table, but this works for now.
 +         */
 +        hash = ck_unix_pid_get_env_hash (pid);
++        if (hash == NULL)
++            return val;
 +        val  = g_strdup (g_hash_table_lookup (hash, var));
 +        g_hash_table_destroy (hash);
 +
@@ -355,7 +364,7 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.11 2012/07/09 09:23:22 sthen Exp $
 +{
 +        char *device;
 +
-+// VT are only available on i386 and amd64
++/* VT are only available on i386 and amd64 */
 +#if defined(__i386__) || defined(__amd64__)
 +        /* The device number is always one less than the VT number. */
 +        num--;
@@ -381,7 +390,7 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.11 2012/07/09 09:23:22 sthen Exp $
 +        }
 +
 +        if (sscanf (device, "/dev/ttyC%u", &n) == 1) {
-+// VT are only available on i386 and amd64
++/* VT are only available on i386 and amd64 */
 +#if defined(__i386__) || defined(__amd64__)
 +                /* The VT number is always one more than the device number. */
 +                n++;
@@ -409,7 +418,7 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.11 2012/07/09 09:23:22 sthen Exp $
 +        active = 0;
 +        ret = FALSE;
 +
-+// VT are only available on i386 and amd64
++/* VT are only available on i386 and amd64 */
 +#if defined(__i386__) || defined(__amd64__)
 +        res = ioctl (console_fd, VT_GETACTIVE, &active);
 +        if (res == ERROR) {
