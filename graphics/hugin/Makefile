@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.27 2012/03/29 13:38:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2012/10/12 21:44:51 sthen Exp $
 
 VMEM_WARNING =		Yes
 SHARED_ONLY =		Yes
 
 COMMENT =		panorama image stitcher
 
-DISTNAME =		hugin-2011.0.0
-REVISION=		0
+DISTNAME =		hugin-2011.4.0
 EXTRACT_SUFX =		.tar.bz2
+
+TAR =			${LOCALBASE}/bin/gtar
+BUILD_DEPENDS +=	archivers/gtar
 
 # not needed for releases, but makes RCs/betas easier to work with
 PKGNAME =		${DISTNAME:S/_//:L}
@@ -15,7 +17,6 @@ WRKDIST =		${WRKDIR}/${DISTNAME:C/_.*//}
 
 SHARED_LIBS +=  huginbasewx               0.0
 SHARED_LIBS +=  celeste                   0.0
-SHARED_LIBS +=  huginANN                  0.0
 SHARED_LIBS +=  huginbase                 1.0
 SHARED_LIBS +=  huginvigraimpex           0.0
 SHARED_LIBS +=  icpfindlib                0.0
@@ -59,6 +60,7 @@ LIB_DEPENDS =		devel/boost \
 			graphics/png \
 			graphics/tiff \
 			x11/wxWidgets>=2.7
+BUILD_DEPENDS +=	devel/tclap
 
 USE_GROFF =		Yes
 MODULES +=		devel/cmake
@@ -66,7 +68,7 @@ SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	cmake
 CONFIGURE_ENV =		MANDIR=man
 NO_REGRESS =		Yes
-CFLAGS +=		-pthread
+CFLAGS +=		-pthread -fno-pie -fPIC
 LDFLAGS +=		-L${X11BASE}/lib
 
 pre-patch:
