@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2012/09/06 22:18:23 ratchov Exp $
+# $OpenBSD: Makefile,v 1.81 2012/10/12 18:35:09 robert Exp $
 
 COMMENT-main=		Multimedia player for the X Window System
 COMMENT-vorbis=		Ogg Vorbis input plugin for XMMS
@@ -20,8 +20,6 @@ REVISION-mp3=		7
 SHARED_LIBS=		xmms	4.2
 CATEGORIES=		audio
 HOMEPAGE=		http://www.xmms.org
-
-MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
