@@ -1,6 +1,14 @@
-$OpenBSD: patch-src_client_c,v 1.3 2012/04/12 10:03:19 dcoppa Exp $
+$OpenBSD: patch-src_client_c,v 1.4 2012/10/12 13:31:49 dcoppa Exp $
+
+Fix unsafe client removal from list at timeout.
+(upstream git commit ad3bc56f96b024ac31e8927f21d1f5e7b8f61b56)
+
+Reset timeout timer when receiving UDP data too: fix timeout when
+using push-to-talk. Correct speling error.
+(upstream git commit 6087b18a630eb32df682a7fd90d88408aa99c726)
+
 --- src/client.c.orig	Sun Mar 18 20:26:26 2012
-+++ src/client.c	Thu Apr 12 11:36:49 2012
++++ src/client.c	Fri Oct 12 15:13:11 2012
 @@ -28,6 +28,7 @@
     NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
@@ -9,6 +17,27 @@ $OpenBSD: patch-src_client_c,v 1.3 2012/04/12 10:03:19 dcoppa Exp $
  #include <sys/poll.h>
  #include <sys/socket.h>
  #include <fcntl.h>
+@@ -91,9 +92,9 @@ int Client_getfds(struct pollfd *pollfds)
+ 
+ void Client_janitor()
+ {
+-	struct dlist *itr;
++	struct dlist *itr, *save;
+ 	int bwTop = maxBandwidth + maxBandwidth / 4;
+-	list_iterate(itr, &clients) {
++	list_iterate_safe(itr, save, &clients) {
+ 		client_t *c;
+ 		c = list_get_entry(itr, client_t, node);
+ 		Log_debug("Client %s BW available %d", c->username, c->availableBandwidth);
+@@ -101,7 +102,7 @@ void Client_janitor()
+ 		if (c->availableBandwidth > bwTop)
+ 			c->availableBandwidth = bwTop;
+ 		
+-		if (Timer_isElapsed(&c->lastActivity, 1000000LL * INACTICITY_TIMEOUT)) {
++		if (Timer_isElapsed(&c->lastActivity, 1000000LL * INACTIVITY_TIMEOUT)) {
+ 			/* No activity from client - assume it is lost and close. */
+ 			Log_info_client(c, "Timeout, closing.");
+ 			Client_free(c);
 @@ -197,7 +198,7 @@ void Client_token_free(client_t *client)
  void recheckCodecVersions()
  {
@@ -26,3 +55,11 @@ $OpenBSD: patch-src_client_c,v 1.3 2012/04/12 10:03:19 dcoppa Exp $
  }
  
  int Client_send_message(client_t *client, message_t *msg)
+@@ -817,6 +819,7 @@ int Client_voiceMsg(client_t *client, uint8_t *data, i
+ 	client->availableBandwidth -= packetsize;
+ 	
+ 	Timer_restart(&client->idleTime);
++	Timer_restart(&client->lastActivity);
+ 	
+ 	counter = Pds_get_numval(pdi); /* step past session id */
+ 	do {
