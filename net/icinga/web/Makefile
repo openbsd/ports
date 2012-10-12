@@ -1,16 +1,18 @@
-# $OpenBSD: Makefile,v 1.11 2012/05/17 11:06:33 sthen Exp $
-
-# Work in progress. Not yet linked to the build.
+# $OpenBSD: Makefile,v 1.12 2012/10/12 17:59:25 rpe Exp $
 
 COMMENT =	web UI for icinga
 DISTNAME =	icinga-web-$V
+REVISION =	0
 
 MODULES=	lang/php
 
 RUN_DEPENDS =	www/pear \
 		lang/php/${MODPHP_VERSION},-ldap \
 		lang/php/${MODPHP_VERSION},-xsl \
-		php-pdo_mysql-${MODPHP_VSPEC}|php-pdo_pgsql-${MODPHP_VSPEC}:lang/php/${MODPHP_VERSION},-pdo_mysql
+		php-pdo_mysql-${MODPHP_VSPEC}|php-pdo_pgsql-${MODPHP_VSPEC}:lang/php/${MODPHP_VERSION},-pdo_mysql \
+		net/icinga/core \
+		net/icinga/core,-ido \
+		shells/bash
 # Optional php extensions: gd soap xmlrpc
 # memcache
 
@@ -19,7 +21,7 @@ LOCALSTATEDIR =	${BASELOCALSTATEDIR}/icinga
 CONFIGURE_STYLE = gnu
 CONFIGURE_ENV +=  PHP="${MODPHP_BIN}"
 CONFIGURE_ARGS += \
-	--datarootdir=/var/www \
+	--datarootdir=${PREFIX} \
 	--sbindir=/var/www/cgi-bin/icinga \
 	--with-web-apache-path=${PREFIX}/etc \
 	--with-api-cmd-file=/var/icinga/rw/icinga.cmd \
@@ -27,7 +29,10 @@ CONFIGURE_ARGS += \
 	--with-web-group=www \
 	--with-bin-user=${SHAREOWN} \
 	--with-bin-group=${SHAREGRP} \
-	--with-db-socket=/var/run/mysql/mysql.sock
+	--with-db-socket=/var/run/mysql/mysql.sock \
+	--with-icinga-bin=${LOCALBASE}/bin/icinga \
+	--with-icinga-cfg=${BASESYSCONFDIR}/icinga/icinga.cfg \
+	--with-icinga-objects-dir=${BASESYSCONFDIR}/icinga/objects
 # override default ("localhost") to allow tcp connections; makes mysql easier
 CONFIGURE_ARGS += \
 	--with-api-host=127.0.0.1 \
@@ -40,14 +45,16 @@ INSTALL_TARGET = install install-apache-config
 
 PREFIX =	/var/www/icinga-web
 
+post-configure:
+	@find ${WRKSRC}/bin -name '*.sh' -print0 | xargs -0r \
+		perl -pi -e 's,^#!/bin/bash,#!${LOCALBASE}/bin/bash,g'
+
 pre-install:
 	${INSTALL_DATA_DIR} ${WRKINST}/var/www/conf/modules.sample
 
 post-install:
 	find ${WRKINST} -name '*.orig' -print0 | xargs -0r rm
 	cd ${PREFIX}; \
-	find ${PREFIX} -name '*.site.xml' -exec mv {} {}.dist \;
-	mv ${PREFIX}/app/config/databases.xml{,.dist}
 	${INSTALL_DATA_DIR} ${PREFIX}/etc/schema/updates
 	cd ${WRKSRC}/etc/schema; \
 	${INSTALL_DATA} *sql ${PREFIX}/etc/schema; \

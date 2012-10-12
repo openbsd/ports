@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.8 2012/10/01 23:05:01 sthen Exp $
+$OpenBSD: README-main,v 1.9 2012/10/12 17:59:25 rpe Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -9,16 +9,26 @@ Getting Started
 
 The main documentation for Icinga is provided in HTML format as part of
 the icinga-cgi package, see /var/www/icinga-cgi/docs/en/index.html
+or at http://docs.icinga.org/latest/en/. 
 
 The included sample configuration carries out some simple checks
 on the local machine; these should work as-is.
 
 You may check your configuration file format before starting Icinga:
 
-	/usr/local/bin/icinga -v ${SYSCONFDIR}/icinga.cfg
+   $ sudo -u _icinga ${TRUEPREFIX}/bin/icinga -v ${SYSCONFDIR}/icinga.cfg
 
 This will parse all configuration files and warn about any problems
 which have been identified.
+
+To enable automatic startup on boot for icinga, add it to pkg_scripts
+in ${SYSCONFDIR}/rc.conf.local, for example:
+
+   pkg_scripts="${pkg_scripts} icinga"
+
+To start icinga, reboot or start it manually:
+
+   $ sudo /etc/rc.d/icinga start
 
 Upgrading from a previous version
 =================================
@@ -35,43 +45,105 @@ ${SYSCONFDIR}/icinga/icinga.cfg.
 Chroot Considerations
 =====================
 
-If using OpenBSD's default chroot environment for httpd, some files
-will need to be moved inside the jail and symbolic links created:
+If you're using OpenBSD's default chroot environment for httpd with
+the icinga-cgi package, some files will need to be moved inside the
+jail and symbolic links created.
 
-	mkdir -p /var/www/etc /var/www/var/log
-	mv ${SYSCONFDIR}/icinga /var/www/etc/
-	ln -s /var/www/etc/icinga ${SYSCONFDIR}
-	mv /var/icinga /var/www/var/
-	ln -s /var/www/var/icinga /var
-	mv /var/log/icinga /var/www/var/log/
-	ln -s /var/www/var/log/icinga /var/log
+   mkdir -p ${PREFIX-cgi}/etc ${PREFIX-cgi}/var/log
+   mv ${SYSCONFDIR}/icinga ${PREFIX-cgi}/etc/
+   ln -s ${PREFIX-cgi}/etc/icinga ${SYSCONFDIR}
+   mv /var/icinga ${PREFIX-cgi}/var/
+   ln -s ${PREFIX-cgi}/var/icinga /var
+   mv /var/log/icinga ${PREFIX-cgi}/var/log/
+   ln -s ${PREFIX-cgi}/var/log/icinga /var/log
 
 Web User-Interfaces
 ===================
 
 Two web-based user interfaces are available for Icinga:
 
-- icinga-cgi: the classic (but improved) Nagios-style interface
-- icinga-web: new API-based interface
+1) icinga-cgi: the classic (but improved) Nagios-style interface
 
-At the time of writing, porting and packaging of icinga-web is
-a work-in-progress.  To enable icinga-cgi, link the provided httpd.conf
-snippet:
+   To enable icinga-cgi, link the provided httpd.conf snippet:
 
-	ln -s ../modules.sample/icinga-cgi.conf /var/www/conf/modules
+      $ sudo ln -s /var/www/conf/modules.sample/icinga-cgi.conf \
+         /var/www/conf/modules
 
-You may wish to modify this file.  By default it uses HTTP basic
-authentication; you can create the password file as follows:
+   You may wish to modify this file.  By default it uses HTTP basic
+   authentication; you can create the password file as follows:
 
-	touch ${SYSCONFDIR}/icinga/htpasswd.users
-	htpasswd ${SYSCONFDIR}/icinga/htpasswd.users <username>
+      $ sudo touch ${SYSCONFDIR}/icinga/htpasswd.users
+      $ sudo htpasswd ${SYSCONFDIR}/icinga/htpasswd.users <username>
 
-When done, restart the web server:
+   When done, restart the web server:
 
-	/etc/rc.d/httpd restart
+      $ sudo /rc.d/httpd restart
 
-You should then be able to access the web interface at
-http://localhost/icinga/
+   You should then be able to access the web interface at
+   http://localhost/icinga/
+
+
+2) icinga-web: new API-based interface
+
+   2.1) Setup the icinga database. For details see:
+   ${TRUEPREFIX}/share/examples/icinga/db/README
+
+   2.2) Enable the ido2db daemon. Add it to the pkg_scripts line
+   in ${SYSCONFDIR}/rc.conf.local before icinga, for example:
+
+      pkg_scripts="${pkg_scripts} ido2db icinga"
+
+   Afterwards, you can start it by rebooting, or manually:
+
+      $ sudo /etc/rc.d/ido2db start
+
+   2.3) Enable the broker_module idomod.so in /etc/icinga/icinga.cfg
+   and restart icinga:
+
+      $ sudo /etc/rc.d/icinga restart
+
+   Now you should see in the icinga logfile, that icinga is storing
+   information in the db.
+
+   2.4) Setup the icinga_web database (change the password!):
+
+      mysql -u root -p <<EOF
+      CREATE DATABASE icinga_web;
+      GRANT USAGE ON *.* TO 'icinga_web'@'localhost'
+         IDENTIFIED BY 'icinga_web_password';
+      GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER, INDEX
+         ON icinga_web.* TO 'icinga_web'@'localhost';
+      FLUSH PRIVILEGES;
+      \u icinga_web
+      \. /var/www/icinga-web/etc/schema/mysql.sql
+      EOF
+
+   2.5) Change the db settings accordingly for both icinga and for
+   icinga_web in /var/www/icinga-web/etc/conf.d/databases.xml.
+
+   2.6) To enable icinga-web, link the provided httpd.conf snippet:
+
+      $ sudo ln -s /var/www/conf/modules.sample/icinga-web.conf \
+         /var/www/conf/modules
+
+   2.7) Currently, icinga-web is not tested to work with the httpd
+   chroot environment. So before you start httpd, ensure that you've
+   added "-u" to httpd_flags in /etc/rc.d/httpd.
+
+      $ sudo /etc/rc.d/httpd start
+
+   You should then be able to access the web interface at
+
+      http://localhost/icinga-web/
+
+   using user 'root' and 'password' as password. Change the default
+   password in the preferences as soon as possible!.
+
+   If you want to use the classic interface from within icinga-web
+   you have to install the icinga-cgi package. The reporting component
+   of icinga-web depends on external software which is not installed
+   by default.
+
 
 Moving from Nagios
 ==================

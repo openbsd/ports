@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/09/30 18:09:50 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2012/10/12 17:59:25 rpe Exp $
 @conflict icinga-api-*
 @pkgpath net/icinga/core,-api
 app/
@@ -16,8 +16,7 @@ app/config/compile.xml
 app/config/config_handlers.xml
 app/config/cronks.xml
 app/config/css.xml
-app/config/databases.xml.dist
-@sample app/config/databases.xml
+app/config/databases.xml
 app/config/factories.xml
 app/config/global_filters.xml
 app/config/icinga.xml
@@ -7880,5 +7879,3 @@ pub/styles/icinga-icons.css
 pub/styles/icinga.css
 pub/styles/icinga.site.css
 pub/styles/statusmap.css
-@cwd ${LOCALBASE}/share/doc/pkg-readmes
-${FULLPKGNAME}
