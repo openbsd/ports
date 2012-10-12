@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.46 2012/10/08 22:28:34 kirby Exp $
+# $OpenBSD: Makefile,v 1.47 2012/10/12 14:29:22 kirby Exp $
 
 COMMENT=	fantasy turn-based strategy game
 
 DISTNAME=	wesnoth-1.10.4
+REVISION=	0
 
 CATEGORIES=	games x11
 
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
+MAINTAINER=	Kirill Bychkov <kirby@openbsd.org>
 
 HOMEPAGE=	http://www.wesnoth.org/
 
