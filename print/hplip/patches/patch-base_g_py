@@ -1,7 +1,7 @@
-$OpenBSD: patch-base_g_py,v 1.4 2012/02/17 15:55:36 ajacoutot Exp $
---- base/g.py.orig	Fri Dec  9 12:20:37 2011
-+++ base/g.py	Fri Feb 17 16:54:10 2012
-@@ -144,12 +144,12 @@ class ConfigBase(object):
+$OpenBSD: patch-base_g_py,v 1.5 2012/10/12 21:56:07 ajacoutot Exp $
+--- base/g.py.orig	Wed Oct 10 08:14:21 2012
++++ base/g.py	Fri Oct 12 23:40:53 2012
+@@ -144,15 +144,15 @@ class ConfigBase(object):
  
  class SysConfig(ConfigBase):
      def __init__(self):
@@ -11,12 +11,18 @@ $OpenBSD: patch-base_g_py,v 1.4 2012/02/17 15:55:36 ajacoutot Exp $
  
  class State(ConfigBase):
      def __init__(self):
+-        if not os.path.exists('/var/lib/hp/') and os.geteuid() == 0:
+-            os.makedirs('/var/lib/hp/')
+-            os.system('chmod 644 /var/lib/hp/')
 -        ConfigBase.__init__(self, '/var/lib/hp/hplip.state')
++        if not os.path.exists('/var/db/hp/') and os.geteuid() == 0:
++            os.makedirs('/var/db/hp/')
++            os.system('chmod 644 /var/db/hp/')
 +        ConfigBase.__init__(self, '/var/db/hp/hplip.state')
  
  
  class UserConfig(ConfigBase):
-@@ -247,9 +247,9 @@ prop.max_message_len = 8192
+@@ -250,9 +250,9 @@ prop.max_message_len = 8192
  prop.max_message_read = 65536
  prop.read_timeout = 90
  

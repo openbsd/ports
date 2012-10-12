@@ -1,7 +1,7 @@
-$OpenBSD: patch-base_utils_py,v 1.6 2012/09/11 10:52:16 ajacoutot Exp $
---- base/utils.py.orig	Tue Sep  4 14:34:06 2012
-+++ base/utils.py	Tue Sep 11 08:06:36 2012
-@@ -524,7 +524,7 @@ class UserSettings(object): # Note: Deprecated after 2
+$OpenBSD: patch-base_utils_py,v 1.7 2012/10/12 21:56:07 ajacoutot Exp $
+--- base/utils.py.orig	Wed Oct 10 08:14:21 2012
++++ base/utils.py	Fri Oct 12 23:39:47 2012
+@@ -525,7 +525,7 @@ class UserSettings(object): # Note: Deprecated after 2
          if len(path):
              self.cmd_pcard = 'hp-unload -d %DEVICE_URI%'
          else:
@@ -10,7 +10,7 @@ $OpenBSD: patch-base_utils_py,v 1.6 2012/09/11 10:52:16 ajacoutot Exp $
  
          # Copy
          path = which('hp-makecopies')
-@@ -532,7 +532,7 @@ class UserSettings(object): # Note: Deprecated after 2
+@@ -533,7 +533,7 @@ class UserSettings(object): # Note: Deprecated after 2
          if len(path):
              self.cmd_copy = 'hp-makecopies -d %DEVICE_URI%'
          else:
@@ -19,7 +19,7 @@ $OpenBSD: patch-base_utils_py,v 1.6 2012/09/11 10:52:16 ajacoutot Exp $
  
          # Fax
          path = which('hp-sendfax')
-@@ -540,7 +540,7 @@ class UserSettings(object): # Note: Deprecated after 2
+@@ -541,7 +541,7 @@ class UserSettings(object): # Note: Deprecated after 2
          if len(path):
              self.cmd_fax = 'hp-sendfax -d %FAX_URI%'
          else:
@@ -28,7 +28,7 @@ $OpenBSD: patch-base_utils_py,v 1.6 2012/09/11 10:52:16 ajacoutot Exp $
  
          # Fax Address Book
          path = which('hp-fab')
-@@ -548,7 +548,7 @@ class UserSettings(object): # Note: Deprecated after 2
+@@ -549,7 +549,7 @@ class UserSettings(object): # Note: Deprecated after 2
          if len(path):
              self.cmd_fab = 'hp-fab'
          else:
@@ -37,7 +37,7 @@ $OpenBSD: patch-base_utils_py,v 1.6 2012/09/11 10:52:16 ajacoutot Exp $
  
      def load(self):
          self.loadDefaults()
-@@ -880,9 +880,8 @@ def all(S,f=lambda x:x):
+@@ -881,9 +881,8 @@ def all(S,f=lambda x:x):
          if not f(x): return False
      return True
  
