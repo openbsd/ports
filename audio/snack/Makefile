@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2012/03/29 13:38:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2012/10/12 14:57:42 rpointel Exp $
 
 COMMENT-main =	Tcl/Tk snack sound toolkit
 COMMENT-python = Python bindings for Tcl/Tk snack sound toolkit
@@ -47,9 +47,10 @@ MAKE_FLAGS +=		SNACK_INSTALL_PATH=${MODTCL_TCLDIR}
 
 REGRESS_TARGET =	test
 
+MODPY_ADJ_FILES = demos/python/*.py
+
 pre-configure:
 	cp ${FILESDIR}/jkAudIO_sndio.c ${WRKSRC}/unix/
-	${MODPY_BIN_ADJ} ${WRKSRC}/demos/python/*.py
 	${MODTCL_WISH_ADJ} ${WRKSRC}/demos/tcl/compose.tcl \
 		${WRKSRC}/demos/tcl/echo.tcl \
 		${WRKSRC}/demos/tcl/formant.tcl \
