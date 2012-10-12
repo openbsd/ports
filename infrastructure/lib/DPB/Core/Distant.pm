@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distant.pm,v 1.4 2012/07/12 20:27:19 espie Exp $
+# $OpenBSD: Distant.pm,v 1.5 2012/10/12 22:18:10 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -182,7 +182,7 @@ sub alive_hosts
 			push(@l, $host.'-');
 		}
 	}
-	return "Distant hosts: ".join(' ', sort(@l))."\n";
+	return "Hosts: ".join(' ', sort(@l))."\n";
 }
 
 sub changed_hosts
