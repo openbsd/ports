@@ -1,0 +1,48 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/12 14:50:45 kirby Exp $
+bin/convert2gpx
+bin/convert2osm
+@bin bin/foxtrotgps
+bin/georss2foxtrotgps-poi
+bin/osb2foxtrot
+bin/poi2osm
+@man man/man1/convert2gpx.1
+@man man/man1/convert2osm.1
+@man man/man1/foxtrotgps.1
+share/applications/foxtrotgps.desktop
+share/doc/foxtrotgps/
+share/doc/foxtrotgps/AUTHORS
+share/doc/foxtrotgps/COPYING
+share/doc/foxtrotgps/ChangeLog
+share/doc/foxtrotgps/HACKING
+share/doc/foxtrotgps/INSTALL
+share/doc/foxtrotgps/NEWS
+share/doc/foxtrotgps/README
+share/doc/foxtrotgps/README.osb2foxtrot
+share/doc/foxtrotgps/TODO
+share/foxtrotgps/
+share/foxtrotgps/foxtrotgps.glade
+share/locale/bg/LC_MESSAGES/foxtrotgps.mo
+share/locale/cs/LC_MESSAGES/foxtrotgps.mo
+share/locale/de/LC_MESSAGES/foxtrotgps.mo
+share/locale/es/LC_MESSAGES/foxtrotgps.mo
+share/locale/fi/LC_MESSAGES/foxtrotgps.mo
+share/locale/fr/LC_MESSAGES/foxtrotgps.mo
+share/locale/hu/LC_MESSAGES/foxtrotgps.mo
+share/locale/ja/LC_MESSAGES/foxtrotgps.mo
+share/locale/nl/LC_MESSAGES/foxtrotgps.mo
+share/locale/ru/LC_MESSAGES/foxtrotgps.mo
+share/locale/sk/LC_MESSAGES/foxtrotgps.mo
+share/locale/sr/LC_MESSAGES/foxtrotgps.mo
+share/pixmaps/
+share/pixmaps/foxtrotgps-friend.png
+share/pixmaps/foxtrotgps-myposition.png
+share/pixmaps/foxtrotgps-photo.png
+share/pixmaps/foxtrotgps-poi.png
+share/pixmaps/foxtrotgps-wp.png
+share/pixmaps/foxtrotgps.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/apps_foxtrotgps.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null

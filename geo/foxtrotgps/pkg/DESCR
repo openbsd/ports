@@ -1,0 +1,6 @@
+FoxtrotGPS is an offshoot of Marcus Bauer's excellent Free & Open Source
+tangoGPS application, with a focus on cooperation and fostering
+community innovation. By default maps tiles are downloaded from the
+Openstreetmap project. Map tiles are automatically downloaded and cached
+for offline use. To get real-time positioning from a GPS receiver you
+need to run gpsd.
