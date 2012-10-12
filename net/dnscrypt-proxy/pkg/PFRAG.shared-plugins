@@ -1,0 +1,6 @@
+@comment $OpenBSD: PFRAG.shared-plugins,v 1.1.1.1 2012/10/12 15:20:00 sthen Exp $
+lib/dnscrypt-proxy/libdcplugin_example_ldns_aaaa_blocking.so
+lib/dnscrypt-proxy/libdcplugin_example_ldns_blocking.so
+lib/dnscrypt-proxy/libdcplugin_example_ldns_forward_after_nxdomain.so
+lib/dnscrypt-proxy/libdcplugin_example_ldns_opendns_deviceid.so
+lib/dnscrypt-proxy/libdcplugin_example_logging.so

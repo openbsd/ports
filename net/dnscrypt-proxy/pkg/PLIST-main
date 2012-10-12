@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2012/10/12 15:20:00 sthen Exp $
+@newgroup _dnscrypt-proxy:688
+@newuser _dnscrypt-proxy:688:_dnscrypt-proxy:daemon:dnscrypt-proxy user:/var/empty:/sbin/nologin
+@bin bin/hostip
+include/dnscrypt/
+include/dnscrypt/plugin.h
+include/dnscrypt/private.h
+include/dnscrypt/version.h
+@man man/man8/dnscrypt-proxy.8
+@man man/man8/hostip.8
+@bin sbin/dnscrypt-proxy
+share/doc/dnscrypt-proxy/
+share/doc/dnscrypt-proxy/README-PLUGINS.markdown
+share/doc/dnscrypt-proxy/README.markdown
+share/doc/dnscrypt-proxy/TECHNOTES
+@rcscript ${RCDIR}/dnscrypt_proxy
