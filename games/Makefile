@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.249 2012/10/11 17:57:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.250 2012/10/12 18:14:21 bentley Exp $
 
      SUBDIR =
      SUBDIR += abuse
@@ -14,6 +14,7 @@
      SUBDIR += angband,no_x11
      SUBDIR += angband,sdl
      SUBDIR += angrydd
+     SUBDIR += armagetronad
      SUBDIR += atomix
      SUBDIR += barrage
      SUBDIR += bass
