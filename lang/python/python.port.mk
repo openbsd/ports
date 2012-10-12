@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.54 2012/08/28 19:10:45 espie Exp $
+# $OpenBSD: python.port.mk,v 1.55 2012/10/12 19:57:46 rpointel Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -6,8 +6,8 @@
 CATEGORIES+=		lang/python
 
 # define the default versions
-MODPY_DEFAULT_VERSION_2 = 2.7
-MODPY_DEFAULT_VERSION_3 = 3.2
+_MODPY_DEFAULT_VERSION_2 = 2.7
+_MODPY_DEFAULT_VERSION_3 = 3.2
 
 .if !defined(MODPY_VERSION)
 
@@ -15,10 +15,10 @@ FLAVOR?=
 
 .  if ${FLAVOR:L:Mpython3}
 # define default version 3
-MODPY_VERSION?=		${MODPY_DEFAULT_VERSION_3}
+MODPY_VERSION?=		${_MODPY_DEFAULT_VERSION_3}
 .  else
 # without flavor, assume we use the default version 2
-MODPY_VERSION?=		${MODPY_DEFAULT_VERSION_2}
+MODPY_VERSION?=		${_MODPY_DEFAULT_VERSION_2}
 .  endif
 
 # verify if MODPY_VERSION forced is correct
@@ -84,7 +84,7 @@ RUN_DEPENDS+=		${MODPY_RUN_DEPENDS}
 SHARED_ONLY=		Yes
 .endif
 
-MODPY_PRE_BUILD_STEPS = @:
+_MODPY_PRE_BUILD_STEPS = @:
 .if defined(MODPY_SETUPTOOLS) && ${MODPY_SETUPTOOLS:L} == "yes"
 # The setuptools module provides a package locator (site.py) that is
 # required at runtime for the pkg_resources stuff to work
@@ -105,7 +105,7 @@ _MODPY_USERBASE =
 # but the final plist will be different if it's present.
 _MODPY_SETUPUTILS_FAKE_DIR =	\
 	${WRKDIR}/lib/python${MODPY_VERSION}/site-packages/setuptools
-MODPY_PRE_BUILD_STEPS +=	\
+_MODPY_PRE_BUILD_STEPS +=	\
 	;mkdir -p ${_MODPY_SETUPUTILS_FAKE_DIR} \
 	;exec >${_MODPY_SETUPUTILS_FAKE_DIR}/__init__.py \
 	;echo 'def setup(*args, **kwargs):' \
@@ -127,7 +127,7 @@ MODPY_SITEPKG =		${MODPY_LIBDIR}/site-packages
 
 .if defined(MODPY_BADEGGS)
 .  for egg in ${MODPY_BADEGGS}
-MODPY_PRE_BUILD_STEPS += ;mkdir -p ${WRKBUILD}/${egg}.egg-info
+_MODPY_PRE_BUILD_STEPS += ;mkdir -p ${WRKBUILD}/${egg}.egg-info
 .  endfor
 .endif
 
@@ -157,7 +157,7 @@ _MODPY_CMD =	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 SUBST_VARS :=	MODPY_PYCACHE MODPY_COMMENT MODPY_PYC_MAGIC_TAG MODPY_BIN MODPY_EGG_VERSION MODPY_VERSION MODPY_BIN_SUFFIX MODPY_PY_PREFIX ${SUBST_VARS}
 
 # set MODPY_BIN for executable scripts
-MODPY_BIN_ADJ =	perl -pi \
+_MODPY_BIN_ADJ =	perl -pi \
 		-e '$$. == 1 && s|^.*env python.*$$|\#!${MODPY_BIN}|;' \
 		-e '$$. == 1 && s|^.*bin/python.*$$|\#!${MODPY_BIN}|;' \
 		-e 'close ARGV if eof;'
@@ -165,14 +165,14 @@ MODPY_BIN_ADJ =	perl -pi \
 MODPY_ADJ_FILES ?=
 .if !empty(MODPY_ADJ_FILES)
 MODPYTHON_pre-configure += for f in ${MODPY_ADJ_FILES}; do \
-	${MODPY_BIN_ADJ} ${WRKSRC}/$${f}; done
+	${_MODPY_BIN_ADJ} ${WRKSRC}/$${f}; done
 .endif
 
 # dirty way to do it with no modifications in bsd.port.mk
 .if empty(CONFIGURE_STYLE)
 .  if !target(do-build)
 do-build:
-	${MODPY_PRE_BUILD_STEPS}
+	${_MODPY_PRE_BUILD_STEPS}
 	${_MODPY_CMD} ${MODPY_DISTUTILS_BUILD} ${MODPY_DISTUTILS_BUILDARGS}
 .  endif
 
