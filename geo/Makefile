@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2012/10/12 15:33:55 kirby Exp $
+# $OpenBSD: Makefile,v 1.36 2012/10/12 15:42:18 kirby Exp $
  
      SUBDIR =
      SUBDIR += emerillon
@@ -41,7 +41,6 @@
      SUBDIR += qlandkarte
      SUBDIR += qlandkartegt
      SUBDIR += ruby-findmyiphone
-     SUBDIR += tangogps
      SUBDIR += tilecache
      SUBDIR += viking
 
