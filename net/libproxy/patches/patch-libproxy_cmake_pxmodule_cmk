@@ -1,6 +1,6 @@
-$OpenBSD: patch-libproxy_cmake_pxmodule_cmk,v 1.1 2012/09/27 08:01:04 dcoppa Exp $
---- libproxy/cmake/pxmodule.cmk.orig	Mon Sep 24 15:32:27 2012
-+++ libproxy/cmake/pxmodule.cmk	Mon Sep 24 15:32:34 2012
+$OpenBSD: patch-libproxy_cmake_pxmodule_cmk,v 1.2 2012/10/12 13:01:15 sthen Exp $
+--- libproxy/cmake/pxmodule.cmk.orig	Fri Oct 12 13:43:24 2012
++++ libproxy/cmake/pxmodule.cmk	Fri Oct 12 13:43:32 2012
 @@ -18,7 +18,7 @@ function(px_module name build builtin)
        set(built "m")
        set_property(SOURCE modules/${name}.cpp PROPERTY COMPILE_DEFINITIONS LIBEXECDIR="${LIBEXECDIR}")

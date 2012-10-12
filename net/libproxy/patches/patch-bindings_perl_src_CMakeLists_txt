@@ -1,6 +1,6 @@
-$OpenBSD: patch-bindings_perl_src_CMakeLists_txt,v 1.1 2012/09/27 08:01:04 dcoppa Exp $
---- bindings/perl/src/CMakeLists.txt.orig	Mon Jun  6 23:44:37 2011
-+++ bindings/perl/src/CMakeLists.txt	Mon Sep 24 15:39:04 2012
+$OpenBSD: patch-bindings_perl_src_CMakeLists_txt,v 1.2 2012/10/12 13:01:15 sthen Exp $
+--- bindings/perl/src/CMakeLists.txt.orig	Fri Oct 12 13:39:38 2012
++++ bindings/perl/src/CMakeLists.txt	Fri Oct 12 13:39:42 2012
 @@ -4,7 +4,7 @@ include_directories( ${PERL_INCLUDE_PATH} ${CMAKE_SOUR
  add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/Libproxy.c
                     COMMAND ${PERL_EXECUTABLE} ARGS ${CMAKE_CURRENT_SOURCE_DIR}/doxsubpp.pl

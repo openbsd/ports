@@ -1,6 +1,6 @@
-$OpenBSD: patch-libproxy_cmake_libproxy_cmk,v 1.5 2012/09/27 08:01:04 dcoppa Exp $
---- libproxy/cmake/libproxy.cmk.orig	Mon Jun  6 23:44:37 2011
-+++ libproxy/cmake/libproxy.cmk	Mon Sep 24 15:35:02 2012
+$OpenBSD: patch-libproxy_cmake_libproxy_cmk,v 1.6 2012/10/12 13:01:15 sthen Exp $
+--- libproxy/cmake/libproxy.cmk.orig	Fri Oct 12 13:40:53 2012
++++ libproxy/cmake/libproxy.cmk	Fri Oct 12 13:41:18 2012
 @@ -1,8 +1,8 @@
 -add_library(libproxy SHARED extension_config.cpp extension_pacrunner.cpp extension_wpad.cpp proxy.cpp url.cpp ${LIBPROXY_SOURCES})
 +add_library(proxy SHARED extension_config.cpp extension_pacrunner.cpp extension_wpad.cpp proxy.cpp url.cpp ${LIBPROXY_SOURCES})
@@ -8,15 +8,15 @@ $OpenBSD: patch-libproxy_cmake_libproxy_cmk,v 1.5 2012/09/27 08:01:04 dcoppa Exp
 -  target_link_libraries(libproxy modman;ws2_32;${LIBPROXY_LIBRARIES})
 +  target_link_libraries(proxy modman;ws2_32;${LIBPROXY_LIBRARIES})
  else()
--  target_link_libraries(libproxy modman;m;pthread;dl;${LIBPROXY_LIBRARIES})
-+  target_link_libraries(proxy modman;m;pthread;${LIBPROXY_LIBRARIES})
+-  target_link_libraries(libproxy modman;m;pthread;${CMAKE_DL_LIBS};${LIBPROXY_LIBRARIES})
++  target_link_libraries(proxy modman;m;pthread;${CMAKE_DL_LIBS};${LIBPROXY_LIBRARIES})
  endif()
  file(TO_NATIVE_PATH ${MODULE_INSTALL_DIR} MODULE_INSTALL_DIR)
  if(WIN32)
-@@ -17,7 +17,7 @@ endif()
- 
+@@ -18,7 +18,7 @@ endif()
  set_property(SOURCE ${CMAKE_CURRENT_SOURCE_DIR}/proxy.cpp
               PROPERTY COMPILE_DEFINITIONS MODULEDIR="${MODULEDIR}";BUILTIN_MODULES=${BUILTIN_MODULES})
+ # When changing the SOVERSION here remember to also bump the 'favorite proxy .so' in python bindings.
 -set_target_properties(libproxy PROPERTIES PREFIX "" VERSION 1.0.0 SOVERSION 1)
 -set_target_properties(libproxy PROPERTIES LINK_INTERFACE_LIBRARIES "")
 -install(TARGETS libproxy DESTINATION ${LIB_INSTALL_DIR})

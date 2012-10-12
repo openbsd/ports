@@ -1,6 +1,6 @@
-$OpenBSD: patch-utils_CMakeLists_txt,v 1.1 2012/09/27 08:01:04 dcoppa Exp $
---- utils/CMakeLists.txt.orig	Mon Jun  6 23:44:37 2011
-+++ utils/CMakeLists.txt	Mon Sep 24 15:42:42 2012
+$OpenBSD: patch-utils_CMakeLists_txt,v 1.2 2012/10/12 13:01:15 sthen Exp $
+--- utils/CMakeLists.txt.orig	Fri Oct 12 13:44:32 2012
++++ utils/CMakeLists.txt	Fri Oct 12 13:45:10 2012
 @@ -1,5 +1,6 @@
  include_directories("../libproxy")
  

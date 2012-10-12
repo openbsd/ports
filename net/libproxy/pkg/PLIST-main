@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2012/03/29 14:58:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2012/10/12 13:01:15 sthen Exp $
 @conflict libproxy-gnome-*
 @pkgpath net/libproxy,-gnome
 @bin bin/proxy
 include/proxy.h
 lib/libproxy/
 @lib lib/libproxy.so.${LIBproxy_VERSION}
-lib/libproxy/0.4.7/
-lib/libproxy/0.4.7/modules/
-lib/libproxy/0.4.7/modules/config_gnome3.so
+lib/libproxy/0.4.9/
+lib/libproxy/0.4.9/modules/
+lib/libproxy/0.4.9/modules/config_gnome3.so
 lib/pkgconfig/libproxy-1.0.pc
 lib/python${MODPY_VERSION}/site-packages/libproxy.py
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
