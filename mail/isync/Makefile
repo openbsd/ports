@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2012/03/29 13:38:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2012/10/12 13:43:00 gonzalo Exp $
 
 COMMENT= 	synchronize IMAP4 and maildir mailboxes
 
-DISTNAME=	isync-1.0.4
-REVISION =	3
+DISTNAME=	isync-1.0.5
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=isync/}
 
@@ -14,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c crypto ssl lib/db4/db>=4
 
 LIB_DEPENDS=		databases/db/v4
@@ -23,7 +23,6 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ENV+=		 CFLAGS="${CFLAGS} -I${LOCALBASE}/include/db4"	\
 			 LDFLAGS=-L${LOCALBASE}/lib/db4			\
 			 LDADD=-ldb
-USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/isync
