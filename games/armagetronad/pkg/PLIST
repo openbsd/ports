@@ -1,0 +1,145 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/12 18:13:38 bentley Exp $
+@bin bin/armagetronad
+share/armagetronad/
+share/armagetronad/desktop/
+share/armagetronad/desktop/armagetronad.desktop
+share/armagetronad/desktop/icons/
+share/armagetronad/desktop/icons/large/
+share/armagetronad/desktop/icons/large/armagetronad.png
+share/armagetronad/desktop/icons/medium/
+share/armagetronad/desktop/icons/medium/armagetronad.png
+share/armagetronad/desktop/icons/small/
+share/armagetronad/desktop/icons/small/armagetronad.png
+share/armagetronad/language/
+share/armagetronad/language/american.txt
+share/armagetronad/language/british.txt
+share/armagetronad/language/deutsch.txt
+share/armagetronad/language/english_base.txt
+share/armagetronad/language/english_base_notranslate.txt
+share/armagetronad/language/french.txt
+share/armagetronad/language/languages.txt
+share/armagetronad/language/languages.txt.in
+share/armagetronad/language/polish.txt
+share/armagetronad/language/polish_transliterated.txt
+share/armagetronad/language/spanish.txt
+share/armagetronad/language/update.py
+share/armagetronad/models/
+share/armagetronad/models/cycle_body.mod
+share/armagetronad/models/cycle_front.mod
+share/armagetronad/models/cycle_rear.mod
+share/armagetronad/resource/
+share/armagetronad/resource/included/
+share/armagetronad/resource/included/AATeam/
+share/armagetronad/resource/included/AATeam/map-0.2.8.0.dtd
+share/armagetronad/resource/included/AATeam/map-0.2.8.0_rc4.dtd
+share/armagetronad/resource/included/Anonymous/
+share/armagetronad/resource/included/Anonymous/README
+share/armagetronad/resource/included/Anonymous/polygon/
+share/armagetronad/resource/included/Anonymous/polygon/README
+share/armagetronad/resource/included/Anonymous/polygon/regular/
+share/armagetronad/resource/included/Anonymous/polygon/regular/40-gon-0.2.aamap.xml
+share/armagetronad/resource/included/Anonymous/polygon/regular/README
+share/armagetronad/resource/included/Anonymous/polygon/regular/diamond-1.0.2.aamap.xml
+share/armagetronad/resource/included/Anonymous/polygon/regular/square-1.0.1.aamap.xml
+share/armagetronad/resource/included/Your_mom/
+share/armagetronad/resource/included/Your_mom/clever/
+share/armagetronad/resource/included/Your_mom/clever/inaktek-0.7.2.aamap.xml
+share/armagetronad/resource/included/Your_mom/clever/repeat-0.3.2.aamap.xml
+share/armagetronad/resource/included/Z-Man/
+share/armagetronad/resource/included/Z-Man/fortress/
+share/armagetronad/resource/included/Z-Man/fortress/for_old_clients-0.1.0.aamap.xml
+share/armagetronad/resource/included/Z-Man/fortress/fourfold_for_old_clients-0.1.0.aamap.xml
+share/armagetronad/resource/included/Z-Man/fortress/sumo_4x4-0.1.1.aamap.xml
+share/armagetronad/resource/included/Z-Man/fortress/sumo_8x2-0.1.0.aamap.xml
+share/armagetronad/resource/included/Z-Man/fortress/zonetest-0.1.0.aamap.xml
+share/armagetronad/resource/included/map-0.1-exp.dtd
+share/armagetronad/resource/included/map-0.1.dtd
+share/armagetronad/resource/included/map-0.2.8_beta3.dtd
+share/armagetronad/scripts/
+share/armagetronad/scripts/relocate
+share/armagetronad/scripts/sysinstall
+share/armagetronad/sound/
+share/armagetronad/sound/cyclrun.wav
+share/armagetronad/sound/expl.wav
+share/armagetronad/textures/
+share/armagetronad/textures/KGN_logo.png
+share/armagetronad/textures/cycle_body.png
+share/armagetronad/textures/cycle_wheel.png
+share/armagetronad/textures/dir_wall.png
+share/armagetronad/textures/floor.png
+share/armagetronad/textures/floor_a.png
+share/armagetronad/textures/floor_b.png
+share/armagetronad/textures/font.png
+share/armagetronad/textures/font_extra.png
+share/armagetronad/textures/font_s.png
+share/armagetronad/textures/icon.png
+share/armagetronad/textures/rim_wall.png
+share/armagetronad/textures/shadow.png
+share/armagetronad/textures/sky.png
+share/armagetronad/textures/title.jpg
+share/doc/armagetronad/
+share/doc/armagetronad/html/
+share/doc/armagetronad/html/bugs.html
+share/doc/armagetronad/html/changelog.html
+share/doc/armagetronad/html/commands.html
+share/doc/armagetronad/html/compile.html
+share/doc/armagetronad/html/config.html
+share/doc/armagetronad/html/faq.html
+share/doc/armagetronad/html/index.html
+share/doc/armagetronad/html/install_linux.html
+share/doc/armagetronad/html/install_macosx.html
+share/doc/armagetronad/html/install_result.html
+share/doc/armagetronad/html/install_windows.html
+share/doc/armagetronad/html/net/
+share/doc/armagetronad/html/net/index.html
+share/doc/armagetronad/html/net/lower.html
+share/doc/armagetronad/html/net/middle.html
+share/doc/armagetronad/html/net/upper.html
+share/doc/armagetronad/html/network.html
+share/doc/armagetronad/html/readme_macosx.html
+share/doc/armagetronad/html/todo.html
+share/doc/armagetronad/html/versions.html
+share/examples/armagetronad/
+@sample ${SYSCONFDIR}/armagetronad/
+share/examples/armagetronad/aiplayers.cfg
+@sample ${SYSCONFDIR}/armagetronad/aiplayers.cfg
+share/examples/armagetronad/default.cfg
+@sample ${SYSCONFDIR}/armagetronad/default.cfg
+share/examples/armagetronad/examples/
+@sample ${SYSCONFDIR}/armagetronad/examples/
+share/examples/armagetronad/examples/breakfast_in_hell.cfg
+@sample ${SYSCONFDIR}/armagetronad/examples/breakfast_in_hell.cfg
+share/examples/armagetronad/examples/cvs_test/
+@sample ${SYSCONFDIR}/armagetronad/examples/cvs_test/
+share/examples/armagetronad/examples/cvs_test/fortress_complete.cfg
+@sample ${SYSCONFDIR}/armagetronad/examples/cvs_test/fortress_complete.cfg
+share/examples/armagetronad/examples/cvs_test/fortress_physics.cfg
+@sample ${SYSCONFDIR}/armagetronad/examples/cvs_test/fortress_physics.cfg
+share/examples/armagetronad/examples/cvs_test/fortress_politics.cfg
+@sample ${SYSCONFDIR}/armagetronad/examples/cvs_test/fortress_politics.cfg
+share/examples/armagetronad/examples/cvs_test/fortress_scoring.cfg
+@sample ${SYSCONFDIR}/armagetronad/examples/cvs_test/fortress_scoring.cfg
+share/examples/armagetronad/examples/cvs_test/sumo_complete.cfg
+@sample ${SYSCONFDIR}/armagetronad/examples/cvs_test/sumo_complete.cfg
+share/examples/armagetronad/examples/death_zone.cfg
+@sample ${SYSCONFDIR}/armagetronad/examples/death_zone.cfg
+share/examples/armagetronad/examples/fortress_soccer.cfg
+@sample ${SYSCONFDIR}/armagetronad/examples/fortress_soccer.cfg
+share/examples/armagetronad/examples/single_use_turbo.cfg
+@sample ${SYSCONFDIR}/armagetronad/examples/single_use_turbo.cfg
+share/examples/armagetronad/examples/teamsumo.cfg
+@sample ${SYSCONFDIR}/armagetronad/examples/teamsumo.cfg
+share/examples/armagetronad/master.srv
+@sample ${SYSCONFDIR}/armagetronad/master.srv
+share/examples/armagetronad/rc.config
+@sample ${SYSCONFDIR}/armagetronad/rc.config
+share/examples/armagetronad/settings.cfg
+@sample ${SYSCONFDIR}/armagetronad/settings.cfg
+share/examples/armagetronad/settings_authentication.cfg
+@sample ${SYSCONFDIR}/armagetronad/settings_authentication.cfg
+share/examples/armagetronad/settings_dedicated.cfg
+@sample ${SYSCONFDIR}/armagetronad/settings_dedicated.cfg
+share/examples/armagetronad/settings_visual.cfg
+@sample ${SYSCONFDIR}/armagetronad/settings_visual.cfg
+share/examples/armagetronad/subcultures.srv
+@sample ${SYSCONFDIR}/armagetronad/subcultures.srv
