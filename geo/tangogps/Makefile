@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2012/10/12 09:09:46 kirby Exp $
+# $OpenBSD: Makefile,v 1.17 2012/10/12 10:10:50 kirby Exp $
 
 COMMENT =		lightweight mapping application for use with or without GPS
 
@@ -7,9 +7,7 @@ REVISION =		8
 
 CATEGORIES =		geo
 
-HOMEPAGE =		http://www.tangogps.org/
-
-MASTER_SITES =		${HOMEPAGE}/downloads/
+MASTER_SITES =		http://www.linklevel.net/distfiles/
 
 MAINTAINER =		Kirill Bychkov <yason@linklevel.net>
 
@@ -30,8 +28,7 @@ WANTLIB += xcb-render xcb-shm xml2 z
 
 MODULES = 		devel/gettext
 
-LIB_DEPENDS =		devel/atk \
-			devel/gconf2 \
+LIB_DEPENDS =		devel/gconf2 \
 			devel/libsoup \
 			graphics/libexif \
 			net/curl \
