@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/12 14:50:45 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/10/12 14:54:34 jasper Exp $
 bin/convert2gpx
 bin/convert2osm
 @bin bin/foxtrotgps
@@ -40,9 +40,9 @@ share/pixmaps/foxtrotgps-photo.png
 share/pixmaps/foxtrotgps-poi.png
 share/pixmaps/foxtrotgps-wp.png
 share/pixmaps/foxtrotgps.png
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/apps_foxtrotgps.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
