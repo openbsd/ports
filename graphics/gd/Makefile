@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.55 2010/11/17 08:05:13 espie Exp $
+# $OpenBSD: Makefile,v 1.56 2012/10/12 14:53:39 sthen Exp $
 
 COMMENT=	library for dynamic creation of images
 
 DISTNAME=	gd-2.0.35
-REVISION=	0
+REVISION=	1
 SHARED_LIBS=	gd	20.35
 CATEGORIES=	graphics
 MASTER_SITES=	${HOMEPAGE}/releases/

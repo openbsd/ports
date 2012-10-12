@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.59 2012/09/26 09:34:09 espie Exp $
+# $OpenBSD: Makefile,v 1.60 2012/10/12 14:53:39 sthen Exp $
 
 COMMENT=	GNU gettext
 
 DISTNAME=	gettext-0.18.1
-REVISION=	4
+REVISION=	5
 SHARED_LIBS +=  intl                 6.0      # .9.1
 SHARED_LIBS +=  asprintf             1.0      # .0.0
 SHARED_LIBS +=  gettextlib           3.0      # .0.0

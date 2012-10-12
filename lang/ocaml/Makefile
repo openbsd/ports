@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2012/10/04 07:45:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2012/10/12 14:53:39 sthen Exp $
 
 # XXX Don't even think of updating ocaml alone.
 # Do check that the ports that depend on it still work, or repair them. 
@@ -11,7 +11,7 @@ COMMENT=	ML language based on complete class-based objective system
 
 BASENAME=	ocaml-4.00
 DISTNAME=	${BASENAME}.0
-REVISION=       1
+REVISION=       2
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/pub/distrib/${BASENAME}/
 DOCFILES=	${BASENAME}-refman-html.tar.gz
