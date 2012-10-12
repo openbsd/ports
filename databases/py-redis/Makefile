@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2012/09/25 07:21:36 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.17 2012/10/12 06:59:54 dcoppa Exp $
 
 COMMENT =		Python interface to Redis
 
-MODPY_EGG_VERSION =	2.6.2
+MODPY_EGG_VERSION =	2.7.1
 DISTNAME =		redis-${MODPY_EGG_VERSION}
 PKGNAME =		py-redis-${MODPY_EGG_VERSION}
 CATEGORIES =		databases
@@ -34,6 +34,7 @@ do-regress:
 	# fetch tests because they are not included in tarball...
 	rm -rf ${WRKSRC}/redis-tmp-tests/ ${WRKSRC}/run_tests ${WRKSRC}/tests
 	cd ${WRKSRC} && git clone git://github.com/andymccurdy/redis-py.git redis-tmp-tests
+	cd ${WRKSRC}/redis-tmp-tests && git checkout ${MODPY_EGG_VERSION}
 	mv ${WRKSRC}/redis-tmp-tests/run_tests ${WRKSRC}/redis-tmp-tests/tests ${WRKSRC}
 	rm -rf ${WRKSRC}/redis-tmp-tests/
 	# test
