@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2012/09/01 14:36:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2012/10/12 15:41:04 ajacoutot Exp $
 
 COMMENT=	utilities for dot.desktop entries
 
-DISTNAME=	desktop-file-utils-0.20
+DISTNAME=	desktop-file-utils-0.21
 EXTRACT_SUFX=	.tar.xz
-REVISION=	0
 
 CATEGORIES=	devel
 
@@ -18,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c glib-2.0 pthread
+WANTLIB += c glib-2.0
 
 MASTER_SITES=	http://freedesktop.org/software/desktop-file-utils/releases/
 
