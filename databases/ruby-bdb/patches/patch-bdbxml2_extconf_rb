@@ -1,0 +1,16 @@
+$OpenBSD: patch-bdbxml2_extconf_rb,v 1.1 2012/10/12 14:12:28 jeremy Exp $
+
+Backport ruby 1.9 support from GitHub commit
+cf470443a66a7e05fc402dd7f18750add74a9bb9.
+
+--- bdbxml2/extconf.rb.orig	Mon Oct  8 17:40:51 2012
++++ bdbxml2/extconf.rb	Mon Oct  8 17:40:52 2012
+@@ -76,7 +76,7 @@ end
+ 
+ have_func("rb_block_call")
+ 
+-require 'features.rb'
++require './features'
+ create_makefile('bdbxml')
+ 
+ begin

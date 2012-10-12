@@ -1,0 +1,40 @@
+$OpenBSD: patch-src_extconf_rb,v 1.1 2012/10/12 14:12:28 jeremy Exp $
+
+Backport ruby 1.9 support from GitHub commits
+cf470443a66a7e05fc402dd7f18750add74a9bb9 and
+6dcb0fb6e872798a7b36125dda294ddaebd96185.
+
+--- src/extconf.rb.orig	Thu Jun 26 14:14:52 2008
++++ src/extconf.rb	Mon Oct  8 17:46:09 2012
+@@ -90,6 +90,12 @@ catch(:done) do
+    raise "libdb#{version[-1]} not found"
+ end
+ 
++headers = ["ruby.h"]
++if have_header("ruby/io.h")
++   headers << "ruby/io.h"
++else
++   headers << "rubyio.h"
++end
+ ["rb_frame_this_func", "rb_block_proc", "rb_io_stdio_file", "rb_block_call"].each do |f|
+    have_func(f, "ruby.h")
+ end
+@@ -103,16 +109,15 @@ end
+       puts "no"
+    end
+ end
++have_type('rb_io_t', headers)
+ 
+-have_type('rb_io_t', ['ruby.h', 'rubyio.h'])
+-
+ if enable_config('db-xml')
+    $defs << '-DHAVE_DBXML_INTERFACE'
+ else
+    $defs << '-DNOT_HAVE_DBXML_INTERFACE'
+ end
+ 
+-require 'features'
++require './features'
+ 
+ create_makefile("bdb")
+ if unknown

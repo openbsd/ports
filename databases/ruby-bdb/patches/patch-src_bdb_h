@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_bdb_h,v 1.1 2012/10/12 14:12:28 jeremy Exp $
+
+Backport ruby 1.9 support from GitHub commit
+6dcb0fb6e872798a7b36125dda294ddaebd96185.
+
+--- src/bdb.h.orig	Thu Jun 26 14:16:36 2008
++++ src/bdb.h	Mon Oct  8 17:44:02 2012
+@@ -1,9 +1,13 @@
++#include <db.h>
++#include <errno.h>
++
+ #include <ruby.h>
++#ifdef HAVE_RUBY_IO_H
++#include <ruby/io.h>
++#else
+ #include <rubysig.h>
+ #include <rubyio.h>
+-
+-#include <db.h>
+-#include <errno.h>
++#endif
+ 
+ #include "bdb_features.h"
+ 
