@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.190 2012/10/06 13:53:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.191 2012/10/12 20:54:23 ajacoutot Exp $
 
 COMMENT=		general-purpose utility library
 
@@ -48,7 +48,6 @@ LIB_DEPENDS=		devel/pcre \
 # also requires bumped limits (stack >= 24576)
 BUILD_DEPENDS +=	x11/dbus
 REGRESS_IS_INTERACTIVE=	x11
-REGRESS_FLAGS=		GTESTER="${WRKBUILD}/glib/gtester -k"
 REGRESS_DEPENDS=	devel/desktop-file-utils \
 			devel/py-gobject \
 			x11/dbus-python
