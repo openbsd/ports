@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Job.pm,v 1.2 2011/06/04 12:58:24 espie Exp $
+# $OpenBSD: Job.pm,v 1.3 2012/10/12 20:24:56 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -113,6 +113,12 @@ sub add_tasks
 {
 	my ($self, @tasks) = @_;
 	push(@{$self->{tasks}}, @tasks);
+}
+
+sub insert_tasks
+{
+	my ($self, @tasks) = @_;
+	unshift(@{$self->{tasks}}, @tasks);
 }
 
 sub really_watch

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.38 2012/10/11 09:03:34 espie Exp $
+# $OpenBSD: Port.pm,v 1.39 2012/10/12 20:24:56 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -19,10 +19,18 @@ use warnings;
 
 use DPB::Job;
 use DPB::Clock;
-package DPB::Task::Port;
+package DPB::Task::BasePort;
+our @ISA = qw(DPB::Task::Clocked);
 use OpenBSD::Paths;
 
-our @ISA = qw(DPB::Task::Clocked);
+sub finalize
+{
+	my ($self, $core) = @_;
+	$self->SUPER::finalize($core);
+	$core->job->finished_task($self);
+	return $core->{status} == 0;
+}
+
 sub new
 {
 	my ($class, $phase) = @_;
@@ -41,14 +49,6 @@ sub fork
 
 	$core->job->{current} = $self->{phase};
 	return $self->SUPER::fork($core);
-}
-
-sub finalize
-{
-	my ($self, $core) = @_;
-	$self->SUPER::finalize($core);
-	$core->job->finished_task($self);
-	return $core->{status} == 0;
 }
 
 sub handle_output
@@ -124,9 +124,27 @@ sub make_sure_we_have_packages
 	}
 	if (!$check) {
 		print $log ">>> waiting 10 seconds\n";
-		$job->add_tasks(DPB::Task::Port::VerifyPackages->new(
+		$job->insert_tasks(DPB::Task::Port::VerifyPackages->new(
 		    'waiting'.$job->{waiting}++));
 	}
+}
+
+package DPB::Task::Port;
+our @ISA = qw(DPB::Task::BasePort);
+
+sub finalize
+{
+	my ($self, $core) = @_;
+	$self->SUPER::finalize($core);
+	if ($core->{status} == 0) {
+		return 1;
+	}
+	if ($core->prop->{always_clean}) {
+		$core->job->insert_tasks(DPB::Task::Port::CleanOnError->new(
+			'clean'));
+		return 1;
+	}
+	return 0;
 }
 
 package DPB::Task::Port::Serialized;
@@ -446,11 +464,20 @@ sub finalize
 }
 
 package DPB::Task::Port::Clean;
-our @ISA = qw(DPB::Task::Port);
+our @ISA = qw(DPB::Task::BasePort);
 
 sub notime { 1 }
 
 sub finalize
+{
+	my ($self, $core) = @_;
+	if (!$self->requeue($core)) {
+		$self->make_sure_we_have_packages($core->job);
+	}
+	$self->SUPER::finalize($core);
+}
+
+sub requeue
 {
 	my ($self, $core) = @_;
 	# didn't clean right, and no sudo yet:
@@ -458,15 +485,26 @@ sub finalize
 	if ($core->{status} != 0 && !$self->{sudo}) {
 		$self->{sudo} = 1;
 		my $job = $core->job;
-		unshift(@{$job->{tasks}}, $self);
+		$job->insert_tasks($self);
 		my $fh = $job->{builder}->logger->open("clean");
 		print $fh $job->{v}->fullpkgpath, "\n";
 		$core->{status} = 0;
 		return 1;
 	}
+	return 0;
+}
+
+package DPB::Task::Port::CleanOnError;
+our @ISA = qw(DPB::Task::Port::Clean);
+
+sub finalize
+{
+	my ($self, $core) = @_;
+	if ($self->requeue($core)) {
+		return 1;
+	}
 	$self->SUPER::finalize($core);
-	$self->make_sure_we_have_packages($core->job);
-#	$core->job->add_tasks(DPB::Task::Port::VerifyPackages->new('waiting'));
+	return 0;
 }
 
 package DPB::Task::Port::VerifyPackages;

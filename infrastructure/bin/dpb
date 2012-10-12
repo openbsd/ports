@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.56 2012/10/11 07:40:30 espie Exp $
+# $OpenBSD: dpb,v 1.57 2012/10/12 20:24:56 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -254,6 +254,9 @@ sub start_cores
     	}
 	if ($state->opt('J')) {
 		$override_prop->{junk} = $state->opt('J');
+	}
+	if ($state->defines("ALWAYS_CLEAN")) {
+		$override_prop->{always_clean} = 1;
 	}
 
 	if ($state->{config}) {
