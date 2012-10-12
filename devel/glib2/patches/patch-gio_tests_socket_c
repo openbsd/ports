@@ -1,0 +1,18 @@
+$OpenBSD: patch-gio_tests_socket_c,v 1.1 2012/10/12 20:52:04 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=686058
+
+--- gio/tests/socket.c.orig	Fri Aug 17 02:06:24 2012
++++ gio/tests/socket.c	Fri Oct 12 22:36:24 2012
+@@ -825,7 +825,11 @@ main (int   argc,
+   g_test_add_func ("/socket/ipv6_sync", test_ipv6_sync);
+   g_test_add_func ("/socket/ipv6_async", test_ipv6_async);
+ #if defined (IPPROTO_IPV6) && defined (IPV6_V6ONLY)
++# if defined (__OpenBSD__)
++  g_print ("skipping ipv6_v4mapped test, not supported on OpenBSD\n");
++# else
+   g_test_add_func ("/socket/ipv6_v4mapped", test_ipv6_v4mapped);
++# endif
+ #endif
+   g_test_add_func ("/socket/close_graceful", test_close_graceful);
+   g_test_add_func ("/socket/timed_wait", test_timed_wait);
