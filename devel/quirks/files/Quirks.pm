@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.83 2012/10/12 15:39:28 kirby Exp $
+# $OpenBSD: Quirks.pm,v 1.84 2012/10/12 15:54:39 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -303,7 +303,7 @@ my $stem_extensions = {
 	'pecl-zip' => 'php-zip',
 	'XML-Sablotron' => 'p5-XML-Sablotron',
 # 5.3
-	'postler' => 'geary'
+	'postler' => 'geary',
 	'tangogps' => 'foxtrotgps'
 };
 
