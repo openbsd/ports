@@ -1,12 +1,12 @@
-$OpenBSD: patch-chrome_chrome_browser_gypi,v 1.13 2012/08/26 18:47:01 robert Exp $
---- chrome/chrome_browser.gypi.orig	Wed Aug 15 23:17:03 2012
-+++ chrome/chrome_browser.gypi	Wed Aug 15 23:17:21 2012
-@@ -1356,8 +1356,6 @@
-         'browser/media/media_stream_capture_indicator.h',
-         'browser/media/media_stream_devices_menu_model.cc',
+$OpenBSD: patch-chrome_chrome_browser_gypi,v 1.14 2012/10/12 16:46:10 robert Exp $
+--- chrome/chrome_browser.gypi.orig	Wed Oct 10 18:38:26 2012
++++ chrome/chrome_browser.gypi	Wed Oct 10 18:38:55 2012
+@@ -1426,8 +1426,6 @@
          'browser/media/media_stream_devices_menu_model.h',
+         'browser/media_gallery/media_device_notifications_chromeos.cc',
+         'browser/media_gallery/media_device_notifications_chromeos.h',
 -        'browser/media_gallery/media_device_notifications_linux.cc',
 -        'browser/media_gallery/media_device_notifications_linux.h',
+         'browser/media_gallery/media_device_notifications_utils.cc',
+         'browser/media_gallery/media_device_notifications_utils.h',
          'browser/media_gallery/media_device_notifications_window_win.cc',
-         'browser/media_gallery/media_device_notifications_window_win.h',
-         'browser/media_gallery/media_file_system_registry.cc',

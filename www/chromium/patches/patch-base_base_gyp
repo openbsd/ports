@@ -1,9 +1,9 @@
-$OpenBSD: patch-base_base_gyp,v 1.13 2012/08/26 18:47:01 robert Exp $
---- base/base.gyp.orig	Tue Aug 14 09:01:48 2012
-+++ base/base.gyp	Wed Aug 15 23:14:34 2012
-@@ -612,6 +612,13 @@
-           ],
-         }],
+$OpenBSD: patch-base_base_gyp,v 1.14 2012/10/12 16:46:09 robert Exp $
+--- base/base.gyp.orig	Tue Sep 25 15:01:57 2012
++++ base/base.gyp	Wed Oct 10 17:19:28 2012
+@@ -731,6 +731,13 @@
+         'test/values_test_util.cc',
+         'test/values_test_util.h',
        ],
 +      'conditions': [
 +        [ 'OS == "openbsd"', {
@@ -14,4 +14,4 @@ $OpenBSD: patch-base_base_gyp,v 1.13 2012/08/26 18:47:01 robert Exp $
 +      ],
      },
      {
-       'target_name': 'check_example',
+       'target_name': 'test_support_perf',

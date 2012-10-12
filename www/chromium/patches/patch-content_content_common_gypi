@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_content_common_gypi,v 1.1 2012/10/12 16:46:10 robert Exp $
+--- content/content_common.gypi.orig	Wed Oct 10 22:34:13 2012
++++ content/content_common.gypi	Wed Oct 10 22:34:17 2012
+@@ -324,8 +324,6 @@
+     'common/sandbox_linux.cc',
+     'common/sandbox_policy.cc',
+     'common/sandbox_policy.h',
+-    'common/sandbox_seccomp_bpf_linux.cc',
+-    'common/sandbox_seccomp_bpf_linux.h',
+     'common/savable_url_schemes.cc',
+     'common/savable_url_schemes.h',
+     'common/set_process_title.cc',

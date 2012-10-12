@@ -1,11 +1,11 @@
-$OpenBSD: patch-content_renderer_renderer_main_platform_delegate_linux_cc,v 1.4 2012/07/10 09:22:34 robert Exp $
---- content/renderer/renderer_main_platform_delegate_linux.cc.orig	Sat Jul  7 17:27:38 2012
-+++ content/renderer/renderer_main_platform_delegate_linux.cc	Sat Jul  7 17:27:45 2012
-@@ -41,8 +41,8 @@ bool RendererMainPlatformDelegate::EnableSandbox() {
-   // a file descriptor for "/proc".
-   if (SeccompSandboxEnabled() && SupportsSeccompSandbox(-1))
-     StartSeccompSandbox();
--#endif
+$OpenBSD: patch-content_renderer_renderer_main_platform_delegate_linux_cc,v 1.5 2012/10/12 16:46:10 robert Exp $
+--- content/renderer/renderer_main_platform_delegate_linux.cc.orig	Wed Oct 10 22:54:20 2012
++++ content/renderer/renderer_main_platform_delegate_linux.cc	Wed Oct 10 22:54:33 2012
+@@ -34,7 +34,9 @@ bool RendererMainPlatformDelegate::EnableSandbox() {
+   //
+   // The seccomp sandbox mode 1 (sandbox/linux/seccomp-legacy) and mode 2
+   // (sandbox/linux/seccomp-bpf) are started in InitializeSandbox().
++#if !defined(OS_BSD)
    content::InitializeSandbox();
 +#endif
    return true;

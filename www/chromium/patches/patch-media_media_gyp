@@ -1,7 +1,7 @@
-$OpenBSD: patch-media_media_gyp,v 1.13 2012/08/26 18:47:01 robert Exp $
---- media/media.gyp.orig	Tue Aug 14 09:01:11 2012
-+++ media/media.gyp	Wed Aug 15 23:14:34 2012
-@@ -367,6 +367,7 @@
+$OpenBSD: patch-media_media_gyp,v 1.14 2012/10/12 16:46:10 robert Exp $
+--- media/media.gyp.orig	Tue Sep 25 15:01:15 2012
++++ media/media.gyp	Wed Oct 10 17:19:28 2012
+@@ -385,6 +385,7 @@
          }],
          ['OS=="openbsd"', {
            'sources/': [ ['exclude', '/alsa_' ],

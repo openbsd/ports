@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.5 2012/07/10 09:22:34 robert Exp $
---- content/browser/child_process_launcher.cc.orig	Sat Jul  7 15:53:55 2012
-+++ content/browser/child_process_launcher.cc	Sat Jul  7 15:54:36 2012
-@@ -49,7 +49,7 @@ class ChildProcessLauncher::Context
+$OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.6 2012/10/12 16:46:10 robert Exp $
+--- content/browser/child_process_launcher.cc.orig	Thu Oct 11 23:31:56 2012
++++ content/browser/child_process_launcher.cc	Thu Oct 11 23:48:24 2012
+@@ -52,7 +52,7 @@ class ChildProcessLauncher::Context
          termination_status_(base::TERMINATION_STATUS_NORMAL_TERMINATION),
          exit_code_(content::RESULT_CODE_NORMAL_EXIT),
          starting_(true)
@@ -10,33 +10,25 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.5 2012/07/10 09:22
          , zygote_(false)
  #endif
          {
-@@ -132,7 +132,7 @@ class ChildProcessLauncher::Context
-     // to reliably detect child termination.
-     file_util::ScopedFD ipcfd_closer(&ipcfd);
- 
--#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
-+#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
-     // On Linux, we need to add some extra file descriptors for crash handling.
-     std::string process_type =
-         cmd_line->GetSwitchValueASCII(switches::kProcessType);
-@@ -157,7 +157,7 @@ class ChildProcessLauncher::Context
-           ipcfd,
-           kPrimaryIPCChannel + base::GlobalDescriptors::kBaseDescriptor));
- 
--#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
-+#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
-       if (crash_signal_fd >= 0) {
-         fds_to_map.push_back(std::make_pair(
-             crash_signal_fd,
-@@ -214,14 +214,14 @@ class ChildProcessLauncher::Context
-         base::Bind(
-             &Context::Notify,
-             this_object.get(),
--#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
-+#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
-             use_zygote,
+@@ -188,7 +188,7 @@ class ChildProcessLauncher::Context
+     base::GlobalDescriptors::Mapping files_to_register;
+     files_to_register.push_back(std::pair<base::GlobalDescriptors::Key, int>(
+         kPrimaryIPCChannel, ipcfd));
+-#if !defined(OS_MACOSX)
++#if !defined(OS_MACOSX) && !defined(OS_BSD)
+     content::GetContentClient()->browser()->
+         GetAdditionalMappedFilesForChildProcess(*cmd_line, &files_to_register);
+     if (use_zygote) {
+@@ -261,7 +261,7 @@ class ChildProcessLauncher::Context
+       base::Bind(
+           &Context::Notify,
+           this_object.get(),
+-#if defined(OS_POSIX) && !defined(OS_MACOSX)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
+           use_zygote,
  #endif
-             handle));
+           handle));
+@@ -269,7 +269,7 @@ class ChildProcessLauncher::Context
    }
  
    void Notify(
@@ -45,7 +37,7 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.5 2012/07/10 09:22
        bool zygote,
  #endif
        base::ProcessHandle handle) {
-@@ -230,7 +230,7 @@ class ChildProcessLauncher::Context
+@@ -282,7 +282,7 @@ class ChildProcessLauncher::Context
      if (!handle)
        LOG(ERROR) << "Failed to launch child process";
  
@@ -54,7 +46,7 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.5 2012/07/10 09:22
      zygote_ = zygote;
  #endif
      if (client_) {
-@@ -253,7 +253,7 @@ class ChildProcessLauncher::Context
+@@ -305,7 +305,7 @@ class ChildProcessLauncher::Context
          BrowserThread::PROCESS_LAUNCHER, FROM_HERE,
          base::Bind(
              &Context::TerminateInternal,
@@ -63,7 +55,7 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.5 2012/07/10 09:22
              zygote_,
  #endif
              process_.handle()));
-@@ -267,7 +267,7 @@ class ChildProcessLauncher::Context
+@@ -319,7 +319,7 @@ class ChildProcessLauncher::Context
    }
  
    static void TerminateInternal(
@@ -72,25 +64,25 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.5 2012/07/10 09:22
        bool zygote,
  #endif
        base::ProcessHandle handle) {
-@@ -277,7 +277,7 @@ class ChildProcessLauncher::Context
+@@ -333,7 +333,7 @@ class ChildProcessLauncher::Context
      process.Terminate(content::RESULT_CODE_NORMAL_EXIT);
      // On POSIX, we must additionally reap the child.
  #if defined(OS_POSIX)
--#if !defined(OS_MACOSX) && !defined(OS_ANDROID)
-+#if !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
+-#if !defined(OS_MACOSX)
++#if !defined(OS_MACOSX) && !defined(OS_BSD)
      if (zygote) {
        // If the renderer was created via a zygote, we have to proxy the reaping
        // through the zygote process.
-@@ -301,7 +301,7 @@ class ChildProcessLauncher::Context
-   // shutdown. Default behavior is to terminate the child.
-   bool terminate_child_on_shutdown_;
- 
--#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
-+#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
+@@ -360,7 +360,7 @@ class ChildProcessLauncher::Context
+ #if defined(OS_ANDROID)
+   // The fd to close after creating the process.
+   int ipcfd_;
+-#elif defined(OS_POSIX) && !defined(OS_MACOSX)
++#elif defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
    bool zygote_;
  #endif
  };
-@@ -352,7 +352,7 @@ base::TerminationStatus ChildProcessLauncher::GetChild
+@@ -413,7 +413,7 @@ base::TerminationStatus ChildProcessLauncher::GetChild
        *exit_code = context_->exit_code_;
      return context_->termination_status_;
    }

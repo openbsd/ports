@@ -1,7 +1,7 @@
-$OpenBSD: patch-base_atomicops_h,v 1.7 2012/08/26 18:47:01 robert Exp $
---- base/atomicops.h.orig	Tue Aug 14 09:01:48 2012
-+++ base/atomicops.h	Wed Aug 15 23:14:34 2012
-@@ -50,7 +50,11 @@ typedef intptr_t Atomic64;
+$OpenBSD: patch-base_atomicops_h,v 1.8 2012/10/12 16:46:09 robert Exp $
+--- base/atomicops.h.orig	Tue Sep 25 15:01:57 2012
++++ base/atomicops.h	Wed Oct 10 17:19:28 2012
+@@ -49,7 +49,11 @@ typedef intptr_t Atomic64;
  
  // Use AtomicWord for a machine-sized pointer.  It will use the Atomic32 or
  // Atomic64 routines below, depending on your architecture.
@@ -13,7 +13,7 @@ $OpenBSD: patch-base_atomicops_h,v 1.7 2012/08/26 18:47:01 robert Exp $
  
  // Atomically execute:
  //      result = *ptr;
-@@ -145,7 +149,7 @@ Atomic64 Release_Load(volatile const Atomic64* ptr);
+@@ -144,7 +148,7 @@ Atomic64 Release_Load(volatile const Atomic64* ptr);
  
  // On some platforms we need additional declarations to make
  // AtomicWord compatible with our other Atomic* types.

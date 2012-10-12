@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2012/08/26 18:47:01 robert Exp $
+@comment $OpenBSD: PLIST,v 1.20 2012/10/12 16:46:10 robert Exp $
 bin/chrome
 chrome/
 @bin chrome/chrome
@@ -166,17 +166,7 @@ chrome/resources/inspector/Images/spinnerInactive.gif
 chrome/resources/inspector/Images/spinnerInactiveSelected.gif
 chrome/resources/inspector/Images/splitviewDimple.png
 chrome/resources/inspector/Images/splitviewDividerBackground.png
-chrome/resources/inspector/Images/statusbarBackground.png
-chrome/resources/inspector/Images/statusbarBackgroundChromium.png
-chrome/resources/inspector/Images/statusbarBottomBackground.png
-chrome/resources/inspector/Images/statusbarBottomBackgroundChromium.png
 chrome/resources/inspector/Images/statusbarButtonGlyphs.png
-chrome/resources/inspector/Images/statusbarButtons.png
-chrome/resources/inspector/Images/statusbarButtonsChromium.png
-chrome/resources/inspector/Images/statusbarMenuButton.png
-chrome/resources/inspector/Images/statusbarMenuButtonChromium.png
-chrome/resources/inspector/Images/statusbarMenuButtonSelected.png
-chrome/resources/inspector/Images/statusbarMenuButtonSelectedChromium.png
 chrome/resources/inspector/Images/statusbarResizerHorizontal.png
 chrome/resources/inspector/Images/statusbarResizerVertical.png
 chrome/resources/inspector/Images/successGreenDot.png
@@ -243,11 +233,11 @@ chrome/resources/inspector/revisionHistory.css
 chrome/resources/inspector/scriptsPanel.css
 chrome/resources/inspector/splitView.css
 chrome/resources/inspector/tabbedPane.css
+chrome/resources/inspector/textEditor.css
 chrome/resources/inspector/textPrompt.css
-chrome/resources/inspector/textViewer.css
 chrome/resources/inspector/timelinePanel.css
-chrome/theme_resources_standard.pak
-chrome/ui_resources_standard.pak
+chrome/theme_resources_100_percent.pak
+chrome/ui_resources_100_percent.pak
 @man man/man1/chrome.1
 share/applications/chrome.desktop
 share/icons/hicolor/128x128/apps/chrome.png

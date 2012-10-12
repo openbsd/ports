@@ -1,0 +1,9 @@
+$OpenBSD: patch-third_party_libvpx_obj_int_extract_sh,v 1.1 2012/10/12 16:46:10 robert Exp $
+--- third_party/libvpx/obj_int_extract.sh.orig	Wed Oct 10 23:01:00 2012
++++ third_party/libvpx/obj_int_extract.sh	Wed Oct 10 23:01:15 2012
+@@ -1,4 +1,4 @@
+-#!/bin/bash -e
++#!/usr/bin/env bash
+ #
+ # Copyright (c) 2012 The Chromium Authors. All rights reserved.
+ # Use of this source code is governed by a BSD-style license that can be
