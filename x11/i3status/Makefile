@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2012/10/09 17:12:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2012/10/12 07:57:26 dcoppa Exp $
 
 ONLY_FOR_ARCHS=		${APM_ARCHS}
 
 COMMENT=		generate a statusbar for use with i3/xmobar/dzen2
 
 DISTNAME=		i3status-2.6
-REVISION=		15
+REVISION=		16
 CATEGORIES=		x11 sysutils
 
 HOMEPAGE=		http://i3wm.org/i3status/
