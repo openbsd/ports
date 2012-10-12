@@ -1,40 +1,47 @@
-$OpenBSD: patch-Makefile,v 1.2 2010/10/23 15:52:22 sthen Exp $
---- Makefile.orig	Tue Dec 29 17:03:49 2009
-+++ Makefile	Fri Oct 15 16:08:00 2010
-@@ -69,7 +69,6 @@ install-pre: Makefile Makefile.config
- 	mkdir -p $(LOGDIR)
+$OpenBSD: patch-Makefile,v 1.3 2012/10/12 09:46:46 kirby Exp $
+--- Makefile.orig	Fri Aug 31 19:22:50 2012
++++ Makefile	Sun Sep 30 23:14:10 2012
+@@ -72,7 +72,6 @@ install-pre: Makefile Makefile.config
  	mkdir -p $(STATEDIR)
+ 	mkdir -p $(SPOOLDIR)
  	mkdir -p $(CONFDIR)
--	$(CHOWN) $(USER) $(LOGDIR) $(STATEDIR)
+-	$(CHOWN) $(USER) $(LOGDIR) $(STATEDIR) $(SPOOLDIR)
  
  install-master-prime: $(INFILES_MASTER) install-pre install-master
  	mkdir -p $(CONFDIR)/templates
-@@ -80,11 +79,11 @@ install-master-prime: $(INFILES_MASTER) install-pre in
+@@ -84,15 +83,15 @@ install-master-prime: $(INFILES_MASTER) install-pre in
  	mkdir -p $(PERLLIB)
  	mkdir -p $(PERLLIB)/Munin/Master
  	mkdir -p $(HTMLDIR)
 -	mkdir -p $(DBDIR)
+-	mkdir -p $(DBDIR)/cgi-tmp
 +#	mkdir -p $(DBDIR)
++#	mkdir -p $(DBDIR)/cgi-tmp
  	mkdir -p $(CGIDIR)
  
--	$(CHOWN) $(USER) $(HTMLDIR) $(DBDIR) 
+-	$(CHOWN) $(USER) $(HTMLDIR) $(DBDIR)
 -	$(CHMOD) 0755 $(DBDIR)
-+#	$(CHOWN) $(USER) $(HTMLDIR) $(DBDIR) 
++#	$(CHOWN) $(USER) $(HTMLDIR) $(DBDIR)
 +#	$(CHMOD) 0755 $(DBDIR)
  
- 	for p in master/www/*.tmpl master/www/*.png master/www/*.css resources/favicon.ico; do \
+-	$(CHOWN) $(CGIUSER) $(DBDIR)/cgi-tmp
+-	$(CHMOD) 0755 $(DBDIR)/cgi-tmp
++#	$(CHOWN) $(CGIUSER) $(DBDIR)/cgi-tmp
++#	$(CHMOD) 0755 $(DBDIR)/cgi-tmp
+ 
+ 	for p in master/www/*.tmpl ;  do \
  		$(INSTALL) -m 0644 "$$p" $(CONFDIR)/templates/ ; \
-@@ -125,10 +124,10 @@ install-plugins-prime: install-plugins build $(PLUGINS
+@@ -142,10 +141,10 @@ install-plugins-prime: install-plugins build $(PLUGINS
  	mkdir -p $(CONFDIR)/plugins
  	mkdir -p $(CONFDIR)/plugin-conf.d
  	mkdir -p $(LIBDIR)/plugins
 -	mkdir -p $(PLUGSTATE)
 +#	mkdir -p $(PLUGSTATE)
  
--	$(CHOWN) $(PLUGINUSER):$(GROUP) $(PLUGSTATE)
--	$(CHMOD) 0775 $(PLUGSTATE)
-+#	$(CHOWN) $(PLUGINUSER):$(GROUP) $(PLUGSTATE)
-+#	$(CHMOD) 0775 $(PLUGSTATE)
+-	$(CHOWN) root:root $(PLUGSTATE)
+-	$(CHMOD) 0755 $(PLUGSTATE)
++#	$(CHOWN) root:root $(PLUGSTATE)
++#	$(CHMOD) 0755 $(PLUGSTATE)
  	$(CHMOD) 0755 $(CONFDIR)/plugin-conf.d
  
  	for p in build/plugins/node.d/* build/plugins/node.d.$(OSTYPE)/* ; do \

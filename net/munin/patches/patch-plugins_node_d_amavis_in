@@ -1,6 +1,6 @@
-$OpenBSD: patch-plugins_node_d_amavis_in,v 1.1 2012/07/11 03:46:42 william Exp $
---- plugins/node.d/amavis.in.orig	Sat Mar  3 23:23:22 2012
-+++ plugins/node.d/amavis.in	Sat Mar  3 23:29:47 2012
+$OpenBSD: patch-plugins_node_d_amavis_in,v 1.2 2012/10/12 09:46:46 kirby Exp $
+--- plugins/node.d/amavis.in.orig	Tue Oct  2 23:46:50 2012
++++ plugins/node.d/amavis.in	Tue Oct  9 22:03:32 2012
 @@ -20,11 +20,11 @@ The configuration environment variables are available
  
  =item amavislog
@@ -26,8 +26,13 @@ $OpenBSD: patch-plugins_node_d_amavis_in,v 1.1 2012/07/11 03:46:42 william Exp $
       group adm
  
  =head1 INTERPRETATION
-@@ -81,8 +81,8 @@ mktempfile () {
-     $cmd
+@@ -77,12 +77,11 @@ GPLv2
+ =cut
+ 
+ mktempfile () {
+-    cmd=`echo $MUNIN_MKTEMP | sed s/\\$1/$1/`
+-    $cmd
++    @@MKTEMP@@
  }
  
 -AMAVIS_LOG=${amavislog:-/var/log/mail/mail.info}

@@ -1,22 +1,16 @@
-$OpenBSD: patch-plugins_node_d_openbsd_systat_in,v 1.1 2010/10/23 15:52:23 sthen Exp $
---- plugins/node.d.openbsd/systat.in.orig	Mon Jul 13 19:53:38 2009
-+++ plugins/node.d.openbsd/systat.in	Sat Oct 23 16:27:57 2010
-@@ -1,11 +1,11 @@
- #!/bin/sh
--# System statistics for FreeBSD
--# Author: Gergely Czuczy <phoemix@harmless.hu>
-+# System statistics for OpenBSD, adapted from FreeBSD plugin
-+# Author: Gergely Czuczy <phoemix@harmless.hu>, adapted sthen@openbsd.org
- #
+$OpenBSD: patch-plugins_node_d_openbsd_systat_in,v 1.2 2012/10/12 09:46:46 kirby Exp $
+--- plugins/node.d.openbsd/systat.in.orig	Fri Aug 31 19:22:50 2012
++++ plugins/node.d.openbsd/systat.in	Sun Sep 30 23:26:49 2012
+@@ -8,7 +8,7 @@
  #%# family=auto
  #%# capabilities=autoconf
  
 -sysctl='/sbin/sysctl'
 +sysctl='/usr/bin/vmstat'
  
- case $1 in
-     config)
-@@ -40,11 +40,11 @@ EOF
+ if [ "$logarithmic" ]; then
+     graph_args="--logarithmic --units=si"
+@@ -49,7 +49,7 @@ EOF
  	    exit 0
  	fi
  	ostype=`uname -s`
@@ -25,17 +19,12 @@ $OpenBSD: patch-plugins_node_d_openbsd_systat_in,v 1.1 2010/10/23 15:52:23 sthen
  	    echo "yes"
  	    exit 0
  	fi
--	echo "no (You're OS is not supported by this plugin)"
-+	echo "no (Your OS is not supported by this plugin)"
- 	exit 0
- 	;;
-     suggest)
-@@ -52,13 +52,12 @@ EOF
+@@ -61,13 +61,12 @@ EOF
  	;;
  esac
  
 -${sysctl} vm.stats.sys.v_soft vm.stats.sys.v_intr vm.stats.sys.v_syscall vm.stats.sys.v_trap vm.stats.sys.v_swtch \
--    vm.stats.vm.v_forks vm.stats.vm.v_rforks vm.stats.vm.v_vforks| awk '
+-    vm.stats.vm.v_forks vm.stats.vm.v_rforks vm.stats.vm.v_vforks | awk '
 +vmstat -s | awk '
  BEGIN {forks=0;}
 -/^vm.stats.sys.v_soft/{print "softint.value",$2}

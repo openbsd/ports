@@ -1,6 +1,6 @@
-$OpenBSD: patch-plugins_node_d_mailscanner_in,v 1.1 2012/07/11 03:46:42 william Exp $
---- plugins/node.d/mailscanner.in.orig	Sat Mar  3 23:31:30 2012
-+++ plugins/node.d/mailscanner.in	Sat Mar  3 23:32:04 2012
+$OpenBSD: patch-plugins_node_d_mailscanner_in,v 1.2 2012/10/12 09:46:46 kirby Exp $
+--- plugins/node.d/mailscanner.in.orig	Fri Aug 31 19:22:50 2012
++++ plugins/node.d/mailscanner.in	Sun Sep 30 23:20:20 2012
 @@ -15,11 +15,11 @@ The following environment variables are used by this p
  =item logfile
  
@@ -23,6 +23,6 @@ $OpenBSD: patch-plugins_node_d_mailscanner_in,v 1.1 2012/07/11 03:46:42 william 
 -my $logtail = '/usr/sbin/logtail';
 +my $logfile = '/var/log/maillog';
 +my $logtail = '/usr/local/bin/logtail';
- my $offsetfile = "@@PLUGSTATE@@/munin-mailscanner.offset";
+ my $offsetfile = "$ENV{MUNIN_PLUGSTATE}/munin-mailscanner.offset";
  my ($clean, $viruses, $spams, $others, $total) = (0, 0, 0, 0, 0);
  my $cmd = (defined($ARGV[0])) ? $ARGV[0] : '';

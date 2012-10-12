@@ -1,7 +1,7 @@
-$OpenBSD: patch-plugins_node_d_ps__in,v 1.1 2010/10/23 15:52:23 sthen Exp $
---- plugins/node.d/ps_.in.orig	Thu Oct 14 18:46:50 2010
-+++ plugins/node.d/ps_.in	Thu Oct 14 18:46:58 2010
-@@ -40,7 +40,7 @@ Unknown license
+$OpenBSD: patch-plugins_node_d_ps__in,v 1.2 2012/10/12 09:46:46 kirby Exp $
+--- plugins/node.d/ps_.in.orig	Fri Aug 31 19:22:50 2012
++++ plugins/node.d/ps_.in	Sun Sep 30 23:19:21 2012
+@@ -40,7 +40,7 @@ GPLv2
  =head1 MAGIC MARKERS
  
   #%# family=auto

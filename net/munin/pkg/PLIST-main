@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2012/07/11 03:46:42 william Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2012/10/12 09:46:46 kirby Exp $
 @newgroup _munin:644
 @newgroup _munin-plugin:645
 @newuser _munin:644:_munin:daemon:munin user:/nonexistent:/sbin/nologin
@@ -21,6 +21,8 @@ libdata/perl5/site_perl/Munin/
 libdata/perl5/site_perl/Munin/Common/
 libdata/perl5/site_perl/Munin/Common/Config.pm
 libdata/perl5/site_perl/Munin/Common/Defaults.pm
+libdata/perl5/site_perl/Munin/Common/DictFile.pm
+libdata/perl5/site_perl/Munin/Common/SyncDictFile.pm
 libdata/perl5/site_perl/Munin/Common/TLS.pm
 libdata/perl5/site_perl/Munin/Common/TLSClient.pm
 libdata/perl5/site_perl/Munin/Common/TLSServer.pm
@@ -30,6 +32,7 @@ libdata/perl5/site_perl/Munin/Master/Config.pm
 libdata/perl5/site_perl/Munin/Master/GraphOld.pm
 libdata/perl5/site_perl/Munin/Master/Group.pm
 libdata/perl5/site_perl/Munin/Master/GroupRepository.pm
+libdata/perl5/site_perl/Munin/Master/HTMLConfig.pm
 libdata/perl5/site_perl/Munin/Master/HTMLOld.pm
 libdata/perl5/site_perl/Munin/Master/Host.pm
 libdata/perl5/site_perl/Munin/Master/LimitsOld.pm
@@ -50,10 +53,13 @@ libdata/perl5/site_perl/Munin/Node/Configure/Plugin.pm
 libdata/perl5/site_perl/Munin/Node/Configure/PluginList.pm
 libdata/perl5/site_perl/Munin/Node/Logger.pm
 libdata/perl5/site_perl/Munin/Node/OS.pm
+libdata/perl5/site_perl/Munin/Node/ProxySpooler.pm
 libdata/perl5/site_perl/Munin/Node/SNMPConfig.pm
 libdata/perl5/site_perl/Munin/Node/Server.pm
 libdata/perl5/site_perl/Munin/Node/Service.pm
 libdata/perl5/site_perl/Munin/Node/Session.pm
+libdata/perl5/site_perl/Munin/Node/SpoolReader.pm
+libdata/perl5/site_perl/Munin/Node/SpoolWriter.pm
 libdata/perl5/site_perl/Munin/Node/Utils.pm
 libdata/perl5/site_perl/Munin/Plugin/
 libdata/perl5/site_perl/Munin/Plugin.pm
@@ -78,7 +84,6 @@ libexec/munin/plugins/bgpd
 libexec/munin/plugins/bind9
 libexec/munin/plugins/bind9_rndc
 libexec/munin/plugins/cmc_tc_sensor_
-libexec/munin/plugins/colour_tester
 libexec/munin/plugins/coretemp
 libexec/munin/plugins/courier_
 libexec/munin/plugins/courier_mta_mailqueue
@@ -92,11 +97,9 @@ libexec/munin/plugins/df_inode
 libexec/munin/plugins/dhcpd3
 libexec/munin/plugins/digitemp_
 libexec/munin/plugins/ejabberd_
-libexec/munin/plugins/env
 libexec/munin/plugins/exim_mailqueue
 libexec/munin/plugins/exim_mailqueue_alt
 libexec/munin/plugins/exim_mailstats
-libexec/munin/plugins/extinfo_tester
 libexec/munin/plugins/fail2ban
 libexec/munin/plugins/foldingathome
 libexec/munin/plugins/foldingathome_rank
@@ -106,12 +109,13 @@ libexec/munin/plugins/freeradius_auth
 libexec/munin/plugins/freeradius_proxy_acct
 libexec/munin/plugins/freeradius_proxy_auth
 libexec/munin/plugins/haproxy_
+libexec/munin/plugins/haproxy_ng
 @comment libexec/munin/plugins/hddtemp
 @comment libexec/munin/plugins/hddtemp2
 libexec/munin/plugins/hddtemp_smartctl
 libexec/munin/plugins/hddtempd
+libexec/munin/plugins/hp2000_
 libexec/munin/plugins/http_loadtime
-libexec/munin/plugins/id
 libexec/munin/plugins/if_
 libexec/munin/plugins/if_errcoll_
 libexec/munin/plugins/if_pps_
@@ -119,9 +123,9 @@ libexec/munin/plugins/ifx_concurrent_sessions_
 libexec/munin/plugins/intr
 libexec/munin/plugins/iostat
 @comment libexec/munin/plugins/ipac-ng
+libexec/munin/plugins/ipmi_
 libexec/munin/plugins/ipmi_sensor_
 libexec/munin/plugins/ircu
-libexec/munin/plugins/jmx_
 libexec/munin/plugins/load
 libexec/munin/plugins/loggrep
 libexec/munin/plugins/lpstat
@@ -130,7 +134,6 @@ libexec/munin/plugins/mailscanner
 @comment libexec/munin/plugins/mbmon_
 libexec/munin/plugins/memcached_
 libexec/munin/plugins/mhttping
-libexec/munin/plugins/multigraph_tester
 libexec/munin/plugins/multiping
 libexec/munin/plugins/multips
 libexec/munin/plugins/multips_memory
@@ -165,6 +168,8 @@ libexec/munin/plugins/perdition
 libexec/munin/plugins/pf_changes
 libexec/munin/plugins/pf_searches
 libexec/munin/plugins/pf_states
+libexec/munin/plugins/pgbouncer_connections
+libexec/munin/plugins/pgbouncer_requests
 libexec/munin/plugins/ping_
 libexec/munin/plugins/plugin.sh
 libexec/munin/plugins/plugins.history
@@ -173,15 +178,19 @@ libexec/munin/plugins/pop_stats
 libexec/munin/plugins/postfix_mailqueue
 libexec/munin/plugins/postfix_mailstats
 libexec/munin/plugins/postfix_mailvolume
+libexec/munin/plugins/postgres_autovacuum
 libexec/munin/plugins/postgres_bgwriter
 libexec/munin/plugins/postgres_cache_
 libexec/munin/plugins/postgres_checkpoints
 libexec/munin/plugins/postgres_connections_
 libexec/munin/plugins/postgres_connections_db
 libexec/munin/plugins/postgres_locks_
+libexec/munin/plugins/postgres_oldest_prepared_xact_
+libexec/munin/plugins/postgres_prepared_xacts_
 libexec/munin/plugins/postgres_querylength_
 libexec/munin/plugins/postgres_scans_
 libexec/munin/plugins/postgres_size_
+libexec/munin/plugins/postgres_streaming_
 libexec/munin/plugins/postgres_transactions_
 libexec/munin/plugins/postgres_tuples_
 libexec/munin/plugins/postgres_users
@@ -253,15 +262,14 @@ libexec/munin/plugins/tomcat_access
 libexec/munin/plugins/tomcat_jvm
 libexec/munin/plugins/tomcat_threads
 libexec/munin/plugins/tomcat_volume
-libexec/munin/plugins/uptime
 libexec/munin/plugins/users
 libexec/munin/plugins/varnish_
 libexec/munin/plugins/vmstat
-libexec/munin/plugins/warning_tester
 libexec/munin/plugins/zimbra_
 @man man/man1/munin-node-configure.1
 @man man/man1/munin-node.1
 @man man/man1/munin-run.1
+@man man/man1/munin-sched.1
 @man man/man1/munindoc.1
 @man man/man3/Munin::Common::Config.3p
 @man man/man3/Munin::Common::Defaults.3p
@@ -289,10 +297,13 @@ libexec/munin/plugins/zimbra_
 @man man/man3/Munin::Node::Configure::PluginList.3p
 @man man/man3/Munin::Node::Logger.3p
 @man man/man3/Munin::Node::OS.3p
+@man man/man3/Munin::Node::ProxySpooler.3p
 @man man/man3/Munin::Node::SNMPConfig.3p
 @man man/man3/Munin::Node::Server.3p
 @man man/man3/Munin::Node::Service.3p
 @man man/man3/Munin::Node::Session.3p
+@man man/man3/Munin::Node::SpoolReader.3p
+@man man/man3/Munin::Node::SpoolWriter.3p
 @man man/man3/Munin::Node::Utils.3p
 @man man/man3/Munin::Plugin.3p
 @man man/man3/Munin::Plugin::Pgsql.3p
@@ -305,6 +316,7 @@ sbin/munin-node
 sbin/munin-node-configure
 sbin/munin-run
 @sample ${SYSCONFDIR}/munin/
+sbin/munin-sched
 share/doc/munin/
 share/doc/munin/UPGRADING
 share/examples/munin/munin-node.conf

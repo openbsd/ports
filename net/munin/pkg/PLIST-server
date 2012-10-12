@@ -1,38 +1,68 @@
-@comment $OpenBSD: PLIST-server,v 1.3 2011/05/11 12:03:19 jasper Exp $
+@comment $OpenBSD: PLIST-server,v 1.4 2012/10/12 09:46:46 kirby Exp $
 @extraunexec rm -rf /var/www/htdocs/munin/*
 @extraunexec rm -rf /var/db/munin/*
+@owner www
+@sample /var/db/munin/cgi-tmp/
 @owner _munin
 @sample /var/db/munin/
+@sample /var/db/munin/spool/
 @sample /var/www/htdocs/munin/
 @owner
 bin/munin-cron
 libexec/munin/
 libexec/munin/DejaVuSans.ttf
 libexec/munin/DejaVuSansMono.ttf
+libexec/munin/munin-async
+libexec/munin/munin-asyncd
+libexec/munin/munin-datafile2storable
 libexec/munin/munin-graph
 libexec/munin/munin-html
 libexec/munin/munin-limits
+libexec/munin/munin-storable2datafile
 libexec/munin/munin-update
 @man man/man5/munin.conf.5
 @man man/man8/munin-cron.8
-@man man/man8/munin-graph.8
 @man man/man8/munin-html.8
 @man man/man8/munin-limits.8
 share/examples/munin/
+@owner www
+share/examples/munin/munin-cgi-graph.log
+@sample /var/log/munin/munin-cgi-graph.log
+share/examples/munin/munin-cgi-html.log
+@sample /var/log/munin/munin-cgi-html.log
+@owner
 share/examples/munin/munin-conf.d/
 @sample ${SYSCONFDIR}/munin/munin-conf.d/
 share/examples/munin/munin.conf
 @sample ${SYSCONFDIR}/munin/munin.conf
+share/examples/munin/static/
+@sample ${SYSCONFDIR}/munin/static/
+share/examples/munin/static/definitions.html
+@sample ${SYSCONFDIR}/munin/static/definitions.html
+share/examples/munin/static/dynazoom.html
+@sample ${SYSCONFDIR}/munin/static/dynazoom.html
+share/examples/munin/static/favicon.ico
+@sample ${SYSCONFDIR}/munin/static/favicon.ico
+share/examples/munin/static/formatdate.js
+@sample ${SYSCONFDIR}/munin/static/formatdate.js
+share/examples/munin/static/logo-h.png
+@sample ${SYSCONFDIR}/munin/static/logo-h.png
+share/examples/munin/static/logo.png
+@sample ${SYSCONFDIR}/munin/static/logo.png
+share/examples/munin/static/querystring.js
+@sample ${SYSCONFDIR}/munin/static/querystring.js
+share/examples/munin/static/style-1.2.css
+@sample ${SYSCONFDIR}/munin/static/style-1.2.css
+share/examples/munin/static/style-new.css
+@sample ${SYSCONFDIR}/munin/static/style-new.css
+share/examples/munin/static/style.css
+@sample ${SYSCONFDIR}/munin/static/style.css
+share/examples/munin/static/zoom.js
+@sample ${SYSCONFDIR}/munin/static/zoom.js
 share/examples/munin/templates/
 @sample ${SYSCONFDIR}/munin/templates/
-share/examples/munin/templates/definitions.html
-@sample ${SYSCONFDIR}/munin/templates/definitions.html
-share/examples/munin/templates/favicon.ico
-@sample ${SYSCONFDIR}/munin/templates/favicon.ico
-share/examples/munin/templates/logo-h.png
-@sample ${SYSCONFDIR}/munin/templates/logo-h.png
-share/examples/munin/templates/logo.png
-@sample ${SYSCONFDIR}/munin/templates/logo.png
+share/examples/munin/templates/munin-categoryview.tmpl
+@sample ${SYSCONFDIR}/munin/templates/munin-categoryview.tmpl
 share/examples/munin/templates/munin-comparison-day.tmpl
 @sample ${SYSCONFDIR}/munin/templates/munin-comparison-day.tmpl
 share/examples/munin/templates/munin-comparison-month.tmpl
@@ -43,16 +73,22 @@ share/examples/munin/templates/munin-comparison-year.tmpl
 @sample ${SYSCONFDIR}/munin/templates/munin-comparison-year.tmpl
 share/examples/munin/templates/munin-domainview.tmpl
 @sample ${SYSCONFDIR}/munin/templates/munin-domainview.tmpl
+share/examples/munin/templates/munin-dynazoom.tmpl
+@sample ${SYSCONFDIR}/munin/templates/munin-dynazoom.tmpl
 share/examples/munin/templates/munin-nodeview.tmpl
 @sample ${SYSCONFDIR}/munin/templates/munin-nodeview.tmpl
 share/examples/munin/templates/munin-overview.tmpl
 @sample ${SYSCONFDIR}/munin/templates/munin-overview.tmpl
+share/examples/munin/templates/munin-problemview.tmpl
+@sample ${SYSCONFDIR}/munin/templates/munin-problemview.tmpl
 share/examples/munin/templates/munin-serviceview.tmpl
 @sample ${SYSCONFDIR}/munin/templates/munin-serviceview.tmpl
 share/examples/munin/templates/partial/
 @sample ${SYSCONFDIR}/munin/templates/partial/
 share/examples/munin/templates/partial/bottom_navigation.tmpl
 @sample ${SYSCONFDIR}/munin/templates/partial/bottom_navigation.tmpl
+share/examples/munin/templates/partial/footer.tmpl
+@sample ${SYSCONFDIR}/munin/templates/partial/footer.tmpl
 share/examples/munin/templates/partial/generated_by.tmpl
 @sample ${SYSCONFDIR}/munin/templates/partial/generated_by.tmpl
 share/examples/munin/templates/partial/head.tmpl
@@ -61,18 +97,20 @@ share/examples/munin/templates/partial/logo_navigation.tmpl
 @sample ${SYSCONFDIR}/munin/templates/partial/logo_navigation.tmpl
 share/examples/munin/templates/partial/logo_navigation_comparison.tmpl
 @sample ${SYSCONFDIR}/munin/templates/partial/logo_navigation_comparison.tmpl
+share/examples/munin/templates/partial/logo_navigation_problem.tmpl
+@sample ${SYSCONFDIR}/munin/templates/partial/logo_navigation_problem.tmpl
 share/examples/munin/templates/partial/logo_path.tmpl
 @sample ${SYSCONFDIR}/munin/templates/partial/logo_path.tmpl
+share/examples/munin/templates/partial/navigation.tmpl
+@sample ${SYSCONFDIR}/munin/templates/partial/navigation.tmpl
 share/examples/munin/templates/partial/path.tmpl
 @sample ${SYSCONFDIR}/munin/templates/partial/path.tmpl
-share/examples/munin/templates/style-1.2.css
-@sample ${SYSCONFDIR}/munin/templates/style-1.2.css
-share/examples/munin/templates/style.css
-@sample ${SYSCONFDIR}/munin/templates/style.css
 share/examples/munin/www/
 share/examples/munin/www/.htaccess
 @sample /var/www/cgi-bin/.htaccess
+@mode 544
+@owner www
 share/examples/munin/www/munin-cgi-graph
 @sample /var/www/cgi-bin/munin-cgi-graph
-share/examples/munin/www/munin-fastcgi-graph
-@sample /var/www/cgi-bin/munin-fastcgi-graph
+share/examples/munin/www/munin-cgi-html
+@sample /var/www/cgi-bin/munin-cgi-html

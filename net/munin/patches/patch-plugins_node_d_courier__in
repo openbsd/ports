@@ -1,6 +1,6 @@
-$OpenBSD: patch-plugins_node_d_courier__in,v 1.1 2012/07/11 03:46:42 william Exp $
---- plugins/node.d/courier_.in.orig	Sat Mar  3 23:30:41 2012
-+++ plugins/node.d/courier_.in	Sat Mar  3 23:31:20 2012
+$OpenBSD: patch-plugins_node_d_courier__in,v 1.2 2012/10/12 09:46:46 kirby Exp $
+--- plugins/node.d/courier_.in.orig	Fri Aug 31 19:22:50 2012
++++ plugins/node.d/courier_.in	Sun Sep 30 23:19:14 2012
 @@ -27,8 +27,8 @@ variable to "imaplogin" and "courierpop3login", respec
  The default configuration is:
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-plugins_node_d_courier__in,v 1.1 2012/07/11 03:46:42 william Exp
 -COURIER_LOG=${logfile:-/var/log/mail.log}
 +COURIER_LOG=${logfile:-/var/log/maillog}
  SERVICE=${service:-`basename $0 | sed 's/^courier_//g'`}
- OFFSET_FILE=@@PLUGSTATE@@/courier_${SERVICE}.offset
+ OFFSET_FILE=${MUNIN_PLUGSTATE}/courier_${SERVICE}.offset
 -LOGTAIL=${logtail:-/usr/sbin/logtail}
 +LOGTAIL=${logtail:-/usr/local/bin/logtail}
  

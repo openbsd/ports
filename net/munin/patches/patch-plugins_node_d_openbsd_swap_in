@@ -1,7 +1,7 @@
-$OpenBSD: patch-plugins_node_d_openbsd_swap_in,v 1.1 2010/10/23 15:52:23 sthen Exp $
---- plugins/node.d.openbsd/swap.in.orig	Fri Oct 15 00:00:54 2010
-+++ plugins/node.d.openbsd/swap.in	Fri Oct 15 00:02:02 2010
-@@ -15,8 +15,8 @@
+$OpenBSD: patch-plugins_node_d_openbsd_swap_in,v 1.2 2012/10/12 09:46:46 kirby Exp $
+--- plugins/node.d.openbsd/swap.in.orig	Fri Aug 31 19:22:50 2012
++++ plugins/node.d.openbsd/swap.in	Sun Sep 30 23:19:21 2012
+@@ -16,8 +16,8 @@
  
  
  if [ "$1" = "autoconf" ]; then
@@ -12,7 +12,7 @@ $OpenBSD: patch-plugins_node_d_openbsd_swap_in,v 1.1 2010/10/23 15:52:23 sthen E
      	if [ $? = "0" ]; then
  	    	echo yes
      		exit 0
-@@ -50,8 +50,6 @@ if [ "$1" = "config" ]; then
+@@ -51,8 +51,6 @@ if [ "$1" = "config" ]; then
  	exit 0
  fi
  

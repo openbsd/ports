@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.26 2012/09/03 18:00:32 jeremy Exp $
+# $OpenBSD: Makefile,v 1.27 2012/10/12 09:46:46 kirby Exp $
 
 COMMENT-main =	flexible network host monitoring, client
 COMMENT-server =flexible network host monitoring, server
 
-V =		1.4.7
+V =		2.0.7
 DISTNAME =	munin-$V
 PKGNAME-main =	munin-node-$V
 PKGNAME-server =munin-server-$V
-REVISION-main =	1
 CATEGORIES =	net
 
 HOMEPAGE =	http://munin-monitoring.org/
@@ -37,8 +36,13 @@ RUN_DEPENDS-main =	logtail-*|logsentry-*:sysutils/logtail \
 			devel/p5-Log-Log4perl \
 			devel/p5-Net-Server \
 			net/p5-Net-CIDR
-RUN_DEPENDS-server +=	net/rrdtool,-perl \
+RUN_DEPENDS-server +=	converters/p5-DateManip \
+			devel/p5-File-Copy-Recursive \
+			net/p5-IO-Socket-INET6 \
+			net/rrdtool,-perl \
+			www/fcgi \
 			www/p5-HTML-Template \
+			www/p5-URI \
 			net/munin,-main
 
 USE_GMAKE =		Yes
@@ -71,6 +75,7 @@ post-extract:
 	${SUBST_CMD} -c ${SUBST_LIST}
 	chmod -R +x ${WRKSRC}/plugins/node.d.openbsd
 	rm ${WRKSRC}/plugins/node.d.openbsd/memory.in # not yet ported
+	rm ${WRKSRC}/plugins/node.d.openbsd/uptime.in # OpenBSD incompatible
 
 # Fixup hardcoded paths in plugins to use TRUEPREFIX/LOCALBASE as appropriate,
 # there are far too many to handle this via patches/SUBST_CMD, and this method
@@ -92,5 +97,8 @@ post-install:
 	    ${PREFIX}/share/examples/munin/plugin-conf.d
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/munin/
 	${INSTALL_DATA} ${WRKSRC}/UPGRADING ${PREFIX}/share/doc/munin/
+	@touch ${PREFIX}/share/examples/munin/munin-cgi-graph.log
+	@touch ${PREFIX}/share/examples/munin/munin-cgi-html.log
+	@rm ${PREFIX}/man/man8/munin-graph.8 # no data in it
 
 .include <bsd.port.mk>
