@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.44 2012/10/11 07:40:30 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.45 2012/10/12 20:27:16 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: October 11 2012 $
+.Dd $Mdocdate: October 12 2012 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -146,6 +146,10 @@ as this does not take subpackages and flavors into account.
 Set defined parameter to value.
 Known parameters are as follows:
 .Bl -tag -width DISP
+.It ALWAYS_CLEAN
+Set to 1 if
+.Nm
+should clean work directories even if the port errored out.
 .It Ar CDROM_ONLY
 Don't fetch distfiles that are not allowed for cdrom.
 .It Ar CONNECTION_TIMEOUT
@@ -235,8 +239,8 @@ The special hostname
 can be used to preset defaults.
 It should be used at the start of the file.
 .Pp
-Use 
-.Ar localhost 
+Use
+.Ar localhost
 to specify the local machine.
 .Nm
 will special-case it and not use
@@ -249,6 +253,11 @@ Properties are as follows:
 Architecture of the concerned host.
 (there should be a startup task to check consistency, but
 currently this has to be set manually on heterogeneous networks.)
+.It always_clean=n
+Set to 0 or 1 on per-host basis.
+See
+.Ar ALWAYS_CLEAN
+parameter.
 .It jobs=n
 Number of jobs to run on that host, defaults to hw.ncpu.
 .It junk=n
@@ -384,8 +393,8 @@ number of cores available on a given host.
 .Ar parameter
 can be an integer, or of the form
 .Sq /n ,
-in which case, 
-.Nm 
+in which case,
+.Nm
 will set k to a fraction of the total number of jobs
 on the machine, but never below 2.
 .Pp
@@ -690,7 +699,7 @@ and finishes at
 .It Pa clean.log
 Paths that do not clean correctly, and required sudo to clean the directory.
 .It Pa concurrent.log
-Shows the actual concurrency achieved as a result of job starvation / 
+Shows the actual concurrency achieved as a result of job starvation /
 parallel handling.
 Only gets a new line when the value changes: pid timestamp jobs
 .It Pa dependencies.log
