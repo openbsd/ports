@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2012/10/10 08:42:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2012/10/12 13:02:20 jasper Exp $
 
 COMMENT-main=	GNOME desktop meta-package (base installation)
 COMMENT-extra=	GNOME desktop meta-package (full installation)
@@ -10,7 +10,7 @@ PKGNAME-main=	gnome-${V}
 PKGNAME-extra=	gnome-extra-${V}
 
 REVISION-main=	2
-REVISION-extra=	0
+REVISION-extra=	1
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 		Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -85,7 +85,6 @@ RUN_DEPENDS-extra += \
 		sysutils/deja-dup \
 		x11/gnome/ekiga \
 		x11/gnome/empathy \
-		x11/gnome/games-extra-data \
 		x11/gnome/gnote \
 		x11/gnome/gvfs,-smb \
 		x11/gnome/icon-theme-extras \
