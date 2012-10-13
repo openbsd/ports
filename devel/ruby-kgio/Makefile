@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2012/09/23 16:57:33 jeremy Exp $
+# $OpenBSD: Makefile,v 1.10 2012/10/13 10:47:17 jeremy Exp $
 
 COMMENT =	kinder, gentler I/O for Ruby
 
-DISTNAME =	kgio-2.7.0
-REVISION =	0
+DISTNAME =	kgio-2.7.4
 CATEGORIES =	devel
 
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
