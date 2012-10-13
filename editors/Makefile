@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2012/09/22 07:59:35 landry Exp $
+# $OpenBSD: Makefile,v 1.91 2012/10/13 22:25:26 rpe Exp $
 
      SUBDIR =
      SUBDIR += abiword
@@ -52,6 +52,7 @@
      SUBDIR += ted
      SUBDIR += texmaker
      SUBDIR += texworks
+     SUBDIR += traditional-vi
      SUBDIR += uemacs
      SUBDIR += vim
      SUBDIR += vim,gtk2,perl,python,ruby
