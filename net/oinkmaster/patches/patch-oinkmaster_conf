@@ -1,0 +1,57 @@
+$OpenBSD: patch-oinkmaster_conf,v 1.7 2012/10/13 02:56:15 lteo Exp $
+--- oinkmaster.conf.orig	Sat Feb 18 07:35:21 2006
++++ oinkmaster.conf	Sun Oct  7 21:38:12 2012
+@@ -27,7 +27,7 @@
+ #
+ # The location of the official Snort rules you should use depends
+ # on which Snort version you run. Basically, you should go to
+-# http://www.snort.org/rules/ and follow the instructions
++# http://www.snort.org/snort-rules/ and follow the instructions
+ # there to pick the right URL for your version of Snort
+ # (and remember to update the URL when upgrading Snort in the
+ # future). You can of course also specify locations to third party 
+@@ -36,29 +36,29 @@
+ # As of March 2005, you must register on the Snort site to get access 
+ # to the official Snort rules. This will get you an "oinkcode".
+ # You then specify the URL as
+-# http://www.snort.org/pub-bin/oinkmaster.cgi/<oinkcode>/<filename>
+-# For example, if your code is 5a081649c06a277e1022e1284b and
+-# you use Snort 2.4, the url to use would be (without the wrap):
+-# http://www.snort.org/pub-bin/oinkmaster.cgi/
+-# 5a081649c06a277e1022e1284bdc8fabda70e2a4/snortrules-snapshot-2.4.tar.gz
+-# See the Oinkmaster FAQ Q1 and http://www.snort.org/rules/ for
+-# more information.
++# http://www.snort.org/reg-rules/<filename>/<oinkcode>
++# For example, if your code is 5a081649c06a277e1022e1284bdc8fabda70e2a4
++# and you use Snort 2.9.3.1, the url to use would be (without the wrap):
++# http://www.snort.org/reg-rules/snortrules-snapshot-2931.tar.gz/
++# 5a081649c06a277e1022e1284bdc8fabda70e2a4
++# See http://www.snort.org/snort-rules/cli for more information.
+ 
+ 
+ # URL examples follows. Replace <oinkcode> with the code you get on the 
+ # Snort site in your registered user profile.
+ 
+-# Example for Snort 2.4
+-# url = http://www.snort.org/pub-bin/oinkmaster.cgi/<oinkcode>/snortrules-snapshot-2.4.tar.gz
++# Example for Snort 2.9.3.1 registered user release
++# url = http://www.snort.org/reg-rules/snortrules-snapshot-2931.tar.gz/<oinkcode>
+ 
+-# Example for Snort-current ("current" means cvs snapshots).
+-# url = http://www.snort.org/pub-bin/oinkmaster.cgi/<oinkcode>/snortrules-snapshot-CURRENT.tar.gz
++# Example for Snort 2.9.3.1 subscriber release
++# url = http://www.snort.org/sub-rules/snortrules-snapshot-2931.tar.gz/<oinkcode>
+ 
+-# Example for Community rules
+-# url = http://www.snort.org/pub-bin/downloads.cgi/Download/comm_rules/Community-Rules.tar.gz
++# Example for Snort edge rulepack (latest versioned rulepack)
++# See http://www.snort.org/snort-rules/cli for details
++# url = http://www.snort.org/reg-rules/snortrules-snapshot-edge.tar.gz/<oinkcode>
+ 
+-# Example for rules from the Bleeding Snort project
+-# url = http://www.bleedingsnort.com/bleeding.rules.tar.gz
++# Example for rules from the Emerging Threats project
++# url = http://rules.emergingthreats.net/open/snort-2.9.0/emerging.rules.tar.gz
+ 
+ # If you prefer to download the rules archive from outside Oinkmaster,
+ # you can then point to the file on your local filesystem by using
