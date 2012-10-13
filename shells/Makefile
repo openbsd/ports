@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2012/09/17 13:52:24 phessler Exp $
+# $OpenBSD: Makefile,v 1.26 2012/10/13 15:13:15 pascal Exp $
 
     SUBDIR =
     SUBDIR += bash
     SUBDIR += es
+    SUBDIR += ksh93
     SUBDIR += osh
     SUBDIR += nsh
     SUBDIR += perlsh
