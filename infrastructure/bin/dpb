@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.58 2012/10/13 08:32:58 espie Exp $
+# $OpenBSD: dpb,v 1.59 2012/10/13 09:00:02 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -180,8 +180,6 @@ sub handle_options
 		$state->{opt}{e} = 1;
 	}
 	$state->{opt}{f} //= 2;
-	$state->{opt}{J} //= 250;
-	$state->{opt}{p} //= '/2';
 	if (defined $state->opt('j')) {
 		if ($state->localarch ne $state->arch) {
 			$state->usage(
@@ -262,12 +260,24 @@ sub start_cores
 		$override_prop->{wait_timeout} = $t;
 	}
 
+	my $default_prop = { 
+		junk => 250, 
+		parallel => '/2',
+		waiting_timeout => 600,
+	};
+
 	if ($state->{config}) {
-		DPB::Core->parse_hosts_file($state->{config}, $state, $override_prop);
+		DPB::Core->parse_hosts_file($state->{config}, $state, 
+		    $default_prop, $override_prop);
 	}
 
 	if (!$state->{config}) {
-		DPB::Core::Factory->new('localhost', $override_prop);
+		my $prop = { %$default_prop };
+		while (my ($k, $v) = each %$override_prop) {
+			$prop->{$k} = $v;
+		}
+
+		DPB::Core::Factory->new('localhost', $prop);
 	}
 	DPB::Core::Factory->init_cores($state);
 }
