@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.18 2012/10/11 07:40:30 espie Exp $
+# $OpenBSD: Core.pm,v 1.19 2012/10/13 09:06:55 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -29,6 +29,9 @@ sub new
 	$prop->{sf} //= 1;
 	if (defined $prop->{stuck}) {
 		$prop->{stuck_timeout} = $prop->{stuck} * $prop->{sf};
+	}
+	if ($class->name_is_localhost($name)) {
+		delete $prop->{waiting_timeout};
 	}
 	$hosts->{$name} //= bless {host => $name, prop => $prop }, $class;
 }
@@ -696,13 +699,12 @@ sub has_sf
 
 sub parse_hosts_file
 {
-	my ($class, $filename, $state, $override) = @_;
+	my ($class, $filename, $state, $default, $override) = @_;
 	open my $fh, '<', $filename or
 		$state->fatal("Can't read host files #1: #2", $filename, $!);
 	my $_;
 	my $sf;
 	my $cores = {};
-	my $default = {};
 	while (<$fh>) {
 		chomp;
 		s/\s*\#.*$//;

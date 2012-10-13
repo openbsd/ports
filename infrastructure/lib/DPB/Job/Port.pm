@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.40 2012/10/13 08:32:58 espie Exp $
+# $OpenBSD: Port.pm,v 1.41 2012/10/13 09:06:56 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -123,16 +123,14 @@ sub make_sure_we_have_packages
 			print $log ">>> Missing $f\n";
 		}
 	}
-	if (!$check) {
-		if ($core->prop->{wait_timeout}) {
-			if ($job->{waiting}*10 > $core->prop->{wait_timeout}) {
-				print $log ">>> giving up\n";
-			} else {
-				print $log ">>> waiting 10 seconds\n";
-				$job->insert_tasks(
-				    DPB::Task::Port::VerifyPackages->new(
-					'waiting-'.$job->{waiting}++));
-			}
+	if (!$check && $core->prop->{wait_timeout}) {
+		if ($job->{waiting}*10 > $core->prop->{wait_timeout}) {
+			print $log ">>> giving up\n";
+		} else {
+			print $log ">>> waiting 10 seconds\n";
+			$job->insert_tasks(
+			    DPB::Task::Port::VerifyPackages->new(
+				'waiting-'.$job->{waiting}++));
 		}
 	}
 }
