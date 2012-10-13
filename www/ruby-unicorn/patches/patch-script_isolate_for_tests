@@ -1,0 +1,15 @@
+$OpenBSD: patch-script_isolate_for_tests,v 1.1 2012/10/13 10:49:49 jeremy Exp $
+
+Don't use isolate when testing.
+
+--- script/isolate_for_tests.orig	Fri Oct 12 14:49:04 2012
++++ script/isolate_for_tests	Fri Oct 12 14:50:49 2012
+@@ -20,7 +20,7 @@ pid = fork do
+     gem 'kgio-monkey', '0.4.0'
+     gem 'kgio', '2.7.4'
+     gem 'rack', '1.4.1'
+-  end
++  end if false
+ end
+ _, status = Process.waitpid2(pid)
+ status.success? or abort status.inspect
