@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2012/09/01 21:44:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2012/10/13 08:24:52 ajacoutot Exp $
 
 COMMENT-main=		high quality print drivers
 COMMENT-foomatic=	Foomatic data for gutenprint drivers
@@ -6,12 +6,10 @@ COMMENT-foomatic=	Foomatic data for gutenprint drivers
 # XXX On major update:
 # update the gutenprint-ijs.X.X substitution in print/foomatic-db + bump
 # update the example in print/foomatic-db-engine README + bump
-V=			5.2.8
+V=			5.2.9
 DISTNAME=		gutenprint-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-foomatic=	foomatic-db-${DISTNAME}
-
-REVISION-foomatic=	0
 
 MAJOR_V=		${V:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=		MAJOR_V
