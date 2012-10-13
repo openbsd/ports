@@ -1,0 +1,55 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/13 15:11:51 pascal Exp $
+@conflict libast-*
+@shell bin/ksh93
+@shell bin/rksh93
+include/ast/
+include/ast/ast.h
+include/ast/ast_api.h
+include/ast/ast_botch.h
+include/ast/ast_ccode.h
+include/ast/ast_common.h
+include/ast/ast_dir.h
+include/ast/ast_dirent.h
+include/ast/ast_fcntl.h
+include/ast/ast_float.h
+include/ast/ast_fs.h
+include/ast/ast_getopt.h
+include/ast/ast_iconv.h
+include/ast/ast_lib.h
+include/ast/ast_limits.h
+include/ast/ast_map.h
+include/ast/ast_mmap.h
+include/ast/ast_mode.h
+include/ast/ast_namval.h
+include/ast/ast_ndbm.h
+include/ast/ast_nl_types.h
+include/ast/ast_param.h
+include/ast/ast_sizeof.h
+include/ast/ast_standards.h
+include/ast/ast_std.h
+include/ast/ast_stdio.h
+include/ast/ast_sys.h
+include/ast/ast_time.h
+include/ast/ast_tty.h
+include/ast/ast_vfork.h
+include/ast/ast_wait.h
+include/ast/ast_wchar.h
+include/ast/ast_wctype.h
+include/ast/ast_windows.h
+include/ast/cdt.h
+include/ast/nval.h
+include/ast/option.h
+include/ast/prototyped.h
+include/ast/sfio.h
+include/ast/sfio_s.h
+include/ast/shell.h
+lib/libast.a
+lib/libcmd.a
+lib/libshell.a
+@man man/man1/ksh93.1
+@man man/man1/rksh93.1
+@man man/man3/shell.3
+share/examples/ksh93/
+share/examples/ksh93/dirs
+share/examples/ksh93/popd
+share/examples/ksh93/pushd
