@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2012/08/12 17:13:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2012/10/13 10:40:38 jasper Exp $
 
 COMMENT=		C macros to add, find and delete items from a hash
 
-DISTNAME=		uthash-1.9.6
+DISTNAME=		uthash-1.9.7
 CATEGORIES=		devel
 
 HOMEPAGE=		http://uthash.sf.net/
@@ -19,6 +19,7 @@ EXTRACT_SUFX=		.tar.bz2
 NO_BUILD=		Yes
 PKG_ARCH=		*
 
+PORTHOME=		/tmp
 REGRESS_TARGET= 	run_tests
 
 do-install:
