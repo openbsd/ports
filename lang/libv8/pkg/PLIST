@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/13 15:09:58 abieber Exp $
+@owner root
+@group wheel
+@bin bin/d8
+include/v8-debug.h
+include/v8-preparser.h
+include/v8-profiler.h
+include/v8-testing.h
+include/v8.h
+include/v8stdint.h
+@owner root
+@group bin
+@lib lib/libv8.so.${LIBv8_VERSION}
