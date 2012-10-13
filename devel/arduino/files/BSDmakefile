@@ -1,4 +1,4 @@
-# $OpenBSD: BSDmakefile,v 1.4 2012/05/22 21:26:11 jasper Exp $
+# $OpenBSD: BSDmakefile,v 1.5 2012/10/13 12:13:37 jasper Exp $
 # Arduino Makefile
 # Arduino adaptation by mellis, eighthave, oli.keller
 #
@@ -32,7 +32,7 @@
 #  6. Type "make upload", reset your Arduino board, and press enter to
 #     upload your program to the Arduino board.
 #
-# $Id: BSDmakefile,v 1.4 2012/05/22 21:26:11 jasper Exp $
+# $Id: BSDmakefile,v 1.5 2012/10/13 12:13:37 jasper Exp $
 
 TARGET = ${.CURDIR:C/.*\///g}
 
@@ -56,6 +56,10 @@ F_CPU = 16000000
 
 #If your sketch uses any libraries, list them here, eg.
 #LIBRARIES=EEPROM LiquidCrystal Wire
+# Or if you want to use the Ethernet library, use:
+# LIBRARIES=SPI Ethernet IPAddress Dhcp Dns EthernetClient EthernetServer \
+#		EthernetUdp utility/w5100 utility/socket new
+# and run 'mkdir utilities'
 LIBRARIES=
 
 # Arduino variant, one of: "eightanaloginputs", "leonardo", "mega",
