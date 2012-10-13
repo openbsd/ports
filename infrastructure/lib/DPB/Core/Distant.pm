@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distant.pm,v 1.5 2012/10/12 22:18:10 espie Exp $
+# $OpenBSD: Distant.pm,v 1.6 2012/10/13 08:47:32 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -76,6 +76,7 @@ sub exec
 	my ($self, @argv) = @_;
 	if ($self->{env}) {
 		while (my ($k, $v) = each %{$self->{env}}) {
+			$v //= '';
 			unshift @argv, "$k=\'$v\'";
 		}
 	}
