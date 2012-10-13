@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/15 19:45:59 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2012/10/13 15:18:33 pascal Exp $
 
 COMMENT=		library of assorted spiffy things
 
 DISTNAME=		libast-0.7
 PKGNAME=		${DISTNAME}
-REVISION =		5
+REVISION =		6
 SHARED_LIBS +=	ast                  3.0      # .2.1
 CATEGORIES=		devel
 
