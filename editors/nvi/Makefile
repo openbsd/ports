@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2012/07/14 10:19:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2012/10/13 08:13:51 dcoppa Exp $
 
 COMMENT=	ex/vi text editor with wide character support
 
-# commit 9b89eb63aa3331a9fe9ca79af6b7786785ced6e2
-DISTNAME=	nvi-2.1.0
-REVISION=	0
+# commit 5394b0b0eb611d07c07cdb3552b247b9f11dc30e
+DISTNAME=	nvi-2.1.1
 CATEGORIES=	editors
 HOMEPAGE=	https://github.com/lichray/nvi2
 

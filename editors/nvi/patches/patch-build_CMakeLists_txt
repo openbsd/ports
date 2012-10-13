@@ -1,8 +1,8 @@
-$OpenBSD: patch-build_CMakeLists_txt,v 1.1.1.1 2012/07/14 09:59:30 naddy Exp $
---- build/CMakeLists.txt.orig	Fri Jul 13 23:11:17 2012
-+++ build/CMakeLists.txt	Sat Jul 14 10:53:59 2012
-@@ -26,10 +26,10 @@ if(DEBUG)
- 		"-Wmissing-prototypes"
+$OpenBSD: patch-build_CMakeLists_txt,v 1.2 2012/10/13 08:13:51 dcoppa Exp $
+--- build/CMakeLists.txt.orig	Mon Oct  8 12:43:04 2012
++++ build/CMakeLists.txt	Mon Oct  8 12:45:53 2012
+@@ -28,10 +28,10 @@ if(DEBUG)
+ 		"-fstack-protector -Wstack-protector"
  		"-fstrict-aliasing -Wstrict-aliasing")
  	join("${_arg_str}" CMAKE_C_FLAGS)
 -else(DEBUG)

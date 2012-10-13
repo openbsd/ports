@@ -1,0 +1,15 @@
+$OpenBSD: patch-vi_vs_msg_c,v 1.1 2012/10/13 08:13:51 dcoppa Exp $
+
+Our timespecsub function takes three arguments
+
+--- vi/vs_msg.c.orig	Mon Oct  8 12:49:39 2012
++++ vi/vs_msg.c	Mon Oct  8 12:50:32 2012
+@@ -126,7 +126,7 @@ vs_busy(SCR *sp, const char *msg, busy_t btype)
+ 		/* Update no more than every 1/8 of a second. */
+ 		(void)clock_gettime(CLOCK_PROF, &ts);
+ 		ts_diff = ts;
+-		timespecsub(&ts_diff, &vip->busy_ts);
++		timespecsub(&ts_diff, &vip->busy_ts, &vip->busy_ts);
+ 		if (timespeccmp(&ts_diff, &ts_min, <))
+ 			return;
+ 		vip->busy_ts = ts;
