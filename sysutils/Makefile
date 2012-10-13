@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.272 2012/10/03 07:59:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.273 2012/10/13 20:26:39 rpe Exp $
 
      SUBDIR =
      SUBDIR += LPRng
@@ -134,6 +134,7 @@
      SUBDIR += p5-Unix-PID
      SUBDIR += p5-Unix-Statgrab
      SUBDIR += p5-Unix-Syslog
+     SUBDIR += parallel
      SUBDIR += pecl-fileinfo
      SUBDIR += pciutils
      SUBDIR += pftop
