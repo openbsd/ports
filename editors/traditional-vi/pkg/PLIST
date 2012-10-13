@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/13 22:23:54 rpe Exp $
+@bin bin/traditional-edit
+@bin bin/traditional-ex
+@bin bin/traditional-vedit
+@bin bin/traditional-vi
+@bin bin/traditional-view
+@bin libexec/expreserve
+@bin libexec/exrecover
+@man man/man1/traditional-edit.1
+@man man/man1/traditional-ex.1
+@man man/man1/traditional-vedit.1
+@man man/man1/traditional-vi.1
+@man man/man1/traditional-view.1
