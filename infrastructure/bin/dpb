@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.57 2012/10/12 20:24:56 espie Exp $
+# $OpenBSD: dpb,v 1.58 2012/10/13 08:32:58 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -257,6 +257,9 @@ sub start_cores
 	}
 	if ($state->defines("ALWAYS_CLEAN")) {
 		$override_prop->{always_clean} = 1;
+	}
+	if (my $t = $state->{subst}->value('WAIT_TIMEOUT')) {
+		$override_prop->{wait_timeout} = $t;
 	}
 
 	if ($state->{config}) {

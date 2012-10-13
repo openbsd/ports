@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.39 2012/10/12 20:24:56 espie Exp $
+# $OpenBSD: Port.pm,v 1.40 2012/10/13 08:32:58 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -111,7 +111,8 @@ sub notime { 0 }
 # this code is only necessary thanks to NFS's brain-damage...
 sub make_sure_we_have_packages
 {
-	my ($self, $job) = @_;
+	my ($self, $core) = @_;
+	my $job = $core->job;
 	open my $log, '>>', $job->{log};
 	my $check = 1;
 	# check ALL BUILD_PACKAGES
@@ -123,9 +124,16 @@ sub make_sure_we_have_packages
 		}
 	}
 	if (!$check) {
-		print $log ">>> waiting 10 seconds\n";
-		$job->insert_tasks(DPB::Task::Port::VerifyPackages->new(
-		    'waiting'.$job->{waiting}++));
+		if ($core->prop->{wait_timeout}) {
+			if ($job->{waiting}*10 > $core->prop->{wait_timeout}) {
+				print $log ">>> giving up\n";
+			} else {
+				print $log ">>> waiting 10 seconds\n";
+				$job->insert_tasks(
+				    DPB::Task::Port::VerifyPackages->new(
+					'waiting-'.$job->{waiting}++));
+			}
+		}
 	}
 }
 
@@ -472,7 +480,7 @@ sub finalize
 {
 	my ($self, $core) = @_;
 	if (!$self->requeue($core)) {
-		$self->make_sure_we_have_packages($core->job);
+		$self->make_sure_we_have_packages($core);
 	}
 	$self->SUPER::finalize($core);
 }
@@ -512,7 +520,10 @@ our @ISA = qw(DPB::Task::Port);
 sub finalize
 {
 	my ($self, $core) = @_;
-	$self->make_sure_we_have_packages($core->job);
+	if ($core->{status} != 0) {
+		return 0;
+	}
+	$self->make_sure_we_have_packages($core);
 }
 
 sub run
