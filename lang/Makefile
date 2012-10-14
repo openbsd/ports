@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.139 2012/08/18 07:25:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.140 2012/10/14 03:29:35 abieber Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -44,6 +44,7 @@
      SUBDIR += jikes
      SUBDIR += jimtcl
      SUBDIR += jruby
+     SUBDIR += libv8
      SUBDIR += librep
      SUBDIR += lua
      SUBDIR += mawk
