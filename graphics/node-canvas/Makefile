@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2012/09/23 17:30:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2012/10/14 15:33:33 jasper Exp $
 
 COMMENT =	Cairo-backed Canvas implementation for Node.js
 
@@ -21,6 +21,8 @@ WANTLIB += ssl xcb xcb-render xcb-shm z
 MODULES =		devel/gettext \
 			lang/node
 
+# used by package/util/has_lib.sh
+BUILD_DEPENDS=		shells/bash
 LIB_DEPENDS =		devel/pango \
 			graphics/cairo \
 			graphics/jpeg \
