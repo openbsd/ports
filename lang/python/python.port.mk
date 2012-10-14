@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.55 2012/10/12 19:57:46 rpointel Exp $
+# $OpenBSD: python.port.mk,v 1.56 2012/10/14 17:26:12 rpointel Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -6,8 +6,8 @@
 CATEGORIES+=		lang/python
 
 # define the default versions
-_MODPY_DEFAULT_VERSION_2 = 2.7
-_MODPY_DEFAULT_VERSION_3 = 3.2
+MODPY_DEFAULT_VERSION_2 = 2.7
+MODPY_DEFAULT_VERSION_3 = 3.2
 
 .if !defined(MODPY_VERSION)
 
@@ -15,10 +15,10 @@ FLAVOR?=
 
 .  if ${FLAVOR:L:Mpython3}
 # define default version 3
-MODPY_VERSION?=		${_MODPY_DEFAULT_VERSION_3}
+MODPY_VERSION?=		${MODPY_DEFAULT_VERSION_3}
 .  else
 # without flavor, assume we use the default version 2
-MODPY_VERSION?=		${_MODPY_DEFAULT_VERSION_2}
+MODPY_VERSION?=		${MODPY_DEFAULT_VERSION_2}
 .  endif
 
 # verify if MODPY_VERSION forced is correct
