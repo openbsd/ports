@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2012/09/01 14:36:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2012/10/14 18:49:41 ajacoutot Exp $
 
 COMMENT=	GObject based collection library 
 
 GNOME_PROJECT=	libgee
-GNOME_VERSION=	0.6.5
+GNOME_VERSION=	0.6.6
 PKGNAME=	${GNOME_PROJECT}06-${GNOME_VERSION}
-REVISION=	0
 
 SHARED_LIBS +=  gee 1.0 # .2.0
 
@@ -22,7 +21,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += ffi pcre glib-2.0 gobject-2.0 gthread-2.0
+WANTLIB += ffi pcre glib-2.0 gobject-2.0 gthread-2.0 pthread
 
 BUILD_DEPENDS=	lang/vala
 
