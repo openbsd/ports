@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/16 11:13:39 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2012/10/14 20:44:06 jcs Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	ICB protocol plugin for Pidgin
 
 DISTNAME=	pidgin-icb-20070505
-REVISION=	4
+REVISION=	5
 CATEGORIES=	net
 
 HOMEPAGE=	http://nic.com.pl/~alek/pidgin-icb/
@@ -20,8 +20,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	net/pidgin>=2.0.0
+BUILD_DEPENDS=	net/pidgin,-libpurple>=2.0.0
 
 NO_REGRESS=	Yes
 
