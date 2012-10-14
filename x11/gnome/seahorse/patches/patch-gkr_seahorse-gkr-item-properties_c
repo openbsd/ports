@@ -1,0 +1,22 @@
+$OpenBSD: patch-gkr_seahorse-gkr-item-properties_c,v 1.1 2012/10/14 08:16:59 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=684966
+
+--- gkr/seahorse-gkr-item-properties.c.orig	Tue Aug 21 12:23:16 2012
++++ gkr/seahorse-gkr-item-properties.c	Sun Oct 14 10:09:01 2012
+@@ -211,6 +211,7 @@ on_update_password_ready (GObject *source,
+ 		transfer_password (git, swidget);
+ 
+ 	} else {
++		g_dbus_error_strip_remote_error (error);
+ 		seahorse_util_show_error (seahorse_widget_get_toplevel (swidget),
+ 		                          _("Couldn't change password."), error->message);
+ 		g_clear_error (&error);
+@@ -340,6 +341,7 @@ on_item_description_complete (GObject *source,
+ 		gtk_entry_set_text (closure->entry,
+ 		                    secret_item_get_label (SECRET_ITEM (git)));
+ 
++		g_dbus_error_strip_remote_error (error);
+ 		seahorse_util_show_error (seahorse_widget_get_toplevel (closure->swidget),
+ 		                          _("Couldn't set description."), error->message);
+ 		g_clear_error (&error);

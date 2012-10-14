@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.74 2012/09/28 15:03:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2012/10/14 08:16:59 ajacoutot Exp $
 
 COMMENT=		GNOME encryption interface
 
 GNOME_PROJECT=		seahorse
 GNOME_VERSION=		3.6.0
+REVISION=		0
 
 CATEGORIES=		security
 

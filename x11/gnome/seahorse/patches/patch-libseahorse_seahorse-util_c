@@ -1,0 +1,14 @@
+$OpenBSD: patch-libseahorse_seahorse-util_c,v 1.1 2012/10/14 08:16:59 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=684966
+
+--- libseahorse/seahorse-util.c.orig	Tue Aug 21 12:23:17 2012
++++ libseahorse/seahorse-util.c	Sun Oct 14 10:09:01 2012
+@@ -140,6 +140,7 @@ seahorse_util_handle_error (GError **error,
+ 	else
+ 		g_warning ("unsupported 'parent' argument passed to seahorse_util_handle_error() ");
+ 
++	g_dbus_error_strip_remote_error (*error);
+ 	seahorse_util_show_error (widget, text,
+ 	                          (*error)->message ? (*error)->message : "");
+ 	g_free (text);
