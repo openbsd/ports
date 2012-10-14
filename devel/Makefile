@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1082 2012/10/10 11:38:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.1083 2012/10/14 02:57:50 abieber Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -139,6 +139,7 @@
      SUBDIR += gtkparasite
      SUBDIR += guichan
      SUBDIR += guilib
+     SUBDIR += gyp
      SUBDIR += haddock
      SUBDIR += happy
      SUBDIR += harfbuzz
@@ -349,6 +350,7 @@
      SUBDIR += libusb-compat
      SUBDIR += libusb1
      SUBDIR += libutf
+     SUBDIR += libv8
      SUBDIR += libvirt-glib
      SUBDIR += libvmime
      SUBDIR += libvstr
