@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2012/10/12 13:01:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2012/10/14 20:01:38 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,6 +7,7 @@ COMMENT-mozilla=	pacrunner libproxy plugin for mozilla-based (gecko) browsers
 COMMENT-webkit=		pacrunner libproxy plugin for webkit-based browsers
 
 VERSION=		0.4.9
+REVISION=		0
 DISTNAME=		libproxy-${VERSION}
 
 PKGNAME-main=		libproxy-${VERSION}
@@ -31,6 +32,8 @@ MASTER_SITES=		${HOMEPAGE}/files/
 MODULES=		devel/cmake \
 			lang/python \
 			devel/gettext
+
+SUBST_VARS+=		VERSION
 
 # do not enable webkit support by default because of cyclic dependency:
 #     libproxy,-webkit -> webkit -> libsoup -> libproxy
