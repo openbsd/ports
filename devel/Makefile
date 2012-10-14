@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1083 2012/10/14 02:57:50 abieber Exp $
+# $OpenBSD: Makefile,v 1.1084 2012/10/14 03:28:03 abieber Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -350,7 +350,6 @@
      SUBDIR += libusb-compat
      SUBDIR += libusb1
      SUBDIR += libutf
-     SUBDIR += libv8
      SUBDIR += libvirt-glib
      SUBDIR += libvmime
      SUBDIR += libvstr
