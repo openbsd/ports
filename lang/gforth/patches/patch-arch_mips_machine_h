@@ -1,0 +1,18 @@
+$OpenBSD: patch-arch_mips_machine_h,v 1.1 2012/10/14 20:18:56 landry Exp $
+
+Let the MIPS backend build on OpenBSD.
+
+--- arch/mips/machine.h.orig	Sun Mar  9 16:06:31 2003
++++ arch/mips/machine.h	Wed Oct  3 20:28:31 2012
+@@ -31,8 +31,10 @@
+ #endif
+ 
+ /* cache flush stuff */
+-#ifdef ultrix
++#if defined(ultrix)
+ #include <mips/cachectl.h>
++#elif defined(__OpenBSD__)
++#include <mips64/sysarch.h>
+ #else
+ /* works on Irix */
+ #include <sys/cachectl.h>

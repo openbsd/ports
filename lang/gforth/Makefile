@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2012/06/04 21:02:15 pascal Exp $
+# $OpenBSD: Makefile,v 1.10 2012/10/14 20:18:56 landry Exp $
 
-ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc sparc64
+ONLY_FOR_ARCHS =	amd64 i386 mips64el powerpc sparc sparc64
 
 COMMENT =		ANS Standard Forth interpreter and compiler
 
