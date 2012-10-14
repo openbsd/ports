@@ -1,0 +1,23 @@
+$OpenBSD: patch-pkcs11_rpc-layer_gkm-rpc-module_c,v 1.1 2012/10/14 11:46:55 ajacoutot Exp $
+
+From 0c71452290977332a0e86d9eb0d04b291cce2263 Mon Sep 17 00:00:00 2001
+From: Stef Walter <stefw@gnome.org>
+Date: Wed, 19 Sep 2012 07:12:39 +0000
+Subject: rpc-layer: Fix memory leak in call state pool
+
+--- pkcs11/rpc-layer/gkm-rpc-module.c.orig	Tue Sep 25 13:57:30 2012
++++ pkcs11/rpc-layer/gkm-rpc-module.c	Sun Oct 14 12:29:37 2012
+@@ -1254,6 +1254,13 @@ rpc_C_Finalize (CK_VOID_PTR reserved)
+ 				warning (("finalizing the daemon returned an error: %d", ret));
+ 		}
+ 
++		/* Cleanup the call state pool */
++		while (call_state_pool) {
++			cs = call_state_pool;
++			call_state_pool = cs->next;
++			call_destroy (cs);
++		}
++
+ 		/* This should stop all other calls in */
+ 		pkcs11_initialized = 0;
+ 		pkcs11_initialized_pid = 0;
