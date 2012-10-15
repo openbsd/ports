@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2012/09/27 11:03:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2012/10/15 15:24:38 ajacoutot Exp $
 
 PKG_ARCH=	*
 
 COMMENT=	XSLT stylesheets for yelp
 
 GNOME_PROJECT=	yelp-xsl
-GNOME_VERSION=	3.6.0
+GNOME_VERSION=	3.6.1
 
 HOMEPAGE=	https://projects.gnome.org/yelp/
 
