@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.107 2012/10/15 12:13:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.108 2012/10/15 15:29:30 ajacoutot Exp $
 
 COMMENT= 		Telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		3.6.0.3
-REVISION=		0
-
-SHARED_LIBS +=	empathy              0.0      # unknown
-SHARED_LIBS +=	empathy-gtk          0.0      # unknown
+REVISION=		1
 
 CATEGORIES=		net
 
@@ -78,7 +75,6 @@ MODGNOME_TOOLS= 	yelp
 
 CONFIGURE_ARGS+=	--disable-gudev \
 			--disable-Werror \
-			--with-eds \
 			--without-cheese
 
 # XXX needs geocode-glib
@@ -88,8 +84,7 @@ CONFIGURE_ARGS +=	--disable-geocode
 CONFIGURE_ARGS+=	--without-connectivity
 
 post-install:
-	#XXX: Disabled until M-C is updated to >= 5.13.1
-	#rm ${PREFIX}/lib/mission-control-plugins.0/*.{a,la}
+	rm ${PREFIX}/lib/mission-control-plugins.0/*.{a,la}
 	rm ${PREFIX}/lib/nautilus-sendto/plugins/*.{a,la}
 
 .include <bsd.port.mk>

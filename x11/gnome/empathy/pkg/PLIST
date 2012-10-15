@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2012/10/15 12:13:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.32 2012/10/15 15:29:30 ajacoutot Exp $
 @bin bin/empathy
 @bin bin/empathy-accounts
 @bin bin/empathy-debugger
@@ -12,8 +12,6 @@ lib/empathy/libempathy.a
 lib/empathy/libempathy.la
 lib/empathy/libempathy.so
 lib/mission-control-plugins.0/
-lib/mission-control-plugins.0/mcp-account-manager-goa.a
-lib/mission-control-plugins.0/mcp-account-manager-goa.la
 lib/mission-control-plugins.0/mcp-account-manager-goa.so
 lib/nautilus-sendto/
 lib/nautilus-sendto/plugins/
