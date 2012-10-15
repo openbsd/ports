@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2012/10/04 09:14:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.45 2012/10/15 13:26:25 ajacoutot Exp $
 
 COMMENT-main=		people aggregation library
 COMMENT-tracker=	(meta-)tracker backend for folks
@@ -9,6 +9,9 @@ API_V=			37 # MODULE_VERSION in config.h
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-tracker=	${GNOME_PROJECT}-meta-tracker-${GNOME_VERSION}
+
+REVISION-main=		0
+REVISION-tracker=	0
 
 SHARED_LIBS +=  folks-telepathy           5.0 # 37.0
 SHARED_LIBS +=  folks                     5.1 # 37.0
@@ -60,7 +63,6 @@ LIB_DEPENDS-tracker=	${MODGETTEXT_LIB_DEPENDS} \
 REGRESS_DEPENDS=	${FULLPKGNAME}:${BASE_PKGPATH}
 
 MODGNOME_TOOLS= 	goi vala
-MODGNOME_LDFLAGS=	-Wl,-rpath,${LOCALBASE}/lib/tracker-${TRACKER_VERSION}
 
 CONFIGURE_ARGS+=	--enable-import-tool \
 			--enable-inspect-tool \
