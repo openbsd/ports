@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2012/10/08 17:19:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.77 2012/10/15 12:13:52 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.6.1
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -106,7 +107,7 @@ CONFIGURE_ARGS=	--disable-static \
 CONFIGURE_ARGS += --disable-ibus
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
-MODGNOME_LDFLAGS=	-L${X11BASE}/lib -Wl,-rpath,${LOCALBASE}/lib/pulseaudio
+MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/gnome-control-center
 

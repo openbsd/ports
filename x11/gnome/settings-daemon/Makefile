@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2012/10/10 12:56:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.84 2012/10/15 12:13:52 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	GNOME settings daemon
 
 GNOME_PROJECT=	gnome-settings-daemon
 GNOME_VERSION=	3.6.1
-REVISION=	0
+REVISION=	1
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -61,7 +61,7 @@ MODGNOME_ICON_CACHE=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
-MODGNOME_LDFLAGS=	-L${X11BASE}/lib -Wl,-rpath,${LOCALBASE}/lib/pulseaudio
+MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
 CONFIGURE_ARGS=	--disable-static \
 		--disable-packagekit \
