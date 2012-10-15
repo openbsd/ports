@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2012/09/25 22:45:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2012/10/15 06:06:14 ajacoutot Exp $
 @conflict glib2mm-docs-*
 @pkgpath devel/glib2mm,-main
 @pkgpath devel/glib2mm,-docs
@@ -370,6 +370,11 @@ lib/glibmm-${V}/proc/m4/ctor.m4
 lib/glibmm-${V}/proc/m4/doc.m4
 lib/glibmm-${V}/proc/m4/enum.m4
 lib/glibmm-${V}/proc/m4/gerror.m4
+lib/glibmm-${V}/proc/m4/initialize.m4
+lib/glibmm-${V}/proc/m4/initialize_base.m4
+lib/glibmm-${V}/proc/m4/initialize_gio.m4
+lib/glibmm-${V}/proc/m4/initialize_glib.m4
+lib/glibmm-${V}/proc/m4/initialize_glibmm.m4
 lib/glibmm-${V}/proc/m4/list.m4
 lib/glibmm-${V}/proc/m4/member.m4
 lib/glibmm-${V}/proc/m4/method.m4
@@ -1167,16 +1172,39 @@ share/doc/glibmm-${V}/reference/html/classGlib_1_1ustring.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1ustring__Iterator-members.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1ustring__Iterator.html
 share/doc/glibmm-${V}/reference/html/classes.html
-share/doc/glibmm-${V}/reference/html/classresize__policy.html
-share/doc/glibmm-${V}/reference/html/classresize__policy__inherit__graph.png
-share/doc/glibmm-${V}/reference/html/classsigc_1_1trackable.html
-share/doc/glibmm-${V}/reference/html/classsigc_1_1trackable__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classintegral__constant.html
+share/doc/glibmm-${V}/reference/html/classintegral__constant__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classis__floating__point.html
+share/doc/glibmm-${V}/reference/html/classis__floating__point__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classstd_1_1codecvt.html
+share/doc/glibmm-${V}/reference/html/classstd_1_1codecvt__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classstd_1_1ctype.html
+share/doc/glibmm-${V}/reference/html/classstd_1_1ctype__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classstd_1_1integral__constant.html
+share/doc/glibmm-${V}/reference/html/classstd_1_1integral__constant__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classstd_1_1locale_1_1facet.html
+share/doc/glibmm-${V}/reference/html/classstd_1_1locale_1_1facet__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classstd_1_1messages.html
+share/doc/glibmm-${V}/reference/html/classstd_1_1messages__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classstd_1_1moneypunct.html
+share/doc/glibmm-${V}/reference/html/classstd_1_1moneypunct__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classstd_1_1numpunct.html
+share/doc/glibmm-${V}/reference/html/classstd_1_1numpunct__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classstd_1_1time__get.html
+share/doc/glibmm-${V}/reference/html/classstd_1_1time__get__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classthrow__allocator__base.html
+share/doc/glibmm-${V}/reference/html/classthrow__allocator__base__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classtuple__element.html
+share/doc/glibmm-${V}/reference/html/classtuple__element__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classtypes__traits.html
+share/doc/glibmm-${V}/reference/html/classtypes__traits__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/closed.png
 share/doc/glibmm-${V}/reference/html/deprecated.html
 share/doc/glibmm-${V}/reference/html/dir_02fef2a40270467d72a7f717cf991d8a.html
 share/doc/glibmm-${V}/reference/html/dir_98c789a82e29670547769c353b486e1a.html
 share/doc/glibmm-${V}/reference/html/doxygen.css
 share/doc/glibmm-${V}/reference/html/doxygen.png
+share/doc/glibmm-${V}/reference/html/dynsections.js
 share/doc/glibmm-${V}/reference/html/examples.html
 share/doc/glibmm-${V}/reference/html/ftv2blank.png
 share/doc/glibmm-${V}/reference/html/ftv2cl.png
@@ -1328,8 +1356,20 @@ share/doc/glibmm-${V}/reference/html/inherit_graph_105.png
 share/doc/glibmm-${V}/reference/html/inherit_graph_106.png
 share/doc/glibmm-${V}/reference/html/inherit_graph_107.png
 share/doc/glibmm-${V}/reference/html/inherit_graph_108.png
+share/doc/glibmm-${V}/reference/html/inherit_graph_109.png
 share/doc/glibmm-${V}/reference/html/inherit_graph_11.png
+share/doc/glibmm-${V}/reference/html/inherit_graph_110.png
+share/doc/glibmm-${V}/reference/html/inherit_graph_111.png
+share/doc/glibmm-${V}/reference/html/inherit_graph_112.png
+share/doc/glibmm-${V}/reference/html/inherit_graph_113.png
+share/doc/glibmm-${V}/reference/html/inherit_graph_114.png
+share/doc/glibmm-${V}/reference/html/inherit_graph_115.png
+share/doc/glibmm-${V}/reference/html/inherit_graph_116.png
+share/doc/glibmm-${V}/reference/html/inherit_graph_117.png
+share/doc/glibmm-${V}/reference/html/inherit_graph_118.png
+share/doc/glibmm-${V}/reference/html/inherit_graph_119.png
 share/doc/glibmm-${V}/reference/html/inherit_graph_12.png
+share/doc/glibmm-${V}/reference/html/inherit_graph_120.png
 share/doc/glibmm-${V}/reference/html/inherit_graph_13.png
 share/doc/glibmm-${V}/reference/html/inherit_graph_14.png
 share/doc/glibmm-${V}/reference/html/inherit_graph_15.png
@@ -1426,6 +1466,7 @@ share/doc/glibmm-${V}/reference/html/inherit_graph_97.png
 share/doc/glibmm-${V}/reference/html/inherit_graph_98.png
 share/doc/glibmm-${V}/reference/html/inherit_graph_99.png
 share/doc/glibmm-${V}/reference/html/inherits.html
+share/doc/glibmm-${V}/reference/html/jquery.js
 share/doc/glibmm-${V}/reference/html/modules.html
 share/doc/glibmm-${V}/reference/html/namespaceGio.html
 share/doc/glibmm-${V}/reference/html/namespaceGio_1_1DBus.html
@@ -1500,6 +1541,13 @@ share/doc/glibmm-${V}/reference/html/namespacemembers_func_0x78.html
 share/doc/glibmm-${V}/reference/html/namespacemembers_type.html
 share/doc/glibmm-${V}/reference/html/namespacemembers_vars.html
 share/doc/glibmm-${V}/reference/html/namespaces.html
+share/doc/glibmm-${V}/reference/html/namespacestd.html
+share/doc/glibmm-${V}/reference/html/namespacestd_1_1negative__binomial__distribution.html
+share/doc/glibmm-${V}/reference/html/namespacestd_1_1student__t__distribution.html
+share/doc/glibmm-${V}/reference/html/namespacestd_1_1thread.html
+share/doc/glibmm-${V}/reference/html/namespacestd_1_1tr2_1_1dynamic__bitset.html
+share/doc/glibmm-${V}/reference/html/namespacestd_1_1uniform__real__distribution.html
+share/doc/glibmm-${V}/reference/html/namespacestd_1_1weibull__distribution.html
 share/doc/glibmm-${V}/reference/html/nav_f.png
 share/doc/glibmm-${V}/reference/html/nav_g.png
 share/doc/glibmm-${V}/reference/html/nav_h.png
@@ -1537,6 +1585,8 @@ share/doc/glibmm-${V}/reference/html/structGlib_1_1StaticRecMutex.html
 share/doc/glibmm-${V}/reference/html/structGlib_1_1StaticRecMutex__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/structGlib_1_1TimeVal-members.html
 share/doc/glibmm-${V}/reference/html/structGlib_1_1TimeVal.html
+share/doc/glibmm-${V}/reference/html/sync_off.png
+share/doc/glibmm-${V}/reference/html/sync_on.png
 share/doc/glibmm-${V}/reference/html/tab_a.png
 share/doc/glibmm-${V}/reference/html/tab_b.png
 share/doc/glibmm-${V}/reference/html/tab_h.png
