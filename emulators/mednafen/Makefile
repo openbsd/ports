@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/09/28 16:21:03 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2012/10/15 08:53:11 ajacoutot Exp $
 
 COMMENT =	emulates numerous game consoles
 
@@ -42,6 +42,9 @@ CONFIGURE_ARGS =	--disable-alsa \
 			--disable-jack \
 			--with-x \
 			--with-gnu-ld
+
+# this intrinsic is not supported with our old gcc
+CONFIGURE_ARGS +=	--disable-altivec
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mednafen
