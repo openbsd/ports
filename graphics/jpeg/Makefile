@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.42 2012/10/12 15:07:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2012/10/15 10:13:00 sthen Exp $
 
-COMMENT=	IJG's JPEG compression utilities #'
+COMMENT=	IJG's JPEG compression utilities#'
 
 V=		8c
 DISTNAME=	jpeg-$V

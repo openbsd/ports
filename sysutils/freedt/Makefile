@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2012/04/06 11:59:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2012/10/15 10:13:00 sthen Exp $
 
-COMMENT=		reimplementation of Dan Bernstein's daemontools #'
+COMMENT=		reimplementation of Dan Bernstein's daemontools#'
 
 DISTNAME=		freedt-0.22
 REVISION=		1

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2012/09/07 08:09:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2012/10/15 10:13:00 sthen Exp $
 
-COMMENT=	simple interface to subversion's editor interface	#'
+COMMENT=	simple interface to subversion's editor interface#'
 
 MODULES=	cpan
 DISTNAME=	SVN-Simple-0.27
