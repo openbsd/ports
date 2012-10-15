@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2012/09/04 03:40:34 jeremy Exp $
+# $OpenBSD: Makefile,v 1.7 2012/10/15 15:06:42 sthen Exp $
 
-COMMENT=	tools for managing samba ldap 
+COMMENT=	tools for managing samba ldap
 
 DISTNAME=	smbldap-tools-0.9.2a
 REVISION =	2
@@ -34,7 +34,7 @@ HTML=		contents_motif.gif index.html next_motif.gif \
 		smbldap-tools004.html smbldap-tools005.html \
 		smbldap-tools006.html smbldap-tools007.html \
 		smbldap-tools008.html smbldap-tools009.html \
-		smbldap-tools010.html 
+		smbldap-tools010.html
 TOOLS=		groupadd groupdel groupmod groupshow useradd userdel usermod \
 		usershow passwd populate
 MIGRATION=	pwdump-accounts pwdump-groups unix-accounts unix-groups
@@ -56,7 +56,7 @@ do-install:
 	@for f in ${HTML}; do \
 		${INSTALL_DATA} ${WRKSRC}/doc/html/$$f \
 		     ${PREFIX}/share/doc/smbldap-tools/html/ ; \
-	done 
+	done
 
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/smbldap-tools/
 

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2012/04/22 09:04:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2012/10/15 15:06:42 sthen Exp $
 
-COMMENT =	simplify usage of decorators	
+COMMENT =	simplify usage of decorators
 
 MODPY_EGG_VERSION = 3.3.2
 DISTNAME =	decorator-${MODPY_EGG_VERSION}
@@ -20,7 +20,7 @@ MASTER_SITES =	${MASTER_SITE_PYPI:=d/decorator/}
 
 MODULES =	lang/python
 
-MODPY_SETUPTOOLS = Yes 
+MODPY_SETUPTOOLS = Yes
 
 NO_REGRESS =	Yes
 

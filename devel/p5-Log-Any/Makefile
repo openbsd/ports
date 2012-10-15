@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2011/08/26 09:14:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2012/10/15 15:06:42 sthen Exp $
 
-COMMENT=		bringing loggers and listeners together	
+COMMENT=		bringing loggers and listeners together
 
 MODULES=		cpan
 DISTNAME=		Log-Any-0.13
@@ -14,6 +14,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE=	perl 
+CONFIGURE_STYLE=	perl
 
 .include <bsd.port.mk>

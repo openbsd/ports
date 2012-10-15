@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2011/09/16 08:26:11 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2012/10/15 15:06:41 sthen Exp $
 
-COMMENT =	Python module to handle audio metadata 
+COMMENT =	Python module to handle audio metadata
 
 MODPY_EGG_VERSION = 1.20
 DISTNAME =	mutagen-${MODPY_EGG_VERSION}
@@ -12,7 +12,7 @@ HOMEPAGE =	http://mutagen.googlecode.com/
 
 MASTER_SITES =	${HOMEPAGE}files/
 
-# GPLv2 
+# GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes

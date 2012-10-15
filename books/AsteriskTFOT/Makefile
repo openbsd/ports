@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2008/04/10 00:00:57 ian Exp $
+# $OpenBSD: Makefile,v 1.4 2012/10/15 15:06:41 sthen Exp $
 
 PKG_ARCH=		*
 
@@ -22,7 +22,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://downloads.oreilly.com/books/ 
+MASTER_SITES=		http://downloads.oreilly.com/books/
 
 NO_BUILD=		Yes
 

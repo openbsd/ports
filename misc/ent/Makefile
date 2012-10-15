@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/19 07:23:11 espie Exp $
-# Original from: John Walker http://www.fourmilab.ch/random/ 
+# $OpenBSD: Makefile,v 1.5 2012/10/15 15:06:42 sthen Exp $
+# Original from: John Walker http://www.fourmilab.ch/random/
 
 CATEGORIES=		misc
 COMMENT=		pseudo random number sequence test program
 
-DISTNAME=	  	ent-1.0		
+DISTNAME=	  	ent-1.0
 EXTRACT_SUFX=		.zip
 
 HOMEPAGE=		http://www.fourmilab.ch/random/
 MAINTAINER=		Brad Tilley <brad@16systems.com>
-MASTER_SITES=		http://16s.us/ent/		
+MASTER_SITES=		http://16s.us/ent/
 
 WRKSRC=			${WRKDIR}
 ALL_TARGET=		ent

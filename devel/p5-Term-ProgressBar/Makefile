@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2010/12/03 11:44:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2012/10/15 15:06:42 sthen Exp $
 
-COMMENT=		text mode progress bar 
+COMMENT=		text mode progress bar
 
 MODULES=		cpan
 DISTNAME=		Term-ProgressBar-2.09

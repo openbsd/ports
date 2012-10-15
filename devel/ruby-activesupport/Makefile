@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.28 2012/09/23 16:57:33 jeremy Exp $
+# $OpenBSD: Makefile,v 1.29 2012/10/15 15:06:42 sthen Exp $
 
-COMMENT =	utility classes and extensions for rails framework 
+COMMENT =	utility classes and extensions for rails framework
 
 DISTNAME =	activesupport-3.1.3
 REVISION =	0

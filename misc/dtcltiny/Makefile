@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2012/03/29 13:38:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2012/10/15 15:06:42 sthen Exp $
 
 COMMENT =		small SRCP client to control digital model trains
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=dtcltiny/}	
+MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=dtcltiny/}
 
 MODULES =		x11/qt3
 WANTLIB += 		ICE SM X11 Xext c jpeg m pthread stdc++ z

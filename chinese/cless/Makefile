@@ -3,7 +3,7 @@
 # Date created:         Thu Jan 18, 2000
 # Whom:                 Kevin Lo <kevlo@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.17 2010/10/18 16:57:47 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2012/10/15 15:06:41 sthen Exp $
 #
 
 COMMENT=	pager utility that speaks Chinese
@@ -11,7 +11,7 @@ COMMENT=	pager utility that speaks Chinese
 DISTNAME=       cless-290
 PKGNAME=        zh-${DISTNAME}
 CATEGORIES=     chinese misc
-MASTER_SITES=   ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/c-utils/ 
+MASTER_SITES=   ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/c-utils/
 
 MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 
@@ -27,6 +27,6 @@ CFLAGS+=        -DHANZI # LDFLAGS=-s datadir=/usr/local/lib/less
 USE_GROFF =	Yes
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/README.CLESS ${PREFIX}/share/doc/cless 
+	${INSTALL_DATA} ${WRKSRC}/README.CLESS ${PREFIX}/share/doc/cless
 
 .include <bsd.port.mk>

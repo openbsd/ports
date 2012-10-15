@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2012/09/23 16:57:34 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2012/10/15 15:06:42 sthen Exp $
 
-COMMENT =	generic interface to multiple Ruby template engines 
+COMMENT =	generic interface to multiple Ruby template engines
 
 DISTNAME =	tilt-1.2.2
 REVISION=		1

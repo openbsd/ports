@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/04/10 12:50:24 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2012/10/15 15:06:42 sthen Exp $
 
-COMMENT =	forbid users from changing some drupal profile fields 
+COMMENT =	forbid users from changing some drupal profile fields
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 DISTNAME = 	user_readonly-7.x-1.3

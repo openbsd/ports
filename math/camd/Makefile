@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2012/09/01 12:02:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2012/10/15 15:06:42 sthen Exp $
 
-COMMENT=	constrained approximate minimum degree 
+COMMENT=	constrained approximate minimum degree
 
 VERSION=	2.2.1
 DISTNAME=	CAMD-${VERSION}

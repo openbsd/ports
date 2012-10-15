@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2011/06/23 22:50:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2012/10/15 15:06:42 sthen Exp $
 
-COMMENT =		set of kernel torture tools	
+COMMENT =		set of kernel torture tools
 
 DISTNAME =		torture-1.0
 EXTRACT_SUFX =		.tgz
@@ -8,7 +8,7 @@ CATEGORIES =		sysutils
 
 MAINTAINER =		Thordur I. Bjornsson <thib@openbsd.org>
 
-# BSD 
+# BSD
 PERMIT_PACKAGE_CDROM =   Yes
 PERMIT_PACKAGE_FTP =     Yes
 PERMIT_DISTFILES_CDROM = Yes

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2012/08/23 15:50:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2012/10/15 15:06:42 sthen Exp $
 
 SHARED_ONLY=		Yes
 
-COMMENT=		interface to the Fast Artificial Neural Network library 
+COMMENT=		interface to the Fast Artificial Neural Network library
 
 DISTNAME=		AI-FANN-0.10
 REVISION=		3

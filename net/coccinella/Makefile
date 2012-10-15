@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/03/29 13:38:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2012/10/15 15:06:42 sthen Exp $
 
 SHARED_ONLY =		Yes
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=coccinella/}	
+MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=coccinella/}
 
 MODULES =		x11/tk
 RUN_DEPENDS =		audio/snack \
@@ -44,7 +44,7 @@ pre-configure:
 	${MODTCL_WISH_ADJ} ${WRKSRC}/Coccinella.tcl
 	${SUBST_CMD} ${WRKSRC}/Coccinella.tcl \
 		${WRKSRC}/lib/Init.tcl
-	
+
 do-install:
 	${INSTALL_SCRIPT_DIR} ${PREFIX}/lib/coccinella
 	cd ${WRKSRC} && find TclXML [c-z]* -type d -exec ${INSTALL_DATA_DIR} \
@@ -61,6 +61,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/coccinella
 	cd ${WRKSRC} && ${INSTALL_DATA} README.txt READMEs/README-xmpp \
 		READMEs/README-sounds \
-		${PREFIX}/share/doc/coccinella/ 
+		${PREFIX}/share/doc/coccinella/
 
 .include <bsd.port.mk>

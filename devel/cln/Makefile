@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2011/11/03 22:13:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2012/10/15 15:06:42 sthen Exp $
 
 NOT_FOR_ARCHS =	arm mips64 mips64el sparc64 hppa
 
-COMMENT =	library for efficient computations 
+COMMENT =	library for efficient computations
 
 DISTNAME =	cln-1.3.2
 SHARED_LIBS +=  cln                  1.0      # .5.2
@@ -24,7 +24,7 @@ EXTRACT_SUFX =		.tar.bz2
 
 WANTLIB	+=		m stdc++ gmp
 
-LIB_DEPENDS =		devel/gmp 
+LIB_DEPENDS =		devel/gmp
 
 USE_GMAKE =		Yes
 USE_LIBTOOL =		Yes

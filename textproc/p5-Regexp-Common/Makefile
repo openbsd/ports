@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2011/06/25 08:23:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2012/10/15 15:06:42 sthen Exp $
 
-COMMENT=		provide commonly requested regular expressions  
+COMMENT=		provide commonly requested regular expressions
 
 MODULES=		cpan
 USE_GROFF =		Yes

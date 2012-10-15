@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2011/09/16 10:31:23 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2012/10/15 15:06:42 sthen Exp $
 
 COMMENT=	usb missile launcher control script
 DISTNAME=	pymissile-20061111
 REVISION =	5
 DISTFILES=	${DISTNAME}.py
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_BACKUP}	
+MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 HOMEPAGE =	http://code.google.com/p/pymissile/
 

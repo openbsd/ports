@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.22 2011/09/16 12:29:16 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2012/10/15 15:06:42 sthen Exp $
 
 COMMENT=		graphical ports system frontend
 
-DISTNAME=	 	pb-browser-0.4	
+DISTNAME=	 	pb-browser-0.4
 REVISION=		9
 CATEGORIES=		x11 sysutils
 
-MAINTAINER=		Igor Boehm <igor@bytelabs.org>	
+MAINTAINER=		Igor Boehm <igor@bytelabs.org>
 HOMEPAGE=		http://www.bytelabs.org/pbrowser.html
 
 # BSD licence
-PERMIT_PACKAGE_CDROM=	Yes 
+PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
@@ -22,11 +22,11 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		pixman-1 png pthread util z pthread-stubs xcb gdk-x11-2.0 \
 		gdk_pixbuf-2.0 gtk-x11-2.0
 
-MASTER_SITES=		http://www.bytelabs.org/	
+MASTER_SITES=		http://www.bytelabs.org/
 EXTRACT_SUFX=		.tgz
 
 MODULES=		devel/gettext
-LIB_DEPENDS=	        x11/gtk+2 	
+LIB_DEPENDS=	        x11/gtk+2
 
 CFLAGS+=		-DIMAGEDIR=\"${PREFIX}/share/icons/pbrowser/\"
 
@@ -35,7 +35,7 @@ USE_GROFF =		Yes
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/pbrowser
 	${INSTALL_PROGRAM} ${WRKSRC}/src/pbrowser ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/pixmaps/* ${PREFIX}/share/icons/pbrowser  
+	${INSTALL_DATA} ${WRKSRC}/pixmaps/* ${PREFIX}/share/icons/pbrowser
 	${INSTALL_MAN} ${WRKSRC}/src/pbrowser.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>

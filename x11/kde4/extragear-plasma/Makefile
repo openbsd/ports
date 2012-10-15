@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2011/07/06 21:25:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2012/10/15 15:06:42 sthen Exp $
 
 COMMENT =		K Desktop Environment, extra plasmoids
 DISTNAME =		extragear-plasma-${VERSION}
 REVISION =		2
 
-MASTER_SITES =		${MASTER_SITE_KDE:=stable/${VERSION}/src/extragear/} 
+MASTER_SITES =		${MASTER_SITE_KDE:=stable/${VERSION}/src/extragear/}
 
 MODULES =		devel/gettext
 

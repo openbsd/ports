@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.21 2007/09/16 02:53:10 merdely Exp $
+# $OpenBSD: Makefile,v 1.22 2012/10/15 15:06:42 sthen Exp $
 
-COMMENT=	Purdue Compiler Construction Tool Set 
+COMMENT=	Purdue Compiler Construction Tool Set
 
 DISTNAME=	pccts133mr33
 PKGNAME=	pccts-1.33r33
@@ -28,7 +28,7 @@ NO_REGRESS=	Yes
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/pccts
 	cd ${WRKSRC}/bin; ${INSTALL_PROGRAM} antlr dlg genmk sor \
-	  ${PREFIX}/bin 
+	  ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/h/* ${PREFIX}/include/pccts
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2011/04/25 13:46:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2012/10/15 15:06:42 sthen Exp $
 
-COMMENT=	reusable tests for POE::Loop authors 
+COMMENT=	reusable tests for POE::Loop authors
 
 MODULES=	cpan
 DISTNAME=	POE-Test-Loops-1.050

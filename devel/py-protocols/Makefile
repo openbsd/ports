@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2011/09/16 09:24:55 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2012/10/15 15:06:42 sthen Exp $
 
 COMMENT=		protocol definition, declaration and adaptation
 
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_BACKUP}	
+MASTER_SITES=		${MASTER_SITE_BACKUP}
 DISTFILES=		PyProtocols-${VERSION}a0dev_r${REV}${EXTRACT_SUFX}
 
 MODULES=		lang/python

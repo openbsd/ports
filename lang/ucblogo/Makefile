@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2012/02/21 22:19:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2012/10/15 15:06:42 sthen Exp $
 
 COMMENT=	berkeley's implementation of the logo programming language
 DISTNAME=	ucblogo-5.5
 REVISION=	2
 CATEGORIES=	lang
 
-MASTER_SITES=	${MASTER_SITE_BACKUP}	
+MASTER_SITES=	${MASTER_SITE_BACKUP}
 HOMEPAGE=	http://www.cs.berkeley.edu/~bh/logo.html
 
 # BSD
@@ -31,7 +31,7 @@ pre-configure:
 		${WRKSRC}/init.c
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/ucblogo/helpfiles 
+	${INSTALL_DATA_DIR} ${PREFIX}/share/ucblogo/helpfiles
 	${INSTALL_DATA} ${WRKSRC}/helpfiles/* ${PREFIX}/share/ucblogo/helpfiles
 	${INSTALL_DATA} ${WRKSRC}/Messages ${PREFIX}/share/ucblogo/messages
 	${INSTALL_PROGRAM} ${WRKSRC}/logo ${PREFIX}/bin

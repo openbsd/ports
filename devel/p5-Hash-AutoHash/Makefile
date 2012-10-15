@@ -1,6 +1,6 @@
-#	$OpenBSD: Makefile,v 1.6 2010/12/03 11:44:31 ajacoutot Exp $
+#	$OpenBSD: Makefile,v 1.7 2012/10/15 15:06:42 sthen Exp $
 
-COMMENT=	object-oriented access to real and tied hashes  
+COMMENT=	object-oriented access to real and tied hashes
 
 DISTNAME=	Hash-AutoHash-1.12
 REVISION=	2

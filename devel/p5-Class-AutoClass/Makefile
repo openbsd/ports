@@ -1,6 +1,6 @@
-#	$OpenBSD: Makefile,v 1.10 2010/12/03 11:44:27 ajacoutot Exp $
+#	$OpenBSD: Makefile,v 1.11 2012/10/15 15:06:42 sthen Exp $
 
-COMMENT=	get and set methods and simplify object initialization  
+COMMENT=	get and set methods and simplify object initialization
 
 DISTNAME=	Class-AutoClass-1.54
 REVISION=	0

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2010/12/03 11:46:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2012/10/15 15:06:42 sthen Exp $
 
-COMMENT=	process and decode WWW forms and cookies	
+COMMENT=	process and decode WWW forms and cookies
 
 DISTNAME=	CGI-Lite-2.02
 REVISION=	0

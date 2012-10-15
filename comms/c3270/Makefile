@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/03/14 23:26:48 jeremy Exp $
+# $OpenBSD: Makefile,v 1.4 2012/10/15 15:06:41 sthen Exp $
 
 COMMENT=	curses-based 3270 terminal editor
 
@@ -20,7 +20,7 @@ WANTLIB=		c crypto ssl ncursesw readline util
 
 MODULES=                converters/libiconv
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=x3270/}	
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=x3270/}
 
 WRKDIST=		${WRKDIR}/c3270-3.3
 CONFIGURE_STYLE=	gnu

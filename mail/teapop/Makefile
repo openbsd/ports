@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/19 07:23:09 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2012/10/15 15:06:42 sthen Exp $
 
 COMMENT=		POP3-server with virtual domain support
 
@@ -13,7 +13,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		c
 
-MASTER_SITES=		ftp://ftp.toontown.org/pub/teapop/		
+MASTER_SITES=		ftp://ftp.toontown.org/pub/teapop/
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-flock
@@ -22,5 +22,5 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 
 USE_GROFF =		Yes
 NO_REGRESS=		Yes
-			
+
 .include <bsd.port.mk>

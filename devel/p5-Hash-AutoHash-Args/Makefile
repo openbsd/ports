@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2010/12/03 11:44:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2012/10/15 15:06:42 sthen Exp $
 
-COMMENT=	OO processing of keyword-based argument lists 
+COMMENT=	OO processing of keyword-based argument lists
 
 DISTNAME=	Hash-AutoHash-Args-1.12
 REVISION=	0

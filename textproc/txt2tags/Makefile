@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2011/09/16 11:41:42 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2012/10/15 15:06:42 sthen Exp $
 
-COMMENT=	utility to turn simply formatted text into markup 
+COMMENT=	utility to turn simply formatted text into markup
 
 DISTNAME=	txt2tags-2.6
 REVISION=	1
@@ -43,8 +43,8 @@ do-build:
 
 do-install:
 	${INSTALL_DATA_DIR} ${DOCDIR} ${EXAMPLESDIR}{,/img,/css,/module}
-	${INSTALL_SCRIPT} ${WRKSRC}/txt2tags ${PREFIX}/bin 
-	${INSTALL_SCRIPT} ${WRKSRC}/extras/gensite ${PREFIX}/bin 
+	${INSTALL_SCRIPT} ${WRKSRC}/txt2tags ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/extras/gensite ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/extras/txt2tagsrc \
 		${EXAMPLESDIR}/txt2tagsrc.dist
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCDIR}

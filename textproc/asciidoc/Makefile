@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2012/09/27 17:26:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2012/10/15 15:06:42 sthen Exp $
 
-COMMENT=	text document format for writing documents and man pages 
+COMMENT=	text document format for writing documents and man pages
 
 DISTNAME=	asciidoc-8.6.5
 REVISION=	1
@@ -33,7 +33,7 @@ post-configure:
 	@perl -pi -e 's,/etc,${SYSCONFDIR},g' ${WRKSRC}/asciidoc.py
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/asciidoc.py ${PREFIX}/bin/asciidoc 
+	${INSTALL_SCRIPT} ${WRKSRC}/asciidoc.py ${PREFIX}/bin/asciidoc
 	${INSTALL_SCRIPT} ${WRKSRC}/a2x.py ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/asciidoc.1 ${WRKSRC}/doc/a2x.1 \
 				${PREFIX}/man/man1

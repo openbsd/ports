@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/03/04 17:00:07 pea Exp $
+# $OpenBSD: Makefile,v 1.7 2012/10/15 15:06:42 sthen Exp $
 
 COMMENT = 	X.509 library
 
@@ -7,7 +7,7 @@ CATEGORIES = 	security
 
 SHARED_LIBS = 	ksba 0.2	#19
 
-MASTER_SITES = 	ftp://ftp.gnupg.org/gcrypt/libksba/ 
+MASTER_SITES = 	ftp://ftp.gnupg.org/gcrypt/libksba/
 
 HOMEPAGE = 	http://www.gnupg.org/related_software/libksba
 

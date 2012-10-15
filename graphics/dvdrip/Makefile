@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/17 08:05:13 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2012/10/15 15:06:42 sthen Exp $
 
 COMMENT=	full featured DVD copy program
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
-MASTER_SITES=	http://www.exit1.org/dvdrip/dist/	
+MASTER_SITES=	http://www.exit1.org/dvdrip/dist/
 
 RUN_DEPENDS=	graphics/ImageMagick \
 		devel/p5-Event-ExecFlow \

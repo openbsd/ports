@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2010/12/03 11:44:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2012/10/15 15:06:42 sthen Exp $
 
-COMMENT=		framework for more readable interactive test scripts  
+COMMENT=		framework for more readable interactive test scripts
 
 DISTNAME=		Test-Inter-1.01
 REVISION=		0
