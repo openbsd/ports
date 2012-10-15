@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/11/19 10:03:22 giovanni Exp $
+# $OpenBSD: Makefile,v 1.10 2012/10/15 15:18:33 sthen Exp $
 
 COMMENT=	perl5 interface to network devices and MIBs through SNMP
 
@@ -8,9 +8,9 @@ DISTNAME=	SNMP-Info-2.06
 CATEGORIES=	net
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes 
-PERMIT_PACKAGE_FTP=	Yes 
-PERMIT_DISTFILES_CDROM= Yes 
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	net/net-snmp,-perl

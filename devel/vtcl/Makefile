@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/08/10 04:03:25 stu Exp $
+# $OpenBSD: Makefile,v 1.8 2012/10/15 15:18:32 sthen Exp $
 
 COMMENT=		Visual Tcl development environment
 
@@ -11,9 +11,9 @@ HOMEPAGE=		http://vtcl.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes 
-PERMIT_DISTFILES_CDROM=	Yes 
-PERMIT_DISTFILES_FTP=	Yes 
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=vtcl/}
 

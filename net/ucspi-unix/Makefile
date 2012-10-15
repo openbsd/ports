@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/07/12 22:07:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2012/10/15 15:18:33 sthen Exp $
 
 COMMENT=	tools for building unix domain socket client/servers
 
@@ -13,8 +13,8 @@ MAINTAINER=		Anil Madhavapeddy <avsm@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes 
-WANTLIB=		c 
+PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 MASTER_SITES=		http://em.ca/~bruceg/ucspi-unix/0.34/
 
@@ -28,7 +28,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/unixcat ${PREFIX}/bin
 .for f in ${BINFILES}
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
-.endfor	
+.endfor
 .for f in ${DOCFILES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/ucspi-unix
 .endfor

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/15 23:29:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2012/10/15 15:18:33 sthen Exp $
 
 COMMENT=	small service wedge to do ident lookup on connecting party
 
@@ -9,10 +9,10 @@ CATEGORIES=     	security
 HOMEPAGE=		http://www.eng.auburn.edu/users/doug/second.html
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes 
-PERMIT_PACKAGE_FTP=	Yes 
-PERMIT_DISTFILES_CDROM=	Yes 
-PERMIT_DISTFILES_FTP=	Yes 
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 MASTER_SITES=		ftp://ftp.eng.auburn.edu/pub/doug/

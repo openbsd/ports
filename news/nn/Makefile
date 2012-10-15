@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2012/03/17 22:36:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2012/10/15 15:18:33 sthen Exp $
 
 COMMENT =		No News is Good News (Fast CLI Point & Read Newsreader)
 DISTNAME =		nn-6.7.3
@@ -8,12 +8,12 @@ HOMEPAGE =		http://www.nndev.org
 
 MAINTAINER =		Aaron W. Hsu <arcfide@sacrideo.us>
 
-# 4 point NN License a la BSD but with GPL Source Restriction and Freeware 
+# 4 point NN License a la BSD but with GPL Source Restriction and Freeware
 # Requirement
 PERMIT_PACKAGE_CDROM =	CDs not sold at cost
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM = CDs not sold at cost
-PERMIT_DISTFILES_FTP =	Yes 
+PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c termlib
 

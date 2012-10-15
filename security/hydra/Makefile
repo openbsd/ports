@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2011/11/05 21:25:52 nigel Exp $
+# $OpenBSD: Makefile,v 1.48 2012/10/15 15:18:33 sthen Exp $
 
 COMMENT-main=	parallelized login hacker
 COMMENT-gui=	GTK frontend for hydra
@@ -14,7 +14,7 @@ HOMEPAGE=	http://thc.org/thc-hydra/
 
 # GPLv3 + restrictions in LICENCE.HYDRA
 PERMIT_PACKAGE_CDROM=	no charge
-PERMIT_PACKAGE_FTP=	Yes 
+PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	no charge
 PERMIT_DISTFILES_FTP=	Yes
 

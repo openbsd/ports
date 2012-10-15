@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/04/28 19:28:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2012/10/15 15:18:32 sthen Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -13,9 +13,9 @@ MAINTAINER=	Jens Gerlach Christensen <vepjan@worldonline.dk>
 
 # http://www.smlnj.org/license.html
 PERMIT_PACKAGE_CDROM=	without fee
-PERMIT_PACKAGE_FTP=	Yes 
+PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	without fee
-PERMIT_DISTFILES_FTP=	Yes 
+PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c m
 
@@ -26,7 +26,7 @@ DISTFILES=	bin.x86-unix.tar.Z cm.tar.Z cml.tar.Z \
 		ml-burg.tar.Z ml-lex.tar.Z \
 		ml-yacc.tar.Z runtime.tar.Z \
 		smlnj-c.tar.Z smlnj-lib.tar.Z
-#EXTRACT_ONLY=	config.tar.Z 
+#EXTRACT_ONLY=	config.tar.Z
 
 USE_GMAKE=	Yes
 
@@ -48,7 +48,7 @@ do-build:
 	FILESDIR="$(FILESDIR)" ./config/install.sh
 
 NO_REGRESS=	Yes
-	
+
 do-install:
 	rm -rf ${SML_BASE}
 	-mkdir ${SML_BASE} ${SML_BINDIR} ${SML_LIBDIR}

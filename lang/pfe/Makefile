@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/10/17 07:10:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2012/10/15 15:18:32 sthen Exp $
 
 BROKEN-powerpc=	does not build, error: lvalue required as increment operand
 
@@ -14,7 +14,7 @@ HOMEPAGE=	http://pfe.sourceforge.net/
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes 
+PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2012/10/01 21:16:00 edd Exp $
+# $OpenBSD: Makefile,v 1.42 2012/10/15 15:18:32 sthen Exp $
 
 COMMENT =		Prolog for the real world
 
@@ -14,7 +14,7 @@ HOMEPAGE =		http://www.swi-prolog.org/
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes 
+PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${HOMEPAGE}/download/stable/src/ \

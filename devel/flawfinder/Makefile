@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2011/09/16 09:24:49 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2012/10/15 15:18:32 sthen Exp $
 
 COMMENT=		C/C++ source code auditing tool
 
@@ -11,8 +11,8 @@ HOMEPAGE=		http://www.dwheeler.com/flawfinder/
 MAINTAINER=		Jason Peel <jsyn@openbsd.org>
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes 
-PERMIT_PACKAGE_FTP=	Yes 
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 

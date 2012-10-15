@@ -1,5 +1,5 @@
-# $OpenBSD: Makefile,v 1.15 2011/09/16 11:13:37 espie Exp $
-			
+# $OpenBSD: Makefile,v 1.16 2012/10/15 15:18:32 sthen Exp $
+
 COMMENT=		ARP reply daemon
 
 DISTNAME=		arpd-0.2
@@ -10,7 +10,7 @@ MAINTAINER=		Jason Peel <jsyn@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes 
+PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c pcap event dnet

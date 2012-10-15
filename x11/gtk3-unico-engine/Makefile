@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/10/04 13:48:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2012/10/15 15:18:34 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -14,7 +14,7 @@ CATEGORIES=	x11
 HOMEPAGE=	https://launchpad.net/unico/
 
 # LGPLv3
-PERMIT_PACKAGE_CDROM=	Yes 
+PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
@@ -38,7 +38,7 @@ USE_LIBTOOL=	Yes
 
 LIBTOOL_FLAGS =	--tag=disable-static
 
-CONFIGURE_STYLE=gnu 
+CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-static
 

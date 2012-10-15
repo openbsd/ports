@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/19 07:23:12 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2012/10/15 15:18:32 sthen Exp $
 
 COMMENT=	colorize specific patterns in input
 
@@ -12,9 +12,9 @@ MASTER_SITES=	${HOMEPAGE}
 MAINTAINER=	Girish Venkatachalam <girish1729@gmail.com>
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes 
-PERMIT_PACKAGE_FTP=	Yes 
-PERMIT_DISTFILES_CDROM= Yes 
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c

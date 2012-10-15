@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/11/26 14:56:15 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2012/10/15 15:18:32 sthen Exp $
 
 COMMENT=	network monitoring library with TCP/IP reassembly
 
@@ -14,7 +14,7 @@ BUILD_DEPENDS=	net/libnet/1.0
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes  
+PERMIT_DISTFILES_FTP=   Yes
 
 DESTDIRNAME=	install_prefix
 

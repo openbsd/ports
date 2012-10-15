@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/16 09:24:52 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2012/10/15 15:18:32 sthen Exp $
 
 COMMENT=	perl debugger built with a PerlTk GUI
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://sourceforge.net/projects/ptkdb/
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes 
+PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 

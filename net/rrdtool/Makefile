@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.66 2012/08/23 15:50:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2012/10/15 15:18:33 sthen Exp $
 
-SHARED_ONLY=	Yes 
+SHARED_ONLY=	Yes
 
 COMMENT-main=	system to store and display time-series data
 COMMENT-perl=	perl interface to librrd
@@ -27,10 +27,10 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 HOMEPAGE=	http://oss.oetiker.ch/rrdtool/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes 
-PERMIT_PACKAGE_FTP=	Yes 
-PERMIT_DISTFILES_CDROM=	Yes 
-PERMIT_DISTFILES_FTP=	Yes 
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}pub/
 
@@ -60,11 +60,11 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
 WANTLIB-main=		c m z freetype png art_lgpl_2
 LIB_DEPENDS-main=	graphics/png \
 			graphics/libart
-RUN_DEPENDS-main=	
+RUN_DEPENDS-main=
 
 WANTLIB-perl=		c m z rrd
 LIB_DEPENDS-perl=	rrdtool-${VERSION}:net/rrdtool
-RUN_DEPENDS-perl=	
+RUN_DEPENDS-perl=
 
 WANTLIB-python =	c pthread rrd ${MODPY_WANTLIB}
 LIB_DEPENDS-python=	rrdtool-${VERSION}:net/rrdtool

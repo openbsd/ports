@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2012/05/08 10:05:54 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.28 2012/10/15 15:18:33 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -15,7 +15,7 @@ HOMEPAGE =	http://cimitan.com/murrine/
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes 
+PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
@@ -53,7 +53,7 @@ MODULES =	devel/gettext \
 LIB_DEPENDS =	x11/gtk+2
 
 LIBTOOL_FLAGS =	--tag=disable-static
-CONFIGURE_STYLE =gnu 
+CONFIGURE_STYLE =gnu
 CONFIGURE_ARGS =--disable-static \
 		--enable-animation \
 		--disable-rgba

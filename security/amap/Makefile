@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2012/04/09 18:21:18 gsoares Exp $
+# $OpenBSD: Makefile,v 1.21 2012/10/15 15:18:33 sthen Exp $
 
 COMMENT=	application protocol detection tool
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://thc.org/thc-amap/
 
 # GPL with changes
 PERMIT_PACKAGE_CDROM=	No
-PERMIT_PACKAGE_FTP=	Yes 
+PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
 

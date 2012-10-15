@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/11/04 08:43:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2012/10/15 15:18:33 sthen Exp $
 
 COMMENT=	OTP and S/Key calculator for X
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://original.killa.net/infosec/otpCalc/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes 
+PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
@@ -21,7 +21,7 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo crypto expat
 WANTLIB += fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gdk_pixbuf-2.0 gdk-x11-2.0 gtk-x11-2.0
 WANTLIB += gthread-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pixman-1 png pthread pthread-stubs xcb xcb-render 
+WANTLIB += pixman-1 png pthread pthread-stubs xcb xcb-render
 WANTLIB += z GL xcb-shm
 
 CONFIGURE_STYLE=gnu dest

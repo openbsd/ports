@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/19 22:31:36 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2012/10/15 15:18:33 sthen Exp $
 
 COMMENT=		module to interact with a Cisco router
 
@@ -11,7 +11,7 @@ USE_GROFF =		Yes
 HOMEPAGE=		http://nettelnetcisco.sourceforge.net/
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes	
+PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
