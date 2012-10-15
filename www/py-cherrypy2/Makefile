@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/16 12:00:08 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2012/10/15 14:55:43 sthen Exp $
 
 COMMENT=		pythonic, object-oriented web development framework
 
@@ -8,11 +8,11 @@ PKGNAME=		py-cherrypy2-${V}
 REVISION=		3
 CATEGORIES=		www
 
-HOMEPAGE=		http://www.cherrypy.org/ 
+HOMEPAGE=		http://www.cherrypy.org/
 
 MAINTAINER=		Martynas Venckus <martynas@openbsd.org>
 
-# BSD 
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

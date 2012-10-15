@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2012/06/15 08:32:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2012/10/15 14:55:43 sthen Exp $
 
 COMMENT=	simple application for modifying PDF documents
 
@@ -8,7 +8,7 @@ REVISION=	2
 
 CATEGORIES=	graphics print
 
-HOMEPAGE=	http://live.gnome.org/PdfMod	
+HOMEPAGE=	http://live.gnome.org/PdfMod
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

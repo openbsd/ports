@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/09/16 12:00:07 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2012/10/15 14:55:43 sthen Exp $
 
 COMMENT=	pythonic, object-oriented web development framework
 
@@ -8,11 +8,11 @@ DISTNAME=		CherryPy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		www
 
-HOMEPAGE=	http://www.cherrypy.org/ 
+HOMEPAGE=	http://www.cherrypy.org/
 
 MAINTAINER=	Joerg Zinke <mail@umaxx.net>
 
-# BSD 
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

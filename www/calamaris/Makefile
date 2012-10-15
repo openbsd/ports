@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/22 08:36:47 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2012/10/15 14:55:43 sthen Exp $
 # $RuOBSD: Makefile,v 1.3 2002/04/28 16:29:29 grange Exp $
 
 COMMENT=		proxy-cache-servers logfiles analizer
@@ -6,7 +6,7 @@ COMMENT=		proxy-cache-servers logfiles analizer
 DISTNAME=		calamaris-2.59
 CATEGORIES=		www sysutils
 
-HOMEPAGE=		http://cord.de/tools/squid/calamaris/	
+HOMEPAGE=		http://cord.de/tools/squid/calamaris/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

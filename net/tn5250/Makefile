@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2012/06/26 10:14:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2012/10/15 14:55:43 sthen Exp $
 
 COMMENT=	5250 telnet protocol and terminal
 
@@ -7,7 +7,7 @@ REVISION=	2
 SHARED_LIBS=	5250	0.0
 CATEGORIES=	net
 
-HOMEPAGE=	http://tn5250.sourceforge.net/	
+HOMEPAGE=	http://tn5250.sourceforge.net/
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -17,10 +17,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tn5250/}
 
-WANTLIB=	ncurses c ssl crypto 
+WANTLIB=	ncurses c ssl crypto
 
 AUTOCONF_VERSION=	2.59
-CONFIGURE_STYLE= 	gnu	
+CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--enable-os-dir=no --with-ssl
 

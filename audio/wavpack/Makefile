@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2012/08/21 15:23:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2012/10/15 14:55:43 sthen Exp $
 
 COMMENT =		audio codec for lossless, lossy and hybrid compression
 
@@ -18,10 +18,10 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c m
 
-MASTER_SITES =		${HOMEPAGE}			
+MASTER_SITES =		${HOMEPAGE}
 EXTRACT_SUFX =		.tar.bz2
 
-MODULES =		converters/libiconv 
+MODULES =		converters/libiconv
 
 SEPARATE_BUILD=		Yes
 USE_LIBTOOL =		Yes

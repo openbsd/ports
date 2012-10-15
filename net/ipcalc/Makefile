@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2012/08/24 07:05:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2012/10/15 14:55:43 sthen Exp $
 
 COMMENT=	small network calculator
 
 DISTNAME=	ipcalc-1.4
 CATEGORIES=	net
 
-HOMEPAGE=	https://github.com/pyr/ipcalc 
+HOMEPAGE=	https://github.com/pyr/ipcalc
 
 MAINTAINER=	Pierre-Yves Ritschard <pyr@spootnik.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2012/03/29 13:38:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2012/10/15 14:55:43 sthen Exp $
 
 COMMENT=	receive/send files via X/Y/ZMODEM protocol
 
@@ -6,9 +6,9 @@ DISTNAME=	lrzsz-0.12.20
 REVISION=	0
 CATEGORIES=	comms
 
-HOMEPAGE=	http://www.ohse.de/uwe/software/lrzsz.html	
+HOMEPAGE=	http://www.ohse.de/uwe/software/lrzsz.html
 
-MASTER_SITES=	http://www.ohse.de/uwe/releases/	
+MASTER_SITES=	http://www.ohse.de/uwe/releases/
 
 PERMIT_PACKAGE_CDROM=	possible copyright issue with rzsz
 PERMIT_PACKAGE_FTP=	Yes

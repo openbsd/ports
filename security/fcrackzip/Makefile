@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/20 17:22:43 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2012/10/15 14:55:43 sthen Exp $
 
 COMMENT =	ZIP password cracker
 
 DISTNAME =	fcrackzip-1.0
 CATEGORIES =	security archivers
 
-HOMEPAGE =	http://home.schmorp.de/marc/fcrackzip.html 
+HOMEPAGE =	http://home.schmorp.de/marc/fcrackzip.html
 
 MAINTAINER =	Jung Lee <moorang@gmail.com>
 

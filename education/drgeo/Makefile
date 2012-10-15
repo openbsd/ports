@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2011/11/03 16:49:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2012/10/15 14:55:43 sthen Exp $
 
 COMMENT=	interactive geometry program
 
@@ -6,7 +6,7 @@ DISTNAME=	drgeo-1.1.0
 REVISION=	16
 CATEGORIES=	education math
 
-HOMEPAGE=	http://www.ofset.org/drgeo/	
+HOMEPAGE=	http://www.ofset.org/drgeo/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/16 09:24:55 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2012/10/15 14:55:43 sthen Exp $
 
 COMMENT =	pure Python implementation of Git file formats and protocols
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
-MASTER_SITES =		${HOMEPAGE} 
+MASTER_SITES =		${HOMEPAGE}
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes

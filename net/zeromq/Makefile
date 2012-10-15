@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2012/04/28 10:05:30 rpointel Exp $
+# $OpenBSD: Makefile,v 1.7 2012/10/15 14:55:43 sthen Exp $
 
 COMMENT =		open source message queue optimised for performance
 
@@ -8,7 +8,7 @@ SHARED_ONLY =		Yes
 SHARED_LIBS +=		zmq                       1.0 # 1.0
 
 CATEGORIES =		net
-HOMEPAGE =		http://zeromq.org	
+HOMEPAGE =		http://zeromq.org
 MAINTAINER =		Benoit Chesneau <benoitc@e-engura.org>
 
 # LGPLv3

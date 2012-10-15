@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2012/01/08 12:08:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2012/10/15 14:55:43 sthen Exp $
 
 COMMENT=	multi-window tail(1) utility
 
 DISTNAME=	multitail-5.2.9
 CATEGORIES=	sysutils
 
-HOMEPAGE=	http://www.vanheusden.com/multitail/	
+HOMEPAGE=	http://www.vanheusden.com/multitail/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -39,5 +39,5 @@ do-install:
 		${PREFIX}/share/examples/multitail/multitail.conf
 	${INSTALL_DATA} ${WRKSRC}/convert-* ${WRKSRC}/colors-* \
 		${PREFIX}/share/examples/multitail
- 
+
 .include <bsd.port.mk>
