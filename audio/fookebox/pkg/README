@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2012/10/11 07:14:21 jasper Exp $
+$OpenBSD: README,v 1.2 2012/10/15 13:53:56 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -16,9 +16,11 @@ please use the command below:
 
 	paster make-config fookebox ${SYSCONFDIR}/fookebox/config.ini
 
-Adjust the configuration if needed. For example you may to change the
-sqlalchemy.url line to ensure an abolute path to the database by using
-four slashes in the URI. Now setup the application:
+Adjust the configuration if needed. Create the initial database with:
+
+	touch /var/db/fookebox/fookebox.sqlite
+
+Now setup the application:
 
        paster setup-app ${SYSCONFDIR}/fookebox/config.ini
 

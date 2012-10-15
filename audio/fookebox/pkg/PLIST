@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/11 07:14:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/10/15 13:53:56 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/fookebox/
 lib/python${MODPY_VERSION}/site-packages/fookebox-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/fookebox-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -142,3 +142,5 @@ share/examples/fookebox/config.ini
 @sample ${SYSCONFDIR}/fookebox/config.ini
 share/examples/fookebox/fookebox.fcgi
 share/examples/fookebox/fookebox.wsgi
+@sample /var/db/fookebox/
+
