@@ -1,0 +1,10 @@
+$OpenBSD: patch-data_tracker-miner_pc_in,v 1.1 2012/10/15 13:26:05 ajacoutot Exp $
+--- data/tracker-miner.pc.in.orig	Wed Aug  3 14:53:16 2011
++++ data/tracker-miner.pc.in	Mon Oct 15 14:34:25 2012
+@@ -7,5 +7,5 @@ Name: tracker-miner
+ Description: A library to develop tracker data miners
+ Version: @VERSION@
+ Requires: glib-2.0 gio-2.0 tracker-sparql-@TRACKER_API_VERSION@
+-Libs: -L${libdir} -ltracker-miner-@TRACKER_API_VERSION@
++Libs: -L${libdir} -ltracker-miner-@TRACKER_API_VERSION@ -Wl,-rpath,${libdir}/tracker-@TRACKER_API_VERSION@
+ Cflags: -I${includedir}/tracker-@TRACKER_API_VERSION@
