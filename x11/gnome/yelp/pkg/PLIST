@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2012/09/27 11:04:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.31 2012/10/15 16:16:14 ajacoutot Exp $
 %%SHARED%%
 bin/gnome-help
 @bin bin/yelp
@@ -38,6 +38,7 @@ share/gtk-doc/html/libyelp/index.html
 share/gtk-doc/html/libyelp/index.sgml
 share/gtk-doc/html/libyelp/left.png
 share/gtk-doc/html/libyelp/libyelp-yelp-error.html
+share/gtk-doc/html/libyelp/libyelp.devhelp
 share/gtk-doc/html/libyelp/libyelp.devhelp2
 share/gtk-doc/html/libyelp/object-tree.html
 share/gtk-doc/html/libyelp/right.png
@@ -94,6 +95,9 @@ share/locale/it/LC_MESSAGES/yelp.mo
 share/locale/ja/LC_MESSAGES/yelp.mo
 share/locale/ka/LC_MESSAGES/yelp.mo
 share/locale/kk/LC_MESSAGES/yelp.mo
+share/locale/km/
+share/locale/km/LC_MESSAGES/
+share/locale/km/LC_MESSAGES/yelp.mo
 share/locale/kn/LC_MESSAGES/yelp.mo
 share/locale/ko/LC_MESSAGES/yelp.mo
 share/locale/ks/

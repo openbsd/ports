@@ -1,16 +1,43 @@
-$OpenBSD: patch-configure,v 1.8 2012/09/27 11:04:02 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.9 2012/10/15 16:16:14 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=627126
 
 Fix DATADIRNAME: see LOCALBASE/share/aclocal/{glib-gettext.m4,intltool.m4}
 
---- configure.orig	Mon Sep 24 22:38:48 2012
-+++ configure	Thu Sep 27 12:58:03 2012
-@@ -12961,6 +12961,9 @@ else
+--- configure.orig	Mon Oct 15 17:50:23 2012
++++ configure	Mon Oct 15 18:11:22 2012
+@@ -11372,22 +11372,10 @@ install-data-am: install-gsettings-schemas
+ 
+ .SECONDARY: $(gsettings_SCHEMAS)
+ 
+-gsettings__base_list = \
+-  sed "$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;s/\n/ /g" | \
+-  sed "$$!N;$$!N;$$!N;$$!N;s/\n/ /g"
+-
+-install-gsettings-schemas: $(gsettings_SCHEMAS:.xml=.valid) $(gsettings__enum_file)
++install-gsettings-schemas: $(gsettings_SCHEMAS) $(gsettings__enum_file)
+ 	@$(NORMAL_INSTALL)
+ 	test -z "$(gsettingsschemadir)" || $(MKDIR_P) "$(DESTDIR)$(gsettingsschemadir)"
+-	@list='\''$(gsettings__enum_file) $(gsettings_SCHEMAS)'\''; test -n "$(gsettingsschemadir)" || list=; \
+-	for p in $$list; do \
+-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+-	  echo "$$d$$p"; \
+-	done | $(gsettings__base_list) | \
+-	while read files; do \
+-	  echo " $(INSTALL_DATA) $$files '\''$(DESTDIR)$(gsettingsschemadir)'\''"; \
+-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(gsettingsschemadir)" || exit $$?; \
+-	done
++	$(INSTALL_DATA) $^ "$(DESTDIR)$(gsettingsschemadir)"
+ 	test -n "$(GSETTINGS_DISABLE_SCHEMAS_COMPILE)$(DESTDIR)" || $(GLIB_COMPILE_SCHEMAS) $(gsettingsschemadir)
+ 
+ uninstall-gsettings-schemas:
+@@ -12302,6 +12290,9 @@ else
+   DATADIRNAME=lib
  fi
  
-     ;;
++    ;;
 +    *-*-openbsd*)
 +    DATADIRNAME=share
-+    ;;
+     ;;
      *)
      DATADIRNAME=lib
-     ;;
