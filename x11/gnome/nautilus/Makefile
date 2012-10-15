@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2012/09/29 10:52:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.113 2012/10/15 15:47:38 ajacoutot Exp $
 
 COMMENT=		GNOME file manager
 
@@ -15,8 +15,7 @@ COMMENT=		GNOME file manager
 # x11/gnome/tracker
 
 GNOME_PROJECT=		nautilus
-GNOME_VERSION=		3.6.0
-REVISION=		0
+GNOME_VERSION=		3.6.1
 
 SHARED_LIBS +=  nautilus-extension   3.0      # 5.0
 
@@ -45,18 +44,18 @@ MODULES=		devel/gettext \
 			x11/gnome \
 			devel/dconf
 
-BUILD_DEPENDS=		misc/shared-mime-info>=0.21 \
+BUILD_DEPENDS=		misc/shared-mime-info \
 			devel/gobject-introspection \
 			devel/gsettings-desktop-schemas
 
-RUN_DEPENDS=		misc/shared-mime-info>=0.21 \
+RUN_DEPENDS=		misc/shared-mime-info \
 			x11/gnome/icon-theme \
-			x11/gnome/gvfs>=1.0.3 \
+			x11/gnome/gvfs \
 			devel/gsettings-desktop-schemas
 
 LIB_DEPENDS=		x11/gnome/desktop \
 			devel/libnotify \
-			graphics/libexif>=0.6.0 \
+			graphics/libexif \
 			textproc/exempi
 
 MODGNOME_TOOLS= 	goi
