@@ -1,0 +1,4 @@
+The xml-types library contains complete types for most parts of an
+XML document, including the prologue, node tree, and doctype.
+Some basic combinators are included for common tasks, including
+traversing the node tree and filtering children.
