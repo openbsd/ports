@@ -1,6 +1,9 @@
-$OpenBSD: patch-gkr_seahorse-gkr-item-properties_c,v 1.1 2012/10/14 08:16:59 ajacoutot Exp $
+$OpenBSD: patch-gkr_seahorse-gkr-item-properties_c,v 1.2 2012/10/15 06:02:23 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=684966
+From 60e7f1bc15a554fa05106c2b9f5e25fb827925a4 Mon Sep 17 00:00:00 2001
+From: Stef Walter <stefw@gnome.org>
+Date: Sat, 13 Oct 2012 13:06:54 +0000
+Subject: Strip possible dbus errors before displaying
 
 --- gkr/seahorse-gkr-item-properties.c.orig	Tue Aug 21 12:23:16 2012
 +++ gkr/seahorse-gkr-item-properties.c	Sun Oct 14 10:09:01 2012
