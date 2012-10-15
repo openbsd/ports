@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.50 2012/09/29 13:14:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2012/10/15 07:00:24 jasper Exp $
 
 COMMENT=	user interface builder for the gtk+3 toolkit
 
-GNOME_VERSION=	3.14.0
+GNOME_VERSION=	3.14.1
 GNOME_PROJECT= 	glade
-REVISION=	0
 
 CATEGORIES=	devel
 
@@ -21,15 +20,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo
-WANTLIB += cairo-gobject drm expat ffi fontconfig freetype gdk-3
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 gtk-3 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs ${MODPY_WANTLIB} util
-WANTLIB += xcb xcb-render xcb-shm xml2 z stdc++
-WANTLIB += ICE SM atk-bridge-2.0 atspi dbus-1 harfbuzz icudata
-WANTLIB += icule icuuc
+WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
+WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject dbus-1 drm
+WANTLIB += expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB += gtk-3 harfbuzz icudata icule icuuc m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += stdc++ util xcb xcb-render xcb-shm xml2 z ${MODPY_WANTLIB}
 
 MODULES=	devel/gettext \
 		x11/gnome \
