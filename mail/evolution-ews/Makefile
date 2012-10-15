@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2012/10/03 15:57:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2012/10/15 14:09:03 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	evolution connector for MS Exchange via EWS
 
 GNOME_PROJECT=	evolution-ews
 GNOME_VERSION=	3.6.0
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	mail
 
@@ -79,7 +79,7 @@ CONFIGURE_ARGS=	--disable-static \
 		--with-krb5=/usr \
 		--with-krb5-includes=/usr/include/kerberosV
 
-MODGNOME_LDFLAGS=-Wl,-rpath,${TRUEPREFIX}/lib/evolution-data-server/camel-providers:${LOCALBASE}/lib/evolution-data-server-${EVO_VERSION}:${TRUEPREFIX}/lib
+MODGNOME_LDFLAGS=-Wl,-rpath,${TRUEPREFIX}/lib/evolution-data-server-${EVO_VERSION}
 
 post-install:
 	rm ${PREFIX}/lib/evolution-data-server/*/*.la
