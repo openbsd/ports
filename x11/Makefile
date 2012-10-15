@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.502 2012/10/09 20:08:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.503 2012/10/15 08:04:47 dcoppa Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -110,6 +110,7 @@
      SUBDIR += hicolor-icon-theme
      SUBDIR += hs-X11
      SUBDIR += hs-X11-xft
+     SUBDIR += hs-dbus
      SUBDIR += hs-gtk
      SUBDIR += hs-xmonad-contrib
      SUBDIR += human-icon-theme
