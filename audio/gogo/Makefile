@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/15 00:22:47 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2012/10/15 10:49:57 espie Exp $
 
 COMMENT=	686 class CPU optimized mp3 encoder
-DISTNAME=	gogo226a	
+DISTNAME=	gogo226a
 PKGNAME=	gogo-2.26a
 CATEGORIES=	audio
 MASTER_SITES=	http://www.kurims.kyoto-u.ac.jp/~shigeo/soft/gogo2/src/ \
