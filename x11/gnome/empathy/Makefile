@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.106 2012/10/08 15:05:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.107 2012/10/15 12:13:11 ajacoutot Exp $
 
 COMMENT= 		Telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		3.6.0.3
+REVISION=		0
 
 SHARED_LIBS +=	empathy              0.0      # unknown
 SHARED_LIBS +=	empathy-gtk          0.0      # unknown
@@ -74,8 +75,6 @@ RUN_DEPENDS +=		multimedia/gstreamer1/plugins-good,-pulse
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 MODGNOME_TOOLS= 	yelp
-
-MODGNOME_LDFLAGS=	-Wl,-rpath,${LOCALBASE}/lib/pulseaudio
 
 CONFIGURE_ARGS+=	--disable-gudev \
 			--disable-Werror \
