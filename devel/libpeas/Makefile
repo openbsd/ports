@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2012/09/29 13:14:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2012/10/16 08:43:47 jasper Exp $
 
 COMMENT=	gobject-based plugins engine
 
 GNOME_PROJECT=	libpeas
-GNOME_VERSION=	1.6.0
-REVISION=	1
+GNOME_VERSION=	1.6.1
 
 CATEGORIES=	devel
 
@@ -22,8 +21,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += ${MODPY_WANTLIB}
-
 MODULES=	devel/gettext \
 		x11/gnome \
 		lang/python
@@ -37,6 +34,7 @@ WANTLIB += gthread-2.0 gtk-3 harfbuzz icudata icule icuuc m mozjs185
 WANTLIB += ncurses nspr4 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
 WANTLIB += stdc++ util xcb xcb-render xcb-shm z
+WANTLIB += ${MODPY_WANTLIB}
 
 RUN_DEPENDS=	devel/py-gobject3
 BUILD_DEPENDS=	devel/py-gobject3
