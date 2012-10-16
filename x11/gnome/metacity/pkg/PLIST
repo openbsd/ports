@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2012/09/03 08:46:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.33 2012/10/16 06:29:59 ajacoutot Exp $
 @pkgpath x11/gnome/metacity,gtk2
 @bin bin/metacity
 @bin bin/metacity-message
@@ -28,6 +28,7 @@ share/doc/metacity/README
 share/doc/metacity/metacity-theme.dtd
 share/doc/metacity/theme-format.txt
 share/glib-2.0/schemas/org.gnome.metacity.gschema.xml
+share/gnome/
 share/gnome-control-center/
 share/gnome-control-center/keybindings/
 share/gnome-control-center/keybindings/50-metacity-navigation.xml
@@ -35,11 +36,8 @@ share/gnome-control-center/keybindings/50-metacity-system.xml
 share/gnome-control-center/keybindings/50-metacity-windows.xml
 share/gnome/wm-properties/
 share/gnome/wm-properties/metacity-wm.desktop
-share/help/
-share/help/C/
 share/help/C/creating-metacity-themes/
 share/help/C/creating-metacity-themes/index.docbook
-share/help/de/
 share/help/de/creating-metacity-themes/
 share/help/de/creating-metacity-themes/index.docbook
 share/locale/am/LC_MESSAGES/metacity.mo
