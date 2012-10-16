@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.9 2012/10/16 09:19:23 ajacoutot Exp $
+$OpenBSD: README,v 1.10 2012/10/16 09:43:11 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -68,9 +68,9 @@ access is done over https instead of http.
 
 Synchronization
 ===============
-The "csync" package (net/csync) can be installed to synchronize local
+The "ocsync" package (net/ocsync) can be installed to synchronize local
 files with ownCloud. e.g.
-    $ csync /path/to/localdir ownclouds://<username>:<password>@<hostname>/files/webdav.php/remotedir/
+    $ ocsync /path/to/localdir ownclouds://<username>:<password>@<hostname>/files/webdav.php/remotedir/
 
 Apps and dependencies
 =====================
