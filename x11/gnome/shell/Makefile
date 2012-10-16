@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2012/10/16 13:25:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2012/10/16 14:20:19 ajacoutot Exp $
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		3.6.1
+REVISION=		0
 
 HOMEPAGE=		http://live.gnome.org/GnomeShell
 
@@ -31,7 +32,7 @@ WANTLIB += pixman-1 plc4 plds4 png polkit-agent-1 polkit-gobject-1
 WANTLIB += pthread pthread-stubs pulse pulse-mainloop-glib smime3
 WANTLIB += sndfile softokn3 soup-2.4 sqlite3 ssl3 startup-notification-1
 WANTLIB += stdc++ telepathy-glib telepathy-logger vorbis vorbisfile
-WANTLIB += xcb xcb-aux xcb-render xcb-shm xkbfile xml2 z secret-1
+WANTLIB += xcb xcb-aux xcb-render xcb-shm xkbfile xml2 z
 
 MODULES=		devel/dconf \
 			devel/gettext \
