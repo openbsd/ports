@@ -1,13 +1,13 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2012/05/01 07:38:47 jasper Exp $
---- configure.orig	Mon Apr 30 20:08:59 2012
-+++ configure	Mon Apr 30 20:09:21 2012
-@@ -13087,13 +13087,13 @@ OLDLDFLAGS="$LDFLAGS"
- CFLAGS="$OLDCFLAGS $LLVM_CFLAGS"
- LDFLAGS="$OLDLDFLAGS $LLVM_LIBS"
+$OpenBSD: patch-configure,v 1.2 2012/10/16 18:23:23 jasper Exp $
+--- configure.orig	Tue Oct 16 12:47:35 2012
++++ configure	Tue Oct 16 12:48:01 2012
+@@ -13441,13 +13441,13 @@ else
+ 	CFLAGS="$OLDCFLAGS $LLVM_CFLAGS"
+ 	LDFLAGS="$OLDLDFLAGS $LLVM_LIBS"
  
--{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for clang_createIndex in -lclang" >&5
+-	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for clang_createIndex in -lclang" >&5
 -$as_echo_n "checking for clang_createIndex in -lclang... " >&6; }
-+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for clang_createIndex in -llibclang" >&5
++	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for clang_createIndex in -llibclang" >&5
 +$as_echo_n "checking for clang_createIndex in -llibclang... " >&6; }
  if ${ac_cv_lib_clang_clang_createIndex+:} false; then :
    $as_echo_n "(cached) " >&6
@@ -18,21 +18,21 @@ $OpenBSD: patch-configure,v 1.1.1.1 2012/05/01 07:38:47 jasper Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -13128,7 +13128,7 @@ if test "x$ac_cv_lib_clang_clang_createIndex" = xyes; 
- #define HAVE_LIBCLANG 1
- _ACEOF
- 
--  LIBS="-lclang $LIBS"
-+  LIBS="-llibclang $LIBS"
- 
+@@ -13478,7 +13478,7 @@ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_clang_clang_createIndex" >&5
+ $as_echo "$ac_cv_lib_clang_clang_createIndex" >&6; }
+ if test "x$ac_cv_lib_clang_clang_createIndex" = xyes; then :
+-  LLVM_LIBS="$LLVM_LIBS -lclang"
++  LLVM_LIBS="$LLVM_LIBS -llibclang"
+ 	              clang_enabled="yes"
  else
-   as_fn_error $? "could not find clang library" "$LINENO" 5
-@@ -13144,7 +13144,7 @@ fi
+   { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: could not find clang library" >&5
+@@ -13501,7 +13501,7 @@ fi
+ 	fi
  
- 
- 
--LLVM_LIBS="$LLVM_LIBS -lclang"
-+LLVM_LIBS="$LLVM_LIBS -llibclang"
- 
+ 	if test "x$clang_enabled" = "xyes"; then
+-		LLVM_LIBS="$LLVM_LIBS -lclang"
++		LLVM_LIBS="$LLVM_LIBS -llibclang"
+ 	fi
  
  
