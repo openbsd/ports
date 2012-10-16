@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/10/03 15:56:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/10/16 11:56:12 ajacoutot Exp $
 @bin bin/gnome-shell
 bin/gnome-shell-extension-prefs
 bin/gnome-shell-extension-tool
@@ -21,7 +21,6 @@ share/GConf/gsettings/gnome-shell-overrides.convert
 share/applications/evolution-calendar.desktop
 share/applications/gnome-shell-extension-prefs.desktop
 share/applications/gnome-shell.desktop
-share/dbus-1/interfaces/
 share/dbus-1/interfaces/org.gnome.ShellSearchProvider.xml
 share/dbus-1/services/org.gnome.Shell.CalendarServer.service
 share/dbus-1/services/org.gnome.Shell.HotplugSniffer.service

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.178 2012/10/14 09:20:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.179 2012/10/16 11:56:11 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -10,6 +10,9 @@ GNOME_VERSION=		3.6.1
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}
+
+REVISION-main=		0
+REVISION-plugins=	0
 
 # NOTE: when R changes, increment EVO_VERSION accordingly and bump:
 # mail/evolution-ews

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2012/10/15 13:26:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2012/10/16 11:56:11 ajacoutot Exp $
 
 COMMENT-main=		people aggregation library
 COMMENT-tracker=	(meta-)tracker backend for folks
@@ -10,7 +10,7 @@ API_V=			37 # MODULE_VERSION in config.h
 PKGNAME-main=		${DISTNAME}
 PKGNAME-tracker=	${GNOME_PROJECT}-meta-tracker-${GNOME_VERSION}
 
-REVISION-main=		0
+REVISION-main=		1
 REVISION-tracker=	0
 
 SHARED_LIBS +=  folks-telepathy           5.0 # 37.0
@@ -37,8 +37,8 @@ WANTLIB-main += ${WANTLIB}
 WANTLIB-main += asn1 c camel-1.2 com_err crypto ebook-1.2 edataserver-1.2
 WANTLIB-main += gssapi krb5 ncurses nspr4 nss3 socialweb-client plc4 plds4
 WANTLIB-main += pthread readline smime3 softokn3 soup-2.4 ssl3 telepathy-glib
-WANTLIB-main += xml2 z gck-1 gcr-base-3 gcrypt gpg-error
-WANTLIB-main += nssutil3 p11-kit zeitgeist-1.0 dbus-1 dbus-glib-1 secret-1
+WANTLIB-main += xml2 z gck-1 gcr-base-3 gcrypt gpg-error gnome-keyring
+WANTLIB-main += nssutil3 p11-kit zeitgeist-1.0 dbus-1 dbus-glib-1
 
 LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
 			databases/evolution-data-server>=3.6.0p3 \
