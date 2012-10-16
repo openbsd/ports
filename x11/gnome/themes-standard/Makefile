@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2012/09/29 10:52:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2012/10/16 07:24:13 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		standard GNOME themes
 
 GNOME_PROJECT=		gnome-themes-standard
-GNOME_VERSION=		3.6.0.2
-REVISION=		0
+GNOME_VERSION=		3.6.1
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
@@ -17,16 +16,18 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
 WANTLIB += atk-bridge-2.0 atspi cairo cairo-gobject croco-0.6
-WANTLIB += dbus-1 drm expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += gtk-3 harfbuzz icudata icule icuuc m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += rsvg-2 stdc++ xcb xcb-render xcb-shm xml2 z
+WANTLIB += dbus-1 drm expat ffi fontconfig freetype gdk-3 gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gthread-2.0 gtk-3 gtk-x11-2.0 harfbuzz icudata icule
+WANTLIB += icuuc m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 png pthread pthread-stubs rsvg-2 stdc++ xcb
+WANTLIB += xcb-render xcb-shm xml2 z
 
 MODULES=		devel/gettext \
 			x11/gnome
 
-LIB_DEPENDS=		x11/gtk+3>=3.5.18 \
+LIB_DEPENDS=		x11/gtk+2 \
+			x11/gtk+3 \
 			x11/gnome/librsvg
 
 MODGNOME_ICON_CACHE=	Yes
@@ -47,5 +48,6 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/index.theme \
 		${PREFIX}/share/icons/default
 	rm ${PREFIX}/lib/gtk-3.0/3.0.0/theming-engines/*.la
+	rm ${PREFIX}/lib/gtk-2.0/2.10.0/engines/*.la
 
 .include <bsd.port.mk>
