@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/09/30 13:50:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2012/10/16 07:11:43 ajacoutot Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		clock application for GNOME
 
 GNOME_PROJECT=		gnome-clocks
-GNOME_VERSION=		0.1.3
+GNOME_VERSION=		0.1.4
 MODPY_EGG_VERSION=	${GNOME_VERSION}
 
 HOMEPAGE=		https://live.gnome.org/GnomeClocks
