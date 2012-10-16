@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2012/09/28 11:44:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.45 2012/10/16 17:59:42 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		binary editor
 
 GNOME_PROJECT=		ghex
-GNOME_VERSION=		3.6.0
+GNOME_VERSION=		3.6.1
 
 SHARED_LIBS +=  gtkhex-3                  0.0 # 0.0
 
