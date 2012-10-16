@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2012/09/27 07:46:28 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.13 2012/10/16 08:19:29 jasper Exp $
 @conflict gnome-applets2-<=2.22.0
 include/libgweather-3.0/
 include/libgweather-3.0/libgweather/
@@ -587,8 +587,6 @@ share/locale/ka/LC_MESSAGES/libgweather-3.0.mo
 share/locale/kn/LC_MESSAGES/libgweather-3.0.mo
 share/locale/ko/LC_MESSAGES/libgweather-3.0.mo
 share/locale/ku/LC_MESSAGES/libgweather-3.0.mo
-share/locale/ky/
-share/locale/ky/LC_MESSAGES/
 share/locale/ky/LC_MESSAGES/libgweather-3.0.mo
 share/locale/lt/LC_MESSAGES/libgweather-3.0.mo
 share/locale/lv/LC_MESSAGES/libgweather-3.0.mo
