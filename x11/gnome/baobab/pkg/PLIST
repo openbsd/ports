@@ -1,9 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/09/28 07:19:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/10/16 07:28:42 ajacoutot Exp $
 @conflict gnome-utils-*
 @bin bin/baobab
+lib/baobab/
+lib/baobab/girepository-1.0/
+lib/baobab/girepository-1.0/Gd-1.0.typelib
+lib/baobab/libgd.so
 @man man/man1/baobab.1
 share/applications/baobab.desktop
 share/baobab/
+share/baobab/gir-1.0/
+share/baobab/gir-1.0/Gd-1.0.gir
 share/baobab/pixmaps/
 share/baobab/pixmaps/shot.png
 share/glib-2.0/schemas/org.gnome.baobab.gschema.xml
@@ -334,8 +340,6 @@ share/locale/id/LC_MESSAGES/baobab.mo
 share/locale/it/LC_MESSAGES/baobab.mo
 share/locale/ja/LC_MESSAGES/baobab.mo
 share/locale/ka/LC_MESSAGES/baobab.mo
-share/locale/km/
-share/locale/km/LC_MESSAGES/
 share/locale/km/LC_MESSAGES/baobab.mo
 share/locale/kn/LC_MESSAGES/baobab.mo
 share/locale/ko/LC_MESSAGES/baobab.mo
