@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.14 2012/09/26 21:38:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.15 2012/10/16 12:37:06 ajacoutot Exp $
 @conflict gtk+3-docs-*
 @pkgpath x11/gtk+3,-docs
 @unexec-delete rm -f ${SYSCONFDIR}/gtk-3.0/gtk.immodules
@@ -1194,6 +1194,8 @@ share/locale/kg/LC_MESSAGES/gtk30-properties.mo
 share/locale/kg/LC_MESSAGES/gtk30.mo
 share/locale/kk/LC_MESSAGES/gtk30-properties.mo
 share/locale/kk/LC_MESSAGES/gtk30.mo
+share/locale/km/LC_MESSAGES/gtk30-properties.mo
+share/locale/km/LC_MESSAGES/gtk30.mo
 share/locale/kn/LC_MESSAGES/gtk30-properties.mo
 share/locale/kn/LC_MESSAGES/gtk30.mo
 share/locale/ko/LC_MESSAGES/gtk30-properties.mo
