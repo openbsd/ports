@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.11 2012/10/10 08:42:18 ajacoutot Exp $
+$OpenBSD: README-main,v 1.12 2012/10/16 15:46:49 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -16,14 +16,24 @@ office and development type packages have been left out on purpose).
 
 Starting GNOME
 ==============
+
+DBus
+----
 Before running gnome-session(1), a system-wide D-Bus daemon needs to be
 running ("dbus_daemon" needs to be added to the "pkg_scripts" variable
 in rc.conf.local(8)).
 
-Then the following line needs to be added:
+GDM
+---
+It is _strongly_ advised to use GDM as the login manager otherwise some
+features like screen locking will not work properly. To do so, "gdm"
+must be added at the end of "pkg_scripts" in rc.conf.local(8).
+
+Alternatively, to start GNOME without GDM (not recommended), the
+following line needs to be added:
     exec ${LOCALBASE}/bin/ck-launch-session ${TRUEPREFIX}/bin/gnome-session
 in ~/.xinitrc when using startx(1) (console login)
-in ~/.xsession when using xdm(1) (X Display Manager login)
+in ~/.xsession when using xdm(1) (xdm(1) or similar login)
 
 mDNS/DNS-SD support
 ===================
@@ -40,7 +50,5 @@ _after_ "dbus_daemon".
 Cheat sheet
 ===========
 * /etc/rc.conf.local
-	multicast_host=YES
-	pkg_scripts="${pkg_scripts} dbus_daemon avahi_daemon"
-* ~.xinitrc | ~.xsession
-	exec ${LOCALBASE}/bin/ck-launch-session ${TRUEPREFIX}/bin/gnome-session
+    multicast_host=YES
+    pkg_scripts="${pkg_scripts} dbus_daemon avahi_daemon gdm"
