@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.192 2012/10/16 06:30:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.193 2012/10/16 14:18:09 ajacoutot Exp $
 
 COMMENT=		general-purpose utility library
 
@@ -50,6 +50,7 @@ BUILD_DEPENDS +=	x11/dbus
 REGRESS_IS_INTERACTIVE=	x11
 REGRESS_DEPENDS=	devel/desktop-file-utils \
 			devel/py-gobject \
+			devel/py-gobject3 \
 			x11/dbus-python
 
 USE_GMAKE=		Yes
