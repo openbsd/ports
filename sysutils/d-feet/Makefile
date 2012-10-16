@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2012/06/15 08:32:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2012/10/16 08:08:49 ajacoutot Exp $
 
 COMMENT=		dbus debugger
 
-MODPY_EGG_VERSION=	0.1.14
+MODPY_EGG_VERSION=	0.1.15
 DISTNAME=		d-feet-${MODPY_EGG_VERSION}
 CATEGORIES=		sysutils x11
-REVISION=		2
 
 HOMEPAGE=		http://live.gnome.org/DFeet/
 
