@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/10/16 07:28:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2012/10/16 07:48:54 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -24,7 +24,8 @@ WANTLIB += gtk-3 harfbuzz icudata icule icuuc m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += stdc++ xcb xcb-render xcb-shm z
 
-BUILD_DEPENDS=		devel/gobject-introspection
+BUILD_DEPENDS=		devel/gobject-introspection \
+			lang/vala
 
 LIB_DEPENDS=		x11/gtk+3>=3.6.0
 
