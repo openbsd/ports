@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.121 2012/10/14 08:04:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.122 2012/10/16 11:55:01 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
 GNOME_VERSION=		3.6.1
+REVISION=		0
 
 # Only get the first x.y which is needed in the PLIST.
 R=			${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -45,7 +46,7 @@ WANTLIB += krb5 lber-2.4 ldap-2.4 m nspr4 nss3 nssutil3 oauth
 WANTLIB += p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 plc4 plds4 png pthread pthread-stubs sasl2
 WANTLIB += smime3 softokn3 soup-2.4 soup-gnome-2.4 sqlite3 ssl
-WANTLIB += ssl3 stdc++ xcb xcb-render xcb-shm xml2 z secret-1
+WANTLIB += ssl3 stdc++ xcb xcb-render xcb-shm xml2 z
 
 MODULES=		devel/gettext \
 			devel/dconf \
@@ -62,7 +63,6 @@ LIB_DEPENDS= 		databases/db/v4 \
 			textproc/libical \
 			x11/gnome/gcr>=3.6.0 \
 			x11/gnome/libgweather \
-			x11/gnome/libsecret \
 			x11/gnome/online-accounts
 
 YACC=			bison
@@ -70,7 +70,6 @@ MODPY_RUNDEP=		No
 MODPY_ADJ_FILES=	addressbook/libebook/gen-western-table.py
 MODGNOME_TOOLS= 	goi vala
 MODGNOME_CPPFLAGS=	-I${LOCALBASE}/include/db4
-MODGNOME_LDFLAGS=	-pthread
 
 AUTOCONF_VERSION=	2.68
 
@@ -85,20 +84,6 @@ CONFIGURE_ARGS=		--enable-ssl \
 			--with-krb5-includes=/usr/include/kerberosV \
 			--with-libdb=${LOCALBASE} \
 			--with-openldap=${LOCALBASE}
-
-### http://git.gnome.org/browse/evolution-data-server/commit/?id=af70f1bec73b2c2ff72300cce93ffbd9c4b9d6ad
-AUTOMAKE_VERSION=	1.11
-CONFIGURE_STYLE=gnu
-BUILD_DEPENDS +=devel/autoconf/${AUTOCONF_VERSION} \
-		devel/automake/${AUTOMAKE_VERSION} \
-		devel/libtool \
-		x11/gnome/common
-pre-configure:
-	@cd ${WRKSRC} && \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		autoreconf -i
-### end
 
 post-install:
 	rm ${PREFIX}/lib/evolution-data-server/*/*.{a,la}
