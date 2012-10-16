@@ -1,36 +1,51 @@
-@comment $OpenBSD: PLIST,v 1.14 2009/12/21 22:07:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2012/10/16 18:55:01 naddy Exp $
 @bin bin/galculator
 @man man/man1/galculator.1
 share/applications/galculator.desktop
 share/galculator/
-share/galculator/glade/
-share/galculator/glade/about.glade
-share/galculator/glade/basic_buttons.glade
-share/galculator/glade/classic_view.glade
-share/galculator/glade/dispctrl_bottom.glade
-share/galculator/glade/dispctrl_right.glade
-share/galculator/glade/dispctrl_right_vertical.glade
-share/galculator/glade/main_frame.glade
-share/galculator/glade/main_frame_hildon.glade
-share/galculator/glade/paper_view.glade
-share/galculator/glade/prefs-ume.glade
-share/galculator/glade/prefs.glade
-share/galculator/glade/scientific_buttons.glade
+share/galculator/ui/
+share/galculator/ui/about.ui
+share/galculator/ui/basic_buttons.ui
+share/galculator/ui/classic_view.ui
+share/galculator/ui/dispctrl_bottom.ui
+share/galculator/ui/dispctrl_right.ui
+share/galculator/ui/dispctrl_right_vertical.ui
+share/galculator/ui/main_frame.ui
+share/galculator/ui/main_frame_hildon.ui
+share/galculator/ui/paper_view.ui
+share/galculator/ui/prefs-ume.ui
+share/galculator/ui/prefs.ui
+share/galculator/ui/scientific_buttons.ui
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
+share/icons/hicolor/48x48/apps/galculator.png
+share/icons/hicolor/scalable/
+share/icons/hicolor/scalable/apps/
+share/icons/hicolor/scalable/apps/galculator.svg
+share/locale/da_DK/
+share/locale/da_DK/LC_MESSAGES/
+share/locale/da_DK/LC_MESSAGES/galculator.mo
 share/locale/de/LC_MESSAGES/galculator.mo
 share/locale/es_MX/
 share/locale/es_MX/LC_MESSAGES/
 share/locale/es_MX/LC_MESSAGES/galculator.mo
 share/locale/fr/LC_MESSAGES/galculator.mo
 share/locale/ja/LC_MESSAGES/galculator.mo
+share/locale/kk_KZ/
+share/locale/kk_KZ/LC_MESSAGES/
+share/locale/kk_KZ/LC_MESSAGES/galculator.mo
 share/locale/pl/LC_MESSAGES/galculator.mo
 share/locale/pt/LC_MESSAGES/galculator.mo
 share/locale/pt_BR/LC_MESSAGES/galculator.mo
 share/locale/ro/LC_MESSAGES/galculator.mo
 share/locale/ru/LC_MESSAGES/galculator.mo
 share/locale/sk/LC_MESSAGES/galculator.mo
+share/locale/sv/LC_MESSAGES/galculator.mo
+share/locale/zh_CN/LC_MESSAGES/galculator.mo
+share/locale/zh_TW/LC_MESSAGES/galculator.mo
 share/pixmaps/
-share/pixmaps/galculator.png
-share/pixmaps/galculator.svg
 share/pixmaps/galculator.xpm
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
