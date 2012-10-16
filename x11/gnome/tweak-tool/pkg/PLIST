@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2012/10/03 13:14:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2012/10/16 10:43:20 ajacoutot Exp $
 bin/gnome-tweak-tool
 lib/python${MODPY_VERSION}/site-packages/gtweak/
 lib/python${MODPY_VERSION}/site-packages/gtweak/__init__.py
@@ -35,6 +35,9 @@ lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_font.pyo
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_interface.py
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_interface.pyc
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_interface.pyo
+lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_mouse.py
+lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_mouse.pyc
+lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_mouse.pyo
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_nautilus.py
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_nautilus.pyc
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_nautilus.pyo
@@ -94,6 +97,7 @@ share/locale/ja/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/ko/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/lt/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/lv/LC_MESSAGES/gnome-tweak-tool.mo
+share/locale/my/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/nb/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/pa/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/pl/LC_MESSAGES/gnome-tweak-tool.mo
