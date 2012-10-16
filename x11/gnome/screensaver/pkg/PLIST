@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2012/09/28 15:24:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2012/10/16 07:47:26 ajacoutot Exp $
 @bin bin/gnome-screensaver
 @bin bin/gnome-screensaver-command
 @mode u+s
@@ -61,6 +61,9 @@ share/locale/is/LC_MESSAGES/gnome-screensaver.mo
 share/locale/it/LC_MESSAGES/gnome-screensaver.mo
 share/locale/ja/LC_MESSAGES/gnome-screensaver.mo
 share/locale/ka/LC_MESSAGES/gnome-screensaver.mo
+share/locale/km/
+share/locale/km/LC_MESSAGES/
+share/locale/km/LC_MESSAGES/gnome-screensaver.mo
 share/locale/kn/LC_MESSAGES/gnome-screensaver.mo
 share/locale/ko/LC_MESSAGES/gnome-screensaver.mo
 share/locale/ku/LC_MESSAGES/gnome-screensaver.mo
