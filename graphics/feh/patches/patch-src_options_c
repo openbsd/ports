@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_options_c,v 1.7 2012/09/18 12:51:17 dcoppa Exp $
---- src/options.c.orig	Thu Sep 13 12:12:44 2012
-+++ src/options.c	Tue Sep 18 14:44:26 2012
-@@ -152,7 +152,7 @@ static void feh_load_options_for_theme(char *theme)
+$OpenBSD: patch-src_options_c,v 1.8 2012/10/16 13:22:10 dcoppa Exp $
+--- src/options.c.orig	Tue Oct 16 06:31:41 2012
++++ src/options.c	Tue Oct 16 15:19:32 2012
+@@ -153,7 +153,7 @@ static void feh_load_options_for_theme(char *theme)
  
  	free(oldrcpath);
  
