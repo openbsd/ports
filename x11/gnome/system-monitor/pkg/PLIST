@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/09/28 09:23:35 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2012/10/16 08:08:31 jasper Exp $
 @bin bin/gnome-system-monitor
 share/applications/gnome-system-monitor.desktop
 share/glib-2.0/schemas/org.gnome.gnome-system-monitor.enums.xml
@@ -374,6 +374,7 @@ share/locale/id/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/it/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ja/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ka/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/km/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/kn/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ko/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ku/LC_MESSAGES/gnome-system-monitor.mo

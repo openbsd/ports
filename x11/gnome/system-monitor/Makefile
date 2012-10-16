@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2012/09/28 09:23:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2012/10/16 08:08:30 jasper Exp $
 
 COMMENT=	sytem monitor for GNOME
 
 GNOME_PROJECT=	gnome-system-monitor
-GNOME_VERSION=	3.6.0
+GNOME_VERSION=	3.6.1
 
 CATEGORIES=	sysutils
 
