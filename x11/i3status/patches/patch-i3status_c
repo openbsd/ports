@@ -1,7 +1,9 @@
-$OpenBSD: patch-i3status_c,v 1.1 2012/10/09 17:12:31 jasper Exp $
+$OpenBSD: patch-i3status_c,v 1.2 2012/10/16 10:40:21 jasper Exp $
 
-- Temperature sensors can now set a 'max_threshold' value to color the
-  output red if exceeded.
+From ae4873bac793245e7dea4719c8e0d1c7bc990d5f Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@openbsd.org>
+Date: Wed, 10 Oct 2012 07:57:32 +0000
+Subject: i3status - More temperature related fixes for OpenBSD, and a general feature
 
 --- i3status.c.orig	Tue Oct  9 20:35:06 2012
 +++ i3status.c	Tue Oct  9 20:35:15 2012

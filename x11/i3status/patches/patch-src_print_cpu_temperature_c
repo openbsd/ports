@@ -1,14 +1,15 @@
-$OpenBSD: patch-src_print_cpu_temperature_c,v 1.5 2012/10/09 17:12:31 jasper Exp $
+$OpenBSD: patch-src_print_cpu_temperature_c,v 1.6 2012/10/16 10:40:21 jasper Exp $
 
-- Default to acpitz(4) for temperature readings, instead of cpu(4).
-  The acpitz(4) values are eventually used by the kernel to determine if the machine
-  is getting too hot.
+From ae4873bac793245e7dea4719c8e0d1c7bc990d5f Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@openbsd.org>
+Date: Wed, 10 Oct 2012 07:57:32 +0000
+Subject: i3status - More temperature related fixes for OpenBSD, and a general feature
 
-  Other devices can be used by setting 'path' in the config file to the sysctl(3)
-  device node.
 
-- Temperature sensors can now set a 'max_threshold' value to color the
-  output red if exceeded.
+From 1c2517a3998385dbfca0559aca3ba7e72b5c216c Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@openbsd.org>
+Date: Wed, 10 Oct 2012 07:53:34 +0000
+Subject: i3status - Default to acpitz(4) instead of cpu(4) for OpenBSD temperature readings
 
 --- src/print_cpu_temperature.c.orig	Wed Oct  3 13:44:44 2012
 +++ src/print_cpu_temperature.c	Tue Oct  9 20:36:23 2012

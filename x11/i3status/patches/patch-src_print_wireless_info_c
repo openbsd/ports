@@ -1,15 +1,14 @@
-$OpenBSD: patch-src_print_wireless_info_c,v 1.4 2012/10/10 07:20:16 jasper Exp $
+$OpenBSD: patch-src_print_wireless_info_c,v 1.5 2012/10/16 10:40:21 jasper Exp $
 
 From 794151cfe76f80fb2c7eebb8d3fbbce8fc5ccb09 Mon Sep 17 00:00:00 2001
 From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
 Date: Mon, 08 Oct 2012 20:15:14 +0000
 Subject: Implement %essid and %signal for wireless on OpenBSD.
 
-
-
-- handle down wireless interfaces just like ethernet interfaces (e.g. colors!)
-  (added bonus of this approach is that you still get nwid and signal strength
-  info of the interface, for example when it's part of a trunk device.)
+From ed03d2450ceae3cc7952b65d8349373bbb45a487 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@openbsd.org>
+Date: Wed, 10 Oct 2012 07:52:27 +0000
+Subject: i3status - Handle down wireless interfaces just like ethernet interfaces (e.g. colors)
 
 --- src/print_wireless_info.c.orig	Wed Oct  3 13:44:44 2012
 +++ src/print_wireless_info.c	Tue Oct  9 15:25:03 2012
