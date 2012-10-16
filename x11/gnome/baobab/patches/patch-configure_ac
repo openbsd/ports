@@ -1,0 +1,17 @@
+$OpenBSD: patch-configure_ac,v 1.1 2012/10/16 12:41:50 ajacoutot Exp $
+
+From 9fd8772e36b9f82746b3b7820fc1409828de44cf Mon Sep 17 00:00:00 2001
+From: Stefano Facchini <stefano.facchini@gmail.com>
+Date: Tue, 16 Oct 2012 12:21:44 +0000
+Subject: Link libgd statically
+
+--- configure.ac.orig	Tue Oct 16 14:25:07 2012
++++ configure.ac	Tue Oct 16 14:25:19 2012
+@@ -51,6 +51,7 @@ PKG_CHECK_MODULES(BAOBAB, [
+ LT_INIT([disable-static])
+ 
+ LIBGD_INIT([
++    static
+     main-toolbar
+     vapi
+ ])

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2012/10/16 07:48:54 ajacoutot Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.9 2012/10/16 12:41:50 ajacoutot Exp $
 
 COMMENT=		directory tree analyzer for GNOME
 
 GNOME_PROJECT=		baobab
 GNOME_VERSION=		3.6.1
+REVISION=		0
 
 HOMEPAGE=		https://live.gnome.org/Baobab
 
@@ -39,7 +38,7 @@ MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 
-post-install:
-	rm ${PREFIX}/lib/baobab/*.{a,la}
+AUTOCONF_VERSION=	2.68
+CONFIGURE_STYLE=	autoconf
 
 .include <bsd.port.mk>
