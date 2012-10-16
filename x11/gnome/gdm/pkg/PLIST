@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.53 2012/10/10 12:34:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.54 2012/10/16 07:02:58 ajacoutot Exp $
 @comment starts a full gnome-session as _gdm which requires a valid homedir
 @newgroup _gdm:676
 @newuser _gdm:676:_gdm:daemon:GNOME Display Manager:/var/db/gdm:/sbin/nologin
@@ -17,6 +17,7 @@
 @extraunexec rm -rf /var/cache/gdm/*
 @extraunexec rm -rf /var/log/gdm/*
 @bin bin/gdm-screenshot
+@bin bin/gdmflexiserver
 include/gdm/
 include/gdm/gdm-client-glue.h
 include/gdm/gdm-client.h
@@ -155,11 +156,14 @@ share/gdm/simple-greeter/extensions/unified/page.ui
 share/gir-1.0/Gdm-1.0.gir
 share/glib-2.0/schemas/org.gnome.login-screen.gschema.override
 share/glib-2.0/schemas/org.gnome.login-screen.gschema.xml
+share/gnome-session/
+share/gnome-session/sessions/
 share/gnome-session/sessions/gdm-fallback.session
 share/gnome-session/sessions/gdm-shell.session
 share/help/C/gdm/
 share/help/C/gdm/index.docbook
 share/help/C/gdm/legal.xml
+share/help/ca/
 share/help/ca/gdm/
 share/help/ca/gdm/index.docbook
 share/help/ca/gdm/legal.xml
@@ -169,6 +173,7 @@ share/help/de/gdm/legal.xml
 share/help/el/gdm/
 share/help/el/gdm/index.docbook
 share/help/el/gdm/legal.xml
+share/help/en_GB/
 share/help/en_GB/gdm/
 share/help/en_GB/gdm/index.docbook
 share/help/en_GB/gdm/legal.xml
@@ -181,33 +186,42 @@ share/help/fr/gdm/legal.xml
 share/help/gl/gdm/
 share/help/gl/gdm/index.docbook
 share/help/gl/gdm/legal.xml
+share/help/id/
 share/help/id/gdm/
 share/help/id/gdm/index.docbook
 share/help/id/gdm/legal.xml
+share/help/it/
 share/help/it/gdm/
 share/help/it/gdm/index.docbook
 share/help/it/gdm/legal.xml
+share/help/ko/
 share/help/ko/gdm/
 share/help/ko/gdm/index.docbook
 share/help/ko/gdm/legal.xml
+share/help/oc/
 share/help/oc/gdm/
 share/help/oc/gdm/index.docbook
 share/help/oc/gdm/legal.xml
+share/help/ru/
 share/help/ru/gdm/
 share/help/ru/gdm/index.docbook
 share/help/ru/gdm/legal.xml
 share/help/sl/gdm/
 share/help/sl/gdm/index.docbook
 share/help/sl/gdm/legal.xml
+share/help/sv/
 share/help/sv/gdm/
 share/help/sv/gdm/index.docbook
 share/help/sv/gdm/legal.xml
+share/help/te/
 share/help/te/gdm/
 share/help/te/gdm/index.docbook
 share/help/te/gdm/legal.xml
+share/help/uk/
 share/help/uk/gdm/
 share/help/uk/gdm/index.docbook
 share/help/uk/gdm/legal.xml
+share/help/zh_CN/
 share/help/zh_CN/gdm/
 share/help/zh_CN/gdm/index.docbook
 share/help/zh_CN/gdm/legal.xml
@@ -257,6 +271,8 @@ share/locale/fy/LC_MESSAGES/gdm.mo
 share/locale/ga/LC_MESSAGES/gdm.mo
 share/locale/gl/LC_MESSAGES/gdm.mo
 share/locale/gu/LC_MESSAGES/gdm.mo
+share/locale/gv/
+share/locale/gv/LC_MESSAGES/
 share/locale/gv/LC_MESSAGES/gdm.mo
 share/locale/he/LC_MESSAGES/gdm.mo
 share/locale/hi/LC_MESSAGES/gdm.mo
@@ -322,6 +338,7 @@ share/locale/zh_CN/LC_MESSAGES/gdm.mo
 share/locale/zh_HK/LC_MESSAGES/gdm.mo
 share/locale/zh_TW/LC_MESSAGES/gdm.mo
 share/locale/zu/LC_MESSAGES/gdm.mo
+share/pixmaps/
 share/pixmaps/gdm-foot-logo.png
 share/pixmaps/gdm-setup.png
 share/pixmaps/gdm-xnest.png

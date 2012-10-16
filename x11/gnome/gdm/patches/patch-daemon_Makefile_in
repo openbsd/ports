@@ -1,10 +1,10 @@
-$OpenBSD: patch-daemon_Makefile_in,v 1.3 2012/09/29 19:28:15 ajacoutot Exp $
+$OpenBSD: patch-daemon_Makefile_in,v 1.4 2012/10/16 07:02:58 ajacoutot Exp $
 
 undefined reference to `logwtmp'...
 
---- daemon/Makefile.in.orig	Sat Sep 29 19:56:01 2012
-+++ daemon/Makefile.in	Sat Sep 29 19:56:12 2012
-@@ -754,6 +754,7 @@ gdm_session_worker_LDFLAGS = \
+--- daemon/Makefile.in.orig	Tue Oct 16 04:28:35 2012
++++ daemon/Makefile.in	Tue Oct 16 08:56:02 2012
+@@ -755,6 +755,7 @@ gdm_session_worker_LDFLAGS = \
  gdm_session_worker_LDADD = \
  	$(top_builddir)/common/libgdmcommon.la	\
  	$(DAEMON_LIBS)				\

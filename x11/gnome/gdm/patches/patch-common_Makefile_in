@@ -1,7 +1,7 @@
-$OpenBSD: patch-common_Makefile_in,v 1.4 2012/09/29 19:28:15 ajacoutot Exp $
---- common/Makefile.in.orig	Tue Sep 25 20:04:05 2012
-+++ common/Makefile.in	Sat Sep 29 19:46:01 2012
-@@ -525,7 +525,7 @@ gdm_crash_logger_CPPFLAGS = \
+$OpenBSD: patch-common_Makefile_in,v 1.5 2012/10/16 07:02:58 ajacoutot Exp $
+--- common/Makefile.in.orig	Tue Oct 16 04:28:35 2012
++++ common/Makefile.in	Tue Oct 16 08:56:02 2012
+@@ -526,7 +526,7 @@ gdm_crash_logger_CPPFLAGS = \
  	-DLOCALSTATEDIR=\"$(localstatedir)\"	\
  	$(NULL)
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-common_Makefile_in,v 1.4 2012/09/29 19:28:15 ajacoutot Exp $
  @MKDTEMP_MISSING_FALSE@MKDTEMP_FILES = 
  @MKDTEMP_MISSING_TRUE@MKDTEMP_FILES = mkdtemp.c mkdtemp.h
  libgdmcommon_la_SOURCES = \
-@@ -574,6 +574,7 @@ libgdmcommon_la_CFLAGS = \
+@@ -575,6 +575,7 @@ libgdmcommon_la_CFLAGS = \
  	$(NULL)
  
  libgdmcommon_la_LIBADD = \

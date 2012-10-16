@@ -1,7 +1,7 @@
-$OpenBSD: patch-gui_simple-greeter_Makefile_in,v 1.4 2012/09/29 19:28:15 ajacoutot Exp $
---- gui/simple-greeter/Makefile.in.orig	Tue Sep 25 20:04:06 2012
-+++ gui/simple-greeter/Makefile.in	Sat Sep 29 19:46:02 2012
-@@ -573,7 +573,7 @@ AM_CPPFLAGS = \
+$OpenBSD: patch-gui_simple-greeter_Makefile_in,v 1.5 2012/10/16 07:02:58 ajacoutot Exp $
+--- gui/simple-greeter/Makefile.in.orig	Tue Oct 16 04:28:37 2012
++++ gui/simple-greeter/Makefile.in	Tue Oct 16 08:56:02 2012
+@@ -574,7 +574,7 @@ AM_CPPFLAGS = \
  	-DGDMCONFDIR=\"$(gdmconfdir)\"                  \
  	-DDATADIR=\""$(datadir)"\"		 	\
  	-DSYSCONFDIR=\""$(sysconfdir)"\"		\
