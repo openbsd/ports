@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/09/24 19:38:46 pea Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/10/17 20:22:46 pea Exp $
 bin/londiste3
 @bin bin/pgqd
 bin/qadmin
@@ -14,8 +14,6 @@ lib/postgresql/pgq_triggers.so
 lib/python${MODPY_VERSION}/site-packages/londiste/
 lib/python${MODPY_VERSION}/site-packages/londiste/__init__.py
 lib/python${MODPY_VERSION}/site-packages/londiste/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/londiste/bublin.py
-lib/python${MODPY_VERSION}/site-packages/londiste/bublin.pyc
 lib/python${MODPY_VERSION}/site-packages/londiste/compare.py
 lib/python${MODPY_VERSION}/site-packages/londiste/compare.pyc
 lib/python${MODPY_VERSION}/site-packages/londiste/exec_attrs.py
@@ -49,6 +47,8 @@ lib/python${MODPY_VERSION}/site-packages/londiste/syncer.py
 lib/python${MODPY_VERSION}/site-packages/londiste/syncer.pyc
 lib/python${MODPY_VERSION}/site-packages/londiste/table_copy.py
 lib/python${MODPY_VERSION}/site-packages/londiste/table_copy.pyc
+lib/python${MODPY_VERSION}/site-packages/londiste/util.py
+lib/python${MODPY_VERSION}/site-packages/londiste/util.pyc
 lib/python${MODPY_VERSION}/site-packages/pgq/
 lib/python${MODPY_VERSION}/site-packages/pgq/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pgq/__init__.pyc
@@ -85,7 +85,7 @@ lib/python${MODPY_VERSION}/site-packages/pkgloader-1.0-py${MODPY_VERSION}.egg-in
 lib/python${MODPY_VERSION}/site-packages/pkgloader.py
 lib/python${MODPY_VERSION}/site-packages/pkgloader.pyc
 lib/python${MODPY_VERSION}/site-packages/skytools/
-lib/python${MODPY_VERSION}/site-packages/skytools-3.1-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/skytools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/skytools/__init__.py
 lib/python${MODPY_VERSION}/site-packages/skytools/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/skytools/_cquoting.so
@@ -134,16 +134,16 @@ lib/python${MODPY_VERSION}/site-packages/skytools/timeutil.py
 lib/python${MODPY_VERSION}/site-packages/skytools/timeutil.pyc
 lib/python${MODPY_VERSION}/site-packages/skytools/utf8.py
 lib/python${MODPY_VERSION}/site-packages/skytools/utf8.pyc
-@man man/man1/londiste${MODPY_EGG_VERSION}
+@man man/man1/londiste3.1
 @man man/man1/pgqd.1
 @man man/man1/qadmin.1
-@man man/man1/queue_mover${MODPY_EGG_VERSION}
-@man man/man1/queue_splitter${MODPY_EGG_VERSION}
-@man man/man1/scriptmgr${MODPY_EGG_VERSION}
-@man man/man1/simple_consumer${MODPY_EGG_VERSION}
-@man man/man1/simple_local_consumer${MODPY_EGG_VERSION}
-@man man/man1/skytools_upgrade${MODPY_EGG_VERSION}
-@man man/man1/walmgr${MODPY_EGG_VERSION}
+@man man/man1/queue_mover3.1
+@man man/man1/queue_splitter3.1
+@man man/man1/scriptmgr3.1
+@man man/man1/simple_consumer3.1
+@man man/man1/simple_local_consumer3.1
+@man man/man1/skytools_upgrade3.1
+@man man/man1/walmgr3.1
 share/doc/postgresql/
 share/doc/postgresql/extension/
 share/doc/postgresql/extension/README.pgq
@@ -179,20 +179,23 @@ share/postgresql/contrib/pgq_triggers.sql
 share/postgresql/contrib/txid.sql
 share/postgresql/contrib/uninstall_pgq.sql
 share/postgresql/extension/
+share/postgresql/extension/londiste--3.1--${MODPY_EGG_VERSION}.sql
 share/postgresql/extension/londiste--${MODPY_EGG_VERSION}.sql
 share/postgresql/extension/londiste--unpackaged--${MODPY_EGG_VERSION}.sql
 share/postgresql/extension/londiste.control
+share/postgresql/extension/pgq--3.1--${MODPY_EGG_VERSION}.sql
 share/postgresql/extension/pgq--${MODPY_EGG_VERSION}.sql
 share/postgresql/extension/pgq--unpackaged--${MODPY_EGG_VERSION}.sql
 share/postgresql/extension/pgq.control
+share/postgresql/extension/pgq_coop--3.1--${MODPY_EGG_VERSION}.sql
 share/postgresql/extension/pgq_coop--${MODPY_EGG_VERSION}.sql
 share/postgresql/extension/pgq_coop--unpackaged--${MODPY_EGG_VERSION}.sql
 share/postgresql/extension/pgq_coop.control
-share/postgresql/extension/pgq_ext--${MODPY_EGG_VERSION}.sql
-share/postgresql/extension/pgq_ext--unpackaged--${MODPY_EGG_VERSION}.sql
+share/postgresql/extension/pgq_ext--3.1.sql
+share/postgresql/extension/pgq_ext--unpackaged--3.1.sql
 share/postgresql/extension/pgq_ext.control
-share/postgresql/extension/pgq_node--${MODPY_EGG_VERSION}.sql
-share/postgresql/extension/pgq_node--unpackaged--${MODPY_EGG_VERSION}.sql
+share/postgresql/extension/pgq_node--3.1.sql
+share/postgresql/extension/pgq_node--unpackaged--3.1.sql
 share/postgresql/extension/pgq_node.control
 share/skytools3/
 share/skytools3/extra/
