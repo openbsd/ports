@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.33 2012/10/12 17:59:25 rpe Exp $
+# $OpenBSD: Makefile,v 1.34 2012/10/17 09:18:29 sthen Exp $
 
-REVISION-main =		2
+REVISION-main =		3
 REVISION-cgi =		0
 REVISION-ido =		0
 
@@ -17,7 +17,7 @@ WANTLIB =		c crypto m pthread ssl
 
 MULTI_PACKAGES =	-main -cgi -ido
 PREFIX-cgi =		/var/www
-SUBST_VARS +=		PREFIX-cgi
+SUBST_VARS +=		PREFIX-cgi BASESYSCONFDIR
 
 RUN_DEPENDS =		${BASE_PKGPATH},-main
 
