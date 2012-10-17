@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2012/10/07 20:09:44 landry Exp $
+# $OpenBSD: Makefile,v 1.39 2012/10/17 19:58:21 kurt Exp $
 
 ONLY_FOR_ARCHS = amd64 i386 powerpc sparc sparc64
 DPB_PROPERTIES = parallel
@@ -24,7 +24,7 @@ REVISION-main = 12
 REVISION-c++ = 12
 REVISION-estdc = 10
 REVISION-f95 = 12
-REVISION-java = 12
+REVISION-java = 13
 REVISION-objc = 12
 REVISION-ada = 12
 REVISION-go = 12
