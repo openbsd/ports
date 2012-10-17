@@ -1,0 +1,20 @@
+$OpenBSD: patch-module_idoutils_db_pgsql_pgsql_sql,v 1.1 2012/10/17 09:33:06 sthen Exp $
+
+http://postgresql.1045698.n5.nabble.com/Buildfarm-now-building-but-with-test-failures-tp5119291p5120094.html
+
+--- module/idoutils/db/pgsql/pgsql.sql.orig	Wed Oct 17 10:29:21 2012
++++ module/idoutils/db/pgsql/pgsql.sql	Wed Oct 17 10:31:08 2012
+@@ -15,11 +15,11 @@
+ 
+ CREATE OR REPLACE FUNCTION from_unixtime(integer) RETURNS timestamp with time zone AS '
+          SELECT to_timestamp($1) AS result
+-' LANGUAGE 'SQL';
++' LANGUAGE SQL;
+ 
+ CREATE OR REPLACE FUNCTION unix_timestamp(timestamp with time zone) RETURNS bigint AS '
+         SELECT EXTRACT(EPOCH FROM $1)::bigint AS result;
+-' LANGUAGE 'SQL';
++' LANGUAGE SQL;
+ 
+ 
+ -- -----------------------------------------
