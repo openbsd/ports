@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_Makefile_am,v 1.3 2012/10/15 12:15:39 ajacoutot Exp $
+$OpenBSD: patch-src_Makefile_am,v 1.4 2012/10/17 11:49:09 ajacoutot Exp $
 
 libpulse.so and libpulse-mainloop-glib.so are linked "privately" to
 lib/pulseaudio/libpulsecommon.so so add it to the link path.
 
---- src/Makefile.am.orig	Fri Apr 27 09:37:37 2012
-+++ src/Makefile.am	Mon Oct 15 11:31:15 2012
+--- src/Makefile.am.orig	Thu Jul 19 13:29:43 2012
++++ src/Makefile.am	Wed Oct 17 11:26:22 2012
 @@ -602,7 +602,7 @@ libpulsecommon_@PA_MAJORMINOR@_la_SOURCES = \
  
  libpulsecommon_@PA_MAJORMINOR@_la_CFLAGS = $(AM_CFLAGS) $(LIBSNDFILE_CFLAGS)
@@ -48,7 +48,7 @@ lib/pulseaudio/libpulsecommon.so so add it to the link path.
  if HAVE_COREAUDIO
  modlibexec_LTLIBRARIES += \
  		module-coreaudio-detect.la \
-@@ -1298,6 +1301,7 @@ SYMDEF_FILES = \
+@@ -1302,6 +1305,7 @@ SYMDEF_FILES = \
  		module-x11-xsmp-symdef.h \
  		module-x11-cork-request-symdef.h \
  		module-oss-symdef.h \
@@ -56,7 +56,7 @@ lib/pulseaudio/libpulsecommon.so so add it to the link path.
  		module-alsa-sink-symdef.h \
  		module-alsa-source-symdef.h \
  		module-alsa-card-symdef.h \
-@@ -1597,6 +1601,12 @@ liboss_util_la_LIBADD = $(MODULE_LIBADD)
+@@ -1601,6 +1605,12 @@ liboss_util_la_LIBADD = $(MODULE_LIBADD)
  module_oss_la_SOURCES = modules/oss/module-oss.c
  module_oss_la_LDFLAGS = $(MODULE_LDFLAGS)
  module_oss_la_LIBADD = $(MODULE_LIBADD) liboss-util.la

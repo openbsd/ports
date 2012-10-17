@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2012/10/15 12:15:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2012/10/17 11:49:08 ajacoutot Exp $
 
 # XXX
 # fix autospawn lock (patch-src_daemon_main_c)
@@ -16,9 +16,8 @@ SHARED_ONLY=		Yes
 
 COMMENT=		cross-platform networked sound server
 
-VERSION=		2.0
+VERSION=		2.1
 DISTNAME=		pulseaudio-${VERSION}
-REVISION=		5
 
 SHARED_LIBS +=  pulse                1.1      # .14.2
 SHARED_LIBS +=  pulse-simple         0.0      # .0.3
@@ -37,8 +36,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c crypto execinfo gdbm glib-2.0 json ltdl m
-WANTLIB += pcre pthread sndfile sndio speexdsp ssl stdc++
+WANTLIB += c crypto execinfo gdbm glib-2.0 json ltdl m pcre pthread
+WANTLIB += sndfile sndio speexdsp ssl
 
 MASTER_SITES=		http://freedesktop.org/software/pulseaudio/releases/
 TAR=			${LOCALBASE}/bin/gtar
@@ -52,13 +51,14 @@ USE_LIBTOOL=		gnu
 LIBTOOL_FLAGS=		--tag=disable-static
 
 BUILD_DEPENDS=		archivers/gtar
-LIB_DEPENDS=		audio/speex \
+
+LIB_DEPENDS=		audio/libsndfile \
+			audio/speex \
 			databases/gdbm \
-			devel/libexecinfo \
-			devel/libtool,-ltdl>=2.4 \
-			devel/json-c \
 			devel/glib2 \
-			audio/libsndfile
+			devel/json-c \
+			devel/libexecinfo \
+			devel/libtool,-ltdl
 
 AUTOCONF_VERSION=	2.69
 CONFIGURE_STYLE=	autoconf
@@ -104,7 +104,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib \
 				-Wl,-rpath,${TRUEPREFIX}/lib/pulse-${VERSION}/modules"
 
-FAKE_FLAGS=		pulseconfdir="${PREFIX}/share/examples/pulseaudio/pulse/"
+FAKE_FLAGS=		pulseconfdir="${PREFIX}/share/examples/pulseaudio/pulse"
 
 ### SNDIO ###
 CONFIGURE_STYLE=	gnu
