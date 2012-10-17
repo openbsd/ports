@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1084 2012/10/14 03:28:03 abieber Exp $
+# $OpenBSD: Makefile,v 1.1085 2012/10/17 12:00:44 pea Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -408,6 +408,7 @@
      SUBDIR += node-generic-pool
      SUBDIR += node-gir
      SUBDIR += node-mnm
+     SUBDIR += npth
      SUBDIR += nspr
      SUBDIR += ocaml-batteries
      SUBDIR += ocaml-calendar
