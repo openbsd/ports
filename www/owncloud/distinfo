@@ -1,4 +1,4 @@
+SHA256 (owncloud-4.5.0-yubikey.patch) = fOEOqO2RMMb6+YehmXWnxKGbLIaToQEc0adECf2+JgA=
 SHA256 (owncloud-4.5.0.tar.bz2) = dofms5FdV8/1YbFkkrcGbGHYiQq3E8twymxqW+R4MvI=
-SHA256 (owncloud-yubikey.patch) = lKtpm2+tDC0v656UHsFFeDlCJI6cBv/UbYSxltHSS20=
+SIZE (owncloud-4.5.0-yubikey.patch) = 21628
 SIZE (owncloud-4.5.0.tar.bz2) = 9148741
-SIZE (owncloud-yubikey.patch) = 22337
