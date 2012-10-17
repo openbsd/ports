@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2011/09/12 07:28:55 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2012/10/17 07:11:30 ajacoutot Exp $
 @bin bin/vino-passwd
 @bin bin/vino-preferences
 @bin libexec/vino-server
@@ -58,6 +58,7 @@ share/locale/it/LC_MESSAGES/vino.mo
 share/locale/ja/LC_MESSAGES/vino.mo
 share/locale/ka/LC_MESSAGES/vino.mo
 share/locale/kk/LC_MESSAGES/vino.mo
+share/locale/km/LC_MESSAGES/vino.mo
 share/locale/kn/LC_MESSAGES/vino.mo
 share/locale/ko/LC_MESSAGES/vino.mo
 share/locale/ku/LC_MESSAGES/vino.mo

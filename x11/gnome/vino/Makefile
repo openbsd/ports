@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.47 2012/09/29 07:14:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2012/10/17 07:11:30 ajacoutot Exp $
 
 COMMENT=	GNOME desktop sharing server
 
 GNOME_PROJECT=	vino
-GNOME_VERSION=	3.6.0
+GNOME_VERSION=	3.6.1
 
 CATEGORIES=	net
 
@@ -17,15 +17,15 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xtst Xxf86vm
-WANTLIB += atk-1.0 avahi-client avahi-common avahi-glib c cairo
-WANTLIB += cairo-gobject dbus-1 dbus-glib-1 drm expat ffi fontconfig
-WANTLIB += freetype gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gmp gnutls gobject-2.0 gpg-error
-WANTLIB += gthread-2.0 gtk-3 hogweed jpeg m nettle notify p11-kit
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs soup-2.4 stdc++ tasn1 telepathy-glib
-WANTLIB += xcb xcb-render xcb-shm xml2 z atk-bridge-2.0 atspi harfbuzz
-WANTLIB += icudata icule icuuc
+WANTLIB += atk-1.0 atk-bridge-2.0 atspi avahi-client avahi-common
+WANTLIB += avahi-glib c cairo cairo-gobject dbus-1 dbus-glib-1
+WANTLIB += drm expat ffi fontconfig freetype gcrypt gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0
+WANTLIB += gpg-error gthread-2.0 gtk-3 harfbuzz hogweed icudata
+WANTLIB += icule icuuc jpeg m nettle notify p11-kit pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
+WANTLIB += pthread-stubs secret-1 soup-2.4 stdc++ tasn1 telepathy-glib
+WANTLIB += xcb xcb-render xcb-shm xml2 z
 
 MODULES=	devel/dconf \
 		devel/gettext \
@@ -36,7 +36,8 @@ LIB_DEPENDS=	devel/libnotify \
 		net/avahi \
 		net/telepathy/telepathy-glib \
 		security/gnutls \
-		x11/gtk+3>=3.6.0
+		x11/gnome/libsecret \
+		x11/gtk+3
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_TOOLS=		yelp
