@@ -1,0 +1,11 @@
+$OpenBSD: patch-toolkit_components_osfile_osfile_unix_back_jsm,v 1.1 2012/10/17 19:43:24 landry Exp $
+--- toolkit/components/osfile/osfile_unix_back.jsm.orig	Wed Oct 17 21:39:06 2012
++++ toolkit/components/osfile/osfile_unix_back.jsm	Wed Oct 17 21:39:31 2012
+@@ -185,7 +185,6 @@
+ 
+          // We now have built |dirent|.
+          Types.dirent = dirent.getType();
+-         LOG("dirent is: " + Types.dirent.implementation.toSource());
+        }
+        Types.null_or_dirent_ptr =
+          new Type("null_of_dirent",

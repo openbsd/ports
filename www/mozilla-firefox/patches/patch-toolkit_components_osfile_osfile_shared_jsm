@@ -1,0 +1,48 @@
+$OpenBSD: patch-toolkit_components_osfile_osfile_shared_jsm,v 1.1 2012/10/17 19:43:24 landry Exp $
+--- toolkit/components/osfile/osfile_shared.jsm.orig	Wed Oct 17 21:39:45 2012
++++ toolkit/components/osfile/osfile_shared.jsm	Wed Oct 17 21:41:25 2012
+@@ -198,8 +198,6 @@
+        if (!type.size) {
+          throw new TypeError("Argument is not a proper C type");
+        }
+-       LOG("Determining best projection for", type,
+-             "(size: ", type.size, ")", signed?"signed":"unsigned");
+        // Determine if type is projected to Int64/Uint64
+        if (type.size == 8           // Usual case
+            || type == ctypes.size_t // Special cases
+@@ -208,14 +206,11 @@
+            || type == ctypes.uintptr_t
+            || type == ctypes.off_t){
+           if (signed) {
+-            LOG("Projected as a large signed integer");
+             return projectLargeInt;
+           } else {
+-            LOG("Projected as a large unsigned integer");
+             return projectLargeUInt;
+           }
+        }
+-       LOG("Projected as a regular number");
+        return projectValue;
+      };
+      exports.OS.Shared.projectValue = projectValue;
+@@ -599,7 +594,6 @@
+         // thread
+      let declareFFI = function declareFFI(lib, symbol, abi,
+                                           returnType /*, argTypes ...*/) {
+-       LOG("Attempting to declare FFI ", symbol);
+        // We guard agressively, to avoid any late surprise
+        if (typeof symbol != "string") {
+          throw new TypeError("declareFFI expects as first argument a string");
+@@ -634,12 +628,10 @@
+          if (exports.OS.Shared.DEBUG) {
+            result.fun = fun; // Also return the raw FFI function.
+          }
+-         LOG("Function", symbol, "declared");
+          return result;
+        } catch (x) {
+          // Note: Not being able to declare a function is normal.
+          // Some functions are OS (or OS version)-specific.
+-         LOG("Could not declare function " + symbol, x);
+          return null;
+        }
+      };
