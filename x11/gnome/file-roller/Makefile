@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2012/10/16 08:11:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.77 2012/10/17 19:50:29 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=		archive manager utility for GNOME
 COMMENT-nautilus=	file-roller plugin for nautilus
 
 GNOME_PROJECT=		file-roller
-GNOME_VERSION=		3.6.1
+GNOME_VERSION=		3.6.1.1
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-nautilus=	nautilus-${DISTNAME}
