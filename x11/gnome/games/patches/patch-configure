@@ -1,6 +1,9 @@
-$OpenBSD: patch-configure,v 1.9 2012/10/17 10:03:22 jasper Exp $
+$OpenBSD: patch-configure,v 1.10 2012/10/17 10:51:33 jasper Exp $
 
-Remove confusing and bogus line since introspection support has been removed.
+From 77e2f43e2a9231d95f6bea5ceaa2480e1bc9da8d Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Wed, 17 Oct 2012 10:01:35 +0000
+Subject: Remove configure summary line that was forgotten in 2c15931d
 
 --- configure.orig	Wed Oct 17 11:55:28 2012
 +++ configure	Wed Oct 17 11:55:42 2012
