@@ -1,0 +1,5 @@
+nPth is a non-preemptive threads implementation using an API very similar to
+the one known from GNU Pth. It has been designed as a replacement of GNU Pth
+for non-ancient operating systems. In contrast to GNU Pth is is based on the
+system's standard threads implementation. Thus nPth allows the use of
+libraries which are not compatible to GNU Pth.
