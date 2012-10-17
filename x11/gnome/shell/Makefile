@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2012/10/16 14:20:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2012/10/17 11:49:37 ajacoutot Exp $
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		3.6.1
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://live.gnome.org/GnomeShell
 
@@ -44,7 +44,7 @@ MODGNOME_TOOLS=		goi
 # gnome-keybindings.pc
 BUILD_DEPENDS +=	x11/gnome/controlcenter
 
-LIB_DEPENDS=		audio/pulseaudio \
+LIB_DEPENDS=		audio/pulseaudio>=2.1 \
 			databases/evolution-data-server>=3.6.0p3 \
 			multimedia/gstreamer1/core \
 			net/telepathy/telepathy-logger \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2012/10/15 12:13:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.78 2012/10/17 11:49:37 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.6.1
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		x11
 
@@ -44,7 +44,7 @@ LIB_DEPENDS=		x11/gnome/desktop>=3.6.0 \
 			sysutils/upower \
 			devel/libgtop2 \
 			print/cups,-libs \
-			audio/pulseaudio \
+			audio/pulseaudio>=2.1 \
 			audio/libcanberra,-gtk3 \
 			graphics/colord
 

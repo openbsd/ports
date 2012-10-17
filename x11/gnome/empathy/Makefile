@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.109 2012/10/16 12:37:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.110 2012/10/17 11:49:37 ajacoutot Exp $
 
 COMMENT= 		Telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		3.6.1
-REVISION=	0
+REVISION=		1
 
 CATEGORIES=		net
 
@@ -47,7 +47,7 @@ BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/iso-codes \
 			x11/gnome/nautilus-sendto
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
-			audio/pulseaudio>=2.0 \
+			audio/pulseaudio>=2.1 \
 			geo/geoclue \
 			geo/libchamplain>=0.12.2 \
 			graphics/clutter/clutter-gst>=1.9.92 \
