@@ -1,7 +1,7 @@
-$OpenBSD: patch-userdb_pw2userdb_in,v 1.1.1.1 2006/11/03 11:45:31 mbalmer Exp $
---- userdb/pw2userdb.in.orig	Fri Jan  6 11:29:43 2006
-+++ userdb/pw2userdb.in	Fri Jan  6 11:31:23 2006
-@@ -7,6 +7,8 @@
+$OpenBSD: patch-userdb_pw2userdb_in,v 1.2 2012/10/18 08:04:01 giovanni Exp $
+--- userdb/pw2userdb.in.orig	Wed May 25 04:45:24 2011
++++ userdb/pw2userdb.in	Fri Sep  7 14:34:02 2012
+@@ -6,6 +6,8 @@
  # Copyright 1998 - 1999 Double Precision, Inc.  See COPYING for
  # distribution information.
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-userdb_pw2userdb_in,v 1.1.1.1 2006/11/03 11:45:31 mbalmer Exp $
  use Getopt::Long;
  
  #
-@@ -22,42 +24,66 @@ die "Invalid options.\n" unless
+@@ -21,42 +23,66 @@ die "Invalid options.\n" unless
  	if $vpopuid;
  
  $passwd="/etc/passwd" unless $passwd =~ /./;
