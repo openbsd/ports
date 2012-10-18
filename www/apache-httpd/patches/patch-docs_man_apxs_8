@@ -1,12 +1,12 @@
-$OpenBSD: patch-docs_man_apxs_1,v 1.1 2012/07/18 08:45:42 sthen Exp $
---- docs/man/apxs.1.orig	Tue Jan 10 23:32:02 2012
-+++ docs/man/apxs.1	Tue Feb 21 23:13:07 2012
-@@ -19,64 +19,64 @@
+$OpenBSD: patch-docs_man_apxs_8,v 1.4 2012/10/18 08:12:17 giovanni Exp $
+--- docs/man/apxs.8.orig	Thu Sep 20 10:02:17 2012
++++ docs/man/apxs.8	Thu Sep 20 10:04:53 2012
+@@ -19,36 +19,36 @@
  .el .ne 3
  .IP "\\$1" \\$2
  ..
--.TH "APXS" 1 "2012-01-10" "Apache HTTP Server" "apxs"
-+.TH "APXS2" 1 "2012-01-10" "Apache HTTP Server" "apxs2"
+-.TH "APXS" 8 "2012-03-21" "Apache HTTP Server" "apxs"
++.TH "APXS2" 8 "2012-03-21" "Apache HTTP Server" "apxs2"
  
  .SH NAME
 -apxs \- APache eXtenSion tool
@@ -43,13 +43,11 @@ $OpenBSD: patch-docs_man_apxs_1,v 1.1 2012/07/18 08:45:42 sthen Exp $
   
  .PP
 -So to use this extension mechanism your platform has to support the DSO feature and your Apache httpd binary has to be built with the mod_so module\&. The apxs tool automatically complains if this is not the case\&. You can check this yourself by manually running the command
-+So to use this extension mechanism your platform has to support the DSO feature and your Apache httpd2 binary has to be built with the mod_so module\&. The apxs2 tool automatically complains if this is not the case\&. You can check this yourself by manually running the command
++So to use this extension mechanism your platform has to support the DSO feature and your Apache httpd binary has to be built with the mod_so module\&. The apxs2 tool automatically complains if this is not the case\&. You can check this yourself by manually running the command
   
  .nf
  
--      $ httpd -l
-+      $ httpd2 -l
-     
+@@ -57,26 +57,26 @@ So to use this extension mechanism your platform has t
  .fi
   
  .PP
@@ -64,10 +62,9 @@ $OpenBSD: patch-docs_man_apxs_1,v 1.1 2012/07/18 08:45:42 sthen Exp $
        ld -Bshareable -o mod_foo\&.so mod_foo\&.o
        cp mod_foo\&.so /path/to/apache/modules/mod_foo\&.so
        chmod 755 /path/to/apache/modules/mod_foo\&.so
--      [activating module `foo' in /path/to/apache/etc/httpd\&.conf]
+       [activating module `foo' in /path/to/apache/etc/httpd\&.conf]
 -      $ apachectl restart
 -      /path/to/apache/sbin/apachectl restart: httpd not running, trying to start
-+      [activating module `foo' in /path/to/apache/etc/httpd2\&.conf]
 +      $ apachectl2 restart
 +      /path/to/apache/sbin/apachectl2 restart: httpd2 not running, trying to start
        [Tue Mar 31 11:27:55 1998] [debug] mod_so\&.c(303): loaded module foo_module
@@ -116,22 +113,6 @@ $OpenBSD: patch-docs_man_apxs_1,v 1.1 2012/07/18 08:45:42 sthen Exp $
    
  .SS "DSO Compilation Options"
   
-@@ -148,13 +148,13 @@ This option passes \fIlinker-flags\fR as additional fl
- This indicates the installation operation and installs one or more dynamically shared objects into the server's \fImodules\fR directory\&.  
- .TP
- -a
--This activates the module by automatically adding a corresponding LoadModule line to Apache's httpd\&.conf configuration file, or by enabling it if it already exists\&.  
-+This activates the module by automatically adding a corresponding LoadModule line to Apache's httpd2\&.conf configuration file, or by enabling it if it already exists\&.  
- .TP
- -A
- Same as option -a but the created LoadModule directive is prefixed with a hash sign (#), \fIi\&.e\&.\fR, the module is just prepared for later activation but initially disabled\&.  
- .TP
- -e
--This indicates the editing operation, which can be used with the -a and -A options similarly to the -i operation to edit Apache's httpd\&.conf configuration file without attempting to install the module\&.  
-+This indicates the editing operation, which can be used with the -a and -A options similarly to the -i operation to edit Apache's httpd2\&.conf configuration file without attempting to install the module\&.  
-   
- .SH "EXAMPLES"
-  
 @@ -163,7 +163,7 @@ Assume you have an Apache module named mod_foo\&.c ava
   
  .nf
@@ -141,12 +122,12 @@ $OpenBSD: patch-docs_man_apxs_1,v 1.1 2012/07/18 08:45:42 sthen Exp $
        /path/to/libtool --mode=compile gcc \&.\&.\&. -c mod_foo\&.c
        /path/to/libtool --mode=link gcc \&.\&.\&. -o mod_foo\&.la mod_foo\&.slo
        $ _
-@@ -171,16 +171,16 @@ Assume you have an Apache module named mod_foo\&.c ava
+@@ -171,11 +171,11 @@ Assume you have an Apache module named mod_foo\&.c ava
  .fi
   
  .PP
 -Then you have to update the Apache configuration by making sure a LoadModule directive is present to load this shared object\&. To simplify this step apxs provides an automatic way to install the shared object in its "modules" directory and updating the httpd\&.conf file accordingly\&. This can be achieved by running:
-+Then you have to update the Apache configuration by making sure a LoadModule directive is present to load this shared object\&. To simplify this step apxs2 provides an automatic way to install the shared object in its "modules" directory and updating the httpd2\&.conf file accordingly\&. This can be achieved by running:
++Then you have to update the Apache configuration by making sure a LoadModule directive is present to load this shared object\&. To simplify this step apxs2 provides an automatic way to install the shared object in its "modules" directory and updating the httpd\&.conf file accordingly\&. This can be achieved by running:
   
  .nf
  
@@ -155,12 +136,6 @@ $OpenBSD: patch-docs_man_apxs_1,v 1.1 2012/07/18 08:45:42 sthen Exp $
        /path/to/instdso\&.sh mod_foo\&.la /path/to/apache/modules
        /path/to/libtool --mode=install cp mod_foo\&.la /path/to/apache/modules
        \&.\&.\&.
-       chmod 755 /path/to/apache/modules/mod_foo\&.so
--      [activating module `foo' in /path/to/apache/conf/httpd\&.conf]
-+      [activating module `foo' in /path/to/apache/conf/httpd2\&.conf]
-       $ _
-     
- .fi
 @@ -199,16 +199,16 @@ is added to the configuration file if still not presen
   
  .nf
@@ -195,10 +170,9 @@ $OpenBSD: patch-docs_man_apxs_1,v 1.1 2012/07/18 08:45:42 sthen Exp $
        /path/to/libtool --mode=install cp mod_foo\&.la /path/to/apache/modules
        \&.\&.\&.
        chmod 755 /path/to/apache/modules/mod_foo\&.so
--      [activating module `foo' in /path/to/apache/conf/httpd\&.conf]
+       [activating module `foo' in /path/to/apache/conf/httpd\&.conf]
 -      apachectl restart
 -      /path/to/apache/sbin/apachectl restart: httpd not running, trying to start
-+      [activating module `foo' in /path/to/apache/conf/httpd2\&.conf]
 +      apachectl2 restart
 +      /path/to/apache/sbin/apachectl2 restart: httpd2 not running, trying to start
        [Tue Mar 31 11:27:55 1998] [debug] mod_so\&.c(303): loaded module foo_module

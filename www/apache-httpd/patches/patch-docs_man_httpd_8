@@ -1,12 +1,12 @@
-$OpenBSD: patch-docs_man_httpd_8,v 1.4 2011/09/01 13:40:09 giovanni Exp $
---- docs/man/httpd.8.orig	Fri Feb  4 16:20:03 2011
-+++ docs/man/httpd.8	Wed Aug 31 11:57:42 2011
+$OpenBSD: patch-docs_man_httpd_8,v 1.5 2012/10/18 08:12:17 giovanni Exp $
+--- docs/man/httpd.8.orig	Fri Feb 10 22:47:55 2012
++++ docs/man/httpd.8	Wed Oct 10 16:31:01 2012
 @@ -19,30 +19,30 @@
  .el .ne 3
  .IP "\\$1" \\$2
  ..
--.TH "HTTPD" 8 "2010-09-28" "Apache HTTP Server" "httpd"
-+.TH "HTTPD2" 8 "2010-09-28" "Apache HTTP Server" "httpd"
+-.TH "HTTPD" 8 "2012-02-10" "Apache HTTP Server" "httpd"
++.TH "HTTPD2" 8 "2012-02-10" "Apache HTTP Server" "httpd2"
  
  .SH NAME
 -httpd \- Apache Hypertext Transfer Protocol Server
@@ -46,8 +46,8 @@ $OpenBSD: patch-docs_man_httpd_8,v 1.4 2011/09/01 13:40:09 giovanni Exp $
 +Uses the directives in the file \fIconfig\fR on startup\&. If \fIconfig\fR does not begin with a /, then it is taken to be a path relative to the ServerRoot\&. The default is conf/httpd2\&.conf\&.  
  .TP
  -k start|restart|graceful|stop|graceful-stop
--Signals httpd to start, restart, or stop\&. See Stopping Apache for more information\&.  
-+Signals httpd2 to start, restart, or stop\&. See Stopping Apache for more information\&.  
+-Signals httpd to start, restart, or stop\&. See Stopping Apache httpd for more information\&.  
++Signals httpd2 to start, restart, or stop\&. See Stopping Apache httpd2 for more information\&.  
  .TP
  -C \fIdirective\fR
  Process the configuration \fIdirective\fR before reading config files\&.  
@@ -68,3 +68,16 @@ $OpenBSD: patch-docs_man_httpd_8,v 1.4 2011/09/01 13:40:09 giovanni Exp $
   
  .PP
  The following arguments are available only on the Windows platform:
+@@ -112,10 +112,10 @@ The following arguments are available only on the Wind
+  
+ .TP
+ -k install|config|uninstall
+-Install Apache httpd as a Windows NT service; change startup options for the Apache httpd service; and uninstall the Apache httpd service\&.  
++Install Apache httpd2 as a Windows NT service; change startup options for the Apache httpd2 service; and uninstall the Apache httpd2 service\&.  
+ .TP
+ -n \fIname\fR
+-The \fIname\fR of the Apache httpd service to signal\&.  
++The \fIname\fR of the Apache httpd2 service to signal\&.  
+ .TP
+ -w
+ Keep the console window open on error so that the error message can be read\&.  

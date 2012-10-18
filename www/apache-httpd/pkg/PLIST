@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2012/07/18 08:45:42 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.21 2012/10/18 08:12:17 giovanni Exp $
 @newgroup _apache2:576
 @newuser _apache2:576:576:daemon:Apache HTTP Server:/var/empty:/sbin/nologin
 include/apache2/
@@ -112,17 +112,17 @@ lib/apache2/mod_userdir.so
 lib/apache2/mod_usertrack.so
 lib/apache2/mod_version.so
 lib/apache2/mod_vhost_alias.so
-@man man/man1/ab.1
-@man man/man1/apxs2.1
 @man man/man1/dbmmanage2.1
 @man man/man1/htdbm.1
 @man man/man1/htdigest2.1
 @man man/man1/htpasswd2.1
 @man man/man1/httxt2dbm.1
-@man man/man1/logresolve2.1
+@man man/man8/ab.8
 @man man/man8/apachectl2.8
+@man man/man8/apxs2.8
 @man man/man8/htcacheclean.8
 @man man/man8/httpd2.8
+@man man/man8/logresolve2.8
 @man man/man8/rotatelogs2.8
 @man man/man8/suexec2.8
 @bin sbin/ab
@@ -308,6 +308,7 @@ share/doc/apache2/images/mod_rewrite_fig1.png
 share/doc/apache2/images/mod_rewrite_fig2.gif
 share/doc/apache2/images/mod_rewrite_fig2.png
 share/doc/apache2/images/pixel.gif
+share/doc/apache2/images/rewrite_backreferences.png
 share/doc/apache2/images/rewrite_rule_flow.png
 share/doc/apache2/images/right.gif
 share/doc/apache2/images/ssl_intro_fig1.gif
@@ -920,6 +921,7 @@ share/doc/apache2/style/css/manual-print.css
 share/doc/apache2/style/css/manual-zip-100pc.css
 share/doc/apache2/style/css/manual-zip.css
 share/doc/apache2/style/css/manual.css
+share/doc/apache2/style/css/prettify.css
 share/doc/apache2/style/faq.dtd
 share/doc/apache2/style/lang/
 share/doc/apache2/style/lang.dtd
@@ -927,6 +929,8 @@ share/doc/apache2/style/latex/
 share/doc/apache2/style/latex/atbeginend.sty
 share/doc/apache2/style/manualpage.dtd
 share/doc/apache2/style/modulesynopsis.dtd
+share/doc/apache2/style/scripts/
+share/doc/apache2/style/scripts/prettify.js
 share/doc/apache2/style/sitemap.dtd
 share/doc/apache2/style/version.ent
 share/doc/apache2/style/xsl/
