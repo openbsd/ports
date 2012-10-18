@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/09/21 13:19:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2012/10/18 06:21:37 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		pangox compatibility library
 
-GNOME_VERSION=		0.0.1
+GNOME_VERSION=		0.0.2
 GNOME_PROJECT=		pangox-compat
 
 SHARED_LIBS +=  pangox-1.0         2906.0   # 0.0
