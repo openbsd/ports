@@ -1,0 +1,11 @@
+$OpenBSD: patch-xlgui___init___py,v 1.1 2012/10/18 08:15:41 giovanni Exp $
+--- xlgui/__init__.py.orig	Mon Oct 15 14:59:25 2012
++++ xlgui/__init__.py	Mon Oct 15 14:59:30 2012
+@@ -344,7 +344,6 @@ class Main(object):
+ 
+         # save open tabs
+         self.main.playlist_notebook.save_current_tabs()
+-        gtk.gdk.threads_leave()
+ 
+     @guiutil.idle_add()
+     def add_device_panel(self, type, obj, device):

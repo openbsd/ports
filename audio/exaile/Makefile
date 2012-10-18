@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.23 2012/09/06 12:38:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2012/10/18 08:15:41 giovanni Exp $
 
 COMMENT =	music manager and player for GTK+ written in Python
 
-V =		0.3.2
-P =		2
+V =		3.3
+P =		0
 DISTNAME =	exaile-${V}.${P}
-REVISION =	3
 
 CATEGORIES =	audio x11
 
 HOMEPAGE =	http://www.exaile.org/
 
-MASTER_SITES = http://www.launchpad.net/exaile/$V/$V.$P/+download/
+MASTER_SITES = http://www.launchpad.net/exaile/$V.x/$V.$P/+download/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes

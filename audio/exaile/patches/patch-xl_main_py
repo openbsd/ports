@@ -1,16 +1,7 @@
-$OpenBSD: patch-xl_main_py,v 1.1 2012/06/18 06:03:37 rpointel Exp $
---- xl/main.py.orig	Wed Jun 13 09:54:17 2012
-+++ xl/main.py	Wed Jun 13 09:57:41 2012
-@@ -499,7 +499,8 @@ class Exaile(object):
-             dbus.mainloop.glib.gthreads_init()
-         if self.options.StartGui:
-             import gtk
-             gtk.gdk.threads_init()
-+            gtk.gdk.threads_enter()
-         else:
-             loop = glib.MainLoop()
-             context = loop.get_context()
-@@ -513,6 +513,8 @@ class Exaile(object):
+$OpenBSD: patch-xl_main_py,v 1.2 2012/10/18 08:15:41 giovanni Exp $
+--- xl/main.py.orig	Sun Sep  9 21:07:41 2012
++++ xl/main.py	Wed Sep 26 11:21:23 2012
+@@ -617,6 +617,8 @@ class Exaile(object):
                  context.iteration(True)
              except:
                  pass

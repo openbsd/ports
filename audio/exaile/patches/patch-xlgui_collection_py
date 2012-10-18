@@ -1,0 +1,11 @@
+$OpenBSD: patch-xlgui_collection_py,v 1.1 2012/10/18 08:15:41 giovanni Exp $
+--- xlgui/collection.py.orig	Mon Oct 15 19:07:32 2012
++++ xlgui/collection.py	Mon Oct 15 19:07:48 2012
+@@ -119,7 +119,6 @@ class CollectionManagerDialog(object):
+         dialog.set_current_folder(xdg.get_last_dir())
+         dialog.set_local_only(False) # enable gio
+         response = dialog.run()
+-        dialog.hide()
+ 
+         if response == gtk.RESPONSE_OK:
+             location = gio.File(dialog.get_uri())
