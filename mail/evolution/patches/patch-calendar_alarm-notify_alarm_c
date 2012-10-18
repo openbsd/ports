@@ -1,6 +1,6 @@
-$OpenBSD: patch-calendar_alarm-notify_alarm_c,v 1.1 2012/03/29 06:56:25 ajacoutot Exp $
+$OpenBSD: patch-calendar_alarm-notify_alarm_c,v 1.2 2012/10/18 12:29:43 ajacoutot Exp $
 
-On OpenBSD, time_t is an int.
+XXX remove when we have a 64-bit time_t
 
 --- calendar/alarm-notify/alarm.c.orig	Wed Mar 28 09:20:43 2012
 +++ calendar/alarm-notify/alarm.c	Wed Mar 28 09:22:27 2012
