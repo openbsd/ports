@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2012/10/15 15:06:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2012/10/18 21:23:51 espie Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		Asterisk: The Future of Telephony
 
 PKGNAME=		AsteriskTFOT-2.0
-DISTNAME=		9780596510480 # ISBN-13 filename
+DISTNAME=		9780596510480# ISBN-13 filename
 EXTRACT_SUFX=	.pdf
 
 EXTRACT_CASES=  *) cp ${FULLDISTDIR}/$$archive ${WRKDIST};;

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2012/05/12 04:31:03 kirby Exp $
+# $OpenBSD: Makefile,v 1.16 2012/10/18 21:23:51 espie Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 macppc
 
@@ -11,7 +11,7 @@ MULTI_PACKAGES =	-main -server -data
 CATEGORIES =		games x11
 
 V =			0.8.8
-E_V =			${V}	# engine version
+E_V =			${V}# 	engine version
 
 PKGNAME =		openarena-${V}
 PKGNAME-main =		openarena-${V}

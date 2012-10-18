@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.48 2010/11/20 09:48:38 espie Exp $
+# $OpenBSD: Makefile,v 1.49 2012/10/18 21:23:51 espie Exp $
 
 COMMENT=		SLang-based newsreader
 
-DISTNAME=		slrn-0.9.9p1 # p1 is part of upstream version XXX
+# p1 is part of upstream version XXX
+DISTNAME=		slrn-0.9.9p1
 PKGNAME=		${DISTNAME:S/p/pl/}
 REVISION=		0
 CATEGORIES=		news

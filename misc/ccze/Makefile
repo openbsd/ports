@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2012/10/14 09:25:07 rpe Exp $
+# $OpenBSD: Makefile,v 1.15 2012/10/18 21:23:51 espie Exp $
 
 COMMENT=	log colorizer
 
-DISTNAME=	ccze-0.2.1	
+DISTNAME=	ccze-0.2.1
 REVISION=	3
 CATEGORIES=	misc
 

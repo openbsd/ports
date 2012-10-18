@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/09/16 09:24:55 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2012/10/18 21:23:51 espie Exp $
 
 ONLY_FOR_ARCHS =	i386
 SHARED_ONLY =		Yes
@@ -23,7 +23,7 @@ PERMIT_DISTFILES_FTP =		Yes
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=psyco/}
 
 MODULES =	lang/python
-MODPY_VERSION ?= 2.5 # not ported to python 2.7 yet.
+MODPY_VERSION ?= 2.5# not ported to python 2.7 yet.
 
 WRKDIST =	${WRKDIR}/psyco-${MODPY_EGG_VERSION}
 

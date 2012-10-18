@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2012/09/29 15:22:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2012/10/18 21:23:51 espie Exp $
 
 COMMENT=	expose media content over D-Bus for Rygel to consume
 
 GNOME_PROJECT=	grilo-mediaserver2
-GNOME_VERSION=	0.0.2	# git clone of 4614b1969dcdea2c254af3178b70966282468c07
+GNOME_VERSION=	0.0.2
+# git clone of 4614b1969dcdea2c254af3178b70966282468c07
 
 SHARED_LIBS +=  mediaserver2              0.0 # 0.0
 
