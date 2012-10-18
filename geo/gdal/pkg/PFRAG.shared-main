@@ -1,2 +1,1 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.1 2009/03/13 08:56:53 landry Exp $
-@lib lib/libgdal.so.${LIBgdal_VERSION}
+@comment $OpenBSD: PFRAG.shared-main,v 1.2 2012/10/18 07:09:29 landry Exp $

@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2011/07/01 08:04:57 landry Exp $
-@pkgpath geo/gdal
+@comment $OpenBSD: PLIST-main,v 1.7 2012/10/18 07:09:29 landry Exp $
 @conflict gdal-<=1.8.0
-%%SHARED%%
+@pkgpath geo/gdal
 bin/gdal-config
 @bin bin/gdal_contour
 @bin bin/gdal_grid
@@ -14,6 +13,7 @@ bin/gdal-config
 @bin bin/gdalinfo
 @bin bin/gdallocationinfo
 @bin bin/gdalmanage
+@bin bin/gdalsrsinfo
 @bin bin/gdaltindex
 @bin bin/gdaltransform
 @bin bin/gdalwarp
@@ -23,7 +23,6 @@ bin/gdal-config
 @bin bin/ogrtindex
 @bin bin/testepsg
 include/cpl_atomic_ops.h
-include/cpl_base64.h
 include/cpl_config.h
 include/cpl_config_extras.h
 include/cpl_conv.h
@@ -78,6 +77,7 @@ include/thinplatespline.h
 include/vrtdataset.h
 lib/libgdal.a
 lib/libgdal.la
+@lib lib/libgdal.so.${LIBgdal_VERSION}
 share/gdal/
 share/gdal/GDALLogoBW.svg
 share/gdal/GDALLogoColor.svg
@@ -90,14 +90,19 @@ share/gdal/datum_shift.csv
 share/gdal/ecw_cs.wkt
 share/gdal/ellipsoid.csv
 share/gdal/epsg.wkt
+share/gdal/esri_StatePlane_extra.wkt
+share/gdal/esri_Wisconsin_extra.wkt
 share/gdal/esri_extra.wkt
 share/gdal/gcs.csv
 share/gdal/gcs.override.csv
 share/gdal/gdal_datum.csv
 share/gdal/gdalicon.png
+share/gdal/geoccs.csv
 share/gdal/gt_datum.csv
 share/gdal/gt_ellips.csv
 share/gdal/header.dxf
+share/gdal/nitf_spec.xml
+share/gdal/nitf_spec.xsd
 share/gdal/pci_datum.txt
 share/gdal/pci_ellips.txt
 share/gdal/pcs.csv

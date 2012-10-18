@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure,v 1.4 2011/12/28 21:14:04 landry Exp $
+$OpenBSD: patch-configure,v 1.5 2012/10/18 07:09:29 landry Exp $
 ensure MODPY_BIN is picked to try detecting setuptools
---- configure.orig	Sat Jul  9 18:33:34 2011
-+++ configure	Tue Oct  4 14:42:10 2011
-@@ -24384,7 +24384,7 @@ $as_echo_n "checking for python setuptools... " >&6; }
+--- configure.orig	Tue Oct  9 02:58:28 2012
++++ configure	Wed Oct 17 14:06:25 2012
+@@ -27340,7 +27340,7 @@ $as_echo_n "checking for python setuptools... " >&6; }
    print 1
  except ImportError:
    pass'

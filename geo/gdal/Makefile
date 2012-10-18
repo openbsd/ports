@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.22 2012/08/23 13:52:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2012/10/18 07:09:29 landry Exp $
 
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
 COMMENT-perl =	perl bindings for GDAL
 
-V =		1.8.1
+V =		1.9.2
 DISTNAME =	gdal-${V}
+SHARED_ONLY =	Yes
 
 PKGNAME-main =	${DISTNAME}
 PKGNAME-python =py-${DISTNAME}
 PKGNAME-perl =	p5-Geo-GDAL-${V}
-REVISION-perl = 0
 
-SHARED_LIBS =	gdal 18.0 #16.1
+SHARED_LIBS =	gdal 19.0 #17.1
 CATEGORIES =	geo devel
 
 HOMEPAGE =	http://www.gdal.org/
@@ -48,10 +48,10 @@ WANTLIB-main =		${WANTLIB} c crypto expat m ssl stdc++ z tiff \
 			com_err proj pthread
 
 LIB_DEPENDS-python =	${PKGNAME}:${BASE_PKGPATH},-main
-WANTLIB-python =	${MODPY_WANTLIB} gdal m stdc++
+WANTLIB-python =	${MODPY_WANTLIB} gdal m pthread stdc++
 
 LIB_DEPENDS-perl =	${PKGNAME}:${BASE_PKGPATH},-main
-WANTLIB-perl =		c gdal crypto curl expat geos_c geotiff gif idn \
+WANTLIB-perl =		gdal crypto curl expat geos_c geotiff gif idn \
 			jasper jpeg m png pq ssl tiff z pthread \
 			${MODGETTEXT_WANTLIB}
 
