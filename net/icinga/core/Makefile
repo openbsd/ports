@@ -1,8 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2012/10/17 09:33:06 sthen Exp $
-
-REVISION-main =		3
-REVISION-cgi =		0
-REVISION-ido =		1
+# $OpenBSD: Makefile,v 1.36 2012/10/18 20:04:58 sthen Exp $
 
 COMMENT-main =		network monitoring system (improved fork of Nagios)
 COMMENT-cgi =		cgi scripts for Icinga (classic Nagios-style UI)
@@ -78,13 +74,19 @@ REGRESS_DEPENDS = devel/p5-IPC-Run3
 
 post-install:
 	${INSTALL_DATA_DIR} ${WRKINST}${PREFIX-cgi}/conf/modules.sample
-	${INSTALL_DATA_DIR} \
-	    ${PREFIX}/share/examples/icinga/db/{mysql,pgsql,queries,scripts}
+	cd ${PREFIX}/share; ${INSTALL_DATA_DIR} \
+	    examples/icinga/db/{mysql,pgsql,queries,scripts} \
+	    examples/icinga/updates doc/icinga
+	cd ${WRKSRC}; ${INSTALL_DATA} README LICENSE UPGRADING \
+	    Changelog Changelog_json ${PREFIX}/share/doc/icinga/
+	${INSTALL_DATA} ${WRKSRC}/sample-config/updates/* \
+	    ${WRKSRC}/module/idoutils/config/updates/* \
+	    ${PREFIX}/share/examples/icinga/updates/
 	cd ${WRKINST}${PREFIX-cgi}; \
 	mv conf/modules.sample/icinga.conf \
 	    conf/modules.sample/icinga-cgi.conf.dist; \
 	chown -R ${SHAREOWN}:${SHAREGRP} icinga-cgi conf
 	cd ${WRKSRC}/module/idoutils; \
-	pax -rw db ${PREFIX}/share/examples/icinga/
+	    pax -rw db ${PREFIX}/share/examples/icinga/
 
 .include <bsd.port.mk>

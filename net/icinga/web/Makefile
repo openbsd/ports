@@ -1,20 +1,21 @@
-# $OpenBSD: Makefile,v 1.12 2012/10/12 17:59:25 rpe Exp $
+# $OpenBSD: Makefile,v 1.13 2012/10/18 20:04:58 sthen Exp $
 
 COMMENT =	web UI for icinga
 DISTNAME =	icinga-web-$V
-REVISION =	0
 
 MODULES=	lang/php
 
 RUN_DEPENDS =	www/pear \
+		lang/php/${MODPHP_VERSION},-gd \
 		lang/php/${MODPHP_VERSION},-ldap \
 		lang/php/${MODPHP_VERSION},-xsl \
 		php-pdo_mysql-${MODPHP_VSPEC}|php-pdo_pgsql-${MODPHP_VSPEC}:lang/php/${MODPHP_VERSION},-pdo_mysql \
 		net/icinga/core \
 		net/icinga/core,-ido \
 		shells/bash
-# Optional php extensions: gd soap xmlrpc
-# memcache
+# Optional php extensions: soap xmlrpc memcache
+
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 LOCALSTATEDIR =	${BASELOCALSTATEDIR}/icinga
 
@@ -45,6 +46,9 @@ INSTALL_TARGET = install install-apache-config
 
 PREFIX =	/var/www/icinga-web
 
+pre-configure:
+	@ln -s ${MODPHP_BIN} ${WRKDIR}/bin/php
+
 post-configure:
 	@find ${WRKSRC}/bin -name '*.sh' -print0 | xargs -0r \
 		perl -pi -e 's,^#!/bin/bash,#!${LOCALBASE}/bin/bash,g'
@@ -54,11 +58,7 @@ pre-install:
 
 post-install:
 	find ${WRKINST} -name '*.orig' -print0 | xargs -0r rm
-	cd ${PREFIX}; \
-	${INSTALL_DATA_DIR} ${PREFIX}/etc/schema/updates
-	cd ${WRKSRC}/etc/schema; \
-	${INSTALL_DATA} *sql ${PREFIX}/etc/schema; \
-	${INSTALL_DATA} updates/*sql ${PREFIX}/etc/schema/updates
+	cd ${WRKSRC}/etc/schema; pax -rw ./ ${PREFIX}/etc/schema/
 	for i in ${PREFIX}/etc/conf.d/*xml; do mv $$i $$i.dist; done
 
 .include <bsd.port.mk>

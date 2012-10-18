@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.6 2012/06/19 10:01:52 sthen Exp $
---- configure.orig	Fri Jun 15 18:26:09 2012
-+++ configure	Mon Jun 18 18:28:02 2012
-@@ -5186,7 +5186,7 @@ cat >>confdefs.h <<_ACEOF
+$OpenBSD: patch-configure,v 1.7 2012/10/18 20:04:58 sthen Exp $
+--- configure.orig	Wed Oct 17 11:38:03 2012
++++ configure	Thu Oct 18 13:36:58 2012
+@@ -5189,7 +5189,7 @@ cat >>confdefs.h <<_ACEOF
  #define DEFAULT_NAGIOS_GROUP "$icinga_grp"
  _ACEOF
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.6 2012/06/19 10:01:52 sthen Exp $
  
  
  
-@@ -5207,7 +5207,7 @@ fi
+@@ -5210,7 +5210,7 @@ fi
  
  
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure,v 1.6 2012/06/19 10:01:52 sthen Exp $
  
  
  
-@@ -5811,7 +5811,7 @@ $as_echo_n "checking for gdImagePng in -lgd (order 1).
+@@ -5797,7 +5797,7 @@ $as_echo_n "checking for gdImagePng in -lgd (order 1).
    $as_echo_n "(cached) " >&6
  else
    ac_save_LIBS="$LIBS"
@@ -28,7 +28,7 @@ $OpenBSD: patch-configure,v 1.6 2012/06/19 10:01:52 sthen Exp $
  	cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  	/* Override any gcc2 internal prototype to avoid an error.  */
-@@ -5842,7 +5842,7 @@ fi
+@@ -5828,7 +5828,7 @@ fi
  $as_echo "yes" >&6; }
  
  			GDLIBFOUND=yep
@@ -37,7 +37,7 @@ $OpenBSD: patch-configure,v 1.6 2012/06/19 10:01:52 sthen Exp $
  
  	else
  	  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
-@@ -7109,7 +7109,7 @@ $as_echo_n "checking for SSL libraries... " >&6; }
+@@ -7057,7 +7057,7 @@ $as_echo_n "checking for SSL libraries... " >&6; }
  		found_ssl=no
  		for dir in $ssl_lib_dir $ssl_dir /usr/lib64 /usr/lib /usr/local/lib /usr/lib/ssl /usr/ssl/lib /usr/openssl/lib /usr/pkg/lib  /usr/freeware/lib/openssl; do
  			ssllibdir="$dir"

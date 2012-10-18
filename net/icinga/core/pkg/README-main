@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.10 2012/10/17 09:18:29 sthen Exp $
+$OpenBSD: README-main,v 1.11 2012/10/18 20:04:58 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -30,17 +30,25 @@ To start icinga, reboot or start it manually:
 
    $ sudo /etc/rc.d/icinga start
 
+
 Upgrading from a previous version
 =================================
 
 If you are using IDODB, you will need to update the database schema.
-See ${PREFIX-cgi}/icinga-cgi/docs/en/upgrading_idoutils.html or
+Typically you will just need to apply updates from
+${TRUEPREFIX}/share/examples/icinga/db/<yourrdbms>/upgrade/, but
+see ${PREFIX-cgi}/icinga-cgi/docs/en/upgrading_idoutils.html or
 http://docs.icinga.org/latest/en/upgrading_idoutils.html for more
 information.
 
-In 1.7.0, the IDO plugin was renamed from ${TRUEPREFIX}/bin/idomod.o to
-${TRUEPREFIX}/lib/idomod.so - change your broker_module setting in
-${SYSCONFDIR}/icinga.cfg.
+If upgrading from IDODB 1.6.1 or earlier, update your broker_module
+setting in ${SYSCONFDIR}/icinga.cfg; the plugin was renamed from
+${TRUEPREFIX}/bin/idomod.o to ${TRUEPREFIX}/lib/idomod.so in 1.7.0.
+
+If upgrading from an earlier version of icinga-web (the PHP API-based
+web interface), you will need to apply updates to the icinga_web database
+schema from /var/www/icinga-web/etc/schema/updates.
+
 
 Chroot Considerations
 =====================
@@ -56,6 +64,7 @@ jail and symbolic links created.
    ln -s ${PREFIX-cgi}/var/icinga /var
    mv /var/log/icinga ${PREFIX-cgi}/var/log/
    ln -s ${PREFIX-cgi}/var/log/icinga /var/log
+
 
 Web User-Interfaces
 ===================

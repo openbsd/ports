@@ -1,0 +1,19 @@
+$OpenBSD: patch-configure,v 1.4 2012/10/18 20:04:58 sthen Exp $
+--- configure.orig	Thu Oct 18 13:53:51 2012
++++ configure	Thu Oct 18 13:53:32 2012
+@@ -2214,6 +2214,7 @@ fi
+ 
+ # Checks for library functions.
+ 
++if false; then
+   for x in sockets xsl xml json;do
+      { $as_echo "$as_me:${as_lineno-$LINENO}: checking if php has $x module" >&5
+ $as_echo_n "checking if php has $x module... " >&6; }
+@@ -2224,6 +2225,7 @@ else
+    as_fn_error $? "not found" "$LINENO" 5
+ fi
+   done
++fi
+ 
+ # Define install options
+ 

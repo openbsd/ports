@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ido,v 1.9 2012/05/27 09:49:49 sthen Exp $
+@comment $OpenBSD: PLIST-ido,v 1.10 2012/10/18 20:04:58 sthen Exp $
 @bin bin/ido2db
 @bin bin/log2ido
 lib/idomod.so
@@ -19,6 +19,7 @@ share/examples/icinga/db/mysql/upgrade/mysql-upgrade-1.4.0.sql
 share/examples/icinga/db/mysql/upgrade/mysql-upgrade-1.5.0.sql
 share/examples/icinga/db/mysql/upgrade/mysql-upgrade-1.6.0.sql
 share/examples/icinga/db/mysql/upgrade/mysql-upgrade-1.7.0.sql
+share/examples/icinga/db/mysql/upgrade/mysql-upgrade-1.8.0.sql
 share/examples/icinga/db/oracle/
 share/examples/icinga/db/oracle/create_icinga_objects_oracle.sql
 share/examples/icinga/db/oracle/create_oracle_sys.sql
@@ -36,6 +37,7 @@ share/examples/icinga/db/oracle/upgrade/oracle-upgrade-1.4.0.sql
 share/examples/icinga/db/oracle/upgrade/oracle-upgrade-1.5.0.sql
 share/examples/icinga/db/oracle/upgrade/oracle-upgrade-1.6.0.sql
 share/examples/icinga/db/oracle/upgrade/oracle-upgrade-1.7.0.sql
+share/examples/icinga/db/oracle/upgrade/oracle-upgrade-1.8.0.sql
 share/examples/icinga/db/oracle/upgrade/oracle_alter_icinga13_numbers.sql
 share/examples/icinga/db/oracle/upgrade/oracle_alter_icinga13_objects.sql
 share/examples/icinga/db/oracle/upgrade/oracle_recreate_icinga13_functions.sql
@@ -51,6 +53,7 @@ share/examples/icinga/db/pgsql/upgrade/pgsql-upgrade-1.4.0.sql
 share/examples/icinga/db/pgsql/upgrade/pgsql-upgrade-1.5.0.sql
 share/examples/icinga/db/pgsql/upgrade/pgsql-upgrade-1.6.0.sql
 share/examples/icinga/db/pgsql/upgrade/pgsql-upgrade-1.7.0.sql
+share/examples/icinga/db/pgsql/upgrade/pgsql-upgrade-1.8.0.sql
 share/examples/icinga/db/queries/
 share/examples/icinga/db/queries/comment_history.sql
 share/examples/icinga/db/queries/comments.sql
@@ -101,4 +104,5 @@ share/examples/icinga/idomod.cfg-sample
 @sample ${SYSCONFDIR}/idomod.cfg
 share/examples/icinga/modules/idoutils.cfg-sample
 @sample ${SYSCONFDIR}/modules/idoutils.cfg
+share/examples/icinga/updates/ido2db.cfg_added_1.7_to_1.8.cfg
 @rcscript ${RCDIR}/ido2db
