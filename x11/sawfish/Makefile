@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2012/09/21 13:21:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2012/10/18 06:22:03 ajacoutot Exp $
 
 COMMENT=	extensible window manager
 
@@ -6,7 +6,7 @@ SHARED_ONLY=	Yes
 
 VERSION=	1.9.1
 DISTNAME=	sawfish-${VERSION}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	x11
 
@@ -28,7 +28,8 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/rep-gtk>=0.90.8.1 \
 		x11/gtk+2,-guic
 
-LIB_DEPENDS=	lang/librep \
+LIB_DEPENDS=	devel/pangox-compat>=0.0.2 \
+		lang/librep \
 		x11/gtk+2
 
 WANTLIB += GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
@@ -38,7 +39,7 @@ WANTLIB += gdk_pixbuf_xlib-2.0 gio-2.0 glib-2.0 gmodule-2.0 gmp
 WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 harfbuzz icudata
 WANTLIB += icule icuuc m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pangoxft-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += rep xcb xcb-render xcb-shm z
+WANTLIB += rep xcb xcb-render xcb-shm z pangox-1.0
 
 MODULES=	devel/gettext
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2012/09/21 13:20:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2012/10/18 06:22:03 ajacoutot Exp $
 
 COMMENT=	OpenGL extension to GTK+ 2.0 and later
 
 DISTNAME=	gtkglext-1.2.0
-REVISION=	8
+REVISION=	9
 SHARED_LIBS=	gdkglext-x11-1.0	0.0 \
 		gtkglext-x11-1.0	0.0
 CATEGORIES=	x11 graphics devel
@@ -32,7 +32,7 @@ WANTLIB += xcb-render xcb-shm z
 MODULES=	devel/gettext
 
 LIB_DEPENDS=	x11/gtk+2 \
-		devel/pangox-compat
+		devel/pangox-compat>=0.0.2
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
