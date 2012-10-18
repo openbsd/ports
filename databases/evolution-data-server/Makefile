@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.122 2012/10/16 11:55:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.123 2012/10/18 13:54:56 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
 GNOME_VERSION=		3.6.1
-REVISION=		0
+REVISION=		1
 
 # Only get the first x.y which is needed in the PLIST.
 R=			${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -71,15 +71,10 @@ MODPY_ADJ_FILES=	addressbook/libebook/gen-western-table.py
 MODGNOME_TOOLS= 	goi vala
 MODGNOME_CPPFLAGS=	-I${LOCALBASE}/include/db4
 
-AUTOCONF_VERSION=	2.68
+AUTOCONF_VERSION=	2.69
 
 CONFIGURE_STYLE= 	autoconf
-CONFIGURE_ARGS=		--enable-ssl \
-			--enable-smime \
-			--enable-ipv6 \
-			--enable-weather \
-			--enable-nntp \
-			--with-krb5 \
+CONFIGURE_ARGS=		--with-krb5 \
 			--with-krb5-libs=/usr/lib \
 			--with-krb5-includes=/usr/include/kerberosV \
 			--with-libdb=${LOCALBASE} \

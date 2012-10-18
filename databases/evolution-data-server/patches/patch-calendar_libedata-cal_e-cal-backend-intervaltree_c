@@ -1,15 +1,17 @@
-$OpenBSD: patch-calendar_libedata-cal_e-cal-backend-intervaltree_c,v 1.7 2012/03/29 06:45:21 ajacoutot Exp $
+$OpenBSD: patch-calendar_libedata-cal_e-cal-backend-intervaltree_c,v 1.8 2012/10/18 13:54:56 ajacoutot Exp $
 
-On OpenBSD, time_t is an int.
+XXX remove when we have a 64-bit time_t
 
---- calendar/libedata-cal/e-cal-backend-intervaltree.c.orig	Tue Feb 21 09:04:18 2012
-+++ calendar/libedata-cal/e-cal-backend-intervaltree.c	Fri Mar 23 23:05:19 2012
-@@ -613,7 +613,7 @@ e_intervaltree_node_dump (EIntervalTree *tree,
+--- calendar/libedata-cal/e-cal-backend-intervaltree.c.orig	Sun Sep 16 17:05:38 2012
++++ calendar/libedata-cal/e-cal-backend-intervaltree.c	Thu Oct 18 14:21:21 2012
+@@ -613,8 +613,8 @@ e_intervaltree_node_dump (EIntervalTree *tree,
  	*/
  	EIntervalTreePrivate *priv = tree->priv;
  	if (node != priv->nil)
 -		g_print ("%*s[%ld - %ld] [%ld - %ld] red %d\n", indent, "", node->start,
-+		g_print ("%*s[%d - %d] [%d - %d] red %d\n", indent, "", node->start,
- 				node->end, node->min, node->max, node->red);
+-				node->end, node->min, node->max, node->red);
++		g_print ("%*s[%ld - %ld] [%ld - %ld] red %d\n", indent, "", (long)node->start,
++				(long)node->end, (long)node->min, (long)node->max, node->red);
  	else
  	{
+ 		g_print ("%*s[ - ]\n", indent, "");

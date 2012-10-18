@@ -1,15 +1,15 @@
-$OpenBSD: patch-camel_camel-search-sql-sexp_c,v 1.7 2012/09/28 06:35:36 ajacoutot Exp $
+$OpenBSD: patch-camel_camel-search-sql-sexp_c,v 1.8 2012/10/18 13:54:56 ajacoutot Exp $
 
-On OpenBSD, time_t is an int.
+XXX remove when we have a 64-bit time_t
 
---- camel/camel-search-sql-sexp.c.orig	Fri Sep 28 07:53:54 2012
-+++ camel/camel-search-sql-sexp.c	Fri Sep 28 07:54:44 2012
+--- camel/camel-search-sql-sexp.c.orig	Sun Sep 16 17:05:39 2012
++++ camel/camel-search-sql-sexp.c	Thu Oct 18 14:40:10 2012
 @@ -188,7 +188,7 @@ eval_eq (struct _CamelSExp *f,
  		if (r1->type == CAMEL_SEXP_RES_INT)
  			g_string_append_printf (str, "%d", r1->value.number);
  		else if (r1->type == CAMEL_SEXP_RES_TIME)
 -			g_string_append_printf (str, "%ld", r1->value.time);
-+			g_string_append_printf (str, "%d", r1->value.time);
++			g_string_append_printf (str, "%lld", (long long)r1->value.time);
  		else if (r1->type == CAMEL_SEXP_RES_STRING)
  			g_string_append_printf (str, "%s", r1->value.string);
  
@@ -18,7 +18,7 @@ On OpenBSD, time_t is an int.
  				g_string_append_printf (str, "%d", r2->value.boolean);
  			else if (r2->type == CAMEL_SEXP_RES_TIME)
 -				g_string_append_printf (str, "%ld", r2->value.time);
-+				g_string_append_printf (str, "%d", r2->value.time);
++				g_string_append_printf (str, "%lld", (long long)r2->value.time);
  			else if (r2->type == CAMEL_SEXP_RES_STRING) {
  				gchar *tmp = g_strdup_printf ("%c%s%c", ut ? '%':' ', r2->value.string, ut ? '%':' ');
  				gchar *safe = get_db_safe_string (tmp);
@@ -27,7 +27,7 @@ On OpenBSD, time_t is an int.
  			g_string_append_printf (str, "%d", r1->value.number);
  		else if (r1->type == CAMEL_SEXP_RES_TIME)
 -			g_string_append_printf (str, "%ld", r1->value.time);
-+			g_string_append_printf (str, "%d", r1->value.time);
++			g_string_append_printf (str, "%lld", (long long)r1->value.time);
  		else if (r1->type == CAMEL_SEXP_RES_STRING)
  			g_string_append_printf (str, "%s", r1->value.string);
  
@@ -36,7 +36,7 @@ On OpenBSD, time_t is an int.
  			g_string_append_printf (str, "%d", r2->value.boolean);
  		else if (r2->type == CAMEL_SEXP_RES_TIME)
 -			g_string_append_printf (str, "%ld", r2->value.time);
-+			g_string_append_printf (str, "%d", r2->value.time);
++			g_string_append_printf (str, "%lld", (long long)r2->value.time);
  		else if (r2->type == CAMEL_SEXP_RES_STRING)
  			g_string_append_printf (str, "%s", r2->value.string);
  		camel_sexp_result_free (f, r1);
@@ -45,7 +45,7 @@ On OpenBSD, time_t is an int.
  			g_string_append_printf (str, "%d", r1->value.number);
  		else if (r1->type == CAMEL_SEXP_RES_TIME)
 -			g_string_append_printf (str, "%ld", r1->value.time);
-+			g_string_append_printf (str, "%d", r1->value.time);
++			g_string_append_printf (str, "%lld", (long long)r1->value.time);
  		else if (r1->type == CAMEL_SEXP_RES_STRING)
  			g_string_append_printf (str, "%s", r1->value.string);
  
@@ -54,7 +54,7 @@ On OpenBSD, time_t is an int.
  			g_string_append_printf (str, "%d", r2->value.boolean);
  		else if (r2->type == CAMEL_SEXP_RES_TIME)
 -			g_string_append_printf (str, "%ld", r2->value.time);
-+			g_string_append_printf (str, "%d", r2->value.time);
++			g_string_append_printf (str, "%lld", (long long)r2->value.time);
  		else if (r2->type == CAMEL_SEXP_RES_STRING)
  			g_string_append_printf (str, "%s", r2->value.string);
  		camel_sexp_result_free (f, r1);

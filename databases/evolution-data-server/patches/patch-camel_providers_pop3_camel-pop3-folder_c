@@ -1,15 +1,15 @@
-$OpenBSD: patch-camel_providers_pop3_camel-pop3-folder_c,v 1.2 2012/09/28 06:35:36 ajacoutot Exp $
+$OpenBSD: patch-camel_providers_pop3_camel-pop3-folder_c,v 1.3 2012/10/18 13:54:56 ajacoutot Exp $
 
-On OpenBSD, time_t is an int.
+XXX remove when we have a 64-bit time_t
 
---- camel/providers/pop3/camel-pop3-folder.c.orig	Fri Sep 28 07:52:33 2012
-+++ camel/providers/pop3/camel-pop3-folder.c	Fri Sep 28 07:52:50 2012
-@@ -1113,7 +1113,7 @@ camel_pop3_delete_old (CamelFolder *folder,
- 			gint day_lag = time_diff / (60 * 60 * 24);
+--- camel/providers/pop3/camel-pop3-folder.c.orig	Sun Sep 16 17:05:39 2012
++++ camel/providers/pop3/camel-pop3-folder.c	Thu Oct 18 14:20:42 2012
+@@ -1114,7 +1114,7 @@ camel_pop3_delete_old (CamelFolder *folder,
  
  			d (printf (
--				"%s(%d): message_time= [%ld]\n",
-+				"%s(%d): message_time= [%d]\n",
- 				__FILE__, __LINE__, message_time));
+ 				"%s(%d): message_time= [%ld]\n",
+-				__FILE__, __LINE__, message_time));
++				__FILE__, __LINE__, (long)message_time));
  			d (printf (
  				"%s(%d): day_lag=[%d] \t days_to_delete=[%d]\n",
+ 				__FILE__, __LINE__, day_lag, days_to_delete));
