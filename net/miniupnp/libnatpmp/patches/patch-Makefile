@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2012/02/23 13:56:49 dcoppa Exp $
---- Makefile.orig	Thu Jun 23 00:28:00 2011
-+++ Makefile	Thu Feb 23 14:28:34 2012
-@@ -5,13 +5,14 @@
+$OpenBSD: patch-Makefile,v 1.2 2012/10/18 14:56:55 dcoppa Exp $
+--- Makefile.orig	Thu Oct 18 10:07:48 2012
++++ Makefile	Thu Oct 18 10:11:59 2012
+@@ -5,13 +5,13 @@
  # http://miniupnp.free.fr/libnatpmp.html
  
  OS = $(shell uname -s)
@@ -12,13 +12,12 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2012/02/23 13:56:49 dcoppa Exp $
  # APIVERSION is used in soname
  APIVERSION = 1
  #LDFLAGS = -Wl,--no-undefined
--CFLAGS = -O -fPIC -Wall -DENABLE_STRNATPMPERR
-+CFLAGS ?= -O -Wall
-+CFLAGS += -fPIC -DENABLE_STRNATPMPERR
- 
- LIBOBJS = natpmp.o getgateway.o
- 
-@@ -23,8 +24,8 @@ ifeq ($(OS), Darwin)
+-CFLAGS = -Os
++CFLAGS ?= -Os
+ #CFLAGS = -g -O0
+ CFLAGS += -fPIC
+ CFLAGS += -Wall
+@@ -28,8 +28,8 @@ ifeq ($(OS), Darwin)
    SONAME = $(basename $(SHAREDLIB)).$(APIVERSION).dylib
    CFLAGS := -DMACOSX -D_DARWIN_C_SOURCE $(CFLAGS)
  else
@@ -29,7 +28,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2012/02/23 13:56:49 dcoppa Exp $
  endif
  
  HEADERS = natpmp.h
-@@ -57,13 +58,12 @@ depend:
+@@ -62,13 +62,12 @@ depend:
  
  install:	$(HEADERS) $(STATICLIB) $(SHAREDLIB) natpmpc-shared
  	$(INSTALL) -d $(INSTALLDIRINC)
@@ -47,7 +46,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2012/02/23 13:56:49 dcoppa Exp $
  
  cleaninstall:
  	$(RM) $(addprefix $(INSTALLDIRINC), $(HEADERS))
-@@ -86,7 +86,7 @@ $(SHAREDLIB):	$(LIBOBJS)
+@@ -91,7 +90,7 @@ $(SHAREDLIB):	$(LIBOBJS)
  ifeq ($(OS), Darwin)
  	$(CC) -dynamiclib -Wl,-install_name,$(SONAME) -o $@ $^
  else

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/02/23 13:56:49 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.2 2012/10/18 14:56:55 dcoppa Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	NAT Port Mapping Protocol client library
 
-DISTNAME =	libnatpmp-20110808
+DISTNAME =	libnatpmp-20120821
 
 SHARED_LIBS =	natpmp 0.0
 

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2012/02/16 22:27:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2012/10/18 14:56:55 dcoppa Exp $
 
 COMMENT=	UPnP IGD client lightweight library
 
-DISTNAME=	miniupnpd-1.6.20120207
+DISTNAME=	miniupnpd-1.7
 
 WANTLIB += c kvm
 
