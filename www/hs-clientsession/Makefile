@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2012/10/12 14:02:21 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.3 2012/10/18 20:08:52 kili Exp $
+
+BROKEN =		lost in hs- dependcy hell, needs an update
 
 COMMENT =		securely store session data in a client-side cookie
 
