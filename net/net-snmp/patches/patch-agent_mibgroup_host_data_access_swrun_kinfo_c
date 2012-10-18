@@ -1,6 +1,6 @@
-$OpenBSD: patch-agent_mibgroup_host_data_access_swrun_kinfo_c,v 1.6 2011/11/18 12:39:06 sthen Exp $
---- agent/mibgroup/host/data_access/swrun_kinfo.c.orig	Wed Aug 31 03:21:51 2011
-+++ agent/mibgroup/host/data_access/swrun_kinfo.c	Thu Sep  1 23:53:44 2011
+$OpenBSD: patch-agent_mibgroup_host_data_access_swrun_kinfo_c,v 1.7 2012/10/18 14:01:45 sthen Exp $
+--- agent/mibgroup/host/data_access/swrun_kinfo.c.orig	Wed Aug 29 22:10:31 2012
++++ agent/mibgroup/host/data_access/swrun_kinfo.c	Wed Aug 29 23:04:40 2012
 @@ -3,7 +3,7 @@
   *     hrSWRunTable data access:
   *     kvm_getprocs() interface - FreeBSD, NetBSD, OpenBSD
@@ -10,7 +10,7 @@ $OpenBSD: patch-agent_mibgroup_host_data_access_swrun_kinfo_c,v 1.6 2011/11/18 1
   */
  #include <net-snmp/net-snmp-config.h>
  
-@@ -58,11 +58,15 @@
+@@ -59,11 +59,15 @@ extern kvm_t *kd;
  #define SWRUN_K_FLAG	ki_flag
  #define SWRUN_K_CLASS	ki_pri.pri_class
  
@@ -27,7 +27,7 @@ $OpenBSD: patch-agent_mibgroup_host_data_access_swrun_kinfo_c,v 1.6 2011/11/18 1
  #define SWRUN_K_STAT	p_stat
  #define SWRUN_K_PID	p_pid
  #define SWRUN_K_COMM	p_comm
-@@ -156,7 +160,9 @@ netsnmp_arch_swrun_container_load( netsnmp_container *
+@@ -157,7 +161,9 @@ netsnmp_arch_swrun_container_load( netsnmp_container *
          DEBUGMSGTL(("swrun:load:arch"," Can't query kvm info\n"));
          return 1;     /* No handle for retrieving process table */
      }
@@ -36,12 +36,12 @@ $OpenBSD: patch-agent_mibgroup_host_data_access_swrun_kinfo_c,v 1.6 2011/11/18 1
 +    proc_table = kvm_getprocs(kd, KERN_PROC_ALL, 0, sizeof(struct kinfo_proc), &nprocs );
 +#elif defined(HAVE_KVM_GETPROC2)
      proc_table = kvm_getproc2(kd, KERN_PROC_ALL, 0, sizeof(struct kinfo_proc2), &nprocs );
- #else
-     proc_table = kvm_getprocs(kd, KERN_PROC_ALL, 0, &nprocs );
-@@ -287,7 +293,7 @@ netsnmp_arch_swrun_container_load( netsnmp_container *
- # endif
-         entry->hrSWRunPerfCPU  = proc_table[i].ki_runtime / 100000;
-         entry->hrSWRunPerfMem  = proc_table[i].ki_size / 1024;;
+ #elif defined(KERN_PROC_PROC)
+     proc_table = kvm_getprocs(kd, KERN_PROC_PROC, 0, &nprocs );
+@@ -288,7 +294,7 @@ netsnmp_arch_swrun_container_load( netsnmp_container *
+ 	 entry->hrSWRunPerfCPU += (proc_table[i].ki_rusage_ch.ru_utime.tv_sec*1000000 + proc_table[i].ki_rusage_ch.ru_utime.tv_usec) / 10000;
+ 	 entry->hrSWRunPerfCPU += (proc_table[i].ki_rusage_ch.ru_stime.tv_sec*1000000 + proc_table[i].ki_rusage_ch.ru_stime.tv_usec) / 10000;
+ 	 entry->hrSWRunPerfMem  = proc_table[i].ki_rssize * (getpagesize()/1024);  /* in kB */
 -#elif defined(HAVE_KVM_GETPROC2)
 +#elif defined(HAVE_KVM_GETPROC2) || defined(openbsd5)
          /*

@@ -1,21 +1,18 @@
-# $OpenBSD: Makefile,v 1.67 2012/08/23 15:50:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.68 2012/10/18 14:01:45 sthen Exp $
 
 COMMENT-main=	extendable SNMP implementation
 COMMENT-perl=	SNMP modules for Perl
 COMMENT-tkmib=	graphical SNMP MIB browser
 
-V=		5.7.1
+V=		5.7.2
 
-DISTNAME=	net-snmp-$V
+DISTNAME=	net-snmp-${V:S/pre/.pre/:S/rc/.rc/}
 MULTI_PACKAGES=	-main -perl -tkmib
-REVISION-main=	5
-REVISION-perl=	2
-REVISION-tkmib=	0
-PKGNAME-main=	${DISTNAME}
+PKGNAME-main=	net-snmp-$V
 PKGNAME-perl=	p5-SNMP-$V
 PKGNAME-tkmib=	net-snmp-tkmib-$V
 
-LIBV=		12.1
+LIBV=		13.0
 .for i in netsnmp netsnmpagent netsnmphelpers netsnmpmibs netsnmptrapd
 SHARED_LIBS +=	$i ${LIBV}
 .endfor
@@ -34,7 +31,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB-main=		c crypto kvm m perl util wrap
-WANTLIB-perl=		c crypto m netsnmp netsnmpagent netsnmptrapd netsnmpmibs
+WANTLIB-perl=		crypto m netsnmp netsnmpagent netsnmptrapd netsnmpmibs
 
 LIB_DEPENDS-perl=	net/net-snmp,-main
 RUN_DEPENDS-tkmib=	net/net-snmp,-perl \
@@ -64,6 +61,7 @@ CONFIGURE_ARGS=   ${CONFIGURE_SHARED} \
 	--with-default-snmp-version="3" \
 	--with-sys-contact="nobody@nowhere.invalid" \
 	--with-sys-location="somewhere" \
+	--with-temp-file-pattern=/tmp/snmpdXXXXXXXXXXXX \
 	--with-logfile="/var/log/snmpd" \
 	--with-persistent-directory="/var/net-snmp"
 REGRESS_TARGET=	test
