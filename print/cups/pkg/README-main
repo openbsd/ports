@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.1 2012/08/04 14:37:04 ajacoutot Exp $
+$OpenBSD: README-main,v 1.2 2012/10/19 07:18:28 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -51,10 +51,3 @@ Alternatively, hotplugd(8) attach/detach scripts can automate this.
 *** WARNING ***
 ulpt(4) needs to be disable in the kernel (see config(8)) or the printer
 will not be available to libusb.
-
-UPGRADING
-=========
-If you experience cups-driverd(8) crashes or printing issues after
-upgrading, remove the old CUPS cache and restart cups(8):
-    # rm /var/cache/cups/* 2>/dev/null
-    # ${RCDIR}/cupsd restart
