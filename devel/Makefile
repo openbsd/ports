@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1086 2012/10/18 08:00:28 landry Exp $
+# $OpenBSD: Makefile,v 1.1087 2012/10/19 21:40:42 steven Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -321,6 +321,7 @@
      SUBDIR += libhid
      SUBDIR += libidn
      SUBDIR += libio
+     SUBDIR += libivykis
      SUBDIR += libixp
      SUBDIR += liblouis
      SUBDIR += libmagic
