@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2012/09/27 21:49:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2012/10/19 22:29:49 kurt Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS= 	amd64 i386
@@ -8,9 +8,9 @@ COMMENT-jre=		Java2(TM) Standard Edition Runtime Environment v${V}
 V=			1.6.0.03
 PKGNAME=		jdk-${V}
 PKGNAME-main=		jdk-${V}
-REVISION-main =		17
+REVISION-main =		18
 PKGNAME-jre=		jre-${V}
-REVISION-jre =		17
+REVISION-jre =		18
 
 CATEGORIES=		devel/jdk java
 DPB_PROPERTIES=		parallel
@@ -50,7 +50,10 @@ BUILD_DEPENDS=		archivers/gtar \
 			archivers/bzip2 \
 			print/cups,-libs \
 			x11/openmotif
-MODULES=		converters/libiconv
+MODULES=		converters/libiconv gcc4
+MODGCC4_VERSION=	4.6
+MODGCC4_ARCHS=		*
+MODGCC4_LANGS=		java
 WANTLIB=		X11 Xext Xi Xtst c m ossaudio pthread \
 			sndio stdc++ z
 
@@ -119,7 +122,6 @@ FETCH_MANUALLY+=	"from http://archive.apache.org/dist/xml/xalan-j/"
 FETCH_MANUALLY+=	"Get the Eclipse Java Compiler file:"
 FETCH_MANUALLY+=	"    ecj-3.7.1.jar"
 FETCH_MANUALLY+=	"from http://archive.eclipse.org/eclipse/downloads/drops/R-3.7.1-201109091335/ecj-3.7.1.jar"
-BUILD_DEPENDS+=		lang/jamvm>=1.5.4
 MAKE_ENV+=		ALT_BOOTDIR=${WRKDIST} \
 			ALT_BOOTSTRAP=yes \
 			ECJ_JAR=${FULLDISTDIR}/ecj-3.7.1.jar
