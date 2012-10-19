@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2012/04/28 10:52:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2012/10/19 16:27:47 sthen Exp $
 
 SHARED_ONLY =		Yes
 
@@ -21,6 +21,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB = 		c curses edit m pcre pthread
 
+BUILD_DEPENDS =		textproc/py-docutils
 LIB_DEPENDS = 		devel/pcre
 
 MASTER_SITES =		http://repo.varnish-cache.org/source/
