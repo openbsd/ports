@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2011/11/17 18:03:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2012/10/19 22:30:36 kurt Exp $
 
 COMMENT=	pdf swiss army knife
 VERSION=	1.44
-REVISION=	0
+REVISION=	1
 DISTNAME=	pdftk-$(VERSION)
 EXTRACT_SUFX=	-src.zip
 CATEGORIES=	textproc
@@ -21,6 +21,7 @@ MASTER_SITES=	http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/
 
 MODULES=	converters/libiconv gcc4
 MODGCC4_ARCHS=	*
+MODGCC4_VERSION= 4.6
 MODGCC4_LANGS=	java c++
 LIB_DEPENDS=	${MODGCC4_GCJLIBDEP}
 
@@ -32,7 +33,7 @@ MAKE_FILE=	Makefile.Base
 
 GCJ?=		gcj
 GCJH?=		gcjh
-GJAR?=		ejar
+GJAR?=		gjar
 
 CONFIG=		$(MACHINE_ARCH)-unknown-openbsd$(OSREV)
 GCJFLAGS?=	${CXXFLAGS}
