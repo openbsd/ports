@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2011/06/23 22:50:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2012/10/19 12:46:54 sthen Exp $
 
 COMMENT=		Streams audio to Apple AirPort Express device
 
 DISTNAME=		rtunes-0.8
-REVISION=		0
+REVISION=		1
 CATEGORIES=		audio net
 MASTER_SITES=		http://www.nazgul.ch/dev/
 
