@@ -1,8 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/04/28 19:33:06 kili Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/10/19 18:52:54 kili Exp $
 lib/ghc/${DISTNAME}/
-lib/ghc/${DISTNAME}/Data/
-lib/ghc/${DISTNAME}/Data/Concurrent/
-lib/ghc/${DISTNAME}/Data/Concurrent/HashMap.hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Paths_snap_server.hi
 lib/ghc/${DISTNAME}/Snap/
@@ -17,9 +14,9 @@ lib/ghc/${DISTNAME}/Snap/Internal/Http/Server/
 lib/ghc/${DISTNAME}/Snap/Internal/Http/Server.hi
 lib/ghc/${DISTNAME}/Snap/Internal/Http/Server/Address.hi
 lib/ghc/${DISTNAME}/Snap/Internal/Http/Server/Backend.hi
+lib/ghc/${DISTNAME}/Snap/Internal/Http/Server/Config.hi
 lib/ghc/${DISTNAME}/Snap/Internal/Http/Server/Date.hi
 lib/ghc/${DISTNAME}/Snap/Internal/Http/Server/HttpPort.hi
-lib/ghc/${DISTNAME}/Snap/Internal/Http/Server/LibevBackend.hi
 lib/ghc/${DISTNAME}/Snap/Internal/Http/Server/ListenHelpers.hi
 lib/ghc/${DISTNAME}/Snap/Internal/Http/Server/SimpleBackend.hi
 lib/ghc/${DISTNAME}/Snap/Internal/Http/Server/TLS.hi
