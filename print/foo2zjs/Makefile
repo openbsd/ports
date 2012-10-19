@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.35 2012/10/12 20:00:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2012/10/19 09:34:48 ajacoutot Exp $
 
-COMMENT-main=	driver for ZjStream wire protocol compatible printers
-COMMENT-cups=	Konica-Minolta foo2zjs command filter for CUPS
+COMMENT=	driver for ZjStream wire protocol compatible printers
 
 VERSION=	20120909
 DISTNAME=	foo2zjs-${VERSION}
 
-PKGNAME-main=	${DISTNAME}
-PKGNAME-cups=	foo2zjs-cup-${VERSION}
+REVISION=	0
 
 CATEGORIES=	print
 
@@ -21,25 +19,20 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c
+WANTLIB += c cups m pthread
 
 MASTER_SITES=	http://distfiles.bsdfrog.org/
 
-MULTI_PACKAGES=	-main -cups
-
 USE_GMAKE=	Yes
+
 WRKDIST=	${WRKDIR}/foo2zjs
 
 BUILD_DEPENDS=	print/ghostscript/gnu # ps2pdf
 
-WANTLIB-main += ${WANTLIB} m
+LIB_DEPENDS=	print/cups,-libs
 
 # share/foomatic/db/source/*/*.xml
-RUN_DEPENDS-main +=	print/foomatic-db-engine
-
-WANTLIB-cups += ${WANTLIB} cups pthread
-RUN_DEPENDS-cups=${BASE_PKGPATH},-main
-LIB_DEPENDS-cups=print/cups,-libs
+RUN_DEPENDS +=	print/foomatic-db-engine
 
 MAKE_FLAGS+=	CUPS_SERVERBIN=`cups-config --serverbin`
 
