@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2012/09/01 21:46:26 ajacoutot Exp $
+$OpenBSD: README,v 1.5 2012/10/19 08:40:08 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -13,11 +13,11 @@ installed on the system:
 e.g. (non-exhaustive list) foomatic-db, hplip/hpijs, foo2zjs, splix,
 gutenprint/foomatic-db-gutenprint...
 
-PPD generation example for an Epson Stylus C64
-==============================================
-$ foomatic-ppdfile -P C64
-Epson Stylus C64 Id='Epson-Stylus_C64' Driver='gutenprint-ijs-simplified.5.2'
-$ foomatic-ppdfile -p 'Epson-Stylus_C64' -d 'gutenprint-ijs-simplified.5.2' > C64.ppd
+PPD generation example for a Samsung ML-2850D
+=============================================
+$ foomatic-ppdfile -P 2850 
+Samsung ML-2850D Id='Samsung-ML-2850D' Driver='Postscript' CompatibleDrivers='Postscript pxlmono '
+$ foomatic-ppdfile -p 'Samsung-ML-2850D' -d 'Postscript' > samsung-ml2850d.ppd
 
-C64.ppd can then be used with CUPS or lpd(8) and foomatic-rip(1) from
-the foomatic-filters package as the input filter.
+"samsung-ml2850d.ppd" can then be used as an input filter with CUPS or
+lpd(8) and foomatic-rip(1) from the foomatic-filters package.
