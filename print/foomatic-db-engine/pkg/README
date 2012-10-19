@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2012/10/19 08:40:08 ajacoutot Exp $
+$OpenBSD: README,v 1.6 2012/10/19 09:27:09 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -11,7 +11,7 @@ command.
 Drivers availability depends on which Foomatic DB(s) package(s) is/are
 installed on the system:
 e.g. (non-exhaustive list) foomatic-db, hplip/hpijs, foo2zjs, splix,
-gutenprint/foomatic-db-gutenprint...
+gutenprint...
 
 PPD generation example for a Samsung ML-2850D
 =============================================
