@@ -1,9 +1,19 @@
-$OpenBSD: patch-gio_tests_socket_c,v 1.1 2012/10/12 20:52:04 ajacoutot Exp $
+$OpenBSD: patch-gio_tests_socket_c,v 1.2 2012/10/19 12:07:53 ajacoutot Exp $
 
+https://bugzilla.gnome.org/show_bug.cgi?id=686458
 https://bugzilla.gnome.org/show_bug.cgi?id=686058
 
 --- gio/tests/socket.c.orig	Fri Aug 17 02:06:24 2012
-+++ gio/tests/socket.c	Fri Oct 12 22:36:24 2012
++++ gio/tests/socket.c	Fri Oct 19 13:56:54 2012
+@@ -617,7 +617,7 @@ test_timed_wait (void)
+   poll_duration = g_get_monotonic_time () - start_time;
+ 
+   g_assert_cmpint (poll_duration, >=, 98000);
+-  g_assert_cmpint (poll_duration, <, 110000);
++  g_assert_cmpint (poll_duration, <, 112000);
+ 
+   g_socket_close (client, &error);
+   g_assert_no_error (error);
 @@ -825,7 +825,11 @@ main (int   argc,
    g_test_add_func ("/socket/ipv6_sync", test_ipv6_sync);
    g_test_add_func ("/socket/ipv6_async", test_ipv6_async);
