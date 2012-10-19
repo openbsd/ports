@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2012/04/28 08:00:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2012/10/19 06:15:41 ajacoutot Exp $
 @pkgpath mail/gmime
 @pkgpath mail/gmime24
 @pkgpath mail/gmime24,-main
@@ -121,7 +121,6 @@ share/gtk-doc/html/gmime-2.6/ch01.html
 share/gtk-doc/html/gmime-2.6/classes.html
 share/gtk-doc/html/gmime-2.6/core.html
 share/gtk-doc/html/gmime-2.6/fundamentals.html
-share/gtk-doc/html/gmime-2.6/gmime-2.6.devhelp
 share/gtk-doc/html/gmime-2.6/gmime-2.6.devhelp2
 share/gtk-doc/html/gmime-2.6/gmime-GMimeHeader.html
 share/gtk-doc/html/gmime-2.6/gmime-GMimeParam.html

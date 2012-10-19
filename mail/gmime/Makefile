@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2012/09/01 14:36:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2012/10/19 06:15:41 ajacoutot Exp $
 
 ONLY_FOR_ARCHS-mono=	${MONO_ARCHS}
 
@@ -6,12 +6,10 @@ COMMENT-main=	MIME messages creation and parsing library
 COMMENT-mono=	mono bindings for gmime
 
 GNOME_PROJECT=	gmime
-GNOME_VERSION=	2.6.10
+GNOME_VERSION=	2.6.11
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-mono=	gmime-sharp-${GNOME_VERSION}
-
-REVISION=	0
 
 SHARED_LIBS +=  gmime-2.6            0.0    # 600.0
 
@@ -27,7 +25,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB-main += ${MODGETTEXT_WANTLIB}
 WANTLIB-main += ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB-main += pcre z
+WANTLIB-main += pcre pthread z
 
 MULTI_PACKAGES=	-main -mono
 
