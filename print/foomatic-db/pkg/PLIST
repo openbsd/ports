@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2012/09/01 21:47:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2012/10/19 08:15:41 ajacoutot Exp $
 share/foomatic/
 share/foomatic/db/
 share/foomatic/db/oldprinterids
@@ -2976,6 +2976,7 @@ share/foomatic/db/source/driver/escpage.xml
 share/foomatic/db/source/driver/fmlbp.xml
 share/foomatic/db/source/driver/fmpr.xml
 share/foomatic/db/source/driver/gdi.xml
+share/foomatic/db/source/driver/gutenprint.xml
 share/foomatic/db/source/driver/hl1250.xml
 share/foomatic/db/source/driver/hl7x0.xml
 share/foomatic/db/source/driver/hpijs-pcl3.xml
