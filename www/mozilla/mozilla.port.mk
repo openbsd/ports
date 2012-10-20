@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.45 2012/09/22 10:30:17 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.46 2012/10/20 11:17:56 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -58,7 +58,7 @@ USE_GMAKE ?=	Yes
 
 AUTOCONF_VERSION =	2.13
 CONFIGURE_ARGS +=--with-system-jpeg=${LOCALBASE}	\
-		--with-system-zlib=/usr/lib	\
+		--with-system-zlib=/usr		\
 		--with-system-nspr		\
 		--with-system-nss		\
 		--with-pthreads			\
