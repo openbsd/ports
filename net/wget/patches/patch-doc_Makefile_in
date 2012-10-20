@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.6 2011/10/12 10:18:33 dcoppa Exp $
---- doc/Makefile.in.orig	Thu Oct  6 09:25:28 2011
-+++ doc/Makefile.in	Thu Oct  6 09:27:11 2011
-@@ -1061,7 +1061,7 @@ manext = 1
+$OpenBSD: patch-doc_Makefile_in,v 1.7 2012/10/20 18:49:48 dcoppa Exp $
+--- doc/Makefile.in.orig	Sun Aug  5 22:17:16 2012
++++ doc/Makefile.in	Fri Oct 19 09:34:53 2012
+@@ -1163,7 +1163,7 @@ manext = 1
  RM = rm -f
  TEXI2POD = $(srcdir)/texi2pod.pl
  MAN = wget.$(manext)
@@ -10,7 +10,7 @@ $OpenBSD: patch-doc_Makefile_in,v 1.6 2011/10/12 10:18:33 dcoppa Exp $
  SAMPLERCTEXI = sample.wgetrc.munged_for_texi_inclusion
  
  #
-@@ -1558,22 +1558,8 @@ install.man: $(MAN)
+@@ -1678,22 +1678,8 @@ install.man: $(MAN)
  
  # install sample.wgetrc
  install.wgetrc: $(srcdir)/sample.wgetrc

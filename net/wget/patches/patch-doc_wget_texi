@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_wget_texi,v 1.4 2011/10/12 10:14:30 dcoppa Exp $
---- doc/wget.texi.orig	Sat Aug  6 12:22:58 2011
-+++ doc/wget.texi	Thu Oct  6 10:25:12 2011
+$OpenBSD: patch-doc_wget_texi,v 1.5 2012/10/20 18:49:48 dcoppa Exp $
+--- doc/wget.texi.orig	Sat Aug  4 10:41:52 2012
++++ doc/wget.texi	Fri Oct 19 09:34:53 2012
 @@ -10,6 +10,11 @@
  @setchapternewpage on
  @c %**end of header
@@ -30,7 +30,7 @@ $OpenBSD: patch-doc_wget_texi,v 1.4 2011/10/12 10:14:30 dcoppa Exp $
  Default location of the @dfn{global} startup file.
  
  @item .wgetrc
-@@ -2696,9 +2701,8 @@ commands.
+@@ -2746,9 +2751,8 @@ commands.
  @cindex location of wgetrc
  
  When initializing, Wget will look for a @dfn{global} startup file,
@@ -42,7 +42,7 @@ $OpenBSD: patch-doc_wget_texi,v 1.4 2011/10/12 10:14:30 dcoppa Exp $
  
  Then it will look for the user's file.  If the environmental variable
  @code{WGETRC} is set, Wget will try to load that file.  Failing that, no
-@@ -2708,7 +2712,7 @@ If @code{WGETRC} is not set, Wget will try to load @fi
+@@ -2758,7 +2762,7 @@ If @code{WGETRC} is not set, Wget will try to load @fi
  
  The fact that user's settings are loaded after the system-wide ones
  means that in case of collision user's wgetrc @emph{overrides} the

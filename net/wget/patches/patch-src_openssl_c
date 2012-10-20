@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_openssl_c,v 1.4 2011/10/12 10:14:30 dcoppa Exp $
+$OpenBSD: patch-src_openssl_c,v 1.5 2012/10/20 18:49:48 dcoppa Exp $
 
 Fix build with GCC2.
 
---- src/openssl.c.orig	Thu Oct  6 09:42:04 2011
-+++ src/openssl.c	Thu Oct  6 09:43:29 2011
-@@ -498,6 +498,8 @@ ssl_check_certificate (int fd, const char *host)
+--- src/openssl.c.orig	Mon Jun  4 22:05:40 2012
++++ src/openssl.c	Fri Oct 19 09:34:53 2012
+@@ -513,6 +513,8 @@ ssl_check_certificate (int fd, const char *host)
    bool success = true;
    bool alt_name_checked = false;
  
@@ -13,7 +13,7 @@ Fix build with GCC2.
    /* If the user has specified --no-check-cert, we still want to warn
       him about problems with the server's certificate.  */
    const char *severity = opt.check_cert ? _("ERROR") : _("WARNING");
-@@ -646,7 +648,7 @@ ssl_check_certificate (int fd, const char *host)
+@@ -661,7 +663,7 @@ ssl_check_certificate (int fd, const char *host)
    if (alt_name_checked == false)
      {
        /* Test commomName */
