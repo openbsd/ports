@@ -1,0 +1,11 @@
+$OpenBSD: patch-flookup_c,v 1.1.1.1 2012/10/20 04:34:32 bentley Exp $
+--- flookup.c.orig	Wed Oct 10 03:07:37 2012
++++ flookup.c	Wed Oct 10 03:07:53 2012
+@@ -21,6 +21,7 @@
+ #include <limits.h>
+ #include <getopt.h>
+ #include <unistd.h>
++#include <netinet/in.h>
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <arpa/inet.h>

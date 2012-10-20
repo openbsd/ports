@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/20 04:34:32 bentley Exp $
+%%SHARED%%
+@bin bin/cgflookup
+@bin bin/flookup
+@bin bin/foma
+include/fomalib.h
+include/fomalibconf.h
+lib/libfoma.a

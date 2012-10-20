@@ -1,0 +1,25 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2012/10/20 04:34:32 bentley Exp $
+
+Generate shared libraries correctly.
+
+--- Makefile.orig	Wed Dec 14 00:28:25 2011
++++ Makefile	Fri Oct 12 23:56:56 2012
+@@ -57,7 +57,7 @@ libfoma: $(SHAREDLIBV)
+ $(SHAREDLIBV): $(LIBOBJS)
+ 	$(AR) $(ARFLAGS) $(STATICLIB) $(LIBOBJS)
+ 	$(RANLIB) $(STATICLIB)
+-	$(CC) $(CFLAGS) -shared -Wl,$(DFLAG),$(SHAREDLIBM) -o $(SHAREDLIBV) $(LIBOBJS) $(LDFLAGS)
++	$(CC) $(CFLAGS) -shared -o $(SHAREDLIBV) $(LIBOBJS) $(LDFLAGS)
+ 
+ install: foma libfoma
+ 	-@if [ ! -d $(exec_prefix) ]; then mkdir -p $(exec_prefix); fi
+@@ -71,9 +71,6 @@ install: foma libfoma
+ 	cd $(libdir); chmod 755 $(LIBS); \
+ 	if test -f $(libdir)/$(SHAREDLIB); then rm  $(libdir)/$(SHAREDLIB); fi
+ 	if test -f $(libdir)/$(SHAREDLIBM); then rm  $(libdir)/$(SHAREDLIBM); fi
+-	cd $(libdir); ln -s $(SHAREDLIBV) $(SHAREDLIB); cd $(libdir);	\
+-	ln -s $(SHAREDLIBV) $(SHAREDLIBM); (ldconfig || true)		\
+-	>/dev/null 2>&1; \
+ 
+ $(OBJS): foma.h
+ 
