@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2012/09/21 14:48:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2012/10/20 20:05:44 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -34,7 +34,8 @@ MULTI_PACKAGES=	-main -plugins
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 m pcre z execinfo ffi stdc++
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext \
+		textproc/intltool
 
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
