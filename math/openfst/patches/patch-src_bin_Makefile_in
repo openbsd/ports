@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_bin_Makefile_in,v 1.1.1.1 2012/10/20 04:35:55 bentley Exp $
+--- src/bin/Makefile.in.orig	Fri Oct 12 04:35:04 2012
++++ src/bin/Makefile.in	Fri Oct 12 04:35:07 2012
+@@ -429,7 +429,7 @@ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ AM_CPPFLAGS = -I$(srcdir)/../include -I$(srcdir)/../script $(ICU_FLAGS)
+-LDADD = ../script/libfstscript.la ../lib/libfst.la -lm -ldl
++LDADD = ../script/libfstscript.la ../lib/libfst.la -lm
+ @HAVE_BIN_TRUE@fstarcsort_SOURCES = fstarcsort.cc
+ @HAVE_BIN_TRUE@fstclosure_SOURCES = fstclosure.cc
+ @HAVE_BIN_TRUE@fstcompile_SOURCES = fstcompile.cc

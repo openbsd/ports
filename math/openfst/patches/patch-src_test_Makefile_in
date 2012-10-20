@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_test_Makefile_in,v 1.1.1.1 2012/10/20 04:35:55 bentley Exp $
+--- src/test/Makefile.in.orig	Wed Oct 10 02:11:15 2012
++++ src/test/Makefile.in	Wed Oct 10 02:11:21 2012
+@@ -216,7 +216,7 @@ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ AM_CPPFLAGS = -I$(srcdir)/../include $(ICU_CPPFLAGS)
+-LDADD = ../lib/libfst.la -lm -ldl
++LDADD = ../lib/libfst.la -lm
+ fst_test_SOURCES = fst_test.cc fst_test.h
+ weight_test_SOURCES = weight_test.cc weight-tester.h
+ algo_test_SOURCES = algo_test.cc algo_test.h
