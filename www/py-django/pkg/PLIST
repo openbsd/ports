@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2012/08/24 17:01:32 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.15 2012/10/20 16:00:58 gsoares Exp $
 bin/${LNAME}-admin.py
 lib/python${MODPY_VERSION}/site-packages/Django-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/
@@ -6697,6 +6697,8 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/simplejson/scanner.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/simplejson/scanner.pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/simplejson/tool.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/simplejson/tool.pyc
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/six.py
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/six.pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/synch.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/synch.pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/termcolors.py
@@ -6905,6 +6907,7 @@ share/doc/${LNAME}/intro/_images/admin13.png
 share/doc/${LNAME}/intro/_images/admin13t.png
 share/doc/${LNAME}/intro/_images/admin14.png
 share/doc/${LNAME}/intro/_images/admin14t.png
+share/doc/${LNAME}/intro/_images/admin15t.png
 share/doc/${LNAME}/intro/index.txt
 share/doc/${LNAME}/intro/install.txt
 share/doc/${LNAME}/intro/overview.txt
@@ -7067,9 +7070,12 @@ share/doc/${LNAME}/releases/1.2.txt
 share/doc/${LNAME}/releases/1.3-alpha-1.txt
 share/doc/${LNAME}/releases/1.3-beta-1.txt
 share/doc/${LNAME}/releases/1.3.1.txt
+share/doc/${LNAME}/releases/1.3.2.txt
 share/doc/${LNAME}/releases/1.3.txt
 share/doc/${LNAME}/releases/1.4-alpha-1.txt
 share/doc/${LNAME}/releases/1.4-beta-1.txt
+share/doc/${LNAME}/releases/1.4.1.txt
+share/doc/${LNAME}/releases/${MODPY_EGG_VERSION}.txt
 share/doc/${LNAME}/releases/1.4.txt
 share/doc/${LNAME}/releases/index.txt
 share/doc/${LNAME}/topics/
