@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2012/10/15 08:53:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2012/10/20 17:35:18 edd Exp $
 
 COMMENT =	emulates numerous game consoles
 
-DISTNAME =	mednafen-0.9.24-wip
-PKGNAME =	mednafen-0.9.24
-REVISION =	0
+V =		0.9.26
+DISTNAME =	mednafen-${V}-wip
+PKGNAME =	mednafen-${V}
 
 CATEGORIES =	emulators games
 HOMEPAGE =	http://mednafen.sourceforge.net/
