@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.224 2012/10/11 18:01:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.225 2012/10/20 08:37:00 sthen Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -41,6 +41,7 @@
      SUBDIR += ocaml-postgresql
      SUBDIR += ocaml-sqlite3
      SUBDIR += openldap
+     SUBDIR += openldap,aci
      SUBDIR += openldap23
      SUBDIR += p5-AnyEvent-CouchDB
      SUBDIR += p5-AsciiDB-TagFile
