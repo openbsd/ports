@@ -1,13 +1,18 @@
-# $OpenBSD: Makefile,v 1.116 2012/06/04 11:35:54 pea Exp $
+# $OpenBSD: Makefile,v 1.117 2012/10/20 08:36:13 sthen Exp $
 
-COMMENT-main=	Open source LDAP software (client)
-COMMENT-server=	Open source LDAP software (server)
+COMMENT-main=	open-source LDAP software (client)
+COMMENT-server=	open-source LDAP software (server)
 
 DISTNAME=		openldap-2.4.31
 PKGNAME-main=		${DISTNAME:S/-/-client-/}
 PKGNAME-server=		${DISTNAME:S/-/-server-/}
 
-REVISION-server=	0
+# overwrite -main pkgname/path to strip FLAVOR, aci only affects the server
+FULLPKGNAME-main=	${DISTNAME:S/-/-client-/}
+FULLPKGPATH-main=	databases/openldap,-main
+
+REVISION-server=	1
+REVISION-main=		0
 
 SHARED_LIBS +=	lber                 12.0      # .10.1
 SHARED_LIBS +=	ldap                 12.0      # .10.1
@@ -40,6 +45,9 @@ AUTOCONF_VERSION=	2.65
 CONFIGURE_STYLE=	autoconf
 USE_GROFF=		Yes
 
+FLAVOR?=
+FLAVORS=		aci
+
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-ipv6 \
 			--with-tls=openssl
@@ -67,6 +75,10 @@ CONFIGURE_ARGS+=	--enable-bdb \
 			--enable-overlays \
 			--disable-mdb
 
+.if ${FLAVOR:Maci}
+CONFIGURE_ARGS+=	--enable-aci
+.endif
+
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/build
 
 REGRESS_TARGET=	test
@@ -74,7 +86,7 @@ REGRESS_TARGET=	test
 MULTI_PACKAGES=	-main -server
 
 LIB_DEPENDS +=		security/cyrus-sasl2
-WANTLIB +=		sasl2
+WANTLIB +=		pthread sasl2
 CPPFLAGS +=		-I${LOCALBASE}/include/sasl
 
 LIB_DEPENDS-server =	${LIB_DEPENDS-main} \
@@ -85,7 +97,7 @@ CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include/sasl -I${LOCALBASE}/include/db
 			LDFLAGS="-L${LOCALBASE}/lib/db4 -L${LOCALBASE}/lib"
 
 RUN_DEPENDS-server=	${BASE_PKGPATH}
-WANTLIB-server +=	${WANTLIB} perl util wrap m pthread icudata icuuc
+WANTLIB-server +=	${WANTLIB} perl util wrap m icudata icuuc
 WANTLIB-server +=	stdc++ lib/db4/db>=4
 
 USE_LIBTOOL=	Yes
