@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2012/08/21 07:18:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.112 2012/10/20 04:36:45 bentley Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -23,6 +23,7 @@
      SUBDIR += fftw
      SUBDIR += fftw3
      SUBDIR += fftw3,float
+     SUBDIR += foma
      SUBDIR += freemat
      SUBDIR += galculator
      SUBDIR += geogebra
@@ -55,6 +56,7 @@
      SUBDIR += netcdf
      SUBDIR += ntl
      SUBDIR += octave
+     SUBDIR += openfst
      SUBDIR += p5-AI-FANN
      SUBDIR += p5-AI-NeuralNet-BackProp
      SUBDIR += p5-AI-NeuralNet-Kohonen
