@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2012/09/02 21:56:59 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2012/10/21 18:28:39 kili Exp $
 
 COMMENT =		Haskell 98 lenses
 
-DISTNAME =		data-lens-2.9.0
+DISTNAME =		data-lens-2.10.2
 CATEGORIES =		devel
 
 # BSD3
@@ -15,11 +15,9 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-RUN_DEPENDS =		devel/hs-comonad>=1.1.1.3,<1.2 \
-			devel/hs-comonad-transformers>=2.0,<2.2 \
-			devel/hs-contravariant>=0.2.0.1,<0.3 \
-			devel/hs-distributive>=0.2.1,<0.3 \
-			devel/hs-semigroupoids>=1.2.4,<1.4 \
+RUN_DEPENDS =		devel/hs-comonad>=1.1.1.3,<3.1 \
+			devel/hs-comonad-transformers>=2.0,<3.1 \
+			devel/hs-semigroupoids>=1.2.4,<3.1 \
 			devel/hs-transformers>=0.2.0,<0.4
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
