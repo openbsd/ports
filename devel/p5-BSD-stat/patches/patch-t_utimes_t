@@ -1,0 +1,27 @@
+$OpenBSD: patch-t_utimes_t,v 1.1 2012/10/21 23:07:12 bluhm Exp $
+--- t/utimes.t.orig	Tue Aug 21 12:06:22 2012
++++ t/utimes.t	Wed Sep 26 00:28:08 2012
+@@ -5,7 +5,7 @@
+ use strict;
+ use warnings;
+ use BSD::stat;
+-use Test::More tests => 5;
++use Test::More tests => 8;
+ use File::Spec;
+ 
+ my $target = File::Spec->catfile('t', "test$$");
+@@ -20,8 +20,13 @@ $st = stat($wfh);
+ close $wfh;
+ 
+ symlink $target, $symlink or die "symlink $target, $symlink : $!";
+-ok lutimes(0, 0, $symlink), "lutimes($when, $when, $symlink)";
++ok lutimes(0, 0, $symlink), "lutimes(0, 0, $symlink)";
+ is lstat($symlink)->mtime, 0, "lutimes() does touch $symlink";
+ is lstat($target)->mtime, 1234567890, "lutimes() leaves $target";
++
++$when = 1234.5678;
++ok lutimes($when, $when, $symlink), "lutimes($when, $when, $symlink)";
++is lstat($symlink)->mtime, 1234, "lutimes() wrong sec on $symlink";
++is lstat($symlink)->mtimensec, 567800000, "lutimes() wrong nsec on $symlink";
+ 
+ unlink($target, $symlink) == 2 or die "unlink($target, $symlink):$!";
