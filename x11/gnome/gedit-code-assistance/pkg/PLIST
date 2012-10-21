@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/10/16 18:23:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/10/21 14:49:14 jasper Exp $
 include/gedit-3.0/gcp/
 include/gedit-3.0/gcp/gcp.h
 lib/gedit/plugins/gcp/
@@ -16,7 +16,17 @@ lib/gedit/plugins/gcp/backends/gcpbackendpython/backend.pyo
 lib/gedit/plugins/gcp/backends/gcpbackendpython/document.py
 lib/gedit/plugins/gcp/backends/gcpbackendpython/document.pyc
 lib/gedit/plugins/gcp/backends/gcpbackendpython/document.pyo
+lib/gedit/plugins/gcp/backends/gcpbackendxml/
 lib/gedit/plugins/gcp/backends/gcpbackendxml.plugin
+lib/gedit/plugins/gcp/backends/gcpbackendxml/__init__.py
+lib/gedit/plugins/gcp/backends/gcpbackendxml/__init__.pyc
+lib/gedit/plugins/gcp/backends/gcpbackendxml/__init__.pyo
+lib/gedit/plugins/gcp/backends/gcpbackendxml/backend.py
+lib/gedit/plugins/gcp/backends/gcpbackendxml/backend.pyc
+lib/gedit/plugins/gcp/backends/gcpbackendxml/backend.pyo
+lib/gedit/plugins/gcp/backends/gcpbackendxml/document.py
+lib/gedit/plugins/gcp/backends/gcpbackendxml/document.pyc
+lib/gedit/plugins/gcp/backends/gcpbackendxml/document.pyo
 lib/gedit/plugins/gcp/backends/libgcpbackendc.a
 lib/gedit/plugins/gcp/backends/libgcpbackendc.la
 lib/gedit/plugins/gcp/backends/libgcpbackendc.so
