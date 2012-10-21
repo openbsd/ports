@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2012/10/15 06:06:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2012/10/21 17:19:56 ajacoutot Exp $
 @conflict glib2mm-docs-*
 @pkgpath devel/glib2mm,-main
 @pkgpath devel/glib2mm,-docs
@@ -1585,8 +1585,6 @@ share/doc/glibmm-${V}/reference/html/structGlib_1_1StaticRecMutex.html
 share/doc/glibmm-${V}/reference/html/structGlib_1_1StaticRecMutex__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/structGlib_1_1TimeVal-members.html
 share/doc/glibmm-${V}/reference/html/structGlib_1_1TimeVal.html
-share/doc/glibmm-${V}/reference/html/sync_off.png
-share/doc/glibmm-${V}/reference/html/sync_on.png
 share/doc/glibmm-${V}/reference/html/tab_a.png
 share/doc/glibmm-${V}/reference/html/tab_b.png
 share/doc/glibmm-${V}/reference/html/tab_h.png
