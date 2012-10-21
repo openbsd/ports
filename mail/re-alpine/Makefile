@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/10/21 16:38:24 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2012/10/21 20:53:05 ajacoutot Exp $
 
 COMMENT-main=		UW e-mail client
 COMMENT-c-client=	UW c-client mail access routines
@@ -13,8 +13,10 @@ EXTRACT_SUFX=		.tar.bz2
 
 SHARED_LIBS=		c-client 5.1
 
-PICO_V=			5.05# grep "PICO version" ${WRKSRC}/pico/pico.h
-PILOT_V=		2.99# grep PILOT_VERSION ${WRKSRC}/pico/pilot.c
+# grep "PICO version" ${WRKSRC}/pico/pico.h
+PICO_V=			5.05
+# grep PILOT_VERSION ${WRKSRC}/pico/pilot.c
+PILOT_V=		2.99
 
 PKGNAME-main=		alpine-${V}
 PKGNAME-c-client=	c-client-${V}
