@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2012/10/21 14:29:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.74 2012/10/21 14:40:34 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -74,7 +74,7 @@ YACC=			bison -y
 CONFIGURE_ARGS+=	--disable-static \
 			--enable-plugin-subversion \
 			--with-symbol-db-shm=/tmp
-# XXX: configure can't find c++???
+# XXX: https://bugzilla.gnome.org/show_bug.cgi?id=686578
 CONFIGURE_ENV+=		ac_ct_CXX=/usr/bin/c++
 
 # XXX: needed because of patch-m4_intltool_m4
