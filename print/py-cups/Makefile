@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2012/10/13 08:55:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2012/10/21 18:39:00 ajacoutot Exp $
 
 COMMENT=		CUPS bindings for Python
 
@@ -7,7 +7,7 @@ DISTNAME=		pycups-${MODPY_EGG_VERSION}
 EXTRACT_SUFX=		.tar.bz2
 PKGNAME=		py-cups-${MODPY_EGG_VERSION}
 
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		print
 
@@ -33,9 +33,7 @@ LIB_DEPENDS=		print/cups,-libs \
 
 CFLAGS+=		-I${LOCALBASE}/include -DVERSION=\"${MODPY_EGG_VERSION}\"
 LDFLAGS+=		-L${LOCALBASE}/lib
-MAKE_ENV=		PYTHON="${MODPY_BIN}" \
-			CFLAGS="${CFLAGS}" \
-			LDFLAGS="${LDFLAGS} -liconv" # cups.so: undefined symbol 'libiconv_open'
+MAKE_ENV=		PYTHON="${MODPY_BIN}"
 
 NO_REGRESS=		Yes
 
