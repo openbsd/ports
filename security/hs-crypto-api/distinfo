@@ -1,5 +1,2 @@
-MD5 (ghc/crypto-api-0.8.tar.gz) = 7Sb1o3OFuNrmLLB6lL4N1w==
-RMD160 (ghc/crypto-api-0.8.tar.gz) = JqPbCKaDNfhaubdMxcFTXk+olUM=
-SHA1 (ghc/crypto-api-0.8.tar.gz) = kAeDGejUI3MKQuzTe7aiM3kkALM=
-SHA256 (ghc/crypto-api-0.8.tar.gz) = SAzGhuscL5Zotnw48lVBcBL9ZqW2ExXyRmSInZZTk7s=
-SIZE (ghc/crypto-api-0.8.tar.gz) = 42443
+SHA256 (ghc/crypto-api-0.10.2.tar.gz) = upKd7O5v4+0UPYSR8/Z+cf3vn1bQyesUKw4K7nnbqxk=
+SIZE (ghc/crypto-api-0.10.2.tar.gz) = 44538
