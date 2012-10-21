@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2012/09/27 19:33:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2012/10/21 17:46:16 ajacoutot Exp $
 
 COMMENT=	C++ interface for gtk3+
 
 GNOME_PROJECT=	gtkmm
-GNOME_VERSION=	3.5.13
+GNOME_VERSION=	3.6.0
 
 PKGNAME=	gtk3mm-${GNOME_VERSION}
 
@@ -35,7 +35,7 @@ MODULES=	devel/gettext \
 
 LIB_DEPENDS=	devel/atk2mm \
 		devel/pangomm \
-		x11/gtk+3>=3.5.18
+		x11/gtk+3
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	ac_cv_path_DOT= \
