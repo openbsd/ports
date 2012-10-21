@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2012/01/04 08:57:50 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.13 2012/10/21 14:20:53 sebastia Exp $
 @conflict libfwbuilder-*
 @pkgpath security/libfwbuilder
 @bin bin/fwb_iosacl
@@ -126,6 +126,7 @@ share/fwbuilder/configlets/linux24/
 share/fwbuilder/configlets/linux24/automatic_rules
 share/fwbuilder/configlets/linux24/block_action
 share/fwbuilder/configlets/linux24/check_utilities
+share/fwbuilder/configlets/linux24/configure_interfaces
 share/fwbuilder/configlets/linux24/conntrack
 share/fwbuilder/configlets/linux24/constants
 share/fwbuilder/configlets/linux24/installer_commands_reg_user
@@ -256,6 +257,7 @@ share/fwbuilder/help/en_US/release_notes_4.2.1.html
 share/fwbuilder/help/en_US/release_notes_4.2.2.html
 share/fwbuilder/help/en_US/release_notes_5.0.0.html
 share/fwbuilder/help/en_US/release_notes_5.0.1.html
+share/fwbuilder/help/en_US/release_notes_5.1.0.html
 share/fwbuilder/help/en_US/state_sync_configuration.png
 share/fwbuilder/help/en_US/tip01.html
 share/fwbuilder/help/en_US/tip02.html
