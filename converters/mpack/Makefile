@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2012/01/08 00:12:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2012/10/21 12:59:43 jasper Exp $
 
 COMMENT=	external MIME packer/unpacker
 
 DISTNAME=	mpack-1.6
+REVISION=	0
 CATEGORIES=	converters mail news
 
 # BSD

@@ -1,10 +1,10 @@
-$OpenBSD: patch-unixos_c,v 1.4 2012/01/08 00:12:13 sthen Exp $
+$OpenBSD: patch-unixos_c,v 1.5 2012/10/21 12:59:43 jasper Exp $
 
 Fixes from Sebastian Pipping
 http://git.goodpoint.de/?p=mpack.git;a=commitdiff;h=0c87201f64491575350b18d04c62ec142e119d1f
 
---- unixos.c.orig	Mon Jul 21 21:54:05 2003
-+++ unixos.c	Sun Jan  8 00:06:09 2012
+--- unixos.c.orig	Mon Jul 21 22:54:05 2003
++++ unixos.c	Sun Oct 21 14:55:35 2012
 @@ -30,6 +30,7 @@
  #include <sys/param.h>
  #include <netdb.h>
@@ -24,6 +24,15 @@ http://git.goodpoint.de/?p=mpack.git;a=commitdiff;h=0c87201f64491575350b18d04c62
  int overwrite_files = 0;
  int didchat;
  
+@@ -90,7 +87,7 @@ char *os_idtodir(char *id)
+ 	strcpy(buf, getenv("TMPDIR"));
+     }
+     else {
+-	strcpy(buf, "/usr/tmp");
++	strcpy(buf, "/var/tmp");
+     }
+     strcat(buf, "/m-prts-");
+     p = getenv("USER");
 @@ -137,9 +134,9 @@ FILE *os_createnewfile(char *fname)
      FILE *ret;
       
