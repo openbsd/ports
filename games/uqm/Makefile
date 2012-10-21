@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2012/10/11 19:02:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.37 2012/10/21 16:38:24 espie Exp $
 
 COMMENT-main=		ur-quan masters: sdl port of star control 2; multiplayer
 COMMENT-content=	ur-quan masters: game content
@@ -9,7 +9,7 @@ COMMENT-threedomusic=	ur-quan masters: 3DO music content
 COMMENT-voice=		ur-quan masters: speech content
 
 VER =			0.7.0
-EPOCH=			0 # N.B. in RUN_DEPENDS
+EPOCH=			0# N.B. in RUN_DEPENDS
 DISTNAME =		uqm-${VER}
 CATEGORIES=		games x11
 PDIST=			${DISTNAME}-source.tgz
