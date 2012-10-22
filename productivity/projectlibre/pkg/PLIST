@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/22 18:13:11 jasper Exp $
+bin/projectlibre
+lib/projectlibre/
+lib/projectlibre/lib/
+lib/projectlibre/lib/openproj-contrib.jar
+lib/projectlibre/lib/openproj-reports.jar
+lib/projectlibre/lib/openproj-script.jar
+lib/projectlibre/projectlibre.jar
