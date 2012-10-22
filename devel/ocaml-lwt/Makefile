@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2012/10/21 19:21:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2012/10/22 11:41:26 jasper Exp $
 
 COMMENT =	cooperative lightweight thread library
 CATEGORIES =	devel
 
 DISTNAME =	lwt-2.4.1
 PKGNAME =	ocaml-${DISTNAME}
+REVISION =	0
 MASTER_SITES =	http://ocsigen.org/download/
 
 HOMEPAGE =	http://ocsigen.org/lwt/
