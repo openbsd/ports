@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2012/09/30 09:52:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.48 2012/10/22 18:13:40 jasper Exp $
 
      SUBDIR =
      SUBDIR += bruce
@@ -20,6 +20,7 @@
      SUBDIR += libzeitgeist
      SUBDIR += osmo
      SUBDIR += palm2ical
+     SUBDIR += projectlibre
      SUBDIR += qhacc
      SUBDIR += radicale
      SUBDIR += rednotebook
