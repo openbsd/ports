@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.7 2012/10/11 12:00:46 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2012/10/22 10:09:11 ajacoutot Exp $
 
 # Note that PLIST with shared libs requires the following cleaning:
 # perl -pi -e "s,^\@lib ,," pkg/PLIST
@@ -6,7 +6,7 @@
 ONLY_FOR_ARCHS=	i386
 SHARED_ONLY=	Yes
 
-FEDORA_V=	10
+FEDORA_V ?=	10
 
 CATEGORIES=	emulators
 
