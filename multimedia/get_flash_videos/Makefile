@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.21 2012/10/12 20:31:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2012/10/22 12:32:15 nigel Exp $
 
 COMMENT=		download flash video files from various sites
 
-DISTNAME=		monsieurvideo-get-flash-videos-v1.24_02-292-gc52cdf6
-PKGNAME=		get_flash_videos-1.24.20121012
-WRKDIST=		${WRKDIR}/monsieurvideo-get-flash-videos-c52cdf6
+DISTNAME=		App-get_flash_videos-1.24.20121020
+PKGNAME=		get_flash_videos-1.24.20121020
+#DISTNAME=		monsieurvideo-get-flash-videos-v1.24_02-292-gc52cdf6
+#PKGNAME=		get_flash_videos-1.24.20121012
+#WRKDIST=		${WRKDIR}/monsieurvideo-get-flash-videos-c52cdf6
 CATEGORIES=		multimedia
 
 HOMEPAGE=		http://get-flash-videos.googlecode.com/
@@ -20,8 +22,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		cpan
 CPAN_AUTHOR=		MONSIEUR
 # git checkout
-MASTER_SITES=		http://spacehopper.org/mirrors/
-#MASTER_SITES=		https://github.com/downloads/njtaylor/get-flash-videos/
+#MASTER_SITES=		http://spacehopper.org/mirrors/
+MASTER_SITES=		https://github.com/downloads/njtaylor/get-flash-videos/
 
 BUILD_DEPENDS=		devel/p5-Tie-IxHash
 RUN_DEPENDS=		devel/p5-Term-ReadKey \
