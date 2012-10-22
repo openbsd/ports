@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.27 2012/08/05 09:17:00 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.28 2012/10/22 20:18:44 brad Exp $
 @pkgpath x11/vlc
 %%amd64%%
 %%i386%%
@@ -184,6 +184,7 @@ lib/vlc/plugins/codec/libedummy_plugin.so
 lib/vlc/plugins/codec/liblibass_plugin.so
 lib/vlc/plugins/codec/liblpcm_plugin.so
 lib/vlc/plugins/codec/libmpeg_audio_plugin.so
+lib/vlc/plugins/codec/libopus_plugin.so
 lib/vlc/plugins/codec/libpng_plugin.so
 lib/vlc/plugins/codec/librawvideo_plugin.so
 lib/vlc/plugins/codec/librealvideo_plugin.so
@@ -404,18 +405,20 @@ lib/vlc/plugins/visualization/libvisual_plugin.so
 @man man/man1/vlc.1
 share/applications/vlc.desktop
 share/doc/vlc/
-share/doc/vlc/LICENSE
-share/doc/vlc/QtVLC.pro
 share/doc/vlc/bugreport-howto.txt
 share/doc/vlc/fortunes.txt
-share/doc/vlc/gtk_player.c
 share/doc/vlc/intf-vcd.txt
-share/doc/vlc/libvlc_DVD_ripper.c
-share/doc/vlc/main.cpp
-share/doc/vlc/player.cpp
-share/doc/vlc/player.h
-share/doc/vlc/vlc-thumb.c
-share/doc/vlc/wx_player.cpp
+share/doc/vlc/libvlc/
+share/doc/vlc/libvlc/QtPlayer/
+share/doc/vlc/libvlc/QtPlayer/LICENSE
+share/doc/vlc/libvlc/QtPlayer/QtVLC.pro
+share/doc/vlc/libvlc/QtPlayer/main.cpp
+share/doc/vlc/libvlc/QtPlayer/player.cpp
+share/doc/vlc/libvlc/QtPlayer/player.h
+share/doc/vlc/libvlc/gtk_player.c
+share/doc/vlc/libvlc/libvlc_DVD_ripper.c
+share/doc/vlc/libvlc/vlc-thumb.c
+share/doc/vlc/libvlc/wx_player.cpp
 share/icons/hicolor/128x128/apps/vlc-xmas.png
 share/icons/hicolor/128x128/apps/vlc.png
 share/icons/hicolor/16x16/apps/vlc.png
@@ -430,6 +433,7 @@ share/kde4/
 share/kde4/apps/
 share/kde4/apps/solid/
 share/kde4/apps/solid/actions/
+share/kde4/apps/solid/actions/vlc-openbd.desktop
 share/kde4/apps/solid/actions/vlc-opencda.desktop
 share/kde4/apps/solid/actions/vlc-opendvd.desktop
 share/kde4/apps/solid/actions/vlc-openvcd.desktop
@@ -443,6 +447,7 @@ share/locale/ast/LC_MESSAGES/vlc.mo
 share/locale/be/LC_MESSAGES/vlc.mo
 share/locale/bg/LC_MESSAGES/vlc.mo
 share/locale/bn/LC_MESSAGES/vlc.mo
+share/locale/bn_IN/LC_MESSAGES/vlc.mo
 share/locale/br/LC_MESSAGES/vlc.mo
 share/locale/ca/LC_MESSAGES/vlc.mo
 share/locale/cgg/
@@ -476,6 +481,7 @@ share/locale/gd/
 share/locale/gd/LC_MESSAGES/
 share/locale/gd/LC_MESSAGES/vlc.mo
 share/locale/gl/LC_MESSAGES/vlc.mo
+share/locale/gu/LC_MESSAGES/vlc.mo
 share/locale/he/LC_MESSAGES/vlc.mo
 share/locale/hi/LC_MESSAGES/vlc.mo
 share/locale/hr/LC_MESSAGES/vlc.mo
@@ -493,8 +499,6 @@ share/locale/kmr/LC_MESSAGES/
 share/locale/kmr/LC_MESSAGES/vlc.mo
 share/locale/ko/LC_MESSAGES/vlc.mo
 share/locale/ku/LC_MESSAGES/vlc.mo
-share/locale/lg/
-share/locale/lg/LC_MESSAGES/
 share/locale/lg/LC_MESSAGES/vlc.mo
 share/locale/lt/LC_MESSAGES/vlc.mo
 share/locale/lv/LC_MESSAGES/vlc.mo

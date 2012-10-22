@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.24 2012/08/26 07:16:54 ajacoutot Exp $
---- configure.ac.orig	Tue Jul  3 18:55:34 2012
-+++ configure.ac	Thu Aug 16 14:24:29 2012
+$OpenBSD: patch-configure_ac,v 1.25 2012/10/22 20:18:44 brad Exp $
+--- configure.ac.orig	Sun Sep 30 11:02:22 2012
++++ configure.ac	Fri Oct 19 01:24:07 2012
 @@ -122,10 +122,6 @@ case "${host_os}" in
      ;;
    openbsd*)
@@ -55,7 +55,7 @@ $OpenBSD: patch-configure_ac,v 1.24 2012/08/26 07:16:54 ajacoutot Exp $
    ], [
      CPPFLAGS_live555="-I${CONTRIB_DIR}/include/liveMedia -I${CONTRIB_DIR}/include/groupsock -I${CONTRIB_DIR}/include/BasicUsageEnvironment -I${CONTRIB_DIR}/include/UsageEnvironment"
    ])
-@@ -3509,6 +3478,24 @@ AS_IF([test "$enable_oss" != "no"], [
+@@ -3514,6 +3483,24 @@ AS_IF([test "$enable_oss" != "no"], [
  ])
  AC_SUBST(OSS_LIBS)
  AM_CONDITIONAL([HAVE_OSS], [test "${have_oss}" = "yes"])

@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.157 2012/08/26 07:16:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.158 2012/10/22 20:18:44 brad Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	VideoLAN client; multimedia player
 COMMENT-jack=	JACK audio output module for VLC
 
-V=		2.0.3
+V=		2.0.4
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	1
 PKGNAME-jack=	vlc-jack-${V}
-REVISION-jack=	0
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
@@ -36,13 +34,13 @@ WANTLIB-main=	GL ICE lib/qt4/QtGui QtCore SM SDL SDL_image X11 \
 		ebml stdc++ expat ffi fontconfig freetype fribidi gcrypt \
 		gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 \
 		gmp gnutls gobject-2.0 gpg-error gsm gthread-2.0 gtk-x11-2.0 \
-		hogweed jpeg matroska mp3lame nettle notify orc-0.4 ogg \
-		p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
-		png portaudio postproc pthread-stubs pthread samplerate \
-		schroedinger-1.0>=2.0 sndio speex speexdsp sqlite3 swscale tag \
-		tar tasn1 tiff theoradec theoraenc usbhid vorbis vorbisenc \
-		vpx webp x264 xcb-composite xcb-keysyms xcb-randr xcb-render \
-		xcb-shape xcb-shm xcb-xfixes xcb-xv xcb xml2 xvidcore z \
+		harfbuzz hogweed icudata icule icuuc jpeg matroska mp3lame \
+		nettle notify opus orc-0.4 ogg p11-kit pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 pcre pixman-1 png portaudio postproc pthread-stubs \
+		pthread samplerate schroedinger-1.0>=2.0 sndio speex speexdsp \
+		sqlite3 swscale tag tar tasn1 tiff theoradec theoraenc usbhid \
+		vorbis vorbisenc vpx webp x264 xcb-composite xcb-keysyms xcb-randr \
+		xcb-render xcb-shape xcb-shm xcb-xfixes xcb-xv xcb xml2 xvidcore z \
 		${WANTLIB-common}
 WANTLIB-jack=	jack vlccore ${WANTLIB-common}
 
@@ -61,6 +59,7 @@ LIB_DEPENDS-main= ${MODQT4_LIB_DEPENDS} \
 		audio/libcddb \
 		audio/libsamplerate \
 		audio/libvorbis \
+		audio/opus \
 		audio/portaudio-svn \
 		audio/speex \
 		audio/taglib \
