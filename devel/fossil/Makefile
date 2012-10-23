@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2012/04/30 13:12:15 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2012/10/23 08:10:27 sthen Exp $
 
 COMMENT =		simple distributed software configuration management
 
-DISTNAME =		fossil-src-20120317175325
-PKGNAME =		fossil-1.22
+DISTNAME =		fossil-src-20121022124804
+PKGNAME =		fossil-1.24
 EPOCH =			0
 CATEGORIES =		devel www
-REVISION =		0
 
 MAINTAINER =		James Turner <james@calminferno.net>
 
@@ -30,13 +29,15 @@ BUILD_DEPENDS =		${MODTCL_BUILD_DEPENDS}
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS =	--disable-internal-sqlite --disable-lineedit
-CONFIGURE_ENV =		CFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib"
 
 .if ${FLAVOR} == "static"
 CONFIGURE_ARGS +=	--static --with-openssl=none
 .endif
 
 REGRESS_DEPENDS =	${MODTCL_RUN_DEPENDS}
+
+post-extract:
+	@rm -f ${WRKSRC}/src/sqlite3.h
 
 do-regress:
 	@cd ${WRKSRC} && ${MODTCL_BIN} test/tester.tcl fossil

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_shell_c,v 1.1 2012/10/23 08:10:27 sthen Exp $
+--- src/shell.c.orig	Wed Aug  8 12:15:08 2012
++++ src/shell.c	Wed Aug  8 12:15:16 2012
+@@ -32,7 +32,7 @@
+ #include <string.h>
+ #include <stdio.h>
+ #include <assert.h>
+-#include "sqlite3.h"
++#include <sqlite3.h>
+ #include <ctype.h>
+ #include <stdarg.h>
+ 
