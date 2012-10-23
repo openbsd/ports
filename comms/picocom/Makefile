@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/07/08 18:19:18 lteo Exp $
+# $OpenBSD: Makefile,v 1.2 2012/10/23 09:39:51 sthen Exp $
 # Original from: Nick Patavalis (npat@efault.net)
 #
 COMMENT			= minimal dumb-terminal emulation program
 
 DISTNAME		= picocom-1.6
-CATEGORIES		= comms	
+CATEGORIES		= comms
 MASTER_SITES		= http://picocom.googlecode.com/files/
 
 HOMEPAGE		= http://code.google.com/p/picocom/
-MAINTAINER		= Kyle Isom <coder@kyleisom.net>	
+MAINTAINER		= Kyle Isom <coder@kyleisom.net>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM	= Yes

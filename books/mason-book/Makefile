@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/15 12:47:38 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2012/10/23 09:44:02 sthen Exp $
 
 COMMENT=	book on embedding Perl in HTML with Mason
-CATEGORIES=	books 
+CATEGORIES=	books
 
 # unversioned, so impose a version on it
 V=		1.0

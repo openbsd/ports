@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2012/09/27 17:26:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2012/10/23 09:44:02 sthen Exp $
 
 COMMENT =	modular, cross-platform and multi-threaded benchmark tool
 DISTNAME =	sysbench-0.4.8
 REVISION=	2
-CATEGORIES =	benchmarks 
+CATEGORIES =	benchmarks
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=sysbench/}
 
 HOMEPAGE =	http://sysbench.sourceforge.net/
@@ -13,7 +13,8 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
-WANTLIB =		m c pthread 
+
+WANTLIB =		m c pthread
 
 MAINTAINER =		Jung <moorang@gmail.com>
 

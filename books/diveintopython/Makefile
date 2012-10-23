@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/10/21 16:23:44 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2012/10/23 09:44:02 sthen Exp $
 
 COMMENT=	book about Python for experienced programmers
 
@@ -7,7 +7,7 @@ PKGNAME=	diveintopython-${VERSION}
 REVISION=	0
 DISTNAME=	diveintopython-html-${VERSION}
 DISTNAMEPRINT=	diveintopython-pdf-${VERSION}
-CATEGORIES=	books 
+CATEGORIES=	books
 
 HOMEPAGE=	http://diveintopython.org/
 

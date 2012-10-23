@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2011/07/19 19:15:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2012/10/23 09:44:02 sthen Exp $
 
 COMMENT=	Chinese(Big5) VT100 terminal emulator for X
 
 DISTNAME=       crxvt-2.10-2
 PKGNAME=        zh-crxvt-2.10.2
 REVISION=	3
-CATEGORIES=     chinese 
+CATEGORIES=     chinese
 
 MASTER_SITES=   ftp://ftp.tw.openbsd.org/pub/OpenBSD/distfiles/ \
 		${MASTER_SITES_BACKUP}
@@ -29,7 +29,7 @@ CONFIGURE_ARGS=	--os=OpenBSD --no-menu
 post-configure:
 	mv ${WRKSRC}/config.status ${WRKSRC}/config.status.orig
 	sed -e '/OPT_CRXVT_CFONT/s/=.*/=-taipei-ming-medium-r-normal--16-160-75-75-c-160-big5-0/' ${WRKSRC}/config.status.orig > ${WRKSRC}/config.status
-	
+
 post-extract:
 	mv ${WRKSRC}/script/os_def/FreeBSD ${WRKSRC}/script/os_def/FreeBSD.orig
 	sed -e '/OS/s/=.*/=OpenBSD/' ${WRKSRC}/script/os_def/FreeBSD.orig > ${WRKSRC}/script/os_def/OpenBSD

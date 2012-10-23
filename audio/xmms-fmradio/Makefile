@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/09/16 08:26:11 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2012/10/23 09:39:51 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,7 +11,7 @@ CATEGORIES=	audio x11
 
 HOMEPAGE=	http://silicone.free.fr/xmms-FMRadio/
 
-MAINTAINER=	Vladimir Popov <pva48@mail.ru>	
+MAINTAINER=	Vladimir Popov <pva48@mail.ru>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

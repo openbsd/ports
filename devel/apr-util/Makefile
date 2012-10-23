@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2012/04/28 09:49:43 stsp Exp $
+# $OpenBSD: Makefile,v 1.37 2012/10/23 09:44:02 sthen Exp $
 
 COMMENT=	companion library to APR
 
@@ -26,7 +26,7 @@ MASTER_SITES=	${MASTER_SITE_APACHE:=apr/}
 WANTLIB=	expat lib/db4/db>=4
 LIB_DEPENDS=	databases/db/v4,no_java,no_tcl
 
-MODULES=	converters/libiconv		
+MODULES=	converters/libiconv
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.68
