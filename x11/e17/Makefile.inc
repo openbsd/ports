@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.13 2011/06/02 17:35:47 kili Exp $
+# $OpenBSD: Makefile.inc,v 1.14 2012/10/23 09:36:19 sthen Exp $
 
 CATEGORIES ?=		x11
 
@@ -9,8 +9,7 @@ MASTER_SITES ?=		http://download.enlightenment.org/releases/ \
 			http://download.enlightenment.org/snapshots/2010-11-12/ \
 			http://download.enlightenment.org/snapshots/2009-06-14/ \
 			http://distfiles.nl/ \
-                        ftp://ftp.vantronix.com/pub/mirrors/dlg/ \
-                        http://www.itee.uq.edu.au/~dlg/openbsd/ 
+			http://www.itee.uq.edu.au/~dlg/openbsd/
 
 DIST_SUBDIR ?=		e17
 
