@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile.inc,v 1.12 2011/11/19 22:19:53 pascal Exp $
+# $OpenBSD: Makefile.inc,v 1.13 2012/10/23 09:33:44 sthen Exp $
 
 # common stuff for all gcc ports
 # we assume each one defines a V variable.
 
-CATEGORIES=	lang 
+CATEGORIES=	lang
 
 PERMIT_PACKAGE_FTP=Yes
 PERMIT_DISTFILES_FTP=Yes
