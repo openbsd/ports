@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.34 2012/10/15 07:17:12 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.35 2012/10/23 10:41:23 dcoppa Exp $
 
 COMMENT =		persistent key-value database
-DISTNAME =		redis-2.4.17
-REVISION =		0
+DISTNAME =		redis-2.6.0
 CATEGORIES =		databases
 HOMEPAGE =		http://redis.io/
 
@@ -14,13 +13,11 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += 		c execinfo m pthread
+WANTLIB += 		c m pthread
 
 MASTER_SITES =		http://redis.googlecode.com/files/
 
 MODULES =		lang/tcl
-
-LIB_DEPENDS =		devel/libexecinfo
 
 MAKE_FLAGS =		CC=${CC} \
 			DEBUG="" \
@@ -43,6 +40,9 @@ REGRESS_TARGET =	test
 
 DBDIR =			/var/redis
 SUBST_VARS +=		DBDIR
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/src/redis.c
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/redis

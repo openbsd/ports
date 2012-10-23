@@ -1,63 +1,12 @@
-$OpenBSD: patch-src_redis_c,v 1.13 2012/09/18 13:20:43 dcoppa Exp $
---- src/redis.c.orig	Thu Aug 30 17:42:47 2012
-+++ src/redis.c	Tue Sep 18 15:08:20 2012
-@@ -33,7 +33,9 @@
- 
- #ifdef HAVE_BACKTRACE
- #include <execinfo.h>
-+  #ifndef __OpenBSD__
- #include <ucontext.h>
-+  #endif
- #endif /* HAVE_BACKTRACE */
- 
- #include <time.h>
-@@ -1816,7 +1818,9 @@ int main(int argc, char **argv) {
- 
- #ifdef HAVE_BACKTRACE
- static void *getMcontextEip(ucontext_t *uc) {
--#if defined(__FreeBSD__)
-+#if defined(__OpenBSD__)
-+    return NULL;
-+#elif defined(__FreeBSD__)
-     return (void*) uc->uc_mcontext.mc_eip;
- #elif defined(__dietlibc__)
-     return (void*) uc->uc_mcontext.eip;
-@@ -1845,14 +1849,6 @@ static void *getMcontextEip(ucontext_t *uc) {
- #endif
- }
- 
--void bugReportStart(void) {
--    if (server.bug_report_start == 0) {
--        redisLog(REDIS_WARNING,
--            "=== REDIS BUG REPORT START: Cut & paste starting from here ===");
--        server.bug_report_start = 1;
--    }
--}
--
- static void sigsegvHandler(int sig, siginfo_t *info, void *secret) {
-     void *trace[100];
-     char **messages = NULL;
-@@ -1928,7 +1924,7 @@ static void sigsegvHandler(int sig, siginfo_t *info, v
- "=== REDIS BUG REPORT END. Make sure to include from START to END. ===\n\n"
- "       Please report the crash opening an issue on github:\n\n"
- "           http://github.com/antirez/redis/issues\n\n"
--"  Suspect RAM error? Use redis-server --test-memory to veryfy it.\n\n"
-+"  Suspect RAM error? Use redis-server --test-memory to verify it.\n\n"
- );
-     /* free(messages); Don't call free() with possibly corrupted memory. */
-     if (server.daemonize) unlink(server.pidfile);
-@@ -1944,6 +1940,14 @@ static void sigsegvHandler(int sig, siginfo_t *info, v
-     kill(getpid(),sig);
- }
- #endif /* HAVE_BACKTRACE */
-+
-+void bugReportStart(void) {
-+    if (server.bug_report_start == 0) {
-+        redisLog(REDIS_WARNING,
-+            "=== REDIS BUG REPORT START: Cut & paste starting from here ===");
-+        server.bug_report_start = 1;
-+    }
-+}
- 
- static void sigtermHandler(int sig) {
-     REDIS_NOTUSED(sig);
+$OpenBSD: patch-src_redis_c,v 1.14 2012/10/23 10:41:23 dcoppa Exp $
+--- src/redis.c.orig	Tue Oct 23 11:15:16 2012
++++ src/redis.c	Tue Oct 23 11:16:09 2012
+@@ -1099,7 +1099,7 @@ void initServerConfig() {
+     server.aof_fd = -1;
+     server.aof_selected_db = -1; /* Make sure the first time will not match */
+     server.aof_flush_postponed_start = 0;
+-    server.pidfile = zstrdup("/var/run/redis.pid");
++    server.pidfile = zstrdup("${DBDIR}/redis.pid");
+     server.rdb_filename = zstrdup("dump.rdb");
+     server.aof_filename = zstrdup("appendonly.aof");
+     server.requirepass = NULL;

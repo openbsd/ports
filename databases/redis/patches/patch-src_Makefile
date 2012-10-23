@@ -1,61 +1,44 @@
-$OpenBSD: patch-src_Makefile,v 1.10 2012/05/31 08:25:50 dcoppa Exp $
---- src/Makefile.orig	Wed May 23 11:32:58 2012
-+++ src/Makefile	Thu May 31 10:03:16 2012
-@@ -58,7 +58,11 @@ PREFIX?=/usr/local
+$OpenBSD: patch-src_Makefile,v 1.11 2012/10/23 10:41:23 dcoppa Exp $
+--- src/Makefile.orig	Mon Oct 22 23:27:18 2012
++++ src/Makefile	Tue Oct 23 11:08:06 2012
+@@ -52,9 +52,9 @@ ifeq ($(uname_S),SunOS)
+   DEBUG= -g -ggdb
+ else
+   FINAL_CFLAGS= $(STD) $(WARN) $(OPT) $(DEBUG) $(CFLAGS) $(REDIS_CFLAGS)
+-  FINAL_LDFLAGS= $(LDFLAGS) $(REDIS_LDFLAGS) -g -rdynamic -ggdb
++  FINAL_LDFLAGS= $(LDFLAGS) $(REDIS_LDFLAGS)
+   FINAL_LIBS= -lm -pthread
+-  DEBUG= -g -rdynamic -ggdb
++  DEBUG?= -g -rdynamic -ggdb
+ endif
+ 
+ # Include paths to dependencies
+@@ -84,6 +84,10 @@ PREFIX?=/usr/local
  INSTALL_BIN= $(PREFIX)/bin
  INSTALL= cp -pf
  
--OBJ = adlist.o ae.o anet.o dict.o redis.o sds.o zmalloc.o lzf_c.o lzf_d.o pqsort.o zipmap.o sha1.o ziplist.o release.o networking.o util.o object.o db.o replication.o rdb.o t_string.o t_list.o t_set.o t_zset.o t_hash.o config.o aof.o vm.o pubsub.o multi.o debug.o sort.o intset.o syncio.o slowlog.o bio.o memtest.o
 +ifndef INSTALL_DIR
 +  INSTALL_DIR= mkdir -p
 +endif
 +
-+OBJ = adlist.o ae.o anet.o dict.o redis.o sds.o zmalloc.o lzf_c.o lzf_d.o pqsort.o zipmap.o sha1.o ziplist.o release.o networking.o util.o object.o db.o replication.o rdb.o t_string.o t_list.o t_set.o t_zset.o t_hash.o config.o aof.o vm.o pubsub.o multi.o debug.o sort.o intset.o syncio.o endian.o slowlog.o bio.o memtest.o
- BENCHOBJ = ae.o anet.o redis-benchmark.o sds.o adlist.o zmalloc.o
- CLIOBJ = anet.o sds.o adlist.o redis-cli.o zmalloc.o release.o ae.o
- CHECKDUMPOBJ = redis-check-dump.o lzf_c.o lzf_d.o
-@@ -149,9 +153,7 @@ zmalloc.o: zmalloc.c config.h zmalloc.h
- .PHONY: dependencies
+ CCCOLOR="\033[34m"
+ LINKCOLOR="\033[34;1m"
+ SRCCOLOR="\033[33m"
+@@ -194,7 +198,7 @@ distclean: clean
+ .PHONY: distclean
  
- dependencies:
--	@printf '%b %b\n' $(MAKECOLOR)MAKE$(ENDCOLOR) $(BINCOLOR)hiredis$(ENDCOLOR)
- 	@cd ../deps/hiredis && $(MAKE) static ARCH="$(ARCH)"
--	@printf '%b %b\n' $(MAKECOLOR)MAKE$(ENDCOLOR) $(BINCOLOR)linenoise$(ENDCOLOR)
- 	@cd ../deps/linenoise && $(MAKE) ARCH="$(ARCH)"
- 
- ../deps/jemalloc/lib/libjemalloc.a:
-@@ -162,7 +164,6 @@ redis-benchmark.o:
- 	$(QUIET_CC)$(CC) -c $(CFLAGS) -I../deps/hiredis $(DEBUG) $(COMPILE_TIME) $<
- 
- redis-benchmark: dependencies $(BENCHOBJ)
--	@printf '%b %b\n' $(MAKECOLOR)MAKE$(ENDCOLOR) $(BINCOLOR)hiredis$(ENDCOLOR)
- 	@cd ../deps/hiredis && $(MAKE) static ARCH="$(ARCH)"
- 	$(QUIET_LINK)$(CC) -o $(BENCHPRGNAME) $(CCOPT) $(DEBUG) $(BENCHOBJ) ../deps/hiredis/libhiredis.a $(CCLINK) $(ALLOC_LINK)
- 
-@@ -185,7 +186,7 @@ redis-check-aof: $(CHECKAOFOBJ)
- 	$(QUIET_LINK)$(CC) -o $(CHECKAOFPRGNAME) $(CCOPT) $(DEBUG) $(CHECKAOFOBJ) $(CCLINK)
- 
- redis-server: $(OBJ)
--	$(QUIET_LINK)$(CC) -o $(PRGNAME) $(CCOPT) $(DEBUG) $(OBJ) $(CCLINK) $(ALLOC_LINK)
-+	$(QUIET_LINK)$(CC) -Wl,--export-dynamic -o $(PRGNAME) $(CCOPT) $(DEBUG) $(OBJ) $(CCLINK) -L${LOCALBASE}/lib -lexecinfo $(ALLOC_LINK)
- 
- # Because the jemalloc.h header is generated as a part of the jemalloc build
- # process, building it should complete before building any other object.
-@@ -202,7 +203,7 @@ dep:
- 	$(CC) -MM *.c -I ../deps/hiredis -I ../deps/linenoise
- 
- test: redis-server redis-check-aof
+ test: $(REDIS_SERVER_NAME) $(REDIS_CHECK_AOF_NAME)
 -	@(cd ..; ./runtest)
 +	@(cd ..; ulimit -Sn 192; ${TCL_BIN} tests/test_helper.tcl)
  
- bench:
- 	./redis-benchmark
-@@ -229,7 +230,7 @@ noopt:
- 	$(MAKE) PROF="-pg" ARCH="-arch i386"
+ lcov:
+ 	$(MAKE) gcov
+@@ -223,7 +227,7 @@ src/help.h:
+ 	@../utils/generate-command-help.rb > help.h
  
  install: all
 -	mkdir -p $(INSTALL_BIN)
 +	$(INSTALL_DIR) $(INSTALL_BIN)
- 	$(INSTALL) $(PRGNAME) $(INSTALL_BIN)
- 	$(INSTALL) $(BENCHPRGNAME) $(INSTALL_BIN)
- 	$(INSTALL) $(CLIPRGNAME) $(INSTALL_BIN)
+ 	$(REDIS_INSTALL) $(REDIS_SERVER_NAME) $(INSTALL_BIN)
+ 	$(REDIS_INSTALL) $(REDIS_BENCHMARK_NAME) $(INSTALL_BIN)
+ 	$(REDIS_INSTALL) $(REDIS_CLI_NAME) $(INSTALL_BIN)
