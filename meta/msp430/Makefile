@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2012/04/17 12:25:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2012/10/23 09:51:49 sthen Exp $
 
 COMMENT=	MSP430 meta-package
 
-PKGNAME=	msp430-20120406 # version equals the mspgcc LTS release
+PKGNAME=	msp430-20120406# version equals the mspgcc LTS release
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
