@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2012/10/11 02:40:48 lteo Exp $
+# $OpenBSD: Makefile,v 1.71 2012/10/23 19:29:25 naddy Exp $
 
 SHARED_ONLY =		Yes
 
@@ -31,6 +31,7 @@ SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--disable-static-daq
+CONFIGURE_ENV=		MKDIR_P="/bin/mkdir -p"
 
 MAKE_FLAGS =		mandir=${TRUEPREFIX}/man
 
