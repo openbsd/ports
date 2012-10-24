@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2012/10/17 16:31:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2012/10/24 09:06:58 jasper Exp $
 
 COMMENT=	building material for websites
 
 V=		5.6.0.2
 DISTNAME=	concrete${V}
 PKGNAME=	concrete5-${V}
-REVISION=	0
+REVISION=	1
 EXTRACT_SUFX=	.zip
 CATEGORIES=	www
 HOMEPAGE=	http://www.concrete5.org/
@@ -29,7 +29,8 @@ SUBST_VARS=	INSTDIR
 
 MODULES=	lang/php
 BUILD_DEPENDS=	archivers/unzip
-RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-gd \
+RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-curl \
+		lang/php/${MODPHP_VERSION},-gd \
 		lang/php/${MODPHP_VERSION},-mysql
 
 do-install:
