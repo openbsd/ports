@@ -1,0 +1,129 @@
+$OpenBSD: patch-konference_member_c,v 1.3 2012/10/24 09:37:21 sthen Exp $
+--- konference/member.c.orig	Mon Jul  2 13:28:19 2012
++++ konference/member.c	Tue Oct 23 10:01:21 2012
+@@ -255,10 +255,10 @@ static struct ast_frame *get_next_soundframe(ast_conf_
+ 			ast_mutex_unlock( &member->lock ) ;
+ 			ast_free(toboot);
+ 			// if we get here, we've gotten to the end of the queue; reset write format
+-			if ( ast_set_write_format( member->chan, member->write_format ) < 0 )
++			if ( ast_set_write_format_by_id( member->chan, member->chan->writeformat.id ) < 0 )
+ 			{
+ 				ast_log( LOG_ERROR, "unable to set write format to %d\n",
+-				    member->write_format ) ;
++				    member->chan->writeformat.id ) ;
+ 			}
+ 			return NULL;
+ 		} else {
+@@ -352,14 +352,14 @@ int member_exec( struct ast_channel* chan, const char*
+ 	// setup asterisk read/write formats
+ 	//
+ 
+-	if ( ast_set_read_format( chan, member->read_format ) < 0 )
++	if ( ast_set_read_format_by_id( chan, member->chan->readformat.id ) < 0 )
+ 	{
+ 		ast_log( LOG_ERROR, "unable to set read format to signed linear\n" ) ;
+ 		delete_member( member ) ;
+ 		return -1 ;
+ 	}
+ 
+-	if ( ast_set_write_format( chan, member->write_format ) < 0 ) // AST_FORMAT_SLINEAR, chan->nativeformats
++	if ( ast_set_write_format_by_id( chan, member->chan->writeformat.id ) < 0 ) // AST_FORMAT_SLINEAR, chan->nativeformats
+ 	{
+ 		ast_log( LOG_ERROR, "unable to set write format to signed linear\n" ) ;
+ 		delete_member( member ) ;
+@@ -496,6 +496,7 @@ int member_exec( struct ast_channel* chan, const char*
+ 
+ ast_conf_member* create_member( struct ast_channel *chan, const char* data, char* conf_name )
+ {
++	struct ast_format tmp_fmt;
+ 	ast_conf_member *member;
+ #ifdef	CACHE_CONTROL_BLOCKS
+ #ifdef	SPEAKER_SCOREBOARD
+@@ -756,14 +757,20 @@ ast_conf_member* create_member( struct ast_channel *ch
+ 	// ( chan->nativeformats, AST_FORMAT_SLINEAR, AST_FORMAT_ULAW, AST_FORMAT_GSM )
+ #if	SILDET == 1 || SILDET == 2
+ #ifndef	AC_USE_G722
+-	member->read_format = !member->dsp ? chan->nativeformats : AST_FORMAT_SLINEAR ;
++	if (!member->dsp)
++		ast_set_read_format_from_cap(chan, chan->nativeformats);
++	else
++		ast_set_read_format_by_id(chan, AST_FORMAT_SLINEAR);
+ #else
+-	member->read_format = !member->dsp ? chan->nativeformats : AST_FORMAT_SLINEAR16 ;
++	if (!member->dsp)
++		ast_set_read_format_from_cap(chan, chan->nativeformats);
++	else
++		ast_set_read_format_by_id(chan, AST_FORMAT_SLINEAR16);
+ #endif
+ #else
+-	member->read_format = chan->nativeformats ;
++	ast_set_read_format_from_cap(chan, chan->nativeformats);
+ #endif
+-	member->write_format = chan->nativeformats;
++	ast_set_write_format_from_cap(chan, chan->nativeformats);
+ 	// 1.2 or 1.3+
+ #ifdef AST_FORMAT_AUDIO_MASK
+ 
+@@ -773,15 +780,23 @@ ast_conf_member* create_member( struct ast_channel *ch
+ 
+ 	//translation paths ( ast_translator_build_path() returns null if formats match )
+ #ifndef	AC_USE_G722
+-	member->to_slinear = ast_translator_build_path( AST_FORMAT_SLINEAR, member->read_format ) ;
+-	member->from_slinear = ast_translator_build_path( member->write_format, AST_FORMAT_SLINEAR ) ;
++	member->to_slinear = ast_translator_build_path(
++					ast_format_set(&tmp_fmt, AST_FORMAT_SLINEAR, 0),
++					&member->chan->rawreadformat );
++	member->from_slinear = ast_translator_build_path(
++					&member->chan->rawwriteformat,
++					ast_format_set(&tmp_fmt, AST_FORMAT_SLINEAR, 0) ) ;
+ #else
+-	member->to_slinear = ast_translator_build_path( AST_FORMAT_SLINEAR16, member->read_format ) ;
+-	member->from_slinear = ast_translator_build_path( member->write_format, AST_FORMAT_SLINEAR16 ) ;
++	member->to_slinear = ast_translator_build_path(
++					ast_format_set(&tmp_fmt, AST_FORMAT_SLINEAR16, 0),
++					&member->chan->rawreadformat ) ;
++	member->from_slinear = ast_translator_build_path(
++					&member->chan->rawwriteformat,
++					ast_format_set(&tmp_fmt, AST_FORMAT_SLINEAR16, 0) ) ;
+ #endif
+ 
+ 	// index for converted_frames array
+-	switch ( member->write_format )
++	switch ( member->chan->rawwriteformat.id )
+ 	{
+ #ifndef	AC_USE_G722
+ 		case AST_FORMAT_SLINEAR:
+@@ -822,7 +837,7 @@ ast_conf_member* create_member( struct ast_channel *ch
+ 	}
+ 
+ 	// index for converted_frames array
+-	switch ( member->read_format )
++	switch ( member->chan->rawreadformat.id )
+ 	{
+ #ifndef	AC_USE_G722
+ 		case AST_FORMAT_SLINEAR:
+@@ -1212,6 +1227,8 @@ void queue_silent_frame(
+ 	ast_conf_member* member
+ )
+ {
++	struct ast_format tmp_fmt;
++
+ 	// get the appropriate silent frame
+ 	struct ast_frame* qf = silent_conf_frame->converted[ member->write_format_index ] ;
+ 
+@@ -1223,9 +1240,13 @@ void queue_silent_frame(
+ 		// can't be used simultaneously for multiple audio streams
+ 		//
+ #ifndef AC_USE_G722
+-		struct ast_trans_pvt* trans = ast_translator_build_path( member->write_format, AST_FORMAT_SLINEAR ) ;
++		struct ast_trans_pvt* trans = ast_translator_build_path(
++						&member->chan->rawwriteformat,
++						ast_format_set(&tmp_fmt, AST_FORMAT_SLINEAR, 0) ) ;
+ #else
+-		struct ast_trans_pvt* trans = ast_translator_build_path( member->write_format, AST_FORMAT_SLINEAR16 ) ;
++		struct ast_trans_pvt* trans = ast_translator_build_path(
++						&member->chan->rawwriteformat,
++						ast_format_set(&tmp_fmt, AST_FORMAT_SLINEAR16, 0) ) ;
+ #endif
+ 		if ( trans )
+ 		{

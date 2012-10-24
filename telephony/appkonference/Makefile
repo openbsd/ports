@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2012/09/28 00:04:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2012/10/24 09:37:21 sthen Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	conferencing application for asterisk
@@ -7,7 +7,7 @@ COMMENT=	conferencing application for asterisk
 ONLY_FOR_ARCHS=	i386 amd64
 
 DISTNAME=	appkonference-2.2
-REVISION=	0
+REVISION=	1	
 
 CATEGORIES=	telephony
 

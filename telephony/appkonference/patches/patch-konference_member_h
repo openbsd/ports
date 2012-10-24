@@ -1,0 +1,14 @@
+$OpenBSD: patch-konference_member_h,v 1.1 2012/10/24 09:37:21 sthen Exp $
+--- konference/member.h.orig	Wed May 16 09:53:17 2012
++++ konference/member.h	Tue Oct 23 09:55:56 2012
+@@ -150,10 +150,6 @@ struct ast_conf_member
+ 	int ignore_vad_result;
+ #endif
+ 
+-	// audio format this member is using
+-	int write_format ;
+-	int read_format ;
+-
+ 	int write_format_index ;
+ 	int read_format_index ;
+ 
