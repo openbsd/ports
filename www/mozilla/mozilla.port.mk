@@ -1,7 +1,9 @@
-# $OpenBSD: mozilla.port.mk,v 1.46 2012/10/20 11:17:56 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.47 2012/10/24 19:28:43 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
+
+DPB_PROPERTIES =	parallel
 
 .for _lib in ${MOZILLA_LIBS}
 SHARED_LIBS +=	${_lib}	${SO_VERSION}
