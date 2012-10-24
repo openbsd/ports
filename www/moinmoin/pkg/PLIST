@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2012/05/25 14:32:15 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.14 2012/10/24 22:09:30 fgsch Exp $
 bin/moin
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/Page.py
@@ -608,6 +608,8 @@ lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1080700.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1080700.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1080800.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1080800.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1080900.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1080900.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1089999.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1089999.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1090000.py
@@ -620,6 +622,8 @@ lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1090300.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1090300.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1090400.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1090400.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1090500.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1090500.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/__init__.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/_conv160.py
@@ -2122,6 +2126,7 @@ share/doc/moinmoin/
 share/doc/moinmoin/CHANGES
 share/doc/moinmoin/INSTALL.html
 share/doc/moinmoin/README.migration
+share/doc/moinmoin/UPDATE.html
 share/moin/
 share/moin/config/
 share/moin/config/logging/
