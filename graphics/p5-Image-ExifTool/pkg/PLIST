@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2012/04/02 16:32:54 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.19 2012/10/24 13:49:55 giovanni Exp $
 bin/exiftool
 ${P5SITE}/File/
 ${P5SITE}/File/RandomAccess.pm
@@ -141,6 +141,7 @@ ${P5SITE}/Image/ExifTool/PSP.pm
 ${P5SITE}/Image/ExifTool/Panasonic.pm
 ${P5SITE}/Image/ExifTool/PanasonicRaw.pm
 ${P5SITE}/Image/ExifTool/Pentax.pm
+${P5SITE}/Image/ExifTool/PhotoCD.pm
 ${P5SITE}/Image/ExifTool/PhotoMechanic.pm
 ${P5SITE}/Image/ExifTool/Photoshop.pm
 ${P5SITE}/Image/ExifTool/PostScript.pm
@@ -290,6 +291,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::Panasonic.3p
 @man man/man3p/Image::ExifTool::PanasonicRaw.3p
 @man man/man3p/Image::ExifTool::Pentax.3p
+@man man/man3p/Image::ExifTool::PhotoCD.3p
 @man man/man3p/Image::ExifTool::PhotoMechanic.3p
 @man man/man3p/Image::ExifTool::Photoshop.3p
 @man man/man3p/Image::ExifTool::PostScript.3p
