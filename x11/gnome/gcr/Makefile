@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2012/10/16 06:46:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2012/10/24 07:04:03 ajacoutot Exp $
 
 COMMENT=	library for bits of crypto UI and parsing
 
 GNOME_PROJECT=	gcr
 GNOME_VERSION=	3.6.1
+REVISION=	0
 
 SHARED_LIBS +=  gck-1                     1.0 # 0.0
 SHARED_LIBS +=  gcr-3                     2.0 # 1.0
@@ -44,7 +45,7 @@ RUN_DEPENDS=	misc/shared-mime-info
 
 LIB_DEPENDS=	x11/gtk+3 \
 		security/libgcrypt \
-		security/p11-kit>=0.14
+		security/p11-kit
 
 CONFIGURE_ARGS=	--disable-update-mime
 
