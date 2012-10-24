@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_tracker-control_Makefile_in,v 1.2 2011/09/18 08:36:56 ajacoutot Exp $
+$OpenBSD: patch-src_tracker-control_Makefile_in,v 1.3 2012/10/24 17:39:29 ajacoutot Exp $
 
 Needed by patch-src_tracker-control_tracker-control_c.
 
---- src/tracker-control/Makefile.in.orig	Thu Sep 15 17:54:21 2011
-+++ src/tracker-control/Makefile.in	Sat Sep 17 11:00:58 2011
-@@ -126,7 +126,7 @@ BUILD_LIBS = @BUILD_LIBS@
+--- src/tracker-control/Makefile.in.orig	Wed Oct 24 17:56:59 2012
++++ src/tracker-control/Makefile.in	Wed Oct 24 19:11:52 2012
+@@ -148,7 +148,7 @@ BUILD_LIBS = @BUILD_LIBS@
  BUILD_VALAFLAGS = @BUILD_VALAFLAGS@
  CC = @CC@
  CCDEPMODE = @CCDEPMODE@

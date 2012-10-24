@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.118 2012/10/15 13:26:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.119 2012/10/24 17:39:29 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT-evolution=	(meta-)tracker indexer plugin for evolution
 COMMENT-nautilus=	(meta-)tracker tagging plugin for nautilus
 
 GNOME_PROJECT=	tracker
-GNOME_VERSION=	0.14.2
+GNOME_VERSION=	0.14.3
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker.
@@ -16,10 +16,6 @@ PKGNAME=	meta-tracker-${VERSION}
 PKGNAME-main=		meta-tracker-${VERSION}
 PKGNAME-evolution=	evolution-meta-tracker-${VERSION}
 PKGNAME-nautilus=	nautilus-meta-tracker-${VERSION}
-
-REVISION-main=		8
-REVISION-evolution=	4
-REVISION-nautilus=	5
 
 # Only get the first x.y which is needed in the PLIST.
 # NOTE: when MAJ_V changes, increment TRACKER_VERSION accordingly and bump:
@@ -57,7 +53,7 @@ WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm drm expat ffi fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += kvm m pcre pixman-1 pthread-stubs xcb xcb-render xcb-shm
 WANTLIB += ICE SM atk-bridge-2.0 atspi harfbuzz icudata icule
-WANTLIB += z unistring pthread icuuc
+WANTLIB += z icui18n pthread icuuc
 
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += archive atk-1.0 bz2 c cairo cairo-gobject
@@ -104,8 +100,6 @@ WANTLIB-nautilus += gtk-3 nautilus-extension pango-1.0 pangocairo-1.0 dbus-1
 WANTLIB-nautilus += pangoft2-1.0 png sqlite3 tracker-sparql-0.14 stdc++
 
 BUILD_DEPENDS=		lang/vala
-
-LIB_DEPENDS=		converters/libunistring
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			x11/gnome/panel \
