@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/06/06 15:01:49 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.8 2012/10/24 23:49:08 brad Exp $
 @conflict ldns-*
 %%SHARED%%
 bin/ldns-config
 include/ldns/
 include/ldns/buffer.h
 include/ldns/common.h
+include/ldns/dane.h
 include/ldns/dname.h
 include/ldns/dnssec.h
 include/ldns/dnssec_sign.h
@@ -85,6 +86,12 @@ lib/libldns.la
 @man man/man3/ldns_buffer_write_u8_at.3
 @man man/man3/ldns_calc_keytag.3
 @man man/man3/ldns_create_nsec.3
+@man man/man3/ldns_dane_cert2rdf.3
+@man man/man3/ldns_dane_create_tlsa_owner.3
+@man man/man3/ldns_dane_create_tlsa_rr.3
+@man man/man3/ldns_dane_select_certificate.3
+@man man/man3/ldns_dane_verify.3
+@man man/man3/ldns_dane_verify_rr.3
 @man man/man3/ldns_dname.3
 @man man/man3/ldns_dname2canonical.3
 @man man/man3/ldns_dname_cat.3

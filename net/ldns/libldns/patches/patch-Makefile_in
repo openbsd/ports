@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.13 2012/07/10 22:53:57 espie Exp $
---- Makefile.in.orig	Thu May  3 16:02:43 2012
-+++ Makefile.in	Wed Jul 11 00:50:24 2012
+$OpenBSD: patch-Makefile_in,v 1.14 2012/10/24 23:49:08 brad Exp $
+--- Makefile.in.orig	Wed Oct 17 09:36:24 2012
++++ Makefile.in	Wed Oct 24 17:04:23 2012
 @@ -12,7 +12,7 @@ datarootdir	= @datarootdir@
  datadir		= @datadir@
  libdir		= @libdir@
@@ -10,16 +10,7 @@ $OpenBSD: patch-Makefile_in,v 1.13 2012/07/10 22:53:57 espie Exp $
  pywrapdir       = ${srcdir}/contrib/python
  pyldnsxwrapdir  = ${srcdir}/contrib/ldnsx
  swig		= @swig@
-@@ -201,7 +201,7 @@ lib: libldns.la
- lib-export-all: libldns.la-export-all
- 
- libldns.la: $(LDNS_ALL_LOBJS)
--	$(LINK_LIB) $(LIBSSL_LDFLAGS) $(LIBSSL_LIBS) --export-symbols $(srcdir)/ldns_symbols.def -o libldns.la $(LDNS_ALL_LOBJS) -rpath $(libdir) $(RUNTIME_PATH)
-+	$(LINK_LIB) $(LIBSSL_LDFLAGS) $(LIBSSL_LIBS) -export-symbols $(srcdir)/ldns_symbols.def -o libldns.la $(LDNS_ALL_LOBJS) -rpath $(libdir) $(RUNTIME_PATH)
- 
- libldns.la-export-all: $(LDNS_ALL_LOBJS)
- 	$(LINK_LIB) -o libldns.la $(LDNS_ALL_LOBJS) -rpath $(libdir) $(RUNTIME_PATH)
-@@ -286,7 +286,6 @@ uninstall-h:
+@@ -297,7 +297,6 @@ uninstall-h:
  install-lib: lib
  	$(INSTALL) -m 755 -d $(DESTDIR)$(libdir)
  	$(LIBTOOL) --mode=install cp libldns.la $(DESTDIR)$(libdir)

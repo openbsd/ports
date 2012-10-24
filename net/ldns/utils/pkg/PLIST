@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/10/17 19:41:24 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/10/24 23:49:08 brad Exp $
 @bin bin/ldns-chaos
 @bin bin/ldns-compare-zones
+@bin bin/ldns-dane
 @bin bin/ldns-dpa
 @bin bin/ldns-gen-zone
 @bin bin/ldns-key2ds
@@ -25,6 +26,7 @@
 @bin bin/ldnsd
 @man man/man1/ldns-chaos.1
 @man man/man1/ldns-compare-zones.1
+@man man/man1/ldns-dane.1
 @man man/man1/ldns-dpa.1
 @man man/man1/ldns-gen-zone.1
 @man man/man1/ldns-key2ds.1
