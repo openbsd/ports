@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2012/10/19 22:29:49 kurt Exp $
+# $OpenBSD: Makefile,v 1.36 2012/10/24 18:44:51 kurt Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS= 	amd64 i386
@@ -8,9 +8,9 @@ COMMENT-jre=		Java2(TM) Standard Edition Runtime Environment v${V}
 V=			1.6.0.03
 PKGNAME=		jdk-${V}
 PKGNAME-main=		jdk-${V}
-REVISION-main =		18
+REVISION-main =		19
 PKGNAME-jre=		jre-${V}
-REVISION-jre =		18
+REVISION-jre =		19
 
 CATEGORIES=		devel/jdk java
 DPB_PROPERTIES=		parallel
