@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.51 2012/09/23 16:56:15 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.52 2012/10/24 22:51:26 jeremy Exp $
 
 # ruby module
 
@@ -390,6 +390,7 @@ MODRUBY_BUILD_TARGET = \
     cd ${_GEM_CONTENT} && tar -cf ${WRKDIR}/${_GEM_PATCHED} *.gz; \
     mkdir -p ${GEM_BASE}; \
     env -i ${MAKE_ENV} HOME=${GEM_BASE}/.. GEM_HOME=${GEM_BASE} \
+	    make="make V=1" \
 	    ${GEM} install ${GEM_FLAGS} ${WRKDIR}/${_GEM_PATCHED} \
 	    -- ${CONFIGURE_ARGS}
 
