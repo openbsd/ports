@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2011/03/02 12:36:42 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2012/10/24 13:12:53 landry Exp $
 
 COMMENT =	browse LDAP server with a shell-like CLI
 
-DISTNAME =	shelldap-0.4
+DISTNAME =	shelldap-0.5
 EPOCH =	0
 CATEGORIES =	sysutils
 
