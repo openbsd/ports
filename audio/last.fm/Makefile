@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2012/09/18 20:39:25 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.17 2012/10/24 14:57:59 dcoppa Exp $
 
 COMMENT =		official Last.fm client
 
 VER =			1.5.4.27091
 DISTNAME =		lastfm-${VER}+dfsg
 PKGNAME =		last.fm-${VER}
-REVISION =		7
+REVISION =		8
 
 SHARED_ONLY =		Yes
 
@@ -18,8 +18,12 @@ MAINTAINER =		David Coppa <dcoppa@openbsd.org>
 
 HOMEPAGE =		http://www.last.fm/
 
-MASTER_SITES =		http://dev.gentoo.org/~hwoarang/distfiles/ \
-			http://ftp.pardus.org.tr/pub/source/corporate2/
+MASTER_SITES =		http://dev.gentoo.org/~hwoarang/distfiles/
+
+DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
+			dbusextension-2.0.tar.bz2
+
+DIST_SUBDIR =		lastfm
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
@@ -27,8 +31,8 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		ICE QtGui>=8 QtNetwork>=7 QtSql>=7 \
-			QtXml>=7 SM X11 Xext Xi Xinerama Xrender \
+WANTLIB =		ICE QtDBus QtGui QtNetwork QtSql \
+			QtXml SM X11 Xext Xi Xinerama Xrender \
 			c fontconfig freetype gpod>=700 m mad \
 			portaudio pthread sndio stdc++ z
 
@@ -49,6 +53,9 @@ LASTFM_DATADIR = ${PREFIX}/share/last.fm
 MOOSELIB = ${WRKBUILD}/bin/libMoose.so.${LIBMoose_VERSION}
 TOOLSLIB = ${WRKBUILD}/bin/libLastFmTools.so.${LIBLastFmTools_VERSION}
 
+post-extract:
+	mv ${WRKDIR}/dbus ${WRKSRC}/src/extensions/
+
 pre-patch:
 	cd ${WRKSRC}; perl -pi -e "s/\r$$//"\
 	 `find . -type f -name *.h -or -name *.cpp -or -name '*.pro*'`
@@ -66,13 +73,22 @@ pre-configure:
 do-configure:
 	perl -pi -e "s/!!CXXFLAGS!!/${CXXFLAGS}/" \
 		${WRKSRC}/src/libUnicorn/unicorn.pro.inc
-	cd ${WRKDIST} && ${LOCALBASE}/bin/qmake4 -config release
+	cd ${WRKBUILD} && QTDIR=${WRKDIR}/bin qmake4 -config release
+	cd ${WRKBUILD}/src/extensions/dbus && \
+		QTDIR=${WRKDIR}/bin qmake4 dbusextension.pro
+
+post-build:
+	cd ${WRKBUILD}/src/extensions/dbus && \
+		exec ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
+			${MAKE_FLAGS} -f ${MAKE_FILE} all
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/last.fm ${PREFIX}/bin/last.fm
 	${INSTALL_DATA} ${MOOSELIB} ${PREFIX}/lib/
 	${INSTALL_DATA} ${TOOLSLIB} ${PREFIX}/lib/
 	${INSTALL_DATA_DIR} ${LASTFM_LIBDIR}/extensions
+	${INSTALL_DATA} ${WRKBUILD}/bin/extensions/*.so \
+		${LASTFM_LIBDIR}/extensions/
 	${INSTALL_DATA_DIR} ${LASTFM_LIBDIR}/services
 	${INSTALL_DATA} ${WRKBUILD}/bin/services/*.so \
 		${LASTFM_LIBDIR}/services/

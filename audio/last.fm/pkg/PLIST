@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/09/19 12:50:57 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/10/24 14:57:59 dcoppa Exp $
 @bin bin/last.fm
 lib/last.fm/
 lib/last.fm/extensions/
+lib/last.fm/extensions/libext_dbusextension.so
 lib/last.fm/services/
 lib/last.fm/services/libsrv_Ipod_device.so
 lib/last.fm/services/libsrv_httpinput.so
