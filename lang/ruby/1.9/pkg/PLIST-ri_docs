@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ri_docs,v 1.3 2012/04/27 18:40:02 jeremy Exp $
+@comment $OpenBSD: PLIST-ri_docs,v 1.4 2012/10/24 22:49:05 jeremy Exp $
 @option no-default-conflict
 @conflict ruby-ri_docs->=1.9,<1.10
 share/ri/${RUBYLIBREV}/system/ACL/
@@ -3937,8 +3937,6 @@ share/ri/${RUBYLIBREV}/system/IPSocket/getaddress-c.ri
 share/ri/${RUBYLIBREV}/system/IPSocket/getaddress_orig-c.ri
 share/ri/${RUBYLIBREV}/system/IPSocket/peeraddr-i.ri
 share/ri/${RUBYLIBREV}/system/IPSocket/recvfrom-i.ri
-share/ri/${RUBYLIBREV}/system/IPSocket/valid%3f-c.ri
-share/ri/${RUBYLIBREV}/system/IPSocket/valid_v4%3f-c.ri
 share/ri/${RUBYLIBREV}/system/IPSocket/valid_v6%3f-c.ri
 share/ri/${RUBYLIBREV}/system/IRB/
 share/ri/${RUBYLIBREV}/system/IRB/Abort/
@@ -7654,6 +7652,12 @@ share/ri/${RUBYLIBREV}/system/Psych/Emitter/start_stream-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Exception/
 share/ri/${RUBYLIBREV}/system/Psych/Exception/cdesc-Exception.ri
 share/ri/${RUBYLIBREV}/system/Psych/Handler/
+share/ri/${RUBYLIBREV}/system/Psych/Handler/DumperOptions/
+share/ri/${RUBYLIBREV}/system/Psych/Handler/DumperOptions/canonical-i.ri
+share/ri/${RUBYLIBREV}/system/Psych/Handler/DumperOptions/cdesc-DumperOptions.ri
+share/ri/${RUBYLIBREV}/system/Psych/Handler/DumperOptions/indentation-i.ri
+share/ri/${RUBYLIBREV}/system/Psych/Handler/DumperOptions/line_width-i.ri
+share/ri/${RUBYLIBREV}/system/Psych/Handler/DumperOptions/new-c.ri
 share/ri/${RUBYLIBREV}/system/Psych/Handler/alias-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Handler/cdesc-Handler.ri
 share/ri/${RUBYLIBREV}/system/Psych/Handler/empty-i.ri

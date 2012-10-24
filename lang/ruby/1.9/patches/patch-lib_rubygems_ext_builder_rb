@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_rubygems_ext_builder_rb,v 1.1 2010/10/06 18:43:11 jeremy Exp $
+$OpenBSD: patch-lib_rubygems_ext_builder_rb,v 1.2 2012/10/24 22:49:05 jeremy Exp $
 
 Ugly hack to make --user-install option work.  Without this, when
 a user uses gem install --user-install, it calls
@@ -14,7 +14,7 @@ according to a grep of the sources.
      mf = File.read('Makefile')
      mf = mf.gsub(/^RUBYARCHDIR\s*=\s*\$[^$]*/, "RUBYARCHDIR = #{dest_path}")
      mf = mf.gsub(/^RUBYLIBDIR\s*=\s*\$[^$]*/, "RUBYLIBDIR = #{dest_path}")
-+    mf = mf.gsub(/-o root -g bin/, "") if Gem::Installer.path_warning
++    mf = mf.gsub(/-o root -g bin/, "") unless Process.euid == 0
  
      File.open('Makefile', 'wb') {|f| f.print mf}
  

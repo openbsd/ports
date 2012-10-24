@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2012/10/08 13:17:11 jeremy Exp $
+# $OpenBSD: Makefile,v 1.29 2012/10/24 22:49:05 jeremy Exp $
 
 COMMENT-main =		object oriented script language with threads
 COMMENT-gdbm =		gdbm interface for ruby
@@ -7,14 +7,8 @@ COMMENT-tk =		tk interface for ruby
 COMMENT-ri_docs =	ri documentation files for ruby
 
 VERSION =		1.9.3
-PATCHLEVEL =		194
+PATCHLEVEL =		286
 RUBYLIBREV =		1.9.1
-
-REVISION-main =		0
-REVISION-dbm =		0
-REVISION-gdbm =		0
-REVISION-tk =		0
-REVISION-ri_docs =	0
 
 SHARED_LIBS =		ruby19 1.0
 PKGNAME-main =		ruby-${VERSION}.${PATCHLEVEL}
@@ -92,6 +86,9 @@ VMEM_WARNING =		Yes
 SUBST_VARS +=		RUBYLIBREV
 
 REGRESS_DEPENDS =	${FULLPKGNAME-main}:${BUILD_PKGPATH}
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ruby
 
 do-regress:
 	-cd ${WRKSRC} && make test-sample
