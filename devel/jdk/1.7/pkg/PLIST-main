@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2012/03/19 19:50:57 kurt Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2012/10/24 18:54:03 kurt Exp $
 @option no-default-conflict
 @conflict jdk->=1.7,<1.8|jdk->=1.7v0,<1.8v0
 ${JDKHOME}/
@@ -1025,44 +1025,44 @@ ${JDKHOME}/lib/orb.idl
 ${JDKHOME}/lib/sa-jdi.jar
 ${JDKHOME}/lib/tools.jar
 @mandir ${JDKHOME}/man/
-@comment ${JDKHOME}/man/man1/
-@comment @man ${JDKHOME}/man/man1/appletviewer.1
-@comment @man ${JDKHOME}/man/man1/extcheck.1
-@comment @man ${JDKHOME}/man/man1/idlj.1
-@comment @man ${JDKHOME}/man/man1/jar.1
-@comment @man ${JDKHOME}/man/man1/jarsigner.1
-@comment @man ${JDKHOME}/man/man1/java.1
-@comment @man ${JDKHOME}/man/man1/javac.1
-@comment @man ${JDKHOME}/man/man1/javadoc.1
-@comment @man ${JDKHOME}/man/man1/javah.1
-@comment @man ${JDKHOME}/man/man1/javap.1
-@comment @man ${JDKHOME}/man/man1/jconsole.1
-@comment @man ${JDKHOME}/man/man1/jdb.1
-@comment @man ${JDKHOME}/man/man1/jhat.1
-@comment @man ${JDKHOME}/man/man1/jinfo.1
-@comment @man ${JDKHOME}/man/man1/jmap.1
-@comment @man ${JDKHOME}/man/man1/jps.1
-@comment @man ${JDKHOME}/man/man1/jrunscript.1
-@comment @man ${JDKHOME}/man/man1/jsadebugd.1
-@comment @man ${JDKHOME}/man/man1/jstack.1
-@comment @man ${JDKHOME}/man/man1/jstat.1
-@comment @man ${JDKHOME}/man/man1/jstatd.1
-@comment @man ${JDKHOME}/man/man1/keytool.1
-@comment @man ${JDKHOME}/man/man1/native2ascii.1
-@comment @man ${JDKHOME}/man/man1/orbd.1
-@comment @man ${JDKHOME}/man/man1/pack200.1
-@comment @man ${JDKHOME}/man/man1/policytool.1
-@comment @man ${JDKHOME}/man/man1/rmic.1
-@comment @man ${JDKHOME}/man/man1/rmid.1
-@comment @man ${JDKHOME}/man/man1/rmiregistry.1
-@comment @man ${JDKHOME}/man/man1/schemagen.1
-@comment @man ${JDKHOME}/man/man1/serialver.1
-@comment @man ${JDKHOME}/man/man1/servertool.1
-@comment @man ${JDKHOME}/man/man1/tnameserv.1
-@comment @man ${JDKHOME}/man/man1/unpack200.1
-@comment @man ${JDKHOME}/man/man1/wsgen.1
-@comment @man ${JDKHOME}/man/man1/wsimport.1
-@comment @man ${JDKHOME}/man/man1/xjc.1
+${JDKHOME}/man/man1/
+@man ${JDKHOME}/man/man1/appletviewer.1
+@man ${JDKHOME}/man/man1/extcheck.1
+@man ${JDKHOME}/man/man1/idlj.1
+@man ${JDKHOME}/man/man1/jar.1
+@man ${JDKHOME}/man/man1/jarsigner.1
+@man ${JDKHOME}/man/man1/java.1
+@man ${JDKHOME}/man/man1/javac.1
+@man ${JDKHOME}/man/man1/javadoc.1
+@man ${JDKHOME}/man/man1/javah.1
+@man ${JDKHOME}/man/man1/javap.1
+@man ${JDKHOME}/man/man1/jconsole.1
+@man ${JDKHOME}/man/man1/jdb.1
+@man ${JDKHOME}/man/man1/jhat.1
+@man ${JDKHOME}/man/man1/jinfo.1
+@man ${JDKHOME}/man/man1/jmap.1
+@man ${JDKHOME}/man/man1/jps.1
+@man ${JDKHOME}/man/man1/jrunscript.1
+@man ${JDKHOME}/man/man1/jsadebugd.1
+@man ${JDKHOME}/man/man1/jstack.1
+@man ${JDKHOME}/man/man1/jstat.1
+@man ${JDKHOME}/man/man1/jstatd.1
+@man ${JDKHOME}/man/man1/keytool.1
+@man ${JDKHOME}/man/man1/native2ascii.1
+@man ${JDKHOME}/man/man1/orbd.1
+@man ${JDKHOME}/man/man1/pack200.1
+@man ${JDKHOME}/man/man1/policytool.1
+@man ${JDKHOME}/man/man1/rmic.1
+@man ${JDKHOME}/man/man1/rmid.1
+@man ${JDKHOME}/man/man1/rmiregistry.1
+@man ${JDKHOME}/man/man1/schemagen.1
+@man ${JDKHOME}/man/man1/serialver.1
+@man ${JDKHOME}/man/man1/servertool.1
+@man ${JDKHOME}/man/man1/tnameserv.1
+@man ${JDKHOME}/man/man1/unpack200.1
+@man ${JDKHOME}/man/man1/wsgen.1
+@man ${JDKHOME}/man/man1/wsimport.1
+@man ${JDKHOME}/man/man1/xjc.1
 ${JDKHOME}/release
 ${JDKHOME}/sample/
 ${JDKHOME}/sample/README

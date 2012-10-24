@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2012/09/26 18:23:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.52 2012/10/24 18:54:03 kurt Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	i386 amd64
@@ -9,9 +9,9 @@ V=		1.7.0.03
 B=		b13
 PKGNAME=	jdk-${V}
 PKGNAME-main=	jdk-${V}
-REVISION-main=	0
+REVISION-main=	1
 PKGNAME-jre=	jre-${V}
-REVISION-jre=	0
+REVISION-jre=	1
 EPOCH=		0
 
 # see openjdk/jaxp/jaxp.properties & openjdk/jaxws/jaxws.properties 
