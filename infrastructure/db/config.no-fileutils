@@ -1,3 +1,0 @@
-# $OpenBSD: config.no-fileutils,v 1.1 2012/08/12 17:19:00 jasper Exp $
-# included unless misc/fileutils*
-ac_cv_path_mkdir=${am_cv_prog_mkdir=/bin/mkdir}
