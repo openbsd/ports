@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2012/01/07 12:03:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2012/10/25 14:06:26 dcoppa Exp $
 
 COMMENT=	search engine library
 
-V=		1.2.8
+V=		1.2.12
 DISTNAME=	xapian-core-${V}
 
-SHARED_LIBS +=  xapian               3.0      # .23.2
+SHARED_LIBS +=  xapian	3.1	# .27.0
 
 CATEGORIES=	databases textproc
 
@@ -22,7 +22,6 @@ WANTLIB += c m stdc++ z e2fs-uuid
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${V}/
 
 USE_LIBTOOL=	Yes
-USE_GROFF =	Yes
 
 # needs uuid_generate(3) which devel/uuid does not provide
 LIB_DEPENDS=	sysutils/e2fsprogs
