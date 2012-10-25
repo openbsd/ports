@@ -1,4 +1,4 @@
-$OpenBSD: patch-gio_tests_socket_c,v 1.3 2012/10/19 12:35:41 ajacoutot Exp $
+$OpenBSD: patch-gio_tests_socket_c,v 1.4 2012/10/25 15:41:52 ajacoutot Exp $
 
 From 475edeb2edad68b4bef818deb7ee7db92598397f Mon Sep 17 00:00:00 2001
 From: Antoine Jacoutot <ajacoutot@gnome.org>
@@ -8,8 +8,25 @@ Subject: Allow slightly too big poll duration in /socket/timed_wait test
 https://bugzilla.gnome.org/show_bug.cgi?id=686058
 
 --- gio/tests/socket.c.orig	Fri Aug 17 02:06:24 2012
-+++ gio/tests/socket.c	Fri Oct 19 13:56:54 2012
-@@ -617,7 +617,7 @@ test_timed_wait (void)
++++ gio/tests/socket.c	Fri Oct 19 15:15:39 2012
+@@ -565,6 +565,8 @@ test_ipv6_v4mapped (void)
+   g_object_unref (addr);
+ 
+   g_socket_connect (client, v4addr, NULL, &error);
++  if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_CONNECTION_REFUSED))
++	goto out;
+   g_assert_no_error (error);
+   g_assert (g_socket_is_connected (client));
+ 
+@@ -579,6 +581,7 @@ test_ipv6_v4mapped (void)
+   g_object_unref (client);
+   g_object_unref (v4addr);
+ 
++out:
+   g_slice_free (IPTestData, data);
+ }
+ #endif
+@@ -617,7 +620,7 @@ test_timed_wait (void)
    poll_duration = g_get_monotonic_time () - start_time;
  
    g_assert_cmpint (poll_duration, >=, 98000);
@@ -18,15 +35,3 @@ https://bugzilla.gnome.org/show_bug.cgi?id=686058
  
    g_socket_close (client, &error);
    g_assert_no_error (error);
-@@ -825,7 +825,11 @@ main (int   argc,
-   g_test_add_func ("/socket/ipv6_sync", test_ipv6_sync);
-   g_test_add_func ("/socket/ipv6_async", test_ipv6_async);
- #if defined (IPPROTO_IPV6) && defined (IPV6_V6ONLY)
-+# if defined (__OpenBSD__)
-+  g_print ("skipping ipv6_v4mapped test, not supported on OpenBSD\n");
-+# else
-   g_test_add_func ("/socket/ipv6_v4mapped", test_ipv6_v4mapped);
-+# endif
- #endif
-   g_test_add_func ("/socket/close_graceful", test_close_graceful);
-   g_test_add_func ("/socket/timed_wait", test_timed_wait);
