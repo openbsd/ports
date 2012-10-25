@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2012/06/05 08:42:31 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.36 2012/10/25 07:59:45 dcoppa Exp $
 
 COMMENT-main =	another eDonkey P2P file sharing client
 COMMENT-web =	webserver interface to amuled
@@ -6,7 +6,7 @@ COMMENT-daemon =stand-alone daemon/cmdline for amule
 
 V =		2.3.1
 DISTNAME =	aMule-$V
-REVISION =	8
+REVISION =	9
 CATEGORIES =	net
 
 HOMEPAGE =	http://www.amule.org/
