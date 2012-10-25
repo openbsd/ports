@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2012/10/23 19:29:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.72 2012/10/25 19:52:16 naddy Exp $
 
 SHARED_ONLY =		Yes
 
@@ -28,12 +28,10 @@ USE_LIBTOOL =		Yes
 USE_GROFF =		Yes
 
 SEPARATE_BUILD =	Yes
-CONFIGURE_STYLE =	simple
+CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--disable-static-daq
 CONFIGURE_ENV=		MKDIR_P="/bin/mkdir -p"
-
-MAKE_FLAGS =		mandir=${TRUEPREFIX}/man
 
 LIB_DEPENDS =		devel/pcre \
 			net/libdnet \
