@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2012/09/28 12:56:03 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.14 2012/10/25 13:43:42 dcoppa Exp $
 
 COMMENT =		ncurses mpd client inspired by ncmpc
 
 DISTNAME =		ncmpcpp-0.5.10
-REVISION =		1
+REVISION =		2
 
 EXTRACT_SUFX =		.tar.bz2
 
@@ -31,7 +31,6 @@ LIB_DEPENDS =		audio/libmpdclient>=2.4 \
 
 MODULES =		devel/gettext
 
-USE_GROFF =		Yes
 USE_LIBTOOL =		Yes
 
 CONFIGURE_STYLE =	gnu

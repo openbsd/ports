@@ -1,0 +1,19 @@
+$OpenBSD: patch-doc_ncmpcpp_1,v 1.1 2012/10/25 13:43:42 dcoppa Exp $
+--- doc/ncmpcpp.1.orig	Sun Apr  1 18:49:09 2012
++++ doc/ncmpcpp.1	Thu Oct 25 15:31:48 2012
+@@ -50,7 +50,6 @@ Switch to previous song and exit.
+ .TP
+ .B volume [+-]<number>
+ Raise/lower volume by given number of percents and exit.
+-.TP
+ .SH "CONFIGURATION"
+ When ncmpcpp starts, it tries to read user's settings from the ~/.ncmpcpp/config file. If no user's configuration is found, ncmpcpp uses its default configuration. An example configuration file containing all default values is provided with ncmpcpp and can be found usually in /usr/share/doc/ncmpcpp (exact location may depend on used distribution/OS/configure prefix).
+ 
+@@ -377,7 +376,6 @@ Color of visualization.
+ .TP 
+ .B active_window_border = COLOR
+ Color of active window's border.
+-.TP 
+ .SH "KEYS"
+ When ncmpcpp starts, it tries to read user's keybindings from ~/.ncmpcpp/keys file. If no user's keybindings is found, ncmpcpp uses its default keybindings. An example keybindings file containing all default values is provided with ncmpcpp and can be found usually in /usr/share/doc/ncmpcpp (exact location may depend on used distribution/OS/configure prefix).
+ 
