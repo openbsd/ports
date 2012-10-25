@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2012/10/12 14:40:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2012/10/25 14:22:03 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		home media solution that allows easy media sharing
 
 GNOME_PROJECT=		rygel
 GNOME_VERSION=		0.16.1
+REVISION=		0
 
 SHARED_LIBS +=	rygel-core-1.0            0.0 # 0.0
 SHARED_LIBS +=	rygel-renderer-1.0        0.0 # 0.0
@@ -31,8 +32,8 @@ WANTLIB += gobject-2.0 gssdp-1.0 gstapp-0.10 gstbase-0.10 gstpbutils-0.10
 WANTLIB += gstreamer-0.10 gsttag-0.10 gstvideo-0.10 gthread-2.0
 WANTLIB += gtk-3 gupnp-1.0 gupnp-av-1.0 gupnp-dlna-1.0 m orc-0.4
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs soup-2.4 sqlite3 stdc++ unistring
-WANTLIB += xcb xcb-render xcb-shm xml2 z
+WANTLIB += png pthread pthread-stubs soup-2.4 sqlite3 stdc++
+WANTLIB += xcb xcb-render xcb-shm xml2 z unistring icui18n
 WANTLIB += ICE SM atk-bridge-2.0 atspi dbus-1 harfbuzz icudata
 WANTLIB += icule icuuc kvm tracker-sparql-${TRACKER_VERSION}
 WANTLIB += lib/tracker-${TRACKER_VERSION}/tracker-common

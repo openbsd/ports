@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2012/10/16 11:56:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2012/10/25 14:22:03 ajacoutot Exp $
 
 COMMENT-main=		people aggregation library
 COMMENT-tracker=	(meta-)tracker backend for folks
@@ -11,7 +11,7 @@ PKGNAME-main=		${DISTNAME}
 PKGNAME-tracker=	${GNOME_PROJECT}-meta-tracker-${GNOME_VERSION}
 
 REVISION-main=		1
-REVISION-tracker=	0
+REVISION-tracker=	1
 
 SHARED_LIBS +=  folks-telepathy           5.0 # 37.0
 SHARED_LIBS +=  folks                     5.1 # 37.0
@@ -53,7 +53,7 @@ WANTLIB-tracker += ${WANTLIB}
 WANTLIB-tracker += lib/tracker-${TRACKER_VERSION}/tracker-common
 WANTLIB-tracker += lib/tracker-${TRACKER_VERSION}/tracker-data
 WANTLIB-tracker += e2fs-uuid folks kvm tracker-sparql-${TRACKER_VERSION}
-WANTLIB-tracker += z pthread unistring
+WANTLIB-tracker += z pthread icui18n icuuc
 
 RUN_DEPENDS-tracker=	${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-tracker=	${MODGETTEXT_LIB_DEPENDS} \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/10/16 06:38:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2012/10/25 14:22:03 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	document manager for GNOME
 
 GNOME_PROJECT=	gnome-documents
 GNOME_VERSION=	3.6.1
+REVISION=	0
 
 HOMEPAGE=	https://live.gnome.org/GnomeDocuments
 
@@ -29,10 +30,10 @@ WANTLIB += gpg-error gthread-2.0 gtk-3 idn json-glib-1.0 kvm m
 WANTLIB += mozjs185 nspr4 nss3 oauth pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png pthread pthread-stubs
 WANTLIB += smime3 softokn3 soup-2.4 soup-gnome-2.4 sqlite3 ssl
-WANTLIB += ssl3 stdc++ tracker-sparql-0.14 unistring xcb xcb-render
+WANTLIB += ssl3 stdc++ tracker-sparql-0.14 xcb xcb-render
 WANTLIB += ICE SM atk-bridge-2.0 atspi gck-1 gcr-base-3 harfbuzz
 WANTLIB += icudata icule icuuc p11-kit rest-0.7 xkbfile zapojit-0.0
-WANTLIB += xcb-shm xml2 z
+WANTLIB += xcb-shm xml2 z icui18n
 WANTLIB += lib/tracker-${TRACKER_VERSION}/tracker-data
 WANTLIB += lib/tracker-${TRACKER_VERSION}/tracker-common
 
