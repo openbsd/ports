@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2012/09/29 16:24:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2012/10/25 15:26:32 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 @pkgpath x11/gnome/totem,xine
 @bin bin/totem
@@ -505,6 +505,7 @@ share/locale/it/LC_MESSAGES/totem.mo
 share/locale/ja/LC_MESSAGES/totem.mo
 share/locale/ka/LC_MESSAGES/totem.mo
 share/locale/kk/LC_MESSAGES/totem.mo
+share/locale/km/LC_MESSAGES/totem.mo
 share/locale/kn/LC_MESSAGES/totem.mo
 share/locale/ko/LC_MESSAGES/totem.mo
 share/locale/ku/LC_MESSAGES/totem.mo
