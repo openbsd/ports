@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2012/01/07 12:03:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2012/10/25 14:07:22 dcoppa Exp $
 
 COMMENT=	web search application
 
-V=		1.2.8
+V=		1.2.12
 DISTNAME=	xapian-omega-${V}
 
 CATEGORIES=	www textproc
@@ -21,7 +21,7 @@ MASTER_SITES=	http://oligarchy.co.uk/xapian/${V}/
 
 USE_LIBTOOL=	Yes
 
-LIB_DEPENDS=	databases/xapian-core>=1.2.8 \
+LIB_DEPENDS=	databases/xapian-core>=${V} \
 		devel/pcre \
 		devel/libmagic
 
@@ -32,7 +32,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/xapian-omega \
 		pkglibbindir=${PREFIX}/libexec/xapian-omega/cgi-bin
-USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/omega/templates
