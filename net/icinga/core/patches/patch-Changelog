@@ -1,6 +1,6 @@
-$OpenBSD: patch-Changelog,v 1.1 2012/10/18 20:04:58 sthen Exp $
---- Changelog.orig	Thu Oct 18 15:27:02 2012
-+++ Changelog	Thu Oct 18 15:30:59 2012
+$OpenBSD: patch-Changelog,v 1.2 2012/10/25 18:42:32 sthen Exp $
+--- Changelog.orig	Wed Oct 24 23:21:44 2012
++++ Changelog	Thu Oct 25 18:09:24 2012
 @@ -7,10 +7,9 @@ Thanks to all contributers, testers and developers. Pl
  UPGRADE NOTES
  
@@ -12,5 +12,5 @@ $OpenBSD: patch-Changelog,v 1.1 2012/10/18 20:04:58 sthen Exp $
 -	- idoutils: module/idoutils/config/updates
 +	- ${TRUEPREFIX}/share/examples/icinga/updates/
  
+ 1.8.1 - 25/10/2012
  
- 1.8.0 - 18/10/2012
