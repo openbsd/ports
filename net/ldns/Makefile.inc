@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.23 2012/10/24 23:49:08 brad Exp $
+# $OpenBSD: Makefile.inc,v 1.24 2012/10/26 07:48:56 sthen Exp $
 
-VERSION=	1.6.14
+VERSION=	1.6.15
 
 DISTNAME=	ldns-${VERSION}
 
@@ -23,3 +23,5 @@ CONFIGURE_ENV+=		ac_cv_prog_doxygen= \
 			cv_prog_cc_flag_O2=
 
 NO_REGRESS=		Yes
+
+CHECKSUM_FILE=		${.CURDIR}/../distinfo
