@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/10/26 16:32:10 rpe Exp $
+# $OpenBSD: Makefile,v 1.2 2012/10/26 23:11:52 rpe Exp $
 
 COMMENT=	tiny cgi web script handler using shell or Lua
 
@@ -26,8 +26,8 @@ FLAVOR?=
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.68
-CONFIGURE_ARGS+= --enable-bash-extensions \
-		LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS+= --enable-bash-extensions
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 LDFLAGS=	-L${LOCALBASE}/lib
 
 .if !${FLAVOR:Mno_lua}
