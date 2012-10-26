@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_h_bash_c,v 1.1.1.1 2012/10/26 16:32:10 rpe Exp $
+
+If somebody wants to use shell scripts in a chrooted /var/www, use a shell
+builtin instead, to avoid forcing them to copy in ld.so, libc and printf.
+
+--- src/h_bash.c.orig	Sat Dec 31 22:11:19 2011
++++ src/h_bash.c	Sat Dec 31 22:13:56 2011
+@@ -138,7 +138,7 @@ bash_echo (buffer_t * buf, char *str, size_t len)
+  * we will take the (ancient) POSIX1 standard of 4K, subtract 1K from it and use that
+  * as the maxmimum.    The Linux limit appears to be 128K, so 3K will fit. */
+ 
+-  static char echo_start[] = "printf '%s' '";
++  static char echo_start[] = "echo -n '";
+   static char echo_quote[] = "'\\''";
+   static char echo_end[] = "'\n";
+   const size_t maxlen = 3096;

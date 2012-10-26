@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/26 16:32:10 rpe Exp $
+@bin bin/haserl
+@man man/man1/haserl.1

@@ -1,0 +1,15 @@
+Haserl is a small program that uses shell or Lua script to create
+cgi web scripts. It is intended for environments where PHP or Ruby
+are too big. A typical use is to run cgi scripts in an embedded
+environment using a small web server.
+
+- Parses like other scripting languages: Anything that is not
+enclosed in <% ... %> tags is sent verbatim to the client.
+
+- Automatic FORM parsing: Form elements sent from the client are
+automatically parsed and placed into environment variables. The
+script can then reference the variables without any extra work.
+
+- multipart/form-data decoding: Mime data sent via the
+enctype="multipart/form-data" method is transparently decoded.
+This method is used when uploading files from the client.
