@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.6 2011/12/13 09:28:37 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.7 2012/10/26 10:24:30 dcoppa Exp $
 @conflict jakarta-tomcat-examples-*
 @pkgpath www/jakarta-tomcat/v6,-examples
 @owner _tomcat
@@ -208,9 +208,11 @@ webapps/docs/api/org/apache/catalina/deploy/package-tree.html
 webapps/docs/api/org/apache/catalina/filters/
 webapps/docs/api/org/apache/catalina/filters/Constants.html
 webapps/docs/api/org/apache/catalina/filters/CsrfPreventionFilter.CsrfResponseWrapper.html
+webapps/docs/api/org/apache/catalina/filters/CsrfPreventionFilter.LruCache.html
 webapps/docs/api/org/apache/catalina/filters/CsrfPreventionFilter.html
 webapps/docs/api/org/apache/catalina/filters/FailedRequestFilter.html
 webapps/docs/api/org/apache/catalina/filters/FilterBase.html
+webapps/docs/api/org/apache/catalina/filters/SetCharacterEncodingFilter.html
 webapps/docs/api/org/apache/catalina/filters/package-frame.html
 webapps/docs/api/org/apache/catalina/filters/package-summary.html
 webapps/docs/api/org/apache/catalina/filters/package-tree.html
@@ -375,6 +377,8 @@ webapps/docs/api/org/apache/catalina/realm/MemoryRuleSet.html
 webapps/docs/api/org/apache/catalina/realm/RealmBase.AllRolesMode.html
 webapps/docs/api/org/apache/catalina/realm/RealmBase.html
 webapps/docs/api/org/apache/catalina/realm/UserDatabaseRealm.html
+webapps/docs/api/org/apache/catalina/realm/X509SubjectDnRetriever.html
+webapps/docs/api/org/apache/catalina/realm/X509UsernameRetriever.html
 webapps/docs/api/org/apache/catalina/realm/package-frame.html
 webapps/docs/api/org/apache/catalina/realm/package-summary.html
 webapps/docs/api/org/apache/catalina/realm/package-tree.html
@@ -410,6 +414,7 @@ webapps/docs/api/org/apache/catalina/session/StandardManager.html
 webapps/docs/api/org/apache/catalina/session/StandardSession.html
 webapps/docs/api/org/apache/catalina/session/StandardSessionFacade.html
 webapps/docs/api/org/apache/catalina/session/StoreBase.html
+webapps/docs/api/org/apache/catalina/session/TooManyActiveSessionsException.html
 webapps/docs/api/org/apache/catalina/session/package-frame.html
 webapps/docs/api/org/apache/catalina/session/package-summary.html
 webapps/docs/api/org/apache/catalina/session/package-tree.html
@@ -735,12 +740,14 @@ webapps/docs/api/org/apache/catalina/valves/RequestDumperValve.html
 webapps/docs/api/org/apache/catalina/valves/RequestFilterValve.html
 webapps/docs/api/org/apache/catalina/valves/SSLValve.html
 webapps/docs/api/org/apache/catalina/valves/SemaphoreValve.html
+webapps/docs/api/org/apache/catalina/valves/StuckThreadDetectionValve.html
 webapps/docs/api/org/apache/catalina/valves/ValveBase.html
 webapps/docs/api/org/apache/catalina/valves/WebdavFixValve.html
 webapps/docs/api/org/apache/catalina/valves/package-frame.html
 webapps/docs/api/org/apache/catalina/valves/package-summary.html
 webapps/docs/api/org/apache/catalina/valves/package-tree.html
 webapps/docs/api/org/apache/coyote/
+webapps/docs/api/org/apache/coyote/AbstractProtocol.html
 webapps/docs/api/org/apache/coyote/ActionCode.html
 webapps/docs/api/org/apache/coyote/ActionHook.html
 webapps/docs/api/org/apache/coyote/Adapter.html
@@ -1409,6 +1416,7 @@ webapps/docs/api/org/apache/tomcat/util/modeler/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/modeler/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/modeler/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/net/
+webapps/docs/api/org/apache/tomcat/util/net/AbstractEndpoint.html
 webapps/docs/api/org/apache/tomcat/util/net/AprEndpoint.Acceptor.html
 webapps/docs/api/org/apache/tomcat/util/net/AprEndpoint.Handler.SocketState.html
 webapps/docs/api/org/apache/tomcat/util/net/AprEndpoint.Handler.html
