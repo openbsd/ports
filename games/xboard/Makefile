@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.28 2011/03/02 06:31:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2012/10/26 18:08:27 dcoppa Exp $
 
 COMMENT=	X11 frontend for GNU Chess and the Internet Chess Server
 
-DISTNAME=	xboard-4.2.7
-REVISION =	2
+DISTNAME=	xboard-4.6.2
 CATEGORIES=	games x11
 MASTER_SITES=	${MASTER_SITE_GNU:=xboard/}
 
-HOMEPAGE=	http://www.tim-mann.org/xboard.html
+HOMEPAGE=	http://www.gnu.org/software/xboard/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -15,12 +14,24 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		ICE SM X11 Xaw Xext Xmu Xpm Xt c m pthread-stubs xcb
+WANTLIB=		ICE SM X11 Xaw Xmu Xpm Xt c m
 
-RUN_DEPENDS=		games/gnuchess
+MODULES=		devel/gettext
 
-USE_GROFF =		Yes
+BUILD_DEPENDS=		devel/xdg-utils
+
+RUN_DEPENDS=		games/gnuchess \
+			devel/desktop-file-utils \
+			devel/xdg-utils \
+			misc/shared-mime-info \
+			x11/gtk+2,-guic
+
+USE_GROFF=		Yes
 CONFIGURE_STYLE=	gnu
-ALL_TARGET=		default
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+
+post-install:
+	${INSTALL_SCRIPT} ${WRKBUILD}/cmail ${PREFIX}/bin/
 
 .include <bsd.port.mk>

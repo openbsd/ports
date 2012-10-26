@@ -1,48 +1,23 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2007/12/06 16:07:18 ajacoutot Exp $
---- Makefile.in.orig	Fri Nov 28 22:12:57 2003
-+++ Makefile.in	Thu Dec  6 16:58:57 2007
-@@ -21,7 +21,7 @@ man6ext = .6
- # Yuck; the autoconf generated configure script sets an infodir variable
- # and provides a command-line flag to change it, but the default is 
- # /usr/info instead of /usr/share/info.
--infodir = $(prefix)/share/info
-+infodir = $(prefix)/info
+$OpenBSD: patch-Makefile_in,v 1.5 2012/10/26 18:08:27 dcoppa Exp $
+--- Makefile.in.orig	Fri Oct 26 14:03:01 2012
++++ Makefile.in	Fri Oct 26 14:06:20 2012
+@@ -988,15 +988,15 @@ uninstall-mimeDATA:
+ 	cd "$(DESTDIR)$(mimedir)" && rm -f $$files
+ install-sysconfDATA: $(sysconf_DATA)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(sysconfdir)" || $(MKDIR_P) "$(DESTDIR)$(sysconfdir)"
+-	@list='$(sysconf_DATA)'; test -n "$(sysconfdir)" || list=; \
++	$(MKDIR_P) "${PREFIX}/share/examples/xboard"
++	@list='$(sysconf_DATA)'; \
+ 	for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  echo "$$d$$p"; \
+ 	done | $(am__base_list) | \
+ 	while read files; do \
+-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(sysconfdir)'"; \
+-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(sysconfdir)" || exit $$?; \
++	  echo " $(INSTALL_DATA) $$files '${PREFIX}/share/examples/xboard'"; \
++	  $(INSTALL_DATA) $$files "${PREFIX}/share/examples/xboard" || exit $$?; \
+ 	done
  
- CC = @CC@
- CFLAGS = @CFLAGS@ @CPPFLAGS@ -DINFODIR=\"$(infodir)\"
-@@ -60,18 +60,16 @@ XBOARDOBJ = parser.o xboard.o backend.o moves.o childi
- 
- default: xboard zic2xpm
- 
--all: default pseudosource info FAQ html dvi ps
-+all: default pseudosource info FAQ
- 
- install: installdirs default
--	$(INSTALL_PROGRAM) -s xboard $(bindir)/xboard
--	$(INSTALL_PROGRAM) -s zic2xpm $(bindir)/zic2xpm
--	$(INSTALL_PROGRAM) cmail $(bindir)/cmail
--	$(INSTALL_PROGRAM) $(srcdir)/pxboard $(bindir)/pxboard
--	$(INSTALL_DATA) $(srcdir)/xboard.man $(man6dir)/xboard$(man6ext)
--	$(INSTALL_DATA) $(srcdir)/zic2xpm.man $(man6dir)/zic2xpm$(man6ext)
--	$(INSTALL_DATA) xboard.info $(infodir)/xboard.info
--	-PATH=$$PATH:/sbin:/usr/sbin install-info \
--		$(infodir)/xboard.info $(infodir)/dir
-+	$(INSTALL_PROGRAM) -s xboard $(DESTDIR)$(bindir)/xboard
-+	$(INSTALL_PROGRAM) -s zic2xpm $(DESTDIR)$(bindir)/zic2xpm
-+	$(INSTALL_PROGRAM) cmail $(DESTDIR)$(bindir)/cmail
-+	$(INSTALL_PROGRAM) $(srcdir)/pxboard $(DESTDIR)$(bindir)/pxboard
-+	$(INSTALL_DATA) $(srcdir)/xboard.man $(DESTDIR)$(man6dir)/xboard$(man6ext)
-+	$(INSTALL_DATA) $(srcdir)/zic2xpm.man $(DESTDIR)$(man6dir)/zic2xpm$(man6ext)
-+	$(INSTALL_DATA) xboard.info $(DESTDIR)$(infodir)/xboard.info
- 
- installdirs: mkinstalldirs
- 	$(srcdir)/mkinstalldirs $(bindir) $(mandir) $(man6dir) $(infodir)
-@@ -88,7 +86,7 @@ uninstall:
- clean:
- 	rm -f xboard zic2xpm *.o xboard.txt zic2xpm.txt $(LEX_OUTPUT_ROOT).c
- 	rm -f xboard*.html xboard.aux* xboard.cp* xboard.dvi xboard.fn*
--	rm -f xboard.ky* xboard.log xboard.pg* xboard.toc xboard.tp*
-+	rm -f xboard.kY* xboard.log xboard.pg* xboard.toc xboard.tp*
- 	rm -f xboard.vr* xboard.ps
- 
- distclean: clean tidy
+ uninstall-sysconfDATA:

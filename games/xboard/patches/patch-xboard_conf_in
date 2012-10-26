@@ -1,0 +1,29 @@
+$OpenBSD: patch-xboard_conf_in,v 1.1 2012/10/26 18:08:27 dcoppa Exp $
+--- xboard.conf.in.orig	Wed Apr 18 04:31:15 2012
++++ xboard.conf.in	Fri Oct 26 14:36:43 2012
+@@ -40,7 +40,7 @@
+ -pieceMenu false
+ -showTargetSquares true
+ -seekGraph true
+--soundProgram "aplay -q"
++-soundProgram "play -q"
+ -soundDirectory "@soundsdir@"
+ -soundTell phone.wav
+ -soundChallenge gong.wav
+@@ -67,12 +67,12 @@
+ ;
+ ; Engines & adjudicatons in engine-engine games
+ ;
+--firstChessProgram fairymax
+--secondChessProgram fairymax
+--firstChessProgramNames {fairymax
++-firstChessProgram gnuchess
++-secondChessProgram gnuchess
++-firstChessProgramNames {"GNU Chess" -fcp gnuchess
++"Fairy-Max" -fcp fairymax
+ "Fruit 2.1" -fcp fruit -fUCI
+ "Crafty" -fcp crafty
+-"GNU Chess" -fcp gnuchess
+ }
+ -niceEngines 0
+ -polyglotDir ""

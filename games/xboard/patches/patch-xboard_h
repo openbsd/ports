@@ -1,0 +1,23 @@
+$OpenBSD: patch-xboard_h,v 1.1 2012/10/26 18:08:27 dcoppa Exp $
+--- xboard.h.orig	Fri Oct 26 14:10:11 2012
++++ xboard.h	Fri Oct 26 14:11:57 2012
+@@ -119,8 +119,8 @@ typedef struct {
+ 
+ #define BORDER_X_OFFSET 3
+ #define BORDER_Y_OFFSET 27
+-#define FIRST_CHESS_PROGRAM	"fairymax"
+-#define SECOND_CHESS_PROGRAM	"fairymax"
++#define FIRST_CHESS_PROGRAM	"gnuchess"
++#define SECOND_CHESS_PROGRAM	"gnuchess"
+ #define FIRST_DIRECTORY         "."
+ #define SECOND_DIRECTORY        "."
+ #define SOUND_BELL              ""
+@@ -128,7 +128,7 @@ typedef struct {
+ #define FCP_NAMES               ""
+ #define SCP_NAMES               ""
+ #define ICS_TEXT_MENU_DEFAULT   ""
+-#define SETTINGS_FILE           SYSCONFDIR"/xboard.conf"
++#define SETTINGS_FILE           SYSCONFDIR"/xboard/xboard.conf"
+ #define COLOR_BKGD              "white"
+ 
+ typedef int (*FileProc) P((FILE *f, int n, char *title));
