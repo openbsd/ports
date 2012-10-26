@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_merge-vcard_c,v 1.1 2012/10/26 06:49:05 jasper Exp $
+
+Fix glabels broken with evolution-data-server 3.6.0        
+https://bugzilla.gnome.org/show_bug.cgi?id=685130
+
+Patch from Fedora:
+http://pkgs.fedoraproject.org/cgit/glabels.git/tree/glabels-3.0.0-new-eds.patch
+
+--- src/merge-vcard.c.orig	Tue Sep 18 02:01:02 2012
++++ src/merge-vcard.c	Fri Oct 26 08:43:05 2012
+@@ -27,7 +27,7 @@
+ 
+ #include "merge-vcard.h"
+ 
+-#include <libebook/e-contact.h>
++#include <libebook/libebook.h>
+ #include <stdio.h>
+ #include <string.h>
+ #include <errno.h>
