@@ -1,3 +1,4 @@
 To completely deinstall ownCloud you need to perform the following step
 as root:
     rm -f /var/www/conf/modules/owncloud.conf
+and remove the "backgroundjobs" cron(8) job if it exists.
