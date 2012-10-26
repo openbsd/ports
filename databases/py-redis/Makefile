@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2012/10/12 06:59:54 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.18 2012/10/26 06:52:26 rpointel Exp $
 
 COMMENT =		Python interface to Redis
 
@@ -26,18 +26,8 @@ MODPY_SETUPTOOLS =	Yes
 DIST_SUBDIR =           py-redis
 WRKDIST =		${WRKDIR}/redis-${MODPY_EGG_VERSION}
 
-REGRESS_DEPENDS =	devel/git \
-			databases/redis
+REGRESS_DEPENDS =	databases/redis
 
-REGRESS_IS_INTERACTIVE=Yes # be sure you have a redis server running on localhost
-do-regress:
-	# fetch tests because they are not included in tarball...
-	rm -rf ${WRKSRC}/redis-tmp-tests/ ${WRKSRC}/run_tests ${WRKSRC}/tests
-	cd ${WRKSRC} && git clone git://github.com/andymccurdy/redis-py.git redis-tmp-tests
-	cd ${WRKSRC}/redis-tmp-tests && git checkout ${MODPY_EGG_VERSION}
-	mv ${WRKSRC}/redis-tmp-tests/run_tests ${WRKSRC}/redis-tmp-tests/tests ${WRKSRC}
-	rm -rf ${WRKSRC}/redis-tmp-tests/
-	# test
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MODPY_BIN} ./run_tests
+REGRESS_IS_INTERACTIVE = Yes # be sure you have a redis server running on localhost
 
 .include <bsd.port.mk>
