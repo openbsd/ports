@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.140 2012/10/14 03:29:35 abieber Exp $
+# $OpenBSD: Makefile,v 1.141 2012/10/27 14:08:05 abieber Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -47,6 +47,7 @@
      SUBDIR += libv8
      SUBDIR += librep
      SUBDIR += lua
+     SUBDIR += luajit
      SUBDIR += mawk
      SUBDIR += mono
      SUBDIR += mono-basic
