@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.47 2012/10/26 14:43:17 rpe Exp $
+.\"	$OpenBSD: dpb.1,v 1.48 2012/10/27 11:17:56 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: October 26 2012 $
+.Dd $Mdocdate: October 27 2012 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -569,9 +569,9 @@ at the log, go to the port directory, fix the problem, and then remove the lock.
 .Nm
 will pick up the ball and keep building without interruption.
 .Pp
-One can also run several
+It is perfectly safe to run several
 .Nm
-in parallel.
+in parallel on the same machine.
 This is not optimal, since each
 .Nm
 ignores the others, and only uses the lock info to avoid the other's
@@ -587,6 +587,12 @@ same time, even on different machines:
 in some cases, MULTI_PACKAGES and FLAVOR combinations may lead to the
 same package being built simultaneously, and since the package repository
 is shared, this can easily lead to trouble.
+.Pp
+Handling of shared log files and history is also done very carefully by
+systematically appending to files or using atomic mv operations.
+.Pp
+For obvious reasons, this won't work as well with masters running on distinct
+machines sharing their logs through NFS.
 .Sh SHUTTING DOWN GRACEFULLY
 .Nm
 periodically checks for a file named
