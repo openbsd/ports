@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_RenderManager_cpp,v 1.1.1.1 2012/10/27 07:12:45 bentley Exp $
+
+Remove byte-order mark.
+
+--- src/RenderManager.cpp.orig	Sat Oct 27 00:25:13 2012
++++ src/RenderManager.cpp	Sat Oct 27 00:25:15 2012
+@@ -1,4 +1,4 @@
+-﻿/*=============================================================================
++/*=============================================================================
+ Blobby Volley 2
+ Copyright (C) 2006 Jonathan Sieber (jonathan_sieber@yahoo.de)
+ Copyright (C) 2006 Daniel Knobe (daniel-knobe@web.de)

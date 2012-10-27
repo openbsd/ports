@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_InputManager_cpp,v 1.1.1.1 2012/10/27 07:12:45 bentley Exp $
+
+Remove byte-order mark.
+
+--- src/InputManager.cpp.orig	Sat Oct 27 00:24:44 2012
++++ src/InputManager.cpp	Sat Oct 27 00:24:49 2012
+@@ -1,4 +1,4 @@
+-﻿/*=============================================================================
++/*=============================================================================
+ Blobby Volley 2
+ Copyright (C) 2006 Jonathan Sieber (jonathan_sieber@yahoo.de)
+ Copyright (C) 2006 Daniel Knobe (daniel-knobe@web.de)

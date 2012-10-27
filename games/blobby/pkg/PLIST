@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/27 07:12:45 bentley Exp $
+@bin bin/blobby
+@bin bin/blobby-server
+share/blobby/
+share/blobby/backgrounds.zip
+share/blobby/config.xml
+share/blobby/gfx.zip
+share/blobby/inputconfig.xml
+share/blobby/lang_de.xml
+share/blobby/lang_en.xml
+share/blobby/lang_fr.xml
+share/blobby/rules.lua
+share/blobby/scripts.zip
+share/blobby/server.xml
+share/blobby/sounds.zip
