@@ -1,0 +1,12 @@
+$OpenBSD: patch-VAX_vaxmod_defs_h,v 1.1 2012/10/27 23:58:41 okan Exp $
+--- VAX/vaxmod_defs.h.orig	Wed Oct 24 10:15:03 2012
++++ VAX/vaxmod_defs.h	Wed Oct 24 10:16:25 2012
+@@ -114,7 +114,7 @@
+ #define MAXMEMSIZE      (1 << MAXMEMWIDTH)              /* max mem size */
+ #define MAXMEMWIDTH_X   29                              /* max mem, KA655X */
+ #define MAXMEMSIZE_X    (1 << MAXMEMWIDTH_X)
+-#define INITMEMSIZE     (1 << 24)                       /* initial memory size */
++#define INITMEMSIZE     (1 << 27)                       /* initial memory size */
+ #define MEMSIZE         (cpu_unit.capac)
+ #define ADDR_IS_MEM(x)  (((uint32) (x)) < MEMSIZE)
+ 
