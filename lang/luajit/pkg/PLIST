@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/27 14:05:33 abieber Exp $
+@bin bin/luajit${MODLUA_DEP_VERSION}
+include/luajit-2.0/
+include/luajit-2.0/lauxlib.h
+include/luajit-2.0/lua.h
+include/luajit-2.0/lua.hpp
+include/luajit-2.0/luaconf.h
+include/luajit-2.0/luajit.h
+include/luajit-2.0/lualib.h
+@comment lib/libluajit-${MODLUA_VERSION}.so
+lib/libluajit-${MODLUA_VERSION}.a
+@lib lib/libluajit-${MODLUA_VERSION}.so.${LIBluajit-5.1_VERSION}
+lib/pkgconfig/luajit.pc
+@man man/man1/luajit.1
+share/lua/${MODLUA_VERSION}/jit/
+share/lua/${MODLUA_VERSION}/jit/bc.lua
+share/lua/${MODLUA_VERSION}/jit/bcsave.lua
+share/lua/${MODLUA_VERSION}/jit/dis_arm.lua
+share/lua/${MODLUA_VERSION}/jit/dis_mips.lua
+share/lua/${MODLUA_VERSION}/jit/dis_mipsel.lua
+share/lua/${MODLUA_VERSION}/jit/dis_ppc.lua
+share/lua/${MODLUA_VERSION}/jit/dis_x64.lua
+share/lua/${MODLUA_VERSION}/jit/dis_x86.lua
+share/lua/${MODLUA_VERSION}/jit/dump.lua
+share/lua/${MODLUA_VERSION}/jit/v.lua
+share/lua/${MODLUA_VERSION}/jit/vmdef.lua
