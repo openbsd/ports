@@ -1,0 +1,77 @@
+$OpenBSD: patch-egg_tests_test-secmem_c,v 1.1 2012/10/27 13:21:56 ajacoutot Exp $
+
+From 7cea18071bd33d70834cc05b8bcdcaee05194270 Mon Sep 17 00:00:00 2001
+From: Stef Walter <stefw@gnome.org>
+Date: Sat, 27 Oct 2012 09:58:13 +0000
+Subject: Bring over a new version of the secure memory code from gcr
+
+--- egg/tests/test-secmem.c.orig	Sun Nov  6 13:38:56 2011
++++ egg/tests/test-secmem.c	Sat Oct 27 14:43:37 2012
+@@ -32,14 +32,14 @@
+ #include <string.h>
+ 
+ 
+-EGG_SECURE_GLIB_DEFINITIONS ();
++EGG_SECURE_DEFINE_GLIB_GLOBALS ();
+ 
+ /* Declared in egg-secure-memory.c */
+ extern int egg_secure_warnings;
+ 
+ EGG_SECURE_DECLARE (tests);
+ 
+-/* 
++/*
+  * Each test looks like (on one line):
+  *     void unit_test_xxxxx (CuTest* cu)
+  *
+@@ -93,7 +93,7 @@ test_realloc_across (void)
+ 	g_assert (p != NULL);
+ 	g_assert_cmpint (G_MAXSIZE, ==, find_non_zero (p, 1088));
+ 
+-	/* Reallocate to a large one, will have to have changed blocks */	
++	/* Reallocate to a large one, will have to have changed blocks */
+ 	p2 = egg_secure_realloc_full ("tests", p, 16200, 0);
+ 	g_assert (p2 != NULL);
+ 	g_assert_cmpint (G_MAXSIZE, ==, find_non_zero (p2, 16200));
+@@ -182,26 +182,25 @@ test_multialloc (void)
+ 		case 0: /* Allocate some memory */
+ 			size = g_random_int_range (1, 16384);
+ 			data = egg_secure_alloc (size);
+-			g_assert (data);
++			g_assert (data != NULL);
+ 			memset (data, 0xCAFEBABE, size);
+ 			g_ptr_array_add (memory, data);
+ 			break;
+ 		case 1: /* Reallocate some memory */
+ 			index = g_random_int_range (0, memory->len);
+ 			data = g_ptr_array_index (memory, index);
+-			g_assert (data);
++			g_assert (data != NULL);
+ 			size = g_random_int_range (1, 16384);
+ 			data = egg_secure_realloc (data, size);
+-			g_assert (data);
++			g_assert (data != NULL);
+ 			memset (data, 0xCAFEBABE, size);
+ 			g_ptr_array_index (memory, index) = data;
+ 			break;
+ 		case 2: /* Free some memory */
+ 			index = g_random_int_range (0, memory->len);
+-			data = g_ptr_array_index (memory, index);
+-			g_assert (data);
++			data = g_ptr_array_remove_index_fast (memory, index);
++			g_assert (data != NULL);
+ 			egg_secure_free (data);
+-			g_ptr_array_remove_index_fast (memory, index);
+ 			break;
+ 		default:
+ 			g_assert_not_reached ();
+@@ -214,7 +213,8 @@ test_multialloc (void)
+ 	}
+ 
+ 	g_assert (memory->len == 0);
+-	g_ptr_array_set_free_func (memory, egg_secure_free);
++	for (i = 0; i < memory->len; i++)
++		egg_secure_free (memory->pdata[i]);
+ 	g_ptr_array_free (memory, TRUE);
+ 
+ 	egg_secure_warnings = 1;

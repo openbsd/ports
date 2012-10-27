@@ -1,0 +1,18 @@
+$OpenBSD: patch-library_gkr-session_c,v 1.1 2012/10/27 13:21:56 ajacoutot Exp $
+
+From ef43a082c190a9e30ef939eeb8fc87312c30bb42 Mon Sep 17 00:00:00 2001
+From: Stef Walter <stefw@gnome.org>
+Date: Sat, 27 Oct 2012 10:21:46 +0000
+Subject: Merge updated secure memory code from libsecret
+
+--- library/gkr-session.c.orig	Sat Mar 31 14:59:37 2012
++++ library/gkr-session.c	Sat Oct 27 14:36:16 2012
+@@ -44,6 +44,8 @@ struct _GkrSession {
+ G_LOCK_DEFINE_STATIC (session_globals);
+ static GkrSession *the_session;
+ 
++EGG_SECURE_DECLARE (session);
++
+ static guchar*
+ pkcs7_pad_string_in_secure_memory (const gchar *string, gsize *n_padded)
+ {

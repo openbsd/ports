@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2012/10/24 07:04:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.87 2012/10/27 13:21:56 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	password agent for the GNOME project
 
 GNOME_PROJECT=	gnome-keyring
 GNOME_VERSION=	3.6.1
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	https://live.gnome.org/GnomeKeyring
 
