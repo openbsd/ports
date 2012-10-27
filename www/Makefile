@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.579 2012/10/26 23:13:55 rpe Exp $
+# $OpenBSD: Makefile,v 1.580 2012/10/27 12:26:56 sthen Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -65,6 +65,7 @@
      SUBDIR += haserl
      SUBDIR += haserl,no_lua
      SUBDIR += haserl,static
+     SUBDIR += haserl,no_lua,static
      SUBDIR += havp
      SUBDIR += hiawatha
      SUBDIR += horde
