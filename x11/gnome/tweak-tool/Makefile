@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2012/10/16 10:43:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2012/10/27 13:54:47 ajacoutot Exp $
 
 PKG_ARCH=	*
 
@@ -32,6 +32,7 @@ RUN_DEPENDS=	devel/gsettings-desktop-schemas \
 
 MODPY_ADJ_FILES=gnome-tweak-tool
 
+USE_LIBTOOL=		No
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 
