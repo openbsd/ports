@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2012/10/16 11:56:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2012/10/28 11:25:17 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	evolution connector for MS Exchange via EWS
 
 GNOME_PROJECT=	evolution-ews
 GNOME_VERSION=	3.6.0
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	mail
 
@@ -47,30 +47,14 @@ WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png pthread pthread-stubs
 WANTLIB += smime3 softokn3 soup-2.4 soup-gnome-2.4 sqlite3 ssl3
 WANTLIB += stdc++ vorbis vorbisfile webkitgtk-3.0 xcb xcb-render
 WANTLIB += xcb-shm xkbfile xml2 xslt z
-WANTLIB += lib/evolution/${EVO_VERSION}/composer
-WANTLIB += lib/evolution/${EVO_VERSION}/eabutil
-WANTLIB += lib/evolution/${EVO_VERSION}/econtacteditor
-WANTLIB += lib/evolution/${EVO_VERSION}/econtactlisteditor
-WANTLIB += lib/evolution/${EVO_VERSION}/email-engine
-WANTLIB += lib/evolution/${EVO_VERSION}/email-utils
-WANTLIB += lib/evolution/${EVO_VERSION}/emformat
-WANTLIB += lib/evolution/${EVO_VERSION}/emiscwidgets
-WANTLIB += lib/evolution/${EVO_VERSION}/eshell
-WANTLIB += lib/evolution/${EVO_VERSION}/essmime
-WANTLIB += lib/evolution/${EVO_VERSION}/etable
-WANTLIB += lib/evolution/${EVO_VERSION}/etext
-WANTLIB += lib/evolution/${EVO_VERSION}/eutil
-WANTLIB += lib/evolution/${EVO_VERSION}/evolution-a11y
-WANTLIB += lib/evolution/${EVO_VERSION}/evolution-mail
-WANTLIB += lib/evolution/${EVO_VERSION}/evolution-smime
-WANTLIB += lib/evolution/${EVO_VERSION}/filter
-WANTLIB += lib/evolution/${EVO_VERSION}/gnomecanvas
-WANTLIB += lib/evolution/${EVO_VERSION}/menus
 
 MODULES=	devel/gettext \
 		x11/gnome
 
-LIB_DEPENDS=	mail/evolution,-main>=3.6.0
+# XXX should be a LIB_DEPENDS+WANTLIB but check-lib-depends(1) does not
+# work with unversioned solibs (LOCALBASE/lib/evolution/*/*.so).
+BUILD_DEPENDS +=	mail/evolution,-main
+RUN_DEPENDS +=		mail/evolution,-main
 
 LIBTOOL_FLAGS=	--tag=disable-static
 
