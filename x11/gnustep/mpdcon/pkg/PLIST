@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/24 14:02:36 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/10/28 14:03:12 sebastia Exp $
 bin/MPDCon
 libexec/GNUstep/
 libexec/GNUstep/MPDCon.app/
@@ -18,6 +18,10 @@ libexec/GNUstep/MPDCon.app/Resources/Current.tiff
 libexec/GNUstep/MPDCon.app/Resources/GNUstep.tiff
 libexec/GNUstep/MPDCon.app/Resources/Info-gnustep.plist
 libexec/GNUstep/MPDCon.app/Resources/Install
+libexec/GNUstep/MPDCon.app/Resources/LyricsInspector.gorm/
+libexec/GNUstep/MPDCon.app/Resources/LyricsInspector.gorm/data.classes
+libexec/GNUstep/MPDCon.app/Resources/LyricsInspector.gorm/data.info
+libexec/GNUstep/MPDCon.app/Resources/LyricsInspector.gorm/objects.gorm
 libexec/GNUstep/MPDCon.app/Resources/MPDCon.desktop
 libexec/GNUstep/MPDCon.app/Resources/MPDCon.tiff
 libexec/GNUstep/MPDCon.app/Resources/MoveSong.tiff
@@ -55,6 +59,10 @@ libexec/GNUstep/MPDCon.app/Resources/Preferences.gorm/objects.gorm
 libexec/GNUstep/MPDCon.app/Resources/Prev.tiff
 libexec/GNUstep/MPDCon.app/Resources/Repeat.tiff
 libexec/GNUstep/MPDCon.app/Resources/Shuffle.tiff
+libexec/GNUstep/MPDCon.app/Resources/SongInspector.gorm/
+libexec/GNUstep/MPDCon.app/Resources/SongInspector.gorm/data.classes
+libexec/GNUstep/MPDCon.app/Resources/SongInspector.gorm/data.info
+libexec/GNUstep/MPDCon.app/Resources/SongInspector.gorm/objects.gorm
 libexec/GNUstep/MPDCon.app/Resources/StatisticsViewer.gorm/
 libexec/GNUstep/MPDCon.app/Resources/StatisticsViewer.gorm/data.classes
 libexec/GNUstep/MPDCon.app/Resources/StatisticsViewer.gorm/data.info
