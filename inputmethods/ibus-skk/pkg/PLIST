@@ -1,39 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/09/25 13:34:57 fgsch Exp $
-bin/ibus-skk-convert-jisyo
-libexec/ibus-engine-skk
-libexec/ibus-setup-skk
+@comment $OpenBSD: PLIST,v 1.5 2012/10/28 17:48:24 fgsch Exp $
+@bin libexec/ibus-engine-skk
+@bin libexec/ibus-setup-skk
+share/ibus/
 share/ibus-skk/
-share/ibus-skk/engine/
-share/ibus-skk/engine/engine.py
-share/ibus-skk/engine/engine.pyc
-share/ibus-skk/engine/engine.pyo
-share/ibus-skk/engine/factory.py
-share/ibus-skk/engine/factory.pyc
-share/ibus-skk/engine/factory.pyo
-share/ibus-skk/engine/kzik.py
-share/ibus-skk/engine/kzik.pyc
-share/ibus-skk/engine/kzik.pyo
-share/ibus-skk/engine/main.py
-share/ibus-skk/engine/main.pyc
-share/ibus-skk/engine/main.pyo
-share/ibus-skk/engine/nicola.py
-share/ibus-skk/engine/nicola.pyc
-share/ibus-skk/engine/nicola.pyo
-share/ibus-skk/engine/skk.py
-share/ibus-skk/engine/skk.pyc
-share/ibus-skk/engine/skk.pyo
-share/ibus-skk/engine/virtkbd.py
-share/ibus-skk/engine/virtkbd.pyc
-share/ibus-skk/engine/virtkbd.pyo
 share/ibus-skk/icons/
 share/ibus-skk/icons/ibus-skk.svg
 share/ibus-skk/setup/
-share/ibus-skk/setup/config.py
-share/ibus-skk/setup/config.pyc
-share/ibus-skk/setup/config.pyo
 share/ibus-skk/setup/ibus-skk-preferences.ui
-share/ibus-skk/setup/main.py
-share/ibus-skk/setup/main.pyc
-share/ibus-skk/setup/main.pyo
+share/ibus/component/
 share/ibus/component/skk.xml
 share/locale/ja/LC_MESSAGES/ibus-skk.mo

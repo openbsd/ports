@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_preferences_vala,v 1.1 2012/10/28 17:48:24 fgsch Exp $
+--- src/preferences.vala.orig	Thu Oct 25 01:10:30 2012
++++ src/preferences.vala	Thu Oct 25 01:10:39 2012
+@@ -75,7 +75,7 @@ public class Preferences : Object {
+             "type=file,file=%s/ibus-skk/user.dict,mode=readwrite".printf (
+                 Environment.get_user_config_dir ()));
+         dictionaries.add (
+-            "type=file,file=/usr/share/skk/SKK-JISYO.L,mode=readonly");
++            "type=file,file=${LOCALBASE}/share/skk/SKK-JISYO.L,mode=readonly");
+         dictionaries.add (
+             "type=server,host=localhost,port=1178");
+         _default.set ("dictionaries",
