@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.119 2012/10/24 17:39:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.120 2012/10/28 11:13:51 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -80,17 +80,6 @@ WANTLIB-evolution += sqlite3 ssl3 stdc++ tracker-miner-0.14 tracker-sparql-0.14
 WANTLIB-evolution += xml2 dbus-glib-1 ICE SM db ebackend-1.2 gnome-desktop-3
 WANTLIB-evolution += lib/tracker-${MAJ_V}/tracker-common
 WANTLIB-evolution += lib/tracker-${MAJ_V}/tracker-data
-WANTLIB-evolution += lib/evolution/${EVO_VERSION}/emiscwidgets
-WANTLIB-evolution += lib/evolution/${EVO_VERSION}/email-engine
-WANTLIB-evolution += lib/evolution/${EVO_VERSION}/email-utils
-WANTLIB-evolution += lib/evolution/${EVO_VERSION}/eshell
-WANTLIB-evolution += lib/evolution/${EVO_VERSION}/etable
-WANTLIB-evolution += lib/evolution/${EVO_VERSION}/etext
-WANTLIB-evolution += lib/evolution/${EVO_VERSION}/eutil
-WANTLIB-evolution += lib/evolution/${EVO_VERSION}/evolution-a11y
-WANTLIB-evolution += lib/evolution/${EVO_VERSION}/filter
-WANTLIB-evolution += lib/evolution/${EVO_VERSION}/gnomecanvas
-WANTLIB-evolution += lib/evolution/${EVO_VERSION}/menus
 
 WANTLIB-nautilus += ${WANTLIB}
 WANTLIB-nautilus += lib/tracker-${MAJ_V}/tracker-common
@@ -118,9 +107,12 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			audio/taglib
 
 RUN_DEPENDS-evolution=	${MODGETTEXT_RUN_DEPENDS}
+# XXX should be a LIB_DEPENDS but check-lib-depends(1) does not work
+# with unversioned solibs (LOCALBASE/lib/evolution/*/*.so).
+BUILD_DEPENDS +=	mail/evolution,-main
+RUN_DEPENDS-evolution +=mail/evolution,-main
 LIB_DEPENDS-evolution=	${LIB_DEPENDS} \
-			x11/gnome/tracker,-main=${GNOME_VERSION} \
-			mail/evolution,-main>=3.4.0
+			x11/gnome/tracker,-main=${GNOME_VERSION}
 
 RUN_DEPENDS-nautilus=	${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-nautilus=	${LIB_DEPENDS} \
