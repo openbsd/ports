@@ -1,6 +1,6 @@
-$OpenBSD: patch-common_ECLogger_cpp,v 1.14 2012/08/30 14:28:22 ajacoutot Exp $
---- common/ECLogger.cpp.orig	Wed Aug  8 17:14:57 2012
-+++ common/ECLogger.cpp	Wed Aug 29 13:27:02 2012
+$OpenBSD: patch-common_ECLogger_cpp,v 1.15 2012/10/28 21:51:08 robert Exp $
+--- common/ECLogger.cpp.orig	Sun Oct 28 21:09:07 2012
++++ common/ECLogger.cpp	Sun Oct 28 21:12:26 2012
 @@ -56,6 +56,10 @@
  #include "stringutil.h"
  #include "charset/localeutil.h"
@@ -60,7 +60,7 @@ $OpenBSD: patch-common_ECLogger_cpp,v 1.14 2012/08/30 14:28:22 ajacoutot Exp $
  
  void ECLogger_File::LogVA(int loglevel, const char *format, va_list& va) {
  	pthread_mutex_lock(&msgbuflock);
-+#ifdef __OpenBSD__
++#ifndef __OpenBSD__
 +	_vsnprintf_l(msgbuffer, _LOG_BUFSIZE, format, va);
 +#else
  	_vsnprintf_l(msgbuffer, _LOG_BUFSIZE, format, datalocale, va);
@@ -72,7 +72,7 @@ $OpenBSD: patch-common_ECLogger_cpp,v 1.14 2012/08/30 14:28:22 ajacoutot Exp $
  	LoggerList::iterator iLogger;
  
  	pthread_mutex_lock(&msgbuflock);
-+#ifdef __OpenBSD__
++#ifndef __OpenBSD__
 +	_vsnprintf_l(msgbuffer, _LOG_BUFSIZE, format, va);
 +#else
  	_vsnprintf_l(msgbuffer, _LOG_BUFSIZE, format, datalocale, va);
@@ -98,7 +98,7 @@ $OpenBSD: patch-common_ECLogger_cpp,v 1.14 2012/08/30 14:28:22 ajacoutot Exp $
  	else if (prefix == LP_PID)
  		len = snprintf(msgbuffer+off, _LOG_BUFSIZE -off, "[%5d] ", getpid());
  	if (len < 0) len = 0;
-@@ -598,15 +616,21 @@ namespace PrivatePipe {
+@@ -598,9 +616,13 @@ namespace PrivatePipe {
  		int l;
  		bool bNPTL = true;
  
@@ -112,11 +112,3 @@ $OpenBSD: patch-common_ECLogger_cpp,v 1.14 2012/08/30 14:28:22 ajacoutot Exp $
  		
  		m_lpConfig = lpConfig;
  		m_lpFileLogger = lpFileLogger;
- 
-+#ifndef __OpenBSD__
- 		// since we forked, set it for the complete process
- 		forceUTF8Locale(false, NULL);
-+#endif
- 
- 		if (bNPTL) {
- 			sigemptyset(&signal_mask);

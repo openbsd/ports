@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.41 2012/09/05 08:07:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.42 2012/10/28 21:51:09 robert Exp $
 @comment chdir(2) to running_path which is set to /var/empty in the cfg files
 @newgroup _zarafa:627
 @newuser _zarafa:627:_zarafa:daemon:Zarafa Account:/var/empty:/sbin/nologin
@@ -154,6 +154,7 @@ include/zarafa/Util.h
 include/zarafa/ZarafaCode.h
 include/zarafa/auto_free.h
 include/zarafa/base64.h
+include/zarafa/boost_compat.h
 include/zarafa/charset/
 include/zarafa/charset/convert.h
 include/zarafa/charset/convstring.h
@@ -189,9 +190,6 @@ include/zarafa/tstring.h
 include/zarafa/userutil.h
 include/zarafa/ustringutil/
 include/zarafa/ustringutil.h
-include/zarafa/ustringutil/itercomp.h
-include/zarafa/ustringutil/utf32iter.h
-include/zarafa/ustringutil/utf8iter.h
 include/zarafa/ustringutil/utfutil.h
 include/zarafa/utf8/
 include/zarafa/utf8.h
@@ -267,9 +265,11 @@ lib/zarafa/
 lib/zarafa/dbplugin.so
 @comment lib/zarafa/ldapplugin.la
 lib/zarafa/ldapplugin.so
+@man man/man1/za-aclset.1
 @man man/man1/za-restore.1
 @man man/man1/zarafa-admin.1
 @man man/man1/zarafa-archiver.1
+@man man/man1/zarafa-autorespond.1
 @man man/man1/zarafa-dagent.1
 @man man/man1/zarafa-fsck.1
 @man man/man1/zarafa-gateway.1
@@ -364,10 +364,6 @@ share/examples/zarafa/monitor.cfg
 @sample ${SYSCONFDIR}/zarafa/monitor.cfg
 share/examples/zarafa/quotamail/
 @sample ${SYSCONFDIR}/zarafa/quotamail/
-share/examples/zarafa/quotamail/companyhard.mail
-@sample ${SYSCONFDIR}/zarafa/quotamail/companyhard.mail
-share/examples/zarafa/quotamail/companysoft.mail
-@sample ${SYSCONFDIR}/zarafa/quotamail/companysoft.mail
 share/examples/zarafa/quotamail/companywarning.mail
 @sample ${SYSCONFDIR}/zarafa/quotamail/companywarning.mail
 share/examples/zarafa/quotamail/userhard.mail

@@ -1,7 +1,7 @@
-$OpenBSD: patch-php-ext_main_cpp,v 1.3 2012/08/30 14:28:22 ajacoutot Exp $
---- php-ext/main.cpp.orig	Wed Aug 29 15:19:02 2012
-+++ php-ext/main.cpp	Wed Aug 29 14:37:28 2012
-@@ -569,8 +569,10 @@ PHP_MINIT_FUNCTION(mapi)
+$OpenBSD: patch-php-ext_main_cpp,v 1.4 2012/10/28 21:51:08 robert Exp $
+--- php-ext/main.cpp.orig	Sun Oct 28 21:14:05 2012
++++ php-ext/main.cpp	Sun Oct 28 21:14:22 2012
+@@ -568,8 +568,11 @@ PHP_MINIT_FUNCTION(mapi)
  
  	ZEND_INIT_MODULE_GLOBALS(mapi, php_mapi_init_globals, NULL);
  
@@ -9,6 +9,7 @@ $OpenBSD: patch-php-ext_main_cpp,v 1.3 2012/08/30 14:28:22 ajacoutot Exp $
  	// force this program to use UTF-8, that way, we don't have to use lpszW and do all kinds of conversions from UTF-8 to WCHAR and back
  	forceUTF8Locale(false);
 +#endif
- 
++
  	return SUCCESS;
  }
+ 
