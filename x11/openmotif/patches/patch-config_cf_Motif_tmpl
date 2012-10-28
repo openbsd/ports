@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_cf_Motif_tmpl,v 1.2 2009/12/14 18:03:36 jasper Exp $
---- config/cf/Motif.tmpl.orig	Sat Jan  5 16:20:50 2002
-+++ config/cf/Motif.tmpl	Thu Dec 10 00:20:05 2009
-@@ -179,7 +179,7 @@ XCOMM $TOG: Motif.tmpl /main/6 1999/05/19 17:00:05 mgr
+$OpenBSD: patch-config_cf_Motif_tmpl,v 1.3 2012/10/28 11:05:45 sthen Exp $
+--- config/cf/Motif.tmpl.orig	Mon Oct 22 15:50:39 2012
++++ config/cf/Motif.tmpl	Wed Oct 24 21:18:52 2012
+@@ -167,7 +167,7 @@ XCOMM $TOG: Motif.tmpl /main/6 1999/05/19 17:00:05 mgr
  # define YaccFlags /**/
  #endif
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-config_cf_Motif_tmpl,v 1.2 2009/12/14 18:03:36 jasper Exp $
  
  #ifndef BuildMotifConfig
  # define BuildMotifConfig	YES
-@@ -396,7 +396,7 @@ XCOMM $TOG: Motif.tmpl /main/6 1999/05/19 17:00:05 mgr
+@@ -384,7 +384,7 @@ XCOMM $TOG: Motif.tmpl /main/6 1999/05/19 17:00:05 mgr
  /* hardcoded default path.  Contrary to the original duplicate of USRLIBDIR
     in the Imakefiles. */
  #ifndef VirtualBindingsPath

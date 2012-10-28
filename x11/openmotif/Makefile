@@ -1,43 +1,42 @@
-# $OpenBSD: Makefile,v 1.52 2012/09/23 08:05:53 matthieu Exp $
+# $OpenBSD: Makefile,v 1.53 2012/10/28 11:05:44 sthen Exp $
 
 COMMENT-main=		Motif toolkit
 COMMENT-demos=		Motif toolkit demos
 
-VERSION=		2.3.3
-DISTNAME=		openmotif-${VERSION}
+VERSION=		2.3.4
+DISTNAME=		motif-${VERSION}
+EXTRACT_SUFX=		-src.tgz
 PKGNAME-main=		openmotif-${VERSION}
 PKGNAME-demos=		openmotif-demos-${VERSION}
-
-REVISION-main=		4
-REVISION-demos= 	2
 
 SHARED_LIBS=		Mrm	4.1	\
 			Uil	5.0	\
 			Xm	6.0
 
 CATEGORIES=		x11
-#MASTER_SITES=		ftp://ftp.ics.com/openmotif/2.3/${VERSION}/
-MASTER_SITES=		http://distfiles.nl/ \
-			ftp://ftp.openbsd.org/pub/OpenBSD/distfiles/openmotif/
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=motif/}
 DIST_SUBDIR=		openmotif
 
-HOMEPAGE=		http://www.opengroup.org/openmotif/
+HOMEPAGE=		http://motif.ics.com/
 
+# LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MULTI_PACKAGES= 	-demos -main
+MULTI_PACKAGES=		-demos -main
 
 USE_GROFF =		Yes
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.12
 CONFIGURE_ARGS=		--enable-themes \
 			--enable-xft \
 			--enable-jpeg \
 			--disable-printing \
 			--enable-png
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
+CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 			LDFLAGS="-L${LOCALBASE}/lib -lm"
 
 USE_LIBTOOL=		Yes
@@ -54,13 +53,16 @@ LIB_DEPENDS=		graphics/jpeg \
 LIB_DEPENDS-demos=	x11/openmotif \
 			${MODLIBICONV_LIB_DEPENDS} \
 			${LIB_DEPENDS}
-WANTLIB=		ICE SM X11 Xext Xt c Xau Xdmcp Xft Xmu Xrender \
-			expat fontconfig freetype m z pthread-stubs xcb \
+WANTLIB=		ICE SM X11 Xext Xt c Xft Xmu Xrender \
+			expat fontconfig freetype m z xcb \
 			jpeg png
 WANTLIB-demos=		${WANTLIB} Xm Mrm
 
 # XXX  Large, complicated, only partially automated test suite available
 NO_REGRESS=	Yes
+
+post-patch:
+	cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
 
 pre-configure:
 # fix sections
@@ -77,9 +79,10 @@ pre-configure:
 
 	${SUBST_CMD} ${WRKSRC}/config/cf/host.def \
 		${WRKSRC}/config/cf/Motif.tmpl \
-		${WRKSRC}/lib/Xm/Makefile.in
+		${WRKSRC}/lib/Xm/Makefile.am
 
-DOCS=BUGREPORT COPYRIGHT.MOTIF LICENSE README RELEASE RELNOTES TODO
+DOCS=BUGREPORT COPYING README RELEASE RELNOTES TODO
+
 DOCDIR=${PREFIX}/share/doc/openmotif
 
 post-install:

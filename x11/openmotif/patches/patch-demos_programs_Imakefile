@@ -1,7 +1,7 @@
-$OpenBSD: patch-demos_programs_Imakefile,v 1.3 2009/12/14 18:03:36 jasper Exp $
---- demos/programs/Imakefile.orig	Tue Jan 29 18:22:33 2002
-+++ demos/programs/Imakefile	Sat Jun 30 10:26:55 2007
-@@ -57,7 +57,6 @@ SUBDIRS = airport \
+$OpenBSD: patch-demos_programs_Imakefile,v 1.4 2012/10/28 11:05:45 sthen Exp $
+--- demos/programs/Imakefile.orig	Mon Oct 22 15:50:38 2012
++++ demos/programs/Imakefile	Wed Oct 24 21:18:59 2012
+@@ -44,7 +44,6 @@ SUBDIRS = airport \
           sampler2_0 \
           setdate \
           Exm \
