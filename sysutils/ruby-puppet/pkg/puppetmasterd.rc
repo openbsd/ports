@@ -1,8 +1,8 @@
 #!/bin/sh
 #
-# $OpenBSD: puppetmasterd.rc,v 1.1 2011/03/20 15:46:34 ajacoutot Exp $
+# $OpenBSD: puppetmasterd.rc,v 1.2 2012/10/28 18:48:45 robert Exp $
 
-daemon="${TRUEPREFIX}/sbin/puppetmasterd"
+daemon="/usr/local/bin/puppet master"
 
 . /etc/rc.d/rc.subr
 

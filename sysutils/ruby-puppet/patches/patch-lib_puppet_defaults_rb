@@ -1,23 +1,26 @@
-$OpenBSD: patch-lib_puppet_defaults_rb,v 1.7 2012/10/01 09:26:18 jasper Exp $
---- lib/puppet/defaults.rb.orig	Tue Aug 21 23:41:17 2012
-+++ lib/puppet/defaults.rb	Mon Oct  1 11:03:48 2012
-@@ -466,8 +466,8 @@ EOT
-   )
+$OpenBSD: patch-lib_puppet_defaults_rb,v 1.8 2012/10/28 18:48:45 robert Exp $
+--- lib/puppet/defaults.rb.orig	Sun Oct 28 19:09:38 2012
++++ lib/puppet/defaults.rb	Sun Oct 28 19:10:05 2012
+@@ -729,11 +729,11 @@ EOT
  
-   setdefaults(:master,
--    :user => ["puppet", "The user puppet master should run as."],
--    :group => ["puppet", "The group puppet master should run as."],
-+    :user => ["_puppet", "The user puppet master should run as."],
-+    :group => ["_puppet", "The group puppet master should run as."],
-     :manifestdir => ["$confdir/manifests", "Where puppet master looks for its manifests."],
-     :manifest => ["$manifestdir/site.pp", "The entry-point manifest for puppet master."],
-     :code => ["", "Code to parse directly.  This is essentially only used
-@@ -508,7 +508,7 @@ EOT
-     ],
-     :ca => [true, "Whether the master should function as a certificate authority."],
+   define_settings(:master,
+     :user => {
+-      :default    => "puppet",
++      :default    => "_puppet",
+       :desc       => "The user puppet master should run as.",
+     },
+     :group => {
+-      :default    => "puppet",
++      :default    => "_puppet",
+       :desc       => "The group puppet master should run as.",
+     },
+     :manifestdir => {
+@@ -804,7 +804,7 @@ EOT
+       :desc       => "Whether the master should function as a certificate authority.",
+     },
      :modulepath => {
 -      :default => "$confdir/modules#{File::PATH_SEPARATOR}/usr/share/puppet/modules",
 +      :default => "$confdir/modules#{File::PATH_SEPARATOR}${SYSCONFDIR}/puppet/modules",
-       :desc => "The search path for modules, as a list of directories separated by the system path separator character. (The POSIX path separator is ':', and the Windows path separator is ';'.)",
-       :type => :setting # We don't want this to be considered a file, since it's multiple files.
-     },
+       :type => :path,
+       :desc => "The search path for modules, as a list of directories separated by the system path separator character. " +
+           "(The POSIX path separator is ':', and the Windows path separator is ';'.)",

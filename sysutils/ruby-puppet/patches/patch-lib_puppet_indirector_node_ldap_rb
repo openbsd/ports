@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_puppet_indirector_node_ldap_rb,v 1.2 2010/11/17 13:07:17 robert Exp $
---- lib/puppet/indirector/node/ldap.rb.orig	Thu Sep 23 01:17:21 2010
-+++ lib/puppet/indirector/node/ldap.rb	Fri Nov 12 11:15:22 2010
+$OpenBSD: patch-lib_puppet_indirector_node_ldap_rb,v 1.3 2012/10/28 18:48:45 robert Exp $
+--- lib/puppet/indirector/node/ldap.rb.orig	Sat Oct 20 06:57:51 2012
++++ lib/puppet/indirector/node/ldap.rb	Sun Oct 28 19:09:31 2012
 @@ -1,3 +1,4 @@
 +require 'facter'
  require 'puppet/node'
@@ -16,7 +16,7 @@ $OpenBSD: patch-lib_puppet_indirector_node_ldap_rb,v 1.2 2010/11/17 13:07:17 rob
      names << "default"
  
      node = nil
-@@ -174,6 +178,14 @@ class Puppet::Node::Ldap < Puppet::Indirector::Ldap
+@@ -179,6 +183,14 @@ class Puppet::Node::Ldap < Puppet::Indirector::Ldap
      parent_info = name2hash(parent) || raise(Puppet::Error.new("Could not find parent node '#{parent}'"))
      information[:classes] += parent_info[:classes]
      parent_info[:parameters].each do |param, value|
