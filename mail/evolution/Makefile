@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.180 2012/10/18 13:55:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.181 2012/10/28 11:24:40 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -11,8 +11,8 @@ GNOME_VERSION=		3.6.1
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}
 
-REVISION-main=		1
-REVISION-plugins=	1
+REVISION-main=		2
+REVISION-plugins=	2
 
 # NOTE: when R changes, increment EVO_VERSION accordingly and bump:
 # mail/evolution-ews
@@ -31,12 +31,11 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 SO_VERSION=		8.0
 
 .for _lib in \
-composer eabutil econtacteditor econtactlisteditor email-engine \
-email-utils emformat emiscwidgets eshell essmime etable etext \
-etimezonedialog eutil evolution-a11y evolution-addressbook-importers \
-evolution-calendar-importers evolution-calendar \
-evolution-mail-importers evolution-mail \
-evolution-smime filter gnomecanvas menus
+gnomecanvas evolution-utils filter email-utils email-engine eutil \
+evolution-a11y emiscwidgets etext etimezonedialog etable menus eshell \
+essmime evolution-smime emformat eabutil evolution-addressbook-importers \
+econtacteditor econtactlisteditor composer evolution-mail \
+evolution-mail-importers evolution-calendar-importers evolution-calendar
 SHARED_LIBS+=	${_lib}	${SO_VERSION}
 .endfor
 
@@ -60,14 +59,6 @@ WANTLIB-main += soup-2.4 gstreamer-0.10 soup-gnome-2.4 webkitgtk-3.0
 
 WANTLIB-plugins += ${WANTLIB}
 WANTLIB-plugins += pst
-WANTLIB-plugins += lib/evolution/${R}/composer
-WANTLIB-plugins += lib/evolution/${R}/email-engine
-WANTLIB-plugins += lib/evolution/${R}/email-utils
-WANTLIB-plugins += lib/evolution/${R}/emiscwidgets
-WANTLIB-plugins += lib/evolution/${R}/eshell
-WANTLIB-plugins += lib/evolution/${R}/eutil
-WANTLIB-plugins += lib/evolution/${R}/evolution-calendar
-WANTLIB-plugins += lib/evolution/${R}/evolution-mail
 
 MULTI_PACKAGES=		-main -plugins
 
@@ -97,11 +88,14 @@ RUN_DEPENDS-main=	${RUN_DEPENDS} \
 
 # gstreamer1(-plugins-base) is needed for the audio-inline plugin
 BUILD_DEPENDS +=	multimedia/gstreamer1/core
-RUN_DEPENDS-main=	multimedia/gstreamer1/plugins-base
+RUN_DEPENDS-main +=	multimedia/gstreamer1/plugins-base
 
 LIB_DEPENDS-plugins=	${LIB_DEPENDS} \
-			mail/evolution,-main=${GNOME_VERSION} \
 			converters/libpst
+
+# XXX should be a LIB_DEPENDS+WANTLIB but check-lib-depends(1) does not
+# work with unversioned solibs (LOCALBASE/lib/evolution/*/*.so).
+RUN_DEPENDS-plugins +=	mail/evolution,-main=${GNOME_VERSION}
 
 MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=	Yes
@@ -125,39 +119,7 @@ CONFIGURE_ARGS=		--disable-static \
 
 FAKE_FLAGS=		autostartdir=${PREFIX}/share/examples/evolution/xdg/autostart
 
-# Revert 160006402248075b95c98e9e34d4538670ba7480
-# (Add -avoid-version to LDFLAGS)
-# https://bugzilla.gnome.org/show_bug.cgi?id=591436
-# This is needed because OpenBSD cannot link to unversioned SOLIBS
-# (evolution-rss needs to link to eutil, eshell, email-engine...).
-REVERT_BZ591436=a11y/Makefile.in \
-		addressbook/gui/contact-editor/Makefile.in \
-		addressbook/gui/contact-list-editor/Makefile.in \
-		addressbook/importers/Makefile.in \
-		addressbook/util/Makefile.in \
-		calendar/gui/Makefile.in \
-		calendar/importers/Makefile.in \
-		composer/Makefile.in \
-		e-util/Makefile.in \
-		em-format/Makefile.in \
-		filter/Makefile.in \
-		libemail-engine/Makefile.in \
-		libemail-utils/Makefile.in \
-		libgnomecanvas/Makefile.in \
-		mail/Makefile.in \
-		mail/importers/Makefile.in \
-		shell/Makefile.in \
-		smclient/Makefile.in \
-		smime/gui/Makefile.in \
-		smime/lib/Makefile.in \
-		widgets/e-timezone-dialog/Makefile.in \
-		widgets/menus/Makefile.in \
-		widgets/misc/Makefile.in \
-		widgets/table/Makefile.in \
-		widgets/text/Makefile.in
-
 pre-configure:
-	for i in ${REVERT_BZ591436}; do perl -pi -e 's,-avoid-version,,g' ${WRKSRC}/$${i}; done
 	${SUBST_CMD} ${WRKSRC}/modules/spamassassin/evolution-spamassassin.c \
 		${WRKSRC}/modules/bogofilter/evolution-bogofilter.c
 
