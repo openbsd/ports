@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.9 2012/09/12 06:58:58 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.10 2012/10/28 10:41:10 ajacoutot Exp $
 
-MODPY_EGG_VERSION ?=	2.4.2
+MODPY_EGG_VERSION ?=	2.6.0
+
+PKG_ARCH=		*
 
 CATEGORIES +=		productivity
 
