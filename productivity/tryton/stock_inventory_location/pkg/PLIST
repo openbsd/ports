@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/05/02 06:57:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/10/28 10:42:17 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_inventory_location/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_inventory_location/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_inventory_location/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_inventory_location/__tryton__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_inventory_location/__tryton__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_inventory_location/inventory.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_inventory_location/inventory.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_inventory_location/inventory.xml
@@ -23,6 +21,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_inventory_locatio
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_inventory_location/tests/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_inventory_location/tests/test_stock_inventory_location.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_inventory_location/tests/test_stock_inventory_location.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_inventory_location/tryton.cfg
 lib/python${MODPY_VERSION}/site-packages/trytond_stock_inventory_location-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/trytond_stock_inventory_location-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/trytond_stock_inventory_location-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt

@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/05/02 08:28:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/10/28 10:42:15 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_percentage/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_percentage/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_percentage/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_percentage/__tryton__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_percentage/__tryton__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_percentage/carrier.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_percentage/carrier.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_percentage/carrier.xml
@@ -25,8 +23,10 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_percentage/stoc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_percentage/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_percentage/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_percentage/tests/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_percentage/tests/scenario_carrier_percentage_with_purchase_shipment_cost.rst
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_percentage/tests/test_carrier_percentage.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_percentage/tests/test_carrier_percentage.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_percentage/tryton.cfg
 lib/python${MODPY_VERSION}/site-packages/trytond_carrier_percentage-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/trytond_carrier_percentage-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/trytond_carrier_percentage-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt

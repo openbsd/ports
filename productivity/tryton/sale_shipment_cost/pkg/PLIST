@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/05/02 08:29:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/10/28 10:42:17 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_shipment_cost/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_shipment_cost/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_shipment_cost/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_shipment_cost/__tryton__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_shipment_cost/__tryton__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_shipment_cost/locale/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_shipment_cost/locale/bg_BG.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_shipment_cost/locale/ca_ES.po
@@ -24,8 +22,10 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_shipment_cost/stoc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_shipment_cost/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_shipment_cost/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_shipment_cost/tests/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_shipment_cost/tests/scenario_sale_shipment_cost.rst
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_shipment_cost/tests/test_sale_shipment_cost.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_shipment_cost/tests/test_sale_shipment_cost.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_shipment_cost/tryton.cfg
 lib/python${MODPY_VERSION}/site-packages/trytond_sale_shipment_cost-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/trytond_sale_shipment_cost-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/trytond_sale_shipment_cost-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt

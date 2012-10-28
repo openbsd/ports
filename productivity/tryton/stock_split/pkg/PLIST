@@ -1,13 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/08/16 09:33:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/10/28 10:42:17 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_split/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_split/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_split/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_split/__tryton__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_split/__tryton__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_split/locale/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_split/locale/bg_BG.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_split/locale/ca_ES.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_split/locale/cs_CZ.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_split/locale/de_DE.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_split/locale/es_AR.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_split/locale/es_CO.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_split/locale/es_ES.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_split/locale/fr_FR.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_split/locale/nl_NL.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_split/locale/ru_RU.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_split/stock.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_split/stock.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_split/stock.xml
@@ -16,6 +21,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_split/tests/__ini
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_split/tests/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_split/tests/test_stock_split.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_split/tests/test_stock_split.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_split/tryton.cfg
 lib/python${MODPY_VERSION}/site-packages/trytond_stock_split-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/trytond_stock_split-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/trytond_stock_split-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt

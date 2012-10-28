@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/05/02 06:57:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/10/28 10:42:15 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/__tryton__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/__tryton__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/caldav.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/caldav.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/calendar_.py
@@ -29,6 +27,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/tes
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/tests/scenario_calendar_scheduling.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/tests/test_calendar_scheduling.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/tests/test_calendar_scheduling.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/tryton.cfg
 lib/python${MODPY_VERSION}/site-packages/trytond_calendar_scheduling-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/trytond_calendar_scheduling-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/trytond_calendar_scheduling-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt

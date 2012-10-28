@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/05/02 06:57:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/10/28 10:42:16 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/__tryton__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/__tryton__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/category.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/category.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/category.xml
@@ -28,6 +26,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/tests/__init__.
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/tests/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/tests/test_product.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/tests/test_product.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/tryton.cfg
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/uom.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/uom.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/uom.xml

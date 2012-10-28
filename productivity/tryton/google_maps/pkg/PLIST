@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/05/02 06:57:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/10/28 10:42:16 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/__tryton__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/__tryton__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/address.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/address.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/address.xml
@@ -23,6 +21,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/tests/__ini
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/tests/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/tests/test_google_maps.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/tests/test_google_maps.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/tryton.cfg
 lib/python${MODPY_VERSION}/site-packages/trytond_google_maps-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/trytond_google_maps-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/trytond_google_maps-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt

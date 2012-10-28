@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/05/02 08:27:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/10/28 10:42:15 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier/__tryton__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier/__tryton__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier/carrier.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier/carrier.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier/carrier.xml
@@ -23,6 +21,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier/tests/__init__.
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier/tests/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier/tests/test_carrier.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier/tests/test_carrier.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier/tryton.cfg
 lib/python${MODPY_VERSION}/site-packages/trytond_carrier-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/trytond_carrier-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/trytond_carrier-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt

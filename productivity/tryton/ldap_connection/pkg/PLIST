@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/05/02 06:57:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/10/28 10:42:16 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/__tryton__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/__tryton__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/connection.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/connection.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/connection.xml
@@ -23,6 +21,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/tests/_
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/tests/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/tests/test_ldap_connection.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/tests/test_ldap_connection.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/tryton.cfg
 lib/python${MODPY_VERSION}/site-packages/trytond_ldap_connection-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/trytond_ldap_connection-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/trytond_ldap_connection-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt

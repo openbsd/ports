@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/05/02 06:57:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/10/28 10:42:17 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_location_sequence/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_location_sequence/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_location_sequence/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_location_sequence/__tryton__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_location_sequence/__tryton__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_location_sequence/locale/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_location_sequence/locale/bg_BG.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_location_sequence/locale/ca_ES.po
@@ -23,6 +21,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_location_sequence
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_location_sequence/tests/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_location_sequence/tests/test_stock_location_sequence.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_location_sequence/tests/test_stock_location_sequence.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_location_sequence/tryton.cfg
 lib/python${MODPY_VERSION}/site-packages/trytond_stock_location_sequence-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/trytond_stock_location_sequence-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/trytond_stock_location_sequence-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt

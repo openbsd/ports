@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/05/02 06:57:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/10/28 10:42:17 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/__tryton__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/__tryton__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/configuration.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/configuration.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/configuration.xml
@@ -48,8 +46,10 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/supplier_restocki
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/tests/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/tests/scenario_stock_shipment_out.rst
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/tests/test_stock.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/tests/test_stock.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/tryton.cfg
 lib/python${MODPY_VERSION}/site-packages/trytond_stock-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/trytond_stock-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/trytond_stock-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt

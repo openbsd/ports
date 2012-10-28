@@ -1,30 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/05/02 06:57:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/10/28 10:42:15 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/__tryton__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/__tryton__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/currency.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/currency.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/currency.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/icons/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/icons/tryton-currency.svg
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/locale/
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/locale/bg_BG.po
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/locale/ca_ES.po
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/locale/cs_CZ.po
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/locale/de_DE.po
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/locale/es_AR.po
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/locale/es_CO.po
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/locale/es_ES.po
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/locale/fr_FR.po
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/locale/nl_NL.po
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/locale/ru_RU.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/tests/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/tests/test_currency.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/tests/test_currency.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/tryton.cfg
 lib/python${MODPY_VERSION}/site-packages/trytond_currency-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/trytond_currency-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/trytond_currency-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt

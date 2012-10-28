@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/05/02 06:57:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/10/28 10:42:14 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_history/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_history/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_history/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_history/__tryton__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_history/__tryton__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_history/invoice.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_history/invoice.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_history/locale/
@@ -21,6 +19,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_history
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_history/party.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_history/payment_term.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_history/payment_term.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_history/tryton.cfg
 lib/python${MODPY_VERSION}/site-packages/trytond_account_invoice_history-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/trytond_account_invoice_history-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/trytond_account_invoice_history-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt

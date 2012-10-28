@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/05/02 06:57:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/10/28 10:42:15 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_todo/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_todo/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_todo/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_todo/__tryton__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_todo/__tryton__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_todo/caldav.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_todo/caldav.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_todo/locale/
@@ -25,6 +23,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_todo/tests/tes
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_todo/todo.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_todo/todo.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_todo/todo.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_todo/tryton.cfg
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_todo/webdav.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_todo/webdav.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond_calendar_todo-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
