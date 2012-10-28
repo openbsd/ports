@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2012/09/27 17:59:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2012/10/28 20:47:41 jasper Exp $
 
 COMMENT=		tool/library for managing platform virtualization
 
-DISTNAME=		libvirt-0.10.2
+DISTNAME=		libvirt-0.10.2.1
 CATEGORIES=		sysutils devel
 
 SHARED_LIBS +=  virt-qemu                 0.1 # 10.2
@@ -12,7 +12,8 @@ HOMEPAGE=		http://libvirt.org/
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
-MASTER_SITES=		${HOMEPAGE}/sources/
+MASTER_SITES=		${HOMEPAGE}/sources/ \
+			${HOMEPAGE}/sources/stable_updates/
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=   Yes

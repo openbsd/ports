@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/09/24 12:36:08 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/10/28 20:47:41 jasper Exp $
 @bin bin/virsh
 @bin bin/virt-host-validate
 bin/virt-pki-validate
@@ -46,7 +46,6 @@ share/doc/libvirt/html/archstorage.html
 share/doc/libvirt/html/auth.html
 share/doc/libvirt/html/bindings.html
 share/doc/libvirt/html/bugs.html
-share/doc/libvirt/html/command.html
 share/doc/libvirt/html/compiling.html
 share/doc/libvirt/html/contact.html
 share/doc/libvirt/html/csharp.html
@@ -96,7 +95,11 @@ share/doc/libvirt/html/html/right.png
 share/doc/libvirt/html/html/up.png
 share/doc/libvirt/html/hvsupport.html
 share/doc/libvirt/html/index.html
+share/doc/libvirt/html/internals/
 share/doc/libvirt/html/internals.html
+share/doc/libvirt/html/internals/command.html
+share/doc/libvirt/html/internals/locking.html
+share/doc/libvirt/html/internals/rpc.html
 share/doc/libvirt/html/intro.html
 share/doc/libvirt/html/java.html
 share/doc/libvirt/html/libvirt-daemon-arch.png
@@ -125,7 +128,6 @@ share/doc/libvirt/html/php.html
 share/doc/libvirt/html/python.html
 share/doc/libvirt/html/relatedlinks.html
 share/doc/libvirt/html/remote.html
-share/doc/libvirt/html/rpc.html
 share/doc/libvirt/html/sitemap.html
 share/doc/libvirt/html/storage.html
 share/doc/libvirt/html/testapi.html
