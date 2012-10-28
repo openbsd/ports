@@ -1,0 +1,19 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2012/10/28 23:43:00 abieber Exp $
+--- Makefile.orig	Mon Oct  1 11:38:55 2012
++++ Makefile	Mon Oct  1 11:39:09 2012
+@@ -37,13 +37,13 @@ globalconf.h: globalconf.h.in
+ $(OBJS): $(HEADS) config.mk
+ 
+ .c.o:
+-	@echo $(CC) -c $< -o $@
++	@echo $(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@
+ 	@$(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@
+ 
+ widgets/webview.o: $(wildcard widgets/webview/*.c)
+ 
+ luakit: $(OBJS)
+-	@echo $(CC) -o $@ $(OBJS)
++	@echo $(CC) -o $@ $(OBJS) $(LDFLAGS)
+ 	@$(CC) -o $@ $(OBJS) $(LDFLAGS)
+ 
+ luakit.1: luakit

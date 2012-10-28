@@ -1,0 +1,72 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/28 23:43:00 abieber Exp $
+@bin bin/luakit
+@man man/man1/luakit.1
+share/doc/luakit/
+share/doc/luakit/AUTHORS
+share/doc/luakit/COPYING
+share/doc/luakit/COPYING.GPLv3
+share/doc/luakit/README.md
+share/examples/luakit/
+@sample ${SYSCONFDIR}/xdg/
+@sample ${SYSCONFDIR}/xdg/luakit/
+share/examples/luakit/binds.lua
+@sample ${SYSCONFDIR}/xdg/luakit/binds.lua
+share/examples/luakit/globals.lua
+@sample ${SYSCONFDIR}/xdg/luakit/globals.lua
+share/examples/luakit/modes.lua
+@sample ${SYSCONFDIR}/xdg/luakit/modes.lua
+share/examples/luakit/rc.lua
+@sample ${SYSCONFDIR}/xdg/luakit/rc.lua
+share/examples/luakit/theme.lua
+@sample ${SYSCONFDIR}/xdg/luakit/theme.lua
+share/examples/luakit/webview.lua
+@sample ${SYSCONFDIR}/xdg/luakit/webview.lua
+share/examples/luakit/window.lua
+@sample ${SYSCONFDIR}/xdg/luakit/window.lua
+share/lua/${MODLUA_VERSION}/bookmarks.lua
+share/lua/${MODLUA_VERSION}/bookmarks_chrome.lua
+share/lua/${MODLUA_VERSION}/chrome.lua
+share/lua/${MODLUA_VERSION}/cmdhist.lua
+share/lua/${MODLUA_VERSION}/completion.lua
+share/lua/${MODLUA_VERSION}/cookie_blocking.lua
+share/lua/${MODLUA_VERSION}/cookies.lua
+share/lua/${MODLUA_VERSION}/downloads.lua
+share/lua/${MODLUA_VERSION}/downloads_chrome.lua
+share/lua/${MODLUA_VERSION}/follow.lua
+share/lua/${MODLUA_VERSION}/follow_selected.lua
+share/lua/${MODLUA_VERSION}/formfiller.lua
+share/lua/${MODLUA_VERSION}/go_input.lua
+share/lua/${MODLUA_VERSION}/go_next_prev.lua
+share/lua/${MODLUA_VERSION}/go_up.lua
+share/lua/${MODLUA_VERSION}/history.lua
+share/lua/${MODLUA_VERSION}/history_chrome.lua
+share/lua/${MODLUA_VERSION}/introspector.lua
+share/lua/${MODLUA_VERSION}/lousy/
+share/lua/${MODLUA_VERSION}/lousy/bind.lua
+share/lua/${MODLUA_VERSION}/lousy/init.lua
+share/lua/${MODLUA_VERSION}/lousy/load.lua
+share/lua/${MODLUA_VERSION}/lousy/mode.lua
+share/lua/${MODLUA_VERSION}/lousy/signal.lua
+share/lua/${MODLUA_VERSION}/lousy/theme.lua
+share/lua/${MODLUA_VERSION}/lousy/uri.lua
+share/lua/${MODLUA_VERSION}/lousy/util.lua
+share/lua/${MODLUA_VERSION}/lousy/widget/
+share/lua/${MODLUA_VERSION}/lousy/widget/init.lua
+share/lua/${MODLUA_VERSION}/lousy/widget/menu.lua
+share/lua/${MODLUA_VERSION}/lousy/widget/tablist.lua
+share/lua/${MODLUA_VERSION}/markdown.lua
+share/lua/${MODLUA_VERSION}/noscript.lua
+share/lua/${MODLUA_VERSION}/proxy.lua
+share/lua/${MODLUA_VERSION}/quickmarks.lua
+share/lua/${MODLUA_VERSION}/search.lua
+share/lua/${MODLUA_VERSION}/session.lua
+share/lua/${MODLUA_VERSION}/tabhistory.lua
+share/lua/${MODLUA_VERSION}/taborder.lua
+share/lua/${MODLUA_VERSION}/undoclose.lua
+share/lua/${MODLUA_VERSION}/userscripts.lua
+share/lua/${MODLUA_VERSION}/webinspector.lua
+share/luakit/
+share/luakit/lib/
+share/luakit/lib/jquery.min.js
+share/pixmaps/
+share/pixmaps/luakit.png
