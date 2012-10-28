@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2012/10/08 10:20:32 robert Exp $
+# $OpenBSD: Makefile,v 1.6 2012/10/28 21:49:58 robert Exp $
 
 COMMENT=	next generation web interface for Zarafa
 
-WAPP_BUILD=	35292
-WAPP_VERSION=	1.1
+WAPP_BUILD=	37967
+WAPP_VERSION=	1.2.1
 EPOCH=		0
-REVISION=	1
 
 DISTNAME=	zarafa-webapp-${WAPP_VERSION}-${WAPP_BUILD}.noarch.rpm
 PKGNAME=	zarafa-webapp-${WAPP_VERSION}
@@ -49,6 +48,13 @@ do-install:
 	cat ${WRKSRC}/etc/zarafa/webapp/config.php > \
 		${INSTDIR}/config.php.dist
 	rm ${INSTDIR}/config.php
+
+.for _c in browsercompatibility statslogging xmpp zdeveloper zperformance
+	cat ${WRKSRC}/etc/zarafa/webapp/config-${_c}.php > \
+		${INSTDIR}/plugins/${_c}/config.php.dist
+	rm ${INSTDIR}/plugins/${_c}/config.php
+.endfor
+
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 
 .include <bsd.port.mk>
