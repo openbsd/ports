@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2012/04/22 11:41:55 ajacoutot Exp $
+$OpenBSD: README,v 1.4 2012/10/28 10:41:24 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -19,6 +19,8 @@ PostgreSQL
 ==========
 Trytond uses a PostgreSQL database to store its data. Dependency is not
 enforced because the database can run on another machine.
+While it is possible to use another RDBMS, Tryton is mainly developed
+for PostgreSQL.
 
 Assuming you have an administrative account named `postgres', you can
 create the 'tryton' user like this:
