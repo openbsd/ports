@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2012/08/04 14:43:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2012/10/28 12:08:52 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	DTP program
 DISTNAME=	scribus-1.4.1
 CATEGORIES=	print
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	http://www.scribus.net/
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_CDROM=Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB +=	QtGui QtNetwork QtXml aspell c cairo cups execinfo
-WANTLIB +=	fontconfig freetype jpeg lcms2 m pthread python2.7 stdc++
+WANTLIB +=	fontconfig freetype jpeg lcms2 m pthread stdc++
 WANTLIB +=	tiff util xml2 z ${MODPY_WANTLIB}
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scribus/}
@@ -31,20 +31,20 @@ MODPY_VERSION=	2.7
 MODPY_RUNDEP=	No
 
 BUILD_DEPENDS=	devel/boost
-RUN_DEPENDS=	misc/shared-mime-info \
-		devel/desktop-file-utils \
-		${MODPY_TKINTER_DEPENDS} \
-		textproc/antiword \
+RUN_DEPENDS=	devel/desktop-file-utils \
+		graphics/py-Imaging \
 		print/ghostscript/gnu \
-		graphics/py-Imaging
-LIB_DEPENDS= graphics/jpeg \
+		textproc/antiword \
+		misc/shared-mime-info \
+		${MODPY_TKINTER_DEPENDS}
+LIB_DEPENDS= 	devel/libexecinfo \
 		graphics/lcms2 \
 		graphics/tiff \
-		${MODPY_LIB_DEPENDS} \
 		print/cups,-libs \
-		textproc/libxml \
 		textproc/aspell/core \
-		devel/libexecinfo
+		textproc/libxml \
+		graphics/jpeg \
+		${MODPY_LIB_DEPENDS}
 
 FLAVORS=	debug
 FLAVOR?=
