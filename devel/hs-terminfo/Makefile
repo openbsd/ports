@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/16 09:24:51 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2012/10/28 23:29:19 kili Exp $
 
 COMMENT = 		Haskell bindings to the terminfo library
 
 DISTNAME =		terminfo-0.3.1.3
-REVISION=		0
+REVISION=		1
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

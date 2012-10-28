@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2011/09/16 09:24:51 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2012/10/28 23:28:20 kili Exp $
 
 COMMENT=		Monad classes, using type families
 
 DISTNAME=		monads-tf-0.1.0.0
-REVISION=		1
+REVISION=		2
 CATEGORIES=		devel
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>

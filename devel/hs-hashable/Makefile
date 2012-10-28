@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2012/09/02 21:23:17 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2012/10/28 23:27:58 kili Exp $
 
 COMMENT =		class for hashable data types
 
 DISTNAME =		hashable-1.1.2.3
+REVISION =		0
 CATEGORIES =		devel
 
 # BSD3

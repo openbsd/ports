@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2012/09/19 13:14:31 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.7 2012/10/28 23:26:01 kili Exp $
 
 COMMENT =		monad-transformer version of Control.Exception.catch
 
 DISTNAME =		MonadCatchIO-mtl-0.3.0.5
+REVISION =		0
 CATEGORIES =		devel
 HOMEPAGE =		http://darcsden.com/jcpetruzza/MonadCatchIO-mtl
 

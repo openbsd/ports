@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/04/11 14:46:29 kili Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/10/28 23:28:49 kili Exp $
 @bin bin/pugs-DrIFT
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/DrIFT/
@@ -9,9 +9,6 @@ lib/ghc/${DISTNAME}/DrIFT/YAML.hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/register.sh
-@exec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/register.sh -v0
-@unexec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/unregister.sh -v0 --force
-lib/ghc/${DISTNAME}/unregister.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
 share/doc/hs-${DISTNAME}/html/
@@ -39,3 +36,6 @@ share/hs-${DISTNAME}/AUTHORS
 share/hs-${DISTNAME}/ChangeLog
 share/hs-${DISTNAME}/README
 share/hs-${DISTNAME}/README.old
+@exec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/register.sh -v0
+@unexec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/unregister.sh -v0 --force
+lib/ghc/${DISTNAME}/unregister.sh

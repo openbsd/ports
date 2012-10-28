@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2012/10/19 18:49:01 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2012/10/28 23:30:36 kili Exp $
 
 COMMENT =		secure password storage
 
 DISTNAME =		pwstore-fast-2.3
+REVISION =		0
 CATEGORIES =		security
 
 # BSD3

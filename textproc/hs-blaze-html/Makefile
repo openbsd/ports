@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2012/09/02 21:26:43 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2012/10/28 23:31:14 kili Exp $
 
 COMMENT=		fast HTML combinator library
 
 DISTNAME=		blaze-html-0.5.0.0
+REVISION=		0
 CATEGORIES=		textproc
 
 # BSD3

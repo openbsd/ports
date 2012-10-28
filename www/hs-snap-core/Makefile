@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2012/10/19 18:51:52 kili Exp $
+# $OpenBSD: Makefile,v 1.17 2012/10/28 23:31:33 kili Exp $
 
 COMMENT =		Snap Haskell Web Framework
 
 DISTNAME =		snap-core-0.9.2.2
+REVISION =		0
 CATEGORIES =		www
 HOMEPAGE =		http://snapframework.com/
 

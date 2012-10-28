@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/08/30 20:51:27 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2012/10/28 23:27:04 kili Exp $
 
 COMMENT =		mmap support for strict ByteStrings
 
 DISTNAME =		bytestring-mmap-0.2.2
+REVISION =		0
 CATEGORIES =		devel
 HOMEPAGE =		http://code.haskell.org/~dons/code/bytestring-mmap/
 

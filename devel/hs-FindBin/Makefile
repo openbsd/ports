@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2011/09/16 09:24:50 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2012/10/28 23:26:01 kili Exp $
 
 COMMENT =		locate directory of original program
 
 DISTNAME =		FindBin-0.0.5
 CATEGORIES =		devel
 HOMEPAGE =		http://github.com/audreyt/findbin
-REVISION =		0
+REVISION =		1
 
 # BSD3
 PERMIT_PACKAGE_CDROM =	Yes

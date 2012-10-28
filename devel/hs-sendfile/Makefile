@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2012/09/02 21:47:33 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2012/10/28 23:28:50 kili Exp $
 
 COMMENT =		portable sendfile functionality
 
 DISTNAME =		sendfile-0.7.6
+REVISION =		0
 CATEGORIES =		devel
 
 MAINTAINER =		Jim Razmus II <jim@openbsd.org>

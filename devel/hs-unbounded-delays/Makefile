@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2012/09/19 13:15:56 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.3 2012/10/28 23:29:50 kili Exp $
 
 COMMENT =		unbounded thread delays and timeouts
 
 DISTNAME =		unbounded-delays-0.1.0.5
+REVISION =		0
 CATEGORIES =		devel
 
 # BSD3

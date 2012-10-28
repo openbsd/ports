@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2011/09/16 12:00:06 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2012/10/28 23:31:33 kili Exp $
 
 COMMENT =		HTML combinator library
 
 DISTNAME =		html-1.0.1.2
-REVISION =		7
+REVISION =		8
 CATEGORIES =		www devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

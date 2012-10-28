@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/10/15 07:45:09 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.2 2012/10/28 23:31:14 kili Exp $
 
 COMMENT =		basic types for representing XML
 
 DISTNAME =		xml-types-0.3.3
+REVISION =		0
 CATEGORIES =		textproc
 
 HOMEPAGE =		https://john-millikin.com/software/haskell-xml/

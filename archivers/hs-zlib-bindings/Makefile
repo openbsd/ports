@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2012/09/02 21:09:16 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2012/10/28 23:24:28 kili Exp $
 
 COMMENT=		low-level bindings to the zlib package
 
 DISTNAME=		zlib-bindings-0.1.0.1
+REVISION =		0
 CATEGORIES=		archivers
 
 # BSD3

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2012/10/21 18:28:39 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2012/10/28 23:27:24 kili Exp $
 
 COMMENT =		Haskell 98 lenses
 
 DISTNAME =		data-lens-2.10.2
+REVISION =		0
 CATEGORIES =		devel
 
 # BSD3

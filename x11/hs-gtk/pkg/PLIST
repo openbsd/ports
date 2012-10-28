@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/09/02 21:45:37 kili Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/10/28 23:31:50 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Graphics/
 lib/ghc/${DISTNAME}/Graphics/UI/
@@ -427,9 +427,6 @@ lib/ghc/${DISTNAME}/Graphics/UI/GtkInternals.hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/register.sh
-@exec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/register.sh -v0
-@unexec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/unregister.sh -v0 --force
-lib/ghc/${DISTNAME}/unregister.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/COPYING
 share/doc/hs-${DISTNAME}/html/
@@ -939,3 +936,6 @@ share/examples/hs-${DISTNAME}/treelist/rgb.txt
 share/examples/hs-${DISTNAME}/unicode/
 share/examples/hs-${DISTNAME}/unicode/Arabic.hs
 share/examples/hs-${DISTNAME}/unicode/Makefile
+@exec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/register.sh -v0
+@unexec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/unregister.sh -v0 --force
+lib/ghc/${DISTNAME}/unregister.sh

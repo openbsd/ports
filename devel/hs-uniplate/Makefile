@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2012/09/02 21:23:43 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2012/10/28 23:29:50 kili Exp $
 
 COMMENT=	help writing simple, concise and fast operations
 
 DISTNAME=	uniplate-1.6.7
+REVISION=	0
 CATEGORIES=	devel
 
 # 3-clause BSD

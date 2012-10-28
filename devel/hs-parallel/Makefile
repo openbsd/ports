@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2012/09/02 20:13:42 kili Exp $
+# $OpenBSD: Makefile,v 1.13 2012/10/28 23:28:20 kili Exp $
 
 COMMENT =		parallel programming library
 
 DISTNAME =		parallel-3.2.0.2
+REVISION =		0
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

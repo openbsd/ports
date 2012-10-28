@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/08/30 21:08:54 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2012/10/28 23:28:49 kili Exp $
 
 COMMENT =		random number library
 
 DISTNAME =		random-1.0.1.1
+REVISION =		0
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

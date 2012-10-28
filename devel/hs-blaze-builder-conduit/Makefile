@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/08/30 20:49:42 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2012/10/28 23:26:38 kili Exp $
 
 COMMENT =		convert streams of builders to streams of bytestrings
 
 DISTNAME =		blaze-builder-conduit-0.4.0.2
+REVISION =		0
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

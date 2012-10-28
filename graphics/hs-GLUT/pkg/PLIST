@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/09/02 21:21:05 kili Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/10/28 23:30:15 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Graphics/
 lib/ghc/${DISTNAME}/Graphics/UI/
@@ -30,8 +30,8 @@ lib/ghc/${DISTNAME}/include/
 lib/ghc/${DISTNAME}/include/HsGLUT.h
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/register.sh
+@comment share/doc/hs-${DISTNAME}/
+@comment share/doc/hs-${DISTNAME}/LICENSE
 @exec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/register.sh -v0
 @unexec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/unregister.sh -v0 --force
 lib/ghc/${DISTNAME}/unregister.sh
-@comment share/doc/hs-${DISTNAME}/
-@comment share/doc/hs-${DISTNAME}/LICENSE

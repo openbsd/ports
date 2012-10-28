@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2012/09/02 19:58:17 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2012/10/28 23:29:50 kili Exp $
 
 COMMENT =		efficient hashing-based container types
 
 DISTNAME =		unordered-containers-0.1.4.6
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 # BSD3

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2012/09/02 21:17:09 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2012/10/28 23:24:28 kili Exp $
 
 COMMENT=		postgresql driver for HDBC
 
 DISTNAME=		HDBC-postgresql-2.3.2.1
+REVISION=		0
 CATEGORIES=		databases
 
 HOMEPAGE=		http://software.complete.org/hdbc-postgresql

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/05/26 07:56:32 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/10/28 23:31:14 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Text/
@@ -24,9 +24,6 @@ lib/ghc/${DISTNAME}/Text/ParserCombinators/Poly/StateText.hi
 lib/ghc/${DISTNAME}/Text/ParserCombinators/Poly/Text.hi
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/register.sh
-@exec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/register.sh -v0
-@unexec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/unregister.sh -v0 --force
-lib/ghc/${DISTNAME}/unregister.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/COPYRIGHT
 share/doc/hs-${DISTNAME}/html/
@@ -75,3 +72,6 @@ share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif
 share/doc/hs-${DISTNAME}/html/polyparse.haddock
 share/doc/hs-${DISTNAME}/html/synopsis.png
+@exec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/register.sh -v0
+@unexec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/unregister.sh -v0 --force
+lib/ghc/${DISTNAME}/unregister.sh

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2012/09/02 21:29:58 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2012/10/28 23:30:15 kili Exp $
 
 COMMENT =		Haskell integration with Parrot virtual machine
 
 DISTNAME =		HsParrot-0.0.2.20110925
+REVISION =		0
 CATEGORIES =		lang devel
 
 # MIT (see comment in HsParrot.cabal)

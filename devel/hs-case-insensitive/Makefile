@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2012/09/02 21:11:52 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2012/10/28 23:27:04 kili Exp $
 
 COMMENT =		case insensitive string comparison
 
 DISTNAME =		case-insensitive-0.4.0.1
+REVISION =		0
 CATEGORIES =		devel
 
 # BSD3

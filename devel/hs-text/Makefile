@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2012/09/02 20:16:35 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2012/10/28 23:29:50 kili Exp $
 
 COMMENT =		efficient packed Unicode text type
 
 DISTNAME =		text-0.11.2.0
+REVISION =		0
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

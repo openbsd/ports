@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2011/09/16 09:24:50 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2012/10/28 23:26:37 kili Exp $
 
 COMMENT =		lazy binary serialisation for Haskell values
 
 DISTNAME =		binary-0.5.0.2
-REVISION =		7
+REVISION =		8
 CATEGORIES =		devel
 
 HOMEPAGE =		http://code.haskell.org/binary/

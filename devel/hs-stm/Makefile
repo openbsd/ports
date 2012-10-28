@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2012/09/02 20:15:14 kili Exp $
+# $OpenBSD: Makefile,v 1.13 2012/10/28 23:29:19 kili Exp $
 
 COMMENT =		Software Transactional Memory
 
 DISTNAME =		stm-2.3
+REVISION =		0
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2012/10/21 18:30:00 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2012/10/28 23:29:19 kili Exp $
 
 COMMENT=		provides newtype wrappers for phantom types
 
 DISTNAME=		tagged-0.4.4
+REVISION=		0
 CATEGORIES=		devel
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>

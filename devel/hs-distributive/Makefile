@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2012/09/02 21:14:36 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2012/10/28 23:27:24 kili Exp $
 
 COMMENT =		Haskell 98 distributive functors
 
 DISTNAME =		distributive-0.2.2
+REVISION =		0
 CATEGORIES =		devel
 
 # BSD3

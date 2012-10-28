@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2012/07/08 22:35:03 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2012/10/28 23:28:50 kili Exp $
 
 COMMENT =		Haskell 98 semigroups
 
 DISTNAME =		semigroups-0.8.3.2
+REVISION =		0
 CATEGORIES =		devel math
 
 # BSD3

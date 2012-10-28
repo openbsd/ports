@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2011/09/16 09:24:51 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2012/10/28 23:28:19 kili Exp $
 
 COMMENT =		mmap API for Haskell
 
 DISTNAME =		mmap-0.5.6
-REVISION =		3
+REVISION =		4
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

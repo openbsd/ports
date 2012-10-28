@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2011/09/16 09:24:51 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2012/10/28 23:28:49 kili Exp $
 
 COMMENT =		interface API for regex-posix,pcre,parsec,tdfa,dfa
 
 DISTNAME =		regex-base-0.93.2
-REVISION =		4
+REVISION =		5
 CATEGORIES =		devel
 
 HOMEPAGE =		http://sourceforge.net/projects/lazy-regex

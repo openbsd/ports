@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2012/10/19 18:51:01 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2012/10/28 23:31:33 kili Exp $
 
 COMMENT =		securely store session data in a client-side cookie
 
 DISTNAME =		clientsession-0.8.0.1
+REVISION =		0
 CATEGORIES =		security www
 
 MAINTAINER =		Jim Razmus II <jim@openbsd.org>, \

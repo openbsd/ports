@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2012/09/02 21:50:08 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2012/10/28 23:29:18 kili Exp $
 
 COMMENT =		cross platform library for the sendfile system call
 
 DISTNAME =		simple-sendfile-0.2.4
+REVISION =		0
 CATEGORIES =		devel
 
 # BSD3

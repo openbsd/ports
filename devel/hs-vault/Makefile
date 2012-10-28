@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/08/30 20:55:05 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2012/10/28 23:29:51 kili Exp $
 
 COMMENT =		persistent store for values of arbitrary types
 
 DISTNAME =		vault-0.1.0.0
+REVISION =		0
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

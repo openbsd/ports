@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2011/09/16 09:24:50 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2012/10/28 23:27:58 kili Exp $
 
 COMMENT =		analysis and generation of C code in Haskell
 
 DISTNAME =		language-c-0.3.2.1
-REVISION =		2
+REVISION =		3
 CATEGORIES =		devel
 
 HOMEPAGE =		http://www.sivity.net/projects/language.c/

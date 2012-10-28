@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2011/12/31 22:13:36 kili Exp $
+# $OpenBSD: Makefile,v 1.16 2012/10/28 23:28:49 kili Exp $
 
 COMMENT =		module layer over regex-posix to replace Text.Regex
 
 DISTNAME =		regex-compat-0.95.1
+REVISION =		0
 CATEGORIES =		devel
 
 HOMEPAGE =		http://sourceforge.net/projects/lazy-regex

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2011/09/16 09:24:50 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2012/10/28 23:27:05 kili Exp $
 
 COMMENT =		timeout handling
 
 DISTNAME =		control-timeout-0.1.2
-REVISION =		4
+REVISION =		5
 CATEGORIES =		devel
 
 # BSD3

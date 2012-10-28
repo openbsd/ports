@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/05/07 18:44:56 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2012/10/28 23:29:18 kili Exp $
 
 COMMENT =		library for splitting lists
 
 DISTNAME =		split-0.1.4.2
+REVISION =		0
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
