@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.120 2012/10/28 11:13:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.121 2012/10/28 11:33:11 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -107,8 +107,8 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			audio/taglib
 
 RUN_DEPENDS-evolution=	${MODGETTEXT_RUN_DEPENDS}
-# XXX should be a LIB_DEPENDS but check-lib-depends(1) does not work
-# with unversioned solibs (LOCALBASE/lib/evolution/*/*.so).
+# XXX should be a LIB_DEPENDS+WANTLIB but check-lib-depends(1) does not
+# work with unversioned solibs (LOCALBASE/lib/evolution/*/*.so).
 BUILD_DEPENDS +=	mail/evolution,-main
 RUN_DEPENDS-evolution +=mail/evolution,-main
 LIB_DEPENDS-evolution=	${LIB_DEPENDS} \
