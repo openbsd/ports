@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/02/20 16:43:26 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2012/10/29 14:16:59 gsoares Exp $
 ${P5SITE}/Mail/
 ${P5SITE}/Mail/IMAPClient/
 ${P5SITE}/Mail/IMAPClient.pm
@@ -17,3 +17,18 @@ ${P5SITE}/Mail/IMAPClient/Thread.pod
 @man man/man3p/Mail::IMAPClient::BodyStructure::Parse.3p
 @man man/man3p/Mail::IMAPClient::MessageSet.3p
 @man man/man3p/Mail::IMAPClient::Thread.3p
+share/examples/p5-Mail-IMAPClient/
+share/examples/p5-Mail-IMAPClient/build_dist.pl
+share/examples/p5-Mail-IMAPClient/build_ldif.pl
+share/examples/p5-Mail-IMAPClient/cleanTest.pl
+share/examples/p5-Mail-IMAPClient/copy_folder.pl
+share/examples/p5-Mail-IMAPClient/cyrus_expire.pl
+share/examples/p5-Mail-IMAPClient/cyrus_expunge.pl
+share/examples/p5-Mail-IMAPClient/find_dup_msgs.pl
+share/examples/p5-Mail-IMAPClient/idle.pl
+share/examples/p5-Mail-IMAPClient/imap_to_mbox.pl
+share/examples/p5-Mail-IMAPClient/imtestExample.pl
+share/examples/p5-Mail-IMAPClient/migrate_mail2.pl
+share/examples/p5-Mail-IMAPClient/migrate_mbox.pl
+share/examples/p5-Mail-IMAPClient/populate_mailbox.pl
+share/examples/p5-Mail-IMAPClient/sharedFolder.pl
