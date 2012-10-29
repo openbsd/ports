@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2012/10/28 11:05:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2012/10/29 09:36:05 landry Exp $
 
 COMMENT-main=		Motif toolkit
 COMMENT-demos=		Motif toolkit demos
@@ -28,7 +28,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MULTI_PACKAGES=		-demos -main
 
 USE_GROFF =		Yes
-CONFIGURE_STYLE=	autoconf
+CONFIGURE_STYLE=	gnu
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.12
 CONFIGURE_ARGS=		--enable-themes \
@@ -39,7 +39,8 @@ CONFIGURE_ARGS=		--enable-themes \
 CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 			LDFLAGS="-L${LOCALBASE}/lib -lm"
 
-USE_LIBTOOL=		Yes
+# uses libtoolize
+USE_LIBTOOL=		gnu
 
 MAKE_FLAGS=		SOMRMREV=${LIBMrm_VERSION}	\
 			SOUILREV=${LIBUil_VERSION}	\
@@ -47,6 +48,9 @@ MAKE_FLAGS=		SOMRMREV=${LIBMrm_VERSION}	\
 FAKE_FLAGS+=		bindir=${PREFIX}/bin/
 
 MODULES=		converters/libiconv
+
+BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS}
 
 LIB_DEPENDS=		graphics/jpeg \
 			graphics/png
@@ -61,7 +65,7 @@ WANTLIB-demos=		${WANTLIB} Xm Mrm
 # XXX  Large, complicated, only partially automated test suite available
 NO_REGRESS=	Yes
 
-post-patch:
+do-configure:
 	cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
 
 pre-configure:
