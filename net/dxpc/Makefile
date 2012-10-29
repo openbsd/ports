@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/11/19 22:31:33 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2012/10/29 15:19:03 espie Exp $
 
 COMMENT =	X11 over a low bandwidth link
 VERSION =	3.8.2
@@ -21,6 +21,7 @@ LIB_DEPENDS =		archivers/lzo
 WANTLIB =		c m stdc++ lzo
 
 USE_GROFF =		Yes
+USE_X11 = 		Yes
 
 CONFIGURE_STYLE =	gnu dest
 CONFIGURE_ARGS +=	--with-lzo-lib=${DEPBASE}

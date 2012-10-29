@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/09/16 09:48:09 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2012/10/29 15:19:03 espie Exp $
 
 COMMENT-main=	improved artwiz fonts
 COMMENT-de=	improved artwiz fonts (german pack)
@@ -11,6 +11,7 @@ PKGNAME-main=	${NAME}-${V}
 PKGNAME-de=	${NAME}-de-${V}
 PKGNAME-se=	${NAME}-se-${V}
 CATEGORIES=	fonts x11
+USE_X11 =	Yes
 
 REVISION-main=	5
 REVISION-de=	3

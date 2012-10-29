@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/19 09:13:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/10/29 15:19:03 espie Exp $
 
 COMMENT=	extra Korean fonts
 
@@ -6,6 +6,7 @@ PKGNAME=	ko-hanterm-fonts-3.1
 DISTNAME=	hanterm-font-3.1
 REVISION=	0
 CATEGORIES=	fonts korean x11
+USE_X11 =	Yes
 
 MASTER_SITES=	http://download.kldp.net/hanterm/hanterm-font/3.1/ \
 		http://hanterm.org/download/font/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/24 21:15:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2012/10/29 15:19:03 espie Exp $
 
 COMMENT=		modern look Athena widgets
 
@@ -24,6 +24,7 @@ PERMIT_DISTFILES_FTP=	Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED}
+USE_X11 =		Yes
 
 NO_REGRESS=		Yes
 

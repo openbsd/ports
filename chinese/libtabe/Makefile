@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/09/25 14:42:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2012/10/29 15:19:02 espie Exp $
 
 COMMENT=	library for Chinese language processing
 
@@ -32,6 +32,7 @@ CONFIGURE_ARGS=	--with-db-inc=${LOCALBASE}/include/db \
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/script
 
 WRKDIST=	${WRKDIR}/libtabe
+USE_X11 =	Yes
 
 NO_REGRESS=	Yes
 

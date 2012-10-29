@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/19 09:16:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/10/29 15:19:03 espie Exp $
 
 COMMENT=	extra japanese fonts
 
@@ -6,6 +6,7 @@ CATEGORIES=	fonts japanese x11
 DISTNAME=	intlfonts-1.2
 REVISION=	0
 PKGNAME=	ja-fonts-gnu-1.2
+USE_X11 =	Yes
 
 MASTER_SITES=	${MASTER_SITE_GNU:=intlfonts/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/19 09:13:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/10/29 15:19:03 espie Exp $
 
 COMMENT= 	extra Korean fonts
 
@@ -23,6 +23,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 FONTDIR=${PREFIX}/lib/X11/fonts/korean
 WRKDIST=${WRKDIR}
+USE_X11 =	Yes
 
 do-build:
 	cd ${WRKDIR}; \

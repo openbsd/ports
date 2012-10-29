@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2012/08/27 15:10:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2012/10/29 15:19:03 espie Exp $
 
 COMMENT=		suite of clustering tools based on IBM's PSSP
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c curses
+USE_X11 =		Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=clusterit/}
 

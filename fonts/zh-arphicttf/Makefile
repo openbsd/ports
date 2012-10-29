@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/19 09:14:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/10/29 15:19:03 espie Exp $
 
 COMMENT=	chinese big5/gb truetype fonts
 
@@ -19,6 +19,7 @@ MASTER_SITES=	${MASTER_SITE_BACKUP}
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 PKG_ARCH=	*
+USE_X11 =	Yes
 
 WRKDIST=        ${WRKDIR}/arphic 
 

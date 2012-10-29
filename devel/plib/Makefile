@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/15 19:46:07 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2012/10/29 15:19:03 espie Exp $
 
 COMMENT =	suite of portable game libraries
 
@@ -20,5 +20,6 @@ PERMIT_DISTFILES_FTP =	Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-GL=${X11BASE}
+USE_X11 =		Yes
 
 .include <bsd.port.mk>

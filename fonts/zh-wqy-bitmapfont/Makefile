@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/19 09:14:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/10/29 15:19:03 espie Exp $
 
 COMMENT=	Wen Quan Yi bitmap song CJK fonts
 
@@ -26,6 +26,7 @@ NO_BUILD=	Yes
 NO_REGRESS=	Yes
 PKG_ARCH=	*
 WQYFONTDIR=	${PREFIX}/lib/X11/fonts/wqy
+USE_X11 =	Yes
 
 do-install:
 	${X11BASE}/bin/mkfontdir ${WRKSRC}

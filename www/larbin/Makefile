@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2012/09/24 06:51:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2012/10/29 15:19:03 espie Exp $
 
 COMMENT=	little and fast Web crawler
 
@@ -24,6 +24,9 @@ CONFIGURE_STYLE=	simple
 CONFIGURE_ENV=		CC="${CC}" MAKE=${MAKE_PROGRAM}
 MAKE_ENV=		CC="${CC}" CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 NO_REGRESS=		Yes
+
+# uses makedepend
+USE_X11 =		Yes
 
 pre-configure:
 	perl -pi -e 's,!!SYSCONFDIR!!,${SYSCONFDIR},' ${WRKSRC}/src/global.cc

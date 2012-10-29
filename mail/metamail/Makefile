@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2012/03/17 11:00:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2012/10/29 15:19:03 espie Exp $
 
 COMMENT=	MIME implementation
 
@@ -16,6 +16,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c termcap
+# mkfontdir & friends
+USE_X11 =	Yes
 
 WRKSRC=		${WRKDIST}/src
 MAKE_FLAGS=	CC="${CC}"

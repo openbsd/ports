@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/24 21:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2012/10/29 15:19:03 espie Exp $
 
 COMMENT=		drag and drop library
 
@@ -9,6 +9,7 @@ REVISION=		1
 SHARED_LIBS=		Dnd++	1.0 \
 			Dnd	0.0
 CATEGORIES=		x11 devel
+USE_X11 =		Yes
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 

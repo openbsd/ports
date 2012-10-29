@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/05/14 13:30:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2012/10/29 15:19:03 espie Exp $
 
 COMMENT = 	monospace bitmap font for programming and terminal use
 PKG_ARCH =	*
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_FTP =		Yes
 NO_BUILD =	Yes
 NO_REGRESS =	Yes
 FONTDIR =	${PREFIX}/lib/X11/fonts/gohufont
+USE_X11 =	Yes
 
 do-install:
 	${X11BASE}/bin/mkfontdir ${WRKSRC}

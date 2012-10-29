@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2012/08/23 15:50:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2012/10/29 15:19:03 espie Exp $
 
 # Lacks p5-Term-Gnuplot regress dependency!
 
@@ -21,6 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += c m
 
 BUILD_DEPENDS=	math/pari:configure
+USE_X11 =	Yes
 
 PARIDIR=	math/pari
 
