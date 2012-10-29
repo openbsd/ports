@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2012/10/29 09:36:05 landry Exp $
+# $OpenBSD: Makefile,v 1.55 2012/10/29 09:47:05 landry Exp $
 
 COMMENT-main=		Motif toolkit
 COMMENT-demos=		Motif toolkit demos
@@ -39,8 +39,7 @@ CONFIGURE_ARGS=		--enable-themes \
 CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 			LDFLAGS="-L${LOCALBASE}/lib -lm"
 
-# uses libtoolize
-USE_LIBTOOL=		gnu
+USE_LIBTOOL=		Yes
 
 MAKE_FLAGS=		SOMRMREV=${LIBMrm_VERSION}	\
 			SOUILREV=${LIBUil_VERSION}	\
@@ -50,7 +49,8 @@ FAKE_FLAGS+=		bindir=${PREFIX}/bin/
 MODULES=		converters/libiconv
 
 BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool
 
 LIB_DEPENDS=		graphics/jpeg \
 			graphics/png
