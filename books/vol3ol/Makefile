@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 21:34:36 simon Exp $
+# $OpenBSD: Makefile,v 1.3 2012/10/29 11:27:05 espie Exp $
 
 COMMENT=        O'Reilly Volume 3: Users Guide, Open Look
 
-VERSION=	1.0	# one could argue for 0.9 since it was never published
+VERSION=	1.0
+# one could argue for 0.9 since it was never published
 PKGNAME=	vol3ol-${VERSION}
 DISTNAME=	vol3ol
 CATEGORIES=	books
