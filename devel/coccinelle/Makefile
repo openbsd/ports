@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2012/10/12 20:53:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2012/10/29 12:14:39 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -38,11 +38,10 @@ RUN_DEPENDS =		devel/ocaml-pcre \
 # asks questions at the end if it does better than expected
 REGRESS_IS_INTERACTIVE = Yes
 
-PYTHON_LIBS !=		pkg-config --static --libs python
-
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ENV =		MAKE_PROGRAM=${MAKE_PROGRAM} \
-			PYTHON_LIBS="${PYTHON_LIBS}"
+CONFIGURE_ENV =		MAKE_PROGRAM=${MAKE_PROGRAM}
+# The PKG_CHECK_MODULES autoconf macro doesn't have a way to use .private
+CONFIGURE_ENV +=	PYTHON_LIBS="`pkg-config --static --libs python`"
 CONFIGURE_ARGS =	--with-python=${MODPY_BIN}
 
 USE_GMAKE =		Yes
