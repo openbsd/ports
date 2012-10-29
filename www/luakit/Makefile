@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/10/28 23:43:00 abieber Exp $
+# $OpenBSD: Makefile,v 1.2 2012/10/29 16:09:58 abieber Exp $
 #
 COMMENT=	fast, small, webkit based browser written in lua
 
 VERSION=	2012.09.13.rc1
+
+REVISION=	0
 
 DISTNAME=	luakit-${VERSION}
 
@@ -31,10 +33,11 @@ MODULES = lang/lua
 
 BUILD_DEPENDS=	devel/help2man \
 		lang/luajit \
-		www/webkit,gtk3
+		www/webkit
 
 RUN_DEPENDS=	devel/luafs \
-		lang/luajit
+		lang/luajit \
+		www/webkit
 
 MAKE_ENV+= USE_LUAJIT=1 USE_UNIQUE=0 INSTALLDIR=${PREFIX} \
 	MANDIR=${PREFIX}
@@ -42,7 +45,6 @@ MAKE_ENV+= USE_LUAJIT=1 USE_UNIQUE=0 INSTALLDIR=${PREFIX} \
 PIXDIR = ${PREFIX}/share/pixmaps
 JQDIR = ${PREFIX}/share/luakit/lib
 
-DOCS = README.md AUTHORS COPYING COPYING.GPLv3
 
 pre-configure: 
 	perl -pi -e 's,/usr/bin/env lua,${MODLUA_BIN},g' \
@@ -57,7 +59,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PIXDIR}
 	${INSTALL_DATA_DIR} ${JQDIR}
 	${INSTALL_DATA_DIR} ${MODLUA_DATADIR}
-	for file in ${DOCS}; do \
+	for file in README.md AUTHORS COPYING COPYING.GPLv3; do \
 		${INSTALL_DATA} ${WRKSRC}/$$file ${PREFIX}/share/doc/luakit/; \
 	done
 	${INSTALL_DATA} ${WRKSRC}/extras/luakit.png ${PIXDIR}
