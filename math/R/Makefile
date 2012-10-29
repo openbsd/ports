@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.53 2012/10/25 11:59:30 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.54 2012/10/29 11:07:29 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	powerful math/statistics/graphics language
-DISTNAME=	R-2.15.1
-REVISION=	5
+DISTNAME=	R-2.15.2
 
-SHARED_LIBS=	R	0.0  \
-		Rlapack	30.0 \
-		Rblas	30.0
+SHARED_LIBS=	R	1.0  \
+		Rlapack	31.0 \
+		Rblas	31.0
 
 CATEGORIES=	math
 HOMEPAGE=	http://www.r-project.org/
@@ -25,8 +24,8 @@ WANTLIB=	GL ICE SM X11 Xext Xmu Xrender Xss Xt \
 		bz2 c cairo expat fontconfig freetype glib-2.0 \
 		gobject-2.0 icui18n icuuc jpeg lzma m ncurses \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
-		pixman-1 png pthread pthread-stubs readline \
-		tiff xcb xcb-render xcb-shm z \
+		pixman-1 png pthread-stubs readline tiff \
+		xcb xcb-render xcb-shm z \
 		${MODFORTRAN_WANTLIB} ${MODTK_WANTLIB}
 
 MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
@@ -47,7 +46,7 @@ MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		http://probability.ca/cran/src/base/R-2/
 
 MODULES=	fortran devel/gettext x11/tk
-MODFORTRAN_COMPILER= g77
+MODFORTRAN_COMPILER= gfortran
 
 BUILD_DEPENDS=	${MODFORTRAN_BUILD_DEPENDS} \
 		${RUN_DEPENDS}
@@ -77,6 +76,7 @@ CONFIGURE_ARGS= ${CONFIGURE_SHARED} \
 		--with-cairo \
 		--with-jpeglib \
 		--with-libpng \
+		--with-libtiff \
 		--with-system-zlib \
 		--with-system-bzlib \
 		--with-system-pcre \

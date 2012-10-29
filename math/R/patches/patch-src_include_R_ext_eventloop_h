@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_include_R_ext_eventloop_h,v 1.2 2007/10/07 17:54:54 mbalmer Exp $
---- src/include/R_ext/eventloop.h.orig	Wed Sep  5 00:12:24 2007
-+++ src/include/R_ext/eventloop.h	Sun Oct  7 10:03:46 2007
-@@ -26,6 +26,7 @@
+$OpenBSD: patch-src_include_R_ext_eventloop_h,v 1.3 2012/10/29 11:07:29 dcoppa Exp $
+--- src/include/R_ext/eventloop.h.orig	Wed Aug 15 00:05:06 2012
++++ src/include/R_ext/eventloop.h	Fri Oct 26 10:05:45 2012
+@@ -33,6 +33,7 @@
  #endif
  /* NOTE: Needed at least on FreeBSD so that fd_set is defined. */
  # include <sys/types.h>

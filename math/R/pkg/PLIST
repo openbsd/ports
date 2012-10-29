@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2012/07/04 12:38:06 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.18 2012/10/29 11:07:29 dcoppa Exp $
 bin/R
 @bin bin/Rscript
 lib/R/
@@ -161,6 +161,9 @@ lib/R/library/KernSmooth/po/de/LC_MESSAGES/R-KernSmooth.mo
 lib/R/library/KernSmooth/po/en@quot/
 lib/R/library/KernSmooth/po/en@quot/LC_MESSAGES/
 lib/R/library/KernSmooth/po/en@quot/LC_MESSAGES/R-KernSmooth.mo
+lib/R/library/KernSmooth/po/pl/
+lib/R/library/KernSmooth/po/pl/LC_MESSAGES/
+lib/R/library/KernSmooth/po/pl/LC_MESSAGES/R-KernSmooth.mo
 lib/R/library/MASS/
 lib/R/library/MASS/CITATION
 lib/R/library/MASS/DESCRIPTION
@@ -360,6 +363,9 @@ lib/R/library/MASS/po/en@quot/LC_MESSAGES/R-MASS.mo
 lib/R/library/MASS/po/fr/
 lib/R/library/MASS/po/fr/LC_MESSAGES/
 lib/R/library/MASS/po/fr/LC_MESSAGES/R-MASS.mo
+lib/R/library/MASS/po/pl/
+lib/R/library/MASS/po/pl/LC_MESSAGES/
+lib/R/library/MASS/po/pl/LC_MESSAGES/R-MASS.mo
 lib/R/library/MASS/scripts/
 lib/R/library/MASS/scripts/ch01.R
 lib/R/library/MASS/scripts/ch02.R
@@ -414,13 +420,13 @@ lib/R/library/Matrix/doc/Introduction.R
 lib/R/library/Matrix/doc/Introduction.Rnw
 lib/R/library/Matrix/doc/Introduction.pdf
 lib/R/library/Matrix/doc/Matrix.bib
-lib/R/library/Matrix/doc/UFsparse/
-lib/R/library/Matrix/doc/UFsparse/AMD.txt
-lib/R/library/Matrix/doc/UFsparse/CHOLMOD.txt
-lib/R/library/Matrix/doc/UFsparse/COLAMD.txt
-lib/R/library/Matrix/doc/UFsparse/SPQR.txt
-lib/R/library/Matrix/doc/UFsparse/UFconfig.txt
-lib/R/library/Matrix/doc/UFsparse/UserGuides.txt
+lib/R/library/Matrix/doc/SuiteSparse/
+lib/R/library/Matrix/doc/SuiteSparse/AMD.txt
+lib/R/library/Matrix/doc/SuiteSparse/CHOLMOD.txt
+lib/R/library/Matrix/doc/SuiteSparse/COLAMD.txt
+lib/R/library/Matrix/doc/SuiteSparse/SPQR.txt
+lib/R/library/Matrix/doc/SuiteSparse/SuiteSparse_config.txt
+lib/R/library/Matrix/doc/SuiteSparse/UserGuides.txt
 lib/R/library/Matrix/doc/index.html
 lib/R/library/Matrix/doc/sparseModels.R
 lib/R/library/Matrix/doc/sparseModels.Rnw
@@ -543,12 +549,14 @@ lib/R/library/Matrix/html/sparseMatrix-class.html
 lib/R/library/Matrix/html/sparseMatrix.html
 lib/R/library/Matrix/html/sparseQR-class.html
 lib/R/library/Matrix/html/sparseVector-class.html
+lib/R/library/Matrix/html/sparseVector.html
 lib/R/library/Matrix/html/symmetricMatrix-class.html
 lib/R/library/Matrix/html/symmpart.html
 lib/R/library/Matrix/html/tcrossprod.html
 lib/R/library/Matrix/html/triangularMatrix-class.html
 lib/R/library/Matrix/html/unpack.html
 lib/R/library/Matrix/html/unused-classes.html
+lib/R/library/Matrix/html/updown.html
 lib/R/library/Matrix/include/
 lib/R/library/Matrix/include/Matrix.h
 lib/R/library/Matrix/include/Matrix_stubs.c
@@ -564,6 +572,10 @@ lib/R/library/Matrix/po/en@quot/
 lib/R/library/Matrix/po/en@quot/LC_MESSAGES/
 lib/R/library/Matrix/po/en@quot/LC_MESSAGES/Matrix.mo
 lib/R/library/Matrix/po/en@quot/LC_MESSAGES/R-Matrix.mo
+lib/R/library/Matrix/po/pl/
+lib/R/library/Matrix/po/pl/LC_MESSAGES/
+lib/R/library/Matrix/po/pl/LC_MESSAGES/Matrix.mo
+lib/R/library/Matrix/po/pl/LC_MESSAGES/R-Matrix.mo
 lib/R/library/Matrix/test-tools-1.R
 lib/R/library/Matrix/test-tools-Matrix.R
 lib/R/library/Matrix/test-tools.R
@@ -689,6 +701,7 @@ lib/R/library/base/html/base-deprecated.html
 lib/R/library/base/html/base-internal.html
 lib/R/library/base/html/base-package.html
 lib/R/library/base/html/basename.html
+lib/R/library/base/html/bincode.html
 lib/R/library/base/html/bindenv.html
 lib/R/library/base/html/body.html
 lib/R/library/base/html/bquote.html
@@ -1031,6 +1044,9 @@ lib/R/library/base/po/ja/LC_MESSAGES/R-base.mo
 lib/R/library/base/po/ko/
 lib/R/library/base/po/ko/LC_MESSAGES/
 lib/R/library/base/po/ko/LC_MESSAGES/R-base.mo
+lib/R/library/base/po/nn/
+lib/R/library/base/po/nn/LC_MESSAGES/
+lib/R/library/base/po/nn/LC_MESSAGES/R-base.mo
 lib/R/library/base/po/pl/
 lib/R/library/base/po/pl/LC_MESSAGES/
 lib/R/library/base/po/pl/LC_MESSAGES/R-base.mo
@@ -1173,6 +1189,9 @@ lib/R/library/boot/po/en@quot/LC_MESSAGES/R-boot.mo
 lib/R/library/boot/po/fr/
 lib/R/library/boot/po/fr/LC_MESSAGES/
 lib/R/library/boot/po/fr/LC_MESSAGES/R-boot.mo
+lib/R/library/boot/po/pl/
+lib/R/library/boot/po/pl/LC_MESSAGES/
+lib/R/library/boot/po/pl/LC_MESSAGES/R-boot.mo
 lib/R/library/boot/po/ru/
 lib/R/library/boot/po/ru/LC_MESSAGES/
 lib/R/library/boot/po/ru/LC_MESSAGES/R-boot.mo
@@ -1229,6 +1248,9 @@ lib/R/library/class/po/en@quot/LC_MESSAGES/R-class.mo
 lib/R/library/class/po/fr/
 lib/R/library/class/po/fr/LC_MESSAGES/
 lib/R/library/class/po/fr/LC_MESSAGES/R-class.mo
+lib/R/library/class/po/pl/
+lib/R/library/class/po/pl/LC_MESSAGES/
+lib/R/library/class/po/pl/LC_MESSAGES/R-class.mo
 lib/R/library/cluster/
 lib/R/library/cluster/CITATION
 lib/R/library/cluster/DESCRIPTION
@@ -1321,6 +1343,9 @@ lib/R/library/cluster/po/de/LC_MESSAGES/R-cluster.mo
 lib/R/library/cluster/po/en@quot/
 lib/R/library/cluster/po/en@quot/LC_MESSAGES/
 lib/R/library/cluster/po/en@quot/LC_MESSAGES/R-cluster.mo
+lib/R/library/cluster/po/pl/
+lib/R/library/cluster/po/pl/LC_MESSAGES/
+lib/R/library/cluster/po/pl/LC_MESSAGES/R-cluster.mo
 lib/R/library/codetools/
 lib/R/library/codetools/DESCRIPTION
 lib/R/library/codetools/INDEX
@@ -1373,8 +1398,6 @@ lib/R/library/compiler/html/00Index.html
 lib/R/library/compiler/html/R.css
 lib/R/library/compiler/html/compile.html
 lib/R/library/compiler/po/
-lib/R/library/compiler/po/compiler-zh_CN/
-lib/R/library/compiler/po/compiler-zh_CN/LC_MESSAGES/
 lib/R/library/compiler/po/da/
 lib/R/library/compiler/po/da/LC_MESSAGES/
 lib/R/library/compiler/po/da/LC_MESSAGES/R-compiler.mo
@@ -1390,6 +1413,9 @@ lib/R/library/compiler/po/fr/LC_MESSAGES/R-compiler.mo
 lib/R/library/compiler/po/ja/
 lib/R/library/compiler/po/ja/LC_MESSAGES/
 lib/R/library/compiler/po/ja/LC_MESSAGES/R-compiler.mo
+lib/R/library/compiler/po/ko/
+lib/R/library/compiler/po/ko/LC_MESSAGES/
+lib/R/library/compiler/po/ko/LC_MESSAGES/R-compiler.mo
 lib/R/library/compiler/po/pl/
 lib/R/library/compiler/po/pl/LC_MESSAGES/
 lib/R/library/compiler/po/pl/LC_MESSAGES/R-compiler.mo
@@ -1572,6 +1598,10 @@ lib/R/library/foreign/po/fr/
 lib/R/library/foreign/po/fr/LC_MESSAGES/
 lib/R/library/foreign/po/fr/LC_MESSAGES/R-foreign.mo
 lib/R/library/foreign/po/fr/LC_MESSAGES/foreign.mo
+lib/R/library/foreign/po/pl/
+lib/R/library/foreign/po/pl/LC_MESSAGES/
+lib/R/library/foreign/po/pl/LC_MESSAGES/R-foreign.mo
+lib/R/library/foreign/po/pl/LC_MESSAGES/foreign.mo
 lib/R/library/grDevices/
 lib/R/library/grDevices/DESCRIPTION
 lib/R/library/grDevices/INDEX
@@ -2375,6 +2405,7 @@ lib/R/library/methods/po/ja/LC_MESSAGES/methods.mo
 lib/R/library/methods/po/ko/
 lib/R/library/methods/po/ko/LC_MESSAGES/
 lib/R/library/methods/po/ko/LC_MESSAGES/R-methods.mo
+lib/R/library/methods/po/ko/LC_MESSAGES/methods.mo
 lib/R/library/methods/po/pl/
 lib/R/library/methods/po/pl/LC_MESSAGES/
 lib/R/library/methods/po/pl/LC_MESSAGES/R-methods.mo
@@ -2420,6 +2451,7 @@ lib/R/library/mgcv/html/
 lib/R/library/mgcv/html/00Index.html
 lib/R/library/mgcv/html/Predict.matrix.cr.smooth.html
 lib/R/library/mgcv/html/Predict.matrix.html
+lib/R/library/mgcv/html/Predict.matrix.soap.film.html
 lib/R/library/mgcv/html/R.css
 lib/R/library/mgcv/html/Tweedie.html
 lib/R/library/mgcv/html/anova.gam.html
@@ -2435,6 +2467,7 @@ lib/R/library/mgcv/html/fix.family.link.html
 lib/R/library/mgcv/html/fixDependence.html
 lib/R/library/mgcv/html/formXtViX.html
 lib/R/library/mgcv/html/formula.gam.html
+lib/R/library/mgcv/html/fs.test.html
 lib/R/library/mgcv/html/full.score.html
 lib/R/library/mgcv/html/gam.check.html
 lib/R/library/mgcv/html/gam.control.html
@@ -2453,6 +2486,7 @@ lib/R/library/mgcv/html/gamSim.html
 lib/R/library/mgcv/html/gamm.html
 lib/R/library/mgcv/html/get.var.html
 lib/R/library/mgcv/html/in.out.html
+lib/R/library/mgcv/html/inSide.html
 lib/R/library/mgcv/html/influence.gam.html
 lib/R/library/mgcv/html/initial.sp.html
 lib/R/library/mgcv/html/interpret.gam.html
@@ -2497,6 +2531,7 @@ lib/R/library/mgcv/html/smooth.construct.html
 lib/R/library/mgcv/html/smooth.construct.mrf.smooth.spec.html
 lib/R/library/mgcv/html/smooth.construct.ps.smooth.spec.html
 lib/R/library/mgcv/html/smooth.construct.re.smooth.spec.html
+lib/R/library/mgcv/html/smooth.construct.so.smooth.spec.html
 lib/R/library/mgcv/html/smooth.construct.sos.smooth.spec.html
 lib/R/library/mgcv/html/smooth.construct.tensor.smooth.spec.html
 lib/R/library/mgcv/html/smooth.construct.tp.smooth.spec.html
@@ -2847,6 +2882,10 @@ lib/R/library/nlme/po/fr/
 lib/R/library/nlme/po/fr/LC_MESSAGES/
 lib/R/library/nlme/po/fr/LC_MESSAGES/R-nlme.mo
 lib/R/library/nlme/po/fr/LC_MESSAGES/nlme.mo
+lib/R/library/nlme/po/pl/
+lib/R/library/nlme/po/pl/LC_MESSAGES/
+lib/R/library/nlme/po/pl/LC_MESSAGES/R-nlme.mo
+lib/R/library/nlme/po/pl/LC_MESSAGES/nlme.mo
 lib/R/library/nlme/scripts/
 lib/R/library/nlme/scripts/ch01.R
 lib/R/library/nlme/scripts/ch02.R
@@ -2900,6 +2939,9 @@ lib/R/library/nnet/po/en@quot/LC_MESSAGES/R-nnet.mo
 lib/R/library/nnet/po/fr/
 lib/R/library/nnet/po/fr/LC_MESSAGES/
 lib/R/library/nnet/po/fr/LC_MESSAGES/R-nnet.mo
+lib/R/library/nnet/po/pl/
+lib/R/library/nnet/po/pl/LC_MESSAGES/
+lib/R/library/nnet/po/pl/LC_MESSAGES/R-nnet.mo
 lib/R/library/parallel/
 lib/R/library/parallel/DESCRIPTION
 lib/R/library/parallel/INDEX
@@ -2955,6 +2997,10 @@ lib/R/library/parallel/po/fr/
 lib/R/library/parallel/po/fr/LC_MESSAGES/
 lib/R/library/parallel/po/fr/LC_MESSAGES/R-parallel.mo
 lib/R/library/parallel/po/fr/LC_MESSAGES/parallel.mo
+lib/R/library/parallel/po/ko/
+lib/R/library/parallel/po/ko/LC_MESSAGES/
+lib/R/library/parallel/po/ko/LC_MESSAGES/R-parallel.mo
+lib/R/library/parallel/po/ko/LC_MESSAGES/parallel.mo
 lib/R/library/parallel/po/pl/
 lib/R/library/parallel/po/pl/LC_MESSAGES/
 lib/R/library/parallel/po/pl/LC_MESSAGES/R-parallel.mo
@@ -3036,6 +3082,10 @@ lib/R/library/rpart/po/fr/
 lib/R/library/rpart/po/fr/LC_MESSAGES/
 lib/R/library/rpart/po/fr/LC_MESSAGES/R-rpart.mo
 lib/R/library/rpart/po/fr/LC_MESSAGES/rpart.mo
+lib/R/library/rpart/po/pl/
+lib/R/library/rpart/po/pl/LC_MESSAGES/
+lib/R/library/rpart/po/pl/LC_MESSAGES/R-rpart.mo
+lib/R/library/rpart/po/pl/LC_MESSAGES/rpart.mo
 lib/R/library/rpart/po/ru/
 lib/R/library/rpart/po/ru/LC_MESSAGES/
 lib/R/library/rpart/po/ru/LC_MESSAGES/R-rpart.mo
@@ -3100,6 +3150,9 @@ lib/R/library/spatial/po/en@quot/LC_MESSAGES/R-spatial.mo
 lib/R/library/spatial/po/fr/
 lib/R/library/spatial/po/fr/LC_MESSAGES/
 lib/R/library/spatial/po/fr/LC_MESSAGES/R-spatial.mo
+lib/R/library/spatial/po/pl/
+lib/R/library/spatial/po/pl/LC_MESSAGES/
+lib/R/library/spatial/po/pl/LC_MESSAGES/R-spatial.mo
 lib/R/library/spatial/ppdata/
 lib/R/library/spatial/ppdata/agter.dat
 lib/R/library/spatial/ppdata/caveolae.dat
@@ -3872,6 +3925,7 @@ lib/R/library/tcltk/po/ja/LC_MESSAGES/tcltk.mo
 lib/R/library/tcltk/po/ko/
 lib/R/library/tcltk/po/ko/LC_MESSAGES/
 lib/R/library/tcltk/po/ko/LC_MESSAGES/R-tcltk.mo
+lib/R/library/tcltk/po/ko/LC_MESSAGES/tcltk.mo
 lib/R/library/tcltk/po/pl/
 lib/R/library/tcltk/po/pl/LC_MESSAGES/
 lib/R/library/tcltk/po/pl/LC_MESSAGES/R-tcltk.mo
@@ -3927,6 +3981,7 @@ lib/R/library/tools/html/buildVignettes.html
 lib/R/library/tools/html/charsets.html
 lib/R/library/tools/html/checkFF.html
 lib/R/library/tools/html/checkMD5sums.html
+lib/R/library/tools/html/checkPoFiles.html
 lib/R/library/tools/html/checkRd.html
 lib/R/library/tools/html/checkRdaFiles.html
 lib/R/library/tools/html/checkTnF.html
