@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 21:34:36 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2012/10/29 11:29:51 espie Exp $
 
 COMMENT=        O'Reilly Volume 6a: Motif Programming Manual
 
-VERSION=	2.0	# Second Edition
+# Second Edition
+VERSION=	2.0
 PKGNAME=	vol6a-${VERSION}
 DISTNAME=	Vol6a
 DISTFILES=	${DISTNAME}.pdf
