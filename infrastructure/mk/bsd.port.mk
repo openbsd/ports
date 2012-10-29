@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1191 2012/10/11 08:07:10 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1192 2012/10/29 22:27:05 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -143,8 +143,14 @@ PLIST_DB ?= ${PORTSDIR}/plist/${MACHINE_ARCH}
 
 PACKAGE_REPOSITORY ?= ${PORTSDIR}/packages
 
-.if !exists(${X11BASE}/man/whatis.db)
+# experimental, don't touch the default unless you really know
+# what you are doing
+PORTS_BUILD_XENOCARA_TOO ?= No
+
+.if ${PORTS_BUILD_XENOCARA_TOO:L} == "no"
+.  if !exists(${X11BASE}/man/whatis.db)
 ERRORS += "Fatal: building ports requires correctly installed X11"
+.  endif
 .endif
 
 # local path locations
@@ -982,8 +988,14 @@ ERRORS += "Fatal: REQ script support is obsolete"
 .  endfor
 .endif
 
+XENOCARA_COMPONENT ?= No
 MTREE_FILE ?=
+
+.if ${XENOCARA_COMPONENT:L} == "yes"
+MTREE_FILE += /etc/mtree/BSD.x11.dist
+.else
 MTREE_FILE += ${PORTSDIR}/infrastructure/db/fake.mtree
+.endif
 
 .for _S in ${MULTI_PACKAGES}
 # Fill out package command, and package dependencies
@@ -1392,6 +1404,22 @@ _LIB4${_s} = ${LIB_DEPENDS${_s}:M*\:${_path}} ${LIB_DEPENDS${_s}:M*\:${_path},*}
 _LIB4 += ${_LIB4${_s}}
 .  endfor
 .endfor
+
+# automatically try to determine USE_X11 from wantlib
+USE_X11 ?= No
+.for _lib in X11 GL ICE xcb pixman freetype Xft
+.  if ${USE_X11:L} != "yes"
+.    for _b in ${_BUILDWANTLIB:C/[>=].*//}
+.      if "${_b:M${_lib}}"
+USE_X11 = Yes
+.      endif
+.    endfor
+.  endif
+.endfor
+
+.if ${USE_X11:L} == "yes" && ${PORTS_BUILD_XENOCARA_TOO:L} == "yes"
+BUILD_DEPENDS += xenocara/meta
+.endif
 
 .if ${NO_DEPENDS:L} == "no"
 _BUILD_DEPLIST = ${BUILD_DEPENDS}
