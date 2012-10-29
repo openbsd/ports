@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.55 2012/10/29 09:47:05 landry Exp $
+# $OpenBSD: Makefile,v 1.56 2012/10/29 12:16:48 sthen Exp $
 
 COMMENT-main=		Motif toolkit
 COMMENT-demos=		Motif toolkit demos
 
 VERSION=		2.3.4
+REVISION-main=		0
 DISTNAME=		motif-${VERSION}
 EXTRACT_SUFX=		-src.tgz
 PKGNAME-main=		openmotif-${VERSION}
@@ -27,7 +28,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MULTI_PACKAGES=		-demos -main
 
-USE_GROFF =		Yes
+USE_GROFF=		Yes
 CONFIGURE_STYLE=	gnu
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.12
@@ -38,6 +39,8 @@ CONFIGURE_ARGS=		--enable-themes \
 			--enable-png
 CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 			LDFLAGS="-L${LOCALBASE}/lib -lm"
+MAKE_ENV=		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+			AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
 
 USE_LIBTOOL=		Yes
 
@@ -65,7 +68,7 @@ WANTLIB-demos=		${WANTLIB} Xm Mrm
 # XXX  Large, complicated, only partially automated test suite available
 NO_REGRESS=	Yes
 
-do-configure:
+pre-patch:
 	cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
 
 pre-configure:
