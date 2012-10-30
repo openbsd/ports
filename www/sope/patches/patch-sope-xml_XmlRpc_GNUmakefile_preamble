@@ -1,10 +1,10 @@
-$OpenBSD: patch-sope-xml_XmlRpc_GNUmakefile_preamble,v 1.1.1.1 2010/10/06 11:05:41 sebastia Exp $
+$OpenBSD: patch-sope-xml_XmlRpc_GNUmakefile_preamble,v 1.2 2012/10/30 14:57:18 sebastia Exp $
 
 decouple sope version from library interface version
 
---- sope-xml/XmlRpc/GNUmakefile.preamble.orig	Sun Sep 26 13:54:57 2010
-+++ sope-xml/XmlRpc/GNUmakefile.preamble	Sun Sep 26 13:56:31 2010
-@@ -17,8 +17,8 @@ NSObject+XmlRpc.m_FILE_FILTER_OUT_FLAGS = -O%
+--- sope-xml/XmlRpc/GNUmakefile.preamble.orig	Wed Oct 24 21:00:15 2012
++++ sope-xml/XmlRpc/GNUmakefile.preamble	Fri Oct 26 10:14:36 2012
+@@ -14,8 +14,8 @@ XmlRpc_VERSION=$(MAJOR_VERSION).$(MINOR_VERSION).$(SUB
  ADDITIONAL_CPPFLAGS += \
  	-O2 \
          -Wall -DCOMPILE_FOR_GSTEP_MAKE=1        \
@@ -15,3 +15,12 @@ decouple sope version from library interface version
          -DSOPE_SUBMINOR_VERSION=$(SUBMINOR_VERSION)
  
  
+@@ -24,7 +24,7 @@ XmlRpc_HEADER_FILES = $(libXmlRpc_HEADER_FILES)
+ XmlRpc_OBJC_FILES   = $(libXmlRpc_OBJC_FILES)
+ 
+ 
+-libXmlRpc_LIBRARIES_DEPEND_UPON += -lSaxObjC -lgnustep-base -lobjc
++libXmlRpc_LIBRARIES_DEPEND_UPON += -lSaxObjC -lgnustep-base
+ 
+ ifneq ($(GNUSTEP_BUILD_DIR),)
+ libXmlRpc_LIB_DIRS += \

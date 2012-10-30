@@ -1,19 +1,19 @@
-$OpenBSD: patch-configure,v 1.3 2011/04/22 05:34:13 sebastia Exp $
+$OpenBSD: patch-configure,v 1.4 2012/10/30 14:57:18 sebastia Exp $
 
 do not link against gnustep-gui in case its installed
 decouple version of sope from the shared library interface versions
 remove unused ssl check that generates a make variable with whitespace in
 its name
 
---- configure.orig	Wed Apr  6 23:45:23 2011
-+++ configure	Wed Apr  6 23:50:53 2011
+--- configure.orig	Wed Oct 24 21:00:15 2012
++++ configure	Fri Oct 26 09:52:19 2012
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
  
  #
  # Note: When adding make options to this script, ensure that the source still
-@@ -358,9 +358,9 @@ genConfigMake() {
+@@ -360,9 +360,9 @@ genConfigMake() {
      cfgwrite "FHS_INSTALL_ROOT:=$ARG_PREFIX"
      cfgwrite ""
      cfgwrite "SOPE_SYSLIBDIR=\${DESTDIR}\${FHS_INSTALL_ROOT}/\$(CGS_LIBDIR_NAME)"
@@ -25,7 +25,7 @@ its name
      cfgwrite "SOPE_DBADAPTORS=\${SOPE_LIBDIR}/dbadaptors"
      cfgwrite "SOPE_PRODUCTS=\${SOPE_LIBDIR}/products"
      cfgwrite "SOPE_SAXDRIVERS=\${SOPE_LIBDIR}/saxdrivers"
-@@ -394,6 +394,7 @@ genConfigMake() {
+@@ -396,6 +396,7 @@ genConfigMake() {
      cfgwrite "debug:=no"
    fi
    cfgwrite ""

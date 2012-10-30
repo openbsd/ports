@@ -1,9 +1,9 @@
-$OpenBSD: patch-sope-appserver_NGObjWeb_GNUmakefile_preamble,v 1.1.1.1 2010/10/06 11:05:41 sebastia Exp $
+$OpenBSD: patch-sope-appserver_NGObjWeb_GNUmakefile_preamble,v 1.2 2012/10/30 14:57:18 sebastia Exp $
 
 decouple sope version from library interface version.
 
---- sope-appserver/NGObjWeb/GNUmakefile.preamble.orig	Sun Sep 26 13:46:53 2010
-+++ sope-appserver/NGObjWeb/GNUmakefile.preamble	Sun Sep 26 13:47:26 2010
+--- sope-appserver/NGObjWeb/GNUmakefile.preamble.orig	Wed Oct 24 21:00:15 2012
++++ sope-appserver/NGObjWeb/GNUmakefile.preamble	Fri Oct 26 10:10:23 2012
 @@ -8,8 +8,8 @@ SOPE_ROOT=../..
  
  ADDITIONAL_CPPFLAGS += \
@@ -15,3 +15,12 @@ decouple sope version from library interface version.
          -DSOPE_SUBMINOR_VERSION=$(SUBMINOR_VERSION)
  
  ADDITIONAL_CPPFLAGS  += -pipe -DCOMPILING_NGOBJWEB=1
+@@ -68,7 +68,7 @@ libNGObjWeb_LIBRARIES_DEPEND_UPON += \
+ 	$(sope-mime-libs) \
+ 	$(sope-core-libs) \
+ 	$(sope-xml-libs) \
+-	-lgnustep-base -lobjc
++	-lgnustep-base
+ NGObjWeb_LIBRARIES_DEPEND_UPON += \
+ 	$(sope-mime-libs) \
+ 	$(sope-core-libs)\

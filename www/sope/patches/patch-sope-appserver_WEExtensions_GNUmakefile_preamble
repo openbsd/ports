@@ -1,0 +1,12 @@
+$OpenBSD: patch-sope-appserver_WEExtensions_GNUmakefile_preamble,v 1.1 2012/10/30 14:57:18 sebastia Exp $
+--- sope-appserver/WEExtensions/GNUmakefile.preamble.orig	Fri Oct 26 10:10:32 2012
++++ sope-appserver/WEExtensions/GNUmakefile.preamble	Fri Oct 26 10:10:41 2012
+@@ -42,7 +42,7 @@ endif
+ libWEExtensions_LIBRARIES_DEPEND_UPON += \
+ 	-lNGObjWeb	\
+ 	-lNGExtensions -lEOControl \
+-	-lgnustep-base -lobjc -lm
++	-lgnustep-base -lm
+ 
+ ifeq ($(frameworks),yes)
+ WEExtensions_LIBRARIES_DEPEND_UPON += \

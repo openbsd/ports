@@ -1,0 +1,12 @@
+$OpenBSD: patch-sope-gdl1_GDLAccess_GNUmakefile_preamble,v 1.1 2012/10/30 14:57:18 sebastia Exp $
+--- sope-gdl1/GDLAccess/GNUmakefile.preamble.orig	Fri Oct 26 10:12:28 2012
++++ sope-gdl1/GDLAccess/GNUmakefile.preamble	Fri Oct 26 10:12:36 2012
+@@ -29,7 +29,7 @@ endif
+ 
+ # dependencies
+ 
+-libGDLAccess_LIBRARIES_DEPEND_UPON += -lEOControl -lgnustep-base -lobjc
++libGDLAccess_LIBRARIES_DEPEND_UPON += -lEOControl -lgnustep-base
+ GDLAccess_LIBRARIES_DEPEND_UPON    += -framework EOControl
+ 
+ ifneq ($(frameworks),yes)

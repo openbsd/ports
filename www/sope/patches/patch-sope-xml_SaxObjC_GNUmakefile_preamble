@@ -1,10 +1,10 @@
-$OpenBSD: patch-sope-xml_SaxObjC_GNUmakefile_preamble,v 1.1.1.1 2010/10/06 11:05:41 sebastia Exp $
+$OpenBSD: patch-sope-xml_SaxObjC_GNUmakefile_preamble,v 1.2 2012/10/30 14:57:18 sebastia Exp $
 
 decouple sope version from library interface version.
 
---- sope-xml/SaxObjC/GNUmakefile.preamble.orig	Sun Sep 26 16:57:53 2010
-+++ sope-xml/SaxObjC/GNUmakefile.preamble	Sun Sep 26 16:58:22 2010
-@@ -24,8 +24,8 @@ SaxObjectDecoder.m_FILE_FILTER_OUT_FLAGS  = -O%
+--- sope-xml/SaxObjC/GNUmakefile.preamble.orig	Wed Oct 24 21:00:15 2012
++++ sope-xml/SaxObjC/GNUmakefile.preamble	Fri Oct 26 10:14:17 2012
+@@ -19,8 +19,8 @@ SaxObjC_OBJC_FILES   = $(libSaxObjC_OBJC_FILES)
  ADDITIONAL_CPPFLAGS += \
  	-O2 \
          -Wall -DCOMPILE_FOR_GSTEP_MAKE=1        \
@@ -15,3 +15,9 @@ decouple sope version from library interface version.
          -DSOPE_SUBMINOR_VERSION=$(SUBMINOR_VERSION)
  
  ADDITIONAL_CPPFLAGS += -Wno-protocol
+@@ -63,4 +63,4 @@ saxxml_LDFLAGS += -framework Foundation
+ xmln_LDFLAGS   += -framework Foundation
+ endif
+ 
+-libSaxObjC_LIBRARIES_DEPEND_UPON += -lgnustep-base -lobjc
++libSaxObjC_LIBRARIES_DEPEND_UPON += -lgnustep-base

@@ -1,0 +1,12 @@
+$OpenBSD: patch-sope-appserver_WOExtensions_GNUmakefile_preamble,v 1.1 2012/10/30 14:57:18 sebastia Exp $
+--- sope-appserver/WOExtensions/GNUmakefile.preamble.orig	Fri Oct 26 10:10:51 2012
++++ sope-appserver/WOExtensions/GNUmakefile.preamble	Fri Oct 26 10:11:01 2012
+@@ -21,7 +21,7 @@ libWOExtensions_VERSION=$(MAJOR_VERSION).$(MINOR_VERSI
+ 
+ libWOExtensions_LIBRARIES_DEPEND_UPON += \
+ 	-lNGObjWeb	\
+-	-lgnustep-base -lobjc
++	-lgnustep-base
+ 
+ ifeq ($(frameworks),yes)
+ WOExtensions_LIBRARIES_DEPEND_UPON += \

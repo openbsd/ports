@@ -1,10 +1,10 @@
-$OpenBSD: patch-sope-xml_DOM_GNUmakefile_preamble,v 1.1.1.1 2010/10/06 11:05:41 sebastia Exp $
+$OpenBSD: patch-sope-xml_DOM_GNUmakefile_preamble,v 1.2 2012/10/30 14:57:18 sebastia Exp $
 
 decouple sope version from library interface version.
 
---- sope-xml/DOM/GNUmakefile.preamble.orig	Sun Sep 26 13:54:17 2010
-+++ sope-xml/DOM/GNUmakefile.preamble	Sun Sep 26 13:54:37 2010
-@@ -26,8 +26,8 @@ NSObject+QPEval.m_FILE_FILTER_OUT_FLAGS        = -O%
+--- sope-xml/DOM/GNUmakefile.preamble.orig	Wed Oct 24 21:00:15 2012
++++ sope-xml/DOM/GNUmakefile.preamble	Fri Oct 26 10:13:54 2012
+@@ -19,14 +19,14 @@ DOM_OBJC_FILES   = $(libDOM_OBJC_FILES)
  ADDITIONAL_CPPFLAGS += \
  	-O2 \
          -Wall -DCOMPILE_FOR_GSTEP_MAKE=1        \
@@ -15,3 +15,10 @@ decouple sope version from library interface version.
          -DSOPE_SUBMINOR_VERSION=$(SUBMINOR_VERSION)
  
  ADDITIONAL_INCLUDE_DIRS += -I.. -I../..
+ 
+ 
+-libDOM_LIBRARIES_DEPEND_UPON += -lSaxObjC -lgnustep-base -lobjc
++libDOM_LIBRARIES_DEPEND_UPON += -lSaxObjC -lgnustep-base
+ 
+ ifneq ($(GNUSTEP_BUILD_DIR),)
+ libDOM_LIB_DIRS += -L$(GNUSTEP_BUILD_DIR)/../SaxObjC/$(GNUSTEP_OBJ_DIR_NAME)

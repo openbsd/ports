@@ -1,0 +1,20 @@
+$OpenBSD: patch-sope-core_EOControl_GNUmakefile_preamble,v 1.1 2012/10/30 14:57:18 sebastia Exp $
+--- sope-core/EOControl/GNUmakefile.preamble.orig	Fri Oct 26 10:11:13 2012
++++ sope-core/EOControl/GNUmakefile.preamble	Fri Oct 26 10:11:54 2012
+@@ -10,15 +10,7 @@ else
+ SYSTEM_LIB_DIR += -L/usr/local/lib -L/usr/lib
+ endif
+ 
+-# libFoundation, gstep-base
+-
+-ifeq ($(FOUNDATION_LIB),fd)
+-libEOControl_LIBRARIES_DEPEND_UPON += -lFoundation
+-endif
+-
+-ifeq ($(FOUNDATION_LIB),gnu)
+-libEOControl_LIBRARIES_DEPEND_UPON += -lgnustep-base -lobjc -lm
+-endif
++libEOControl_LIBRARIES_DEPEND_UPON += -lgnustep-base -lm
+ 
+ # Apple
+ 
