@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2012/04/28 10:52:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2012/10/30 20:29:21 jasper Exp $
 
 COMMENT-main=		high performance webserver written in Erlang, libraries
 COMMENT-web=		high performance webserver written in Erlang, docroot
 
-VERSION=		1.90
+VERSION=		1.95
 DISTNAME=		yaws-${VERSION}
 PKGNAME-main=		yaws-${VERSION}
-REVISION-main=		2
 PKGNAME-web=		yaws-web-${VERSION}
 CATEGORIES=		www
 
@@ -48,7 +47,7 @@ ALL_TARGET=		all docs
 
 # Remove left-over patch file.
 pre-install:
-	@rm -f ${WRKSRC}/www/doc.yaws.orig
+	rm ${WRKSRC}/www/doc.yaws.orig
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/yaws/munin/
 	${INSTALL_DATA} ${WRKSRC}/munin/* ${PREFIX}/share/examples/yaws/munin/
 

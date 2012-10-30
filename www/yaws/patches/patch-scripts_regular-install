@@ -1,9 +1,9 @@
-$OpenBSD: patch-scripts_regular-install,v 1.1 2011/05/27 17:04:43 jasper Exp $
---- scripts/regular-install.orig	Fri May 27 18:53:23 2011
-+++ scripts/regular-install	Fri May 27 18:55:33 2011
+$OpenBSD: patch-scripts_regular-install,v 1.2 2012/10/30 20:29:21 jasper Exp $
+--- scripts/regular-install.orig	Wed Oct 17 20:14:43 2012
++++ scripts/regular-install	Tue Oct 30 21:20:53 2012
 @@ -10,7 +10,7 @@ set -e
  ./Install "${PREFIX}" "${ERL}" "${WERL}" "${ETCDIR}/" \
-     "${VARDIR}/" "${ERLBINDIR}/" "${DESTDIR}"
+     "${VARDIR}/" "${ERLBINDIR}/" "${DESTDIR}" "${LIBDIR}"
  
 -conffile="${DESTDIR}${ETCDIR}/yaws/yaws.conf"
 +conffile="${DESTDIR}${PREFIX}/share/examples/yaws/yaws.conf"

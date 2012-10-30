@@ -1,7 +1,11 @@
-@comment $OpenBSD: PLIST-web,v 1.2 2011/05/27 17:04:43 jasper Exp $
+@comment $OpenBSD: PLIST-web,v 1.3 2012/10/30 20:29:21 jasper Exp $
 yaws/
 yaws/ebin/
+yaws/ebin/advanced_echo_callback.beam
+yaws/ebin/authmod_gssapi.beam
+yaws/ebin/basic_echo_callback.beam
 yaws/ebin/myappmod.beam
+yaws/ebin/server_sent_events.beam
 yaws/ebin/shopcart.beam
 yaws/www/
 yaws/www/END
@@ -169,6 +173,7 @@ yaws/www/jsolait/lib/urllib.js
 yaws/www/json_intro.yaws
 yaws/www/json_sample.html
 yaws/www/json_sample.yaws
+yaws/www/logger_mod.yaws
 yaws/www/man.yaws
 yaws/www/motivation.yaws
 yaws/www/news
@@ -184,6 +189,8 @@ yaws/www/redirect.yaws
 yaws/www/redirect2.yaws
 yaws/www/redirect3.yaws
 yaws/www/redirect4.yaws
+yaws/www/server_sent_events.html
+yaws/www/server_sent_events.yaws
 yaws/www/session.yaws
 yaws/www/session1.yaws
 yaws/www/setcookie.yaws
@@ -226,10 +233,12 @@ yaws/www/upload0.yaws
 yaws/www/urandom.yaws
 yaws/www/urandom_from_pid.yaws
 yaws/www/websockets.yaws
+yaws/www/websockets_autobahn_endpoint.yaws
 yaws/www/websockets_example.yaws
 yaws/www/websockets_example_endpoint.yaws
 yaws/www/yapp_intro.yaws
 yaws/www/yaws-1.55_to_1.56.patch
+yaws/www/yaws.eps
 yaws/www/yaws.ps
 yaws/www/ybed.erl
 yaws/www/ybed_sup.erl
