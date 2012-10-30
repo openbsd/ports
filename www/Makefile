@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.581 2012/10/28 23:44:00 abieber Exp $
+# $OpenBSD: Makefile,v 1.582 2012/10/30 21:05:10 jasper Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -489,7 +489,6 @@
      SUBDIR += syweb
      SUBDIR += thttpd
      SUBDIR += tidyp
-     SUBDIR += tikiwiki
      SUBDIR += timetrex
      SUBDIR += tinyproxy
      SUBDIR += tntnet
