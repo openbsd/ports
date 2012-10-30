@@ -1,0 +1,15 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2012/10/30 23:51:21 brad Exp $
+--- CMakeLists.txt.orig	Tue Oct 23 18:40:45 2012
++++ CMakeLists.txt	Tue Oct 23 18:41:39 2012
+@@ -170,6 +170,11 @@ IF(UNIX)
+         IF(HAVE_PTHREAD_H)
+             SET(PHYSFS_HAVE_THREAD_SUPPORT TRUE)
+         ENDIF(HAVE_PTHREAD_H)
++
++        FIND_LIBRARY(PTHREAD_LIBRARY pthread)
++        IF(PTHREAD_LIBRARY)
++            SET(OPTIONAL_LIBRARY_LIBS ${OPTIONAL_LIBRARY_LIBS} ${PTHREAD_LIBRARY})
++        ENDIF(PTHREAD_LIBRARY)
+     ENDIF(BEOS)
+ ENDIF(UNIX)
+ 
