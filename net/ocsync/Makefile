@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/10/16 09:41:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2012/10/30 17:26:59 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	bidirectional directories synchronizer (owncloud version)
 
-DISTNAME=	ocsync-0.60.0
+DISTNAME=	ocsync-0.60.1
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	net
@@ -19,8 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c crypto iniparser log4c neon pthread smbclient sqlite3
-WANTLIB += ssh ssl
+WANTLIB += c iniparser log4c neon pthread smbclient sqlite3 ssh
 
 MASTER_SITES=	http://download.owncloud.com/download/
 
@@ -34,6 +33,10 @@ LIB_DEPENDS=	devel/iniparser \
 		net/neon \
 		net/samba \
 		security/libssh
+
+# XXX tar: Invalid header, starting valid header search.
+TAR=		${LOCALBASE}/bin/gtar
+BUILD_DEPENDS+=	archivers/gtar
 
 # csync_owncloud requires -pthread:
 #     dlopen: failed to open libpthread.so.XX.X
