@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/03/20 16:34:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2012/10/30 20:45:10 sthen Exp $
 
 COMMENT =		file, shell and text manipulation utilities
-DISTNAME =		coreutils-8.15
+DISTNAME =		coreutils-8.20
 
 CATEGORIES =		sysutils
 

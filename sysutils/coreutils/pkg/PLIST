@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/03/20 16:34:07 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/10/30 20:45:10 sthen Exp $
 @conflict fileutils-*
 @conflict sh-utils-*
 @conflict textutils-*
@@ -264,6 +264,9 @@ share/locale/ga/LC_TIME/coreutils.mo
 share/locale/gl/LC_MESSAGES/coreutils.mo
 share/locale/gl/LC_TIME/
 share/locale/gl/LC_TIME/coreutils.mo
+share/locale/hr/LC_MESSAGES/coreutils.mo
+share/locale/hr/LC_TIME/
+share/locale/hr/LC_TIME/coreutils.mo
 share/locale/hu/LC_MESSAGES/coreutils.mo
 share/locale/hu/LC_TIME/
 share/locale/hu/LC_TIME/coreutils.mo
