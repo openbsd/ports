@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/09/27 14:57:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/10/30 20:12:21 ajacoutot Exp $
 
 COMMENT=	GTK client and libraries for SPICE remote desktop servers
 
@@ -65,6 +65,12 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-gtk-doc
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+# If one of these tools is found at configure stage, it might be used,
+# no matter whether we use --disable-gtk-doc or not.
+CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
+		ac_cv_path_GTKDOC_REBASE="" \
+		ac_cv_path_GTKDOC_MKPDF=""
 
 MODPY_ADJ_FILES=spice-common/spice_codegen.py
 
