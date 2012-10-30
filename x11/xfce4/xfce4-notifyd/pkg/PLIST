@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/04/30 13:29:04 landry Exp $
-@conflict notification-daemon-*
-@conflict notification-daemon-xfce-*
+@comment $OpenBSD: PLIST,v 1.7 2012/10/30 10:53:41 ajacoutot Exp $
 @bin bin/xfce4-notifyd-config
 lib/xfce4/notifyd/
 @bin lib/xfce4/notifyd/xfce4-notifyd
