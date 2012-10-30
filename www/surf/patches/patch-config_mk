@@ -1,25 +1,28 @@
-$OpenBSD: patch-config_mk,v 1.3 2010/06/07 07:24:00 landry Exp $
+$OpenBSD: patch-config_mk,v 1.4 2012/10/30 18:27:55 zinke Exp $
 use TRUEPREFIX instead of patching Makefile to remove DESTDIR
---- config.mk.orig	Sun May 30 22:05:25 2010
-+++ config.mk	Mon Jun  7 09:20:47 2010
-@@ -4,20 +4,20 @@ VERSION = 0.4
+--- config.mk.orig	Sun Oct 28 18:52:06 2012
++++ config.mk	Sun Oct 28 18:59:47 2012
+@@ -4,23 +4,22 @@ VERSION = 0.5
  # Customize below to fit your system
  
  # paths
 -PREFIX = /usr/local
 -MANPREFIX = ${PREFIX}/share/man
 +PREFIX = ${TRUEPREFIX}
-+MANPREFIX = ${PREFIX}/man
++MANPREFIX = ${TRUEPREFIX}/man
  
--GTKINC=$(shell pkg-config --cflags gtk+-2.0 webkit-1.0)
--GTKLIB=$(shell pkg-config --libs gtk+-2.0 webkit-1.0)
+ X11INC = /usr/X11R6/include
+ X11LIB = /usr/X11R6/lib
+ 
+-GTKINC = `pkg-config --cflags gtk+-2.0 webkit-1.0`
+-GTKLIB = `pkg-config --libs gtk+-2.0 webkit-1.0`
 +GTKINC!= pkg-config --cflags gtk+-2.0 webkit-1.0
 +GTKLIB!= pkg-config --libs gtk+-2.0 webkit-1.0
  
- 
  # includes and libs
--INCS = -I. -I/usr/include ${GTKINC}
--LIBS = -L/usr/lib -lc ${GTKLIB} -lgthread-2.0
+-INCS = -I. -I/usr/include -I${X11INC} ${GTKINC}
+-LIBS = -L/usr/lib -lc -L${X11LIB} -lX11 ${GTKLIB} -lgthread-2.0
+-#       -ljavascriptcoregtk-1.0
 +INCS = ${GTKINC}
 +LIBS = -pthread ${GTKLIB}
  
@@ -30,7 +33,7 @@ use TRUEPREFIX instead of patching Makefile to remove DESTDIR
  LDFLAGS = -g ${LIBS}
  
  # Solaris
-@@ -25,4 +25,4 @@ LDFLAGS = -g ${LIBS}
+@@ -28,4 +27,4 @@ LDFLAGS = -g ${LIBS}
  #LDFLAGS = ${LIBS}
  
  # compiler and linker
