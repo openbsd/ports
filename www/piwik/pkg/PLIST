@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.40 2012/10/18 08:18:56 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.41 2012/10/30 17:45:12 giovanni Exp $
 @group daemon
 piwik/
 piwik/LEGALNOTICE
@@ -266,6 +266,7 @@ piwik/core/Updates/1.8.4-b1.php
 piwik/core/Updates/1.9-b16.php
 piwik/core/Updates/1.9-b19.php
 piwik/core/Updates/1.9-b9.php
+piwik/core/Updates/1.9.1-b2.php
 piwik/core/Url.php
 piwik/core/Version.php
 piwik/core/View/
@@ -1392,10 +1393,6 @@ piwik/plugins/DoNotTrack/DoNotTrack.php
 piwik/plugins/ExampleAPI/
 piwik/plugins/ExampleAPI/API.php
 piwik/plugins/ExampleAPI/ExampleAPI.php
-piwik/plugins/ExampleFeedburner/
-piwik/plugins/ExampleFeedburner/ExampleFeedburner.php
-piwik/plugins/ExampleFeedburner/templates/
-piwik/plugins/ExampleFeedburner/templates/feedburner.tpl
 piwik/plugins/ExamplePlugin/
 piwik/plugins/ExamplePlugin/Controller.php
 piwik/plugins/ExamplePlugin/ExamplePlugin.php
@@ -1470,6 +1467,30 @@ piwik/plugins/ImageGraph/fonts/tahoma.ttf
 piwik/plugins/ImageGraph/templates/
 piwik/plugins/ImageGraph/templates/debug_graphs_all_sizes.tpl
 piwik/plugins/ImageGraph/templates/index.tpl
+piwik/plugins/Insight/
+piwik/plugins/Insight/API.php
+piwik/plugins/Insight/Controller.php
+piwik/plugins/Insight/Insight.php
+piwik/plugins/Insight/client/
+piwik/plugins/Insight/client/client.js
+piwik/plugins/Insight/client/close.png
+piwik/plugins/Insight/client/followingpages.js
+piwik/plugins/Insight/client/insight.css
+piwik/plugins/Insight/client/linktags.eps
+piwik/plugins/Insight/client/linktags.png
+piwik/plugins/Insight/client/linktags.psd
+piwik/plugins/Insight/client/linktags_lessshadow.png
+piwik/plugins/Insight/client/linktags_noshadow.png
+piwik/plugins/Insight/client/loading.gif
+piwik/plugins/Insight/client/translations.js
+piwik/plugins/Insight/client/urlnormalizer.js
+piwik/plugins/Insight/templates/
+piwik/plugins/Insight/templates/index.css
+piwik/plugins/Insight/templates/index.tpl
+piwik/plugins/Insight/templates/info.png
+piwik/plugins/Insight/templates/insight.js
+piwik/plugins/Insight/templates/notify_parent_iframe.tpl
+piwik/plugins/Insight/templates/sidebar.tpl
 piwik/plugins/Installation/
 piwik/plugins/Installation/Controller.php
 piwik/plugins/Installation/FormDatabaseSetup.php
@@ -2436,6 +2457,7 @@ piwik/themes/default/images/error_medium.png
 piwik/themes/default/images/expanded_arrows.gif
 piwik/themes/default/images/export.png
 piwik/themes/default/images/feed.png
+piwik/themes/default/images/fullscreen.png
 piwik/themes/default/images/goal.png
 piwik/themes/default/images/help.png
 piwik/themes/default/images/help_grey.png
