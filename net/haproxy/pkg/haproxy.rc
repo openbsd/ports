@@ -1,10 +1,14 @@
 #!/bin/sh
 #
-# $OpenBSD: haproxy.rc,v 1.1 2012/08/27 13:03:06 gonzalo Exp $
+# $OpenBSD: haproxy.rc,v 1.2 2012/10/30 19:40:19 gonzalo Exp $
 
 daemon="${TRUEPREFIX}/sbin/haproxy"
 daemon_flags="-f ${HAPROXYCONF}/haproxy.cfg"
 
 . /etc/rc.d/rc.subr
+
+rc_reload() {
+        ${daemon} ${daemon_flags} -sf $(cat /var/run/haproxy.pid)
+}
 
 rc_cmd $1
