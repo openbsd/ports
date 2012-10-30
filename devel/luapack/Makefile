@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2012/07/10 15:22:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2012/10/30 12:28:46 gsoares Exp $
 
 COMMENT=	library for packing and unpacking binary data
 DISTNAME=	luapack-20061124
@@ -29,6 +29,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/test.lua ${MODLUA_EXAMPLEDIR}
 
 do-regress:
-	lua ${WRKSRC}/test.lua
+	${MODLUA_BIN} ${WRKSRC}/test.lua
 
 .include <bsd.port.mk>
