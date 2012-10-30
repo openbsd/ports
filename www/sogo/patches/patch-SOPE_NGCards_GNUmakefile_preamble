@@ -1,9 +1,9 @@
-$OpenBSD: patch-SOPE_NGCards_GNUmakefile_preamble,v 1.1.1.1 2010/11/24 18:16:03 sebastia Exp $
+$OpenBSD: patch-SOPE_NGCards_GNUmakefile_preamble,v 1.2 2012/10/30 15:09:53 sebastia Exp $
 
 decouple the sope version number from the library interface number.
 
---- SOPE/NGCards/GNUmakefile.preamble.orig	Sun Sep 26 16:34:31 2010
-+++ SOPE/NGCards/GNUmakefile.preamble	Sun Sep 26 16:34:59 2010
+--- SOPE/NGCards/GNUmakefile.preamble.orig	Wed Oct 24 21:00:02 2012
++++ SOPE/NGCards/GNUmakefile.preamble	Fri Oct 26 12:11:38 2012
 @@ -4,8 +4,8 @@ SOPE_ROOT=../..
  
  ADDITIONAL_CPPFLAGS += \
@@ -15,3 +15,12 @@ decouple the sope version number from the library interface number.
          -DSOPE_SUBMINOR_VERSION=$(SUBMINOR_VERSION)
  
  ADDITIONAL_INCLUDE_DIRS += \
+@@ -21,7 +21,7 @@ libNGCards_LIBRARIES_DEPEND_UPON += \
+ 	-lNGExtensions	\
+ 	-lEOControl	\
+ 	-lSaxObjC \
+-        -lgnustep-base -lobjc -lm
++        -lgnustep-base -lm
+ 
+ NGCards_LIBRARIES_DEPEND_UPON += \
+ 	-framework NGExtensions	-framework EOControl \

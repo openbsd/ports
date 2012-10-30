@@ -1,0 +1,21 @@
+$OpenBSD: patch-SoObjects_SOGo_GNUmakefile_preamble,v 1.5 2012/10/30 15:09:53 sebastia Exp $
+--- SoObjects/SOGo/GNUmakefile.preamble.orig	Fri Oct 26 12:10:09 2012
++++ SoObjects/SOGo/GNUmakefile.preamble	Fri Oct 26 12:10:35 2012
+@@ -24,7 +24,7 @@ SOGo_LIBRARIES_DEPEND_UPON += \
+ 	-lNGStreams -lNGExtensions -lEOControl \
+ 	-lDOM -lSaxObjC \
+ 	-lNGLdap -lSBJson \
+-        -lGDLContentStore -lgnustep-base -lobjc -ldl
++        -lGDLContentStore -lgnustep-base
+ 
+ ifeq ($(HAS_LIBRARY_gnutls),yes)
+ ADDITIONAL_CPPFLAGS += -DHAVE_GNUTLS=1
+@@ -39,7 +39,7 @@ endif
+ ifeq ($(findstring openbsd, $(GNUSTEP_HOST_OS)), openbsd)
+ SOGo_LIBRARIES_DEPEND_UPON += -lcrypto
+ else
+-SOGo_LIBRARIES_DEPEND_UPON += -lcrypt
++SOGo_LIBRARIES_DEPEND_UPON += -lcrypt -ldl
+ endif
+ 
+ ADDITIONAL_TOOL_LIBS += \

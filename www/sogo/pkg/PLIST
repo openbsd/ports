@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2012/08/17 09:59:08 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.13 2012/10/30 15:09:54 sebastia Exp $
 @newgroup _sogo:659
 @newuser _sogo:659:_sogo:daemon:SOGo user:/var/sogo:/bin/sh
 include/GDLContentStore/
@@ -1407,6 +1407,7 @@ lib/GNUstep/SOGo/WebServerResources/SOGoResizableTable.js
 lib/GNUstep/SOGo/WebServerResources/SOGoRootPage.css
 lib/GNUstep/SOGo/WebServerResources/SOGoRootPage.js
 lib/GNUstep/SOGo/WebServerResources/SOGoTabsController.js
+lib/GNUstep/SOGo/WebServerResources/SOGoTimePicker.css
 lib/GNUstep/SOGo/WebServerResources/SOGoTimePicker.js
 lib/GNUstep/SOGo/WebServerResources/SchedulerUI.css
 lib/GNUstep/SOGo/WebServerResources/SchedulerUI.js
@@ -1888,6 +1889,8 @@ lib/GNUstep/SOGo/WebServerResources/ckeditor/themes/default/
 lib/GNUstep/SOGo/WebServerResources/ckeditor/themes/default/theme.js
 lib/GNUstep/SOGo/WebServerResources/confidential.png
 lib/GNUstep/SOGo/WebServerResources/create-account.png
+lib/GNUstep/SOGo/WebServerResources/datepicker.css
+lib/GNUstep/SOGo/WebServerResources/datepicker.js
 lib/GNUstep/SOGo/WebServerResources/day-view-multicolumn.png
 lib/GNUstep/SOGo/WebServerResources/day-view.png
 lib/GNUstep/SOGo/WebServerResources/dialog-left.png
@@ -2110,8 +2113,6 @@ lib/GNUstep/SOGo/WebServerResources/remove-icon.png
 lib/GNUstep/SOGo/WebServerResources/search-messages.png
 lib/GNUstep/SOGo/WebServerResources/signature-not-ok.png
 lib/GNUstep/SOGo/WebServerResources/signature-ok.png
-lib/GNUstep/SOGo/WebServerResources/skycalendar.html
-lib/GNUstep/SOGo/WebServerResources/skycalendar.js
 lib/GNUstep/SOGo/WebServerResources/slider_handle.gif
 lib/GNUstep/SOGo/WebServerResources/smalltoolbarbtn_a_bg.png
 lib/GNUstep/SOGo/WebServerResources/smalltoolbarbtn_span_bg.png
@@ -2151,16 +2152,16 @@ lib/GNUstep/SOGo/WebServerResources/tb-mail-replyall-flat-24x24.png
 lib/GNUstep/SOGo/WebServerResources/tb-mail-stop-flat-24x24.png
 lib/GNUstep/SOGo/WebServerResources/tb-mail-write-flat-24x24.png
 lib/GNUstep/SOGo/WebServerResources/tbtv_account_17x17.png
-lib/GNUstep/SOGo/WebServerResources/tbtv_corner_17x17.gif
-lib/GNUstep/SOGo/WebServerResources/tbtv_corner_minus_17x17.gif
-lib/GNUstep/SOGo/WebServerResources/tbtv_corner_plus_17x17.gif
+lib/GNUstep/SOGo/WebServerResources/tbtv_corner_17x22.png
+lib/GNUstep/SOGo/WebServerResources/tbtv_corner_minus_17x22.png
+lib/GNUstep/SOGo/WebServerResources/tbtv_corner_plus_17x22.png
 lib/GNUstep/SOGo/WebServerResources/tbtv_drafts_17x17.png
 lib/GNUstep/SOGo/WebServerResources/tbtv_inbox_17x17.png
-lib/GNUstep/SOGo/WebServerResources/tbtv_junction_17x17.gif
+lib/GNUstep/SOGo/WebServerResources/tbtv_junction_17x22.png
 lib/GNUstep/SOGo/WebServerResources/tbtv_leaf_corner_17x17.png
-lib/GNUstep/SOGo/WebServerResources/tbtv_line_17x17.gif
-lib/GNUstep/SOGo/WebServerResources/tbtv_minus_17x17.gif
-lib/GNUstep/SOGo/WebServerResources/tbtv_plus_17x17.gif
+lib/GNUstep/SOGo/WebServerResources/tbtv_line_17x22.png
+lib/GNUstep/SOGo/WebServerResources/tbtv_minus_17x22.png
+lib/GNUstep/SOGo/WebServerResources/tbtv_plus_17x22.png
 lib/GNUstep/SOGo/WebServerResources/tbtv_sent_17x17.png
 lib/GNUstep/SOGo/WebServerResources/tbtv_trash_17x17.png
 lib/GNUstep/SOGo/WebServerResources/tentative.png
@@ -2211,7 +2212,9 @@ share/doc/sogo/SOGo_Native_Microsoft_Outlook_Configuration.odt
 share/doc/sogo/architecture.png
 share/doc/sogo/cas-proxy-validate.py
 share/doc/sogo/inverse.jpg
+share/doc/sogo/openchange.png
 share/doc/sogo/preferences.png
+share/doc/sogo/sogo-2.png
 share/doc/sogo/sogo.png
 share/doc/sogo/sql-update-1.3.11_to_1.3.12-mysql.sh
 share/doc/sogo/sql-update-1.3.11_to_1.3.12-postgres.sh

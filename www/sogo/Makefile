@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.21 2012/08/22 07:16:37 sebastia Exp $
+# $OpenBSD: Makefile,v 1.22 2012/10/30 15:09:53 sebastia Exp $
 
 COMMENT = 	web based groupware server
 
-VERSION =	1.3.17
-REVISION =	0
+VERSION =	2.0.2
 DISTNAME =	SOGo-${VERSION}
 PKGNAME =	sogo-${VERSION}
 
-SHARED_LIBS +=	GDLContentStore 1.1
-SHARED_LIBS +=	NGCards		1.1
-SHARED_LIBS +=	OGoContentStore	1.1
-SHARED_LIBS +=	SOGo		1.3
-SHARED_LIBS +=	SOGoUI		1.1
+SHARED_LIBS +=	GDLContentStore 2.0
+SHARED_LIBS +=	NGCards		2.0
+SHARED_LIBS +=	OGoContentStore	2.0
+SHARED_LIBS +=	SOGo		2.0
+SHARED_LIBS +=	SOGoUI		2.0
 
 CATEGORIES =	www
 HOMEPAGE =	http://www.sogo.nu/
@@ -27,10 +26,10 @@ PERMIT_DISTFILES_FTP =		Yes
 MODULES =		x11/gnustep
 MODGNUSTEP_NEEDS_GUI =	No
 
-WANTLIB +=		c m pthread crypto memcached WOExtensions SBJson
-WANTLIB +=		DOM EOControl GDLAccess NGExtensions NGLdap XmlRpc
+WANTLIB +=		c m pthread crypto memcached SBJson
+WANTLIB +=		DOM EOControl GDLAccess NGExtensions NGLdap
 WANTLIB +=		NGMime NGObjWeb NGStreams SaxObjC WEExtensions
-WANTLIB +=		objc gnustep-base curl
+WANTLIB +=		objc2 gnustep-base curl gnutls
 
 LIB_DEPENDS +=		devel/libmemcached \
 			net/curl \
