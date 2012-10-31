@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.225 2012/10/20 08:37:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.226 2012/10/31 22:13:23 jasper Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -208,6 +208,10 @@
      SUBDIR += ruby-postgres
      SUBDIR += ruby-redis
      SUBDIR += ruby-redis,ruby18
+     SUBDIR += ruby-redis-namespace
+     SUBDIR += ruby-redis-namespace,ruby18
+     SUBDIR += ruby-resque
+     SUBDIR += ruby-resque,ruby18
      SUBDIR += ruby-sequel
      SUBDIR += ruby-sequel,ruby18
      SUBDIR += ruby-sequel,rbx
