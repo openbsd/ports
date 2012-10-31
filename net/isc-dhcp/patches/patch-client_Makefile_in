@@ -1,0 +1,13 @@
+$OpenBSD: patch-client_Makefile_in,v 1.1 2012/10/31 23:21:05 brad Exp $
+--- client/Makefile.in.orig	Wed Oct 31 11:27:18 2012
++++ client/Makefile.in	Wed Oct 31 11:27:35 2012
+@@ -552,7 +552,8 @@ uninstall-man: uninstall-man5 uninstall-man8
+ 
+ dhclient.o: dhclient.c
+ 	$(COMPILE) -DCLIENT_PATH='"PATH=$(sbindir):/sbin:/bin:/usr/sbin:/usr/bin"' \
+-		   -DLOCALSTATEDIR='"$(localstatedir)"' -c dhclient.c
++		   -DLOCALSTATEDIR='"$(localstatedir)"' \
++		   -D_PATH_DHCLIENT_SCRIPT='"$(sbindir)/dhclient-script"' -c dhclient.c
+ 
+ dhc6.o: dhc6.c
+ 	$(COMPILE) -DCLIENT_PATH='"PATH=$(sbindir):/sbin:/bin:/usr/sbin:/usr/bin"' \

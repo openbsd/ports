@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2012/09/15 10:43:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2012/10/31 23:21:05 brad Exp $
 
 COMMENT-main=	ISC DHCP Server
 COMMENT-client=	ISC DHCP Client
@@ -9,6 +9,7 @@ DISTNAME=	isc-dhcp-${VERSION}
 PKGNAME=	isc-dhcp-${VERSION:S/-P/./}
 PKGNAME-main=	isc-dhcp-server-${VERSION:S/-P/./}
 PKGNAME-client=	isc-dhcp-client-${VERSION:S/-P/./}
+REVISION-client= 0
 PKGNAME-omapi=	isc-dhcp-omapi-${VERSION:S/-P/./}
 CATEGORIES=	net
 
@@ -44,6 +45,7 @@ EXAMPLEDIR=		share/examples/isc-dhcp
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${EXAMPLEDIR}
+	${INSTALL_PROGRAM} ${FILESDIR}/dhclient-script ${PREFIX}/sbin
 	${INSTALL_DATA} ${WRKSRC}/server/dhcpd.conf ${PREFIX}/${EXAMPLEDIR}
 	${INSTALL_DATA} ${WRKSRC}/client/dhclient.conf ${PREFIX}/${EXAMPLEDIR}
 
