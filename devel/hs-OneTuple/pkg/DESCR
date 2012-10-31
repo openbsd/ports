@@ -1,0 +1,8 @@
+OneTuple fills the "tuple gap" with a singleton tuple.  It does
+not support the usual parenthesized tuple syntax (which would be
+"(a)" instead of "OneTuple a"). It
+* has the expected laziness properties,
+* can be pattern-matched,
+* ships with instances for several standard type classes,
+  including all those supported by H98-standard tuples,
+* requires no language extensions, except for hierarchical modules.
