@@ -1,6 +1,6 @@
-$OpenBSD: patch-sc_source_core_data_column3_cxx,v 1.1 2012/04/03 08:56:50 robert Exp $
---- sc/source/core/data/column3.cxx.orig.port	Fri Mar 30 09:35:06 2012
-+++ sc/source/core/data/column3.cxx	Fri Mar 30 09:35:28 2012
+$OpenBSD: patch-sc_source_core_data_column3_cxx,v 1.2 2012/10/31 08:34:12 robert Exp $
+--- sc/source/core/data/column3.cxx.orig.port	Mon Oct  8 16:03:51 2012
++++ sc/source/core/data/column3.cxx	Mon Oct  8 16:04:10 2012
 @@ -30,6 +30,8 @@
  
  #include <boost/scoped_ptr.hpp>

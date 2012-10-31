@@ -1,6 +1,5 @@
-@comment $OpenBSD: PFRAG.shared-kde,v 1.4 2012/04/03 08:56:50 robert Exp $
-lib/libreoffice/program/fps_kde.uno.so
+@comment $OpenBSD: PFRAG.shared-kde,v 1.5 2012/10/31 08:34:13 robert Exp $
 lib/libreoffice/program/kdebe1.uno.so
-lib/libreoffice/program/libkab1.so
-lib/libreoffice/program/libkabdrv1.so
+lib/libreoffice/program/libkab1lo.so
+lib/libreoffice/program/libkabdrv1lo.so
 lib/libreoffice/program/libvclplug_kdelo.so

@@ -1,6 +1,6 @@
-$OpenBSD: patch-sal_osl_unx_interlck_c,v 1.1 2012/04/08 07:52:01 robert Exp $
---- sal/osl/unx/interlck.c.orig.port	Fri Apr  6 11:30:06 2012
-+++ sal/osl/unx/interlck.c	Fri Apr  6 11:30:29 2012
+$OpenBSD: patch-sal_osl_unx_interlck_c,v 1.2 2012/10/31 08:34:12 robert Exp $
+--- sal/osl/unx/interlck.c.orig.port	Tue Oct 30 13:07:48 2012
++++ sal/osl/unx/interlck.c	Tue Oct 30 13:09:04 2012
 @@ -60,7 +60,7 @@ oslInterlockedCount SAL_CALL osl_incrementInterlockedC
          :   "memory");
          return ++nCount;

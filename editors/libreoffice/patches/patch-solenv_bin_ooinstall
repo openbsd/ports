@@ -1,0 +1,20 @@
+$OpenBSD: patch-solenv_bin_ooinstall,v 1.1 2012/10/31 08:34:12 robert Exp $
+--- solenv/bin/ooinstall.orig.port	Wed Oct 10 15:12:50 2012
++++ solenv/bin/ooinstall	Wed Oct 10 15:14:02 2012
+@@ -115,10 +115,12 @@ if ($is_windows) {
+ # make distro-pack-install shufle with the SDK installation to make it LSB compliant
+ # it creates symlinks from the orignal path to /usr/share; they are not valid with $DESTDIR
+ # and potential second ooinstall call fails with strange error messages if the old tree is still there
+-if ($destdir && "$ENV{DESTDIR}" ne "/" && -d "$ENV{DESTDIR}") {
+-    print "Cleaning destdir...\n";
+-    system ("rm -rf \"$ENV{DESTDIR}\"") && die "Failed to clean up destdir: $!";
+-}
++### SKIP ON OPENBSD ###
++#if ($destdir && "$ENV{DESTDIR}" ne "/" && -d "$ENV{DESTDIR}") {
++#    print "Cleaning destdir...\n";
++#    system ("rm -rf \"$ENV{DESTDIR}\"") && die "Failed to clean up destdir: $!";
++#}
++#######################
+ 
+ print "Running LibreOffice installer\n";
+ system ("cd $ENV{SRC_ROOT}/instsetoo_native/util ; " .

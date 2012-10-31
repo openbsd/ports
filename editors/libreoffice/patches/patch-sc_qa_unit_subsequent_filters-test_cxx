@@ -1,0 +1,12 @@
+$OpenBSD: patch-sc_qa_unit_subsequent_filters-test_cxx,v 1.1 2012/10/31 08:34:12 robert Exp $
+--- sc/qa/unit/subsequent_filters-test.cxx.orig.port	Mon Oct  8 19:34:09 2012
++++ sc/qa/unit/subsequent_filters-test.cxx	Mon Oct  8 19:34:16 2012
+@@ -145,7 +145,7 @@ class ScFiltersTest (public)
+ 
+     //disable testPassword on MacOSX due to problems with libsqlite3
+     //also crashes on DragonFly due to problems with nss/nspr headers
+-#if !defined(MACOSX) && !defined(DRAGONFLY) && !defined(WNT)
++#if !defined(MACOSX) && !defined(DRAGONFLY) && !defined(WNT) && !defined(OPENBSD)
+     CPPUNIT_TEST(testPasswordOld);
+     CPPUNIT_TEST(testPasswordNew);
+ #endif

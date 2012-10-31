@@ -1,24 +1,15 @@
-$OpenBSD: patch-hsqldb_makefile_mk,v 1.1 2012/07/16 07:23:03 robert Exp $
---- hsqldb/makefile.mk.orig.port	Sun Jul 15 23:36:07 2012
-+++ hsqldb/makefile.mk	Sun Jul 15 23:38:34 2012
-@@ -61,8 +61,6 @@ PATCH_FILES=patches$/i96823.patch \
-             patches$/i104901.patch
+$OpenBSD: patch-hsqldb_makefile_mk,v 1.2 2012/10/31 08:34:12 robert Exp $
+--- hsqldb/makefile.mk.orig.port	Sun Oct 28 21:51:05 2012
++++ hsqldb/makefile.mk	Sun Oct 28 21:51:12 2012
+@@ -61,11 +61,6 @@ PATCH_FILES=patches$/i96823.patch \
+             patches$/i104901.patch \
+             patches$/fdo36824.patch
  
- .IF "$(JAVANUMVER:s/.//)" >= "000100060000"
+-.IF "$(JAVANUMVER:s/.//)" >= "000100060000"
 -PATCH_FILES+= \
 -            patches$/jdbc-4.1.patch
- .ENDIF
- 
+-.ENDIF
+-
  .IF "$(JAVACISGCJ)"=="yes" || "$(JAVA_SOURCE_VER)"=="1.5"
-@@ -71,9 +69,9 @@ JAVA_HOME=
- .ENDIF
- 
- .IF "$(JAVACISGCJ)"=="yes"
--BUILD_ACTION=$(ANT) -Dbuild.label="build-$(RSCREVISION)" -Dbuild.compiler=gcj -f $(ANT_BUILDFILE) jar
-+BUILD_ACTION="$(ANT)" -Dbuild.label="build-$(RSCREVISION)" -Dbuild.compiler=gcj -f $(ANT_BUILDFILE) jar
- .ELSE
--BUILD_ACTION=$(ANT) -Dbuild.label="build-$(RSCREVISION)" -Dant.build.javac.source=$(JAVA_SOURCE_VER) -Dant.build.javac.target=$(JAVA_TARGET_VER) -f $(ANT_BUILDFILE) jar
-+BUILD_ACTION="$(ANT)" -Dbuild.label="build-$(RSCREVISION)" -Dant.build.javac.source=$(JAVA_SOURCE_VER) -Dant.build.javac.target=$(JAVA_TARGET_VER) -f $(ANT_BUILDFILE) jar
- .ENDIF
- 
- .IF "$(debug)"!=""
+ JAVA_HOME=
+ .EXPORT : JAVA_HOME

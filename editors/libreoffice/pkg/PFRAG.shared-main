@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.7 2012/04/03 08:56:50 robert Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.8 2012/10/31 08:34:13 robert Exp $
 lib/libreoffice/program/basprov.uno.so
 lib/libreoffice/program/cairocanvas.uno.so
 lib/libreoffice/program/canvasfactory.uno.so
@@ -16,7 +16,6 @@ lib/libreoffice/program/i18npool.uno.so
 lib/libreoffice/program/i18nsearch.uno.so
 lib/libreoffice/program/libabplo.so
 lib/libreoffice/program/libacclo.so
-lib/libreoffice/program/libadabasuilo.so
 lib/libreoffice/program/libanalysislo.so
 lib/libreoffice/program/libanimcorelo.so
 lib/libreoffice/program/libavmedialo.so
@@ -67,12 +66,10 @@ lib/libreoffice/program/libdeploymentmisclo.so
 lib/libreoffice/program/libdesktop_detectorlo.so
 lib/libreoffice/program/libdict_ja.so
 lib/libreoffice/program/libdict_zh.so
-lib/libreoffice/program/libdoctoklo.so
 lib/libreoffice/program/libdrawinglayerlo.so
 lib/libreoffice/program/libeditenglo.so
 lib/libreoffice/program/libegilo.so
 lib/libreoffice/program/libembobj.so
-lib/libreoffice/program/libemboleobj.so
 lib/libreoffice/program/libemelo.so
 lib/libreoffice/program/libepblo.so
 lib/libreoffice/program/libepglo.so
@@ -101,7 +98,6 @@ lib/libreoffice/program/libhelplinkerlo.so
 lib/libreoffice/program/libhwplo.so
 lib/libreoffice/program/libhyphenlo.so
 lib/libreoffice/program/libi18nisolang1gcc3.so
-lib/libreoffice/program/libi18npaperlo.so
 lib/libreoffice/program/libi18nregexplo.so
 lib/libreoffice/program/libi18nutilgcc3.so
 lib/libreoffice/program/libicdlo.so
@@ -117,6 +113,7 @@ lib/libreoffice/program/libipxlo.so
 lib/libreoffice/program/libiralo.so
 lib/libreoffice/program/libitglo.so
 lib/libreoffice/program/libitilo.so
+@lib lib/libreoffice/program/liblcms2.so.${LIBlcms2_VERSION}
 lib/libreoffice/program/liblegacy_binfilterslo.so
 lib/libreoffice/program/liblnglo.so
 lib/libreoffice/program/liblnthlo.so
@@ -131,16 +128,13 @@ lib/libreoffice/program/libmcnttype.so
 lib/libreoffice/program/libmozbootstrap.so
 lib/libreoffice/program/libmsfilterlo.so
 lib/libreoffice/program/libmswordlo.so
-lib/libreoffice/program/libmsworkslo.so
 lib/libreoffice/program/libmysqllo.so
 lib/libreoffice/program/libnpsoplugin.so
 lib/libreoffice/program/libodbcbaselo.so
 lib/libreoffice/program/libodbclo.so
 lib/libreoffice/program/libodfflatxmllo.so
 lib/libreoffice/program/liboffacclo.so
-lib/libreoffice/program/liboooimprovecorelo.so
 lib/libreoffice/program/libooxlo.so
-lib/libreoffice/program/libooxmllo.so
 lib/libreoffice/program/libpackage2.so
 lib/libreoffice/program/libpcrlo.so
 lib/libreoffice/program/libpdffilterlo.so
@@ -150,11 +144,9 @@ lib/libreoffice/program/libpyuno.so
 lib/libreoffice/program/libqstart_gtklo.so
 lib/libreoffice/program/librecentfile.so
 lib/libreoffice/program/libreslo.so
-lib/libreoffice/program/libresourcemodello.so
 lib/libreoffice/program/librptlo.so
 lib/libreoffice/program/librptuilo.so
 lib/libreoffice/program/librptxmllo.so
-lib/libreoffice/program/librtftoklo.so
 lib/libreoffice/program/libsaxlo.so
 lib/libreoffice/program/libsblo.so
 lib/libreoffice/program/libscdlo.so
@@ -177,8 +169,8 @@ lib/libreoffice/program/libsolverlo.so
 lib/libreoffice/program/libsotlo.so
 lib/libreoffice/program/libspalo.so
 lib/libreoffice/program/libspelllo.so
-lib/libreoffice/program/libspllo.so
 lib/libreoffice/program/libspl_unxlo.so
+lib/libreoffice/program/libspllo.so
 lib/libreoffice/program/libsrtrs1.so
 lib/libreoffice/program/libsvgfilterlo.so
 lib/libreoffice/program/libsvllo.so
@@ -189,8 +181,9 @@ lib/libreoffice/program/libswdlo.so
 lib/libreoffice/program/libswlo.so
 lib/libreoffice/program/libswuilo.so
 lib/libreoffice/program/libt602filterlo.so
-lib/libreoffice/program/libtextconversiondlgslo.so
 lib/libreoffice/program/libtextconv_dict.so
+lib/libreoffice/program/libtextconversiondlgslo.so
+lib/libreoffice/program/libtextfdlo.so
 lib/libreoffice/program/libtklo.so
 lib/libreoffice/program/libtllo.so
 lib/libreoffice/program/libtvhlp1.so
@@ -205,7 +198,6 @@ lib/libreoffice/program/libucppkg1.so
 lib/libreoffice/program/libunopkgapp.so
 lib/libreoffice/program/libunordflo.so
 lib/libreoffice/program/libunoxmllo.so
-lib/libreoffice/program/libupdchklo.so
 lib/libreoffice/program/libutllo.so
 lib/libreoffice/program/libuuilo.so
 lib/libreoffice/program/libvbahelperlo.so
@@ -213,15 +205,13 @@ lib/libreoffice/program/libvcllo.so
 lib/libreoffice/program/libvclplug_genlo.so
 lib/libreoffice/program/libvclplug_gtklo.so
 lib/libreoffice/program/libvclplug_svplo.so
-lib/libreoffice/program/libvisioimportlo.so
-lib/libreoffice/program/libwpftlo.so
-lib/libreoffice/program/libwpgimportlo.so
+lib/libreoffice/program/libwpftdrawlo.so
+lib/libreoffice/program/libwpftwriterlo.so
 lib/libreoffice/program/libwriterfilterlo.so
 lib/libreoffice/program/libxcrlo.so
 lib/libreoffice/program/libxmlfalo.so
 lib/libreoffice/program/libxmlfdlo.so
 lib/libreoffice/program/libxmlsecurity.so
-lib/libreoffice/program/libxmxlo.so
 lib/libreoffice/program/libxoflo.so
 lib/libreoffice/program/libxolo.so
 lib/libreoffice/program/libxsec_fw.so
@@ -264,17 +254,17 @@ lib/libreoffice/ure/lib/invocadapt.uno.so
 lib/libreoffice/ure/lib/invocation.uno.so
 lib/libreoffice/ure/lib/libaffine_uno_uno.so
 lib/libreoffice/ure/lib/libgcc3_uno.so
-lib/libreoffice/ure/lib/libjvmaccessgcc3.so.3
-lib/libreoffice/ure/lib/libjvmfwk.so.3
+@bin lib/libreoffice/ure/lib/libjvmaccessgcc3.so.3
+@bin lib/libreoffice/ure/lib/libjvmfwk.so.3
 lib/libreoffice/ure/lib/liblog_uno_uno.so
-lib/libreoffice/ure/lib/libreg.so.3
+@bin lib/libreoffice/ure/lib/libreg.so.3
 lib/libreoffice/ure/lib/libsal_textenc.so
-lib/libreoffice/ure/lib/libstore.so.3
-lib/libreoffice/ure/lib/libuno_cppu.so.3
-lib/libreoffice/ure/lib/libuno_cppuhelpergcc3.so.3
-lib/libreoffice/ure/lib/libuno_purpenvhelpergcc3.so.3
-lib/libreoffice/ure/lib/libuno_sal.so.3
-lib/libreoffice/ure/lib/libuno_salhelpergcc3.so.3
+@bin lib/libreoffice/ure/lib/libstore.so.3
+@bin lib/libreoffice/ure/lib/libuno_cppu.so.3
+@bin lib/libreoffice/ure/lib/libuno_cppuhelpergcc3.so.3
+@bin lib/libreoffice/ure/lib/libuno_purpenvhelpergcc3.so.3
+@bin lib/libreoffice/ure/lib/libuno_sal.so.3
+@bin lib/libreoffice/ure/lib/libuno_salhelpergcc3.so.3
 lib/libreoffice/ure/lib/libunsafe_uno_uno.so
 lib/libreoffice/ure/lib/libxmlreader.so
 lib/libreoffice/ure/lib/namingservice.uno.so
