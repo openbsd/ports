@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/31 22:08:48 jasper Exp $
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/History.txt
+${GEM_LIB}/gems/${DISTNAME}/LICENSE
+${GEM_LIB}/gems/${DISTNAME}/README.rdoc
+${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/vegas/
+${GEM_LIB}/gems/${DISTNAME}/lib/vegas.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/vegas/runner.rb
+${GEM_LIB}/gems/${DISTNAME}/test/
+${GEM_LIB}/gems/${DISTNAME}/test/apps.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_app/
+${GEM_LIB}/gems/${DISTNAME}/test/test_app/bin/
+${GEM_LIB}/gems/${DISTNAME}/test/test_app/bin/test_app
+${GEM_LIB}/gems/${DISTNAME}/test/test_app/bin/test_rack_app
+${GEM_LIB}/gems/${DISTNAME}/test/test_app/test_app.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_helper.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_vegas_runner.rb
+${GEM_LIB}/gems/${DISTNAME}/vegas.gemspec
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
