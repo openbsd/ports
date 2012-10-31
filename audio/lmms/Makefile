@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/10/12 12:54:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2012/10/31 10:18:57 sthen Exp $
 
 SHARED_ONLY =		Yes
 
@@ -29,6 +29,7 @@ EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		x11/qt4 devel/cmake
 
+BUILD_DEPENDS =		audio/portaudio-svn
 RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/shared-mime-info
 LIB_DEPENDS =		audio/jack \
