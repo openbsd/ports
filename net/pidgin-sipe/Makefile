@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2012/08/31 12:52:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2012/10/31 20:11:09 naddy Exp $
 
 SHARED_ONLY =		Yes
 
@@ -30,7 +30,8 @@ LIB_DEPENDS =		mail/gmime \
 			security/nss
 RUN_DEPENDS =		net/pidgin
 
-MODULES =		devel/gettext
+MODULES =		devel/gettext \
+			textproc/intltool
 
 USE_GMAKE =		Yes
 USE_LIBTOOL =		Yes
