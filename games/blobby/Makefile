@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/10/27 14:35:37 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2012/10/31 10:17:07 sthen Exp $
 
 COMMENT =		volleyball game with online play
 
@@ -21,7 +21,8 @@ WANTLIB +=		GL GLU ICE SDL SM X11 Xext c m physfs pthread stdc++
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=blobby/}
 
 MODULES =		devel/cmake
-BUILD_DEPENDS =		devel/boost
+BUILD_DEPENDS =		devel/boost \
+			archivers/zip
 LIB_DEPENDS =		devel/sdl \
 			devel/physfs
 
