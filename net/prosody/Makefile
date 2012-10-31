@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2012/10/08 09:11:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2012/10/31 17:19:39 gsoares Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,7 +20,6 @@ PERMIT_PACKAGE_FTP=	Yes
 
 USE_GMAKE=	Yes
 MODULES=	lang/lua
-SUBST_VARS=	MODLUA_BIN
 LIB_DEPENDS=	devel/libidn
 MODLUA_RUN_DEPENDS+= archivers/luazlib \
 		databases/luadbi \

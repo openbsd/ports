@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2012/09/30 02:45:04 jsg Exp $
+# $OpenBSD: Makefile,v 1.48 2012/10/31 17:19:39 gsoares Exp $
 
 PKG_ARCH =      *
 
@@ -24,7 +24,6 @@ RUN_DEPENDS+=		devel/luastdlib \
 			graphics/ffmpeg \
 			net/luasocket
 MODLUA_SA=		Yes
-SUBST_VARS=		MODLUA_BIN
 
 do-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/yt.lua ${PREFIX}/bin/yt
