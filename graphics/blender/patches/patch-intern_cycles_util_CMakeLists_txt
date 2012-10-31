@@ -1,0 +1,14 @@
+$OpenBSD: patch-intern_cycles_util_CMakeLists_txt,v 1.1 2012/10/31 17:45:55 pascal Exp $
+--- intern/cycles/util/CMakeLists.txt.orig	Fri Oct 12 21:57:03 2012
++++ intern/cycles/util/CMakeLists.txt	Fri Oct 12 21:57:12 2012
+@@ -1,9 +1,9 @@
+ 
+ set(INC
+ 	.
++	${GLEW_INCLUDE_PATH}
+ )
+ set(INC_SYS
+-	${GLEW_INCLUDE_PATH}
+ 	${OPENGL_INCLUDE_DIR}
+ )
+ 

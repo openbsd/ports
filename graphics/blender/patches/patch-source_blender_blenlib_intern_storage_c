@@ -1,42 +1,42 @@
-$OpenBSD: patch-source_blender_blenlib_intern_storage_c,v 1.6 2012/05/07 15:45:42 pascal Exp $
---- source/blender/blenlib/intern/storage.c.orig	Thu Apr 26 22:51:28 2012
-+++ source/blender/blenlib/intern/storage.c	Mon Apr 30 23:03:52 2012
+$OpenBSD: patch-source_blender_blenlib_intern_storage_c,v 1.7 2012/10/31 17:45:55 pascal Exp $
+--- source/blender/blenlib/intern/storage.c.orig	Tue Oct  9 20:40:29 2012
++++ source/blender/blenlib/intern/storage.c	Fri Oct 12 18:04:45 2012
 @@ -43,13 +43,13 @@
  #include <time.h>
  #include <sys/stat.h>
  
--#if defined (__sun__) || defined (__sun) || defined (__NetBSD__)
-+#if defined (__sun__) || defined (__sun) || defined (__NetBSD__) || defined (__OpenBSD__)
+-#if defined(__sun__) || defined(__sun) || defined(__NetBSD__)
++#if defined(__sun__) || defined(__sun) || defined(__NetBSD__) || defined(__OpenBSD__)
  #include <sys/statvfs.h> /* Other modern unix os's should probably use this also */
  #elif !defined(__FreeBSD__) && !defined(linux) && (defined(__sparc) || defined(__sparc__))
  #include <sys/statfs.h>
  #endif
  
--#if defined (__FreeBSD__) || defined (__OpenBSD__)
-+#if defined (__FreeBSD__)
+-#if defined(__FreeBSD__) || defined(__OpenBSD__)
++#if defined(__FreeBSD__)
  #include <sys/param.h>
  #include <sys/mount.h>
  #endif
-@@ -166,7 +166,7 @@ double BLI_dir_free_space(const char *dir)
- 	return (double) (freec*bytesps*sectorspc);
+@@ -163,7 +163,7 @@ double BLI_dir_free_space(const char *dir)
+ 	return (double) (freec * bytesps * sectorspc);
  #else
  
--#if defined (__sun__) || defined (__sun) || defined (__NetBSD__)
-+#if defined (__sun__) || defined (__sun) || defined (__NetBSD__) || defined (__OpenBSD__)
+-#if defined(__sun__) || defined(__sun) || defined(__NetBSD__)
++#if defined(__sun__) || defined(__sun) || defined(__NetBSD__) || defined(__OpenBSD__)
  	struct statvfs disk;
  #else
  	struct statfs disk;
-@@ -185,11 +185,11 @@ double BLI_dir_free_space(const char *dir)
+@@ -182,11 +182,11 @@ double BLI_dir_free_space(const char *dir)
  	}
- 	else strcpy(name,"/");
+ 	else strcpy(name, "/");
  
--#if defined (__FreeBSD__) || defined (linux) || defined (__OpenBSD__) || defined (__APPLE__) || defined(__GNU__) || defined(__GLIBC__)
-+#if defined (__FreeBSD__) || defined (linux) || defined (__APPLE__) || defined(__GNU__) || defined(__GLIBC__)
+-#if defined(__FreeBSD__) || defined(linux) || defined(__OpenBSD__) || defined(__APPLE__) || defined(__GNU__) || defined(__GLIBC__)
++#if defined(__FreeBSD__) || defined(linux) || defined(__APPLE__) || defined(__GNU__) || defined(__GLIBC__)
  	if (statfs(name, &disk)) return(-1);
  #endif
  
--#if defined (__sun__) || defined (__sun) || defined (__NetBSD__)
-+#if defined (__sun__) || defined (__sun) || defined (__NetBSD__) || defined (__OpenBSD__)
+-#if defined(__sun__) || defined(__sun) || defined(__NetBSD__)
++#if defined(__sun__) || defined(__sun) || defined(__NetBSD__) || defined(__OpenBSD__)
  	if (statvfs(name, &disk)) return(-1);	
  #elif !defined(__FreeBSD__) && !defined(linux) && (defined(__sparc) || defined(__sparc__))
  	/* WARNING - This may not be supported by geeneric unix os's - Campbell */
