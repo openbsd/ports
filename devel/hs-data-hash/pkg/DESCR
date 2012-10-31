@@ -1,0 +1,2 @@
+Combinators for building fast hashing functions. Includes hashing
+functions for all basic Haskell98 types.
