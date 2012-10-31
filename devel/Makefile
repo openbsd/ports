@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1088 2012/10/30 20:47:49 martynas Exp $
+# $OpenBSD: Makefile,v 1.1089 2012/10/31 19:26:39 kili Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -156,8 +156,12 @@
      SUBDIR += hs-MissingH
      SUBDIR += hs-MonadCatchIO-mtl
      SUBDIR += hs-MonadCatchIO-transformers
+     SUBDIR += hs-OneTuple
      SUBDIR += hs-PSQueue
+     SUBDIR += hs-QuickAnnotate
      SUBDIR += hs-QuickCheck
+     SUBDIR += hs-abstract-deque
+     SUBDIR += hs-abstract-par
      SUBDIR += hs-aeson
      SUBDIR += hs-ansi-terminal
      SUBDIR += hs-ansi-wl-pprint
@@ -181,10 +185,12 @@
      SUBDIR += hs-concurrent-extra
      SUBDIR += hs-conduit
      SUBDIR += hs-configurator
+     SUBDIR += hs-constraints
      SUBDIR += hs-contravariant
      SUBDIR += hs-control-timeout
      SUBDIR += hs-convertible
      SUBDIR += hs-data-default
+     SUBDIR += hs-data-hash
      SUBDIR += hs-data-lens
      SUBDIR += hs-data-lens-template
      SUBDIR += hs-dataenc
@@ -214,15 +220,19 @@
      SUBDIR += hs-logict
      SUBDIR += hs-mmap
      SUBDIR += hs-monad-control
+     SUBDIR += hs-monad-par
+     SUBDIR += hs-monad-par-extras
      SUBDIR += hs-monads-fd
      SUBDIR += hs-monads-tf
      SUBDIR += hs-mtl
      SUBDIR += hs-murmur-hash
      SUBDIR += hs-network
      SUBDIR += hs-network-conduit
+     SUBDIR += hs-newtype
      SUBDIR += hs-pango
      SUBDIR += hs-parallel
      SUBDIR += hs-parsec
+     SUBDIR += hs-patch-combinators
      SUBDIR += hs-primitive
      SUBDIR += hs-pugs-DrIFT
      SUBDIR += hs-pugs-compat
@@ -252,6 +262,7 @@
      SUBDIR += hs-text
      SUBDIR += hs-transformers
      SUBDIR += hs-transformers-base
+     SUBDIR += hs-tuple
      SUBDIR += hs-type-level
      SUBDIR += hs-unbounded-delays
      SUBDIR += hs-uniplate
