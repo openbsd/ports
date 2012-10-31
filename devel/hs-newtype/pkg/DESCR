@@ -1,0 +1,3 @@
+The Newtype typeclass represents the packing and unpacking of a
+newtype, and allows to operate under that newtype with functions
+such as ala.
