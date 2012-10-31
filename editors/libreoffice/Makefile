@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2012/10/31 08:34:12 robert Exp $
+# $OpenBSD: Makefile,v 1.75 2012/10/31 16:23:53 kili Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -226,6 +226,7 @@ MAKE_ENV+=	AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		NOCONFIGURE=1
 
 CONFIGURE_ARGS+=--disable-build-mozilla \
+		--disable-ccache \
 		--disable-dbus \
 		--disable-epm \
 		--disable-fetch-external \
