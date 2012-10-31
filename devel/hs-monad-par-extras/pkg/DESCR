@@ -1,0 +1,3 @@
+The modules contained in this packagte provide additional data
+structures, and other added capabilities layered on top of the 'Par'
+monad.
