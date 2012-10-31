@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2012/06/22 15:08:44 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.12 2012/10/31 13:21:07 dcoppa Exp $
 
 COMMENT =	gnome-mplayer toolkit
-DISTNAME =	gmtk-1.0.6
-REVISION =	3
+DISTNAME =	gmtk-1.0.7
 
-SHARED_LIBS =	gmlib	0.0 \
-		gmtk	0.0
+SHARED_LIBS =	gmlib	1.0 \
+		gmtk	1.0
 
 CATEGORIES =	x11 devel
 
@@ -24,17 +23,18 @@ MASTER_SITES =	http://gmtk.googlecode.com/files/
 MODULES =	devel/gettext \
 		textproc/intltool
 
-WANTLIB = GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
-	  Xext Xfixes Xi Xinerama Xrandr Xrender \
-	  Xxf86vm atk-1.0 cairo drm expat ffi \
-	  fontconfig freetype gdk-x11-2.0 \
-	  gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 \
-	  gobject-2.0 gthread-2.0 gtk-x11-2.0 m \
-	  pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
-	  pixman-1 png pthread-stubs stdc++ xcb \
-	  xcb-render xcb-shm z
+WANTLIB =	GL ICE SM X11 Xau Xcomposite Xcursor Xdamage \
+		Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender \
+		Xxf86vm atk-1.0 atk-bridge-2.0 atspi cairo \
+		cairo-gobject dbus-1 drm expat ffi \
+		fontconfig freetype gdk-3 gdk_pixbuf-2.0 \
+		gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 \
+		gthread-2.0 gtk-3 harfbuzz icudata icule \
+		icuuc m pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 pcre pixman-1 png pthread \
+		pthread-stubs stdc++ xcb xcb-render xcb-shm z
 
-LIB_DEPENDS =		x11/gtk+2
+LIB_DEPENDS =		x11/gtk+3
 
 RUN_DEPENDS =		x11/mplayer
 
@@ -47,8 +47,8 @@ CONFIGURE_ENV =         CPPFLAGS="-I${LOCALBASE}/include" \
 
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--enable-gsettings \
+			--enable-gtk3 \
 			--disable-gconf \
-			--disable-gtk3 \
 			--disable-keystore \
 			--with-gio \
 			--without-alsa \

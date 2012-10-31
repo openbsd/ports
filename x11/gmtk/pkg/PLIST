@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/01/05 14:47:10 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/10/31 13:21:07 dcoppa Exp $
 %%SHARED%%
 include/gmtk/
 include/gmtk/gm_audio.h
 include/gmtk/gm_common.h
 include/gmtk/gm_file.h
+include/gmtk/gm_log.h
 include/gmtk/gm_parse.h
 include/gmtk/gm_pref_store.h
 include/gmtk/gm_strfuncs.h
