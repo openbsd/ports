@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.63 2012/09/01 14:37:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2012/10/31 13:22:03 dcoppa Exp $
 
 COMMENT =		GTK+/GNOME frontend for MPlayer
-V =			1.0.6
+V =			1.0.7
 DISTNAME =		gnome-mplayer-${V}
-REVISION =		3
 
 CATEGORIES =		x11 multimedia
 
@@ -19,14 +18,15 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB = GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi \
-	Xinerama Xrandr Xrender Xss atk-1.0 c cairo curl dbus-1 \
-	dbus-glib-1 expat fontconfig freetype gdk-x11-2.0 \
-	gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmlib gmodule-2.0 gmtk \
-	gobject-2.0 gpod gthread-2.0 gtk-x11-2.0 m musicbrainz3 \
-	neon notify pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-	pixman-1 png pthread pthread-stubs xcb xcb-render \
-	xcb-shm z
+WANTLIB =		GL X11 Xrender Xss atk-1.0 c cairo \
+			cairo-gobject curl dbus-1 dbus-glib-1 \
+			expat fontconfig freetype gdk-3 \
+			gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmlib \
+			gmtk gobject-2.0 gpod gthread-2.0 gtk-3 \
+			m musicbrainz3 neon notify pango-1.0 \
+			pangocairo-1.0 pangoft2-1.0 pixman-1 \
+			png pthread pthread-stubs xcb \
+			xcb-render xcb-shm z
 
 MODULES =		devel/gettext \
 			devel/dconf
@@ -36,10 +36,9 @@ LIB_DEPENDS =		devel/libnotify>=0.7.2 \
 			audio/libmusicbrainz \
 			net/curl \
 			x11/dbus-glib \
-			x11/gmtk>=${V}p1 \
-			x11/gtk+2
+			x11/gmtk>=${V}
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gnome/icon-theme \
+			x11/gnome/icon-theme-symbolic \
 			x11/gtk+2,-guic
 
 USE_LIBTOOL =		Yes
@@ -51,15 +50,15 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include \
 				-I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib \
-				-L${X11BASE}/lib -pthread"
+				-L${X11BASE}/lib"
 CONFIGURE_ARGS =	--with-dbus \
 			--with-gio \
 			--with-libgpod \
 			--with-libmusicbrainz3 \
 			--with-libnotify \
+			--enable-gtk3 \
 			--without-alsa \
 			--without-pulseaudio \
-			--disable-gtk3 \
 			--disable-nautilus
 
 pre-install:

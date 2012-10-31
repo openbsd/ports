@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_dbus-interface_c,v 1.1 2012/10/31 13:22:03 dcoppa Exp $
+
+Prevent gnome-mplayer from hanging at startup when executed outside
+of a Desktop Environment
+
+--- src/dbus-interface.c.orig	Fri Oct 26 19:22:31 2012
++++ src/dbus-interface.c	Wed Oct 31 09:54:13 2012
+@@ -1622,10 +1622,14 @@ static gboolean switch_screensaver(gboolean enabled)
+ 
+ void dbus_enable_screensaver()
+ {
++#if 0
+     (void) switch_screensaver(TRUE);
++#endif
+ }
+ 
+ void dbus_disable_screensaver()
+ {
++#if 0
+     (void) switch_screensaver(FALSE);
++#endif
+ }

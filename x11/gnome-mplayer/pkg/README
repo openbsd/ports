@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2011/06/02 13:41:42 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2012/10/31 13:22:03 dcoppa Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -9,8 +9,3 @@ be running when using gnome-mplayer.
 
 MPlayer software volume control (softvol) is enabled by default because
 there is no volume control in mplayer's sndio(7) backend.
-
-To use the gnome-power-manager's inhibit method instead of the
-XScrnSaver one, go into Edit->Preferences->Interface and remove the
-checkmark from "Use X Screen Saver control over Gnome Power Manager"
-(this obviously needs the gnome-power-manager package to be installed).
