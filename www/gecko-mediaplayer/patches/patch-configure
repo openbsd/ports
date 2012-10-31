@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure,v 1.11 2012/09/24 06:51:59 jasper Exp $
+$OpenBSD: patch-configure,v 1.12 2012/10/31 13:23:04 dcoppa Exp $
 
 Remove -ldl
 
 Fix GECKO_CFLAGS and GECKO_LIBS
 
---- configure.orig	Thu Mar 22 04:30:54 2012
-+++ configure	Mon Mar 26 16:13:49 2012
-@@ -7350,8 +7350,8 @@ fi
+--- configure.orig	Mon Oct  8 15:16:57 2012
++++ configure	Mon Oct 15 15:17:26 2012
+@@ -7385,8 +7385,8 @@ fi
  if test "${with_xulrunner_sdk+set}" = set; then :
    withval=$with_xulrunner_sdk;
  	XULRUNNER_SDK_PREFIX=$with_xulrunner_sdk
