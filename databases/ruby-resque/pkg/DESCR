@@ -1,0 +1,15 @@
+Resque is a Redis-backed Ruby library for creating background jobs,
+placing those jobs on multiple queues, and processing them later.
+Background jobs can be any Ruby class or module that responds to
+perform. Your existing classes can easily be converted to background
+jobs or you can create new classes specifically to do work. Or, you can
+do both.
+
+Resque is heavily inspired by DelayedJob and is comprised of three parts:
+
+  * Ruby library for creating, querying, and processing jobs
+  * Rake task for starting a worker which processes jobs
+  * Sinatra app for monitoring queues, jobs, and workers.
+
+The ruby-resque package does not install redis by default since it can use
+a Redis server on a different host. To install redis: pkg_add redis
