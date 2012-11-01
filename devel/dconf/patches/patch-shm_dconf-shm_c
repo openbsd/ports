@@ -1,0 +1,17 @@
+$OpenBSD: patch-shm_dconf-shm_c,v 1.1 2012/11/01 11:59:57 dcoppa Exp $
+
+Fix a crash caused by a limitation of the current vm system (see uvm(9)):
+mapping descriptors PROT_WRITE without also specifying PROT_READ results
+in a segmentation fault when first accessing the mapping.
+
+--- shm/dconf-shm.c.orig	Wed Oct 31 22:06:47 2012
++++ shm/dconf-shm.c	Wed Oct 31 22:10:58 2012
+@@ -134,7 +134,7 @@ dconf_shm_flag (const gchar *name)
+            *
+            * Using mmap() works everywhere.
+            */
+-          shm = mmap (NULL, 1, PROT_WRITE, MAP_SHARED, fd, 0);
++          shm = mmap (NULL, 1, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
+           g_assert (shm != MAP_FAILED);
+ 
+           *shm = 1;
