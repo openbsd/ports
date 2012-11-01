@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2012/10/29 16:09:58 abieber Exp $
+# $OpenBSD: Makefile,v 1.3 2012/11/01 14:53:39 ajacoutot Exp $
 #
 COMMENT=	fast, small, webkit based browser written in lua
 
 VERSION=	2012.09.13.rc1
 
-REVISION=	0
+REVISION=	1
 
 DISTNAME=	luakit-${VERSION}
 
@@ -38,6 +38,10 @@ BUILD_DEPENDS=	devel/help2man \
 RUN_DEPENDS=	devel/luafs \
 		lang/luajit \
 		www/webkit
+
+# webkit browsing
+RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-ffmpeg \
+		multimedia/gstreamer-0.10/plugins-good
 
 MAKE_ENV+= USE_LUAJIT=1 USE_UNIQUE=0 INSTALLDIR=${PREFIX} \
 	MANDIR=${PREFIX}
