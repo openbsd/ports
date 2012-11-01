@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1192 2012/10/29 22:27:05 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1193 2012/11/01 09:58:53 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1418,7 +1418,7 @@ USE_X11 = Yes
 .endfor
 
 .if ${USE_X11:L} == "yes" && ${PORTS_BUILD_XENOCARA_TOO:L} == "yes"
-BUILD_DEPENDS += xenocara/meta
+BUILD_DEPENDS += base/xenocara/meta
 .endif
 
 .if ${NO_DEPENDS:L} == "no"
