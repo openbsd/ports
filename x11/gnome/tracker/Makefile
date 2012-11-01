@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.121 2012/10/28 11:33:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.122 2012/11/01 18:26:01 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT-evolution=	(meta-)tracker indexer plugin for evolution
 COMMENT-nautilus=	(meta-)tracker tagging plugin for nautilus
 
 GNOME_PROJECT=	tracker
-GNOME_VERSION=	0.14.3
+GNOME_VERSION=	0.14.4
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker.
@@ -109,7 +109,7 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 RUN_DEPENDS-evolution=	${MODGETTEXT_RUN_DEPENDS}
 # XXX should be a LIB_DEPENDS+WANTLIB but check-lib-depends(1) does not
 # work with unversioned solibs (LOCALBASE/lib/evolution/*/*.so).
-BUILD_DEPENDS +=	mail/evolution,-main
+#BUILD_DEPENDS +=	mail/evolution,-main
 RUN_DEPENDS-evolution +=mail/evolution,-main
 LIB_DEPENDS-evolution=	${LIB_DEPENDS} \
 			x11/gnome/tracker,-main=${GNOME_VERSION}
@@ -136,6 +136,9 @@ CONFIGURE_ARGS=	--disable-static \
 		--disable-network-manager \
 		--disable-qt
 
+# needs libgxps
+CONFIGURE_ARGS += --disable-libgxps
+
 # needs libosinfo
 CONFIGURE_ARGS += --disable-libosinfo
 
@@ -147,6 +150,7 @@ CONFIGURE_ARGS += --disable-libiptcdata
 
 # XXX temporarily disable tracker,-evolution which does not build with evo >= 3.6.0
 # when fixed:
+#  uncomment BUILD_DEPENDS on evolution
 #  uncomment the rm call in post-install
 #  add -evolution to MULTI_PACKAGES
 #  add x11/gnome/tracker,-evolution to RUN_DEPENDS-extra in meta/gnome
