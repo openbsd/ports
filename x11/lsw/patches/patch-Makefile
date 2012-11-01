@@ -1,0 +1,38 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2012/11/01 14:39:36 zinke Exp $
+--- Makefile.orig	Sat Jun  4 22:35:09 2011
++++ Makefile	Tue Jul 10 21:20:34 2012
+@@ -15,12 +15,10 @@ options:
+ 	@echo "CC       = ${CC}"
+ 
+ .c.o:
+-	@echo CC -c $<
+-	@${CC} -c ${CFLAGS} $<
++	${CC} -c ${CFLAGS} $<
+ 
+ lsw: ${OBJ}
+-	@echo CC -o $@
+-	@${CC} -o $@ ${OBJ} ${LDFLAGS}
++	${CC} -o $@ ${OBJ} ${LDFLAGS}
+ 
+ clean:
+ 	@echo cleaning
+@@ -35,13 +33,12 @@ dist: clean
+ 	@rm -rf lsw-${VERSION}
+ 
+ install: all
+-	@echo installing executable file to ${DESTDIR}${PREFIX}/bin
+-	@mkdir -p ${DESTDIR}${PREFIX}/bin
+-	@cp -f lsw ${DESTDIR}${PREFIX}/bin
+-	@chmod 755 ${DESTDIR}${PREFIX}/bin/lsw
+-	@echo installing manual page to ${DESTDIR}${MANPREFIX}/man1/lsw.1
+-	@sed "s/VERSION/${VERSION}/g" < lsw.1 > ${DESTDIR}${MANPREFIX}/man1/lsw.1
+-	@chmod 644 ${DESTDIR}${MANPREFIX}/man1/lsw.1
++	${BSD_INSTALL_PROGRAM_DIR} ${DESTDIR}${PREFIX}/bin
++	${BSD_INSTALL_PROGRAM} lsw ${DESTDIR}${PREFIX}/bin
++	${BSD_INSTALL_MAN_DIR} ${DESTDIR}${MANPREFIX}/man1
++	sed "s/VERSION/${VERSION}/g" < lsw.1 > lsw.1.tmp
++	mv lsw.1.tmp lsw.1
++	${BSD_INSTALL_MAN} lsw.1 ${DESTDIR}${MANPREFIX}/man1
+ 
+ uninstall:
+ 	@echo removing executable file from ${DESTDIR}${PREFIX}/bin
