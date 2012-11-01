@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/11/01 14:41:03 zinke Exp $
+# $OpenBSD: Makefile,v 1.2 2012/11/01 14:56:33 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		XMPP plugin for irssi
 
 DISTNAME=		irssi-xmpp-0.52
+REVISION=		0
 
 CATEGORIES=		net
 
@@ -18,9 +19,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		glib-2.0 iconv idn intl loudmouth-1
+WANTLIB=		glib-2.0 idn loudmouth-1
 
 MASTER_SITES=		${HOMEPAGE}files/
+
+MODULES=		devel/gettext
 
 BUILD_DEPENDS=		net/irssi:configure
 LIB_DEPENDS=		net/loudmouth
