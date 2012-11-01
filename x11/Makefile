@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.503 2012/10/15 08:04:47 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.504 2012/11/01 14:49:25 zinke Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -139,6 +139,7 @@
      SUBDIR += libgdiplus
      SUBDIR += libsexy
      SUBDIR += libxdg-basedir
+     SUBDIR += lsw
      SUBDIR += lupe
      SUBDIR += lxrandr
      SUBDIR += mlterm
@@ -236,6 +237,7 @@
      SUBDIR += sselp
      SUBDIR += st
      SUBDIR += stalonetray
+     SUBDIR += swarp
      SUBDIR += swisswatch
      SUBDIR += tabbed
      SUBDIR += tangerine-icon-theme
