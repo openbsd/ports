@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.8 2011/05/17 08:38:33 dcoppa Exp $
+@comment $OpenBSD: PLIST-docs,v 1.9 2012/11/01 22:54:19 sthen Exp $
 @comment lib/python${MODPY_VERSION}/
 @comment lib/python${MODPY_VERSION}/site-packages/
 @comment lib/python${MODPY_VERSION}/site-packages/dbus/
@@ -25,18 +25,24 @@ share/doc/py-qt4/html/_sources/keyword_arguments.txt
 share/doc/py-qt4/html/_sources/new_style_signals_slots.txt
 share/doc/py-qt4/html/_sources/old_style_signals_slots.txt
 share/doc/py-qt4/html/_sources/pickle.txt
+share/doc/py-qt4/html/_sources/pyqt_qsettings.txt
+share/doc/py-qt4/html/_sources/pyqt_qvariant.txt
 share/doc/py-qt4/html/_sources/python_shell.txt
 share/doc/py-qt4/html/_sources/python_v3.txt
 share/doc/py-qt4/html/_sources/qml.txt
-share/doc/py-qt4/html/_sources/qsettings.txt
 share/doc/py-qt4/html/_sources/qt_properties.txt
-share/doc/py-qt4/html/_sources/qvariant.txt
 share/doc/py-qt4/html/_sources/resources.txt
 share/doc/py-qt4/html/_sources/webkit.txt
 share/doc/py-qt4/html/_static/
+share/doc/py-qt4/html/_static/ajax-loader.gif
 share/doc/py-qt4/html/_static/basic.css
+share/doc/py-qt4/html/_static/comment-bright.png
+share/doc/py-qt4/html/_static/comment-close.png
+share/doc/py-qt4/html/_static/comment.png
 share/doc/py-qt4/html/_static/default.css
 share/doc/py-qt4/html/_static/doctools.js
+share/doc/py-qt4/html/_static/down-pressed.png
+share/doc/py-qt4/html/_static/down.png
 share/doc/py-qt4/html/_static/file.png
 share/doc/py-qt4/html/_static/jquery.js
 share/doc/py-qt4/html/_static/logo.png
@@ -47,6 +53,9 @@ share/doc/py-qt4/html/_static/pygments.css
 share/doc/py-qt4/html/_static/searchtools.js
 share/doc/py-qt4/html/_static/sidebar.js
 share/doc/py-qt4/html/_static/underscore.js
+share/doc/py-qt4/html/_static/up-pressed.png
+share/doc/py-qt4/html/_static/up.png
+share/doc/py-qt4/html/_static/websupport.js
 share/doc/py-qt4/html/assistant-manual.html
 share/doc/py-qt4/html/buffer_interface.html
 share/doc/py-qt4/html/build_system.html
@@ -400,6 +409,7 @@ share/doc/py-qt4/html/images/qwebview-url.png
 share/doc/py-qt4/html/images/rb-logo.png
 share/doc/py-qt4/html/images/relationaltable.png
 share/doc/py-qt4/html/images/rintersect.png
+share/doc/py-qt4/html/images/roaming-states.png
 share/doc/py-qt4/html/images/rsubtract.png
 share/doc/py-qt4/html/images/runion.png
 share/doc/py-qt4/html/images/rxor.png
@@ -475,6 +485,8 @@ share/doc/py-qt4/html/phonon-volumeslider.html
 share/doc/py-qt4/html/phonon.html
 share/doc/py-qt4/html/pickle.html
 share/doc/py-qt4/html/py-modindex.html
+share/doc/py-qt4/html/pyqt_qsettings.html
+share/doc/py-qt4/html/pyqt_qvariant.html
 share/doc/py-qt4/html/python_shell.html
 share/doc/py-qt4/html/python_v3.html
 share/doc/py-qt4/html/qabstractanimation.html
@@ -562,6 +574,27 @@ share/doc/py-qt4/html/qdateedit.html
 share/doc/py-qt4/html/qdatetime.html
 share/doc/py-qt4/html/qdatetimeedit-sections.html
 share/doc/py-qt4/html/qdatetimeedit.html
+share/doc/py-qt4/html/qdbus.html
+share/doc/py-qt4/html/qdbusabstractadaptor.html
+share/doc/py-qt4/html/qdbusabstractinterface.html
+share/doc/py-qt4/html/qdbusargument.html
+share/doc/py-qt4/html/qdbusconnection-connectioncapabilities.html
+share/doc/py-qt4/html/qdbusconnection-registeroptions.html
+share/doc/py-qt4/html/qdbusconnection.html
+share/doc/py-qt4/html/qdbusconnectioninterface.html
+share/doc/py-qt4/html/qdbuserror.html
+share/doc/py-qt4/html/qdbusinterface.html
+share/doc/py-qt4/html/qdbusmessage.html
+share/doc/py-qt4/html/qdbusobjectpath.html
+share/doc/py-qt4/html/qdbuspendingcall.html
+share/doc/py-qt4/html/qdbuspendingcallwatcher.html
+share/doc/py-qt4/html/qdbuspendingreply.html
+share/doc/py-qt4/html/qdbusreply.html
+share/doc/py-qt4/html/qdbusservicewatcher-watchmode.html
+share/doc/py-qt4/html/qdbusservicewatcher.html
+share/doc/py-qt4/html/qdbussignature.html
+share/doc/py-qt4/html/qdbusunixfiledescriptor.html
+share/doc/py-qt4/html/qdbusvariant.html
 share/doc/py-qt4/html/qdeclarativecomponent.html
 share/doc/py-qt4/html/qdeclarativecontext.html
 share/doc/py-qt4/html/qdeclarativeengine.html
@@ -641,6 +674,7 @@ share/doc/py-qt4/html/qeventloop.html
 share/doc/py-qt4/html/qeventtransition.html
 share/doc/py-qt4/html/qextensionfactory.html
 share/doc/py-qt4/html/qextensionmanager.html
+share/doc/py-qt4/html/qfile-filehandleflags.html
 share/doc/py-qt4/html/qfile-permissions.html
 share/doc/py-qt4/html/qfile.html
 share/doc/py-qt4/html/qfiledialog-options.html
@@ -688,6 +722,7 @@ share/doc/py-qt4/html/qglshader-shadertype.html
 share/doc/py-qt4/html/qglshader.html
 share/doc/py-qt4/html/qglshaderprogram.html
 share/doc/py-qt4/html/qglwidget.html
+share/doc/py-qt4/html/qglyphrun.html
 share/doc/py-qt4/html/qgradient.html
 share/doc/py-qt4/html/qgraphicsanchor.html
 share/doc/py-qt4/html/qgraphicsanchorlayout.html
@@ -759,6 +794,8 @@ share/doc/py-qt4/html/qhostinfo.html
 share/doc/py-qt4/html/qhoverevent.html
 share/doc/py-qt4/html/qhttp.html
 share/doc/py-qt4/html/qhttpheader.html
+share/doc/py-qt4/html/qhttpmultipart.html
+share/doc/py-qt4/html/qhttppart.html
 share/doc/py-qt4/html/qhttprequestheader.html
 share/doc/py-qt4/html/qhttpresponseheader.html
 share/doc/py-qt4/html/qicon.html
@@ -766,6 +803,7 @@ share/doc/py-qt4/html/qicondragevent.html
 share/doc/py-qt4/html/qiconengine.html
 share/doc/py-qt4/html/qiconenginev2-availablesizesargument.html
 share/doc/py-qt4/html/qiconenginev2.html
+share/doc/py-qt4/html/qidentityproxymodel.html
 share/doc/py-qt4/html/qimage.html
 share/doc/py-qt4/html/qimageiohandler.html
 share/doc/py-qt4/html/qimagereader.html
@@ -928,6 +966,7 @@ share/doc/py-qt4/html/qpytextobject.html
 share/doc/py-qt4/html/qquaternion.html
 share/doc/py-qt4/html/qradialgradient.html
 share/doc/py-qt4/html/qradiobutton.html
+share/doc/py-qt4/html/qrawfont.html
 share/doc/py-qt4/html/qreadlocker.html
 share/doc/py-qt4/html/qreadwritelock.html
 share/doc/py-qt4/html/qrect.html
@@ -998,6 +1037,7 @@ share/doc/py-qt4/html/qsqlrelationaldelegate.html
 share/doc/py-qt4/html/qsqlrelationaltablemodel.html
 share/doc/py-qt4/html/qsqlresult.html
 share/doc/py-qt4/html/qsqltablemodel.html
+share/doc/py-qt4/html/qssl-ssloptions.html
 share/doc/py-qt4/html/qssl.html
 share/doc/py-qt4/html/qsslcertificate.html
 share/doc/py-qt4/html/qsslcipher.html
@@ -1113,6 +1153,7 @@ share/doc/py-qt4/html/qtassistant.html
 share/doc/py-qt4/html/qtcore.html
 share/doc/py-qt4/html/qtcpserver.html
 share/doc/py-qt4/html/qtcpsocket.html
+share/doc/py-qt4/html/qtdbus.html
 share/doc/py-qt4/html/qtdeclarative.html
 share/doc/py-qt4/html/qtdesigner.html
 share/doc/py-qt4/html/qtemporaryfile.html
@@ -1235,6 +1276,7 @@ share/doc/py-qt4/html/qwebpage-errorpageextensionreturn.html
 share/doc/py-qt4/html/qwebpage-extensionoption.html
 share/doc/py-qt4/html/qwebpage-extensionreturn.html
 share/doc/py-qt4/html/qwebpage-findflags.html
+share/doc/py-qt4/html/qwebpage-viewportattributes.html
 share/doc/py-qt4/html/qwebpage.html
 share/doc/py-qt4/html/qwebpluginfactory-extensionoption.html
 share/doc/py-qt4/html/qwebpluginfactory-extensionreturn.html
@@ -1315,12 +1357,12 @@ share/doc/py-qt4/sphinx/keyword_arguments.rst
 share/doc/py-qt4/sphinx/new_style_signals_slots.rst
 share/doc/py-qt4/sphinx/old_style_signals_slots.rst
 share/doc/py-qt4/sphinx/pickle.rst
+share/doc/py-qt4/sphinx/pyqt_qsettings.rst
+share/doc/py-qt4/sphinx/pyqt_qvariant.rst
 share/doc/py-qt4/sphinx/python_shell.rst
 share/doc/py-qt4/sphinx/python_v3.rst
 share/doc/py-qt4/sphinx/qml.rst
-share/doc/py-qt4/sphinx/qsettings.rst
 share/doc/py-qt4/sphinx/qt_properties.rst
-share/doc/py-qt4/sphinx/qvariant.rst
 share/doc/py-qt4/sphinx/resources.rst
 share/doc/py-qt4/sphinx/static/
 share/doc/py-qt4/sphinx/static/default.css

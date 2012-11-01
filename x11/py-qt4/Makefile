@@ -1,20 +1,16 @@
-# $OpenBSD: Makefile,v 1.37 2011/10/15 16:21:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.38 2012/11/01 22:54:18 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	python Qt4 bindings
 COMMENT-docs=	py-qt4 documentation
 
-# XXX: Upstream doesn't keep old files; if updating please mirror or ask sthen@
-V=		4.8.4
+V=		4.9.5
 DISTNAME=	PyQt-x11-gpl-${V}
 PKGNAME=	py-qt4-${V}
 PKGNAME-main=	py-qt4-${V}
 PKGNAME-docs=	py-qt4-docs-${V}
 EPOCH=		0
-
-REVISION-main=	2
-REVISION-docs=	0
 
 CATEGORIES=	x11 devel
 
@@ -26,9 +22,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL GLU X11 Xext c dbus-1 m pthread stdc++ 
-WANTLIB += QtDeclarative QtDesigner QtGui QtHelp QtNetwork QtOpenGL
-WANTLIB += QtScript QtSql QtSvg QtTest QtWebKit QtXml QtXmlPatterns
+WANTLIB += GL ICE QtDBus QtDeclarative QtDesigner QtGui QtHelp QtMultimedia
+WANTLIB += QtNetwork QtOpenGL QtScript QtScriptTools QtSql QtSvg QtTest
+WANTLIB += QtWebKit QtXml QtXmlPatterns SM X11 Xext Xi Xinerama Xrender
+WANTLIB += c dbus-1 fontconfig freetype m phonon pthread stdc++
 WANTLIB += ${MODPY_WANTLIB}
 
 MULTI_PACKAGES=	-main -docs
@@ -39,16 +36,14 @@ RUN_DEPENDS-docs=
 PKG_ARCH-docs=	*
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	devel/py-sip>=4.12.2 \
+RUN_DEPENDS=	devel/py-sip>=4.14.1 \
 		x11/dbus-python
 LIB_DEPENDS=	${MODQT4_LIB_DEPENDS}>=4.7.2 \
 		${MODPY_LIB_DEPENDS}
 
 NO_REGRESS=	Yes
 
-MASTER_SITES=	http://www.riverbankcomputing.co.uk/static/Downloads/PyQt4/ \
-		http://spacehopper.org/mirrors/ \
-		http://distfiles.nl/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pyqt/}
 
 MODULES=	devel/gettext \
 		lang/python \
@@ -74,9 +69,10 @@ CONFIGURE_ARGS=	--verbose \
 FAKE_FLAGS=	INSTALL_ROOT=${DESTDIR}
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 
-PYQTMODS=	QtAssistant QtCore QtDeclarative QtDesigner QtGui QtHelp \
-		QtNetwork QtOpenGL QtScript QtSql QtSvg QtTest QtWebKit \
-		QtXml QtXmlPatterns
+PYQTMODS=	QtAssistant QtCore QtDBus QtDeclarative QtDesigner \
+		QtGui QtHelp QtMultimedia QtNetwork QtOpenGL QtScript \
+		QtScriptTools QtSql QtSvg QtTest QtWebKit QtXml \
+		QtXmlPatterns phonon
 
 .for i in ${PYQTMODS}
 CONFIGURE_ARGS+=--enable=${i}

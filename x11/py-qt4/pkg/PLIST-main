@@ -1,17 +1,20 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2011/10/15 16:21:52 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2012/11/01 22:54:19 sthen Exp $
 @bin bin/pylupdate4
 @bin bin/pyrcc4
 bin/pyuic4
 lib/python${MODPY_VERSION}/site-packages/PyQt4/
 lib/python${MODPY_VERSION}/site-packages/PyQt4/Qt.so
 lib/python${MODPY_VERSION}/site-packages/PyQt4/QtCore.so
+lib/python${MODPY_VERSION}/site-packages/PyQt4/QtDBus.so
 lib/python${MODPY_VERSION}/site-packages/PyQt4/QtDeclarative.so
 lib/python${MODPY_VERSION}/site-packages/PyQt4/QtDesigner.so
 lib/python${MODPY_VERSION}/site-packages/PyQt4/QtGui.so
 lib/python${MODPY_VERSION}/site-packages/PyQt4/QtHelp.so
+lib/python${MODPY_VERSION}/site-packages/PyQt4/QtMultimedia.so
 lib/python${MODPY_VERSION}/site-packages/PyQt4/QtNetwork.so
 lib/python${MODPY_VERSION}/site-packages/PyQt4/QtOpenGL.so
 lib/python${MODPY_VERSION}/site-packages/PyQt4/QtScript.so
+lib/python${MODPY_VERSION}/site-packages/PyQt4/QtScriptTools.so
 lib/python${MODPY_VERSION}/site-packages/PyQt4/QtSql.so
 lib/python${MODPY_VERSION}/site-packages/PyQt4/QtSvg.so
 lib/python${MODPY_VERSION}/site-packages/PyQt4/QtTest.so
@@ -20,6 +23,7 @@ lib/python${MODPY_VERSION}/site-packages/PyQt4/QtXml.so
 lib/python${MODPY_VERSION}/site-packages/PyQt4/QtXmlPatterns.so
 lib/python${MODPY_VERSION}/site-packages/PyQt4/__init__.py
 lib/python${MODPY_VERSION}/site-packages/PyQt4/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/PyQt4/phonon.so
 lib/python${MODPY_VERSION}/site-packages/PyQt4/pyqtconfig.py
 lib/python${MODPY_VERSION}/site-packages/PyQt4/pyqtconfig.pyc
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/
@@ -32,8 +36,8 @@ lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/Compiler/indenter.py
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/Compiler/indenter.pyc
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/Compiler/misc.py
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/Compiler/misc.pyc
-lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/Compiler/proxy_type.py
-lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/Compiler/proxy_type.pyc
+lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/Compiler/proxy_metaclass.py
+lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/Compiler/proxy_metaclass.pyc
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/Compiler/qobjectcreator.py
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/Compiler/qobjectcreator.pyc
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/Compiler/qtproxies.py
@@ -119,6 +123,7 @@ share/sip/QtCore/qelapsedtimer.sip
 share/sip/QtCore/qeventloop.sip
 share/sip/QtCore/qeventtransition.sip
 share/sip/QtCore/qfile.sip
+share/sip/QtCore/qfiledevice.sip
 share/sip/QtCore/qfileinfo.sip
 share/sip/QtCore/qfilesystemwatcher.sip
 share/sip/QtCore/qfinalstate.sip
@@ -187,6 +192,22 @@ share/sip/QtCore/qvariantanimation.sip
 share/sip/QtCore/qvector.sip
 share/sip/QtCore/qwaitcondition.sip
 share/sip/QtCore/qxmlstream.sip
+share/sip/QtDBus/
+share/sip/QtDBus/QtDBusmod.sip
+share/sip/QtDBus/qdbusabstractadaptor.sip
+share/sip/QtDBus/qdbusabstractinterface.sip
+share/sip/QtDBus/qdbusargument.sip
+share/sip/QtDBus/qdbusconnection.sip
+share/sip/QtDBus/qdbusconnectioninterface.sip
+share/sip/QtDBus/qdbuserror.sip
+share/sip/QtDBus/qdbusextratypes.sip
+share/sip/QtDBus/qdbusinterface.sip
+share/sip/QtDBus/qdbusmessage.sip
+share/sip/QtDBus/qdbuspendingcall.sip
+share/sip/QtDBus/qdbusservicewatcher.sip
+share/sip/QtDBus/qdbusunixfiledescriptor.sip
+share/sip/QtDBus/qpydbuspendingreply.sip
+share/sip/QtDBus/qpydbusreply.sip
 share/sip/QtDeclarative/
 share/sip/QtDeclarative/QtDeclarativemod.sip
 share/sip/QtDeclarative/qdeclarativecomponent.sip
@@ -290,6 +311,7 @@ share/sip/QtGui/qframe.sip
 share/sip/QtGui/qgenericmatrix.sip
 share/sip/QtGui/qgesture.sip
 share/sip/QtGui/qgesturerecognizer.sip
+share/sip/QtGui/qglyphrun.sip
 share/sip/QtGui/qgraphicsanchorlayout.sip
 share/sip/QtGui/qgraphicseffect.sip
 share/sip/QtGui/qgraphicsgridlayout.sip
@@ -306,9 +328,11 @@ share/sip/QtGui/qgraphicsview.sip
 share/sip/QtGui/qgraphicswidget.sip
 share/sip/QtGui/qgridlayout.sip
 share/sip/QtGui/qgroupbox.sip
+share/sip/QtGui/qguiapplication.sip
 share/sip/QtGui/qheaderview.sip
 share/sip/QtGui/qicon.sip
 share/sip/QtGui/qiconengine.sip
+share/sip/QtGui/qidentityproxymodel.sip
 share/sip/QtGui/qimage.sip
 share/sip/QtGui/qimageiohandler.sip
 share/sip/QtGui/qimagereader.sip
@@ -339,6 +363,7 @@ share/sip/QtGui/qmessagebox.sip
 share/sip/QtGui/qmime.sip
 share/sip/QtGui/qmouseeventtransition.sip
 share/sip/QtGui/qmovie.sip
+share/sip/QtGui/qpagedpaintdevice.sip
 share/sip/QtGui/qpagesetupdialog.sip
 share/sip/QtGui/qpaintdevice.sip
 share/sip/QtGui/qpaintengine.sip
@@ -364,6 +389,7 @@ share/sip/QtGui/qpushbutton.sip
 share/sip/QtGui/qpytextobject.sip
 share/sip/QtGui/qquaternion.sip
 share/sip/QtGui/qradiobutton.sip
+share/sip/QtGui/qrawfont.sip
 share/sip/QtGui/qregion.sip
 share/sip/QtGui/qrgb.sip
 share/sip/QtGui/qrubberband.sip
@@ -412,6 +438,7 @@ share/sip/QtGui/qtoolbar.sip
 share/sip/QtGui/qtoolbox.sip
 share/sip/QtGui/qtoolbutton.sip
 share/sip/QtGui/qtooltip.sip
+share/sip/QtGui/qtouchdevice.sip
 share/sip/QtGui/qtransform.sip
 share/sip/QtGui/qtreeview.sip
 share/sip/QtGui/qtreewidget.sip
@@ -440,15 +467,28 @@ share/sip/QtHelp/qhelpindexwidget.sip
 share/sip/QtHelp/qhelpsearchengine.sip
 share/sip/QtHelp/qhelpsearchquerywidget.sip
 share/sip/QtHelp/qhelpsearchresultwidget.sip
+share/sip/QtMultimedia/
+share/sip/QtMultimedia/QtMultimediamod.sip
+share/sip/QtMultimedia/qabstractvideobuffer.sip
+share/sip/QtMultimedia/qabstractvideosurface.sip
+share/sip/QtMultimedia/qaudio.sip
+share/sip/QtMultimedia/qaudiodeviceinfo.sip
+share/sip/QtMultimedia/qaudioformat.sip
+share/sip/QtMultimedia/qaudioinput.sip
+share/sip/QtMultimedia/qaudiooutput.sip
+share/sip/QtMultimedia/qvideoframe.sip
+share/sip/QtMultimedia/qvideosurfaceformat.sip
 share/sip/QtNetwork/
 share/sip/QtNetwork/QtNetworkmod.sip
 share/sip/QtNetwork/qabstractnetworkcache.sip
 share/sip/QtNetwork/qabstractsocket.sip
 share/sip/QtNetwork/qauthenticator.sip
+share/sip/QtNetwork/qdnslookup.sip
 share/sip/QtNetwork/qftp.sip
 share/sip/QtNetwork/qhostaddress.sip
 share/sip/QtNetwork/qhostinfo.sip
 share/sip/QtNetwork/qhttp.sip
+share/sip/QtNetwork/qhttpmultipart.sip
 share/sip/QtNetwork/qlocalserver.sip
 share/sip/QtNetwork/qlocalsocket.sip
 share/sip/QtNetwork/qnetworkaccessmanager.sip
@@ -464,6 +504,7 @@ share/sip/QtNetwork/qnetworkrequest.sip
 share/sip/QtNetwork/qnetworksession.sip
 share/sip/QtNetwork/qssl.sip
 share/sip/QtNetwork/qsslcertificate.sip
+share/sip/QtNetwork/qsslcertificateextension.sip
 share/sip/QtNetwork/qsslcipher.sip
 share/sip/QtNetwork/qsslconfiguration.sip
 share/sip/QtNetwork/qsslerror.sip
@@ -493,6 +534,9 @@ share/sip/QtScript/qscriptengineagent.sip
 share/sip/QtScript/qscriptstring.sip
 share/sip/QtScript/qscriptvalue.sip
 share/sip/QtScript/qscriptvalueiterator.sip
+share/sip/QtScriptTools/
+share/sip/QtScriptTools/QtScriptToolsmod.sip
+share/sip/QtScriptTools/qscriptenginedebugger.sip
 share/sip/QtSql/
 share/sip/QtSql/QtSqlmod.sip
 share/sip/QtSql/qsql.sip
@@ -556,3 +600,23 @@ share/sip/QtXmlPatterns/qxmlresultitems.sip
 share/sip/QtXmlPatterns/qxmlschema.sip
 share/sip/QtXmlPatterns/qxmlschemavalidator.sip
 share/sip/QtXmlPatterns/qxmlserializer.sip
+share/sip/phonon/
+share/sip/phonon/abstractaudiooutput.sip
+share/sip/phonon/abstractvideooutput.sip
+share/sip/phonon/audiooutput.sip
+share/sip/phonon/backendcapabilities.sip
+share/sip/phonon/effect.sip
+share/sip/phonon/effectparameter.sip
+share/sip/phonon/effectwidget.sip
+share/sip/phonon/mediacontroller.sip
+share/sip/phonon/medianode.sip
+share/sip/phonon/mediaobject.sip
+share/sip/phonon/mediasource.sip
+share/sip/phonon/objectdescription.sip
+share/sip/phonon/path.sip
+share/sip/phonon/phononmod.sip
+share/sip/phonon/phononnamespace.sip
+share/sip/phonon/seekslider.sip
+share/sip/phonon/videoplayer.sip
+share/sip/phonon/videowidget.sip
+share/sip/phonon/volumeslider.sip
