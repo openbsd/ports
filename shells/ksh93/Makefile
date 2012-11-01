@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/10/13 15:11:51 pascal Exp $
+# $OpenBSD: Makefile,v 1.2 2012/11/01 19:49:22 pascal Exp $
 
 COMMENT =		AT&T Korn Shell
 
@@ -31,7 +31,13 @@ MAKE_ENV =		CC="${CC}" CCFLAGS="${CFLAGS}" SHELL=/bin/sh \
 USE_GROFF =		Yes
 
 WRKDIST =		${WRKDIR}
+.if ${MACHINE_ARCH} == "hppa"
+AST_ARCH =		${WRKSRC}/arch/openbsd.pa
+.elif ${MACHINE_ARCH} == "powerpc"
+AST_ARCH =		${WRKSRC}/arch/openbsd.ppc
+.else
 AST_ARCH =		${WRKSRC}/arch/openbsd.${MACHINE_ARCH}
+.endif
 AST_INC =		${AST_ARCH}/include/ast
 
 do-build:
