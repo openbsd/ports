@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_core_qgssearchstringparser_yy,v 1.1 2012/06/13 10:28:03 espie Exp $
---- src/core/qgssearchstringparser.yy.orig	Wed Jun 13 11:52:43 2012
-+++ src/core/qgssearchstringparser.yy	Wed Jun 13 11:58:49 2012
+$OpenBSD: patch-src_core_qgssearchstringparser_yy,v 1.2 2012/11/01 07:25:36 landry Exp $
+--- src/core/qgssearchstringparser.yy.orig	Wed Feb 22 21:48:14 2012
++++ src/core/qgssearchstringparser.yy	Wed Oct 31 11:09:36 2012
 @@ -18,6 +18,12 @@
-  /* $Id: patch-src_core_qgssearchstringparser_yy,v 1.1 2012/06/13 10:28:03 espie Exp $ */
+  /* $Id: patch-src_core_qgssearchstringparser_yy,v 1.2 2012/11/01 07:25:36 landry Exp $ */
   
  %{
 +// XXX

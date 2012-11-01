@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2011/12/29 21:44:06 landry Exp $
+@comment $OpenBSD: PLIST,v 1.10 2012/11/01 07:25:36 landry Exp $
 @bin bin/qgis
 @bin bin/qgis_mapserv.fcgi
 include/qgis/
@@ -254,9 +254,11 @@ share/qgis/i18n/qgis_cs_CZ.qm
 share/qgis/i18n/qgis_de.qm
 share/qgis/i18n/qgis_el_GR.qm
 share/qgis/i18n/qgis_es.qm
+share/qgis/i18n/qgis_et.qm
 share/qgis/i18n/qgis_fa.qm
 share/qgis/i18n/qgis_fi.qm
 share/qgis/i18n/qgis_fr.qm
+share/qgis/i18n/qgis_gl_ES.qm
 share/qgis/i18n/qgis_he.qm
 share/qgis/i18n/qgis_hr_HR.qm
 share/qgis/i18n/qgis_hu.qm
@@ -265,6 +267,7 @@ share/qgis/i18n/qgis_is.qm
 share/qgis/i18n/qgis_it.qm
 share/qgis/i18n/qgis_ja.qm
 share/qgis/i18n/qgis_ka_GE.qm
+share/qgis/i18n/qgis_ko_KR.qm
 share/qgis/i18n/qgis_lo.qm
 share/qgis/i18n/qgis_lt.qm
 share/qgis/i18n/qgis_lv.qm
@@ -305,6 +308,8 @@ share/qgis/python/plugins/GdalTools/
 share/qgis/python/plugins/GdalTools/GdalTools.py
 share/qgis/python/plugins/GdalTools/__init__.py
 share/qgis/python/plugins/GdalTools/icons/
+share/qgis/python/plugins/GdalTools/icons/24-to-8-bits.png
+share/qgis/python/plugins/GdalTools/icons/8-to-24-bits.png
 share/qgis/python/plugins/GdalTools/icons/about.png
 share/qgis/python/plugins/GdalTools/icons/contour.png
 share/qgis/python/plugins/GdalTools/icons/dem.png
@@ -314,12 +319,10 @@ share/qgis/python/plugins/GdalTools/icons/merge.png
 share/qgis/python/plugins/GdalTools/icons/nearblack.png
 share/qgis/python/plugins/GdalTools/icons/polygonize.png
 share/qgis/python/plugins/GdalTools/icons/projection-add.png
-share/qgis/python/plugins/GdalTools/icons/projection-export.png
 share/qgis/python/plugins/GdalTools/icons/proximity.png
 share/qgis/python/plugins/GdalTools/icons/raster-clip.png
 share/qgis/python/plugins/GdalTools/icons/raster-info.png
 share/qgis/python/plugins/GdalTools/icons/raster-overview.png
-share/qgis/python/plugins/GdalTools/icons/raster-paletted.png
 share/qgis/python/plugins/GdalTools/icons/raster-rgb.png
 share/qgis/python/plugins/GdalTools/icons/rasterize.png
 share/qgis/python/plugins/GdalTools/icons/reset.png
@@ -464,6 +467,7 @@ share/qgis/python/plugins/fTools/icons/gis/layer_extent.png
 share/qgis/python/plugins/fTools/icons/gis/management.png
 share/qgis/python/plugins/fTools/icons/gis/matrix.png
 share/qgis/python/plugins/fTools/icons/gis/mean.png
+share/qgis/python/plugins/fTools/icons/gis/merge_shapes.png
 share/qgis/python/plugins/fTools/icons/gis/multi_to_single.png
 share/qgis/python/plugins/fTools/icons/gis/neighbour.png
 share/qgis/python/plugins/fTools/icons/gis/random_points.png

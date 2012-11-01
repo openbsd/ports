@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2011/12/29 21:44:06 landry Exp $
+# $OpenBSD: Makefile,v 1.27 2012/11/01 07:25:36 landry Exp $
 
 BROKEN-powerpc=	doesn't build, assembler error: operand out of range
 
@@ -7,7 +7,7 @@ COMMENT =	desktop geographical information system
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 SHARED_ONLY =	Yes
 
-DISTNAME =	qgis-1.7.3
+DISTNAME =	qgis-1.7.4
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 
