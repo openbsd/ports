@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2012/10/31 16:23:53 kili Exp $
+# $OpenBSD: Makefile,v 1.76 2012/11/01 19:01:32 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -19,6 +19,7 @@ DPB_PROPERTIES=	parallel
 
 SHARED_LIBS +=  lcms2                     2.3 # 2.3
 
+REVISION=	0
 EPOCH=		0
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
@@ -178,6 +179,7 @@ WANTLIB-main+=	${MODPY_WANTLIB}
 
 RUN_DEPENDS-main=	devel/desktop-file-utils \
 			misc/shared-mime-info \
+			textproc/clucene \
 			x11/gnome/librsvg \
 			x11/gtk+2,-guic
 
