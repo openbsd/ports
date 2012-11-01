@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2012/11/01 16:37:49 espie Exp $
+# $OpenBSD: Makefile,v 1.77 2012/11/01 17:24:14 ajacoutot Exp $
 
 COMMENT=		spreadsheet application for GNOME
 
@@ -10,7 +10,8 @@ CATEGORIES=    		math
 
 HOMEPAGE=		http://www.gnome.org/projects/gnumeric/
 
-API_VERSION=		0.8.17# from devel/goffice
+# from devel/goffice
+API_VERSION=		0.8.17
 
 # GPLv2
 # Some tools: LGPL
