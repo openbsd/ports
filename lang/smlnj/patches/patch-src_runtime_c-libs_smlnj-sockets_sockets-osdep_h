@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_runtime_c-libs_smlnj-sockets_sockets-osdep_h,v 1.1.1.1 2002/06/29 13:25:10 espie Exp $
+$OpenBSD: patch-src_runtime_c-libs_smlnj-sockets_sockets-osdep_h,v 1.2 2012/11/01 21:31:55 jasper Exp $
 --- src/runtime/c-libs/smlnj-sockets/sockets-osdep.h.orig	Fri Dec  3 20:59:29 1999
-+++ src/runtime/c-libs/smlnj-sockets/sockets-osdep.h	Sat Jun 29 15:11:35 2002
-@@ -33,7 +33,7 @@ typedef void *sockoptval_t;	/* The point
++++ src/runtime/c-libs/smlnj-sockets/sockets-osdep.h	Thu Nov  1 22:31:29 2012
+@@ -33,7 +33,7 @@ typedef void *sockoptval_t;	/* The pointer type used t
  #    define SOCKADDR_HAS_LEN	/* socket address has a length field */
  #  endif
  

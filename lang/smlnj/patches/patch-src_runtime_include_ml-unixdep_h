@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_runtime_include_ml-unixdep_h,v 1.2 2003/08/21 20:59:11 espie Exp $
---- src/runtime/include/ml-unixdep.h.orig	1999-12-03 20:59:32.000000000 +0100
-+++ src/runtime/include/ml-unixdep.h	2003-08-21 08:47:17.000000000 +0200
+$OpenBSD: patch-src_runtime_include_ml-unixdep_h,v 1.3 2012/11/01 21:31:55 jasper Exp $
+--- src/runtime/include/ml-unixdep.h.orig	Fri Dec  3 20:59:32 1999
++++ src/runtime/include/ml-unixdep.h	Thu Nov  1 22:31:29 2012
 @@ -95,7 +95,7 @@
  #define INCLUDE_FCNTL_H		<sys/fcntl.h>
  #endif
@@ -10,11 +10,10 @@ $OpenBSD: patch-src_runtime_include_ml-unixdep_h,v 1.2 2003/08/21 20:59:11 espie
  #  define INCLUDE_DIRENT_H	<dirent.h>
  #elif defined(OPSYS_MACH)
  #  define INCLUDE_DIRENT_H	<sys/dir.h>
-@@ -293,6 +293,19 @@ extern char     *sys_errlist[];
- #  define HAS_SIGCONTEXT
- #  define HAS_STRERROR
+@@ -281,6 +281,19 @@ extern char     *sys_errlist[];
+ #  define MAP_ANONYMOUS MAP_ANON
  
-+#elif defined(OPSYS_OPENBSD)
+ #elif defined(OPSYS_NETBSD)
 +#  define OS_NAME	"BSD"
 +#  define HAS_POSIX_LIBRARIES
 +#  define HAS_BSD_SIGS
@@ -27,6 +26,7 @@ $OpenBSD: patch-src_runtime_include_ml-unixdep_h,v 1.2 2003/08/21 20:59:11 espie
 +#  define HAS_SIGCONTEXT
 +#  define HAS_STRERROR
 +
- #endif
- 
- 
++#elif defined(OPSYS_OPENBSD)
+ #  define OS_NAME	"BSD"
+ #  define HAS_POSIX_LIBRARIES
+ #  define HAS_BSD_SIGS

@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2012/10/15 15:18:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2012/11/01 21:31:55 jasper Exp $
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=        i386
 
 COMMENT=	New Jersey Standard ML
-PKGNAME=	smlnj-110.0.7
+
+V=		110.0.7
+
+PKGNAME=	smlnj-$V
 REVISION=	0
 CATEGORIES=	lang
 
@@ -19,8 +22,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c m
 
-MASTER_SITES=	ftp://ftp.research.bell-labs.com/dist/smlnj/release/110.0.7/
-DIST_SUBDIR=	smlnj-110.0.7
+MASTER_SITES=	ftp://ftp.research.bell-labs.com/dist/smlnj/release/$V/
+DIST_SUBDIR=	smlnj-$V
 DISTFILES=	bin.x86-unix.tar.Z cm.tar.Z cml.tar.Z \
 		config.tar.Z eXene.tar.Z \
 		ml-burg.tar.Z ml-lex.tar.Z \
