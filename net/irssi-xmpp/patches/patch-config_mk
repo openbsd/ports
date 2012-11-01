@@ -1,0 +1,18 @@
+$OpenBSD: patch-config_mk,v 1.1.1.1 2012/11/01 14:41:03 zinke Exp $
+--- config.mk.orig	Wed Oct 31 12:27:44 2012
++++ config.mk	Wed Oct 31 12:30:55 2012
+@@ -22,11 +22,11 @@ INCS =	${LIB_INCS} \
+ LIBS =	${LIB_LIBS}
+ 
+ # flags
+-CFLAGS = -fPIC -std=c99 -DUOFF_T_LONG
+-LDFLAGS = -shared
++CFLAGS += -fPIC -std=c99 -DUOFF_T_LONG
++LDFLAGS += -shared
+ 
+ # debug
+ #CFLAGS += -W -g -Wall -Wno-unused-parameter
+ 
+ # compiler and linker
+-CC = cc
++CC ?= cc
