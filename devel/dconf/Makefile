@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2012/11/01 11:59:57 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.45 2012/11/01 17:11:16 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,13 +6,10 @@ COMMENT-main=	configuration backend system
 COMMENT-editor=	editor for the dconf configuration storage system
 
 GNOME_PROJECT=	dconf
-GNOME_VERSION=	0.14.0
+GNOME_VERSION=	0.14.1
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-editor=	dconf-editor-${GNOME_VERSION}
-
-REVISION-main=	2
-REVISION-editor=1
 
 SHARED_LIBS+=	dconf        1.0 # 1.0.0
 SHARED_LIBS+=	dconf-dbus-1 1.0 # 1.0.0

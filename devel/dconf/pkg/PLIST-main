@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2012/09/27 12:48:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2012/11/01 17:11:16 ajacoutot Exp $
 @conflict vala-<0.10
 @pkgpath devel/dconf
 @extraunexec rm -rf ${SYSCONFDIR}/dconf/db/*
@@ -46,8 +46,10 @@ share/gtk-doc/html/dconf/programs.html
 share/gtk-doc/html/dconf/right.png
 share/gtk-doc/html/dconf/style.css
 share/gtk-doc/html/dconf/up.png
+share/locale/ar/LC_MESSAGES/dconf.mo
 share/locale/as/LC_MESSAGES/dconf.mo
 share/locale/be/LC_MESSAGES/dconf.mo
+share/locale/bg/LC_MESSAGES/dconf.mo
 share/locale/bn_IN/LC_MESSAGES/dconf.mo
 share/locale/ca/LC_MESSAGES/dconf.mo
 share/locale/ca@valencia/LC_MESSAGES/dconf.mo
@@ -80,6 +82,7 @@ share/locale/pl/LC_MESSAGES/dconf.mo
 share/locale/pt/LC_MESSAGES/dconf.mo
 share/locale/pt_BR/LC_MESSAGES/dconf.mo
 share/locale/ru/LC_MESSAGES/dconf.mo
+share/locale/sk/LC_MESSAGES/dconf.mo
 share/locale/sl/LC_MESSAGES/dconf.mo
 share/locale/sr/LC_MESSAGES/dconf.mo
 share/locale/sr@latin/LC_MESSAGES/dconf.mo
