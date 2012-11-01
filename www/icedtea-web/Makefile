@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2012/09/01 14:36:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2012/11/01 11:56:04 landry Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	Java web browser plugin
-DISTNAME =	icedtea-web-1.2
+DISTNAME =	icedtea-web-1.3
 CATEGORIES =	www
-REVISION =	1
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
@@ -16,6 +15,9 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	http://icedtea.classpath.org/download/source/
 HOMEPAGE =	http://icedtea.classpath.org/wiki/IcedTea-Web
+
+FLAVORS =	gtk3
+FLAVOR ?=
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-jdk-home=${LOCALBASE}/jdk-1.7.0 \
@@ -32,17 +34,30 @@ MODJAVA_VER=	1.7+
 BUILD_DEPENDS =	archivers/zip \
 		archivers/gtar \
 		devel/xulrunner/1.9,-devel
+# for javaws
+RUN_DEPENDS =	shells/bash
 # otherwise PaxHeaders file get in the way
 TAR =		${LOCALBASE}/bin/gtar
 USE_GMAKE =	Yes
 
-LIB_DEPENDS =	x11/gtk+2 \
-		devel/glib2>=2.28.8p1 #for the gio/EINTR fix
+.if ${FLAVOR:L:Mgtk3}
+CONFIGURE_ARGS +=	--with-gtk=3
+LIB_DEPENDS =	x11/gtk+3
+WANTLIB += cairo-gobject gdk-3 gtk-3
 
-WANTLIB += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 cairo expat fontconfig freetype
-WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
+.else
+CONFIGURE_ARGS +=	--with-gtk=2
+LIB_DEPENDS =	x11/gtk+2
+WANTLIB += Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr gdk-x11-2.0 gtk-x11-2.0
+.endif
+
+post-configure:
+	${SUBST_CMD} ${WRKSRC}/launcher/javaws.in
+
+WANTLIB += GL X11 Xrender atk-1.0 cairo expat fontconfig freetype
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gobject-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pixman-1 png pthread-stubs stdc++ xcb
 WANTLIB += xcb-render xcb-shm z
 

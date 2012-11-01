@@ -1,0 +1,9 @@
+$OpenBSD: patch-launcher_javaws_in,v 1.1 2012/11/01 11:56:04 landry Exp $
+--- launcher/javaws.in.orig	Thu Nov  1 08:28:01 2012
++++ launcher/javaws.in	Thu Nov  1 08:28:14 2012
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!${LOCALBASE}/bin/bash
+ 
+ JAVA=@JAVA@
+ LAUNCHER_BOOTCLASSPATH=@LAUNCHER_BOOTCLASSPATH@
