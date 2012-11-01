@@ -1,0 +1,16 @@
+#! /bin/sh
+data=$1
+set -e
+db=/var/db/components
+mkdir -p ${db}
+cat ${TRUEPREFIX}/libdata/base/${data}.gen|while read component tarball 
+do
+	w=`cat ${db}/${component} 2>/dev/null||true`
+	if [ "x$w" = "x$tarball" ]
+	then
+		continue
+	fi
+	echo "Installing $component from $tarball"
+	cd / && tar zxpf $tarball
+	echo $tarball >${db}/${component}
+done

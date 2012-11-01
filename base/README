@@ -1,0 +1,23 @@
+# $OpenBSD: README,v 1.1.1.1 2012/11/01 09:58:05 espie Exp $
+This is a set of experimental ports to build xenocara as components
+They reach out into ${XSRCDIR} to get access to the component.
+
+Each package is fake ! the real tarball is built under
+${PACKAGE_REPOSITORY}/${ARCH}/components
+
+the "package" will install stuff under /usr/local/libdata/base/*
+- the name of the tarball
+- and the corresponding list (manifest)
+
+when the package first installs, it copies the name of the tarball under
+/var/db/components
+
+so that when it gets reinstalled, there's no need to extract the same files
+again.
+
+The common part to that is in bootstrap/
+
+There are two meta packages:
+- xenocara/meta, to build stuff that requires xenocara to be there
+- xenocara/release, to build the remaining critical components and create 
+the X release
