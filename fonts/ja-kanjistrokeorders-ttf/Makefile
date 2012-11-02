@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2012/10/29 15:19:03 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2012/11/02 19:48:37 espie Exp $
 
 COMMENT =	font to view stroke order diagrams for Kanji, Kana and etc
 
 DISTNAME =	KanjiStrokeOrders_v3.000
 PKGNAME =	ja-${DISTNAME:L:S/_v/-ttf-/}
 CATEGORIES =	fonts japanese x11
-USE_X11 =	Yes
 
 HOMEPAGE =	http://sites.google.com/site/nihilistorguk/
 
@@ -22,7 +21,7 @@ EXTRACT_SUFX =	.zip
 NO_BUILD =	Yes
 NO_REGRESS =	Yes
 
-WRKDIST =	${WRKDIR}                                                   
+WRKDIST =	${WRKDIR}
 
 INST_DIR =      ${PREFIX}/lib/X11/fonts/KanjiStrokeOrders
 
