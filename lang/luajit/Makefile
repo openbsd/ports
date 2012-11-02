@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/10/27 14:05:33 abieber Exp $
+# $OpenBSD: Makefile,v 1.2 2012/11/02 02:08:38 sthen Exp $
+
+ONLY_FOR_ARCHS = powerpc arm i386 amd64 mips64 mips64el
 
 SHARED_ONLY =	Yes
 SHARED_LIBS +=	luajit-${MODLUA_VERSION} 0.0 # 2.0.0
@@ -25,6 +27,11 @@ WANTLIB =	c m
 MASTER_SITES =	${HOMEPAGE}download/
 
 MODULES =	lang/lua
+
+MODULES +=	gcc4
+MODGCC4_VERSION = 4.6
+MODGCC4_ARCHS =	powerpc
+MODGCC4_LANGS =	c
 
 MAKE_FLAGS += \
 	CC="${CC}" \

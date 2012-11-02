@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_lj_arch_h,v 1.1 2012/11/02 02:08:38 sthen Exp $
+--- src/lj_arch.h.orig	Fri Oct 26 11:48:11 2012
++++ src/lj_arch.h	Fri Oct 26 11:48:14 2012
+@@ -314,9 +314,6 @@
+ #if defined(_SOFT_FLOAT) || defined(_SOFT_DOUBLE)
+ #error "No support for PowerPC CPUs without double-precision FPU"
+ #endif
+-#if defined(_LITTLE_ENDIAN)
+-#error "No support for little-endian PowerPC"
+-#endif
+ #if defined(_LP64)
+ #error "No support for PowerPC 64 bit mode"
+ #endif
