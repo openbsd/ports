@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2012/11/01 19:01:32 robert Exp $
+# $OpenBSD: Makefile,v 1.77 2012/11/02 07:59:00 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -19,7 +19,7 @@ DPB_PROPERTIES=	parallel
 
 SHARED_LIBS +=  lcms2                     2.3 # 2.3
 
-REVISION=	0
+REVISION=	1
 EPOCH=		0
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
