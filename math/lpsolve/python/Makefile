@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1 2012/05/11 23:29:30 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2012/11/03 03:27:48 espie Exp $
 
 COMMENT =		Python bindings for lpsolve
 DISTNAME =		lp_solve_${V}_Python_source
-MODPY_EGG_VERSION =	5.5.0.9	# interface version differs from pkg version
+# interface version differs from pkg version
+MODPY_EGG_VERSION =	5.5.0.9
 PKGNAME =		py-lpsolve-${V}
 
 LIB_DEPENDS +=		math/lpsolve/core

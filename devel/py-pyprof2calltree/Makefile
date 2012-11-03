@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/09/16 09:24:55 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2012/11/03 03:23:20 espie Exp $
 
 COMMENT =	help visualize profiling data collected with the cProfile
 
@@ -21,7 +21,7 @@ MASTER_SITES =	${MASTER_SITE_PYPI:=p/pyprof2calltree/}
 
 MODULES =	lang/python
 
-MODPY_SETUPTOOLS = Yes 
+MODPY_SETUPTOOLS = Yes
 
 NO_REGRESS =	Yes
 

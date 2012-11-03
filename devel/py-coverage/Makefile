@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/20 00:06:27 fgsch Exp $
+# $OpenBSD: Makefile,v 1.9 2012/11/03 03:25:32 espie Exp $
 
 COMMENT =	code coverage measurement for Python
 
@@ -22,7 +22,7 @@ MASTER_SITES =	${MASTER_SITE_PYPI:=c/coverage/}
 
 MODULES =	lang/python
 
-MODPY_SETUPTOOLS = Yes 
+MODPY_SETUPTOOLS = Yes
 
 NO_REGRESS =	Yes
 
