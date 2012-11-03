@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/11/03 09:41:55 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2012/11/03 09:47:08 espie Exp $
 
 CATEGORIES = base xenocara
 COMMENT = Xenocara meta package for release
@@ -8,6 +8,8 @@ DISTFILES =
 PKGNAME = xc-meta-release-$V
 
 LOCATION = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/components
+
+.include <bsd.port.arch.mk>
 
 SUBCOMPONENTS = \
 app/cwm \
@@ -78,6 +80,10 @@ driver/xf86-video-wsudl \
 xserver \
 meta \
 share/mk
+
+.if ${PROPERTIES:Mgcc3} || ${PROPERTIES:Mgcc4}
+SUBCOMPONENTS += kdrive
+.endif
 
 BUILD_DEPENDS = ${SUBCOMPONENTS:S,^,base/xenocara/,}
 

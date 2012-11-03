@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/11/01 09:58:06 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2012/11/03 09:47:08 espie Exp $
 COMPONENT = kdrive
-
+ONLY_FOR_ARCHS = ${GCC3_ARCHS} ${GCC4_ARCHS}
 MODULES += base/xenocara
 
 PERMIT_PACKAGE_CDROM=   Yes
