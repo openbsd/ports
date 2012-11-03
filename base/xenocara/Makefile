@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/11/01 09:58:05 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2012/11/03 09:41:55 espie Exp $
 
 SUBDIR =
 SUBDIR += share/mk
@@ -12,6 +12,6 @@ SUBDIR += kdrive
 SUBDIR += meta
 SUBDIR += util
 SUBDIR += xserver
-#SUBDIR += release
+SUBDIR += release
 
 .include <bsd.port.subdir.mk>

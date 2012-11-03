@@ -1,4 +1,4 @@
-# $OpenBSD: xenocara.port.mk,v 1.1.1.1 2012/11/01 09:58:05 espie Exp $
+# $OpenBSD: xenocara.port.mk,v 1.2 2012/11/03 09:41:55 espie Exp $
 
 CATEGORIES = base xenocara
 COMMENT = Xenocara ${COMPONENT}
@@ -44,19 +44,14 @@ XINCDIRS = GL/internal X11/ICE X11/PM X11/SM X11/Xaw X11/Xcursor \
 
 INCBASE = ${WRKDIR}/incbase
 
-# XXX can't work because of Makefile.bsd-wrapper vs Makefile
-#.if defined(XCVS_CO)
-#WRKSRC ?= ${WRKDIR}/xenocara/${COMPONENT}
-#.  if !target(post-extract)
-#post-extract:
-#	cd ${WRKDIR} && ${XCVS_CO} -P xenocara/${COMPONENT}
-#.  endif
-#.else
+.if defined(XCVS_CO)
+WRKSRC ?= ${WRKDIR}/xenocara/${COMPONENT}
+.  if !target(post-extract)
+post-extract:
+	cd ${WRKDIR} && ${XCVS_CO} -P xenocara/${COMPONENT}
+.  endif
+.else
 WRKSRC ?= ${XSRCDIR}/${COMPONENT}
-#.endif
-
-.if exists(${WRKSRC}/Makefile.bsd-wrapper)
-MAKE_FILE = Makefile.bsd-wrapper
 .endif
 
 # handling of includes AND obj
@@ -70,7 +65,7 @@ pre-configure:
 .  for i in ${XINCDIRS}
 	mkdir -p ${INCBASE}${X11BASE}/include/$i
 .  endfor
-	cd ${WRKSRC} && ${MAKE} -f ${MAKE_FILE} ${MAKE_FLAGS} includes DESTDIR=${INCBASE} INSTALL_DATA='cp -f'
+	cd ${WRKSRC} && ${MAKE} -f ${MAKE_FILE} ${MAKE_FLAGS} includes DESTDIR=${INCBASE} INSTALL_DATA='cp -fp'
 .endif
 
 # XXX this doesn't work yet, no idea why

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/11/01 09:58:06 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2012/11/03 09:41:55 espie Exp $
 
-CATEGORIES = xenocara
+CATEGORIES = base xenocara
 COMMENT = Xenocara meta package for release
 V = 0
 DISTNAME = xc-meta-release-$V
@@ -9,77 +9,77 @@ PKGNAME = xc-meta-release-$V
 
 LOCATION = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/components
 
-BUILD_DEPENDS = \
-xenocara/app/cwm \
-xenocara/app/fvwm \
-xenocara/app/glxgears \
-xenocara/app/oclock \
-xenocara/app/ssh-askpass \
-xenocara/app/twm \
-xenocara/app/xbiff \
-xenocara/app/xedit \
-xenocara/app/xcalc \
-xenocara/app/xclipboard \
-xenocara/app/xclock \
-xenocara/app/xload \
-xenocara/app/xmag \
-xenocara/app/xterm \
-xenocara/app/xvidtune \
-xenocara/app/xman \
-xenocara/app/xmessage \
-xenocara/app/xlockmore \
-xenocara/distrib/notes \
-xenocara/driver/xf86-input-acecad \
-xenocara/driver/xf86-input-elographics \
-xenocara/driver/xf86-input-fpit \
-xenocara/driver/xf86-input-hyperpen \
-xenocara/driver/xf86-input-joystick \
-xenocara/driver/xf86-input-keyboard \
-xenocara/driver/xf86-input-mouse \
-xenocara/driver/xf86-input-mutouch \
-xenocara/driver/xf86-input-penmount \
-xenocara/driver/xf86-input-synaptics \
-xenocara/driver/xf86-input-usbtablet \
-xenocara/driver/xf86-input-vmmouse \
-xenocara/driver/xf86-input-void \
-xenocara/driver/xf86-input-ws \
-xenocara/driver/xf86-video-apm \
-xenocara/driver/xf86-video-ark \
-xenocara/driver/xf86-video-ati \
-xenocara/driver/xf86-video-chips \
-xenocara/driver/xf86-video-cirrus \
-xenocara/driver/xf86-video-dummy \
-xenocara/driver/xf86-video-glint \
-xenocara/driver/xf86-video-i128 \
-xenocara/driver/xf86-video-i740 \
-xenocara/driver/xf86-video-intel \
-xenocara/driver/xf86-video-mach64 \
-xenocara/driver/xf86-video-mga \
-xenocara/driver/xf86-video-neomagic \
-xenocara/driver/xf86-video-nv \
-xenocara/driver/xf86-video-openchrome \
-xenocara/driver/xf86-video-r128 \
-xenocara/driver/xf86-video-radeonold \
-xenocara/driver/xf86-video-rendition \
-xenocara/driver/xf86-video-s3 \
-xenocara/driver/xf86-video-s3virge \
-xenocara/driver/xf86-video-savage \
-xenocara/driver/xf86-video-siliconmotion \
-xenocara/driver/xf86-video-sis \
-xenocara/driver/xf86-video-sunffb \
-xenocara/driver/xf86-video-tdfx \
-xenocara/driver/xf86-video-trident \
-xenocara/driver/xf86-video-tseng \
-xenocara/driver/xf86-video-vesa \
-xenocara/driver/xf86-video-vmware \
-xenocara/driver/xf86-video-voodoo \
-xenocara/driver/xf86-video-wildcatfb \
-xenocara/driver/xf86-video-wsfb \
-xenocara/driver/xf86-video-wsudl \
-xenocara/xserver \
-xenocara/meta \
-xenocara/share/mk \
-xenocara/share/pciids
+SUBCOMPONENTS = \
+app/cwm \
+app/fvwm \
+app/glxgears \
+app/oclock \
+app/ssh-askpass \
+app/twm \
+app/xbiff \
+app/xedit \
+app/xcalc \
+app/xclipboard \
+app/xclock \
+app/xload \
+app/xmag \
+app/xterm \
+app/xvidtune \
+app/xman \
+app/xlockmore \
+distrib/notes \
+driver/xf86-input-acecad \
+driver/xf86-input-elographics \
+driver/xf86-input-fpit \
+driver/xf86-input-hyperpen \
+driver/xf86-input-joystick \
+driver/xf86-input-keyboard \
+driver/xf86-input-mouse \
+driver/xf86-input-mutouch \
+driver/xf86-input-penmount \
+driver/xf86-input-synaptics \
+driver/xf86-input-usbtablet \
+driver/xf86-input-vmmouse \
+driver/xf86-input-void \
+driver/xf86-input-ws \
+driver/xf86-video-apm \
+driver/xf86-video-ark \
+driver/xf86-video-ati \
+driver/xf86-video-chips \
+driver/xf86-video-cirrus \
+driver/xf86-video-dummy \
+driver/xf86-video-glint \
+driver/xf86-video-i128 \
+driver/xf86-video-i740 \
+driver/xf86-video-intel \
+driver/xf86-video-mach64 \
+driver/xf86-video-mga \
+driver/xf86-video-neomagic \
+driver/xf86-video-nv \
+driver/xf86-video-openchrome \
+driver/xf86-video-r128 \
+driver/xf86-video-radeonold \
+driver/xf86-video-rendition \
+driver/xf86-video-s3 \
+driver/xf86-video-s3virge \
+driver/xf86-video-savage \
+driver/xf86-video-siliconmotion \
+driver/xf86-video-sis \
+driver/xf86-video-sunffb \
+driver/xf86-video-tdfx \
+driver/xf86-video-trident \
+driver/xf86-video-tseng \
+driver/xf86-video-vesa \
+driver/xf86-video-vmware \
+driver/xf86-video-voodoo \
+driver/xf86-video-wildcatfb \
+driver/xf86-video-wsfb \
+driver/xf86-video-wsudl \
+xserver \
+meta \
+share/mk
+
+BUILD_DEPENDS = ${SUBCOMPONENTS:S,^,base/xenocara/,}
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
