@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1193 2012/11/01 09:58:53 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1194 2012/11/03 09:40:05 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -634,7 +634,6 @@ CXXFLAGS += ${CXXDIAGFLAGS}
 .  endif
 .endif
 
-MAKE_FILE ?= Makefile
 PORTHOME ?= /${PKGNAME}_writes_to_HOME
 
 MAKE_ENV += PATH='${PORTPATH}' PREFIX='${PREFIX}' \
@@ -713,6 +712,16 @@ WRKBUILD ?= ${WRKSRC}
 .endif
 WRKCONF ?= ${WRKBUILD}
 
+XENOCARA_COMPONENT ?= No
+# XXX autodetermine makefile actual name, can't do this in
+# xenocara.port.mk, since WRKBUILD isn't known yet.
+.if ${XENOCARA_COMPONENT:L} == "yes"
+.  if exists(${WRKBUILD}/Makefile.bsd-wrapper)
+MAKE_FILE ?= Makefile.bsd-wrapper
+.  endif
+.endif
+
+MAKE_FILE ?= Makefile
 ALL_TARGET ?= all
 
 FAKE_TARGET ?= ${INSTALL_TARGET}
@@ -988,7 +997,6 @@ ERRORS += "Fatal: REQ script support is obsolete"
 .  endfor
 .endif
 
-XENOCARA_COMPONENT ?= No
 MTREE_FILE ?=
 
 .if ${XENOCARA_COMPONENT:L} == "yes"
