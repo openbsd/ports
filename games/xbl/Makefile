@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/11/16 11:23:28 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2012/11/03 03:29:40 espie Exp $
 
 COMMENT=	3D block-dropping game
 
@@ -18,6 +18,7 @@ WANTLIB=	X11 Xau Xdmcp Xext c m pthread-stubs xcb
 MASTER_SITES=	http://www710.univ-lyon1.fr/ftp/xbl/
 
 USE_GROFF =	Yes
+BUILD_DEPENDS +=	devel/imake
 CONFIGURE_STYLE=gnu	# also uses imake
 MAKE_ENV=	OPTCFLAGS='${CFLAGS}'
 
