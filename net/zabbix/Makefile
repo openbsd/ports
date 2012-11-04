@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.76 2012/10/10 22:04:57 robert Exp $
+# $OpenBSD: Makefile,v 1.77 2012/11/04 22:16:04 robert Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
 COMMENT-web =		network and application monitoring - web frontend
 
-VERSION =		2.0.2
+VERSION =		2.0.3
 DISTNAME =		zabbix-${VERSION}
 FULLPKGNAME-main =	zabbix-agent-${VERSION}
 FULLPKGPATH-main =	net/zabbix,-main
@@ -135,7 +135,6 @@ post-install:
 		tar -C ${PREFIX}/share/zabbix -xf -
 
 	@find ${PREFIX}/share/zabbix/schema -name data.sql -exec \
-		perl -pi -e "s,/bin/ping,/sbin/ping,g;" \
-			"s,/usr/bin/traceroute,/usr/sbin/traceroute,g" {} \;
+		perl -pi -e "s,/bin/ping,/sbin/ping,g;s,/usr/bin/traceroute,/usr/sbin/traceroute,g" {} \;
 
 .include <bsd.port.mk>
