@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2012/08/16 09:34:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2012/11/04 11:40:11 naddy Exp $
 
      SUBDIR =
      SUBDIR += account
@@ -38,8 +38,8 @@
      SUBDIR += product_cost_fifo
      SUBDIR += product_cost_history
      SUBDIR += product_measurements
-     SUBIDR += product_price_list
-     SUBIDR += production
+     SUBDIR += product_price_list
+     SUBDIR += production
      SUBDIR += project
      SUBDIR += project_plan
      SUBDIR += project_revenue
