@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.10 2011/11/26 19:51:13 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2012/11/04 21:34:11 kili Exp $
 
 COMMENT =		encoding files for poppler
-DISTNAME =		poppler-data-0.4.5
+DISTNAME =		poppler-data-0.4.6
 CATEGORIES =		print
 HOMEPAGE =		http://poppler.freedesktop.org/
 
