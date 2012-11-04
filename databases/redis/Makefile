@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2012/10/30 17:22:54 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.38 2012/11/04 19:58:43 jasper Exp $
 
 COMMENT =		persistent key-value database
 DISTNAME =		redis-2.6.2
@@ -17,6 +17,7 @@ WANTLIB += 		c m pthread
 
 MASTER_SITES =		http://redis.googlecode.com/files/
 
+# XXX: Should use lang/lua, with a new dependency on lua-cmsgpack
 MODULES =		lang/tcl
 
 MAKE_FLAGS =		CC=${CC} \
