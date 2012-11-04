@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.171 2012/09/25 20:11:11 brad Exp $
+# $OpenBSD: Makefile,v 1.172 2012/11/04 00:22:50 brad Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT-main=		SMB and CIFS client and server for UNIX
 COMMENT-docs=		additional documentation and examples for Samba
 
-DISTNAME=		samba-3.6.8
+DISTNAME=		samba-3.6.9
 PKGNAME-main=		${DISTNAME}
 FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}
 FULLPKGPATH-docs=	net/samba,-docs
@@ -27,8 +27,8 @@ PERMIT_PACKAGE_FTP=		Yes
 PERMIT_DISTFILES_CDROM=		Yes
 PERMIT_DISTFILES_FTP=		Yes
 
-WANTLIB += asn1 c crypto cups execinfo gssapi krb5 m ncurses popt
-WANTLIB += pthread readline ssl talloc tdb z
+WANTLIB += asn1 c crypto cups execinfo gssapi iniparser krb5 m ncurses
+WANTLIB += popt pthread readline ssl talloc tdb z
 
 MASTER_SITES=	http://download.samba.org/samba/ftp/ \
 		http://us2.samba.org/samba/ftp/ \
@@ -39,9 +39,10 @@ MODULES=	converters/libiconv
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		sysutils/e2fsprogs
 LIB_DEPENDS=	databases/tdb>=1.2.7 \
-		devel/popt \
+		devel/iniparser \
 		devel/libexecinfo \
 		devel/libtalloc \
+		devel/popt \
 		print/cups,-libs
 
 MAKE_FLAGS+=	PASSWD_PROGRAM="/usr/bin/passwd" \

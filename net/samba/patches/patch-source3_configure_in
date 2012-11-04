@@ -1,47 +1,7 @@
-$OpenBSD: patch-source3_configure_in,v 1.5 2012/09/25 20:11:11 brad Exp $
---- source3/configure.in.orig	Fri Sep 14 04:12:09 2012
-+++ source3/configure.in	Tue Sep 18 21:51:47 2012
-@@ -869,9 +869,15 @@ if test x$enable_cups != xno; then
- 
-         if test "x$CUPS_CONFIG" != x; then
- 
-+		CUPS_CFLAGS="`$CUPS_CONFIG --cflags`"
-+		CUPS_LDFLAGS="`$CUPS_CONFIG --ldflags`"
-+		CUPS_LIBS="`$CUPS_CONFIG --libs`"
-+		ac_save_CPPFLAGS=$CPPFLAGS
- 		ac_save_LDFLAGS=$LDFLAGS
- 		ac_save_PRINT_LIBS=$PRINT_LIBS
-+		CPPFLAGS="$CUPS_CFLAGS"
- 		AC_CHECK_HEADERS(cups/cups.h cups/language.h)
-+		CPPFLAGS=$ac_save_CPPFLAGS
- 
- 		if test x"$ac_cv_header_cups_cups_h" = xyes -a \
- 		        x"$ac_cv_header_cups_language_h" = xyes; then
-@@ -879,18 +885,19 @@ if test x$enable_cups != xno; then
- 			# underlinked. With cups-config --libs we pull in unwanted and unneeded
- 			# dendencies including thread libraries - use cups-config only if really
- 			# required. 
-+			LDFLAGS="$CUPS_LDFLAGS"
- 			AC_CHECK_LIB_EXT(cups, ac_save_PRINT_LIBS , httpConnect,
--				[PRINT_LIBS="$ac_save_PRINT_LIBS -lcups"],
-+				[PRINT_LIBS="$CUPS_LDFLAGS -lcups $ac_save_PRINT_LIBS"],
- 				[AC_MSG_WARN([your cups library doesn't link with -lcups alone, it might be underlinked.]) ;
--				 PRINT_LIBS="$ac_save_PRINT_LIBS `$CUPS_CONFIG --libs`"])
-+				 PRINT_LIBS="$CUPS_LDFLAGS $CUPS_LIBS"])
- 
- 			AC_DEFINE(HAVE_CUPS,1,[Whether we have CUPS])
- 			samba_cv_HAVE_CUPS=yes
-+			SAMBA_CPPFLAGS="${SAMBA_CPPFLAGS} $CUPS_CFLAGS"
- 			AC_CHECK_LIB_EXT(cups, PRINT_LIBS, httpConnectEncrypt)
-+			LDFLAGS=$ac_save_LDFLAGS
- 		else
- 			AC_MSG_WARN([cups-config around but cups-devel not installed])
--			CFLAGS=$ac_save_CFLAGS
--			LDFLAGS=$ac_save_LDFLAGS
- 			PRINT_LIBS=$ac_save_PRINT_LIBS
- 		fi
- 
-@@ -1675,8 +1682,7 @@ DSO_EXPORTS=""
+$OpenBSD: patch-source3_configure_in,v 1.6 2012/11/04 00:22:50 brad Exp $
+--- source3/configure.in.orig	Mon Oct 29 05:05:46 2012
++++ source3/configure.in	Tue Oct 30 02:50:04 2012
+@@ -1675,8 +1675,7 @@ DSO_EXPORTS=""
  			;;
  		*openbsd*)  BLDSHARED="true"
  			LDSHFLAGS="-shared"
@@ -51,7 +11,7 @@ $OpenBSD: patch-source3_configure_in,v 1.5 2012/09/25 20:11:11 brad Exp $
  			PICFLAG="-fPIC"
  			AC_DEFINE(STAT_ST_BLOCKSIZE,512,[The size of a block])
  			AC_DEFINE(BROKEN_GETGRNAM,1,[Does getgrnam work correctly])
-@@ -6784,13 +6790,43 @@ fi
+@@ -6789,13 +6788,43 @@ fi
  
  CFLAGS=$CFLAGS_SAVE
  
