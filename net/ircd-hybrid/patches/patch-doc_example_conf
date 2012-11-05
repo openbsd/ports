@@ -1,0 +1,50 @@
+$OpenBSD: patch-doc_example_conf,v 1.1 2012/11/05 23:45:30 brad Exp $
+--- doc/example.conf.orig	Thu Oct 18 21:05:04 2012
++++ doc/example.conf	Tue Oct 23 02:43:41 2012
+@@ -101,7 +101,7 @@ serverinfo {
+ 	 *	chmod 0600 rsa.key
+ 	 *	chmod 0644 rsa.pub
+ 	 */
+-	#rsa_private_key_file = "/usr/local/ircd/etc/rsa.key";
++	#rsa_private_key_file = "/etc/ircd-hybrid/rsa.key";
+ 
+ 	/*
+ 	 * ssl_certificate_file: the path to the file containing our
+@@ -121,7 +121,7 @@ serverinfo {
+ 	 *	Common Name: irc.someirc.net
+ 	 *	E-mail: you@domain.com
+ 	 */
+-	#ssl_certificate_file = "/usr/local/ircd/etc/cert.pem";
++	#ssl_certificate_file = "/etc/ircd-hybrid/cert.pem";
+ 
+ 	/*
+ 	 * ssl_dh_param_file:
+@@ -138,7 +138,7 @@ serverinfo {
+ 	 * regarding specific OpenSSL dhparam command-line options
+ 	 * can be found in the OpenSSL manual.
+ 	 */
+-	#ssl_dh_param_file = "/usr/local/ircd/etc/dhparam.pem";
++	#ssl_dh_param_file = "/etc/ircd-hybrid/dhparam.pem";
+ 
+ 	/*
+ 	 * ssl_cipher_list:
+@@ -413,7 +413,7 @@ operator {
+ 	 * A password should not be defined when this is used, see 
+ 	 * doc/challenge.txt for more information.
+ 	 */
+-#	rsa_public_key_file = "/usr/local/ircd/etc/oper.pub";
++#	rsa_public_key_file = "/etc/ircd-hybrid/oper.pub";
+ 
+ 	/* class: the class the oper joins when they successfully /oper */
+ 	class = "opers";
+@@ -1174,8 +1174,8 @@ modules {
+ 	 * path: other paths to search for modules specified below
+ 	 * and in "/module load".
+ 	 */
+-	path = "/usr/local/ircd/lib/ircd-hybrid/modules";
+-	path = "/usr/local/ircd/lib/ircd-hybrid/modules/autoload";
++	path = "/usr/local/lib/ircd-hybrid/modules";
++	path = "/usr/local/lib/ircd-hybrid/modules/autoload";
+ 
+ 	/* module: the name of a module to load on startup/rehash */
+ 	#module = "some_module.la";

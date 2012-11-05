@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/10/19 13:46:17 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/11/05 23:45:30 brad Exp $
 @conflict bnc-*
 @conflict irc-*
 @conflict ircd-ratbox-*
@@ -6,7 +6,6 @@
 @newuser _ircd-hybrid:616:616:daemon:IRC Daemon:/var/empty:/sbin/nologin
 @bin bin/mkpasswd
 @bin bin/respond
-@bin bin/servlink
 lib/ircd-hybrid/
 lib/ircd-hybrid/modules/
 lib/ircd-hybrid/modules/autoload/
@@ -26,8 +25,6 @@ lib/ircd-hybrid/modules/autoload/m_close.la
 lib/ircd-hybrid/modules/autoload/m_close.so
 lib/ircd-hybrid/modules/autoload/m_connect.la
 lib/ircd-hybrid/modules/autoload/m_connect.so
-lib/ircd-hybrid/modules/autoload/m_cryptlink.la
-lib/ircd-hybrid/modules/autoload/m_cryptlink.so
 lib/ircd-hybrid/modules/autoload/m_dline.la
 lib/ircd-hybrid/modules/autoload/m_dline.so
 lib/ircd-hybrid/modules/autoload/m_encap.la
@@ -38,6 +35,8 @@ lib/ircd-hybrid/modules/autoload/m_etrace.la
 lib/ircd-hybrid/modules/autoload/m_etrace.so
 lib/ircd-hybrid/modules/autoload/m_gline.la
 lib/ircd-hybrid/modules/autoload/m_gline.so
+lib/ircd-hybrid/modules/autoload/m_globops.la
+lib/ircd-hybrid/modules/autoload/m_globops.so
 lib/ircd-hybrid/modules/autoload/m_hash.la
 lib/ircd-hybrid/modules/autoload/m_hash.so
 lib/ircd-hybrid/modules/autoload/m_help.la
@@ -62,12 +61,12 @@ lib/ircd-hybrid/modules/autoload/m_lusers.la
 lib/ircd-hybrid/modules/autoload/m_lusers.so
 lib/ircd-hybrid/modules/autoload/m_map.la
 lib/ircd-hybrid/modules/autoload/m_map.so
+lib/ircd-hybrid/modules/autoload/m_module.la
+lib/ircd-hybrid/modules/autoload/m_module.so
 lib/ircd-hybrid/modules/autoload/m_motd.la
 lib/ircd-hybrid/modules/autoload/m_motd.so
 lib/ircd-hybrid/modules/autoload/m_names.la
 lib/ircd-hybrid/modules/autoload/m_names.so
-lib/ircd-hybrid/modules/autoload/m_omotd.la
-lib/ircd-hybrid/modules/autoload/m_omotd.so
 lib/ircd-hybrid/modules/autoload/m_oper.la
 lib/ircd-hybrid/modules/autoload/m_oper.so
 lib/ircd-hybrid/modules/autoload/m_operwall.la
@@ -86,16 +85,18 @@ lib/ircd-hybrid/modules/autoload/m_restart.la
 lib/ircd-hybrid/modules/autoload/m_restart.so
 lib/ircd-hybrid/modules/autoload/m_resv.la
 lib/ircd-hybrid/modules/autoload/m_resv.so
-lib/ircd-hybrid/modules/autoload/m_rkline.la
-lib/ircd-hybrid/modules/autoload/m_rkline.so
-lib/ircd-hybrid/modules/autoload/m_rxline.la
-lib/ircd-hybrid/modules/autoload/m_rxline.so
+lib/ircd-hybrid/modules/autoload/m_services.la
+lib/ircd-hybrid/modules/autoload/m_services.so
 lib/ircd-hybrid/modules/autoload/m_set.la
 lib/ircd-hybrid/modules/autoload/m_set.so
 lib/ircd-hybrid/modules/autoload/m_stats.la
 lib/ircd-hybrid/modules/autoload/m_stats.so
 lib/ircd-hybrid/modules/autoload/m_svinfo.la
 lib/ircd-hybrid/modules/autoload/m_svinfo.so
+lib/ircd-hybrid/modules/autoload/m_svsmode.la
+lib/ircd-hybrid/modules/autoload/m_svsmode.so
+lib/ircd-hybrid/modules/autoload/m_svsnick.la
+lib/ircd-hybrid/modules/autoload/m_svsnick.so
 lib/ircd-hybrid/modules/autoload/m_tburst.la
 lib/ircd-hybrid/modules/autoload/m_tburst.so
 lib/ircd-hybrid/modules/autoload/m_testline.la
@@ -172,6 +173,7 @@ share/examples/ircd-hybrid/example.conf
 @mode
 @owner
 @group
+share/examples/ircd-hybrid/example.efnet.conf
 share/ircd-hybrid/
 share/ircd-hybrid/help/
 share/ircd-hybrid/help/opers/
@@ -180,11 +182,9 @@ share/ircd-hybrid/help/opers/admin
 share/ircd-hybrid/help/opers/away
 share/ircd-hybrid/help/opers/capab
 share/ircd-hybrid/help/opers/challenge
-share/ircd-hybrid/help/opers/client
 share/ircd-hybrid/help/opers/close
 share/ircd-hybrid/help/opers/cmode
 share/ircd-hybrid/help/opers/connect
-share/ircd-hybrid/help/opers/cryptlink
 share/ircd-hybrid/help/opers/die
 share/ircd-hybrid/help/opers/dline
 share/ircd-hybrid/help/opers/eob
@@ -208,10 +208,7 @@ share/ircd-hybrid/help/opers/list
 share/ircd-hybrid/help/opers/locops
 share/ircd-hybrid/help/opers/lusers
 share/ircd-hybrid/help/opers/map
-share/ircd-hybrid/help/opers/modlist
-share/ircd-hybrid/help/opers/modload
-share/ircd-hybrid/help/opers/modrestart
-share/ircd-hybrid/help/opers/modunload
+share/ircd-hybrid/help/opers/module
 share/ircd-hybrid/help/opers/motd
 share/ircd-hybrid/help/opers/names
 share/ircd-hybrid/help/opers/nick
@@ -229,8 +226,6 @@ share/ircd-hybrid/help/opers/quit
 share/ircd-hybrid/help/opers/rehash
 share/ircd-hybrid/help/opers/restart
 share/ircd-hybrid/help/opers/resv
-share/ircd-hybrid/help/opers/rkline
-share/ircd-hybrid/help/opers/rxline
 share/ircd-hybrid/help/opers/server
 share/ircd-hybrid/help/opers/set
 share/ircd-hybrid/help/opers/sjoin

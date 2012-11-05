@@ -1,0 +1,45 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1 2012/11/05 23:45:30 brad Exp $
+--- doc/Makefile.in.orig	Sat Jul 21 16:39:19 2012
++++ doc/Makefile.in	Sat Jul 21 18:03:14 2012
+@@ -329,25 +329,25 @@ uninstall-man8:
+ 	dir='$(DESTDIR)$(man8dir)'; $(am__uninstall_files_from_dir)
+ install-dist_sysconfDATA: $(dist_sysconf_DATA)
+ 	@$(NORMAL_INSTALL)
+-	@list='$(dist_sysconf_DATA)'; test -n "$(sysconfdir)" || list=; \
++	@list='$(dist_sysconf_DATA)'; test -n "$(prefix)/share/examples/ircd-hybrid" || list=; \
+ 	if test -n "$$list"; then \
+-	  echo " $(MKDIR_P) '$(DESTDIR)$(sysconfdir)'"; \
+-	  $(MKDIR_P) "$(DESTDIR)$(sysconfdir)" || exit 1; \
++	  echo " $(MKDIR_P) '$(DESTDIR)$(prefix)/share/examples/ircd-hybrid'"; \
++	  $(MKDIR_P) "$(DESTDIR)$(prefix)/share/examples/ircd-hybrid" || exit 1; \
+ 	fi; \
+ 	for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  echo "$$d$$p"; \
+ 	done | $(am__base_list) | \
+ 	while read files; do \
+-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(sysconfdir)'"; \
+-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(sysconfdir)" || exit $$?; \
++	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(prefix)/share/examples/ircd-hybrid'"; \
++	  $(INSTALL_DATA) $$files "$(DESTDIR)$(prefix)/share/examples/ircd-hybrid" || exit $$?; \
+ 	done
+ 
+ uninstall-dist_sysconfDATA:
+ 	@$(NORMAL_UNINSTALL)
+-	@list='$(dist_sysconf_DATA)'; test -n "$(sysconfdir)" || list=; \
++	@list='$(dist_sysconf_DATA)'; test -n "$(DESTDIR)$(prefix)/share/examples/ircd-hybrid" || list=; \
+ 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
+-	dir='$(DESTDIR)$(sysconfdir)'; $(am__uninstall_files_from_dir)
++	dir='$(DESTDIR)$(prefix)/share/examples/ircd-hybrid'; $(am__uninstall_files_from_dir)
+ tags: TAGS
+ TAGS:
+ 
+@@ -404,7 +404,7 @@ check-am: all-am
+ check: check-am
+ all-am: Makefile $(MANS) $(DATA)
+ installdirs:
+-	for dir in "$(DESTDIR)$(man8dir)" "$(DESTDIR)$(sysconfdir)"; do \
++	for dir in "$(DESTDIR)$(man8dir)" "$(DESTDIR)$(prefix)/share/examples/ircd-hybrid"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+ 	done
+ install: install-am

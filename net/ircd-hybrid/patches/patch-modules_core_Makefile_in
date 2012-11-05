@@ -1,7 +1,7 @@
-$OpenBSD: patch-modules_core_Makefile_in,v 1.1 2011/10/19 13:46:17 jasper Exp $
---- modules/core/Makefile.in.orig	Thu Aug 18 12:21:47 2011
-+++ modules/core/Makefile.in	Wed Oct 19 08:53:25 2011
-@@ -642,7 +642,6 @@ install-dvi-am:
+$OpenBSD: patch-modules_core_Makefile_in,v 1.2 2012/11/05 23:45:30 brad Exp $
+--- modules/core/Makefile.in.orig	Sat Jul 21 16:39:19 2012
++++ modules/core/Makefile.in	Sat Jul 21 18:03:14 2012
+@@ -692,7 +692,6 @@ install-dvi-am:
  
  install-exec-am:
  	@$(NORMAL_INSTALL)
