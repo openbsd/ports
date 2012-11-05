@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2012/10/15 17:44:33 kili Exp $
+# $OpenBSD: Makefile,v 1.70 2012/11/05 19:32:27 kili Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt=	qt interface to PDF rendering library
@@ -9,16 +9,20 @@ V=		0.20.5
 DISTNAME=	poppler-$V
 CATEGORIES=	print
 PKGNAME-main=	poppler-$V
-PKGNAME-utils= poppler-utils-$V
+REVISION-main=	0
+PKGNAME-utils=	poppler-utils-$V
+REVISION-utils=	0
 PKGNAME-qt=	poppler-qt-$V
+REVISION-qt=	0
 PKGNAME-qt4=	poppler-qt4-$V
+REVISION-qt4=	0
 OLDSHIT = poppler-0.16.7
 
-SHARED_LIBS +=  poppler              14.0     # 28.0
-SHARED_LIBS +=  poppler-glib         10.0     # 12.0
-SHARED_LIBS +=  poppler-qt           9.0      # 3.0
-SHARED_LIBS +=  poppler-qt4          10.0      # 4.0
-SHARED_LIBS +=  poppler-cpp          2.0      # 2.0
+SHARED_LIBS +=  poppler              15.0     # 28.0
+SHARED_LIBS +=  poppler-glib         11.0     # 12.0
+SHARED_LIBS +=  poppler-qt           10.0     # 3.0
+SHARED_LIBS +=  poppler-qt4          11.0     # 4.0
+SHARED_LIBS +=  poppler-cpp          3.0      # 2.0
 
 DISTFILES = ${DISTNAME}${EXTRACT_SUFX} ${OLDSHIT}${EXTRACT_SUFX}
 
@@ -104,7 +108,8 @@ CONFIGURE_ARGS+= --disable-gtk-doc \
 		--disable-gtk-test
 
 CONFIGURE_ENV+= CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		LIBJPEG_CFLAGS="-I${LOCALBASE}/include"
 
 # If one of these tools is found at configure stage, it might be used,
 # no matter whether we use --disable-gtk-doc or not.
