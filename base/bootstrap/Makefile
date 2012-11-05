@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/11/01 09:58:06 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2012/11/05 20:27:52 espie Exp $
 
 COMMENT = base system pseudo package bootstrap
 CATEGORIES = base xenocara
 NO_BUILD = Yes
 
-DISTNAME = base-boostrap-0
+DISTNAME = base-bootstrap-0
 DISTFILES = 
 
 PERMIT_PACKAGE_CDROM=   Yes

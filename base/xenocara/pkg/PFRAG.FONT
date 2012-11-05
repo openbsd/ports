@@ -1,0 +1,2 @@
+@exec cd ${X11BASE} && bin/mkfontscale -- ${FONTSDIRS}
+@exec cd ${X11BASE} && bin/mkfontdir -- ${FONTSDIRS}

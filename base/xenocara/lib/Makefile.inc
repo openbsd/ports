@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2012/11/01 09:58:05 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2012/11/05 20:27:52 espie Exp $
 
 MODULES += base/xenocara
 
+COMPONENT_TYPE += lib
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes

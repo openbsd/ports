@@ -1,3 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/11/01 09:58:05 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2012/11/05 20:27:52 espie Exp $
 COMPONENT = font/misc-meltho
+FONTSDIRS = lib/X11/fonts/OTF
 .include <bsd.port.mk>

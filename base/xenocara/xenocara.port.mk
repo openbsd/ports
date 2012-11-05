@@ -1,9 +1,9 @@
-# $OpenBSD: xenocara.port.mk,v 1.2 2012/11/03 09:41:55 espie Exp $
+# $OpenBSD: xenocara.port.mk,v 1.3 2012/11/05 20:27:52 espie Exp $
 
 CATEGORIES = base xenocara
 COMMENT = Xenocara ${COMPONENT}
 FLAT = ${COMPONENT:S/\//./g:C/-([0-9])/_\1/g}
-VERSION ?= 0
+VERSION ?= 1
 DISTNAME = xc-${FLAT}-${VERSION}
 DISTFILES =
 
@@ -28,6 +28,20 @@ XENOCARA_COMPONENT =	Yes
 
 BUILD_DEPENDS = ${XDEPS:S,^,base/xenocara/,}
 RUN_DEPENDS = ${BUILD_DEPENDS}
+COMPONENT_TYPE ?=
+
+.if ${COMPONENT_TYPE:Mlib}
+PKG_ARGS += -DLIB=1
+.else
+PKG_ARGS += -DLIB=0
+.endif
+
+.if defined(FONTSDIRS) && !empty(FONTSDIRS)
+PKG_ARGS += -DFONT=1
+SUBST_VARS += ${FONTSDIRS}
+.else
+PKG_ARGS += -DFONT=0
+.endif
 
 .if ${COMPONENT} != "share/mk"
 BUILD_DEPENDS += base/xenocara/share/mk
@@ -85,7 +99,7 @@ pre-install:
 .if !target(post-install)
 post-install:
 	mkdir -p ${LOCATION}
-	@cd ${WRKINST} && find . -print >goodlist
+	@cd ${WRKINST} && find . -print |fgrep -v -e /fonts.dir -e /fonts.scale >goodlist
 	@echo ./goodlist >>${WRKDIR}/badlist
 	mkdir -p ${PREFIX}/libdata/base
 	@sort ${WRKINST}/goodlist ${WRKDIR}/badlist |uniq -u >${MANIFEST}
