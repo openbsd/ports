@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.154 2012/08/18 07:25:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.155 2012/11/05 22:21:16 sthen Exp $
 
      SUBDIR =
      SUBDIR += WordGenerator
@@ -51,6 +51,7 @@
      SUBDIR += mmv
      SUBDIR += most
      SUBDIR += mshell
+     SUBDIR += nyancat
      SUBDIR += omconsole
      SUBDIR += openbabel
      SUBDIR += p5-Acme-LOLCAT
