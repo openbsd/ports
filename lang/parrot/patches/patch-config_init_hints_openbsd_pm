@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_init_hints_openbsd_pm,v 1.4 2011/03/09 22:48:32 landry Exp $
---- config/init/hints/openbsd.pm.orig	Thu Jan  6 04:44:55 2011
-+++ config/init/hints/openbsd.pm	Wed Mar  9 23:44:36 2011
+$OpenBSD: patch-config_init_hints_openbsd_pm,v 1.5 2012/11/05 17:57:51 pascal Exp $
+--- config/init/hints/openbsd.pm.orig	Wed Aug  1 09:05:12 2012
++++ config/init/hints/openbsd.pm	Sat Nov  3 11:33:32 2012
 @@ -17,13 +17,18 @@ sub runstep {
      $conf->data->set( ccflags => $ccflags );
  
@@ -22,14 +22,14 @@ $OpenBSD: patch-config_init_hints_openbsd_pm,v 1.4 2011/03/09 22:48:32 landry Ex
      }
  
      $conf->data->set(
-@@ -34,9 +39,9 @@ sub runstep {
+@@ -34,9 +39,8 @@ sub runstep {
  
          has_dynamic_linking    => 1,
          parrot_is_shared       => 1,
 -        libparrot_shared       => "libparrot$share_ext.$version",
-+        libparrot_shared       => "libparrot$share_ext.$ENV{LIBparrot_VERSION}",
-         libparrot_shared_alias => "libparrot$share_ext",
+-        libparrot_shared_alias => "libparrot$share_ext",
 -        libparrot_soname       => "-Wl,-soname=libparrot$share_ext.$version",
++        libparrot_shared       => "libparrot$share_ext.$ENV{LIBparrot_VERSION}",
 +        libparrot_soname       => "",
      );
  

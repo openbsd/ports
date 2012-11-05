@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/07/13 09:46:41 pascal Exp $
+# $OpenBSD: Makefile,v 1.8 2012/11/05 17:57:51 pascal Exp $
 
 SHARED_ONLY =		Yes
 
@@ -6,10 +6,10 @@ VMEM_WARNING =		Yes
 
 COMMENT =		Not Quite Perl
 
-V =			2012.06.1
+V =			2012.10
 DISTNAME =		nqp-${V}
 
-PARROT_VERSION =	4.5.0
+PARROT_VERSION =	4.9.0
 SUBST_VARS +=		PARROT_VERSION
 
 CATEGORIES =		lang

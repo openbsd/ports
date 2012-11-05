@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2012/07/13 09:46:05 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.16 2012/11/05 17:57:51 pascal Exp $
 @bin bin/ops2c
 @bin bin/parrot
 @bin bin/parrot-nqp
@@ -141,6 +141,7 @@ include/parrot/${V}/pmc/pmc_opcode.h
 include/parrot/${V}/pmc/pmc_oplib.h
 include/parrot/${V}/pmc/pmc_orderedhash.h
 include/parrot/${V}/pmc/pmc_orderedhashiterator.h
+include/parrot/${V}/pmc/pmc_os.h
 include/parrot/${V}/pmc/pmc_packfile.h
 include/parrot/${V}/pmc/pmc_packfileannotation.h
 include/parrot/${V}/pmc/pmc_packfileannotations.h
@@ -719,6 +720,8 @@ share/doc/parrot/${V}/examples/benchmarks/stress2.rb
 share/doc/parrot/${V}/examples/benchmarks/stress3.pasm
 share/doc/parrot/${V}/examples/benchmarks/stress_integers.pir
 share/doc/parrot/${V}/examples/benchmarks/stress_strings.pir
+share/doc/parrot/${V}/examples/benchmarks/stress_strings1.pir
+share/doc/parrot/${V}/examples/benchmarks/stress_stringsu.pir
 share/doc/parrot/${V}/examples/benchmarks/vpm.pir
 share/doc/parrot/${V}/examples/benchmarks/vpm.pl
 share/doc/parrot/${V}/examples/benchmarks/vpm.py
@@ -802,6 +805,8 @@ share/doc/parrot/${V}/examples/library/getopt_demo.pir
 share/doc/parrot/${V}/examples/library/md5sum.pir
 share/doc/parrot/${V}/examples/library/ncurses_life.pir
 share/doc/parrot/${V}/examples/library/pcre.pir
+share/doc/parrot/${V}/examples/library/utf8_base64.pir
+share/doc/parrot/${V}/examples/library/utf8_base64.pl
 share/doc/parrot/${V}/examples/mops/
 share/doc/parrot/${V}/examples/mops/README.pod
 share/doc/parrot/${V}/examples/mops/mops.c
@@ -1109,7 +1114,6 @@ share/doc/parrot/${V}/pod/imcc/README.pod
 share/doc/parrot/${V}/pod/imcc/imcfaq.pod
 share/doc/parrot/${V}/pod/imcc/operation.pod
 share/doc/parrot/${V}/pod/index/
-share/doc/parrot/${V}/pod/index/book.json
 share/doc/parrot/${V}/pod/index/developer.json
 share/doc/parrot/${V}/pod/index/index.json
 share/doc/parrot/${V}/pod/index/ops.json
@@ -1271,6 +1275,7 @@ src/parrot/${V}/pmc/opcode.dump
 src/parrot/${V}/pmc/oplib.dump
 src/parrot/${V}/pmc/orderedhash.dump
 src/parrot/${V}/pmc/orderedhashiterator.dump
+src/parrot/${V}/pmc/os.dump
 src/parrot/${V}/pmc/packfile.dump
 src/parrot/${V}/pmc/packfileannotation.dump
 src/parrot/${V}/pmc/packfileannotations.dump

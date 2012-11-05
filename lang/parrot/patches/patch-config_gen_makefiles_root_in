@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_gen_makefiles_root_in,v 1.6 2012/07/13 09:46:05 pascal Exp $
---- config/gen/makefiles/root.in.orig	Tue Jun 19 07:24:26 2012
-+++ config/gen/makefiles/root.in	Sun Jul  8 10:58:43 2012
+$OpenBSD: patch-config_gen_makefiles_root_in,v 1.7 2012/11/05 17:57:51 pascal Exp $
+--- config/gen/makefiles/root.in.orig	Tue Oct 16 06:52:24 2012
++++ config/gen/makefiles/root.in	Sat Nov  3 11:31:33 2012
 @@ -20,7 +20,7 @@
  
  DEVEL           = @DEVEL@
@@ -10,15 +10,7 @@ $OpenBSD: patch-config_gen_makefiles_root_in,v 1.6 2012/07/13 09:46:05 pascal Ex
  
  CONFIG_ARGS     = @configure_args@
  #IF(win32):SHELL           = CMD
-@@ -1089,7 +1089,6 @@ $(LIBPARROT_SHARED) : $(O_FILES)
- #IF(win32 and cc==gcc):		-Wl,--out-implib=libparrot.lib \
- 		$(O_FILES) $(C_LIBS) $(ICU_SHARED)
- #IF(win32):	if exist $@.manifest mt.exe -nologo -manifest $@.manifest -outputresource:$@;2
--#IF(libparrot_shared_alias):	( cd @blib_dir@ ; ln -sf @libparrot_shared@ @libparrot_shared_alias@ )
- 	$(CP) tools/dev/gdb-pp-load.py @blib_dir@/@libparrot_shared@-gdb.py
- 	$(CP) tools/dev/gdb-pp.py @blib_dir@/GDBPrettyPrint.py
- 	@echo '' > @blib_dir@/__init__.py
-@@ -3059,9 +3058,9 @@ src/glut_nci_thunks$(O) : $(PARROT_H_HEADERS) \
+@@ -3094,9 +3094,9 @@ src/glut_nci_thunks$(O) : $(PARROT_H_HEADERS) \
  	$(INC_PMC_DIR)/pmc_nci.h
  
  $(LIBGLUTCB_SO): $(LIBPARROT) src/glut_callbacks$(O) src/glut_nci_thunks$(O)

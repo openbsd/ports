@@ -1,0 +1,11 @@
+$OpenBSD: patch-rakudo_tools_build_Makefile_in,v 1.1 2012/11/05 17:57:51 pascal Exp $
+--- rakudo/tools/build/Makefile.in.orig	Fri Oct 19 03:37:17 2012
++++ rakudo/tools/build/Makefile.in	Sat Nov  3 12:20:50 2012
+@@ -324,7 +324,6 @@ install: all
+ 	$(MKPATH)                     $(DESTDIR)$(DOCDIR)/rakudo
+ 	$(MKPATH)                     $(DESTDIR)$(DOCDIR)/rakudo/announce
+ 	-$(CP)    $(DOCS)             $(DESTDIR)$(DOCDIR)/rakudo
+-	$(CP)     docs/announce/*     $(DESTDIR)$(DOCDIR)/rakudo/announce
+ 	$(MKPATH) $(DESTDIR)$(MANDIR)/man1
+ 	-$(POD2MAN) docs/running.pod --name=perl6 > $(DESTDIR)$(MANDIR)/man1/perl6.1
+ 	-$(POD2MAN) docs/running.pod --name=rakudo > $(DESTDIR)$(MANDIR)/man1/rakudo.1

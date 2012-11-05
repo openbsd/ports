@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.14 2012/08/06 13:09:39 landry Exp $
+# $OpenBSD: Makefile,v 1.15 2012/11/05 17:57:51 pascal Exp $
 
 # Memory hog, stuck for days on the same file during build.
 NOT_FOR_ARCHS =		sh
-BROKEN-sparc64 =	build stuck on CORE.setting.pir generation
+BROKEN-sparc64 =	error:imcc:syntax error, unexpected IF
 
 SHARED_ONLY =		Yes
 
 COMMENT =		Rakudo Perl 6 compiler
 
 PORTNAME =		rakudo
-VERSION =		2012.06
-DISTNAME =		${PORTNAME}-star-${VERSION:S/.1//}
+VERSION =		2012.10
+DISTNAME =		${PORTNAME}-star-${VERSION}
 PKGNAME =		${PORTNAME}-${VERSION}
 
-PARROT_VERSION =	4.5.0
+PARROT_VERSION =	4.9.0
 SUBST_VARS +=		PARROT_VERSION
 
 CATEGORIES =		lang perl6

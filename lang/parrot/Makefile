@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.23 2012/07/13 09:46:05 pascal Exp $
+# $OpenBSD: Makefile,v 1.24 2012/11/05 17:57:50 pascal Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT=	virtual machine designed for interpreted languages
 
-V=		4.5.0
+V=		4.9.0
 DISTNAME=	parrot-$V
 CATEGORIES=	lang perl6
-SHARED_LIBS=	parrot	6.0
+SHARED_LIBS=	parrot	7.0
 
 HOMEPAGE=	http://www.parrot.org/
 
 MAINTAINER =	Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
-MASTER_SITES=	ftp://ftp.parrot.org/pub/parrot/releases/devel/$V/
+MASTER_SITES=	ftp://ftp.parrot.org/pub/parrot/releases/supported/$V/
 
 # Artistic2
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,7 +1,7 @@
-$OpenBSD: patch-tools_build_Makefile_in,v 1.3 2012/07/13 09:47:01 pascal Exp $
---- tools/build/Makefile.in.orig	Sat Jun 23 16:04:01 2012
-+++ tools/build/Makefile.in	Sun Jul  8 11:35:50 2012
-@@ -15,8 +15,8 @@ PARROT_LIB_DIR     = @libdir@$(PARROT_VERSION)
+$OpenBSD: patch-tools_build_Makefile_in,v 1.4 2012/11/05 17:57:51 pascal Exp $
+--- tools/build/Makefile.in.orig	Fri Aug 31 22:34:26 2012
++++ tools/build/Makefile.in	Tue Sep  4 16:05:50 2012
+@@ -17,8 +17,8 @@ PARROT_LIB_DIR     = @libdir@$(PARROT_VERSION)
  PARROT_SRC_DIR     = @srcdir@$(PARROT_VERSION)
  HAS_ICU            = @has_icu@
  
@@ -12,67 +12,14 @@ $OpenBSD: patch-tools_build_Makefile_in,v 1.3 2012/07/13 09:47:01 pascal Exp $
  EXE           = @exe@
  LD            = @ld@
  LDFLAGS       = @ldflags@ @ld_debug@
-@@ -49,30 +49,30 @@ PERL6_EXE      = perl6$(EXE)
- PERL6_LANG_DIR = $(PARROT_LIB_DIR)/languages/perl6
+@@ -87,8 +87,8 @@ modules-test:
+ perl6-debug: $(RD_EXE)
  
- MODULES = \
--  modules/zavolaj \
--  modules/xml-writer \
--  modules/svg \
--  modules/svg-plot \
--  modules/Math-RungeKutta \
--  modules/Math-Model \
--  modules/perl6-Term-ANSIColor \
--  modules/test-mock \
--  modules/Grammar-Profiler-Simple \
--  modules/grammar-debugger \
--  modules/Perl6-MIME-Base64 \
--  modules/perl6-lwp-simple \
--  modules/json \
--  modules/perl6-digest-md5 \
--  modules/perl6-File-Tools \
--  modules/panda \
--  modules/perl6-http-status \
--  modules/perl6-http-easy \
--  modules/Bailador \
--  modules/DBIish \
--  modules/uri \
--  modules/jsonrpc \
--  modules/Pod-To-HTML \
--  modules/doc \
-+  ../modules/zavolaj \
-+  ../modules/xml-writer \
-+  ../modules/svg \
-+  ../modules/svg-plot \
-+  ../modules/Math-RungeKutta \
-+  ../modules/Math-Model \
-+  ../modules/perl6-Term-ANSIColor \
-+  ../modules/test-mock \
-+  ../modules/Grammar-Profiler-Simple \
-+  ../modules/grammar-debugger \
-+  ../modules/Perl6-MIME-Base64 \
-+  ../modules/perl6-lwp-simple \
-+  ../modules/json \
-+  ../modules/perl6-digest-md5 \
-+  ../modules/perl6-File-Tools \
-+  ../modules/panda \
-+  ../modules/perl6-http-status \
-+  ../modules/perl6-http-easy \
-+  ../modules/Bailador \
-+  ../modules/DBIish \
-+  ../modules/uri \
-+  ../modules/jsonrpc \
-+  ../modules/Pod-To-HTML \
-+  ../modules/doc \
- 
- all: rakudo
- 
-@@ -94,7 +94,7 @@ modules-install: rakudo
- 	@echo "== Installing 'ufo'"
- 	$(CP)    modules/ufo/bin/ufo $(DESTDIR)$(PARROT_BIN_DIR)/ufo
- 	$(CHMOD) 755                 $(DESTDIR)$(PARROT_BIN_DIR)/ufo
--	$(PERL) tools/build/module-install.pl $(DESTDIR)$(PARROT_BIN_DIR)/$(PERL6_EXE) $(DESTDIR)$(PERL6_LANG_DIR)/lib $(MODULES)
-+	cd $(RAKUDO) && $(PERL) ../tools/build/module-install.pl $(DESTDIR)$(PARROT_BIN_DIR)/$(PERL6_EXE) $(DESTDIR)$(PERL6_LANG_DIR)/lib $(MODULES)
- 	@echo "Installing 'panda'"
- 	$(CP)    modules/panda/bin/panda $(DESTDIR)$(PARROT_BIN_DIR)/panda
- 	$(CHMOD) 755                    $(DESTDIR)$(PARROT_BIN_DIR)/panda
+ $(RD_EXE): modules-install
+-	$(NQP_EXE) --vmlibs=perl6_group,perl6_ops --target=pir \
+-	    --output=$(RD_PIR) $(RD_DIR)/bin/perl6-debug.nqp
++	cd $(RAKUDO_DIR) && $(NQP_EXE) --vmlibs=perl6_group,perl6_ops --target=pir \
++	    --output=../$(RD_PIR) ../$(RD_DIR)/bin/perl6-debug.nqp
+ 	$(PARROT_EXE) -o $(RD_PBC) $(RD_PIR)
+ 	$(PBC_TO_EXE) $(RD_PBC)
+ 	$(CHMOD) 755 $(RD_EXE)
