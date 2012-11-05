@@ -1,0 +1,12 @@
+$OpenBSD: patch-test_lua,v 1.1.1.1 2012/11/05 21:26:19 jasper Exp $
+--- test.lua.orig	Mon Nov  5 20:26:45 2012
++++ test.lua	Mon Nov  5 20:27:36 2012
+@@ -2,6 +2,8 @@
+ -- Copyright(C) 2012 Salvatore Sanfilippo, All Rights Reserved.
+ -- See the copyright notice at the end of lua_cmsgpack.c for more information.
+ 
++local cmsgpack = require 'cmsgpack'
++
+ passed = 0
+ failed = 0 
+ 
