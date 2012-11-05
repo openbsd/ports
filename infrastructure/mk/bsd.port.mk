@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1194 2012/11/03 09:40:05 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1195 2012/11/05 20:29:35 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2332,11 +2332,13 @@ ${_WRKDIR_COOKIE}:
 		echo 1>&2 "Fatal: ${PORTSDIR} is a symlink. Please set to the real directory"; \
 		exit 1; \
 	fi
+.if ${PORTS_BUILD_XENOCARA_TOO:L} != "yes"
 	@appdefaults=${LOCALBASE}/lib/X11/app-defaults; \
 	if ! test -d $$appdefaults -a -h $$appdefaults; then \
 		echo 1>&2 "Fatal: $$appdefaults should exist and be a symlink"; \
 		exit 1; \
 	fi
+.endif
 	@mkdir -p ${WRKDIR} ${WRKDIR}/bin ${DEPDIR}
 #	@ln -s ${LOCALBASE}/bin/pkg-config ${WRKDIR}/bin
 .if ${USE_CCACHE:L} == "yes" && ${NO_CCACHE:L} == "no"
