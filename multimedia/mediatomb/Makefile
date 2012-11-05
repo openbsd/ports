@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2012/05/08 12:50:29 landry Exp $
+# $OpenBSD: Makefile,v 1.15 2012/11/05 21:52:44 merdely Exp $
 
 COMMENT =	UPnP media server
 
 VER =		0.12.1
 DISTNAME =	mediatomb-${VER}
-REVISION =	8
+REVISION =	9
 
 CATEGORIES =	multimedia
 
@@ -36,7 +36,8 @@ CONFIGURE_ARGS +=	--disable-inotify \
 			--disable-lastfmlib \
 			--disable-mysql \
 			PTHREAD_LIBS="-pthread"
-CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
+# Add "-I${WRKSRC}/src" to make mediatomb find its own dictionary.h first.
+CONFIGURE_ENV =		CPPFLAGS="-I${WRKSRC}/src -I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			ac_cv_header_execinfo_h=no
 AUTOCONF_VERSION =	2.63
