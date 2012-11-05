@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2012/09/28 00:20:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2012/11/05 10:59:43 sthen Exp $
 
 COMMENT =	simple YouTube interface for downloading videos
 
 MODULES =	cpan
-DISTNAME =	WWW-YouTube-Download-0.40
-REVISION =	0
+DISTNAME =	WWW-YouTube-Download-0.41
 CATEGORIES =	www
 
 MAINTAINER =	Mikolaj Kucharski <mikolaj@kucharski.name>
