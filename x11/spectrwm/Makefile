@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2012/09/05 20:33:43 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.5 2012/11/05 12:12:36 gonzalo Exp $
 
 COMMENT=		small tiling window manager
 
 SHARED_LIBS=		swmhack 1.0
 
-DISTNAME=		spectrwm-2.0.2
+DISTNAME=		spectrwm-2.1.0
 EXTRACT_SUFX=		.tgz
 CATEGORIES=		x11
 
@@ -24,7 +24,7 @@ MASTER_SITES=	http://opensource.conformal.com/snapshots/spectrwm/
 
 NO_REGRESS=	Yes
 
-RUN_DEPENDS=	x11/dmenu>=4.4.1
+RUN_DEPENDS=	x11/dmenu>=4.5
 
 MAKE_FLAGS=	BINDIR="${TRUEPREFIX}/bin" \
 		MANDIR="${TRUEPREFIX}/man/man" \
