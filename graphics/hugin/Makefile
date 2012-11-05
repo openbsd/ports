@@ -1,4 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2012/10/12 21:44:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2012/11/05 11:15:11 sthen Exp $
+
+# can't build with PIE, can't build either hugin or wxWidgets with
+# CFLAGS+=-fno-pie LDFLAGS+=-nopie
+.for i in alpha amd64 hppa mips64 mips64el sh sparc64
+BROKEN-$i =		hugin or possibly wxWidgets is broken with PIE
+.endfor
 
 VMEM_WARNING =		Yes
 SHARED_ONLY =		Yes
