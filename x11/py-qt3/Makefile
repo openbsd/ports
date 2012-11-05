@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/09/16 12:29:17 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2012/11/05 10:43:55 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,7 +9,7 @@ V=		3.18.1
 DISTNAME=	PyQt-x11-gpl-${V}
 PKGNAME=	py-qt3-${V}
 
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	x11 devel
 
@@ -54,6 +54,9 @@ CONFIGURE_ARGS=	-w \
 		CXX=${CXX} \
 		CFLAGS="${CFLAGS}" \
 		CXXFLAGS="${CXXFLAGS}"
+
+pre-configure:
+	perl -pi -e 's,ANY \*,void *,' ${WRKSRC}/sip/qt*/*.sip
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-qt3
