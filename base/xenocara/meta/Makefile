@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2012/11/03 09:41:55 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2012/11/05 21:58:11 espie Exp $
 
 CATEGORIES = base xenocara
 COMMENT = Xenocara meta package for building
-V = 1
+V = 2
 DISTNAME = xenocara-meta-$V
 DISTFILES =
 
@@ -211,9 +211,9 @@ PERMIT_DISTFILES_FTP=   Yes
 NO_BUILD = 
 
 do-install:
-	mkdir -p ${PREFIX}/libdata/xc
+	mkdir -p ${PREFIX}/libdata/base
 .for x in ${SUBCOMPONENTS:S/\//./g:C/-([0-9])/_\1/g}
-	@echo $x `cat /var/db/xc/$x` >>${PREFIX}/libdata/xc/${FULLPKGNAME}.gen
+	@echo $x `cat /var/db/components/$x` >>${PREFIX}/libdata/base/${FULLPKGNAME}.gen
 .endfor
 
 .include <bsd.port.mk>
