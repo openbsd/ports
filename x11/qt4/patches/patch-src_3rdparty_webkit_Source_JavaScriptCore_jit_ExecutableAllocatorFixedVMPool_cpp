@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_3rdparty_webkit_Source_JavaScriptCore_jit_ExecutableAllocatorFixedVMPool_cpp,v 1.1 2012/11/05 16:29:51 landry Exp $
+
+https://bugs.webkit.org/show_bug.cgi?id=61137
+from www/webkit/patches/patch-Source_JavaScriptCore_jit_ExecutableAllocatorFixedVMPool_cpp
+--- src/3rdparty/webkit/Source/JavaScriptCore/jit/ExecutableAllocatorFixedVMPool.cpp.orig	Mon Nov  5 15:21:42 2012
++++ src/3rdparty/webkit/Source/JavaScriptCore/jit/ExecutableAllocatorFixedVMPool.cpp	Mon Nov  5 15:21:57 2012
+@@ -392,7 +392,8 @@ typedef AllocationTableDirectory<LazyAllocationTable<P
+ 
+ #if CPU(ARM)
+ typedef PageTables16MB FixedVMPoolPageTables;
+-#elif CPU(X86_64)
++// We don't want an initial allocation of 1GB, it's above the default ulimit
++#elif CPU(X86_64) && !defined(__OpenBSD__)
+ typedef PageTables1GB FixedVMPoolPageTables;
+ #else
+ typedef PageTables32MB FixedVMPoolPageTables;
