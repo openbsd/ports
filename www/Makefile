@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.583 2012/10/31 22:09:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.584 2012/11/05 08:24:00 jasper Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -466,6 +466,7 @@
      SUBDIR += ruby-unicorn
      SUBDIR += ruby-unicorn,ruby18
      SUBDIR += ruby-vegas
+     SUBDIR += ruby-vegas,ruby18
      SUBDIR += sabredav
      SUBDIR += sarg
      SUBDIR += seamonkey
