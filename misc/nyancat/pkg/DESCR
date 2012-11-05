@@ -1,0 +1,5 @@
+nyancat is an animated, color, ANSI-text program that renders a loop of
+the classic Nyan Cat animation.
+
+nyancat makes use of various ANSI escape sequences to render color, or
+in the case of a VT220, simply dumps text to the screen.
