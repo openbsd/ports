@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2012/03/30 06:47:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2012/11/06 11:50:04 dcoppa Exp $
 
 COMMENT=	UPnP A/V media server
 
 DISTNAME=	ushare-1.1a
-REVISION=	6
+REVISION=	7
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	net multimedia
@@ -16,13 +16,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c pthread ixml threadutil upnp
+WANTLIB += c pthread ixml threadutil>=1 upnp>=1
 
 MASTER_SITES=	${HOMEPAGE}releases/
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	net/libupnp
+LIB_DEPENDS=	net/libupnp>=1.6.17
 
 USE_GMAKE=	Yes
 NO_REGRESS=	Yes

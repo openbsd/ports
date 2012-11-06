@@ -1,7 +1,15 @@
-$OpenBSD: patch-src_mime_c,v 1.1.1.1 2010/03/22 22:26:59 ajacoutot Exp $
---- src/mime.c.orig	Tue Feb  9 16:55:15 2010
-+++ src/mime.c	Tue Feb  9 16:55:33 2010
-@@ -56,7 +56,7 @@ const struct mime_type_t MIME_Type_List[] = {
+$OpenBSD: patch-src_mime_c,v 1.2 2012/11/06 11:50:04 dcoppa Exp $
+--- src/mime.c.orig	Sun Dec  9 14:03:36 2007
++++ src/mime.c	Fri Nov  2 16:10:37 2012
+@@ -21,6 +21,7 @@
+ 
+ #include <stdlib.h>
+ #include <string.h>
++#include <stdio.h>
+ 
+ #include "mime.h"
+ #include "ushare.h"
+@@ -56,7 +57,7 @@ const struct mime_type_t MIME_Type_List[] = {
    { "mp4ps", UPNP_VIDEO, "http-get:*:video/x-nerodigital-ps:"},
    { "ts",    UPNP_VIDEO, "http-get:*:video/mpeg2:"},
    { "ogm",   UPNP_VIDEO, "http-get:*:video/mpeg:"},

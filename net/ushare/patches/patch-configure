@@ -1,14 +1,12 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2010/03/22 22:26:59 ajacoutot Exp $
---- configure.orig	Tue Feb  9 12:53:41 2010
-+++ configure	Tue Feb  9 12:53:51 2010
-@@ -639,8 +639,8 @@ echolog "Checking for libixml ..."
- check_lib upnp/ixml.h ixmlRelaxParser -lixml || die "Error, can't find libixml !"
+$OpenBSD: patch-configure,v 1.2 2012/11/06 11:50:04 dcoppa Exp $
+--- configure.orig	Sun Dec  9 14:03:36 2007
++++ configure	Fri Nov  2 16:07:09 2012
+@@ -642,7 +642,7 @@ echolog "Checking for libthreadutil ..."
+ check_lib upnp/ThreadPool.h ThreadPoolAdd "-lthreadutil -lpthread" || die "Error, can't find libthreadutil !"
+ add_extralibs -lpthread
  
- echolog "Checking for libthreadutil ..."
--check_lib upnp/ThreadPool.h ThreadPoolAdd "-lthreadutil -lpthread" || die "Error, can't find libthreadutil !"
--add_extralibs -lpthread
-+check_lib upnp/ThreadPool.h ThreadPoolAdd "-lthreadutil -pthread" || die "Error, can't find libthreadutil !"
-+add_extralibs -pthread
- 
- libupnp_min_version="1.4.2"
+-libupnp_min_version="1.4.2"
++libupnp_min_version="1.6.17"
  echolog "Checking for libupnp >= $libupnp_min_version ..."
+ check_lib upnp/upnp.h UpnpSetMaxContentLength -lupnp || die "Error, can't find libupnp !"
+ check_lib_version libupnp $libupnp_min_version || die "Error, libupnp < $libupnp_min_version !"

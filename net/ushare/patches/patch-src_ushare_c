@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_ushare_c,v 1.2 2011/12/03 13:59:37 ajacoutot Exp $
+$OpenBSD: patch-src_ushare_c,v 1.3 2012/11/06 11:50:04 dcoppa Exp $
 --- src/ushare.c.orig	Sun Dec  9 14:03:36 2007
-+++ src/ushare.c	Tue Feb  9 15:32:22 2010
++++ src/ushare.c	Fri Nov  2 16:13:38 2012
 @@ -28,6 +28,10 @@
  #include <errno.h>
  #include <getopt.h>
@@ -23,3 +23,61 @@ $OpenBSD: patch-src_ushare_c,v 1.2 2011/12/03 13:59:37 ajacoutot Exp $
  #include <upnp/upnp.h>
  #include <upnp/upnptools.h>
  
+@@ -188,7 +188,7 @@ handle_action_request (struct Upnp_Action_Request *req
+   if (strcmp (request->DevUDN + 5, ut->udn))
+     return;
+ 
+-  ip = request->CtrlPtIPAddr.s_addr;
++  ip = (*(struct sockaddr_in*)&request->CtrlPtIPAddr).sin_addr.s_addr;
+   ip = ntohl (ip);
+   sprintf (val, "%d.%d.%d.%d",
+            (ip >> 24) & 0xFF, (ip >> 16) & 0xFF, (ip >> 8) & 0xFF, ip & 0xFF);
+@@ -348,7 +348,47 @@ init_upnp (struct ushare_t *ut)
+ 
+   UpnpEnableWebserver (TRUE);
+ 
+-  res = UpnpSetVirtualDirCallbacks (&virtual_dir_callbacks);
++  res = UpnpVirtualDir_set_WriteCallback(http_write);
++  if (res != UPNP_E_SUCCESS)
++  {
++    log_error (_("Cannot set virtual directory callbacks\n"));
++    free (description);
++    return -1;
++  }
++
++  res = UpnpVirtualDir_set_GetInfoCallback(http_get_info);
++  if (res != UPNP_E_SUCCESS)
++  {
++    log_error (_("Cannot set virtual directory callbacks\n"));
++    free (description);
++    return -1;
++  }
++
++  res = UpnpVirtualDir_set_ReadCallback(http_read);
++  if (res != UPNP_E_SUCCESS)
++  {
++    log_error (_("Cannot set virtual directory callbacks\n"));
++    free (description);
++    return -1;
++  }
++
++  res = UpnpVirtualDir_set_OpenCallback(http_open);
++  if (res != UPNP_E_SUCCESS)
++  {
++    log_error (_("Cannot set virtual directory callbacks\n"));
++    free (description);
++    return -1;
++  }
++
++  res = UpnpVirtualDir_set_SeekCallback(http_seek);
++  if (res != UPNP_E_SUCCESS)
++  {
++    log_error (_("Cannot set virtual directory callbacks\n"));
++    free (description);
++    return -1;
++  }
++
++  res = UpnpVirtualDir_set_CloseCallback(http_close);
+   if (res != UPNP_E_SUCCESS)
+   {
+     log_error (_("Cannot set virtual directory callbacks\n"));
