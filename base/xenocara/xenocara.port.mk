@@ -1,4 +1,4 @@
-# $OpenBSD: xenocara.port.mk,v 1.4 2012/11/06 08:19:02 espie Exp $
+# $OpenBSD: xenocara.port.mk,v 1.5 2012/11/06 14:49:28 espie Exp $
 
 CATEGORIES = base xenocara
 COMMENT = Xenocara ${COMPONENT}
@@ -38,7 +38,7 @@ PKG_ARGS += -DLIB=0
 
 .if defined(FONTSDIRS) && !empty(FONTSDIRS)
 PKG_ARGS += -DFONT=1
-SUBST_VARS += ${FONTSDIRS}
+SUBST_VARS += FONTSDIRS
 .else
 PKG_ARGS += -DFONT=0
 .endif
