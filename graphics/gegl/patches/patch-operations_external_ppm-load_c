@@ -1,0 +1,115 @@
+$OpenBSD: patch-operations_external_ppm-load_c,v 1.1 2012/11/06 12:59:09 jasper Exp $
+
+From 4757cdf73d3675478d645a3ec8250ba02168a230 Mon Sep 17 00:00:00 2001
+From: Nils Philippsen <nils@redhat.com>
+Date: Tue, 16 Oct 2012 14:56:40 +0000
+Subject: ppm-load: CVE-2012-4433: add plausibility checks for header fields
+
+From 1e92e5235ded0415d555aa86066b8e4041ee5a53 Mon Sep 17 00:00:00 2001
+From: Nils Philippsen <nils@redhat.com>
+Date: Tue, 16 Oct 2012 14:58:27 +0000
+Subject: ppm-load: CVE-2012-4433: don't overflow memory allocation
+
+--- operations/external/ppm-load.c.orig	Tue Nov  6 13:07:25 2012
++++ operations/external/ppm-load.c	Tue Nov  6 13:07:16 2012
+@@ -36,6 +36,7 @@ gegl_chant_file_path (path, _("File"), "", _("Path of 
+ #include "gegl-chant.h"
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <errno.h>
+ 
+ typedef enum {
+   PIXMAP_ASCII  = 51,
+@@ -44,8 +45,8 @@ typedef enum {
+ 
+ typedef struct {
+ 	map_type   type;
+-	gint       width;
+-	gint       height;
++	glong      width;
++	glong      height;
+         gsize      numsamples; /* width * height * channels */
+         gsize      bpc;        /* bytes per channel */
+ 	guchar    *data;
+@@ -82,12 +83,33 @@ ppm_load_read_header(FILE       *fp,
+       }
+ 
+     /* Get Width and Height */
+-    img->width  = strtol (header,&ptr,0);
+-    img->height = atoi (ptr);
+-    img->numsamples = img->width * img->height * CHANNEL_COUNT;
++    errno = 0;
++    img->width  = strtol (header,&ptr,10);
++    if (errno)
++      {
++        g_warning ("Error reading width: %s", strerror(errno));
++        return FALSE;
++      }
++    else if (img->width < 0)
++      {
++        g_warning ("Error: width is negative");
++        return FALSE;
++      }
+ 
++    img->height = strtol (ptr,&ptr,10);
++    if (errno)
++      {
++        g_warning ("Error reading height: %s", strerror(errno));
++        return FALSE;
++      }
++    else if (img->width < 0)
++      {
++        g_warning ("Error: height is negative");
++        return FALSE;
++      }
++
+     fgets (header,MAX_CHARS_IN_ROW,fp);
+-    maxval = strtol (header,&ptr,0);
++    maxval = strtol (header,&ptr,10);
+ 
+     if ((maxval != 255) && (maxval != 65535))
+       {
+@@ -109,6 +131,16 @@ ppm_load_read_header(FILE       *fp,
+       g_warning ("%s: Programmer stupidity error", G_STRLOC);
+     }
+ 
++    /* Later on, img->numsamples is multiplied with img->bpc to allocate
++     * memory. Ensure it doesn't overflow. */
++    if (!img->width || !img->height ||
++        G_MAXSIZE / img->width / img->height / CHANNEL_COUNT < img->bpc)
++      {
++        g_warning ("Illegal width/height: %ld/%ld", img->width, img->height);
++        return FALSE;
++      }
++    img->numsamples = img->width * img->height * CHANNEL_COUNT;
++
+     return TRUE;
+ }
+ 
+@@ -229,11 +261,23 @@ process (GeglOperation       *operation,
+   if (!ppm_load_read_header (fp, &img))
+     goto out;
+ 
+-  rect.height = img.height;
+-  rect.width = img.width;
+-
+   /* Allocating Array Size */
++
++  /* Should use g_try_malloc(), but this causes crashes elsewhere because the
++   * error signalled by returning FALSE isn't properly acted upon. Therefore
++   * g_malloc() is used here which aborts if the requested memory size can't be
++   * allocated causing a controlled crash. */
+   img.data = (guchar*) g_malloc (img.numsamples * img.bpc);
++
++  /* No-op without g_try_malloc(), see above. */
++  if (! img.data)
++    {
++      g_warning ("Couldn't allocate %" G_GSIZE_FORMAT " bytes, giving up.", ((gsize)img.numsamples * img.bpc));
++      goto out;
++    }
++
++  rect.height = img.height;
++  rect.width = img.width;
+ 
+   switch (img.bpc)
+     {
