@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/11/03 09:47:08 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2012/11/06 08:19:02 espie Exp $
 COMPONENT = kdrive
 ONLY_FOR_ARCHS = ${GCC3_ARCHS} ${GCC4_ARCHS}
 MODULES += base/xenocara
@@ -13,6 +13,7 @@ XDEPS = lib/libxtrans lib/pixman lib/libX11 proto/glproto \
 	proto/compositeproto proto/recordproto proto/scrnsaverproto \
 	proto/resourceproto lib/libxkbfile lib/libXv
 
+EXTRA_SRC = xenocara/xserver
 
 
 

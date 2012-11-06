@@ -1,4 +1,4 @@
-# $OpenBSD: xenocara.port.mk,v 1.3 2012/11/05 20:27:52 espie Exp $
+# $OpenBSD: xenocara.port.mk,v 1.4 2012/11/06 08:19:02 espie Exp $
 
 CATEGORIES = base xenocara
 COMMENT = Xenocara ${COMPONENT}
@@ -62,7 +62,7 @@ INCBASE = ${WRKDIR}/incbase
 WRKSRC ?= ${WRKDIR}/xenocara/${COMPONENT}
 .  if !target(post-extract)
 post-extract:
-	cd ${WRKDIR} && ${XCVS_CO} -P xenocara/${COMPONENT}
+	cd ${WRKDIR} && ${XCVS_CO} -P xenocara/${COMPONENT} ${EXTRA_SRC}
 .  endif
 .else
 WRKSRC ?= ${XSRCDIR}/${COMPONENT}
