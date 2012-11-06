@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2012/09/06 12:38:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2012/11/06 09:37:14 dcoppa Exp $
 
 SHARED_ONLY =	Yes
 
@@ -9,32 +9,32 @@ V =		2.8.12
 DISTNAME =	wxWidgets-${V}
 PKGNAME-main =	wxWidgets-gtk2-${V}
 PKGNAME-media =	wxWidgets-media-${V}
-REVISION-main =	6
-REVISION-media =2
+REVISION-main =	7
+REVISION-media =3
 CATEGORIES =	x11
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=wxwindows/}
 
-SHARED_LIBS =	wx_base			2.1	\
-		wx_base_net		2.1	\
-		wx_base_odbc		2.1	\
-		wx_base_xml		2.1	\
-		wx_gtk2_adv		2.1	\
-		wx_gtk2_aui		2.1	\
-		wx_gtk2_core		2.1	\
-		wx_gtk2_dbgrid		2.1	\
-		wx_gtk2_fl		2.1	\
-		wx_gtk2_gizmos		2.1	\
-		wx_gtk2_gizmos_xrc	2.1	\
-		wx_gtk2_gl		2.1	\
-		wx_gtk2_html		2.1	\
-		wx_gtk2_media		2.1	\
-		wx_gtk2_ogl		2.1	\
-		wx_gtk2_plot		2.1	\
-		wx_gtk2_qa		2.1	\
-		wx_gtk2_richtext	2.1	\
-		wx_gtk2_stc		2.1	\
-		wx_gtk2_svg		2.1	\
-		wx_gtk2_xrc		2.1
+SHARED_LIBS =	wx_base			3.0	\
+		wx_base_net		3.0	\
+		wx_base_odbc		3.0	\
+		wx_base_xml		3.0	\
+		wx_gtk2_adv		3.0	\
+		wx_gtk2_aui		3.0	\
+		wx_gtk2_core		3.0	\
+		wx_gtk2_dbgrid		3.0	\
+		wx_gtk2_fl		3.0	\
+		wx_gtk2_gizmos		3.0	\
+		wx_gtk2_gizmos_xrc	3.0	\
+		wx_gtk2_gl		3.0	\
+		wx_gtk2_html		3.0	\
+		wx_gtk2_media		3.0	\
+		wx_gtk2_ogl		3.0	\
+		wx_gtk2_plot		3.0	\
+		wx_gtk2_qa		3.0	\
+		wx_gtk2_richtext	3.0	\
+		wx_gtk2_stc		3.0	\
+		wx_gtk2_svg		3.0	\
+		wx_gtk2_xrc		3.0
 
 HOMEPAGE =	http://www.wxwidgets.org/
 
@@ -94,6 +94,10 @@ CONFIGURE_ARGS =--disable-backtrace \
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		ac_cv_lib_esd_esd_close=no
+
+# XXX: When used in conjunction with PIE, symbol versioning triggers
+# weird linking problems in dependent ports
+CONFIGURE_ENV += wx_cv_version_script=no
 
 .ifdef DEBUG
 CONFIGURE_ARGS += --enable-debug
