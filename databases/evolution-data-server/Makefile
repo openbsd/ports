@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.123 2012/10/18 13:54:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.124 2012/11/06 08:35:13 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
 GNOME_VERSION=		3.6.1
-REVISION=		1
+REVISION=		2
 
 # Only get the first x.y which is needed in the PLIST.
 R=			${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -79,6 +79,12 @@ CONFIGURE_ARGS=		--with-krb5 \
 			--with-krb5-includes=/usr/include/kerberosV \
 			--with-libdb=${LOCALBASE} \
 			--with-openldap=${LOCALBASE}
+
+pre-configure:
+	perl -pi -e 's,/usr/sbin/imapd,${LOCALBASE}/libexec/imapd,g' \
+		${WRKSRC}/camel/camel-imapx-settings.c \
+		${WRKSRC}/camel/providers/imap/camel-imap-settings.c \
+		${WRKSRC}/docs/reference/camel/html/CamelIMAPXSettings.html
 
 post-install:
 	rm ${PREFIX}/lib/evolution-data-server/*/*.{a,la}
