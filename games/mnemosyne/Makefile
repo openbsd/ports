@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.18 2011/12/20 18:55:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2012/11/06 10:24:20 landry Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	flash-card tool which optimises your learning process
 
-MODPY_EGG_VERSION=1.2.2
-DISTNAME=	mnemosyne-${MODPY_EGG_VERSION}
-REVISION =	4
+MODPY_EGG_VERSION=2.1
+DISTNAME=	Mnemosyne-${MODPY_EGG_VERSION}
+PKGNAME=	${DISTNAME:L}
 CATEGORIES=	games education
-
-EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://www.mnemosyne-proj.org/
 
@@ -25,17 +23,16 @@ MODULES=	lang/python
 
 MODPY_SETUPTOOLS=yes
 
-RUN_DEPENDS=	x11/py-qt3 \
-		devel/pygame \
+RUN_DEPENDS=	x11/py-qt4 \
 		textproc/py-xml \
 		graphics/py-Imaging \
+		graphics/py-matplotlib \
+		www/py-CherryPy \
 		devel/desktop-file-utils
 
 NO_REGRESS=	Yes
 
-pre-configure:
-	@perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},' \
-		${WRKSRC}/mnemosyne/pyqt_ui/mnemosyne
+MODPY_ADJ_FILES =	${WRKSRC}/mnemosyne/pyqt_ui/mnemosyne
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
