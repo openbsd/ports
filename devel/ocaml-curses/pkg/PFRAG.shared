@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2012/11/06 20:53:47 jasper Exp $
+lib/ocaml/stublibs/dllcurses_stubs.so
+@comment lib/ocaml/stublibs/dllcurses_stubs.so.owner

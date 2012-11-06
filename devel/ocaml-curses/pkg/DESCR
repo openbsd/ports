@@ -1,0 +1,6 @@
+OCaml Curses is a project to provide curses / ncurses bindings for the
+Objective Caml language.
+
+It was formally known as Text Mode Kit (TMK), but the TMK part of the
+project is not supported anymore, and instead we are just concentrating
+on providing reliable OCaml curses bindings.
