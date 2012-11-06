@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/11/06 20:55:36 jasper Exp $
+%%native%%
+lib/ocaml/csv/
+lib/ocaml/csv/META
+lib/ocaml/csv/csv.cma
+lib/ocaml/csv/csv.cmi
+lib/ocaml/csv/csv.mli
+share/doc/ocaml-csv/
+share/doc/ocaml-csv/api/
+share/doc/ocaml-csv/api/Csv.html
+share/doc/ocaml-csv/api/Csv.in_obj_channel-c.html
+share/doc/ocaml-csv/api/Csv.out_obj_channel-c.html
+share/doc/ocaml-csv/api/index.html
+share/doc/ocaml-csv/api/index_attributes.html
+share/doc/ocaml-csv/api/index_class_types.html
+share/doc/ocaml-csv/api/index_classes.html
+share/doc/ocaml-csv/api/index_exceptions.html
+share/doc/ocaml-csv/api/index_methods.html
+share/doc/ocaml-csv/api/index_module_types.html
+share/doc/ocaml-csv/api/index_modules.html
+share/doc/ocaml-csv/api/index_types.html
+share/doc/ocaml-csv/api/index_values.html
+share/doc/ocaml-csv/api/style.css
+share/doc/ocaml-csv/api/type_Csv.html
+share/doc/ocaml-csv/api/type_Csv.in_obj_channel.html
+share/doc/ocaml-csv/api/type_Csv.out_obj_channel.html
