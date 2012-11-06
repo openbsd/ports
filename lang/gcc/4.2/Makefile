@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2012/10/07 20:09:44 landry Exp $
+# $OpenBSD: Makefile,v 1.87 2012/11/06 00:57:43 tobiasu Exp $
 
 ONLY_FOR_ARCHS = alpha i386 m68k sparc sparc64 powerpc vax amd64
 #BROKEN=adjust for types changes
@@ -7,10 +7,13 @@ DPB_PROPERTIES = parallel
 V = 4.2.4
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
-BOOTSTRAP_GEN = 5
-# XXX adastrap bundles libc.so.60.1 (from OpenBSD 5.0) to build on i386
-LIBC_VERSION = 60.1
-ADASTRAP = adastrap-i386-$V-${BOOTSTRAP_GEN}.tgz
+
+ADASTRAP_LIBC-i386 = 60.1
+ADASTRAP-i386 = adastrap-i386-$V-5.tgz
+ADASTRAP_LIBC-amd64 = 66.0
+ADASTRAP-amd64 = adastrap-amd64-$V-1.tgz
+ADASTRAP_LIBC-sparc64 = 66.0
+ADASTRAP-sparc64 = adastrap-sparc64-$V-1.tgz
 
 PKGNAME-main =  gcc-${FULL_PKGVERSION}
 PKGNAME-c++ =   g++-${FULL_PKGVERSION}
@@ -20,13 +23,13 @@ PKGNAME-java =  gcj-${FULL_PKGVERSION}
 PKGNAME-objc =  gobjc-${FULL_PKGVERSION}
 PKGNAME-ada =   gnat-${FULL_PKGVERSION}
 
-REVISION-main = 13
+REVISION-main = 14
 REVISION-c++ = 17
 REVISION-estdc = 5
 REVISION-f95 = 15
 REVISION-java = 15
 REVISION-objc = 14
-REVISION-ada = 11
+REVISION-ada = 12
 EPOCH = 0
 
 SHARED_LIBS =	estdc++		13.0 \
@@ -48,7 +51,7 @@ USE_GROFF =	Yes
 PSEUDO_FLAVORS = no_c++ no_f95 no_objc no_java no_ada full
 FLAVOR ?= 
 
-ONLY_FOR_ARCHS-ada = i386
+ONLY_FOR_ARCHS-ada = i386 amd64 sparc64
 ONLY_FOR_ARCHS-java = amd64 sparc64 i386
 
 MULTI_PACKAGES = -main -f95 -objc -java -c++ -estdc -ada
@@ -61,7 +64,7 @@ BUILD_PACKAGES := ${BUILD_PACKAGES:N-estdc}
 .endif
 
 DISTFILES =  ${DISTNAME}.tar.bz2
-SUPDISTFILES =	${ADASTRAP}:0
+SUPDISTFILES =	${ADASTRAP-i386}:0 ${ADASTRAP-amd64}:0 ${ADASTRAP-sparc64}:0
 
 BUILD_DEPENDS += devel/autoconf/2.59
 BUILD_DEPENDS += devel/metaauto
@@ -101,7 +104,7 @@ CONFIGURE_ARGS += --enable-libgcj
 .endif
 .if ${BUILD_PACKAGES:M-ada}
 LANGS := ${LANGS},ada
-DISTFILES += ${ADASTRAP}:0
+DISTFILES += ${ADASTRAP-${MACHINE_ARCH}}:0
 CONFIGURE_ENV = ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
 MAKE_ENV = ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
 CC = ${WRKDIR}/bin/egcc
@@ -119,9 +122,6 @@ post-extract:
 .for l v in ${SHARED_LIBS}
 	echo "LIB$l_LTVERSION = -version-info ${v:S/./:/}" >> ${WRKSRC}/libversions
 .endfor
-.if ${BUILD_PACKAGES:M-ada}
-	${WRKDIR}/bin/egcc -v # if this fails, you must extract suitable libraries from the relevant OpenBSD release or use the no_ada FLAVOR.
-.endif
 
 post-install:
 .if ${BUILD_PACKAGES:M-ada}
@@ -159,8 +159,8 @@ CONFIGURE_ARGS += \
 # visible beast
 CONFIGURE_ARGS += --enable-cpp
 
-CONFIGURE_ARGS += --with-gnu-as 
-CONFIGURE_ARGS += --with-gnu-ld 
+CONFIGURE_ARGS += --with-gnu-as
+CONFIGURE_ARGS += --with-gnu-ld
 CONFIGURE_ARGS += ${CONFIGURE_SHARED}
 
 post-patch:
@@ -208,6 +208,7 @@ RUN_DEPENDS-java =	archivers/unzip \
 			archivers/zip>=2.3p0
 
 RUN_DEPENDS-c++ =	${RUN_DEPENDS} libstdc++->=4.2,<4.3|libstdc++->=4.2v0,<4.3v0:${BUILD_PKGPATH},-estdc
+RUN_DEPENDS-ada =	${FULLPKGNAME-main}:${BUILD_PKGPATH}
 WANTLIB-estdc =		m
 WANTLIB-java =		c m pthread z
 
@@ -216,19 +217,26 @@ LIB_DEPENDS-f95 =	devel/gmp>=4.2 \
 WANTLIB-f95 =		${WANTLIB} gmp mpfr
 .include <bsd.port.mk>
 
-ADA_PACKAGE = ${PACKAGE_REPOSITORY}/i386/all/${PKGNAME-ada}${PKG_SUFX}
-GCC_PACKAGE = ${PACKAGE_REPOSITORY}/i386/all/${PKGNAME-main}${PKG_SUFX}
+ADA_PACKAGE = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${FULLPKGNAME-ada}.tgz
+GCC_PACKAGE = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${FULLPKGNAME-main}.tgz
 
 adastrap: ${ADA_PACKAGE} ${GCC_PACKAGE}
-.if !defined(LIBC_VERSION)
+.if !defined(ADASTRAP_LIBC-${MACHINE_ARCH})
 	@echo 1>&2 "Error: you must specify a libc to bundle"
 	@exit 1
 .else
 	mkdir -p ${WRKDIR}/prepare/bootstrap/system-libs
-	cp /usr/lib/libc.so.${LIBC_VERSION} ${WRKDIR}/prepare/bootstrap/system-libs
+	cp /usr/lib/libc.so.${ADASTRAP_LIBC-${MACHINE_ARCH}} \
+		${WRKDIR}/prepare/bootstrap/system-libs
 	cd ${WRKDIR}/prepare/bootstrap && tar zxf ${ADA_PACKAGE}
 	cd ${WRKDIR}/prepare/bootstrap && tar zxf ${GCC_PACKAGE}
 	rm -rf ${WRKDIR}/prepare/bootstrap/{+*,info,man}
-	cd ${WRKDIR}/prepare && tar zcf ${FULLDISTDIR}/${ADASTRAP} bootstrap
+	if ! ldd ${WRKDIR}/prepare/bootstrap/bin/egcc | \
+		fgrep libc.so.${ADASTRAP_LIBC-${MACHINE_ARCH}} >/dev/null; then \
+		echo 1>&2 "Error: adastrap egcc linked against wrong libc"; \
+		exit 1; \
+	fi
+	cd ${WRKDIR}/prepare && \
+		tar zcf ${FULLDISTDIR}/${ADASTRAP-${MACHINE_ARCH}} bootstrap
 .endif
 

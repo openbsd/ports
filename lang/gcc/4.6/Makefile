@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2012/10/17 19:58:21 kurt Exp $
+# $OpenBSD: Makefile,v 1.40 2012/11/06 00:57:43 tobiasu Exp $
 
 ONLY_FOR_ARCHS = amd64 i386 powerpc sparc sparc64
 DPB_PROPERTIES = parallel
@@ -6,9 +6,13 @@ DPB_PROPERTIES = parallel
 V = 4.6.3
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
-BOOTSTRAP_GEN = 0
-LIBC_VERSION = 63.0
-ADASTRAP = adastrap-i386-$V-${BOOTSTRAP_GEN}.tar.xz
+
+ADASTRAP_LIBC-i386 = 63.0
+ADASTRAP-i386 = adastrap-i386-$V-0.tar.xz
+ADASTRAP_LIBC-amd64 = 66.0
+ADASTRAP-amd64 = adastrap-amd64-$V-0.tar.xz
+ADASTRAP_LIBC-sparc64 = 66.0
+ADASTRAP-sparc64 = adastrap-sparc64-$V-0.tar.xz
 
 PKGNAME-main =  gcc-${FULL_PKGVERSION}
 PKGNAME-c++ =   g++-${FULL_PKGVERSION}
@@ -20,13 +24,13 @@ PKGNAME-ada =   gnat-${FULL_PKGVERSION}
 PKGNAME-go =	gccgo-${FULL_PKGVERSION}
 PKGSPEC-main = gcc->=4.6,<4.7
 
-REVISION-main = 12
+REVISION-main = 13
 REVISION-c++ = 12
 REVISION-estdc = 10
 REVISION-f95 = 12
 REVISION-java = 13
 REVISION-objc = 12
-REVISION-ada = 12
+REVISION-ada = 13
 REVISION-go = 12
 
 SHARED_LIBS =	estdc++		14.0 \
@@ -43,7 +47,7 @@ SHARED_LIBS =	estdc++		14.0 \
 PSEUDO_FLAVORS = no_c++ no_f95 no_objc no_java no_ada no_go full
 FLAVOR ?= 
 
-ONLY_FOR_ARCHS-ada = i386
+ONLY_FOR_ARCHS-ada = i386 amd64 sparc64
 ONLY_FOR_ARCHS-java = amd64 i386 sparc64
 
 MULTI_PACKAGES = -main -f95 -objc -java -c++ -estdc -ada -go
@@ -59,7 +63,8 @@ DISTNAME =   	gcc-${FULL_VERSION}
 DISTFILES =	${DISTNAME}.tar.bz2
 # there's no ecj-4.6.jar
 ECJ =		ecj-4.5.jar
-SUPDISTFILES =	${ADASTRAP}:0 ${ECJ}:1
+SUPDISTFILES =	${ADASTRAP-i386}:0 ${ADASTRAP-amd64}:0 ${ADASTRAP-sparc64}:0 \
+		${ECJ}:1
 EXTRACT_ONLY =	${DISTNAME}.tar.bz2
 
 USE_LIBTOOL =	Yes
@@ -94,8 +99,8 @@ VMEM_WARNING =		Yes
 .endif
 .if ${BUILD_PACKAGES:M-ada}
 LANGS := ${LANGS},ada
-DISTFILES += ${ADASTRAP}:0
-EXTRACT_ONLY += ${ADASTRAP}
+DISTFILES += ${ADASTRAP-${MACHINE_ARCH}}:0
+EXTRACT_ONLY += ${ADASTRAP-${MACHINE_ARCH}}
 EXTRA_ENV += ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
 CC = ${WRKDIR}/bin/egcc
 REGRESS_DEPENDS += ${BUILD_PKGPATH},-ada
@@ -187,6 +192,7 @@ RUN_DEPENDS-estdc =
 
 RUN_DEPENDS-c++ =	${RUN_DEPENDS} \
 			${BUILD_PKGPATH},-estdc>=4.6,<4.7
+RUN_DEPENDS-ada =	${FULLPKGNAME-main}:${BUILD_PKGPATH}
 WANTLIB-estdc =		m
 WANTLIB-f95 =		${WANTLIB}
 WANTLIB-java =		${WANTLIB} pthread
@@ -213,11 +219,6 @@ post-extract:
 	echo "LIB$l_LTVERSION = -version-info ${v:S/./:/}" >> \
 		${WRKSRC}/libversions
 .endfor
-.if ${BUILD_PACKAGES:M-ada}
-	# XXX cheat a bit
-	cd ${WRKDIR}/bootstrap/system-libs && ln -sf libc.so.${LIBC_VERSION} libc.so.61.0
-	${WRKDIR}/bin/egcc -v # if this fails, you must extract suitable libraries from the relevant OpenBSD release or use the no_ada FLAVOR.
-.endif
 .if ${BUILD_PACKAGES:M-java}
 	cp ${FULLDISTDIR}/${ECJ} ${WRKSRC}/ecj.jar
 .endif
@@ -239,20 +240,26 @@ post-install:
 
 .include <bsd.port.mk>
 
-ADA_PACKAGE = ${PACKAGE_REPOSITORY}/i386/all/${PKGNAME-ada}.tgz
-GCC_PACKAGE = ${PACKAGE_REPOSITORY}/i386/all/${PKGNAME-main}.tgz
+ADA_PACKAGE = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${FULLPKGNAME-ada}.tgz
+GCC_PACKAGE = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${FULLPKGNAME-main}.tgz
 
 adastrap: ${ADA_PACKAGE} ${GCC_PACKAGE}
-.if !defined(LIBC_VERSION)
+.if !defined(ADASTRAP_LIBC-${MACHINE_ARCH})
 	@echo 1>&2 "Error: you must specify a libc to bundle"
 	@exit 1
 .else
 	mkdir -p ${WRKDIR}/prepare/bootstrap/system-libs
-	cp /usr/lib/libc.so.${LIBC_VERSION} ${WRKDIR}/prepare/bootstrap/system-libs
+	cp /usr/lib/libc.so.${ADASTRAP_LIBC-${MACHINE_ARCH}} \
+		${WRKDIR}/prepare/bootstrap/system-libs
 	cd ${WRKDIR}/prepare/bootstrap && tar zxf ${ADA_PACKAGE}
 	cd ${WRKDIR}/prepare/bootstrap && tar zxf ${GCC_PACKAGE}
 	rm -rf ${WRKDIR}/prepare/bootstrap/{+*,info,man}
+	if ! ldd ${WRKDIR}/prepare/bootstrap/bin/egcc | \
+		fgrep libc.so.${ADASTRAP_LIBC-${MACHINE_ARCH}} >/dev/null; then \
+		echo 1>&2 "Error: adastrap egcc linked against wrong libc"; \
+		exit 1; \
+	fi
 	cd ${WRKDIR}/prepare && tar cf - bootstrap | \
-		xz > ${FULLDISTDIR}/${ADASTRAP}
+		xz > ${FULLDISTDIR}/${ADASTRAP-${MACHINE_ARCH}}
 .endif
 
