@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.48 2012/10/27 11:17:56 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.49 2012/11/06 08:26:29 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: October 27 2012 $
+.Dd $Mdocdate: November 6 2012 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -205,11 +205,11 @@ This can be instead set on a per-core basis as the
 .Sq stuck
 property.
 Note that this will always be divided by the core's speed factor.
-.It Ar WAITING_TIMEOUT
+.It Ar WAIT_TIMEOUT
 Timeout (in seconds) to wait before giving up on NFS packages showing up.
 Set to 0 to disable.
 Defaults to 10 minutes.
-Disabled on localhost.
+.\" Disabled on localhost.
 .El
 .It Fl e
 The listing job is extra and won't be given back to the pool when it's

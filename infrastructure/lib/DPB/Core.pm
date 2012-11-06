@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.19 2012/10/13 09:06:55 espie Exp $
+# $OpenBSD: Core.pm,v 1.20 2012/11/06 08:26:29 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -27,12 +27,13 @@ sub new
 	my ($class, $name, $prop) = @_;
 	$prop //= {};
 	$prop->{sf} //= 1;
+	$prop->{umask} //= sprintf("0%o", umask);
 	if (defined $prop->{stuck}) {
 		$prop->{stuck_timeout} = $prop->{stuck} * $prop->{sf};
 	}
-	if ($class->name_is_localhost($name)) {
-		delete $prop->{waiting_timeout};
-	}
+#	if ($class->name_is_localhost($name)) {
+#		delete $prop->{wait_timeout};
+#	}
 	$hosts->{$name} //= bless {host => $name, prop => $prop }, $class;
 }
 
