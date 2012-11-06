@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2012/03/30 06:48:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2012/11/06 11:48:28 dcoppa Exp $
 
 COMMENT=	Universal Plug and Play SDK
 
-DISTNAME=	libupnp-1.6.6
+DISTNAME=	libupnp-1.6.17
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	0
 
 CATEGORIES=	net devel
 
-SHARED_LIBS +=  ixml                         0.0 # .2.4
-SHARED_LIBS +=  threadutil                   0.0 # .4.3
-SHARED_LIBS +=  upnp                         0.0 # .3.5
+SHARED_LIBS +=  ixml                         0.1 # .2.7
+SHARED_LIBS +=  threadutil                   1.0 # .6.2
+SHARED_LIBS +=  upnp                         1.0 # .9.1
 
 HOMEPAGE=	http://pupnp.sourceforge.net/
 
@@ -21,6 +20,8 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pupnp/}
+
+WANTLIB =	pthread
 
 USE_LIBTOOL=	Yes
 

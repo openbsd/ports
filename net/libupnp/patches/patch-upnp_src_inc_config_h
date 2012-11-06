@@ -1,15 +1,15 @@
-$OpenBSD: patch-upnp_src_inc_config_h,v 1.1 2012/03/30 06:48:01 ajacoutot Exp $
+$OpenBSD: patch-upnp_src_inc_config_h,v 1.2 2012/11/06 11:48:28 dcoppa Exp $
 
 http://lifewithushare.blogspot.fr/2008/01/simultaneous-streaming-to-multiple.html
 
---- upnp/src/inc/config.h.orig	Fri Mar 30 08:44:07 2012
-+++ upnp/src/inc/config.h	Fri Mar 30 08:44:18 2012
-@@ -78,7 +78,7 @@
+--- upnp/src/inc/config.h.orig	Fri Nov  2 15:18:39 2012
++++ upnp/src/inc/config.h	Fri Nov  2 15:18:54 2012
+@@ -90,7 +90,7 @@
+  *
+  * @{
   */
- 
- //@{
 -#define MIN_THREADS 2 
 +#define MIN_THREADS 6
- //@}
+ /* @} */
  
- /** @name MAX_THREADS
+ 
