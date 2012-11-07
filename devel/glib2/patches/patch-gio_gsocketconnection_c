@@ -1,0 +1,22 @@
+$OpenBSD: patch-gio_gsocketconnection_c,v 1.1 2012/11/07 08:17:56 ajacoutot Exp $
+
+Fix a reference counting bug (par rewrote upstream, remove when updating to glib >= 2.35).
+
+--- gio/gsocketconnection.c.orig	Tue Oct 16 02:25:24 2012
++++ gio/gsocketconnection.c	Tue Nov  6 14:23:51 2012
+@@ -201,6 +201,7 @@ g_socket_connection_connect_async (GSocketConnection  
+     {
+       g_simple_async_result_set_op_res_gboolean (simple, TRUE);
+       g_simple_async_result_complete_in_idle (simple);
++      g_object_unref (simple);
+     }
+   else if (g_error_matches (tmp_error, G_IO_ERROR, G_IO_ERROR_PENDING))
+     {
+@@ -219,6 +220,7 @@ g_socket_connection_connect_async (GSocketConnection  
+     {
+       g_simple_async_result_take_error (simple, tmp_error);
+       g_simple_async_result_complete_in_idle (simple);
++      g_object_unref (simple);
+     }
+ }
+ 
