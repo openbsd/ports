@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.584 2012/11/05 08:24:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.585 2012/11/07 07:54:04 jasper Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -58,6 +58,7 @@
      SUBDIR += flyspray
      SUBDIR += gcap
      SUBDIR += gecko-mediaplayer
+     SUBDIR += gitlist
      SUBDIR += glpi
      SUBDIR += gnash
      SUBDIR += gtkhtml3
