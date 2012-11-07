@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2012/09/29 10:53:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2012/11/07 14:04:18 jasper Exp $
 @bin bin/glom
 @bin bin/glom_create_from_example
 @bin bin/glom_export_po
@@ -87,6 +87,8 @@ share/doc/libglom-${API_V}/reference/
 share/doc/libglom-${API_V}/reference/html/
 share/doc/libglom-${API_V}/reference/html/annotated.html
 share/doc/libglom-${API_V}/reference/html/bc_s.png
+share/doc/libglom-${API_V}/reference/html/bdwn.png
+share/doc/libglom-${API_V}/reference/html/classGValue.html
 share/doc/libglom-${API_V}/reference/html/classGlomBakery_1_1Document-members.html
 share/doc/libglom-${API_V}/reference/html/classGlomBakery_1_1Document.html
 share/doc/libglom-${API_V}/reference/html/classGlomBakery_1_1Document__XML-members.html
@@ -258,9 +260,34 @@ share/doc/libglom-${API_V}/reference/html/classGlom_1_1sharedptr-members.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1sharedptr.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1sharedptr__inherit__graph.png
 share/doc/libglom-${API_V}/reference/html/classes.html
+share/doc/libglom-${API_V}/reference/html/classstd_1_1logic__error.html
+share/doc/libglom-${API_V}/reference/html/classstd_1_1logic__error__inherit__graph.png
 share/doc/libglom-${API_V}/reference/html/closed.png
+share/doc/libglom-${API_V}/reference/html/dir_19bfda69641299eed8e11251504b6c3c.html
+share/doc/libglom-${API_V}/reference/html/dir_4257d9b4f9ac811b1e2ea282aa1cf0e7.html
+share/doc/libglom-${API_V}/reference/html/dir_434e757db745f7bb2046098563428a3c.html
+share/doc/libglom-${API_V}/reference/html/dir_96c245ed9dfbd1862602a5e39af1c96f.html
+share/doc/libglom-${API_V}/reference/html/dir_afe145b47a4ac6593d2f41db8bc076f3.html
+share/doc/libglom-${API_V}/reference/html/dir_b3890f6bb47b53a6abf21354c7f7f634.html
+share/doc/libglom-${API_V}/reference/html/dir_f071f38b98068934095ce7ce9f5ceda3.html
 share/doc/libglom-${API_V}/reference/html/doxygen.css
 share/doc/libglom-${API_V}/reference/html/doxygen.png
+share/doc/libglom-${API_V}/reference/html/ftv2blank.png
+share/doc/libglom-${API_V}/reference/html/ftv2cl.png
+share/doc/libglom-${API_V}/reference/html/ftv2doc.png
+share/doc/libglom-${API_V}/reference/html/ftv2folderclosed.png
+share/doc/libglom-${API_V}/reference/html/ftv2folderopen.png
+share/doc/libglom-${API_V}/reference/html/ftv2lastnode.png
+share/doc/libglom-${API_V}/reference/html/ftv2link.png
+share/doc/libglom-${API_V}/reference/html/ftv2mlastnode.png
+share/doc/libglom-${API_V}/reference/html/ftv2mnode.png
+share/doc/libglom-${API_V}/reference/html/ftv2mo.png
+share/doc/libglom-${API_V}/reference/html/ftv2node.png
+share/doc/libglom-${API_V}/reference/html/ftv2ns.png
+share/doc/libglom-${API_V}/reference/html/ftv2plastnode.png
+share/doc/libglom-${API_V}/reference/html/ftv2pnode.png
+share/doc/libglom-${API_V}/reference/html/ftv2splitbar.png
+share/doc/libglom-${API_V}/reference/html/ftv2vertline.png
 share/doc/libglom-${API_V}/reference/html/functions.html
 share/doc/libglom-${API_V}/reference/html/functions_0x62.html
 share/doc/libglom-${API_V}/reference/html/functions_0x63.html
@@ -315,7 +342,21 @@ share/doc/libglom-${API_V}/reference/html/inherit_graph_1.png
 share/doc/libglom-${API_V}/reference/html/inherit_graph_10.png
 share/doc/libglom-${API_V}/reference/html/inherit_graph_11.png
 share/doc/libglom-${API_V}/reference/html/inherit_graph_12.png
+share/doc/libglom-${API_V}/reference/html/inherit_graph_13.png
+share/doc/libglom-${API_V}/reference/html/inherit_graph_14.png
+share/doc/libglom-${API_V}/reference/html/inherit_graph_15.png
+share/doc/libglom-${API_V}/reference/html/inherit_graph_16.png
+share/doc/libglom-${API_V}/reference/html/inherit_graph_17.png
+share/doc/libglom-${API_V}/reference/html/inherit_graph_18.png
+share/doc/libglom-${API_V}/reference/html/inherit_graph_19.png
 share/doc/libglom-${API_V}/reference/html/inherit_graph_2.png
+share/doc/libglom-${API_V}/reference/html/inherit_graph_20.png
+share/doc/libglom-${API_V}/reference/html/inherit_graph_21.png
+share/doc/libglom-${API_V}/reference/html/inherit_graph_22.png
+share/doc/libglom-${API_V}/reference/html/inherit_graph_23.png
+share/doc/libglom-${API_V}/reference/html/inherit_graph_24.png
+share/doc/libglom-${API_V}/reference/html/inherit_graph_25.png
+share/doc/libglom-${API_V}/reference/html/inherit_graph_26.png
 share/doc/libglom-${API_V}/reference/html/inherit_graph_3.png
 share/doc/libglom-${API_V}/reference/html/inherit_graph_4.png
 share/doc/libglom-${API_V}/reference/html/inherit_graph_5.png
@@ -335,9 +376,14 @@ share/doc/libglom-${API_V}/reference/html/namespacemembers_func.html
 share/doc/libglom-${API_V}/reference/html/namespacemembers_type.html
 share/doc/libglom-${API_V}/reference/html/namespacemembers_vars.html
 share/doc/libglom-${API_V}/reference/html/namespaces.html
+share/doc/libglom-${API_V}/reference/html/namespacestd.html
+share/doc/libglom-${API_V}/reference/html/namespacestd_1_1locale.html
 share/doc/libglom-${API_V}/reference/html/nav_f.png
+share/doc/libglom-${API_V}/reference/html/nav_g.png
 share/doc/libglom-${API_V}/reference/html/nav_h.png
 share/doc/libglom-${API_V}/reference/html/open.png
+share/doc/libglom-${API_V}/reference/html/sync_off.png
+share/doc/libglom-${API_V}/reference/html/sync_on.png
 share/doc/libglom-${API_V}/reference/html/tab_a.png
 share/doc/libglom-${API_V}/reference/html/tab_b.png
 share/doc/libglom-${API_V}/reference/html/tab_h.png
@@ -605,6 +651,7 @@ share/locale/cs/LC_MESSAGES/glom.mo
 share/locale/da/LC_MESSAGES/glom.mo
 share/locale/de/LC_MESSAGES/glom.mo
 share/locale/dz/LC_MESSAGES/glom.mo
+share/locale/el/LC_MESSAGES/glom.mo
 share/locale/en_CA/LC_MESSAGES/glom.mo
 share/locale/en_GB/LC_MESSAGES/glom.mo
 share/locale/eo/LC_MESSAGES/glom.mo
@@ -614,7 +661,9 @@ share/locale/fr/LC_MESSAGES/glom.mo
 share/locale/gl/LC_MESSAGES/glom.mo
 share/locale/gu/LC_MESSAGES/glom.mo
 share/locale/hu/LC_MESSAGES/glom.mo
+share/locale/id/LC_MESSAGES/glom.mo
 share/locale/it/LC_MESSAGES/glom.mo
+share/locale/lv/LC_MESSAGES/glom.mo
 share/locale/nb/LC_MESSAGES/glom.mo
 share/locale/ne/LC_MESSAGES/glom.mo
 share/locale/nl/LC_MESSAGES/glom.mo
