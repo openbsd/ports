@@ -1,7 +1,7 @@
-$OpenBSD: patch-skia_skia_gyp,v 1.5 2012/10/12 16:46:10 robert Exp $
---- skia/skia.gyp.orig	Tue Sep 25 15:01:38 2012
-+++ skia/skia.gyp	Wed Oct 10 17:19:29 2012
-@@ -914,7 +914,7 @@
+$OpenBSD: patch-skia_skia_gyp,v 1.6 2012/11/07 06:59:45 robert Exp $
+--- skia/skia.gyp.orig	Wed Oct 31 20:01:43 2012
++++ skia/skia.gyp	Tue Nov  6 22:45:36 2012
+@@ -339,7 +339,7 @@
              '__ARM_HAVE_NEON',
            ],
          }],
@@ -10,7 +10,7 @@ $OpenBSD: patch-skia_skia_gyp,v 1.5 2012/10/12 16:46:10 robert Exp $
            'sources!': [
              '../third_party/skia/src/opts/opts_check_SSE2.cpp'
            ],
-@@ -1209,7 +1209,7 @@
+@@ -664,7 +664,7 @@
              'SK_BUILD_FOR_ANDROID_NDK',
            ],
          }],
@@ -19,7 +19,7 @@ $OpenBSD: patch-skia_skia_gyp,v 1.5 2012/10/12 16:46:10 robert Exp $
            'sources': [
              '../third_party/skia/src/opts/SkBitmapProcState_opts_SSE2.cpp',
              '../third_party/skia/src/opts/SkBlitRect_opts_SSE2.cpp',
-@@ -1224,8 +1224,14 @@
+@@ -679,8 +679,14 @@
                ],
              }],
            ],
@@ -36,7 +36,7 @@ $OpenBSD: patch-skia_skia_gyp,v 1.5 2012/10/12 16:46:10 robert Exp $
            'conditions': [
              ['order_profiling != 0', {
                'target_conditions' : [
-@@ -1310,7 +1316,7 @@
+@@ -768,7 +774,7 @@
          '../third_party/skia/src/core',
        ],
        'conditions': [
@@ -45,7 +45,7 @@ $OpenBSD: patch-skia_skia_gyp,v 1.5 2012/10/12 16:46:10 robert Exp $
            'cflags': [
              '-mssse3',
            ],
-@@ -1337,7 +1343,7 @@
+@@ -795,7 +801,7 @@
              ],
            },
          }],

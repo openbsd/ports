@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_content_browser_gypi,v 1.12 2012/10/12 16:46:10 robert Exp $
---- content/content_browser.gypi.orig	Wed Oct 10 23:06:08 2012
-+++ content/content_browser.gypi	Wed Oct 10 23:21:19 2012
-@@ -168,7 +168,6 @@
+$OpenBSD: patch-content_content_browser_gypi,v 1.13 2012/11/07 06:59:45 robert Exp $
+--- content/content_browser.gypi.orig	Tue Nov  6 22:55:23 2012
++++ content/content_browser.gypi	Tue Nov  6 22:55:52 2012
+@@ -165,7 +165,6 @@
      'public/browser/web_ui_message_handler.h',
      'public/browser/worker_service.h',
      'public/browser/worker_service_observer.h',
@@ -9,15 +9,15 @@ $OpenBSD: patch-content_content_browser_gypi,v 1.12 2012/10/12 16:46:10 robert E
      'browser/accessibility/browser_accessibility.cc',
      'browser/accessibility/browser_accessibility.h',
      'browser/accessibility/browser_accessibility_cocoa.h',
-@@ -273,8 +272,6 @@
+@@ -267,8 +266,6 @@
      'browser/debugger/worker_devtools_manager.h',
      'browser/debugger/worker_devtools_message_filter.cc',
      'browser/debugger/worker_devtools_message_filter.h',
 -    'browser/device_monitor_linux.cc',
 -    'browser/device_monitor_linux.h',
+     'browser/device_monitor_mac.cc',
+     'browser/device_monitor_mac.h',
      'browser/device_orientation/accelerometer_mac.cc',
-     'browser/device_orientation/accelerometer_mac.h',
-     'browser/device_orientation/data_fetcher.h',
 @@ -331,8 +328,6 @@
      'browser/download/drag_download_file.h',
      'browser/download/drag_download_util.cc',
@@ -27,7 +27,7 @@ $OpenBSD: patch-content_content_browser_gypi,v 1.12 2012/10/12 16:46:10 robert E
      'browser/download/file_metadata_mac.h',
      'browser/download/file_metadata_mac.mm',
      'browser/download/mhtml_generation_manager.cc',
-@@ -743,8 +738,6 @@
+@@ -760,8 +755,6 @@
      'browser/system_message_window_win.h',
      'browser/tcmalloc_internals_request_job.cc',
      'browser/tcmalloc_internals_request_job.h',
@@ -36,10 +36,10 @@ $OpenBSD: patch-content_content_browser_gypi,v 1.12 2012/10/12 16:46:10 robert E
      'browser/web_contents/debug_urls.cc',
      'browser/web_contents/debug_urls.h',
      'browser/web_contents/drag_utils_gtk.cc',
-@@ -807,11 +800,6 @@
-     'browser/worker_host/worker_process_host.h',
-     'browser/worker_host/worker_service_impl.cc',
+@@ -826,11 +819,6 @@
      'browser/worker_host/worker_service_impl.h',
+     'browser/worker_host/worker_storage_partition.cc',
+     'browser/worker_host/worker_storage_partition.h',
 -    'browser/zygote_host/zygote_host_impl_linux.cc',
 -    'browser/zygote_host/zygote_host_impl_linux.h',
 -    'zygote/zygote_linux.cc',

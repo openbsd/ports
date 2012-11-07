@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.109 2012/10/12 17:34:17 robert Exp $
+# $OpenBSD: Makefile,v 1.110 2012/11/07 06:59:45 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 
 COMMENT=		Chromium browser
 
-V=			22.0.1229.94
+V=			23.0.1271.64
 DISTNAME=		chromium-${V}
-REVISION=		0
 
 CATEGORIES=		www
 
@@ -127,7 +126,7 @@ do-install:
 	chmod ${BINMODE} ${PREFIX}/bin/chrome
 	${INSTALL_MAN} ${BUILDDIR}/chrome.1 ${PREFIX}/man/man1
 
-.for p in chrome content_resources resources theme_resources_100_percent ui_resources_100_percent
+.for p in chrome chrome_100_percent content_resources resources
 	${INSTALL_DATA} ${BUILDDIR}/${p}.pak ${PREFIX}/chrome
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/chrome/locales

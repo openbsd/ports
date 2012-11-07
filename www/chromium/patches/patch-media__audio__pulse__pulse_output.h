@@ -1,8 +1,8 @@
---- media/audio/pulse/pulse_output.h.orig	Tue Aug 14 09:01:11 2012
-+++ media/audio/pulse/pulse_output.h	Wed Aug 15 23:14:34 2012
-@@ -30,7 +30,7 @@ namespace media {
+--- media/audio/pulse/pulse_output.h.orig	Wed Oct 31 20:01:19 2012
++++ media/audio/pulse/pulse_output.h	Tue Nov  6 22:45:35 2012
+@@ -28,7 +28,7 @@
  
- class SeekableBuffer;
+ namespace media {
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_FREEBSD)

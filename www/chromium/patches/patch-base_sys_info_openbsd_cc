@@ -1,0 +1,26 @@
+$OpenBSD: patch-base_sys_info_openbsd_cc,v 1.4 2012/11/07 06:59:45 robert Exp $
+--- base/sys_info_openbsd.cc.orig	Wed Nov  7 07:48:17 2012
++++ base/sys_info_openbsd.cc	Wed Nov  7 07:52:57 2012
+@@ -1,4 +1,4 @@
+-// Copyright (c) 2011 The Chromium Authors. All rights reserved.
++// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+ // Use of this source code is governed by a BSD-style license that can be
+ // found in the LICENSE file.
+ 
+@@ -43,6 +43,16 @@ size_t SysInfo::MaxSharedMemorySize() {
+     return 0;
+   }
+   return limit;
++}
++
++// static
++std::string SysInfo::CPUModelName() {
++  int mib[] = { CTL_HW, HW_MODEL };
++  char name[256];
++  size_t len = arraysize(name);
++  if (sysctl(mib, arraysize(mib), &name, &len, NULL, 0) == 0)
++    return name;
++  return std::string();
+ }
+ 
+ }  // namespace base

@@ -1,7 +1,7 @@
-$OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_cc,v 1.10 2012/07/10 09:22:34 robert Exp $
---- media/audio/openbsd/audio_manager_openbsd.cc.orig	Thu Jun 28 15:01:10 2012
-+++ media/audio/openbsd/audio_manager_openbsd.cc	Sat Jul  7 09:50:30 2012
-@@ -65,26 +65,26 @@ void AudioManagerOpenBSD::UnMuteAll() {
+$OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_cc,v 1.11 2012/11/07 06:59:45 robert Exp $
+--- media/audio/openbsd/audio_manager_openbsd.cc.orig	Wed Oct 31 20:01:19 2012
++++ media/audio/openbsd/audio_manager_openbsd.cc	Tue Nov  6 22:45:35 2012
+@@ -57,26 +57,26 @@ void AudioManagerOpenBSD::Init() {
  
  AudioOutputStream* AudioManagerOpenBSD::MakeLinearOutputStream(
      const AudioParameters& params) {

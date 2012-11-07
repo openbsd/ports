@@ -1,16 +1,16 @@
-$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.5 2012/10/12 16:46:10 robert Exp $
---- content/browser/browser_main_loop.cc.orig	Tue Sep 25 15:01:32 2012
-+++ content/browser/browser_main_loop.cc	Wed Oct 10 17:19:28 2012
-@@ -78,7 +78,7 @@
+$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.6 2012/11/07 06:59:45 robert Exp $
+--- content/browser/browser_main_loop.cc.orig	Wed Oct 31 20:01:35 2012
++++ content/browser/browser_main_loop.cc	Tue Nov  6 22:45:22 2012
+@@ -79,7 +79,7 @@
  #include "ui/gfx/gtk_util.h"
  #endif
  
 -#if defined(OS_POSIX) && !defined(OS_MACOSX)
 +#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
  #include <sys/stat.h>
- #include "content/browser/renderer_host/render_sandbox_host_linux.h"
- #include "content/browser/zygote_host/zygote_host_impl_linux.h"
-@@ -97,7 +97,7 @@ using content::TraceControllerImpl;
+ 
+ #include "base/process_util.h"
+@@ -100,7 +100,7 @@ using content::TraceControllerImpl;
  
  namespace {
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.5 2012/10/12 16:46:10 r
  void SetupSandbox(const CommandLine& parsed_command_line) {
    // TODO(evanm): move this into SandboxWrapper; I'm just trying to move this
    // code en masse out of chrome_main for now.
-@@ -282,7 +282,7 @@ void BrowserMainLoop::EarlyInitialization() {
+@@ -286,7 +286,7 @@ void BrowserMainLoop::EarlyInitialization() {
    }
  #endif  // !defined(USE_OPENSSL)
  

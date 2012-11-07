@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.20 2012/10/12 16:46:10 robert Exp $
+@comment $OpenBSD: PLIST,v 1.21 2012/11/07 06:59:45 robert Exp $
 bin/chrome
 chrome/
 @bin chrome/chrome
 chrome/chrome.pak
+chrome/chrome_100_percent.pak
 chrome/content_resources.pak
 chrome/libffmpegsumo.so
 chrome/locales/
@@ -68,7 +69,10 @@ chrome/resources/extension/
 chrome/resources/extension/demo/
 chrome/resources/extension/demo/library.js
 chrome/resources/inspector/
+chrome/resources/inspector/AuditsPanel.js
+chrome/resources/inspector/CodeMirrorTextEditor.js
 chrome/resources/inspector/DevTools.js
+chrome/resources/inspector/ElementsPanel.js
 chrome/resources/inspector/HeapSnapshotWorker.js
 chrome/resources/inspector/Images/
 chrome/resources/inspector/Images/applicationCache.png
@@ -115,6 +119,7 @@ chrome/resources/inspector/Images/indexedDB.png
 chrome/resources/inspector/Images/indexedDBIndex.png
 chrome/resources/inspector/Images/indexedDBObjectStore.png
 chrome/resources/inspector/Images/localStorage.png
+chrome/resources/inspector/Images/namedFlowOverflow.png
 chrome/resources/inspector/Images/navigatorShowHideButton.png
 chrome/resources/inspector/Images/paneAddButtons.png
 chrome/resources/inspector/Images/paneBottomGrow.png
@@ -132,6 +137,9 @@ chrome/resources/inspector/Images/profileSmallIcon.png
 chrome/resources/inspector/Images/profilesSilhouette.png
 chrome/resources/inspector/Images/programCounterBorder.png
 chrome/resources/inspector/Images/radioDot.png
+chrome/resources/inspector/Images/regionEmpty.png
+chrome/resources/inspector/Images/regionFit.png
+chrome/resources/inspector/Images/regionOverset.png
 chrome/resources/inspector/Images/resourceCSSIcon.png
 chrome/resources/inspector/Images/resourceDocumentIcon.png
 chrome/resources/inspector/Images/resourceDocumentIconSmall.png
@@ -167,6 +175,7 @@ chrome/resources/inspector/Images/spinnerInactiveSelected.gif
 chrome/resources/inspector/Images/splitviewDimple.png
 chrome/resources/inspector/Images/splitviewDividerBackground.png
 chrome/resources/inspector/Images/statusbarButtonGlyphs.png
+chrome/resources/inspector/Images/statusbarButtonGlyphs2x.png
 chrome/resources/inspector/Images/statusbarResizerHorizontal.png
 chrome/resources/inspector/Images/statusbarResizerVertical.png
 chrome/resources/inspector/Images/successGreenDot.png
@@ -209,8 +218,17 @@ chrome/resources/inspector/Images/warningIcon.png
 chrome/resources/inspector/Images/warningMediumIcon.png
 chrome/resources/inspector/Images/warningOrangeDot.png
 chrome/resources/inspector/Images/warningsErrors.png
+chrome/resources/inspector/NetworkPanel.js
+chrome/resources/inspector/ProfilesPanel.js
+chrome/resources/inspector/ResourcesPanel.js
 chrome/resources/inspector/ScriptFormatterWorker.js
+chrome/resources/inspector/ScriptsPanel.js
+chrome/resources/inspector/TimelinePanel.js
 chrome/resources/inspector/auditsPanel.css
+chrome/resources/inspector/breadcrumbList.css
+chrome/resources/inspector/cmdevtools.css
+chrome/resources/inspector/codemirror.css
+chrome/resources/inspector/cssNamedFlows.css
 chrome/resources/inspector/dataGrid.css
 chrome/resources/inspector/devTools.css
 chrome/resources/inspector/devtools.html
@@ -236,8 +254,7 @@ chrome/resources/inspector/tabbedPane.css
 chrome/resources/inspector/textEditor.css
 chrome/resources/inspector/textPrompt.css
 chrome/resources/inspector/timelinePanel.css
-chrome/theme_resources_100_percent.pak
-chrome/ui_resources_100_percent.pak
+chrome/resources/inspector/webGLProfiler.css
 @man man/man1/chrome.1
 share/applications/chrome.desktop
 share/icons/hicolor/128x128/apps/chrome.png
