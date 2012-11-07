@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/11/02 11:55:25 bmercer Exp $
+# $OpenBSD: Makefile,v 1.2 2012/11/07 18:39:32 rpe Exp $
 
 COMMENT =	monospaced OpenType fonts designed for coding environments
 PKG_ARCH =	*
 VERSION =	1.010
 DISTNAME =	SourceCodePro_FontsOnly-${VERSION}
 PKGNAME =	adobe-source-code-pro-${VERSION}
+REVISION =	0
 CATEGORIES =	fonts x11
 EXTRACT_SUFX =	.zip
 
@@ -26,7 +27,7 @@ INST_DIR =	${PREFIX}/lib/X11/fonts/adobe-source-code-pro
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/adobe-source-code-pro
 	${INSTALL_DATA_DIR} ${INST_DIR}
-	${INSTALL_DATA} ${WRKDIST}/TTF/*.ttf ${INST_DIR}
+	${INSTALL_DATA} ${WRKDIST}/TTF/*.ttf ${WRKDIST}/OTF/*.otf ${INST_DIR}
 	${INSTALL_DATA} ${WRKDIST}/LICENSE.txt \
 		${PREFIX}/share/doc/adobe-source-code-pro
 	${INSTALL_DATA} ${WRKDIST}/*.html \

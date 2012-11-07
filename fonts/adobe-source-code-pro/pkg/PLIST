@@ -1,11 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/11/02 11:55:25 bmercer Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/11/07 18:39:32 rpe Exp $
 lib/X11/fonts/
 @fontdir lib/X11/fonts/adobe-source-code-pro/
+lib/X11/fonts/adobe-source-code-pro/SourceCodePro-Black.otf
 lib/X11/fonts/adobe-source-code-pro/SourceCodePro-Black.ttf
+lib/X11/fonts/adobe-source-code-pro/SourceCodePro-Bold.otf
 lib/X11/fonts/adobe-source-code-pro/SourceCodePro-Bold.ttf
+lib/X11/fonts/adobe-source-code-pro/SourceCodePro-ExtraLight.otf
 lib/X11/fonts/adobe-source-code-pro/SourceCodePro-ExtraLight.ttf
+lib/X11/fonts/adobe-source-code-pro/SourceCodePro-Light.otf
 lib/X11/fonts/adobe-source-code-pro/SourceCodePro-Light.ttf
+lib/X11/fonts/adobe-source-code-pro/SourceCodePro-Regular.otf
 lib/X11/fonts/adobe-source-code-pro/SourceCodePro-Regular.ttf
+lib/X11/fonts/adobe-source-code-pro/SourceCodePro-Semibold.otf
 lib/X11/fonts/adobe-source-code-pro/SourceCodePro-Semibold.ttf
 share/doc/adobe-source-code-pro/
 share/doc/adobe-source-code-pro/LICENSE.txt
