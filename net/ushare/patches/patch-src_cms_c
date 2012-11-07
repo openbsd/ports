@@ -1,4 +1,7 @@
-$OpenBSD: patch-src_cms_c,v 1.1 2012/11/06 11:50:04 dcoppa Exp $
+$OpenBSD: patch-src_cms_c,v 1.2 2012/11/07 14:53:59 dcoppa Exp $
+
+Add missing headers
+
 --- src/cms.c.orig	Sun Dec  9 14:03:36 2007
 +++ src/cms.c	Fri Nov  2 16:10:37 2012
 @@ -20,6 +20,7 @@

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2012/11/06 11:50:04 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.13 2012/11/07 14:53:59 dcoppa Exp $
 
 COMMENT=	UPnP A/V media server
 
 DISTNAME=	ushare-1.1a
-REVISION=	7
+REVISION=	8
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	net multimedia
