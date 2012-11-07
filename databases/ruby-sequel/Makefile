@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2012/09/23 16:57:33 jeremy Exp $
+# $OpenBSD: Makefile,v 1.23 2012/11/07 19:04:43 jeremy Exp $
 
 COMMENT =		lightweight database library and ORM for Ruby
 
-DISTNAME =		sequel-3.37.0
-REVISION =		0
+DISTNAME =		sequel-3.41.0
 CATEGORIES =		databases
 
 HOMEPAGE =		http://sequel.rubyforge.org/
