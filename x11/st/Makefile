@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2012/11/05 13:24:39 zinke Exp $
+# $OpenBSD: Makefile,v 1.6 2012/11/08 20:27:54 gonzalo Exp $
 
 COMMENT=		simple X terminal
 
@@ -12,7 +12,7 @@ HOMEPAGE=		http://st.suckless.org/
 
 MAINTAINER=		Joerg Zinke <zinke@openbsd.org>
 
-# BSD
+# MIT/X Consortium License
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
