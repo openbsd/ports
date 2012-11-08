@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2012/11/03 09:47:08 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2012/11/08 23:37:38 espie Exp $
 
 CATEGORIES = base xenocara
 COMMENT = Xenocara meta package for release
@@ -95,9 +95,12 @@ PERMIT_DISTFILES_FTP=   Yes
 NO_BUILD = 
 
 pre-install:
-	cd ${XSRCDIR} && ${MAKE} after-install DESTDIR=
+	cd ${XSRCDIR} && ${MAKE} fix-appd DESTDIR=
+	/usr/libexec/makewhatis ${X11BASE}/man
 
 do-install:
 	cd ${XSRCDIR} && ${MAKE} dist RELEASEDIR=${LOCATION} DESTDIR=/
+
+post-install:
 
 .include <bsd.port.mk>
