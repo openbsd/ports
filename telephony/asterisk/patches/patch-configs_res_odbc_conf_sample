@@ -1,6 +1,6 @@
-$OpenBSD: patch-configs_res_odbc_conf_sample,v 1.1 2012/09/28 00:03:57 sthen Exp $
---- configs/res_odbc.conf.sample.orig	Thu Sep 20 13:29:33 2012
-+++ configs/res_odbc.conf.sample	Thu Sep 20 13:30:00 2012
+$OpenBSD: patch-configs_res_odbc_conf_sample,v 1.2 2012/11/08 09:34:31 sthen Exp $
+--- configs/res_odbc.conf.sample.orig	Tue Sep 25 14:28:20 2012
++++ configs/res_odbc.conf.sample	Tue Nov  6 23:29:02 2012
 @@ -19,8 +19,7 @@
  ; If not specified, it is assumed the section is enabled.
  enabled => no
@@ -10,4 +10,4 @@ $OpenBSD: patch-configs_res_odbc_conf_sample,v 1.1 2012/09/28 00:03:57 sthen Exp
 +; This value should match an entry in /etc/iodbc/odbc.ini
  dsn => asterisk
  ;
- ; Username for connecting to the database.  The default user is "root".
+ ; Username for connecting to the database.  The user defaults to the context name if unspecified.
