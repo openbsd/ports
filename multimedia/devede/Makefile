@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.33 2012/06/19 10:29:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2012/11/08 07:18:39 ajacoutot Exp $
 
 COMMENT=	video DVDs and CDs creation tool
 
-DISTNAME=	devede-3.22.0
-REVISION=	0
+DISTNAME=	devede-3.23.0
 
 CATEGORIES=	multimedia x11
 
@@ -21,14 +20,14 @@ MASTER_SITES=	http://www.rastersoft.com/descargas/
 
 MODULES=	lang/python
 
-RUN_DEPENDS=	x11/py-gtk2 \
-		multimedia/dvdauthor \
-		graphics/vcdimager \
-		sysutils/cdrtools \
-		x11/mplayer \
+RUN_DEPENDS=	devel/desktop-file-utils \
 		devel/xdg-utils \
-		devel/desktop-file-utils \
-		x11/dbus-python
+		graphics/vcdimager \
+		multimedia/dvdauthor \
+		sysutils/cdrtools \
+		x11/dbus-python \
+		x11/mplayer \
+		x11/py-gtk2
 
 PKG_ARCH=	*
 NO_BUILD=	Yes

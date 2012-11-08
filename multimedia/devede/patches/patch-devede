@@ -1,16 +1,18 @@
-$OpenBSD: patch-devede,v 1.1 2012/05/23 07:51:00 ajacoutot Exp $
---- devede.orig	Wed May 23 00:19:49 2012
-+++ devede	Wed May 23 09:49:39 2012
-@@ -35,7 +35,7 @@ import pickle
+$OpenBSD: patch-devede,v 1.2 2012/11/08 07:18:39 ajacoutot Exp $
+--- devede.orig	Sat Oct 20 20:32:18 2012
++++ devede	Thu Nov  8 08:08:31 2012
+@@ -34,8 +34,8 @@ import shutil
+ import pickle
  import cairo
  
- print "DeVeDe 3.22.0"
+-print "DeVeDe 3.23.0 beta1"
 -if (sys.platform!="win32") and (sys.platform!="win64"):
++print "DeVeDe 3.23.0"
 +if (sys.platform!="win32") and (sys.platform!="win64") and not sys.platform.startswith('openbsd'):
  	try:
  		print "Locale: "+str(os.environ["LANG"])
  	except:
-@@ -79,13 +79,13 @@ if tipo==0:
+@@ -68,13 +68,13 @@ if tipo==0:
  	#arbol=gtk.Builder("/usr/share/devede/devede.glade",domain="devede")
  	# append the directories where we install the devede's own modules
  

@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.16 2011/12/09 07:25:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2012/11/08 07:18:39 ajacoutot Exp $
 bin/devede
 bin/devede-debug
 bin/devede_debug
 lib/devede/
+lib/devede/devede_avconv_convert.py
 lib/devede/devede_bincue.py
 lib/devede/devede_convert.py
 lib/devede/devede_delete.py
