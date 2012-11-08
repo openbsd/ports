@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2012/10/26 10:24:30 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.20 2012/11/08 10:06:04 dcoppa Exp $
 
 COMMENT-main=	Java servlet 2.5 and Java server pages 2.1 server
 COMMENT-examples=example applications and full documentation
@@ -8,6 +8,8 @@ DISTNAME=	apache-tomcat-${V}
 PKGNAME=	tomcat-${V}
 PKGNAME-main=	tomcat-${V}
 PKGNAME-examples=tomcat-examples-${V}
+REVISION-main=	0
+REVISION-examples=0
 CATEGORIES=	www
 
 DISTFILES=	${DISTNAME}.tar.gz \
@@ -17,6 +19,8 @@ MASTER_SITES=	${MASTER_SITE_APACHE:=tomcat/tomcat-6/v$V/bin/} \
 		http://archive.apache.org/dist/tomcat/tomcat-6/archive/v${V}/bin/
 
 HOMEPAGE=	http://tomcat.apache.org/
+
+MAINTAINER=	David Coppa <dcoppa@openbsd.org>
 
 MULTI_PACKAGES=	-main -examples
 

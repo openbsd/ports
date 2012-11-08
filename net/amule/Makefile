@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2012/10/25 07:59:45 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.37 2012/11/08 10:06:04 dcoppa Exp $
 
 COMMENT-main =	another eDonkey P2P file sharing client
 COMMENT-web =	webserver interface to amuled
@@ -6,7 +6,7 @@ COMMENT-daemon =stand-alone daemon/cmdline for amule
 
 V =		2.3.1
 DISTNAME =	aMule-$V
-REVISION =	9
+REVISION =	10
 CATEGORIES =	net
 
 HOMEPAGE =	http://www.amule.org/
@@ -23,7 +23,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MAINTAINER =	Marc Espie <espie@openbsd.org>
+MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=amule/}
 EXTRACT_SUFX =	.tar.xz
 
