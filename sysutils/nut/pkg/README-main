@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.2 2012/01/24 12:38:44 sthen Exp $
+$OpenBSD: README-main,v 1.3 2012/11/08 21:59:01 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -12,9 +12,9 @@ These components can reside on separate computers (i.e. UPS monitored
 by various computers may communicate with a central upsd, and a whole
 network may run upsmon to allow for shutdown).
 
-On OpenBSD, daemons are usually started by adding to the pkg_scripts
-variable in /etc/rc.conf.local. For NUT, machines running upsd or
-the hardware driver should include "upsd" in this line, and all
+On OpenBSD, daemons from packages are usually started by adding to the
+pkg_scripts variable in /etc/rc.conf.local. For NUT, machines running
+upsd or the hardware driver should include "upsd" in this line, and all
 machines should include "upsmon". Where you run both, upsd should
 be started first. For example you could use this line:
 
@@ -67,3 +67,15 @@ ownership of the relevant /dev/tty* device to ${NUT_USER}.
 USB: Change the group of the relevant /dev/ugen* and /dev/usb* devices
 to ${NUT_USER}; to identify the specific controller and ugen device
 names, use "sudo usbdevs -vd".
+
+Starting the daemons
+--------------------
+To start the daemons without rebooting you can use:
+
+	# /etc/rc.d/upsd start
+	# /etc/rc.d/upsmon start
+
+It is recommended that you test a full cycle of rebooting, checking
+that the daemons are running correctly ("upsc <upsname>" will display
+information retrieved by NUT from the UPS), allowing the machine
+to be shut down by the UPS, and returning power.
