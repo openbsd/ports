@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_loadlib_c,v 1.1 2012/11/09 08:36:44 dcoppa Exp $
+
+Make Lua C modules load dynamic libraries with global symbols
+
+--- src/loadlib.c.orig	Tue Nov  6 11:24:02 2012
++++ src/loadlib.c	Tue Nov  6 11:24:41 2012
+@@ -66,7 +66,7 @@ static void ll_unloadlib (void *lib) {
+ 
+ 
+ static void *ll_load (lua_State *L, const char *path) {
+-  void *lib = dlopen(path, RTLD_NOW);
++  void *lib = dlopen(path, RTLD_NOW | RTLD_GLOBAL);
+   if (lib == NULL) lua_pushstring(L, dlerror());
+   return lib;
+ }
