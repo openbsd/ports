@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2012/11/09 10:49:33 espie Exp $
+--- src/Makefile.in.orig	Fri Nov  9 03:01:57 2012
++++ src/Makefile.in	Fri Nov  9 03:02:09 2012
+@@ -514,7 +514,7 @@ libeog_la_CPPFLAGS = \
+ 
+ libeog_la_CFLAGS = $(EOG_CFLAGS) $(WARN_CFLAGS) $(am__append_5)
+ libeog_la_LIBADD = $(EOG_LIBS) $(LIBM) $(am__append_6)
+-libeog_la_LDFLAGS = -export-dynamic -no-undefined -export-symbols-regex "^[[^_]].*"
++libeog_la_LDFLAGS = -export-dynamic -no-undefined -export-symbols-regex "^[^_].*"
+ eog_SOURCES = main.c
+ eog_CFLAGS = \
+ 	-I$(top_srcdir)/cut-n-paste/toolbar-editor		\
+@@ -533,7 +533,7 @@ eog_LDADD = \
+ 	$(jpeg_LIB)			\
+ 	$(INTROSPECTION_LIBS)
+ 
+-eog_LDFLAGS = -export-dynamic -no-undefined -export-symbols-regex "^[[^_]].*"
++eog_LDFLAGS = -export-dynamic -no-undefined -export-symbols-regex "^[^_].*"
+ BUILT_SOURCES = \
+ 	eog-enum-types.c		\
+ 	eog-enum-types.h		\

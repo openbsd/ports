@@ -1,0 +1,11 @@
+$OpenBSD: patch-tests_libtracker-miner_Makefile_in,v 1.1 2012/11/09 10:49:32 espie Exp $
+--- tests/libtracker-miner/Makefile.in.orig	Fri Nov  9 02:34:52 2012
++++ tests/libtracker-miner/Makefile.in	Fri Nov  9 02:35:35 2012
+@@ -128,7 +128,6 @@ tracker_file_notifier_test_OBJECTS =  \
+ 	$(am_tracker_file_notifier_test_OBJECTS)
+ tracker_file_notifier_test_LDADD = $(LDADD)
+ tracker_file_notifier_test_DEPENDENCIES = $(top_builddir)/src/libtracker-miner/libtracker-miner-@TRACKER_API_VERSION@.la \
+-	$(top_builddir)/src/libtracker-miner/libtracker-miner-private.la \
+ 	$(top_builddir)/src/libtracker-sparql-backend/libtracker-sparql-@TRACKER_API_VERSION@.la \
+ 	$(top_builddir)/src/libtracker-common/libtracker-common.la \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
