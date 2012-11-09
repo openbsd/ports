@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.47 2012/10/25 14:22:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2012/11/09 16:15:15 sthen Exp $
 
 COMMENT-main=		people aggregation library
 COMMENT-tracker=	(meta-)tracker backend for folks
 
 GNOME_PROJECT=		folks
 GNOME_VERSION=		0.8.0
-API_V=			37 # MODULE_VERSION in config.h
+# MODULE_VERSION in config.h
+API_V=			37
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-tracker=	${GNOME_PROJECT}-meta-tracker-${GNOME_VERSION}
