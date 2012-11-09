@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2012/10/01 10:34:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2012/11/09 16:39:51 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -48,7 +48,7 @@ SUBST_VARS=		BACULACONF BACULASTATE TRUEPREFIX
 CONFIGURE_STYLE=	simple
 USE_GMAKE=		yes
 USE_GROFF=		yes
-USE_LIBTOOL=		gnu # ports libtool passes libtool-only parameters to linker
+USE_LIBTOOL=		gnu# ports libtool passes libtool-only parameters to linker
 NO_REGRESS=		yes
 
 PSEUDO_FLAVORS=		no_bat no_server
