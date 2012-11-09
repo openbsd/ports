@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2012/11/08 21:59:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.66 2012/11/09 20:50:17 sthen Exp $
 
 COMMENT-main=		UPS monitoring program supporting many brands
 COMMENT-cgi=		CGIs for monitoring Nut-based UPSs
@@ -6,7 +6,7 @@ COMMENT-snmp=		driver for monitoring UPS via SNMP
 COMMENT-xml=		driver for monitoring UPS via XML/HTTP
 
 DISTNAME=		nut-2.6.5
-REVISION-main=		0
+REVISION-main=		1
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-cgi=		${DISTNAME:S/-/-cgi-/}
@@ -108,7 +108,7 @@ CONFIGURE_ARGS+=	--with-cgi \
 .endif
 
 USE_GMAKE=		Yes
-USE_LIBTOOL=		gnu # -all-static
+USE_LIBTOOL=		gnu# -all-static
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/nut
 
 NO_REGRESS=		Yes
