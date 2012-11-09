@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.41 2012/10/13 09:06:56 espie Exp $
+# $OpenBSD: Port.pm,v 1.42 2012/11/09 17:49:17 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -124,6 +124,7 @@ sub make_sure_we_have_packages
 		}
 	}
 	if (!$check && $core->prop->{wait_timeout}) {
+		$job->{waiting} //= 0;
 		if ($job->{waiting}*10 > $core->prop->{wait_timeout}) {
 			print $log ">>> giving up\n";
 		} else {
