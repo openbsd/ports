@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2012/10/13 08:13:51 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.4 2012/11/09 21:07:30 naddy Exp $
 
 COMMENT=	ex/vi text editor with wide character support
 
@@ -21,7 +21,8 @@ WANTLIB=	c ncursesw util
 
 MODULES=	devel/cmake
 
-SEPARATE_BUILD=	No	# ${WRKSRC}/config.h is written
+# ${WRKSRC}/config.h is written
+SEPARATE_BUILD=	No
 
 WRKSRC=		${WRKDIST}/build
 
