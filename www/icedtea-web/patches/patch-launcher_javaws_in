@@ -1,9 +1,30 @@
-$OpenBSD: patch-launcher_javaws_in,v 1.1 2012/11/01 11:56:04 landry Exp $
---- launcher/javaws.in.orig	Thu Nov  1 08:28:01 2012
-+++ launcher/javaws.in	Thu Nov  1 08:28:14 2012
+$OpenBSD: patch-launcher_javaws_in,v 1.2 2012/11/10 10:37:27 landry Exp $
+--- launcher/javaws.in.orig	Mon Aug 27 21:36:42 2012
++++ launcher/javaws.in	Sat Nov 10 10:40:00 2012
 @@ -1,4 +1,4 @@
 -#!/bin/bash
-+#!${LOCALBASE}/bin/bash
++#!/bin/sh
  
  JAVA=@JAVA@
  LAUNCHER_BOOTCLASSPATH=@LAUNCHER_BOOTCLASSPATH@
+@@ -8,9 +8,9 @@ BINARY_LOCATION=@JAVAWS_BIN_LOCATION@
+ PROGRAM_NAME=javaws
+ CP=@JRE@/lib/rt.jar
+ 
+-JAVA_ARGS=( )
+-ARGS=( )
+-COMMAND=()
++set -A JAVA_ARGS
++set -A ARGS
++set -A COMMAND
+ 
+ i=0
+ j=0
+@@ -59,6 +59,6 @@ while [ "$j" -lt "${#ARGS[@]}" ]; do
+   k=$((k+1))
+ done
+ 
+-exec -a "javaws" "${COMMAND[@]}"
++exec "${COMMAND[@]}"
+ 
+ exit $?

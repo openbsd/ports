@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2012/11/08 18:42:29 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2012/11/10 10:37:27 landry Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	Java web browser plugin
-DISTNAME =	icedtea-web-1.3
+DISTNAME =	icedtea-web-1.3.1
 CATEGORIES =	www
-REVISION =	0
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
@@ -35,8 +34,7 @@ MODJAVA_VER=	1.7+
 BUILD_DEPENDS =	archivers/zip \
 		archivers/gtar \
 		devel/xulrunner/1.9,-devel
-# for javaws
-RUN_DEPENDS =	shells/bash
+
 # otherwise PaxHeaders file get in the way
 TAR =		${LOCALBASE}/bin/gtar
 USE_GMAKE =	Yes
@@ -52,9 +50,6 @@ LIB_DEPENDS =	x11/gtk+2
 WANTLIB += Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr gdk-x11-2.0 gtk-x11-2.0
 .endif
-
-post-configure:
-	${SUBST_CMD} ${WRKSRC}/launcher/javaws.in
 
 WANTLIB += GL X11 Xrender atk-1.0 cairo expat fontconfig freetype
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0
