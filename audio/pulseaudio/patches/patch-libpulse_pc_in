@@ -1,4 +1,7 @@
-$OpenBSD: patch-libpulse_pc_in,v 1.1 2012/10/15 12:15:39 ajacoutot Exp $
+$OpenBSD: patch-libpulse_pc_in,v 1.2 2012/11/10 14:52:54 ajacoutot Exp $
+
+linked "privately" to lib/pulseaudio/libpulsecommon-X.Y.so
+
 --- libpulse.pc.in.orig	Mon Oct 15 12:29:53 2012
 +++ libpulse.pc.in	Mon Oct 15 12:29:59 2012
 @@ -7,6 +7,6 @@ modlibexecdir=@modlibexecdir@

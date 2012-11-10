@@ -1,8 +1,4 @@
-$OpenBSD: patch-src_Makefile_am,v 1.4 2012/10/17 11:49:09 ajacoutot Exp $
-
-libpulse.so and libpulse-mainloop-glib.so are linked "privately" to
-lib/pulseaudio/libpulsecommon.so so add it to the link path.
-
+$OpenBSD: patch-src_Makefile_am,v 1.5 2012/11/10 14:52:54 ajacoutot Exp $
 --- src/Makefile.am.orig	Thu Jul 19 13:29:43 2012
 +++ src/Makefile.am	Wed Oct 17 11:26:22 2012
 @@ -602,7 +602,7 @@ libpulsecommon_@PA_MAJORMINOR@_la_SOURCES = \
@@ -14,30 +10,6 @@ lib/pulseaudio/libpulsecommon.so so add it to the link path.
  
  if HAVE_X11
  libpulsecommon_@PA_MAJORMINOR@_la_SOURCES += \
-@@ -740,7 +740,7 @@ libpulse_la_SOURCES = \
- 
- libpulse_la_CFLAGS = $(AM_CFLAGS) $(LIBJSON_CFLAGS)
- libpulse_la_LIBADD = $(AM_LIBADD) $(WINSOCK_LIBS) $(LTLIBICONV) $(LIBJSON_LIBS) libpulsecommon-@PA_MAJORMINOR@.la
--libpulse_la_LDFLAGS = $(AM_LDFLAGS) $(VERSIONING_LDFLAGS) -version-info $(LIBPULSE_VERSION_INFO)
-+libpulse_la_LDFLAGS = $(AM_LDFLAGS) $(VERSIONING_LDFLAGS) -version-info $(LIBPULSE_VERSION_INFO) -Wl,-rpath,$(pkglibdir)
- 
- if HAVE_DBUS
- libpulse_la_CFLAGS += $(DBUS_CFLAGS)
-@@ -750,12 +750,12 @@ endif
- libpulse_simple_la_SOURCES = pulse/simple.c pulse/simple.h
- libpulse_simple_la_CFLAGS = $(AM_CFLAGS)
- libpulse_simple_la_LIBADD = $(AM_LIBADD) libpulse.la libpulsecommon-@PA_MAJORMINOR@.la
--libpulse_simple_la_LDFLAGS = $(AM_LDFLAGS) $(VERSIONING_LDFLAGS) -version-info $(LIBPULSE_SIMPLE_VERSION_INFO)
-+libpulse_simple_la_LDFLAGS = $(AM_LDFLAGS) $(VERSIONING_LDFLAGS) -version-info $(LIBPULSE_SIMPLE_VERSION_INFO) -Wl,-rpath,$(pkglibdir)
- 
- libpulse_mainloop_glib_la_SOURCES = pulse/glib-mainloop.h pulse/glib-mainloop.c
- libpulse_mainloop_glib_la_CFLAGS = $(AM_CFLAGS) $(GLIB20_CFLAGS)
- libpulse_mainloop_glib_la_LIBADD = $(AM_LIBADD) libpulse.la libpulsecommon-@PA_MAJORMINOR@.la $(GLIB20_LIBS)
--libpulse_mainloop_glib_la_LDFLAGS = $(AM_LDFLAGS) $(VERSIONING_LDFLAGS) -version-info $(LIBPULSE_MAINLOOP_GLIB_VERSION_INFO)
-+libpulse_mainloop_glib_la_LDFLAGS = $(AM_LDFLAGS) $(VERSIONING_LDFLAGS) -version-info $(LIBPULSE_MAINLOOP_GLIB_VERSION_INFO) -Wl,-rpath,$(pkglibdir)
- 
- ###################################
- #         OSS emulation           #
 @@ -1083,6 +1083,9 @@ modlibexec_LTLIBRARIES += \
  		module-oss.la
  endif

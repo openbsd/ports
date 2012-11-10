@@ -1,19 +1,17 @@
-$OpenBSD: patch-src_daemon_main_c,v 1.2 2011/10/01 08:37:30 ajacoutot Exp $
---- src/daemon/main.c.orig	Tue Sep 13 21:54:48 2011
-+++ src/daemon/main.c	Fri Sep 30 14:50:32 2011
+$OpenBSD: patch-src_daemon_main_c,v 1.3 2012/11/10 14:52:54 ajacoutot Exp $
+--- src/daemon/main.c.orig	Thu Jul 19 13:29:38 2012
++++ src/daemon/main.c	Sat Nov 10 15:20:40 2012
 @@ -735,6 +735,7 @@ int main(int argc, char *argv[]) {
           * first take the autospawn lock to make things
           * synchronous. */
  
-+#if notyet	/* XXX broken on *BSD */
++#if 0	/* XXX broken on *BSD */
          if ((autospawn_fd = pa_autospawn_lock_init()) < 0) {
              pa_log("Failed to initialize autospawn lock");
              goto finish;
-@@ -744,8 +745,8 @@ int main(int argc, char *argv[]) {
-             pa_log("Failed to acquire autospawn lock");
-             goto finish;
+@@ -746,6 +747,7 @@ int main(int argc, char *argv[]) {
          }
--
+ 
          autospawn_locked = TRUE;
 +#endif
      }

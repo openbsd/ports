@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2012/10/17 11:49:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2012/11/10 14:52:54 ajacoutot Exp $
 
 # XXX
 # fix autospawn lock (patch-src_daemon_main_c)
@@ -18,6 +18,7 @@ COMMENT=		cross-platform networked sound server
 
 VERSION=		2.1
 DISTNAME=		pulseaudio-${VERSION}
+REVISION=		0
 
 SHARED_LIBS +=  pulse                1.1      # .14.2
 SHARED_LIBS +=  pulse-simple         0.0      # .0.3
@@ -100,9 +101,10 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-gconf \
 			--disable-avahi \
 			--disable-orc
+# linked "privately" to lib/pulseaudio/libpulsecommon-X.Y.so
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib \
-				-Wl,-rpath,${TRUEPREFIX}/lib/pulse-${VERSION}/modules"
+				-Wl,-rpath,${TRUEPREFIX}/lib/pulseaudio:${TRUEPREFIX}/lib/pulse-${VERSION}/modules"
 
 FAKE_FLAGS=		pulseconfdir="${PREFIX}/share/examples/pulseaudio/pulse"
 
