@@ -1,0 +1,15 @@
+$OpenBSD: patch-gck_tests_test-gck-attributes_c,v 1.1 2012/11/10 10:17:45 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=687980
+
+--- gck/tests/test-gck-attributes.c.orig	Sat Nov 10 10:49:40 2012
++++ gck/tests/test-gck-attributes.c	Sat Nov 10 10:49:45 2012
+@@ -31,8 +31,6 @@
+ #include "gck/gck.h"
+ #include "gck/gck-test.h"
+ 
+-EGG_SECURE_DEFINE_GLIB_GLOBALS ();
+-
+ EGG_SECURE_DECLARE (test_gck_attributes);
+ 
+ #define ATTR_TYPE 55
