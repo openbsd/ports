@@ -1,0 +1,2 @@
+The Eio library is a library that implements an API for asynchronous
+input/output operation. Most operations are done in a separated thread.
