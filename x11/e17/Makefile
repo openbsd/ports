@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/10/23 09:04:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2012/11/10 15:01:34 stsp Exp $
 
      SUBDIR =
      SUBDIR += e
@@ -8,6 +8,7 @@
      SUBDIR += eet
      SUBDIR += efreet
      SUBDIR += eina
+     SUBDIR += eio
      SUBDIR += embryo
      SUBDIR += evas
 
