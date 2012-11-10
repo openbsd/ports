@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_tests_eina_bench_quad_c,v 1.1 2011/01/16 00:31:30 laurent Exp $
---- src/tests/eina_bench_quad.c.orig	Sun Nov 21 14:17:15 2010
-+++ src/tests/eina_bench_quad.c	Sun Nov 21 14:17:28 2010
-@@ -173,10 +173,20 @@ eina_bench_quadtree_render_loop(int request)
+$OpenBSD: patch-src_tests_eina_bench_quad_c,v 1.2 2012/11/10 15:01:15 stsp Exp $
+--- src/tests/eina_bench_quad.c.orig	Sat Sep  8 04:33:29 2012
++++ src/tests/eina_bench_quad.c	Fri Nov  9 00:57:06 2012
+@@ -175,10 +175,20 @@ eina_bench_quadtree_render_loop(int request)
     Eina_Mempool *mp;
     int i;
     int j;

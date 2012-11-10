@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/01/16 00:40:32 laurent Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/11/10 15:01:15 stsp Exp $
 %%SHARED%%
 include/ecore-1/
 include/ecore-1/Ecore.h
@@ -14,6 +14,9 @@ include/ecore-1/Ecore_Ipc.h
 include/ecore-1/Ecore_X.h
 include/ecore-1/Ecore_X_Atoms.h
 include/ecore-1/Ecore_X_Cursor.h
+lib/ecore/
+lib/ecore/immodules/
+lib/ecore/immodules/xim.la
 lib/libecore.a
 lib/libecore.la
 lib/libecore_con.a
@@ -45,9 +48,13 @@ lib/pkgconfig/ecore-input.pc
 lib/pkgconfig/ecore-ipc.pc
 lib/pkgconfig/ecore-x.pc
 lib/pkgconfig/ecore.pc
+@comment share/ecore/
+@comment share/ecore/examples/
 share/locale/cs/LC_MESSAGES/ecore.mo
 share/locale/de/LC_MESSAGES/ecore.mo
 share/locale/el/LC_MESSAGES/ecore.mo
 share/locale/fr/LC_MESSAGES/ecore.mo
 share/locale/it/LC_MESSAGES/ecore.mo
+share/locale/nl/LC_MESSAGES/ecore.mo
 share/locale/pt/LC_MESSAGES/ecore.mo
+share/locale/sl/LC_MESSAGES/ecore.mo

@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/01/16 00:45:56 laurent Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/11/10 15:01:15 stsp Exp $
 %%SHARED%%
 @bin bin/e-notify-send
+@bin bin/e_dbus_async_client_test
+@bin bin/e_dbus_async_server_test
 @bin bin/e_dbus_bluez_test
-@bin bin/e_dbus_connman_test
+@bin bin/e_dbus_connman0_7x_test
 @bin bin/e_dbus_notification_daemon
 @bin bin/e_dbus_notify
 @bin bin/e_dbus_ofono_test
@@ -11,17 +13,18 @@
 @bin bin/e_dbus_ukit_test
 include/e_dbus-1/
 include/e_dbus-1/E_Bluez.h
-include/e_dbus-1/E_Connman.h
 include/e_dbus-1/E_DBus.h
 include/e_dbus-1/E_Hal.h
 include/e_dbus-1/E_Notification_Daemon.h
 include/e_dbus-1/E_Notify.h
 include/e_dbus-1/E_Ofono.h
 include/e_dbus-1/E_Ukit.h
+include/e_dbus-1/connman0_7x/
+include/e_dbus-1/connman0_7x/E_Connman.h
 lib/libebluez.a
 lib/libebluez.la
-lib/libeconnman.a
-lib/libeconnman.la
+lib/libeconnman0_7x.a
+lib/libeconnman0_7x.la
 lib/libedbus.a
 lib/libedbus.la
 lib/libehal.a
@@ -34,9 +37,11 @@ lib/libeukit.a
 lib/libeukit.la
 lib/pkgconfig/
 lib/pkgconfig/ebluez.pc
-lib/pkgconfig/econnman.pc
+lib/pkgconfig/econnman-0.7x.pc
 lib/pkgconfig/edbus.pc
 lib/pkgconfig/ehal.pc
 lib/pkgconfig/enotify.pc
 lib/pkgconfig/eofono.pc
 lib/pkgconfig/eukit.pc
+share/e_dbus/
+share/e_dbus/logo.png

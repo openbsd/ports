@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/03/15 19:41:00 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/11/10 15:01:15 stsp Exp $
 %%SHARED%%
 include/efreet-1/
 include/efreet-1/Efreet.h
@@ -13,6 +13,7 @@ include/efreet-1/efreet_uri.h
 include/efreet-1/efreet_utils.h
 lib/efreet/
 @bin lib/efreet/efreet_desktop_cache_create
+@bin lib/efreet/efreet_icon_cache_create
 lib/libefreet.a
 lib/libefreet.la
 lib/libefreet_mime.a
@@ -23,3 +24,15 @@ lib/pkgconfig/
 lib/pkgconfig/efreet-mime.pc
 lib/pkgconfig/efreet-trash.pc
 lib/pkgconfig/efreet.pc
+share/locale/cs/LC_MESSAGES/efreet.mo
+share/locale/de/LC_MESSAGES/efreet.mo
+share/locale/el/LC_MESSAGES/efreet.mo
+share/locale/es/LC_MESSAGES/efreet.mo
+share/locale/fr/LC_MESSAGES/efreet.mo
+share/locale/it/LC_MESSAGES/efreet.mo
+share/locale/ja/LC_MESSAGES/efreet.mo
+share/locale/ko/LC_MESSAGES/efreet.mo
+share/locale/nl/LC_MESSAGES/efreet.mo
+share/locale/pt/LC_MESSAGES/efreet.mo
+share/locale/ru/LC_MESSAGES/efreet.mo
+share/locale/sl/LC_MESSAGES/efreet.mo

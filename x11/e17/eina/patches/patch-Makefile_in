@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.3 2012/11/10 15:01:15 stsp Exp $
+--- Makefile.in.orig	Fri Nov  9 00:59:42 2012
++++ Makefile.in	Fri Nov  9 00:59:55 2012
+@@ -897,7 +897,7 @@ doc:
+ 
+ @EFL_ENABLE_TESTS_TRUE@lcov-reset:
+ @EFL_ENABLE_TESTS_TRUE@	@rm -rf $(top_builddir)/coverage
+-@EFL_ENABLE_TESTS_TRUE@	@find $(top_builddir) -name "*.gcda" -delete
++@EFL_ENABLE_TESTS_TRUE@	@find $(top_builddir) -name "*.gcda" -exec rm {} \;
+ @EFL_ENABLE_TESTS_TRUE@	@lcov --zerocounters --directory $(top_builddir)
+ 
+ @EFL_ENABLE_TESTS_TRUE@lcov-report:

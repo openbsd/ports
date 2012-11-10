@@ -1,20 +1,23 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2011/01/16 00:37:45 laurent Exp $
-lib/evas/modules/engines/buffer/${FULLARCH}-1.0.0/module.so
-lib/evas/modules/engines/gl_x11/${FULLARCH}-1.0.0/module.so
-lib/evas/modules/engines/software_generic/${FULLARCH}-1.0.0/module.so
-lib/evas/modules/engines/software_x11/${FULLARCH}-1.0.0/module.so
-lib/evas/modules/loaders/bmp/${FULLARCH}-1.0.0/module.so
-lib/evas/modules/loaders/eet/${FULLARCH}-1.0.0/module.so
-lib/evas/modules/loaders/gif/${FULLARCH}-1.0.0/module.so
-lib/evas/modules/loaders/jpeg/${FULLARCH}-1.0.0/module.so
-lib/evas/modules/loaders/pmaps/${FULLARCH}-1.0.0/module.so
-lib/evas/modules/loaders/png/${FULLARCH}-1.0.0/module.so
-lib/evas/modules/loaders/svg/${FULLARCH}-1.0.0/module.so
-lib/evas/modules/loaders/tga/${FULLARCH}-1.0.0/module.so
-lib/evas/modules/loaders/tiff/${FULLARCH}-1.0.0/module.so
-lib/evas/modules/loaders/xpm/${FULLARCH}-1.0.0/module.so
-lib/evas/modules/savers/eet/${FULLARCH}-1.0.0/module.so
-lib/evas/modules/savers/jpeg/${FULLARCH}-1.0.0/module.so
-lib/evas/modules/savers/png/${FULLARCH}-1.0.0/module.so
-lib/evas/modules/savers/tiff/${FULLARCH}-1.0.0/module.so
+@comment $OpenBSD: PFRAG.shared,v 1.5 2012/11/10 15:01:15 stsp Exp $
+lib/evas/modules/engines/buffer/openbsd${OSREV}-${FULLARCH}-${VERSION}/module.so
+lib/evas/modules/engines/gl_x11/openbsd${OSREV}-${FULLARCH}-${VERSION}/module.so
+lib/evas/modules/engines/software_generic/openbsd${OSREV}-${FULLARCH}-${VERSION}/module.so
+lib/evas/modules/engines/software_x11/openbsd${OSREV}-${FULLARCH}-${VERSION}/module.so
+lib/evas/modules/loaders/bmp/openbsd${OSREV}-${FULLARCH}-${VERSION}/module.so
+lib/evas/modules/loaders/eet/openbsd${OSREV}-${FULLARCH}-${VERSION}/module.so
+lib/evas/modules/loaders/generic/openbsd${OSREV}-${FULLARCH}-${VERSION}/module.so
+lib/evas/modules/loaders/gif/openbsd${OSREV}-${FULLARCH}-${VERSION}/module.so
+lib/evas/modules/loaders/ico/openbsd${OSREV}-${FULLARCH}-${VERSION}/module.so
+lib/evas/modules/loaders/jpeg/openbsd${OSREV}-${FULLARCH}-${VERSION}/module.so
+lib/evas/modules/loaders/pmaps/openbsd${OSREV}-${FULLARCH}-${VERSION}/module.so
+lib/evas/modules/loaders/png/openbsd${OSREV}-${FULLARCH}-${VERSION}/module.so
+lib/evas/modules/loaders/psd/openbsd${OSREV}-${FULLARCH}-${VERSION}/module.so
+lib/evas/modules/loaders/tga/openbsd${OSREV}-${FULLARCH}-${VERSION}/module.so
+lib/evas/modules/loaders/tiff/openbsd${OSREV}-${FULLARCH}-${VERSION}/module.so
+lib/evas/modules/loaders/wbmp/openbsd${OSREV}-${FULLARCH}-${VERSION}/module.so
+lib/evas/modules/loaders/xpm/openbsd${OSREV}-${FULLARCH}-${VERSION}/module.so
+lib/evas/modules/savers/eet/openbsd${OSREV}-${FULLARCH}-${VERSION}/module.so
+lib/evas/modules/savers/jpeg/openbsd${OSREV}-${FULLARCH}-${VERSION}/module.so
+lib/evas/modules/savers/png/openbsd${OSREV}-${FULLARCH}-${VERSION}/module.so
+lib/evas/modules/savers/tiff/openbsd${OSREV}-${FULLARCH}-${VERSION}/module.so
 @lib lib/libevas.so.${LIBevas_VERSION}

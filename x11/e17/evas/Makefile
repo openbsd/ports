@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2011/11/18 12:20:33 nigel Exp $
+# $OpenBSD: Makefile,v 1.22 2012/11/10 15:01:15 stsp Exp $
 
 COMMENT =		canvas API for X
-DISTNAME =		evas-1.0.0
-REVISION =		0
+VERSION = 		1.7.1
+DISTNAME =		evas-${VERSION}
 EPOCH =			2
 
-SHARED_LIBS +=  evas                 1.0      # 1.0
+SHARED_LIBS +=  evas                 2.0      # 8.1
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -15,32 +15,34 @@ PERMIT_DISTFILES_FTP =	Yes
 
 USE_LIBTOOL =		Yes
 
-WANTLIB += GL X11 Xau Xdamage Xdmcp Xext Xfixes Xrender Xxf86vm
-WANTLIB += cairo croco-0.6 crypto drm eet eina expat ffi fontconfig
-WANTLIB += freetype fribidi gdk_pixbuf-2.0 gif gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 jpeg m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs
-WANTLIB += rsvg-2 ssl stdc++ tiff xcb xcb-render xcb-shm xml2
-WANTLIB += z
+WANTLIB += GL X11 Xdamage Xext Xfixes Xrender Xxf86vm crypto drm
+WANTLIB += eet eina expat ffi fontconfig freetype fribidi gif
+WANTLIB += glib-2.0 gobject-2.0 gthread-2.0 harfbuzz icudata icule
+WANTLIB += icuuc jpeg m pcre png pthread ssl stdc++ tiff xcb z
 
 MODULES=		devel/gettext
 
-LIB_DEPENDS =		x11/e17/eet>=1.4 \
+VMEM_WARNING =	Yes
+
+LIB_DEPENDS =		x11/e17/eet>=2.0 \
 			graphics/libungif \
 			graphics/png \
 			graphics/tiff \
 			graphics/jpeg \
 			graphics/libungif \
-			print/freetype \
+			devel/harfbuzz \
+			devel/glib2 \
 			devel/fribidi \
-			x11/gnome/librsvg
+			devel/libffi
 
 CONFIGURE_ARGS +=	--disable-doc \
 			--enable-no-dither-mask \
 			--enable-small-dither-mask \
 			--enable-line-dither-mask \
 			--enable-word-cache \
-			--enable-metric-cache
+			--enable-metric-cache \
+			--disable-wayland-shm \
+			--disable-wayland-egl
 
 # ARGB Conversion from 32 to other pixel depths (slower -> faster)(nice -> ugly)
 #			--enable-small-dither-mask
@@ -80,6 +82,6 @@ CONFIGURE_ENV +=	CXXFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 FULLARCH =		${MACHINE_ARCH:S/amd64/x86_64/}
-SUBST_VARS +=		FULLARCH
+SUBST_VARS +=		FULLARCH OSREV VERSION
 
 .include <bsd.port.mk>

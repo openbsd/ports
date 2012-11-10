@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/01/16 00:31:30 laurent Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/11/10 15:01:15 stsp Exp $
 %%SHARED%%
 include/eina-1/
 include/eina-1/Eina.h
@@ -6,7 +6,9 @@ include/eina-1/eina/
 include/eina-1/eina/eina_accessor.h
 include/eina-1/eina/eina_array.h
 include/eina-1/eina/eina_benchmark.h
+include/eina-1/eina/eina_binbuf.h
 include/eina-1/eina/eina_binshare.h
+include/eina-1/eina/eina_clist.h
 include/eina-1/eina/eina_convert.h
 include/eina-1/eina/eina_counter.h
 include/eina-1/eina/eina_cpu.h
@@ -15,13 +17,16 @@ include/eina-1/eina/eina_file.h
 include/eina-1/eina/eina_fp.h
 include/eina-1/eina/eina_hamster.h
 include/eina-1/eina/eina_hash.h
+include/eina-1/eina/eina_inarray.h
 include/eina-1/eina/eina_inline_array.x
+include/eina-1/eina/eina_inline_clist.x
 include/eina-1/eina/eina_inline_f16p16.x
 include/eina-1/eina/eina_inline_f32p32.x
 include/eina-1/eina/eina_inline_f8p24.x
 include/eina-1/eina/eina_inline_fp.x
 include/eina-1/eina/eina_inline_hash.x
 include/eina-1/eina/eina_inline_list.x
+include/eina-1/eina/eina_inline_lock_posix.x
 include/eina-1/eina/eina_inline_log.x
 include/eina-1/eina/eina_inline_mempool.x
 include/eina-1/eina/eina_inline_rbtree.x
@@ -31,21 +36,27 @@ include/eina-1/eina/eina_inline_stringshare.x
 include/eina-1/eina/eina_inline_tiler.x
 include/eina-1/eina/eina_inline_trash.x
 include/eina-1/eina/eina_inline_ustringshare.x
+include/eina-1/eina/eina_inline_value.x
 include/eina-1/eina/eina_inlist.h
 include/eina-1/eina/eina_iterator.h
 include/eina-1/eina/eina_lalloc.h
 include/eina-1/eina/eina_list.h
+include/eina-1/eina/eina_lock.h
 include/eina-1/eina/eina_log.h
 include/eina-1/eina/eina_magic.h
 include/eina-1/eina/eina_main.h
 include/eina-1/eina/eina_matrixsparse.h
 include/eina-1/eina/eina_mempool.h
+include/eina-1/eina/eina_mmap.h
 include/eina-1/eina/eina_module.h
+include/eina-1/eina/eina_prefix.h
 include/eina-1/eina/eina_quadtree.h
 include/eina-1/eina/eina_rbtree.h
 include/eina-1/eina/eina_rectangle.h
+include/eina-1/eina/eina_refcount.h
 include/eina-1/eina/eina_safety_checks.h
 include/eina-1/eina/eina_sched.h
+include/eina-1/eina/eina_simple_xml_parser.h
 include/eina-1/eina/eina_str.h
 include/eina-1/eina/eina_strbuf.h
 include/eina-1/eina/eina_stringshare.h
@@ -55,8 +66,12 @@ include/eina-1/eina/eina_types.h
 include/eina-1/eina/eina_unicode.h
 include/eina-1/eina/eina_ustrbuf.h
 include/eina-1/eina/eina_ustringshare.h
+include/eina-1/eina/eina_value.h
+include/eina-1/eina/eina_xattr.h
 include/eina-1/eina_config.h
 lib/libeina.a
 lib/libeina.la
 lib/pkgconfig/
 lib/pkgconfig/eina.pc
+@comment share/eina/
+@comment share/eina/examples/

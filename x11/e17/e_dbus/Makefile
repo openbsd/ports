@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2011/11/18 12:20:33 nigel Exp $
+# $OpenBSD: Makefile,v 1.11 2012/11/10 15:01:12 stsp Exp $
 
 COMMENT =		enlightenment DBus component
-DISTNAME =		e_dbus-1.0.0
+DISTNAME =		e_dbus-1.7.1
 
-REVISION =		0
 EPOCH = 		1
 
-SO_VERSION =		1.0
-.for _lib in edbus enotify econnman ehal eofono ebluez eukit
+SO_VERSION =		2.0	# 8.1
+.for _lib in edbus enotify econnman0_7x ehal eofono ebluez eukit
 SHARED_LIBS +=		${_lib} ${SO_VERSION}
 .endfor
 
@@ -19,14 +18,18 @@ PERMIT_DISTFILES_FTP =	Yes
 
 USE_LIBTOOL =		Yes
 
-WANTLIB += c crypto dbus-1 ecore eet eina evas expat fontconfig
-WANTLIB += freetype fribidi glib-2.0 jpeg m pcre pthread ssl z
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender Xss Xtst c cares crypto curl dbus-1
+WANTLIB += ecore ecore_con ecore_evas ecore_input ecore_input_evas
+WANTLIB += ecore_ipc ecore_x eet eina evas expat ffi fontconfig
+WANTLIB += freetype fribidi glib-2.0 gobject-2.0 gthread-2.0 harfbuzz
+WANTLIB += icudata icule icuuc idn jpeg m pcre pthread ssl xcb z
 
 MODULES =		devel/gettext
 
 LIB_DEPENDS =		x11/dbus \
 			devel/fribidi \
-			x11/e17/ecore>=1.0
+			x11/e17/ecore>=2.0
 
 CONFIGURE_ARGS =	--disable-doc
 

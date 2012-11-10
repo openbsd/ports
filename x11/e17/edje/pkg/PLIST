@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/03/15 19:40:04 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/11/10 15:01:15 stsp Exp $
 %%SHARED%%
 @bin bin/edje_cc
 @bin bin/edje_decc
@@ -6,13 +6,68 @@
 @bin bin/edje_inspector
 @bin bin/edje_player
 bin/edje_recc
+bin/inkscape2edc
 include/edje-1/
 include/edje-1/Edje.h
 include/edje-1/Edje_Edit.h
+lib/edje/
+lib/edje/utils/
+@bin lib/edje/utils/epp
 lib/libedje.a
 lib/libedje.la
 lib/pkgconfig/edje.pc
 share/edje/
+share/edje/examples/
+share/edje/examples/Vera.ttf
+share/edje/examples/animations.edc
+share/edje/examples/animations2.c
+share/edje/examples/animations2.edc
+share/edje/examples/basic.edc
+share/edje/examples/basic2.edc
+share/edje/examples/box.edc
+share/edje/examples/bubble.png
+share/edje/examples/color-class.edc
+share/edje/examples/drag.edc
+share/edje/examples/duck.wav
+share/edje/examples/edje-animations.c
+share/edje/examples/edje-basic.c
+share/edje/examples/edje-basic2.c
+share/edje/examples/edje-box.c
+share/edje/examples/edje-box2.c
+share/edje/examples/edje-color-class.c
+share/edje/examples/edje-drag.c
+share/edje/examples/edje-perspective.c
+share/edje/examples/edje-signals-messages.c
+share/edje/examples/edje-swallow.c
+share/edje/examples/edje-swallow2.c
+share/edje/examples/edje-table.c
+share/edje/examples/edje-text.c
+share/edje/examples/edje_example.c
+share/edje/examples/edje_example.edc
+share/edje/examples/embryo_custom_state.edc
+share/edje/examples/embryo_pong.edc
+share/edje/examples/embryo_run_program.edc
+share/edje/examples/embryo_set_state.edc
+share/edje/examples/embryo_set_text.edc
+share/edje/examples/embryo_timer.edc
+share/edje/examples/external_elm_anchorblock.edc
+share/edje/examples/external_elm_button.edc
+share/edje/examples/external_elm_check.edc
+share/edje/examples/external_elm_panes.edc
+share/edje/examples/external_emotion_elm.edc
+share/edje/examples/lua_script.edc
+share/edje/examples/perspective.edc
+share/edje/examples/red.png
+share/edje/examples/signals-messages.edc
+share/edje/examples/signals2.c
+share/edje/examples/signalsBubble.edc
+share/edje/examples/sigtest.c
+share/edje/examples/sigtest.edc
+share/edje/examples/swallow.edc
+share/edje/examples/table.edc
+share/edje/examples/test.png
+share/edje/examples/text.edc
+share/edje/examples/toggle_using_filter.edc
 share/edje/include/
 share/edje/include/edje.inc
 share/mime/packages/edje.xml
