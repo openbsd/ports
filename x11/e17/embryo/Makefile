@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2012/11/10 15:01:15 stsp Exp $
+# $OpenBSD: Makefile,v 1.12 2012/11/10 15:06:41 ajacoutot Exp $
 
 COMMENT =		C like scripting language used in E17
 
 DISTNAME =		embryo-1.7.1
+REVISION =		0
 
 EPOCH =			2
 
@@ -14,7 +15,9 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += c eina iconv m pthread
+WANTLIB += c eina m pthread
+
+MODULES =		converters/libiconv
 
 LIB_DEPENDS =		x11/e17/eina>=2.0
 
