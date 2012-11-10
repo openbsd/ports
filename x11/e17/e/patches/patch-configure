@@ -1,12 +1,30 @@
-$OpenBSD: patch-configure,v 1.4 2011/01/16 01:00:11 laurent Exp $
+$OpenBSD: patch-configure,v 1.5 2012/11/10 15:06:03 stsp Exp $
 
-Try to avoid linking against libintl.a
+Try to avoid linking against libintl.a, fix version number in paths.
 
---- configure.orig	Sat Jan  8 15:30:30 2011
-+++ configure	Sat Jan  8 16:39:23 2011
-@@ -14206,12 +14206,12 @@ else
- /* end confdefs.h.  */
+--- configure.orig	Mon Nov  5 16:30:25 2012
++++ configure	Thu Nov  8 02:29:13 2012
+@@ -13033,7 +13033,7 @@ release_info=""
+ ##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##
+ ##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##
+ 
+-release=relname
++release="$PACKAGE_VERSION"
+ 
+ 
+ 
+@@ -13363,7 +13363,7 @@ fi
+ 
+ 
+ 
+-MODULE_ARCH="$host_os-$host_cpu-relname"
++MODULE_ARCH="$host_os-$host_cpu-${PACKAGE_VERSION}"
+ 
+ 
+ cat >>confdefs.h <<_ACEOF
+@@ -14613,12 +14613,12 @@ else
  #include <libintl.h>
+ $gt_revision_test_code
  extern int _nl_msg_cat_cntr;
 -extern int *_nl_domain_bindings;
 +extern int libintl_nl_domain_bindings;
@@ -14,12 +32,12 @@ Try to avoid linking against libintl.a
  main ()
  {
  bindtextdomain ("", "");
--return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings
-+return (int) gettext ("") + _nl_msg_cat_cntr + libintl_nl_domain_bindings
+-return * gettext ("")$gt_expression_test_code + _nl_msg_cat_cntr + *_nl_domain_bindings
++return * gettext ("")$gt_expression_test_code + _nl_msg_cat_cntr + libintl_nl_domain_bindings
    ;
    return 0;
  }
-@@ -14869,7 +14869,7 @@ $as_echo "#define HAVE_DCGETTEXT 1" >>confdefs.h
+@@ -15443,7 +15443,7 @@ $as_echo "#define HAVE_DCGETTEXT 1" >>confdefs.h
    fi
  
  
