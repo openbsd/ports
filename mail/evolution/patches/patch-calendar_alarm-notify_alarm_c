@@ -1,9 +1,9 @@
-$OpenBSD: patch-calendar_alarm-notify_alarm_c,v 1.3 2012/10/18 13:55:27 ajacoutot Exp $
+$OpenBSD: patch-calendar_alarm-notify_alarm_c,v 1.4 2012/11/11 18:51:25 ajacoutot Exp $
 
 XXX remove when we have a 64-bit time_t
 
---- calendar/alarm-notify/alarm.c.orig	Sun Sep 16 17:05:49 2012
-+++ calendar/alarm-notify/alarm.c	Thu Oct 18 15:35:30 2012
+--- calendar/alarm-notify/alarm.c.orig	Sun Nov 11 01:13:47 2012
++++ calendar/alarm-notify/alarm.c	Sun Nov 11 19:14:54 2012
 @@ -76,7 +76,7 @@ pop_alarm (void)
  static gboolean
  alarm_ready_cb (gpointer data)
@@ -31,12 +31,12 @@ XXX remove when we have a 64-bit time_t
  
  	if (!alarms) {
  		g_warning ("No alarm to setup\n");
-@@ -153,7 +153,7 @@ setup_timeout (void)
- 
+@@ -154,7 +154,7 @@ setup_timeout (void)
  	/* Add the time out */
- 	debug (("Setting timeout for %d.%2d (from now) %lu %lu",
--		     diff / 60, diff % 60, ar->trigger, now));
-+		     diff / 60, diff % 60, (long)ar->trigger, now));
+ 	debug (
+ 		("Setting timeout for %d.%2d (from now) %lu %lu",
+-		diff / 60, diff % 60, ar->trigger, now));
++		diff / 60, diff % 60, (long)ar->trigger, now));
  	debug ((" %s", ctime (&ar->trigger)));
  	debug ((" %s", ctime (&now)));
  	timeout_id = g_timeout_add_seconds (diff, alarm_ready_cb, NULL);

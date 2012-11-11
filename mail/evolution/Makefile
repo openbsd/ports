@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.181 2012/10/28 11:24:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.182 2012/11/11 18:51:25 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,13 +6,10 @@ COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
 
 GNOME_PROJECT=		evolution
-GNOME_VERSION=		3.6.1
+GNOME_VERSION=		3.6.2
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}
-
-REVISION-main=		2
-REVISION-plugins=	2
 
 # NOTE: when R changes, increment EVO_VERSION accordingly and bump:
 # mail/evolution-ews
@@ -27,17 +24,6 @@ HOMEPAGE=		http://www.gnome.org/projects/evolution/
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
-
-SO_VERSION=		8.0
-
-.for _lib in \
-gnomecanvas evolution-utils filter email-utils email-engine eutil \
-evolution-a11y emiscwidgets etext etimezonedialog etable menus eshell \
-essmime evolution-smime emformat eabutil evolution-addressbook-importers \
-econtacteditor econtactlisteditor composer evolution-mail \
-evolution-mail-importers evolution-calendar-importers evolution-calendar
-SHARED_LIBS+=	${_lib}	${SO_VERSION}
-.endfor
 
 # # GPLv2+ - LGPLv2+ - OpenLDAP license - GFDL 1.1
 PERMIT_PACKAGE_CDROM=	Yes
