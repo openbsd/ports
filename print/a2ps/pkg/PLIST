@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2012/02/16 22:13:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2012/11/11 09:12:55 ajacoutot Exp $
 @pkgpath print/a2ps,a4dj
 @pkgpath print/a2ps,letter
 @pkgpath print/a2ps,letterdj
@@ -227,6 +227,7 @@ share/a2ps/sheets/wdiff.ssh
 share/a2ps/sheets/xs.ssh
 share/a2ps/sheets/yacc.ssh
 share/a2ps/sheets/zsh.ssh
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/locale/ca/LC_MESSAGES/a2ps.mo
 share/locale/cs/LC_MESSAGES/a2ps.mo
 share/locale/da/LC_MESSAGES/a2ps.mo

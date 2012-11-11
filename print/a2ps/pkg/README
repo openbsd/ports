@@ -1,0 +1,17 @@
+$OpenBSD: README,v 1.1 2012/11/11 09:12:55 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+a2ps(1) uses external helper commands to convert files to PostScript.
+
+Because usage and needs can be different from one installation to the
+other, none of these commands are enforced as a dependency of this
+package and it is up the administrator to decide which convertion tool
+is needed.
+
+They can be configured under ${SYSCONFDIR}/a2ps{,-site}.cfg.
+
+By default, images are converted using the convert(1) utility from the
+ImageMagick package.
