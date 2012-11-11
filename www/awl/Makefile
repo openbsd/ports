@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2012/03/05 18:19:55 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2012/11/11 20:49:21 landry Exp $
 
 COMMENT =	Andrew's web libraries for PHP
 
-DISTNAME =	awl-0.51
+DISTNAME =	awl-0.53
 PKGNAME =	php-${DISTNAME}
-REVISION =	0
 CATEGORIES =	www
 PKG_ARCH =	*
 

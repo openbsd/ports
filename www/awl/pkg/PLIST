@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/03/05 18:19:55 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/11/11 20:49:21 landry Exp $
 awl/
 awl/README
 awl/dba/
@@ -161,6 +161,7 @@ awl/inc/DataEntry.php
 awl/inc/DataUpdate.php
 awl/inc/EMail.php
 awl/inc/MenuSet.php
+awl/inc/Multipart.php
 awl/inc/PgQuery.php
 awl/inc/Session.php
 awl/inc/Translation.php
