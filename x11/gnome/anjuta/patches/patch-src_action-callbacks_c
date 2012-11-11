@@ -1,13 +1,12 @@
-$OpenBSD: patch-src_action-callbacks_c,v 1.1 2012/11/11 14:22:13 ajacoutot Exp $
+$OpenBSD: patch-src_action-callbacks_c,v 1.2 2012/11/11 18:50:24 ajacoutot Exp $
 
-Adapted from:
-From 1e76a12618da9fd1e8d52d1f596505513cbf3f00 Mon Sep 17 00:00:00 2001
+From 59b2a529c745f2af469c06f499f409c1a53bc2e6 Mon Sep 17 00:00:00 2001
 From: Sébastien Granjoux <seb.sfo@free.fr>
 Date: Sun, 28 Oct 2012 16:08:06 +0000
 Subject: anjuta: Do not use GDL members deprecated in version 3.6
 
 --- src/action-callbacks.c.orig	Wed Sep 26 22:53:47 2012
-+++ src/action-callbacks.c	Sun Nov 11 15:20:32 2012
++++ src/action-callbacks.c	Sun Nov 11 19:34:41 2012
 @@ -65,7 +65,7 @@ void
  on_layout_lock_toggle (GtkAction *action, AnjutaApp *app)
  {

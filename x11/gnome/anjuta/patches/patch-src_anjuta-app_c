@@ -1,13 +1,12 @@
-$OpenBSD: patch-src_anjuta-app_c,v 1.4 2012/11/11 16:02:15 ajacoutot Exp $
+$OpenBSD: patch-src_anjuta-app_c,v 1.5 2012/11/11 18:50:24 ajacoutot Exp $
 
-Adapted from:
-From 1e76a12618da9fd1e8d52d1f596505513cbf3f00 Mon Sep 17 00:00:00 2001
-From: S\xc3\xa9bastien Granjoux <seb.sfo@free.fr>
+From 59b2a529c745f2af469c06f499f409c1a53bc2e6 Mon Sep 17 00:00:00 2001
+From: Sébastien Granjoux <seb.sfo@free.fr>
 Date: Sun, 28 Oct 2012 16:08:06 +0000
 Subject: anjuta: Do not use GDL members deprecated in version 3.6
 
 --- src/anjuta-app.c.orig	Wed Sep 26 22:53:47 2012
-+++ src/anjuta-app.c	Sun Nov 11 17:01:39 2012
++++ src/anjuta-app.c	Sun Nov 11 19:34:41 2012
 @@ -306,7 +306,7 @@ on_gdl_style_changed (GSettings* settings,
  	else if (strcasecmp (pr_style, "Tabs") == 0)
  		style = GDL_SWITCHER_STYLE_TABS;
@@ -17,17 +16,8 @@ Subject: anjuta: Do not use GDL members deprecated in version 3.6
  				  style, NULL);
  	g_free (pr_style);
  }
-@@ -582,14 +582,14 @@ anjuta_app_instance_init (AnjutaApp *app)
- 	gtk_widget_show (app->dock);
- 	gtk_box_pack_end(GTK_BOX (hbox), app->dock, TRUE, TRUE, 0);
- 
--	dockbar = gdl_dock_bar_new (GDL_DOCK(app->dock));
-+	dockbar = gdl_dock_bar_new (gdl_dock_layout_get_master (app->layout_manager));
- 	gtk_widget_show (dockbar);
- 	gtk_box_pack_start(GTK_BOX (hbox), dockbar, FALSE, FALSE, 0);
- 
--	app->layout_manager = gdl_dock_layout_new (GDL_DOCK (app->dock));
-+	app->layout_manager = gdl_dock_layout_new (gdl_dock_layout_get_master (app->layout_manager));
+@@ -589,7 +589,7 @@ anjuta_app_instance_init (AnjutaApp *app)
+ 	app->layout_manager = gdl_dock_layout_new (GDL_DOCK (app->dock));
  	g_signal_connect (app->layout_manager, "notify::dirty",
  					  G_CALLBACK (on_layout_dirty_notify), app);
 -	g_signal_connect (app->layout_manager->master, "notify::locked",
