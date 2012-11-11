@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2012/11/11 14:30:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2012/11/11 19:00:02 ajacoutot Exp $
 
-BROKEN=		does not build with new gdl
+BROKEN=		https://bugzilla.gnome.org/show_bug.cgi?id=688095
 
 COMMENT=	C++ binding for gdl
 
