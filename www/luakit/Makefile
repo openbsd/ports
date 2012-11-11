@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2012/11/11 19:15:07 abieber Exp $
+# $OpenBSD: Makefile,v 1.5 2012/11/11 21:36:08 abieber Exp $
 #
 COMMENT=	fast, small, webkit based browser written in lua
 
 VERSION=	2012.09.13.rc1
 
-REVISION=	2
+REVISION=	3
 
 DISTNAME=	luakit-${VERSION}
 
@@ -29,7 +29,7 @@ WANTLIB += Xrandr Xrender atk-1.0 c cairo expat fontconfig freetype
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += gthread-2.0 gtk-x11-2.0 javascriptcoregtk-1.0 luajit-5.1
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB += pthread pthread-stubs soup-2.4 sqlite3 webkitgtk-1.0
+WANTLIB += pthread pthread-stubs soup-2.4 sqlite3 unique-1.0 webkitgtk-1.0
 WANTLIB += xcb xcb-render xcb-shm z
 
 MODULES = lang/lua \
@@ -40,13 +40,14 @@ BUILD_DEPENDS=	devel/help2man
 RUN_DEPENDS=	devel/luafs
 
 LIB_DEPENDS=	lang/luajit \
+		devel/libunique \
 		www/webkit
 
 # webkit browsing
 RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-ffmpeg \
 		multimedia/gstreamer-0.10/plugins-good
 
-MAKE_ENV+= USE_LUAJIT=1 USE_UNIQUE=0 INSTALLDIR=${PREFIX} \
+MAKE_ENV+= USE_LUAJIT=1 USE_UNIQUE=1 INSTALLDIR=${PREFIX} \
 	MANDIR=${PREFIX}
 
 PIXDIR = ${PREFIX}/share/pixmaps
