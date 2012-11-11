@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2012/03/07 08:38:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2012/11/11 20:50:18 landry Exp $
 
 COMMENT =	CalDAV/CardDav calendar/contacts server
 
-DISTNAME =	davical-1.0.2
+DISTNAME =	davical-1.1.1
 CATEGORIES =	productivity net
-REVISION =	0
 
 HOMEPAGE =	http://www.davical.org/
 
@@ -26,7 +25,7 @@ TINSTDIR =	${TRUEPREFIX}/davical
 SUBST_VARS =	TINSTDIR
 
 RUN_DEPENDS +=	lang/php/${MODPHP_VERSION},-pdo_pgsql \
-		www/awl \
+		www/awl>=0.53 \
 		devel/p5-YAML \
 		databases/p5-DBD-Pg
 
