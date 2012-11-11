@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_anjuta-app_c,v 1.1 2012/11/11 14:22:13 ajacoutot Exp $
+$OpenBSD: patch-src_anjuta-app_c,v 1.2 2012/11/11 15:10:34 ajacoutot Exp $
 
 Adapted from:
 From 1e76a12618da9fd1e8d52d1f596505513cbf3f00 Mon Sep 17 00:00:00 2001
@@ -6,8 +6,17 @@ From: S\xc3\xa9bastien Granjoux <seb.sfo@free.fr>
 Date: Sun, 28 Oct 2012 16:08:06 +0000
 Subject: anjuta: Do not use GDL members deprecated in version 3.6
 
---- src/anjuta-app.c.orig	Sun Nov 11 15:20:38 2012
-+++ src/anjuta-app.c	Sun Nov 11 15:20:41 2012
+--- src/anjuta-app.c.orig	Wed Sep 26 22:53:47 2012
++++ src/anjuta-app.c	Sun Nov 11 16:10:04 2012
+@@ -306,7 +306,7 @@ on_gdl_style_changed (GSettings* settings,
+ 	else if (strcasecmp (pr_style, "Tabs") == 0)
+ 		style = GDL_SWITCHER_STYLE_TABS;
+ 
+-	g_object_set (G_OBJECT(app->layout_manager->master), "switcher-style",
++	g_object_set (G_OBJECT(gdl_dock_layout_get_master (app->layout_manager), "switcher-style",
+ 				  style, NULL);
+ 	g_free (pr_style);
+ }
 @@ -589,7 +589,7 @@ anjuta_app_instance_init (AnjutaApp *app)
  	app->layout_manager = gdl_dock_layout_new (GDL_DOCK (app->dock));
  	g_signal_connect (app->layout_manager, "notify::dirty",
