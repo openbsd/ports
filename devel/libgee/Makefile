@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2012/11/11 08:45:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2012/11/11 18:40:13 jasper Exp $
 
 COMMENT=	GObject based collection library
 
@@ -23,9 +23,6 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += ffi glib-2.0 gobject-2.0 gthread-2.0 pcre pthread
 
 BUILD_DEPENDS=	lang/vala
-
-# XXX see patch-gee_Makefile_in
-BUILD_DEPENDS+=	textproc/gsed
 
 LIB_DEPENDS=	devel/glib2
 
