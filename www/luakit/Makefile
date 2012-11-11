@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2012/11/01 14:53:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2012/11/11 19:15:07 abieber Exp $
 #
 COMMENT=	fast, small, webkit based browser written in lua
 
 VERSION=	2012.09.13.rc1
 
-REVISION=	1
+REVISION=	2
 
 DISTNAME=	luakit-${VERSION}
 
@@ -25,18 +25,21 @@ PERMIT_DISTFILES_FTP=	Yes
 USE_GMAKE=		Yes
 
 WANTLIB += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender c expat fontconfig freetype lua5.1 m
-WANTLIB += pixman-1 pthread pthread-stubs sqlite3 xcb xcb-render
-WANTLIB += xcb-shm z
+WANTLIB += Xrandr Xrender atk-1.0 c cairo expat fontconfig freetype
+WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
+WANTLIB += gthread-2.0 gtk-x11-2.0 javascriptcoregtk-1.0 luajit-5.1
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
+WANTLIB += pthread pthread-stubs soup-2.4 sqlite3 webkitgtk-1.0
+WANTLIB += xcb xcb-render xcb-shm z
 
-MODULES = lang/lua
+MODULES = lang/lua \
+		devel/gettext
 
-BUILD_DEPENDS=	devel/help2man \
-		lang/luajit \
-		www/webkit
+BUILD_DEPENDS=	devel/help2man
 
-RUN_DEPENDS=	devel/luafs \
-		lang/luajit \
+RUN_DEPENDS=	devel/luafs
+
+LIB_DEPENDS=	lang/luajit \
 		www/webkit
 
 # webkit browsing
