@@ -1,10 +1,10 @@
-$OpenBSD: patch-camel_providers_pop3_camel-pop3-folder_c,v 1.3 2012/10/18 13:54:56 ajacoutot Exp $
+$OpenBSD: patch-camel_providers_pop3_camel-pop3-folder_c,v 1.4 2012/11/11 18:10:01 ajacoutot Exp $
 
 XXX remove when we have a 64-bit time_t
 
---- camel/providers/pop3/camel-pop3-folder.c.orig	Sun Sep 16 17:05:39 2012
-+++ camel/providers/pop3/camel-pop3-folder.c	Thu Oct 18 14:20:42 2012
-@@ -1114,7 +1114,7 @@ camel_pop3_delete_old (CamelFolder *folder,
+--- camel/providers/pop3/camel-pop3-folder.c.orig	Sun Nov 11 00:42:15 2012
++++ camel/providers/pop3/camel-pop3-folder.c	Sun Nov 11 18:43:39 2012
+@@ -1146,7 +1146,7 @@ camel_pop3_delete_old (CamelFolder *folder,
  
  			d (printf (
  				"%s(%d): message_time= [%ld]\n",
