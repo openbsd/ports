@@ -1,11 +1,11 @@
-$OpenBSD: patch-Modules_FindPythonInterp_cmake,v 1.5 2012/05/07 07:06:20 dcoppa Exp $
+$OpenBSD: patch-Modules_FindPythonInterp_cmake,v 1.6 2012/11/11 17:13:31 dcoppa Exp $
 --- Modules/FindPythonInterp.cmake.orig	Mon Apr 30 11:57:33 2012
 +++ Modules/FindPythonInterp.cmake	Mon Apr 30 12:07:14 2012
 @@ -29,6 +29,8 @@
  # (To distribute this file outside of CMake, substitute the full
  #  License text for the above reference.)
  
-+SET(MODPY_VERSION $ENV{MODPY_VERSION})
++set(MODPY_VERSION $ENV{MODPY_VERSION})
 +
  unset(_Python_NAMES)
  
@@ -18,14 +18,14 @@ $OpenBSD: patch-Modules_FindPythonInterp_cmake,v 1.5 2012/05/07 07:06:20 dcoppa 
 -  ${Python_ADDITIONAL_VERSIONS}
 -  ${_PYTHON_FIND_OTHER_VERSIONS}
 -  )
-+IF(MODPY_VERSION)
++if(MODPY_VERSION)
 +  set(_Python_VERSIONS ${MODPY_VERSION})
-+ELSE(MODPY_VERSION)
++else(MODPY_VERSION)
 +  set(_Python_VERSIONS
 +    ${Python_ADDITIONAL_VERSIONS}
 +    ${_PYTHON_FIND_OTHER_VERSIONS}
 +    )
-+ENDIF(MODPY_VERSION)
++endif(MODPY_VERSION)
  
  unset(_PYTHON_FIND_OTHER_VERSIONS)
  unset(_PYTHON1_VERSIONS)

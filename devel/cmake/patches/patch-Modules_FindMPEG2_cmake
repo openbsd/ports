@@ -1,40 +1,41 @@
-$OpenBSD: patch-Modules_FindMPEG2_cmake,v 1.3 2011/03/13 18:23:02 dcoppa Exp $
---- Modules/FindMPEG2.cmake.orig	Tue Feb 15 18:47:27 2011
-+++ Modules/FindMPEG2.cmake	Mon Mar  7 10:10:46 2011
-@@ -21,17 +21,14 @@
+$OpenBSD: patch-Modules_FindMPEG2_cmake,v 1.4 2012/11/11 17:13:31 dcoppa Exp $
+--- Modules/FindMPEG2.cmake.orig	Fri Nov  2 10:47:37 2012
++++ Modules/FindMPEG2.cmake	Fri Nov  2 10:50:16 2012
+@@ -21,27 +21,21 @@
  #  License text for the above reference.)
  
- FIND_PATH(MPEG2_INCLUDE_DIR 
+ find_path(MPEG2_INCLUDE_DIR
 -  NAMES mpeg2.h mpeg2dec/mpeg2.h
 -  PATHS /usr/local/livid
 +  NAMES mpeg2dec/mpeg2.h
 +  PATHS ${LOCALBASE}/include
  )
  
- FIND_LIBRARY(MPEG2_mpeg2_LIBRARY mpeg2
+ find_library(MPEG2_mpeg2_LIBRARY mpeg2
 -  /usr/local/livid/mpeg2dec/libmpeg2/.libs
 +  ${LOCALBASE}/lib
  )
  
--FIND_LIBRARY( MPEG2_vo_LIBRARY vo
+-find_library( MPEG2_vo_LIBRARY vo
 -  /usr/local/livid/mpeg2dec/libvo/.libs
 -)
- 
- 
- # handle the QUIETLY and REQUIRED arguments and set MPEG2_FOUND to TRUE if 
-@@ -40,8 +37,7 @@ INCLUDE(${CMAKE_CURRENT_LIST_DIR}/FindPackageHandleSta
+-
+-
+ # handle the QUIETLY and REQUIRED arguments and set MPEG2_FOUND to TRUE if
+ # all listed variables are TRUE
+ include(${CMAKE_CURRENT_LIST_DIR}/FindPackageHandleStandardArgs.cmake)
  FIND_PACKAGE_HANDLE_STANDARD_ARGS(MPEG2 DEFAULT_MSG MPEG2_mpeg2_LIBRARY MPEG2_INCLUDE_DIR)
  
- IF(MPEG2_FOUND)
--  SET( MPEG2_LIBRARIES ${MPEG2_mpeg2_LIBRARY} 
+ if(MPEG2_FOUND)
+-  set( MPEG2_LIBRARIES ${MPEG2_mpeg2_LIBRARY}
 -                        ${MPEG2_vo_LIBRARY})
-+  SET( MPEG2_LIBRARIES ${MPEG2_mpeg2_LIBRARY})
++  set( MPEG2_LIBRARIES ${MPEG2_mpeg2_LIBRARY})
  
    #some native mpeg2 installations will depend
    #on libSDL, if found, add it in.
-@@ -51,4 +47,4 @@ IF(MPEG2_FOUND)
-   ENDIF(SDL_FOUND)
- ENDIF(MPEG2_FOUND)
+@@ -51,4 +45,4 @@ if(MPEG2_FOUND)
+   endif()
+ endif()
  
--MARK_AS_ADVANCED(MPEG2_INCLUDE_DIR MPEG2_mpeg2_LIBRARY MPEG2_vo_LIBRARY)
-+MARK_AS_ADVANCED(MPEG2_INCLUDE_DIR MPEG2_mpeg2_LIBRARY)
+-mark_as_advanced(MPEG2_INCLUDE_DIR MPEG2_mpeg2_LIBRARY MPEG2_vo_LIBRARY)
++mark_as_advanced(MPEG2_INCLUDE_DIR MPEG2_mpeg2_LIBRARY)

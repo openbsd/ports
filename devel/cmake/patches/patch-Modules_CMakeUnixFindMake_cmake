@@ -1,10 +1,10 @@
-$OpenBSD: patch-Modules_CMakeUnixFindMake_cmake,v 1.3 2010/11/15 11:39:08 dcoppa Exp $
---- Modules/CMakeUnixFindMake.cmake.orig	Wed Nov  3 20:58:27 2010
-+++ Modules/CMakeUnixFindMake.cmake	Wed Nov 10 09:01:25 2010
+$OpenBSD: patch-Modules_CMakeUnixFindMake_cmake,v 1.4 2012/11/11 17:13:31 dcoppa Exp $
+--- Modules/CMakeUnixFindMake.cmake.orig	Wed Oct 31 16:32:05 2012
++++ Modules/CMakeUnixFindMake.cmake	Fri Nov  2 07:43:30 2012
 @@ -12,5 +12,5 @@
  # (To distribute this file outside of CMake, substitute the full
  #  License text for the above reference.)
  
--FIND_PROGRAM(CMAKE_MAKE_PROGRAM NAMES gmake make smake)
-+FIND_PROGRAM(CMAKE_MAKE_PROGRAM NAMES make gmake smake)
- MARK_AS_ADVANCED(CMAKE_MAKE_PROGRAM)
+-find_program(CMAKE_MAKE_PROGRAM NAMES gmake make smake)
++find_program(CMAKE_MAKE_PROGRAM NAMES make gmake smake)
+ mark_as_advanced(CMAKE_MAKE_PROGRAM)

@@ -1,12 +1,12 @@
-$OpenBSD: patch-Modules_FindXMLRPC_cmake,v 1.2 2010/05/28 20:21:48 dcoppa Exp $
---- Modules/FindXMLRPC.cmake.orig	Tue Apr 20 10:32:19 2010
-+++ Modules/FindXMLRPC.cmake	Tue Apr 20 10:37:39 2010
-@@ -109,6 +109,8 @@ IF(XMLRPC_FOUND)
-       ENDIF("${flag}" MATCHES "^-L")
-     ENDFOREACH(flag)
+$OpenBSD: patch-Modules_FindXMLRPC_cmake,v 1.3 2012/11/11 17:13:32 dcoppa Exp $
+--- Modules/FindXMLRPC.cmake.orig	Wed Oct 31 16:32:05 2012
++++ Modules/FindXMLRPC.cmake	Fri Nov  2 07:43:31 2012
+@@ -109,6 +109,8 @@ if(XMLRPC_FOUND)
+       endif()
+     endforeach()
  
-+    SET(XMLRPC_LIBRARY_DIRS ${XMLRPC_LIBRARY_DIRS} "/usr/lib")
++    set(XMLRPC_LIBRARY_DIRS ${XMLRPC_LIBRARY_DIRS} "/usr/lib")
 +
      # Search for each library needed using the directories given.
-     FOREACH(name ${XMLRPC_LIBRARY_NAMES})
+     foreach(name ${XMLRPC_LIBRARY_NAMES})
        # Look for this library.

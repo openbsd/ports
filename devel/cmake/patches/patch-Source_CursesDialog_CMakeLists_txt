@@ -1,22 +1,22 @@
-$OpenBSD: patch-Source_CursesDialog_CMakeLists_txt,v 1.2 2010/07/12 19:19:30 dcoppa Exp $
---- Source/CursesDialog/CMakeLists.txt.orig	Mon Jun 28 17:16:00 2010
-+++ Source/CursesDialog/CMakeLists.txt	Mon Jul  5 11:23:18 2010
-@@ -25,13 +25,15 @@ SET( CURSES_SRCS
+$OpenBSD: patch-Source_CursesDialog_CMakeLists_txt,v 1.3 2012/11/11 17:13:32 dcoppa Exp $
+--- Source/CursesDialog/CMakeLists.txt.orig	Fri Nov  2 08:20:02 2012
++++ Source/CursesDialog/CMakeLists.txt	Fri Nov  2 08:22:27 2012
+@@ -25,13 +25,15 @@ set( CURSES_SRCS
                CursesDialog/ccmake
     )
  
--INCLUDE_DIRECTORIES(${CMake_SOURCE_DIR}/Source/CursesDialog/form
+-include_directories(${CMake_SOURCE_DIR}/Source/CursesDialog/form
 -                    ${CMake_BINARY_DIR}/Source/CursesDialog/form)
- INCLUDE_DIRECTORIES(${CURSES_INCLUDE_PATH})
+ include_directories(${CURSES_INCLUDE_PATH})
  
  
- ADD_EXECUTABLE(ccmake ${CURSES_SRCS} )
- TARGET_LINK_LIBRARIES(ccmake CMakeLib)
--TARGET_LINK_LIBRARIES(ccmake cmForm)
-+TARGET_LINK_LIBRARIES(ccmake form)
-+TARGET_LINK_LIBRARIES(ccmake ${CURSES_LIBRARY})
-+IF(CURSES_EXTRA_LIBRARY)
-+  TARGET_LINK_LIBRARIES(ccmake ${CURSES_EXTRA_LIBRARY})
-+ENDIF(CURSES_EXTRA_LIBRARY)
+ add_executable(ccmake ${CURSES_SRCS} )
+ target_link_libraries(ccmake CMakeLib)
+-target_link_libraries(ccmake cmForm)
++target_link_libraries(ccmake form)
++target_link_libraries(ccmake ${CURSES_LIBRARY})
++if(CURSES_EXTRA_LIBRARY)
++  target_link_libraries(ccmake ${CURSES_EXTRA_LIBRARY})
++endif(CURSES_EXTRA_LIBRARY)
  
- INSTALL_TARGETS(/bin ccmake)
+ install_targets(/bin ccmake)

@@ -1,35 +1,35 @@
-$OpenBSD: patch-Modules_FindTclsh_cmake,v 1.2 2010/11/15 11:39:09 dcoppa Exp $
---- Modules/FindTclsh.cmake.orig	Wed Nov  3 20:58:27 2010
-+++ Modules/FindTclsh.cmake	Wed Nov 10 09:01:26 2010
+$OpenBSD: patch-Modules_FindTclsh_cmake,v 1.3 2012/11/11 17:13:32 dcoppa Exp $
+--- Modules/FindTclsh.cmake.orig	Fri Nov  2 14:15:34 2012
++++ Modules/FindTclsh.cmake	Fri Nov  2 14:20:30 2012
 @@ -20,14 +20,21 @@
  # (To distribute this file outside of CMake, substitute the full
  #  License text for the above reference.)
  
-+SET(MODTCL_VERSION $ENV{MODTCL_VERSION})
-+SET(MODTK_VERSION $ENV{MODTK_VERSION})
++set(MODTCL_VERSION $ENV{MODTCL_VERSION})
++set(MODTK_VERSION $ENV{MODTK_VERSION})
 +
- IF(CYGWIN)
-   FIND_PROGRAM(TCL_TCLSH NAMES cygtclsh83 cygtclsh80)
- ENDIF(CYGWIN)
+ if(CYGWIN)
+   find_program(TCL_TCLSH NAMES cygtclsh83 cygtclsh80)
+ endif()
  
- GET_FILENAME_COMPONENT(TK_WISH_PATH "${TK_WISH}" PATH)
- GET_FILENAME_COMPONENT(TK_WISH_PATH_PARENT "${TK_WISH_PATH}" PATH)
--STRING(REGEX REPLACE 
+ get_filename_component(TK_WISH_PATH "${TK_WISH}" PATH)
+ get_filename_component(TK_WISH_PATH_PARENT "${TK_WISH_PATH}" PATH)
+-string(REGEX REPLACE
 -  "^.*wish([0-9]\\.*[0-9]).*$" "\\1" TK_WISH_VERSION "${TK_WISH}")
-+IF(MODTK_VERSION)
-+  SET(TK_WISH_VERSION "${MODTK_VERSION}")
-+ELSE(MODTK_VERSION)
-+  STRING(REGEX REPLACE 
++if(MODTK_VERSION)
++  set(TK_WISH_VERSION "${MODTK_VERSION}")
++else(MODTK_VERSION)
++  string(REGEX REPLACE
 +    "^.*wish([0-9]\\.*[0-9]).*$" "\\1" TK_WISH_VERSION "${TK_WISH}")
-+ENDIF(MODTK_VERSION)
++endif(MODTK_VERSION)
  
- GET_FILENAME_COMPONENT(TCL_INCLUDE_PATH_PARENT "${TCL_INCLUDE_PATH}" PATH)
- GET_FILENAME_COMPONENT(TK_INCLUDE_PATH_PARENT "${TK_INCLUDE_PATH}" PATH)
-@@ -66,16 +73,22 @@ IF(WIN32)
+ get_filename_component(TCL_INCLUDE_PATH_PARENT "${TCL_INCLUDE_PATH}" PATH)
+ get_filename_component(TK_INCLUDE_PATH_PARENT "${TK_INCLUDE_PATH}" PATH)
+@@ -66,16 +73,22 @@ if(WIN32)
      )
- ENDIF(WIN32)
+ endif()
  
--SET(TCL_TCLSH_NAMES
+-set(TCL_TCLSH_NAMES
 -  tclsh
 -  tclsh${TCL_LIBRARY_VERSION} tclsh${TK_LIBRARY_VERSION} tclsh${TK_WISH_VERSION}
 -  tclsh86 tclsh8.6
@@ -39,12 +39,12 @@ $OpenBSD: patch-Modules_FindTclsh_cmake,v 1.2 2010/11/15 11:39:09 dcoppa Exp $
 -  tclsh82 tclsh8.2
 -  tclsh80 tclsh8.0
 -  )
-+IF(MODTCL_VERSION)
-+  SET(TCL_TCLSH_NAMES
++if(MODTCL_VERSION)
++  set(TCL_TCLSH_NAMES
 +    tclsh${MODTCL_VERSION}
 +    )
-+ELSE(MODTCL_VERSION)
-+  SET(TCL_TCLSH_NAMES
++else(MODTCL_VERSION)
++  set(TCL_TCLSH_NAMES
 +    tclsh
 +    tclsh${TCL_LIBRARY_VERSION} tclsh${TK_LIBRARY_VERSION} tclsh${TK_WISH_VERSION}
 +    tclsh86 tclsh8.6
@@ -54,7 +54,7 @@ $OpenBSD: patch-Modules_FindTclsh_cmake,v 1.2 2010/11/15 11:39:09 dcoppa Exp $
 +    tclsh82 tclsh8.2
 +    tclsh80 tclsh8.0
 +    )
-+ENDIF(MODTCL_VERSION)
++endif(MODTCL_VERSION)
  
- FIND_PROGRAM(TCL_TCLSH
+ find_program(TCL_TCLSH
    NAMES ${TCL_TCLSH_NAMES}

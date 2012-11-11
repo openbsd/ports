@@ -1,26 +1,26 @@
-$OpenBSD: patch-Modules_FindJNI_cmake,v 1.5 2012/01/07 22:14:51 dcoppa Exp $
---- Modules/FindJNI.cmake.orig	Fri Dec 30 17:49:56 2011
-+++ Modules/FindJNI.cmake	Tue Jan  3 10:57:13 2012
+$OpenBSD: patch-Modules_FindJNI_cmake,v 1.6 2012/11/11 17:13:31 dcoppa Exp $
+--- Modules/FindJNI.cmake.orig	Wed Oct 31 16:32:05 2012
++++ Modules/FindJNI.cmake	Fri Nov  2 10:35:02 2012
 @@ -26,6 +26,8 @@
  # (To distribute this file outside of CMake, substitute the full
  #  License text for the above reference.)
  
-+SET(MODJAVA_VER $ENV{MODJAVA_VER})
++set(MODJAVA_VER $ENV{MODJAVA_VER})
 +
  # Expand {libarch} occurences to java_libarch subdirectory(-ies) and set ${_var}
- MACRO(java_append_library_directories _var)
+ macro(java_append_library_directories _var)
      # Determine java arch-specific library subdir
-@@ -88,40 +90,65 @@ ENDMACRO(java_append_library_directories)
- GET_FILENAME_COMPONENT(java_install_version
+@@ -88,39 +90,63 @@ endmacro()
+ get_filename_component(java_install_version
    "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit;CurrentVersion]" NAME)
  
--SET(JAVA_AWT_LIBRARY_DIRECTORIES
+-set(JAVA_AWT_LIBRARY_DIRECTORIES
 -  "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\1.4;JavaHome]/lib"
 -  "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\1.3;JavaHome]/lib"
 -  "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\${java_install_version};JavaHome]/lib"
 -  )
 -
- FILE(TO_CMAKE_PATH "$ENV{JAVA_HOME}" _JAVA_HOME)
+ file(TO_CMAKE_PATH "$ENV{JAVA_HOME}" _JAVA_HOME)
  
 -JAVA_APPEND_LIBRARY_DIRECTORIES(JAVA_AWT_LIBRARY_DIRECTORIES
 -  ${_JAVA_HOME}/jre/lib/{libarch}
@@ -47,40 +47,39 @@ $OpenBSD: patch-Modules_FindJNI_cmake,v 1.5 2012/01/07 22:14:51 dcoppa Exp $
 -  /usr/lib/jvm/default-java/jre/lib
 -  /usr/lib/jvm/default-java/lib
 -  )
-+IF(MODJAVA_VER)
-+  IF(MODJAVA_VER MATCHES "^1\\.6$")
-+    JAVA_APPEND_LIBRARY_DIRECTORIES(JAVA_AWT_LIBRARY_DIRECTORIES
++if(MODJAVA_VER)
++  if(MODJAVA_VER MATCHES "^1\\.6$")
++    set(JAVA_AWT_LIBRARY_DIRECTORIES
 +      ${LOCALBASE}/jdk-1.6.0/jre/lib/{libarch}
 +      ${LOCALBASE}/jre-1.6.0/lib/{libarch}
 +      )
-+  ELSEIF(MODJAVA_VER MATCHES "^1\\.6\\+$")
-+    JAVA_APPEND_LIBRARY_DIRECTORIES(JAVA_AWT_LIBRARY_DIRECTORIES
++  elseif(MODJAVA_VER MATCHES "^1\\.6\\+$")
++    set(JAVA_AWT_LIBRARY_DIRECTORIES
 +      ${LOCALBASE}/jdk-1.7.0/jre/lib/{libarch}
 +      ${LOCALBASE}/jre-1.7.0/lib/{libarch}
 +      ${LOCALBASE}/jdk-1.6.0/jre/lib/{libarch}
 +      ${LOCALBASE}/jre-1.6.0/lib/{libarch}
 +      )
-+  ELSE(MODJAVA_VER MATCHES "^1\\.6$")
-+    JAVA_APPEND_LIBRARY_DIRECTORIES(JAVA_AWT_LIBRARY_DIRECTORIES
++  else(MODJAVA_VER MATCHES "^1\\.6$")
++    set(JAVA_AWT_LIBRARY_DIRECTORIES
 +      ${LOCALBASE}/jdk-1.7.0/jre/lib/{libarch}
 +      ${LOCALBASE}/jre-1.7.0/lib/{libarch}
 +      )
-+  ENDIF(MODJAVA_VER MATCHES "^1\\.6$")
-+ELSE(MODJAVA_VER)
-+  SET(JAVA_AWT_LIBRARY_DIRECTORIES
++  endif(MODJAVA_VER MATCHES "^1\\.6$")
++else(MODJAVA_VER)
++  set(JAVA_AWT_LIBRARY_DIRECTORIES
 +    "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\1.4;JavaHome]/lib"
 +    "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\1.3;JavaHome]/lib"
 +    "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\${java_install_version};JavaHome]/lib"
 +    )
- 
 +  JAVA_APPEND_LIBRARY_DIRECTORIES(JAVA_AWT_LIBRARY_DIRECTORIES
 +    ${_JAVA_HOME}/jre/lib/{libarch}
 +    ${_JAVA_HOME}/jre/lib
 +    ${_JAVA_HOME}/lib
 +    ${_JAVA_HOME}
 +    ${LOCALBASE}/jdk-1.7.0/jre/lib/{libarch}
-+    ${LOCALBASE}/jdk-1.6.0/jre/lib/{libarch}
 +    ${LOCALBASE}/jre-1.7.0/lib/{libarch}
++    ${LOCALBASE}/jdk-1.6.0/jre/lib/{libarch}
 +    ${LOCALBASE}/jre-1.6.0/lib/{libarch}
 +    /usr/lib
 +    /usr/local/lib
@@ -102,39 +101,38 @@ $OpenBSD: patch-Modules_FindJNI_cmake,v 1.5 2012/01/07 22:14:51 dcoppa Exp $
 +    /usr/lib/jvm/default-java/jre/lib
 +    /usr/lib/jvm/default-java/lib
 +    )
-+ENDIF(MODJAVA_VER)
-+
- SET(JAVA_JVM_LIBRARY_DIRECTORIES)
- FOREACH(dir ${JAVA_AWT_LIBRARY_DIRECTORIES})
-   SET(JAVA_JVM_LIBRARY_DIRECTORIES
-@@ -132,29 +159,47 @@ FOREACH(dir ${JAVA_AWT_LIBRARY_DIRECTORIES})
-     )
- ENDFOREACH(dir)
++endif(MODJAVA_VER)
  
-+IF(MODJAVA_VER)
-+  IF(MODJAVA_VER MATCHES "^1\\.6$")
-+    SET(JAVA_AWT_INCLUDE_DIRECTORIES
+ set(JAVA_JVM_LIBRARY_DIRECTORIES)
+ foreach(dir ${JAVA_AWT_LIBRARY_DIRECTORIES})
+@@ -132,29 +158,47 @@ foreach(dir ${JAVA_AWT_LIBRARY_DIRECTORIES})
+     )
+ endforeach()
+ 
++if(MODJAVA_VER)
++  if(MODJAVA_VER MATCHES "^1\\.6$")
++    set(JAVA_AWT_INCLUDE_DIRECTORIES
 +      ${LOCALBASE}/jdk-1.6.0/include
 +      )
-+  ELSEIF(MODJAVA_VER MATCHES "^1\\.6\\+$")
-+    SET(JAVA_AWT_INCLUDE_DIRECTORIES
++  elseif(MODJAVA_VER MATCHES "^1\\.6\\+$")
++    set(JAVA_AWT_INCLUDE_DIRECTORIES
 +      ${LOCALBASE}/jdk-1.7.0/include
 +      ${LOCALBASE}/jdk-1.6.0/include
 +      )
-+  ELSE(MODJAVA_VER MATCHES "^1\\.6$")
-+    SET(JAVA_AWT_INCLUDE_DIRECTORIES
++  else(MODJAVA_VER MATCHES "^1\\.6$")
++    set(JAVA_AWT_INCLUDE_DIRECTORIES
 +      ${LOCALBASE}/jdk-1.7.0/include
 +      )
-+  ENDIF(MODJAVA_VER MATCHES "^1\\.6$")
-+ELSE(MODJAVA_VER)
-+  SET(JAVA_AWT_INCLUDE_DIRECTORIES
++  endif(MODJAVA_VER MATCHES "^1\\.6$")
++else(MODJAVA_VER)
++  set(JAVA_AWT_INCLUDE_DIRECTORIES
 +    "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\1.4;JavaHome]/include"
 +    "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\1.3;JavaHome]/include"
 +    "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\${java_install_version};JavaHome]/include"
 +    ${_JAVA_HOME}/include
 +    ${LOCALBASE}/jdk-1.7.0/include
 +    ${LOCALBASE}/jdk-1.6.0/include
-+    /usr/include 
++    /usr/include
 +    /usr/local/include
 +    /usr/lib/java/include
 +    /usr/local/lib/java/include
@@ -150,14 +148,14 @@ $OpenBSD: patch-Modules_FindJNI_cmake,v 1.5 2012/01/07 22:14:51 dcoppa Exp $
 +    # Debian specific path for default JVM
 +    /usr/lib/jvm/default-java/include
 +    )
-+ENDIF(MODJAVA_VER)
++endif(MODJAVA_VER)
  
--SET(JAVA_AWT_INCLUDE_DIRECTORIES
+-set(JAVA_AWT_INCLUDE_DIRECTORIES
 -  "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\1.4;JavaHome]/include"
 -  "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\1.3;JavaHome]/include"
 -  "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\${java_install_version};JavaHome]/include"
 -  ${_JAVA_HOME}/include
--  /usr/include 
+-  /usr/include
 -  /usr/local/include
 -  /usr/lib/java/include
 -  /usr/local/lib/java/include
@@ -174,10 +172,10 @@ $OpenBSD: patch-Modules_FindJNI_cmake,v 1.5 2012/01/07 22:14:51 dcoppa Exp $
 -  /usr/lib/jvm/default-java/include
 -  )
 -
- FOREACH(JAVA_PROG "${JAVA_RUNTIME}" "${JAVA_COMPILE}" "${JAVA_ARCHIVE}")
-   GET_FILENAME_COMPONENT(jpath "${JAVA_PROG}" PATH)
-   FOREACH(JAVA_INC_PATH ../include ../java/include ../share/java/include)
-@@ -227,6 +272,7 @@ FIND_PATH(JAVA_INCLUDE_PATH2 jni_md.h 
+ foreach(JAVA_PROG "${JAVA_RUNTIME}" "${JAVA_COMPILE}" "${JAVA_ARCHIVE}")
+   get_filename_component(jpath "${JAVA_PROG}" PATH)
+   foreach(JAVA_INC_PATH ../include ../java/include ../share/java/include)
+@@ -227,6 +271,7 @@ find_path(JAVA_INCLUDE_PATH2 jni_md.h
    ${JAVA_INCLUDE_PATH}/win32
    ${JAVA_INCLUDE_PATH}/linux
    ${JAVA_INCLUDE_PATH}/freebsd

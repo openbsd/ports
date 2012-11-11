@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2012/10/08 07:23:09 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.66 2012/11/11 17:13:31 dcoppa Exp $
 
 VMEM_WARNING =	Yes
 BROKEN-arm =	build fails since move to gcc4
@@ -6,8 +6,7 @@ BROKEN-arm =	build fails since move to gcc4
 HOMEPAGE =	http://www.cmake.org/
 CATEGORIES =	devel
 COMMENT =	portable build system
-DISTNAME =	cmake-2.8.9
-REVISION =	0
+DISTNAME =	cmake-2.8.10
 MASTER_SITES =	${HOMEPAGE}files/v2.8/
 
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>
@@ -50,6 +49,7 @@ pre-configure:
 		${WRKSRC}/Modules/FindQt.cmake \
 		${WRKSRC}/Modules/FindQt3.cmake \
 		${WRKSRC}/Modules/FindSDL.cmake \
+		${WRKSRC}/Modules/FindTCL.cmake \
 		${WRKSRC}/Modules/FindwxWindows.cmake \
 		${WRKSRC}/Modules/UseJava.cmake
 

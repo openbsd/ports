@@ -1,38 +1,38 @@
-$OpenBSD: patch-Modules_Platform_OpenBSD_cmake,v 1.6 2012/08/31 12:28:31 dcoppa Exp $
---- Modules/Platform/OpenBSD.cmake.orig	Thu Aug  9 20:15:19 2012
-+++ Modules/Platform/OpenBSD.cmake	Fri Aug 31 14:20:36 2012
+$OpenBSD: patch-Modules_Platform_OpenBSD_cmake,v 1.7 2012/11/11 17:13:32 dcoppa Exp $
+--- Modules/Platform/OpenBSD.cmake.orig	Wed Oct 31 16:32:05 2012
++++ Modules/Platform/OpenBSD.cmake	Fri Nov  2 08:28:09 2012
 @@ -1,5 +1,24 @@
- INCLUDE(Platform/NetBSD)
+ include(Platform/NetBSD)
  
-+IF($ENV{LOCALBASE})
-+  SET(OPENBSD_LOCALBASE $ENV{LOCALBASE})
-+ELSE($ENV{LOCALBASE})
-+  SET(OPENBSD_LOCALBASE /usr/local)
-+ENDIF($ENV{LOCALBASE})
++if($ENV{LOCALBASE})
++  set(OPENBSD_LOCALBASE $ENV{LOCALBASE})
++else($ENV{LOCALBASE})
++  set(OPENBSD_LOCALBASE /usr/local)
++endif($ENV{LOCALBASE})
 +
-+IF($ENV{X11BASE})
-+  SET(OPENBSD_X11BASE $ENV{X11BASE})
-+ELSE($ENV{X11BASE})
-+  SET(OPENBSD_X11BASE /usr/X11R6)
-+ENDIF($ENV{X11BASE})
++if($ENV{X11BASE})
++  set(OPENBSD_X11BASE $ENV{X11BASE})
++else($ENV{X11BASE})
++  set(OPENBSD_X11BASE /usr/X11R6)
++endif($ENV{X11BASE})
 +
-+SET(CMAKE_SYSTEM_INCLUDE_PATH ${CMAKE_SYSTEM_INCLUDE_PATH} /usr/include
++set(CMAKE_SYSTEM_INCLUDE_PATH ${CMAKE_SYSTEM_INCLUDE_PATH} /usr/include
 +  ${OPENBSD_LOCALBASE}/include ${OPENBSD_X11BASE}/include)
-+SET(CMAKE_SYSTEM_LIBRARY_PATH ${CMAKE_SYSTEM_LIBRARY_PATH} /usr/lib
++set(CMAKE_SYSTEM_LIBRARY_PATH ${CMAKE_SYSTEM_LIBRARY_PATH} /usr/lib
 +  ${OPENBSD_LOCALBASE}/lib ${OPENBSD_X11BASE}/lib)
-+SET(CMAKE_SYSTEM_PROGRAM_PATH ${CMAKE_SYSTEM_PROGRAM_PATH} /bin /usr/bin
++set(CMAKE_SYSTEM_PROGRAM_PATH ${CMAKE_SYSTEM_PROGRAM_PATH} /bin /usr/bin
 +  ${OPENBSD_LOCALBASE}/bin /sbin /usr/sbin ${OPENBSD_LOCALBASE}/sbin)
 +
  # On OpenBSD, the compile time linker does not share it's configuration with
  # the runtime linker.  This will extract the library search paths from the
  # system's ld.so.hints file which will allow CMake to set the appropriate
-@@ -16,3 +35,9 @@ IF(NOT CMAKE_PLATFORM_RUNTIME_PATH)
- ENDIF()
+@@ -16,3 +35,9 @@ if(NOT CMAKE_PLATFORM_RUNTIME_PATH)
+ endif()
  
- SET_PROPERTY(GLOBAL PROPERTY FIND_LIBRARY_USE_OPENBSD_VERSIONING 1)
+ set_property(GLOBAL PROPERTY FIND_LIBRARY_USE_OPENBSD_VERSIONING 1)
 +
 +# OpenBSD policy requires that shared libraries be installed without
 +# executable permission.
-+SET(CMAKE_INSTALL_SO_NO_EXE 1)
-+SET(CMAKE_INSTALL_SO_NO_EXE 1 CACHE INTERNAL
++set(CMAKE_INSTALL_SO_NO_EXE 1)
++set(CMAKE_INSTALL_SO_NO_EXE 1 CACHE INTERNAL
 +  "Install .so files without execute permission.")

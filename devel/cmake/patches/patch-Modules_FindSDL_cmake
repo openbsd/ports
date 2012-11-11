@@ -1,33 +1,24 @@
-$OpenBSD: patch-Modules_FindSDL_cmake,v 1.2 2012/05/07 07:06:20 dcoppa Exp $
---- Modules/FindSDL.cmake.orig	Mon Apr 30 11:22:09 2012
-+++ Modules/FindSDL.cmake	Mon Apr 30 11:23:36 2012
-@@ -82,6 +82,11 @@ FIND_PATH(SDL_INCLUDE_DIR SDL.h
-   /opt
+$OpenBSD: patch-Modules_FindSDL_cmake,v 1.3 2012/11/11 17:13:31 dcoppa Exp $
+--- Modules/FindSDL.cmake.orig	Fri Nov  2 12:27:38 2012
++++ Modules/FindSDL.cmake	Fri Nov  2 12:32:48 2012
+@@ -73,6 +73,11 @@ find_path(SDL_INCLUDE_DIR SDL.h
+   PATH_SUFFIXES SDL SDL12 SDL11
  )
  
 +# On OpenBSD SDL depends on libiconv and SDL_stdinc.h includes iconv.h,
 +# which is located in ${LOCALBASE}/include. Append {LOCALBASE}/include
 +# to the SDL_INCLUDE_DIR, thus allow to build SDL apps out of box.
-+LIST(APPEND SDL_INCLUDE_DIR ${LOCALBASE}/include)
++list(APPEND SDL_INCLUDE_DIR ${LOCALBASE}/include)
 +
  # SDL-1.1 is the name used by FreeBSD ports...
  # don't confuse it for the version number.
- FIND_LIBRARY(SDL_LIBRARY_TEMP 
-@@ -97,7 +102,7 @@ FIND_LIBRARY(SDL_LIBRARY_TEMP 
+ find_library(SDL_LIBRARY_TEMP
+@@ -82,7 +87,7 @@ find_library(SDL_LIBRARY_TEMP
  )
  
- IF(NOT SDL_BUILDING_LIBRARY)
--  IF(NOT ${SDL_INCLUDE_DIR} MATCHES ".framework")
-+  IF(NOT "${SDL_INCLUDE_DIR}" MATCHES ".framework")
-     # Non-OS X framework versions expect you to also dynamically link to 
-     # SDLmain. This is mainly for Windows and OS X. Other (Unix) platforms 
+ if(NOT SDL_BUILDING_LIBRARY)
+-  if(NOT ${SDL_INCLUDE_DIR} MATCHES ".framework")
++  if(NOT "${SDL_INCLUDE_DIR}" MATCHES ".framework")
+     # Non-OS X framework versions expect you to also dynamically link to
+     # SDLmain. This is mainly for Windows and OS X. Other (Unix) platforms
      # seem to provide SDLmain for compatibility even though they don't
-@@ -113,7 +118,7 @@ IF(NOT SDL_BUILDING_LIBRARY)
-       /opt/csw
-       /opt
-     )
--  ENDIF(NOT ${SDL_INCLUDE_DIR} MATCHES ".framework")
-+  ENDIF(NOT "${SDL_INCLUDE_DIR}" MATCHES ".framework")
- ENDIF(NOT SDL_BUILDING_LIBRARY)
- 
- # SDL may require threads on your system.
