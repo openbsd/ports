@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_anjuta-app_c,v 1.1 2012/11/11 14:22:13 ajacoutot Exp $
+
+Adapted from:
+From 1e76a12618da9fd1e8d52d1f596505513cbf3f00 Mon Sep 17 00:00:00 2001
+From: S\xc3\xa9bastien Granjoux <seb.sfo@free.fr>
+Date: Sun, 28 Oct 2012 16:08:06 +0000
+Subject: anjuta: Do not use GDL members deprecated in version 3.6
+
+--- src/anjuta-app.c.orig	Sun Nov 11 15:20:38 2012
++++ src/anjuta-app.c	Sun Nov 11 15:20:41 2012
+@@ -589,7 +589,7 @@ anjuta_app_instance_init (AnjutaApp *app)
+ 	app->layout_manager = gdl_dock_layout_new (GDL_DOCK (app->dock));
+ 	g_signal_connect (app->layout_manager, "notify::dirty",
+ 					  G_CALLBACK (on_layout_dirty_notify), app);
+-	g_signal_connect (app->layout_manager->master, "notify::locked",
++	g_signal_connect (gdl_dock_layout_get_master (app->layout_manager), "notify::locked",
+ 					  G_CALLBACK (on_layout_locked_notify), app);
+ 
+ 	/* UI engine */
