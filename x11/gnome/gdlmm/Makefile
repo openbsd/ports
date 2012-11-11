@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2012/09/30 06:16:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2012/11/11 14:30:50 ajacoutot Exp $
+
+BROKEN=		does not build with new gdl
 
 COMMENT=	C++ binding for gdl
 

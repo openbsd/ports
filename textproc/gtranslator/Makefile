@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.39 2012/10/01 15:17:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2012/11/11 14:30:50 ajacoutot Exp $
+
+BROKEN=		does not build with new gdl
 
 SHARED_ONLY=	Yes
 
