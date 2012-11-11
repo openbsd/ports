@@ -1,0 +1,15 @@
+$OpenBSD: patch-gee_Makefile_in,v 1.1 2012/11/11 08:45:31 ajacoutot Exp $
+
+XXX fix regex to use our own sed(1) + push upstream (and remove dep on gsed).
+
+--- gee/Makefile.in.orig	Sun Nov 11 09:36:42 2012
++++ gee/Makefile.in	Sun Nov 11 09:36:54 2012
+@@ -487,7 +487,7 @@ dist_vapi_DATA = \
+ # Extract dlname from libfolks.la; see bug #658002.
+ # This is what g-ir-scanner does.
+ @HAVE_INTROSPECTION_TRUE@libgee_dlname = \
+-@HAVE_INTROSPECTION_TRUE@	`$(SED) -n "s/^dlname='\([A-Za-z0-9.+-]\+\)'/\1/p" libgee-0.8.la`
++@HAVE_INTROSPECTION_TRUE@	`gsed -n "s/^dlname='\([A-Za-z0-9.+-]\+\)'/\1/p" libgee-0.8.la`
+ 
+ @HAVE_INTROSPECTION_TRUE@INTROSPECTION_COMPILER_ARGS = \
+ @HAVE_INTROSPECTION_TRUE@	-l $(libgee_dlname)
