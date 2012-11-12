@@ -1,4 +1,4 @@
-/* $OpenBSD: module-sndio.c,v 1.2 2012/10/08 17:19:57 eric Exp $ */
+/* $OpenBSD: module-sndio.c,v 1.3 2012/11/12 12:27:00 eric Exp $ */
 /*
  * Copyright (c) 2012 Eric Faurot <eric@openbsd.org>
  *
@@ -190,43 +190,24 @@ sndio_midi_setup(struct userdata *u)
 		SYSEX_END
 	};
 	size_t		s;
-	struct pollfd	fds[10];
 	int		r, n;
 	unsigned char	buf[MSGMAX];
 
-	u->mio = mio_open("snd/0", MIO_IN | MIO_OUT, 1);
+	u->mio = mio_open("snd/0", MIO_IN | MIO_OUT, 0);
 	if (u->mio == NULL) {
 		pa_log("mio_open failed");
 		return (-1);
 	}
 	n = mio_nfds(u->mio);
-	if (n > 10) {
-		pa_log("mio_nfds");
-		return (-1);
-	}
-
 	u->rtpoll_item_mio = pa_rtpoll_item_new(u->rtpoll, PA_RTPOLL_NEVER, n);
 	if (u->rtpoll_item_mio == NULL) {
 		pa_log("could not allocate mio poll item");
 		return (-1);
 	}
 
-	mio_pollfd(u->mio, fds, POLLOUT);
-	r = poll(fds, n, 5000);
-	if (r <= 0) {
-		pa_log("mio POLLOUT");
-		return (-1);
-	}
-
 	s = mio_write(u->mio, dumpreq, sizeof(dumpreq));
 	pa_log_debug("mio_write: %zu / %zu", s, sizeof(dumpreq));
 	while (!u->mready) {
-		mio_pollfd(u->mio, fds, POLLIN);
-		r = poll(fds, n, 5000);
-		if (r <= 0) {
-			pa_log("mio POLLIN");
-			return (-1);
-		}
 		s = mio_read(u->mio, buf, sizeof buf);
 		pa_log_debug("mio_read: %zu", s);
 		if (s == 0) {
