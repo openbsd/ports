@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2011/09/16 10:31:23 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2012/11/12 18:19:46 gsoares Exp $
 
-COMMENT =	uPnP/DLNA media server
+COMMENT =	UPnP/DLNA media server
 
 MODPY_EGG_VERSION =	0.6.6.2
 DISTNAME =	Coherence-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:L}
-REVISION =	2
-CATEGORIES =    	multimedia
+REVISION =	3
+CATEGORIES =	multimedia
 
 HOMEPAGE =	http://coherence.beebits.net
 
@@ -33,6 +33,6 @@ RUN_DEPENDS =	devel/py-twisted/core \
 		databases/py-axiom
 
 # need a running instance
-NO_REGRESS =	Yes
+REGRESS_IS_INTERACTIVE =	Yes
 
 .include <bsd.port.mk>
