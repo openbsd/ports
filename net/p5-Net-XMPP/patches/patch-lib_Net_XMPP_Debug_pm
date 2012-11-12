@@ -1,0 +1,18 @@
+$OpenBSD: patch-lib_Net_XMPP_Debug_pm,v 1.1 2012/11/12 22:03:50 jasper Exp $
+
+RT#58333 Check definedness of hash key before use
+This addresses a warning new to Perl 5.12.
+
+https://github.com/dap/Net-XMPP/commit/2d1164d7c50d7c034f3d1efb03ad9319b24dfd24
+
+--- lib/Net/XMPP/Debug.pm.orig	Mon Nov 12 23:02:07 2012
++++ lib/Net/XMPP/Debug.pm	Mon Nov 12 23:02:30 2012
+@@ -151,7 +151,7 @@ sub Init
+     my %args;
+     while($#_ >= 0) { $args{ lc pop(@_) } = pop(@_); }
+ 
+-    delete($args{file}) if (lc($args{file}) eq "stdout");
++    delete($args{file}) if (defined $args{file} && lc($args{file}) eq "stdout");
+ 
+     $args{time} = 0 if !exists($args{time});
+     $args{setdefault} = 0 if !exists($args{setdefault});

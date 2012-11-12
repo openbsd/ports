@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/12/03 11:45:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2012/11/12 22:03:50 jasper Exp $
 
 COMMENT=		XMPP perl library
 
 DISTNAME=		Net-XMPP-1.02
-REVISION=		0
+REVISION=		1
 CATEGORIES=		net
 
 MODULES=		cpan
