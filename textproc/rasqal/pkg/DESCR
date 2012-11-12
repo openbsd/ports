@@ -1,0 +1,12 @@
+Rasqal is a C library that handles Resource Description Framework
+(RDF) query language syntaxes, query construction and execution of
+queries returning results as bindings, boolean, RDF graphs/triples
+or syntaxes. The supported query languages are SPARQL 1.0, RDQL,
+Draft SPARQL Query 1.1, Update 1.1 Syntax and Experimental SPARQL
+extensions (LAQRS). Rasqal can write binding query results in the
+SPARQL XML, SPARQL JSON, CSV, TSV, HTML, ASCII tables, RDF/XML and
+Turtle / N3 and read them in SPARQL XML, RDF/XML and Turtle / N3.
+
+Rasqal was designed to work closely with the Redland RDF library
+and the Raptor RDF Syntax Library but is entirely separate from
+both.

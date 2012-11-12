@@ -1,0 +1,44 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2012/11/12 13:36:55 sthen Exp $
+--- configure.ac.orig	Thu May  3 05:35:11 2012
++++ configure.ac	Fri Oct 12 16:06:31 2012
+@@ -590,29 +590,25 @@ if test "X$LIBGCRYPT_CONFIG" = "X"; then
+   AC_CHECK_PROGS(LIBGCRYPT_CONFIG, libgcrypt-config)
+ fi
+ 
+-AC_CHECK_HEADERS(gcrypt.h)
+-
+-AC_MSG_CHECKING(for gcrypt)
+ GCRYPT_VERSION=`$LIBGCRYPT_CONFIG --version 2>/dev/null`
+-if test "X$GCRYPT_VERSION" = X; then
+-  have_digest_gcrypt=no
+-elif test "$ac_cv_header_gcrypt_h" = "yes"; then
++if test "X$GCRYPT_VERSION" != X; then
+   oCPPFLAGS="$CPPFLAGS"
+   oLIBS="$LIBS"
+   CPPFLAGS="$CPPFLAGS `$LIBGCRYPT_CONFIG --cflags`"
+   LIBS="$LIBS `$LIBGCRYPT_CONFIG --libs`"
+-
+-  AC_TRY_LINK([
+-  #include <gcrypt.h>],
+-  [ gcry_md_hd_t hash; gcry_md_open(hash, GCRY_MD_MD5, 0); ],
+-    have_digest_gcrypt=yes,
+-    have_digest_gcrypt=no)
+-
++  AC_CHECK_HEADERS(gcrypt.h)
++  if test "$ac_cv_header_gcrypt_h" = "yes"; then
++    AC_TRY_LINK([
++    #include <gcrypt.h>],
++    [ gcry_md_hd_t hash; gcry_md_open(hash, GCRY_MD_MD5, 0); ],
++      have_digest_gcrypt=yes,
++      have_digest_gcrypt=no)
++  fi
+   CPPFLAGS="$LIBRDF_CPPFLAGS"
+   LIBS="$oLIBS"
+-else
+-  have_digest_gcrypt=no
+ fi
++
++AC_MSG_CHECKING(for gcrypt)
+ AC_MSG_RESULT($have_digest_gcrypt)
+ 
+ 
