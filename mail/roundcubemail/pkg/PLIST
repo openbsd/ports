@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.27 2012/10/07 11:15:45 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.28 2012/11/12 20:20:12 sthen Exp $
 roundcubemail/
-@comment roundcubemail/.gitignore
 roundcubemail/.htaccess.dist
 @sample roundcubemail/.htaccess
 roundcubemail/CHANGELOG
