@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.30 2012/09/17 20:01:22 landry Exp $
+# $OpenBSD: Makefile,v 1.31 2012/11/12 20:43:09 landry Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		libraries to support development of security-enabled apps
 
-VERSION=		3.13.6
+VERSION=		3.14
 DISTNAME=		nss-${VERSION}
-SO_VERSION=		31.0
+SO_VERSION=		32.0
 .for _lib in freebl3 nss3 nssckbi nssdbm3 nssutil3 smime3 softokn3 ssl3
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
 .endfor
@@ -45,6 +45,7 @@ NSSDIST=		${WRKDIST}/mozilla/dist
 NSSOBJ=			${NSSDIST}/OpenBSD`uname -r`${OBJ64}_OPT.OBJ
 
 ALL_TARGET=		nss_build_all
+SUBST_VARS +=		VERSION
 
 # Don't forget to sync these with http://wiki.mozilla.org/NSS:ToolsToShip
 MAIN_TOOLS=		certutil modutil pk12util signtool ssltap crlutil \
@@ -57,10 +58,10 @@ do-install:
 	${INSTALL_DATA} ${NSSOBJ}/lib/*.so.${SO_VERSION} ${PREFIX}/lib/
 	${INSTALL_DATA} ${NSSOBJ}/lib/{libcrmf.a,*.chk} ${PREFIX}/lib/
 	cd ${NSSOBJ}/bin && ${INSTALL_PROGRAM} ${MAIN_TOOLS} ${PREFIX}/bin/
-	${INSTALL_SCRIPT} ${FILESDIR}/nss-config ${PREFIX}/bin/
-	${INSTALL_DATA} ${FILESDIR}/nss.pc ${PREFIX}/lib/pkgconfig/
-	@perl -pi -e 's|!!PREFIX!!|${TRUEPREFIX}|g; s|!!VERSION!!|${VERSION}|g' \
-		${PREFIX}/bin/nss-config ${PREFIX}/lib/pkgconfig/nss.pc
+	${SUBST_CMD} -c ${FILESDIR}/nss.pc ${PREFIX}/lib/pkgconfig/nss.pc \
+		${FILESDIR}/nss-config ${PREFIX}/bin/nss-config
+	chown ${BINOWN}:${BINGRP} ${PREFIX}/{bin/nss-config,lib/pkgconfig/nss.pc}
+	chmod +x ${PREFIX}/bin/nss-config
 
 do-regress:
 	cd ${WRKSRC}/tests && ${SETENV} ${MAKE_ENV} \

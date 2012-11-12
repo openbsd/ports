@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_security_coreconf_UNIX_mk,v 1.1 2007/03/26 20:45:44 martynas Exp $
---- mozilla/security/coreconf/UNIX.mk.orig	Sat Feb  5 03:35:47 2005
-+++ mozilla/security/coreconf/UNIX.mk	Wed Mar 21 23:41:27 2007
-@@ -42,7 +42,7 @@ AR          = ar cr $@
+$OpenBSD: patch-mozilla_security_coreconf_UNIX_mk,v 1.2 2012/11/12 20:43:09 landry Exp $
+--- mozilla/security/coreconf/UNIX.mk.orig	Thu May  3 11:42:55 2012
++++ mozilla/security/coreconf/UNIX.mk	Thu Nov  8 21:18:21 2012
+@@ -10,7 +10,7 @@ AR          = ar cr $@
  LDOPTS     += -L$(SOURCE_LIB_DIR)
  
  ifdef BUILD_OPT

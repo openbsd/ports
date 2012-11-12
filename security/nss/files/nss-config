@@ -1,9 +1,12 @@
 #!/bin/sh
+# taken from debian/nss-config.in
+# adapted for OpenBSD's prefix/version substs
+prefix=${TRUEPREFIX}
 
-prefix=!!PREFIX!!
-version=!!VERSION!!
-
-major_version=`echo $version | cut -d'.' -f1`
+# inspired from debian Makefile
+major_version=$(awk '/NSS_VMAJOR/ {print $3}' ${TRUEPREFIX}/include/nss/nss.h)
+minor_version=$(awk '/NSS_VMINOR/ {print $3}' ${TRUEPREFIX}/include/nss/nss.h)
+patch_version=$(awk '/NSS_VPATCH/ {print $3}' ${TRUEPREFIX}/include/nss/nss.h)
 
 usage()
 {
@@ -17,11 +20,11 @@ Options:
 	[--version]
 	[--libs]
 	[--cflags]
-Libraries:
+Dynamic Libraries:
 	nss
-	smime
-	softokn
+	nssutil
 	ssl
+	smime
 EOF
 	exit $1
 }
@@ -30,10 +33,10 @@ if test $# -eq 0; then
 	usage 1 1>&2
 fi
 
-lib_nss=yes
-lib_smime=yes
-lib_softokn=yes
 lib_ssl=yes
+lib_smime=yes
+lib_nss=yes
+lib_nssutil=yes
 
 while test $# -gt 0; do
   case "$1" in
@@ -67,7 +70,7 @@ while test $# -gt 0; do
       echo_libdir=yes
       ;;
     --version)
-      echo ${version}
+      echo ${major_version}.${minor_version}.${patch_version}
       ;;
     --cflags)
       echo_cflags=yes
@@ -75,17 +78,17 @@ while test $# -gt 0; do
     --libs)
       echo_libs=yes
       ;;
+    ssl)
+      lib_ssl=yes
+      ;;
+    smime)
+      lib_smime=yes
+      ;;
     nss)
       lib_nss=yes
       ;;
-    smime)
-      lib_ssl=yes
-      ;;
-    softokn)
-      lib_softokn=yes
-      ;;
-    ssl)
-      lib_smime=yes
+    nssutil)
+      lib_nssutil=yes
       ;;
     *)
       usage 1 1>&2
@@ -126,25 +129,19 @@ if test "$echo_cflags" = "yes"; then
 fi
 
 if test "$echo_libs" = "yes"; then
-      libdirs=-L$libdir
-      if test -n "$lib_nss"; then
-	libdirs="$libdirs -lnss${major_version}"
+      libdirs="-L$libdir"
+      if test -n "$lib_ssl"; then
+	libdirs="$libdirs -lssl${major_version}"
       fi
       if test -n "$lib_smime"; then
 	libdirs="$libdirs -lsmime${major_version}"
       fi
-      if test -n "$lib_softokn"; then
-        libdirs="$libdirs -lsoftokn${major_version}"
+      if test -n "$lib_nss"; then
+	libdirs="$libdirs -lnss${major_version}"
       fi
-      if test -n "$lib_ssl"; then
-	libdirs="$libdirs -lssl${major_version}"
+      if test -n "$lib_nssutil"; then
+	libdirs="$libdirs -lnssutil${major_version}"
       fi
-      os_ldflags=""
-      for i in $os_ldflags ; do
-	if echo $i | grep \^-L >/dev/null; then
-	  libdirs="$libdirs $i"
-        fi
-      done
-      echo $libdirs -pthread 
+      echo $libdirs
 fi      
 

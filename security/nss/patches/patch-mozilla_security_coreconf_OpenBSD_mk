@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_security_coreconf_OpenBSD_mk,v 1.5 2010/04/03 09:21:00 landry Exp $
---- mozilla/security/coreconf/OpenBSD.mk.orig	Thu Sep  3 06:57:00 2009
-+++ mozilla/security/coreconf/OpenBSD.mk	Tue Mar 30 23:35:29 2010
-@@ -56,7 +56,7 @@ OS_LIBS			+= -pthread
+$OpenBSD: patch-mozilla_security_coreconf_OpenBSD_mk,v 1.6 2012/11/12 20:43:09 landry Exp $
+--- mozilla/security/coreconf/OpenBSD.mk.orig	Thu May  3 11:42:53 2012
++++ mozilla/security/coreconf/OpenBSD.mk	Thu Nov  8 21:18:21 2012
+@@ -24,7 +24,7 @@ OS_LIBS			+= -pthread
  DSO_LDOPTS		+= -pthread
  endif
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-mozilla_security_coreconf_OpenBSD_mk,v 1.5 2010/04/03 09:21:00 l
  
  OS_CFLAGS		= $(DSO_CFLAGS) $(OS_REL_CFLAGS) -ansi -Wall -Wno-switch -pipe -DOPENBSD
  
-@@ -67,7 +67,7 @@ ARCH			= openbsd
+@@ -35,7 +35,7 @@ ARCH			= openbsd
  DSO_CFLAGS		= -fPIC -DPIC
  DSO_LDOPTS		= -shared -fPIC -Wl,-soname,lib$(LIBRARY_NAME)$(LIBRARY_VERSION).$(DLL_SUFFIX)
  
