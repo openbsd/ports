@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2012/10/11 12:16:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2012/11/12 15:03:41 ajacoutot Exp $
 
-COMMENT=	Linux compatibility package based on Fedora Core 4
+COMMENT=	Linux compatibility package based on Fedora Core ${FEDORA_V}
 
 PKGNAME=	fedora_base-${FEDORA_V}.0
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  cap                       2.10
 SHARED_LIBS +=  blkid                     1.0
