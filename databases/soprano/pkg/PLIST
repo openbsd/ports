@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/06/16 13:42:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/11/12 13:37:52 sthen Exp $
 @bin bin/onto2vocabularyclass
 @bin bin/sopranocmd
 @bin bin/sopranod
@@ -169,8 +169,6 @@ lib/soprano/libsoprano_raptorparser.so
 lib/soprano/libsoprano_raptorserializer.so
 lib/soprano/libsoprano_redlandbackend.so
 lib/soprano/libsoprano_virtuosobackend.so
-share/dbus-1/
-share/dbus-1/interfaces/
 share/dbus-1/interfaces/org.soprano.Model.xml
 share/dbus-1/interfaces/org.soprano.NodeIterator.xml
 share/dbus-1/interfaces/org.soprano.QueryResultIterator.xml
@@ -189,3 +187,5 @@ share/soprano/plugins/virtuosobackend.desktop
 share/soprano/rules/
 share/soprano/rules/nrl.rules
 share/soprano/rules/rdfs.rules
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
