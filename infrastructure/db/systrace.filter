@@ -212,6 +212,7 @@
 	native-shutdown: permit
 	native-sigaction: permit
 	native-sigaltstack: permit
+	native-sigpending: permit
 	native-sigprocmask: permit
 	native-sigreturn: permit
 	native-sigsuspend: permit
