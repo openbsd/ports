@@ -1,6 +1,9 @@
-$OpenBSD: patch-gck_tests_test-gck-attributes_c,v 1.1 2012/11/10 10:17:45 ajacoutot Exp $
+$OpenBSD: patch-gck_tests_test-gck-attributes_c,v 1.2 2012/11/12 08:13:34 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=687980
+From aeae080e778c5168eae22b3271d60fc6bc7e1482 Mon Sep 17 00:00:00 2001
+From: Stef Walter <stefw@gnome.org>
+Date: Fri, 09 Nov 2012 13:06:41 +0000
+Subject: gck: Remove duplicate defined symbol
 
 --- gck/tests/test-gck-attributes.c.orig	Sat Nov 10 10:49:40 2012
 +++ gck/tests/test-gck-attributes.c	Sat Nov 10 10:49:45 2012
