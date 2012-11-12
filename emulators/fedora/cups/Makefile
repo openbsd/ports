@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2012/10/11 12:02:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2012/11/12 18:02:34 gsoares Exp $
 
-COMMENT=	Linux CUPS package based on Fedora Core 10
+COMMENT=	Linux CUPS package based on Fedora Core ${FEDORA_V}
 
 PKGNAME=	fedora_cups-${FEDORA_V}.0
 REVISION=	0
