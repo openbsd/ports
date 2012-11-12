@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.372 2012/11/06 20:56:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.373 2012/11/12 13:37:21 sthen Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -305,6 +305,7 @@
      SUBDIR += py-yaml
      SUBDIR += raptor
      SUBDIR += rarian
+     SUBDIR += rasqal
      SUBDIR += redland
      SUBDIR += rman
      SUBDIR += rubber
