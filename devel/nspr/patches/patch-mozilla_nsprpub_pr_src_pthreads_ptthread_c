@@ -1,9 +1,9 @@
-$OpenBSD: patch-mozilla_nsprpub_pr_src_pthreads_ptthread_c,v 1.7 2012/09/17 20:00:09 landry Exp $
+$OpenBSD: patch-mozilla_nsprpub_pr_src_pthreads_ptthread_c,v 1.8 2012/11/12 20:39:09 landry Exp $
 Don't only check for _POSIX_THREAD_PRIORITY_SCHEDULING being defined, but check that it's > 0
 on openbsd/rthreads it's -1 atm.
 https://bugzilla.mozilla.org/show_bug.cgi?id=756047
---- mozilla/nsprpub/pr/src/pthreads/ptthread.c.orig	Fri Jun 22 03:36:02 2012
-+++ mozilla/nsprpub/pr/src/pthreads/ptthread.c	Sun Sep  2 01:18:09 2012
+--- mozilla/nsprpub/pr/src/pthreads/ptthread.c.orig	Tue Oct 23 03:27:10 2012
++++ mozilla/nsprpub/pr/src/pthreads/ptthread.c	Thu Nov  8 21:01:53 2012
 @@ -16,6 +16,7 @@
  #include "prpdce.h"
  
@@ -23,7 +23,7 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=756047
  /*
   * Record whether or not we have the privilege to set the scheduling
   * policy and priority of threads.  0 means that privilege is available.
-@@ -1638,7 +1643,8 @@ PR_IMPLEMENT(PRStatus) PR_SetCurrentThreadName(const c
+@@ -1640,7 +1645,8 @@ PR_IMPLEMENT(PRStatus) PR_SetCurrentThreadName(const c
      memcpy(thread->name, name, nameLen + 1);
  
  #if defined(OPENBSD) || defined(FREEBSD)

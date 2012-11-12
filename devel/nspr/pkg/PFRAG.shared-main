@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.1 2006/11/23 09:36:03 ajacoutot Exp $
-@lib lib/libnspr4.so.${LIBnspr4_VERSION}
-@lib lib/libplc4.so.${LIBplc4_VERSION}
-@lib lib/libplds4.so.${LIBplds4_VERSION}

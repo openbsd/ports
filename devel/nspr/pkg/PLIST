@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2010/08/30 20:12:55 landry Exp $
-@pkgpath devel/nspr
+@comment $OpenBSD: PLIST,v 1.5 2012/11/12 20:39:09 landry Exp $
+@pkgpath devel/nspr,-main
+bin/compile-et.pl
 bin/nspr-config
+bin/prerr.properties
 include/nspr/
 include/nspr/md/
 include/nspr/md/_aix32.cfg
@@ -93,8 +95,12 @@ include/nspr/prtypes.h
 include/nspr/prvrsion.h
 include/nspr/prwin16.h
 lib/libnspr4.a
+@lib lib/libnspr4.so.${LIBnspr4_VERSION}
 lib/libplc4.a
+@lib lib/libplc4.so.${LIBplc4_VERSION}
 lib/libplds4.a
+@lib lib/libplds4.so.${LIBplds4_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/nspr.pc
-%%SHARED%%
+share/aclocal/
+share/aclocal/nspr.m4
