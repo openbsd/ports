@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2012/11/12 13:34:03 sthen Exp $
+--- src/Makefile.in.orig	Sat Dec  3 20:43:28 2011
++++ src/Makefile.in	Sat Dec 10 18:21:26 2011
+@@ -603,8 +603,7 @@ librdf_la_LIBADD = \
+ @LIBRDF_INTERNAL_LIBS@
+ 
+ librdf_la_DEPENDENCIES = \
+-@DIGEST_OBJS@ @HASH_OBJS@ \
+-@LIBRDF_INTERNAL_DEPS@
++@DIGEST_OBJS@ @HASH_OBJS@
+ 
+ EXTRA_librdf_la_SOURCES = rdf_hash_bdb.c \
+ rdf_digest_md5.c rdf_digest_sha1.c \
