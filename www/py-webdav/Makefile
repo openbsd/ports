@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.4 2011/09/16 12:00:08 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2012/11/12 13:31:47 gsoares Exp $
 
 COMMENT=		standards compliant Python WebDAV server and library
 
-MODPY_EGG_VERSION=	0.9.4.1
+MODPY_EGG_VERSION=	0.9.8
 DISTNAME=		PyWebDAV-${MODPY_EGG_VERSION}
 PKGNAME=		py-webdav-${MODPY_EGG_VERSION}
-REVISION=		1
 
 CATEGORIES=		www
 
 HOMEPAGE=		http://pywebdav.googlecode.com/
 
-# LGPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
