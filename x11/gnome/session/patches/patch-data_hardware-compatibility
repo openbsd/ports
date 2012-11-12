@@ -1,0 +1,12 @@
+$OpenBSD: patch-data_hardware-compatibility,v 1.1 2012/11/12 17:03:53 ajacoutot Exp $
+
+XXX temporary: consider llvmpipe as accelerated to ease testing.
+
+--- data/hardware-compatibility.orig	Mon Nov 12 17:58:08 2012
++++ data/hardware-compatibility	Mon Nov 12 17:58:17 2012
+@@ -24,4 +24,4 @@
+ 
+ # Gallium has softpipe and llvmpipe
+ -softpipe
+--llvmpipe
++#-llvmpipe
