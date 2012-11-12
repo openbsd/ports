@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.226 2012/10/31 22:13:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.227 2012/11/12 13:38:04 sthen Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -227,6 +227,7 @@
      SUBDIR += ruby-validatable
      SUBDIR += sharedance
      SUBDIR += skytools
+     SUBDIR += soprano
      SUBDIR += sqlite
      SUBDIR += sqlite3
      SUBDIR += sqlitebrowser
