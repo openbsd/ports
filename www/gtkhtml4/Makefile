@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2012/09/27 09:48:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2012/11/12 10:36:21 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		lightweight HTML rendering/printing/editing engine
 
 GNOME_PROJECT=		gtkhtml
-GNOME_VERSION=		4.6.0
+GNOME_VERSION=		4.6.1
 
 API_VERSION=		4.0
 SUBST_VARS=		API_VERSION
