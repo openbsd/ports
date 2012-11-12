@@ -1,18 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/04/29 20:11:25 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/11/12 10:03:21 jasper Exp $
 @bin bin/pekwm
 @man man/man1/pekwm.1
 share/examples/pekwm/
 @sample ${SYSCONFDIR}/pekwm/
 share/examples/pekwm/autoproperties
 @sample ${SYSCONFDIR}/pekwm/autoproperties
+share/examples/pekwm/autoproperties_typerules
+@sample ${SYSCONFDIR}/autoproperties_typerules
 share/examples/pekwm/config
 @sample ${SYSCONFDIR}/pekwm/config
+share/examples/pekwm/config_system
+@sample ${SYSCONFDIR}/config_system
 share/examples/pekwm/keys
 @sample ${SYSCONFDIR}/pekwm/keys
 share/examples/pekwm/menu
 @sample ${SYSCONFDIR}/pekwm/menu
 share/examples/pekwm/mouse
 @sample ${SYSCONFDIR}/pekwm/mouse
+share/examples/pekwm/mouse_click
+@sample ${SYSCONFDIR}/mouse_click
+share/examples/pekwm/mouse_sloppy
+@sample ${SYSCONFDIR}/mouse_sloppy
+share/examples/pekwm/mouse_system
+@sample ${SYSCONFDIR}/mouse_system
 share/examples/pekwm/start
 @sample ${SYSCONFDIR}/pekwm/start
 share/examples/pekwm/vars
