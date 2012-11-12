@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2012/11/02 07:59:00 robert Exp $
+# $OpenBSD: Makefile,v 1.78 2012/11/12 13:38:20 sthen Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -19,7 +19,7 @@ DPB_PROPERTIES=	parallel
 
 SHARED_LIBS +=  lcms2                     2.3 # 2.3
 
-REVISION=	1
+REVISION=	2
 EPOCH=		0
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
@@ -164,7 +164,7 @@ LIB_DEPENDS-main=x11/gtk+2 \
 WANTLIB-main=	estdc++ gdk-x11-2.0>=400.14 gtk-x11-2.0>=400.14 \
 		db>=4 xslt>=3 curl>=7 neon>=24 pq>=2 \
 		icuuc>=0 icui18n icule \
-		raptor>=2 rasqal rdf>=0 poppler
+		raptor2 rasqal rdf>=0 poppler
 WANTLIB-main+=	ICE SM X11 Xcomposite Xcursor Xdamage \
 		Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo \
 		crypto expat fontconfig freetype gio-2.0 glib-2.0 \
