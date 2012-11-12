@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2012/06/15 08:32:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2012/11/12 20:45:32 landry Exp $
 
 COMMENT =	html help viewer
 
 DISTNAME =	chmsee-1.2.0
-REVISION=	5
+REVISION=	6
 
 CATEGORIES =	textproc x11
 

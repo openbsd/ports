@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/09/29 07:17:47 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2012/11/12 20:45:32 landry Exp $
 
 SHARED_ONLY=	Yes
 # 1.8.5 is based on ffx 10 engine, broken at runtime on sparc64
@@ -11,7 +11,7 @@ MOZILLA_VERSION =	1.8.5
 DISTNAME =		js185-1.0.0
 PKGNAME =		spidermonkey-${MOZILLA_VERSION}
 PKGSPEC =		spidermonkey->=1.8,<1.9
-REVISION =		3
+REVISION =		4
 
 SO_VERSION =	0.0
 SHARED_LIBS =	mozjs185 ${SO_VERSION}
