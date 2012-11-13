@@ -1,10 +1,9 @@
-$OpenBSD: patch-src_floating_c,v 1.14 2012/10/01 08:12:17 dcoppa Exp $
+$OpenBSD: patch-src_floating_c,v 1.15 2012/11/13 08:44:02 dcoppa Exp $
 
 From 8480b4cb58c30a5fa4ff9761aaed198efa8429f8 Mon Sep 17 00:00:00 2001
 From: Michael Stapelberg <michael@stapelberg.de>
 Date: Fri, 28 Sep 2012 16:23:01 +0000
 Subject: Bugfix: don't crash when dragged floating window closes
-
 Previously, while the loop would not be executed anymore, the
 callback (for actually repositioning the window after a MotionNotify)
 would still get called once. This commit avoids that, thus fixing

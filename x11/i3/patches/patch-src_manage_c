@@ -1,10 +1,9 @@
-$OpenBSD: patch-src_manage_c,v 1.8 2012/09/27 10:57:46 dcoppa Exp $
+$OpenBSD: patch-src_manage_c,v 1.9 2012/11/13 08:44:02 dcoppa Exp $
 
 From a3f3d5670ca8ec0414805a4613a20d7b87b78630 Mon Sep 17 00:00:00 2001
 From: Michael Stapelberg <michael@stapelberg.de>
 Date: Thu, 27 Sep 2012 10:09:06 +0000
 Subject: Bugfix: properly react to windows being unmapped before we can reparent
-
 We need to verify that setting the event mask works, and we need
 to include StructureNotify to get unmap events at any point in time.
 
@@ -12,7 +11,6 @@ From 372d47842e7d71fde0a194761bf77dceed6e724c Mon Sep 17 00:00:00 2001
 From: Michael Stapelberg <michael@stapelberg.de>
 Date: Mon, 24 Sep 2012 21:57:58 +0000
 Subject: Bugfix: Render workspaces created by assignments to use correct coordinates
-
 Previously, i3 would send width=0, height=0 to windows which were
 put on workspaces created by an assignment (that is, invisible
 workspaces, which do not get rendered normally).
