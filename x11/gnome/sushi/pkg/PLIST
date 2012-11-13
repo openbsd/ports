@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/09/29 12:12:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/11/13 07:39:51 ajacoutot Exp $
 bin/sushi
 lib/sushi/
 lib/sushi/girepository-1.0/
@@ -49,6 +49,7 @@ share/locale/pl/LC_MESSAGES/sushi.mo
 share/locale/pt/LC_MESSAGES/sushi.mo
 share/locale/pt_BR/LC_MESSAGES/sushi.mo
 share/locale/ru/LC_MESSAGES/sushi.mo
+share/locale/sk/LC_MESSAGES/sushi.mo
 share/locale/sl/LC_MESSAGES/sushi.mo
 share/locale/sr/LC_MESSAGES/sushi.mo
 share/locale/sr@latin/LC_MESSAGES/sushi.mo
