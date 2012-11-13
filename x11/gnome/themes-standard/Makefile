@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2012/10/16 07:24:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2012/11/13 07:28:15 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		standard GNOME themes
 
 GNOME_PROJECT=		gnome-themes-standard
-GNOME_VERSION=		3.6.1
+GNOME_VERSION=		3.6.2
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes

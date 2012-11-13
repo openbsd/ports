@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2012/10/16 07:24:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2012/11/13 07:28:15 ajacoutot Exp $
 @conflict gnome-themes-<2.32.1p3
 @unexec-delete rm -f %D/share/icons/Adwaita/icon-theme.cache
 @unexec-delete rm -f %D/share/icons/HighContrast/icon-theme.cache
@@ -2983,14 +2983,18 @@ share/themes/Adwaita/gtk-2.0/Buttons/button-prelight.png
 share/themes/Adwaita/gtk-2.0/Buttons/button-pressed-nohilight.png
 share/themes/Adwaita/gtk-2.0/Buttons/button-pressed.png
 share/themes/Adwaita/gtk-2.0/Check-Radio/
-share/themes/Adwaita/gtk-2.0/Check-Radio/check1.png
-share/themes/Adwaita/gtk-2.0/Check-Radio/check2.png
+share/themes/Adwaita/gtk-2.0/Check-Radio/checkbox-checked-insensitive.png
+share/themes/Adwaita/gtk-2.0/Check-Radio/checkbox-checked.png
+share/themes/Adwaita/gtk-2.0/Check-Radio/checkbox-unchecked-insensitive.png
+share/themes/Adwaita/gtk-2.0/Check-Radio/checkbox-unchecked.png
 share/themes/Adwaita/gtk-2.0/Check-Radio/menucheck.png
 share/themes/Adwaita/gtk-2.0/Check-Radio/menucheck_prelight.png
 share/themes/Adwaita/gtk-2.0/Check-Radio/menuoption.png
 share/themes/Adwaita/gtk-2.0/Check-Radio/menuoption_prelight.png
-share/themes/Adwaita/gtk-2.0/Check-Radio/option1.png
-share/themes/Adwaita/gtk-2.0/Check-Radio/option2.png
+share/themes/Adwaita/gtk-2.0/Check-Radio/option-checked-insensitive.png
+share/themes/Adwaita/gtk-2.0/Check-Radio/option-checked.png
+share/themes/Adwaita/gtk-2.0/Check-Radio/option-unchecked-insensitive.png
+share/themes/Adwaita/gtk-2.0/Check-Radio/option-unchecked.png
 share/themes/Adwaita/gtk-2.0/Entry/
 share/themes/Adwaita/gtk-2.0/Entry/combo-entry-border-active-rtl.png
 share/themes/Adwaita/gtk-2.0/Entry/combo-entry-border-active.png
