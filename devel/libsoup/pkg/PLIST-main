@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2012/10/16 12:01:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.16 2012/11/13 07:26:47 ajacoutot Exp $
 @pkgpath devel/libsoup
 @pkgpath devel/libsoup,ssl
 include/libsoup-${API_VERSION}/
@@ -152,6 +152,7 @@ share/locale/pt/LC_MESSAGES/libsoup.mo
 share/locale/pt_BR/LC_MESSAGES/libsoup.mo
 share/locale/ro/LC_MESSAGES/libsoup.mo
 share/locale/ru/LC_MESSAGES/libsoup.mo
+share/locale/sk/LC_MESSAGES/libsoup.mo
 share/locale/sl/LC_MESSAGES/libsoup.mo
 share/locale/sr/LC_MESSAGES/libsoup.mo
 share/locale/sr@latin/LC_MESSAGES/libsoup.mo
@@ -160,7 +161,11 @@ share/locale/ta/LC_MESSAGES/libsoup.mo
 share/locale/te/LC_MESSAGES/libsoup.mo
 share/locale/th/LC_MESSAGES/libsoup.mo
 share/locale/tr/LC_MESSAGES/libsoup.mo
+share/locale/ug/LC_MESSAGES/libsoup.mo
 share/locale/uk/LC_MESSAGES/libsoup.mo
+share/locale/uz@cyrillic/
+share/locale/uz@cyrillic/LC_MESSAGES/
+share/locale/uz@cyrillic/LC_MESSAGES/libsoup.mo
 share/locale/vi/LC_MESSAGES/libsoup.mo
 share/locale/zh_CN/LC_MESSAGES/libsoup.mo
 share/locale/zh_HK/LC_MESSAGES/libsoup.mo
