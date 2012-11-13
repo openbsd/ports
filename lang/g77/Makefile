@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.18 2012/09/01 00:00:32 pascal Exp $
+# $OpenBSD: Makefile,v 1.19 2012/11/13 22:34:04 nigel Exp $
 
 NOT_FOR_ARCHS =		${GCC2_ARCHS}
 
 V =			3.3.5
 PKGNAME =		g77-$V
-REVISION =		5
+REVISION =		6
 EPOCH =			0
 DISTFILES = 		g77-openbsd.tgz
 
 CONFIG = 		${MACHINE_ARCH}-unknown-openbsd${OSREV}
 SUBST_VARS += 		CONFIG V
 SYSV =			4.2.1
+SYSLIBPATH =		 `cc -v 2>&1| sed -n -e '/gcc-lib/s%^[^/]*\(/.*\)/[^/]*%\1%p'`
 
 COMMENT =		GNU fortran 77 compiler
 CATEGORIES =		lang math
@@ -20,6 +21,10 @@ PERMIT_DISTFILES_CDROM = Yes
 PERMIT_PACKAGE_CDROM = 	Yes
 PERMIT_DISTFILES_FTP =	Yes
 PERMIT_PACKAGE_FTP =	Yes
+
+RUN_DEPENDS =		devel/libf2c
+REGRESS_DEPENDS =	devel/dejagnu \
+			devel/libf2c
 
 WRKDIST =		${WRKDIR}/g77
 CONFIGURE_SCRIPT =	${WRKDIST}/gcc/configure
@@ -67,12 +72,16 @@ ALL_TARGET = 		all doc
 INSTALL_TARGET = 	install-common f77.install-info f77.install-normal
 
 post-install:
-	ln -sf /usr/lib/gcc-lib/${CONFIG}/${SYSV}/libgcc.a ${PREFIX}/lib/gcc-lib/${CONFIG}/$V/libgcc.a
-	ln -s /usr/lib/gcc-lib/${CONFIG}/${SYSV}/cc1 ${PREFIX}/lib/gcc-lib/${CONFIG}/$V/cc1
+	ln -sf ${SYSLIBPATH}/libgcc.a ${PREFIX}/lib/gcc-lib/${CONFIG}/$V/libgcc.a
+	ln -s ${SYSLIBPATH}/cc1 ${PREFIX}/lib/gcc-lib/${CONFIG}/$V/cc1
 	${INSTALL_MAN} ${WRKBUILD}/f/g77.1 ${PREFIX}/man/man1/g77.1
 	cd ${PREFIX}/man/man1 && ln -f g77.1 f77.1
 	cd ${PREFIX}/bin && ln -f g77 f77
 
 WANTLIB =		c iberty
+
+pre-regress:
+	ln -sf ${SYSLIBPATH}/libgcc.a ${WRKBUILD}/libgcc.a
+	ln -s ${SYSLIBPATH}/cc1 ${WRKBUILD}/cc1
 
 .include <bsd.port.mk>
