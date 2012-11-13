@@ -1,10 +1,10 @@
-$OpenBSD: patch-libgnome-desktop_Makefile_in,v 1.3 2012/10/17 15:54:40 ajacoutot Exp $
+$OpenBSD: patch-libgnome-desktop_Makefile_in,v 1.4 2012/11/13 07:32:26 ajacoutot Exp $
 
 XXX fix+push upstream
 
---- libgnome-desktop/Makefile.in.orig	Wed Oct 17 17:37:09 2012
-+++ libgnome-desktop/Makefile.in	Wed Oct 17 17:50:15 2012
-@@ -464,8 +464,7 @@ libgnome_desktop_3_la_LIBADD = \
+--- libgnome-desktop/Makefile.in.orig	Tue Nov 13 02:02:00 2012
++++ libgnome-desktop/Makefile.in	Tue Nov 13 08:27:16 2012
+@@ -473,8 +473,7 @@ libgnome_desktop_3_la_LIBADD = \
  	$(XLIB_LIBS)		\
  	$(LIBM)			\
  	$(GNOME_DESKTOP_LIBS)	\
