@@ -1,3 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/11/12 16:15:04 pea Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/11/13 07:24:41 jasper Exp $
 bin/sendxmpp
 @man man/man1/sendxmpp.1
+share/examples/sendxmpp/
+share/examples/sendxmpp/send-url.xml
+share/examples/sendxmpp/sendxmpp-raw-messages
