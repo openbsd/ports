@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2012/08/22 07:02:01 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.22 2012/11/13 08:44:59 jasper Exp $
 @pkgpath x11/gnome/gcalctool,gtk2
 @bin bin/gcalccmd
 @bin bin/gcalctool
@@ -840,8 +840,6 @@ share/locale/it/LC_MESSAGES/gcalctool.mo
 share/locale/ja/LC_MESSAGES/gcalctool.mo
 share/locale/ka/LC_MESSAGES/gcalctool.mo
 share/locale/kk/LC_MESSAGES/gcalctool.mo
-share/locale/km/
-share/locale/km/LC_MESSAGES/
 share/locale/km/LC_MESSAGES/gcalctool.mo
 share/locale/kn/LC_MESSAGES/gcalctool.mo
 share/locale/ko/LC_MESSAGES/gcalctool.mo
