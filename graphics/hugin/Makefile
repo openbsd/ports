@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2012/11/06 09:37:14 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.31 2012/11/13 16:11:17 dcoppa Exp $
 
 VMEM_WARNING =		Yes
 SHARED_ONLY =		Yes
@@ -72,7 +72,6 @@ CONFIGURE_ENV =		MANDIR=man
 CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE:STRING=Release
 NO_REGRESS =		Yes
 CFLAGS +=		-pthread
-LDFLAGS +=		-L${X11BASE}/lib
 
 pre-patch:
 	find ${WRKSRC} -name '*.orig' | xargs rm
