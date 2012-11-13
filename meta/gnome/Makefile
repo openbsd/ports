@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2012/10/17 15:55:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2012/11/13 07:33:21 ajacoutot Exp $
 
 COMMENT-main=	GNOME desktop meta-package (base installation)
 COMMENT-extra=	GNOME desktop meta-package (full installation)
 
-V=		3.6.1
+V=		3.6.2
 PKGNAME=	gnome-${V}
 
 PKGNAME-main=	gnome-${V}
