@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2012/04/05 16:07:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2012/11/13 10:42:41 jasper Exp $
 
     SUBDIR =
     SUBDIR += folks
@@ -11,7 +11,6 @@
     SUBDIR += telepathy-logger
     SUBDIR += telepathy-mission-control
     SUBDIR += telepathy-pinocchio
-    SUBDIR += telepathy-python
     SUBDIR += telepathy-salut
     SUBDIR += telepathy-spec
 
