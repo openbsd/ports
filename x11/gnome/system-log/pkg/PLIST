@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/09/27 09:16:42 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/11/13 08:18:22 jasper Exp $
 @conflict gnome-utils-*
 @bin bin/gnome-system-log
 @man man/man1/gnome-system-log.1
@@ -10,6 +10,8 @@ share/glib-2.0/schemas/org.gnome.gnome-system-log.gschema.xml
 share/help/
 share/help/C/
 share/help/C/gnome-system-log/
+share/help/C/gnome-system-log/figures/
+share/help/C/gnome-system-log/figures/log-viewer-main.png
 share/help/C/gnome-system-log/index.page
 share/help/C/gnome-system-log/introduction.page
 share/help/C/gnome-system-log/log-close.page
@@ -20,6 +22,8 @@ share/help/C/gnome-system-log/log-view.page
 share/help/C/gnome-system-log/pref-font-size.page
 share/help/ca/
 share/help/ca/gnome-system-log/
+share/help/ca/gnome-system-log/figures/
+share/help/ca/gnome-system-log/figures/log-viewer-main.png
 share/help/ca/gnome-system-log/index.page
 share/help/ca/gnome-system-log/introduction.page
 share/help/ca/gnome-system-log/log-close.page
@@ -30,6 +34,8 @@ share/help/ca/gnome-system-log/log-view.page
 share/help/ca/gnome-system-log/pref-font-size.page
 share/help/cs/
 share/help/cs/gnome-system-log/
+share/help/cs/gnome-system-log/figures/
+share/help/cs/gnome-system-log/figures/log-viewer-main.png
 share/help/cs/gnome-system-log/index.page
 share/help/cs/gnome-system-log/introduction.page
 share/help/cs/gnome-system-log/log-close.page
@@ -40,6 +46,8 @@ share/help/cs/gnome-system-log/log-view.page
 share/help/cs/gnome-system-log/pref-font-size.page
 share/help/de/
 share/help/de/gnome-system-log/
+share/help/de/gnome-system-log/figures/
+share/help/de/gnome-system-log/figures/log-viewer-main.png
 share/help/de/gnome-system-log/index.page
 share/help/de/gnome-system-log/introduction.page
 share/help/de/gnome-system-log/log-close.page
@@ -50,6 +58,8 @@ share/help/de/gnome-system-log/log-view.page
 share/help/de/gnome-system-log/pref-font-size.page
 share/help/el/
 share/help/el/gnome-system-log/
+share/help/el/gnome-system-log/figures/
+share/help/el/gnome-system-log/figures/log-viewer-main.png
 share/help/el/gnome-system-log/index.page
 share/help/el/gnome-system-log/introduction.page
 share/help/el/gnome-system-log/log-close.page
@@ -60,6 +70,8 @@ share/help/el/gnome-system-log/log-view.page
 share/help/el/gnome-system-log/pref-font-size.page
 share/help/en_GB/
 share/help/en_GB/gnome-system-log/
+share/help/en_GB/gnome-system-log/figures/
+share/help/en_GB/gnome-system-log/figures/log-viewer-main.png
 share/help/en_GB/gnome-system-log/index.page
 share/help/en_GB/gnome-system-log/introduction.page
 share/help/en_GB/gnome-system-log/log-close.page
@@ -70,6 +82,8 @@ share/help/en_GB/gnome-system-log/log-view.page
 share/help/en_GB/gnome-system-log/pref-font-size.page
 share/help/es/
 share/help/es/gnome-system-log/
+share/help/es/gnome-system-log/figures/
+share/help/es/gnome-system-log/figures/log-viewer-main.png
 share/help/es/gnome-system-log/index.page
 share/help/es/gnome-system-log/introduction.page
 share/help/es/gnome-system-log/log-close.page
@@ -80,6 +94,8 @@ share/help/es/gnome-system-log/log-view.page
 share/help/es/gnome-system-log/pref-font-size.page
 share/help/eu/
 share/help/eu/gnome-system-log/
+share/help/eu/gnome-system-log/figures/
+share/help/eu/gnome-system-log/figures/log-viewer-main.png
 share/help/eu/gnome-system-log/index.page
 share/help/eu/gnome-system-log/introduction.page
 share/help/eu/gnome-system-log/log-close.page
@@ -90,6 +106,8 @@ share/help/eu/gnome-system-log/log-view.page
 share/help/eu/gnome-system-log/pref-font-size.page
 share/help/fi/
 share/help/fi/gnome-system-log/
+share/help/fi/gnome-system-log/figures/
+share/help/fi/gnome-system-log/figures/log-viewer-main.png
 share/help/fi/gnome-system-log/index.page
 share/help/fi/gnome-system-log/introduction.page
 share/help/fi/gnome-system-log/log-close.page
@@ -100,6 +118,8 @@ share/help/fi/gnome-system-log/log-view.page
 share/help/fi/gnome-system-log/pref-font-size.page
 share/help/fr/
 share/help/fr/gnome-system-log/
+share/help/fr/gnome-system-log/figures/
+share/help/fr/gnome-system-log/figures/log-viewer-main.png
 share/help/fr/gnome-system-log/index.page
 share/help/fr/gnome-system-log/introduction.page
 share/help/fr/gnome-system-log/log-close.page
@@ -110,6 +130,8 @@ share/help/fr/gnome-system-log/log-view.page
 share/help/fr/gnome-system-log/pref-font-size.page
 share/help/gl/
 share/help/gl/gnome-system-log/
+share/help/gl/gnome-system-log/figures/
+share/help/gl/gnome-system-log/figures/log-viewer-main.png
 share/help/gl/gnome-system-log/index.page
 share/help/gl/gnome-system-log/introduction.page
 share/help/gl/gnome-system-log/log-close.page
@@ -120,6 +142,8 @@ share/help/gl/gnome-system-log/log-view.page
 share/help/gl/gnome-system-log/pref-font-size.page
 share/help/hu/
 share/help/hu/gnome-system-log/
+share/help/hu/gnome-system-log/figures/
+share/help/hu/gnome-system-log/figures/log-viewer-main.png
 share/help/hu/gnome-system-log/index.page
 share/help/hu/gnome-system-log/introduction.page
 share/help/hu/gnome-system-log/log-close.page
@@ -130,6 +154,8 @@ share/help/hu/gnome-system-log/log-view.page
 share/help/hu/gnome-system-log/pref-font-size.page
 share/help/id/
 share/help/id/gnome-system-log/
+share/help/id/gnome-system-log/figures/
+share/help/id/gnome-system-log/figures/log-viewer-main.png
 share/help/id/gnome-system-log/index.page
 share/help/id/gnome-system-log/introduction.page
 share/help/id/gnome-system-log/log-close.page
@@ -140,6 +166,8 @@ share/help/id/gnome-system-log/log-view.page
 share/help/id/gnome-system-log/pref-font-size.page
 share/help/it/
 share/help/it/gnome-system-log/
+share/help/it/gnome-system-log/figures/
+share/help/it/gnome-system-log/figures/log-viewer-main.png
 share/help/it/gnome-system-log/index.page
 share/help/it/gnome-system-log/introduction.page
 share/help/it/gnome-system-log/log-close.page
@@ -150,6 +178,8 @@ share/help/it/gnome-system-log/log-view.page
 share/help/it/gnome-system-log/pref-font-size.page
 share/help/ja/
 share/help/ja/gnome-system-log/
+share/help/ja/gnome-system-log/figures/
+share/help/ja/gnome-system-log/figures/log-viewer-main.png
 share/help/ja/gnome-system-log/index.page
 share/help/ja/gnome-system-log/introduction.page
 share/help/ja/gnome-system-log/log-close.page
@@ -160,6 +190,8 @@ share/help/ja/gnome-system-log/log-view.page
 share/help/ja/gnome-system-log/pref-font-size.page
 share/help/ko/
 share/help/ko/gnome-system-log/
+share/help/ko/gnome-system-log/figures/
+share/help/ko/gnome-system-log/figures/log-viewer-main.png
 share/help/ko/gnome-system-log/index.page
 share/help/ko/gnome-system-log/introduction.page
 share/help/ko/gnome-system-log/log-close.page
@@ -170,6 +202,8 @@ share/help/ko/gnome-system-log/log-view.page
 share/help/ko/gnome-system-log/pref-font-size.page
 share/help/oc/
 share/help/oc/gnome-system-log/
+share/help/oc/gnome-system-log/figures/
+share/help/oc/gnome-system-log/figures/log-viewer-main.png
 share/help/oc/gnome-system-log/index.page
 share/help/oc/gnome-system-log/introduction.page
 share/help/oc/gnome-system-log/log-close.page
@@ -180,6 +214,8 @@ share/help/oc/gnome-system-log/log-view.page
 share/help/oc/gnome-system-log/pref-font-size.page
 share/help/ru/
 share/help/ru/gnome-system-log/
+share/help/ru/gnome-system-log/figures/
+share/help/ru/gnome-system-log/figures/log-viewer-main.png
 share/help/ru/gnome-system-log/index.page
 share/help/ru/gnome-system-log/introduction.page
 share/help/ru/gnome-system-log/log-close.page
@@ -190,6 +226,8 @@ share/help/ru/gnome-system-log/log-view.page
 share/help/ru/gnome-system-log/pref-font-size.page
 share/help/sl/
 share/help/sl/gnome-system-log/
+share/help/sl/gnome-system-log/figures/
+share/help/sl/gnome-system-log/figures/log-viewer-main.png
 share/help/sl/gnome-system-log/index.page
 share/help/sl/gnome-system-log/introduction.page
 share/help/sl/gnome-system-log/log-close.page
@@ -200,6 +238,8 @@ share/help/sl/gnome-system-log/log-view.page
 share/help/sl/gnome-system-log/pref-font-size.page
 share/help/sv/
 share/help/sv/gnome-system-log/
+share/help/sv/gnome-system-log/figures/
+share/help/sv/gnome-system-log/figures/log-viewer-main.png
 share/help/sv/gnome-system-log/index.page
 share/help/sv/gnome-system-log/introduction.page
 share/help/sv/gnome-system-log/log-close.page
@@ -210,6 +250,8 @@ share/help/sv/gnome-system-log/log-view.page
 share/help/sv/gnome-system-log/pref-font-size.page
 share/help/uk/
 share/help/uk/gnome-system-log/
+share/help/uk/gnome-system-log/figures/
+share/help/uk/gnome-system-log/figures/log-viewer-main.png
 share/help/uk/gnome-system-log/index.page
 share/help/uk/gnome-system-log/introduction.page
 share/help/uk/gnome-system-log/log-close.page
@@ -220,6 +262,8 @@ share/help/uk/gnome-system-log/log-view.page
 share/help/uk/gnome-system-log/pref-font-size.page
 share/help/zh_CN/
 share/help/zh_CN/gnome-system-log/
+share/help/zh_CN/gnome-system-log/figures/
+share/help/zh_CN/gnome-system-log/figures/log-viewer-main.png
 share/help/zh_CN/gnome-system-log/index.page
 share/help/zh_CN/gnome-system-log/introduction.page
 share/help/zh_CN/gnome-system-log/log-close.page
@@ -276,8 +320,6 @@ share/locale/id/LC_MESSAGES/gnome-system-log.mo
 share/locale/it/LC_MESSAGES/gnome-system-log.mo
 share/locale/ja/LC_MESSAGES/gnome-system-log.mo
 share/locale/ka/LC_MESSAGES/gnome-system-log.mo
-share/locale/km/
-share/locale/km/LC_MESSAGES/
 share/locale/km/LC_MESSAGES/gnome-system-log.mo
 share/locale/kn/LC_MESSAGES/gnome-system-log.mo
 share/locale/ko/LC_MESSAGES/gnome-system-log.mo
