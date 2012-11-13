@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.78 2012/11/11 18:50:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.79 2012/11/13 10:35:34 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
-GNOME_VERSION=		3.6.1
-REVISION=		2
+GNOME_VERSION=		3.6.2
 
 SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 
@@ -77,7 +76,7 @@ CONFIGURE_ARGS+=	--disable-static \
 			--with-symbol-db-shm=/tmp
 
 # XXX: needed because of patch-m4_intltool_m4 (and patch-configure_ac)
-AUTOCONF_VERSION=	2.68
+AUTOCONF_VERSION=	2.69
 CONFIGURE_STYLE=	autoconf
 
 pre-configure:
