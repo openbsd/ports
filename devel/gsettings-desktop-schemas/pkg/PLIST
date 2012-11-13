@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2012/10/10 12:49:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2012/11/13 11:11:03 ajacoutot Exp $
 include/gsettings-desktop-schemas/
 include/gsettings-desktop-schemas/gdesktop-enums.h
 lib/girepository-1.0/
@@ -33,6 +33,8 @@ share/glib-2.0/schemas/org.gnome.desktop.wm.preferences.gschema.xml
 share/glib-2.0/schemas/org.gnome.system.locale.gschema.xml
 share/glib-2.0/schemas/org.gnome.system.proxy.gschema.xml
 share/locale/as/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/ca/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/ca@valencia/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/cs/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/da/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/de/LC_MESSAGES/gsettings-desktop-schemas.mo
@@ -50,16 +52,19 @@ share/locale/id/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/it/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/ja/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/lt/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/lv/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/nb/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/or/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/pa/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/pl/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/pt/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/pt_BR/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/ru/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/sl/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/sr/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/sr@latin/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/sv/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/ug/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/uk/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/vi/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/zh_CN/LC_MESSAGES/gsettings-desktop-schemas.mo
