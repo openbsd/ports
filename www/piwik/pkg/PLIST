@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.41 2012/10/30 17:45:12 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.42 2012/11/13 14:08:04 giovanni Exp $
 @group daemon
 piwik/
 piwik/LEGALNOTICE
@@ -1744,6 +1744,7 @@ piwik/plugins/Referers/images/searchEngines/searchatlas.centrum.cz.png
 piwik/plugins/Referers/images/searchEngines/searchservice.myspace.com.png
 piwik/plugins/Referers/images/searchEngines/sm.aport.ru.png
 piwik/plugins/Referers/images/searchEngines/smart.delfi.lv.png
+piwik/plugins/Referers/images/searchEngines/so.360.cn.png
 piwik/plugins/Referers/images/searchEngines/start.iplay.com.png
 piwik/plugins/Referers/images/searchEngines/startgoogle.startpagina.nl.png
 piwik/plugins/Referers/images/searchEngines/suche.freenet.de.png
