@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2012/10/15 15:42:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2012/11/13 07:21:46 ajacoutot Exp $
 @conflict gnome2-user-docs-*
 @pkgpath x11/gnome/users-guide
 share/help/
@@ -170,6 +170,7 @@ share/help/C/gnome-help/figures/shell-exit.png
 share/help/C/gnome-help/figures/shell-files.png
 share/help/C/gnome-help/figures/shell-introduction.png
 share/help/C/gnome-help/figures/shell-keyboard-shortcuts.png
+share/help/C/gnome-help/figures/shell-lock.png
 share/help/C/gnome-help/figures/shell-notification.png
 share/help/C/gnome-help/figures/shell-top-bar.png
 share/help/C/gnome-help/figures/shell-windows.png
@@ -333,6 +334,7 @@ share/help/C/gnome-help/shell-apps-open.page
 share/help/C/gnome-help/shell-exit.page
 share/help/C/gnome-help/shell-introduction.page
 share/help/C/gnome-help/shell-keyboard-shortcuts.page
+share/help/C/gnome-help/shell-lockscreen.page
 share/help/C/gnome-help/shell-notifications.page
 share/help/C/gnome-help/shell-overview.page
 share/help/C/gnome-help/shell-terminology.page
@@ -375,19 +377,17 @@ share/help/C/gnome-help/wacom-stylus.page
 share/help/C/gnome-help/wacom.page
 share/help/C/gnome-help/windows-key.page
 share/help/C/system-admin-guide/
-share/help/C/system-admin-guide/authentication.page
-share/help/C/system-admin-guide/autologin.page
 share/help/C/system-admin-guide/background.page
 share/help/C/system-admin-guide/backgrounds-extra.page
-share/help/C/system-admin-guide/custom-session.page
 share/help/C/system-admin-guide/dconf-profiles-edit.page
 share/help/C/system-admin-guide/dconf-profiles.page
 share/help/C/system-admin-guide/fonts.page
 share/help/C/system-admin-guide/gsettings-browse.page
 share/help/C/system-admin-guide/index.page
-share/help/C/system-admin-guide/keyboard-layout.page
 share/help/C/system-admin-guide/lockdown.page
 share/help/C/system-admin-guide/lockscreenbackground.page
+share/help/C/system-admin-guide/login-background.page
+share/help/C/system-admin-guide/login-disclaimer.page
 share/help/C/system-admin-guide/logo.page
 share/help/C/system-admin-guide/overrides.page
 share/help/C/system-admin-guide/power-settings.page
@@ -395,9 +395,6 @@ share/help/C/system-admin-guide/processes.page
 share/help/C/system-admin-guide/screen-locking.page
 share/help/C/system-admin-guide/servers-list.page
 share/help/C/system-admin-guide/session-debug.page
-share/help/C/system-admin-guide/sessions.page
-share/help/C/system-admin-guide/user-list.page
-share/help/C/system-admin-guide/user-session.page
 share/help/C/system-admin-guide/vpn-list.page
 share/help/ca/
 share/help/ca/gnome-help/
@@ -567,6 +564,7 @@ share/help/ca/gnome-help/figures/shell-exit.png
 share/help/ca/gnome-help/figures/shell-files.png
 share/help/ca/gnome-help/figures/shell-introduction.png
 share/help/ca/gnome-help/figures/shell-keyboard-shortcuts.png
+share/help/ca/gnome-help/figures/shell-lock.png
 share/help/ca/gnome-help/figures/shell-notification.png
 share/help/ca/gnome-help/figures/shell-top-bar.png
 share/help/ca/gnome-help/figures/shell-windows.png
@@ -730,6 +728,7 @@ share/help/ca/gnome-help/shell-apps-open.page
 share/help/ca/gnome-help/shell-exit.page
 share/help/ca/gnome-help/shell-introduction.page
 share/help/ca/gnome-help/shell-keyboard-shortcuts.page
+share/help/ca/gnome-help/shell-lockscreen.page
 share/help/ca/gnome-help/shell-notifications.page
 share/help/ca/gnome-help/shell-overview.page
 share/help/ca/gnome-help/shell-terminology.page
@@ -939,6 +938,7 @@ share/help/cs/gnome-help/figures/shell-exit.png
 share/help/cs/gnome-help/figures/shell-files.png
 share/help/cs/gnome-help/figures/shell-introduction.png
 share/help/cs/gnome-help/figures/shell-keyboard-shortcuts.png
+share/help/cs/gnome-help/figures/shell-lock.png
 share/help/cs/gnome-help/figures/shell-notification.png
 share/help/cs/gnome-help/figures/shell-top-bar.png
 share/help/cs/gnome-help/figures/shell-windows.png
@@ -1102,6 +1102,7 @@ share/help/cs/gnome-help/shell-apps-open.page
 share/help/cs/gnome-help/shell-exit.page
 share/help/cs/gnome-help/shell-introduction.page
 share/help/cs/gnome-help/shell-keyboard-shortcuts.page
+share/help/cs/gnome-help/shell-lockscreen.page
 share/help/cs/gnome-help/shell-notifications.page
 share/help/cs/gnome-help/shell-overview.page
 share/help/cs/gnome-help/shell-terminology.page
@@ -1311,6 +1312,7 @@ share/help/de/gnome-help/figures/shell-exit.png
 share/help/de/gnome-help/figures/shell-files.png
 share/help/de/gnome-help/figures/shell-introduction.png
 share/help/de/gnome-help/figures/shell-keyboard-shortcuts.png
+share/help/de/gnome-help/figures/shell-lock.png
 share/help/de/gnome-help/figures/shell-notification.png
 share/help/de/gnome-help/figures/shell-top-bar.png
 share/help/de/gnome-help/figures/shell-windows.png
@@ -1474,6 +1476,7 @@ share/help/de/gnome-help/shell-apps-open.page
 share/help/de/gnome-help/shell-exit.page
 share/help/de/gnome-help/shell-introduction.page
 share/help/de/gnome-help/shell-keyboard-shortcuts.page
+share/help/de/gnome-help/shell-lockscreen.page
 share/help/de/gnome-help/shell-notifications.page
 share/help/de/gnome-help/shell-overview.page
 share/help/de/gnome-help/shell-terminology.page
@@ -1683,6 +1686,7 @@ share/help/el/gnome-help/figures/shell-exit.png
 share/help/el/gnome-help/figures/shell-files.png
 share/help/el/gnome-help/figures/shell-introduction.png
 share/help/el/gnome-help/figures/shell-keyboard-shortcuts.png
+share/help/el/gnome-help/figures/shell-lock.png
 share/help/el/gnome-help/figures/shell-notification.png
 share/help/el/gnome-help/figures/shell-top-bar.png
 share/help/el/gnome-help/figures/shell-windows.png
@@ -1846,6 +1850,7 @@ share/help/el/gnome-help/shell-apps-open.page
 share/help/el/gnome-help/shell-exit.page
 share/help/el/gnome-help/shell-introduction.page
 share/help/el/gnome-help/shell-keyboard-shortcuts.page
+share/help/el/gnome-help/shell-lockscreen.page
 share/help/el/gnome-help/shell-notifications.page
 share/help/el/gnome-help/shell-overview.page
 share/help/el/gnome-help/shell-terminology.page
@@ -2055,6 +2060,7 @@ share/help/es/gnome-help/figures/shell-exit.png
 share/help/es/gnome-help/figures/shell-files.png
 share/help/es/gnome-help/figures/shell-introduction.png
 share/help/es/gnome-help/figures/shell-keyboard-shortcuts.png
+share/help/es/gnome-help/figures/shell-lock.png
 share/help/es/gnome-help/figures/shell-notification.png
 share/help/es/gnome-help/figures/shell-top-bar.png
 share/help/es/gnome-help/figures/shell-windows.png
@@ -2218,6 +2224,7 @@ share/help/es/gnome-help/shell-apps-open.page
 share/help/es/gnome-help/shell-exit.page
 share/help/es/gnome-help/shell-introduction.page
 share/help/es/gnome-help/shell-keyboard-shortcuts.page
+share/help/es/gnome-help/shell-lockscreen.page
 share/help/es/gnome-help/shell-notifications.page
 share/help/es/gnome-help/shell-overview.page
 share/help/es/gnome-help/shell-terminology.page
@@ -2427,6 +2434,7 @@ share/help/fi/gnome-help/figures/shell-exit.png
 share/help/fi/gnome-help/figures/shell-files.png
 share/help/fi/gnome-help/figures/shell-introduction.png
 share/help/fi/gnome-help/figures/shell-keyboard-shortcuts.png
+share/help/fi/gnome-help/figures/shell-lock.png
 share/help/fi/gnome-help/figures/shell-notification.png
 share/help/fi/gnome-help/figures/shell-top-bar.png
 share/help/fi/gnome-help/figures/shell-windows.png
@@ -2590,6 +2598,7 @@ share/help/fi/gnome-help/shell-apps-open.page
 share/help/fi/gnome-help/shell-exit.page
 share/help/fi/gnome-help/shell-introduction.page
 share/help/fi/gnome-help/shell-keyboard-shortcuts.page
+share/help/fi/gnome-help/shell-lockscreen.page
 share/help/fi/gnome-help/shell-notifications.page
 share/help/fi/gnome-help/shell-overview.page
 share/help/fi/gnome-help/shell-terminology.page
@@ -2799,6 +2808,7 @@ share/help/fr/gnome-help/figures/shell-exit.png
 share/help/fr/gnome-help/figures/shell-files.png
 share/help/fr/gnome-help/figures/shell-introduction.png
 share/help/fr/gnome-help/figures/shell-keyboard-shortcuts.png
+share/help/fr/gnome-help/figures/shell-lock.png
 share/help/fr/gnome-help/figures/shell-notification.png
 share/help/fr/gnome-help/figures/shell-top-bar.png
 share/help/fr/gnome-help/figures/shell-windows.png
@@ -2962,6 +2972,7 @@ share/help/fr/gnome-help/shell-apps-open.page
 share/help/fr/gnome-help/shell-exit.page
 share/help/fr/gnome-help/shell-introduction.page
 share/help/fr/gnome-help/shell-keyboard-shortcuts.page
+share/help/fr/gnome-help/shell-lockscreen.page
 share/help/fr/gnome-help/shell-notifications.page
 share/help/fr/gnome-help/shell-overview.page
 share/help/fr/gnome-help/shell-terminology.page
@@ -3171,6 +3182,7 @@ share/help/gl/gnome-help/figures/shell-exit.png
 share/help/gl/gnome-help/figures/shell-files.png
 share/help/gl/gnome-help/figures/shell-introduction.png
 share/help/gl/gnome-help/figures/shell-keyboard-shortcuts.png
+share/help/gl/gnome-help/figures/shell-lock.png
 share/help/gl/gnome-help/figures/shell-notification.png
 share/help/gl/gnome-help/figures/shell-top-bar.png
 share/help/gl/gnome-help/figures/shell-windows.png
@@ -3334,6 +3346,7 @@ share/help/gl/gnome-help/shell-apps-open.page
 share/help/gl/gnome-help/shell-exit.page
 share/help/gl/gnome-help/shell-introduction.page
 share/help/gl/gnome-help/shell-keyboard-shortcuts.page
+share/help/gl/gnome-help/shell-lockscreen.page
 share/help/gl/gnome-help/shell-notifications.page
 share/help/gl/gnome-help/shell-overview.page
 share/help/gl/gnome-help/shell-terminology.page
@@ -3543,6 +3556,7 @@ share/help/hi/gnome-help/figures/shell-exit.png
 share/help/hi/gnome-help/figures/shell-files.png
 share/help/hi/gnome-help/figures/shell-introduction.png
 share/help/hi/gnome-help/figures/shell-keyboard-shortcuts.png
+share/help/hi/gnome-help/figures/shell-lock.png
 share/help/hi/gnome-help/figures/shell-notification.png
 share/help/hi/gnome-help/figures/shell-top-bar.png
 share/help/hi/gnome-help/figures/shell-windows.png
@@ -3706,6 +3720,7 @@ share/help/hi/gnome-help/shell-apps-open.page
 share/help/hi/gnome-help/shell-exit.page
 share/help/hi/gnome-help/shell-introduction.page
 share/help/hi/gnome-help/shell-keyboard-shortcuts.page
+share/help/hi/gnome-help/shell-lockscreen.page
 share/help/hi/gnome-help/shell-notifications.page
 share/help/hi/gnome-help/shell-overview.page
 share/help/hi/gnome-help/shell-terminology.page
@@ -3915,6 +3930,7 @@ share/help/hu/gnome-help/figures/shell-exit.png
 share/help/hu/gnome-help/figures/shell-files.png
 share/help/hu/gnome-help/figures/shell-introduction.png
 share/help/hu/gnome-help/figures/shell-keyboard-shortcuts.png
+share/help/hu/gnome-help/figures/shell-lock.png
 share/help/hu/gnome-help/figures/shell-notification.png
 share/help/hu/gnome-help/figures/shell-top-bar.png
 share/help/hu/gnome-help/figures/shell-windows.png
@@ -4078,6 +4094,7 @@ share/help/hu/gnome-help/shell-apps-open.page
 share/help/hu/gnome-help/shell-exit.page
 share/help/hu/gnome-help/shell-introduction.page
 share/help/hu/gnome-help/shell-keyboard-shortcuts.page
+share/help/hu/gnome-help/shell-lockscreen.page
 share/help/hu/gnome-help/shell-notifications.page
 share/help/hu/gnome-help/shell-overview.page
 share/help/hu/gnome-help/shell-terminology.page
@@ -4287,6 +4304,7 @@ share/help/id/gnome-help/figures/shell-exit.png
 share/help/id/gnome-help/figures/shell-files.png
 share/help/id/gnome-help/figures/shell-introduction.png
 share/help/id/gnome-help/figures/shell-keyboard-shortcuts.png
+share/help/id/gnome-help/figures/shell-lock.png
 share/help/id/gnome-help/figures/shell-notification.png
 share/help/id/gnome-help/figures/shell-top-bar.png
 share/help/id/gnome-help/figures/shell-windows.png
@@ -4450,6 +4468,7 @@ share/help/id/gnome-help/shell-apps-open.page
 share/help/id/gnome-help/shell-exit.page
 share/help/id/gnome-help/shell-introduction.page
 share/help/id/gnome-help/shell-keyboard-shortcuts.page
+share/help/id/gnome-help/shell-lockscreen.page
 share/help/id/gnome-help/shell-notifications.page
 share/help/id/gnome-help/shell-overview.page
 share/help/id/gnome-help/shell-terminology.page
@@ -4659,6 +4678,7 @@ share/help/it/gnome-help/figures/shell-exit.png
 share/help/it/gnome-help/figures/shell-files.png
 share/help/it/gnome-help/figures/shell-introduction.png
 share/help/it/gnome-help/figures/shell-keyboard-shortcuts.png
+share/help/it/gnome-help/figures/shell-lock.png
 share/help/it/gnome-help/figures/shell-notification.png
 share/help/it/gnome-help/figures/shell-top-bar.png
 share/help/it/gnome-help/figures/shell-windows.png
@@ -4822,6 +4842,7 @@ share/help/it/gnome-help/shell-apps-open.page
 share/help/it/gnome-help/shell-exit.page
 share/help/it/gnome-help/shell-introduction.page
 share/help/it/gnome-help/shell-keyboard-shortcuts.page
+share/help/it/gnome-help/shell-lockscreen.page
 share/help/it/gnome-help/shell-notifications.page
 share/help/it/gnome-help/shell-overview.page
 share/help/it/gnome-help/shell-terminology.page
@@ -5031,6 +5052,7 @@ share/help/ja/gnome-help/figures/shell-exit.png
 share/help/ja/gnome-help/figures/shell-files.png
 share/help/ja/gnome-help/figures/shell-introduction.png
 share/help/ja/gnome-help/figures/shell-keyboard-shortcuts.png
+share/help/ja/gnome-help/figures/shell-lock.png
 share/help/ja/gnome-help/figures/shell-notification.png
 share/help/ja/gnome-help/figures/shell-top-bar.png
 share/help/ja/gnome-help/figures/shell-windows.png
@@ -5194,6 +5216,7 @@ share/help/ja/gnome-help/shell-apps-open.page
 share/help/ja/gnome-help/shell-exit.page
 share/help/ja/gnome-help/shell-introduction.page
 share/help/ja/gnome-help/shell-keyboard-shortcuts.page
+share/help/ja/gnome-help/shell-lockscreen.page
 share/help/ja/gnome-help/shell-notifications.page
 share/help/ja/gnome-help/shell-overview.page
 share/help/ja/gnome-help/shell-terminology.page
@@ -5403,6 +5426,7 @@ share/help/lv/gnome-help/figures/shell-exit.png
 share/help/lv/gnome-help/figures/shell-files.png
 share/help/lv/gnome-help/figures/shell-introduction.png
 share/help/lv/gnome-help/figures/shell-keyboard-shortcuts.png
+share/help/lv/gnome-help/figures/shell-lock.png
 share/help/lv/gnome-help/figures/shell-notification.png
 share/help/lv/gnome-help/figures/shell-top-bar.png
 share/help/lv/gnome-help/figures/shell-windows.png
@@ -5566,6 +5590,7 @@ share/help/lv/gnome-help/shell-apps-open.page
 share/help/lv/gnome-help/shell-exit.page
 share/help/lv/gnome-help/shell-introduction.page
 share/help/lv/gnome-help/shell-keyboard-shortcuts.page
+share/help/lv/gnome-help/shell-lockscreen.page
 share/help/lv/gnome-help/shell-notifications.page
 share/help/lv/gnome-help/shell-overview.page
 share/help/lv/gnome-help/shell-terminology.page
@@ -5775,6 +5800,7 @@ share/help/nl/gnome-help/figures/shell-exit.png
 share/help/nl/gnome-help/figures/shell-files.png
 share/help/nl/gnome-help/figures/shell-introduction.png
 share/help/nl/gnome-help/figures/shell-keyboard-shortcuts.png
+share/help/nl/gnome-help/figures/shell-lock.png
 share/help/nl/gnome-help/figures/shell-notification.png
 share/help/nl/gnome-help/figures/shell-top-bar.png
 share/help/nl/gnome-help/figures/shell-windows.png
@@ -5938,6 +5964,7 @@ share/help/nl/gnome-help/shell-apps-open.page
 share/help/nl/gnome-help/shell-exit.page
 share/help/nl/gnome-help/shell-introduction.page
 share/help/nl/gnome-help/shell-keyboard-shortcuts.page
+share/help/nl/gnome-help/shell-lockscreen.page
 share/help/nl/gnome-help/shell-notifications.page
 share/help/nl/gnome-help/shell-overview.page
 share/help/nl/gnome-help/shell-terminology.page
@@ -6147,6 +6174,7 @@ share/help/pa/gnome-help/figures/shell-exit.png
 share/help/pa/gnome-help/figures/shell-files.png
 share/help/pa/gnome-help/figures/shell-introduction.png
 share/help/pa/gnome-help/figures/shell-keyboard-shortcuts.png
+share/help/pa/gnome-help/figures/shell-lock.png
 share/help/pa/gnome-help/figures/shell-notification.png
 share/help/pa/gnome-help/figures/shell-top-bar.png
 share/help/pa/gnome-help/figures/shell-windows.png
@@ -6310,6 +6338,7 @@ share/help/pa/gnome-help/shell-apps-open.page
 share/help/pa/gnome-help/shell-exit.page
 share/help/pa/gnome-help/shell-introduction.page
 share/help/pa/gnome-help/shell-keyboard-shortcuts.page
+share/help/pa/gnome-help/shell-lockscreen.page
 share/help/pa/gnome-help/shell-notifications.page
 share/help/pa/gnome-help/shell-overview.page
 share/help/pa/gnome-help/shell-terminology.page
@@ -6519,6 +6548,7 @@ share/help/pt_BR/gnome-help/figures/shell-exit.png
 share/help/pt_BR/gnome-help/figures/shell-files.png
 share/help/pt_BR/gnome-help/figures/shell-introduction.png
 share/help/pt_BR/gnome-help/figures/shell-keyboard-shortcuts.png
+share/help/pt_BR/gnome-help/figures/shell-lock.png
 share/help/pt_BR/gnome-help/figures/shell-notification.png
 share/help/pt_BR/gnome-help/figures/shell-top-bar.png
 share/help/pt_BR/gnome-help/figures/shell-windows.png
@@ -6682,6 +6712,7 @@ share/help/pt_BR/gnome-help/shell-apps-open.page
 share/help/pt_BR/gnome-help/shell-exit.page
 share/help/pt_BR/gnome-help/shell-introduction.page
 share/help/pt_BR/gnome-help/shell-keyboard-shortcuts.page
+share/help/pt_BR/gnome-help/shell-lockscreen.page
 share/help/pt_BR/gnome-help/shell-notifications.page
 share/help/pt_BR/gnome-help/shell-overview.page
 share/help/pt_BR/gnome-help/shell-terminology.page
@@ -6891,6 +6922,7 @@ share/help/ru/gnome-help/figures/shell-exit.png
 share/help/ru/gnome-help/figures/shell-files.png
 share/help/ru/gnome-help/figures/shell-introduction.png
 share/help/ru/gnome-help/figures/shell-keyboard-shortcuts.png
+share/help/ru/gnome-help/figures/shell-lock.png
 share/help/ru/gnome-help/figures/shell-notification.png
 share/help/ru/gnome-help/figures/shell-top-bar.png
 share/help/ru/gnome-help/figures/shell-windows.png
@@ -7054,6 +7086,7 @@ share/help/ru/gnome-help/shell-apps-open.page
 share/help/ru/gnome-help/shell-exit.page
 share/help/ru/gnome-help/shell-introduction.page
 share/help/ru/gnome-help/shell-keyboard-shortcuts.page
+share/help/ru/gnome-help/shell-lockscreen.page
 share/help/ru/gnome-help/shell-notifications.page
 share/help/ru/gnome-help/shell-overview.page
 share/help/ru/gnome-help/shell-terminology.page
@@ -7263,6 +7296,7 @@ share/help/sl/gnome-help/figures/shell-exit.png
 share/help/sl/gnome-help/figures/shell-files.png
 share/help/sl/gnome-help/figures/shell-introduction.png
 share/help/sl/gnome-help/figures/shell-keyboard-shortcuts.png
+share/help/sl/gnome-help/figures/shell-lock.png
 share/help/sl/gnome-help/figures/shell-notification.png
 share/help/sl/gnome-help/figures/shell-top-bar.png
 share/help/sl/gnome-help/figures/shell-windows.png
@@ -7426,6 +7460,7 @@ share/help/sl/gnome-help/shell-apps-open.page
 share/help/sl/gnome-help/shell-exit.page
 share/help/sl/gnome-help/shell-introduction.page
 share/help/sl/gnome-help/shell-keyboard-shortcuts.page
+share/help/sl/gnome-help/shell-lockscreen.page
 share/help/sl/gnome-help/shell-notifications.page
 share/help/sl/gnome-help/shell-overview.page
 share/help/sl/gnome-help/shell-terminology.page
@@ -7635,6 +7670,7 @@ share/help/sr/gnome-help/figures/shell-exit.png
 share/help/sr/gnome-help/figures/shell-files.png
 share/help/sr/gnome-help/figures/shell-introduction.png
 share/help/sr/gnome-help/figures/shell-keyboard-shortcuts.png
+share/help/sr/gnome-help/figures/shell-lock.png
 share/help/sr/gnome-help/figures/shell-notification.png
 share/help/sr/gnome-help/figures/shell-top-bar.png
 share/help/sr/gnome-help/figures/shell-windows.png
@@ -7798,6 +7834,7 @@ share/help/sr/gnome-help/shell-apps-open.page
 share/help/sr/gnome-help/shell-exit.page
 share/help/sr/gnome-help/shell-introduction.page
 share/help/sr/gnome-help/shell-keyboard-shortcuts.page
+share/help/sr/gnome-help/shell-lockscreen.page
 share/help/sr/gnome-help/shell-notifications.page
 share/help/sr/gnome-help/shell-overview.page
 share/help/sr/gnome-help/shell-terminology.page
@@ -8007,6 +8044,7 @@ share/help/sr@latin/gnome-help/figures/shell-exit.png
 share/help/sr@latin/gnome-help/figures/shell-files.png
 share/help/sr@latin/gnome-help/figures/shell-introduction.png
 share/help/sr@latin/gnome-help/figures/shell-keyboard-shortcuts.png
+share/help/sr@latin/gnome-help/figures/shell-lock.png
 share/help/sr@latin/gnome-help/figures/shell-notification.png
 share/help/sr@latin/gnome-help/figures/shell-top-bar.png
 share/help/sr@latin/gnome-help/figures/shell-windows.png
@@ -8170,6 +8208,7 @@ share/help/sr@latin/gnome-help/shell-apps-open.page
 share/help/sr@latin/gnome-help/shell-exit.page
 share/help/sr@latin/gnome-help/shell-introduction.page
 share/help/sr@latin/gnome-help/shell-keyboard-shortcuts.page
+share/help/sr@latin/gnome-help/shell-lockscreen.page
 share/help/sr@latin/gnome-help/shell-notifications.page
 share/help/sr@latin/gnome-help/shell-overview.page
 share/help/sr@latin/gnome-help/shell-terminology.page
@@ -8379,6 +8418,7 @@ share/help/sv/gnome-help/figures/shell-exit.png
 share/help/sv/gnome-help/figures/shell-files.png
 share/help/sv/gnome-help/figures/shell-introduction.png
 share/help/sv/gnome-help/figures/shell-keyboard-shortcuts.png
+share/help/sv/gnome-help/figures/shell-lock.png
 share/help/sv/gnome-help/figures/shell-notification.png
 share/help/sv/gnome-help/figures/shell-top-bar.png
 share/help/sv/gnome-help/figures/shell-windows.png
@@ -8542,6 +8582,7 @@ share/help/sv/gnome-help/shell-apps-open.page
 share/help/sv/gnome-help/shell-exit.page
 share/help/sv/gnome-help/shell-introduction.page
 share/help/sv/gnome-help/shell-keyboard-shortcuts.page
+share/help/sv/gnome-help/shell-lockscreen.page
 share/help/sv/gnome-help/shell-notifications.page
 share/help/sv/gnome-help/shell-overview.page
 share/help/sv/gnome-help/shell-terminology.page
@@ -8751,6 +8792,7 @@ share/help/te/gnome-help/figures/shell-exit.png
 share/help/te/gnome-help/figures/shell-files.png
 share/help/te/gnome-help/figures/shell-introduction.png
 share/help/te/gnome-help/figures/shell-keyboard-shortcuts.png
+share/help/te/gnome-help/figures/shell-lock.png
 share/help/te/gnome-help/figures/shell-notification.png
 share/help/te/gnome-help/figures/shell-top-bar.png
 share/help/te/gnome-help/figures/shell-windows.png
@@ -8914,6 +8956,7 @@ share/help/te/gnome-help/shell-apps-open.page
 share/help/te/gnome-help/shell-exit.page
 share/help/te/gnome-help/shell-introduction.page
 share/help/te/gnome-help/shell-keyboard-shortcuts.page
+share/help/te/gnome-help/shell-lockscreen.page
 share/help/te/gnome-help/shell-notifications.page
 share/help/te/gnome-help/shell-overview.page
 share/help/te/gnome-help/shell-terminology.page
@@ -9123,6 +9166,7 @@ share/help/vi/gnome-help/figures/shell-exit.png
 share/help/vi/gnome-help/figures/shell-files.png
 share/help/vi/gnome-help/figures/shell-introduction.png
 share/help/vi/gnome-help/figures/shell-keyboard-shortcuts.png
+share/help/vi/gnome-help/figures/shell-lock.png
 share/help/vi/gnome-help/figures/shell-notification.png
 share/help/vi/gnome-help/figures/shell-top-bar.png
 share/help/vi/gnome-help/figures/shell-windows.png
@@ -9286,6 +9330,7 @@ share/help/vi/gnome-help/shell-apps-open.page
 share/help/vi/gnome-help/shell-exit.page
 share/help/vi/gnome-help/shell-introduction.page
 share/help/vi/gnome-help/shell-keyboard-shortcuts.page
+share/help/vi/gnome-help/shell-lockscreen.page
 share/help/vi/gnome-help/shell-notifications.page
 share/help/vi/gnome-help/shell-overview.page
 share/help/vi/gnome-help/shell-terminology.page
