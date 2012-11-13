@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.195 2012/11/10 07:37:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.196 2012/11/13 16:34:59 ajacoutot Exp $
 
 COMMENT=		general-purpose utility library
 
@@ -6,6 +6,8 @@ V=			2.34.2
 DISTNAME=		glib-${V}
 PKGNAME=		${DISTNAME:S/glib/glib2/}
 EXTRACT_SUFX=		.tar.xz
+
+REVISION=		0
 
 CATEGORIES=		devel
 
@@ -82,9 +84,8 @@ AUTOCONF_VERSION=	2.68
 BUILD_DEPENDS+=		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
 			devel/libtool
-#MASTER_SITES0=		http://dmitrymatveev.co.uk/files/
 MASTER_SITES0=		http://distfiles.bsdfrog.org/
-PATCHFILES=		glib-gio-kqueue-2.32.4-v3.patch:0
+PATCHFILES=		glib-gio-kqueue-2.34.2-v1.patch:0
 PATCH_DIST_STRIP=	-p1
 AUTO_ENV=		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 			AUTOCONF_VERSION=${AUTOCONF_VERSION}
