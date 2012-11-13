@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/03/29 07:04:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/11/13 07:54:48 ajacoutot Exp $
 %%SHARED%%
 include/at-spi-2.0/
 include/at-spi-2.0/atspi/
@@ -179,6 +179,7 @@ share/locale/pt/LC_MESSAGES/at-spi2-core.mo
 share/locale/pt_BR/LC_MESSAGES/at-spi2-core.mo
 share/locale/ro/LC_MESSAGES/at-spi2-core.mo
 share/locale/ru/LC_MESSAGES/at-spi2-core.mo
+share/locale/sk/LC_MESSAGES/at-spi2-core.mo
 share/locale/sl/LC_MESSAGES/at-spi2-core.mo
 share/locale/sq/
 share/locale/sq/LC_MESSAGES/
