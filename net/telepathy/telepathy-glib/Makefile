@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.49 2012/11/05 07:10:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2012/11/13 11:27:22 jasper Exp $
 
 COMMENT=		flexible communications framework, glib bindings
 
-DISTNAME=		telepathy-glib-0.20.0
+DISTNAME=		telepathy-glib-0.20.1
 
-SHARED_LIBS +=	telepathy-glib       78.0      # 78.0
+SHARED_LIBS +=	telepathy-glib       78.1      # 78.1
 
 HOMEPAGE=		${HOMEPAGE_TP:=Telepathy GLib}
 
