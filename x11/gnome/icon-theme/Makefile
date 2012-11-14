@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.55 2012/10/17 08:50:40 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.56 2012/11/14 07:04:27 ajacoutot Exp $
 
 PKG_ARCH=	*
 
 COMMENT=	base icon theme for GNOME
 
 GNOME_PROJECT=	gnome-icon-theme
-GNOME_VERSION=	3.6.0
-REVISION=	1
+GNOME_VERSION=	3.6.2
 
 CATEGORIES=	x11
 
