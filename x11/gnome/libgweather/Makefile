@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2012/11/13 17:23:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2012/11/14 08:08:55 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -30,9 +30,6 @@ WANTLIB += xml2 z
 MODULES=		devel/gettext \
 			devel/dconf \
 			x11/gnome
-
-# XXX: get_symbollist: object list is empty
-USE_LIBTOOL=		gnu
 
 MODGNOME_TOOLS= 	goi
 MODGNOME_ICON_CACHE=	Yes
