@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.274 2012/10/26 18:07:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.275 2012/11/14 09:20:10 jasper Exp $
 
      SUBDIR =
      SUBDIR += LPRng
@@ -114,6 +114,7 @@
      SUBDIR += nut
      SUBDIR += openpoppassd
      SUBDIR += p5-Capture-Tiny
+     SUBDIR += p5-File-Monitor
      SUBDIR += p5-File-NFSLock
      SUBDIR += p5-File-Which
      SUBDIR += p5-Filesys-Df
