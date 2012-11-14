@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.70 2012/09/28 05:48:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2012/11/14 07:33:42 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		library for layout and rendering of text
 
-GNOME_VERSION=		1.32.1
+GNOME_VERSION=		1.32.2
 GNOME_PROJECT=		pango
 
 SHARED_LIBS +=  pango-1.0            3200.0   # 3200.0
