@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2012/10/26 09:27:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2012/11/14 12:19:23 ajacoutot Exp $
 @extra owncloud/config/config.php
 owncloud/
 owncloud/.htaccess.dist
@@ -802,7 +802,6 @@ owncloud/apps/admin_dependencies_chk/l10n/ca.php
 owncloud/apps/admin_dependencies_chk/l10n/cs_CZ.php
 owncloud/apps/admin_dependencies_chk/l10n/da.php
 owncloud/apps/admin_dependencies_chk/l10n/de.php
-owncloud/apps/admin_dependencies_chk/l10n/de_DE.php
 owncloud/apps/admin_dependencies_chk/l10n/el.php
 owncloud/apps/admin_dependencies_chk/l10n/eo.php
 owncloud/apps/admin_dependencies_chk/l10n/es.php
@@ -812,7 +811,6 @@ owncloud/apps/admin_dependencies_chk/l10n/eu.php
 owncloud/apps/admin_dependencies_chk/l10n/fi_FI.php
 owncloud/apps/admin_dependencies_chk/l10n/fr.php
 owncloud/apps/admin_dependencies_chk/l10n/gl.php
-owncloud/apps/admin_dependencies_chk/l10n/id.php
 owncloud/apps/admin_dependencies_chk/l10n/it.php
 owncloud/apps/admin_dependencies_chk/l10n/ja_JP.php
 owncloud/apps/admin_dependencies_chk/l10n/lt_LT.php
@@ -824,15 +822,12 @@ owncloud/apps/admin_dependencies_chk/l10n/pt_PT.php
 owncloud/apps/admin_dependencies_chk/l10n/ro.php
 owncloud/apps/admin_dependencies_chk/l10n/ru.php
 owncloud/apps/admin_dependencies_chk/l10n/ru_RU.php
-owncloud/apps/admin_dependencies_chk/l10n/si_LK.php
 owncloud/apps/admin_dependencies_chk/l10n/sk_SK.php
 owncloud/apps/admin_dependencies_chk/l10n/sl.php
 owncloud/apps/admin_dependencies_chk/l10n/sv.php
 owncloud/apps/admin_dependencies_chk/l10n/th_TH.php
-owncloud/apps/admin_dependencies_chk/l10n/uk.php
 owncloud/apps/admin_dependencies_chk/l10n/vi.php
 owncloud/apps/admin_dependencies_chk/l10n/zh_CN.GB2312.php
-owncloud/apps/admin_dependencies_chk/l10n/zh_CN.php
 owncloud/apps/admin_dependencies_chk/settings.php
 owncloud/apps/admin_dependencies_chk/templates/
 owncloud/apps/admin_dependencies_chk/templates/settings.php
@@ -846,7 +841,6 @@ owncloud/apps/admin_migrate/l10n/ca.php
 owncloud/apps/admin_migrate/l10n/cs_CZ.php
 owncloud/apps/admin_migrate/l10n/da.php
 owncloud/apps/admin_migrate/l10n/de.php
-owncloud/apps/admin_migrate/l10n/de_DE.php
 owncloud/apps/admin_migrate/l10n/el.php
 owncloud/apps/admin_migrate/l10n/eo.php
 owncloud/apps/admin_migrate/l10n/es.php
@@ -857,7 +851,6 @@ owncloud/apps/admin_migrate/l10n/fi_FI.php
 owncloud/apps/admin_migrate/l10n/fr.php
 owncloud/apps/admin_migrate/l10n/gl.php
 owncloud/apps/admin_migrate/l10n/hu_HU.php
-owncloud/apps/admin_migrate/l10n/id.php
 owncloud/apps/admin_migrate/l10n/it.php
 owncloud/apps/admin_migrate/l10n/ja_JP.php
 owncloud/apps/admin_migrate/l10n/ku_IQ.php
@@ -870,7 +863,6 @@ owncloud/apps/admin_migrate/l10n/pt_PT.php
 owncloud/apps/admin_migrate/l10n/ro.php
 owncloud/apps/admin_migrate/l10n/ru.php
 owncloud/apps/admin_migrate/l10n/ru_RU.php
-owncloud/apps/admin_migrate/l10n/si_LK.php
 owncloud/apps/admin_migrate/l10n/sk_SK.php
 owncloud/apps/admin_migrate/l10n/sl.php
 owncloud/apps/admin_migrate/l10n/sv.php
@@ -883,22 +875,12 @@ owncloud/apps/admin_migrate/settings.php
 owncloud/apps/admin_migrate/templates/
 owncloud/apps/admin_migrate/templates/settings.php
 owncloud/apps/bookmarks/
-owncloud/apps/bookmarks/3rdparty/
-owncloud/apps/bookmarks/3rdparty/css/
-owncloud/apps/bookmarks/3rdparty/css/jquery.tagit.css
-owncloud/apps/bookmarks/3rdparty/js/
-owncloud/apps/bookmarks/3rdparty/js/js_tpl.js
-owncloud/apps/bookmarks/3rdparty/js/tag-it.js
 owncloud/apps/bookmarks/addBm.php
 owncloud/apps/bookmarks/ajax/
 owncloud/apps/bookmarks/ajax/addBookmark.php
-owncloud/apps/bookmarks/ajax/changescreen.php
 owncloud/apps/bookmarks/ajax/delBookmark.php
-owncloud/apps/bookmarks/ajax/delTag.php
 owncloud/apps/bookmarks/ajax/editBookmark.php
-owncloud/apps/bookmarks/ajax/getInfos.php
 owncloud/apps/bookmarks/ajax/recordClick.php
-owncloud/apps/bookmarks/ajax/renameTag.php
 owncloud/apps/bookmarks/ajax/updateList.php
 owncloud/apps/bookmarks/appinfo/
 owncloud/apps/bookmarks/appinfo/app.php
@@ -909,13 +891,8 @@ owncloud/apps/bookmarks/appinfo/version
 owncloud/apps/bookmarks/bookmarksHelper.php
 owncloud/apps/bookmarks/css/
 owncloud/apps/bookmarks/css/bookmarks.css
-owncloud/apps/bookmarks/export.php
 owncloud/apps/bookmarks/img/
 owncloud/apps/bookmarks/img/bookmarks.png
-owncloud/apps/bookmarks/img/triangle-e.png
-owncloud/apps/bookmarks/img/triangle-e.svg
-owncloud/apps/bookmarks/img/triangle-w.png
-owncloud/apps/bookmarks/img/triangle-w.svg
 owncloud/apps/bookmarks/index.php
 owncloud/apps/bookmarks/js/
 owncloud/apps/bookmarks/js/addBm.js
@@ -927,7 +904,6 @@ owncloud/apps/bookmarks/l10n/ca.php
 owncloud/apps/bookmarks/l10n/cs_CZ.php
 owncloud/apps/bookmarks/l10n/da.php
 owncloud/apps/bookmarks/l10n/de.php
-owncloud/apps/bookmarks/l10n/de_DE.php
 owncloud/apps/bookmarks/l10n/el.php
 owncloud/apps/bookmarks/l10n/eo.php
 owncloud/apps/bookmarks/l10n/es.php
@@ -940,10 +916,8 @@ owncloud/apps/bookmarks/l10n/fr.php
 owncloud/apps/bookmarks/l10n/gl.php
 owncloud/apps/bookmarks/l10n/he.php
 owncloud/apps/bookmarks/l10n/hu_HU.php
-owncloud/apps/bookmarks/l10n/id.php
 owncloud/apps/bookmarks/l10n/it.php
 owncloud/apps/bookmarks/l10n/ja_JP.php
-owncloud/apps/bookmarks/l10n/ka_GE.php
 owncloud/apps/bookmarks/l10n/ku_IQ.php
 owncloud/apps/bookmarks/l10n/lt_LT.php
 owncloud/apps/bookmarks/l10n/nb_NO.php
@@ -954,12 +928,10 @@ owncloud/apps/bookmarks/l10n/pt_PT.php
 owncloud/apps/bookmarks/l10n/ro.php
 owncloud/apps/bookmarks/l10n/ru.php
 owncloud/apps/bookmarks/l10n/ru_RU.php
-owncloud/apps/bookmarks/l10n/si_LK.php
 owncloud/apps/bookmarks/l10n/sk_SK.php
 owncloud/apps/bookmarks/l10n/sl.php
 owncloud/apps/bookmarks/l10n/sv.php
 owncloud/apps/bookmarks/l10n/th_TH.php
-owncloud/apps/bookmarks/l10n/tr.php
 owncloud/apps/bookmarks/l10n/uk.php
 owncloud/apps/bookmarks/l10n/vi.php
 owncloud/apps/bookmarks/l10n/xgettextfiles
@@ -973,11 +945,8 @@ owncloud/apps/bookmarks/settings.php
 owncloud/apps/bookmarks/templates/
 owncloud/apps/bookmarks/templates/addBm.php
 owncloud/apps/bookmarks/templates/bookmarklet.php
-owncloud/apps/bookmarks/templates/js_tpl.php
 owncloud/apps/bookmarks/templates/list.php
 owncloud/apps/bookmarks/templates/settings.php
-owncloud/apps/bookmarks/tests/
-owncloud/apps/bookmarks/tests/lib_bookmark.php
 owncloud/apps/calendar/
 owncloud/apps/calendar/ajax/
 owncloud/apps/calendar/ajax/cache/
@@ -1022,6 +991,7 @@ owncloud/apps/calendar/appinfo/
 owncloud/apps/calendar/appinfo/app.php
 owncloud/apps/calendar/appinfo/database.xml
 owncloud/apps/calendar/appinfo/info.xml
+owncloud/apps/calendar/appinfo/migrate.php
 owncloud/apps/calendar/appinfo/remote.php
 owncloud/apps/calendar/appinfo/update.php
 owncloud/apps/calendar/appinfo/version
@@ -1048,7 +1018,6 @@ owncloud/apps/calendar/l10n/ca.php
 owncloud/apps/calendar/l10n/cs_CZ.php
 owncloud/apps/calendar/l10n/da.php
 owncloud/apps/calendar/l10n/de.php
-owncloud/apps/calendar/l10n/de_DE.php
 owncloud/apps/calendar/l10n/el.php
 owncloud/apps/calendar/l10n/eo.php
 owncloud/apps/calendar/l10n/es.php
@@ -1056,7 +1025,6 @@ owncloud/apps/calendar/l10n/es_AR.php
 owncloud/apps/calendar/l10n/et_EE.php
 owncloud/apps/calendar/l10n/eu.php
 owncloud/apps/calendar/l10n/fa.php
-owncloud/apps/calendar/l10n/fi.php
 owncloud/apps/calendar/l10n/fi_FI.php
 owncloud/apps/calendar/l10n/fr.php
 owncloud/apps/calendar/l10n/gl.php
@@ -1068,12 +1036,9 @@ owncloud/apps/calendar/l10n/ia.php
 owncloud/apps/calendar/l10n/id.php
 owncloud/apps/calendar/l10n/it.php
 owncloud/apps/calendar/l10n/ja_JP.php
-owncloud/apps/calendar/l10n/ka_GE.php
 owncloud/apps/calendar/l10n/ko.php
-owncloud/apps/calendar/l10n/ku_IQ.php
 owncloud/apps/calendar/l10n/lb.php
 owncloud/apps/calendar/l10n/lt_LT.php
-owncloud/apps/calendar/l10n/lv.php
 owncloud/apps/calendar/l10n/mk.php
 owncloud/apps/calendar/l10n/ms_MY.php
 owncloud/apps/calendar/l10n/nb_NO.php
@@ -1081,19 +1046,16 @@ owncloud/apps/calendar/l10n/nl.php
 owncloud/apps/calendar/l10n/nn_NO.php
 owncloud/apps/calendar/l10n/oc.php
 owncloud/apps/calendar/l10n/pl.php
-owncloud/apps/calendar/l10n/pl_PL.php
 owncloud/apps/calendar/l10n/pt_BR.php
 owncloud/apps/calendar/l10n/pt_PT.php
 owncloud/apps/calendar/l10n/ro.php
 owncloud/apps/calendar/l10n/ru.php
 owncloud/apps/calendar/l10n/ru_RU.php
-owncloud/apps/calendar/l10n/si_LK.php
 owncloud/apps/calendar/l10n/sk_SK.php
 owncloud/apps/calendar/l10n/sl.php
 owncloud/apps/calendar/l10n/sr.php
 owncloud/apps/calendar/l10n/sr@latin.php
 owncloud/apps/calendar/l10n/sv.php
-owncloud/apps/calendar/l10n/ta_LK.php
 owncloud/apps/calendar/l10n/th_TH.php
 owncloud/apps/calendar/l10n/tr.php
 owncloud/apps/calendar/l10n/uk.php
@@ -1209,7 +1171,6 @@ owncloud/apps/contacts/l10n/ca.php
 owncloud/apps/contacts/l10n/cs_CZ.php
 owncloud/apps/contacts/l10n/da.php
 owncloud/apps/contacts/l10n/de.php
-owncloud/apps/contacts/l10n/de_DE.php
 owncloud/apps/contacts/l10n/el.php
 owncloud/apps/contacts/l10n/eo.php
 owncloud/apps/contacts/l10n/es.php
@@ -1224,10 +1185,8 @@ owncloud/apps/contacts/l10n/he.php
 owncloud/apps/contacts/l10n/hr.php
 owncloud/apps/contacts/l10n/hu_HU.php
 owncloud/apps/contacts/l10n/ia.php
-owncloud/apps/contacts/l10n/id.php
 owncloud/apps/contacts/l10n/it.php
 owncloud/apps/contacts/l10n/ja_JP.php
-owncloud/apps/contacts/l10n/ka_GE.php
 owncloud/apps/contacts/l10n/ko.php
 owncloud/apps/contacts/l10n/lb.php
 owncloud/apps/contacts/l10n/lt_LT.php
@@ -1243,7 +1202,6 @@ owncloud/apps/contacts/l10n/pt_PT.php
 owncloud/apps/contacts/l10n/ro.php
 owncloud/apps/contacts/l10n/ru.php
 owncloud/apps/contacts/l10n/ru_RU.php
-owncloud/apps/contacts/l10n/si_LK.php
 owncloud/apps/contacts/l10n/sk_SK.php
 owncloud/apps/contacts/l10n/sl.php
 owncloud/apps/contacts/l10n/sr.php
@@ -1307,7 +1265,6 @@ owncloud/apps/external/l10n/ca.php
 owncloud/apps/external/l10n/cs_CZ.php
 owncloud/apps/external/l10n/da.php
 owncloud/apps/external/l10n/de.php
-owncloud/apps/external/l10n/de_DE.php
 owncloud/apps/external/l10n/el.php
 owncloud/apps/external/l10n/eo.php
 owncloud/apps/external/l10n/es.php
@@ -1318,10 +1275,8 @@ owncloud/apps/external/l10n/fi_FI.php
 owncloud/apps/external/l10n/fr.php
 owncloud/apps/external/l10n/gl.php
 owncloud/apps/external/l10n/he.php
-owncloud/apps/external/l10n/id.php
 owncloud/apps/external/l10n/it.php
 owncloud/apps/external/l10n/ja_JP.php
-owncloud/apps/external/l10n/ka_GE.php
 owncloud/apps/external/l10n/ku_IQ.php
 owncloud/apps/external/l10n/lt_LT.php
 owncloud/apps/external/l10n/nb_NO.php
@@ -1333,7 +1288,6 @@ owncloud/apps/external/l10n/pt_PT.php
 owncloud/apps/external/l10n/ro.php
 owncloud/apps/external/l10n/ru.php
 owncloud/apps/external/l10n/ru_RU.php
-owncloud/apps/external/l10n/si_LK.php
 owncloud/apps/external/l10n/sk_SK.php
 owncloud/apps/external/l10n/sl.php
 owncloud/apps/external/l10n/sv.php
@@ -1341,7 +1295,6 @@ owncloud/apps/external/l10n/th_TH.php
 owncloud/apps/external/l10n/uk.php
 owncloud/apps/external/l10n/vi.php
 owncloud/apps/external/l10n/zh_CN.GB2312.php
-owncloud/apps/external/l10n/zh_CN.php
 owncloud/apps/external/l10n/zh_TW.php
 owncloud/apps/external/lib/
 owncloud/apps/external/lib/external.php
@@ -1453,6 +1406,10 @@ owncloud/apps/files_archive/js/archive.js
 owncloud/apps/files_archive/lib/
 owncloud/apps/files_archive/lib/storage.php
 owncloud/apps/files_archive/tests/
+owncloud/apps/files_archive/tests/data/
+owncloud/apps/files_archive/tests/data/data.tar.gz
+owncloud/apps/files_archive/tests/data/data.zip
+owncloud/apps/files_archive/tests/data/lorem.txt
 owncloud/apps/files_archive/tests/storage.php
 owncloud/apps/files_encryption/
 owncloud/apps/files_encryption/appinfo/
@@ -1634,7 +1591,6 @@ owncloud/apps/files_odfviewer/l10n/ca.php
 owncloud/apps/files_odfviewer/l10n/cs_CZ.php
 owncloud/apps/files_odfviewer/l10n/da.php
 owncloud/apps/files_odfviewer/l10n/de.php
-owncloud/apps/files_odfviewer/l10n/de_DE.php
 owncloud/apps/files_odfviewer/l10n/el.php
 owncloud/apps/files_odfviewer/l10n/eo.php
 owncloud/apps/files_odfviewer/l10n/es_AR.php
@@ -1642,9 +1598,7 @@ owncloud/apps/files_odfviewer/l10n/eu.php
 owncloud/apps/files_odfviewer/l10n/fr.php
 owncloud/apps/files_odfviewer/l10n/gl.php
 owncloud/apps/files_odfviewer/l10n/he.php
-owncloud/apps/files_odfviewer/l10n/id.php
 owncloud/apps/files_odfviewer/l10n/ignorelist
-owncloud/apps/files_odfviewer/l10n/ka_GE.php
 owncloud/apps/files_odfviewer/l10n/ku_IQ.php
 owncloud/apps/files_odfviewer/l10n/lt_LT.php
 owncloud/apps/files_odfviewer/l10n/nb_NO.php
@@ -1654,13 +1608,9 @@ owncloud/apps/files_odfviewer/l10n/pt_BR.php
 owncloud/apps/files_odfviewer/l10n/pt_PT.php
 owncloud/apps/files_odfviewer/l10n/ro.php
 owncloud/apps/files_odfviewer/l10n/ru_RU.php
-owncloud/apps/files_odfviewer/l10n/si_LK.php
 owncloud/apps/files_odfviewer/l10n/sk_SK.php
-owncloud/apps/files_odfviewer/l10n/sl.php
-owncloud/apps/files_odfviewer/l10n/uk.php
 owncloud/apps/files_odfviewer/l10n/vi.php
 owncloud/apps/files_odfviewer/l10n/zh_CN.GB2312.php
-owncloud/apps/files_odfviewer/l10n/zh_CN.php
 owncloud/apps/files_odfviewer/l10n/zh_TW.php
 owncloud/apps/files_odfviewer/src/
 owncloud/apps/files_odfviewer/src/update.sh
@@ -1763,6 +1713,7 @@ owncloud/apps/files_sharing/lib/share/
 owncloud/apps/files_sharing/lib/share/file.php
 owncloud/apps/files_sharing/lib/share/folder.php
 owncloud/apps/files_sharing/lib/sharedstorage.php
+owncloud/apps/files_sharing/lib/util.php
 owncloud/apps/files_sharing/public.php
 owncloud/apps/files_sharing/templates/
 owncloud/apps/files_sharing/templates/authenticate.php
@@ -1877,7 +1828,6 @@ owncloud/apps/files_texteditor/l10n/ca.php
 owncloud/apps/files_texteditor/l10n/cs_CZ.php
 owncloud/apps/files_texteditor/l10n/da.php
 owncloud/apps/files_texteditor/l10n/de.php
-owncloud/apps/files_texteditor/l10n/de_DE.php
 owncloud/apps/files_texteditor/l10n/el.php
 owncloud/apps/files_texteditor/l10n/eo.php
 owncloud/apps/files_texteditor/l10n/es.php
@@ -1888,10 +1838,8 @@ owncloud/apps/files_texteditor/l10n/fi_FI.php
 owncloud/apps/files_texteditor/l10n/fr.php
 owncloud/apps/files_texteditor/l10n/gl.php
 owncloud/apps/files_texteditor/l10n/he.php
-owncloud/apps/files_texteditor/l10n/id.php
 owncloud/apps/files_texteditor/l10n/it.php
 owncloud/apps/files_texteditor/l10n/ja_JP.php
-owncloud/apps/files_texteditor/l10n/ka_GE.php
 owncloud/apps/files_texteditor/l10n/ku_IQ.php
 owncloud/apps/files_texteditor/l10n/lt_LT.php
 owncloud/apps/files_texteditor/l10n/nb_NO.php
@@ -1902,7 +1850,6 @@ owncloud/apps/files_texteditor/l10n/pt_PT.php
 owncloud/apps/files_texteditor/l10n/ro.php
 owncloud/apps/files_texteditor/l10n/ru.php
 owncloud/apps/files_texteditor/l10n/ru_RU.php
-owncloud/apps/files_texteditor/l10n/si_LK.php
 owncloud/apps/files_texteditor/l10n/sk_SK.php
 owncloud/apps/files_texteditor/l10n/sl.php
 owncloud/apps/files_texteditor/l10n/sv.php
@@ -2123,7 +2070,6 @@ owncloud/apps/gallery/l10n/ca.php
 owncloud/apps/gallery/l10n/cs_CZ.php
 owncloud/apps/gallery/l10n/da.php
 owncloud/apps/gallery/l10n/de.php
-owncloud/apps/gallery/l10n/de_DE.php
 owncloud/apps/gallery/l10n/el.php
 owncloud/apps/gallery/l10n/eo.php
 owncloud/apps/gallery/l10n/es.php
@@ -2141,7 +2087,6 @@ owncloud/apps/gallery/l10n/ia.php
 owncloud/apps/gallery/l10n/id.php
 owncloud/apps/gallery/l10n/it.php
 owncloud/apps/gallery/l10n/ja_JP.php
-owncloud/apps/gallery/l10n/ka_GE.php
 owncloud/apps/gallery/l10n/ko.php
 owncloud/apps/gallery/l10n/ku_IQ.php
 owncloud/apps/gallery/l10n/lb.php
@@ -2158,7 +2103,6 @@ owncloud/apps/gallery/l10n/pt_PT.php
 owncloud/apps/gallery/l10n/ro.php
 owncloud/apps/gallery/l10n/ru.php
 owncloud/apps/gallery/l10n/ru_RU.php
-owncloud/apps/gallery/l10n/si_LK.php
 owncloud/apps/gallery/l10n/sk_SK.php
 owncloud/apps/gallery/l10n/sl.php
 owncloud/apps/gallery/l10n/sr.php
@@ -2207,7 +2151,6 @@ owncloud/apps/impress/l10n/ca.php
 owncloud/apps/impress/l10n/cs_CZ.php
 owncloud/apps/impress/l10n/da.php
 owncloud/apps/impress/l10n/de.php
-owncloud/apps/impress/l10n/de_DE.php
 owncloud/apps/impress/l10n/el.php
 owncloud/apps/impress/l10n/eo.php
 owncloud/apps/impress/l10n/es.php
@@ -2217,10 +2160,8 @@ owncloud/apps/impress/l10n/eu.php
 owncloud/apps/impress/l10n/fi_FI.php
 owncloud/apps/impress/l10n/fr.php
 owncloud/apps/impress/l10n/gl.php
-owncloud/apps/impress/l10n/id.php
 owncloud/apps/impress/l10n/it.php
 owncloud/apps/impress/l10n/ja_JP.php
-owncloud/apps/impress/l10n/ka_GE.php
 owncloud/apps/impress/l10n/ku_IQ.php
 owncloud/apps/impress/l10n/lt_LT.php
 owncloud/apps/impress/l10n/nb_NO.php
@@ -2231,15 +2172,12 @@ owncloud/apps/impress/l10n/pt_PT.php
 owncloud/apps/impress/l10n/ro.php
 owncloud/apps/impress/l10n/ru.php
 owncloud/apps/impress/l10n/ru_RU.php
-owncloud/apps/impress/l10n/si_LK.php
 owncloud/apps/impress/l10n/sk_SK.php
 owncloud/apps/impress/l10n/sl.php
 owncloud/apps/impress/l10n/sv.php
 owncloud/apps/impress/l10n/th_TH.php
-owncloud/apps/impress/l10n/uk.php
 owncloud/apps/impress/l10n/vi.php
 owncloud/apps/impress/l10n/zh_CN.GB2312.php
-owncloud/apps/impress/l10n/zh_CN.php
 owncloud/apps/impress/l10n/zh_TW.php
 owncloud/apps/impress/lib/
 owncloud/apps/impress/lib/impress.php
@@ -2289,7 +2227,6 @@ owncloud/apps/media/l10n/ca.php
 owncloud/apps/media/l10n/cs_CZ.php
 owncloud/apps/media/l10n/da.php
 owncloud/apps/media/l10n/de.php
-owncloud/apps/media/l10n/de_DE.php
 owncloud/apps/media/l10n/el.php
 owncloud/apps/media/l10n/eo.php
 owncloud/apps/media/l10n/es.php
@@ -2307,7 +2244,6 @@ owncloud/apps/media/l10n/ia.php
 owncloud/apps/media/l10n/id.php
 owncloud/apps/media/l10n/it.php
 owncloud/apps/media/l10n/ja_JP.php
-owncloud/apps/media/l10n/ka_GE.php
 owncloud/apps/media/l10n/ko.php
 owncloud/apps/media/l10n/ku_IQ.php
 owncloud/apps/media/l10n/lb.php
@@ -2326,7 +2262,6 @@ owncloud/apps/media/l10n/pt_PT.php
 owncloud/apps/media/l10n/ro.php
 owncloud/apps/media/l10n/ru.php
 owncloud/apps/media/l10n/ru_RU.php
-owncloud/apps/media/l10n/si_LK.php
 owncloud/apps/media/l10n/sk_SK.php
 owncloud/apps/media/l10n/sl.php
 owncloud/apps/media/l10n/sr.php
@@ -2394,7 +2329,6 @@ owncloud/apps/tasks/l10n/ca.php
 owncloud/apps/tasks/l10n/cs_CZ.php
 owncloud/apps/tasks/l10n/da.php
 owncloud/apps/tasks/l10n/de.php
-owncloud/apps/tasks/l10n/de_DE.php
 owncloud/apps/tasks/l10n/el.php
 owncloud/apps/tasks/l10n/eo.php
 owncloud/apps/tasks/l10n/es.php
@@ -2406,7 +2340,6 @@ owncloud/apps/tasks/l10n/fi_FI.php
 owncloud/apps/tasks/l10n/fr.php
 owncloud/apps/tasks/l10n/gl.php
 owncloud/apps/tasks/l10n/he.php
-owncloud/apps/tasks/l10n/id.php
 owncloud/apps/tasks/l10n/it.php
 owncloud/apps/tasks/l10n/ja_JP.php
 owncloud/apps/tasks/l10n/lt_LT.php
@@ -2418,7 +2351,6 @@ owncloud/apps/tasks/l10n/pt_PT.php
 owncloud/apps/tasks/l10n/ro.php
 owncloud/apps/tasks/l10n/ru.php
 owncloud/apps/tasks/l10n/ru_RU.php
-owncloud/apps/tasks/l10n/si_LK.php
 owncloud/apps/tasks/l10n/sk_SK.php
 owncloud/apps/tasks/l10n/sl.php
 owncloud/apps/tasks/l10n/sv.php
@@ -2447,7 +2379,6 @@ owncloud/apps/updater/l10n/ca.php
 owncloud/apps/updater/l10n/cs_CZ.php
 owncloud/apps/updater/l10n/da.php
 owncloud/apps/updater/l10n/de.php
-owncloud/apps/updater/l10n/de_DE.php
 owncloud/apps/updater/l10n/el.php
 owncloud/apps/updater/l10n/eo.php
 owncloud/apps/updater/l10n/es.php
@@ -2461,7 +2392,6 @@ owncloud/apps/updater/l10n/he.php
 owncloud/apps/updater/l10n/id.php
 owncloud/apps/updater/l10n/it.php
 owncloud/apps/updater/l10n/ja_JP.php
-owncloud/apps/updater/l10n/ka_GE.php
 owncloud/apps/updater/l10n/ku_IQ.php
 owncloud/apps/updater/l10n/lt_LT.php
 owncloud/apps/updater/l10n/nl.php
@@ -2472,7 +2402,6 @@ owncloud/apps/updater/l10n/pt_PT.php
 owncloud/apps/updater/l10n/ro.php
 owncloud/apps/updater/l10n/ru.php
 owncloud/apps/updater/l10n/ru_RU.php
-owncloud/apps/updater/l10n/si_LK.php
 owncloud/apps/updater/l10n/sk_SK.php
 owncloud/apps/updater/l10n/sl.php
 owncloud/apps/updater/l10n/sv.php
@@ -2485,6 +2414,7 @@ owncloud/apps/updater/l10n/zh_TW.php
 owncloud/apps/updater/lib/
 owncloud/apps/updater/lib/backup.php
 owncloud/apps/updater/lib/downloader.php
+owncloud/apps/updater/lib/helper.php
 owncloud/apps/updater/lib/updater.php
 owncloud/apps/updater/templates/
 owncloud/apps/updater/templates/admin.php
@@ -2571,7 +2501,6 @@ owncloud/apps/user_migrate/l10n/ca.php
 owncloud/apps/user_migrate/l10n/cs_CZ.php
 owncloud/apps/user_migrate/l10n/da.php
 owncloud/apps/user_migrate/l10n/de.php
-owncloud/apps/user_migrate/l10n/de_DE.php
 owncloud/apps/user_migrate/l10n/el.php
 owncloud/apps/user_migrate/l10n/eo.php
 owncloud/apps/user_migrate/l10n/es.php
@@ -2581,7 +2510,6 @@ owncloud/apps/user_migrate/l10n/eu.php
 owncloud/apps/user_migrate/l10n/fi_FI.php
 owncloud/apps/user_migrate/l10n/fr.php
 owncloud/apps/user_migrate/l10n/gl.php
-owncloud/apps/user_migrate/l10n/id.php
 owncloud/apps/user_migrate/l10n/it.php
 owncloud/apps/user_migrate/l10n/ja_JP.php
 owncloud/apps/user_migrate/l10n/ko.php
@@ -2592,7 +2520,6 @@ owncloud/apps/user_migrate/l10n/pt_PT.php
 owncloud/apps/user_migrate/l10n/ro.php
 owncloud/apps/user_migrate/l10n/ru.php
 owncloud/apps/user_migrate/l10n/ru_RU.php
-owncloud/apps/user_migrate/l10n/si_LK.php
 owncloud/apps/user_migrate/l10n/sk_SK.php
 owncloud/apps/user_migrate/l10n/sl.php
 owncloud/apps/user_migrate/l10n/sv.php
@@ -2600,7 +2527,6 @@ owncloud/apps/user_migrate/l10n/th_TH.php
 owncloud/apps/user_migrate/l10n/uk.php
 owncloud/apps/user_migrate/l10n/vi.php
 owncloud/apps/user_migrate/l10n/zh_CN.GB2312.php
-owncloud/apps/user_migrate/l10n/zh_CN.php
 owncloud/apps/user_migrate/settings.php
 owncloud/apps/user_migrate/templates/
 owncloud/apps/user_migrate/templates/settings.php
@@ -2616,7 +2542,6 @@ owncloud/apps/user_openid/l10n/ca.php
 owncloud/apps/user_openid/l10n/cs_CZ.php
 owncloud/apps/user_openid/l10n/da.php
 owncloud/apps/user_openid/l10n/de.php
-owncloud/apps/user_openid/l10n/de_DE.php
 owncloud/apps/user_openid/l10n/el.php
 owncloud/apps/user_openid/l10n/eo.php
 owncloud/apps/user_openid/l10n/es.php
@@ -2626,8 +2551,6 @@ owncloud/apps/user_openid/l10n/eu.php
 owncloud/apps/user_openid/l10n/fi_FI.php
 owncloud/apps/user_openid/l10n/fr.php
 owncloud/apps/user_openid/l10n/gl.php
-owncloud/apps/user_openid/l10n/he.php
-owncloud/apps/user_openid/l10n/id.php
 owncloud/apps/user_openid/l10n/it.php
 owncloud/apps/user_openid/l10n/ja_JP.php
 owncloud/apps/user_openid/l10n/ko.php
@@ -2638,11 +2561,9 @@ owncloud/apps/user_openid/l10n/pt_PT.php
 owncloud/apps/user_openid/l10n/ro.php
 owncloud/apps/user_openid/l10n/ru.php
 owncloud/apps/user_openid/l10n/ru_RU.php
-owncloud/apps/user_openid/l10n/si_LK.php
 owncloud/apps/user_openid/l10n/sl.php
 owncloud/apps/user_openid/l10n/sv.php
 owncloud/apps/user_openid/l10n/th_TH.php
-owncloud/apps/user_openid/l10n/uk.php
 owncloud/apps/user_openid/l10n/vi.php
 owncloud/apps/user_openid/l10n/zh_CN.GB2312.php
 owncloud/apps/user_openid/l10n/zh_CN.php
@@ -2656,6 +2577,7 @@ owncloud/apps/user_webdavauth/
 owncloud/apps/user_webdavauth/appinfo/
 owncloud/apps/user_webdavauth/appinfo/app.php
 owncloud/apps/user_webdavauth/appinfo/info.xml
+owncloud/apps/user_webdavauth/appinfo/version
 owncloud/apps/user_webdavauth/settings.php
 owncloud/apps/user_webdavauth/templates/
 owncloud/apps/user_webdavauth/templates/settings.php

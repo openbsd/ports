@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2012/10/26 12:10:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2012/11/14 12:19:23 ajacoutot Exp $
 
 COMMENT=	easy and universal access to shared and/or personnal files
 
-V=		4.5.1
+V=		4.5.2
 DISTNAME=	owncloud-${V}
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	1
 
 CATEGORIES=	www
 
@@ -29,7 +28,7 @@ MASTER_SITES=	${HOMEPAGE}releases/
 
 # Yubikey support
 MASTER_SITES0=		http://nerd.hu/
-PATCHFILES=		owncloud-${V}-yubikey.patch:0
+PATCHFILES=		owncloud-4.5.1-yubikey.patch:0
 PATCH_DIST_STRIP=	-p1
 
 MODULES=	lang/php
