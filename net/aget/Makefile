@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2012/10/15 15:18:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2012/11/14 12:53:59 gonzalo Exp $
 
 COMMENT =	multi threaded HTTP download accelerator
-DISTNAME =	aget-0.4
+DISTNAME =	aget-0.4.1
 CATEGORIES =	net
 
 HOMEPAGE=	http://www.enderunix.org/aget/
