@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2012/11/11 19:00:02 ajacoutot Exp $
-
-BROKEN=		https://bugzilla.gnome.org/show_bug.cgi?id=687322
+# $OpenBSD: Makefile,v 1.42 2012/11/14 12:37:03 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +6,7 @@ COMMENT=	gettext(1) files editor for GNOME
 
 GNOME_PROJECT=	gtranslator
 GNOME_VERSION=	2.91.5
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	textproc devel
 
