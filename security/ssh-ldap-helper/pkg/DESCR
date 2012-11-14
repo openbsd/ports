@@ -1,0 +1,3 @@
+ssh-ldap-helper is a small helper for sshd's AuthorizedKeysCommand
+config keyword, allowing to fetch the AuthorizedKeys from an LDAP
+directory with a given schema.

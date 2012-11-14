@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/11/14 18:42:50 landry Exp $
+@bin libexec/ssh-ldap-helper
+libexec/ssh-ldap-wrapper
+@man man/man5/ssh-ldap.conf.5
+@man man/man8/ssh-ldap-helper.8
+share/doc/ssh-ldap-helper/
+share/doc/ssh-ldap-helper/HOWTO.ldap-keys
+share/doc/ssh-ldap-helper/openssh-lpk-openldap.schema
+share/examples/ssh-ldap-helper/
+share/examples/ssh-ldap-helper/ldap.conf
+@sample ${SYSCONFDIR}/ssh/ldap.conf
