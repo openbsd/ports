@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.13 2012/10/16 15:49:24 ajacoutot Exp $
+$OpenBSD: README-main,v 1.14 2012/11/14 09:31:21 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -13,6 +13,19 @@ The GNOME desktop is composed of 2 meta-packages:
 The "gnome" package is focused on generic usage to give the user the
 choice to install his favorite applications for daily usage (i.e. PIM,
 office and development type packages have been left out on purpose).
+
+OpenGL and drm(4)
+=================
+GNOME requires a 3D accelerated display. By default, the drm(4) device
+is only accessible by "root" and members of the "wheel" group. Both GDM
+(when used to login) and users need access to /dev/drm0 which can be
+done by running the following command as root (note that there may be
+some security implications in doing this):
+    chmod 0666 /dev/drm0
+
+Another solution would be to create a new group (e.g. "video"), change
+the group ownership of /dev/drm0 accordingly and put the users and
+"_gdm" into that group.
 
 Starting GNOME
 ==============
@@ -50,6 +63,7 @@ _after_ "dbus_daemon".
 
 Cheat sheet
 ===========
+* crw-rw-rw-  1 root  wheel   88,   0 Nov 10 12:43 /dev/drm0
 * /etc/rc.conf.local
     multicast_host=YES
     pkg_scripts="${pkg_scripts} dbus_daemon avahi_daemon gdm"
