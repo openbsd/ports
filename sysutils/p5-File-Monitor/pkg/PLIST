@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/11/14 09:19:39 jasper Exp $
+${P5SITE}/File/
+${P5SITE}/File/Monitor/
+${P5SITE}/File/Monitor.pm
+${P5SITE}/File/Monitor/Base.pm
+${P5SITE}/File/Monitor/Delta.pm
+${P5SITE}/File/Monitor/Object.pm
+@man man/man3p/File::Monitor.3p
+@man man/man3p/File::Monitor::Base.3p
+@man man/man3p/File::Monitor::Delta.3p
+@man man/man3p/File::Monitor::Object.3p
+share/examples/p5-File-Monitor/
+share/examples/p5-File-Monitor/monitor.pl
