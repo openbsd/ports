@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2012/09/27 07:20:22 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2012/11/14 07:06:57 ajacoutot Exp $
 share/icons/gnome/scalable/
 share/icons/gnome/scalable/actions/
 share/icons/gnome/scalable/actions/action-unavailable-symbolic.svg
@@ -212,6 +212,7 @@ share/icons/gnome/scalable/emotes/face-worried-symbolic.svg
 share/icons/gnome/scalable/emotes/face-yawn-symbolic.svg
 share/icons/gnome/scalable/mimetypes/
 share/icons/gnome/scalable/mimetypes/application-certificate-symbolic.svg
+share/icons/gnome/scalable/mimetypes/application-rss+xml-symbolic.svg
 share/icons/gnome/scalable/mimetypes/audio-x-generic-symbolic.svg
 share/icons/gnome/scalable/mimetypes/package-x-generic-symbolic.svg
 share/icons/gnome/scalable/mimetypes/text-x-generic-symbolic.svg
