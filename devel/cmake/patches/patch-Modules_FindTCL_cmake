@@ -1,6 +1,6 @@
-$OpenBSD: patch-Modules_FindTCL_cmake,v 1.5 2012/11/11 17:13:32 dcoppa Exp $
---- Modules/FindTCL.cmake.orig	Wed Oct 31 16:32:05 2012
-+++ Modules/FindTCL.cmake	Sat Nov  3 17:38:54 2012
+$OpenBSD: patch-Modules_FindTCL_cmake,v 1.6 2012/11/15 08:43:25 dcoppa Exp $
+--- Modules/FindTCL.cmake.orig	Tue Nov  6 20:41:36 2012
++++ Modules/FindTCL.cmake	Mon Nov 12 14:05:36 2012
 @@ -48,19 +48,36 @@ include(CMakeFindFrameworks)
  include(FindTclsh)
  include(FindWish)

@@ -1,9 +1,23 @@
-$OpenBSD: patch-Modules_Platform_OpenBSD_cmake,v 1.7 2012/11/11 17:13:32 dcoppa Exp $
---- Modules/Platform/OpenBSD.cmake.orig	Wed Oct 31 16:32:05 2012
-+++ Modules/Platform/OpenBSD.cmake	Fri Nov  2 08:28:09 2012
-@@ -1,5 +1,24 @@
- include(Platform/NetBSD)
+$OpenBSD: patch-Modules_Platform_OpenBSD_cmake,v 1.8 2012/11/15 08:43:25 dcoppa Exp $
+--- Modules/Platform/OpenBSD.cmake.orig	Tue Nov  6 20:41:36 2012
++++ Modules/Platform/OpenBSD.cmake	Tue Nov 13 10:59:45 2012
+@@ -1,5 +1,37 @@
+-include(Platform/NetBSD)
++if(EXISTS /usr/include/dlfcn.h)
++  set(CMAKE_DL_LIBS "")
++  set(CMAKE_C_COMPILE_OPTIONS_PIC "-fPIC")
++  set(CMAKE_C_COMPILE_OPTIONS_PIE "-fPIE")
++  set(CMAKE_SHARED_LIBRARY_C_FLAGS "-fPIC")            # -pic
++  set(CMAKE_SHARED_LIBRARY_CREATE_C_FLAGS "-shared")       # -shared
++  set(CMAKE_SHARED_LIBRARY_LINK_C_FLAGS "")         # +s, flag for exe link to use shared lib
++  set(CMAKE_SHARED_LIBRARY_RUNTIME_C_FLAG "-Wl,-rpath,")       # -rpath
++  set(CMAKE_SHARED_LIBRARY_RUNTIME_C_FLAG_SEP ":")   # : or empty
++  set(CMAKE_SHARED_LIBRARY_RPATH_LINK_C_FLAG "-Wl,-rpath-link,")
++  set(CMAKE_EXE_EXPORTS_C_FLAG "-Wl,--export-dynamic")
++endif()
  
++include(Platform/UnixPaths)
++
 +if($ENV{LOCALBASE})
 +  set(OPENBSD_LOCALBASE $ENV{LOCALBASE})
 +else($ENV{LOCALBASE})
@@ -26,7 +40,7 @@ $OpenBSD: patch-Modules_Platform_OpenBSD_cmake,v 1.7 2012/11/11 17:13:32 dcoppa 
  # On OpenBSD, the compile time linker does not share it's configuration with
  # the runtime linker.  This will extract the library search paths from the
  # system's ld.so.hints file which will allow CMake to set the appropriate
-@@ -16,3 +35,9 @@ if(NOT CMAKE_PLATFORM_RUNTIME_PATH)
+@@ -16,3 +48,9 @@ if(NOT CMAKE_PLATFORM_RUNTIME_PATH)
  endif()
  
  set_property(GLOBAL PROPERTY FIND_LIBRARY_USE_OPENBSD_VERSIONING 1)

@@ -1,62 +1,24 @@
-$OpenBSD: patch-Tests_CMakeLists_txt,v 1.3 2012/11/11 17:13:32 dcoppa Exp $
+$OpenBSD: patch-Tests_CMakeLists_txt,v 1.4 2012/11/15 08:43:25 dcoppa Exp $
 
-Remove troublesome "Qt4Deploy" and "CTest.UpdateCVS" tests
-(from gentoo's package/dev-util/cmake/files/)
+Disable CTestTestUpload test because it requires Internet access.
 
---- Tests/CMakeLists.txt.orig	Fri Nov  2 08:22:52 2012
-+++ Tests/CMakeLists.txt	Fri Nov  2 08:24:10 2012
-@@ -271,23 +271,6 @@ if(BUILD_TESTING)
-       )
-     list(APPEND TEST_BUILD_DIRS "${CMake_BINARY_DIR}/Tests/BundleUtilities")
+--- Tests/CMakeLists.txt.orig	Tue Nov 13 14:03:57 2012
++++ Tests/CMakeLists.txt	Tue Nov 13 14:04:56 2012
+@@ -1707,17 +1707,6 @@ ${CMake_BINARY_DIR}/bin/cmake -DVERSION=master -P ${CM
+     FAIL_REGULAR_EXPRESSION "SegFault")
  
--    # run test for DeployQt4 on supported platforms/compilers (which depends on BundleUtilities)
--    # this test also depends on the existence of the standard qtiff plugin
--    if(QT4_WORKS AND QT_QTSQL_FOUND)
--      add_test(Qt4Deploy ${CMAKE_CTEST_COMMAND}
--        --build-and-test
--        "${CMake_SOURCE_DIR}/Tests/Qt4Deploy"
--        "${CMake_BINARY_DIR}/Tests/Qt4Deploy"
--        --build-generator ${CMAKE_TEST_GENERATOR}
--        --build-makeprogram ${CMAKE_TEST_MAKEPROGRAM}
--        --build-project Qt4Deploy
--        --build-options
--        -DCMAKE_BUILD_TYPE:STRING=${CMAKE_BUILD_TYPE}
--        -DQT_QMAKE_EXECUTABLE:FILEPATH=${QT_QMAKE_EXECUTABLE}
--        )
--      list(APPEND TEST_BUILD_DIRS "${CMake_BINARY_DIR}/Tests/Qt4Deploy")
--    endif()
+   configure_file(
+-    "${CMake_SOURCE_DIR}/Tests/CTestTestUpload/test.cmake.in"
+-    "${CMake_BINARY_DIR}/Tests/CTestTestUpload/test.cmake"
+-    @ONLY ESCAPE_QUOTES)
+-  add_test(CTestTestUpload ${CMAKE_CTEST_COMMAND}
+-    -S "${CMake_BINARY_DIR}/Tests/CTestTestUpload/test.cmake" -V
+-    --output-log "${CMake_BINARY_DIR}/Tests/CTestTestUpload/testOut.log"
+-    )
+-  set_tests_properties(CTestTestUpload PROPERTIES
+-    PASS_REGULAR_EXPRESSION "Upload\\.xml")
 -
-   endif()
-   endif()
- 
-@@ -1585,30 +1568,6 @@ ${CMake_BINARY_DIR}/bin/cmake -DVERSION=master -P ${CM
-         -P "${CMake_BINARY_DIR}/Tests/CTestUpdateSVN.cmake"
-         )
-       list(APPEND TEST_BUILD_DIRS "${CMake_BINARY_DIR}/Tests/${CTestUpdateSVN_DIR}")
--    endif()
--
--    # Test CTest Update with CVS
--    if(EXISTS ${CMAKE_ROOT}/Modules/FindCVS.cmake)
--      find_package(CVS QUIET)
--    else()
--      find_program(CVS_EXECUTABLE NAMES cvs)
--      set(CVS_FOUND ${CVS_EXECUTABLE})
--    endif()
--    set(CTEST_TEST_UPDATE_CVS ${CVS_FOUND})
--    if(CTEST_TEST_UPDATE_CVS AND NOT UNIX)
--      if("${CVS_EXECUTABLE}" MATCHES "cygwin")
--        message(STATUS "No CTest.UpdateCVS test with cygwin cvs.exe outside cygwin!")
--        set(CTEST_TEST_UPDATE_CVS 0)
--      endif()
--    endif()
--    if(CTEST_TEST_UPDATE_CVS)
--      set(CTestUpdateCVS_DIR "CTest UpdateCVS")
--      configure_file("${CMake_SOURCE_DIR}/Tests/CTestUpdateCVS.cmake.in"
--        "${CMake_BINARY_DIR}/Tests/CTestUpdateCVS.cmake" @ONLY)
--      add_test(CTest.UpdateCVS ${CMAKE_CMAKE_COMMAND}
--        -P "${CMake_BINARY_DIR}/Tests/CTestUpdateCVS.cmake"
--        )
--      list(APPEND TEST_BUILD_DIRS "${CMake_BINARY_DIR}/Tests/${CTestUpdateCVS_DIR}")
-     endif()
- 
-     # Test CTest Update with BZR
+-  configure_file(
+     "${CMake_SOURCE_DIR}/Tests/CTestTestConfigFileInBuildDir/test1.cmake.in"
+     "${CMake_BINARY_DIR}/Tests/CTestTestConfigFileInBuildDir1/test1.cmake"
+     @ONLY ESCAPE_QUOTES)

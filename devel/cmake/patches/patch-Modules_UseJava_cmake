@@ -1,6 +1,6 @@
-$OpenBSD: patch-Modules_UseJava_cmake,v 1.4 2012/08/31 12:28:31 dcoppa Exp $
---- Modules/UseJava.cmake.orig	Wed Apr 18 20:10:54 2012
-+++ Modules/UseJava.cmake	Fri Jun 15 11:38:50 2012
+$OpenBSD: patch-Modules_UseJava_cmake,v 1.5 2012/11/15 08:43:25 dcoppa Exp $
+--- Modules/UseJava.cmake.orig	Tue Nov  6 20:41:36 2012
++++ Modules/UseJava.cmake	Mon Nov 12 14:06:18 2012
 @@ -465,7 +465,7 @@ function (find_jar VARIABLE)
      set(_jar_versions)
      set(_jar_paths

@@ -1,6 +1,6 @@
-$OpenBSD: patch-Modules_FindJava_cmake,v 1.8 2012/11/11 17:13:31 dcoppa Exp $
---- Modules/FindJava.cmake.orig	Wed Oct 31 16:32:05 2012
-+++ Modules/FindJava.cmake	Fri Nov  2 10:36:27 2012
+$OpenBSD: patch-Modules_FindJava_cmake,v 1.9 2012/11/15 08:43:25 dcoppa Exp $
+--- Modules/FindJava.cmake.orig	Tue Nov  6 20:41:36 2012
++++ Modules/FindJava.cmake	Mon Nov 12 14:01:59 2012
 @@ -56,6 +56,8 @@
  # (To distribute this file outside of CMake, substitute the full
  #  License text for the above reference.)

@@ -1,24 +1,30 @@
-$OpenBSD: patch-Modules_FindFreetype_cmake,v 1.1 2012/11/11 17:13:31 dcoppa Exp $
+$OpenBSD: patch-Modules_FindFreetype_cmake,v 1.2 2012/11/15 08:43:25 dcoppa Exp $
 
 Unbreak
 
---- Modules/FindFreetype.cmake.orig	Wed Oct 31 16:32:05 2012
-+++ Modules/FindFreetype.cmake	Mon Nov  5 23:07:25 2012
-@@ -49,7 +49,7 @@ find_path(FREETYPE_INCLUDE_DIR_ft2build ft2build.h
+--- Modules/FindFreetype.cmake.orig	Tue Nov  6 20:41:36 2012
++++ Modules/FindFreetype.cmake	Mon Nov 12 13:59:46 2012
+@@ -46,6 +46,7 @@ find_path(FREETYPE_INCLUDE_DIR_ft2build ft2build.h
+   HINTS
+     ENV FREETYPE_DIR
+   PATHS
++    ${X11BASE}
      /usr/local/X11R6
      /usr/local/X11
      /usr/freeware
--  PATH_SUFFIXES include/freetype2 include
-+  PATH_SUFFIXES freetype2
- )
- 
- find_path(FREETYPE_INCLUDE_DIR_freetype2 freetype/config/ftheader.h
-@@ -59,7 +59,7 @@ find_path(FREETYPE_INCLUDE_DIR_freetype2 freetype/conf
+@@ -56,6 +57,7 @@ find_path(FREETYPE_INCLUDE_DIR_freetype2 freetype/conf
+   HINTS
+     ENV FREETYPE_DIR
+   PATHS
++    ${X11BASE}
      /usr/local/X11R6
      /usr/local/X11
      /usr/freeware
--  PATH_SUFFIXES include/freetype2 include
-+  PATH_SUFFIXES freetype2
- )
- 
- find_library(FREETYPE_LIBRARY
+@@ -68,6 +70,7 @@ find_library(FREETYPE_LIBRARY
+     ENV FREETYPE_DIR
+   PATH_SUFFIXES lib
+   PATHS
++  ${X11BASE}
+   /usr/local/X11R6
+   /usr/local/X11
+   /usr/freeware

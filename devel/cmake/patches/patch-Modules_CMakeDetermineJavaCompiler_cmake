@@ -1,6 +1,6 @@
-$OpenBSD: patch-Modules_CMakeDetermineJavaCompiler_cmake,v 1.4 2012/11/11 17:13:31 dcoppa Exp $
---- Modules/CMakeDetermineJavaCompiler.cmake.orig	Wed Oct 31 16:32:05 2012
-+++ Modules/CMakeDetermineJavaCompiler.cmake	Fri Nov  2 08:11:22 2012
+$OpenBSD: patch-Modules_CMakeDetermineJavaCompiler_cmake,v 1.5 2012/11/15 08:43:25 dcoppa Exp $
+--- Modules/CMakeDetermineJavaCompiler.cmake.orig	Tue Nov  6 20:41:36 2012
++++ Modules/CMakeDetermineJavaCompiler.cmake	Mon Nov 12 14:08:32 2012
 @@ -16,6 +16,8 @@
  # NOTE, a generator may set CMAKE_Java_COMPILER before
  # loading this file to force a compiler.
