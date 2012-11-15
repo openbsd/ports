@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_daemon_dbus_dbuscpp_makecode_pl,v 1.1 2010/06/18 15:09:41 sthen Exp $
---- src/daemon/dbus/dbuscpp/makecode.pl.orig	Wed Feb  3 19:03:07 2010
-+++ src/daemon/dbus/dbuscpp/makecode.pl	Fri Jun 18 14:50:45 2010
+$OpenBSD: patch-strigidaemon_bin_daemon_dbus_dbuscpp_makecode_pl,v 1.1 2012/11/15 00:04:30 sthen Exp $
+--- strigidaemon/bin/daemon/dbus/dbuscpp/makecode.pl.orig	Thu Nov 10 13:39:46 2011
++++ strigidaemon/bin/daemon/dbus/dbuscpp/makecode.pl	Thu Nov 10 13:38:07 2011
 @@ -325,7 +325,7 @@ print FH "#include \"$relativeinterfaceheader\"\n";
  print FH "#define DBUS_API_SUBJECT_TO_CHANGE 1\n";
  print FH "#include <dbus/dbus.h>\n";

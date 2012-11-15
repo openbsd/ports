@@ -1,45 +1,53 @@
-# $OpenBSD: Makefile,v 1.14 2012/03/29 13:38:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2012/11/15 00:04:30 sthen Exp $
 
-SHARED_ONLY =	Yes
 COMMENT =	document indexer
 CATEGORIES =	databases devel textproc sysutils
 
-HOMEPAGE =	http://strigi.sourceforge.net
-DISTNAME =	strigi-0.7.2
+HOMEPAGE =	https://projects.kde.org/projects/kdesupport/strigi/
 
-REVISION =	0
+# hand-rolled from strigi* submodules at quickgit.kde.org
+DISTNAME =	strigi-0.7.7pl1
+SHARED_ONLY =	Yes
 
-EXTRACT_SUFX =	.tar.bz2
-MASTER_SITES =	http://www.vandenoever.info/software/strigi/ \
-		http://spacehopper.org/mirrors/
+MASTER_SITES =	http://spacehopper.org/mirrors/ \
+		ftp://3ps.if.ua/pub/OpenBSD/distfiles/ \
+		http://www.ohvost.ru/dnl/kde/src/
 
 # LGPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
+PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =	Yes
+PERMIT_DISTFILES_FTP =		Yes
 
-SHARED_LIBS +=  searchclient       1.0 # .0.5
-SHARED_LIBS +=  streamanalyzer     1.0 # .0.5
-SHARED_LIBS +=  streams            1.0 # .0.5
-SHARED_LIBS +=  strigihtmlgui      1.0 # .0.5
-SHARED_LIBS +=  strigiqtdbusclient 1.0 # .0.5
+SHARED_LIBS +=  searchclient       2.0
+SHARED_LIBS +=  streamanalyzer     2.0
+SHARED_LIBS +=  streams            2.0
+SHARED_LIBS +=  strigihtmlgui      2.0
+SHARED_LIBS +=  strigiqtdbusclient 2.0
 
-LIB_DEPENDS =	clucene-core->=0.9.21:textproc/clucene \
-		archivers/bzip2 \
+BUILD_DEPENDS =	devel/cppunit \
+		devel/boost
+
+LIB_DEPENDS =	archivers/bzip2 \
+		graphics/exiv2 \
+		graphics/ffmpeg \
+		sysutils/gamin \
+		textproc/clucene>=2.3 \
 		textproc/libxml \
-		x11/qt4 \
-		x11/dbus \
-		graphics/exiv2
+		x11/dbus
 
-WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender bz2 c clucene>=1 dbus-1 exiv2 \
-	fontconfig freetype glib-2.0 gthread-2.0 lib/qt4/QtCore \
-	lib/qt4/QtDBus lib/qt4/QtGui m png pthread stdc++ xml2 z ${MODLIBICONV_WANTLIB}
+WANTLIB =  lib/qt4/QtDBus lib/qt4/QtGui
+WANTLIB += bz2 c clucene-core clucene-shared dbus-1 exiv2 fam m pthread
+WANTLIB += stdc++ xml2 z avcodec avformat avutil swscale
 
-MODULES +=		devel/cmake converters/libiconv
-CONFIGURE_STYLE =	cmake
-SEPARATE_BUILD =	Yes
+MODULES =		devel/cmake \
+			converters/libiconv \
+			x11/qt4
 
-CONFIGURE_ARGS +=	-DHyperEstraier_FOUND:BOOL=0
+# Not ported
+CONFIGURE_ARGS =	-DENABLE_LOG4CXX:Bool=No
+
+# Depends on Java
+CONFIGURE_ARGS +=	-DENABLE_REGENERATEXSD:Bool=No
 
 .include <bsd.port.mk>
