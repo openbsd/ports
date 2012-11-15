@@ -1,54 +1,73 @@
-$OpenBSD: patch-src_libtracker-miner_tracker-monitor_c,v 1.7 2012/04/11 07:39:37 ajacoutot Exp $
+$OpenBSD: patch-src_libtracker-miner_tracker-monitor_c,v 1.8 2012/11/15 08:38:03 ajacoutot Exp $
 
-Recognize the gio-kqueue monitoring backend.
-(not to be pushed upstream before the glib changes are there first)
+https://bugzilla.gnome.org/show_bug.cgi?id=688371
 
---- src/libtracker-miner/tracker-monitor.c.orig	Mon Jan  2 23:34:02 2012
-+++ src/libtracker-miner/tracker-monitor.c	Wed Apr 11 08:54:38 2012
-@@ -23,6 +23,13 @@
+--- src/libtracker-miner/tracker-monitor.c.orig	Wed Feb 15 16:19:19 2012
++++ src/libtracker-miner/tracker-monitor.c	Thu Nov 15 09:01:55 2012
+@@ -23,6 +23,14 @@
  #include <string.h>
  #include <gio/gio.h>
  
++#if defined (__OpenBSD__) || defined (__FreeBSD__) || defined (__NetBSD__)
 +/* getrlimit(2) */
-+#if defined (__OpenBSD__)
 +#include <sys/types.h>
 +#include <sys/time.h>
 +#include <sys/resource.h>
++#define TRACKER_MONITOR_KQUEUE
 +#endif
 +
  #include "tracker-monitor.h"
  #include "tracker-marshal.h"
  
-@@ -224,6 +231,9 @@ tracker_monitor_init (TrackerMonitor *object)
- 	const gchar           *name;
- 	GError                *error = NULL;
- 
-+#if defined (__OpenBSD__)
-+	struct rlimit rl;
+@@ -119,6 +127,9 @@ static void           tracker_monitor_get_property (GO
+                                                     guint           prop_id,
+                                                     GValue         *value,
+                                                     GParamSpec     *pspec);
++#ifdef TRACKER_MONITOR_KQUEUE
++static guint          get_kqueue_limit            (void);
 +#endif
- 	object->priv = TRACKER_MONITOR_GET_PRIVATE (object);
- 
- 	priv = object->priv;
-@@ -296,6 +306,22 @@ tracker_monitor_init (TrackerMonitor *object)
+ static guint          get_inotify_limit            (void);
+ static GFileMonitor * directory_monitor_new        (TrackerMonitor *monitor,
+                                                     GFile          *file);
+@@ -296,6 +307,14 @@ tracker_monitor_init (TrackerMonitor *object)
  			 */
  			priv->monitor_limit = MAX (priv->monitor_limit, 0);
  		}
-+#if defined (__OpenBSD__)
++#if defined TRACKER_MONITOR_KQUEUE
 +		else if (strcmp (name, "GKqueueDirectoryMonitor") == 0) {
 +			/* Using kqueue(2) */
-+			g_message ("Monitor backend is kqueue(2)");
-+			if (getrlimit (RLIMIT_NOFILE, &rl) == 0) {
-+				priv->monitor_limit = (rl.rlim_cur*90)/100;
-+			} else {
-+				priv->monitor_limit = 400;
-+			}
-+			/*  Prevent from opening an insame amount of FDs
-+			 *  (kqueue(2) opens one file descriptor per monitor).
-+			 */
-+			if (priv->monitor_limit > 2048)
-+				priv->monitor_limit = 2048;
++			g_message ("Monitor backend is kqueue");
++
++			priv->monitor_limit = get_kqueue_limit ();
 +		}
 +#endif
  		else if (strcmp (name, "GFamDirectoryMonitor") == 0) {
  			/* Using Fam */
  			g_message ("Monitor backend is Fam");
+@@ -398,6 +417,26 @@ tracker_monitor_get_property (GObject      *object,
+ 		G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+ 	}
+ }
++
++#ifdef TRACKER_MONITOR_KQUEUE
++static guint
++get_kqueue_limit (void)
++{
++	struct rlimit rl;
++	guint limit = 400;
++
++	if (getrlimit (RLIMIT_NOFILE, &rl) == 0)
++		limit = (rl.rlim_cur*90)/100;
++
++	/*  Prevent from opening an insame amount of FDs
++	 *  (kqueue(2) opens one file descriptor per monitor).
++	 */
++	if (limit > 2048)
++		limit = 2048;
++
++	return limit;
++}
++#endif /* TRACKER_MONITOR_KQUEUE */
+ 
+ static guint
+ get_inotify_limit (void)
