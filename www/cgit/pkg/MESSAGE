@@ -4,5 +4,5 @@ to ${PREFIX}/conf/modules/cgit.conf.
 
 ln -s ../modules.sample/cgit.conf ${PREFIX}/conf/modules
 
-By default, The cgitrc config file is searched in
+By default, the cgitrc config file is searched in
 ${PREFIX}/conf/cgitrc

@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.7 2012/10/01 16:13:23 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2012/11/15 19:58:48 sthen Exp $
 
 COMMENT =	web frontend for git repositories
 
-DISTNAME =	cgit-0.9.0.2
-REVISION =	1
+DISTNAME =	cgit-0.9.1
 CATEGORIES =	www devel
 
-DISTFILES = 	cgit-0.9.0.2.tar.gz:0 \
+DISTFILES =	cgit-0.9.1.tar.gz:0 \
 		git-1.7.4.5.tar.gz:1
 
-MASTER_SITES0 =		http://distfiles.bsdfrog.org/
-MASTER_SITES1 =		ftp://ftp.kernel.org/pub/software/scm/git/ \
+MASTER_SITES0 =		http://git.zx2c4.com/cgit/snapshot/
+MASTER_SITES1 =		http://ftp.kernel.org/pub/software/scm/git/ \
+			ftp://ftp.kernel.org/pub/software/scm/git/ \
 			ftp://ftp.de.kernel.org/pub/software/scm/git/ \
 			ftp://ftp.au.kernel.org/pub/software/scm/git/
-HOMEPAGE =	http://hjemli.net/git/cgit/about/
+HOMEPAGE =		http://git.zx2c4.com/cgit/about/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
