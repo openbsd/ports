@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2012/10/03 08:16:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2012/11/15 19:58:47 jasper Exp $
 
 COMMENT=		library implementing the OAuth Core RFC 5849 standard
 
-DISTNAME=		liboauth-0.9.7
+DISTNAME=		liboauth-1.0.0
 SHARED_LIBS +=  oauth                8.3      # 8.4
 CATEGORIES=		net
 
