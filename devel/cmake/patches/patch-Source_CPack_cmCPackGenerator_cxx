@@ -1,0 +1,16 @@
+$OpenBSD: patch-Source_CPack_cmCPackGenerator_cxx,v 1.1 2012/11/15 12:29:08 dcoppa Exp $
+
+Fix typo
+(upstream git commit 572d9e1e057e64ae9eccda5db8b08c3164a34bc4)
+
+--- Source/CPack/cmCPackGenerator.cxx.orig	Thu Nov 15 13:02:31 2012
++++ Source/CPack/cmCPackGenerator.cxx	Thu Nov 15 13:03:11 2012
+@@ -208,7 +208,7 @@ int cmCPackGenerator::InstallProject()
+     {
+     cmCPackLogger(cmCPackLog::LOG_ERROR,
+       "Problem creating temporary directory: "
+-                  << (tempInstallDirectory ? tempInstallDirectory : "(NULL}")
++                  << (tempInstallDirectory ? tempInstallDirectory : "(NULL)")
+                   << std::endl);
+     return 0;
+     }
