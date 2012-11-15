@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2012/09/25 16:32:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2012/11/15 19:12:27 ajacoutot Exp $
 
 # XXX remove @exec-update when we branch 5.4-current
 
 COMMENT=	humanist sans-serif font family
 
-GNOME_VERSION=	0.0.10.1
+GNOME_VERSION=	0.0.11
 GNOME_PROJECT=	cantarell-fonts
 
 CATEGORIES=	fonts x11
