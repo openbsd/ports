@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_keyvalue_c,v 1.1 2012/11/15 10:46:58 brad Exp $
+
+Add PATCH method.
+
+--- src/keyvalue.c.orig	Wed Nov  7 21:34:07 2012
++++ src/keyvalue.c	Wed Nov  7 21:32:47 2012
+@@ -22,6 +22,7 @@ static keyvalue http_methods[] = {
+ 	{ HTTP_METHOD_OPTIONS, "OPTIONS" },
+ 	{ HTTP_METHOD_MKCOL, "MKCOL" },
+ 	{ HTTP_METHOD_PUT, "PUT" },
++	{ HTTP_METHOD_PATCH, "PATCH" },
+ 	{ HTTP_METHOD_DELETE, "DELETE" },
+ 	{ HTTP_METHOD_COPY, "COPY" },
+ 	{ HTTP_METHOD_MOVE, "MOVE" },

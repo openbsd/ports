@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_response_c,v 1.5 2012/11/15 10:46:58 brad Exp $
+
+Handle ENAMETOOLONG, return 404 Not Found.
+
+--- src/response.c.orig	Wed Nov  7 21:34:30 2012
++++ src/response.c	Wed Nov  7 21:32:13 2012
+@@ -611,6 +611,8 @@ handler_t http_response_prepare(server *srv, connectio
+ 
+ 				buffer_reset(con->physical.path);
+ 				return HANDLER_FINISHED;
++			case ENAMETOOLONG:
++				/* file name to be read was too long. return 404 */
+ 			case ENOENT:
+ 				con->http_status = 404;
+ 
