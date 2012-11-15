@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_Makefile_in,v 1.2 2012/10/16 07:28:42 ajacoutot Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.3 2012/11/15 14:41:06 ajacoutot Exp $
 
 cc1: error: unrecognized command line option "-Wno-unused-but-set-variable"
 
---- src/Makefile.in.orig	Mon Oct 15 23:31:22 2012
-+++ src/Makefile.in	Tue Oct 16 09:13:32 2012
-@@ -374,7 +374,6 @@ AM_CFLAGS = \
+--- src/Makefile.in.orig	Sat Nov 10 16:20:58 2012
++++ src/Makefile.in	Thu Nov 15 15:14:14 2012
+@@ -383,7 +383,6 @@ AM_CFLAGS = \
  	$(BAOBAB_CFLAGS)		\
  	-I$(top_srcdir)/libgd		\
  	-Wall				\
