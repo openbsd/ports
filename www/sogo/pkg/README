@@ -1,4 +1,4 @@
-# $OpenBSD: README,v 1.7 2012/10/30 15:09:54 sebastia Exp $
+# $OpenBSD: README,v 1.8 2012/11/15 10:25:50 giovanni Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -126,6 +126,13 @@ and its dependencies into the chroot environment. Further you have to
 make sure the following python modules are also available in the
 chroot environment: cgi, memcache, os, sys. For the memcache
 module you have to install the py-memcached package.
+
+A note on using Thunderbird integrator
+=======================
+If you are going to use Thunderbird integrator you will need the php
+script installed on ${TRUEPREFIX}/share/doc/sogo/updates.php.
+You should copy it under /var/www/htdocs, install the php package and
+follow the instuctions under ${TRUEPREFIX}/share/doc/sogo/SOGo_Mozilla_Thunderbird_Configuration.odt.
 
 SOGo configuration example
 ===================================
