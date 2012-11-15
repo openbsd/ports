@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.227 2012/11/12 13:38:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.228 2012/11/15 00:37:54 sthen Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -234,6 +234,7 @@
      SUBDIR += sqliteman
      SUBDIR += sqlports
      SUBDIR += sqsh
+     SUBDIR += strigi
      SUBDIR += tdb
      SUBDIR += tinycdb
      SUBDIR += xapian-core
