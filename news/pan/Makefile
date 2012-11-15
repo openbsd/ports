@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2012/11/15 14:53:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2012/11/15 19:18:55 ajacoutot Exp $
 
 COMMENT=	powerful Gtk+2 newsreader
 
 V=		0.139
 DISTNAME=	pan-${V}
 CATEGORIES=	news x11
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	http://pan.rebelbase.com/
 
@@ -19,20 +19,19 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL X11 Xext Xrender atk-1.0 c cairo cairo-gobject expat
 WANTLIB += fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmime-2.6 gmodule-2.0 gnome-keyring gobject-2.0 gthread-2.0
-WANTLIB += gtk-3 m notify pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pixman-1 png pthread pthread-stubs stdc++ xcb xcb-render
-WANTLIB += xcb-shm z
+WANTLIB += gmime-2.6 gmodule-2.0 gnome-keyring gnutls gobject-2.0
+WANTLIB += gthread-2.0 gtk-3 m notify pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pixman-1 png pthread pthread-stubs stdc++
+WANTLIB += xcb xcb-render xcb-shm z
 
 MASTER_SITES=	http://pan.rebelbase.com/download/releases/${V}/source/
 
 MODULES=	devel/gettext \
 		textproc/intltool # regress target
 
-# GNUTLS is not activated (need >= 3.0.0 )
-
-LIB_DEPENDS=	mail/gmime>=2.6.0 \
-		devel/libnotify \
+LIB_DEPENDS=	devel/libnotify \
+		mail/gmime \
+		security/gnutls \
 		x11/gnome/libgnome-keyring \
 		x11/gtk+3
 RUN_DEPENDS=	devel/desktop-file-utils
@@ -42,7 +41,7 @@ VMEM_WARNING=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-gtk3 --enable-libnotify --enable-gkr
+CONFIGURE_ARGS=	--with-gtk3 --enable-libnotify --enable-gkr --with-gnutls
 
 # XXX needs to be ported to gtkspell3
 CONFIGURE_ARGS += --without-gtkspell
