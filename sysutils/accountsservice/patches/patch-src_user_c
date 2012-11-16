@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_user_c,v 1.16 2012/09/20 11:30:31 ajacoutot Exp $
---- src/user.c.orig	Thu Aug 16 21:03:51 2012
-+++ src/user.c	Thu Sep 20 13:13:55 2012
-@@ -112,7 +112,12 @@ account_type_from_pwent (struct passwd *pwent)
+$OpenBSD: patch-src_user_c,v 1.17 2012/11/16 08:50:19 ajacoutot Exp $
+--- src/user.c.orig	Mon Nov 12 21:46:53 2012
++++ src/user.c	Fri Nov 16 09:37:40 2012
+@@ -116,7 +116,12 @@ account_type_from_pwent (struct passwd *pwent)
  {
          struct group *grp;
          gid_t wheel;
@@ -14,7 +14,7 @@ $OpenBSD: patch-src_user_c,v 1.16 2012/09/20 11:30:31 ajacoutot Exp $
          gint ngroups;
          gint i;
  
-@@ -128,16 +133,28 @@ account_type_from_pwent (struct passwd *pwent)
+@@ -132,16 +137,28 @@ account_type_from_pwent (struct passwd *pwent)
          }
          wheel = grp->gr_gid;
  
@@ -43,7 +43,7 @@ $OpenBSD: patch-src_user_c,v 1.16 2012/09/20 11:30:31 ajacoutot Exp $
  
          return ACCOUNT_TYPE_STANDARD;
  }
-@@ -247,7 +264,11 @@ user_update_from_pwent (User          *user,
+@@ -251,7 +268,11 @@ user_update_from_pwent (User          *user,
                  passwd = spent->sp_pwdp;
  #endif
  
@@ -55,7 +55,7 @@ $OpenBSD: patch-src_user_c,v 1.16 2012/09/20 11:30:31 ajacoutot Exp $
                  locked = TRUE;
          }
          else {
-@@ -386,7 +407,7 @@ save_extra_data (User *user)
+@@ -390,7 +411,7 @@ save_extra_data (User *user)
          error = NULL;
          data = g_key_file_to_data (keyfile, NULL, &error);
          if (error == NULL) {
@@ -64,7 +64,7 @@ $OpenBSD: patch-src_user_c,v 1.16 2012/09/20 11:30:31 ajacoutot Exp $
                                               user->user_name,
                                               NULL);
                  g_file_set_contents (filename, data, -1, &error);
-@@ -407,9 +428,10 @@ move_extra_data (const gchar *old_name,
+@@ -411,9 +432,10 @@ move_extra_data (const gchar *old_name,
          gchar *old_filename;
          gchar *new_filename;
  
@@ -77,7 +77,7 @@ $OpenBSD: patch-src_user_c,v 1.16 2012/09/20 11:30:31 ajacoutot Exp $
                                           new_name, NULL);
  
          g_rename (old_filename, new_filename);
-@@ -1225,7 +1247,11 @@ user_change_locked_authorized_cb (Daemon              
+@@ -1229,7 +1251,11 @@ user_change_locked_authorized_cb (Daemon              
                           "%s account of user '%s' (%d)",
                           locked ? "locking" : "unlocking", user->user_name, user->uid);
                  argv[0] = "/usr/sbin/usermod";
@@ -89,7 +89,7 @@ $OpenBSD: patch-src_user_c,v 1.16 2012/09/20 11:30:31 ajacoutot Exp $
                  argv[2] = "--";
                  argv[3] = user->user_name;
                  argv[4] = NULL;
-@@ -1274,13 +1300,23 @@ user_change_account_type_authorized_cb (Daemon        
+@@ -1278,13 +1304,23 @@ user_change_account_type_authorized_cb (Daemon        
  {
          AccountType account_type = GPOINTER_TO_INT (data);
          GError *error;
@@ -113,7 +113,7 @@ $OpenBSD: patch-src_user_c,v 1.16 2012/09/20 11:30:31 ajacoutot Exp $
  
          if (user->account_type != account_type) {
                  sys_log (context,
-@@ -1294,17 +1330,35 @@ user_change_account_type_authorized_cb (Daemon        
+@@ -1298,17 +1334,35 @@ user_change_account_type_authorized_cb (Daemon        
                  }
                  wheel = grp->gr_gid;
  
@@ -149,7 +149,7 @@ $OpenBSD: patch-src_user_c,v 1.16 2012/09/20 11:30:31 ajacoutot Exp $
                          break;
                  case ACCOUNT_TYPE_STANDARD:
                  default:
-@@ -1313,14 +1367,26 @@ user_change_account_type_authorized_cb (Daemon        
+@@ -1317,14 +1371,26 @@ user_change_account_type_authorized_cb (Daemon        
                          break;
                  }
  
