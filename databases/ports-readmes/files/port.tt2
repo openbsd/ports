@@ -9,7 +9,7 @@
 <H2>Description</H2>
 
 <pre>
-[% descr %]
+[% descr | html %]
 </pre>
 [% IF homepage %]
 WWW: <a href="[% homepage | url %]">[% homepage | html %]</a>
