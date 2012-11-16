@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2012/04/23 17:15:18 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2012/11/16 16:53:53 giovanni Exp $
 
 COMMENT=	fast FTP and SFTP GUI client with a lot of features
 
-V=		3.5.3
+V=		3.6.0
 PKGNAME=	filezilla-$V
 DISTNAME=	FileZilla_$V_src
 EXTRACT_SUFX=	.tar.bz2
-REVISION =	0
 
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
@@ -31,9 +30,11 @@ WANTLIB += png pthread-stubs xcb xcb-render xcb-shm
 WANTLIB += idn gnutls>=13 dbus-1 wx_gtk2_aui wx_base_xml wx_gtk2_adv
 WANTLIB += wx_gtk2_xrc wx_base_net wx_base wx_gtk2_core
 WANTLIB += GL sqlite3 ffi p11-kit
+WANTLIB += harfbuzz icudata icule icuuc
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	devel/libidn \
+				devel/harfbuzz \
 		security/gnutls \
 		x11/dbus \
 		x11/wxWidgets>=2.8.6
@@ -47,7 +48,7 @@ SEPARATE_BUILD= Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--with-dbus \
 		--with-tinyxml=builtin \
-		--disable-autoupdatecheck
+		--disable-manualupdatecheck
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		GREP=/usr/bin/grep \
