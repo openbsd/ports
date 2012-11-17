@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2012/11/10 15:01:15 stsp Exp $
+# $OpenBSD: Makefile,v 1.9 2012/11/17 23:26:39 brad Exp $
 
 COMMENT =		EFL API for data types
 VERSION = 		1.7.1
 DISTNAME =		eina-${VERSION}
-
+REVISION=		0
 EPOCH=			1
 
 SHARED_LIBS +=  eina                 2.0      # 8.1
@@ -46,8 +46,7 @@ CONFIGURE_ARGS =	--disable-doc \
 #			--disable-assert
 
 CONFIGURE_ENV =		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
-			ac_cv_func_dirfd=yes
+			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 FULLARCH =		${MACHINE_ARCH:S/amd64/x86_64/}
 SUBST_VARS +=		FULLARCH VERSION
