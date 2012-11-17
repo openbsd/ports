@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2012/11/13 11:11:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2012/11/17 09:40:41 ajacoutot Exp $
 
 COMMENT=	collection of shared GSettings schemas
 
@@ -21,9 +21,6 @@ MODULES=	x11/gnome \
 BUILD_DEPENDS=	devel/gettext
 
 MODGNOME_TOOLS=	goi
-
-# don't inherit USE_LIBTOOL from the gnome MODULE
-USE_LIBTOOL=	No
 
 CONFIGURE_STYLE=gnu
 

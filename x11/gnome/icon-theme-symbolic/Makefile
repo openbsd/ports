@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2012/11/14 07:06:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2012/11/17 09:40:42 ajacoutot Exp $
 
 COMMENT=	base icon theme extension for special UI contexts
 
@@ -24,8 +24,6 @@ BUILD_DEPENDS +=x11/gtk+2,-guic
 RUN_DEPENDS=	x11/gnome/icon-theme
 
 PKG_ARCH=	*
-
-USE_LIBTOOL=	No
 
 MODGNOME_ICON_CACHE=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2012/11/13 07:21:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2012/11/17 09:40:42 ajacoutot Exp $
 
 COMMENT=		general user documentation for GNOME
 
@@ -16,6 +16,5 @@ MODULES=		x11/gnome
 MODGNOME_TOOLS= 	yelp
 
 PKG_ARCH=		*
-USE_LIBTOOL=		No
 
 .include <bsd.port.mk>

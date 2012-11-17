@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/08/29 17:50:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2012/11/17 09:40:41 ajacoutot Exp $
 
 COMMENT=		connection manager meant for testing Telepathy
 
@@ -11,7 +11,6 @@ MODULES=		lang/python
 
 MODPY_ADJ_FILES=	bin/pinocchio-ctl
 
-USE_LIBTOOL=		No
 USE_GMAKE=		No
 CONFIGURE_STYLE=	# empty
 NO_REGRESS=		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2012/06/15 08:32:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2012/11/17 09:40:41 ajacoutot Exp $
 
 COMMENT=	GTK-based LDAP client
 
@@ -35,7 +35,6 @@ LIB_DEPENDS=	databases/openldap \
 
 RUN_DEPENDS=	misc/shared-mime-info
 
-USE_LIBTOOL=	No
 MODGNOME_TOOLS=	yelp
 MODGNOME_DESKTOP_FILE=Yes
 

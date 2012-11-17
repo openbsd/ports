@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2012/11/13 07:15:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2012/11/17 09:40:41 ajacoutot Exp $
 
 PKG_ARCH=		*
 
@@ -16,8 +16,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		x11/gnome
 
 MODGNOME_TOOLS= 	yelp
-
-USE_LIBTOOL=		No
 
 # XXX https://bugzilla.gnome.org/show_bug.cgi?id=684965
 post-install:

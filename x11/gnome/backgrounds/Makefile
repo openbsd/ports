@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2012/10/16 06:23:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2012/11/17 09:40:41 ajacoutot Exp $
 
 COMMENT=		wallpapers for GNOME
 
@@ -14,7 +14,5 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		x11/gnome
 
 BUILD_DEPENDS=		devel/gettext
-
-USE_LIBTOOL=		No
 
 .include <bsd.port.mk>

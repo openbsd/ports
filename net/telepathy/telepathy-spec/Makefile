@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2012/09/25 12:09:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2012/11/17 09:40:41 ajacoutot Exp $
 
 PKG_ARCH=		*
 
@@ -19,7 +19,6 @@ MODPY_ADJ_FILES=	tools/*.py
 
 NO_REGRESS=		Yes
 
-USE_LIBTOOL=		No
 CONFIGURE_STYLE=	none
 MAKE_FLAGS+=		PYTHON=${MODPY_BIN}
 

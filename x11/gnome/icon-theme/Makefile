@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2012/11/14 07:04:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2012/11/17 09:40:42 ajacoutot Exp $
 
 PKG_ARCH=	*
 
@@ -29,7 +29,6 @@ BUILD_DEPENDS +=x11/gtk+2,-guic
 MODGNOME_ICON_CACHE=	Yes
 RUN_DEPENDS +=		x11/gnome/librsvg
 
-USE_LIBTOOL=	No
 CONFIGURE_ARGS=	--enable-icon-mapping \
 		--disable-nls
 
