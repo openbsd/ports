@@ -1,13 +1,32 @@
-$OpenBSD: patch-src_gtr-tab_c,v 1.1 2012/11/14 12:37:03 ajacoutot Exp $
+$OpenBSD: patch-src_gtr-tab_c,v 1.2 2012/11/17 13:09:32 ajacoutot Exp $
+
+From 22da0a85fec480943411c25c0d361b3fa2252381 Mon Sep 17 00:00:00 2001
+From: Sébastien Granjoux <seb.sfo@free.fr>
+Date: Wed, 14 Nov 2012 21:00:47 +0000
+Subject: fix bgo #687432 - gtranslator can't load/save tab layout, cause gdl 3.6
 
 From 68d6bc237c2076d3ff2a75a6a85e198807f8132a Mon Sep 17 00:00:00 2001
 From: Sébastien Granjoux <seb.sfo@free.fr>
 Date: Tue, 06 Nov 2012 20:03:39 +0000
 Subject: fix bgo #680399 - gtranslator 2.91.5 segfaults trying to use any plugin (gnome 3.5.x stack)
 
---- src/gtr-tab.c.orig	Thu Jun  7 13:48:56 2012
-+++ src/gtr-tab.c	Wed Nov 14 13:29:44 2012
-@@ -727,19 +727,19 @@ gtr_tab_init (GtrTab * tab)
+--- src/gtr-tab.c.orig	Sat Nov 17 13:55:28 2012
++++ src/gtr-tab.c	Sat Nov 17 13:55:40 2012
+@@ -671,13 +671,6 @@ save_layout (GtrTab *tab)
+ }
+ 
+ static void
+-on_layout_changed (GdlDockMaster *master,
+-                   GtrTab        *tab)
+-{
+-  save_layout (tab);
+-}
+-
+-static void
+ extension_added (PeasExtensionSet *extensions,
+                  PeasPluginInfo   *info,
+                  PeasExtension    *exten,
+@@ -727,19 +720,14 @@ gtr_tab_init (GtrTab * tab)
    gtk_widget_show (priv->dock);
    gtk_box_pack_end (GTK_BOX (hbox), priv->dock, TRUE, TRUE, 0);
  
@@ -18,12 +37,11 @@ Subject: fix bgo #680399 - gtranslator 2.91.5 segfaults trying to use any plugin
  
 -  priv->layout_manager = gdl_dock_layout_new (GDL_DOCK (priv->dock));
 -  g_signal_connect (priv->layout_manager->master,
+-                    "layout-changed",
+-                    G_CALLBACK (on_layout_changed),
+-                    tab);
+-
 +  priv->layout_manager = gdl_dock_layout_new (G_OBJECT (priv->dock));
-+  g_signal_connect (gdl_dock_layout_get_master (priv->layout_manager),
-                     "layout-changed",
-                     G_CALLBACK (on_layout_changed),
-                     tab);
- 
    g_settings_bind (priv->ui_settings,
                     GTR_SETTINGS_PANEL_SWITCHER_STYLE,
 -                   priv->layout_manager->master,
@@ -31,21 +49,3 @@ Subject: fix bgo #680399 - gtranslator 2.91.5 segfaults trying to use any plugin
                     "switcher-style",
                     G_SETTINGS_BIND_GET | G_SETTINGS_BIND_SET);
  
-@@ -967,11 +967,17 @@ gtr_tab_realize (GtkWidget *widget)
-                                   tab);
- 
-       /* Loading dock layout */
-+      g_signal_handlers_block_by_func (gdl_dock_layout_get_master (tab->priv->layout_manager),
-+                                       G_CALLBACK (on_layout_changed),
-+                                       tab);
-       filename = g_build_filename (gtr_dirs_get_user_config_dir (),
-                                    "layout.xml", NULL);
- 
-       gtr_tab_layout_load (tab, filename, NULL);
-       g_free (filename);
-+      g_signal_handlers_unblock_by_func (gdl_dock_layout_get_master (tab->priv->layout_manager),
-+                                         G_CALLBACK (on_layout_changed),
-+                                         tab);
- 
-       tab->priv->tab_realized = TRUE;
-     }
