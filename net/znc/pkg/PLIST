@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.9 2012/03/24 21:42:58 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2012/11/17 00:16:54 brad Exp $
 @bin bin/znc
 bin/znc-buildmod
-bin/znc-config
 include/znc/
 include/znc/Buffer.h
 include/znc/Chan.h
@@ -11,6 +10,7 @@ include/znc/Csocket.h
 include/znc/ExecSock.h
 include/znc/FileUtils.h
 include/znc/HTTPSock.h
+include/znc/IRCNetwork.h
 include/znc/IRCSock.h
 include/znc/Listener.h
 include/znc/MD5.h
@@ -27,46 +27,63 @@ include/znc/ZNCDebug.h
 include/znc/ZNCString.h
 include/znc/defines.h
 include/znc/main.h
+include/znc/version.h
 include/znc/znc.h
 include/znc/zncconfig.h
+lib/pkgconfig/
 lib/pkgconfig/znc.pc
 lib/znc/
-lib/znc/admin.so
 lib/znc/adminlog.so
 lib/znc/autoattach.so
+lib/znc/autocycle.so
 lib/znc/autoop.so
 lib/znc/autoreply.so
+lib/znc/autovoice.so
 lib/znc/awaynick.so
+lib/znc/awaystore.so
+lib/znc/block_motd.so
 lib/znc/blockuser.so
 lib/znc/bouncedcc.so
 lib/znc/buffextras.so
 lib/znc/cert.so
 lib/znc/certauth.so
 lib/znc/chansaver.so
+lib/znc/clearbufferonmsg.so
 lib/znc/clientnotify.so
+lib/znc/controlpanel.so
 lib/znc/crypt.so
+lib/znc/ctcpflood.so
+lib/znc/dcc.so
 lib/znc/disconkick.so
 lib/znc/fail2ban.so
+lib/znc/flooddetach.so
 lib/znc/identfile.so
+lib/znc/imapauth.so
 lib/znc/keepnick.so
 lib/znc/kickrejoin.so
 lib/znc/lastseen.so
+lib/znc/listsockets.so
+lib/znc/log.so
+lib/znc/missingmotd.so
 lib/znc/nickserv.so
 lib/znc/notes.so
+lib/znc/notify_connect.so
 lib/znc/partyline.so
 lib/znc/perform.so
 lib/znc/q.so
 lib/znc/raw.so
 lib/znc/route_replies.so
 lib/znc/sample.so
+lib/znc/sasl.so
 lib/znc/savebuff.so
 lib/znc/schat.so
+lib/znc/send_raw.so
+lib/znc/shell.so
 lib/znc/simple_away.so
 lib/znc/stickychan.so
 lib/znc/watch.so
 lib/znc/webadmin.so
 @man man/man1/znc-buildmod.1
-@man man/man1/znc-config.1
 @man man/man1/znc.1
 share/znc/
 share/znc/modules/
@@ -83,6 +100,9 @@ share/znc/modules/lastseen/
 share/znc/modules/lastseen/tmpl/
 share/znc/modules/lastseen/tmpl/index.tmpl
 share/znc/modules/lastseen/tmpl/lastseen_WebadminUser.tmpl
+share/znc/modules/listsockets/
+share/znc/modules/listsockets/tmpl/
+share/znc/modules/listsockets/tmpl/index.tmpl
 share/znc/modules/notes/
 share/znc/modules/notes/files/
 share/znc/modules/notes/files/trash.gif
@@ -91,14 +111,23 @@ share/znc/modules/notes/tmpl/index.tmpl
 share/znc/modules/perform/
 share/znc/modules/perform/tmpl/
 share/znc/modules/perform/tmpl/index.tmpl
+share/znc/modules/send_raw/
+share/znc/modules/send_raw/files/
+share/znc/modules/send_raw/files/select.js
+share/znc/modules/send_raw/tmpl/
+share/znc/modules/send_raw/tmpl/index.tmpl
 share/znc/modules/stickychan/
 share/znc/modules/stickychan/tmpl/
 share/znc/modules/stickychan/tmpl/index.tmpl
 share/znc/modules/stickychan/tmpl/stickychan_WebadminChan.tmpl
 share/znc/modules/webadmin/
+share/znc/modules/webadmin/files/
+share/znc/modules/webadmin/files/webadmin.js
 share/znc/modules/webadmin/tmpl/
 share/znc/modules/webadmin/tmpl/add_edit_chan.tmpl
+share/znc/modules/webadmin/tmpl/add_edit_network.tmpl
 share/znc/modules/webadmin/tmpl/add_edit_user.tmpl
+share/znc/modules/webadmin/tmpl/del_network.tmpl
 share/znc/modules/webadmin/tmpl/del_user.tmpl
 share/znc/modules/webadmin/tmpl/index.tmpl
 share/znc/modules/webadmin/tmpl/listusers.tmpl

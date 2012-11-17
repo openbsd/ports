@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2012/04/28 09:33:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2012/11/17 00:16:54 brad Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	advanced IRC bouncer
 
-DISTNAME=	znc-0.206
+DISTNAME=	znc-1.0
 CATEGORIES=	net
 MASTER_SITES=	${HOMEPAGE}releases/
 
@@ -18,9 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	c cares crypto m ssl stdc++
-
-LIB_DEPENDS=	net/libcares
+WANTLIB=	c crypto m ssl stdc++
 
 MAKE_FLAGS=	VERBOSE=1
 
@@ -28,7 +26,6 @@ SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS= --disable-optimization
-CONFIGURE_ENV=	ac_cv_path_GNUMAKE=gmake
 
 NO_REGRESS=	Yes
 
