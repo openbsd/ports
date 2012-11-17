@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2012/11/15 08:32:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2012/11/17 12:43:04 ajacoutot Exp $
 
 COMMENT=		next generation GNOME shell
 
@@ -41,8 +41,11 @@ MODULES=		devel/dconf \
 
 MODGNOME_TOOLS=		goi
 
+# man pages
+BUILD_DEPENDS += textproc/docbook-xsl
+
 # gnome-keybindings.pc
-BUILD_DEPENDS +=	x11/gnome/controlcenter
+BUILD_DEPENDS += x11/gnome/controlcenter
 
 LIB_DEPENDS=		audio/pulseaudio>=2.1 \
 			databases/evolution-data-server>=3.6.0p3 \
