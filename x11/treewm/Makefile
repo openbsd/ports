@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/24 21:15:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2012/11/17 16:45:41 naddy Exp $
 
 COMMENT=		tree window manager
 DISTNAME=		treewm-0.4.5
@@ -19,6 +19,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xmu Xpm Xt Xxf86vm c m stdc++
+
+BUILD_DEPENDS=		devel/imake
 
 USE_GMAKE=		Yes
 
