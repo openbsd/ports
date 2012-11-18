@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/19 09:16:07 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/11/18 10:21:57 rpe Exp $
 @pkgpath x11/liberation-fonts
 lib/X11/fonts/
 @fontdir lib/X11/fonts/Liberation/
@@ -10,12 +10,13 @@ lib/X11/fonts/Liberation/LiberationSans-Bold.ttf
 lib/X11/fonts/Liberation/LiberationSans-BoldItalic.ttf
 lib/X11/fonts/Liberation/LiberationSans-Italic.ttf
 lib/X11/fonts/Liberation/LiberationSans-Regular.ttf
-lib/X11/fonts/Liberation/LiberationSansNarrow-Bold.ttf
-lib/X11/fonts/Liberation/LiberationSansNarrow-BoldItalic.ttf
-lib/X11/fonts/Liberation/LiberationSansNarrow-Italic.ttf
-lib/X11/fonts/Liberation/LiberationSansNarrow-Regular.ttf
 lib/X11/fonts/Liberation/LiberationSerif-Bold.ttf
 lib/X11/fonts/Liberation/LiberationSerif-BoldItalic.ttf
 lib/X11/fonts/Liberation/LiberationSerif-Italic.ttf
 lib/X11/fonts/Liberation/LiberationSerif-Regular.ttf
-lib/X11/fonts/Liberation/License.txt
+share/doc/liberation-fonts/
+share/doc/liberation-fonts/AUTHORS
+share/doc/liberation-fonts/ChangeLog
+share/doc/liberation-fonts/LICENSE
+share/doc/liberation-fonts/README
+share/doc/liberation-fonts/TODO
