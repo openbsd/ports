@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.42 2012/11/09 17:49:17 espie Exp $
+# $OpenBSD: Port.pm,v 1.43 2012/11/18 01:59:31 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -147,7 +147,7 @@ sub finalize
 		return 1;
 	}
 	if ($core->prop->{always_clean}) {
-		$core->job->insert_tasks(DPB::Task::Port::CleanOnError->new(
+		$core->job->insert_tasks(DPB::Task::Port::BaseClean->new(
 			'clean'));
 		return 1;
 	}
@@ -470,7 +470,7 @@ sub finalize
 	$self->SUPER::finalize($core);
 }
 
-package DPB::Task::Port::Clean;
+package DPB::Task::Port::BaseClean;
 our @ISA = qw(DPB::Task::BasePort);
 
 sub notime { 1 }
@@ -478,10 +478,11 @@ sub notime { 1 }
 sub finalize
 {
 	my ($self, $core) = @_;
-	if (!$self->requeue($core)) {
-		$self->make_sure_we_have_packages($core);
+	if ($self->requeue($core)) {
+		return 1;
 	}
 	$self->SUPER::finalize($core);
+	return 1;
 }
 
 sub requeue
@@ -501,17 +502,16 @@ sub requeue
 	return 0;
 }
 
-package DPB::Task::Port::CleanOnError;
-our @ISA = qw(DPB::Task::Port::Clean);
+package DPB::Task::Port::Clean;
+our @ISA = qw(DPB::Task::Port::BaseClean);
 
 sub finalize
 {
 	my ($self, $core) = @_;
-	if ($self->requeue($core)) {
-		return 1;
+	if (!$self->requeue($core)) {
+		$self->make_sure_we_have_packages($core);
 	}
 	$self->SUPER::finalize($core);
-	return 0;
 }
 
 package DPB::Task::Port::VerifyPackages;
@@ -606,7 +606,7 @@ sub add_normal_tasks
 	my @todo;
 	my $builder = $self->{builder};
 	if ($builder->{clean}) {
-		push @todo, "clean";
+		$self->insert_tasks(DPB::Task::Port::BaseClean->new('clean'));
 	}
 	push(@todo, qw(depends prepare show-prepare-results));
 	if ($hostprop->{junk}) {
