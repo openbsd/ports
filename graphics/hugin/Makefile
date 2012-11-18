@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2012/11/13 16:11:17 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.32 2012/11/18 16:55:27 dcoppa Exp $
 
 VMEM_WARNING =		Yes
 SHARED_ONLY =		Yes
@@ -7,7 +7,7 @@ COMMENT =		panorama image stitcher
 
 DISTNAME =		hugin-2011.4.0
 EXTRACT_SUFX =		.tar.bz2
-REVISION =		0
+REVISION =		1
 
 TAR =			${LOCALBASE}/bin/gtar
 BUILD_DEPENDS +=	archivers/gtar
@@ -66,12 +66,9 @@ BUILD_DEPENDS +=	devel/tclap
 
 USE_GROFF =		Yes
 MODULES +=		devel/cmake
-SEPARATE_BUILD =	Yes
-CONFIGURE_STYLE =	cmake
 CONFIGURE_ENV =		MANDIR=man
 CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE:STRING=Release
 NO_REGRESS =		Yes
-CFLAGS +=		-pthread
 
 pre-patch:
 	find ${WRKSRC} -name '*.orig' | xargs rm
