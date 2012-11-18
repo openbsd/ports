@@ -1,0 +1,16 @@
+$OpenBSD: README,v 1.1.1.1 2012/11/18 10:53:30 rpe Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+To generate reports execute either on the command line or from cron:
+
+    # ${TRUEPREFIX}/awstats/wwwroot/cgi-bin/awstats.pl -config=localhost -update
+
+
+If using Apache, you can make the reports accessible by enabling the
+configuration file:
+
+    # ln -s ../modules.sample/awstats.conf /var/www/conf/modules/
+    # /etc/rc.d/httpd restart
