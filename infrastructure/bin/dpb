@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.61 2012/11/18 01:58:36 espie Exp $
+# $OpenBSD: dpb,v 1.62 2012/11/18 12:37:21 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -38,7 +38,7 @@ use DPB::Logger;
 use File::Path;
 use File::Basename;
 
-sub has
+sub define_present
 {
 	my ($self, $k) = @_;
 	return defined $self->{subst}{$k};
@@ -250,15 +250,15 @@ sub start_cores
 	if ($state->opt('p')) {
 		$override_prop->{parallel} = $state->opt('p');
 	}
-	if ($state->has('STUCK_TIMEOUT')) {
+	if ($state->define_present('STUCK_TIMEOUT')) {
 		$override_prop->{stuck} = 
 		    $state->{subst}->value('STUCK_TIMEOUT');
 	}
-	if ($state->has('CONNECTION_TIMEOUT')) {
+	if ($state->define_present('CONNECTION_TIMEOUT')) {
 		$override_prop->{timeout} = 
 		    $state->{subst}->value('CONNECTION_TIMEOUT');
 	}
-	if ($state->has('WAIT_TIMEOUT')) {
+	if ($state->define_present('WAIT_TIMEOUT')) {
 		$override_prop->{wait_timeout} = 
 		    $state->{subst}->value('WAIT_TIMEOUT');
 	}
