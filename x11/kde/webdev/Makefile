@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2012/06/15 08:30:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2012/11/18 17:05:24 naddy Exp $
 
 COMMENT = 		web development tool
 CATEGORIES =		x11 x11/kde
@@ -35,6 +35,9 @@ WANTLIB = ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c cvsservice exslt fam \
 	lib/kde3/kspell lib/kde3/ktexteditor lib/kde3/kutils \
 	lib/kde3/kwalletclient lib/kde3/vcard m pcre pcreposix png pthread \
 	pthread-stubs stdc++ util xcb xml2 xslt z
+
+# don't pick up gtar
+CONFIGURE_ENV=		TAR=tar
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/HTML/en/common
