@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2012/11/14 07:04:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2012/11/19 10:06:34 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		implementation of the FreeDesktop Desktop Menu Spec
 
 GNOME_PROJECT=		gnome-menus
 GNOME_VERSION=		3.6.1
+REVISION=		0
 
 SHARED_LIBS +=  gnome-menu-3         0.0      # 0.0
 
@@ -34,6 +35,6 @@ pre-configure:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-menus
-	mv ${WRKINST}${SYSCONFDIR}/* ${PREFIX}/share/examples/gnome-menus
+	mv ${WRKINST}${SYSCONFDIR}/xdg ${PREFIX}/share/examples/gnome-menus
 
 .include <bsd.port.mk>
