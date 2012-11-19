@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2012/09/21 13:23:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2012/11/19 16:42:46 ajacoutot Exp $
 
 COMMENT=	C++ bindings for GStreamer
 
@@ -24,6 +24,9 @@ BUILD_DEPENDS=	devel/doxygen
 LIB_DEPENDS=	devel/glib2mm>=2.33.12 \
 		multimedia/gstreamer-0.10/plugins-base \
 		textproc/libxml++
+
+# needed for the examples
+BUILD_DEPENDS += x11/gtk3mm
 
 CONFIGURE_STYLE=	gnu
 
