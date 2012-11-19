@@ -1,7 +1,7 @@
-$OpenBSD: patch-unix_Makefile_in,v 1.9 2012/08/26 16:57:58 stu Exp $
---- unix/Makefile.in.orig	Sun Jul 22 01:01:39 2012
-+++ unix/Makefile.in	Sun Jul 22 01:25:28 2012
-@@ -553,6 +553,7 @@ PUBLIC_HDRS = $(GENERIC_DIR)/tk.h $(GENERIC_DIR)/tkDec
+$OpenBSD: patch-unix_Makefile_in,v 1.10 2012/11/19 15:10:48 stu Exp $
+--- unix/Makefile.in.orig	Fri Nov  9 10:15:03 2012
++++ unix/Makefile.in	Thu Nov 15 00:03:40 2012
+@@ -542,6 +542,7 @@ PUBLIC_HDRS = $(GENERIC_DIR)/tk.h $(GENERIC_DIR)/tkDec
  # The private headers we want installed for install-private-headers
  PRIVATE_HDRS = $(GENERIC_DIR)/tkInt.h $(GENERIC_DIR)/tkIntDecls.h \
  	$(GENERIC_DIR)/tkIntPlatDecls.h $(GENERIC_DIR)/tkPort.h \
@@ -9,7 +9,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.9 2012/08/26 16:57:58 stu Exp $
  	$(TTK_HDRS) $(@TK_WINDOWINGSYSTEM@_PRIVATE_HDRS)
  
  DEMOPROGS = browse hello ixset rmt rolodex square tcolor timer widget
-@@ -585,6 +586,10 @@ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
+@@ -573,6 +574,10 @@ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	rm -f $@
  	@MAKE_STUB_LIB@
  
@@ -17,26 +17,10 @@ $OpenBSD: patch-unix_Makefile_in,v 1.9 2012/08/26 16:57:58 stu Exp $
 +	rm -f $@
 +	${STLIB_LD} $@ ${OBJS} ; ${RANLIB} $@
 +
- # Build Aqua resource files
- ${TK_RSRC_FILE}: $(AQUA_RESOURCES)
- 	rm -f $@
-@@ -709,14 +714,10 @@ install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $
- 	    do \
- 	    if [ ! -d "$$i" ] ; then \
- 		echo "Making directory $$i"; \
--		mkdir -p "$$i"; \
--		chmod 755 "$$i"; \
-+		$(INSTALL_DATA_DIR) "$$i"; \
- 		else true; \
- 		fi; \
- 	    done;
--	@if test ! -x $(SRC_DIR)/install-sh; then \
--	    chmod +x $(SRC_DIR)/install-sh; \
--	    fi
- 	@if test "x$(TK_SHARED_BUILD)" = "x1"; then \
- 	    echo "Creating package index $(PKG_INDEX)"; \
- 	    rm -f "$(PKG_INDEX)"; \
-@@ -734,10 +735,10 @@ install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $
+ # Make target which outputs the list of the .o contained in the Tk lib
+ # usefull to build a single big shared library containing Tcl/Tk and other
+ # extensions.  used for the Tcl Plugin.  -- dl
+@@ -713,10 +718,10 @@ install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $
  	    echo "}";\
  	    fi \
  	    ) > "$(PKG_INDEX)"; \
@@ -46,35 +30,9 @@ $OpenBSD: patch-unix_Makefile_in,v 1.9 2012/08/26 16:57:58 stu Exp $
  	@@INSTALL_LIB@
 -	@chmod 555 "$(DLL_INSTALL_DIR)/$(LIB_FILE)"
  	@if test -f "tk${MAJOR_VERSION}${MINOR_VERSION}.dll"; then \
- 	    $(INSTALL_LIBRARY) "${TOP_DIR}/win/tk${MAJOR_VERSION}${MINOR_VERSION}.dll" "$(DLL_INSTALL_DIR)";\
+ 	    $(INSTALL_LIBRARY) "tk${MAJOR_VERSION}${MINOR_VERSION}.dll" "$(DLL_INSTALL_DIR)";\
  	    chmod 555 "$(DLL_INSTALL_DIR)/tk${MAJOR_VERSION}${MINOR_VERSION}.dll";\
-@@ -761,14 +762,10 @@ install-libraries: libraries
- 	    do \
- 	    if [ -n "$$i" -a ! -d "$$i" ] ; then \
- 		echo "Making directory $$i"; \
--		mkdir -p "$$i"; \
--		chmod 755 "$$i"; \
-+		$(INSTALL_DATA_DIR) "$$i"; \
- 		else true; \
- 		fi; \
- 	    done;
--	@if test ! -x $(SRC_DIR)/install-sh; then \
--	    chmod +x $(SRC_DIR)/install-sh; \
--	    fi
- 	@echo "Installing header files";
- 	@for i in $(PUBLIC_HDRS); \
- 	    do \
-@@ -811,8 +808,7 @@ install-demos:
- 	    do \
- 	    if [ ! -d "$$i" ] ; then \
- 		echo "Making directory $$i"; \
--		mkdir -p "$$i"; \
--		chmod 755 "$$i"; \
-+		$(INSTALL_DATA_DIR) "$$i"; \
- 		else true; \
- 		fi; \
- 	    done;
-@@ -822,6 +818,7 @@ install-demos:
+@@ -784,6 +789,7 @@ install-demos:
  	    if [ -f $$i ] ; then \
  		sed -e '3 s|exec wish|exec wish$(VERSION)|' \
  			$$i > "$(DEMO_INSTALL_DIR)"/`basename $$i`; \
@@ -82,7 +40,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.9 2012/08/26 16:57:58 stu Exp $
  	    fi; \
  	    done;
  	@for i in $(DEMOPROGS); \
-@@ -829,7 +826,7 @@ install-demos:
+@@ -791,7 +797,7 @@ install-demos:
  	    if test $$i = "square"; then \
  	    rm -f  "$(DEMO_INSTALL_DIR)/$$i"; \
  	    else \
@@ -90,30 +48,4 @@ $OpenBSD: patch-unix_Makefile_in,v 1.9 2012/08/26 16:57:58 stu Exp $
 +	    chmod 555 "$(DEMO_INSTALL_DIR)/$$i"; \
  	    fi; \
  	    done;
- 	@echo "Installing demo images";
-@@ -845,8 +842,7 @@ install-doc:
- 	    do \
- 	    if [ ! -d "$$i" ] ; then \
- 		echo "Making directory $$i"; \
--		mkdir -p "$$i"; \
--		chmod 755 "$$i"; \
-+		$(INSTALL_DATA_DIR) "$$i"; \
- 		else true; \
- 		fi; \
- 	    done;
-@@ -871,14 +867,10 @@ install-private-headers: libraries
- 	    do \
- 	    if [ ! -d "$$i" ] ; then \
- 		echo "Making directory $$i"; \
--		mkdir -p "$$i"; \
--		chmod 755 "$$i"; \
-+		$(INSTALL_DATA_DIR) "$$i"; \
- 		else true; \
- 		fi; \
- 	    done;
--	@if test ! -x $(SRC_DIR)/install-sh; then \
--	    chmod +x $(SRC_DIR)/install-sh; \
--	    fi
- 	@echo "Installing private header files";
- 	@for i in $(PRIVATE_HDRS); \
- 	    do \
+ 	@echo "Installing demo image files to $(DEMO_INSTALL_DIR)/images/";
