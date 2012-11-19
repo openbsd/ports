@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.300 2012/11/14 18:43:31 landry Exp $
+# $OpenBSD: Makefile,v 1.301 2012/11/19 22:15:15 sthen Exp $
 
      SUBDIR =
      SUBDIR += ADMfzap
@@ -241,6 +241,7 @@
      SUBDIR += smtpscan
      SUBDIR += smurflog
      SUBDIR += snort2pf
+     SUBDIR += spiped
      SUBDIR += ssh-askpass-fullscreen
      SUBDIR += ssh-ldap-helper
      SUBDIR += sshguard

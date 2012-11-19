@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.198 2012/10/11 17:15:04 jasper Exp $
+$OpenBSD: user.list,v 1.199 2012/11/19 22:14:31 sthen Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -215,3 +215,4 @@ id  user		group		port options
 704 _gophernicus	_gophernicus	net/gophernicus
 705 _minidlna		_minidlna	multimedia/minidlna
 706 _graphite		_graphite	databases/py-carbon
+707 _spiped		_spiped		security/spiped
