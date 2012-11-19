@@ -1,0 +1,11 @@
+spiped (pronounced "ess-pipe-dee") is a utility for creating
+symmetrically encrypted and authenticated pipes between socket
+addresses, so that one may connect to one address (e.g., a UNIX socket
+on localhost) and transparently have a connection established to another
+address (e.g., a UNIX socket on a different system). This is similar to
+'ssh -L' functionality, but does not use SSH and requires a pre-shared
+symmetric key.
+
+spipe (pronounced "ess-pipe") is a utility which acts as an spiped
+protocol client (i.e., connects to an spiped daemon), taking input from
+the standard input and writing data read back to the standard output.

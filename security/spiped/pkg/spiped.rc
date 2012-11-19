@@ -1,0 +1,21 @@
+#!/bin/sh
+#
+# $OpenBSD: spiped.rc,v 1.1.1.1 2012/11/19 22:14:52 sthen Exp $
+
+daemon="${TRUEPREFIX}/bin/spiped"
+daemon_flags="-D -d -s '[0.0.0.0]:8022' -t '[127.0.0.1]:22' -k ${SYSCONFDIR}/spiped/spiped.key -p /var/run/spiped/spiped.pid"
+daemon_user="_spiped"
+
+. /etc/rc.d/rc.subr
+
+pexp="${daemon}"
+rc_reload=NO
+
+rc_pre() {
+	install -d -o _spiped /var/run/spiped
+	if [ ! -f ${SYSCONFDIR}/spiped/spiped.key ]; then
+		dd if=/dev/urandom bs=32 count=1 of=${SYSCONFDIR}/spiped/spiped.key
+	fi
+}
+
+rc_cmd $1
