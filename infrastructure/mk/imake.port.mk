@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: imake.port.mk,v 1.7 2012/09/23 08:03:55 matthieu Exp $
+# $OpenBSD: imake.port.mk,v 1.8 2012/11/19 12:19:30 espie Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -23,12 +23,3 @@ BUILD_DEPENDS += ${MODIMAKE_DEPENDS}
 
 MODIMAKE_configure = \
 		cd ${WRKSRC} && ${_SYSTRACE_CMD} ${SETENV} ${MAKE_ENV} ${XMKMF};
-
-# Kludge
-.if ${CONFIGURE_STYLE:Mimake}
-MODIMAKE_pre-install = \
-	${SUDO} mkdir -p ${LOCALBASE}/lib/X11; \
-	if [ ! -e ${LOCALBASE}/lib/X11/app-defaults ]; then \
-		${SUDO} ln -sf /etc/X11/app-defaults ${LOCALBASE}/lib/X11/app-defaults; \
-	fi
-.endif

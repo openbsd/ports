@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1195 2012/11/05 20:29:35 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1196 2012/11/19 12:19:30 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1809,13 +1809,6 @@ ${_INSTALL_COOKIE${_S}}:
 		exec ${MAKE} _internal-run-depends _internal-runlib-depends \
 		_internal-runwantlib-depends
 	@${ECHO_MSG} "===>  Installing ${FULLPKGNAME${_S}} from ${_PKG_REPO}"
-.  for _m in ${MODULES:T:U}
-.    if defined(MOD${_m}_pre-install)
-	@${MOD${_m}_pre-install}
-.    elif defined(MOD${_m}_pre_install)
-	@${MOD${_m}_pre_install}
-.    endif
-.  endfor
 .  if ${TRUST_PACKAGES:L} == "yes"
 	@if ${PKG_INFO} -e ${FULLPKGNAME${_S}}; then \
 		echo "Package ${FULLPKGNAME${_S}} is already installed"; \
