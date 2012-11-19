@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1196 2012/11/19 12:19:30 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1197 2012/11/19 12:24:50 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -72,7 +72,7 @@ TRUST_PACKAGES ?= No
 FETCH_PACKAGES ?= No
 CLEANDEPENDS ?= No
 USE_SYSTRACE ?= No
-BULK ?= No
+BULK ?= Auto
 RECURSIVE_FETCH_LIST ?= No
 WRKDIR_LINKNAME ?= 
 _FETCH_MAKEFILE ?= /dev/stdout
@@ -2298,7 +2298,7 @@ subpackage:
 
 _internal-package: 
 	@${_cache_fragment}; cd ${.CURDIR} && ${MAKE} _internal-package-only
-.if ${BULK_${PKGPATH}:L} == "yes"
+.if ${BULK_${PKGPATH}:L} == "yes" || (${BULK_${PKGPATH}:L} == "auto" && ${_SOLVING_DEP:L} == "yes")
 	@${_MAKE} ${_BULK_COOKIE}
 .endif
 
