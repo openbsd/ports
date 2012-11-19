@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2012/10/26 06:52:26 rpointel Exp $
+# $OpenBSD: Makefile,v 1.19 2012/11/19 13:54:40 dcoppa Exp $
 
 COMMENT =		Python interface to Redis
 
-MODPY_EGG_VERSION =	2.7.1
+MODPY_EGG_VERSION =	2.7.2
 DISTNAME =		redis-${MODPY_EGG_VERSION}
 PKGNAME =		py-redis-${MODPY_EGG_VERSION}
 CATEGORIES =		databases
