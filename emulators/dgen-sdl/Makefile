@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2012/03/13 11:15:02 edd Exp $
+# $OpenBSD: Makefile,v 1.5 2012/11/19 23:31:55 edd Exp $
 
 COMMENT =		Sega Megadrive/Genesis emulator
-DISTNAME =		dgen-sdl-1.30
+DISTNAME =		dgen-sdl-1.31
 CATEGORIES =		emulators games
 HOMEPAGE =		http://dgen.sourceforge.net/
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
