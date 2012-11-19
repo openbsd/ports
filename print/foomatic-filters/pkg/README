@@ -1,19 +1,32 @@
-$OpenBSD: README,v 1.4 2012/08/04 14:54:22 ajacoutot Exp $
+$OpenBSD: README,v 1.5 2012/11/19 18:09:20 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
 To use foomatic-rip(1) as the input filter for lpd(8), create a
-printcap(5) entry similar to the following:
+printcap(5) entry similar to the followings.
 
-C64|Epson Stylus C64:\
+Locally connected printer (USB)
+-------------------------------
+lp|samsung|Samsung-ML-2850D:\
 	:lp=/dev/ulpt0:\
-	:af=${SYSCONFDIR}/foomatic/C64.ppd:\
+	:af=${SYSCONFDIR}/foomatic/samsung-ml2850d.ppd:\
 	:if=${PREFIX}/bin/foomatic-rip:\
 	:sd=/var/spool/output:\
 	:lf=/var/log/lpd-errs:\
 	:sh:
+
+Remote printer
+--------------
+rp|samsung|Samsung-ML-2850D:\
+	:lp=515@1.2.3.4:\
+	:af=${SYSCONFDIR}/foomatic/samsung-ml2850d.ppd:\
+	:if=${PREFIX}/bin/foomatic-rip:\
+	:sd=/var/spool/output:\
+	:lf=/var/log/lpd-errs:\
+	:sh:
+(where 1.2.3.4 is the printer IP address and 515 the spooler port)
 
 Refer to the pkg-readmes documentation that comes with the
 foomatic-db-engine package to learn how to generate PPD files.
