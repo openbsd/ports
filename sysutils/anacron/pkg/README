@@ -1,3 +1,9 @@
+$OpenBSD: README,v 1.2 2012/11/20 15:25:18 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
 To start using anacron:
 
 Create the file ${SYSCONFDIR}/anacrontab (see anacrontab(5) for
