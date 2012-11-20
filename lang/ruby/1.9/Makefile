@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2012/10/24 22:49:05 jeremy Exp $
+# $OpenBSD: Makefile,v 1.30 2012/11/20 16:52:32 jeremy Exp $
 
 COMMENT-main =		object oriented script language with threads
 COMMENT-gdbm =		gdbm interface for ruby
@@ -7,7 +7,7 @@ COMMENT-tk =		tk interface for ruby
 COMMENT-ri_docs =	ri documentation files for ruby
 
 VERSION =		1.9.3
-PATCHLEVEL =		286
+PATCHLEVEL =		327
 RUBYLIBREV =		1.9.1
 
 SHARED_LIBS =		ruby19 1.0
@@ -57,12 +57,12 @@ MULTI_PACKAGES =	-main -gdbm -dbm
 
 WANTLIB-gdbm =		c m gdbm pthread ruby19
 LIB_DEPENDS-gdbm =	databases/gdbm \
-			lang/ruby/${REV},-main>=${VERSION}.${PATCHLEVEL}
+			lang/ruby/${REV},-main>=${VERSION}.${PATCHLEVEL},<1.10
 RUN_DEPENDS-gdbm =	
 
 WANTLIB-dbm =		c m db pthread ruby19
 LIB_DEPENDS-dbm =	databases/db/v4 \
-			lang/ruby/${REV},-main>=${VERSION}.${PATCHLEVEL}
+			lang/ruby/${REV},-main>=${VERSION}.${PATCHLEVEL},<1.10
 RUN_DEPENDS-dbm =	
  
 .if !${FLAVOR:Mno_x11}
@@ -72,7 +72,7 @@ CONFIGURE_ARGS+=	--with-tcl-include=${PREFIX}/include/tcl8.5 \
 			--with-X11-dir=${X11BASE}
 WANTLIB-tk =		X11 c m pthread ruby19 tcl85 tk85
 LIB_DEPENDS-tk =	tk->=8.5,<8.6:x11/tk/8.5 \
-			lang/ruby/${REV},-main>=${VERSION}.${PATCHLEVEL}
+			lang/ruby/${REV},-main>=${VERSION}.${PATCHLEVEL},<1.10
 RUN_DEPENDS-tk =	
 .endif
 
