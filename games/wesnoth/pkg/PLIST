@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.27 2012/10/08 22:28:34 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.28 2012/11/20 15:08:00 pascal Exp $
+@newgroup _wesnothd:708
+@newuser _wesnothd:708:_wesnothd:daemon:Wesnoth Server:/var/wesnothd:/sbin/nologin
 @pkgpath games/wesnoth,tinygui
 !%%lite%%
 @bin bin/campaignd
@@ -13388,5 +13390,13 @@ share/wesnoth/translations/zh_TW/LC_MESSAGES/wesnoth-tutorial.mo
 share/wesnoth/translations/zh_TW/LC_MESSAGES/wesnoth-units.mo
 share/wesnoth/translations/zh_TW/LC_MESSAGES/wesnoth-utbs.mo
 share/wesnoth/translations/zh_TW/LC_MESSAGES/wesnoth.mo
+@owner _wesnothd
+@group _wesnothd
+@mode 770
+@sample /var/wesnothd/
+@owner
+@group
+@mode
+@rcscript ${RCDIR}/wesnothd
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

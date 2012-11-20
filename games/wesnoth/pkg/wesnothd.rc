@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $OpenBSD: wesnothd.rc,v 1.1 2012/11/20 15:08:00 pascal Exp $
+
+daemon="${TRUEPREFIX}/bin/wesnothd"
+daemon_flags="-d"
+daemon_user="_wesnothd"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1
