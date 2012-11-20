@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2012/09/27 17:26:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2012/11/20 12:41:27 gsoares Exp $
 
 COMMENT =		C/C++ static checker
 
-DISTNAME =		cppcheck-1.56
+DISTNAME =		cppcheck-1.57
 
 CATEGORIES =		devel
 
@@ -28,7 +28,7 @@ ALL_TARGET =		cppcheck
 REGRESS_TARGET = 	test
 MAKE_FLAGS =		BIN=${PREFIX}/bin \
 			CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
-			CPPFLAGS="-DHAVE_RULES -I${PREFIX}/include" \
+			CPPFLAGS="-DHAVE_RULES -DTIXML_USE_STL -I${PREFIX}/include" \
 			LDFLAGS="-L${PREFIX}/lib -lpcre"
 
 USE_GMAKE =		Yes
