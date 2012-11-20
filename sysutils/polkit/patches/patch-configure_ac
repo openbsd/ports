@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure_ac,v 1.5 2012/09/19 12:39:34 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.6 2012/11/20 14:11:48 ajacoutot Exp $
 
 Force disabling gtk-doc.
 Add bsd_auth(3) support.
 
---- configure.ac.orig	Tue Jan  3 17:25:49 2012
-+++ configure.ac	Wed Feb  8 16:25:36 2012
-@@ -48,8 +48,6 @@ AC_PATH_PROG([XSLTPROC], [xsltproc])
+--- configure.ac.orig	Fri Jul  6 15:54:35 2012
++++ configure.ac	Fri Aug 17 09:53:48 2012
+@@ -47,8 +47,6 @@ AC_PATH_PROG([XSLTPROC], [xsltproc])
  fi
  AM_CONDITIONAL(MAN_PAGES_ENABLED, test x$enable_man_pages = xyes)
  
@@ -14,7 +14,7 @@ Add bsd_auth(3) support.
  #### gcc warning flags
  
  if test "x$GCC" = "xyes"; then
-@@ -222,6 +220,11 @@ case $POLKIT_AUTHFW in
+@@ -253,6 +251,11 @@ case $POLKIT_AUTHFW in
      AC_DEFINE(POLKIT_AUTHFW_SHADOW, 1, [If using the Shadow authentication framework])
      ;;
  
@@ -26,7 +26,7 @@ Add bsd_auth(3) support.
    *)
      AC_MSG_ERROR([Unknown Authentication Framework: $POLKIT_AUTHFW])
      ;;
-@@ -230,6 +233,7 @@ esac
+@@ -261,6 +264,7 @@ esac
  AM_CONDITIONAL(POLKIT_AUTHFW_NONE, [test x$POLKIT_AUTHFW = xnone], [Using no authfw])
  AM_CONDITIONAL(POLKIT_AUTHFW_PAM, [test x$POLKIT_AUTHFW = xpam], [Using PAM authfw])
  AM_CONDITIONAL(POLKIT_AUTHFW_SHADOW, [test x$POLKIT_AUTHFW = xshadow], [Using Shadow authfw])

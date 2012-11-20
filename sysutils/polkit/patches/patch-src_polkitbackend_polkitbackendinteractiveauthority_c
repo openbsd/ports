@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_polkitbackend_polkitbackendlocalauthority_c,v 1.4 2012/02/16 22:28:23 ajacoutot Exp $
---- src/polkitbackend/polkitbackendlocalauthority.c.orig	Tue Jan  3 15:45:22 2012
-+++ src/polkitbackend/polkitbackendlocalauthority.c	Wed Feb  8 17:51:32 2012
+$OpenBSD: patch-src_polkitbackend_polkitbackendinteractiveauthority_c,v 1.1 2012/11/20 14:11:48 ajacoutot Exp $
+--- src/polkitbackend/polkitbackendinteractiveauthority.c.orig	Tue Sep 18 20:43:17 2012
++++ src/polkitbackend/polkitbackendinteractiveauthority.c	Tue Nov 20 14:23:46 2012
 @@ -23,7 +23,11 @@
  #include <errno.h>
  #include <pwd.h>
@@ -13,7 +13,7 @@ $OpenBSD: patch-src_polkitbackend_polkitbackendlocalauthority_c,v 1.4 2012/02/16
  #include <string.h>
  #include <glib/gstdio.h>
  #include <locale.h>
-@@ -700,15 +704,20 @@ get_users_in_net_group (PolkitIdentity                
+@@ -2113,15 +2117,25 @@ get_users_in_net_group (PolkitIdentity                
    ret = NULL;
    name = polkit_unix_netgroup_get_name (POLKIT_UNIX_NETGROUP (group));
  
@@ -21,6 +21,7 @@ $OpenBSD: patch-src_polkitbackend_polkitbackendlocalauthority_c,v 1.4 2012/02/16
 +#if defined __OpenBSD__
 +  setnetgrent (name);
 +#else
++
    if (setnetgrent (name) == 0)
      {
        g_warning ("Error looking up net group with name %s: %s", name, g_strerror (errno));
@@ -30,8 +31,21 @@ $OpenBSD: patch-src_polkitbackend_polkitbackendlocalauthority_c,v 1.4 2012/02/16
  
    for (;;)
      {
--      char *hostname, *username, *domainname;
++#if defined __OpenBSD__
 +      const char *hostname, *username, *domainname;
++#else
+       char *hostname, *username, *domainname;
++#endif
        PolkitIdentity *user;
        GError *error = NULL;
  
+@@ -2150,7 +2164,9 @@ get_users_in_net_group (PolkitIdentity                
+ 
+   ret = g_list_reverse (ret);
+ 
++#ifndef __OpenBSD__
+  out:
++#endif
+   endnetgrent ();
+   return ret;
+ }

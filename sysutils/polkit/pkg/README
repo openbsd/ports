@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2012/09/19 12:39:34 ajacoutot Exp $
+$OpenBSD: README,v 1.5 2012/11/20 14:11:48 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -14,23 +14,3 @@ input his password. This is done using a helper daemon (launched when
 starting your X session) which needs to be installed (if not already):
     for a GTK based Desktop	-> polkit-gnome
     for a QT based Desktop	-> polkit-qt4
-
-On OpenBSD, the following identities are setup by default:
-    Administrative users	-> "wheel" group
-    Standard users 		-> "users" group
-
-Disabling polkit
-================
-If you'd like to completely disable privilege granting through the
-PolicyKit framework, create the file:
-    ${SYSCONFDIR}/polkit-1/nullbackend.conf.d/99-nullbackend.conf
-containing the following lines:
-[Configuration]
-Priority=99
-
-Security considerations
-=======================
-polkitd(8) runs setuid(2) root in order to allow applications
-to request additional fine-grained privileges (e.g. adjust the clock,
-change the timezone...). Access to these privileges is controlled by
-policy files and user passwords.

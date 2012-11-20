@@ -1,4 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.10 2012/09/19 12:39:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2012/11/20 14:11:48 ajacoutot Exp $
+@comment Error switching to user _polkitd: Error changing to home directory /nonexistent
+@newgroup _polkitd:701
+@newuser _polkitd:701:_polkitd:daemon:Polkit Daemon User:/var/empty:/sbin/nologin
 %%SHARED%%
 @bin bin/pk-example-frobnicate
 @bin bin/pkaction
@@ -40,40 +43,26 @@ include/polkit-1/polkitagent/polkitagentlistener.h
 include/polkit-1/polkitagent/polkitagentsession.h
 include/polkit-1/polkitagent/polkitagenttextlistener.h
 include/polkit-1/polkitagent/polkitagenttypes.h
-include/polkit-1/polkitbackend/
-include/polkit-1/polkitbackend/polkitbackend.h
-include/polkit-1/polkitbackend/polkitbackendactionlookup.h
-include/polkit-1/polkitbackend/polkitbackendauthority.h
-include/polkit-1/polkitbackend/polkitbackendinteractiveauthority.h
-include/polkit-1/polkitbackend/polkitbackendlocalauthority.h
-include/polkit-1/polkitbackend/polkitbackendtypes.h
 lib/girepository-1.0/
 lib/girepository-1.0/Polkit-1.0.typelib
 lib/girepository-1.0/PolkitAgent-1.0.typelib
 lib/libpolkit-agent-1.a
 lib/libpolkit-agent-1.la
-lib/libpolkit-backend-1.a
-lib/libpolkit-backend-1.la
 lib/libpolkit-gobject-1.a
 lib/libpolkit-gobject-1.la
 lib/pkgconfig/polkit-agent-1.pc
-lib/pkgconfig/polkit-backend-1.pc
 lib/pkgconfig/polkit-gobject-1.pc
 lib/polkit-1/
-lib/polkit-1/extensions/
-@comment lib/polkit-1/extensions/libnullbackend.a
-@comment lib/polkit-1/extensions/libnullbackend.la
 @mode 4755
 @owner root
-@bin libexec/polkit-agent-helper-1
+@bin lib/polkit-1/polkit-agent-helper-1
 @mode
 @owner
-@bin libexec/polkitd
+@bin lib/polkit-1/polkitd
 @man man/man1/pkaction.1
 @man man/man1/pkcheck.1
 @man man/man1/pkexec.1
 @man man/man1/pkttyagent.1
-@man man/man8/pklocalauthority.8
 @man man/man8/polkit.8
 @man man/man8/polkitd.8
 share/dbus-1/system-services/org.freedesktop.PolicyKit1.service
@@ -88,50 +77,13 @@ share/examples/polkit/dbus-1/system.d/org.freedesktop.PolicyKit1.conf
 share/examples/polkit/polkit-1/
 @sample ${SYSCONFDIR}/polkit-1/
 @mode 0700
-share/examples/polkit/polkit-1/localauthority/
-@sample ${SYSCONFDIR}/polkit-1/localauthority/
+@owner _polkitd
+share/examples/polkit/polkit-1/rules.d/
+@sample ${SYSCONFDIR}/polkit-1/rules.d/
 @mode
-share/examples/polkit/polkit-1/localauthority.conf.d/
-@sample ${SYSCONFDIR}/polkit-1/localauthority.conf.d/
-share/examples/polkit/polkit-1/localauthority.conf.d/50-localauthority.conf
-@sample ${SYSCONFDIR}/polkit-1/localauthority.conf.d/50-localauthority.conf
-share/examples/polkit/polkit-1/localauthority.conf.d/60-desktop-policy.conf
-@sample ${SYSCONFDIR}/polkit-1/localauthority.conf.d/60-desktop-policy.conf
-share/examples/polkit/polkit-1/localauthority/10-vendor.d/
-@sample ${SYSCONFDIR}/polkit-1/localauthority/10-vendor.d/
-share/examples/polkit/polkit-1/localauthority/20-org.d/
-@sample ${SYSCONFDIR}/polkit-1/localauthority/20-org.d/
-share/examples/polkit/polkit-1/localauthority/30-site.d/
-@sample ${SYSCONFDIR}/polkit-1/localauthority/30-site.d/
-share/examples/polkit/polkit-1/localauthority/50-local.d/
-@sample ${SYSCONFDIR}/polkit-1/localauthority/50-local.d/
-share/examples/polkit/polkit-1/localauthority/90-mandatory.d/
-@sample ${SYSCONFDIR}/polkit-1/localauthority/90-mandatory.d/
-share/examples/polkit/polkit-1/nullbackend.conf.d/
-@sample ${SYSCONFDIR}/polkit-1/nullbackend.conf.d/
-share/examples/polkit/polkit-1/nullbackend.conf.d/50-nullbackend.conf
-@sample ${SYSCONFDIR}/polkit-1/nullbackend.conf.d/50-nullbackend.conf
-share/examples/polkit/var/
-share/examples/polkit/var/db/
-@mode 0700
-share/examples/polkit/var/db/polkit-1/
-@sample /var/db/polkit-1/
-@mode
-share/examples/polkit/var/db/polkit-1/localauthority/
-@sample /var/db/polkit-1/localauthority/
-share/examples/polkit/var/db/polkit-1/localauthority/10-vendor.d/
-@sample /var/db/polkit-1/localauthority/10-vendor.d/
-@mode 0644
-share/examples/polkit/var/db/polkit-1/localauthority/10-vendor.d/10-desktop-policy.pkla
-@mode
-share/examples/polkit/var/db/polkit-1/localauthority/20-org.d/
-@sample /var/db/polkit-1/localauthority/20-org.d/
-share/examples/polkit/var/db/polkit-1/localauthority/30-site.d/
-@sample /var/db/polkit-1/localauthority/30-site.d/
-share/examples/polkit/var/db/polkit-1/localauthority/50-local.d/
-@sample /var/db/polkit-1/localauthority/50-local.d/
-share/examples/polkit/var/db/polkit-1/localauthority/90-mandatory.d/
-@sample /var/db/polkit-1/localauthority/90-mandatory.d/
+@owner
+share/examples/polkit/polkit-1/rules.d/50-default.rules
+@sample ${SYSCONFDIR}/polkit-1/rules.d/50-default.rules
 share/gir-1.0/
 share/gir-1.0/Polkit-1.0.gir
 share/gir-1.0/PolkitAgent-1.0.gir
@@ -140,3 +92,6 @@ share/polkit-1/
 share/polkit-1/actions/
 share/polkit-1/actions/org.freedesktop.policykit.examples.pkexec.policy
 share/polkit-1/actions/org.freedesktop.policykit.policy
+@mode 0700
+@owner _polkitd
+share/polkit-1/rules.d/
