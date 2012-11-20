@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2012/05/23 15:13:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2012/11/20 19:30:13 jasper Exp $
 
 COMMENT =	little language that compiles to javascript
 
-NPM_VERSION =	1.3.3
+NPM_VERSION =	1.4.0
 NPM_NAME =	coffee-script
 PKGNAME =	coffeescript-${NPM_VERSION}
-REVISION =	0
 CATEGORIES =	lang
 
 MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>

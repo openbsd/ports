@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/04/12 19:08:46 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/11/20 19:30:14 jasper Exp $
 bin/cake
 bin/coffee
 lib/node_modules/coffee-script/
 lib/node_modules/coffee-script/.npmignore
 lib/node_modules/coffee-script/CNAME
+lib/node_modules/coffee-script/CONTRIBUTING.md
 lib/node_modules/coffee-script/LICENSE
 lib/node_modules/coffee-script/README
 lib/node_modules/coffee-script/Rakefile
