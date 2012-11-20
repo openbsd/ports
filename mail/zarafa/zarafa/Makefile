@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.142 2012/10/28 21:51:08 robert Exp $
+# $OpenBSD: Makefile,v 1.143 2012/11/20 13:11:34 robert Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
@@ -100,6 +100,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 		ac_cv_lib_pam_pam_start=no
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-static \
+		--disable-swig \
 		--with-mapi-configdir=${SYSCONFDIR}/mapi \
 		--with-userscript-prefix=${SYSCONFDIR}/zarafa/userscripts \
 		--with-quotatemplate-prefix=${SYSCONFDIR}/zarafa/quotamail \
