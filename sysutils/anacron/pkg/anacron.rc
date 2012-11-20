@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# $OpenBSD: anacron.rc,v 1.1 2012/11/20 15:14:41 giovanni Exp $
+
+daemon="${TRUEPREFIX}/sbin/anacron"
+daemon_flags="-s"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1

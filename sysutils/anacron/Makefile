@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.11 2011/05/11 07:45:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2012/11/20 15:14:41 giovanni Exp $
 
 COMMENT=	periodic command scheduler
 
 DISTNAME=	anacron-2.3
-REVISION =	2
+REVISION =	3
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://sourceforge.net/projects/anacron/
 
-MAINTAINER=	Andreas Kahari <andreas.kahari@gmail.com>
+MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -20,7 +20,8 @@ WANTLIB=		c
 MASTER_SITES=	    ${MASTER_SITE_SOURCEFORGE:=anacron/}
 
 USE_GMAKE=	    Yes
-USE_GROFF = 	    Yes
+
+NO_REGRESS =	Yes
 
 MAKE_FLAGS=	    ANACRONTAB="${SYSCONFDIR}/anacrontab"
 
