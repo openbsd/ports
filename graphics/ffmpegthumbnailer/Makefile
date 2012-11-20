@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2012/09/04 06:38:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2012/11/20 12:01:07 dcoppa Exp $
 
 COMMENT=	lightweight video thumbnailer for file managers
 
-DISTNAME=	ffmpegthumbnailer-2.0.7
+DISTNAME=	ffmpegthumbnailer-2.0.8
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://ffmpegthumbnailer.googlecode.com/files/
-REVISION=	0
 
 SHARED_LIBS=	ffmpegthumbnailer	4.1
 
@@ -26,7 +25,7 @@ LIB_DEPENDS=	graphics/ffmpeg \
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.68
+AUTOCONF_VERSION= 2.69
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
