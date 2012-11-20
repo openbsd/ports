@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2012/09/21 06:31:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2012/11/20 06:57:26 ajacoutot Exp $
 
 COMMENT=	text shaping library
 
-DISTNAME=	harfbuzz-0.9.4
+DISTNAME=	harfbuzz-0.9.6
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	0
 
-SHARED_LIBS +=  harfbuzz                  0.0 # 904.0
+SHARED_LIBS +=  harfbuzz                  0.1 # 904.0
 
 CATEGORIES=	devel x11
 
