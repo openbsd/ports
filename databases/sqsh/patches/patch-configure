@@ -1,16 +1,7 @@
-$OpenBSD: patch-configure,v 1.5 2011/04/15 16:13:23 ajacoutot Exp $
---- configure.orig	Fri Nov  9 14:58:04 2001
-+++ configure	Thu Apr 14 18:17:45 2011
-@@ -1123,7 +1123,7 @@ echo "configure:1098: checking Open Client libraries" 
- 		# Check for -lct
- 		#
- 		if test -f $SYBASE_LIBDIR/libct.a; then
--			SYBASE_LIBS="$SYBASE_LIBS -lct"
-+			SYBASE_LIBS="$SYBASE_LIBS -lct -pthread"
- 		fi
- 
- 		#
-@@ -1209,6 +1209,8 @@ echo "configure:1191: checking Open Client OS librarie
+$OpenBSD: patch-configure,v 1.6 2012/11/20 22:17:29 sthen Exp $
+--- configure.orig	Wed May  2 12:27:55 2012
++++ configure	Tue Nov 20 22:04:16 2012
+@@ -3545,6 +3545,8 @@ $as_echo_n "checking Open Client OS libraries... " >&6
  				SYBASE_OS="-lm -ldl -ldgc";;
  			aix*)
  				SYBASE_OS="-lm";;
@@ -19,12 +10,3 @@ $OpenBSD: patch-configure,v 1.5 2011/04/15 16:13:23 ajacoutot Exp $
  			*)
  				SYBASE_OS="-lm -ldl";;
  		esac
-@@ -1493,7 +1495,7 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = ye
- #define $ac_tr_lib 1
- EOF
- 
--  LIBS="-lreadline $LIBS"
-+  LIBS="${READLINE_LIBS} $LIBS"
- 
- else
-   echo "$ac_t""no" 1>&6
