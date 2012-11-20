@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.49 2012/11/13 07:45:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2012/11/20 08:59:30 jasper Exp $
 
 COMMENT=	GNOME desktop sharing server
 
 GNOME_PROJECT=	vino
 GNOME_VERSION=	3.6.2
+REVISION=	0
 
 CATEGORIES=	net
 
@@ -40,7 +41,6 @@ LIB_DEPENDS=	devel/libnotify \
 		x11/gtk+3
 
 MODGNOME_DESKTOP_FILE=	Yes
-MODGNOME_TOOLS=		yelp
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/vino
