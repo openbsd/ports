@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.75 2012/11/06 08:29:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.76 2012/11/20 11:40:10 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	i386
 SHARED_ONLY=	Yes
 
 COMMENT=	fast and customizable WWW browser
 
-V=		12.10
-OPERA_BUILD=	1652
+V=		12.11
+OPERA_BUILD=	1661
 DISTNAME=	opera-${V}-${OPERA_BUILD}.i386.linux
 PKGNAME=	opera-${V}
 EXTRACT_SUFX=	.tar.xz
