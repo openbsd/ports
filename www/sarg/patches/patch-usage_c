@@ -1,0 +1,12 @@
+$OpenBSD: patch-usage_c,v 1.1 2012/11/21 21:42:07 rpe Exp $
+--- usage.c.orig	Wed Nov 14 21:04:00 2012
++++ usage.c	Wed Nov 14 21:06:25 2012
+@@ -37,7 +37,7 @@ void usage(const char *prog)
+ 	puts  (_("     --css          Output the internal CSS"));
+ 	puts  (_("     -d DATE        Date range to include in the report: from-until dd/mm/yyyy-dd/mm/yyyy"));
+ 	puts  (_("     -e MAIL        Email address to send reports to (stdout for console)"));
+-	printf(_("     -f FILE        Config file to read (default is %s/sarg.conf)\n"),SYSCONFDIR);
++	printf(_("     -f FILE        Config file to read (default is %s/sarg/sarg.conf)\n"),SYSCONFDIR);
+ 	puts  (_("     -g FMT         Date format [e=Europe -> dd/mm/yyyy, u=USA -> mm/dd/yyyy]"));
+ 	puts  (_("     -h             This help"));
+ 	puts  (_("     --help         This help"));

@@ -1,33 +1,12 @@
-$OpenBSD: patch-splitlog_c,v 1.4 2007/06/22 12:48:25 martynas Exp $
---- splitlog.c.orig	Tue Jan  2 21:11:26 2007
-+++ splitlog.c	Tue Jun 19 20:24:58 2007
-@@ -39,7 +39,7 @@ void splitlog(char *arq, char *df, int dfrom, int dunt
-    struct tm *t;
+$OpenBSD: patch-splitlog_c,v 1.5 2012/11/21 21:42:07 rpe Exp $
+--- splitlog.c.orig	Wed Nov 14 21:04:27 2012
++++ splitlog.c	Wed Nov 14 21:06:25 2012
+@@ -76,7 +76,7 @@ void splitlog(const char *arq, const char *df, int dfr
+ 	}
  
-    if(arq[0] == '\0')
--      strcpy(arq,"/usr/local/squid/logs/access.log");
-+      strcpy(arq,"/var/squid/logs/access.log");
+ 	if(arq[0] == '\0')
+-		arq="/var/log/squid/access.log";
++		arq="/var/squid/logs/access.log";
  
-    if((fp_in=fopen(arq,"r"))==NULL) {
-       fprintf(stderr, "SARG: (splitlog) %s: %s\n",text[8],arq);
-@@ -52,7 +52,7 @@ void splitlog(char *arq, char *df, int dfrom, int dunt
-       t=localtime(&tt);
- 
-       if(dfrom) {
--         strftime(wdata, 127, "%Y%m%d", t);
-+         strftime(wdata, sizeof(wdata), "%Y%m%d", t);
-          idata=atoi(wdata);
- 	 if(idata < dfrom || idata > duntil)
-          continue;
-@@ -64,9 +64,9 @@ void splitlog(char *arq, char *df, int dfrom, int dunt
-       }
- 
-       if(strncmp(df,"e",1) == 0)
--         strftime(dia, 127, "%d/%m/%Y", t);
-+         strftime(dia, sizeof(dia), "%d/%m/%Y", t);
-        else
--         strftime(dia, 127, "%m/%d/%Y", t);
-+         strftime(dia, sizeof(dia), "%m/%d/%Y", t);
- 
-       sprintf(hora,"%02d:%02d:%02d",t->tm_hour,t->tm_min,t->tm_sec);
-       printf("%s %s %s",dia,hora,buf);
+ 	if (arq[0]=='-' && arq[1]=='\0') {
+ 		fp_in=stdin;

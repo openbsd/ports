@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/22 08:36:54 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2012/11/21 21:42:07 rpe Exp $
 
 COMMENT=		Squid Analysis Report Generator
 
-DISTNAME=		sarg-2.2.5
-REVISION=		0
+DISTNAME=		sarg-2.3.3
 CATEGORIES=		www
 
 HOMEPAGE=	 	http://sarg.sourceforge.net/
 
-MAINTAINER=		Douglas Santos <dsantos@hydroxyl.org>
+MAINTAINER=		Robert Peichaer <rpe@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -16,30 +15,44 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+WANTLIB=		c gd m pcre
+
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sarg/}
 
-WANTLIB=		c
+USE_GROFF=		Yes
+
+MODULES=		devel/gettext
+
+LIB_DEPENDS=		devel/pcre \
+ 			graphics/gd
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--enable-bindir=${LOCALBASE}/bin \
-			--enable-sysconfdir=${SYSCONFDIR}/sarg \
-			--enable-htmldir=/var/www/htdocs/sarg \
+CONFIGURE_ARGS=		--sysconfdir=${SYSCONFDIR}/sarg \
+			--enable-sargphp=/var/www/htdocs/sarg-php \
+			--enable-fontdir=${SYSCONFDIR}/sarg/fonts \
+			--enable-imagedir=${SYSCONFDIR}/sarg/images
+CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
+			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -liconv -lintl"
 
-USE_GROFF =		Yes
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/cfgaux
+
+FLAVORS=		ldap
+FLAVOR?=
+
+.if ${FLAVOR:L:Mldap}
+CONFIGURE_ARGS+=	--with-ldap
+LIB_DEPENDS+=		databases/openldap
+WANTLIB+=		ldap
+.else
+CONFIGURE_ARGS+=	--without-ldap
+.endif
+
 NO_REGRESS=		Yes
 
 EXAMPLESDIR=		${PREFIX}/share/examples/sarg
-MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/cfgaux
 
-post-extract:
-	@chmod 755 ${WRKSRC}/sarg-php/locale
-
-post-build:
-	@perl -pi -e \
-		"s,%%SYSCONFDIR%%,${SYSCONFDIR},g" \
-		${WRKSRC}/log.c \
-		${WRKSRC}/sarg.conf \
-		${WRKSRC}/sarg.1
+pre-configure:
+	@chmod u=rwx,go=rx ${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sarg ${PREFIX}/bin
@@ -47,14 +60,12 @@ do-install:
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}/images
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}/fonts
-	${INSTALL_DATA_DIR} ${EXAMPLESDIR}/languages
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}/sarg-php
 	${INSTALL_DATA} ${WRKSRC}/css.tpl ${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/exclude_codes ${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/images/* ${EXAMPLESDIR}/images/
 	${INSTALL_DATA} ${WRKSRC}/sarg.conf ${EXAMPLESDIR}/
-	${INSTALL_DATA} ${WRKSRC}/fonts/FreeSans.ttf ${EXAMPLESDIR}/fonts/
-	${INSTALL_DATA} ${WRKSRC}/languages/* ${EXAMPLESDIR}/languages/
+	${INSTALL_DATA} ${WRKSRC}/fonts/*.ttf ${EXAMPLESDIR}/fonts/
 	${INSTALL_DATA} ${WRKSRC}/sarg-php/*php ${EXAMPLESDIR}/sarg-php/
 	cp -R ${WRKSRC}/sarg-php/locale ${EXAMPLESDIR}/sarg-php/
 

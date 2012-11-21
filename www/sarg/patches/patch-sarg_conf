@@ -1,7 +1,7 @@
-$OpenBSD: patch-sarg_conf,v 1.2 2007/05/16 15:59:23 aanriot Exp $
---- sarg.conf.orig	Tue Jan  2 17:11:26 2007
-+++ sarg.conf	Wed Apr  4 08:42:21 2007
-@@ -33,7 +33,7 @@
+$OpenBSD: patch-sarg_conf,v 1.3 2012/11/21 21:42:07 rpe Exp $
+--- sarg.conf.orig	Wed Nov 14 21:00:01 2012
++++ sarg.conf	Wed Nov 14 21:00:06 2012
+@@ -4,7 +4,7 @@
  #       Where is the access.log file
  #       sarg -l file
  #
@@ -10,38 +10,68 @@ $OpenBSD: patch-sarg_conf,v 1.2 2007/05/16 15:59:23 aanriot Exp $
  
  # TAG: graphs yes|no
  #	Use graphics where is possible.
-@@ -140,7 +140,7 @@
+@@ -17,7 +17,7 @@
+ #       The full path to the TTF font file to use to create the graphs. It is required
+ #       if graphs is set to yes.
+ #
+-#graph_font /usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf
++#graph_font /etc/sarg/fonts/DejaVuSans.ttf
+ 
+ # TAG:	title
+ # 	Especify the title for html page.
+@@ -117,7 +117,7 @@
  #       The reports will be saved in that directory
  #       sarg -o dir
  #
 -#output_dir /var/www/html/squid-reports
 +#output_dir /var/www/htdocs/sarg
  
- # TAG:  output_email
- #       Email address to send the reports. If you use this tag, no html reports will be generated.
-@@ -270,7 +270,7 @@
- # TAG: exclude_codes file
- #      Ignore records with these codes. Eg.: NONE/400
+ # TAG:  anonymous_output_files yes/no
+ #       Use anonymous file and directory names in the report. If it is set to
+@@ -309,7 +309,7 @@
+ #      Only codes matching exactly one of the line is rejected. The
+ #      comparison is not case sensitive.
  #
 -#exclude_codes /usr/local/sarg/exclude_codes
-+#exclude_codes %%SYSCONFDIR%%/sarg/exclude_codes
++#exclude_codes /etc/sarg/exclude_codes
  
  # TAG: replace_index string
  #      Replace "index.html" in the main index file with this string
-@@ -497,10 +497,10 @@
+@@ -545,7 +545,7 @@
+ #      Generate reports from SquidGuard logs.
+ #      Use 'none' to disable.
+ #      You can use sarg -L filename to use an alternate squidGuard log.
+-#      squidguard_conf /usr/local/squidGuard/squidGuard.conf
++#      squidguard_conf /etc/squidguard/squidguard.conf
+ #
+ #squidguard_conf none
+ 
+@@ -555,7 +555,7 @@
+ #      If this option is specified, it takes precedence over squidguard_conf.
+ #      The command line option -L override this option.
+ #
+-#redirector_log /usr/local/squidGuard/var/logs/urls.log
++#redirector_log /var/log/squidguard/urls.log
+ 
+ # TAG: redirector_filter_out_date on|off
+ #      This option replaces squidguard_ignore_date and redirector_ignore_date whose names were not
+@@ -591,13 +591,13 @@
  #
  #parsed_output_log none
  
 -# TAG: parsed_output_log_compress /bin/gzip|/usr/bin/bzip2|nocompress
-+# TAG: parsed_output_log_compress /bin/bin/gzip|/usr/local/bin/bzip2|nocompress
- #      sarg logs compress util
++# TAG: parsed_output_log_compress /usr/bin/gzip|/usr/bin/bzip2|nocompress
+ #      Command to run to compress sarg parsed output log. It may contain
+ #      options (such as -f to overwrite existing target file). The name of
+ #      the file to compresse is provided at the end of this
+ #      command line. Don't forget to quote things appropriately.
  #
 -#parsed_output_log_compress /bin/gzip
 +#parsed_output_log_compress /usr/bin/gzip
  
  # TAG: displayed_values bytes|abbreviation
  #      how the values will be displayed in reports.
-@@ -533,7 +533,7 @@
+@@ -630,7 +630,7 @@
  #     Sarg will create sarg-php directory with some PHP modules:
  #     - sarg-squidguard-block.php - add urls from user reports to squidGuard DB
  #
@@ -50,7 +80,7 @@ $OpenBSD: patch-sarg_conf,v 1.2 2007/05/16 15:59:23 aanriot Exp $
  
  # TAG: block_it module_url
  #     This tag allow you to pass urls from user reports to a cgi or php module,
-@@ -541,7 +541,7 @@
+@@ -638,7 +638,7 @@
  #
  #     Eg.: block_it /sarg-php/sarg-block-it.php
  #     sarg-block-it is a php that will append a url to a flat file.
@@ -59,21 +89,12 @@ $OpenBSD: patch-sarg_conf,v 1.2 2007/05/16 15:59:23 aanriot Exp $
  #     in $filename variable, and chown to a httpd owner.
  #
  #     sarg will pass http://module_url?url=url
-@@ -562,7 +562,7 @@
- #	.data2		table text class, align:right, border colors
- #	.link  		link class
- #
--#     There is a sample in /usr/local/sarg/etc/css.tpl
-+#     There is a sample in %%SYSCONFDIR%%/sarg/css.tpl
- #
- #external_css_file none
+@@ -788,7 +788,7 @@
+ #      65.52.00.00/14 *.mail.live.com
+ #      re:/\.dropbox\.com(:443)?/ dropbox
+ #      re:/([\w-]+)\.(\w*[a-zA-Z]\w*)(?::\d+)?$/\1.\2
+-#hostalias /usr/local/sarg/hostalias
++#hostalias /etc/sarg/hostalias
  
-@@ -576,7 +576,7 @@
- #                                          %u - user report
- #
- # user_authentication no
--# AuthUserFile /usr/local/sarg/passwd
-+# AuthUserFile %%SYSCONFDIR%%/sarg/passwd
- # AuthName "SARG, Restricted Access"
- # AuthType Basic
- # Require user admin %u
+ # TAG: keep_temp_log yes|no
+ #      Keep temporary files created by sarg to produce its reports. The normal

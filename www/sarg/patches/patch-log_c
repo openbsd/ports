@@ -1,44 +1,39 @@
-$OpenBSD: patch-log_c,v 1.3 2007/06/22 12:48:25 martynas Exp $
---- log.c.orig	Tue Jan  2 21:11:26 2007
-+++ log.c	Tue Jun 19 20:45:44 2007
-@@ -145,7 +145,7 @@ int main(argc,argv)
-    SquidGuardLogAlternate[0]='\0';
-    arq[0]='\0';
+$OpenBSD: patch-log_c,v 1.4 2012/11/21 21:42:07 rpe Exp $
+--- log.c.orig	Wed Nov 14 21:03:33 2012
++++ log.c	Wed Nov 14 21:06:25 2012
+@@ -223,7 +223,7 @@ int main(int argc,char *argv[])
+ 	NRedirectorLogs=0;
+ 	for (ilf=0 ; ilf<ILF_Last ; ilf++) ilf_count[ilf]=0;
  
--   strcpy(AccessLog,"/usr/local/squid/var/logs/access.log");
-+   strcpy(AccessLog,"/var/squid/logs/access.log");
-    sprintf(ExcludeCodes,"%s/exclude_codes",SYSCONFDIR);
-    strcpy(GraphDaysBytesBarColor,"orange");
-    strcpy(BgColor,"#ffffff");
-@@ -160,7 +160,7 @@ int main(argc,argv)
-    strcpy(LogoTextColor,"#006699");
-    strcpy(FontSize,"9px");
-    strcpy(TempDir,"/tmp");
--   strcpy(OutputDir,"/var/www/html/squid-reports");
-+   strcpy(OutputDir,"/var/www/htdocs/sarg");
-    strcpy(Ip2Name,"no");
-    strcpy(DateFormat,"u");
-    strcpy(OverwriteReport,"no");
-@@ -197,11 +197,11 @@ int main(argc,argv)
-    strcpy(ShowSargInfo,"yes");
-    strcpy(ShowSargLogo,"yes");
-    strcpy(ParsedOutputLog,"no");
--   strcpy(ParsedOutputLogCompress,"/bin/gzip");
-+   strcpy(ParsedOutputLogCompress,"/usr/bin/gzip");
-    strcpy(DisplayedValues,"abbreviation");
-    strcpy(HeaderFontSize,"9px");
-    strcpy(TitleFontSize,"11px");
--   strcpy(AuthUserFile,"/usr/local/sarg/passwd");
-+   strcpy(AuthUserFile,"%%SYSCONFDIR%%/sarg/passwd");
-    strcpy(AuthName,"SARG, Restricted Access");
-    strcpy(AuthType,"basic");
-    strcpy(Require,"require user admin %u");
-@@ -1216,7 +1216,7 @@ int main(argc,argv)
+-	snprintf(ExcludeCodes,sizeof(ExcludeCodes),"%s/exclude_codes",SYSCONFDIR);
++	snprintf(ExcludeCodes,sizeof(ExcludeCodes),"%s/sarg/exclude_codes",SYSCONFDIR);
+ 	strcpy(GraphDaysBytesBarColor,"orange");
+ 	strcpy(BgColor,"#ffffff");
+ 	strcpy(TxColor,"#000000");
+@@ -237,7 +237,7 @@ int main(int argc,char *argv[])
+ 	strcpy(LogoTextColor,"#006699");
+ 	strcpy(FontSize,"9px");
+ 	strcpy(TempDir,"/tmp");
+-	strcpy(OutputDir,"/var/www/html/squid-reports");
++	strcpy(OutputDir,"/var/www/htdocs/squid-reports");
+ 	AnonymousOutputFiles=false;
+ 	Ip2Name=false;
+ 	strcpy(DateFormat,"u");
+@@ -542,7 +542,7 @@ int main(int argc,char *argv[])
  
-               if(download_flag && strstr(code,"DENIED") == 0) {
-                  ndownload = 1;
--                 sprintf(bufz, "%s %s %s %s %s %s\n",dia,hora,user,ip,download_url);
-+                 sprintf(bufz, "%s %s %s %s %s\n",dia,hora,user,ip,download_url);
+ 	if(debug) debuga(_("Init\n"));
  
- #ifdef LEGACY_WRITE_DOWNLOAD
-                  sprintf(tmp3,"%s/sarg/download.unsort",tmp);
+-	if(ConfigFile[0] == '\0') snprintf(ConfigFile,sizeof(ConfigFile),"%s/sarg.conf",SYSCONFDIR);
++	if(ConfigFile[0] == '\0') snprintf(ConfigFile,sizeof(ConfigFile),"%s/sarg/sarg.conf",SYSCONFDIR);
+ 	if(access(ConfigFile, R_OK) != 0) {
+ 		debuga(_("Cannot open config file: %s - %s\n"),ConfigFile,strerror(errno));
+ 		exit(EXIT_FAILURE);
+@@ -585,7 +585,7 @@ int main(int argc,char *argv[])
+ 		IndexTree=INDEX_TREE_FILE;
+ 
+ 	if(NAccessLog == 0) {
+-		strcpy(AccessLog[0],"/var/log/squid/access.log");
++		strcpy(AccessLog[0],"/var/squid/logs/access.log");
+ 		NAccessLog++;
+ 	}
+ 
