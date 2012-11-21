@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.586 2012/11/18 10:58:01 rpe Exp $
+# $OpenBSD: Makefile,v 1.587 2012/11/21 21:44:42 rpe Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -471,6 +471,7 @@
      SUBDIR += ruby-vegas,ruby18
      SUBDIR += sabredav
      SUBDIR += sarg
+     SUBDIR += sarg,ldap
      SUBDIR += seamonkey
      SUBDIR += seamonkey-i18n
      SUBDIR += slowhttptest
