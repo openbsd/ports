@@ -1,73 +1,41 @@
-# $OpenBSD: Makefile,v 1.18 2011/10/17 12:40:44 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2012/11/21 20:38:48 sthen Exp $
 
 COMMENT=	command-line utility to rip and encode audio cds
 
-V=		2.3.0
-# cd-diskid version number
-V2=		0.9
-DISTNAME=	abcde-$V
+DISTNAME=	abcde-2.5.4
 CATEGORIES=	audio
 
-HOMEPAGE=	http://www.hispalinux.es/~data/abcde.php
+HOMEPAGE=	http://code.google.com/p/abcde/
 
-# Artistic and GPL
+# Artistic or GPLv2, but "Copyright for this work is to expire
+# January 1, 2010, after which it shall be public domain."
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c
 
-MS=		http://www.hispalinux.es/~data/files/ \
-		http://spacehopper.org/mirrors/
-MASTER_SITES=	${MS}
-MASTER_SITES0=	${MS:=cd-discid/}
-MASTER_SITES1=	http://lly.org/~rcw/id3/old/ \
-		http://lly.org/~rcw/id3/
-DISTFILES=	${DISTNAME:S,-,_,}.orig.tar.gz \
-		cd-discid_${V2}.orig.tar.gz:0
+MASTER_SITES=	http://abcde.googlecode.com/files/
+MASTER_SITES0=	http://lly.org/~rcw/id3/ \
+		http://lly.org/~rcw/id3/old/
 
-RUN_DEPENDS=	audio/cdparanoia
-
-FLAVORS=	lame
-FLAVOR?=	
+RUN_DEPENDS=	audio/cdparanoia \
+		audio/cd-discid \
+		audio/id3lib \
+		audio/vorbis-tools \
+		shells/bash
 
 NO_REGRESS=	Yes
-USE_GROFF =	Yes
 
-.if ${FLAVOR:Mlame}
-DISTFILES+=	id3_0.12.orig.tar.gz:1
-RUN_DEPENDS+=	audio/lame
-.else
-RUN_DEPENDS+=	audio/vorbis-tools
-.endif
-SUPDISTFILES=	id3_0.12.orig.tar.gz:1
-
-pre-configure:
-.if ${FLAVOR:Mlame}
-	perl -pi -e 's,OUTPUTTYPE=ogg,OUTPUTTYPE=mp3,g' ${WRKSRC}/abcde
-.endif
-
-do-build:
-	cd ${WRKDIR}/cd-discid-${V2} && \
-		${CC} ${CFLAGS} -o cd-discid cd-discid.c
-.if ${FLAVOR:Mlame}
-	cd ${WRKDIR}/id3-0.12 && \
-		perl -pi -e 's,#include <getopt.h>,/*#include <getopt.h>*/,g' id3.c && \
-		${CC} ${CFLAGS} -o id3 id3.c
-.endif
+do-configure:
+	perl -pi -e 's,/etc/,${SYSCONFDIR}/,' ${WRKSRC}/abcde
+	${SUBST_CMD} ${WRKSRC}/abcde ${WRKSRC}/cddb-tool
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/abcde ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/cddb-tool ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKDIR}/cd-discid-${V2}/cd-discid ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/abcde.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/cddb-tool.1 ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKDIR}/cd-discid-${V2}/cd-discid.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/abcde
 	${INSTALL_DATA} ${WRKSRC}/abcde.conf ${PREFIX}/share/examples/abcde
-.if ${FLAVOR:Mlame}
-	${INSTALL_PROGRAM} ${WRKDIR}/id3-0.12/id3 ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKDIR}/id3-0.12/id3.1 ${PREFIX}/man/man1
-.endif
 
 .include <bsd.port.mk>

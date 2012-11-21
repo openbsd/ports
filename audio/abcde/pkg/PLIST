@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/08/05 03:28:11 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/11/21 20:38:48 sthen Exp $
+@pkgpath audio/abcde,lame
 bin/abcde
-bin/cd-discid
 bin/cddb-tool
 @man man/man1/abcde.1
-@man man/man1/cd-discid.1
 @man man/man1/cddb-tool.1
 share/examples/abcde/
 share/examples/abcde/abcde.conf
-%%lame%%
+@sample ${SYSCONFDIR}/abcde.conf

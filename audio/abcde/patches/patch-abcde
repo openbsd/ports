@@ -1,29 +1,76 @@
-$OpenBSD: patch-abcde,v 1.6 2010/09/05 21:55:42 sthen Exp $
---- abcde.orig	Sun Aug 14 20:51:53 2005
-+++ abcde	Sun Sep  5 22:55:16 2010
-@@ -2058,7 +2058,7 @@ VAPLAYLISTFORMAT='${ARTISTFILE}-${ALBUMFILE}.${OUTPUT}
+$OpenBSD: patch-abcde,v 1.7 2012/11/21 20:38:48 sthen Exp $
+--- abcde.orig	Tue Sep 18 15:09:31 2012
++++ abcde	Sat Nov 17 16:09:52 2012
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!${LOCALBASE}/bin/bash
+ # Copyright (c) 1998-2001 Robert Woodcock <rcw@debian.org>
+ # Copyright (c) 2003-2006 Jesus Climent <jesus.climent@hispalinux.es>
+ # Copyright (c) 2009-2012 Colin Tuckley <colint@debian.org>
+@@ -833,6 +833,16 @@ do_tag ()
+ 						${TPE2:+--set-text-frame=TPE2:"$TPE2"} \
+ 						"$ABCDETEMPDIR/track$1.$OUTPUT"
+ 					;;
++				id3tag)
++					# FIXME # track numbers in mp3 come with 1/10, so we cannot
++					# happily substitute them with $TRACKNUM
++					run_command tagtrack-$OUTPUT-$1 nice $ENCNICE $TAGGER $TAGGEROPTS \
++						--comment=::"$COMMENTOUTPUT" -A "$DALBUM" \
++						-a "$TRACKARTIST" -s "$TRACKNAME" -y "$CDYEAR" \
++						-g "$GENREID" -t "${TRACKNUM:-$1}" \
++						${TRACKNUM:+-T "$TRACKS"} \
++						"$ABCDETEMPDIR/track$1.$OUTPUT"
++					;;
+ 				# FIXME # Still not activated...
+ 				id3ed)
+ 					run_command tagtrack-$OUTPUT-$1 nice $ENCNICE \
+@@ -3165,7 +3175,7 @@ VAPLAYLISTFORMAT='${ARTISTFILE}-${ALBUMFILE}.${OUTPUT}
  VAPLAYLISTDATAPREFIX=''
  DOSPLAYLIST=n
  COMMENT=''
 -ID3TAGV=2
-+ID3TAGV=1
++ID3TAGV=id3tag
  ENCNICE=10
  READNICE=10
  DISTMP3NICE=10
-@@ -2170,7 +2170,7 @@ elif [ X$(uname) = "XDarwin" ] ; then
- 	NEEDDISKTOOL=y
+@@ -3207,6 +3217,7 @@ AACENC=faac
+ 
+ ID3=id3
+ ID3V2=id3v2
++ID3TAG=id3tag
+ EYED3=eyeD3
+ VORBISCOMMENT=vorbiscomment
+ METAFLAC=metaflac
+@@ -3259,6 +3270,7 @@ AACENCOPTS=
+ 
+ ID3OPTS=
+ ID3V2OPTS=
++ID3TAGOPTS=
+ CDPARANOIAOPTS=
+ CDDA2WAVOPTS=
+ DAGRABOPTS=
+@@ -3310,7 +3322,7 @@ elif [ X$(uname) = "XDarwin" ] ; then
+ 	NEEDDISKUTIL=y
  	CDROMREADERSYNTAX=cddafs
  elif [ X$(uname) = "XOpenBSD" ] ; then
 -	HTTPGET=wget
 +	HTTPGET=ftp
  	MD5SUM=md5
+ 	OSFLAVOUR=OBSD
+ elif [ X$(uname) = "XNetBSD" ] ; then
+@@ -3875,11 +3887,15 @@ esac
+ if [ "$ID3TAGV" = "1" ]; then
+ 	TAGGER="$ID3"
+ 	TAGGEROPTS="$ID3OPTS"
++else if [ "$ID3TAGV" = "id3tag" ]; then
++	TAGGER="$ID3TAG"
++	TAGGEROPTS="$ID3TAGOPTS"
  else
- 	HTTPGET=wget
-@@ -2207,6 +2207,7 @@ if [ "$HTTPGETOPTS" = "" ] ; then
- 		wget) HTTPGETOPTS="-q -O -";;
- 		curl) HTTPGETOPTS="-f -s";;
- 		fetch)HTTPGETOPTS="-q -o -";;
-+		ftp)  HTTPGETOPTS="-V -o -";;
- 		*) echo "abcde warning: HTTPGET in non-standard and HTTPGETOPTS are not defined." >&2 ;;
- 	esac
+ 	TAGGER="$EYED3"
+ 	TAGGEROPTS="$ID3V2OPTS"
+ 	ID3SYNTAX=eyed3
+ 	TAGGEROPTS="--set-encoding=utf16-LE $ID3V2OPTS"
++fi
  fi
+ 
+ # NOGAP is specific to lame. Other encoders fail ...
