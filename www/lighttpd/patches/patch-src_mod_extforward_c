@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_mod_extforward_c,v 1.5 2012/11/21 11:41:56 brad Exp $
+
+Log address of untrusted proxy with debug.log-request-handling.
+
+--- src/mod_extforward.c.orig	Fri Nov 16 19:55:35 2012
++++ src/mod_extforward.c	Fri Nov 16 19:56:57 2012
+@@ -398,8 +398,8 @@ URIHANDLER_FUNC(mod_extforward_uri_handler) {
+ 	/* if the remote ip itself is not trusted, then do nothing */
+ 	if (IP_UNTRUSTED == is_proxy_trusted(dst_addr_str, p)) {
+ 		if (con->conf.log_request_handling) {
+-			log_error_write(srv, __FILE__, __LINE__, "s",
+-					"remote address is NOT a trusted proxy, skipping");
++			log_error_write(srv, __FILE__, __LINE__, "sss",
++					"remote address", dst_addr_str, "is NOT a trusted proxy, skipping");
+ 		}
+ 
+ 		return HANDLER_GO_ON;
