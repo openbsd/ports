@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2012/11/10 10:15:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2012/11/21 18:54:03 ajacoutot Exp $
 
 COMMENT=	library for storing and retrieving passwords and secrets
 
 GNOME_PROJECT=	libsecret
-GNOME_VERSION=	0.10
-REVISION=	3
+GNOME_VERSION=	0.12
 
 SHARED_LIBS +=  secret-1             0.0      # unknown
 
@@ -42,7 +41,7 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/libsecret/tests/Makefile.in \
 		${WRKSRC}/libsecret/tests/mock-service.c
 
-# these files calls "python", libsecret/tests/{Makefile.in,mock-service.c}
+# these files call "python", libsecret/tests/{Makefile.in,mock-service.c}
 pre-regress:
 	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 
