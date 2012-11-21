@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.9 2012/06/15 08:30:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2012/11/21 16:08:35 ajacoutot Exp $
 @bin bin/gnomebaker
 share/applications/gnomebaker.desktop
+share/gnome/
+share/gnome/help/
 share/gnome/help/gnomebaker/
 share/gnome/help/gnomebaker/C/
 share/gnome/help/gnomebaker/C/figures/
@@ -48,8 +50,6 @@ share/gnomebaker/state10.png
 share/gnomebaker/state11.png
 share/gnomebaker/state12.png
 share/gnomebaker/state13.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/gnomebaker-48.png
 share/locale/af/LC_MESSAGES/gnomebaker.mo
 share/locale/az/LC_MESSAGES/gnomebaker.mo
@@ -153,8 +153,6 @@ share/locale/st/LC_MESSAGES/
 share/locale/st/LC_MESSAGES/gnomebaker.mo
 share/locale/sv/LC_MESSAGES/gnomebaker.mo
 share/locale/te/LC_MESSAGES/gnomebaker.mo
-share/locale/tl/
-share/locale/tl/LC_MESSAGES/
 share/locale/tl/LC_MESSAGES/gnomebaker.mo
 share/locale/tr/LC_MESSAGES/gnomebaker.mo
 share/locale/uk/LC_MESSAGES/gnomebaker.mo
@@ -168,11 +166,12 @@ share/locale/zh/LC_MESSAGES/gnomebaker.mo
 share/locale/zh_CN/LC_MESSAGES/gnomebaker.mo
 share/locale/zh_HK/LC_MESSAGES/gnomebaker.mo
 share/locale/zh_TW/LC_MESSAGES/gnomebaker.mo
+share/omf/
 share/omf/gnomebaker/
 share/omf/gnomebaker/gnomebaker-C.omf
 @exec %D/bin/gconftool-2 --direct --config-source=`%D/bin/gconftool-2 --get-default-source` --type int --set /apps/GnomeBaker/Devices/Device01/Capabilities 15
 @exec %D/bin/gconftool-2 --direct --config-source=`%D/bin/gconftool-2 --get-default-source` --type string --set /apps/GnomeBaker/Devices/Device01/DeviceId /dev/rcd0c
-@exec %D/bin/gconftool-2 --direct --config-source=`%D/bin/gconftool-2 --get-default-source` --type string --set /apps/GnomeBaker/Devices/Device01/DeviceName CD_DVD_Writer
+@exec %D/bin/gconftool-2 --direct --config-source=`%D/bin/gconftool-2 --get-default-source` --type string --set /apps/GnomeBaker/Devices/Device01/DeviceName 'CD/DVD Writer'
 @exec %D/bin/gconftool-2 --direct --config-source=`%D/bin/gconftool-2 --get-default-source` --type string --set /apps/GnomeBaker/Devices/Device01/DeviceNode /dev/rcd0c
 @exec %D/bin/gconftool-2 --direct --config-source=`%D/bin/gconftool-2 --get-default-source` --type string --set /apps/GnomeBaker/Devices/Device01/MountPoint /mnt
 @unexec %D/bin/gconftool-2 --direct --config-source=`%D/bin/gconftool-2 --get-default-source` --unset /apps/GnomeBaker/Devices/Device01/Capabilities
