@@ -1,9 +1,11 @@
-$OpenBSD: patch-Network_Socket_hsc,v 1.1 2012/10/02 13:35:40 dcoppa Exp $
+$OpenBSD: patch-Network_Socket_hsc,v 1.2 2012/11/21 22:27:18 kili Exp $
 
 ucred is sockpeercred on OpenBSD
 
---- Network/Socket.hsc.orig	Mon Oct  1 20:31:59 2012
-+++ Network/Socket.hsc	Mon Oct  1 20:32:16 2012
+don't throw an error when attempting to setsockopt IPV6_V6ONLY
+
+--- Network/Socket.hsc.orig	Tue Apr 24 05:19:39 2012
++++ Network/Socket.hsc	Wed Nov 21 22:13:30 2012
 @@ -80,7 +80,7 @@ module Network.Socket
      , getPeerName
      , getSocketName
@@ -13,7 +15,20 @@ ucred is sockpeercred on OpenBSD
      -- get the credentials of our domain socket peer.
      , getPeerCred
  #endif
-@@ -1042,22 +1042,22 @@ getSocketOption (MkSocket s _ _ _ _) so = do
+@@ -424,9 +424,10 @@ socket family stype protocol = do
+     socket_status <- newMVar NotConnected
+     let sock = MkSocket fd family stype protocol socket_status
+ #if HAVE_DECL_IPV6_V6ONLY
+-# if defined(mingw32_HOST_OS)
++# if defined(mingw32_HOST_OS) || defined(openbsd_HOST_OS)
+     -- the IPv6Only option is only supported on Windows Vista and later,
+-    -- so trying to change it might throw an error
++    -- so trying to change it might throw an error. It's also not
++    -- supported on OpenBSD.
+     when (family == AF_INET6) $
+             catch (setSocketOption sock IPv6Only 0) $ const $ return ()
+ # else
+@@ -1042,22 +1043,22 @@ getSocketOption (MkSocket s _ _ _ _) so = do
         fromIntegral `liftM` peek ptr_v
  
  
