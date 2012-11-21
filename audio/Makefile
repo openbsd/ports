@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.292 2012/10/11 14:18:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.293 2012/11/21 20:37:54 sthen Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -21,6 +21,7 @@
      SUBDIR += bonk
      SUBDIR += calf
      SUBDIR += caps-plugins
+     SUBDIR += cd-discid
      SUBDIR += cdparanoia
      SUBDIR += celt
      SUBDIR += celt051
