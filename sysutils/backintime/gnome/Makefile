@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/16 11:41:39 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2012/11/22 13:33:49 ajacoutot Exp $
 
 COMMENT=	simple backup tool -- GNOME UI
 
 PKGNAME=	backintime-gnome-${V}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	x11
 
