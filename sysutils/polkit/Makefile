@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.38 2012/11/20 14:11:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2012/11/22 17:37:35 ajacoutot Exp $
 
 COMMENT=	framework for granting privileged operations to users
 
 DISTNAME=	polkit-0.108
+REVISION=	0
 
 SHARED_LIBS +=  polkit-gobject-1	2.0 # .0.0
 SHARED_LIBS +=  polkit-agent-1		2.0 # .0.0
