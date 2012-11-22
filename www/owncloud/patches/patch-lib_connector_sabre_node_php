@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_connector_sabre_node_php,v 1.1 2012/11/22 15:37:47 ajacoutot Exp $
+
+https://github.com/owncloud/core/issues/493
+
+--- lib/connector/sabre/node.php.orig	Thu Nov 22 11:52:02 2012
++++ lib/connector/sabre/node.php	Thu Nov 22 11:52:59 2012
+@@ -278,7 +278,7 @@ abstract class OC_Connector_Sabre_Node implements Sabr
+ 		
+ 		//remove etag for all Shared folders
+ 		$query = OC_DB::prepare( 'DELETE FROM `*PREFIX*properties`'
+-				.' WHERE `propertypath` = "/Shared"'
++				.' WHERE `propertypath` = \'/Shared\' '
+ 		);
+ 		$query->execute(array());
+ 		
