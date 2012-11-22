@@ -1,0 +1,119 @@
+$OpenBSD: README,v 1.1.1.1 2012/11/22 23:45:21 edd Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Getting Started
+===============
+
+Upon first run, FS-UAE will make a directory tree under ~/FS-UAE which
+will serve as the place to store floppy images, hard disk images,
+Kickstart images, etc. So first just run the emulator to create this
+directory structure.
+
+Next you will need a Kickstart ROM for the system you want to emulate.
+Kickstart is the name given to the chip in a real Amiga that contains
+the bootloader code. The Kickstart ROM can either be dumped from a real
+Amiga using a tool like Amiga Explorer for Windows. Alternatively you
+can buy the Kickstart ROM from AmigaForever. More details here:
+http://www.amigakickstart.com/
+
+The Kickstart ROMs are copyrighted. You should obtain them legally.
+
+Once you have a Kickstart ROM, put it in ~/FS-UAE/Kickstarts/. You can
+now start to build a config file:
+
+ $ mkdir -p ~/.config/fs-uae
+ $ cp ${TRUEPREFIX}/share/examples/fs-uae/fs-uae.conf ~/.config/fs-uae/
+ $ vi ~/.config/fs-uae/fs-uae.conf
+
+You will want uncomment and amend this line to point to your Kickstart
+ROM:
+#kickstart_file = ~/FS-UAE/Kickstarts/your_kickstart_file.rom
+
+If you boot FS-UAE now, you should see the Kickstart bootloader screen.
+On a real Amiga system, this is where one would insert one of those
+"floppy disks" (should you remember those). Of course we can emulate the
+floppies too.
+
+For example:
+
+ $ cd ~/FS-UAE/Floppies
+ $ ftp http://www.factor5.de/downloads/r-type.zip
+ $ unzip r-type.zip
+
+Now in your config file uncomment the line:
+#floppy_drive_0 = R-Type.adf
+
+Next time you boot, you can play some R-Type goodness.
+
+Joysticks
+=========
+
+Under Linux, SDL joysticks show up as named devices and ideally there
+would be a config file in ${TRUEPREFIX}/share/fs-uae/input for each
+Under OpenBSD however, SDL joysticks are named "joystick (n)", where n
+is the uhid device number. Due to these differences, joystick setup is
+slightly different. This is best shown by example.
+
+Suppose we want to configure this device as a joystick:
+
+uhidev0 at uhub4 port 1 configuration 1 interface 0 "WiseGroup.,Ltd MP-8888 USB Joypad" rev 1.10/3.00 addr 2
+uhidev0: iclass 3/0
+uhid0 at uhidev0: input=7, output=3, feature=0
+
+First find a matching or similar device config in
+${TRUEPREFIX}/share/fs-uae/input/.
+
+In this case of our example, a close match is:
+wisegroup_ltd/tigergame_ps_ps2_game_controller_adapter.ini
+
+To use this joystick configuration:
+
+ $ cp ${TRUEPREFIX}/share/fs-uae/input/wisegroup_ltd/tigergame_ps_ps2_game_controller_adapter.ini \
+ 	~/FS-UAE/Controllers/joystick_0.ini
+
+Now edit your config file and uncomment this line:
+#joystick_port_1 = joystick (0)
+
+Note that we "plug the controller in" to the second joystick port. This
+is because on a real Amiga, port 0 (the first port) is usually occupied
+by a mouse.
+
+When you next boot fs-uae the joystick should now work.
+
+Useful Keyboard Shortcuts
+=========================
+
+The keyboard shortcuts you absolutely need to know are:
+
+F12:		Show menu.
+Alt + Enter:	Toggle fullscreen.
+Middle click:	Release mouse from FS-UAE.
+F12 + g:	Release mouse from FS-UAE.
+F12 + q:	Quit
+
+If you have no real joystick configured, you can use the emulated one.
+Cursor keys controls the joystick stick and right ctrl or right alt
+controls the fire button.
+
+Launcher
+========
+
+FS-UAE comes with a launcher which can help to manage floppy
+configurations for different games. To use this run:
+
+ $ fs-uae-launcher
+
+Note that you can not change advanced config settings from the launcher.
+
+FS-UAE is Slow?
+===============
+
+Play with 'video_sync' and 'accuracy' in the config file.
+
+Documentation
+=============
+
+See http://fengestad.no/fs-uae/documentation

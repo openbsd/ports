@@ -1,0 +1,15 @@
+$OpenBSD: patch-libfsemu_Makefile,v 1.1.1.1 2012/11/22 23:45:20 edd Exp $
+
+Missing libpng flags
+
+--- libfsemu/Makefile.orig	Tue Nov 20 00:28:32 2012
++++ libfsemu/Makefile	Tue Nov 20 00:28:44 2012
+@@ -36,7 +36,7 @@ warnings = -Wall
+ errors = -Werror=implicit-function-declaration
+ cppflags = $(CXXFLAGS)
+ cflags = -std=c99 $(warnings) $(errors) -Iinclude \
+-		`sdl-config --cflags` `pkg-config --cflags glib-2.0` \
++		`sdl-config --cflags` `pkg-config --cflags glib-2.0 libpng` \
+ 		$(CFLAGS) -D_FILE_OFFSET_BITS=64
+ objects = obj/emu_emu.o obj/emu_video.o obj/emu_audio.o obj/emu_input.o \
+ 		obj/emu_menu.o obj/emu_texture.o obj/emu_font.o \
