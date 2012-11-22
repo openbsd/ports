@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.293 2012/11/21 20:37:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.294 2012/11/22 18:36:52 landry Exp $
 
      SUBDIR =
      SUBDIR += abcde
-     SUBDIR += abcde,lame
      SUBDIR += ac3dec
      SUBDIR += akode
      SUBDIR += alac_decoder
