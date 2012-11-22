@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2012/05/20 17:04:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2012/11/22 20:54:11 sthen Exp $
 
 COMMENT =		C library implementing server and client side
-DISTNAME =		libssh-0.5.2
-REVISION =		0
+# XXX if updating, check the number in the MASTER_SITES path
+DISTNAME =		libssh-0.5.3
 
 SHARED_LIBS +=  	ssh		0.0 # 4.2
 SHARED_LIBS +=  	ssh_threads	0.0 # 4.2
@@ -10,7 +10,7 @@ SHARED_LIBS +=  	ssh_threads	0.0 # 4.2
 CATEGORIES =		security devel
 
 HOMEPAGE =		http://www.libssh.org/
-MASTER_SITES =		${HOMEPAGE}files/0.5/
+MASTER_SITES =		https://red.libssh.org/attachments/download/38/
 
 MAINTAINER =		Remi Pointel <rpointel@openbsd.org>
 
