@@ -1,23 +1,10 @@
-# $OpenBSD: Makefile,v 1.66 2012/04/23 17:15:18 espie Exp $
+# $OpenBSD: Makefile,v 1.67 2012/11/22 16:01:38 ajacoutot Exp $
 
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
 
-DISTNAME=	cyrus-sasl-2.1.25
-REVISION=	3
+DISTNAME=	cyrus-sasl-2.1.26
 
-SHARED_LIBS += anonymous       2.22 # 2.25
-SHARED_LIBS += crammd5         2.22 # 2.25
-SHARED_LIBS += digestmd5       2.22 # 2.25
-SHARED_LIBS += gssapiv2        2.22 # 2.25
-SHARED_LIBS += ldapdb          2.22 # 2.25
-SHARED_LIBS += login           2.22 # 2.25
-SHARED_LIBS += ntlm            2.22 # 2.25
-SHARED_LIBS += otp             2.22 # 2.25
-SHARED_LIBS += plain           2.22 # 2.25
-SHARED_LIBS += sasl2           2.23 # 2.25
-SHARED_LIBS += sasldb          2.22 # 2.25
-SHARED_LIBS += scram           0.0  # 2.25
-SHARED_LIBS += sql             2.22 # 2.25
+SHARED_LIBS += sasl2           3.0 # 3.0
 
 CATEGORIES=	security
 
@@ -121,9 +108,6 @@ CONFIGURE_ARGS+=--enable-sql \
 		--with-sqlite3
 .endif
 
-post-extract:
-	rm ${WRKSRC}/cmulocal/sasl2.m4.orig
-
 pre-configure:
 	perl -pi -e "s,/usr/local/etc,${SYSCONFDIR},g" \
 		${WRKSRC}/saslauthd/saslauthd.mdoc \
@@ -131,18 +115,19 @@ pre-configure:
 	perl -pi -e 's,-lresolv,,g' ${WRKSRC}/{,saslauthd}/configure
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/sasl2
-	${INSTALL_DATA} ${WRKSRC}/doc/{*.html,*.txt} ${PREFIX}/share/doc/sasl2
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/sasl2
+	rm ${PREFIX}/lib/sasl2/*.a
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/cyrus-sasl
+	${INSTALL_DATA} ${WRKSRC}/doc/{*.html,*.txt} ${PREFIX}/share/doc/cyrus-sasl
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/cyrus-sasl
 .if ${FLAVOR:L:Mmysql} || ${FLAVOR:L:Mpgsql} || ${FLAVOR:L:Msqlite3}
 	${INSTALL_DATA} ${FILESDIR}/Sendmail.conf-sql \
-		${PREFIX}/share/examples/sasl2
+		${PREFIX}/share/examples/cyrus-sasl
 .endif
 .if ${FLAVOR:L:Mldap}
 	${INSTALL_DATA} ${WRKSRC}/saslauthd/LDAP_SASLAUTHD \
-		${PREFIX}/share/doc/sasl2
-	sed -e 's,!!PREFIX!!,${TRUEPREFIX},g' ${FILESDIR}/saslauthd.conf > \
-		${PREFIX}/share/examples/sasl2/saslauthd.conf
+		${PREFIX}/share/doc/cyrus-sasl
+	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/saslauthd.conf \
+		${PREFIX}/share/examples/cyrus-sasl/saslauthd.conf
 .endif
 
 .include <bsd.port.mk>

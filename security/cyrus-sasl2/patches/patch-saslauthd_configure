@@ -1,6 +1,6 @@
-$OpenBSD: patch-saslauthd_configure,v 1.15 2011/09/20 23:01:29 ajacoutot Exp $
---- saslauthd/configure.orig	Fri Sep  2 17:40:17 2011
-+++ saslauthd/configure	Mon Sep 19 15:34:17 2011
+$OpenBSD: patch-saslauthd_configure,v 1.16 2012/11/22 16:01:38 ajacoutot Exp $
+--- saslauthd/configure.orig	Tue Nov  6 20:21:44 2012
++++ saslauthd/configure	Tue Nov 20 07:59:02 2012
 @@ -7757,6 +7757,9 @@ if test "$gssapi" != no; then
  ###_AIX
        platform=__aix
@@ -40,7 +40,7 @@ $OpenBSD: patch-saslauthd_configure,v 1.15 2011/09/20 23:01:29 ajacoutot Exp $
    elif test "$gss_impl" = "cybersafe03"; then
  # Version of CyberSafe with two libraries
      CPPFLAGS="$CPPFLAGS -D$platform -I${gssapi}/appsec-sdk/include"
-@@ -11596,7 +11599,7 @@ fi
+@@ -11717,7 +11720,7 @@ fi
  
  
  
