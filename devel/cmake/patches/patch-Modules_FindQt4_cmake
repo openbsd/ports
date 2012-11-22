@@ -1,6 +1,6 @@
-$OpenBSD: patch-Modules_FindQt4_cmake,v 1.16 2012/11/11 17:13:31 dcoppa Exp $
---- Modules/FindQt4.cmake.orig	Wed Oct 31 16:32:05 2012
-+++ Modules/FindQt4.cmake	Fri Nov  2 11:41:44 2012
+$OpenBSD: patch-Modules_FindQt4_cmake,v 1.17 2012/11/22 13:21:49 dcoppa Exp $
+--- Modules/FindQt4.cmake.orig	Tue Nov  6 20:41:36 2012
++++ Modules/FindQt4.cmake	Thu Nov 22 13:36:47 2012
 @@ -497,13 +497,22 @@ get_filename_component(qt_install_version "[HKEY_CURRE
  # check for qmake
  # Debian uses qmake-qt4
@@ -31,7 +31,15 @@ $OpenBSD: patch-Modules_FindQt4_cmake,v 1.16 2012/11/11 17:13:31 dcoppa Exp $
  
  # double check that it was a Qt4 qmake, if not, re-find with different names
  if (QT_QMAKE_EXECUTABLE)
-@@ -982,13 +991,13 @@ if (QT_QMAKE_EXECUTABLE AND QTVERSION)
+@@ -678,6 +687,7 @@ if (QT_QMAKE_EXECUTABLE AND QTVERSION)
+ 
+   # Set QT_INCLUDES
+   set( QT_INCLUDES ${QT_MKSPECS_DIR}/default ${QT_INCLUDE_DIR} ${QT_QTCORE_INCLUDE_DIR})
++  list(APPEND QT_INCLUDES "${X11BASE}/include")
+ 
+ 
+   # ask qmake for the documentation directory
+@@ -982,13 +992,13 @@ if (QT_QMAKE_EXECUTABLE AND QTVERSION)
    endif()
  
    find_program(QT_MOC_EXECUTABLE
@@ -47,7 +55,7 @@ $OpenBSD: patch-Modules_FindQt4_cmake,v 1.16 2012/11/11 17:13:31 dcoppa Exp $
      PATHS ${QT_BINARY_DIR}
      NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH
      )
-@@ -1018,13 +1027,13 @@ if (QT_QMAKE_EXECUTABLE AND QTVERSION)
+@@ -1018,13 +1028,13 @@ if (QT_QMAKE_EXECUTABLE AND QTVERSION)
      )
  
    find_program(QT_LUPDATE_EXECUTABLE
@@ -63,7 +71,7 @@ $OpenBSD: patch-Modules_FindQt4_cmake,v 1.16 2012/11/11 17:13:31 dcoppa Exp $
      PATHS ${QT_BINARY_DIR}
      NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH
      )
-@@ -1036,13 +1045,13 @@ if (QT_QMAKE_EXECUTABLE AND QTVERSION)
+@@ -1036,13 +1046,13 @@ if (QT_QMAKE_EXECUTABLE AND QTVERSION)
      )
  
    find_program(QT_DESIGNER_EXECUTABLE

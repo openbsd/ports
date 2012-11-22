@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2012/11/15 12:29:07 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.69 2012/11/22 13:21:49 dcoppa Exp $
 
 VMEM_WARNING =	Yes
 BROKEN-arm =	build fails since move to gcc4
@@ -7,7 +7,7 @@ HOMEPAGE =	http://www.cmake.org/
 CATEGORIES =	devel
 COMMENT =	portable build system
 DISTNAME =	cmake-2.8.10.1
-REVISION =	0
+REVISION =	1
 MASTER_SITES =	${HOMEPAGE}files/v2.8/
 
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>
@@ -50,6 +50,7 @@ pre-configure:
 		${WRKSRC}/Modules/FindMPEG2.cmake \
 		${WRKSRC}/Modules/FindQt.cmake \
 		${WRKSRC}/Modules/FindQt3.cmake \
+		${WRKSRC}/Modules/FindQt4.cmake \
 		${WRKSRC}/Modules/FindSDL.cmake \
 		${WRKSRC}/Modules/FindTCL.cmake \
 		${WRKSRC}/Modules/FindwxWindows.cmake \
