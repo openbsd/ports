@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2012/07/07 07:50:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2012/11/22 23:47:26 edd Exp $
 
     SUBDIR =
     SUBDIR += BasiliskII
@@ -15,6 +15,7 @@
     SUBDIR += frodo
     SUBDIR += fuse
     SUBDIR += fuse-utils
+    SUBDIR += fs-uae
     SUBDIR += gambatte
     SUBDIR += gns3
     SUBDIR += gxemul
