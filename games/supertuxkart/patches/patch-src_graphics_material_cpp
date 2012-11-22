@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_graphics_material_cpp,v 1.1 2012/11/22 11:54:06 pascal Exp $
+--- src/graphics/material.cpp.orig	Fri Nov  9 13:36:08 2012
++++ src/graphics/material.cpp	Fri Nov  9 13:36:29 2012
+@@ -512,7 +512,7 @@ void  Material::setMaterialProperties(video::SMaterial
+         // customizable EMT_ONETEXTURE_BLEND instead
+         m->MaterialType = video::EMT_ONETEXTURE_BLEND ;
+         m->MaterialTypeParam = 
+-            pack_texureBlendFunc(video::EBF_SRC_ALPHA, 
++            pack_textureBlendFunc(video::EBF_SRC_ALPHA, 
+                                  video::EBF_ONE_MINUS_SRC_ALPHA,
+                                  video::EMFN_MODULATE_1X, 
+                                  video::EAS_TEXTURE | video::EAS_VERTEX_COLOR);
+@@ -539,7 +539,7 @@ void  Material::setMaterialProperties(video::SMaterial
+         // account, which messes up fading in/out effects. So we use the 
+         // more customizable EMT_ONETEXTURE_BLEND instead
+         m->MaterialType = video::EMT_ONETEXTURE_BLEND ;
+-        m->MaterialTypeParam = pack_texureBlendFunc(video::EBF_SRC_ALPHA, 
++        m->MaterialTypeParam = pack_textureBlendFunc(video::EBF_SRC_ALPHA, 
+                                                     video::EBF_ONE,
+                                                     video::EMFN_MODULATE_1X,
+                                                     video::EAS_TEXTURE | 
