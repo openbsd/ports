@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_config_torrc_sample_in,v 1.11 2011/09/07 07:55:41 jasper Exp $
---- src/config/torrc.sample.in.orig	Sat Aug 27 01:10:59 2011
-+++ src/config/torrc.sample.in	Wed Sep  7 09:52:35 2011
-@@ -37,18 +37,18 @@ SocksListenAddress 127.0.0.1 # accept connections only
+$OpenBSD: patch-src_config_torrc_sample_in,v 1.12 2012/11/22 18:37:32 pascal Exp $
+--- src/config/torrc.sample.in.orig	Mon Nov 19 22:24:38 2012
++++ src/config/torrc.sample.in	Tue Nov 20 12:58:58 2012
+@@ -38,18 +38,18 @@
  ## Send every possible message to @LOCALSTATEDIR@/log/tor/debug.log
  #Log debug file @LOCALSTATEDIR@/log/tor/debug.log
  ## Use the system log instead of Tor's logfiles
@@ -23,9 +23,12 @@ $OpenBSD: patch-src_config_torrc_sample_in,v 1.11 2011/09/07 07:55:41 jasper Exp
  
  ## The port on which Tor will listen for local connections from Tor
  ## controller applications, as documented in control-spec.txt.
-@@ -168,3 +168,5 @@ SocksListenAddress 127.0.0.1 # accept connections only
- #BridgeRelay 1
- #ExitPolicy reject *:*
- 
+@@ -169,6 +169,8 @@
+ ## For security, by default Tor rejects connections to private (local)
+ ## networks, including to your public IP address. See the man page entry
+ ## for ExitPolicyRejectPrivate if you want to allow "exit enclaving".
 +## Revoke privileges
 +User _tor
+ ##
+ #ExitPolicy accept *:6660-6667,reject *:* # allow irc ports but no more
+ #ExitPolicy accept *:119 # accept nntp as well as default exit policy
