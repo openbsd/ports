@@ -1,17 +1,17 @@
-$OpenBSD: patch-source_Irrlicht_Makefile,v 1.1.1.1 2011/05/04 09:41:50 jasper Exp $
---- source/Irrlicht/Makefile.orig	Wed Mar  2 13:56:55 2011
-+++ source/Irrlicht/Makefile	Wed Mar  2 13:58:54 2011
-@@ -3,7 +3,7 @@ VERSION_MINOR = 7
- VERSION_RELEASE = 2
- VERSION = $(VERSION_MAJOR).$(VERSION_MINOR).$(VERSION_RELEASE)
- # Irrlicht Engine 1.7.2
+$OpenBSD: patch-source_Irrlicht_Makefile,v 1.2 2012/11/22 11:52:52 pascal Exp $
+--- source/Irrlicht/Makefile.orig	Fri Nov  9 00:27:40 2012
++++ source/Irrlicht/Makefile	Fri Nov  9 00:41:54 2012
+@@ -2,7 +2,7 @@ VERSION_MAJOR = 1
+ VERSION_MINOR = 8
+ VERSION_RELEASE = 0
+ # Irrlicht Engine 1.8.0
 -# Makefile for Linux
 +# Makefile for OpenBSD
  #
  # To use, just run:
  #
-@@ -39,18 +39,17 @@ IRRSWRENDEROBJ = CSoftwareDriver.o CSoftwareTexture.o 
- IRRIOOBJ = CFileList.o CFileSystem.o CLimitReadFile.o CMemoryFile.o CReadFile.o CWriteFile.o CXMLReader.o CXMLWriter.o CZipReader.o CPakReader.o CNPKReader.o CTarReader.o CMountPointReader.o irrXML.o CAttributes.o lzma/LzmaDec.o
+@@ -46,18 +46,17 @@ IRRSWRENDEROBJ = CSoftwareDriver.o CSoftwareTexture.o 
+ IRRIOOBJ = CFileList.o CFileSystem.o CLimitReadFile.o CMemoryFile.o CReadFile.o CWriteFile.o CXMLReader.o CXMLWriter.o CWADReader.o CZipReader.o CPakReader.o CNPKReader.o CTarReader.o CMountPointReader.o irrXML.o CAttributes.o lzma/LzmaDec.o
  IRROTHEROBJ = CIrrDeviceSDL.o CIrrDeviceLinux.o CIrrDeviceConsole.o CIrrDeviceStub.o CIrrDeviceWin32.o CIrrDeviceFB.o CLogger.o COSOperator.o Irrlicht.o os.o
  IRRGUIOBJ = CGUIButton.o CGUICheckBox.o CGUIComboBox.o CGUIContextMenu.o CGUIEditBox.o CGUIEnvironment.o CGUIFileOpenDialog.o CGUIFont.o CGUIImage.o CGUIInOutFader.o CGUIListBox.o CGUIMenu.o CGUIMeshViewer.o CGUIMessageBox.o CGUIModalScreen.o CGUIScrollBar.o CGUISpinBox.o CGUISkin.o CGUIStaticText.o CGUITabControl.o CGUITable.o CGUIToolBar.o CGUIWindow.o CGUIColorSelectDialog.o CDefaultGUIElementFactory.o CGUISpriteBank.o CGUIImageList.o CGUITreeView.o
 -ZLIBOBJ = zlib/adler32.o zlib/compress.o zlib/crc32.o zlib/deflate.o zlib/inffast.o zlib/inflate.o zlib/inftrees.o zlib/trees.o zlib/uncompr.o zlib/zutil.o
@@ -34,7 +34,7 @@ $OpenBSD: patch-source_Irrlicht_Makefile,v 1.1.1.1 2011/05/04 09:41:50 jasper Ex
  
  ###############
  #Compiler flags
-@@ -60,12 +59,12 @@ CXXFLAGS += -Wall -pipe -fno-exceptions -fno-rtti -fst
+@@ -67,12 +66,12 @@ CXXFLAGS += -Wall -pipe -fno-exceptions -fno-rtti -fst
  ifndef NDEBUG
  CXXFLAGS += -g -D_DEBUG
  else
@@ -49,7 +49,7 @@ $OpenBSD: patch-source_Irrlicht_Makefile,v 1.1.1.1 2011/05/04 09:41:50 jasper Ex
  
  sharedlib sharedlib_osx: CXXFLAGS += -fPIC
  sharedlib sharedlib_osx: CFLAGS += -fPIC
-@@ -75,15 +74,15 @@ ifeq ($(HOSTTYPE), x86_64)
+@@ -82,14 +81,14 @@ ifeq ($(HOSTTYPE), x86_64)
  LIBSELECT=64
  endif
  
@@ -62,7 +62,6 @@ $OpenBSD: patch-source_Irrlicht_Makefile,v 1.1.1.1 2011/05/04 09:41:50 jasper Ex
 -INSTALL_DIR = /usr/local/lib
 +INSTALL_DIR = $(PREFIX)/lib
  sharedlib install: SHARED_LIB = libIrrlicht.so
- staticlib sharedlib: LDFLAGS += --no-export-all-symbols --add-stdcall-alias
 -sharedlib: LDFLAGS += -L/usr/X11R6/lib$(LIBSELECT) -lGL -lXxf86vm
 -staticlib sharedlib: CXXINCS += -I/usr/X11R6/include
 +sharedlib: LDFLAGS += -L/usr/lib -L/usr/X11R6/lib$(LIBSELECT) -L$(LOCALBASE)/lib -lbz2 -lGL -lXxf86vm -lpng -ljpeg -lz
@@ -70,25 +69,28 @@ $OpenBSD: patch-source_Irrlicht_Makefile,v 1.1.1.1 2011/05/04 09:41:50 jasper Ex
  
  #OSX specific options
  staticlib_osx sharedlib_osx install_osx: SYSTEM = MacOSX
-@@ -103,20 +102,20 @@ sharedlib_win32 staticlib_win32: CPPFLAGS += -DIRR_COM
+@@ -112,16 +111,16 @@ sharedlib_win32 staticlib_win32: CPPFLAGS += -DIRR_COM
  staticlib_win32: CPPFLAGS += -D_IRR_STATIC_LIB_
+ 
+ VERSION = $(VERSION_MAJOR).$(VERSION_MINOR).$(VERSION_RELEASE)
+-SHARED_FULLNAME = $(SHARED_LIB).$(VERSION)
++SHARED_FULLNAME = $(SHARED_LIB).$(SO_VERSION)
+ SONAME = $(SHARED_LIB).$(VERSION_MAJOR).$(VERSION_MINOR)
  
  ####################
 -# All target, builds Irrlicht as static lib (libIrrlicht.a) and copies it into lib/Linux
--all linux: staticlib
 +# All target, builds Irrlicht as static lib (libIrrlicht.a) and copies it into lib/OpenBSD
-+all linux: staticlib sharedlib
+ all linux: staticlib
  
 -# Builds Irrlicht as shared lib (libIrrlicht.so.versionNumber) and copies it into lib/Linux
 +# Builds Irrlicht as shared lib (libIrrlicht.so.versionNumber) and copies it into lib/OpenBSD
  sharedlib: $(LINKOBJ)
--	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -shared -Wl,-soname,$(SHARED_LIB).$(VERSION_MAJOR).$(VERSION_MINOR) -o $(SHARED_LIB).$(VERSION) $^ $(LDFLAGS)
-+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -shared -o $(SHARED_LIB).$(SO_VERSION) $^ $(LDFLAGS)
+-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -shared -Wl,-soname,$(SONAME) -o $(SHARED_FULLNAME) $^ $(LDFLAGS)
++	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -shared -o $(SHARED_FULLNAME) $^ $(LDFLAGS)
  	mkdir -p $(LIB_PATH)
--	cp $(SHARED_LIB).$(VERSION) $(LIB_PATH)
-+	cp $(SHARED_LIB).$(SO_VERSION) $(LIB_PATH)
+ 	cp $(SHARED_FULLNAME) $(LIB_PATH)
  
- # Builds Irrlicht as static lib (libIrrlicht.a)
+@@ -129,7 +128,7 @@ sharedlib: $(LINKOBJ)
  $(STATIC_LIB): $(LINKOBJ)
  	$(AR) rs $@ $^
  
@@ -97,7 +99,7 @@ $OpenBSD: patch-source_Irrlicht_Makefile,v 1.1.1.1 2011/05/04 09:41:50 jasper Ex
  staticlib staticlib_osx: $(STATIC_LIB)
  	mkdir -p $(LIB_PATH)
  	cp $^ $(LIB_PATH)
-@@ -165,8 +164,8 @@ endif
+@@ -179,8 +178,8 @@ endif
  
  help:
  	@echo "Available targets for Irrlicht"
