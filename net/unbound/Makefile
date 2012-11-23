@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2012/08/05 08:02:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2012/11/23 20:49:33 brad Exp $
 
 COMMENT=	validating DNS resolver
 
 DISTNAME=	unbound-1.4.18
+REVISION=	0
 CATEGORIES=	net
 
 MASTER_SITES=	http://www.unbound.net/downloads/
@@ -23,8 +24,8 @@ NO_REGRESS=		Yes
 
 SHARED_LIBS+=		unbound 3.3
 
-WANTLIB=		c crypto event expat ldns>=4.11 ssl
-LIB_DEPENDS+=		net/ldns/libldns>=1.6.13
+WANTLIB=		c crypto event expat ldns>=6.0 ssl
+LIB_DEPENDS+=		net/ldns/libldns>=1.6.16
 
 CONFIGURE_ENV=		CFLAGS="${CFLAGS}"
 CONFIGURE_ARGS+=	--enable-allsymbols \
