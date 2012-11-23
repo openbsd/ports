@@ -1,10 +1,6 @@
-$OpenBSD: patch-configure,v 1.12 2012/08/27 09:34:43 jasper Exp $
-
-- Last chunk: fix the pkgconfig file for dynamic vs. static linking now that it can be
-fixed properly post -pthread.
-
---- configure.orig	Sun May 20 16:45:03 2012
-+++ configure	Fri Aug 17 01:01:03 2012
+$OpenBSD: patch-configure,v 1.13 2012/11/23 03:53:37 brad Exp $
+--- configure.orig	Wed Nov 14 16:45:03 2012
++++ configure	Thu Nov 15 01:25:21 2012
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
@@ -59,20 +55,3 @@ fixed properly post -pthread.
      fi
      echo 'default: lib-shared' >> config.mak
      echo 'install: install-lib-shared' >> config.mak
-@@ -1149,7 +1136,7 @@ echo "CLI_LIBX264 = $CLI_LIBX264" >> config.mak
- 
- ${SRCPATH}/version.sh "${SRCPATH}" >> x264_config.h
- 
--pclibs="-L$libdir -lx264 $libpthread"
-+pclibs="-L$libdir -lx264"
- 
- cat > x264.pc << EOF
- prefix=$prefix
-@@ -1161,6 +1148,7 @@ Name: x264
- Description: H.264 (MPEG4 AVC) encoder library
- Version: $(grep POINTVER < x264_config.h | sed -e 's/.* "//; s/".*//')
- Libs: $pclibs
-+Libs.private: $libpthread -lm
- Cflags: -I$includedir
- EOF
- 

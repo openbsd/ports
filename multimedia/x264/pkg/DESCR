@@ -1,8 +1,5 @@
 x264 is a free library for encoding H264/AVC video streams.
 
-This program requires a processor with recent instructions (MMX/SSE for
-i386, AltiVec for powerpc).
-
 Encoder features:
  * CAVLC/CABAC
  * Multi-references
