@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2008/12/08 15:18:20 simon Exp $
+@comment $OpenBSD: PLIST,v 1.18 2012/11/23 07:47:48 ajacoutot Exp $
 ${P5ARCH}/XML/LibXML.pm
 ${P5ARCH}/XML/LibXML.pod
 ${P5ARCH}/XML/LibXML/Attr.pod
@@ -70,3 +70,4 @@ ${P5ARCH}/auto/XML/LibXML/LibXML.so
 @man man/man3p/XML::LibXML::Text.3p
 @man man/man3p/XML::LibXML::XPathContext.3p
 @man man/man3p/XML::LibXML::XPathExpression.3p
+share/doc/pkg-readmes/${FULLPKGNAME}
