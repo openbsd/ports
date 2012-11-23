@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/11/22 23:45:20 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2012/11/23 07:09:32 ajacoutot Exp $
 
 COMMENT =		modern Amiga emulator
 V =			2.0.1
 DISTNAME =		fs-uae-$V
 CATEGORIES =		emulators
+REVISION = 		0
 
 HOMEPAGE =		http://fengestad.no/fs-uae/
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
@@ -25,7 +26,9 @@ LIB_DEPENDS =		devel/sdl \
 			graphics/png \
 			audio/openal \
 			devel/glib2
-RUN_DEPENDS =		x11/py-wxPython
+RUN_DEPENDS =		devel/desktop-file-utils \
+			x11/gtk+2,-guic \
+			x11/py-wxPython
 
 USE_GMAKE =		Yes
 MAKE_FLAGS +=		prefix=${PREFIX}
