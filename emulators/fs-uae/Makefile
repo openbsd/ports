@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2012/11/24 09:09:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2012/11/24 09:09:57 sthen Exp $
 
 COMMENT =		modern Amiga emulator
 V =			2.0.1
 DISTNAME =		fs-uae-$V
 CATEGORIES =		emulators
-REVISION = 		0
+REVISION = 		1
 
 HOMEPAGE =		http://fengestad.no/fs-uae/
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
