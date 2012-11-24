@@ -1,15 +1,15 @@
-$OpenBSD: patch-mozilla_storage_src_mozStorageConnection_cpp,v 1.12 2012/10/10 21:08:05 landry Exp $
+$OpenBSD: patch-mozilla_storage_src_mozStorageConnection_cpp,v 1.13 2012/11/24 10:32:42 landry Exp $
 force the use of secure_delete instead of using internal sqlite copy
---- mozilla/storage/src/mozStorageConnection.cpp.orig	Wed Aug 29 02:16:06 2012
-+++ mozilla/storage/src/mozStorageConnection.cpp	Sat Sep  1 23:54:17 2012
-@@ -551,6 +551,13 @@ Connection::initialize(nsIFile *aDatabaseFile,
+--- mozilla/storage/src/mozStorageConnection.cpp.orig	Thu Oct 11 01:37:24 2012
++++ mozilla/storage/src/mozStorageConnection.cpp	Sat Oct 20 10:56:54 2012
+@@ -554,6 +554,13 @@ Connection::initialize(nsIFile *aDatabaseFile,
      return convertResultCode(srv);
    }
  
 +  srv = ::sqlite3_exec(mDBConn, "PRAGMA secure_delete = ON", NULL, NULL, NULL);
 +  if (srv != SQLITE_OK) {
 +    ::sqlite3_close(mDBConn);
-+    mDBConn = nsnull;
++    mDBConn = nullptr;
 +    return convertResultCode(srv);
 +  }
 +
