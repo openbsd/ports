@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2012/11/24 08:54:34 landry Exp $
+# $OpenBSD: Makefile,v 1.14 2012/11/24 08:56:51 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -28,7 +28,6 @@ LIB_DEPENDS=	geo/gdal \
 		devel/json-c
 RUN_DEPENDS=	databases/postgresql,-server
 BUILD_DEPENDS=	${RUN_DEPENDS} \
-		textproc/libxslt \
 		textproc/docbook-xsl \
 		graphics/ImageMagick
 
