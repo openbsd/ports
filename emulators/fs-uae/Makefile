@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/11/23 07:09:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2012/11/24 09:09:05 sthen Exp $
 
 COMMENT =		modern Amiga emulator
 V =			2.0.1
@@ -22,6 +22,7 @@ MASTER_SITES =		${HOMEPAGE}stable/$V/
 
 MODULES =		devel/gettext \
 			lang/python
+MODPY_SETUPTOOLS =	Yes
 LIB_DEPENDS =		devel/sdl \
 			graphics/png \
 			audio/openal \
