@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/03/28 19:27:04 kili Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/11/24 21:49:46 kili Exp $
 @bin bin/gummi
 lib/gummi/
-lib/gummi/latex_dvi_pdf.sh
-lib/gummi/latex_dvi_ps_pdf.sh
+lib/gummi/latex_dvi.sh
 @man man/man1/gummi.1
 share/applications/gummi.desktop
 share/gummi/
