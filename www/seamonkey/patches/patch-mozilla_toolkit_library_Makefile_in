@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_toolkit_library_Makefile_in,v 1.12 2012/10/10 21:03:40 landry Exp $
---- mozilla/toolkit/library/Makefile.in.orig	Fri Aug 31 07:56:39 2012
-+++ mozilla/toolkit/library/Makefile.in	Sun Sep  2 12:45:42 2012
-@@ -455,6 +455,12 @@ OS_LIBS += \
+$OpenBSD: patch-mozilla_toolkit_library_Makefile_in,v 1.13 2012/11/24 10:36:20 landry Exp $
+--- mozilla/toolkit/library/Makefile.in.orig	Sat Oct 20 23:17:04 2012
++++ mozilla/toolkit/library/Makefile.in	Sun Oct 21 12:22:30 2012
+@@ -461,6 +461,12 @@ OS_LIBS += \
    $(NULL)
  endif
  
@@ -14,7 +14,7 @@ $OpenBSD: patch-mozilla_toolkit_library_Makefile_in,v 1.12 2012/10/10 21:03:40 l
  ifeq ($(OS_ARCH),Darwin)
  ifdef MOZ_SYDNEYAUDIO
  OS_LIBS += \
-@@ -467,12 +473,6 @@ OS_LIBS += \
+@@ -473,12 +479,6 @@ OS_LIBS += \
    -framework AppKit \
    -framework Security \
    $(NULL)

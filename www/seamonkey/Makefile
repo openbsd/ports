@@ -1,25 +1,22 @@
-# $OpenBSD: Makefile,v 1.119 2012/11/12 20:45:32 landry Exp $
+# $OpenBSD: Makefile,v 1.120 2012/11/24 10:36:20 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
 COMMENT-enigmail =	Mozilla Seamonkey GnuPG extension
 BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
 
-MOZILLA_VERSION=	2.13.2
+MOZILLA_VERSION=	2.14
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	suite
 
 MULTI_PACKAGES =	-main -lightning -enigmail
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-seamonkey-1.8beta1
-ENIG_V =		1.4.5
+PKGNAME-lightning =	lightning-seamonkey-1.9beta1
+ENIG_V =		1.4.6
 PKGNAME-enigmail =	enigmail-seamonkey-${ENIG_V}
 EPOCH-lightning =	0
-REVISION-lightning =	2
-REVISION-main =		0
 EPOCH-enigmail =	0
-REVISION-enigmail =	1
 
 #MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_PROJECT}/nightly/${MOZILLA_VERSION}-candidates/build1/source/
 MASTER_SITES0 =	http://www.mozilla-enigmail.org/download/source/
@@ -27,11 +24,11 @@ DISTFILES +=	${MOZILLA_PROJECT}-${MOZILLA_VERSION}.source.tar.bz2 \
 		enigmail-${ENIG_V}.tar.gz:0
 EXTRACT_CASES =	enigmail-*.tar.gz) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | tar -C comm-${MOZILLA_BRANCH}/mailnews/extensions/ -xf -;;
 
-SO_VERSION =	26.0
+SO_VERSION =	27.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 
-MOZILLA_LIBS = ldap60 ldif60 mozalloc prldap60 suite xpcom xul calbasecomps enigmime ipc
+MOZILLA_LIBS = ldap60 ldif60 mozalloc mozgnome prldap60 suite xpcom xul calbasecomps enigmime ipc
 
 CATEGORIES=	www mail net news
 
@@ -51,13 +48,11 @@ MODGNU_CONFIG_GUESS_DIRS +=	${WRKSRC}/ldap/sdks/c-sdk/config/autoconf
 CONFIGURE_STYLE =	autoconf no-autoheader
 CONFIGURE_ARGS +=	--enable-official-branding
 CONFIGURE_ARGS +=	--with-system-libevent=/usr/
-CONFIGURE_ARGS +=	--with-system-zlib=/usr/ --with-system-bz2=${LOCALBASE}
+CONFIGURE_ARGS +=	--with-system-bz2=${LOCALBASE}
 WANTLIB +=	event
 
 # bug #736961
 SEPARATE_BUILD =	Yes
-
-CONFIGURE_ENV +=	CPPFLAGS=-I${X11BASE}/include
 
 # XXX needed since 2.7b?, relocation overflow otherwise...
 # replaces -g by -Os
@@ -65,13 +60,11 @@ CONFIGURE_ENV +=	CPPFLAGS=-I${X11BASE}/include
 CONFIGURE_ENV +=	MOZ_DEBUG_FLAGS="-Os"
 .endif
 
-
-
 LIB_DEPENDS-lightning = STEM->=${MOZILLA_VERSION:S/b/beta/}:${BUILD_PKGPATH},-main
 WANTLIB-lightning =	lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/xpcom \
 			lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/xul \
 			lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/mozalloc \
-			c m stdc++ nspr4 plc4 plds4
+			c m stdc++ nspr4 plc4 plds4 pthread
 BUILD_DEPENDS+=	archivers/unzip #to unzip xpi
 
 RUN_DEPENDS-enigmail =	security/gnupg
@@ -80,6 +73,7 @@ WANTLIB-enigmail =	${WANTLIB-lightning}
 
 # build lightning xpi
 CONFIGURE_ARGS +=	--enable-calendar \
+			--enable-gio \
 			--disable-gconf
 
 ALL_TARGET =	default
@@ -113,8 +107,13 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/ ; \
 	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/${MOZILLA_PROJECT}.desktop \
 		${PREFIX}/share/applications/${MOZILLA_PROJECT}.desktop ; \
+	# install icon for desktop file
+	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps/
+	${INSTALL_DATA} ${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/${MOZILLA_PROJECT}.png \
+		${PREFIX}/share/pixmaps/${MOZILLA_PROJECT}.png
 
-	# cleanup useless dirs from #717616
-	rm -Rf ${PREFIX}/lib/seamonkey-${MOZILLA_VERSION:C/b.//}/js{sub,}loader
+	# cleanup useless dirs from #798450 (fx 18?)
+	rm -f ${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/modules/services-{aitc,common,crypto,notifications,sync{/engines,}}/.mkdir.done
+	rmdir ${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/modules{/services-{aitc,common,crypto,notifications,sync{/engines,}},}
 
 .include <bsd.port.mk>
