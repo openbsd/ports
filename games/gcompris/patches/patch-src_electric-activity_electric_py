@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_electric-activity_electric_py,v 1.3 2011/11/18 11:14:39 ajacoutot Exp $
---- src/electric-activity/electric.py.orig	Sun Oct 23 12:17:24 2011
-+++ src/electric-activity/electric.py	Fri Nov 18 11:46:41 2011
+$OpenBSD: patch-src_electric-activity_electric_py,v 1.4 2012/11/24 08:54:01 ajacoutot Exp $
+--- src/electric-activity/electric.py.orig	Mon Aug 27 23:34:51 2012
++++ src/electric-activity/electric.py	Sat Nov 24 08:29:03 2012
 @@ -89,14 +89,14 @@ class Gcompris_electric:
                     "gnucap.exe",
                     os.path.join(gcompris.PYTHON_PLUGIN_DIR, 'bin', 'gnucap'),
@@ -13,8 +13,8 @@ $OpenBSD: patch-src_electric-activity_electric_py,v 1.3 2011/11/18 11:14:39 ajac
          break
  
      if not self.gnucap_binary:
--      gcompris.utils.dialog(_("Cannot find the 'gnucap' electric simulator.\nYou can download and install it from:\n<http://geda.seul.org/tools/gnucap/>\nTo be detected, it must be installed in\n/usr/bin/gnucap or /usr/local/bin/gnucap.\nYou can still use this activity to draw schematics without computer simulation."),
-+      gcompris.utils.dialog(_("Cannot find the 'gnucap' electric simulator.\nYou can download and install it from:\n<http://geda.seul.org/tools/gnucap/>\nTo be detected, it must be installed in\n/usr/bin/gnucap or ${LOCALBASE}/bin/gnucap.\nYou can still use this activity to draw schematics without computer simulation."),
+-      gcompris.utils.dialog(_("Cannot find the 'gnucap' electric simulator.\nYou can download and install it from:\n<http://www.gnu.org/software/gnucap/>\nTo be detected, it must be installed in\n/usr/bin/gnucap or /usr/local/bin/gnucap.\nYou can still use this activity to draw schematics without computer simulation."),
++      gcompris.utils.dialog(_("Cannot find the 'gnucap' electric simulator.\nYou can download and install it from:\n<http://www.gnu.org/software/gnucap/>\nTo be detected, it must be installed in\n/usr/bin/gnucap or ${LOCALBASE}/bin/gnucap.\nYou can still use this activity to draw schematics without computer simulation."),
                              None)
  
  

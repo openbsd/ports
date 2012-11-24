@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_gcompris_Makefile_in,v 1.7 2012/07/06 16:27:19 ajacoutot Exp $
+$OpenBSD: patch-src_gcompris_Makefile_in,v 1.8 2012/11/24 08:54:01 ajacoutot Exp $
 
 We need the bundled libgoocanvas because the one in ports misses some
 functions. However, we need to rename it to prevent undefined refs.
 
---- src/gcompris/Makefile.in.orig	Sat Jun  9 09:53:58 2012
-+++ src/gcompris/Makefile.in	Fri Jul  6 17:57:29 2012
-@@ -104,7 +104,7 @@ am__DEPENDENCIES_1 =
+--- src/gcompris/Makefile.in.orig	Mon Nov 19 01:38:16 2012
++++ src/gcompris/Makefile.in	Sat Nov 24 08:25:46 2012
+@@ -121,7 +121,7 @@ am__DEPENDENCIES_1 =
  @USE_SQLITE_TRUE@am__DEPENDENCIES_2 = $(am__DEPENDENCIES_1)
  @SUGAR_TRUE@am__DEPENDENCIES_3 = $(am__DEPENDENCIES_1)
  gcompris_DEPENDENCIES =  \
@@ -13,13 +13,13 @@ functions. However, we need to rename it to prevent undefined refs.
 +	$(top_builddir)/src/goocanvas/src/libgoocanvas-gc.la \
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2) \
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
- 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
-@@ -380,7 +380,7 @@ gcompris_SOURCES = $(cairo_c) $(cairo_h) about.c about
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_3)
+@@ -399,7 +399,7 @@ gcompris_SOURCES = $(cairo_c) $(cairo_h) about.c about
  gcompris_LDFLAGS = \
  	-export-dynamic $(cairo_ldflags)
  
 -gcompris_LDADD = $(top_builddir)/src/goocanvas/src/libgoocanvas.la \
 +gcompris_LDADD = $(top_builddir)/src/goocanvas/src/libgoocanvas-gc.la \
  	$(GCOMPRIS_LIBS) $(sqlite_ldadd) $(XML_LIBS) $(GNET_LIBS) \
- 	$(AUDIO_LIBS) $(INTLLIBS) ${IGE_MAC_LIBS} $(am__append_3)
+ 	$(AUDIO_LIBS) $(INTLLIBS) ${GTK_MAC_LIBS} $(am__append_3)
  marshal_sources = \

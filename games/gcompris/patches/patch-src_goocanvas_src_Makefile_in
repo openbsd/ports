@@ -1,13 +1,13 @@
-$OpenBSD: patch-src_goocanvas_src_Makefile_in,v 1.5 2012/07/06 16:27:19 ajacoutot Exp $
+$OpenBSD: patch-src_goocanvas_src_Makefile_in,v 1.6 2012/11/24 08:54:01 ajacoutot Exp $
 
 We need the bundled libgoocanvas because the one in ports misses some
 functions. However, we need to rename it to prevent undefined refs.
 
 XXX make it compile with gtk+2 2.22 (*_DISABLE_DEPRECATED)
 
---- src/goocanvas/src/Makefile.in.orig	Sat Jun  9 09:54:03 2012
-+++ src/goocanvas/src/Makefile.in	Fri Jul  6 17:59:39 2012
-@@ -92,7 +92,7 @@ AM_V_lt = $(am__v_lt_@AM_V@)
+--- src/goocanvas/src/Makefile.in.orig	Mon Nov 19 01:38:21 2012
++++ src/goocanvas/src/Makefile.in	Sat Nov 24 08:25:46 2012
+@@ -109,7 +109,7 @@ AM_V_lt = $(am__v_lt_@AM_V@)
  am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
  am__v_lt_0 = --silent
  libgoocanvas_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
@@ -16,7 +16,7 @@ XXX make it compile with gtk+2 2.22 (*_DISABLE_DEPRECATED)
  	$(AM_CFLAGS) $(CFLAGS) $(libgoocanvas_la_LDFLAGS) $(LDFLAGS) \
  	-o $@
  DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
-@@ -327,7 +327,7 @@ INCLUDES = \
+@@ -347,7 +347,7 @@ INCLUDES = \
  	-DG_LOG_DOMAIN=\"GooCanvas\" \
  	@GCOMPRIS_CFLAGS@
  
@@ -25,7 +25,7 @@ XXX make it compile with gtk+2 2.22 (*_DISABLE_DEPRECATED)
  libgoocanvas_la_LIBADD = @GCOMPRIS_LIBS@ $(INTLLIBS)
  @PLATFORM_WIN32_TRUE@no_undefined = -no-undefined
  libtool_opts = \
-@@ -465,7 +465,7 @@ clean-libLTLIBRARIES:
+@@ -486,7 +486,7 @@ clean-libLTLIBRARIES:
  	  echo "rm -f \"$${dir}/so_locations\""; \
  	  rm -f "$${dir}/so_locations"; \
  	done
