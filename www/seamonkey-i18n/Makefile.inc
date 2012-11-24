@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile.inc,v 1.11 2012/10/28 16:24:44 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.12 2012/11/24 10:36:57 landry Exp $
 
 # keep in sync with working archs.. sigh
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 
 PKG_ARCH =	*
 
-FV =		2.13.2
+FV =		2.14
 V =		${FV:C/b.$//}
 NAME =		seamonkey-i18n
 
