@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.217 2012/11/12 20:45:32 landry Exp $
+# $OpenBSD: Makefile,v 1.218 2012/11/24 10:21:50 landry Exp $
 
 COMMENT =	Mozilla web browser
 BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
@@ -6,16 +6,16 @@ BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
 # Don't forget to bump www/firefox-i18n after updates.
 # Don't forget to update devel/xulrunner/2.0 if patches changes.
 
-MOZILLA_VERSION =	16.0.2
+MOZILLA_VERSION =	17.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
-REVISION =	0
 
-SO_VERSION =	35.0
+#MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_PROJECT}/nightly/${MOZILLA_VERSION}-candidates/build1/source/
+SO_VERSION =	36.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
-MOZILLA_LIBS =	browsercomps mozalloc \
+MOZILLA_LIBS =	browsercomps mozalloc mozgnome \
 		xpcom xul
 
 CATEGORIES =	www
@@ -39,7 +39,8 @@ SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	autoconf no-autoheader
 CONFIGURE_ARGS +=	--enable-official-branding
 CONFIGURE_ARGS +=	--with-system-libevent=/usr/ --disable-gconf
-CONFIGURE_ARGS +=	--with-system-zlib=/usr/ --with-system-bz2=${LOCALBASE}
+CONFIGURE_ARGS +=	--enable-gio
+CONFIGURE_ARGS +=	--with-system-bz2=${LOCALBASE}
 WANTLIB +=	event
 
 CONFIGURE_ARGS +=	--enable-gstreamer
@@ -58,6 +59,11 @@ CONFIGURE_ARGS +=	--disable-tracejit --disable-methodjit
 # replaces -g by -Os
 .if ${MACHINE_ARCH} == "powerpc"
 CONFIGURE_ENV +=	MOZ_DEBUG_FLAGS="-Os"
+.endif
+
+# needed for webm
+.if ${MACHINE_ARCH:Mi386} || ${MACHINE_ARCH:Mamd64}
+BUILD_DEPENDS +=	devel/yasm
 .endif
 
 # needed during make install
@@ -87,8 +93,8 @@ post-install:
 	# link default48.png to default.png to be used by default by non-icccm compliant wm
 	ln ${PREFIX}/lib/firefox-${MOZILLA_VERSION:C/b.//}/chrome/icons/default/default{48,}.png
 
-	# cleanup useless dirs from #717616
-	rm -Rf ${PREFIX}/lib/firefox-${MOZILLA_VERSION:C/b.//}/js{sub,}loader
+	# cleanup useless dirs from #798450 (fx 18?)
+	rm -Rf ${PREFIX}/lib/firefox-${MOZILLA_VERSION:C/b.//}/modules
 
 
 .include <bsd.port.mk>

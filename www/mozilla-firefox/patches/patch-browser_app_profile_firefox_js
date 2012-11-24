@@ -1,16 +1,7 @@
-$OpenBSD: patch-browser_app_profile_firefox_js,v 1.16 2012/09/01 13:56:45 landry Exp $
---- browser/app/profile/firefox.js.orig	Wed Aug 15 07:47:02 2012
-+++ browser/app/profile/firefox.js	Sun Aug 19 13:30:25 2012
-@@ -124,7 +124,7 @@ pref("app.update.certs.2.issuerName", "CN=Thawte SSL C
- pref("app.update.certs.2.commonName", "aus3.mozilla.org");
- 
- // Whether or not app updates are enabled
--pref("app.update.enabled", true);
-+pref("app.update.enabled", false);
- 
- // This preference turns on app.update.mode and allows automatic download and
- // install to take place. We use a separate boolean toggle for this to make
-@@ -587,7 +587,7 @@ pref("accessibility.typeaheadfind.flashBar", 1);
+$OpenBSD: patch-browser_app_profile_firefox_js,v 1.17 2012/11/24 10:21:50 landry Exp $
+--- browser/app/profile/firefox.js.orig	Tue Nov 20 03:45:49 2012
++++ browser/app/profile/firefox.js	Wed Nov 21 08:27:50 2012
+@@ -586,7 +586,7 @@ pref("accessibility.typeaheadfind.flashBar", 1);
  pref("pfs.datasource.url", "https://pfs.mozilla.org/plugins/PluginFinderService.php?mimetype=%PLUGIN_MIMETYPE%&appID=%APP_ID%&appVersion=%APP_VERSION%&clientOS=%CLIENT_OS%&chromeLocale=%CHROME_LOCALE%&appRelease=%APP_RELEASE%");
  
  // by default we show an infobar message when pages require plugins the user has not installed, or are outdated
@@ -19,28 +10,14 @@ $OpenBSD: patch-browser_app_profile_firefox_js,v 1.16 2012/09/01 13:56:45 landry
  pref("plugins.hide_infobar_for_outdated_plugin", false);
  
  #ifdef XP_MACOSX
-@@ -716,10 +716,10 @@ pref("gecko.handlerService.allowRegisterFromDifferentH
+@@ -714,8 +714,8 @@ pref("gecko.handlerService.schemes.ircs.3.uriTemplate"
+ pref("gecko.handlerService.allowRegisterFromDifferentHost", false);
  
  #ifdef MOZ_SAFE_BROWSING
- // Safe browsing does nothing unless this pref is set
 -pref("browser.safebrowsing.enabled", true);
-+pref("browser.safebrowsing.enabled", false);
- 
- // Prevent loading of pages identified as malware
 -pref("browser.safebrowsing.malware.enabled", true);
++pref("browser.safebrowsing.enabled", false);
 +pref("browser.safebrowsing.malware.enabled", false);
+ pref("browser.safebrowsing.debug", false);
  
- // Non-enhanced mode (local url lists) URL list to check for updates
- pref("browser.safebrowsing.provider.0.updateURL", "http://safebrowsing.clients.google.com/safebrowsing/downloads?client={moz:client}&appver={moz:version}&pver=2.2");
-@@ -773,10 +773,8 @@ pref("browser.EULA.version", 3);
- pref("browser.rights.version", 3);
- pref("browser.rights.3.shown", false);
- 
--#ifdef DEBUG
--// Don't show the about:rights notification in debug builds.
-+// Don't show the about:rights notification
- pref("browser.rights.override", true);
--#endif
- 
- pref("browser.sessionstore.resume_from_crash", true);
- pref("browser.sessionstore.resume_session_once", false);
+ pref("browser.safebrowsing.updateURL", "http://safebrowsing.clients.google.com/safebrowsing/downloads?client=SAFEBROWSING_ID&appver=%VERSION%&pver=2.2");
