@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.12 2012/09/24 19:54:54 pea Exp $
+# $OpenBSD: Makefile,v 1.13 2012/11/24 08:54:34 landry Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	geographic objects support for PostgreSQL
-DISTNAME=	postgis-1.5.3
+DISTNAME=	postgis-2.0.1
 CATEGORIES=	geo databases
 
 HOMEPAGE=	http://www.postgis.org/
 
-MAINTAINER=	Eric Faurot <eric@openbsd.org>
-
-BROKEN=		Doesn't build with PostgreSQL 9.2
+MAINTAINER=	Landry Breuil <landry@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -21,39 +19,44 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${HOMEPAGE}download/
 
 WANTLIB=	c geos_c m pq>=5.3 proj xml2 z
+WANTLIB +=	com_err crypto curl expat gdal geos geotiff gif idn
+WANTLIB +=	jasper jpeg json png pthread ssl stdc++ tiff
 
-MODULES=        converters/libiconv
+MODULES =	devel/gettext
 
-LIB_DEPENDS=	devel/proj \
-		databases/postgresql \
-		geo/geos
+LIB_DEPENDS=	geo/gdal \
+		devel/json-c
 RUN_DEPENDS=	databases/postgresql,-server
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		textproc/libxslt \
+		textproc/docbook-xsl \
+		graphics/ImageMagick
 
 USE_GMAKE=	Yes
-CONFIGURE_ENV=	PGXS=1 \
-		LDFLAGS='-L${LOCALBASE}/lib -pthread' \
+#for iconv.h
+CONFIGURE_ENV=	LDFLAGS=-L${LOCALBASE}/lib \
 		CFLAGS=-I${LOCALBASE}/include
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--datadir=${PREFIX}/share/postgresql/contrib \
+CONFIGURE_ARGS=	--with-xsldir=${PREFIX}/share/xsl/docbook/ \
 		--libdir=${PREFIX}/lib/postgresql
-USE_GROFF =	Yes
+USE_LIBTOOL = Yes
+
+DOCDIR =	${PREFIX}/share/doc/postgresql/postgis/
 
 post-install:
-	${INSTALL_SCRIPT_DIR} ${PREFIX}/libexec/postgis/utils
-	${INSTALL_SCRIPT} ${WRKSRC}/utils/*.pl ${PREFIX}/libexec/postgis/utils
-	${INSTALL_DATA} ${WRKSRC}/utils/README ${PREFIX}/libexec/postgis/utils
-	cd ${WRKSRC}/doc && WRKINST=${WRKINST} ${MAKE_PROGRAM} install
+	cd ${WRKSRC}/doc && WRKINST=${WRKINST} ${MAKE_PROGRAM} docs-install man-install
+	${INSTALL_DATA_DIR} ${DOCDIR}/images/
+	$(INSTALL_DATA) ${WRKSRC}/doc/html/style.css ${DOCDIR}/
+	$(INSTALL_DATA) ${WRKSRC}/doc/html/images/* ${DOCDIR}/images/
 
-# Note on running regress
-#
-# - make sure you do not have a postgresql server currently running
-# - as user _postgresql, in another terminal, run:
-#     $ mkdir /tmp/pg && initdb -D /tmp/pg -U postgres && postgres -D /tmp/pg   
-# - run make regress
-
-do-regress: install
-	cd ${WRKSRC}/regress && PGUSER=postgres ${MAKE_PROGRAM}
-
+# the garden regress suite needs postgis installed
+# no the regular test suite
+# some tests are known to fail, hence the || to stop the db
+do-regress:
+	regdir=$$(mktemp -t -d postgis-regress.XXXX) && \
+	LC_CTYPE=C initdb -D $${regdir} && \
+	LD_PRELOAD=libpthread.so pg_ctl -D $${regdir} -o '-p 12341' -l $${regdir}/log start && \
+	cd ${WRKSRC}/regress && PGPORT=12341 ${MAKE_PROGRAM} check || \
+	pg_ctl -D $${regdir} -o '-p 12341'  stop -m fast
 
 .include <bsd.port.mk>
