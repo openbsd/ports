@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2012/08/15 13:22:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2012/11/24 17:42:31 ajacoutot Exp $
 
 COMMENT=	GTK+2 frontend to CUPS
 
-DISTNAME=	gtklp-1.2.9
+DISTNAME=	gtklp-1.2.10
 CATEGORIES=	print sysutils x11
 
 EXTRACT_SUFX=	.src.tar.gz
@@ -17,12 +17,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender asn1 atk-1.0 c cairo crypto cups expat
-WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gobject-2.0 gssapi gtk-x11-2.0 krb5 m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread pthread-stubs
-WANTLIB += ssl xcb xcb-render xcb-shm z
+WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm asn1 atk-1.0 c cairo
+WANTLIB += crypto cups drm expat ffi fontconfig freetype gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gssapi gthread-2.0 gtk-x11-2.0 harfbuzz icudata icule
+WANTLIB += icuuc krb5 m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread pthread-stubs ssl stdc++
+WANTLIB += xcb xcb-render xcb-shm z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gtklp/}
 
@@ -36,14 +38,17 @@ RUN_DEPENDS +=	print/cups
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 
-MAKE_FILE=	Makefile.fallback
-CFLAGS+=	-DHAVE_LIBSSL
+# XXX configure is re-run a second time with "missing --run aclocal-1.11 -I m4"
+AUTOMAKE_VERSION=1.11
+AUTOCONF_VERSION=2.68
+BUILD_DEPENDS=	${MODGNU_AUTOMAKE_DEPENDS} \
+		${MODGNU_AUTOCONF_DEPENDS}
+MAKE_FLAGS=	AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION}
+# end XXX
 
-NO_REGRESS=	Yes
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/Makefile.fallback
+CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>
