@@ -1,10 +1,10 @@
-$OpenBSD: patch-tests_libpeas_plugins_extension-js_Makefile_in,v 1.4 2012/10/16 08:43:47 jasper Exp $
+$OpenBSD: patch-tests_libpeas_plugins_extension-js_Makefile_in,v 1.5 2012/11/25 13:18:46 jasper Exp $
 
 sed(1) doesn't support -i, so use perl(1) instead.
 
---- tests/libpeas/plugins/extension-js/Makefile.in.orig	Tue Oct 16 08:18:04 2012
-+++ tests/libpeas/plugins/extension-js/Makefile.in	Tue Oct 16 10:37:19 2012
-@@ -544,14 +544,14 @@ extension-js.%:
+--- tests/libpeas/plugins/extension-js/Makefile.in.orig	Sun Nov 25 11:18:52 2012
++++ tests/libpeas/plugins/extension-js/Makefile.in	Sun Nov 25 14:11:20 2012
+@@ -537,14 +537,14 @@ extension-js.%:
  
  extension-gjs.gschema.xml extension-seed.gschema.xml: extension-js.gschema.xml
  	$(AM_V_GEN) cp $< $@ && \
