@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/11/25 20:38:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2012/11/25 20:44:40 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -41,7 +41,8 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-static
 
 # XXX https://bugzilla.gnome.org/show_bug.cgi?id=673580
-#MODGNOME_TOOLS=	vala goi
+#BUILD_DEPENDS += lang/vala \
+#		devel/gobject-introspection
 CONFIGURE_ARGS += --without-vala \
 		--disable-introspection
 
