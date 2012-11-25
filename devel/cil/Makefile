@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2012/09/30 09:16:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2012/11/25 23:46:36 sthen Exp $
+
+BROKEN = amd64: cilly fails at runtime (bad paths). !amd64: packaging broken.
 
 # until tested on others, even though bytecode is produced
 ONLY_FOR_ARCHS =	${OCAML_NATIVE_ARCHS}
