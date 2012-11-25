@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.120 2012/11/24 10:36:20 landry Exp $
+# $OpenBSD: Makefile,v 1.121 2012/11/25 13:49:47 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
@@ -60,12 +60,17 @@ SEPARATE_BUILD =	Yes
 CONFIGURE_ENV +=	MOZ_DEBUG_FLAGS="-Os"
 .endif
 
+# needed for webm
+.if ${MACHINE_ARCH:Mi386} || ${MACHINE_ARCH:Mamd64}
+BUILD_DEPENDS +=	devel/yasm
+.endif
+
 LIB_DEPENDS-lightning = STEM->=${MOZILLA_VERSION:S/b/beta/}:${BUILD_PKGPATH},-main
 WANTLIB-lightning =	lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/xpcom \
 			lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/xul \
 			lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/mozalloc \
 			c m stdc++ nspr4 plc4 plds4 pthread
-BUILD_DEPENDS+=	archivers/unzip #to unzip xpi
+BUILD_DEPENDS +=	archivers/unzip #to unzip xpi
 
 RUN_DEPENDS-enigmail =	security/gnupg
 LIB_DEPENDS-enigmail =	${LIB_DEPENDS-lightning}
