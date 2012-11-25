@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2012/11/07 06:59:45 robert Exp $
+# $OpenBSD: Makefile,v 1.111 2012/11/25 18:57:21 ratchov Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 
@@ -6,6 +6,7 @@ COMMENT=		Chromium browser
 
 V=			23.0.1271.64
 DISTNAME=		chromium-${V}
+REVISION=		0
 
 CATEGORIES=		www
 
@@ -99,6 +100,7 @@ GYP_DEFS=	-Duse_system_bzip2=1 \
 		-Denable_webrtc=0 \
 		-Denable_one_click_signin=1 \
 		-Duse_kerberos=0 \
+		-Duse_sndio=1 \
 		-DOS=openbsd
 
 pre-configure:
@@ -110,6 +112,8 @@ pre-configure:
 .endfor
 	@cp -R ${WRKSRC}/third_party/libvpx/source/config/linux \
 		${WRKSRC}/third_party/libvpx/source/config/openbsd
+	@mkdir -p ${WRKSRC}/media/audio/sndio
+	@cp files/sndio_output.{cc,h} ${WRKSRC}/media/audio/sndio
 
 # gyp_chromium generates all the Makefiles from gyp
 do-configure:
