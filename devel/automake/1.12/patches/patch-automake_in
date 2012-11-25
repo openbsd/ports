@@ -1,7 +1,7 @@
-$OpenBSD: patch-automake_in,v 1.4 2012/11/21 09:13:16 brad Exp $
---- automake.in.orig	Sun Sep 16 03:08:36 2012
-+++ automake.in	Wed Nov 14 21:12:18 2012
-@@ -5244,6 +5244,7 @@ sub scan_autoconf_traces ($)
+$OpenBSD: patch-automake_in,v 1.5 2012/11/25 08:29:07 brad Exp $
+--- automake.in.orig	Sat Nov 17 10:25:47 2012
++++ automake.in	Sat Nov 24 23:59:01 2012
+@@ -5246,6 +5246,7 @@ sub scan_autoconf_traces ($)
  		_LT_AC_TAGCONFIG => 0,
  		m4_include => 1,
  		m4_sinclude => 1,
@@ -9,7 +9,7 @@ $OpenBSD: patch-automake_in,v 1.4 2012/11/21 09:13:16 brad Exp $
  		sinclude => 1,
  	      );
  
-@@ -5267,6 +5268,7 @@ sub scan_autoconf_traces ($)
+@@ -5269,6 +5270,7 @@ sub scan_autoconf_traces ($)
        my ($here, $depth, @args) = split (/::/);
        $where = new Automake::Location $here;
        my $macro = $args[0];
