@@ -1,0 +1,8 @@
+Lua CJSON provides JSON support for Lua.
+
+Features:
+- Fast, standards compliant encoding/parsing routines.
+- Full support for JSON with UTF-8, including decoding surrogate pairs.
+- Optional run-time support for common exceptions to the JSON
+  specification (infinity, NaN,..).
+- No dependencies on other libraries.

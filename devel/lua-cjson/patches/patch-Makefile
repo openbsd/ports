@@ -1,0 +1,21 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2012/11/26 09:52:13 jasper Exp $
+--- Makefile.orig	Thu Mar  1 13:22:50 2012
++++ Makefile	Tue Nov 20 19:42:53 2012
+@@ -11,14 +11,14 @@
+ ##                          multi-threaded application. Requries _pthreads_.
+ 
+ ##### Build defaults #####
+-LUA_VERSION =       5.1
++LUA_VERSION =       ${MODLUA_VERSION}
+ TARGET =            cjson.so
+ PREFIX =            /usr/local
+ #CFLAGS =            -g -Wall -pedantic -fno-inline
+-CFLAGS =            -O3 -Wall -pedantic -DNDEBUG
++CFLAGS ?=            -O3 -Wall -pedantic -DNDEBUG
+ CJSON_CFLAGS =      -fpic
+ CJSON_LDFLAGS =     -shared
+-LUA_INCLUDE_DIR =   $(PREFIX)/include
++LUA_INCLUDE_DIR =   $(PREFIX)/include/lua-$(LUA_VERSION)
+ LUA_CMODULE_DIR =   $(PREFIX)/lib/lua/$(LUA_VERSION)
+ LUA_MODULE_DIR =    $(PREFIX)/share/lua/$(LUA_VERSION)
+ LUA_BIN_DIR =       $(PREFIX)/bin
