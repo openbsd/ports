@@ -1,21 +1,13 @@
-$OpenBSD: patch-Modules_FindGettext_cmake,v 1.1 2012/11/11 17:13:31 dcoppa Exp $
+$OpenBSD: patch-Modules_FindGettext_cmake,v 1.2 2012/11/26 12:32:29 dcoppa Exp $
 
-Revert 656ab19b5cbe0f563f72f8219c5670df2351c153 ("remove code
-duplicating FPHSA checks") since it broke .mo files generation
-for several ports
+Fix overwriting result with empty variable
+(upstream git commit 94f37851ef5c6dccbe2dd647a3b38e3196393298)
 
---- Modules/FindGettext.cmake.orig	Wed Oct 31 16:32:05 2012
-+++ Modules/FindGettext.cmake	Mon Nov  5 16:50:21 2012
-@@ -210,4 +210,11 @@ function(GETTEXT_PROCESS_PO_FILES _lang)
+--- Modules/FindGettext.cmake.orig	Mon Nov 26 12:30:02 2012
++++ Modules/FindGettext.cmake	Mon Nov 26 12:30:34 2012
+@@ -209,5 +209,3 @@ function(GETTEXT_PROCESS_PO_FILES _lang)
+    add_dependencies(pofiles ${uniqueTargetName})
  
  endfunction()
- 
+-
 -set(GETTEXT_FOUND ${Gettext_FOUND})
-+if (GETTEXT_MSGMERGE_EXECUTABLE AND GETTEXT_MSGFMT_EXECUTABLE )
-+   set(GETTEXT_FOUND TRUE)
-+else ()
-+   set(GETTEXT_FOUND FALSE)
-+   if (GetText_REQUIRED)
-+      message(FATAL_ERROR "GetText not found")
-+   endif ()
-+endif ()
