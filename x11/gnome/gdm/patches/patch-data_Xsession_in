@@ -1,11 +1,11 @@
-$OpenBSD: patch-data_Xsession_in,v 1.2 2011/10/19 08:13:04 ajacoutot Exp $
---- data/Xsession.in.orig	Wed Oct 19 04:07:00 2011
-+++ data/Xsession.in	Wed Oct 19 07:45:12 2011
+$OpenBSD: patch-data_Xsession_in,v 1.3 2012/11/26 15:22:22 ajacoutot Exp $
+--- data/Xsession.in.orig	Fri Jul 20 21:00:19 2012
++++ data/Xsession.in	Mon Nov 26 16:17:32 2012
 @@ -23,6 +23,8 @@
  # based on:
  # $XConsortium: Xsession /main/10 1995/12/18 18:21:28 gildea $
  
-+PATH="$PATH:${LOCALBASE}/bin"
++PATH="$PATH:${X11BASE}/bin:${LOCALBASE}/bin"
 +
  command="$@"
  
