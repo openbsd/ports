@@ -1,4 +1,4 @@
-# $OpenBSD: clang.port.mk,v 1.2 2012/05/26 09:13:43 jasper Exp $
+# $OpenBSD: clang.port.mk,v 1.3 2012/11/26 22:16:55 landry Exp $
 
 MODCLANG_VERSION=	3.1
 
@@ -17,11 +17,25 @@ ERRORS += "Fatal: unknown language ${_l}"
 .  endif
 .endfor
 
+_MODCLANG_ARCH_USES = No
+
+.if ${MODCLANG_ARCHS:L} != ""
+.  for _i in ${MODCLANG_ARCHS}
+.    if !empty(MACHINE_ARCH:M${_i})
+_MODCLANG_ARCH_USES = Yes
+.    endif
+.  endfor
+.endif
+
+_MODCLANG_LINKS =
+.if ${_MODCLANG_ARCH_USES:L} == "yes"
+
 BUILD_DEPENDS += devel/llvm>=${MODCLANG_VERSION}
 _MODCLANG_LINKS = clang gcc clang cc
 
 .if ${MODCLANG_LANGS:L:Mc++}
 _MODCLANG_LINKS += clang++ g++ clang++ c++
+.endif
 .endif
 
 .if !empty(_MODCLANG_LINKS)
