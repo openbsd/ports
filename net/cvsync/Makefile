@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2012/04/10 19:52:44 phessler Exp $
+# $OpenBSD: Makefile,v 1.45 2012/11/26 09:11:45 sthen Exp $
 
 COMMENT=	portable CVS repository synchronization utility
 
@@ -14,9 +14,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c pthread z
 
-MASTER_SITES=	ftp://ftp.cvsync.org/pub/cvsync/ \
+MASTER_SITES=	http://www.cvsync.org/dist/ \
 		ftp://ftp.allbsd.org/pub/cvsync/
 
 USE_GMAKE=	Yes
