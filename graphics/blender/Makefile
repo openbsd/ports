@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.47 2012/11/24 08:36:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2012/11/26 15:02:40 pascal Exp $
 
 COMMENT =	3D creation software
 BROKEN-sparc64 = error: cast from 'ccl::uchar*' to 'CUdeviceptr' loses precision
-BROKEN-powerpc = avi_endian.c:54: error: 'val' undeclared
 
 DISTNAME =	blender-2.64a
 
