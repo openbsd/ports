@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1092 2012/11/06 20:54:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.1093 2012/11/26 09:52:45 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -376,6 +376,7 @@
      SUBDIR += log4cplus
      SUBDIR += lpc21isp
      SUBDIR += lpeg
+     SUBDIR += lua-cjson
      SUBDIR += lua-cmsgpack
      SUBDIR += lua-lgi
      SUBDIR += luaalarm
