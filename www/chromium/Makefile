@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2012/11/25 18:57:21 ratchov Exp $
+# $OpenBSD: Makefile,v 1.112 2012/11/26 07:32:30 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 
@@ -23,6 +23,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/
+
+# The proprietary flavor compiles and enables patented codecs like H.264
+FLAVORS=	proprietary
+FLAVOR?=
 
 MODULES=	gcc4 lang/python
 
@@ -103,10 +107,19 @@ GYP_DEFS=	-Duse_system_bzip2=1 \
 		-Duse_sndio=1 \
 		-DOS=openbsd
 
+.if ${FLAVOR:Mproprietary}
+GYP_DEFS+=	-Dffmpeg_branding=Chrome \
+		-Dproprietary_codecs=1
+.endif
+
+
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/webkit/plugins/npapi/plugin_list_posix.cc
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 .for _arch in x64 ia32
+	@cp -pR ${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/linux/${_arch}/libavcodec \
+		${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/openbsd/${_arch}/libavcodec
+
 	@cp -pR ${WRKSRC}/third_party/ffmpeg/chromium/config/Chromium/linux/${_arch}/libavcodec \
 		${WRKSRC}/third_party/ffmpeg/chromium/config/Chromium/openbsd/${_arch}/libavcodec
 .endfor

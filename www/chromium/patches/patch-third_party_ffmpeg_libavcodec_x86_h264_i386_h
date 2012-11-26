@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_ffmpeg_libavcodec_x86_h264_i386_h,v 1.1 2012/11/26 07:32:30 robert Exp $
+--- third_party/ffmpeg/libavcodec/x86/h264_i386.h.orig	Sun Nov 25 17:11:57 2012
++++ third_party/ffmpeg/libavcodec/x86/h264_i386.h	Sun Nov 25 17:32:39 2012
+@@ -38,7 +38,7 @@
+ 
+ //FIXME use some macros to avoid duplicating get_cabac (cannot be done yet
+ //as that would make optimization work hard)
+-#if HAVE_7REGS
++#if ARCH_X86 && HAVE_7REGS && !defined(BROKEN_RELOCATIONS)
+ #define decode_significance decode_significance_x86
+ static int decode_significance_x86(CABACContext *c, int max_coeff,
+                                    uint8_t *significant_coeff_ctx_base,
