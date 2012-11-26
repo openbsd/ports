@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/08/07 13:39:54 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/11/26 16:03:31 sthen Exp $
 @bin bin/minetest
 @bin bin/minetestserver
 @man man/man6/minetest.6
@@ -20,6 +20,7 @@ share/minetest/builtin/auth.lua
 share/minetest/builtin/builtin.lua
 share/minetest/builtin/chatcommands.lua
 share/minetest/builtin/deprecated.lua
+share/minetest/builtin/detached_inventory.lua
 share/minetest/builtin/item.lua
 share/minetest/builtin/item_entity.lua
 share/minetest/builtin/misc.lua
@@ -42,6 +43,9 @@ share/minetest/games/minetest_game/mods/bucket/textures/
 share/minetest/games/minetest_game/mods/bucket/textures/bucket.png
 share/minetest/games/minetest_game/mods/bucket/textures/bucket_lava.png
 share/minetest/games/minetest_game/mods/bucket/textures/bucket_water.png
+share/minetest/games/minetest_game/mods/creative/
+share/minetest/games/minetest_game/mods/creative/README.txt
+share/minetest/games/minetest_game/mods/creative/init.lua
 share/minetest/games/minetest_game/mods/default/
 share/minetest/games/minetest_game/mods/default/README.txt
 share/minetest/games/minetest_game/mods/default/init.lua
@@ -151,8 +155,11 @@ share/minetest/games/minetest_game/mods/default/textures/default_tool_woodpick.p
 share/minetest/games/minetest_game/mods/default/textures/default_tool_woodshovel.png
 share/minetest/games/minetest_game/mods/default/textures/default_tool_woodsword.png
 share/minetest/games/minetest_game/mods/default/textures/default_torch.png
+share/minetest/games/minetest_game/mods/default/textures/default_torch_animated.png
 share/minetest/games/minetest_game/mods/default/textures/default_torch_on_ceiling.png
+share/minetest/games/minetest_game/mods/default/textures/default_torch_on_ceiling_animated.png
 share/minetest/games/minetest_game/mods/default/textures/default_torch_on_floor.png
+share/minetest/games/minetest_game/mods/default/textures/default_torch_on_floor_animated.png
 share/minetest/games/minetest_game/mods/default/textures/default_tree.png
 share/minetest/games/minetest_game/mods/default/textures/default_tree_top.png
 share/minetest/games/minetest_game/mods/default/textures/default_water.png
@@ -172,6 +179,26 @@ share/minetest/games/minetest_game/mods/doors/textures/door_wood_a.png
 share/minetest/games/minetest_game/mods/doors/textures/door_wood_a_r.png
 share/minetest/games/minetest_game/mods/doors/textures/door_wood_b.png
 share/minetest/games/minetest_game/mods/doors/textures/door_wood_b_r.png
+share/minetest/games/minetest_game/mods/dye/
+share/minetest/games/minetest_game/mods/dye/README.txt
+share/minetest/games/minetest_game/mods/dye/depends.txt
+share/minetest/games/minetest_game/mods/dye/init.lua
+share/minetest/games/minetest_game/mods/dye/textures/
+share/minetest/games/minetest_game/mods/dye/textures/dye_black.png
+share/minetest/games/minetest_game/mods/dye/textures/dye_blue.png
+share/minetest/games/minetest_game/mods/dye/textures/dye_brown.png
+share/minetest/games/minetest_game/mods/dye/textures/dye_cyan.png
+share/minetest/games/minetest_game/mods/dye/textures/dye_dark_green.png
+share/minetest/games/minetest_game/mods/dye/textures/dye_dark_grey.png
+share/minetest/games/minetest_game/mods/dye/textures/dye_green.png
+share/minetest/games/minetest_game/mods/dye/textures/dye_grey.png
+share/minetest/games/minetest_game/mods/dye/textures/dye_magenta.png
+share/minetest/games/minetest_game/mods/dye/textures/dye_orange.png
+share/minetest/games/minetest_game/mods/dye/textures/dye_pink.png
+share/minetest/games/minetest_game/mods/dye/textures/dye_red.png
+share/minetest/games/minetest_game/mods/dye/textures/dye_violet.png
+share/minetest/games/minetest_game/mods/dye/textures/dye_white.png
+share/minetest/games/minetest_game/mods/dye/textures/dye_yellow.png
 share/minetest/games/minetest_game/mods/fire/
 share/minetest/games/minetest_game/mods/fire/README.txt
 share/minetest/games/minetest_game/mods/fire/init.lua
@@ -199,6 +226,39 @@ share/minetest/games/minetest_game/mods/stairs/
 share/minetest/games/minetest_game/mods/stairs/README.txt
 share/minetest/games/minetest_game/mods/stairs/depends.txt
 share/minetest/games/minetest_game/mods/stairs/init.lua
+share/minetest/games/minetest_game/mods/vessels/
+share/minetest/games/minetest_game/mods/vessels/README.txt
+share/minetest/games/minetest_game/mods/vessels/depends.txt
+share/minetest/games/minetest_game/mods/vessels/init.lua
+share/minetest/games/minetest_game/mods/vessels/textures/
+share/minetest/games/minetest_game/mods/vessels/textures/alternates/
+share/minetest/games/minetest_game/mods/vessels/textures/alternates/vessels_drinking_glass.png
+share/minetest/games/minetest_game/mods/vessels/textures/alternates/vessels_glass_bottle.png
+share/minetest/games/minetest_game/mods/vessels/textures/alternates/vessels_steel_bottle.png
+share/minetest/games/minetest_game/mods/vessels/textures/vessels_drinking_glass.png
+share/minetest/games/minetest_game/mods/vessels/textures/vessels_glass_bottle.png
+share/minetest/games/minetest_game/mods/vessels/textures/vessels_glass_fragments.png
+share/minetest/games/minetest_game/mods/vessels/textures/vessels_steel_bottle.png
+share/minetest/games/minetest_game/mods/wool/
+share/minetest/games/minetest_game/mods/wool/README.txt
+share/minetest/games/minetest_game/mods/wool/depends.txt
+share/minetest/games/minetest_game/mods/wool/init.lua
+share/minetest/games/minetest_game/mods/wool/textures/
+share/minetest/games/minetest_game/mods/wool/textures/wool_black.png
+share/minetest/games/minetest_game/mods/wool/textures/wool_blue.png
+share/minetest/games/minetest_game/mods/wool/textures/wool_brown.png
+share/minetest/games/minetest_game/mods/wool/textures/wool_cyan.png
+share/minetest/games/minetest_game/mods/wool/textures/wool_dark_green.png
+share/minetest/games/minetest_game/mods/wool/textures/wool_dark_grey.png
+share/minetest/games/minetest_game/mods/wool/textures/wool_green.png
+share/minetest/games/minetest_game/mods/wool/textures/wool_grey.png
+share/minetest/games/minetest_game/mods/wool/textures/wool_magenta.png
+share/minetest/games/minetest_game/mods/wool/textures/wool_orange.png
+share/minetest/games/minetest_game/mods/wool/textures/wool_pink.png
+share/minetest/games/minetest_game/mods/wool/textures/wool_red.png
+share/minetest/games/minetest_game/mods/wool/textures/wool_violet.png
+share/minetest/games/minetest_game/mods/wool/textures/wool_white.png
+share/minetest/games/minetest_game/mods/wool/textures/wool_yellow.png
 share/minetest/games/minimal/
 share/minetest/games/minimal/game.conf
 share/minetest/games/minimal/mods/

@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.1.1.1 2012/08/07 13:39:54 landry Exp $
+$OpenBSD: patch-src_CMakeLists_txt,v 1.2 2012/11/26 16:03:31 sthen Exp $
 Properly link/find libintl/iconv
---- src/CMakeLists.txt.orig	Sat Jul 21 22:14:23 2012
-+++ src/CMakeLists.txt	Sun Jul 22 13:59:34 2012
-@@ -18,6 +18,8 @@ set(USE_GETTEXT 0)
+--- src/CMakeLists.txt.orig	Tue Sep  4 23:31:06 2012
++++ src/CMakeLists.txt	Sat Nov 24 14:29:37 2012
+@@ -14,6 +14,8 @@ set(USE_GETTEXT 0)
  
  if(ENABLE_GETTEXT)
  	find_package(GettextLib)
@@ -11,7 +11,7 @@ Properly link/find libintl/iconv
  else()
  	MARK_AS_ADVANCED(GETTEXT_ICONV_DLL GETTEXT_INCLUDE_DIR GETTEXT_LIBRARY GETTEXT_MSGFMT)
  endif()
-@@ -297,7 +299,8 @@ if(BUILD_CLIENT)
+@@ -296,7 +298,8 @@ if(BUILD_CLIENT)
  		${BZIP2_LIBRARIES}
  		${PNG_LIBRARIES}
  		${X11_LIBRARIES}
@@ -21,7 +21,7 @@ Properly link/find libintl/iconv
  		${SOUND_LIBRARIES}
  		${JTHREAD_LIBRARY}
  		${SQLITE3_LIBRARY}
-@@ -312,6 +315,8 @@ if(BUILD_SERVER)
+@@ -311,6 +314,8 @@ if(BUILD_SERVER)
  	target_link_libraries(
  		${PROJECT_NAME}server
  		${ZLIB_LIBRARIES}

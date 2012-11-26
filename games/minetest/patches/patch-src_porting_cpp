@@ -1,15 +1,12 @@
-$OpenBSD: patch-src_porting_cpp,v 1.1.1.1 2012/08/07 13:39:54 landry Exp $
---- src/porting.cpp.orig	Wed Jun  6 23:40:04 2012
-+++ src/porting.cpp	Fri Jul 20 19:05:55 2012
-@@ -295,9 +295,9 @@ void initializePaths()
+$OpenBSD: patch-src_porting_cpp,v 1.2 2012/11/26 16:03:31 sthen Exp $
+--- src/porting.cpp.orig	Tue Sep  4 23:31:06 2012
++++ src/porting.cpp	Sat Nov 24 14:31:04 2012
+@@ -318,7 +318,7 @@ void initializePaths()
  	
  	path_user = std::string(getenv("HOME")) + "/Library/Application Support/" + PROJECT_NAME;
  
 -	#elif defined(__FreeBSD__)
-+	#elif defined(__FreeBSD__) || defined (__OpenBSD__)
++	#elif defined(__FreeBSD__) || defined(__OpenBSD__)
  
--	path_share = std::string(INSTALL_PREFIX) + "/share/" + PROJECT_NAME;
-+	path_share = std::string(CMAKE_INSTALL_PREFIX) + "/share/" + PROJECT_NAME;
+ 	path_share = STATIC_SHAREDIR;
  	path_user = std::string(getenv("HOME")) + "/." + PROJECT_NAME;
-     
- 	#endif
