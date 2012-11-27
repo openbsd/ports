@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2012/03/29 13:38:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2012/11/27 19:00:00 gonzalo Exp $
 
 COMMENT =	analyze C source files and print a call graph
 
-DISTNAME =	cflow-1.3
+DISTNAME =	cflow-1.4
 CATEGORIES =	devel
 
 HOMEPAGE =	http://www.gnu.org/software/cflow/
@@ -23,6 +23,7 @@ MODULES =		devel/gettext
 
 MAKE_FLAGS =		LIBINTL="-L${LOCALBASE}/lib -liconv -lintl"
 
+USE_GMAKE =		Yes
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
 

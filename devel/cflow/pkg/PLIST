@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/08/12 12:25:42 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/11/27 19:00:00 gonzalo Exp $
 @bin bin/cflow
 @info info/cflow.info
 share/emacs/site-lisp/cflow-mode.el
 share/locale/da/LC_MESSAGES/cflow.mo
+share/locale/fi/LC_MESSAGES/cflow.mo
 share/locale/ga/LC_MESSAGES/cflow.mo
 share/locale/id/LC_MESSAGES/cflow.mo
 share/locale/pl/LC_MESSAGES/cflow.mo
