@@ -1,16 +1,16 @@
-$OpenBSD: patch-configure,v 1.5 2012/08/25 13:17:54 ajacoutot Exp $
---- configure.orig	Thu Aug 23 04:19:21 2012
-+++ configure	Fri Aug 24 08:24:54 2012
-@@ -4619,7 +4619,7 @@ fi
+$OpenBSD: patch-configure,v 1.6 2012/11/27 08:13:15 ajacoutot Exp $
+--- configure.orig	Mon Nov 26 11:49:22 2012
++++ configure	Tue Nov 27 08:24:19 2012
+@@ -4601,7 +4601,7 @@ fi
  
  WFLAGS=
  if test "x$ac_cv_c_compiler_gnu" = xyes; then
--  WFLAGS="-Wall -Wextra -Wstrict-aliasing -Wfloat-equal -Wno-comment -Wno-unused"
-+  WFLAGS="-Wall -Wfloat-equal -Wno-comment -Wno-unused"
-   if test ${GXX_MAJOR} -ge 4 ; then
-     WFLAGS="$WFLAGS -Winit-self -Wno-missing-field-initializers"
-   fi
-@@ -5676,7 +5676,7 @@ case "$OSTYPE" in
+-  WFLAGS="-Wall -Wextra -Wstrict-aliasing -Wfloat-equal -Wno-comment -Wno-unused -Winit-self -Wno-missing-field-initializers"
++  WFLAGS="-Wall -Wfloat-equal -Wno-comment -Wno-unused -Winit-self -Wno-missing-field-initializers"
+ fi
+ 
+ CFLAGS="$CFLAGS $WFLAGS"
+@@ -5663,7 +5663,7 @@ case "$OSTYPE" in
  
  
  
