@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2012/10/29 12:14:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2012/11/27 10:07:59 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -7,7 +7,7 @@ COMMENT =	program matching and transformation engine
 # if updating, check for any additional use of diff/grep which
 # may need to be switched to gdiff/ggrep
 DISTNAME =	coccinelle-1.0.0-rc15
-REVISION =	0
+REVISION =	1
 PKGNAME =	${DISTNAME:S/-rc/rc/}
 EXTRACT_SUFX =	.tgz
 
@@ -29,11 +29,13 @@ MODULES =		lang/ocaml \
 			lang/python
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-REGRESS_DEPENDS =	${FULLPKGPATH}
 RUN_DEPENDS =		devel/ocaml-pcre \
 			sysutils/findlib \
 			sysutils/ggrep \
 			textproc/gdiff
+
+REGRESS_DEPENDS =	${FULLPKGPATH}
+CLEANDEPENDS_devel_coccinelle = No
 
 # asks questions at the end if it does better than expected
 REGRESS_IS_INTERACTIVE = Yes
@@ -66,6 +68,5 @@ post-install:
 	mv \
 		${PREFIX}/share/coccinelle/dllpycaml_stubs.so \
 		${PREFIX}/lib/ocaml/stublibs/
-
 
 .include <bsd.port.mk>

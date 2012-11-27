@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.native,v 1.1 2012/10/12 19:59:33 sthen Exp $
-bin/spatch.opt
-@bin share/coccinelle/spatch.opt
