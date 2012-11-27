@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/08/18 22:00:56 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/11/27 22:28:53 chrisz Exp $
 bin/cilly
 bin/patcher
 lib/ocaml/cil/
@@ -137,9 +137,7 @@ ${P5SITE}/CIL/TempFile.pm
 ${P5SITE}/CilConfig.pm
 libexec/cil/
 @bin libexec/cil/machdep-ml.exe
-@bin libexec/cil/machdep-ml32.exe
-@bin libexec/cil/machdep-ml64.exe
 libexec/cil/obj/
-libexec/cil/obj/x86_LINUX/
-@bin libexec/cil/obj/x86_LINUX/cilly.asm.exe
-@bin libexec/cil/obj/x86_LINUX/cilly.byte.exe
+libexec/cil/obj/${target}/
+@bin libexec/cil/obj/${target}/cilly.asm.exe
+@bin libexec/cil/obj/${target}/cilly.byte.exe

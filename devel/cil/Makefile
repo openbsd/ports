@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.24 2012/11/25 23:46:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2012/11/27 22:28:53 chrisz Exp $
 
-BROKEN = amd64: cilly fails at runtime (bad paths). !amd64: packaging broken.
-
-# until tested on others, even though bytecode is produced
-ONLY_FOR_ARCHS =	${OCAML_NATIVE_ARCHS}
+# build system needs per-arch tweaks
+ONLY_FOR_ARCHS = amd64 i386 powerpc
 
 COMMENT=	framework for analysis and transformation of C
 CATEGORIES =	devel lang
 
 DISTNAME =	cil-1.5.1
-REVISION =      1
+REVISION =      2
 EXTRACT_SUFX =	.tar.gz
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=cil/}
 
@@ -20,6 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c curses m pthread
 
 MODULES =		lang/ocaml
@@ -36,7 +35,15 @@ CONFIGURE_ARGS =	EXTRAFEATURES="${OURFILES:R}"
 P5SITE =		libdata/perl5/site_perl
 P5INST =		${PREFIX}/${P5SITE}
 SUBST_VARS +=		P5SITE
-GCC =			/usr/bin/gcc  # cant use CC in case it's set to cilly
+GCC =			/usr/bin/gcc# cant use CC in case it's set to cilly
+
+.include <bsd.port.arch.mk>
+.if ${ARCH} == powerpc
+PKG_ARGS += -Dtarget=ppc_OPENBSD
+.else
+# used for amd64 and i386
+PKG_ARGS += -Dtarget=x86_OPENBSD
+.endif
 
 post-extract:
 	cp ${FILESDIR}/*.ml ${WRKSRC}/src/ext
@@ -46,16 +53,11 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKBUILD}/bin/patcher ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/libexec/cil
 	${INSTALL_PROGRAM} \
-		${WRKBUILD}/obj/x86_LINUX/machdep-ml*.exe \
+		${WRKBUILD}/obj/*_OPENBSD/machdep-ml.exe \
 		${PREFIX}/libexec/cil
 	${INSTALL_DATA_DIR} ${P5INST}/CIL
 	mv ${PREFIX}/lib/*.pm ${P5INST}/CIL/
-	sed -e 's,@CILHOME@,${LOCALBASE},g' \
-	     -e 's,@CILLIBDIR@,${LOCALBASE}/${P5SITE}/CIL,g' \
-	     -e 's,@ARCHOS@,libexec/cil,g' \
-             -e 's,@DEFAULT_CIL_MODE@,GNUCC,g' \
-	     -e 's,@CC@,${GCC},g' < \
-	    ${WRKSRC}/bin/CilConfig.pm.in > ${P5INST}/CilConfig.pm
-
+	sed -e 's,@CILLIBDIR@,${LOCALBASE}/${P5SITE}/CIL,g' \
+	    ${P5INST}/CIL/CilConfig.pm > ${P5INST}/CilConfig.pm
 
 .include <bsd.port.mk>

@@ -1,37 +1,20 @@
-$OpenBSD: patch-configure_in,v 1.8 2012/08/18 22:00:56 avsm Exp $
---- configure.in.orig	Sat Jul 14 12:20:43 2012
-+++ configure.in	Thu Aug  9 18:54:58 2012
-@@ -83,7 +83,7 @@ binaryExists() {
- # this specifies the root of the source tree; it's just the
- # directory where ./configure runs, except on cygwin, which
- # overrides this below
--CILHOME=`pwd`
-+CILHOME=${LOCALBASE}
+$OpenBSD: patch-configure_in,v 1.9 2012/11/27 22:28:53 chrisz Exp $
+--- configure.in.orig	Tue Nov 27 09:16:41 2012
++++ configure.in	Tue Nov 27 09:16:59 2012
+@@ -370,9 +370,15 @@ case "$target" in
+     ;;
  
- DEFAULT_COMPILER=_GNUCC
- DEFAULT_CIL_MODE=GNUCC
-@@ -125,8 +125,8 @@ ocamlDownloadInstructions="
- # required major/minor
- reqMaj=3
- reqMin=08
--knownMaj=3
--knownMin=12
-+knownMaj=4
-+knownMin=0
- AC_MSG_CHECKING(ocaml version is at least $reqMaj.$reqMin)
- if binaryExists ocamlc; then
-   # what version?
-@@ -365,6 +365,13 @@ case "$target" in
+   *86*openbsd*)
+-    AC_MSG_RESULT(configuring for OpenBSD/x86)
++    AC_MSG_RESULT(configuring for OpenBSD/x86)
  
-   *86*linux*)
-     AC_MSG_RESULT(configuring for linux/x86)
-+
-+    ARCHOS=x86_LINUX
+     ARCHOS=x86_OPENBSD
 +    ;;
 +
-+   # openbsd
-+  *openbsd*)
-+    AC_MSG_RESULT(configuring for OpenBSD)
- 
-     ARCHOS=x86_LINUX
++  *powerpc*openbsd*)
++    AC_MSG_RESULT(configuring for OpenBSD/powerpc)
++
++    ARCHOS=ppc_OPENBSD
      ;;
+ 
+   *i386*freebsd*|*amd64*freebsd*)
