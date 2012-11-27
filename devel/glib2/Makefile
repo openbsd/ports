@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.197 2012/11/14 19:05:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.198 2012/11/27 06:49:49 ajacoutot Exp $
 
 COMMENT=		general-purpose utility library
 
-V=			2.34.2
+V=			2.34.3
 DISTNAME=		glib-${V}
 PKGNAME=		${DISTNAME:S/glib/glib2/}
 EXTRACT_SUFX=		.tar.xz
-
-REVISION=		1
 
 CATEGORIES=		devel
 
@@ -15,11 +13,11 @@ HOMEPAGE=		http://www.gtk.org/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
-SHARED_LIBS +=  glib-2.0             3400.0   # 3400.1
-SHARED_LIBS +=  gmodule-2.0          3400.0   # 3400.1
-SHARED_LIBS +=  gthread-2.0          3400.0   # 3400.1
-SHARED_LIBS +=  gobject-2.0          3400.0   # 3400.1
-SHARED_LIBS +=  gio-2.0              3400.0   # 3400.1
+SHARED_LIBS +=  glib-2.0             3400.0   # 3400.3
+SHARED_LIBS +=  gmodule-2.0          3400.0   # 3400.3
+SHARED_LIBS +=  gthread-2.0          3400.0   # 3400.3
+SHARED_LIBS +=  gobject-2.0          3400.0   # 3400.3
+SHARED_LIBS +=  gio-2.0              3400.0   # 3400.3
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
