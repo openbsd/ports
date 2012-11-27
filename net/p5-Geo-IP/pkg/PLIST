@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/11/11 19:46:03 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/11/27 19:58:49 gsoares Exp $
 ${P5ARCH}/
 ${P5ARCH}/Geo/
 ${P5ARCH}/Geo/IP/
@@ -14,3 +14,12 @@ ${P5ARCH}/auto/Geo/IP/IP.so
 @man man/man3p/Geo::IP.3p
 @man man/man3p/Geo::IP::Record.3p
 @man man/man3p/Geo::Mirror.3p
+share/examples/p5-Geo-IP/
+share/examples/p5-Geo-IP/benchmark.pl
+share/examples/p5-Geo-IP/city.pl
+share/examples/p5-Geo-IP/country_v6.pl
+share/examples/p5-Geo-IP/geolite-mirror-simple.pl
+share/examples/p5-Geo-IP/netspeed.pl
+share/examples/p5-Geo-IP/netspeedcell.pl
+share/examples/p5-Geo-IP/org.pl
+share/examples/p5-Geo-IP/region.pl
