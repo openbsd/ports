@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2012/11/27 10:07:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2012/11/27 12:23:57 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -33,9 +33,7 @@ RUN_DEPENDS =		devel/ocaml-pcre \
 			sysutils/findlib \
 			sysutils/ggrep \
 			textproc/gdiff
-
 REGRESS_DEPENDS =	${FULLPKGPATH}
-CLEANDEPENDS_devel_coccinelle = No
 
 # asks questions at the end if it does better than expected
 REGRESS_IS_INTERACTIVE = Yes
