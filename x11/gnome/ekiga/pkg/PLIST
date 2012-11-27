@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2012/09/29 10:10:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2012/11/27 08:15:12 ajacoutot Exp $
 @bin bin/ekiga
 bin/ekiga-config-tool
 @bin bin/ekiga-helper
@@ -8,6 +8,7 @@ lib/ekiga/${GNOME_VERSION}/libekiga.so
 lib/ekiga/${GNOME_VERSION}/plugins/
 lib/ekiga/${GNOME_VERSION}/plugins/libgmevolution.so
 lib/ekiga/${GNOME_VERSION}/plugins/libgmldap.so
+lib/ekiga/${GNOME_VERSION}/plugins/libgmlibnotify.so
 @man man/man1/ekiga.1
 share/applications/ekiga.desktop
 share/dbus-1/services/org.ekiga.Ekiga.service
@@ -25,9 +26,11 @@ share/gnome/help/ekiga/C/figures/accounts_h323.png
 share/gnome/help/ekiga/C/figures/accounts_sip.png
 share/gnome/help/ekiga/C/figures/addressbook_d1.png
 share/gnome/help/ekiga/C/figures/addressbook_d2.png
+share/gnome/help/ekiga/C/figures/addressbook_d3.png
 share/gnome/help/ekiga/C/figures/audio_codecs.png
 share/gnome/help/ekiga/C/figures/call_d1.png
 share/gnome/help/ekiga/C/figures/call_history.png
+share/gnome/help/ekiga/C/figures/call_window.png
 share/gnome/help/ekiga/C/figures/chat_d1.png
 share/gnome/help/ekiga/C/figures/config_d1.png
 share/gnome/help/ekiga/C/figures/config_d2.png
@@ -53,9 +56,11 @@ share/gnome/help/ekiga/bg/figures/accounts_h323.png
 share/gnome/help/ekiga/bg/figures/accounts_sip.png
 share/gnome/help/ekiga/bg/figures/addressbook_d1.png
 share/gnome/help/ekiga/bg/figures/addressbook_d2.png
+share/gnome/help/ekiga/bg/figures/addressbook_d3.png
 share/gnome/help/ekiga/bg/figures/audio_codecs.png
 share/gnome/help/ekiga/bg/figures/call_d1.png
 share/gnome/help/ekiga/bg/figures/call_history.png
+share/gnome/help/ekiga/bg/figures/call_window.png
 share/gnome/help/ekiga/bg/figures/chat_d1.png
 share/gnome/help/ekiga/bg/figures/config_d1.png
 share/gnome/help/ekiga/bg/figures/config_d2.png
@@ -81,9 +86,11 @@ share/gnome/help/ekiga/ca/figures/accounts_h323.png
 share/gnome/help/ekiga/ca/figures/accounts_sip.png
 share/gnome/help/ekiga/ca/figures/addressbook_d1.png
 share/gnome/help/ekiga/ca/figures/addressbook_d2.png
+share/gnome/help/ekiga/ca/figures/addressbook_d3.png
 share/gnome/help/ekiga/ca/figures/audio_codecs.png
 share/gnome/help/ekiga/ca/figures/call_d1.png
 share/gnome/help/ekiga/ca/figures/call_history.png
+share/gnome/help/ekiga/ca/figures/call_window.png
 share/gnome/help/ekiga/ca/figures/chat_d1.png
 share/gnome/help/ekiga/ca/figures/config_d1.png
 share/gnome/help/ekiga/ca/figures/config_d2.png
@@ -109,9 +116,11 @@ share/gnome/help/ekiga/de/figures/accounts_h323.png
 share/gnome/help/ekiga/de/figures/accounts_sip.png
 share/gnome/help/ekiga/de/figures/addressbook_d1.png
 share/gnome/help/ekiga/de/figures/addressbook_d2.png
+share/gnome/help/ekiga/de/figures/addressbook_d3.png
 share/gnome/help/ekiga/de/figures/audio_codecs.png
 share/gnome/help/ekiga/de/figures/call_d1.png
 share/gnome/help/ekiga/de/figures/call_history.png
+share/gnome/help/ekiga/de/figures/call_window.png
 share/gnome/help/ekiga/de/figures/chat_d1.png
 share/gnome/help/ekiga/de/figures/config_d1.png
 share/gnome/help/ekiga/de/figures/config_d2.png
@@ -137,9 +146,11 @@ share/gnome/help/ekiga/el/figures/accounts_h323.png
 share/gnome/help/ekiga/el/figures/accounts_sip.png
 share/gnome/help/ekiga/el/figures/addressbook_d1.png
 share/gnome/help/ekiga/el/figures/addressbook_d2.png
+share/gnome/help/ekiga/el/figures/addressbook_d3.png
 share/gnome/help/ekiga/el/figures/audio_codecs.png
 share/gnome/help/ekiga/el/figures/call_d1.png
 share/gnome/help/ekiga/el/figures/call_history.png
+share/gnome/help/ekiga/el/figures/call_window.png
 share/gnome/help/ekiga/el/figures/chat_d1.png
 share/gnome/help/ekiga/el/figures/config_d1.png
 share/gnome/help/ekiga/el/figures/config_d2.png
@@ -165,9 +176,11 @@ share/gnome/help/ekiga/en_GB/figures/accounts_h323.png
 share/gnome/help/ekiga/en_GB/figures/accounts_sip.png
 share/gnome/help/ekiga/en_GB/figures/addressbook_d1.png
 share/gnome/help/ekiga/en_GB/figures/addressbook_d2.png
+share/gnome/help/ekiga/en_GB/figures/addressbook_d3.png
 share/gnome/help/ekiga/en_GB/figures/audio_codecs.png
 share/gnome/help/ekiga/en_GB/figures/call_d1.png
 share/gnome/help/ekiga/en_GB/figures/call_history.png
+share/gnome/help/ekiga/en_GB/figures/call_window.png
 share/gnome/help/ekiga/en_GB/figures/chat_d1.png
 share/gnome/help/ekiga/en_GB/figures/config_d1.png
 share/gnome/help/ekiga/en_GB/figures/config_d2.png
@@ -193,9 +206,11 @@ share/gnome/help/ekiga/es/figures/accounts_h323.png
 share/gnome/help/ekiga/es/figures/accounts_sip.png
 share/gnome/help/ekiga/es/figures/addressbook_d1.png
 share/gnome/help/ekiga/es/figures/addressbook_d2.png
+share/gnome/help/ekiga/es/figures/addressbook_d3.png
 share/gnome/help/ekiga/es/figures/audio_codecs.png
 share/gnome/help/ekiga/es/figures/call_d1.png
 share/gnome/help/ekiga/es/figures/call_history.png
+share/gnome/help/ekiga/es/figures/call_window.png
 share/gnome/help/ekiga/es/figures/chat_d1.png
 share/gnome/help/ekiga/es/figures/config_d1.png
 share/gnome/help/ekiga/es/figures/config_d2.png
@@ -221,9 +236,11 @@ share/gnome/help/ekiga/eu/figures/accounts_h323.png
 share/gnome/help/ekiga/eu/figures/accounts_sip.png
 share/gnome/help/ekiga/eu/figures/addressbook_d1.png
 share/gnome/help/ekiga/eu/figures/addressbook_d2.png
+share/gnome/help/ekiga/eu/figures/addressbook_d3.png
 share/gnome/help/ekiga/eu/figures/audio_codecs.png
 share/gnome/help/ekiga/eu/figures/call_d1.png
 share/gnome/help/ekiga/eu/figures/call_history.png
+share/gnome/help/ekiga/eu/figures/call_window.png
 share/gnome/help/ekiga/eu/figures/chat_d1.png
 share/gnome/help/ekiga/eu/figures/config_d1.png
 share/gnome/help/ekiga/eu/figures/config_d2.png
@@ -249,9 +266,11 @@ share/gnome/help/ekiga/fi/figures/accounts_h323.png
 share/gnome/help/ekiga/fi/figures/accounts_sip.png
 share/gnome/help/ekiga/fi/figures/addressbook_d1.png
 share/gnome/help/ekiga/fi/figures/addressbook_d2.png
+share/gnome/help/ekiga/fi/figures/addressbook_d3.png
 share/gnome/help/ekiga/fi/figures/audio_codecs.png
 share/gnome/help/ekiga/fi/figures/call_d1.png
 share/gnome/help/ekiga/fi/figures/call_history.png
+share/gnome/help/ekiga/fi/figures/call_window.png
 share/gnome/help/ekiga/fi/figures/chat_d1.png
 share/gnome/help/ekiga/fi/figures/config_d1.png
 share/gnome/help/ekiga/fi/figures/config_d2.png
@@ -277,9 +296,11 @@ share/gnome/help/ekiga/fr/figures/accounts_h323.png
 share/gnome/help/ekiga/fr/figures/accounts_sip.png
 share/gnome/help/ekiga/fr/figures/addressbook_d1.png
 share/gnome/help/ekiga/fr/figures/addressbook_d2.png
+share/gnome/help/ekiga/fr/figures/addressbook_d3.png
 share/gnome/help/ekiga/fr/figures/audio_codecs.png
 share/gnome/help/ekiga/fr/figures/call_d1.png
 share/gnome/help/ekiga/fr/figures/call_history.png
+share/gnome/help/ekiga/fr/figures/call_window.png
 share/gnome/help/ekiga/fr/figures/chat_d1.png
 share/gnome/help/ekiga/fr/figures/config_d1.png
 share/gnome/help/ekiga/fr/figures/config_d2.png
@@ -305,9 +326,11 @@ share/gnome/help/ekiga/oc/figures/accounts_h323.png
 share/gnome/help/ekiga/oc/figures/accounts_sip.png
 share/gnome/help/ekiga/oc/figures/addressbook_d1.png
 share/gnome/help/ekiga/oc/figures/addressbook_d2.png
+share/gnome/help/ekiga/oc/figures/addressbook_d3.png
 share/gnome/help/ekiga/oc/figures/audio_codecs.png
 share/gnome/help/ekiga/oc/figures/call_d1.png
 share/gnome/help/ekiga/oc/figures/call_history.png
+share/gnome/help/ekiga/oc/figures/call_window.png
 share/gnome/help/ekiga/oc/figures/chat_d1.png
 share/gnome/help/ekiga/oc/figures/config_d1.png
 share/gnome/help/ekiga/oc/figures/config_d2.png
@@ -333,9 +356,11 @@ share/gnome/help/ekiga/pt_BR/figures/accounts_h323.png
 share/gnome/help/ekiga/pt_BR/figures/accounts_sip.png
 share/gnome/help/ekiga/pt_BR/figures/addressbook_d1.png
 share/gnome/help/ekiga/pt_BR/figures/addressbook_d2.png
+share/gnome/help/ekiga/pt_BR/figures/addressbook_d3.png
 share/gnome/help/ekiga/pt_BR/figures/audio_codecs.png
 share/gnome/help/ekiga/pt_BR/figures/call_d1.png
 share/gnome/help/ekiga/pt_BR/figures/call_history.png
+share/gnome/help/ekiga/pt_BR/figures/call_window.png
 share/gnome/help/ekiga/pt_BR/figures/chat_d1.png
 share/gnome/help/ekiga/pt_BR/figures/config_d1.png
 share/gnome/help/ekiga/pt_BR/figures/config_d2.png
@@ -361,9 +386,11 @@ share/gnome/help/ekiga/ru/figures/accounts_h323.png
 share/gnome/help/ekiga/ru/figures/accounts_sip.png
 share/gnome/help/ekiga/ru/figures/addressbook_d1.png
 share/gnome/help/ekiga/ru/figures/addressbook_d2.png
+share/gnome/help/ekiga/ru/figures/addressbook_d3.png
 share/gnome/help/ekiga/ru/figures/audio_codecs.png
 share/gnome/help/ekiga/ru/figures/call_d1.png
 share/gnome/help/ekiga/ru/figures/call_history.png
+share/gnome/help/ekiga/ru/figures/call_window.png
 share/gnome/help/ekiga/ru/figures/chat_d1.png
 share/gnome/help/ekiga/ru/figures/config_d1.png
 share/gnome/help/ekiga/ru/figures/config_d2.png
@@ -389,9 +416,11 @@ share/gnome/help/ekiga/sl/figures/accounts_h323.png
 share/gnome/help/ekiga/sl/figures/accounts_sip.png
 share/gnome/help/ekiga/sl/figures/addressbook_d1.png
 share/gnome/help/ekiga/sl/figures/addressbook_d2.png
+share/gnome/help/ekiga/sl/figures/addressbook_d3.png
 share/gnome/help/ekiga/sl/figures/audio_codecs.png
 share/gnome/help/ekiga/sl/figures/call_d1.png
 share/gnome/help/ekiga/sl/figures/call_history.png
+share/gnome/help/ekiga/sl/figures/call_window.png
 share/gnome/help/ekiga/sl/figures/chat_d1.png
 share/gnome/help/ekiga/sl/figures/config_d1.png
 share/gnome/help/ekiga/sl/figures/config_d2.png
@@ -417,9 +446,11 @@ share/gnome/help/ekiga/sv/figures/accounts_h323.png
 share/gnome/help/ekiga/sv/figures/accounts_sip.png
 share/gnome/help/ekiga/sv/figures/addressbook_d1.png
 share/gnome/help/ekiga/sv/figures/addressbook_d2.png
+share/gnome/help/ekiga/sv/figures/addressbook_d3.png
 share/gnome/help/ekiga/sv/figures/audio_codecs.png
 share/gnome/help/ekiga/sv/figures/call_d1.png
 share/gnome/help/ekiga/sv/figures/call_history.png
+share/gnome/help/ekiga/sv/figures/call_window.png
 share/gnome/help/ekiga/sv/figures/chat_d1.png
 share/gnome/help/ekiga/sv/figures/config_d1.png
 share/gnome/help/ekiga/sv/figures/config_d2.png
@@ -445,9 +476,11 @@ share/gnome/help/ekiga/uk/figures/accounts_h323.png
 share/gnome/help/ekiga/uk/figures/accounts_sip.png
 share/gnome/help/ekiga/uk/figures/addressbook_d1.png
 share/gnome/help/ekiga/uk/figures/addressbook_d2.png
+share/gnome/help/ekiga/uk/figures/addressbook_d3.png
 share/gnome/help/ekiga/uk/figures/audio_codecs.png
 share/gnome/help/ekiga/uk/figures/call_d1.png
 share/gnome/help/ekiga/uk/figures/call_history.png
+share/gnome/help/ekiga/uk/figures/call_window.png
 share/gnome/help/ekiga/uk/figures/chat_d1.png
 share/gnome/help/ekiga/uk/figures/config_d1.png
 share/gnome/help/ekiga/uk/figures/config_d2.png
@@ -473,9 +506,11 @@ share/gnome/help/ekiga/zh_CN/figures/accounts_h323.png
 share/gnome/help/ekiga/zh_CN/figures/accounts_sip.png
 share/gnome/help/ekiga/zh_CN/figures/addressbook_d1.png
 share/gnome/help/ekiga/zh_CN/figures/addressbook_d2.png
+share/gnome/help/ekiga/zh_CN/figures/addressbook_d3.png
 share/gnome/help/ekiga/zh_CN/figures/audio_codecs.png
 share/gnome/help/ekiga/zh_CN/figures/call_d1.png
 share/gnome/help/ekiga/zh_CN/figures/call_history.png
+share/gnome/help/ekiga/zh_CN/figures/call_window.png
 share/gnome/help/ekiga/zh_CN/figures/chat_d1.png
 share/gnome/help/ekiga/zh_CN/figures/config_d1.png
 share/gnome/help/ekiga/zh_CN/figures/config_d2.png
@@ -504,7 +539,6 @@ share/locale/ar/LC_MESSAGES/ekiga.mo
 share/locale/as/LC_MESSAGES/ekiga.mo
 share/locale/ast/LC_MESSAGES/ekiga.mo
 share/locale/az/LC_MESSAGES/ekiga.mo
-share/locale/be/LC_MESSAGES/ekiga.mo
 share/locale/bg/LC_MESSAGES/ekiga.mo
 share/locale/bn/LC_MESSAGES/ekiga.mo
 share/locale/bn_IN/LC_MESSAGES/ekiga.mo

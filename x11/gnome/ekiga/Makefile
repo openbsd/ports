@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2012/10/16 11:56:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2012/11/27 08:15:12 ajacoutot Exp $
 
 # if ekiga ever moves to gstreamer, detect_sndiosink_devices() will need
 # to be implemented in:
@@ -9,8 +9,7 @@ SHARED_ONLY=	Yes
 COMMENT=	SIP and H.323 compatible conferencing application
 
 GNOME_PROJECT=	ekiga
-GNOME_VERSION=	3.9.90
-REVISION=	2
+GNOME_VERSION=	4.0.0
 
 SUBST_VARS +=	GNOME_VERSION # pkg/PLIST
 
@@ -26,28 +25,26 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL SDL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender Xv Xxf86vm asn1 atk-1.0
-WANTLIB += avahi-client avahi-common avahi-glib boost_signals-mt
-WANTLIB += c cairo camel-1.2 com_err crypto dbus-1 dbus-glib-1
-WANTLIB += drm ebook-1.2 edataserver-1.2 expat ffi fontconfig
-WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gssapi gthread-2.0 gtk-x11-2.0
-WANTLIB += krb5 lber-2.4 ldap-2.4 ldap_r-2.4 m notify nspr4 nss3
-WANTLIB += opal pango-1.0 pangocairo-1.0 pangoft2-1.0 gnome-keyring
-WANTLIB += pcre pixman-1 plc4 plds4 png pt pthread pthread-stubs
-WANTLIB += sasl2 smime3 sndio softokn3 soup-2.4 speexdsp sqlite3
-WANTLIB += ssl ssl3 stdc++ usbhid xcb xcb-render xcb-shm xml2
-WANTLIB += gck-1 gcr-base-3 gcrypt gpg-error harfbuzz icudata
-WANTLIB += icule icuuc nssutil3 p11-kit z
+WANTLIB += boost_signals-mt c cairo camel-1.2 com_err crypto dbus-1
+WANTLIB += dbus-glib-1 drm ebook-1.2 edataserver-1.2 expat ffi
+WANTLIB += fontconfig freetype gck-1 gcr-base-3 gcrypt gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnome-keyring
+WANTLIB += gobject-2.0 gpg-error gssapi gthread-2.0 gtk-x11-2.0
+WANTLIB += harfbuzz icudata icule icuuc krb5 lber-2.4 ldap-2.4
+WANTLIB += ldap_r-2.4 m notify nspr4 nss3 nssutil3 opal p11-kit
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += plc4 plds4 png pt pthread pthread-stubs sasl2 smime3
+WANTLIB += sndio softokn3 soup-2.4 speexdsp sqlite3 ssl ssl3 stdc++
+WANTLIB += usbhid xcb xcb-render xcb-shm xml2 z
 
 MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
-LIB_DEPENDS=	net/avahi \
-		net/opal>=3.10.7 \
+LIB_DEPENDS=	net/opal>=3.10.9 \
 		devel/sdl \
-		databases/evolution-data-server>=3.6.0p3 \
-		devel/libnotify>=0.7.2 \
+		databases/evolution-data-server \
+		devel/libnotify \
 		devel/boost \
 		x11/gtk+2
 
@@ -59,7 +56,7 @@ MODGCONF2_SCHEMAS_DIR= ekiga
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
-MODGNOME_TOOLS=	yelp
+#MODGNOME_TOOLS=	yelp
 MODGNOME_LDFLAGS=-L${X11BASE}/lib
 
 LIBTOOL_FLAGS=	--tag=disable-static
