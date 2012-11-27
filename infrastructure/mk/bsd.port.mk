@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1198 2012/11/19 14:19:35 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1199 2012/11/27 11:35:57 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -874,7 +874,7 @@ SUBST_VARS += MACHINE_ARCH ARCH HOMEPAGE ^PREFIX ^SYSCONFDIR FLAVOR_EXT \
 _tmpvars =
 
 _PKG_ADD_AUTO ?=
-.if ${_SOLVING_DEP:L} == "yes"
+.if ${_SOLVING_DEP:L} != "no"
 _PKG_ADD_AUTO += -a
 .endif
 
@@ -1953,8 +1953,11 @@ ${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=
 			${REPORT_PROBLEM}; \
 			exit 1;; \
 		esac; \
-		toset="$$toset _SOLVING_DEP=Yes"; \
 		${_complete_pkgspec}; \
+		case X"$$dir" in \
+			X${PKGPATH}) toset="$$toset _SOLVING_DEP=self";; \
+			*) toset="$$toset _SOLVING_DEP=Yes";; \
+		esac; \
 		h="===> ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} depends on: $$pkg -"; \
 		for second_pass in false true; do \
 			if $$check_installed; then \
