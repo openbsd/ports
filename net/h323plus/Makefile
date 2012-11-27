@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2012/08/25 13:16:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2012/11/27 08:14:24 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ V=		1_24_0
 DISTNAME=	h323plus-v${V}
 PKGNAME=	h323plus-${V:S/_/./g}
 CATEGORIES=	net devel
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS=	h323	3.0    # 1.21.0
 
@@ -27,7 +27,7 @@ WANTLIB += m pt pthread sasl2 speex ssl stdc++ x264
 
 MASTER_SITES=	${HOMEPAGE}source/download/
 
-LIB_DEPENDS=	devel/ptlib>=2.10.7 \
+LIB_DEPENDS=	devel/ptlib \
 		graphics/ffmpeg
 
 WRKDIST=	${WRKDIR}/h323plus

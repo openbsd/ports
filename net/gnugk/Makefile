@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2012/08/25 13:19:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2012/11/27 08:14:24 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	H.323 gatekeeper
 
 DISTNAME=	gnugk-3.1
+REVISION=	0
 
 CATEGORIES=	net telephony
 
@@ -27,7 +28,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=openh323gk/}
 BUILD_DEPENDS=	databases/mysql \
 		databases/postgresql
 
-LIB_DEPENDS=	net/h323plus>=1.24.0p0 \
+LIB_DEPENDS=	net/h323plus \
 		net/net-snmp \
 		security/libssh
 
