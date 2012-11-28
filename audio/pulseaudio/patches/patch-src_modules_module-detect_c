@@ -1,11 +1,13 @@
-$OpenBSD: patch-src_modules_module-detect_c,v 1.5 2012/09/29 09:32:05 ajacoutot Exp $
---- src/modules/module-detect.c.orig	Thu Sep  1 10:28:14 2011
-+++ src/modules/module-detect.c	Fri Oct  7 09:47:06 2011
-@@ -48,7 +48,6 @@ PA_MODULE_DESCRIPTION("Detect available audio hardware
+$OpenBSD: patch-src_modules_module-detect_c,v 1.6 2012/11/28 11:19:01 ajacoutot Exp $
+--- src/modules/module-detect.c.orig	Thu Jul 19 13:29:39 2012
++++ src/modules/module-detect.c	Wed Nov 28 11:52:57 2012
+@@ -48,7 +48,9 @@ PA_MODULE_DESCRIPTION("Detect available audio hardware
  PA_MODULE_VERSION(PACKAGE_VERSION);
  PA_MODULE_LOAD_ONCE(TRUE);
  PA_MODULE_USAGE("just-one=<boolean>");
--PA_MODULE_DEPRECATED("Please use module-udev-detect instead of module-detect!");
++#ifdef __linux__
+ PA_MODULE_DEPRECATED("Please use module-udev-detect instead of module-detect!");
++#endif
  
  static const char* const valid_modargs[] = {
      "just-one",
