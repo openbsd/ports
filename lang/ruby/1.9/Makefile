@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.30 2012/11/20 16:52:32 jeremy Exp $
+# $OpenBSD: Makefile,v 1.31 2012/11/28 21:46:42 landry Exp $
+
+BROKEN-sparc64 =	doesnt reliably build, and depending ports randomly fail to build
 
 COMMENT-main =		object oriented script language with threads
 COMMENT-gdbm =		gdbm interface for ruby
