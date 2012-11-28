@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.163 2012/11/08 09:34:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.164 2012/11/28 17:29:30 sthen Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
@@ -47,7 +47,8 @@ LIB_DEPENDS-main=	audio/gsm \
 RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS} \
 			telephony/asterisk-sounds/core-sounds/en,gsm \
 			telephony/asterisk-sounds/moh-opsound,wav
-BUILD_DEPENDS=		security/libsrtp>=1.4.4 # statically linked
+BUILD_DEPENDS+=		devel/libtool# for share/aclocal/lt~obsolete.m4
+BUILD_DEPENDS+=		security/libsrtp>=1.4.4# statically linked
 
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/releases/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
