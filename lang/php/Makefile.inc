@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.33 2012/09/27 16:45:51 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.34 2012/11/28 10:47:12 sthen Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -25,7 +25,8 @@ MASTER_SITES=		http://se.php.net/distributions/ \
 			http://us.php.net/distributions/ \
 			http://no.php.net/distributions/ \
 			http://uk.php.net/distributions/
-MASTER_SITES0=		http://download.suhosin.org/ \
+MASTER_SITES0=		http://spacehopper.org/mirrors/ \
+			http://download.suhosin.org/ \
 			http://blade2k.humppa.hu/ \
 			${_MASTER_SITE_FREEBSD}
 
@@ -346,6 +347,9 @@ DESCR-${i}=		${.CURDIR}/../files/DESCR-${i}
 MESSAGE-${i}=		${.CURDIR}/../files/MESSAGE-ext
 UNMESSAGE-${i}=		${.CURDIR}/../files/UNMESSAGE-ext
 PKGNAME-${i}=		php-${i}-${V}
+# don't build separate plugins for -ap2
+FULLPKGNAME-${i}=	php-${i}-${V}${FLAVOR_EXT:S/-ap2//}
+FULLPKGPATH-${i}=	${PKGPATH},-${i}${FLAVOR_EXT:S/-ap2//:S/-/,/g}
 .if ${V:M5.2*}
 PKGSPEC-${i}=		php-${i}->=5.2,<5.3
 .else if ${V:M5.3*}

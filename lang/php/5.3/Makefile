@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.42 2012/10/24 07:58:48 pea Exp $
+# $OpenBSD: Makefile,v 1.43 2012/11/28 10:47:12 sthen Exp $
 
 BROKEN-hppa =	no __sync_bool_compare_and_swap support nor asm fallback
 
 PV=		5.3
-V=		${PV}.17
-SUHOSIN_PHPV=	5.3.9
-SUHOSIN_P_V=	0.9.10
-
-REVISION-main=	0
-REVISION-imap=	0
+V=		${PV}.19
+SUHOSIN_PHPV=	5.3.19
+SUHOSIN_P_V=	0.9.10unofficial
 
 INI_TEMPLATES=	development production
 
@@ -31,5 +28,10 @@ COMMENT-pcntl=		PCNTL extensions for php5
 CONFIGURE_ARGS+=	--enable-pcntl=shared
 LIB_DEPENDS-pcntl=
 WANTLIB-pcntl=		c pthread
+
+.include <bsd.port.arch.mk>
+.if ${FLAVOR:L:Map2}
+BUILD_PACKAGES :=	${BUILD_PACKAGES:N-fpm:N-fastcgi}
+.endif
 
 .include <bsd.port.mk>

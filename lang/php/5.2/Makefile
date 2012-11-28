@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2012/09/27 16:45:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2012/11/28 10:47:12 sthen Exp $
 
 # doesn't set USE_LIBTOOL but use the bundled one because it needs some
 # specific options we don't have.
@@ -40,5 +40,10 @@ COMMENT-sybase_ct=	sybase database access extensions for php5
 CONFIGURE_ARGS+=        --with-sybase-ct=shared,${LOCALBASE}
 LIB_DEPENDS-sybase_ct=	databases/freetds
 WANTLIB-sybase_ct=	c ct pthread
+
+.include <bsd.port.arch.mk>
+.if ${FLAVOR:L:Map2}
+BUILD_PACKAGES :=	${BUILD_PACKAGES:N-fastcgi}
+.endif
 
 .include <bsd.port.mk>
