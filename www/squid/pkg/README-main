@@ -1,22 +1,26 @@
-$OpenBSD: README,v 1.6 2012/06/20 07:10:39 ajacoutot Exp $
+$OpenBSD: README-main,v 1.1 2012/11/28 17:45:29 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
-The local (OpenBSD) differences are:
-- configuration files are in		${SYSCONFDIR}/squid
-- sample configuration files are in	${TRUEPREFIX}/share/examples/squid
-- error message files are in		${TRUEPREFIX}/share/squid/errors
-- sample error message files are in	${TRUEPREFIX}/share/examples/squid/errors
-- icons are in				${TRUEPREFIX}/share/squid/icons
-- sample icons are in			${TRUEPREFIX}/share/examples/squid/icons
-- the cache is in			${LOCALSTATEDIR}/cache
-- logs are stored in			${LOCALSTATEDIR}/logs
-- the ugid squid runs as is		_squid:_squid
+The sample configuration in ${SYSCONFDIR}/squid.conf is a simple version
+with only the most essential options. By default, only RAM-based cache is
+used, un-comment the cache_dir line to enable a persistent disk cache
+("swap"); this is normally kept in ${LOCALSTATEDIR}/cache and must be
+initialized with "squid -z" before starting the daemon. If you need to
+place it elsewhere, create the directory and make sure it is owned and
+writable by user _squid, group _squid.
 
-Please remember to initialize the cache by running "squid -z" before
-trying to run Squid for the first time.
+Logs are stored in ${LOCALSTATEDIR}/logs; access logs on a busy cache will
+grow rapidly so rotate them as necessary (use "squid -k rotate").
+
+See ${TRUEPREFIX}/share/examples/squid/squid.conf.documented for a complete
+annotated file, similar to the standard squid.conf in previous versions
+of Squid, however in many cases the defaults will suffice.
+
+The HTML error pages can be easily themed by editing the style-sheet in
+${SYSCONFDIR}/errorpage.css.
 
 Transparent Proxying with PF
 ============================

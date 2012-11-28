@@ -1,12 +1,21 @@
-# $OpenBSD: Makefile,v 1.132 2012/08/27 06:19:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.133 2012/11/28 17:45:29 sthen Exp $
 
-COMMENT=	WWW and FTP proxy cache and accelerator
+MULTI_PACKAGES=	-main -ldap -ntlm
 
-DISTNAME=	squid-2.7.STABLE9
-REVISION=	20
+COMMENT-main=	WWW and FTP proxy cache and accelerator
+COMMENT-ldap=	LDAP authentication/ACL support for Squid
+COMMENT-ntlm=	NTLM authentication/ACL support for Squid
+
+V=		3.2.3
+
+DISTNAME=	squid-$V
+PKGNAME-main=	squid-$V
+PKGNAME-ldap=	squid-ldap-$V
+PKGNAME-ntlm=	squid-ntlm-$V
 CATEGORIES=	www
-MASTER_SITES=	${HOMEPAGE}/Versions/v2/2.7/
-DIST_SUBDIR=	squid
+
+# bzr repository at https://code.launchpad.net/squid
+MASTER_SITES=	${HOMEPAGE}Versions/v${V:R:R}/${V:R}/
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
@@ -18,76 +27,97 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	asn1 c com_err crypto krb5 gssapi m pthread ssl
+WANTLIB += c m pthread stdc++
 
+WANTLIB-main=	${WANTLIB} asn1 crypto gssapi krb5 ssl
+
+SYSCONFDIR=	${BASESYSCONFDIR}/squid
 LOCALSTATEDIR=	${BASELOCALSTATEDIR}/squid
 SUBST_VARS=	LOCALSTATEDIR
 
-FLAVORS=	ldap ntlm snmp
+PSEUDO_FLAVORS=	no_ldap
 FLAVOR?=
 
-.include <bsd.port.arch.mk>
-
-# optimization workaround for gcc 2.95
-.if ${PROPERTIES:Mgcc2}
-PATCH_LIST=     patch-* gcc-*
-.endif
-
-AUTH=		basic digest negotiate
-BASIC_AUTH=	NCSA YP
-DIGEST_AUTH=	password
-EXTERNAL_ACL=	ip_user unix_group
-STOREIO=	aufs ufs diskd null
+BASIC_AUTH=	NCSA SMB NIS radius
+DIGEST_AUTH=	file
+EXTERNAL_ACL=	file_userip session unix_group wbinfo_group
+STOREIO=	aufs ufs diskd #coss rock
 
 SEPARATE_BUILD=	Yes
-AUTOCONF_VERSION= 2.62
+AUTOCONF_VERSION= 2.68
 CONFIGURE_STYLE= autoconf
-MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/cfgaux
+MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/cfgaux
 
-CONFIGURE_ARGS+=--datadir="${PREFIX}/share/squid" \
-		--enable-auth="${AUTH}" \
+USE_GROFF=	Yes
+USE_LIBTOOL=	Yes
+
+CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
+		--datadir="${PREFIX}/share/squid" \
+		--libexecdir="${PREFIX}/libexec/squid" \
+		--disable-loadable-modules \
 		--enable-arp-acl \
-		--enable-basic-auth-helpers="${BASIC_AUTH}" \
-		--enable-digest-auth-helpers="${DIGEST_AUTH}" \
+		--enable-auth \
+		--enable-auth-basic="${BASIC_AUTH}" \
+		--enable-auth-digest="${DIGEST_AUTH}" \
+		--enable-auth-negotiate="kerberos" \
+		--enable-auth-ntlm="fake smb_lm" \
 		--enable-delay-pools \
 		--enable-external-acl-helpers="${EXTERNAL_ACL}" \
+		--enable-follow-x-forwarded-for \
 		--enable-forw-via-db \
-		--enable-negotiate-auth-helpers="squid_kerb_auth" \
+		--enable-http-violations \
+		--enable-icap-client \
+		--enable-ipv6 \
+		--enable-referer-log \
 		--enable-removal-policies="lru heap" \
 		--enable-ssl \
 		--enable-storeio="${STOREIO}" \
+		--with-default-user="_squid" \
+		--with-filedescriptors=8192 \
+		--with-pidfile="/var/run/squid.pid" \
 		--with-pthreads \
-		--enable-follow-x-forwarded-for
-
-.if ${FLAVOR:L:Mldap}
-BASIC_AUTH+=	LDAP
-DIGEST_AUTH+=	ldap
-EXTERNAL_ACL+=	ldap_group
-WANTLIB+=	ldap lber
-LIB_DEPENDS+=	databases/openldap
+		--with-swapdir="${LOCALSTATEDIR}/cache"
+# PF transparent support requires access to /dev/pf to retrieve the original
+# source address; ipfw-transparent (which requires divert-to) uses an
+# unprivileged getsockname() call instead.
+CONFIGURE_ARGS+= --disable-pf-transparent \
+		--enable-ipfw-transparent
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+E=		${TRUEPREFIX}/share/examples/squid
+FAKE_FLAGS=	sysconfdir=$E \
+		DEFAULT_CONFIG_FILE=$E/squid.conf \
+		DEFAULT_MIME_TABLE=$E/mime.conf
+REGRESS_DEPENDS= devel/cppunit
+
+.if !${FLAVOR:L:Mno_ldap}
+BASIC_AUTH+=	LDAP
+DIGEST_AUTH+=	LDAP
+EXTERNAL_ACL+=	LDAP_group
+RUN_DEPENDS-ldap= ${BASE_PKGPATH}
+LIB_DEPENDS-ldap= databases/openldap
+WANTLIB-ldap +=	${WANTLIB} asn1 com_err crypto gssapi krb5
+WANTLIB-ldap +=	lber-2.4 ldap-2.4 sasl2 ssl
 .endif
 
-.if ${FLAVOR:L:Mntlm}
-AUTH+=         ntlm
-BASIC_AUTH+=   SMB
-EXTERNAL_ACL+= wbinfo_group
-RUN_DEPENDS+=  net/samba,ads
-CONFIGURE_ARGS+=--enable-ntlm-auth-helpers="fakeauth SMB"
-.endif
+RUN_DEPENDS-ntlm= net/samba,ads ${BASE_PKGPATH}
 
-.if ${FLAVOR:L:Msnmp}
-CONFIGURE_ARGS+=--enable-snmp
-.endif
+post-extract:
+	@cp ${FILESDIR}/krb5-config ${WRKDIR}/bin
+	@chmod a+x ${WRKDIR}/bin/krb5-config
 
 pre-build:
-	@${SUBST_CMD} ${WRKSRC}/src/defines.h \
-		${WRKSRC}/helpers/external_acl/wbinfo_group/wbinfo_group.pl
+	@cd ${WRKSRC}; \
+	perl -pi -e 's,/usr/local,${LOCALBASE},g' \
+	    helpers/external_acl/wbinfo_group/ext_wbinfo_group_acl.pl.in \
+	    helpers/*/*/config.test \
+	    src/squid.8.in
 
 post-install:
-	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/examples/squid
-	@find ${PREFIX}/share/examples/squid/errors \
-		-name '*.orig' -print0 | xargs -0 rm -f
+	rm -rf ${WRKINST}/var/squid
+	cd ${PREFIX}/share/examples/squid; \
+	    rm -f mime.conf squid.conf cachemgr.conf errorpage.css
+	${INSTALL_DATA_DIR} ${PREFIX}/share/snmp/mibs
+	-cd ${PREFIX}/share; mv squid/mib.txt snmp/mibs/SQUID-MIB.txt
 
 .include <bsd.port.mk>

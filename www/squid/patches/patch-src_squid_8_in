@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_squid_8_in,v 1.1 2012/11/28 17:45:29 sthen Exp $
+--- src/squid.8.in.orig	Fri Nov  9 20:43:41 2012
++++ src/squid.8.in	Fri Nov  9 20:45:15 2012
+@@ -180,12 +180,14 @@ Some packaging distributions block even that.
+ .if !'po4a'hide' .IP "squid.conf.default"
+ Reference copy of the configuration file. Always kept up to date with
+ the version of Squid you are using.
++Located in /usr/local/share/examples/squid in the OpenBSD package.
+ .IP
+ Use this to look up the default configuration settings and syntax after upgrading.
+ .
+ .if !'po4a'hide' .IP "squid.conf.documented"
+ Reference copy of the configuration file. Always kept up to date with
+ the version of Squid you are using.
++Located in /usr/local/share/examples/squid in the OpenBSD package.
+ .IP
+ Use this to read the documentation for configuration options available in
+ your build of Squid. The online configuration manual is also available for

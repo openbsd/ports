@@ -1,7 +1,10 @@
-$OpenBSD: patch-src_cf_data_pre,v 1.32 2011/05/30 20:56:30 sthen Exp $
---- src/cf.data.pre.orig	Mon Nov  9 17:38:57 2009
-+++ src/cf.data.pre	Sun May 29 16:36:32 2011
-@@ -3738,7 +3738,7 @@ NAME: shutdown_lifetime
+$OpenBSD: patch-src_cf_data_pre,v 1.33 2012/11/28 17:45:29 sthen Exp $
+
+30 seconds is too slow for rc.d
+
+--- src/cf.data.pre.orig	Sat Oct 20 13:39:49 2012
++++ src/cf.data.pre	Fri Nov  9 10:14:31 2012
+@@ -4765,7 +4765,7 @@ NAME: shutdown_lifetime
  COMMENT: time-units
  TYPE: time_t
  LOC: Config.shutdownLifetime
@@ -10,21 +13,3 @@ $OpenBSD: patch-src_cf_data_pre,v 1.32 2011/05/30 20:56:30 sthen Exp $
  DOC_START
  	When SIGTERM or SIGHUP is received, the cache is put into
  	"shutdown pending" mode until all active sockets are closed.
-@@ -3787,7 +3787,7 @@ DOC_END
- 
- NAME: cache_effective_user
- TYPE: string
--DEFAULT: nobody
-+DEFAULT: _squid
- LOC: Config.effectiveUser
- DOC_START
- 	If you start Squid as root, it will change its effective/real
-@@ -3801,7 +3801,7 @@ DOC_END
- 
- NAME: cache_effective_group
- TYPE: string
--DEFAULT: none
-+DEFAULT: _squid
- LOC: Config.effectiveGroup
- DOC_START
- 	If you want Squid to run with a specific GID regardless of
