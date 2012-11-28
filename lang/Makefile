@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.143 2012/11/28 10:48:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.144 2012/11/28 20:51:39 sthen Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -70,7 +70,6 @@
      SUBDIR += petite-chez
      SUBDIR += pfe
      SUBDIR += php
-     SUBDIR += php,ap2
      SUBDIR += pm3
      SUBDIR += processing
      SUBDIR += pugs
