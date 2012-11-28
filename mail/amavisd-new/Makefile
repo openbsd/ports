@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2012/07/07 19:09:36 giovanni Exp $
+# $OpenBSD: Makefile,v 1.29 2012/11/28 15:43:02 giovanni Exp $
 
 COMMENT=		interface between mailer MTA and content checkers
 
 DISTNAME=		amavisd-new-2.8.0
+REVISION=		0
 CATEGORIES=		mail security
 
 HOMEPAGE=		http://www.amavis.org/
@@ -34,6 +35,7 @@ RUN_DEPENDS=		archivers/arc \
 			converters/p5-Convert-UUlib>=1.05 \
 			databases/p5-BerkeleyDB \
 			devel/p5-Net-Server \
+			devel/p5-IO-Multiplex \
 			mail/p5-Mail-SpamAssassin \
 			mail/p5-Mail-DKIM>=0.31 \
 			mail/p5-MIME-tools \
