@@ -1,7 +1,110 @@
-@comment $OpenBSD: PLIST,v 1.9 2011/09/14 02:34:06 william Exp $
+@comment $OpenBSD: PLIST,v 1.10 2012/11/28 07:04:36 steven Exp $
 @bin bin/pdbtool
 bin/update-patterndb
+include/syslog-ng/
+include/syslog-ng/afinter.h
+include/syslog-ng/alarms.h
+include/syslog-ng/apphook.h
+include/syslog-ng/atomic.h
+include/syslog-ng/block-ref-parser.h
+include/syslog-ng/center.h
+include/syslog-ng/cfg-grammar.h
+include/syslog-ng/cfg-lexer.h
+include/syslog-ng/cfg-parser.h
+include/syslog-ng/cfg.h
+include/syslog-ng/children.h
+include/syslog-ng/compat.h
+include/syslog-ng/control.h
+include/syslog-ng/crypto.h
+include/syslog-ng/dgroup.h
+include/syslog-ng/dnscache.h
+include/syslog-ng/driver.h
+include/syslog-ng/filter-expr-parser.h
+include/syslog-ng/filter.h
+include/syslog-ng/gprocess.h
+include/syslog-ng/gsockaddr.h
+include/syslog-ng/gsocket.h
+include/syslog-ng/logmatcher.h
+include/syslog-ng/logmpx.h
+include/syslog-ng/logmsg.h
+include/syslog-ng/logparser.h
+include/syslog-ng/logpipe.h
+include/syslog-ng/logprocess.h
+include/syslog-ng/logproto.h
+include/syslog-ng/logqueue-fifo.h
+include/syslog-ng/logqueue.h
+include/syslog-ng/logreader.h
+include/syslog-ng/logrewrite.h
+include/syslog-ng/logsource.h
+include/syslog-ng/logstamp.h
+include/syslog-ng/logtransport.h
+include/syslog-ng/logwriter.h
+include/syslog-ng/mainloop.h
+include/syslog-ng/memtrace.h
+include/syslog-ng/messages.h
+include/syslog-ng/misc.h
+include/syslog-ng/msg-format.h
+include/syslog-ng/nvtable.h
+include/syslog-ng/parser-expr-parser.h
+include/syslog-ng/persist-state.h
+include/syslog-ng/plugin.h
+include/syslog-ng/pragma-parser.h
+include/syslog-ng/rewrite-expr-parser.h
+include/syslog-ng/scratch-buffers.h
+include/syslog-ng/serialize.h
+include/syslog-ng/sgroup.h
+include/syslog-ng/stats.h
+include/syslog-ng/str-format.h
+include/syslog-ng/syslog-names.h
+include/syslog-ng/syslog-ng.h
+include/syslog-ng/tags.h
+include/syslog-ng/templates.h
+include/syslog-ng/timeutils.h
+include/syslog-ng/tls-support.h
+include/syslog-ng/tlscontext.h
+include/syslog-ng/tlstransport.h
+include/syslog-ng/utils.h
+include/syslog-ng/value-pairs.h
+@lib lib/libsyslog-ng-3.3.7.so.${LIBsyslog-ng-3.3.7_VERSION}
+lib/libsyslog-ng-crypto.so
+lib/libsyslog-ng.la
+@lib lib/libsyslog-ng.so.${LIBsyslog-ng_VERSION}
+lib/pkgconfig/syslog-ng.pc
+lib/syslog-ng/
+lib/syslog-ng/libaffile.la
+lib/syslog-ng/libaffile.so
+lib/syslog-ng/libafprog.la
+lib/syslog-ng/libafprog.so
+lib/syslog-ng/libafsocket-notls.la
+lib/syslog-ng/libafsocket-notls.so
+lib/syslog-ng/libafsocket-tls.la
+lib/syslog-ng/libafsocket-tls.so
+lib/syslog-ng/libafsocket.so
+lib/syslog-ng/libafsql.la
+lib/syslog-ng/libafsql.so
+lib/syslog-ng/libafuser.la
+lib/syslog-ng/libafuser.so
+lib/syslog-ng/libbasicfuncs.la
+lib/syslog-ng/libbasicfuncs.so
+lib/syslog-ng/libconfgen.la
+lib/syslog-ng/libconfgen.so
+lib/syslog-ng/libconvertfuncs.la
+lib/syslog-ng/libconvertfuncs.so
+lib/syslog-ng/libcsvparser.la
+lib/syslog-ng/libcsvparser.so
+lib/syslog-ng/libdbparser.la
+lib/syslog-ng/libdbparser.so
+lib/syslog-ng/libdummy.la
+lib/syslog-ng/libdummy.so
+lib/syslog-ng/libsyslog-ng-crypto.la
+lib/syslog-ng/libsyslog-ng-crypto.so
+lib/syslog-ng/libsyslogformat.la
+lib/syslog-ng/libsyslogformat.so
+lib/syslog-ng/libtfjson.la
+lib/syslog-ng/libtfjson.so
+@man man/man1/loggen.1
 @man man/man1/pdbtool.1
+@man man/man1/syslog-ng-ctl.1
 @man man/man5/syslog-ng.conf.5
 @man man/man8/syslog-ng.8
 @bin sbin/syslog-ng
