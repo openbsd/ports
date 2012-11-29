@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.25 2012/11/29 22:17:46 brad Exp $
+--- Makefile.in.orig	Thu Nov 29 15:20:42 2012
++++ Makefile.in	Thu Nov 29 15:21:15 2012
+@@ -979,7 +979,7 @@ install-exec-hook:
+ 	grep -v '^LIBDOVECOT_.*_INCLUDE' dovecot-config | \
+ 	grep -v '^LIBDOVECOT.*_DEPS' | sed \
+ 	-e "s|^\(LIBDOVECOT\)=.*$$|\1='-L$(pkglibdir) -ldovecot'|" \
+-	-e "s|^\(LIBDOVECOT_LOGIN\)=.*$$|\1=-ldovecot-login $(SSL_LIBS)|" \
++	-e "s|^\(LIBDOVECOT_LOGIN\)=.*$$|\1='-ldovecot-login $(SSL_LIBS)'|" \
+ 	-e "s|^\(LIBDOVECOT_SQL\)=.*$$|\1=-ldovecot-sql|" \
+ 	-e "s|^\(LIBDOVECOT_LDA\)=.*$$|\1=-ldovecot-lda|" \
+ 	-e "s|^\(LIBDOVECOT_STORAGE\)=.*$$|\1='-ldovecot-storage $(LINKED_STORAGE_LDADD)'|" \
