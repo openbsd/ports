@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.97 2012/08/28 05:54:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.98 2012/11/29 20:18:21 brad Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	multimedia decoding library
 
-DISTNAME=	xine-lib-1.1.21
-REVISION=	0
+DISTNAME=	xine-lib-1.2.2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.xz
 
-SHARED_LIBS=	xine	29.1
+SHARED_LIBS=	xine	30.0
 
 HOMEPAGE=	http://www.xine-project.org/
 
@@ -22,16 +21,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	FLAC GL GLU SDL X11 Xau Xdamage Xdmcp Xext Xfixes Xinerama \
-		Xv XvMCW Xxf86vm a52 avcodec avutil bluray c cdio dca drm \
-		dvdnav dvdread expat faad fontconfig freetype gsm iso9660 \
-		jpeg lcms m mad modplug mpcdec mng mp3lame ogg orc-0.4 \
-		postproc pthread-stubs pthread schroedinger-1.0 sndio speex \
-		stdc++ theora theoradec theoraenc usbhid vcdinfo vorbis \
-		vorbisenc vpx wavpack x264 xcb-shape xcb-shm xcb-xv xcb \
-		xml2 z xvidcore
+WANTLIB=	FLAC GL GLU ICE SDL SM X11 Xext Xinerama Xv XvMCW a52 avcodec \
+		avutil bluray c cdio dca dvdnav dvdread expat faad fontconfig \
+		freetype iso9660 jpeg lcms m mad modplug mpcdec mng ogg \
+		postproc pthread sndio speex theora usbhid vcdinfo vorbis \
+		wavpack xcb-shape xcb-shm xcb-xv xcb xml2 z
 
-XINEAPI_REV=	1.30
+XINEAPI_REV=	2.2
 SUBST_VARS+=	XINEAPI_REV
 
 MODULES=	devel/gettext
@@ -55,39 +51,28 @@ LIB_DEPENDS=	audio/faad \
 		graphics/libmng \
 		graphics/vcdimager
 
+MAKE_ENV=	V=1
+
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
+# Uses GNU libtool -weak feature
+USE_LIBTOOL=	gnu
 USE_GROFF=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.69
 CONFIGURE_ARGS+=--disable-aalib \
-		--disable-dxr3 \
-		--disable-fb \
 		--disable-gdkpixbuf \
 		--disable-gnomevfs \
-		--disable-libv4l \
 		--disable-optimizations \
-		--disable-oss \
 		--disable-real-codecs \
 		--disable-samba \
-		--disable-sunaudio \
-		--disable-vidix \
 		--disable-w32dll \
-		--with-external-a52dec \
 		--with-external-dvdnav \
-		--with-external-libdts \
-		--with-external-libfaad \
-		--with-external-libmad \
-		--with-external-libmpcdec \
 		--with-fontconfig \
 		--with-freetype \
 		--with-wavpack \
-		--without-alsa \
 		--without-caca \
 		--without-esound \
-		--without-imagemagick \
-		--without-jack \
-		--without-pulseaudio
+		--without-imagemagick
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
 		ac_cv_header_execinfo_h=no

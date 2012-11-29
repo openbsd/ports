@@ -1,13 +1,12 @@
-$OpenBSD: patch-src_post_deinterlace_plugins_Makefile_in,v 1.11 2012/08/28 05:54:05 ajacoutot Exp $
---- src/post/deinterlace/plugins/Makefile.in.orig	Sat Jun  9 12:54:43 2012
-+++ src/post/deinterlace/plugins/Makefile.in	Sat Jun 30 22:43:15 2012
-@@ -907,9 +907,6 @@ maintainer-clean-generic:
- 	-@echo "it deletes files that may require special tools to rebuild."
- 	-rm -f Makefile.in
- 
--# Avoid "can't find register" failures with -O0, -O2, -O3 (gcc 4.0)
--libdeinterlaceplugins_la-kdetv_greedyh.o libdeinterlaceplugins_la-kdetv_greedyh.lo: CFLAGS=$(shell echo @CFLAGS@ | sed -e 's/$$/ -O1/')
--
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.
- .NOEXPORT:
+$OpenBSD: patch-src_post_deinterlace_plugins_Makefile_in,v 1.12 2012/11/29 20:18:21 brad Exp $
+--- src/post/deinterlace/plugins/Makefile.in.orig	Sun Jan  1 16:22:06 2012
++++ src/post/deinterlace/plugins/Makefile.in	Tue Jan  3 00:57:38 2012
+@@ -513,7 +513,7 @@ noinst_HEADERS = plugins.h greedyhmacros.h
+ # doesn't run out of general registers trying to compile it.
+ noinst_LTLIBRARIES = libdeinterlacepluginsO1.la libdeinterlaceplugins.la
+ libdeinterlacepluginsO1_la_SOURCES = kdetv_greedyh.c $(debug_sources)
+-libdeinterlacepluginsO1_la_CFLAGS = $(O1_CFLAGS) $(AM_CFLAGS)
++libdeinterlacepluginsO1_la_CFLAGS = $(DEFAULT_OCFLAGS) $(AM_CFLAGS)
+ libdeinterlaceplugins_la_SOURCES = double.c greedy.c linear.c linearblend.c \
+ 				   vfir.c weave.c scalerbob.c kdetv_tomsmocomp.c \
+ 				   $(nodebug_sources)

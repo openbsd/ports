@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2012/06/10 07:35:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2012/11/29 20:18:21 brad Exp $
 @conflict xine-lib-arts-*
 @conflict xine-lib-esd-*
 @conflict xine-lib-jack-*
@@ -7,7 +7,7 @@
 @pkgpath ${BASE_PKGPATH},-jack
 @pkgpath ${BASE_PKGPATH},-main
 bin/xine-config
-@bin bin/xine-list-1.1
+@bin bin/xine-list-1.2
 include/xine/
 include/xine.h
 include/xine/alphablend.h
@@ -35,19 +35,22 @@ include/xine/resample.h
 include/xine/ring_buffer.h
 include/xine/scratch.h
 include/xine/sorted_array.h
+include/xine/spu.h
 include/xine/spu_decoder.h
+include/xine/vdr.h
+include/xine/version.h
 include/xine/video_decoder.h
 include/xine/video_out.h
 include/xine/video_overlay.h
 include/xine/vo_scale.h
 include/xine/xine_buffer.h
 include/xine/xine_internal.h
-include/xine/xine_mmx.h
 include/xine/xine_plugin.h
 include/xine/xineintl.h
 include/xine/xineutils.h
 include/xine/xmllexer.h
 include/xine/xmlparser.h
+lib/libxine-interface.la
 lib/libxine.a
 lib/libxine.la
 @lib lib/libxine.so.${LIBxine_VERSION}
@@ -64,7 +67,6 @@ lib/xine/plugins/${XINEAPI_REV}/post/xineplug_post_planar.so
 lib/xine/plugins/${XINEAPI_REV}/post/xineplug_post_switch.so
 lib/xine/plugins/${XINEAPI_REV}/post/xineplug_post_tvtime.so
 lib/xine/plugins/${XINEAPI_REV}/post/xineplug_post_visualizations.so
-@comment lib/xine/plugins/${XINEAPI_REV}/vidix/
 lib/xine/plugins/${XINEAPI_REV}/xineplug_ao_out_file.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_ao_out_none.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_ao_out_sndio.so
@@ -79,17 +81,12 @@ lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_lpcm.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_mad.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_mpc.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_mpeg2.so
-lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_nsf.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_rgb.so
-lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_speex.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_spu.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_spucc.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_spucmml.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_spudvb.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_spuhdmv.so
-lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_sputext.so
-lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_theora.so
-lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_vorbis.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_yuv.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_asf.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_audio.so
@@ -100,25 +97,25 @@ lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_games.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_iff.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_matroska.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_mng.so
+lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_modplug.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_mpeg.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_mpeg_block.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_mpeg_elem.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_mpeg_pes.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_mpeg_ts.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_nsv.so
-lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_ogg.so
+lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_playlist.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_pva.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_qt.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_rawdv.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_real.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_slave.so
-lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_sputext.so
+lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_vc1_es.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_yuv4mpeg2.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_yuv_frames.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_flac.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_bluray.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_cdda.so
-lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_dvb.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_dvd.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_file.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_http.so
@@ -131,7 +128,9 @@ lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_rtsp.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_stdin_fifo.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_v4l2.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_vcd.so
-lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_vcdo.so
+lib/xine/plugins/${XINEAPI_REV}/xineplug_nsf.so
+lib/xine/plugins/${XINEAPI_REV}/xineplug_sputext.so
+lib/xine/plugins/${XINEAPI_REV}/xineplug_vdr.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_none.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_opengl.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_raw.so
@@ -143,8 +142,9 @@ lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_xv.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_xvmc.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_xxmc.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_wavpack.so
+lib/xine/plugins/${XINEAPI_REV}/xineplug_xiph.so
 @man man/man1/xine-config.1
-@man man/man1/xine-list-1.1.1
+@man man/man1/xine-list-1.2.1
 @man man/man5/xine.5
 share/aclocal/xine.m4
 share/doc/xine-lib/
@@ -155,14 +155,15 @@ share/doc/xine-lib/
 share/doc/xine-lib/README
 @comment share/doc/xine-lib/README.MINGWCROSS
 @comment share/doc/xine-lib/README.WIN32
+@comment share/doc/xine-lib/README.cetus
 @comment share/doc/xine-lib/README.dvb
 @comment share/doc/xine-lib/README.dxr3
 @comment share/doc/xine-lib/README.freebsd
 @comment share/doc/xine-lib/README.irix
+@comment share/doc/xine-lib/README.macosx
 @comment share/doc/xine-lib/README.network_dvd
 @comment share/doc/xine-lib/README.opengl
 @comment share/doc/xine-lib/README.solaris
-@comment share/doc/xine-lib/README.syncfb
 share/doc/xine-lib/README_xxmc.html
 @comment share/doc/xine-lib/TODO
 share/doc/xine-lib/faq.html
@@ -173,57 +174,56 @@ share/doc/xine-lib/hackersguide/hackersguide.html
 share/doc/xine-lib/hackersguide/library.png
 share/doc/xine-lib/hackersguide/overlays.png
 share/doc/xine-lib/hackersguide/post_frame.png
-share/locale/cs/LC_MESSAGES/libxine1.mo
-share/locale/de/LC_MESSAGES/libxine1.mo
+share/locale/cs/LC_MESSAGES/libxine2.mo
+share/locale/de/LC_MESSAGES/libxine2.mo
 share/locale/en_US/
 share/locale/en_US/LC_MESSAGES/
-share/locale/en_US/LC_MESSAGES/libxine1.mo
-share/locale/eo/LC_MESSAGES/libxine1.mo
-share/locale/es/LC_MESSAGES/libxine1.mo
-share/locale/eu/LC_MESSAGES/libxine1.mo
-share/locale/fr/LC_MESSAGES/libxine1.mo
-share/locale/it/LC_MESSAGES/libxine1.mo
-share/locale/ja/LC_MESSAGES/libxine1.mo
-share/locale/pl/LC_MESSAGES/libxine1.mo
-share/locale/pt_BR/LC_MESSAGES/libxine1.mo
-share/locale/sk/LC_MESSAGES/libxine1.mo
-share/locale/tr/LC_MESSAGES/libxine1.mo
-share/xine/
-share/xine/libxine1/
-share/xine/libxine1/fonts/
-share/xine/libxine1/fonts/cc-16.xinefont.gz
-share/xine/libxine1/fonts/cc-20.xinefont.gz
-share/xine/libxine1/fonts/cc-24.xinefont.gz
-share/xine/libxine1/fonts/cc-32.xinefont.gz
-share/xine/libxine1/fonts/cc-48.xinefont.gz
-share/xine/libxine1/fonts/cc-64.xinefont.gz
-share/xine/libxine1/fonts/cci-16.xinefont.gz
-share/xine/libxine1/fonts/cci-20.xinefont.gz
-share/xine/libxine1/fonts/cci-24.xinefont.gz
-share/xine/libxine1/fonts/cci-32.xinefont.gz
-share/xine/libxine1/fonts/cci-48.xinefont.gz
-share/xine/libxine1/fonts/cci-64.xinefont.gz
-share/xine/libxine1/fonts/cetus-16.xinefont.gz
-share/xine/libxine1/fonts/cetus-20.xinefont.gz
-share/xine/libxine1/fonts/cetus-24.xinefont.gz
-share/xine/libxine1/fonts/cetus-32.xinefont.gz
-share/xine/libxine1/fonts/cetus-48.xinefont.gz
-share/xine/libxine1/fonts/cetus-64.xinefont.gz
-share/xine/libxine1/fonts/mono-16.xinefont.gz
-share/xine/libxine1/fonts/mono-20.xinefont.gz
-share/xine/libxine1/fonts/mono-24.xinefont.gz
-share/xine/libxine1/fonts/mono-32.xinefont.gz
-share/xine/libxine1/fonts/mono-48.xinefont.gz
-share/xine/libxine1/fonts/mono-64.xinefont.gz
-share/xine/libxine1/fonts/sans-16.xinefont.gz
-share/xine/libxine1/fonts/sans-20.xinefont.gz
-share/xine/libxine1/fonts/sans-24.xinefont.gz
-share/xine/libxine1/fonts/sans-32.xinefont.gz
-share/xine/libxine1/fonts/sans-48.xinefont.gz
-share/xine/libxine1/fonts/sans-64.xinefont.gz
-share/xine/libxine1/fonts/serif-16.xinefont.gz
-share/xine/libxine1/fonts/serif-20.xinefont.gz
-share/xine/libxine1/fonts/serif-24.xinefont.gz
-share/xine/libxine1/fonts/serif-32.xinefont.gz
-share/xine/libxine1/fonts/serif-48.xinefont.gz
-share/xine/libxine1/fonts/serif-64.xinefont.gz
+share/locale/en_US/LC_MESSAGES/libxine2.mo
+share/locale/eo/LC_MESSAGES/libxine2.mo
+share/locale/es/LC_MESSAGES/libxine2.mo
+share/locale/eu/LC_MESSAGES/libxine2.mo
+share/locale/fr/LC_MESSAGES/libxine2.mo
+share/locale/it/LC_MESSAGES/libxine2.mo
+share/locale/ja/LC_MESSAGES/libxine2.mo
+share/locale/pl/LC_MESSAGES/libxine2.mo
+share/locale/pt_BR/LC_MESSAGES/libxine2.mo
+share/locale/sk/LC_MESSAGES/libxine2.mo
+share/locale/tr/LC_MESSAGES/libxine2.mo
+share/xine-lib/
+share/xine-lib/fonts/
+share/xine-lib/fonts/cc-16.xinefont.gz
+share/xine-lib/fonts/cc-20.xinefont.gz
+share/xine-lib/fonts/cc-24.xinefont.gz
+share/xine-lib/fonts/cc-32.xinefont.gz
+share/xine-lib/fonts/cc-48.xinefont.gz
+share/xine-lib/fonts/cc-64.xinefont.gz
+share/xine-lib/fonts/cci-16.xinefont.gz
+share/xine-lib/fonts/cci-20.xinefont.gz
+share/xine-lib/fonts/cci-24.xinefont.gz
+share/xine-lib/fonts/cci-32.xinefont.gz
+share/xine-lib/fonts/cci-48.xinefont.gz
+share/xine-lib/fonts/cci-64.xinefont.gz
+share/xine-lib/fonts/cetus-16.xinefont.gz
+share/xine-lib/fonts/cetus-20.xinefont.gz
+share/xine-lib/fonts/cetus-24.xinefont.gz
+share/xine-lib/fonts/cetus-32.xinefont.gz
+share/xine-lib/fonts/cetus-48.xinefont.gz
+share/xine-lib/fonts/cetus-64.xinefont.gz
+share/xine-lib/fonts/mono-16.xinefont.gz
+share/xine-lib/fonts/mono-20.xinefont.gz
+share/xine-lib/fonts/mono-24.xinefont.gz
+share/xine-lib/fonts/mono-32.xinefont.gz
+share/xine-lib/fonts/mono-48.xinefont.gz
+share/xine-lib/fonts/mono-64.xinefont.gz
+share/xine-lib/fonts/sans-16.xinefont.gz
+share/xine-lib/fonts/sans-20.xinefont.gz
+share/xine-lib/fonts/sans-24.xinefont.gz
+share/xine-lib/fonts/sans-32.xinefont.gz
+share/xine-lib/fonts/sans-48.xinefont.gz
+share/xine-lib/fonts/sans-64.xinefont.gz
+share/xine-lib/fonts/serif-16.xinefont.gz
+share/xine-lib/fonts/serif-20.xinefont.gz
+share/xine-lib/fonts/serif-24.xinefont.gz
+share/xine-lib/fonts/serif-32.xinefont.gz
+share/xine-lib/fonts/serif-48.xinefont.gz
+share/xine-lib/fonts/serif-64.xinefont.gz
