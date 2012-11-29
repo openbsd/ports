@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2012/08/28 19:13:11 espie Exp $
+# $OpenBSD: Makefile,v 1.103 2012/11/29 18:41:01 pascal Exp $
 
     SUBDIR =
     SUBDIR += a2ps
@@ -35,6 +35,7 @@
     SUBDIR += ijs
     SUBDIR += l2a
     SUBDIR += latex-mk
+    SUBDIR += libXp
     SUBDIR += libpaper
     SUBDIR += libspectre
     SUBDIR += lilypond
@@ -67,5 +68,6 @@
     SUBDIR += texlive
     SUBDIR += transfig
     SUBDIR += unpaper
+    SUBDIR += xprintproto
 
 .include <bsd.port.subdir.mk>
