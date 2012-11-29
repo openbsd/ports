@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.7 2011/06/21 08:48:34 giovanni Exp $
---- Makefile.in.orig	Thu Jun  9 20:47:52 2011
-+++ Makefile.in	Mon Jun 20 09:41:35 2011
-@@ -239,8 +239,8 @@ man8dir = $(mandir)/man8
+$OpenBSD: patch-Makefile_in,v 1.8 2012/11/29 14:07:22 giovanni Exp $
+--- Makefile.in.orig	Wed Oct 10 13:54:29 2012
++++ Makefile.in	Wed Nov 28 17:23:39 2012
+@@ -272,8 +272,8 @@ man8dir = $(mandir)/man8
  NROFF = nroff
  MANS = $(man_MANS)
  DATA = $(attributelog_DATA) $(docs_DATA) $(drivedb_DATA) \
@@ -11,8 +11,8 @@ $OpenBSD: patch-Makefile_in,v 1.7 2011/06/21 08:48:34 giovanni Exp $
 +	$(systemdsystemunit_DATA)
  ETAGS = etags
  CTAGS = ctags
- DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-@@ -439,15 +439,7 @@ EXTRA_smartctl_SOURCES = os_linux.cpp os_linux.h os_fr
+ CSCOPE = cscope
+@@ -486,15 +486,7 @@ EXTRA_smartd_SOURCES = os_darwin.cpp os_darwin.h os_li
  @OS_SOLARIS_FALSE@                  smartd.8
  
  docsdir = $(docdir)
