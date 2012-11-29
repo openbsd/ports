@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2012/09/01 14:36:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2012/11/29 19:07:57 pascal Exp $
 
 COMMENT=	library functions to access Microsoft Word/Excel files
 
-DISTNAME=	wv2-0.2.3
-REVISION=	7
-SHARED_LIBS +=	wv2                  3.0      # .1.8
+DISTNAME=	wv2-0.4.2
+SHARED_LIBS +=	wv2                  4.0      # .1.8
 CATEGORIES=	converters
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wvware/}
 EXTRACT_SUFX=	.tar.bz2
@@ -17,22 +16,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += gobject-2.0 gio-2.0 gmodule-2.0 pcre m z
-WANTLIB += glib-2.0 xml2 gsf-1 bz2 ffi gthread-2.0 stdc++
+WANTLIB += glib-2.0 gsf-1 m stdc++ z
 
-MODULES=	devel/gettext
+MODULES=	converters/libiconv \
+		devel/cmake
 
 LIB_DEPENDS+=	devel/glib2 \
-		textproc/libxml \
-		devel/libgsf \
-		archivers/bzip2
+		devel/libgsf
 
-USE_LIBTOOL= Yes
-USE_GMAKE= Yes
-CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --disable-debug \
-		 --enable-static \
-		 --with-libiconv="${LOCALBASE}"
+CONFIGURE_ARGS +=-DLIBwv2_VERSION=${LIBwv2_VERSION}
 
 .include <bsd.port.mk>

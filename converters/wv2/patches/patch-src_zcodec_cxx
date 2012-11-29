@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_zcodec_cxx,v 1.1 2012/11/29 19:07:57 pascal Exp $
+--- src/zcodec.cxx.orig	Fri Jul 13 09:57:48 2012
++++ src/zcodec.cxx	Fri Jul 13 09:58:02 2012
+@@ -267,7 +267,7 @@ long ZCodec::Decompress( OLEStreamReader& rIStm, std::
+         //set the "finished" flag if we got the stream-end signal?
+ 	if ( err == Z_STREAM_END ) 
+ 		mbFinish = TRUE;	
+-        wvlog << "  total_in=" << PZSTREAM->total_in << ",total_out=" << PZSTREAM->total_out << std::endl;
++        wvlog << "  total_in=" << (char *)PZSTREAM->total_in << ",total_out=" << (char *)PZSTREAM->total_out << std::endl;
+         //return code: -1 if mbStatus is false, otherwise # of bytes decompressed
+ 	return ( mbStatus ) ? (long)(PZSTREAM->total_out - nOldTotal_Out) : -1;
+ }

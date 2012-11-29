@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:25:51 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/11/29 19:07:57 pascal Exp $
 bin/wv2-config
 include/wv2/
 include/wv2/associatedstrings.h
@@ -24,7 +24,12 @@ include/wv2/utilities.h
 include/wv2/word95_generated.h
 include/wv2/word97_generated.h
 include/wv2/word_helper.h
+include/wv2/wv2version.h
 include/wv2/wvlog.h
+include/wv2/zcodec.hxx
 lib/libwv2.a
 lib/libwv2.la
 %%SHARED%%
+lib/wvWare/
+lib/wvWare/wv2-noconfig.cmake
+lib/wvWare/wv2.cmake

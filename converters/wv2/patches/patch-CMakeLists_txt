@@ -1,0 +1,38 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2012/11/29 19:07:57 pascal Exp $
+--- CMakeLists.txt.orig	Sat Oct 31 19:22:43 2009
++++ CMakeLists.txt	Tue Nov 27 17:44:05 2012
+@@ -59,8 +59,16 @@ IF( HAVE_SYS_ICONV_H )
+   SET( ICONV_COMPILE_DEFINITIONS ${ICONV_COMPILE_DEFINITIONS} "-DHAVE_SYS_ICONV_H" )
+ ENDIF( HAVE_SYS_ICONV_H )
+ 
+-TRY_RUN( MODERN_ICONV_RUN MODERN_ICONV_COMPILE ${wvWare_BINARY_DIR}/CMakeTmp ${wvWare_SOURCE_DIR}/cmake/TestModernIconv.c COMPILE_DEFINITIONS ${ICONV_COMPILE_DEFINITIONS} )
++SET(CMAKE_REQUIRED_DEFINITIONS ${ICONV_COMPILE_DEFINITIONS})
++SET(CMAKE_REQUIRED_INCLUDES ${ICONV_INCLUDE_DIR})
++SET(CMAKE_REQUIRED_LIBRARIES ${ICONV_LIBRARIES})
++execute_process(COMMAND /bin/cat ${wvWare_SOURCE_DIR}/cmake/TestModernIconv.c OUTPUT_VARIABLE SRC)
++#TRY_RUN( MODERN_ICONV_RUN MODERN_ICONV_COMPILE ${wvWare_BINARY_DIR}/CMakeTmp ${wvWare_SOURCE_DIR}/cmake/TestModernIconv.c COMPILE_DEFINITIONS "${ICONV_COMPILE_DEFINITIONS}" OUTPUT_VARIABLE OUTPUT )
++include(CheckCSourceCompiles)
++check_c_source_compiles("${SRC}" MODERN_ICONV_COMPILE )
+ 
++message( "${OUTPUT}" )
++
+ IF( MODERN_ICONV_RUN GREATER 0 OR NOT MODERN_ICONV_COMPILE )
+   MESSAGE( STATUS "wv2 depends on a modern iconv installation, supporting UNICODELITTLE and" )
+   MESSAGE( STATUS "UNICODEBIG. The detected iconv version doesn't support these conversions." )
+@@ -139,7 +147,6 @@ ENDIF( MODERN_ZLIB_RUN GREATER 0 AND WITH_ZLIB )
+ 
+ IF( ZLIB_FOUND )
+   SET( _WV2_LDFLAGS ${_WV2_LDFLAGS} ${ZLIB_LIBRARIES} )
+-  SET( _WV2_CFLAGS ${_WV2_CFLAGS} ${ZLIB_INCLUDE_DIR} )
+ ENDIF( ZLIB_FOUND )
+ 
+ IF( LIBGSF_FOUND )
+@@ -165,7 +172,7 @@ LIST( REMOVE_DUPLICATES _WV2_CFLAGS )
+ 
+ FOREACH( _lib ${_WV2_LDFLAGS} )
+   # Remove path to the library and suffixes. Transformation example: libglib-2.0.so => glib-2.0
+-  STRING( REGEX REPLACE "[\\\\ _\\/\\.a-zA-Z0-9\\-]*\\/lib([_\\.a-zA-Z0-9\\-]*)\\.[_a-zA-Z0-9\\-\\.]*" \\1 _lib_no_path ${_lib} )
++  STRING( REGEX REPLACE "[\\\\ _\\/\\.a-zA-Z0-9\\-]*\\/lib([_\\.a-zA-Z0-9\\-]*)\\.so\\.[_a-zA-Z0-9\\-\\.]*" \\1 _lib_no_path ${_lib} )
+   SET( WV2_LDFLAGS "${WV2_LDFLAGS} ${CMAKE_LINK_LIBRARY_FLAG}${_lib_no_path}" )
+ ENDFOREACH( _lib )
+ 
