@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2012/08/23 17:51:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2012/11/29 22:10:01 sthen Exp $
 
 COMMENT=	distributed memory object caching system
 
-DISTNAME =	memcached-1.4.13
+DISTNAME =	memcached-1.4.14
 CATEGORIES=	misc
-REVISION=	0
 
 HOMEPAGE=	http://www.memcached.org/
-
-MAINTAINER=	Scott Vokes <vokes.s@gmail.com>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
