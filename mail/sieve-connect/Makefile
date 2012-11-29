@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2012/07/13 10:13:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2012/11/29 09:45:20 sthen Exp $
 
 COMMENT =	perl sieveshell-compatible ManageSieve client
 
-DISTNAME =	sieve-connect-0.83
+DISTNAME =	sieve-connect-0.84
 CATEGORIES =	mail
 PKG_ARCH =	*
 
