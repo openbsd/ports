@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2011/09/16 11:41:41 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2012/11/29 23:45:06 landry Exp $
 COMMENT=	Python syntax highlighter
 
-MODPY_EGG_VERSION = 1.4
+MODPY_EGG_VERSION = 1.5
 
 DISTNAME=	Pygments-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:L:S/^/py-/}
-REVISION=	0
 CATEGORIES=    	textproc devel
 
 HOMEPAGE=	http://pygments.org/

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/08/16 16:23:08 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.8 2012/11/29 23:45:06 landry Exp $
 bin/pygmentize
 lib/python${MODPY_VERSION}/site-packages/Pygments-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Pygments-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -59,6 +59,10 @@ lib/python${MODPY_VERSION}/site-packages/pygments/lexers/_mapping.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/_mapping.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/_phpbuiltins.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/_phpbuiltins.pyc
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/_postgres_builtins.py
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/_postgres_builtins.pyc
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/_scilab_builtins.py
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/_scilab_builtins.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/_vimbuiltins.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/_vimbuiltins.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/agile.py
@@ -73,14 +77,20 @@ lib/python${MODPY_VERSION}/site-packages/pygments/lexers/functional.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/functional.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/hdl.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/hdl.pyc
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/jvm.py
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/jvm.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/math.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/math.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/other.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/other.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/parsers.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/parsers.pyc
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/shell.py
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/shell.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/special.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/special.pyc
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/sql.py
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/sql.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/templates.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/templates.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/text.py
@@ -124,6 +134,8 @@ lib/python${MODPY_VERSION}/site-packages/pygments/styles/pastie.py
 lib/python${MODPY_VERSION}/site-packages/pygments/styles/pastie.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/styles/perldoc.py
 lib/python${MODPY_VERSION}/site-packages/pygments/styles/perldoc.pyc
+lib/python${MODPY_VERSION}/site-packages/pygments/styles/rrt.py
+lib/python${MODPY_VERSION}/site-packages/pygments/styles/rrt.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/styles/tango.py
 lib/python${MODPY_VERSION}/site-packages/pygments/styles/tango.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/styles/trac.py
