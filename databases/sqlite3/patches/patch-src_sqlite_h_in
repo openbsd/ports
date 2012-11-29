@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_sqlite_h_in,v 1.4 2010/04/02 20:07:11 sthen Exp $
---- src/sqlite.h.in.orig	Mon Mar  8 15:08:55 2010
-+++ src/sqlite.h.in	Fri Mar 26 19:44:15 2010
+$OpenBSD: patch-src_sqlite_h_in,v 1.5 2012/11/29 05:32:04 espie Exp $
+--- src/sqlite.h.in.orig	Thu Oct  4 21:49:22 2012
++++ src/sqlite.h.in	Thu Nov 29 06:30:18 2012
 @@ -33,6 +33,7 @@
  #ifndef _SQLITE3_H_
  #define _SQLITE3_H_
@@ -9,7 +9,7 @@ $OpenBSD: patch-src_sqlite_h_in,v 1.4 2010/04/02 20:07:11 sthen Exp $
  
  /*
  ** Make sure we can call this stuff from C++.
-@@ -237,6 +238,9 @@ typedef struct sqlite3 sqlite3;
+@@ -238,6 +239,9 @@ typedef struct sqlite3 sqlite3;
  ** sqlite3_uint64 and sqlite_uint64 types can store integer values 
  ** between 0 and +18446744073709551615 inclusive.
  */
@@ -19,7 +19,7 @@ $OpenBSD: patch-src_sqlite_h_in,v 1.4 2010/04/02 20:07:11 sthen Exp $
  #ifdef SQLITE_INT64_TYPE
    typedef SQLITE_INT64_TYPE sqlite_int64;
    typedef unsigned SQLITE_INT64_TYPE sqlite_uint64;
-@@ -246,6 +250,7 @@ typedef struct sqlite3 sqlite3;
+@@ -247,6 +251,7 @@ typedef struct sqlite3 sqlite3;
  #else
    typedef long long int sqlite_int64;
    typedef unsigned long long int sqlite_uint64;

@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.20 2012/05/01 14:29:56 espie Exp $
---- Makefile.in.orig	Tue Mar 20 15:20:13 2012
-+++ Makefile.in	Sat Apr 28 15:40:57 2012
-@@ -186,7 +186,7 @@ LIBOBJS1 = sqlite3.lo
+$OpenBSD: patch-Makefile_in,v 1.21 2012/11/29 05:32:04 espie Exp $
+--- Makefile.in.orig	Thu Oct  4 21:49:23 2012
++++ Makefile.in	Thu Nov 29 06:30:18 2012
+@@ -187,7 +187,7 @@ LIBOBJS1 = sqlite3.lo
  
  # Determine the real value of LIBOBJ based on the 'configure' script
  #
@@ -10,7 +10,7 @@ $OpenBSD: patch-Makefile_in,v 1.20 2012/05/01 14:29:56 espie Exp $
  
  
  # All of the source code files.
-@@ -283,6 +283,8 @@ SRC = \
+@@ -282,6 +282,8 @@ SRC = \
    $(TOP)/src/walker.c \
    $(TOP)/src/where.c
  
@@ -40,7 +40,7 @@ $OpenBSD: patch-Makefile_in,v 1.20 2012/05/01 14:29:56 espie Exp $
  		-rpath "$(TCLLIBDIR)" \
  		-version-info "8:6:8" \
  		-avoid-version
-@@ -778,6 +780,9 @@ tclsqlite3$(TEXE):	tclsqlite-shell.lo libsqlite3.la
+@@ -772,6 +774,9 @@ tclsqlite3$(TEXE):	tclsqlite-shell.lo libsqlite3.la
  	$(LTLINK) -o $@ tclsqlite-shell.lo \
  		 libsqlite3.la $(LIBTCL)
  
@@ -50,7 +50,7 @@ $OpenBSD: patch-Makefile_in,v 1.20 2012/05/01 14:29:56 espie Exp $
  # Rules to build opcodes.c and opcodes.h
  #
  opcodes.c:	opcodes.h $(TOP)/mkopcodec.awk
-@@ -798,8 +803,12 @@ parse.c:	$(TOP)/src/parse.y lemon$(BEXE) $(TOP)/addopc
+@@ -792,8 +797,12 @@ parse.c:	$(TOP)/src/parse.y lemon$(BEXE) $(TOP)/addopc
  	$(NAWK) -f $(TOP)/addopcodes.awk parse.h.temp >parse.h
  
  sqlite3.h:	$(TOP)/src/sqlite.h.in $(TOP)/manifest.uuid $(TOP)/VERSION
@@ -96,7 +96,7 @@ $OpenBSD: patch-Makefile_in,v 1.20 2012/05/01 14:29:56 espie Exp $
  	$(INSTALL) -d $(DESTDIR)$(TCLLIBDIR)
  	$(LTINSTALL) libtclsqlite3.la $(DESTDIR)$(TCLLIBDIR)
  	rm -f $(DESTDIR)$(TCLLIBDIR)/libtclsqlite3.la $(DESTDIR)$(TCLLIBDIR)/libtclsqlite3.a
-@@ -944,6 +947,8 @@ clean:	
+@@ -945,6 +948,8 @@ clean:	
  
  distclean:	clean
  	rm -f config.log config.status libtool Makefile sqlite3.pc
