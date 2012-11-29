@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.7 2012/10/18 20:04:58 sthen Exp $
---- configure.orig	Wed Oct 17 11:38:03 2012
-+++ configure	Thu Oct 18 13:36:58 2012
+$OpenBSD: patch-configure,v 1.8 2012/11/29 22:34:16 sthen Exp $
+--- configure.orig	Wed Nov 28 15:14:51 2012
++++ configure	Thu Nov 29 22:24:42 2012
 @@ -5189,7 +5189,7 @@ cat >>confdefs.h <<_ACEOF
  #define DEFAULT_NAGIOS_GROUP "$icinga_grp"
  _ACEOF
@@ -39,7 +39,7 @@ $OpenBSD: patch-configure,v 1.7 2012/10/18 20:04:58 sthen Exp $
  	  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 @@ -7057,7 +7057,7 @@ $as_echo_n "checking for SSL libraries... " >&6; }
  		found_ssl=no
- 		for dir in $ssl_lib_dir $ssl_dir /usr/lib64 /usr/lib /usr/local/lib /usr/lib/ssl /usr/ssl/lib /usr/openssl/lib /usr/pkg/lib  /usr/freeware/lib/openssl; do
+ 		for dir in $ssl_lib_dir $ssl_dir /usr/lib/*-linux-gnu /usr/lib64 /usr/lib /usr/local/lib /usr/lib/ssl /usr/ssl/lib /usr/openssl/lib /usr/pkg/lib  /usr/freeware/lib/openssl; do
  			ssllibdir="$dir"
 -			if test -f "$dir/libssl.so"; then
 +			if test -f "$dir/libssl.a"; then
