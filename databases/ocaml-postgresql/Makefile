@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2012/08/18 21:55:07 avsm Exp $
+# $OpenBSD: Makefile,v 1.21 2012/11/30 19:08:05 chrisz Exp $
 
 COMMENT=	Objective Caml bindings for PostgreSQL
 CATEGORIES=	databases
 
 V=		2.0.2
+REVISION=	0
 NAME =		ocaml-postgresql
 DISTNAME=	postgresql-ocaml-${V}
 PKGNAME=	${NAME}-${V}

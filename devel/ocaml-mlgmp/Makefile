@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2012/10/01 21:20:55 edd Exp $
+# $OpenBSD: Makefile,v 1.4 2012/11/30 19:08:05 chrisz Exp $
 
 COMMENT =		GMP bindings for OCaml
 
 V =			0.13
-REVISION =		1
+REVISION =		2
 DISTNAME =		mlgmp-${V}
 PKGNAME =		ocaml-mlgmp-${V}
 

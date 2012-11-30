@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2012/08/18 22:04:48 avsm Exp $
+# $OpenBSD: Makefile,v 1.4 2012/11/30 19:08:05 chrisz Exp $
 
 COMMENT =	OCaml Batteries Included - OCaml foundation library
 CATEGORIES =	devel
 
 V =		1.5.0
+REVISION=	0
 DISTNAME =	batteries-${V}
 PKGNAME =	ocaml-batteries-${V}
 

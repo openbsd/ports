@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2012/08/18 22:13:17 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2012/11/30 19:08:05 chrisz Exp $
 
 COMMENT =	unicode library for objective caml
 
 CATEGORIES =	devel
 
 V =		0.8.3
-REVISION =	0
+REVISION =	1
 DISTNAME =	camomile-${V}
 PKGNAME =	ocaml-camomile-${V}
 EXTRACT_SUFX =	.tar.bz2

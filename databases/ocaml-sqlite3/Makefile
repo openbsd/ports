@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2012/08/18 21:57:24 avsm Exp $
+# $OpenBSD: Makefile,v 1.22 2012/11/30 19:08:05 chrisz Exp $
 
 COMMENT=	Objective Caml bindings for SQLite3
 CATEGORIES=	databases
 
 V=		2.0.2
+REVISION=	0
 NAME =		ocaml-sqlite3
 DISTNAME=	sqlite3-ocaml-${V}
 PKGNAME=	${NAME}-${V}

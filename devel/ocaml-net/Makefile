@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2012/08/18 22:19:21 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2012/11/30 19:08:05 chrisz Exp $
 
 COMMENT =	the Ocamlnet internet protocol foundation library
 CATEGORIES =	devel www mail
 
 V =		3.6
+REVISION=	0
 DISTNAME =	ocamlnet-${V}
 PKGNAME =	ocaml-net-${V}
 

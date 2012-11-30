@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/11/06 20:53:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/11/30 19:08:05 chrisz Exp $
 
 COMMENT=		curses / ncurses bindings for OCaml
 
 DISTNAME=		ocaml-curses-1.0.3
+REVISION=		0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.nongnu.org/ocaml-tmk/
