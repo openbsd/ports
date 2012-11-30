@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.42 2012/10/15 15:18:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2012/11/30 15:16:48 jasper Exp $
+
+BROKEN-mips64 = 	undefined reference to `__sync_fetch_and_add_8'
 
 COMMENT =		Prolog for the real world
 
