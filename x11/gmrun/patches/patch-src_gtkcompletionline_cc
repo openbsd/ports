@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_gtkcompletionline_cc,v 1.3 2012/03/23 20:47:06 naddy Exp $
+$OpenBSD: patch-src_gtkcompletionline_cc,v 1.4 2012/11/30 15:59:42 naddy Exp $
 --- src/gtkcompletionline.cc.orig	Sun Nov 16 03:55:07 2003
 +++ src/gtkcompletionline.cc	Fri Mar 23 14:45:10 2012
 @@ -76,9 +76,9 @@ static gboolean
@@ -13,15 +13,6 @@ $OpenBSD: patch-src_gtkcompletionline_cc,v 1.3 2012/03/23 20:47:06 naddy Exp $
    if (type == 0)
    {
      GtkTypeInfo type_info =
-@@ -350,7 +350,7 @@ generate_path()
- }
- 
- static int
--select_executables_only(const struct dirent* dent)
-+select_executables_only(struct dirent* dent)
- {
-   int len = strlen(dent->d_name);
-   int lenp = prefix.length();
 @@ -376,10 +376,7 @@ select_executables_only(const struct dirent* dent)
    return 0;
  }
