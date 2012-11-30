@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2012/09/29 09:32:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2012/11/30 12:26:15 ajacoutot Exp $
 @newgroup _pulse:683
 @newgroup _pulse-access:684
 @newuser _pulse:683:683:daemon:PulseAudio System Daemon:/var/run/pulse:/sbin/nologin
@@ -12,7 +12,10 @@ bin/paplay
 bin/parec
 bin/parecord
 @bin bin/pasuspender
+@bin bin/pax11publish
 @bin bin/pulseaudio
+bin/start-pulseaudio-kde
+bin/start-pulseaudio-x11
 include/pulse/
 include/pulse/cdecl.h
 include/pulse/channelmap.h
@@ -119,6 +122,10 @@ lib/pulse-${VERSION}/modules/module-virtual-sink.so
 lib/pulse-${VERSION}/modules/module-virtual-source.so
 lib/pulse-${VERSION}/modules/module-virtual-surround-sink.so
 lib/pulse-${VERSION}/modules/module-volume-restore.so
+lib/pulse-${VERSION}/modules/module-x11-bell.so
+lib/pulse-${VERSION}/modules/module-x11-cork-request.so
+lib/pulse-${VERSION}/modules/module-x11-publish.so
+lib/pulse-${VERSION}/modules/module-x11-xsmp.so
 lib/pulseaudio/
 lib/pulseaudio/libpulsecommon-${VERSION}.la
 lib/pulseaudio/libpulsecommon-${VERSION}.so
@@ -145,6 +152,14 @@ share/examples/pulseaudio/pulse/default.pa
 @sample ${SYSCONFDIR}/pulse/default.pa
 share/examples/pulseaudio/pulse/system.pa
 @sample ${SYSCONFDIR}/pulse/system.pa
+share/examples/pulseaudio/xdg/
+@sample ${SYSCONFDIR}/xdg/
+share/examples/pulseaudio/xdg/autostart/
+@sample ${SYSCONFDIR}/xdg/autostart/
+share/examples/pulseaudio/xdg/autostart/pulseaudio-kde.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/pulseaudio-kde.desktop
+share/examples/pulseaudio/xdg/autostart/pulseaudio.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/pulseaudio.desktop
 share/locale/as/LC_MESSAGES/pulseaudio.mo
 share/locale/bn_IN/LC_MESSAGES/pulseaudio.mo
 share/locale/ca/LC_MESSAGES/pulseaudio.mo
