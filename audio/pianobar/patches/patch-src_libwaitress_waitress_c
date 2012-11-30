@@ -1,0 +1,126 @@
+$OpenBSD: patch-src_libwaitress_waitress_c,v 1.3 2012/11/30 15:52:56 dcoppa Exp $
+
+commit a55511ea75003f5ca79a25f6e64eadf91b6dfe9f
+Author: Lars-Dominik Braun <lars@6xq.net>
+Date:   Fri Nov 30 15:10:36 2012 +0100
+
+    waitress: Fix chunked decoder
+
+    Fix "Get stations... Network error: Invalid encoded data."
+
+--- src/libwaitress/waitress.c.orig	Fri Sep  7 16:44:39 2012
++++ src/libwaitress/waitress.c	Fri Nov 30 16:24:24 2012
+@@ -624,64 +624,69 @@ static WaitressHandlerReturn_t WaitressHandleIdentity 
+ 	}
+ }
+ 
+-/*	chunked encoding handler. buf must be \0-terminated, size does not include
+- *	trailing \0.
++/*	chunked encoding handler
+  */
+ static WaitressHandlerReturn_t WaitressHandleChunked (void *data, char *buf,
+ 		const size_t size) {
+ 	assert (data != NULL);
+ 	assert (buf != NULL);
+ 
+-	WaitressHandle_t *waith = data;
+-	char *content = buf, *nextContent;
++	WaitressHandle_t * const waith = data;
++	size_t pos = 0;
+ 
+-	assert (waith != NULL);
+-	assert (buf != NULL);
+-
+-	while (1) {
+-		if (waith->request.chunkSize > 0) {
+-			const size_t remaining = size-(content-buf);
+-
+-			if (remaining >= waith->request.chunkSize) {
+-				if (WaitressHandleIdentity (waith, content,
+-						waith->request.chunkSize) == WAITRESS_HANDLER_ABORTED) {
+-					return WAITRESS_HANDLER_ABORTED;
++	while (pos < size) {
++		switch (waith->request.chunkedState) {
++			case CHUNKSIZE:
++				/* Poor man’s hex to integer. This avoids another buffer that
++				 * fills until the terminating \r\n is received. */
++				if (buf[pos] >= '0' && buf[pos] <= '9') {
++					waith->request.chunkSize <<= 4;
++					waith->request.chunkSize |= buf[pos] & 0xf;
++				} else if (buf[pos] >= 'a' && buf[pos] <= 'f') {
++					waith->request.chunkSize <<= 4;
++					waith->request.chunkSize |= (buf[pos]+9) & 0xf;
++				} else if (buf[pos] == '\r') {
++					/* ignore */
++				} else if (buf[pos] == '\n') {
++					waith->request.chunkedState = DATA;
++					/* last chunk has size 0 */
++					if (waith->request.chunkSize == 0) {
++						return WAITRESS_HANDLER_DONE;
++					}
++				} else {
++					/* everything else is a protocol violation */
++					return WAITRESS_HANDLER_ERR;
+ 				}
++				++pos;
++				break;
+ 
+-				content += waith->request.chunkSize;
+-				if (content[0] == '\r' && content[1] == '\n') {
+-					content += 2;
++			case DATA:
++				if (waith->request.chunkSize > 0) {
++					assert (size >= pos);
++					size_t payloadSize = size - pos;
++
++					if (payloadSize > waith->request.chunkSize) {
++						payloadSize = waith->request.chunkSize;
++					}
++					if (WaitressHandleIdentity (waith, &buf[pos],
++							payloadSize) == WAITRESS_HANDLER_ABORTED) {
++						return WAITRESS_HANDLER_ABORTED;
++					}
++					pos += payloadSize;
++					assert (waith->request.chunkSize >= payloadSize);
++					waith->request.chunkSize -= payloadSize;
+ 				} else {
+-					return WAITRESS_HANDLER_ERR;
++					/* next chunk size starts in the next line */
++					if (buf[pos] == '\n') {
++						waith->request.chunkedState = CHUNKSIZE;
++					}
++					++pos;
+ 				}
+-				waith->request.chunkSize = 0;
+-			} else {
+-				if (WaitressHandleIdentity (waith, content, remaining) ==
+-						WAITRESS_HANDLER_ABORTED) {
+-					return WAITRESS_HANDLER_ABORTED;
+-				}
+-				waith->request.chunkSize -= remaining;
+-				return WAITRESS_HANDLER_CONTINUE;
+-			}
++				break;
+ 		}
+-
+-		if ((nextContent = WaitressGetline (content)) != NULL) {
+-			const long int chunkSize = strtol (content, NULL, 16);
+-			if (chunkSize == 0) {
+-				return WAITRESS_HANDLER_DONE;
+-			} else if (chunkSize < 0) {
+-				return WAITRESS_HANDLER_ERR;
+-			} else {
+-				waith->request.chunkSize = chunkSize;
+-				content = nextContent;
+-			}
+-		} else {
+-			return WAITRESS_HANDLER_ERR;
+-		}
+ 	}
+ 
+-	assert (0);
+-	return WAITRESS_HANDLER_ERR;
++	return WAITRESS_HANDLER_CONTINUE;
+ }
+ 
+ /*	handle http header

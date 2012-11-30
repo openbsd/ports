@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_settings_c,v 1.3 2012/11/30 15:52:56 dcoppa Exp $
+
+commit 72a461d31b6587a8dcc555af774913bf92b40f93
+Author: Lars-Dominik Braun <lars@6xq.net>
+Date:   Fri Nov 30 15:15:35 2012 +0100
+
+    New default TLS fingerprint
+
+    Fix "(i) Login... Network error: TLS handshake failed."
+
+--- src/settings.c.orig	Fri Sep  7 16:44:39 2012
++++ src/settings.c	Fri Nov 30 16:32:01 2012
+@@ -140,8 +140,8 @@ void BarSettingsRead (BarSettings_t *settings) {
+ 	settings->outkey = strdup ("6#26FRL$ZWD");
+ 	settings->fifo = malloc (PATH_MAX * sizeof (*settings->fifo));
+ 	BarGetXdgConfigDir (PACKAGE "/ctl", settings->fifo, PATH_MAX);
+-	memcpy (settings->tlsFingerprint, "\xA2\xA0\xBE\x8A\x37\x92\x39\xAE"
+-			"\x2B\x2E\x71\x4C\x56\xB3\x8B\xC1\x2A\x9B\x4B\x77",
++	memcpy (settings->tlsFingerprint, "\x2D\x0A\xFD\xAF\xA1\x6F\x4B\x5C\x0A"
++			"\x43\xF3\xCB\x1D\x47\x52\xF9\x53\x55\x07\xC0",
+ 			sizeof (settings->tlsFingerprint));
+ 
+ 	settings->msgFormat[MSG_NONE].prefix = NULL;
