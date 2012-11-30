@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2012/10/03 06:36:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2012/11/30 21:23:27 pascal Exp $
 
 COMMENT=		vi-like minimalists web browser
-DISTNAME=		xombrero-1.3.1
+DISTNAME=		xombrero-1.4.0
 CATEGORIES=		www
-REVISION=		0
 EPOCH=			1
 
 HOMEPAGE=		http://opensource.conformal.com/wiki/xombrero
@@ -41,19 +40,16 @@ NO_REGRESS=		Yes
 
 EXAMPLEDIR=		${PREFIX}/share/examples/xombrero
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xombrero ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/xombrero.1 ${PREFIX}/man/man1/xombrero.1
+FAKE_FLAGS=		DESTDIR=""
+
+pre-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
+
+post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLEDIR}
 	${INSTALL_DATA} ${WRKSRC}/xombrero.conf ${EXAMPLEDIR}
 	${INSTALL_DATA} ${WRKSRC}/favorites ${EXAMPLEDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/playflash.sh ${EXAMPLEDIR}
-	${INSTALL_DATA_DIR} ${PREFIX}/share/xombrero/
-	${INSTALL_DATA} ${WRKSRC}/xombreroicon*.png ${PREFIX}/share/xombrero/
-	${INSTALL_DATA} ${WRKSRC}/{xombrero.css,style.css} ${PREFIX}/share/xombrero/
-	${INSTALL_DATA} ${WRKSRC}/tld-rules ${PREFIX}/share/xombrero/
-	${INSTALL_DATA} ${WRKSRC}/hsts-preload ${PREFIX}/share/xombrero/
-	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
 	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} \
 		-c ${WRKSRC}/xombrero.desktop \
 		${PREFIX}/share/applications/xombrero.desktop
