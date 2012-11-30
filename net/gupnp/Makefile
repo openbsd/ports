@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/07/05 17:03:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2012/11/30 12:00:09 jasper Exp $
 
     SUBDIR =
     SUBDIR += av
@@ -7,6 +7,5 @@
     SUBDIR += igd
     SUBDIR += tools
     SUBDIR += ui
-    SUBDIR += vala
 
 .include <bsd.port.subdir.mk>
