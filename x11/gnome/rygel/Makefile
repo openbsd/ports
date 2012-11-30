@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2012/11/13 16:16:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2012/11/30 12:13:04 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		home media solution that allows easy media sharing
 
 GNOME_PROJECT=		rygel
 GNOME_VERSION=		0.16.3
+REVISION=		0
 
 SHARED_LIBS +=	rygel-core-1.0            0.0 # 0.0
 SHARED_LIBS +=	rygel-renderer-1.0        0.0 # 0.0
@@ -41,8 +42,6 @@ WANTLIB += lib/tracker-${TRACKER_VERSION}/tracker-data
 MODULES=		devel/gettext \
 			x11/gnome
 
-BUILD_DEPENDS=		net/gupnp/vala>=0.10.0
-RUN_DEPENDS=		net/gupnp/vala>=0.10.0
 LIB_DEPENDS=		converters/libunistring \
 			devel/libgee06 \
 			net/gupnp/av \
@@ -52,7 +51,6 @@ LIB_DEPENDS=		converters/libunistring \
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
-MODGNOME_TOOLS= 	vala
 
 LIBTOOL_FLAGS=		--tag=disable-static
 
