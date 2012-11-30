@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2012/09/29 07:03:46 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2012/11/30 13:31:02 jasper Exp $
 
-BROKEN-powerpc=	undefined reference to `__sync_fetch_and_add_8'
 BROKEN-hppa=	undefined reference to `__sync_fetch_and_add_8'
+BROKEN-mips64=	undefined reference to `__sync_fetch_and_add_8'
+BROKEN-powerpc=	undefined reference to `__sync_fetch_and_add_8'
 
 COMMENT=	straightforward implementation of DBM
 
