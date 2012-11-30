@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/11/06 20:55:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/11/30 19:38:09 chrisz Exp $
 
 COMMENT=		pure OCaml library to read/write CSV files
 
 DISTNAME=		csv-1.2.3
+REVISION=		0
 PKGNAME=		ocaml-${DISTNAME}
 
 CATEGORIES=		textproc

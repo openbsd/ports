@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/19 07:23:10 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2012/11/30 19:38:09 chrisz Exp $
 
 BROKEN=			requires update due to ocaml 3.08
 
 COMMENT=		proof assistant based on a typed lambda calculus
 
 DISTNAME=		coq-7.3.1
-REVISION=		0
+REVISION=		1
 CATEGORIES=		math
 HOMEPAGE=		http://coq.inria.fr/
 

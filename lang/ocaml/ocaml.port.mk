@@ -1,4 +1,4 @@
-# $OpenBSD: ocaml.port.mk,v 1.20 2012/09/05 21:36:31 avsm Exp $
+# $OpenBSD: ocaml.port.mk,v 1.21 2012/11/30 19:38:09 chrisz Exp $
 
 # regular file usage for bytecode:
 # PLIST               -- bytecode base files
@@ -9,9 +9,11 @@
 # PFRAG.foo-native    -- nativecode files for FLAVOR == foo
 # PFRAG.no-foo-native -- nativecode files for FLAVOR != foo
 
-OCAML_VERSION=4.00.0
+OCAML_VERSION=4.00.1
 
 .include <bsd.port.arch.mk>
+
+RUN_DEPENDS+=	lang/ocaml
 
 .if ${PROPERTIES:Mocaml_native}
 MODOCAML_NATIVE=Yes
@@ -36,16 +38,13 @@ PKG_ARGS+=-Ddynlink=0
 .else
 
 MODOCAML_NATIVE=No
-RUN_DEPENDS+=	lang/ocaml=${OCAML_VERSION}
 
 # remove native base file entry from PLIST
 PKG_ARGS+=-Dnative=0
 .endif
 
-BUILD_DEPENDS+=	lang/ocaml=${OCAML_VERSION}
-MAKE_ENV+= OCAMLFIND_DESTDIR=${DESTDIR}${TRUEPREFIX}/lib/ocaml
-
-NAME ?= ${PKGNAME:C/-[0-9].*//}
+BUILD_DEPENDS +=	lang/ocaml
+MAKE_ENV +=		OCAMLFIND_DESTDIR=${DESTDIR}${TRUEPREFIX}/lib/ocaml
 
 MODOCAML_pre-fake = \
   	${SUDO} ${INSTALL_DATA_DIR} ${WRKINST}${LOCALBASE}/lib/ocaml/stublibs
@@ -81,7 +80,7 @@ MODOASIS_configure = \
 	--destdir ${WRKINST} \
 	--mandir ${PREFIX}/man \
 	--infodir ${PREFIX}/info \
-	--override pkg_name ${NAME} \
+	--override pkg_name ${PKGNAME:C/-[0-9].*//} \
 	${CONFIGURE_ARGS}
 
 ######################################################################

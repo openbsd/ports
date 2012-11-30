@@ -1,16 +1,23 @@
-# $OpenBSD: Makefile,v 1.59 2012/11/01 07:57:26 avsm Exp $
-
-# XXX Don't even think of updating ocaml alone.
-# Do check that the ports that depend on it still work, or repair them. 
+# $OpenBSD: Makefile,v 1.60 2012/11/30 19:38:09 chrisz Exp $
 
 NOT_FOR_ARCHS=	hppa
 
-COMMENT=	ML language based on complete class-based objective system
+COMMENT =	ML language based on complete class-based objective system
 
-BASENAME=	ocaml-4.00
-DISTNAME=	${BASENAME}.0
-REVISION=       3
+# XXX Don't even think of updating ocaml alone.
+# Do check that the ports that depend on it still work, or repair them. 
+# Don't forget to bump version in ocaml.port.mk, too!
+VERSION=4.00.1
+
+DISTNAME =	ocaml-${VERSION}
+
+PKGNAME =	ocaml-${VERSION}
+# OCaml has no binary compatibility between releases.
+PKGSPEC =	ocaml-=${VERSION}
+
 CATEGORIES=	lang
+# Remove last version component ocaml-X.XX.X -> ocaml-X.XX
+BASENAME =	${DISTNAME:C/\.[^.]*$//}
 MASTER_SITES=	http://caml.inria.fr/pub/distrib/${BASENAME}/
 DOCFILES=	${BASENAME}-refman-html.tar.gz
 DISTFILES=	${DISTNAME}.tar.gz ${DOCFILES}
@@ -23,7 +30,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 c curses iberty m pthread z
 
 MODULES+= lang/tcl x11/tk
 
@@ -41,25 +47,25 @@ FAKE_FLAGS=	PREFIX=${WRKINST}${PREFIX}
 
 USE_GMAKE=	Yes
 
-BUILD_DEPENDS +=${MODTK_BUILD_DEPENDS} \
-		devel/gdb
-RUN_DEPENDS +=	${MODTK_RUN_DEPENDS}
-LIB_DEPENDS +=	${MODTK_LIB_DEPENDS}
-WANTLIB +=	${MODTK_WANTLIB}
+BUILD_DEPENDS +=	${MODTK_BUILD_DEPENDS} \
+			devel/gdb
+RUN_DEPENDS +=		${MODTK_RUN_DEPENDS}
+LIB_DEPENDS +=		${MODTK_LIB_DEPENDS}
+WANTLIB =		X11 c curses iberty m pthread z ${MODTK_WANTLIB}
 
 .include <bsd.port.arch.mk>
 
 .if ${PROPERTIES:Mocaml_native}
 ALL_TARGET=	world bootstrap opt opt.opt
-PKG_ARGS+=-Dnative=1
+PKG_ARGS +=	-Dnative=1
 .if ${PROPERTIES:Mocaml_native_dynlink}
-PKG_ARGS+=-Ddynlink=1
+PKG_ARGS +=	-Ddynlink=1
 .else
-PKG_ARGS+=-Ddynlink=0
+PKG_ARGS +=	-Ddynlink=0
 .endif
 .else
 ALL_TARGET=	world bootstrap
-PKG_ARGS+=-Dnative=0
+PKG_ARGS +=	-Dnative=0
 .endif
 
 # XXX regress tests only work on archs with native-code compiler
@@ -80,7 +86,9 @@ post-install:
 	@${INSTALL_DATA} ${WRKDIR}/htmlman/libref/* \
 		${PREFIX}/share/doc/ocaml/html/libref
 	@strip ${PREFIX}/bin/ocamlrun ${PREFIX}/bin/ocamlyacc
-	@${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/ocaml
+	@${INSTALL_DATA} \
+		${WRKSRC}/{LICENSE,Changes} \
+		${PREFIX}/share/doc/ocaml
 
 # PFRAG.native was generated from PLIST with:
 # egrep '(ocamlopt|\.cmx|\.cmxa|\.cmxs|\.opt|opt\.1|opt.cmi|\.native|\.o)$'

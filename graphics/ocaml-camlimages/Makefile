@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1 2012/08/18 23:35:30 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2012/11/30 19:38:09 chrisz Exp $
 
 COMMENT=	image manipulation functions for Objective Caml
 CATEGORIES=	graphics
 
 V=		4.0.1
+REVISION=	0
 DISTNAME=	camlimages-$V
 PKGNAME=	ocaml-${DISTNAME}
 DISTFILES=	v$V.tar.gz

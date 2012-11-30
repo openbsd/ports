@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2012/08/18 22:22:41 avsm Exp $
+# $OpenBSD: Makefile,v 1.5 2012/11/30 19:38:09 chrisz Exp $
 
 COMMENT =	OCaml Perl-compatible regexp library
 CATEGORIES =	devel textproc
 
 V =		7.0.2
+REVISION=	0
 NAME =		ocaml-pcre
 DISTNAME =	pcre-ocaml-$V
 PKGNAME =	${NAME}-$V

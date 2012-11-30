@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.22 2012/08/18 21:49:16 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.23 2012/11/30 19:38:09 chrisz Exp $
+%%native%%
 %%SHARED%%
 bin/camlp4
 bin/camlp4boot
@@ -676,7 +677,6 @@ lib/ocaml/string.mli
 lib/ocaml/stringLabels.cmi
 lib/ocaml/stringLabels.ml
 lib/ocaml/stringLabels.mli
-lib/ocaml/stublibs/
 lib/ocaml/sys.cmi
 lib/ocaml/sys.ml
 lib/ocaml/sys.mli
@@ -814,6 +814,7 @@ lib/ocaml/weak.mli
 @man man/man3/Weak.Make.3o
 @man man/man3/Weak.S.3o
 share/doc/ocaml/
+share/doc/ocaml/Changes
 share/doc/ocaml/LICENSE
 share/doc/ocaml/html/
 share/doc/ocaml/html/contents_motif.gif
@@ -1081,4 +1082,3 @@ share/doc/ocaml/html/next_motif.gif
 share/doc/ocaml/html/patterns.html
 share/doc/ocaml/html/previous_motif.gif
 share/doc/ocaml/html/types.html
-%%native%%

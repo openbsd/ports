@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2012/08/18 22:47:00 avsm Exp $
+# $OpenBSD: Makefile,v 1.20 2012/11/30 19:38:09 chrisz Exp $
 
 COMMENT=	LaTeX to html translator
 
@@ -14,6 +14,7 @@ WANTLIB=		c m
 BUILD_DEPENDS=	lang/ocaml
 
 DISTNAME =	hevea-1.10
+REVISION =	0
 MASTER_SITES =	http://para.inria.fr/~maranget/hevea/distri/
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-manual${EXTRACT_SUFX}

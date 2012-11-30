@@ -1,4 +1,5 @@
-@comment $OpenBSD: PFRAG.native,v 1.13 2012/08/18 21:49:16 avsm Exp $
+@comment $OpenBSD: PFRAG.native,v 1.14 2012/11/30 19:38:09 chrisz Exp $
+%%dynlink%%
 @bin bin/camlp4o.opt
 @bin bin/camlp4of.opt
 @bin bin/camlp4oof.opt
@@ -367,4 +368,3 @@ lib/ocaml/unix.cmxa
 lib/ocaml/unixLabels.cmx
 lib/ocaml/weak.cmx
 lib/ocaml/weak.p.cmx
-%%dynlink%%

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2012/08/18 23:02:37 avsm Exp $
+# $OpenBSD: Makefile,v 1.10 2012/11/30 19:38:09 chrisz Exp $
 
 COMMENT=	simple XML parser/printer for OCaml
 CATEGORIES=	textproc
@@ -6,7 +6,7 @@ CATEGORIES=	textproc
 V=		2.2
 DISTNAME=	xml-light-${V}
 PKGNAME=	ocaml-${DISTNAME}
-REVISION =	4
+REVISION =	5
 EXTRACT_SUFX=	.zip
 MASTER_SITES=	http://tech.motion-twin.com/zip/
 
