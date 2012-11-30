@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.32 2011/07/24 16:29:30 benoit Exp $
---- Makefile.orig	Mon Jun 27 00:26:13 2011
-+++ Makefile	Sat Jul 16 14:44:47 2011
-@@ -271,7 +271,7 @@
+$OpenBSD: patch-Makefile,v 1.33 2012/11/30 21:16:30 pascal Exp $
+--- Makefile.orig	Sun Oct 21 23:32:15 2012
++++ Makefile	Sat Nov 24 01:36:41 2012
+@@ -341,7 +341,7 @@ endif
  
  # CFLAGS and LDFLAGS are for the users to override from the command line.
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-Makefile,v 1.32 2011/07/24 16:29:30 benoit Exp $
  LDFLAGS =
  ALL_CFLAGS = $(CPPFLAGS) $(CFLAGS)
  ALL_LDFLAGS = $(LDFLAGS)
-@@ -289,12 +289,12 @@
+@@ -359,12 +359,12 @@ STRIP ?= strip
  # runtime figures out where they are based on the path to the executable.
  # This can help installing the suite in a relocatable way.
  
@@ -23,19 +23,19 @@ $OpenBSD: patch-Makefile,v 1.32 2011/07/24 16:29:30 benoit Exp $
  infodir = share/info
 -gitexecdir = libexec/git-core
 +gitexecdir = libexec/git
+ mergetoolsdir = $(gitexecdir)/mergetools
  sharedir = $(prefix)/share
  gitwebdir = $(sharedir)/gitweb
- template_dir = share/git-core/templates
-@@ -307,7 +307,7 @@
+@@ -379,7 +379,7 @@ pathsep = :
  
- export prefix bindir sharedir sysconfdir gitwebdir
+ export prefix bindir sharedir sysconfdir gitwebdir localedir
  
--CC = gcc
-+CC ?= gcc
+-CC = cc
++CC ?= cc
  AR = ar
  RM = rm -f
  DIFF = diff
-@@ -315,10 +315,10 @@
+@@ -387,8 +387,8 @@ TAR = tar
  FIND = find
  INSTALL = install
  RPMBUILD = rpmbuild
@@ -44,12 +44,9 @@ $OpenBSD: patch-Makefile,v 1.32 2011/07/24 16:29:30 benoit Exp $
 +TCL_PATH ?= tclsh
 +TCLTK_PATH ?= wish
  XGETTEXT = xgettext
--PTHREAD_LIBS = -lpthread
-+PTHREAD_LIBS = -pthread
- PTHREAD_CFLAGS =
- GCOV = gcov
- 
-@@ -949,13 +949,14 @@
+ MSGFMT = msgfmt
+ PTHREAD_LIBS = -lpthread
+@@ -1114,13 +1114,13 @@ ifeq ($(uname_S),FreeBSD)
  	HAVE_PATHS_H = YesPlease
  endif
  ifeq ($(uname_S),OpenBSD)
@@ -62,12 +59,11 @@ $OpenBSD: patch-Makefile,v 1.32 2011/07/24 16:29:30 benoit Exp $
 +	BASIC_CFLAGS += -I${X11BASE}/include -I${LOCALBASE}/include
 +	BASIC_LDFLAGS += -L${X11BASE}/lib -L${LOCALBASE}/lib
  	HAVE_PATHS_H = YesPlease
-+	NO_PTHREADS = YesPlease
 +	NO_PYTHON = YesPlease
  endif
  ifeq ($(uname_S),NetBSD)
  	ifeq ($(shell expr "$(uname_R)" : '[01]\.'),2)
-@@ -1314,7 +1315,7 @@
+@@ -1587,7 +1587,7 @@ endif
  EXTLIBS += -lz
  
  ifndef NO_OPENSSL
@@ -76,7 +72,7 @@ $OpenBSD: patch-Makefile,v 1.32 2011/07/24 16:29:30 benoit Exp $
  	ifdef OPENSSLDIR
  		BASIC_CFLAGS += -I$(OPENSSLDIR)/include
  		OPENSSL_LINK = -L$(OPENSSLDIR)/$(lib) $(CC_LD_DYNPATH)$(OPENSSLDIR)/$(lib)
-@@ -2146,7 +2147,7 @@
+@@ -2640,7 +2640,7 @@ export TEST_NO_MALLOC_CHECK
  
  ### Testing rules
  
@@ -84,4 +80,4 @@ $OpenBSD: patch-Makefile,v 1.32 2011/07/24 16:29:30 benoit Exp $
 +test:
  	$(MAKE) -C t/ all
  
- test-ctype$X: ctype.o
+ perf: all

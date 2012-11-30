@@ -1,19 +1,15 @@
-# $OpenBSD: Makefile,v 1.85 2012/02/21 22:19:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.86 2012/11/30 21:16:30 pascal Exp $
 
 COMMENT-main =	GIT - Tree History Storage Tool
 COMMENT-svn =	GIT - subversion interoperability tools
 COMMENT-x11 =	GIT - graphical tools
 
-V =		1.7.6
+V =		1.8.0.1
 DISTNAME =	git-${V}
 PKGNAME-main =	${DISTNAME}
 PKGNAME-svn =	git-svn-${V}
 PKGNAME-x11 =	git-x11-${V}
 CATEGORIES =	devel
-
-REVISION-main =	4
-REVISION-svn =	2
-REVISION-x11 =	2
 
 HOMEPAGE =	http://git-scm.com/
 
@@ -25,34 +21,25 @@ PERMIT_PACKAGE_FTP = Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP = Yes
 
-DOC_DISTFILES =		git-manpages-${V}${EXTRACT_SUFX} \
-			git-htmldocs-${V}${EXTRACT_SUFX}
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX} ${DOC_DISTFILES}
+DOC_DISTFILE =		git-manpages-${V}${EXTRACT_SUFX}
+DISTFILES =		${DISTNAME}${EXTRACT_SUFX} ${DOC_DISTFILE}
 EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 
-MASTER_SITES =		http://distfiles.nl/ \
-			ftp://ftp.kernel.org/pub/software/scm/git/ \
-			ftp://ftp.de.kernel.org/pub/software/scm/git/ \
-			ftp://ftp.au.kernel.org/pub/software/scm/git/
+MASTER_SITES =		http://git-core.googlecode.com/files/
 
-TAR =			${LOCALBASE}/bin/gtar
+MODULES =		devel/gettext x11/tk
 
-MODULES =		converters/libiconv x11/tk
-
-BUILD_DEPENDS =		archivers/gtar \
-			devel/p5-Error \
-			textproc/asciidoc \
-			textproc/xmlto
+BUILD_DEPENDS =		devel/p5-Error
 
 MULTI_PACKAGES =	-main -svn -x11
 
-WANTLIB-main =		c expat crypto curl ssl z ${MODLIBICONV_WANTLIB}
+WANTLIB-main =		c expat crypto curl pthread ssl z ${MODGETTEXT_WANTLIB}
 RUN_DEPENDS-main =	net/rsync \
 			devel/p5-Error \
 			devel/cvsps \
-			${MODLIBICONV_RUN_DEPENDS}
+			${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-main =	net/curl \
-			${MODLIBICONV_LIB_DEPENDS}
+			${MODGETTEXT_LIB_DEPENDS}
 
 RUN_DEPENDS-svn =	${BASE_PKGPATH} \
 			devel/p5-Term-ReadKey \
@@ -91,29 +78,17 @@ SKIP_TESTS =		t9502-gitweb-standalone-parse-output.sh
 
 post-extract:
 	@mkdir -p ${WRKSRC}/doc
-.for distfile in ${DOC_DISTFILES}
-	@cd ${WRKSRC}/doc && ${TAR} -xzf ${FULLDISTDIR}/${distfile}${EXTRACT_SUFX}
-.endfor
-	@rm -f ${WRKSRC}/doc/man1/git-p4import.1
+	@cd ${WRKSRC}/doc && ${TAR} -xzf ${FULLDISTDIR}/${DOC_DISTFILE}
 	@cd ${WRKSRC} && perl -pi -e "s|/usr/share/git|${TRUEPREFIX}/share/git|g" \
-		Documentation/git-clone.txt Documentation/git-init.txt \
-		doc/man1/git-clone.1 doc/man1/git-init.1 doc/git-clone.txt \
-		doc/git-init.txt doc/git-clone.html doc/git-init.html
-
-post-build:
-	@cd ${WRKBUILD}/Documentation && ${MAKE_ENV} ${MAKE_PROGRAM} man
+		doc/man1/git-clone.1 doc/man1/git-init.1 doc/man1/gitweb.1
 
 post-install:
 	${INSTALL_DATA} ${WRKBUILD}/libgit.a ${PREFIX}/lib
 	${INSTALL_DATA_DIR} ${PREFIX}/share/emacs/site-lisp
 	${INSTALL_DATA} ${WRKBUILD}/contrib/emacs/*.el \
 		${PREFIX}/share/emacs/site-lisp
-	cd ${WRKBUILD}/Documentation && \
-		${MAKE_ENV} ${MAKE_PROGRAM} mandir=${TRUEPREFIX}/man install-man
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/git
 	cd ${WRKBUILD}/doc && \
-		pax -rw *.html howto/*.html *.txt howto/*.txt \
-		${PREFIX}/share/doc/git
+		pax -rw . ${PREFIX}/man
 	${INSTALL_DATA} ${WRKBUILD}/contrib/hooks/post-receive-email \
 		${PREFIX}/share/git-core/templates/hooks/post-receive-email.sample
 	chown -R ${BINOWN}:${BINGRP} ${PREFIX}/libexec/git
@@ -125,6 +100,6 @@ post-install:
 do-regress:
 	cd ${WRKSRC}/t && rm -f ${SKIP_TESTS}
 	cd ${WRKSRC} && ${MAKE_ENV} ${MAKE_PROGRAM} \
-		HOME=${WRKDIST}/t/trash TAR=${TAR} test
+		HOME=${WRKDIST}/t/trash test
 
 .include <bsd.port.mk>
