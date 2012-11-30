@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2012/11/01 21:31:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2012/11/30 11:29:05 sthen Exp $
+
+BROKEN= Uncaught exception SysErr with <unknown> raised at <sysconf.c>
 
 ONLY_FOR_ARCHS=        i386
 
