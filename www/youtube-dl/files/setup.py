@@ -1,4 +1,4 @@
-# $OpenBSD: setup.py,v 1.1 2012/10/01 08:57:12 dcoppa Exp $
+# $OpenBSD: setup.py,v 1.2 2012/11/30 09:41:54 dcoppa Exp $
 
 from youtube_dl import __version__
 
@@ -9,7 +9,7 @@ setup(
 	version = __version__,
 	description = 'YouTube downloader',
 	url = 'http://rg3.github.com/youtube-dl/',
-	author = 'Ricardo Garcia',
+	author = 'Ricardo Garcia Gonzalez',
 	author_email = 'public@rg3.name',
 	keywords = ['YouTube', 'downloader'],
 	license = 'Public Domain',
