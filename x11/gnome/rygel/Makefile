@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2012/11/30 12:13:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2012/11/30 12:54:45 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -51,6 +51,7 @@ LIB_DEPENDS=		converters/libunistring \
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
+#MODGNOME_TOOLS=	vala
 
 LIBTOOL_FLAGS=		--tag=disable-static
 
