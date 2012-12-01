@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.11 2012/11/29 22:19:09 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2012/12/01 09:46:17 brad Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	anti-spam plugin for Dovecot
 
-V_DOVECOT_FULL= 2.1.11
+V_DOVECOT_FULL= 2.1.12
 
 DISTNAME=	dovecot-antispam-plugin-5e8351bcfb29
 PKGNAME=	dovecot-antispam-2.1
-REVISION=	4
+REVISION=	5
 CATEGORIES=	mail
 
 # http://hg.dovecot.org/dovecot-antispam-plugin/
