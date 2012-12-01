@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/12/01 13:39:16 chl Exp $
+# $OpenBSD: Makefile,v 1.3 2012/12/01 15:21:54 chl Exp $
 
 COMMENT=	elegant and simple HTTP library for Python
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://packages.crate-cdn.com/0/e/3/3/0e3345a8ac0d712bf17bd9d3276415050c5f972265ab62993cd4540a3a1aaaef/
+MASTER_SITES =	${MASTER_SITE_PYPI:=r/requests/}
 
 MODULES=	lang/python
 
