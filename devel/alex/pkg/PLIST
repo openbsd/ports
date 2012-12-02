@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/04/22 21:48:30 kili Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/12/02 20:29:39 kili Exp $
 @bin bin/alex
 share/${DISTNAME}/
 share/${DISTNAME}/AlexTemplate
@@ -21,6 +21,7 @@ share/doc/alex/
 share/doc/alex/about.html
 share/doc/alex/alex-files.html
 share/doc/alex/api.html
+share/doc/alex/basic-api.html
 share/doc/alex/bug-reports.html
 share/doc/alex/charsets.html
 share/doc/alex/fptools.css
@@ -31,5 +32,6 @@ share/doc/alex/license.html
 share/doc/alex/regexps.html
 share/doc/alex/relnotes-20.html
 share/doc/alex/relnotes-210.html
+share/doc/alex/relnotes-22.html
 share/doc/alex/syntax.html
 share/doc/alex/wrappers.html
