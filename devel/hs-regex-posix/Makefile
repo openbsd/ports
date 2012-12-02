@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2012/10/28 23:28:50 kili Exp $
+# $OpenBSD: Makefile,v 1.17 2012/12/02 20:25:56 kili Exp $
 
 COMMENT =		posix regex backend for regex-base
 
-DISTNAME =		regex-posix-0.95.1
-REVISION =		0
+DISTNAME =		regex-posix-0.95.2
 CATEGORIES =		devel
 
 HOMEPAGE =		http://sourceforge.net/projects/lazy-regex
