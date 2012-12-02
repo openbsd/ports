@@ -1,11 +1,11 @@
-$OpenBSD: patch-Network_Socket_hsc,v 1.2 2012/11/21 22:27:18 kili Exp $
+$OpenBSD: patch-Network_Socket_hsc,v 1.3 2012/12/02 20:27:19 kili Exp $
 
 ucred is sockpeercred on OpenBSD
 
 don't throw an error when attempting to setsockopt IPV6_V6ONLY
 
---- Network/Socket.hsc.orig	Tue Apr 24 05:19:39 2012
-+++ Network/Socket.hsc	Wed Nov 21 22:13:30 2012
+--- Network/Socket.hsc.orig	Thu Aug 16 18:06:46 2012
++++ Network/Socket.hsc	Wed Nov 21 22:08:08 2012
 @@ -80,7 +80,7 @@ module Network.Socket
      , getPeerName
      , getSocketName
@@ -28,7 +28,7 @@ don't throw an error when attempting to setsockopt IPV6_V6ONLY
      when (family == AF_INET6) $
              catch (setSocketOption sock IPv6Only 0) $ const $ return ()
  # else
-@@ -1042,22 +1043,22 @@ getSocketOption (MkSocket s _ _ _ _) so = do
+@@ -1057,22 +1058,22 @@ getSocketOption (MkSocket s _ _ _ _) so = do
         fromIntegral `liftM` peek ptr_v
  
  

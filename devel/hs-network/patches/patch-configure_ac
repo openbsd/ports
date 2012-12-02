@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure_ac,v 1.1 2012/11/06 21:24:16 kili Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2012/12/02 20:27:19 kili Exp $
 
 ucred is sockpeercred on OpenBSD
 
---- configure.ac.orig	Tue Apr 24 05:19:39 2012
-+++ configure.ac	Tue Nov  6 22:06:51 2012
-@@ -64,16 +64,16 @@ AC_EGREP_HEADER(in_addr_t, netinet/in.h,
+--- configure.ac.orig	Thu Aug 16 18:06:46 2012
++++ configure.ac	Wed Nov 21 21:18:41 2012
+@@ -70,16 +70,16 @@ AC_EGREP_HEADER(in_addr_t, netinet/in.h,
   AC_MSG_RESULT(no))
  
  dnl --------------------------------------------------
@@ -25,7 +25,7 @@ ucred is sockpeercred on OpenBSD
      old_CFLAGS="$CFLAGS"
      CFLAGS="-D_GNU_SOURCE $CFLAGS"
      AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[#include <sys/types.h>
-@@ -81,18 +81,18 @@ if test "x$ac_cv_ucred" = xno; then
+@@ -87,18 +87,18 @@ if test "x$ac_cv_ucred" = xno; then
  #ifndef SO_PEERCRED
  # error no SO_PEERCRED
  #endif
