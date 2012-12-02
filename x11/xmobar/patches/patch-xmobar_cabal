@@ -1,6 +1,6 @@
-$OpenBSD: patch-xmobar_cabal,v 1.5 2012/10/22 12:44:32 dcoppa Exp $
+$OpenBSD: patch-xmobar_cabal,v 1.6 2012/12/02 20:49:28 kili Exp $
 --- xmobar.cabal.orig	Mon Jun  4 02:55:49 2012
-+++ xmobar.cabal	Fri Oct 12 11:44:41 2012
++++ xmobar.cabal	Sat Dec  1 13:27:58 2012
 @@ -85,9 +85,10 @@ executable xmobar
        Plugins.Monitors.Swap, Plugins.Monitors.Thermal,
        Plugins.Monitors.ThermalZone, Plugins.Monitors.Top,
@@ -13,15 +13,18 @@ $OpenBSD: patch-xmobar_cabal,v 1.5 2012/10/22 12:44:32 dcoppa Exp $
  
      if true
         ghc-options: -funbox-strict-fields -Wall
-@@ -112,7 +113,7 @@ executable xmobar
+@@ -112,9 +113,9 @@ executable xmobar
        time,
        filepath,
        X11 == 1.6.*,
 -      mtl == 2.0.*,
 +      mtl,
        parsec == 3.1.*,
-       stm == 2.3.*
+-      stm == 2.3.*
++      stm
  
+     if flag(small_base)
+        build-depends:
 @@ -162,6 +163,6 @@ executable xmobar
         cpp-options: -DDATEZONE
  
