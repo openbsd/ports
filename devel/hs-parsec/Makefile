@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2012/10/28 23:28:20 kili Exp $
+# $OpenBSD: Makefile,v 1.15 2012/12/02 20:26:18 kili Exp $
 
 COMMENT =		Monadic parser combinators
 
-DISTNAME =		parsec-3.1.2
-REVISION =		2
+DISTNAME =		parsec-3.1.3
 CATEGORIES =		devel
 HOMEPAGE =		http://www.cs.uu.nl/~daan/parsec.html
 
