@@ -1,6 +1,18 @@
-$OpenBSD: patch-Makefile_defs,v 1.3 2012/09/15 12:16:18 sthen Exp $
---- Makefile.defs.orig	Thu Aug  2 16:54:15 2012
-+++ Makefile.defs	Sun Sep  2 18:52:42 2012
+$OpenBSD: patch-Makefile_defs,v 1.4 2012/12/02 22:18:21 jasper Exp $
+--- Makefile.defs.orig	Thu Aug  2 07:54:15 2012
++++ Makefile.defs	Sun Dec  2 14:41:06 2012
+@@ -349,9 +349,9 @@ ppc_macros= __powerpc __powerpc__ __POWERPC__ __ppc__ 
+ ppc64_macros= __ppc64__ _ARCH_PPC64
+ 
+ mips_macros= __mips__ __mips _MIPS_ARCH_MIPS1
+-mips2_macros= _MIPS_ISA_MIPS2 _MIPS_ISA_MIPS3 _MIPS_ISA_MIPS4 \
++mips2_macros= _MIPS_ISA_MIPS2 _MIPS_ISA_MIPS4 \
+ 			_MIPS_ARCH_MIPS2 _MIPS_ARCH_MIPS3 _MIPS_ARCH_MIPS4
+-mips64_macros= _MIPS_ISA_MIPS64 _MIPS_ARCH_MIPS64
++mips64_macros= _MIPS_ISA_MIPS64 _MIPS_ARCH_MIPS64 _MIPS_ISA_MIPS3
+ 
+ alpha_macros= __alpha__ __alpha _M_ALPHA_
+ 
 @@ -422,7 +422,7 @@ endif
  endif
  
@@ -43,6 +55,15 @@ $OpenBSD: patch-Makefile_defs,v 1.3 2012/09/15 12:16:18 sthen Exp $
  else
  			#if gcc 4.0+
  ifeq			($(CC_SHORTVER), 4.x)
+@@ -1376,7 +1372,7 @@ ifeq		($(CC_NAME), gcc)
+ 				CFLAGS= -mips64 -O9 -funroll-loops $(PROFILE)
+ 			#if gcc 4.5+ or 4.2+
+ ifeq (,$(strip $(filter-out 4.2+ 4.5+,$(CC_SHORTVER))))
+-					CFLAGS+=-minline-all-stringops -ftree-vectorize \
++					CFLAGS+=-ftree-vectorize \
+ 							-fno-strict-overflow
+ else
+ 			#if gcc 4.0+
 @@ -1904,9 +1900,10 @@ endif
  
  ifeq ($(OS), openbsd)
