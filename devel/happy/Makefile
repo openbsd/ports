@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2012/10/11 13:31:29 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.27 2012/12/02 20:29:17 kili Exp $
 
 COMMENT=		parser generator for Haskell
 
-DISTNAME=		happy-1.18.9
-REVISION=		0
+DISTNAME=		happy-1.18.10
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.haskell.org/happy/
