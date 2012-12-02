@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2012/10/28 23:31:33 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2012/12/02 20:48:34 kili Exp $
 
 COMMENT =		securely store session data in a client-side cookie
 
 DISTNAME =		clientsession-0.8.0.1
-REVISION =		0
+REVISION =		1
 CATEGORIES =		security www
 
 MAINTAINER =		Jim Razmus II <jim@openbsd.org>, \
@@ -28,5 +28,8 @@ RUN_DEPENDS =		devel/hs-base64-bytestring>=0.1.1.1 \
 			security/hs-entropy>=0.2.1 \
 			security/hs-skein>=0.1,<0.2
 BUILD_DEPENDS =		${RUN_DEPENDS}
+
+# Missing dependencies
+NO_REGRESS =		Yes
 
 .include <bsd.port.mk>
