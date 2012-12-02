@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2012/10/28 23:29:51 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2012/12/02 20:22:42 kili Exp $
 
 COMMENT =		Int-indexed arrays
 
-DISTNAME =		vector-0.9.1
-REVISION =		0
+DISTNAME =		vector-0.10.0.1
 CATEGORIES =		devel
 
 MAINTAINER =		Jim Razmus II <jim@openbsd.org>, \
@@ -19,7 +18,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-RUN_DEPENDS +=		devel/hs-primitive>=0.4.0.1,<0.5
+RUN_DEPENDS +=		devel/hs-primitive>=0.5.0.1,<0.6
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>
