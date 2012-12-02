@@ -1,4 +1,4 @@
-# $OpenBSD:
+# $OpenBSD: Makefile,v 1.22 2012/12/02 20:21:50 jasper Exp $
 
 COMMENT-main =		mature and flexible open source SIP server
 
