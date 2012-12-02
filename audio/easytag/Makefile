@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.32 2012/05/08 12:52:03 landry Exp $
+# $OpenBSD: Makefile,v 1.33 2012/12/02 19:13:07 jasper Exp $
 
 COMMENT=		tag editor for various audio file formats
 
 DISTNAME=		easytag-2.1.7
+REVISION=		0
 CATEGORIES=		audio x11
 
-HOMEPAGE=		http://easytag.sourceforge.net/
+HOMEPAGE=		http://projects.gnome.org/easytag/
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
