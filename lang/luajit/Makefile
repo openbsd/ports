@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2012/11/16 15:06:57 abieber Exp $
+# $OpenBSD: Makefile,v 1.4 2012/12/02 19:09:36 jasper Exp $
 
-ONLY_FOR_ARCHS = powerpc arm i386 amd64 mips64 mips64el
+ONLY_FOR_ARCHS = powerpc arm i386 amd64
+# for mips64* gcc 4.6 is needed, but that doesn't build on this arch (yet)
 
 SHARED_ONLY =	Yes
 SHARED_LIBS +=	luajit-${MODLUA_VERSION} 0.0 # 2.0.0
