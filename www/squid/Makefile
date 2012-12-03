@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.133 2012/11/28 17:45:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.134 2012/12/03 23:10:37 sthen Exp $
 
 MULTI_PACKAGES=	-main -ldap -ntlm
 
@@ -83,7 +83,8 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 CONFIGURE_ARGS+= --disable-pf-transparent \
 		--enable-ipfw-transparent
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		ac_cv_header_et_com_err_h=false
 E=		${TRUEPREFIX}/share/examples/squid
 FAKE_FLAGS=	sysconfdir=$E \
 		DEFAULT_CONFIG_FILE=$E/squid.conf \
