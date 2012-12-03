@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2012/12/03 21:26:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2012/12/03 21:44:04 naddy Exp $
 
 COMMENT=	multilingual clone of vi/ex
 
 DISTNAME=	nvi-1.79
 PKGNAME=	nvi-m17n-1.79.19991117
-REVISION=	5
+REVISION=	6
 CATEGORIES=	editors
 
 MASTER_SITES=	ftp://ftp.foretune.co.jp/pub/tools/nvi/
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c termlib
+WANTLIB=		c termlib util
 
 FLAVORS= canna
 FLAVOR?=
