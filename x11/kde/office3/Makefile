@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.76 2012/08/28 19:13:12 espie Exp $
+# $OpenBSD: Makefile,v 1.77 2012/12/03 22:30:26 brad Exp $
 
 COMMENT=		office suite for KDE
 
 VERSION=		1.6.3
-REVISION =		24
+REVISION =		25
 CATEGORIES=		x11 x11/kde productivity
 VMEM_WARNING=		Yes
 MASTER_SITES?=		${MASTER_SITE_KDE:S@$@stable/koffice-${VERSION}/src/@}
@@ -83,7 +83,7 @@ RUN_DEPENDS+=	devel/desktop-file-utils \
 LIB_DEPENDS=	x11/kde/libs3 \
 		python->=2.5,<2.6:lang/python/2.5 \
 		graphics/libart \
-		converters/wv2 \
+		converters/wv2>=0.4.2 \
 		graphics/ImageMagick \
 		graphics/jbigkit \
 		databases/mysql \

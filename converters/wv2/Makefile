@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2012/11/29 19:07:57 pascal Exp $
+# $OpenBSD: Makefile,v 1.29 2012/12/03 22:30:26 brad Exp $
 
 COMMENT=	library functions to access Microsoft Word/Excel files
 
@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://wvware.sourceforge.net/
 
-# GPL
+# LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
