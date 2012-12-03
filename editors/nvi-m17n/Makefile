@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2012/07/14 10:19:14 naddy Exp $
-# NetBSD: Makefile,v 1.6 2000/01/19 12:28:44 hubertf Exp
-# FreeBSD Id: Makefile,v 1.11 1999/04/17 10:51:03 itojun Exp
+# $OpenBSD: Makefile,v 1.33 2012/12/03 21:26:50 naddy Exp $
 
 COMMENT=	multilingual clone of vi/ex
 
 DISTNAME=	nvi-1.79
 PKGNAME=	nvi-m17n-1.79.19991117
-REVISION=	4
+REVISION=	5
 CATEGORIES=	editors
 
 MASTER_SITES=	ftp://ftp.foretune.co.jp/pub/tools/nvi/
@@ -27,7 +25,8 @@ FLAVOR?=
 
 PATCH_DIST_STRIP=-p1
 WRKSRC=	${WRKDIR}/${DISTNAME}/build
-CONFIGURE_STYLE=gnu dest
+AUTOCONF_VERSION=2.13
+CONFIGURE_STYLE=autoconf dest
 CONFIGURE_ENV=	OPTFLAG='-D_PATH_SYSEXRC=\"${SYSCONFDIR}/vi.exrc\"' 
 CONFIGURE_ARGS+=--enable-multibyte --program-prefix=n --host=${ARCH}-unknown-netbsd
 USE_GROFF =	Yes
@@ -63,6 +62,7 @@ ENCODING+=	euc-jp euc-cn euc-kr sjis big5 euc-tw hz
 # nvi provides an outdated version of queue.h, stupid stunt...
 post-extract:
 	@rm -f ${WRKDIST}/include/sys/queue.h
+	@chmod u+w ${WRKSRC}/configure
 
 post-build:
 .for encoding in ${ENCODING}
