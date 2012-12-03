@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2012/09/27 06:55:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2012/12/03 10:11:07 ajacoutot Exp $
 
 COMMENT=	device color profile management daemon
 
-DISTNAME=	colord-0.1.23
+DISTNAME=	colord-0.1.25
 EXTRACT_SUFX=	.tar.xz
 
 SHARED_LIBS +=  colord               0.1      # 1.11
@@ -47,11 +47,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-introspection \
+		--enable-vala \
 		--disable-gtk-doc \
-		--disable-reverse \
 		--disable-gudev \
-		--with-daemon-user=_colord \
-		--disable-sane # needs gudev, libgusb
+		--disable-gusb \
+		--with-daemon-user=_colord
 
 # If one of these tools is found at configure stage, it might be used,
 # no matter whether we use --disable-gtk-doc or not.

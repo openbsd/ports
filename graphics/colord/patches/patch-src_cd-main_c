@@ -1,22 +1,22 @@
-$OpenBSD: patch-src_cd-main_c,v 1.4 2012/05/28 08:45:38 ajacoutot Exp $
+$OpenBSD: patch-src_cd-main_c,v 1.5 2012/12/03 10:11:07 ajacoutot Exp $
 
 /var/lib -> /var/db
 
---- src/cd-main.c.orig	Thu Apr 19 17:34:30 2012
-+++ src/cd-main.c	Mon May 28 10:09:33 2012
-@@ -1884,7 +1884,7 @@ main (int argc, char *argv[])
+--- src/cd-main.c.orig	Fri Nov 23 12:51:53 2012
++++ src/cd-main.c	Mon Dec  3 10:23:22 2012
+@@ -2154,7 +2154,7 @@ main (int argc, char *argv[])
  	/* connect to the mapping db */
- 	mapping_db = cd_mapping_db_new ();
- 	ret = cd_mapping_db_load (mapping_db,
+ 	priv->mapping_db = cd_mapping_db_new ();
+ 	ret = cd_mapping_db_load (priv->mapping_db,
 -				  LOCALSTATEDIR "/lib/colord/mapping.db",
 +				  LOCALSTATEDIR "/db/colord/mapping.db",
  				  &error);
  	if (!ret) {
  		g_warning ("CdMain: failed to load mapping database: %s",
-@@ -1896,7 +1896,7 @@ main (int argc, char *argv[])
+@@ -2166,7 +2166,7 @@ main (int argc, char *argv[])
  	/* connect to the device db */
- 	device_db = cd_device_db_new ();
- 	ret = cd_device_db_load (device_db,
+ 	priv->device_db = cd_device_db_new ();
+ 	ret = cd_device_db_load (priv->device_db,
 -				 LOCALSTATEDIR "/lib/colord/storage.db",
 +				 LOCALSTATEDIR "/db/colord/storage.db",
  				 &error);

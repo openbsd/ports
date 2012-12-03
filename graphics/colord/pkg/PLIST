@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2012/08/04 15:00:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2012/12/03 10:11:07 ajacoutot Exp $
 @pkgpath graphics/colord
 @pkgpath graphics/colord,-main
 @newgroup _colord:694
@@ -40,11 +40,6 @@ lib/pkgconfig/colord.pc
 @man man/man1/cd-create-profile.1
 @man man/man1/cd-fix-profile.1
 @man man/man1/colormgr.1
-share/color/
-share/color/icc/
-share/color/icc/colord/
-share/color/icc/colord/crayons.icc
-share/color/icc/colord/x11-colors.icc
 share/dbus-1/
 share/dbus-1/interfaces/
 share/dbus-1/interfaces/org.freedesktop.ColorManager.Device.xml
