@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2012/09/10 09:16:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2012/12/03 16:21:25 sthen Exp $
 
 COMMENT=	simple and clean multi-user web file manager
 
-DISTNAME=	mollify_1.8.8.3
+DISTNAME=	mollify_1.8.9.3
 PKGNAME=	${DISTNAME:S/_/-/}
-REVISION=	0
 EXTRACT_SUFX=	.zip
 CATEGORIES=	www
 
