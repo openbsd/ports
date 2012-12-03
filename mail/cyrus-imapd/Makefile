@@ -1,18 +1,11 @@
-# $OpenBSD: Makefile,v 1.74 2012/08/28 08:06:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2012/12/03 11:17:03 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT-main=	Cyrus IMAP server
-COMMENT-perl=	perl utils for the Cyrus IMAP server
+COMMENT=	Cyrus IMAP server
 
-V=		2.4.16
+V=		2.4.17
 DISTNAME=	cyrus-imapd-${V}
-PKGNAME-main=	${DISTNAME}
-FULLPKGNAME-perl=cyrus-imapd-perl-${V}
-FULLPKGPATH-perl=mail/cyrus-imapd,-perl
-
-REVISION-main=	1
-REVISION-perl=	0
 
 CATEGORIES=	mail
 
@@ -30,18 +23,12 @@ MASTER_SITES=	http://cyrusimap.org/releases/ \
 		ftp://ftp.cyrusimap.org/cyrus-imapd/ \
 		ftp://ftp.cyrusimap.org/cyrus-imapd/OLD-VERSIONS/
 
-MULTI_PACKAGES=	-main -perl
+WANTLIB += asn1 c com_err crypto gssapi krb5 pcre pcreposix pthread
+WANTLIB += sasl2 ssl z lib/db4/db>=4
 
-WANTLIB +=	crypto ssl z sasl2 lib/db4/db>=4
-WANTLIB-main += ${WANTLIB} asn1 c com_err gssapi krb5 pthread
-WANTLIB-main += pcre pcreposix
-WANTLIB-perl += ${WANTLIB}
-
-LIB_DEPENDS=	security/cyrus-sasl2 \
-		databases/db/v4
-LIB_DEPENDS-main=${LIB_DEPENDS} \
-		devel/pcre
-RUN_DEPENDS-main=${RUN_DEPENDS}
+LIB_DEPENDS=	databases/db/v4 \
+		devel/pcre \
+		security/cyrus-sasl2
 
 NO_REGRESS=	Yes
 
@@ -76,6 +63,9 @@ CONFIGURE_ARGS=	--with-service-path=${LOCALBASE}/libexec/cyrus-imapd \
 		--with-pgsql=no \
 		--with-sqlite=no
 
+# XXX our kerberosV is too old; use bundled compile_et and libcom_err
+CONFIGURE_ARGS += --with-com_err=yes
+
 FLAVORS=	drac
 FLAVOR?=
 
@@ -94,10 +84,10 @@ SIEVEREF=	lib/imapoptions man/imapd.conf.5 \
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/{lib/imapoptions,man/imapd.conf.5}
 .for i in ${MAN8}
-	@perl -pi -e "s,${i}\(8\),cyrus-${i}\(8\),g" ${WRKSRC}/man/*.[0-9]
+	perl -pi -e "s,${i}\(8\),cyrus-${i}\(8\),g" ${WRKSRC}/man/*.[0-9]
 .endfor
 .for i in ${SIEVEREF}
-	@perl -pi -e "s,/usr/sieve,/var/sieve,g" ${WRKSRC}/${i}
+	perl -pi -e "s,/usr/sieve,/var/sieve,g" ${WRKSRC}/${i}
 .endfor
 
 post-install:

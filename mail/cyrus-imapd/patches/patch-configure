@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.21 2012/08/28 08:06:15 ajacoutot Exp $
---- configure.orig	Thu Sep  8 21:03:38 2011
-+++ configure	Fri Sep  9 08:38:25 2011
-@@ -5062,9 +5062,7 @@ CFLAGS=$save_CFLAGS
+$OpenBSD: patch-configure,v 1.22 2012/12/03 11:17:04 ajacoutot Exp $
+--- configure.orig	Sat Dec  1 20:59:51 2012
++++ configure	Mon Dec  3 10:59:56 2012
+@@ -5061,9 +5061,7 @@ CFLAGS=$save_CFLAGS
  fi
  
  if test "$ac_cv_fpic" = "yes"; then
@@ -12,7 +12,7 @@ $OpenBSD: patch-configure,v 1.21 2012/08/28 08:06:15 ajacoutot Exp $
  fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_fpic" >&5
  $as_echo "$ac_cv_fpic" >&6; }
-@@ -6455,7 +6453,7 @@ fi
+@@ -6454,7 +6452,7 @@ fi
  
  
  
@@ -21,7 +21,7 @@ $OpenBSD: patch-configure,v 1.21 2012/08/28 08:06:15 ajacoutot Exp $
    CPPFLAGS="${BDB_INCADD} ${CPPFLAGS}"
  
    CYRUSDB_OBJS="$CYRUSDB_OBJS cyrusdb_berkeley.o"
-@@ -9622,7 +9620,7 @@ if ${ac_cv_lib_gssapi_gss_unwrap+:} false; then :
+@@ -9645,7 +9643,7 @@ if ${ac_cv_lib_gssapi_gss_unwrap+:} false; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -30,7 +30,7 @@ $OpenBSD: patch-configure,v 1.21 2012/08/28 08:06:15 ajacoutot Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -9924,8 +9922,8 @@ fi
+@@ -9947,8 +9945,8 @@ fi
      GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_LIBS $gssapi_dir/libgssapi_krb5.a $gssapi_dir/libkrb5.a $gssapi_dir/libk5crypto.a $gssapi_dir/libcom_err.a ${K5SUPSTATIC}"
    elif test "$gss_impl" = "heimdal"; then
      CPPFLAGS="$CPPFLAGS -DKRB5_HEIMDAL"
@@ -41,7 +41,7 @@ $OpenBSD: patch-configure,v 1.21 2012/08/28 08:06:15 ajacoutot Exp $
    elif test "$gss_impl" = "cybersafe03"; then
  # Version of CyberSafe with two libraries
      CPPFLAGS="$CPPFLAGS -D$platform -I${gssapi}/appsec-sdk/include"
-@@ -10493,7 +10491,7 @@ elif test "${with_perl}" != "no"; then
+@@ -10516,7 +10514,7 @@ elif test "${with_perl}" != "no"; then
      PERL_SUBDIRS="imap"
      PERL="${with_perl}"
      case "${target_os}" in

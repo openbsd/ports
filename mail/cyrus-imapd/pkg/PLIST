@@ -1,13 +1,17 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2011/12/31 08:04:05 ajacoutot Exp $
-@pkgpath ${BASE_PKGPATH}
-@pkgpath ${BASE_PKGPATH},-main,kerberos
+@comment $OpenBSD: PLIST,v 1.6 2012/12/03 11:17:04 ajacoutot Exp $
+@pkgpath mail/cyrus-imapd,-main,kerberos
+@pkgpath mail/cyrus-imapd,-main
+@pkgpath mail/cyrus-imapd,-perl
 @newgroup _cyrus:543
-@newuser _cyrus:543:_cyrus:daemon:Cyrus Account:/var/empty:/sbin/nologin
+@newuser _cyrus:543:_cyrus:daemon:Cyrus Account:/nonexistent:/sbin/nologin
+bin/cyradm
 @bin bin/imtest
+bin/installsieve
 @bin bin/lmtptest
 @bin bin/mupdatetest
 @bin bin/nntptest
 @bin bin/pop3test
+bin/sieveshell
 @bin bin/sivtest
 @bin bin/smtptest
 @bin bin/synctest
@@ -52,6 +56,27 @@ include/cyrus/xstrlcat.h
 include/cyrus/xstrlcpy.h
 lib/libcyrus.a
 lib/libcyrus_min.a
+libdata/perl5/${MACHINE_ARCH}-openbsd/
+libdata/perl5/${MACHINE_ARCH}-openbsd/5.12.2/
+libdata/perl5/${MACHINE_ARCH}-openbsd/5.12.2/perllocal.pod
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Cyrus/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Cyrus/IMAP/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Cyrus/IMAP.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Cyrus/IMAP/Admin.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Cyrus/IMAP/IMSP.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Cyrus/IMAP/Shell.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Cyrus/SIEVE/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Cyrus/SIEVE/managesieve.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Cyrus/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Cyrus/IMAP/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Cyrus/IMAP/IMAP.bs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Cyrus/IMAP/IMAP.so
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Cyrus/SIEVE/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Cyrus/SIEVE/managesieve/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Cyrus/SIEVE/managesieve/managesieve.bs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Cyrus/SIEVE/managesieve/managesieve.so
 libexec/cyrus-imapd/
 @bin libexec/cyrus-imapd/arbitron
 @bin libexec/cyrus-imapd/chk_cyrus
@@ -92,14 +117,22 @@ libexec/cyrus-imapd/
 @bin libexec/cyrus-imapd/timsieved
 @bin libexec/cyrus-imapd/tls_prune
 @bin libexec/cyrus-imapd/unexpunge
+@man man/man1/cyradm.1
 @man man/man1/imtest.1
+@man man/man1/installsieve.1
 @man man/man1/lmtptest.1
 @man man/man1/mupdatetest.1
 @man man/man1/nntptest.1
 @man man/man1/pop3test.1
+@man man/man1/sieveshell.1
 @man man/man1/sivtest.1
 @man man/man1/smtptest.1
 @man man/man3/imclient.3
+@man man/man3p/Cyrus::IMAP.3p
+@man man/man3p/Cyrus::IMAP::Admin.3p
+@man man/man3p/Cyrus::IMAP::IMSP.3p
+@man man/man3p/Cyrus::IMAP::Shell.3p
+@man man/man3p/Cyrus::SIEVE::managesieve.3p
 @man man/man5/cyrus.conf.5
 @man man/man5/imapd.conf.5
 @man man/man5/krb.equiv.5
@@ -118,13 +151,9 @@ libexec/cyrus-imapd/
 @man man/man8/cyrus-idled.8
 @man man/man8/cyrus-imapd.8
 @man man/man8/cyrus-master.8
-@comment @man man/man8/fetchnews.8
 @man man/man8/fud.8
-@comment @man man/man8/idled.8
-@comment @man man/man8/imapd.8
 @man man/man8/ipurge.8
 @man man/man8/lmtpd.8
-@comment @man man/man8/master.8
 @man man/man8/mbexamine.8
 @man man/man8/mbpath.8
 @man man/man8/nntpd.8
@@ -145,8 +174,8 @@ libexec/cyrus-imapd/
 share/doc/cyrus-imapd/
 share/doc/cyrus-imapd/COPYRIGHT
 share/doc/cyrus-imapd/text/
-@comment share/doc/cyrus-imapd/text/.cvsignore
-@comment share/doc/cyrus-imapd/text/Makefile
+share/doc/cyrus-imapd/text/.cvsignore
+share/doc/cyrus-imapd/text/Makefile
 share/doc/cyrus-imapd/text/ag
 share/doc/cyrus-imapd/text/altnamespace
 share/doc/cyrus-imapd/text/anoncvs
@@ -154,7 +183,7 @@ share/doc/cyrus-imapd/text/bugs
 share/doc/cyrus-imapd/text/changes
 share/doc/cyrus-imapd/text/faq
 share/doc/cyrus-imapd/text/feedback
-@comment share/doc/cyrus-imapd/text/htmlstrip.c
+share/doc/cyrus-imapd/text/htmlstrip.c
 share/doc/cyrus-imapd/text/index
 share/doc/cyrus-imapd/text/install
 share/doc/cyrus-imapd/text/install-admin-mb
@@ -192,17 +221,17 @@ share/examples/cyrus-imapd/normal.conf
 share/examples/cyrus-imapd/prefork.conf
 share/examples/cyrus-imapd/small.conf
 share/examples/cyrus-imapd/tools/
-@comment share/examples/cyrus-imapd/tools/arbitronsort.pl
-@comment share/examples/cyrus-imapd/tools/config2header
-@comment share/examples/cyrus-imapd/tools/config2man
+share/examples/cyrus-imapd/tools/arbitronsort.pl
+share/examples/cyrus-imapd/tools/config2header
+share/examples/cyrus-imapd/tools/config2man
 share/examples/cyrus-imapd/tools/convert-sieve.pl
 share/examples/cyrus-imapd/tools/dohash
 share/examples/cyrus-imapd/tools/masssievec
 share/examples/cyrus-imapd/tools/migrate-metadata
 share/examples/cyrus-imapd/tools/mkimap
 share/examples/cyrus-imapd/tools/mknewsgroups
-@comment share/examples/cyrus-imapd/tools/mupdate-loadgen.pl
-@comment share/examples/cyrus-imapd/tools/not-mkdep
+share/examples/cyrus-imapd/tools/mupdate-loadgen.pl
+share/examples/cyrus-imapd/tools/not-mkdep
 share/examples/cyrus-imapd/tools/rehash
 share/examples/cyrus-imapd/tools/translatesieve
 share/examples/cyrus-imapd/tools/undohash
