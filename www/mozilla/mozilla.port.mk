@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.48 2012/11/12 20:45:32 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.49 2012/12/04 21:05:29 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -27,28 +27,63 @@ DIST_SUBDIR ?=	mozilla
 
 MODMOZ_RUN_DEPENDS =	devel/desktop-file-utils
 MODMOZ_BUILD_DEPENDS =	devel/libIDL \
+			archivers/gtar \
 			archivers/zip>=2.3
 
-MODMOZ_LIB_DEPENDS =	x11/gtk+2 \
-			devel/nspr>=4.9.3 \
-			security/nss>=3.14
+MODMOZ_LIB_DEPENDS =	x11/gtk+2
 
-MODMOZ_WANTLIB =	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi \
+# special case the long-term maintained mozillas
+.if ${MOZILLA_PROJECT} == "firefox" || \
+	${MOZILLA_PROJECT} == "thunderbird" || \
+	${MOZILLA_PROJECT} == "seamonkey"
+MODMOZ_LIB_DEPENDS +=	devel/nspr>=4.9.3 \
+			security/nss>=3.14
+# needed during install
+MODMOZ_BUILD_DEPENDS +=	archivers/unzip
+
+# bug #736961
+SEPARATE_BUILD =	Yes
+
+# needed for webm
+.if ${MACHINE_ARCH:Mi386} || ${MACHINE_ARCH:Mamd64}
+MODMOZ_BUILD_DEPENDS +=	devel/yasm
+.endif
+
+CONFIGURE_ARGS +=	--enable-official-branding
+CONFIGURE_ARGS +=	--disable-gconf
+CONFIGURE_ARGS +=	--enable-gio
+CONFIGURE_ARGS +=	--with-system-libevent=/usr/
+CONFIGURE_ARGS +=	--with-system-bz2=${LOCALBASE}
+MODMOZ_WANTLIB +=	event
+.else
+# for old mozillas : fennec, sunbird, firefox36, xulrunner
+MODMOZ_LIB_DEPENDS +=	devel/nspr \
+			security/nss
+CONFIGURE_ARGS +=	--with-system-jpeg=${LOCALBASE}
+MODMOZ_WANTLIB += jpeg
+.endif
+
+MODMOZ_WANTLIB +=	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi \
 		Xinerama Xrandr Xrender Xt atk-1.0 c cairo crypto expat \
 		fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
-		gobject-2.0 gthread-2.0 gtk-x11-2.0 jpeg krb5 m \
-		nspr4>=21 nss3>=25 pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pixman-1 plc4>=21 plds4>=21 png pthread pthread-stubs \
-		smime3>=25 sndio softokn3>=25 ssl3>=25 stdc++ xcb \
+		gobject-2.0 gthread-2.0 gtk-x11-2.0 krb5 m \
+		nspr4 nss3 pango-1.0 pangocairo-1.0 pangoft2-1.0 \
+		pixman-1 plc4 plds4 png pthread pthread-stubs \
+		smime3 sndio nssutil3 ssl3 stdc++ xcb \
 		xcb-render GL xcb-shm z
 
 # for all mozilla ports, build against systemwide sqlite3
-MODMOZ_WANTLIB +=	sqlite3
+MODMOZ_WANTLIB +=	sqlite3>=21
 CONFIGURE_ARGS +=	--enable-system-sqlite
 CONFIGURE_ENV +=	ac_cv_sqlite_secure_delete=yes
 
-# avoids OOM when linking libxul
+# --no-keep-memory avoids OOM when linking libxul
+# --relax avoids relocation overflow on ppc, needed since sm 2.7b, tb 10.0b, fx 15.0b
+.if ${MACHINE_ARCH} == "powerpc"
+CONFIGURE_ENV +=	LDFLAGS="-Wl,--no-keep-memory -Wl,--relax"
+.else
 CONFIGURE_ENV +=	LDFLAGS="-Wl,--no-keep-memory"
+.endif
 
 WANTLIB +=	${MODMOZ_WANTLIB}
 BUILD_DEPENDS +=${MODMOZ_BUILD_DEPENDS}
@@ -59,8 +94,7 @@ VMEM_WARNING ?=	Yes
 USE_GMAKE ?=	Yes
 
 AUTOCONF_VERSION =	2.13
-CONFIGURE_ARGS +=--with-system-jpeg=${LOCALBASE}	\
-		--with-system-zlib=/usr		\
+CONFIGURE_ARGS +=	--with-system-zlib=/usr	\
 		--with-system-nspr		\
 		--with-system-nss		\
 		--with-pthreads			\
@@ -77,6 +111,8 @@ CONFIGURE_ARGS +=--with-system-jpeg=${LOCALBASE}	\
 		--enable-svg			\
 		--enable-svg-renderer=cairo	\
 		--enable-canvas
+
+# no --with-system-jpeg starting with fx 18, requires libjpeg-turbo because of bug 791305
 
 # for mozilla branches 1.9.2 and 2.x.x, build against systemwide cairo
 .if ${MOZILLA_BRANCH} != 1.9.1

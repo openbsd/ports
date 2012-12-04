@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.23 2012/04/07 13:10:50 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.24 2012/12/04 21:05:30 landry Exp $
 
 COMMENT-main =		standalone XUL/XPCOM runtime environment
 COMMENT-devel =		devel files for Gecko
@@ -30,7 +30,7 @@ LIB_DEPENDS-devel =	${MODGETTEXT_LIB_DEPENDS} \
 			devel/libIDL \
 			${PKGNAME-main}:${BASE_PKGPATH},-main
 WANTLIB-devel +=	${MODGETTEXT_WANTLIB} \
-			c glib-2.0 gobject-2.0 gthread-2.0 m pthread stdc++ \
+			c glib-2.0 gobject-2.0 m pthread stdc++ \
 			IDL-2 nspr4 plc4 plds4
 
 MODGNU_CONFIG_GUESS_DIRS +=	${WRKSRC}/build/autoconf
