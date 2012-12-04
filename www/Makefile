@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.588 2012/11/28 17:45:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.589 2012/12/04 21:10:12 landry Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -53,7 +53,6 @@
      SUBDIR += fennec
      SUBDIR += ffproxy
      SUBDIR += firefox-i18n
-     SUBDIR += firefox35
      SUBDIR += firefox36
      SUBDIR += fluxbb
      SUBDIR += flyspray
