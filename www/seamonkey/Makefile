@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.121 2012/11/25 13:49:47 landry Exp $
+# $OpenBSD: Makefile,v 1.122 2012/12/04 21:17:29 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
 COMMENT-enigmail =	Mozilla Seamonkey GnuPG extension
 BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
 
-MOZILLA_VERSION=	2.14
+MOZILLA_VERSION=	2.14.1
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	suite
@@ -17,6 +17,8 @@ ENIG_V =		1.4.6
 PKGNAME-enigmail =	enigmail-seamonkey-${ENIG_V}
 EPOCH-lightning =	0
 EPOCH-enigmail =	0
+REVISION-lightning =	0
+REVISION-enigmail =	0
 
 #MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_PROJECT}/nightly/${MOZILLA_VERSION}-candidates/build1/source/
 MASTER_SITES0 =	http://www.mozilla-enigmail.org/download/source/
@@ -46,40 +48,22 @@ NO_REGRESS=	Yes
 MODGNU_CONFIG_GUESS_DIRS +=	${WRKSRC}/ldap/sdks/c-sdk/config/autoconf
 
 CONFIGURE_STYLE =	autoconf no-autoheader
-CONFIGURE_ARGS +=	--enable-official-branding
-CONFIGURE_ARGS +=	--with-system-libevent=/usr/
-CONFIGURE_ARGS +=	--with-system-bz2=${LOCALBASE}
-WANTLIB +=	event
-
-# bug #736961
-SEPARATE_BUILD =	Yes
-
-# XXX needed since 2.7b?, relocation overflow otherwise...
-# replaces -g by -Os
-.if ${MACHINE_ARCH} == "powerpc"
-CONFIGURE_ENV +=	MOZ_DEBUG_FLAGS="-Os"
-.endif
-
-# needed for webm
-.if ${MACHINE_ARCH:Mi386} || ${MACHINE_ARCH:Mamd64}
-BUILD_DEPENDS +=	devel/yasm
-.endif
+# to remove in 2.15
+CONFIGURE_ARGS +=	--with-system-jpeg=${LOCALBASE}
+WANTLIB +=	jpeg
 
 LIB_DEPENDS-lightning = STEM->=${MOZILLA_VERSION:S/b/beta/}:${BUILD_PKGPATH},-main
 WANTLIB-lightning =	lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/xpcom \
 			lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/xul \
 			lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/mozalloc \
 			c m stdc++ nspr4 plc4 plds4 pthread
-BUILD_DEPENDS +=	archivers/unzip #to unzip xpi
 
 RUN_DEPENDS-enigmail =	security/gnupg
 LIB_DEPENDS-enigmail =	${LIB_DEPENDS-lightning}
 WANTLIB-enigmail =	${WANTLIB-lightning}
 
 # build lightning xpi
-CONFIGURE_ARGS +=	--enable-calendar \
-			--enable-gio \
-			--disable-gconf
+CONFIGURE_ARGS +=	--enable-calendar
 
 ALL_TARGET =	default
 
