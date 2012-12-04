@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2012/11/30 19:38:09 chrisz Exp $
+# $OpenBSD: Makefile,v 1.11 2012/12/04 07:01:07 chrisz Exp $
 
 COMMENT=	XML extension types for Objective Caml
 CATEGORIES=	lang textproc
 
-BROKEN=		"needs update to match OCaml 3.11"
-V=		3.09.2pl1
+BROKEN=		"needs update to match OCaml 4.00"
+
+V=		3.12.1.0
 DISTNAME=	ocamlduce-${V}
-REVISION=	1
-MASTER_SITES=	http://pauillac.inria.fr/~frisch/ocamlcduce/download/
+MASTER_SITES=	https://forge.ocamlcore.org/frs/download.php/644/
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 HOMEPAGE=	http://www.cduce.org/ocaml.html
@@ -20,15 +20,18 @@ PERMIT_DISTFILES_CDROM=	Yes
 MODULES=	lang/ocaml
 WANTLIB=	curses m c pthread
 
+BUILD_DEPENDS+=	sysutils/findlib
+
 NO_REGRESS= 	Yes
 USE_GMAKE=	Yes
-MAKE_FLAGS=	CAMLC=ocamlc${MODOCAML_NATIVE:S,Yes,.opt,:S,No,,}
-ALL_TARGET=	all ${MODOCAML_NATIVE:S,Yes,opt,:S,No,,}
 
-BUILD_DEPENDS=	sysutils/findlib
-RUN_DEPENDS=	sysutils/findlib
+ALL_TARGET =		world
+INSTALL_TARGET = 	installbyte
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mocaml_native}
+ALL_TARGET +=		world.opt
+INSTALL_TARGET += 	installopt
+.endif
 
-pre-fake:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/ocaml/site-lib
 
 .include <bsd.port.mk>
