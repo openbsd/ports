@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.218 2012/11/24 10:21:50 landry Exp $
+# $OpenBSD: Makefile,v 1.219 2012/12/04 21:24:33 landry Exp $
 
 COMMENT =	Mozilla web browser
 BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
@@ -6,7 +6,7 @@ BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
 # Don't forget to bump www/firefox-i18n after updates.
 # Don't forget to update devel/xulrunner/2.0 if patches changes.
 
-MOZILLA_VERSION =	17.0
+MOZILLA_VERSION =	17.0.1
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
@@ -34,14 +34,11 @@ MODPY_RUNDEP =	No
 USE_GROFF =	Yes
 # Regression tests are too hard to adapt to run here
 NO_REGRESS =	Yes
-SEPARATE_BUILD =	Yes
 
 CONFIGURE_STYLE =	autoconf no-autoheader
-CONFIGURE_ARGS +=	--enable-official-branding
-CONFIGURE_ARGS +=	--with-system-libevent=/usr/ --disable-gconf
-CONFIGURE_ARGS +=	--enable-gio
-CONFIGURE_ARGS +=	--with-system-bz2=${LOCALBASE}
-WANTLIB +=	event
+# to remove in 18
+CONFIGURE_ARGS +=	--with-system-jpeg=${LOCALBASE}
+WANTLIB +=	jpeg
 
 CONFIGURE_ARGS +=	--enable-gstreamer
 LIB_DEPENDS +=	multimedia/gstreamer-0.10/plugins-base
@@ -51,26 +48,6 @@ WANTLIB += gstvideo-0.10 xml2
 
 RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-good
 
-.if ${MACHINE_ARCH:Msparc64}
-CONFIGURE_ARGS +=	--disable-tracejit --disable-methodjit
-.endif
-
-# XXX needed since 15.0b5, relocation overflow otherwise...
-# replaces -g by -Os
-.if ${MACHINE_ARCH} == "powerpc"
-CONFIGURE_ENV +=	MOZ_DEBUG_FLAGS="-Os"
-.endif
-
-# needed for webm
-.if ${MACHINE_ARCH:Mi386} || ${MACHINE_ARCH:Mamd64}
-BUILD_DEPENDS +=	devel/yasm
-.endif
-
-# needed during make install
-BUILD_DEPENDS +=	archivers/unzip
-
-# ensure we depend on cairo with tee backend enabled
-LIB_DEPENDS +=	graphics/cairo>=1.10.2p0
 # --with-system-png=${LOCALBASE}
 # no system png : apng support not bundled in
 
