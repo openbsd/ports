@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2012/11/05 20:20:07 kili Exp $
+# $OpenBSD: Makefile,v 1.86 2012/12/04 06:30:20 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -32,8 +32,8 @@ PSEUDO_FLAVORS =	no_doc
 FLAVOR ?=
 MULTI_PACKAGES =	-main -doc
 
-# BSD w/o advertising clause.
-# Distfile is bundled with other stuff like libffi, libgmp, mingw
+# BSD w/o advertising clause + LGPLv3 (from libgmp).
+# Distfile is bundled with other stuff like libffi, mingw
 # binaries, with BSD, GPLv2 and Perl artistic license.
 PERMIT_PACKAGE_CDROM =		Yes
 PERMIT_PACKAGE_FTP =		Yes
