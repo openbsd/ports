@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/07/19 08:36:45 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/12/04 21:48:27 sthen Exp $
 @bin bin/dig
 @bin bin/host
 bin/isc-config.sh
@@ -315,6 +315,7 @@ lib/liblwres.la
 @man man/man8/dnssec-revoke.8
 @man man/man8/dnssec-settime.8
 @man man/man8/dnssec-signzone.8
+@man man/man8/dnssec-verify.8
 @man man/man8/genrandom.8
 @man man/man8/isc-hmac-fixup.8
 @man man/man8/lwresd.8
@@ -334,6 +335,7 @@ lib/liblwres.la
 @bin sbin/dnssec-revoke
 @bin sbin/dnssec-settime
 @bin sbin/dnssec-signzone
+@bin sbin/dnssec-verify
 @bin sbin/genrandom
 @bin sbin/isc-hmac-fixup
 @bin sbin/lwresd
