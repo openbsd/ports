@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2012/11/30 19:08:05 chrisz Exp $
+# $OpenBSD: Makefile,v 1.27 2012/12/04 06:54:25 chrisz Exp $
 
 # build system needs per-arch tweaks
 ONLY_FOR_ARCHS = amd64 i386 powerpc
@@ -7,11 +7,11 @@ COMMENT=	framework for analysis and transformation of C
 CATEGORIES =	devel lang
 
 DISTNAME =	cil-1.5.1
-REVISION =      3
+REVISION =      4
 EXTRACT_SUFX =	.tar.gz
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=cil/}
 
-HOMEPAGE=	http://www.eecs.berkeley.edu/~necula/cil/
+HOMEPAGE=	http://kerneis.github.com/cil/
 
 # BSD license
 PERMIT_PACKAGE_CDROM=	Yes
