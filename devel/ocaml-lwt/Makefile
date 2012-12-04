@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2012/11/30 19:08:05 chrisz Exp $
+# $OpenBSD: Makefile,v 1.7 2012/12/04 06:57:39 chrisz Exp $
 
 COMMENT =	cooperative lightweight thread library
 CATEGORIES =	devel
 
-DISTNAME =	lwt-2.4.1
+DISTNAME =	lwt-2.4.2
 PKGNAME =	ocaml-${DISTNAME}
-REVISION =	1
 MASTER_SITES =	http://ocsigen.org/download/
 
 HOMEPAGE =	http://ocsigen.org/lwt/
@@ -17,25 +16,18 @@ PERMIT_PACKAGE_CDROM =		Yes
 PERMIT_DISTFILES_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 
-MODULES =	devel/gettext \
-		lang/ocaml
+MODULES =	lang/ocaml
 
 MYDEPENDS =	devel/ocaml-react \
 		textproc/ocaml-text \
 		security/ocaml-ssl
-BUILD_DEPENDS =	${MYDEPENDS} \
-		sysutils/findlib
-RUN_DEPENDS =	${MYDEPENDS} \
-		lang/ocaml
-LIB_DEPENDS =	devel/glib2 \
-		devel/libev
-WANTLIB =	glib-2.0 ev pthread
+BUILD_DEPENDS =	${MYDEPENDS} sysutils/findlib
+RUN_DEPENDS =	${MYDEPENDS}
+LIB_DEPENDS =	devel/glib2 devel/libev converters/libiconv
+WANTLIB =	glib-2.0 ev iconv intl pthread
 
 CONFIGURE_STYLE =	oasis
-CONFIGURE_ARGS =--enable-tests \
-		--enable-react \
-		--enable-glib \
-		--enable-ssl
+CONFIGURE_ARGS =	--enable-tests --enable-react --enable-glib --enable-ssl
 USE_GMAKE =	Yes
 
 
