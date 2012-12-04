@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.200 2012/11/20 15:05:44 pascal Exp $
+$OpenBSD: user.list,v 1.201 2012/12/04 16:29:26 florian Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -217,3 +217,4 @@ id  user		group		port options
 706 _graphite		_graphite	databases/py-carbon
 707 _spiped		_spiped		security/spiped
 708 _wesnothd		_wesnothd	games/wesnoth
+709 _dnsfilter		_dnsfilter	net/dnsfilter
