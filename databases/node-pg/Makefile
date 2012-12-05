@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2012/07/12 21:42:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2012/12/05 00:42:38 abieber Exp $
 
 COMMENT =	postgresql client for Node.js
 
 NPM_VERSION =	0.7.1
 NPM_NAME =	pg
-REVISION =	0
+REVISION =	1
 CATEGORIES =	databases
 
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
