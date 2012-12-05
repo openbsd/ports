@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.589 2012/12/04 21:10:12 landry Exp $
+# $OpenBSD: Makefile,v 1.590 2012/12/05 07:41:54 rpe Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -486,6 +486,7 @@
      SUBDIR += surf
      SUBDIR += surfraw
      SUBDIR += swfdec-plugin
+     SUBDIR += swiggle
      SUBDIR += syweb
      SUBDIR += thttpd
      SUBDIR += tidyp
