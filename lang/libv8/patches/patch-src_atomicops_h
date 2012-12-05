@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_atomicops_h,v 1.1 2012/12/05 01:07:45 abieber Exp $
+--- src/atomicops.h.orig	Tue Dec  4 18:00:55 2012
++++ src/atomicops.h	Tue Dec  4 18:01:52 2012
+@@ -69,7 +69,11 @@ typedef intptr_t Atomic64;
+ 
+ // Use AtomicWord for a machine-sized pointer.  It will use the Atomic32 or
+ // Atomic64 routines below, depending on your architecture.
++#if defined(__OpenBSD__) && defined(__i386__)
++typedef Atomic32 AtomicWord;
++#else
+ typedef intptr_t AtomicWord;
++#endif
+ 
+ // Atomically execute:
+ //      result = *ptr;
