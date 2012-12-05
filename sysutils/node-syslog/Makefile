@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2012/10/12 15:34:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2012/12/05 00:54:54 abieber Exp $
 
 COMMENT =	module to support sending messages to syslog
 
 NPM_VERSION =	1.1.6
 NPM_NAME =	node-syslog
 CATEGORIES =	sysutils
+
+REVISION = 0
 
 HOMEPAGE =	http://github.com/schamane/node-syslog
 
@@ -21,5 +23,8 @@ MODULES =		lang/node
 CONFIGURE_STYLE =	npm ext
 
 NO_REGRESS =		Yes
+
+pre-configure:
+	${SUBST_CMD} ${WRKDIST}/binding.gyp
 
 .include <bsd.port.mk>
