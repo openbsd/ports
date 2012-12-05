@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2012/09/28 01:04:14 abieber Exp $
+# $OpenBSD: Makefile,v 1.11 2012/12/05 00:40:27 abieber Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
@@ -12,6 +12,8 @@ NODE_VERSION=	v0.8.11
 
 DISTNAME=	node-${NODE_VERSION}
 PKGNAME=	${DISTNAME:S/v//g}
+
+REVISION=0
 
 CATEGORIES=	lang devel
 
@@ -37,7 +39,9 @@ LIB_DEPENDS=	devel/libexecinfo
 
 USE_GMAKE=	Yes
 
-BUILD_DEPENDS=	sysutils/flock
+BUILD_DEPENDS=	sysutils/flock \
+		lang/libv8
+
 # node-gyp uses it at runtime
 RUN_DEPENDS=	devel/gmake \
 		sysutils/flock
@@ -48,10 +52,12 @@ MODPY_ADJ_FILES= tools/node-waf \
 REGRESS_TARGET= test
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS= --openssl-use-sys \
-		--shared-zlib
+		--shared-zlib \
+		--shared-v8
 
 SUBST_VARS+=	CFLAGS
 SUBST_VARS+= 	PREFIX
+SUBST_VARS+= 	LOCALBASE
 SUBST_VARS+= 	DISTFILES
 
 MAKE_ENV+=	V=1 CXX=c++ CCFLAGS+="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
@@ -63,7 +69,8 @@ pre-configure:
 	ln -sf ${LOCALBASE}/bin/python${MODPY_VERSION} ${WRKDIR}/bin/python
 	${SUBST_CMD} ${WRKDIST}/lib/module.js \
 		${WRKDIST}/deps/npm/node_modules/node-gyp/lib/configure.js \
-		${WRKDIST}/deps/npm/node_modules/node-gyp/lib/install.js
+		${WRKDIST}/deps/npm/node_modules/node-gyp/lib/install.js \
+		${WRKDIST}/common.gypi
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \

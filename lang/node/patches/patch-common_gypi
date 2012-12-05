@@ -1,0 +1,17 @@
+$OpenBSD: patch-common_gypi,v 1.3 2012/12/05 00:40:28 abieber Exp $
+--- common.gypi.orig	Thu Sep 27 10:39:23 2012
++++ common.gypi	Tue Oct  9 13:01:32 2012
+@@ -161,9 +161,12 @@
+         ],
+       }],
+       [ 'OS=="linux" or OS=="freebsd" or OS=="openbsd" or OS=="solaris"', {
+-        'cflags': [ '-Wall', '-pthread', ],
++        'cflags': [ '-Wall', '-pthread', '-I${LOCALBASE}/include'],
+         'cflags_cc': [ '-fno-rtti', '-fno-exceptions' ],
+         'ldflags': [ '-pthread', '-rdynamic' ],
++        'libraries': [
++          '-L${LOCALBASE}/lib'
++        ],
+         'conditions': [
+           [ 'target_arch=="ia32"', {
+             'cflags': [ '-m32' ],

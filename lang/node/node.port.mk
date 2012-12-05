@@ -1,4 +1,4 @@
-# $OpenBSD: node.port.mk,v 1.1.1.1 2012/05/23 15:11:43 jasper Exp $
+# $OpenBSD: node.port.mk,v 1.2 2012/12/05 00:40:28 abieber Exp $
 
 # node module
 
@@ -16,8 +16,9 @@ RUN_DEPENDS += 		lang/node>=0.6.17p2
 ERRORS +=	"Fatal: Should not have PKG_ARCH=* when compiling extensions"
 .    endif
 SHARED_ONLY =	Yes
-# All node extensions appear to link against these two libraries
-WANTLIB +=	m stdc++
+# All node extensions appear to link against these libraries
+WANTLIB +=	m stdc++ v8 crypto pthread ssl z
+LIB_DEPENDS +=	lang/libv8
 .  else
 # Node libraries that don't contain C++ extensions should run on
 # any arch.
