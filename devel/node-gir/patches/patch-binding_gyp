@@ -1,0 +1,12 @@
+$OpenBSD: patch-binding_gyp,v 1.1 2012/12/05 00:47:53 abieber Exp $
+--- binding.gyp.orig	Wed Jul 25 05:02:50 2012
++++ binding.gyp	Sat Oct 13 13:34:01 2012
+@@ -15,7 +15,7 @@
+                 'src/types/function.cc'
+             ],
+             'conditions': [
+-                ['OS=="linux"',
++                ['OS=="linux" or OS=="openbsd"',
+                     {
+                         'libraries': [
+                             '<!@(pkg-config --libs glib-2.0 gobject-introspection-1.0)'
