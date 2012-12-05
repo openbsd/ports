@@ -1,0 +1,4 @@
+swiggle is a small command line tool that generates HTML pages, 
+including thumbnail indexes, for given images (a so called 
+"web gallery"). It's intended to be easy to use, and since 
+it is written in C, it's quite speedy.
