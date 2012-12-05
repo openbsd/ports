@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2012/10/13 12:13:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2012/12/05 13:14:52 gonzalo Exp $
 
 COMMENT=	open-source electronics prototyping platform
 
-V=		1.0.1
+V=		1.0.2
 PKGNAME=	arduino-${V}
 DISTNAME=	arduino-${V}-src
-REVISION=	0
 EPOCH=		0
 CATEGORIES=	devel
 HOMEPAGE=	http://www.arduino.cc/
