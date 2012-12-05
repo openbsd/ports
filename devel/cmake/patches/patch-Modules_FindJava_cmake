@@ -1,6 +1,6 @@
-$OpenBSD: patch-Modules_FindJava_cmake,v 1.9 2012/11/15 08:43:25 dcoppa Exp $
---- Modules/FindJava.cmake.orig	Tue Nov  6 20:41:36 2012
-+++ Modules/FindJava.cmake	Mon Nov 12 14:01:59 2012
+$OpenBSD: patch-Modules_FindJava_cmake,v 1.10 2012/12/05 11:32:04 dcoppa Exp $
+--- Modules/FindJava.cmake.orig	Tue Nov 27 14:26:32 2012
++++ Modules/FindJava.cmake	Wed Dec  5 10:19:25 2012
 @@ -56,6 +56,8 @@
  # (To distribute this file outside of CMake, substitute the full
  #  License text for the above reference.)
@@ -38,8 +38,6 @@ $OpenBSD: patch-Modules_FindJava_cmake,v 1.9 2012/11/15 08:43:25 dcoppa Exp $
 +  endif(MODJAVA_VER MATCHES "^1\\.6$")
 +else(MODJAVA_VER)
 +  set(_JAVA_PATHS
-+    ${LOCALBASE}/jdk-1.7.0/bin
-+    ${LOCALBASE}/jdk-1.6.0/bin
 +    /usr/lib/java/bin
 +    /usr/share/java/bin
 +    /usr/local/java/bin
@@ -49,6 +47,8 @@ $OpenBSD: patch-Modules_FindJava_cmake,v 1.9 2012/11/15 08:43:25 dcoppa Exp $
 +    /usr/java/j2sdk1.4.2_09/bin
 +    /usr/lib/j2sdk1.5-sun/bin
 +    /opt/sun-jdk-1.5.0.04/bin
++    ${LOCALBASE}/jdk-1.7.0/bin
++    ${LOCALBASE}/jdk-1.6.0/bin
 +    )
 +endif(MODJAVA_VER)
  find_program(Java_JAVA_EXECUTABLE

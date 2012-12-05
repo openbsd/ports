@@ -1,6 +1,6 @@
-$OpenBSD: patch-Modules_FindJNI_cmake,v 1.7 2012/11/15 08:43:25 dcoppa Exp $
---- Modules/FindJNI.cmake.orig	Tue Nov  6 20:41:36 2012
-+++ Modules/FindJNI.cmake	Tue Nov 13 15:17:12 2012
+$OpenBSD: patch-Modules_FindJNI_cmake,v 1.8 2012/12/05 11:32:04 dcoppa Exp $
+--- Modules/FindJNI.cmake.orig	Tue Nov 27 14:26:32 2012
++++ Modules/FindJNI.cmake	Wed Dec  5 10:18:21 2012
 @@ -26,6 +26,8 @@
  # (To distribute this file outside of CMake, substitute the full
  #  License text for the above reference.)
@@ -23,7 +23,7 @@ $OpenBSD: patch-Modules_FindJNI_cmake,v 1.7 2012/11/15 08:43:25 dcoppa Exp $
      endif()
  
      # Sometimes ${CMAKE_SYSTEM_PROCESSOR} is added to the list to prefer
-@@ -88,39 +92,63 @@ endmacro()
+@@ -88,39 +92,64 @@ endmacro()
  get_filename_component(java_install_version
    "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit;CurrentVersion]" NAME)
  
@@ -90,10 +90,6 @@ $OpenBSD: patch-Modules_FindJNI_cmake,v 1.7 2012/11/15 08:43:25 dcoppa Exp $
 +    ${_JAVA_HOME}/jre/lib
 +    ${_JAVA_HOME}/lib
 +    ${_JAVA_HOME}
-+    ${LOCALBASE}/jdk-1.7.0/jre/lib/{libarch}
-+    ${LOCALBASE}/jre-1.7.0/lib/{libarch}
-+    ${LOCALBASE}/jdk-1.6.0/jre/lib/{libarch}
-+    ${LOCALBASE}/jre-1.6.0/lib/{libarch}
 +    /usr/lib
 +    /usr/local/lib
 +    /usr/lib/jvm/java/lib
@@ -113,12 +109,17 @@ $OpenBSD: patch-Modules_FindJNI_cmake,v 1.7 2012/11/15 08:43:25 dcoppa Exp $
 +    /usr/lib/jvm/default-java/jre/lib/{libarch}
 +    /usr/lib/jvm/default-java/jre/lib
 +    /usr/lib/jvm/default-java/lib
++    # OpenBSD specific paths for default JVM
++    ${LOCALBASE}/jdk-1.7.0/jre/lib/{libarch}
++    ${LOCALBASE}/jre-1.7.0/lib/{libarch}
++    ${LOCALBASE}/jdk-1.6.0/jre/lib/{libarch}
++    ${LOCALBASE}/jre-1.6.0/lib/{libarch}
 +    )
 +endif(MODJAVA_VER)
  
  set(JAVA_JVM_LIBRARY_DIRECTORIES)
  foreach(dir ${JAVA_AWT_LIBRARY_DIRECTORIES})
-@@ -132,29 +160,47 @@ foreach(dir ${JAVA_AWT_LIBRARY_DIRECTORIES})
+@@ -132,29 +161,48 @@ foreach(dir ${JAVA_AWT_LIBRARY_DIRECTORIES})
      )
  endforeach()
  
@@ -143,8 +144,6 @@ $OpenBSD: patch-Modules_FindJNI_cmake,v 1.7 2012/11/15 08:43:25 dcoppa Exp $
 +    "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\1.3;JavaHome]/include"
 +    "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\${java_install_version};JavaHome]/include"
 +    ${_JAVA_HOME}/include
-+    ${LOCALBASE}/jdk-1.7.0/include
-+    ${LOCALBASE}/jdk-1.6.0/include
 +    /usr/include
 +    /usr/local/include
 +    /usr/lib/java/include
@@ -160,6 +159,9 @@ $OpenBSD: patch-Modules_FindJNI_cmake,v 1.7 2012/11/15 08:43:25 dcoppa Exp $
 +    /opt/sun-jdk-1.5.0.04/include
 +    # Debian specific path for default JVM
 +    /usr/lib/jvm/default-java/include
++    # OpenBSD specific path for default JVM
++    ${LOCALBASE}/jdk-1.7.0/include
++    ${LOCALBASE}/jdk-1.6.0/include
 +    )
 +endif(MODJAVA_VER)
  
@@ -188,7 +190,7 @@ $OpenBSD: patch-Modules_FindJNI_cmake,v 1.7 2012/11/15 08:43:25 dcoppa Exp $
  foreach(JAVA_PROG "${JAVA_RUNTIME}" "${JAVA_COMPILE}" "${JAVA_ARCHIVE}")
    get_filename_component(jpath "${JAVA_PROG}" PATH)
    foreach(JAVA_INC_PATH ../include ../java/include ../share/java/include)
-@@ -227,6 +273,7 @@ find_path(JAVA_INCLUDE_PATH2 jni_md.h
+@@ -227,6 +275,7 @@ find_path(JAVA_INCLUDE_PATH2 jni_md.h
    ${JAVA_INCLUDE_PATH}/win32
    ${JAVA_INCLUDE_PATH}/linux
    ${JAVA_INCLUDE_PATH}/freebsd
