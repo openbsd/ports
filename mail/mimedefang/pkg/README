@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2012/06/01 15:35:48 ajacoutot Exp $
+$OpenBSD: README,v 1.5 2012/12/05 18:51:56 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -29,5 +29,4 @@ relays. The content of this file is generated using:
 
 Start-up order
 ==============
-Be sure to start mimedefang_multiplexor before mimedefang_daemon in
-rc.local(8).
+Be sure to start mimedefang_multiplexor before mimedefang in rc.local(8).

@@ -1,6 +1,6 @@
-$OpenBSD: patch-examples_mimedefang-filter-openbsd-ports,v 1.3 2012/09/18 15:34:39 ajacoutot Exp $
---- examples/mimedefang-filter-openbsd-ports.orig	Tue Sep 18 17:05:15 2012
-+++ examples/mimedefang-filter-openbsd-ports	Tue Sep 18 17:06:36 2012
+$OpenBSD: patch-examples_mimedefang-filter-openbsd-ports,v 1.4 2012/12/05 18:51:56 ajacoutot Exp $
+--- examples/mimedefang-filter-openbsd-ports.orig	Wed Dec  5 12:02:27 2012
++++ examples/mimedefang-filter-openbsd-ports	Wed Dec  5 12:03:24 2012
 @@ -3,9 +3,6 @@
  #
  # mimedefang-filter
@@ -85,7 +85,7 @@ $OpenBSD: patch-examples_mimedefang-filter-openbsd-ports,v 1.3 2012/09/18 15:34:
  
      # Block message/partial parts
      if (lc($type) eq "message/partial") {
-@@ -316,6 +323,28 @@ sub filter_end {
+@@ -316,7 +323,40 @@ sub filter_end {
      # by marginal software.  Your call.
  
      # action_rebuild();
@@ -112,5 +112,17 @@ $OpenBSD: patch-examples_mimedefang-filter-openbsd-ports,v 1.3 2012/09/18 15:34:
 +#	}
 +#    }
  }
++
++# Uncomment to disable filtering mails sent from localhost
++# (mimedefang(8) must be stated with the `-r' flag).
++#sub filter_relay {
++#    my ($ip, $name) = @_;
++#    if ($ip eq '127.0.0.1') {
++#        return ('ACCEPT_AND_NO_MORE_FILTERING', "ok");
++#    }
++#
++#    return ('CONTINUE', "ok");
++#}
  
  # DO NOT delete the next line, or Perl will complain.
+ 1;
