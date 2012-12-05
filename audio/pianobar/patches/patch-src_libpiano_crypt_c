@@ -1,10 +1,7 @@
-$OpenBSD: patch-src_libpiano_crypt_c,v 1.5 2012/09/23 10:18:21 dcoppa Exp $
+$OpenBSD: patch-src_libpiano_crypt_c,v 1.6 2012/12/05 12:20:43 dcoppa Exp $
 
 Work around libgcrypt deprecation warnings. See:
 http://lists.gnupg.org/pipermail/gcrypt-devel/2011-July/001830.html
-
-Fix memory leak pointed out by clang
-(upstream git commit fe1ffbd7257b4c0dd43a825912bcd65732df6db2)
 
 --- src/libpiano/crypt.c.orig	Fri Sep  7 16:44:39 2012
 +++ src/libpiano/crypt.c	Sun Sep 23 12:11:36 2012
@@ -18,19 +15,3 @@ Fix memory leak pointed out by clang
  #include <stdio.h>
  #include <stdlib.h>
  #include <stdint.h>
-@@ -57,6 +59,7 @@ char *PianoDecryptString (gcry_cipher_hd_t h, const ch
- 
- 	gret = gcry_cipher_decrypt (h, output, outputLen, NULL, 0);
- 	if (gret) {
-+		free (output);
- 		return NULL;
- 	}
- 
-@@ -82,6 +85,7 @@ char *PianoEncryptString (gcry_cipher_hd_t h, const ch
- 
- 	gret = gcry_cipher_encrypt (h, paddedInput, paddedInputLen, NULL, 0);
- 	if (gret) {
-+		free (paddedInput);
- 		return NULL;
- 	}
- 
