@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/10/13 15:09:58 abieber Exp $
+# $OpenBSD: Makefile,v 1.2 2012/12/05 00:34:03 abieber Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=	V8 JavaScript for clients and servers
 
-V8_VERSION=	3.14.0
+V8_VERSION=	3.12.19
 V8_ARCH= ${PKG_ARCH:S/amd64/x64/:S/i386/ia32/}
 V8_RELEASE= release
+
+EPOCH=0
 
 DISTNAME=	v8-${V8_VERSION}
 PKGNAME= lib${DISTNAME}
