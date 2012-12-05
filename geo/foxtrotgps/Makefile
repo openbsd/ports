@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2012/10/12 15:38:12 kirby Exp $
+# $OpenBSD: Makefile,v 1.4 2012/12/05 08:41:30 kirby Exp $
 
 COMMENT =		lightweight mapping application for use with or without GPS
 
 DISTNAME =		foxtrotgps-1.1.1
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		geo x11
 
@@ -30,7 +30,8 @@ WANTLIB += xcb xcb-render xcb-shm xml2 z
 
 MODULES = 		devel/gettext \
 			lang/python \
-			devel/gconf2
+			devel/gconf2 \
+			textproc/intltool
 
 LIB_DEPENDS =		devel/libglade2 \
 			graphics/libexif \
