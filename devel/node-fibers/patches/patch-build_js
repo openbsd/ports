@@ -1,0 +1,17 @@
+$OpenBSD: patch-build_js,v 1.1 2012/12/05 00:45:05 abieber Exp $
+--- build.js.orig	Tue Nov 27 08:13:04 2012
++++ build.js	Tue Nov 27 08:15:13 2012
+@@ -24,7 +24,12 @@ if (!{ia32: true, x64: true, arm: true}.hasOwnProperty
+ }
+ 
+ // Test for pre-built library
+-var modPath = platform+ '-'+ arch+ '-v8-'+ v8;
++var modPath;
++if ( platform === 'openbsd' ) {
++  modPath = ""
++} else {
++  modPath = platform+ '-'+ arch+ '-v8-'+ v8;
++}
+ if (!force) {
+ 	try {
+ 		fs.statSync(path.join(__dirname, 'bin', modPath, 'fibers.node'));

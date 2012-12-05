@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2012/07/12 21:42:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2012/12/05 00:45:05 abieber Exp $
 
 # Currently node itself is only for amd64 and i386, but
 # the coroutine library this uses only works on amd64
@@ -10,7 +10,7 @@ COMMENT =	fiber/coroutine support for Node.js
 
 NPM_VERSION =	0.6.8
 NPM_NAME =	fibers
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel
 
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
@@ -32,6 +32,9 @@ SUBST_VARS =		FIBERS_ARCH
 
 MODNODE_DEPENDS ?= 	node-gyp
 REGRESS_DEPENDS =	${BUILD_PKGPATH}
+
+pre-configure:
+	${SUBST_CMD} ${WRKDIST}/binding.gyp
 
 do-regress:
 	cd ${WRKDIST} && node test.js
