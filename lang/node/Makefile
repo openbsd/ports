@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2012/12/05 00:40:27 abieber Exp $
+# $OpenBSD: Makefile,v 1.12 2012/12/06 22:51:08 abieber Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
@@ -13,7 +13,7 @@ NODE_VERSION=	v0.8.11
 DISTNAME=	node-${NODE_VERSION}
 PKGNAME=	${DISTNAME:S/v//g}
 
-REVISION=0
+REVISION=1
 
 CATEGORIES=	lang devel
 
@@ -33,14 +33,14 @@ MODULES=	lang/python
 
 VMEM_WARNING=	Yes
 
-WANTLIB +=	c crypto execinfo kvm m pthread ssl stdc++ util z
+WANTLIB +=	c crypto execinfo kvm m pthread ssl stdc++ util v8 z
 
-LIB_DEPENDS=	devel/libexecinfo
+LIB_DEPENDS=	devel/libexecinfo \
+		lang/libv8
 
 USE_GMAKE=	Yes
 
-BUILD_DEPENDS=	sysutils/flock \
-		lang/libv8
+BUILD_DEPENDS=	sysutils/flock
 
 # node-gyp uses it at runtime
 RUN_DEPENDS=	devel/gmake \
