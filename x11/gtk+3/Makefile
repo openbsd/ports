@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2012/12/06 15:12:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.54 2012/12/06 15:43:21 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -46,8 +46,8 @@ WANTLIB += xcb xcb-render xcb-shm z stdc++ atk-bridge-2.0 atspi
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/gtk+/${V:C/^([0-9]+\.[0-9]+).*/\1/}/}
 
 MULTI_PACKAGES=	-main -cups
-# XXX don't pull in spidermonkey (via colord/polkit); not ported to mips64el
-NOT_FOR_ARCHS-cups=mips64el 
+# sync with devel/spidermonkey
+ONLY_FOR_ARCHS-cups=	i386 amd64 powerpc sparc64
 
 MODULES=	devel/gettext \
 		devel/dconf

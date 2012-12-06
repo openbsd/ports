@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2012/11/12 20:45:32 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2012/12/06 15:43:21 jasper Exp $
 
 SHARED_ONLY=	Yes
 # 1.8.5 is based on ffx 10 engine, broken at runtime on sparc64
 # but let's keep it to build more packages
+# XXX: sync with x11/gtk+3
 ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64
 
 COMMENT =	Mozilla C implementation of JavaScript
