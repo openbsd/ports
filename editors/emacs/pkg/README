@@ -1,0 +1,17 @@
+$OpenBSD: README,v 1.1 2012/12/06 15:46:11 jasper Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+D-Bus possible issues
+=====================
+You may experience a bug in graphical Emacs sessions (freeze/crash at
+exit time).  Ensuring you have a D-Bus user session started should fix
+this.  See the D-Bus pkg-readme.
+
+Dired and ls(1)
+===============
+Dired attempts to use the --dired GNU ls(1) switch, which OpenBSD ls(1)
+doesn't support.  Read info '(emacs) Dired Enter' and
+'(emacs) ls in Lisp'.  GNU ls is available in the coreutils package.
