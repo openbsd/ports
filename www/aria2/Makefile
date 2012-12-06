@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2012/09/04 11:25:37 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.20 2012/12/06 15:04:15 gonzalo Exp $
 
 COMMENT =		lightweight multi-protocol & multi-source download utility
-DISTNAME =		aria2-1.15.2
+DISTNAME =		aria2-1.16.0
 CATEGORIES =		www
 HOMEPAGE =		http://aria2.sourceforge.net/
 
-MAINTAINER = 		Remi Pointel <rpointel@openbsd.org>
+MAINTAINER =		Gonzalo L. R. <gonzalo@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
