@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/09/20 13:42:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/12/06 16:47:36 ajacoutot Exp $
 %%SHARED%%
 @bin bin/hb-ot-shape-closure
 @bin bin/hb-shape
@@ -16,6 +16,7 @@ include/harfbuzz/hb-ot-layout.h
 include/harfbuzz/hb-ot-tag.h
 include/harfbuzz/hb-ot.h
 include/harfbuzz/hb-set.h
+include/harfbuzz/hb-shape-plan.h
 include/harfbuzz/hb-shape.h
 include/harfbuzz/hb-unicode.h
 include/harfbuzz/hb-version.h
