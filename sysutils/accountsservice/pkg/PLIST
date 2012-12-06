@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/09/27 05:53:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/12/06 14:35:48 ajacoutot Exp $
 @unexec-delete rm -rf /var/db/AccountsService/icons/*
 @unexec-delete rm -rf /var/db/AccountsService/users/*
 %%SHARED%%
@@ -26,6 +26,21 @@ share/examples/accountsservice/dbus-1/system.d/org.freedesktop.Accounts.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/org.freedesktop.Accounts.conf
 share/gir-1.0/
 share/gir-1.0/AccountsService-1.0.gir
+share/gtk-doc/
+share/gtk-doc/html/
+share/gtk-doc/html/libaccountsservice/
+share/gtk-doc/html/libaccountsservice/ActUser.html
+share/gtk-doc/html/libaccountsservice/ActUserManager.html
+share/gtk-doc/html/libaccountsservice/api-index-full.html
+share/gtk-doc/html/libaccountsservice/ch01.html
+share/gtk-doc/html/libaccountsservice/home.png
+share/gtk-doc/html/libaccountsservice/index.html
+share/gtk-doc/html/libaccountsservice/index.sgml
+share/gtk-doc/html/libaccountsservice/left.png
+share/gtk-doc/html/libaccountsservice/libaccountsservice.devhelp2
+share/gtk-doc/html/libaccountsservice/right.png
+share/gtk-doc/html/libaccountsservice/style.css
+share/gtk-doc/html/libaccountsservice/up.png
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/accounts-service.mo
