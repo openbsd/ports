@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.152 2012/09/24 04:47:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.153 2012/12/06 08:13:23 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	multi-platform graphical toolkit
 COMMENT-guic=	gtk+ icon theme caching utility
 
-V=		2.24.13
+V=		2.24.14
 DISTNAME=	gtk+-${V}
 
 PKGNAME-main=	gtk+2-${V}
