@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2012/11/13 08:17:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2012/12/06 06:56:08 jasper Exp $
 
 COMMENT=		font viewer for GNOME
 
 GNOME_PROJECT=		gnome-font-viewer
-GNOME_VERSION=		3.6.1
+GNOME_VERSION=		3.6.2
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
