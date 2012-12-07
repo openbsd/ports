@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.29 2012/09/25 21:58:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2012/12/07 13:01:05 sthen Exp $
 
      SUBDIR =
-     SUBDIR += appkonference
      SUBDIR += asterisk
      SUBDIR += asterisk-g729
      SUBDIR += asterisk-openbsd-moh
