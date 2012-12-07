@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2012/11/11 19:00:02 ajacoutot Exp $
-
-BROKEN=		https://bugzilla.gnome.org/show_bug.cgi?id=688095
+# $OpenBSD: Makefile,v 1.5 2012/12/07 08:13:52 ajacoutot Exp $
 
 COMMENT=	C++ binding for gdl
 
 GNOME_PROJECT=	gdlmm
 GNOME_VERSION=	3.3.2
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  gdlmm-3.0                 0.0 # 1.0
 
@@ -35,5 +33,14 @@ LIB_DEPENDS=	x11/gnome/gdl \
 
 CONFIGURE_ENV=	ac_cv_path_DOT= \
 		ac_cv_path_DOXYGEN=
+
+### XXX remove at next release ###
+BUILD_DEPENDS+=	devel/m4
+CONFIGURE_ENV+=	ac_cv_path_DOXYGEN=doxygen
+CONFIGURE_ARGS=	--enable-maintainer-mode
+
+pre-configure:
+	ln -s /usr/local/bin/gm4 ${WRKDIR}/bin/m4
+##################################
 
 .include <bsd.port.mk>
