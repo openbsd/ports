@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2012/11/05 17:57:51 pascal Exp $
+# $OpenBSD: Makefile,v 1.16 2012/12/07 08:44:05 ajacoutot Exp $
 
 # Memory hog, stuck for days on the same file during build.
 NOT_FOR_ARCHS =		sh
 BROKEN-sparc64 =	error:imcc:syntax error, unexpected IF
+BROKEN-powerpc =	exists_keyed_str() not implemented in class 'NQPMu'
 
 SHARED_ONLY =		Yes
 
