@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2012/08/27 13:53:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2012/12/07 18:23:40 naddy Exp $
 
 COMMENT-main=	color, low memory usage, xterm replacement
 COMMENT-clock=	analog clock for X11 w/appoint. reminder and mail notif
@@ -6,7 +6,7 @@ COMMENT-clock=	analog clock for X11 w/appoint. reminder and mail notif
 VER=		2.7.10
 DISTNAME=	rxvt-${VER}
 PKGNAME-main=	rxvt-${VER}
-REVISION-main=	7
+REVISION-main=	8
 PKGNAME-clock=	rclock-${VER}
 REVISION-clock=	2
 CATEGORIES=	x11
@@ -43,7 +43,6 @@ CONFIGURE_ARGS=		--enable-utmp \
 			--enable-xgetdefault \
 			--enable-xim \
 			--enable-mousewheel \
-			--enable-ttygid \
 			--enable-languages \
 			--enable-menubar \
 			--enable-rxvt-scroll \
