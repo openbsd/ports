@@ -1,18 +1,14 @@
-$OpenBSD: patch-src_vteseq_c,v 1.2 2012/05/29 20:31:40 jasper Exp $
+$OpenBSD: patch-src_vteseq_c,v 1.3 2012/12/07 15:18:38 ajacoutot Exp $
 
-Chunk 1:
 From feeee4b5832b17641e505b7083e0d299fdae318e Mon Sep 17 00:00:00 2001
 From: Christian Persch <chpe@gnome.org>
 Date: Sat, 19 May 2012 19:36:09 +0200
 Subject: [PATCH] emulation: Limit integer arguments to 65535
 
-Chunk 2:
 From 98ce2f265f986fb88c38d508286bb5e3716b9e74 Mon Sep 17 00:00:00 2001
 From: Christian Persch <chpe@gnome.org>
 Date: Sat, 19 May 2012 20:04:12 +0200
 Subject: [PATCH] emulation: Limit repetitions
-
-Both address: https://bugzilla.gnome.org/show_bug.cgi?id=676090
 
 --- src/vteseq.c.orig	Tue May 29 22:24:06 2012
 +++ src/vteseq.c	Tue May 29 22:23:59 2012

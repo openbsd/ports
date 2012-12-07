@@ -1,109 +1,16 @@
-$OpenBSD: patch-src_pty_c,v 1.11 2012/03/09 06:45:54 ajacoutot Exp $
-
-From 116fe70d32c810ccd0bb226fc0c06c74e28db075 Mon Sep 17 00:00:00 2001
-From: Martin Pieuchot <mpi@openbsd.org>
-Date: Thu, 08 Mar 2012 20:53:52 +0000
-Subject: pty: Support allocating PTYs through openpty on BSD
-
+$OpenBSD: patch-src_pty_c,v 1.12 2012/12/07 15:18:38 ajacoutot Exp $
 --- src/pty.c.orig	Tue Aug 16 23:52:48 2011
-+++ src/pty.c	Fri Mar  9 07:31:07 2012
-@@ -54,6 +54,9 @@
- #include <termios.h>
- #endif
- #include <unistd.h>
-+#ifdef HAVE_UTIL_H
-+#include <util.h>
-+#endif
- #ifdef HAVE_STROPTS_H
- #include <stropts.h>
- #endif
-@@ -81,6 +84,12 @@ static pid_t _vte_pty_helper_pid = -1;
- static int _vte_pty_helper_tunnel = -1;
- #endif
- 
-+#if defined(HAVE_PTSNAME_R) || defined(HAVE_PTSNAME) || defined(TIOCGPTN)
-+#define HAVE_UNIX98_PTY
-+#else
-+#undef HAVE_UNIX98_PTY
-+#endif
-+
- /* Reset the handlers for all known signals to their defaults.  The parent
-  * (or one of the libraries it links to) may have changed one to be ignored. */
- static void
-@@ -734,6 +743,8 @@ vte_pty_get_size(VtePty *pty,
- 	}
- }
- 
-+#if defined(HAVE_UNIX98_PTY)
-+
- /*
-  * _vte_pty_ptsname:
-  * @master: file descriptor to the PTY master
-@@ -951,6 +962,44 @@ _vte_pty_open_unix98(VtePty *pty,
-         return TRUE;
- }
- 
-+#elif defined(HAVE_OPENPTY)
-+
-+/*
-+ * _vte_pty_open_bsd:
-+ * @pty: a #VtePty
-+ * @error: a location to store a #GError, or %NULL
-+ *
-+ * Opens new file descriptors to a new PTY master and slave.
-+ *
-+ * Returns: %TRUE on success, %FALSE on failure with @error filled in
-+ */
-+static gboolean
-+_vte_pty_open_bsd(VtePty *pty,
-+                  GError **error)
-+{
-+	VtePtyPrivate *priv = pty->priv;
-+	int parentfd, childfd;
-+
-+	if (openpty(&parentfd, &childfd, NULL, NULL, NULL) != 0) {
-+		int errsv = errno;
-+		g_set_error(error, VTE_PTY_ERROR, VTE_PTY_ERROR_PTY98_FAILED,
-+			    "%s failed: %s", "openpty", g_strerror(errsv));
-+		errno = errsv;
-+		return FALSE;
-+	}
-+
-+	priv->pty_fd = parentfd;
-+	priv->child_setup_data.mode = TTY_OPEN_BY_FD;
-+	priv->child_setup_data.tty.fd = childfd;
-+	priv->using_helper = FALSE;
-+
-+	return TRUE;
-+}
-+
-+#else
-+#error Have neither UNIX98 PTY nor BSD openpty!
-+#endif /* HAVE_UNIX98_PTY */
-+
- #ifdef VTE_USE_GNOME_PTY_HELPER
- #ifdef HAVE_RECVMSG
- static void
-@@ -1511,7 +1560,7 @@ vte_pty_initable_init (GInitable *initable,
-                 }
- 
-                 g_error_free(err);
--                /* Fall back to unix98 PTY */
-+                /* Fall back to unix98 or bsd PTY */
-         }
++++ src/pty.c	Tue Dec  4 09:38:06 2012
+@@ -816,11 +816,7 @@ _vte_pty_getpt(GError **error)
+ 	/* Call the system's function for allocating a pty. */
+ 	fd = getpt();
  #else
-         if (priv->flags & VTE_PTY_NO_FALLBACK) {
-@@ -1521,7 +1570,13 @@ vte_pty_initable_init (GInitable *initable,
-         }
- #endif /* VTE_USE_GNOME_PTY_HELPER */
- 
-+#if defined(HAVE_UNIX98_PTY)
-         ret = _vte_pty_open_unix98(pty, error);
-+#elif defined(HAVE_OPENPTY)
-+        ret = _vte_pty_open_bsd(pty, error);
-+#else
-+#error Have neither UNIX98 PTY nor BSD openpty!
-+#endif
- 
-   out:
- 	_vte_debug_print(VTE_DEBUG_PTY,
+-	/* Try to allocate a pty by accessing the pty master multiplex. */
+-	fd = open("/dev/ptmx", O_RDWR | O_NOCTTY);
+-	if ((fd == -1) && (errno == ENOENT)) {
+-		fd = open("/dev/ptc", O_RDWR | O_NOCTTY); /* AIX */
+-	}
++	fd = posix_openpt(O_RDWR | O_NOCTTY);
+ #endif
+         if (fd == -1) {
+                 g_set_error (error, VTE_PTY_ERROR,
