@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2012/11/01 23:20:26 brad Exp $
+# $OpenBSD: Makefile,v 1.29 2012/12/07 17:39:59 brad Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	multimedia player
 
 DISTNAME=	xine-ui-0.99.7
-REVISION=	0
+REVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.xz
@@ -42,6 +42,7 @@ CONFIGURE_ARGS+=--disable-lirc \
 		--without-aalib \
 		--without-caca
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
-		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
+		ac_cv_header_execinfo_h=no
 
 .include <bsd.port.mk>
