@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.164 2012/11/28 17:29:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.165 2012/12/07 12:20:27 sthen Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 
-VER=			10.10.0
+VER=			10.10.1
 DISTNAME=		asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 PKGNAME-main=		asterisk-${VER}
 
@@ -17,9 +17,9 @@ MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 # Asterisk with OpenSSL and OpenH323 and distribute the resulting binary
 # files." iLBC codec has BSD-like license terms, but also see patent
 # notes in codecs/ilbc/LICENSE_ADDENDUM.
-PERMIT_PACKAGE_CDROM=	patent licensing clauses
+PERMIT_PACKAGE_CDROM=	patent licensing clauses in iLBC
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= patent licensing clauses
+PERMIT_DISTFILES_CDROM= patent licensing clauses in iLBC
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB-main +=	c crypto curl execinfo gsm idn iksemel
