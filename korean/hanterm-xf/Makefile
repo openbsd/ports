@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2012/11/23 10:59:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2012/12/07 19:05:25 naddy Exp $
 
 COMMENT=	X Hangul Terminal (XFree86 xterm Based)
 
@@ -28,6 +28,8 @@ NO_REGRESS=	Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -liconv"
+# Force check for openpty(3) in libutil
+CONFIGURE_ENV+=	ac_cv_func_grantpt=no
 
 CONFIGURE_ARGS=	--enable-box-char \
 		--enable-ansi-color \
