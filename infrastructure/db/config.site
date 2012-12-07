@@ -1,4 +1,4 @@
-# $OpenBSD: config.site,v 1.20 2012/01/17 16:10:42 naddy Exp $
+# $OpenBSD: config.site,v 1.21 2012/12/07 15:15:32 naddy Exp $
 # Quick start macros for autoconf.
 # XXX kludge for a function we don't actually have.
 #ac_cv_func_getservbyname_r=${ac_cv_func_getservbyname_r=no}
@@ -303,7 +303,7 @@ ac_cv_func_getwd=${ac_cv_func_getwd=yes}
 ac_cv_func_glob=${ac_cv_func_glob=yes}
 ac_cv_func_gmtime=${ac_cv_func_gmtime=yes}
 ac_cv_func_gmtime_r=${ac_cv_func_gmtime_r=yes}	
-ac_cv_func_grantpt=${ac_cv_func_grantpt=no}
+ac_cv_func_grantpt=${ac_cv_func_grantpt=yes}
 ac_cv_func_herror=${ac_cv_func_herror=yes}	
 ac_cv_func_hstrerror=${ac_cv_func_hstrerror=yes}	
 ac_cv_func_htonl=${ac_cv_func_htonl=yes}	
@@ -409,13 +409,14 @@ ac_cv_func_pmap_getmaps=${ac_cv_func_pmap_getmaps=yes}
 ac_cv_func_pmap_getport=${ac_cv_func_pmap_getport=yes}	
 ac_cv_func_poll=${ac_cv_func_poll=yes}
 ac_cv_func_popen=${ac_cv_func_popen=yes}
+ac_cv_func_posix_openpt=${ac_cv_func_posix_openpt=yes}
 ac_cv_func_pread=${ac_cv_func_pread=yes}
 ac_cv_func_printf=${ac_cv_func_printf=yes}	
 ac_cv_func_printf_longdouble=${ac_cv_func_printf_longdouble=yes}	
 ac_cv_func_printf_unix98=${ac_cv_func_printf_unix98=yes}	
 ac_cv_func_psignal=${ac_cv_func_psignal=yes}	
 ac_cv_func_ptrace=${ac_cv_func_ptrace=yes}	
-ac_cv_func_ptsname=${ac_cv_func_ptsname=no}
+ac_cv_func_ptsname=${ac_cv_func_ptsname=yes}
 ac_cv_func_putc_unlocked=${ac_cv_func_putc_unlocked=yes}	
 ac_cv_func_putchar_unlocked=${ac_cv_func_putchar_unlocked=yes}	
 ac_cv_func_putenv=${ac_cv_func_putenv=yes}
@@ -619,7 +620,7 @@ ac_cv_func_umask=${ac_cv_func_umask=yes}
 ac_cv_func_uname=${ac_cv_func_uname=yes}	
 ac_cv_func_ungetc=${ac_cv_func_ungetc=yes}	
 ac_cv_func_unlink=${ac_cv_func_unlink=yes}	
-ac_cv_func_unlockpt=${ac_cv_func_unlockpt=no}
+ac_cv_func_unlockpt=${ac_cv_func_unlockpt=yes}
 ac_cv_func_unmount=${ac_cv_func_unmount=yes}	
 ac_cv_func_unsetenv=${ac_cv_func_unsetenv=yes}
 ac_cv_func_usleep=${ac_cv_func_usleep=yes}
