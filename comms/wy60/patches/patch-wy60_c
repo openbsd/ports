@@ -1,9 +1,9 @@
-$OpenBSD: patch-wy60_c,v 1.2 2011/11/14 19:33:34 naddy Exp $
+$OpenBSD: patch-wy60_c,v 1.3 2012/12/07 15:16:49 naddy Exp $
 
 Don't mix mixed declarations and code, for gcc2.95.
 
---- wy60.c.orig	Mon Nov 14 20:08:56 2011
-+++ wy60.c	Mon Nov 14 20:10:07 2011
+--- wy60.c.orig	Sat Feb  3 05:07:20 2007
++++ wy60.c	Wed Dec  5 21:09:50 2012
 @@ -3347,9 +3347,9 @@ static void userInputReceived(int pty, const char *buf
    for (i = 0; i < count; i++) {
      char ch                  = buffer[i];
@@ -15,3 +15,14 @@ Don't mix mixed declarations and code, for gcc2.95.
  
  
      for (;;) {
+@@ -5333,7 +5333,9 @@ static int forkPty(int *fd, char *name) {
+ 
+   /* Try to let the standard C library open a pty pair for us                */
+ #if HAVE_GRANTPT
+-#if HAVE_GETPT
++#if HAVE_POSIX_OPENPT
++  master             = posix_openpt(O_RDWR|O_NOCTTY);
++#elif HAVE_GETPT
+   master             = getpt();
+ #else
+   master             = open("/dev/ptmx", O_RDWR);
