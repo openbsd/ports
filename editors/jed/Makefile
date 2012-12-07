@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2011/12/02 14:36:14 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2012/12/07 18:40:43 naddy Exp $
 
 COMMENT=	text editor
 
 DISTNAME=	jed-0.99-19
 PKGNAME=	jed-0.99.19
+REVISION=	0
 CATEGORIES=	editors
 MASTER_SITES=   ftp://space.mit.edu/pub/davis/jed/v0.99/ \
 		ftp://ftp.ntua.gr/pub/lang/slang/jed/v0.99/ \
@@ -24,7 +25,9 @@ LIB_DEPENDS=	devel/libslang
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-slang=${LOCALBASE}
 CONFIGURE_ENV+=	JED_ROOT="${PREFIX}/lib/jed"
-#CONFIGURE_ENV+= DEPBASE=${DEPBASE}
+# This is with -lutil, so override config.site
+CONFIGURE_ENV+=	ac_cv_func_openpty=yes
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autoconf
 
 FLAVORS=	no_x11
 FLAVOR?=
