@@ -1,0 +1,5 @@
+# $OpenBSD: automake.dep,v 1.1 2012/12/08 20:46:05 naddy Exp $
+configh.in configure.in
+configh.in configure.ac
+configh.in aclocal.m4
+/Maketests /Makefile.am

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2012/08/27 13:38:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2012/12/08 20:46:05 naddy Exp $
 
 COMMENT=	GNU awk
 
 V=		4.0.1
 DISTNAME=	gawk-$V
+REVISION=	0
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU:=gawk/}
 
@@ -24,8 +25,11 @@ LIB_DEPENDS=	devel/libsigsegv
 
 SUBST_VARS=	V
 
-CONFIGURE_STYLE= gnu
+SEPARATE_BUILD=	Yes
+AUTOCONF_VERSION=2.68
+CONFIGURE_STYLE=autoconf
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+REORDER_DEPENDENCIES=${FILESDIR}/automake.dep
 
 .include <bsd.port.mk>
