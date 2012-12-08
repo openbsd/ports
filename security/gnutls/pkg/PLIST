@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2012/11/05 10:41:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2012/12/08 08:20:10 ajacoutot Exp $
 %%SHARED%%
 @bin bin/certtool
 @bin bin/crywrap
@@ -120,7 +120,9 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_certificate_type_get_name.3
 @man man/man3/gnutls_certificate_type_list.3
 @man man/man3/gnutls_certificate_type_set_priority.3
+@man man/man3/gnutls_certificate_verification_status_print.3
 @man man/man3/gnutls_certificate_verify_peers2.3
+@man man/man3/gnutls_certificate_verify_peers3.3
 @man man/man3/gnutls_check_version.3
 @man man/man3/gnutls_cipher_add_auth.3
 @man man/man3/gnutls_cipher_decrypt.3
@@ -272,6 +274,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_ocsp_resp_verify_direct.3
 @man man/man3/gnutls_ocsp_status_request_enable_client.3
 @man man/man3/gnutls_ocsp_status_request_get.3
+@man man/man3/gnutls_ocsp_status_request_is_checked.3
 @man man/man3/gnutls_openpgp_crt_check_hostname.3
 @man man/man3/gnutls_openpgp_crt_deinit.3
 @man man/man3/gnutls_openpgp_crt_export.3
@@ -377,6 +380,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_pkcs11_privkey_deinit.3
 @man man/man3/gnutls_pkcs11_privkey_export_url.3
 @man man/man3/gnutls_pkcs11_privkey_generate.3
+@man man/man3/gnutls_pkcs11_privkey_generate2.3
 @man man/man3/gnutls_pkcs11_privkey_get_info.3
 @man man/man3/gnutls_pkcs11_privkey_get_pk_algorithm.3
 @man man/man3/gnutls_pkcs11_privkey_import_url.3
@@ -509,8 +513,10 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_pubkey_import_tpm_url.3
 @man man/man3/gnutls_pubkey_import_url.3
 @man man/man3/gnutls_pubkey_import_x509.3
+@man man/man3/gnutls_pubkey_import_x509_crq.3
 @man man/man3/gnutls_pubkey_import_x509_raw.3
 @man man/man3/gnutls_pubkey_init.3
+@man man/man3/gnutls_pubkey_print.3
 @man man/man3/gnutls_pubkey_set_key_usage.3
 @man man/man3/gnutls_pubkey_set_pin_function.3
 @man man/man3/gnutls_pubkey_verify_data.3
@@ -549,6 +555,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_session_get_data.3
 @man man/man3/gnutls_session_get_data2.3
 @man man/man3/gnutls_session_get_id.3
+@man man/man3/gnutls_session_get_id2.3
 @man man/man3/gnutls_session_get_ptr.3
 @man man/man3/gnutls_session_get_random.3
 @man man/man3/gnutls_session_is_resumed.3
@@ -569,6 +576,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_sign_get_id.3
 @man man/man3/gnutls_sign_get_name.3
 @man man/man3/gnutls_sign_get_pk_algorithm.3
+@man man/man3/gnutls_sign_is_secure.3
 @man man/man3/gnutls_sign_list.3
 @man man/man3/gnutls_srp_allocate_client_credentials.3
 @man man/man3/gnutls_srp_allocate_server_credentials.3
@@ -585,6 +593,14 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_srp_set_server_credentials_file.3
 @man man/man3/gnutls_srp_set_server_credentials_function.3
 @man man/man3/gnutls_srp_verifier.3
+@man man/man3/gnutls_srtp_get_keys.3
+@man man/man3/gnutls_srtp_get_mki.3
+@man man/man3/gnutls_srtp_get_profile_id.3
+@man man/man3/gnutls_srtp_get_profile_name.3
+@man man/man3/gnutls_srtp_get_selected_profile.3
+@man man/man3/gnutls_srtp_set_mki.3
+@man man/man3/gnutls_srtp_set_profile.3
+@man man/man3/gnutls_srtp_set_profile_direct.3
 @man man/man3/gnutls_store_commitment.3
 @man man/man3/gnutls_store_pubkey.3
 @man man/man3/gnutls_strerror.3
@@ -728,6 +744,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_x509_crt_get_pk_algorithm.3
 @man man/man3/gnutls_x509_crt_get_pk_dsa_raw.3
 @man man/man3/gnutls_x509_crt_get_pk_rsa_raw.3
+@man man/man3/gnutls_x509_crt_get_policy.3
 @man man/man3/gnutls_x509_crt_get_preferred_hash_algorithm.3
 @man man/man3/gnutls_x509_crt_get_private_key_usage_period.3
 @man man/man3/gnutls_x509_crt_get_proxy.3
@@ -771,6 +788,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_x509_crt_set_key_purpose_oid.3
 @man man/man3/gnutls_x509_crt_set_key_usage.3
 @man man/man3/gnutls_x509_crt_set_pin_function.3
+@man man/man3/gnutls_x509_crt_set_policy.3
 @man man/man3/gnutls_x509_crt_set_private_key_usage_period.3
 @man man/man3/gnutls_x509_crt_set_proxy.3
 @man man/man3/gnutls_x509_crt_set_proxy_dn.3
@@ -793,6 +811,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_x509_dn_init.3
 @man man/man3/gnutls_x509_dn_oid_known.3
 @man man/man3/gnutls_x509_dn_oid_name.3
+@man man/man3/gnutls_x509_policy_release.3
 @man man/man3/gnutls_x509_privkey_cpy.3
 @man man/man3/gnutls_x509_privkey_deinit.3
 @man man/man3/gnutls_x509_privkey_export.3

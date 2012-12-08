@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.66 2012/11/05 10:41:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2012/12/08 08:20:10 ajacoutot Exp $
 
 # XXX check why our getopt_long(3) fails the configure test
 # + rm patch-gl_unistd_in_h
 
 COMMENT=	GNU Transport Layer Security library
 
-DISTNAME=	gnutls-3.1.3
+DISTNAME=	gnutls-3.1.5
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	security
@@ -33,8 +33,8 @@ MASTER_SITES=	http://ftp.gnu.org/gnu/gnutls/ \
 MODULES=	devel/gettext
 
 LIB_DEPENDS=	devel/libidn \
-		security/libtasn1>=2.14 \
-		security/libnettle>=2.5 \
+		security/libtasn1 \
+		security/libnettle \
 		security/p11-kit
 
 USE_GMAKE=	Yes
@@ -49,8 +49,10 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-guile \
 		--disable-valgrind-tests \
 		--disable-hardware-acceleration \
-		--with-libtasn1-prefix=${LOCALBASE} \
 		--with-packager="OpenBSD Ports"
+
+# add dependency on net/unbound; see post-install as well
+CONFIGURE_ARGS += --disable-libdane
 
 # requires security/trousers: not committed, needs kernel support for tpm(4):
 # http://bsssd.sourceforge.net/
@@ -74,5 +76,7 @@ post-install:
 	# needed by at least:
 	# devel/libvmime, security/prelude/manager, textproc/iksemel
 	${INSTALL} -m 555 ${FILESDIR}/libgnutls-config ${PREFIX}/bin
+	# --disable-libdane (net/unbound)
+	rm ${PREFIX}/{bin/danetool,lib/pkgconfig/gnutls-dane.pc}
 
 .include <bsd.port.mk>
