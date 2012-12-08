@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2012/10/22 13:52:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2012/12/08 18:56:13 jasper Exp $
 
 COMMENT=	ensure your Puppet manifests conform with the style guide
 
 DISTNAME=	puppet-lint-0.3.2
+REVISION=	0
 
 CATEGORIES=	sysutils
 
@@ -20,6 +21,6 @@ MODULES=	lang/ruby
 
 RUN_DEPENDS=	sysutils/ruby-puppet
 
-CONFIGURE_STYLE=ruby gem ext
+CONFIGURE_STYLE=ruby gem
 
 .include <bsd.port.mk>
