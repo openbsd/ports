@@ -1,77 +1,15 @@
-$OpenBSD: patch-remmina_src_remmina_ssh_c,v 1.3 2012/08/05 20:28:51 naddy Exp $
+$OpenBSD: patch-remmina_src_remmina_ssh_c,v 1.4 2012/12/08 13:17:41 ajacoutot Exp $
 
-https://github.com/FreeRDP/Remmina/issues/59
+https://github.com/FreeRDP/Remmina/commit/1560d633c91475dca753fbf827a4dc33273c22a8
 
-Revert commit b79355b1b5ac695c052eac5a80cf63863f0a3c85 that brokes
-Remmina with OpenBSD servers.
-
-https://github.com/FreeRDP/Remmina/issues/73
-
-Add support for openpty(3)
-
---- remmina/src/remmina_ssh.c.orig	Fri Feb 10 19:54:23 2012
-+++ remmina/src/remmina_ssh.c	Sat Jun 23 17:56:39 2012
-@@ -54,6 +54,9 @@
- #ifdef HAVE_TERMIOS_H
- #include <termios.h>
- #endif
-+#ifdef HAVE_UTIL_H
-+#include <util.h>
-+#endif
- #include "remmina_public.h"
- #include "remmina_log.h"
- #include "remmina_ssh.h"
-@@ -120,29 +123,11 @@ static gint
- remmina_ssh_auth_password (RemminaSSH *ssh)
- {
- 	gint ret;
--	gint authlist;
--	gint n;
--	gint i;
- 
- 	if (ssh->authenticated) return 1;
- 	if (ssh->password == NULL) return -1;
- 
--	authlist = ssh_userauth_list (ssh->session, NULL);
--	if (authlist & SSH_AUTH_METHOD_INTERACTIVE)
--	{
--		while ((ret = ssh_userauth_kbdint (ssh->session, NULL, NULL)) == SSH_AUTH_INFO)
--		{
--			n = ssh_userauth_kbdint_getnprompts (ssh->session);
--			for (i = 0; i < n; i++)
--			{
--				ssh_userauth_kbdint_setanswer(ssh->session, i, ssh->password);
--			}
--		}
--	}
+--- remmina/src/remmina_ssh.c.orig	Sat Dec  8 11:13:44 2012
++++ remmina/src/remmina_ssh.c	Sat Dec  8 11:14:00 2012
+@@ -139,7 +139,7 @@ remmina_ssh_auth_password (RemminaSSH *ssh)
+ 			}
+ 		}
+ 	}
 -	else
--	{
--		ret = ssh_userauth_password (ssh->session, NULL, ssh->password);
--	}
-+	ret = ssh_userauth_password (ssh->session, NULL, ssh->password);
- 	if (ret != SSH_AUTH_SUCCESS)
++	if (ret != SSH_AUTH_SUCCESS && authlist & SSH_AUTH_METHOD_PASSWORD)
  	{
- 		remmina_ssh_set_error (ssh, _("SSH password authentication failed: %s"));
-@@ -1430,8 +1415,9 @@ remmina_ssh_shell_thread (gpointer data)
- gboolean
- remmina_ssh_shell_open (RemminaSSHShell *shell, RemminaSSHExitFunc exit_callback, gpointer data)
- {
--	gchar *slavedevice;
- 	struct termios stermios;
-+#if defined(HAVE_UNIX98_PTY)
-+	gchar *slavedevice;
- 
- 	shell->master = posix_openpt (O_RDWR | O_NOCTTY);
- 	if (shell->master == -1 ||
-@@ -1439,6 +1425,11 @@ remmina_ssh_shell_open (RemminaSSHShell *shell, Remmin
- 			unlockpt (shell->master) == -1 ||
- 			(slavedevice = ptsname (shell->master)) == NULL ||
- 			(shell->slave = open (slavedevice, O_RDWR | O_NOCTTY)) < 0)
-+#elif defined(HAVE_OPENPTY)
-+	if (openpty(&shell->master, &shell->slave, NULL, NULL, NULL))
-+#else
-+#error Have neither UNIX98 PTY nor BSD openpty!
-+#endif
- 	{
- 		REMMINA_SSH (shell)->error = g_strdup ("Failed to create pty device.");
- 		return FALSE;
+ 		ret = ssh_userauth_password (ssh->session, NULL, ssh->password);
+ 	}
