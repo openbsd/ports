@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2012/12/07 18:40:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2012/12/08 14:46:48 naddy Exp $
 
 COMMENT=	text editor
 
@@ -25,8 +25,6 @@ LIB_DEPENDS=	devel/libslang
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-slang=${LOCALBASE}
 CONFIGURE_ENV+=	JED_ROOT="${PREFIX}/lib/jed"
-# This is with -lutil, so override config.site
-CONFIGURE_ENV+=	ac_cv_func_openpty=yes
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autoconf
 
 FLAVORS=	no_x11
