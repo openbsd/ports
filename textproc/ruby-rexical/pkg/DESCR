@@ -1,0 +1,2 @@
+Rexical is a lexical scanner generator. It is written in Ruby itself,
+and generates Ruby program. It is designed for use with Racc.
