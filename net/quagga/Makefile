@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2012/09/19 16:35:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2012/12/08 18:42:43 brad Exp $
 
 COMMENT=	multi-threaded routing daemon
 
 DISTNAME=	quagga-0.99.21
+REVISION=	0
 SHARED_LIBS=	ospf		0.0 \
 		ospfapiclient	0.0 \
 		zebra		0.0
