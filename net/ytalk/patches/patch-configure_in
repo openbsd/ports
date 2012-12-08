@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_in,v 1.1 2012/12/08 14:24:38 naddy Exp $
+--- configure.in.orig	Fri Dec  7 22:49:58 2012
++++ configure.in	Fri Dec  7 22:52:31 2012
+@@ -71,7 +71,7 @@ AC_CHECK_FUNC(select,,AC_MSG_ERROR(Can't compile witho
+ 
+ dnl Checks for library functions.
+ AC_PROG_GCC_TRADITIONAL
+-AC_CHECK_FUNCS(putenv strerror ttyname ptsname grantpt unlockpt)
++AC_CHECK_FUNCS(putenv strerror ttyname posix_openpt ptsname grantpt unlockpt)
+ AC_CHECK_FUNCS(setsid tcflush)
+ AC_CHECK_FUNCS(sigprocmask sigsetmask sighold, break)
+ 

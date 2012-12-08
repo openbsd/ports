@@ -1,0 +1,15 @@
+$OpenBSD: patch-exec_c,v 1.1 2012/12/08 14:24:38 naddy Exp $
+--- exec.c.orig	Fri Dec  7 22:54:16 2012
++++ exec.c	Fri Dec  7 22:57:00 2012
+@@ -100,7 +100,11 @@ getpty(name)
+     /* look for a Solaris/UNIX98-type pseudo-device */
+ 
+ #ifdef USE_DEV_PTMX
++#ifdef HAVE_POSIX_OPENPT
++    if ((pty=posix_openpt(O_RDWR|O_NOCTTY)) >= 0)
++#else
+     if ((pty=open("/dev/ptmx", O_RDWR)) >= 0)
++#endif
+     {
+     	/* grantpt() might want to fork/exec! */
+ 	sigchld = signal(SIGCHLD, SIG_DFL);

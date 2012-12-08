@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2011/01/07 20:48:34 rpointel Exp $
+# $OpenBSD: Makefile,v 1.29 2012/12/08 14:24:37 naddy Exp $
 COMMENT=	enhanced talk that allows for multiple parties
 
 DISTNAME=	ytalk-3.1.1
-REVISION=	1
+REVISION=	2
 CATEGORIES=	net
 
-MASTER_SITES=	http://www.iagora.com/~espel/ytalk/ \
-		ftp://quatramaran.ens.fr/pub/orabidoo/ytalk/
-
-HOMEPAGE=	http://www.iagora.com/~espel/ytalk/ytalk.html
+MASTER_SITES=	ftp://quatramaran.ens.fr/pub/orabidoo/ytalk/
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
@@ -18,8 +15,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c ncurses 
 
-CONFIGURE_STYLE= gnu dest
-USE_GROFF =	Yes
+AUTOCONF_VERSION=2.13
+CONFIGURE_STYLE= autoconf dest
 
 FLAVORS=	no_x11
 FLAVOR?=
