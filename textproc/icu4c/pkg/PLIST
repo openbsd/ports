@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.9 2012/06/22 07:07:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2012/12/08 13:18:46 ajacoutot Exp $
 %%SHARED%%
 @bin bin/derb
 @bin bin/genbrk
 @bin bin/gencfu
 @bin bin/gencnval
-@bin bin/genctd
+@bin bin/gendict
 @bin bin/genrb
 bin/icu-config
 @bin bin/icuinfo
@@ -61,10 +61,12 @@ include/unicode/fieldpos.h
 include/unicode/fmtable.h
 include/unicode/format.h
 include/unicode/fpositer.h
+include/unicode/gender.h
 include/unicode/gregocal.h
 include/unicode/icudataver.h
 include/unicode/icuplug.h
 include/unicode/idna.h
+include/unicode/listformatter.h
 include/unicode/localpointer.h
 include/unicode/locdspnm.h
 include/unicode/locid.h
@@ -135,7 +137,9 @@ include/unicode/udat.h
 include/unicode/udata.h
 include/unicode/udateintervalformat.h
 include/unicode/udatpg.h
+include/unicode/udisplaycontext.h
 include/unicode/uenum.h
+include/unicode/ugender.h
 include/unicode/uidna.h
 include/unicode/uiter.h
 include/unicode/uldnames.h
@@ -206,8 +210,9 @@ lib/pkgconfig/icu-lx.pc
 lib/pkgconfig/icu-uc.pc
 @man man/man1/derb.1
 @man man/man1/genbrk.1
+@man man/man1/gencfu.1
 @man man/man1/gencnval.1
-@man man/man1/genctd.1
+@man man/man1/gendict.1
 @man man/man1/genrb.1
 @man man/man1/icu-config.1
 @man man/man1/makeconv.1
