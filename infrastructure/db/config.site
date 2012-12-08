@@ -1,4 +1,4 @@
-# $OpenBSD: config.site,v 1.21 2012/12/07 15:15:32 naddy Exp $
+# $OpenBSD: config.site,v 1.22 2012/12/08 14:32:29 naddy Exp $
 # Quick start macros for autoconf.
 # XXX kludge for a function we don't actually have.
 #ac_cv_func_getservbyname_r=${ac_cv_func_getservbyname_r=no}
@@ -10,6 +10,8 @@
 #ac_cv_c_inline=${ac_cv_c_inline=__inline__}
 # legacy header
 #ac_cv_func_dlopen=${ac_cv_func_dlopen=yes}
+# available in libutil
+#ac_cv_func_openpty=${ac_cv_func_openpty=no}
 # not okay, prevents curses in wy60...
 #ac_cv_func_setupterm=${ac_cv_func_setupterm=yes}	
 # kill other curses/termcap stuff
@@ -399,7 +401,6 @@ ac_cv_func_ntohs=${ac_cv_func_ntohs=yes}
 ac_cv_func_open=${ac_cv_func_open=yes}	
 ac_cv_func_opendir=${ac_cv_func_opendir=yes}	
 ac_cv_func_openlog=${ac_cv_func_openlog=yes}	
-ac_cv_func_openpty=${ac_cv_func_openpty=no}
 ac_cv_func_pathconf=${ac_cv_func_pathconf=yes}
 ac_cv_func_pause=${ac_cv_func_pause=yes}	
 ac_cv_func_pclose=${ac_cv_func_pclose=yes}
