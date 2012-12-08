@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2010/12/03 11:44:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2012/12/08 18:50:49 jasper Exp $
 
 COMMENT=	simplistic perl interface to pkg-config
 
 MODULES=	cpan
-DISTNAME=	ExtUtils-PkgConfig-1.07
-REVISION=	3
+DISTNAME=	ExtUtils-PkgConfig-1.13
 CATEGORIES=	devel
-USE_GROFF =	Yes
 
-# Artistic
+# LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
