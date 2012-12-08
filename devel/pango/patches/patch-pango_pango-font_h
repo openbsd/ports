@@ -1,0 +1,15 @@
+$OpenBSD: patch-pango_pango-font_h,v 1.1 2012/12/08 07:26:20 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=689882
+
+--- pango/pango-font.h.orig	Sat Dec  8 08:15:12 2012
++++ pango/pango-font.h	Sat Dec  8 08:15:30 2012
+@@ -378,7 +378,7 @@ enum
+ {
+   PANGO_GLYPH_EMPTY =           ((PangoGlyph)0x0FFFFFFF),
+   PANGO_GLYPH_INVALID_INPUT =   ((PangoGlyph)0xFFFFFFFF),
+-  PANGO_GLYPH_UNKNOWN_FLAG =    ((PangoGlyph)0x10000000),
++  PANGO_GLYPH_UNKNOWN_FLAG =    ((PangoGlyph)0x10000000)
+ };
+ #define PANGO_GET_UNKNOWN_GLYPH(wc) ((PangoGlyph)(wc)|PANGO_GLYPH_UNKNOWN_FLAG)
+ 
