@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_coccigrep_py,v 1.1.1.1 2011/09/15 20:20:06 sthen Exp $
---- src/coccigrep.py.orig	Sun Sep  4 22:34:12 2011
-+++ src/coccigrep.py	Wed Sep  7 01:09:50 2011
-@@ -77,7 +77,7 @@ class CocciRunException(CocciException):
+$OpenBSD: patch-src_coccigrep_py,v 1.2 2012/12/08 10:10:22 sthen Exp $
+--- src/coccigrep.py.orig	Mon Sep 10 15:50:20 2012
++++ src/coccigrep.py	Sat Dec  8 10:05:31 2012
+@@ -79,7 +79,7 @@ class CocciRunException(CocciException):
  _CONF_FILES = tuple((path.join(dirname, name_format % 'coccigrep')
      for dirname, name_format in
      ((path.dirname(__file__), '%s.cfg'),
