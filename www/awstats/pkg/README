@@ -1,8 +1,12 @@
-$OpenBSD: README,v 1.1.1.1 2012/11/18 10:53:30 rpe Exp $
+$OpenBSD: README,v 1.2 2012/12/09 22:05:25 rpe Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
+
+The configuration is prepared to produce reports for httpd on localhost
+out of the box.
+
 
 To generate reports execute either on the command line or from cron:
 
@@ -14,3 +18,8 @@ configuration file:
 
     # ln -s ../modules.sample/awstats.conf /var/www/conf/modules/
     # /etc/rc.d/httpd restart
+
+
+To access the report for localhost point your browser to
+
+    http://localhost/awstats/awstats.pl?config=localhost
