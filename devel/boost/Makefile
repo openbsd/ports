@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.40 2012/10/15 20:31:59 robert Exp $
+# $OpenBSD: Makefile,v 1.41 2012/12/09 08:23:31 brad Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 BROKEN-hppa =	ICE on src/tr1/assoc_laguerre.cpp
 
 COMMENT=	free peer-reviewed portable C++ source libraries
 
-PKGNAME=	boost-${VERSION}
-REVISION=	15
-
 VERSION=	1.42.0
 DISTNAME=	boost_${VERSION:S/./_/g}
+PKGNAME=	boost-${VERSION}
+REVISION=	15
+CATEGORIES=	devel
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=boost/}
 
 SO_VERSION=	4.0
 BOOST_LIBS=	boost_date_time boost_date_time-mt \
@@ -33,16 +34,14 @@ BOOST_LIBS=	boost_date_time boost_date_time-mt \
 		boost_unit_test_framework boost_unit_test_framework-mt \
 		boost_wave boost_wave-mt \
 		boost_wserialization boost_wserialization-mt
+
 .for _lib in ${BOOST_LIBS}
 SHARED_LIBS+=	${_lib} ${SO_VERSION}
 .endfor
 
-CATEGORIES=	devel
+HOMEPAGE=	http://www.boost.org/
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
-
-HOMEPAGE=	http://www.boost.org/
-VMEM_WARNING =	Yes
 
 # MIT-like
 PERMIT_PACKAGE_CDROM=	Yes
@@ -50,7 +49,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=boost/}
+WANTLIB=	c m pthread stdc++ util z
+
+MODULES=	lang/python
+MODPY_RUNDEP=	No
 
 MAKE_ENV=	GCC="${CC}" GXX="${CXX}"
 
@@ -58,52 +60,44 @@ BJAM_CONFIG=	-sNO_BZIP2=1 \
 		-d+2 -q \
 		-j ${MAKE_JOBS} \
 		cflags='${CFLAGS}' cxxflags='${CXXFLAGS}' \
-		variant=release link=static,shared threading=single,multi 
+		variant=release link=static,shared threading=single,multi
 
-BOOTSTRAP_CONFIG=	--without-icu \
-			--with-python=${MODPY_BIN} \
-			--with-python-root=${LOCALBASE} \
-			--with-python-version=${MODPY_VERSION} \
-#			--without-libraries=test,thread,serialization,system,date_time,filesystem,graph,math,mpi,program_options,signals,wave
+BOOTSTRAP=	--without-icu \
+		--with-python=${MODPY_BIN} \
+		--with-python-root=${LOCALBASE} \
+		--with-python-version=${MODPY_VERSION}
 
+# python.port.mk makes assumptions about an empty CONFIGURE_STYLE
+CONFIGURE_STYLE= none
 CONFIGURE_ENV=	BJAM_CONFIG="${BJAM_CONFIG}"
+
+VMEM_WARNING=	Yes
+
+DPB_PROPERTIES= parallel
 
 NO_REGRESS=	Yes
 
-WANTLIB=	c m pthread stdc++ util z
-
-MODULES=	lang/python
-MODPY_RUNDEP=	No
-
-# python.port.mk makes assumptions about an empty CONFIGURE_STYLE
-CONFIGURE_STYLE=none
-
 SUBST_VARS+=	SO_VERSION
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/Jamroot
 
 do-configure:
+	@${SUBST_CMD} ${WRKSRC}/Jamroot
 	@cd ${WRKSRC}/libs/config && \
-		${SETENV} ${CONFIGURE_ENV} /bin/sh ./configure && \
-		cp user.hpp ${WRKSRC}/boost/config
-
-post-configure:
+	    ${SETENV} ${CONFIGURE_ENV} /bin/sh ./configure && \
+	    cp user.hpp ${WRKSRC}/boost/config
 	@cd ${WRKSRC} && chmod -R a+x ./ && \
-	/bin/sh ./bootstrap.sh ${BOOTSTRAP_CONFIG}
+	    /bin/sh ./bootstrap.sh ${BOOTSTRAP}
 
 do-build:
 	@cd ${WRKSRC} && \
-		./bjam ${BJAM_CONFIG}
+	    ./bjam ${BJAM_CONFIG}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/jam/src/bin.*/bjam \
-		${PREFIX}/bin
-
+	    ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/stage/lib/lib!(*.so) ${PREFIX}/lib
-
 	@cd ${WRKSRC} && \
-		find boost -type d -exec ${INSTALL_DATA_DIR} ${PREFIX}/include/{} \;
+	    find boost -type d -exec ${INSTALL_DATA_DIR} ${PREFIX}/include/{} \;
 	@cd ${WRKSRC} && \
-		find boost ! -name \*.orig -type f -exec ${INSTALL_DATA} {} ${PREFIX}/include/{} \;
+	    find boost ! -name \*.orig -type f -exec ${INSTALL_DATA} {} ${PREFIX}/include/{} \;
 
 .include <bsd.port.mk>
