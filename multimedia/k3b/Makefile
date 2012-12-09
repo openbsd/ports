@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.18 2012/08/29 07:48:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2012/12/09 07:29:57 brad Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		CD/DVD creator
+
 DISTNAME =		k3b-1.0.4
-REVISION=		13
+REVISION=		14
+CATEGORIES =		multimedia
 
 SHARED_LIBS =		k3b	0.0	# 3.0
 SHARED_LIBS +=		k3bdevice	0.0	# 5.0
 
-CATEGORIES =		multimedia
 HOMEPAGE =		http://k3b.plainblack.com/
-MAINTAINER =		Jacob Meuser <jakemsr@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

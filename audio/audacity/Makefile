@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.35 2012/09/03 09:09:34 stsp Exp $
+# $OpenBSD: Makefile,v 1.36 2012/12/09 07:29:57 brad Exp $
 
 COMMENT=	free audio editor
 
 V=		1.3.9
 DISTNAME=	audacity-minsrc-${V}
 PKGNAME=	audacity-${V}
-REVISION=	4
+REVISION=	5
 CATEGORIES=	audio
 
 EXTRACT_SUFX=	.tar.bz2
@@ -13,8 +13,6 @@ EXTRACT_SUFX=	.tar.bz2
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=audacity/}
 
 HOMEPAGE=	http://audacity.sourceforge.net/
-
-MAINTAINER=	Jacob Meuser <jakemsr@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=   Yes

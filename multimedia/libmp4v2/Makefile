@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2012/05/08 12:47:12 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2012/12/09 07:29:57 brad Exp $
 
 COMMENT =		read and manipulate the MP4 container format
 
 DISTNAME =		mp4v2-1.9.1
 PKGNAME =		lib${DISTNAME}
+REVISION =		0
+CATEGORIES =		multimedia audio
 
 SHARED_LIBS =		mp4v2	4.0 #1.9
 
-CATEGORIES =		multimedia audio
-
 HOMEPAGE =		https://code.google.com/p/mp4v2/
-
-MAINTAINER =		Jacob Meuser <jakemsr@openbsd.org>
 
 # MPLv1.1
 PERMIT_PACKAGE_CDROM =	Patents

@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/23 21:57:04 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.2 2012/12/09 07:29:57 brad Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		MCP LADSPA plugins
+
 DISTNAME =		MCP-plugins-0.4.0
 PKGNAME =		${DISTNAME:L}
-
+REVISION =		0
 CATEGORIES =		audio
 
 HOMEPAGE =		http://kokkinizita.net/linuxaudio/ladspa/index.html
-
-MAINTAINER =		Jacob Meuser <jakemsr@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

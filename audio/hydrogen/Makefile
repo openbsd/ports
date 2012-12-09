@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2012/08/22 20:14:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2012/12/09 07:29:57 brad Exp $
 
 COMMENT=		software drum machine
+
 DISTNAME=		hydrogen-0.9.4
-REVISION=		2
+REVISION=		3
 CATEGORIES=		audio
+
 HOMEPAGE=		http://www.hydrogen-music.org/
-MAINTAINER=		Jacob Meuser <jakemsr@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.24 2012/09/27 20:35:49 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.25 2012/12/09 07:29:57 brad Exp $
 
 COMMENT =	standalone YouTube.com video browser/player
 
 DISTNAME =	minitube-1.9
-
+REVISION =	0
 CATEGORIES =	www multimedia
 
 HOMEPAGE =	http://flavio.tordini.org/minitube
 
-MAINTAINER =	Paul Irofti <pirofti@openbsd.org>, \
-		Jacob Meuser <jakemsr@openbsd.org>
+MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
 
 # GPL v3
 PERMIT_PACKAGE_CDROM =		Yes

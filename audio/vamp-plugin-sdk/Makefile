@@ -1,18 +1,15 @@
-# $OpenBSD: Makefile,v 1.8 2012/09/28 01:47:02 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2012/12/09 07:29:57 brad Exp $
 
 COMMENT =		audio plugin API
 
 DISTNAME =		vamp-plugin-sdk-2.0
-REVISION =		0
+REVISION =		1
+CATEGORIES =		audio
 
 SHARED_LIBS +=		vamp-sdk	1.0
 SHARED_LIBS +=		vamp-hostsdk	1.0
 
-CATEGORIES =		audio
-
 HOMEPAGE =		http://www.vamp-plugins.org/
-
-MAINTAINER =		Jacob Meuser <jakemsr@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

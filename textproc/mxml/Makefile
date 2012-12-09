@@ -1,17 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/20 19:56:49 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2012/12/09 07:29:57 brad Exp $
 
 COMMENT=		minimal XML library
 
 DISTNAME=		mxml-2.5
-REVISION=		1
+REVISION=		2
+CATEGORIES=		textproc
 
 SHARED_LIBS=		mxml	0.1	# 1.4
 
-CATEGORIES=		textproc
-
 HOMEPAGE=		http://www.easysw.com/~mike/mxml/
-
-MAINTAINER=		Jacob Meuser <jakemsr@openbsd.org>
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes

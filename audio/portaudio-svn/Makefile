@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.11 2012/08/22 20:14:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2012/12/09 07:29:57 brad Exp $
 
 COMMENT=		portable cross-platform audio API
+
 DISTNAME=		portaudio-svn-1406
-REVISION=		3
+REVISION=		4
+CATEGORIES=		audio
 
 SHARED_LIBS=		portaudio	1.0
 
-CATEGORIES=		audio
 HOMEPAGE=		http://www.portaudio.com/
-MAINTAINER=		Jacob Meuser <jakemsr@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes

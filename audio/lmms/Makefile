@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.7 2012/10/31 10:18:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2012/12/09 07:29:57 brad Exp $
 
 SHARED_ONLY =		Yes
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 
 COMMENT =		music studio with tracking, sampling and MIDI
+
 DISTNAME =		lmms-0.4.8
-REVISION =		2
-
+REVISION =		3
 CATEGORIES =		audio
-HOMEPAGE =		http://lmms.sourceforge.net/
 
-MAINTAINER =		Jacob Meuser <jakemsr@openbsd.org>
+HOMEPAGE =		http://lmms.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
