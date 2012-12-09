@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: mimedefang_multiplexor.rc,v 1.8 2012/10/25 14:03:47 ajacoutot Exp $
+# $OpenBSD: mimedefang_multiplexor.rc,v 1.9 2012/12/09 07:35:48 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/mimedefang-multiplexor"
 daemon_flags="-G -U _mdefang -E -l -m 2 -x 10 -b 600 -p /var/spool/MIMEDefang/mimedefang-multiplexor.pid"
@@ -8,7 +8,7 @@ daemon_flags="-G -U _mdefang -E -l -m 2 -x 10 -b 600 -p /var/spool/MIMEDefang/mi
 . /etc/rc.d/rc.subr
 
 rc_reload() {
-	pkill -INT -f "^${pexp}"
+	${TRUEPREFIX}/bin/md-mx-ctrl reread
 }
 
 rc_cmd $1
