@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.41 2012/12/09 08:23:31 brad Exp $
+# $OpenBSD: Makefile,v 1.42 2012/12/10 13:37:57 landry Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
-BROKEN-hppa =	ICE on src/tr1/assoc_laguerre.cpp
 
 COMMENT=	free peer-reviewed portable C++ source libraries
 
