@@ -1,0 +1,4 @@
+This module parses the Puppet code and applies a subset of checks from
+the Puppet Style Guide onto it. Currently the set of checks is rather
+limited, but already enough is implemented to catch common mistakes and
+to save you a great deal of time cleaning up your manifests.

@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/12/10 15:42:53 jasper Exp $
+bin/puppet-tidy.pl
+${P5SITE}/Puppet/
+${P5SITE}/Puppet/Tidy.pm
+@man man/man3p/Puppet::Tidy.3p
