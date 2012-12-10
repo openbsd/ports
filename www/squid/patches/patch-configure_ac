@@ -1,10 +1,21 @@
-$OpenBSD: patch-configure_ac,v 1.1 2012/11/28 17:45:29 sthen Exp $
---- configure.ac.orig	Fri Nov  9 13:13:51 2012
-+++ configure.ac	Fri Nov  9 13:14:29 2012
-@@ -571,6 +571,16 @@ for module in $squid_disk_module_candidates none; do
+$OpenBSD: patch-configure_ac,v 1.2 2012/12/10 21:19:41 sthen Exp $
+--- configure.ac.orig	Sun Dec  2 09:24:01 2012
++++ configure.ac	Mon Dec 10 21:10:46 2012
+@@ -370,7 +370,7 @@ dnl Check for atomic operations support in the compile
+ dnl
+ AC_MSG_CHECKING([for atomic operations support])
+ AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
+-    int n = 0;
++    long n = 0;
+ ]],[[
+     __sync_add_and_fetch(&n, 10); // n becomes 10
+     __sync_fetch_and_add(&n, 20); // n becomes 30
+@@ -569,6 +569,16 @@ for module in $squid_disk_module_candidates none; do
+               if test "x$GCC" = "xyes" -a "x$PRESET_LDFLAGS" = "x" ; then
+                 LDFLAGS="$LDFLAGS -pthread"
                fi
-             fi
-             ;;
++            fi
++            ;;
 +          openbsd)
 +            if test `echo "$squid_host_os_version" | tr -d .` -lt 52 ; then
 +                AC_MSG_NOTICE(pthread library requires OpenBSD 5.2 or later)
@@ -13,8 +24,6 @@ $OpenBSD: patch-configure_ac,v 1.1 2012/11/28 17:45:29 sthen Exp $
 +              SQUID_CFLAGS="$SQUID_CFLAGS -D_REENTRANT"
 +              SQUID_CXXFLAGS="$SQUID_CXXFLAGS -D_REENTRANT"
 +              LDFLAGS="$LDFLAGS -lpthread"
-+            fi
-+            ;;
+             fi
+             ;;
            solaris)
-             if test "x$GCC" = "xyes" ; then
-               SQUID_CFLAGS="$SQUID_CFLAGS -D_REENTRANT -pthreads"
