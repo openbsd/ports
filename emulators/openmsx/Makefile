@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2012/04/15 17:47:00 bentley Exp $
+# $OpenBSD: Makefile,v 1.8 2012/12/10 08:22:19 jasper Exp $
 
 BROKEN-powerpc =CPUCore.cc:2347: error: insn does not satisfy its constraints
+BROKEN-mips64=	Unsupported or unrecognised CPU "sgi"
 
 COMMENT =	MSX home computer emulator
 
