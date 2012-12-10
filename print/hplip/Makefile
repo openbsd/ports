@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2012/10/12 21:56:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2012/12/10 16:00:11 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ COMMENT-hpcups=	HP native CUPS driver
 COMMENT-libs=	HPLIP backend libraries
 COMMENT-gui=	HPLIP graphical tools
 
-V=		3.12.10a
+V=		3.12.11
 DISTNAME=	hplip-${V}
 
 PKGNAME-main=	${DISTNAME}
@@ -170,5 +170,6 @@ pre-configure:
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${PREFIX}/share/hplip
+	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/*.la
 
 .include <bsd.port.mk>

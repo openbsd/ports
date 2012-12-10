@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-gui,v 1.8 2012/06/26 06:17:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST-gui,v 1.9 2012/12/10 16:00:12 ajacoutot Exp $
 @conflict hplip-<3.11.3p0
 bin/hp-align
 bin/hp-check-plugin
@@ -85,6 +85,7 @@ share/hplip/data/images/16x16/settings.png
 share/hplip/data/images/16x16/status_refresh.png
 share/hplip/data/images/16x16/thumbnail.png
 share/hplip/data/images/16x16/toner.png
+share/hplip/data/images/16x16/troubleshoot.png
 share/hplip/data/images/16x16/up.png
 share/hplip/data/images/16x16/up_user.png
 share/hplip/data/images/16x16/warning.png
@@ -141,6 +142,7 @@ share/hplip/data/images/32x32/settings.png
 share/hplip/data/images/32x32/testpage.png
 share/hplip/data/images/32x32/toner.png
 share/hplip/data/images/32x32/toner_cartridge.png
+share/hplip/data/images/32x32/troubleshoot.png
 share/hplip/data/images/32x32/warning.png
 share/hplip/data/images/32x32/wireless.png
 share/hplip/data/images/64x64/

@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.19 2012/10/12 21:56:07 ajacoutot Exp $
+$OpenBSD: patch-Makefile_in,v 1.20 2012/12/10 16:00:11 ajacoutot Exp $
 
 libcompat is needed because hplip uses ftime(3).
 
---- Makefile.in.orig	Wed Oct 10 08:16:15 2012
-+++ Makefile.in	Fri Oct 12 23:42:13 2012
+--- Makefile.in.orig	Tue Nov 20 10:55:50 2012
++++ Makefile.in	Mon Dec 10 16:44:44 2012
 @@ -4305,16 +4305,16 @@ cups_drv = prnt/drv/hpcups.drv
  @HPLIP_BUILD_TRUE@@SCAN_BUILD_TRUE@        scan/sane/soaphti.h scan/sane/soapi.h scan/sane/xml.c scan/sane/xml.h scan/sane/ledm.h scan/sane/ledmi.h scan/sane/ledm.c \
  @HPLIP_BUILD_TRUE@@SCAN_BUILD_TRUE@        scan/sane/bb_ledm.c scan/sane/http.h scan/sane/http.c scan/sane/sclpml.c scan/sane/sclpml.h
@@ -60,7 +60,7 @@ libcompat is needed because hplip uses ftime(3).
  
  # hplip.desktop
  @FULL_BUILD_TRUE@@GUI_BUILD_TRUE@@HPLIP_BUILD_TRUE@hplip_desktopdir = $(icondir)
-@@ -4632,8 +4632,8 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
+@@ -4631,8 +4631,8 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
  
  @HPIJS_INSTALL_TRUE@hpijs_CXXFLAGS = $(libapdk_la_CXXFLAGS)
  @HPIJS_INSTALL_TRUE@hpijs_CFLAGS = $(libapdk_la_CFLAGS)
@@ -71,7 +71,7 @@ libcompat is needed because hplip uses ftime(3).
  
  # hpcups
  #if NEW_HPCUPS
-@@ -4672,7 +4672,7 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
+@@ -4671,7 +4671,7 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
  @HPCUPS_INSTALL_TRUE@	prnt/hpcups/Hbpl1.cpp prnt/hpcups/Hbpl1.h prnt/hpcups/Hbpl1_Wrapper.h
  
  @HPCUPS_INSTALL_TRUE@hpcups_CXXFLAGS = $(APDK_ENDIAN_FLAG) $(DBUS_CFLAGS)
@@ -80,7 +80,7 @@ libcompat is needed because hplip uses ftime(3).
  #else
  #hpcupsdir = $(cupsfilterdir)
  #hpcups_PROGRAMS = hpcups
-@@ -4680,9 +4680,9 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
+@@ -4679,9 +4679,9 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
  #hpcups_CXXFLAGS = $(libapdk_la_CXXFLAGS)
  #hpcups_CFLAGS = $(libapdk_la_CFLAGS)
  #if HPCUPS_ONLY_BUILD
@@ -92,21 +92,22 @@ libcompat is needed because hplip uses ftime(3).
  #endif #HPCUPS_ONLY_BUILD
  #endif # NEW_HPCUPS
  # hpcupsfax
-@@ -8680,10 +8680,10 @@ install-data-am: install-cupsdrv2DATA install-cupsdrvD
+@@ -8652,11 +8652,11 @@ install-data-am: install-cupsdrv2DATA install-cupsdrvD
  	install-dist_cacSCRIPTS install-dist_cmdSCRIPTS \
  	install-dist_copierDATA install-dist_cronDATA \
  	install-dist_faxDATA install-dist_fax_filtersDATA \
--	install-dist_halpreDATA install-dist_hpcupsfaxppdDATA \
-+	install-dist_hpcupsfaxppdDATA \
- 	install-dist_hpfaxSCRIPTS install-dist_hpijsfaxppdDATA \
--	install-dist_hplipSCRIPTS install-dist_hplip_LogDATA \
--	install-dist_hplip_stateDATA install-dist_hplip_tmpDATA \
-+	install-dist_hplipSCRIPTS \
+-	install-dist_finSCRIPTS install-dist_halpreDATA \
++	install-dist_finSCRIPTS \
+ 	install-dist_hpcupsfaxppdDATA install-dist_hpfaxSCRIPTS \
+ 	install-dist_hpijsfaxppdDATA install-dist_hplipSCRIPTS \
+-	install-dist_hplip_LogDATA install-dist_hplip_stateDATA \
+-	install-dist_hplip_tmpDATA install-dist_images_128x128DATA \
 +	install-dist_hplip_stateDATA \
- 	install-dist_images_128x128DATA install-dist_images_16x16DATA \
- 	install-dist_images_24x24DATA install-dist_images_256x256DATA \
- 	install-dist_images_32x32DATA install-dist_images_64x64DATA \
-@@ -8696,7 +8696,7 @@ install-data-am: install-cupsdrv2DATA install-cupsdrvD
++	install-dist_images_128x128DATA \
+ 	install-dist_images_16x16DATA install-dist_images_24x24DATA \
+ 	install-dist_images_256x256DATA install-dist_images_32x32DATA \
+ 	install-dist_images_64x64DATA install-dist_images_devicesDATA \
+@@ -8668,7 +8668,7 @@ install-data-am: install-cupsdrv2DATA install-cupsdrvD
  	install-dist_policykit_dbus_shareDATA \
  	install-dist_policykit_policyDATA install-dist_postscriptDATA \
  	install-dist_ppdDATA install-dist_prntDATA \
@@ -115,7 +116,7 @@ libcompat is needed because hplip uses ftime(3).
  	install-dist_scanDATA install-dist_ui4DATA install-dist_uiDATA \
  	install-dist_unrelDATA install-dist_www0DATA \
  	install-dist_www3DATA install-dist_www4DATA install-docDATA \
-@@ -8922,17 +8922,6 @@ install-dist_cronDATA:$(dist_cron_DATA)
+@@ -8893,17 +8893,6 @@ install-dist_cronDATA:$(dist_cron_DATA)
  	done	
  
  install-data-hook:

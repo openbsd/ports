@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2012/09/11 10:52:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.16 2012/12/10 16:00:12 ajacoutot Exp $
 @conflict hplip-docs-*
 @conflict hplip-gui-<3.11.3p0
 @extraunexec rm -rf /var/log/hp/tmp/*
@@ -18,15 +18,10 @@ bin/hp-timedate
 bin/hp-uninstall
 bin/hp-unload
 bin/hp-upgrade
-@comment lib/python${MODPY_VERSION}/site-packages/cupsext.la
 lib/python${MODPY_VERSION}/site-packages/cupsext.so
-@comment lib/python${MODPY_VERSION}/site-packages/hpmudext.la
 lib/python${MODPY_VERSION}/site-packages/hpmudext.so
-@comment lib/python${MODPY_VERSION}/site-packages/pcardext.la
 lib/python${MODPY_VERSION}/site-packages/pcardext.so
-@comment lib/python${MODPY_VERSION}/site-packages/scanext.la
 lib/python${MODPY_VERSION}/site-packages/scanext.so
-@comment lib/sane/libsane-hpaio.la
 lib/sane/libsane-hpaio.so
 @bin libexec/cups/backend/hp
 libexec/cups/backend/hpfax
@@ -131,6 +126,8 @@ share/hplip/base/pkit.py
 share/hplip/base/pkit.pyc
 share/hplip/base/pml.py
 share/hplip/base/pml.pyc
+share/hplip/base/queues.py
+share/hplip/base/queues.pyc
 share/hplip/base/slp.py
 share/hplip/base/slp.pyc
 share/hplip/base/status.py
