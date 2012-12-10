@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.38 2012/01/03 07:03:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2012/12/10 20:06:10 naddy Exp $
 
 COMMENT=	free lossless audio codec
 
 DISTNAME=	flac-1.2.1
-REVISION=	1
+REVISION=	2
 CATEGORIES=	audio archivers
-HOMEPAGE=	http://flac.sourceforge.net/
+HOMEPAGE=	https://www.xiph.org/flac/
 SHARED_LIBS +=  FLAC                 9.0      # .10.0
 SHARED_LIBS +=  FLAC++               8.0      # .8.0
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=flac/}
+MASTER_SITES=	http://downloads.xiph.org/releases/flac/
 
 WANTLIB=	c m ogg>=5 stdc++
 
