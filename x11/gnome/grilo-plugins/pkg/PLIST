@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/11/30 18:24:54 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2012/12/11 17:54:13 jasper Exp $
 lib/grilo-${API}/
 lib/grilo-${API}/grl-apple-trailers.xml
 lib/grilo-${API}/grl-bliptv.xml
@@ -37,9 +37,9 @@ lib/grilo-${API}/libgrlupnp.so
 lib/grilo-${API}/libgrlvimeo.so
 lib/grilo-${API}/libgrlyoutube.so
 share/gnome/help/
-share/gnome/help/examples/
-share/gnome/help/examples/example-tmdb.c
 share/gnome/help/grilo-plugins/
 share/gnome/help/grilo-plugins/C/
 share/gnome/help/grilo-plugins/C/grilo-plugins.xml
 share/gnome/help/grilo-plugins/C/legal.xml
+share/gnome/help/grilo-plugins/examples/
+share/gnome/help/grilo-plugins/examples/example-tmdb.c
