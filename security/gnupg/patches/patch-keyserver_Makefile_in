@@ -1,8 +1,8 @@
-$OpenBSD: patch-keyserver_Makefile_in,v 1.6 2008/01/30 20:18:10 bernd Exp $
---- keyserver/Makefile.in.orig	Mon Jan 28 20:52:29 2008
-+++ keyserver/Makefile.in	Mon Jan 28 20:52:42 2008
-@@ -310,7 +310,7 @@ sysconfdir = @sysconfdir@
- target_alias = @target_alias@
+$OpenBSD: patch-keyserver_Makefile_in,v 1.7 2012/12/11 20:47:45 landry Exp $
+--- keyserver/Makefile.in.orig	Mon Oct 18 03:53:58 2010
++++ keyserver/Makefile.in	Tue Dec 11 12:19:49 2012
+@@ -315,7 +315,7 @@ target_alias = @target_alias@
+ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
 -INCLUDES = -I$(top_srcdir)/include -I$(top_srcdir)/intl

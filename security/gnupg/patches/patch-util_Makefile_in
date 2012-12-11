@@ -1,8 +1,8 @@
-$OpenBSD: patch-util_Makefile_in,v 1.6 2008/01/30 20:18:10 bernd Exp $
---- util/Makefile.in.orig	Mon Jan 28 20:52:56 2008
-+++ util/Makefile.in	Mon Jan 28 20:53:09 2008
-@@ -308,7 +308,7 @@ sysconfdir = @sysconfdir@
- target_alias = @target_alias@
+$OpenBSD: patch-util_Makefile_in,v 1.7 2012/12/11 20:47:45 landry Exp $
+--- util/Makefile.in.orig	Mon Oct 18 03:53:58 2010
++++ util/Makefile.in	Tue Dec 11 12:19:48 2012
+@@ -311,7 +311,7 @@ target_alias = @target_alias@
+ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
 -INCLUDES = -I.. -I$(top_srcdir)/include -I$(top_srcdir)/intl
