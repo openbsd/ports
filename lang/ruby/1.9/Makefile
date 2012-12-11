@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2012/11/28 21:46:42 landry Exp $
+# $OpenBSD: Makefile,v 1.32 2012/12/11 22:20:02 jeremy Exp $
 
 BROKEN-sparc64 =	doesnt reliably build, and depending ports randomly fail to build
 
@@ -18,6 +18,8 @@ PKGNAME-gdbm =		ruby-gdbm-${VERSION}.${PATCHLEVEL}
 PKGNAME-dbm =		ruby-dbm-${VERSION}.${PATCHLEVEL}
 PKGNAME-tk =		ruby-tk-${VERSION}.${PATCHLEVEL}
 PKGNAME-ri_docs =	ruby-ri_docs-${VERSION}.${PATCHLEVEL}
+
+REVISION-dbm =		0
 
 PKG_ARCH-ri_docs =	*
 WANTLIB-ri_docs =	# empty
@@ -62,9 +64,8 @@ LIB_DEPENDS-gdbm =	databases/gdbm \
 			lang/ruby/${REV},-main>=${VERSION}.${PATCHLEVEL},<1.10
 RUN_DEPENDS-gdbm =	
 
-WANTLIB-dbm =		c m db pthread ruby19
-LIB_DEPENDS-dbm =	databases/db/v4 \
-			lang/ruby/${REV},-main>=${VERSION}.${PATCHLEVEL},<1.10
+WANTLIB-dbm =		c m pthread ruby19
+LIB_DEPENDS-dbm =	lang/ruby/${REV},-main>=${VERSION}.${PATCHLEVEL},<1.10
 RUN_DEPENDS-dbm =	
  
 .if !${FLAVOR:Mno_x11}
