@@ -1,0 +1,17 @@
+$OpenBSD: patch-agent_mibgroup_default_modules_h,v 1.1 2012/12/11 15:30:56 sthen Exp $
+
+XXX memory leak in snmptrapd (8K/trap!) if this is enabled
+
+"NET-SNMP v5.7.2 Memory Leaks issues running snmptrapd" on net-snmp-coders
+
+--- agent/mibgroup/default_modules.h.orig	Tue Dec 11 15:19:13 2012
++++ agent/mibgroup/default_modules.h	Tue Dec 11 15:19:05 2012
+@@ -26,7 +26,7 @@ config_require(mibII/vacm_conf)
+ config_require(mibII)
+ config_require(ucd_snmp)
+ config_require(notification)
+-config_require(notification-log-mib)
++/* config_require(notification-log-mib) */
+ config_require(target)
+ config_require(agent_mibs)
+ config_require(agentx)
