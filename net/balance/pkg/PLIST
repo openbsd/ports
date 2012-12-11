@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/05/29 18:56:24 rui Exp $
-bin/balance
+@comment $OpenBSD: PLIST,v 1.5 2012/12/11 18:15:13 gonzalo Exp $
+@bin bin/balance
 @man man/man1/balance.1
 share/doc/balance/
 share/doc/balance/balance.pdf
