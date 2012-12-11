@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.136 2012/12/10 21:19:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.137 2012/12/11 18:22:54 sthen Exp $
 
 MULTI_PACKAGES=	-main -ntlm
+
+BROKEN-hppa=	broken autoconf test for atomic ops; test succeeds but actual code build fails
 
 COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
