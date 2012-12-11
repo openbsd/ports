@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_client_geary-application_vala,v 1.1 2012/12/11 13:33:06 landry Exp $
+--- src/client/geary-application.vala.orig	Mon Dec 10 22:17:01 2012
++++ src/client/geary-application.vala	Mon Dec 10 22:17:13 2012
+@@ -74,7 +74,7 @@ along with Geary; if not, write to the Free Software F
+     
+     public Configuration config { get; private set; }
+     public File system_desktop_file_directory { get; private set;
+-        default = File.new_for_path("/usr/share/applications/"); }
++        default = File.new_for_path("${LOCALBASE}/share/applications/"); }
+     
+     private static GearyApplication _instance = null;
+     

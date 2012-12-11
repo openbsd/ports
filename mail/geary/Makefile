@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/09/01 18:16:24 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2012/12/11 13:33:06 landry Exp $
 
 COMMENT =	lightweight mail user agent
 
-DISTNAME =	geary-0.1.20120901
+DISTNAME =	geary-0.2.2
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 CATEGORIES =	mail
@@ -13,9 +13,10 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-HOMEPAGE =	http://redmine.yorba.org/projects/geary/wiki
-MASTER_SITES =	http://rhaalovely.net/stuff/
-MODULES =	devel/cmake devel/dconf x11/gnome
+HOMEPAGE =	http://yorba.org/geary/
+MASTER_SITES =	http://yorba.org/download/geary/stable/
+EXTRACT_SUFX =	.tar.xz
+MODULES =	devel/cmake devel/dconf x11/gnome devel/gettext
 
 MODGNOME_TOOLS =	yelp vala
 MODGNOME_DESKTOP_FILE =	Yes
@@ -26,6 +27,8 @@ CONFIGURE_ARGS =-DGSETTINGS_COMPILE=OFF \
 		-DICON_UPDATE=OFF \
 		-DDESKTOP_UPDATE=OFF
 
+RUN_DEPENDS =	x11/gnome/keyring
+
 LIB_DEPENDS =	mail/gmime \
 		www/webkit,gtk3 \
 		audio/libcanberra \
@@ -35,9 +38,12 @@ LIB_DEPENDS =	mail/gmime \
 
 WANTLIB += GL X11 Xrender atk-1.0 c cairo cairo-gobject expat sqlite3
 WANTLIB += fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gnome-keyring gobject-2.0 gthread-2.0 gtk-3 iconv intl
+WANTLIB += gnome-keyring gobject-2.0 gthread-2.0 gtk-3 Xext
 WANTLIB += javascriptcoregtk-3.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pixman-1 png pthread-stubs soup-2.4 webkitgtk-3.0 xcb gee
 WANTLIB += xcb-render xcb-shm z canberra gmime-2.6 notify unique-3.0
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/src/client/geary-application.vala
 
 .include <bsd.port.mk>
