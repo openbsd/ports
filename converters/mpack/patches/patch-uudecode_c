@@ -1,0 +1,31 @@
+$OpenBSD: patch-uudecode_c,v 1.1 2012/12/11 11:01:31 sthen Exp $
+
+Allow building with CLang's scan-build.
+
+--- uudecode.c.orig	Mon Jul 21 21:46:37 2003
++++ uudecode.c	Tue Dec 11 10:23:21 2012
+@@ -35,6 +35,7 @@ extern FILE *os_createnewfile(char *fname);
+ 
+ static FILE *startDescFile(char *fname);
+ 
++void uudecodeline(char *line, FILE *outfile);
+ 
+ /* Length of a normal uuencoded line, including newline */
+ #define UULENGTH 62
+@@ -826,7 +827,7 @@ uudecodefiles(char *dir, int nparts)
+ /*
+  * Decode a uuencoded line to 'outfile'
+  */
+-int uudecodeline(char *line, FILE *outfile)
++void uudecodeline(char *line, FILE *outfile)
+ {
+     int c, len;
+ 
+@@ -845,7 +846,4 @@ int uudecodeline(char *line, FILE *outfile)
+ 	}
+ 	line += 4;
+     }
+-    return;
+ }
+-
+-    

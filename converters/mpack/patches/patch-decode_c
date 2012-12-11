@@ -1,6 +1,6 @@
-$OpenBSD: patch-decode_c,v 1.4 2012/01/08 00:12:12 sthen Exp $
+$OpenBSD: patch-decode_c,v 1.5 2012/12/11 11:01:31 sthen Exp $
 --- decode.c.orig	Mon Jul 21 21:47:54 2003
-+++ decode.c	Sun Jan  8 00:02:59 2012
++++ decode.c	Tue Dec 11 10:47:55 2012
 @@ -28,10 +28,11 @@
  #include <stdio.h>
  #include <string.h>
@@ -20,8 +20,17 @@ $OpenBSD: patch-decode_c,v 1.4 2012/01/08 00:12:12 sthen Exp $
  
 -	/* If we're looking at a ";", we found what we're looking for */
 -	if (*disposition++ == ';') break;
-+	/* If we're looking at a "=", we found what we're looking for */
++	/* If we're looking at an "=", we found what we're looking for */
 +	if (*disposition++ == '=') break;
      }
  
      SkipWhitespace(&disposition);
+@@ -632,7 +633,7 @@ int handlePartial(struct part *inpart, char *headers, 
+ 	}
+ 	/* Store number of parts in reassembly directory */
+ 	sprintf(buf, "%sCT", dir);
+-	partfile = os_createnewfile(buf);
++	partfile = os_resetfile(buf);
+ 	if (!partfile) {
+ 	    os_perror(buf);
+ 	    goto ignore;

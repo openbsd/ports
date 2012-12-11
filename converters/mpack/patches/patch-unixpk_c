@@ -1,6 +1,6 @@
-$OpenBSD: patch-unixpk_c,v 1.5 2012/10/21 12:59:43 jasper Exp $
---- unixpk.c.orig	Mon Jul 21 22:50:41 2003
-+++ unixpk.c	Sun Oct 21 14:57:31 2012
+$OpenBSD: patch-unixpk_c,v 1.6 2012/12/11 11:01:31 sthen Exp $
+--- unixpk.c.orig	Mon Jul 21 21:50:41 2003
++++ unixpk.c	Tue Dec 11 10:52:18 2012
 @@ -25,6 +25,8 @@
  #include <stdio.h>
  #include <string.h>
@@ -10,16 +10,15 @@ $OpenBSD: patch-unixpk_c,v 1.5 2012/10/21 12:59:43 jasper Exp $
  #include "common.h"
  #include "version.h"
  #include "xmalloc.h"
-@@ -164,10 +166,10 @@ int main(int argc, char **argv)
+@@ -164,9 +166,9 @@ int main(int argc, char **argv)
  	    strcpy(fnamebuf, getenv("TMPDIR"));
  	}
  	else {
 -	    strcpy(fnamebuf, "/usr/tmp");
 +	    strcpy(fnamebuf, "/var/tmp");
  	}
- 	strcat(fnamebuf, "/mpackXXXXXX");
--	mktemp(fnamebuf);
-+	close(mkstemp(fnamebuf));
+-	strcat(fnamebuf, "/mpackXXXXXX");
++	strcat(fnamebuf, "/mpackXXXXXXXXXX");
+ 	mktemp(fnamebuf);
  	outfname = strsave(fnamebuf);
      }
- 

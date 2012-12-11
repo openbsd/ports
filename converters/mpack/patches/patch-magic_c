@@ -1,6 +1,6 @@
-$OpenBSD: patch-magic_c,v 1.1 2002/08/09 01:15:19 naddy Exp $
---- magic.c.orig	Fri Aug  9 02:36:58 2002
-+++ magic.c	Fri Aug  9 02:37:21 2002
+$OpenBSD: patch-magic_c,v 1.2 2012/12/11 11:01:31 sthen Exp $
+--- magic.c.orig	Mon Jul 21 21:35:31 2003
++++ magic.c	Tue Dec 11 10:10:23 2012
 @@ -23,6 +23,7 @@
   * SOFTWARE.
   */
@@ -9,3 +9,11 @@ $OpenBSD: patch-magic_c,v 1.1 2002/08/09 01:15:19 naddy Exp $
  
  /* Description of the various file formats and their magic numbers */
  struct magic {
+@@ -35,6 +36,7 @@ struct magic {
+ static struct magic magic[] = {
+     { "image/gif", "GIF", 0 },
+     { "image/jpeg", "\377\330\377", 0 },
++    { "image/png", "\211PNG", 0 },
+     { "video/mpeg", "\0\0\001\263", 4 },
+     { "application/postscript", "%!", 0 },
+ };

@@ -1,6 +1,6 @@
-$OpenBSD: patch-encode_c,v 1.1 2012/01/08 00:12:13 sthen Exp $
---- encode.c.orig	Sun Jan  8 00:03:01 2012
-+++ encode.c	Sun Jan  8 00:03:09 2012
+$OpenBSD: patch-encode_c,v 1.2 2012/12/11 11:01:31 sthen Exp $
+--- encode.c.orig	Mon Jul 21 21:35:31 2003
++++ encode.c	Tue Dec 11 10:01:54 2012
 @@ -24,6 +24,7 @@
   */
  #include <stdio.h>
@@ -9,3 +9,12 @@ $OpenBSD: patch-encode_c,v 1.1 2012/01/08 00:12:13 sthen Exp $
  
  extern char *magic_look(FILE *infile);
  extern char *os_genid(void);
+@@ -43,7 +44,7 @@ int encode(FILE *infile, FILE *applefile, char *fname,
+     char *type;
+     FILE *outfile;
+     char *cleanfname, *p;
+-    char *digest, *appledigest;
++    char *digest, *appledigest = NULL;
+     long filesize, l, written;
+     int thispart, numparts = 1;
+     int wrotefiletype = 0;

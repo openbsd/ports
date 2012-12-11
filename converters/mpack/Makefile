@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2012/10/21 12:59:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2012/12/11 11:01:31 sthen Exp $
 
 COMMENT=	external MIME packer/unpacker
 
 DISTNAME=	mpack-1.6
-REVISION=	0
+REVISION=	1
 CATEGORIES=	converters mail news
 
 # BSD
@@ -19,5 +19,9 @@ MASTER_SITES=	http://ftp.andrew.cmu.edu/pub/mpack/ \
 
 CONFIGURE_STYLE= gnu
 NO_REGRESS=	Yes
+
+# less annoying for patching
+post-extract:
+	chmod -R u+w ${WRKSRC}/
 
 .include <bsd.port.mk>
