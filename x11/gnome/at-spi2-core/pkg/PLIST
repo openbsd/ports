@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/11/13 07:54:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/12/11 17:11:06 ajacoutot Exp $
 %%SHARED%%
 include/at-spi-2.0/
 include/at-spi-2.0/atspi/
@@ -76,6 +76,7 @@ share/gtk-doc/html/libatspi/index.html
 share/gtk-doc/html/libatspi/index.sgml
 share/gtk-doc/html/libatspi/left.png
 share/gtk-doc/html/libatspi/libatspi-AtspiApplication.html
+share/gtk-doc/html/libatspi/libatspi-atspi-action.html
 share/gtk-doc/html/libatspi/libatspi-atspi-collection.html
 share/gtk-doc/html/libatspi/libatspi-atspi-component.html
 share/gtk-doc/html/libatspi/libatspi-atspi-constants.html
