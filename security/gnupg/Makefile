@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2012/07/12 16:32:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.82 2012/12/11 21:12:36 landry Exp $
 
 COMMENT=	GNU privacy guard - a free PGP replacement
 
@@ -69,6 +69,12 @@ CONFIGURE_ARGS+=	--disable-ldap
 
 GNUPGDOCFILES=	README AUTHORS COPYING THANKS TODO BUGS \
 		doc/DETAILS doc/FAQ doc/OpenPGP doc/HACKING
+
+.if ${MACHINE_ARCH} == "hppa"
+pre-configure:
+	# mpi/hppa1.1/udiv-qrnnd.S is not PIE-safe
+	mv ${WRKSRC}/mpi/hppa/udiv-qrnnd.S ${WRKSRC}/mpi/hppa1.1/
+.endif
 
 post-extract:
 	ln -s ${WRKDIR}/idea.c ${WRKSRC}/cipher/idea.c
