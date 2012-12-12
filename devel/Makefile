@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1094 2012/12/02 21:26:23 kili Exp $
+# $OpenBSD: Makefile,v 1.1095 2012/12/12 21:57:58 jeremy Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1220,6 +1220,7 @@
      SUBDIR += ruby-rcov
      SUBDIR += ruby-rcov,ruby18
      SUBDIR += ruby-rdoc
+     SUBDIR += ruby-ref
      SUBDIR += ruby-rspec
      SUBDIR += ruby-ruby2ruby
      SUBDIR += ruby-ruby_parser
@@ -1233,6 +1234,7 @@
      SUBDIR += ruby-systemtimer
      SUBDIR += ruby-systemu
      SUBDIR += ruby-term-ansicolor
+     SUBDIR += ruby-therubyracer
      SUBDIR += ruby-tilt
      SUBDIR += ruby-transaction-simple
      SUBDIR += ruby-trollop
