@@ -1,6 +1,6 @@
-$OpenBSD: patch-cherokee_conf_sample_pre,v 1.6 2010/12/20 07:51:58 ajacoutot Exp $
---- cherokee.conf.sample.pre.orig	Thu May 20 03:28:51 2010
-+++ cherokee.conf.sample.pre	Wed Dec 15 16:37:42 2010
+$OpenBSD: patch-cherokee_conf_sample_pre,v 1.7 2012/12/12 02:17:40 brad Exp $
+--- cherokee.conf.sample.pre.orig	Wed Oct 12 14:07:44 2011
++++ cherokee.conf.sample.pre	Wed Oct 19 13:49:33 2011
 @@ -13,6 +13,9 @@
  #
  server!bind!1!port = 80
@@ -25,12 +25,3 @@ $OpenBSD: patch-cherokee_conf_sample_pre,v 1.6 2010/12/20 07:51:58 ajacoutot Exp
  
  vserver!1!rule!1!match = default
  vserver!1!rule!1!handler = common
-@@ -49,7 +52,7 @@ vserver!1!rule!3!handler = file
- 
- vserver!1!rule!4!match = directory
- vserver!1!rule!4!match!directory = /cgi-bin
--vserver!1!rule!4!document_root = %prefix%/lib/cgi-bin
-+vserver!1!rule!4!document_root = %wwwroot%/cgi-bin
- vserver!1!rule!4!handler = cgi
- 
- vserver!1!rule!5!match = directory

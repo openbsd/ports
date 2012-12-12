@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.35 2012/09/24 06:51:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2012/12/12 02:17:40 brad Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT-main =	fast, flexible and easy to configure Web Server
+COMMENT-main =	fast, flexible and easy to configure web server
 COMMENT-geoip =	GeoIP module for Cherokee web server
 COMMENT-ldap =	LDAP module for Cherokee web server
 COMMENT-mysql =	MySQL module for Cherokee web server
 COMMENT-streaming = Streaming module for Cherokee web server
 
-DIR =		1.0
-VERSION =	${DIR}.14
+DIR =		1.2
+VERSION =	${DIR}.101
 DISTNAME =	cherokee-${VERSION}
 
 PKGNAME-main =	${DISTNAME}
@@ -17,12 +17,6 @@ PKGNAME-ldap =	cherokee-ldap-${VERSION}
 PKGNAME-mysql =	cherokee-mysql-${VERSION}
 PKGNAME-geoip =	cherokee-geoip-${VERSION}
 PKGNAME-streaming = cherokee-streaming-${VERSION}
-
-REVISION-main =	9
-REVISION-geoip = 4
-REVISION-ldap =	5
-REVISION-mysql = 4
-REVISION-streaming = 7
 
 SHARED_LIBS =	cherokee-base		0.0 \
 		cherokee-client		0.0 \
@@ -47,7 +41,8 @@ MASTER_SITES =	${HOMEPAGE}download/${DIR}/${VERSION}/ \
 
 MULTI_PACKAGES =-main -ldap -mysql -geoip -streaming
 
-MODULES =	lang/python lang/php
+MODULES =	lang/php \
+		lang/python
 
 BUILD_DEPENDS =	textproc/py-docutils \
 		lang/php/${MODPHP_VERSION},-fastcgi
@@ -73,14 +68,15 @@ RUN_DEPENDS-mysql =	${BASE_PKGPATH}
 LIB_DEPENDS-streaming =	graphics/ffmpeg \
 			archivers/bzip2
 WANTLIB-streaming += avcodec avformat avutil bz2 crypto m gsm
-WANTLIB-streaming += mp3lame ogg orc-0.4 schroedinger-1.0 speex
-WANTLIB-streaming += theoradec theoraenc vorbis vorbisenc vpx
-WANTLIB-streaming += x264 z pthread xvidcore
+WANTLIB-streaming += mp3lame ogg orc-0.4 pthread schroedinger-1.0
+WANTLIB-streaming += speex theoradec theoraenc vorbis vorbisenc vpx
+WANTLIB-streaming += x264 xvidcore z
 RUN_DEPENDS-streaming = ${BASE_PKGPATH}
 
+USE_GROFF =	Yes
+USE_GMAKE =	Yes
 USE_LIBTOOL =	Yes
 LIBTOOL_FLAGS =	--tag=disable-static
-USE_GROFF =	Yes
 
 FAKE_FLAGS =	cherokeeconfdir="${PREFIX}/share/examples/cherokee/etc" \
 		cherokeewwwdir="${PREFIX}/share/examples/cherokee/www" \
@@ -89,37 +85,38 @@ FAKE_FLAGS =	cherokeeconfdir="${PREFIX}/share/examples/cherokee/etc" \
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
-			PHPCGI="${LOCALBASE}/bin/php-fastcgi-${MODPHP_VERSION}" \
-			ac_cv_func_getgrnam_r=no \
 			ac_cv_header_execinfo_h=no
 CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 			--disable-static \
+			--enable-tmpdir=/tmp \
 			--sysconfdir=${SYSCONFDIR} \
+			--with-cgiroot=/var/cherokee/cgi-bin \
 			--with-wwwroot=/var/cherokee \
 			--with-wwwuser=_cherokee \
 			--with-wwwgroup=_cherokee \
 			--disable-nls \
 			--disable-pam \
+			--with-ffmpeg \
 			--with-geoip \
 			--with-ldap \
 			--with-mysql \
-			--with-ffmpeg
+			--with-php=${LOCALBASE}/bin/php-fastcgi-${MODPHP_VERSION} \
+			--with-python=${MODPY_BIN}
 
 .ifdef DEBUG
-CFLAGS +=		-O0 -g3
 CONFIGURE_ARGS +=	--enable-trace
 .endif
 
-MODPY_ADJ_FILES= admin/CTK/CTK-run.pre admin/upgrade_config.py \
+MODPY_ADJ_FILES=admin/CTK/CTK-run.pre admin/upgrade_config.py \
 		cherokee/cherokee-admin-launcher \
 		cherokee/cherokee-tweak doc/test_images.py \
-		gitlog2changelog.py po/po_stats.py svnlog2changelog.py \
-		admin/server.py qa/run-tests.py contrib/tracelor.py
+		po/po_stats.py admin/server.py qa/run-tests.py \
+		contrib/tracelor.py
 
 LANGUAGES =	en es de nl sv_SE zh_CN fr pt_BR pl ca it gl
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/cherokee/main_admin.c
+	@${SUBST_CMD} ${WRKSRC}/cherokee/main_admin.c
 
 post-install:
 	cd ${PREFIX}/share/cherokee/admin && find . -name "*.py" | \
@@ -130,5 +127,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/po/admin/$i.gmo \
 		${PREFIX}/share/locale/$i/LC_MESSAGES/cherokee.mo
 .endfor
+	@find ${PREFIX}/lib/cherokee -name '*.la' -print | xargs rm
 
 .include <bsd.port.mk>
