@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2012/12/11 21:09:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2012/12/12 20:39:25 naddy Exp $
 
 COMMENT=	filemanager for X Window
 
 DISTNAME=	xnc-4.4.7
-REVISION=	3
+REVISION=	4
 DISTFILES=	${DISTNAME}.src${EXTRACT_SUFX}
 SHARED_LIBS=	xncaqua	1.0 \
 		xncfive	1.0
