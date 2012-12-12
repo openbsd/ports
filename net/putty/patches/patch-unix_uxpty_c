@@ -1,0 +1,25 @@
+$OpenBSD: patch-unix_uxpty_c,v 1.1 2012/12/12 16:38:33 naddy Exp $
+--- unix/uxpty.c.orig	Tue Dec 11 23:41:14 2012
++++ unix/uxpty.c	Tue Dec 11 23:43:15 2012
+@@ -333,12 +333,21 @@ static void pty_open_master(Pty pty)
+     chown(pty->name, getuid(), gp ? gp->gr_gid : -1);
+     chmod(pty->name, 0600);
+ #else
++#ifdef HAVE_POSIX_OPENPT
++    pty->master_fd = posix_openpt(O_RDWR|O_NOCTTY);
++
++    if (pty->master_fd < 0) {
++	perror("posix_openpt");
++	exit(1);
++    }
++#else
+     pty->master_fd = open("/dev/ptmx", O_RDWR);
+ 
+     if (pty->master_fd < 0) {
+ 	perror("/dev/ptmx: open");
+ 	exit(1);
+     }
++#endif
+ 
+     if (grantpt(pty->master_fd) < 0) {
+ 	perror("grantpt");
