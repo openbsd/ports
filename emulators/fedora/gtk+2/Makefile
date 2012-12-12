@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/10/11 15:04:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2012/12/12 19:32:35 gsoares Exp $
 
-COMMENT=	Linux gtk+2 package based on Fedora Core 10
+COMMENT=	Linux gtk+2 package based on Fedora Core ${FEDORA_V}
 
 PKGNAME=	fedora_gtk+2-${FEDORA_V}.0
 

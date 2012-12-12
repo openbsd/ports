@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2012/10/11 13:57:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2012/12/12 19:32:35 gsoares Exp $
 
 BROKEN=		needs an update to Fedora 10
 
-COMMENT=	Linux SDL package based on Fedora Core 4
+COMMENT=	Linux SDL package based on Fedora Core ${FEDORA_V}
 
 DISTNAME=	libSDL-fc4
 PKGNAME=	fedora_sdl-4.0
