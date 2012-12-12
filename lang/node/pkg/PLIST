@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2012/09/26 17:22:37 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.10 2012/12/12 16:51:23 abieber Exp $
 @pkgpath www/node
 @bin bin/node
 bin/node-gyp
@@ -174,10 +174,6 @@ lib/node_modules/chownr/LICENCE
 lib/node_modules/chownr/README.md
 lib/node_modules/chownr/chownr.js
 lib/node_modules/chownr/package.json
-lib/node_modules/couch-login/
-lib/node_modules/couch-login/README.md
-lib/node_modules/couch-login/couch-login.js
-lib/node_modules/couch-login/package.json
 lib/node_modules/fstream/
 lib/node_modules/fstream-npm/
 lib/node_modules/fstream-npm/.npmignore
@@ -414,6 +410,13 @@ lib/node_modules/npm-registry-client/lib/star.js
 lib/node_modules/npm-registry-client/lib/tag.js
 lib/node_modules/npm-registry-client/lib/unpublish.js
 lib/node_modules/npm-registry-client/lib/upload.js
+lib/node_modules/npm-registry-client/node_modules/
+lib/node_modules/npm-registry-client/node_modules/couch-login/
+lib/node_modules/npm-registry-client/node_modules/couch-login/.npmignore
+lib/node_modules/npm-registry-client/node_modules/couch-login/LICENSE
+lib/node_modules/npm-registry-client/node_modules/couch-login/README.md
+lib/node_modules/npm-registry-client/node_modules/couch-login/couch-login.js
+lib/node_modules/npm-registry-client/node_modules/couch-login/package.json
 lib/node_modules/npm-registry-client/package.json
 lib/node_modules/npm/.npmignore
 lib/node_modules/npm/AUTHORS
@@ -825,7 +828,6 @@ lib/node_modules/npm/node_modules/ansi
 lib/node_modules/npm/node_modules/archy
 lib/node_modules/npm/node_modules/block-stream
 lib/node_modules/npm/node_modules/chownr
-lib/node_modules/npm/node_modules/couch-login
 lib/node_modules/npm/node_modules/fstream
 lib/node_modules/npm/node_modules/fstream-npm
 lib/node_modules/npm/node_modules/glob
@@ -907,10 +909,12 @@ lib/node_modules/osenv/osenv.js
 lib/node_modules/osenv/package.json
 lib/node_modules/read/
 lib/node_modules/read-installed/
+lib/node_modules/read-installed/LICENSE
 lib/node_modules/read-installed/README.md
 lib/node_modules/read-installed/package.json
 lib/node_modules/read-installed/read-installed.js
 lib/node_modules/read-package-json/
+lib/node_modules/read-package-json/LICENSE
 lib/node_modules/read-package-json/README.md
 lib/node_modules/read-package-json/package.json
 lib/node_modules/read-package-json/read-json.js
@@ -1012,6 +1016,7 @@ lib/node_modules/semver/bin/
 lib/node_modules/semver/bin/semver
 lib/node_modules/semver/package.json
 lib/node_modules/semver/semver.js
+lib/node_modules/semver/test.js
 lib/node_modules/slide/
 lib/node_modules/slide/.npmignore
 lib/node_modules/slide/LICENSE
