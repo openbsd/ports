@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure_in,v 1.1.1.1 2009/01/28 10:12:35 sthen Exp $
---- configure.in.orig	Tue Jan 27 21:57:05 2009
-+++ configure.in	Tue Jan 27 21:57:14 2009
-@@ -47,7 +47,7 @@ if test "x${enable_hildon}" = "xyes" ; then
+$OpenBSD: patch-configure_in,v 1.2 2012/12/12 14:58:00 dcoppa Exp $
+--- configure.in.orig	Thu Dec  6 10:41:06 2012
++++ configure.in	Thu Dec  6 10:41:27 2012
+@@ -53,7 +53,7 @@ if test "x${enable_hildon}" = "xyes" ; then
     AC_SUBST(HILDON_CFLAGS)
     AC_SUBST(HILDON_LIBS)
  else
 -   desktopentrydir=/usr/share/applications
 +   desktopentrydir=$datadir/applications
     serviceentrydir=$datadir/numptyphysics
+    numptyphysicsdir=$datadir/numptyphysics
     icon_26x26dir=$datadir/icons/hicolor/26x26/apps
-    icon_34x34dir=$datadir/icons/hicolor/34x34/apps

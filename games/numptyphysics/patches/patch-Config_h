@@ -1,25 +1,16 @@
-$OpenBSD: patch-Config_h,v 1.4 2011/01/17 11:39:20 dcoppa Exp $
---- Config.h.orig	Fri Oct 31 18:04:08 2008
-+++ Config.h	Mon Jan 17 12:14:05 2011
-@@ -37,7 +37,7 @@
- #  define CLICK_TOLERANCE   16 //PIXELs 
- #else
- #  define ITERATION_RATE    60 //fps
--#  define RENDER_RATE       20 //fps
-+#  define RENDER_RATE       60 //fps
- #  define SOLVER_ITERATIONS 10
- #  define JOINT_TOLERANCE   4.0f //PIXELs
- #  define SELECT_TOLERANCE  5.0f //PIXELS_PER_METREf)
-@@ -51,7 +51,7 @@
- 
- 
- #ifndef INSTALL_BASE_PATH
+$OpenBSD: patch-Config_h,v 1.5 2012/12/12 14:58:00 dcoppa Exp $
+--- Config.h.orig	Wed Dec  5 15:53:11 2012
++++ Config.h	Thu Dec  6 15:12:55 2012
+@@ -59,7 +59,7 @@
+ # if MAEMO_VERSION >= 5
+ #  define INSTALL_BASE_PATH "/opt/numptyphysics"
+ # else
 -#  define INSTALL_BASE_PATH "/usr/share/numptyphysics"
 +#  define INSTALL_BASE_PATH "${TRUEPREFIX}/share/numptyphysics"
+ # endif
  #endif
  #define DEFAULT_LEVEL_PATH INSTALL_BASE_PATH
- #define DEFAULT_RESOURCE_PATH DEFAULT_LEVEL_PATH
-@@ -68,10 +68,6 @@
+@@ -81,10 +81,6 @@
  #endif
  #define USER_LEVEL_PATH USER_BASE_PATH
  
@@ -27,10 +18,10 @@ $OpenBSD: patch-Config_h,v 1.4 2011/01/17 11:39:20 dcoppa Exp $
 -#define HTTP_TEMP_FILE "/tmp/http.nph"
 -#define SEND_TEMP_FILE "/tmp/mailto:numptyphysics@gmail.com.nph"
 -
- #define ICON_SCALE_FACTOR 4
+ #define ICON_SCALE_FACTOR 6
  
- 
-@@ -92,11 +88,6 @@ class Config
+ #define VIDEO_FPS 20
+@@ -126,11 +122,6 @@ class Config
    static const std::string& userDataDir()
    {
      static const std::string d = std::string(getenv("HOME")) + Os::pathSep + USER_BASE_PATH;
@@ -38,7 +29,7 @@ $OpenBSD: patch-Config_h,v 1.4 2011/01/17 11:39:20 dcoppa Exp $
 -  }
 -  static const std::string& planetRoot()
 -  {
--    static const std::string d("http://xxx/planet.cgi");
+-    static const std::string d("http://10.10.10.10:8080");
      return d;
    }
- };
+   static std::string findFile( const std::string& name );

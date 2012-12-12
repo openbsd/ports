@@ -1,11 +1,23 @@
-$OpenBSD: patch-Game_h,v 1.1 2011/01/14 12:01:18 dcoppa Exp $
---- Game.h.orig	Thu Jan 13 10:49:04 2011
-+++ Game.h	Thu Jan 13 10:49:15 2011
-@@ -36,7 +36,6 @@ struct GameControl
+$OpenBSD: patch-Game_h,v 1.2 2012/12/12 14:58:00 dcoppa Exp $
+--- Game.h.orig	Wed Dec  5 15:53:10 2012
++++ Game.h	Thu Dec  6 11:09:46 2012
+@@ -47,17 +47,16 @@ struct GameControl
+ 		 m_refresh( true ),
+                  m_fade(false),
+ 		 m_colour( 2 ),
++                 m_clickMode(0),
+ 		 m_strokeFixed( false ),
+ 		 m_strokeSleep( false ),
+ 		 m_strokeDecor( false ),
+                  m_replaying( false ),
+                  m_paused( false ),
+-                 m_level(0),
+-                 m_clickMode(0)
++                 m_level(0)
    {}
    virtual ~GameControl() {}
-   virtual bool save( const char *file=NULL ) { return false; }
--  virtual bool send() { return false; }
-   virtual bool load( const char* file ) { return false; }
-   virtual void gotoLevel( int l, bool replay=false ) {}
-   Levels& levels() { return m_levels; }
+   virtual bool save( const char *file=NULL ) =0;
+-  virtual bool send() =0;
+   virtual bool load( const char* file ) {};
+   virtual void gotoLevel( int l, bool replay=false ) =0;
+   virtual void clickMode(int cm) =0;

@@ -1,14 +1,22 @@
-$OpenBSD: patch-Makefile_am,v 1.2 2011/01/17 11:39:20 dcoppa Exp $
---- Makefile.am.orig	Tue Nov 11 17:54:38 2008
-+++ Makefile.am	Mon Jan 17 12:19:48 2011
-@@ -19,10 +19,7 @@ numptyphysics_SOURCES = \
- 	Game.cpp \
- 	Overlay.cpp \
+$OpenBSD: patch-Makefile_am,v 1.3 2012/12/12 14:58:00 dcoppa Exp $
+--- Makefile.am.orig	Thu Dec  6 10:30:36 2012
++++ Makefile.am	Thu Dec  6 10:31:02 2012
+@@ -20,17 +20,13 @@ numptyphysics_SOURCES = \
+ 	Script.cpp \
+ 	App.cpp \
  	Config.cpp \
 -	Http.cpp \
+ 	Os.cpp \
+ 	Ui.cpp \
+ 	Dialogs.cpp \
+ 	Event.cpp \
+ 	Worker.cpp \
 -	happyhttp.cpp \
  	zoomer.cpp \
 -	OsHildon.cpp \
- 	OsFreeDesktop.cpp \
- 	OsWin32.cpp
+-	OsFreeDesktop.cpp \
+-	OsWin32.cpp
++	OsFreeDesktop.cpp
  
+ numptyphysics_CPPFLAGS = -IXX $(SDL_CFLAGS) $(HILDON_CFLAGS)
+ numptyphysics_LDADD = libbox2d.a $(SDL_LIBS) $(HILDON_LIBS)

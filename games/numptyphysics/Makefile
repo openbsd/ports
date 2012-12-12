@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2012/06/15 08:32:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2012/12/12 14:58:00 dcoppa Exp $
 
 COMMENT-main =		physics-based drawing puzzle game
 COMMENT-npcomplete =	extra levels for physics-based drawing puzzle game
 
-DISTNAME =		numptyphysics-0.3.r20090104
+DISTNAME =		numptyphysics-0.3.r20100916
 PKGNAME-main =		${DISTNAME}
-REVISION-main =		12
-PKGNAME-npcomplete =	npcomplete-0.0.r20090116
-REVISION-npcomplete =	3
+PKGNAME-npcomplete =	npcomplete-0.0.r20100124
 
 MULTI_PACKAGES =	-main -npcomplete
 
@@ -18,10 +16,10 @@ MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
 HOMEPAGE =	http://numptyphysics.garage.maemo.org/
 
-MASTER_SITES =	http://mirror.amdmi3.ru/distfiles/
+MASTER_SITES =	http://spacehopper.org/mirrors/
 
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
-		npcomplete-0.0.r20090116.tar.bz2
+		npcomplete-0.0.r20100124.tar.bz2
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -29,12 +27,14 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB-main =		X11 c m pthread stdc++ z SDL SDL_image
+WANTLIB-main =		SDL SDL_image SDL_ttf X11 c m \
+			pthread stdc++ z
 
 RUN_DEPENDS-main =	devel/desktop-file-utils \
 			x11/gtk+2,-guic
 LIB_DEPENDS-main =	devel/sdl \
-			devel/sdl-image
+			devel/sdl-image \
+			devel/sdl-ttf
 
 RUN_DEPENDS-npcomplete =${FULLPKGPATH-main}
 
@@ -53,9 +53,6 @@ CONFIGURE_ENV =	CPPFLAGS="${CPPFLAGS}" \
 CONFIGURE_ARGS =--disable-hildon
 
 WRKDIST =	${WRKDIR}/numptyphysics
-
-pre-patch:
-	cd ${WRKSRC}/Box2D; perl -i -pe 's/\r$$//' `find . -type f`
 
 post-patch:
 	@cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} \

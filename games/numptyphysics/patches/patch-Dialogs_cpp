@@ -1,0 +1,14 @@
+$OpenBSD: patch-Dialogs_cpp,v 1.1 2012/12/12 14:58:00 dcoppa Exp $
+--- Dialogs.cpp.orig	Thu Dec  6 11:14:49 2012
++++ Dialogs.cpp	Thu Dec  6 11:18:22 2012
+@@ -122,9 +122,9 @@ class LevelSelector : public MenuPage
+   static const int THUMB_COUNT = 32;
+   GameControl* m_game;
+   Levels* m_levels;
+-  int m_collection;
+   int m_dispbase;
+   int m_dispcount;
++  int m_collection;
+   IconButton* m_thumbs[THUMB_COUNT];
+   ScrollArea* m_scroll;
+ public:

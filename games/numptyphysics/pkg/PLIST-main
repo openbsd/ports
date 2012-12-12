@@ -1,17 +1,11 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2012/06/15 08:32:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2012/12/12 14:58:00 dcoppa Exp $
 @pkgpath games/numptyphysics
 @bin bin/numptyphysics
 share/applications/numptyphysics.desktop
-share/icons/
-share/icons/hicolor/
 share/icons/hicolor/26x26/
 share/icons/hicolor/26x26/apps/
 share/icons/hicolor/26x26/apps/numptyphysics.png
-share/icons/hicolor/64x64/
-share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/numptyphysics.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/numptyphysics.png
 share/numptyphysics/
 share/numptyphysics/L00_title.nph
@@ -25,15 +19,25 @@ share/numptyphysics/L35_pusher.nph
 share/numptyphysics/L38_box.nph
 share/numptyphysics/L40_tree_of_life.nph
 share/numptyphysics/L50_nautilus.nph
+share/numptyphysics/blank.png
+share/numptyphysics/choose.png
+share/numptyphysics/close.png
 share/numptyphysics/edit.png
+share/numptyphysics/femkeklaver.ttf
+share/numptyphysics/forward.png
+share/numptyphysics/help.png
 share/numptyphysics/next.png
-share/numptyphysics/next_win32.png
 share/numptyphysics/numptyphysics.service
 share/numptyphysics/paper.jpg
 share/numptyphysics/pause.png
+share/numptyphysics/pen.png
 share/numptyphysics/play.png
 share/numptyphysics/record.png
+share/numptyphysics/reset.png
+share/numptyphysics/share.png
 share/numptyphysics/theend.png
+share/numptyphysics/tick.png
+share/numptyphysics/undo.png
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

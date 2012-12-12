@@ -1,0 +1,15 @@
+$OpenBSD: patch-Ui_h,v 1.1 2012/12/12 14:58:00 dcoppa Exp $
+--- Ui.h.orig	Thu Dec  6 11:16:57 2012
++++ Ui.h	Thu Dec  6 11:17:17 2012
+@@ -143,9 +143,9 @@ class IconButton : public Button
+   void draw( Canvas& screen, const Rect& area );
+   void align(int dir) { m_vertical=(dir==0); }
+  protected:
+-  bool m_vertical;
+-  bool m_ownIcon;
+   Canvas *m_icon;
++  bool m_ownIcon;
++  bool m_vertical;
+ };
+ 
+ 

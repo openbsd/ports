@@ -1,0 +1,28 @@
+$OpenBSD: patch-Script_h,v 1.1 2012/12/12 14:58:00 dcoppa Exp $
+--- Script.h.orig	Wed Dec  5 15:53:11 2012
++++ Script.h	Thu Dec  6 11:03:42 2012
+@@ -78,9 +78,9 @@ class ScriptRecorder (public)
+   ScriptLog* getLog() { return m_log; }
+ 
+ private:
++  ScriptLog    *m_log;
+   bool          m_running;
+   bool          m_isPaused;
+-  ScriptLog    *m_log;
+   int 		m_lastTick;
+ };
+ 
+@@ -88,6 +88,13 @@ class ScriptRecorder (public)
+ class ScriptPlayer
+ {
+ public:
++  ScriptPlayer()
++    : m_playing(false),
++      m_isPaused(false),
++      m_log(0),
++      m_scene(0),
++      m_index(0),
++      m_lastTick(0) {}
+ 
+   void start( const ScriptLog* log, Scene* scene );
+   bool isRunning() const;
