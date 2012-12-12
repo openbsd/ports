@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/09/08 08:03:03 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/12/12 06:07:53 rpointel Exp $
 bin/thg
 lib/nautilus/
 lib/nautilus/extensions-3.0/
@@ -110,6 +110,8 @@ lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/modeltest.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/modeltest.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/mq.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/mq.pyc
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/mqutil.py
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/mqutil.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/p4pending.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/p4pending.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/pathedit.py
