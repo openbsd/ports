@@ -1,0 +1,21 @@
+ruby-ref provides object references for Ruby as well as some common
+utilities for working with references. Object references are used to
+point to other objects and come in three distinct flavors that interact
+differently with the garbage collector.
+
+* Ref::StrongReference - This is a plain old pointer to another object.
+
+* Ref::WeakReference - This is a pointer to another object, but it is
+not seen by the garbage collector and the memory used by the object can
+be reclaimed at any time.
+
+* Ref::SoftReference - This is similar to a weak reference, but the
+garbage collector is not as eager to reclaim the referenced object.
+
+All of these classes extend from a common Ref::Reference class and have
+a common interface.
+
+Weak and soft references are useful when you have instantiated objects
+that you may want to use again but can recreate if necessary. Since the
+garbage collector determines when to reclaim the memory used by the
+objects, you don't need to worry about bloating the Ruby heap.
