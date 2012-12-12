@@ -1,0 +1,5 @@
+Embed the V8 Javascript interpreter into Ruby. Features:
+
+* Evaluate Javascript from within Ruby
+* Embed your Ruby objects into the Javascript world
+* Manipulate JavaScript objects and call JavaScript functions from Ruby
