@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2011/10/06 10:00:02 giovanni Exp $
+# $OpenBSD: Makefile,v 1.23 2012/12/12 21:40:02 naddy Exp $
 
 COMMENT=	multi-tabbed terminal emulator
 
 DISTNAME=	mrxvt-0.5.4
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	x11
 
@@ -31,7 +31,7 @@ AUTOCONF_VERSION=2.61
 CONFIGURE_STYLE=autoconf
 CONFIGURE_ARGS+=--enable-menubar \
 		--with-x \
-		--enable-ttygid=utmp \
+		--disable-ttygid \
 		--enable-xim \
 		--enable-xft
 
