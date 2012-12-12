@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/09/10 09:18:55 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/12/12 09:56:35 jasper Exp $
 glpi/
 glpi/.htaccess
 glpi/CHANGELOG.txt
@@ -1446,7 +1446,6 @@ glpi/lib/ezpdf/fonts/php_Helvetica.afm
 glpi/lib/htmlawed/
 glpi/lib/htmlawed/htmLawed.php
 glpi/lib/icalcreator/
-glpi/lib/icalcreator/iCalUtilityFunctions.class.php
 glpi/lib/icalcreator/iCalcreator.class.php
 glpi/lib/icalcreator/lgpl.txt
 glpi/lib/index.php
