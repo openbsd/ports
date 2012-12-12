@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2012/09/14 15:36:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2012/12/12 17:35:02 ajacoutot Exp $
 
 # XXX remove @exec-update when we branch 5.4-current
 
 COMMENT=	OpenPrinting CUPS filters
 
-DISTNAME=	cups-filters-1.0.24
+DISTNAME=	cups-filters-1.0.25
 CATEGORIES=	print
-REVISION=	0
 
 SHARED_LIBS +=  cupsfilters               0.0 # 1.0
 SHARED_LIBS +=  fontembed                 0.0 # 1.0
@@ -58,6 +57,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include \
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-test-font-path=${X11BASE}/lib/X11/fonts/TTF/DejaVuSans.ttf \
+		--with-acroread-path=${LOCALBASE}/bin/acroread \
+		--with-gs-path=${LOCALBASE}/bin/gs \
 		--without-php
 
 # prefer pdftops over gs -- see README under ${WRKSRC}
