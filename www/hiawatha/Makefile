@@ -1,9 +1,7 @@
-# $OpenBSD: Makefile,v 1.32 2012/04/28 10:52:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2012/12/12 09:39:52 jasper Exp $
 
 COMMENT=	secure webserver
-
-DISTNAME=	hiawatha-7.5
-REVISION=	0
+DISTNAME=	hiawatha-8.6
 CATEGORIES=	www net
 
 HOMEPAGE=	http://www.hiawatha-webserver.org/
@@ -16,34 +14,30 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}files/
 
-WANTLIB += c crypto pthread ssl xml2 z xslt
+MODULES=	devel/cmake
+
+WANTLIB += c pthread xml2 z xslt
 
 LIB_DEPENDS=	textproc/libxslt
 
-WEBROOTDIR=	/var/hiawatha
+CONFIGURE_ARGS=	-DWEBROOT_DIR="/var/hiawatha" \
+		-DWORK_DIR="/var/db/hiawatha/" \
+		-DCONFIG_DIR="${SYSCONFDIR}/hiawatha/" \
+		-DLOG_DIR="/var/log/hiawatha/" \
+		-DCMAKE_INSTALL_MANDIR="${PREFIX}/man/" \
+		-DENABLE_XSLT=ON
 
-CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
-		-I${LOCALBASE}/include/libxml2" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		webrootdir=${WEBROOTDIR}
-CONFIGURE_ARGS=	--enable-xslt
-
-USE_GROFF =	Yes
+NO_REGRESS=	Yes
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/etc/hiawatha/hiawatha.conf.in \
-		${WRKSRC}/etc/hiawatha/cgi-wrapper.conf \
-		${WRKSRC}/etc/hiawatha/php-fcgi.conf \
-		${WRKSRC}/doc/hiawatha.1.in
+	${SUBST_CMD} ${WRKSRC}/config/hiawatha.conf.in \
+		${WRKSRC}/config/cgi-wrapper.conf \
+		${WRKSRC}/config/php-fcgi.conf.in \
+		${WRKSRC}/man/hiawatha.1.in
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/hiawatha/
-	${INSTALL_DATA} ${WRKSRC}/etc/hiawatha/*.conf \
-		${PREFIX}/share/examples/hiawatha 
-	${INSTALL_DATA} ${WRKSRC}/etc/hiawatha/index.xslt \
-		${PREFIX}/share/examples/hiawatha 
-	${INSTALL_DATA} ${WRKSRC}/doc/index.html \
-		${PREFIX}/share/examples/hiawatha 
+	mv ${DESTDIR}/etc/hiawatha/ ${PREFIX}/share/examples/hiawatha/
+	mv ${DESTDIR}/var/hiawatha/index.html ${PREFIX}/share/examples/hiawatha/
+	rm -r ${PREFIX}/var/
 
 .include <bsd.port.mk>
