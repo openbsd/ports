@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/03/06 09:24:41 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.9 2012/12/12 16:00:34 sthen Exp $
 @newgroup _unbound:601
 @newuser _unbound:601:601:daemon:Unbound Daemon:/var/unbound:/sbin/nologin
 %%SHARED%%
@@ -7,6 +7,36 @@ lib/libunbound.a
 lib/libunbound.la
 @man man/man1/unbound-host.1
 @man man/man3/libunbound.3
+@man man/man3/ub_cancel.3
+@man man/man3/ub_ctx.3
+@man man/man3/ub_ctx_add_ta.3
+@man man/man3/ub_ctx_add_ta_file.3
+@man man/man3/ub_ctx_async.3
+@man man/man3/ub_ctx_config.3
+@man man/man3/ub_ctx_create.3
+@man man/man3/ub_ctx_data_add.3
+@man man/man3/ub_ctx_data_remove.3
+@man man/man3/ub_ctx_debuglevel.3
+@man man/man3/ub_ctx_debugout.3
+@man man/man3/ub_ctx_delete.3
+@man man/man3/ub_ctx_get_option.3
+@man man/man3/ub_ctx_hosts.3
+@man man/man3/ub_ctx_print_local_zones.3
+@man man/man3/ub_ctx_resolvconf.3
+@man man/man3/ub_ctx_set_fwd.3
+@man man/man3/ub_ctx_set_option.3
+@man man/man3/ub_ctx_trustedkeys.3
+@man man/man3/ub_ctx_zone_add.3
+@man man/man3/ub_ctx_zone_remove.3
+@man man/man3/ub_fd.3
+@man man/man3/ub_poll.3
+@man man/man3/ub_process.3
+@man man/man3/ub_resolve.3
+@man man/man3/ub_resolve_async.3
+@man man/man3/ub_resolve_free.3
+@man man/man3/ub_result.3
+@man man/man3/ub_strerror.3
+@man man/man3/ub_wait.3
 @man man/man5/unbound.conf.5
 @man man/man8/unbound-anchor.8
 @man man/man8/unbound-checkconf.8
