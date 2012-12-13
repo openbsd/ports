@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_libdoxygen_pro_in,v 1.5 2010/11/04 20:13:10 sthen Exp $
---- src/libdoxygen.pro.in.orig	Fri Apr 30 11:45:25 2010
-+++ src/libdoxygen.pro.in	Thu Sep 16 12:14:12 2010
-@@ -242,6 +242,7 @@ win32:TMAKE_CXXFLAGS       += -DQT_NODLL 
+$OpenBSD: patch-src_libdoxygen_pro_in,v 1.6 2012/12/13 14:20:14 sthen Exp $
+--- src/libdoxygen.pro.in.orig	Thu Jul 26 15:09:31 2012
++++ src/libdoxygen.pro.in	Wed Dec 12 23:37:15 2012
+@@ -263,6 +263,7 @@ win32:TMAKE_CXXFLAGS       += -DQT_NODLL 
  win32-msvc:TMAKE_CXXFLAGS  += -Zm200
  win32-g++:TMAKE_CXXFLAGS   += -fno-exceptions -fno-rtti
  linux-g++:TMAKE_CXXFLAGS    += -fno-exceptions -fno-rtti

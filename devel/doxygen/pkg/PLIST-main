@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2010/11/04 20:13:10 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2012/12/13 14:20:14 sthen Exp $
 @pkgpath devel/doxygen,gui
 @pkgpath devel/doxygen
 @bin bin/doxygen
-@bin bin/doxytag
 @man man/man1/doxygen.1
-@man man/man1/doxytag.1

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2012/08/27 13:50:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2012/12/13 14:20:14 sthen Exp $
 
 # Memory hog, stuck for days on the same file during build.
 # XXX check with different optimizer level? see doc/install.doc
@@ -7,11 +7,10 @@ NOT_FOR_ARCHS=	sh
 COMMENT-main=	source code documentation generator tool
 COMMENT-gui=	GUI front-end for doxygen
 
-VERSION=	1.7.2
+VERSION=	1.8.2
 DISTNAME=	doxygen-${VERSION}.src
 PKGNAME-main=	doxygen-${VERSION}
 FULLPKGNAME-gui=doxygen-gui-${VERSION}
-REVISION-main=	3
 CATEGORIES=	devel textproc
 
 HOMEPAGE=	http://www.doxygen.org/
