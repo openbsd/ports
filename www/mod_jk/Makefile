@@ -1,16 +1,13 @@
-# $OpenBSD: Makefile,v 1.24 2012/03/29 13:39:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2012/12/13 15:19:19 kurt Exp $
 
 COMMENT=		Apache-Tomcat AJP Connector
 
-V=			1.2.28
-REVISION=		4
+V=			1.2.37
 DISTNAME=		tomcat-connectors-${V}-src
 PKGNAME=		mod_jk-${V}
 CATEGORIES=		www
 
 HOMEPAGE=		http://tomcat.apache.org/connectors-doc/index.html
-
-MAINTAINER=		Kurt Miller <kurt@openbsd.org>
 
 MODULES+=		apache-module
 
@@ -20,9 +17,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_APACHE:=tomcat/tomcat-connectors/jk/source/jk-$V/}
+MASTER_SITES=		${MASTER_SITE_APACHE:=tomcat/tomcat-connectors/jk/}
 
-SEPARATE_BUILD=		Yes
 NO_REGRESS=		Yes
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes

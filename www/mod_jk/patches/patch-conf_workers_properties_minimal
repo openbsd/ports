@@ -1,28 +1,28 @@
-$OpenBSD: patch-conf_workers_properties_minimal,v 1.2 2008/02/11 02:18:28 kurt Exp $
---- conf/workers.properties.minimal.orig	Sun Sep  2 15:32:11 2007
-+++ conf/workers.properties.minimal	Fri Dec 21 17:50:23 2007
+$OpenBSD: patch-conf_workers_properties_minimal,v 1.3 2012/12/13 15:19:19 kurt Exp $
+--- conf/workers.properties.minimal.orig	Tue Nov 27 10:12:19 2012
++++ conf/workers.properties.minimal	Tue Nov 27 10:13:01 2012
 @@ -21,22 +21,15 @@
  # The workers that jk should create and work with
  #
  
--worker.list=wlb,jkstatus
-+worker.list=ajp13w,jkstatus
+-worker.list=lb,jk-status
++worker.list=ajp13w,jk-status
  
  #
- # Defining a worker named ajp13w and of type ajp13
+ # Defining a worker named node1 and of type ajp13
  # Note that the name and the type do not have to match.
  #
- worker.ajp13w.type=ajp13
--worker.ajp13w.host=localhost
-+worker.ajp13w.host=127.0.0.1
- worker.ajp13w.port=8009
+ worker.node1.type=ajp13
+-worker.node1.host=localhost
++worker.node1.host=127.0.0.1
+ worker.node1.port=8009
 -
 -#
 -# Defining a load balancer
 -# 
 -
--worker.wlb.type=lb
--worker.wlb.balance_workers=ajp13w
+-worker.lb.type=lb
+-worker.lb.balance_workers=node1
  
  #
  # Define status worker
