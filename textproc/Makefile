@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.374 2012/12/08 18:58:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.375 2012/12/13 13:46:21 sthen Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -307,6 +307,7 @@
      SUBDIR += rarian
      SUBDIR += rasqal
      SUBDIR += redland
+     SUBDIR += redland-bindings
      SUBDIR += rman
      SUBDIR += rubber
      SUBDIR += ruby-ascii85
