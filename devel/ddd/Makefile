@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.60 2012/03/29 13:38:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2012/12/13 15:43:11 naddy Exp $
 
 COMMENT=	Data Display Debugger, graphical front-end for GDB, etc
 
 DISTNAME=	ddd-3.3.12
-REVISION =	3
+REVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=ddd/}
 
@@ -14,11 +14,14 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=	ICE SM X11 Xaw Xau Xdmcp Xext Xmu Xpm Xt c m z stdc++ \
 		Xft Xrender expat fontconfig freetype ncurses \
 		pthread-stubs xcb jpeg png Xm
 
 MODULES=	converters/libiconv
+
+LIB_DEPENDS=	x11/openmotif
 
 REGRESS_IS_INTERACTIVE=x11
 
@@ -26,7 +29,8 @@ VMEM_WARNING=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
-CONFIGURE_STYLE=gnu
+AUTOCONF_VERSION=2.61
+CONFIGURE_STYLE=autoconf
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		CXXFLAGS="${CXXFLAGS}"
 MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
@@ -39,8 +43,6 @@ WANTLIB +=	elf
 .endif
 
 SEPARATE_BUILD=	Yes
-
-LIB_DEPENDS+=		x11/openmotif
 
 CONFIGURE_ARGS=	--with-readline-libraries=/usr/lib
 
