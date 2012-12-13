@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.48 2012/10/31 17:19:39 gsoares Exp $
+# $OpenBSD: Makefile,v 1.49 2012/12/13 02:48:15 jsg Exp $
 
 PKG_ARCH =      *
 
 COMMENT=	fetch YouTube and Google videos
 
 PKGNAME=	yt-20
+REVISION=	0
 CATEGORIES=	net www
 DISTFILES=
 
-MAINTAINER=	Martynas Venckus <martynas@openbsd.org>
+MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
 # Public domain
 PERMIT_PACKAGE_CDROM=	Yes
