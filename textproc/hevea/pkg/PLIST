@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/08/18 22:47:00 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/12/13 11:51:34 chrisz Exp $
 bin/bibhva
 bin/esponja
 bin/hacha
@@ -10,6 +10,7 @@ lib/hevea/amsmath.hva
 lib/hevea/articlecommon.hva
 lib/hevea/babel.hva
 lib/hevea/bookcommon.hva
+lib/hevea/booktabs.hva
 lib/hevea/chapterbib.hva
 lib/hevea/chngcntr.hva
 lib/hevea/comment.hva
@@ -23,6 +24,7 @@ lib/hevea/eurosym.hva
 lib/hevea/figcut.hva
 lib/hevea/french-common.hva
 lib/hevea/german-common.hva
+lib/hevea/hanging.hva
 lib/hevea/hevea.sty
 lib/hevea/html/
 lib/hevea/html/amsfonts.hva
@@ -38,6 +40,7 @@ lib/hevea/html/fancysection.hva
 lib/hevea/html/fancyvrb.hva
 lib/hevea/html/french.hva
 lib/hevea/html/german.hva
+lib/hevea/html/gif.hva
 lib/hevea/html/graphics.hva
 lib/hevea/html/graphicx.hva
 lib/hevea/html/hevea.hva
@@ -58,6 +61,7 @@ lib/hevea/hyperref.hva
 lib/hevea/ifpdf.hva
 lib/hevea/ifthen.hva
 lib/hevea/imagen
+lib/hevea/import.hva
 lib/hevea/index.hva
 lib/hevea/info/
 lib/hevea/info/article.hva
@@ -76,8 +80,11 @@ lib/hevea/latexsym.hva
 lib/hevea/listings.hva
 lib/hevea/longtable.hva
 lib/hevea/lstlang1.hva
+lib/hevea/lstlang1.sty
 lib/hevea/lstlang2.hva
+lib/hevea/lstlang2.sty
 lib/hevea/lstlang3.hva
+lib/hevea/lstlang3.sty
 lib/hevea/makeidx.hva
 lib/hevea/mappings/
 lib/hevea/mappings/ISO-8859-1.map
@@ -147,27 +154,31 @@ share/doc/hevea/fddl.html
 share/doc/hevea/index.html
 share/doc/hevea/manual-packages.html
 share/doc/hevea/manual.css
-share/doc/hevea/manual001.gif
+share/doc/hevea/manual.haux
+share/doc/hevea/manual.hind
+share/doc/hevea/manual.html
+share/doc/hevea/manual.htoc
 share/doc/hevea/manual001.html
-share/doc/hevea/manual002.gif
+share/doc/hevea/manual001.png
 share/doc/hevea/manual002.html
-share/doc/hevea/manual003.gif
+share/doc/hevea/manual002.png
 share/doc/hevea/manual003.html
-share/doc/hevea/manual004.gif
+share/doc/hevea/manual003.png
 share/doc/hevea/manual004.html
-share/doc/hevea/manual005.gif
+share/doc/hevea/manual004.png
 share/doc/hevea/manual005.html
-share/doc/hevea/manual006.gif
+share/doc/hevea/manual005.png
 share/doc/hevea/manual006.html
-share/doc/hevea/manual007.gif
+share/doc/hevea/manual006.png
 share/doc/hevea/manual007.html
-share/doc/hevea/manual008.gif
+share/doc/hevea/manual007.png
 share/doc/hevea/manual008.html
-share/doc/hevea/manual009.gif
-share/doc/hevea/manual010.gif
+share/doc/hevea/manual008.png
+share/doc/hevea/manual009.png
 share/doc/hevea/manual010.html
-share/doc/hevea/manual011.gif
+share/doc/hevea/manual010.png
 share/doc/hevea/manual011.html
+share/doc/hevea/manual011.png
 share/doc/hevea/manual012.html
 share/doc/hevea/manual013.html
 share/doc/hevea/manual014.html
@@ -205,5 +216,7 @@ share/doc/hevea/manual047.html
 share/doc/hevea/manual048.html
 share/doc/hevea/next_motif.gif
 share/doc/hevea/previous_motif.gif
+share/doc/hevea/thaihevea.haux
 share/doc/hevea/thaihevea.html
-share/doc/hevea/thaihevea001.gif
+share/doc/hevea/thaihevea.htoc
+share/doc/hevea/thaihevea001.png
