@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST-ruby,v 1.1.1.1 2012/12/13 13:46:01 sthen Exp $
+lib/ruby/
+lib/ruby/${MODRUBY_LIBREV}/
+lib/ruby/${MODRUBY_LIBREV}/${MODRUBY_ARCH}/redland.so
+lib/ruby/${MODRUBY_LIBREV}/rdf/
+lib/ruby/${MODRUBY_LIBREV}/rdf/redland/
+lib/ruby/${MODRUBY_LIBREV}/rdf/redland.rb
+lib/ruby/${MODRUBY_LIBREV}/rdf/redland/constants.rb
+lib/ruby/${MODRUBY_LIBREV}/rdf/redland/convert_owl.rb
+lib/ruby/${MODRUBY_LIBREV}/rdf/redland/convertfoaf.rb
+lib/ruby/${MODRUBY_LIBREV}/rdf/redland/dc.rb
+lib/ruby/${MODRUBY_LIBREV}/rdf/redland/model.rb
+lib/ruby/${MODRUBY_LIBREV}/rdf/redland/node.rb
+lib/ruby/${MODRUBY_LIBREV}/rdf/redland/parser.rb
+lib/ruby/${MODRUBY_LIBREV}/rdf/redland/query.rb
+lib/ruby/${MODRUBY_LIBREV}/rdf/redland/queryresults.rb
+lib/ruby/${MODRUBY_LIBREV}/rdf/redland/resource.rb
+lib/ruby/${MODRUBY_LIBREV}/rdf/redland/schemas/
+lib/ruby/${MODRUBY_LIBREV}/rdf/redland/schemas/foaf.rb
+lib/ruby/${MODRUBY_LIBREV}/rdf/redland/schemas/owl.rb
+lib/ruby/${MODRUBY_LIBREV}/rdf/redland/schemas/rdfs.rb
+lib/ruby/${MODRUBY_LIBREV}/rdf/redland/serializer.rb
+lib/ruby/${MODRUBY_LIBREV}/rdf/redland/statement.rb
+lib/ruby/${MODRUBY_LIBREV}/rdf/redland/store.rb
+lib/ruby/${MODRUBY_LIBREV}/rdf/redland/stream.rb
+lib/ruby/${MODRUBY_LIBREV}/rdf/redland/uri.rb
+lib/ruby/${MODRUBY_LIBREV}/rdf/redland/util.rb

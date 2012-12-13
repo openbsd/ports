@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-python,v 1.1.1.1 2012/12/13 13:46:01 sthen Exp $
+lib/python${MODPY_VERSION}/
+lib/python${MODPY_VERSION}/site-packages/
+lib/python${MODPY_VERSION}/site-packages/RDF.py
+lib/python${MODPY_VERSION}/site-packages/Redland.so

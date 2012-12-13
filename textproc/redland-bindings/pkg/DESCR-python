@@ -1,0 +1,7 @@
+Redland librdf is a library that provides a high-level interface
+for the Resource Description Framework (RDF) allowing the RDF graph
+to be parsed from XML, stored, queried and manipulated. Redland
+implements each of the RDF concepts in its own class via an object
+based API.
+
+This package contains the Python bindings for Redland.
