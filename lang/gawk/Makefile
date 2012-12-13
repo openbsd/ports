@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.21 2012/12/08 20:46:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2012/12/13 16:34:48 naddy Exp $
 
 COMMENT=	GNU awk
 
 V=		4.0.1
 DISTNAME=	gawk-$V
-REVISION=	0
+REVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU:=gawk/}
 
 HOMEPAGE=	http://www.gnu.org/software/gawk/
-
-MAINTAINER=	Peter Stromberg <wilfried@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes

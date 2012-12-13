@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2012/03/29 13:38:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2012/12/13 16:34:48 naddy Exp $
 
 COMMENT=		wm-dockapp; simple network interface monitoring tool
 
 DISTNAME=		wmnetload-1.3
-REVISION=		1
+REVISION=		2
 CATEGORIES=		net x11 x11/windowmaker
 
 HOMEPAGE=		http://freshmeat.net/projects/wmnetload
-
-MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/15 00:22:47 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2012/12/13 16:34:47 naddy Exp $
 
 COMMENT=		wm-dockapp; sound mixer
 
 DISTNAME=		Mixer.app-1.8.0
 PKGNAME=		${DISTNAME:L}
-REVISION=		1
+REVISION=		2
 CATEGORIES=		audio x11 x11/windowmaker
 
 HOMEPAGE=		http://www.fukt.hk-r.se/~per/mixer/
-
-MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

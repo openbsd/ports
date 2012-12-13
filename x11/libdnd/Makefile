@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.19 2012/10/29 15:19:03 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2012/12/13 16:34:48 naddy Exp $
 
 COMMENT=		drag and drop library
 
 DISTNAME=		dnd.1.1
 PKGNAME=		libdnd-1.1
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS=		Dnd++	1.0 \
 			Dnd	0.0
 CATEGORIES=		x11 devel
 USE_X11 =		Yes
-
-MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
 # LPGL
 PERMIT_PACKAGE_CDROM=	Yes

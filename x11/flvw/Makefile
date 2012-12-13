@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/22 08:36:56 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2012/12/13 16:34:48 naddy Exp $
 
 COMMENT=		FLTK Virtual styles, list, table, and complex table Widgets
 
 DISTNAME=		flvw-20000224
 PKGNAME=		flvw-1.0
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		x11 devel
 
 HOMEPAGE=		http://flvw.sourceforge.net/
-
-MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

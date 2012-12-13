@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2012/05/14 09:33:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2012/12/13 16:34:48 naddy Exp $
 
 COMMENT=	module to bubble-babble fingerprints
 
 MODULES=	cpan
 DISTNAME=	Digest-BubbleBabble-0.02
+REVISION=	0
 CATEGORIES=	security
-
-MAINTAINER=	Peter Stromberg <wilfried@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

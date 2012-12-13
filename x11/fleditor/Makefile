@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.24 2010/11/22 08:36:56 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2012/12/13 16:34:48 naddy Exp $
 
 COMMENT=		text editor widget for FLTK
 
 V=			0.4.5
 DISTNAME=		fl_editor-${V}
 PKGNAME=		fleditor-${V}
-REVISION=		3
+REVISION=		4
 
 SHARED_LIBS=		fleditor 3.0
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.robertk.com/source/
-
-MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
 # LPGL
 PERMIT_PACKAGE_CDROM=	Yes

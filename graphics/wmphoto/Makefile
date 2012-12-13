@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.17 2011/11/02 09:57:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2012/12/13 16:34:48 naddy Exp $
 
 COMMENT=		wm-dockapp; shows photos and execute commands on that photo
 
 DISTNAME=		wmphoto-0.3a
-REVISION =		2
+REVISION =		3
 CATEGORIES=		graphics x11 x11/windowmaker
 
 HOMEPAGE=		http://www.dcc.uchile.cl/~amartoq/wmphoto/
-
-MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

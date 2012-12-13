@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2012/03/29 13:38:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2012/12/13 16:34:48 naddy Exp $
 
 COMMENT=		Standalone version of arguments parsing functions from GLIBC
 
 DISTNAME=		argp-standalone-1.3
+REVISION=		0
 
 CATEGORIES=		devel
-
-MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

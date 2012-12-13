@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2012/03/29 13:38:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2012/12/13 16:34:48 naddy Exp $
 
 COMMENT=		dockapp-making standard library for Window Maker
 
 DISTNAME=		libdockapp-0.4.0
-REVISION =		2
-SHARED_LIBS +=	dockapp              1.0      # .1.0
+REVISION=		3
+SHARED_LIBS=		dockapp              1.0      # .1.0
 CATEGORIES=		devel
-
-MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

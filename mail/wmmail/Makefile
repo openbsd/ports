@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2012/03/29 13:38:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2012/12/13 16:34:48 naddy Exp $
 
 COMMENT=		wm-dockapp; mail notifier
 
 DISTNAME=		WMMail.app-0.64
 PKGNAME=		wmmail-0.64
-REVISION =		1
+REVISION=		2
 CATEGORIES=		mail x11 x11/windowmaker
-
-MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

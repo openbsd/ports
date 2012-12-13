@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.20 2012/03/29 13:38:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2012/12/13 16:34:47 naddy Exp $
 
 COMMENT=		wm-dockapp; front end for an mp3 player
 
 DISTNAME=		wmmp3-0.12
-REVISION=		2
+REVISION=		3
 CATEGORIES=		audio x11 x11/windowmaker
 
 HOMEPAGE=		http://www.dotfiles.com/software/wmmp3/
-
-MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

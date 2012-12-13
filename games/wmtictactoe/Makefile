@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/16 11:23:28 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2012/12/13 16:34:48 naddy Exp $
 
 COMMENT=		wm-dockapp; TicTacToe game
 
 DISTNAME=		wmtictactoe-1.1-1
 PKGNAME=		wmtictactoe-1.1.1
-REVISION =		0
+REVISION =		1
 CATEGORIES=		games x11 x11/windowmaker
-
-MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

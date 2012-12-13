@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2012/08/18 12:41:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2012/12/13 16:34:48 naddy Exp $
 
 COMMENT=		neat theme manager for Window Maker
 
 DISTNAME=		wmthemeinstall-0.62
 CATEGORIES=		x11 x11/windowmaker
 
-REVISION=		1
-
-MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
+REVISION=		2
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

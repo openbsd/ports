@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/24 21:15:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2012/12/13 16:34:48 naddy Exp $
 
 COMMENT=		wm-dockapp; application launching program
 
 DISTNAME=		wmbutton-0.6.1
+REVISION=		0
 CATEGORIES=		x11 x11/windowmaker
 
 HOMEPAGE=		http://greek0.net/~greek0/wmbutton/
-
-MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

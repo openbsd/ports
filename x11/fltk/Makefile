@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.42 2012/08/04 18:07:03 pascal Exp $
+# $OpenBSD: Makefile,v 1.43 2012/12/13 16:34:48 naddy Exp $
 
 COMMENT=	Fast-Light Tool Kit
 
 VER=		1.3.0
 DISTNAME=	fltk-${VER}-source
 PKGNAME=	fltk-${VER}
+REVISION=	0
 
 CATEGORIES=	x11
 SHARED_LIBS=	fltk		7.0 \
@@ -13,8 +14,6 @@ SHARED_LIBS=	fltk		7.0 \
 		fltk_images	7.0
 
 HOMEPAGE=	http://www.fltk.org/
-
-MAINTAINER=	Peter Stromberg <wilfried@openbsd.org>
 
 # LGPLv2 with exceptions (see COPYING)
 PERMIT_PACKAGE_CDROM=	Yes

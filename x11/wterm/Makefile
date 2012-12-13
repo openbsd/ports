@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2011/09/16 12:29:17 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2012/12/13 16:34:48 naddy Exp $
 
 COMMENT=		color vt102 terminal emulator with transparency support
 
 DISTNAME=		wterm-6.2.9
-REVISION=		1
+REVISION=		2
 CATEGORIES=		x11
-
-MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
 HOMEPAGE=		http://www.wterm.org/
 

@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.25 2010/11/20 17:22:42 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2012/12/13 16:34:48 naddy Exp $
 
 ONLY_FOR_ARCHS=		${APM_ARCHS}
 
 COMMENT=		wm-dockapp; APM/battery monitor
 
 DISTNAME=		wmapm-3.1
-REVISION =		1
+REVISION =		2
 CATEGORIES=		sysutils x11 x11/windowmaker
 
 HOMEPAGE=		http://nis-www.lanl.gov/~mgh/WindowMaker/DockApps.shtml
-
-MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.30 2012/08/23 20:03:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2012/12/13 16:34:48 naddy Exp $
 
 COMMENT=		wm-dockapp; alarm clock
 
 DISTNAME=		wmtimer-2.92
-REVISION=		3
+REVISION=		4
 CATEGORIES=		misc x11 x11/windowmaker
 
 HOMEPAGE=		http://www.darkops.net/wmtimer/
-
-MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

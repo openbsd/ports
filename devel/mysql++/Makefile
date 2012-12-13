@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2012/03/16 16:42:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2012/12/13 16:34:48 naddy Exp $
 
 SHARED_ONLY =		Yes
 
@@ -9,12 +9,12 @@ VERSION =		3.1.0
 DISTNAME =		mysql++-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-docs =		mysql++-docs-${VERSION}
+REVISION-main =		0
+REVISION-docs =		0
 SHARED_LIBS += mysqlpp	4.0	# 3
 CATEGORIES =		devel
 
 HOMEPAGE =		http://tangentsoft.net/mysql++/
-
-MAINTAINER =		Peter Stromberg <wilfried@openbsd.org>
 
 # LPGL
 PERMIT_PACKAGE_CDROM =	Yes

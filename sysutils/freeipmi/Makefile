@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2012/04/28 10:51:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2012/12/13 16:34:48 naddy Exp $
 
 # needs machine/sysarch.h & machine/pio.h
 ONLY_FOR_ARCHS=	amd64 arm i386
@@ -7,7 +7,7 @@ COMMENT=	FreeIPMI provides in-band and out-of-band IPMI software
 
 V=		0.4.6
 DISTNAME=	freeipmi-${V}
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS +=  freeipmi 4.0                  # .4.0
 SHARED_LIBS +=  ipmidetect 0.0                # .0.0
@@ -18,8 +18,6 @@ SHARED_LIBS +=  ipmimonitoring 0.1            # .0.1
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.gnu.org/software/freeipmi/
-
-MAINTAINER=	Peter Stromberg <wilfried@openbsd.org>
 
 # GPL v2
 PERMIT_PACKAGE_CDROM=	Yes

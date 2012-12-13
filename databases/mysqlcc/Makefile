@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.15 2011/11/04 08:16:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2012/12/13 16:34:47 naddy Exp $
 
 COMMENT=		GUI client for MySQL
 
 VERSION=		0.9.8
 DISTNAME=		mysqlcc-${VERSION}-src
 PKGNAME=		mysqlcc-${VERSION}
-REVISION=		2
+REVISION=		3
 CATEGORIES=		databases
 
 HOMEPAGE=		http://mysqlcc.sourceforge.net/
-
-MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

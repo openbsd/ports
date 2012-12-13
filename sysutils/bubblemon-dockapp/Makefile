@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.20 2011/09/16 11:41:39 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2012/12/13 16:34:48 naddy Exp $
 
 COMMENT=		wm-dockapp; display CPU and memory load
 
 DISTNAME=		bubblemon-dockapp-1.46
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=     	sysutils x11 x11/windowmaker
 
 HOMEPAGE=		http://www.ne.jp/asahi/linux/timecop/
-
-MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

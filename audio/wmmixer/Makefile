@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/24 21:00:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2012/12/13 16:34:47 naddy Exp $
 
 COMMENT=		wm-dockapp; audio mixer
 
 DISTNAME=		wmmixer-1.0-beta1
 PKGNAME=		wmmixer-1.0b1
-REVISION=		2
+REVISION=		3
 CATEGORIES=		audio x11 x11/windowmaker
-
-MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

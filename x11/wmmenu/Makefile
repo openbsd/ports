@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/22 08:37:05 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2012/12/13 16:34:48 naddy Exp $
 
 COMMENT=		wm-dockapp; A popup menu of icons that launch programs
 
 DISTNAME=		wmmenu-1.2
-REVISION=		3
+REVISION=		4
 CATEGORIES=     	x11 x11/windowmaker
 
 HOMEPAGE=		http://www.fcoutant.freesurf.fr/wmmenu.html
-
-MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

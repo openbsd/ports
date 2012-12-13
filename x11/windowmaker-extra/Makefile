@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.17 2011/09/16 12:29:17 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2012/12/13 16:34:48 naddy Exp $
 
 COMMENT=		themes and icons for Window Maker
 
 DISTNAME=		WindowMaker-extra-0.1
 PKGNAME=		${DISTNAME:L}
-REVISION=		1
+REVISION=		2
 CATEGORIES=		x11 x11/windowmaker
 
 HOMEPAGE=		http://www.windowmaker.info/
-
-MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

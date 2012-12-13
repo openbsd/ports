@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.18 2011/11/03 20:28:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2012/12/13 16:34:48 naddy Exp $
 
 COMMENT=		wm-dockapp; simple four-function calculator
 
 DISTNAME=		wmcalc-0.3
-REVISION =		1
+REVISION=		2
 CATEGORIES=		math x11 x11/windowmaker
 
 HOMEPAGE=		http://members.cox.net/ehf_dockapps/
-
-MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

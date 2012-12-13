@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.17 2010/12/03 07:27:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2012/12/13 16:34:48 naddy Exp $
 
 COMMENT=		wm-dockapp; chess game
 
 DISTNAME=		miniCHESS-0.8
 PKGNAME=		wm${DISTNAME:L}
-REVISION =		0
+REVISION =		1
 CATEGORIES=		games x11 x11/windowmaker
 
 HOMEPAGE=		http://www.foobargeek.com/miniCHESS/
-
-MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
