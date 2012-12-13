@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_main_c,v 1.5 2012/09/21 17:16:14 dcoppa Exp $
+$OpenBSD: patch-src_main_c,v 1.6 2012/12/13 12:10:14 dcoppa Exp $
 
 OpenBSD lacks POSIX shared memory support (shm_open() and friends)
 
---- src/main.c.orig	Wed Sep 19 18:08:09 2012
-+++ src/main.c	Thu Sep 20 11:56:52 2012
+--- src/main.c.orig	Wed Dec 12 00:08:17 2012
++++ src/main.c	Thu Dec 13 10:26:26 2012
 @@ -219,11 +219,13 @@ static void i3_exit(void) {
      ev_loop_destroy(main_loop);
  #endif
@@ -18,20 +18,19 @@ OpenBSD lacks POSIX shared memory support (shm_open() and friends)
  }
  
  /*
-@@ -234,10 +236,12 @@ static void i3_exit(void) {
+@@ -233,9 +235,11 @@ static void i3_exit(void) {
+  *
   */
  static void handle_signal(int sig, siginfo_t *info, void *data) {
-     fprintf(stderr, "Received signal %d, terminating\n", sig);
 +#if !defined(__OpenBSD__)
      if (*shmlogname != '\0') {
-         fprintf(stderr, "Closing SHM log \"%s\"\n", shmlogname);
          shm_unlink(shmlogname);
      }
 +#endif
-     fflush(stderr);
      raise(sig);
  }
-@@ -266,8 +270,10 @@ int main(int argc, char *argv[]) {
+ 
+@@ -263,8 +267,10 @@ int main(int argc, char *argv[]) {
          {"force-xinerama", no_argument, 0, 0},
          {"force_xinerama", no_argument, 0, 0},
          {"disable-signalhandler", no_argument, 0, 0},
@@ -42,7 +41,7 @@ OpenBSD lacks POSIX shared memory support (shm_open() and friends)
          {"get-socketpath", no_argument, 0, 0},
          {"get_socketpath", no_argument, 0, 0},
          {"fake_outputs", required_argument, 0, 0},
-@@ -292,8 +298,10 @@ int main(int argc, char *argv[]) {
+@@ -290,8 +296,10 @@ int main(int argc, char *argv[]) {
       * (file) logging. */
      init_logging();
  
@@ -53,7 +52,7 @@ OpenBSD lacks POSIX shared memory support (shm_open() and friends)
  
      start_argv = argv;
  
-@@ -357,6 +365,7 @@ int main(int argc, char *argv[]) {
+@@ -355,6 +363,7 @@ int main(int argc, char *argv[]) {
                      }
  
                      exit(EXIT_FAILURE);
@@ -61,7 +60,7 @@ OpenBSD lacks POSIX shared memory support (shm_open() and friends)
                  } else if (strcmp(long_options[option_index].name, "shmlog-size") == 0 ||
                             strcmp(long_options[option_index].name, "shmlog_size") == 0) {
                      shmlog_size = atoi(optarg);
-@@ -365,6 +374,7 @@ int main(int argc, char *argv[]) {
+@@ -363,6 +372,7 @@ int main(int argc, char *argv[]) {
                      init_logging();
                      LOG("Limiting SHM log size to %d bytes\n", shmlog_size);
                      break;
@@ -69,7 +68,7 @@ OpenBSD lacks POSIX shared memory support (shm_open() and friends)
                  } else if (strcmp(long_options[option_index].name, "restart") == 0) {
                      FREE(layout_path);
                      layout_path = sstrdup(optarg);
-@@ -397,11 +407,13 @@ int main(int argc, char *argv[]) {
+@@ -399,11 +409,13 @@ int main(int argc, char *argv[]) {
                  fprintf(stderr, "\t--get-socketpath\n"
                                  "\tRetrieve the i3 IPC socket path from X11, print it, then exit.\n");
                  fprintf(stderr, "\n");
@@ -83,7 +82,7 @@ OpenBSD lacks POSIX shared memory support (shm_open() and friends)
                  fprintf(stderr, "If you pass plain text arguments, i3 will interpret them as a command\n"
                                  "to send to a currently running i3 (like i3-msg). This allows you to\n"
                                  "use nice and logical commands, such as:\n"
-@@ -471,8 +483,10 @@ int main(int argc, char *argv[]) {
+@@ -473,8 +485,10 @@ int main(int argc, char *argv[]) {
          return 0;
      }
  

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.52 2012/11/13 08:44:01 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.53 2012/12/13 12:10:13 dcoppa Exp $
 
 COMMENT =	improved dynamic tiling window manager
 
-DISTNAME =	i3-4.3
-REVISION =	5
+DISTNAME =	i3-4.4
 CATEGORIES =	x11
 
 EXTRACT_SUFX =	.tar.bz2
@@ -17,7 +16,7 @@ PERMIT_PACKAGE_FTP =     Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =   Yes
 
-WANTLIB =	GL X11 Xcursor Xrender c cairo ev expat \
+WANTLIB =	GL X11 Xcursor Xext Xrender c cairo ev expat \
 		fontconfig freetype glib-2.0 gobject-2.0 m \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
 		pixman-1 png pthread pthread-stubs \
@@ -62,7 +61,8 @@ FAKE_FLAGS =	PREFIX=${PREFIX} \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 
 post-configure:
-	${SUBST_CMD} ${WRKSRC}/i3.config \
+	${SUBST_CMD} ${WRKSRC}/i3-dmenu-desktop \
+		${WRKSRC}/i3.config \
 		${WRKSRC}/i3.config.keycodes \
 		${WRKSRC}/src/cfgparse.y \
 		${WRKSRC}/src/commands.c \
@@ -77,7 +77,8 @@ post-install:
 	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} \
 		-c ${WRKBUILD}/man/i3.1 \
 			${PREFIX}/man/man1/i3.1
-	@rm ${PREFIX}/man/man1/i3-dump-log.1 \
+	@rm ${PREFIX}/man/man1/i3-dmenu-desktop.1 \
+		${PREFIX}/man/man1/i3-dump-log.1 \
 		${PREFIX}/man/man1/i3-sensible*.1
 
 .include <bsd.port.mk>

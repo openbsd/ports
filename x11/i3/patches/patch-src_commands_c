@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_commands_c,v 1.4 2012/09/21 17:16:14 dcoppa Exp $
---- src/commands.c.orig	Thu Sep 20 14:38:12 2012
-+++ src/commands.c	Thu Sep 20 14:39:06 2012
-@@ -160,7 +160,7 @@ void cmd_MIGRATION_start_nagbar(void) {
+$OpenBSD: patch-src_commands_c,v 1.5 2012/12/13 12:10:13 dcoppa Exp $
+--- src/commands.c.orig	Wed Dec 12 00:08:17 2012
++++ src/commands.c	Thu Dec 13 09:45:54 2012
+@@ -182,7 +182,7 @@ void cmd_MIGRATION_start_nagbar(void) {
      /* child */
      if (migration_pid == 0) {
          char *pageraction;

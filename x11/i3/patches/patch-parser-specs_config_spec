@@ -1,0 +1,28 @@
+$OpenBSD: patch-parser-specs_config_spec,v 1.1 2012/12/13 12:10:13 dcoppa Exp $
+
+Workaround for an error caused by xcb-util-0.3.6
+
+In file included from src/config_parser.c:49:
+include/GENERATED_config_enums.h:70: error: 'FONT' redeclared as different kind of symbol
+/usr/X11R6/include/xcb/xcb_atom.h:60: error: previous declaration of 'FONT' was here
+
+--- parser-specs/config.spec.orig	Thu Dec 13 11:12:38 2012
++++ parser-specs/config.spec	Thu Dec 13 11:15:57 2012
+@@ -20,7 +20,7 @@ state INITIAL:
+   'set'                                    -> IGNORE_LINE
+   bindtype = 'bindsym', 'bindcode', 'bind' -> BINDING
+   'bar'                                    -> BARBRACE
+-  'font'                                   -> FONT
++  'font'                                   -> WINDOW_FONT
+   'mode'                                   -> MODENAME
+   'floating_minimum_size'                  -> FLOATING_MINIMUM_SIZE_WIDTH
+   'floating_maximum_size'                  -> FLOATING_MAXIMUM_SIZE_WIDTH
+@@ -264,7 +264,7 @@ state EXEC:
+       -> call cfg_exec($exectype, $no_startup_id, $command)
+ 
+ # font font
+-state FONT:
++state WINDOW_FONT:
+   font = string
+       -> call cfg_font($font)
+ 

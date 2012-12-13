@@ -1,6 +1,6 @@
-$OpenBSD: patch-i3_config,v 1.13 2012/09/21 17:16:14 dcoppa Exp $
---- i3.config.orig	Wed Sep 19 18:08:09 2012
-+++ i3.config	Fri Sep 21 14:09:31 2012
+$OpenBSD: patch-i3_config,v 1.14 2012/12/13 12:10:13 dcoppa Exp $
+--- i3.config.orig	Thu Dec 13 10:02:05 2012
++++ i3.config	Thu Dec 13 10:03:44 2012
 @@ -22,13 +22,13 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-is
  floating_modifier Mod1
  
@@ -14,6 +14,6 @@ $OpenBSD: patch-i3_config,v 1.13 2012/09/21 17:16:14 dcoppa Exp $
  # start dmenu (a program launcher)
 -bindsym Mod1+d exec dmenu_run
 +bindsym Mod1+d exec ${LOCALBASE}/bin/dmenu_run
- 
- # change focus
- bindsym Mod1+j focus left
+ # There also is the (new) i3-dmenu-desktop which only displays applications
+ # shipping a .desktop file. It is a wrapper around dmenu, so you need that
+ # installed.
