@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/05/27 07:20:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2012/12/14 10:36:35 kirby Exp $
+
+# useless without ufoai, which can only be built on shared lib arches.
+# saves a useless 530MB package on !shared arch.
+SHARED_ONLY =	Yes
 
 COMMENT =		UFO:AI data
 
