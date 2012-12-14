@@ -1,11 +1,12 @@
 --- cgi/Makefile.in.orig	Thu Sep 10 07:17:08 2009
 +++ cgi/Makefile.in	Thu Sep 10 07:17:33 2009
-@@ -36,7 +36,7 @@
+@@ -36,7 +36,8 @@
  #CFLAGS_DEBUG=-ggdb3 -g3
  #CFLAGS+=$(CFLAGS_WARN) $(CFLAGS_DEBUG)
++CFLAGS+=-fno-pie
  
 -LDFLAGS=@LDFLAGS@
-+LDFLAGS=-static @LDFLAGS@
++LDFLAGS=-static -nopie @LDFLAGS@
  LIBS=@LIBS@
  
  CGIS=avail.cgi cmd.cgi config.cgi extinfo.cgi history.cgi notifications.cgi outages.cgi showlog.cgi status.cgi statuswml.cgi summary.cgi tac.cgi $(CGIEXTRAS)

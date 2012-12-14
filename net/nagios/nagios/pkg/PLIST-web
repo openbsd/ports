@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-web,v 1.6 2011/09/05 14:56:46 sthen Exp $
+@comment $OpenBSD: PLIST-web,v 1.7 2012/12/14 23:50:09 sthen Exp $
 cgi-bin/nagios/
 @bin cgi-bin/nagios/avail.cgi
 @bin cgi-bin/nagios/cmd.cgi
@@ -84,12 +84,17 @@ nagios/contexthelp/N7.html
 nagios/docs/
 nagios/docs/images/
 nagios/images/
+nagios/images/Nagios-clearbg.png
 nagios/images/NagiosEnterprises-whitebg-112x46.png
 nagios/images/ack.gif
 nagios/images/action-graph.gif
 nagios/images/action-nagios.gif
 nagios/images/action-orig.gif
 nagios/images/action.gif
+nagios/images/b_first2.png
+nagios/images/b_last2.png
+nagios/images/b_next2.png
+nagios/images/b_prev2.png
 nagios/images/command.png
 nagios/images/comment.gif
 nagios/images/contexthelp1.gif
@@ -333,6 +338,7 @@ nagios/images/weblogo1.png
 nagios/images/zoom1.gif
 nagios/images/zoom2.gif
 nagios/includes/
+nagios/includes/jquery-1.7.1.min.js
 nagios/includes/rss/
 nagios/includes/rss/extlib/
 nagios/includes/rss/extlib/Snoopy.class.inc
@@ -342,9 +348,13 @@ nagios/includes/rss/rss_parse.inc
 nagios/includes/rss/rss_utils.inc
 nagios/includes/utils.inc.php
 nagios/index.php
+nagios/js/
+nagios/js/jquery-1.7.1.min.js
 nagios/main.php
 nagios/media/
 nagios/robots.txt
+nagios/rss-corefeed.php
+nagios/rss-newsfeed.php
 nagios/side.php
 nagios/ssi/
 nagios/stylesheets/

@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.52 2012/04/28 10:51:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2012/12/14 23:50:08 sthen Exp $
 
 COMMENT-main=	host and service monitor
 COMMENT-web=	cgis and webpages for nagios
 
-V=		3.3.1
+V=		3.4.3
 DISTNAME=	nagios-$V
 PKGNAME-main=	nagios-$V
 PKGNAME-web=	nagios-web-$V
-REVISION=	2
 WRKDIST=	${WRKDIR}/nagios
 CATEGORIES=	net
 
