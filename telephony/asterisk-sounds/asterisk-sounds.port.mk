@@ -1,4 +1,9 @@
-# $OpenBSD: asterisk-sounds.port.mk,v 1.1 2012/09/25 21:58:46 sthen Exp $
+# $OpenBSD: asterisk-sounds.port.mk,v 1.2 2012/12/14 09:52:16 sthen Exp $
+
+# strictly speaking not, as they are just sound files, but packaging
+# these on !shared arch is just a total waste of cycles as asterisk itself
+# is SHARED_ONLY.
+SHARED_ONLY =	Yes
 
 MODAS_CODECS ?=	gsm alaw ulaw g722 sln16 wav # g729 siren7 siren14
 
