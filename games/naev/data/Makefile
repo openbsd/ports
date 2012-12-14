@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2012/01/26 11:27:56 nigel Exp $
+# $OpenBSD: Makefile,v 1.3 2012/12/14 10:26:00 sthen Exp $
+
+# useless without naev, which can only be built on shared lib arches
+# due to dependency on lua. saves a useless 250MB package on !shared arch.
+SHARED_ONLY =	Yes
 
 COMMENT = 	naev game data
 
