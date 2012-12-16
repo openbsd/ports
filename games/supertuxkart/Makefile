@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2012/11/22 11:54:06 pascal Exp $
+# $OpenBSD: Makefile,v 1.9 2012/12/16 15:31:40 pascal Exp $
 
 COMMENT =		kart racing game with OSS mascots
 
-BASENAME =		supertuxkart-0.7.3
+V =			0.8
+BASENAME =		supertuxkart-${V}
 DISTNAME =		${BASENAME}-src
 PKGNAME =		${BASENAME}
 
@@ -18,7 +19,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += GL GLU ICE Irrlicht SM X11 Xext Xxf86vm c curl fribidi
+WANTLIB += GL GLU ICE SM X11 Xext Xxf86vm c curl fribidi
 WANTLIB += m ogg openal pthread stdc++ vorbis vorbisfile
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=supertuxkart/SuperTuxKart/}
@@ -26,17 +27,27 @@ EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		devel/cmake
 
-CONFIGURE_ARGS +=	-DIRRLICHT_DIR="${LOCALBASE}" -DX11BASE="${X11BASE}"
-
 RUN_DEPENDS =		devel/desktop-file-utils
 LIB_DEPENDS =		audio/openal>=0.0.8p7 \
 			audio/libvorbis \
-			x11/irrlicht>=1.8 \
 			devel/fribidi \
 			net/curl
 
 USE_GMAKE =		Yes
 
-WRKDIST =		${WRKDIR}/${BASENAME}
+WRKDIST =		${WRKDIR}/SuperTuxKart-${V}
+
+NO_REGRESS =		Yes
+
+# now needs a modified, internal version of Irrlicht.  glorious.
+pre-build:
+	cd ${WRKSRC}/lib/irrlicht/source/Irrlicht && env -i \
+		CC="${CC}" \
+		CFLAGS="${CFLAGS}" \
+		CXX="${CXX}" \
+		CXXFLAGS="${CXXFLAGS}" \
+		NDEBUG=1 \
+		CPPFLAGS="-DNO_IRR_COMPILE_WITH_JOYSTICK_EVENTS_" \
+		${MAKE_PROGRAM}
 
 .include <bsd.port.mk>
