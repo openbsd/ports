@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2012/12/16 11:40:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2012/12/16 23:06:16 sthen Exp $
 
 V =			0.2.1
 REVISION =		0
@@ -20,7 +20,8 @@ WANTLIB +=		c xml2 zip
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=ebook-tools/${V}/}
 
 MODULES =		devel/cmake
-BUILD_DEPENDS =		devel/doxygen
+BUILD_DEPENDS =		devel/doxygen \
+			graphics/graphviz
 LIB_DEPENDS =		textproc/libxml \
 			archivers/libzip \
 
