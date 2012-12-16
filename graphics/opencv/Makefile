@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2012/09/06 12:38:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2012/12/16 11:34:33 sthen Exp $
 
 ONLY_FOR_ARCHS=		${GCC4_ARCHS}
 
@@ -12,6 +12,7 @@ DISTNAME=		OpenCV-$V
 PKGNAME-main=		opencv-$V
 REVISION-main=		7
 PKGNAME-docs=		opencv-docs-$V
+REVISION-docs=		0
 CATEGORIES=		graphics devel
 
 SHARED_LIBS +=		opencv_calib3d			0.0

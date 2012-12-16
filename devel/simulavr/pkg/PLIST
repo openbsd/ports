@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/07 19:35:49 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/12/16 11:36:04 sthen Exp $
 @bin bin/simulavr
 @bin bin/simulavr-disp
 @bin bin/simulavr-vcd
@@ -54,6 +54,7 @@ share/doc/simulavr/internals_html/device_8c.html
 share/doc/simulavr/internals_html/device_8c_source.html
 share/doc/simulavr/internals_html/devsupp_8c.html
 share/doc/simulavr/internals_html/devsupp_8c_source.html
+share/doc/simulavr/internals_html/dir_68267d1309a1af8e8297ef4c3efbcdba.html
 share/doc/simulavr/internals_html/display_8c.html
 share/doc/simulavr/internals_html/display_8c_source.html
 share/doc/simulavr/internals_html/dox.css
@@ -74,11 +75,11 @@ share/doc/simulavr/internals_html/index.html
 share/doc/simulavr/internals_html/insn_decoder.html
 share/doc/simulavr/internals_html/interrupts.html
 share/doc/simulavr/internals_html/intvects_8c_source.html
-share/doc/simulavr/internals_html/main.html
 share/doc/simulavr/internals_html/main_8c_source.html
 share/doc/simulavr/internals_html/memory_8c.html
 share/doc/simulavr/internals_html/memory_8c_source.html
 share/doc/simulavr/internals_html/memory_management.html
+share/doc/simulavr/internals_html/navtree.css
 share/doc/simulavr/internals_html/object_system.html
 share/doc/simulavr/internals_html/op__names_8c_source.html
 share/doc/simulavr/internals_html/pages.html
@@ -97,7 +98,6 @@ share/doc/simulavr/internals_html/tabs.css
 share/doc/simulavr/internals_html/timers_8c.html
 share/doc/simulavr/internals_html/timers_8c_source.html
 share/doc/simulavr/internals_html/todo.html
-share/doc/simulavr/internals_html/tree.html
 share/doc/simulavr/internals_html/uart_8c.html
 share/doc/simulavr/internals_html/uart_8c_source.html
 share/doc/simulavr/internals_html/usb_8c.html

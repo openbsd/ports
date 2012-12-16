@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2011/08/29 11:23:19 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.12 2012/12/16 11:30:50 sthen Exp $
 @bin bin/libquicktime_config
 @bin bin/lqt_transcode
 @bin bin/lqtplay
@@ -40,13 +40,30 @@ share/doc/libquicktime/
 share/doc/libquicktime/apiref/
 share/doc/libquicktime/apiref/annotated.html
 share/doc/libquicktime/apiref/bc_s.png
+share/doc/libquicktime/apiref/bdwn.png
 share/doc/libquicktime/apiref/classes.html
 share/doc/libquicktime/apiref/closed.png
 share/doc/libquicktime/apiref/colormodels_8h_source.html
-share/doc/libquicktime/apiref/dirs.html
 share/doc/libquicktime/apiref/doxygen.css
 share/doc/libquicktime/apiref/doxygen.png
+share/doc/libquicktime/apiref/dynsections.js
 share/doc/libquicktime/apiref/files.html
+share/doc/libquicktime/apiref/ftv2blank.png
+share/doc/libquicktime/apiref/ftv2cl.png
+share/doc/libquicktime/apiref/ftv2doc.png
+share/doc/libquicktime/apiref/ftv2folderclosed.png
+share/doc/libquicktime/apiref/ftv2folderopen.png
+share/doc/libquicktime/apiref/ftv2lastnode.png
+share/doc/libquicktime/apiref/ftv2link.png
+share/doc/libquicktime/apiref/ftv2mlastnode.png
+share/doc/libquicktime/apiref/ftv2mnode.png
+share/doc/libquicktime/apiref/ftv2mo.png
+share/doc/libquicktime/apiref/ftv2node.png
+share/doc/libquicktime/apiref/ftv2ns.png
+share/doc/libquicktime/apiref/ftv2plastnode.png
+share/doc/libquicktime/apiref/ftv2pnode.png
+share/doc/libquicktime/apiref/ftv2splitbar.png
+share/doc/libquicktime/apiref/ftv2vertline.png
 share/doc/libquicktime/apiref/functions.html
 share/doc/libquicktime/apiref/functions_vars.html
 share/doc/libquicktime/apiref/globals.html
@@ -77,12 +94,14 @@ share/doc/libquicktime/apiref/group__video__codecs.html
 share/doc/libquicktime/apiref/group__video__decode.html
 share/doc/libquicktime/apiref/group__video__encode.html
 share/doc/libquicktime/apiref/index.html
+share/doc/libquicktime/apiref/jquery.js
 share/doc/libquicktime/apiref/lqt_8h.html
 share/doc/libquicktime/apiref/lqt_8h_source.html
 share/doc/libquicktime/apiref/lqt__atoms_8h_source.html
 share/doc/libquicktime/apiref/lqt__codecinfo_8h_source.html
 share/doc/libquicktime/apiref/modules.html
 share/doc/libquicktime/apiref/nav_f.png
+share/doc/libquicktime/apiref/nav_g.png
 share/doc/libquicktime/apiref/nav_h.png
 share/doc/libquicktime/apiref/open.png
 share/doc/libquicktime/apiref/quicktime_8h.html
@@ -93,6 +112,8 @@ share/doc/libquicktime/apiref/structlqt__parameter__info__t.html
 share/doc/libquicktime/apiref/structquicktime__clap__t.html
 share/doc/libquicktime/apiref/structquicktime__colr__t.html
 share/doc/libquicktime/apiref/structquicktime__pasp__t.html
+share/doc/libquicktime/apiref/sync_off.png
+share/doc/libquicktime/apiref/sync_on.png
 share/doc/libquicktime/apiref/tab_a.png
 share/doc/libquicktime/apiref/tab_b.png
 share/doc/libquicktime/apiref/tab_h.png
