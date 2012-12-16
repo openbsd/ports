@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2012/11/15 10:25:50 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.15 2012/12/16 16:36:26 sebastia Exp $
 @newgroup _sogo:659
 @newuser _sogo:659:_sogo:daemon:SOGo user:/var/sogo:/bin/sh
 include/GDLContentStore/
@@ -597,6 +597,8 @@ lib/GNUstep/SOGo/AdministrationUI.SOGo/Resources/Polish.lproj/
 lib/GNUstep/SOGo/AdministrationUI.SOGo/Resources/Polish.lproj/Localizable.strings
 lib/GNUstep/SOGo/AdministrationUI.SOGo/Resources/Russian.lproj/
 lib/GNUstep/SOGo/AdministrationUI.SOGo/Resources/Russian.lproj/Localizable.strings
+lib/GNUstep/SOGo/AdministrationUI.SOGo/Resources/Slovak.lproj/
+lib/GNUstep/SOGo/AdministrationUI.SOGo/Resources/Slovak.lproj/Localizable.strings
 lib/GNUstep/SOGo/AdministrationUI.SOGo/Resources/SpanishArgentina.lproj/
 lib/GNUstep/SOGo/AdministrationUI.SOGo/Resources/SpanishArgentina.lproj/Localizable.strings
 lib/GNUstep/SOGo/AdministrationUI.SOGo/Resources/SpanishSpain.lproj/
@@ -647,6 +649,8 @@ lib/GNUstep/SOGo/Appointments.SOGo/Resources/Polish.lproj/
 lib/GNUstep/SOGo/Appointments.SOGo/Resources/Polish.lproj/Localizable.strings
 lib/GNUstep/SOGo/Appointments.SOGo/Resources/Russian.lproj/
 lib/GNUstep/SOGo/Appointments.SOGo/Resources/Russian.lproj/Localizable.strings
+lib/GNUstep/SOGo/Appointments.SOGo/Resources/Slovak.lproj/
+lib/GNUstep/SOGo/Appointments.SOGo/Resources/Slovak.lproj/Localizable.strings
 lib/GNUstep/SOGo/Appointments.SOGo/Resources/SpanishArgentina.lproj/
 lib/GNUstep/SOGo/Appointments.SOGo/Resources/SpanishArgentina.lproj/Localizable.strings
 lib/GNUstep/SOGo/Appointments.SOGo/Resources/SpanishSpain.lproj/
@@ -694,6 +698,8 @@ lib/GNUstep/SOGo/CommonUI.SOGo/Resources/Polish.lproj/
 lib/GNUstep/SOGo/CommonUI.SOGo/Resources/Polish.lproj/Localizable.strings
 lib/GNUstep/SOGo/CommonUI.SOGo/Resources/Russian.lproj/
 lib/GNUstep/SOGo/CommonUI.SOGo/Resources/Russian.lproj/Localizable.strings
+lib/GNUstep/SOGo/CommonUI.SOGo/Resources/Slovak.lproj/
+lib/GNUstep/SOGo/CommonUI.SOGo/Resources/Slovak.lproj/Localizable.strings
 lib/GNUstep/SOGo/CommonUI.SOGo/Resources/SpanishArgentina.lproj/
 lib/GNUstep/SOGo/CommonUI.SOGo/Resources/SpanishArgentina.lproj/Localizable.strings
 lib/GNUstep/SOGo/CommonUI.SOGo/Resources/SpanishSpain.lproj/
@@ -741,6 +747,8 @@ lib/GNUstep/SOGo/Contacts.SOGo/Resources/Polish.lproj/
 lib/GNUstep/SOGo/Contacts.SOGo/Resources/Polish.lproj/Localizable.strings
 lib/GNUstep/SOGo/Contacts.SOGo/Resources/Russian.lproj/
 lib/GNUstep/SOGo/Contacts.SOGo/Resources/Russian.lproj/Localizable.strings
+lib/GNUstep/SOGo/Contacts.SOGo/Resources/Slovak.lproj/
+lib/GNUstep/SOGo/Contacts.SOGo/Resources/Slovak.lproj/Localizable.strings
 lib/GNUstep/SOGo/Contacts.SOGo/Resources/SpanishArgentina.lproj/
 lib/GNUstep/SOGo/Contacts.SOGo/Resources/SpanishArgentina.lproj/Localizable.strings
 lib/GNUstep/SOGo/Contacts.SOGo/Resources/SpanishSpain.lproj/
@@ -788,6 +796,8 @@ lib/GNUstep/SOGo/ContactsUI.SOGo/Resources/Polish.lproj/Localizable.strings
 lib/GNUstep/SOGo/ContactsUI.SOGo/Resources/Russian.lproj/
 lib/GNUstep/SOGo/ContactsUI.SOGo/Resources/Russian.lproj/Localizable.strings
 lib/GNUstep/SOGo/ContactsUI.SOGo/Resources/SOGoContactFolder.toolbar
+lib/GNUstep/SOGo/ContactsUI.SOGo/Resources/Slovak.lproj/
+lib/GNUstep/SOGo/ContactsUI.SOGo/Resources/Slovak.lproj/Localizable.strings
 lib/GNUstep/SOGo/ContactsUI.SOGo/Resources/SpanishArgentina.lproj/
 lib/GNUstep/SOGo/ContactsUI.SOGo/Resources/SpanishArgentina.lproj/Localizable.strings
 lib/GNUstep/SOGo/ContactsUI.SOGo/Resources/SpanishSpain.lproj/
@@ -835,6 +845,8 @@ lib/GNUstep/SOGo/MailPartViewers.SOGo/Resources/Polish.lproj/
 lib/GNUstep/SOGo/MailPartViewers.SOGo/Resources/Polish.lproj/Localizable.strings
 lib/GNUstep/SOGo/MailPartViewers.SOGo/Resources/Russian.lproj/
 lib/GNUstep/SOGo/MailPartViewers.SOGo/Resources/Russian.lproj/Localizable.strings
+lib/GNUstep/SOGo/MailPartViewers.SOGo/Resources/Slovak.lproj/
+lib/GNUstep/SOGo/MailPartViewers.SOGo/Resources/Slovak.lproj/Localizable.strings
 lib/GNUstep/SOGo/MailPartViewers.SOGo/Resources/SpanishArgentina.lproj/
 lib/GNUstep/SOGo/MailPartViewers.SOGo/Resources/SpanishArgentina.lproj/Localizable.strings
 lib/GNUstep/SOGo/MailPartViewers.SOGo/Resources/SpanishSpain.lproj/
@@ -1011,6 +1023,8 @@ lib/GNUstep/SOGo/MailerUI.SOGo/Resources/Russian.lproj/Localizable.strings
 lib/GNUstep/SOGo/MailerUI.SOGo/Resources/SOGoDraftObject.toolbar
 lib/GNUstep/SOGo/MailerUI.SOGo/Resources/SOGoMailFolder.toolbar
 lib/GNUstep/SOGo/MailerUI.SOGo/Resources/SOGoMailObject.toolbar
+lib/GNUstep/SOGo/MailerUI.SOGo/Resources/Slovak.lproj/
+lib/GNUstep/SOGo/MailerUI.SOGo/Resources/Slovak.lproj/Localizable.strings
 lib/GNUstep/SOGo/MailerUI.SOGo/Resources/SpanishArgentina.lproj/
 lib/GNUstep/SOGo/MailerUI.SOGo/Resources/SpanishArgentina.lproj/Localizable.strings
 lib/GNUstep/SOGo/MailerUI.SOGo/Resources/SpanishSpain.lproj/
@@ -1077,6 +1091,9 @@ lib/GNUstep/SOGo/MainUI.SOGo/Resources/Russian.lproj/Locale
 lib/GNUstep/SOGo/MainUI.SOGo/Resources/Russian.lproj/Localizable.strings
 lib/GNUstep/SOGo/MainUI.SOGo/Resources/SOGoProfile-oracle.sql
 lib/GNUstep/SOGo/MainUI.SOGo/Resources/SOGoProfile.sql
+lib/GNUstep/SOGo/MainUI.SOGo/Resources/Slovak.lproj/
+lib/GNUstep/SOGo/MainUI.SOGo/Resources/Slovak.lproj/Locale
+lib/GNUstep/SOGo/MainUI.SOGo/Resources/Slovak.lproj/Localizable.strings
 lib/GNUstep/SOGo/MainUI.SOGo/Resources/SpanishArgentina.lproj/
 lib/GNUstep/SOGo/MainUI.SOGo/Resources/SpanishArgentina.lproj/Locale
 lib/GNUstep/SOGo/MainUI.SOGo/Resources/SpanishArgentina.lproj/Localizable.strings
@@ -1128,6 +1145,8 @@ lib/GNUstep/SOGo/PreferencesUI.SOGo/Resources/Polish.lproj/
 lib/GNUstep/SOGo/PreferencesUI.SOGo/Resources/Polish.lproj/Localizable.strings
 lib/GNUstep/SOGo/PreferencesUI.SOGo/Resources/Russian.lproj/
 lib/GNUstep/SOGo/PreferencesUI.SOGo/Resources/Russian.lproj/Localizable.strings
+lib/GNUstep/SOGo/PreferencesUI.SOGo/Resources/Slovak.lproj/
+lib/GNUstep/SOGo/PreferencesUI.SOGo/Resources/Slovak.lproj/Localizable.strings
 lib/GNUstep/SOGo/PreferencesUI.SOGo/Resources/SpanishArgentina.lproj/
 lib/GNUstep/SOGo/PreferencesUI.SOGo/Resources/SpanishArgentina.lproj/Localizable.strings
 lib/GNUstep/SOGo/PreferencesUI.SOGo/Resources/SpanishSpain.lproj/
@@ -1182,6 +1201,8 @@ lib/GNUstep/SOGo/SchedulerUI.SOGo/Resources/SOGoAppointmentObjectDecline.toolbar
 lib/GNUstep/SOGo/SchedulerUI.SOGo/Resources/SOGoComponentClose.toolbar
 lib/GNUstep/SOGo/SchedulerUI.SOGo/Resources/SOGoEmpty.toolbar
 lib/GNUstep/SOGo/SchedulerUI.SOGo/Resources/SOGoTaskObject.toolbar
+lib/GNUstep/SOGo/SchedulerUI.SOGo/Resources/Slovak.lproj/
+lib/GNUstep/SOGo/SchedulerUI.SOGo/Resources/Slovak.lproj/Localizable.strings
 lib/GNUstep/SOGo/SchedulerUI.SOGo/Resources/SpanishArgentina.lproj/
 lib/GNUstep/SOGo/SchedulerUI.SOGo/Resources/SpanishArgentina.lproj/Localizable.strings
 lib/GNUstep/SOGo/SchedulerUI.SOGo/Resources/SpanishSpain.lproj/
@@ -1296,6 +1317,9 @@ lib/GNUstep/SOGo/Templates/SOGoACLPolishRemovalAdvisory.wox
 lib/GNUstep/SOGo/Templates/SOGoACLRussianAdditionAdvisory.wox
 lib/GNUstep/SOGo/Templates/SOGoACLRussianModificationAdvisory.wox
 lib/GNUstep/SOGo/Templates/SOGoACLRussianRemovalAdvisory.wox
+lib/GNUstep/SOGo/Templates/SOGoACLSlovakAdditionAdvisory.wox
+lib/GNUstep/SOGo/Templates/SOGoACLSlovakModificationAdvisory.wox
+lib/GNUstep/SOGo/Templates/SOGoACLSlovakRemovalAdvisory.wox
 lib/GNUstep/SOGo/Templates/SOGoACLSpanishArgentinaAdditionAdvisory.wox
 lib/GNUstep/SOGo/Templates/SOGoACLSpanishArgentinaModificationAdvisory.wox
 lib/GNUstep/SOGo/Templates/SOGoACLSpanishArgentinaRemovalAdvisory.wox
@@ -1338,6 +1362,8 @@ lib/GNUstep/SOGo/Templates/SOGoFolderPolishAdditionAdvisory.wox
 lib/GNUstep/SOGo/Templates/SOGoFolderPolishRemovalAdvisory.wox
 lib/GNUstep/SOGo/Templates/SOGoFolderRussianAdditionAdvisory.wox
 lib/GNUstep/SOGo/Templates/SOGoFolderRussianRemovalAdvisory.wox
+lib/GNUstep/SOGo/Templates/SOGoFolderSlovakAdditionAdvisory.wox
+lib/GNUstep/SOGo/Templates/SOGoFolderSlovakRemovalAdvisory.wox
 lib/GNUstep/SOGo/Templates/SOGoFolderSpanishArgentinaAdditionAdvisory.wox
 lib/GNUstep/SOGo/Templates/SOGoFolderSpanishArgentinaRemovalAdvisory.wox
 lib/GNUstep/SOGo/Templates/SOGoFolderSpanishSpainAdditionAdvisory.wox

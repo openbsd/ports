@@ -1,4 +1,4 @@
-# $OpenBSD: README,v 1.8 2012/11/15 10:25:50 giovanni Exp $
+# $OpenBSD: README,v 1.9 2012/12/16 16:36:26 sebastia Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -114,6 +114,11 @@ RequestHeader set "x-webobjects-server-protocol" "HTTP/1.0"
 RequestHeader set "x-webobjects-remote-host" "127.0.0.1"
 
 AddDefaultCharset UTF-8
+
+# To be able to use iPhone a vhost on port 8800 should be configured and those redirects must be set
+RedirectMatch ^/principals/users/(.*)$ http://127.0.0.1:8800/SOGo/dav/$1
+RedirectMatch ^/principals/$ http://127.0.0.1:8800/SOGo/dav/
+RedirectMatch ^/.well-known/(caldav|carddav)$ http://127.0.0.1:8800/SOGo/dav/
 
 A note on using CAS 
 =======================
