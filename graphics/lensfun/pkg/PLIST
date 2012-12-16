@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/11/04 20:14:43 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/12/16 11:39:51 sthen Exp $
 @bin bin/tmod
 include/lensfun.h
 @lib lib/liblensfun.so.${LIBlensfun_VERSION}
@@ -14,6 +14,7 @@ share/doc/lensfun/manual/addlens.html
 share/doc/lensfun/manual/annotated.html
 share/doc/lensfun/manual/basearch.html
 share/doc/lensfun/manual/bc_s.png
+share/doc/lensfun/manual/bdwn.png
 share/doc/lensfun/manual/cc-by-ca.html
 share/doc/lensfun/manual/classes.html
 share/doc/lensfun/manual/closed.png
@@ -21,8 +22,11 @@ share/doc/lensfun/manual/credits.html
 share/doc/lensfun/manual/database.html
 share/doc/lensfun/manual/dbformat.html
 share/doc/lensfun/manual/dbsearch.html
+share/doc/lensfun/manual/dir_417636b0694695296d5af3eb7f0630e3.html
+share/doc/lensfun/manual/dir_d44c64559bbebec7f509842c48db8b23.html
 share/doc/lensfun/manual/doxygen.css
 share/doc/lensfun/manual/doxygen.png
+share/doc/lensfun/manual/dynsections.js
 share/doc/lensfun/manual/el_camera.html
 share/doc/lensfun/manual/el_lens.html
 share/doc/lensfun/manual/el_mount.html
@@ -31,6 +35,22 @@ share/doc/lensfun/manual/example_8c-example.html
 share/doc/lensfun/manual/examples.html
 share/doc/lensfun/manual/files.html
 share/doc/lensfun/manual/filldb.html
+share/doc/lensfun/manual/ftv2blank.png
+share/doc/lensfun/manual/ftv2cl.png
+share/doc/lensfun/manual/ftv2doc.png
+share/doc/lensfun/manual/ftv2folderclosed.png
+share/doc/lensfun/manual/ftv2folderopen.png
+share/doc/lensfun/manual/ftv2lastnode.png
+share/doc/lensfun/manual/ftv2link.png
+share/doc/lensfun/manual/ftv2mlastnode.png
+share/doc/lensfun/manual/ftv2mnode.png
+share/doc/lensfun/manual/ftv2mo.png
+share/doc/lensfun/manual/ftv2node.png
+share/doc/lensfun/manual/ftv2ns.png
+share/doc/lensfun/manual/ftv2plastnode.png
+share/doc/lensfun/manual/ftv2pnode.png
+share/doc/lensfun/manual/ftv2splitbar.png
+share/doc/lensfun/manual/ftv2vertline.png
 share/doc/lensfun/manual/functions.html
 share/doc/lensfun/manual/functions_func.html
 share/doc/lensfun/manual/functions_vars.html
@@ -48,12 +68,14 @@ share/doc/lensfun/manual/group__Database.html
 share/doc/lensfun/manual/group__Lens.html
 share/doc/lensfun/manual/group__Mount.html
 share/doc/lensfun/manual/index.html
+share/doc/lensfun/manual/jquery.js
 share/doc/lensfun/manual/lensfun_8h.html
 share/doc/lensfun/manual/lensfun_8h_source.html
 share/doc/lensfun/manual/lgpl.html
 share/doc/lensfun/manual/license.html
 share/doc/lensfun/manual/modules.html
 share/doc/lensfun/manual/nav_f.png
+share/doc/lensfun/manual/nav_g.png
 share/doc/lensfun/manual/nav_h.png
 share/doc/lensfun/manual/open.png
 share/doc/lensfun/manual/pages.html
@@ -77,6 +99,8 @@ share/doc/lensfun/manual/structlfMount-members.html
 share/doc/lensfun/manual/structlfMount.html
 share/doc/lensfun/manual/structlfParameter-members.html
 share/doc/lensfun/manual/structlfParameter.html
+share/doc/lensfun/manual/sync_off.png
+share/doc/lensfun/manual/sync_on.png
 share/doc/lensfun/manual/tab_a.png
 share/doc/lensfun/manual/tab_b.png
 share/doc/lensfun/manual/tab_h.png

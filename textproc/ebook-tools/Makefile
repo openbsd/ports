@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2012/03/29 13:39:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2012/12/16 11:40:07 sthen Exp $
 
 V =			0.2.1
+REVISION =		0
 COMMENT =		accessing and converting various ebook file formats
 DISTNAME =		ebook-tools-${V}
 
