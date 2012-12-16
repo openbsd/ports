@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/12/16 11:34:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2012/12/16 12:09:17 sthen Exp $
 
 ONLY_FOR_ARCHS=		${GCC4_ARCHS}
 
@@ -12,7 +12,7 @@ DISTNAME=		OpenCV-$V
 PKGNAME-main=		opencv-$V
 REVISION-main=		7
 PKGNAME-docs=		opencv-docs-$V
-REVISION-docs=		0
+REVISION-docs=		1
 CATEGORIES=		graphics devel
 
 SHARED_LIBS +=		opencv_calib3d			0.0
@@ -92,6 +92,8 @@ CONFIGURE_ARGS+=	-DBUILD_EXAMPLES:Bool=Off \
 			-DWITH_GSTREAMER:Bool=On \
 			-DWITH_1394:Bool=Off \
 			-DWITH_FFMPEG:Bool=On
+
+MAKE_ENV+=		DOXYGEN_ENCODE_PATH_STRIP=${WRKSRC}
 
 pre-patch:
 	perl -i -pe 's/\r$$//' ${WRKSRC}/CMakeLists.txt
