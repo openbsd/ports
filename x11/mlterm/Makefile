@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2011/09/16 12:29:16 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2012/12/17 18:39:29 naddy Exp $
 
 COMMENT=	color terminal emulator with unicode support
 DISTNAME=	mlterm-2.9.0
-REVISION=	12
+REVISION=	13
 
 SHARED_LIBS=	kik	10.0 \
 		mkf	13.0
@@ -26,7 +26,6 @@ WANTLIB += gdk-x11-2.0 gtk-x11-2.0
 HOMEPAGE=	http://mlterm.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mlterm/}
 
-USE_GROFF =	Yes
 SHARED_ONLY=	Yes
 
 LIB_DEPENDS=	x11/gtk+2
@@ -34,7 +33,8 @@ LIB_DEPENDS=	x11/gtk+2
 MODULES=	devel/gettext
 
 USE_LIBTOOL=	Yes
-CONFIGURE_STYLE=gnu
+AUTOCONF_VERSION=2.13
+CONFIGURE_STYLE=autoconf
 CONFIGURE_ARGS=	--enable-anti-alias --enable-utmp \
 		--with-imagelib=gdk-pixbuf2 --with-type-engines=xft,xcore
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include/freetype2"
