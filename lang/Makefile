@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.144 2012/11/28 20:51:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.145 2012/12/17 23:57:13 jeremy Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -38,6 +38,7 @@
      SUBDIR += hs-HsParrot
      SUBDIR += hs-syntactic
      SUBDIR += hugs
+     SUBDIR += io
      SUBDIR += icon
      SUBDIR += intel2gas
      SUBDIR += iverilog
