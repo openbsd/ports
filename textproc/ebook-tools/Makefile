@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/12/16 23:06:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2012/12/17 16:06:52 espie Exp $
 
 V =			0.2.1
 REVISION =		0
@@ -21,7 +21,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=ebook-tools/${V}/}
 
 MODULES =		devel/cmake
 BUILD_DEPENDS =		devel/doxygen \
-			graphics/graphviz
+			math/graphviz
 LIB_DEPENDS =		textproc/libxml \
 			archivers/libzip \
 
