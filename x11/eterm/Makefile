@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2012/10/23 09:51:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2012/12/17 18:37:59 naddy Exp $
 
 COMMENT=	color X11 terminal emulator with transparency support
 COMMENT-kanji=	color japanese terminal emulator with transparency support
@@ -6,10 +6,11 @@ COMMENT-kanji=	color japanese terminal emulator with transparency support
 V=		0.9.5
 DISTNAME=	Eterm-$V
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-PKGNAME=	eterm-$V# also see below
+# also see below
+PKGNAME=	eterm-$V
 SHARED_LIBS +=	Eterm                1.0      # .0.0
 CATEGORIES=	x11
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	http://www.eterm.org/
 
@@ -33,11 +34,13 @@ LIB_DEPENDS=	devel/libast \
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 
-CONFIGURE_STYLE=gnu
+AUTOCONF_VERSION=2.59
+CONFIGURE_STYLE=autoconf
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-trans \
 		--enable-utmp \
 		--enable-xim \
+		--without-pty-group \
 		--with-theme-update \
 		--with-backspace=bs \
 		--without-terminfo
