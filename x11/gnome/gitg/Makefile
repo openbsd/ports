@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2012/09/01 14:36:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2012/12/17 15:04:05 jasper Exp $
+
+BROKEN=			Invalid object type `GitgWindow'
 
 SHARED_ONLY=		Yes
 
