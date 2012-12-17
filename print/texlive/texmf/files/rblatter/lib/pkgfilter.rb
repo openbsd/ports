@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-# Copyright (c) 2008-2010, Edd Barrett <vext01@gmail.com>
+# Copyright (c) 2008-2012, Edd Barrett <vext01@gmail.com>
 # 
 # Permission to use, copy, modify, and/or distribute this software for any
 # purpose with or without fee is hereby granted, provided that the above
@@ -14,7 +14,7 @@
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 # 
 # RBlatter
-# $Id: pkgfilter.rb,v 1.2 2011/03/08 00:09:42 edd Exp $
+# $Id: pkgfilter.rb,v 1.3 2012/12/17 20:28:04 edd Exp $
 #
 # Filters package contents based upon a subsetconf
 
@@ -150,12 +150,14 @@ class PkgFilter
 			# Ignore
 		when "AddHyphen":
 			# Ignore
+		when "addKanjiMap":
+			# Ignorer
 		when "addMap":
 			conf.mapHints << parts[0] + " " + parts[1]
 		when "addMixedMap":
 			conf.mapHints << parts[0] + " " + parts[1]
 		else
-			printf "*error: unknown execute statement:"
+			printf "*warning: unknown execute statement:"
 			puts parts[0]
 		end
 	end
