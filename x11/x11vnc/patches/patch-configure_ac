@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_ac,v 1.1 2012/12/17 19:02:48 naddy Exp $
+--- configure.ac.orig	Mon Dec 10 21:38:46 2012
++++ configure.ac	Mon Dec 10 21:39:06 2012
+@@ -777,7 +777,7 @@ fi
+ AC_CHECK_FUNCS([ftime gethostbyname gethostname gettimeofday inet_ntoa memmove memset mmap mkfifo select socket strchr strcspn strdup strerror strstr])
+ # x11vnc only:
+ if test "$build_x11vnc" = "yes"; then
+-	AC_CHECK_FUNCS([setsid setpgrp getpwuid getpwnam getspnam getuid geteuid setuid setgid seteuid setegid initgroups waitpid setutxent grantpt shmat])
++	AC_CHECK_FUNCS([setsid setpgrp getpwuid getpwnam getspnam getuid geteuid setuid setgid seteuid setegid initgroups waitpid setutxent posix_openpt grantpt shmat])
+ fi
+ 
+ # check, if shmget is in cygipc.a

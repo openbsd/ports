@@ -1,0 +1,51 @@
+$OpenBSD: patch-x11vnc_unixpw_c,v 1.1 2012/12/17 19:02:48 naddy Exp $
+--- x11vnc/unixpw.c.orig	Thu Aug 11 00:31:32 2011
++++ x11vnc/unixpw.c	Mon Dec 10 21:59:46 2012
+@@ -85,13 +85,6 @@ extern char *crypt(const char*, const char *);
+ #include <sys/stropts.h>
+ #endif
+ 
+-#if defined(__OpenBSD__) || defined(__FreeBSD__) || defined(__NetBSD__)
+-#define IS_BSD
+-#endif
+-#if (defined(__MACH__) && defined(__APPLE__))
+-#define IS_BSD
+-#endif
+-
+ int white_pixel(void);
+ void unixpw_screen(int init);
+ void unixpw_keystroke(rfbBool down, rfbKeySym keysym, int init);
+@@ -522,6 +515,9 @@ char *get_pty_ptmx(int *fd_p) {
+ 
+ #if LIBVNCSERVER_HAVE_GRANTPT
+ 
++#if LIBVNCSERVER_HAVE_POSIX_OPENPT
++	fd = posix_openpt(O_RDWR|O_NOCTTY);
++#else
+ 	for (i=0; i < ndevs; i++) {
+ #ifdef O_NOCTTY
+ 		fd = open(devs[i], O_RDWR|O_NOCTTY);
+@@ -532,6 +528,7 @@ char *get_pty_ptmx(int *fd_p) {
+ 			break;
+ 		}
+ 	}
++#endif
+ 
+ 	if (fd < 0) {
+ 		rfbLogPerror("open /dev/ptmx");
+@@ -625,15 +622,11 @@ char *get_pty(int *fd_p) {
+ 	if (getenv("BSD_PTY")) {
+ 		return get_pty_loop(fd_p);
+ 	}
+-#ifdef IS_BSD
+-	return get_pty_loop(fd_p);
+-#else
+ #if LIBVNCSERVER_HAVE_GRANTPT
+ 	used_get_pty_ptmx = 1;
+ 	return get_pty_ptmx(fd_p);
+ #else
+ 	return get_pty_loop(fd_p);
+-#endif
+ #endif
+ }
+ 
