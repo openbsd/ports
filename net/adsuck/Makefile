@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2012/09/27 18:20:41 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.24 2012/12/17 11:34:44 gonzalo Exp $
 
 COMMENT=		DNS relay for ad blocking
 
-DISTNAME=		adsuck-2.4.3
+DISTNAME=		adsuck-2.5.0
 CATEGORIES=		net
 
 HOMEPAGE=		http://opensource.conformal.com/wiki/Adsuck
@@ -17,9 +17,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://opensource.conformal.com/snapshots/adsuck/
 
-WANTLIB += c event ldns
+WANTLIB += c event_core event_extra ldns
 
-LIB_DEPENDS=	net/ldns/libldns>=1.6.5
+LIB_DEPENDS=	devel/libevent2 \
+		net/ldns/libldns>=1.6.5
 
 MAKE_FLAGS=	BINDIR="${TRUEPREFIX}/sbin" \
 		MANDIR="${TRUEPREFIX}/man/man"
