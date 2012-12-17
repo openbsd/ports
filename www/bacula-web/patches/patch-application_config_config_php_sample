@@ -1,7 +1,7 @@
-$OpenBSD: patch-application_config_config_php_sample,v 1.1 2012/09/14 06:35:09 ajacoutot Exp $
---- application/config/config.php.sample.orig	Thu Aug  9 23:11:00 2012
-+++ application/config/config.php.sample	Fri Sep 14 08:14:15 2012
-@@ -26,17 +26,19 @@ $config['language'] = 'en_EN';
+$OpenBSD: patch-application_config_config_php_sample,v 1.2 2012/12/17 14:55:08 ajacoutot Exp $
+--- application/config/config.php.sample.orig	Tue Oct 30 23:56:07 2012
++++ application/config/config.php.sample	Mon Dec 17 15:52:16 2012
+@@ -30,18 +30,19 @@ $config['language'] = 'en_US';
  // $config[0]['db_port'] = '3306';
  
  // PostgreSQL bacula catalog
@@ -19,7 +19,7 @@ $OpenBSD: patch-application_config_config_php_sample,v 1.1 2012/09/14 06:35:09 a
 +$config[0]['db_name'] = 'bacula';
 +$config[0]['db_type'] = 'pgsql';
 +$config[0]['db_port'] = '5432'; 
-+
+ 
  // SQLite bacula catalog
  // $config[0]['label'] = 'Dev backup server';
  // $config[0]['db_type'] = 'sqlite';
@@ -27,4 +27,4 @@ $OpenBSD: patch-application_config_config_php_sample,v 1.1 2012/09/14 06:35:09 a
 +
  // Copy the section below only if you have at least two Bacula catalog
  // Don't forget to modify options such as label, host, login, password, etc.
- // 2nd bacula catalog (MySQL)
+ 

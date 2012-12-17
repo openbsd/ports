@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/09/14 06:35:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/12/17 14:55:08 ajacoutot Exp $
 @extraunexec rm -rf %D/bacula-web/application/view/cache/*
 @unexec-delete rm -f /var/www/conf/modules/bacula-web.conf
 bacula-web/
@@ -11,6 +11,8 @@ bacula-web/application/config/config.php.sample
 @sample bacula-web/application/config/config.php
 @mode
 @group
+bacula-web/application/libs/
+bacula-web/application/libs/fileconfig.class.php
 bacula-web/application/locale/
 bacula-web/application/locale/de_DE/
 bacula-web/application/locale/de_DE/LC_MESSAGES/
@@ -40,6 +42,13 @@ bacula-web/application/locale/sv_SV/
 bacula-web/application/locale/sv_SV/LC_MESSAGES/
 bacula-web/application/locale/sv_SV/LC_MESSAGES/messages.mo
 bacula-web/application/locale/sv_SV/LC_MESSAGES/messages.po
+bacula-web/application/models/
+bacula-web/application/models/clients.model.php
+bacula-web/application/models/database.model.php
+bacula-web/application/models/filesets.model.php
+bacula-web/application/models/jobs.model.php
+bacula-web/application/models/pools.model.php
+bacula-web/application/models/volumes.model.php
 bacula-web/application/view/
 bacula-web/application/view/backupjob-report.tpl
 @owner www
@@ -66,6 +75,7 @@ bacula-web/application/view/style/images/running.png
 bacula-web/application/view/style/images/search.png
 bacula-web/application/view/style/images/waiting.png
 bacula-web/application/view/style/images/warning.png
+bacula-web/application/view/style/table.css
 bacula-web/application/view/test.tpl
 bacula-web/backupjob-report.php
 bacula-web/bacula-web.conf.dist
@@ -74,6 +84,7 @@ bacula-web/client-report.php
 bacula-web/core/
 bacula-web/core/app/
 bacula-web/core/app/cerrorhandler.class.php
+bacula-web/core/app/cmodel.class.php
 bacula-web/core/app/cview.class.php
 bacula-web/core/bweb.inc.php
 bacula-web/core/cfg/
@@ -82,9 +93,7 @@ bacula-web/core/db/
 bacula-web/core/db/cdb.class.php
 bacula-web/core/db/cdbquery.class.php
 bacula-web/core/db/cdbresult.class.php
-bacula-web/core/db/cmysqldb.class.php
-bacula-web/core/db/cpgsqldb.class.php
-bacula-web/core/db/csqlitedb.class.php
+bacula-web/core/db/cdbutils.class.php
 bacula-web/core/external/
 bacula-web/core/external/phplot/
 bacula-web/core/external/phplot/COPYING
@@ -217,6 +226,7 @@ bacula-web/core/utils/
 bacula-web/core/utils/chttprequest.class.php
 bacula-web/core/utils/ctimeutils.class.php
 bacula-web/core/utils/cutils.class.php
+bacula-web/core/utils/file.class.php
 bacula-web/docs/
 bacula-web/docs/COPYING
 bacula-web/docs/Changelog
