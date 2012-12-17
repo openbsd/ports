@@ -1,0 +1,16 @@
+$OpenBSD: patch-libs_CMakeLists_txt,v 1.1.1.1 2012/12/17 23:55:28 jeremy Exp $
+
+Force linking of binary to libpthread, so that you can use addons that
+link to libpthread without LD_PRELOAD.
+
+--- libs/CMakeLists.txt.orig	Mon Dec 17 13:31:47 2012
++++ libs/CMakeLists.txt	Mon Dec 17 13:31:50 2012
+@@ -10,6 +10,8 @@ add_definitions("-DBUILDING_IOVMALL_DLL")
+ # Output our static library to the top-level _build hierarchy
+ set(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/_build/lib)
+ 
++set(CMAKE_SHARED_LINKER_FLAGS "-lpthread ${CMAKE_SHARED_LINKER_FLAGS}")
++
+ # Our Io source files to be "compiled" into a C source file.
+ #file(GLOB IO_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/iovm/io/*.io")
+ set(IO_SRCS
