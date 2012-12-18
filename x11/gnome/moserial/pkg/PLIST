@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/06/15 08:30:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2012/12/18 20:41:36 jasper Exp $
 @bin bin/moserial
 @man man/man1/moserial.1
 share/applications/moserial.desktop
@@ -158,12 +158,14 @@ share/locale/ca/LC_MESSAGES/moserial.mo
 share/locale/cs/LC_MESSAGES/moserial.mo
 share/locale/da/LC_MESSAGES/moserial.mo
 share/locale/de/LC_MESSAGES/moserial.mo
+share/locale/el/LC_MESSAGES/moserial.mo
 share/locale/es/LC_MESSAGES/moserial.mo
 share/locale/fr/LC_MESSAGES/moserial.mo
 share/locale/gl/LC_MESSAGES/moserial.mo
 share/locale/ja/LC_MESSAGES/moserial.mo
 share/locale/ko/LC_MESSAGES/moserial.mo
 share/locale/nb/LC_MESSAGES/moserial.mo
+share/locale/pl/LC_MESSAGES/moserial.mo
 share/locale/pt_BR/LC_MESSAGES/moserial.mo
 share/locale/ro/LC_MESSAGES/moserial.mo
 share/locale/sl/LC_MESSAGES/moserial.mo
