@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2012/11/20 18:28:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2012/12/18 07:01:39 ajacoutot Exp $
 
 COMMENT=	input assistive technology
 
 GNOME_PROJECT=	caribou
-GNOME_VERSION=	0.4.5
+GNOME_VERSION=	0.4.6
 
 SHARED_LIBS +=  caribou                   0.0 # 0.0
 
