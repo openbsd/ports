@@ -1,7 +1,15 @@
-$OpenBSD: patch-src_task-manager-bsd_c,v 1.1 2012/01/09 16:50:19 robert Exp $
---- src/task-manager-bsd.c.orig	Mon Jan  9 09:48:24 2012
-+++ src/task-manager-bsd.c	Mon Jan  9 09:49:01 2012
-@@ -41,7 +41,7 @@ gboolean get_task_list (GArray *task_list)
+$OpenBSD: patch-src_task-manager-bsd_c,v 1.2 2012/12/18 21:38:12 sthen Exp $
+--- src/task-manager-bsd.c.orig	Fri May 21 05:37:20 2010
++++ src/task-manager-bsd.c	Fri Dec  7 06:22:48 2012
+@@ -25,6 +25,7 @@
+ #include <sys/param.h>
+ #include <sys/sched.h>
+ #include <sys/sysctl.h>
++#include <sys/proc.h>
+ /* for swapctl() */
+ #include <sys/swap.h>
+ /* for strlcpy() */
+@@ -41,7 +42,7 @@ gboolean get_task_list (GArray *task_list)
  {
  	int mib[6];
  	size_t size;
@@ -10,7 +18,7 @@ $OpenBSD: patch-src_task-manager-bsd_c,v 1.1 2012/01/09 16:50:19 robert Exp $
  	Task t;
  	struct passwd *passwdp;
  	char **args, **ptr;
-@@ -49,23 +49,23 @@ gboolean get_task_list (GArray *task_list)
+@@ -49,23 +50,23 @@ gboolean get_task_list (GArray *task_list)
  	int nproc, i;
  
  	mib[0] = CTL_KERN;
@@ -41,7 +49,7 @@ $OpenBSD: patch-src_task-manager-bsd_c,v 1.1 2012/01/09 16:50:19 robert Exp $
  		t.pid = p.p_pid;
  		t.ppid = p.p_ppid;
  		t.uid = p.p_uid;
-@@ -117,17 +117,17 @@ gboolean
+@@ -117,17 +118,17 @@ gboolean
  pid_is_sleeping (guint pid)
  {
  	int mib[6];

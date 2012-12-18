@@ -1,19 +1,21 @@
-$OpenBSD: patch-src_NetBSD_os_c,v 1.2 2011/07/06 13:02:01 jasper Exp $
+$OpenBSD: patch-src_NetBSD_os_c,v 1.3 2012/12/18 21:38:12 sthen Exp $
 
 yes, I know there's a src/OpenBSD in there too.
 it's not used somehow...
 
---- src/NetBSD/os.c.orig	Thu Apr 24 02:21:29 2003
-+++ src/NetBSD/os.c	Wed Jul  6 15:01:20 2011
-@@ -27,6 +27,7 @@
+--- src/NetBSD/os.c.orig	Wed Apr 23 18:21:29 2003
++++ src/NetBSD/os.c	Thu Dec  6 15:22:20 2012
+@@ -26,7 +26,9 @@
+ #include <fcntl.h>
  #include <limits.h>
  #include <sys/param.h>
++#include <sys/proc.h>
  #include <sys/sysctl.h>
 +#include <stdlib.h>
  #include <X11/Intrinsic.h>
  #include <X11/StringDefs.h>
  #include <Xm/Xm.h>
-@@ -82,11 +83,7 @@ GetProcInfo(void)
+@@ -82,11 +84,7 @@ GetProcInfo(void)
      exit(5);
    }
  
@@ -26,7 +28,7 @@ it's not used somehow...
    if (kp == NULL) {
      char msg[_POSIX2_LINE_MAX * 2];
  
-@@ -126,7 +123,7 @@ GetStatus(ProcInfo *p)
+@@ -126,7 +124,7 @@ GetStatus(ProcInfo *p)
  #ifdef HAVE_REGEX
      if (active.match_regexp) {
        int regmatch = regexec(&active.re_pat, 
@@ -35,7 +37,7 @@ it's not used somehow...
  			     (size_t) NULL, (regmatch_t *) NULL,
  			     REG_NOTBOL|REG_NOTEOL);
        if (regmatch == REG_NOMATCH) {
-@@ -134,7 +131,7 @@ GetStatus(ProcInfo *p)
+@@ -134,7 +132,7 @@ GetStatus(ProcInfo *p)
        }
      } else {
  #endif
@@ -44,7 +46,7 @@ it's not used somehow...
  	return False;
  #ifdef HAVE_REGEX
      }
-@@ -142,7 +139,7 @@ GetStatus(ProcInfo *p)
+@@ -142,7 +140,7 @@ GetStatus(ProcInfo *p)
  }
  
    /* root process */
@@ -53,7 +55,7 @@ it's not used somehow...
      return False;
  
    /* 
-@@ -157,19 +154,19 @@ GetStatus(ProcInfo *p)
+@@ -157,19 +155,19 @@ GetStatus(ProcInfo *p)
  
      See also the comments in BSDI/xps.c.  */
  
@@ -79,7 +81,7 @@ it's not used somehow...
  
    EndNode->color = base.nodeColor[pstat];
    return True;
-@@ -179,26 +176,26 @@ void 
+@@ -179,26 +177,26 @@ void 
  GetProcName(ProcInfo *p, TREENODE *node)
  {
    ProcInfo proc = *p;
@@ -114,7 +116,7 @@ it's not used somehow...
  	strcpy(node->label1, username);
        } else {
  	strcpy(node->label1, UNKNOWN_USER);
-@@ -209,7 +206,7 @@ GetProcName(ProcInfo *p, TREENODE *node)
+@@ -209,7 +207,7 @@ GetProcName(ProcInfo *p, TREENODE *node)
  #ifdef XPS_RECOLOR_LOGIN_PROCESSES      
        for (i=0;i<NUMLABS ;i++ ) {
  	if (strcmp(node->label, label_array[i]) == 0) {
@@ -123,7 +125,7 @@ it's not used somehow...
  	  strcpy(node->label1, label_array[i]);
  	  node->color = base.xterm;
  	  node->show_username = 1;
-@@ -218,7 +215,7 @@ GetProcName(ProcInfo *p, TREENODE *node)
+@@ -218,7 +216,7 @@ GetProcName(ProcInfo *p, TREENODE *node)
        } /* endfor */
  #endif
  

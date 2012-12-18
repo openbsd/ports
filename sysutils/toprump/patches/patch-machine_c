@@ -1,7 +1,28 @@
-$OpenBSD: patch-machine_c,v 1.1 2012/07/10 07:53:21 sthen Exp $
---- machine.c.orig	Tue Jul 10 08:21:51 2012
-+++ machine.c	Tue Jul 10 08:22:32 2012
-@@ -511,7 +511,7 @@ format_next_process(caddr_t handle, char *(*get_userid
+$OpenBSD: patch-machine_c,v 1.2 2012/12/18 21:38:12 sthen Exp $
+--- machine.c.orig	Fri May  4 07:24:08 2012
++++ machine.c	Thu Dec  6 15:26:14 2012
+@@ -35,14 +35,16 @@
+ 
+ #include <sys/types.h>
+ #include <sys/param.h>
++#include <sys/dkstat.h>
++#include <sys/mount.h>
++#include <sys/proc.h>
++#include <sys/swap.h>
++#include <sys/sysctl.h>
++
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+ #include <unistd.h>
+-#include <sys/sysctl.h>
+-#include <sys/dkstat.h>
+-#include <sys/mount.h>
+-#include <sys/swap.h>
+ #include <err.h>
+ #include <errno.h>
+ 
+@@ -511,7 +513,7 @@ format_next_process(caddr_t handle, char *(*get_userid
  				p_wait = pp->p_wmesg;
  			else {
  				snprintf(waddr, sizeof(waddr), "%llx",

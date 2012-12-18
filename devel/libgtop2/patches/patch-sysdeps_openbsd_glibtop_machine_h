@@ -1,0 +1,11 @@
+$OpenBSD: patch-sysdeps_openbsd_glibtop_machine_h,v 1.1 2012/12/18 21:38:12 sthen Exp $
+--- sysdeps/openbsd/glibtop_machine.h.orig	Fri Dec  7 06:32:40 2012
++++ sysdeps/openbsd/glibtop_machine.h	Fri Dec  7 06:32:49 2012
+@@ -31,6 +31,7 @@
+ #include <time.h>
+ #include <sys/user.h>
+ #include <sys/types.h>
++#include <sys/proc.h>
+ #include <sys/sysctl.h>
+ 
+ #include <fcntl.h>
