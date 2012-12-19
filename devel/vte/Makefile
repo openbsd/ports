@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2012/12/07 15:18:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.103 2012/12/19 07:34:10 jasper Exp $
 
 # Don't pull in x11/py-gtk2 on these archs; build fails with binutils 2.15
 NOT_FOR_ARCHS-python=	mips64 mips64el
@@ -58,6 +58,9 @@ WANTLIB-main=		${WANTLIB} c
 . if ! ${MACHINE_ARCH:Mmips64*}
 BUILD_DEPENDS+=		x11/py-gtk2
 CONFIGURE_ARGS+=	--enable-python
+
+post-install:
+	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/gtk-2.0/*.{a,la}
 . endif
 
 MODGNOME_TOOLS= 	goi
@@ -67,8 +70,5 @@ CONFIGURE_ARGS+=	--disable-Bsymbolic \
 			--disable-gnome-pty-helper \
 			--with-gtk=2.0 \
 			--program-suffix=2
-
-post-install:
-	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/gtk-2.0/*.{a,la}
 
 .include <bsd.port.mk>
