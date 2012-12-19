@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/08/28 05:46:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/12/19 01:47:25 jmatthew Exp $
 @comment riak uses sudo(8): homedir must exist and user must have a valid shell
 @newgroup _riak:702
 @newuser _riak:702:_riak:daemon:Riak daemon:/var/riak:/bin/sh
@@ -83,17 +83,23 @@ lib/riak/erts-${ERTS_V}/include/internal/ethread.mk
 lib/riak/erts-${ERTS_V}/include/internal/ethread_header_config.h
 lib/riak/erts-${ERTS_V}/include/internal/gcc/
 lib/riak/erts-${ERTS_V}/include/internal/gcc/ethr_atomic.h
+lib/riak/erts-${ERTS_V}/include/internal/gcc/ethr_dw_atomic.h
+lib/riak/erts-${ERTS_V}/include/internal/gcc/ethr_membar.h
 lib/riak/erts-${ERTS_V}/include/internal/gcc/ethread.h
 lib/riak/erts-${ERTS_V}/include/internal/i386/
 lib/riak/erts-${ERTS_V}/include/internal/i386/atomic.h
+lib/riak/erts-${ERTS_V}/include/internal/i386/ethr_dw_atomic.h
+lib/riak/erts-${ERTS_V}/include/internal/i386/ethr_membar.h
 lib/riak/erts-${ERTS_V}/include/internal/i386/ethread.h
 lib/riak/erts-${ERTS_V}/include/internal/i386/rwlock.h
 lib/riak/erts-${ERTS_V}/include/internal/i386/spinlock.h
 lib/riak/erts-${ERTS_V}/include/internal/libatomic_ops/
 lib/riak/erts-${ERTS_V}/include/internal/libatomic_ops/ethr_atomic.h
+lib/riak/erts-${ERTS_V}/include/internal/libatomic_ops/ethr_membar.h
 lib/riak/erts-${ERTS_V}/include/internal/libatomic_ops/ethread.h
 lib/riak/erts-${ERTS_V}/include/internal/ppc32/
 lib/riak/erts-${ERTS_V}/include/internal/ppc32/atomic.h
+lib/riak/erts-${ERTS_V}/include/internal/ppc32/ethr_membar.h
 lib/riak/erts-${ERTS_V}/include/internal/ppc32/ethread.h
 lib/riak/erts-${ERTS_V}/include/internal/ppc32/rwlock.h
 lib/riak/erts-${ERTS_V}/include/internal/ppc32/spinlock.h
@@ -101,6 +107,7 @@ lib/riak/erts-${ERTS_V}/include/internal/pthread/
 lib/riak/erts-${ERTS_V}/include/internal/pthread/ethr_event.h
 lib/riak/erts-${ERTS_V}/include/internal/sparc32/
 lib/riak/erts-${ERTS_V}/include/internal/sparc32/atomic.h
+lib/riak/erts-${ERTS_V}/include/internal/sparc32/ethr_membar.h
 lib/riak/erts-${ERTS_V}/include/internal/sparc32/ethread.h
 lib/riak/erts-${ERTS_V}/include/internal/sparc32/rwlock.h
 lib/riak/erts-${ERTS_V}/include/internal/sparc32/spinlock.h
@@ -108,10 +115,13 @@ lib/riak/erts-${ERTS_V}/include/internal/sparc64/
 lib/riak/erts-${ERTS_V}/include/internal/sparc64/ethread.h
 lib/riak/erts-${ERTS_V}/include/internal/tile/
 lib/riak/erts-${ERTS_V}/include/internal/tile/atomic.h
+lib/riak/erts-${ERTS_V}/include/internal/tile/ethr_membar.h
 lib/riak/erts-${ERTS_V}/include/internal/tile/ethread.h
 lib/riak/erts-${ERTS_V}/include/internal/win/
 lib/riak/erts-${ERTS_V}/include/internal/win/ethr_atomic.h
+lib/riak/erts-${ERTS_V}/include/internal/win/ethr_dw_atomic.h
 lib/riak/erts-${ERTS_V}/include/internal/win/ethr_event.h
+lib/riak/erts-${ERTS_V}/include/internal/win/ethr_membar.h
 lib/riak/erts-${ERTS_V}/include/internal/win/ethread.h
 lib/riak/erts-${ERTS_V}/include/internal/x86_64/
 lib/riak/erts-${ERTS_V}/include/internal/x86_64/ethread.h
@@ -161,6 +171,7 @@ lib/riak/lib/asn1-${ASN1_V}/ebin/asn1ct_constructed_ber_bin_v2.beam
 lib/riak/lib/asn1-${ASN1_V}/ebin/asn1ct_constructed_per.beam
 lib/riak/lib/asn1-${ASN1_V}/ebin/asn1ct_gen.beam
 lib/riak/lib/asn1-${ASN1_V}/ebin/asn1ct_gen_ber.beam
+lib/riak/lib/asn1-${ASN1_V}/ebin/asn1ct_gen_ber_bin_v2.beam
 lib/riak/lib/asn1-${ASN1_V}/ebin/asn1ct_gen_per.beam
 lib/riak/lib/asn1-${ASN1_V}/ebin/asn1ct_gen_per_rt2ct.beam
 lib/riak/lib/asn1-${ASN1_V}/ebin/asn1ct_name.beam
@@ -523,7 +534,6 @@ lib/riak/lib/hipe-${HIPE_V}/ebin/
 lib/riak/lib/hipe-${HIPE_V}/ebin/cerl_cconv.beam
 lib/riak/lib/hipe-${HIPE_V}/ebin/cerl_closurean.beam
 lib/riak/lib/hipe-${HIPE_V}/ebin/cerl_hipeify.beam
-lib/riak/lib/hipe-${HIPE_V}/ebin/cerl_hybrid_transform.beam
 lib/riak/lib/hipe-${HIPE_V}/ebin/cerl_lib.beam
 lib/riak/lib/hipe-${HIPE_V}/ebin/cerl_messagean.beam
 lib/riak/lib/hipe-${HIPE_V}/ebin/cerl_pmatch.beam
@@ -900,6 +910,7 @@ lib/riak/lib/observer-${OBSERVER_V}/priv/crashdump_viewer.tool
 lib/riak/lib/observer-${OBSERVER_V}/priv/crashdump_viewer/
 lib/riak/lib/observer-${OBSERVER_V}/priv/crashdump_viewer/collapsd.gif
 lib/riak/lib/observer-${OBSERVER_V}/priv/crashdump_viewer/exploded.gif
+lib/riak/lib/observer-${OBSERVER_V}/priv/erlang_observer.png
 lib/riak/lib/os_mon-${OS_MON_V}/
 lib/riak/lib/os_mon-${OS_MON_V}/ebin/
 lib/riak/lib/os_mon-${OS_MON_V}/ebin/cpu_sup.beam
@@ -1008,6 +1019,8 @@ lib/riak/lib/riak_control-${RIAK_CONTROL_V}/ebin/riak_control_security.beam
 lib/riak/lib/riak_control-${RIAK_CONTROL_V}/ebin/riak_control_session.beam
 lib/riak/lib/riak_control-${RIAK_CONTROL_V}/ebin/riak_control_sup.beam
 lib/riak/lib/riak_control-${RIAK_CONTROL_V}/ebin/ring_resource.beam
+lib/riak/lib/riak_control-${RIAK_CONTROL_V}/include/
+lib/riak/lib/riak_control-${RIAK_CONTROL_V}/include/riak_control.hrl
 lib/riak/lib/riak_control-${RIAK_CONTROL_V}/priv/
 lib/riak/lib/riak_control-${RIAK_CONTROL_V}/priv/admin/
 lib/riak/lib/riak_control-${RIAK_CONTROL_V}/priv/admin/fonts/
@@ -1108,6 +1121,7 @@ lib/riak/lib/riak_core-${RIAK_CORE_V}/ebin/riak_core_coverage_plan.beam
 lib/riak/lib/riak_core-${RIAK_CORE_V}/ebin/riak_core_dtrace.beam
 lib/riak/lib/riak_core-${RIAK_CORE_V}/ebin/riak_core_eventhandler_guard.beam
 lib/riak/lib/riak_core-${RIAK_CORE_V}/ebin/riak_core_eventhandler_sup.beam
+lib/riak/lib/riak_core-${RIAK_CORE_V}/ebin/riak_core_format.beam
 lib/riak/lib/riak_core-${RIAK_CORE_V}/ebin/riak_core_gossip.beam
 lib/riak/lib/riak_core-${RIAK_CORE_V}/ebin/riak_core_gossip_legacy.beam
 lib/riak/lib/riak_core-${RIAK_CORE_V}/ebin/riak_core_handoff_listener.beam
@@ -1263,6 +1277,7 @@ lib/riak/lib/riak_pb-${RIAK_PB_V}/ebin/riak_pb.beam
 lib/riak/lib/riak_pb-${RIAK_PB_V}/ebin/riak_pb_codec.beam
 lib/riak/lib/riak_pb-${RIAK_PB_V}/ebin/riak_pb_kv_codec.beam
 lib/riak/lib/riak_pb-${RIAK_PB_V}/ebin/riak_pb_search_codec.beam
+lib/riak/lib/riak_pb-${RIAK_PB_V}/ebin/riak_search_pb.beam
 lib/riak/lib/riak_pb-${RIAK_PB_V}/include/
 lib/riak/lib/riak_pb-${RIAK_PB_V}/include/riak_kv_pb.hrl
 lib/riak/lib/riak_pb-${RIAK_PB_V}/include/riak_pb.hrl
@@ -1405,6 +1420,8 @@ lib/riak/lib/runtime_tools-${RUNTIME_TOOLS_V}/include/
 lib/riak/lib/runtime_tools-${RUNTIME_TOOLS_V}/include/observer_backend.hrl
 lib/riak/lib/runtime_tools-${RUNTIME_TOOLS_V}/priv/
 lib/riak/lib/runtime_tools-${RUNTIME_TOOLS_V}/priv/lib/
+lib/riak/lib/runtime_tools-${RUNTIME_TOOLS_V}/priv/obj/
+lib/riak/lib/runtime_tools-${RUNTIME_TOOLS_V}/priv/obj/dyntrace.o
 lib/riak/lib/sasl-${SASL_V}/
 lib/riak/lib/sasl-${SASL_V}/ebin/
 lib/riak/lib/sasl-${SASL_V}/ebin/alarm_handler.beam
