@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.29 2012/11/26 15:57:46 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.30 2012/12/19 20:09:13 kirby Exp $
+@pkgpath games/wesnoth,tinygui
 @newgroup _wesnothd:708
 @newuser _wesnothd:708:_wesnothd:daemon:Wesnoth Server:/var/wesnothd:/sbin/nologin
-@pkgpath games/wesnoth,tinygui
 !%%lite%%
 @bin bin/campaignd
 @bin bin/wesnoth
@@ -236,6 +236,7 @@ share/doc/wesnoth/manual.ja.html
 share/doc/wesnoth/manual.pl.html
 share/doc/wesnoth/manual.pt_BR.html
 share/doc/wesnoth/manual.ru.html
+share/doc/wesnoth/manual.sk.html
 share/doc/wesnoth/manual.sr.html
 share/doc/wesnoth/manual.sr@ijekavian.html
 share/doc/wesnoth/manual.sr@ijekavianlatin.html
@@ -309,6 +310,8 @@ share/wesnoth/data/campaigns/An_Orcish_Incursion/images/l10n/es/
 share/wesnoth/data/campaigns/An_Orcish_Incursion/images/l10n/es/an-orcish-incursion-map--overlay.png
 share/wesnoth/data/campaigns/An_Orcish_Incursion/images/l10n/fr/
 share/wesnoth/data/campaigns/An_Orcish_Incursion/images/l10n/fr/an-orcish-incursion-map--overlay.png
+share/wesnoth/data/campaigns/An_Orcish_Incursion/images/l10n/gd/
+share/wesnoth/data/campaigns/An_Orcish_Incursion/images/l10n/gd/an-orcish-incursion-map--overlay.png
 share/wesnoth/data/campaigns/An_Orcish_Incursion/images/l10n/hu/
 share/wesnoth/data/campaigns/An_Orcish_Incursion/images/l10n/hu/an-orcish-incursion-map--overlay.png
 share/wesnoth/data/campaigns/An_Orcish_Incursion/images/l10n/it/
@@ -3092,6 +3095,10 @@ share/wesnoth/data/core/images/help/l10n/fr/
 share/wesnoth/data/core/images/help/l10n/fr/hpxp.png
 share/wesnoth/data/core/images/help/l10n/fr/recruit.png
 share/wesnoth/data/core/images/help/l10n/fr/tooltip.png
+share/wesnoth/data/core/images/help/l10n/gd/
+share/wesnoth/data/core/images/help/l10n/gd/hpxp.png
+share/wesnoth/data/core/images/help/l10n/gd/recruit.png
+share/wesnoth/data/core/images/help/l10n/gd/tooltip.png
 share/wesnoth/data/core/images/help/l10n/hu/
 share/wesnoth/data/core/images/help/l10n/hu/hpxp.png
 share/wesnoth/data/core/images/help/l10n/hu/recruit.png
@@ -3285,6 +3292,8 @@ share/wesnoth/data/core/images/maps/l10n/es/
 share/wesnoth/data/core/images/maps/l10n/es/wesnoth--overlay.png
 share/wesnoth/data/core/images/maps/l10n/fr/
 share/wesnoth/data/core/images/maps/l10n/fr/wesnoth--overlay.png
+share/wesnoth/data/core/images/maps/l10n/gd/
+share/wesnoth/data/core/images/maps/l10n/gd/wesnoth--overlay.png
 share/wesnoth/data/core/images/maps/l10n/hu/
 share/wesnoth/data/core/images/maps/l10n/hu/wesnoth--overlay.png
 share/wesnoth/data/core/images/maps/l10n/it/
@@ -11487,6 +11496,7 @@ share/wesnoth/data/languages/fi_FI.cfg
 share/wesnoth/data/languages/fr_FR.cfg
 share/wesnoth/data/languages/fur_IT.cfg
 share/wesnoth/data/languages/ga_IE.cfg
+share/wesnoth/data/languages/gd_GB.cfg
 share/wesnoth/data/languages/gl_ES.cfg
 share/wesnoth/data/languages/he_IL.cfg
 share/wesnoth/data/languages/hr_HR.cfg

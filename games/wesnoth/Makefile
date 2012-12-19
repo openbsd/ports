@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.49 2012/11/26 15:57:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2012/12/19 20:09:13 kirby Exp $
 
 COMMENT=	fantasy turn-based strategy game
 
-DISTNAME=	wesnoth-1.10.4
-REVISION=	2
+DISTNAME=	wesnoth-1.10.5
 
 CATEGORIES=	games x11
 
@@ -52,6 +51,8 @@ CONFIGURE_ARGS+=-DFIFO_DIR=/var/wesnothd \
 
 USE_LIBTOOL=	Yes
 SEPARATE_BUILD=	flavored
+
+NO_REGRESS=	Yes
 
 FLAVORS=	lite
 FLAVOR?=
