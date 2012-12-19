@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2012/06/26 15:06:42 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2012/12/19 10:54:51 jasper Exp $
 @bin bin/weechat-curses
 include/weechat/
 include/weechat/weechat-plugin.h
@@ -13,6 +13,7 @@ lib/weechat/plugins/logger.so
 lib/weechat/plugins/perl.so
 lib/weechat/plugins/relay.so
 lib/weechat/plugins/rmodifier.so
+lib/weechat/plugins/script.so
 lib/weechat/plugins/xfer.so
 @man man/man1/weechat-curses.1
 share/doc/weechat/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/11/15 15:48:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2012/12/19 10:54:51 jasper Exp $
 
 COMMENT-main=	fast, light and extensible chat client
 COMMENT-lua=	Lua bindings for weechat
@@ -6,19 +6,14 @@ COMMENT-python=	Python bindings for weechat
 COMMENT-ruby=	Ruby bindings for weechat
 COMMENT-tcl=	Tcl bindings for weechat
 
-V=		0.3.8
+V=		0.3.9.2
 DISTNAME=	weechat-${V}
 
 PKGNAME-main=	weechat-${V}
-REVISION-main=	3
 PKGNAME-lua=	weechat-lua-${V}
-REVISION-lua=	1
 PKGNAME-python=	weechat-python-${V}
-REVISION-python=0
 PKGNAME-ruby=	weechat-ruby-${V}
-REVISION-ruby=	1
 PKGNAME-tcl=	weechat-tcl-${V}
-REVISION-tcl=	0
 
 CATEGORIES=	net
 
@@ -78,7 +73,8 @@ CONFIGURE_ARGS+=-DENABLE_ASPELL=no \
 		-DENABLE_LUA=yes \
 		-DENABLE_TCL=yes \
 		-DENABLE_PYTHON=yes \
-		-DHAVE_BACKTRACE=no
+		-DHAVE_BACKTRACE=no \
+		-DMANDIR=${PREFIX}/man
 
 post-install:
 	$(INSTALL_DATA_DIR) ${PREFIX}/share/doc/weechat
