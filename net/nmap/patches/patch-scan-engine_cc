@@ -1,18 +1,18 @@
---- scan_engine.cc.orig	Sat Apr  7 10:16:08 2012
-+++ scan_engine.cc	Wed May 30 11:35:54 2012
-@@ -5421,13 +5421,13 @@ static void begin_sniffer(UltraScanInfo *USI, vector<T
-     if (doIndividual){
-       pcap_filter="dst host ";
-       pcap_filter+=inet_ntop_ez(&source, sizeof(source));
--      pcap_filter+=" and (icmp or icmp6 or ((tcp or udp or sctp) and (";
-+      pcap_filter+=" and (icmp or icmp6 or ((tcp or udp) and (";
-       pcap_filter+=dst_hosts;
-       pcap_filter+=")))";
-     }else{
-       pcap_filter="dst host ";
-       pcap_filter+=inet_ntop_ez(&source, sizeof(source));
--      pcap_filter+=" and (icmp or icmp6 or tcp or udp or sctp)";
-+      pcap_filter+=" and (icmp or icmp6 or tcp or udp)";
+--- scan_engine.cc.orig	Wed Oct 31 18:00:55 2012
++++ scan_engine.cc	Fri Nov 30 12:43:04 2012
+@@ -5540,13 +5540,13 @@ static void begin_sniffer(UltraScanInfo *USI, std::vec
+     if (doIndividual) {
+       pcap_filter = "dst host ";
+       pcap_filter += inet_ntop_ez(&source, sizeof(source));
+-      pcap_filter += " and (icmp or icmp6 or ((tcp or udp or sctp) and (";
++      pcap_filter += " and (icmp or icmp6 or ((tcp or udp) and (";
+       pcap_filter += dst_hosts;
+       pcap_filter += ")))";
+     } else {
+       pcap_filter = "dst host ";
+       pcap_filter += inet_ntop_ez(&source, sizeof(source));
+-      pcap_filter += " and (icmp or icmp6 or tcp or udp or sctp)";
++      pcap_filter += " and (icmp or icmp6 or tcp or udp)";
      }
-   }else assert(0);
-   if (o.debugging) log_write(LOG_PLAIN, "Packet capture filter (device %s): %s\n", Targets[0]->deviceFullName(), pcap_filter.c_str());
+   } else {
+     assert(0);

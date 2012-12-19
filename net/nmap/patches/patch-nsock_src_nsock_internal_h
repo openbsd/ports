@@ -1,7 +1,7 @@
-$OpenBSD: patch-nsock_src_nsock_internal_h,v 1.1 2012/07/16 07:39:31 giovanni Exp $
---- nsock/src/nsock_internal.h.orig	Fri May 25 10:23:15 2012
-+++ nsock/src/nsock_internal.h	Fri May 25 10:23:32 2012
-@@ -200,7 +200,7 @@ typedef struct {
+$OpenBSD: patch-nsock_src_nsock_internal_h,v 1.2 2012/12/19 17:12:11 giovanni Exp $
+--- nsock/src/nsock_internal.h.orig	Mon Nov 12 21:44:37 2012
++++ nsock/src/nsock_internal.h	Fri Nov 30 12:41:48 2012
+@@ -203,7 +203,7 @@ typedef struct {
    int tracelevel;
    FILE *tracefile;
    /* This time is subtracted from the current time for trace reports */

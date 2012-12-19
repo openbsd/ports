@@ -1,6 +1,6 @@
-$OpenBSD: patch-ncat_ncat_core_c,v 1.1 2012/07/16 07:39:31 giovanni Exp $
---- ncat/ncat_core.c.orig	Fri May 25 12:03:58 2012
-+++ ncat/ncat_core.c	Fri May 25 12:04:23 2012
+$OpenBSD: patch-ncat_ncat_core_c,v 1.2 2012/12/19 17:12:11 giovanni Exp $
+--- ncat/ncat_core.c.orig	Tue Nov 13 09:40:49 2012
++++ ncat/ncat_core.c	Fri Nov 30 12:41:47 2012
 @@ -127,7 +127,7 @@ union sockaddr_u socksconnect;
  struct options o;
  
@@ -9,4 +9,4 @@ $OpenBSD: patch-ncat_ncat_core_c,v 1.1 2012/07/16 07:39:31 giovanni Exp $
 +struct bpf_timeval start_time;
  
  /* Initializes global options to their default values. */
- void options_init(void) {
+ void options_init(void)

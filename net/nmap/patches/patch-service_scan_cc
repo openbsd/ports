@@ -1,7 +1,7 @@
-$OpenBSD: patch-service_scan_cc,v 1.1 2012/07/16 07:39:31 giovanni Exp $
---- service_scan.cc.orig	Fri May 25 14:45:48 2012
-+++ service_scan.cc	Fri May 25 15:10:52 2012
-@@ -1968,10 +1968,10 @@ static void startNextProbe(nsock_pool nsp, nsock_iod n
+$OpenBSD: patch-service_scan_cc,v 1.2 2012/12/19 17:12:11 giovanni Exp $
+--- service_scan.cc.orig	Mon Oct 22 17:33:57 2012
++++ service_scan.cc	Fri Nov 30 12:41:48 2012
+@@ -1964,10 +1964,10 @@ static void startNextProbe(nsock_pool nsp, nsock_iod n
      // if the last probe was the NULL probe.
      probe = svc->nextProbe(false);
      if (probe) {
@@ -14,7 +14,7 @@ $OpenBSD: patch-service_scan_cc,v 1.1 2012/07/16 07:39:31 giovanni Exp $
      } else {
        // Should only happen if someone has a highly perverse nmap-service-probes
        // file.  Null scan should generally never be the only probe.
-@@ -2016,11 +2016,11 @@ static void startNextProbe(nsock_pool nsp, nsock_iod n
+@@ -2012,11 +2012,11 @@ static void startNextProbe(nsock_pool nsp, nsock_iod n
        } else {
  	assert(svc->proto == IPPROTO_UDP);
  	/* Can maintain the same UDP "connection" */
@@ -28,7 +28,7 @@ $OpenBSD: patch-service_scan_cc,v 1.1 2012/07/16 07:39:31 giovanni Exp $
        }
      } else {
        // No more probes remaining!  Failed to match
-@@ -2087,14 +2087,14 @@ static void considerPrintingStats(ServiceGroup *SG) {
+@@ -2083,14 +2083,14 @@ static void considerPrintingStats(ServiceGroup *SG) {
     if (keyWasPressed()) {
        SG->SPM->printStats(SG->services_finished.size() /
                            ((double)SG->services_remaining.size() + SG->services_in_progress.size() + 
@@ -46,7 +46,7 @@ $OpenBSD: patch-service_scan_cc,v 1.1 2012/07/16 07:39:31 giovanni Exp $
    }
  }
  
-@@ -2121,7 +2121,7 @@ static void handleHostIfDone(ServiceGroup *SG, Target 
+@@ -2117,7 +2117,7 @@ static void handleHostIfDone(ServiceGroup *SG, Target 
    }
  
    if (!found) {
@@ -55,7 +55,7 @@ $OpenBSD: patch-service_scan_cc,v 1.1 2012/07/16 07:39:31 giovanni Exp $
      if (target->timedOut(NULL)) {
        SG->num_hosts_timedout++;
      }
-@@ -2177,7 +2177,7 @@ static int launchSomeServiceProbes(nsock_pool nsp, Ser
+@@ -2173,7 +2173,7 @@ static int launchSomeServiceProbes(nsock_pool nsp, Ser
  	 !SG->services_remaining.empty()) {
      // Start executing a probe from the new list and move it to in_progress
      svc = SG->services_remaining.front();
@@ -64,7 +64,7 @@ $OpenBSD: patch-service_scan_cc,v 1.1 2012/07/16 07:39:31 giovanni Exp $
        end_svcprobe(nsp, PROBESTATE_INCOMPLETE, SG, svc, NULL);
        continue;
      }
-@@ -2236,7 +2236,7 @@ static void servicescan_connect_handler(nsock_pool nsp
+@@ -2232,7 +2232,7 @@ static void servicescan_connect_handler(nsock_pool nsp
  
    assert(type == NSE_TYPE_CONNECT || type == NSE_TYPE_CONNECT_SSL);
  
@@ -73,7 +73,7 @@ $OpenBSD: patch-service_scan_cc,v 1.1 2012/07/16 07:39:31 giovanni Exp $
      end_svcprobe(nsp, PROBESTATE_INCOMPLETE, SG, svc, nsi);
    } else if (status == NSE_STATUS_SUCCESS) {
  
-@@ -2262,10 +2262,10 @@ static void servicescan_connect_handler(nsock_pool nsp
+@@ -2258,10 +2258,10 @@ static void servicescan_connect_handler(nsock_pool nsp
  
      // Yeah!  Connection made to the port.  Send the appropriate probe
      // text (if any is needed -- might be NULL probe)
@@ -86,7 +86,7 @@ $OpenBSD: patch-service_scan_cc,v 1.1 2012/07/16 07:39:31 giovanni Exp $
    } else if (status == NSE_STATUS_TIMEOUT || status == NSE_STATUS_ERROR) {
        // This is not good.  The connect() really shouldn't generally
        // be timing out like that.  We'll mark this svc as incomplete
-@@ -2300,11 +2300,11 @@ static void servicescan_write_handler(nsock_pool nsp, 
+@@ -2296,11 +2296,11 @@ static void servicescan_write_handler(nsock_pool nsp, 
    if (keyWasPressed()) {
       SG->SPM->printStats(SG->services_finished.size() /
                           ((double)SG->services_remaining.size() + SG->services_in_progress.size() + 
@@ -100,7 +100,7 @@ $OpenBSD: patch-service_scan_cc,v 1.1 2012/07/16 07:39:31 giovanni Exp $
      end_svcprobe(nsp, PROBESTATE_INCOMPLETE, SG, svc, nsi);
      return;
    }
-@@ -2350,7 +2350,7 @@ static void servicescan_read_handler(nsock_pool nsp, n
+@@ -2346,7 +2346,7 @@ static void servicescan_read_handler(nsock_pool nsp, n
  
    assert(type == NSE_TYPE_READ);
  
