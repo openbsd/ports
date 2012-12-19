@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1095 2012/12/12 21:57:58 jeremy Exp $
+# $OpenBSD: Makefile,v 1.1096 2012/12/19 10:40:40 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -127,6 +127,7 @@
      SUBDIR += gmp
      SUBDIR += gobject-introspection
      SUBDIR += goffice
+     SUBDIR += goffice08
      SUBDIR += goopy
      SUBDIR += gpatch
      SUBDIR += gperf
