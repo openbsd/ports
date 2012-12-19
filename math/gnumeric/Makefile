@@ -1,59 +1,56 @@
-# $OpenBSD: Makefile,v 1.77 2012/11/01 17:24:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.78 2012/12/19 10:43:02 ajacoutot Exp $
 
 COMMENT=		spreadsheet application for GNOME
 
 GNOME_PROJECT=		gnumeric
-GNOME_VERSION=		1.10.17
-REVISION=		4
+GNOME_VERSION=		1.12.0
 
 CATEGORIES=    		math
 
 HOMEPAGE=		http://www.gnome.org/projects/gnumeric/
 
-# from devel/goffice
-API_VERSION=		0.8.17
+# sync GOFFICE_API_VERSION with devel/goffice API_VERSION
+# sync GOFFICE_VERSION with devel/goffice GNOME_VERSION
+GOFFICE_API_VERSION=	0.10
+GOFFICE_VERSION=	0.10.0
+API_VERSION=		${GNOME_VERSION:R}
+SUBST_VARS=		GNOME_VERSION GOFFICE_GNOME_VERSION GOFFICE_API_VERSION API_VERSION
 
-# GPLv2
-# Some tools: LGPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-EXTRACT_SUFX=		.tar.bz2
-
-WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
-WANTLIB += bz2 c cairo drm expat fontconfig freetype gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += goffice-0.8 gsf-1 gthread-2.0 gtk-x11-2.0 m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre perl pixman-1 png
-WANTLIB += pthread pthread-stubs util xcb xcb-render xcb-shm xml2
-WANTLIB += z dbus-1 dbus-glib-1 ffi stdc++
+WANTLIB += atk-bridge-2.0 atspi bz2 c cairo cairo-gobject croco-0.6
+WANTLIB += dbus-1 drm expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 goffice-0.10
+WANTLIB += gs gsf-1 gthread-2.0 gtk-3 harfbuzz icudata icule icuuc
+WANTLIB += jpeg lasem-0.4 m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre perl pixman-1 png pthread pthread-stubs rsvg-2
+WANTLIB += spectre stdc++ util xcb xcb-render xcb-shm xml2 z
 
-MODULES=		devel/gconf2 \
+MODULES=		devel/dconf \
 			devel/gettext \
 			x11/gnome
 
-LIB_DEPENDS=		goffice->=0.8.17,<0.8.18:devel/goffice \
-			devel/libgsf \
-			x11/gtk+2
+LIB_DEPENDS=		devel/goffice=${GOFFICE_VERSION}
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 MODGNOME_TOOLS= 	yelp
-MODGCONF2_SCHEMAS_DIR=	gnumeric
+# XXX when goi is enabled in devel/goffice
+#MODGNOME_TOOLS +=	goi
 
-USE_LIBTOOL=		Yes
 USE_GROFF=		Yes
+
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--without-gnome \
-			--without-gda \
+CONFIGURE_ARGS=		--without-gda \
 			--without-psiconv \
 			--without-paradox \
 			--without-long-double \
 			--without-python
-
-SUBST_VARS=		VERSION API_VERSION
 
 .include <bsd.port.mk>
