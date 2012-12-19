@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2012/12/19 10:40:08 ajacoutot Exp $
+
+Matches 'UTF-8 and UTF-16 support'.
+
+--- configure.orig	Sun Mar 18 07:43:56 2012
++++ configure	Sun Mar 18 07:44:12 2012
+@@ -15285,7 +15285,7 @@ fi
+ 
+   { $as_echo "$as_me:${as_lineno-$LINENO}: checking for UTF-8 support in pcre" >&5
+ $as_echo_n "checking for UTF-8 support in pcre... " >&6; }
+-  if (pcretest -C 2>&1) | grep -i "^ *UTF-8 support" >/dev/null; then
++  if (pcretest -C 2>&1) | grep -i "^ *UTF-8.*support" >/dev/null; then
+       { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ $as_echo "yes" >&6; }
+       LIBS="$LIBS -lpcre"
