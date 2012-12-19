@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_common_h,v 1.8 2012/12/19 15:04:36 dcoppa Exp $
+
+Fix some problems on initial volume setup
+(upstream svn revision r2378)
+
+--- src/common.h.orig	Wed Dec 19 13:38:32 2012
++++ src/common.h	Wed Dec 19 13:39:30 2012
+@@ -459,6 +459,7 @@ gboolean set_next(void *data);
+ gboolean set_quit(void *data);
+ gboolean set_kill_mplayer(void *data);
+ gboolean set_position(void *data);
++gboolean hookup_volume(void *data);
+ gboolean set_volume(void *data);
+ gboolean set_fullscreen(void *data);
+ gboolean set_show_controls(void *data);

@@ -1,0 +1,48 @@
+$OpenBSD: patch-src_gui_c,v 1.29 2012/12/19 15:04:36 dcoppa Exp $
+
+Fix some problems on initial volume setup
+(upstream svn revision r2378)
+
+Don't monitor system volume when running in softvol mode
+(upstream svn revision r2377)
+
+--- src/gui.c.orig	Wed Dec 19 13:32:44 2012
++++ src/gui.c	Wed Dec 19 15:21:21 2012
+@@ -1633,6 +1633,18 @@ gboolean set_software_volume(gdouble * data)
+     return FALSE;
+ }
+ 
++gboolean hookup_volume(void *data)
++{
++    if (gm_audio_update_device(&audio_device)) {
++        if (softvol || audio_device.type == AUDIO_TYPE_SOFTVOL) {
++            gm_audio_set_server_volume_update_callback(&audio_device, NULL);
++        } else {
++            gm_audio_set_server_volume_update_callback(&audio_device, set_volume);
++        }
++    }
++    return FALSE;
++}
++
+ gboolean set_volume(void *data)
+ {
+     IdleData *idle = (IdleData *) data;
+@@ -4145,11 +4157,15 @@ void config_apply(GtkWidget * widget, void *data)
+     audio_device.description = g_strdup(audio_device_name);
+     gm_audio_update_device(&audio_device);
+     gm_audio_get_volume(&audio_device);
+-    gm_audio_set_server_volume_update_callback(&audio_device, set_volume);
++    if (softvol || audio_device.type == AUDIO_TYPE_SOFTVOL) {
++        gm_audio_set_server_volume_update_callback(&audio_device, NULL);
++        gmtk_media_player_set_attribute_boolean(GMTK_MEDIA_PLAYER(media), ATTRIBUTE_SOFTVOL, TRUE);
++    } else {
++        gm_audio_set_server_volume_update_callback(&audio_device, set_volume);
++        gmtk_media_player_set_attribute_boolean(GMTK_MEDIA_PLAYER(media), ATTRIBUTE_SOFTVOL, FALSE);
++    }
+ 
+     gmtk_media_player_set_attribute_string(GMTK_MEDIA_PLAYER(media), ATTRIBUTE_AO, audio_device.mplayer_ao);
+-    gmtk_media_player_set_attribute_boolean(GMTK_MEDIA_PLAYER(media), ATTRIBUTE_SOFTVOL,
+-                                            audio_device.type == AUDIO_TYPE_SOFTVOL);
+ 
+ #ifdef HAVE_ASOUNDLIB
+     if (audio_device.alsa_mixer != NULL) {
