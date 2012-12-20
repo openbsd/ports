@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2012/12/17 20:28:04 edd Exp $
+# $OpenBSD: Makefile,v 1.63 2012/12/20 22:44:37 edd Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
@@ -55,8 +55,14 @@ CPPFLAGS +=	-DU_PLATFORM=U_PF_BSD
 
 # Big endian ICU bug
 # http://tug.org/pipermail/tlbuild/2012q2/002266.html
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mbe}
+CPPFLAGS +=	-DU_IS_BIG_ENDIAN=1
+.endif
+
 CONFIGURE_ENV +=	TL_MAKE=${GMAKE} \
 			CPPFLAGS="${CPPFLAGS}"
+
 # Can't build in same dir
 WRKBUILD =              ${WRKSRC}/Work
 CONFIGURE_SCRIPT =      ../configure
