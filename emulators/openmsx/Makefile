@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.8 2012/12/10 08:22:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2012/12/20 17:38:36 bentley Exp $
 
 BROKEN-powerpc =CPUCore.cc:2347: error: insn does not satisfy its constraints
 BROKEN-mips64=	Unsupported or unrecognised CPU "sgi"
 
 COMMENT =	MSX home computer emulator
 
-DISTNAME =	openmsx-0.8.2
+DISTNAME =	openmsx-0.9.1
 
 CATEGORIES =	emulators
 
 HOMEPAGE =	http://openmsx.sourceforge.net/
+
+MAINTAINER =	Anthony J. Bentley <anthony@cathet.us>
 
 PERMIT_PACKAGE_CDROM =	claims GPLv2, but no copyright notices in source files
 PERMIT_PACKAGE_FTP =	claims GPLv2, but no copyright notices in source files
