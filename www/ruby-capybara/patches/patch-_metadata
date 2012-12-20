@@ -1,0 +1,17 @@
+$OpenBSD: patch-_metadata,v 1.1.1.1 2012/12/20 16:21:24 jeremy Exp $
+
+Remove the selenium-webdriver dependency, since it is really an
+optional dependency and selenium-webdriver hasn't been ported
+yet.
+
+--- .metadata.orig	Mon Jan 30 11:50:54 2012
++++ .metadata	Mon Jan 30 11:51:21 2012
+@@ -41,7 +41,7 @@ dependencies:
+     - - ~>
+       - !ruby/object:Gem::Version
+         version: '2.0'
+-  type: :runtime
++  type: :development
+   prerelease: false
+   version_requirements: *2152397660
+ - !ruby/object:Gem::Dependency
