@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/12/20 16:20:31 jeremy Exp $
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/README.rdoc
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/xpath/
+${GEM_LIB}/gems/${DISTNAME}/lib/xpath.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/xpath/expression.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/xpath/html.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/xpath/union.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/xpath/version.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/form.html
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/simple.html
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/stuff.html
+${GEM_LIB}/gems/${DISTNAME}/spec/html_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/union_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/xpath_spec.rb
+${GEM_LIB}/specifications/${DISTNAME}.gemspec

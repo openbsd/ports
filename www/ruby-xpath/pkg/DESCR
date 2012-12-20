@@ -1,0 +1,2 @@
+XPath is a Ruby DSL around a subset of XPath 1.0. Its primary purpose is
+to facilitate writing complex XPath queries from Ruby code.
