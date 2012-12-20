@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2012/11/14 12:19:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2012/12/20 15:18:01 ajacoutot Exp $
 @extra owncloud/config/config.php
 owncloud/
 owncloud/.htaccess.dist
@@ -4334,6 +4334,7 @@ owncloud/lib/connector/sabre/file.php
 owncloud/lib/connector/sabre/locks.php
 owncloud/lib/connector/sabre/node.php
 owncloud/lib/connector/sabre/principal.php
+owncloud/lib/connector/sabre/quotaplugin.php
 owncloud/lib/db.php
 owncloud/lib/eventsource.php
 owncloud/lib/filecache/
