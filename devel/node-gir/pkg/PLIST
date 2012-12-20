@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/09/23 17:52:27 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/12/20 12:05:22 abieber Exp $
 lib/node_modules/gir/
 lib/node_modules/gir/.npmignore
 lib/node_modules/gir/.travis.yml
@@ -9,8 +9,7 @@ lib/node_modules/gir/build/Makefile
 lib/node_modules/gir/build/Release/
 lib/node_modules/gir/build/Release/.deps/
 lib/node_modules/gir/build/Release/.deps/Release/
-lib/node_modules/gir/build/Release/.deps/Release/lib.target/
-lib/node_modules/gir/build/Release/.deps/Release/lib.target/girepository.node.d
+lib/node_modules/gir/build/Release/.deps/Release/girepository.node.d
 lib/node_modules/gir/build/Release/.deps/Release/obj.target/
 lib/node_modules/gir/build/Release/.deps/Release/obj.target/girepository/
 lib/node_modules/gir/build/Release/.deps/Release/obj.target/girepository.node.d
@@ -25,8 +24,7 @@ lib/node_modules/gir/build/Release/.deps/Release/obj.target/girepository/src/typ
 lib/node_modules/gir/build/Release/.deps/Release/obj.target/girepository/src/types/struct.o.d
 lib/node_modules/gir/build/Release/.deps/Release/obj.target/girepository/src/util.o.d
 lib/node_modules/gir/build/Release/.deps/Release/obj.target/girepository/src/values.o.d
-lib/node_modules/gir/build/Release/lib.target/
-@bin lib/node_modules/gir/build/Release/lib.target/girepository.node
+@bin lib/node_modules/gir/build/Release/girepository.node
 lib/node_modules/gir/build/Release/linker.lock
 lib/node_modules/gir/build/Release/obj.target/
 lib/node_modules/gir/build/Release/obj.target/girepository/
