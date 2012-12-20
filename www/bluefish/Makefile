@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.64 2012/04/28 14:08:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2012/12/20 12:36:28 gonzalo Exp $
 
 COMMENT=	HTML editor for experienced web designers
 
-DISTNAME=	bluefish-1.0.7
-REVISION=	10
-CATEGORIES=	www
+DISTNAME=	bluefish-2.2.3
+CATEGORIES=	www editors
 HOMEPAGE=	http://bluefish.openoffice.nl/
 
 MASTER_SITES=	http://www.bennewitz.com/bluefish/stable/source/
@@ -15,35 +14,38 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0
-WANTLIB += bonobo-2 bonobo-activation bonoboui-2 c cairo
-WANTLIB += expat fontconfig freetype gconf-2 gio-2.0 glib-2.0 gdk_pixbuf-2.0
-WANTLIB += gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2
-WANTLIB += gnomevfs-2 gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pixman-1 png popt pthread pthread-stubs xcb xml2 z
-WANTLIB += gailutil gtk-x11-2.0>=0.14 gdk-x11-2.0>=0.14 pcre gnomeui-2
-WANTLIB += GL Xxf86vm canberra drm xcb-render xcb-shm aspell
+WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
+WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject dbus-1 drm
+WANTLIB += enchant expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB += gtk-3 gucharmap_2_90 harfbuzz icudata icule icuuc m
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png pthread pthread-stubs ${MODPY_WANTLIB} stdc++ util xcb
+WANTLIB += xcb-render xcb-shm xml2 z
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext \
+		lang/python \
+		textproc/intltool
 
 RUN_DEPENDS=	devel/desktop-file-utils \
-		misc/shared-mime-info
-BUILD_DEPENDS=	misc/shared-mime-info
-LIB_DEPENDS=	x11/gtk+2 \
-		devel/pcre \
-		x11/gnome/libgnomeui \
-		textproc/aspell/core
+		misc/shared-mime-info \
+		x11/gtk+2,-guic
+
+LIB_DEPENDS=	textproc/enchant \
+		x11/gnome/gucharmap
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--with-freedesktop_org-menu='${PREFIX}/share/applications/' \
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--with-freedesktop_org-menu='${PREFIX}/share/applications/' \
 		--disable-update-databases
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
+USE_LIBTOOL=	Yes
 
-NO_REGRESS=	Yes
+post-install:
+	rm ${PREFIX}/lib/bluefish/*.{a,la}
 
 .include <bsd.port.mk>
