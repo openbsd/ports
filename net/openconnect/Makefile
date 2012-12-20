@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/11/08 16:44:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2012/12/20 21:23:43 sthen Exp $
 
 COMMENT=	client for Cisco AnyConnect SSL VPN
 
@@ -30,7 +30,8 @@ MASTER_SITES=	ftp://ftp.infradead.org/pub/openconnect/
 MASTER_SITES0=	http://git.infradead.org/users/dwmw2/vpnc-scripts.git/blob_plain/0e042c5ab78bd5dbeeb82b8570160c081fa8c3ff:/
 
 # used to format html during build, USE_GROFF not needed
-BUILD_DEPENDS=		textproc/groff
+BUILD_DEPENDS=		textproc/groff \
+			textproc/py-xml
 MODULES=		devel/gettext \
 			lang/python
 MODPY_RUNDEP=		No
