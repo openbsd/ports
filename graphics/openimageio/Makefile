@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/05/09 12:42:06 pascal Exp $
+# $OpenBSD: Makefile,v 1.2 2012/12/21 17:59:00 landry Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		library for reading and writing images
+BROKEN-hppa =		missing atomic ops
 
 MAJ =			1.0
 V =			${MAJ}.4
