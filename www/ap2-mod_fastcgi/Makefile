@@ -1,27 +1,30 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/22 08:36:47 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2012/12/21 12:13:35 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Apache2 FastCGI module
 
-DISTNAME=       mod_fastcgi-2.4.2
+DISTNAME=	mod_fastcgi-2.4.2
 PKGNAME=	ap2-${DISTNAME}
+REVISION=	0
 
-CATEGORIES=     www
+CATEGORIES=	www
 
-HOMEPAGE=       http://www.fastcgi.com/
+HOMEPAGE=	http://www.fastcgi.com/
 
-MASTER_SITES=   ${HOMEPAGE}dist/
+MASTER_SITES=	${HOMEPAGE}dist/
 
-MAINTAINER=     Michael Erdely <merdely@openbsd.org>
+MAINTAINER=	Michael Erdely <merdely@openbsd.org>
 
 # Proprietary license
-PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-NO_REGRESS=     Yes
+WANTLIB += pthread
+
+NO_REGRESS=	Yes
 
 RUN_DEPENDS=	www/apache-httpd
 BUILD_DEPENDS=	${RUN_DEPENDS}

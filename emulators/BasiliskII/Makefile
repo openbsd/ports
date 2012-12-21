@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2012/08/19 22:30:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2012/12/21 12:13:35 sthen Exp $
 
 COMMENT=		open source 68k Macintosh emulator
 
 DISTNAME=		BasiliskII_src_01052006
 PKGNAME=		BasiliskII-1.0
-REVISION=		4
+REVISION=		5
 CATEGORIES=		emulators
 
 HOMEPAGE=		http://basilisk.cebix.net/
@@ -20,12 +20,12 @@ MODULES=		devel/gettext
 MASTER_SITES=		http://distfiles.nl/
 EXTRACT_SUFX=		.tar.bz2
 
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender Xxf86dga Xxf86vm atk-1.0 c
 WANTLIB += cairo esd expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pthread sndio stdc++ z
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread-stubs
+WANTLIB += pthread sndio stdc++ xcb xcb-render xcb-shm z
 
 LIB_DEPENDS=		audio/esound \
 			x11/gtk+2

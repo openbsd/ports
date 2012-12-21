@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2012/09/01 14:36:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.82 2012/12/21 12:13:36 sthen Exp $
 
 ONLY_FOR_ARCHS-mono=	${MONO_ARCHS}
 
@@ -24,7 +24,7 @@ PKGNAME-qt3=	avahi-qt3-${V}
 PKGNAME-qt4=	avahi-qt4-${V}
 PKGNAME-ui=	avahi-ui-${V}
 
-REVISION=	0
+REVISION=	1
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -112,7 +112,8 @@ WANTLIB-gtk=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		gobject-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs xcb z \
 		xcb-render avahi-client avahi-common GL Xxf86vm drm xcb-shm \
-		avahi-glib ffi stdc++ ${MODGETTEXT_WANTLIB}
+		avahi-glib ffi stdc++ harfbuzz icudata icule icuuc \
+		${MODGETTEXT_WANTLIB}
 
 ### -gtk3
 SHARED_LIBS +=  avahi-ui-gtk3             0.0 # 1.4
@@ -129,6 +130,8 @@ WANTLIB-gtk3 += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB-gtk3 += gtk-3 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-gtk3 += pcre pixman-1 png pthread pthread-stubs xcb xcb-render
 WANTLIB-gtk3 += xcb-shm z ffi stdc++ ${MODGETTEXT_WANTLIB}
+WANTLIB-gtk3 += ICE SM atk-bridge-2.0 atspi harfbuzz icudata icule
+WANTLIB-gtk3 += icuuc
 
 ### -gui
 LIB_DEPENDS-gui= ${MODGETTEXT_LIB_DEPENDS} \
@@ -148,6 +151,8 @@ WANTLIB-gui += gdbm gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB-gui += gobject-2.0 gthread-2.0 gtk-3 m pango-1.0
 WANTLIB-gui += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB-gui += pthread-stubs xcb xcb-render xcb-shm z ffi stdc++
+WANTLIB-gui += ICE SM atk-bridge-2.0 atspi harfbuzz icudata icule
+WANTLIB-gui += icuuc
 WANTLIB-gui += ${MODGETTEXT_WANTLIB}
 
 ### -ui
@@ -169,11 +174,11 @@ MODULES+=	x11/qt3
 LIB_DEPENDS-qt3= ${MODGETTEXT_LIB_DEPENDS} \
 		${MODQT3_LIB_DEPENDS} \
 		${BUILD_PKGPATH}
-WANTLIB-qt3=	GL ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xi \
+WANTLIB-qt3=	GL ICE SM X11 Xcursor Xext Xfixes Xft Xi \
 		Xinerama Xmu Xrandr Xrender Xt expat fontconfig \
-		freetype jpeg lcms m mng png pthread-stubs xcb z \
+		freetype jpeg lcms m mng png pthread xcb z \
 		avahi-common stdc++ ${MODQT3_WANTLIB} ${MODGETTEXT_WANTLIB} \
-		Xdamage Xxf86vm drm ffi kvm
+		Xdamage Xxf86vm drm
 .else
 CONFIGURE_ARGS+= --disable-qt3
 .endif
@@ -185,7 +190,7 @@ LIB_DEPENDS-qt4= ${MODGETTEXT_LIB_DEPENDS} \
 		x11/qt4 \
 		${BUILD_PKGPATH}
 WANTLIB-qt4=	QtCore avahi-common m stdc++ ${MODGETTEXT_WANTLIB} \
-		glib-2.0 gthread-2.0 pcre z
+		z pthread
 .else
 CONFIGURE_ARGS+= --disable-qt4
 .endif

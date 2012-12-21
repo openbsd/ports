@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2012/03/29 13:38:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2012/12/21 12:13:35 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -7,7 +7,7 @@ COMMENT =	Tcl bindings for Curl
 DISTNAME =	TclCurl-7.19.6
 SHARED_LIBS =	TclCurl7196 0.0
 CATEGORIES =	net
-REVISION =	0
+REVISION =	1
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB =	crypto idn ssl z curl>=2.2
 
 MASTER_SITES =	http://distfiles.nl/
-MODULES =	lang/tcl
+MODULES =	lang/tcl devel/gettext
 LIB_DEPENDS =	net/curl
 BUILD_DEPENDS =	${MODTCL_BUILD_DEPENDS}
 RUN_DEPENDS =	${MODTCL_RUN_DEPENDS}

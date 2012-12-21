@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2012/03/29 13:38:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2012/12/21 12:13:35 sthen Exp $
 
 COMMENT-main=	high dynamic range image format
 COMMENT-tools=	image viewing tools for OpenEXR
@@ -7,7 +7,7 @@ COMMENT-doc=	developer documentation for OpenEXR
 V=		1.6.1
 DISTNAME=	openexr-$V
 PKGNAME-main=	OpenEXR-$V
-REVISION-main = 1
+REVISION-main = 2
 PKGNAME-tools=  OpenEXR-tools-$V
 REVISION-tools =	1
 PKGNAME-doc=	OpenEXR-doc-$V
@@ -27,7 +27,7 @@ MASTER_SITES=		${MASTER_SITE_SAVANNAH:=openexr/}
 
 MULTI_PACKAGES= 	-main -tools -doc
 
-WANTLIB-main=		m z stdc++ Half Iex Imath IlmThread
+WANTLIB-main=		m z stdc++ Half Iex Imath IlmThread pthread
 LIB_DEPENDS-main=	graphics/ilmbase
 
 WANTLIB-tools=		${WANTLIB-main} c m pthread stdc++ IlmImf>=4

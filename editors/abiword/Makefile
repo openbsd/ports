@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2012/04/23 06:40:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.87 2012/12/21 12:13:35 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ VERSION=	2.8.6
 MAJORVER=	${VERSION:C/..$//}
 DISTNAME=	abiword-${VERSION}
 
-REVISION=	5
+REVISION=	6
 
 # Merge a patch from Fedora to change default font from Times Roman to
 # DejaVu Serif.: fixes font corruption issue on machines where
@@ -45,6 +45,7 @@ WANTLIB += gmodule-2.0 gobject-2.0 gsf-1 gthread-2.0 gtk-x11-2.0
 WANTLIB += jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs rsvg-2 stdc++ wmf-0.2 wmflite-0.2
 WANTLIB += wv-1.2 xcb xcb-render xcb-shm xml2 z
+WANTLIB += harfbuzz icudata icule icuuc
 
 MASTER_SITES=   ${HOMEPAGE}/downloads/abiword/${VERSION}/source/
 

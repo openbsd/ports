@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.53 2012/10/01 07:56:40 brad Exp $
+# $OpenBSD: Makefile,v 1.54 2012/12/21 12:13:35 sthen Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		input and output plugins for Audacious
 
 V =			3.3.2
+REVISION =		0
 
 DISTNAME =		audacious-plugins-$V
 
@@ -26,7 +27,7 @@ WANTLIB += gtk-3 m mms modplug mp3lame mpg123 neon notify ogg
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB += pthread pthread-stubs samplerate sndfile sndio stdc++
 WANTLIB += vorbis vorbisenc vorbisfile wavpack xcb xcb-render
-WANTLIB += xcb-shm xml2 z
+WANTLIB += xcb-shm xml2 z Xext
 
 MASTER_SITES =		http://distfiles.audacious-media-player.org/
 

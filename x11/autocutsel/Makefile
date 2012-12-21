@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/24 21:15:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2012/12/21 12:13:36 sthen Exp $
 
 COMMENT =		keep X clipboard and cutbuffer in sync
 
 DISTNAME =		autocutsel-0.9.0
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		x11
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xt c \
-			pthread-stubs xcb
+			pthread-stubs xcb Xpm
 
 MASTER_SITES =		${MASTER_SITE_SAVANNAH:=autocutsel/}
 

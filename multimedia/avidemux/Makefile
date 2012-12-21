@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2012/08/11 22:58:18 pascal Exp $
+# $OpenBSD: Makefile,v 1.38 2012/12/21 12:13:36 sthen Exp $
 
 COMMENT=	free video editor
 
@@ -6,7 +6,7 @@ V=		2.4.4
 DISTNAME=	avidemux_${V}
 PKGNAME=	avidemux-${V}
 
-REVISION=	12
+REVISION=	13
 
 CATEGORIES=	multimedia
 
@@ -27,7 +27,7 @@ WANTLIB += gobject-2.0 gthread-2.0 m ogg pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs sndio
 WANTLIB += stdc++ xcb xcb-render xcb-shm z gdk_pixbuf-2.0 gdk-x11-2.0
 WANTLIB += gtk-x11-2.0 faad mp3lame vorbis vorbisenc xml2 xvidcore
-WANTLIB += x264
+WANTLIB += ffi harfbuzz icudata icule icuuc
 
 MODULES=	devel/gettext
 

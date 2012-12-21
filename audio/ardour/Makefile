@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/10/06 10:55:42 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2012/12/21 12:13:35 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 SHARED_ONLY =		Yes
@@ -6,7 +6,7 @@ COMMENT =		digital audio workstation
 DISTNAME =		ardour-2.8.14
 CATEGORIES =		audio
 HOMEPAGE =		http://ardour.org
-REVISION =		0
+REVISION =		1
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -24,7 +24,7 @@ WANTLIB = GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 	lo lrdf m pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4 \
 	pcre pixman-1 png pthread pthread-stubs samplerate \
 	sigc-2.0 sndfile sndio stdc++ xcb xcb-render xcb-shm \
-	xml2 xslt z
+	xml2 xslt z harfbuzz
 
 # Use mirrors as official site has click-through donation-request download.
 MASTER_SITES =		http://stsp.name/openbsd/distfiles/ \
