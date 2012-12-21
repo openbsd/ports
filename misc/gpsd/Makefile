@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2012/09/27 17:26:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2012/12/21 13:04:27 sthen Exp $
 
 COMMENT-main=		service daemon that monitors one or more GPSes
 COMMENT-x11=		GUI test apps using gpsd
@@ -13,7 +13,7 @@ SHARED_LIBS=		gps	19.0 \
 			gpsd	0.0
 CATEGORIES=		misc geo
 
-REVISION-main=		3
+REVISION-main=		4
 REVISION-php=		3
 REVISION-x11=		0
 
@@ -47,6 +47,7 @@ MULTI_PACKAGES=		-main -php
 BUILD_DEPENDS=		textproc/docbook-xsl
 
 RUN_DEPENDS-main=	${MODPY_RUN_DEPENDS}
+LIB_DEPENDS-main=	devel/libusb1
 
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+=	--without-x
@@ -58,7 +59,7 @@ CONFIGURE_ENV+=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lm -pthread -lutil"
 .endif
 
-WANTLIB-main=		m ncurses c pthread stdc++ util
+WANTLIB-main=		m ncurses c pthread stdc++ usb-1.0 util ${MODPY_WANTLIB}
 
 # the php display script doesn't depend on having any of gpsd around,
 # it just sits there and looks pretty.
