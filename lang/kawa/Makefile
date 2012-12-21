@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/12/21 08:42:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/12/21 09:42:28 jasper Exp $
 
 COMMENT=		Scheme and language framework for the Java platform
 
 DISTNAME=		kawa-1.13
+REVISION=		0
 CATEGORIES=		lang java
 
 HOMEPAGE=		http://www.gnu.org/software/kawa/
@@ -23,7 +24,10 @@ VMEM_WARNING=		Yes
 USE_GMAKE=		Yes
 USE_GROFF=		Yes
 
+WANTLIB += c ncurses readline
+
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS+=	--enable-kawa-frontend
 CONFIGURE_ENV=		JAVAC=${JAVA_HOME}/bin/javac \
 			JAVA=${JAVA_HOME}/bin/java
 
