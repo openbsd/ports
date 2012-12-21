@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.32 2012/11/18 16:55:27 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.33 2012/12/21 18:50:37 sthen Exp $
+
+BROKEN-hppa =	run dep on enblend-enfuse which will not build on hppa
 
 VMEM_WARNING =		Yes
 SHARED_ONLY =		Yes
