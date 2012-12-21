@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2012/10/07 20:09:44 landry Exp $
+# $OpenBSD: Makefile,v 1.17 2012/12/21 18:13:08 landry Exp $
 
 ONLY_FOR_ARCHS = ${GCC4_ARCHS}
 SYSV =		4.2.1
 
+BROKEN-hppa =	port not contributed
 COMMENT-main =	GNU fortran 77 and fortran 95 compiler
 COMMENT-lib =	GNU fortran library
 
