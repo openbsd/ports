@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.20 2012/10/11 15:14:02 ajacoutot Exp $ 
+# $OpenBSD: Makefile,v 1.21 2012/12/21 18:27:00 landry Exp $ 
 
 BROKEN-powerpc=	fails to build
+BROKEN-hppa =	fails to configure
 
 COMMENT=	library for machine-independent, array-oriented data access
 
