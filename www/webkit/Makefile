@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2012/10/03 06:35:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.76 2012/12/21 13:22:26 sthen Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -10,7 +10,7 @@ EPOCH =		0
 CATEGORIES =	www
 DPB_PROPERTIES =parallel
 EXTRACT_SUFX=	.tar.xz
-REVISION=	3
+REVISION=	4
 
 HOMEPAGE =	http://webkitgtk.org/
 MASTER_SITES =	${HOMEPAGE}/releases/
@@ -72,7 +72,8 @@ WANTLIB =	ICE SM X11 Xcomposite Xcursor Xdamage Xext \
 		gstreamer-0.10 gstbase-0.10 gstvideo-0.10 gstapp-0.10 gstpbutils-0.10 \
 		icudata icui18n icuuc sqlite3 xslt enchant soup-2.4 \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pthread GL xcb-shm \
-		z cairo pixman-1 png pthread-stubs xcb xml2 stdc++ ffi
+		z cairo pixman-1 png pthread-stubs xcb xml2 stdc++ ffi \
+		harfbuzz icule
 
 LIB_DEPENDS =	multimedia/gstreamer-0.10/core \
 		multimedia/gstreamer-0.10/plugins-base \
@@ -99,6 +100,7 @@ SUBST_VARS =	WEBKIT_API_VERSION GTK_API_VERSION
 FULLPKGNAME =	webkit-gtk3-${V}
 LIB_DEPENDS +=	x11/gtk+3,-main
 WANTLIB +=	cairo-gobject gailutil-3 gdk-3 gtk-3
+WANTLIB +=	atk-bridge-2.0 atspi harfbuzz icule
 WEBKIT_API_VERSION =	3.0
 GTK_API_VERSION =	3.0
 .else
