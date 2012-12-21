@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.50 2012/10/08 12:41:03 espie Exp $
+# $OpenBSD: Engine.pm,v 1.51 2012/12/21 12:26:16 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -629,8 +629,10 @@ sub new_path
 		return;
 	}
 #		$self->{heuristics}->todo($v);
-	$self->{tobuild}{$v} = $v;
-	$self->log('T', $v);
+	if (!$self->{buildable}->is_done($v)) {
+		$self->{tobuild}{$v} = $v;
+		$self->log('T', $v);
+	}
 	return unless defined $v->{info}{FDEPENDS};
 	for my $f (values %{$v->{info}{FDEPENDS}}) {
 		if ($self->{tofetch}->contains($f) ||
