@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2012/11/05 17:57:51 pascal Exp $
+# $OpenBSD: Makefile,v 1.9 2012/12/21 18:18:55 landry Exp $
 
 SHARED_ONLY =		Yes
 
 VMEM_WARNING =		Yes
 
+BROKEN-hppa =		error: unsupported architecture hppa
 COMMENT =		Not Quite Perl
 
 V =			2012.10
