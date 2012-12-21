@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2012/12/13 14:41:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2012/12/21 18:04:02 landry Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	complete, efficient and reliable implementation of Scheme
+BROKEN-hppa =	cc: Internal error: Illegal instruction
 
 V=		4.6.6
 DISTNAME=	gambc-v${V:S/./_/g}
