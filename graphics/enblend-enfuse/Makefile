@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/09/16 10:02:36 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2012/12/21 17:55:57 landry Exp $
 
 VMEM_WARNING =	Yes
 ONLY_FOR_ARCHS = ${GCC4_ARCHS}
@@ -6,6 +6,8 @@ ONLY_FOR_ARCHS = ${GCC4_ARCHS}
 # likely to bump into MAXDSIZ on arch other than the above
 MAKE_ENV +=	CXXNOOPT=-O0
 .endif
+
+BROKEN-hppa =	linking fails with 'cannot handle R_PARISC_PCREL17F'
 
 COMMENT =	blend seams in panoramic image mosaics
 
