@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2011/11/03 22:13:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2012/12/21 12:50:14 sthen Exp $
 
 COMMENT=	graphical file comparator
 
 V=		1.9
 DISTNAME=	beediff_${V}_src
 PKGNAME=	beediff-${V}
-REVISION =	4
+REVISION =	5
 CATEGORIES=	textproc x11 devel
 
 HOMEPAGE=	http://www.beesoft.pl/index.php?id=beediff
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += X11 Xext c m pthread stdc++
-WANTLIB += lib/qt4/QtGui
+WANTLIB += lib/qt4/QtGui ICE SM Xi Xinerama Xrender fontconfig freetype
 
 WRKDIST=	${WRKDIR}/beediff
 

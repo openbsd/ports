@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2012/08/18 12:41:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2012/12/21 12:50:14 sthen Exp $
 
 COMMENT-main=	garbage collection and memory leak detection for C and C++
 COMMENT-atomic=	access to hardware provided atomic memory operations
@@ -7,7 +7,7 @@ VERSION=	7.0
 DISTNAME=	gc-${VERSION}
 PKGNAME-atomic=	libatomic_ops-1.2
 PKGNAME-main=	boehm-gc-${VERSION}
-REVISION=	6
+REVISION=	7
 
 MULTI_PACKAGES=	-main -atomic
 
@@ -29,6 +29,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+WANTLIB += pthread
 
 MAKE_ENV=	CP="cp" \
 		INSTALL_DATA="${INSTALL_DATA}" \

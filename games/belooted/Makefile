@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2011/09/16 09:48:09 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2012/12/21 12:50:14 sthen Exp $
 
 COMMENT=	32-card trick-taking game
 
 DISTNAME=	belooted-0.1.4.1
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	games
 
@@ -17,12 +17,12 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://boby.joe.free.fr/dev/belooted/files/
 
-WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
-WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += freetype gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB += pthread-stubs xcb z gdk_pixbuf-2.0 gdk-x11-2.0>=1000
-WANTLIB += gtk-x11-2.0>=1000
+WANTLIB += gtk-x11-2.0>=1000 GL xcb-render xcb-shm
 
 MODULES=	devel/gettext \
 		textproc/intltool

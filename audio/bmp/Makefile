@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2012/09/01 14:36:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2012/12/21 12:50:14 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -14,9 +14,7 @@ PKGNAME-vorbis=	bmp-vorbis-$V
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=beepmp/}
 
-REVISION-main=	4
-REVISION-mp3=	5
-REVISION-vorbis=4
+REVISION=	6
 
 SHARED_LIBS=	beep	2.1
 
@@ -34,7 +32,8 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs \
                 xcb xcb-render z gdk_pixbuf-2.0>=400.3 \
                 gdk-x11-2.0>=400.3 gtk-x11-2.0>=0.5 glib-2.0>=400.2 \
-                gthread-2.0>=400.2 GL Xxf86vm drm ffi xcb-shm stdc++
+                gthread-2.0>=400.2 GL Xxf86vm drm ffi xcb-shm stdc++ \
+		harfbuzz icudata icule icuuc
 
 MODULES=	devel/gettext
 
@@ -66,9 +65,9 @@ LIB_DEPENDS-vorbis=${LIB_DEPENDS} \
 
 LIB_DEPENDS-mp3=${LIB_DEPENDS} \
 		${BUILD_PKGPATH}
-WANTLIB-mp3=	${WANTLIB} beep
+WANTLIB-mp3=	${WANTLIB} beep pthread
 
-WANTLIB-vorbis=	${WANTLIB} ogg vorbis vorbisfile>=4.0
+WANTLIB-vorbis=	${WANTLIB} ogg vorbis vorbisfile>=4.0 pthread
 
 RUN_DEPENDS-vorbis=	${BUILD_PKGPATH}
 WANTLIB-main=	${WANTLIB} ICE SM pthread audiofile c sndio esd>=2.34 \
