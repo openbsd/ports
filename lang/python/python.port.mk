@@ -1,9 +1,9 @@
-# $OpenBSD: python.port.mk,v 1.56 2012/10/14 17:26:12 rpointel Exp $
+# $OpenBSD: python.port.mk,v 1.57 2012/12/21 18:19:38 fgsch Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
 
-CATEGORIES+=		lang/python
+CATEGORIES +=		lang/python
 
 # define the default versions
 MODPY_DEFAULT_VERSION_2 = 2.7
@@ -11,14 +11,14 @@ MODPY_DEFAULT_VERSION_3 = 3.2
 
 .if !defined(MODPY_VERSION)
 
-FLAVOR?=
+FLAVOR ?=
 
 .  if ${FLAVOR:L:Mpython3}
 # define default version 3
-MODPY_VERSION?=		${MODPY_DEFAULT_VERSION_3}
+MODPY_VERSION ?=	${MODPY_DEFAULT_VERSION_3}
 .  else
 # without flavor, assume we use the default version 2
-MODPY_VERSION?=		${MODPY_DEFAULT_VERSION_2}
+MODPY_VERSION ?=	${MODPY_DEFAULT_VERSION_2}
 .  endif
 
 # verify if MODPY_VERSION forced is correct
@@ -30,9 +30,9 @@ ERRORS += "Fatal: unknown or unsupported MODPY_VERSION: ${MODPY_VERSION}"
 .  endif
 .endif
 
-_MODPY_MAJOR_VERSION =	${MODPY_VERSION:C/\.[1-9]*//g}
+MODPY_MAJOR_VERSION =	${MODPY_VERSION:R}
 
-.if ${_MODPY_MAJOR_VERSION} == 2
+.if ${MODPY_MAJOR_VERSION} == 2
 MODPY_LIB_SUFFIX =
 MODPY_FLAVOR =
 MODPY_BIN_SUFFIX =
@@ -41,7 +41,7 @@ MODPY_PYCACHE =
 MODPY_PYC_MAGIC_TAG =
 MODPY_COMMENT =	"@comment "
 
-.elif ${_MODPY_MAJOR_VERSION} == 3
+.elif ${MODPY_MAJOR_VERSION} == 3
 MODPY_LIB_SUFFIX =	m
 # replace py- prefix by py3-
 FULLPKGNAME =	${PKGNAME:S/^py-/py3-/}
@@ -54,8 +54,6 @@ MODPY_MAJORMINOR =	${MODPY_VERSION:C/\.//g}
 MODPY_PYC_MAGIC_TAG =	"cpython-${MODPY_MAJORMINOR}."
 MODPY_COMMENT =
 
-.  else
-ERRORS += "Fatal: unknown or unsupported _MODPY_MAJOR_VERSION: ${_MODPY_MAJOR_VERSION}"
 .endif
 
 MODPY_WANTLIB = python${MODPY_VERSION}${MODPY_LIB_SUFFIX}
@@ -66,31 +64,31 @@ MODPY_JSON =		devel/py-simplejson
 MODPY_JSON =
 .endif
 
-MODPY_RUN_DEPENDS=	lang/python/${MODPY_VERSION}
-MODPY_LIB_DEPENDS=	${MODPY_RUN_DEPENDS}
-_MODPY_BUILD_DEPENDS=	${MODPY_RUN_DEPENDS}
+MODPY_RUN_DEPENDS =	lang/python/${MODPY_VERSION}
+MODPY_LIB_DEPENDS =	${MODPY_RUN_DEPENDS}
+_MODPY_BUILD_DEPENDS =	${MODPY_RUN_DEPENDS}
 
-MODPY_BUILDDEP?=	Yes
-MODPY_RUNDEP?=		Yes
+MODPY_BUILDDEP ?=	Yes
+MODPY_RUNDEP ?=		Yes
 
 .if ${NO_BUILD:L} == "no" && ${MODPY_BUILDDEP:L} == "yes"
-BUILD_DEPENDS+=		${_MODPY_BUILD_DEPENDS}
+BUILD_DEPENDS +=	${_MODPY_BUILD_DEPENDS}
 .endif
 .if ${MODPY_RUNDEP:L} == "yes"
-RUN_DEPENDS+=		${MODPY_RUN_DEPENDS}
+RUN_DEPENDS +=		${MODPY_RUN_DEPENDS}
 .endif
 
 .if ${MODPY_BUILDDEP:L} == "yes" || ${MODPY_RUNDEP:L} == "yes"
-SHARED_ONLY=		Yes
+SHARED_ONLY =		Yes
 .endif
 
 _MODPY_PRE_BUILD_STEPS = @:
 .if defined(MODPY_SETUPTOOLS) && ${MODPY_SETUPTOOLS:L} == "yes"
 # The setuptools module provides a package locator (site.py) that is
 # required at runtime for the pkg_resources stuff to work
-.  if ${_MODPY_MAJOR_VERSION} == 2
+.  if ${MODPY_MAJOR_VERSION} == 2
 MODPY_SETUPUTILS_DEPEND ?= devel/py-setuptools
-.  elif ${_MODPY_MAJOR_VERSION} == 3
+.  elif ${MODPY_MAJOR_VERSION} == 3
 MODPY_SETUPUTILS_DEPEND ?= devel/py-distribute${MODPY_FLAVOR}
 .  endif
 
@@ -148,7 +146,7 @@ MODPY_DISTUTILS_INSTALL ?=	install --prefix=${LOCALBASE} \
 .endif
 
 MAKE_ENV +=	CC=${CC} PYTHONUSERBASE=${_MODPY_USERBASE}
-CONFIGURE_ENV +=PYTHON="${MODPY_BIN}" \
+CONFIGURE_ENV += PYTHON="${MODPY_BIN}" \
 		ac_cv_prog_PYTHON="${MODPY_BIN}"
 
 _MODPY_CMD =	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
