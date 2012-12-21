@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2012/11/17 14:07:50 ratchov Exp $
+# $OpenBSD: Makefile,v 1.24 2012/12/21 17:44:47 landry Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
 COMMENT=	x86 with DOS emulator targeted at playing games
+BROKEN-hppa =	mpu401.cpp:42: error: expected identifier before numeric constant
 
 DISTNAME=	dosbox-0.74
 REVISION=	2
