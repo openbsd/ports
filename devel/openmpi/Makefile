@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/15 19:46:01 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2012/12/21 17:40:29 landry Exp $
 
 COMMENT =		open source MPI-2 implementation
+BROKEN-hppa =		error: Could not determine global symbol label prefix
 
 V=			1.4.1
 DISTNAME =		openmpi-$V
