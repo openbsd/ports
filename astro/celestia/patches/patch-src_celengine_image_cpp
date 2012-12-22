@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_celengine_image_cpp,v 1.3 2012/12/22 18:35:24 jasper Exp $
+
+mips platforms already have 'mips' defined, resulting in:
+error: expected ',' or '...' before numeric constant
+
+--- src/celengine/image.cpp.orig	Sat Dec 22 18:02:55 2012
++++ src/celengine/image.cpp	Sat Dec 22 18:03:05 2012
+@@ -143,10 +143,10 @@ static int calcMipLevelSize(int fmt, int w, int h, int
+ }
+ 
+ 
+-Image::Image(int fmt, int w, int h, int mips) :
++Image::Image(int fmt, int w, int h, int mipsen) :
+     width(w),
+     height(h),
+-    mipLevels(mips),
++    mipLevels(mipsen),
+     format(fmt),
+     pixels(NULL)
+ {

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_celengine_image_h,v 1.1 2012/12/22 18:35:24 jasper Exp $
+--- src/celengine/image.h.orig	Sat Dec 22 18:02:35 2012
++++ src/celengine/image.h	Sat Dec 22 18:02:42 2012
+@@ -22,7 +22,7 @@
+ class Image
+ {
+  public:
+-    Image(int fmt, int w, int h, int mips = 1);
++    Image(int fmt, int w, int h, int mipsen = 1);
+     ~Image();
+ 
+     int getWidth() const;
