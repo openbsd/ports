@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/01 11:03:29 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/12/22 11:46:35 sthen Exp $
 %%SHARED%%
 include/lqr-1/
 include/lqr-1/lqr/
@@ -7,12 +7,18 @@ include/lqr-1/lqr/lqr_base.h
 include/lqr-1/lqr/lqr_carver_bias_pub.h
 include/lqr-1/lqr/lqr_carver_list_pub.h
 include/lqr-1/lqr/lqr_carver_pub.h
+include/lqr-1/lqr/lqr_carver_rigmask_pub.h
 include/lqr-1/lqr/lqr_cursor_pub.h
+include/lqr-1/lqr/lqr_energy_pub.h
 include/lqr-1/lqr/lqr_gradient_pub.h
 include/lqr-1/lqr/lqr_progress_pub.h
+include/lqr-1/lqr/lqr_rwindow_pub.h
 include/lqr-1/lqr/lqr_vmap_list_pub.h
 include/lqr-1/lqr/lqr_vmap_pub.h
 lib/liblqr-1.a
 lib/liblqr-1.la
-lib/pkgconfig/
+@lib lib/liblqr-1.so.${LIBlqr-1_VERSION}
 lib/pkgconfig/lqr-1.pc
+share/cmake/
+share/cmake/Modules/
+share/cmake/Modules/FindLqr-1.cmake
