@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2011/11/02 08:46:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2012/12/22 11:46:34 sthen Exp $
 
 COMMENT = 			seam-carving smart rescale gimp plugin
 CATEGORIES =			graphics
 
 HOMEPAGE = 			http://liquidrescale.wikidot.com/
-DISTNAME = 			gimp-lqr-plugin-0.4.0-4
-PKGNAME = 			gimp-lqr-plugin-0.4.0.4
-REVISION =			5
-WRKDIST =			${WRKDIR}/gimp-lqr-plugin-0.4.0
-MASTER_SITES =			${HOMEPAGE}local--files/en:download-page/
+DISTNAME = 			gimp-lqr-plugin-0.7.1
+MASTER_SITES =			${HOMEPAGE}local--files/en%3Adownload-page-sources/
+EXTRACT_SUFX =			.tar.bz2
 
 # GPLv2
 PERMIT_PACKAGE_FTP = 		Yes
@@ -24,13 +22,15 @@ CONFIGURE_STYLE =		gnu
 LIB_DEPENDS =			graphics/liblqr \
 				graphics/gimp/stable
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender c expat fontconfig freetype
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 m pixman-1 pthread z
-WANTLIB += atk-1.0 cairo gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 png pthread-stubs xcb
-WANTLIB += gio-2.0 lqr-1 gimp-2.0 gimpbase-2.0 gimpcolor-2.0 gimpconfig-2.0 
-WANTLIB += gimpmath-2.0 gimpmodule-2.0 gimpui-2.0 gimpwidgets-2.0
-WANTLIB += GL xcb-render xcb-shm
+COPTS =				-I${LOCALBASE}/include \
+				-L${LOCALBASE}/lib
+
+WANTLIB += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender atk-1.0 c cairo expat fontconfig freetype
+WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gimp-2.0 gimpbase-2.0 gimpcolor-2.0
+WANTLIB += gimpconfig-2.0 gimpmath-2.0 gimpmodule-2.0 gimpui-2.0
+WANTLIB += gimpwidgets-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0
+WANTLIB += lqr-1 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
+WANTLIB += png pthread-stubs xcb xcb-render xcb-shm z
 
 .include <bsd.port.mk>

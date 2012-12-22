@@ -1,25 +1,43 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/05/11 08:09:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/12/22 11:46:34 sthen Exp $
 lib/gimp/
 lib/gimp/2.0/
 lib/gimp/2.0/plug-ins/
 @bin lib/gimp/2.0/plug-ins/gimp-lqr-plugin
-@comment lib/locale/
+@bin lib/gimp/2.0/plug-ins/plug_in_lqr_iter
+share/gimp/
 share/gimp-lqr-plugin/
 share/gimp-lqr-plugin/help/
+share/gimp-lqr-plugin/help/css/
+share/gimp-lqr-plugin/help/css/gimp-help-draft.css
+share/gimp-lqr-plugin/help/css/gimp-help-plain.css
+share/gimp-lqr-plugin/help/css/gimp-help-screen.css
+share/gimp-lqr-plugin/help/css/gimp22.css
 share/gimp-lqr-plugin/help/en/
 share/gimp-lqr-plugin/help/en/gimp-help.xml
+share/gimp-lqr-plugin/help/en/images/
+share/gimp-lqr-plugin/help/en/images/dialog1.png
+share/gimp-lqr-plugin/help/en/images/dialog2.png
+share/gimp-lqr-plugin/help/en/images/dialog3.png
+share/gimp-lqr-plugin/help/en/images/dialog4.png
+share/gimp-lqr-plugin/help/en/images/dialog_interactive.png
 share/gimp-lqr-plugin/help/en/index.html
-share/gimp-lqr-plugin/help/es_ES/
-share/gimp-lqr-plugin/help/es_ES/gimp-help.xml
-share/gimp-lqr-plugin/help/es_ES/index.html
-share/gimp-lqr-plugin/help/images/
-share/gimp-lqr-plugin/help/images/dialog1.png
-share/gimp-lqr-plugin/help/images/dialog1_it.png
-share/gimp-lqr-plugin/help/images/dialog2.png
-share/gimp-lqr-plugin/help/images/dialog2_it.png
-share/gimp-lqr-plugin/help/images/dialog3.png
-share/gimp-lqr-plugin/help/images/dialog3_it.png
-share/gimp-lqr-plugin/help/images/wilber.png
 share/gimp-lqr-plugin/help/it/
 share/gimp-lqr-plugin/help/it/gimp-help.xml
+share/gimp-lqr-plugin/help/it/images/
+share/gimp-lqr-plugin/help/it/images/dialog1.png
+share/gimp-lqr-plugin/help/it/images/dialog2.png
+share/gimp-lqr-plugin/help/it/images/dialog3.png
+share/gimp-lqr-plugin/help/it/images/dialog4.png
+share/gimp-lqr-plugin/help/it/images/dialog_interactive.png
 share/gimp-lqr-plugin/help/it/index.html
+share/gimp-lqr-plugin/help/ru/
+share/gimp-lqr-plugin/help/ru/gimp-help.xml
+share/gimp-lqr-plugin/help/ru/images/
+share/gimp-lqr-plugin/help/ru/images/dialog1.jpg
+share/gimp-lqr-plugin/help/ru/images/dialog2.jpg
+share/gimp-lqr-plugin/help/ru/images/dialog3.jpg
+share/gimp-lqr-plugin/help/ru/images/wilber.png
+share/gimp-lqr-plugin/help/ru/index.html
+share/gimp/2.0/
+share/gimp/2.0/scripts/
+share/gimp/2.0/scripts/batch-gimp-lqr.scm
