@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2012/09/25 12:14:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2012/12/22 10:48:19 landry Exp $
 
 COMMENT=	modern gopher server
-DISTNAME=	gophernicus-1.3
-REVISION=	0
+DISTNAME=	gophernicus-1.4
 CATEGORIES=	net
 
 HOMEPAGE=	http://gophernicus.org
