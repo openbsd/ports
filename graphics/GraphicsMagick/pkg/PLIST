@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2012/07/03 13:36:28 okan Exp $
+@comment $OpenBSD: PLIST,v 1.10 2012/12/22 19:37:35 brad Exp $
 @pkgpath graphics/GraphicsMagick,no_x11
 bin/GraphicsMagick++-config
 bin/GraphicsMagick-config
@@ -150,6 +150,8 @@ lib/GraphicsMagick/modules-Q16/coders/info.la
 lib/GraphicsMagick/modules-Q16/coders/info.so
 lib/GraphicsMagick/modules-Q16/coders/jbig.la
 lib/GraphicsMagick/modules-Q16/coders/jbig.so
+lib/GraphicsMagick/modules-Q16/coders/jnx.la
+lib/GraphicsMagick/modules-Q16/coders/jnx.so
 lib/GraphicsMagick/modules-Q16/coders/jp2.la
 lib/GraphicsMagick/modules-Q16/coders/jp2.so
 lib/GraphicsMagick/modules-Q16/coders/jpeg.la
@@ -372,12 +374,10 @@ share/doc/GraphicsMagick/www/Magick++/Drawable_example_1.png
 share/doc/GraphicsMagick/www/Magick++/Enumerations.html
 share/doc/GraphicsMagick/www/Magick++/Exception.html
 share/doc/GraphicsMagick/www/Magick++/FormatCharacters.html
-share/doc/GraphicsMagick/www/Magick++/Future.html
 share/doc/GraphicsMagick/www/Magick++/Geometry.html
 share/doc/GraphicsMagick/www/Magick++/Image.html
 share/doc/GraphicsMagick/www/Magick++/Image.png
 share/doc/GraphicsMagick/www/Magick++/ImageDesign.html
-share/doc/GraphicsMagick/www/Magick++/Install.html
 share/doc/GraphicsMagick/www/Magick++/Montage.html
 share/doc/GraphicsMagick/www/Magick++/PixelPacket.html
 share/doc/GraphicsMagick/www/Magick++/Pixels.html
