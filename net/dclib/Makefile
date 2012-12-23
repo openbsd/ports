@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2011/09/16 11:13:37 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2012/12/23 13:25:11 sthen Exp $
 
 COMMENT=	Library for direct-connect protocol
 
 DISTNAME=	dclib-0.3.7
-REVISION=	3
+REVISION=	4
 CATEGORIES=	net
 SHARED_LIBS=	dc	1.0
 
@@ -17,12 +17,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+WANTLIB += crypto m ssl stdc++ z bz2 xml2
+
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=dcgui/}
 
 MODULES=	converters/libiconv
 LIB_DEPENDS=	archivers/bzip2 \
 		textproc/libxml
-WANTLIB=	crypto m ssl z bz2 xml2
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu

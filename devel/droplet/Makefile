@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/12/23 13:10:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/12/23 13:25:11 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ CATEGORIES=		devel
 COMMENT=		high perfomance Cloud Storage client library
 
 VERSION=		1.1
+REVISION=		0
 DISTNAME=		droplet-${VERSION}
 HOMEPAGE=		https://github.com/scality/Droplet
 
@@ -19,7 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		crypto json m ssl xml2 z
+WANTLIB=		crypto json m pthread ssl xml2 z
 
 MASTER_SITES=		http://www.sizeofvoid.org/pub/OpenBSD/distfiles/
 

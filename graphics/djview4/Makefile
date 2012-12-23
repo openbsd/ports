@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2012/06/15 08:32:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2012/12/23 13:25:11 sthen Exp $
 
 COMMENT=	portable DjVu viewer and browser plugin
 
 DISTNAME=	djview-4.8
 PKGNAME=	${DISTNAME:S/djview/djview4/}
 CATEGORIES=	graphics print
-REVISION=	2
+REVISION=	3
 
 HOMEPAGE=	http://djvu.sourceforge.net/djview4.html
 
@@ -17,9 +17,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=djvu/}
-
 WANTLIB += QtGui QtNetwork X11 Xext c djvulibre m pthread stdc++ tiff
+WANTLIB += ICE SM Xi Xinerama Xrender fontconfig freetype
+
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=djvu/}
 
 MODULES=	x11/qt4
 

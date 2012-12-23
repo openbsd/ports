@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2012/08/30 20:54:59 pascal Exp $
+# $OpenBSD: Makefile,v 1.30 2012/12/23 13:25:11 sthen Exp $
 
 COMMENT-main=		GNU editor: extensible, customizable, self-documenting
 COMMENT-el=		elisp sources for those who want to read/modify them
@@ -8,7 +8,7 @@ DISTNAME=		emacs-${VERSION}
 PKGNAME-main=		emacs-${VERSION}
 FULLPKGNAME-el=		emacs-el-${VERSION}
 FULLPKGPATH-el=		editors/emacs22,-el
-REVISION-main=		14
+REVISION-main=		15
 REVISION-el=		4
 
 CATEGORIES=		editors
@@ -64,14 +64,14 @@ MODULES +=		devel/gettext
 CONFIGURE_ARGS+=	--with-gtk
 LIB_DEPENDS-main+=	x11/gtk+2 \
 			graphics/libungif
-WANTLIB-main+=		ICE SM X11 Xdmcp Xext Xft Xpm Xrender Xau Xcomposite \
+WANTLIB-main+=		GL ICE SM X11 Xext Xft Xpm Xrender Xcomposite \
 			Xcursor Xdamage Xfixes Xi Xinerama Xrandr \
 			atk-1.0 cairo expat fontconfig freetype gio-2.0 \
-			glib-2.0 gmodule-2.0 gobject-2.0 \
+			glib-2.0 gobject-2.0 \
 			pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 pthread \
 			z gtk-x11-2.0 gdk-x11-2.0 gdk_pixbuf-2.0 \
-			jpeg png ungif tiff gthread-2.0 pthread-stubs xcb \
-			xcb-render xcb-render-util ${MODGETTEXT_WANTLIB}
+			jpeg png ungif tiff pthread-stubs xcb \
+			xcb-render xcb-shm ${MODGETTEXT_WANTLIB}
 .else
 CONFIGURE_ARGS+=	--with-x-toolkit=athena --without-toolkit-scroll-bars
 LIB_DEPENDS-main+=	graphics/png \

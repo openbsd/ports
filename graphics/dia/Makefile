@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2012/09/04 16:06:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.91 2012/12/23 13:25:11 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	technical diagrams drawing tool
 
 GNOME_PROJECT=	dia
 GNOME_VERSION=	0.97.2
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	graphics
 
@@ -27,6 +27,7 @@ WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += stdc++ xcb xcb-render xcb-shm xml2 xslt z
+WANTLIB += harfbuzz icudata icule icuuc
 
 RUN_DEPENDS=	devel/xdg-utils
 BUILD_DEPENDS=	textproc/docbook-xsl

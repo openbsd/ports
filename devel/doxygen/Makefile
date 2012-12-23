@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2012/12/13 14:20:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2012/12/23 13:25:11 sthen Exp $
 
 # Memory hog, stuck for days on the same file during build.
 # XXX check with different optimizer level? see doc/install.doc
@@ -8,6 +8,7 @@ COMMENT-main=	source code documentation generator tool
 COMMENT-gui=	GUI front-end for doxygen
 
 VERSION=	1.8.2
+REVISION-gui=	0
 DISTNAME=	doxygen-${VERSION}.src
 PKGNAME-main=	doxygen-${VERSION}
 FULLPKGNAME-gui=doxygen-gui-${VERSION}
@@ -55,7 +56,8 @@ COMMON_LIB_DEPENDS =	${MODLIBICONV_LIB_DEPENDS}
 WANTLIB-main = ${COMMON_WANTLIB} z
 LIB_DEPENDS-main = ${COMMON_LIB_DEPENDS}
 
-WANTLIB-gui=	${COMMON_WANTLIB} ${MODQT_WANTLIB} QtGui QtXml
+WANTLIB-gui=	${COMMON_WANTLIB} ${MODQT_WANTLIB} QtGui QtXml \
+		ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
 LIB_DEPENDS-gui=${COMMON_LIB_DEPENDS} ${MODQT_LIB_DEPENDS}
 RUN_DEPENDS-gui=doxygen-${VERSION}:${BUILD_PKGPATH}
 

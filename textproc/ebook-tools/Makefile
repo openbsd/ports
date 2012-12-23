@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2012/12/17 16:06:52 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2012/12/23 13:25:11 sthen Exp $
 
 V =			0.2.1
-REVISION =		0
+REVISION =		1
 COMMENT =		accessing and converting various ebook file formats
 DISTNAME =		ebook-tools-${V}
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB +=		c xml2 zip
+WANTLIB +=		c xml2 zip z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=ebook-tools/${V}/}
 

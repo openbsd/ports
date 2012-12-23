@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2012/12/01 09:46:17 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2012/12/23 13:25:11 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ V_DOVECOT_FULL= 2.1.12
 
 DISTNAME=	dovecot-antispam-plugin-5e8351bcfb29
 PKGNAME=	dovecot-antispam-2.1
-REVISION=	5
+REVISION=	6
 CATEGORIES=	mail
 
 # http://hg.dovecot.org/dovecot-antispam-plugin/
@@ -24,7 +24,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	lib/dovecot/dovecot-lda lib/dovecot/dovecot-login \
-		lib/dovecot/dovecot-storage lib/dovecot/dovecot
+		lib/dovecot/dovecot-storage lib/dovecot/dovecot crypto ssl
 
 AUTOCONF_VERSION= 2.68
 AUTOMAKE_VERSION= 1.11

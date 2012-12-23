@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2012/11/01 17:11:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2012/12/23 13:25:11 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,6 +7,7 @@ COMMENT-editor=	editor for the dconf configuration storage system
 
 GNOME_PROJECT=	dconf
 GNOME_VERSION=	0.14.1
+REVISION-editor= 0
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-editor=	dconf-editor-${GNOME_VERSION}
@@ -35,7 +36,7 @@ WANTLIB-editor += ${WANTLIB} ${MODGETTEXT_WANTLIB}
 WANTLIB-editor += GL X11 Xrender atk-1.0 cairo cairo-gobject dconf expat
 WANTLIB-editor += fontconfig freetype gdk-3 gdk_pixbuf-2.0 gmodule-2.0
 WANTLIB-editor += gtk-3 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
-WANTLIB-editor += png pthread-stubs xcb xcb-render xcb-shm xml2 z
+WANTLIB-editor += png pthread-stubs xcb xcb-render xcb-shm xml2 z Xext
 
 MULTI_PACKAGES=	-main -editor
 

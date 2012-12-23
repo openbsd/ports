@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2012/04/23 17:15:18 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2012/12/23 13:25:11 sthen Exp $
 
 COMMENT=	anti-spam filter
 
 VERSION=	3.8.0
 DISTNAME=	dspam-${VERSION}
-REVISION=	3
+REVISION=	4
 SHARED_LIBS=	dspam	8.0
 CATEGORIES=	mail
 
@@ -19,7 +19,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m
+
+WANTLIB += c m
 
 USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
@@ -79,7 +80,7 @@ CONFIGURE_ARGS+=	--with-storage-driver=pgsql_drv \
 			--with-pgsql-libraries=${LOCALBASE}/lib \
 			--enable-virtual-users
 LIB_DEPENDS+=		databases/postgresql
-WANTLIB +=		pq>=4
+WANTLIB +=		pq>=4 com_err crypto ssl
 .elif ${DRIVER} == "hash"
 CONFIGURE_ARGS+=	--with-storage-driver=hash_drv
 .elif ${DRIVER} == "sqlite"
@@ -114,7 +115,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 LIB_DEPENDS+=		databases/openldap
 WANTLIB+=		crypto ssl sasl2 asn1 com_err gssapi krb5 \
-			ldap>=8 lber>=8
+			ldap-2.4 lber-2.4
 .endif
 
 .if ${FLAVOR:Mpreferences}

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2012/04/23 17:15:18 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2012/12/23 13:25:11 sthen Exp $
 
 COMMENT =		digital image kde application
 CATEGORIES =		graphics x11 x11/kde
 V =			0.9.6
 DISTNAME =		digikam-$V
-REVISION =		4
+REVISION =		5
 SHARED_LIBS +=		digikam              3.0      # .0.0
 HOMEPAGE =		http://www.digikam.org/
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=digikam/}
@@ -30,7 +30,7 @@ WANTLIB =	util m c ICE Xrender SM pthread z stdc++ expat \
 		gphoto2 gphoto2_port kipi tiff kexiv2>=1 kdcraw \
 		lcms
 WANTLIB += GL Xcursor Xdamage Xfixes Xft Xi Xinerama Xmu Xrandr
-WANTLIB += Xt Xxf86vm drm fontconfig freetype mng
+WANTLIB += Xt Xxf86vm drm fontconfig freetype mng fam
 
 MODULES =	devel/gettext \
 		x11/kde

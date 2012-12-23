@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2012/12/02 19:13:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2012/12/23 13:25:11 sthen Exp $
 
 COMMENT=		tag editor for various audio file formats
 
 DISTNAME=		easytag-2.1.7
-REVISION=		0
+REVISION=		1
 CATEGORIES=		audio x11
 
 HOMEPAGE=		http://projects.gnome.org/easytag/
@@ -26,7 +26,7 @@ WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
 WANTLIB += pthread-stubs stdc++ xcb z id3>=3 FLAC>=4 mp4v2 vorbis>=1
 WANTLIB += vorbisfile>=1 wavpack gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0
 WANTLIB += gthread-2.0 pthread xcb-render GL Xxf86vm drm ffi xcb-shm
-WANTLIB += id3tag speex
+WANTLIB += id3tag speex harfbuzz icudata icule icuuc
 
 RUN_DEPENDS=		devel/desktop-file-utils
 LIB_DEPENDS=		audio/id3lib \
