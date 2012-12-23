@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2012/05/17 05:01:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2012/12/23 12:25:31 sthen Exp $
 
 COMMENT=	GNU project portable class framework for C++
 
 VER=		1.7.3
 DISTNAME=	commoncpp2-${VER}
 PKGNAME=	commoncpp-${VER}
-REVISION=	3
+REVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=commoncpp/}
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	crypto ssl z m stdc++
+WANTLIB=	crypto ssl z m stdc++ pthread
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= autoconf

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2011/09/16 09:48:09 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2012/12/23 12:25:31 sthen Exp $
 
 COMMENT=	computer simulation game
 
 DISTNAME=	corewars-0.9.13
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	games x11
 
@@ -17,11 +17,12 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MODULES=	devel/gettext
 
-WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
-WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += freetype gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB += pthread-stubs xcb z gdk_pixbuf-2.0 gdk-x11-2.0 gtk-x11-2.0
+WANTLIB += GL xcb-render xcb-shm
 
 LIB_DEPENDS=	x11/gtk+2
 

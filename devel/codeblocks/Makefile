@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2012/06/15 08:32:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2012/12/23 12:25:31 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ V=		10.05
 P=		1
 DISTNAME=	codeblocks-${V}-${P}debian-src
 PKGNAME=	codeblocks-${V}
-REVISION=	5
+REVISION=	6
 
 EXTRACT_SUFX=	.tar.bz2
 WRKDIST=	${WRKDIR}/codeblocks-${V}
@@ -36,6 +36,7 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 iodbc jpeg m mspack pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += sndio stdc++ tiff usbhid xcb xcb-render xcb-shm z ffi
+WANTLIB += harfbuzz icudata icule icuuc
 
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=codeblocks/}
 

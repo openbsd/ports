@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2012/10/09 17:01:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2012/12/23 12:25:30 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,9 +9,9 @@ COMMENT-spamassassin=	spamassassin plugin
 
 V=			3.8.1
 DISTNAME=		claws-mail-${V}
-REVISION-main=		1
-REVISION-bogofilter=	0
-REVISION-spamassassin=	0
+REVISION-main=		2
+REVISION-bogofilter=	1
+REVISION-spamassassin=	1
 PKGNAME-main=		${DISTNAME}
 PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
 PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
@@ -47,21 +47,21 @@ WANTLIB=		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 			expat fontconfig freetype gio-2.0 glib-2.0 gthread-2.0 \
 			gmodule-2.0 gobject-2.0 idn m pango-1.0 pangocairo-1.0 \
 			pangoft2-1.0 pcre pixman-1 png pthread-stubs ssl \
-			gcrypt gpg-error xcb z gdk_pixbuf-2.0 \
+			xcb z gdk_pixbuf-2.0 pthread stdc++ \
 			gdk-x11-2.0 gtk-x11-2.0 execinfo etpan>=13 sasl2 \
-			GL Xxf86vm drm xcb-render xcb-shm
+			GL Xxf86vm drm xcb-render xcb-shm \
+			ffi harfbuzz icudata icule icuuc
 
-WANTLIB-main=		${WANTLIB} ICE SM c dbus-1 gmp hogweed nettle \
-			pthread stdc++ tasn1 xcb-atom xcb-aux xcb-event assuan \
-			startup-notification-1 enchant gnutls gpgme dbus-glib-1
+WANTLIB-main=		${WANTLIB} ICE SM X11-xcb c dbus-1 gmp hogweed nettle \
+			tasn1 xcb-aux assuan startup-notification-1 \
+			enchant gnutls gpgme dbus-glib-1 gpg-error p11-kit
 
 WANTLIB-docs=
 
 LIB_DEPENDS=		x11/gtk+2 \
 			devel/libexecinfo \
 			mail/libetpan \
-			security/cyrus-sasl2 \
-			security/libgcrypt
+			security/cyrus-sasl2
 
 RUN_DEPENDS-main=	${RUN_DEPENDS} \
 			devel/desktop-file-utils \
@@ -98,16 +98,16 @@ CONFIGURE_ARGS+=	--disable-jpilot
 .endif
 
 .if ${FLAVOR:Mcompface}
-PERMIT_PACKAGE_CDROM=   No Fee
-PERMIT_DISTFILES_CDROM= No Fee
-LIB_DEPENDS-main+=     	mail/faces
+PERMIT_PACKAGE_CDROM=	No Fee
+PERMIT_DISTFILES_CDROM=	No Fee
+LIB_DEPENDS-main+=	mail/faces
 WANTLIB-main +=		compface>=1
 .else
-CONFIGURE_ARGS+=       --disable-compface
+CONFIGURE_ARGS+=	--disable-compface
 .endif
 
 .if ${FLAVOR:Mldap}
-WANTLIB-main+=		asn1 com_err gssapi krb5 lber ldap
+WANTLIB-main+=		asn1 com_err gssapi krb5 lber-2.4 ldap-2.4
 LIB_DEPENDS-main+=	databases/openldap
 .else
 CONFIGURE_ARGS+=	--disable-ldap

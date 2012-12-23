@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2012/08/28 19:13:12 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2012/12/23 12:25:30 sthen Exp $
 
 COMMENT =		ebook management application
 
 DISTNAME =		calibre-0.8.20
 CATEGORIES =		textproc
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=calibre/}
-REVISION =		3
+REVISION =		4
 
 HOMEPAGE =		http://calibre-ebook.com/
 
@@ -21,7 +21,7 @@ MODULES =		lang/python \
 WANTLIB +=		ICE MagickCore MagickWand QtGui SM X11 Xext
 WANTLIB +=		Xi Xinerama Xrender c chm fontconfig freetype
 WANTLIB +=		icudata icui18n icuio icuuc m png poppler
-WANTLIB +=		stdc++
+WANTLIB +=		stdc++ pthread
 WANTLIB +=		${MODPY_WANTLIB}
 
 LIB_DEPENDS=		devel/chmlib \

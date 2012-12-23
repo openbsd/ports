@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2012/06/29 14:02:54 landry Exp $
+# $OpenBSD: Makefile,v 1.28 2012/12/23 12:25:30 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	notification plugin for Claws-mail
 
 VERSION=	0.30
+REVISION=	0
 DISTNAME=	notification_plugin-${VERSION}
 PKGNAME=	claws-mail-notification-${VERSION}
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
@@ -24,8 +25,8 @@ WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo drm
 WANTLIB += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 m notify pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread-stubs xcb xcb-render xcb-shm
-WANTLIB += z dbus-1 dbus-glib-1
+WANTLIB += pcre pixman-1 png pthread-stubs xcb xcb-render xcb-shm z
+WANTLIB += ffi harfbuzz icudata icule icuuc pthread stdc++
 
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static

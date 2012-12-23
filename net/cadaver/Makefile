@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/19 22:31:32 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2012/12/23 12:25:30 sthen Exp $
 
 COMMENT=		command-line WebDAV client
 
 DISTNAME=		cadaver-0.23.3
-CATEGORIES=     	net www
+REVISION=		0
+CATEGORIES=		net www
 
 HOMEPAGE=		http://www.webdav.org/cadaver/
 
@@ -14,7 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += asn1 c crypto curses expat gssapi krb5 readline ssl
-WANTLIB += z neon
+WANTLIB += z neon proxy pthread
 
 MODULES=		devel/gettext
 

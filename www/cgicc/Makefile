@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/11 12:35:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2012/12/23 12:25:30 sthen Exp $
 
 COMMENT=	c++ compliant CGI applications libraries
 
 DISTNAME=	cgicc-3.2.1
-REVISION=	2
-CATEGORIES=     www devel
+REVISION=	3
+CATEGORIES=	www devel
 SHARED_LIBS=	cgicc	5.0
 MODGNU_SHARED_LIBS=cgicc ''
 
@@ -16,6 +16,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+WANTLIB += m stdc++
 
 USE_LIBTOOL=	Yes
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2012/09/19 08:15:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2012/12/23 12:25:31 sthen Exp $
 
 ONLY_FOR_ARCHS= ${APM_ARCHS}
 
 COMMENT=	light-weight system monitor
 
 DISTNAME=	conky-1.8.1
-REVISION=	12
+REVISION=	13
 CATEGORIES=	sysutils
 HOMEPAGE=	http://conky.sourceforge.net/
 
@@ -50,9 +50,8 @@ CONFIGURE_ARGS+=--disable-double-buffer \
 .else
 CONFIGURE_ARGS+=--enable-imlib2
 LIB_DEPENDS+=	graphics/imlib2
-WANTLIB+=	Imlib2 X11 Xau Xdamage Xdmcp Xext Xfixes Xft \
-		Xrender expat fontconfig freetype \
-		pthread-stubs xcb
+WANTLIB += Imlib2 X11 Xdamage Xext Xfixes Xft
+WANTLIB += Xrender expat fontconfig freetype xcb
 .endif
 
 .if ${FLAVOR:L:Maudacious}
@@ -64,7 +63,9 @@ WANTLIB +=	GL Xcomposite Xcursor Xi Xinerama Xrandr Xxf86vm \
 		gdk-3 gdk_pixbuf-2.0 gio-2.0 gmodule-2.0 \
 		gobject-2.0 gthread-2.0 gtk-3 pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pixman-1 png stdc++ \
-		xcb-render xcb-shm
+		xcb-render xcb-shm ICE SM atk-bridge-2.0 \
+		atspi harfbuzz icudata icule icuuc \
+		Xau Xdmcp pthread-stubs
 .endif
 
 .if ${FLAVOR:L:Mxmms2}

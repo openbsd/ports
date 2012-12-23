@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2012/10/15 15:18:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2012/12/23 12:25:30 sthen Exp $
 
 COMMENT=		Desktop wallpaper manager and X11 screensaver
 
 DISTNAME=		chbg-2.0.1
-REVISION=		3
+REVISION=		4
 
-CATEGORIES=     	x11
+CATEGORIES=		x11
 
 HOMEPAGE=		http://www.beebgames.com/sw/gtk-ports.html
 EXTRACT_SUFX=		.tar.bz2
@@ -18,11 +18,12 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.beebgames.com/sw/
 
-WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
-WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += freetype gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB += pthread-stubs xcb z gdk_pixbuf-2.0 gdk-x11-2.0 gtk-x11-2.0
+WANTLIB += GL pthread xcb-render xcb-shm
 
 LIB_DEPENDS=		x11/gtk+2
 
