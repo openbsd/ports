@@ -1,0 +1,15 @@
+$OpenBSD: patch-gnu_kawa_slib_Makefile_in,v 1.1 2012/12/23 12:06:24 sthen Exp $
+
+Fails to compile swing.scm with defaults.
+
+--- gnu/kawa/slib/Makefile.in.orig	Sun Dec 23 11:04:57 2012
++++ gnu/kawa/slib/Makefile.in	Sun Dec 23 11:05:06 2012
+@@ -99,7 +99,7 @@ INSTALL_DATA = @INSTALL_DATA@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+ INSTALL_SCRIPT = @INSTALL_SCRIPT@
+ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
+-JAVA = @JAVA@
++JAVA = @JAVA@ -Xmx1200M
+ JAVAC = @JAVAC@
+ JAVACFLAGS = @JAVACFLAGS@
+ JAVA_SOURCE = @JAVA_SOURCE@
