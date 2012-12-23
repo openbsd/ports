@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.55 2012/12/23 13:49:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2012/12/23 14:23:13 sthen Exp $
 
 COMMENT=	game where you deal drugs on the streets of NY
 
 DISTNAME=	dopewars-1.5.12
-REVISION=	8
+REVISION=	9
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dopewars/}
 
@@ -20,6 +20,7 @@ WANTLIB += c glib-2.0 ncurses
 MODULES+=	devel/gettext
 
 LIB_DEPENDS+=   devel/glib2
+RUN_DEPENDS+=   devel/desktop-file-utils
 
 LOCALSTATEDIR=	${BASELOCALSTATEDIR}/games
 
@@ -41,6 +42,7 @@ FLAVOR?=
 .if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS+= --disable-gui-client
 .else
+RUN_DEPENDS+=	devel/xdg-utils
 LIB_DEPENDS+=	x11/gtk+2
 WANTLIB += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 cairo expat fontconfig freetype
@@ -49,11 +51,16 @@ WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB += pthread-stubs xcb xcb-render xcb-shm z
 .endif
 
+post-patch:
+	@perl -pi -e 's,/usr/local,${LOCALBASE},' ${WRKSRC}/src/dopewars.c
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/dopewars
 	${INSTALL_DATA} ${WRKSRC}/doc/example-cfg \
 		${PREFIX}/share/examples/dopewars/dopewars.cfg
 	${INSTALL_DATA} /dev/null ${PREFIX}/share/examples/dopewars/dopewars.sco
 	${PREFIX}/bin/dopewars -C ${PREFIX}/share/examples/dopewars/dopewars.sco
+	${INSTALL_DATA} ${WRKSRC}/dopewars.desktop \
+		${PREFIX}/share/examples/dopewars
 
 .include <bsd.port.mk>

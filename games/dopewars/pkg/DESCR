@@ -1,7 +1,12 @@
-dopewars is a UNIX rewrite of a game originally based on "Drug Wars" by
-John E. Dell. The idea of dopewars is to deal in drugs on the streets of
-New York, amassing a huge fortune and paying off the loan shark, while
-avoiding the ever-annoying police. The UNIX rewrite, as well as
-featuring a so-called "antique" mode which closely follows the original,
-introduces new features such as the ability to take part in multi-player
-games.
+dopewars is a game simulating the life of a drug dealer in 1984 New
+York, based upon the MS-DOS game of the same name, in turn derived
+from "Drug Wars" by John E. Dell. The aim of the game is to make
+lots and lots of money, but unfortunately you start the game with
+a hefty debt to the loan shark (who charges equally hefty interest)
+and the cops take a rather dim view of drug dealing...
+
+dopewars expands upon the MS-DOS version by introducing multiplayer
+functions. With the aid of dopewars servers, several players (computer
+or human) can roam New York (or some other city, chosen by the
+operator of the server) and attempt to shoot other players and steal
+their lucrative drugs.

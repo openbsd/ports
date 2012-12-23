@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.17 2007/07/05 17:28:18 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.18 2012/12/23 14:23:13 sthen Exp $
 @mode g+s
 @group games
-bin/dopewars
+@bin bin/dopewars
 @mode
 @group
 @man man/man6/dopewars.6
@@ -47,6 +47,7 @@ share/dopewars/shotdown.wav
 share/dopewars/train.wav
 share/examples/dopewars/
 share/examples/dopewars/dopewars.cfg
+share/examples/dopewars/dopewars.desktop
 share/examples/dopewars/dopewars.sco
 @mode 664
 @group games
@@ -69,3 +70,5 @@ share/pixmaps/
 share/pixmaps/dopewars-pill.png
 share/pixmaps/dopewars-shot.png
 share/pixmaps/dopewars-weed.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
