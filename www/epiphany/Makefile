@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2012/10/03 06:36:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.86 2012/12/23 14:59:25 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,7 +11,7 @@ COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
 GNOME_VERSION=	3.4.3
-REVISION=	4
+REVISION=	5
 
 # NOTE: when M changes, increment M accordingly and bump:
 # www/epiphany-extensions
@@ -46,12 +46,13 @@ WANTLIB += jpeg m notify orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs soup-2.4
 WANTLIB += soup-gnome-2.4 sqlite3 stdc++ webkitgtk-3.0 xcb xcb-render
 WANTLIB += atk-bridge-2.0 atspi harfbuzz icule
-WANTLIB += xcb-shm xml2 xslt z
+WANTLIB += xcb-shm xml2 xslt z girepository-1.0
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/iso-codes \
 		devel/gsettings-desktop-schemas
 LIB_DEPENDS=	textproc/libxslt \
+		devel/gobject-introspection \
 		devel/libexecinfo \
 		devel/libnotify \
 		devel/libsoup,-gnome \
