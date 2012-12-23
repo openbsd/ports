@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: clean-old-distfiles,v 1.4 2012/09/16 08:15:43 espie Exp $
+# $OpenBSD: clean-old-distfiles,v 1.5 2012/12/23 13:27:08 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -29,18 +29,23 @@ sub usage
 	$prog =~ s/.*\///;
 	$err =~ s/\sat.*//s;
 	say STDERR "$prog: $err";
-	say STDERR "Usage: $prog [-nv] [-e except] [cutdate]";
+	say STDERR "Usage: $prog [-nv] [-e except] [-h history] [cutdate]";
 	exit 1;
 }
 
-our ($opt_v, $opt_n, $opt_e);
-eval { getopts('e:vn'); };
+our ($opt_v, $opt_n, $opt_e, $opt_h);
+eval { getopts('e:h:vn'); };
 if ($@) {
 	usage($@);
 }
 
 if (@ARGV > 1) {
 	usage("too many arguments");
+}
+
+if ($opt_h) {
+	$opt_n = 1;
+	$opt_v = 1;
 }
 
 sub really_remove
@@ -81,13 +86,15 @@ sub remove_file
     	}
 }
 
-my $cutdate //=  $ARGV[1];
+my $cutdate = $ARGV[0];
 
 my $PORTSDIR = $ENV{PORTSDIR} // '/usr/ports';
 my $DISTDIR = $ENV{DISTDIR} // "$PORTSDIR/distfiles";
 chdir($DISTDIR) or die "Can't chdir to $DISTDIR";
 
-open my $fh, '<', "history" or die "No history to prune";
+my $history = $opt_h ? $opt_h : 'history';
+
+open my $fh, '<', $history or die "No $history to prune";
 my $fh2;
 
 unless ($opt_n) {
@@ -113,7 +120,7 @@ while (<$fh>) {
 	} else {
 		die "Bad history line $_";
 	}
-	if ($except->{$file} || defined $cutdate && $ts > $cutdate) {
+	if ($except->{$file} || (defined $cutdate && $ts > $cutdate)) {
 		if ($fh2) {
 			print $fh2 $_;
 		}
