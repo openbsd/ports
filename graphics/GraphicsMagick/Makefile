@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2012/12/22 19:37:35 brad Exp $
+# $OpenBSD: Makefile,v 1.28 2012/12/23 20:40:39 brad Exp $
 
 SHARED_ONLY=	Yes
 
@@ -57,8 +57,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--without-trio \
 			--disable-ltdl-install
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include/libxml2 -I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			PTHREAD_LIBS="-pthread" \
+			LDFLAGS="-L${WRKBUILD}/magick/.libs -L${WRKBUILD}/wand/.libs -L${LOCALBASE}/lib" \
 			ac_cv_path_LaunchDelegate=no
 
 post-build:
