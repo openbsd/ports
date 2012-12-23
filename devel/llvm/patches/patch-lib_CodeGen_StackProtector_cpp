@@ -1,31 +1,48 @@
-$OpenBSD: patch-lib_CodeGen_StackProtector_cpp,v 1.1 2012/08/04 14:47:52 pascal Exp $
---- lib/CodeGen/StackProtector.cpp.orig	Wed Nov 23 08:13:56 2011
-+++ lib/CodeGen/StackProtector.cpp	Sun Jul 22 19:55:03 2012
-@@ -169,7 +169,7 @@ bool StackProtector::InsertStackProtectors() {
+$OpenBSD: patch-lib_CodeGen_StackProtector_cpp,v 1.2 2012/12/23 20:49:29 brad Exp $
+--- lib/CodeGen/StackProtector.cpp.orig	Tue Oct  9 09:45:08 2012
++++ lib/CodeGen/StackProtector.cpp	Mon Dec 10 21:36:28 2012
+@@ -196,6 +196,9 @@ bool StackProtector::InsertStackProtectors() {
+ 
          StackGuardVar = ConstantExpr::getIntToPtr(OffsetVal,
                                        PointerType::get(PtrTy, AddressSpace));
++      } else if (Triple(TLI->getTargetMachine().getTargetTriple()).getOS() ==
++        llvm::Triple::OpenBSD) {
++        StackGuardVar = M->getOrInsertGlobal("__guard_local", PtrTy);
        } else {
--        StackGuardVar = M->getOrInsertGlobal("__stack_chk_guard", PtrTy); 
-+        StackGuardVar = M->getOrInsertGlobal("__guard", PtrTy); 
+         StackGuardVar = M->getOrInsertGlobal("__stack_chk_guard", PtrTy);
        }
- 
-       BasicBlock &Entry = F->getEntryBlock();
-@@ -247,9 +247,16 @@ BasicBlock *StackProtector::CreateFailBB() {
-   BasicBlock *FailBB = BasicBlock::Create(F->getContext(),
+@@ -272,12 +275,28 @@ bool StackProtector::InsertStackProtectors() {
+ /// CreateFailBB - Create a basic block to jump to when the stack protector
+ /// check fails.
+ BasicBlock *StackProtector::CreateFailBB() {
+-  BasicBlock *FailBB = BasicBlock::Create(F->getContext(),
++  LLVMContext &Context = F->getContext();
++  BasicBlock *FailBB = BasicBlock::Create(Context,
                                            "CallStackCheckFailBlk", F);
-   Constant *StackChkFail =
+-  Constant *StackChkFail =
 -    M->getOrInsertFunction("__stack_chk_fail",
-+    M->getOrInsertFunction("__stack_smash_handler",
-                            Type::getVoidTy(F->getContext()), NULL);
+-                           Type::getVoidTy(F->getContext()), NULL);
 -  CallInst::Create(StackChkFail, "", FailBB);
-+  Constant *G = new GlobalVariable(*M,
-+  			ArrayType::get(Type::getInt1Ty(F->getContext()),
-+			F->getName().size() + 1),
-+  			true, GlobalVariable::PrivateLinkage, 
-+  			ConstantDataArray::getString(F->getContext(),
-+				F->getName(), true),
-+  			"SSH", false, 0);
-+  CallInst::Create(StackChkFail, G, "", FailBB);
-   new UnreachableInst(F->getContext(), FailBB);
+-  new UnreachableInst(F->getContext(), FailBB);
++  if (Triple(TLI->getTargetMachine().getTargetTriple()).getOS() ==
++      llvm::Triple::OpenBSD) {
++    Constant *StackChkFail =
++      M->getOrInsertFunction("__stack_smash_handler",
++                            Type::getVoidTy(Context), Type::getInt8PtrTy(Context), NULL);
++    Constant *G = new GlobalVariable(*M,
++                        ArrayType::get(Type::getInt8Ty(Context),
++                        F->getName().size() + 1),
++                        true, GlobalVariable::PrivateLinkage,
++                        ConstantDataArray::getString(Context,
++                                F->getName(), true),
++                        "SSH");
++    CallInst::Create(StackChkFail, G, "", FailBB);
++  } else {
++    Constant *StackChkFail =
++      M->getOrInsertFunction("__stack_chk_fail",
++                             Type::getVoidTy(Context), NULL);
++    CallInst::Create(StackChkFail, "", FailBB);
++  }
++  new UnreachableInst(Context, FailBB);
    return FailBB;
  }

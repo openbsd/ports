@@ -1,7 +1,7 @@
-$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_h,v 1.3 2012/08/04 14:47:52 pascal Exp $
---- tools/clang/lib/Driver/ToolChains.h.orig	Sat Jul 28 12:56:00 2012
-+++ tools/clang/lib/Driver/ToolChains.h	Sat Jul 28 12:57:23 2012
-@@ -471,6 +471,10 @@ class LLVM_LIBRARY_VISIBILITY OpenBSD : public Generic
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_h,v 1.4 2012/12/23 20:49:29 brad Exp $
+--- tools/clang/lib/Driver/ToolChains.h.orig	Wed Nov 21 09:33:40 2012
++++ tools/clang/lib/Driver/ToolChains.h	Mon Dec 10 21:27:25 2012
+@@ -437,6 +437,10 @@ class LLVM_LIBRARY_VISIBILITY OpenBSD : public Generic
  
    virtual Tool &SelectTool(const Compilation &C, const JobAction &JA,
                             const ActionList &Inputs) const;
@@ -11,4 +11,4 @@ $OpenBSD: patch-tools_clang_lib_Driver_ToolChains_h,v 1.3 2012/08/04 14:47:52 pa
 +  }
  };
  
- class LLVM_LIBRARY_VISIBILITY FreeBSD : public Generic_ELF {
+ class LLVM_LIBRARY_VISIBILITY Bitrig : public Generic_ELF {
