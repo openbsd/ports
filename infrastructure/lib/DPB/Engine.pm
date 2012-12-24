@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.51 2012/12/21 12:26:16 espie Exp $
+# $OpenBSD: Engine.pm,v 1.52 2012/12/24 17:22:15 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -42,6 +42,12 @@ sub remove
 {
 	my ($self, $v) = @_;
 	$self->{queue}->remove($v);
+}
+
+sub is_done_quick
+{
+	my $self = shift;
+	return $self->is_done(@_);
 }
 
 sub sorted
@@ -201,15 +207,38 @@ sub new_queue
 	return $engine->{heuristics}->new_queue;
 }
 
+sub mark_as_done
+{
+	my ($self, $v) = @_;
+	$self->{engine}{affinity}->unmark($v);
+	delete $self->{engine}{tobuild}{$v};
+#	$self->{heuristics}->done($v);
+	if (!defined $self->{engine}{built}{$v}) {
+		$self->{engine}{built}{$v}= $v;
+		$self->log('B', $v);
+	}
+	$self->remove($v);
+	delete $v->{new};
+}
+
 sub is_done
 {
 	my ($self, $v) = @_;
 	if ($self->{builder}->check($v)) {
-#		$self->{heuristics}->done($v);
-		$self->{engine}{built}{$v}= $v;
-		$self->log('B', $v);
-		delete $self->{engine}{tobuild}{$v};
-		delete $v->{new};
+		for my $w ($v->build_path_list) {
+			next unless $v eq $w;
+			next unless $self->{builder}->check($w);
+			$self->mark_as_done($w);
+		}
+	}
+	return $self->is_done_quick($v);
+}
+
+sub is_done_quick
+{
+	my ($self, $v) = @_;
+	if ($self->{builder}->check($v)) {
+		$self->mark_as_done($v);
 		return 1;
 	} else {
 		return 0;
@@ -629,7 +658,7 @@ sub new_path
 		return;
 	}
 #		$self->{heuristics}->todo($v);
-	if (!$self->{buildable}->is_done($v)) {
+	if (!$self->{buildable}->is_done_quick($v)) {
 		$self->{tobuild}{$v} = $v;
 		$self->log('T', $v);
 	}
