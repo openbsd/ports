@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2012/12/23 12:25:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2012/12/24 14:03:34 landry Exp $
 
 COMMENT =	finish-the-cycle logic puzzle
 CATEGORIES =	games
@@ -6,7 +6,7 @@ CATEGORIES =	games
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 DISTNAME =	circuit-0.1.4
-REVISION =	6
+REVISION =	7
 MASTER_SITES =	ftp://quatramaran.ens.fr/pub/cigaes/circuit/
 
 # BSD
