@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2012/11/10 15:01:15 stsp Exp $
+# $OpenBSD: Makefile,v 1.27 2012/12/24 13:11:03 stsp Exp $
 
 COMMENT =		complex graphical design & layout library
-DISTNAME =		edje-1.7.1
+DISTNAME =		edje-1.7.4
 
 EPOCH =			2
 
-SHARED_LIBS +=		edje 2.0	# 8.1
+SHARED_LIBS +=		edje 3.0	# 8.4
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -29,8 +29,8 @@ USE_LIBTOOL =		Yes
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		misc/shared-mime-info>=0.21
 
-LIB_DEPENDS +=		x11/e17/ecore>=2.0 \
-			x11/e17/embryo>=2.0 \
+LIB_DEPENDS +=		x11/e17/ecore>=3.0 \
+			x11/e17/embryo>=3.0 \
 			x11/e17/eio \
 			${MODLUA_LIB_DEPENDS} \
 			devel/fribidi

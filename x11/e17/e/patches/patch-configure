@@ -1,28 +1,10 @@
-$OpenBSD: patch-configure,v 1.5 2012/11/10 15:06:03 stsp Exp $
+$OpenBSD: patch-configure,v 1.6 2012/12/24 13:11:03 stsp Exp $
 
 Try to avoid linking against libintl.a, fix version number in paths.
 
---- configure.orig	Mon Nov  5 16:30:25 2012
-+++ configure	Thu Nov  8 02:29:13 2012
-@@ -13033,7 +13033,7 @@ release_info=""
- ##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##
- ##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##
- 
--release=relname
-+release="$PACKAGE_VERSION"
- 
- 
- 
-@@ -13363,7 +13363,7 @@ fi
- 
- 
- 
--MODULE_ARCH="$host_os-$host_cpu-relname"
-+MODULE_ARCH="$host_os-$host_cpu-${PACKAGE_VERSION}"
- 
- 
- cat >>confdefs.h <<_ACEOF
-@@ -14613,12 +14613,12 @@ else
+--- configure.orig	Fri Nov 16 15:54:06 2012
++++ configure	Sun Nov 18 09:41:14 2012
+@@ -14614,12 +14614,12 @@ else
  #include <libintl.h>
  $gt_revision_test_code
  extern int _nl_msg_cat_cntr;
@@ -37,7 +19,7 @@ Try to avoid linking against libintl.a, fix version number in paths.
    ;
    return 0;
  }
-@@ -15443,7 +15443,7 @@ $as_echo "#define HAVE_DCGETTEXT 1" >>confdefs.h
+@@ -15444,7 +15444,7 @@ $as_echo "#define HAVE_DCGETTEXT 1" >>confdefs.h
    fi
  
  

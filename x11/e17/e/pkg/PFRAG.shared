@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.7 2012/11/10 15:06:03 stsp Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.8 2012/12/24 13:11:03 stsp Exp $
 lib/enlightenment/modules/backlight/openbsd${OSREV}-${FULLARCH}-${VERSION}/module.so
 lib/enlightenment/modules/battery/openbsd${OSREV}-${FULLARCH}-${VERSION}/module.so
 lib/enlightenment/modules/clock/openbsd${OSREV}-${FULLARCH}-${VERSION}/module.so
@@ -72,5 +72,6 @@ lib/enlightenment/modules/wizard/openbsd${OSREV}-${FULLARCH}-${VERSION}/page_140
 lib/enlightenment/modules/wizard/openbsd${OSREV}-${FULLARCH}-${VERSION}/page_150.so
 lib/enlightenment/modules/wizard/openbsd${OSREV}-${FULLARCH}-${VERSION}/page_160.so
 lib/enlightenment/modules/wizard/openbsd${OSREV}-${FULLARCH}-${VERSION}/page_170.so
+lib/enlightenment/modules/wizard/openbsd${OSREV}-${FULLARCH}-${VERSION}/page_180.so
 lib/enlightenment/modules/wizard/openbsd${OSREV}-${FULLARCH}-${VERSION}/page_200.so
 lib/enlightenment/modules/xkbswitch/openbsd${OSREV}-${FULLARCH}-${VERSION}/module.so

@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.38 2012/11/10 19:57:39 stsp Exp $
+# $OpenBSD: Makefile,v 1.39 2012/12/24 13:11:03 stsp Exp $
 
 COMMENT =		the enlightened window manager
 
-VERSION = 		0.17.0-alpha
+VERSION = 		0.17.0
 DISTNAME =		enlightenment-${VERSION}
 PKGNAME =		enlightenment-${VERSION:S/-//}
 EXTRACT_SUFX=		.tar.bz2
 
-REVISION = 		0
-EPOCH =			0
+EPOCH =			1
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -27,12 +26,12 @@ WANTLIB += ecore_ipc ecore_x edbus edje eet efreet efreet_mime
 WANTLIB += efreet_trash ehal eina eio embryo enotify eukit evas execinfo
 WANTLIB += expat ffi fribidi fontconfig freetype glib-2.0 gobject-2.0
 WANTLIB += gthread-2.0 harfbuzz idn icudata icule icuuc jpeg ${MODLUA_WANTLIB}
-WANTLIB += m pcre pthread pthread-stubs ssl xcb xcb-shape z
+WANTLIB += m pcre pthread pthread-stubs ssl xcb xcb-keysyms xcb-shape z
 
-LIB_DEPENDS =		x11/e17/edje>=2.0 \
-			x11/e17/efreet>=2.0 \
-			x11/e17/ecore>=2.0 \
-			x11/e17/e_dbus>=2.0 \
+LIB_DEPENDS =		x11/e17/edje>=3.0 \
+			x11/e17/efreet>=3.0 \
+			x11/e17/ecore>=3.0 \
+			x11/e17/e_dbus>=3.0 \
 			x11/e17/eio \
 			devel/fribidi \
 			devel/libexecinfo

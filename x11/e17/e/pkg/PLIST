@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2012/11/10 15:06:03 stsp Exp $
+@comment $OpenBSD: PLIST,v 1.11 2012/12/24 13:11:03 stsp Exp $
 %%SHARED%%
 @bin bin/enlightenment
 @bin bin/enlightenment_filemanager
@@ -271,7 +271,6 @@ lib/enlightenment/modules/conf_theme/openbsd${OSREV}-${FULLARCH}-${VERSION}/
 lib/enlightenment/modules/conf_theme/openbsd${OSREV}-${FULLARCH}-${VERSION}/module.a
 lib/enlightenment/modules/conf_theme/openbsd${OSREV}-${FULLARCH}-${VERSION}/module.la
 lib/enlightenment/modules/conf_window_manipulation/
-lib/enlightenment/modules/conf_window_manipulation/e-module-conf_winmanip.edj
 lib/enlightenment/modules/conf_window_manipulation/module.desktop
 lib/enlightenment/modules/conf_window_manipulation/openbsd${OSREV}-${FULLARCH}-${VERSION}/
 lib/enlightenment/modules/conf_window_manipulation/openbsd${OSREV}-${FULLARCH}-${VERSION}/module.a
@@ -545,6 +544,8 @@ lib/enlightenment/modules/wizard/openbsd${OSREV}-${FULLARCH}-${VERSION}/page_160
 lib/enlightenment/modules/wizard/openbsd${OSREV}-${FULLARCH}-${VERSION}/page_160.la
 lib/enlightenment/modules/wizard/openbsd${OSREV}-${FULLARCH}-${VERSION}/page_170.a
 lib/enlightenment/modules/wizard/openbsd${OSREV}-${FULLARCH}-${VERSION}/page_170.la
+lib/enlightenment/modules/wizard/openbsd${OSREV}-${FULLARCH}-${VERSION}/page_180.a
+lib/enlightenment/modules/wizard/openbsd${OSREV}-${FULLARCH}-${VERSION}/page_180.la
 lib/enlightenment/modules/wizard/openbsd${OSREV}-${FULLARCH}-${VERSION}/page_200.a
 lib/enlightenment/modules/wizard/openbsd${OSREV}-${FULLARCH}-${VERSION}/page_200.la
 lib/enlightenment/modules/xkbswitch/
@@ -569,22 +570,42 @@ share/enlightenment/AUTHORS
 share/enlightenment/COPYING
 share/enlightenment/data/
 share/enlightenment/data/backgrounds/
+share/enlightenment/data/backgrounds/Brown_Rock_Hi.edj
+share/enlightenment/data/backgrounds/Colorful_Roses.edj
+share/enlightenment/data/backgrounds/Curly_Leaves.edj
 share/enlightenment/data/backgrounds/Dark_Gradient.edj
 share/enlightenment/data/backgrounds/Darkconcrete.edj
+share/enlightenment/data/backgrounds/Flower_Petals.edj
+share/enlightenment/data/backgrounds/Go_Away.edj
+share/enlightenment/data/backgrounds/Grassy.edj
+share/enlightenment/data/backgrounds/Green_Stem.edj
+share/enlightenment/data/backgrounds/Hills.edj
 share/enlightenment/data/backgrounds/Japanesemaple.edj
 share/enlightenment/data/backgrounds/Lakegrass.edj
+share/enlightenment/data/backgrounds/Lantern_Cluster.edj
+share/enlightenment/data/backgrounds/Leafy_Red.edj
+share/enlightenment/data/backgrounds/Light.edj
 share/enlightenment/data/backgrounds/Light_Gradient.edj
 share/enlightenment/data/backgrounds/Mossstring.edj
 share/enlightenment/data/backgrounds/Motleyrock.edj
 share/enlightenment/data/backgrounds/Newgrowth.edj
+share/enlightenment/data/backgrounds/Orange_Roses.edj
 share/enlightenment/data/backgrounds/Pattern_Radial.edj
 share/enlightenment/data/backgrounds/Pattern_Vertical.edj
 share/enlightenment/data/backgrounds/Pattern_Vertical_Hi.edj
+share/enlightenment/data/backgrounds/Pine_Silhouettes.edj
+share/enlightenment/data/backgrounds/Purple_Flower_Bunch.edj
+share/enlightenment/data/backgrounds/Ramen.edj
+share/enlightenment/data/backgrounds/Shady_Leaves.edj
 share/enlightenment/data/backgrounds/Skywall.edj
 share/enlightenment/data/backgrounds/Stringflower.edj
+share/enlightenment/data/backgrounds/Temple.edj
+share/enlightenment/data/backgrounds/Train.edj
+share/enlightenment/data/backgrounds/Wall_Lanterns.edj
 share/enlightenment/data/backgrounds/Wetgrass.edj
 share/enlightenment/data/backgrounds/Wetleaf.edj
 share/enlightenment/data/backgrounds/Whiterock.edj
+share/enlightenment/data/backgrounds/Windy_Palm.edj
 share/enlightenment/data/config/
 share/enlightenment/data/config/default/
 share/enlightenment/data/config/default/e.cfg

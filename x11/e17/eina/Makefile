@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2012/11/17 23:26:39 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2012/12/24 13:11:03 stsp Exp $
 
 COMMENT =		EFL API for data types
-VERSION = 		1.7.1
+VERSION = 		1.7.4
 DISTNAME =		eina-${VERSION}
-REVISION=		0
 EPOCH=			1
 
-SHARED_LIBS +=  eina                 2.0      # 8.1
+SHARED_LIBS +=  eina                 3.0      # 8.4
 
 # LGPL v2.1
 PERMIT_PACKAGE_CDROM =	Yes
@@ -24,7 +23,7 @@ CONFIGURE_ARGS =	--disable-doc \
 			--enable-mempool-chained-pool=static \
 			--disable-mempool-ememoa-fixed \
 			--disable-mempool-ememoa-unknown \
-			--enable-mempool-fixed-bitmap \
+			--enable-mempool-fixed-bitmap=static \
 			--enable-mempool-pass-through=static \
 			--disable-mempool-buddy \
 			--enable-mempool-one-big=static

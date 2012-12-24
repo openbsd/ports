@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2012/11/10 15:01:15 stsp Exp $
+# $OpenBSD: Makefile,v 1.22 2012/12/24 13:11:03 stsp Exp $
 
 COMMENT =		core event/X abstraction layer
-DISTNAME =		ecore-1.7.1
+DISTNAME =		ecore-1.7.4
 
 EPOCH =			2
 
-SO_VERSION =		2.0		# 8.1
+SO_VERSION =		3.0		# 8.4
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 .for _lib in ecore ecore_con ecore_evas ecore_file ecore_imf \
@@ -33,7 +33,7 @@ LIB_DEPENDS =		devel/glib2 \
 			devel/fribidi \
 			net/curl \
 			net/libcares \
-			x11/e17/evas>=2.0
+			x11/e17/evas>=3.0
 
 CONFIGURE_ARGS +=	--disable-doc \
 			--disable-gnutls \

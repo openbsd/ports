@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2012/11/10 15:01:15 stsp Exp $
+# $OpenBSD: Makefile,v 1.23 2012/12/24 13:11:03 stsp Exp $
 
 COMMENT =		canvas API for X
-VERSION = 		1.7.1
+VERSION = 		1.7.4
 DISTNAME =		evas-${VERSION}
 EPOCH =			2
 
-SHARED_LIBS +=  evas                 2.0      # 8.1
+SHARED_LIBS +=  evas                 3.0      # 8.4
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -24,7 +24,7 @@ MODULES=		devel/gettext
 
 VMEM_WARNING =	Yes
 
-LIB_DEPENDS =		x11/e17/eet>=2.0 \
+LIB_DEPENDS =		x11/e17/eet>=3.0 \
 			graphics/libungif \
 			graphics/png \
 			graphics/tiff \
