@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.49 2012/11/06 08:26:29 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.50 2012/12/24 17:24:46 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: November 6 2012 $
+.Dd $Mdocdate: December 24 2012 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -545,7 +545,7 @@ were discovered as dependencies.
 This is particularly useful for bogus paths, where it would be hard to
 know where the path came from otherwise.
 .Pp
-At the end of a succesful build, these lockfiles are removed.
+At the end of a successful build, these lockfiles are removed.
 The lock will stay around in case of errors.
 .Po
 raw
@@ -593,6 +593,21 @@ systematically appending to files or using atomic mv operations.
 .Pp
 For obvious reasons, this won't work as well with masters running on distinct
 machines sharing their logs through NFS.
+.Sh AFFINITY
+.Nm
+now maintains a list of pkgpath-per-host that are currently building in the
+.Pa affinity
+directory of its log directory.
+.Pp
+That information is only wiped out when a given build finishes successfully.
+.Pp
+Otherwise
+.Nm
+will try to restart that build on the same host, which can be handy if you
+interrupt
+.Nm
+while it is building a large port, or if you remove a lock after fixing a
+problem.
 .Sh SHUTTING DOWN GRACEFULLY
 .Nm
 periodically checks for a file named
@@ -640,7 +655,7 @@ checksums of known files under
 Fetching uses this to avoid re-checksumming known files.
 .It history
 Log of old files under distinfo.
-After succesfully scanning a full ports tree
+After successfully scanning a full ports tree
 .Po
 .Nm Fl a
 .Pc ,
@@ -692,6 +707,11 @@ and uses them automatically in the absence of
 will also create a large number of log files under
 .Pa ${PORTSDIR}/logs/{$ARCH} :
 .Bl -tag -width engine.log
+.It Pa affinity/
+Affinity information.
+One file per full pkgpath, with slash replaced by dots
+like so:
+.Pa affinity/lang.ghc,-main.
 .It Pa build.log
 Actual build log.
 Each line summarizes build of a single pkgpath, as:
@@ -735,6 +755,9 @@ pkgpath temporarily put aside, because a job is running in the same directory.
 pkgpath ignored, either directly, or indirectly because a dependency was
 ignored.
 End of the line states reason why ignored.
+.It A
+affinity mismatch: path considered for build, but ignored on first try,
+followed by the affinity information.
 .It B
 pkgpath built / distfile found.
 .It E
@@ -760,6 +783,9 @@ pkgpath to build / distfile to download.
 .It V
 pkgpath put back in the buildable queue, after job that was running in
 the same directory returned.
+.It Y
+affinity mismatch, but job will start on the wrong host anyways, as the queue
+contains no other buildable path.
 .El
 .It Pa equiv.log
 Lists of equivalent pkgpaths for the build, when default flavors and default subpackages have been resolved.
@@ -876,7 +902,7 @@ that prevents it from proper use in bulk builds.
 The default limits in
 .Pa login.conf
 are too small for bulk builds on any kind of parallel machines.
-Bump number of processes.
+Bump number of processes, file descriptors, and memory.
 .Pp
 Even though
 .Nm

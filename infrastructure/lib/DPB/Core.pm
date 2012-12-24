@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.20 2012/11/06 08:26:29 espie Exp $
+# $OpenBSD: Core.pm,v 1.21 2012/12/24 17:24:46 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -81,6 +81,20 @@ use OpenBSD::Error;
 use DPB::Util;
 use DPB::Job;
 
+# need to know which host are around for affinity purposes
+my %allhosts;
+sub matches
+{
+	my ($self, $hostname) = @_;
+
+	# same host
+	return 1 if $self->hostname eq $hostname;
+	# ... or host isn't around
+	return 1 if !defined $allhosts{$hostname};
+	# okay, try to avoid this
+	return 0;
+}
+
 
 # note that we play dangerously, e.g., we only keep cores that are running
 # something in there, the code can keep some others.
@@ -126,6 +140,7 @@ sub new
 	my ($class, $host, $prop) = @_;
 	my $c = bless {host => DPB::Host->new($host, $prop)}, $class;
 	$c->{shell} = $class->shellclass->new($c->host);
+	$allhosts{$c->hostname} = 1;
 	return $c;
 }
 

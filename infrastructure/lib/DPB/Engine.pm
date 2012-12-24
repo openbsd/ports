@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.52 2012/12/24 17:22:15 espie Exp $
+# $OpenBSD: Engine.pm,v 1.53 2012/12/24 17:24:46 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -89,6 +89,23 @@ sub start_install
 	return 0;
 }
 
+sub lock_and_start_build
+{
+	my ($self, $core, $v) = @_;
+
+	$self->remove($v);
+
+	if (my $lock = $self->{engine}{locker}->lock($v)) {
+		$self->{doing}{$self->key_for_doing($v)} = 1;
+		$self->start_build($v, $core, $lock);
+		return 1;
+	} else {
+		push(@{$self->{engine}{locks}}, $v);
+		$self->log('L', $v);
+		return 0;
+	}
+}
+
 sub start
 {
 	my $self = shift;
@@ -98,27 +115,50 @@ sub start
 		return;
 	}
 	if ($self->start_install($core)) {
-		return $core;
+		return;
 	}
 	my $o = $self->sorted($core);
+
+	# note we don't remove stuff from the queue until needed, so
+	# mismatches has a copy of stuff that's still there.
+	my @mismatches = ();
+
+	# first pass, try to find something we can build
 	while (my $v = $o->next) {
-		$self->remove($v);
+		# trim stuff that's done
 		if ($self->is_done($v)) {
 			$self->already_done($v);
 			$self->done($v);
 			next;
 		}
+		# ... and stuff that's related to other stuff building
 		if ($self->{doing}{$self->key_for_doing($v)}) {
+			$self->remove($v);
 			$self->{later}{$v} = $v;
 			$self->log('^', $v);
-		} elsif (my $lock = $self->{engine}{locker}->lock($v)) {
-			$self->{doing}{$self->key_for_doing($v)} = 1;
-			return $self->start_build($v, $core, $lock);
-		} else {
-			push(@{$self->{engine}{locks}}, $v);
-			$self->log('L', $v);
+			next;
+		}
+		# keep affinity mismatches for later
+		if (defined $v->{affinity} && !$core->matches($v->{affinity})) {
+			$self->log('A', $v, 
+			    " ".$core->hostname." ".$v->{affinity});
+			push(@mismatches, $v);
+			next;
+		}
+		# if there's no external lock, we can build
+		if ($self->lock_and_start_build($core, $v)) {
+			return;
 		}
 	}
+	# second pass, affinity mismatches
+	for my $v (@mismatches) {
+		if ($self->lock_and_start_build($core, $v)) {
+			$self->log('Y', $v, 
+			    " ".$core->hostname." ".$v->{affinity});
+			return;
+		}
+	}
+	# couldn't build anything, so we give back the core.
 	$core->mark_ready;
 }
 
@@ -269,6 +309,7 @@ sub start_build
 	my $special = $self->{engine}{heuristics}->
 	    special_parameters($core->host, $v);
 	$self->log('J', $v, " ".$core->hostname." ".$special);
+	$self->{engine}{affinity}->start($v, $core);
 	$self->{builder}->build($v, $core, $special,
 	    $lock, sub {$self->end($core, $v)});
 }
@@ -276,6 +317,7 @@ sub start_build
 sub end_build
 {
 	my ($self, $v) = @_;
+	$self->{engine}{affinity}->finished($v);
 	$self->{engine}{heuristics}->finish_special($v);
 }
 
@@ -342,6 +384,7 @@ sub new
 	    heuristics => $state->heuristics,
 	    locker => $state->locker,
 	    logger => $state->logger,
+	    affinity => $state->{affinity},
 	    errors => [],
 	    locks => [],
 	    requeued => [],

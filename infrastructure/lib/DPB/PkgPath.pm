@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.35 2012/10/11 17:35:19 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.36 2012/12/24 17:24:46 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -137,6 +137,7 @@ sub requeue
 sub simplifies_to
 {
 	my ($self, $simpler, $state) = @_;
+	$state->{affinity}->simplifies_to($self, $simpler);
 	open my $quicklog, '>>', $state->logger->logfile('equiv');
 	print $quicklog $self->fullpkgpath, " -> ", $simpler->fullpkgpath, "\n";
 }

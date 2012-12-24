@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.24 2012/10/08 12:41:03 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.25 2012/12/24 17:24:46 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -218,7 +218,6 @@ sub build
 	    "pid=$core->{pid}\n",
 	    "start=$start (", DPB::Util->time2string($start), ")\n";
 	$job->set_watch($self->logger, $v);
-	return $core;
 }
 
 sub install
