@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2011/12/26 22:58:48 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2012/12/24 09:23:07 bentley Exp $
 
 COMMENT =		n64 emulator signal co-processor plugin
+
+REVISION =		0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
