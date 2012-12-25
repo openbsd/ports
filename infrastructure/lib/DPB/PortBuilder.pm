@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.26 2012/12/25 10:00:08 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.27 2012/12/25 10:43:36 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -28,13 +28,15 @@ use DPB::Job::Port;
 sub new
 {
 	my ($class, $state) = @_;
+	if ($state->opt('R')) {
+		$class = $class->rebuild_class;
+	}
 	my $self = bless {
 	    state => $state,
 	    clean => $state->opt('c'),
 	    dontclean => $state->{dontclean},
 	    fetch => $state->opt('f'),
 	    size => $state->opt('s'),
-	    rebuild => $state->opt('R'),
 	    fullrepo => $state->fullrepo,
 	    heuristics => $state->heuristics}, $class;
 	if ($state->opt('u') || $state->opt('U')) {
@@ -46,6 +48,9 @@ sub new
 	$self->init;
 	return $self;
 }
+
+sub rebuild_class
+{ 'DPB::PortBuilder::Rebuild' }
 
 sub ports
 {
@@ -86,15 +91,6 @@ sub init
 		$self->{rsslog} = $self->logger->logfile("rss");
 		$self->{wrapper} = $self->{state}->defines("WRAP_MAKE");
 	}
-	if ($self->{rebuild}) {
-		require OpenBSD::PackageRepository;
-		$self->{repository} = OpenBSD::PackageRepository->new(
-		    "file:/$self->{fullrepo}");
-		# this is just a dummy core, for running quick pipes
-		$self->{core} = DPB::Core->new_noreg('localhost');
-		$self->{logrebuild} = DPB::Util->make_hot(
-		    $self->logger->open('rebuild'));
-	}
 }
 
 sub pkgfile
@@ -104,53 +100,18 @@ sub pkgfile
 	return "$self->{fullrepo}/$name.tgz";
 }
 
-my $uptodate = {};
-
-sub check_signature
-{
-	my ($self, $core, $v) = @_;
-	my $name = $v->fullpkgname;
-	return 0 unless -f "$self->{fullrepo}/$name.tgz";
-	if ($uptodate->{$name}) {
-		return 1;
-	}
-	# check the package
-	my $p = $self->{repository}->find("$name.tgz");
-	my $plist = $p->plist(\&OpenBSD::PackingList::UpdateInfoOnly);
-	my $pkgsig = $plist->signature->string;
-	# and the port
-	my $portsig = $self->{state}->grabber->grab_signature($core,
-	    $v->fullpkgpath);
-	if ($portsig eq $pkgsig) {
-		$uptodate->{$name} = 1;
-		print {$self->{logrebuild}} "$name: uptodate\n";
-		return 1;
-	} else {
-		print {$self->{logrebuild}} "$name: rebuild\n";
-		$self->{state}->grabber->clean_packages($core,
-		    $v->fullpkgpath);
-		return 0;
-	}
-}
-
 sub check
 {
 	my ($self, $v) = @_;
-	my $check = -f $self->pkgfile($v);
-	return 0 unless $check;
-	if ($self->{rebuild}) {
-		return $uptodate->{$v->fullpkgname};
-	} else {
-		return 1;
-	}
+	return -f $self->pkgfile($v);
 }
 
 sub register_built
 {
-	my ($self, $v) = @_;
-	for my $w ($v->build_path_list) {
-		$uptodate->{$w->fullpkgname} = -f $self->pkgfile($w);
-	}
+}
+
+sub checks_rebuild
+{
 }
 
 sub report
@@ -230,6 +191,73 @@ sub install
 	    sub {$core->mark_ready; });
 	$core->start_job($job, $v);
 	return $core;
+}
+
+package DPB::PortBuilder::Rebuild;
+our @ISA = qw(DPB::PortBuilder);
+
+sub init
+{
+	my $self = shift;
+	$self->SUPER::init;
+
+	require OpenBSD::PackageRepository;
+	$self->{repository} = OpenBSD::PackageRepository->new(
+	    "file:/$self->{fullrepo}");
+	# this is just a dummy core, for running quick pipes
+	$self->{core} = DPB::Core->new_noreg('localhost');
+	$self->{logrebuild} = DPB::Util->make_hot(
+	    $self->logger->open('rebuild'));
+}
+
+my $uptodate = {};
+
+sub check_signature
+{
+	my ($self, $core, $v) = @_;
+	my $name = $v->fullpkgname;
+	return 0 unless -f "$self->{fullrepo}/$name.tgz";
+	if ($uptodate->{$name}) {
+		return 1;
+	}
+	# check the package
+	my $p = $self->{repository}->find("$name.tgz");
+	my $plist = $p->plist(\&OpenBSD::PackingList::UpdateInfoOnly);
+	my $pkgsig = $plist->signature->string;
+	# and the port
+	my $portsig = $self->{state}->grabber->grab_signature($core,
+	    $v->fullpkgpath);
+	if ($portsig eq $pkgsig) {
+		$uptodate->{$name} = 1;
+		print {$self->{logrebuild}} "$name: uptodate\n";
+		return 1;
+	} else {
+		print {$self->{logrebuild}} "$name: rebuild\n";
+		$self->{state}->grabber->clean_packages($core,
+		    $v->fullpkgpath);
+		return 0;
+	}
+}
+
+sub check
+{
+	my ($self, $v) = @_;
+	return 0 unless $self->SUPER::check($v);
+	return $uptodate->{$v->fullpkgname};
+}
+
+sub checks_rebuild
+{
+	my ($self, $v) = @_;
+	return 1 unless $uptodate->{$v->fullpkgname};
+}
+
+sub register_built
+{
+	my ($self, $v) = @_;
+	for my $w ($v->build_path_list) {
+		$uptodate->{$w->fullpkgname} = -f $self->pkgfile($w);
+	}
 }
 
 1;
