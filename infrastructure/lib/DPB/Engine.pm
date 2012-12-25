@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.56 2012/12/25 16:07:02 espie Exp $
+# $OpenBSD: Engine.pm,v 1.57 2012/12/25 20:41:41 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -378,6 +378,8 @@ package DPB::Engine;
 use DPB::Heuristics;
 use DPB::Util;
 
+my $temp;
+
 sub new
 {
 	my ($class, $state) = @_;
@@ -392,7 +394,7 @@ sub new
 	    errors => [],
 	    locks => [],
 	    ts => time(),
-	    last_check => 0,	# never
+	    check_interval => 30,
 	    requeued => [],
 	    ignored => []}, $class;
 	$o->{buildable} = ($state->{fetch_only} ? "DPB::SubEngine::NoBuild"
@@ -402,6 +404,8 @@ sub new
 	}
 	$o->{log} = DPB::Util->make_hot($state->logger->open("engine"));
 	$o->{stats} = DPB::Util->make_hot($state->logger->open("stats"));
+	$o->{last_check} = $o->{ts} - $o->{check_interval};
+	$temp = DPB::Util->make_hot($state->logger->open("times"));
 	return $o;
 }
 
@@ -674,15 +678,17 @@ sub adjust_tobuild
 	return $changes;
 }
 
+use Time::HiRes;
 sub check_buildable
 {
 	my ($self, $quick) = @_;
 	$self->{ts} = time();
-	if ($self->{ts} < $self->{last_check} + 30 && 
-	    $self->{buildable}->count > 50) {
+	if ($self->{ts} < $self->{last_check} + $self->{check_interval} && 
+	    $self->{buildable}->count > 0) {
+	    	print $temp "$self->{ts}: -\n";
 		return;
 	}
-	$self->{last_check} = $self->{ts};
+	my $start = Time::HiRes::time();
 	my $changes;
 	do {
 		$changes = 0;
@@ -690,6 +696,19 @@ sub check_buildable
 		$changes += $self->adjust_tobuild($quick);
 
 	} while ($changes);
+	my $end = Time::HiRes::time();
+	$self->{check_interval} = 100 * ($end - $start);
+	my $offset = $self->{ts} - 
+	    ($self->{last_check} + $self->{check_interval});
+	$offset /= 2;
+	print $temp $self->{ts}, sprintf(": %.2f ", $offset);
+#	$self->{last_check} = $self->{ts};
+	$self->{last_check} = $self->{ts};
+	if ($offset > 0) {
+	    $self->{last_check} -= $offset;
+	}
+	print $temp sprintf(" %.2f ", $self->{last_check});
+	print $temp sprintf("%.2f\n", $self->{check_interval});
 	$self->stats;
 }
 
