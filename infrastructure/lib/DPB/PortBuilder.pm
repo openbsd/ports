@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.25 2012/12/24 17:24:46 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.26 2012/12/25 10:00:08 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -104,14 +104,14 @@ sub pkgfile
 	return "$self->{fullrepo}/$name.tgz";
 }
 
-my $signature_is_uptodate = {};
+my $uptodate = {};
 
 sub check_signature
 {
 	my ($self, $core, $v) = @_;
 	my $name = $v->fullpkgname;
 	return 0 unless -f "$self->{fullrepo}/$name.tgz";
-	if ($signature_is_uptodate->{$name}) {
+	if ($uptodate->{$name}) {
 		return 1;
 	}
 	# check the package
@@ -122,7 +122,7 @@ sub check_signature
 	my $portsig = $self->{state}->grabber->grab_signature($core,
 	    $v->fullpkgpath);
 	if ($portsig eq $pkgsig) {
-		$signature_is_uptodate->{$name} = 1;
+		$uptodate->{$name} = 1;
 		print {$self->{logrebuild}} "$name: uptodate\n";
 		return 1;
 	} else {
@@ -139,7 +139,7 @@ sub check
 	my $check = -f $self->pkgfile($v);
 	return 0 unless $check;
 	if ($self->{rebuild}) {
-		return $signature_is_uptodate->{$v->fullpkgname};
+		return $uptodate->{$v->fullpkgname};
 	} else {
 		return 1;
 	}
@@ -148,7 +148,9 @@ sub check
 sub register_built
 {
 	my ($self, $v) = @_;
-	$signature_is_uptodate->{$v->fullpkgname} = -f $self->pkgfile($v);
+	for my $w ($v->build_path_list) {
+		$uptodate->{$w->fullpkgname} = -f $self->pkgfile($w);
+	}
 }
 
 sub report
