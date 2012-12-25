@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.44 2012/12/24 17:19:01 espie Exp $
+# $OpenBSD: Port.pm,v 1.45 2012/12/25 10:25:04 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -249,27 +249,9 @@ sub run
 {
 	my ($self, $core) = @_;
 	my $job = $core->job;
-	my $dep = {};
-	my $v = $job->{v};
-	if (exists $v->{info}{BDEPENDS}) {
-		for my $d (values %{$v->{info}{BDEPENDS}}) {
-			$dep->{$d->fullpkgname} = 1;
-		}
-	}
-	# recurse for extra stuff
-	if (exists $v->{info}{BEXTRA}) {
-		for my $two (values %{$v->{info}{BEXTRA}}) {
-			if (exists $two->{info}{BDEPENDS}) {
-				for my $d (values %{$two->{info}{BDEPENDS}}) {
-					$dep->{$d->fullpkgname} = 1;
-				}
-			}
-		}
-	}
-
+	my $dep = $job->{depends};
 	$self->junk_lock($core);
 
-	exit(0) unless %$dep;
 	$self->handle_output($job);
 	my @cmd = ('/usr/sbin/pkg_add', '-aI');
 	if ($job->{builder}->{update}) {
@@ -602,6 +584,31 @@ sub new
 	return $job;
 }
 
+sub has_depends
+{
+	my $self = shift;
+	my $dep = {};
+	my $v = $self->{v};
+	if (exists $v->{info}{BDEPENDS}) {
+		for my $d (values %{$v->{info}{BDEPENDS}}) {
+			$dep->{$d->fullpkgname} = 1;
+		}
+	}
+	# recurse for extra stuff
+	if (exists $v->{info}{BEXTRA}) {
+		for my $two (values %{$v->{info}{BEXTRA}}) {
+			if (exists $two->{info}{BDEPENDS}) {
+				for my $d (values %{$two->{info}{BDEPENDS}}) {
+					$dep->{$d->fullpkgname} = 1;
+				}
+			}
+		}
+	}
+	return 0 unless %$dep;
+	$self->{depends} = $dep;
+	return 1;
+}
+
 sub add_normal_tasks
 {
 	my ($self, $dontclean, $hostprop) = @_;
@@ -611,7 +618,9 @@ sub add_normal_tasks
 	if ($builder->{clean}) {
 		$self->insert_tasks(DPB::Task::Port::BaseClean->new('clean'));
 	}
-	push(@todo, qw(depends prepare show-prepare-results));
+	if ($self->has_depends) {
+		push(@todo, qw(depends prepare show-prepare-results));
+	}
 	if ($hostprop->{junk}) {
 		if ($hostprop->{junk_count}++ >= $hostprop->{junk}) {
 			$hostprop->{junk_count} = 0;
