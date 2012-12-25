@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2012/12/25 01:29:54 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2012/12/25 21:44:39 brad Exp $
 
 COMMENT=		GNU stream editor
 
-VERSION=		4.2.2
-DISTNAME=		sed-${VERSION}
-PKGNAME=		gsed-${VERSION}
+DISTNAME=		sed-4.2.2
+PKGNAME=		g${DISTNAME}
 CATEGORIES=		textproc
 MASTER_SITES=		${MASTER_SITE_GNU:=sed/}
 EXTRACT_SUFX=		.tar.bz2
