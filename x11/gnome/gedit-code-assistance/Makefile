@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/10/21 14:49:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2012/12/25 18:43:28 landry Exp $
 
 BROKEN-powerpc=	clang dumps core
 
@@ -8,6 +8,7 @@ COMMENT=	code assistance for Gedit
 
 GNOME_PROJECT=	gedit-code-assistance
 GNOME_VERSION=	0.1.5
+REVISION =	0
 
 CATEGORIES=	editors devel
 
@@ -34,7 +35,7 @@ WANTLIB += stdc++ xcb xcb-render xcb-shm xml2 z
 
 LIB_DEPENDS=	devel/libgee06 \
 		devel/libpeas \
-		devel/llvm>=${MODCLANG_VERSION}p9 \
+		devel/llvm>=${MODCLANG_VERSION} \
 		x11/gtksourceview3
 
 MODGNOME_TOOLS=	goi
