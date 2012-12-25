@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.55 2012/12/25 09:46:24 espie Exp $
+# $OpenBSD: Engine.pm,v 1.56 2012/12/25 16:07:02 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -391,6 +391,8 @@ sub new
 	    affinity => $state->{affinity},
 	    errors => [],
 	    locks => [],
+	    ts => time(),
+	    last_check => 0,	# never
 	    requeued => [],
 	    ignored => []}, $class;
 	$o->{buildable} = ($state->{fetch_only} ? "DPB::SubEngine::NoBuild"
@@ -676,6 +678,11 @@ sub check_buildable
 {
 	my ($self, $quick) = @_;
 	$self->{ts} = time();
+	if ($self->{ts} < $self->{last_check} + 30 && 
+	    $self->{buildable}->count > 50) {
+		return;
+	}
+	$self->{last_check} = $self->{ts};
 	my $changes;
 	do {
 		$changes = 0;
