@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.159 2012/12/16 21:26:22 brad Exp $
+# $OpenBSD: Makefile,v 1.160 2012/12/25 23:14:03 brad Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,9 @@ COMMENT-jack=	JACK audio output module for VLC
 V=		2.0.5
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
+REVISION-main=	0
 PKGNAME-jack=	vlc-jack-${V}
+REVISION-jack=	0
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
@@ -46,11 +48,9 @@ AUTOCONF_VERSION= 2.69
 AUTOMAKE_VERSION= 1.11
 
 MODULES=	devel/gettext \
-		x11/qt4 \
-		gcc4
-MODGCC4_VERSION= 4.6
-MODGCC4_ARCHS=	amd64 i386
-MODGCC4_LANGS=	c
+		lang/clang \
+		x11/qt4
+MODCLANG_ARCHS=	amd64 i386
 LIB_DEPENDS-main= ${MODQT4_LIB_DEPENDS} \
 		${MODGETTEXT_LIB_DEPENDS} \
 		archivers/libtar \
