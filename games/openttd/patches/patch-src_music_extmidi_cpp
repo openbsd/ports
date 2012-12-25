@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_music_extmidi_cpp,v 1.1 2010/09/19 18:52:08 jasper Exp $
---- src/music/extmidi.cpp.orig	Sat Feb 20 16:10:58 2010
-+++ src/music/extmidi.cpp	Tue Apr  6 06:00:41 2010
-@@ -26,7 +26,7 @@
- #include <errno.h>
+$OpenBSD: patch-src_music_extmidi_cpp,v 1.2 2012/12/25 00:17:37 bentley Exp $
+--- src/music/extmidi.cpp.orig	Sun Nov 18 01:08:34 2012
++++ src/music/extmidi.cpp	Sun Nov 18 01:08:38 2012
+@@ -27,7 +27,7 @@
  
  #ifndef EXTERNAL_PLAYER
+ /** The default external midi player. */
 -#define EXTERNAL_PLAYER "timidity"
 +#define EXTERNAL_PLAYER "midiplay"
  #endif
  
- static FMusicDriver_ExtMidi iFMusicDriver_ExtMidi;
+ /** Factory for the midi player that uses external players. */
