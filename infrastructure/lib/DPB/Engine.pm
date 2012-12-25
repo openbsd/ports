@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.53 2012/12/24 17:24:46 espie Exp $
+# $OpenBSD: Engine.pm,v 1.54 2012/12/25 09:31:54 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -266,7 +266,7 @@ sub is_done
 	my ($self, $v) = @_;
 	if ($self->{builder}->check($v)) {
 		for my $w ($v->build_path_list) {
-			next unless $v eq $w;
+			next if $v eq $w;
 			next unless $self->{builder}->check($w);
 			$self->mark_as_done($w);
 		}
