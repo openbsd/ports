@@ -1,8 +1,0 @@
-Polytechnique Montreal Modula-3 distribution.  
-
-PM3 is the most actively maintained Modula-3 distribution.  It is derived 
-from the original SRC release, but it contains many bug fixes and 
-enhancements.  
-
-Please read "${PREFIX}/share/pm3/COPYRIGHT" for the DEC copyright
-notice.
