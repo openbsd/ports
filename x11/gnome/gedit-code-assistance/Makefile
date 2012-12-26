@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2012/12/25 18:43:28 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2012/12/26 13:53:29 landry Exp $
 
 BROKEN-powerpc=	clang dumps core
 
@@ -29,7 +29,7 @@ WANTLIB += atk-bridge-2.0 atspi cairo cairo-gobject dbus-1 drm
 WANTLIB += expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
 WANTLIB += gee gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 gtk-3 gtksourceview-3.0 harfbuzz icudata
-WANTLIB += icule icuuc libclang m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += icule icuuc clang m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre peas-1.0 peas-gtk-1.0 pixman-1 png pthread pthread-stubs
 WANTLIB += stdc++ xcb xcb-render xcb-shm xml2 z
 
