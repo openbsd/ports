@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2012/12/23 12:25:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.117 2012/12/26 12:07:51 sthen Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 
@@ -60,7 +60,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 BUILD_DEPENDS+= gmake->=3.82p2:devel/gmake
 LIB_DEPENDS=	devel/libexecinfo \
 		archivers/bzip2 \
-		devel/libusb-compat \
+		devel/libusb1 \
 		security/nss \
 		devel/gconf2 \
 		textproc/libxslt \
