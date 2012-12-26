@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.72 2012/07/13 16:59:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.73 2012/12/26 17:47:56 naddy Exp $
+
+BROKEN=		unreliable build, fails in bulk builds
 
 COMMENT=	cross platform, open source .NET developement framework
 
