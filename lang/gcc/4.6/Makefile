@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.40 2012/11/06 00:57:43 tobiasu Exp $
+# $OpenBSD: Makefile,v 1.41 2012/12/26 16:15:19 naddy Exp $
 
 ONLY_FOR_ARCHS = amd64 i386 powerpc sparc sparc64
 DPB_PROPERTIES = parallel
+# race condition in fake
+PARALLEL_INSTALL = No
 
 V = 4.6.3
 FULL_VERSION = $V
