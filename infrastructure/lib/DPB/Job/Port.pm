@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.46 2012/12/25 10:43:36 espie Exp $
+# $OpenBSD: Port.pm,v 1.47 2012/12/27 12:03:33 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -68,7 +68,8 @@ sub run
 	$self->handle_output($job);
 	close STDIN;
 	open STDIN, '</dev/null';
-	print ">>> Running $t in $fullpkgpath\n";
+	my $t = time();
+	print ">>> Running $t in $fullpkgpath at $t\n";
 	my @args = ($t, "TRUST_PACKAGES=Yes",
 	    "FETCH_PACKAGES=No",
 	    "PREPARE_CHECK_ONLY=Yes",
