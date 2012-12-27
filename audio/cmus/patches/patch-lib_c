@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_c,v 1.1 2012/12/27 12:02:33 gonzalo Exp $
+
+Commit 2b3144f69d upstream ("lib: fix segfault caused by player-prev")
+
+--- lib.c.orig	Wed Nov  7 09:46:17 2012
++++ lib.c	Sun Nov 18 19:45:38 2012
+@@ -271,7 +271,7 @@ static struct tree_track *normal_get_prev(void)
+ 		if (!repeat)
+ 			return NULL;
+ 		/* last track of the album */
+-		return to_tree_track(rb_prev(&CUR_ALBUM->tree_node));
++		return album_last_track(CUR_ALBUM);
+ 	}
+ 
+ 	/* not first album of the artist? */

@@ -131,7 +131,7 @@ static int sndio_close(void)
 	return 0;
 }
 
-static int sndio_open(sample_format_t sf)
+static int sndio_open(sample_format_t sf, const channel_position_t *channel_map)
 {
 	hdl = sio_open(NULL, SIO_PLAY, 0);
 	if (hdl == NULL)

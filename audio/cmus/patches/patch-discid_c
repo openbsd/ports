@@ -1,0 +1,15 @@
+$OpenBSD: patch-discid_c,v 1.1 2012/12/27 12:02:33 gonzalo Exp $
+
+Hard-code /dev/rcd0c, until we make this use libdiscid.
+
+--- discid.c.orig	Wed Nov  7 09:46:17 2012
++++ discid.c	Wed Nov  7 21:07:19 2012
+@@ -40,7 +40,7 @@ char *get_default_cdda_device(void)
+ 	dev = discid_get_default_device();
+ #endif
+ 	if (!dev)
+-		dev = "/dev/cdrom";
++		dev = "/dev/rcd0c";
+ 	return xstrdup(dev);
+ }
+ 
