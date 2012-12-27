@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2012/10/16 06:21:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.82 2012/12/27 18:56:59 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -40,13 +40,5 @@ LIB_DEPENDS=	graphics/gdk-pixbuf2 \
 CONFIGURE_ARGS=	--disable-gtk-theme \
 		--disable-tools \
 		--disable-Bsymbolic
-
-# these will be built if gtk+2 and gtk+3 are installed at compile time,
-# but we don't want to add these dependencies (not really needed for
-# proper functionality)
-post-install:
-	rm -f ${PREFIX}/bin/rsvg-view-3 # gtk+3
-	rm -f ${PREFIX}/man/man1/rsvg.1 # gtk+2
-	rm ${PREFIX}/lib/gdk-pixbuf-2.0/2.10.0/loaders/*.{a,la}
 
 .include <bsd.port.mk>
