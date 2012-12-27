@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.59 2012/12/27 14:14:19 espie Exp $
+# $OpenBSD: Engine.pm,v 1.60 2012/12/27 16:23:17 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -394,7 +394,6 @@ sub new
 	    errors => [],
 	    locks => [],
 	    ts => time(),
-	    check_interval => 30,
 	    requeued => [],
 	    ignored => []}, $class;
 	$o->{buildable} = ($state->{fetch_only} ? "DPB::SubEngine::NoBuild"
@@ -404,7 +403,7 @@ sub new
 	}
 	$o->{log} = DPB::Util->make_hot($state->logger->open("engine"));
 	$o->{stats} = DPB::Util->make_hot($state->logger->open("stats"));
-	$o->{last_check} = $o->{ts} - $o->{check_interval};
+	$o->{next_check} = $o->{ts};
 	$temp = DPB::Util->make_hot($state->logger->open("times"));
 	return $o;
 }
@@ -685,28 +684,32 @@ sub check_buildable
 	my ($self, $quick) = @_;
 	$self->{ts} = time();
 	print $temp "$$\@$self->{ts}: ";
-	if ($self->{ts} < $self->{last_check} + $self->{check_interval} && 
-	    $self->{buildable}->count > 0) {
+	if ($self->{ts} < $self->{next_check} && $self->{buildable}->count > 0) {
 	    	print $temp "-\n";
 		return;
 	}
+
+	# actual computation
 	my $start = Time::HiRes::time();
 	1 while $self->adjust_built;
 	$self->adjust_tobuild($quick);
-
 	my $end = Time::HiRes::time();
-	$self->{check_interval} = 100 * ($end - $start);
-	my $offset = $self->{ts} - 
-	    ($self->{last_check} + $self->{check_interval});
+
+	$self->stats;
+	# adjust values for next time
+	my $check_interval = 100 * ($end - $start);
+	my $offset = $self->{ts} - $self->{next_check};
 	$offset /= 2;
 	print $temp sprintf("%.2f ", $offset);
-	$self->{last_check} = $self->{ts};
+
+	$self->{next_check} = $self->{ts} + $check_interval;
 	if ($offset > 0) {
-	    $self->{last_check} -= $offset;
+	    $self->{next_check} -= $offset;
 	}
-	print $temp sprintf(" %.2f ", $self->{last_check});
-	print $temp sprintf("%.2f\n", $self->{check_interval});
-	$self->stats;
+	if ($self->{next_check} < $end) {
+		$self->{next_check} = $end;
+	}
+	print $temp sprintf(" %.2f %.2f\n", $self->{next_check}, $check_interval);
 }
 
 sub new_path
