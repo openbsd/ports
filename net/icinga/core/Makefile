@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.38 2012/11/29 22:34:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2012/12/27 14:51:54 rpe Exp $
 
-V = 1.8.2
+V =			1.8.3
 
 COMMENT-main =		network monitoring system (improved fork of Nagios)
 COMMENT-cgi =		cgi scripts for Icinga (classic Nagios-style UI)

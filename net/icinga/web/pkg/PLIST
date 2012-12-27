@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2012/10/18 20:04:58 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2012/12/27 14:51:54 rpe Exp $
 @conflict icinga-api-*
 @pkgpath net/icinga/core,-api
 app/
@@ -1049,6 +1049,7 @@ app/modules/Cronks/lib/js/Cronk/util/CronkUtil.js
 app/modules/Cronks/lib/js/Cronk/util/StaticContentUtil.js
 app/modules/Cronks/lib/js/Ext/
 app/modules/Cronks/lib/js/Ext/ux/
+app/modules/Cronks/lib/js/Ext/ux/FlashComponent.js
 app/modules/Cronks/lib/js/Ext/ux/LazyStore.js
 app/modules/Cronks/lib/js/Ext/ux/Portlet.js
 app/modules/Cronks/lib/js/Ext/ux/SlidingTabs.js
@@ -1578,6 +1579,7 @@ etc/schema/updates/mysql/mysql_v1-6_to_v1-6-2.sql
 etc/schema/updates/mysql/mysql_v1-7-0_to_v1-7-1.sql
 etc/schema/updates/mysql/mysql_v1-7-1_to_v1-7-2.sql
 etc/schema/updates/mysql/mysql_v1-7-2_to_v1-8-0.sql
+etc/schema/updates/mysql/mysql_v1-8-0_to_v-1-8-1.sql
 etc/schema/updates/oracle/
 etc/schema/updates/oracle/oracle_v1-0-3_to_v1-2.sql
 etc/schema/updates/oracle/oracle_v1-2_to_1-3.sql
@@ -1600,6 +1602,7 @@ etc/schema/updates/pgsql/pgsql_v1-6_to_v1-6-2.sql
 etc/schema/updates/pgsql/pgsql_v1-7-0_to_v1-7-1.sql
 etc/schema/updates/pgsql/pgsql_v1-7-1_to_v1-7-2.sql
 etc/schema/updates/pgsql/pgsql_v1-7-2_to_v1-8-0.sql
+etc/schema/updates/pgsql/pgsql_v1-8-0_to_v-1-8-1.sql
 lib/
 lib/agavi/
 lib/agavi/src/
@@ -3515,7 +3518,6 @@ lib/ext3/resources/css/xtheme-access.css
 lib/ext3/resources/css/xtheme-blue.css
 lib/ext3/resources/css/xtheme-gray.css
 lib/ext3/resources/css/yourtheme.css
-lib/ext3/resources/expressinstall.swf
 lib/ext3/resources/images/
 lib/ext3/resources/images/access/
 lib/ext3/resources/images/access/box/
