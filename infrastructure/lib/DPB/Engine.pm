@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.57 2012/12/25 20:41:41 espie Exp $
+# $OpenBSD: Engine.pm,v 1.58 2012/12/27 11:04:43 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -683,9 +683,10 @@ sub check_buildable
 {
 	my ($self, $quick) = @_;
 	$self->{ts} = time();
+	print $temp "$$\@$self->{ts}: ";
 	if ($self->{ts} < $self->{last_check} + $self->{check_interval} && 
 	    $self->{buildable}->count > 0) {
-	    	print $temp "$self->{ts}: -\n";
+	    	print $temp "-\n";
 		return;
 	}
 	my $start = Time::HiRes::time();
@@ -693,6 +694,9 @@ sub check_buildable
 	do {
 		$changes = 0;
 		$changes += $self->adjust_built if !$quick;
+	} while ($changes);
+	do {
+		$changes = 0;
 		$changes += $self->adjust_tobuild($quick);
 
 	} while ($changes);
@@ -701,8 +705,7 @@ sub check_buildable
 	my $offset = $self->{ts} - 
 	    ($self->{last_check} + $self->{check_interval});
 	$offset /= 2;
-	print $temp $self->{ts}, sprintf(": %.2f ", $offset);
-#	$self->{last_check} = $self->{ts};
+	print $temp sprintf("%.2f ", $offset);
 	$self->{last_check} = $self->{ts};
 	if ($offset > 0) {
 	    $self->{last_check} -= $offset;
