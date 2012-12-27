@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/09/25 21:22:51 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2012/12/27 18:44:42 jasper Exp $
 
 ONLY_FOR_ARCHS = 	alpha amd64 arm i386 hppa m68k m88k mips64 mips64el powerpc sparc64 sparc sh vax
 
@@ -26,5 +26,10 @@ USE_LIBTOOL =		Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
+# We know these values, so don't run the configure tests for them which may
+# take hours to complete on certain OpenBSD platforms, such as mips64.
+CONFIGURE_ENV +=	sv_cv_fault_linux_i386=no \
+			sv_cv_fault_linux_i386_old=no \
+			sv_cv_fault_linux_m68k=no
 
 .include <bsd.port.mk>
