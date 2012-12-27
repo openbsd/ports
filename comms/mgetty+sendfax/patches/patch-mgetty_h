@@ -1,0 +1,16 @@
+$OpenBSD: patch-mgetty_h,v 1.1 2012/12/27 08:46:33 jasper Exp $
+
+Add mips64 to the list of arches where pointers are longs, otherwise
+char gets typedef'd to an int as p_int and breaks in conf_mg.c.
+
+--- mgetty.h.orig	Thu Dec 27 09:38:47 2012
++++ mgetty.h	Thu Dec 27 09:39:09 2012
+@@ -198,7 +198,7 @@ typedef unsigned char uch;
+  */
+ #if defined(__alpha__) || defined(__sparc64__) || \
+ 	    defined(__ia64__) || defined(__s390x__) || defined(__x86_64__) || \
+-	    defined(__powerpc64__)
++	    defined(__powerpc64__) || defined(__mips64__)
+ # define PTR_IS_LONG
+ #endif
+ 
