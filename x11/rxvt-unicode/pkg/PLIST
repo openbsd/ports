@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/12/22 11:29:33 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/12/28 12:12:38 sthen Exp $
 @bin bin/urxvt
 @bin bin/urxvtc
 @bin bin/urxvtd
 lib/urxvt/
 lib/urxvt/perl/
+lib/urxvt/perl/background
 lib/urxvt/perl/bell-command
 lib/urxvt/perl/block-graphics-to-ascii
 lib/urxvt/perl/clipboard-osc
@@ -28,6 +29,30 @@ lib/urxvt/perl/tabbed
 lib/urxvt/perl/urxvt-popup
 lib/urxvt/perl/xim-onthespot
 lib/urxvt/urxvt.pm
+@man man/man1/urxvt-background.1
+@man man/man1/urxvt-bell-command.1
+@man man/man1/urxvt-block-graphics-to-ascii.1
+@man man/man1/urxvt-clipboard-osc.1
+@man man/man1/urxvt-confirm-paste.1
+@man man/man1/urxvt-digital-clock.1
+@man man/man1/urxvt-example-refresh-hooks.1
+@man man/man1/urxvt-extensions.1
+@man man/man1/urxvt-keysym-list.1
+@man man/man1/urxvt-kuake.1
+@man man/man1/urxvt-macosx-clipboard-native.1
+@man man/man1/urxvt-macosx-clipboard.1
+@man man/man1/urxvt-matcher.1
+@man man/man1/urxvt-option-popup.1
+@man man/man1/urxvt-overlay-osc.1
+@man man/man1/urxvt-readline.1
+@man man/man1/urxvt-remote-clipboard.1
+@man man/man1/urxvt-searchable-scrollback.1
+@man man/man1/urxvt-selection-autotransform.1
+@man man/man1/urxvt-selection-pastebin.1
+@man man/man1/urxvt-selection-popup.1
+@man man/man1/urxvt-selection.1
+@man man/man1/urxvt-tabbed.1
+@man man/man1/urxvt-xim-onthespot.1
 @man man/man1/urxvt.1
 @man man/man1/urxvtc.1
 @man man/man1/urxvtd.1
