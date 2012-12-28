@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.60 2012/12/27 16:23:17 espie Exp $
+# $OpenBSD: Engine.pm,v 1.61 2012/12/28 06:40:11 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -262,7 +262,6 @@ sub mark_as_done
 		$self->log('B', $v);
 	}
 	$self->remove($v);
-	delete $v->{new};
 }
 
 sub is_done
@@ -645,17 +644,14 @@ sub adjust_built
 
 sub adjust_tobuild
 {
-	my ($self, $quick) = @_;
+	my $self = shift;
 
 	my $has = {};
 	for my $v (values %{$self->{tobuild}}) {
-		next if $quick && !$v->{new};
 		$has->{$v} = $self->adjust($v, 'DEPENDS', 'BDEPENDS');
 	}
 
 	for my $v (values %{$self->{tobuild}}) {
-		next if $quick && !$v->{new};
-		delete $v->{new};
 		my $has = $has->{$v} + $self->adjust_extra($v, 'EXTRA', 'BEXTRA');
 
 		my $has2 = $self->adjust_distfiles($v);
@@ -681,7 +677,7 @@ sub adjust_tobuild
 use Time::HiRes;
 sub check_buildable
 {
-	my ($self, $quick) = @_;
+	my $self = shift;
 	$self->{ts} = time();
 	print $temp "$$\@$self->{ts}: ";
 	if ($self->{ts} < $self->{next_check} && $self->{buildable}->count > 0) {
@@ -692,7 +688,7 @@ sub check_buildable
 	# actual computation
 	my $start = Time::HiRes::time();
 	1 while $self->adjust_built;
-	$self->adjust_tobuild($quick);
+	$self->adjust_tobuild;
 	my $end = Time::HiRes::time();
 
 	$self->stats;

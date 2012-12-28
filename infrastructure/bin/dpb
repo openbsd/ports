@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.63 2012/12/24 17:24:46 espie Exp $
+# $OpenBSD: dpb,v 1.64 2012/12/28 06:40:11 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -584,7 +584,7 @@ sub handle_non_waiting_jobs
 		$state->engine->recheck_errors;
 	}
 	if (DPB::Core->avail) {
-		$state->engine->check_buildable(0);
+		$state->engine->check_buildable;
 		$checked = 1;
 	}
 	while ($keep_going && DPB::Core->avail && $state->engine->can_build) {
@@ -593,7 +593,7 @@ sub handle_non_waiting_jobs
 	while ($keep_going && DPB::Core::Fetcher->avail &&
 	    $state->engine->can_fetch) {
 	    	if (!$checked) {
-			$state->engine->check_buildable(1);
+			$state->engine->check_buildable;
 			$checked = 1;
 		}
 		$state->engine->start_new_fetch;
@@ -619,7 +619,7 @@ sub main_loop
 			handle_non_waiting_jobs(0);
 			if (!DPB::Core->running &&
 			    (!$keep_going || !$state->engine->can_build)) {
-				$state->engine->check_buildable(0);
+				$state->engine->check_buildable;
 				if (!$state->engine->can_build) {
 					last;
 				}
@@ -630,7 +630,7 @@ sub main_loop
 			if ($state->{fetch_only}) {
 				if (!DPB::Core::Fetcher->running &&
 				    (!$keep_going || !$state->engine->can_fetch)) {
-					$state->engine->check_buildable(0);
+					$state->engine->check_buildable;
 					if (!$state->engine->can_fetch) {
 						last;
 					}
@@ -690,7 +690,7 @@ if (!$state->opt('e') && !$occupied) {
 	$core->mark_ready;
 }
 
-$state->engine->check_buildable(1);
+$state->engine->check_buildable;
 
 if ($state->{scan_only}) {
 	# very shortened loop

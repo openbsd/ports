@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: BasePkgPath.pm,v 1.2 2012/05/16 08:22:22 espie Exp $
+# $OpenBSD: BasePkgPath.pm,v 1.3 2012/12/28 06:40:11 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -32,8 +32,7 @@ sub create
 	# XXX we want to preserve empty fields
 	my @list = split /,/, $fullpkgpath, -1;
 	my $pkgpath = shift @list;
-	my $o = bless { p => $pkgpath,
-		new => 1}, $class;
+	my $o = bless { p => $pkgpath} , $class;
 	$o->init;
 	for my $v (@list) {
 		if ($v =~ m/^\-/) {
@@ -169,7 +168,6 @@ sub may_create
 	} else {
 		$cache->{$k} = $n;
 	}
-	$n->{new} //= $o->{new};
 	$n->clone_properties($o);
 	$h->{$n} = $n;
 	return $n;
