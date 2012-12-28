@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2012/12/27 18:16:44 espie Exp $
+# $OpenBSD: Makefile,v 1.89 2012/12/28 14:32:00 espie Exp $
 
 ONLY_FOR_ARCHS = alpha i386 m68k sparc sparc64 powerpc vax amd64
 #BROKEN=adjust for types changes
@@ -130,11 +130,14 @@ post-install:
 .endif
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gcc/*/$V/include
 
-fucks_up =	am_cv_func_iconv=no
-fucks_up +=	ac_cv_prog_M4=/usr/bin/m4
-fucks_up += 	lt_cv_path_SED=/usr/bin/sed
-CONFIGURE_ENV +=  ${fucks_up}
-MAKE_ENV += ${fucks_up}
+EXTRA_ENV += am_cv_func_iconv=no JAR=no
+EXTRA_ENV += ac_cv_prog_M4=/usr/bin/m4
+EXTRA_ENV += ac_cv_header_magic_h=no
+EXTRA_ENV += lt_cv_path_SED=/usr/bin/sed
+MAKE_FLAGS +=	ac_cv_path_mkdir=/bin/mkdir
+
+CONFIGURE_ENV +=  ${EXTRA_ENV}
+MAKE_ENV += ${EXTRA_ENV}
 
 # Note: the configure target passes CFLAGS to the configure script anyways.
 
