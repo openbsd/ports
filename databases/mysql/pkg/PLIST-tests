@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.52 2012/10/01 09:44:51 giovanni Exp $
+@comment $OpenBSD: PLIST-tests,v 1.53 2012/12/28 02:03:58 brad Exp $
 @man man/man1/mysql-stress-test.pl.1
 @man man/man1/mysql-test-run.pl.1
 @man man/man1/mysql_client_test.1
@@ -121,6 +121,7 @@ share/mysql-test/extra/binlog_tests/innodb_stat.test
 share/mysql-test/extra/binlog_tests/insert_select-binlog.test
 share/mysql-test/extra/binlog_tests/mix_innodb_myisam_binlog.test
 share/mysql-test/extra/binlog_tests/mix_innodb_myisam_side_effects.test
+share/mysql-test/extra/binlog_tests/mysqlbinlog_row_engine.inc
 share/mysql-test/extra/rpl_tests/
 share/mysql-test/extra/rpl_tests/rpl_EE_err.test
 share/mysql-test/extra/rpl_tests/rpl_auto_increment.test
@@ -321,7 +322,6 @@ share/mysql-test/include/mix2_ucs2.inc
 share/mysql-test/include/mtr_check.sql
 share/mysql-test/include/mtr_warnings.sql
 share/mysql-test/include/mysqlbinlog_have_debug.inc
-share/mysql-test/include/mysqlbinlog_row_engine.inc
 share/mysql-test/include/mysqldump.inc
 share/mysql-test/include/mysqlhotcopy.inc
 share/mysql-test/include/mysqltest-x.inc
@@ -825,15 +825,8 @@ share/mysql-test/r/mysql_cp932.result
 share/mysql-test/r/mysql_protocols.result
 share/mysql-test/r/mysql_upgrade.result
 share/mysql-test/r/mysqladmin.result
-share/mysql-test/r/mysqlbinlog-cp932.result
 share/mysql-test/r/mysqlbinlog.result
-share/mysql-test/r/mysqlbinlog2.result
-share/mysql-test/r/mysqlbinlog_base64.result
-share/mysql-test/r/mysqlbinlog_row.result
 share/mysql-test/r/mysqlbinlog_row_big.result
-share/mysql-test/r/mysqlbinlog_row_innodb.result
-share/mysql-test/r/mysqlbinlog_row_myisam.result
-share/mysql-test/r/mysqlbinlog_row_trans.result
 share/mysql-test/r/mysqlcheck.result
 share/mysql-test/r/mysqldump-compat.result
 share/mysql-test/r/mysqldump-max.result
@@ -1245,6 +1238,13 @@ share/mysql-test/suite/binlog/r/binlog_mix_innodb_stat.result
 share/mysql-test/suite/binlog/r/binlog_mixed_failure_mixing_engines.result
 share/mysql-test/suite/binlog/r/binlog_mixed_load_data.result
 share/mysql-test/suite/binlog/r/binlog_multi_engine.result
+share/mysql-test/suite/binlog/r/binlog_mysqlbinlog-cp932.result
+share/mysql-test/suite/binlog/r/binlog_mysqlbinlog2.result
+share/mysql-test/suite/binlog/r/binlog_mysqlbinlog_base64.result
+share/mysql-test/suite/binlog/r/binlog_mysqlbinlog_row.result
+share/mysql-test/suite/binlog/r/binlog_mysqlbinlog_row_innodb.result
+share/mysql-test/suite/binlog/r/binlog_mysqlbinlog_row_myisam.result
+share/mysql-test/suite/binlog/r/binlog_mysqlbinlog_row_trans.result
 share/mysql-test/suite/binlog/r/binlog_old_versions.result
 share/mysql-test/suite/binlog/r/binlog_query_filter_rules.result
 share/mysql-test/suite/binlog/r/binlog_reset_master.result
@@ -1314,6 +1314,14 @@ share/mysql-test/suite/binlog/t/binlog_mix_innodb_stat.test
 share/mysql-test/suite/binlog/t/binlog_mixed_failure_mixing_engines.test
 share/mysql-test/suite/binlog/t/binlog_mixed_load_data.test
 share/mysql-test/suite/binlog/t/binlog_multi_engine.test
+share/mysql-test/suite/binlog/t/binlog_mysqlbinlog-cp932-master.opt
+share/mysql-test/suite/binlog/t/binlog_mysqlbinlog-cp932.test
+share/mysql-test/suite/binlog/t/binlog_mysqlbinlog2.test
+share/mysql-test/suite/binlog/t/binlog_mysqlbinlog_base64.test
+share/mysql-test/suite/binlog/t/binlog_mysqlbinlog_row.test
+share/mysql-test/suite/binlog/t/binlog_mysqlbinlog_row_innodb.test
+share/mysql-test/suite/binlog/t/binlog_mysqlbinlog_row_myisam.test
+share/mysql-test/suite/binlog/t/binlog_mysqlbinlog_row_trans.test
 share/mysql-test/suite/binlog/t/binlog_old_versions.test
 share/mysql-test/suite/binlog/t/binlog_query_filter_rules-master.opt
 share/mysql-test/suite/binlog/t/binlog_query_filter_rules.test
@@ -2732,6 +2740,7 @@ share/mysql-test/suite/innodb/r/innodb_bug12661768.result
 share/mysql-test/suite/innodb/r/innodb_bug13510739.result
 share/mysql-test/suite/innodb/r/innodb_bug13635833.result
 share/mysql-test/suite/innodb/r/innodb_bug14007649.result
+share/mysql-test/suite/innodb/r/innodb_bug14704286.result
 share/mysql-test/suite/innodb/r/innodb_bug21704.result
 share/mysql-test/suite/innodb/r/innodb_bug30423.result
 share/mysql-test/suite/innodb/r/innodb_bug30919.result
@@ -2796,6 +2805,7 @@ share/mysql-test/suite/innodb/t/innodb_bug12661768.test
 share/mysql-test/suite/innodb/t/innodb_bug13510739.test
 share/mysql-test/suite/innodb/t/innodb_bug13635833.test
 share/mysql-test/suite/innodb/t/innodb_bug14007649.test
+share/mysql-test/suite/innodb/t/innodb_bug14704286.test
 share/mysql-test/suite/innodb/t/innodb_bug21704.test
 share/mysql-test/suite/innodb/t/innodb_bug30423.test
 share/mysql-test/suite/innodb/t/innodb_bug30919-master.opt
@@ -4848,17 +4858,9 @@ share/mysql-test/t/mysql_delimiter_source.sql
 share/mysql-test/t/mysql_protocols.test
 share/mysql-test/t/mysql_upgrade.test
 share/mysql-test/t/mysqladmin.test
-share/mysql-test/t/mysqlbinlog-cp932-master.opt
-share/mysql-test/t/mysqlbinlog-cp932.test
 share/mysql-test/t/mysqlbinlog-master.opt
 share/mysql-test/t/mysqlbinlog.test
-share/mysql-test/t/mysqlbinlog2.test
-share/mysql-test/t/mysqlbinlog_base64.test
-share/mysql-test/t/mysqlbinlog_row.test
 share/mysql-test/t/mysqlbinlog_row_big.test
-share/mysql-test/t/mysqlbinlog_row_innodb.test
-share/mysql-test/t/mysqlbinlog_row_myisam.test
-share/mysql-test/t/mysqlbinlog_row_trans.test
 share/mysql-test/t/mysqlcheck.test
 share/mysql-test/t/mysqldump-compat.opt
 share/mysql-test/t/mysqldump-compat.test
