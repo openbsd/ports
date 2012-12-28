@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/11/10 15:01:15 stsp Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.4 2012/12/28 12:26:39 sthen Exp $
 @bin bin/e-notify-send
 @bin bin/e_dbus_async_client_test
 @bin bin/e_dbus_async_server_test
@@ -21,21 +20,20 @@ include/e_dbus-1/E_Ofono.h
 include/e_dbus-1/E_Ukit.h
 include/e_dbus-1/connman0_7x/
 include/e_dbus-1/connman0_7x/E_Connman.h
-lib/libebluez.a
 lib/libebluez.la
-lib/libeconnman0_7x.a
+@lib lib/libebluez.so.${LIBebluez_VERSION}
 lib/libeconnman0_7x.la
-lib/libedbus.a
+@lib lib/libeconnman0_7x.so.${LIBeconnman0_7x_VERSION}
 lib/libedbus.la
-lib/libehal.a
+@lib lib/libedbus.so.${LIBedbus_VERSION}
 lib/libehal.la
-lib/libenotify.a
+@lib lib/libehal.so.${LIBehal_VERSION}
 lib/libenotify.la
-lib/libeofono.a
+@lib lib/libenotify.so.${LIBenotify_VERSION}
 lib/libeofono.la
-lib/libeukit.a
+@lib lib/libeofono.so.${LIBeofono_VERSION}
 lib/libeukit.la
-lib/pkgconfig/
+@lib lib/libeukit.so.${LIBeukit_VERSION}
 lib/pkgconfig/ebluez.pc
 lib/pkgconfig/econnman-0.7x.pc
 lib/pkgconfig/edbus.pc

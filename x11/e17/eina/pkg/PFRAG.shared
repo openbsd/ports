@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2011/01/16 00:31:30 laurent Exp $
-@lib lib/libeina.so.${LIBeina_VERSION}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.14 2012/10/23 09:36:19 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.15 2012/12/28 12:26:38 sthen Exp $
 
 CATEGORIES ?=		x11
 
@@ -18,6 +18,9 @@ CONFIGURE_STYLE ?=	gnu
 MAINTAINER ?=		Laurent FANIS <laurent@openbsd.org>
 
 NO_REGRESS ?=		Yes
+
+SHARED_ONLY ?=		Yes
+LIBTOOL_FLAGS ?=	--tag=disable-static
 
 #FLAVORS = debug
 #FLAVOR ?=

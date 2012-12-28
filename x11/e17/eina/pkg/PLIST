@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/11/10 15:01:15 stsp Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.4 2012/12/28 12:26:39 sthen Exp $
 include/eina-1/
 include/eina-1/Eina.h
 include/eina-1/eina/
@@ -69,8 +68,8 @@ include/eina-1/eina/eina_ustringshare.h
 include/eina-1/eina/eina_value.h
 include/eina-1/eina/eina_xattr.h
 include/eina-1/eina_config.h
-lib/libeina.a
 lib/libeina.la
+@lib lib/libeina.so.${LIBeina_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/eina.pc
 @comment share/eina/

@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2012/11/10 14:54:24 stsp Exp $
-@lib lib/libeio.so.${LIBeio_VERSION}

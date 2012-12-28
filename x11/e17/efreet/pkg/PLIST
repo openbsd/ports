@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/11/10 15:01:15 stsp Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.8 2012/12/28 12:26:39 sthen Exp $
 include/efreet-1/
 include/efreet-1/Efreet.h
 include/efreet-1/Efreet_Mime.h
@@ -14,13 +13,12 @@ include/efreet-1/efreet_utils.h
 lib/efreet/
 @bin lib/efreet/efreet_desktop_cache_create
 @bin lib/efreet/efreet_icon_cache_create
-lib/libefreet.a
 lib/libefreet.la
-lib/libefreet_mime.a
+@lib lib/libefreet.so.${LIBefreet_VERSION}
 lib/libefreet_mime.la
-lib/libefreet_trash.a
+@lib lib/libefreet_mime.so.${LIBefreet_mime_VERSION}
 lib/libefreet_trash.la
-lib/pkgconfig/
+@lib lib/libefreet_trash.so.${LIBefreet_trash_VERSION}
 lib/pkgconfig/efreet-mime.pc
 lib/pkgconfig/efreet-trash.pc
 lib/pkgconfig/efreet.pc

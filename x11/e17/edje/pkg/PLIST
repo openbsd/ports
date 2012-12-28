@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/12/24 13:11:03 stsp Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.9 2012/12/28 12:26:39 sthen Exp $
 @bin bin/edje_cc
 @bin bin/edje_decc
 @bin bin/edje_external_inspector
@@ -14,8 +13,8 @@ include/edje-1/Edje_Edit.h
 lib/edje/
 lib/edje/utils/
 @bin lib/edje/utils/epp
-lib/libedje.a
 lib/libedje.la
+@lib lib/libedje.so.${LIBedje_VERSION}
 lib/pkgconfig/edje.pc
 share/edje/
 share/edje/examples/

@@ -1,11 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/11/10 15:03:03 stsp Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.5 2012/12/28 12:26:39 sthen Exp $
 @bin bin/eet
 include/eet-1/
 include/eet-1/Eet.h
-lib/libeet.a
 lib/libeet.la
-lib/pkgconfig/
+@lib lib/libeet.so.${LIBeet_VERSION}
 lib/pkgconfig/eet.pc
 share/eet/
 share/eet/examples/
