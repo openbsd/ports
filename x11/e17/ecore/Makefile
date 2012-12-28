@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2012/12/28 12:26:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2012/12/28 14:27:57 stsp Exp $
 
 COMMENT =		core event/X abstraction layer
 DISTNAME =		ecore-1.7.4
 
-REVISION = 		0
+REVISION = 		1
 EPOCH =			2
 
 SO_VERSION =		3.0		# 8.4
@@ -26,12 +26,13 @@ USE_LIBTOOL =		Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender Xss Xtst cares crypto curl eet eina
-WANTLIB += evas expat ffi fontconfig freetype fribidi glib-2.0
-WANTLIB += gobject-2.0 gthread-2.0 harfbuzz icudata icule icuuc
-WANTLIB += idn jpeg m pcre pthread ssl xcb z
+WANTLIB += evas expat ffi fontconfig freetype fribidi glib-2.0 gio-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 harfbuzz ibus-1.0 icudata icule
+WANTLIB += icuuc idn jpeg m pcre pthread ssl xcb z
 
 LIB_DEPENDS =		devel/glib2 \
 			devel/fribidi \
+			inputmethods/ibus \
 			net/curl \
 			net/libcares \
 			x11/e17/evas>=3.0
