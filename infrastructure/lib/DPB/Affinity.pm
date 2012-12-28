@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Affinity.pm,v 1.1 2012/12/24 17:24:46 espie Exp $
+# $OpenBSD: Affinity.pm,v 1.2 2012/12/28 21:09:45 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -34,7 +34,7 @@ sub new
 
 	File::Path::make_path($dir);
 	my $o = bless {dir => $dir}, $class;
-	$o->retrieve_existing_markers;
+	$o->retrieve_existing_markers($state->logger);
 	return $o;
 }
 
@@ -80,7 +80,8 @@ sub finished
 
 sub retrieve_existing_markers
 {
-	my $self = shift;
+	my ($self, $logger) = @_;
+	my $log = $logger->open('affinity');
 	opendir(my $d, $self->{dir}) or return;
 	while (my $e = readdir $d) {
 		next unless -f "$self->{dir}/$e";
@@ -100,7 +101,10 @@ sub retrieve_existing_markers
 
 		my $v = DPB::PkgPath->new($pkgpath);
 		$v->{affinity} = $hostname;
+		print $log $v->fullpkgpath, " => ", $hostname, "\n";
 	}
+	print $log "-"x70, "\n";
+	close $log;
 }
 
 sub simplifies_to
