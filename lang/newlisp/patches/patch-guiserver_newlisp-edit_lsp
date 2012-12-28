@@ -1,6 +1,6 @@
-$OpenBSD: patch-guiserver_newlisp-edit_lsp,v 1.1 2012/12/28 14:44:56 jasper Exp $
+$OpenBSD: patch-guiserver_newlisp-edit_lsp,v 1.2 2012/12/28 14:48:42 jasper Exp $
 --- guiserver/newlisp-edit.lsp.orig	Tue Jul 19 23:32:22 2011
-+++ guiserver/newlisp-edit.lsp	Fri Dec 28 15:41:34 2012
++++ guiserver/newlisp-edit.lsp	Fri Dec 28 15:46:19 2012
 @@ -1,4 +1,4 @@
 -#!/usr/bin/newlisp
 +#!${PREFIX}/bin/newlisp
@@ -25,3 +25,16 @@ $OpenBSD: patch-guiserver_newlisp-edit_lsp,v 1.1 2012/12/28 14:44:56 jasper Exp 
  	)
  )
  
+@@ -1446,11 +1446,7 @@
+ 		; all other UNIX
+ 		(true 
+ 			(set 'files '(
+-					"/usr/bin/sensible-browser"
+-					"/usr/bin/x-www-browser"
+-					"/usr/bin/mozilla"
+-					"/usr/bin/firefox"
+-					"/usr/bin/konqueror"
++					"${PREFIX}/bin/xdg-open"
+ 				))
+ 			(set 'prog (find true (map file? files)))
+ 			(if prog

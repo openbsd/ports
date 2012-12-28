@@ -1,10 +1,10 @@
-#       $OpenBSD: Makefile,v 1.5 2012/12/28 14:44:56 jasper Exp $
+#       $OpenBSD: Makefile,v 1.6 2012/12/28 14:48:42 jasper Exp $
 # Makefile prepared Sat Feb 13 11:r7:14 PST 2010 by Ted Walther <ted@reactor-core.org>
 
 COMMENT=	newLISP is a LISP like, general purpose scripting language
 V=		10.3.2
 DISTNAME=	newlisp-$V
-REVISION=	0
+REVISION=	1
 CATEGORIES=	lang
 HOMEPAGE=	http://newlisp.org/
 MAINTAINER=	Ted Walther <ted@reactor-core.org>
@@ -19,6 +19,8 @@ WANTLIB += c m ncurses readline
 
 MASTER_SITES=		http://dpkg.reactor-core.org/port/
 EXTRACT_SUFX=		.tgz
+
+RUN_DEPENDS=		devel/xdg-utils
 
 SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	simple
