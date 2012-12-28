@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/11/18 10:53:30 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/12/28 18:13:51 rpe Exp $
 awstats/
 awstats/README.TXT
 awstats/data/
@@ -80,6 +80,10 @@ awstats/tools/httpd_conf
 @sample conf/modules.sample/awstats.conf
 awstats/tools/logresolvemerge.pl
 awstats/tools/maillogconvert.pl
+awstats/tools/nginx/
+awstats/tools/nginx/README.txt
+awstats/tools/nginx/awstats-fcgi.php
+awstats/tools/nginx/awstats-nginx.conf
 awstats/tools/urlaliasbuilder.pl
 awstats/tools/webmin/
 awstats/tools/webmin/awstats-1.9.wbm
@@ -92,6 +96,7 @@ awstats/tools/xslt/awstats.datademo2.xslt
 awstats/tools/xslt/awstats.xsd
 awstats/wwwroot/
 awstats/wwwroot/cgi-bin/
+awstats/wwwroot/cgi-bin/awdownloadcsv.pl
 awstats/wwwroot/cgi-bin/awredir.pl
 awstats/wwwroot/cgi-bin/awstats.model.conf
 @sample ${SYSCONFDIR}/awstats/
@@ -394,6 +399,7 @@ awstats/wwwroot/icon/flags/as.png
 awstats/wwwroot/icon/flags/at.png
 awstats/wwwroot/icon/flags/au.png
 awstats/wwwroot/icon/flags/aw.png
+awstats/wwwroot/icon/flags/ax.png
 awstats/wwwroot/icon/flags/az.png
 awstats/wwwroot/icon/flags/ba.png
 awstats/wwwroot/icon/flags/bb.png
@@ -466,6 +472,7 @@ awstats/wwwroot/icon/flags/gb.png
 awstats/wwwroot/icon/flags/gd.png
 awstats/wwwroot/icon/flags/ge.png
 awstats/wwwroot/icon/flags/gf.png
+awstats/wwwroot/icon/flags/gg.png
 awstats/wwwroot/icon/flags/gh.png
 awstats/wwwroot/icon/flags/gi.png
 awstats/wwwroot/icon/flags/gl.png
@@ -529,6 +536,7 @@ awstats/wwwroot/icon/flags/ly.png
 awstats/wwwroot/icon/flags/ma.png
 awstats/wwwroot/icon/flags/mc.png
 awstats/wwwroot/icon/flags/md.png
+awstats/wwwroot/icon/flags/me.png
 awstats/wwwroot/icon/flags/mg.png
 awstats/wwwroot/icon/flags/mil.png
 awstats/wwwroot/icon/flags/mk.png
@@ -593,6 +601,7 @@ awstats/wwwroot/icon/flags/se.png
 awstats/wwwroot/icon/flags/sg.png
 awstats/wwwroot/icon/flags/si.png
 awstats/wwwroot/icon/flags/sk.png
+awstats/wwwroot/icon/flags/sl.png
 awstats/wwwroot/icon/flags/sm.png
 awstats/wwwroot/icon/flags/sn.png
 awstats/wwwroot/icon/flags/sr.png
@@ -646,7 +655,9 @@ awstats/wwwroot/icon/mime/archive.png
 awstats/wwwroot/icon/mime/audio.png
 awstats/wwwroot/icon/mime/crystal.png
 awstats/wwwroot/icon/mime/css.png
+awstats/wwwroot/icon/mime/csv.png
 awstats/wwwroot/icon/mime/doc.png
+awstats/wwwroot/icon/mime/document.png
 awstats/wwwroot/icon/mime/dotnet.png
 awstats/wwwroot/icon/mime/encrypt.png
 awstats/wwwroot/icon/mime/flash.png
@@ -672,6 +683,7 @@ awstats/wwwroot/icon/mime/rar.png
 awstats/wwwroot/icon/mime/readme.txt
 awstats/wwwroot/icon/mime/real.png
 awstats/wwwroot/icon/mime/rss.png
+awstats/wwwroot/icon/mime/runtime.png
 awstats/wwwroot/icon/mime/script.png
 awstats/wwwroot/icon/mime/svg.png
 awstats/wwwroot/icon/mime/text.png
@@ -680,6 +692,7 @@ awstats/wwwroot/icon/mime/unknown.png
 awstats/wwwroot/icon/mime/video.png
 awstats/wwwroot/icon/mime/wmv.png
 awstats/wwwroot/icon/mime/xls.png
+awstats/wwwroot/icon/mime/xsl.png
 awstats/wwwroot/icon/os/
 awstats/wwwroot/icon/os/aix.png
 awstats/wwwroot/icon/os/amigaos.png
@@ -729,6 +742,12 @@ awstats/wwwroot/icon/os/linuxzenwalk.png
 awstats/wwwroot/icon/os/mac.png
 awstats/wwwroot/icon/os/macintosh.png
 awstats/wwwroot/icon/os/macosx.png
+awstats/wwwroot/icon/os/macosx4.png
+awstats/wwwroot/icon/os/macosx5.png
+awstats/wwwroot/icon/os/macosx6.png
+awstats/wwwroot/icon/os/macosx7.png
+awstats/wwwroot/icon/os/macosx8.png
+awstats/wwwroot/icon/os/macosx9.png
 awstats/wwwroot/icon/os/netbsd.png
 awstats/wwwroot/icon/os/netware.png
 awstats/wwwroot/icon/os/next.png

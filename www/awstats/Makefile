@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2012/12/09 22:05:25 rpe Exp $
+# $OpenBSD: Makefile,v 1.4 2012/12/28 18:13:51 rpe Exp $
 
 COMMENT=		free real-time logfile analyzer
 
-DISTNAME=		awstats-7.0
-REVISION=		1
+DISTNAME=		awstats-7.1
 
 CATEGORIES=		www
 
@@ -56,6 +55,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}/data
 	cp -R ${WRKSRC}/* ${INSTDIR}/
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
+	find ${INSTDIR} -name '*.pl' -type f -exec chmod u=rwx,go=rx {} +
 	find ${INSTDIR} ! -name '*.pl' -type f -exec chmod u=rw,go=r {} +
 
 .include <bsd.port.mk>
