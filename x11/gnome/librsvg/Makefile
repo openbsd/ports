@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2012/12/27 18:56:59 espie Exp $
+# $OpenBSD: Makefile,v 1.83 2012/12/28 09:54:47 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	SAX-based render library for SVG files
 
 GNOME_PROJECT=	librsvg
 GNOME_VERSION=	2.36.4
+REVISION=	0
 
 SHARED_LIBS +=	rsvg-2         38.0           # .38.0
 
@@ -30,7 +31,7 @@ WANTLIB += xcb-render xcb-shm xml2 z
 MODULES=	devel/gettext \
 		x11/gnome
 
-MODGNOME_TOOLS=	goi
+MODGNOME_TOOLS=	goi vala
 
 LIB_DEPENDS=	graphics/gdk-pixbuf2 \
 		devel/pango \
@@ -39,6 +40,25 @@ LIB_DEPENDS=	graphics/gdk-pixbuf2 \
 
 CONFIGURE_ARGS=	--disable-gtk-theme \
 		--disable-tools \
-		--disable-Bsymbolic
+		--disable-Bsymbolic \
+		--disable-rsvg-view
+
+### https://bugzilla.gnome.org/show_bug.cgi?id=653323
+AUTOCONF_VERSION=2.69
+AUTOMAKE_VERSION=1.12
+BUILD_DEPENDS +=${MODGNU_AUTOCONF_DEPENDS} \
+		${MODGNU_AUTOMAKE_DEPENDS} \
+		devel/libtool \
+		textproc/gtk-doc
+
+pre-configure:
+	cd ${WRKSRC} && env \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		autoreconf -i
+###
+
+post-install:
+	rm ${PREFIX}/lib/gdk-pixbuf-2.0/2.10.0/loaders/*.{a,la}
 
 .include <bsd.port.mk>
