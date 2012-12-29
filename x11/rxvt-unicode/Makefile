@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2012/12/28 12:12:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2012/12/29 13:55:35 sthen Exp $
 
 COMMENT =	clone of rxvt with Unicode and Xft support
 
 DISTNAME =	rxvt-unicode-9.16
+REVISION =	0
 CATEGORIES =	x11
 
 EXTRACT_SUFX =	.tar.bz2
@@ -29,13 +30,13 @@ LIB_DEPENDS =	devel/startup-notification \
 		graphics/gdk-pixbuf2
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	--enable-utmp \
-			--enable-wtmp \
-			--enable-256-color \
+CONFIGURE_ARGS =	--enable-256-color \
 			--enable-perl \
 			--enable-pixbuf \
 			--enable-startup-notification \
 			--with-term=rxvt-256color
+# XXX utmp recording should also be enabled, as per rxvt (which will
+# also require setgid utmp), but this currently fails
 
 # missing locale support
 CONFIGURE_ARGS +=	--disable-xim
