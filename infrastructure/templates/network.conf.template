@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.177 2012/12/29 07:42:37 jasper Exp $
+# $OpenBSD: network.conf.template,v 1.178 2012/12/29 07:58:03 jasper Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -83,18 +83,14 @@ MASTER_SITE_GCC+=	\
 	ftp://ftp.dti.ad.jp/pub/lang/gcc/ \
 	http://gcc.fyxm.net/ \
 	http://www.mirrorservice.org/sites/sourceware.org/pub/gcc/ \
-	http://gcc-uk.internet.bs/ \
-	http://mirrorpool.in/Gcc/ \
-	http://mirror-fpt-telecom.fpt.net/gcc/
+	http://gcc-uk.internet.bs/
 
 MASTER_SITE_XCONTRIB+=	\
 	http://ftp.gwdg.de/pub/x11/x.org/contrib/ \
 	ftp://ftp.x.org/contrib/ \
 	http://ftp.sunet.se/pub/X11/ftp.x.org/contrib/ \
 	http://ftp.kddilabs.jp/X11/ftp.x.org/contrib/ \
-	ftp://ftp.uvsq.fr/pub/X11/x.org/contrib/ \
-	http://ftp.chg.ru/pub/X11/x.org/contrib/ \
-	ftp://sunsite.sut.ac.jp/pub/archives/X11/contrib/
+	ftp://ftp.uvsq.fr/pub/X11/x.org/contrib/
 
 MASTER_SITE_R5CONTRIB+=	\
 	${MASTER_SITE_XCONTRIB:=../R5contrib/}
@@ -110,10 +106,9 @@ MASTER_SITE_SUNSITE+=	\
 	ftp://ftp.cs.tu-berlin.de/pub/linux/Mirrors/sunsite.unc.edu/ \
 	ftp://ftp.uvsq.fr/pub/linux/sunsite/ \
 	ftp://ftp.nvg.ntnu.no/pub/mirrors/metalab.unc.edu/ \
-	ftp://ftp.icm.edu.pl/vol/rzm1/linux-sunsite/ \
+	http://ftp.icm.edu.pl/vol/rzm1/linux-sunsite/ \
 	ftp://ftp.cse.cuhk.edu.hk/pub/Linux/ \
-	http://ftp.nluug.nl/metalab/ \
-	http://ftp.chg.ru/pub/Linux/sunsite/
+	http://ftp.nluug.nl/metalab/
 
 # XXX  We ought to be using full logical directory names in all the
 # sourceforge-hosted ports, rather than relying on the redirector to
@@ -132,8 +127,6 @@ MASTER_SITE_GNOME+=	\
 	http://ftp.belnet.be/ftp.gnome.org/ \
 	http://ftp.df.lth.se/pub/gnome/ \
 	http://gnome.mirrors.pair.com/ \
-	http://linorg.usp.br/gnome/ \
-	http://mirror.aarnet.edu.au/pub/GNOME/ \
 	http://ftp.gnome.org/pub/GNOME/ \
 	ftp://ftp.cse.buffalo.edu/pub/Gnome/ \
 	ftp://gnome.mirrors.pair.com/ \
@@ -158,7 +151,6 @@ MASTER_SITE_TEX_CTAN+=	\
 	http://ftp.kddilabs.jp/CTAN/ \
 	http://mirrors.dotsrc.org/ctan/ \
 	http://ctan.tug.org/tex-archive/ \
-	http://ftp.chg.ru/pub/TeX/CTAN/ \
 	http://ftp.dante.de/tex-archive/ \
 	ftp://ftp.uvsq.fr/pub/TeX/CTAN/ \
 	http://ftp.sunet.se/pub/text-processing/TeX/ \
@@ -173,7 +165,6 @@ MASTER_SITE_KDE+=	\
 	http://ftp.uvsq.fr/pub/X11/kde/ \
 	http://ftp.funet.fi/pub/mirrors/ftp.kde.org/pub/kde/ \
 	http://ftp.sunet.se/pub/X11/kde/ \
-	http://ftp.chg.ru/pub/X11/kde/ \
 	ftp://ftp.kde.org/pub/kde/ \
 	ftp://ftp.fu-berlin.de/pub/unix/X11/gui/kde/
 
