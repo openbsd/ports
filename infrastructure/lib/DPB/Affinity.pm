@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Affinity.pm,v 1.2 2012/12/28 21:09:45 espie Exp $
+# $OpenBSD: Affinity.pm,v 1.3 2012/12/29 19:14:28 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -101,9 +101,8 @@ sub retrieve_existing_markers
 
 		my $v = DPB::PkgPath->new($pkgpath);
 		$v->{affinity} = $hostname;
-		print $log $v->fullpkgpath, " => ", $hostname, "\n";
+		print $log "$$:", $v->fullpkgpath, " => ", $hostname, "\n";
 	}
-	print $log "-"x70, "\n";
 	close $log;
 }
 
