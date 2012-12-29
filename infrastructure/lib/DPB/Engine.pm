@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.61 2012/12/28 06:40:11 espie Exp $
+# $OpenBSD: Engine.pm,v 1.62 2012/12/29 19:15:37 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -119,8 +119,8 @@ sub start
 	}
 	my $o = $self->sorted($core);
 
-	# note we don't remove stuff from the queue until needed, so
-	# mismatches has a copy of stuff that's still there.
+	# note we don't actually remove stuff from the queue until needed, 
+	# so mismatches holds a copy of stuff that's still there.
 	my @mismatches = ();
 
 	# first pass, try to find something we can build
@@ -142,6 +142,15 @@ sub start
 		if (defined $v->{affinity} && !$core->matches($v->{affinity})) {
 			$self->log('A', $v, 
 			    " ".$core->hostname." ".$v->{affinity});
+			# try to start them anyways, on the "right" core
+			my $core2 = DPB::Core->get_affinity($v->{affinity});
+			if (defined $core2) {
+				if ($self->lock_and_start_build($core2, $v)) {
+					next;
+				} else {
+					$core2->mark_ready;
+				}
+			}
 			push(@mismatches, $v);
 			next;
 		}
@@ -158,7 +167,7 @@ sub start
 			return;
 		}
 	}
-	# couldn't build anything, so we give back the core.
+	# couldn't build anything, don't forget to give back the core.
 	$core->mark_ready;
 }
 
@@ -377,8 +386,6 @@ package DPB::Engine;
 use DPB::Heuristics;
 use DPB::Util;
 
-my $temp;
-
 sub new
 {
 	my ($class, $state) = @_;
@@ -403,7 +410,7 @@ sub new
 	$o->{log} = DPB::Util->make_hot($state->logger->open("engine"));
 	$o->{stats} = DPB::Util->make_hot($state->logger->open("stats"));
 	$o->{next_check} = $o->{ts};
-	$temp = DPB::Util->make_hot($state->logger->open("times"));
+	$o->{perf} = DPB::Util->make_hot($state->logger->open("engine-perf"));
 	return $o;
 }
 
@@ -679,6 +686,7 @@ sub check_buildable
 {
 	my $self = shift;
 	$self->{ts} = time();
+	my $temp = $self->{perf};
 	print $temp "$$\@$self->{ts}: ";
 	if ($self->{ts} < $self->{next_check} && $self->{buildable}->count > 0) {
 	    	print $temp "-\n";
