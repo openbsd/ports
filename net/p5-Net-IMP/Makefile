@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/09/26 18:37:42 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2012/12/29 14:22:31 bluhm Exp $
 
 COMMENT =		module for network data inspection and modification
 
-DISTNAME =		Net-IMP-0.45
+DISTNAME =		Net-IMP-0.52
 
 CATEGORIES =		net
 
