@@ -1,0 +1,20 @@
+$OpenBSD: patch-t_funcs_t,v 1.1 2012/12/29 16:31:21 bluhm Exp $
+--- t/funcs.t.orig	Thu Sep 27 18:32:39 2012
++++ t/funcs.t	Mon Oct  1 02:18:49 2012
+@@ -15,16 +15,6 @@ BEGIN {
+ }
+ my $manip_bad;
+ my $manip_notz;
+-BEGIN {
+-    $manip_bad = eval('use Date::Manip (); 1')? 0 : 1;
+-    unless ($manip_bad)
+-    {
+-        # If Date::Manip can't determine the time zone, it'll bomb out of the tests.
+-        $manip_notz = eval ('Date::Manip::Date_TimeZone (); 1')? 0 : 1;
+-    }
+-    delete $INC{'Date/Manip.pm'};
+-    %Date::Manip:: = ();
+-}
+ 
+ # Get day/month names in current locale
+ my ($Thursday, $Thu, $June, $Jun);

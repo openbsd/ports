@@ -1,0 +1,25 @@
+$OpenBSD: patch-t_manip_t,v 1.1 2012/12/29 16:31:21 bluhm Exp $
+--- t/manip.t.orig	Thu Sep 27 18:32:39 2012
++++ t/manip.t	Mon Oct  1 02:19:07 2012
+@@ -6,21 +6,6 @@ use Test::More tests => 6;
+ BEGIN { $Time::Format::NOXS = 1 }
+ BEGIN { use_ok 'Time::Format', qw(%manip) }
+ my $manip_bad;
+-BEGIN
+-{
+-    unless (eval 'use Date::Manip (); 1')
+-    {
+-        $manip_bad = 'Date::Manip is not available';
+-    }
+-    else
+-    {
+-        # If Date::Manip can't determine the time zone, it'll bomb out of the tests.
+-        $manip_bad = 'Date::Manip cannot determine time zone'
+-            unless eval 'Date::Manip::Date_TimeZone(); 1';
+-    }
+-    delete $INC{'Date/Manip.pm'};
+-    %Date::Manip:: = ();
+-}
+ 
+ my $t = 'first thursday in june 2003';
+ 

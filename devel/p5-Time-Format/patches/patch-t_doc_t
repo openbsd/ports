@@ -1,0 +1,21 @@
+$OpenBSD: patch-t_doc_t,v 1.1 2012/12/29 16:31:21 bluhm Exp $
+--- t/doc.t.orig	Thu Sep 27 18:32:39 2012
++++ t/doc.t	Mon Oct  1 02:18:22 2012
+@@ -11,17 +11,6 @@ my $tl_notok;
+ BEGIN { $tl_notok = eval('use Time::Local; 1')? 0 : 1 }
+ my $dm_notok;
+ my $dm_notz;
+-BEGIN
+-{
+-    $dm_notok = eval('use Date::Manip (); 1')? 0 : 1;
+-    unless ($dm_notok)
+-    {
+-        # If Date::Manip can't determine the time zone, it'll bomb out of the tests.
+-        $dm_notz = eval('Date::Manip::Date_TimeZone (); 1')? 0 : 1;
+-    }
+-    delete $INC{'Date/Manip.pm'};
+-    %Date::Manip:: = ();
+-}
+ 
+ # Were all variables imported? (3)
+ is ref tied %time,     'Time::Format'   =>  '%time imported';
