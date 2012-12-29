@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2012/09/25 21:39:40 bluhm Exp $
+# $OpenBSD: Makefile,v 1.41 2012/12/29 18:06:20 bluhm Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		perl module for using OpenSSL
 
-DISTNAME =		Net-SSLeay-1.49
+DISTNAME =		Net-SSLeay-1.51
 
 CATEGORIES =		security
 
@@ -29,6 +29,10 @@ REGRESS_DEPENDS =	devel/p5-Test-Exception \
 
 MODCPAN_EXAMPLES =	Yes
 SRCDIR = 		${WRKSRC}/${MODCPAN_EXAMPLES_DIST}
+
+# in Net-SSLeay-1.51.tar.gz some left over directories confuse the ports build
+post-extract:
+	find ${WRKSRC} -name 'PaxHeaders.*' -print0 | xargs -0 rm -r --
 
 post-install:
 	${MODCPAN_POST_INSTALL}
