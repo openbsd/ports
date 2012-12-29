@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2012/12/16 12:09:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2012/12/29 20:49:17 landry Exp $
 
 ONLY_FOR_ARCHS=		${GCC4_ARCHS}
 
+BROKEN-sparc64 = 	error: cannot convert 'int*' to 'volatile _Atomic_word*'
 SHARED_ONLY=		Yes
 
 COMMENT-main=		library of programming functions for real time cv
