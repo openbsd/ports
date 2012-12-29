@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.21 2012/12/24 17:24:46 espie Exp $
+# $OpenBSD: Core.pm,v 1.22 2012/12/29 19:14:51 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -677,6 +677,22 @@ sub get
 		@$a = sort {$b->sf <=> $a->sf} @$a;
 	}
 	return shift @$a;
+}
+
+sub get_affinity
+{
+	my ($self, $host) = @_;
+	my $l = [];
+	while (@$available > 0) {
+		my $core = shift @$available;
+		if ($core->hostname eq $host) {
+			push(@$available, @$l);
+			return $core;
+		}
+		push(@$l, $core);
+	}
+	$available = $l;
+	return undef
 }
 
 my @all_cores = ();
