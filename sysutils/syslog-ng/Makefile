@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2012/11/28 07:04:35 steven Exp $
+# $OpenBSD: Makefile,v 1.32 2012/12/29 21:04:54 landry Exp $
 
 COMMENT=	syslogd replacement
 
@@ -39,6 +39,7 @@ LIB_DEPENDS = 	devel/glib2 \
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--enable-tcp-wrapper \
 			--with-pidfile-dir=/var/run \
+			--with-json=json-glib \
 			--with-libmongo-client=no \
 			--disable-mongodb \
 			--with-ivykis=system \
