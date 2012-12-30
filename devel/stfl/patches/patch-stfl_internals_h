@@ -1,0 +1,15 @@
+$OpenBSD: patch-stfl_internals_h,v 1.1.1.1 2012/12/30 17:59:36 ajacoutot Exp $
+--- stfl_internals.h.orig	Sun Dec 30 09:25:50 2012
++++ stfl_internals.h	Sun Dec 30 09:26:11 2012
+@@ -28,7 +28,11 @@ extern "C" {
+ #endif
+ 
+ #include "stfl.h"
++#ifdef __OpenBSD__
++#include <curses.h>
++#else
+ #include <ncursesw/ncurses.h>
++#endif
+ #include <pthread.h>
+ 
+ struct stfl_widget_type;
