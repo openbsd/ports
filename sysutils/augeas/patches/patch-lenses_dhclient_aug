@@ -1,0 +1,15 @@
+$OpenBSD: patch-lenses_dhclient_aug,v 1.1 2012/12/30 17:17:53 jasper Exp $
+
+Use the dhclient lense for our /etc/dhclient.conf, though it could
+probably use some work for error checking?
+
+--- lenses/dhclient.aug.orig	Sat Dec 29 19:25:12 2012
++++ lenses/dhclient.aug	Sat Dec 29 19:26:17 2012
+@@ -164,6 +164,7 @@ let lns               = ( empty
+                         | statement )*
+ 
+ let filter            = incl "/etc/dhcp3/dhclient.conf"
++                      . incl "/etc/dhclient.conf"
+                       . Util.stdexcl
+ 
+ let xfm                = transform lns filter
