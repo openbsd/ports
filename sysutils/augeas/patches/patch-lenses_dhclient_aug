@@ -1,7 +1,11 @@
-$OpenBSD: patch-lenses_dhclient_aug,v 1.1 2012/12/30 17:17:53 jasper Exp $
+$OpenBSD: patch-lenses_dhclient_aug,v 1.2 2012/12/30 19:38:44 jasper Exp $
 
-Use the dhclient lense for our /etc/dhclient.conf, though it could
-probably use some work for error checking?
+From 3b142457f1adba7bc8fc808f5c4aa13b93050d5c Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Sun, 30 Dec 2012 20:31:39 +0100
+Subject: [PATCH 3/4] On OpenBSD dhclient.conf lives in /etc/dhclient.conf, so parse it too.
+
+https://fedorahosted.org/augeas/ticket/320
 
 --- lenses/dhclient.aug.orig	Sat Dec 29 19:25:12 2012
 +++ lenses/dhclient.aug	Sat Dec 29 19:26:17 2012
