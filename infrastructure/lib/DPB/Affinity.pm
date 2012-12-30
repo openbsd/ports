@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Affinity.pm,v 1.3 2012/12/29 19:14:28 espie Exp $
+# $OpenBSD: Affinity.pm,v 1.4 2012/12/30 14:04:17 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -52,9 +52,11 @@ sub affinity_marker
 sub start
 {
 	my ($self, $v, $core) = @_;
+	my $host = $core->hostname;
 	for my $w ($v->build_path_list) {
 		open(my $fh, '>', $self->affinity_marker($w)) or next;
-		print $fh "host=", $core->hostname, "\n";
+		$w->{affinity} = $host;
+		print $fh "host=$host\n";
 		print $fh "path=", $w->fullpkgpath, "\n";
 		close $fh;
 	}
