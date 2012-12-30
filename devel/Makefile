@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1096 2012/12/19 10:40:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1097 2012/12/30 18:00:14 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1268,6 +1268,7 @@
      SUBDIR += splint
      SUBDIR += srecord
      SUBDIR += startup-notification
+     SUBDIR += stfl
      SUBDIR += stm32loader
      SUBDIR += stp
      SUBDIR += subversion
