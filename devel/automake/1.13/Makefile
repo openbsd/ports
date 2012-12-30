@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/12/30 04:42:24 brad Exp $
+# $OpenBSD: Makefile,v 1.2 2012/12/30 06:50:46 brad Exp $
 
 VERSION=	1.13
 DISTNAME=	automake-${VERSION}
+REVISION=	0
 PKGSPEC=	automake->=${VERSION},<1.14
 EXTRACT_SUFX=	.tar.xz
 
@@ -48,9 +49,9 @@ pre-configure:
 
 post-install:
 	cd ${PREFIX}/info && mv automake.info automake${SUFFIX}.info
-	perl -pi -e "s,automake\: \(automake\),automake-1\.12\: \(automake-1\.12\)," \
+	perl -pi -e "s,automake\: \(automake\),automake-1\.13\: \(automake-1\.13\)," \
 		${PREFIX}/info/automake${SUFFIX}.info
-	perl -pi -e "s,aclocal\: \(automake\),aclocal: \(automake-1\.12\)," \
+	perl -pi -e "s,aclocal\: \(automake\),aclocal: \(automake-1\.13\)," \
 		${PREFIX}/info/automake${SUFFIX}.info
 
 .for f in info-1 info-2 info-3
