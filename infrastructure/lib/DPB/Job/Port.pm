@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.49 2012/12/28 06:31:03 espie Exp $
+# $OpenBSD: Port.pm,v 1.50 2012/12/30 11:47:24 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -69,6 +69,9 @@ sub run
 	close STDIN;
 	open STDIN, '</dev/null';
 	my $ts = time();
+	if ($t eq 'patch' && defined $job->{v}{info}{distsize}) {
+		print "distfiles size=$job->{v}{info}{distsize}\n";
+	}
 	print ">>> Running $t in $fullpkgpath at $ts\n";
 	my @args = ($t, "TRUST_PACKAGES=Yes",
 	    "FETCH_PACKAGES=No",

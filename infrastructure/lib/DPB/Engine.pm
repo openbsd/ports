@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.62 2012/12/29 19:15:37 espie Exp $
+# $OpenBSD: Engine.pm,v 1.63 2012/12/30 11:47:24 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -611,6 +611,8 @@ sub adjust_distfiles
 	my $not_yet = 0;
 	for my $f (values %{$v->{info}{FDEPENDS}}) {
 		if ($self->{tofetch}->is_done($f)) {
+			$v->{info}{distsize} //= 0;
+			$v->{info}{distsize} += $f->{sz};
 			delete $v->{info}{FDEPENDS}{$f};
 			next;
 		}
@@ -746,6 +748,8 @@ sub new_path
 			next;
 		}
 		if ($self->{tofetch}->is_done($f)) {
+			$v->{info}{distsize} //= 0;
+			$v->{info}{distsize} += $f->{sz};
 			delete $v->{info}{FDEPENDS}{$f};
 			next;
 		}
