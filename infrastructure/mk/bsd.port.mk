@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1199 2012/11/27 11:35:57 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1200 2012/12/30 20:40:40 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -300,7 +300,7 @@ TARGETS += ${_s}-${_t}
 .    endif
 .  endfor
 .endfor
-.for _t in post-patch pre-configure configure pre-fake pre-install
+.for _t in post-patch pre-configure configure pre-fake
 .  for _m in ${MODULES:T:U}
 .    if defined(MOD${_m}_${_t})
 TARGETS += MOD${_m}_${_t}
