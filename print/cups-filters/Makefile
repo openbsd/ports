@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2012/12/12 17:35:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2012/12/30 17:46:54 ajacoutot Exp $
 
 # XXX remove @exec-update when we branch 5.4-current
 
 COMMENT=	OpenPrinting CUPS filters
 
-DISTNAME=	cups-filters-1.0.25
+DISTNAME=	cups-filters-1.0.28
 CATEGORIES=	print
 
 SHARED_LIBS +=  cupsfilters               0.0 # 1.0
@@ -20,9 +20,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += asn1 c crypto cups cupsimage expat fontconfig freetype
-WANTLIB += gssapi ijs jpeg krb5 lcms2 m openjpeg png poppler pthread
-WANTLIB += ssl stdc++ tiff z pcre qpdf
+WANTLIB += asn1 avahi-client avahi-common c crypto cups cupsimage
+WANTLIB += dbus-1 expat fontconfig freetype gssapi iconv ijs intl
+WANTLIB += jpeg krb5 lcms2 m openjpeg pcre png poppler pthread
+WANTLIB += qpdf ssl stdc++ tiff z
 
 MASTER_SITES=	http://www.openprinting.org/download/cups-filters/
 
@@ -34,10 +35,11 @@ MODGCC4_VERSION=4.6
 
 BUILD_DEPENDS=	print/ghostscript/gnu
 
-LIB_DEPENDS=	print/cups,-libs \
+LIB_DEPENDS=	net/avahi \
+		print/cups,-libs \
 		print/ijs \
 		print/poppler \
-		print/qpdf>=3.0.2
+		print/qpdf
 
 # make it easier for users: bring in foomatic-filters, ghostscript
 # (with gstoraster) and allow the regeneration of PPD files from
@@ -65,5 +67,8 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 CONFIGURE_ARGS +=	--with-pdftops=pdftops
 BUILD_DEPENDS +=	print/poppler,-utils
 RUN_DEPENDS +=		print/poppler,-utils # print/ghostscript/gnu
+
+post-install:
+	rm -rf ${WRKINST}/rc?.d
 
 .include <bsd.port.mk>

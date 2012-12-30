@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/12/12 17:35:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/12/30 17:46:54 ajacoutot Exp $
 @conflict cups-<1.6.0
 @exec-update [ -h ${SYSCONFDIR}/fonts/conf.d/99-pdftoopvp.conf ] && rm -f ${SYSCONFDIR}/fonts/conf.d/99-pdftoopvp.conf || true
 %%SHARED%%
@@ -38,6 +38,7 @@ libexec/cups/filter/textonly
 @bin libexec/cups/filter/texttopdf
 libexec/cups/filter/texttops
 @bin libexec/cups/filter/urftopdf
+@bin sbin/cups-browsed
 share/cups/banners/
 share/cups/banners/classified
 share/cups/banners/confidential
@@ -73,3 +74,4 @@ share/ppd/cupsfilters/Generic-PDF_Printer-PDF.ppd
 share/ppd/cupsfilters/HP-Color_LaserJet_CM3530_MFP-PDF.ppd
 share/ppd/cupsfilters/HP-PhotoSmart_Pro_B8300-hpijs-pdftoijs.ppd
 share/ppd/cupsfilters/textonly.ppd
+@rcscript ${RCDIR}/cups_browsed

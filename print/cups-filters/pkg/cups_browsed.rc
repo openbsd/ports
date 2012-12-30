@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# $OpenBSD: cups_browsed.rc,v 1.1 2012/12/30 17:46:54 ajacoutot Exp $
+
+daemon="${TRUEPREFIX}/sbin/cups-browsed"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1
