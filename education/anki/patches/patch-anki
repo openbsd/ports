@@ -1,0 +1,19 @@
+$OpenBSD: patch-anki,v 1.1 2012/12/30 02:54:14 fgsch Exp $
+--- anki.orig	Tue Oct 16 01:50:42 2012
++++ anki	Tue Oct 16 01:50:51 2012
+@@ -1,15 +1,4 @@
+ #!/usr/bin/env python
+ 
+-import os, sys
+-# system-wide install
+-sys.path.insert(0, "/usr/share/anki")
+-sys.path.insert(0, "/usr/share/anki/libanki")
+-# running from extracted folder
+-base = os.path.dirname(os.path.realpath(__file__))
+-sys.path.insert(0, base)
+-sys.path.insert(0, os.path.join(base, "libanki"))
+-# or git
+-sys.path.insert(0, os.path.join(base, "..", "libanki"))
+-# start
+ import anki, aqt
+ aqt.run()
