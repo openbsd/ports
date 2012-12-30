@@ -1,6 +1,6 @@
-$OpenBSD: patch-hw_e1000_c,v 1.6 2012/12/20 23:12:20 brad Exp $
+$OpenBSD: patch-hw_e1000_c,v 1.7 2012/12/30 08:49:15 brad Exp $
 
-Discard oversized packets based on SBP|LPE.
+Discard oversized packets based on SBP|LPE. CVE-2012-6075
 
 --- hw/e1000.c.orig	Wed Dec 19 23:14:16 2012
 +++ hw/e1000.c	Wed Dec 19 23:15:08 2012
