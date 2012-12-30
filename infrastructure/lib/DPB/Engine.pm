@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.63 2012/12/30 11:47:24 espie Exp $
+# $OpenBSD: Engine.pm,v 1.64 2012/12/30 14:33:46 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -157,6 +157,13 @@ sub start
 		# if there's no external lock, we can build
 		if ($self->lock_and_start_build($core, $v)) {
 			return;
+		}
+	}
+	# let's make sure we don't have something else first
+	if (@mismatches > 0) {
+		if ($self->{engine}->check_buildable(1)) {
+			$core->mark_ready;
+			return $self->start;
 		}
 	}
 	# second pass, affinity mismatches
@@ -686,15 +693,19 @@ sub adjust_tobuild
 use Time::HiRes;
 sub check_buildable
 {
-	my $self = shift;
+	my ($self, $forced) = @_;
 	$self->{ts} = time();
 	my $temp = $self->{perf};
 	print $temp "$$\@$self->{ts}: ";
-	if ($self->{ts} < $self->{next_check} && $self->{buildable}->count > 0) {
+	if (!($forced && $self->{unchecked}) &&
+	    $self->{ts} < $self->{next_check} && 
+	    $self->{buildable}->count > 0) {
 	    	print $temp "-\n";
-		return;
+		$self->{unchecked} = 1;
+		return 0;
 	}
 
+	delete $self->{unchecked};
 	# actual computation
 	my $start = Time::HiRes::time();
 	1 while $self->adjust_built;
@@ -716,6 +727,7 @@ sub check_buildable
 		$self->{next_check} = $end;
 	}
 	print $temp sprintf(" %.2f %.2f\n", $self->{next_check}, $check_interval);
+	return 1;
 }
 
 sub new_path
