@@ -1,6 +1,6 @@
-$OpenBSD: patch-util_secmem_c,v 1.3 2008/01/30 20:18:10 bernd Exp $
---- util/secmem.c.orig	Tue Oct 23 09:55:31 2007
-+++ util/secmem.c	Mon Jan 28 20:50:30 2008
+$OpenBSD: patch-util_secmem_c,v 1.4 2012/12/31 16:34:35 sthen Exp $
+--- util/secmem.c.orig	Thu Dec 20 12:22:28 2012
++++ util/secmem.c	Sun Dec 30 23:27:38 2012
 @@ -36,6 +36,9 @@
  #include <sys/lock.h>
  #endif
@@ -31,7 +31,7 @@ $OpenBSD: patch-util_secmem_c,v 1.3 2008/01/30 20:18:10 bernd Exp $
 +  if (!no_warning && !swapencrypt)
      {
 -      log_info(_("WARNING: using insecure memory!\n"));
--      log_info(_("please see http://www.gnupg.org/faq.html"
+-      log_info(_("please see http://www.gnupg.org/documentation/faqs.html"
 -		 " for more information\n"));
 +      log_info("WARNING: Using insecure memory!\n");
 +      log_info("Please enable swap encryption via"

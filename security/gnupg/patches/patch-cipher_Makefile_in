@@ -1,7 +1,7 @@
-$OpenBSD: patch-cipher_Makefile_in,v 1.8 2012/12/11 20:47:45 landry Exp $
---- cipher/Makefile.in.orig	Mon Oct 18 03:53:58 2010
-+++ cipher/Makefile.in	Tue Dec 11 12:19:49 2012
-@@ -295,7 +295,7 @@ target_alias = @target_alias@
+$OpenBSD: patch-cipher_Makefile_in,v 1.9 2012/12/31 16:34:35 sthen Exp $
+--- cipher/Makefile.in.orig	Thu Dec 20 14:30:34 2012
++++ cipher/Makefile.in	Sun Dec 30 22:49:08 2012
+@@ -330,7 +330,7 @@ target_alias = @target_alias@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@

@@ -1,7 +1,7 @@
-$OpenBSD: patch-tools_Makefile_in,v 1.8 2012/12/11 20:47:45 landry Exp $
---- tools/Makefile.in.orig	Mon Oct 18 03:53:58 2010
-+++ tools/Makefile.in	Tue Dec 11 12:19:48 2012
-@@ -305,7 +305,7 @@ top_build_prefix = @top_build_prefix@
+$OpenBSD: patch-tools_Makefile_in,v 1.9 2012/12/31 16:34:35 sthen Exp $
+--- tools/Makefile.in.orig	Thu Dec 20 14:30:35 2012
++++ tools/Makefile.in	Sun Dec 30 22:49:08 2012
+@@ -364,7 +364,7 @@ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  EXTRA_DIST = lspgpot ring-a-party mail-signed-keys convert-from-106

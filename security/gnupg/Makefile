@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.82 2012/12/11 21:12:36 landry Exp $
+# $OpenBSD: Makefile,v 1.83 2012/12/31 16:34:35 sthen Exp $
 
 COMMENT=	GNU privacy guard - a free PGP replacement
 
-DISTNAME=	gnupg-1.4.11
+DISTNAME=	gnupg-1.4.13
 CATEGORIES=	security
-REVISION=	2
 
 # restrict, not compatible with gnupg-2.
 PKGSPEC =	gnupg-<2
@@ -17,10 +16,6 @@ MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/gnupg/ \
 		ftp://ftp.linux.it/pub/mirrors/gnupg/gnupg/ \
 		ftp://pgp.iijlab.net/pub/pgp/gnupg/ \
 		ftp://ring.aist.go.jp/pub/net/gnupg/gnupg/
-
-MASTER_SITES0=	ftp://ftp.gnupg.dk/contrib-dk/
-
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} idea.c.gz:0
 
 HOMEPAGE=	http://www.gnupg.org/
 
@@ -36,7 +31,7 @@ LIB_DEPENDS=	archivers/bzip2 \
 WANTLIB=	c z readline termcap ssl crypto idn bz2>=10 curl>=3
 
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.64
+AUTOCONF_VERSION= 2.69
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/scripts
 CONFIGURE_ARGS+= --disable-gnupg-iconv
 USE_GROFF =	Yes
@@ -75,9 +70,6 @@ pre-configure:
 	# mpi/hppa1.1/udiv-qrnnd.S is not PIE-safe
 	mv ${WRKSRC}/mpi/hppa/udiv-qrnnd.S ${WRKSRC}/mpi/hppa1.1/
 .endif
-
-post-extract:
-	ln -s ${WRKDIR}/idea.c ${WRKSRC}/cipher/idea.c
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gnupg
