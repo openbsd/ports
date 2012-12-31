@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.277 2012/12/29 11:34:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.278 2012/12/31 14:52:16 jasper Exp $
 
      SUBDIR =
      SUBDIR += LPRng
@@ -159,6 +159,7 @@
      SUBDIR += rpl
      SUBDIR += rsyslog
      SUBDIR += rtty
+     SUBDIR += ruby-augeas
      SUBDIR += ruby-capistrano
      SUBDIR += ruby-directory_watcher
      SUBDIR += ruby-facter
