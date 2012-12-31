@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2011/11/27 10:57:24 fgsch Exp $
---- Makefile.in.orig	Thu Oct 20 18:55:29 2011
-+++ Makefile.in	Wed Nov 16 20:51:19 2011
+$OpenBSD: patch-Makefile_in,v 1.4 2012/12/31 22:53:43 brad Exp $
+--- Makefile.in.orig	Sat Mar 10 19:12:06 2012
++++ Makefile.in	Mon Dec 31 16:46:44 2012
 @@ -102,7 +102,7 @@ AM_RECURSIVE_TARGETS = $(RECURSIVE_TARGETS:-recursive=
  	distdir dist dist-all distcheck
  ETAGS = etags
@@ -10,7 +10,7 @@ $OpenBSD: patch-Makefile_in,v 1.3 2011/11/27 10:57:24 fgsch Exp $
  	resolver
  DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
  distdir = $(PACKAGE)-$(VERSION)
-@@ -182,7 +182,7 @@ LEX = @LEX@
+@@ -186,7 +186,7 @@ LEX = @LEX@
  LEXLIB = @LEXLIB@
  LEX_OUTPUT_ROOT = @LEX_OUTPUT_ROOT@
  LIBEXEC_DIR = @LIBEXEC_DIR@
@@ -19,7 +19,7 @@ $OpenBSD: patch-Makefile_in,v 1.3 2011/11/27 10:57:24 fgsch Exp $
  LIBOBJS = @LIBOBJS@
  LIBS = @LIBS@
  LIBTOOL = @LIBTOOL@
-@@ -297,8 +297,8 @@ servicesdir = @moduledir@/autoload
+@@ -301,8 +301,8 @@ servicesdir = @moduledir@/autoload
  AM_CFLAGS = $(WARNFLAGS)
  ircd_SOURCES = main.c
  @MINGW_TRUE@EXTRA_FLAGS = -no-undefined -Wl,--enable-runtime-pseudo-reloc -export-symbols-regex '*'

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.3 2011/11/27 10:57:24 fgsch Exp $
---- src/Makefile.in.orig	Thu Oct 20 18:55:29 2011
-+++ src/Makefile.in	Wed Nov 16 20:51:20 2011
-@@ -150,7 +150,7 @@ LEX = @LEX@
+$OpenBSD: patch-src_Makefile_in,v 1.4 2012/12/31 22:53:43 brad Exp $
+--- src/Makefile.in.orig	Sat Mar 10 19:12:06 2012
++++ src/Makefile.in	Mon Dec 31 16:46:44 2012
+@@ -156,7 +156,7 @@ LEX = @LEX@
  LEXLIB = @LEXLIB@
  LEX_OUTPUT_ROOT = @LEX_OUTPUT_ROOT@
  LIBEXEC_DIR = @LIBEXEC_DIR@
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.3 2011/11/27 10:57:24 fgsch Exp $
  LIBOBJS = @LIBOBJS@
  LIBS = @LIBS@
  LIBTOOL = @LIBTOOL@
-@@ -261,7 +261,7 @@ AUTOMAKE_OPTIONS = foreign
+@@ -267,7 +267,7 @@ AUTOMAKE_OPTIONS = foreign
  libcoredir = @libdir@
  AM_YFLAGS = -d
  AM_CFLAGS = $(WARNFLAGS)

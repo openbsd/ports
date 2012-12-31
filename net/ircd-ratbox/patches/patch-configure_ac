@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.3 2011/11/27 10:57:24 fgsch Exp $
---- configure.ac.orig	Thu Oct 20 18:55:29 2011
-+++ configure.ac	Wed Nov 16 20:51:19 2011
-@@ -113,7 +113,7 @@ done
+$OpenBSD: patch-configure_ac,v 1.4 2012/12/31 22:53:43 brad Exp $
+--- configure.ac.orig	Sat Mar 10 19:34:21 2012
++++ configure.ac	Mon Dec 31 16:46:44 2012
+@@ -112,7 +112,7 @@ done
  
  LIBTOOL="$LIBTOOL --silent"
  
