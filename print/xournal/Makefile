@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2012/12/31 09:00:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2012/12/31 15:48:10 naddy Exp $
 
 COMMENT =		application for notetaking & annotating PDF files
 DISTNAME =		xournal-0.4.7
 CATEGORIES =		print
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		http://xournal.sourceforge.net/
 
