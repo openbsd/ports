@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_core_c,v 1.3 2012/04/13 21:21:10 pascal Exp $
---- src/core.c.orig	Tue Oct  5 17:29:36 2010
-+++ src/core.c	Wed Apr  4 17:48:06 2012
+$OpenBSD: patch-src_core_c,v 1.4 2012/12/31 09:36:38 chrisz Exp $
+--- src/core.c.orig	Thu May  3 23:08:27 2012
++++ src/core.c	Tue Jul 24 18:10:39 2012
 @@ -170,9 +170,9 @@ struct text_object *construct_text_object(const char *
  #else
  			NORM_ERR("acpiacadapter: arg is only used on linux");
@@ -22,18 +22,7 @@ $OpenBSD: patch-src_core_c,v 1.3 2012/04/13 21:21:10 pascal Exp $
  	END OBJ_IF_ARG(if_up, 0, "if_up needs an argument")
  		parse_if_up_arg(obj, arg);
  #endif
-@@ -541,8 +541,10 @@ struct text_object *construct_text_object(const char *
- 		parse_platform_sensor(obj, arg);
- 	END OBJ_ARG(hwmon, 0, "hwmon needs argumanets")
- 		parse_hwmon_sensor(obj, arg);
-+#endif
- 	END OBJ(addr, &update_net_stats)
- 		parse_net_stat_arg(obj, arg, free_at_crash);
-+#ifdef __linux__
- 	END OBJ(addrs, &update_net_stats)
- 		parse_net_stat_arg(obj, arg, free_at_crash);
- #endif /* __linux__ */
-@@ -860,7 +862,7 @@ struct text_object *construct_text_object(const char *
+@@ -860,7 +860,7 @@ struct text_object *construct_text_object(const char *
  	END OBJ(gw_ip, &update_gateway_info)
  #endif /* !__linux__ */
  #if (defined(__FreeBSD__) || defined(__FreeBSD_kernel__) \
@@ -42,7 +31,7 @@ $OpenBSD: patch-src_core_c,v 1.3 2012/04/13 21:21:10 pascal Exp $
  	END OBJ(apm_adapter, 0)
  	END OBJ(apm_battery_life, 0)
  	END OBJ(apm_battery_time, 0)
-@@ -1516,7 +1518,7 @@ void free_text_objects(struct text_object *root, int i
+@@ -1523,7 +1523,7 @@ void free_text_objects(struct text_object *root, int i
  					free(data.s);
  				break;
  #endif

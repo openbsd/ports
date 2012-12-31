@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2012/12/23 12:25:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2012/12/31 09:36:38 chrisz Exp $
 
 ONLY_FOR_ARCHS= ${APM_ARCHS}
 
 COMMENT=	light-weight system monitor
 
-DISTNAME=	conky-1.8.1
-REVISION=	13
+DISTNAME=	conky-1.9.0
 CATEGORIES=	sysutils
 HOMEPAGE=	http://conky.sourceforge.net/
 
@@ -56,16 +55,15 @@ WANTLIB += Xrender expat fontconfig freetype xcb
 
 .if ${FLAVOR:L:Maudacious}
 CONFIGURE_ARGS+=--enable-audacious=yes
-LIB_DEPENDS+=	audio/audacious
-WANTLIB +=	GL Xcomposite Xcursor Xi Xinerama Xrandr Xxf86vm \
-		atk-1.0 audclient audcore audgui cairo \
-		cairo-gobject dbus-1 dbus-glib-1 drm ffi \
-		gdk-3 gdk_pixbuf-2.0 gio-2.0 gmodule-2.0 \
-		gobject-2.0 gthread-2.0 gtk-3 pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 pixman-1 png stdc++ \
-		xcb-render xcb-shm ICE SM atk-bridge-2.0 \
-		atspi harfbuzz icudata icule icuuc \
-		Xau Xdmcp pthread-stubs
+LIB_DEPENDS +=	audio/audacious devel/harfbuzz
+WANTLIB +=	GL ICE Xau Xcomposite Xcursor Xdmcp Xi Xinerama \
+		Xrandr Xxf86vm atk-1.0 atk-bridge-2.0 atspi \
+		audclient audcore audgui cairo cairo-gobject \
+		dbus-1 dbus-glib-1 drm ffi gdk-3 gdk_pixbuf-2.0 \
+		gio-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
+		gtk-3 harfbuzz icudata icule icuuc pango-1.0 \
+		pangocairo-1.0 pangoft2-1.0 pixman-1 png \
+		pthread-stubs SM stdc++ xcb-render xcb-shm
 .endif
 
 .if ${FLAVOR:L:Mxmms2}
