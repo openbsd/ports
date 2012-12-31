@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1200 2012/12/30 20:40:40 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1201 2012/12/31 09:14:07 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -300,7 +300,7 @@ TARGETS += ${_s}-${_t}
 .    endif
 .  endfor
 .endfor
-.for _t in post-patch pre-configure configure pre-fake
+.for _t in post-patch pre-configure configure pre-fake post-install
 .  for _m in ${MODULES:T:U}
 .    if defined(MOD${_m}_${_t})
 TARGETS += MOD${_m}_${_t}
@@ -2605,6 +2605,14 @@ ${_REGRESS_COOKIE}: ${_BUILD_COOKIE}
 .endif
 	@${_MAKE_COOKIE} $@
 
+# XXX we don't care about the order
+.for _m in ${MODULES:T:U}
+.  if defined(MOD${_m}_post-install)
+_hook-post-install::
+	@${MOD${_m}_post-install}
+.  endif
+.endfor
+
 ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 	@${ECHO_MSG} "===>  Faking installation for ${FULLPKGNAME}${_MASTER}"
 	@if [ x`${SUDO} /bin/sh -c umask` != x022 ]; then \
@@ -2619,7 +2627,6 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 	@${MOD${_m}_pre-fake}
 .  endif
 .endfor
-
 .if target(pre-fake)
 	@${_SUDOMAKESYS} pre-fake ${_FAKE_SETUP}
 .endif
@@ -2638,6 +2645,9 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 .endif
 .if target(post-install)
 	@${_SUDOMAKESYS} post-install ${_FAKE_SETUP}
+.endif
+.if target(_hook-post-install)
+	@${_SUDOMAKESYS} _hook-post-install ${_FAKE_SETUP}
 .endif
 .if ${MULTI_PACKAGES} == "-"
 	@if test -e ${PKGDIR}/README; then \
@@ -3317,7 +3327,7 @@ dump-vars:
 
 _all_phony = ${_recursive_depends_targets} \
 	${_recursive_targets} ${_dangerous_recursive_targets} \
-	_build-dir-depends \
+	_build-dir-depends _hook-post-install \
 	_internal-all _internal-build _internal-build-depends \
 	_internal-buildlib-depends _internal-buildwantlib-depends \
 	_internal-checksum _internal-clean _internal-configure _internal-depends \
