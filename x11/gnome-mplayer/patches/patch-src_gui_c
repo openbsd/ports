@@ -1,4 +1,9 @@
-$OpenBSD: patch-src_gui_c,v 1.29 2012/12/19 15:04:36 dcoppa Exp $
+$OpenBSD: patch-src_gui_c,v 1.30 2012/12/31 10:27:17 dcoppa Exp $
+
+Clean up some deprecated GTK2 calls in GTK3 mode
+Clean up unused variable messages
+Fix usage of symbolic icons
+(upstream svn revisions r2357, r2363, r2364, r2381, r2383 and r2384)
 
 Fix some problems on initial volume setup
 (upstream svn revision r2378)
@@ -6,9 +11,122 @@ Fix some problems on initial volume setup
 Don't monitor system volume when running in softvol mode
 (upstream svn revision r2377)
 
---- src/gui.c.orig	Wed Dec 19 13:32:44 2012
-+++ src/gui.c	Wed Dec 19 15:21:21 2012
-@@ -1633,6 +1633,18 @@ gboolean set_software_volume(gdouble * data)
+--- src/gui.c.orig	Fri Oct 26 19:22:31 2012
++++ src/gui.c	Mon Dec 31 10:24:25 2012
+@@ -543,7 +543,9 @@ void adjust_layout()
+             //    gtk_main_iteration();
+         }
+         gmtk_get_allocation(media_hbox, &alloc);
++        gm_log(verbose, G_LOG_LEVEL_DEBUG, "media height = %i", alloc.height);
+         total_height += alloc.height;
++        gm_log(verbose, G_LOG_LEVEL_DEBUG, "total_height = %i", total_height);
+     } else {
+         gtk_widget_hide(media_hbox);
+     }
+@@ -555,7 +557,9 @@ void adjust_layout()
+             //return;
+         }
+         gmtk_get_allocation(details_vbox, &alloc);
++        gm_log(verbose, G_LOG_LEVEL_DEBUG, "detail height = %i", alloc.height);
+         total_height += alloc.height;
++        gm_log(verbose, G_LOG_LEVEL_DEBUG, "total_height = %i", total_height);
+     } else {
+         gtk_widget_hide(details_vbox);
+     }
+@@ -616,15 +620,18 @@ void adjust_layout()
+ 
+     if (!fullscreen) {
+         if (!enable_global_menu) {
+-            gm_log(verbose, G_LOG_LEVEL_DEBUG, "menubar = %i", alloc.height);
+             gmtk_get_allocation(menubar, &alloc);
++            gm_log(verbose, G_LOG_LEVEL_DEBUG, "menubar = %i", alloc.height);
+             total_height += alloc.height;
++            gm_log(verbose, G_LOG_LEVEL_DEBUG, "total_height = %i", total_height);
+         }
+     }
+ 
+     if (showcontrols) {
+         gmtk_get_allocation(controls_box, &alloc);
++        gm_log(verbose, G_LOG_LEVEL_DEBUG, "controls height = %i", alloc.height);
+         total_height += alloc.height;
++        gm_log(verbose, G_LOG_LEVEL_DEBUG, "total_height = %i", total_height);
+     }
+     gm_log(verbose, G_LOG_LEVEL_DEBUG, "total = %i x %i video = %s", total_width, total_height,
+            gm_bool_to_string(idledata->videopresent));
+@@ -1182,13 +1189,20 @@ static const gchar *PLAYSTATE_to_string(const PLAYSTAT
+ gboolean set_gui_state(void *data)
+ {
+     gchar *tip_text = NULL;
++#ifdef GTK3_ENABLED
++    GtkIconTheme *icon_theme = gtk_icon_theme_get_default();
++#endif
+ 
+     gm_log(verbose, G_LOG_LEVEL_MESSAGE, "setting gui state to %s", PLAYSTATE_to_string(guistate));
+ 
+     if (lastguistate != guistate) {
+         if (guistate == PLAYING) {
+ #ifdef GTK3_ENABLED
+-            gtk_image_set_from_icon_name(GTK_IMAGE(image_play), "media-playback-pause-symbolic", button_size);
++            if (gtk_icon_theme_has_icon(icon_theme, "media-playback-pause-symbolic")) {
++                gtk_image_set_from_icon_name(GTK_IMAGE(image_play), "media-playback-pause-symbolic", button_size);
++            } else {
++                gtk_image_set_from_stock(GTK_IMAGE(image_play), GTK_STOCK_MEDIA_PAUSE, button_size);
++            }
+ #else
+             gtk_image_set_from_stock(GTK_IMAGE(image_play), GTK_STOCK_MEDIA_PAUSE, button_size);
+ #endif
+@@ -1214,7 +1228,11 @@ gboolean set_gui_state(void *data)
+ 
+         if (guistate == PAUSED) {
+ #ifdef GTK3_ENABLED
+-            gtk_image_set_from_icon_name(GTK_IMAGE(image_play), "media-playback-start-symbolic", button_size);
++            if (gtk_icon_theme_has_icon(icon_theme, "media-playback-start-symbolic")) {
++                gtk_image_set_from_icon_name(GTK_IMAGE(image_play), "media-playback-start-symbolic", button_size);
++            } else {
++                gtk_image_set_from_stock(GTK_IMAGE(image_play), GTK_STOCK_MEDIA_PLAY, button_size);
++            }
+ #else
+             gtk_image_set_from_stock(GTK_IMAGE(image_play), GTK_STOCK_MEDIA_PLAY, button_size);
+ #endif
+@@ -1239,7 +1257,11 @@ gboolean set_gui_state(void *data)
+ 
+         if (guistate == STOPPED) {
+ #ifdef GTK3_ENABLED
+-            gtk_image_set_from_icon_name(GTK_IMAGE(image_play), "media-playback-start-symbolic", button_size);
++            if (gtk_icon_theme_has_icon(icon_theme, "media-playback-start-symbolic")) {
++                gtk_image_set_from_icon_name(GTK_IMAGE(image_play), "media-playback-start-symbolic", button_size);
++            } else {
++                gtk_image_set_from_stock(GTK_IMAGE(image_play), GTK_STOCK_MEDIA_PLAY, button_size);
++            }
+ #else
+             gtk_image_set_from_stock(GTK_IMAGE(image_play), GTK_STOCK_MEDIA_PLAY, button_size);
+ #endif
+@@ -1352,7 +1374,12 @@ void create_folder_progress_window()
+     gtk_window_set_resizable(GTK_WINDOW(folder_progress_window), FALSE);
+     gtk_widget_set_size_request(folder_progress_window, 400, -1);
+ 
++#if GTK_MAJOR_VERSION == 3 && GTK_MINOR_VERSION >= 2
++    vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 10);
++    gtk_box_set_homogeneous(GTK_BOX(vbox), FALSE);
++#else
+     vbox = gtk_vbox_new(FALSE, 10);
++#endif
+     folder_progress_bar = gtk_progress_bar_new();
+     gtk_progress_bar_set_pulse_step(GTK_PROGRESS_BAR(folder_progress_bar), 0.10);
+     folder_progress_label = gtk_label_new("");
+@@ -1360,7 +1387,11 @@ void create_folder_progress_window()
+ 
+     cancel = gtk_button_new_from_stock(GTK_STOCK_CANCEL);
+     g_signal_connect(G_OBJECT(cancel), "clicked", G_CALLBACK(cancel_clicked), NULL);
++#if GTK_MAJOR_VERSION == 3 && GTK_MINOR_VERSION >= 2
++    hbox = gtk_button_box_new(GTK_ORIENTATION_HORIZONTAL);
++#else
+     hbox = gtk_hbutton_box_new();
++#endif
+     gtk_button_box_set_layout(GTK_BUTTON_BOX(hbox), GTK_BUTTONBOX_END);
+     gtk_container_add(GTK_CONTAINER(hbox), cancel);
+ 
+@@ -1633,6 +1664,18 @@ gboolean set_software_volume(gdouble * data)
      return FALSE;
  }
  
@@ -27,7 +145,121 @@ Don't monitor system volume when running in softvol mode
  gboolean set_volume(void *data)
  {
      IdleData *idle = (IdleData *) data;
-@@ -4145,11 +4157,15 @@ void config_apply(GtkWidget * widget, void *data)
+@@ -2577,6 +2620,9 @@ gboolean play_callback(GtkWidget * widget, GdkEventExp
+ gboolean stop_callback(GtkWidget * widget, GdkEventExpose * event, void *data)
+ {
+     IdleData *idle = (IdleData *) data;
++#ifdef GTK3_ENABLED
++    GtkIconTheme *icon_theme = gtk_icon_theme_get_default();
++#endif
+ 
+     if (gmtk_media_player_get_media_state(GMTK_MEDIA_PLAYER(media)) == MEDIA_STATE_PLAY ||
+         gmtk_media_player_get_media_state(GMTK_MEDIA_PLAYER(media)) == MEDIA_STATE_PAUSE) {
+@@ -2585,7 +2631,11 @@ gboolean stop_callback(GtkWidget * widget, GdkEventExp
+         gmtk_media_tracker_set_percentage(tracker, 0.0);
+         gtk_widget_set_sensitive(play_event_box, TRUE);
+ #ifdef GTK3_ENABLED
+-        gtk_image_set_from_icon_name(GTK_IMAGE(image_play), "media-playback-start-symbolic", button_size);
++        if (gtk_icon_theme_has_icon(icon_theme, "media-playback-start-symbolic")) {
++            gtk_image_set_from_icon_name(GTK_IMAGE(image_play), "media-playback-start-symbolic", button_size);
++        } else {
++            gtk_image_set_from_stock(GTK_IMAGE(image_play), GTK_STOCK_MEDIA_PLAY, button_size);
++        }
+ #else
+         gtk_image_set_from_stock(GTK_IMAGE(image_play), GTK_STOCK_MEDIA_PLAY, button_size);
+ #endif
+@@ -2599,7 +2649,11 @@ gboolean stop_callback(GtkWidget * widget, GdkEventExp
+     if (gmtk_media_player_get_media_state(GMTK_MEDIA_PLAYER(media)) == MEDIA_STATE_QUIT) {
+         gmtk_media_tracker_set_percentage(tracker, 0.0);
+ #ifdef GTK3_ENABLED
+-        gtk_image_set_from_icon_name(GTK_IMAGE(image_play), "media-playback-start-symbolic", button_size);
++        if (gtk_icon_theme_has_icon(icon_theme, "media-playback-start-symbolic")) {
++            gtk_image_set_from_icon_name(GTK_IMAGE(image_play), "media-playback-start-symbolic", button_size);
++        } else {
++            gtk_image_set_from_stock(GTK_IMAGE(image_play), GTK_STOCK_MEDIA_PLAY, button_size);
++        }
+ #else
+         gtk_image_set_from_stock(GTK_IMAGE(image_play), GTK_STOCK_MEDIA_PLAY, button_size);
+ #endif
+@@ -2672,6 +2726,9 @@ gboolean prev_callback(GtkWidget * widget, GdkEventExp
+     GtkTreePath *path;
+     GtkTreeIter previter;
+     GtkTreeIter localiter;
++#ifdef GTK3_ENABLED
++    GtkIconTheme *icon_theme = gtk_icon_theme_get_default();
++#endif
+ 
+     if (gtk_list_store_iter_is_valid(playliststore, &iter)) {
+         if (gmtk_media_player_get_attribute_boolean(GMTK_MEDIA_PLAYER(media), ATTRIBUTE_HAS_CHAPTERS)) {
+@@ -2706,7 +2763,11 @@ gboolean prev_callback(GtkWidget * widget, GdkEventExp
+             autopause = FALSE;
+             gtk_widget_set_sensitive(play_event_box, TRUE);
+ #ifdef GTK3_ENABLED
+-            gtk_image_set_from_icon_name(GTK_IMAGE(image_play), "media-playback-start-symbolic", button_size);
++            if (gtk_icon_theme_has_icon(icon_theme, "media-playback-start-symbolic")) {
++                gtk_image_set_from_icon_name(GTK_IMAGE(image_play), "media-playback-start-symbolic", button_size);
++            } else {
++                gtk_image_set_from_stock(GTK_IMAGE(image_play), GTK_STOCK_MEDIA_PLAY, button_size);
++            }
+ #else
+             gtk_image_set_from_stock(GTK_IMAGE(image_play), GTK_STOCK_MEDIA_PLAY, button_size);
+ #endif
+@@ -2733,6 +2794,9 @@ gboolean next_callback(GtkWidget * widget, GdkEventExp
+ {
+     gboolean valid = FALSE;
+     GtkTreePath *path;
++#ifdef GTK3_ENABLED
++    GtkIconTheme *icon_theme = gtk_icon_theme_get_default();
++#endif
+ 
+     if (gtk_list_store_iter_is_valid(playliststore, &iter)) {
+         if (gmtk_media_player_get_attribute_boolean(GMTK_MEDIA_PLAYER(media), ATTRIBUTE_HAS_CHAPTERS)) {
+@@ -2756,7 +2820,11 @@ gboolean next_callback(GtkWidget * widget, GdkEventExp
+             autopause = FALSE;
+             gtk_widget_set_sensitive(play_event_box, TRUE);
+ #ifdef GTK3_ENABLED
+-            gtk_image_set_from_icon_name(GTK_IMAGE(image_play), "media-playback-start-symbolic", button_size);
++            if (gtk_icon_theme_has_icon(icon_theme, "media-playback-start-symbolic")) {
++                gtk_image_set_from_icon_name(GTK_IMAGE(image_play), "media-playback-start-symbolic", button_size);
++            } else {
++                gtk_image_set_from_stock(GTK_IMAGE(image_play), GTK_STOCK_MEDIA_PLAY, button_size);
++            }
+ #else
+             gtk_image_set_from_stock(GTK_IMAGE(image_play), GTK_STOCK_MEDIA_PLAY, button_size);
+ #endif
+@@ -3086,16 +3154,31 @@ void menuitem_open_location_callback(GtkMenuItem * men
+ 
+     gtk_window_set_resizable(GTK_WINDOW(open_window), FALSE);
+     gtk_window_set_title(GTK_WINDOW(open_window), _("Open Location"));
++#if GTK_MAJOR_VERSION == 3 && GTK_MINOR_VERSION >= 2
++    vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 6);
++    gtk_box_set_homogeneous(GTK_BOX(vbox), FALSE);
++#else
+     vbox = gtk_vbox_new(FALSE, 6);
++#endif
+     label = gtk_label_new(_("Location:"));
+     open_location = gtk_entry_new();
+     gtk_entry_set_width_chars(GTK_ENTRY(open_location), 50);
+     gtk_entry_set_activates_default(GTK_ENTRY(open_location), TRUE);
++#if GTK_MAJOR_VERSION == 3 && GTK_MINOR_VERSION >= 2
++    item_box = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 6);
++    gtk_box_set_homogeneous(GTK_BOX(item_box), FALSE);
++#else
+     item_box = gtk_hbox_new(FALSE, 6);
++#endif
+     gtk_box_pack_start(GTK_BOX(item_box), label, FALSE, FALSE, 12);
+     gtk_box_pack_end(GTK_BOX(item_box), open_location, TRUE, TRUE, 0);
+ 
++#if GTK_MAJOR_VERSION == 3 && GTK_MINOR_VERSION >= 2
++    button_box = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 6);
++    gtk_box_set_homogeneous(GTK_BOX(button_box), FALSE);
++#else
+     button_box = gtk_hbox_new(FALSE, 6);
++#endif
+     cancel_button = gtk_button_new_from_stock(GTK_STOCK_CANCEL);
+     open_button = gtk_button_new_from_stock(GTK_STOCK_OPEN);
+ #ifdef GTK2_22_ENABLED
+@@ -4145,11 +4228,15 @@ void config_apply(GtkWidget * widget, void *data)
      audio_device.description = g_strdup(audio_device_name);
      gm_audio_update_device(&audio_device);
      gm_audio_get_volume(&audio_device);
@@ -46,3 +278,266 @@ Don't monitor system volume when running in softvol mode
  
  #ifdef HAVE_ASOUNDLIB
      if (audio_device.alsa_mixer != NULL) {
+@@ -4625,7 +4712,12 @@ void menuitem_advanced_callback(GtkMenuItem * menuitem
+     gtk_window_set_resizable(GTK_WINDOW(adv_window), FALSE);
+     gtk_window_set_title(GTK_WINDOW(adv_window), _("Video Picture Adjustments"));
+ 
++#if GTK_MAJOR_VERSION == 3 && GTK_MINOR_VERSION >= 2
++    adv_vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 10);
++    gtk_box_set_homogeneous(GTK_BOX(adv_vbox), FALSE);
++#else
+     adv_vbox = gtk_vbox_new(FALSE, 10);
++#endif
+     adv_hbutton_box = gtk_hbutton_box_new();
+     gtk_button_box_set_layout(GTK_BUTTON_BOX(adv_hbutton_box), GTK_BUTTONBOX_END);
+     adv_table = gtk_table_new(20, 2, FALSE);
+@@ -5110,14 +5202,54 @@ void menuitem_config_callback(GtkMenuItem * menuitem, 
+     gtk_window_set_icon(GTK_WINDOW(config_window), pb_icon);
+ 
+     gtk_window_set_resizable(GTK_WINDOW(config_window), FALSE);
++#if GTK_MAJOR_VERSION == 3 && GTK_MINOR_VERSION >= 2
++    conf_vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 10);
++    gtk_box_set_homogeneous(GTK_BOX(conf_vbox), FALSE);
++#else
+     conf_vbox = gtk_vbox_new(FALSE, 10);
++#endif
++#if GTK_MAJOR_VERSION == 3 && GTK_MINOR_VERSION >= 2
++    conf_page1 = gtk_box_new(GTK_ORIENTATION_VERTICAL, 10);
++    gtk_box_set_homogeneous(GTK_BOX(conf_page1), FALSE);
++#else
+     conf_page1 = gtk_vbox_new(FALSE, 10);
++#endif
++#if GTK_MAJOR_VERSION == 3 && GTK_MINOR_VERSION >= 2
++    conf_page2 = gtk_box_new(GTK_ORIENTATION_VERTICAL, 10);
++    gtk_box_set_homogeneous(GTK_BOX(conf_page2), FALSE);
++#else
+     conf_page2 = gtk_vbox_new(FALSE, 10);
++#endif
++#if GTK_MAJOR_VERSION == 3 && GTK_MINOR_VERSION >= 2
++    conf_page3 = gtk_box_new(GTK_ORIENTATION_VERTICAL, 10);
++    gtk_box_set_homogeneous(GTK_BOX(conf_page3), FALSE);
++#else
+     conf_page3 = gtk_vbox_new(FALSE, 10);
++#endif
++#if GTK_MAJOR_VERSION == 3 && GTK_MINOR_VERSION >= 2
++    conf_page4 = gtk_box_new(GTK_ORIENTATION_VERTICAL, 10);
++    gtk_box_set_homogeneous(GTK_BOX(conf_page4), FALSE);
++#else
+     conf_page4 = gtk_vbox_new(FALSE, 10);
++#endif
++#if GTK_MAJOR_VERSION == 3 && GTK_MINOR_VERSION >= 2
++    conf_page5 = gtk_box_new(GTK_ORIENTATION_VERTICAL, 10);
++    gtk_box_set_homogeneous(GTK_BOX(conf_page5), FALSE);
++#else
+     conf_page5 = gtk_vbox_new(FALSE, 10);
++#endif
++#if GTK_MAJOR_VERSION == 3 && GTK_MINOR_VERSION >= 2
++    conf_page6 = gtk_box_new(GTK_ORIENTATION_VERTICAL, 10);
++    gtk_box_set_homogeneous(GTK_BOX(conf_page6), FALSE);
++#else
+     conf_page6 = gtk_vbox_new(FALSE, 10);
++#endif
++#if GTK_MAJOR_VERSION == 3 && GTK_MINOR_VERSION >= 2
++    conf_page7 = gtk_box_new(GTK_ORIENTATION_VERTICAL, 10);
++    gtk_box_set_homogeneous(GTK_BOX(conf_page7), FALSE);
++#else
+     conf_page7 = gtk_vbox_new(FALSE, 10);
++#endif
+     conf_hbutton_box = gtk_hbutton_box_new();
+     gtk_button_box_set_layout(GTK_BUTTON_BOX(conf_hbutton_box), GTK_BUTTONBOX_END);
+     conf_table = gtk_table_new(20, 2, FALSE);
+@@ -6718,6 +6850,9 @@ void player_media_state_changed_callback(GtkButton * b
+     gchar *tip_text = NULL;
+ #endif
+     gchar *short_filename = NULL;
++#ifdef GTK3_ENABLED
++    GtkIconTheme *icon_theme = gtk_icon_theme_get_default();
++#endif
+ 
+     gm_log(verbose, G_LOG_LEVEL_MESSAGE, "in media state change with state = %s dontplaynext = %i",
+            gmtk_media_state_to_string(media_state), dontplaynext);
+@@ -6774,7 +6909,11 @@ void player_media_state_changed_callback(GtkButton * b
+         // break purposely not put here, so gui is properly updated
+     case MEDIA_STATE_STOP:
+ #ifdef GTK3_ENABLED
+-        gtk_image_set_from_icon_name(GTK_IMAGE(image_play), "media-playback-start-symbolic", button_size);
++        if (gtk_icon_theme_has_icon(icon_theme, "media-playback-start-symbolic")) {
++            gtk_image_set_from_icon_name(GTK_IMAGE(image_play), "media-playback-start-symbolic", button_size);
++        } else {
++            gtk_image_set_from_stock(GTK_IMAGE(image_play), GTK_STOCK_MEDIA_PLAY, button_size);
++        }
+ #else
+         gtk_image_set_from_stock(GTK_IMAGE(image_play), GTK_STOCK_MEDIA_PLAY, button_size);
+ #endif
+@@ -6810,7 +6949,11 @@ void player_media_state_changed_callback(GtkButton * b
+         if (idledata->mapped_af_export == NULL)
+             map_af_export_file(idledata);
+ #ifdef GTK3_ENABLED
+-        gtk_image_set_from_icon_name(GTK_IMAGE(image_play), "media-playback-pause-symbolic", button_size);
++        if (gtk_icon_theme_has_icon(icon_theme, "media-playback-pause-symbolic")) {
++            gtk_image_set_from_icon_name(GTK_IMAGE(image_play), "media-playback-pause-symbolic", button_size);
++        } else {
++            gtk_image_set_from_stock(GTK_IMAGE(image_play), GTK_STOCK_MEDIA_PAUSE, button_size);
++        }
+ #else
+         gtk_image_set_from_stock(GTK_IMAGE(image_play), GTK_STOCK_MEDIA_PAUSE, button_size);
+ #endif
+@@ -6855,7 +6998,11 @@ void player_media_state_changed_callback(GtkButton * b
+         break;
+     case MEDIA_STATE_PAUSE:
+ #ifdef GTK3_ENABLED
+-        gtk_image_set_from_icon_name(GTK_IMAGE(image_play), "media-playback-start-symbolic", button_size);
++        if (gtk_icon_theme_has_icon(icon_theme, "media-playback-start-symbolic")) {
++            gtk_image_set_from_icon_name(GTK_IMAGE(image_play), "media-playback-start-symbolic", button_size);
++        } else {
++            gtk_image_set_from_stock(GTK_IMAGE(image_play), GTK_STOCK_MEDIA_PLAY, button_size);
++        }
+ #else
+         gtk_image_set_from_stock(GTK_IMAGE(image_play), GTK_STOCK_MEDIA_PLAY, button_size);
+ #endif
+@@ -7664,9 +7811,24 @@ GtkWidget *create_window(gint windowid)
+     gtk_drag_dest_add_uri_targets(window);
+     //Connect the signal for DnD
+     g_signal_connect(G_OBJECT(window), "drag_data_received", G_CALLBACK(drop_callback), NULL);
++#if GTK_MAJOR_VERSION == 3 && GTK_MINOR_VERSION >= 2
++    vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
++    gtk_box_set_homogeneous(GTK_BOX(vbox), FALSE);
++#else
+     vbox = gtk_vbox_new(FALSE, 0);
++#endif
++#if GTK_MAJOR_VERSION == 3 && GTK_MINOR_VERSION >= 2
++    hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
++    gtk_box_set_homogeneous(GTK_BOX(hbox), FALSE);
++#else
+     hbox = gtk_hbox_new(FALSE, 0);
++#endif
++#if GTK_MAJOR_VERSION == 3 && GTK_MINOR_VERSION >= 2
++    controls_box = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
++    gtk_box_set_homogeneous(GTK_BOX(controls_box), FALSE);
++#else
+     controls_box = gtk_vbox_new(FALSE, 0);
++#endif
+     media = gmtk_media_player_new();
+     g_signal_connect_swapped(G_OBJECT(media), "media_state_changed",
+                              G_CALLBACK(player_media_state_changed_callback), NULL);
+@@ -7682,10 +7844,20 @@ GtkWidget *create_window(gint windowid)
+     media_label = gtk_label_new("");
+     gtk_widget_set_size_request(media_label, 300, 100);
+     gtk_label_set_ellipsize(GTK_LABEL(media_label), PANGO_ELLIPSIZE_END);
++#if GTK_MAJOR_VERSION == 3 && GTK_MINOR_VERSION >= 2
++    media_hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 10);
++    gtk_box_set_homogeneous(GTK_BOX(media_hbox), FALSE);
++#else
+     media_hbox = gtk_hbox_new(FALSE, 10);
++#endif
+     g_signal_connect(media_hbox, "show", G_CALLBACK(view_option_show_callback), NULL);
+     g_signal_connect(media_hbox, "size_allocate", G_CALLBACK(view_option_size_allocate_callback), NULL);
++#if GTK_MAJOR_VERSION == 3 && GTK_MINOR_VERSION >= 2
++    details_vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 10);
++    gtk_box_set_homogeneous(GTK_BOX(details_vbox), FALSE);
++#else
+     details_vbox = gtk_vbox_new(FALSE, 10);
++#endif
+     details_table = gtk_table_new(20, 2, FALSE);
+     g_signal_connect(details_vbox, "show", G_CALLBACK(view_option_show_callback), NULL);
+     g_signal_connect(details_vbox, "size_allocate", G_CALLBACK(view_option_size_allocate_callback), NULL);
+@@ -7717,7 +7889,12 @@ GtkWidget *create_window(gint windowid)
+     g_signal_connect(plvbox, "size_allocate", G_CALLBACK(view_option_size_allocate_callback), NULL);
+     //if (remember_loc)
+     //      gtk_paned_set_position(GTK_PANED(pane),loc_panel_position);
++#if GTK_MAJOR_VERSION == 3 && GTK_MINOR_VERSION >= 2
++    vbox_master = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
++    gtk_box_set_homogeneous(GTK_BOX(vbox_master), FALSE);
++#else
+     vbox_master = gtk_vbox_new(FALSE, 0);
++#endif
+     if (windowid == 0)
+         gtk_box_pack_start(GTK_BOX(vbox_master), menubar, FALSE, FALSE, 0);
+     gtk_widget_show(menubar);
+@@ -7726,15 +7903,33 @@ GtkWidget *create_window(gint windowid)
+     gtk_container_add(GTK_CONTAINER(window), vbox_master);
+     icon_theme = gtk_icon_theme_get_default();
+ #ifdef GTK3_ENABLED
+-    image_play = gtk_image_new_from_icon_name("media-playback-start-symbolic", button_size);
+-    image_stop = gtk_image_new_from_icon_name("media-playback-stop-symbolic", button_size);
+-    image_pause = gtk_image_new_from_icon_name("media-playback-pause-symbolic", button_size);
+-    image_ff = gtk_image_new_from_icon_name("media-seek-forward-symbolic", button_size);
+-    image_rew = gtk_image_new_from_icon_name("media-seek-backward-symbolic", button_size);
+-    image_prev = gtk_image_new_from_icon_name("media-skip-backward-symbolic", button_size);
+-    image_next = gtk_image_new_from_icon_name("media-skip-forward-symbolic", button_size);
+-    image_menu = gtk_image_new_from_icon_name("view-sidebar-symbolic", button_size);
+-    image_fs = gtk_image_new_from_icon_name("view-fullscreen-symbolic", button_size);
++    if (gtk_icon_theme_has_icon(icon_theme, "media-playback-start-symbolic") &&
++        gtk_icon_theme_has_icon(icon_theme, "media-playback-stop-symbolic") &&
++        gtk_icon_theme_has_icon(icon_theme, "media-playback-pause-symbolic") &&
++        gtk_icon_theme_has_icon(icon_theme, "media-seek-forward-symbolic") &&
++        gtk_icon_theme_has_icon(icon_theme, "media-seek-backward-symbolic") &&
++        gtk_icon_theme_has_icon(icon_theme, "view-sidebar-symbolic") &&
++        gtk_icon_theme_has_icon(icon_theme, "view-fullscreen-symbolic")) {
++        image_play = gtk_image_new_from_icon_name("media-playback-start-symbolic", button_size);
++        image_stop = gtk_image_new_from_icon_name("media-playback-stop-symbolic", button_size);
++        image_pause = gtk_image_new_from_icon_name("media-playback-pause-symbolic", button_size);
++        image_ff = gtk_image_new_from_icon_name("media-seek-forward-symbolic", button_size);
++        image_rew = gtk_image_new_from_icon_name("media-seek-backward-symbolic", button_size);
++        image_prev = gtk_image_new_from_icon_name("media-skip-backward-symbolic", button_size);
++        image_next = gtk_image_new_from_icon_name("media-skip-forward-symbolic", button_size);
++        image_menu = gtk_image_new_from_icon_name("view-sidebar-symbolic", button_size);
++        image_fs = gtk_image_new_from_icon_name("view-fullscreen-symbolic", button_size);
++    } else {
++        image_play = gtk_image_new_from_stock(GTK_STOCK_MEDIA_PLAY, button_size);
++        image_stop = gtk_image_new_from_stock(GTK_STOCK_MEDIA_STOP, button_size);
++        image_pause = gtk_image_new_from_stock(GTK_STOCK_MEDIA_PAUSE, button_size);
++        image_ff = gtk_image_new_from_stock(GTK_STOCK_MEDIA_FORWARD, button_size);
++        image_rew = gtk_image_new_from_stock(GTK_STOCK_MEDIA_REWIND, button_size);
++        image_prev = gtk_image_new_from_stock(GTK_STOCK_MEDIA_PREVIOUS, button_size);
++        image_next = gtk_image_new_from_stock(GTK_STOCK_MEDIA_NEXT, button_size);
++        image_menu = gtk_image_new_from_stock(GTK_STOCK_INDEX, button_size);
++        image_fs = gtk_image_new_from_stock(GTK_STOCK_FULLSCREEN, button_size);
++    }
+ #else
+     image_play = gtk_image_new_from_stock(GTK_STOCK_MEDIA_PLAY, button_size);
+     image_stop = gtk_image_new_from_stock(GTK_STOCK_MEDIA_STOP, button_size);
+@@ -8390,6 +8585,10 @@ void show_fs_controls()
+     GdkScreen *screen;
+     GdkRectangle rect;
+     GtkAllocation alloc;
++#ifdef GTK3_ENABLED
++    GtkIconTheme *icon_theme = gtk_icon_theme_get_default();
++#endif
++
+     if (fs_controls == NULL && fullscreen) {
+         fs_controls = gtk_window_new(GTK_WINDOW_POPUP);
+         gtk_widget_add_events(fs_controls, GDK_ENTER_NOTIFY_MASK);
+@@ -8398,7 +8597,11 @@ void show_fs_controls()
+         g_signal_connect(G_OBJECT(fs_controls), "leave_notify_event", G_CALLBACK(fs_controls_left), NULL);
+         g_object_ref(hbox);
+ #ifdef GTK3_ENABLED
+-        gtk_image_set_from_icon_name(GTK_IMAGE(image_fs), "view-restore-symbolic", button_size);
++        if (gtk_icon_theme_has_icon(icon_theme, "view-restore-symbolic")) {
++            gtk_image_set_from_icon_name(GTK_IMAGE(image_fs), "view-restore-symbolic", button_size);
++        } else {
++            gtk_image_set_from_stock(GTK_IMAGE(image_fs), GTK_STOCK_LEAVE_FULLSCREEN, button_size);
++        }
+ #else
+         gtk_image_set_from_stock(GTK_IMAGE(image_fs), GTK_STOCK_LEAVE_FULLSCREEN, button_size);
+ #endif
+@@ -8428,11 +8631,18 @@ void show_fs_controls()
+ 
+ void hide_fs_controls()
+ {
++#ifdef GTK3_ENABLED
++    GtkIconTheme *icon_theme = gtk_icon_theme_get_default();
++#endif
+ 
+     if (fs_controls != NULL) {
+         g_object_ref(hbox);
+ #ifdef GTK3_ENABLED
+-        gtk_image_set_from_icon_name(GTK_IMAGE(image_fs), "view-fullscreen-symbolic", button_size);
++        if (gtk_icon_theme_has_icon(icon_theme, "view-fullscreen-symbolic")) {
++            gtk_image_set_from_icon_name(GTK_IMAGE(image_fs), "view-fullscreen-symbolic", button_size);
++        } else {
++            gtk_image_set_from_stock(GTK_IMAGE(image_fs), GTK_STOCK_FULLSCREEN, button_size);
++        }
+ #else
+         gtk_image_set_from_stock(GTK_IMAGE(image_fs), GTK_STOCK_FULLSCREEN, button_size);
+ #endif
