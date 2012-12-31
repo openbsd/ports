@@ -1,0 +1,20 @@
+$OpenBSD: README,v 1.1 2012/12/31 14:57:15 jasper Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+GUI
+==============
+In order to use the GUI provided by newlisp-edit, the guiserver must
+be started. In order to do this Java must be installed, which can be
+done with:
+
+	# pkg_add jdk
+
+Next, start the server:
+
+	$ cd ${PREFIX}/share/newlisp-${V}/
+	$ java -jar guiserver.jar 47011 guiserver.lsp
+
+Now run ${PREFIX}/bin/newlisp-edit to connect to the server.
