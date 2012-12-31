@@ -1,10 +1,10 @@
-$OpenBSD: patch-awesome_c,v 1.3 2011/11/30 11:50:58 dcoppa Exp $
+$OpenBSD: patch-awesome_c,v 1.4 2012/12/31 17:41:44 dcoppa Exp $
 
 Revert to the old xcb-util-0.3.6 API
 
---- awesome.c.orig	Wed Nov 30 11:05:05 2011
-+++ awesome.c	Wed Nov 30 11:05:55 2011
-@@ -137,7 +137,7 @@ scan(xcb_query_tree_cookie_t tree_c[])
+--- awesome.c.orig	Mon Dec 24 15:36:05 2012
++++ awesome.c	Mon Dec 31 11:54:55 2012
+@@ -139,7 +139,7 @@ scan(xcb_query_tree_cookie_t tree_c[])
  
              if(!attr_r || attr_r->override_redirect
                 || attr_r->map_state == XCB_MAP_STATE_UNMAPPED

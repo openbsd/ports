@@ -1,10 +1,15 @@
-$OpenBSD: patch-lib_naughty_lua_in,v 1.4 2012/11/22 08:53:32 dcoppa Exp $
-
-naughty: Correctly handle rowstride on icons
-(upstream git commit ec714276ec9516afa690a207013866527fb37beb)
-
---- lib/naughty.lua.in.orig	Sun Jul 15 12:12:21 2012
-+++ lib/naughty.lua.in	Thu Nov 22 09:30:47 2012
+$OpenBSD: patch-lib_naughty_lua_in,v 1.5 2012/12/31 17:41:44 dcoppa Exp $
+--- lib/naughty.lua.in.orig	Mon Dec 24 15:36:05 2012
++++ lib/naughty.lua.in	Mon Dec 31 17:05:35 2012
+@@ -30,7 +30,7 @@ module("naughty")
+ -- @field padding Space between popups and edge of the workarea. Default: 4
+ -- @field spacing Spacing between popups. Default: 1
+ -- @field icon_dirs List of directories that will be checked by getIcon()
+---   Default: { "/usr/share/pixmaps/", }
++--   Default: { "${LOCALBASE}/share/pixmaps/", }
+ -- @field icon_formats List of formats that will be checked by getIcon()
+ --   Default: { "png", "gif" }
+ -- @field default_preset Preset to be used by default.
 @@ -47,7 +47,7 @@ module("naughty")
  config = {}
  config.padding = 4
@@ -14,40 +19,3 @@ naughty: Correctly handle rowstride on icons
  config.icon_formats = { "png", "gif" }
  config.notify_callback = nil
  
-@@ -501,24 +501,23 @@ if capi.dbus then
-                 -- icon_data is an array:
-                 -- 1 -> width, 2 -> height, 3 -> rowstride, 4 -> has alpha
-                 -- 5 -> bits per sample, 6 -> channels, 7 -> data
-+                local width, height, rowstride = hints.icon_data[1], hints.icon_data[2], hints.icon_data[3]
- 
-                 local imgdata = ""
--                -- If has alpha (ARGB32)
--                if hints.icon_data[6] == 4 then
--                    for i = 1, #hints.icon_data[7], 4 do
-+                local bpp = hints.icon_data[6]
-+                local offset = 0
-+                for y = 1, height do
-+                    for i = 1 + offset, width * bpp + offset, bpp do
-                         imgdata = imgdata .. hints.icon_data[7]:sub(i, i + 2):reverse()
--                        imgdata = imgdata .. hints.icon_data[7]:sub(i + 3, i + 3)
-+                        if bpp == 4 then
-+                            imgdata = imgdata .. hints.icon_data[7]:sub(i + 3, i + 3)
-+                        else
-+                            imgdata = imgdata .. string.format("%c", 255)
-+                        end
-                     end
--                -- If has not alpha (RGB24)
--                elseif hints.icon_data[6] == 3 then
--                    for i = 1, #hints.icon_data[7], 3 do
--                        imgdata = imgdata .. hints.icon_data[7]:sub(i , i + 2):reverse()
--                        imgdata = imgdata .. string.format("%c", 255) -- alpha is 255
--                    end
-+                    offset = offset + rowstride
-                 end
--                if imgdata then
--                    args.icon = capi.image.argb32(hints.icon_data[1], hints.icon_data[2], imgdata)
--                end
-+                args.icon = capi.image.argb32(width, height, imgdata)
-             end
-             if replaces_id and replaces_id ~= "" and replaces_id ~= 0 then
-                 args.replaces_id = replaces_id

@@ -1,7 +1,7 @@
-$OpenBSD: patch-awesomeConfig_cmake,v 1.8 2012/07/17 11:32:00 dcoppa Exp $
---- awesomeConfig.cmake.orig	Sun Jul 15 12:12:21 2012
-+++ awesomeConfig.cmake	Tue Jul 17 13:16:29 2012
-@@ -16,11 +16,11 @@ option(COMPRESS_MANPAGES "compress manpages" ON)
+$OpenBSD: patch-awesomeConfig_cmake,v 1.9 2012/12/31 17:41:44 dcoppa Exp $
+--- awesomeConfig.cmake.orig	Mon Dec 24 15:36:05 2012
++++ awesomeConfig.cmake	Mon Dec 31 17:18:32 2012
+@@ -16,12 +16,11 @@ option(COMPRESS_MANPAGES "compress manpages" ON)
  option(GENERATE_LUADOC "generate luadoc" ON)
  
  # {{{ CFLAGS
@@ -10,15 +10,16 @@ $OpenBSD: patch-awesomeConfig_cmake,v 1.8 2012/07/17 11:32:00 dcoppa Exp $
 -    -Wsign-compare -Wunused -Wno-unused-parameter -Wuninitialized -Winit-self
 -    -Wpointer-arith -Wredundant-decls -Wformat-nonliteral
 -    -Wno-format-zero-length -Wmissing-format-attribute -Wmissing-prototypes
+-    -Wstrict-prototypes)
 +add_definitions(-std=gnu99 -fgnu89-inline -fno-strict-aliasing
-+    -Wchar-subscripts -Wcast-align -Wwrite-strings
-+    -Wsign-compare -Wunused -Wno-unused-parameter -Wuninitialized
-+    -Wpointer-arith -Wformat-nonliteral -Wno-format-zero-length
-+    -Wmissing-format-attribute -Wmissing-prototypes
-     -Wstrict-prototypes)
++    -Wchar-subscripts -Wcast-align -Wwrite-strings -Wsign-compare
++    -Wunused -Wno-unused-parameter -Wuninitialized -Wpointer-arith
++    -Wno-format-zero-length -Wmissing-format-attribute
++    -Wmissing-prototypes -Wstrict-prototypes)
  # }}}
  
-@@ -54,7 +54,6 @@ a_find_program(ASCIIDOC_EXECUTABLE asciidoc FALSE)
+ # {{{ Endianness
+@@ -54,7 +53,6 @@ a_find_program(ASCIIDOC_EXECUTABLE asciidoc FALSE)
  a_find_program(XMLTO_EXECUTABLE xmlto FALSE)
  a_find_program(GZIP_EXECUTABLE gzip FALSE)
  # lua documentation
@@ -26,18 +27,18 @@ $OpenBSD: patch-awesomeConfig_cmake,v 1.8 2012/07/17 11:32:00 dcoppa Exp $
  a_find_program(LUADOC_EXECUTABLE luadoc FALSE)
  # theme graphics
  a_find_program(CONVERT_EXECUTABLE convert TRUE)
-@@ -62,8 +61,8 @@ a_find_program(CONVERT_EXECUTABLE convert TRUE)
+@@ -62,8 +60,8 @@ a_find_program(CONVERT_EXECUTABLE convert TRUE)
  include(FindDoxygen)
  # pkg-config
  include(FindPkgConfig)
 -# lua 5.1
--include(FindLua51) #Due to a cmake bug, you will see Lua50 on screen
+-include(FindLua51)
 +# lua libraries
 +include(FindLuaLibs)
  # }}}
  
  # {{{ Check if documentation can be build
-@@ -139,9 +138,10 @@ pkg_check_modules(AWESOME_REQUIRED REQUIRED
+@@ -141,9 +139,10 @@ pkg_check_modules(AWESOME_REQUIRED REQUIRED
      xcb-xtest
      xcb-xinerama
      xcb-shape
@@ -50,7 +51,7 @@ $OpenBSD: patch-awesomeConfig_cmake,v 1.8 2012/07/17 11:32:00 dcoppa Exp $
      xcb-image>=0.3.0
      cairo-xcb
      libstartup-notification-1.0>=0.10
-@@ -192,7 +192,7 @@ else()
+@@ -194,7 +193,7 @@ else()
  endif()
  
  # Error check
@@ -59,16 +60,15 @@ $OpenBSD: patch-awesomeConfig_cmake,v 1.8 2012/07/17 11:32:00 dcoppa Exp $
      message(FATAL_ERROR "lua library not found")
  endif()
  
-@@ -232,7 +232,7 @@ endif()
+@@ -231,6 +230,7 @@ endif()
+ # {{{ Install path and configuration variables
+ #If a sysconfdir is specified, use it instead
+ #of the default configuration dir.
++set(SYSCONFDIR $ENV{SYSCONFDIR})
  if(DEFINED SYSCONFDIR)
      set(SYSCONFDIR ${SYSCONFDIR} CACHE PATH "config directory")
  else()
--    set(SYSCONFDIR ${CMAKE_INSTALL_PREFIX}/etc CACHE PATH "config directory")
-+    set(SYSCONFDIR /etc CACHE PATH "config directory")
- endif()
- 
- #If an XDG Config Dir is specificed, use it instead
-@@ -261,7 +261,7 @@ endif()
+@@ -263,7 +263,7 @@ endif()
  if(DEFINED AWESOME_MAN_PATH)
     set(AWESOME_MAN_PATH ${AWESOME_MAN_PATH} CACHE PATH "awesome manpage directory")
  else()

@@ -1,12 +1,14 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.13 2012/06/19 11:18:53 dcoppa Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.14 2012/12/31 17:41:44 dcoppa Exp $
 
 These auto-generated (db2man.xsl) manpages contain a mixture of ISO
 latin-1 characters and numerical HTML entities that neither mandoc
 nor groff can fully understand: do not install them.
 
---- CMakeLists.txt.orig	Mon May 16 16:35:17 2011
-+++ CMakeLists.txt	Tue May 17 14:22:25 2011
-@@ -88,7 +88,6 @@ set(AWE_MAN_SRCS
+Fix usage of -export-dynamic
+
+--- CMakeLists.txt.orig	Mon Dec 24 15:36:05 2012
++++ CMakeLists.txt	Mon Dec 31 12:34:14 2012
+@@ -88,17 +88,16 @@ set(AWE_MAN_SRCS
      ${SOURCE_DIR}/manpages/awsetbg.1.txt
      ${SOURCE_DIR}/manpages/awesome-client.1.txt
      ${SOURCE_DIR}/manpages/awesomerc.5.txt)
@@ -14,7 +16,20 @@ nor groff can fully understand: do not install them.
  
  add_executable(${PROJECT_AWE_NAME}
      ${AWE_SRCS}
-@@ -172,68 +171,45 @@ if(GENERATE_MANPAGES)
+     ${BUILD_DIR}/common/tokenize.c)
+ 
+-# FreeBSD requires dynamic linking
+-if(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
++# FreeBSD and OpenBSD require dynamic linking
++if(CMAKE_SYSTEM_NAME MATCHES "FreeBSD" OR CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
+     set_target_properties(${PROJECT_AWE_NAME}
+         PROPERTIES
+-        LINK_FLAGS -export-dynamic)
++        LINK_FLAGS -Wl,--export-dynamic)
+ endif()
+ 
+ target_link_libraries(${PROJECT_AWE_NAME}
+@@ -175,68 +174,45 @@ if(GENERATE_MANPAGES)
      if(NOT BUILD_DIR STREQUAL SOURCE_DIR)
          file(MAKE_DIRECTORY ${BUILD_DIR}/manpages)
      endif()
@@ -116,7 +131,7 @@ nor groff can fully understand: do not install them.
      endforeach()
  
      add_custom_target(man ALL DEPENDS ${MAN_FILES})
-@@ -331,13 +307,8 @@ install(DIRECTORY ${BUILD_DIR}/lib DESTINATION ${AWESO
+@@ -334,13 +310,8 @@ install(DIRECTORY ${BUILD_DIR}/lib DESTINATION ${AWESO
  install(FILES ${AWE_CONF_FILE_DEFAULT} DESTINATION ${AWESOME_SYSCONFDIR}
          RENAME ${AWE_CONF_FILE})
  if(GENERATE_MANPAGES)
