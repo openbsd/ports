@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_example_conf,v 1.1 2012/11/05 23:45:30 brad Exp $
---- doc/example.conf.orig	Thu Oct 18 21:05:04 2012
-+++ doc/example.conf	Tue Oct 23 02:43:41 2012
+$OpenBSD: patch-doc_example_conf,v 1.2 2012/12/31 22:54:56 brad Exp $
+--- doc/example.conf.orig	Thu Dec 20 07:28:02 2012
++++ doc/example.conf	Fri Dec 21 18:51:52 2012
 @@ -101,7 +101,7 @@ serverinfo {
  	 *	chmod 0600 rsa.key
  	 *	chmod 0644 rsa.pub
@@ -37,7 +37,7 @@ $OpenBSD: patch-doc_example_conf,v 1.1 2012/11/05 23:45:30 brad Exp $
  
  	/* class: the class the oper joins when they successfully /oper */
  	class = "opers";
-@@ -1174,8 +1174,8 @@ modules {
+@@ -1169,8 +1169,8 @@ modules {
  	 * path: other paths to search for modules specified below
  	 * and in "/module load".
  	 */
