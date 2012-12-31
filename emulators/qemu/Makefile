@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.94 2012/12/20 23:12:20 brad Exp $
+# $OpenBSD: Makefile,v 1.95 2012/12/31 07:12:19 brad Exp $
 
-ONLY_FOR_ARCHS=	amd64 arm i386 mips64 mips64el powerpc sparc sparc64
+ONLY_FOR_ARCHS=	amd64 i386 powerpc sparc64
 
 COMMENT=	multi system emulator
 
