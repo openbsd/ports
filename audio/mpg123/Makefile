@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.63 2012/08/04 17:38:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.64 2012/12/31 16:47:38 naddy Exp $
 
 COMMENT=	fast console MPEG audio player and decoder library
 
 DISTNAME=	mpg123-1.14.4
+REVISION=	0
 SHARED_LIBS=	mpg123		3.0	# .36.6
 CATEGORIES=	audio
 HOMEPAGE=	http://www.mpg123.de/
