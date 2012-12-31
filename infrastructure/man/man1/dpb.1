@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.51 2012/12/31 08:29:31 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.52 2012/12/31 09:50:55 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -198,6 +198,8 @@ Avoids flickering on slow graphics cards.
 .It Ar NO_BUILD_STATS
 Disable reading/saving of default build stats under
 .Pa ${DISTDIR}/build-stats/${ARCH} .
+.It Ar STARTUP
+Define a start-up script on the command-line, override any host file contents.
 .It Ar STUCK_TIMEOUT
 Timeout (in seconds * speed factor) after which tasks that don't show
 any progress will be killed.

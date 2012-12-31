@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.22 2012/12/29 19:14:51 espie Exp $
+# $OpenBSD: Core.pm,v 1.23 2012/12/31 09:50:55 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -772,6 +772,9 @@ sub parse_hosts_file
 		}
 		$state->heuristics->calibrate(DPB::Core::Factory->new($host,
 		    $prop));
+	}
+	if ($state->define_present("STARTUP")) {
+		$state->{startup_script} = $override->{startup_script};
 	}
 }
 
