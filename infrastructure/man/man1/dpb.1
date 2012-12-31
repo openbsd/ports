@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.50 2012/12/24 17:24:46 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.51 2012/12/31 08:29:31 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: December 24 2012 $
+.Dd $Mdocdate: December 31 2012 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -712,6 +712,14 @@ Affinity information.
 One file per full pkgpath, with slash replaced by dots
 like so:
 .Pa affinity/lang.ghc,-main.
+.It Pa affinity.log
+On startup
+.Nm
+reads existing affinity information, and records it in that log,
+together with its pid.
+This log just exists to verify, along with
+.Pa engine.log ,
+whether correct affinity was heeded.
 .It Pa build.log
 Actual build log.
 Each line summarizes build of a single pkgpath, as:
@@ -756,7 +764,7 @@ pkgpath ignored, either directly, or indirectly because a dependency was
 ignored.
 End of the line states reason why ignored.
 .It A
-affinity mismatch: path considered for build, but ignored on first try,
+affinity mismatch: path considered for build, but not the right host,
 followed by the affinity information.
 .It B
 pkgpath built / distfile found.
@@ -787,6 +795,23 @@ the same directory returned.
 affinity mismatch, but job will start on the wrong host anyways, as the queue
 contains no other buildable path.
 .El
+.It Pa engine-perf.log
+Engine performance.
+Each engine run takes a large amount of cpu time, most noticeable on slow
+machines, so
+.Nm
+doesn't run its engine at each new package build.
+Lines ending with a dash correspond to new package builds that didn't
+trigger an engine run.
+For other lines, the last number is an estimate of how much time should 
+pass before the next run, the first number is time to substract to that
+because there was a long delay before this run, and the middle number is
+the corresponding timestamp, after which the engine will be allowed to fire
+again.
+.Pp
+That information is mostly relevant while
+.Nm
+is building lots of small packages very quickly while the queue is large.
 .It Pa equiv.log
 Lists of equivalent pkgpaths for the build, when default flavors and default subpackages have been resolved.
 .It Pa fetch/bad.log
