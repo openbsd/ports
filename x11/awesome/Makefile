@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2012/12/31 17:41:43 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.57 2012/12/31 19:21:45 dcoppa Exp $
 
 COMMENT=		highly configurable framework window manager
 
@@ -54,8 +54,8 @@ MODULES=		devel/cmake \
 			devel/gettext \
 			lang/lua
 
-CONFIGURE_ARGS=		-DCOMPRESS_MANPAGES=off
-CONFIGURE_ENV=		SYSCONFDIR="${SYSCONFDIR}"
+CONFIGURE_ARGS=		-DCOMPRESS_MANPAGES=off \
+			-DSYSCONFDIR=${SYSCONFDIR}
 
 SEPARATE_BUILD=		No
 
