@@ -1,0 +1,21 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2012/12/31 08:43:14 bentley Exp $
+--- Makefile.in.orig	Tue May 22 15:46:07 2012
++++ Makefile.in	Mon Dec 24 21:26:33 2012
+@@ -748,7 +748,7 @@ desktop-install:
+ 	$(mkinstalldirs) $(DESTDIR)$$desktopdir/icons/hicolor/scalable/mimetypes; \
+ 	$(mkinstalldirs) $(DESTDIR)$$desktopdir/mime/packages; \
+ 	$(mkinstalldirs) $(DESTDIR)$$desktopdir/applications; \
+-	$(mkinstalldirs) $(DESTDIR)/usr/share/mimelnk/application; \
++	$(mkinstalldirs) $(DESTDIR)$$desktopdir/mimelnk/application; \
+ 	$(INSTALL_DATA) $(srcdir)/pixmaps/xournal.svg $(DESTDIR)$$desktopdir/icons/hicolor/scalable/apps; \
+ 	$(INSTALL_DATA) $(srcdir)/pixmaps/xoj.svg $(DESTDIR)$$desktopdir/icons/hicolor/scalable/mimetypes; \
+ 	if test ! -e $(DESTDIR)$$desktopdir/icons/hicolor/scalable/mimetypes/gnome-mime-application-x-xoj.svg; then \
+@@ -756,7 +756,7 @@ desktop-install:
+ 	fi; \
+ 	$(INSTALL_DATA) $(srcdir)/xournal.xml $(DESTDIR)$$desktopdir/mime/packages; \
+ 	$(INSTALL_DATA) $(srcdir)/xournal.desktop $(DESTDIR)$$desktopdir/applications; \
+-	$(INSTALL_DATA) $(srcdir)/x-xoj.desktop $(DESTDIR)/usr/share/mimelnk/application; \
++	$(INSTALL_DATA) $(srcdir)/x-xoj.desktop $(DESTDIR)$$desktopdir/mimelnk/application; \
+ 	if test -z "$(DESTDIR)"; then \
+ 	  echo "Updating desktop, mime, and icon databases."; \
+ 	  update-desktop-database; \

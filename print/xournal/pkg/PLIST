@@ -1,0 +1,59 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/12/31 08:43:14 bentley Exp $
+@bin bin/xournal
+share/applications/xournal.desktop
+share/doc/xournal/
+share/doc/xournal/manual.html
+share/doc/xournal/pixmaps
+share/doc/xournal/screenshot.png
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/scalable/
+share/icons/hicolor/scalable/apps/
+share/icons/hicolor/scalable/apps/xournal.svg
+share/icons/hicolor/scalable/mimetypes/
+share/icons/hicolor/scalable/mimetypes/gnome-mime-application-x-xoj.svg
+share/icons/hicolor/scalable/mimetypes/xoj.svg
+share/mime/
+share/mime/packages/
+share/mime/packages/xournal.xml
+share/mimelnk/
+share/mimelnk/application/
+share/mimelnk/application/x-xoj.desktop
+share/xournal/
+share/xournal/pixmaps/
+share/xournal/pixmaps/black.png
+share/xournal/pixmaps/blue.png
+share/xournal/pixmaps/default-pen.png
+share/xournal/pixmaps/eraser.png
+share/xournal/pixmaps/fullscreen.png
+share/xournal/pixmaps/gray.png
+share/xournal/pixmaps/green.png
+share/xournal/pixmaps/hand.png
+share/xournal/pixmaps/highlighter.png
+share/xournal/pixmaps/lasso.png
+share/xournal/pixmaps/lightblue.png
+share/xournal/pixmaps/lightgreen.png
+share/xournal/pixmaps/magenta.png
+share/xournal/pixmaps/medium.png
+share/xournal/pixmaps/orange.png
+share/xournal/pixmaps/pencil.png
+share/xournal/pixmaps/rect-select.png
+share/xournal/pixmaps/recycled.png
+share/xournal/pixmaps/red.png
+share/xournal/pixmaps/ruler.png
+share/xournal/pixmaps/shapes.png
+share/xournal/pixmaps/stretch.png
+share/xournal/pixmaps/text-tool.png
+share/xournal/pixmaps/thick.png
+share/xournal/pixmaps/thin.png
+share/xournal/pixmaps/white.png
+share/xournal/pixmaps/xoj.svg
+share/xournal/pixmaps/xournal.png
+share/xournal/pixmaps/xournal.svg
+share/xournal/pixmaps/yellow.png
+@exec %D/bin/update-desktop-database
+@exec %D/bin/update-mime-database %D/share/mime
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
