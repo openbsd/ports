@@ -1,20 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/12/31 08:43:14 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/12/31 09:00:07 ajacoutot Exp $
 @bin bin/xournal
 share/applications/xournal.desktop
 share/doc/xournal/
 share/doc/xournal/manual.html
 share/doc/xournal/pixmaps
 share/doc/xournal/screenshot.png
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/xournal.svg
-share/icons/hicolor/scalable/mimetypes/
 share/icons/hicolor/scalable/mimetypes/gnome-mime-application-x-xoj.svg
 share/icons/hicolor/scalable/mimetypes/xoj.svg
-share/mime/
-share/mime/packages/
+share/locale/ca/LC_MESSAGES/xournal.mo
+share/locale/cs/LC_MESSAGES/xournal.mo
+share/locale/de/LC_MESSAGES/xournal.mo
+share/locale/es/LC_MESSAGES/xournal.mo
+share/locale/fr/LC_MESSAGES/xournal.mo
+share/locale/it/LC_MESSAGES/xournal.mo
+share/locale/nl/LC_MESSAGES/xournal.mo
+share/locale/pt_BR/LC_MESSAGES/xournal.mo
 share/mime/packages/xournal.xml
 share/mimelnk/
 share/mimelnk/application/
@@ -52,8 +53,8 @@ share/xournal/pixmaps/xournal.png
 share/xournal/pixmaps/xournal.svg
 share/xournal/pixmaps/yellow.png
 @exec %D/bin/update-desktop-database
-@exec %D/bin/update-mime-database %D/share/mime
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
