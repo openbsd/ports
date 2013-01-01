@@ -1,14 +1,14 @@
-$OpenBSD: patch-src_daemon_pulseaudio_desktop_in,v 1.1 2012/11/30 12:26:15 ajacoutot Exp $
+$OpenBSD: patch-src_daemon_pulseaudio_desktop_in,v 1.2 2013/01/01 14:12:36 ajacoutot Exp $
 
 From 1a6c9dc0a4f695764d48f06ac17ced42b7432499 Mon Sep 17 00:00:00 2001
 From: Lennart Poettering <lennart@poettering.net>
 Date: Tue, 15 May 2012 23:06:17 +0000
 Subject: gnome: start PA early in the gnome session
 
---- src/daemon/pulseaudio.desktop.in.orig	Thu Jul 19 13:29:38 2012
-+++ src/daemon/pulseaudio.desktop.in	Fri Nov 30 13:13:43 2012
-@@ -8,3 +8,4 @@ Terminal=false
- Type=Application
+--- src/daemon/pulseaudio.desktop.in.orig	Wed Sep 26 13:27:01 2012
++++ src/daemon/pulseaudio.desktop.in	Tue Jan  1 11:56:56 2013
+@@ -9,3 +9,4 @@ Type=Application
  Categories=
  GenericName=
+ X-GNOME-Autostart-Phase=Initialization
 +X-GNOME-Autostart-Phase=Initialization

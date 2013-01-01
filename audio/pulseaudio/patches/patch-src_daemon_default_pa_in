@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_daemon_default_pa_in,v 1.6 2012/09/29 09:32:52 ajacoutot Exp $
---- src/daemon/default.pa.in.orig	Mon Mar 19 09:44:02 2012
-+++ src/daemon/default.pa.in	Sat Sep 22 11:39:34 2012
-@@ -63,6 +63,8 @@ ifelse(@HAVE_MKFIFO@, 1, [dnl
+$OpenBSD: patch-src_daemon_default_pa_in,v 1.7 2013/01/01 14:12:36 ajacoutot Exp $
+--- src/daemon/default.pa.in.orig	Mon Dec  3 06:57:23 2012
++++ src/daemon/default.pa.in	Tue Jan  1 11:58:22 2013
+@@ -63,17 +63,19 @@ ifelse(@HAVE_MKFIFO@, 1, [dnl
  #load-module module-pipe-sink
  ])dnl
  
@@ -10,14 +10,13 @@ $OpenBSD: patch-src_daemon_default_pa_in,v 1.6 2012/09/29 09:32:52 ajacoutot Exp
  ### Automatically load driver modules depending on the hardware available
  ifelse(@HAVE_UDEV@, 1, [dnl
  .ifexists module-udev-detect@PA_SOEXT@
-@@ -73,11 +75,11 @@ load-module module-udev-detect
- load-module module-hal-detect
+ load-module module-udev-detect
  .else
  ], [dnl
 -.ifexists module-detect@PA_SOEXT@
 +#.ifexists module-detect@PA_SOEXT@
  ])dnl
- ### Use the static hardware detection module (for systems that lack udev/hal support)
+ ### Use the static hardware detection module (for systems that lack udev support)
 -load-module module-detect
 -.endif
 +#load-module module-detect

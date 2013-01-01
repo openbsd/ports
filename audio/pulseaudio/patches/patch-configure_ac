@@ -1,25 +1,25 @@
-$OpenBSD: patch-configure_ac,v 1.6 2012/09/29 09:32:05 ajacoutot Exp $
---- configure.ac.orig	Fri May 11 13:43:03 2012
-+++ configure.ac	Mon May 14 16:18:28 2012
-@@ -161,7 +161,7 @@ esac
+$OpenBSD: patch-configure_ac,v 1.7 2013/01/01 14:12:36 ajacoutot Exp $
+--- configure.ac.orig	Mon Dec 17 09:59:51 2012
++++ configure.ac	Tue Jan  1 12:02:40 2013
+@@ -165,7 +165,7 @@ esac
  #### Compiler flags ####
  
  AX_APPEND_COMPILE_FLAGS(
--    [-Wall -W -Wextra -pipe -Wno-long-long -Wvla -Wno-overlength-strings -Wunsafe-loop-optimizations -Wundef -Wformat=2 -Wlogical-op -Wsign-compare -Wformat-security -Wmissing-include-dirs -Wformat-nonliteral -Wold-style-definition -Wpointer-arith -Winit-self -Wdeclaration-after-statement -Wfloat-equal -Wmissing-prototypes -Wstrict-prototypes -Wredundant-decls -Wmissing-declarations -Wmissing-noreturn -Wshadow -Wendif-labels -Wcast-align -Wstrict-aliasing -Wwrite-strings -Wno-unused-parameter -ffast-math -Wp,-D_FORTIFY_SOURCE=2 -fno-common -fdiagnostics-show-option],
-+    [-Wall -W -Wextra -pipe -Wno-long-long -Wvla -Wno-overlength-strings -Wunsafe-loop-optimizations -Wundef -Wformat=2 -Wlogical-op -Wsign-compare -Wformat-security -Wmissing-include-dirs -Wformat-nonliteral -Wold-style-definition -Wpointer-arith -Winit-self -Wdeclaration-after-statement -Wfloat-equal -Wmissing-prototypes -Wstrict-prototypes -Wmissing-declarations -Wmissing-noreturn -Wshadow -Wendif-labels -Wcast-align -Wstrict-aliasing -Wwrite-strings -Wno-unused-parameter -ffast-math -Wp,-D_FORTIFY_SOURCE=2 -fno-common -fdiagnostics-show-option],
+-    [-Wall -W -Wextra -pipe -Wno-long-long -Wno-overlength-strings -Wunsafe-loop-optimizations -Wundef -Wformat=2 -Wlogical-op -Wsign-compare -Wformat-security -Wmissing-include-dirs -Wformat-nonliteral -Wold-style-definition -Wpointer-arith -Winit-self -Wdeclaration-after-statement -Wfloat-equal -Wmissing-prototypes -Wstrict-prototypes -Wredundant-decls -Wmissing-declarations -Wmissing-noreturn -Wshadow -Wendif-labels -Wcast-align -Wstrict-aliasing -Wwrite-strings -Wno-unused-parameter -ffast-math -Wp,-D_FORTIFY_SOURCE=2 -fno-common -fdiagnostics-show-option],
++    [-Wall -W -Wextra -pipe -Wno-long-long -Wno-overlength-strings -Wunsafe-loop-optimizations -Wundef -Wformat=2 -Wlogical-op -Wsign-compare -Wformat-security -Wmissing-include-dirs -Wformat-nonliteral -Wold-style-definition -Wpointer-arith -Winit-self -Wdeclaration-after-statement -Wfloat-equal -Wmissing-prototypes -Wstrict-prototypes -Wmissing-declarations -Wmissing-noreturn -Wshadow -Wendif-labels -Wcast-align -Wstrict-aliasing -Wwrite-strings -Wno-unused-parameter -ffast-math -Wp,-D_FORTIFY_SOURCE=2 -fno-common -fdiagnostics-show-option],
      [], [-pedantic -Werror])
  
  # Only enable fastpath asserts when doing a debug build, e.g. from bootstrap.sh.
-@@ -945,7 +945,7 @@ AC_SUBST(HAVE_DBUS)
- AM_CONDITIONAL([HAVE_DBUS], [test "x$HAVE_DBUS" = x1])
- AS_IF([test "x$HAVE_DBUS" = "x1"], AC_DEFINE([HAVE_DBUS], 1, [Have D-Bus.]))
+@@ -994,7 +994,7 @@ AS_IF([test "x$HAVE_DBUS" = "x1"], AC_DEFINE([HAVE_DBU
  
--PA_MACHINE_ID="${localstatedir}/lib/dbus/machine-id"
-+PA_MACHINE_ID="${localstatedir}/db/dbus/machine-id"
+ PA_MACHINE_ID="${sysconfdir}/machine-id"
  AX_DEFINE_DIR(PA_MACHINE_ID, PA_MACHINE_ID, [D-Bus machine-id file])
- PA_MACHINE_ID_FALLBACK="${sysconfdir}/machine-id"
+-PA_MACHINE_ID_FALLBACK="${localstatedir}/lib/dbus/machine-id"
++PA_MACHINE_ID_FALLBACK="${localstatedir}/db/dbus/machine-id"
  AX_DEFINE_DIR(PA_MACHINE_ID_FALLBACK, PA_MACHINE_ID_FALLBACK,
-@@ -1174,9 +1174,9 @@ fi
+ 	      [Fallback machine-id file])
+ 
+@@ -1222,9 +1222,9 @@ fi
  
  PA_SYSTEM_RUNTIME_PATH="${localstatedir}/run/pulse"
  AX_DEFINE_DIR(PA_SYSTEM_RUNTIME_PATH, PA_SYSTEM_RUNTIME_PATH, [System runtime dir])

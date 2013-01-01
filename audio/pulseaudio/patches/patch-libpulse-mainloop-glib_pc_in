@@ -1,15 +1,15 @@
-$OpenBSD: patch-libpulse-mainloop-glib_pc_in,v 1.2 2012/11/10 14:52:54 ajacoutot Exp $
+$OpenBSD: patch-libpulse-mainloop-glib_pc_in,v 1.3 2013/01/01 14:12:36 ajacoutot Exp $
 
 linked "privately" to lib/pulseaudio/libpulsecommon-X.Y.so
 
---- libpulse-mainloop-glib.pc.in.orig	Mon Oct 15 12:27:21 2012
-+++ libpulse-mainloop-glib.pc.in	Mon Oct 15 12:28:53 2012
+--- libpulse-mainloop-glib.pc.in.orig	Wed Sep 26 13:27:01 2012
++++ libpulse-mainloop-glib.pc.in	Tue Jan  1 12:03:17 2013
 @@ -6,7 +6,7 @@ includedir=@includedir@
  Name: libpulse-mainloop-glib
  Description: PulseAudio GLib 2.0 Main Loop Wrapper
  Version: @PACKAGE_VERSION@
 -Libs: -L${libdir} -lpulse-mainloop-glib @PTHREAD_LIBS@
-+Libs: -L${libdir} -lpulse-mainloop-glib @PTHREAD_LIBS@ -Wl,-rpath,${libdir}/pulseaudio
- Libs.private: -lpulsecommon-@PA_MAJORMINOR@
++Libs: -L${libdir} -lpulse-mainloop-glib @PTHREAD_LIBS@  -Wl,-rpath,${libdir}/pulseaudio
+ Libs.private: -L${libdir}/pulseaudio -lpulsecommon-@PA_MAJORMINOR@
  Cflags: -I${includedir} -D_REENTRANT
  Requires: libpulse glib-2.0

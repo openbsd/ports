@@ -1,15 +1,15 @@
-$OpenBSD: patch-libpulse-simple_pc_in,v 1.2 2012/11/10 14:52:54 ajacoutot Exp $
+$OpenBSD: patch-libpulse-simple_pc_in,v 1.3 2013/01/01 14:12:36 ajacoutot Exp $
 
 linked "privately" to lib/pulseaudio/libpulsecommon-X.Y.so
 
---- libpulse-simple.pc.in.orig	Mon Oct 15 12:27:26 2012
-+++ libpulse-simple.pc.in	Mon Oct 15 12:29:00 2012
+--- libpulse-simple.pc.in.orig	Wed Sep 26 13:27:01 2012
++++ libpulse-simple.pc.in	Tue Jan  1 12:03:38 2013
 @@ -6,7 +6,7 @@ includedir=@includedir@
  Name: libpulse-simple
  Description: PulseAudio Simplified Synchronous Client Interface
  Version: @PACKAGE_VERSION@
 -Libs: -L${libdir} -lpulse-simple @PTHREAD_LIBS@
 +Libs: -L${libdir} -lpulse-simple @PTHREAD_LIBS@ -Wl,-rpath,${libdir}/pulseaudio
- Libs.private: -lpulsecommon-@PA_MAJORMINOR@
+ Libs.private: -L${libdir}/pulseaudio -lpulsecommon-@PA_MAJORMINOR@
  Cflags: -I${includedir} -D_REENTRANT
  Requires: libpulse

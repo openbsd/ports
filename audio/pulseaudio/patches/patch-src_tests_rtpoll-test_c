@@ -1,19 +1,19 @@
-$OpenBSD: patch-src_tests_rtpoll-test_c,v 1.1.1.1 2011/09/25 09:30:52 robert Exp $
---- src/tests/rtpoll-test.c.orig	Thu Jun 23 12:38:04 2011
-+++ src/tests/rtpoll-test.c	Thu Jun 23 12:38:24 2011
-@@ -42,6 +42,7 @@ static int worker(pa_rtpoll_item *w) {
- }
+$OpenBSD: patch-src_tests_rtpoll-test_c,v 1.2 2013/01/01 14:12:36 ajacoutot Exp $
+--- src/tests/rtpoll-test.c.orig	Wed Sep 26 13:27:01 2012
++++ src/tests/rtpoll-test.c	Tue Jan  1 12:01:30 2013
+@@ -85,6 +85,7 @@ START_TEST (rtpoll_test) {
+ END_TEST
  
  int main(int argc, char *argv[]) {
 +#ifdef SIGRTMIN
-     pa_rtpoll *p;
-     pa_rtpoll_item *i, *w;
-     struct pollfd *pollfd;
-@@ -80,6 +81,6 @@ int main(int argc, char *argv[]) {
-     pa_rtpoll_item_free(w);
+     int failed = 0;
+     Suite *s;
+     TCase *tc;
+@@ -105,4 +106,7 @@ int main(int argc, char *argv[]) {
+     srunner_free(sr);
  
-     pa_rtpoll_free(p);
--
+     return (failed == 0) ? EXIT_SUCCESS : EXIT_FAILURE;
++#else
++    return 0;
 +#endif
-     return 0;
  }
