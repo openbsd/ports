@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/11/08 06:36:38 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/01/01 16:27:19 benoit Exp $
 lib/python${MODPY_VERSION}/site-packages/pyasn1/
 lib/python${MODPY_VERSION}/site-packages/pyasn1-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pyasn1-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -39,6 +39,8 @@ lib/python${MODPY_VERSION}/site-packages/pyasn1/compat/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1/compat/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/pyasn1/compat/octets.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1/compat/octets.pyc
+lib/python${MODPY_VERSION}/site-packages/pyasn1/debug.py
+lib/python${MODPY_VERSION}/site-packages/pyasn1/debug.pyc
 lib/python${MODPY_VERSION}/site-packages/pyasn1/error.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1/error.pyc
 lib/python${MODPY_VERSION}/site-packages/pyasn1/type/
@@ -64,5 +66,11 @@ lib/python${MODPY_VERSION}/site-packages/pyasn1/type/univ.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1/type/univ.pyc
 lib/python${MODPY_VERSION}/site-packages/pyasn1/type/useful.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1/type/useful.pyc
-share/doc/py-asn1/
-share/doc/py-asn1/pyasn1-tutorial.html
+share/doc/${MODPY_PY_PREFIX}asn1/
+share/doc/${MODPY_PY_PREFIX}asn1/codecs.html
+share/doc/${MODPY_PY_PREFIX}asn1/constraints.html
+share/doc/${MODPY_PY_PREFIX}asn1/constructed.html
+share/doc/${MODPY_PY_PREFIX}asn1/intro.html
+share/doc/${MODPY_PY_PREFIX}asn1/pyasn1-tutorial.html
+share/doc/${MODPY_PY_PREFIX}asn1/scalar.html
+share/doc/${MODPY_PY_PREFIX}asn1/tagging.html
