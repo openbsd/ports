@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2012/12/23 12:25:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.95 2013/01/01 14:36:11 ajacoutot Exp $
 
 # DPB: not parallel-safe
 
@@ -6,7 +6,7 @@ COMMENT=	message bus system
 
 DISTNAME=	dbus-1.6.8
 EPOCH=		0
-REVISION=	3
+REVISION=	4
 
 SHARED_LIBS +=  dbus-1               10.2     # 10.2
 
@@ -25,7 +25,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB += ICE SM X11 c expat kvm pthread xcb
 
-MASTER_SITES=	${HOMEPAGE}/releases/dbus/
+MASTER_SITES=	${HOMEPAGE}releases/dbus/
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
