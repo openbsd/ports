@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2012/12/08 10:10:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2013/01/02 15:42:02 landry Exp $
 
 COMMENT =	semantic grep, based on coccinelle
+# coccinelle -> ocaml which is also not for hppa
+NOT_FOR_ARCHS =	hppa
 
 MODPY_EGG_VERSION = 1.11
 DISTNAME =	coccigrep-${MODPY_EGG_VERSION}
