@@ -1,16 +1,13 @@
-# $OpenBSD: Makefile,v 1.20 2012/10/15 14:55:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2013/01/02 11:50:17 gonzalo Exp $
 
 COMMENT=	pythonic, object-oriented web development framework
 
-MODPY_EGG_VERSION=	3.2.0
-REVISION=		1
+MODPY_EGG_VERSION=	3.2.2
 DISTNAME=		CherryPy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		www
 
 HOMEPAGE=	http://www.cherrypy.org/
-
-MAINTAINER=	Joerg Zinke <mail@umaxx.net>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -34,6 +31,6 @@ REGRESS_IS_INTERACTIVE =Yes
 
 do-regress:
 	@cd ${WRKSRC} && ${LOCALBASE}/bin/nosetests -s -v \
-		py2/cherrypy/test
+		lib/cherrypy/test
 
 .include <bsd.port.mk>

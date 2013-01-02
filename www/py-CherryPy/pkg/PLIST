@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2011/07/03 22:14:42 zinke Exp $
+@comment $OpenBSD: PLIST,v 1.11 2013/01/02 11:50:17 gonzalo Exp $
 @conflict py-cherrypy2-*
 bin/cherryd
 lib/python${MODPY_VERSION}/site-packages/CherryPy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -63,6 +63,8 @@ lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/cptools.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/cptools.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/encoding.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/encoding.pyc
+lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/gctools.py
+lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/gctools.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/http.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/http.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/httpauth.py
@@ -79,8 +81,8 @@ lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/sessions.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/sessions.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/static.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/static.pyc
-lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/xmlrpc.py
-lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/xmlrpc.pyc
+lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/xmlrpcutil.py
+lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/xmlrpcutil.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/process/
 lib/python${MODPY_VERSION}/site-packages/cherrypy/process/__init__.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/process/__init__.pyc
@@ -235,3 +237,5 @@ lib/python${MODPY_VERSION}/site-packages/cherrypy/wsgiserver/ssl_builtin.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/wsgiserver/ssl_builtin.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/wsgiserver/ssl_pyopenssl.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/wsgiserver/ssl_pyopenssl.pyc
+lib/python${MODPY_VERSION}/site-packages/cherrypy/wsgiserver/wsgiserver2.py
+lib/python${MODPY_VERSION}/site-packages/cherrypy/wsgiserver/wsgiserver2.pyc
