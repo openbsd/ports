@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/12/29 11:32:45 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/01/02 20:28:08 jasper Exp $
 %%SHARED%%
 @bin bin/augparse
 @bin bin/augtool
@@ -31,6 +31,7 @@ share/augeas/lenses/dist/automounter.aug
 share/augeas/lenses/dist/avahi.aug
 share/augeas/lenses/dist/backuppchosts.aug
 share/augeas/lenses/dist/bbhosts.aug
+share/augeas/lenses/dist/bootconf.aug
 share/augeas/lenses/dist/build.aug
 share/augeas/lenses/dist/cachefilesd.aug
 share/augeas/lenses/dist/carbon.aug
@@ -178,6 +179,7 @@ share/augeas/lenses/dist/tests/test_automounter.aug
 share/augeas/lenses/dist/tests/test_avahi.aug
 share/augeas/lenses/dist/tests/test_backuppchosts.aug
 share/augeas/lenses/dist/tests/test_bbhosts.aug
+share/augeas/lenses/dist/tests/test_bootconf.aug
 share/augeas/lenses/dist/tests/test_build.aug
 share/augeas/lenses/dist/tests/test_cachefilesd.aug
 share/augeas/lenses/dist/tests/test_carbon.aug
