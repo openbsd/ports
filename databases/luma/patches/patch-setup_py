@@ -1,0 +1,21 @@
+$OpenBSD: patch-setup_py,v 1.1 2013/01/02 20:40:21 landry Exp $
+--- setup.py.orig	Thu May 26 11:46:38 2011
++++ setup.py	Wed Nov 28 21:55:27 2012
+@@ -159,7 +159,7 @@ elif sys.platform.lower().startswith('darwin'):
+     )
+ 
+ # Linux
+-elif sys.platform.lower().startswith('linux'):
++elif sys.platform.lower().startswith('openbsd'):
+     # Include the application icon in various sizes, so that icon themers
+     # can change this as per the iconthemeing standards defined by
+     # freedesktop.org
+@@ -179,7 +179,7 @@ elif sys.platform.lower().startswith('linux'):
+ 
+     # Create the nroff man page for linux.
+     if createNroffManpage():
+-        _data_files.append(('share/man/man1', glob('data/man/luma.1.gz')))
++        _data_files.append(('man/man1', glob('data/man/luma.1')))
+ 
+     _extras = dict(
+         data_files=_data_files,

@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2011/12/20 18:55:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2013/01/02 20:40:21 landry Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Qt-based LDAP browser and utility
 
-MODPY_EGG_VERSION=2.4
+MODPY_EGG_VERSION=3.0.7
 DISTNAME=	luma-${MODPY_EGG_VERSION}
-REVISION =	3
 
 CATEGORIES=	databases x11
 
@@ -18,28 +17,19 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=luma/}
-EXTRACT_SUFX=	.tar.bz2
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=luma/}
 
 MODULES=	lang/python
-RUN_DEPENDS=	x11/py-qt3 \
+RUN_DEPENDS=	x11/py-qt4 \
+		devel/desktop-file-utils \
+		x11/gtk+2,-guic \
 		databases/py-ldap
 
-USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
-pre-configure:
-	cp ${FILESDIR}/setup.py ${WRKSRC}/setup.py
-	rm ${WRKSRC}/bin/luma
-	mv ${WRKSRC}/lib/luma/luma.py ${WRKSRC}/lib/luma/luma
-
+# install the damn templates
 post-install:
-	mv ${PREFIX}/bin/luma \
-	    ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/luma/luma
-	ln -s ${TRUEPREFIX}/lib/python${MODPY_VERSION}/site-packages/luma/luma \
-	    ${PREFIX}/bin/luma
-	${INSTALL_DATA_DIR} ${PREFIX}/share/luma/
-	cd ${WRKSRC}/share/luma && pax -rw icons i18n ${PREFIX}/share/luma/
-	${INSTALL_MAN} ${WRKSRC}/share/man/man1/luma.1 ${PREFIX}/man/man1/
+	cp -r ${WRKSRC}/luma/plugins/browser/templates \
+		${PREFIX}/lib/python${MODPY_VERSION}/site-packages/luma/plugins/browser/templates/
 
 .include <bsd.port.mk>
