@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.41 2013/01/02 17:12:21 landry Exp $
+# $OpenBSD: Makefile,v 1.42 2013/01/02 18:25:27 landry Exp $
 
 COMMENT=	Xfce4 extension library
 
-XFCE_VERSION=	0.8.0
+XFCE_VERSION=	0.10.2
 XFCE_PROJECT=	exo
-REVISION=	1
 
-SHARED_LIBS=	exo-1		0.1
+SHARED_LIBS=	exo-1		0.2
 
 HOMEPAGE=	http://www.xfce.org/projects
 
@@ -24,8 +23,8 @@ CONFIGURE_ENV=	ac_cv_header_sys_ucred_h=yes \
 		ac_cv_header_sys_mount_h=yes
 
 BUILD_DEPENDS=	www/p5-URI
-LIB_DEPENDS=	x11/xfce4/libxfce4ui>=4.9.0 \
-		x11/xfce4/libxfce4util>=4.8.0
+LIB_DEPENDS=	x11/xfce4/libxfce4ui>=4.10.0 \
+		x11/xfce4/libxfce4util>=4.10.0
 
 FAKE_FLAGS=	defaultsdir=${PREFIX}/share/examples/exo
 
