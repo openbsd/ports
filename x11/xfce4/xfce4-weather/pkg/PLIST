@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2013/01/02 17:12:23 landry Exp $
+@comment $OpenBSD: PLIST,v 1.17 2013/01/02 18:58:25 landry Exp $
 @conflict xfce4-weather-plugin-*
 lib/xfce4/panel/plugins/libweather.so
 share/icons/hicolor/48x48/apps/xfce4-weather.png
@@ -35,6 +35,7 @@ share/locale/pt_BR/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/ru/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/sk/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/sq/LC_MESSAGES/xfce4-weather-plugin.mo
+share/locale/sr/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/sv/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/te/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/tr/LC_MESSAGES/xfce4-weather-plugin.mo
@@ -48,7 +49,6 @@ share/xfce4/panel/plugins/weather.desktop
 share/xfce4/weather/
 share/xfce4/weather/icons/
 share/xfce4/weather/icons/liquid/
-share/xfce4/weather/icons/liquid/CLOUD-night.png
 share/xfce4/weather/icons/liquid/CLOUD.png
 share/xfce4/weather/icons/liquid/FOG.png
 share/xfce4/weather/icons/liquid/LIGHTCLOUD-night.png
@@ -65,12 +65,15 @@ share/xfce4/weather/icons/liquid/PARTLYCLOUD.png
 share/xfce4/weather/icons/liquid/RAIN.png
 share/xfce4/weather/icons/liquid/RAINTHUNDER.png
 share/xfce4/weather/icons/liquid/SLEET.png
+share/xfce4/weather/icons/liquid/SLEETSUN-night.png
 share/xfce4/weather/icons/liquid/SLEETSUN.png
+share/xfce4/weather/icons/liquid/SLEETSUNTHUNDER-night.png
 share/xfce4/weather/icons/liquid/SLEETSUNTHUNDER.png
 share/xfce4/weather/icons/liquid/SLEETTHUNDER.png
 share/xfce4/weather/icons/liquid/SNOW.png
 share/xfce4/weather/icons/liquid/SNOWSUN-night.png
 share/xfce4/weather/icons/liquid/SNOWSUN.png
+share/xfce4/weather/icons/liquid/SNOWSUNTHUNDER-night.png
 share/xfce4/weather/icons/liquid/SNOWSUNTHUNDER.png
 share/xfce4/weather/icons/liquid/SNOWTHUNDER.png
 share/xfce4/weather/icons/liquid/SUN-night.png
