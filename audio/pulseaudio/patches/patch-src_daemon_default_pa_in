@@ -1,15 +1,15 @@
-$OpenBSD: patch-src_daemon_default_pa_in,v 1.7 2013/01/01 14:12:36 ajacoutot Exp $
+$OpenBSD: patch-src_daemon_default_pa_in,v 1.8 2013/01/02 16:28:19 ajacoutot Exp $
 --- src/daemon/default.pa.in.orig	Mon Dec  3 06:57:23 2012
-+++ src/daemon/default.pa.in	Tue Jan  1 11:58:22 2013
-@@ -63,17 +63,19 @@ ifelse(@HAVE_MKFIFO@, 1, [dnl
- #load-module module-pipe-sink
- ])dnl
- 
++++ src/daemon/default.pa.in	Wed Jan  2 16:22:49 2013
+@@ -47,6 +47,7 @@ load-module module-augment-properties
+ ### Load audio drivers statically
+ ### (it's probably better to not load these drivers manually, but instead
+ ### use module-udev-detect -- see below -- for doing this automatically)
 +load-module module-sndio.so record="false"
-+
- ### Automatically load driver modules depending on the hardware available
- ifelse(@HAVE_UDEV@, 1, [dnl
- .ifexists module-udev-detect@PA_SOEXT@
+ ifelse(@HAVE_ALSA@, 1, [dnl
+ #load-module module-alsa-sink
+ #load-module module-alsa-source device=hw:1,0
+@@ -69,11 +70,11 @@ ifelse(@HAVE_UDEV@, 1, [dnl
  load-module module-udev-detect
  .else
  ], [dnl

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2013/01/01 14:12:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2013/01/02 16:28:19 ajacoutot Exp $
 
 # XXX
 # fix autospawn lock (patch-src_daemon_main_c)
@@ -20,6 +20,7 @@ COMMENT=		cross-platform networked sound server
 VERSION=		3.0
 DISTNAME=		pulseaudio-${VERSION}
 EXTRACT_SUFX=		.tar.xz
+REVISION=		0
 
 SHARED_LIBS +=  pulse                2.0      # .15.3
 SHARED_LIBS +=  pulse-simple         0.0      # .0.3
@@ -54,6 +55,9 @@ USE_LIBTOOL=		gnu
 LIBTOOL_FLAGS=		--tag=disable-static
 
 BUILD_DEPENDS=		archivers/gtar
+
+# needed for tests
+BUILD_DEPENDS +=	devel/check
 
 LIB_DEPENDS=		audio/libsndfile \
 			audio/speex \
