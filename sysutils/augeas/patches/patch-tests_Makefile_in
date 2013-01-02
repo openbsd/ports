@@ -1,0 +1,19 @@
+$OpenBSD: patch-tests_Makefile_in,v 1.1 2013/01/02 20:37:11 jasper Exp $
+
+From 7f0a91180f84853760b79398fa3c4724aa21bb92 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Wed, 2 Jan 2013 20:10:12 +0100
+Subject: [PATCH 2/2] Add a new lens for OpenBSD's /etc/boot.conf.
+
+Fixes ticket #322
+
+--- tests/Makefile.in.orig	Wed Jan  2 21:21:05 2013
++++ tests/Makefile.in	Wed Jan  2 21:21:39 2013
+@@ -1255,6 +1255,7 @@ lens_tests = \
+   lens-avahi.sh	\
+   lens-backuppchosts.sh		\
+   lens-bbhosts.sh		\
++  lens-bootconf.sh		\
+   lens-build.sh		\
+   lens-cachefilesd.sh		\
+   lens-carbon.sh	\
