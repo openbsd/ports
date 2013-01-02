@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2012/12/23 13:25:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2013/01/02 15:50:28 landry Exp $
 
 COMMENT-main=		GNU editor: extensible, customizable, self-documenting
 COMMENT-el=		elisp sources for those who want to read/modify them
+BROKEN-hppa =	Illegal operands in asm on callproc.c
 
 VERSION=		22.3
 DISTNAME=		emacs-${VERSION}
