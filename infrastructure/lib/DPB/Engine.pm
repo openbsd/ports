@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.64 2012/12/30 14:33:46 espie Exp $
+# $OpenBSD: Engine.pm,v 1.65 2013/01/02 11:13:52 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -702,6 +702,7 @@ sub check_buildable
 	    $self->{buildable}->count > 0) {
 	    	print $temp "-\n";
 		$self->{unchecked} = 1;
+		$self->stats;
 		return 0;
 	}
 
