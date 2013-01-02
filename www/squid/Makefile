@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.139 2012/12/20 21:48:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.140 2013/01/02 12:26:58 sthen Exp $
 
 MULTI_PACKAGES=	-main -ntlm
 
@@ -53,6 +53,14 @@ MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/cfgaux
 
 USE_GROFF=	Yes
 USE_LIBTOOL=	Yes
+
+# gcc 4.2: src/ipc/StoreMap.cc fails with "unrecognizable insn" unless
+# optimizer is disabled, see e.g.
+# http://www.squid-cache.org/mail-archive/squid-users/201208/0060.html
+MODULES+=	gcc4
+MODGCC4_VERSION= 4.6
+MODGCC4_ARCHS=	powerpc
+MODGCC4_LANGS=	c c++
 
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--datadir="${PREFIX}/share/squid" \
