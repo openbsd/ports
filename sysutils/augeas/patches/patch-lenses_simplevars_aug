@@ -1,0 +1,17 @@
+$OpenBSD: patch-lenses_simplevars_aug,v 1.3 2013/01/02 20:18:48 jasper Exp $
+
+From 4e1be482cab52d3a33e8ba8bd408418644b4c5a3 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Sun, 30 Dec 2012 23:01:16 +0100
+Subject: [PATCH] Add two files found on OpenBSD to the simplevars lens.
+
+--- lenses/simplevars.aug.orig	Wed Jan  2 21:14:29 2013
++++ lenses/simplevars.aug	Wed Jan  2 21:14:38 2013
+@@ -40,5 +40,7 @@ let filter = incl "/etc/kernel-img.conf"
+            . incl "/etc/wgetrc"
+            . incl "/etc/zabbix/*.conf"
+            . incl "/etc/audit/auditd.conf"
++           . incl "/etc/mixerctl.conf"
++           . incl "/etc/wsconsctlctl.conf"
+ 
+ let xfm = transform lns filter
