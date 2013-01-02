@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2012/04/13 13:42:21 robert Exp $
+@comment $OpenBSD: PLIST,v 1.15 2013/01/02 07:18:46 shadchin Exp $
 @bin bin/mc
 bin/mcdiff
 bin/mcedit
@@ -116,16 +116,24 @@ share/locale/ca/LC_MESSAGES/mc.mo
 share/locale/cs/LC_MESSAGES/mc.mo
 share/locale/da/LC_MESSAGES/mc.mo
 share/locale/de/LC_MESSAGES/mc.mo
+share/locale/de_CH/
+share/locale/de_CH/LC_MESSAGES/
+share/locale/de_CH/LC_MESSAGES/mc.mo
 share/locale/el/LC_MESSAGES/mc.mo
 share/locale/eo/LC_MESSAGES/mc.mo
 share/locale/es/LC_MESSAGES/mc.mo
+share/locale/et/LC_MESSAGES/mc.mo
 share/locale/eu/LC_MESSAGES/mc.mo
+share/locale/fa/
+share/locale/fa/LC_MESSAGES/
+share/locale/fa/LC_MESSAGES/mc.mo
 share/locale/fi/LC_MESSAGES/mc.mo
 share/locale/fi_FI/
 share/locale/fi_FI/LC_MESSAGES/
 share/locale/fi_FI/LC_MESSAGES/mc.mo
 share/locale/fr/LC_MESSAGES/mc.mo
 share/locale/gl/LC_MESSAGES/mc.mo
+share/locale/hr/LC_MESSAGES/mc.mo
 share/locale/hu/LC_MESSAGES/mc.mo
 share/locale/ia/
 share/locale/ia/LC_MESSAGES/
@@ -226,6 +234,7 @@ share/mc/syntax/awk.syntax
 share/mc/syntax/c.syntax
 share/mc/syntax/cabal.syntax
 share/mc/syntax/changelog.syntax
+share/mc/syntax/cmake.syntax
 share/mc/syntax/cs.syntax
 share/mc/syntax/css.syntax
 share/mc/syntax/cxx.syntax
@@ -236,6 +245,7 @@ share/mc/syntax/debian-control.syntax
 share/mc/syntax/debian-description.syntax
 share/mc/syntax/debian-sources-list.syntax
 share/mc/syntax/diff.syntax
+share/mc/syntax/dlink.syntax
 share/mc/syntax/dos.syntax
 share/mc/syntax/ebuild.syntax
 share/mc/syntax/eiffel.syntax

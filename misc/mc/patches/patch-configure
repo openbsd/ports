@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.8 2012/04/13 13:42:21 robert Exp $
---- configure.orig	Wed Apr 11 08:32:30 2012
-+++ configure	Wed Apr 11 08:33:33 2012
-@@ -22455,7 +22455,7 @@ done
+$OpenBSD: patch-configure,v 1.9 2013/01/02 07:18:46 shadchin Exp $
+--- configure.orig	Fri Dec 28 15:27:29 2012
++++ configure	Tue Jan  1 23:52:16 2013
+@@ -22952,7 +22952,7 @@ done
    done
  IFS=$as_save_IFS
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.8 2012/04/13 13:42:21 robert Exp $
    ;;
  esac
  fi
-@@ -22496,7 +22496,7 @@ done
+@@ -22993,7 +22993,7 @@ done
    done
  IFS=$as_save_IFS
  
@@ -19,51 +19,3 @@ $OpenBSD: patch-configure,v 1.8 2012/04/13 13:42:21 robert Exp $
    ;;
  esac
  fi
-@@ -23919,7 +23919,6 @@ fi
-     fi
- 
-         if test x"$mc_cv_slang_termcap"  = x"yes"; then
--	    saved_CPPFLAGS="-ltermcap $saved_CPPFLAGS "
- 	    saved_LDFLAGS="-ltermcap $saved_LDFLAGS"
-         fi
- 
-@@ -24370,7 +24369,6 @@ fi
-     fi
- 
-         if test x"$mc_cv_slang_termcap"  = x"yes"; then
--	    saved_CPPFLAGS="-ltermcap $saved_CPPFLAGS "
- 	    saved_LDFLAGS="-ltermcap $saved_LDFLAGS"
-         fi
- 
-@@ -24744,7 +24742,6 @@ fi
-     fi
- 
-         if test x"$mc_cv_slang_termcap"  = x"yes"; then
--	    saved_CPPFLAGS="-ltermcap $saved_CPPFLAGS "
- 	    saved_LDFLAGS="-ltermcap $saved_LDFLAGS"
-         fi
- 
-@@ -25690,7 +25687,6 @@ fi
-     fi
- 
-         if test x"$mc_cv_slang_termcap"  = x"yes"; then
--	    saved_CPPFLAGS="-ltermcap $saved_CPPFLAGS "
- 	    saved_LDFLAGS="-ltermcap $saved_LDFLAGS"
-         fi
- 
-@@ -26141,7 +26137,6 @@ fi
-     fi
- 
-         if test x"$mc_cv_slang_termcap"  = x"yes"; then
--	    saved_CPPFLAGS="-ltermcap $saved_CPPFLAGS "
- 	    saved_LDFLAGS="-ltermcap $saved_LDFLAGS"
-         fi
- 
-@@ -26515,7 +26510,6 @@ fi
-     fi
- 
-         if test x"$mc_cv_slang_termcap"  = x"yes"; then
--	    saved_CPPFLAGS="-ltermcap $saved_CPPFLAGS "
- 	    saved_LDFLAGS="-ltermcap $saved_LDFLAGS"
-         fi
- 
