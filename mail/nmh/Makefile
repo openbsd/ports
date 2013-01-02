@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2012/06/18 16:03:00 pascal Exp $
+# $OpenBSD: Makefile,v 1.34 2013/01/02 04:19:54 william Exp $
 
 COMMENT=		new MH mail handling program
 
 DISTNAME=		nmh-1.5
+REVISION=		0
 CATEGORIES=		mail
 MASTER_SITES=		${MASTER_SITE_SAVANNAH:=nmh/}
 HOMEPAGE=		http://www.nongnu.org/nmh/

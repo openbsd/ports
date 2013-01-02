@@ -1,0 +1,47 @@
+$OpenBSD: patch-uip_rcvtty_c,v 1.1 2013/01/02 04:19:55 william Exp $
+
+Upstream no longer supports utmp...
+http://git.savannah.gnu.org/cgit/nmh.git/patch/?id=7ba29497ff3f164e2a507eda35e81f1cb0658c74
+
+
+--- uip/rcvtty.c.orig	Mon Jun 11 00:06:19 2012
++++ uip/rcvtty.c	Tue Jan  1 18:11:37 2013
+@@ -24,6 +24,8 @@
+ 
+ #ifdef HAVE_GETUTXENT
+ #include <utmpx.h>
++#else
++#include <utmp.h>
+ #endif /* HAVE_GETUTXENT */
+ 
+ #define	SCANFMT	\
+@@ -83,7 +85,12 @@ main (int argc, char **argv)
+     int md, vecp = 0;
+     char *cp, *user, buf[BUFSIZ], tty[BUFSIZ];
+     char **argp, **arguments, *vec[MAXARGS];
++#if HAVE_GETUTXENT
+     struct utmpx *utp;
++#else
++    struct utmp ut;
++    register FILE *uf;
++#endif
+ #ifdef LOCALE
+     setlocale(LC_ALL, "");
+ #endif
+@@ -169,6 +176,16 @@ main (int argc, char **argv)
+         }
+     }
+     endutxent();
++#else
++    if ((uf = fopen (_PATH_UTMP, "r")) == NULL)
++       exit (RCV_MBX);
++    while (fread ((char *) &ut, sizeof(ut), 1, uf) == 1)
++       if (ut.ut_name[0] != 0
++               && strncmp (user, ut.ut_name, sizeof(ut.ut_name)) == 0) {
++           strncpy (tty, ut.ut_line, sizeof(ut.ut_line));
++           alert (tty, md);
++       }
++    fclose (uf);
+ #endif /* HAVE_GETUTXENT */
+ 
+     exit (RCV_MOK);
