@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.63 2012/03/29 13:38:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.64 2013/01/02 20:29:49 landry Exp $
 
 COMMENT=	graphical frontend for LaTeX (nearly WYSIWYG)
 
-DISTNAME=	lyx-1.6.6.1
-REVISION=	3
+DISTNAME=	lyx-2.0.4
 CATEGORIES=	print editors
 
 HOMEPAGE=	http://www.lyx.org/
 
-MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/1.6.x/ \
-		ftp://ftp.lip6.fr/pub/lyx/stable/1.6.x/
+MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/2.0.x/ \
+		ftp://ftp.lip6.fr/pub/lyx/stable/2.0.x/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -24,11 +23,12 @@ RUN_DEPENDS=	print/texlive/base \
 
 LIB_DEPENDS=	${MODQT4_LIB_DEPENDS}>=4.5.3 \
 		devel/boost \
+		textproc/enchant \
 		textproc/aspell/core
 
-WANTLIB += QtGui>=8 X11 aspell c m pthread stdc++ z
-WANTLIB += boost_filesystem-mt>=1 boost_iostreams-mt>=1
+WANTLIB += QtGui>=8 aspell c m pthread stdc++ z
 WANTLIB += boost_regex-mt>=1 boost_signals-mt>=1
+WANTLIB += glib-2.0 gmodule-2.0 enchant
 
 SEPARATE_BUILD=	Yes
 USE_LIBTOOL=	Yes
