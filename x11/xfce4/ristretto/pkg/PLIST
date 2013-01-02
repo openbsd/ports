@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2012/06/15 08:30:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2013/01/02 18:53:21 landry Exp $
 @bin bin/ristretto
 share/applications/ristretto.desktop
 share/icons/hicolor/16x16/apps/ristretto.png
@@ -36,6 +36,7 @@ share/locale/ro/LC_MESSAGES/ristretto.mo
 share/locale/ru/LC_MESSAGES/ristretto.mo
 share/locale/sk/LC_MESSAGES/ristretto.mo
 share/locale/sl/LC_MESSAGES/ristretto.mo
+share/locale/sr/LC_MESSAGES/ristretto.mo
 share/locale/sv/LC_MESSAGES/ristretto.mo
 share/locale/te/LC_MESSAGES/ristretto.mo
 share/locale/tr/LC_MESSAGES/ristretto.mo
