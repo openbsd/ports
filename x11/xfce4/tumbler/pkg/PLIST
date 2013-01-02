@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/01/02 17:12:22 landry Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/01/02 18:29:09 landry Exp $
 include/tumbler-1/
 include/tumbler-1/tumbler/
 include/tumbler-1/tumbler/tumbler-abstract-thumbnailer.h
@@ -99,6 +99,7 @@ share/locale/ro/LC_MESSAGES/tumbler.mo
 share/locale/ru/LC_MESSAGES/tumbler.mo
 share/locale/si/LC_MESSAGES/tumbler.mo
 share/locale/sk/LC_MESSAGES/tumbler.mo
+share/locale/sr/LC_MESSAGES/tumbler.mo
 share/locale/sv/LC_MESSAGES/tumbler.mo
 share/locale/te/LC_MESSAGES/tumbler.mo
 share/locale/tr/LC_MESSAGES/tumbler.mo
