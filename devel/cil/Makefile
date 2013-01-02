@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/01/02 08:34:32 ajacoutot Exp $
-
-BROKEN-powerpc = x86_OPENBSD/cilly.asm.exe does not exist
+# $OpenBSD: Makefile,v 1.29 2013/01/02 09:12:57 ajacoutot Exp $
 
 # build system needs per-arch tweaks
 ONLY_FOR_ARCHS = amd64 i386 powerpc
@@ -40,7 +38,7 @@ SUBST_VARS +=		P5SITE
 GCC =			/usr/bin/gcc# cant use CC in case it's set to cilly
 
 .include <bsd.port.arch.mk>
-.if ${ARCH} == powerpc
+.if ${MACHINE_ARCH} == powerpc
 PKG_ARGS += -Dtarget=ppc_OPENBSD
 .else
 # used for amd64 and i386
