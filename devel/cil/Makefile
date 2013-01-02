@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.27 2012/12/04 06:54:25 chrisz Exp $
+# $OpenBSD: Makefile,v 1.28 2013/01/02 08:34:32 ajacoutot Exp $
+
+BROKEN-powerpc = x86_OPENBSD/cilly.asm.exe does not exist
 
 # build system needs per-arch tweaks
 ONLY_FOR_ARCHS = amd64 i386 powerpc
