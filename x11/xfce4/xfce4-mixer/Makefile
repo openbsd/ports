@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2013/01/02 17:12:22 landry Exp $
+# $OpenBSD: Makefile,v 1.35 2013/01/02 19:01:12 landry Exp $
 
 COMMENT=	Xfce4 volume mixer
 
 XFCE_GOODIE=	xfce4-mixer
-XFCE_VERSION=	4.8.0
-REVISION=	4
+XFCE_VERSION=	4.10.0
 HOMEPAGE=	http://www.xfce.org/projects/xfce4-mixer
 
 # GPLv2
@@ -15,11 +14,11 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
 MODXFCE_DESKTOP_FILE=	Yes
+MODXFCE_PURGE_LA =	lib/xfce4/panel/plugins
 
-LIB_DEPENDS=	x11/xfce4/libxfce4ui \
+LIB_DEPENDS=	devel/libunique \
 		multimedia/gstreamer-0.10/core \
 		multimedia/gstreamer-0.10/plugins-base \
-		x11/xfce4/xfconf \
 		x11/xfce4/xfce4-panel
 
 # needed for libgstossaudio..
@@ -35,7 +34,7 @@ WANTLIB += gstinterfaces-0.10 gstreamer-0.10 gthread-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs startup-notification-1 xcb
 WANTLIB += xcb-aux xcb-render xcb-shm xfce4panel-1.0 xfce4ui-1
-WANTLIB += xfce4util xfconf-0 xml2 z gstpbutils-0.10 stdc++
+WANTLIB += xfce4util xfconf-0 xml2 z gstpbutils-0.10 stdc++ unique-1.0
 WANTLIB += harfbuzz icudata icule icuuc
 
 .include <bsd.port.mk>
