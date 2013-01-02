@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2012/06/30 09:34:01 landry Exp $
+# $OpenBSD: Makefile,v 1.28 2013/01/02 17:12:23 landry Exp $
 
 COMMENT=	Xfce4 wireless interface monitor panel plugin
 
 XFCE_VERSION=	0.5.11
 XFCE_PLUGIN=	wavelan
+REVISION =	0
 
 # BSD
 PERMIT_DISTFILES_CDROM=	Yes
@@ -21,5 +22,6 @@ WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread-stubs
 WANTLIB += startup-notification-1 xcb xcb-aux xcb-render xcb-shm
 WANTLIB += xfce4util z stdc++ xfce4ui-1
+WANTLIB += harfbuzz icudata icule icuuc pthread
 
 .include <bsd.port.mk>

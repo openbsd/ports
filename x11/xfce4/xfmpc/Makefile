@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2012/04/30 13:29:04 landry Exp $
+# $OpenBSD: Makefile,v 1.17 2013/01/02 17:12:23 landry Exp $
 
 COMMENT=	Xfce4 Music Player Daemon client
 
 XFCE_VERSION=	0.2.2
 XFCE_GOODIE=	xfmpc
-REVISION =	0
+REVISION =	1
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
@@ -26,5 +26,6 @@ WANTLIB += gthread-2.0 gtk-x11-2.0 m mpd pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += startup-notification-1 xcb xcb-aux xcb-render xcb-shm
 WANTLIB += xfce4util xfce4ui-1 z stdc++
+WANTLIB += harfbuzz icudata icule icuuc
 
 .include <bsd.port.mk>

@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/04/30 13:23:52 landry Exp $
-lib/xfce4/panel/plugins/libtime-out.a
-lib/xfce4/panel/plugins/libtime-out.la
+@comment $OpenBSD: PLIST,v 1.5 2013/01/02 17:12:23 landry Exp $
 lib/xfce4/panel/plugins/libtime-out.so
 share/icons/hicolor/48x48/apps/xfce4-time-out-plugin.png
 share/icons/hicolor/scalable/apps/xfce4-time-out-plugin.svg

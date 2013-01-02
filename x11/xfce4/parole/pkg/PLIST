@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/09/09 20:34:58 landry Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/01/02 17:12:21 landry Exp $
 @bin bin/parole
 include/parole/
 include/parole/parole-debug.h
@@ -10,17 +10,9 @@ include/parole/parole-provider-plugin.h
 include/parole/parole-stream.h
 include/parole/parole.h
 lib/parole-0/
-@comment lib/parole-0/power-manager-plugin.a
-@comment lib/parole-0/power-manager-plugin.la
 lib/parole-0/power-manager-plugin.so
-@comment lib/parole-0/stream-properties.a
-@comment lib/parole-0/stream-properties.la
 lib/parole-0/stream-properties.so
-@comment lib/parole-0/tray-icon.a
-@comment lib/parole-0/tray-icon.la
 lib/parole-0/tray-icon.so
-@comment lib/parole-0/window-title.a
-@comment lib/parole-0/window-title.la
 share/applications/parole.desktop
 share/icons/hicolor/16x16/apps/parole.png
 share/icons/hicolor/24x24/apps/parole.png

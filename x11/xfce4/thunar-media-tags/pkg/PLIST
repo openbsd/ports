@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/04/30 13:26:39 landry Exp $
-@comment lib/thunarx-2/thunar-media-tags-plugin.a
-@comment lib/thunarx-2/thunar-media-tags-plugin.la
+@comment $OpenBSD: PLIST,v 1.7 2013/01/02 17:12:22 landry Exp $
 lib/thunarx-2/thunar-media-tags-plugin.so
 share/locale/ar/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/ast/LC_MESSAGES/thunar-media-tags-plugin.mo

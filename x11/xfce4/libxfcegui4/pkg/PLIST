@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2012/06/15 08:30:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2013/01/02 17:12:21 landry Exp $
 @conflict xfce4-panel-<4.4.1
 include/xfce4/libxfcegui4/
 include/xfce4/libxfcegui4/dialogs.h
@@ -48,10 +48,7 @@ include/xfce4/libxfcegui4/xfce_togglebutton.h
 include/xfce4/libxfcegui4/xinerama.h
 lib/libglade/
 lib/libglade/2.0/
-@comment lib/libglade/2.0/libxfce4.a
-@comment lib/libglade/2.0/libxfce4.la
 lib/libglade/2.0/libxfce4.so
-lib/libxfcegui4.a
 lib/libxfcegui4.la
 @lib lib/libxfcegui4.so.${LIBxfcegui4_VERSION}
 lib/pkgconfig/libxfcegui4-1.0.pc

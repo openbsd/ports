@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.45 2012/06/15 08:30:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2013/01/02 17:12:23 landry Exp $
 
 COMMENT=	Xfce4 desktop manager
 
 XFCE_PROJECT=	xfdesktop
-REVISION=	0
+REVISION=	1
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
@@ -35,6 +35,7 @@ WANTLIB += gtk-x11-2.0 m notify pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs startup-notification-1
 WANTLIB += thunarx-2 wnck-1 xcb xcb-aux xcb-render xcb-shm xfce4ui-1
 WANTLIB += xfce4util xfconf-0 z stdc++
+WANTLIB += harfbuzz icudata icule icuuc
 
 FAKE_FLAGS=	menudir=${PREFIX}/share/examples/xfdesktop
 

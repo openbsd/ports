@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2012/09/09 20:34:58 landry Exp $
+# $OpenBSD: Makefile,v 1.21 2013/01/02 17:12:21 landry Exp $
 
 COMMENT =	Xfce4 media player
 
 XFCE_VERSION =	0.3.0.3
 XFCE_GOODIE =	parole
+REVISION =	0
 CATEGORIES +=	audio
 
 # GPLv2
@@ -15,6 +16,7 @@ PERMIT_PACKAGE_FTP =	Yes
 MODULES =	x11/xfce4
 MODXFCE_DESKTOP_FILE =	Yes
 MODXFCE_ICON_CACHE=	Yes
+MODXFCE_PURGE_LA =	lib/parole-0
 
 LIB_DEPENDS =	multimedia/gstreamer-0.10/core \
 		multimedia/gstreamer-0.10/plugins-base \
@@ -38,5 +40,6 @@ WANTLIB += startup-notification-1 stdc++ xcb xcb-aux
 WANTLIB += xfce4util xml2 z notify tag tag_c xfce4ui-1 orc-0.4
 WANTLIB += gstvideo-0.10 gstinterfaces-0.10 gstreamer-0.10 gstbase-0.10
 WANTLIB += xcb-render GL Xxf86vm drm xcb-shm X11-xcb ffi
+WANTLIB += harfbuzz icudata icule icuuc
 
 .include <bsd.port.mk>

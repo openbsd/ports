@@ -1,4 +1,4 @@
-# $OpenBSD: xfce4.port.mk,v 1.17 2012/04/30 12:42:07 landry Exp $
+# $OpenBSD: xfce4.port.mk,v 1.18 2013/01/02 17:12:21 landry Exp $
 
 # Module for Xfce related ports, divided into five categories:
 # core, goodie, artwork, thunar plugins, panel plugins.
@@ -12,6 +12,8 @@ EXTRACT_SUFX?=	.tar.bz2
 # needed for all ports but *-themes
 .if !defined(XFCE_NO_SRC)
 USE_LIBTOOL?=	Yes
+LIBTOOL_FLAGS?=	--tag=disable-static
+
 MODULES+=	devel/gettext textproc/intltool
 .endif
 
@@ -41,6 +43,7 @@ PKGNAME?=	${DISTNAME:S/-plugin//}
 
 MODXFCE_LIB_DEPENDS=	x11/xfce4/xfce4-panel
 MODXFCE_WANTLIB=	xfce4panel-1.0
+MODXFCE_PURGE_LA?=	lib/xfce4/panel/plugins lib/xfce4/panel-plugins
 .elif defined(XFCE_GOODIE)
 HOMEPAGE?=	http://goodies.xfce.org/projects/applications/${XFCE_GOODIE}
 
@@ -57,11 +60,19 @@ HOMEPAGE?=	http://goodies.xfce.org/projects/thunar-plugins/${THUNAR_PLUGIN}
 MASTER_SITES?=	http://archive.xfce.org/src/thunar-plugins/${THUNAR_PLUGIN}/${XFCE_BRANCH}/
 DISTNAME?=	${THUNAR_PLUGIN}-${XFCE_VERSION}
 PKGNAME?=	${DISTNAME:S/-plugin//}
+MODXFCE_PURGE_LA ?=	lib/thunarx-2
 .elif defined(XFCE_PROJECT)
 HOMEPAGE?=	http://www.xfce.org/projects/${XFCE_PROJECT}
 
 MASTER_SITES?=	http://archive.xfce.org/src/xfce/${XFCE_PROJECT:L}/${XFCE_BRANCH}/
 DISTNAME=	${XFCE_PROJECT}-${XFCE_VERSION}
+.endif
+
+# remove useless .la file
+MODXFCE_PURGE_LA ?=
+.if !empty(MODXFCE_PURGE_LA)
+MODXFCE4_post-install = for f in ${MODXFCE_PURGE_LA} ; do \
+		rm -f ${PREFIX}/$${f}/*.la ; done
 .endif
 
 LIB_DEPENDS+=	${MODXFCE_LIB_DEPENDS}

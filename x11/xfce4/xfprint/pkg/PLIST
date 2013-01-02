@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2012/06/15 08:30:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2013/01/02 17:12:23 landry Exp $
 @bin bin/xfprint-settings
 @bin bin/xfprint4
 @bin bin/xfprint4-manager
@@ -10,16 +10,11 @@ include/xfce4/libxfprint/printer-list-window.h
 include/xfce4/libxfprint/printer-queue-window.h
 include/xfce4/libxfprint/printer.h
 include/xfce4/libxfprint/printing-system.h
-lib/libxfprint.a
 lib/libxfprint.la
 @lib lib/libxfprint.so.${LIBxfprint_VERSION}
 lib/pkgconfig/xfprint-1.0.pc
 lib/xfce4/xfprint-plugins/
-@comment lib/xfce4/xfprint-plugins/bsdlpr_plugin.a
-@comment lib/xfce4/xfprint-plugins/bsdlpr_plugin.la
 lib/xfce4/xfprint-plugins/bsdlpr_plugin.so
-@comment lib/xfce4/xfprint-plugins/cups_plugin.a
-@comment lib/xfce4/xfprint-plugins/cups_plugin.la
 lib/xfce4/xfprint-plugins/cups_plugin.so
 share/applications/xfprint-manager.desktop
 share/applications/xfprint-settings.desktop

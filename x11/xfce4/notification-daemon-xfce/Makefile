@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2012/10/30 10:53:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2013/01/02 17:12:21 landry Exp $
 
 COMMENT=	Xfce4 notification daemon
 
 XFCE_VERSION=	0.3.7
 XFCE_GOODIE=	notification-daemon-xfce
-REVISION=	19
+REVISION=	20
 
 MASTER_SITES=	http://archive.xfce.org/src/archive/${XFCE_GOODIE}/${XFCE_BRANCH}/
 # GPLv2
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 MODULES=	x11/xfce4
 MODXFCE_DESKTOP_FILE=	Yes
 MODXFCE_ICON_CACHE=	Yes
+MODXFCE_PURGE_LA =	lib/notification-daemon-xfce-1.0/engines
 
 LIB_DEPENDS=	x11/xfce4/libxfcegui4 \
 		x11/libsexy \
@@ -30,6 +31,6 @@ WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		pixman-1 png pthread startup-notification-1 xfce4util xml2 z \
 		pthread-stubs xcb xcb-aux stdc++ \
 		gthread-2.0 xcb-render GL Xxf86vm drm xcb-shm xfcegui4 sexy \
-		X11-xcb ffi notify
+		X11-xcb ffi notify harfbuzz icudata icule icuuc
 
 .include <bsd.port.mk>

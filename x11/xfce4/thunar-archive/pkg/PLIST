@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/06/15 08:30:25 ajacoutot Exp $
-@comment lib/thunarx-2/thunar-archive-plugin.a
-@comment lib/thunarx-2/thunar-archive-plugin.la
+@comment $OpenBSD: PLIST,v 1.9 2013/01/02 17:12:22 landry Exp $
 lib/thunarx-2/thunar-archive-plugin.so
 libexec/thunar-archive-plugin/ark.tap
 libexec/thunar-archive-plugin/file-roller.tap

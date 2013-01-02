@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2012/06/15 08:30:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2013/01/02 17:12:22 landry Exp $
 
 COMMENT=	Xfce4 file manager
 
@@ -7,7 +7,7 @@ XFCE_PROJECT=	Thunar
 # :L is here for a reason
 PKGNAME=	${DISTNAME:L}
 
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS=	thunarx-2	0.0
 
@@ -20,12 +20,12 @@ PERMIT_PACKAGE_FTP=	Yes
 MODULES=	x11/xfce4
 MODXFCE_DESKTOP_FILE=	Yes
 MODXFCE_ICON_CACHE=	Yes
+MODXFCE_PURGE_LA =	lib/thunarx-2 lib/xfce4/panel/plugins
 NO_REGRESS=	Yes
 
 CONFIGURE_ENV=	ac_cv_header_sys_ucred_h=yes \
 		ac_cv_header_sys_mount_h=yes
 
-CONFIGURE_ARGS+=	--disable-linker-opts
 FAKE_FLAGS=	defaultsdir=${PREFIX}/share/examples/Thunar
 
 BUILD_DEPENDS =	textproc/gtk-doc
@@ -51,5 +51,6 @@ WANTLIB += gtk-x11-2.0 m notify pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs startup-notification-1
 WANTLIB += xcb xcb-aux xcb-render xcb-shm xfce4panel-1.0 xfce4ui-1
 WANTLIB += xfce4util z stdc++
+WANTLIB += harfbuzz icudata icule icuuc
 
 .include <bsd.port.mk>

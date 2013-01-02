@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.50 2012/08/06 13:28:15 landry Exp $
+# $OpenBSD: Makefile,v 1.51 2013/01/02 17:12:22 landry Exp $
 
 COMMENT=	Xfce4 desktop panel
 
 XFCE_PROJECT=	xfce4-panel
 SHARED_LIBS=	xfce4panel-1.0	1.0	# 4.0
-REVISION=	1
+REVISION=	2
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 MODULES=	x11/xfce4
 MODXFCE_DESKTOP_FILE=	Yes
 MODXFCE_ICON_CACHE=	Yes
+MODXFCE_PURGE_LA =	lib/xfce4/panel/plugins
 
 CONFIGURE_ARGS=--disable-linker-opts
 LIB_DEPENDS=	x11/xfce4/exo>=0.7.2 \
@@ -32,6 +33,7 @@ WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs startup-notification-1
 WANTLIB += wnck-1 xcb xcb-aux xcb-render xcb-shm xfce4ui-1 xfce4util
 WANTLIB += xfconf-0 z stdc++
+WANTLIB += harfbuzz icudata icule icuuc
 
 FAKE_FLAGS=	confdir=${PREFIX}/share/examples/xfce4-panel
 

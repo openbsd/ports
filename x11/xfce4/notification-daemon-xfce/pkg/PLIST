@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.12 2012/10/30 10:53:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2013/01/02 17:12:21 landry Exp $
 @bin bin/notification-settings
 lib/notification-daemon-xfce-1.0/
 lib/notification-daemon-xfce-1.0/engines/
-@comment lib/notification-daemon-xfce-1.0/engines/libstandard.a
-@comment lib/notification-daemon-xfce-1.0/engines/libstandard.la
 lib/notification-daemon-xfce-1.0/engines/libstandard.so
 @bin libexec/notification-daemon-xfce
 share/applications/notification-settings.desktop

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2012/06/15 08:30:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2013/01/02 17:12:21 landry Exp $
 @bin bin/exo-csource
 @bin bin/exo-desktop-item-edit
 @bin bin/exo-open
@@ -29,7 +29,6 @@ include/exo-1/exo/exo-utils.h
 include/exo-1/exo/exo-wrap-table.h
 include/exo-1/exo/exo-xsession-client.h
 include/exo-1/exo/exo.h
-lib/libexo-1.a
 lib/libexo-1.la
 @lib lib/libexo-1.so.${LIBexo-1_VERSION}
 lib/pkgconfig/exo-1.pc
@@ -155,7 +154,6 @@ share/locale/ur/LC_MESSAGES/exo-1.mo
 share/locale/ur_PK/LC_MESSAGES/exo-1.mo
 share/locale/zh_CN/LC_MESSAGES/exo-1.mo
 share/locale/zh_TW/LC_MESSAGES/exo-1.mo
-share/pixmaps/
 share/pixmaps/exo-1/
 share/pixmaps/exo-1/exo-thumbnail-frame.png
 share/xfce4/

@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/05/13 20:37:17 landry Exp $
-@comment lib/xfce4/panel/plugins/libgenmon.a
-@comment lib/xfce4/panel/plugins/libgenmon.la
+@comment $OpenBSD: PLIST,v 1.9 2013/01/02 17:12:22 landry Exp $
 lib/xfce4/panel/plugins/libgenmon.so
 share/locale/ar/LC_MESSAGES/xfce4-genmon-plugin.mo
 share/locale/ast/LC_MESSAGES/xfce4-genmon-plugin.mo

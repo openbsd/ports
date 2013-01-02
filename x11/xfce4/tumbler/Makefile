@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2012/07/13 15:06:55 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2013/01/02 17:12:22 landry Exp $
 
 COMMENT=	D-Bus thumbnailing service
 
 XFCE_VERSION=	0.1.25
 XFCE_GOODIE=	tumbler
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS+=	tumbler-1 0.0
 
@@ -15,9 +15,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
+MODXFCE_PURGE_LA =	lib/tumbler-1/plugins lib/tumbler-1/plugins/cache
 
-CONFIGURE_ARGS =	--disable-linker-opts \
-			--disable-raw-thumbnailer \
+CONFIGURE_ARGS =	--disable-raw-thumbnailer \
 			--disable-gstreamer-thumbnailer
 # correctly find bindtextdomain
 CONFIGURE_ENV +=	LIBS='-liconv'
@@ -38,8 +38,7 @@ WANTLIB += gthread-2.0 jpeg lcms2 m openjpeg
 WANTLIB += pcre pixman-1 png poppler poppler-glib
 WANTLIB += pthread pthread-stubs xcb xcb-render xcb-shm
 WANTLIB += xml2 z ffi bz2 stdc++ tiff gsf-1
-WANTLIB += avcodec avformat avutil ffmpegthumbnailer gsm mp3lame
-WANTLIB += ogg orc-0.4 schroedinger-1.0 speex swscale theoradec
-WANTLIB += theoraenc vorbis vorbisenc vpx x264
+WANTLIB += avcodec avformat avutil ffmpegthumbnailer
+WANTLIB += ogg orc-0.4 swscale
 
 .include <bsd.port.mk>

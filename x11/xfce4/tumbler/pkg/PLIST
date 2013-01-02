@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/04/30 12:50:14 landry Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/01/02 17:12:22 landry Exp $
 include/tumbler-1/
 include/tumbler-1/tumbler/
 include/tumbler-1/tumbler/tumbler-abstract-thumbnailer.h
@@ -18,7 +18,6 @@ include/tumbler-1/tumbler/tumbler-thumbnailer-provider.h
 include/tumbler-1/tumbler/tumbler-thumbnailer.h
 include/tumbler-1/tumbler/tumbler-util.h
 include/tumbler-1/tumbler/tumbler.h
-lib/libtumbler-1.a
 lib/libtumbler-1.la
 @lib lib/libtumbler-1.so.${LIBtumbler-1_VERSION}
 lib/pkgconfig/tumbler-1.pc
@@ -26,26 +25,12 @@ lib/tumbler-1/
 lib/tumbler-1/plugins/
 lib/tumbler-1/plugins/cache/
 lib/tumbler-1/plugins/cache/tumbler-cache-plugin.so
-@comment lib/tumbler-1/plugins/cache/tumbler-xdg-cache.a
-@comment lib/tumbler-1/plugins/cache/tumbler-xdg-cache.la
 lib/tumbler-1/plugins/cache/tumbler-xdg-cache.so
-@comment lib/tumbler-1/plugins/tumbler-ffmpeg-thumbnailer.a
-@comment lib/tumbler-1/plugins/tumbler-ffmpeg-thumbnailer.la
 lib/tumbler-1/plugins/tumbler-ffmpeg-thumbnailer.so
-@comment lib/tumbler-1/plugins/tumbler-font-thumbnailer.a
-@comment lib/tumbler-1/plugins/tumbler-font-thumbnailer.la
 lib/tumbler-1/plugins/tumbler-font-thumbnailer.so
-@comment lib/tumbler-1/plugins/tumbler-jpeg-thumbnailer.a
-@comment lib/tumbler-1/plugins/tumbler-jpeg-thumbnailer.la
 lib/tumbler-1/plugins/tumbler-jpeg-thumbnailer.so
-@comment lib/tumbler-1/plugins/tumbler-odf-thumbnailer.a
-@comment lib/tumbler-1/plugins/tumbler-odf-thumbnailer.la
 lib/tumbler-1/plugins/tumbler-odf-thumbnailer.so
-@comment lib/tumbler-1/plugins/tumbler-pixbuf-thumbnailer.a
-@comment lib/tumbler-1/plugins/tumbler-pixbuf-thumbnailer.la
 lib/tumbler-1/plugins/tumbler-pixbuf-thumbnailer.so
-@comment lib/tumbler-1/plugins/tumbler-poppler-thumbnailer.a
-@comment lib/tumbler-1/plugins/tumbler-poppler-thumbnailer.la
 lib/tumbler-1/plugins/tumbler-poppler-thumbnailer.so
 @bin lib/tumbler-1/tumblerd
 share/dbus-1/services/org.xfce.Tumbler.Cache1.service

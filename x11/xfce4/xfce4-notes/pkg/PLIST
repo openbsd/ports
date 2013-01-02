@@ -1,10 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.18 2012/06/15 08:30:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2013/01/02 17:12:22 landry Exp $
 @bin bin/xfce4-notes
 @bin bin/xfce4-notes-settings
 @bin bin/xfce4-popup-notes
 lib/xfce4/panel-plugins/
-@comment lib/xfce4/panel-plugins/libnotes.a
-@comment lib/xfce4/panel-plugins/libnotes.la
 lib/xfce4/panel-plugins/libnotes.so
 share/applications/xfce4-notes.desktop
 share/examples/xfce4-notes/

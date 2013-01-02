@@ -1,11 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2012/09/04 17:18:11 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2013/01/02 17:12:21 landry Exp $
 @conflict gtk-xfce-engine-<=3.0.0p0
 @pkgpath x11/xfce4/gtk-xfce-engine
 lib/gtk-2.0/
 lib/gtk-2.0/2.10.0/
 lib/gtk-2.0/2.10.0/engines/
-@comment lib/gtk-2.0/2.10.0/engines/libxfce.a
-@comment lib/gtk-2.0/2.10.0/engines/libxfce.la
 lib/gtk-2.0/2.10.0/engines/libxfce.so
 share/themes/Xfce/
 share/themes/Xfce-4.0/

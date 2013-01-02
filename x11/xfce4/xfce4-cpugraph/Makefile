@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2012/07/04 14:40:33 landry Exp $
+# $OpenBSD: Makefile,v 1.14 2013/01/02 17:12:22 landry Exp $
 
 COMMENT=	Xfce4 cpu usage graph panel plugin
 
 XFCE_VERSION=	1.0.5
 XFCE_PLUGIN=	cpugraph
+REVISION =	0
 
 # GPLv2+
 PERMIT_DISTFILES_CDROM=	Yes
@@ -22,5 +23,6 @@ WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pixman-1 png pthread-stubs xcb
 WANTLIB += xcb-render xcb-shm xfce4util z stdc++ xcb-aux xfce4ui-1
 WANTLIB += ICE SM X11-xcb Xau Xdmcp Xxf86vm drm ffi pcre startup-notification-1
+WANTLIB += harfbuzz icudata icule icuuc pthread
 
 .include <bsd.port.mk>

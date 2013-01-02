@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2012/04/30 12:58:00 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2013/01/02 17:12:23 landry Exp $
 
 COMMENT=	Xfce4 settings daemon
 
 XFCE_PROJECT=	xfconf
 SHARED_LIBS =	xfconf-0 0.0
+REVISION =	0
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
