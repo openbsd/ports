@@ -1,9 +1,9 @@
-$OpenBSD: patch-tests_Makefile_in,v 1.1 2013/01/02 20:37:11 jasper Exp $
+$OpenBSD: patch-tests_Makefile_in,v 1.2 2013/01/03 07:53:28 jasper Exp $
 
-From 7f0a91180f84853760b79398fa3c4724aa21bb92 Mon Sep 17 00:00:00 2001
+From 9ae0deff640000e551bf09990582ca9b6d42021d Mon Sep 17 00:00:00 2001
 From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
-Date: Wed, 2 Jan 2013 20:10:12 +0100
-Subject: [PATCH 2/2] Add a new lens for OpenBSD's /etc/boot.conf.
+Date: Wed, 02 Jan 2013 19:10:12 +0000
+Subject: Add a new lens for OpenBSD's /etc/boot.conf.
 
 Fixes ticket #322
 
