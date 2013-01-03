@@ -1,0 +1,24 @@
+$OpenBSD: patch-HDBC-postgresql_cabal,v 1.1 2013/01/03 13:46:29 dcoppa Exp $
+
+Unbreak when used within GHCi
+
+--- HDBC-postgresql.cabal.orig	Thu Jan  3 11:54:59 2013
++++ HDBC-postgresql.cabal	Thu Jan  3 11:55:16 2013
+@@ -39,7 +39,7 @@ Library
+                  bytestring, old-time, old-locale, time, convertible
+   if impl(ghc >= 6.9)
+     Build-Depends: base >= 4
+-  Extra-Libraries: pq
++  Extra-Libraries: pq crypto ssl com_err
+   C-Sources: hdbc-postgresql-helper.c
+   Include-Dirs: .
+   GHC-Options: -O2 -Wall
+@@ -70,7 +70,7 @@ Executable runtests
+                   Tests
+    C-Sources: hdbc-postgresql-helper.c
+    include-dirs: .
+-   Extra-Libraries: pq
++   Extra-Libraries: pq crypto ssl com_err
+    Hs-Source-Dirs: ., testsrc
+    GHC-Options: -O2
+    Extensions: ExistentialQuantification,
