@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.64 2012/12/28 06:40:11 espie Exp $
+# $OpenBSD: dpb,v 1.65 2013/01/03 15:43:27 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -482,6 +482,15 @@ use DPB::Locks;
 use DPB::Job;
 use DPB::Grabber;
 
+my $keep_going = 1;
+
+sub report
+{
+	return DPB::Util->time2string(time)." [$$]".
+		($keep_going ? "" : " STOPPED!").
+		"\n";
+}
+
 my $reporter;
 
 # inspired by Carp::Always
@@ -556,8 +565,7 @@ $state->{builder} = DPB::PortBuilder->new($state);
 $state->{locker} = DPB::Locks->new($state, join("/", $state->logdir, "locks"));
 $state->{affinity} = DPB::Affinity->new($state, join("/", $state->logdir, "affinity"));
 $state->{engine} = DPB::Engine->new($state);
-$reporter = DPB::Reporter->new($state,
-    $state->heuristics, "DPB::Core", $state->engine);
+$reporter = DPB::Reporter->new($state, "main", "DPB::Core", $state->engine);
 while (!DPB::Core->avail) {
 	DPB::Core->reap;
 	sleep 1;
@@ -571,7 +579,6 @@ $SIG{INFO} = sub {
 	$reporter->refresh;
 };
 
-my $keep_going = 1;
 my $last_time = time() - $state->{display_timeout};
 
 sub handle_non_waiting_jobs
@@ -609,7 +616,6 @@ sub handle_non_waiting_jobs
 	} else {
 		$reporter->report;
 	}
-	return $keep_going;
 }
 
 sub main_loop
@@ -617,11 +623,13 @@ sub main_loop
 	while (1) {
 		while (1) {
 			handle_non_waiting_jobs(0);
-			if (!DPB::Core->running &&
-			    (!$keep_going || !$state->engine->can_build)) {
-				$state->engine->check_buildable;
-				if (!$state->engine->can_build) {
-					last;
+			if (!DPB::Core->running) {
+				last if !$keep_going;
+				if (!$state->engine_can_build) {
+					$state->engine->check_buildable(1);
+					if (!$state->engine->can_build) {
+						last;
+					}
 				}
 			}
 			if (DPB::Core->running) {
