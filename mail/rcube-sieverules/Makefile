@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2012/01/16 23:10:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2013/01/03 22:41:56 sthen Exp $
 
 COMMENT=	roundcube plugin: sieve rules (managesieve)
 
-DISTNAME=	sieverules-1.16
+DISTNAME=	sieverules-1.17.1
 PKGNAME=	rcube-${DISTNAME}
 CATEGORIES=	mail www
 HOMEPAGE=	http://www.tehinterweb.co.uk/roundcube/\#pisieverules
