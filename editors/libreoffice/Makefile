@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2012/11/12 13:38:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.79 2013/01/03 21:03:14 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -7,7 +7,7 @@ COMMENT-kde=	optional integration of LibreOffice to the KDE environment
 COMMENT-java=	optional integration of LibreOffice java features
 
 BV=		3.6
-VERSION=	3.6.3.2
+VERSION=	3.6.4.3
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-core-${VERSION}
 PKGNAME=	libreoffice-${VERSION}
@@ -19,14 +19,13 @@ DPB_PROPERTIES=	parallel
 
 SHARED_LIBS +=  lcms2                     2.3 # 2.3
 
-REVISION=	2
 EPOCH=		0
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 HOMEPAGE=	http://www.libreoffice.org/
 
-MASTER_SITES=	http://download.documentfoundation.org/libreoffice/src/3.6.3/ \
+MASTER_SITES=	http://download.documentfoundation.org/libreoffice/src/3.6.4/ \
 		http://humppa.hu/libreoffice/ \
 		http://download.go-oo.org/src/
 MASTER_SITES0=	http://hg.services.openoffice.org/binaries/ \
