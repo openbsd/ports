@@ -1,16 +1,26 @@
-$OpenBSD: patch-plugins_converter_Makefile_am,v 1.1 2012/08/10 17:25:01 shadchin Exp $
---- plugins/converter/Makefile.am.orig	Thu Aug  9 23:42:15 2012
-+++ plugins/converter/Makefile.am	Thu Aug  9 23:42:42 2012
-@@ -29,10 +29,10 @@ EXTRA_DIST = $(convdata_DATA) converter.glade
+$OpenBSD: patch-plugins_converter_Makefile_am,v 1.2 2013/01/03 11:54:49 shadchin Exp $
+--- plugins/converter/Makefile.am.orig	Fri Oct 19 21:40:14 2012
++++ plugins/converter/Makefile.am	Tue Oct 23 22:38:25 2012
+@@ -29,11 +29,11 @@ EXTRA_DIST = $(convdata_DATA) converter.glade
  AM_CFLAGS = $(CFLAGS) -std=c99 -fPIC
  
  converter_la_SOURCES = converter.c converter.h
 -converter_la_LDFLAGS = -module
 +converter_la_LDFLAGS = -module -avoid-version
+ 
  if HAVE_GTK2
  converter_gtk2_la_SOURCES = convgui.c interface.c support.c callbacks.h converter.h interface.h support.h
 -converter_gtk2_la_LDFLAGS = -module
 +converter_gtk2_la_LDFLAGS = -module -avoid-version
- endif
+ if STATICLINK
+ GTK_ROOT=@top_srcdir@/$(LIB)/gtk-2.12.12/usr
+ 
+@@ -48,7 +48,7 @@ endif
+ 
  if HAVE_GTK3
  converter_gtk3_la_SOURCES = convgui.c interface.c support.c callbacks.h converter.h interface.h support.h
+-converter_gtk3_la_LDFLAGS = -module
++converter_gtk3_la_LDFLAGS = -module -avoid-version
+ if STATICLINK
+ GTK_ROOT_300=@top_srcdir@/$(LIB)/gtk-3.0.0
+ 

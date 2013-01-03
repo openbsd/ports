@@ -1,18 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/08/10 17:25:01 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/01/03 11:54:49 shadchin Exp $
 @bin bin/deadbeef
 include/deadbeef/
 include/deadbeef/deadbeef.h
 include/deadbeef/gtkui_api.h
 lib/deadbeef/
-@comment lib/deadbeef/aac.la
 lib/deadbeef/aac.so
-@comment lib/deadbeef/artwork.la
+lib/deadbeef/alac.so
 lib/deadbeef/artwork.so
-@comment lib/deadbeef/cdda.la
 lib/deadbeef/cdda.so
-@comment lib/deadbeef/converter.la
 lib/deadbeef/converter.so
-@comment lib/deadbeef/converter_gtk2.la
 lib/deadbeef/converter_gtk2.so
 lib/deadbeef/convpresets/
 lib/deadbeef/convpresets/AAC_(Nero_FAAC).txt
@@ -24,57 +20,31 @@ lib/deadbeef/convpresets/MusePack.txt
 lib/deadbeef/convpresets/Ogg_Vorbis_(-q_5).txt
 lib/deadbeef/convpresets/TTA.txt
 lib/deadbeef/convpresets/WavPack.txt
-@comment lib/deadbeef/dca.la
 lib/deadbeef/dca.so
-@comment lib/deadbeef/ddb_ao.la
 lib/deadbeef/ddb_ao.so
-@comment lib/deadbeef/ddb_dumb.la
 lib/deadbeef/ddb_dumb.so
-@comment lib/deadbeef/ddb_gui_GTK2.la
 lib/deadbeef/ddb_gui_GTK2.so
-@comment lib/deadbeef/ddb_shn.la
 lib/deadbeef/ddb_shn.so
-@comment lib/deadbeef/ffap.la
 lib/deadbeef/ffap.so
-@comment lib/deadbeef/ffmpeg.la
 lib/deadbeef/ffmpeg.so
-@comment lib/deadbeef/flac.la
 lib/deadbeef/flac.so
-@comment lib/deadbeef/hotkeys.la
 lib/deadbeef/hotkeys.so
-@comment lib/deadbeef/lastfm.la
 lib/deadbeef/lastfm.so
-@comment lib/deadbeef/m3u.la
 lib/deadbeef/m3u.so
-@comment lib/deadbeef/mms.la
 lib/deadbeef/mms.so
-@comment lib/deadbeef/mpgmad.la
 lib/deadbeef/mpgmad.so
-@comment lib/deadbeef/musepack.la
 lib/deadbeef/musepack.so
-@comment lib/deadbeef/notify.la
 lib/deadbeef/notify.so
-@comment lib/deadbeef/nullout.la
 lib/deadbeef/nullout.so
-@comment lib/deadbeef/shellexec.la
 lib/deadbeef/shellexec.so
-@comment lib/deadbeef/shellexecui_gtk2.la
 lib/deadbeef/shellexecui_gtk2.so
-@comment lib/deadbeef/sndfile.la
 lib/deadbeef/sndfile.so
-@comment lib/deadbeef/sndio.la
 lib/deadbeef/sndio.so
-@comment lib/deadbeef/tta.la
 lib/deadbeef/tta.so
-@comment lib/deadbeef/vfs_curl.la
 lib/deadbeef/vfs_curl.so
-@comment lib/deadbeef/vfs_zip.la
 lib/deadbeef/vfs_zip.so
-@comment lib/deadbeef/vorbis.la
 lib/deadbeef/vorbis.so
-@comment lib/deadbeef/vtx.la
 lib/deadbeef/vtx.so
-@comment lib/deadbeef/wavpack.la
 lib/deadbeef/wavpack.so
 share/applications/deadbeef.desktop
 share/deadbeef/
@@ -130,8 +100,6 @@ share/locale/it/LC_MESSAGES/deadbeef.mo
 share/locale/ja/LC_MESSAGES/deadbeef.mo
 share/locale/kk/LC_MESSAGES/deadbeef.mo
 share/locale/km/LC_MESSAGES/deadbeef.mo
-share/locale/lg/
-share/locale/lg/LC_MESSAGES/
 share/locale/lg/LC_MESSAGES/deadbeef.mo
 share/locale/lt/LC_MESSAGES/deadbeef.mo
 share/locale/nb/LC_MESSAGES/deadbeef.mo

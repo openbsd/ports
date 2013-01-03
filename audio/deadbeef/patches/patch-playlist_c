@@ -1,7 +1,7 @@
-$OpenBSD: patch-playlist_c,v 1.1.1.1 2012/08/08 18:06:48 shadchin Exp $
---- playlist.c.orig	Wed May 23 02:34:47 2012
-+++ playlist.c	Tue Jun  5 21:57:26 2012
-@@ -53,6 +53,10 @@
+$OpenBSD: patch-playlist_c,v 1.2 2013/01/03 11:54:49 shadchin Exp $
+--- playlist.c.orig	Fri Oct 19 21:58:50 2012
++++ playlist.c	Tue Oct 23 22:32:14 2012
+@@ -62,6 +62,10 @@
  #include "volume.h"
  #include "pltmeta.h"
  

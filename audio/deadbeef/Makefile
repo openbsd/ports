@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2012/08/10 17:25:01 shadchin Exp $
+# $OpenBSD: Makefile,v 1.3 2013/01/03 11:54:49 shadchin Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		DeaDBeeF is an audio player
-DISTNAME =		deadbeef-0.5.5
-REVISION =		0
+DISTNAME =		deadbeef-0.5.6
 CATEGORIES =		audio
 
 HOMEPAGE =		http://deadbeef.sourceforge.net/
@@ -17,15 +16,14 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += FLAC GL ICE Imlib2 SM X11 Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 avcodec
-WANTLIB += avformat avutil bz2 c cairo cddb cdio crypto curl dbus-1
+WANTLIB += avformat avutil c cairo cddb cdio crypto curl dbus-1
 WANTLIB += expat faad ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gsm gthread-2.0
-WANTLIB += gtk-x11-2.0 idn m mad mms mp3lame mpcdec ogg orc-0.4
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs schroedinger-1.0 sndfile
-WANTLIB += sndio speex ssl theoradec theoraenc vorbis vorbisenc
-WANTLIB += vorbisfile vpx wavpack x264 xcb xcb-render xcb-shm
-WANTLIB += xvidcore z zip
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB += gtk-x11-2.0 harfbuzz icudata icule icuuc idn m mad
+WANTLIB += mms mpcdec ogg pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread pthread-stubs sndfile sndio
+WANTLIB += ssl vorbis vorbisfile wavpack xcb xcb-render xcb-shm
+WANTLIB += z zip
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=deadbeef/}
 EXTRACT_SUFX =		.tar.bz2
@@ -81,7 +79,10 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--disable-wildmidi \
 			--disable-supereq \
 			--disable-src \
-			--disable-mono2stereo
+			--disable-mono2stereo \
+			--disable-abstract-socket \
+			--disable-gtk3 \
+			--enable-ffmpeg
 CONFIGURE_ENV +=	CPPFLAGS='-I${LOCALBASE}/lib/libzip/include -I${X11BASE}/include' \
 			LDFLAGS='-L${LOCALBASE}/lib -L${X11BASE}/lib'
 
@@ -93,5 +94,8 @@ post-patch:
 pre-configure:
 	@cd ${WRKSRC}; env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf
+
+post-install:
+	@rm -f ${PREFIX}/lib/deadbeef/*.la
 
 .include <bsd.port.mk>

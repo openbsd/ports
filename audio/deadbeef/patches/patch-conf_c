@@ -1,10 +1,10 @@
-$OpenBSD: patch-conf_c,v 1.1.1.1 2012/08/08 18:06:48 shadchin Exp $
+$OpenBSD: patch-conf_c,v 1.2 2013/01/03 11:54:49 shadchin Exp $
 
 Fix "pthread_mutex_destroy on mutex with waiters!"
 
---- conf.c.orig	Thu May 31 03:15:48 2012
-+++ conf.c	Tue Jun  5 21:57:26 2012
-@@ -65,6 +65,7 @@ conf_free (void) {
+--- conf.c.orig	Fri Oct 19 21:40:14 2012
++++ conf.c	Tue Oct 23 22:32:14 2012
+@@ -72,6 +72,7 @@ conf_free (void) {
      }
      conf_items = NULL;
      changed = 0;

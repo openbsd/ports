@@ -1,9 +1,9 @@
-$OpenBSD: patch-plugins_ffmpeg_ffmpeg_c,v 1.1.1.1 2012/08/08 18:06:48 shadchin Exp $
---- plugins/ffmpeg/ffmpeg.c.orig	Tue May  8 02:49:13 2012
-+++ plugins/ffmpeg/ffmpeg.c	Tue May 15 23:44:47 2012
-@@ -51,6 +51,10 @@
- 
- #endif
+$OpenBSD: patch-plugins_ffmpeg_ffmpeg_c,v 1.2 2013/01/03 11:54:49 shadchin Exp $
+--- plugins/ffmpeg/ffmpeg.c.orig	Mon Oct 15 00:51:02 2012
++++ plugins/ffmpeg/ffmpeg.c	Tue Oct 23 22:32:14 2012
+@@ -56,6 +56,10 @@
+ //#define av_get_bits_per_sample_format av_get_bits_per_sample_fmt
+ #else
  
 +#if defined(__GNUC__) && defined(__STRICT_ANSI__)
 +#define alloca(size)	__builtin_alloca(size)

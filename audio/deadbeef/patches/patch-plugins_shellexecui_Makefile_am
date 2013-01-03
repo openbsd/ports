@@ -1,12 +1,21 @@
-$OpenBSD: patch-plugins_shellexecui_Makefile_am,v 1.1 2012/08/10 17:25:01 shadchin Exp $
---- plugins/shellexecui/Makefile.am.orig	Thu Aug  9 23:48:59 2012
-+++ plugins/shellexecui/Makefile.am	Thu Aug  9 23:49:13 2012
+$OpenBSD: patch-plugins_shellexecui_Makefile_am,v 1.2 2013/01/03 11:54:49 shadchin Exp $
+--- plugins/shellexecui/Makefile.am.orig	Fri Oct 19 21:40:14 2012
++++ plugins/shellexecui/Makefile.am	Tue Oct 23 22:39:28 2012
 @@ -18,7 +18,7 @@ AM_CFLAGS = $(CFLAGS) -std=c99 -fPIC
  
  if HAVE_GTK2
  shellexecui_gtk2_la_SOURCES = shellexecui.c interface.c support.c callbacks.c interface.h support.h callbacks.h
 -shellexecui_gtk2_la_LDFLAGS = -module
 +shellexecui_gtk2_la_LDFLAGS = -module -avoid-version
- endif
+ if STATICLINK
+ GTK_ROOT=@top_srcdir@/$(LIB)/gtk-2.12.12/usr
+ 
+@@ -33,7 +33,7 @@ endif
+ 
  if HAVE_GTK3
  shellexecui_gtk3_la_SOURCES = shellexecui.c interface.c support.c callbacks.c interface.h support.h callbacks.h
+-shellexecui_gtk3_la_LDFLAGS = -module
++shellexecui_gtk3_la_LDFLAGS = -module -avoid-version
+ if STATICLINK
+ GTK_ROOT_300=@top_srcdir@/$(LIB)/gtk-3.0.0
+ 

@@ -1,12 +1,12 @@
-$OpenBSD: patch-plugins_aac_Makefile_am,v 1.1 2012/08/10 17:25:01 shadchin Exp $
---- plugins/aac/Makefile.am.orig	Thu Aug  9 23:40:15 2012
-+++ plugins/aac/Makefile.am	Thu Aug  9 23:40:25 2012
-@@ -12,7 +12,7 @@ mp4ff/mp4ff.h\
- mp4ff/mp4ffint.h\
- mp4ff/mp4ff_int_types.h
+$OpenBSD: patch-plugins_aac_Makefile_am,v 1.2 2013/01/03 11:54:49 shadchin Exp $
+--- plugins/aac/Makefile.am.orig	Fri Oct 19 21:40:14 2012
++++ plugins/aac/Makefile.am	Wed Oct 24 00:05:09 2012
+@@ -13,7 +13,7 @@ aac_la_SOURCES = aac.c aac_parser.c aac_parser.h\
+ ../libmp4ff/mp4ffint.h\
+ ../libmp4ff/mp4ff_int_types.h
  
 -aac_la_LDFLAGS = -module
 +aac_la_LDFLAGS = -module -avoid-version
  
  aac_la_LIBADD = $(LDADD) $(FAAD2_LIBS)
- AM_CFLAGS = $(CFLAGS) -std=c99 -DUSE_MP4FF -DUSE_TAGGING
+ AM_CFLAGS = $(CFLAGS) -std=c99 -DUSE_MP4FF -DUSE_TAGGING -I$(aacpath)/../libmp4ff

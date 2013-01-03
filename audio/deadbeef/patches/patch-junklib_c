@@ -1,7 +1,7 @@
-$OpenBSD: patch-junklib_c,v 1.1.1.1 2012/08/08 18:06:48 shadchin Exp $
---- junklib.c.orig	Sat May 14 16:45:26 2011
-+++ junklib.c	Mon May 16 19:22:06 2011
-@@ -23,7 +23,6 @@
+$OpenBSD: patch-junklib_c,v 1.2 2013/01/03 11:54:49 shadchin Exp $
+--- junklib.c.orig	Fri Oct 19 21:58:50 2012
++++ junklib.c	Tue Oct 23 22:32:14 2012
+@@ -32,7 +32,6 @@
  #include <stdlib.h>
  #include <string.h>
  #if HAVE_ICONV

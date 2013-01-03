@@ -1,7 +1,7 @@
-$OpenBSD: patch-utf8_c,v 1.1.1.1 2012/08/08 18:06:48 shadchin Exp $
---- utf8.c.orig	Thu May  3 02:10:22 2012
-+++ utf8.c	Tue May 15 23:44:11 2012
-@@ -34,6 +34,10 @@
+$OpenBSD: patch-utf8_c,v 1.2 2013/01/03 11:54:49 shadchin Exp $
+--- utf8.c.orig	Fri Oct 19 21:40:14 2012
++++ utf8.c	Tue Oct 23 22:32:16 2012
+@@ -45,6 +45,10 @@
  #include "utf8.h"
  #include "u8_lc_map.h"
  
