@@ -1,0 +1,4 @@
+TinyXML is a simple, small, C++ XML parser that can be easily integrated
+into other programs.
+In brief, TinyXML parses an XML document, and builds from that a
+Document Object Model (DOM) that can be read, modified, and saved.
