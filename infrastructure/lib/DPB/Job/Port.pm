@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.50 2012/12/30 11:47:24 espie Exp $
+# $OpenBSD: Port.pm,v 1.51 2013/01/03 15:45:18 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -64,7 +64,7 @@ sub run
 	my $t = $self->{phase};
 	my $builder = $job->{builder};
 	my $ports = $builder->ports;
-	my $fullpkgpath = $job->{v}->fullpkgpath;
+	my $fullpkgpath = $job->{path};
 	$self->handle_output($job);
 	close STDIN;
 	open STDIN, '</dev/null';
@@ -164,6 +164,9 @@ sub finalize
 package DPB::Task::Port::Serialized;
 our @ISA = qw(DPB::Task::Port);
 
+# XXX can't move junk_lock on the other side of the fork, because
+# it may have to wait.
+
 sub junk_lock
 {
 	my ($self, $core) = @_;
@@ -173,7 +176,7 @@ sub junk_lock
 	while (1) {
 		my $fh = $locker->lock($core);
 		if ($fh) {
-			print $fh "path=".$job->{v}->fullpkgpath, "\n";
+			print $fh "path=".$job->{path}, "\n";
 			return;
 		}
 		sleep 1;
@@ -347,6 +350,10 @@ sub finalize
 			chomp;
 			push(@r, $_);
 		}
+		if (defined $v->{info}{DPB_PROPERTIES} && 
+		    defined $v->{info}{DPB_PROPERTIES}{nojunk}) {
+			print {$job->{lock}} "nojunk\n";
+		}
 		print {$job->{lock}} "needed=", join(' ', sort @r), "\n";
 		close $fh;
 		unlink($file);
@@ -368,20 +375,31 @@ sub run
 	my $job = $core->job;
 	my $v = $job->{v};
 
+	# we got pre-empted
+	if ($core->prop->{junk_count} < $core->prop->{junk}) {
+		exit(2);
+	}
 	$self->handle_output($job);
 
 	$self->junk_lock($core);
-	my @d = $core->job->{builder}->locker->find_dependencies(
+	my $h = $core->job->{builder}->locker->find_dependencies(
 	    $core->hostname);
-	my @cmd = ('/usr/sbin/pkg_delete', '-aIX', @d);
-	print join(' ', @cmd, "\n");
-	$core->shell->exec(OpenBSD::Paths->sudo, @cmd);
-	exit(1);
+	if (defined $h) {
+		my @cmd = ('/usr/sbin/pkg_delete', '-aIX', sort keys %$h);
+		print join(' ', @cmd, "\n");
+		$core->shell->exec(OpenBSD::Paths->sudo, @cmd);
+		exit(1);
+	} else {
+		exit(2);
+	}
 }
 
 sub finalize
 {
 	my ($self, $core) = @_;
+	if ($core->{status} == 0) {
+		$core->prop->{junk_count} = 0;
+	}
 	$core->{status} = 0;
 	$self->junk_unlock($core);
 	$self->SUPER::finalize($core);
@@ -433,7 +451,7 @@ sub finalize
 			my $sz = $1;
 			my $job = $core->job;
 			my $f2 = $job->{builder}->logger->open("size");
-			print $f2 $job->{v}->fullpkgpath, " $job->{wrkdir} $sz\n";
+			print $f2 $job->{path}, " $job->{wrkdir} $sz\n";
 		}
 	}
 	close($fh);
@@ -484,7 +502,7 @@ sub requeue
 		my $job = $core->job;
 		$job->insert_tasks($self);
 		my $fh = $job->{builder}->logger->open("clean");
-		print $fh $job->{v}->fullpkgpath, "\n";
+		print $fh $job->{path}, "\n";
 		$core->{status} = 0;
 		return 1;
 	}
@@ -554,6 +572,7 @@ sub new
 	my $job = bless {
 	    tasks => [],
 	    log => $log, v => $v,
+	    path => $v->fullpkgpath,
 	    special => $special,  current => '',
 	    builder => $builder, endcode => $e},
 		$class;
@@ -630,7 +649,6 @@ sub add_normal_tasks
 	}
 	if ($hostprop->{junk}) {
 		if ($hostprop->{junk_count}++ >= $hostprop->{junk}) {
-			$hostprop->{junk_count} = 0;
 			push(@todo, 'junk');
 		}
 	}
@@ -672,7 +690,7 @@ sub pkgpath
 sub name
 {
 	my $self = shift;
-	return $self->{v}->fullpkgpath."(".$self->{task}->name.")";
+	return $self->{path}."(".$self->{task}{phase}.")";
 }
 
 sub finished_task
@@ -785,6 +803,7 @@ sub new
 	my $job = bless {
 	    tasks => [],
 	    log => $log, v => $v,
+	    path => $v->fullpkgpath,
 	    builder => $builder, endcode => $e},
 		$class;
 
