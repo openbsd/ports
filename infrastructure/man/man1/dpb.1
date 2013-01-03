@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.52 2012/12/31 09:50:55 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.53 2013/01/03 22:52:01 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: December 31 2012 $
+.Dd $Mdocdate: January 3 2013 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -358,6 +358,22 @@ Defaults to
 .Ar 250 .
 Can be disabled by setting to
 .Ar 0 .
+.Pp
+Some ports, most notably cmake-based, have an annoying dependency handling
+bug: they compute their makefile dependencies based on all include files
+present, not just the ones that are actually enabled.
+Those ports' build may be broken by a
+.Ar junk
+phase that removes some unused includes that were added as makefile
+prerequisites.
+Those ports should be annotated with
+DPB_PROPERTIES = unjunk
+until that bug is fixed:
+while a port with the
+.Sq unjunk
+property is building,
+.Ar junk
+will be postponed.
 .It Fl j Ar n
 Number of jobs to run on a single host (defaults to hw.ncpu).
 .It Fl L Ar logdir
@@ -805,7 +821,7 @@ machines, so
 doesn't run its engine at each new package build.
 Lines ending with a dash correspond to new package builds that didn't
 trigger an engine run.
-For other lines, the last number is an estimate of how much time should 
+For other lines, the last number is an estimate of how much time should
 pass before the next run, the first number is time to substract to that
 because there was a long delay before this run, and the middle number is
 the corresponding timestamp, after which the engine will be allowed to fire
