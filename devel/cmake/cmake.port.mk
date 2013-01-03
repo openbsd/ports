@@ -1,4 +1,4 @@
-# $OpenBSD: cmake.port.mk,v 1.14 2012/07/10 18:55:58 dcoppa Exp $
+# $OpenBSD: cmake.port.mk,v 1.15 2013/01/03 15:48:42 espie Exp $
 
 BUILD_DEPENDS+=	devel/cmake>=2.8.0
 
@@ -48,3 +48,6 @@ MAKE_ENV += TERM=${TERM}
 .if ${MODCMAKE_VERBOSE:L} == "yes"
 MAKE_ENV += VERBOSE=1
 .endif
+
+# XXX cmake include parser is bogus
+DPB_PROPERTIES += nojunk

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2012/11/05 16:29:50 landry Exp $
+# $OpenBSD: Makefile,v 1.106 2013/01/03 15:48:42 espie Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 SHARED_ONLY =		Yes
@@ -31,6 +31,9 @@ REVISION-examples=	0
 REVISION-sqlite2=	0
 REVISION-tds=		0
 REVISION-debug=		0
+
+# XXX qmake include parser is bogus
+DPB_PROPERTIES =	parallel	nojunk
 
 SHARED_LIBS =	Qt3Support 8.0 \
 		QtCore 9.0 \
