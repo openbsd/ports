@@ -29,17 +29,19 @@ autoload xfm
  ************************************************************************)
 
 (* View: comment *)
-let comment = Util.comment
+let comment  = Util.comment
 (* View:  empty *)
-let empty   = Util.empty
+let empty    = Util.empty
 (* View: eol *)
-let eol     = Util.eol
+let eol      = Util.eol
 (* View: fspath *)
-let fspath  = Rx.fspath
+let fspath   = Rx.fspath
 (* View: space *)
-let space   = Sep.space
+let space    = Sep.space
 (* View: word *)
-let word    = Rx.word
+let word     = Rx.word
+(* View: mem_spec *)
+let mem_spec = /=[0-9]+[K|M|G]/ | /[-+]{1}[A-Za-z0-9]+\@[A-Za-z0-9]+/
 
 (************************************************************************
  * View: key_opt_value_line
@@ -95,24 +97,18 @@ let echo = Build.key_value_line
                  "echo" space (store word)
 
 (* View: boot
-   boot [image [-acds]]
-   XXX: the last arguments are not always needed, so make them optional *)
+   boot [image [-acds]] *)
 let boot =
     let image = [ label "image" . store fspath ]
       in let arg = [ label "arg" . store word ]
-        in Build.key_value_line "boot" space (image . space . arg)
+        in key_opt_value_line "boot" (image . (space . arg)?)
 
 (* View: machine
    machine [command] *)
 let machine =
-      let machine_entry = Build.key_value ("comaddr"|"memory") 
-                                          space (store word)
-                        | Build.flag ("diskinfo"|"regs")
-            in Build.key_value_line
-                    "machine" space
-                    (Build.opt_list
-                           machine_entry
-                           space)
+    let command = [ label "command" . store word ]
+      in let arg = [ label "arg" . store (word|mem_spec) ]
+         in key_opt_value_line "machine" (command . (space . arg)?)
 
 (************************************************************************
  * Lens
