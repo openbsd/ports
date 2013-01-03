@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2012/11/01 19:49:22 pascal Exp $
+# $OpenBSD: Makefile,v 1.3 2013/01/03 18:29:07 jasper Exp $
+
+BROKEN-mips64 =		libast is not built
 
 COMMENT =		AT&T Korn Shell
 
