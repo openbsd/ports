@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/01/16 15:31:51 dhill Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/01/03 16:26:44 benoit Exp $
 %%SHARED%%
 include/libee/
 include/libee/apache.h
@@ -26,4 +26,4 @@ lib/libee.a
 lib/libee.la
 lib/pkgconfig/
 lib/pkgconfig/libee.pc
-@bin sbin/convert
+@bin sbin/libee-convert
