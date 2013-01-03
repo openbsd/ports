@@ -1,7 +1,7 @@
-$OpenBSD: patch-servers_slapd_Makefile_in,v 1.1 2011/01/07 10:24:30 pea Exp $
---- servers/slapd/Makefile.in.orig	Tue Oct 19 13:18:41 2010
-+++ servers/slapd/Makefile.in	Tue Oct 19 13:19:40 2010
-@@ -432,8 +432,6 @@ install-db-config: FORCE
+$OpenBSD: patch-servers_slapd_Makefile_in,v 1.2 2013/01/03 11:52:29 sthen Exp $
+--- servers/slapd/Makefile.in.orig	Wed Oct 10 13:18:49 2012
++++ servers/slapd/Makefile.in	Thu Jan  3 11:02:29 2013
+@@ -441,8 +441,6 @@ install-db-config: FORCE
  	@-$(MKDIR) $(DESTDIR)$(localstatedir) $(DESTDIR)$(sysconfdir)
  	@-$(INSTALL) -m 700 -d $(DESTDIR)$(localstatedir)/openldap-data
  	$(INSTALL) $(INSTALLFLAGS) -m 600 $(srcdir)/DB_CONFIG \
