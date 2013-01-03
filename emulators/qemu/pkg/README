@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.9 2012/07/08 14:30:40 sthen Exp $
+$OpenBSD: README,v 1.10 2013/01/03 08:30:54 brad Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -37,8 +37,8 @@ $OpenBSD: README,v 1.9 2012/07/08 14:30:40 sthen Exp $
    NOTE: be sure to choose serial console during install.
    NOTE: -no-fd-bootchk permits booting faster when no floppy is
          in use, but is not supported for qemu-system-sparc.
-   NOTE: qemu-system-sparc currently fails with some
-         /etc/malloc.conf settings
+   NOTE: qemu-system-ppc* and qemu-system-sparc* currently fail with
+         J or S malloc flags
 
 4. Compress the virtual disk:
 
@@ -156,7 +156,7 @@ $OpenBSD: README,v 1.9 2012/07/08 14:30:40 sthen Exp $
 
     # export ETHER=trunk101
     # export BRIDGE=bridge101
-    # qemu-system-i386 -net nic,vlan=0,model=e1000,macaddr=52:54:00:12:35:00 \
+    # qemu-system-i386 -net nic,vlan=0,macaddr=52:54:00:12:35:00 \
 	-net tap,vlan=0 -vnc :0 -localtime -usb -usbdevice tablet \
 	-m 256 -no-fd-bootchk -hda virtual.img -monitor stdio
     {tun0 (bridge101 <-> trunk101)ifconfig: bridge101: No such process
@@ -254,7 +254,7 @@ $OpenBSD: README,v 1.9 2012/07/08 14:30:40 sthen Exp $
                 ${TRUEPREFIX}/bin/qemu-system-i386 \
                 -daemonize \
                 -nographic \
-                -net nic,vlan=0,model=e1000,macaddr=52:54:00:4e:62:8f \
+                -net nic,vlan=0,macaddr=52:54:00:4e:62:8f \
                 -net tap,vlan=0,fd=3 \
                 -m 128 \
                 -hda $hddir/virtual.img \

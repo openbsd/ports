@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.95 2012/12/31 07:12:19 brad Exp $
+# $OpenBSD: Makefile,v 1.96 2013/01/03 08:30:54 brad Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc sparc64
 
 COMMENT=	multi system emulator
 
 DISTNAME=	qemu-1.2.2
-REVISION=	0
+REVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/
 EXTRACT_SUFX=	.tar.bz2
@@ -69,16 +69,13 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--disable-vnc-tls \
 		--with-coroutine=sigaltstack
 
-.if ${MACHINE_ARCH:Msparc}
-CONFIGURE_ARGS+=--sparc_cpu=v7
-.endif
-
 FLAVORS=	debug
 FLAVOR?=
 
 .if ${FLAVOR:Mdebug}
 CFLAGS+=	-O0
 CONFIGURE_ARGS+=--enable-debug
+INSTALL_STRIP=
 .else
 CONFIGURE_ARGS+=--disable-debug-info
 .endif
