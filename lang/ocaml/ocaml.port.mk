@@ -1,4 +1,4 @@
-# $OpenBSD: ocaml.port.mk,v 1.22 2012/12/31 15:17:00 chrisz Exp $
+# $OpenBSD: ocaml.port.mk,v 1.23 2013/01/03 14:32:11 chrisz Exp $
 
 # regular file usage for bytecode:
 # PLIST               -- bytecode base files
@@ -25,17 +25,20 @@ PKG_ARGS+=-Dnative=0
 
 .if ${PROPERTIES:Mocaml_native_dynlink}
 MODOCAML_NATDYNLINK=Yes
+MODOCAML_OCAMLDOC?=ocamldoc.opt
 # include native dynlink base files
 PKG_ARGS+=-Ddynlink=1
 .else
 MODOCAML_NATDYNLINK=No
+MODOCAML_OCAMLDOC?=ocamldoc
 # remove native dynlink base file entry from PLIST
 PKG_ARGS+=-Ddynlink=0
 .endif
 
 RUN_DEPENDS +=		lang/ocaml
 BUILD_DEPENDS +=	lang/ocaml
-MAKE_ENV +=		OCAMLFIND_DESTDIR=${DESTDIR}${TRUEPREFIX}/lib/ocaml
+MAKE_ENV +=		OCAMLFIND_DESTDIR=${DESTDIR}${TRUEPREFIX}/lib/ocaml \
+			OCAMLFIND_COMMANDS="ocamldoc=${MODOCAML_OCAMLDOC}"
 
 MODOCAML_pre-fake = \
   	${SUDO} ${INSTALL_DATA_DIR} ${WRKINST}${LOCALBASE}/lib/ocaml/stublibs
