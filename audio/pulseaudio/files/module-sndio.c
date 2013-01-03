@@ -1,4 +1,4 @@
-/* $OpenBSD: module-sndio.c,v 1.3 2012/11/12 12:27:00 eric Exp $ */
+/* $OpenBSD: module-sndio.c,v 1.4 2013/01/03 14:56:34 ajacoutot Exp $ */
 /*
  * Copyright (c) 2012 Eric Faurot <eric@openbsd.org>
  *
@@ -190,7 +190,7 @@ sndio_midi_setup(struct userdata *u)
 		SYSEX_END
 	};
 	size_t		s;
-	int		r, n;
+	int		n;
 	unsigned char	buf[MSGMAX];
 
 	u->mio = mio_open("snd/0", MIO_IN | MIO_OUT, 0);
