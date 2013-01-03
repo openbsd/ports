@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.65 2013/01/02 11:13:52 espie Exp $
+# $OpenBSD: Engine.pm,v 1.66 2013/01/03 15:47:45 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -580,7 +580,7 @@ sub adjust
 	return 0;
 }
 
-sub should_ignore
+sub missing_dep
 {
 	my ($self, $v, $kind) = @_;
 	return undef if !exists $v->{info}{$kind};
@@ -588,6 +588,21 @@ sub should_ignore
 		return $d if (defined $d->{info}) && $d->{info}{IGNORE};
 	}
 	return undef;
+}
+
+# need to ignore $v because of some missing $kind dependency:
+# wipe out its info and put it in the right list
+sub should_ignore
+{
+	my ($self, $v, $kind) = @_;
+	if (my $d = $self->missing_dep($v, $kind)) {
+		$self->log_no_ts('!', $v, " because of ".$d->fullpkgpath);
+		$v->{info} = DPB::PortInfo->stub;
+		push(@{$self->{ignored}}, $v);
+		return 1;
+	} else {
+		return 0;
+	}
 }
 
 sub adjust_extra
@@ -646,13 +661,9 @@ sub adjust_built
 			}
 			$self->log_no_ts('I', $v);
 			$changes++;
-		} elsif (my $d = $self->should_ignore($v, 'RDEPENDS')) {
+		} elsif ($self->should_ignore($v, 'RDEPENDS')) {
 			delete $self->{built}{$v};
-			$self->log_no_ts('!', $v, 
-			    " because of ".$d->fullpkgpath);
 			$changes++;
-			$v->{info} = DPB::PortInfo->stub;
-			push(@{$self->{ignored}}, $v);
 		}
 	}
 	return $changes;
@@ -668,24 +679,29 @@ sub adjust_tobuild
 	}
 
 	for my $v (values %{$self->{tobuild}}) {
-		my $has = $has->{$v} + $self->adjust_extra($v, 'EXTRA', 'BEXTRA');
+		if ($has->{$v} != 0) {
+			if (my $d = $self->should_ignore($v, 'DEPENDS')) {
+				delete $self->{tobuild}{$v};
+			} else {
+				$v->{has} = 2;
+			}
+		} else {
+			my $has = $has->{$v} + 
+			    $self->adjust_extra($v, 'EXTRA', 'BEXTRA');
 
-		my $has2 = $self->adjust_distfiles($v);
-		# being buildable directly is a priority,
-		# but put the patch/dist/small stuff down the 
-		# line as otherwise we will tend to grab 
-		# patch files first
-		$v->{has} = 2 * ($has != 0) + ($has2 > 1);
-		if ($has + $has2 == 0) {
-			$self->{buildable}->add($v);
-			$self->log_no_ts('Q', $v);
-			delete $self->{tobuild}{$v};
-		} elsif (my $d = $self->should_ignore($v, 'DEPENDS')) {
-			delete $self->{tobuild}{$v};
-			$self->log_no_ts('!', $v, 
-			    " because of ".$d->fullpkgpath);
-			$v->{info} = DPB::PortInfo->stub;
-			push(@{$self->{ignored}}, $v);
+			my $has2 = $self->adjust_distfiles($v);
+			# being buildable directly is a priority,
+			# but put the patch/dist/small stuff down the 
+			# line as otherwise we will tend to grab 
+			# patch files first
+			$v->{has} = 2 * ($has != 0) + ($has2 > 1);
+			if ($has + $has2 == 0) {
+				delete $self->{tobuild}{$v};
+				if (!$self->should_ignore($v, 'RDEPENDS')) {
+					$self->{buildable}->add($v);
+					$self->log_no_ts('Q', $v);
+				}
+			} 
 		}
 	}
 }
