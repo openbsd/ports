@@ -1,0 +1,15 @@
+$OpenBSD: patch-program_lib_washtml_php,v 1.1 2013/01/03 20:05:15 sthen Exp $
+
+9019025222  XSS in vbscript and data:text links
+
+--- program/lib/washtml.php.orig	Wed Nov 14 20:30:27 2012
++++ program/lib/washtml.php	Thu Jan  3 19:45:36 2013
+@@ -214,7 +214,7 @@ class washtml
+       $key = strtolower($key);
+       $value = $node->getAttribute($key);
+       if (isset($this->_html_attribs[$key]) ||
+-         ($key == 'href' && !preg_match('!^javascript!i', $value)
++         ($key == 'href' && !preg_match('!^(javascript|vbscript|data:text)!i', $value)
+            && preg_match('!^([a-z][a-z0-9.+-]+:|//|#).+!i', $value))
+       ) {
+         $t .= ' ' . $key . '="' . htmlspecialchars($value, ENT_QUOTES) . '"';
