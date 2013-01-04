@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/09/01 12:02:27 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/01/04 18:20:00 benoit Exp $
 include/assl.h
 include/assl_socket.h
 lib/libassl.a
@@ -55,6 +55,10 @@ share/examples/assl/server/
 share/examples/assl/server/GNUmakefile
 share/examples/assl/server/Makefile
 share/examples/assl/server/README
+share/examples/assl/server/alloc_v2/
+share/examples/assl/server/alloc_v2/GNUmakefile
+share/examples/assl/server/alloc_v2/Makefile
+share/examples/assl/server/alloc_v2/bserver.c
 share/examples/assl/server/blocking/
 share/examples/assl/server/blocking/GNUmakefile
 share/examples/assl/server/blocking/Makefile
