@@ -1,0 +1,25 @@
+$OpenBSD: patch-lib_sockopt_h,v 1.1 2013/01/04 00:24:10 sthen Exp $
+
+Revert 69bf3a39; does not work on at least (Open/Net)BSD.
+This can be put back if we get RFC3678 support.
+
+--- lib/sockopt.h.orig	Tue Apr 17 14:56:26 2012
++++ lib/sockopt.h	Thu Jan  3 00:24:26 2013
+@@ -83,11 +83,13 @@ extern int setsockopt_ipv6_tclass (int, int);
+   (((af) == AF_INET) : SOPT_SIZE_CMSG_IFINDEX_IPV4() \
+                     ? SOPT_SIZE_CMSG_PKTINFO_IPV6())
+ 
+-extern int setsockopt_ipv4_multicast_if(int sock,
+-			             unsigned int ifindex);
+-extern int setsockopt_ipv4_multicast(int sock, int optname,
++extern int setsockopt_multicast_ipv4(int sock, int optname, 
++			             struct in_addr if_addr
++					 /* required: interface to join on */,
+                                      unsigned int mcast_addr,
+-			             unsigned int ifindex);
++			             unsigned int ifindex
++					 /* optional: if non-zero, may be used
++					 	instead of if_addr */);
+ extern int setsockopt_ipv4_tos(int sock, int tos);
+ 
+ /* Ask for, and get, ifindex, by whatever method is supported. */

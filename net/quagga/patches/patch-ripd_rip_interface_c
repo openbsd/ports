@@ -1,0 +1,51 @@
+$OpenBSD: patch-ripd_rip_interface_c,v 1.1 2013/01/04 00:24:10 sthen Exp $
+
+Revert 69bf3a39; does not work on at least (Open/Net)BSD.
+This can be put back if we get RFC3678 support.
+
+--- ripd/rip_interface.c.orig	Tue Apr 17 14:56:26 2012
++++ ripd/rip_interface.c	Thu Jan  3 00:24:26 2013
+@@ -78,8 +78,9 @@ ipv4_multicast_join (int sock, 
+ {
+   int ret;
+ 
+-  ret = setsockopt_ipv4_multicast (sock,
++  ret = setsockopt_multicast_ipv4 (sock, 
+ 				   IP_ADD_MEMBERSHIP, 
++				   ifa, 
+ 				   group.s_addr, 
+ 				   ifindex); 
+ 
+@@ -99,8 +100,9 @@ ipv4_multicast_leave (int sock, 
+ {
+   int ret;
+ 
+-  ret = setsockopt_ipv4_multicast (sock,
++  ret = setsockopt_multicast_ipv4 (sock, 
+ 				   IP_DROP_MEMBERSHIP, 
++				   ifa, 
+ 				   group.s_addr, 
+ 				   ifindex);
+ 
+@@ -136,13 +138,18 @@ rip_interface_new (void)
+ void
+ rip_interface_multicast_set (int sock, struct connected *connected)
+ {
++  struct in_addr addr;
++  
+   assert (connected != NULL);
+   
+-  if (setsockopt_ipv4_multicast_if (sock, connected->ifp->ifindex) < 0)
++  addr = CONNECTED_ID(connected)->u.prefix4;
++
++  if (setsockopt_multicast_ipv4 (sock, IP_MULTICAST_IF, addr, 0, 
++                                 connected->ifp->ifindex) < 0) 
+     {
+       zlog_warn ("Can't setsockopt IP_MULTICAST_IF on fd %d to "
+-		 "ifindex %d for interface %s",
+-		 sock, connected->ifp->ifindex,
++		 "source address %s for interface %s",
++		 sock, inet_ntoa(addr),
+ 		 connected->ifp->name);
+     }
+   
