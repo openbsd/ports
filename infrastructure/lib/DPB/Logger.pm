@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Logger.pm,v 1.9 2012/10/11 07:38:38 espie Exp $
+# $OpenBSD: Logger.pm,v 1.10 2013/01/04 19:34:10 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -21,6 +21,7 @@ use warnings;
 package DPB::Logger;
 use File::Path;
 use File::Basename;
+use IO::File;
 
 sub new
 {
@@ -40,7 +41,7 @@ sub _open
 {
 	my ($self, $mode, $name) = @_;
 	my $log = $self->logfile($name);
-	CORE::open my $fh, $mode, $log or die "Can't write to $log: $!\n";
+	my $fh = IO::File->new($log, $mode) or die "Can't write to $log: $!\n";
 	return $fh;
 }
 

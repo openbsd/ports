@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.67 2013/01/04 12:06:25 espie Exp $
+# $OpenBSD: Engine.pm,v 1.68 2013/01/04 19:34:10 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -215,6 +215,7 @@ sub end
 		}
 	}
 	$self->done($v);
+	$self->{engine}->flush;
 }
 
 sub dump
@@ -416,7 +417,7 @@ sub new
 	if ($state->{want_fetchinfo}) {
 		$o->{tofetch} = DPB::SubEngine::Fetch->new($o);
 	}
-	$o->{log} = DPB::Util->make_hot($state->logger->open("engine"));
+	$o->{log} = $state->logger->open("engine");
 	$o->{stats} = DPB::Util->make_hot($state->logger->open("stats"));
 	return $o;
 }
@@ -444,6 +445,12 @@ sub log
 	my $self = shift;
 	$self->{ts} = time();
 	$self->log_no_ts(@_);
+}
+
+sub flush
+{
+	my $self = shift;
+	$self->{log}->flush;
 }
 
 sub count
@@ -714,6 +721,7 @@ sub check_buildable
 	    sub {
 		1 while $self->adjust_built;
 		$self->adjust_tobuild;
+		$self->flush;
 	    });
 	$self->stats;
 	return $r;
@@ -809,12 +817,14 @@ sub start_new_job
 {
 	my $self = shift;
 	$self->{buildable}->start;
+	$self->flush;
 }
 
 sub start_new_fetch
 {
 	my $self = shift;
 	$self->{tofetch}->start;
+	$self->flush;
 }
 
 sub can_build
