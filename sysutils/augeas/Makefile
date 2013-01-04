@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2013/01/03 19:50:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2013/01/04 07:55:47 jasper Exp $
 
 COMMENT=		configuration editing tool and API
 
 DISTNAME=		augeas-1.0.0
-REVISION=		9
+REVISION=		10
 CATEGORIES=		sysutils devel
 
 SHARED_LIBS +=  augeas                    0.0 # 16.0
@@ -37,10 +37,13 @@ CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 # https://fedorahosted.org/augeas/ticket/322
+# https://fedorahosted.org/augeas/ticket/324
 post-extract:
-	cp ${FILESDIR}/bootconf.aug ${WRKSRC}/lenses/
-	cp ${FILESDIR}/test_bootconf.aug ${WRKSRC}/lenses/tests/
-	cp ${WRKSRC}/tests/lens-fonts.sh ${WRKSRC}/tests/test-bootconf.sh
+.for l in bootconf ntpd
+	cp ${FILESDIR}/$l.aug ${WRKSRC}/lenses/
+	cp ${FILESDIR}/test_$l.aug ${WRKSRC}/lenses/tests/
+	cp ${WRKSRC}/tests/lens-fonts.sh ${WRKSRC}/tests/test-$l.sh
+.endfor
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/man/augparse.1
