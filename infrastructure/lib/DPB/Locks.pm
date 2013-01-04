@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.15 2012/03/02 17:14:41 espie Exp $
+# $OpenBSD: Locks.pm,v 1.16 2013/01/04 12:03:06 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -164,6 +164,7 @@ sub find_dependencies
 		next if -d $fullname;
 		next if $name =~ m/^host:/;
 		open(my $f, '<', $fullname);
+		my $nojunk = 0;
 		my $host;
 		my @d;
 		while (<$f>) {
@@ -171,15 +172,18 @@ sub find_dependencies
 				$host = $1;
 			} elsif (m/^needed=(.*)/) {
 				@d = split(/\s/, $1);
+			} elsif (m/^nojunk$/) {
+				$nojunk = 1;
 			}
 		}
 		if (defined $host && $host eq $hostname) {
+			return undef if $nojunk;
 			for my $k (@d) {
 				$h->{$k} = 1;
 			}
 		}
 	}
-	return sort keys %$h;
+	return $h;
 }
 
 1;
