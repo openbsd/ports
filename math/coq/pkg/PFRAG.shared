@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2013/01/04 11:07:29 chrisz Exp $
+lib/coq/dllcoqrun.so

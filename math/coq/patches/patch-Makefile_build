@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_build,v 1.1 2013/01/04 11:07:29 chrisz Exp $
+--- Makefile.build.orig	Fri Dec 21 18:46:20 2012
++++ Makefile.build	Fri Dec 21 18:47:10 2012
+@@ -603,7 +603,7 @@ install-binaries:: install-$(BEST)  install-tools
+ 
+ install-byte::
+ 	$(MKDIR) $(FULLBINDIR)
+-	$(INSTALLBIN) $(COQMKTOP) $(COQC) $(COQTOPBYTE) $(CHICKEN) $(FULLBINDIR)
++	$(INSTALLBIN) $(COQMKTOP) $(COQC) $(COQTOPBYTE) $(CHICKEN) $(CHICKENBYTE) $(FULLBINDIR)
+ 	cd $(FULLBINDIR); ln -sf coqtop.byte$(EXE) coqtop$(EXE); ln -sf coqchk.byte$(EXE) coqchk$(EXE)
+ 
+ install-opt::

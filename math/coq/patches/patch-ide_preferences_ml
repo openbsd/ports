@@ -1,0 +1,14 @@
+$OpenBSD: patch-ide_preferences_ml,v 1.1 2013/01/04 11:07:29 chrisz Exp $
+--- ide/preferences.ml.orig	Mon Oct 15 21:45:06 2012
++++ ide/preferences.ml	Mon Oct 15 21:46:19 2012
+@@ -35,6 +35,10 @@ let mod_to_str (m:Gdk.Tags.modifier) =
+     | `MOD5 -> "<Mod5>"
+     | `CONTROL -> "<Control>"
+     | `SHIFT -> "<Shift>"
++    | `HYPER -> "<Hyper>"
++    | `META -> "<Meta>"
++    | `SUPER -> "<Super>"
++    | `RELEASE
+     |  `BUTTON1| `BUTTON2| `BUTTON3| `BUTTON4| `BUTTON5| `LOCK -> ""
+ 
+ let mod_list_to_str l = List.fold_left (fun s m -> (mod_to_str m)^s) "" l

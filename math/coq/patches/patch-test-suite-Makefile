@@ -1,0 +1,19 @@
+--- test-suite/Makefile.orig	Tue Jan 17 17:10:51 2012
++++ test-suite/Makefile	Mon Oct 15 19:39:15 2012
+@@ -46,6 +46,7 @@ SHOW := $(if $(VERBOSE),@true,@echo)
+ HIDE := $(if $(VERBOSE),,@)
+ REDIR := $(if $(VERBOSE),,> /dev/null 2>&1)
+ 
++bogomips :=
+ ifneq (,$(wildcard /proc/cpuinfo))
+   sedbogo := -e "s/bogomips.*: \([0-9]*\).*/\1/p" # i386, ppc
+   sedbogo += -e "s/Cpu0Bogo.*: \([0-9]*\).*/\1/p" # sparc
+@@ -112,7 +113,7 @@ $(foreach S,$(VSUBSYSTEMS),$(eval $(call mkstamp,$(S))
+ # Summary
+ #######################################################################
+ 
+-summary_dir = echo $(1); find $(2) -name '*.log' -print0 | xargs -0 -n 1 tail -n1 | sort -g
++summary_dir = echo $(1); find $(2) -name '*.log' -print0 | xargs -0 -n 1 tail -n1 | sort -n
+ 
+ .PHONY: summary summary.log
+ 

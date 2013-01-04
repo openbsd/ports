@@ -1,0 +1,54 @@
+@comment $OpenBSD: PFRAG.dynlink-native,v 1.1 2013/01/04 11:07:29 chrisz Exp $
+@bin bin/coqchk.opt
+@bin bin/coqide.opt
+@bin bin/coqtop.opt
+lib/coq/config/coq_config.cmx
+lib/coq/config/coq_config.o
+lib/coq/ide/ide.a
+lib/coq/ide/ide.cmxa
+lib/coq/interp/interp.a
+lib/coq/interp/interp.cmxa
+lib/coq/kernel/kernel.a
+lib/coq/kernel/kernel.cmxa
+lib/coq/lib/lib.a
+lib/coq/lib/lib.cmxa
+lib/coq/libcoqrun.a
+lib/coq/library/library.a
+lib/coq/library/library.cmxa
+lib/coq/parsing/highparsing.a
+lib/coq/parsing/highparsing.cmxa
+lib/coq/parsing/parsing.a
+lib/coq/parsing/parsing.cmxa
+lib/coq/plugins/cc/cc_plugin.cmxs
+lib/coq/plugins/decl_mode/decl_mode_plugin.cmxs
+lib/coq/plugins/extraction/extraction_plugin.cmxs
+lib/coq/plugins/field/field_plugin.cmxs
+lib/coq/plugins/firstorder/ground_plugin.cmxs
+lib/coq/plugins/fourier/fourier_plugin.cmxs
+lib/coq/plugins/funind/recdef_plugin.cmxs
+lib/coq/plugins/micromega/micromega_plugin.cmxs
+lib/coq/plugins/nsatz/nsatz_plugin.cmxs
+lib/coq/plugins/omega/omega_plugin.cmxs
+lib/coq/plugins/quote/quote_plugin.cmxs
+lib/coq/plugins/ring/ring_plugin.cmxs
+lib/coq/plugins/romega/romega_plugin.cmxs
+lib/coq/plugins/rtauto/rtauto_plugin.cmxs
+lib/coq/plugins/setoid_ring/newring_plugin.cmxs
+lib/coq/plugins/subtac/subtac_plugin.cmxs
+lib/coq/plugins/syntax/ascii_syntax_plugin.cmxs
+lib/coq/plugins/syntax/nat_syntax_plugin.cmxs
+lib/coq/plugins/syntax/numbers_syntax_plugin.cmxs
+lib/coq/plugins/syntax/r_syntax_plugin.cmxs
+lib/coq/plugins/syntax/string_syntax_plugin.cmxs
+lib/coq/plugins/syntax/z_syntax_plugin.cmxs
+lib/coq/plugins/xml/xml_plugin.cmxs
+lib/coq/pretyping/pretyping.a
+lib/coq/pretyping/pretyping.cmxa
+lib/coq/proofs/proofs.a
+lib/coq/proofs/proofs.cmxa
+lib/coq/tactics/hightactics.a
+lib/coq/tactics/hightactics.cmxa
+lib/coq/tactics/tactics.a
+lib/coq/tactics/tactics.cmxa
+lib/coq/toplevel/toplevel.a
+lib/coq/toplevel/toplevel.cmxa
