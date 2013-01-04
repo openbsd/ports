@@ -1,9 +1,9 @@
-$OpenBSD: patch-lenses_fonts_aug,v 1.1 2013/01/02 20:18:48 jasper Exp $
+$OpenBSD: patch-lenses_fonts_aug,v 1.2 2013/01/04 07:23:39 jasper Exp $
 
-From 13c86af3cfac735d240fc34f7482644b1c1d9160 Mon Sep 17 00:00:00 2001
-From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
-Date: Wed, 2 Jan 2013 20:27:06 +0100
-Subject: [PATCH 3/3] Adjust the fonts lens' exclusion rule to ignore all README files
+commit ada380257fed702583381085f3cec056af4d1e45
+Author: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date:   Wed Jan 2 20:27:06 2013 +0100
+Subject: Adjust the fonts lens' exclusion rule to ignore all README files
 
  Fixes ticket #323
 
