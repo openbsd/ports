@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2012/11/28 22:54:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2013/01/04 00:41:42 sthen Exp $
 
 COMMENT=	authentication provider for OATH one-time passwords
 
 DISTNAME=	login_oath-0.8
+REVISION=	0
 CATEGORIES=	sysutils
 
 MASTER_SITES=	http://spacehopper.org/mirrors/
