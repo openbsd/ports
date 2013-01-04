@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.4 2011/11/14 20:48:43 edd Exp $
---- src/Makefile.in.orig	Sun Aug 28 17:57:39 2011
-+++ src/Makefile.in	Thu Nov 10 12:20:20 2011
-@@ -562,18 +562,6 @@ EXTRA_DIST = $(real_lisp_sources) maxima.asd maxima.sy
+$OpenBSD: patch-src_Makefile_in,v 1.5 2013/01/04 14:05:41 edd Exp $
+--- src/Makefile.in.orig	Mon Dec 10 20:34:31 2012
++++ src/Makefile.in	Wed Dec 12 10:46:08 2012
+@@ -551,18 +551,6 @@ EXTRA_DIST = $(real_lisp_sources) maxima.asd maxima.sy
  all: all-am
  
  .SUFFIXES:

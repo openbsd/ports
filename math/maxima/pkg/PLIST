@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/05/10 11:13:35 edd Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/01/04 14:05:41 edd Exp $
 bin/maxima
 bin/rmaxima
 bin/xmaxima
@@ -565,11 +565,11 @@ share/maxima/${VERSION}/share/contrib/fresnel/readme.txt
 share/maxima/${VERSION}/share/contrib/gentran/
 share/maxima/${VERSION}/share/contrib/gentran/convmac.lisp
 share/maxima/${VERSION}/share/contrib/gentran/fdata.lisp
+share/maxima/${VERSION}/share/contrib/gentran/gentran.lisp
 share/maxima/${VERSION}/share/contrib/gentran/global.lisp
 share/maxima/${VERSION}/share/contrib/gentran/gtfix.lisp
 share/maxima/${VERSION}/share/contrib/gentran/init.lisp
 share/maxima/${VERSION}/share/contrib/gentran/intrfc.lisp
-share/maxima/${VERSION}/share/contrib/gentran/local.gtload.lisp
 share/maxima/${VERSION}/share/contrib/gentran/lspc.lisp
 share/maxima/${VERSION}/share/contrib/gentran/lspfor.lisp
 share/maxima/${VERSION}/share/contrib/gentran/lsprat.lisp
@@ -626,8 +626,9 @@ share/maxima/${VERSION}/share/contrib/gentran/test/type.output
 share/maxima/${VERSION}/share/contrib/gentran/vaxinit.lisp
 share/maxima/${VERSION}/share/contrib/gentran/vaxlsp.lisp
 share/maxima/${VERSION}/share/contrib/gf/
+share/maxima/${VERSION}/share/contrib/gf/aes.mac
+share/maxima/${VERSION}/share/contrib/gf/aes2.mac
 share/maxima/${VERSION}/share/contrib/gf/gf.mac
-share/maxima/${VERSION}/share/contrib/gf/gf_hard_test.mac
 share/maxima/${VERSION}/share/contrib/gf/gf_manual.pdf
 share/maxima/${VERSION}/share/contrib/gf/gf_manual.tex
 share/maxima/${VERSION}/share/contrib/gf/gf_test.mac
@@ -1238,8 +1239,6 @@ share/maxima/${VERSION}/share/misc/declin.dem
 share/maxima/${VERSION}/share/misc/declin.mac
 share/maxima/${VERSION}/share/misc/declin.usg
 share/maxima/${VERSION}/share/misc/diffop.lisp
-share/maxima/${VERSION}/share/misc/disran.lisp
-share/maxima/${VERSION}/share/misc/disran.usg
 share/maxima/${VERSION}/share/misc/dump.lisp
 share/maxima/${VERSION}/share/misc/dump.usg
 share/maxima/${VERSION}/share/misc/foptim.lisp
@@ -1564,7 +1563,6 @@ share/maxima/${VERSION}/src/csimp2.lisp
 share/maxima/${VERSION}/src/db.lisp
 share/maxima/${VERSION}/src/defcal.lisp
 share/maxima/${VERSION}/src/defint.lisp
-share/maxima/${VERSION}/src/defopt.lisp
 share/maxima/${VERSION}/src/desoln.lisp
 share/maxima/${VERSION}/src/displa.lisp
 share/maxima/${VERSION}/src/displm.lisp
@@ -1596,9 +1594,7 @@ share/maxima/${VERSION}/src/intl.lisp
 share/maxima/${VERSION}/src/intpol.lisp
 share/maxima/${VERSION}/src/invert.lisp
 share/maxima/${VERSION}/src/irinte.lisp
-share/maxima/${VERSION}/src/kclmac.lisp
 share/maxima/${VERSION}/src/laplac.lisp
-share/maxima/${VERSION}/src/ldisp.lisp
 share/maxima/${VERSION}/src/lesfac.lisp
 share/maxima/${VERSION}/src/letmac.lisp
 share/maxima/${VERSION}/src/limit.lisp
@@ -1795,7 +1791,6 @@ share/maxima/${VERSION}/src/rat3d.lisp
 share/maxima/${VERSION}/src/rat3e.lisp
 share/maxima/${VERSION}/src/ratmac.lisp
 share/maxima/${VERSION}/src/ratout.lisp
-share/maxima/${VERSION}/src/ratpoi.lisp
 share/maxima/${VERSION}/src/residu.lisp
 share/maxima/${VERSION}/src/result.lisp
 share/maxima/${VERSION}/src/risch.lisp
@@ -1886,6 +1881,7 @@ share/maxima/${VERSION}/tests/rtest_hypgeo.mac
 share/maxima/${VERSION}/tests/rtest_integrate.mac
 share/maxima/${VERSION}/tests/rtest_integrate_special.mac
 share/maxima/${VERSION}/tests/rtest_lambert_w.mac
+share/maxima/${VERSION}/tests/rtest_laplace.mac
 share/maxima/${VERSION}/tests/rtest_log.mac
 share/maxima/${VERSION}/tests/rtest_map.mac
 share/maxima/${VERSION}/tests/rtest_mset.mac
@@ -1893,6 +1889,7 @@ share/maxima/${VERSION}/tests/rtest_numth.mac
 share/maxima/${VERSION}/tests/rtest_plot.mac
 share/maxima/${VERSION}/tests/rtest_power.mac
 share/maxima/${VERSION}/tests/rtest_round.mac
+share/maxima/${VERSION}/tests/rtest_rules.mac
 share/maxima/${VERSION}/tests/rtest_scalarp.mac
 share/maxima/${VERSION}/tests/rtest_sign.mac
 share/maxima/${VERSION}/tests/rtest_signum.mac
@@ -1902,6 +1899,7 @@ share/maxima/${VERSION}/tests/rtest_translator.mac
 share/maxima/${VERSION}/tests/rtest_trig.mac
 share/maxima/${VERSION}/tests/rtest_zeta.mac
 share/maxima/${VERSION}/tests/rtestconjugate.mac
+share/maxima/${VERSION}/tests/rtestdefstruct.mac
 share/maxima/${VERSION}/tests/rtesthyp.mac
 share/maxima/${VERSION}/tests/rtestifactor.mac
 share/maxima/${VERSION}/tests/rtestint.mac

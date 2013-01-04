@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.1 2011/11/14 20:48:43 edd Exp $
+$OpenBSD: patch-configure,v 1.2 2013/01/04 14:05:41 edd Exp $
 
 /bin/sh can't do this in POSIX mode on OpenBSD.
 
@@ -9,9 +9,9 @@ Reported upstream here:
 https://sourceforge.net/tracker/?func=detail&aid=3436157&group_id=4933&atid=104933
 
 
---- configure.orig	Sat Nov 12 12:14:12 2011
-+++ configure	Sat Nov 12 12:15:17 2011
-@@ -4571,12 +4571,12 @@ if test x"${exec_prefix}" = xNONE ; then
+--- configure.orig	Mon Dec 10 20:34:16 2012
++++ configure	Wed Dec 12 10:46:08 2012
+@@ -4700,12 +4700,12 @@ if test x"${exec_prefix}" = xNONE ; then
  else
  	tmp_exec_prefix="${exec_prefix}"
  fi
