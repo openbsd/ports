@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distant.pm,v 1.7 2012/11/06 08:26:29 espie Exp $
+# $OpenBSD: Distant.pm,v 1.8 2013/01/04 21:19:18 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -94,6 +94,7 @@ sub run
 {
 	my $self = shift;
 	my $socket = $self->{socket};
+	unlink($socket);
 	my $timeout = $self->{timeout};
 	my $host = $self->{host};
 	close STDOUT;
