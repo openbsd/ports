@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.67 2013/01/04 12:46:20 espie Exp $
+# $OpenBSD: dpb,v 1.68 2013/01/04 18:29:13 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -629,7 +629,7 @@ sub main_loop
 			handle_non_waiting_jobs(0);
 			if (!DPB::Core->running) {
 				last if !$keep_going;
-				if (!$state->engine_can_build) {
+				if (!$state->engine->can_build) {
 					$state->engine->check_buildable(1);
 					if (!$state->engine->can_build) {
 						last;
