@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.54 2013/01/04 12:16:51 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.55 2013/01/04 12:56:26 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -861,13 +861,18 @@ lines tagged with
 .Sq REP
 correspond to the display reports.
 .Pp
-Lines ending with a dash correspond to new activity that didn't trigger
+Lines ending with a dash
+.Sq -
+correspond to new activity that didn't trigger
 a computation.
-For other lines, the last number is an estimate of how much time should
-pass before the next run, the first number is time to substract to that
-because there was a long delay before this run, and the middle number is
-the corresponding timestamp, after which the computation will be allowed
-to fire again.
+.Pp
+Other lines will feature a plus
+.Sq +
+for normal runs, or an exclamation point
+.Sq !
+for forced runs, followed by two numbers:
+the next timestamp at which we'll be allowed to run, and
+a measure of how much time it took to run this pass.
 .Pp
 That information is mostly relevant while
 .Nm
