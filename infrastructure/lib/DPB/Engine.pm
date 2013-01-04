@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.66 2013/01/03 15:47:45 espie Exp $
+# $OpenBSD: Engine.pm,v 1.67 2013/01/04 12:06:25 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -18,6 +18,7 @@
 use strict;
 use warnings;
 
+use DPB::Limiter;
 package DPB::SubEngine;
 sub new
 {
@@ -389,6 +390,7 @@ sub end_build
 }
 
 package DPB::Engine;
+our @ISA = qw(DPB::Limiter);
 
 use DPB::Heuristics;
 use DPB::Util;
@@ -416,8 +418,6 @@ sub new
 	}
 	$o->{log} = DPB::Util->make_hot($state->logger->open("engine"));
 	$o->{stats} = DPB::Util->make_hot($state->logger->open("stats"));
-	$o->{next_check} = $o->{ts};
-	$o->{perf} = DPB::Util->make_hot($state->logger->open("engine-perf"));
 	return $o;
 }
 
@@ -706,45 +706,17 @@ sub adjust_tobuild
 	}
 }
 
-use Time::HiRes;
 sub check_buildable
 {
 	my ($self, $forced) = @_;
-	$self->{ts} = time();
-	my $temp = $self->{perf};
-	print $temp "$$\@$self->{ts}: ";
-	if (!($forced && $self->{unchecked}) &&
-	    $self->{ts} < $self->{next_check} && 
-	    $self->{buildable}->count > 0) {
-	    	print $temp "-\n";
-		$self->{unchecked} = 1;
-		$self->stats;
-		return 0;
-	}
-
-	delete $self->{unchecked};
-	# actual computation
-	my $start = Time::HiRes::time();
-	1 while $self->adjust_built;
-	$self->adjust_tobuild;
-	my $end = Time::HiRes::time();
-
+	my $r = $self->limit($forced, 100, "ENG", 
+	    $self->{buildable}->count > 0,
+	    sub {
+		1 while $self->adjust_built;
+		$self->adjust_tobuild;
+	    });
 	$self->stats;
-	# adjust values for next time
-	my $check_interval = 100 * ($end - $start);
-	my $offset = $self->{ts} - $self->{next_check};
-	$offset /= 2;
-	print $temp sprintf("%.2f ", $offset);
-
-	$self->{next_check} = $self->{ts} + $check_interval;
-	if ($offset > 0) {
-	    $self->{next_check} -= $offset;
-	}
-	if ($self->{next_check} < $end) {
-		$self->{next_check} = $end;
-	}
-	print $temp sprintf(" %.2f %.2f\n", $self->{next_check}, $check_interval);
-	return 1;
+	return $r;
 }
 
 sub new_path

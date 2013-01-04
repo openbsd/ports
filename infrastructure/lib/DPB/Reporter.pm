@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Reporter.pm,v 1.11 2012/07/10 14:28:30 espie Exp $
+# $OpenBSD: Reporter.pm,v 1.12 2013/01/04 12:06:25 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -135,7 +135,7 @@ sub myprint
 }
 
 package DPB::Reporter::Tty;
-our @ISA = qw(DPB::Reporter);
+our @ISA = qw(DPB::Reporter DPB::Limiter);
 
 my $extra = '';
 my $width;
@@ -340,17 +340,20 @@ sub go_write_home
 sub report
 {
 	my $self = shift;
-	my $msg = "";
-	for my $prod (@{$self->{producers}}) {
-		$msg.= $prod->report;
-	}
-	$msg .= $extra;
-	if ($msg ne $self->{msg} || $self->{continued}) {
-		$self->{continued} = 0;
-		my $method = $self->{write};
-		$self->$method($msg);
-		$self->{msg} = $msg;
-	}
+	$self->limit(0, 100, "REP", 1,
+	    sub {
+		my $msg = "";
+		for my $prod (@{$self->{producers}}) {
+			$msg.= $prod->report;
+		}
+		$msg .= $extra;
+		if ($msg ne $self->{msg} || $self->{continued}) {
+			$self->{continued} = 0;
+			my $method = $self->{write};
+			$self->$method($msg);
+			$self->{msg} = $msg;
+		}
+	    });
 }
 
 sub myprint

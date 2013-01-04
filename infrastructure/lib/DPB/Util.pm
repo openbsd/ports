@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Util.pm,v 1.2 2011/06/04 12:58:24 espie Exp $
+# $OpenBSD: Util.pm,v 1.3 2013/01/04 12:06:25 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -43,4 +43,5 @@ sub time2string
 	return sprintf("%d %s %02d:%02d:%02d", $mday, $name[$mon],
 	    $hour, $min, $sec);
 }
+
 1
