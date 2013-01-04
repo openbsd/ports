@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/03/02 14:03:16 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/01/04 14:06:33 edd Exp $
 @bin bin/wxmaxima
 share/applications/wxmaxima.desktop
 share/locale/ca/LC_MESSAGES/wxMaxima.mo
@@ -8,6 +8,7 @@ share/locale/de/LC_MESSAGES/wxMaxima.mo
 share/locale/el/LC_MESSAGES/wxMaxima.mo
 share/locale/es/LC_MESSAGES/wxMaxima.mo
 share/locale/fr/LC_MESSAGES/wxMaxima.mo
+share/locale/gl/LC_MESSAGES/wxMaxima.mo
 share/locale/hu/LC_MESSAGES/wxMaxima.mo
 share/locale/it/LC_MESSAGES/wxMaxima.mo
 share/locale/ja/LC_MESSAGES/wxMaxima.mo

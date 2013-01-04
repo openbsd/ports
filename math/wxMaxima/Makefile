@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2012/05/10 11:14:13 edd Exp $
+# $OpenBSD: Makefile,v 1.8 2013/01/04 14:06:33 edd Exp $
 
 COMMENT =		wxWidgets GUI for the computer algebra system maxima
 
-DISTNAME =		wxMaxima-12.04.0
+DISTNAME =		wxMaxima-12.09.0
 CATEGORIES =		math
 
 HOMEPAGE =		http://wxmaxima.sourceforge.net/
