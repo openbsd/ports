@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.53 2013/01/03 22:52:01 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.54 2013/01/04 12:16:51 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: January 3 2013 $
+.Dd $Mdocdate: January 4 2013 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -813,23 +813,6 @@ the same directory returned.
 affinity mismatch, but job will start on the wrong host anyways, as the queue
 contains no other buildable path.
 .El
-.It Pa engine-perf.log
-Engine performance.
-Each engine run takes a large amount of cpu time, most noticeable on slow
-machines, so
-.Nm
-doesn't run its engine at each new package build.
-Lines ending with a dash correspond to new package builds that didn't
-trigger an engine run.
-For other lines, the last number is an estimate of how much time should
-pass before the next run, the first number is time to substract to that
-because there was a long delay before this run, and the middle number is
-the corresponding timestamp, after which the engine will be allowed to fire
-again.
-.Pp
-That information is mostly relevant while
-.Nm
-is building lots of small packages very quickly while the queue is large.
 .It Pa equiv.log
 Lists of equivalent pkgpaths for the build, when default flavors and default subpackages have been resolved.
 .It Pa fetch/bad.log
@@ -860,6 +843,35 @@ option has been used.
 one file or symlink per pkgname.
 .It Pa paths/some/path.log
 one file or symlink per pkgpath.
+.It Pa performance.log
+Some parts of
+.Nm
+are computationally intensive, such as the engine runs to determine
+new stuff that can be built, and the actual display reports.
+.Pp
+Both those activities are rate-limited, so that
+.Nm
+doesn't run its engine at each new package build,
+and doesn't update its display every time there is a phase change.
+.Pp
+Lines tagged with
+.Sq ENG
+correspond to the engine;
+lines tagged with
+.Sq REP
+correspond to the display reports.
+.Pp
+Lines ending with a dash correspond to new activity that didn't trigger
+a computation.
+For other lines, the last number is an estimate of how much time should
+pass before the next run, the first number is time to substract to that
+because there was a long delay before this run, and the middle number is
+the corresponding timestamp, after which the computation will be allowed
+to fire again.
+.Pp
+That information is mostly relevant while
+.Nm
+is building lots of small packages very quickly.
 .It Pa rebuild.log
 When using
 .Fl R ,
