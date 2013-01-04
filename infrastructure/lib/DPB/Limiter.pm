@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Limiter.pm,v 1.2 2013/01/04 12:34:29 espie Exp $
+# $OpenBSD: Limiter.pm,v 1.3 2013/01/04 12:45:44 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -38,7 +38,7 @@ sub limit
 	my ($self, $forced, $factor, $tag, $cond, $code) = @_;
 	$self->{ts} = time();
 	$self->{next_check} //= $self->{ts};
-	print $temp "$$\@$self->{ts}: $tag ";
+	print $temp "$$\@$self->{ts}: $tag";
 	if (!($forced && $self->{unchecked}) &&
 	    $self->{ts} < $self->{next_check} && $cond) {
 	    	print $temp "-\n";
@@ -55,8 +55,6 @@ sub limit
 	my $check_interval = $factor * ($end - $start);
 	my $offset = $self->{ts} - $self->{next_check};
 	$offset /= 2;
-	print $temp sprintf("%.2f ", $offset);
-
 	$self->{next_check} = $self->{ts} + $check_interval;
 	if ($offset > 0) {
 	    $self->{next_check} -= $offset;
@@ -65,7 +63,8 @@ sub limit
 		$self->{next_check} = $end;
 	}
 	print $temp 
-	    sprintf(" %.2f %.2f\n", $self->{next_check}, $check_interval);
+	    sprintf("%s %.2f %.2f\n", $forced ? '!' : '+', 
+	    $self->{next_check}, $check_interval);
 	return 1;
 }
 
