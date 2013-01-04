@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2012/06/26 07:26:41 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2013/01/04 01:30:47 sthen Exp $
 
 COMMENT =	push/pull from a Git server repository using Mercurial
 
-MODPY_EGG_VERSION =	0.3.1
-DISTNAME =		schacon-hg-git-${MODPY_EGG_VERSION}
-PKGNAME =		py-hg-git-${MODPY_EGG_VERSION}
+MODPY_EGG_VERSION =	0.3.4
+DISTNAME =		py-hg-git-${MODPY_EGG_VERSION}
 
 CATEGORIES =		devel
 
@@ -16,16 +15,17 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
-MASTER_SITES =	http://github.com/schacon/hg-git/tarball/${MODPY_EGG_VERSION}/
+# Ugly gymnastics to give a more sensible filename than "0.3.4.tar.gz"..
+MASTER_SITES =	https://bitbucket.org/durin42/hg-git/get/${MODPY_EGG_VERSION}${EXTRACT_SUFX}?dummy=/
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 
-WRKDIST =		${WRKDIR}/${DISTNAME:S/-${MODPY_EGG_VERSION}/-6dc5f17/}
+WRKDIST =		${WRKDIR}/durin42-hg-git-586b7aa96466
 
 RUN_DEPENDS =		devel/py-dulwich \
 			devel/mercurial
-REGRESS_DEPENDS = 	${RUN_DEPENDS} \
+REGRESS_DEPENDS =	${RUN_DEPENDS} \
 			archivers/bzip2 \
 			archivers/unzip \
 			devel/git,-main
