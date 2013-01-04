@@ -1,13 +1,35 @@
-$OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.13 2012/12/23 20:49:29 brad Exp $
---- tools/clang/lib/Driver/Tools.cpp.orig	Wed Nov 21 08:56:23 2012
-+++ tools/clang/lib/Driver/Tools.cpp	Mon Dec 10 19:22:58 2012
-@@ -5125,6 +5125,9 @@ void openbsd::Link::ConstructJob(Compilation &C, const
+$OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.14 2013/01/04 01:10:30 brad Exp $
+
+Silence some warnings and allow passing down some feature flags to the linker. r171329
+
+--- tools/clang/lib/Driver/Tools.cpp.orig	Mon Dec 24 18:44:21 2012
++++ tools/clang/lib/Driver/Tools.cpp	Mon Dec 31 18:01:11 2012
+@@ -5125,6 +5125,17 @@ void openbsd::Link::ConstructJob(Compilation &C, const
    const Driver &D = getToolChain().getDriver();
    ArgStringList CmdArgs;
  
++  // Silence warning for "clang -g foo.o -o foo"
++  Args.ClaimAllArgs(options::OPT_g_Group);
++  // and "clang -emit-llvm foo.o -o foo"
++  Args.ClaimAllArgs(options::OPT_emit_llvm);
++  // and for "clang -w foo.o -o foo". Other warning options are already
++  // handled somewhere else.
++  Args.ClaimAllArgs(options::OPT_w);
++
 +  // XXX
 +  CmdArgs.push_back("-nopie");
 +
    if ((!Args.hasArg(options::OPT_nostdlib)) &&
        (!Args.hasArg(options::OPT_shared))) {
      CmdArgs.push_back("-e");
+@@ -5178,6 +5189,10 @@ void openbsd::Link::ConstructJob(Compilation &C, const
+   Args.AddAllArgs(CmdArgs, options::OPT_L);
+   Args.AddAllArgs(CmdArgs, options::OPT_T_Group);
+   Args.AddAllArgs(CmdArgs, options::OPT_e);
++  Args.AddAllArgs(CmdArgs, options::OPT_s);
++  Args.AddAllArgs(CmdArgs, options::OPT_t);
++  Args.AddAllArgs(CmdArgs, options::OPT_Z_Flag);
++  Args.AddAllArgs(CmdArgs, options::OPT_r);
+ 
+   AddLinkerInputs(getToolChain(), Inputs, Args, CmdArgs);
+ 
