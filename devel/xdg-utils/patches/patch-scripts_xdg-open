@@ -1,7 +1,18 @@
-$OpenBSD: patch-scripts_xdg-open,v 1.7 2012/04/09 09:39:15 ajacoutot Exp $
+$OpenBSD: patch-scripts_xdg-open,v 1.8 2013/01/04 11:42:18 ajacoutot Exp $
+
+Fix sed(1) usage (i.e. !GNU sed).
+
 --- scripts/xdg-open.orig	Sat Jan  1 11:03:14 2011
-+++ scripts/xdg-open	Mon Apr  9 11:13:15 2012
-@@ -391,7 +391,7 @@ open_generic_xdg_mime()
++++ scripts/xdg-open	Fri Jan  4 12:33:10 2013
+@@ -384,14 +384,14 @@ open_xfce()
+ 
+ open_generic_xdg_mime()
+ {
+-    filetype=`xdg-mime query filetype "$1" | sed "s/;.*//"`
++    filetype=`xdg-mime query filetype "$1" | sed "s/[ ;].*//"`
+     default=`xdg-mime query default "$filetype"`
+     if [ -n "$default" ] ; then
+         xdg_user_dir="$XDG_DATA_HOME"
          [ -n "$xdg_user_dir" ] || xdg_user_dir="$HOME/.local/share"
  
          xdg_system_dirs="$XDG_DATA_DIRS"
