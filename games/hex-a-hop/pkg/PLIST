@@ -1,0 +1,35 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/01/04 22:57:07 stsp Exp $
+@bin bin/hex-a-hop
+share/hex-a-hop/
+share/hex-a-hop/emi.dat
+share/hex-a-hop/font.dat
+share/hex-a-hop/font.ttf
+share/hex-a-hop/gradient.dat
+share/hex-a-hop/icon.bmp
+share/hex-a-hop/levels.dat
+share/hex-a-hop/map.dat
+share/hex-a-hop/map_top.dat
+share/hex-a-hop/music-ending-nonfree.ogg
+share/hex-a-hop/music-game-nonfree-1.ogg
+share/hex-a-hop/music-game-nonfree.ogg
+share/hex-a-hop/sound-builder-nonfree.ogg
+share/hex-a-hop/sound-collapse-nonfree.ogg
+share/hex-a-hop/sound-crack.ogg
+share/hex-a-hop/sound-death.ogg
+share/hex-a-hop/sound-explode-big.ogg
+share/hex-a-hop/sound-explode-small.ogg
+share/hex-a-hop/sound-floater-enter.ogg
+share/hex-a-hop/sound-found-antiice-nonfree.ogg
+share/hex-a-hop/sound-found-jump-nonfree.ogg
+share/hex-a-hop/sound-ice.ogg
+share/hex-a-hop/sound-laser.ogg
+share/hex-a-hop/sound-lift-down-nonfree.ogg
+share/hex-a-hop/sound-lift-up-nonfree.ogg
+share/hex-a-hop/sound-spinner-nonfree.ogg
+share/hex-a-hop/sound-trampoline.ogg
+share/hex-a-hop/sound-used-antiice.ogg
+share/hex-a-hop/sound-used-jump.ogg
+share/hex-a-hop/sound-win.ogg
+share/hex-a-hop/tiles.dat
+share/hex-a-hop/tiles_reflect.dat
+share/hex-a-hop/title.dat
