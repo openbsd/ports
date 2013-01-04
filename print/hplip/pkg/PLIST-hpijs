@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-hpijs,v 1.21 2012/12/10 16:00:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST-hpijs,v 1.22 2013/01/04 18:21:54 ajacoutot Exp $
 @conflict hplip-libs-<=3.9.8
+@conflict hpcups-<=3.2.11
 @pkgpath print/hpijs
 @bin bin/hpijs
 lib/python${MODPY_VERSION}/
@@ -15,9 +16,7 @@ share/foomatic/db/source/PPD/
 share/foomatic/db/source/PPD/HP/
 share/foomatic/db/source/PPD/HP/HP-Fax-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/HP-Fax2-hpijs.ppd.gz
-share/foomatic/db/source/PPD/HP/HP-Fax3-hpcups.ppd.gz
 share/foomatic/db/source/PPD/HP/HP-Fax3-hpijs.ppd.gz
-share/foomatic/db/source/PPD/HP/HP-Fax4-hpcups.ppd.gz
 share/foomatic/db/source/PPD/HP/HP-Fax4-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-2000c-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-2500c-hpijs.ppd.gz
