@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.55 2012/12/12 18:53:08 landry Exp $
+# $OpenBSD: Makefile,v 1.56 2013/01/04 08:06:34 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	multi-platform graphical toolkit
 COMMENT-cups=	gtk+3 CUPS print backend
 
-V=		3.6.2
+V=		3.6.3
 DISTNAME=	gtk+-${V}
 EXTRACT_SUFX=	.tar.xz
 
 PKGNAME-main=	gtk+3-${V}
 PKGNAME-cups=	gtk+3-cups-${V}
-REVISION-cups =	0
 
 # grep ^GTK_BINARY_VERSION ${WRKSRC}/Makefile (after do-configure)
 GTK_BINARY_VERSION=3.0.0
@@ -72,7 +71,7 @@ WANTLIB-main += c
 RUN_DEPENDS-cups= # empty
 LIB_DEPENDS-cups= ${LIB_DEPENDS} \
 		print/cups,-libs \
-		STEM->=${V}:${BASE_PKGPATH},-main
+		${BASE_PKGPATH},-main=${V}
 
 WANTLIB-cups += ${WANTLIB}
 WANTLIB-cups += asn1 crypto cups gdk-3 gssapi gtk-3 krb5 ssl
