@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.145 2012/10/19 07:18:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.146 2013/01/05 12:47:45 ajacoutot Exp $
 
 COMMENT-main=		Common Unix Printing System
 COMMENT-libs=		CUPS libraries and headers
@@ -7,8 +7,8 @@ VERSION=		1.6.1
 DISTNAME=		cups-${VERSION}-source
 EXTRACT_SUFX=		.tar.bz2
 
-REVISION-main=		8
-REVISION-libs=		4
+REVISION-main=		9
+REVISION-libs=		5
 
 PKGNAME-main=		cups-${VERSION}
 PKGNAME-libs=		cups-libs-${VERSION}
@@ -31,7 +31,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += asn1 crypto gssapi krb5 m pthread
+WANTLIB += asn1 avahi-client avahi-common crypto gssapi krb5 m pthread
 WANTLIB += ssl stdc++ z
 
 WANTLIB-main += ${WANTLIB}
@@ -51,6 +51,13 @@ MULTI_PACKAGES=		-main -libs
 BUILD_DEPENDS=		${MODGNU_AUTOMAKE_DEPENDS} \
 			${MODGNU_AUTOCONF_DEPENDS}
 
+# bootstrap prevents a cyclic dep: gtk+{2,3}->cups->avahi->gtk+{2,3}
+LIB_DEPENDS-libs=	net/avahi,no_gui,no_mono,no_qt3,no_qt4,bootstrap
+
+LIB_DEPENDS-main=	${BASE_PKGPATH},-libs=${VERSION} \
+			devel/libusb1 \
+			x11/dbus
+
 RUN_DEPENDS-main=	print/cups-filters
 
 # optional for now
@@ -59,10 +66,6 @@ RUN_DEPENDS-main=	print/cups-filters
 # we don't install the desktop file
 #BUILD_DEPENDS +=	devel/xdg-utils
 #RUN_DEPENDS-main +=	devel/xdg-utils
-
-LIB_DEPENDS-main=	${BASE_PKGPATH},-libs \
-			devel/libusb1 \
-			x11/dbus
 
 LIBS_ENV=		LIBcups_VERSION=${LIBcups_VERSION} \
 			LIBcupscgi_VERSION=${LIBcupscgi_VERSION} \
@@ -96,24 +99,16 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--with-system-groups=wheel \
 			--with-optim="${CFLAGS}" \
 			--with-dbusdir=${SYSCONFDIR}/dbus-1 \
-			--with-perl="/usr/bin/perl" \
 			--with-printcap=${SYSCONFDIR}/cups/printcap \
 			--with-smbconfigfile="samba:///${SYSCONFDIR}/samba/smb.conf" \
-			--enable-libusb \
-			--enable-dbus \
 			--enable-openssl \
 			--disable-cdsassl \
 			--disable-gnutls \
 			--disable-libpaper \
 			--disable-pam \
-			--disable-default-shared \
 			--without-java \
 			--without-php \
 			--without-python
-
-# XXX FLAVOR?; adds to many dependencies to cups,-libs
-CONFIGURE_ARGS +=	--disable-avahi \
-			--disable-dnssd
 
 post-extract:
 	${INSTALL} -m 555 ${FILESDIR}/krb5-config ${WRKDIR}/bin
