@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.68 2013/01/04 18:29:13 espie Exp $
+# $OpenBSD: dpb,v 1.69 2013/01/05 13:32:28 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -693,8 +693,11 @@ if ($state->{all}) {
 	if ($state->opt('f')) {
 		DPB::Distfile->dump($state->{logger});
 	}
-	if ($state->grabber->expire_old_distfiles($core, $state->opt('e'))) {
-		$occupied  = 1;
+	if (!$state->define('NOHISTORY')) {
+		if ($state->grabber->expire_old_distfiles($core, 
+		    $state->opt('e'))) {
+			$occupied  = 1;
+		}
 	}
 }
 
