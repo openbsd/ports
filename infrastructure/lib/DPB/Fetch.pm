@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.43 2012/08/15 09:02:52 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.44 2013/01/05 16:10:18 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -443,21 +443,24 @@ sub expire_old
 	my $self = shift;
 	my $ts = time();
 	my $distdir = $self->distdir;
+	open my $fh2, ">", "$distdir/history.new" or return;
 	if (open(my $fh, '<', "$distdir/history")) {
 		my $_;
 		while (<$fh>) {
 			if (m/^\d+\s+SHA256\s*\((.*)\) \= (.*\=)$/) {
 				my ($file, $sha) = ($1, $2);
-				$self->mark_sha($sha, $file);
-				$self->{known_file}{$file} = 1;
+				if (!$self->{known_sha}{$sha}{$file}) {
+					$self->mark_sha($sha, $file);
+					$self->{known_file}{$file} = 1;
+					print $fh2 $_;
+				}
 			}
 		}
 		close $fh;
 	}
-	open my $fh, ">>", "$distdir/history" or return;
 	while (my ($sha, $file) = each %{$self->{reverse}}) {
 		next if $self->{known_sha}{$sha}{$file};
-		print $fh "$ts SHA256 ($file) = $sha\n";
+		print $fh2 "$ts SHA256 ($file) = $sha\n";
 		$self->{known_file}{$file} = 1;
 	}
 	for my $special (qw(Makefile distinfo history)) {
@@ -479,7 +482,7 @@ sub expire_old
 		$actual =~ s/^\Q$distdir\E\/?//;
 		return if $self->{known_file}{$actual};
 		my $sha = OpenBSD::sha->new($_)->stringize;
-		print $fh "$ts SHA256 ($actual) = $sha\n";
+		print $fh2 "$ts SHA256 ($actual) = $sha\n";
 		$self->mark_sha($sha, $actual);
 	}, $distdir);
 
@@ -493,12 +496,13 @@ sub expire_old
 				my $sha = $1;
 				return if $self->{known_sha}{$sha}{$_};
 				return if $self->{known_short}{$sha}{$_};
-				print $fh "$ts SHA256 ($_) = ", $sha, "\n";
+				print $fh2 "$ts SHA256 ($_) = ", $sha, "\n";
 			}
 		}, $c);
 	}
 
-	close $fh;
+	close $fh2;
+	rename("$distdir/history.new", "$distdir/history");
 }
 
 sub distdir
