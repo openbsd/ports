@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.58 2013/01/05 20:08:39 espie Exp $
+# $OpenBSD: Port.pm,v 1.59 2013/01/05 23:38:08 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -590,16 +590,20 @@ use Time::HiRes qw(time);
 sub new
 {
 	my ($class, $log, $v, $builder, $special, $core, $endcode) = @_;
-	my $e = sub { $builder->register_built($v); &$endcode; };
 	my $job = bless {
 	    tasks => [],
 	    log => $log, v => $v,
 	    path => $v->fullpkgpath,
 	    special => $special,  current => '',
-	    builder => $builder, endcode => $e},
+	    builder => $builder},
 		$class;
 
 	open $job->{logfh}, ">>", $job->{log} or die "can't open $job->{log}";
+
+	$job->{endcode} = sub { 
+		close($job->{logfh}); 
+		$builder->register_built($v); 
+		&$endcode; };
 
 	my $prop = $core->prop;
 	if ($prop->{parallel} =~ m/^\/(\d+)$/) {
@@ -823,15 +827,19 @@ our @ISA = qw(DPB::Job::Port);
 
 sub new
 {
-	my ($class, $log, $v, $builder, $e) = @_;
+	my ($class, $log, $v, $builder, $endcode) = @_;
 	my $job = bless {
 	    tasks => [],
 	    log => $log, v => $v,
 	    path => $v->fullpkgpath,
-	    builder => $builder, endcode => $e},
+	    builder => $builder},
 		$class;
 
 	open $job->{logfh}, ">>", $job->{log} or die "can't open $job->{log}";
+
+	$job->{endcode} = sub { 
+		close($job->{logfh}); 
+		&$endcode; };
 
 	push(@{$job->{tasks}},
 		    DPB::Task::Port::Install->new('install'));
