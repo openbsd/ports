@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.56 2013/01/05 18:09:30 espie Exp $
+# $OpenBSD: Port.pm,v 1.57 2013/01/05 20:06:29 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -322,10 +322,12 @@ sub finalize
 		if (defined $v->{info}{DPB_PROPERTIES} && 
 		    defined $v->{info}{DPB_PROPERTIES}{nojunk}) {
 			print {$job->{lock}} "nojunk\n";
+			$job->{nojunk} = 1;
 		}
 		print {$job->{lock}} "needed=", join(' ', sort @r), "\n";
 		close $fh;
 		unlink($file);
+		$job->{live_depends} = \@r;
 	} else {
 		$core->{status} = 1;
 	}
@@ -337,6 +339,22 @@ package DPB::Task::Port::Uninstall;
 our @ISA=qw(DPB::Task::Port::Serialized);
 
 sub notime { 1 }
+
+sub add_live_depends
+{
+	my ($self, $h, $host) = @_;
+	for my $core (values %{DPB::Core->repository}) {
+		next if $core->hostname ne $host;
+		next unless defined $core->job->{live_depends};
+		for my $d (@{$core->job->{live_depends}}) {
+			$h->{$d} = 1;
+		}
+		if ($core->job->{nojunk}) {
+			return 0;
+		}
+	}
+	return 1;
+}
 
 sub run
 {
@@ -351,9 +369,9 @@ sub run
 	$self->junk_lock($core);
 	$self->handle_output($job);
 
-	my $h = $core->job->{builder}->locker->find_dependencies(
+	my $h = $job->{builder}->locker->find_dependencies(
 	    $core->hostname);
-	if (defined $h) {
+	if (defined $h && $self->add_live_depends($h, $core->hostname)) {
 		my @cmd = ('/usr/sbin/pkg_delete', '-aIX', sort keys %$h);
 		print join(' ', @cmd, "\n");
 		$core->shell->exec(OpenBSD::Paths->sudo, @cmd);
