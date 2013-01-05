@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.51 2013/01/03 15:45:18 espie Exp $
+# $OpenBSD: Port.pm,v 1.52 2013/01/05 16:57:31 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -55,6 +55,7 @@ sub handle_output
 {
 	my ($self, $job) = @_;
 	$self->redirect($job->{log});
+	print ">>> Running $self->{phase} in $job->{path} at ", time(), "\n";
 }
 
 sub run
@@ -68,11 +69,9 @@ sub run
 	$self->handle_output($job);
 	close STDIN;
 	open STDIN, '</dev/null';
-	my $ts = time();
 	if ($t eq 'patch' && defined $job->{v}{info}{distsize}) {
 		print "distfiles size=$job->{v}{info}{distsize}\n";
 	}
-	print ">>> Running $t in $fullpkgpath at $ts\n";
 	my @args = ($t, "TRUST_PACKAGES=Yes",
 	    "FETCH_PACKAGES=No",
 	    "PREPARE_CHECK_ONLY=Yes",
@@ -332,6 +331,9 @@ sub result_filename
 sub handle_output
 {
 	my ($self, $job) = @_;
+	open my $log, '>>', $job->{log};
+	print $log ">>> Running $self->{phase} in $job->{path} at ", 
+	    time(), "\n";
 	$self->redirect($self->result_filename($job));
 }
 
