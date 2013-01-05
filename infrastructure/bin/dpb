@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.71 2013/01/05 15:13:48 espie Exp $
+# $OpenBSD: dpb,v 1.72 2013/01/05 18:26:31 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -75,6 +75,7 @@ sub startdate
 sub expand_path
 {
 	my ($self, $path) = @_;
+	$path =~ s/\%L/$self->{logdir}/g;
 	$path =~ s/\%p/$self->{ports}/g;
 	$path =~ s/\%h/DPB::Core::Local->hostname/ge;
 	$path =~ s/\%a/$self->{arch}/g;
@@ -147,6 +148,9 @@ sub handle_options
 		L => sub {
 			$state->{logdir} = shift;
 		},
+		l => sub {
+			$state->{lockdir} = shift;
+		},
 		r => sub {
 			$state->{random} = 1;
 			$state->heuristics->random;
@@ -171,12 +175,13 @@ sub handle_options
 		},
 	};
 
-	$state->SUPER::handle_options('acemqrRsuUvh:xA:C:f:F:I:j:J:M:p:P:b:L:S:',
+	$state->SUPER::handle_options('acemqrRsuUvh:xA:C:f:F:I:j:J:M:p:P:b:l:L:S:',
     "[-acemrRsuUvx] [-A arch] [-C plist] [-f N] [-F N] [-I plist] [-J p] [-j N]",
-    "[-p parallel] [-P plist] [-h hosts] [-L logdir] [-b log] [-M threshold]",
-    "[path ...]");
+    "[-p parallel] [-P plist] [-h hosts] [-L logdir] [-l lockdir] [-b log]",
+    "[-M threshold] [path ...]");
     	$state->{fullrepo} = join("/", $state->{repo}, $state->arch, "all");
 	$state->{logdir} //= $ENV{LOGDIR} // '%p/logs/%a';
+	$state->{lockdir} //= "%L/locks";
 	if (defined $state->{opt}{F}) {
 		if (defined $state->{opt}{j} || defined $state->{opt}{f}) {
 			$state->usage("Can't use -F with -f or -j");
@@ -214,6 +219,7 @@ sub handle_options
 	}
 
 	$state->{logdir} = $state->expand_path($state->{logdir});
+	$state->{lockdir} = $state->expand_path($state->{lockdir});
 	if ($state->opt('h')) {
 		$state->{config} = $state->expand_path($state->opt('h'));
 	}
@@ -563,7 +569,7 @@ $state->handle_build_files;
 
 $state->{builder} = DPB::PortBuilder->new($state);
 
-$state->{locker} = DPB::Locks->new($state, join("/", $state->logdir, "locks"));
+$state->{locker} = DPB::Locks->new($state, $state->{lockdir});
 $state->{affinity} = DPB::Affinity->new($state, join("/", $state->logdir, "affinity"));
 $state->{engine} = DPB::Engine->new($state);
 $reporter = DPB::Reporter->new($state, "main", "DPB::Core", $state->engine);

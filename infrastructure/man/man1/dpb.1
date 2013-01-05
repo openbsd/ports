@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.57 2013/01/05 13:34:28 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.58 2013/01/05 18:26:31 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -35,6 +35,7 @@
 .Op Fl J Ar p
 .Op Fl j Ar n
 .Op Fl L Ar logdir
+.Op Fl l Ar lockdir
 .Op Fl M Ar threshold
 .Op Fl P Ar pathlist
 .Op Fl S Ar sizefile
@@ -115,6 +116,8 @@ fetch distfiles location (DISTDIR).
 .It Cm %h
 hostname running
 .Nm .
+.It Cm %L
+logdir location.
 .It Cm %p
 portsdir location.
 .It Cm %t
@@ -387,6 +390,13 @@ Choose a log directory.
 Defaults to
 .Pa ${PORTSDIR}/logs/${ARCH}
 .Pc .
+.It Fl l Ar lockdir
+Choose a lock directory.
+.Po
+Defaults to
+.Pa ${PORTSDIR}/logs/${ARCH}/locks
+.Pc .
+Override to keep local, as locks don't really like NFS.
 .It Fl M Ar threshold
 Build ports besides the memory threshold within
 .Pa /tmp .
