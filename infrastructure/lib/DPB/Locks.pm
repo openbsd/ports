@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.16 2013/01/04 12:03:06 espie Exp $
+# $OpenBSD: Locks.pm,v 1.17 2013/01/05 19:59:43 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -41,21 +41,29 @@ sub clean_old_locks
 {
 	my $self = shift;
 	my $locks = {};
+	my $info = {};
+	my $hostpaths = {};
 	opendir(my $dir, $self->{lockdir});
 	DIR: while (my $e = readdir($dir)) {
 		my $f = "$self->{lockdir}/$e";
 		next if -d $f;
 		open my $fh, '<', $f or next;
 		my ($pid, $host);
+		my $client = 'localhost';
+		my $path;
 		while(<$fh>) {
 			if (m/^dpb\=(\d+)\s+on\s+(\S+)$/) {
 				($pid, $host) = ($1, $2);
 				next DIR unless $host eq $self->{dpb_host};
-			}
-			if (m/^(?:error|status|todo)\=/) {
+			} elsif (m/^(?:error|status|todo)\=/) {
 				next DIR;
+			} elsif (m/^host=(.*)$/) {
+				$client = $1;
+			} elsif (m/^locked=(.*)$/) {
+				$path = $1;
 			}
 		}
+		$info->{$f} = [$host, $path] if defined $path;
 		push(@{$locks->{$pid}}, $f) if defined $pid;
 	}
 	return if keys %$locks == 0;
@@ -72,9 +80,12 @@ sub clean_old_locks
 	}
 	for my $list (values %$locks) {
 		for my $l (@$list) {
+			my ($host, $path) = @{$info->{$l}};
+			push(@{$hostpaths->{$host}}, $path);
 			unlink($l);
 		}
 	}
+	return $hostpaths;
 }
 
 sub build_lockname
