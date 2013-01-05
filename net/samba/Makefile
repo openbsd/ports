@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.173 2012/12/17 00:52:58 brad Exp $
+# $OpenBSD: Makefile,v 1.174 2013/01/05 12:45:45 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,6 +9,7 @@ DISTNAME=		samba-3.6.10
 PKGNAME-main=		${DISTNAME}
 FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}
 FULLPKGPATH-docs=	net/samba,-docs
+REVISION-main=		0
 
 SHARED_LIBS=		smbclient	3.0 \
 			smbsharemodes	1.0 \
@@ -63,6 +64,7 @@ CONFIGURE_STYLE=	gnu
 AUTOCONF_VERSION=	2.68
 
 CONFIGURE_ARGS=		--disable-fam \
+			--without-pam \
 			--libdir="${PREFIX}/lib/samba" \
 			--sbindir="${PREFIX}/libexec" \
 			--with-configdir="${CONFDIR}" \
