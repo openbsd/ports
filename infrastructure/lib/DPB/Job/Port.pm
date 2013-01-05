@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.57 2013/01/05 20:06:29 espie Exp $
+# $OpenBSD: Port.pm,v 1.58 2013/01/05 20:08:39 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -362,11 +362,11 @@ sub run
 	my $job = $core->job;
 	my $v = $job->{v};
 
+	$self->junk_lock($core);
 	# we got pre-empted
 	if ($core->prop->{junk_count} < $core->prop->{junk}) {
 		exit(2);
 	}
-	$self->junk_lock($core);
 	$self->handle_output($job);
 
 	my $h = $job->{builder}->locker->find_dependencies(
