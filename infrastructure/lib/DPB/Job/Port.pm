@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.55 2013/01/05 18:08:06 espie Exp $
+# $OpenBSD: Port.pm,v 1.56 2013/01/05 18:09:30 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -159,48 +159,6 @@ sub finalize
 	return 0;
 }
 
-package DPB::Task::Port::Serialized;
-our @ISA = qw(DPB::Task::Port);
-
-# XXX can't move junk_lock on the other side of the fork, because
-# it may have to wait.
-
-sub junk_lock
-{
-	my ($self, $core) = @_;
-	my $job = $core->job;
-	my $locker = $job->{builder}->locker;
-
-	while (1) {
-		my $fh = $locker->lock($core);
-		if ($fh) {
-			print $fh "path=".$job->{path}, "\n";
-			print {$job->{logfh}} "(Junk lock obtained for ",
-			    $core->hostname, " at ", time(), ")\n";
-			return;
-		}
-		sleep 1;
-	}
-}
-
-sub junk_unlock
-{
-	my ($self, $core) = @_;
-
-	$core->job->{builder}->locker->unlock($core);
-	print {$core->job->{logfh}} "(Junk lock released for ", 
-	    $core->hostname, " at ", time(), ")\n";
-}
-
-sub finalize
-{
-	my ($self, $core) = @_;
-	if ($core->{status} != 0) {
-		$self->junk_unlock($core);
-	}
-	$self->SUPER::finalize($core);
-}
-
 package DPB::Task::Port::Signature;
 our @ISA =qw(DPB::Task::Port);
 
@@ -247,6 +205,48 @@ sub run
 		delete $job->{v}{info}{DIST};
 	}
 	exit($exit);
+}
+
+package DPB::Task::Port::Serialized;
+our @ISA = qw(DPB::Task::Port);
+
+# XXX can't move junk_lock on the other side of the fork, because
+# it may have to wait.
+
+sub junk_lock
+{
+	my ($self, $core) = @_;
+	my $job = $core->job;
+	my $locker = $job->{builder}->locker;
+
+	while (1) {
+		my $fh = $locker->lock($core);
+		if ($fh) {
+			print $fh "path=".$job->{path}, "\n";
+			print {$job->{logfh}} "(Junk lock obtained for ",
+			    $core->hostname, " at ", time(), ")\n";
+			return;
+		}
+		sleep 1;
+	}
+}
+
+sub junk_unlock
+{
+	my ($self, $core) = @_;
+
+	$core->job->{builder}->locker->unlock($core);
+	print {$core->job->{logfh}} "(Junk lock released for ", 
+	    $core->hostname, " at ", time(), ")\n";
+}
+
+sub finalize
+{
+	my ($self, $core) = @_;
+	if ($core->{status} != 0) {
+		$self->junk_unlock($core);
+	}
+	$self->SUPER::finalize($core);
 }
 
 package DPB::Task::Port::Depends;
