@@ -38,6 +38,9 @@ SHA256 (bash/bash42-036) = /ik6G8kqxNJyrpuaDeOv73wGFForUjN6CcrMzFMFqvo=
 SHA256 (bash/bash42-037) = x1eM3dO7JDBonHQPWKA0A4AHJtzRJoso+RvzfzaOFnQ=
 SHA256 (bash/bash42-038) = uMmoG98ga+WLpJHfrYA3OzNIr3aegKr3L3YR3bu+bVc=
 SHA256 (bash/bash42-039) = 9PkwCmAyGlCIrp5UBSpkxNPodvmjoXyhBNWPo4ucF5E=
+SHA256 (bash/bash42-040) = smX5yvPHMh+VvI4LnixGvYbCJvAPBegjaZqvuDxKqmw=
+SHA256 (bash/bash42-041) = BcwZUb2fZiQIjdYGdIb/R/GCXjMyc9ffXxsGsjuq9es=
+SHA256 (bash/bash42-042) = +qpcH0VlF7JYsqZeqmZN1qAe7/c8jKREfDpt43G78wQ=
 SIZE (bash/bash-4.2.tar.gz) = 7009201
 SIZE (bash/bash42-001) = 2944
 SIZE (bash/bash42-002) = 1780
@@ -78,3 +81,6 @@ SIZE (bash/bash42-036) = 3123
 SIZE (bash/bash42-037) = 3483
 SIZE (bash/bash42-038) = 1290
 SIZE (bash/bash42-039) = 1603
+SIZE (bash/bash42-040) = 1710
+SIZE (bash/bash42-041) = 1463
+SIZE (bash/bash42-042) = 1571
