@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.154 2013/01/05 12:53:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.155 2013/01/05 18:13:56 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,7 +11,7 @@ DISTNAME=	gtk+-${V}
 PKGNAME-main=	gtk+2-${V}
 PKGNAME-guic=	gtk-update-icon-cache-${V}
 
-REVISION-main=	0
+REVISION-main=	1
 
 CATEGORIES=	x11 devel
 
