@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.52 2013/01/05 16:57:31 espie Exp $
+# $OpenBSD: Port.pm,v 1.53 2013/01/05 17:22:05 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -54,7 +54,7 @@ sub fork
 sub handle_output
 {
 	my ($self, $job) = @_;
-	$self->redirect($job->{log});
+	$self->redirect_fh($job->{logfh}, $job->{log});
 	print ">>> Running $self->{phase} in $job->{path} at ", time(), "\n";
 }
 
@@ -116,14 +116,13 @@ sub make_sure_we_have_packages
 {
 	my ($self, $core) = @_;
 	my $job = $core->job;
-	open my $log, '>>', $job->{log};
 	my $check = 1;
 	# check ALL BUILD_PACKAGES
 	for my $w ($job->{v}->build_path_list) {
 		my $f = $job->{builder}->pkgfile($w);
 		unless (-f $f) {
 			$check = 0;
-			print $log ">>> Missing $f\n";
+			print {$job->{logfh}} ">>> Missing $f\n";
 		}
 	}
 	return if $check;
@@ -132,9 +131,9 @@ sub make_sure_we_have_packages
 	}
 	if ($core->prop->{wait_timeout}) {
 		if ($job->{waiting}*10 > $core->prop->{wait_timeout}) {
-			print $log ">>> giving up\n";
+			print {$job->{logfh}} ">>> giving up\n";
 		} else {
-			print $log ">>> waiting 10 seconds\n";
+			print {$job->{logfh}} ">>> waiting 10 seconds\n";
 			$job->insert_tasks(
 			    DPB::Task::Port::VerifyPackages->new(
 				'waiting-'.$job->{waiting}++));
@@ -331,8 +330,7 @@ sub result_filename
 sub handle_output
 {
 	my ($self, $job) = @_;
-	open my $log, '>>', $job->{log};
-	print $log ">>> Running $self->{phase} in $job->{path} at ", 
+	print {$job->{logfh}} ">>> Running $self->{phase} in $job->{path} at ", 
 	    time(), "\n";
 	$self->redirect($self->result_filename($job));
 }
@@ -579,6 +577,8 @@ sub new
 	    builder => $builder, endcode => $e},
 		$class;
 
+	open $job->{logfh}, ">>", $job->{log} or die "can't open $job->{log}";
+
 	my $prop = $core->prop;
 	if ($prop->{parallel} =~ m/^\/(\d+)$/) {
 		if ($prop->{jobs} == 1) {
@@ -808,6 +808,8 @@ sub new
 	    path => $v->fullpkgpath,
 	    builder => $builder, endcode => $e},
 		$class;
+
+	open $job->{logfh}, ">>", $job->{log} or die "can't open $job->{log}";
 
 	push(@{$job->{tasks}},
 		    DPB::Task::Port::Install->new('install'));
