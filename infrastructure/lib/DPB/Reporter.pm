@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Reporter.pm,v 1.13 2013/01/04 12:49:06 espie Exp $
+# $OpenBSD: Reporter.pm,v 1.14 2013/01/05 13:39:36 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -340,7 +340,7 @@ sub go_write_home
 sub report
 {
 	my ($self, $force) = @_;
-	$self->limit($force, 100, "REP", 1,
+	$self->limit($force, 150, "REP", 1,
 	    sub {
 		my $msg = "";
 		for my $prod (@{$self->{producers}}) {

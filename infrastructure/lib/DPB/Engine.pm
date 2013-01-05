@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.68 2013/01/04 19:34:10 espie Exp $
+# $OpenBSD: Engine.pm,v 1.69 2013/01/05 13:39:36 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -716,7 +716,7 @@ sub adjust_tobuild
 sub check_buildable
 {
 	my ($self, $forced) = @_;
-	my $r = $self->limit($forced, 100, "ENG", 
+	my $r = $self->limit($forced, 150, "ENG", 
 	    $self->{buildable}->count > 0,
 	    sub {
 		1 while $self->adjust_built;
