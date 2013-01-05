@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.53 2013/01/05 17:22:05 espie Exp $
+# $OpenBSD: Port.pm,v 1.54 2013/01/05 17:29:14 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -175,6 +175,8 @@ sub junk_lock
 		my $fh = $locker->lock($core);
 		if ($fh) {
 			print $fh "path=".$job->{path}, "\n";
+			print {$job->{logfh}} "(Junk lock obtained for ",
+			    $core->hostname, " at ", time(), ")\n";
 			return;
 		}
 		sleep 1;
@@ -186,6 +188,8 @@ sub junk_unlock
 	my ($self, $core) = @_;
 
 	$core->job->{builder}->locker->unlock($core);
+	print {$core->job->{logfh}} "(Junk lock released for ", 
+	    $core->hostname, " at ", time(), ")\n";
 }
 
 sub finalize
@@ -255,8 +259,8 @@ sub run
 	my ($self, $core) = @_;
 	my $job = $core->job;
 	my $dep = $job->{depends};
-	$self->junk_lock($core);
 
+	$self->junk_lock($core);
 	$self->handle_output($job);
 	my @cmd = ('/usr/sbin/pkg_add', '-aI');
 	if ($job->{builder}->{update}) {
@@ -379,9 +383,9 @@ sub run
 	if ($core->prop->{junk_count} < $core->prop->{junk}) {
 		exit(2);
 	}
+	$self->junk_lock($core);
 	$self->handle_output($job);
 
-	$self->junk_lock($core);
 	my $h = $core->job->{builder}->locker->find_dependencies(
 	    $core->hostname);
 	if (defined $h) {
