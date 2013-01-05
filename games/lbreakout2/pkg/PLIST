@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/03/19 13:37:21 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/01/05 21:21:53 benoit Exp $
 @mode g+s
 @group games
 @bin bin/lbreakout2
@@ -178,8 +178,10 @@ share/lbreakout2/levels/Afl
 share/lbreakout2/levels/Alex
 share/lbreakout2/levels/Alexandre
 share/lbreakout2/levels/AllNighter
+share/lbreakout2/levels/AllWorld
 share/lbreakout2/levels/Arcade
 share/lbreakout2/levels/Arkanoid
+share/lbreakout2/levels/Asteroids
 share/lbreakout2/levels/BeOS-4ever
 share/lbreakout2/levels/Bertrand
 share/lbreakout2/levels/BigBang
@@ -199,6 +201,8 @@ share/lbreakout2/levels/Crossing
 share/lbreakout2/levels/D2K
 share/lbreakout2/levels/Daves
 share/lbreakout2/levels/Demons
+share/lbreakout2/levels/EastAsia
+share/lbreakout2/levels/EastEurope
 share/lbreakout2/levels/Family
 share/lbreakout2/levels/Fantaisie
 share/lbreakout2/levels/FatalDoomsday
@@ -208,6 +212,7 @@ share/lbreakout2/levels/Fly
 share/lbreakout2/levels/Freek
 share/lbreakout2/levels/FunCity
 share/lbreakout2/levels/Gatinha
+share/lbreakout2/levels/GreenBricks
 share/lbreakout2/levels/GreenWall
 share/lbreakout2/levels/GreenWall2
 share/lbreakout2/levels/GreenWall3
@@ -218,6 +223,7 @@ share/lbreakout2/levels/Heroes
 share/lbreakout2/levels/HighBall
 share/lbreakout2/levels/Holidays
 share/lbreakout2/levels/Hommage
+share/lbreakout2/levels/Horror
 share/lbreakout2/levels/Impossibility
 share/lbreakout2/levels/Invisible
 share/lbreakout2/levels/IoriYagami
@@ -231,23 +237,33 @@ share/lbreakout2/levels/KungFu
 share/lbreakout2/levels/LBreakout1
 share/lbreakout2/levels/LBreakout2
 share/lbreakout2/levels/Lapis
+share/lbreakout2/levels/Lattices
 share/lbreakout2/levels/Lattsville
 share/lbreakout2/levels/LinuxFun
 share/lbreakout2/levels/Lord
+share/lbreakout2/levels/Madness
 share/lbreakout2/levels/Maze
 share/lbreakout2/levels/MegaMan2
 share/lbreakout2/levels/Megadoomer
+share/lbreakout2/levels/Memory
+share/lbreakout2/levels/MiddleAfrica
 share/lbreakout2/levels/MontyHall
 share/lbreakout2/levels/NES
 share/lbreakout2/levels/N_Arenas
 share/lbreakout2/levels/N_Snapshots
 share/lbreakout2/levels/Nations
 share/lbreakout2/levels/Negundoid
+share/lbreakout2/levels/NewBricks
 share/lbreakout2/levels/NewOERG1
+share/lbreakout2/levels/NorthAfrica
+share/lbreakout2/levels/NorthAmerica
 share/lbreakout2/levels/ObiWan
+share/lbreakout2/levels/Oceania
+share/lbreakout2/levels/OldGames
 share/lbreakout2/levels/OpenSource
 share/lbreakout2/levels/OurWorld
 share/lbreakout2/levels/P.I.T.A.
+share/lbreakout2/levels/PCGames
 share/lbreakout2/levels/Pabelo
 share/lbreakout2/levels/Patience
 share/lbreakout2/levels/Pawset
@@ -263,6 +279,8 @@ share/lbreakout2/levels/Silly
 share/lbreakout2/levels/SkillShot
 share/lbreakout2/levels/Smilies
 share/lbreakout2/levels/SnyMaxx
+share/lbreakout2/levels/SouthAfrica
+share/lbreakout2/levels/SouthAmerica
 share/lbreakout2/levels/StarWars
 share/lbreakout2/levels/Symmetry
 share/lbreakout2/levels/Symmetry-MKII
@@ -276,6 +294,8 @@ share/lbreakout2/levels/Twilight
 share/lbreakout2/levels/Vader
 share/lbreakout2/levels/WTF
 share/lbreakout2/levels/Weirdness
+share/lbreakout2/levels/WestAsia
+share/lbreakout2/levels/WestEurope
 share/lbreakout2/levels/Wizi
 share/lbreakout2/levels/Wolvie
 share/lbreakout2/levels/WonderWalls
