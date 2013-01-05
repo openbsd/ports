@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.38 2013/01/03 14:56:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2013/01/05 18:06:31 ajacoutot Exp $
 
 # XXX
 # fix autospawn lock (patch-src_daemon_main_c)
+# util.c: implement pa_get_binary_name()
 # sndio: what to do with (channel) map
 # sndio: check sample format
 # sndio: support for recording
@@ -20,7 +21,7 @@ COMMENT=		cross-platform networked sound server
 VERSION=		3.0
 DISTNAME=		pulseaudio-${VERSION}
 EXTRACT_SUFX=		.tar.xz
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  pulse                2.0      # .15.3
 SHARED_LIBS +=  pulse-simple         0.0      # .0.3
@@ -111,7 +112,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 				-Wl,-rpath,${TRUEPREFIX}/lib/pulseaudio:${TRUEPREFIX}/lib/pulse-${VERSION}/modules"
 
 FAKE_FLAGS=		pulseconfdir="${PREFIX}/share/examples/pulseaudio/pulse" \
-			xdgautostartdir="${PREFIX}/share/examples/pulseaudio/xdg/autostart"
+			sysconfdir="${PREFIX}/share/examples/pulseaudio"
 
 ### SNDIO ###
 CONFIGURE_STYLE=	gnu
