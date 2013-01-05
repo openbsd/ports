@@ -1,7 +1,15 @@
-$OpenBSD: patch-gcc_config_mips_openbsd_h,v 1.2 2012/12/17 15:04:58 jasper Exp $
---- gcc/config/mips/openbsd.h.orig	Sat Aug  6 07:26:35 2005
-+++ gcc/config/mips/openbsd.h	Mon Dec 17 00:48:37 2012
-@@ -58,10 +58,10 @@ Boston, MA 02110-1301, USA.  */
+$OpenBSD: patch-gcc_config_mips_openbsd_h,v 1.3 2013/01/05 16:51:28 pascal Exp $
+--- gcc/config/mips/openbsd.h.orig	Sat Aug  6 15:26:35 2005
++++ gcc/config/mips/openbsd.h	Mon Dec 31 14:17:12 2012
+@@ -45,6 +45,7 @@ Boston, MA 02110-1301, USA.  */
+ 
+ #define TARGET_OS_CPP_BUILTINS()			\
+     do {						\
++	OPENBSD_OS_CPP_BUILTINS_ELF();			\
+ 	builtin_define ("__unix__");			\
+ 	builtin_define ("__SYSTYPE_BSD__");		\
+ 	builtin_define ("__NO_LEADING_UNDERSCORES__");	\
+@@ -58,10 +59,10 @@ Boston, MA 02110-1301, USA.  */
  
  /* This must agree with <machine/ansi.h>.  */
  #undef SIZE_TYPE
@@ -14,7 +22,7 @@ $OpenBSD: patch-gcc_config_mips_openbsd_h,v 1.2 2012/12/17 15:04:58 jasper Exp $
  
  #undef WCHAR_TYPE
  #define WCHAR_TYPE "int"
-@@ -69,6 +69,9 @@ Boston, MA 02110-1301, USA.  */
+@@ -69,6 +70,9 @@ Boston, MA 02110-1301, USA.  */
  #undef WCHAR_TYPE_SIZE
  #define WCHAR_TYPE_SIZE 32
  
@@ -24,7 +32,7 @@ $OpenBSD: patch-gcc_config_mips_openbsd_h,v 1.2 2012/12/17 15:04:58 jasper Exp $
  /* Controlling the compilation driver.  */
  
  /* LINK_SPEC appropriate for OpenBSD:  support for GCC options
-@@ -96,3 +99,5 @@ Boston, MA 02110-1301, USA.  */
+@@ -96,3 +100,5 @@ Boston, MA 02110-1301, USA.  */
  /* Switch into a generic section.  */
  #undef TARGET_ASM_NAMED_SECTION
  #define TARGET_ASM_NAMED_SECTION  default_elf_asm_named_section
