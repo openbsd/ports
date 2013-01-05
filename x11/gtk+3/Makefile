@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2013/01/04 08:06:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2013/01/05 12:53:09 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,6 +11,8 @@ EXTRACT_SUFX=	.tar.xz
 
 PKGNAME-main=	gtk+3-${V}
 PKGNAME-cups=	gtk+3-cups-${V}
+
+REVISION-cups=	0
 
 # grep ^GTK_BINARY_VERSION ${WRKSRC}/Makefile (after do-configure)
 GTK_BINARY_VERSION=3.0.0
@@ -75,6 +77,7 @@ LIB_DEPENDS-cups= ${LIB_DEPENDS} \
 
 WANTLIB-cups += ${WANTLIB}
 WANTLIB-cups += asn1 crypto cups gdk-3 gssapi gtk-3 krb5 ssl
+WANTLIB-cups += avahi-client avahi-common
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes

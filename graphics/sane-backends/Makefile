@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.53 2012/08/28 08:26:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2013/01/05 12:53:09 ajacoutot Exp $
 
 COMMENT=	API for accessing scanners, backends
 
 DISTNAME=	sane-backends-1.0.23
+REVISION=	0
 
 SHARED_LIBS=	sane 2.0 # .1.0
 CATEGORIES=	graphics
@@ -18,7 +19,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += asn1 c crypto cups gssapi jpeg krb5 m pthread ssl tiff
-WANTLIB += usb usb-1.0 z
+WANTLIB += usb usb-1.0 z avahi-client avahi-common dbus-1
 
 # XXX
 # README.txt: Due to limitations in alioth's file upload software, the
@@ -32,6 +33,8 @@ WANTLIB += usb usb-1.0 z
 #		ftp://ftp.sane-project.org/pub/sane/old-versions/${DISTNAME}/ \
 #		ftp://ftp2.sane-project.org/pub/sane/${DISTNAME}/
 MASTER_SITES=	http://distfiles.bsdfrog.org/
+
+MODULES=	devel/gettext
 
 LIB_DEPENDS=	graphics/tiff \
 		devel/libusb-compat \

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2012/10/19 09:26:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2013/01/05 12:53:09 ajacoutot Exp $
 
 COMMENT=		high quality print drivers for foomatic and CUPS
 
 V=			5.2.9
 DISTNAME=		gutenprint-${V}
 
-REVISION=		0
+REVISION=		1
 
 MAJOR_V=		${V:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=		MAJOR_V
@@ -27,7 +27,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += asn1 c crypto cups cupsimage gssapi ijs krb5 m ncurses
-WANTLIB += pthread readline ssl z
+WANTLIB += pthread readline ssl z avahi-client avahi-common dbus-1
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gimp-print/}
 

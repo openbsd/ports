@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2013/01/01 14:23:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.82 2013/01/05 12:53:09 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.6.3
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		x11
 
@@ -34,6 +34,7 @@ WANTLIB += pthread pthread-stubs pulse pulse-mainloop-glib rest-0.7
 WANTLIB += secret-1 sndfile soup-2.4 soup-gnome-2.4 sqlite3 ssl
 WANTLIB += stdc++ upower-glib vorbis vorbisfile webkitgtk-3.0
 WANTLIB += xcb xcb-render xcb-shm xkbfile xml2 xslt z
+WANTLIB += X11-xcb Xtst avahi-client avahi-common
 
 MODULES=		devel/gettext \
 			x11/gnome

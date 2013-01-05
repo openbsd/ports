@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2013/01/01 14:23:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.89 2013/01/05 12:53:09 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	GNOME settings daemon
 
 GNOME_PROJECT=	gnome-settings-daemon
 GNOME_VERSION=	3.6.3
-REVISION=	0
+REVISION=	2
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -26,7 +26,7 @@ WANTLIB += nssutil3 ogg pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
 WANTLIB += pulse pulse-mainloop-glib smime3 sndfile softokn3 sqlite3
 WANTLIB += ssl ssl3 stdc++ upower-glib vorbis vorbisfile xcb xcb-render
-WANTLIB += xcb-shm xkbfile z
+WANTLIB += xcb-shm xkbfile z X11-xcb Xtst avahi-client avahi-common
 
 MODULES=	devel/gettext \
 		x11/gnome

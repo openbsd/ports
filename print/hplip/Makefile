@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2013/01/04 18:21:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2013/01/05 12:53:09 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -17,7 +17,10 @@ PKGNAME-hpcups=	hpcups-${V}
 PKGNAME-libs=	hplip-libs-${V}
 PKGNAME-gui=	hplip-gui-${V}
 
-REVISION-hpcups=0
+REVISION-main=	0
+REVISION-libs=	0
+REVISION-gui=	0
+REVISION-hpcups=1
 REVISION-hpijs=	0
 
 SHARED_LIBS +=  hpmud		2.0 # .0.6
@@ -41,13 +44,16 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=hplip/}
 
 MULTI_PACKAGES=	-main -hpijs -hpcups -libs -gui
 
+MODULES=	devel/gettext \
+		lang/python
+
 MODPY_RUNDEP=	No
 
 cWANTLIB = crypto m pthread
 
 WANTLIB-main += ${WANTLIB} ${cWANTLIB}
 WANTLIB-main += asn1 c cups dbus-1 gssapi hpip hpmud jpeg krb5 netsnmp
-WANTLIB-main += sane ssl tiff usb-1.0 z usb
+WANTLIB-main += sane ssl tiff usb-1.0 z usb avahi-client avahi-common
 
 BUILD_DEPENDS=	sysutils/polkit
 
@@ -56,6 +62,7 @@ LIB_DEPENDS-main=${LIB_DEPENDS} \
 		print/cups,-libs \
 		print/hplip,-libs
 RUN_DEPENDS-main=${MODPY_RUN_DEPENDS} \
+		${MODGETTEXT_RUN_DEPENDS} \
 		print/py-reportlab/reportlab \
 		x11/dbus-python \
 		devel/py-notify \
@@ -73,17 +80,20 @@ LIB_DEPENDS-hpijs= print/hplip,-libs \
 		x11/dbus
 RUN_DEPENDS-hpijs= print/foomatic-filters
 
-WANTLIB-hpcups += ${cWANTLIB} z asn1 gssapi krb5 ssl
+WANTLIB-hpcups += ${WANTLIB} ${cWANTLIB} z asn1 gssapi krb5 ssl
 WANTLIB-hpcups += c jpeg stdc++ hpip cups cupsimage dbus-1
+WANTLIB-hpcups += avahi-client avahi-common
 LIB_DEPENDS-hpcups= \
 		graphics/jpeg \
 		print/hplip,-libs \
 		print/cups,-libs \
 		x11/dbus
+RUN_DEPENDS-hpcups=${MODGETTEXT_RUN_DEPENDS}
 
 WANTLIB-libs +=	${cWANTLIB} netsnmp usb-1.0
 LIB_DEPENDS-libs= net/net-snmp \
 		devel/libusb1
+RUN_DEPENDS-libs= # empty
 
 WANTLIB-gui +=	# empty
 RUN_DEPENDS-gui= x11/py-qt4 \
@@ -91,8 +101,6 @@ RUN_DEPENDS-gui= x11/py-qt4 \
 		devel/xdg-utils \
 		devel/desktop-file-utils
 LIB_DEPENDS-gui= # empty
-
-MODULES=	lang/python
 
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static

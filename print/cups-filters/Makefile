@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2012/12/30 17:46:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2013/01/05 12:53:09 ajacoutot Exp $
 
 # XXX remove @exec-update when we branch 5.4-current
 
@@ -6,6 +6,7 @@ COMMENT=	OpenPrinting CUPS filters
 
 DISTNAME=	cups-filters-1.0.28
 CATEGORIES=	print
+REVISION=	0
 
 SHARED_LIBS +=  cupsfilters               0.0 # 1.0
 SHARED_LIBS +=  fontembed                 0.0 # 1.0
@@ -35,8 +36,7 @@ MODGCC4_VERSION=4.6
 
 BUILD_DEPENDS=	print/ghostscript/gnu
 
-LIB_DEPENDS=	net/avahi \
-		print/cups,-libs \
+LIB_DEPENDS=	print/cups,-libs \
 		print/ijs \
 		print/poppler \
 		print/qpdf
