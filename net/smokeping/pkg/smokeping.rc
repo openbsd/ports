@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# $OpenBSD: smokeping.rc,v 1.1 2013/01/05 22:52:07 sthen Exp $
+
+daemon="${TRUEPREFIX}/bin/smokeping"
+
+. /etc/rc.d/rc.subr
+
+pexp="perl: ${daemon}"
+
+rc_pre() {
+	install -d -o _smokeping /var/run/smokeping
+}
+
+rc_cmd $1

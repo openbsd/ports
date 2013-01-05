@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2010/11/19 22:31:38 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2013/01/05 22:52:06 sthen Exp $
 
 COMMENT=	latency logging and graphing system
 
-DISTNAME=	smokeping-2.3.6
-REVISION=	2
+DISTNAME=	smokeping-2.6.8
+
 CATEGORIES=	net
 
 MASTER_SITES=	${HOMEPAGE}pub/
@@ -12,65 +12,50 @@ HOMEPAGE=	http://oss.oetiker.ch/smokeping/
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	databases/p5-ldap \
-		devel/p5-Config-Grammar \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	devel/p5-Config-Grammar \
 		net/fping \
-		net/p5-Net-DNS \
-		net/p5-Net-Telnet \
 		net/p5-SNMP_Session \
-		security/p5-Authen-Radius \
+		net/p5-Socket6 \
+		net/rrdtool,-perl \
 		security/p5-Digest-HMAC \
-		www/p5-CGI-SpeedyCGI \
-		www/p5-libwww \
-		net/rrdtool,-perl
+		www/fcgi \
+		www/p5-CGI-Session \
+		www/p5-libwww
+SYSCONFDIR=	${BASESYSCONFDIR}/smokeping
 
 NO_REGRESS=	Yes
-NO_BUILD=	Yes
-USE_GROFF =	Yes
+USE_GMAKE=	Yes
 PKG_ARCH=	*
+
+CONFIGURE_STYLE= gnu
+CONFIGURE_ENV=	PERL5LIB=${LOCALBASE}/libdata/perl5/site_perl
+CONFIGURE_ARGS=	--with-htdocs-dir=/var/www/htdocs/smokeping
+FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/smokeping
 
 PMDIR=		libdata/perl5/site_perl
 SUBST_VARS=	PMDIR
-WWWDIR=		${PREFIX}/share/examples/smokeping
 
-do-install:
-	@perl -pi -e "s|%%SYSCONFDIR%%|${SYSCONFDIR}|g; \
-		s|%%LOCALBASE%%|${LOCALBASE}|g;" \
-		${WRKSRC}/etc/config.dist
-	@perl -pi -e "s|%%SYSCONFDIR%%|${SYSCONFDIR}|g" \
-		< ${WRKSRC}/bin/smokeping.dist > ${WRKSRC}/bin/smokeping
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/smokeping ${PREFIX}/bin/smokeping
-	@perl -pi -e "s|%%SYSCONFDIR%%|${SYSCONFDIR}|g; \
-		s|%%LOCALBASE%%|${LOCALBASE}|g" \
-		< ${WRKSRC}/htdocs/smokeping.cgi.dist \
-		> ${WRKSRC}/htdocs/smokeping.cgi
-	${INSTALL_DATA_DIR} ${WWWDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/htdocs/smokeping.cgi ${WWWDIR}
-	cd ${WRKSRC}/htdocs/; tar cf - cropper | tar xf - -C ${WWWDIR}
-	${INSTALL_DATA_DIR} ${PREFIX}/${PMDIR}/Smokeping
-	cd ${WRKSRC}/lib/; tar cf - Smokeping* | \
-		tar xf - -C ${PREFIX}/${PMDIR}/
-	${INSTALL_MAN} ${WRKSRC}/doc/smokeping*.1 ${PREFIX}/man/man1
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/smokeping
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/smokeping/examples
-	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${PREFIX}/share/doc/smokeping
-	${INSTALL_DATA} ${WRKSRC}/doc/examples/* \
-		${PREFIX}/share/doc/smokeping/examples
-.for dir in matchers probes sorters
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/smokeping/${dir}
-	${INSTALL_DATA} ${WRKSRC}/doc/Smokeping/${dir}/*.txt \
-		${PREFIX}/share/doc/smokeping/${dir}
-.endfor
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/smokeping
-.for file in basepage.html config smokemail tmail smokeping_secrets
-	${INSTALL_DATA} ${WRKSRC}/etc/${file}.dist \
-		${PREFIX}/share/examples/smokeping/${file}
-.endfor
+pre-configure:
+	@cd ${WRKSRC} && ${SUBST_CMD} \
+	    etc/config.dist.in bin/smokeping bin/smokeping_cgi bin/tSmoke
+
+post-install:
+	-mv ${PREFIX}/share/examples/smokeping/examples/* \
+	    ${PREFIX}/share/examples/smokeping; \
+	    rmdir ${PREFIX}/share/examples/smokeping/examples
+	rm -f ${WRKINST}/var/www/htdocs/smokeping/smokeping.fcgi.dist
+	printf "#!/bin/sh\nexec ${LOCALBASE}/bin/smokeping_cgi ${SYSCONFDIR}/config\n" > \
+	    ${WRKINST}/var/www/htdocs/smokeping/smokeping.fcgi
+	chmod +x ${WRKINST}/var/www/htdocs/smokeping/smokeping.fcgi
+	chown -R ${SHAREOWN}:${SHAREGRP} ${WRKINST}/var/www
+	${INSTALL_DATA} ${FILESDIR}/httpd.conf \
+	    ${PREFIX}/share/examples/smokeping/httpd.conf
 
 .include <bsd.port.mk>

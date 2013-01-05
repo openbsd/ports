@@ -1,0 +1,64 @@
+$OpenBSD: README,v 1.1 2013/01/05 22:52:07 sthen Exp $
+
+Running Smokeping on OpenBSD
+============================
+
+Basic configuration:
+--------------------
+
+Symlink the sample apache config file into the modules directory:
+
+# ln -s ../modules.sample/smokeping.conf /var/www/conf/modules/
+
+Edit ${SYSCONFDIR}/smokeping/config (at least add some hosts to
+monitor).
+
+To have smokeping start at boot time, add "smokeping" to rc_scripts
+in /etc/rc.conf.local, e.g.:
+
+rc_scripts="${rc_scripts} smokeping"
+
+To use probes other than the most common fping probe, you may need to
+install additional packages:
+
+ RADIUS:	   p5-Authen-Radius
+ TelnetIOSPing:	   p5-Net-Telnet
+ OpenSSHJunOSPing: p5-Net-OpenSSH
+ AnotherDNS:	   p5-Net-DNS
+ LDAP:		   p5-ldap (and p5-IO-Socket-SSL for starttls)
+
+chroot considerations
+---------------------
+
+By default OpenBSD's httpd uses chroot(2) so that only files
+within /var/www are accessible; this doesn't work with smokeping's
+CGI scripts (at least without major work copying large parts of
+Perl and Smokeping into the chroot jail). Simpler options are:
+
+- Disable chroot by setting httpd_flags="-u" in /etc/rc.conf.local
+
+- Create static HTML and images rather than allowing them to be
+viewed/zoomed; do this by running 'smokeping --static=/path/to/html-dir'
+from cron.
+
+Alternatively, Smokeping now uses FastCGI, so it would be possible
+to pass the requests across from a jailed httpd to a copy of Smokeping
+running outside the jail. Please contact the port maintainer if you
+have a working configuration for this which you would be willing to
+share.
+
+
+Remote sensors
+--------------
+
+This feature requires that the userid running the webserver is
+able to create new .cache files and write to existing .rrd files
+under /var/db/smokeping. After adjusting the configuration file
+and starting smokeping to generate the rrd files, adjust the
+group ownership and permissions accordingly, e.g.
+
+# chgrp -R www /var/db/smokeping/*
+# chmod -R g+rwX /var/db/smokeping/*
+
+This will need to be repeated if additional hosts are monitored
+via remote sensors.
