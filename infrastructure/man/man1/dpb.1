@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.55 2013/01/04 12:56:26 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.56 2013/01/05 07:01:44 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: January 4 2013 $
+.Dd $Mdocdate: January 5 2013 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -367,10 +367,10 @@ Those ports' build may be broken by a
 phase that removes some unused includes that were added as makefile
 prerequisites.
 Those ports should be annotated with
-DPB_PROPERTIES = unjunk
+DPB_PROPERTIES = nojunk
 until that bug is fixed:
 while a port with the
-.Sq unjunk
+.Sq nojunk
 property is building,
 .Ar junk
 will be postponed.
