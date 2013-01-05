@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2012/04/27 14:33:23 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.10 2013/01/05 21:43:15 benoit Exp $
 @bin bin/stella
 share/doc/stella/
 share/doc/stella/debugger.html
@@ -30,7 +30,6 @@ share/doc/stella/graphics/eventmapping_remap.png
 share/doc/stella/graphics/jr_pacman.png
 share/doc/stella/graphics/launcher.png
 share/doc/stella/graphics/launcher_filter.png
-share/doc/stella/graphics/launcher_options.png
 share/doc/stella/graphics/launcher_options_files.png
 share/doc/stella/graphics/launcher_override.png
 share/doc/stella/graphics/logs.png
