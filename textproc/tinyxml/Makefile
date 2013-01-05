@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/01/03 09:14:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2013/01/05 19:20:31 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	simple and small C++ XML parser
 
 V=		2.6.2
+REVISION=	0
 DISTNAME=	tinyxml_${V:S/./_/g}
 PKGNAME=	tinyxml-${V}
 EXTRACT_SUFX=	.zip
@@ -13,7 +14,7 @@ SHARED_LIBS=	tinyxml 0.0
 
 CATEGORIES=	textproc
 
-HOMEPAGE=	http://openjade.sourceforge.net/
+HOMEPAGE=	http://www.grinninglizard.com/tinyxml/
 
 # zlib license
 PERMIT_PACKAGE_CDROM=	Yes
