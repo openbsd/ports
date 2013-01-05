@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/09/29 10:25:57 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/01/05 10:40:12 benoit Exp $
 lib/python${MODPY_VERSION}/site-packages/isodate/
 lib/python${MODPY_VERSION}/site-packages/isodate-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/isodate-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -32,6 +32,8 @@ lib/python${MODPY_VERSION}/site-packages/isodate/tests/test_datetime.py
 lib/python${MODPY_VERSION}/site-packages/isodate/tests/test_datetime.pyc
 lib/python${MODPY_VERSION}/site-packages/isodate/tests/test_duration.py
 lib/python${MODPY_VERSION}/site-packages/isodate/tests/test_duration.pyc
+lib/python${MODPY_VERSION}/site-packages/isodate/tests/test_pickle.py
+lib/python${MODPY_VERSION}/site-packages/isodate/tests/test_pickle.pyc
 lib/python${MODPY_VERSION}/site-packages/isodate/tests/test_strf.py
 lib/python${MODPY_VERSION}/site-packages/isodate/tests/test_strf.pyc
 lib/python${MODPY_VERSION}/site-packages/isodate/tests/test_time.py
