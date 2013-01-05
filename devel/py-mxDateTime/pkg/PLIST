@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2012/04/27 08:20:25 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.20 2013/01/05 10:49:58 benoit Exp $
 @pkgpath devel/py-mxDateTime[,python2.4][,python2.5][,python2.6][,python2.7]
 lib/python${MODPY_VERSION}/site-packages/egenix_mx_base-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/mx/
@@ -145,6 +145,9 @@ lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/testnow.pyo
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/testpydatetime.py
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/testpydatetime.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/testpydatetime.pyo
+lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/testpytimedelta.py
+lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/testpytimedelta.pyc
+lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/testpytimedelta.pyo
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/testrichard.py
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/testrichard.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/testrichard.pyo

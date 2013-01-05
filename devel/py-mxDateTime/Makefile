@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2012/04/27 08:20:25 rpointel Exp $
+# $OpenBSD: Makefile,v 1.38 2013/01/05 10:49:53 benoit Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	date and time types for Python
 
-MODPY_EGG_VERSION = 3.2.4
+MODPY_EGG_VERSION = 3.2.5
 DISTNAME =	egenix-mx-base-${MODPY_EGG_VERSION}
 PKGNAME =	py-mxDateTime-${MODPY_EGG_VERSION}
 CATEGORIES =	devel
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	http://downloads.egenix.com/python/
 
-WANTLIB += m ${MODPY_WANTLIB}
+WANTLIB += m ${MODPY_WANTLIB} pthread
 
 MODULES =	lang/python
 
