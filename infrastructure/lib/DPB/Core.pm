@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.24 2013/01/04 18:49:39 espie Exp $
+# $OpenBSD: Core.pm,v 1.25 2013/01/05 21:48:18 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -314,7 +314,7 @@ sub run_task
 	my $core = shift;
 	my $pid = $core->task->fork($core);
 	if (!defined $pid) {
-		die "Oops: task couldn't start\n";
+		die "Oops: task ".$task->name." couldn't start\n";
 	} elsif ($pid == 0) {
 		for my $sig (keys %SIG) {
 			$SIG{$sig} = 'DEFAULT';
@@ -477,6 +477,16 @@ sub init_cores
 			    }
 			));
 		}
+#		if (defined $cleanlock) {
+#			$job->add_tasks(DPB::Task::Fork->new(
+#			    sub {
+#				my $shell = shift;
+#				DPB::Task->redirect($logger->logfile("init.".
+#				$core->hostname));
+#				$shell->exec();
+#			    }
+#			));
+#		}
 		$core->start_job($job);
 	}
 	if ($state->opt('f')) {

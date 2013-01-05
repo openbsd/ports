@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Job.pm,v 1.4 2013/01/05 17:22:04 espie Exp $
+# $OpenBSD: Job.pm,v 1.5 2013/01/05 21:48:18 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -29,6 +29,12 @@ sub code
 {
 	my $self = shift;
 	return $self->{code};
+}
+
+# no name by default, just display the object
+sub name
+{
+	return shift;
 }
 
 sub new
