@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2013/01/05 18:06:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2013/01/05 18:27:42 ajacoutot Exp $
 
 # XXX
 # fix autospawn lock (patch-src_daemon_main_c)
@@ -130,8 +130,7 @@ pre-configure:
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		autoreconf -i
 ### END SNDIO ###
-	${SUBST_CMD} ${WRKSRC}/src/daemon/default.pa.in \
-			${WRKSRC}/src/pulse/util.c
+	${SUBST_CMD} ${WRKSRC}/src/daemon/default.pa.in
 
 # remove man pages for utilities we don't install
 post-install:
