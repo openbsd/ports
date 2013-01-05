@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.54 2013/01/05 17:29:14 espie Exp $
+# $OpenBSD: Port.pm,v 1.55 2013/01/05 18:08:06 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -284,41 +284,6 @@ sub finalize
 	return 1;
 }
 
-package DPB::Task::Port::Install;
-our @ISA=qw(DPB::Task::Port);
-
-sub notime { 1 }
-
-sub run
-{
-	my ($self, $core) = @_;
-	my $job = $core->job;
-	my $v = $job->{v};
-
-	$self->handle_output($job);
-	my @cmd = ('/usr/sbin/pkg_add', '-I');
-	if ($job->{builder}->{update}) {
-		push(@cmd, "-rqU", "-Dupdate", "-Dupdatedepends");
-	}
-	if ($job->{builder}->{forceupdate}) {
-		push(@cmd,  "-Dinstalled");
-	}
-	print join(' ', @cmd, $v->fullpkgname, "\n");
-	my $path = $job->{builder}->{fullrepo}.'/';
-	$ENV{PKG_PATH} = $path;
-	$core->shell->env(PKG_PATH => $path)
-	    ->exec(OpenBSD::Paths->sudo, @cmd, $v->fullpkgname);
-	exit(1);
-}
-
-sub finalize
-{
-	my ($self, $core) = @_;
-	$core->{status} = 0;
-	$self->SUPER::finalize($core);
-	return 1;
-}
-
 package DPB::Task::Port::Prepare;
 our @ISA = qw(DPB::Task::Port::Serialized);
 
@@ -459,6 +424,41 @@ sub finalize
 		}
 	}
 	close($fh);
+	return 1;
+}
+
+package DPB::Task::Port::Install;
+our @ISA=qw(DPB::Task::Port);
+
+sub notime { 1 }
+
+sub run
+{
+	my ($self, $core) = @_;
+	my $job = $core->job;
+	my $v = $job->{v};
+
+	$self->handle_output($job);
+	my @cmd = ('/usr/sbin/pkg_add', '-I');
+	if ($job->{builder}->{update}) {
+		push(@cmd, "-rqU", "-Dupdate", "-Dupdatedepends");
+	}
+	if ($job->{builder}->{forceupdate}) {
+		push(@cmd,  "-Dinstalled");
+	}
+	print join(' ', @cmd, $v->fullpkgname, "\n");
+	my $path = $job->{builder}->{fullrepo}.'/';
+	$ENV{PKG_PATH} = $path;
+	$core->shell->env(PKG_PATH => $path)
+	    ->exec(OpenBSD::Paths->sudo, @cmd, $v->fullpkgname);
+	exit(1);
+}
+
+sub finalize
+{
+	my ($self, $core) = @_;
+	$core->{status} = 0;
+	$self->SUPER::finalize($core);
 	return 1;
 }
 
