@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2012/12/08 13:18:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2013/01/05 13:16:05 ajacoutot Exp $
 %%SHARED%%
 @bin bin/derb
 @bin bin/genbrk
@@ -56,6 +56,7 @@ include/unicode/dtitvfmt.h
 include/unicode/dtitvinf.h
 include/unicode/dtptngen.h
 include/unicode/dtrule.h
+include/unicode/enumset.h
 include/unicode/errorcode.h
 include/unicode/fieldpos.h
 include/unicode/fmtable.h
