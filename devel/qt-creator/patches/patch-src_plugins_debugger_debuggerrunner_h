@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_plugins_debugger_debuggerrunner_h,v 1.1 2013/01/05 20:32:02 zhuk Exp $
+Use system Qt debugging helper by default instead of giving stupid error
+to user when debugging helper is enabled but no custom path specified.
+--- src/plugins/debugger/debuggerrunner.h.orig	Sat Jan  5 21:57:04 2013
++++ src/plugins/debugger/debuggerrunner.h	Sat Jan  5 23:50:21 2013
+@@ -34,6 +34,7 @@
+ 
+ #include <projectexplorer/runconfiguration.h>
+ #include <projectexplorer/applicationrunconfiguration.h>
++#include <projectexplorer/debugginghelper.h>
+ 
+ namespace ProjectExplorer {
+ class LocalApplicationRunConfiguration;
+@@ -124,7 +125,11 @@ class DefaultLocalApplicationRunConfiguration (public)
+     virtual QStringList commandLineArguments() const  { return QStringList(); }
+     virtual ProjectExplorer::Environment environment() const
+         { return ProjectExplorer::Environment(); }
+-    virtual QString dumperLibrary() const { return QString(); }
++    virtual QString dumperLibrary() const {
++           QString qmakePath = ProjectExplorer::DebuggingHelperLibrary::findSystemQt(ProjectExplorer::Environment::systemEnvironment());
++           QString qtInstallData = ProjectExplorer::DebuggingHelperLibrary::qtInstallDataDir(qmakePath);
++           return ProjectExplorer::DebuggingHelperLibrary::debuggingHelperLibraryByInstallData(qtInstallData);
++       }
+     virtual QStringList dumperLibraryLocations() const { return QStringList(); }
+     virtual ProjectExplorer::ToolChain::ToolChainType toolChainType() const
+         { return ProjectExplorer::ToolChain::UNKNOWN; }

@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.12 2012/06/14 09:47:23 landry Exp $
+# $OpenBSD: Makefile,v 1.13 2013/01/05 20:32:02 zhuk Exp $
 
 BROKEN-powerpc =	qdoc3 goes into an infinite loop
 
 COMMENT =		cross-platform IDE for use with Qt
-
+SHARED_ONLY =		Yes
 V = 			1.3.1
 DISTNAME =		qt-creator-${V}-src
 PKGNAME =		qt-creator-${V}
-REVISION =		4
+REVISION =		5
 EXTRACT_SUFX = 		.zip
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 
@@ -55,6 +55,11 @@ ALL_TARGET = 		all qch_docs
 
 FAKE_FLAGS =		INSTALL_ROOT=${WRKINST}${TRUEPREFIX}
 
+QTCDH_SRC_DIR =		${WRKSRC}/share/qtcreator/gdbmacros
+QTCDH_BUILD_DIR =	${WRKBUILD}/qtc-debugging-helper
+QTCDH_INST_DIR =	${PREFIX}/lib/qt4/qtc-debugging-helper
+QTDCH_LIB_FILE =	${QTCDH_BUILD_DIR}/libgdbmacros.so
+
 pre-configure:
 	mkdir -p ${WRKDIR}/bin/tools/qdoc3
 	mkdir -p ${WRKDIR}/bin/bin
@@ -63,5 +68,20 @@ pre-configure:
 
 do-configure:
 	cd ${WRKBUILD} && QTDIR=${WRKDIR}/bin qmake4 ${WRKSRC}/qtcreator.pro #CONFIG+=debug
+
+# build Qt debugging helper
+post-build:
+	rm -Rf ${QTCDH_BUILD_DIR}
+	mkdir ${QTCDH_BUILD_DIR}
+	cd ${QTCDH_BUILD_DIR}; \
+	qmake4 ${QTCDH_SRC_DIR}/gdbmacros.pro; \
+	${MAKE_PROGRAM} ${MAKE_FLAGS}
+	# avoid versioning for dlopen'ed library
+	mv ${QTDCH_LIB_FILE}* ${QTDCH_LIB_FILE}
+
+# install Qt debugging helper
+post-install:
+	${INSTALL_DATA_DIR} ${QTCDH_INST_DIR}
+	${INSTALL_DATA} ${QTDCH_LIB_FILE} ${QTCDH_INST_DIR}
 
 .include <bsd.port.mk>

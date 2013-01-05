@@ -1,9 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/05/27 12:30:14 espie Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2013/01/05 20:32:02 zhuk Exp $
 bin/qtcreator
 @bin bin/qtcreator.bin
 @bin bin/qtcreator_process_stub
+lib/qt4/qtc-debugging-helper/
+lib/qt4/qtc-debugging-helper/libgdbmacros.so
 lib/qtcreator/
+@lib lib/qtcreator/libAggregation.so.${LIBAggregation_VERSION}
+@lib lib/qtcreator/libCPlusPlus.so.${LIBCPlusPlus_VERSION}
+@lib lib/qtcreator/libDebuggingHelper.so.${LIBDebuggingHelper_VERSION}
+@lib lib/qtcreator/libExtensionSystem.so.${LIBExtensionSystem_VERSION}
+@lib lib/qtcreator/libQtConcurrent.so.${LIBQtConcurrent_VERSION}
+@lib lib/qtcreator/libUtils.so.${LIBUtils_VERSION}
 lib/qtcreator/plugins/
 lib/qtcreator/plugins/Nokia/
 lib/qtcreator/plugins/Nokia/BinEditor.pluginspec
@@ -33,6 +40,33 @@ lib/qtcreator/plugins/Nokia/Subversion.pluginspec
 lib/qtcreator/plugins/Nokia/TextEditor.pluginspec
 lib/qtcreator/plugins/Nokia/VCSBase.pluginspec
 lib/qtcreator/plugins/Nokia/Welcome.pluginspec
+lib/qtcreator/plugins/Nokia/libBinEditor.so
+lib/qtcreator/plugins/Nokia/libBookmarks.so
+lib/qtcreator/plugins/Nokia/libCMakeProjectManager.so
+lib/qtcreator/plugins/Nokia/libCVS.so
+lib/qtcreator/plugins/Nokia/libCodePaster.so
+lib/qtcreator/plugins/Nokia/libCore.so
+lib/qtcreator/plugins/Nokia/libCppEditor.so
+lib/qtcreator/plugins/Nokia/libCppTools.so
+lib/qtcreator/plugins/Nokia/libDebugger.so
+lib/qtcreator/plugins/Nokia/libDesigner.so
+lib/qtcreator/plugins/Nokia/libFakeVim.so
+lib/qtcreator/plugins/Nokia/libFind.so
+lib/qtcreator/plugins/Nokia/libGenericProjectManager.so
+lib/qtcreator/plugins/Nokia/libHelp.so
+lib/qtcreator/plugins/Nokia/libLocator.so
+lib/qtcreator/plugins/Nokia/libPerforce.so
+lib/qtcreator/plugins/Nokia/libProjectExplorer.so
+lib/qtcreator/plugins/Nokia/libQmlEditor.so
+lib/qtcreator/plugins/Nokia/libQmlProjectManager.so
+lib/qtcreator/plugins/Nokia/libQt4ProjectManager.so
+lib/qtcreator/plugins/Nokia/libQtScriptEditor.so
+lib/qtcreator/plugins/Nokia/libResourceEditor.so
+lib/qtcreator/plugins/Nokia/libScmGit.so
+lib/qtcreator/plugins/Nokia/libSubversion.so
+lib/qtcreator/plugins/Nokia/libTextEditor.so
+lib/qtcreator/plugins/Nokia/libVCSBase.so
+lib/qtcreator/plugins/Nokia/libWelcome.so
 share/doc/qtcreator/
 share/doc/qtcreator/qtcreator.qch
 share/pixmaps/
