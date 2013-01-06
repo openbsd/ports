@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.18 2013/01/06 11:59:40 espie Exp $
+# $OpenBSD: Locks.pm,v 1.19 2013/01/06 14:38:14 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -39,32 +39,42 @@ sub new
 
 sub clean_old_locks
 {
-	my $self = shift;
-	my $locks = {};
-	my $info = {};
+	my ($self, $state) = @_;
 	my $hostpaths = {};
+	START:
+	my $info = {};
+	my @problems = ();
+	my $locks = {};
 	opendir(my $dir, $self->{lockdir});
 	DIR: while (my $e = readdir($dir)) {
+		next if $e eq '..' or $e eq '.';
 		my $f = "$self->{lockdir}/$e";
-		next if -d $f;
-		open my $fh, '<', $f or next;
-		my ($pid, $host);
-		my $client = DPB::Core::Local->hostname;
-		my $path;
-		while(<$fh>) {
-			if (m/^dpb\=(\d+)\s+on\s+(\S+)$/) {
-				($pid, $host) = ($1, $2);
-				next DIR unless $host eq $self->{dpb_host};
-			} elsif (m/^(?:error|status|todo)\=/) {
-				next DIR;
-			} elsif (m/^host=(.*)$/) {
-				$client = $1;
-			} elsif (m/^locked=(.*)$/) {
-				$path = $1;
+		if (open my $fh, '<', $f) {
+			my ($pid, $host);
+			my $client = DPB::Core::Local->hostname;
+			my $path;
+			while(<$fh>) {
+				if (m/^dpb\=(\d+)\s+on\s+(\S+)$/) {
+					($pid, $host) = ($1, $2);
+					next DIR 
+					    unless $host eq $self->{dpb_host};
+				} elsif (m/^(?:error|status|todo)\=/) {
+					next DIR;
+				} elsif (m/^host=(.*)$/) {
+					$client = $1;
+				} elsif (m/^locked=(.*)$/) {
+					$path = $1;
+				}
 			}
+			$info->{$f} = [$host, $path] if defined $path;
+			if (defined $pid) {
+				push(@{$locks->{$pid}}, $f);
+			} else {
+				push(@problems, $f);
+			}
+		} else {
+			push(@problems, $f);
 		}
-		$info->{$f} = [$host, $path] if defined $path;
-		push(@{$locks->{$pid}}, $f) if defined $pid;
 	}
 	if (keys %$locks != 0) {
 		open(my $ps, "-|", "ps", "-axww", "-o", "pid args");
@@ -84,6 +94,13 @@ sub clean_old_locks
 				unlink($l);
 			}
 		}
+	}
+	if (@problems) {
+		$state->say("Problematic lockfiles I can't parse:\n\t#1\n".
+			"Waiting for ten seconds",
+			join(' ', @problems));
+		sleep 10;
+		goto START;
 	}
 	return $hostpaths;
 }
