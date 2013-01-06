@@ -1,4 +1,4 @@
-# $OpenBSD: Info.pm,v 1.3 2012/06/18 12:18:45 espie Exp $
+# $OpenBSD: Info.pm,v 1.4 2013/01/06 21:20:58 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -126,7 +126,11 @@ sub variables
 sub value
 {
 	my ($self, $name) = @_;
-	return $self->{vars}{$name}->value;
+	if (defined $self->{vars}{$name}) {
+		return $self->{vars}{$name}->value;
+	} else {
+		return "";
+	}
 }
 
 sub reclaim
