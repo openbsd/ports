@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.15 2012/11/22 17:20:52 ajacoutot Exp $
+$OpenBSD: README-main,v 1.16 2013/01/06 10:41:14 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -26,6 +26,15 @@ some security implications in doing this):
 Another solution would be to create a new group (e.g. "video"), change
 the group ownership of /dev/drm0 accordingly and put the users and
 "_gdm" into that group.
+
+Default limits
+=============
+The default shared memory limits on OpenBSD are too low for the Cogl 3D
+graphics API to function properly so kern.shminfo.shmall must be raised:
+    sysctl kern.shminfo.shmall=32768
+
+To make it permanent, add the following line to /etc/sysctl.conf(5):
+kern.shminfo.shmall=32768
 
 Starting GNOME
 ==============
@@ -64,5 +73,6 @@ _after_ "dbus_daemon".
 Cheat sheet
 ===========
 # chmod 0666 /dev/drm0
+# echo 'kern.shminfo.shmall=32768' >> /etc/sysctl.conf
 # echo 'multicast_host=YES' >> /etc/rc.conf.local
 # echo 'pkg_scripts="${pkg_scripts} dbus_daemon avahi_daemon gdm"' >> /etc/rc.conf.local
