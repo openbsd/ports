@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2011/09/16 09:24:54 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/01/06 09:14:42 benoit Exp $
 
 COMMENT =		extend python objects with addons
 
-MODPY_EGG_VERSION =	0.6
+MODPY_EGG_VERSION =	0.7
 DISTNAME =		AddOns-${MODPY_EGG_VERSION}
 PKGNAME =		py-addons-${MODPY_EGG_VERSION}
-REVISION =		2
 
 CATEGORIES =		devel
 
@@ -13,7 +12,7 @@ HOMEPAGE =		http://pypi.python.org/pypi/AddOns
 
 MAINTAINER =		Martynas Venckus <martynas@openbsd.org>
 
-# PSF
+# PSF or ZPL
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM = Yes
