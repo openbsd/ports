@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.73 2012/10/08 08:42:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.74 2013/01/06 16:14:10 espie Exp $
+
+.if !defined(BSD_OWN_MK)
+.  include <bsd.own.mk>
+.endif
 
 PKGPATH =
 MIRROR_MK ?= ${.CURDIR}/distfiles/Makefile
