@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.58 2013/01/05 18:26:31 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.59 2013/01/06 18:21:52 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: January 5 2013 $
+.Dd $Mdocdate: January 6 2013 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -531,7 +531,7 @@ This is followed by a summary display:
 number of built packages that can be installed.
 .It B=
 number of built packages, not yet known to be installable,
-because of possibly run depends that still need to be built.
+because of run depends that still need to be built.
 .It Q=
 number of packages in the queue, e.g., stuff that can be built now, assuming
 we have a free slot.
@@ -828,6 +828,14 @@ the same directory returned.
 affinity mismatch, but job will start on the wrong host anyways, as the queue
 contains no other buildable path.
 .El
+.Pp
+Please not that the engine is no longer run after each package build event
+because of performance considerations, so the
+.Sq Q
+and
+.Sq I
+changes may be delayed by a few
+.Sq B .
 .It Pa equiv.log
 Lists of equivalent pkgpaths for the build, when default flavors and default subpackages have been resolved.
 .It Pa fetch/bad.log
