@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.72 2013/01/05 18:26:31 espie Exp $
+# $OpenBSD: dpb,v 1.73 2013/01/06 11:59:40 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -314,6 +314,11 @@ sub locker
 	return shift->{locker};
 }
 
+sub stalelocks
+{
+	return shift->locker->{stalelocks};
+}
+
 sub builder
 {
 	return shift->{builder};
@@ -530,6 +535,7 @@ my $subdirlist = {};
 
 my $state = DPB::State->new('dpb');
 $state->handle_options;
+$state->{locker} = DPB::Locks->new($state, $state->{lockdir});
 $state->start_cores;
 
 $state->{all} = 1;
@@ -569,7 +575,6 @@ $state->handle_build_files;
 
 $state->{builder} = DPB::PortBuilder->new($state);
 
-$state->{locker} = DPB::Locks->new($state, $state->{lockdir});
 $state->{affinity} = DPB::Affinity->new($state, join("/", $state->logdir, "affinity"));
 $state->{engine} = DPB::Engine->new($state);
 $reporter = DPB::Reporter->new($state, "main", "DPB::Core", $state->engine);

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.26 2013/01/05 21:48:50 espie Exp $
+# $OpenBSD: Core.pm,v 1.27 2013/01/06 11:59:40 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -461,6 +461,7 @@ sub init_cores
 
 	my $logger = $state->logger;
 	my $startup = $state->{startup_script};
+	my $stale = $state->stalelocks;
 	DPB::Core->set_logdir($logger->{logdir});
 	for my $core (values %$init) {
 		my $job = DPB::Job::Init->new($logger);
@@ -477,16 +478,20 @@ sub init_cores
 			    }
 			));
 		}
-#		if (defined $cleanlock) {
-#			$job->add_tasks(DPB::Task::Fork->new(
-#			    sub {
-#				my $shell = shift;
-#				DPB::Task->redirect($logger->logfile("init.".
-#				$core->hostname));
-#				$shell->exec();
-#			    }
-#			));
-#		}
+		if (defined $stale->{$core->hostname}) {
+			my $subdirlist=join(' ', @{$stale->{$core->hostname}});
+			$job->add_tasks(DPB::Task::Fork->new(
+			    sub {
+				my $shell = shift;
+				DPB::Task->redirect($logger->logfile("init.".
+				$core->hostname));
+				$shell
+				    ->chdir($state->ports)
+				    ->env(SUBDIR => $subdirlist)
+				    ->exec($state->make, 'unlock');
+			    }
+			));
+		}
 		$core->start_job($job);
 	}
 	if ($state->opt('f')) {

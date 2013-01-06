@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.17 2013/01/05 19:59:43 espie Exp $
+# $OpenBSD: Locks.pm,v 1.18 2013/01/06 11:59:40 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -32,7 +32,7 @@ sub new
 		dpb_pid => $$, 
 		dpb_host => DPB::Core::Local->hostname}, $class;
 	if (!$state->defines("DONT_CLEAN_LOCKS")) {
-		$o->clean_old_locks($state);
+		$o->{stalelocks} = $o->clean_old_locks($state);
 	}
 	return $o;
 }
@@ -49,7 +49,7 @@ sub clean_old_locks
 		next if -d $f;
 		open my $fh, '<', $f or next;
 		my ($pid, $host);
-		my $client = 'localhost';
+		my $client = DPB::Core::Local->hostname;
 		my $path;
 		while(<$fh>) {
 			if (m/^dpb\=(\d+)\s+on\s+(\S+)$/) {
@@ -66,23 +66,23 @@ sub clean_old_locks
 		$info->{$f} = [$host, $path] if defined $path;
 		push(@{$locks->{$pid}}, $f) if defined $pid;
 	}
-	return if keys %$locks == 0;
-
-	open(my $ps, "-|", "ps", "-axww", "-o", "pid args");
-	my $junk = <$ps>;
-	while (<$ps>) {
-		if (m/^(\d+)\s+(.*)$/) {
-			my ($pid, $cmd) = ($1, $2);
-			if ($locks->{$pid} && $cmd =~ m/\bdpb\b/) {
-				delete $locks->{$pid};
+	if (keys %$locks != 0) {
+		open(my $ps, "-|", "ps", "-axww", "-o", "pid args");
+		my $junk = <$ps>;
+		while (<$ps>) {
+			if (m/^(\d+)\s+(.*)$/) {
+				my ($pid, $cmd) = ($1, $2);
+				if ($locks->{$pid} && $cmd =~ m/\bdpb\b/) {
+					delete $locks->{$pid};
+				}
 			}
 		}
-	}
-	for my $list (values %$locks) {
-		for my $l (@$list) {
-			my ($host, $path) = @{$info->{$l}};
-			push(@{$hostpaths->{$host}}, $path);
-			unlink($l);
+		for my $list (values %$locks) {
+			for my $l (@$list) {
+				my ($host, $path) = @{$info->{$l}};
+				push(@{$hostpaths->{$host}}, $path);
+				unlink($l);
+			}
 		}
 	}
 	return $hostpaths;
