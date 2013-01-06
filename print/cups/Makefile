@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.148 2013/01/06 08:42:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.149 2013/01/06 08:58:24 ajacoutot Exp $
 
 COMMENT-main=		Common Unix Printing System
 COMMENT-libs=		CUPS libraries and headers
@@ -7,7 +7,7 @@ VERSION=		1.6.1
 DISTNAME=		cups-${VERSION}-source
 EXTRACT_SUFX=		.tar.bz2
 
-REVISION-main=		11
+REVISION-main=		12
 REVISION-libs=		5
 
 PKGNAME-main=		cups-${VERSION}
@@ -55,8 +55,7 @@ BUILD_DEPENDS=		${MODGNU_AUTOMAKE_DEPENDS} \
 LIB_DEPENDS-libs=	net/avahi,no_gui,no_mono,no_qt3,no_qt4,bootstrap
 
 LIB_DEPENDS-main=	${BASE_PKGPATH},-libs=${VERSION} \
-			devel/libusb1 \
-			x11/dbus
+			devel/libusb1
 
 RUN_DEPENDS-main=	print/cups-filters
 
