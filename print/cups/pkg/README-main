@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.3 2013/01/05 16:36:08 ajacoutot Exp $
+$OpenBSD: README-main,v 1.4 2013/01/06 08:42:08 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -35,7 +35,7 @@ One the server side, "avahi-daemon" must be running by adding
 printer sharing can be activated using the CUPS web interface or running
 the following commands as root or a member of the wheel group:
     cupsctl --share-printers
-    lpadmin -o <printer_name> printer-is-shared=true
+    lpadmin -p <printer_name> -o printer-is-shared=true
 
 USB
 ===
