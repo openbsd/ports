@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1201 2012/12/31 09:14:07 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1202 2013/01/06 11:57:21 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -3353,7 +3353,6 @@ _all_phony = ${_recursive_depends_targets} \
 	print-build-depends print-run-depends rebuild \
 	regress-depends regress-depends-list run-depends run-depends-list \
     show-required-by subpackage uninstall _print-metadata \
-	lock unlock \
 	run-depends-args lib-depends-args all-lib-depends-args wantlib-args \
 	port-wantlib-args fake-wantlib-args no-wantlib-args no-lib-depends-args \
 	_recurse-show-run-depends show-run-depends
