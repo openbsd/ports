@@ -1,10 +1,11 @@
-$OpenBSD: README,v 1.1 2013/01/05 22:52:07 sthen Exp $
+$OpenBSD: README,v 1.2 2013/01/06 07:54:13 ajacoutot Exp $
 
-Running Smokeping on OpenBSD
-============================
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
-Basic configuration:
---------------------
+Basic configuration
+===================
 
 Symlink the sample apache config file into the modules directory:
 
@@ -28,7 +29,7 @@ install additional packages:
  LDAP:		   p5-ldap (and p5-IO-Socket-SSL for starttls)
 
 chroot considerations
----------------------
+=====================
 
 By default OpenBSD's httpd uses chroot(2) so that only files
 within /var/www are accessible; this doesn't work with smokeping's
@@ -49,7 +50,7 @@ share.
 
 
 Remote sensors
---------------
+==============
 
 This feature requires that the userid running the webserver is
 able to create new .cache files and write to existing .rrd files
