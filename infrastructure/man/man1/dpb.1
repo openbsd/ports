@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.60 2013/01/07 11:04:25 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.61 2013/01/07 11:05:17 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -1028,16 +1028,3 @@ The original
 command was written by Nikolay Sturm.
 This version is a complete rewrite from scratch using all the stuff
 we learnt over the years to make it better.
-.Pp
-There are still a number of changes to make, and some possible avenues
-to explore.
-.Pp
-Better build feedback for next builds would be nice: we need a way to
-calibrate build logs that contain info for several machines (so that we
-can gauge whether a machine is fast or slow).
-It might make sense to have some kind of machine affinity for big packages
-in a cluster, so that we avoid reinstalling big things on each machine if
-we can get away with installing stuff on a single machine.
-We should probably keep the pkgnames around with the pkgpath in the build-log,
-so that we give more credibility to build times that correspond to the
-exact same pkgnames.
