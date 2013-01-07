@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2012/12/29 13:55:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2013/01/07 08:08:39 dcoppa Exp $
 
 COMMENT =	clone of rxvt with Unicode and Xft support
 
 DISTNAME =	rxvt-unicode-9.16
-REVISION =	0
+REVISION =	1
 CATEGORIES =	x11
 
 EXTRACT_SUFX =	.tar.bz2
@@ -12,7 +12,7 @@ MASTER_SITES =	http://dist.schmorp.de/rxvt-unicode/ \
 
 HOMEPAGE =	http://software.schmorp.de/pkg/rxvt-unicode.html
 
-MAINTAINER =	LEVAI Daniel <leva@ecentrum.hu>
+MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
@@ -34,9 +34,10 @@ CONFIGURE_ARGS =	--enable-256-color \
 			--enable-perl \
 			--enable-pixbuf \
 			--enable-startup-notification \
+			--enable-utmp \
+			--enable-wtmp \
 			--with-term=rxvt-256color
-# XXX utmp recording should also be enabled, as per rxvt (which will
-# also require setgid utmp), but this currently fails
+CONFIGURE_ENV +=	pt_cv_tty_group=yes
 
 # missing locale support
 CONFIGURE_ARGS +=	--disable-xim
