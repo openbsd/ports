@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2012/12/25 00:08:07 bentley Exp $
+# $OpenBSD: Makefile,v 1.69 2013/01/07 17:19:43 bentley Exp $
 
     SUBDIR =
     SUBDIR += BasiliskII
@@ -19,6 +19,7 @@
     SUBDIR += fs-uae
     SUBDIR += gambatte
     SUBDIR += gns3
+    SUBDIR += gnusim8085
     SUBDIR += gxemul
     SUBDIR += ines
     SUBDIR += mastergear
