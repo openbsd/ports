@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.73 2013/01/06 11:59:40 espie Exp $
+# $OpenBSD: dpb,v 1.74 2013/01/07 10:57:31 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -167,6 +167,9 @@ sub handle_options
 		C => sub {
 			push(@{$state->{cpaths}}, shift);
 		},
+		X => sub {
+			push(@{$state->{xpaths}}, shift);
+		},
 		b => sub {
 			push(@{$state->{build_files}}, shift);
 		},
@@ -175,10 +178,10 @@ sub handle_options
 		},
 	};
 
-	$state->SUPER::handle_options('acemqrRsuUvh:xA:C:f:F:I:j:J:M:p:P:b:l:L:S:',
+	$state->SUPER::handle_options('acemqrRsuUvh:xX:A:C:f:F:I:j:J:M:p:P:b:l:L:S:',
     "[-acemrRsuUvx] [-A arch] [-C plist] [-f N] [-F N] [-I plist] [-J p] [-j N]",
     "[-p parallel] [-P plist] [-h hosts] [-L logdir] [-l lockdir] [-b log]",
-    "[-M threshold] [path ...]");
+    "[-M threshold] [-X plist] [path ...]");
     	$state->{fullrepo} = join("/", $state->{repo}, $state->arch, "all");
 	$state->{logdir} //= $ENV{LOGDIR} // '%p/logs/%a';
 	$state->{lockdir} //= "%L/locks";
@@ -226,7 +229,7 @@ sub handle_options
 	if (!$state->{subst}->value("NO_BUILD_STATS")) {
 		push @{$state->{build_files}}, "%f/build-stats/%a";
 	}
-	for my $cat (qw(build_files paths ipaths cpaths)) {
+	for my $cat (qw(build_files paths ipaths cpaths xpaths)) {
 		next unless defined $state->{$cat};
 		for my $f (@{$state->{$cat}}) {
 			$f = $state->expand_path($f);
@@ -552,19 +555,24 @@ my $default_handling =
 
 $state->interpret_paths(@{$state->{paths}}, @ARGV,
     sub {
-	my $p = shift;
-	&$default_handling($p);
+	&$default_handling(@_);
     });
 $state->interpret_paths(@{$state->{ipaths}},
     sub {
+	&$default_handling(@_);
 	my $p = shift;
-	&$default_handling($p);
 	$p->{wantinstall} = 1;
     });
 $state->interpret_paths(@{$state->{cpaths}},
     sub {
 	my $p = shift;
 	$state->{dontclean}{$p->pkgpath} = 1;
+    });
+
+$state->interpret_paths(@{$state->{xpaths}},
+    sub {
+	my $p = shift;
+	$p->{dontjunk} = 1;
     });
 
 if ($state->opt('a')) {
