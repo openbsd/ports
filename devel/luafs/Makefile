@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2012/07/10 15:22:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2013/01/07 22:13:40 dcoppa Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	file system library for the lua language
-V=		1.5.0
+V=		1.6.2
 DISTNAME=	luafilesystem-${V}
 PKGNAME=	luafs-${V}
-REVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://github.com/downloads/keplerproject/luafilesystem/
 

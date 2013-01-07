@@ -1,9 +1,9 @@
-$OpenBSD: patch-tests_test_lua,v 1.2 2007/05/10 20:23:29 pedro Exp $
---- tests/test.lua.orig	Thu May 10 10:06:03 2007
-+++ tests/test.lua	Thu May 10 10:06:06 2007
+$OpenBSD: patch-tests_test_lua,v 1.3 2013/01/07 22:13:40 dcoppa Exp $
+--- tests/test.lua.orig	Thu Oct  4 16:25:54 2012
++++ tests/test.lua	Mon Jan  7 10:59:01 2013
 @@ -1,5 +1,3 @@
--#!/usr/local/bin/lua5.1
+-#!/usr/bin/env lua5.1
 -
  local tmp = "/tmp"
- local sep = "/"
+ local sep = string.match (package.config, "[^\n]+")
  local upper = ".."
