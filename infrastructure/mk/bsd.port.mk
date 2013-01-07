@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1202 2013/01/06 11:57:21 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1203 2013/01/07 17:46:14 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1730,6 +1730,46 @@ _register_plist${_s} = ${_register_plist}
 ###
 ### end of variable setup. Only targets now
 ###
+dump-vars:
+.if ${_DPB_MULTI} == "-"
+.  for _v in ${_ALL_VARIABLES} ${_ALL_VARIABLES_INDEXED}
+.   if defined(${_v}-)
+.     if !empty(${_v}-)
+	@echo ${FULLPKGPATH}.${_v}=${${_v}-:Q}
+.     endif
+.   elif defined(${_v}) && !empty(${_v})
+	@echo ${FULLPKGPATH}.${_v}=${${_v}:Q}
+.   endif
+.  endfor
+.  for _v in ${_ALL_VARIABLES_PER_ARCH}
+.    for _a in ${ALL_ARCHS}
+.      if defined(${_v}-${_a}) && !empty(${_v}-${_a})
+	@echo ${FULLPKGPATH}.${_v}-${_a}=${${_v}-${_a}:Q}
+.      endif
+.    endfor
+.  endfor
+.else
+.  for _S in ${_DPB_MULTI}
+.    for _v in ${_ALL_VARIABLES}
+.     if defined(${_v}) && !empty(${_v})
+	@echo ${FULLPKGPATH${_S}}.${_v}=${${_v}:Q}
+.     endif
+.    endfor
+.    for _v in ${_ALL_VARIABLES_PER_ARCH}
+.      for _a in ${ALL_ARCHS}
+.        if defined(${_v}-${_a}) && !empty(${_v}-${_a})
+	@echo ${FULLPKGPATH${_S}}.${_v}-${_a}=${${_v}-${_a}:Q}
+.        endif
+.      endfor
+.    endfor
+.    for _v in ${_ALL_VARIABLES_INDEXED}
+.      if defined(${_v}${_S}) && !empty(${_v}${_S})
+	@echo ${FULLPKGPATH${_S}}.${_v}=${${_v}${_S}:Q}
+.      endif
+.    endfor
+.  endfor
+.endif
+
 check-register:
 .if empty(PLIST_DB)
 	@exit 1
@@ -3285,45 +3325,6 @@ verbose-show:
 	@echo ${_s}=${${_s}:Q}
 . endif
 .endfor
-
-dump-vars:
-.if ${_DPB_MULTI} == "-"
-.  for _v in ${_ALL_VARIABLES} ${_ALL_VARIABLES_INDEXED}
-.   if defined(${_v}-)
-	@echo ${FULLPKGPATH}.${_v}=${${_v}-:Q}
-.   elif defined(${_v})
-	@echo ${FULLPKGPATH}.${_v}=${${_v}:Q}
-.   endif
-.  endfor
-.  for _v in ${_ALL_VARIABLES_PER_ARCH}
-.    for _a in ${ALL_ARCHS}
-.      if defined(${_v}-${_a})
-	@echo ${FULLPKGPATH}.${_v}-${_a}=${${_v}-${_a}:Q}
-.      endif
-.    endfor
-.  endfor
-.else
-.  for _S in ${_DPB_MULTI}
-.    for _v in ${_ALL_VARIABLES}
-.     if defined(${_v})
-	@echo ${FULLPKGPATH${_S}}.${_v}=${${_v}:Q}
-.     endif
-.    endfor
-.    for _v in ${_ALL_VARIABLES_PER_ARCH}
-.      for _a in ${ALL_ARCHS}
-.        if defined(${_v}-${_a})
-	@echo ${FULLPKGPATH${_S}}.${_v}-${_a}=${${_v}-${_a}:Q}
-.        endif
-.      endfor
-.    endfor
-.    for _v in ${_ALL_VARIABLES_INDEXED}
-.      if defined(${_v}${_S})
-	@echo ${FULLPKGPATH${_S}}.${_v}=${${_v}${_S}:Q}
-.      endif
-.    endfor
-.  endfor
-.endif
-
 
 _all_phony = ${_recursive_depends_targets} \
 	${_recursive_targets} ${_dangerous_recursive_targets} \
