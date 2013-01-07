@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_extension_implementation_script_cpp,v 1.1 2013/01/07 20:03:42 jasper Exp $
+
+Security fix for CVE-2012-6076 inkscape: Reads .eps files from /tmp instead of current working directory
+
+Patch taken from Debian:
+http://patch-tracker.debian.org/patch/series/view/inkscape/0.48.3.1-1.3/04-fix-LP911146.diff
+
+--- src/extension/implementation/script.cpp.orig	Fri Jul  8 20:25:09 2011
++++ src/extension/implementation/script.cpp	Mon Jan  7 19:10:54 2013
+@@ -936,7 +936,14 @@ int Script::execute (const std::list<std::string> &in_
+     // assemble the rest of argv
+     std::copy(in_params.begin(), in_params.end(), std::back_inserter(argv));
+     if (!filein.empty()) {
+-        argv.push_back(filein);
++        if(Glib::path_is_absolute(filein))
++            argv.push_back(filein);
++        else {
++            std::vector<std::string> buildargs;
++            buildargs.push_back(Glib::get_current_dir());
++            buildargs.push_back(filein);
++            argv.push_back(Glib::build_filename(buildargs));
++        }
+     }
+ 
+     int stdout_pipe, stderr_pipe;
