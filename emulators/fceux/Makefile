@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/12/25 00:07:01 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2013/01/07 03:14:00 bentley Exp $
 
 COMMENT =		emulator for Nintendo Entertainment System
 
@@ -50,5 +50,8 @@ do-install:
 	${SETENV} ${MAKE_ENV} ${MODSCONS_BIN} -C ${WRKSRC} \
 		${MODSCONS_ENV} ${MODSCONS_FLAGS} \
 		--prefix=${PREFIX} ${INSTALL_TARGET}
+
+# XXX scons picks up x264.h even though it's in an apparently unused ifdef block
+DPB_PROPERTIES =	nojunk
 
 .include <bsd.port.mk>
