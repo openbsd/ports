@@ -1,8 +1,8 @@
-$OpenBSD: patch-config_mk,v 1.2 2011/03/02 15:06:04 jasper Exp $
---- config.mk.orig	Mon Jan 31 21:47:08 2011
-+++ config.mk	Wed Mar  2 16:04:30 2011
+$OpenBSD: patch-config_mk,v 1.3 2013/01/07 14:15:16 bentley Exp $
+--- config.mk.orig	Sat Jan  5 06:15:12 2013
++++ config.mk	Sun Jan  6 18:07:51 2013
 @@ -15,13 +15,13 @@ LIBDIR      = ${PREFIX}/lib
- VERSION     = 1.6
+ VERSION     = 1.7
  
  # includes and libs
 -INCLUDES    = -I. -I${INCDIR} -I/usr/include
