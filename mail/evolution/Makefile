@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.182 2012/11/11 18:51:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.183 2013/01/07 11:37:29 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -10,6 +10,9 @@ GNOME_VERSION=		3.6.2
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}
+
+REVISION-main=		0
+REVISION-plugins=	0
 
 # NOTE: when R changes, increment EVO_VERSION accordingly and bump:
 # mail/evolution-ews
@@ -99,7 +102,7 @@ CONFIGURE_STYLE=	autoconf
 
 CONFIGURE_ARGS=		--disable-static \
 			--with-openldap="${LOCALBASE}" \
-			--with-sub-version=" OpenBSD/Ports" \
+			--with-sub-version="OpenBSD Ports" \
 			--with-krb5=/usr \
 			--with-krb5-includes=/usr/include/kerberosV
 
