@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.59 2013/01/05 23:38:08 espie Exp $
+# $OpenBSD: Port.pm,v 1.60 2013/01/07 10:59:41 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -340,6 +340,14 @@ our @ISA=qw(DPB::Task::Port::Serialized);
 
 sub notime { 1 }
 
+sub add_dontjunk
+{
+	my ($self, $job, $h) = @_;
+	return if !defined $job->{builder}{dontjunk};
+	for my $pkgname (keys %{$job->{builder}{dontjunk}}) {
+		$h->{$pkgname} = 1;
+	}
+}
 sub add_live_depends
 {
 	my ($self, $h, $host) = @_;
@@ -372,6 +380,7 @@ sub run
 	my $h = $job->{builder}->locker->find_dependencies(
 	    $core->hostname);
 	if (defined $h && $self->add_live_depends($h, $core->hostname)) {
+		$self->add_dontjunk($job, $h);
 		my @cmd = ('/usr/sbin/pkg_delete', '-aIX', sort keys %$h);
 		print join(' ', @cmd, "\n");
 		$core->shell->exec(OpenBSD::Paths->sudo, @cmd);

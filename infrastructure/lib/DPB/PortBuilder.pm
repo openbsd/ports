@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.27 2012/12/25 10:43:36 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.28 2013/01/07 10:59:41 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -68,6 +68,12 @@ sub locker
 {
 	my $self = shift;
 	return $self->{state}->locker;
+}
+
+sub dontjunk
+{
+	my ($self, $v) = @_;
+	$self->{dontjunk}{$v->fullpkgname} = 1;
 }
 
 sub make
