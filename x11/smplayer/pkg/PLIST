@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/06/15 08:30:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/01/07 11:45:21 gonzalo Exp $
 @bin bin/smplayer
 @man man/man1/smplayer.1
 share/applications/smplayer.desktop
@@ -25,6 +25,8 @@ share/doc/smplayer/en/faq.html
 share/doc/smplayer/en/gpl.html
 share/doc/smplayer/es/
 share/doc/smplayer/es/gpl.html
+share/doc/smplayer/eu/
+share/doc/smplayer/eu/faq.html
 share/doc/smplayer/hu/
 share/doc/smplayer/hu/faq.html
 share/doc/smplayer/hu/gpl.html
@@ -47,10 +49,17 @@ share/doc/smplayer/ru/gpl.html
 share/doc/smplayer/zh_CN/
 share/doc/smplayer/zh_CN/faq.html
 share/doc/smplayer/zh_CN/gpl.html
+share/icons/hicolor/128x128/apps/smplayer.png
 share/icons/hicolor/16x16/apps/smplayer.png
+share/icons/hicolor/192x192/apps/smplayer.png
 share/icons/hicolor/22x22/apps/smplayer.png
+share/icons/hicolor/256x256/apps/smplayer.png
 share/icons/hicolor/32x32/apps/smplayer.png
+share/icons/hicolor/512x512/
+share/icons/hicolor/512x512/apps/
+share/icons/hicolor/512x512/apps/smplayer.png
 share/icons/hicolor/64x64/apps/smplayer.png
+share/icons/hicolor/scalable/apps/smplayer.svg
 share/smplayer/
 share/smplayer/input.conf
 share/smplayer/shortcuts/
