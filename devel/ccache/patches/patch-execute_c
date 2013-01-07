@@ -1,6 +1,6 @@
-$OpenBSD: patch-execute_c,v 1.1 2011/06/22 09:20:02 sthen Exp $
---- execute.c.orig	Sun May 29 16:46:03 2011
-+++ execute.c	Tue Jun 21 22:16:46 2011
+$OpenBSD: patch-execute_c,v 1.2 2013/01/07 14:25:58 sthen Exp $
+--- execute.c.orig	Sun Jan  6 16:57:59 2013
++++ execute.c	Mon Jan  7 14:22:37 2013
 @@ -17,6 +17,9 @@
   * Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
   */
@@ -10,4 +10,4 @@ $OpenBSD: patch-execute_c,v 1.1 2011/06/22 09:20:02 sthen Exp $
 +
  #include "ccache.h"
  
- static char *
+ /* Let's hope no compiler uses these exit statuses. */
