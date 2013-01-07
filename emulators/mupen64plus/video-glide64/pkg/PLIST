@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/01/07 17:01:50 bentley Exp $
+lib/mupen64plus/
+lib/mupen64plus/mupen64plus-video-glide64.so
+share/mupen64plus/Glide64.ini
