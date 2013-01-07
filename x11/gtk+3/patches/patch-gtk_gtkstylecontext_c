@@ -1,0 +1,45 @@
+$OpenBSD: patch-gtk_gtkstylecontext_c,v 1.1 2013/01/07 07:28:04 ajacoutot Exp $
+
+From 7f0b30d7d40acaaaa2ecda603903c00544232bb8 Mon Sep 17 00:00:00 2001
+From: Benjamin Otte <otte@redhat.com>
+Date: Sun, 06 Jan 2013 22:08:28 +0000
+Subject: stylecontext: Make font hack not crash
+
+--- gtk/gtkstylecontext.c.orig	Thu Jan  3 23:44:36 2013
++++ gtk/gtkstylecontext.c	Mon Jan  7 08:05:52 2013
+@@ -3508,7 +3508,7 @@ gtk_style_context_get_font (GtkStyleContext *context,
+ {
+   GtkStyleContextPrivate *priv;
+   StyleData *data;
+-  PangoFontDescription *description;
++  PangoFontDescription *description, *previous;
+ 
+   g_return_val_if_fail (GTK_IS_STYLE_CONTEXT (context), NULL);
+ 
+@@ -3520,10 +3520,22 @@ gtk_style_context_get_font (GtkStyleContext *context,
+   /* Yuck, fonts are created on-demand but we don't return a ref.
+    * Do bad things to achieve this requirement */
+   gtk_style_context_get (context, state, "font", &description, NULL);
+-  g_object_set_data_full (G_OBJECT (data->store),
+-                          "font-cache-for-get_font",
+-                          description,
+-                          (GDestroyNotify) pango_font_description_free);
++  
++  previous = g_object_get_data (G_OBJECT (data->store), "font-cache-for-get_font");
++
++  if (previous)
++    {
++      pango_font_description_merge (previous, description, TRUE);
++      pango_font_description_free (description);
++      description = previous;
++    }
++  else
++    {
++      g_object_set_data_full (G_OBJECT (data->store),
++                              "font-cache-for-get_font",
++                              description,
++                              (GDestroyNotify) pango_font_description_free);
++    }
+ 
+   return description;
+ }
