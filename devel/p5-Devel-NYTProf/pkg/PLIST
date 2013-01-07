@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/08/31 18:06:37 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/01/07 00:11:21 bluhm Exp $
 bin/nytprofcg
 bin/nytprofcsv
 bin/nytprofhtml
 bin/nytprofmerge
 ${P5ARCH}/Devel/
+@comment ${P5ARCH}/Devel/MemoryProfiling.pod
 ${P5ARCH}/Devel/NYTProf/
 ${P5ARCH}/Devel/NYTProf.pm
 ${P5ARCH}/Devel/NYTProf/Apache.pm
@@ -15,6 +16,7 @@ ${P5ARCH}/Devel/NYTProf/FileInfo.pm
 ${P5ARCH}/Devel/NYTProf/ReadStream.pm
 ${P5ARCH}/Devel/NYTProf/Reader.pm
 ${P5ARCH}/Devel/NYTProf/Run.pm
+${P5ARCH}/Devel/NYTProf/SubCallInfo.pm
 ${P5ARCH}/Devel/NYTProf/SubInfo.pm
 ${P5ARCH}/Devel/NYTProf/Test.pm
 ${P5ARCH}/Devel/NYTProf/Util.pm
@@ -48,6 +50,7 @@ ${P5ARCH}/auto/Devel/NYTProf/NYTProf.so
 @man man/man1/nytprofcsv.1
 @man man/man1/nytprofhtml.1
 @man man/man1/nytprofmerge.1
+@comment @man man/man3p/Devel::MemoryProfiling.3p
 @man man/man3p/Devel::NYTProf.3p
 @man man/man3p/Devel::NYTProf::Apache.3p
 @man man/man3p/Devel::NYTProf::Core.3p
