@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/05/08 06:52:20 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/01/08 09:57:43 sthen Exp $
 @comment lib/purple-2/libsipe.a
 @comment lib/purple-2/libsipe.la
 lib/purple-2/libsipe.so
@@ -28,5 +28,9 @@ share/locale/zh_CN/LC_MESSAGES/pidgin-sipe.mo
 share/locale/zh_TW/LC_MESSAGES/pidgin-sipe.mo
 share/pixmaps/pidgin/protocols/16/sipe.png
 share/pixmaps/pidgin/protocols/22/sipe.png
+share/pixmaps/pidgin/protocols/24/
+share/pixmaps/pidgin/protocols/24/sipe.png
+share/pixmaps/pidgin/protocols/32/
+share/pixmaps/pidgin/protocols/32/sipe.png
 share/pixmaps/pidgin/protocols/48/sipe.png
 share/pixmaps/pidgin/protocols/scalable/sipe.svg

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2012/10/31 20:11:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2013/01/08 09:57:43 sthen Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		SIPE plugin for Pidgin
 
-DISTNAME =		pidgin-sipe-1.13.3
+DISTNAME =		pidgin-sipe-1.14.1
 
 CATEGORIES =		net
 
