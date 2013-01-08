@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/10/01 14:22:06 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/01/08 13:08:52 jasper Exp $
 @group daemon
 zendframework/
 zendframework/Zend/
@@ -1958,7 +1958,6 @@ zendframework/Zend/Markup/Parser/
 zendframework/Zend/Markup/Parser/Bbcode.php
 zendframework/Zend/Markup/Parser/Exception.php
 zendframework/Zend/Markup/Parser/ParserInterface.php
-zendframework/Zend/Markup/Parser/Textile.php
 zendframework/Zend/Markup/Renderer/
 zendframework/Zend/Markup/Renderer/Exception.php
 zendframework/Zend/Markup/Renderer/Html/
