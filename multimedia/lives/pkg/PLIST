@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/11/16 17:21:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/01/08 17:50:44 nigel Exp $
 bin/autolives.pl
 bin/build-lives-rfx-plugin
 bin/build-lives-rfx-plugin-multi
@@ -145,6 +145,7 @@ lib/lives/plugins/playback/
 lib/lives/plugins/playback/video/
 lib/lives/plugins/playback/video/SDL.so
 lib/lives/plugins/playback/video/lives2lives_stream.so
+lib/lives/plugins/playback/video/yuv4mpeg_stream.so
 share/applications/LiVES.desktop
 share/doc/lives/
 share/doc/lives/AUTHORS

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2012/07/13 12:55:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2013/01/08 17:50:44 nigel Exp $
 
 SHARED_ONLY =		Yes
 
@@ -7,7 +7,7 @@ COMMENT =		video editor and a VJ tool
 V =			1.0.10
 DISTNAME =		LiVES-${V}
 PKGNAME =		${DISTNAME:L}
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS +=		weed		0.0 # 0.2
 SHARED_LIBS +=		weed_slice	0.0 # 0.2
@@ -27,27 +27,36 @@ WANTLIB += GL SDL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c
 WANTLIB += cairo drm dv expat ffi fontconfig freetype gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 gtk-x11-2.0 m ogg pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs sndio
-WANTLIB += stdc++ theora usbhid xcb xcb-render xcb-shm z
+WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz icudata icule icuuc
+WANTLIB += m mjpegutils ogg oil-0.3 pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread pthread-stubs sndio stdc++
+WANTLIB += theora usbhid xcb xcb-render xcb-shm z
 
 MODULES =		devel/gettext
 RUN_DEPENDS =		graphics/ImageMagick \
 			x11/mplayer \
 			audio/sox \
 			sysutils/cdrtools \
+			audio/vorbis-tools \
+			multimedia/transcode \
 			audio/xmms \
 			devel/desktop-file-utils
+BUILD_DEPENDS =		audio/vorbis-tools
 LIB_DEPENDS =		multimedia/libtheora \
 			devel/sdl \
 			multimedia/libdv \
-			x11/gtk+2
+			x11/gtk+2 \
+			audio/libogg \
+			devel/liboil \
+			multimedia/mjpegtools
 
 USE_LIBTOOL =		Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--disable-jack \
+			--disable-frei0r \
+			--disable-libvisual \
 			--disable-static
 
 WRKDIST =		${WRKDIR}/${DISTNAME:L}
