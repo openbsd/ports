@@ -1,18 +1,12 @@
-$OpenBSD: patch-sys_v4l2_gstv4l2object_h,v 1.1.1.1 2012/09/06 13:01:31 ajacoutot Exp $
---- sys/v4l2/gstv4l2object.h.orig	Mon Nov  9 20:37:11 2009
-+++ sys/v4l2/gstv4l2object.h	Mon Nov 23 18:28:12 2009
-@@ -38,11 +38,13 @@
-  */
- #include <sys/ioctl.h>
- #include <sys/types.h>
--#ifndef __sun
-+#if !defined __sun && !defined __OpenBSD__
+$OpenBSD: patch-sys_v4l2_gstv4l2object_h,v 1.2 2013/01/08 13:48:54 ajacoutot Exp $
+--- sys/v4l2/gstv4l2object.h.orig	Tue Dec 18 01:07:47 2012
++++ sys/v4l2/gstv4l2object.h	Tue Jan  8 14:13:43 2013
+@@ -42,6 +42,8 @@
+ #include <sys/videodev2.h>
+ #elif defined(__FreeBSD__)
+ #include <linux/videodev2.h>
++#elif defined(__OpenBSD__)
++#include <sys/videoio.h>
+ #else /* linux */
  #include <linux/types.h>
  #define _LINUX_TIME_H
- #define __user
- #include <linux/videodev2.h>
-+#elif defined __OpenBSD__
-+#include <sys/videoio.h>
- #else
- #include <sys/videodev2.h>
- #endif

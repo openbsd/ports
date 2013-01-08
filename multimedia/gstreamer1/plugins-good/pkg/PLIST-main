@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2012/09/18 07:54:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2013/01/08 13:48:54 ajacoutot Exp $
 @conflict gstreamer1-plugins-bad-<0.11.99
 lib/gstreamer-${VERSION}/libgstalaw.so
 lib/gstreamer-${VERSION}/libgstalpha.so
@@ -9,6 +9,7 @@ lib/gstreamer-${VERSION}/libgstaudioparsers.so
 lib/gstreamer-${VERSION}/libgstauparse.so
 lib/gstreamer-${VERSION}/libgstautodetect.so
 lib/gstreamer-${VERSION}/libgstavi.so
+lib/gstreamer-${VERSION}/libgstcairo.so
 lib/gstreamer-${VERSION}/libgstcutter.so
 lib/gstreamer-${VERSION}/libgstdebug.so
 lib/gstreamer-${VERSION}/libgstdeinterlace.so
@@ -77,6 +78,7 @@ share/locale/eu/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
 share/locale/fi/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
 share/locale/fr/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
 share/locale/gl/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
+share/locale/hr/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
 share/locale/hu/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
 share/locale/id/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
 share/locale/it/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
