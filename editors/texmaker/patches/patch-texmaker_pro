@@ -1,6 +1,6 @@
-$OpenBSD: patch-texmaker_pro,v 1.8 2012/05/30 18:48:59 shadchin Exp $
---- texmaker.pro.orig	Wed May 23 20:57:00 2012
-+++ texmaker.pro	Fri May 25 23:12:06 2012
+$OpenBSD: patch-texmaker_pro,v 1.9 2013/01/08 15:43:54 shadchin Exp $
+--- texmaker.pro.orig	Fri Nov  2 16:21:34 2012
++++ texmaker.pro	Sat Nov  3 19:40:37 2012
 @@ -4,7 +4,8 @@ TARGET	 = texmaker
  QT += network \
        xml \
@@ -8,10 +8,10 @@ $OpenBSD: patch-texmaker_pro,v 1.8 2012/05/30 18:48:59 shadchin Exp $
 -CONFIG	+= qt warn_off release
 +CONFIG	+= qt warn_off release link_pkgconfig
 +PKGCONFIG = hunspell poppler-qt4
- TEXMAKERVERSION=3.3.4
+ TEXMAKERVERSION=3.5.2
  DEFINES += TEXMAKERVERSION=\\\"$${TEXMAKERVERSION}\\\"
  DEFINES += HAVE_SPLASH
-@@ -67,25 +68,6 @@ HEADERS	+= texmaker.h \
+@@ -68,25 +69,6 @@ HEADERS	+= texmaker.h \
  	synctex_parser_utils.h \
  	usertagslistwidget.h \
  	addtagdialog.h \
@@ -37,7 +37,7 @@ $OpenBSD: patch-texmaker_pro,v 1.8 2012/05/30 18:48:59 shadchin Exp $
  	singleapp/qtlocalpeer.h \
  	singleapp/qtlockedfile.h \
  	singleapp/qtsingleapplication.h \
-@@ -171,18 +153,6 @@ SOURCES	+= main.cpp \
+@@ -173,18 +155,6 @@ SOURCES	+= main.cpp \
  	synctex_parser_utils.c \
  	usertagslistwidget.cpp \
  	addtagdialog.cpp \
@@ -56,7 +56,7 @@ $OpenBSD: patch-texmaker_pro,v 1.8 2012/05/30 18:48:59 shadchin Exp $
  	singleapp/qtlocalpeer.cpp \
  	singleapp/qtlockedfile.cpp \
  	singleapp/qtsingleapplication.cpp \
-@@ -385,35 +355,7 @@ utilities.files = doc/doc1.png \
+@@ -387,35 +357,7 @@ utilities.files = doc/doc1.png \
  	locale/texmaker_hu.qm \
  	locale/texmaker_sr.qm \
  	locale/texmaker_el.qm \

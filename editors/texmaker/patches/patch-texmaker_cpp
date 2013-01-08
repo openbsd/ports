@@ -1,7 +1,7 @@
-$OpenBSD: patch-texmaker_cpp,v 1.8 2012/05/30 18:48:59 shadchin Exp $
---- texmaker.cpp.orig	Wed May 23 20:09:18 2012
-+++ texmaker.cpp	Fri May 25 23:10:35 2012
-@@ -4146,7 +4146,7 @@ QString dicDir=QCoreApplication::applicationDirPath() 
+$OpenBSD: patch-texmaker_cpp,v 1.9 2013/01/08 15:43:54 shadchin Exp $
+--- texmaker.cpp.orig	Fri Nov  2 16:16:13 2012
++++ texmaker.cpp	Sat Nov  3 19:40:37 2012
+@@ -4304,7 +4304,7 @@ QString dicDir=QCoreApplication::applicationDirPath() 
  #ifdef DEBIAN_SPELLDIR
  QString dicDir=PREFIX"/share/myspell/dicts/";
  #else
@@ -10,7 +10,7 @@ $OpenBSD: patch-texmaker_cpp,v 1.8 2012/05/30 18:48:59 shadchin Exp $
  #endif
  #endif
  
-@@ -4159,7 +4159,7 @@ QString dicDir=QCoreApplication::applicationDirPath() 
+@@ -4317,7 +4317,7 @@ QString dicDir=QCoreApplication::applicationDirPath() 
  #endif
  QString defaultDic=dicDir+QString(QLocale::system().name())+".dic";
  QFileInfo fi(defaultDic);
