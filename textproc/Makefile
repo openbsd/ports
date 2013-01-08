@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.377 2013/01/04 07:49:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.378 2013/01/08 23:28:22 stsp Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -358,6 +358,7 @@
      SUBDIR += sphinx,pgsql
      SUBDIR += spiff
      SUBDIR += stringtemplate
+     SUBDIR += svndumptool
      SUBDIR += swish-e
      SUBDIR += tcpdf
      SUBDIR += texi2html
