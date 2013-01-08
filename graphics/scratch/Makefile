@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/17 08:05:16 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/01/08 15:23:15 sthen Exp $
 
 COMMENT =		visual programming environment and toolkit
 
 DISTNAME =		scratch-1.3
+REVISION =		0
 CATEGORIES =		graphics
 HOMEPAGE =		http://scratch.mit.edu/
 MASTER_SITES =		${HOMEPAGE:=files/}
