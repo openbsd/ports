@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.57 2013/01/04 01:10:30 brad Exp $
+# $OpenBSD: Makefile,v 1.58 2013/01/08 09:53:46 brad Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
 
-SHARED_LIBS +=  clang                  0.0 # 3.2
+ONLY_FOR_ARCHS = ${LLVM_ARCHS}
 
 COMMENT =	modular, fast C/C++/ObjC compiler, static analyzer and tools
 
@@ -12,16 +12,14 @@ DISTNAME =	llvm-${LLVM_V}.src
 PKGNAME =	llvm-${LLVM_V}
 REVISION =	0
 CATEGORIES =	devel
+MASTER_SITES =	http://llvm.org/releases/${LLVM_V}/
+
+DISTFILES =	${DISTNAME}${EXTRACT_SUFX} clang-${LLVM_V}.src${EXTRACT_SUFX}
+
+SHARED_LIBS =	clang		0.0 # 3.2
 
 # packager notes in http://llvm.org/docs/Packaging.html
 HOMEPAGE =	http://www.llvm.org/
-
-VMEM_WARNING =	Yes
-
-ONLY_FOR_ARCHS = ${LLVM_ARCHS}
-#
-# there is some chance of building on other GCC4 arch, but is known to be
-# broken on alpha/sparc.
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -31,9 +29,6 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	c m pthread stdc++
 
-MASTER_SITES =	http://llvm.org/releases/${LLVM_V}/
-
-DISTFILES =	${DISTNAME}${EXTRACT_SUFX} clang-${LLVM_V}.src${EXTRACT_SUFX}
 WRKDIST =	${WRKDIR}/llvm-${LLVM_V}.src
 
 MODULES =	devel/cmake \
@@ -42,6 +37,8 @@ MODULES =	devel/cmake \
 REGRESS_DEPENDS = devel/dejagnu
 BUILD_DEPENDS +=	textproc/py-sphinx
 
+VMEM_WARNING =	Yes
+
 MAKE_FLAGS =	OPTIMIZE_OPTION="${CFLAGS}" \
 		VERBOSE=Yes \
 		INSTALL="install -c"
@@ -49,9 +46,6 @@ MAKE_FLAGS =	OPTIMIZE_OPTION="${CFLAGS}" \
 REGRESS_FLAGS =	RUNTESTFLAGS=
 
 SEPARATE_BUILD =	Yes
-USE_LIBTOOL =		Yes
-
-CONFIGURE_STYLE =	cmake
 CONFIGURE_ARGS =	-DLLVM_ENABLE_FFI:Bool=False \
 			-DLLVM_REQUIRES_RTTI:Bool=True \
 			-DCMAKE_BUILD_TYPE:String=Release \
