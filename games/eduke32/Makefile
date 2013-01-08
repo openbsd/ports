@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/10/15 15:06:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2013/01/08 10:23:08 sthen Exp $
 
 COMMENT =	Enhanced Duke Nukem 3D engine
 RDATE =		20120301
@@ -34,7 +34,8 @@ LIB_DEPENDS =	audio/libvorbis \
 
 RUN_DEPENDS =	games/duke3ddata
 
-MASTER_SITES =	http://dukeworld.duke4.net/eduke32/synthesis/${RDATE}-${RTAG}/
+MASTER_SITES =	http://dukeworld.duke4.net/eduke32/synthesis/old/${RDATE}-${RTAG}/ \
+		http://dukeworld.duke4.net/eduke32/synthesis/${RDATE}-${RTAG}/
 
 # make sure we can see compilation output, respect CC/CXX, don't strip!
 MAKE_FLAGS =	PRETTY_OUTPUT=0 CC="${CC}" CXX="${CXX}" DEBUGANYWAY=1
