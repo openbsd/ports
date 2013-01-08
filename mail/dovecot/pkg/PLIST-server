@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.36 2012/11/29 22:17:46 brad Exp $
+@comment $OpenBSD: PLIST-server,v 1.37 2013/01/08 23:58:44 brad Exp $
 @conflict dovecot-sqlite-*
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
@@ -765,6 +765,8 @@ share/examples/dovecot/example-config/conf.d/auth-vpopmail.conf.ext
 @sample ${SYSCONFDIR}/dovecot/conf.d/auth-vpopmail.conf.ext
 share/examples/dovecot/example-config/dovecot-db.conf.ext
 @sample ${SYSCONFDIR}/dovecot/dovecot-db.conf.ext
+share/examples/dovecot/example-config/dovecot-dict-auth.conf.ext
+@sample ${SYSCONFDIR}/dovecot/dovecot-dict-auth.conf.ext
 share/examples/dovecot/example-config/dovecot-dict-sql.conf.ext
 @sample ${SYSCONFDIR}/dovecot/dovecot-dict-sql.conf.ext
 share/examples/dovecot/example-config/dovecot-ldap.conf.ext
