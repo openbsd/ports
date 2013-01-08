@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.9 2012/11/24 08:18:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2013/01/08 13:48:23 ajacoutot Exp $
 
 COMMENT=		base elements for GStreamer
 
-V=			1.0.3
+V=			1.0.5
 DISTNAME=		gst-plugins-base-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-base-${V}
 
-SHARED_LIBS +=  gstapp-1.0                0.0 # 3.0
-SHARED_LIBS +=  gstaudio-1.0              0.0 # 3.0
-SHARED_LIBS +=  gstfft-1.0                0.0 # 3.0
-SHARED_LIBS +=  gstpbutils-1.0            0.0 # 3.0
-SHARED_LIBS +=  gstriff-1.0               0.0 # 3.0
-SHARED_LIBS +=  gstrtp-1.0                0.0 # 3.0
-SHARED_LIBS +=  gstrtsp-1.0               0.0 # 3.0
-SHARED_LIBS +=  gstsdp-1.0                0.0 # 3.0
-SHARED_LIBS +=  gsttag-1.0                0.0 # 3.0
-SHARED_LIBS +=  gstvideo-1.0              0.1 # 3.0
+SHARED_LIBS +=  gstapp-1.0                0.0 # 5.0
+SHARED_LIBS +=  gstaudio-1.0              0.0 # 5.0
+SHARED_LIBS +=  gstfft-1.0                0.0 # 5.0
+SHARED_LIBS +=  gstpbutils-1.0            0.0 # 5.0
+SHARED_LIBS +=  gstriff-1.0               0.0 # 5.0
+SHARED_LIBS +=  gstrtp-1.0                0.0 # 5.0
+SHARED_LIBS +=  gstrtsp-1.0               0.0 # 5.0
+SHARED_LIBS +=  gstsdp-1.0                0.0 # 5.0
+SHARED_LIBS +=  gsttag-1.0                0.0 # 5.0
+SHARED_LIBS +=  gstvideo-1.0              0.1 # 5.0
 
 WANTLIB += GL ICE SM X11 Xau Xdamage Xdmcp Xext Xfixes Xrender
 WANTLIB += Xv Xxf86vm c cairo cdda_interface cdda_paranoia drm
