@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.31 2012/09/12 08:15:57 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.32 2013/01/08 10:13:13 brad Exp $
 --- configure.orig	Sun Jun 10 00:59:57 2012
-+++ configure	Tue Sep 11 22:47:01 2012
++++ configure	Tue Nov 20 06:31:14 2012
 @@ -1092,7 +1092,6 @@ HAVE_LIST="
      lzo1x_999_compress
      machine_ioctl_bt848_h
@@ -74,10 +74,10 @@ $OpenBSD: patch-configure,v 1.31 2012/09/12 08:15:57 ajacoutot Exp $
 -pkgconfig_generate libavfilter "FFmpeg video filtering library" "$LIBAVFILTER_VERSION" "$extralibs"
 -pkgconfig_generate libpostproc "FFmpeg post processing library" "$LIBPOSTPROC_VERSION" "" "libavutil = $LIBAVUTIL_VERSION"
 -pkgconfig_generate libswscale "FFmpeg image rescaling library" "$LIBSWSCALE_VERSION" "$LIBM" "libavutil = $LIBAVUTIL_VERSION"
-+pkgconfig_generate libavutil "FFmpeg utility library" "$LIBAVUTIL_VERSION" "$LIBavutil_EXTRALIBS" "" "$LIBavutil_LINKFLAGS"
-+pkgconfig_generate libavcodec "FFmpeg codec library" "$LIBAVCODEC_VERSION" "$LIBavcodec_EXTRALIBS" "libavutil" "$LIBavcodec_LINKFLAGS"
-+pkgconfig_generate libavformat "FFmpeg container format library" "$LIBAVFORMAT_VERSION" "$LIBavformat_EXTRALIBS" "libavcodec libavutil" "$LIBavformat_LINKFLAGS"
-+pkgconfig_generate libavdevice "FFmpeg device handling library" "$LIBAVDEVICE_VERSION" "$LIBavdevice_EXTRALIBS" "libavformat libavcodec libavutil" "$LIBavdevice_LINKFLAGS"
-+pkgconfig_generate libavfilter "FFmpeg video filtering library" "$LIBAVFILTER_VERSION" "$LIBavfilter_EXTRALIBS" "libavformat libavcodec libavutil libswscale" "$LIBavfilter_LINKFLAGS"
-+pkgconfig_generate libpostproc "FFmpeg post processing library" "$LIBPOSTPROC_VERSION" "$LIBpostproc_EXTRALIBS" "libavutil" "$LIBpostproc_LINKFLAGS"
-+pkgconfig_generate libswscale "FFmpeg image rescaling library" "$LIBSWSCALE_VERSION" "$LIBswscale_EXTRALIBS" "libavutil" "$LIBswscale_LINKFLAGS"
++pkgconfig_generate libavutil "FFmpeg utility library" "$LIBAVUTIL_VERSION" "$LIBavutil_EXTRALIBS" "$LIBavutil_REQUIRES" "$LIBavutil_LINKFLAGS"
++pkgconfig_generate libavcodec "FFmpeg codec library" "$LIBAVCODEC_VERSION" "$LIBavcodec_EXTRALIBS" "$LIBavcodec_REQUIRES" "$LIBavcodec_LINKFLAGS"
++pkgconfig_generate libavformat "FFmpeg container format library" "$LIBAVFORMAT_VERSION" "$LIBavformat_EXTRALIBS" "$LIBavformat_REQUIRES" "$LIBavformat_LINKFLAGS"
++pkgconfig_generate libavdevice "FFmpeg device handling library" "$LIBAVDEVICE_VERSION" "$LIBavdevice_EXTRALIBS" "$LIBavdevice_REQUIRES" "$LIBavdevice_LINKFLAGS"
++pkgconfig_generate libavfilter "FFmpeg video filtering library" "$LIBAVFILTER_VERSION" "$LIBavfilter_EXTRALIBS" "$LIBavfilter_REQUIRES" "$LIBavfilter_LINKFLAGS"
++pkgconfig_generate libpostproc "FFmpeg post processing library" "$LIBPOSTPROC_VERSION" "$LIBpostproc_EXTRALIBS" "$LIBpostproc_REQUIRES" "$LIBpostproc_LINKFLAGS"
++pkgconfig_generate libswscale "FFmpeg image rescaling library" "$LIBSWSCALE_VERSION" "$LIBswscale_EXTRALIBS" "$LIBswscale_REQUIRES" "$LIBswscale_LINKFLAGS"
