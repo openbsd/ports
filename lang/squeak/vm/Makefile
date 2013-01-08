@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.15 2012/03/29 13:38:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2013/01/08 15:59:05 sthen Exp $
 
 
 COMMENT =	smalltalk system, vm
 
 SRCV =		1
-DISTFILES =	Squeak-$V-${SRCV}.src.tar.gz 
+DISTFILES =	Squeak-$V-${SRCV}.src.tar.gz
 
 PKGNAME =	squeak-vm-$V.${SRCV}
-REVISION =	1
+REVISION =	2
 
 WRKDIST =	${WRKDIR}/Squeak-$V-${SRCV}
 WRKSRC =	${WRKDIST}/platforms/unix/config
@@ -19,7 +19,7 @@ MASTER_SITES =	${SQUEAK_SITE}unix-linux/
 CONFIGURE_STYLE =	gnu
 AUTOCONF_VERSION =	2.60
 DESTDIRNAME =		ROOT
-CONFIGURE_ENV =		RANLIB=ranlib \
+CONFIGURE_ENV =		LDFLAGS="-lpthread ${LDFLAGS}" RANLIB=ranlib \
 			ac_cv_socklen_t=yes
 USE_GMAKE =		Yes
 USE_GROFF =		Yes
