@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.11 2012/08/04 15:58:37 jsg Exp $
---- configure.orig	Tue Jul 31 12:42:27 2012
-+++ configure	Tue Jul 31 12:43:45 2012
+$OpenBSD: patch-configure,v 1.12 2013/01/08 04:11:55 jsg Exp $
+--- configure.orig	Fri Jul 20 20:52:49 2012
++++ configure	Mon Jan  7 17:43:16 2013
 @@ -1632,21 +1632,6 @@ elif test "$have_icc" = yes ; then
  	add_line_to_config_mk 'CXX_UPDATE_DEP_FLAG = -MMD -MF "$(*D)/$(DEPDIR)/$(*F).d" -MQ "$@" -MP'
  fi;
@@ -23,6 +23,24 @@ $OpenBSD: patch-configure,v 1.11 2012/08/04 15:58:37 jsg Exp $
  # If possible, we want to use -Wglobal-constructors
  # However, not all compilers support that, so check whether the active one does.
  echocheck "whether -Wglobal-constructors work"
+@@ -1811,7 +1796,7 @@ cc_check_clean tmp_find_type_with_size.cpp
+ # for the smaller sizes.
+ echo_n "Alignment required... "
+ case $_host_cpu in
+-	i[3-6]86 | x86_64 | ppc*)
++	i[3-6]86 | x86_64 | amd64 | ppc*)
+ 		# Unaligned access should work
+ 		_need_memalign=no
+ 		;;
+@@ -1856,7 +1841,7 @@ case $_host_cpu in
+ 		echo "PowerPC"
+ 		DEFINES="$DEFINES -DPPC_TARGET"
+ 		;;
+-	x86_64)
++	x86_64 | amd64)
+ 		echo "x86_64"
+ 		;;
+ 	*)
 @@ -3141,9 +3126,9 @@ EOF
  fi
  if test "$_flac" = yes ; then
