@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.90 2013/01/08 00:28:13 bcallah Exp $
+# $OpenBSD: OpenBSD,v 1.91 2013/01/08 10:49:21 zhuk Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -91,6 +91,7 @@
 49.48		8.42		"naddy"		# Christian Weisgerber
 50.362309	7.586465	"pascal"	# Pascal Stumpf
 50.752		-3.276		"sthen"		# Stuart Henderson
+50.7819		6.0856		"mikeb"		# Mike Belopuhov
 50.858		4.3897		"xsa"		# Xavier Santolaria
 50.87		4.37		"steven"	# Steven Mestdagh
 51.0333		-114.0500	"pvalchev"	# Peter Valchev
@@ -108,7 +109,6 @@
 52.35447	4.630657	"otto"		# Otto Moerbeek
 52.3667		9.71667		"reyk"		# Reyk Floeter
 52.3717		9.73416		"phessler"	# Peter Hessler
-50.7819		6.0856		"mikeb"		# Mike Belopuhov
 52.3963543	13.107545	"zinke"		# Joerg Zinke
 52.4144		12.5524		"sebastia"	# Sebastian Reitenbach
 52.5		21		"alek"		# Aleksander Piotrowski
@@ -126,6 +126,7 @@
 55.16		23.88		"martynas"	# Martynas Venckus
 55.176919	61.389134	"shadchin"	# Alexandr Shadchin
 55.599		-2.4324		"jmc"		# Jason McIntyre
+55.66817	37.78011	"zhuk"		# Vadim Zhukov
 55.747502	37.985557	"grange"	# Alexander Yurchenko
 55.8589		13.0837		"wilfried"	# Peter Stromberg
 57.698		11.967		"jakob"		# Jakob Schlyter
