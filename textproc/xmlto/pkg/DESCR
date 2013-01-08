@@ -1,3 +1,10 @@
-xmlto is a front-end to an XSL toolchain. It chooses an appropriate
-stylesheet for the conversion you want and applies it using an external
-XSL-T processor. It also performs any necessary post-processing.
+xmlto is a shell-script tool for converting XML files to various
+formats.
+At the moment it supports conversion from docbook, xhtml1 and fo format
+to various output formats (awt, fo, htmlhelp, javahelp, mif, pdf, svg,
+xhtml, dvi, html, html-nochunks, man , pcl, ps, txt, xhtml-nochunks,
+epub).
+
+Note that this package does not enforce too many dependencies so
+depending on what you want to convert to, you may need to manually
+install other packages (e.g. epub requires to install "zip").
