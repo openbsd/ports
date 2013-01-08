@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2012/10/21 20:53:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2013/01/08 14:35:28 ajacoutot Exp $
 
 COMMENT-main=		UW e-mail client
 COMMENT-c-client=	UW c-client mail access routines
@@ -7,7 +7,7 @@ COMMENT-mailutil=	UW IMAP4rev1/POP2/POP3 mail utility
 COMMENT-pico=		UW text editor
 COMMENT-pilot=		UW file system navigator
 
-V=			2.02
+V=			2.03
 DISTNAME=		re-alpine-${V}
 EXTRACT_SUFX=		.tar.bz2
 
@@ -28,8 +28,6 @@ PKGNAME-pilot=		pilot-${PILOT_V}
 EPOCH-c-client=		0
 EPOCH-imap=		0
 EPOCH-mailutil=		0
-
-REVISION-pilot=		5
 
 CATEGORIES=		mail
 CATEGORIES-main=	mail news
