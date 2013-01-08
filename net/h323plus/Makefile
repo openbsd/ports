@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2012/11/27 08:14:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2013/01/08 09:51:09 brad Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,8 +7,8 @@ COMMENT=	H.323 video conferencing library
 V=		1_24_0
 DISTNAME=	h323plus-v${V}
 PKGNAME=	h323plus-${V:S/_/./g}
+REVISION=	2
 CATEGORIES=	net devel
-REVISION=	1
 
 SHARED_LIBS=	h323	3.0    # 1.21.0
 
@@ -22,13 +22,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += SDL avcodec avutil c crypto expat gsm lber ldap ldap_r
-WANTLIB += m pt pthread sasl2 speex ssl stdc++ x264
+WANTLIB += SDL c crypto expat gsm lber ldap ldap_r m pt pthread
+WANTLIB += speex ssl stdc++
 
 MASTER_SITES=	${HOMEPAGE}source/download/
 
-LIB_DEPENDS=	devel/ptlib \
-		graphics/ffmpeg
+LIB_DEPENDS=	audio/gsm \
+		audio/speex \
+		devel/ptlib
 
 WRKDIST=	${WRKDIR}/h323plus
 
@@ -41,6 +42,7 @@ MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/plugins
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
 # internal ilbc (port libilbc?)
 CONFIGURE_ARGS=	--with-plugin-installdir=h323plus
 
@@ -59,6 +61,9 @@ CONFIGURE_ARGS += --disable-h46023
 # XXX celtcodec.c:55: error: too many arguments to function 'celt_mode_create'
 CONFIGURE_ARGS += --disable-celt
 
+# these codecs are not necessary for net/gnugk
+CONFIGURE_ARGS += --disable-libavcodec
+
 MAKE_ENV=	CC=${CC} CPLUS=${CXX} OH323_BUILDSELF="1" VERBOSE="1"
 
 MAKE_FLAGS=	MAJOR_VERSION=${LIBh323_VERSION:R} \
@@ -70,10 +75,6 @@ pre-configure:
 		${WRKSRC}/plugins/audio/GSM0610/Makefile.in \
 		${WRKSRC}/openh323u.mak.in \
 		${WRKSRC}/plugins/video/H.263-ffmpeg/h263ffmpeg.cxx
-	perl -pi -e 's,h263p_encoder,ff_h263p_encoder,g;' \
-		-e 's,h264_decoder,ff_h264_decoder,g;' \
-		-e 's,mpeg4_encoder,ff_mpeg4_encoder,g' \
-		${WRKSRC}/plugins/configure
 
 post-install:
 	cd ${WRKBUILD}/plugins && \
