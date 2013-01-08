@@ -1,12 +1,12 @@
 #!/bin/sh
 #
-# $OpenBSD: munin_node.rc,v 1.5 2012/10/12 09:46:46 kirby Exp $
+# $OpenBSD: munin_node.rc,v 1.6 2013/01/08 11:14:02 kirby Exp $
 
 daemon="${TRUEPREFIX}/sbin/munin-node"
 
 . /etc/rc.d/rc.subr
 
-pexp="perl: munin-node"
+pexp="/usr/bin/perl -wT $daemon"
 
 rc_pre() {
         install -d -o _munin /var/run/munin
