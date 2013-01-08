@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_lib_ipc_CIpcClientProxy_cpp,v 1.1 2013/01/08 20:35:36 bcallah Exp $
+
+On loongson:
+Same as CIpcServerProxy.cpp
+
+--- src/lib/ipc/CIpcClientProxy.cpp.orig	Fri Jul 27 22:59:20 2012
++++ src/lib/ipc/CIpcClientProxy.cpp	Sun Jan  6 12:35:21 2013
+@@ -143,7 +143,11 @@ CIpcClientProxy::send(const CIpcMessage& message)
+ 	case kIpcLogLine: {
+ 		const CIpcLogLineMessage& llm = static_cast<const CIpcLogLineMessage&>(message);
+ 		CString logLine = llm.logLine();
++#if (__mips64__)
++		CProtocolUtil::writef(static_cast<void*>(&m_stream), static_cast<const char*>(kIpcMsgLogLine), &logLine);
++#else
+ 		CProtocolUtil::writef(&m_stream, kIpcMsgLogLine, &logLine);
++#endif
+ 		break;
+ 	}
+ 			

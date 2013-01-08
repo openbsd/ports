@@ -1,0 +1,138 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2013/01/08 20:35:36 bcallah Exp $
+--- CMakeLists.txt.orig	Tue Jan  8 13:23:44 2013
++++ CMakeLists.txt	Tue Jan  8 13:24:40 2013
+@@ -86,7 +86,7 @@ if (UNIX)
+ 	check_include_files(strings.h HAVE_STRINGS_H)
+ 	check_include_files(string.h HAVE_STRING_H)
+ 	check_include_files(sys/select.h HAVE_SYS_SELECT_H)
+-	check_include_files(sys/socket.h HAVE_SYS_SOCKET_H)
++	check_include_files("sys/types.h;sys/socket.h" HAVE_SYS_SOCKET_H)
+ 	check_include_files(sys/stat.h HAVE_SYS_STAT_H)
+ 	check_include_files(sys/time.h HAVE_SYS_TIME_H)
+ 	check_include_files(sys/utsname.h HAVE_SYS_UTSNAME_H)
+@@ -97,7 +97,6 @@ if (UNIX)
+ 	check_function_exists(gmtime_r HAVE_GMTIME_R)
+ 	check_function_exists(nanosleep HAVE_NANOSLEEP)
+ 	check_function_exists(poll HAVE_POLL)
+-	check_function_exists(sigwait HAVE_POSIX_SIGWAIT)
+ 	check_function_exists(strftime HAVE_STRFTIME)
+ 	check_function_exists(vsnprintf HAVE_VSNPRINTF)
+ 	check_function_exists(inet_aton HAVE_INET_ATON)
+@@ -139,6 +138,8 @@ if (UNIX)
+ 	else (HAVE_PTHREAD)
+ 		message(FATAL_ERROR "Missing library: pthread")
+ 	endif()
++
++	check_library_exists("pthread" sigwait "" HAVE_POSIX_SIGWAIT)
+ 	
+ 	if (APPLE)
+ 		exec_program(uname ARGS -v OUTPUT_VARIABLE DARWIN_VERSION)
+@@ -173,78 +174,53 @@ if (UNIX)
+ 
+ 	else()
+ 
+-		# add include dir for bsd (posix uses /usr/include/)
+-		set(CMAKE_INCLUDE_PATH "${CMAKE_INCLUDE_PATH}:/usr/local/include")
++		find_package(X11 REQUIRED)
+ 
+-		set(XKBlib "X11/Xlib.h;X11/XKBlib.h")
+-		check_symbol_exists("XRRNotifyEvent" "${XKBlib};X11/extensions/Xrandr.h" HAVE_X11_EXTENSIONS_XRANDR_H)
++		include_directories(${X11_X11_INCLUDE_PATH})
++		list(APPEND libs ${X11_X11_LIB})
+ 
+-		check_include_files("${XKBlib};X11/extensions/dpms.h" HAVE_X11_EXTENSIONS_DPMS_H)
+-		check_include_files("X11/extensions/Xinerama.h" HAVE_X11_EXTENSIONS_XINERAMA_H)
+-		check_include_files("${XKBlib};X11/extensions/XKBstr.h" HAVE_X11_EXTENSIONS_XKBSTR_H)
+-		check_include_files("X11/extensions/XKB.h" HAVE_XKB_EXTENSION)
+-		check_include_files("X11/extensions/XTest.h" HAVE_X11_EXTENSIONS_XTEST_H)
+-		check_include_files("${XKBlib}" HAVE_X11_XKBLIB_H)
+-		check_include_files("X11/extensions/XInput2.h" HAVE_XI2)
+-
+-		if (HAVE_X11_EXTENSIONS_DPMS_H)
+-			# Assume that function prototypes declared, when include exists.
+-			set(HAVE_DPMS_PROTOTYPES 1)
++		if(X11_Xkb_FOUND)
++			set(HAVE_X11_EXTENSIONS_XKBSTR_H 1)
++			set(HAVE_XKB_EXTENSION 1)
++			set(HAVE_X11_XKBLIB_H 1)
++		else()
++			message(FATAL_ERROR "Xkb is needed")
+ 		endif()
+ 
+-		if (NOT HAVE_X11_XKBLIB_H)
+-			message(FATAL_ERROR "Missing header: " ${XKBlib})
++		if(X11_XTest_FOUND)
++			set(HAVE_X11_EXTENSIONS_XTEST_H 1)
++			list(APPEND libs ${X11_XTest_LIB})
++		else()
++			message(FATAL_ERROR "Xtst is needed")
+ 		endif()
+ 
+-		check_library_exists("SM;ICE" IceConnectionNumber "" HAVE_ICE)
+-		check_library_exists("Xext;X11" DPMSQueryExtension "" HAVE_Xext)
+-		check_library_exists("Xtst;Xext;X11" XTestQueryExtension "" HAVE_Xtst)
+-		check_library_exists("Xinerama" XineramaQueryExtension "" HAVE_Xinerama)
+-		check_library_exists("Xi" XISelectEvents "" HAVE_Xi)
+-		check_library_exists("Xrandr" XRRQueryExtension "" HAVE_Xrandr)
+-
+-		if (HAVE_ICE)
+-
+-			# Assume we have SM if we have ICE.
+-			set(HAVE_SM 1)
+-			list(APPEND libs SM ICE)
+-
++		if(X11_ICE_FOUND)
++			list(APPEND libs ${X11_SM_LIB})
++			list(APPEND libs ${X11_ICE_LIB})
+ 		endif()
+ 
+-		if (HAVE_Xtst)
+-
+-			# Xtxt depends on X11.
+-			set(HAVE_X11)
+-			list(APPEND libs Xtst X11)
+-
+-		else()
+-
+-			message(FATAL_ERROR "Missing library: Xtst")
+-
++		if(X11_dpms_FOUND)
++			set(HAVE_X11_EXTENSIONS_DPMS_H 1)
++			set(HAVE_DPMS_PROTOTYPES 1)
++			list(APPEND libs ${X11_Xext_LIB})
+ 		endif()
+ 
+-		if (HAVE_Xext)
+-			list(APPEND libs Xext)
++		if(X11_Xinerama_FOUND)
++			set(HAVE_X11_EXTENSIONS_XINERAMA_H 1)
++			list(APPEND libs ${X11_Xinerama_LIB})
+ 		endif()
+ 
+-		if (HAVE_Xinerama)
+-			list(APPEND libs Xinerama)
+-		else (HAVE_Xinerama)
+-			if (HAVE_X11_EXTENSIONS_XINERAMA_H)
+-				set(HAVE_X11_EXTENSIONS_XINERAMA_H 0)
+-				message(WARNING "Old Xinerama implementation detected, disabled")
+-			endif()
++		if(X11_Xinput_FOUND)
++			set(HAVE_XI2 1)
++			list(APPEND libs ${X11_Xinput_LIB})
+ 		endif()
+ 
+-		if (HAVE_Xrandr)
+-			list(APPEND libs Xrandr)
++		if(X11_Xrandr_FOUND)
++			set(HAVE_X11_EXTENSIONS_XRANDR_H 1)
++			list(APPEND libs ${X11_Xrandr_LIB})
+ 		endif()
+ 
+ 	endif()
+-
+-        IF(HAVE_Xi)
+-                LIST(APPEND libs Xi)
+-        ENDIF()
+ 
+ 	# For config.h, set some static values; it may be a good idea to make
+ 	# these values dynamic for non-standard UNIX compilers.

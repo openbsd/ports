@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.14 2011/11/08 09:30:52 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.15 2013/01/08 20:35:36 bcallah Exp $
 
 COMMENT=		mouse and keyboard sharing utility
 
-DISTNAME=		synergy-1.4.2-Source
+DISTNAME=		synergy-1.4.10-Source
 PKGNAME=		${DISTNAME:S/-Source//}
 CATEGORIES=		net x11
+
+MAINTAINER=		Brian Callahan <bcallah@openbsd.org>
 
 HOMEPAGE=		http://synergy-foss.org/
 
@@ -14,16 +16,26 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += ICE SM X11 Xext Xinerama Xtst c m pthread stdc++
+WANTLIB += ICE SM X11 Xext Xi Xinerama Xrandr Xtst c m pthread stdc++
 
 MASTER_SITES=		http://synergy.googlecode.com/files/
+
+BUILD_DEPENDS=		archivers/gtar
+
+# The synergy devs decided to release a fucked tarball.
+# Our tar complains, then errors out.
+# tar: Invalid header, starting valid header search.
+TAR=			gtar
 
 MODULES=		devel/cmake
 
 NO_REGRESS=		Yes
 
+pre-patch:
+	@cd ${WRKSRC} ; perl -pi -e 's/\r$$//' CMakeLists.txt
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/synergy[cs] ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/synergy[cs] ${PREFIX}/bin/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/synergy
 	${INSTALL_DATA} ${WRKSRC}/doc/synergy.conf.exampl* \
 		${PREFIX}/share/examples/synergy/

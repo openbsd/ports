@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_lib_ipc_CIpcServerProxy_cpp,v 1.1 2013/01/08 20:35:36 bcallah Exp $
+
+On loongson:
+CIpcServerProxy.cpp: In member function 'void CIpcServerProxy::send(const CIpcMessage&)':
+CIpcServerProxy.cpp:93: ISO C++ says that these are ambiguous, even though the worst conversion for the first is better than the worst conversion for the second:
+../synergy/CProtocolUtil.h:81: note: candidate 1: static void CProtocolUtil::writef(void*, const char*, void*)
+../synergy/CProtocolUtil.h:53: note: candidate 2: static void CProtocolUtil::writef(synergy::IStream*, const char*, ...)
+../synergy/CProtocolUtil.h:81: error: 'static void CProtocolUtil::writef(void*, const char*, void*)' is private
+CIpcServerProxy.cpp:93: error: within this context
+
+gcc bug fixed in 4.3.3
+
+--- src/lib/ipc/CIpcServerProxy.cpp.orig	Fri Jul 13 13:34:59 2012
++++ src/lib/ipc/CIpcServerProxy.cpp	Sun Jan  6 12:31:58 2013
+@@ -90,7 +90,11 @@ CIpcServerProxy::send(const CIpcMessage& message)
+ 	case kIpcCommand: {
+ 		const CIpcCommandMessage& cm = static_cast<const CIpcCommandMessage&>(message);
+ 		CString command = cm.command();
++#if (__mips64__)
++		CProtocolUtil::writef(static_cast<void*>(&m_stream), static_cast<const char*>(kIpcMsgCommand), &command);
++#else
+ 		CProtocolUtil::writef(&m_stream, kIpcMsgCommand, &command);
++#endif
+ 		break;
+ 	}
+ 
