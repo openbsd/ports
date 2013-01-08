@@ -1,0 +1,5 @@
+SvnDump is a python package containing classes for processing subversion
+dump files. SvnDumpTool is a commandline tool using the SvnDump classes.
+Features are: reading and writing of dump files, check, copy, diff,
+eolfix, export, join, log, merge and ...  Please check the README.txt or
+the output of "svndumptool.py help" for more information.
