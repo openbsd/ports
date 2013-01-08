@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2012/11/30 19:08:05 chrisz Exp $
+# $OpenBSD: Makefile,v 1.5 2013/01/08 21:50:17 chrisz Exp $
 
 COMMENT =	OCaml Batteries Included - OCaml foundation library
 CATEGORIES =	devel
 
-V =		1.5.0
-REVISION=	0
-DISTNAME =	batteries-${V}
+V =		2.0.0
+DISTNAME =	batteries-included-${V}
 PKGNAME =	ocaml-batteries-${V}
-
-# You need to update MASTER_SITES too, when changing the version number.
-MASTER_SITES =	https://forge.ocamlcore.org/frs/download.php/950/
+DISTFILES =	v${V}.tar.gz
+DIST_SUBDIR =	ocaml-batteries
+MASTER_SITES =	https://github.com/ocaml-batteries-team/batteries-included/archive/
 
 HOMEPAGE =	http://batteries.forge.ocamlcore.org/
 
@@ -21,16 +20,16 @@ PERMIT_PACKAGE_CDROM =		Yes
 PERMIT_DISTFILES_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 
-MODULES =	lang/ocaml
+MODULES =		lang/ocaml
 
-RUN_DEPENDS =	devel/ocaml-camomile
-BUILD_DEPENDS =	${RUN_DEPENDS} sysutils/findlib
-REGRESS_DEPENDS = devel/ounit
+RUN_DEPENDS =		devel/ocaml-camomile
+BUILD_DEPENDS =		${RUN_DEPENDS} sysutils/findlib
+REGRESS_DEPENDS = 	devel/ounit devel/ocaml-qtest
 
 USE_GMAKE =	Yes
 
-MAKE_ENV =	DOCROOT=${PREFIX}/share/doc/ocaml-batteries \
-		TERM=${TERM}
+MAKE_ENV =	DOCROOT=${PREFIX}/share/doc/ocaml-batteries
+
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mocaml_native}
 MAKE_ENV +=	BATTERIES_NATIVE=yes
@@ -38,16 +37,12 @@ MAKE_ENV +=	BATTERIES_NATIVE=yes
 MAKE_ENV +=	BATTERIES_NATIVE=no
 .endif
 
-FAKE_FLAGS =	DESTDIR=${WRKINST}${PREFIX}/lib/ocaml \
-		DOCROOT=${WRKINST}${PREFIX}/share/doc/ocaml-batteries
+FAKE_FLAGS =	DOCROOT=${WRKINST}${PREFIX}/share/doc/ocaml-batteries
 
 ALL_TARGET =		all doc
-REGRESS_TARGET =	test
 INSTALL_TARGET =	install install-doc
+REGRESS_TARGET =	test
 
-
-pre-fake:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/ocaml
 
 post-install:
 	${INSTALL_DATA} \

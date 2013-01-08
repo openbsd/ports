@@ -1,8 +1,0 @@
-$OpenBSD: patch-src_batteries_mllib,v 1.1 2012/08/18 22:04:48 avsm Exp $
---- src/batteries.mllib.orig	Tue Aug  7 19:23:26 2012
-+++ src/batteries.mllib	Tue Aug  7 19:24:05 2012
-@@ -93,3 +93,4 @@ Batteries_uni
- BatMutex
- BatRMutex
- Batteries
-+Extlibcompat
