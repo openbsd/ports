@@ -1,9 +1,34 @@
-$OpenBSD: patch-configure_ac,v 1.1 2011/08/29 09:54:51 espie Exp $
---- configure.ac.orig	Fri Aug 29 20:59:00 2008
-+++ configure.ac	Wed Aug 17 11:51:22 2011
+$OpenBSD: patch-configure_ac,v 1.2 2013/01/08 23:55:14 brad Exp $
+--- configure.ac.orig	Sun Mar 11 19:07:47 2012
++++ configure.ac	Wed Oct  3 03:11:03 2012
 @@ -1,4 +1,4 @@
 -AC_INIT(src/libdvdcss.c)
-+AC_INIT(libdvdcss, 1.2.10)
++AC_INIT(libdvdcss, 1.2.12)
  
  AC_PREREQ(2.50)
  AC_CONFIG_AUX_DIR(.auto)
+@@ -180,6 +180,24 @@ AC_CACHE_CHECK([if \$CC accepts -Wsign-compare],
+      AC_TRY_COMPILE([],,ac_cv_c_Wsign_compare=yes, ac_cv_c_Wsign_compare=no)])
+ if test "${ac_cv_c_Wsign_compare}" != "no"; then
+     CFLAGS_save="-Wsign-compare ${CFLAGS_save}"
++fi
++
++CFLAGS="${CFLAGS_save}"
++
++dnl
++dnl  Check if the compiler supports ELF visibility
++dnl
++CFLAGS_save="$CFLAGS"
++
++AC_CACHE_CHECK([if \$CC supports ELF visibility],
++    [ac_cv_c_visibility],
++    [CFLAGS="-fvisibility=hidden ${CFLAGS_save}"
++     AC_TRY_COMPILE([],
++                    [__attribute__((visibility("default"))) extern int visible],
++                    ac_cv_c_visibility=yes, ac_cv_c_visibility=no)])
++if test "${ac_cv_c_visibility}" != "no"; then
++    CFLAGS_save="-fvisibility=hidden ${CFLAGS_save}";
++    AC_DEFINE(HAVE_VISIBILITY, 1, Support ELF visibility.)
+ fi
+ 
+ CFLAGS="${CFLAGS_save}"
