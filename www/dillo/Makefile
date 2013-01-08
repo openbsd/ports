@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2013/01/05 22:42:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2013/01/08 00:23:14 bcallah Exp $
 
 COMMENT =		fast and light graphical web browser
 
@@ -7,6 +7,7 @@ CATEGORIES =		www
 
 MAINTAINER =		Brian Callahan <bcallah@devio.us>
 HOMEPAGE =		http://www.dillo.org/
+REVISION =		0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
