@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/01/08 14:35:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2013/01/09 17:42:43 ajacoutot Exp $
 
 COMMENT-main=		UW e-mail client
 COMMENT-c-client=	UW c-client mail access routines
@@ -28,6 +28,9 @@ PKGNAME-pilot=		pilot-${PILOT_V}
 EPOCH-c-client=		0
 EPOCH-imap=		0
 EPOCH-mailutil=		0
+
+REVISION-pilot=		6
+REVISION-pico=		0
 
 CATEGORIES=		mail
 CATEGORIES-main=	mail news
