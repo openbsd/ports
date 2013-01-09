@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.52 2012/10/24 22:51:26 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.53 2013/01/09 17:38:03 jeremy Exp $
 
 # ruby module
 
@@ -293,6 +293,9 @@ WANTLIB+=	c ${MODRUBY_WANTLIB}
 MODRUBY_WANTLIB_m?=	Yes
 .  if ${MODRUBY_WANTLIB_m:L:Myes}
 WANTLIB+=	m
+.  endif
+.  if ${MODRUBY_REV} == 1.9
+WANTLIB+=	pthread
 .  endif
 LIB_DEPENDS+=	${MODRUBY_LIB_DEPENDS}
 
