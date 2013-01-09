@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/01/08 21:50:17 chrisz Exp $
+# $OpenBSD: Makefile,v 1.6 2013/01/09 10:29:47 nigel Exp $
 
 COMMENT =	OCaml Batteries Included - OCaml foundation library
 CATEGORIES =	devel
@@ -24,7 +24,9 @@ MODULES =		lang/ocaml
 
 RUN_DEPENDS =		devel/ocaml-camomile
 BUILD_DEPENDS =		${RUN_DEPENDS} sysutils/findlib
-REGRESS_DEPENDS = 	devel/ounit devel/ocaml-qtest
+# ocaml-test not available yet
+#REGRESS_DEPENDS = 	devel/ounit devel/ocaml-qtest
+REGRESS_DEPENDS = 	devel/ounit
 
 USE_GMAKE =	Yes
 
