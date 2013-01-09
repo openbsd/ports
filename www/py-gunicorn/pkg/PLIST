@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/27 09:01:31 mpi Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/01/09 11:51:33 benoit Exp $
 bin/gunicorn
 bin/gunicorn_django
 bin/gunicorn_paster
@@ -27,6 +27,8 @@ lib/python${MODPY_VERSION}/site-packages/gunicorn/app/wsgiapp.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/app/wsgiapp.pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/arbiter.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/arbiter.pyc
+lib/python${MODPY_VERSION}/site-packages/gunicorn/argparse_compat.py
+lib/python${MODPY_VERSION}/site-packages/gunicorn/argparse_compat.pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/config.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/config.pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/debug.py
@@ -52,8 +54,6 @@ lib/python${MODPY_VERSION}/site-packages/gunicorn/http/unreader.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/http/unreader.pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/http/wsgi.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/http/wsgi.pyc
-lib/python${MODPY_VERSION}/site-packages/gunicorn/logging_config.py
-lib/python${MODPY_VERSION}/site-packages/gunicorn/logging_config.pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/management/
 lib/python${MODPY_VERSION}/site-packages/gunicorn/management/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/management/__init__.pyc
@@ -64,6 +64,8 @@ lib/python${MODPY_VERSION}/site-packages/gunicorn/management/commands/run_gunico
 lib/python${MODPY_VERSION}/site-packages/gunicorn/management/commands/run_gunicorn.pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/pidfile.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/pidfile.pyc
+lib/python${MODPY_VERSION}/site-packages/gunicorn/six.py
+lib/python${MODPY_VERSION}/site-packages/gunicorn/six.pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/sock.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/sock.pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/util.py
