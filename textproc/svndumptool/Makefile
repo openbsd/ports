@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/01/08 23:27:00 stsp Exp $ 
+# $OpenBSD: Makefile,v 1.2 2013/01/09 12:40:38 sthen Exp $ 
+
 COMMENT =		processing subversion dump files
-V = 			0.6.1
-DISTNAME =		svndumptool-${V}
+MODPY_EGG_VERSION =	0.6.1
+DISTNAME =		svndumptool-${MODPY_EGG_VERSION}
 CATEGORIES =		textproc
 HOMEPAGE =		http://svn.borg.ch/svndumptool/
 
@@ -11,7 +12,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =		http://svn.borg.ch/svndumptool/${V}/
+MASTER_SITES =		http://svn.borg.ch/svndumptool/${MODPY_EGG_VERSION}/
 MODULES =		lang/python
 
 post-install:
