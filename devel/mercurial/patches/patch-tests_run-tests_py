@@ -1,7 +1,7 @@
-$OpenBSD: patch-tests_run-tests_py,v 1.4 2012/03/20 19:55:38 rpointel Exp $
---- tests/run-tests.py.orig	Thu Mar  1 23:27:57 2012
-+++ tests/run-tests.py	Mon Mar 19 07:32:19 2012
-@@ -92,7 +92,8 @@ IMPL_PATH = 'PYTHONPATH'
+$OpenBSD: patch-tests_run-tests_py,v 1.5 2013/01/09 11:54:38 rpointel Exp $
+--- tests/run-tests.py.orig	Wed Jan  2 07:07:38 2013
++++ tests/run-tests.py	Tue Jan  8 11:09:30 2013
+@@ -93,7 +93,8 @@ IMPL_PATH = 'PYTHONPATH'
  if 'java' in sys.platform:
      IMPL_PATH = 'JYTHONPATH'
  
