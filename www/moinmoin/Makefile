@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2012/10/24 22:09:30 fgsch Exp $
+# $OpenBSD: Makefile,v 1.27 2013/01/09 11:56:34 rpointel Exp $
 
 COMMENT =	wiki engine written in python
 
-MODPY_EGG_VERSION = 1.9.5
+MODPY_EGG_VERSION = 1.9.6
 DISTNAME =	moin-${MODPY_EGG_VERSION}
 PKGNAME =	moin${DISTNAME}
 
