@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2012/11/03 03:25:32 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/01/09 12:22:30 benoit Exp $
 
 COMMENT =	code coverage measurement for Python
 
-MODPY_EGG_VERSION = 3.5
+MODPY_EGG_VERSION = 3.5.3
 DISTNAME =	coverage-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =	${MODPY_WANTLIB}
+WANTLIB =	${MODPY_WANTLIB} pthread
 
 MASTER_SITES =	${MASTER_SITE_PYPI:=c/coverage/}
 
