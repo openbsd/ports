@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2012/11/07 19:04:43 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.16 2013/01/09 17:41:16 jeremy Exp $
 ${GEM_BIN}/sequel${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -81,6 +81,8 @@ ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.39.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.4.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.40.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.41.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.42.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.43.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.5.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.6.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.7.0.txt
@@ -204,9 +206,12 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/columns_introspection.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/connection_validator.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/constraint_validations.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/core_extensions.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/core_refinements.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/date_arithmetic.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/eval_inspect.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/inflector.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/looser_typecasting.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/meta_def.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/migration.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/named_timezones.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/null_dataset.rb
@@ -236,11 +241,11 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/sql_expr.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/string_date_time.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/thread_local_timezones.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/to_dot.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/sequel/metaprogramming.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/model/
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/model.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/model/associations.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/model/base.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/model/dataset_module.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/model/default_inflections.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/model/errors.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/model/exceptions.rb
@@ -343,7 +348,9 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/composition_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/connection_validator_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/constraint_validations_plugin_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/constraint_validations_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/extensions/core_refinements_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/dataset_associations_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/extensions/date_arithmetic_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/defaults_setter_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/dirty_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/eager_each_spec.rb
@@ -360,6 +367,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/list_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/looser_typecasting_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/many_through_many_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/many_to_one_pk_lookup_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/extensions/meta_def_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/migration_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/named_timezones_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/nested_attributes_spec.rb
