@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/06/07 15:35:58 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/01/09 17:39:57 jeremy Exp $
 ${GEM_BIN}/nokogiri${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -237,6 +237,10 @@ ${GEM_LIB}/gems/${DISTNAME}/test/files/snuggles.xml
 ${GEM_LIB}/gems/${DISTNAME}/test/files/staff.dtd
 ${GEM_LIB}/gems/${DISTNAME}/test/files/staff.xml
 ${GEM_LIB}/gems/${DISTNAME}/test/files/staff.xslt
+${GEM_LIB}/gems/${DISTNAME}/test/files/test_document_url/
+${GEM_LIB}/gems/${DISTNAME}/test/files/test_document_url/bar.xml
+${GEM_LIB}/gems/${DISTNAME}/test/files/test_document_url/document.dtd
+${GEM_LIB}/gems/${DISTNAME}/test/files/test_document_url/document.xml
 ${GEM_LIB}/gems/${DISTNAME}/test/files/tlm.html
 ${GEM_LIB}/gems/${DISTNAME}/test/files/to_be_xincluded.xml
 ${GEM_LIB}/gems/${DISTNAME}/test/files/valid_bar.xml
