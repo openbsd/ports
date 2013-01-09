@@ -1,7 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/11/11 09:18:57 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/01/09 16:09:34 benoit Exp $
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/
-lib/python${MODPY_VERSION}/site-packages/pyftpdlib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib/contrib/
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib/contrib/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib/contrib/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib/contrib/authorizers.py
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib/contrib/authorizers.pyc
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib/contrib/filesystems.py
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib/contrib/filesystems.pyc
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib/contrib/handlers.py
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib/contrib/handlers.pyc
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/ftpserver.py
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/ftpserver.pyc
