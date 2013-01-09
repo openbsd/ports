@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.51 2012/11/30 21:16:30 pascal Exp $
+@comment $OpenBSD: PLIST-main,v 1.52 2013/01/09 09:46:54 sthen Exp $
 @pkgpath devel/git
 @bin bin/git
 bin/git-cvsserver
@@ -358,8 +358,6 @@ libexec/git/mergetools/xxdiff
 @man man/man7/gittutorial.7
 @man man/man7/gitworkflows.7
 share/doc/pkg-readmes/${FULLPKGNAME}
-share/emacs/
-share/emacs/site-lisp/
 share/emacs/site-lisp/git-blame.el
 share/emacs/site-lisp/git.el
 share/git-core/
@@ -386,31 +384,16 @@ share/gitweb/static/git-favicon.png
 share/gitweb/static/git-logo.png
 share/gitweb/static/gitweb.css
 share/gitweb/static/gitweb.js
-share/locale/
-share/locale/da/
-share/locale/da/LC_MESSAGES/
 share/locale/da/LC_MESSAGES/git.mo
-share/locale/de/
-share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/git.mo
 share/locale/is/
 share/locale/is/LC_MESSAGES/
 share/locale/is/LC_MESSAGES/git.mo
-share/locale/it/
-share/locale/it/LC_MESSAGES/
 share/locale/it/LC_MESSAGES/git.mo
-share/locale/nl/
-share/locale/nl/LC_MESSAGES/
 share/locale/nl/LC_MESSAGES/git.mo
 share/locale/pt_PT/
 share/locale/pt_PT/LC_MESSAGES/
 share/locale/pt_PT/LC_MESSAGES/git.mo
-share/locale/sv/
-share/locale/sv/LC_MESSAGES/
 share/locale/sv/LC_MESSAGES/git.mo
-share/locale/vi/
-share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/git.mo
-share/locale/zh_CN/
-share/locale/zh_CN/LC_MESSAGES/
 share/locale/zh_CN/LC_MESSAGES/git.mo

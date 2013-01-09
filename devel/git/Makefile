@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.87 2013/01/01 18:35:42 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.88 2013/01/09 09:46:54 sthen Exp $
 
 COMMENT-main =	GIT - Tree History Storage Tool
 COMMENT-svn =	GIT - subversion interoperability tools
 COMMENT-x11 =	GIT - graphical tools
 
 V =		1.8.0.3
+REVISION =	0
 DISTNAME =	git-${V}
 PKGNAME-main =	${DISTNAME}
 PKGNAME-svn =	git-svn-${V}
@@ -56,11 +57,12 @@ LIB_DEPENDS-x11 =
 WANTLIB-x11 =
 PKG_ARCH-x11 =		*
 
-MAKE_ENV =		prefix=${PREFIX} CC="${CC}" CFLAGS="${CFLAGS}" V=1 \
-			sysconfdir=${SYSCONFDIR} \
+MAKE_FLAGS =		prefix=${PREFIX} CC="${CC}" CFLAGS="${CFLAGS}" V=1 \
+			sysconfdir=${SYSCONFDIR} mandir=man \
+			gitexecdir=libexec/git \
 			TCLTK_PATH=${MODTK_BIN} \
-			TCL_PATH=${MODTCL_BIN} \
-			REGRESS_SHELL=${LOCALBASE}/bin/bash
+			TCL_PATH=${MODTCL_BIN}
+MAKE_ENV =		REGRESS_SHELL=${LOCALBASE}/bin/bash
 
 USE_GMAKE =		Yes
 USE_GROFF =		Yes
@@ -73,7 +75,7 @@ REGRESS_DEPENDS =	archivers/zip \
 GITWEB =		README INSTALL git-favicon.png git-logo.png \
 			gitweb.cgi gitweb.css
 
-# Skipt tests I have to fix.
+# Skip tests I have to fix.
 SKIP_TESTS =		t9502-gitweb-standalone-parse-output.sh
 
 post-extract:

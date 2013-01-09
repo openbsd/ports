@@ -1,9 +1,9 @@
-$OpenBSD: patch-gitweb_gitweb_perl,v 1.20 2013/01/01 18:35:42 dcoppa Exp $
+$OpenBSD: patch-gitweb_gitweb_perl,v 1.21 2013/01/09 09:46:54 sthen Exp $
 
 This prevents the following error: '-T and -B not implemented on filehandles'
 
---- gitweb/gitweb.perl.orig	Fri Dec 28 01:32:43 2012
-+++ gitweb/gitweb.perl	Sun Dec 30 13:43:13 2012
+--- gitweb/gitweb.perl.orig	Fri Dec 28 00:32:43 2012
++++ gitweb/gitweb.perl	Wed Jan  9 01:47:02 2013
 @@ -6892,7 +6892,7 @@ sub git_blob_plain {
  		$expires = "+1d";
  	}
