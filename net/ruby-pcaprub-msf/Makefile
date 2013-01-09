@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2012/09/23 16:57:35 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2013/01/09 17:38:52 jeremy Exp $
 
 COMMENT =		Ruby interface to LBL pcap library (Metasploit fork)
 
 DISTNAME =		pcaprub-msf-r7343
 PKGNAME =		pcaprub-msf-7343
-REVISION =		4
+REVISION =		5
 CATEGORIES =		net
 EXTRACT_SUFX =		.tgz
 

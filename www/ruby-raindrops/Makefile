@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2012/10/13 10:48:40 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2013/01/09 17:38:52 jeremy Exp $
 
 COMMENT =	real-time stats toolkit for Rack HTTP servers
 
 DISTNAME =	raindrops-0.10.0
+REVISION =	0
 CATEGORIES =	www
 
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>

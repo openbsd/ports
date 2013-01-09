@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/10/26 18:06:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/01/09 17:38:52 jeremy Exp $
 
 COMMENT=	Ruby bindings for libvirt
 
 DISTNAME=	ruby-libvirt-0.4.0
 PKGNAME=	${DISTNAME:S/ruby-//}
+REVISION =	0
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://libvirt.org/ruby/

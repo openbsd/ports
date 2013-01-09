@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2012/12/29 20:52:13 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2013/01/09 17:38:52 jeremy Exp $
 
 COMMENT =	fast Date/DateTime classes for ruby
 
 BROKEN-sparc64 = Assembler messages: Error: Illegal operands on date_ext.c
 DISTNAME =	home_run-1.0.6
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel
 
 HOMEPAGE=	http://github.com/jeremyevans/home_run
