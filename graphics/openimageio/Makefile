@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/12/21 17:59:00 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2013/01/09 23:24:08 sthen Exp $
 
 SHARED_ONLY =		Yes
 
@@ -10,6 +10,7 @@ V =			${MAJ}.4
 REV =			513d0dd
 DISTNAME =		OpenImageIO-oiio-Release-${V}-0-g${REV}
 PKGNAME =		openimageio-${V}
+REVISION =		0
 
 SHARED_LIBS +=		OpenImageIO	0.0 # 1.0
 
