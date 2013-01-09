@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2012/01/08 10:48:55 benoit Exp $
+# $OpenBSD: Makefile,v 1.10 2013/01/09 23:00:51 sthen Exp $
 
 COMMENT =	elliptic curve method (ECM) factorization library
 
 DISTNAME =	ecm-6.4
+REVISION =	0
 SHARED_LIBS =	ecm	0.0
 CATEGORIES =	math
 

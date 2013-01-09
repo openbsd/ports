@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/06/11 04:24:01 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2013/01/09 23:00:51 sthen Exp $
 
 COMMENT =		various ROM (and other) development tools
 
 DISTNAME =		cmdpack-1.03-src
 PKGNAME =		${DISTNAME:S/-src//}
+REVISION =		0
 
 CATEGORIES =		misc
 
