@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2012/03/29 13:38:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2013/01/09 23:06:24 sthen Exp $
 
 COMMENT=	astronomical julian date calculator
 
 DISTNAME=	jday-2.4
-REVISION=	0
+REVISION=	1
 SHARED_LIBS +=  jday                 0.0      # .2.4
 CATEGORIES=	astro
 HOMEPAGE=	http://jday.sourceforge.net/
