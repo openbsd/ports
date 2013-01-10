@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.64 2013/01/10 12:04:23 espie Exp $
+# $OpenBSD: Port.pm,v 1.65 2013/01/10 12:05:55 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -686,12 +686,27 @@ sub need_checksum
 	return $need;
 }
 
+my $logsize = {};
+my $times = {};
+
+sub add_build_info
+{
+	my ($class, $pkgpath, $host, $time, $sz) = @_;
+	$logsize->{$pkgpath} = $sz;
+	$times->{$pkgpath} = $time;
+}
+
 sub add_normal_tasks
 {
 	my ($self, $dontclean, $hostprop) = @_;
 
 	my @todo;
 	my $builder = $self->{builder};
+	my $small = 0;
+#	if (defined $times->{$self->{v}} && $times->{$self->{v}} < 120) {
+#		$small = 1;
+#	}
+
 	if ($builder->{clean}) {
 		$self->insert_tasks(DPB::Task::Port::BaseClean->new('clean'));
 	}
@@ -710,11 +725,18 @@ sub add_normal_tasks
 	} else {
 		push(@todo, qw(fetch));
 	}
-	push(@todo, qw(patch configure build));
+	if (!$small) {
+		push(@todo, qw(patch configure));
+	}
+	push(@todo, qw(build));
+
 	if ($builder->{size}) {
 		push @todo, 'show-size';
 	}
-	push(@todo, qw(fake package));
+	if (!$small) {
+		push(@todo, qw(fake));
+	}
+	push(@todo, qw(package));
 	if ($builder->{size}) {
 		push @todo, 'show-fake-size';
 	}
@@ -780,14 +802,6 @@ sub timings
 	return join('/', "max_stuck=".$self->{watched}{max}, map {sprintf("%s=%.2f", $_->name, $_->elapsed)} @{$self->{done}});
 }
 
-my $logsize = {};
-
-sub add_build_info
-{
-	my ($class, $pkgpath, $host, $time, $sz) = @_;
-	$logsize->{$pkgpath} = $sz;
-}
-
 sub equates
 {
 	my ($class, $h) = @_;
@@ -795,6 +809,7 @@ sub equates
 		next unless defined $logsize->{$v};
 		for my $w (values %$h) {
 			$logsize->{$w} //= $logsize->{$v};
+			$times->{$w} //= $logsize->{$v};
 		}
 		return;
 	}
