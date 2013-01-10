@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/09/28 08:29:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/01/10 13:53:56 ajacoutot Exp $
 @bin bin/gcm-calibrate
 @bin bin/gcm-import
 @bin bin/gcm-inspect
@@ -84,6 +84,12 @@ share/help/es/gnome-color-manager/color-import-linux.page
 share/help/es/gnome-color-manager/color-import-osx.page
 share/help/es/gnome-color-manager/color-import-windows.page
 share/help/es/gnome-color-manager/legal.xml
+share/help/fr/
+share/help/fr/gnome-color-manager/
+share/help/fr/gnome-color-manager/color-import-linux.page
+share/help/fr/gnome-color-manager/color-import-osx.page
+share/help/fr/gnome-color-manager/color-import-windows.page
+share/help/fr/gnome-color-manager/legal.xml
 share/icons/hicolor/16x16/apps/gnome-color-manager.png
 share/icons/hicolor/16x16/mimetypes/application-vnd.iccprofile.png
 share/icons/hicolor/22x22/apps/gnome-color-manager.png
@@ -103,6 +109,7 @@ share/icons/hicolor/scalable/mimetypes/application-vnd.iccprofile.svg
 share/locale/ar/LC_MESSAGES/gnome-color-manager.mo
 share/locale/as/LC_MESSAGES/gnome-color-manager.mo
 share/locale/bg/LC_MESSAGES/gnome-color-manager.mo
+share/locale/bn_IN/LC_MESSAGES/gnome-color-manager.mo
 share/locale/ca/LC_MESSAGES/gnome-color-manager.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-color-manager.mo
 share/locale/cs/LC_MESSAGES/gnome-color-manager.mo
@@ -132,17 +139,20 @@ share/locale/lv/LC_MESSAGES/gnome-color-manager.mo
 share/locale/ml/LC_MESSAGES/gnome-color-manager.mo
 share/locale/mr/LC_MESSAGES/gnome-color-manager.mo
 share/locale/nb/LC_MESSAGES/gnome-color-manager.mo
+share/locale/or/LC_MESSAGES/gnome-color-manager.mo
 share/locale/pa/LC_MESSAGES/gnome-color-manager.mo
 share/locale/pl/LC_MESSAGES/gnome-color-manager.mo
 share/locale/pt/LC_MESSAGES/gnome-color-manager.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-color-manager.mo
 share/locale/ro/LC_MESSAGES/gnome-color-manager.mo
 share/locale/ru/LC_MESSAGES/gnome-color-manager.mo
+share/locale/sk/LC_MESSAGES/gnome-color-manager.mo
 share/locale/sl/LC_MESSAGES/gnome-color-manager.mo
 share/locale/sr/LC_MESSAGES/gnome-color-manager.mo
 share/locale/sr@latin/LC_MESSAGES/gnome-color-manager.mo
 share/locale/sv/LC_MESSAGES/gnome-color-manager.mo
 share/locale/ta/LC_MESSAGES/gnome-color-manager.mo
+share/locale/te/LC_MESSAGES/gnome-color-manager.mo
 share/locale/th/LC_MESSAGES/gnome-color-manager.mo
 share/locale/ug/LC_MESSAGES/gnome-color-manager.mo
 share/locale/uk/LC_MESSAGES/gnome-color-manager.mo
