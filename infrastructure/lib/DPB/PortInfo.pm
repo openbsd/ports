@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortInfo.pm,v 1.21 2012/10/11 08:05:03 espie Exp $
+# $OpenBSD: PortInfo.pm,v 1.22 2013/01/10 10:26:34 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -333,6 +333,13 @@ sub fullpkgname
 
 	return (defined $self->{FULLPKGNAME}) ?
 	    $self->{FULLPKGNAME}->string : undef;
+}
+
+sub has_property
+{
+	my ($self, $name) = @_;
+	return defined $self->{DPB_PROPERTIES} &&
+	    $self->{DPB_PROPERTIES}{$name};
 }
 
 1;

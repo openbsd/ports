@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.27 2013/01/06 11:59:40 espie Exp $
+# $OpenBSD: Core.pm,v 1.28 2013/01/10 10:26:34 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -556,6 +556,16 @@ sub repository
 	return $running;
 }
 
+sub same_host_jobs
+{
+	my $self = shift;
+	my @jobs = ();
+	for my $core (values %{$self->repository}) {
+		next if $core->hostname ne $self->hostname;
+		push(@jobs, $core->job);
+	}
+	return @jobs;
+}
 
 sub one_core
 {
