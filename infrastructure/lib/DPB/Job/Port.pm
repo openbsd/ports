@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.63 2013/01/10 12:00:38 espie Exp $
+# $OpenBSD: Port.pm,v 1.64 2013/01/10 12:04:23 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -290,9 +290,6 @@ sub finalize
 	return 1;
 }
 
-package DPB::Task::Port::Prepare;
-our @ISA = qw(DPB::Task::Port::Serialized);
-
 package DPB::Task::Port::PrepareResults;
 our @ISA = qw(DPB::Task::Port::Serialized);
 
@@ -320,6 +317,7 @@ sub finalize
 	if (open my $fh, '<', $file) {
 		my @r;
 		while (<$fh>) {
+			print {$job->{logfh}} $_;
 			# zap headers
 			next if m/^\>\>\>\s/ || m/^\=\=\=\>\s/;
 			chomp;
@@ -578,7 +576,6 @@ my $repo = {
 	default => 'DPB::Task::Port',
 	checksum => 'DPB::Task::Port::Checksum',
 	clean => 'DPB::Task::Port::Clean',
-	prepare => 'DPB::Task::Port::Prepare',
 	'show-prepare-results' => 'DPB::Task::Port::PrepareResults',
 	fetch => 'DPB::Task::Port::Fetch',
 	depends => 'DPB::Task::Port::Depends',
@@ -699,7 +696,7 @@ sub add_normal_tasks
 		$self->insert_tasks(DPB::Task::Port::BaseClean->new('clean'));
 	}
 	if ($self->has_depends) {
-		push(@todo, qw(depends prepare show-prepare-results));
+		push(@todo, qw(depends show-prepare-results));
 	}
 	if ($hostprop->{junk}) {
 		if ($hostprop->{junk_count}++ >= $hostprop->{junk}) {
