@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.69 2013/01/05 13:39:36 espie Exp $
+# $OpenBSD: Engine.pm,v 1.70 2013/01/10 10:28:29 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -270,6 +270,7 @@ sub mark_as_done
 	my ($self, $v) = @_;
 	$self->{engine}{affinity}->unmark($v);
 	delete $self->{engine}{tobuild}{$v};
+	delete $v->{info}{DIST};
 #	$self->{heuristics}->done($v);
 	if (defined $self->{later}{$v}) {
 		$self->log('V', $v);
