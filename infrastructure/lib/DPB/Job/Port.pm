@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.61 2013/01/10 10:35:36 espie Exp $
+# $OpenBSD: Port.pm,v 1.62 2013/01/10 11:56:53 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -325,8 +325,7 @@ sub finalize
 			chomp;
 			push(@r, $_);
 		}
-		if (defined $v->{info}{DPB_PROPERTIES} && 
-		    defined $v->{info}{DPB_PROPERTIES}{nojunk}) {
+		if ($v->{info}->has_property('nojunk')) {
 			print {$job->{lock}} "nojunk\n";
 			$job->{nojunk} = 1;
 		}
@@ -356,15 +355,14 @@ sub add_dontjunk
 }
 sub add_live_depends
 {
-	my ($self, $h, $host) = @_;
-	for my $core (values %{DPB::Core->repository}) {
-		next if $core->hostname ne $host;
-		next unless defined $core->job->{live_depends};
-		for my $d (@{$core->job->{live_depends}}) {
-			$h->{$d} = 1;
-		}
-		if ($core->job->{nojunk}) {
+	my ($self, $h, $core) = @_;
+	for my $job ($core->same_host_jobs) {
+		if ($job->{nojunk}) {
 			return 0;
+		}
+		next unless defined $job->{live_depends};
+		for my $d (@{$job->{live_depends}}) {
+			$h->{$d} = 1;
 		}
 	}
 	return 1;
@@ -385,7 +383,7 @@ sub run
 
 	my $h = $job->{builder}->locker->find_dependencies(
 	    $core->hostname);
-	if (defined $h && $self->add_live_depends($h, $core->hostname)) {
+	if (defined $h && $self->add_live_depends($h, $core)) {
 		$self->add_dontjunk($job, $h);
 		my @cmd = ('/usr/sbin/pkg_delete', '-aIX', sort keys %$h);
 		print join(' ', @cmd, "\n");
@@ -631,7 +629,7 @@ sub new
 			}
 		}
 	}
-	if ($prop->{parallel} && $v->{info}{DPB_PROPERTIES}{parallel}) {
+	if ($prop->{parallel} && $v->{info}->has_property('parallel')) {
 		$job->{parallel} = $prop->{parallel};
 	}
 
@@ -657,9 +655,8 @@ sub has_depends
 	}
 	# recurse for extra stuff
 	if (exists $v->{info}{BEXTRA}) {
-		open my $log, '>>', $self->{log};
 		for my $two (values %{$v->{info}{BEXTRA}}) {
-			$two->quick_dump($log);
+			$two->quick_dump($self->{logfh});
 			if (exists $two->{info}{BDEPENDS}) {
 				for my $d (values %{$two->{info}{BDEPENDS}}) {
 					$dep->{$d->fullpkgname} = 1;
