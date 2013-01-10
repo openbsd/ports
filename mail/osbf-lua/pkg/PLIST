@@ -1,17 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/05/15 15:16:05 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/01/10 07:10:15 jasper Exp $
 lib/lua/${MODLUA_VERSION}/osbf.so
-share/lua/${MODLUA_VERSION}/cache_report.lua
-share/lua/${MODLUA_VERSION}/classify.sample
-share/lua/${MODLUA_VERSION}/create_databases.lua
-share/lua/${MODLUA_VERSION}/database_status.lua
-share/lua/${MODLUA_VERSION}/getopt.lua
-share/lua/${MODLUA_VERSION}/promailrc.sample
-share/lua/${MODLUA_VERSION}/random.lua
-share/lua/${MODLUA_VERSION}/roc.lua
-share/lua/${MODLUA_VERSION}/spamfilter.help
-share/lua/${MODLUA_VERSION}/spamfilter.lua
-share/lua/${MODLUA_VERSION}/spamfilter_commands.lua
-share/lua/${MODLUA_VERSION}/spamfilter_config.lua
-share/lua/${MODLUA_VERSION}/toer.lua
-share/lua/${MODLUA_VERSION}/train.sample
 share/osbf-lua/
+share/osbf-lua/cache_report.lua
+share/osbf-lua/classify.sample
+share/osbf-lua/create_databases.lua
+share/osbf-lua/database_status.lua
+share/osbf-lua/getopt.lua
+share/osbf-lua/promailrc.sample
+share/osbf-lua/random.lua
+share/osbf-lua/roc.lua
+share/osbf-lua/spamfilter.help
+share/osbf-lua/spamfilter.lua
+share/osbf-lua/spamfilter_commands.lua
+share/osbf-lua/spamfilter_config.lua
+share/osbf-lua/toer.lua
+share/osbf-lua/train.sample
