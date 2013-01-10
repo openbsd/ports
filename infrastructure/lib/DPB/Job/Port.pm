@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.66 2013/01/10 12:27:21 espie Exp $
+# $OpenBSD: Port.pm,v 1.67 2013/01/10 21:41:55 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -286,6 +286,10 @@ sub finalize
 {
 	my ($self, $core) = @_;
 	$core->{status} = 0;
+	# keep log position to be able to seek back.
+	my $job = $core->job;
+	$job->{pos} = tell($job->{logfh});
+
 	$self->SUPER::finalize($core);
 	return 1;
 }
@@ -293,31 +297,20 @@ sub finalize
 package DPB::Task::Port::PrepareResults;
 our @ISA = qw(DPB::Task::Port::Serialized);
 
-sub result_filename
-{
-	my ($self, $job) = @_;
-	return $job->{builder}->logger->log_pkgpath($job->{v}).".tmp";
-}
-
-sub handle_output
-{
-	my ($self, $job) = @_;
-	print {$job->{logfh}} ">>> Running $self->{phase} in $job->{path} at ", 
-	    time(), "\n";
-	$self->redirect($self->result_filename($job));
-}
-
 sub finalize
 {
 	my ($self, $core) = @_;
 
 	my $job = $core->{job};
 	my $v = $job->{v};
-	my $file = $self->result_filename($job);
-	if (open my $fh, '<', $file) {
+	# reopen log at right location
+	my $fh;
+	if (open($fh, '<', $job->{log}) && seek($fh, $job->{pos}, 0)) {
 		my @r;
 		while (<$fh>) {
-			print {$job->{logfh}} $_;
+			last if m/^\>\>\>\s+Running\s+show-prepare-results/;
+		}
+		while (<$fh>) {
 			# zap headers
 			next if m/^\>\>\>\s/ || m/^\=\=\=\>\s/;
 			chomp;
@@ -329,7 +322,6 @@ sub finalize
 		}
 		print {$job->{lock}} "needed=", join(' ', sort @r), "\n";
 		close $fh;
-		unlink($file);
 		$job->{live_depends} = \@r;
 	} else {
 		$core->{status} = 1;
