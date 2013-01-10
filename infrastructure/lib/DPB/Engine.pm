@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.70 2013/01/10 10:28:29 espie Exp $
+# $OpenBSD: Engine.pm,v 1.71 2013/01/10 10:30:13 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -139,6 +139,10 @@ sub start
 			$self->log('^', $v);
 			next;
 		}
+		if ($self->check_for_memory_hogs($v, $core)) {
+			push(@mismatches, $v);
+			next;
+		}
 		# keep affinity mismatches for later
 		if (defined $v->{affinity} && !$core->matches($v->{affinity})) {
 			$self->log('A', $v, 
@@ -222,6 +226,11 @@ sub dump
 {
 	my ($self, $k, $fh) = @_;
 #	$self->{queue}->dump($k, $fh);
+}
+
+sub check_for_memory_hogs
+{
+	return 0;
 }
 
 package DPB::SubEngine::Build;
@@ -341,6 +350,19 @@ sub end_build
 	my ($self, $v) = @_;
 	$self->{engine}{affinity}->finished($v);
 	$self->{engine}{heuristics}->finish_special($v);
+}
+
+sub check_for_memory_hogs
+{
+	my ($self, $v, $core) = @_;
+	if ($v->{info}->has_property('memoryhog')) {
+		for my $job ($core->same_host_jobs) {
+			if ($job->{v}{info}->has_property('memoryhog')) {
+				return 1;
+			}
+		}
+	}
+	return 0;
 }
 
 # for fetch-only, we do the same as Build, except we're never happy
