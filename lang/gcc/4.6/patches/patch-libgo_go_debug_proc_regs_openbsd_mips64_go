@@ -1,0 +1,9 @@
+$OpenBSD: patch-libgo_go_debug_proc_regs_openbsd_mips64_go,v 1.1 2013/01/10 15:00:55 pascal Exp $
+--- libgo/go/debug/proc/regs_openbsd_mips64.go.orig	Sat Jan  5 18:01:28 2013
++++ libgo/go/debug/proc/regs_openbsd_mips64.go	Sat Jan  5 18:01:21 2013
+@@ -0,0 +1,5 @@
++// Copyright 2009 The Go Authors.  All rights reserved.
++// Use of this source code is governed by a BSD-style
++// license that can be found in the LICENSE file.
++
++package proc
