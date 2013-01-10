@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Heuristics.pm,v 1.15 2013/01/10 10:25:25 espie Exp $
+# $OpenBSD: Heuristics.pm,v 1.16 2013/01/10 22:42:21 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -172,12 +172,11 @@ sub measure
 sub compare
 {
 	my ($self, $a, $b) = @_;
-	my $r = $self->measure($a) <=> $self->measure($b);
-	return $r if $r != 0;
 	# XXX if we don't know, we prefer paths "later in the game"
 	# so if you abort dpb and restart it, it will start doing
 	# things earlier.
-	return $a->pkgpath cmp $b->pkgpath;
+	return $self->measure($a) <=> $self->measure($b) || 
+	    $a->pkgpath cmp $b->pkgpath;
 }
 
 my $sf_per_host = {};
