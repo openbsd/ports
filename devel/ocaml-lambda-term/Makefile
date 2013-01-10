@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2012/12/04 06:56:39 chrisz Exp $
+# $OpenBSD: Makefile,v 1.7 2013/01/10 18:55:30 chrisz Exp $
 
 COMMENT =	library for manipulating the terminal
 CATEGORIES =	devel
 
 # also adapt MASTER_SITES when changing the version!
 DISTNAME =	lambda-term-1.3
+REVISION =	0
 PKGNAME =	ocaml-${DISTNAME}
 MASTER_SITES =	http://forge.ocamlcore.org/frs/download.php/1034/
 
@@ -17,15 +18,19 @@ PERMIT_PACKAGE_CDROM =		Yes
 PERMIT_DISTFILES_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 
-WANTLIB =	c ev m pthread
+WANTLIB =	c ev m pthread charset
 
-MODULES =	lang/ocaml
+MODULES =	lang/ocaml converters/libiconv
 
 BUILD_DEPENDS =	devel/ocaml-lwt devel/ocaml-zed
 RUN_DEPENDS =	devel/ocaml-lwt devel/ocaml-zed
 LIB_DEPENDS =	devel/libev
 
 CONFIGURE_STYLE =	oasis
+
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/{_oasis,myocamlbuild.ml,setup.ml}
 
 post-install:
 	${INSTALL_DATA} \
