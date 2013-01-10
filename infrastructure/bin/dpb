@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.74 2013/01/07 10:57:31 espie Exp $
+# $OpenBSD: dpb,v 1.75 2013/01/10 12:27:21 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -265,6 +265,10 @@ sub start_cores
 		$override_prop->{stuck} = 
 		    $state->{subst}->value('STUCK_TIMEOUT');
 	}
+	if ($state->define_present('SMALL_TIME')) {
+		$override_prop->{small} = 
+		    $state->{subst}->value('SMALL_TIME');
+	}
 	if ($state->define_present('CONNECTION_TIMEOUT')) {
 		$override_prop->{timeout} = 
 		    $state->{subst}->value('CONNECTION_TIMEOUT');
@@ -284,6 +288,7 @@ sub start_cores
 		junk => 100, 
 		parallel => '/2',
 		wait_timeout => 600,
+		small => 120,
 	};
 
 	if ($state->{config}) {

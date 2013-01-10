@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.65 2013/01/10 12:05:55 espie Exp $
+# $OpenBSD: Port.pm,v 1.66 2013/01/10 12:27:21 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -703,9 +703,10 @@ sub add_normal_tasks
 	my @todo;
 	my $builder = $self->{builder};
 	my $small = 0;
-#	if (defined $times->{$self->{v}} && $times->{$self->{v}} < 120) {
-#		$small = 1;
-#	}
+	if (defined $times->{$self->{v}} && 
+	    $times->{$self->{v}} < ($hostprop->{small} // 120)) {
+		$small = 1;
+	}
 
 	if ($builder->{clean}) {
 		$self->insert_tasks(DPB::Task::Port::BaseClean->new('clean'));
