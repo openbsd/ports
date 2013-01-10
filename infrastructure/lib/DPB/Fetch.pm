@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.44 2013/01/05 16:10:18 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.45 2013/01/10 12:00:38 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -315,6 +315,26 @@ sub checksum
 		return 1;
 	}
 	print "BAD\n";
+	return 0;
+}
+
+sub cached_checksum
+{
+	my ($self, $fh, $name) = @_;
+	# XXX if we matched once, then we match "forever"
+	return 1 if $self->{okay};
+	print $fh "checksum for $name: ";
+	if (!defined $self->{sha}) {
+		print $fh "NONE\n";
+		return 0;
+	}
+	if (defined $self->cached->{$self->{name}}) {
+		if ($self->cached->{$self->{name}}->equals($self->{sha})) {
+			print $fh "OK (cached)\n";
+			$self->{okay} = 1;
+			return 1;
+		}
+	}
 	return 0;
 }
 

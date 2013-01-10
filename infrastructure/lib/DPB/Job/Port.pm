@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.62 2013/01/10 11:56:53 espie Exp $
+# $OpenBSD: Port.pm,v 1.63 2013/01/10 12:00:38 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -675,6 +675,20 @@ sub has_depends
 	return 1;
 }
 
+sub need_checksum
+{
+	my $self = shift;
+	my $need = 0;
+	for my $dist (values %{$self->{v}{info}{DIST}}) {
+		if (!$dist->cached_checksum($self->{logfh}, $dist->filename)) {
+			$need = 1;
+		} else {
+			unlink($dist->tempfilename);
+		}
+	}
+	return $need;
+}
+
 sub add_normal_tasks
 {
 	my ($self, $dontclean, $hostprop) = @_;
@@ -693,7 +707,9 @@ sub add_normal_tasks
 		}
 	}
 	if ($builder->{fetch}) {
-		push(@todo, qw(checksum));
+		if ($self->need_checksum) {
+			push(@todo, qw(checksum));
+		}
 	} else {
 		push(@todo, qw(fetch));
 	}
