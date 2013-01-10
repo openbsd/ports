@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.60 2013/01/07 10:59:41 espie Exp $
+# $OpenBSD: Port.pm,v 1.61 2013/01/10 10:35:36 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -201,10 +201,16 @@ sub run
 			unlink($dist->tempfilename);
 		}
 	}
-	if (!$exit) {
-		delete $job->{v}{info}{DIST};
-	}
 	exit($exit);
+}
+
+sub finalize
+{
+	my ($self, $core) = @_;
+	$self->SUPER::finalize($core);
+	if ($core->{status} == 0) {
+		delete $core->job->{v}{info}{DIST};
+	}
 }
 
 package DPB::Task::Port::Serialized;
