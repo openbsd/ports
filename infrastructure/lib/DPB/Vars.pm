@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.30 2012/10/06 15:38:14 espie Exp $
+# $OpenBSD: Vars.pm,v 1.31 2013/01/10 16:20:10 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -121,7 +121,8 @@ sub grab_list
 		    };
 
 	my @current = ();
-	my ($previous, $info);
+	my ($o, $info);
+	my $previous = '';
 	while(<$fh>) {
 		push(@current, $_);
 		chomp;
@@ -149,6 +150,7 @@ sub grab_list
 				$category->{category} = 1;
 			}
 			$category = $subdir;
+			$previous = '';
 			&$reset;
 		} elsif (my ($pkgpath, $var, $value) =
 		    m/^(.*?)\.([A-Z][A-Z_0-9]*)\=\s*(.*)\s*$/) {
@@ -158,12 +160,11 @@ sub grab_list
 			if ($value =~ m/^\"(.*)\"$/) {
 				$value = $1;
 			}
-			my $o = DPB::PkgPath->compose($pkgpath, $subdir);
-			if (!defined $previous || $previous != $o) {
-				$seen->{$o} = DPB::PortInfo->new($o);
-				$previous = $o;
-				$info = $seen->{$o};
+			if ($pkgpath ne $previous) {
+				$o = DPB::PkgPath->compose($pkgpath, $subdir);
+				$info = $seen->{$o} = DPB::PortInfo->new($o);
 				$h->{$o} = $o;
+				$previous = $pkgpath;
 			}
 			eval { $info->add($var, $value, $o); };
 			if ($@) {
