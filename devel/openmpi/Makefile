@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2012/12/21 17:40:29 landry Exp $
+# $OpenBSD: Makefile,v 1.11 2013/01/10 14:43:46 jasper Exp $
 
 COMMENT =		open source MPI-2 implementation
 BROKEN-hppa =		error: Could not determine global symbol label prefix
@@ -20,7 +20,7 @@ HOMEPAGE =		http://www.open-mpi.org/
 
 MAINTAINER =		Andreas Bihlmaier <andreas.bihlmaier@gmx.de>
 MODULES =		fortran
-MODFORTRAN_COMPILER =	g77
+MODFORTRAN_COMPILER =	gfortran
 BUILD_DEPENDS +=	${MODFORTRAN_BUILD_DEPENDS}
 
 # BSD
@@ -34,6 +34,8 @@ WANTLIB	+=		c m pthread stdc++ util z
 MASTER_SITES =		${HOMEPAGE}/software/ompi/v${V:C/^([0-9]+\.[0-9]+).*/\1/}/downloads/
 
 USE_GROFF =		Yes
+# XXX: uses a locally modified libtool.
+
 FAKE_FLAGS =		sysconfdir=${PREFIX}/share/examples/openmpi/
 CONFIGURE_STYLE =	gnu
 
