@@ -1,10 +1,10 @@
-$OpenBSD: patch-plug-ins_stp_mangler_stp_mangler_c,v 1.1 2011/08/18 19:23:22 naddy Exp $
+$OpenBSD: patch-plug-ins_stp_mangler_stp_mangler_c,v 1.2 2013/01/10 18:11:14 sthen Exp $
 
 Conflicting definition used elsewhere.
 
---- plug-ins/stp_mangler/stp_mangler.c.orig	Wed Aug 10 19:15:24 2011
-+++ plug-ins/stp_mangler/stp_mangler.c	Wed Aug 10 19:15:39 2011
-@@ -63,7 +63,7 @@ struct stp_header 
+--- plug-ins/stp_mangler/stp_mangler.c.orig	Thu Jan  3 04:56:19 2013
++++ plug-ins/stp_mangler/stp_mangler.c	Thu Jan 10 17:01:11 2013
+@@ -62,7 +62,7 @@ struct stp_header 
  
  #define FAKE_PCK_LEN 60
  struct packet_object fake_po;

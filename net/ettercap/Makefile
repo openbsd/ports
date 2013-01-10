@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.56 2012/01/26 08:03:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2013/01/10 18:11:14 sthen Exp $
+
+BROKEN=		broken mutex locking
+# see http://marc.info/?l=openbsd-ports&m=135577437106908&w=2
 
 SHARED_ONLY=	Yes
 
 COMMENT=	multi-purpose sniffer/interceptor/logger
 
-VER=		0.7.3
-DISTNAME=	ettercap-NG-${VER}
-PKGNAME=	ettercap-${VER}
-REVISION=	10
+DISTNAME=	ettercap-0.7.5.1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ettercap/}
 
-HOMEPAGE=	http://ettercap.sourceforge.net/
+HOMEPAGE=	http://www.ettercap-project.org/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=   Yes
@@ -19,44 +19,42 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WANTLIB += c crypto form menu ncurses panel pcap pthread ssl z
-WANTLIB += lib/libnet-1.1/net=11 ltdl pcre
+WANTLIB += c crypto curl curses form lib/libnet-1.1/net=11 menu ncurses
+WANTLIB += panel pcap pcre pthread ssl z
+
+MODULES=	devel/cmake \
+		devel/gettext
 
 LIB_DEPENDS=	net/libnet/1.1 \
-		devel/libtool,-ltdl \
+		net/curl \
 		devel/pcre
 
 FLAVORS=	no_x11
 FLAVOR?=
 
-USE_LIBTOOL=	Yes
-USE_GROFF =	Yes
-LIBTOOL_FLAGS=	--tag=disable-static
-CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.59
-CONFIGURE_ARGS+= --with-libnet=${LOCALBASE} \
-		 --with-libpcre=${LOCALBASE}
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS+= -DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		-DMAN_INSTALLDIR="${TRUEPREFIX}/man"
 
 .if ${FLAVOR:L:Mno_x11}
-CONFIGURE_ARGS+= --enable-gtk=no
+CONFIGURE_ARGS+= -DENABLE_GTK=off
 .else
-MODULES =	devel/gettext
-LIB_DEPENDS +=	x11/gtk+2
-WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
-WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pixman-1 png pthread-stubs xcb gdk_pixbuf-2.0
-WANTLIB += gdk-x11-2.0 gtk-x11-2.0
+LIB_DEPENDS+=	x11/gtk+2
+RUN_DEPENDS+=	devel/desktop-file-utils \
+		x11/gtk+2,-guic
+
+WANTLIB += atk-1.0 cairo curl freetype gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += glib-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 pango-1.0
 .endif
 
 NO_REGRESS=	Yes
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ettercap
-	${INSTALL_DATA} ${WRKINST}${SYSCONFDIR}/etter.conf \
-	    ${PREFIX}/share/examples/ettercap
+	mv ${WRKINST}/etc/ettercap ${PREFIX}/share/examples/ettercap
+	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/scalable/apps \
+	    ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/desktop/ettercap.desktop \
+	    ${PREFIX}/share/applications/
+	${INSTALL_DATA} ${WRKSRC}/desktop/ettercap.svg \
+	    ${PREFIX}/share/icons/hicolor/scalable/apps/
 
 .include <bsd.port.mk>

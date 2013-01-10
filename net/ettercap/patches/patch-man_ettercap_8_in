@@ -1,7 +1,7 @@
-$OpenBSD: patch-man_ettercap_8,v 1.1 2009/08/06 23:44:07 martynas Exp $
---- man/ettercap.8.orig	Fri May 27 18:12:11 2005
-+++ man/ettercap.8	Tue Aug  4 22:09:19 2009
-@@ -164,7 +164,7 @@ the subnet.
+$OpenBSD: patch-man_ettercap_8_in,v 1.1 2013/01/10 18:11:14 sthen Exp $
+--- man/ettercap.8.in.orig	Thu Jan 10 17:03:41 2013
++++ man/ettercap.8.in	Thu Jan 10 17:03:50 2013
+@@ -170,7 +170,7 @@ the subnet".
  .SH PRIVILEGES DROPPING
  ettercap needs root privileges to open the Link Layer sockets. After the
  initialization phase, the root privs are not needed anymore, so ettercap drops

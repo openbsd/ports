@@ -1,0 +1,13 @@
+$OpenBSD: patch-plug-ins_CMakeLists_txt,v 1.1 2013/01/10 18:11:14 sthen Exp $
+--- plug-ins/CMakeLists.txt.orig	Thu Jan 10 17:10:03 2013
++++ plug-ins/CMakeLists.txt	Thu Jan 10 17:10:24 2013
+@@ -9,7 +9,9 @@ add_library(chk_poison MODULE chk_poison/chk_poison.c)
+ set_target_properties(chk_poison PROPERTIES PREFIX "ec_")
+ 
+ add_library(dns_spoof MODULE dns_spoof/dns_spoof.c)
++if(HAVE_RESOLV)
+ target_link_libraries(dns_spoof ${HAVE_RESOLV})
++endif(HAVE_RESOLV)
+ set_target_properties(dns_spoof PROPERTIES PREFIX "ec_")
+ 
+ add_library(dos_attack MODULE dos_attack/dos_attack.c)
