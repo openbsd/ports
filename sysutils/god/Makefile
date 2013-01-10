@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2012/09/23 17:07:00 jeremy Exp $
+# $OpenBSD: Makefile,v 1.15 2013/01/10 22:33:57 sthen Exp $
 
 COMMENT=	system monitoring framework written in Ruby
 
 DISTNAME=	god-0.7.3
 FULLPKGNAME=	${DISTNAME}
-REVISION =	9
+REVISION=	10
 CATEGORIES=	sysutils
 
 # MIT
