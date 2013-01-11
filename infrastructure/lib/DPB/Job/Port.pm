@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.67 2013/01/10 21:41:55 espie Exp $
+# $OpenBSD: Port.pm,v 1.68 2013/01/11 15:35:53 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -23,6 +23,13 @@ package DPB::Task::BasePort;
 our @ISA = qw(DPB::Task::Clocked);
 use OpenBSD::Paths;
 
+sub setup
+{
+	return $_[0];
+}
+
+sub is_serialized { 0 }
+
 sub finalize
 {
 	my ($self, $core) = @_;
@@ -34,13 +41,13 @@ sub finalize
 sub new
 {
 	my ($class, $phase) = @_;
-	bless {phase => $phase}, $class;
+	bless {phase => $phase, name => $phase}, $class;
 }
 
 sub name
 {
 	my $self = shift;
-	return $self->{phase};
+	return $self->{name};
 }
 
 sub fork
@@ -69,9 +76,6 @@ sub run
 	$self->handle_output($job);
 	close STDIN;
 	open STDIN, '</dev/null';
-	if ($t eq 'patch' && defined $job->{v}{info}{distsize}) {
-		print "distfiles size=$job->{v}{info}{distsize}\n";
-	}
 	my @args = ($t, "TRUST_PACKAGES=Yes",
 	    "FETCH_PACKAGES=No",
 	    "PREPARE_CHECK_ONLY=Yes",
@@ -188,6 +192,36 @@ sub finalize
 
 package DPB::Task::Port::Checksum;
 our @ISA = qw(DPB::Task::Port);
+sub need_checksum
+{
+	my ($self, $info) = @_;
+	my $need = 0;
+	for my $dist (values %{$info->{DIST}}) {
+		if (!$dist->cached_checksum($self->{logfh}, $dist->filename)) {
+			$need = 1;
+		} else {
+			unlink($dist->tempfilename);
+		}
+	}
+	return $need;
+}
+
+sub setup
+{
+	my ($task, $core) = @_;
+	my $job = $core->job;
+	my $info = $job->{v}{info};
+	if (defined $info->{distsize}) {
+		print {$job->{logfh}} "distfiles size=$info->{distsize}\n";
+	}
+	if ($task->need_checksum($info)) {
+		return $task;
+	} else {
+		delete $info->{DIST};
+		return $job->next_task;
+    	}
+}
+
 sub run
 {
 	my ($self, $core) = @_;
@@ -216,23 +250,48 @@ sub finalize
 package DPB::Task::Port::Serialized;
 our @ISA = qw(DPB::Task::Port);
 
-# XXX can't move junk_lock on the other side of the fork, because
-# it may have to wait.
+sub is_serialized { 1 }
 
-sub junk_lock
+sub setup
+{
+	my ($task, $core) = @_;
+	if (!$core->job->{locked}) {
+		$task->try_lock($core);
+	}
+	if (!$core->job->{locked}) {
+		$task->{name} .= "!";
+	}
+
+	return $task;
+}
+
+sub try_lock
 {
 	my ($self, $core) = @_;
 	my $job = $core->job;
 	my $locker = $job->{builder}->locker;
 
+	my $fh = $job->{builder}->locker->lock($core);
+	if ($fh) {
+		print $fh "path=".$job->{path}, "\n";
+		print {$job->{logfh}} "(Junk lock obtained for ",
+		    $core->hostname, " at ", time(), ")\n";
+		$job->{locked} = 1;
+	}
+}
+
+# XXX can't move "full" junk_lock on the other side of the fork, because
+# it may have to wait.
+sub junk_lock
+{
+	my ($self, $core) = @_;
+	my $job = $core->job;
+
 	while (1) {
-		my $fh = $locker->lock($core);
-		if ($fh) {
-			print $fh "path=".$job->{path}, "\n";
-			print {$job->{logfh}} "(Junk lock obtained for ",
-			    $core->hostname, " at ", time(), ")\n";
-			return;
+		if ($job->{locked}) {
+			last;
 		}
+		$self->try_lock($core);
 		sleep 1;
 	}
 }
@@ -241,15 +300,22 @@ sub junk_unlock
 {
 	my ($self, $core) = @_;
 
-	$core->job->{builder}->locker->unlock($core);
-	print {$core->job->{logfh}} "(Junk lock released for ", 
-	    $core->hostname, " at ", time(), ")\n";
+	if ($core->job->{locked}) {
+		$core->job->{builder}->locker->unlock($core);
+		print {$core->job->{logfh}} "(Junk lock released for ", 
+		    $core->hostname, " at ", time(), ")\n";
+		delete $core->job->{locked};
+	}
 }
 
 sub finalize
 {
 	my ($self, $core) = @_;
-	if ($core->{status} != 0) {
+	my $job = $core->job;
+	my $task = $job->{tasks}[0];
+	# XXX if we didn't lock at the entrance, we locked here.
+	$job->{locked} = 1;
+	if ($core->{status} != 0 || !(defined $task && $task->is_serialized)) {
 		$self->junk_unlock($core);
 	}
 	$self->SUPER::finalize($core);
@@ -326,7 +392,6 @@ sub finalize
 	} else {
 		$core->{status} = 1;
 	}
-	$self->junk_unlock($core);
 	$self->SUPER::finalize($core);
 }
 
@@ -334,6 +399,16 @@ package DPB::Task::Port::Uninstall;
 our @ISA=qw(DPB::Task::Port::Serialized);
 
 sub notime { 1 }
+
+sub setup
+{
+	my ($task, $core) = @_;
+	# zap things HERE
+	if ($core->prop->{junk_count} < $core->prop->{junk}) {
+		$task->junk_unlock($core);
+		return $core->job->next_task;
+	}
+}
 
 sub add_dontjunk
 {
@@ -391,7 +466,6 @@ sub finalize
 		$core->prop->{junk_count} = 0;
 	}
 	$core->{status} = 0;
-	$self->junk_unlock($core);
 	$self->SUPER::finalize($core);
 	return 1;
 }
@@ -632,6 +706,18 @@ sub new
 	return $job;
 }
 
+# a small wrapper that allows us to initialize things
+sub next_task
+{
+	my ($self, $core) = @_;
+	my $task = shift @{$self->{tasks}};
+	if ($task) {
+		return $task->setup($core);
+	} else {
+		return $task;
+	}
+}
+
 sub has_depends
 {
 	my $self = shift;
@@ -662,20 +748,6 @@ sub has_depends
 	return 0 unless %$dep;
 	$self->{depends} = $dep;
 	return 1;
-}
-
-sub need_checksum
-{
-	my $self = shift;
-	my $need = 0;
-	for my $dist (values %{$self->{v}{info}{DIST}}) {
-		if (!$dist->cached_checksum($self->{logfh}, $dist->filename)) {
-			$need = 1;
-		} else {
-			unlink($dist->tempfilename);
-		}
-	}
-	return $need;
 }
 
 my $logsize = {};
@@ -712,12 +784,11 @@ sub add_normal_tasks
 		}
 	}
 	if ($builder->{fetch}) {
-		if ($self->need_checksum) {
-			push(@todo, qw(checksum));
-		}
+		push(@todo, qw(checksum));
 	} else {
 		push(@todo, qw(fetch));
 	}
+
 	if (!$small) {
 		push(@todo, qw(patch configure));
 	}
