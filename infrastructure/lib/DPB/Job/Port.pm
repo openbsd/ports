@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.77 2013/01/11 20:11:54 espie Exp $
+# $OpenBSD: Port.pm,v 1.78 2013/01/11 21:16:08 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -422,7 +422,7 @@ sub setup
 		$task->junk_unlock($core);
 		return $core->job->next_task($core);
 	}
-	return $task;
+	return $task->SUPER::setup($core);
 }
 
 sub add_dontjunk
@@ -433,6 +433,7 @@ sub add_dontjunk
 		$h->{$pkgname} = 1;
 	}
 }
+
 sub add_live_depends
 {
 	my ($self, $h, $core) = @_;
