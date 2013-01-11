@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.144 2013/01/08 16:53:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.145 2013/01/11 10:11:57 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		3.6.2
-REVISION=		2
+REVISION=		3
 
 HOMEPAGE=		http://projects.gnome.org/gdm/
 
@@ -101,7 +101,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gdm/{etc/pam.d,var/db}
 	${INSTALL_DATA} ${FILESDIR}/gdm-* \
 		${PREFIX}/share/examples/gdm/etc/pam.d
-	${INSTALL_DATA} ${FILESDIR}/org.gnome.login-screen.gschema.override \
+	${INSTALL_DATA} ${FILESDIR}/10_org.gnome.login-screen.gschema.override \
 		${PREFIX}/share/glib-2.0/schemas
 	mv ${WRKINST}/etc/gdm ${PREFIX}/share/examples/gdm/etc
 	mv ${WRKINST}/etc/dbus-1 ${PREFIX}/share/examples/gdm/etc

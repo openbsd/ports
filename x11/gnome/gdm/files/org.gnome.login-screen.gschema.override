@@ -1,8 +1,0 @@
-# $OpenBSD: org.gnome.login-screen.gschema.override,v 1.1 2012/10/10 12:34:35 ajacoutot Exp $
-[org.gnome.login-screen]
-enable-fingerprint-authentication=false
-enable-smartcard-authentication=false
-
-# orientation in gnome-settings-daemon depends on gudev
-[org/gnome/settings-daemon/plugins/orientation]
-active=false
