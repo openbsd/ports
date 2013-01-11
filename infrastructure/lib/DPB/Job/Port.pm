@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.74 2013/01/11 17:23:51 espie Exp $
+# $OpenBSD: Port.pm,v 1.75 2013/01/11 17:35:43 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -137,7 +137,7 @@ sub make_sure_we_have_packages
 			print {$job->{logfh}} ">>> waiting 10 seconds\n";
 			$job->insert_tasks(
 			    DPB::Task::Port::VerifyPackages->new(
-				'waiting-'.$job->{waiting}++));
+				'waiting-for-nfs '.$job->{waiting}++));
 		}
 	}
 }
