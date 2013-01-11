@@ -1,0 +1,15 @@
+$OpenBSD: patch-postgresql-libpq_cabal,v 1.1.1.1 2013/01/11 20:19:49 kili Exp $
+
+Unbreak when used within GHCi
+
+--- postgresql-libpq.cabal.orig	Thu Jan  3 20:18:57 2013
++++ postgresql-libpq.cabal	Thu Jan  3 20:21:37 2013
+@@ -27,7 +27,7 @@ Library
+                      , bytestring
+ 
+   GHC-Options:       -Wall
+-  Extra-Libraries:   pq
++  Extra-Libraries:   pq crypto ssl com_err
+   -- Other-modules:
+   Build-tools:       hsc2hs
+ 

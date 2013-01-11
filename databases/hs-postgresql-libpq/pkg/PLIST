@@ -1,0 +1,45 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/01/11 20:19:49 kili Exp $
+lib/ghc/${DISTNAME}/
+lib/ghc/${DISTNAME}/Database/
+lib/ghc/${DISTNAME}/Database/PostgreSQL/
+lib/ghc/${DISTNAME}/Database/PostgreSQL/LibPQ.hi
+lib/ghc/${DISTNAME}/HS${DISTNAME}.o
+lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/register.sh
+share/doc/hs-${DISTNAME}/
+share/doc/hs-${DISTNAME}/LICENSE
+share/doc/hs-${DISTNAME}/html/
+share/doc/hs-${DISTNAME}/html/Database-PostgreSQL-LibPQ.html
+share/doc/hs-${DISTNAME}/html/doc-index-All.html
+share/doc/hs-${DISTNAME}/html/doc-index-B.html
+share/doc/hs-${DISTNAME}/html/doc-index-C.html
+share/doc/hs-${DISTNAME}/html/doc-index-D.html
+share/doc/hs-${DISTNAME}/html/doc-index-E.html
+share/doc/hs-${DISTNAME}/html/doc-index-F.html
+share/doc/hs-${DISTNAME}/html/doc-index-G.html
+share/doc/hs-${DISTNAME}/html/doc-index-H.html
+share/doc/hs-${DISTNAME}/html/doc-index-I.html
+share/doc/hs-${DISTNAME}/html/doc-index-L.html
+share/doc/hs-${DISTNAME}/html/doc-index-N.html
+share/doc/hs-${DISTNAME}/html/doc-index-O.html
+share/doc/hs-${DISTNAME}/html/doc-index-P.html
+share/doc/hs-${DISTNAME}/html/doc-index-R.html
+share/doc/hs-${DISTNAME}/html/doc-index-S.html
+share/doc/hs-${DISTNAME}/html/doc-index-T.html
+share/doc/hs-${DISTNAME}/html/doc-index-U.html
+share/doc/hs-${DISTNAME}/html/doc-index-V.html
+share/doc/hs-${DISTNAME}/html/doc-index.html
+share/doc/hs-${DISTNAME}/html/frames.html
+share/doc/hs-${DISTNAME}/html/haddock-util.js
+share/doc/hs-${DISTNAME}/html/hslogo-16.png
+share/doc/hs-${DISTNAME}/html/index-frames.html
+share/doc/hs-${DISTNAME}/html/index.html
+share/doc/hs-${DISTNAME}/html/mini_Database-PostgreSQL-LibPQ.html
+share/doc/hs-${DISTNAME}/html/minus.gif
+share/doc/hs-${DISTNAME}/html/ocean.css
+share/doc/hs-${DISTNAME}/html/plus.gif
+share/doc/hs-${DISTNAME}/html/postgresql-libpq.haddock
+share/doc/hs-${DISTNAME}/html/synopsis.png
+@exec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/register.sh -v0
+@unexec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/unregister.sh -v0 --force
+lib/ghc/${DISTNAME}/unregister.sh
