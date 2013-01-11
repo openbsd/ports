@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.76 2013/01/11 17:39:03 espie Exp $
+# $OpenBSD: Port.pm,v 1.77 2013/01/11 20:11:54 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -739,6 +739,12 @@ sub has_depends
 	my $v = $self->{v};
 	if (exists $v->{info}{BDEPENDS}) {
 		for my $d (values %{$v->{info}{BDEPENDS}}) {
+			$dep->{$d->fullpkgname} = 1;
+		}
+	}
+	#XXX ?
+	if (exists $v->{info}{DEPENDS}) {
+		for my $d (values %{$v->{info}{DEPENDS}}) {
 			$dep->{$d->fullpkgname} = 1;
 		}
 	}
