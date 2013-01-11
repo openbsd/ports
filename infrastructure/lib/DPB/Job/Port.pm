@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.73 2013/01/11 16:59:07 espie Exp $
+# $OpenBSD: Port.pm,v 1.74 2013/01/11 17:23:51 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -38,10 +38,13 @@ sub finalize
 	return $core->{status} == 0;
 }
 
+# note that tasks are using the "flyweight" pattern: they're
+# just a name + behavior, and all the date is in job (which is
+# obtained thru core)
 sub new
 {
 	my ($class, $phase) = @_;
-	bless {phase => $phase, name => $phase}, $class;
+	bless {phase => $phase}, $class;
 }
 
 sub fork
@@ -253,7 +256,8 @@ sub setup
 		$task->try_lock($core);
 	}
 	if (!$core->job->{locked}) {
-		$task->{name} .= "!";
+		unshift(@{$core->job->{tasks}}, $task);
+		return DPB::Task::Port::Lock->new('waiting-for-lock');
 	}
 
 	return $task;
@@ -271,22 +275,6 @@ sub try_lock
 		print {$job->{logfh}} "(Junk lock obtained for ",
 		    $core->hostname, " at ", time(), ")\n";
 		$job->{locked} = 1;
-	}
-}
-
-# XXX can't move "full" junk_lock on the other side of the fork, because
-# it may have to wait.
-sub junk_lock
-{
-	my ($self, $core) = @_;
-	my $job = $core->job;
-
-	while (1) {
-		if ($job->{locked}) {
-			last;
-		}
-		$self->try_lock($core);
-		sleep 1;
 	}
 }
 
@@ -315,6 +303,38 @@ sub finalize
 	$self->SUPER::finalize($core);
 }
 
+
+# this is the full locking task, the one that has to wait.
+
+package DPB::Task::Port::Lock;
+our @ISA = qw(DPB::Task::Port::Serialized);
+
+sub setup
+{
+	return $_[0];
+}
+
+sub run
+{
+	my ($self, $core) = @_;
+	my $job = $core->job;
+
+	while (1) {
+		if ($job->{locked}) {
+			exit(0);
+		}
+		$self->try_lock($core);
+		sleep 1;
+	}
+}
+
+sub finalize
+{
+	my ($self, $core) = @_;
+	$core->job->{locked} = 1;
+	$self->SUPER::finalize($core);
+}
+
 package DPB::Task::Port::Depends;
 our @ISA=qw(DPB::Task::Port::Serialized);
 
@@ -327,7 +347,6 @@ sub run
 	my $dep = $job->{depends};
 
 	$self->handle_output($job);
-	$self->junk_lock($core);
 	my @cmd = ('/usr/sbin/pkg_add', '-aI');
 	if ($job->{builder}->{update}) {
 		push(@cmd, "-rqU", "-Dupdate", "-Dupdatedepends");
@@ -435,7 +454,6 @@ sub run
 	my $v = $job->{v};
 
 	$self->handle_output($job);
-	$self->junk_lock($core);
 	# we got pre-empted
 	if ($core->prop->{junk_count} < $core->prop->{junk}) {
 		exit(2);
@@ -824,7 +842,7 @@ sub pkgpath
 sub name
 {
 	my $self = shift;
-	return $self->{path}."(".$self->{task}{name}.")";
+	return $self->{path}."(".$self->{task}{phase}.")";
 }
 
 sub finished_task
