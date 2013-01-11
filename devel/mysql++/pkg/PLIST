@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/01/11 13:11:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/01/11 13:18:36 ajacoutot Exp $
 @pkgpath databases/mysql++,-main
 @pkgpath databases/mysql++,-docs
+@conflict mysql++-docs-*
 include/mysql++/
 include/mysql++/autoflag.h
 include/mysql++/beemutex.h

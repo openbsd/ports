@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2013/01/11 13:11:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2013/01/11 13:18:36 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		C++ API for MySQL
 
 DISTNAME =		mysql++-3.1.0
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS += mysqlpp	4.0	# 3
 
