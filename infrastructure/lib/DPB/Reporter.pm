@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Reporter.pm,v 1.14 2013/01/05 13:39:36 espie Exp $
+# $OpenBSD: Reporter.pm,v 1.15 2013/01/11 13:22:25 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -169,6 +169,7 @@ sub refresh
 {
 	my $self = shift;
 	$self->{write} = 'go_write_home';
+	$self->{force} = 1;
 }
 
 sub handle_window
@@ -340,6 +341,10 @@ sub go_write_home
 sub report
 {
 	my ($self, $force) = @_;
+	if ($self->{force}) {
+		$force = 1;
+		undef $self->{force};
+	}
 	$self->limit($force, 150, "REP", 1,
 	    sub {
 		my $msg = "";
