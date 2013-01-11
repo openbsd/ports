@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-enigmail,v 1.6 2012/11/24 10:36:20 landry Exp $
+@comment $OpenBSD: PLIST-enigmail,v 1.7 2013/01/11 23:17:32 landry Exp $
 @conflict enigmail-seamonkey-<=1.2
 @pkgpath mail/enigmail/seamonkey
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}/
@@ -11,7 +11,6 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-00
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}/components/enigmail.xpt
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}/components/enigmime.xpt
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}/components/enigprefs-service.js
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}/components/ipc.xpt
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}/components/mimeDecrypt.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}/components/mimeEncrypt.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}/defaults/
@@ -26,12 +25,12 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-00
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/keyManagement.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/mimeVerify.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/pipeConsole.jsm
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/pipeTransport.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/subprocess.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/subprocess_worker_unix.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/subprocess_worker_win.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}/platform/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}/platform/OpenBSD/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}/platform/OpenBSD/components/
-@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}/platform/OpenBSD/components/libenigmime.so.${LIBenigmime_VERSION}
-@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}/platform/OpenBSD/components/libipc.so.${LIBipc_VERSION}
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}/platform/OpenBSD_${XPCOM_ABI}-gcc3/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}/platform/OpenBSD_${XPCOM_ABI}-gcc3/components/
+@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}/platform/OpenBSD_${XPCOM_ABI}-gcc3/components/libenigmime-${XPCOM_ABI}-gcc3.so.${LIBenigmime-x86_64-gcc3_VERSION}
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}/platform/OpenBSD_${XPCOM_ABI}-gcc3/lib/
+@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}/platform/OpenBSD_${XPCOM_ABI}-gcc3/lib/libsubprocess-${XPCOM_ABI}-gcc3.so.${LIBsubprocess-x86_64-gcc3_VERSION}

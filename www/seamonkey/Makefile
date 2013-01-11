@@ -1,24 +1,22 @@
-# $OpenBSD: Makefile,v 1.122 2012/12/04 21:17:29 landry Exp $
+# $OpenBSD: Makefile,v 1.123 2013/01/11 23:17:31 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
 COMMENT-enigmail =	Mozilla Seamonkey GnuPG extension
 BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
 
-MOZILLA_VERSION=	2.14.1
+MOZILLA_VERSION=	2.15
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	suite
 
 MULTI_PACKAGES =	-main -lightning -enigmail
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-seamonkey-1.9beta1
-ENIG_V =		1.4.6
+PKGNAME-lightning =	lightning-seamonkey-2.0beta1
+ENIG_V =		1.5.0
 PKGNAME-enigmail =	enigmail-seamonkey-${ENIG_V}
 EPOCH-lightning =	0
 EPOCH-enigmail =	0
-REVISION-lightning =	0
-REVISION-enigmail =	0
 
 #MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_PROJECT}/nightly/${MOZILLA_VERSION}-candidates/build1/source/
 MASTER_SITES0 =	http://www.mozilla-enigmail.org/download/source/
@@ -26,11 +24,12 @@ DISTFILES +=	${MOZILLA_PROJECT}-${MOZILLA_VERSION}.source.tar.bz2 \
 		enigmail-${ENIG_V}.tar.gz:0
 EXTRACT_CASES =	enigmail-*.tar.gz) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | tar -C comm-${MOZILLA_BRANCH}/mailnews/extensions/ -xf -;;
 
-SO_VERSION =	27.0
+SO_VERSION =	28.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 
-MOZILLA_LIBS = ldap60 ldif60 mozalloc mozgnome prldap60 suite xpcom xul calbasecomps enigmime ipc
+MOZILLA_LIBS = ldap60 ldif60 mozalloc mozgnome prldap60 suite xpcom xul calbasecomps \
+	enigmime-${XPCOM_ABI}-gcc3 subprocess-${XPCOM_ABI}-gcc3
 
 CATEGORIES=	www mail net news
 
@@ -43,14 +42,19 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES =	www/mozilla devel/gettext lang/python
 MODPY_RUNDEP =	No
 
+# necessary glue to build with the correct compiler after fx 17
+MODULES +=		gcc4 lang/clang
+MODGCC4_VERSION =	4.6
+MODGCC4_ARCHS =		powerpc
+MODGCC4_LANGS =		c c++
+MODCLANG_ARCHS =	i386 amd64
+MODCLANG_LANGS =	c c++
+
 NO_REGRESS=	Yes
 
 MODGNU_CONFIG_GUESS_DIRS +=	${WRKSRC}/ldap/sdks/c-sdk/config/autoconf
 
 CONFIGURE_STYLE =	autoconf no-autoheader
-# to remove in 2.15
-CONFIGURE_ARGS +=	--with-system-jpeg=${LOCALBASE}
-WANTLIB +=	jpeg
 
 LIB_DEPENDS-lightning = STEM->=${MOZILLA_VERSION:S/b/beta/}:${BUILD_PKGPATH},-main
 WANTLIB-lightning =	lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/xpcom \
@@ -71,12 +75,27 @@ MOZILLA_AUTOCONF_DIRS =		ldap/sdks/c-sdk mozilla mozilla/js/src
 
 ENIGMAIL_DIR =	mailnews/extensions/enigmail
 
+# add method appeared in 18
+post-patch:
+	echo "UNSUPPORTED(int sa_stream_set_stream_type(sa_stream_t *s,  const sa_stream_type_t stream_type))" \
+		>> ${WRKSRC}/${_MOZDIR}/media/libsydneyaudio/src/sydney_audio_sndio.c
+
 post-build:
 	# build enigmail
 	cd ${WRKSRC}/${ENIGMAIL_DIR} && ./makemake -o ${WRKBUILD} -r
 	cd ${WRKBUILD}/${ENIGMAIL_DIR} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM}
 	cd ${WRKBUILD}/mozilla/dist/bin/chrome/enigmail && zip -r ../enigmail.jar .
 	cd ${WRKBUILD}/${ENIGMAIL_DIR} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} xpi
+
+# needed for the naming of the enigmail lib
+.if ${MACHINE_ARCH:Mi386}
+XPCOM_ABI =	x86
+.elif ${MACHINE_ARCH:Mamd64}
+XPCOM_ABI =	x86_64
+.elif ${MACHINE_ARCH:Mpowerpc}
+XPCOM_ABI =	ppc
+.endif
+SUBST_VARS += XPCOM_ABI
 
 GNU_ARCH =	${MACHINE_ARCH:S/amd64/x86_64/}
 # guid for gdata-provider comes from em:id in install.rdf
@@ -102,7 +121,6 @@ post-install:
 		${PREFIX}/share/pixmaps/${MOZILLA_PROJECT}.png
 
 	# cleanup useless dirs from #798450 (fx 18?)
-	rm -f ${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/modules/services-{aitc,common,crypto,notifications,sync{/engines,}}/.mkdir.done
-	rmdir ${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/modules{/services-{aitc,common,crypto,notifications,sync{/engines,}},}
+	rmdir ${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/modules{/services-{aitc,common,crypto,notifications,sync{/engines,}},/identity,/commonjs{/promise,},}
 
 .include <bsd.port.mk>

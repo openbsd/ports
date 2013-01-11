@@ -1,15 +1,15 @@
-$OpenBSD: patch-mozilla_gfx_thebes_gfxPlatform_cpp,v 1.6 2012/11/24 10:36:20 landry Exp $
---- mozilla/gfx/thebes/gfxPlatform.cpp.orig	Sat Oct 20 23:16:44 2012
-+++ mozilla/gfx/thebes/gfxPlatform.cpp	Sun Oct 21 12:22:08 2012
-@@ -490,6 +490,7 @@ void SourceBufferDestroy(void *srcBuffer)
-   static_cast<SourceSurface*>(srcBuffer)->Release();
+$OpenBSD: patch-mozilla_gfx_thebes_gfxPlatform_cpp,v 1.7 2013/01/11 23:17:32 landry Exp $
+--- mozilla/gfx/thebes/gfxPlatform.cpp.orig	Thu Dec 20 05:55:46 2012
++++ mozilla/gfx/thebes/gfxPlatform.cpp	Wed Jan  2 20:39:29 2013
+@@ -507,6 +507,7 @@ void SourceBufferDestroy(void *srcSurfUD)
+   delete static_cast<SourceSurfaceUserData*>(srcSurfUD);
  }
  
 +#ifdef MOZ_TREE_CAIRO
  void SourceSnapshotDetached(cairo_surface_t *nullSurf)
  {
    gfxImageSurface* origSurf =
-@@ -497,6 +498,7 @@ void SourceSnapshotDetached(cairo_surface_t *nullSurf)
+@@ -514,6 +515,7 @@ void SourceSnapshotDetached(cairo_surface_t *nullSurf)
  
    origSurf->SetData(&kSourceSurface, NULL, NULL);
  }
@@ -17,7 +17,7 @@ $OpenBSD: patch-mozilla_gfx_thebes_gfxPlatform_cpp,v 1.6 2012/11/24 10:36:20 lan
  
  RefPtr<SourceSurface>
  gfxPlatform::GetSourceSurfaceForSurface(DrawTarget *aTarget, gfxASurface *aSurface)
-@@ -594,6 +596,7 @@ gfxPlatform::GetSourceSurfaceForSurface(DrawTarget *aT
+@@ -626,6 +628,7 @@ gfxPlatform::GetSourceSurfaceForSurface(DrawTarget *aT
  
      }
  
@@ -25,11 +25,11 @@ $OpenBSD: patch-mozilla_gfx_thebes_gfxPlatform_cpp,v 1.6 2012/11/24 10:36:20 lan
      cairo_surface_t *nullSurf =
  	cairo_null_surface_create(CAIRO_CONTENT_COLOR_ALPHA);
      cairo_surface_set_user_data(nullSurf,
-@@ -602,6 +605,7 @@ gfxPlatform::GetSourceSurfaceForSurface(DrawTarget *aT
+@@ -634,6 +637,7 @@ gfxPlatform::GetSourceSurfaceForSurface(DrawTarget *aT
                                  NULL);
      cairo_surface_attach_snapshot(imgSurface->CairoSurface(), nullSurf, SourceSnapshotDetached);
      cairo_surface_destroy(nullSurf);
 +    #endif
    }
  
-   srcBuffer->AddRef();
+   SourceSurfaceUserData *srcSurfUD = new SourceSurfaceUserData;
