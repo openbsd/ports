@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.69 2013/01/11 15:48:51 espie Exp $
+# $OpenBSD: Port.pm,v 1.70 2013/01/11 16:11:21 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -218,7 +218,7 @@ sub setup
 		return $task;
 	} else {
 		delete $info->{DIST};
-		return $job->next_task;
+		return $job->next_task($core);
     	}
 }
 
@@ -406,7 +406,7 @@ sub setup
 	# zap things HERE
 	if ($core->prop->{junk_count} < $core->prop->{junk}) {
 		$task->junk_unlock($core);
-		return $core->job->next_task;
+		return $core->job->next_task($core);
 	}
 }
 
@@ -711,7 +711,7 @@ sub next_task
 {
 	my ($self, $core) = @_;
 	my $task = shift @{$self->{tasks}};
-	if ($task) {
+	if (defined $task) {
 		return $task->setup($core);
 	} else {
 		return $task;
