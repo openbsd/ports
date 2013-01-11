@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2012/11/23 09:58:49 giovanni Exp $
+# $OpenBSD: Makefile,v 1.9 2013/01/11 11:21:26 giovanni Exp $
 
 COMMENT =	MySQL Percona tools
 
-V =		2.1.7
+V =		2.1.8
 DISTNAME =	percona-toolkit-${V}
 EPOCH =		0
 CATEGORIES =	databases perl5
@@ -24,7 +24,8 @@ RUN_DEPENDS =	databases/p5-DBD-mysql>=3.0 \
 		sysutils/flock \
 		sysutils/lsof
 
-CONFIGURE_STYLE = perl
+CONFIGURE_STYLE =	perl
+REGRESS_TARGET =	test
 
 pre-configure:
 	@find ${WRKSRC} \( -name "*.orig" \) \

@@ -1,6 +1,6 @@
-$OpenBSD: patch-bin_pt-mysql-summary,v 1.6 2012/11/23 09:58:49 giovanni Exp $
---- bin/pt-mysql-summary.orig	Mon Nov 19 21:21:03 2012
-+++ bin/pt-mysql-summary	Fri Nov 23 10:54:58 2012
+$OpenBSD: patch-bin_pt-mysql-summary,v 1.7 2013/01/11 11:21:26 giovanni Exp $
+--- bin/pt-mysql-summary.orig	Tue Jan  8 22:49:57 2013
++++ bin/pt-mysql-summary	Fri Jan 11 12:17:27 2013
 @@ -614,7 +614,7 @@ shorten() {
  }
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-bin_pt-mysql-summary,v 1.6 2012/11/23 09:58:49 giovanni Exp $
  }
  
  # ###########################################################################
-@@ -2314,7 +2314,7 @@ main() {
+@@ -2412,7 +2412,7 @@ main() {
  # Execute the program if it was not included from another file.
  # This makes it possible to include without executing, and thus test.
  if    [ "${0##*/}" = "$TOOL" ] \
