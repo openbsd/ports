@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2012/11/13 11:11:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2013/01/11 10:07:46 ajacoutot Exp $
 include/gsettings-desktop-schemas/
 include/gsettings-desktop-schemas/gdesktop-enums.h
 lib/girepository-1.0/
@@ -9,6 +9,9 @@ share/GConf/gsettings/gsettings-desktop-schemas.convert
 share/GConf/gsettings/wm-schemas.convert
 share/gir-1.0/
 share/gir-1.0/GDesktopEnums-3.0.gir
+share/glib-2.0/schemas/10_org.gnome.desktop.lockdown.gschema.override
+share/glib-2.0/schemas/10_org.gnome.desktop.media-handling.gschema.override
+share/glib-2.0/schemas/10_org.gnome.desktop.screensaver.gschema.override
 share/glib-2.0/schemas/org.gnome.desktop.a11y.applications.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.a11y.keyboard.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.a11y.magnifier.gschema.xml
@@ -18,11 +21,8 @@ share/glib-2.0/schemas/org.gnome.desktop.default-applications.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.enums.xml
 share/glib-2.0/schemas/org.gnome.desktop.input-sources.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.interface.gschema.xml
-share/glib-2.0/schemas/org.gnome.desktop.lockdown.gschema.override
 share/glib-2.0/schemas/org.gnome.desktop.lockdown.gschema.xml
-share/glib-2.0/schemas/org.gnome.desktop.media-handling.gschema.override
 share/glib-2.0/schemas/org.gnome.desktop.media-handling.gschema.xml
-share/glib-2.0/schemas/org.gnome.desktop.screensaver.gschema.override
 share/glib-2.0/schemas/org.gnome.desktop.screensaver.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.session.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.sound.gschema.xml

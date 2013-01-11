@@ -1,4 +1,4 @@
-# $OpenBSD: org.gnome.desktop.media-handling.gschema.override,v 1.1 2012/10/10 12:49:17 ajacoutot Exp $
+# $OpenBSD: 10_org.gnome.desktop.media-handling.gschema.override,v 1.1 2013/01/11 10:07:46 ajacoutot Exp $
 
 # media auto{mount,run} requires udev(8)
 [org.gnome.desktop.media-handling]

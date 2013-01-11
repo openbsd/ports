@@ -1,4 +1,4 @@
-# $OpenBSD: org.gnome.desktop.screensaver.gschema.override,v 1.1 2012/10/10 12:49:17 ajacoutot Exp $
+# $OpenBSD: 10_org.gnome.desktop.screensaver.gschema.override,v 1.1 2013/01/11 10:07:46 ajacoutot Exp $
 
 # cannot run >1 instance of X(7) under OpenBSD at default securelevel(7)
 [org.gnome.desktop.screensaver]
