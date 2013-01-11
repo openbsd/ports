@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2012/09/14 08:14:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.16 2013/01/11 22:15:31 sthen Exp $
 @conflict bacula-server-<5.2.1
 @pkgpath sysutils/bacula,-client
 @newgroup _bacula:591
 @newuser _bacula:591:_bacula:daemon:Bacula Director:/nonexistent:/sbin/nologin
-@comment lib/bpipe-fd.a
 lib/bpipe-fd.so
 lib/libbac.a
 lib/libbac.la

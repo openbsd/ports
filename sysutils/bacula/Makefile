@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2012/11/09 16:39:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.53 2013/01/11 22:15:31 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=		network backup solution (client)
 COMMENT-server=		network backup solution (server)
 COMMENT-bat=		network backup solution (gui-client)
 
-V=			5.2.11
+V=			5.2.12
 DISTNAME=		bacula-$V
 FULLPKGNAME-main=	bacula-client-$V
 FULLPKGPATH-main=	${PKGPATH},-main
@@ -14,8 +14,6 @@ PKGNAME-server=		bacula-server-$V
 FULLPKGNAME-bat=	bacula-bat-$V
 FULLPKGPATH-bat=	${PKGPATH},-bat
 CATEGORIES=		sysutils
-
-REVISION-server=	0
 
 # XXX build fails if a previous version is installed
 SHARED_LIBS +=  bac                  4.0
