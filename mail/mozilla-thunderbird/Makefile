@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.164 2012/12/04 21:13:32 landry Exp $
+# $OpenBSD: Makefile,v 1.165 2013/01/11 23:06:36 landry Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
@@ -7,7 +7,7 @@ BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
 
 # Don't forget to bump mail/thunderbird-i18n after updates.
 
-MOZILLA_VERSION =	17.0
+MOZILLA_VERSION =	17.0.2
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	mail
@@ -15,11 +15,11 @@ MOZILLA_CODENAME =	mail
 MULTI_PACKAGES =	-main -lightning -enigmail
 PKGNAME-main =		${PKGNAME}
 PKGNAME-lightning =	lightning-1.9beta1
-ENIG_V =		1.4.6
+ENIG_V =		1.5.0
 PKGNAME-enigmail =	enigmail-${ENIG_V}
 EPOCH-lightning =	0
 EPOCH-enigmail =	0
-REVISION-main =		0
+REVISION-lightning =	0
 
 #MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_PROJECT}/nightly/${MOZILLA_VERSION}-candidates/build1/source/
 MASTER_SITES0 =	http://www.mozilla-enigmail.org/download/source/
@@ -31,8 +31,8 @@ SO_VERSION =	27.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 
-MOZILLA_LIBS = ldap60 ldif60 mozalloc mozgnome prldap60 xpcom xul calbasecomps enigmime ipc
-
+MOZILLA_LIBS = ldap60 ldif60 mozalloc mozgnome prldap60 xpcom xul calbasecomps \
+	enigmime-${XPCOM_ABI}-gcc3 subprocess-${XPCOM_ABI}-gcc3
 #.if ${FLAVOR:L:Mdebug}
 #MOZILLA_LIBS +=	addrbook bayesflt fts3tok mailview mime mimeemitter msgbase \
 #	msgcompose msgdb msgimap msglocal msgmdn msgnews vcard msgbaseutil
@@ -84,6 +84,16 @@ post-build:
 	cd ${WRKBUILD}/${ENIGMAIL_DIR} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM}
 	cd ${WRKBUILD}/mozilla/dist/bin/chrome/enigmail && zip -r ../enigmail.jar .
 	cd ${WRKBUILD}/${ENIGMAIL_DIR} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} xpi
+
+# needed for the naming of the enigmail lib
+.if ${MACHINE_ARCH:Mi386}
+XPCOM_ABI =	x86
+.elif ${MACHINE_ARCH:Mamd64}
+XPCOM_ABI =	x86_64
+.elif ${MACHINE_ARCH:Mpowerpc}
+XPCOM_ABI =	ppc
+.endif
+SUBST_VARS += XPCOM_ABI
 
 GNU_ARCH =	${MACHINE_ARCH:S/amd64/x86_64/}
 # guid for gdata-provider comes from em:id in install.rdf
