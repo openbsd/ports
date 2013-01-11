@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.68 2013/01/11 15:35:53 espie Exp $
+# $OpenBSD: Port.pm,v 1.69 2013/01/11 15:48:51 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -332,8 +332,8 @@ sub run
 	my $job = $core->job;
 	my $dep = $job->{depends};
 
-	$self->junk_lock($core);
 	$self->handle_output($job);
+	$self->junk_lock($core);
 	my @cmd = ('/usr/sbin/pkg_add', '-aI');
 	if ($job->{builder}->{update}) {
 		push(@cmd, "-rqU", "-Dupdate", "-Dupdatedepends");
@@ -439,12 +439,12 @@ sub run
 	my $job = $core->job;
 	my $v = $job->{v};
 
+	$self->handle_output($job);
 	$self->junk_lock($core);
 	# we got pre-empted
 	if ($core->prop->{junk_count} < $core->prop->{junk}) {
 		exit(2);
 	}
-	$self->handle_output($job);
 
 	my $h = $job->{builder}->locker->find_dependencies(
 	    $core->hostname);
