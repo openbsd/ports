@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2012/12/27 08:13:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.38 2013/01/11 13:44:25 ajacoutot Exp $
 
 BROKEN-hppa =		undefined references to __sync atomic ops
 BROKEN-mips64 =		undefined references to __sync atomic ops
@@ -6,6 +6,7 @@ BROKEN-mips64 =		undefined references to __sync atomic ops
 COMMENT=		ncurses BitTorrent client based on libTorrent
 
 DISTNAME=		rtorrent-0.8.9
+REVISION=		0
 EPOCH=			0
 CATEGORIES=		net
 

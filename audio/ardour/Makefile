@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2012/12/21 12:13:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2013/01/11 13:44:24 ajacoutot Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 SHARED_ONLY =		Yes
@@ -6,7 +6,7 @@ COMMENT =		digital audio workstation
 DISTNAME =		ardour-2.8.14
 CATEGORIES =		audio
 HOMEPAGE =		http://ardour.org
-REVISION =		1
+REVISION =		2
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes

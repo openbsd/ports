@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2012/08/28 05:50:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2013/01/11 13:44:25 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	personal search and metasearch
 
 DISTNAME=	pinot-1.01
+REVISION=	0
 
 SHARED_LIBS +=  xapianbackend             0.0 # 1.0
 

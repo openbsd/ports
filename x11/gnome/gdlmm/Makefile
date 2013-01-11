@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2012/12/07 08:13:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2013/01/11 13:44:25 ajacoutot Exp $
 
 COMMENT=	C++ binding for gdl
 
 GNOME_PROJECT=	gdlmm
 GNOME_VERSION=	3.3.2
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS +=  gdlmm-3.0                 0.0 # 1.0
 

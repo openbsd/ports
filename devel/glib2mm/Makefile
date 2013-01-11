@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.61 2012/11/05 09:26:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2013/01/11 13:44:24 ajacoutot Exp $
 
 COMMENT=	C++ interface for glib2
 
 GNOME_PROJECT=	glibmm
 GNOME_VERSION=	2.34.1
 PKGNAME=	glib2mm-${GNOME_VERSION}
+REVISION=	0
 
 V=		2.4
 SUBST_VARS=	V

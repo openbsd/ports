@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2011/10/27 07:38:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2013/01/11 13:44:24 ajacoutot Exp $
 
 COMMENT=		C++ wrappers for GooCanvas
 
 GNOME_PROJECT=		goocanvasmm
 GNOME_VERSION=		1.90.8
 PKGNAME=		${GNOME_PROJECT}2-${GNOME_VERSION}
+REVISION=		0
 
 SHARED_LIBS +=  goocanvasmm-2.0      0.1      # 6.0
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2012/09/06 12:38:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2013/01/11 13:44:24 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -8,7 +8,7 @@ COMMENT=	GTK+2 subtitles editor
 
 V=		0.40.0
 DISTNAME=	subtitleeditor-${V}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	graphics editors
 
