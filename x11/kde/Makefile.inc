@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.40 2010/07/08 21:28:48 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.41 2013/01/11 15:16:21 zhuk Exp $
 DIST_SUBDIR ?=	kde
 HOMEPAGE ?=	http://www.kde.org
 
@@ -48,5 +48,7 @@ post_install_libs += ;test -e ../lib$l.so.$v && ln -sf ../lib$l.so.$v lib$l.so.$
 .endfor
 .if !target(post-install)
 post-install:
+. if defined(SHARED_LIBS) && !empty(SHARED_LIBS)
 	@${post_install_libs}
+. endif
 .endif
