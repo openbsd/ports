@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_baobab-connect-server_vala,v 1.1 2013/01/11 15:05:03 ajacoutot Exp $
+$OpenBSD: patch-src_baobab-connect-server_vala,v 1.2 2013/01/11 15:14:44 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=690037
+From 109a749d50edd90fc36ba6c472b91bd2dd01430c Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Fri, 11 Jan 2013 15:02:09 +0000
+Subject: baobab-connect-server: fix spawning of nautilus-connect-server
 
 --- src/baobab-connect-server.vala.orig	Fri Jan 11 15:55:19 2013
 +++ src/baobab-connect-server.vala	Fri Jan 11 15:55:08 2013
