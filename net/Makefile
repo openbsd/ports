@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.783 2012/12/08 12:04:15 landry Exp $
+# $OpenBSD: Makefile,v 1.784 2013/01/11 20:25:08 kili Exp $
 
      SUBDIR =
      SUBDIR += BitTorrent
@@ -118,6 +118,7 @@
      SUBDIR += hping
      SUBDIR += hpodder
      SUBDIR += hs-HTTP
+     SUBDIR += hs-curl
      SUBDIR += hs-hostname
      SUBDIR += httptunnel
      SUBDIR += icb
