@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.75 2013/01/11 17:35:43 espie Exp $
+# $OpenBSD: Port.pm,v 1.76 2013/01/11 17:39:03 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -257,7 +257,8 @@ sub setup
 	}
 	if (!$core->job->{locked}) {
 		unshift(@{$core->job->{tasks}}, $task);
-		return DPB::Task::Port::Lock->new('waiting-for-lock');
+		return DPB::Task::Port::Lock->new(
+		    'waiting-for-lock #'.$core->prop->{waited_for_lock}++);
 	}
 
 	return $task;
