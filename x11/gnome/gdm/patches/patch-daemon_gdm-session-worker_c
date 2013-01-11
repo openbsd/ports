@@ -1,6 +1,9 @@
-$OpenBSD: patch-daemon_gdm-session-worker_c,v 1.4 2012/11/29 15:59:21 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-session-worker_c,v 1.5 2013/01/11 19:20:46 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=689174
+From 61712dbc23421e4a5a53a2647692b96935effcb7 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Tue, 27 Nov 2012 16:53:41 +0000
+Subject: properly set ressources on BSD systems
 
 --- daemon/gdm-session-worker.c.orig	Fri Oct 26 20:33:52 2012
 +++ daemon/gdm-session-worker.c	Tue Nov 27 17:17:22 2012
