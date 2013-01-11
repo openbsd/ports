@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.70 2013/01/11 16:11:21 espie Exp $
+# $OpenBSD: Port.pm,v 1.71 2013/01/11 16:24:26 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -315,7 +315,7 @@ sub finalize
 	my $task = $job->{tasks}[0];
 	# XXX if we didn't lock at the entrance, we locked here.
 	$job->{locked} = 1;
-	if ($core->{status} != 0 || !(defined $task && $task->is_serialized)) {
+	if ($core->{status} != 0 || defined $task && !$task->is_serialized) {
 		$self->junk_unlock($core);
 	}
 	$self->SUPER::finalize($core);
