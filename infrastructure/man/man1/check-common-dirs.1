@@ -1,4 +1,4 @@
-.\"	$OpenBSD: check-common-dirs.1,v 1.1 2011/01/11 11:30:47 espie Exp $
+.\"	$OpenBSD: check-common-dirs.1,v 1.2 2013/01/11 21:18:17 rpe Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,14 +14,15 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: January 11 2011 $
+.Dd $Mdocdate: January 11 2013 $
 .Dt CHECK-COMMON-DIRS 1
 .Os
 .Sh NAME
 .Nm check-common-dirs
 .Nd verify that common directories are correctly registered
 .Sh SYNOPSIS
-.Nm check-conflicts
+.Nm check-common-dirs
+.Op Fl mx
 .Op Ar pkgname ...
 .Sh DESCRIPTION
 .Nm
@@ -33,5 +34,20 @@ set should appear in a packing-list somewhere.
 Directories can be shared between several packages.
 .Nm
 knows enough about packages to trace directories back to a dependency.
+.Pp
+If no
+.Ar pkgname
+argument is passed, it will process all
+.Pa *.tgz
+files in the current directory.
+.Pp
+The options are as follows:
+.Bl -tag -width keyword
+.It Fl m
+Always show progress-meter, even if not run from terminal.
+.It Fl x
+Don't show progress-meter, even if run from terminal.
+.El
+.Pp
 .Sh SEE ALSO
 .Xr pkg_create 1
