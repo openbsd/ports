@@ -1,7 +1,7 @@
-$OpenBSD: patch-xl_main_py,v 1.2 2012/10/18 08:15:41 giovanni Exp $
---- xl/main.py.orig	Sun Sep  9 21:07:41 2012
-+++ xl/main.py	Wed Sep 26 11:21:23 2012
-@@ -617,6 +617,8 @@ class Exaile(object):
+$OpenBSD: patch-xl_main_py,v 1.3 2013/01/11 10:17:19 giovanni Exp $
+--- xl/main.py.orig	Thu Nov 15 18:28:50 2012
++++ xl/main.py	Thu Jan  3 18:01:36 2013
+@@ -620,6 +620,8 @@ class Exaile(object):
                  context.iteration(True)
              except:
                  pass

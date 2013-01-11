@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2012/10/18 08:15:41 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.10 2013/01/11 10:17:19 giovanni Exp $
 bin/exaile
 lib/python${MODPY_VERSION}/site-packages/exaile/
 lib/python${MODPY_VERSION}/site-packages/exaile/exaile.py
@@ -1118,7 +1118,6 @@ share/exaile/xdg/exaile/
 share/exaile/xdg/exaile/settings.ini
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
-share/locale/af/LC_MESSAGES/exaile.mo
 share/locale/ar/LC_MESSAGES/exaile.mo
 share/locale/ast/LC_MESSAGES/exaile.mo
 share/locale/be/LC_MESSAGES/exaile.mo
@@ -1132,10 +1131,6 @@ share/locale/cy/LC_MESSAGES/exaile.mo
 share/locale/da/LC_MESSAGES/exaile.mo
 share/locale/de/LC_MESSAGES/exaile.mo
 share/locale/el/LC_MESSAGES/exaile.mo
-share/locale/en/LC_MESSAGES/exaile.mo
-share/locale/en_AU/
-share/locale/en_AU/LC_MESSAGES/
-share/locale/en_AU/LC_MESSAGES/exaile.mo
 share/locale/en_CA/LC_MESSAGES/exaile.mo
 share/locale/en_GB/LC_MESSAGES/exaile.mo
 share/locale/eo/LC_MESSAGES/exaile.mo
@@ -1144,12 +1139,10 @@ share/locale/et/LC_MESSAGES/exaile.mo
 share/locale/eu/LC_MESSAGES/exaile.mo
 share/locale/fa/LC_MESSAGES/exaile.mo
 share/locale/fi/LC_MESSAGES/exaile.mo
-share/locale/fo/LC_MESSAGES/exaile.mo
 share/locale/fr/LC_MESSAGES/exaile.mo
 share/locale/frp/
 share/locale/frp/LC_MESSAGES/
 share/locale/frp/LC_MESSAGES/exaile.mo
-share/locale/fy/LC_MESSAGES/exaile.mo
 share/locale/gl/LC_MESSAGES/exaile.mo
 share/locale/gu/LC_MESSAGES/exaile.mo
 share/locale/he/LC_MESSAGES/exaile.mo
@@ -1170,15 +1163,11 @@ share/locale/ms/LC_MESSAGES/exaile.mo
 share/locale/nb/LC_MESSAGES/exaile.mo
 share/locale/nl/LC_MESSAGES/exaile.mo
 share/locale/oc/LC_MESSAGES/exaile.mo
-share/locale/os/
-share/locale/os/LC_MESSAGES/
-share/locale/os/LC_MESSAGES/exaile.mo
 share/locale/pl/LC_MESSAGES/exaile.mo
 share/locale/pt/LC_MESSAGES/exaile.mo
 share/locale/pt_BR/LC_MESSAGES/exaile.mo
 share/locale/ro/LC_MESSAGES/exaile.mo
 share/locale/ru/LC_MESSAGES/exaile.mo
-share/locale/si/LC_MESSAGES/exaile.mo
 share/locale/sk/LC_MESSAGES/exaile.mo
 share/locale/sl/LC_MESSAGES/exaile.mo
 share/locale/sq/LC_MESSAGES/exaile.mo
@@ -1189,14 +1178,9 @@ share/locale/sw/LC_MESSAGES/
 share/locale/sw/LC_MESSAGES/exaile.mo
 share/locale/ta/LC_MESSAGES/exaile.mo
 share/locale/te/LC_MESSAGES/exaile.mo
-share/locale/th/LC_MESSAGES/exaile.mo
 share/locale/tl/LC_MESSAGES/exaile.mo
 share/locale/tr/LC_MESSAGES/exaile.mo
-share/locale/ts/
-share/locale/ts/LC_MESSAGES/
-share/locale/ts/LC_MESSAGES/exaile.mo
 share/locale/uk/LC_MESSAGES/exaile.mo
-share/locale/ur/LC_MESSAGES/exaile.mo
 share/locale/vi/LC_MESSAGES/exaile.mo
 share/locale/zh/
 share/locale/zh/LC_MESSAGES/

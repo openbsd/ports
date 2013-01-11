@@ -1,8 +1,8 @@
-$OpenBSD: patch-Makefile,v 1.5 2012/10/18 08:15:41 giovanni Exp $
---- Makefile.orig	Thu Aug 30 23:58:21 2012
-+++ Makefile	Wed Sep 26 11:38:11 2012
+$OpenBSD: patch-Makefile,v 1.6 2013/01/11 10:17:19 giovanni Exp $
+--- Makefile.orig	Thu Nov 15 18:28:50 2012
++++ Makefile	Thu Jan  3 18:01:36 2013
 @@ -1,17 +1,17 @@
--PYTHON2_CMD	?= /usr/bin/python2
+-PYTHON2_CMD	?= `command -v python2`
 +PYTHON2_CMD	?= ${MODPY_BIN}
  
 -PREFIX 		?= /usr/local
