@@ -1,31 +1,36 @@
-$OpenBSD: patch-src_Window_cc,v 1.7 2012/08/27 10:45:44 dcoppa Exp $
+$OpenBSD: patch-src_Window_cc,v 1.8 2013/01/11 08:11:26 dcoppa Exp $
 
-When a screen has more heads and some part of the screen is not on
-any head and some window is placed into this invisible area then
-the window is invisible which sucks. This patch repositions such
-windows so that they are visible.
-(upstream git commit 60a53113e05db443af4d520883ec3145680642a8)
+Reduce lagging behind of windows on slower displays
+(upstream git commit 79fe2fca1de5140f538e68f6981b27cf7f917e7a)
 
 --- src/Window.cc.orig	Sat Oct 29 15:46:15 2011
 +++ src/Window.cc	Mon Aug 27 11:52:37 2012
-@@ -446,11 +446,15 @@ void FluxboxWindow::init() {
-         int real_x = frame().x();
-         int real_y = frame().y();
+@@ -2393,6 +2393,7 @@ void FluxboxWindow::motionNotifyEvent(XMotionEvent &me
+     Fluxbox::instance()->keys()->doAction(me.type, me.state, m_last_pressed_button, context, &winClient(), me.time);
  
--        if (real_x >= 0 &&
--            real_y >= 0 &&
--            real_x <= (signed) screen().width() &&
--            real_y <= (signed) screen().height())
--            m_placed = true;
-+        if (screen().hasXinerama()) { // xinerama available => use head info
-+            if (0 != screen().getHead(real_x, real_y)) // if visible on some head
-+                m_placed = true;
-+        } else { // no xinerama available => use screen info
-+            if (real_x >= 0 && real_y >= 0 &&
-+                real_x <= (signed) screen().width() &&
-+                real_y <= (signed) screen().height()) // if visible on the screen
-+                m_placed = true;
+     if (moving) {
++        XEvent e;
+ 
+         // Warp to next or previous workspace?, must have moved sideways some
+         int moved_x = me.x_root - m_last_resize_x;
+@@ -2428,7 +2429,6 @@ void FluxboxWindow::motionNotifyEvent(XMotionEvent &me
+             if (new_id != cur_id) {
+ 
+                 // remove motion events from queue to avoid repeated warps
+-                XEvent e;
+                 while (XCheckTypedEvent(display, MotionNotify, &e)) {
+                     // might as well update the y-coordinate
+                     m_last_resize_y = e.xmotion.y_root;
+@@ -2453,6 +2453,12 @@ void FluxboxWindow::motionNotifyEvent(XMotionEvent &me
+ 
+         // dx = current left side, dy = current top
+         doSnapping(dx, dy);
++
++        // do not update display if another motion event is already pending
++        if (XCheckTypedEvent(display, MotionNotify, &e)) {
++            XPutBackEvent(display, &e);
++            return;
 +        }
  
-     } else
-         setOnHead(screen().getCurrHead());
+         if (!screen().doOpaqueMove()) {
+             parent().drawRectangle(screen().rootTheme()->opGC(),
