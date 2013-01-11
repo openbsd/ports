@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/05/03 06:51:24 ajacoutot Exp $
-@bin bin/dvdcpy
-@man man/man1/dvdcpy.1

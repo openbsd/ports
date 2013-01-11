@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/06/26 11:46:06 pascal Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2013/01/11 22:20:12 sthen Exp $
+@pkgpath multimedia/ogmrip
 @bin bin/avibox
-@bin bin/dvdcpy
 @bin bin/ogmrip
 @bin bin/subp2pgm
 bin/subp2png
@@ -122,7 +122,6 @@ lib/pkgconfig/ogmjob.pc
 lib/pkgconfig/ogmrip-gtk.pc
 lib/pkgconfig/ogmrip.pc
 @man man/man1/avibox.1
-@man man/man1/dvdcpy.1
 @man man/man1/subp2pgm.1
 @man man/man1/subptools.1
 share/applications/ogmrip.desktop

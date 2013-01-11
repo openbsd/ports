@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2012/10/10 10:45:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.64 2013/01/11 22:20:11 sthen Exp $
 
      SUBDIR =
      SUBDIR += atomicparsley
@@ -10,7 +10,6 @@
      SUBDIR += devede
      SUBDIR += dvdauthor
      SUBDIR += dvdbackup
-     SUBDIR += dvdcpy
      SUBDIR += dvdstyler
      SUBDIR += ffmpeg-php
      SUBDIR += ffmpeg2theora
