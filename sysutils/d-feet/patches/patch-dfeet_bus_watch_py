@@ -1,0 +1,25 @@
+$OpenBSD: patch-dfeet_bus_watch_py,v 1.1 2013/01/11 16:47:28 ajacoutot Exp $
+
+OpenBSD does not use /proc
+
+--- dfeet/bus_watch.py.orig	Sun Nov 11 09:59:45 2012
++++ dfeet/bus_watch.py	Fri Jan 11 17:42:45 2013
+@@ -1,6 +1,7 @@
+ # -*- coding: utf-8 -*-
+ from __future__ import print_function
+ 
++import subprocess
+ from gi.repository import GObject, Gtk, Gio
+ 
+ from dfeet._ui.uiloader import UILoader
+@@ -20,9 +21,7 @@ class DBusBusName(GObject.GObject):
+ 
+     def __update_cmdline(self):
+         if self.pid > 0:
+-            procpath = '/proc/' + str(self.pid) + '/cmdline'
+-            with open(procpath, 'r') as f:
+-                self.__cmdline = " ".join(f.readline().split('\0'))
++            self.__cmdline = " ".join(subprocess.Popen(['/bin/ps', '-o', 'command=', '-p', str(self.pid)], stdout=subprocess.PIPE ).communicate()[0].strip().split('\0'))
+         else:
+             self.__cmdline = ''
+ 

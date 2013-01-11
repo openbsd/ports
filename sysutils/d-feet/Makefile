@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2012/10/16 08:08:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2013/01/11 16:47:28 ajacoutot Exp $
 
 COMMENT=		dbus debugger
 
-MODPY_EGG_VERSION=	0.1.15
+MODPY_EGG_VERSION=	0.3.2
 DISTNAME=		d-feet-${MODPY_EGG_VERSION}
 CATEGORIES=		sysutils x11
 
@@ -20,10 +20,8 @@ EXTRACT_SUFX=		.tar.xz
 MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes
 
-BUILD_DEPENDS=		x11/py-gtk2
 RUN_DEPENDS=		devel/desktop-file-utils \
-			x11/dbus-python \
-			x11/py-gtk2 \
+			devel/py-gobject3 \
 			x11/gtk+2,-guic
 
 MODPY_ADJ_FILES=	d-feet

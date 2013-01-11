@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/06/15 08:32:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/01/11 16:47:28 ajacoutot Exp $
 bin/d-feet
 lib/python${MODPY_VERSION}/site-packages/d_feet-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/d_feet-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -10,47 +10,35 @@ lib/python${MODPY_VERSION}/site-packages/dfeet/DFeetApp.py
 lib/python${MODPY_VERSION}/site-packages/dfeet/DFeetApp.pyc
 lib/python${MODPY_VERSION}/site-packages/dfeet/__init__.py
 lib/python${MODPY_VERSION}/site-packages/dfeet/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/dfeet/_introspect_parser.py
-lib/python${MODPY_VERSION}/site-packages/dfeet/_introspect_parser.pyc
 lib/python${MODPY_VERSION}/site-packages/dfeet/_ui/
 lib/python${MODPY_VERSION}/site-packages/dfeet/_ui/__init__.py
 lib/python${MODPY_VERSION}/site-packages/dfeet/_ui/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/dfeet/_ui/addconnectiondialog.py
 lib/python${MODPY_VERSION}/site-packages/dfeet/_ui/addconnectiondialog.pyc
-lib/python${MODPY_VERSION}/site-packages/dfeet/_ui/busbox.py
-lib/python${MODPY_VERSION}/site-packages/dfeet/_ui/busbox.pyc
-lib/python${MODPY_VERSION}/site-packages/dfeet/_ui/busnamebox.py
-lib/python${MODPY_VERSION}/site-packages/dfeet/_ui/busnamebox.pyc
-lib/python${MODPY_VERSION}/site-packages/dfeet/_ui/busnameinfobox.py
-lib/python${MODPY_VERSION}/site-packages/dfeet/_ui/busnameinfobox.pyc
-lib/python${MODPY_VERSION}/site-packages/dfeet/_ui/busnameview.py
-lib/python${MODPY_VERSION}/site-packages/dfeet/_ui/busnameview.pyc
 lib/python${MODPY_VERSION}/site-packages/dfeet/_ui/executemethoddialog.py
 lib/python${MODPY_VERSION}/site-packages/dfeet/_ui/executemethoddialog.pyc
 lib/python${MODPY_VERSION}/site-packages/dfeet/_ui/uiloader.py
 lib/python${MODPY_VERSION}/site-packages/dfeet/_ui/uiloader.pyc
 lib/python${MODPY_VERSION}/site-packages/dfeet/_ui/wnck_utils.py
 lib/python${MODPY_VERSION}/site-packages/dfeet/_ui/wnck_utils.pyc
-lib/python${MODPY_VERSION}/site-packages/dfeet/_util.py
-lib/python${MODPY_VERSION}/site-packages/dfeet/_util.pyc
-lib/python${MODPY_VERSION}/site-packages/dfeet/dbus_introspector.py
-lib/python${MODPY_VERSION}/site-packages/dfeet/dbus_introspector.pyc
+lib/python${MODPY_VERSION}/site-packages/dfeet/bus_watch.py
+lib/python${MODPY_VERSION}/site-packages/dfeet/bus_watch.pyc
 lib/python${MODPY_VERSION}/site-packages/dfeet/dbus_utils.py
 lib/python${MODPY_VERSION}/site-packages/dfeet/dbus_utils.pyc
-lib/python${MODPY_VERSION}/site-packages/dfeet/introspect_data.py
-lib/python${MODPY_VERSION}/site-packages/dfeet/introspect_data.pyc
+lib/python${MODPY_VERSION}/site-packages/dfeet/introspection.py
+lib/python${MODPY_VERSION}/site-packages/dfeet/introspection.pyc
+lib/python${MODPY_VERSION}/site-packages/dfeet/introspection_helper.py
+lib/python${MODPY_VERSION}/site-packages/dfeet/introspection_helper.pyc
 lib/python${MODPY_VERSION}/site-packages/dfeet/settings.py
 lib/python${MODPY_VERSION}/site-packages/dfeet/settings.pyc
 share/applications/dfeet.desktop
 share/dfeet/
 share/dfeet/addconnectiondialog.ui
-share/dfeet/default-actiongroup.ui
+share/dfeet/buswatch.ui
 share/dfeet/executedialog.ui
-share/dfeet/filterbox.ui
-share/dfeet/introspectview.ui
+share/dfeet/introspection.ui
 share/dfeet/mainwindow.ui
-share/dfeet/test-actions.ui
-share/icons/hicolor/16x16/apps/d-feet-icon.png
+share/icons/hicolor/16x16/apps/d-feet.png
 share/icons/hicolor/16x16/apps/dfeet-icon-default-service.png
 share/icons/hicolor/16x16/apps/dfeet-method-category.png
 share/icons/hicolor/16x16/apps/dfeet-method.png
@@ -59,10 +47,11 @@ share/icons/hicolor/16x16/apps/dfeet-property-category.png
 share/icons/hicolor/16x16/apps/dfeet-property.png
 share/icons/hicolor/16x16/apps/dfeet-signal-category.png
 share/icons/hicolor/16x16/apps/dfeet-signal.png
-share/icons/hicolor/24x24/apps/d-feet-icon.png
-share/icons/hicolor/256x256/apps/d-feet-icon.png
-share/icons/hicolor/32x32/apps/d-feet-icon.png
-share/icons/hicolor/48x48/apps/d-feet-icon.png
+share/icons/hicolor/24x24/apps/d-feet.png
+share/icons/hicolor/256x256/apps/d-feet.png
+share/icons/hicolor/32x32/apps/d-feet.png
+share/icons/hicolor/48x48/apps/d-feet.png
+share/icons/hicolor/scalable/apps/d-feet.svg
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
