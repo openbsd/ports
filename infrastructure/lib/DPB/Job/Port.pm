@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.71 2013/01/11 16:24:26 espie Exp $
+# $OpenBSD: Port.pm,v 1.72 2013/01/11 16:35:47 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -42,12 +42,6 @@ sub new
 {
 	my ($class, $phase) = @_;
 	bless {phase => $phase, name => $phase}, $class;
-}
-
-sub name
-{
-	my $self = shift;
-	return $self->{name};
 }
 
 sub fork
@@ -829,7 +823,7 @@ sub pkgpath
 sub name
 {
 	my $self = shift;
-	return $self->{path}."(".$self->{task}{phase}.")";
+	return $self->{path}."(".$self->{task}{name}.")";
 }
 
 sub finished_task
@@ -863,7 +857,7 @@ sub totaltime
 sub timings
 {
 	my $self = shift;
-	return join('/', "max_stuck=".$self->{watched}{max}, map {sprintf("%s=%.2f", $_->name, $_->elapsed)} @{$self->{done}});
+	return join('/', "max_stuck=".$self->{watched}{max}, map {sprintf("%s=%.2f", $_->{phase}, $_->elapsed)} @{$self->{done}});
 }
 
 sub equates
