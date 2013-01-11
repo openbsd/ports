@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.72 2013/01/11 16:35:47 espie Exp $
+# $OpenBSD: Port.pm,v 1.73 2013/01/11 16:59:07 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -402,6 +402,7 @@ sub setup
 		$task->junk_unlock($core);
 		return $core->job->next_task($core);
 	}
+	return $task;
 }
 
 sub add_dontjunk
