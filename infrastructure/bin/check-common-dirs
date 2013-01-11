@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-common-dirs,v 1.3 2011/01/17 20:08:08 espie Exp $
+# $OpenBSD: check-common-dirs,v 1.4 2013/01/11 21:21:32 rpe Exp $
 # Copyright (c) 2004, 2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -152,9 +152,10 @@ sub show_results
 }
 
 my $state = OpenBSD::AddCreateDelete::State->new('check-common-dirs');
-$state->handle_options('', '[-mx]');
+$state->handle_options('', '[-mx] [pkgname ...]');
 if (@ARGV==0) {
 	@ARGV=(<*.tgz>);
+	$state->usage() unless @ARGV;
 }
 my $db = {};
 my $mtree = {};
