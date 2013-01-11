@@ -1,16 +1,16 @@
-$OpenBSD: patch-gfx_thebes_gfxPlatform_cpp,v 1.6 2012/11/24 10:21:50 landry Exp $
+$OpenBSD: patch-gfx_thebes_gfxPlatform_cpp,v 1.7 2013/01/11 22:57:14 landry Exp $
 https://bugzilla.mozilla.org/show_bug.cgi?id=715658
---- gfx/thebes/gfxPlatform.cpp.orig	Wed Oct 17 16:32:38 2012
-+++ gfx/thebes/gfxPlatform.cpp	Wed Oct 17 21:59:03 2012
-@@ -490,6 +490,7 @@ void SourceBufferDestroy(void *srcBuffer)
-   static_cast<SourceSurface*>(srcBuffer)->Release();
+--- gfx/thebes/gfxPlatform.cpp.orig	Wed Nov 21 17:10:38 2012
++++ gfx/thebes/gfxPlatform.cpp	Mon Nov 26 22:15:19 2012
+@@ -507,6 +507,7 @@ void SourceBufferDestroy(void *srcSurfUD)
+   delete static_cast<SourceSurfaceUserData*>(srcSurfUD);
  }
  
 +#ifdef MOZ_TREE_CAIRO
  void SourceSnapshotDetached(cairo_surface_t *nullSurf)
  {
    gfxImageSurface* origSurf =
-@@ -497,6 +498,7 @@ void SourceSnapshotDetached(cairo_surface_t *nullSurf)
+@@ -514,6 +515,7 @@ void SourceSnapshotDetached(cairo_surface_t *nullSurf)
  
    origSurf->SetData(&kSourceSurface, NULL, NULL);
  }
@@ -18,7 +18,7 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=715658
  
  RefPtr<SourceSurface>
  gfxPlatform::GetSourceSurfaceForSurface(DrawTarget *aTarget, gfxASurface *aSurface)
-@@ -594,6 +596,7 @@ gfxPlatform::GetSourceSurfaceForSurface(DrawTarget *aT
+@@ -626,6 +628,7 @@ gfxPlatform::GetSourceSurfaceForSurface(DrawTarget *aT
  
      }
  
@@ -26,11 +26,11 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=715658
      cairo_surface_t *nullSurf =
  	cairo_null_surface_create(CAIRO_CONTENT_COLOR_ALPHA);
      cairo_surface_set_user_data(nullSurf,
-@@ -602,6 +605,7 @@ gfxPlatform::GetSourceSurfaceForSurface(DrawTarget *aT
+@@ -634,6 +637,7 @@ gfxPlatform::GetSourceSurfaceForSurface(DrawTarget *aT
                                  NULL);
      cairo_surface_attach_snapshot(imgSurface->CairoSurface(), nullSurf, SourceSnapshotDetached);
      cairo_surface_destroy(nullSurf);
 +    #endif
    }
  
-   srcBuffer->AddRef();
+   SourceSurfaceUserData *srcSurfUD = new SourceSurfaceUserData;

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.219 2012/12/04 21:24:33 landry Exp $
+# $OpenBSD: Makefile,v 1.220 2013/01/11 22:57:14 landry Exp $
 
 COMMENT =	Mozilla web browser
 BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
@@ -6,13 +6,13 @@ BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
 # Don't forget to bump www/firefox-i18n after updates.
 # Don't forget to update devel/xulrunner/2.0 if patches changes.
 
-MOZILLA_VERSION =	17.0.1
+MOZILLA_VERSION =	18.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 
 #MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_PROJECT}/nightly/${MOZILLA_VERSION}-candidates/build1/source/
-SO_VERSION =	36.0
+SO_VERSION =	37.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	browsercomps mozalloc mozgnome \
@@ -31,14 +31,20 @@ MODULES =	www/mozilla devel/gettext lang/python
 
 MODPY_RUNDEP =	No
 
+# necessary glue to build with the correct compiler after fx 17
+MODULES +=		gcc4 lang/clang
+MODGCC4_VERSION =	4.6
+MODGCC4_ARCHS =		powerpc
+MODGCC4_LANGS =		c c++
+MODCLANG_ARCHS =	i386 amd64
+MODCLANG_LANGS =	c c++
+
 USE_GROFF =	Yes
 # Regression tests are too hard to adapt to run here
 NO_REGRESS =	Yes
 
 CONFIGURE_STYLE =	autoconf no-autoheader
-# to remove in 18
-CONFIGURE_ARGS +=	--with-system-jpeg=${LOCALBASE}
-WANTLIB +=	jpeg
+WANTLIB +=	kvm
 
 CONFIGURE_ARGS +=	--enable-gstreamer
 LIB_DEPENDS +=	multimedia/gstreamer-0.10/plugins-base
@@ -52,6 +58,11 @@ RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-good
 # no system png : apng support not bundled in
 
 MOZILLA_AUTOCONF_DIRS +=	js/src
+
+# add method appeared in 18
+post-patch:
+	echo "UNSUPPORTED(int sa_stream_set_stream_type(sa_stream_t *s,  const sa_stream_type_t stream_type))" \
+		>> ${WRKSRC}/${_MOZDIR}/media/libsydneyaudio/src/sydney_audio_sndio.c
 
 post-install:
 	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/mozilla-firefox.1 \
