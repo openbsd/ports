@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2012/11/15 14:41:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2013/01/11 15:05:03 ajacoutot Exp $
 
 COMMENT=		directory tree analyzer for GNOME
 
 GNOME_PROJECT=		baobab
 GNOME_VERSION=		3.6.3
+REVISION=		0
 
 HOMEPAGE=		https://live.gnome.org/Baobab
 

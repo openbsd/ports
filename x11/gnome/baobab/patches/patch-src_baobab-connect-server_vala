@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_baobab-connect-server_vala,v 1.1 2013/01/11 15:05:03 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=690037
+
+--- src/baobab-connect-server.vala.orig	Fri Jan 11 15:55:19 2013
++++ src/baobab-connect-server.vala	Fri Jan 11 15:55:08 2013
+@@ -23,7 +23,8 @@ namespace Baobab {
+     class ConnectServer : Object {
+         const string[] argv = {
+             "nautilus-connect-server",
+-            "--print-uri"
++            "--print-uri",
++            null
+         };
+ 
+         public signal void selected(string? uri);
