@@ -1,7 +1,7 @@
-$OpenBSD: patch-desktopfiles_Makefile_in,v 1.1 2010/09/18 11:19:24 steven Exp $
---- desktopfiles/Makefile.in.orig	Sat Mar 20 21:38:33 2010
-+++ desktopfiles/Makefile.in	Sun Aug 29 21:11:01 2010
-@@ -39,6 +39,8 @@ XDG_DESKTOP_MENU = @XDG_DESKTOP_MENU@
+$OpenBSD: patch-desktopfiles_Makefile_in,v 1.2 2013/01/12 14:03:41 shadchin Exp $
+--- desktopfiles/Makefile.in.orig	Tue Apr 10 09:56:55 2012
++++ desktopfiles/Makefile.in	Sun Apr 15 22:10:40 2012
+@@ -40,6 +40,8 @@ XDG_DESKTOP_MENU = @XDG_DESKTOP_MENU@
  RM = @RM@
  
  datadir_djview = ${datadir}/djvu/djview4/desktop
@@ -10,7 +10,7 @@ $OpenBSD: patch-desktopfiles_Makefile_in,v 1.1 2010/09/18 11:19:24 steven Exp $
  
  
  # -------- all
-@@ -70,13 +72,14 @@ register-djview-menu: register-djview-menu.in
+@@ -73,13 +75,14 @@ register-djview-menu: register-djview-menu.in
  install: install-djview-files 
  
  install-djview-files: FORCE

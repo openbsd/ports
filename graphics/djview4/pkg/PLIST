@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/06/15 08:32:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/01/12 14:03:41 shadchin Exp $
 %%SHARED%%
 bin/djview
 @bin bin/djview4
@@ -15,6 +15,8 @@ share/djvu/djview4/djview_de.qm
 share/djvu/djview4/djview_fr.qm
 share/djvu/djview4/djview_ru.qm
 share/djvu/djview4/djview_uk.qm
+share/djvu/djview4/djview_zh_cn.qm
+share/djvu/djview4/djview_zh_tw.qm
 share/icons/hicolor/32x32/apps/djvulibre-djview4.png
 share/icons/hicolor/64x64/apps/djvulibre-djview4.png
 share/icons/hicolor/scalable/apps/djvulibre-djview4.svg
