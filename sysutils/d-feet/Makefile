@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2013/01/11 16:47:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2013/01/12 13:54:57 ajacoutot Exp $
 
 COMMENT=		dbus debugger
 
-MODPY_EGG_VERSION=	0.3.2
+MODPY_EGG_VERSION=	0.3.3
 DISTNAME=		d-feet-${MODPY_EGG_VERSION}
 CATEGORIES=		sysutils x11
 
