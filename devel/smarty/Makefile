@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/11/16 15:56:37 robert Exp $
+# $OpenBSD: Makefile,v 1.17 2013/01/12 15:15:23 benoit Exp $
 
 COMMENT-main =	template engine for PHP
 COMMENT-docs =	documentation for Smarty
@@ -10,11 +10,9 @@ DISTNAME-docs =	Smarty-2.6.14-docs
 PKGNAME-docs =	smarty-docs-${VERSION}
 CATEGORIES =	devel www
 
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	http://www.smarty.net
-
-MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # PHP License
 PERMIT_PACKAGE_CDROM =	Yes
