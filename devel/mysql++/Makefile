@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.35 2013/01/11 13:18:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2013/01/12 11:46:28 brad Exp $
 
+ONLY_FOR_ARCHS=		${GCC4_ARCHS}
 SHARED_ONLY =		Yes
 
 COMMENT =		C++ API for MySQL
