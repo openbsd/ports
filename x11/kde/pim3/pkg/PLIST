@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2012/09/02 15:53:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.38 2013/01/12 11:21:10 ajacoutot Exp $
 @conflict kdelibs-<3.4
 @conflict kdebase-<3.4
 @conflict kpilot-*
@@ -2409,6 +2409,6 @@ share/servicetypes/kpilotconduit.desktop
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/crystalsvg
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/crystalsvg/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/crystalsvg
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/locolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/locolor

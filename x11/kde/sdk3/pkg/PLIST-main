@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2012/06/15 08:30:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2013/01/12 11:21:10 ajacoutot Exp $
 @pkgpath x11/kde/sdk3
 bin/adddebug
 bin/build-progress.sh
@@ -1021,6 +1021,6 @@ share/servicetypes/kompareviewpart.desktop
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/crystalsvg
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/crystalsvg/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/crystalsvg
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/locolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/locolor

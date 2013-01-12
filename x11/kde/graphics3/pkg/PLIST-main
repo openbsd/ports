@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2012/06/15 08:30:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2013/01/12 11:21:10 ajacoutot Exp $
 @pkgpath x11/kde/graphics3
 @bin bin/kcolorchooser
 @bin bin/kcoloredit
@@ -923,4 +923,4 @@ share/servicetypes/ksvgrenderer.desktop
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/crystalsvg
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/crystalsvg/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/crystalsvg

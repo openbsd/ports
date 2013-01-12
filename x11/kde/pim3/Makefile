@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2013/01/11 15:07:18 zhuk Exp $
+# $OpenBSD: Makefile,v 1.76 2013/01/12 11:21:10 ajacoutot Exp $
 
 COMMENT = 		KDE personal information applications
 COMMENT-kpilot =	KDE interface to sync with Palm Pilot
@@ -61,7 +61,7 @@ MODULES =	x11/kde devel/gettext
 
 LIB_DEPENDS +=	x11/kde/libs3
 
-REVISION =	13
+REVISION =	14
 REVISION-kpilot =	3
 
 WANTLIB += DCOP GL GLU ICE SM X11 Xcursor Xdamage Xext Xfixes

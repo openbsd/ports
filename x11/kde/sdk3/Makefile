@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2012/06/15 08:30:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2013/01/12 11:21:10 ajacoutot Exp $
 
 COMMENT-main = 		K Desktop Environment, developer extensions
 COMMENT-svn = 		K Desktop Environment, svn extensions
@@ -7,7 +7,7 @@ VERSION =		3.5.10
 DISTNAME =		kdesdk-${VERSION}
 
 PKGNAME-main =		${DISTNAME}
-REVISION-main =		9
+REVISION-main =		10
 PKGNAME-svn =		kdesvn-${VERSION}
 REVISION-svn =		9
 
