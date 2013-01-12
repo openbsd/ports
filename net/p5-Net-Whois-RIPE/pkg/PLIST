@@ -1,5 +1,56 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/04/02 08:05:22 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/01/12 14:14:53 benoit Exp $
 ${P5SITE}/Net/
 ${P5SITE}/Net/Whois/
+${P5SITE}/Net/Whois/Object/
+${P5SITE}/Net/Whois/Object.pm
+${P5SITE}/Net/Whois/Object/AsBlock.pm
+${P5SITE}/Net/Whois/Object/AsSet.pm
+${P5SITE}/Net/Whois/Object/AutNum.pm
+${P5SITE}/Net/Whois/Object/Domain.pm
+${P5SITE}/Net/Whois/Object/FilterSet.pm
+${P5SITE}/Net/Whois/Object/Inet6Num.pm
+${P5SITE}/Net/Whois/Object/InetNum.pm
+${P5SITE}/Net/Whois/Object/InetRtr.pm
+${P5SITE}/Net/Whois/Object/Information.pm
+${P5SITE}/Net/Whois/Object/Irt.pm
+${P5SITE}/Net/Whois/Object/KeyCert.pm
+${P5SITE}/Net/Whois/Object/Limerick.pm
+${P5SITE}/Net/Whois/Object/Mntner.pm
+${P5SITE}/Net/Whois/Object/Organisation.pm
+${P5SITE}/Net/Whois/Object/PeeringSet.pm
+${P5SITE}/Net/Whois/Object/Person.pm
+${P5SITE}/Net/Whois/Object/Poem.pm
+${P5SITE}/Net/Whois/Object/PoeticForm.pm
+${P5SITE}/Net/Whois/Object/Response.pm
+${P5SITE}/Net/Whois/Object/Role.pm
+${P5SITE}/Net/Whois/Object/Route.pm
+${P5SITE}/Net/Whois/Object/Route6.pm
+${P5SITE}/Net/Whois/Object/RouteSet.pm
+${P5SITE}/Net/Whois/Object/RtrSet.pm
 ${P5SITE}/Net/Whois/RIPE.pm
+@man man/man3p/Net::Whois::Object.3p
+@man man/man3p/Net::Whois::Object::AsBlock.3p
+@man man/man3p/Net::Whois::Object::AsSet.3p
+@man man/man3p/Net::Whois::Object::AutNum.3p
+@man man/man3p/Net::Whois::Object::Domain.3p
+@man man/man3p/Net::Whois::Object::FilterSet.3p
+@man man/man3p/Net::Whois::Object::Inet6Num.3p
+@man man/man3p/Net::Whois::Object::InetNum.3p
+@man man/man3p/Net::Whois::Object::InetRtr.3p
+@man man/man3p/Net::Whois::Object::Information.3p
+@man man/man3p/Net::Whois::Object::Irt.3p
+@man man/man3p/Net::Whois::Object::KeyCert.3p
+@man man/man3p/Net::Whois::Object::Limerick.3p
+@man man/man3p/Net::Whois::Object::Mntner.3p
+@man man/man3p/Net::Whois::Object::Organisation.3p
+@man man/man3p/Net::Whois::Object::PeeringSet.3p
+@man man/man3p/Net::Whois::Object::Person.3p
+@man man/man3p/Net::Whois::Object::Poem.3p
+@man man/man3p/Net::Whois::Object::PoeticForm.3p
+@man man/man3p/Net::Whois::Object::Response.3p
+@man man/man3p/Net::Whois::Object::Role.3p
+@man man/man3p/Net::Whois::Object::Route.3p
+@man man/man3p/Net::Whois::Object::Route6.3p
+@man man/man3p/Net::Whois::Object::RouteSet.3p
+@man man/man3p/Net::Whois::Object::RtrSet.3p
 @man man/man3p/Net::Whois::RIPE.3p
