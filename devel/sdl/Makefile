@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.87 2012/12/09 07:29:57 brad Exp $
+# $OpenBSD: Makefile,v 1.88 2013/01/12 12:34:21 brad Exp $
+
+# requires ELF visibility support when on a shared arch
+ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${NO_SHARED_ARCHS}
 
 COMMENT=	cross-platform multimedia library
 
@@ -36,6 +39,7 @@ SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/test
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
+		 --disable-alsa \
 		 --disable-arts \
 		 --disable-esd \
 		 --disable-oss \
