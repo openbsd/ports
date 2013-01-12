@@ -1,0 +1,13 @@
+$OpenBSD: patch-plugins_nikto_core_plugin,v 1.1 2013/01/12 17:38:14 nigel Exp $
+--- plugins/nikto_core.plugin.orig	Fri Sep 14 07:52:12 2012
++++ plugins/nikto_core.plugin	Thu Sep 27 16:24:36 2012
+@@ -1901,8 +1901,7 @@ sub check_updates {
+                 if ($remotemsg ne "") { nprint("+ $server message: $remotemsg"); }
+                 exit;
+             }
+-            push(@DBTOGET, $remotefile);
+-            if ($remotefile !~ /^db_/) { $code_updates = 1; }
++            if ($remotefile =~ /^db_/) { push(@DBTOGET, $remotefile); }
+         }
+     }
+ 

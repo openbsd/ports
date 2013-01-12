@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2011/09/07 13:21:11 nigel Exp $
+# $OpenBSD: Makefile,v 1.21 2013/01/12 17:38:14 nigel Exp $
 
 COMMENT =	web and CGI vulnerability scanner with SSL support
 
-DISTNAME =	nikto-2.1.4
+DISTNAME =	nikto-2.1.5
 EPOCH = 	0
-REVISION = 	0
 CATEGORIES =	security www
 
 HOMEPAGE =	http://www.cirt.net/nikto2
@@ -25,7 +24,6 @@ EXTRACT_SUFX =	.tar.bz2
 RUN_DEPENDS =	security/p5-Net_SSLeay
 
 NO_BUILD =	Yes
-USE_GROFF =	Yes
 NO_REGRESS =	Yes
 PKG_ARCH =	*
 
@@ -34,8 +32,11 @@ pre-configure:
 		${WRKSRC}/nikto.conf
 	perl -pi -e 's,# DOCDIR=.+,DOCDIR=${PREFIX}/share/doc/nikto,' \
 		${WRKSRC}/nikto.conf
+	perl -pi -e 's,# DBDIR=.+,DBDIR=/var/db/nikto/databases,' \
+		${WRKSRC}/nikto.conf
 
 do-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/nikto/databases
 	${INSTALL_DATA_DIR} ${PREFIX}/share/nikto/plugins
 	${INSTALL_DATA_DIR} ${PREFIX}/share/nikto/templates
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/nikto
@@ -45,8 +46,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/nikto.conf \
 		${PREFIX}/share/examples/nikto/nikto.conf
 
-	${INSTALL_DATA} ${WRKSRC}/plugins/* ${PREFIX}/share/nikto/plugins
-	${INSTALL_DATA} ${WRKSRC}/templates/* ${PREFIX}/share/nikto/templates
+	${INSTALL_DATA} ${WRKSRC}/databases/!(*.orig) ${PREFIX}/share/nikto/databases
+	${INSTALL_DATA} ${WRKSRC}/plugins/!(*.orig) ${PREFIX}/share/nikto/plugins
+	${INSTALL_DATA} ${WRKSRC}/templates/!(*.orig) ${PREFIX}/share/nikto/templates
 
 	${INSTALL_DATA} ${WRKSRC}/docs/nikto_manual.html ${PREFIX}/share/doc/nikto
 	${INSTALL_DATA} ${WRKSRC}/docs/CHANGES.txt ${PREFIX}/share/doc/nikto

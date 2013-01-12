@@ -1,12 +1,12 @@
-$OpenBSD: patch-nikto_pl,v 1.5 2011/03/27 16:41:37 jasper Exp $
---- nikto.pl.orig	Fri Feb 18 23:53:23 2011
-+++ nikto.pl	Fri Mar 11 16:55:57 2011
-@@ -313,7 +313,7 @@ sub setup_dirs {
+$OpenBSD: patch-nikto_pl,v 1.6 2013/01/12 17:38:14 nigel Exp $
+--- nikto.pl.orig	Mon Sep 10 05:22:36 2012
++++ nikto.pl	Tue Sep 25 14:13:34 2012
+@@ -333,7 +333,7 @@ sub setup_dirs {
          $CONFIGFILE{'TEMPLATEDIR'} = "$CONFIGFILE{'EXECDIR'}/templates";
      }
      unless (defined $CONFIGFILE{'DOCUMENTDIR'}) {
 -        $CONFIGFILE{'DOCUMENTDIR'} = "$CONFIGFILE{'EXECDIR'}/docs";
 +        $CONFIGFILE{'DOCUMENTDIR'} = "$CONFIGFILE{'DOCDIR'}/docs";
      }
-     return;
- }
+     unless (defined $CONFIGFILE{'DBDIR'}) {
+         $CONFIGFILE{'DBDIR'} = "$CONFIGFILE{'EXECDIR'}/databases";
