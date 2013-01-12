@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.201 2012/12/04 16:29:26 florian Exp $
+$OpenBSD: user.list,v 1.202 2013/01/12 17:21:59 nigel Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -218,3 +218,4 @@ id  user		group		port options
 707 _spiped		_spiped		security/spiped
 708 _wesnothd		_wesnothd	games/wesnoth
 709 _dnsfilter		_dnsfilter	net/dnsfilter
+710 _nikto		_nikto		security/nikto
