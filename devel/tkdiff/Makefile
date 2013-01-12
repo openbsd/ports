@@ -1,18 +1,15 @@
-# $OpenBSD: Makefile,v 1.11 2012/10/23 09:39:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2013/01/12 14:11:27 shadchin Exp $
 
 COMMENT=	graphical front-end to the diff program
 
-V=		4.1.4
-DISTNAME=	tkdiff-${V}-unix
-PKGNAME=	${DISTNAME:S/-unix//}
-REVISION =	0
+DISTNAME=	tkdiff-4.2
 CATEGORIES=	devel sysutils
 
 HOMEPAGE=	http://tkdiff.sourceforge.net/
 
 MAINTAINER=	Vlad Glagolev <stealth@sourcemage.org>
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -25,6 +22,8 @@ RUN_DEPENDS=	${MODTK_RUN_DEPENDS}
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+
+WRKDIST=	${WRKDIR}/tkdiff-unix
 
 do-configure:
 	@${MODTCL_WISH_ADJ} ${WRKSRC}/tkdiff
