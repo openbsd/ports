@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.78 2013/01/11 21:16:08 espie Exp $
+# $OpenBSD: Port.pm,v 1.79 2013/01/12 13:51:43 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -191,10 +191,10 @@ package DPB::Task::Port::Checksum;
 our @ISA = qw(DPB::Task::Port);
 sub need_checksum
 {
-	my ($self, $info) = @_;
+	my ($self, $log, $info) = @_;
 	my $need = 0;
 	for my $dist (values %{$info->{DIST}}) {
-		if (!$dist->cached_checksum($self->{logfh}, $dist->filename)) {
+		if (!$dist->cached_checksum($log, $dist->filename)) {
 			$need = 1;
 		} else {
 			unlink($dist->tempfilename);
@@ -211,7 +211,7 @@ sub setup
 	if (defined $info->{distsize}) {
 		print {$job->{logfh}} "distfiles size=$info->{distsize}\n";
 	}
-	if ($task->need_checksum($info)) {
+	if ($task->need_checksum($job->{logfh}, $info)) {
 		return $task;
 	} else {
 		delete $info->{DIST};
