@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.79 2013/01/12 13:51:43 espie Exp $
+# $OpenBSD: Port.pm,v 1.80 2013/01/12 14:44:41 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -394,6 +394,8 @@ sub finalize
 			# zap headers
 			next if m/^\>\>\>\s/ || m/^\=\=\=\>\s/;
 			chomp;
+			# normal lines *only have one package name*
+			next if m/\s/;
 			push(@r, $_);
 		}
 		if ($v->{info}->has_property('nojunk')) {
