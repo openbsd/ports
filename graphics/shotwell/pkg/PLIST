@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.12 2012/09/24 20:32:49 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.13 2013/01/13 15:42:10 ajacoutot Exp $
 %%SHARED%%
 @bin bin/shotwell
-bin/shotwell-settings-migrator
 @bin bin/shotwell-video-thumbnailer
 lib/shotwell/
 lib/shotwell/plugins/
@@ -23,6 +22,8 @@ lib/shotwell/plugins/builtin/slideshow-plugin.png
 lib/shotwell/plugins/builtin/yandex_publish_model.glade
 lib/shotwell/plugins/builtin/youtube.png
 lib/shotwell/plugins/builtin/youtube_publishing_options_pane.glade
+libexec/shotwell/
+libexec/shotwell/shotwell-settings-migrator
 share/GConf/
 share/GConf/gsettings/
 share/GConf/gsettings/shotwell.convert
@@ -132,8 +133,6 @@ share/locale/ja/LC_MESSAGES/shotwell-extras.mo
 share/locale/ja/LC_MESSAGES/shotwell.mo
 share/locale/kk/LC_MESSAGES/shotwell-extras.mo
 share/locale/kk/LC_MESSAGES/shotwell.mo
-share/locale/km/
-share/locale/km/LC_MESSAGES/
 share/locale/km/LC_MESSAGES/shotwell.mo
 share/locale/ko/LC_MESSAGES/shotwell-extras.mo
 share/locale/ko/LC_MESSAGES/shotwell.mo

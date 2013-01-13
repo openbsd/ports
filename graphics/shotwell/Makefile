@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2012/09/24 20:32:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2013/01/13 15:42:10 ajacoutot Exp $
 
 # needs to allocate 512M
 VMEM_WARNING =	Yes
 
 COMMENT =	digital photo organizer
 
-DISTNAME =	shotwell-0.13.0
+DISTNAME =	shotwell-0.13.1
 CATEGORIES =	graphics
 MASTER_SITES =	http://yorba.org/download/shotwell/stable/
 HOMEPAGE =	http://yorba.org/shotwell/
@@ -55,8 +55,6 @@ CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS =	--disable-schemas-compile \
 			--disable-desktop-update \
 			--disable-icon-update
-
-MODGCONF2_SCHEMAS_DIR =	shotwell
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Makefile \
