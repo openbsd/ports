@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2012/12/12 16:38:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2013/01/13 10:12:52 brad Exp $
 
 COMMENT-main=	SSH and telnet client
 COMMENT-gui=	PuTTY GUI clients
 
-DISTNAME=	putty-0.60
+DISTNAME=	putty-0.62
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	2
 PKGNAME-gui=	${DISTNAME:S/putty/putty-gui/}
-REVISION-gui=	4
 CATEGORIES=	net security
 
 HOMEPAGE=	http://www.chiark.greenend.org.uk/~sgtatham/putty/
@@ -23,24 +21,32 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	autoconf automake
-AUTOCONF_VERSION=	2.61
+CONFIGURE_ENV=		CPPFLAGS="-I.././" \
+			LDFLAGS="-L${X11BASE}/lib"
+AUTOCONF_VERSION=	2.67
 AUTOMAKE_VERSION=	1.11
 WRKSRC=			${WRKDIST}/unix
-USE_GROFF =		Yes
 
 MULTI_PACKAGES= 	-main -gui
 
 MODULES=		devel/gettext
 
-WANTLIB-main=		c
-WANTLIB-gui=		X11 Xext Xi c glib gmodule m ${MODGETTEXT_WANTLIB} \
-			pthread-stubs xcb gtk>=1 gdk>=1
+WANTLIB-main=		X11 c
+WANTLIB-gui=		GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi \
+			Xinerama Xrandr Xrender atk-1.0 c cairo expat \
+			fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 \
+			glib-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0 \
+			pangocairo-1.0 pangoft2-1.0 pixman-1 png \
+			pthread-stubs xcb xcb-render xcb-shm z \
+			${MODGETTEXT_WANTLIB}
 
 LIB_DEPENDS-main=	# empty
-LIB_DEPENDS-gui=	x11/gtk+
+LIB_DEPENDS-gui=	x11/gtk+2
 
 AUTO_ENV=		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 			AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
+
+NO_REGRESS=		Yes
 
 post-patch:
 	@echo "Running aclocal-${AUTOMAKE_VERSION} in ${WRKSRC}"
@@ -48,7 +54,5 @@ post-patch:
 
 pre-configure:
 	cd ${WRKDIST} && ./mkfiles.pl
-
-NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

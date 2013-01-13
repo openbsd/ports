@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2007/09/04 09:14:00 djm Exp $
-bin/plink
-bin/pscp
-bin/psftp
-bin/puttygen
+@comment $OpenBSD: PLIST-main,v 1.2 2013/01/13 10:12:52 brad Exp $
+@bin bin/plink
+@bin bin/pscp
+@bin bin/psftp
+@bin bin/puttygen
 @man man/man1/plink.1
 @man man/man1/pscp.1
 @man man/man1/psftp.1

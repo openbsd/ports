@@ -1,9 +1,18 @@
-$OpenBSD: patch-unix_configure_ac,v 1.1 2012/12/12 16:38:33 naddy Exp $
---- unix/configure.ac.orig	Tue Dec 11 23:47:28 2012
-+++ unix/configure.ac	Tue Dec 11 23:47:48 2012
-@@ -23,7 +23,7 @@ AC_SUBST([all_targets])
+$OpenBSD: patch-unix_configure_ac,v 1.2 2013/01/13 10:12:52 brad Exp $
+--- unix/configure.ac.orig	Sat May 22 10:07:25 2010
++++ unix/configure.ac	Thu Dec 27 01:53:50 2012
+@@ -11,7 +11,7 @@ AC_CONFIG_HEADERS([uxconfig.h:uxconfig.in])
+ AC_PROG_INSTALL
+ AC_PROG_CC
+ if test "X$GCC" = Xyes; then
+-    PUTTYCFLAGS="-Wall -Werror"
++    PUTTYCFLAGS="-Wall"
+ else
+     PUTTYCFLAGS=""
+ fi
+@@ -65,7 +65,7 @@ AS_IF([test "x$with_gssapi" != xno],
  
- AC_SEARCH_LIBS([socket], [xnet])
+ AC_CHECK_LIB(X11, XOpenDisplay)
  
 -AC_CHECK_FUNCS([getaddrinfo ptsname setresuid strsignal updwtmpx])
 +AC_CHECK_FUNCS([getaddrinfo posix_openpt ptsname setresuid strsignal updwtmpx])

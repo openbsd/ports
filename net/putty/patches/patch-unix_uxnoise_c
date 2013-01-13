@@ -1,42 +1,49 @@
-$OpenBSD: patch-unix_uxnoise_c,v 1.2 2012/03/08 12:13:01 ajacoutot Exp $
---- unix/uxnoise.c.orig	Tue Nov 16 10:27:00 2004
-+++ unix/uxnoise.c	Tue Mar  6 08:56:51 2012
-@@ -4,6 +4,7 @@
-  */
- 
- #include <stdio.h>
-+#include <stdlib.h>
- #include <fcntl.h>
- #include <unistd.h>
- #include <sys/time.h>
-@@ -44,23 +45,11 @@ static int read_dev_urandom(char *buf, int len)
+$OpenBSD: patch-unix_uxnoise_c,v 1.3 2013/01/13 10:12:52 brad Exp $
+--- unix/uxnoise.c.orig	Wed Sep 16 18:28:20 2009
++++ unix/uxnoise.c	Thu Dec 27 01:32:29 2012
+@@ -49,38 +49,11 @@ static int read_dev_urandom(char *buf, int len)
  
  void noise_get_heavy(void (*func) (void *, int))
  {
 -    char buf[512];
 -    FILE *fp;
 -    int ret;
+-    int got_dev_urandom = 0;
 +    char buf[32];
  
--    if (read_dev_urandom(buf, 32))
+-    if (read_dev_urandom(buf, 32)) {
+-	got_dev_urandom = 1;
 -	func(buf, 32);
+-    }
 +    if (read_dev_urandom(buf, sizeof(buf)))
 +	func(buf, sizeof(buf));
  
 -    fp = popen("ps -axu 2>/dev/null", "r");
--    while ( (ret = fread(buf, 1, sizeof(buf), fp)) > 0)
--	func(buf, ret);
--    pclose(fp);
+-    if (fp) {
+-	while ( (ret = fread(buf, 1, sizeof(buf), fp)) > 0)
+-	    func(buf, ret);
+-	pclose(fp);
+-    } else if (!got_dev_urandom) {
+-	fprintf(stderr, "popen: %s\n"
+-		"Unable to access fallback entropy source\n", strerror(errno));
+-	exit(1);
+-    }
 -
 -    fp = popen("ls -al /tmp 2>/dev/null", "r");
--    while ( (ret = fread(buf, 1, sizeof(buf), fp)) > 0)
--	func(buf, ret);
--    pclose(fp);
+-    if (fp) {
+-	while ( (ret = fread(buf, 1, sizeof(buf), fp)) > 0)
+-	    func(buf, ret);
+-	pclose(fp);
+-    } else if (!got_dev_urandom) {
+-	fprintf(stderr, "popen: %s\n"
+-		"Unable to access fallback entropy source\n", strerror(errno));
+-	exit(1);
+-    }
 -
      read_random_seed(func);
      random_save_seed();
  }
-@@ -94,21 +83,13 @@ void noise_get_light(void (*func) (void *, int))
+@@ -114,21 +87,13 @@ void noise_get_light(void (*func) (void *, int))
   */
  void noise_regular(void)
  {
@@ -63,7 +70,7 @@ $OpenBSD: patch-unix_uxnoise_c,v 1.2 2012/03/08 12:13:01 ajacoutot Exp $
      getrusage(RUSAGE_SELF, &rusage);
      random_add_noise(&rusage, sizeof(rusage));
  }
-@@ -121,6 +102,9 @@ void noise_regular(void)
+@@ -141,6 +106,9 @@ void noise_regular(void)
  void noise_ultralight(unsigned long data)
  {
      struct timeval tv;
