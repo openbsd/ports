@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2011/08/26 09:18:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2013/01/13 09:28:09 sthen Exp $
 
 COMMENT=        forbids warnings while testing
 
 MODULES=	cpan
-DISTNAME=	Test-NoWarnings-1.03
+DISTNAME=	Test-NoWarnings-1.04
 CATEGORIES=     devel
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
