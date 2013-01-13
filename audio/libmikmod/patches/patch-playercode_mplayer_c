@@ -1,16 +1,10 @@
-$OpenBSD: patch-playercode_mplayer_c,v 1.5 2008/10/23 22:06:28 miod Exp $
---- playercode/mplayer.c.orig	Mon Jan 21 21:23:56 2002
-+++ playercode/mplayer.c	Wed Oct 22 19:56:49 2008
-@@ -254,7 +254,7 @@ static int MP_FindEmptyChannel(MODULE *mod)
- 		   Voice_Stopped_internal(t))
- 			return t;
- 
--	tvol=0xffffffUL;t=0;a=mod->voice;
-+	tvol=0xffffffUL;t=-1;a=mod->voice;
- 	for (k=0;k<md_sngchn;k++,a++) {
- 		/* allow us to take over a nonexisting sample */
- 		if (!a->main.s)
-@@ -367,9 +367,9 @@ static SWORD StartEnvelope(ENVPR *t,UBYTE flg,UBYTE pt
+$OpenBSD: patch-playercode_mplayer_c,v 1.6 2013/01/13 09:10:40 sthen Exp $
+
+Avoid setting envelope cursors to negative values.
+
+--- playercode/mplayer.c.orig	Thu Jan 10 00:29:05 2013
++++ playercode/mplayer.c	Thu Jan 10 00:31:08 2013
+@@ -365,9 +365,9 @@ static SWORD StartEnvelope(ENVPR *t,UBYTE flg,UBYTE pt
  	}
  
  	/* Fit in the envelope, still */
@@ -22,36 +16,3 @@ $OpenBSD: patch-playercode_mplayer_c,v 1.5 2008/10/23 22:06:28 miod Exp $
  		t->b = t->pts-1;
  
  	return t->env[t->a].val;
-@@ -442,24 +442,22 @@ static SWORD ProcessEnvelope(MP_VOICE *aout, ENVPR *t,
- 			} else
- 			/*
- 			 * Non looping situations.
--			 * Start to fade if the volume envelope is finished.
- 			 */
--			if (p > t->env[t->pts - 1].pos) {
-+			if (a != b)
-+				v = InterpolateEnv(p, &t->env[a], &t->env[b]);
-+			else
- 				v = t->env[a].val;
-+
-+			/*
-+			 * Start to fade if the volume envelope is finished.
-+			 */
-+			if (p >= t->env[t->pts - 1].pos) {
- 				if (t->flg & EF_VOLENV) {
- 					aout->main.keyoff |= KEY_FADE;
- 					if (!v)
- 						aout->main.fadevol = 0;
- 				}
- 			} else {
--				/*
--				 * Regular processing : compute value, progress one step.
--				 */
--				if (a != b)
--					v = InterpolateEnv(p, &t->env[a], &t->env[b]);
--				else
--					v = t->env[a].val;
--
- 				p++;
- 				/* did pointer reach point b? */
- 				if (p >= t->env[b].pos)

@@ -1,7 +1,7 @@
-$OpenBSD: patch-playercode_mdreg_c,v 1.1 2010/01/11 04:25:26 jakemsr Exp $
---- playercode/mdreg.c.orig	Fri Dec 18 23:51:15 2009
-+++ playercode/mdreg.c	Fri Dec 18 23:51:44 2009
-@@ -66,6 +66,9 @@ void _mm_registeralldrivers(void)
+$OpenBSD: patch-playercode_mdreg_c,v 1.2 2013/01/13 09:10:40 sthen Exp $
+--- playercode/mdreg.c.orig	Wed Mar 14 17:03:00 2012
++++ playercode/mdreg.c	Thu Jan 10 00:18:55 2013
+@@ -69,6 +69,9 @@ void _mm_registeralldrivers(void)
  #ifdef DRV_SUN
  	_mm_registerdriver(&drv_sun);
  #endif

@@ -65,7 +65,7 @@ static BOOL Sndio_Init(void)
 		return 1;
 	}
 
-	if (!(audiobuffer = (SBYTE *)_mm_malloc(fragsize)))
+	if (!(audiobuffer = (SBYTE *)MikMod_malloc(fragsize)))
 		return 1;
 
 	sio_initpar(&par);
@@ -106,7 +106,7 @@ static BOOL Sndio_Init(void)
 static void Sndio_Exit(void)
 {
 	VC_Exit();
-	_mm_free(audiobuffer);
+	MikMod_free(audiobuffer);
 	if (hdl) {
 		sio_close(hdl);
 		hdl = NULL;
@@ -139,9 +139,8 @@ static BOOL Sndio_PlayStart(void)
 
 static void Sndio_PlayStop(void)
 {
-	//sio_stop(hdl);
-
 	VC_PlayStop();
+	sio_stop(hdl);
 }
 
 MIKMODAPI MDRIVER drv_sndio = {
@@ -150,7 +149,7 @@ MIKMODAPI MDRIVER drv_sndio = {
 	"sndio audio driver v1.0",
 	0, 255,
 	"audio",
-
+    "buffer:r:7,17,12:Audio buffer log2 size\n",
 	Sndio_CommandLine,
 	Sndio_IsThere,
 	VC_SampleLoad,
