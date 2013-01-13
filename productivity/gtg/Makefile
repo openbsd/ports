@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2012/06/24 23:01:13 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.21 2013/01/13 16:52:21 landry Exp $
 
 COMMENT=		GTD organizer for GNOME
 
 MODPY_EGG_VERSION=	0.2.9
 DISTNAME=		gtg-${MODPY_EGG_VERSION}
+REVISION=		0
 
 CATEGORIES=		productivity
 
@@ -18,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://launchpadlibrarian.net/92775007/
 EXTRACT_SUFX=		.tar.gz
 
-MODULES=		lang/python
+MODULES=		lang/python devel/gettext
 
 RUN_DEPENDS=		devel/desktop-file-utils \
 			devel/py-configobj \
