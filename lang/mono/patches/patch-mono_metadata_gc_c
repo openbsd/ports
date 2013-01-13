@@ -1,0 +1,11 @@
+$OpenBSD: patch-mono_metadata_gc_c,v 1.1 2013/01/13 21:38:37 kurt Exp $
+--- mono/metadata/gc.c.orig	Thu Jan 10 10:55:32 2013
++++ mono/metadata/gc.c	Thu Jan 10 11:24:55 2013
+@@ -1098,6 +1098,7 @@ finalizer_thread (gpointer unused)
+ 	}
+ 
+ 	SetEvent (shutdown_event);
++	pthread_exit(NULL);
+ 	return 0;
+ }
+ 

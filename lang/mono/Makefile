@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.73 2012/12/26 17:47:56 naddy Exp $
-
-BROKEN=		unreliable build, fails in bulk builds
+# $OpenBSD: Makefile,v 1.74 2013/01/13 21:38:37 kurt Exp $
 
 COMMENT=	cross platform, open source .NET developement framework
 
 DISTNAME=	mono-2.10.9
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	lang devel
 
