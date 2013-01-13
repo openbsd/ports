@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.294 2012/11/22 18:36:52 landry Exp $
+# $OpenBSD: Makefile,v 1.295 2013/01/13 17:01:58 bcallah Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -101,6 +101,7 @@
      SUBDIR += mcp-plugins
      SUBDIR += metronome
      SUBDIR += midish
+     SUBDIR += mikmod
      SUBDIR += milkytracker
      SUBDIR += mixer.app
      SUBDIR += mkplaylist
