@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/17 08:05:14 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/01/13 13:38:29 benoit Exp $
 
 COMMENT=	Exif jpeg camera setting parser and thumbnail remover
 
-DISTNAME=	jhead-2.90
+DISTNAME=	jhead-2.96
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.sentex.net/~mwandel/jhead/
@@ -22,7 +22,6 @@ NO_REGRESS=	Yes
 
 RUN_DEPENDS=	graphics/jpeg
 
-USE_GROFF =	Yes
 MAKE_FILE=	makefile
 
 do-install:

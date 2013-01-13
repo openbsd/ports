@@ -1,6 +1,6 @@
---- jhead.c.orig	Fri Nov  6 10:15:21 2009
-+++ jhead.c	Wed Nov 18 20:39:50 2009
-@@ -155,7 +155,8 @@ static int FileEditComment(char * TempFileName, char *
+--- jhead.c.orig	Fri Jun 22 17:00:21 2012
++++ jhead.c	Sat Jan 12 10:34:05 2013
+@@ -162,7 +162,8 @@ static int FileEditComment(char * TempFileName, char *
          }
          if (strlen(Editor) > PATH_MAX) ErrFatal("env too long");
  
@@ -10,7 +10,7 @@
          a = system(QuotedPath);
      }
  
-@@ -261,7 +262,8 @@ static int ModifyDescriptComment(char * OutComment, ch
+@@ -268,7 +269,8 @@ static int ModifyDescriptComment(char * OutComment, ch
      if (!HasScandate && !ImageInfo.DateTime[0]){
          // Scan date is not in the file yet, and it doesn't have one built in.  Add it.
          char Temp[30];
@@ -20,7 +20,7 @@
          strncat(OutComment, Temp, MAX_COMMENT_SIZE-5-strlen(OutComment));
          Modified = TRUE;
      }
-@@ -287,7 +289,9 @@ static int AutoResizeCmdStuff(void)
+@@ -294,7 +296,9 @@ static int AutoResizeCmdStuff(void)
  
      if (scale < 0.5) scale = 0.5; // Don't scale down by more than a factor of two.
  
