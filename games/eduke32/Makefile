@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.3 2013/01/08 10:23:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2013/01/13 09:26:34 sthen Exp $
 
 COMMENT =	Enhanced Duke Nukem 3D engine
 RDATE =		20120301
 RTAG =		2394
 DISTNAME =	eduke32_src_${RDATE}-${RTAG}
 PKGNAME =	eduke32-2.0.0.${RTAG}
+REVISION =	0
 EXTRACT_SUFX =	.tar.bz2
-CATEGORIES =	games x11 wip
+CATEGORIES =	games x11
 
 HOMEPAGE =	http://www.eduke32.com/
 
-MAINTAINER =	Ryan Freeman <ryan@slipgate.org>
+MAINTAINER =	Ryan Freeman <rfreeman@openbsd.org>
 
 # GPLv2, BUILD license and shareware data
 PERMIT_PACKAGE_CDROM =  "BUILD engine license is not compatible with GPLv2."
@@ -31,6 +32,10 @@ LIB_DEPENDS =	audio/libvorbis \
 		multimedia/libvpx \
 		devel/sdl \
 		devel/sdl-mixer
+
+# dlopen()'d; shows as Extra in check-lib-depends but it is used
+LIB_DEPENDS +=	x11/gtk+2
+WANTLIB +=	gtk-x11-2.0
 
 RUN_DEPENDS =	games/duke3ddata
 
