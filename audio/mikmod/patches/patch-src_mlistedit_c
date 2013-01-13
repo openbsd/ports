@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_mlistedit_c,v 1.1.1.1 2013/01/13 16:33:58 bcallah Exp $
+
+fix off-by-one
+
+--- src/mlistedit.c.orig	Sat Jan 12 03:20:10 2013
++++ src/mlistedit.c	Sat Jan 12 03:21:01 2013
+@@ -917,7 +917,7 @@ void freq_open (char *title, char *path, int actline,
+ static BOOL cb_list_scan_dir (char *path, int added, int removed, void *data)
+ {
+ 	BOOL quiet = (BOOL)(long)data;
+-	char str[70], *pos;
++	char str[71], *pos;
+ 	int i;
+ 
+ 	if (!quiet) {
