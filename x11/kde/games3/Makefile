@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2012/06/15 08:30:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2013/01/13 19:35:42 zhuk Exp $
 
 COMMENT =		K Desktop Environment, games
 
@@ -19,7 +19,7 @@ RUN_DEPENDS +=	devel/desktop-file-utils \
 LIB_DEPENDS = 	x11/kde/libs3
 SEPARATE_BUILD =	flavored
 
-REVISION =	8
+REVISION =	9
 WANTLIB = GL ICE SM X11 Xau Xcursor Xdamage Xdmcp Xext Xfixes Xft Xi Xinerama \
 	Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 artsflow artsflow_idl \
 	audiofile c drm expat fam fontconfig freetype glib-2.0 gmodule-2.0 \
@@ -29,6 +29,7 @@ WANTLIB = GL ICE SM X11 Xau Xcursor Xdamage Xdmcp Xext Xfixes Xft Xi Xinerama \
 	lib/kde3/kparts m mad mcop mng ogg pcre png pthread pthread-stubs \
 	qtmcop sndio soundserver_idl stdc++ util vorbis vorbisenc vorbisfile \
 	xcb z
+WANTLIB += avahi-client avahi-common dbus-1 dns_sd
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/HTML/en/common

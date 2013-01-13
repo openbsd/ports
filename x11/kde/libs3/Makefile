@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.121 2013/01/11 16:20:00 zhuk Exp $
+# $OpenBSD: Makefile,v 1.122 2013/01/13 19:35:42 zhuk Exp $
 
 COMMENT-main =		K Desktop Environment, libraries
 COMMENT-cups =		K Desktop Environment, cups support
@@ -79,9 +79,10 @@ LIB_DEPENDS-main =	\
 	graphics/tiff \
 	graphics/jasper \
 	graphics/openexr \
-	textproc/aspell/core
+	textproc/aspell/core \
+	net/avahi
 
-WANTLIB-main = ${WANTLIB}
+WANTLIB-main =	${WANTLIB} avahi-client avahi-common dbus-1 dns_sd
 
 RUN_DEPENDS-main = \
 	${RUN_DEPENDS} \
@@ -95,7 +96,7 @@ LIB_DEPENDS-cups = \
 
 WANTLIB-cups = ${WANTLIB}
 
-REVISION-main = 18
+REVISION-main = 19
 REVISION-cups = 10
 WANTLIB-main += Half Iex IlmImf>=4 IlmThread Imath artsflow>=1 \
 	artsflow_idl aspell audiofile bz2 glib-2.0 gmodule-2.0 gthread-2.0 \

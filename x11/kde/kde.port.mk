@@ -1,4 +1,4 @@
-# $OpenBSD: kde.port.mk,v 1.35 2010/11/22 08:37:01 espie Exp $
+# $OpenBSD: kde.port.mk,v 1.36 2013/01/13 19:35:41 zhuk Exp $
 
 SHARED_ONLY ?=	Yes
 
@@ -15,7 +15,7 @@ FLAVOR ?=
 
 MODKDE_CONFIGURE_ARGS =${MODQT_CONFIGURE_ARGS}
 MODKDE_CONFIGURE_ARGS +=	--with-extra-libs="${LOCALBASE}/lib/kde3:${LOCALBASE}/lib/db4:${LOCALBASE}/lib/samba:${LOCALBASE}/lib"
-MODKDE_CONFIGURE_ARGS +=	--with-extra-includes="${LOCALBASE}/include/db4:${LOCALBASE}/include/libpng:${LOCALBASE}/include"
+MODKDE_CONFIGURE_ARGS +=	--with-extra-includes="${LOCALBASE}/include/avahi-compat-libdns_sd:${LOCALBASE}/include/db4:${LOCALBASE}/include/libpng:${LOCALBASE}/include"
 MODKDE_CONFIGURE_ARGS +=	--with-xdmdir=/var/X11/kdm
 MODKDE_CONFIGURE_ARGS +=	--enable-mitshm
 MODKDE_CONFIGURE_ARGS +=	--with-xinerama
