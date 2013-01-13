@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2013/01/02 18:29:09 landry Exp $
+# $OpenBSD: Makefile,v 1.14 2013/01/13 17:55:29 landry Exp $
 
 COMMENT=	D-Bus thumbnailing service
 
-XFCE_VERSION=	0.1.26
+XFCE_VERSION=	0.1.27
 XFCE_GOODIE=	tumbler
 
 SHARED_LIBS+=	tumbler-1 0.0
@@ -20,9 +20,11 @@ CONFIGURE_ARGS =	--disable-raw-thumbnailer \
 			--disable-gstreamer-thumbnailer
 # correctly find bindtextdomain
 CONFIGURE_ENV +=	LIBS='-liconv'
+FAKE_FLAGS =	confdir=${PREFIX}/share/examples/tumbler
 
 LIB_DEPENDS +=	x11/dbus-glib \
 		devel/libgsf \
+		net/curl \
 		print/poppler \
 		graphics/png \
 		graphics/jpeg \
@@ -39,5 +41,6 @@ WANTLIB += pthread pthread-stubs xcb xcb-render xcb-shm
 WANTLIB += xml2 z ffi bz2 stdc++ tiff gsf-1
 WANTLIB += avcodec avformat avutil ffmpegthumbnailer
 WANTLIB += ogg orc-0.4 swscale
+WANTLIB += crypto curl idn ssl
 
 .include <bsd.port.mk>
