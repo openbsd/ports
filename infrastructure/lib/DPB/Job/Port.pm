@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.80 2013/01/12 14:44:41 espie Exp $
+# $OpenBSD: Port.pm,v 1.81 2013/01/13 14:04:00 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -189,6 +189,7 @@ sub finalize
 
 package DPB::Task::Port::Checksum;
 our @ISA = qw(DPB::Task::Port);
+
 sub need_checksum
 {
 	my ($self, $log, $info) = @_;
@@ -219,7 +220,7 @@ sub setup
     	}
 }
 
-sub run
+sub checksum
 {
 	my ($self, $core) = @_;
 	my $job = $core->job;
@@ -232,7 +233,13 @@ sub run
 			unlink($dist->tempfilename);
 		}
 	}
-	exit($exit);
+	return $exit;
+}
+
+sub run
+{
+	my ($self, $core) = @_;
+	exit($self->checksum($core));
 }
 
 sub finalize
@@ -243,6 +250,71 @@ sub finalize
 		delete $core->job->{v}{info}{DIST};
 	}
 }
+
+package DPB::Task::Port::ChecksumAndList;
+our @ISA =qw(DPB::Task::Port::Checksum);
+sub need_checksum
+{
+	my ($self, $log, $info) = @_;
+	my $need = $self->SUPER::need_checksum($log, $info);
+	if (!$need) {
+		for my $dist (values %{$info->{DIST}}) {
+			if (!-f $dist->listname) {
+				$need = 1;
+			}
+		}
+	}
+	return $need;
+}
+
+my $gtar = DPB::PkgPath->new('archivers/gtar');
+
+sub list
+{
+	my ($self, $dist, $info) = @_;
+	my $name = $dist->filename;
+	my $output = $dist->listname;
+	my ($cmd, $tar);
+	if ($info->{DEPENDS}{$gtar} || $info->{BDEPENDS}{$gtar}) {
+		$tar = 'gtar';
+
+	} else {
+		$tar = 'tar';
+	}
+	if ($name =~ m/\.tar\.xz$/) {
+		$cmd = "xzcat $name|$tar tf -";
+	} elsif ($name =~ m/\.(tar\.bz2|tbz2|tbz)$/) {
+		$cmd = "bzip2 -dc $name|$tar tf -";
+	} elsif ($name =~ m/\.tar$/) {
+		$cmd = "$tar tf $name";
+	} elsif ($name =~ m/\.(tar\.gz|tgz)$/) {
+		$cmd = "gzip -dc $name|$tar tf -";
+	} elsif ($name =~ m/\.rar$/) {
+		$cmd = "unrar vb $name";
+	} elsif ($name =~ m/.zip$/) {
+		$cmd = "zipinfo -1 $name";
+	}
+	if (defined $cmd) {
+		$cmd .= "|gzip >$output";
+		File::Path::mkpath(File::Basename::dirname($output));
+		print "Running $cmd\n";
+		system($cmd);
+	}
+}
+
+sub run
+{
+	my ($self, $core) = @_;
+	my $job = $core->job;
+	my $exit = $self->SUPER::checksum($core);
+	for my $dist (values %{$job->{v}{info}{DIST}}) {
+		if (!-f $dist->listname) {
+			$self->list($dist, $job->{v}{info});
+		}
+	}
+	exit($exit);
+}
+
 
 package DPB::Task::Port::Serialized;
 our @ISA = qw(DPB::Task::Port);
