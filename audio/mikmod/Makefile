@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/01/13 16:33:58 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2013/01/13 16:48:17 bcallah Exp $
 
 COMMENT =	module audio player
 DISTNAME =	mikmod-3.2.2
 CATEGORIES =	audio
+REVISION =	0
 
 HOMEPAGE =	http://mikmod.shlomifish.org/
 
@@ -21,6 +22,8 @@ MASTER_SITES =	${HOMEPAGE}/files/
 CONFIGURE_STYLE =	gnu
 
 LIB_DEPENDS =	audio/libmikmod
+
+RUN_DEPENDS =	archivers/bzip2
 
 MAKE_FLAGS =	CC="${CC}" CFLAGS="${CFLAGS}"
 
