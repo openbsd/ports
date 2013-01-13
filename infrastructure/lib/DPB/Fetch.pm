@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.45 2013/01/10 12:00:38 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.46 2013/01/13 14:03:20 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -119,6 +119,12 @@ sub filename
 {
 	my $self = shift;
 	return $self->distdir($self->{name});
+}
+
+sub listname
+{
+	my $self = shift;
+	return $self->distdir('list', $self->{name}.".gz");
 }
 
 sub checked_already
@@ -492,6 +498,7 @@ sub expire_old
 	File::Find::find(sub {
 		if (-d $_ && 
 		    ($File::Find::name eq "$distdir/by_cipher" || 
+		     $File::Find::name eq "$distdir/list" ||
 		    $File::Find::name eq "$distdir/build-stats")) {
 			$File::Find::prune = 1;
 			return;
@@ -592,9 +599,9 @@ sub build_distinfo
 			my $file = &$build($d);
 			$files->{$file} = $file if defined $file;
 		}
-		for my $d (keys %{$info->{SUPDISTFILES}}) {
-			my $file = &$build($d);
-			if ($fetch_only) {
+		if ($fetch_only) {
+			for my $d (keys %{$info->{SUPDISTFILES}}) {
+				my $file = &$build($d);
 				$files->{$file} = $file if defined $file;
 			}
 		}
@@ -662,6 +669,8 @@ sub finalize
 		return $job->bad_file($self->{fetcher}, $core);
 	}
 	rename($job->{file}->tempfilename, $job->{file}->filename);
+	# and remove anything we might have listed
+	unlink($job->{file}->listname);
 	$job->{file}->cache;
 	my $sz = $job->{file}->{sz};
 	if (defined $self->{fetcher}->{initial_sz}) {
