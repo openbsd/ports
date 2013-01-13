@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2012/11/30 11:29:05 sthen Exp $
-
-BROKEN= Uncaught exception SysErr with <unknown> raised at <sysconf.c>
+# $OpenBSD: Makefile,v 1.11 2013/01/13 07:10:09 brad Exp $
 
 ONLY_FOR_ARCHS=        i386
 
@@ -9,7 +7,7 @@ COMMENT=	New Jersey Standard ML
 V=		110.0.7
 
 PKGNAME=	smlnj-$V
-REVISION=	0
+REVISION=	1
 CATEGORIES=	lang
 
 HOMEPAGE=	http://www.smlnj.org/
