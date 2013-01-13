@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.30 2012/12/23 12:25:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2013/01/13 02:18:47 brad Exp $
 
 # uses gcj which is only supported on select archs
-ONLY_FOR_ARCHS=	i386 amd64 sparc64
+ONLY_FOR_ARCHS=	amd64 i386 sparc64
 
-COMMENT=	essential libraries for java
+COMMENT=	essential libraries for Java
 
 DISTNAME=	classpath-0.98
-REVISION=	12
+REVISION=	13
 
 CATEGORIES=	lang java
 
@@ -36,7 +36,7 @@ USE_GROFF =	Yes
 BUILD_DEPENDS=	archivers/zip \
 		lang/antlr3>=3.4p0
 
-RUN_DEPENDS=	lang/gcc/4.2,-java \
+RUN_DEPENDS=	lang/gcc/4.6,-java \
 		lang/antlr3>=3.4p0
 
 LIB_DEPENDS=	x11/gtk+2 \
