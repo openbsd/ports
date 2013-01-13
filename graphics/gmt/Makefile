@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/09/16 10:02:37 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/01/13 20:03:59 rpe Exp $
 
 COMMENT-main=		draw maps and charts
 COMMENT-high=		high resolution coastline data for GMT
@@ -7,16 +7,14 @@ COMMENT-full=		full resolution coastline data for GMT
 V=			4.1.3
 DISTNAME=		GMT$V
 PKGNAME-main=		gmt-$V
-REVISION-main =		2
+REVISION-main =		3
 PKGNAME-high=		gmt-high-$V
-REVISION-high =		0
+REVISION-high =		1
 PKGNAME-full=		gmt-full-$V
-REVISION-full =		0
+REVISION-full =		1
 CATEGORIES=		graphics geo
 
 HOMEPAGE=		http://gmt.soest.hawaii.edu/
-
-MAINTAINER=		David Cathcart <cathcart@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -24,11 +22,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		ftp://ftp.soest.hawaii.edu/gmt/4/ \
-			ftp://falcon.grdl.noaa.gov/pub/gmt/4/ \
-			ftp://ftp.iris.washington.edu/pub/gmt/4/ \
-			ftp://ftp.geologi.uio.no/pub/gmt/4/ \
-			ftp://gd.tuwien.ac.at/pub/gmt/4/
+MASTER_SITES=		ftp://ftp.iris.washington.edu/pub/gmt/4/
 			
 DISTFILES=		GMT$V_src.tar.bz2 \
 			GMT$V_man.tar.bz2 \
