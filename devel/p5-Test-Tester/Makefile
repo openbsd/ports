@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2010/12/03 11:44:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2013/01/13 09:28:00 sthen Exp $
 
 COMMENT=        run tests built with Test::Builder
 
 MODULES=	cpan
-DISTNAME=	Test-Tester-0.107
-REVISION=	0
+DISTNAME=	Test-Tester-0.108
 CATEGORIES=	devel
-USE_GROFF =	Yes
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
