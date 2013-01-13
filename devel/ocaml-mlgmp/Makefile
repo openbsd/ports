@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2012/11/30 19:08:05 chrisz Exp $
+# $OpenBSD: Makefile,v 1.5 2013/01/13 15:42:12 naddy Exp $
 
 COMMENT =		GMP bindings for OCaml
 
 V =			0.13
-REVISION =		2
+REVISION =		3
 DISTNAME =		mlgmp-${V}
 PKGNAME =		ocaml-mlgmp-${V}
 
@@ -20,8 +20,8 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		http://theunixzoo.co.uk/files/
 
 MODULES =		lang/ocaml
-BUILD_DEPENDS =		devel/gmp devel/mpfr
-RUN_DEPENDS =		${BUILD_DEPENDS}
+BUILD_DEPENDS =		${RUN_DEPENDS}
+RUN_DEPENDS =		devel/gmp devel/mpfr
 
 USE_GMAKE =		Yes
 
