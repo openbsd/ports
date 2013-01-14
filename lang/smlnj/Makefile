@@ -1,18 +1,15 @@
-# $OpenBSD: Makefile,v 1.11 2013/01/13 07:10:09 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2013/01/14 16:16:59 jasper Exp $
 
 ONLY_FOR_ARCHS=        i386
 
 COMMENT=	New Jersey Standard ML
 
-V=		110.0.7
+V=		110.75
 
 PKGNAME=	smlnj-$V
-REVISION=	1
 CATEGORIES=	lang
 
 HOMEPAGE=	http://www.smlnj.org/
-
-MAINTAINER=	Jens Gerlach Christensen <vepjan@worldonline.dk>
 
 # http://www.smlnj.org/license.html
 PERMIT_PACKAGE_CDROM=	without fee
@@ -22,52 +19,48 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c m
 
-MASTER_SITES=	ftp://ftp.research.bell-labs.com/dist/smlnj/release/$V/
+MASTER_SITES= 	http://smlnj.cs.uchicago.edu/dist/working/$V/
 DIST_SUBDIR=	smlnj-$V
-DISTFILES=	bin.x86-unix.tar.Z cm.tar.Z cml.tar.Z \
-		config.tar.Z eXene.tar.Z \
-		ml-burg.tar.Z ml-lex.tar.Z \
-		ml-yacc.tar.Z runtime.tar.Z \
-		smlnj-c.tar.Z smlnj-lib.tar.Z
-#EXTRACT_ONLY=	config.tar.Z
 
-USE_GMAKE=	Yes
+DISTFILES=	MLRISC.tgz \
+		boot.x86-unix.tgz \
+		ckit.tgz cm.tgz cml.tgz \
+		compiler.tgz config.tgz \
+		eXene.tgz heap2asm.tgz \
+		ml-burg.tgz ml-lex.tgz \
+		ml-lpt.tgz ml-yacc.tgz \
+		nlffi.tgz pgraph.tgz \
+		runtime.tgz smlnj-c.tgz \
+		smlnj-lib.tgz system.tgz \
+		trace-debug-profile.tgz
 
 SML_BASE=	${PREFIX}/smlnj
 SML_LIBDIR=	${SML_BASE}/lib
 SML_BINDIR=	${SML_BASE}/bin
-SML_SRCDIR=	${SML_BASE}/src
-SML_EXES=	ml-burg ml-lex ml-yacc sml sml-cm
+SML_EXES= 	heap2exec ml-antlr ml-build \
+	       	ml-burg ml-lex \
+		ml-makedepend ml-nlffigen \
+	       	ml-ulex ml-yacc sml
+
+USE_GMAKE=	Yes
+NO_REGRESS=	Yes
 
 post-extract:
-	mkdir -p ${WRKDIR}/src
+	mkdir -p ${WRKDIR}/base
 	cd ${WRKDIR} && \
-	    mv cm cml eXene ml-burg ml-lex ml-yacc runtime smlnj-lib src
-#post-extract:
-#	cd ${WRKDIR} && ln -sf ${DISTDIR}/${DIST_SUBDIR}/*  .
+	    mv cm compiler runtime base
 
 do-build:
 	cd ${WRKDIR} && unset PWD && \
 	FILESDIR="$(FILESDIR)" ./config/install.sh
 
-NO_REGRESS=	Yes
-
 do-install:
 	rm -rf ${SML_BASE}
-	-mkdir ${SML_BASE} ${SML_BINDIR} ${SML_LIBDIR}
+	mkdir ${SML_BASE} ${SML_BINDIR} ${SML_LIBDIR}
 	tar -C ${WRKDIR} -cf - bin | tar -C ${SML_BASE} -xf -
-	rm -f ${SML_BINDIR}/.run-sml
-	sed -e "s,^BIN_DIR=.*\$$,BIN_DIR=${TRUEPREFIX}/smlnj/bin," \
-		< ${WRKDIR}/bin/.run-sml > ${SML_BINDIR}/.run-sml
-	chmod 755 ${SML_BINDIR}/.run-sml
-	cd ${WRKDIR} && tar -cf - `find . -name x86-unix` | \
-		tar -C ${SML_BASE} -xf -
-	cd ${WRKDIR} && tar -cf - `${FILESDIR}/get-cm ${WRKDIR}` | \
-		tar -C ${SML_BASE} -xf -
-	for file in ${WRKDIR}/lib/*; do\
-		sed -e "s,${WRKDIR},${TRUEPREFIX}/smlnj," < $$file > \
-			${SML_LIBDIR}/`basename $$file`; \
-	done
+	tar -C ${WRKDIR} -cf - lib | tar -C ${SML_BASE} -xf -
+        # Remove the ports' non-SML binaries
+        rm ${SML_BASE}/bin/{g,}cc ${SML_BASE}/bin/{g,c}++
 	cd ${PREFIX}/bin && \
 	for file in ${SML_EXES}; do \
 		ln -s ../smlnj/bin/$$file .; \
