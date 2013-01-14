@@ -1,6 +1,6 @@
-$OpenBSD: patch-sample-config_nagios_cfg_in,v 1.3 2008/03/18 20:25:11 sturm Exp $
---- sample-config/nagios.cfg.in.orig	Thu Jan 24 19:58:02 2008
-+++ sample-config/nagios.cfg.in	Sat Mar 15 19:47:52 2008
+$OpenBSD: patch-sample-config_nagios_cfg_in,v 1.4 2013/01/14 12:14:21 sthen Exp $
+--- sample-config/nagios.cfg.in.orig	Mon Nov 12 18:33:37 2012
++++ sample-config/nagios.cfg.in	Mon Jan 14 12:12:34 2013
 @@ -16,7 +16,7 @@
  # for historical purposes.  This should be the first option specified 
  # in the config file!!!
@@ -16,6 +16,15 @@ $OpenBSD: patch-sample-config_nagios_cfg_in,v 1.3 2008/03/18 20:25:11 sturm Exp 
  
 -log_archive_path=@localstatedir@/archives
 +log_archive_path=/var/log/nagios/archives
+ 
+ 
+ 
+@@ -728,7 +728,7 @@ interval_length=60
+ # by Nagios Enterprises from the update check is processed in accordance 
+ # with our privacy policy - see http://api.nagios.org for details.
+ 
+-check_for_updates=1
++check_for_updates=0
  
  
  
