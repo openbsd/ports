@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2012/10/08 08:52:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2013/01/14 17:45:36 robert Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Ruby library for retrieving facts from operating systems
 
-VERSION=	1.6.13
+VERSION=	1.6.17
 DISTNAME=	facter-${VERSION}
 PKGNAME=	ruby-${DISTNAME}
 CATEGORIES=	sysutils
