@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2013/01/05 18:27:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2013/01/14 05:52:34 brad Exp $
 
 # XXX
 # fix autospawn lock (patch-src_daemon_main_c)
@@ -68,8 +68,7 @@ LIB_DEPENDS=		audio/libsndfile \
 			devel/libexecinfo \
 			devel/libtool,-ltdl
 
-AUTOCONF_VERSION=	2.69
-CONFIGURE_STYLE=	autoconf
+CONFIGURE_STYLE=	gnu
 
 # We only enable the strict minimum for basic volume control support.
 # sndiod(1) is the default sound server on OpenBSD and pulseaudio is only
@@ -115,7 +114,7 @@ FAKE_FLAGS=		pulseconfdir="${PREFIX}/share/examples/pulseaudio/pulse" \
 			sysconfdir="${PREFIX}/share/examples/pulseaudio"
 
 ### SNDIO ###
-CONFIGURE_STYLE=	gnu
+AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.12
 BUILD_DEPENDS +=	${MODGNU_AUTOMAKE_DEPENDS} \
 			${MODGNU_AUTOCONF_DEPENDS}
