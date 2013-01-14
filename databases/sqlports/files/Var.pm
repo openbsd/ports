@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.15 2012/05/22 12:04:02 espie Exp $
+# $OpenBSD: Var.pm,v 1.16 2013/01/14 13:09:54 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -448,6 +448,12 @@ our @ISA = qw(ListKeyVar);
 sub table() { 'Targets' }
 sub keyword_table() { 'TargetKeys' }
 
+package DPBPropertiesVar;
+our @ISA = qw(DefinedListKeyVar);
+sub table() { 'DPBProperties' }
+sub keyword_table { 'DPBKeys' }
+
+sub keyword_table() { 'TargetKeys' }
 package MultiVar;
 our @ISA = qw(ListVar);
 sub table() { 'Multi' }

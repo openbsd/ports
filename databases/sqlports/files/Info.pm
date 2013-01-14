@@ -1,4 +1,4 @@
-# $OpenBSD: Info.pm,v 1.4 2013/01/06 21:20:58 espie Exp $
+# $OpenBSD: Info.pm,v 1.5 2013/01/14 13:09:54 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -36,6 +36,7 @@ our $vars = {
     CONFIGURE_STYLE => 'ConfigureVar',
     DESCR => 'FileVar',
     DISTFILES => 'AnyVar',
+    DPB_PROPERTIES => 'DPBPropertiesVar',
     PATCHFILES => 'AnyVar',
     DISTNAME => 'AnyVar',
     DIST_SUBDIR => 'DefinedVar',
