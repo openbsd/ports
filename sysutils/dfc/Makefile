@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/06/01 13:01:45 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2013/01/14 15:52:19 benoit Exp $
 
 COMMENT =	display file system space usage using graph and colors
 
-DISTNAME =	dfc-3.0.0
+DISTNAME =	dfc-3.0.1
 CATEGORIES =	sysutils
 
-MASTER_SITES =	http://projects.gw-computing.net/attachments/download/63/
+MASTER_SITES =	http://projects.gw-computing.net/attachments/download/67/
 HOMEPAGE =	http://projects.gw-computing.net/projects/dfc
 
 # BSD
