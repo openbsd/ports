@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2012/10/28 18:48:45 robert Exp $
+@comment $OpenBSD: PLIST,v 1.25 2013/01/14 17:35:59 robert Exp $
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
 @extraunexec rm -rf ${SYSCONFDIR}/puppet/*
@@ -511,7 +511,6 @@ ${MODRUBY_SITEDIR}/puppet/provider/group/windows_adsi.rb
 ${MODRUBY_SITEDIR}/puppet/provider/host/
 ${MODRUBY_SITEDIR}/puppet/provider/host/parsed.rb
 ${MODRUBY_SITEDIR}/puppet/provider/interface/
-${MODRUBY_SITEDIR}/puppet/provider/interface/base.rb
 ${MODRUBY_SITEDIR}/puppet/provider/interface/cisco.rb
 ${MODRUBY_SITEDIR}/puppet/provider/ldap.rb
 ${MODRUBY_SITEDIR}/puppet/provider/macauthorization/
@@ -885,6 +884,7 @@ ${MODRUBY_SITEDIR}/puppet/util/windows/file.rb
 ${MODRUBY_SITEDIR}/puppet/util/windows/process.rb
 ${MODRUBY_SITEDIR}/puppet/util/windows/registry.rb
 ${MODRUBY_SITEDIR}/puppet/util/windows/security.rb
+${MODRUBY_SITEDIR}/puppet/util/windows/sid.rb
 ${MODRUBY_SITEDIR}/puppet/util/windows/user.rb
 ${MODRUBY_SITEDIR}/puppet/util/zaml.rb
 ${MODRUBY_SITEDIR}/puppet/version.rb
