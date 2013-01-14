@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2013/01/12 11:21:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2013/01/14 12:35:19 zhuk Exp $
 
 COMMENT-main = 		K Desktop Environment, developer extensions
 COMMENT-svn = 		K Desktop Environment, svn extensions
@@ -35,7 +35,6 @@ RUN_DEPENDS-svn =	x11/gtk+2,-guic
 LIB_DEPENDS-svn = 	${LIB_DEPENDS} \
 			devel/subversion
 
-FLAVORS =		debug
 SEPARATE_BUILD =	flavored
 
 WANTLIB	= ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c fam idn jpeg \

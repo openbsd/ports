@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.64 2012/06/15 08:30:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2013/01/14 12:35:19 zhuk Exp $
 
 COMMENT =		K Desktop Environment, edutainment
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		kdeedu-${VERSION}
 MODKDE_VERSION ?=	3.5.8
-FLAVORS =	debug
 SHARED_LIBS +=	kdeeducore           4.0      # .3.0
 SHARED_LIBS +=	kdeeduui             4.0      # .3.5
 SHARED_LIBS +=	kdeeduplot           4.0      # .3.0

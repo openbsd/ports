@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2012/06/15 08:30:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2013/01/14 12:35:19 zhuk Exp $
 
 COMMENT = 		X11 toolkit, accessibility aids
 CATEGORIES =		x11 x11/kde
@@ -13,8 +13,6 @@ MODULES =	x11/kde devel/gettext
 RUN_DEPENDS +=	devel/desktop-file-utils \
 		x11/gtk+2,-guic
 LIB_DEPENDS =	x11/kde/libs3 
-
-FLAVORS =	debug
 
 SEPARATE_BUILD =	flavored
 

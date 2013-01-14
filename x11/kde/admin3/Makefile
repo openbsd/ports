@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2012/06/15 08:30:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2013/01/14 12:35:19 zhuk Exp $
 
 COMMENT = 		K Desktop Environment, admin tools
 CATEGORIES =		x11 x11/kde
@@ -11,7 +11,6 @@ MODULES =	x11/kde devel/gettext
 RUN_DEPENDS +=	devel/desktop-file-utils \
 		x11/gtk+2,-guic
 LIB_DEPENDS =	x11/kde/libs3
-FLAVORS =	debug
 
 SEPARATE_BUILD =	flavored
 

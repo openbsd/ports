@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.122 2013/01/13 19:35:42 zhuk Exp $
+# $OpenBSD: Makefile,v 1.123 2013/01/14 12:35:19 zhuk Exp $
 
 COMMENT-main =		K Desktop Environment, libraries
 COMMENT-cups =		K Desktop Environment, cups support
@@ -50,7 +50,6 @@ SHARED_LIBS +=	kmediaplayer         1.0      # .0.0
 SHARED_LIBS +=	kimproxy             1.0      # .0.0
 SHARED_LIBS +=	katepartinterfaces   1.0      # .0.0
 
-FLAVORS =	debug
 VMEM_WARNING =	Yes
 
 

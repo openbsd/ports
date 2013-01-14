@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2012/11/28 07:17:04 brad Exp $
+# $OpenBSD: Makefile,v 1.75 2013/01/14 12:35:19 zhuk Exp $
 
 COMMENT = 		K Desktop Environment, multimedia applications
 CATEGORIES =		x11 x11/kde
@@ -32,8 +32,6 @@ SHARED_LIBS +=	audiocdplugins       2.0      # .1.0
 SHARED_LIBS +=	arts_mpeglib         1.0      # .0.3
 SHARED_LIBS +=	arts_splay           1.0      # .0.0
 SHARED_LIBS +=	arts_mpeglib-0.3.0   1.0      # .0.3
-
-FLAVORS =	debug
 
 MODULES =	x11/kde devel/gettext
 

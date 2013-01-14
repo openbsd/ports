@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2013/01/12 11:21:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.77 2013/01/14 12:35:19 zhuk Exp $
 
 COMMENT = 		KDE personal information applications
 COMMENT-kpilot =	KDE interface to sync with Palm Pilot
@@ -76,7 +76,6 @@ WANTLIB += mcop mng ogg pcre pcreposix pisock png pthread qtmcop
 WANTLIB += qui sasl2 sndio soundserver_idl stdc++ usb usb-1.0
 WANTLIB += util vcard vorbis vorbisenc vorbisfile xcb z
 
-FLAVORS =	debug
 RUN_DEPENDS +=	x11/kde/base3 \
 		devel/desktop-file-utils \
 		x11/gtk+2,-guic

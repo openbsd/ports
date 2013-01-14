@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2013/01/12 11:21:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.114 2013/01/14 12:35:19 zhuk Exp $
 
 COMMENT-main = 		K Desktop Environment, basic applications
 COMMENT-samba =		K Desktop Environment, samba support
@@ -23,7 +23,6 @@ SHARED_LIBS +=	kasbar               2.0      # .1.0
 SHARED_LIBS +=	kfontinst            1.0      # .0.0
 
 MULTI_PACKAGES =	-main -samba
-FLAVORS =		debug
 
 MODULES =	x11/kde devel/gettext
 
