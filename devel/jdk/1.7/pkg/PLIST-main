@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2012/10/24 18:54:03 kurt Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2013/01/14 20:16:56 kurt Exp $
 @option no-default-conflict
 @conflict jdk->=1.7,<1.8|jdk->=1.7v0,<1.8v0
 ${JDKHOME}/
@@ -18,6 +18,7 @@ ${JDKHOME}/bin/java-rmi.cgi
 @bin ${JDKHOME}/bin/javadoc
 @bin ${JDKHOME}/bin/javah
 @bin ${JDKHOME}/bin/javap
+@bin ${JDKHOME}/bin/jcmd
 @bin ${JDKHOME}/bin/jconsole
 @bin ${JDKHOME}/bin/jdb
 @bin ${JDKHOME}/bin/jhat
@@ -471,44 +472,53 @@ ${JDKHOME}/jre/lib/${MACHINE_ARCH}/headless/libmawt.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/jli/
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/jli/libjli.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/jvm.cfg
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libattach.diz
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libattach.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libawt.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libdt_socket.diz
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libdt_socket.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libfontmanager.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libhprof.diz
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libhprof.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libinstrument.diz
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libinstrument.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libj2gss.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libj2pcsc.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libj2pkcs11.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjaas_unix.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjava.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjava_crw_demo.diz
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjava_crw_demo.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjawt.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjdwp.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjpeg.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjsdt.diz
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjsdt.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjsig.debuginfo
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjsig.diz
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjsig.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjsound.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/liblcms.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libmanagement.diz
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libmanagement.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libmlib_image.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libnet.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libnio.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libnpt.diz
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libnpt.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/librmi.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/libsaproc.debuginfo
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libsaproc.diz
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libsaproc.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libsplashscreen.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libsunec.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libunpack.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libverify.diz
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libverify.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libzip.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/server/
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/server/Xusage.txt
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/server/libjsig.debuginfo
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/server/libjsig.diz
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/server/libjsig.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/server/libjvm.debuginfo
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/server/libjvm.diz
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/server/libjvm.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/xawt/
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/xawt/libmawt.so
@@ -641,6 +651,7 @@ ${JDKHOME}/jre/lib/zi/America/Cayman
 ${JDKHOME}/jre/lib/zi/America/Chicago
 ${JDKHOME}/jre/lib/zi/America/Chihuahua
 ${JDKHOME}/jre/lib/zi/America/Costa_Rica
+${JDKHOME}/jre/lib/zi/America/Creston
 ${JDKHOME}/jre/lib/zi/America/Cuiaba
 ${JDKHOME}/jre/lib/zi/America/Curacao
 ${JDKHOME}/jre/lib/zi/America/Danmarkshavn
@@ -1027,6 +1038,7 @@ ${JDKHOME}/lib/tools.jar
 @mandir ${JDKHOME}/man/
 ${JDKHOME}/man/man1/
 @man ${JDKHOME}/man/man1/appletviewer.1
+@man ${JDKHOME}/man/man1/apt.1
 @man ${JDKHOME}/man/man1/extcheck.1
 @man ${JDKHOME}/man/man1/idlj.1
 @man ${JDKHOME}/man/man1/jar.1
@@ -1036,6 +1048,7 @@ ${JDKHOME}/man/man1/
 @man ${JDKHOME}/man/man1/javadoc.1
 @man ${JDKHOME}/man/man1/javah.1
 @man ${JDKHOME}/man/man1/javap.1
+@man ${JDKHOME}/man/man1/jcmd.1
 @man ${JDKHOME}/man/man1/jconsole.1
 @man ${JDKHOME}/man/man1/jdb.1
 @man ${JDKHOME}/man/man1/jhat.1
@@ -1047,6 +1060,7 @@ ${JDKHOME}/man/man1/
 @man ${JDKHOME}/man/man1/jstack.1
 @man ${JDKHOME}/man/man1/jstat.1
 @man ${JDKHOME}/man/man1/jstatd.1
+@man ${JDKHOME}/man/man1/jvisualvm.1
 @man ${JDKHOME}/man/man1/keytool.1
 @man ${JDKHOME}/man/man1/native2ascii.1
 @man ${JDKHOME}/man/man1/orbd.1

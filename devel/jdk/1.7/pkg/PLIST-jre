@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-jre,v 1.10 2012/03/19 19:50:57 kurt Exp $
+@comment $OpenBSD: PLIST-jre,v 1.11 2013/01/14 20:16:56 kurt Exp $
 @option no-default-conflict
 @conflict jre->=1.7,<1.8|jre->=1.7v0,<1.8v0
 ${JREHOME}/
@@ -47,42 +47,51 @@ ${JREHOME}/lib/${MACHINE_ARCH}/headless/libmawt.so
 ${JREHOME}/lib/${MACHINE_ARCH}/jli/
 ${JREHOME}/lib/${MACHINE_ARCH}/jli/libjli.so
 ${JREHOME}/lib/${MACHINE_ARCH}/jvm.cfg
+${JREHOME}/lib/${MACHINE_ARCH}/libattach.diz
 ${JREHOME}/lib/${MACHINE_ARCH}/libawt.so
+${JREHOME}/lib/${MACHINE_ARCH}/libdt_socket.diz
 ${JREHOME}/lib/${MACHINE_ARCH}/libdt_socket.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libfontmanager.so
+${JREHOME}/lib/${MACHINE_ARCH}/libhprof.diz
 ${JREHOME}/lib/${MACHINE_ARCH}/libhprof.so
+${JREHOME}/lib/${MACHINE_ARCH}/libinstrument.diz
 ${JREHOME}/lib/${MACHINE_ARCH}/libinstrument.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libj2gss.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libj2pcsc.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libj2pkcs11.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libjaas_unix.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libjava.so
+${JREHOME}/lib/${MACHINE_ARCH}/libjava_crw_demo.diz
 ${JREHOME}/lib/${MACHINE_ARCH}/libjava_crw_demo.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libjawt.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libjdwp.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libjpeg.so
+${JREHOME}/lib/${MACHINE_ARCH}/libjsdt.diz
 ${JREHOME}/lib/${MACHINE_ARCH}/libjsdt.so
-${JREHOME}/lib/${MACHINE_ARCH}/libjsig.debuginfo
+${JREHOME}/lib/${MACHINE_ARCH}/libjsig.diz
 ${JREHOME}/lib/${MACHINE_ARCH}/libjsig.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libjsound.so
 ${JREHOME}/lib/${MACHINE_ARCH}/liblcms.so
+${JREHOME}/lib/${MACHINE_ARCH}/libmanagement.diz
 ${JREHOME}/lib/${MACHINE_ARCH}/libmanagement.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libmlib_image.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libnet.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libnio.so
+${JREHOME}/lib/${MACHINE_ARCH}/libnpt.diz
 ${JREHOME}/lib/${MACHINE_ARCH}/libnpt.so
 ${JREHOME}/lib/${MACHINE_ARCH}/librmi.so
-${JREHOME}/lib/${MACHINE_ARCH}/libsaproc.debuginfo
+${JREHOME}/lib/${MACHINE_ARCH}/libsaproc.diz
 ${JREHOME}/lib/${MACHINE_ARCH}/libsplashscreen.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libsunec.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libunpack.so
+${JREHOME}/lib/${MACHINE_ARCH}/libverify.diz
 ${JREHOME}/lib/${MACHINE_ARCH}/libverify.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libzip.so
 ${JREHOME}/lib/${MACHINE_ARCH}/server/
 ${JREHOME}/lib/${MACHINE_ARCH}/server/Xusage.txt
-${JREHOME}/lib/${MACHINE_ARCH}/server/libjsig.debuginfo
+${JREHOME}/lib/${MACHINE_ARCH}/server/libjsig.diz
 ${JREHOME}/lib/${MACHINE_ARCH}/server/libjsig.so
-${JREHOME}/lib/${MACHINE_ARCH}/server/libjvm.debuginfo
+${JREHOME}/lib/${MACHINE_ARCH}/server/libjvm.diz
 ${JREHOME}/lib/${MACHINE_ARCH}/server/libjvm.so
 ${JREHOME}/lib/${MACHINE_ARCH}/xawt/
 ${JREHOME}/lib/${MACHINE_ARCH}/xawt/libmawt.so
@@ -215,6 +224,7 @@ ${JREHOME}/lib/zi/America/Cayman
 ${JREHOME}/lib/zi/America/Chicago
 ${JREHOME}/lib/zi/America/Chihuahua
 ${JREHOME}/lib/zi/America/Costa_Rica
+${JREHOME}/lib/zi/America/Creston
 ${JREHOME}/lib/zi/America/Cuiaba
 ${JREHOME}/lib/zi/America/Curacao
 ${JREHOME}/lib/zi/America/Danmarkshavn
@@ -602,5 +612,5 @@ ${JREHOME}/man/man1/
 @man ${JREHOME}/man/man1/servertool.1
 @man ${JREHOME}/man/man1/tnameserv.1
 @man ${JREHOME}/man/man1/unpack200.1
-%%client_vm%%
 ${JREHOME}/release
+%%client_vm%%

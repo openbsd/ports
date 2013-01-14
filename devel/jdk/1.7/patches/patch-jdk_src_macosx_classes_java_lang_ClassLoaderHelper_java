@@ -1,0 +1,88 @@
+$OpenBSD: patch-jdk_src_macosx_classes_java_lang_ClassLoaderHelper_java,v 1.1 2013/01/14 20:16:56 kurt Exp $
+--- jdk/src/macosx/classes/java/lang/ClassLoaderHelper.java.orig	Thu Jan 10 17:53:21 2013
++++ jdk/src/macosx/classes/java/lang/ClassLoaderHelper.java	Thu Jan 10 19:02:45 2013
+@@ -25,23 +25,77 @@
+ package java.lang;
+ 
+ import java.io.File;
++import java.io.FilenameFilter;
++import java.security.AccessController;
++import java.security.PrivilegedAction;
++import java.util.Arrays;
++import java.util.Collections;
++import java.util.Comparator;
++import java.util.List;
+ 
+ class ClassLoaderHelper {
++    private static class LibraryFileFilter implements FilenameFilter {
++        final String libname;
+ 
++        LibraryFileFilter(String libname) {
++            this.libname = libname;
++        }
++
++        public boolean accept(File dir, String name) {
++            if (name.startsWith(libname)) {
++                return name.substring(libname.length()).matches("\\.[0-9]{1,20}\\.[0-9]{1,20}$");
++            }
++            return false;
++        }
++    }
++
++    private static class LibraryFileVersionComparator implements Comparator<String> {
++        public int compare(String s1, String s2) {
++            String[] f1 = s1.split("\\."), f2 = s2.split("\\.");
++            int res = compareComponents(f1[f1.length - 2], f2[f2.length - 2]);
++            if (res == 0) {
++                res = compareComponents(f1[f1.length - 1], f2[f2.length - 1]);
++            }
++            return res;
++        }
++
++        int compareComponents(String s1, String s2) {
++            return Long.valueOf(s1).compareTo(Long.valueOf(s2));
++        }
++    }
++
+     private ClassLoaderHelper() {}
+ 
+     /**
+      * Returns an alternate path name for the given file
+      * such that if the original pathname did not exist, then the
+      * file may be located at the alternate location.
+-     * For mac, this replaces the final .dylib suffix with .jnilib
++     *
++     * For OpenBSD, this handles versioned shared objects.
+      */
+-    static File mapAlternativeName(File lib) {
+-        String name = lib.toString();
+-        int index = name.toLowerCase().lastIndexOf(".dylib");
+-        if (index < 0) {
+-            return null;
++    static File mapAlternativeName(final File lib) {
++        // if file is unversioned, check for a versioned one in same dir
++        if (lib.getName().endsWith(".so")) {
++            final File dir = lib.getParentFile();
++            if (dir != null) {
++                List<String> liblist = AccessController.doPrivileged(
++                    new PrivilegedAction<List<String>>() {
++                        public List<String> run() {
++                            String liblist[] = dir.list(new LibraryFileFilter(lib.getName()));
++                            if (liblist == null) {
++                                return Collections.emptyList();
++                            }
++                            return Arrays.asList(liblist);
++                        }
++                    });
++                if (liblist != null && liblist.size() > 0) {
++                    // return the highest versioned lib
++                    String highest = Collections.max(liblist, new LibraryFileVersionComparator());
++                    return new File(dir, highest);
++                }
++            }
+         }
+-        return new File(name.substring(0, index) + ".jnilib");
++
++        return null;
+     }
+ }
