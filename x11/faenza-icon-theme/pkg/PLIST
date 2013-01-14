@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/06/15 08:30:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/01/14 12:44:17 dcoppa Exp $
 @unexec-delete rm -f %D/share/icons/Faenza/icon-theme.cache
 @unexec-delete rm -f %D/share/icons/Faenza-Ambiance/icon-theme.cache
 @unexec-delete rm -f %D/share/icons/Faenza-Dark/icon-theme.cache
@@ -11,6 +11,17 @@ share/icons/Faenza-Ambiance/index.theme
 share/icons/Faenza-Ambiance/status/
 share/icons/Faenza-Ambiance/status/22/
 share/icons/Faenza-Ambiance/status/22/battery-000.svg
+share/icons/Faenza-Ambiance/status/22/battery-caution-charging-symbolic.svg
+share/icons/Faenza-Ambiance/status/22/battery-caution-symbolic.svg
+share/icons/Faenza-Ambiance/status/22/battery-empty-symbolic.svg
+share/icons/Faenza-Ambiance/status/22/battery-full-charged-symbolic.svg
+share/icons/Faenza-Ambiance/status/22/battery-full-charging-symbolic.svg
+share/icons/Faenza-Ambiance/status/22/battery-full-symbolic.svg
+share/icons/Faenza-Ambiance/status/22/battery-good-charging-symbolic.svg
+share/icons/Faenza-Ambiance/status/22/battery-good-symbolic.svg
+share/icons/Faenza-Ambiance/status/22/battery-low-charging-symbolic.svg
+share/icons/Faenza-Ambiance/status/22/battery-low-symbolic.svg
+share/icons/Faenza-Ambiance/status/22/battery-missing-symbolic.svg
 share/icons/Faenza-Ambiance/status/22/battery_caution.svg
 share/icons/Faenza-Ambiance/status/22/battery_charged.svg
 share/icons/Faenza-Ambiance/status/22/battery_empty.svg
@@ -1583,6 +1594,17 @@ share/icons/Faenza-Dark/status/22/audio-volume-off.png
 share/icons/Faenza-Dark/status/22/audio-volume-zero-panel.png
 share/icons/Faenza-Dark/status/22/banshee-panel.png
 share/icons/Faenza-Dark/status/22/battery-000.png
+share/icons/Faenza-Dark/status/22/battery-caution-charging-symbolic.png
+share/icons/Faenza-Dark/status/22/battery-caution-symbolic.png
+share/icons/Faenza-Dark/status/22/battery-empty-symbolic.png
+share/icons/Faenza-Dark/status/22/battery-full-charged-symbolic.png
+share/icons/Faenza-Dark/status/22/battery-full-charging-symbolic.png
+share/icons/Faenza-Dark/status/22/battery-full-symbolic.png
+share/icons/Faenza-Dark/status/22/battery-good-charging-symbolic.png
+share/icons/Faenza-Dark/status/22/battery-good-symbolic.png
+share/icons/Faenza-Dark/status/22/battery-low-charging-symbolic.png
+share/icons/Faenza-Dark/status/22/battery-low-symbolic.png
+share/icons/Faenza-Dark/status/22/battery-missing-symbolic.png
 share/icons/Faenza-Dark/status/22/battery_caution.png
 share/icons/Faenza-Dark/status/22/battery_charged.png
 share/icons/Faenza-Dark/status/22/battery_empty.png
@@ -1600,6 +1622,7 @@ share/icons/Faenza-Dark/status/22/busy.png
 share/icons/Faenza-Dark/status/22/busy2.png
 share/icons/Faenza-Dark/status/22/caffeine-cup-empty.png
 share/icons/Faenza-Dark/status/22/caffeine-cup-full.png
+share/icons/Faenza-Dark/status/22/clipit-trayicon.png
 share/icons/Faenza-Dark/status/22/connect_creating.png
 share/icons/Faenza-Dark/status/22/connect_established.png
 share/icons/Faenza-Dark/status/22/connect_no.png
@@ -1987,6 +2010,17 @@ share/icons/Faenza-Dark/status/24/audio-volume-off.png
 share/icons/Faenza-Dark/status/24/audio-volume-zero-panel.png
 share/icons/Faenza-Dark/status/24/banshee-panel.png
 share/icons/Faenza-Dark/status/24/battery-000.png
+share/icons/Faenza-Dark/status/24/battery-caution-charging-symbolic.png
+share/icons/Faenza-Dark/status/24/battery-caution-symbolic.png
+share/icons/Faenza-Dark/status/24/battery-empty-symbolic.png
+share/icons/Faenza-Dark/status/24/battery-full-charged-symbolic.png
+share/icons/Faenza-Dark/status/24/battery-full-charging-symbolic.png
+share/icons/Faenza-Dark/status/24/battery-full-symbolic.png
+share/icons/Faenza-Dark/status/24/battery-good-charging-symbolic.png
+share/icons/Faenza-Dark/status/24/battery-good-symbolic.png
+share/icons/Faenza-Dark/status/24/battery-low-charging-symbolic.png
+share/icons/Faenza-Dark/status/24/battery-low-symbolic.png
+share/icons/Faenza-Dark/status/24/battery-missing-symbolic.png
 share/icons/Faenza-Dark/status/24/battery_caution.png
 share/icons/Faenza-Dark/status/24/battery_charged.png
 share/icons/Faenza-Dark/status/24/battery_empty.png
@@ -2004,6 +2038,7 @@ share/icons/Faenza-Dark/status/24/busy.png
 share/icons/Faenza-Dark/status/24/busy2.png
 share/icons/Faenza-Dark/status/24/caffeine-cup-empty.png
 share/icons/Faenza-Dark/status/24/caffeine-cup-full.png
+share/icons/Faenza-Dark/status/24/clipit-trayicon.png
 share/icons/Faenza-Dark/status/24/connect_creating.png
 share/icons/Faenza-Dark/status/24/connect_established.png
 share/icons/Faenza-Dark/status/24/connect_no.png
@@ -2388,6 +2423,16 @@ share/icons/Faenza-Dark/status/32/audio-volume-muted.png
 share/icons/Faenza-Dark/status/32/audio-volume-off.png
 share/icons/Faenza-Dark/status/32/audio-volume-zero-panel.png
 share/icons/Faenza-Dark/status/32/battery-000.png
+share/icons/Faenza-Dark/status/32/battery-caution-charging-symbolic.png
+share/icons/Faenza-Dark/status/32/battery-caution-symbolic.png
+share/icons/Faenza-Dark/status/32/battery-empty-symbolic.png
+share/icons/Faenza-Dark/status/32/battery-full-charged-symbolic.png
+share/icons/Faenza-Dark/status/32/battery-full-charging-symbolic.png
+share/icons/Faenza-Dark/status/32/battery-full-symbolic.png
+share/icons/Faenza-Dark/status/32/battery-good-charging-symbolic.png
+share/icons/Faenza-Dark/status/32/battery-good-symbolic.png
+share/icons/Faenza-Dark/status/32/battery-low-charging-symbolic.png
+share/icons/Faenza-Dark/status/32/battery-low-symbolic.png
 share/icons/Faenza-Dark/status/32/battery_caution.png
 share/icons/Faenza-Dark/status/32/battery_charged.png
 share/icons/Faenza-Dark/status/32/battery_empty.png
@@ -2634,6 +2679,16 @@ share/icons/Faenza-Dark/status/48/audio-volume-muted.png
 share/icons/Faenza-Dark/status/48/audio-volume-off.png
 share/icons/Faenza-Dark/status/48/audio-volume-zero-panel.png
 share/icons/Faenza-Dark/status/48/battery-000.png
+share/icons/Faenza-Dark/status/48/battery-caution-charging-symbolic.png
+share/icons/Faenza-Dark/status/48/battery-caution-symbolic.png
+share/icons/Faenza-Dark/status/48/battery-empty-symbolic.png
+share/icons/Faenza-Dark/status/48/battery-full-charged-symbolic.png
+share/icons/Faenza-Dark/status/48/battery-full-charging-symbolic.png
+share/icons/Faenza-Dark/status/48/battery-full-symbolic.png
+share/icons/Faenza-Dark/status/48/battery-good-charging-symbolic.png
+share/icons/Faenza-Dark/status/48/battery-good-symbolic.png
+share/icons/Faenza-Dark/status/48/battery-low-charging-symbolic.png
+share/icons/Faenza-Dark/status/48/battery-low-symbolic.png
 share/icons/Faenza-Dark/status/48/battery_caution.png
 share/icons/Faenza-Dark/status/48/battery_charged.png
 share/icons/Faenza-Dark/status/48/battery_empty.png
@@ -2880,6 +2935,16 @@ share/icons/Faenza-Dark/status/64/audio-volume-muted.png
 share/icons/Faenza-Dark/status/64/audio-volume-off.png
 share/icons/Faenza-Dark/status/64/audio-volume-zero-panel.png
 share/icons/Faenza-Dark/status/64/battery-000.png
+share/icons/Faenza-Dark/status/64/battery-caution-charging-symbolic.png
+share/icons/Faenza-Dark/status/64/battery-caution-symbolic.png
+share/icons/Faenza-Dark/status/64/battery-empty-symbolic.png
+share/icons/Faenza-Dark/status/64/battery-full-charged-symbolic.png
+share/icons/Faenza-Dark/status/64/battery-full-charging-symbolic.png
+share/icons/Faenza-Dark/status/64/battery-full-symbolic.png
+share/icons/Faenza-Dark/status/64/battery-good-charging-symbolic.png
+share/icons/Faenza-Dark/status/64/battery-good-symbolic.png
+share/icons/Faenza-Dark/status/64/battery-low-charging-symbolic.png
+share/icons/Faenza-Dark/status/64/battery-low-symbolic.png
 share/icons/Faenza-Dark/status/64/battery_caution.png
 share/icons/Faenza-Dark/status/64/battery_charged.png
 share/icons/Faenza-Dark/status/64/battery_empty.png
@@ -3124,6 +3189,16 @@ share/icons/Faenza-Dark/status/96/audio-volume-muted.png
 share/icons/Faenza-Dark/status/96/audio-volume-off.png
 share/icons/Faenza-Dark/status/96/audio-volume-zero-panel.png
 share/icons/Faenza-Dark/status/96/battery-000.png
+share/icons/Faenza-Dark/status/96/battery-caution-charging-symbolic.png
+share/icons/Faenza-Dark/status/96/battery-caution-symbolic.png
+share/icons/Faenza-Dark/status/96/battery-empty-symbolic.png
+share/icons/Faenza-Dark/status/96/battery-full-charged-symbolic.png
+share/icons/Faenza-Dark/status/96/battery-full-charging-symbolic.png
+share/icons/Faenza-Dark/status/96/battery-full-symbolic.png
+share/icons/Faenza-Dark/status/96/battery-good-charging-symbolic.png
+share/icons/Faenza-Dark/status/96/battery-good-symbolic.png
+share/icons/Faenza-Dark/status/96/battery-low-charging-symbolic.png
+share/icons/Faenza-Dark/status/96/battery-low-symbolic.png
 share/icons/Faenza-Dark/status/96/battery_caution.png
 share/icons/Faenza-Dark/status/96/battery_charged.png
 share/icons/Faenza-Dark/status/96/battery_empty.png
@@ -10243,6 +10318,17 @@ share/icons/Faenza-Radiance/index.theme
 share/icons/Faenza-Radiance/status/
 share/icons/Faenza-Radiance/status/22/
 share/icons/Faenza-Radiance/status/22/battery-000.svg
+share/icons/Faenza-Radiance/status/22/battery-caution-charging-symbolic.svg
+share/icons/Faenza-Radiance/status/22/battery-caution-symbolic.svg
+share/icons/Faenza-Radiance/status/22/battery-empty-symbolic.svg
+share/icons/Faenza-Radiance/status/22/battery-full-charged-symbolic.svg
+share/icons/Faenza-Radiance/status/22/battery-full-charging-symbolic.svg
+share/icons/Faenza-Radiance/status/22/battery-full-symbolic.svg
+share/icons/Faenza-Radiance/status/22/battery-good-charging-symbolic.svg
+share/icons/Faenza-Radiance/status/22/battery-good-symbolic.svg
+share/icons/Faenza-Radiance/status/22/battery-low-charging-symbolic.svg
+share/icons/Faenza-Radiance/status/22/battery-low-symbolic.svg
+share/icons/Faenza-Radiance/status/22/battery-missing-symbolic.svg
 share/icons/Faenza-Radiance/status/22/battery_caution.svg
 share/icons/Faenza-Radiance/status/22/battery_charged.svg
 share/icons/Faenza-Radiance/status/22/battery_empty.svg
@@ -13729,6 +13815,7 @@ share/icons/Faenza/apps/16/EasyTAG_icon.png
 share/icons/Faenza/apps/16/Etermutilities-terminal.png
 share/icons/Faenza/apps/16/Terminal.png
 share/icons/Faenza/apps/16/Thunar.png
+share/icons/Faenza/apps/16/Twitter-twitter.com.png
 share/icons/Faenza/apps/16/VBox.png
 share/icons/Faenza/apps/16/WorldOfGoo.png
 share/icons/Faenza/apps/16/Wunderlist.png
@@ -13742,6 +13829,7 @@ share/icons/Faenza/apps/16/accessories-character-map.png
 share/icons/Faenza/apps/16/accessories-dictionary.png
 share/icons/Faenza/apps/16/accessories-text-editor.png
 share/icons/Faenza/apps/16/acroread.png
+share/icons/Faenza/apps/16/activity-log-manager.png
 share/icons/Faenza/apps/16/addressbook.png
 share/icons/Faenza/apps/16/adobe-air.png
 share/icons/Faenza/apps/16/adobe-flashplayer.png
@@ -13750,6 +13838,7 @@ share/icons/Faenza/apps/16/akregator.png
 share/icons/Faenza/apps/16/alacarte.png
 share/icons/Faenza/apps/16/amarok.png
 share/icons/Faenza/apps/16/amazon-mp3-store-source.png
+share/icons/Faenza/apps/16/amazon-store.png
 share/icons/Faenza/apps/16/amule.png
 share/icons/Faenza/apps/16/anjuta.png
 share/icons/Faenza/apps/16/applets-screenshooter.png
@@ -13815,6 +13904,7 @@ share/icons/Faenza/apps/16/config-users.png
 share/icons/Faenza/apps/16/control-center2.png
 share/icons/Faenza/apps/16/control-center2.xpm
 share/icons/Faenza/apps/16/covergloobus.png
+share/icons/Faenza/apps/16/credentials-preferences.png
 share/icons/Faenza/apps/16/cups.png
 share/icons/Faenza/apps/16/dc++.png
 share/icons/Faenza/apps/16/dconf-editor.png
@@ -13830,6 +13920,7 @@ share/icons/Faenza/apps/16/devede.png
 share/icons/Faenza/apps/16/devhelp.png
 share/icons/Faenza/apps/16/dia.png
 share/icons/Faenza/apps/16/display-capplet.png
+share/icons/Faenza/apps/16/display.im6.png
 share/icons/Faenza/apps/16/docky.png
 share/icons/Faenza/apps/16/drakconf.png
 share/icons/Faenza/apps/16/drakmenustyle.png
@@ -13849,6 +13940,7 @@ share/icons/Faenza/apps/16/emerald-theme-manager-icon.png
 share/icons/Faenza/apps/16/emesene.png
 share/icons/Faenza/apps/16/empathy.png
 share/icons/Faenza/apps/16/eog.png
+share/icons/Faenza/apps/16/evernote.png
 share/icons/Faenza/apps/16/evince.png
 share/icons/Faenza/apps/16/evolution-calendar.png
 share/icons/Faenza/apps/16/evolution-mail.png
@@ -13900,12 +13992,17 @@ share/icons/Faenza/apps/16/gksu-debian.png
 share/icons/Faenza/apps/16/gksu-root-terminal.png
 share/icons/Faenza/apps/16/glade-3.png
 share/icons/Faenza/apps/16/glade.png
+share/icons/Faenza/apps/16/glchess.png
+share/icons/Faenza/apps/16/glines.png
 share/icons/Faenza/apps/16/glippy.png
 share/icons/Faenza/apps/16/gloobus-preview.png
 share/icons/Faenza/apps/16/gloobus.png
 share/icons/Faenza/apps/16/gmail.png
 share/icons/Faenza/apps/16/gmailwatcher.png
 share/icons/Faenza/apps/16/gmusicbrowser.png
+share/icons/Faenza/apps/16/gnect.png
+share/icons/Faenza/apps/16/gnibbles.png
+share/icons/Faenza/apps/16/gnobots2.png
 share/icons/Faenza/apps/16/gnochm.png
 share/icons/Faenza/apps/16/gnome-about-logo.png
 share/icons/Faenza/apps/16/gnome-activity-journal.png
@@ -13922,6 +14019,7 @@ share/icons/Faenza/apps/16/gnome-desktop-config.png
 share/icons/Faenza/apps/16/gnome-desktop-item-edit.png
 share/icons/Faenza/apps/16/gnome-device-manager.png
 share/icons/Faenza/apps/16/gnome-dictionary.png
+share/icons/Faenza/apps/16/gnome-disks.png
 share/icons/Faenza/apps/16/gnome-display-properties.png
 share/icons/Faenza/apps/16/gnome-do.png
 share/icons/Faenza/apps/16/gnome-documents.png
@@ -13999,6 +14097,8 @@ share/icons/Faenza/apps/16/gnome-xterm.png
 share/icons/Faenza/apps/16/gnomeradio.png
 share/icons/Faenza/apps/16/gnomine.png
 share/icons/Faenza/apps/16/gnote.png
+share/icons/Faenza/apps/16/gnotravex.png
+share/icons/Faenza/apps/16/gnotski.png
 share/icons/Faenza/apps/16/gnucash-icon.png
 share/icons/Faenza/apps/16/gnumeric.png
 share/icons/Faenza/apps/16/goa-account-facebook.png
@@ -14025,6 +14125,7 @@ share/icons/Faenza/apps/16/gpk-prefs.png
 share/icons/Faenza/apps/16/gpk-repo.png
 share/icons/Faenza/apps/16/gpodder.png
 share/icons/Faenza/apps/16/grisbi.png
+share/icons/Faenza/apps/16/gtali.png
 share/icons/Faenza/apps/16/gtg.png
 share/icons/Faenza/apps/16/gthumb.png
 share/icons/Faenza/apps/16/gtk-help.png
@@ -14050,11 +14151,13 @@ share/icons/Faenza/apps/16/hi48-app-wireshark.png
 share/icons/Faenza/apps/16/homebank.png
 share/icons/Faenza/apps/16/hotwire.png
 share/icons/Faenza/apps/16/htop.png
+share/icons/Faenza/apps/16/iagno.png
 share/icons/Faenza/apps/16/ibus-setup.png
 share/icons/Faenza/apps/16/ibus.png
 share/icons/Faenza/apps/16/icedove.png
 share/icons/Faenza/apps/16/iceweasel.png
 share/icons/Faenza/apps/16/im-chooser.png
+share/icons/Faenza/apps/16/imagemagick.png
 share/icons/Faenza/apps/16/indicator-applet.png
 share/icons/Faenza/apps/16/indicator-weather.png
 share/icons/Faenza/apps/16/inkscape.png
@@ -14137,18 +14240,22 @@ share/icons/Faenza/apps/16/libreoffice34-startcenter.png
 share/icons/Faenza/apps/16/libreoffice34-template.png
 share/icons/Faenza/apps/16/libreoffice34-writer.png
 share/icons/Faenza/apps/16/liferea.png
+share/icons/Faenza/apps/16/lightsoff.png
 share/icons/Faenza/apps/16/linguist.png
 share/icons/Faenza/apps/16/locale.png
 share/icons/Faenza/apps/16/logview.png
 share/icons/Faenza/apps/16/logviewer.png
 share/icons/Faenza/apps/16/lxterminal.png
 share/icons/Faenza/apps/16/magnatune.png
+share/icons/Faenza/apps/16/mahjongg.png
 share/icons/Faenza/apps/16/mail-notification.png
 share/icons/Faenza/apps/16/mailnag.png
 share/icons/Faenza/apps/16/mandrivaupdate.png
 share/icons/Faenza/apps/16/me-tv.png
 share/icons/Faenza/apps/16/media-player-banshee.png
 share/icons/Faenza/apps/16/meld.png
+share/icons/Faenza/apps/16/mendeley.png
+share/icons/Faenza/apps/16/mendeleydesktop.png
 share/icons/Faenza/apps/16/menu-editor.png
 share/icons/Faenza/apps/16/midori.png
 share/icons/Faenza/apps/16/minitube.png
@@ -14171,6 +14278,7 @@ share/icons/Faenza/apps/16/nautilus-actions.png
 share/icons/Faenza/apps/16/nautilus-cd-burner.png
 share/icons/Faenza/apps/16/nautilus.png
 share/icons/Faenza/apps/16/netbeans.png
+share/icons/Faenza/apps/16/nixnote.png
 share/icons/Faenza/apps/16/nvidia-current-settings.png
 share/icons/Faenza/apps/16/nvidia-settings.png
 share/icons/Faenza/apps/16/office-address-book.png
@@ -14203,6 +14311,7 @@ share/icons/Faenza/apps/16/ooo-writer3.0.png
 share/icons/Faenza/apps/16/openbravo-erp.png
 share/icons/Faenza/apps/16/openerp-client.png
 share/icons/Faenza/apps/16/openjdk-6.png
+share/icons/Faenza/apps/16/openjdk-7.png
 share/icons/Faenza/apps/16/openofficeorg-base.png
 share/icons/Faenza/apps/16/openofficeorg-calc.png
 share/icons/Faenza/apps/16/openofficeorg-draw.png
@@ -14282,6 +14391,7 @@ share/icons/Faenza/apps/16/preferences-desktop-screensaver.png
 share/icons/Faenza/apps/16/preferences-desktop-sound.png
 share/icons/Faenza/apps/16/preferences-desktop-theme.png
 share/icons/Faenza/apps/16/preferences-desktop-wallpaper.png
+share/icons/Faenza/apps/16/preferences-management-service.png
 share/icons/Faenza/apps/16/preferences-sound.png
 share/icons/Faenza/apps/16/preferences-system-bluetooth.png
 share/icons/Faenza/apps/16/preferences-system-firewall.png
@@ -14296,6 +14406,7 @@ share/icons/Faenza/apps/16/qtcreator.png
 share/icons/Faenza/apps/16/qtcreator_logo_32.png
 share/icons/Faenza/apps/16/qtdesigner.png
 share/icons/Faenza/apps/16/qtlinguist.png
+share/icons/Faenza/apps/16/quadrapassel.png
 share/icons/Faenza/apps/16/radio.png
 share/icons/Faenza/apps/16/radiotray.png
 share/icons/Faenza/apps/16/rclock.png
@@ -14312,6 +14423,7 @@ share/icons/Faenza/apps/16/rssowl.png
 share/icons/Faenza/apps/16/screenie-qt.png
 share/icons/Faenza/apps/16/screenie.png
 share/icons/Faenza/apps/16/screenruler-icon.png
+share/icons/Faenza/apps/16/screenruler.png
 share/icons/Faenza/apps/16/screensaver.png
 share/icons/Faenza/apps/16/scribes.png
 share/icons/Faenza/apps/16/scribus.png
@@ -14341,6 +14453,8 @@ share/icons/Faenza/apps/16/spotify.png
 share/icons/Faenza/apps/16/stardict.png
 share/icons/Faenza/apps/16/startupmanager.png
 share/icons/Faenza/apps/16/steam.png
+share/icons/Faenza/apps/16/steam.xpm
+share/icons/Faenza/apps/16/steampowered.png
 share/icons/Faenza/apps/16/stellarium.png
 share/icons/Faenza/apps/16/sticky-notes.png
 share/icons/Faenza/apps/16/stock_alarm.png
@@ -14355,6 +14469,7 @@ share/icons/Faenza/apps/16/stock_view-details.png
 share/icons/Faenza/apps/16/style.png
 share/icons/Faenza/apps/16/sun-java.png
 share/icons/Faenza/apps/16/sun-java6.png
+share/icons/Faenza/apps/16/sun-java7.png
 share/icons/Faenza/apps/16/sun-javaws.png
 share/icons/Faenza/apps/16/sun-jcontrol.png
 share/icons/Faenza/apps/16/susehelpcenter.png
@@ -14404,6 +14519,7 @@ share/icons/Faenza/apps/16/twitux.png
 share/icons/Faenza/apps/16/ubuntu-tweak.png
 share/icons/Faenza/apps/16/ubuntuone-client.png
 share/icons/Faenza/apps/16/ubuntuone-installer.png
+share/icons/Faenza/apps/16/ubuntuone-music.png
 share/icons/Faenza/apps/16/ubuntuone.png
 share/icons/Faenza/apps/16/ufw-frontends.png
 share/icons/Faenza/apps/16/umusicstore.png
@@ -14441,6 +14557,7 @@ share/icons/Faenza/apps/16/wordpress.png
 share/icons/Faenza/apps/16/workspace-switcher.png
 share/icons/Faenza/apps/16/wunderlist.png
 share/icons/Faenza/apps/16/wxbanker.png
+share/icons/Faenza/apps/16/x-office-address-book.png
 share/icons/Faenza/apps/16/x-office-calendar.png
 share/icons/Faenza/apps/16/x-system-software-sources.png
 share/icons/Faenza/apps/16/xarchiver.png
@@ -14514,6 +14631,7 @@ share/icons/Faenza/apps/22/EasyTAG_icon.png
 share/icons/Faenza/apps/22/Etermutilities-terminal.png
 share/icons/Faenza/apps/22/Terminal.png
 share/icons/Faenza/apps/22/Thunar.png
+share/icons/Faenza/apps/22/Twitter-twitter.com.png
 share/icons/Faenza/apps/22/VBox.png
 share/icons/Faenza/apps/22/WorldOfGoo.png
 share/icons/Faenza/apps/22/Wunderlist.png
@@ -14527,6 +14645,7 @@ share/icons/Faenza/apps/22/accessories-character-map.png
 share/icons/Faenza/apps/22/accessories-dictionary.png
 share/icons/Faenza/apps/22/accessories-text-editor.png
 share/icons/Faenza/apps/22/acroread.png
+share/icons/Faenza/apps/22/activity-log-manager.png
 share/icons/Faenza/apps/22/addressbook.png
 share/icons/Faenza/apps/22/adobe-air.png
 share/icons/Faenza/apps/22/adobe-flashplayer.png
@@ -14535,6 +14654,7 @@ share/icons/Faenza/apps/22/akregator.png
 share/icons/Faenza/apps/22/alacarte.png
 share/icons/Faenza/apps/22/amarok.png
 share/icons/Faenza/apps/22/amazon-mp3-store-source.png
+share/icons/Faenza/apps/22/amazon-store.png
 share/icons/Faenza/apps/22/amule.png
 share/icons/Faenza/apps/22/anjuta.png
 share/icons/Faenza/apps/22/applets-screenshooter.png
@@ -14600,6 +14720,7 @@ share/icons/Faenza/apps/22/config-users.png
 share/icons/Faenza/apps/22/control-center2.png
 share/icons/Faenza/apps/22/control-center2.xpm
 share/icons/Faenza/apps/22/covergloobus.png
+share/icons/Faenza/apps/22/credentials-preferences.png
 share/icons/Faenza/apps/22/cups.png
 share/icons/Faenza/apps/22/dc++.png
 share/icons/Faenza/apps/22/dconf-editor.png
@@ -14615,6 +14736,7 @@ share/icons/Faenza/apps/22/devede.png
 share/icons/Faenza/apps/22/devhelp.png
 share/icons/Faenza/apps/22/dia.png
 share/icons/Faenza/apps/22/display-capplet.png
+share/icons/Faenza/apps/22/display.im6.png
 share/icons/Faenza/apps/22/docky.png
 share/icons/Faenza/apps/22/drakconf.png
 share/icons/Faenza/apps/22/drakmenustyle.png
@@ -14634,6 +14756,7 @@ share/icons/Faenza/apps/22/emerald-theme-manager-icon.png
 share/icons/Faenza/apps/22/emesene.png
 share/icons/Faenza/apps/22/empathy.png
 share/icons/Faenza/apps/22/eog.png
+share/icons/Faenza/apps/22/evernote.png
 share/icons/Faenza/apps/22/evince.png
 share/icons/Faenza/apps/22/evolution-calendar.png
 share/icons/Faenza/apps/22/evolution-mail.png
@@ -14685,12 +14808,17 @@ share/icons/Faenza/apps/22/gksu-debian.png
 share/icons/Faenza/apps/22/gksu-root-terminal.png
 share/icons/Faenza/apps/22/glade-3.png
 share/icons/Faenza/apps/22/glade.png
+share/icons/Faenza/apps/22/glchess.png
+share/icons/Faenza/apps/22/glines.png
 share/icons/Faenza/apps/22/glippy.png
 share/icons/Faenza/apps/22/gloobus-preview.png
 share/icons/Faenza/apps/22/gloobus.png
 share/icons/Faenza/apps/22/gmail.png
 share/icons/Faenza/apps/22/gmailwatcher.png
 share/icons/Faenza/apps/22/gmusicbrowser.png
+share/icons/Faenza/apps/22/gnect.png
+share/icons/Faenza/apps/22/gnibbles.png
+share/icons/Faenza/apps/22/gnobots2.png
 share/icons/Faenza/apps/22/gnochm.png
 share/icons/Faenza/apps/22/gnome-about-logo.png
 share/icons/Faenza/apps/22/gnome-activity-journal.png
@@ -14707,6 +14835,7 @@ share/icons/Faenza/apps/22/gnome-desktop-config.png
 share/icons/Faenza/apps/22/gnome-desktop-item-edit.png
 share/icons/Faenza/apps/22/gnome-device-manager.png
 share/icons/Faenza/apps/22/gnome-dictionary.png
+share/icons/Faenza/apps/22/gnome-disks.png
 share/icons/Faenza/apps/22/gnome-display-properties.png
 share/icons/Faenza/apps/22/gnome-do.png
 share/icons/Faenza/apps/22/gnome-documents.png
@@ -14784,6 +14913,8 @@ share/icons/Faenza/apps/22/gnome-xterm.png
 share/icons/Faenza/apps/22/gnomeradio.png
 share/icons/Faenza/apps/22/gnomine.png
 share/icons/Faenza/apps/22/gnote.png
+share/icons/Faenza/apps/22/gnotravex.png
+share/icons/Faenza/apps/22/gnotski.png
 share/icons/Faenza/apps/22/gnucash-icon.png
 share/icons/Faenza/apps/22/gnumeric.png
 share/icons/Faenza/apps/22/goa-account-facebook.png
@@ -14810,6 +14941,7 @@ share/icons/Faenza/apps/22/gpk-prefs.png
 share/icons/Faenza/apps/22/gpk-repo.png
 share/icons/Faenza/apps/22/gpodder.png
 share/icons/Faenza/apps/22/grisbi.png
+share/icons/Faenza/apps/22/gtali.png
 share/icons/Faenza/apps/22/gtg.png
 share/icons/Faenza/apps/22/gthumb.png
 share/icons/Faenza/apps/22/gtk-help.png
@@ -14835,11 +14967,13 @@ share/icons/Faenza/apps/22/hi48-app-wireshark.png
 share/icons/Faenza/apps/22/homebank.png
 share/icons/Faenza/apps/22/hotwire.png
 share/icons/Faenza/apps/22/htop.png
+share/icons/Faenza/apps/22/iagno.png
 share/icons/Faenza/apps/22/ibus-setup.png
 share/icons/Faenza/apps/22/ibus.png
 share/icons/Faenza/apps/22/icedove.png
 share/icons/Faenza/apps/22/iceweasel.png
 share/icons/Faenza/apps/22/im-chooser.png
+share/icons/Faenza/apps/22/imagemagick.png
 share/icons/Faenza/apps/22/indicator-applet.png
 share/icons/Faenza/apps/22/indicator-weather.png
 share/icons/Faenza/apps/22/inkscape.png
@@ -14922,18 +15056,22 @@ share/icons/Faenza/apps/22/libreoffice34-startcenter.png
 share/icons/Faenza/apps/22/libreoffice34-template.png
 share/icons/Faenza/apps/22/libreoffice34-writer.png
 share/icons/Faenza/apps/22/liferea.png
+share/icons/Faenza/apps/22/lightsoff.png
 share/icons/Faenza/apps/22/linguist.png
 share/icons/Faenza/apps/22/locale.png
 share/icons/Faenza/apps/22/logview.png
 share/icons/Faenza/apps/22/logviewer.png
 share/icons/Faenza/apps/22/lxterminal.png
 share/icons/Faenza/apps/22/magnatune.png
+share/icons/Faenza/apps/22/mahjongg.png
 share/icons/Faenza/apps/22/mail-notification.png
 share/icons/Faenza/apps/22/mailnag.png
 share/icons/Faenza/apps/22/mandrivaupdate.png
 share/icons/Faenza/apps/22/me-tv.png
 share/icons/Faenza/apps/22/media-player-banshee.png
 share/icons/Faenza/apps/22/meld.png
+share/icons/Faenza/apps/22/mendeley.png
+share/icons/Faenza/apps/22/mendeleydesktop.png
 share/icons/Faenza/apps/22/menu-editor.png
 share/icons/Faenza/apps/22/midori.png
 share/icons/Faenza/apps/22/minitube.png
@@ -14956,6 +15094,7 @@ share/icons/Faenza/apps/22/nautilus-actions.png
 share/icons/Faenza/apps/22/nautilus-cd-burner.png
 share/icons/Faenza/apps/22/nautilus.png
 share/icons/Faenza/apps/22/netbeans.png
+share/icons/Faenza/apps/22/nixnote.png
 share/icons/Faenza/apps/22/nm-stage01-connecting01.png
 share/icons/Faenza/apps/22/nm-stage01-connecting02.png
 share/icons/Faenza/apps/22/nm-stage01-connecting03.png
@@ -15032,6 +15171,7 @@ share/icons/Faenza/apps/22/ooo-writer3.0.png
 share/icons/Faenza/apps/22/openbravo-erp.png
 share/icons/Faenza/apps/22/openerp-client.png
 share/icons/Faenza/apps/22/openjdk-6.png
+share/icons/Faenza/apps/22/openjdk-7.png
 share/icons/Faenza/apps/22/openofficeorg-base.png
 share/icons/Faenza/apps/22/openofficeorg-calc.png
 share/icons/Faenza/apps/22/openofficeorg-draw.png
@@ -15111,6 +15251,7 @@ share/icons/Faenza/apps/22/preferences-desktop-screensaver.png
 share/icons/Faenza/apps/22/preferences-desktop-sound.png
 share/icons/Faenza/apps/22/preferences-desktop-theme.png
 share/icons/Faenza/apps/22/preferences-desktop-wallpaper.png
+share/icons/Faenza/apps/22/preferences-management-service.png
 share/icons/Faenza/apps/22/preferences-sound.png
 share/icons/Faenza/apps/22/preferences-system-bluetooth.png
 share/icons/Faenza/apps/22/preferences-system-firewall.png
@@ -15125,6 +15266,7 @@ share/icons/Faenza/apps/22/qtcreator.png
 share/icons/Faenza/apps/22/qtcreator_logo_32.png
 share/icons/Faenza/apps/22/qtdesigner.png
 share/icons/Faenza/apps/22/qtlinguist.png
+share/icons/Faenza/apps/22/quadrapassel.png
 share/icons/Faenza/apps/22/radio.png
 share/icons/Faenza/apps/22/radiotray.png
 share/icons/Faenza/apps/22/rclock.png
@@ -15141,6 +15283,7 @@ share/icons/Faenza/apps/22/rssowl.png
 share/icons/Faenza/apps/22/screenie-qt.png
 share/icons/Faenza/apps/22/screenie.png
 share/icons/Faenza/apps/22/screenruler-icon.png
+share/icons/Faenza/apps/22/screenruler.png
 share/icons/Faenza/apps/22/screensaver.png
 share/icons/Faenza/apps/22/scribes.png
 share/icons/Faenza/apps/22/scribus.png
@@ -15170,6 +15313,8 @@ share/icons/Faenza/apps/22/spotify.png
 share/icons/Faenza/apps/22/stardict.png
 share/icons/Faenza/apps/22/startupmanager.png
 share/icons/Faenza/apps/22/steam.png
+share/icons/Faenza/apps/22/steam.xpm
+share/icons/Faenza/apps/22/steampowered.png
 share/icons/Faenza/apps/22/stellarium.png
 share/icons/Faenza/apps/22/sticky-notes.png
 share/icons/Faenza/apps/22/stock_alarm.png
@@ -15184,6 +15329,7 @@ share/icons/Faenza/apps/22/stock_view-details.png
 share/icons/Faenza/apps/22/style.png
 share/icons/Faenza/apps/22/sun-java.png
 share/icons/Faenza/apps/22/sun-java6.png
+share/icons/Faenza/apps/22/sun-java7.png
 share/icons/Faenza/apps/22/sun-javaws.png
 share/icons/Faenza/apps/22/sun-jcontrol.png
 share/icons/Faenza/apps/22/susehelpcenter.png
@@ -15233,6 +15379,7 @@ share/icons/Faenza/apps/22/twitux.png
 share/icons/Faenza/apps/22/ubuntu-tweak.png
 share/icons/Faenza/apps/22/ubuntuone-client.png
 share/icons/Faenza/apps/22/ubuntuone-installer.png
+share/icons/Faenza/apps/22/ubuntuone-music.png
 share/icons/Faenza/apps/22/ubuntuone.png
 share/icons/Faenza/apps/22/ufw-frontends.png
 share/icons/Faenza/apps/22/umusicstore.png
@@ -15270,6 +15417,7 @@ share/icons/Faenza/apps/22/wordpress.png
 share/icons/Faenza/apps/22/workspace-switcher.png
 share/icons/Faenza/apps/22/wunderlist.png
 share/icons/Faenza/apps/22/wxbanker.png
+share/icons/Faenza/apps/22/x-office-address-book.png
 share/icons/Faenza/apps/22/x-office-calendar.png
 share/icons/Faenza/apps/22/x-system-software-sources.png
 share/icons/Faenza/apps/22/xarchiver.png
@@ -15343,6 +15491,7 @@ share/icons/Faenza/apps/24/EasyTAG_icon.png
 share/icons/Faenza/apps/24/Etermutilities-terminal.png
 share/icons/Faenza/apps/24/Terminal.png
 share/icons/Faenza/apps/24/Thunar.png
+share/icons/Faenza/apps/24/Twitter-twitter.com.png
 share/icons/Faenza/apps/24/VBox.png
 share/icons/Faenza/apps/24/WorldOfGoo.png
 share/icons/Faenza/apps/24/Wunderlist.png
@@ -15356,6 +15505,7 @@ share/icons/Faenza/apps/24/accessories-character-map.png
 share/icons/Faenza/apps/24/accessories-dictionary.png
 share/icons/Faenza/apps/24/accessories-text-editor.png
 share/icons/Faenza/apps/24/acroread.png
+share/icons/Faenza/apps/24/activity-log-manager.png
 share/icons/Faenza/apps/24/addressbook.png
 share/icons/Faenza/apps/24/adobe-air.png
 share/icons/Faenza/apps/24/adobe-flashplayer.png
@@ -15364,6 +15514,7 @@ share/icons/Faenza/apps/24/akregator.png
 share/icons/Faenza/apps/24/alacarte.png
 share/icons/Faenza/apps/24/amarok.png
 share/icons/Faenza/apps/24/amazon-mp3-store-source.png
+share/icons/Faenza/apps/24/amazon-store.png
 share/icons/Faenza/apps/24/amule.png
 share/icons/Faenza/apps/24/anjuta.png
 share/icons/Faenza/apps/24/applets-screenshooter.png
@@ -15429,6 +15580,7 @@ share/icons/Faenza/apps/24/config-users.png
 share/icons/Faenza/apps/24/control-center2.png
 share/icons/Faenza/apps/24/control-center2.xpm
 share/icons/Faenza/apps/24/covergloobus.png
+share/icons/Faenza/apps/24/credentials-preferences.png
 share/icons/Faenza/apps/24/cups.png
 share/icons/Faenza/apps/24/dc++.png
 share/icons/Faenza/apps/24/dconf-editor.png
@@ -15444,6 +15596,7 @@ share/icons/Faenza/apps/24/devede.png
 share/icons/Faenza/apps/24/devhelp.png
 share/icons/Faenza/apps/24/dia.png
 share/icons/Faenza/apps/24/display-capplet.png
+share/icons/Faenza/apps/24/display.im6.png
 share/icons/Faenza/apps/24/docky.png
 share/icons/Faenza/apps/24/drakconf.png
 share/icons/Faenza/apps/24/drakmenustyle.png
@@ -15463,6 +15616,7 @@ share/icons/Faenza/apps/24/emerald-theme-manager-icon.png
 share/icons/Faenza/apps/24/emesene.png
 share/icons/Faenza/apps/24/empathy.png
 share/icons/Faenza/apps/24/eog.png
+share/icons/Faenza/apps/24/evernote.png
 share/icons/Faenza/apps/24/evince.png
 share/icons/Faenza/apps/24/evolution-calendar.png
 share/icons/Faenza/apps/24/evolution-mail.png
@@ -15514,12 +15668,17 @@ share/icons/Faenza/apps/24/gksu-debian.png
 share/icons/Faenza/apps/24/gksu-root-terminal.png
 share/icons/Faenza/apps/24/glade-3.png
 share/icons/Faenza/apps/24/glade.png
+share/icons/Faenza/apps/24/glchess.png
+share/icons/Faenza/apps/24/glines.png
 share/icons/Faenza/apps/24/glippy.png
 share/icons/Faenza/apps/24/gloobus-preview.png
 share/icons/Faenza/apps/24/gloobus.png
 share/icons/Faenza/apps/24/gmail.png
 share/icons/Faenza/apps/24/gmailwatcher.png
 share/icons/Faenza/apps/24/gmusicbrowser.png
+share/icons/Faenza/apps/24/gnect.png
+share/icons/Faenza/apps/24/gnibbles.png
+share/icons/Faenza/apps/24/gnobots2.png
 share/icons/Faenza/apps/24/gnochm.png
 share/icons/Faenza/apps/24/gnome-about-logo.png
 share/icons/Faenza/apps/24/gnome-activity-journal.png
@@ -15536,6 +15695,7 @@ share/icons/Faenza/apps/24/gnome-desktop-config.png
 share/icons/Faenza/apps/24/gnome-desktop-item-edit.png
 share/icons/Faenza/apps/24/gnome-device-manager.png
 share/icons/Faenza/apps/24/gnome-dictionary.png
+share/icons/Faenza/apps/24/gnome-disks.png
 share/icons/Faenza/apps/24/gnome-display-properties.png
 share/icons/Faenza/apps/24/gnome-do.png
 share/icons/Faenza/apps/24/gnome-documents.png
@@ -15613,6 +15773,8 @@ share/icons/Faenza/apps/24/gnome-xterm.png
 share/icons/Faenza/apps/24/gnomeradio.png
 share/icons/Faenza/apps/24/gnomine.png
 share/icons/Faenza/apps/24/gnote.png
+share/icons/Faenza/apps/24/gnotravex.png
+share/icons/Faenza/apps/24/gnotski.png
 share/icons/Faenza/apps/24/gnucash-icon.png
 share/icons/Faenza/apps/24/gnumeric.png
 share/icons/Faenza/apps/24/goa-account-facebook.png
@@ -15639,6 +15801,7 @@ share/icons/Faenza/apps/24/gpk-prefs.png
 share/icons/Faenza/apps/24/gpk-repo.png
 share/icons/Faenza/apps/24/gpodder.png
 share/icons/Faenza/apps/24/grisbi.png
+share/icons/Faenza/apps/24/gtali.png
 share/icons/Faenza/apps/24/gtg.png
 share/icons/Faenza/apps/24/gthumb.png
 share/icons/Faenza/apps/24/gtk-help.png
@@ -15664,11 +15827,13 @@ share/icons/Faenza/apps/24/hi48-app-wireshark.png
 share/icons/Faenza/apps/24/homebank.png
 share/icons/Faenza/apps/24/hotwire.png
 share/icons/Faenza/apps/24/htop.png
+share/icons/Faenza/apps/24/iagno.png
 share/icons/Faenza/apps/24/ibus-setup.png
 share/icons/Faenza/apps/24/ibus.png
 share/icons/Faenza/apps/24/icedove.png
 share/icons/Faenza/apps/24/iceweasel.png
 share/icons/Faenza/apps/24/im-chooser.png
+share/icons/Faenza/apps/24/imagemagick.png
 share/icons/Faenza/apps/24/indicator-applet.png
 share/icons/Faenza/apps/24/indicator-weather.png
 share/icons/Faenza/apps/24/inkscape.png
@@ -15751,18 +15916,22 @@ share/icons/Faenza/apps/24/libreoffice34-startcenter.png
 share/icons/Faenza/apps/24/libreoffice34-template.png
 share/icons/Faenza/apps/24/libreoffice34-writer.png
 share/icons/Faenza/apps/24/liferea.png
+share/icons/Faenza/apps/24/lightsoff.png
 share/icons/Faenza/apps/24/linguist.png
 share/icons/Faenza/apps/24/locale.png
 share/icons/Faenza/apps/24/logview.png
 share/icons/Faenza/apps/24/logviewer.png
 share/icons/Faenza/apps/24/lxterminal.png
 share/icons/Faenza/apps/24/magnatune.png
+share/icons/Faenza/apps/24/mahjongg.png
 share/icons/Faenza/apps/24/mail-notification.png
 share/icons/Faenza/apps/24/mailnag.png
 share/icons/Faenza/apps/24/mandrivaupdate.png
 share/icons/Faenza/apps/24/me-tv.png
 share/icons/Faenza/apps/24/media-player-banshee.png
 share/icons/Faenza/apps/24/meld.png
+share/icons/Faenza/apps/24/mendeley.png
+share/icons/Faenza/apps/24/mendeleydesktop.png
 share/icons/Faenza/apps/24/menu-editor.png
 share/icons/Faenza/apps/24/midori.png
 share/icons/Faenza/apps/24/minitube.png
@@ -15785,6 +15954,7 @@ share/icons/Faenza/apps/24/nautilus-actions.png
 share/icons/Faenza/apps/24/nautilus-cd-burner.png
 share/icons/Faenza/apps/24/nautilus.png
 share/icons/Faenza/apps/24/netbeans.png
+share/icons/Faenza/apps/24/nixnote.png
 share/icons/Faenza/apps/24/nm-stage01-connecting01.png
 share/icons/Faenza/apps/24/nm-stage01-connecting02.png
 share/icons/Faenza/apps/24/nm-stage01-connecting03.png
@@ -15861,6 +16031,7 @@ share/icons/Faenza/apps/24/ooo-writer3.0.png
 share/icons/Faenza/apps/24/openbravo-erp.png
 share/icons/Faenza/apps/24/openerp-client.png
 share/icons/Faenza/apps/24/openjdk-6.png
+share/icons/Faenza/apps/24/openjdk-7.png
 share/icons/Faenza/apps/24/openofficeorg-base.png
 share/icons/Faenza/apps/24/openofficeorg-calc.png
 share/icons/Faenza/apps/24/openofficeorg-draw.png
@@ -15940,6 +16111,7 @@ share/icons/Faenza/apps/24/preferences-desktop-screensaver.png
 share/icons/Faenza/apps/24/preferences-desktop-sound.png
 share/icons/Faenza/apps/24/preferences-desktop-theme.png
 share/icons/Faenza/apps/24/preferences-desktop-wallpaper.png
+share/icons/Faenza/apps/24/preferences-management-service.png
 share/icons/Faenza/apps/24/preferences-sound.png
 share/icons/Faenza/apps/24/preferences-system-bluetooth.png
 share/icons/Faenza/apps/24/preferences-system-firewall.png
@@ -15954,6 +16126,7 @@ share/icons/Faenza/apps/24/qtcreator.png
 share/icons/Faenza/apps/24/qtcreator_logo_32.png
 share/icons/Faenza/apps/24/qtdesigner.png
 share/icons/Faenza/apps/24/qtlinguist.png
+share/icons/Faenza/apps/24/quadrapassel.png
 share/icons/Faenza/apps/24/radio.png
 share/icons/Faenza/apps/24/radiotray.png
 share/icons/Faenza/apps/24/rclock.png
@@ -15970,6 +16143,7 @@ share/icons/Faenza/apps/24/rssowl.png
 share/icons/Faenza/apps/24/screenie-qt.png
 share/icons/Faenza/apps/24/screenie.png
 share/icons/Faenza/apps/24/screenruler-icon.png
+share/icons/Faenza/apps/24/screenruler.png
 share/icons/Faenza/apps/24/screensaver.png
 share/icons/Faenza/apps/24/scribes.png
 share/icons/Faenza/apps/24/scribus.png
@@ -15999,6 +16173,8 @@ share/icons/Faenza/apps/24/spotify.png
 share/icons/Faenza/apps/24/stardict.png
 share/icons/Faenza/apps/24/startupmanager.png
 share/icons/Faenza/apps/24/steam.png
+share/icons/Faenza/apps/24/steam.xpm
+share/icons/Faenza/apps/24/steampowered.png
 share/icons/Faenza/apps/24/stellarium.png
 share/icons/Faenza/apps/24/sticky-notes.png
 share/icons/Faenza/apps/24/stock_alarm.png
@@ -16013,6 +16189,7 @@ share/icons/Faenza/apps/24/stock_view-details.png
 share/icons/Faenza/apps/24/style.png
 share/icons/Faenza/apps/24/sun-java.png
 share/icons/Faenza/apps/24/sun-java6.png
+share/icons/Faenza/apps/24/sun-java7.png
 share/icons/Faenza/apps/24/sun-javaws.png
 share/icons/Faenza/apps/24/sun-jcontrol.png
 share/icons/Faenza/apps/24/susehelpcenter.png
@@ -16062,6 +16239,7 @@ share/icons/Faenza/apps/24/twitux.png
 share/icons/Faenza/apps/24/ubuntu-tweak.png
 share/icons/Faenza/apps/24/ubuntuone-client.png
 share/icons/Faenza/apps/24/ubuntuone-installer.png
+share/icons/Faenza/apps/24/ubuntuone-music.png
 share/icons/Faenza/apps/24/ubuntuone.png
 share/icons/Faenza/apps/24/ufw-frontends.png
 share/icons/Faenza/apps/24/umusicstore.png
@@ -16099,6 +16277,7 @@ share/icons/Faenza/apps/24/wordpress.png
 share/icons/Faenza/apps/24/workspace-switcher.png
 share/icons/Faenza/apps/24/wunderlist.png
 share/icons/Faenza/apps/24/wxbanker.png
+share/icons/Faenza/apps/24/x-office-address-book.png
 share/icons/Faenza/apps/24/x-office-calendar.png
 share/icons/Faenza/apps/24/x-system-software-sources.png
 share/icons/Faenza/apps/24/xarchiver.png
@@ -16172,6 +16351,7 @@ share/icons/Faenza/apps/32/EasyTAG_icon.png
 share/icons/Faenza/apps/32/Etermutilities-terminal.png
 share/icons/Faenza/apps/32/Terminal.png
 share/icons/Faenza/apps/32/Thunar.png
+share/icons/Faenza/apps/32/Twitter-twitter.com.png
 share/icons/Faenza/apps/32/VBox.png
 share/icons/Faenza/apps/32/WorldOfGoo.png
 share/icons/Faenza/apps/32/Wunderlist.png
@@ -16185,6 +16365,7 @@ share/icons/Faenza/apps/32/accessories-character-map.png
 share/icons/Faenza/apps/32/accessories-dictionary.png
 share/icons/Faenza/apps/32/accessories-text-editor.png
 share/icons/Faenza/apps/32/acroread.png
+share/icons/Faenza/apps/32/activity-log-manager.png
 share/icons/Faenza/apps/32/addressbook.png
 share/icons/Faenza/apps/32/adobe-air.png
 share/icons/Faenza/apps/32/adobe-flashplayer.png
@@ -16193,6 +16374,7 @@ share/icons/Faenza/apps/32/akregator.png
 share/icons/Faenza/apps/32/alacarte.png
 share/icons/Faenza/apps/32/amarok.png
 share/icons/Faenza/apps/32/amazon-mp3-store-source.png
+share/icons/Faenza/apps/32/amazon-store.png
 share/icons/Faenza/apps/32/amule.png
 share/icons/Faenza/apps/32/anjuta.png
 share/icons/Faenza/apps/32/applets-screenshooter.png
@@ -16258,6 +16440,7 @@ share/icons/Faenza/apps/32/config-users.png
 share/icons/Faenza/apps/32/control-center2.png
 share/icons/Faenza/apps/32/control-center2.xpm
 share/icons/Faenza/apps/32/covergloobus.png
+share/icons/Faenza/apps/32/credentials-preferences.png
 share/icons/Faenza/apps/32/cups.png
 share/icons/Faenza/apps/32/dc++.png
 share/icons/Faenza/apps/32/dconf-editor.png
@@ -16273,6 +16456,7 @@ share/icons/Faenza/apps/32/devede.png
 share/icons/Faenza/apps/32/devhelp.png
 share/icons/Faenza/apps/32/dia.png
 share/icons/Faenza/apps/32/display-capplet.png
+share/icons/Faenza/apps/32/display.im6.png
 share/icons/Faenza/apps/32/docky.png
 share/icons/Faenza/apps/32/drakconf.png
 share/icons/Faenza/apps/32/drakmenustyle.png
@@ -16292,6 +16476,7 @@ share/icons/Faenza/apps/32/emerald-theme-manager-icon.png
 share/icons/Faenza/apps/32/emesene.png
 share/icons/Faenza/apps/32/empathy.png
 share/icons/Faenza/apps/32/eog.png
+share/icons/Faenza/apps/32/evernote.png
 share/icons/Faenza/apps/32/evince.png
 share/icons/Faenza/apps/32/evolution-calendar.png
 share/icons/Faenza/apps/32/evolution-mail.png
@@ -16343,12 +16528,17 @@ share/icons/Faenza/apps/32/gksu-debian.png
 share/icons/Faenza/apps/32/gksu-root-terminal.png
 share/icons/Faenza/apps/32/glade-3.png
 share/icons/Faenza/apps/32/glade.png
+share/icons/Faenza/apps/32/glchess.png
+share/icons/Faenza/apps/32/glines.png
 share/icons/Faenza/apps/32/glippy.png
 share/icons/Faenza/apps/32/gloobus-preview.png
 share/icons/Faenza/apps/32/gloobus.png
 share/icons/Faenza/apps/32/gmail.png
 share/icons/Faenza/apps/32/gmailwatcher.png
 share/icons/Faenza/apps/32/gmusicbrowser.png
+share/icons/Faenza/apps/32/gnect.png
+share/icons/Faenza/apps/32/gnibbles.png
+share/icons/Faenza/apps/32/gnobots2.png
 share/icons/Faenza/apps/32/gnochm.png
 share/icons/Faenza/apps/32/gnome-about-logo.png
 share/icons/Faenza/apps/32/gnome-activity-journal.png
@@ -16365,6 +16555,7 @@ share/icons/Faenza/apps/32/gnome-desktop-config.png
 share/icons/Faenza/apps/32/gnome-desktop-item-edit.png
 share/icons/Faenza/apps/32/gnome-device-manager.png
 share/icons/Faenza/apps/32/gnome-dictionary.png
+share/icons/Faenza/apps/32/gnome-disks.png
 share/icons/Faenza/apps/32/gnome-display-properties.png
 share/icons/Faenza/apps/32/gnome-do.png
 share/icons/Faenza/apps/32/gnome-documents.png
@@ -16442,6 +16633,8 @@ share/icons/Faenza/apps/32/gnome-xterm.png
 share/icons/Faenza/apps/32/gnomeradio.png
 share/icons/Faenza/apps/32/gnomine.png
 share/icons/Faenza/apps/32/gnote.png
+share/icons/Faenza/apps/32/gnotravex.png
+share/icons/Faenza/apps/32/gnotski.png
 share/icons/Faenza/apps/32/gnucash-icon.png
 share/icons/Faenza/apps/32/gnumeric.png
 share/icons/Faenza/apps/32/goa-account-facebook.png
@@ -16468,6 +16661,7 @@ share/icons/Faenza/apps/32/gpk-prefs.png
 share/icons/Faenza/apps/32/gpk-repo.png
 share/icons/Faenza/apps/32/gpodder.png
 share/icons/Faenza/apps/32/grisbi.png
+share/icons/Faenza/apps/32/gtali.png
 share/icons/Faenza/apps/32/gtg.png
 share/icons/Faenza/apps/32/gthumb.png
 share/icons/Faenza/apps/32/gtk-help.png
@@ -16493,11 +16687,13 @@ share/icons/Faenza/apps/32/hi48-app-wireshark.png
 share/icons/Faenza/apps/32/homebank.png
 share/icons/Faenza/apps/32/hotwire.png
 share/icons/Faenza/apps/32/htop.png
+share/icons/Faenza/apps/32/iagno.png
 share/icons/Faenza/apps/32/ibus-setup.png
 share/icons/Faenza/apps/32/ibus.png
 share/icons/Faenza/apps/32/icedove.png
 share/icons/Faenza/apps/32/iceweasel.png
 share/icons/Faenza/apps/32/im-chooser.png
+share/icons/Faenza/apps/32/imagemagick.png
 share/icons/Faenza/apps/32/indicator-applet.png
 share/icons/Faenza/apps/32/indicator-weather.png
 share/icons/Faenza/apps/32/inkscape.png
@@ -16578,17 +16774,21 @@ share/icons/Faenza/apps/32/libreoffice34-startcenter.png
 share/icons/Faenza/apps/32/libreoffice34-template.png
 share/icons/Faenza/apps/32/libreoffice34-writer.png
 share/icons/Faenza/apps/32/liferea.png
+share/icons/Faenza/apps/32/lightsoff.png
 share/icons/Faenza/apps/32/linguist.png
 share/icons/Faenza/apps/32/locale.png
 share/icons/Faenza/apps/32/logview.png
 share/icons/Faenza/apps/32/logviewer.png
 share/icons/Faenza/apps/32/lxterminal.png
+share/icons/Faenza/apps/32/mahjongg.png
 share/icons/Faenza/apps/32/mail-notification.png
 share/icons/Faenza/apps/32/mailnag.png
 share/icons/Faenza/apps/32/mandrivaupdate.png
 share/icons/Faenza/apps/32/me-tv.png
 share/icons/Faenza/apps/32/media-player-banshee.png
 share/icons/Faenza/apps/32/meld.png
+share/icons/Faenza/apps/32/mendeley.png
+share/icons/Faenza/apps/32/mendeleydesktop.png
 share/icons/Faenza/apps/32/menu-editor.png
 share/icons/Faenza/apps/32/midori.png
 share/icons/Faenza/apps/32/minitube.png
@@ -16610,6 +16810,7 @@ share/icons/Faenza/apps/32/nautilus-actions.png
 share/icons/Faenza/apps/32/nautilus-cd-burner.png
 share/icons/Faenza/apps/32/nautilus.png
 share/icons/Faenza/apps/32/netbeans.png
+share/icons/Faenza/apps/32/nixnote.png
 share/icons/Faenza/apps/32/nvidia-current-settings.png
 share/icons/Faenza/apps/32/nvidia-settings.png
 share/icons/Faenza/apps/32/office-address-book.png
@@ -16642,6 +16843,7 @@ share/icons/Faenza/apps/32/ooo-writer3.0.png
 share/icons/Faenza/apps/32/openbravo-erp.png
 share/icons/Faenza/apps/32/openerp-client.png
 share/icons/Faenza/apps/32/openjdk-6.png
+share/icons/Faenza/apps/32/openjdk-7.png
 share/icons/Faenza/apps/32/openofficeorg-base.png
 share/icons/Faenza/apps/32/openofficeorg-calc.png
 share/icons/Faenza/apps/32/openofficeorg-draw.png
@@ -16721,6 +16923,7 @@ share/icons/Faenza/apps/32/preferences-desktop-screensaver.png
 share/icons/Faenza/apps/32/preferences-desktop-sound.png
 share/icons/Faenza/apps/32/preferences-desktop-theme.png
 share/icons/Faenza/apps/32/preferences-desktop-wallpaper.png
+share/icons/Faenza/apps/32/preferences-management-service.png
 share/icons/Faenza/apps/32/preferences-sound.png
 share/icons/Faenza/apps/32/preferences-system-bluetooth.png
 share/icons/Faenza/apps/32/preferences-system-firewall.png
@@ -16735,6 +16938,7 @@ share/icons/Faenza/apps/32/qtcreator.png
 share/icons/Faenza/apps/32/qtcreator_logo_32.png
 share/icons/Faenza/apps/32/qtdesigner.png
 share/icons/Faenza/apps/32/qtlinguist.png
+share/icons/Faenza/apps/32/quadrapassel.png
 share/icons/Faenza/apps/32/radio.png
 share/icons/Faenza/apps/32/radiotray.png
 share/icons/Faenza/apps/32/rclock.png
@@ -16751,6 +16955,7 @@ share/icons/Faenza/apps/32/rssowl.png
 share/icons/Faenza/apps/32/screenie-qt.png
 share/icons/Faenza/apps/32/screenie.png
 share/icons/Faenza/apps/32/screenruler-icon.png
+share/icons/Faenza/apps/32/screenruler.png
 share/icons/Faenza/apps/32/screensaver.png
 share/icons/Faenza/apps/32/scribes.png
 share/icons/Faenza/apps/32/scribus.png
@@ -16780,6 +16985,8 @@ share/icons/Faenza/apps/32/spotify.png
 share/icons/Faenza/apps/32/stardict.png
 share/icons/Faenza/apps/32/startupmanager.png
 share/icons/Faenza/apps/32/steam.png
+share/icons/Faenza/apps/32/steam.xpm
+share/icons/Faenza/apps/32/steampowered.png
 share/icons/Faenza/apps/32/stellarium.png
 share/icons/Faenza/apps/32/sticky-notes.png
 share/icons/Faenza/apps/32/stock_alarm.png
@@ -16794,6 +17001,7 @@ share/icons/Faenza/apps/32/stock_view-details.png
 share/icons/Faenza/apps/32/style.png
 share/icons/Faenza/apps/32/sun-java.png
 share/icons/Faenza/apps/32/sun-java6.png
+share/icons/Faenza/apps/32/sun-java7.png
 share/icons/Faenza/apps/32/sun-javaws.png
 share/icons/Faenza/apps/32/sun-jcontrol.png
 share/icons/Faenza/apps/32/susehelpcenter.png
@@ -16843,6 +17051,7 @@ share/icons/Faenza/apps/32/twitux.png
 share/icons/Faenza/apps/32/ubuntu-tweak.png
 share/icons/Faenza/apps/32/ubuntuone-client.png
 share/icons/Faenza/apps/32/ubuntuone-installer.png
+share/icons/Faenza/apps/32/ubuntuone-music.png
 share/icons/Faenza/apps/32/ubuntuone.png
 share/icons/Faenza/apps/32/ufw-frontends.png
 share/icons/Faenza/apps/32/un-reboot.png
@@ -16878,6 +17087,7 @@ share/icons/Faenza/apps/32/wordpress.png
 share/icons/Faenza/apps/32/workspace-switcher.png
 share/icons/Faenza/apps/32/wunderlist.png
 share/icons/Faenza/apps/32/wxbanker.png
+share/icons/Faenza/apps/32/x-office-address-book.png
 share/icons/Faenza/apps/32/x-office-calendar.png
 share/icons/Faenza/apps/32/x-system-software-sources.png
 share/icons/Faenza/apps/32/xarchiver.png
@@ -16951,6 +17161,7 @@ share/icons/Faenza/apps/48/EasyTAG_icon.png
 share/icons/Faenza/apps/48/Etermutilities-terminal.png
 share/icons/Faenza/apps/48/Terminal.png
 share/icons/Faenza/apps/48/Thunar.png
+share/icons/Faenza/apps/48/Twitter-twitter.com.png
 share/icons/Faenza/apps/48/VBox.png
 share/icons/Faenza/apps/48/WorldOfGoo.png
 share/icons/Faenza/apps/48/Wunderlist.png
@@ -16964,6 +17175,7 @@ share/icons/Faenza/apps/48/accessories-character-map.png
 share/icons/Faenza/apps/48/accessories-dictionary.png
 share/icons/Faenza/apps/48/accessories-text-editor.png
 share/icons/Faenza/apps/48/acroread.png
+share/icons/Faenza/apps/48/activity-log-manager.png
 share/icons/Faenza/apps/48/addressbook.png
 share/icons/Faenza/apps/48/adobe-air.png
 share/icons/Faenza/apps/48/adobe-flashplayer.png
@@ -16972,6 +17184,7 @@ share/icons/Faenza/apps/48/akregator.png
 share/icons/Faenza/apps/48/alacarte.png
 share/icons/Faenza/apps/48/amarok.png
 share/icons/Faenza/apps/48/amazon-mp3-store-source.png
+share/icons/Faenza/apps/48/amazon-store.png
 share/icons/Faenza/apps/48/amule.png
 share/icons/Faenza/apps/48/anjuta.png
 share/icons/Faenza/apps/48/applets-screenshooter.png
@@ -17037,6 +17250,7 @@ share/icons/Faenza/apps/48/config-users.png
 share/icons/Faenza/apps/48/control-center2.png
 share/icons/Faenza/apps/48/control-center2.xpm
 share/icons/Faenza/apps/48/covergloobus.png
+share/icons/Faenza/apps/48/credentials-preferences.png
 share/icons/Faenza/apps/48/cups.png
 share/icons/Faenza/apps/48/dc++.png
 share/icons/Faenza/apps/48/dconf-editor.png
@@ -17052,6 +17266,7 @@ share/icons/Faenza/apps/48/devede.png
 share/icons/Faenza/apps/48/devhelp.png
 share/icons/Faenza/apps/48/dia.png
 share/icons/Faenza/apps/48/display-capplet.png
+share/icons/Faenza/apps/48/display.im6.png
 share/icons/Faenza/apps/48/docky.png
 share/icons/Faenza/apps/48/drakconf.png
 share/icons/Faenza/apps/48/drakmenustyle.png
@@ -17071,6 +17286,7 @@ share/icons/Faenza/apps/48/emerald-theme-manager-icon.png
 share/icons/Faenza/apps/48/emesene.png
 share/icons/Faenza/apps/48/empathy.png
 share/icons/Faenza/apps/48/eog.png
+share/icons/Faenza/apps/48/evernote.png
 share/icons/Faenza/apps/48/evince.png
 share/icons/Faenza/apps/48/evolution-calendar.png
 share/icons/Faenza/apps/48/evolution-mail.png
@@ -17122,12 +17338,17 @@ share/icons/Faenza/apps/48/gksu-debian.png
 share/icons/Faenza/apps/48/gksu-root-terminal.png
 share/icons/Faenza/apps/48/glade-3.png
 share/icons/Faenza/apps/48/glade.png
+share/icons/Faenza/apps/48/glchess.png
+share/icons/Faenza/apps/48/glines.png
 share/icons/Faenza/apps/48/glippy.png
 share/icons/Faenza/apps/48/gloobus-preview.png
 share/icons/Faenza/apps/48/gloobus.png
 share/icons/Faenza/apps/48/gmail.png
 share/icons/Faenza/apps/48/gmailwatcher.png
 share/icons/Faenza/apps/48/gmusicbrowser.png
+share/icons/Faenza/apps/48/gnect.png
+share/icons/Faenza/apps/48/gnibbles.png
+share/icons/Faenza/apps/48/gnobots2.png
 share/icons/Faenza/apps/48/gnochm.png
 share/icons/Faenza/apps/48/gnome-about-logo.png
 share/icons/Faenza/apps/48/gnome-activity-journal.png
@@ -17144,6 +17365,7 @@ share/icons/Faenza/apps/48/gnome-desktop-config.png
 share/icons/Faenza/apps/48/gnome-desktop-item-edit.png
 share/icons/Faenza/apps/48/gnome-device-manager.png
 share/icons/Faenza/apps/48/gnome-dictionary.png
+share/icons/Faenza/apps/48/gnome-disks.png
 share/icons/Faenza/apps/48/gnome-display-properties.png
 share/icons/Faenza/apps/48/gnome-do.png
 share/icons/Faenza/apps/48/gnome-documents.png
@@ -17221,6 +17443,8 @@ share/icons/Faenza/apps/48/gnome-xterm.png
 share/icons/Faenza/apps/48/gnomeradio.png
 share/icons/Faenza/apps/48/gnomine.png
 share/icons/Faenza/apps/48/gnote.png
+share/icons/Faenza/apps/48/gnotravex.png
+share/icons/Faenza/apps/48/gnotski.png
 share/icons/Faenza/apps/48/gnucash-icon.png
 share/icons/Faenza/apps/48/gnumeric.png
 share/icons/Faenza/apps/48/goa-account-facebook.png
@@ -17247,6 +17471,7 @@ share/icons/Faenza/apps/48/gpk-prefs.png
 share/icons/Faenza/apps/48/gpk-repo.png
 share/icons/Faenza/apps/48/gpodder.png
 share/icons/Faenza/apps/48/grisbi.png
+share/icons/Faenza/apps/48/gtali.png
 share/icons/Faenza/apps/48/gtg.png
 share/icons/Faenza/apps/48/gthumb.png
 share/icons/Faenza/apps/48/gtk-help.png
@@ -17272,11 +17497,13 @@ share/icons/Faenza/apps/48/hi48-app-wireshark.png
 share/icons/Faenza/apps/48/homebank.png
 share/icons/Faenza/apps/48/hotwire.png
 share/icons/Faenza/apps/48/htop.png
+share/icons/Faenza/apps/48/iagno.png
 share/icons/Faenza/apps/48/ibus-setup.png
 share/icons/Faenza/apps/48/ibus.png
 share/icons/Faenza/apps/48/icedove.png
 share/icons/Faenza/apps/48/iceweasel.png
 share/icons/Faenza/apps/48/im-chooser.png
+share/icons/Faenza/apps/48/imagemagick.png
 share/icons/Faenza/apps/48/indicator-applet.png
 share/icons/Faenza/apps/48/indicator-weather.png
 share/icons/Faenza/apps/48/inkscape.png
@@ -17357,17 +17584,21 @@ share/icons/Faenza/apps/48/libreoffice34-startcenter.png
 share/icons/Faenza/apps/48/libreoffice34-template.png
 share/icons/Faenza/apps/48/libreoffice34-writer.png
 share/icons/Faenza/apps/48/liferea.png
+share/icons/Faenza/apps/48/lightsoff.png
 share/icons/Faenza/apps/48/linguist.png
 share/icons/Faenza/apps/48/locale.png
 share/icons/Faenza/apps/48/logview.png
 share/icons/Faenza/apps/48/logviewer.png
 share/icons/Faenza/apps/48/lxterminal.png
+share/icons/Faenza/apps/48/mahjongg.png
 share/icons/Faenza/apps/48/mail-notification.png
 share/icons/Faenza/apps/48/mailnag.png
 share/icons/Faenza/apps/48/mandrivaupdate.png
 share/icons/Faenza/apps/48/me-tv.png
 share/icons/Faenza/apps/48/media-player-banshee.png
 share/icons/Faenza/apps/48/meld.png
+share/icons/Faenza/apps/48/mendeley.png
+share/icons/Faenza/apps/48/mendeleydesktop.png
 share/icons/Faenza/apps/48/menu-editor.png
 share/icons/Faenza/apps/48/midori.png
 share/icons/Faenza/apps/48/minitube.png
@@ -17389,6 +17620,7 @@ share/icons/Faenza/apps/48/nautilus-actions.png
 share/icons/Faenza/apps/48/nautilus-cd-burner.png
 share/icons/Faenza/apps/48/nautilus.png
 share/icons/Faenza/apps/48/netbeans.png
+share/icons/Faenza/apps/48/nixnote.png
 share/icons/Faenza/apps/48/nvidia-current-settings.png
 share/icons/Faenza/apps/48/nvidia-settings.png
 share/icons/Faenza/apps/48/office-address-book.png
@@ -17421,6 +17653,7 @@ share/icons/Faenza/apps/48/ooo-writer3.0.png
 share/icons/Faenza/apps/48/openbravo-erp.png
 share/icons/Faenza/apps/48/openerp-client.png
 share/icons/Faenza/apps/48/openjdk-6.png
+share/icons/Faenza/apps/48/openjdk-7.png
 share/icons/Faenza/apps/48/openofficeorg-base.png
 share/icons/Faenza/apps/48/openofficeorg-calc.png
 share/icons/Faenza/apps/48/openofficeorg-draw.png
@@ -17500,6 +17733,7 @@ share/icons/Faenza/apps/48/preferences-desktop-screensaver.png
 share/icons/Faenza/apps/48/preferences-desktop-sound.png
 share/icons/Faenza/apps/48/preferences-desktop-theme.png
 share/icons/Faenza/apps/48/preferences-desktop-wallpaper.png
+share/icons/Faenza/apps/48/preferences-management-service.png
 share/icons/Faenza/apps/48/preferences-sound.png
 share/icons/Faenza/apps/48/preferences-system-bluetooth.png
 share/icons/Faenza/apps/48/preferences-system-firewall.png
@@ -17514,6 +17748,7 @@ share/icons/Faenza/apps/48/qtcreator.png
 share/icons/Faenza/apps/48/qtcreator_logo_32.png
 share/icons/Faenza/apps/48/qtdesigner.png
 share/icons/Faenza/apps/48/qtlinguist.png
+share/icons/Faenza/apps/48/quadrapassel.png
 share/icons/Faenza/apps/48/radio.png
 share/icons/Faenza/apps/48/radiotray.png
 share/icons/Faenza/apps/48/rclock.png
@@ -17530,6 +17765,7 @@ share/icons/Faenza/apps/48/rssowl.png
 share/icons/Faenza/apps/48/screenie-qt.png
 share/icons/Faenza/apps/48/screenie.png
 share/icons/Faenza/apps/48/screenruler-icon.png
+share/icons/Faenza/apps/48/screenruler.png
 share/icons/Faenza/apps/48/screensaver.png
 share/icons/Faenza/apps/48/scribes.png
 share/icons/Faenza/apps/48/scribus.png
@@ -17559,6 +17795,8 @@ share/icons/Faenza/apps/48/spotify.png
 share/icons/Faenza/apps/48/stardict.png
 share/icons/Faenza/apps/48/startupmanager.png
 share/icons/Faenza/apps/48/steam.png
+share/icons/Faenza/apps/48/steam.xpm
+share/icons/Faenza/apps/48/steampowered.png
 share/icons/Faenza/apps/48/stellarium.png
 share/icons/Faenza/apps/48/sticky-notes.png
 share/icons/Faenza/apps/48/stock_alarm.png
@@ -17573,6 +17811,7 @@ share/icons/Faenza/apps/48/stock_view-details.png
 share/icons/Faenza/apps/48/style.png
 share/icons/Faenza/apps/48/sun-java.png
 share/icons/Faenza/apps/48/sun-java6.png
+share/icons/Faenza/apps/48/sun-java7.png
 share/icons/Faenza/apps/48/sun-javaws.png
 share/icons/Faenza/apps/48/sun-jcontrol.png
 share/icons/Faenza/apps/48/susehelpcenter.png
@@ -17622,6 +17861,7 @@ share/icons/Faenza/apps/48/twitux.png
 share/icons/Faenza/apps/48/ubuntu-tweak.png
 share/icons/Faenza/apps/48/ubuntuone-client.png
 share/icons/Faenza/apps/48/ubuntuone-installer.png
+share/icons/Faenza/apps/48/ubuntuone-music.png
 share/icons/Faenza/apps/48/ubuntuone.png
 share/icons/Faenza/apps/48/ufw-frontends.png
 share/icons/Faenza/apps/48/un-reboot.png
@@ -17657,6 +17897,7 @@ share/icons/Faenza/apps/48/wordpress.png
 share/icons/Faenza/apps/48/workspace-switcher.png
 share/icons/Faenza/apps/48/wunderlist.png
 share/icons/Faenza/apps/48/wxbanker.png
+share/icons/Faenza/apps/48/x-office-address-book.png
 share/icons/Faenza/apps/48/x-office-calendar.png
 share/icons/Faenza/apps/48/x-system-software-sources.png
 share/icons/Faenza/apps/48/xarchiver.png
@@ -17729,6 +17970,7 @@ share/icons/Faenza/apps/64/EasyTAG_icon.png
 share/icons/Faenza/apps/64/Etermutilities-terminal.png
 share/icons/Faenza/apps/64/Terminal.png
 share/icons/Faenza/apps/64/Thunar.png
+share/icons/Faenza/apps/64/Twitter-twitter.com.png
 share/icons/Faenza/apps/64/VBox.png
 share/icons/Faenza/apps/64/WorldOfGoo.png
 share/icons/Faenza/apps/64/Wunderlist.png
@@ -17742,6 +17984,7 @@ share/icons/Faenza/apps/64/accessories-character-map.png
 share/icons/Faenza/apps/64/accessories-dictionary.png
 share/icons/Faenza/apps/64/accessories-text-editor.png
 share/icons/Faenza/apps/64/acroread.png
+share/icons/Faenza/apps/64/activity-log-manager.png
 share/icons/Faenza/apps/64/addressbook.png
 share/icons/Faenza/apps/64/adobe-air.png
 share/icons/Faenza/apps/64/adobe-flashplayer.png
@@ -17750,6 +17993,7 @@ share/icons/Faenza/apps/64/akregator.png
 share/icons/Faenza/apps/64/alacarte.png
 share/icons/Faenza/apps/64/amarok.png
 share/icons/Faenza/apps/64/amazon-mp3-store-source.png
+share/icons/Faenza/apps/64/amazon-store.png
 share/icons/Faenza/apps/64/amule.png
 share/icons/Faenza/apps/64/anjuta.png
 share/icons/Faenza/apps/64/applets-screenshooter.png
@@ -17811,6 +18055,7 @@ share/icons/Faenza/apps/64/config-language.png
 share/icons/Faenza/apps/64/config-users.png
 share/icons/Faenza/apps/64/control-center2.png
 share/icons/Faenza/apps/64/covergloobus.png
+share/icons/Faenza/apps/64/credentials-preferences.png
 share/icons/Faenza/apps/64/cups.png
 share/icons/Faenza/apps/64/dc++.png
 share/icons/Faenza/apps/64/dconf-editor.png
@@ -17826,6 +18071,7 @@ share/icons/Faenza/apps/64/devede.png
 share/icons/Faenza/apps/64/devhelp.png
 share/icons/Faenza/apps/64/dia.png
 share/icons/Faenza/apps/64/display-capplet.png
+share/icons/Faenza/apps/64/display.im6.png
 share/icons/Faenza/apps/64/docky.png
 share/icons/Faenza/apps/64/drakconf.png
 share/icons/Faenza/apps/64/drakmenustyle.png
@@ -17845,6 +18091,7 @@ share/icons/Faenza/apps/64/emerald-theme-manager-icon.png
 share/icons/Faenza/apps/64/emesene.png
 share/icons/Faenza/apps/64/empathy.png
 share/icons/Faenza/apps/64/eog.png
+share/icons/Faenza/apps/64/evernote.png
 share/icons/Faenza/apps/64/evince.png
 share/icons/Faenza/apps/64/evolution-calendar.png
 share/icons/Faenza/apps/64/evolution-mail.png
@@ -17895,12 +18142,17 @@ share/icons/Faenza/apps/64/gksu-debian.png
 share/icons/Faenza/apps/64/gksu-root-terminal.png
 share/icons/Faenza/apps/64/glade-3.png
 share/icons/Faenza/apps/64/glade.png
+share/icons/Faenza/apps/64/glchess.png
+share/icons/Faenza/apps/64/glines.png
 share/icons/Faenza/apps/64/glippy.png
 share/icons/Faenza/apps/64/gloobus-preview.png
 share/icons/Faenza/apps/64/gloobus.png
 share/icons/Faenza/apps/64/gmail.png
 share/icons/Faenza/apps/64/gmailwatcher.png
 share/icons/Faenza/apps/64/gmusicbrowser.png
+share/icons/Faenza/apps/64/gnect.png
+share/icons/Faenza/apps/64/gnibbles.png
+share/icons/Faenza/apps/64/gnobots2.png
 share/icons/Faenza/apps/64/gnochm.png
 share/icons/Faenza/apps/64/gnome-about-logo.png
 share/icons/Faenza/apps/64/gnome-activity-journal.png
@@ -17916,6 +18168,7 @@ share/icons/Faenza/apps/64/gnome-desktop-config.png
 share/icons/Faenza/apps/64/gnome-desktop-item-edit.png
 share/icons/Faenza/apps/64/gnome-device-manager.png
 share/icons/Faenza/apps/64/gnome-dictionary.png
+share/icons/Faenza/apps/64/gnome-disks.png
 share/icons/Faenza/apps/64/gnome-display-properties.png
 share/icons/Faenza/apps/64/gnome-do.png
 share/icons/Faenza/apps/64/gnome-documents.png
@@ -17991,6 +18244,8 @@ share/icons/Faenza/apps/64/gnome-xterm.png
 share/icons/Faenza/apps/64/gnomeradio.png
 share/icons/Faenza/apps/64/gnomine.png
 share/icons/Faenza/apps/64/gnote.png
+share/icons/Faenza/apps/64/gnotravex.png
+share/icons/Faenza/apps/64/gnotski.png
 share/icons/Faenza/apps/64/gnucash-icon.png
 share/icons/Faenza/apps/64/gnumeric.png
 share/icons/Faenza/apps/64/goa-account-facebook.png
@@ -18015,6 +18270,7 @@ share/icons/Faenza/apps/64/gpk-prefs.png
 share/icons/Faenza/apps/64/gpk-repo.png
 share/icons/Faenza/apps/64/gpodder.png
 share/icons/Faenza/apps/64/grisbi.png
+share/icons/Faenza/apps/64/gtali.png
 share/icons/Faenza/apps/64/gtg.png
 share/icons/Faenza/apps/64/gthumb.png
 share/icons/Faenza/apps/64/gtk-help.png
@@ -18039,11 +18295,13 @@ share/icons/Faenza/apps/64/hi48-app-wireshark.png
 share/icons/Faenza/apps/64/homebank.png
 share/icons/Faenza/apps/64/hotwire.png
 share/icons/Faenza/apps/64/htop.png
+share/icons/Faenza/apps/64/iagno.png
 share/icons/Faenza/apps/64/ibus-setup.png
 share/icons/Faenza/apps/64/ibus.png
 share/icons/Faenza/apps/64/icedove.png
 share/icons/Faenza/apps/64/iceweasel.png
 share/icons/Faenza/apps/64/im-chooser.png
+share/icons/Faenza/apps/64/imagemagick.png
 share/icons/Faenza/apps/64/indicator-applet.png
 share/icons/Faenza/apps/64/indicator-weather.png
 share/icons/Faenza/apps/64/inkscape.png
@@ -18124,17 +18382,21 @@ share/icons/Faenza/apps/64/libreoffice34-startcenter.png
 share/icons/Faenza/apps/64/libreoffice34-template.png
 share/icons/Faenza/apps/64/libreoffice34-writer.png
 share/icons/Faenza/apps/64/liferea.png
+share/icons/Faenza/apps/64/lightsoff.png
 share/icons/Faenza/apps/64/linguist.png
 share/icons/Faenza/apps/64/locale.png
 share/icons/Faenza/apps/64/logview.png
 share/icons/Faenza/apps/64/logviewer.png
 share/icons/Faenza/apps/64/lxterminal.png
+share/icons/Faenza/apps/64/mahjongg.png
 share/icons/Faenza/apps/64/mail-notification.png
 share/icons/Faenza/apps/64/mailnag.png
 share/icons/Faenza/apps/64/mandrivaupdate.png
 share/icons/Faenza/apps/64/me-tv.png
 share/icons/Faenza/apps/64/media-player-banshee.png
 share/icons/Faenza/apps/64/meld.png
+share/icons/Faenza/apps/64/mendeley.png
+share/icons/Faenza/apps/64/mendeleydesktop.png
 share/icons/Faenza/apps/64/menu-editor.png
 share/icons/Faenza/apps/64/midori.png
 share/icons/Faenza/apps/64/minitube.png
@@ -18156,6 +18418,7 @@ share/icons/Faenza/apps/64/nautilus-actions.png
 share/icons/Faenza/apps/64/nautilus-cd-burner.png
 share/icons/Faenza/apps/64/nautilus.png
 share/icons/Faenza/apps/64/netbeans.png
+share/icons/Faenza/apps/64/nixnote.png
 share/icons/Faenza/apps/64/nvidia-current-settings.png
 share/icons/Faenza/apps/64/nvidia-settings.png
 share/icons/Faenza/apps/64/office-address-book.png
@@ -18188,6 +18451,7 @@ share/icons/Faenza/apps/64/ooo-writer3.0.png
 share/icons/Faenza/apps/64/openbravo-erp.png
 share/icons/Faenza/apps/64/openerp-client.png
 share/icons/Faenza/apps/64/openjdk-6.png
+share/icons/Faenza/apps/64/openjdk-7.png
 share/icons/Faenza/apps/64/openofficeorg-base.png
 share/icons/Faenza/apps/64/openofficeorg-calc.png
 share/icons/Faenza/apps/64/openofficeorg-draw.png
@@ -18263,6 +18527,7 @@ share/icons/Faenza/apps/64/preferences-desktop-screensaver.png
 share/icons/Faenza/apps/64/preferences-desktop-sound.png
 share/icons/Faenza/apps/64/preferences-desktop-theme.png
 share/icons/Faenza/apps/64/preferences-desktop-wallpaper.png
+share/icons/Faenza/apps/64/preferences-management-service.png
 share/icons/Faenza/apps/64/preferences-sound.png
 share/icons/Faenza/apps/64/preferences-system-bluetooth.png
 share/icons/Faenza/apps/64/preferences-system-firewall.png
@@ -18277,6 +18542,7 @@ share/icons/Faenza/apps/64/qtcreator.png
 share/icons/Faenza/apps/64/qtcreator_logo_32.png
 share/icons/Faenza/apps/64/qtdesigner.png
 share/icons/Faenza/apps/64/qtlinguist.png
+share/icons/Faenza/apps/64/quadrapassel.png
 share/icons/Faenza/apps/64/radio.png
 share/icons/Faenza/apps/64/radiotray.png
 share/icons/Faenza/apps/64/rclock.png
@@ -18293,6 +18559,7 @@ share/icons/Faenza/apps/64/rssowl.png
 share/icons/Faenza/apps/64/screenie-qt.png
 share/icons/Faenza/apps/64/screenie.png
 share/icons/Faenza/apps/64/screenruler-icon.png
+share/icons/Faenza/apps/64/screenruler.png
 share/icons/Faenza/apps/64/screensaver.png
 share/icons/Faenza/apps/64/scribes.png
 share/icons/Faenza/apps/64/scribus.png
@@ -18322,6 +18589,7 @@ share/icons/Faenza/apps/64/spotify.png
 share/icons/Faenza/apps/64/stardict.png
 share/icons/Faenza/apps/64/startupmanager.png
 share/icons/Faenza/apps/64/steam.png
+share/icons/Faenza/apps/64/steampowered.png
 share/icons/Faenza/apps/64/stellarium.png
 share/icons/Faenza/apps/64/sticky-notes.png
 share/icons/Faenza/apps/64/stock_alarm.png
@@ -18336,6 +18604,7 @@ share/icons/Faenza/apps/64/stock_view-details.png
 share/icons/Faenza/apps/64/style.png
 share/icons/Faenza/apps/64/sun-java.png
 share/icons/Faenza/apps/64/sun-java6.png
+share/icons/Faenza/apps/64/sun-java7.png
 share/icons/Faenza/apps/64/sun-javaws.png
 share/icons/Faenza/apps/64/sun-jcontrol.png
 share/icons/Faenza/apps/64/susehelpcenter.png
@@ -18384,6 +18653,7 @@ share/icons/Faenza/apps/64/twitux.png
 share/icons/Faenza/apps/64/ubuntu-tweak.png
 share/icons/Faenza/apps/64/ubuntuone-client.png
 share/icons/Faenza/apps/64/ubuntuone-installer.png
+share/icons/Faenza/apps/64/ubuntuone-music.png
 share/icons/Faenza/apps/64/ubuntuone.png
 share/icons/Faenza/apps/64/ufw-frontends.png
 share/icons/Faenza/apps/64/un-reboot.png
@@ -18419,6 +18689,7 @@ share/icons/Faenza/apps/64/wordpress.png
 share/icons/Faenza/apps/64/workspace-switcher.png
 share/icons/Faenza/apps/64/wunderlist.png
 share/icons/Faenza/apps/64/wxbanker.png
+share/icons/Faenza/apps/64/x-office-address-book.png
 share/icons/Faenza/apps/64/x-office-calendar.png
 share/icons/Faenza/apps/64/x-system-software-sources.png
 share/icons/Faenza/apps/64/xarchiver.png
@@ -18485,6 +18756,7 @@ share/icons/Faenza/apps/96/EasyTAG_icon.png
 share/icons/Faenza/apps/96/Etermutilities-terminal.png
 share/icons/Faenza/apps/96/Terminal.png
 share/icons/Faenza/apps/96/Thunar.png
+share/icons/Faenza/apps/96/Twitter-twitter.com.png
 share/icons/Faenza/apps/96/VBox.png
 share/icons/Faenza/apps/96/WorldOfGoo.png
 share/icons/Faenza/apps/96/Wunderlist.png
@@ -18498,6 +18770,7 @@ share/icons/Faenza/apps/96/accessories-character-map.png
 share/icons/Faenza/apps/96/accessories-dictionary.png
 share/icons/Faenza/apps/96/accessories-text-editor.png
 share/icons/Faenza/apps/96/acroread.png
+share/icons/Faenza/apps/96/activity-log-manager.png
 share/icons/Faenza/apps/96/addressbook.png
 share/icons/Faenza/apps/96/adobe-air.png
 share/icons/Faenza/apps/96/adobe-flashplayer.png
@@ -18506,6 +18779,7 @@ share/icons/Faenza/apps/96/akregator.png
 share/icons/Faenza/apps/96/alacarte.png
 share/icons/Faenza/apps/96/amarok.png
 share/icons/Faenza/apps/96/amazon-mp3-store-source.png
+share/icons/Faenza/apps/96/amazon-store.png
 share/icons/Faenza/apps/96/amule.png
 share/icons/Faenza/apps/96/anjuta.png
 share/icons/Faenza/apps/96/applets-screenshooter.png
@@ -18567,6 +18841,7 @@ share/icons/Faenza/apps/96/config-language.png
 share/icons/Faenza/apps/96/config-users.png
 share/icons/Faenza/apps/96/control-center2.png
 share/icons/Faenza/apps/96/covergloobus.png
+share/icons/Faenza/apps/96/credentials-preferences.png
 share/icons/Faenza/apps/96/cups.png
 share/icons/Faenza/apps/96/dc++.png
 share/icons/Faenza/apps/96/dconf-editor.png
@@ -18582,6 +18857,7 @@ share/icons/Faenza/apps/96/devede.png
 share/icons/Faenza/apps/96/devhelp.png
 share/icons/Faenza/apps/96/dia.png
 share/icons/Faenza/apps/96/display-capplet.png
+share/icons/Faenza/apps/96/display.im6.png
 share/icons/Faenza/apps/96/docky.png
 share/icons/Faenza/apps/96/drakconf.png
 share/icons/Faenza/apps/96/drakmenustyle.png
@@ -18601,6 +18877,7 @@ share/icons/Faenza/apps/96/emerald-theme-manager-icon.png
 share/icons/Faenza/apps/96/emesene.png
 share/icons/Faenza/apps/96/empathy.png
 share/icons/Faenza/apps/96/eog.png
+share/icons/Faenza/apps/96/evernote.png
 share/icons/Faenza/apps/96/evince.png
 share/icons/Faenza/apps/96/evolution-calendar.png
 share/icons/Faenza/apps/96/evolution-mail.png
@@ -18651,12 +18928,17 @@ share/icons/Faenza/apps/96/gksu-debian.png
 share/icons/Faenza/apps/96/gksu-root-terminal.png
 share/icons/Faenza/apps/96/glade-3.png
 share/icons/Faenza/apps/96/glade.png
+share/icons/Faenza/apps/96/glchess.png
+share/icons/Faenza/apps/96/glines.png
 share/icons/Faenza/apps/96/glippy.png
 share/icons/Faenza/apps/96/gloobus-preview.png
 share/icons/Faenza/apps/96/gloobus.png
 share/icons/Faenza/apps/96/gmail.png
 share/icons/Faenza/apps/96/gmailwatcher.png
 share/icons/Faenza/apps/96/gmusicbrowser.png
+share/icons/Faenza/apps/96/gnect.png
+share/icons/Faenza/apps/96/gnibbles.png
+share/icons/Faenza/apps/96/gnobots2.png
 share/icons/Faenza/apps/96/gnochm.png
 share/icons/Faenza/apps/96/gnome-about-logo.png
 share/icons/Faenza/apps/96/gnome-activity-journal.png
@@ -18672,6 +18954,7 @@ share/icons/Faenza/apps/96/gnome-desktop-config.png
 share/icons/Faenza/apps/96/gnome-desktop-item-edit.png
 share/icons/Faenza/apps/96/gnome-device-manager.png
 share/icons/Faenza/apps/96/gnome-dictionary.png
+share/icons/Faenza/apps/96/gnome-disks.png
 share/icons/Faenza/apps/96/gnome-display-properties.png
 share/icons/Faenza/apps/96/gnome-do.png
 share/icons/Faenza/apps/96/gnome-documents.png
@@ -18747,6 +19030,8 @@ share/icons/Faenza/apps/96/gnome-xterm.png
 share/icons/Faenza/apps/96/gnomeradio.png
 share/icons/Faenza/apps/96/gnomine.png
 share/icons/Faenza/apps/96/gnote.png
+share/icons/Faenza/apps/96/gnotravex.png
+share/icons/Faenza/apps/96/gnotski.png
 share/icons/Faenza/apps/96/gnucash-icon.png
 share/icons/Faenza/apps/96/gnumeric.png
 share/icons/Faenza/apps/96/goa-account-facebook.png
@@ -18771,6 +19056,7 @@ share/icons/Faenza/apps/96/gpk-prefs.png
 share/icons/Faenza/apps/96/gpk-repo.png
 share/icons/Faenza/apps/96/gpodder.png
 share/icons/Faenza/apps/96/grisbi.png
+share/icons/Faenza/apps/96/gtali.png
 share/icons/Faenza/apps/96/gtg.png
 share/icons/Faenza/apps/96/gthumb.png
 share/icons/Faenza/apps/96/gtk-help.png
@@ -18795,11 +19081,13 @@ share/icons/Faenza/apps/96/hi48-app-wireshark.png
 share/icons/Faenza/apps/96/homebank.png
 share/icons/Faenza/apps/96/hotwire.png
 share/icons/Faenza/apps/96/htop.png
+share/icons/Faenza/apps/96/iagno.png
 share/icons/Faenza/apps/96/ibus-setup.png
 share/icons/Faenza/apps/96/ibus.png
 share/icons/Faenza/apps/96/icedove.png
 share/icons/Faenza/apps/96/iceweasel.png
 share/icons/Faenza/apps/96/im-chooser.png
+share/icons/Faenza/apps/96/imagemagick.png
 share/icons/Faenza/apps/96/indicator-applet.png
 share/icons/Faenza/apps/96/indicator-weather.png
 share/icons/Faenza/apps/96/inkscape.png
@@ -18880,17 +19168,21 @@ share/icons/Faenza/apps/96/libreoffice34-startcenter.png
 share/icons/Faenza/apps/96/libreoffice34-template.png
 share/icons/Faenza/apps/96/libreoffice34-writer.png
 share/icons/Faenza/apps/96/liferea.png
+share/icons/Faenza/apps/96/lightsoff.png
 share/icons/Faenza/apps/96/linguist.png
 share/icons/Faenza/apps/96/locale.png
 share/icons/Faenza/apps/96/logview.png
 share/icons/Faenza/apps/96/logviewer.png
 share/icons/Faenza/apps/96/lxterminal.png
+share/icons/Faenza/apps/96/mahjongg.png
 share/icons/Faenza/apps/96/mail-notification.png
 share/icons/Faenza/apps/96/mailnag.png
 share/icons/Faenza/apps/96/mandrivaupdate.png
 share/icons/Faenza/apps/96/me-tv.png
 share/icons/Faenza/apps/96/media-player-banshee.png
 share/icons/Faenza/apps/96/meld.png
+share/icons/Faenza/apps/96/mendeley.png
+share/icons/Faenza/apps/96/mendeleydesktop.png
 share/icons/Faenza/apps/96/menu-editor.png
 share/icons/Faenza/apps/96/midori.png
 share/icons/Faenza/apps/96/minitube.png
@@ -18912,6 +19204,7 @@ share/icons/Faenza/apps/96/nautilus-actions.png
 share/icons/Faenza/apps/96/nautilus-cd-burner.png
 share/icons/Faenza/apps/96/nautilus.png
 share/icons/Faenza/apps/96/netbeans.png
+share/icons/Faenza/apps/96/nixnote.png
 share/icons/Faenza/apps/96/nvidia-current-settings.png
 share/icons/Faenza/apps/96/nvidia-settings.png
 share/icons/Faenza/apps/96/office-address-book.png
@@ -18944,6 +19237,7 @@ share/icons/Faenza/apps/96/ooo-writer3.0.png
 share/icons/Faenza/apps/96/openbravo-erp.png
 share/icons/Faenza/apps/96/openerp-client.png
 share/icons/Faenza/apps/96/openjdk-6.png
+share/icons/Faenza/apps/96/openjdk-7.png
 share/icons/Faenza/apps/96/openofficeorg-base.png
 share/icons/Faenza/apps/96/openofficeorg-calc.png
 share/icons/Faenza/apps/96/openofficeorg-draw.png
@@ -19019,6 +19313,7 @@ share/icons/Faenza/apps/96/preferences-desktop-screensaver.png
 share/icons/Faenza/apps/96/preferences-desktop-sound.png
 share/icons/Faenza/apps/96/preferences-desktop-theme.png
 share/icons/Faenza/apps/96/preferences-desktop-wallpaper.png
+share/icons/Faenza/apps/96/preferences-management-service.png
 share/icons/Faenza/apps/96/preferences-sound.png
 share/icons/Faenza/apps/96/preferences-system-bluetooth.png
 share/icons/Faenza/apps/96/preferences-system-firewall.png
@@ -19033,6 +19328,7 @@ share/icons/Faenza/apps/96/qtcreator.png
 share/icons/Faenza/apps/96/qtcreator_logo_32.png
 share/icons/Faenza/apps/96/qtdesigner.png
 share/icons/Faenza/apps/96/qtlinguist.png
+share/icons/Faenza/apps/96/quadrapassel.png
 share/icons/Faenza/apps/96/radio.png
 share/icons/Faenza/apps/96/radiotray.png
 share/icons/Faenza/apps/96/rclock.png
@@ -19049,6 +19345,7 @@ share/icons/Faenza/apps/96/rssowl.png
 share/icons/Faenza/apps/96/screenie-qt.png
 share/icons/Faenza/apps/96/screenie.png
 share/icons/Faenza/apps/96/screenruler-icon.png
+share/icons/Faenza/apps/96/screenruler.png
 share/icons/Faenza/apps/96/screensaver.png
 share/icons/Faenza/apps/96/scribes.png
 share/icons/Faenza/apps/96/scribus.png
@@ -19078,6 +19375,7 @@ share/icons/Faenza/apps/96/spotify.png
 share/icons/Faenza/apps/96/stardict.png
 share/icons/Faenza/apps/96/startupmanager.png
 share/icons/Faenza/apps/96/steam.png
+share/icons/Faenza/apps/96/steampowered.png
 share/icons/Faenza/apps/96/stellarium.png
 share/icons/Faenza/apps/96/sticky-notes.png
 share/icons/Faenza/apps/96/stock_alarm.png
@@ -19092,6 +19390,7 @@ share/icons/Faenza/apps/96/stock_view-details.png
 share/icons/Faenza/apps/96/style.png
 share/icons/Faenza/apps/96/sun-java.png
 share/icons/Faenza/apps/96/sun-java6.png
+share/icons/Faenza/apps/96/sun-java7.png
 share/icons/Faenza/apps/96/sun-javaws.png
 share/icons/Faenza/apps/96/sun-jcontrol.png
 share/icons/Faenza/apps/96/susehelpcenter.png
@@ -19140,6 +19439,7 @@ share/icons/Faenza/apps/96/twitux.png
 share/icons/Faenza/apps/96/ubuntu-tweak.png
 share/icons/Faenza/apps/96/ubuntuone-client.png
 share/icons/Faenza/apps/96/ubuntuone-installer.png
+share/icons/Faenza/apps/96/ubuntuone-music.png
 share/icons/Faenza/apps/96/ubuntuone.png
 share/icons/Faenza/apps/96/ufw-frontends.png
 share/icons/Faenza/apps/96/un-reboot.png
@@ -19175,6 +19475,7 @@ share/icons/Faenza/apps/96/wordpress.png
 share/icons/Faenza/apps/96/workspace-switcher.png
 share/icons/Faenza/apps/96/wunderlist.png
 share/icons/Faenza/apps/96/wxbanker.png
+share/icons/Faenza/apps/96/x-office-address-book.png
 share/icons/Faenza/apps/96/x-office-calendar.png
 share/icons/Faenza/apps/96/x-system-software-sources.png
 share/icons/Faenza/apps/96/xarchiver.png
@@ -19241,6 +19542,7 @@ share/icons/Faenza/apps/scalable/EasyTAG_icon.svg
 share/icons/Faenza/apps/scalable/Etermutilities-terminal.svg
 share/icons/Faenza/apps/scalable/Terminal.svg
 share/icons/Faenza/apps/scalable/Thunar.svg
+share/icons/Faenza/apps/scalable/Twitter-twitter.com.svg
 share/icons/Faenza/apps/scalable/VBox.svg
 share/icons/Faenza/apps/scalable/WorldOfGoo.svg
 share/icons/Faenza/apps/scalable/Wunderlist.svg
@@ -19254,6 +19556,7 @@ share/icons/Faenza/apps/scalable/accessories-character-map.svg
 share/icons/Faenza/apps/scalable/accessories-dictionary.svg
 share/icons/Faenza/apps/scalable/accessories-text-editor.svg
 share/icons/Faenza/apps/scalable/acroread.svg
+share/icons/Faenza/apps/scalable/activity-log-manager.svg
 share/icons/Faenza/apps/scalable/addressbook.svg
 share/icons/Faenza/apps/scalable/adobe-air.svg
 share/icons/Faenza/apps/scalable/adobe-flashplayer.svg
@@ -19262,6 +19565,7 @@ share/icons/Faenza/apps/scalable/akregator.svg
 share/icons/Faenza/apps/scalable/alacarte.svg
 share/icons/Faenza/apps/scalable/amarok.svg
 share/icons/Faenza/apps/scalable/amazon-mp3-store-source.svg
+share/icons/Faenza/apps/scalable/amazon-store.svg
 share/icons/Faenza/apps/scalable/amule.svg
 share/icons/Faenza/apps/scalable/anjuta.svg
 share/icons/Faenza/apps/scalable/applets-screenshooter.svg
@@ -19323,6 +19627,7 @@ share/icons/Faenza/apps/scalable/config-language.svg
 share/icons/Faenza/apps/scalable/config-users.svg
 share/icons/Faenza/apps/scalable/control-center2.svg
 share/icons/Faenza/apps/scalable/covergloobus.svg
+share/icons/Faenza/apps/scalable/credentials-preferences.svg
 share/icons/Faenza/apps/scalable/cups.svg
 share/icons/Faenza/apps/scalable/dc++.svg
 share/icons/Faenza/apps/scalable/dconf-editor.svg
@@ -19338,6 +19643,7 @@ share/icons/Faenza/apps/scalable/devede.svg
 share/icons/Faenza/apps/scalable/devhelp.svg
 share/icons/Faenza/apps/scalable/dia.svg
 share/icons/Faenza/apps/scalable/display-capplet.svg
+share/icons/Faenza/apps/scalable/display.im6.svg
 share/icons/Faenza/apps/scalable/docky.svg
 share/icons/Faenza/apps/scalable/drakconf.svg
 share/icons/Faenza/apps/scalable/drakmenustyle.svg
@@ -19357,6 +19663,7 @@ share/icons/Faenza/apps/scalable/emerald-theme-manager-icon.svg
 share/icons/Faenza/apps/scalable/emesene.svg
 share/icons/Faenza/apps/scalable/empathy.svg
 share/icons/Faenza/apps/scalable/eog.svg
+share/icons/Faenza/apps/scalable/evernote.svg
 share/icons/Faenza/apps/scalable/evince.svg
 share/icons/Faenza/apps/scalable/evolution-calendar.svg
 share/icons/Faenza/apps/scalable/evolution-mail.svg
@@ -19407,12 +19714,17 @@ share/icons/Faenza/apps/scalable/gksu-debian.svg
 share/icons/Faenza/apps/scalable/gksu-root-terminal.svg
 share/icons/Faenza/apps/scalable/glade-3.svg
 share/icons/Faenza/apps/scalable/glade.svg
+share/icons/Faenza/apps/scalable/glchess.svg
+share/icons/Faenza/apps/scalable/glines.svg
 share/icons/Faenza/apps/scalable/glippy.svg
 share/icons/Faenza/apps/scalable/gloobus-preview.svg
 share/icons/Faenza/apps/scalable/gloobus.svg
 share/icons/Faenza/apps/scalable/gmail.svg
 share/icons/Faenza/apps/scalable/gmailwatcher.svg
 share/icons/Faenza/apps/scalable/gmusicbrowser.svg
+share/icons/Faenza/apps/scalable/gnect.svg
+share/icons/Faenza/apps/scalable/gnibbles.svg
+share/icons/Faenza/apps/scalable/gnobots2.svg
 share/icons/Faenza/apps/scalable/gnochm.svg
 share/icons/Faenza/apps/scalable/gnome-about-logo.svg
 share/icons/Faenza/apps/scalable/gnome-activity-journal.svg
@@ -19428,6 +19740,7 @@ share/icons/Faenza/apps/scalable/gnome-desktop-config.svg
 share/icons/Faenza/apps/scalable/gnome-desktop-item-edit.svg
 share/icons/Faenza/apps/scalable/gnome-device-manager.svg
 share/icons/Faenza/apps/scalable/gnome-dictionary.svg
+share/icons/Faenza/apps/scalable/gnome-disks.svg
 share/icons/Faenza/apps/scalable/gnome-display-properties.svg
 share/icons/Faenza/apps/scalable/gnome-do.svg
 share/icons/Faenza/apps/scalable/gnome-documents.svg
@@ -19503,6 +19816,8 @@ share/icons/Faenza/apps/scalable/gnome-xterm.svg
 share/icons/Faenza/apps/scalable/gnomeradio.svg
 share/icons/Faenza/apps/scalable/gnomine.svg
 share/icons/Faenza/apps/scalable/gnote.svg
+share/icons/Faenza/apps/scalable/gnotravex.svg
+share/icons/Faenza/apps/scalable/gnotski.svg
 share/icons/Faenza/apps/scalable/gnucash-icon.svg
 share/icons/Faenza/apps/scalable/gnumeric.svg
 share/icons/Faenza/apps/scalable/goa-account-facebook.svg
@@ -19527,6 +19842,7 @@ share/icons/Faenza/apps/scalable/gpk-prefs.svg
 share/icons/Faenza/apps/scalable/gpk-repo.svg
 share/icons/Faenza/apps/scalable/gpodder.svg
 share/icons/Faenza/apps/scalable/grisbi.svg
+share/icons/Faenza/apps/scalable/gtali.svg
 share/icons/Faenza/apps/scalable/gtg.svg
 share/icons/Faenza/apps/scalable/gthumb.svg
 share/icons/Faenza/apps/scalable/gtk-help.svg
@@ -19551,11 +19867,13 @@ share/icons/Faenza/apps/scalable/hi48-app-wireshark.svg
 share/icons/Faenza/apps/scalable/homebank.svg
 share/icons/Faenza/apps/scalable/hotwire.svg
 share/icons/Faenza/apps/scalable/htop.svg
+share/icons/Faenza/apps/scalable/iagno.svg
 share/icons/Faenza/apps/scalable/ibus-setup.svg
 share/icons/Faenza/apps/scalable/ibus.svg
 share/icons/Faenza/apps/scalable/icedove.svg
 share/icons/Faenza/apps/scalable/iceweasel.svg
 share/icons/Faenza/apps/scalable/im-chooser.svg
+share/icons/Faenza/apps/scalable/imagemagick.svg
 share/icons/Faenza/apps/scalable/indicator-applet.svg
 share/icons/Faenza/apps/scalable/indicator-weather.svg
 share/icons/Faenza/apps/scalable/inkscape.svg
@@ -19636,17 +19954,21 @@ share/icons/Faenza/apps/scalable/libreoffice34-startcenter.svg
 share/icons/Faenza/apps/scalable/libreoffice34-template.svg
 share/icons/Faenza/apps/scalable/libreoffice34-writer.svg
 share/icons/Faenza/apps/scalable/liferea.svg
+share/icons/Faenza/apps/scalable/lightsoff.svg
 share/icons/Faenza/apps/scalable/linguist.svg
 share/icons/Faenza/apps/scalable/locale.svg
 share/icons/Faenza/apps/scalable/logview.svg
 share/icons/Faenza/apps/scalable/logviewer.svg
 share/icons/Faenza/apps/scalable/lxterminal.svg
+share/icons/Faenza/apps/scalable/mahjongg.svg
 share/icons/Faenza/apps/scalable/mail-notification.svg
 share/icons/Faenza/apps/scalable/mailnag.svg
 share/icons/Faenza/apps/scalable/mandrivaupdate.svg
 share/icons/Faenza/apps/scalable/me-tv.svg
 share/icons/Faenza/apps/scalable/media-player-banshee.svg
 share/icons/Faenza/apps/scalable/meld.svg
+share/icons/Faenza/apps/scalable/mendeley.svg
+share/icons/Faenza/apps/scalable/mendeleydesktop.svg
 share/icons/Faenza/apps/scalable/menu-editor.svg
 share/icons/Faenza/apps/scalable/midori.svg
 share/icons/Faenza/apps/scalable/minitube.svg
@@ -19668,6 +19990,7 @@ share/icons/Faenza/apps/scalable/nautilus-actions.svg
 share/icons/Faenza/apps/scalable/nautilus-cd-burner.svg
 share/icons/Faenza/apps/scalable/nautilus.svg
 share/icons/Faenza/apps/scalable/netbeans.svg
+share/icons/Faenza/apps/scalable/nixnote.svg
 share/icons/Faenza/apps/scalable/nvidia-current-settings.svg
 share/icons/Faenza/apps/scalable/nvidia-settings.svg
 share/icons/Faenza/apps/scalable/office-address-book.svg
@@ -19700,6 +20023,7 @@ share/icons/Faenza/apps/scalable/ooo-writer3.0.svg
 share/icons/Faenza/apps/scalable/openbravo-erp.svg
 share/icons/Faenza/apps/scalable/openerp-client.svg
 share/icons/Faenza/apps/scalable/openjdk-6.svg
+share/icons/Faenza/apps/scalable/openjdk-7.svg
 share/icons/Faenza/apps/scalable/openofficeorg-base.svg
 share/icons/Faenza/apps/scalable/openofficeorg-calc.svg
 share/icons/Faenza/apps/scalable/openofficeorg-draw.svg
@@ -19776,6 +20100,7 @@ share/icons/Faenza/apps/scalable/preferences-desktop-screensaver.svg
 share/icons/Faenza/apps/scalable/preferences-desktop-sound.svg
 share/icons/Faenza/apps/scalable/preferences-desktop-theme.svg
 share/icons/Faenza/apps/scalable/preferences-desktop-wallpaper.svg
+share/icons/Faenza/apps/scalable/preferences-management-service.svg
 share/icons/Faenza/apps/scalable/preferences-sound.svg
 share/icons/Faenza/apps/scalable/preferences-system-bluetooth.svg
 share/icons/Faenza/apps/scalable/preferences-system-firewall.svg
@@ -19790,6 +20115,7 @@ share/icons/Faenza/apps/scalable/qtcreator.svg
 share/icons/Faenza/apps/scalable/qtcreator_logo_32.svg
 share/icons/Faenza/apps/scalable/qtdesigner.svg
 share/icons/Faenza/apps/scalable/qtlinguist.svg
+share/icons/Faenza/apps/scalable/quadrapassel.svg
 share/icons/Faenza/apps/scalable/radio.svg
 share/icons/Faenza/apps/scalable/radiotray.svg
 share/icons/Faenza/apps/scalable/rclock.svg
@@ -19806,6 +20132,7 @@ share/icons/Faenza/apps/scalable/rssowl.svg
 share/icons/Faenza/apps/scalable/screenie-qt.svg
 share/icons/Faenza/apps/scalable/screenie.svg
 share/icons/Faenza/apps/scalable/screenruler-icon.svg
+share/icons/Faenza/apps/scalable/screenruler.svg
 share/icons/Faenza/apps/scalable/screensaver.svg
 share/icons/Faenza/apps/scalable/scribes.svg
 share/icons/Faenza/apps/scalable/scribus.svg
@@ -19835,6 +20162,7 @@ share/icons/Faenza/apps/scalable/spotify.svg
 share/icons/Faenza/apps/scalable/stardict.svg
 share/icons/Faenza/apps/scalable/startupmanager.svg
 share/icons/Faenza/apps/scalable/steam.svg
+share/icons/Faenza/apps/scalable/steampowered.svg
 share/icons/Faenza/apps/scalable/stellarium.svg
 share/icons/Faenza/apps/scalable/sticky-notes.svg
 share/icons/Faenza/apps/scalable/stock_alarm.svg
@@ -19849,6 +20177,7 @@ share/icons/Faenza/apps/scalable/stock_view-details.svg
 share/icons/Faenza/apps/scalable/style.svg
 share/icons/Faenza/apps/scalable/sun-java.svg
 share/icons/Faenza/apps/scalable/sun-java6.svg
+share/icons/Faenza/apps/scalable/sun-java7.svg
 share/icons/Faenza/apps/scalable/sun-javaws.svg
 share/icons/Faenza/apps/scalable/sun-jcontrol.svg
 share/icons/Faenza/apps/scalable/susehelpcenter.svg
@@ -19897,6 +20226,7 @@ share/icons/Faenza/apps/scalable/twitux.svg
 share/icons/Faenza/apps/scalable/ubuntu-tweak.svg
 share/icons/Faenza/apps/scalable/ubuntuone-client.svg
 share/icons/Faenza/apps/scalable/ubuntuone-installer.svg
+share/icons/Faenza/apps/scalable/ubuntuone-music.svg
 share/icons/Faenza/apps/scalable/ubuntuone.svg
 share/icons/Faenza/apps/scalable/ufw-frontends.svg
 share/icons/Faenza/apps/scalable/un-reboot.svg
@@ -19932,6 +20262,7 @@ share/icons/Faenza/apps/scalable/wordpress.svg
 share/icons/Faenza/apps/scalable/workspace-switcher.svg
 share/icons/Faenza/apps/scalable/wunderlist.svg
 share/icons/Faenza/apps/scalable/wxbanker.svg
+share/icons/Faenza/apps/scalable/x-office-address-book.svg
 share/icons/Faenza/apps/scalable/x-office-calendar.svg
 share/icons/Faenza/apps/scalable/x-system-software-sources.svg
 share/icons/Faenza/apps/scalable/xarchiver.svg
@@ -20030,6 +20361,7 @@ share/icons/Faenza/categories/16/gnome-multimedia.png
 share/icons/Faenza/categories/16/gnome-other.png
 share/icons/Faenza/categories/16/gnome-settings.png
 share/icons/Faenza/categories/16/gnome-system.png
+share/icons/Faenza/categories/16/gnome-tweak-tool.png
 share/icons/Faenza/categories/16/gnome-util.png
 share/icons/Faenza/categories/16/gtk-preferences.png
 share/icons/Faenza/categories/16/kcontrol.png
@@ -20108,6 +20440,7 @@ share/icons/Faenza/categories/22/gnome-multimedia.png
 share/icons/Faenza/categories/22/gnome-other.png
 share/icons/Faenza/categories/22/gnome-settings.png
 share/icons/Faenza/categories/22/gnome-system.png
+share/icons/Faenza/categories/22/gnome-tweak-tool.png
 share/icons/Faenza/categories/22/gnome-util.png
 share/icons/Faenza/categories/22/gtk-preferences.png
 share/icons/Faenza/categories/22/kcontrol.png
@@ -20120,9 +20453,12 @@ share/icons/Faenza/categories/22/package_network.png
 share/icons/Faenza/categories/22/package_office.png
 share/icons/Faenza/categories/22/package_system.png
 share/icons/Faenza/categories/22/package_utilities.png
+share/icons/Faenza/categories/22/preferences-desktop-peripherals-directory.png
+share/icons/Faenza/categories/22/preferences-desktop-personal-directory.png
 share/icons/Faenza/categories/22/preferences-desktop-personal.png
 share/icons/Faenza/categories/22/preferences-desktop.png
 share/icons/Faenza/categories/22/preferences-other.png
+share/icons/Faenza/categories/22/preferences-system-directory.png
 share/icons/Faenza/categories/22/preferences-system.png
 share/icons/Faenza/categories/22/redhat-accessories.png
 share/icons/Faenza/categories/22/redhat-games.png
@@ -20186,6 +20522,7 @@ share/icons/Faenza/categories/24/gnome-multimedia.png
 share/icons/Faenza/categories/24/gnome-other.png
 share/icons/Faenza/categories/24/gnome-settings.png
 share/icons/Faenza/categories/24/gnome-system.png
+share/icons/Faenza/categories/24/gnome-tweak-tool.png
 share/icons/Faenza/categories/24/gnome-util.png
 share/icons/Faenza/categories/24/gtk-preferences.png
 share/icons/Faenza/categories/24/kcontrol.png
@@ -20198,9 +20535,12 @@ share/icons/Faenza/categories/24/package_network.png
 share/icons/Faenza/categories/24/package_office.png
 share/icons/Faenza/categories/24/package_system.png
 share/icons/Faenza/categories/24/package_utilities.png
+share/icons/Faenza/categories/24/preferences-desktop-peripherals-directory.png
+share/icons/Faenza/categories/24/preferences-desktop-personal-directory.png
 share/icons/Faenza/categories/24/preferences-desktop-personal.png
 share/icons/Faenza/categories/24/preferences-desktop.png
 share/icons/Faenza/categories/24/preferences-other.png
+share/icons/Faenza/categories/24/preferences-system-directory.png
 share/icons/Faenza/categories/24/preferences-system.png
 share/icons/Faenza/categories/24/redhat-accessories.png
 share/icons/Faenza/categories/24/redhat-games.png
@@ -20264,6 +20604,7 @@ share/icons/Faenza/categories/32/gnome-multimedia.png
 share/icons/Faenza/categories/32/gnome-other.png
 share/icons/Faenza/categories/32/gnome-settings.png
 share/icons/Faenza/categories/32/gnome-system.png
+share/icons/Faenza/categories/32/gnome-tweak-tool.png
 share/icons/Faenza/categories/32/gnome-util.png
 share/icons/Faenza/categories/32/gtk-preferences.png
 share/icons/Faenza/categories/32/kcontrol.png
@@ -20342,6 +20683,7 @@ share/icons/Faenza/categories/48/gnome-multimedia.png
 share/icons/Faenza/categories/48/gnome-other.png
 share/icons/Faenza/categories/48/gnome-settings.png
 share/icons/Faenza/categories/48/gnome-system.png
+share/icons/Faenza/categories/48/gnome-tweak-tool.png
 share/icons/Faenza/categories/48/gnome-util.png
 share/icons/Faenza/categories/48/gtk-preferences.png
 share/icons/Faenza/categories/48/kcontrol.png
@@ -20420,6 +20762,7 @@ share/icons/Faenza/categories/64/gnome-multimedia.png
 share/icons/Faenza/categories/64/gnome-other.png
 share/icons/Faenza/categories/64/gnome-settings.png
 share/icons/Faenza/categories/64/gnome-system.png
+share/icons/Faenza/categories/64/gnome-tweak-tool.png
 share/icons/Faenza/categories/64/gnome-util.png
 share/icons/Faenza/categories/64/gtk-preferences.png
 share/icons/Faenza/categories/64/kcontrol.png
@@ -20498,6 +20841,7 @@ share/icons/Faenza/categories/96/gnome-multimedia.png
 share/icons/Faenza/categories/96/gnome-other.png
 share/icons/Faenza/categories/96/gnome-settings.png
 share/icons/Faenza/categories/96/gnome-system.png
+share/icons/Faenza/categories/96/gnome-tweak-tool.png
 share/icons/Faenza/categories/96/gnome-util.png
 share/icons/Faenza/categories/96/gtk-preferences.png
 share/icons/Faenza/categories/96/kcontrol.png
@@ -20576,6 +20920,7 @@ share/icons/Faenza/categories/scalable/gnome-multimedia.svg
 share/icons/Faenza/categories/scalable/gnome-other.svg
 share/icons/Faenza/categories/scalable/gnome-settings.svg
 share/icons/Faenza/categories/scalable/gnome-system.svg
+share/icons/Faenza/categories/scalable/gnome-tweak-tool.svg
 share/icons/Faenza/categories/scalable/gnome-util.svg
 share/icons/Faenza/categories/scalable/gtk-preferences.svg
 share/icons/Faenza/categories/scalable/kcontrol.svg
@@ -21771,6 +22116,9 @@ share/icons/Faenza/emblems/16/emblem-documents.png
 share/icons/Faenza/emblems/16/emblem-downloads.icon
 share/icons/Faenza/emblems/16/emblem-downloads.png
 share/icons/Faenza/emblems/16/emblem-draft.icon
+share/icons/Faenza/emblems/16/emblem-dropbox-syncing.png
+share/icons/Faenza/emblems/16/emblem-dropbox-unsyncable.png
+share/icons/Faenza/emblems/16/emblem-dropbox-uptodate.png
 share/icons/Faenza/emblems/16/emblem-favorite.icon
 share/icons/Faenza/emblems/16/emblem-favorite.png
 share/icons/Faenza/emblems/16/emblem-generic.icon
@@ -21848,6 +22196,9 @@ share/icons/Faenza/emblems/22/emblem-documents.png
 share/icons/Faenza/emblems/22/emblem-downloads.icon
 share/icons/Faenza/emblems/22/emblem-downloads.png
 share/icons/Faenza/emblems/22/emblem-draft.icon
+share/icons/Faenza/emblems/22/emblem-dropbox-syncing.png
+share/icons/Faenza/emblems/22/emblem-dropbox-unsyncable.png
+share/icons/Faenza/emblems/22/emblem-dropbox-uptodate.png
 share/icons/Faenza/emblems/22/emblem-favorite.icon
 share/icons/Faenza/emblems/22/emblem-favorite.png
 share/icons/Faenza/emblems/22/emblem-generic.icon
@@ -21925,6 +22276,9 @@ share/icons/Faenza/emblems/24/emblem-documents.png
 share/icons/Faenza/emblems/24/emblem-downloads.icon
 share/icons/Faenza/emblems/24/emblem-downloads.png
 share/icons/Faenza/emblems/24/emblem-draft.icon
+share/icons/Faenza/emblems/24/emblem-dropbox-syncing.png
+share/icons/Faenza/emblems/24/emblem-dropbox-unsyncable.png
+share/icons/Faenza/emblems/24/emblem-dropbox-uptodate.png
 share/icons/Faenza/emblems/24/emblem-favorite.icon
 share/icons/Faenza/emblems/24/emblem-favorite.png
 share/icons/Faenza/emblems/24/emblem-generic.icon
@@ -22002,6 +22356,9 @@ share/icons/Faenza/emblems/32/emblem-documents.png
 share/icons/Faenza/emblems/32/emblem-downloads.icon
 share/icons/Faenza/emblems/32/emblem-downloads.png
 share/icons/Faenza/emblems/32/emblem-draft.icon
+share/icons/Faenza/emblems/32/emblem-dropbox-syncing.png
+share/icons/Faenza/emblems/32/emblem-dropbox-unsyncable.png
+share/icons/Faenza/emblems/32/emblem-dropbox-uptodate.png
 share/icons/Faenza/emblems/32/emblem-favorite.icon
 share/icons/Faenza/emblems/32/emblem-favorite.png
 share/icons/Faenza/emblems/32/emblem-generic.icon
@@ -22079,6 +22436,9 @@ share/icons/Faenza/emblems/48/emblem-documents.png
 share/icons/Faenza/emblems/48/emblem-downloads.icon
 share/icons/Faenza/emblems/48/emblem-downloads.png
 share/icons/Faenza/emblems/48/emblem-draft.icon
+share/icons/Faenza/emblems/48/emblem-dropbox-syncing.png
+share/icons/Faenza/emblems/48/emblem-dropbox-unsyncable.png
+share/icons/Faenza/emblems/48/emblem-dropbox-uptodate.png
 share/icons/Faenza/emblems/48/emblem-favorite.icon
 share/icons/Faenza/emblems/48/emblem-favorite.png
 share/icons/Faenza/emblems/48/emblem-generic.icon
@@ -22156,6 +22516,9 @@ share/icons/Faenza/emblems/64/emblem-documents.png
 share/icons/Faenza/emblems/64/emblem-downloads.icon
 share/icons/Faenza/emblems/64/emblem-downloads.png
 share/icons/Faenza/emblems/64/emblem-draft.icon
+share/icons/Faenza/emblems/64/emblem-dropbox-syncing.png
+share/icons/Faenza/emblems/64/emblem-dropbox-unsyncable.png
+share/icons/Faenza/emblems/64/emblem-dropbox-uptodate.png
 share/icons/Faenza/emblems/64/emblem-favorite.icon
 share/icons/Faenza/emblems/64/emblem-favorite.png
 share/icons/Faenza/emblems/64/emblem-generic.icon
@@ -22235,6 +22598,9 @@ share/icons/Faenza/emblems/96/emblem-documents.png
 share/icons/Faenza/emblems/96/emblem-downloads.icon
 share/icons/Faenza/emblems/96/emblem-downloads.png
 share/icons/Faenza/emblems/96/emblem-draft.icon
+share/icons/Faenza/emblems/96/emblem-dropbox-syncing.png
+share/icons/Faenza/emblems/96/emblem-dropbox-unsyncable.png
+share/icons/Faenza/emblems/96/emblem-dropbox-uptodate.png
 share/icons/Faenza/emblems/96/emblem-favorite.icon
 share/icons/Faenza/emblems/96/emblem-favorite.png
 share/icons/Faenza/emblems/96/emblem-generic.icon
@@ -22312,6 +22678,9 @@ share/icons/Faenza/emblems/scalable/emblem-documents.svg
 share/icons/Faenza/emblems/scalable/emblem-downloads.icon
 share/icons/Faenza/emblems/scalable/emblem-downloads.svg
 share/icons/Faenza/emblems/scalable/emblem-draft.icon
+share/icons/Faenza/emblems/scalable/emblem-dropbox-syncing.svg
+share/icons/Faenza/emblems/scalable/emblem-dropbox-unsyncable.svg
+share/icons/Faenza/emblems/scalable/emblem-dropbox-uptodate.svg
 share/icons/Faenza/emblems/scalable/emblem-favorite.icon
 share/icons/Faenza/emblems/scalable/emblem-favorite.svg
 share/icons/Faenza/emblems/scalable/emblem-generic.icon
@@ -26574,6 +26943,17 @@ share/icons/Faenza/status/22/audio-volume-off.png
 share/icons/Faenza/status/22/audio-volume-zero-panel.png
 share/icons/Faenza/status/22/banshee-panel.png
 share/icons/Faenza/status/22/battery-000.png
+share/icons/Faenza/status/22/battery-caution-charging-symbolic.png
+share/icons/Faenza/status/22/battery-caution-symbolic.png
+share/icons/Faenza/status/22/battery-empty-symbolic.png
+share/icons/Faenza/status/22/battery-full-charged-symbolic.png
+share/icons/Faenza/status/22/battery-full-charging-symbolic.png
+share/icons/Faenza/status/22/battery-full-symbolic.png
+share/icons/Faenza/status/22/battery-good-charging-symbolic.png
+share/icons/Faenza/status/22/battery-good-symbolic.png
+share/icons/Faenza/status/22/battery-low-charging-symbolic.png
+share/icons/Faenza/status/22/battery-low-symbolic.png
+share/icons/Faenza/status/22/battery-missing-symbolic.png
 share/icons/Faenza/status/22/battery_caution.png
 share/icons/Faenza/status/22/battery_charged.png
 share/icons/Faenza/status/22/battery_empty.png
@@ -26591,6 +26971,7 @@ share/icons/Faenza/status/22/busy.png
 share/icons/Faenza/status/22/busy2.png
 share/icons/Faenza/status/22/caffeine-cup-empty.png
 share/icons/Faenza/status/22/caffeine-cup-full.png
+share/icons/Faenza/status/22/clipit-trayicon.png
 share/icons/Faenza/status/22/connect_creating.png
 share/icons/Faenza/status/22/connect_established.png
 share/icons/Faenza/status/22/connect_no.png
@@ -27013,6 +27394,17 @@ share/icons/Faenza/status/24/audio-volume-off.png
 share/icons/Faenza/status/24/audio-volume-zero-panel.png
 share/icons/Faenza/status/24/banshee-panel.png
 share/icons/Faenza/status/24/battery-000.png
+share/icons/Faenza/status/24/battery-caution-charging-symbolic.png
+share/icons/Faenza/status/24/battery-caution-symbolic.png
+share/icons/Faenza/status/24/battery-empty-symbolic.png
+share/icons/Faenza/status/24/battery-full-charged-symbolic.png
+share/icons/Faenza/status/24/battery-full-charging-symbolic.png
+share/icons/Faenza/status/24/battery-full-symbolic.png
+share/icons/Faenza/status/24/battery-good-charging-symbolic.png
+share/icons/Faenza/status/24/battery-good-symbolic.png
+share/icons/Faenza/status/24/battery-low-charging-symbolic.png
+share/icons/Faenza/status/24/battery-low-symbolic.png
+share/icons/Faenza/status/24/battery-missing-symbolic.png
 share/icons/Faenza/status/24/battery_caution.png
 share/icons/Faenza/status/24/battery_charged.png
 share/icons/Faenza/status/24/battery_empty.png
@@ -27030,6 +27422,7 @@ share/icons/Faenza/status/24/busy.png
 share/icons/Faenza/status/24/busy2.png
 share/icons/Faenza/status/24/caffeine-cup-empty.png
 share/icons/Faenza/status/24/caffeine-cup-full.png
+share/icons/Faenza/status/24/clipit-trayicon.png
 share/icons/Faenza/status/24/connect_creating.png
 share/icons/Faenza/status/24/connect_established.png
 share/icons/Faenza/status/24/connect_no.png
@@ -27446,6 +27839,16 @@ share/icons/Faenza/status/32/audio-volume-muted.png
 share/icons/Faenza/status/32/audio-volume-off.png
 share/icons/Faenza/status/32/audio-volume-zero-panel.png
 share/icons/Faenza/status/32/battery-000.png
+share/icons/Faenza/status/32/battery-caution-charging-symbolic.png
+share/icons/Faenza/status/32/battery-caution-symbolic.png
+share/icons/Faenza/status/32/battery-empty-symbolic.png
+share/icons/Faenza/status/32/battery-full-charged-symbolic.png
+share/icons/Faenza/status/32/battery-full-charging-symbolic.png
+share/icons/Faenza/status/32/battery-full-symbolic.png
+share/icons/Faenza/status/32/battery-good-charging-symbolic.png
+share/icons/Faenza/status/32/battery-good-symbolic.png
+share/icons/Faenza/status/32/battery-low-charging-symbolic.png
+share/icons/Faenza/status/32/battery-low-symbolic.png
 share/icons/Faenza/status/32/battery_caution.png
 share/icons/Faenza/status/32/battery_charged.png
 share/icons/Faenza/status/32/battery_empty.png
@@ -27749,6 +28152,16 @@ share/icons/Faenza/status/48/audio-volume-muted.png
 share/icons/Faenza/status/48/audio-volume-off.png
 share/icons/Faenza/status/48/audio-volume-zero-panel.png
 share/icons/Faenza/status/48/battery-000.png
+share/icons/Faenza/status/48/battery-caution-charging-symbolic.png
+share/icons/Faenza/status/48/battery-caution-symbolic.png
+share/icons/Faenza/status/48/battery-empty-symbolic.png
+share/icons/Faenza/status/48/battery-full-charged-symbolic.png
+share/icons/Faenza/status/48/battery-full-charging-symbolic.png
+share/icons/Faenza/status/48/battery-full-symbolic.png
+share/icons/Faenza/status/48/battery-good-charging-symbolic.png
+share/icons/Faenza/status/48/battery-good-symbolic.png
+share/icons/Faenza/status/48/battery-low-charging-symbolic.png
+share/icons/Faenza/status/48/battery-low-symbolic.png
 share/icons/Faenza/status/48/battery_caution.png
 share/icons/Faenza/status/48/battery_charged.png
 share/icons/Faenza/status/48/battery_empty.png
@@ -28052,6 +28465,16 @@ share/icons/Faenza/status/64/audio-volume-muted.png
 share/icons/Faenza/status/64/audio-volume-off.png
 share/icons/Faenza/status/64/audio-volume-zero-panel.png
 share/icons/Faenza/status/64/battery-000.png
+share/icons/Faenza/status/64/battery-caution-charging-symbolic.png
+share/icons/Faenza/status/64/battery-caution-symbolic.png
+share/icons/Faenza/status/64/battery-empty-symbolic.png
+share/icons/Faenza/status/64/battery-full-charged-symbolic.png
+share/icons/Faenza/status/64/battery-full-charging-symbolic.png
+share/icons/Faenza/status/64/battery-full-symbolic.png
+share/icons/Faenza/status/64/battery-good-charging-symbolic.png
+share/icons/Faenza/status/64/battery-good-symbolic.png
+share/icons/Faenza/status/64/battery-low-charging-symbolic.png
+share/icons/Faenza/status/64/battery-low-symbolic.png
 share/icons/Faenza/status/64/battery_caution.png
 share/icons/Faenza/status/64/battery_charged.png
 share/icons/Faenza/status/64/battery_empty.png
@@ -28355,6 +28778,16 @@ share/icons/Faenza/status/96/audio-volume-muted.png
 share/icons/Faenza/status/96/audio-volume-off.png
 share/icons/Faenza/status/96/audio-volume-zero-panel.png
 share/icons/Faenza/status/96/battery-000.png
+share/icons/Faenza/status/96/battery-caution-charging-symbolic.png
+share/icons/Faenza/status/96/battery-caution-symbolic.png
+share/icons/Faenza/status/96/battery-empty-symbolic.png
+share/icons/Faenza/status/96/battery-full-charged-symbolic.png
+share/icons/Faenza/status/96/battery-full-charging-symbolic.png
+share/icons/Faenza/status/96/battery-full-symbolic.png
+share/icons/Faenza/status/96/battery-good-charging-symbolic.png
+share/icons/Faenza/status/96/battery-good-symbolic.png
+share/icons/Faenza/status/96/battery-low-charging-symbolic.png
+share/icons/Faenza/status/96/battery-low-symbolic.png
 share/icons/Faenza/status/96/battery_caution.png
 share/icons/Faenza/status/96/battery_charged.png
 share/icons/Faenza/status/96/battery_empty.png
@@ -28928,6 +29361,7 @@ share/icons/Faenza/status/scalable/user-busy-symbolic.svg
 share/icons/Faenza/status/scalable/user-idle-symbolic.svg
 share/icons/Faenza/status/scalable/user-invisible-symbolic.svg
 share/icons/Faenza/status/scalable/user-offline-symbolic.svg
+share/icons/Faenza/status/scalable/user-status-pending-symbolic.svg
 share/icons/Faenza/status/scalable/user-trash-full.svg
 share/icons/Faenza/status/scalable/weather-clear-night-000.svg
 share/icons/Faenza/status/scalable/weather-clear-night-010.svg

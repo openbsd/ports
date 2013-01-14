@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2012/06/15 08:30:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2013/01/14 12:44:17 dcoppa Exp $
 
 COMMENT =		complete, colourful suite of squared icons
 
-V =			1.2
-DISTNAME =		faenza_icons_by_tiheum-d2v6x24
+V =			1.3
+DISTNAME =		faenza-icon-theme_${V}
 PKGNAME =		faenza-icon-theme-${V}
 CATEGORIES =		x11
-REVISION =		2
 
 HOMEPAGE =		http://tiheum.deviantart.com/
-MASTER_SITES =		http://www.deviantart.com/download/173323228/ \
-			http://spacehopper.org/mirrors/
+MASTER_SITES =		http://faenza-icon-theme.googlecode.com/files/
 EXTRACT_SUFX =		.zip
 
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
