@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2013/01/11 12:58:08 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.47 2013/01/14 08:52:24 dcoppa Exp $
 
 COMMENT =		persistent key-value database
 DISTNAME =		redis-2.6.8
@@ -31,8 +31,6 @@ FAKE_FLAGS =		INSTALL="${INSTALL_PROGRAM}" \
 			INSTALL_TOP="${WRKINST}${PREFIX}"
 
 USE_GMAKE =		Yes
-
-CFLAGS +=		-I${LOCALBASE}/include
 
 # Warning: running the test suite can take a long time and will
 # consume a lot of cpu cycles
