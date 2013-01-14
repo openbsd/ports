@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/11/02 13:33:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2013/01/14 15:59:54 benoit Exp $
 
 COMMENT=	Python library to manipulate gettext files
 
-MODPY_EGG_VERSION=	0.7.0
+MODPY_EGG_VERSION=	1.0.2
 DISTNAME =	polib-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 
@@ -19,5 +19,10 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://bitbucket.org/izi/polib/downloads/
 
 MODULES =	lang/python
+
+REGRESS_DEPENDS =	devel/py-coverage
+
+do-regress: fake
+	@cd ${WRKSRC} && ${MAKE_ENV} ./runtests.sh
 
 .include <bsd.port.mk>
