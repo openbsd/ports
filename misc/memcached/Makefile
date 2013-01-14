@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2012/11/29 22:10:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2013/01/14 22:35:04 sthen Exp $
 
 COMMENT=	distributed memory object caching system
 
@@ -19,7 +19,10 @@ MASTER_SITES=		http://memcached.googlecode.com/files/
 MASTER_SITES0=		${HOMEPAGE}/dist/
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--with-libevent=/usr --disable-coverage
+CONFIGURE_ARGS=		--with-libevent=/usr \
+			--disable-coverage \
+			--disable-docs
+REGRESS_TARGET=		test
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/memcached
