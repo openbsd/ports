@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2012/04/08 17:21:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2013/01/14 10:47:45 brad Exp $
+
+BROKEN =	broken after rthreads switch
 
 #atomic_int.h: error "unsupported compiler or platform" on other archs
 ONLY_FOR_ARCHS =	i386 amd64
