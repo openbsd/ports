@@ -1,15 +1,15 @@
-$OpenBSD: patch-configure,v 1.32 2013/01/08 10:13:13 brad Exp $
---- configure.orig	Sun Jun 10 00:59:57 2012
-+++ configure	Tue Nov 20 06:31:14 2012
-@@ -1092,7 +1092,6 @@ HAVE_LIST="
-     lzo1x_999_compress
+$OpenBSD: patch-configure,v 1.33 2013/01/14 02:14:41 brad Exp $
+--- configure.orig	Tue Sep 18 22:44:40 2012
++++ configure	Tue Jan  8 06:02:20 2013
+@@ -1205,7 +1205,6 @@ HAVE_LIST="
      machine_ioctl_bt848_h
      machine_ioctl_meteor_h
+     makeinfo
 -    malloc_h
      MapViewOfFile
      memalign
      mkstemp
-@@ -2425,6 +2424,7 @@ case $target_os in
+@@ -2618,6 +2617,7 @@ case $target_os in
          enable pic
          disable symver
          SHFLAGS='-shared'
@@ -17,7 +17,7 @@ $OpenBSD: patch-configure,v 1.32 2013/01/08 10:13:13 brad Exp $
          oss_indev_extralibs="-lossaudio"
          oss_outdev_extralibs="-lossaudio"
          ;;
-@@ -2601,7 +2601,7 @@ die_license_disabled version3 libvo_amrwbenc
+@@ -2800,7 +2800,7 @@ die_license_disabled version3 libvo_amrwbenc
  
  enabled version3 && { enabled gpl && enable gplv3 || enable lgplv3; }
  
@@ -26,35 +26,24 @@ $OpenBSD: patch-configure,v 1.32 2013/01/08 10:13:13 brad Exp $
  
  enable_pic() {
      enable pic
-@@ -2931,7 +2931,7 @@ enabled libdirac   && require_pkg_config dirac        
+@@ -3138,7 +3138,7 @@ enabled libdirac   && require_pkg_config dirac        
      "dirac_decoder_init dirac_encoder_init"
  enabled libfaac    && require2 libfaac "stdint.h faac.h" faacEncGetVersion -lfaac
  enabled libfreetype && require_pkg_config freetype2 "ft2build.h freetype/freetype.h" FT_Init_FreeType
 -enabled libgsm     && require  libgsm gsm/gsm.h gsm_create -lgsm
 +enabled libgsm     && require  libgsm gsm.h gsm_create -lgsm
+ enabled libmodplug && require  libmodplug libmodplug/modplug.h ModPlug_Load -lmodplug
  enabled libmp3lame && require  "libmp3lame >= 3.98.3" lame/lame.h lame_set_VBR_quality -lmp3lame
  enabled libnut     && require  libnut libnut.h nut_demuxer_init -lnut
- enabled libopencore_amrnb  && require libopencore_amrnb opencore-amrnb/interf_dec.h Decoder_Interface_init -lopencore-amrnb
-@@ -3075,10 +3075,6 @@ fi
- 
- if enabled small; then
-     add_cflags $size_cflags
--elif enabled optimizations; then
--    add_cflags $speed_cflags
--else
--    add_cflags $noopt_cflags
- fi
- check_cflags -fno-math-errno
- check_cflags -fno-signed-zeros
-@@ -3506,6 +3502,7 @@ comment=$2
+@@ -3714,6 +3714,7 @@ comment=$2
  version=$3
  libs=$4
  requires=$5
 +linkflags=$6
  enabled ${name#lib} || return 0
+ mkdir -p $name
  cat <<EOF > $name/$name.pc
- prefix=$prefix
-@@ -3519,7 +3516,7 @@ Version: $version
+@@ -3728,7 +3729,7 @@ Version: $version
  Requires: $(enabled shared || echo $requires)
  Requires.private: $(enabled shared && echo $requires)
  Conflicts:
@@ -63,7 +52,7 @@ $OpenBSD: patch-configure,v 1.32 2013/01/08 10:13:13 brad Exp $
  Libs.private: $(enabled shared && echo $libs)
  Cflags: -I\${includedir}
  EOF
-@@ -3539,10 +3536,10 @@ Cflags: -I\${includedir}
+@@ -3748,11 +3749,11 @@ Cflags: -I\${includedir}
  EOF
  }
  
@@ -72,8 +61,9 @@ $OpenBSD: patch-configure,v 1.32 2013/01/08 10:13:13 brad Exp $
 -pkgconfig_generate libavformat "FFmpeg container format library" "$LIBAVFORMAT_VERSION" "$extralibs" "libavcodec = $LIBAVCODEC_VERSION"
 -pkgconfig_generate libavdevice "FFmpeg device handling library" "$LIBAVDEVICE_VERSION" "$extralibs" "libavformat = $LIBAVFORMAT_VERSION"
 -pkgconfig_generate libavfilter "FFmpeg video filtering library" "$LIBAVFILTER_VERSION" "$extralibs"
--pkgconfig_generate libpostproc "FFmpeg post processing library" "$LIBPOSTPROC_VERSION" "" "libavutil = $LIBAVUTIL_VERSION"
+-pkgconfig_generate libpostproc "FFmpeg postprocessing library" "$LIBPOSTPROC_VERSION" "" "libavutil = $LIBAVUTIL_VERSION"
 -pkgconfig_generate libswscale "FFmpeg image rescaling library" "$LIBSWSCALE_VERSION" "$LIBM" "libavutil = $LIBAVUTIL_VERSION"
+-pkgconfig_generate libswresample "FFmpeg audio rescaling library" "$LIBSWRESAMPLE_VERSION" "$LIBM" "libavutil = $LIBAVUTIL_VERSION"
 +pkgconfig_generate libavutil "FFmpeg utility library" "$LIBAVUTIL_VERSION" "$LIBavutil_EXTRALIBS" "$LIBavutil_REQUIRES" "$LIBavutil_LINKFLAGS"
 +pkgconfig_generate libavcodec "FFmpeg codec library" "$LIBAVCODEC_VERSION" "$LIBavcodec_EXTRALIBS" "$LIBavcodec_REQUIRES" "$LIBavcodec_LINKFLAGS"
 +pkgconfig_generate libavformat "FFmpeg container format library" "$LIBAVFORMAT_VERSION" "$LIBavformat_EXTRALIBS" "$LIBavformat_REQUIRES" "$LIBavformat_LINKFLAGS"
@@ -81,3 +71,4 @@ $OpenBSD: patch-configure,v 1.32 2013/01/08 10:13:13 brad Exp $
 +pkgconfig_generate libavfilter "FFmpeg video filtering library" "$LIBAVFILTER_VERSION" "$LIBavfilter_EXTRALIBS" "$LIBavfilter_REQUIRES" "$LIBavfilter_LINKFLAGS"
 +pkgconfig_generate libpostproc "FFmpeg post processing library" "$LIBPOSTPROC_VERSION" "$LIBpostproc_EXTRALIBS" "$LIBpostproc_REQUIRES" "$LIBpostproc_LINKFLAGS"
 +pkgconfig_generate libswscale "FFmpeg image rescaling library" "$LIBSWSCALE_VERSION" "$LIBswscale_EXTRALIBS" "$LIBswscale_REQUIRES" "$LIBswscale_LINKFLAGS"
++pkgconfig_generate libswresample "FFmpeg audio rescaling library" "$LIBSWRESAMPLE_VERSION" "$LIBswresample_EXTRALIBS" "$LIBswresample_REQUIRES" "$LIBswresample_LINKFLAGS"

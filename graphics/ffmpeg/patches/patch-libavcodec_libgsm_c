@@ -1,12 +1,12 @@
-$OpenBSD: patch-libavcodec_libgsm_c,v 1.1 2010/05/26 21:38:52 jakemsr Exp $
---- libavcodec/libgsm.c.orig	Sun May 16 11:06:29 2010
-+++ libavcodec/libgsm.c	Sun May 16 11:06:38 2010
-@@ -28,7 +28,7 @@
+$OpenBSD: patch-libavcodec_libgsm_c,v 1.2 2013/01/14 02:14:41 brad Exp $
+--- libavcodec/libgsm.c.orig	Mon Jun 11 07:25:10 2012
++++ libavcodec/libgsm.c	Thu Sep 13 23:18:57 2012
+@@ -27,7 +27,7 @@
+ 
  // The idiosyncrasies of GSM-in-WAV are explained at http://kbs.cs.tu-berlin.de/~jutta/toast.html
  
- #include "avcodec.h"
 -#include <gsm/gsm.h>
 +#include <gsm.h>
  
- // gsm.h misses some essential constants
- #define GSM_BLOCK_SIZE 33
+ #include "avcodec.h"
+ #include "gsm.h"

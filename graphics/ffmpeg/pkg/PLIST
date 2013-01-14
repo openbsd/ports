@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2012/04/28 08:41:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2013/01/14 02:14:41 brad Exp $
 %%SHARED%%
 @bin bin/ffmpeg
 @bin bin/ffplay
@@ -11,6 +11,7 @@ include/libavcodec/avfft.h
 include/libavcodec/dxva2.h
 include/libavcodec/opt.h
 include/libavcodec/vaapi.h
+include/libavcodec/vda.h
 include/libavcodec/vdpau.h
 include/libavcodec/version.h
 include/libavcodec/xvmc.h
@@ -20,7 +21,8 @@ include/libavfilter/
 include/libavfilter/avcodec.h
 include/libavfilter/avfilter.h
 include/libavfilter/avfiltergraph.h
-include/libavfilter/vsink_buffer.h
+include/libavfilter/buffersink.h
+include/libavfilter/version.h
 include/libavfilter/vsrc_buffer.h
 include/libavformat/
 include/libavformat/avformat.h
@@ -46,6 +48,7 @@ include/libavutil/eval.h
 include/libavutil/fifo.h
 include/libavutil/file.h
 include/libavutil/imgutils.h
+include/libavutil/intfloat.h
 include/libavutil/intfloat_readwrite.h
 include/libavutil/intreadwrite.h
 include/libavutil/lfg.h
@@ -62,9 +65,10 @@ include/libavutil/random_seed.h
 include/libavutil/rational.h
 include/libavutil/samplefmt.h
 include/libavutil/sha.h
-include/libavutil/sha1.h
 include/libpostproc/
 include/libpostproc/postprocess.h
+include/libswresample/
+include/libswresample/swresample.h
 include/libswscale/
 include/libswscale/swscale.h
 lib/libavcodec.a
@@ -73,6 +77,7 @@ lib/libavfilter.a
 lib/libavformat.a
 lib/libavutil.a
 lib/libpostproc.a
+lib/libswresample.a
 lib/libswscale.a
 lib/pkgconfig/
 lib/pkgconfig/libavcodec.pc
@@ -81,6 +86,7 @@ lib/pkgconfig/libavfilter.pc
 lib/pkgconfig/libavformat.pc
 lib/pkgconfig/libavutil.pc
 lib/pkgconfig/libpostproc.pc
+lib/pkgconfig/libswresample.pc
 lib/pkgconfig/libswscale.pc
 @man man/man1/ffmpeg.1
 @man man/man1/ffplay.1
@@ -99,17 +105,11 @@ share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/ffmpeg/
 share/examples/ffmpeg/ffserver.conf
 share/ffmpeg/
+share/ffmpeg/ffprobe.xsd
 share/ffmpeg/libvpx-1080p.ffpreset
 share/ffmpeg/libvpx-1080p50_60.ffpreset
 share/ffmpeg/libvpx-360p.ffpreset
 share/ffmpeg/libvpx-720p.ffpreset
 share/ffmpeg/libvpx-720p50_60.ffpreset
-share/ffmpeg/libx264-baseline.ffpreset
 share/ffmpeg/libx264-ipod320.ffpreset
 share/ffmpeg/libx264-ipod640.ffpreset
-share/ffmpeg/libx264-lossless_fast.ffpreset
-share/ffmpeg/libx264-lossless_max.ffpreset
-share/ffmpeg/libx264-lossless_medium.ffpreset
-share/ffmpeg/libx264-lossless_slow.ffpreset
-share/ffmpeg/libx264-lossless_slower.ffpreset
-share/ffmpeg/libx264-lossless_ultrafast.ffpreset
