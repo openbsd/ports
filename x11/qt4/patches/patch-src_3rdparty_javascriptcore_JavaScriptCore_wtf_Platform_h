@@ -1,12 +1,55 @@
-$OpenBSD: patch-src_3rdparty_javascriptcore_JavaScriptCore_wtf_Platform_h,v 1.5 2012/06/14 09:38:35 espie Exp $
---- src/3rdparty/javascriptcore/JavaScriptCore/wtf/Platform.h.orig	Thu Apr 26 21:46:22 2012
-+++ src/3rdparty/javascriptcore/JavaScriptCore/wtf/Platform.h	Sun Jun 10 13:25:08 2012
-@@ -884,7 +884,7 @@
+$OpenBSD: patch-src_3rdparty_javascriptcore_JavaScriptCore_wtf_Platform_h,v 1.6 2013/01/14 22:09:43 bcallah Exp $
+--- src/3rdparty/javascriptcore/JavaScriptCore/wtf/Platform.h.orig	Thu Apr 26 15:46:22 2012
++++ src/3rdparty/javascriptcore/JavaScriptCore/wtf/Platform.h	Wed Jan  9 13:47:38 2013
+@@ -142,6 +142,30 @@
+ #endif
+ #endif
+ 
++/* CPU(MIPS) and CPU(MIPS64) */
++#if (defined(mips) || defined(__mips__) || defined(MIPS) || defined(_MIPS_) || defined(__mips64__))
++#if defined(_ABIO32)
++#define WTF_CPU_MIPS 1
++#endif
++#if defined(__mips64__)
++#define WTF_CPU_MIPS64 1
++#define USE_SYSTEM_MALLOC 1
++#endif
++#if defined(__MIPSEB__)
++#define WTF_CPU_BIG_ENDIAN 1
++#endif
++#define WTF_MIPS_PIC (defined __PIC__)
++#define WTF_MIPS_ARCH __mips
++#define WTF_MIPS_ISA(v) (defined WTF_MIPS_ARCH && WTF_MIPS_ARCH == v)
++#define WTF_MIPS_ISA_AT_LEAST(v) (defined WTF_MIPS_ARCH && WTF_MIPS_ARCH >= v)
++#define WTF_MIPS_ARCH_REV __mips_isa_rev
++#define WTF_MIPS_ISA_REV(v) (defined WTF_MIPS_ARCH_REV && WTF_MIPS_ARCH_REV == v)
++#define WTF_MIPS_DOUBLE_FLOAT (defined __mips_hard_float && !defined __mips_single_float)
++#define WTF_MIPS_FP64 (defined __mips_fpr && __mips_fpr == 64)
++/* MIPS requires allocators to use aligned memory */
++#define WTF_USE_ARENA_ALLOC_ALIGNMENT_INTEGER 1
++#endif /* MIPS */
++
+ /* CPU(HPPA) - a.k.a. PA-RISC */
+ #if defined(__hppa) || defined(__hppa__)
+ #define WTF_CPU_HPPA 1
+@@ -325,8 +349,10 @@
+ 
+ #endif /* ARM */
+ 
++#if CPU(ARM) || CPU(MIPS) || CPU(SH4) || CPU(MIPS64) || CPU(SPARC64)
++#define WTF_CPU_NEEDS_ALIGNED_ACCESS 1
++#endif
+ 
+-
+ /* ==== OS() - underlying operating system; only to be used for mandated low-level services like 
+    virtual memory, not to choose a GUI toolkit ==== */
+ 
+@@ -884,7 +910,7 @@
  #endif
  
  #if !defined(WTF_USE_JSVALUE64) && !defined(WTF_USE_JSVALUE32) && !defined(WTF_USE_JSVALUE32_64)
 -#if (CPU(X86_64) && (OS(UNIX) || OS(WINDOWS) || OS(SOLARIS) || OS(HPUX))) || (CPU(IA64) && !CPU(IA64_32)) || CPU(ALPHA) || CPU(AIX64) || CPU(SPARC64)
-+#if (CPU(X86_64) && (OS(UNIX) || OS(WINDOWS) || OS(SOLARIS) || OS(HPUX) || OS(OPENBSD))) || (CPU(IA64) && !CPU(IA64_32)) || CPU(ALPHA) || CPU(AIX64) || CPU(SPARC64)
++#if (CPU(X86_64) && (OS(UNIX) || OS(WINDOWS) || OS(SOLARIS) || OS(HPUX) || OS(OPENBSD))) || (CPU(IA64) && !CPU(IA64_32)) || CPU(ALPHA) || CPU(AIX64) || CPU(SPARC64) || CPU(MIPS64)
  #define WTF_USE_JSVALUE64 1
  #elif CPU(ARM) || CPU(PPC64)
  #define WTF_USE_JSVALUE32 1
