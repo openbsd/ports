@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2012/09/23 16:57:35 jeremy Exp $
+# $OpenBSD: Makefile,v 1.14 2013/01/14 18:42:24 jeremy Exp $
 
 COMMENT=		HTML Abstraction Markup Language for Ruby
 
-DISTNAME=		haml-2.2.2
-REVISION =		4
+DISTNAME=		haml-3.1.7
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://haml.hamptoncatlin.com/
@@ -18,11 +17,11 @@ MODULES=		lang/ruby
 
 CONFIGURE_STYLE=	ruby gem
 
-BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		textproc/ruby-hpricot,${MODRUBY_FLAVOR}
-
-REGRESS_DEPENDS=	devel/ruby-actionpack,${MODRUBY_FLAVOR}
-
 MODRUBY_REGRESS=	rake
+
+# Remove tests that depend on Rails
+pre-regress:
+	rm ${WRKSRC}/test/haml/template_test.rb \
+		${WRKSRC}/test/haml/helper_test.rb
 
 .include <bsd.port.mk>
