@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2012/08/28 05:50:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2013/01/14 15:04:49 ajacoutot Exp $
 @bin bin/pinot
 @bin bin/pinot-dbus-daemon
 @bin bin/pinot-index
@@ -122,6 +122,7 @@ share/icons/hicolor/22x22/apps/pinot.png
 share/icons/hicolor/24x24/apps/pinot.png
 share/icons/hicolor/32x32/apps/pinot.png
 share/icons/hicolor/48x48/apps/pinot.png
+share/locale/cs/LC_MESSAGES/pinot.mo
 share/locale/de/LC_MESSAGES/pinot.mo
 share/locale/es/LC_MESSAGES/pinot.mo
 share/locale/fr/LC_MESSAGES/pinot.mo

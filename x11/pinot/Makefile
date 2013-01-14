@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2013/01/11 13:44:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2013/01/14 15:04:49 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	personal search and metasearch
 
-DISTNAME=	pinot-1.01
-REVISION=	0
+DISTNAME=	pinot-1.03
 
 SHARED_LIBS +=  xapianbackend             0.0 # 1.0
 
@@ -28,7 +27,8 @@ WANTLIB += glib-2.0 glibmm-2.4 gmime-2.6 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 gtk-3 gtkmm-3.0 idn m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pangomm-1.4 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs sigc-2.0 sqlite3 ssl stdc++ tag textcat
-WANTLIB += xapian xcb xcb-render xcb-shm xml++-2.6 xml2 z
+WANTLIB += xapian xcb xcb-render xcb-shm xml++-2.6 xml2 z icuuc
+WANTLIB += ICE SM atk-bridge-2.0 atspi harfbuzz icudata icule
 
 MASTER_SITES=	http://pinot-search.googlecode.com/files/
 
