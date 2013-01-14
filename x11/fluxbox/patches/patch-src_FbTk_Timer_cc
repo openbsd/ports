@@ -1,0 +1,69 @@
+$OpenBSD: patch-src_FbTk_Timer_cc,v 1.1 2013/01/14 14:27:42 dcoppa Exp $
+
+Fix bug: handle the list of Timers not in-place
+(upstream git commit 4d307dcd10af9d817ff5c05fc40ae7487564cb31)
+See: http://sourceforge.net/tracker/?func=detail&aid=3590078&group_id=35398&atid=413960
+
+--- src/FbTk/Timer.cc.orig	Mon Dec 10 18:26:54 2012
++++ src/FbTk/Timer.cc	Mon Jan 14 15:01:05 2013
+@@ -52,6 +52,7 @@
+ #endif
+ 
+ #include <cstdio>
++#include <vector>
+ #include <set>
+ 
+ 
+@@ -195,32 +196,35 @@ void Timer::updateTimers(int fd) {
+         return;
+     }
+ 
+-    now = FbTime::now();
+-    for (it = s_timerlist.begin(); it != s_timerlist.end(); ) {
++    // stoping / restarting the timers modifies the list in an upredictable
++    // way. to avoid problems such as infinite loops we save the current
++    // (ordered) list of timers into a list and work on it.
+ 
+-        // t->fireTimeout() might add timers to the list
+-        // this invalidates 'it'. thus we store the current timer
+-        Timer* t = *it;
+-        if (now < t->getEndTime()) {
++    static std::vector<FbTk::Timer*> timeouts;
++
++    now = FbTime::now();
++    for (it = s_timerlist.begin(); it != s_timerlist.end(); ++it ) {
++        if (now < (*it)->getEndTime()) {
+             break;
+         }
++        timeouts.push_back(*it);
++    }
+ 
+-        t->fireTimeout();
++    size_t i;
++    const size_t ts = timeouts.size();
++    for (i = 0; i < ts; ++i) {
+ 
+-        // find the iterator to the timer again
+-        // and continue working on the list
+-        it = s_timerlist.find(t);
+-        it++;
+-        s_timerlist.erase(t);
++        FbTk::Timer& t = *timeouts[i];
+ 
+-        if (! t->doOnce()) { // restart the current timer
+-            t->m_timing = false;
+-            t->start();
+-        } else {
+-            t->stop();
++        t.fireTimeout();
++        t.stop();
++
++        if (! t.doOnce()) { // restart the current timer
++            t.start();
+         }
+     }
+ 
++    timeouts.clear();
+ }
+ 
+ 
