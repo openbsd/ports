@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2013/01/12 11:21:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.106 2013/01/14 12:09:59 zhuk Exp $
 
 COMMENT-main =		K Desktop Environment, graphic applications
 COMMENT-kamera =	KDE interface to digital cameras
@@ -44,15 +44,20 @@ LIB_DEPENDS-main = 	${LIB_DEPENDS} \
 			devel/fribidi>=0.19.2 \
 			print/poppler, \
 			print/poppler,,-qt
-LIB_DEPENDS-kpov =	${LIB_DEPENDS}
 
-RUN_DEPENDS-kpov =	graphics/povray \
-			devel/desktop-file-utils 
+LIB_DEPENDS-kpov =	${LIB_DEPENDS}
+RUN_DEPENDS-kpov =	${RUN_DEPENDS} \
+			graphics/povray \
+			devel/desktop-file-utils \
+			x11/gtk+2,-guic
 
 LIB_DEPENDS-kamera = 	${LIB_DEPENDS} \
 			graphics/libgphoto2
+RUN_DEPENDS-kamera =	${RUN_DEPENDS} \
+			devel/desktop-file-utils
 
-RUN_DEPENDS-sane =	devel/desktop-file-utils \
+RUN_DEPENDS-sane =	${RUN_DEPENDS} \
+			devel/desktop-file-utils \
 			x11/gtk+2,-guic
 LIB_DEPENDS-sane =	${LIB_DEPENDS} \
 			graphics/sane-backends
@@ -62,10 +67,10 @@ WANTLIB-kpov =		${WANTLIB}
 WANTLIB-kamera =	${WANTLIB}
 WANTLIB-sane =		${WANTLIB}
 
-REVISION-main = 16
-REVISION-kamera = 7
-REVISION-kpov = 7
-REVISION-sane = 11
+REVISION-main = 17
+REVISION-kamera = 8
+REVISION-kpov = 8
+REVISION-sane = 12
 
 WANTLIB-main +=	 GL Half ICE Iex IlmImf IlmThread Imath Imlib SM \
 	Xcursor Xdamage Xext Xfixes Xft Xi Xinerama Xmu Xrandr Xrender Xt \

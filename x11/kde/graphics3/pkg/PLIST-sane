@@ -1,8 +1,11 @@
-@comment $OpenBSD: PLIST-sane,v 1.9 2012/06/15 08:30:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST-sane,v 1.10 2013/01/14 12:09:59 zhuk Exp $
+@conflict kdegraphics-<3.5.10p17
 @bin bin/kooka
 lib/libkscan.la
 @lib ${KDE}/libkscan.so.${LIBkscan_VERSION}
 @lib lib/libkscan.so.${LIBkscan_VERSION}
+${KDE}/kview_scannerplugin.la
+${KDE}/kview_scannerplugin.so
 share/applications/kde/kooka.desktop
 share/apps/kooka/
 share/apps/kooka/kookaui.rc
@@ -20,6 +23,8 @@ share/apps/kooka/pics/scaleorig.png
 share/apps/kooka/pics/scaletoheight.png
 share/apps/kooka/pics/scaletowidth.png
 share/apps/kooka/pics/thumbviewtile.png
+share/apps/kview/kpartplugins/kviewscanner.desktop
+share/apps/kview/kpartplugins/kviewscanner.rc
 share/config/kookarc
 share/icons/crystalsvg/16x16/actions/palette_color.png
 share/icons/crystalsvg/16x16/actions/palette_gray.png

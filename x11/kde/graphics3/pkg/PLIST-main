@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2013/01/12 11:21:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2013/01/14 12:09:59 zhuk Exp $
 @pkgpath x11/kde/graphics3
 @bin bin/kcolorchooser
 @bin bin/kcoloredit
@@ -274,8 +274,6 @@ ${KDE}/kview_effectsplugin.la
 ${KDE}/kview_effectsplugin.so
 ${KDE}/kview_presenterplugin.la
 ${KDE}/kview_presenterplugin.so
-${KDE}/kview_scannerplugin.la
-${KDE}/kview_scannerplugin.so
 ${KDE}/kviewerpart.la
 ${KDE}/kviewerpart.so
 ${KDE}/libdjvu.la
@@ -323,7 +321,6 @@ lib/libksvg.la
 @lib lib/libksvg.so.${LIBksvg_VERSION}
 lib/libtext2path.la
 @lib lib/libtext2path.so.${LIBtext2path_VERSION}
-share/applications/kde/kamera.desktop
 share/applications/kde/kcmkmrml.desktop
 share/applications/kde/kcolorchooser.desktop
 share/applications/kde/kcoloredit.desktop
@@ -339,6 +336,7 @@ share/applications/kde/kruler.desktop
 share/applications/kde/ksnapshot.desktop
 share/applications/kde/kuickshow.desktop
 share/applications/kde/kview.desktop
+share/applnk/
 share/applnk/Graphics/
 share/applnk/Graphics/kruler.desktop
 share/apps/djvumultipage.rc
@@ -571,8 +569,6 @@ share/apps/kview/kpartplugins/kvieweffects.desktop
 share/apps/kview/kpartplugins/kvieweffects.rc
 share/apps/kview/kpartplugins/kviewpresenter.desktop
 share/apps/kview/kpartplugins/kviewpresenter.rc
-share/apps/kview/kpartplugins/kviewscanner.desktop
-share/apps/kview/kpartplugins/kviewscanner.rc
 share/apps/kview/kview.setdlg
 share/apps/kview/kviewui.rc
 share/apps/kviewerpart/
@@ -610,10 +606,6 @@ share/config.kcfg/kdvi.kcfg
 share/config.kcfg/kghostview.kcfg
 share/config.kcfg/kpdf.kcfg
 share/config.kcfg/kviewshell.kcfg
-share/doc/HTML/en/kamera/
-share/doc/HTML/en/kamera/common
-share/doc/HTML/en/kamera/index.cache.bz2
-share/doc/HTML/en/kamera/index.docbook
 share/doc/HTML/en/kcoloredit/
 share/doc/HTML/en/kcoloredit/common
 share/doc/HTML/en/kcoloredit/index.cache.bz2
@@ -719,59 +711,6 @@ share/doc/HTML/en/kpdf/common
 share/doc/HTML/en/kpdf/configure.png
 share/doc/HTML/en/kpdf/index.cache.bz2
 share/doc/HTML/en/kpdf/index.docbook
-share/doc/HTML/en/kpovmodeler/
-share/doc/HTML/en/kpovmodeler/cameraview.png
-share/doc/HTML/en/kpovmodeler/common
-share/doc/HTML/en/kpovmodeler/controlpoints.png
-share/doc/HTML/en/kpovmodeler/cr22-action-pmcamera.png
-share/doc/HTML/en/kpovmodeler/cr22-action-pmcolorlist.png
-share/doc/HTML/en/kpovmodeler/cr22-action-pmfinish.png
-share/doc/HTML/en/kpovmodeler/cr22-action-pminterior.png
-share/doc/HTML/en/kpovmodeler/cr22-action-pmlight.png
-share/doc/HTML/en/kpovmodeler/cr22-action-pmpigment.png
-share/doc/HTML/en/kpovmodeler/cr22-action-pmplane.png
-share/doc/HTML/en/kpovmodeler/cr22-action-pmrender.png
-share/doc/HTML/en/kpovmodeler/cr22-action-pmsolidcolor.png
-share/doc/HTML/en/kpovmodeler/cr22-action-pmsphere.png
-share/doc/HTML/en/kpovmodeler/defaultviewlayout.png
-share/doc/HTML/en/kpovmodeler/dockwidget.png
-share/doc/HTML/en/kpovmodeler/dockwidgettab.png
-share/doc/HTML/en/kpovmodeler/index.cache.bz2
-share/doc/HTML/en/kpovmodeler/index.docbook
-share/doc/HTML/en/kpovmodeler/insertaspopup.png
-share/doc/HTML/en/kpovmodeler/objectpropertiesview.png
-share/doc/HTML/en/kpovmodeler/objecttree.png
-share/doc/HTML/en/kpovmodeler/rendericon.png
-share/doc/HTML/en/kpovmodeler/rendermodeoutput.png
-share/doc/HTML/en/kpovmodeler/rendermodequality.png
-share/doc/HTML/en/kpovmodeler/rendermodesize.png
-share/doc/HTML/en/kpovmodeler/rendermodesselection.png
-share/doc/HTML/en/kpovmodeler/rendermodestoolbar.png
-share/doc/HTML/en/kpovmodeler/rendersettingsicon.png
-share/doc/HTML/en/kpovmodeler/renderwindow.png
-share/doc/HTML/en/kpovmodeler/texturepreview.png
-share/doc/HTML/en/kpovmodeler/topview.png
-share/doc/HTML/en/kpovmodeler/tutorial01-camera-dialog.png
-share/doc/HTML/en/kpovmodeler/tutorial01-camera-graphic.png
-share/doc/HTML/en/kpovmodeler/tutorial01-final-render.png
-share/doc/HTML/en/kpovmodeler/tutorial01-ground-color-list.png
-share/doc/HTML/en/kpovmodeler/tutorial01-ground-pigment.png
-share/doc/HTML/en/kpovmodeler/tutorial01-ground-render.png
-share/doc/HTML/en/kpovmodeler/tutorial01-ground-solid-color-1.png
-share/doc/HTML/en/kpovmodeler/tutorial01-ground-solid-color-2.png
-share/doc/HTML/en/kpovmodeler/tutorial01-ground-wrong-colors-render.png
-share/doc/HTML/en/kpovmodeler/tutorial01-light-dialog.png
-share/doc/HTML/en/kpovmodeler/tutorial01-light-graphic.png
-share/doc/HTML/en/kpovmodeler/tutorial01-plane-dialog.png
-share/doc/HTML/en/kpovmodeler/tutorial01-plane-graphic.png
-share/doc/HTML/en/kpovmodeler/tutorial01-plane-tree-expanded.png
-share/doc/HTML/en/kpovmodeler/tutorial01-plane-tree-translate.png
-share/doc/HTML/en/kpovmodeler/tutorial01-sphere-dialog.png
-share/doc/HTML/en/kpovmodeler/tutorial01-sphere-finish-dialog.png
-share/doc/HTML/en/kpovmodeler/tutorial01-sphere-render-finish.png
-share/doc/HTML/en/kpovmodeler/tutorial01-sphere-render-nocolor.png
-share/doc/HTML/en/kpovmodeler/tutorial01-sphere-render-solidcolor.png
-share/doc/HTML/en/kpovmodeler/tutorial01-sphere-solid-color.png
 share/doc/HTML/en/kruler/
 share/doc/HTML/en/kruler/common
 share/doc/HTML/en/kruler/index.cache.bz2
@@ -798,16 +737,13 @@ share/icons/crystalsvg/16x16/apps/camera.png
 share/icons/crystalsvg/16x16/apps/kviewshell.png
 share/icons/crystalsvg/16x16/apps/photobook.png
 share/icons/crystalsvg/16x16/devices/camera.png
-share/icons/crystalsvg/16x16/mimetypes/kpovmodeler_doc.png
 share/icons/crystalsvg/22x22/apps/photobook.png
 share/icons/crystalsvg/22x22/devices/camera.png
 share/icons/crystalsvg/22x22/filesystems/camera.png
 share/icons/crystalsvg/32x32/apps/kviewshell.png
 share/icons/crystalsvg/32x32/devices/camera.png
 share/icons/crystalsvg/32x32/filesystems/camera.png
-share/icons/crystalsvg/32x32/mimetypes/kpovmodeler_doc.png
 share/icons/crystalsvg/48x48/apps/kviewshell.png
-share/icons/crystalsvg/48x48/mimetypes/kpovmodeler_doc.png
 share/icons/hicolor/128x128/apps/kghostview.png
 share/icons/hicolor/128x128/apps/kpdf.png
 share/icons/hicolor/16x16/apps/kcolorchooser.png
@@ -820,7 +756,6 @@ share/icons/hicolor/16x16/apps/kghostview.png
 share/icons/hicolor/16x16/apps/kiconedit.png
 share/icons/hicolor/16x16/apps/kolourpaint.png
 share/icons/hicolor/16x16/apps/kpdf.png
-share/icons/hicolor/16x16/apps/kpovmodeler.png
 share/icons/hicolor/16x16/apps/kruler.png
 share/icons/hicolor/16x16/apps/ksnapshot.png
 share/icons/hicolor/16x16/apps/kuickshow.png
@@ -833,7 +768,6 @@ share/icons/hicolor/22x22/apps/kghostview.png
 share/icons/hicolor/22x22/apps/kiconedit.png
 share/icons/hicolor/22x22/apps/kolourpaint.png
 share/icons/hicolor/22x22/apps/kpdf.png
-share/icons/hicolor/22x22/apps/kpovmodeler.png
 share/icons/hicolor/22x22/apps/kruler.png
 share/icons/hicolor/22x22/apps/ksnapshot.png
 share/icons/hicolor/22x22/apps/kuickshow.png
@@ -847,7 +781,6 @@ share/icons/hicolor/32x32/apps/kghostview.png
 share/icons/hicolor/32x32/apps/kiconedit.png
 share/icons/hicolor/32x32/apps/kolourpaint.png
 share/icons/hicolor/32x32/apps/kpdf.png
-share/icons/hicolor/32x32/apps/kpovmodeler.png
 share/icons/hicolor/32x32/apps/kruler.png
 share/icons/hicolor/32x32/apps/ksnapshot.png
 share/icons/hicolor/32x32/apps/kuickshow.png
@@ -860,7 +793,6 @@ share/icons/hicolor/48x48/apps/kghostview.png
 share/icons/hicolor/48x48/apps/kiconedit.png
 share/icons/hicolor/48x48/apps/kolourpaint.png
 share/icons/hicolor/48x48/apps/kpdf.png
-share/icons/hicolor/48x48/apps/kpovmodeler.png
 share/icons/hicolor/48x48/apps/kruler.png
 share/icons/hicolor/48x48/apps/ksnapshot.png
 share/icons/hicolor/48x48/apps/kview.png

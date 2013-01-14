@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-kpov,v 1.11 2010/07/08 21:28:49 espie Exp $
-@conflict kdegraphics-<=3.3.2
+@comment $OpenBSD: PLIST-kpov,v 1.12 2013/01/14 12:09:59 zhuk Exp $
+@conflict kdegraphics-<3.5.10p17
 @bin bin/kpovmodeler
 ${KDE}/libkpovmodelerpart.la
 ${KDE}/libkpovmodelerpart.so
@@ -385,5 +385,69 @@ share/apps/kpovmodeler/kpovmodelershell.rc
 share/apps/kpovmodeler/kpovmodelerui.rc
 share/apps/kpovmodeler/povraydocmap.xml
 share/apps/kpovmodeler/questionmark.png
+share/doc/HTML/en/kpovmodeler/
+share/doc/HTML/en/kpovmodeler/cameraview.png
+share/doc/HTML/en/kpovmodeler/common
+share/doc/HTML/en/kpovmodeler/controlpoints.png
+share/doc/HTML/en/kpovmodeler/cr22-action-pmcamera.png
+share/doc/HTML/en/kpovmodeler/cr22-action-pmcolorlist.png
+share/doc/HTML/en/kpovmodeler/cr22-action-pmfinish.png
+share/doc/HTML/en/kpovmodeler/cr22-action-pminterior.png
+share/doc/HTML/en/kpovmodeler/cr22-action-pmlight.png
+share/doc/HTML/en/kpovmodeler/cr22-action-pmpigment.png
+share/doc/HTML/en/kpovmodeler/cr22-action-pmplane.png
+share/doc/HTML/en/kpovmodeler/cr22-action-pmrender.png
+share/doc/HTML/en/kpovmodeler/cr22-action-pmsolidcolor.png
+share/doc/HTML/en/kpovmodeler/cr22-action-pmsphere.png
+share/doc/HTML/en/kpovmodeler/defaultviewlayout.png
+share/doc/HTML/en/kpovmodeler/dockwidget.png
+share/doc/HTML/en/kpovmodeler/dockwidgettab.png
+share/doc/HTML/en/kpovmodeler/index.cache.bz2
+share/doc/HTML/en/kpovmodeler/index.docbook
+share/doc/HTML/en/kpovmodeler/insertaspopup.png
+share/doc/HTML/en/kpovmodeler/objectpropertiesview.png
+share/doc/HTML/en/kpovmodeler/objecttree.png
+share/doc/HTML/en/kpovmodeler/rendericon.png
+share/doc/HTML/en/kpovmodeler/rendermodeoutput.png
+share/doc/HTML/en/kpovmodeler/rendermodequality.png
+share/doc/HTML/en/kpovmodeler/rendermodesize.png
+share/doc/HTML/en/kpovmodeler/rendermodesselection.png
+share/doc/HTML/en/kpovmodeler/rendermodestoolbar.png
+share/doc/HTML/en/kpovmodeler/rendersettingsicon.png
+share/doc/HTML/en/kpovmodeler/renderwindow.png
+share/doc/HTML/en/kpovmodeler/texturepreview.png
+share/doc/HTML/en/kpovmodeler/topview.png
+share/doc/HTML/en/kpovmodeler/tutorial01-camera-dialog.png
+share/doc/HTML/en/kpovmodeler/tutorial01-camera-graphic.png
+share/doc/HTML/en/kpovmodeler/tutorial01-final-render.png
+share/doc/HTML/en/kpovmodeler/tutorial01-ground-color-list.png
+share/doc/HTML/en/kpovmodeler/tutorial01-ground-pigment.png
+share/doc/HTML/en/kpovmodeler/tutorial01-ground-render.png
+share/doc/HTML/en/kpovmodeler/tutorial01-ground-solid-color-1.png
+share/doc/HTML/en/kpovmodeler/tutorial01-ground-solid-color-2.png
+share/doc/HTML/en/kpovmodeler/tutorial01-ground-wrong-colors-render.png
+share/doc/HTML/en/kpovmodeler/tutorial01-light-dialog.png
+share/doc/HTML/en/kpovmodeler/tutorial01-light-graphic.png
+share/doc/HTML/en/kpovmodeler/tutorial01-plane-dialog.png
+share/doc/HTML/en/kpovmodeler/tutorial01-plane-graphic.png
+share/doc/HTML/en/kpovmodeler/tutorial01-plane-tree-expanded.png
+share/doc/HTML/en/kpovmodeler/tutorial01-plane-tree-translate.png
+share/doc/HTML/en/kpovmodeler/tutorial01-sphere-dialog.png
+share/doc/HTML/en/kpovmodeler/tutorial01-sphere-finish-dialog.png
+share/doc/HTML/en/kpovmodeler/tutorial01-sphere-render-finish.png
+share/doc/HTML/en/kpovmodeler/tutorial01-sphere-render-nocolor.png
+share/doc/HTML/en/kpovmodeler/tutorial01-sphere-render-solidcolor.png
+share/doc/HTML/en/kpovmodeler/tutorial01-sphere-solid-color.png
+share/icons/crystalsvg/16x16/mimetypes/kpovmodeler_doc.png
+share/icons/crystalsvg/32x32/mimetypes/kpovmodeler_doc.png
+share/icons/crystalsvg/48x48/mimetypes/kpovmodeler_doc.png
+share/icons/hicolor/16x16/apps/kpovmodeler.png
+share/icons/hicolor/22x22/apps/kpovmodeler.png
+share/icons/hicolor/32x32/apps/kpovmodeler.png
+share/icons/hicolor/48x48/apps/kpovmodeler.png
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/crystalsvg
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/crystalsvg
