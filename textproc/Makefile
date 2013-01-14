@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.378 2013/01/08 23:28:22 stsp Exp $
+# $OpenBSD: Makefile,v 1.379 2013/01/14 19:31:42 jeremy Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -314,7 +314,6 @@
      SUBDIR += ruby-ascii85
      SUBDIR += ruby-builder
      SUBDIR += ruby-classifier
-     SUBDIR += ruby-erubis
      SUBDIR += ruby-fastercsv,ruby18
      SUBDIR += ruby-fastri,ruby18
      SUBDIR += ruby-fast-stemmer

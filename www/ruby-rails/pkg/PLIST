@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.12 2010/12/08 21:55:21 jeremy Exp $
-${GEM_BIN}/rails${GEM_BIN_SUFFIX}
-${GEM_LIB}/cache/${DISTNAME}.gem
-${GEM_LIB}/gems/${DISTNAME}/
-${GEM_LIB}/gems/${DISTNAME}/bin/
-${GEM_LIB}/gems/${DISTNAME}/bin/rails
-${GEM_LIB}/specifications/${DISTNAME}.gemspec

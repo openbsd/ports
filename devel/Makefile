@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1097 2012/12/30 18:00:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1098 2013/01/14 19:31:42 jeremy Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1165,9 +1165,6 @@
      SUBDIR += rebar
      SUBDIR += remake
      SUBDIR += ruby-abstract
-     SUBDIR += ruby-actionpack
-     SUBDIR += ruby-activemodel
-     SUBDIR += ruby-activesupport
      SUBDIR += ruby-arrayfields
      SUBDIR += ruby-bacon
      SUBDIR += ruby-bundler
@@ -1194,7 +1191,6 @@
      SUBDIR += ruby-gir_ffi
      SUBDIR += ruby-git
      SUBDIR += ruby-highline
-     SUBDIR += ruby-hike
      SUBDIR += ruby-hoe
      SUBDIR += ruby-home_run,ruby18
      SUBDIR += ruby-i18n
@@ -1211,7 +1207,6 @@
      SUBDIR += ruby-needle
      SUBDIR += ruby-ole
      SUBDIR += ruby-open4
-     SUBDIR += ruby-paper_trail
      SUBDIR += ruby-parsetree
      SUBDIR += ruby-polyglot
      SUBDIR += ruby-prof
@@ -1228,7 +1223,6 @@
      SUBDIR += ruby-rubyforge
      SUBDIR += ruby-rubyinline
      SUBDIR += ruby-sexp_processor
-     SUBDIR += ruby-sprockets
      SUBDIR += ruby-stringex
      SUBDIR += ruby-subset_sum
      SUBDIR += ruby-subset_sum,ruby18
@@ -1239,7 +1233,6 @@
      SUBDIR += ruby-tilt
      SUBDIR += ruby-transaction-simple
      SUBDIR += ruby-trollop
-     SUBDIR += ruby-tzinfo
      SUBDIR += ruby-uuidtools
      SUBDIR += ruby-zentest
      SUBDIR += scons
