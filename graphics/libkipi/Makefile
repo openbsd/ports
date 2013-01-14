@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/11/02 09:57:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2013/01/14 16:28:50 zhuk Exp $
 
 COMMENT =		kde image plugins api
 CATEGORIES =		graphics devel x11 x11/kde
@@ -20,7 +20,6 @@ WANTLIB =		ICE Xrender SM Xext X11 util m z \
 WANTLIB += GL Xcursor Xdamage Xfixes Xft Xi Xinerama Xmu Xrandr
 WANTLIB += Xt Xxf86vm drm expat fontconfig freetype lcms mng
 
-FLAVORS =	debug
 MODULES =	x11/kde devel/gettext
 
 USE_LIBTOOL =		Yes
