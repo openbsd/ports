@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.211 2013/01/14 02:17:15 brad Exp $
+# $OpenBSD: Makefile,v 1.212 2013/01/14 17:02:15 brad Exp $
 
 SHARED_ONLY=		Yes
 
@@ -66,8 +66,8 @@ BUILD_DEPENDS =	net/livemedia \
 		audio/rtunes>=0.8 \
 		textproc/docbook-xsl \
 		audio/ladspa
-# mplayer uses non-public interfaces to ffmpeg, so we still need
-# the ffmpeg source in the mplayer tree at build time.
+# MPlayer uses non-public interfaces to FFmpeg, so we still need
+# the FFmpeg source in the MPlayer tree at build time.
 BUILD_DEPENDS +=graphics/ffmpeg:patch
 
 .if ${MACHINE_ARCH:Mamd64} || ${MACHINE_ARCH:Mi386}
@@ -78,7 +78,7 @@ CONFDIR =	${SYSCONFDIR}/mplayer
 
 USE_GMAKE =	Yes
 USE_GROFF =	Yes
-MAKE_ENV =	V=1 	# turn on verbose ffmpeg build
+MAKE_ENV =	V=1 	# turn on verbose FFmpeg build
 CONFIGURE_STYLE = simple
 
 # CONFIGURE_ARGS for misc stuff
@@ -102,7 +102,7 @@ CONFIGURE_ARGS += --disable-alsa \
 		--disable-dvdread-internal \
 		--disable-libdvdcss-internal \
 		--disable-gui \
-		--disable-ffmpeg_a	# link ffmpeg .so (graphics/ffmpeg)
+		--disable-ffmpeg_a	# link FFmpeg .so (graphics/ffmpeg)
 
 # CONFIGURE_ARGS that enable internal stuff
 CONFIGURE_ARGS += --enable-menu
@@ -213,7 +213,7 @@ post-build:
 DOCDIR =	${PREFIX}/share/doc/mplayer
 EXAMPLEDIR = 	${PREFIX}/share/examples/mplayer
 
-# link ffmpeg sources to where build expects
+# link FFmpeg sources to where build expects
 pre-patch:
 	ln -s ${WRKDIR}/graphics/ffmpeg/ffmpeg-git-${FFMPEG_V} ${WRKSRC}/ffmpeg
 
