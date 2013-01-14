@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_mod_fastcgi_c,v 1.11 2013/01/14 09:17:03 brad Exp $
+
+Fix mix up of "mode" => "authorizer" in other FastCGI configs.
+
+--- src/mod_fastcgi.c.orig	Sun Jan 13 23:09:08 2013
++++ src/mod_fastcgi.c	Sun Jan 13 23:09:32 2013
+@@ -1275,6 +1275,7 @@ SETDEFAULTS_FUNC(mod_fastcgi_set_defaults) {
+ 					}
+ 
+ 					host = fastcgi_host_init();
++					buffer_reset(fcgi_mode);
+ 
+ 					buffer_copy_string_buffer(host->id, da_host->key);
+ 
