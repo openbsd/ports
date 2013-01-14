@@ -1,6 +1,8 @@
---- cgi/Makefile.in.orig	Thu Sep 10 07:17:08 2009
-+++ cgi/Makefile.in	Thu Sep 10 07:17:33 2009
-@@ -36,7 +36,8 @@
+$OpenBSD: chroot-cgi_Makefile_in,v 1.5 2013/01/14 11:57:44 sthen Exp $
+--- cgi/Makefile.in.orig	Mon Jan 14 02:24:17 2013
++++ cgi/Makefile.in	Mon Jan 14 02:24:18 2013
+@@ -35,8 +35,9 @@ CFLAGS=-Wall @CFLAGS@ @DEFS@ -DNSCGI
+ #CFLAGS_WARN=-Wall -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs
  #CFLAGS_DEBUG=-ggdb3 -g3
  #CFLAGS+=$(CFLAGS_WARN) $(CFLAGS_DEBUG)
 +CFLAGS+=-fno-pie
