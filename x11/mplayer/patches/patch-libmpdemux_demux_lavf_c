@@ -1,0 +1,41 @@
+$OpenBSD: patch-libmpdemux_demux_lavf_c,v 1.1 2013/01/14 02:20:41 brad Exp $
+--- libmpdemux/demux_lavf.c.orig	Thu May  3 00:56:32 2012
++++ libmpdemux/demux_lavf.c	Thu May  3 01:31:16 2012
+@@ -279,11 +279,7 @@ static void handle_stream(demuxer_t *demuxer, AVFormat
+             stream_type = "audio";
+             priv->astreams[priv->audio_streams] = i;
+             wf= calloc(sizeof(*wf) + codec->extradata_size, 1);
+-            // mp4a tag is used for all mp4 files no matter what they actually contain
+-            if(codec->codec_tag == MKTAG('m', 'p', '4', 'a'))
+-                codec->codec_tag= 0;
+-            if(!codec->codec_tag)
+-                codec->codec_tag= av_codec_get_tag(mp_wav_taglists, codec->codec_id);
++            codec->codec_tag = mp_codec_id2tag(codec->codec_id, codec->codec_tag, 1);
+             wf->wFormatTag= codec->codec_tag;
+             wf->nChannels= codec->channels;
+             wf->nSamplesPerSec= codec->sample_rate;
+@@ -361,8 +357,7 @@ static void handle_stream(demuxer_t *demuxer, AVFormat
+                         codec->codec_tag= MKTAG(24, 'R', 'G', 'B');
+                 }
+             }
+-            if(!codec->codec_tag)
+-                codec->codec_tag= av_codec_get_tag(mp_bmp_taglists, codec->codec_id);
++            codec->codec_tag = mp_codec_id2tag(codec->codec_id, codec->codec_tag, 0);
+             bih->biSize= sizeof(*bih) + codec->extradata_size;
+             bih->biWidth= codec->width;
+             bih->biHeight= codec->height;
+@@ -456,10 +451,12 @@ static void handle_stream(demuxer_t *demuxer, AVFormat
+             break;
+         }
+         case AVMEDIA_TYPE_ATTACHMENT:{
+-            if (st->codec->codec_id == CODEC_ID_TTF)
+-                demuxer_add_attachment(demuxer, st->filename,
++            if (st->codec->codec_id == CODEC_ID_TTF) {
++                AVDictionaryEntry *fnametag = av_dict_get(st->metadata, "filename", NULL, 0);
++                demuxer_add_attachment(demuxer, fnametag ? fnametag->value : NULL,
+                                        "application/x-truetype-font",
+                                        codec->extradata, codec->extradata_size);
++            }
+             break;
+         }
+         default:

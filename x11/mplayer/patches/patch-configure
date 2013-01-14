@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.64 2012/08/27 06:19:48 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.65 2013/01/14 02:17:15 brad Exp $
 --- configure.orig	Tue Mar  8 19:33:03 2011
-+++ configure	Thu Aug 16 17:53:14 2012
++++ configure	Fri Aug 31 16:24:28 2012
 @@ -35,29 +35,33 @@
  #
  #############################################################################
@@ -144,7 +144,15 @@ $OpenBSD: patch-configure,v 1.64 2012/08/27 06:19:48 ajacoutot Exp $
  echocheck $func
  eval _$func=no
  statement_check math.h "${func}(2.0)" -D_ISOC99_SOURCE $_ld_lm && eval _$func=yes
-@@ -3480,7 +3491,8 @@ if test "$_memalign" = yes ; then
+@@ -3461,7 +3472,6 @@ echores "$_fast_inttypes"
+ 
+ echocheck "malloc.h"
+ _malloc=no
+-header_check malloc.h && _malloc=yes
+ if test "$_malloc" = yes ; then
+   def_malloc_h='#define HAVE_MALLOC_H 1'
+ else
+@@ -3480,7 +3490,8 @@ if test "$_memalign" = yes ; then
  else
    def_memalign='#define HAVE_MEMALIGN 0'
    def_map_memalign='#define memalign(a, b) malloc(b)'
@@ -154,7 +162,7 @@ $OpenBSD: patch-configure,v 1.64 2012/08/27 06:19:48 ajacoutot Exp $
  fi
  echores "$_memalign"
  
-@@ -4661,6 +4673,8 @@ if test "$_aa" = yes ; then
+@@ -4661,6 +4672,8 @@ if test "$_aa" = yes ; then
    def_aa='#define CONFIG_AA 1'
    if cygwin ; then
      libs_mplayer="$libs_mplayer $(aalib-config --libs | cut -d " " -f 2,5,6)"
@@ -163,7 +171,7 @@ $OpenBSD: patch-configure,v 1.64 2012/08/27 06:19:48 ajacoutot Exp $
    fi
    vomodules="aa $vomodules"
  else
-@@ -4846,7 +4860,7 @@ fi
+@@ -4846,7 +4859,7 @@ fi
  echores "$_png"
  if test "$_png" = yes ; then
    def_png='#define CONFIG_PNG 1'
@@ -172,22 +180,7 @@ $OpenBSD: patch-configure,v 1.64 2012/08/27 06:19:48 ajacoutot Exp $
  else
    def_png='#undef CONFIG_PNG'
  fi
-@@ -4854,12 +4868,12 @@ fi
- echocheck "MNG support"
- if test "$_mng" = auto ; then
-   _mng=no
--  return_statement_check libmng.h 'const char * p_ver = mng_version_text()' '!p_ver || p_ver[0] == 0' -lmng -lz $_ld_lm && _mng=yes
-+  return_statement_check libmng.h 'const char * p_ver = mng_version_text()' '!p_ver || p_ver[0] == 0' -llcms -ljpeg -lmng -lz $_ld_lm && _mng=yes
- fi
- echores "$_mng"
- if test "$_mng" = yes ; then
-   def_mng='#define CONFIG_MNG 1'
--  extra_ldflags="$extra_ldflags -lmng -lz"
-+  extra_ldflags="$extra_ldflags -lmng -llcms -lz -ljpeg $_ld_m"
- else
-   def_mng='#undef CONFIG_MNG'
- fi
-@@ -5663,6 +5677,26 @@ fi
+@@ -5663,6 +5676,26 @@ fi
  echores "$_sunaudio"
  
  
@@ -214,7 +207,7 @@ $OpenBSD: patch-configure,v 1.64 2012/08/27 06:19:48 ajacoutot Exp $
  def_mlib='#define CONFIG_MLIB 0'
  if sunos; then
  echocheck "Sun mediaLib"
-@@ -5780,7 +5814,15 @@ else
+@@ -5780,7 +5813,15 @@ else
    default_dvd_device="/dev/dvd"
  fi
  
@@ -230,7 +223,7 @@ $OpenBSD: patch-configure,v 1.64 2012/08/27 06:19:48 ajacoutot Exp $
  echocheck "VCD support"
  if test "$_vcd" = auto; then
    _vcd=no
-@@ -5805,7 +5847,7 @@ echores "$_vcd"
+@@ -5805,7 +5846,7 @@ echores "$_vcd"
  echocheck "Blu-ray support"
  if test "$_bluray" = auto ; then
    _bluray=no
@@ -239,16 +232,7 @@ $OpenBSD: patch-configure,v 1.64 2012/08/27 06:19:48 ajacoutot Exp $
  fi
  if test "$_bluray" = yes ; then
    def_bluray='#define CONFIG_LIBBLURAY 1'
-@@ -6521,7 +6563,7 @@ echores "$_libmpeg2"
- echocheck "libdca support"
- if test "$_libdca" = auto ; then
-   _libdca=no
--  for _ld_dca in -ldca -ldts ; do
-+  for _ld_dca in -ldca; do
-     statement_check_broken stdint.h dts.h 'dts_init(0)' $_ld_dca $_ld_lm &&
-       extra_ldflags="$extra_ldflags $_ld_dca" && _libdca=yes && break
-   done
-@@ -7360,6 +7402,8 @@ if test "$_tv_v4l2" = auto ; then
+@@ -7360,6 +7401,8 @@ if test "$_tv_v4l2" = auto ; then
    _tv_v4l2=no
    if test "$_tv" = yes && linux ; then
      header_check_broken sys/time.h linux/videodev2.h && _tv_v4l2=yes
@@ -257,7 +241,7 @@ $OpenBSD: patch-configure,v 1.64 2012/08/27 06:19:48 ajacoutot Exp $
    fi
  fi
  if test "$_tv_v4l2" = yes ; then
-@@ -8069,6 +8113,7 @@ SPEEX = $_speex
+@@ -8069,6 +8112,7 @@ SPEEX = $_speex
  STREAM_CACHE = $_stream_cache
  SGIAUDIO = $_sgiaudio
  SUNAUDIO = $_sunaudio
@@ -265,7 +249,7 @@ $OpenBSD: patch-configure,v 1.64 2012/08/27 06:19:48 ajacoutot Exp $
  SVGA = $_svga
  TDFXFB = $_tdfxfb
  TDFXVID = $_tdfxvid
-@@ -8357,6 +8402,7 @@ $(ff_config_enable "$cpuexts_all" "$cpuexts" "#" "HAVE
+@@ -8357,6 +8401,7 @@ $(ff_config_enable "$cpuexts_all" "$cpuexts" "#" "HAVE
  /* Blu-ray/DVD/VCD/CD */
  #define DEFAULT_CDROM_DEVICE "$default_cdrom_device"
  #define DEFAULT_DVD_DEVICE   "$default_dvd_device"
@@ -273,7 +257,7 @@ $OpenBSD: patch-configure,v 1.64 2012/08/27 06:19:48 ajacoutot Exp $
  $def_bluray
  $def_bsdi_dvd
  $def_cddb
-@@ -8445,6 +8491,7 @@ $def_ossaudio_devmixer
+@@ -8445,6 +8490,7 @@ $def_ossaudio_devmixer
  $def_pulse
  $def_sgiaudio
  $def_sunaudio
@@ -281,7 +265,7 @@ $OpenBSD: patch-configure,v 1.64 2012/08/27 06:19:48 ajacoutot Exp $
  $def_win32waveout
  
  $def_ladspa
-@@ -8622,6 +8669,7 @@ $def_round
+@@ -8622,6 +8668,7 @@ $def_round
  $def_roundf
  $def_ten_operands
  $def_threads

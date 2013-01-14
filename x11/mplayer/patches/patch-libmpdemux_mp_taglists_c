@@ -1,0 +1,60 @@
+$OpenBSD: patch-libmpdemux_mp_taglists_c,v 1.1 2013/01/14 02:20:41 brad Exp $
+--- libmpdemux/mp_taglists.c.orig	Thu May  3 01:23:16 2012
++++ libmpdemux/mp_taglists.c	Thu May  3 01:35:04 2012
+@@ -20,7 +20,8 @@
+ 
+ #include "mp_taglists.h"
+ #include "libavformat/avformat.h"
+-#include "libavformat/riff.h"
++// for AVCodecTag
++#include "libavformat/internal.h"
+ 
+ static const AVCodecTag mp_wav_tags[] = {
+     { CODEC_ID_ADPCM_4XM,         MKTAG('4', 'X', 'M', 'A')},
+@@ -59,8 +60,6 @@ static const AVCodecTag mp_wav_tags[] = {
+     { 0, 0 },
+ };
+ 
+-const struct AVCodecTag * const mp_wav_taglists[] = {ff_codec_wav_tags, mp_wav_tags, 0};
+-
+ static const AVCodecTag mp_codecid_override_tags[] = {
+     { CODEC_ID_AAC,               MKTAG('M', 'P', '4', 'A')},
+     { CODEC_ID_AAC_LATM,          MKTAG('M', 'P', '4', 'L')},
+@@ -122,4 +121,36 @@ static const AVCodecTag mp_bmp_tags[] = {
+     { 0, 0 },
+ };
+ 
+-const struct AVCodecTag * const mp_bmp_taglists[] = {ff_codec_bmp_tags, mp_bmp_tags, 0};
++static void get_taglists(const struct AVCodecTag *dst[3], int audio)
++{
++    dst[0] = audio ? mp_wav_tags : mp_bmp_tags;
++    dst[1] = audio ? avformat_get_riff_audio_tags() : avformat_get_riff_video_tags();
++    dst[2] = NULL;
++}
++
++enum CodecID mp_tag2codec_id(uint32_t tag, int audio)
++{
++    const struct AVCodecTag *taglists[3];
++    get_taglists(taglists, audio);
++    return av_codec_get_id(taglists, tag);
++}
++
++uint32_t mp_codec_id2tag(enum CodecID codec_id, uint32_t old_tag, int audio)
++{
++    const struct AVCodecTag *taglists[3];
++    // For some formats (like PCM) always trust CODEC_ID_* more than codec_tag
++    uint32_t tag = av_codec_get_tag(mp_codecid_override_taglists, codec_id);
++    if (tag)
++        return tag;
++
++    // mp4a tag is used for all mp4 files no matter what they actually contain
++    // mp4v is sometimes also used for files containing e.g. mjpeg
++    if (audio  && old_tag != MKTAG('m', 'p', '4', 'a') ||
++        !audio && old_tag != MKTAG('m', 'p', '4', 'v'))
++        tag = old_tag;
++    if (tag)
++        return tag;
++
++    get_taglists(taglists, audio);
++    return av_codec_get_tag(taglists, codec_id);
++}
