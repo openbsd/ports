@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.784 2013/01/11 20:25:08 kili Exp $
+# $OpenBSD: Makefile,v 1.785 2013/01/15 17:49:55 jasper Exp $
 
      SUBDIR =
      SUBDIR += BitTorrent
@@ -75,7 +75,6 @@
      SUBDIR += echoping
      SUBDIR += ejabberd
      SUBDIR += ekg
-     SUBDIR += emacs-jabber
      SUBDIR += emesene
      SUBDIR += enet
      SUBDIR += epic4
