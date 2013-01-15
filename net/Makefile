@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.785 2013/01/15 17:49:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.786 2013/01/15 23:02:40 sthen Exp $
 
      SUBDIR =
      SUBDIR += BitTorrent
@@ -597,6 +597,7 @@
      SUBDIR += wol
      SUBDIR += xarchie
      SUBDIR += xchat
+     SUBDIR += xl2tpd
      SUBDIR += xmlrpc-c
      SUBDIR += xmlrpc-epi
      SUBDIR += xorp
