@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.2 2012/06/16 07:08:55 robert Exp $
+$OpenBSD: README-server,v 1.3 2013/01/15 12:46:53 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -61,3 +61,17 @@ SQLite3
 Creating the DB and tables (default to ${BACULASTATE}/bacula.db).
     $ cd ${TRUEPREFIX}/libexec/bacula
     $ sudo -u _bacula ./make_bacula_tables
+
+Device permissions
+==================
+
+The Bacula user needs access to its storage device(s):
+
+* when backup is stored on disk, the mount points must be accessible in
+rw mode by the "_bacula-sd" user.
+
+* when backup is stored on tape, the corresponding device node(s) must
+be accessible in rw mode by the "_bacula" user.
+e.g. for an autochanger, add the following lines in rc.conf.local(5)
+chgrp _bacula /dev/ch0
+chgrp _bacula /dev/nrst0
