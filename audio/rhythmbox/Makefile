@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2012/10/06 07:33:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.110 2013/01/15 14:30:42 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		2.98
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
 
@@ -104,5 +104,7 @@ REGRESS_IS_INTERACTIVE=	x11
 
 post-install:
 	rm ${PREFIX}/lib/rhythmbox/{,sample-}plugins/*/*.la
+	# XXX segfault: check at next upgrade of rhythmbox
+	rm -rf ${PREFIX}/{lib,share}/rhythmbox/plugins/replaygain
 
 .include <bsd.port.mk>

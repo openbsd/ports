@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.36 2012/09/30 14:58:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.37 2013/01/15 14:30:42 ajacoutot Exp $
 @bin bin/rhythmbox
 @bin bin/rhythmbox-client
 include/rhythmbox/
@@ -236,17 +236,6 @@ lib/rhythmbox/plugins/rbzeitgeist/rbzeitgeist.plugin
 lib/rhythmbox/plugins/rbzeitgeist/rbzeitgeist.py
 lib/rhythmbox/plugins/rbzeitgeist/rbzeitgeist.pyc
 lib/rhythmbox/plugins/rbzeitgeist/rbzeitgeist.pyo
-lib/rhythmbox/plugins/replaygain/
-lib/rhythmbox/plugins/replaygain/config.py
-lib/rhythmbox/plugins/replaygain/config.pyc
-lib/rhythmbox/plugins/replaygain/config.pyo
-lib/rhythmbox/plugins/replaygain/player.py
-lib/rhythmbox/plugins/replaygain/player.pyc
-lib/rhythmbox/plugins/replaygain/player.pyo
-lib/rhythmbox/plugins/replaygain/replaygain.plugin
-lib/rhythmbox/plugins/replaygain/replaygain.py
-lib/rhythmbox/plugins/replaygain/replaygain.pyc
-lib/rhythmbox/plugins/replaygain/replaygain.pyo
 lib/rhythmbox/plugins/sendto/
 lib/rhythmbox/plugins/sendto/sendto.plugin
 lib/rhythmbox/plugins/sendto/sendto.py
@@ -879,8 +868,6 @@ share/rhythmbox/plugins/magnatune/magnatune-loading.ui
 share/rhythmbox/plugins/magnatune/magnatune-prefs.ui
 share/rhythmbox/plugins/magnatune/magnatune_logo_color_small.png
 share/rhythmbox/plugins/magnatune/magnatune_logo_color_tiny.png
-share/rhythmbox/plugins/replaygain/
-share/rhythmbox/plugins/replaygain/replaygain-prefs.ui
 share/rhythmbox/podcast-add-dialog.ui
 share/rhythmbox/podcast-feed-properties.ui
 share/rhythmbox/podcast-prefs.ui
