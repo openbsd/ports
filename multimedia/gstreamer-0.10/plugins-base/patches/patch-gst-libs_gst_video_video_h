@@ -1,0 +1,18 @@
+$OpenBSD: patch-gst-libs_gst_video_video_h,v 1.1 2013/01/15 15:40:19 sthen Exp $
+
+C++11 compat
+
+--- gst-libs/gst/video/video.h.orig	Tue Jan 15 15:33:49 2013
++++ gst-libs/gst/video/video.h	Tue Jan 15 15:34:36 2013
+@@ -342,9 +342,9 @@ typedef enum {
+  */
+ #define GST_VIDEO_CAPS_RGB8_PALETTED \
+   "video/x-raw-rgb, bpp = (int)8, depth = (int)8, "                     \
+-      "width = "GST_VIDEO_SIZE_RANGE" , "		                \
++      "width = " GST_VIDEO_SIZE_RANGE " , "		                \
+       "height = " GST_VIDEO_SIZE_RANGE ", "                             \
+-      "framerate = "GST_VIDEO_FPS_RANGE
++      "framerate = " GST_VIDEO_FPS_RANGE
+ 
+ /**
+  * GST_VIDEO_CAPS_YUV:
