@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.16 2012/11/13 07:26:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.17 2013/01/15 07:11:52 ajacoutot Exp $
 @pkgpath devel/libsoup
 @pkgpath devel/libsoup,ssl
 include/libsoup-${API_VERSION}/
@@ -66,7 +66,6 @@ share/gtk-doc/html/libsoup-${API_VERSION}/SoupContentDecoder.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupContentSniffer.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupCookie.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupCookieJar.html
-share/gtk-doc/html/libsoup-${API_VERSION}/SoupCookieJarSqlite.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupCookieJarText.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupLogger.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupMessage.html
@@ -80,7 +79,6 @@ share/gtk-doc/html/libsoup-${API_VERSION}/SoupRequest.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupRequestData.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupRequestFile.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupRequestHTTP.html
-share/gtk-doc/html/libsoup-${API_VERSION}/SoupRequester.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupServer.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupSession.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupSessionAsync.html
@@ -104,6 +102,8 @@ share/gtk-doc/html/libsoup-${API_VERSION}/left.png
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-GValue-Support.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-HTML-Form-Support.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-Soup-Miscellaneous-Utilities.html
+share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-SoupCookieJarSqlite.html
+share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-SoupRequester.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-Top-Level-Domain-utils.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-XMLRPC-Support.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-soup-gnome-features.html
@@ -132,6 +132,9 @@ share/locale/es/LC_MESSAGES/libsoup.mo
 share/locale/et/LC_MESSAGES/libsoup.mo
 share/locale/fa/LC_MESSAGES/libsoup.mo
 share/locale/fr/LC_MESSAGES/libsoup.mo
+share/locale/fur/
+share/locale/fur/LC_MESSAGES/
+share/locale/fur/LC_MESSAGES/libsoup.mo
 share/locale/gl/LC_MESSAGES/libsoup.mo
 share/locale/gu/LC_MESSAGES/libsoup.mo
 share/locale/he/LC_MESSAGES/libsoup.mo
@@ -140,12 +143,14 @@ share/locale/hu/LC_MESSAGES/libsoup.mo
 share/locale/id/LC_MESSAGES/libsoup.mo
 share/locale/it/LC_MESSAGES/libsoup.mo
 share/locale/ja/LC_MESSAGES/libsoup.mo
+share/locale/kn/LC_MESSAGES/libsoup.mo
 share/locale/ko/LC_MESSAGES/libsoup.mo
 share/locale/lt/LC_MESSAGES/libsoup.mo
 share/locale/lv/LC_MESSAGES/libsoup.mo
 share/locale/ml/LC_MESSAGES/libsoup.mo
 share/locale/mr/LC_MESSAGES/libsoup.mo
 share/locale/nb/LC_MESSAGES/libsoup.mo
+share/locale/or/LC_MESSAGES/libsoup.mo
 share/locale/pa/LC_MESSAGES/libsoup.mo
 share/locale/pl/LC_MESSAGES/libsoup.mo
 share/locale/pt/LC_MESSAGES/libsoup.mo
