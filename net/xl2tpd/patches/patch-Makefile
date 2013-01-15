@@ -1,0 +1,59 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2013/01/15 23:02:19 sthen Exp $
+--- Makefile.orig	Tue Oct  4 21:28:29 2011
++++ Makefile	Tue Jan 15 21:49:08 2013
+@@ -53,8 +53,8 @@ DFLAGS?= -DDEBUG_PPPD -DTRUST_PPPD_TO_DIE
+ # but we use a local copy if we don't find it.
+ #
+ #KERNELSRC=/lib/modules/`uname -r`/build/
+-KERNELSRC?=./linux
+-OSFLAGS?= -DLINUX -I$(KERNELSRC)/include/
++#KERNELSRC?=./linux
++#OSFLAGS?= -DLINUX -I$(KERNELSRC)/include/
+ #
+ # Uncomment the following to use the kernel interface under Linux
+ # This requires the pppol2tp-linux-2.4.27.patch patch from contrib
+@@ -80,8 +80,8 @@ OSFLAGS?= -DLINUX -I$(KERNELSRC)/include/
+ 
+ # Uncomment the next two lines for OpenBSD
+ #
+-#OSFLAGS?= -DOPENBSD
+-#LDLIBS?= -lutil
++OSFLAGS?= -DOPENBSD
++LDLIBS?= -lutil
+ 
+ # Feature flags
+ #
+@@ -105,10 +105,10 @@ BINDIR?=$(DESTDIR)${PREFIX}/bin
+ MANDIR?=$(DESTDIR)${PREFIX}/share/man
+ 
+ 
+-all: $(EXEC) pfc $(CONTROL_EXEC)
++all: $(EXEC) $(CONTROL_EXEC)
+ 
+ clean:
+-	rm -f $(OBJS) $(EXEC) pfc.o pfc $(CONTROL_EXEC)
++	rm -f $(OBJS) $(EXEC) $(CONTROL_EXEC)
+ 
+ $(EXEC): $(OBJS) $(HDRS)
+ 	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LDLIBS)
+@@ -123,7 +123,7 @@ pfc:
+ romfs:
+ 	$(ROMFSINST) /bin/$(EXEC)
+ 
+-install: ${EXEC} pfc ${CONTROL_EXEC}
++install: ${EXEC} ${CONTROL_EXEC}
+ 	install -d -m 0755 ${SBINDIR}
+ 	install -m 0755 $(EXEC) ${SBINDIR}/$(EXEC)
+ 	install -d -m 0755 ${MANDIR}/man5
+@@ -131,11 +131,6 @@ install: ${EXEC} pfc ${CONTROL_EXEC}
+ 	install -m 0644 doc/xl2tpd.8 ${MANDIR}/man8/
+ 	install -m 0644 doc/xl2tpd.conf.5 doc/l2tp-secrets.5 \
+ 		 ${MANDIR}/man5/
+-	# pfc
+-	install -d -m 0755 ${BINDIR}
+-	install -m 0755 pfc ${BINDIR}/pfc
+-	install -d -m 0755 ${MANDIR}/man1
+-	install -m 0644 contrib/pfc.1 ${MANDIR}/man1/
+ 	# control exec
+ 	install -d -m 0755 ${SBINDIR}
+ 	install -m 0755 $(CONTROL_EXEC) ${SBINDIR}/$(CONTROL_EXEC)

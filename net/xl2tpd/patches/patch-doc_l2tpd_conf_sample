@@ -1,0 +1,17 @@
+$OpenBSD: patch-doc_l2tpd_conf_sample,v 1.1.1.1 2013/01/15 23:02:19 sthen Exp $
+--- doc/l2tpd.conf.sample.orig	Tue Jan 15 22:22:55 2013
++++ doc/l2tpd.conf.sample	Tue Jan 15 22:22:28 2013
+@@ -18,6 +18,13 @@
+ ;                                       ; sys - uses rand()
+ ;                                       ; egd - reads from egd socket
+ ;                                       ; egd is not yet implemented
++; debug avp = yes			; syslog debug options
++; debug network = yes
++; debug state = yes
++; debug tunnel = yes
++;
++; debug packet = yes			; use with xl2tpd -D to run in foreground
++;
+ ;
+ ; [lns default]							; Our fallthrough LNS definition
+ ; exclusive = no						; * Only permit one tunnel per host

@@ -1,0 +1,47 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2013/01/15 23:02:19 sthen Exp $
+
+COMMENT=	l2tp client/server
+
+DISTNAME=	xl2tpd-1.3.1
+
+CATEGORIES=	net
+
+HOMEPAGE=	http://www.xelerance.com/services/software/xl2tpd/
+
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+
+# GPLv2
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+WANTLIB += c util
+
+# https://github.com/xelerance/xl2tpd/
+MASTER_SITES=	http://ftp.openswan.org/xl2tpd/ \
+		ftp://ftp.xelerance.com/xl2tpd/
+
+FAKE_FLAGS=	DESTDIR= MANDIR=${WRKINST}${PREFIX}/man
+NO_REGRESS=	Yes
+
+do-configure:
+	perl -pi -e 's,/etc,${SYSCONFDIR},' ${WRKSRC}/file.h
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/xl2tpd/
+	cd ${WRKSRC}/doc; ${INSTALL_DATA} l2tpd.conf.sample \
+	    l2tp-secrets.sample ../examples/ppp-options.xl2tpd \
+	    ${PREFIX}/share/examples/xl2tpd/
+
+# Only build xl2tpd itself for now; pfc A) needs something that was
+# stripped from our libpcap and B) isn't useful with our old pppd anyway;
+# xl2tpd-control requires fmemopen() which we don't have. If enabling
+# these, these 4 lines can go.
+ALL_TARGET=	xl2tpd
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/xl2tpd ${PREFIX}/sbin/
+	${INSTALL_DATA} ${WRKSRC}/doc/*.8 ${PREFIX}/man/man8/
+	${INSTALL_DATA} ${WRKSRC}/doc/*.5 ${PREFIX}/man/man5/
+
+.include <bsd.port.mk>

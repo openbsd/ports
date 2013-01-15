@@ -1,0 +1,16 @@
+$OpenBSD: patch-network_c,v 1.1.1.1 2013/01/15 23:02:19 sthen Exp $
+--- network.c.orig	Tue Oct  4 21:28:29 2011
++++ network.c	Tue Jan 15 21:45:35 2013
+@@ -271,11 +271,9 @@ void udp_xmit (struct buffer *buf, struct tunnel *t)
+     memset(&msgh, 0, sizeof(struct msghdr));
+ 
+     msgh.msg_control = cbuf;
+-    msgh.msg_controllen = 0;
++    msgh.msg_controllen = sizeof(cbuf);
+ 
+     if(gconfig.ipsecsaref && t->refhim != IPSEC_SAREF_NULL) {
+-	msgh.msg_controllen = sizeof(cbuf);
+-
+ 	cmsg = CMSG_FIRSTHDR(&msgh);
+ 	cmsg->cmsg_level = IPPROTO_IP;
+ 	cmsg->cmsg_type  = gconfig.sarefnum;

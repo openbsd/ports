@@ -1,0 +1,8 @@
+xl2tpd is an implementation of the Layer 2 Tunnelling Protocol (RFC 2661),
+which works by opening a pseudo-tty for communicating with pppd.
+
+L2TP allows you to tunnel PPP over UDP. Some ISPs use L2TP to tunnel user
+sessions from dial-in servers (modem banks, ADSL DSLAMs) to back-end PPP
+servers. Another important application is Virtual Private Networks where
+the IPsec protocol is used to secure the L2TP connection (L2TP/IPsec,
+RFC 3193).

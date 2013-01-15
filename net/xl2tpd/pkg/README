@@ -1,0 +1,31 @@
+$OpenBSD: README,v 1.1.1.1 2013/01/15 23:02:19 sthen Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+This port is in early stages, and in general for LNS use it is
+recommended to use npppd(8) instead, however it is useful if you wish
+to use OpenBSD as an L2TP client (LAC).
+
+Normally, xl2tpd would be controlled by using xl2tpd-control, a dedicated
+program. This currently requires functions not present in OpenBSD, however
+all this does is write simple commands to a fifo (you may be familiar with
+this style from isakmpd). You can use the following as an alternative:
+
+  echo '[command] [config_name]' > /var/run/xl2tpd/l2tp-control
+
+Where [command] is one of:
+
+  c    connect; may be followed by authname and password
+  d    disconnect
+  r    (disconnect and) remove
+
+You must send the 'c'onnect command to actually bring up a session;
+configuring it and starting the daemon is not sufficient.
+
+xl2tpd makes a connection via L2TP, but uses pppd(8) to carry out most
+operations; therefore any PPP-related configuration is done via pppd.
+Also note that a free ppp(4) interface must exist before xl2tpd brings
+up a connection; you could create an /etc/hostname.ppp0 file simply
+containing the word "up".
