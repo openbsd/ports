@@ -1,13 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/01/03 08:06:58 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/01/16 08:02:10 benoit Exp $
 lib/python${MODPY_VERSION}/site-packages/pyproj/
 lib/python${MODPY_VERSION}/site-packages/pyproj-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/pyproj/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pyproj/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/pyproj/_proj.so
-lib/python${MODPY_VERSION}/site-packages/pyproj/accumulator.py
-lib/python${MODPY_VERSION}/site-packages/pyproj/accumulator.pyc
-lib/python${MODPY_VERSION}/site-packages/pyproj/constants.py
-lib/python${MODPY_VERSION}/site-packages/pyproj/constants.pyc
 lib/python${MODPY_VERSION}/site-packages/pyproj/data/
 lib/python${MODPY_VERSION}/site-packages/pyproj/data/FL
 lib/python${MODPY_VERSION}/site-packages/pyproj/data/GL27
@@ -51,13 +47,3 @@ lib/python${MODPY_VERSION}/site-packages/pyproj/data/tv_out.dist
 lib/python${MODPY_VERSION}/site-packages/pyproj/data/world
 lib/python${MODPY_VERSION}/site-packages/pyproj/datadir.py
 lib/python${MODPY_VERSION}/site-packages/pyproj/datadir.pyc
-lib/python${MODPY_VERSION}/site-packages/pyproj/geodesic.py
-lib/python${MODPY_VERSION}/site-packages/pyproj/geodesic.pyc
-lib/python${MODPY_VERSION}/site-packages/pyproj/geodesiccapability.py
-lib/python${MODPY_VERSION}/site-packages/pyproj/geodesiccapability.pyc
-lib/python${MODPY_VERSION}/site-packages/pyproj/geodesicline.py
-lib/python${MODPY_VERSION}/site-packages/pyproj/geodesicline.pyc
-lib/python${MODPY_VERSION}/site-packages/pyproj/geomath.py
-lib/python${MODPY_VERSION}/site-packages/pyproj/geomath.pyc
-lib/python${MODPY_VERSION}/site-packages/pyproj/polygonarea.py
-lib/python${MODPY_VERSION}/site-packages/pyproj/polygonarea.pyc

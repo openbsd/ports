@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2013/01/03 08:06:55 benoit Exp $
+# $OpenBSD: Makefile,v 1.13 2013/01/16 08:02:08 benoit Exp $
 
 COMMENT =		Pyrex generated python interface to PROJ.4 library
 
-MODPY_EGG_VERSION =	1.9.2
+MODPY_EGG_VERSION =	1.9.3
 DISTNAME =		pyproj-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += ${MODPY_WANTLIB}
+WANTLIB += ${MODPY_WANTLIB} pthread
 
 MASTER_SITES =		http://pyproj.googlecode.com/files/
 
