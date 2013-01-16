@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/01/08 09:51:09 brad Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/01/16 14:18:17 ajacoutot Exp $
 @conflict openh323-*
 @pkgpath net/openh323
 include/openh323/
@@ -25,7 +25,7 @@ include/openh323/h235/h2351.h
 include/openh323/h235/h2356.h
 include/openh323/h235/h235caps.h
 include/openh323/h235/h235chan.h
-include/openh323/h235/h235con.h
+include/openh323/h235/h235crypto.h
 include/openh323/h235auth.h
 include/openh323/h235plugin.h
 include/openh323/h235pluginmgr.h
@@ -70,13 +70,16 @@ include/openh323/h460/
 include/openh323/h460/h460.h
 include/openh323/h460/h4601.h
 include/openh323/h460/h46015.h
-include/openh323/h460/h46017a.h
 include/openh323/h460/h46018.h
 include/openh323/h460/h46018_h225.h
 include/openh323/h460/h46019.h
 include/openh323/h460/h46024b.h
+include/openh323/h460/h46026.h
+include/openh323/h460/h4604.h
 include/openh323/h460/h4609.h
 include/openh323/h460/h460_oid3.h
+include/openh323/h460/h460_oid6.h
+include/openh323/h460/h460_oid9.h
 include/openh323/h460/h460_std17.h
 include/openh323/h460/h460_std18.h
 include/openh323/h460/h460_std23.h
@@ -107,21 +110,6 @@ include/openh323/t38proto.h
 include/openh323/transports.h
 include/openh323/x224.h
 include/openh323/x880.h
-lib/h323plus/
-lib/h323plus/codecs/
-lib/h323plus/codecs/audio/
-lib/h323plus/codecs/audio/g7221_audio_pwplugin.so
-lib/h323plus/codecs/audio/g7222_audio_pwplugin.so
-lib/h323plus/codecs/audio/g722_audio_pwplugin.so
-lib/h323plus/codecs/audio/g726_audio_pwplugin.so
-lib/h323plus/codecs/audio/gsm0610_audio_pwplugin.so
-lib/h323plus/codecs/audio/gsmamrcodec_pwplugin.so
-lib/h323plus/codecs/audio/ilbc_audio_pwplugin.so
-lib/h323plus/codecs/audio/ima_adpcm_audio_pwplugin.so
-lib/h323plus/codecs/audio/lpc10_audio_pwplugin.so
-lib/h323plus/codecs/audio/speex_audio_pwplugin.so
-lib/h323plus/codecs/video/
-lib/h323plus/codecs/video/h261-vic_video_pwplugin.so
 @lib lib/libh323.so.${LIBh323_VERSION}
 share/openh323/
 share/openh323/openh323u.mak
