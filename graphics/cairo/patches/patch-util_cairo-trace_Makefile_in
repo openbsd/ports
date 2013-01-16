@@ -1,0 +1,12 @@
+$OpenBSD: patch-util_cairo-trace_Makefile_in,v 1.4 2013/01/16 14:29:15 ajacoutot Exp $
+--- util/cairo-trace/Makefile.in.orig	Mon Oct 22 06:08:41 2012
++++ util/cairo-trace/Makefile.in	Wed Oct 24 03:51:46 2012
+@@ -399,7 +399,7 @@ libcairo_trace_la_CPPFLAGS = -DCAIRO_TRACE_OUTDIR="\"$
+ 			  $(AM_CPPFLAGS)
+ 
+ libcairo_trace_la_CFLAGS = $(CAIRO_CFLAGS) $(real_pthread_CFLAGS)
+-libcairo_trace_la_LDFLAGS = -no-undefined
++libcairo_trace_la_LDFLAGS = -no-undefined -module -avoid-version
+ libcairo_trace_la_LIBADD = $(real_pthread_LIBS) -lz $(am__append_1) \
+ 	$(am__append_3)
+ EXTRA_DIST = \
