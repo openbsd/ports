@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.25 2012/11/27 08:14:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2013/01/16 14:18:53 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	H.323 gatekeeper
 
-DISTNAME=	gnugk-3.1
-REVISION=	0
+V=		3.2
+DISTNAME=	gnugk-${V}-2
+PKGNAME=	gnugk-${V}
+WRKDIST=	${WRKDIR}/gnugk-${V}
 
 CATEGORIES=	net telephony
 
@@ -19,16 +21,22 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += SDL c crypto expat h323 kvm lber ldap ldap_r m netsnmp
-WANTLIB += netsnmpagent netsnmpmibs pt pthread sasl2 ssh ssl stdc++
-WANTLIB += wrap
+WANTLIB += SDL c crypto expat h323 kvm lber ldap ldap_r lua5.1
+WANTLIB += m netsnmp netsnmpagent netsnmpmibs pt pthread ssh ssl
+WANTLIB += stdc++ wrap
+
+MODULES=	lang/lua
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=openh323gk/}
 
 BUILD_DEPENDS=	databases/mysql \
 		databases/postgresql
 
-LIB_DEPENDS=	net/h323plus \
+# XXX PaxHeaders
+TAR=		${LOCALBASE}/bin/gtar
+BUILD_DEPENDS +=archivers/gtar
+
+LIB_DEPENDS=	net/h323plus>=1.24.99 \
 		net/net-snmp \
 		security/libssh
 
@@ -42,7 +50,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		PTLIBDIR=`ptlib-config --ptlibdir`
 CONFIGURE_ARGS=	--disable-firebird \
 		--disable-unixodbc \
-		--with-pgsql-include-dir=${LOCALBASE}/include/postgresql
+		--with-pgsql-include-dir=${LOCALBASE}/include/postgresql \
+		--with-lua-include-dir=${MODLUA_INCL_DIR} \
+		--with-lua-lib-dir=${LOCALBASE}/lib
 
 # patented
 CONFIGURE_ARGS += --disable-h46018
@@ -53,6 +63,7 @@ MAKE_ENV=	CC=${CC} CPLUS=${CXX} \
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/docs/gnugk.1 ${WRKSRC}/configure
+	perl -pi -e 's,-llua,-llua${MODLUA_DEFAULT_VERSION} -lm,g' ${WRKSRC}/configure
 
 post-build:
 	cd ${WRKSRC}/addpasswd && \

@@ -1,7 +1,7 @@
-$OpenBSD: patch-docs_gnugk_1,v 1.6 2012/08/25 13:19:37 ajacoutot Exp $
---- docs/gnugk.1.orig	Wed May 23 10:27:26 2012
-+++ docs/gnugk.1	Sat Aug 25 10:08:30 2012
-@@ -79,7 +79,7 @@ Write trace log to the specified file.
+$OpenBSD: patch-docs_gnugk_1,v 1.7 2013/01/16 14:18:53 ajacoutot Exp $
+--- docs/gnugk.1.orig	Thu Aug 23 15:09:29 2012
++++ docs/gnugk.1	Wed Jan 16 08:12:25 2013
+@@ -78,7 +78,7 @@ Write trace log to the specified file.
  Set trace verbosity. The more \-t you add, the more verbose to output. For example, use \-ttttt to set the trace level to 5. 
  .El
  .Sh FILES
