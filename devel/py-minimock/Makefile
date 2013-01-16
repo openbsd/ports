@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2011/09/16 09:24:55 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/01/16 09:27:10 benoit Exp $
 
 COMMENT=		the simplest possible mock library, for Python
 
-MODPY_EGG_VERSION=	1.2.5
+MODPY_EGG_VERSION =	1.2.7
 DISTNAME=		MiniMock-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME:L}
-REVISION =		1
 
 CATEGORIES=		devel
 
-HOMEPAGE=		http://pypi.python.org/pypi/python-daemon/
+HOMEPAGE=		http://pypi.python.org/pypi/MiniMock
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes

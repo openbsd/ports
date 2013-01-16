@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/12 14:52:42 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/01/16 09:27:13 benoit Exp $
 lib/python${MODPY_VERSION}/site-packages/MiniMock-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/MiniMock-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/MiniMock-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -7,7 +7,7 @@ lib/python${MODPY_VERSION}/site-packages/MiniMock-${MODPY_EGG_VERSION}-py${MODPY
 lib/python${MODPY_VERSION}/site-packages/MiniMock-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/minimock.py
 lib/python${MODPY_VERSION}/site-packages/minimock.pyc
-share/doc/py-minimock/
-share/doc/py-minimock/changelog.txt
-share/doc/py-minimock/index.txt
-share/doc/py-minimock/license.txt
+share/doc/${MODPY_PY_PREFIX}minimock/
+share/doc/${MODPY_PY_PREFIX}minimock/changelog.rst
+share/doc/${MODPY_PY_PREFIX}minimock/index.rst
+share/doc/${MODPY_PY_PREFIX}minimock/license.txt
