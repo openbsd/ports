@@ -1,0 +1,12 @@
+$OpenBSD: patch-include_begin_code_h,v 1.1 2013/01/16 01:49:02 brad Exp $
+--- include/begin_code.h.orig	Tue Jan 15 19:09:01 2013
++++ include/begin_code.h	Tue Jan 15 19:09:45 2013
+@@ -77,7 +77,7 @@
+ #   define DECLSPEC
+ #  endif
+ # else
+-#  if defined(__GNUC__) && __GNUC__ >= 4
++#  if defined(__GNUC__) && __GNUC__ >= 3
+ #   define DECLSPEC	__attribute__ ((visibility("default")))
+ #  else
+ #   define DECLSPEC

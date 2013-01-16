@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.88 2013/01/12 12:34:21 brad Exp $
+# $OpenBSD: Makefile,v 1.89 2013/01/16 01:49:02 brad Exp $
 
 # requires ELF visibility support when on a shared arch
-ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${NO_SHARED_ARCHS}
+ONLY_FOR_ARCHS=	${GCC3_ARCHS} ${GCC4_ARCHS} ${NO_SHARED_ARCHS}
 
 COMMENT=	cross-platform multimedia library
 
