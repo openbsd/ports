@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/01/14 16:19:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2013/01/16 12:20:40 sthen Exp $
 
 ONLY_FOR_ARCHS=i386
 
@@ -59,8 +59,8 @@ do-install:
 	mkdir ${SML_BASE} ${SML_BINDIR} ${SML_LIBDIR}
 	tar -C ${WRKDIR} -cf - bin | tar -C ${SML_BASE} -xf -
 	tar -C ${WRKDIR} -cf - lib | tar -C ${SML_BASE} -xf -
-	# Remove the ports' non-SML binaries
-	rm ${SML_BASE}/bin/{g,}cc ${SML_BASE}/bin/{g,c}++
+	# Remove symlinks which may have been copied if ccache was used
+	rm -f ${SML_BASE}/bin/{g,}cc ${SML_BASE}/bin/{g,c}++
 	cd ${PREFIX}/bin && \
 	for file in ${SML_EXES}; do \
 		ln -s ../smlnj/bin/$$file .; \
