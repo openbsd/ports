@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.92 2013/01/14 02:14:41 brad Exp $
+# $OpenBSD: Makefile,v 1.93 2013/01/16 01:02:03 brad Exp $
 
 COMMENT=	audio/video converter and streamer
 
 V=		20121026
 DISTNAME=	ffmpeg-git-${V}
 PKGNAME=	ffmpeg-${V}
+REVISION=	0
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://comstyle.com/source/
 EXTRACT_SUFX=	.tar.xz
@@ -83,6 +84,7 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--disable-armv6 \
 		--disable-armv6t2 \
 		--disable-armvfp \
+		--disable-avx \
 		--disable-debug \
 		--disable-indev=jack \
 		--disable-indev=oss \
