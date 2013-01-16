@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2012/12/18 07:01:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2013/01/16 07:09:50 ajacoutot Exp $
 
 COMMENT=	input assistive technology
 
 GNOME_PROJECT=	caribou
-GNOME_VERSION=	0.4.6
+GNOME_VERSION=	0.4.7
 
 SHARED_LIBS +=  caribou                   0.0 # 0.0
 
@@ -50,9 +50,7 @@ LIBTOOL_FLAGS=	--tag=disable-static
 MODPY_ADJ_FILES=tools/fix_gir.py \
 		tools/make_schema.py
 
-CONFIGURE_ARGS=	--disable-static \
-		--enable-gtk3-module \
-		--enable-gtk2-module
+CONFIGURE_ARGS=	--disable-static
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/caribou
 

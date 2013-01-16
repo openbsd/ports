@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/12/18 07:01:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/01/16 07:09:50 ajacoutot Exp $
 bin/caribou
 bin/caribou-preferences
 include/libcaribou/
@@ -9,6 +9,7 @@ lib/gtk-2.0/modules/libcaribou-gtk-module.so
 lib/gtk-3.0/modules/libcaribou-gtk-module.so
 lib/libcaribou.la
 @lib lib/libcaribou.so.${LIBcaribou_VERSION}
+lib/pkgconfig/caribou-1.0.pc
 lib/python${MODPY_VERSION}/site-packages/caribou/
 lib/python${MODPY_VERSION}/site-packages/caribou/__init__.py
 lib/python${MODPY_VERSION}/site-packages/caribou/__init__.pyc
@@ -102,6 +103,9 @@ share/locale/eu/LC_MESSAGES/caribou.mo
 share/locale/fa/LC_MESSAGES/caribou.mo
 share/locale/fi/LC_MESSAGES/caribou.mo
 share/locale/fr/LC_MESSAGES/caribou.mo
+share/locale/fur/
+share/locale/fur/LC_MESSAGES/
+share/locale/fur/LC_MESSAGES/caribou.mo
 share/locale/gl/LC_MESSAGES/caribou.mo
 share/locale/gu/LC_MESSAGES/caribou.mo
 share/locale/he/LC_MESSAGES/caribou.mo
@@ -144,6 +148,8 @@ share/locale/vi/LC_MESSAGES/caribou.mo
 share/locale/zh_CN/LC_MESSAGES/caribou.mo
 share/locale/zh_HK/LC_MESSAGES/caribou.mo
 share/locale/zh_TW/LC_MESSAGES/caribou.mo
+share/vala/vapi/caribou-1.0.deps
+share/vala/vapi/caribou-1.0.vapi
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/update-desktop-database
