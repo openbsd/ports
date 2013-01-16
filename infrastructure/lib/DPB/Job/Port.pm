@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.81 2013/01/13 14:04:00 espie Exp $
+# $OpenBSD: Port.pm,v 1.82 2013/01/16 10:38:56 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -261,45 +261,11 @@ sub need_checksum
 		for my $dist (values %{$info->{DIST}}) {
 			if (!-f $dist->listname) {
 				$need = 1;
+				$self->{need_list} = 1;
 			}
 		}
 	}
 	return $need;
-}
-
-my $gtar = DPB::PkgPath->new('archivers/gtar');
-
-sub list
-{
-	my ($self, $dist, $info) = @_;
-	my $name = $dist->filename;
-	my $output = $dist->listname;
-	my ($cmd, $tar);
-	if ($info->{DEPENDS}{$gtar} || $info->{BDEPENDS}{$gtar}) {
-		$tar = 'gtar';
-
-	} else {
-		$tar = 'tar';
-	}
-	if ($name =~ m/\.tar\.xz$/) {
-		$cmd = "xzcat $name|$tar tf -";
-	} elsif ($name =~ m/\.(tar\.bz2|tbz2|tbz)$/) {
-		$cmd = "bzip2 -dc $name|$tar tf -";
-	} elsif ($name =~ m/\.tar$/) {
-		$cmd = "$tar tf $name";
-	} elsif ($name =~ m/\.(tar\.gz|tgz)$/) {
-		$cmd = "gzip -dc $name|$tar tf -";
-	} elsif ($name =~ m/\.rar$/) {
-		$cmd = "unrar vb $name";
-	} elsif ($name =~ m/.zip$/) {
-		$cmd = "zipinfo -1 $name";
-	}
-	if (defined $cmd) {
-		$cmd .= "|gzip >$output";
-		File::Path::mkpath(File::Basename::dirname($output));
-		print "Running $cmd\n";
-		system($cmd);
-	}
 }
 
 sub run
@@ -307,14 +273,12 @@ sub run
 	my ($self, $core) = @_;
 	my $job = $core->job;
 	my $exit = $self->SUPER::checksum($core);
-	for my $dist (values %{$job->{v}{info}{DIST}}) {
-		if (!-f $dist->listname) {
-			$self->list($dist, $job->{v}{info});
-		}
+	if ($exit || !$self->{need_list}) {
+		exit($exit);
 	}
-	exit($exit);
+	$self->{phase} = 'list-distfiles';
+	$self->DPB::Task::Port::run($core);
 }
-
 
 package DPB::Task::Port::Serialized;
 our @ISA = qw(DPB::Task::Port);
@@ -391,12 +355,16 @@ sub run
 {
 	my ($self, $core) = @_;
 	my $job = $core->job;
+	my $try = 1;
 
 	while (1) {
+		$try++;
+		$self->try_lock($core);
 		if ($job->{locked}) {
+			print {$job->{builder}{lockperf}} $core->hostname, 
+			    ": $self->{phase}: $try seconds\n";
 			exit(0);
 		}
-		$self->try_lock($core);
 		sleep 1;
 	}
 }
@@ -421,14 +389,14 @@ sub run
 
 	$self->handle_output($job);
 	my @cmd = ('/usr/sbin/pkg_add', '-aI');
-	if ($job->{builder}->{update}) {
+	if ($job->{builder}{update}) {
 		push(@cmd, "-rqU", "-Dupdate", "-Dupdatedepends");
 	}
-	if ($job->{builder}->{forceupdate}) {
+	if ($job->{builder}{forceupdate}) {
 		push(@cmd,  "-Dinstalled");
 	}
 	print join(' ', @cmd, (sort keys %$dep)), "\n";
-	my $path = $job->{builder}->{fullrepo}.'/';
+	my $path = $job->{builder}{fullrepo}.'/';
 	$core->shell->env(PKG_PATH => $path)
 	    ->exec(OpenBSD::Paths->sudo, @cmd, (sort keys %$dep));
 	exit(1);
@@ -730,6 +698,7 @@ package DPB::Port::TaskFactory;
 my $repo = {
 	default => 'DPB::Task::Port',
 	checksum => 'DPB::Task::Port::Checksum',
+	'checksum-and-list' => 'DPB::Task::Port::ChecksumAndList',
 	clean => 'DPB::Task::Port::Clean',
 	'show-prepare-results' => 'DPB::Task::Port::PrepareResults',
 	fetch => 'DPB::Task::Port::Fetch',
@@ -866,7 +835,6 @@ sub add_normal_tasks
 	    $times->{$self->{v}} < ($hostprop->{small} // 120)) {
 		$small = 1;
 	}
-
 	if ($builder->{clean}) {
 		$self->insert_tasks(DPB::Task::Port::BaseClean->new('clean'));
 	}
