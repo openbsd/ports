@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.593 2013/01/14 19:31:42 jeremy Exp $
+# $OpenBSD: Makefile,v 1.594 2013/01/16 07:39:59 jasper Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
-     SUBDIR += amaya
      SUBDIR += analog
      SUBDIR += ap2-mod_fastcgi
      SUBDIR += ap2-mod_fcgid
