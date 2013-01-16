@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.379 2013/01/14 19:31:42 jeremy Exp $
+# $OpenBSD: Makefile,v 1.380 2013/01/16 20:25:47 sthen Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -376,7 +376,6 @@
      SUBDIR += xerces
      SUBDIR += xerces-c
      SUBDIR += xml2rfc
-     SUBDIR += xml2rfc,no_x11
      SUBDIR += xmlcatmgr
      SUBDIR += xmlto
      SUBDIR += xmlwf
