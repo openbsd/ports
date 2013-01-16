@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_dynamic-preprocessors_Makefile_in,v 1.6 2012/09/26 02:11:05 lteo Exp $
---- src/dynamic-preprocessors/Makefile.in.orig	Tue Jul 31 18:17:13 2012
-+++ src/dynamic-preprocessors/Makefile.in	Sat Aug 11 17:32:10 2012
-@@ -989,8 +989,8 @@ maintainer-clean-generic:
+$OpenBSD: patch-src_dynamic-preprocessors_Makefile_in,v 1.7 2013/01/16 04:52:53 lteo Exp $
+--- src/dynamic-preprocessors/Makefile.in.orig	Thu Nov 15 23:53:02 2012
++++ src/dynamic-preprocessors/Makefile.in	Mon Dec  3 22:17:26 2012
+@@ -987,8 +987,8 @@ maintainer-clean-generic:
  	@echo "This command is intended for maintainers to use"
  	@echo "it deletes files that may require special tools to rebuild."
  	-test -z "$(BUILT_SOURCES)" || rm -f $(BUILT_SOURCES)
@@ -12,7 +12,7 @@ $OpenBSD: patch-src_dynamic-preprocessors_Makefile_in,v 1.6 2012/09/26 02:11:05 
  clean: clean-recursive
  
  clean-am: clean-generic clean-libtool clean-local \
-@@ -1297,20 +1297,7 @@ include/sf_seqnums.h: $(top_srcdir)/src/sfutil/sf_seqn
+@@ -1298,20 +1298,7 @@ include/file_lib.h: $(top_srcdir)/src/file-process/lib
  clean-local:
  	rm -rf include build
  

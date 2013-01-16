@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_log_c,v 1.4 2012/09/26 02:11:05 lteo Exp $
---- src/log.c.orig	Thu Jan 12 23:11:40 2012
-+++ src/log.c	Sat May 26 15:10:20 2012
-@@ -461,7 +461,7 @@ void PrintIPPkt(FILE * fp, int type, Packet * p)
+$OpenBSD: patch-src_log_c,v 1.5 2013/01/16 04:52:53 lteo Exp $
+--- src/log.c.orig	Fri Sep 21 02:09:13 2012
++++ src/log.c	Tue Oct  9 22:24:01 2012
+@@ -456,7 +456,7 @@ void PrintIPPkt(FILE * fp, int type, Packet * p)
      DEBUG_WRAP(DebugMessage(DEBUG_LOG, "PrintIPPkt type = %d\n", type););
  
      bzero((char *) timestamp, TIMEBUF_SIZE);
@@ -10,16 +10,7 @@ $OpenBSD: patch-src_log_c,v 1.4 2012/09/26 02:11:05 lteo Exp $
  
      /* dump the timestamp */
      fwrite(timestamp, strlen(timestamp), 1, fp);
-@@ -1017,7 +1017,7 @@ void PrintArpHeader(FILE * fp, Packet * p)
- 
-     bzero((struct in_addr *) &ip_addr, sizeof(struct in_addr));
-     bzero((char *) timestamp, TIMEBUF_SIZE);
--    ts_print((struct timeval *) & p->pkth->ts, timestamp);
-+    ts_print((struct sf_timeval32 *) & p->pkth->ts, timestamp);
- 
-     /* determine what to use as MAC src and dst */
-     if (p->eh != NULL)
-@@ -2108,7 +2108,7 @@ void PrintEapolPkt(FILE * fp, Packet * p)
+@@ -1943,7 +1943,7 @@ void PrintEapolPkt(FILE * fp, Packet * p)
  
  
      bzero((char *) timestamp, TIMEBUF_SIZE);
@@ -28,7 +19,7 @@ $OpenBSD: patch-src_log_c,v 1.4 2012/09/26 02:11:05 lteo Exp $
  
      /* dump the timestamp */
      fwrite(timestamp, strlen(timestamp), 1, fp);
-@@ -2282,7 +2282,7 @@ void PrintWifiPkt(FILE * fp, Packet * p)
+@@ -2117,7 +2117,7 @@ void PrintWifiPkt(FILE * fp, Packet * p)
  
  
      bzero((char *) timestamp, TIMEBUF_SIZE);

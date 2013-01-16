@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_ppm_c,v 1.5 2012/09/26 02:11:05 lteo Exp $
---- src/ppm.c.orig	Wed Jun  6 16:49:28 2012
-+++ src/ppm.c	Sat Aug 11 17:32:11 2012
-@@ -408,7 +408,7 @@ void ppm_rule_log(ppm_cfg_t *ppm_cfg, uint64_t pktcnt,
+$OpenBSD: patch-src_ppm_c,v 1.6 2013/01/16 04:52:53 lteo Exp $
+--- src/ppm.c.orig	Fri Sep 21 02:09:13 2012
++++ src/ppm.c	Tue Oct  9 22:18:53 2012
+@@ -456,7 +456,7 @@ void ppm_rule_log(ppm_cfg_t *ppm_cfg, uint64_t pktcnt,
              int i;
  
              if(!*timestamp)
@@ -10,8 +10,8 @@ $OpenBSD: patch-src_ppm_c,v 1.5 2012/09/26 02:11:05 lteo Exp $
  
              for (i=0; i< ppm_n_crules; i++)
              {
-@@ -456,7 +456,7 @@ void ppm_rule_log(ppm_cfg_t *ppm_cfg, uint64_t pktcnt,
-             int i;
+@@ -512,7 +512,7 @@ void ppm_rule_log(ppm_cfg_t *ppm_cfg, uint64_t pktcnt,
+             LogMessage(PPM_FMT_SUS_PKT, pktcnt, src, p->sp, dst, p->dp);
  
              if(!*timestamp)
 -                ts_print((struct timeval*)&p->pkth->ts, timestamp);
