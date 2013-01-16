@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/05/22 20:40:46 jasper Exp $
-share/emacs/
-share/emacs-python/
-share/emacs-python/pycomplete.py
-share/emacs/site-lisp/
-share/emacs/site-lisp/doctest-mode.el
-share/emacs/site-lisp/pycomplete.el
-share/emacs/site-lisp/python-mode.el
