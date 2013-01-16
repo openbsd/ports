@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1098 2013/01/14 19:31:42 jeremy Exp $
+# $OpenBSD: Makefile,v 1.1099 2013/01/16 07:47:10 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -93,7 +93,6 @@
      SUBDIR += eclipse
      SUBDIR += ectags
      SUBDIR += emacs-haskell
-     SUBDIR += emacs-python
      SUBDIR += ethos
      SUBDIR += fasm
      SUBDIR += ffcall
