@@ -1,0 +1,14 @@
+$OpenBSD: patch-deps_lua_src_lua_cmsgpack_c,v 1.1 2013/01/16 13:13:03 dcoppa Exp $
+--- deps/lua/src/lua_cmsgpack.c.orig	Tue Jan 15 15:08:53 2013
++++ deps/lua/src/lua_cmsgpack.c	Tue Jan 15 15:10:11 2013
+@@ -4,8 +4,8 @@
+ #include <string.h>
+ #include <assert.h>
+ 
+-#include "lua.h"
+-#include "lauxlib.h"
++#include <lua.h>
++#include <lauxlib.h>
+ 
+ #define LUACMSGPACK_VERSION     "lua-cmsgpack 0.3.0"
+ #define LUACMSGPACK_COPYRIGHT   "Copyright (C) 2012, Salvatore Sanfilippo"

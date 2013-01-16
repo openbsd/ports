@@ -1,0 +1,14 @@
+$OpenBSD: patch-deps_lua_src_lua_cjson_c,v 1.1 2013/01/16 13:13:03 dcoppa Exp $
+--- deps/lua/src/lua_cjson.c.orig	Tue Jan 15 15:08:47 2013
++++ deps/lua/src/lua_cjson.c	Tue Jan 15 15:09:31 2013
+@@ -41,8 +41,8 @@
+ #include <assert.h>
+ #include <string.h>
+ #include <math.h>
+-#include "lua.h"
+-#include "lauxlib.h"
++#include <lua.h>
++#include <lauxlib.h>
+ 
+ #include "strbuf.h"
+ 

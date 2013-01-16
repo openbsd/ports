@@ -1,0 +1,14 @@
+$OpenBSD: patch-deps_lua_src_lua_struct_c,v 1.1 2013/01/16 13:13:03 dcoppa Exp $
+--- deps/lua/src/lua_struct.c.orig	Tue Jan 15 15:08:57 2013
++++ deps/lua/src/lua_struct.c	Tue Jan 15 15:09:52 2013
+@@ -5,8 +5,8 @@
+ #include <string.h>
+ 
+ 
+-#include "lua.h"
+-#include "lauxlib.h"
++#include <lua.h>
++#include <lauxlib.h>
+ 
+ 
+ /*
