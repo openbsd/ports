@@ -1,4 +1,7 @@
-$OpenBSD: patch-util_Makefile_in,v 1.1 2012/08/16 17:03:18 eric Exp $
+$OpenBSD: patch-util_Makefile_in,v 1.2 2013/01/16 14:28:35 ajacoutot Exp $
+
+shm_unlink(), shm_open()
+
 --- util/Makefile.in.orig	Sun Jul 29 23:41:25 2012
 +++ util/Makefile.in	Sun Jul 29 23:41:45 2012
 @@ -61,7 +61,6 @@ check_PROGRAMS =

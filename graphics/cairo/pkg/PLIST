@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.14 2012/08/26 17:22:27 eric Exp $
+@comment $OpenBSD: PLIST,v 1.15 2013/01/16 14:28:35 ajacoutot Exp $
 %%SHARED%%
 include/cairo/
 include/cairo/cairo-deprecated.h
 include/cairo/cairo-features.h
 include/cairo/cairo-ft.h
-include/cairo/cairo-gl.h
 include/cairo/cairo-gobject.h
 include/cairo/cairo-pdf.h
 include/cairo/cairo-ps.h
@@ -16,13 +15,8 @@ include/cairo/cairo-version.h
 include/cairo/cairo-xcb.h
 include/cairo/cairo-xlib-xrender.h
 include/cairo/cairo-xlib.h
-include/cairo/cairo-xml.h
 include/cairo/cairo.h
 lib/cairo/
-@comment lib/cairo/cairo-fdr.a
-@comment lib/cairo/cairo-fdr.la
-@comment lib/cairo/libcairo-trace.a
-@comment lib/cairo/libcairo-trace.la
 lib/libcairo-gobject.a
 lib/libcairo-gobject.la
 lib/libcairo-script-interpreter.a
@@ -32,8 +26,6 @@ lib/libcairo.la
 lib/pkgconfig/
 lib/pkgconfig/cairo-fc.pc
 lib/pkgconfig/cairo-ft.pc
-lib/pkgconfig/cairo-gl.pc
-lib/pkgconfig/cairo-glx.pc
 lib/pkgconfig/cairo-gobject.pc
 lib/pkgconfig/cairo-pdf.pc
 lib/pkgconfig/cairo-png.pc
@@ -45,7 +37,6 @@ lib/pkgconfig/cairo-xcb-shm.pc
 lib/pkgconfig/cairo-xcb.pc
 lib/pkgconfig/cairo-xlib-xrender.pc
 lib/pkgconfig/cairo-xlib.pc
-lib/pkgconfig/cairo-xml.pc
 lib/pkgconfig/cairo.pc
 share/gtk-doc/
 share/gtk-doc/html/

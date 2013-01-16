@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2012/11/12 12:29:07 eric Exp $
+# $OpenBSD: Makefile,v 1.44 2013/01/16 14:28:35 ajacoutot Exp $
 
 COMMENT=		vector graphics library
 
@@ -9,15 +9,15 @@ SHARED_LIBS+=		cairo-script-interpreter 1.0
 CATEGORIES=		graphics
 DPB_PROPERTIES=		parallel
 EXTRACT_SUFX=		.tar.xz
+REVISION=		0
 
 HOMEPAGE=		http://cairographics.org/
 
 MAINTAINER=		Eric Faurot <eric@openbsd.org>
 
-WANTLIB=		GL X11 Xau Xdamage Xdmcp Xext Xfixes Xrender Xxf86vm \
-			drm expat ffi fontconfig freetype glib-2.0 gobject-2.0 \
-			gthread-2.0 m pcre pixman-1 png pthread-stubs pthread \
-			stdc++ xcb xcb-render xcb-shm z
+WANTLIB += X11 Xau Xdmcp Xext Xrender expat ffi fontconfig freetype
+WANTLIB += glib-2.0 gobject-2.0 gthread-2.0 m pcre pixman-1 png
+WANTLIB += pthread pthread-stubs xcb xcb-render xcb-shm z
 
 # LGPLv2.1 / MPL 1.1
 PERMIT_PACKAGE_CDROM=	Yes
@@ -37,8 +37,18 @@ LIB_DEPENDS=		graphics/png \
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--enable-gl \
-			--enable-tee \
-			--enable-xml
+			--disable-gtk-doc
+
+# needed for firefox
+CONFIGURE_ARGS +=	--enable-tee
+
+# If one of these tools is found at configure stage, it might be used,
+# no matter whether we use --disable-gtk-doc or not.
+CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
+		ac_cv_path_GTKDOC_REBASE="" \
+		ac_cv_path_GTKDOC_MKPDF=""
+
+post-install:
+	rm ${PREFIX}/lib/cairo/*.{a,la}
 
 .include <bsd.port.mk>
