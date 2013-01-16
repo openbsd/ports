@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/12/21 09:42:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2013/01/16 11:17:18 sthen Exp $
 
 COMMENT=		Scheme and language framework for the Java platform
 
@@ -30,6 +30,15 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-kawa-frontend
 CONFIGURE_ENV=		JAVAC=${JAVA_HOME}/bin/javac \
 			JAVA=${JAVA_HOME}/bin/java
+
+.include <bsd.port.arch.mk>
+# fails with this on i386, fails without this on amd64, unsure about
+# other arch but lp64 is probably not a bad indicator.
+.if ${PROPERTIES:Mlp64}
+MAKE_ENV=		SLIB_JAVAFLAGS=-Xmx1200M
+.else
+MAKE_ENV=		SLIB_JAVAFLAGS=-Xmx800M
+.endif
 
 pre-patch:
 	find ${WRKSRC} -type f | \
