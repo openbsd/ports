@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/01/16 14:18:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2013/01/16 14:36:00 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ V=		1_24_99
 DISTNAME=	h323plus-v${V}
 PKGNAME=	h323plus-${V:S/_/./g}
 CATEGORIES=	net devel
+REVISION=	0
 
 SHARED_LIBS=	h323	4.0    # 1.25.1
 
