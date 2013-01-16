@@ -1,8 +1,0 @@
-#!/bin/sh
-#
-# $Id: xml2rfc.no_x11,v 1.3 2003/12/27 23:35:46 jose Exp $
-
-tclsh=y0y0y0/bin/tclsh8.4
-xml2rfc=y0y0y0/share/xml2rfc/xml2rfc.tcl
-
-exec $tclsh $xml2rfc xml2rfc $@

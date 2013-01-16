@@ -1,10 +1,10 @@
 #!/bin/sh
 #
-# $Id: xml2rfc,v 1.4 2003/12/27 23:35:46 jose Exp $
+# $Id: xml2rfc,v 1.5 2013/01/16 20:25:30 sthen Exp $
 
-wish=y0y0y0/bin/wish8.4
-tclsh=y0y0y0/bin/tclsh8.4
-xml2rfc=y0y0y0/share/xml2rfc/xml2rfc.tcl
+wish=${MODTK_BIN}
+tclsh=${MODTCL_BIN}
+xml2rfc=${TRUEPREFIX}/share/xml2rfc/xml2rfc.tcl
 
 if [ $# -gt 0 ]; then
 	exec $tclsh $xml2rfc xml2rfc $@

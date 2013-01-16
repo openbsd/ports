@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.33 2010/08/31 08:15:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2013/01/16 20:25:30 sthen Exp $
 
 COMMENT=	convert memos written in XML to the RFC format
 
-VERSION=	1.33
-DISTNAME=	xml2rfc-${VERSION}
+DISTNAME=	xml2rfc-1.34
 CATEGORIES=	textproc
 
 EXTRACT_SUFX=	.tgz
@@ -12,35 +11,18 @@ HOMEPAGE=	http://xml.resource.org/
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
-# no real license, just "any lawful use is allowed"
-PERMIT_PACKAGE_CDROM=	No
-PERMIT_PACKAGE_FTP=	No
-PERMIT_DISTFILES_CDROM=	No
-PERMIT_DISTFILES_FTP=	No
+# BSD
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-FLAVORS=	no_x11
-FLAVOR?=
-
-MODTCL_VERSION=	8.4
-MODTK_VERSION=	8.4
-
-.if ${FLAVOR:L} == "no_x11"
-MODULES=	lang/tcl
-RUN_DEPENDS=	${MODTCL_RUN_DEPENDS}
-.else
 MODULES+=	x11/tk
 RUN_DEPENDS+=	${MODTK_RUN_DEPENDS}
-.endif
-
-# XXX could use MODTCL_BIN etc. instead
-do-build:
-.if ${FLAVOR:L} == "no_x11"
-	sed s,y0y0y0,${PREFIX}, ${FILESDIR}/xml2rfc.no_x11 >${WRKSRC}/xml2rfc
-.else
-	sed s,y0y0y0,${PREFIX}, ${FILESDIR}/xml2rfc >${WRKSRC}/xml2rfc
-.endif
-
 NO_REGRESS=	Yes
+
+do-build:
+	${SUBST_CMD} -c ${FILESDIR}/xml2rfc ${WRKSRC}/xml2rfc
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/xml2rfc ${PREFIX}/bin/xml2rfc

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/05/16 08:43:54 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.10 2013/01/16 20:25:30 sthen Exp $
+@pkgpath textproc/xml2rfc,no_x11
 bin/xml2rfc
 share/doc/xml2rfc/
 share/doc/xml2rfc/README.html
@@ -6,14 +7,14 @@ share/doc/xml2rfc/README.txt
 share/doc/xml2rfc/README.xml
 share/doc/xml2rfc/draft-mrose-writing-rfcs.html
 share/doc/xml2rfc/draft-mrose-writing-rfcs.txt
+share/doc/xml2rfc/example.html
+share/doc/xml2rfc/example.txt
+share/doc/xml2rfc/example.xml
 share/doc/xml2rfc/rfc2629.dtd
 share/doc/xml2rfc/rfc2629.html
 share/doc/xml2rfc/rfc2629.rnc
 share/doc/xml2rfc/rfc2629.xml
 share/doc/xml2rfc/rfc2629.xsd
-share/doc/xml2rfc/sample.html
-share/doc/xml2rfc/sample.txt
-share/doc/xml2rfc/sample.xml
 share/doc/xml2rfc/test.txt
 share/doc/xml2rfc/test.xml
 share/xml2rfc/
