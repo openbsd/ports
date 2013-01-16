@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2012/10/28 23:27:58 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2013/01/16 18:31:25 kili Exp $
 
 COMMENT =		Haskell API search engine
 
 DISTNAME =		hoogle-4.2.11
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel
 HOMEPAGE =		http://www.haskell.org/hoogle/
 
