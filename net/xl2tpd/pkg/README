@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2013/01/15 23:02:19 sthen Exp $
+$OpenBSD: README,v 1.2 2013/01/16 20:54:40 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -25,7 +25,12 @@ You must send the 'c'onnect command to actually bring up a session;
 configuring it and starting the daemon is not sufficient.
 
 xl2tpd makes a connection via L2TP, but uses pppd(8) to carry out most
-operations; therefore any PPP-related configuration is done via pppd.
+operations; therefore most PPP-related configuration is done via pppd's
+configuration files; for an example of how to configure this, see
+${TRUEPREFIX}/share/examples/xl2tpd/ppp-options.xl2tpd. You will also need
+to add the _xl2tpd user to the group 'network' in /etc/group in order to
+allow it to start pppd.
+
 Also note that a free ppp(4) interface must exist before xl2tpd brings
 up a connection; you could create an /etc/hostname.ppp0 file simply
 containing the word "up".

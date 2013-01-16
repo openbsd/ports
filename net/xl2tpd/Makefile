@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/01/15 23:02:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2013/01/16 20:54:40 sthen Exp $
 
 COMMENT=	l2tp client/server
 
 DISTNAME=	xl2tpd-1.3.1
+REVISION=	0
 
 CATEGORIES=	net
 
