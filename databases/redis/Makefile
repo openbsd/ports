@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2013/01/16 13:13:03 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.49 2013/01/17 07:58:29 dcoppa Exp $
 
 COMMENT =		persistent key-value database
 DISTNAME =		redis-2.6.8
@@ -40,7 +40,7 @@ DBDIR =			/var/redis
 SUBST_VARS +=		DBDIR
 
 pre-configure:
-	cp ${WRKSRC}/deps/lua/src/strbuf.* ${WRKSRC}/src/
+	cp ${WRKSRC}/deps/lua/src/strbuf.? ${WRKSRC}/src/
 	cp ${WRKSRC}/deps/lua/src/lua_*.c ${WRKSRC}/src/
 	${SUBST_CMD} ${WRKSRC}/src/Makefile \
 		${WRKSRC}/src/redis.c
