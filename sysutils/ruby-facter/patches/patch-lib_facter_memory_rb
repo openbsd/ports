@@ -1,7 +1,22 @@
-$OpenBSD: patch-lib_facter_memory_rb,v 1.3 2012/05/05 19:29:49 robert Exp $
---- lib/facter/memory.rb.orig	Sat May  5 21:25:21 2012
-+++ lib/facter/memory.rb	Sat May  5 21:25:35 2012
-@@ -93,7 +93,7 @@ if Facter.value(:kernel) == "AIX" and Facter.value(:id
+$OpenBSD: patch-lib_facter_memory_rb,v 1.4 2013/01/17 19:14:52 robert Exp $
+--- lib/facter/memory.rb.orig	Thu Dec 27 19:05:12 2012
++++ lib/facter/memory.rb	Thu Jan 17 20:06:09 2013
+@@ -58,6 +58,14 @@ Facter.add("SwapFree") do
+ end
+ 
+ Facter.add("SwapEncrypted") do
++  confine :kernel => :OpenBSD
++  setcode do
++    encrypted = !Facter::Util::Resolution.exec("/sbin/sysctl -n hw.pagesize").to_i.zero?
++    encrypted
++  end
++end
++
++Facter.add("SwapEncrypted") do
+   confine :kernel => :Darwin
+   setcode do
+     swap = Facter::Util::Resolution.exec('sysctl vm.swapusage')
+@@ -93,7 +101,7 @@ if Facter.value(:kernel) == "AIX" and Facter.value(:id
  end
  
  if Facter.value(:kernel) == "OpenBSD"
