@@ -1,12 +1,15 @@
-# $OpenBSD: Makefile,v 1.10 2012/10/28 17:48:24 fgsch Exp $
+# $OpenBSD: Makefile,v 1.11 2013/01/17 23:39:32 fgsch Exp $
 
 COMMENT =	japanese skk input engine for ibus
 
 DISTNAME =	ibus-skk-1.4.1
+REVISION =	0
 
 CATEGORIES =	inputmethods japanese
 
 HOMEPAGE =	http://github.com/ueno/ibus-skk/
+
+MAINTAINER =	Federico G. Schwindt <fgsch@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
