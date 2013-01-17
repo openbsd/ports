@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.12 2012/06/15 08:32:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2013/01/17 23:31:42 fgsch Exp $
+@bin bin/ibus
 @bin bin/ibus-daemon
 bin/ibus-setup
 include/ibus-1.0/
@@ -12,6 +13,7 @@ include/ibus-1.0/ibusconfigservice.h
 include/ibus-1.0/ibusdebug.h
 include/ibus-1.0/ibusengine.h
 include/ibus-1.0/ibusenginedesc.h
+include/ibus-1.0/ibusenginesimple.h
 include/ibus-1.0/ibusenumtypes.h
 include/ibus-1.0/ibuserror.h
 include/ibus-1.0/ibusfactory.h
@@ -19,6 +21,7 @@ include/ibus-1.0/ibushotkey.h
 include/ibus-1.0/ibusinputcontext.h
 include/ibus-1.0/ibuskeymap.h
 include/ibus-1.0/ibuskeys.h
+include/ibus-1.0/ibuskeysyms-compat.h
 include/ibus-1.0/ibuskeysyms.h
 include/ibus-1.0/ibuslookuptable.h
 include/ibus-1.0/ibusobject.h
@@ -43,123 +46,38 @@ lib/gtk-3.0/3.0.0/immodules/im-ibus.so
 @comment lib/libibus-1.0.la
 @lib lib/libibus-1.0.so.${LIBibus-1.0_VERSION}
 lib/pkgconfig/ibus-1.0.pc
-lib/python${MODPY_VERSION}/site-packages/ibus/
-lib/python${MODPY_VERSION}/site-packages/ibus/__init__.py
-lib/python${MODPY_VERSION}/site-packages/ibus/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/ibus/__init__.pyo
-lib/python${MODPY_VERSION}/site-packages/ibus/_config.py
-lib/python${MODPY_VERSION}/site-packages/ibus/_config.pyc
-lib/python${MODPY_VERSION}/site-packages/ibus/_config.pyo
-lib/python${MODPY_VERSION}/site-packages/ibus/_gtk.py
-lib/python${MODPY_VERSION}/site-packages/ibus/_gtk.pyc
-lib/python${MODPY_VERSION}/site-packages/ibus/_gtk.pyo
-lib/python${MODPY_VERSION}/site-packages/ibus/application.py
-lib/python${MODPY_VERSION}/site-packages/ibus/application.pyc
-lib/python${MODPY_VERSION}/site-packages/ibus/application.pyo
-lib/python${MODPY_VERSION}/site-packages/ibus/ascii.py
-lib/python${MODPY_VERSION}/site-packages/ibus/ascii.pyc
-lib/python${MODPY_VERSION}/site-packages/ibus/ascii.pyo
-lib/python${MODPY_VERSION}/site-packages/ibus/attribute.py
-lib/python${MODPY_VERSION}/site-packages/ibus/attribute.pyc
-lib/python${MODPY_VERSION}/site-packages/ibus/attribute.pyo
-lib/python${MODPY_VERSION}/site-packages/ibus/bus.py
-lib/python${MODPY_VERSION}/site-packages/ibus/bus.pyc
-lib/python${MODPY_VERSION}/site-packages/ibus/bus.pyo
-lib/python${MODPY_VERSION}/site-packages/ibus/common.py
-lib/python${MODPY_VERSION}/site-packages/ibus/common.pyc
-lib/python${MODPY_VERSION}/site-packages/ibus/common.pyo
-lib/python${MODPY_VERSION}/site-packages/ibus/component.py
-lib/python${MODPY_VERSION}/site-packages/ibus/component.pyc
-lib/python${MODPY_VERSION}/site-packages/ibus/component.pyo
-lib/python${MODPY_VERSION}/site-packages/ibus/config.py
-lib/python${MODPY_VERSION}/site-packages/ibus/config.pyc
-lib/python${MODPY_VERSION}/site-packages/ibus/config.pyo
-lib/python${MODPY_VERSION}/site-packages/ibus/engine.py
-lib/python${MODPY_VERSION}/site-packages/ibus/engine.pyc
-lib/python${MODPY_VERSION}/site-packages/ibus/engine.pyo
-lib/python${MODPY_VERSION}/site-packages/ibus/enginedesc.py
-lib/python${MODPY_VERSION}/site-packages/ibus/enginedesc.pyc
-lib/python${MODPY_VERSION}/site-packages/ibus/enginedesc.pyo
-lib/python${MODPY_VERSION}/site-packages/ibus/exception.py
-lib/python${MODPY_VERSION}/site-packages/ibus/exception.pyc
-lib/python${MODPY_VERSION}/site-packages/ibus/exception.pyo
-lib/python${MODPY_VERSION}/site-packages/ibus/factory.py
-lib/python${MODPY_VERSION}/site-packages/ibus/factory.pyc
-lib/python${MODPY_VERSION}/site-packages/ibus/factory.pyo
-lib/python${MODPY_VERSION}/site-packages/ibus/inputcontext.py
-lib/python${MODPY_VERSION}/site-packages/ibus/inputcontext.pyc
-lib/python${MODPY_VERSION}/site-packages/ibus/inputcontext.pyo
-lib/python${MODPY_VERSION}/site-packages/ibus/interface/
-lib/python${MODPY_VERSION}/site-packages/ibus/interface/__init__.py
-lib/python${MODPY_VERSION}/site-packages/ibus/interface/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/ibus/interface/__init__.pyo
-lib/python${MODPY_VERSION}/site-packages/ibus/interface/iconfig.py
-lib/python${MODPY_VERSION}/site-packages/ibus/interface/iconfig.pyc
-lib/python${MODPY_VERSION}/site-packages/ibus/interface/iconfig.pyo
-lib/python${MODPY_VERSION}/site-packages/ibus/interface/iengine.py
-lib/python${MODPY_VERSION}/site-packages/ibus/interface/iengine.pyc
-lib/python${MODPY_VERSION}/site-packages/ibus/interface/iengine.pyo
-lib/python${MODPY_VERSION}/site-packages/ibus/interface/ienginefactory.py
-lib/python${MODPY_VERSION}/site-packages/ibus/interface/ienginefactory.pyc
-lib/python${MODPY_VERSION}/site-packages/ibus/interface/ienginefactory.pyo
-lib/python${MODPY_VERSION}/site-packages/ibus/interface/iibus.py
-lib/python${MODPY_VERSION}/site-packages/ibus/interface/iibus.pyc
-lib/python${MODPY_VERSION}/site-packages/ibus/interface/iibus.pyo
-lib/python${MODPY_VERSION}/site-packages/ibus/interface/iinputcontext.py
-lib/python${MODPY_VERSION}/site-packages/ibus/interface/iinputcontext.pyc
-lib/python${MODPY_VERSION}/site-packages/ibus/interface/iinputcontext.pyo
-lib/python${MODPY_VERSION}/site-packages/ibus/interface/inotifications.py
-lib/python${MODPY_VERSION}/site-packages/ibus/interface/inotifications.pyc
-lib/python${MODPY_VERSION}/site-packages/ibus/interface/inotifications.pyo
-lib/python${MODPY_VERSION}/site-packages/ibus/interface/ipanel.py
-lib/python${MODPY_VERSION}/site-packages/ibus/interface/ipanel.pyc
-lib/python${MODPY_VERSION}/site-packages/ibus/interface/ipanel.pyo
-lib/python${MODPY_VERSION}/site-packages/ibus/keysyms.py
-lib/python${MODPY_VERSION}/site-packages/ibus/keysyms.pyc
-lib/python${MODPY_VERSION}/site-packages/ibus/keysyms.pyo
-lib/python${MODPY_VERSION}/site-packages/ibus/lang.py
-lib/python${MODPY_VERSION}/site-packages/ibus/lang.pyc
-lib/python${MODPY_VERSION}/site-packages/ibus/lang.pyo
-lib/python${MODPY_VERSION}/site-packages/ibus/lookuptable.py
-lib/python${MODPY_VERSION}/site-packages/ibus/lookuptable.pyc
-lib/python${MODPY_VERSION}/site-packages/ibus/lookuptable.pyo
-lib/python${MODPY_VERSION}/site-packages/ibus/modifier.py
-lib/python${MODPY_VERSION}/site-packages/ibus/modifier.pyc
-lib/python${MODPY_VERSION}/site-packages/ibus/modifier.pyo
-lib/python${MODPY_VERSION}/site-packages/ibus/notifications.py
-lib/python${MODPY_VERSION}/site-packages/ibus/notifications.pyc
-lib/python${MODPY_VERSION}/site-packages/ibus/notifications.pyo
-lib/python${MODPY_VERSION}/site-packages/ibus/object.py
-lib/python${MODPY_VERSION}/site-packages/ibus/object.pyc
-lib/python${MODPY_VERSION}/site-packages/ibus/object.pyo
-lib/python${MODPY_VERSION}/site-packages/ibus/observedpath.py
-lib/python${MODPY_VERSION}/site-packages/ibus/observedpath.pyc
-lib/python${MODPY_VERSION}/site-packages/ibus/observedpath.pyo
-lib/python${MODPY_VERSION}/site-packages/ibus/panel.py
-lib/python${MODPY_VERSION}/site-packages/ibus/panel.pyc
-lib/python${MODPY_VERSION}/site-packages/ibus/panel.pyo
-lib/python${MODPY_VERSION}/site-packages/ibus/property.py
-lib/python${MODPY_VERSION}/site-packages/ibus/property.pyc
-lib/python${MODPY_VERSION}/site-packages/ibus/property.pyo
-lib/python${MODPY_VERSION}/site-packages/ibus/serializable.py
-lib/python${MODPY_VERSION}/site-packages/ibus/serializable.pyc
-lib/python${MODPY_VERSION}/site-packages/ibus/serializable.pyo
-lib/python${MODPY_VERSION}/site-packages/ibus/text.py
-lib/python${MODPY_VERSION}/site-packages/ibus/text.pyc
-lib/python${MODPY_VERSION}/site-packages/ibus/text.pyo
-lib/python${MODPY_VERSION}/site-packages/ibus/utility.py
-lib/python${MODPY_VERSION}/site-packages/ibus/utility.pyc
-lib/python${MODPY_VERSION}/site-packages/ibus/utility.pyo
-@bin libexec/ibus-gconf
-libexec/ibus-ui-gtk
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/IBus.py
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/IBus.pyc
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/IBus.pyo
+@bin libexec/ibus-dconf
+@bin libexec/ibus-engine-simple
+@bin libexec/ibus-ui-gtk3
 @bin libexec/ibus-x11
+share/GConf/
+share/GConf/gsettings/
+share/GConf/gsettings/ibus.convert
 share/applications/ibus-setup.desktop
 share/applications/ibus.desktop
 @sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/autostart/
 @sample ${SYSCONFDIR}/xdg/autostart/ibus.desktop
 share/doc/pkg-readmes/${FULLPKGNAME}
+share/examples/ibus/
+share/examples/ibus/bash_completion.d/
+@sample ${SYSCONFDIR}/bash_completion.d/
+share/examples/ibus/bash_completion.d/ibus.bash
+@sample ${SYSCONFDIR}/bash_completion.d/ibus.bash
+share/examples/ibus/dconf/
+share/examples/ibus/dconf/db/
+share/examples/ibus/dconf/db/ibus.d/
+@sample ${SYSCONFDIR}/dconf/db/ibus.d/
+share/examples/ibus/dconf/db/ibus.d/00-upstream-settings
+@sample ${SYSCONFDIR}/dconf/db/ibus.d/00-upstream-settings
+share/examples/ibus/dconf/profile/
+share/examples/ibus/dconf/profile/ibus
+@sample ${SYSCONFDIR}/dconf/profile/ibus
 share/gir-1.0/IBus-1.0.gir
+share/glib-2.0/schemas/org.freedesktop.ibus.gschema.xml
 share/gtk-doc/html/ibus/
 share/gtk-doc/html/ibus/IBusAttrList.html
 share/gtk-doc/html/ibus/IBusAttribute.html
@@ -183,6 +101,9 @@ share/gtk-doc/html/ibus/IBusProxy.html
 share/gtk-doc/html/ibus/IBusSerializable.html
 share/gtk-doc/html/ibus/IBusService.html
 share/gtk-doc/html/ibus/IBusText.html
+share/gtk-doc/html/ibus/annotation-glossary.html
+share/gtk-doc/html/ibus/api-index-deprecated.html
+share/gtk-doc/html/ibus/api-index-full.html
 share/gtk-doc/html/ibus/ch01.html
 share/gtk-doc/html/ibus/ch02.html
 share/gtk-doc/html/ibus/ch03.html
@@ -190,11 +111,15 @@ share/gtk-doc/html/ibus/ch04.html
 share/gtk-doc/html/ibus/ch05.html
 share/gtk-doc/html/ibus/ch06.html
 share/gtk-doc/html/ibus/home.png
+share/gtk-doc/html/ibus/ibus-IBusEngineSimple.html
 share/gtk-doc/html/ibus/ibus-IBusKeysyms.html
 share/gtk-doc/html/ibus/ibus-ibusdebug.html
 share/gtk-doc/html/ibus/ibus-ibuserror.html
+share/gtk-doc/html/ibus/ibus-ibuskeys.html
+share/gtk-doc/html/ibus/ibus-ibuskeysyms-compat.html
 share/gtk-doc/html/ibus/ibus-ibusshare.html
 share/gtk-doc/html/ibus/ibus-ibustypes.html
+share/gtk-doc/html/ibus/ibus-ibusutil.html
 share/gtk-doc/html/ibus/ibus-ibusversion.html
 share/gtk-doc/html/ibus/ibus-ibusxml.html
 share/gtk-doc/html/ibus/ibus.devhelp2
@@ -206,10 +131,10 @@ share/gtk-doc/html/ibus/style.css
 share/gtk-doc/html/ibus/up.png
 share/ibus/
 share/ibus/component/
-share/ibus/component/gconf.xml
+share/ibus/component/dconf.xml
 share/ibus/component/gtkpanel.xml
+share/ibus/component/simple.xml
 share/ibus/engine/
-share/ibus/icons/
 share/ibus/keymaps/
 share/ibus/keymaps/common
 share/ibus/keymaps/in
@@ -240,44 +165,6 @@ share/ibus/setup/main.py
 share/ibus/setup/main.pyc
 share/ibus/setup/main.pyo
 share/ibus/setup/setup.ui
-share/ibus/ui/
-share/ibus/ui/gtk/
-share/ibus/ui/gtk/candidatepanel.py
-share/ibus/ui/gtk/candidatepanel.pyc
-share/ibus/ui/gtk/candidatepanel.pyo
-share/ibus/ui/gtk/engineabout.py
-share/ibus/ui/gtk/engineabout.pyc
-share/ibus/ui/gtk/engineabout.pyo
-share/ibus/ui/gtk/handle.py
-share/ibus/ui/gtk/handle.pyc
-share/ibus/ui/gtk/handle.pyo
-share/ibus/ui/gtk/i18n.py
-share/ibus/ui/gtk/i18n.pyc
-share/ibus/ui/gtk/i18n.pyo
-share/ibus/ui/gtk/icon.py
-share/ibus/ui/gtk/icon.pyc
-share/ibus/ui/gtk/icon.pyo
-share/ibus/ui/gtk/languagebar.py
-share/ibus/ui/gtk/languagebar.pyc
-share/ibus/ui/gtk/languagebar.pyo
-share/ibus/ui/gtk/main.py
-share/ibus/ui/gtk/main.pyc
-share/ibus/ui/gtk/main.pyo
-share/ibus/ui/gtk/menu.py
-share/ibus/ui/gtk/menu.pyc
-share/ibus/ui/gtk/menu.pyo
-share/ibus/ui/gtk/notifications.py
-share/ibus/ui/gtk/notifications.pyc
-share/ibus/ui/gtk/notifications.pyo
-share/ibus/ui/gtk/panel.py
-share/ibus/ui/gtk/panel.pyc
-share/ibus/ui/gtk/panel.pyo
-share/ibus/ui/gtk/propitem.py
-share/ibus/ui/gtk/propitem.pyc
-share/ibus/ui/gtk/propitem.pyo
-share/ibus/ui/gtk/toolitem.py
-share/ibus/ui/gtk/toolitem.pyc
-share/ibus/ui/gtk/toolitem.pyo
 share/icons/hicolor/16x16/apps/ibus-keyboard.png
 share/icons/hicolor/22x22/apps/ibus-keyboard.png
 share/icons/hicolor/24x24/apps/ibus-keyboard.png
@@ -289,12 +176,15 @@ share/icons/hicolor/scalable/apps/ibus-setup.svg
 share/icons/hicolor/scalable/apps/ibus.svg
 share/locale/ar/LC_MESSAGES/ibus10.mo
 share/locale/as/LC_MESSAGES/ibus10.mo
+share/locale/bg/LC_MESSAGES/ibus10.mo
 share/locale/bn_IN/LC_MESSAGES/ibus10.mo
 share/locale/ca/LC_MESSAGES/ibus10.mo
 share/locale/da/LC_MESSAGES/ibus10.mo
 share/locale/de/LC_MESSAGES/ibus10.mo
 share/locale/en_GB/LC_MESSAGES/ibus10.mo
 share/locale/es/LC_MESSAGES/ibus10.mo
+share/locale/et/LC_MESSAGES/ibus10.mo
+share/locale/eu/LC_MESSAGES/ibus10.mo
 share/locale/fa/LC_MESSAGES/ibus10.mo
 share/locale/fr/LC_MESSAGES/ibus10.mo
 share/locale/gu/LC_MESSAGES/ibus10.mo
@@ -307,6 +197,7 @@ share/locale/ko/LC_MESSAGES/ibus10.mo
 share/locale/lv/LC_MESSAGES/ibus10.mo
 share/locale/ml/LC_MESSAGES/ibus10.mo
 share/locale/mr/LC_MESSAGES/ibus10.mo
+share/locale/nb/LC_MESSAGES/ibus10.mo
 share/locale/nl/LC_MESSAGES/ibus10.mo
 share/locale/or/LC_MESSAGES/ibus10.mo
 share/locale/pa/LC_MESSAGES/ibus10.mo
@@ -325,10 +216,10 @@ share/locale/vi/LC_MESSAGES/ibus10.mo
 share/locale/zh_CN/LC_MESSAGES/ibus10.mo
 share/locale/zh_HK/LC_MESSAGES/ibus10.mo
 share/locale/zh_TW/LC_MESSAGES/ibus10.mo
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
-${SCHEMAS_INSTDIR}/
-${SCHEMAS_INSTDIR}/ibus.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+share/vala/vapi/ibus-1.0.deps
+share/vala/vapi/ibus-1.0.vapi
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/gtk-query-immodules-2.0 > ${SYSCONFDIR}/gtk-2.0/gtk.immodules
 @unexec-delete %D/bin/gtk-query-immodules-2.0 > ${SYSCONFDIR}/gtk-2.0/gtk.immodules
 @exec %D/bin/gtk-query-immodules-3.0 > ${SYSCONFDIR}/gtk-3.0/gtk.immodules
@@ -337,5 +228,6 @@ ${SCHEMAS_INSTDIR}/ibus.schemas
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
-share/vala/vapi/ibus-1.0.deps
-share/vala/vapi/ibus-1.0.vapi
+@exec %D/bin/dconf update
+@unexec-delete %D/bin/dconf update
+@unexec-delete rm -f ${SYSCONFDIR}/dconf/db/ibus
