@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2012/10/10 09:49:20 rpe Exp $
+# $OpenBSD: Makefile,v 1.20 2013/01/17 21:28:14 rpe Exp $
 
 # NOTE for FLAVOR=src
 # - you can have up-to-date ${BSDSRCDIR}/distrib/sets/lists 
@@ -17,6 +17,7 @@ COMMENT =		database of packages for use with locate(1)
 # locate data is NOT MI, unfortunately
 # PKG_ARCH = ${ARCH}....
 DISTNAME =		pkglocatedb-0.6
+REVISION =		0
 DISTFILES =
 
 CATEGORIES =		databases
@@ -70,6 +71,7 @@ do-build:
 
 do-install:
 	${INSTALL_DATA} ${WRKBUILD}/pkglocatedb ${PREFIX}/share
+	${INSTALL_MAN} ${FILESDIR}/pkg_locate.1 ${PREFIX}/man/man1
 	${SUBST_CMD} -o root -g bin -c ${FILESDIR}/pkglocate ${PREFIX}/bin/pkg_locate
 	chmod ${BINMODE} ${PREFIX}/bin/pkg_locate
 	ln -s ${TRUEPREFIX}/bin/pkg_locate ${PREFIX}/bin/pkglocate
