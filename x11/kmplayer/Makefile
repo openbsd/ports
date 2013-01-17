@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2011/09/16 12:29:16 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/01/17 11:35:43 zhuk Exp $
 
-
-BROKEN=		Need to resolve various issues
-COMMENT=	front-end/embeddable kpart for mplayer
-CATEGORIES=	x11	x11/kde
+COMMENT=	front-end/embeddable KPart for MPlayer
+CATEGORIES=	x11 x11/kde
 DISTNAME=	kmplayer-0.6.4
 EXTRACT_SUFX=	.tar.bz2
 
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS=	kparts_kmplayer  0.0 \
 		kdeinit_kmplayer 0.0
@@ -31,21 +29,24 @@ MAKE_ENV=		${CONFIGURE_ENV}
 
 MAKE_FLAGS+=		${MODKDE_MAKE_FLAGS}
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_FTP=Yes
 PERMIT_PACKAGE_CDROM=Yes
 PERMIT_DISTFILES_FTP=Yes
 PERMIT_DISTFILES_CDROM=Yes
 WANTLIB=	ICE SM X11 Xext Xrender art_lgpl_2 artsflow artsflow_idl \
-		audiofile c esd glib-2.0.0.0 gmodule-2.0.0.0 gthread-2.0.0.0 \
-		jpeg kmedia2_idl kwalletclient m mad mcop ogg \
-		ossaudio png pthread qtmcop soundserver_idl stdc++ util vorbis \
+		audiofile c \
+		kmedia2_idl kwalletclient m mad mcop ogg \
+		png pthread qtmcop soundserver_idl stdc++ util vorbis \
 		vorbisenc vorbisfile z kdecore DCOP kdefx kdesu kdeui kio \
 		kmediaplayer kparts artskde
+WANTLIB += Xfixes Xt expat fam fontconfig freetype glib-2.0 gmodule-2.0
+WANTLIB += gthread-2.0 idn pcre sndio xcb
 
 LIB_DEPENDS=x11/kde/libs3
 
-RUN_DEPENDS=x11/mplayer
+RUN_DEPENDS=	devel/desktop-file-utils \
+		x11/mplayer
 
 SEPARATE_BUILD=flavored
 

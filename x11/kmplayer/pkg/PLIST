@@ -1,37 +1,27 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 19:26:29 espie Exp $
-bin/kmplayer
-${KDE}/
+@comment $OpenBSD: PLIST,v 1.5 2013/01/17 11:35:43 zhuk Exp $
+@bin bin/kmplayer
 ${KDE}/kparts_kmplayer.la
+@lib ${KDE}/libkparts_kmplayer.so.${LIBkparts_kmplayer_VERSION}
 lib/kdeinit_kmplayer.la
+@lib lib/libkdeinit_kmplayer.so.${LIBkdeinit_kmplayer_VERSION}
 share/applnk/
 share/applnk/Multimedia/
 share/applnk/Multimedia/More/
 share/applnk/Multimedia/More/kmplayer.desktop
 share/applnk/Multimedia/kmplayer.desktop
-share/apps/
 share/apps/kmplayer/
 share/apps/kmplayer/kmplayerpartui.rc
 share/apps/kmplayer/kmplayerui.rc
-share/config/
 share/config/kmplayerrc
-share/doc/HTML/
-share/doc/HTML/en/
 share/doc/HTML/en/kmplayer/
 share/doc/HTML/en/kmplayer/common
 share/doc/HTML/en/kmplayer/index.cache.bz2
 share/doc/HTML/en/kmplayer/index.docbook
-share/locale/
-share/locale/hu/
-share/locale/hu/LC_MESSAGES/
 share/locale/hu/LC_MESSAGES/kmplayer.mo
-share/mimelnk/
-share/mimelnk/application/
-share/mimelnk/application/x-applix.desktop
-share/mimelnk/application/x-mplayer2.desktop
-share/mimelnk/video/
-share/mimelnk/video/x-ms-asf.desktop
-share/mimelnk/video/x-ms-wmv.desktop
-share/services/
+@comment share/mimelnk/application/x-applix.desktop
+@comment share/mimelnk/application/x-mplayer2.desktop
+@comment share/mimelnk/video/x-ms-asf.desktop
+@comment share/mimelnk/video/x-ms-wmv.desktop
 share/services/kmplayer_component.desktop
-@exec echo "This port may require careful setup. See pkg_info kmplayer"
-%%SHARED%%
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
