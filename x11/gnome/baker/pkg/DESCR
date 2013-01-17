@@ -12,3 +12,6 @@ It features:
   file manager).
 * Create audio CDs from existing WAV, MP3, FLAC, and Ogg files.
 * Integrate with GConf for storage of application settings.
+
+To ensure correct operation of GnomeBaker, the user needs RW access to
+the CD/DVD device(s).
