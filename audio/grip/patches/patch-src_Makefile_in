@@ -1,15 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.3 2008/05/13 14:20:25 naddy Exp $
---- src/Makefile.in.orig	Thu Apr 15 19:51:47 2004
-+++ src/Makefile.in	Tue May 13 16:15:31 2008
-@@ -108,7 +108,6 @@ install_sh = @install_sh@
- INCLUDES = -I$(top_srcdir) -I$(includedir) \
- 	-DGNOME_ICONDIR=\""$(datadir)/pixmaps"\" \
-          -DG_LOG_DOMAIN=\"grip\" -DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
--        -I../intl -I$(top_srcdir)/intl \
- 	-DPREFIX=\""$(prefix)"\" \
-         -DSYSCONFDIR=\""$(sysconfdir)"\" \
-         -DDATADIR=\""$(datadir)"\" \
-@@ -199,7 +198,7 @@ LTCXXCOMPILE = $(LIBTOOL) --mode=compile $(CXX) $(DEFS
+$OpenBSD: patch-src_Makefile_in,v 1.4 2013/01/17 13:30:32 ajacoutot Exp $
+--- src/Makefile.in.orig	Sat Jan 29 19:34:17 2005
++++ src/Makefile.in	Thu Jan 17 14:17:27 2013
+@@ -203,7 +203,7 @@ LTCXXCOMPILE = $(LIBTOOL) --mode=compile $(CXX) $(DEFS
  	$(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) \
  	$(AM_CXXFLAGS) $(CXXFLAGS)
  CXXLD = $(CXX)

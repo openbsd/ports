@@ -5,5 +5,7 @@ MP3 (and other audio format) encoders, letting you take a disc and
 transform it easily straight into MP3s. Internet disc lookups are
 supported for retrieving track information from disc database servers.
 
-To encode MP3s an external encoder (like audio/lame or audio/bladeenc)
+To encode MP3s, an external encoder (like audio/lame or audio/bladeenc)
 is needed.
+To ensure correct operation of Grip, the user needs RW access to the
+CD/DVD device(s).

@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.5 2008/05/13 14:20:25 naddy Exp $
---- configure.orig	Mon Apr 26 19:19:32 2004
-+++ configure	Tue May 13 16:15:31 2008
-@@ -4140,7 +4140,7 @@ done
+$OpenBSD: patch-configure,v 1.6 2013/01/17 13:30:32 ajacoutot Exp $
+--- configure.orig	Sat Jun 25 20:40:07 2005
++++ configure	Thu Jan 17 13:44:53 2013
+@@ -4313,7 +4313,7 @@ done
  
  
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.5 2008/05/13 14:20:25 naddy Exp $
  do
  as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
  if eval "test \"\${$as_ac_Header+set}\" = set"; then
-@@ -9124,7 +9124,7 @@ echo "$as_me: error: curl libs are missing" >&2;}
+@@ -9454,7 +9454,7 @@ echo "$as_me: error: curl libs are missing" >&2;}
  fi
  
  
@@ -19,16 +19,16 @@ $OpenBSD: patch-configure,v 1.5 2008/05/13 14:20:25 naddy Exp $
  
  
  cat >>confdefs.h <<_ACEOF
-@@ -10653,7 +10653,7 @@ sed 's/^/| /' conftest.$ac_ext >&5
- fi
- rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
+@@ -11149,7 +11149,7 @@ fi
+ rm -f conftest.err conftest.$ac_objext \
+       conftest$ac_exeext conftest.$ac_ext
  if test "$ac_cv_search_ID3Tag_Link" = no; then
 -  for ac_lib in "id3 -lz -lstdc++"; do
 +  for ac_lib in "id3 -lm -lz -lstdc++"; do
      LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
      cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
-@@ -10770,7 +10770,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
+ /* confdefs.h.  */
+@@ -11275,7 +11275,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
    ac_status=$?
    echo "$as_me:$LINENO: \$? = $ac_status" >&5
    (exit $ac_status); }; }; then

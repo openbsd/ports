@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_status_window_c,v 1.1 2013/01/17 13:30:32 ajacoutot Exp $
+
+Fix implicit declaration.
+
+--- src/status_window.c.orig	Thu Apr 15 20:21:37 2004
++++ src/status_window.c	Thu Jan 17 13:49:26 2013
+@@ -23,6 +23,7 @@
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <unistd.h>
++#include <string.h>
+ #include <fcntl.h>
+ #include <vte/vte.h>
+ #include "status_window.h"

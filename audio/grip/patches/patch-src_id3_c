@@ -1,0 +1,33 @@
+$OpenBSD: patch-src_id3_c,v 1.1 2013/01/17 13:30:32 ajacoutot Exp $
+
+buffer overflow detected when writing ID3v2 tags:
+https://bugs.gentoo.org/show_bug.cgi?id=285105
+
+--- src/id3.c.orig	Sat Jun 25 20:00:55 2005
++++ src/id3.c	Thu Jan 17 13:50:37 2013
+@@ -252,8 +252,8 @@ gboolean ID3v2TagFile(char *filename, char *title, cha
+       
+       if ( frames[ i ] ) {
+ 	char *c_data = NULL;
+-	char gen[ 5 ] = "(   )";
+-	char trk[ 4 ] = "   ";
++	char gen[ 6 ] = "(   )"; /* max unsigned char: 255 */
++	char trk[ 3 ] = "  "; /* max CDDA tracks: 99 */
+ 	
+ 	switch( frameids[ i ] ) {
+ 	case ID3FID_TITLE:
+@@ -278,12 +278,12 @@ gboolean ID3v2TagFile(char *filename, char *title, cha
+ 	  
+ 	case ID3FID_CONTENTTYPE:
+ 	  c_data = gen;
+-	  sprintf( gen, "(%d)", genre ); /* XXX */
++	  snprintf( gen, 6, "(%d)", genre );
+ 	  break;
+ 	  
+ 	case ID3FID_TRACKNUM:
+ 	  c_data = trk;
+-	  sprintf( trk, "%d", tracknum ); /* XXX */
++	  snprintf( trk, 3, "%d", tracknum );
+ 	  break;
+ 	  
+ 	default:

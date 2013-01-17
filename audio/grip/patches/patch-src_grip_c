@@ -1,7 +1,146 @@
-$OpenBSD: patch-src_grip_c,v 1.5 2008/05/13 14:20:25 naddy Exp $
---- src/grip.c.orig	Thu Apr 15 20:23:54 2004
-+++ src/grip.c	Tue May 13 16:15:31 2008
-@@ -732,7 +732,7 @@ static void DoLoadConfig(GripInfo *ginfo)
+$OpenBSD: patch-src_grip_c,v 1.6 2013/01/17 13:30:32 ajacoutot Exp $
+
+Remove the Help tab, it does not work with newer yelp.
+Remove bogus button that opens up a browser to a non existent page.
+Don't display a warning about being a development version.
+
+--- src/grip.c.orig	Sat Jun 25 20:00:55 2005
++++ src/grip.c	Thu Jan 17 14:27:54 2013
+@@ -44,11 +44,8 @@
+ 
+ static void ReallyDie(gint reply,gpointer data);
+ static void MakeStatusPage(GripInfo *ginfo);
+-static void DoHelp(GtkWidget *widget,gpointer data);
+-static void MakeHelpPage(GripInfo *ginfo);
+ static void MakeAboutPage(GripGUI *uinfo);
+ static void MakeStyles(GripGUI *uinfo);
+-static void Homepage(void);
+ static void LoadImages(GripGUI *uinfo);
+ static void DoLoadConfig(GripInfo *ginfo);
+ void DoSaveConfig(GripInfo *ginfo);
+@@ -282,7 +279,6 @@ GtkWidget *GripNew(const gchar* geometry,char *device,
+   MakeRipPage(ginfo);
+   MakeConfigPage(ginfo);
+   MakeStatusPage(ginfo);
+-  MakeHelpPage(ginfo);
+   MakeAboutPage(uinfo);
+   ginfo->tray_icon_made = FALSE;
+   ginfo->tray_menu_sensitive = TRUE;
+@@ -317,12 +313,6 @@ GtkWidget *GripNew(const gchar* geometry,char *device,
+     strcpy(ginfo->version,VERSION);
+ 
+     sscanf(VERSION,"%d.%d.%d",&major,&minor,&point);
+-
+-    /* Check if we have a dev release */
+-    if(minor%2) {
+-      gnome_app_warning((GnomeApp *)ginfo->gui_info.app,
+-                        _("This is a development version of Grip. If you encounter problems, you are encouraged to revert to the latest stable version."));
+-    }
+   }
+ 
+   g_signal_connect(app, "window-state-event", G_CALLBACK(AppWindowStateCB), ginfo);
+@@ -467,72 +457,6 @@ void LogStatus(GripInfo *ginfo,char *fmt,...)
+   g_free(buf);
+ }
+ 
+-static void DoHelp(GtkWidget *widget,gpointer data)
+-{
+-  char *section;
+-
+-  section=(char *)data;
+-
+-  gnome_help_display("grip.xml",section,NULL);
+-}
+-
+-static void MakeHelpPage(GripInfo *ginfo)
+-{
+-  GtkWidget *help_page;
+-  GtkWidget *button;
+-  GtkWidget *vbox;
+-
+-  help_page=MakeNewPage(ginfo->gui_info.notebook,_("Help"));
+-
+-  vbox=gtk_vbox_new(FALSE,0);
+-  gtk_container_border_width(GTK_CONTAINER(vbox),3);
+-
+-  button=gtk_button_new_with_label(_("Table Of Contents"));
+-  gtk_signal_connect(GTK_OBJECT(button),"clicked",
+-		     GTK_SIGNAL_FUNC(DoHelp),NULL);
+-  gtk_box_pack_start(GTK_BOX(vbox),button,FALSE,FALSE,0);
+-  gtk_widget_show(button);
+-
+-  button=gtk_button_new_with_label(_("Playing CDs"));
+-  gtk_signal_connect(GTK_OBJECT(button),"clicked",
+-		     GTK_SIGNAL_FUNC(DoHelp),(gpointer)"cdplayer");
+-  gtk_box_pack_start(GTK_BOX(vbox),button,FALSE,FALSE,0);
+-  gtk_widget_show(button);
+-
+-  button=gtk_button_new_with_label(_("Ripping CDs"));
+-  gtk_signal_connect(GTK_OBJECT(button),"clicked",
+-		     GTK_SIGNAL_FUNC(DoHelp),(gpointer)"ripping");
+-  gtk_box_pack_start(GTK_BOX(vbox),button,FALSE,FALSE,0);
+-  gtk_widget_show(button);
+-
+-  button=gtk_button_new_with_label(_("Configuring Grip"));
+-  gtk_signal_connect(GTK_OBJECT(button),"clicked",
+-		     GTK_SIGNAL_FUNC(DoHelp),(gpointer)"configure");
+-  gtk_box_pack_start(GTK_BOX(vbox),button,FALSE,FALSE,0);
+-  gtk_widget_show(button);
+-
+-  button=gtk_button_new_with_label(_("FAQ"));
+-  gtk_signal_connect(GTK_OBJECT(button),"clicked",
+-		     GTK_SIGNAL_FUNC(DoHelp),(gpointer)"faq");
+-  gtk_box_pack_start(GTK_BOX(vbox),button,FALSE,FALSE,0);
+-  gtk_widget_show(button);
+-
+-  button=gtk_button_new_with_label(_("Getting More Help"));
+-  gtk_signal_connect(GTK_OBJECT(button),"clicked",
+-		     GTK_SIGNAL_FUNC(DoHelp),(gpointer)"morehelp");
+-  gtk_box_pack_start(GTK_BOX(vbox),button,FALSE,FALSE,0);
+-  gtk_widget_show(button);
+-
+-  button=gtk_button_new_with_label(_("Reporting Bugs"));
+-  gtk_signal_connect(GTK_OBJECT(button),"clicked",
+-		     GTK_SIGNAL_FUNC(DoHelp),(gpointer)"bugs");
+-  gtk_box_pack_start(GTK_BOX(vbox),button,FALSE,FALSE,0);
+-  gtk_widget_show(button);
+-
+-  gtk_container_add(GTK_CONTAINER(help_page),vbox);
+-  gtk_widget_show(vbox);
+-}
+-
+ void MakeAboutPage(GripGUI *uinfo)
+ {
+   GtkWidget *aboutpage;
+@@ -582,15 +506,6 @@ void MakeAboutPage(GripGUI *uinfo)
+ 
+   hbox=gtk_hbox_new(TRUE,0);
+ 
+-  button=gtk_button_new_with_label("http://www.nostatic.org/grip");
+-  gtk_widget_set_style(button,uinfo->style_dark_grey);
+-  gtk_widget_set_style(GTK_BIN(button)->child,
+-		       uinfo->style_dark_grey);
+-  gtk_signal_connect(GTK_OBJECT(button),"clicked",
+-		     GTK_SIGNAL_FUNC(Homepage),NULL);
+-  gtk_box_pack_start(GTK_BOX(hbox),button,FALSE,FALSE,0);
+-  gtk_widget_show(button);
+-
+   gtk_box_pack_start(GTK_BOX(vbox2),hbox,FALSE,FALSE,0);
+   gtk_widget_show(hbox);
+   
+@@ -623,11 +538,6 @@ static void MakeStyles(GripGUI *uinfo)
+   uinfo->style_dark_grey=MakeStyle(&gdkwhite,color_dark_grey,TRUE);
+ }
+ 
+-static void Homepage(void)
+-{
+-  system("gnome-moz-remote http://www.nostatic.org/grip");
+-}
+-
+ static void LoadImages(GripGUI *uinfo)
+ {
+   uinfo->check_image=Loadxpm(uinfo->app,check_xpm);
+@@ -762,7 +672,7 @@ static void DoLoadConfig(GripInfo *ginfo)
  
    *ginfo->version='\0';
  
