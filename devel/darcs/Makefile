@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.49 2012/10/11 13:31:29 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.50 2013/01/17 13:19:05 kili Exp $
 
 COMMENT =		advanced revision control system written in Haskell
 
-DISTNAME =		darcs-2.8.1
-REVISION =		0
+DISTNAME =		darcs-2.8.3
 
 CATEGORIES =		devel
 HOMEPAGE =		http://www.darcs.net/
@@ -17,7 +16,7 @@ LIB_DEPENDS =		net/curl
 # Yes, build dependencies, because GHC libs are still static and we
 # don't want to pull in all of ghc.
 BUILD_DEPENDS =		archivers/hs-zlib>=0.5.1.0,<0.6.0.0 \
-			devel/hs-tar>=0.3,<0.4 \
+			devel/hs-tar>=0.4,<0.5 \
 			devel/hs-hashed-storage>=0.5.6,<0.6 \
 			devel/hs-haskeline>=0.6.3,<0.7 \
 			devel/hs-mmap>=0.5,<0.6 \
