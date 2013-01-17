@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_facter_memory_rb,v 1.4 2013/01/17 19:14:52 robert Exp $
+$OpenBSD: patch-lib_facter_memory_rb,v 1.5 2013/01/17 19:52:14 robert Exp $
 --- lib/facter/memory.rb.orig	Thu Dec 27 19:05:12 2012
-+++ lib/facter/memory.rb	Thu Jan 17 20:06:09 2013
++++ lib/facter/memory.rb	Thu Jan 17 20:50:10 2013
 @@ -58,6 +58,14 @@ Facter.add("SwapFree") do
  end
  
@@ -16,12 +16,36 @@ $OpenBSD: patch-lib_facter_memory_rb,v 1.4 2013/01/17 19:14:52 robert Exp $
    confine :kernel => :Darwin
    setcode do
      swap = Facter::Util::Resolution.exec('sysctl vm.swapusage')
-@@ -93,7 +101,7 @@ if Facter.value(:kernel) == "AIX" and Facter.value(:id
+@@ -93,24 +101,25 @@ if Facter.value(:kernel) == "AIX" and Facter.value(:id
  end
  
  if Facter.value(:kernel) == "OpenBSD"
 -  swap = Facter::Util::Resolution.exec('swapctl -s')
+-  swapfree, swaptotal = 0, 0
+-  if swap =~ /^total: (\d+)k bytes allocated = \d+k used, (\d+)k available$/
+-    swaptotal = $1.to_i
+-    swapfree  = $2.to_i
 +  swap = Facter::Util::Resolution.exec('swapctl -s') || ""
-   swapfree, swaptotal = 0, 0
-   if swap =~ /^total: (\d+)k bytes allocated = \d+k used, (\d+)k available$/
-     swaptotal = $1.to_i
++  swapfree, swaptotal, sbsize = 0, 0, 0
++  if swap =~ /^total: (\d+) (\d+)-blocks allocated, (\d+) used, (\d+) available$/
++    sbsize = $2.to_i
++    swaptotal = ($1.to_i * sbsize)
++    swapfree  = ($4.to_i * sbsize)
+   end
+ 
+   Facter.add("SwapSize") do
+     confine :kernel => :openbsd
+     setcode do
+-      Facter::Memory.scale_number(swaptotal.to_f,"kB")
++      Facter::Memory.scale_number(swaptotal.to_f,"")
+     end
+   end
+ 
+   Facter.add("SwapFree") do
+     confine :kernel => :openbsd
+     setcode do
+-      Facter::Memory.scale_number(swapfree.to_f,"kB")
++      Facter::Memory.scale_number(swapfree.to_f,"")
+     end
+   end
+ 
