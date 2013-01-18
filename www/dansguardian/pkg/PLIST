@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/06/11 12:41:13 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/01/18 15:04:09 sthen Exp $
 @conflict dansguardian-*-clamav
 @pkgpath www/dansguardian,clamav
 @newgroup _dansguardian:588
@@ -6,6 +6,7 @@
 @man man/man8/dansguardian.8
 @bin sbin/dansguardian
 share/dansguardian/
+share/dansguardian/blockedflash.swf
 share/dansguardian/dansguardian.pl
 share/dansguardian/languages/
 share/dansguardian/languages/arspanish/
@@ -174,6 +175,10 @@ share/examples/dansguardian/lists/bannedregexpheaderlist
 @sample ${SYSCONFDIR}/dansguardian/lists/bannedregexpheaderlist
 share/examples/dansguardian/lists/bannedregexpurllist
 @sample ${SYSCONFDIR}/dansguardian/lists/bannedregexpurllist
+share/examples/dansguardian/lists/bannedrooms/
+@sample ${SYSCONFDIR}/dansguardian/lists/bannedrooms/
+share/examples/dansguardian/lists/bannedrooms/default
+@sample ${SYSCONFDIR}/dansguardian/lists/bannedrooms/default
 share/examples/dansguardian/lists/bannedsitelist
 @sample ${SYSCONFDIR}/dansguardian/lists/bannedsitelist
 share/examples/dansguardian/lists/bannedurllist
@@ -400,6 +405,8 @@ share/examples/dansguardian/lists/phraselists/pornography/weighted_portuguese
 @sample ${SYSCONFDIR}/dansguardian/lists/phraselists/pornography/weighted_portuguese
 share/examples/dansguardian/lists/phraselists/pornography/weighted_russian
 @sample ${SYSCONFDIR}/dansguardian/lists/phraselists/pornography/weighted_russian
+share/examples/dansguardian/lists/phraselists/pornography/weighted_russian_utf8
+@sample ${SYSCONFDIR}/dansguardian/lists/phraselists/pornography/weighted_russian_utf8
 share/examples/dansguardian/lists/phraselists/pornography/weighted_spanish
 @sample ${SYSCONFDIR}/dansguardian/lists/phraselists/pornography/weighted_spanish
 share/examples/dansguardian/lists/phraselists/pornography/weighted_swedish
@@ -466,3 +473,6 @@ share/examples/dansguardian/lists/weightedphraselist
 @owner _dansguardian
 @group _dansguardian
 @sample /var/log/dansguardian/
+@owner
+@group
+@rcscript ${RCDIR}/dansguardian
