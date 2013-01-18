@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_mainloop_c,v 1.1 2012/11/28 07:04:36 steven Exp $
---- lib/mainloop.c.orig	Sun Oct 14 19:01:34 2012
-+++ lib/mainloop.c	Sun Oct 14 19:01:43 2012
+$OpenBSD: patch-lib_mainloop_c,v 1.2 2013/01/18 19:09:08 steven Exp $
+--- lib/mainloop.c.orig	Thu Jan 17 10:25:17 2013
++++ lib/mainloop.c	Fri Jan 18 19:26:49 2013
 @@ -41,6 +41,7 @@
  #include <arpa/nameser.h>
  #include <resolv.h>
@@ -8,4 +8,4 @@ $OpenBSD: patch-lib_mainloop_c,v 1.1 2012/11/28 07:04:36 steven Exp $
 +#include <iv_event.h>
  #include <iv_signal.h>
  #include <iv_work.h>
- 
+ #include <iv_event.h>
