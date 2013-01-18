@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2013/01/07 08:08:39 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.24 2013/01/18 11:55:27 dcoppa Exp $
 
 COMMENT =	clone of rxvt with Unicode and Xft support
 
 DISTNAME =	rxvt-unicode-9.16
-REVISION =	1
+REVISION =	2
 CATEGORIES =	x11
 
 EXTRACT_SUFX =	.tar.bz2
@@ -35,8 +35,7 @@ CONFIGURE_ARGS =	--enable-256-color \
 			--enable-pixbuf \
 			--enable-startup-notification \
 			--enable-utmp \
-			--enable-wtmp \
-			--with-term=rxvt-256color
+			--enable-wtmp
 CONFIGURE_ENV +=	pt_cv_tty_group=yes
 
 # missing locale support

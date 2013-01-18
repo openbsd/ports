@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/01/07 08:08:39 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/01/18 11:55:27 dcoppa Exp $
 @mode g+s
 @group utmp
 @bin bin/urxvt
@@ -70,3 +70,4 @@ share/terminfo/
 share/terminfo/r/
 share/terminfo/r/rxvt-unicode
 share/terminfo/r/rxvt-unicode-256color
+share/doc/pkg-readmes/${FULLPKGNAME}
