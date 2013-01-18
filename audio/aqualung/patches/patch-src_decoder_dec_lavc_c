@@ -1,7 +1,15 @@
-$OpenBSD: patch-src_decoder_dec_lavc_c,v 1.1 2012/04/30 00:54:00 jeremy Exp $
---- src/decoder/dec_lavc.c.orig	Sat Apr 28 20:03:47 2012
-+++ src/decoder/dec_lavc.c	Sat Apr 28 20:03:57 2012
-@@ -53,7 +53,7 @@ decode_lavc(decoder_t * dec) {
+$OpenBSD: patch-src_decoder_dec_lavc_c,v 1.2 2013/01/18 08:15:55 brad Exp $
+--- src/decoder/dec_lavc.c.orig	Thu Aug 20 14:11:11 2009
++++ src/decoder/dec_lavc.c	Fri Jan 18 00:34:08 2013
+@@ -25,6 +25,7 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <ctype.h>
++#include <libavutil/avutil.h>
+ 
+ #include "dec_lavc.h"
+ 
+@@ -53,7 +54,7 @@ decode_lavc(decoder_t * dec) {
  
  	if (packet.stream_index == pd->audioStream) {
  
@@ -10,7 +18,16 @@ $OpenBSD: patch-src_decoder_dec_lavc_c,v 1.1 2012/04/30 00:54:00 jeremy Exp $
  		if (n_bytes > 0) {
  			int i;
  			for (i = 0; i < n_bytes/2; i++) {
-@@ -124,7 +124,7 @@ lavc_decoder_open(decoder_t * dec, char * filename) {
+@@ -111,7 +112,7 @@ lavc_decoder_open(decoder_t * dec, char * filename) {
+ 	file_decoder_t * fdec = dec->fdec;
+ 	int i;
+ 
+-	if (av_open_input_file(&pd->avFormatCtx, filename, NULL, 0, NULL) != 0)
++	if (avformat_open_input(&pd->avFormatCtx, filename, NULL, NULL) != 0)
+ 		return DECODER_OPEN_BADLIB;
+ 
+ 	if (av_find_stream_info(pd->avFormatCtx) < 0)
+@@ -124,7 +125,7 @@ lavc_decoder_open(decoder_t * dec, char * filename) {
  
  	pd->audioStream = -1;
  	for (i = 0; i < pd->avFormatCtx->nb_streams; i++) {

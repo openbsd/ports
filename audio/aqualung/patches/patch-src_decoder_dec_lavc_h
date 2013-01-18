@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_decoder_dec_lavc_h,v 1.3 2013/01/18 08:18:50 brad Exp $
+--- src/decoder/dec_lavc.h.orig	Thu Jan 17 23:01:12 2013
++++ src/decoder/dec_lavc.h	Thu Jan 17 23:04:05 2013
+@@ -24,25 +24,9 @@
+ 
+ #ifdef HAVE_LAVC
+ 
+-#ifdef HAVE_FFMPEG_LIBAVCODEC_AVCODEC_H
+-#include <ffmpeg/libavcodec/avcodec.h>
+-#elif defined HAVE_LIBAVCODEC_AVCODEC_H
+ #include <libavcodec/avcodec.h>
+-#elif defined HAVE_FFMPEG_AVCODEC_H
+-#include <ffmpeg/avcodec.h>
+-#elif defined HAVE_AVCODEC_H
+-#include <avcodec.h>
+-#endif
+-
+-#ifdef HAVE_FFMPEG_LIBAVFORMAT_AVFORMAT_H
+-#include <ffmpeg/libavformat/avformat.h>
+-#elif defined HAVE_LIBAVFORMAT_AVFORMAT_H
+ #include <libavformat/avformat.h>
+-#elif defined HAVE_FFMPEG_AVFORMAT_H
+-#include <ffmpeg/avformat.h>
+-#elif defined AVFORMAT_H
+-#include <avformat.h>
+-#endif
++#include <libavutil/rational.h>
+ 
+ #endif /* HAVE_LAVC */
+ 
