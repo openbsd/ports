@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/11/15 12:14:28 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/01/18 07:34:48 benoit Exp $
 lib/python${MODPY_VERSION}/site-packages/mechanize/
 lib/python${MODPY_VERSION}/site-packages/mechanize-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/mechanize-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -64,13 +64,13 @@ lib/python${MODPY_VERSION}/site-packages/mechanize/_util.py
 lib/python${MODPY_VERSION}/site-packages/mechanize/_util.pyc
 lib/python${MODPY_VERSION}/site-packages/mechanize/_version.py
 lib/python${MODPY_VERSION}/site-packages/mechanize/_version.pyc
-share/examples/py-mechanize/
-share/examples/py-mechanize/forms/
-share/examples/py-mechanize/forms/data.dat
-share/examples/py-mechanize/forms/data.txt
-share/examples/py-mechanize/forms/echo.cgi
-share/examples/py-mechanize/forms/example.html
-share/examples/py-mechanize/forms/example.py
-share/examples/py-mechanize/forms/simple.py
-share/examples/py-mechanize/hack21.py
-share/examples/py-mechanize/pypi.py
+share/examples/${MODPY_PY_PREFIX}mechanize/
+share/examples/${MODPY_PY_PREFIX}mechanize/forms/
+share/examples/${MODPY_PY_PREFIX}mechanize/forms/data.dat
+share/examples/${MODPY_PY_PREFIX}mechanize/forms/data.txt
+share/examples/${MODPY_PY_PREFIX}mechanize/forms/echo.cgi
+share/examples/${MODPY_PY_PREFIX}mechanize/forms/example.html
+share/examples/${MODPY_PY_PREFIX}mechanize/forms/example.py
+share/examples/${MODPY_PY_PREFIX}mechanize/forms/simple.py
+share/examples/${MODPY_PY_PREFIX}mechanize/hack21.py
+share/examples/${MODPY_PY_PREFIX}mechanize/pypi.py
