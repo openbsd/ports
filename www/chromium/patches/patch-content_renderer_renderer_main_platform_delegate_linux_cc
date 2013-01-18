@@ -1,13 +1,29 @@
-$OpenBSD: patch-content_renderer_renderer_main_platform_delegate_linux_cc,v 1.5 2012/10/12 16:46:10 robert Exp $
---- content/renderer/renderer_main_platform_delegate_linux.cc.orig	Wed Oct 10 22:54:20 2012
-+++ content/renderer/renderer_main_platform_delegate_linux.cc	Wed Oct 10 22:54:33 2012
-@@ -34,7 +34,9 @@ bool RendererMainPlatformDelegate::EnableSandbox() {
+$OpenBSD: patch-content_renderer_renderer_main_platform_delegate_linux_cc,v 1.6 2013/01/18 21:38:02 robert Exp $
+--- content/renderer/renderer_main_platform_delegate_linux.cc.orig	Mon Jan 14 19:51:40 2013
++++ content/renderer/renderer_main_platform_delegate_linux.cc	Thu Jan 17 21:35:36 2013
+@@ -42,7 +42,9 @@ bool RendererMainPlatformDelegate::EnableSandbox() {
    //
    // The seccomp sandbox mode 1 (sandbox/linux/seccomp-legacy) and mode 2
    // (sandbox/linux/seccomp-bpf) are started in InitializeSandbox().
 +#if !defined(OS_BSD)
-   content::InitializeSandbox();
+   InitializeSandbox();
 +#endif
    return true;
  }
  
+@@ -56,6 +58,7 @@ void RendererMainPlatformDelegate::RunSandboxTests(boo
+   if (no_sandbox)
+     return;
+ 
++#if !defined(OS_BSD)
+   // about:sandbox uses a value returned from LinuxSandbox::GetStatus() before
+   // any renderer has been started.
+   // Here, we test that the status of SeccompBpf in the renderer is consistent
+@@ -81,6 +84,7 @@ void RendererMainPlatformDelegate::RunSandboxTests(boo
+     CHECK_EQ(errno, EPERM);
+   }
+ #endif  // __x86_64__
++#endif
+ }
+ 
+ }  // namespace content

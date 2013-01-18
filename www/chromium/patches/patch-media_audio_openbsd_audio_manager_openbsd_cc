@@ -1,6 +1,6 @@
-$OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_cc,v 1.12 2012/11/25 18:57:21 ratchov Exp $
---- media/audio/openbsd/audio_manager_openbsd.cc.orig	Wed Oct 31 20:01:19 2012
-+++ media/audio/openbsd/audio_manager_openbsd.cc	Thu Nov 22 08:53:57 2012
+$OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_cc,v 1.13 2013/01/18 21:38:02 robert Exp $
+--- media/audio/openbsd/audio_manager_openbsd.cc.orig	Tue Jan  8 03:40:10 2013
++++ media/audio/openbsd/audio_manager_openbsd.cc	Mon Jan 14 19:47:35 2013
 @@ -4,43 +4,23 @@
  
  #include "media/audio/openbsd/audio_manager_openbsd.h"
@@ -50,7 +50,7 @@ $OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_cc,v 1.12 2012/11/25 1
  }
  
  AudioManagerOpenBSD::AudioManagerOpenBSD() {
-@@ -57,40 +37,33 @@ void AudioManagerOpenBSD::Init() {
+@@ -53,40 +33,33 @@ AudioManagerOpenBSD::~AudioManagerOpenBSD() {
  
  AudioOutputStream* AudioManagerOpenBSD::MakeLinearOutputStream(
      const AudioParameters& params) {

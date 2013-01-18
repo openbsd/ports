@@ -1,0 +1,21 @@
+$OpenBSD: patch-base_sys_info_posix_cc,v 1.1 2013/01/18 21:38:02 robert Exp $
+--- base/sys_info_posix.cc.orig	Thu Jan 17 21:29:39 2013
++++ base/sys_info_posix.cc	Thu Jan 17 21:30:17 2013
+@@ -40,6 +40,17 @@ int SysInfo::NumberOfProcessors() {
+ #endif
+ 
+ // static
++int64 SysInfo::AmountOfAvailablePhysicalMemory() {
++  long available_pages = sysconf(_SC_AVPHYS_PAGES);
++  long page_size = sysconf(_SC_PAGE_SIZE);
++  if (available_pages == -1 || page_size == -1) {
++    NOTREACHED();
++    return 0;
++  }
++  return static_cast<int64>(available_pages) * page_size;
++}
++
++// static
+ int64 SysInfo::AmountOfFreeDiskSpace(const FilePath& path) {
+   base::ThreadRestrictions::AssertIOAllowed();
+ 

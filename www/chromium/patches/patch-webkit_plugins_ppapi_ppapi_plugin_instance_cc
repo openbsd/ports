@@ -1,7 +1,7 @@
-$OpenBSD: patch-webkit_plugins_ppapi_ppapi_plugin_instance_cc,v 1.13 2012/11/07 06:59:45 robert Exp $
---- webkit/plugins/ppapi/ppapi_plugin_instance.cc.orig	Wed Oct 31 20:01:22 2012
-+++ webkit/plugins/ppapi/ppapi_plugin_instance.cc	Tue Nov  6 22:45:41 2012
-@@ -1776,7 +1776,7 @@ bool PluginInstance::PrintPDFOutput(PP_Resource print_
+$OpenBSD: patch-webkit_plugins_ppapi_ppapi_plugin_instance_cc,v 1.14 2013/01/18 21:38:02 robert Exp $
+--- webkit/plugins/ppapi/ppapi_plugin_instance.cc.orig	Tue Jan  8 03:40:13 2013
++++ webkit/plugins/ppapi/ppapi_plugin_instance.cc	Mon Jan 14 19:47:35 2013
+@@ -2181,7 +2181,7 @@ bool PluginInstance::PrintPDFOutput(PP_Resource print_
  #endif  // defined(OS_WIN)
  
    bool ret = false;

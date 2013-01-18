@@ -1,16 +1,25 @@
-$OpenBSD: patch-content_app_content_main_runner_cc,v 1.4 2012/11/07 06:59:45 robert Exp $
---- content/app/content_main_runner.cc.orig	Wed Oct 31 20:01:34 2012
-+++ content/app/content_main_runner.cc	Tue Nov  6 22:45:22 2012
-@@ -91,7 +91,7 @@ extern int PpapiBrokerMain(const content::MainFunction
+$OpenBSD: patch-content_app_content_main_runner_cc,v 1.5 2013/01/18 21:38:02 robert Exp $
+--- content/app/content_main_runner.cc.orig	Mon Jan 14 19:48:26 2013
++++ content/app/content_main_runner.cc	Mon Jan 14 22:57:29 2013
+@@ -99,7 +99,7 @@ extern int PpapiBrokerMain(const MainFunctionParams&);
  extern int RendererMain(const content::MainFunctionParams&);
- extern int WorkerMain(const content::MainFunctionParams&);
- extern int UtilityMain(const content::MainFunctionParams&);
+ extern int UtilityMain(const MainFunctionParams&);
+ extern int WorkerMain(const MainFunctionParams&);
 -#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
 +#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
- namespace content {
  extern int ZygoteMain(const MainFunctionParams&,
                        ZygoteForkDelegate* forkdelegate);
-@@ -333,7 +333,7 @@ struct MainFunction {
+ #endif
+@@ -236,7 +236,7 @@ void CommonSubprocessInit(const std::string& process_t
+   MSG msg;
+   PeekMessage(&msg, NULL, 0, 0, PM_REMOVE);
+ #endif
+-#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
+   // Various things break when you're using a locale where the decimal
+   // separator isn't a period.  See e.g. bugs 22782 and 39964.  For
+   // all processes except the browser process (where we call system
+@@ -344,7 +344,7 @@ struct MainFunction {
    int (*function)(const MainFunctionParams&);
  };
  
@@ -19,7 +28,7 @@ $OpenBSD: patch-content_app_content_main_runner_cc,v 1.4 2012/11/07 06:59:45 rob
  // On platforms that use the zygote, we have a special subset of
  // subprocesses that are launched via the zygote.  This function
  // fills in some process-launching bits around ZygoteMain().
-@@ -438,7 +438,7 @@ int RunNamedProcessTypeMain(
+@@ -449,7 +449,7 @@ int RunNamedProcessTypeMain(
      }
    }
  
@@ -28,7 +37,7 @@ $OpenBSD: patch-content_app_content_main_runner_cc,v 1.4 2012/11/07 06:59:45 rob
    // Zygote startup is special -- see RunZygote comments above
    // for why we don't use ZygoteMain directly.
    if (process_type == switches::kZygoteProcess)
-@@ -548,7 +548,7 @@ static void ReleaseFreeMemoryThunk() {
+@@ -566,7 +566,7 @@ static void ReleaseFreeMemoryThunk() {
                 kPrimaryIPCChannel + base::GlobalDescriptors::kBaseDescriptor);
  #endif  // !OS_ANDROID && !OS_IOS
  

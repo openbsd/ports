@@ -1,0 +1,11 @@
+$OpenBSD: patch-third_party_libyuv_libyuv_gyp,v 1.1 2013/01/18 21:38:02 robert Exp $
+--- third_party/libyuv/libyuv.gyp.orig	Thu Jan 17 17:51:42 2013
++++ third_party/libyuv/libyuv.gyp	Thu Jan 17 17:52:14 2013
+@@ -30,6 +30,7 @@
+       ],
+       'defines': [
+         'HAVE_JPEG',
++        'YUV_DISABLE_ASM',
+         # 'LIBYUV_BUILDING_SHARED_LIBRARY',
+       ],
+       'include_dirs': [

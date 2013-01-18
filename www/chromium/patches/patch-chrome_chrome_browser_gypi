@@ -1,8 +1,32 @@
-$OpenBSD: patch-chrome_chrome_browser_gypi,v 1.15 2012/11/07 06:59:45 robert Exp $
---- chrome/chrome_browser.gypi.orig	Tue Nov  6 22:55:08 2012
-+++ chrome/chrome_browser.gypi	Tue Nov  6 22:55:18 2012
-@@ -1934,8 +1934,6 @@
+$OpenBSD: patch-chrome_chrome_browser_gypi,v 1.16 2013/01/18 21:38:02 robert Exp $
+--- chrome/chrome_browser.gypi.orig	Tue Jan  8 03:46:06 2013
++++ chrome/chrome_browser.gypi	Mon Jan 14 22:22:08 2013
+@@ -454,8 +454,6 @@
+         'browser/chrome_browser_main_android.cc',
+         'browser/chrome_browser_main_android.h',
+         'browser/chrome_browser_main_extra_parts.h',
+-        'browser/chrome_browser_main_linux.cc',
+-        'browser/chrome_browser_main_linux.h',
+         'browser/chrome_browser_main_mac.h',
+         'browser/chrome_browser_main_mac.mm',
+         'browser/chrome_browser_main_posix.cc',
+@@ -1032,8 +1030,6 @@
+         'browser/media_gallery/media_gallery_database_types.cc',
+         'browser/media_gallery/media_gallery_database_types.h',
+         'browser/media_gallery/mtp_device_delegate_impl.h',
+-        'browser/media_gallery/mtp_device_delegate_impl_linux.cc',
+-        'browser/media_gallery/mtp_device_delegate_impl_linux.h',
+         'browser/memory_details.cc',
+         'browser/memory_details.h',
+         'browser/memory_details_android.cc',
+@@ -1981,14 +1977,10 @@
+         'browser/system_monitor/media_device_notifications_utils.h',
+         'browser/system_monitor/media_storage_util.cc',
          'browser/system_monitor/media_storage_util.h',
+-        'browser/system_monitor/media_transfer_protocol_device_observer_linux.cc',
+-        'browser/system_monitor/media_transfer_protocol_device_observer_linux.h',
+         'browser/system_monitor/removable_device_constants.cc',
+         'browser/system_monitor/removable_device_constants.h',
          'browser/system_monitor/removable_device_notifications_chromeos.cc',
          'browser/system_monitor/removable_device_notifications_chromeos.h',
 -        'browser/system_monitor/removable_device_notifications_linux.cc',

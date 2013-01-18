@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.117 2012/12/26 12:07:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.118 2013/01/18 21:38:02 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 
 COMMENT=		Chromium browser
 
-V=			23.0.1271.97
-REVISION=		0
+V=			24.0.1312.52
 DISTNAME=		chromium-${V}
 
 CATEGORIES=		www
@@ -117,11 +116,11 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/webkit/plugins/npapi/plugin_list_posix.cc
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 .for _arch in x64 ia32
-	@cp -pR ${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/linux/${_arch}/libavcodec \
-		${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/openbsd/${_arch}/libavcodec
+	@cp -pR ${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/linux/${_arch}/libavutil \
+		${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/openbsd/${_arch}/libavutil
 
-	@cp -pR ${WRKSRC}/third_party/ffmpeg/chromium/config/Chromium/linux/${_arch}/libavcodec \
-		${WRKSRC}/third_party/ffmpeg/chromium/config/Chromium/openbsd/${_arch}/libavcodec
+	@cp -pR ${WRKSRC}/third_party/ffmpeg/chromium/config/Chromium/linux/${_arch}/libavutil \
+		${WRKSRC}/third_party/ffmpeg/chromium/config/Chromium/openbsd/${_arch}/libavutil
 .endfor
 	@cp -R ${WRKSRC}/third_party/libvpx/source/config/linux \
 		${WRKSRC}/third_party/libvpx/source/config/openbsd

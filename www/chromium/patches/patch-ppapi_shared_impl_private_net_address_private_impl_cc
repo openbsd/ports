@@ -1,7 +1,7 @@
-$OpenBSD: patch-ppapi_shared_impl_private_net_address_private_impl_cc,v 1.2 2012/11/07 06:59:45 robert Exp $
---- ppapi/shared_impl/private/net_address_private_impl.cc.orig	Wed Oct 31 20:01:33 2012
-+++ ppapi/shared_impl/private/net_address_private_impl.cc	Tue Nov  6 23:21:59 2012
-@@ -26,7 +26,10 @@
+$OpenBSD: patch-ppapi_shared_impl_private_net_address_private_impl_cc,v 1.3 2013/01/18 21:38:02 robert Exp $
+--- ppapi/shared_impl/private/net_address_private_impl.cc.orig	Tue Jan  8 03:40:29 2013
++++ ppapi/shared_impl/private/net_address_private_impl.cc	Mon Jan 14 19:47:35 2013
+@@ -27,7 +27,10 @@
  #include "ppapi/shared_impl/var.h"
  #include "ppapi/thunk/thunk.h"
  

@@ -1,6 +1,6 @@
-$OpenBSD: patch-media_media_gyp,v 1.16 2012/11/25 18:57:21 ratchov Exp $
---- media/media.gyp.orig	Wed Oct 31 20:01:20 2012
-+++ media/media.gyp	Thu Nov 15 12:02:41 2012
+$OpenBSD: patch-media_media_gyp,v 1.17 2013/01/18 21:38:02 robert Exp $
+--- media/media.gyp.orig	Mon Jan 14 19:52:00 2013
++++ media/media.gyp	Mon Jan 14 19:56:18 2013
 @@ -7,6 +7,8 @@
      'chromium_code': 1,
      # Override to dynamically link the PulseAudio library.
@@ -10,16 +10,16 @@ $OpenBSD: patch-media_media_gyp,v 1.16 2012/11/25 18:57:21 ratchov Exp $
      # Override to dynamically link the cras (ChromeOS audio) library.
      'use_cras%': 0,
      'conditions': [
-@@ -133,6 +135,8 @@
-         'audio/scoped_loop_observer.h',
-         'audio/simple_sources.cc',
-         'audio/simple_sources.h',
+@@ -128,6 +130,8 @@
+         'audio/openbsd/audio_manager_openbsd.h',
+         'audio/pulse/pulse_output.cc',
+         'audio/pulse/pulse_output.h',
 +        'audio/sndio/sndio_output.cc',
 +        'audio/sndio/sndio_output.h',
-         'audio/win/audio_low_latency_input_win.cc',
-         'audio/win/audio_low_latency_input_win.h',
-         'audio/win/audio_low_latency_output_win.cc',
-@@ -433,6 +437,7 @@
+         'audio/sample_rates.cc',
+         'audio/sample_rates.h',
+         'audio/scoped_loop_observer.cc',
+@@ -458,6 +462,7 @@
          }],
          ['OS=="openbsd"', {
            'sources/': [ ['exclude', '/alsa_' ],
@@ -27,7 +27,7 @@ $OpenBSD: patch-media_media_gyp,v 1.16 2012/11/25 18:57:21 ratchov Exp $
                          ['exclude', '/audio_manager_linux' ] ],
            'link_settings': {
              'libraries': [
-@@ -496,6 +501,21 @@
+@@ -521,6 +526,21 @@
                'sources!': [
                  'audio/pulse/pulse_output.cc',
                  'audio/pulse/pulse_output.h',

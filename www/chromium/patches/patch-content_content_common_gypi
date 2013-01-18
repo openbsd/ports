@@ -1,8 +1,11 @@
-$OpenBSD: patch-content_content_common_gypi,v 1.2 2012/11/07 06:59:45 robert Exp $
---- content/content_common.gypi.orig	Wed Oct 31 20:01:37 2012
-+++ content/content_common.gypi	Tue Nov  6 22:45:29 2012
-@@ -330,8 +330,6 @@
-     'common/sandbox_linux.cc',
+$OpenBSD: patch-content_content_common_gypi,v 1.3 2013/01/18 21:38:02 robert Exp $
+--- content/content_common.gypi.orig	Tue Jan  8 03:40:34 2013
++++ content/content_common.gypi	Mon Jan 14 23:41:46 2013
+@@ -337,11 +337,8 @@
+     'common/sandbox_mac.h',
+     'common/sandbox_mac.mm',
+     'common/sandbox_linux.h',
+-    'common/sandbox_linux.cc',
      'common/sandbox_policy.cc',
      'common/sandbox_policy.h',
 -    'common/sandbox_seccomp_bpf_linux.cc',

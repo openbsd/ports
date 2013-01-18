@@ -1,7 +1,7 @@
-$OpenBSD: patch-base_base_gypi,v 1.15 2012/11/07 06:59:45 robert Exp $
---- base/base.gypi.orig	Wed Oct 31 20:02:04 2012
-+++ base/base.gypi	Tue Nov  6 22:45:22 2012
-@@ -138,7 +138,6 @@
+$OpenBSD: patch-base_base_gypi,v 1.16 2013/01/18 21:38:02 robert Exp $
+--- base/base.gypi.orig	Tue Jan  8 03:40:59 2013
++++ base/base.gypi	Mon Jan 14 19:47:35 2013
+@@ -142,7 +142,6 @@
            'files/dir_reader_posix.h',
            'files/file_path_watcher.cc',
            'files/file_path_watcher.h',
@@ -9,7 +9,7 @@ $OpenBSD: patch-base_base_gypi,v 1.15 2012/11/07 06:59:45 robert Exp $
            'files/file_path_watcher_linux.cc',
            'files/file_path_watcher_stub.cc',
            'files/file_path_watcher_win.cc',
-@@ -673,7 +672,6 @@
+@@ -695,7 +694,6 @@
            ['<(os_bsd)==1 and >(nacl_untrusted_build)==0', {
              'sources/': [
                ['exclude', '^files/file_path_watcher_linux\\.cc$'],

@@ -1,6 +1,6 @@
-$OpenBSD: patch-content_plugin_plugin_main_linux_cc,v 1.1 2011/06/08 20:36:56 robert Exp $
---- content/plugin/plugin_main_linux.cc.orig	Wed Jun  8 10:31:08 2011
-+++ content/plugin/plugin_main_linux.cc	Wed Jun  8 10:31:20 2011
+$OpenBSD: patch-content_plugin_plugin_main_linux_cc,v 1.2 2013/01/18 21:38:02 robert Exp $
+--- content/plugin/plugin_main_linux.cc.orig	Tue Jan  8 03:40:32 2013
++++ content/plugin/plugin_main_linux.cc	Mon Jan 14 19:47:35 2013
 @@ -5,13 +5,13 @@
  #include <signal.h>
  #include <string.h>
@@ -15,5 +15,5 @@ $OpenBSD: patch-content_plugin_plugin_main_linux_cc,v 1.1 2011/06/08 20:36:56 ro
 -#if defined(ARCH_CPU_64_BITS)
 +#if defined(ARCH_CPU_64_BITS) && !defined(OS_OPENBSD)
  
- namespace {
+ namespace content {
  
