@@ -1,14 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/06/20 08:53:55 fgsch Exp $
-@comment lib/python${MODPY_VERSION}/site-packages/_anthy.la
-lib/python${MODPY_VERSION}/site-packages/_anthy.so
-lib/python${MODPY_VERSION}/site-packages/anthy.py
+@comment $OpenBSD: PLIST,v 1.3 2013/01/18 12:42:16 fgsch Exp $
+include/ibus-anthy-1.0/
+include/ibus-anthy-1.0/anthygcontext.h
+lib/girepository-1.0/Anthy-9000.typelib
+@comment lib/libanthygobject-1.0.la
+@lib lib/libanthygobject-1.0.so.${LIBanthygobject-1.0_VERSION}
 libexec/ibus-engine-anthy
 libexec/ibus-setup-anthy
+share/applications/ibus-setup-anthy.desktop
+share/gir-1.0/Anthy-9000.gir
 share/ibus-anthy/
 share/ibus-anthy/dicts/
 share/ibus-anthy/dicts/oldchar.t
 share/ibus-anthy/dicts/symbol.t
 share/ibus-anthy/engine/
+share/ibus-anthy/engine/_config.py
+share/ibus-anthy/engine/_config.pyc
+share/ibus-anthy/engine/_config.pyo
+share/ibus-anthy/engine/default.xml
 share/ibus-anthy/engine/engine.py
 share/ibus-anthy/engine/engine.pyc
 share/ibus-anthy/engine/engine.pyo
@@ -36,9 +44,10 @@ share/ibus-anthy/engine/tables.pyo
 share/ibus-anthy/engine/thumb.py
 share/ibus-anthy/engine/thumb.pyc
 share/ibus-anthy/engine/thumb.pyo
-share/ibus-anthy/icons/
-share/ibus-anthy/icons/ibus-anthy.png
 share/ibus-anthy/setup/
+share/ibus-anthy/setup/_config.py
+share/ibus-anthy/setup/_config.pyc
+share/ibus-anthy/setup/_config.pyo
 share/ibus-anthy/setup/anthyprefs.py
 share/ibus-anthy/setup/anthyprefs.pyc
 share/ibus-anthy/setup/anthyprefs.pyo
@@ -48,8 +57,14 @@ share/ibus-anthy/setup/main.pyo
 share/ibus-anthy/setup/prefs.py
 share/ibus-anthy/setup/prefs.pyc
 share/ibus-anthy/setup/prefs.pyo
-share/ibus-anthy/setup/setup.glade
+share/ibus-anthy/setup/setup.ui
 share/ibus/component/anthy.xml
+share/icons/hicolor/scalable/apps/ibus-anthy.svg
+share/locale/el/LC_MESSAGES/ibus-anthy.mo
 share/locale/fr/LC_MESSAGES/ibus-anthy.mo
 share/locale/ja/LC_MESSAGES/ibus-anthy.mo
 share/locale/zh_CN/LC_MESSAGES/ibus-anthy.mo
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
