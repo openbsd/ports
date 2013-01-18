@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/01/28 10:02:35 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/01/18 11:17:35 sthen Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}nodewords/
@@ -18,6 +18,7 @@ ${DRUPAL_MODS}nodewords/nodewords.admin.inc
 ${DRUPAL_MODS}nodewords/nodewords.api.php
 ${DRUPAL_MODS}nodewords/nodewords.info
 ${DRUPAL_MODS}nodewords/nodewords.install
+${DRUPAL_MODS}nodewords/nodewords.migrate.inc
 ${DRUPAL_MODS}nodewords/nodewords.module
 ${DRUPAL_MODS}nodewords/nodewords.test
 ${DRUPAL_MODS}nodewords/nodewords_basic/
