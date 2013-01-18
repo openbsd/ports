@@ -1,8 +1,22 @@
-@comment $OpenBSD: PLIST-data,v 1.8 2012/09/02 09:36:55 ajacoutot Exp $
-@conflict xscreensaver-<5.07p3
-@conflict xscreensaver-<5.07p3-no_gle
+@comment $OpenBSD: PLIST,v 1.29 2013/01/18 15:30:34 ajacoutot Exp $
+@conflict xscreensaver-data-*
 @conflict xscreensaver-gle-*
+@conflict xscreensaver-<5.07p3-no_gle
 @pkgpath x11/xscreensaver,-gle
+@pkgpath x11/xscreensaver,no_gle
+@pkgpath x11/xscreensaver,-main
+@pkgpath x11/xscreensaver,-data
+@mode 4755
+@bin bin/xscreensaver
+@mode
+@bin bin/xscreensaver-command
+@bin bin/xscreensaver-demo
+@bin bin/xscreensaver-getimage
+bin/xscreensaver-getimage-file
+bin/xscreensaver-getimage-video
+@bin bin/xscreensaver-gl-helper
+bin/xscreensaver-text
+lib/X11/app-defaults/XScreenSaver
 libexec/xscreensaver/
 @bin libexec/xscreensaver/abstractile
 @bin libexec/xscreensaver/anemone
@@ -205,6 +219,13 @@ libexec/xscreensaver/webcollage
 @bin libexec/xscreensaver/xrayswarm
 @bin libexec/xscreensaver/xspirograph
 @bin libexec/xscreensaver/zoom
+@man man/man1/xscreensaver-command.1
+@man man/man1/xscreensaver-demo.1
+@man man/man1/xscreensaver-getimage-file.1
+@man man/man1/xscreensaver-getimage-video.1
+@man man/man1/xscreensaver-getimage.1
+@man man/man1/xscreensaver-text.1
+@man man/man1/xscreensaver.1
 @man man/man6/abstractile.6
 @man man/man6/anemone.6
 @man man/man6/anemotaxis.6
@@ -404,7 +425,6 @@ libexec/xscreensaver/webcollage
 @man man/man6/xscreensaver-gl-helper.6
 @man man/man6/xspirograph.6
 @man man/man6/zoom.6
-share/applications/
 share/applications/screensavers/
 share/applications/screensavers/abstractile.desktop
 share/applications/screensavers/anemone.desktop
@@ -628,6 +648,34 @@ share/applications/screensavers/xmatrix.desktop
 share/applications/screensavers/xrayswarm.desktop
 share/applications/screensavers/xspirograph.desktop
 share/applications/screensavers/zoom.desktop
+share/applications/xscreensaver-properties.desktop
+share/locale/ca/LC_MESSAGES/xscreensaver.mo
+share/locale/da/LC_MESSAGES/xscreensaver.mo
+share/locale/de/LC_MESSAGES/xscreensaver.mo
+share/locale/es/LC_MESSAGES/xscreensaver.mo
+share/locale/et/LC_MESSAGES/xscreensaver.mo
+share/locale/fi/LC_MESSAGES/xscreensaver.mo
+share/locale/fr/LC_MESSAGES/xscreensaver.mo
+share/locale/hu/LC_MESSAGES/xscreensaver.mo
+share/locale/it/LC_MESSAGES/xscreensaver.mo
+share/locale/ja/LC_MESSAGES/xscreensaver.mo
+share/locale/ko/LC_MESSAGES/xscreensaver.mo
+share/locale/nb/LC_MESSAGES/xscreensaver.mo
+share/locale/nl/LC_MESSAGES/xscreensaver.mo
+share/locale/pl/LC_MESSAGES/xscreensaver.mo
+share/locale/pt/LC_MESSAGES/xscreensaver.mo
+share/locale/pt_BR/LC_MESSAGES/xscreensaver.mo
+share/locale/ru/LC_MESSAGES/xscreensaver.mo
+share/locale/sk/LC_MESSAGES/xscreensaver.mo
+share/locale/sv/LC_MESSAGES/xscreensaver.mo
+share/locale/vi/LC_MESSAGES/xscreensaver.mo
+share/locale/wa/
+share/locale/wa/LC_MESSAGES/
+share/locale/wa/LC_MESSAGES/xscreensaver.mo
+share/locale/zh_CN/LC_MESSAGES/xscreensaver.mo
+share/locale/zh_TW/LC_MESSAGES/xscreensaver.mo
+share/pixmaps/
+share/pixmaps/xscreensaver.xpm
 share/xscreensaver/
 share/xscreensaver/config/
 share/xscreensaver/config/README
@@ -830,3 +878,13 @@ share/xscreensaver/config/xmatrix.xml
 share/xscreensaver/config/xrayswarm.xml
 share/xscreensaver/config/xspirograph.xml
 share/xscreensaver/config/zoom.xml
+share/xscreensaver/glade/
+share/xscreensaver/glade/screensaver-cmndln.png
+share/xscreensaver/glade/screensaver-colorselector.png
+share/xscreensaver/glade/screensaver-diagnostic.png
+share/xscreensaver/glade/screensaver-locking.png
+share/xscreensaver/glade/screensaver-power.png
+share/xscreensaver/glade/screensaver-snap.png
+share/xscreensaver/glade/xscreensaver-demo.glade2
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
