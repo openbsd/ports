@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2012/08/18 12:41:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2013/01/18 20:54:44 gsoares Exp $
 
 COMMENT=	internet relay chat (irc) server
 
@@ -13,6 +13,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	Brian Caswell <bmc@openbsd.org>
 
+# GPLv1+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
