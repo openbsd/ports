@@ -1,0 +1,5 @@
+# $OpenBSD: 10_org.gnome.settings-daemon.peripherals.wacom.gschema.override,v 1.1 2013/01/18 07:22:27 ajacoutot Exp $
+
+# no orientation support on OpenBSD (gudev)
+[org.gnome.settings-daemon.plugins.gsdwacom]
+active=false

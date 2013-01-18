@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2012/10/08 17:12:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.30 2013/01/18 07:22:27 ajacoutot Exp $
 include/gnome-settings-daemon-3.0/
 include/gnome-settings-daemon-3.0/gnome-settings-daemon/
 include/gnome-settings-daemon-3.0/gnome-settings-daemon/gnome-settings-plugin.h
@@ -24,6 +24,7 @@ lib/gnome-settings-daemon-3.0/libmedia-keys.so
 lib/gnome-settings-daemon-3.0/libmouse.so
 lib/gnome-settings-daemon-3.0/libpower.so
 lib/gnome-settings-daemon-3.0/libprint-notifications.so
+lib/gnome-settings-daemon-3.0/libscreensaver-proxy.so
 lib/gnome-settings-daemon-3.0/libsmartcard.so
 lib/gnome-settings-daemon-3.0/libsound.so
 lib/gnome-settings-daemon-3.0/libxrandr.so
@@ -32,6 +33,7 @@ lib/gnome-settings-daemon-3.0/media-keys.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/mouse.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/power.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/print-notifications.gnome-settings-plugin
+lib/gnome-settings-daemon-3.0/screensaver-proxy.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/smartcard.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/sound.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/xrandr.gnome-settings-plugin
@@ -51,11 +53,13 @@ lib/pkgconfig/gnome-settings-daemon.pc
 @bin libexec/gsd-test-mouse
 @bin libexec/gsd-test-power
 @bin libexec/gsd-test-print-notifications
+@bin libexec/gsd-test-screensaver-proxy
 @bin libexec/gsd-test-smartcard
 @bin libexec/gsd-test-sound
 @bin libexec/gsd-test-xsettings
 @man man/man1/gnome-settings-daemon.1
 share/GConf/gsettings/gnome-settings-daemon.convert
+share/dbus-1/services/org.freedesktop.IBus.service
 share/examples/gnome-settings-daemon/
 share/examples/gnome-settings-daemon/gnome-settings-daemon/
 share/examples/gnome-settings-daemon/gnome-settings-daemon/xrandr/
@@ -69,15 +73,21 @@ share/examples/gnome-settings-daemon/xdg/autostart/gnome-fallback-mount-helper.d
 @sample ${SYSCONFDIR}/xdg/autostart/gnome-fallback-mount-helper.desktop
 share/examples/gnome-settings-daemon/xdg/autostart/gnome-settings-daemon.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/gnome-settings-daemon.desktop
+share/glib-2.0/schemas/10_org.gnome.settings-daemon.peripherals.wacom.gschema.override
+share/glib-2.0/schemas/10_org.gnome.settings-daemon.plugins.orientation.gschema.override
+share/glib-2.0/schemas/10_org.gnome.settings-daemon.plugins.updates.gschema.override
 share/glib-2.0/schemas/org.gnome.settings-daemon.enums.xml
 share/glib-2.0/schemas/org.gnome.settings-daemon.peripherals.gschema.xml
+share/glib-2.0/schemas/org.gnome.settings-daemon.peripherals.wacom.gschema.xml
 share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.color.gschema.xml
 share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.gschema.xml
 share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.housekeeping.gschema.xml
 share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.keyboard.gschema.xml
 share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.media-keys.gschema.xml
+share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.orientation.gschema.xml
 share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.power.gschema.xml
 share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.print-notifications.gschema.xml
+share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.updates.gschema.xml
 share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.xrandr.gschema.xml
 share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.xsettings.gschema.xml
 share/gnome-settings-daemon/
