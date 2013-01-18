@@ -1,0 +1,1 @@
+posix-spawn uses posix_spawnp(2) for faster process spawning.
