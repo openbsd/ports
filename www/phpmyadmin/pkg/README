@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2012/08/31 16:40:38 sthen Exp $
+$OpenBSD: README,v 1.2 2013/01/18 15:17:43 giovanni Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -13,10 +13,8 @@ the configuration file:
     # /etc/rc.d/httpd restart
 
 By default, this sets an alias for /phpMyAdmin and restricts access
-to connections coming from localhost.  It also uses AllowOverride to
-enable an .htaccess file restricting access from search engine bots.
-(The previously recommended method of adding a symlink under htdocs/ 
-is not compatible with <Directory> overrides).
+to connections coming from localhost.
+It also restricts access from search engine bots.
 
 If you need to allow wider access, after considering security
 implications, edit /var/www/conf/modules.sample/phpMyAdmin-httpd.conf

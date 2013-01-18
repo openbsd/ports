@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.76 2012/08/31 16:40:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.77 2013/01/18 15:17:43 giovanni Exp $
 
 COMMENT=	tool to handle the administration of MySQL over the web
 
-V=		3.4.11.1
-# If updating to 3.5.x, note that contrib/htaccess (@sample'd and
-# mentioned in README) is removed.
+V=		3.5.5
+
 PKGNAME=	phpMyAdmin-$V
 DISTNAME=	phpMyAdmin-$V-all-languages
-REVISION=	0
 CATEGORIES=	www
 HOMEPAGE=	http://www.phpmyadmin.net/
 
@@ -37,7 +35,7 @@ RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-mysql \
 
 post-extract:
 	${SUBST_CMD} -c ${FILESDIR}/phpMyAdmin-httpd.conf \
-	    ${WRKSRC}/contrib/phpMyAdmin-httpd.conf
+	    ${WRKSRC}/examples/phpMyAdmin-httpd.conf
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}/
