@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2013/01/15 23:02:19 sthen Exp $
---- Makefile.orig	Tue Oct  4 21:28:29 2011
-+++ Makefile	Tue Jan 15 21:49:08 2013
+$OpenBSD: patch-Makefile,v 1.2 2013/01/18 22:36:44 sthen Exp $
+--- Makefile.orig	Thu Oct  6 20:22:05 2011
++++ Makefile	Fri Jan 18 22:25:27 2013
 @@ -53,8 +53,8 @@ DFLAGS?= -DDEBUG_PPPD -DTRUST_PPPD_TO_DIE
  # but we use a local copy if we don't find it.
  #
@@ -23,12 +23,8 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2013/01/15 23:02:19 sthen Exp $
  
  # Feature flags
  #
-@@ -105,10 +105,10 @@ BINDIR?=$(DESTDIR)${PREFIX}/bin
- MANDIR?=$(DESTDIR)${PREFIX}/share/man
- 
- 
--all: $(EXEC) pfc $(CONTROL_EXEC)
-+all: $(EXEC) $(CONTROL_EXEC)
+@@ -108,13 +108,13 @@ MANDIR?=$(DESTDIR)${PREFIX}/share/man
+ all: $(EXEC) pfc $(CONTROL_EXEC)
  
  clean:
 -	rm -f $(OBJS) $(EXEC) pfc.o pfc $(CONTROL_EXEC)
@@ -36,24 +32,10 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2013/01/15 23:02:19 sthen Exp $
  
  $(EXEC): $(OBJS) $(HDRS)
  	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LDLIBS)
-@@ -123,7 +123,7 @@ pfc:
- romfs:
- 	$(ROMFSINST) /bin/$(EXEC)
  
--install: ${EXEC} pfc ${CONTROL_EXEC}
-+install: ${EXEC} ${CONTROL_EXEC}
- 	install -d -m 0755 ${SBINDIR}
- 	install -m 0755 $(EXEC) ${SBINDIR}/$(EXEC)
- 	install -d -m 0755 ${MANDIR}/man5
-@@ -131,11 +131,6 @@ install: ${EXEC} pfc ${CONTROL_EXEC}
- 	install -m 0644 doc/xl2tpd.8 ${MANDIR}/man8/
- 	install -m 0644 doc/xl2tpd.conf.5 doc/l2tp-secrets.5 \
- 		 ${MANDIR}/man5/
--	# pfc
--	install -d -m 0755 ${BINDIR}
--	install -m 0755 pfc ${BINDIR}/pfc
--	install -d -m 0755 ${MANDIR}/man1
--	install -m 0644 contrib/pfc.1 ${MANDIR}/man1/
- 	# control exec
- 	install -d -m 0755 ${SBINDIR}
- 	install -m 0755 $(CONTROL_EXEC) ${SBINDIR}/$(CONTROL_EXEC)
+ $(CONTROL_EXEC): $(CONTROL_SRCS)
+-	$(CC) $(CONTROL_SRCS) -o $@
++	$(CC) $(CFLAGS) $(LDFLAGS) $(CONTROL_SRCS) -o $@
+ 
+ pfc:
+ 	$(CC) $(CFLAGS) -c contrib/pfc.c
