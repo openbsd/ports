@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in_in,v 1.8 2012/05/04 10:09:22 ajacoutot Exp $
---- configure.in.in.orig	Fri Feb  6 12:07:37 2009
-+++ configure.in.in	Fri May  4 02:38:56 2012
+$OpenBSD: patch-configure_in_in,v 1.9 2013/01/18 11:37:54 jasper Exp $
+--- configure.in.in.orig	Fri Feb  6 20:07:37 2009
++++ configure.in.in	Wed Jan 16 11:07:32 2013
 @@ -740,6 +740,37 @@ if test "x$with_esd" != "xno"; then
  	fi
  fi
@@ -59,7 +59,7 @@ $OpenBSD: patch-configure_in_in,v 1.8 2012/05/04 10:09:22 ajacoutot Exp $
 +		AC_DEFINE(ENABLE_MMX,0,[post proc])
 +		echo "LOONGSON"
 +		;;
-+	sgi)
++	sgi|mipseb)
 +		have_little_endian=no
 +		LMPG_OPT="";
 +		AC_DEFINE(ADM_BIG_ENDIAN,1,[Big endian CPU - SPARC or PowerPC or MIPS])
