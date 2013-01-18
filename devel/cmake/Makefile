@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2013/01/02 08:59:59 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.75 2013/01/18 22:17:06 dcoppa Exp $
 
 VMEM_WARNING =	Yes
 BROKEN-arm =	build fails since move to gcc4
@@ -8,7 +8,7 @@ HOMEPAGE =	http://www.cmake.org/
 CATEGORIES =	devel
 COMMENT =	portable build system
 DISTNAME =	cmake-2.8.10.2
-REVISION =	1
+REVISION =	2
 MASTER_SITES =	${HOMEPAGE}files/v2.8/
 
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>

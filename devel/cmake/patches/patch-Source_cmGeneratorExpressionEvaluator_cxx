@@ -1,0 +1,43 @@
+$OpenBSD: patch-Source_cmGeneratorExpressionEvaluator_cxx,v 1.1 2013/01/18 22:17:06 dcoppa Exp $
+
+Bugfix: don't crash when a target is expected but is not available
+(upstream git commit e767ffcda58ab73cf2c4394202eec7ae1f6035b5)
+
+--- Source/cmGeneratorExpressionEvaluator.cxx.orig	Tue Nov 27 14:26:33 2012
++++ Source/cmGeneratorExpressionEvaluator.cxx	Fri Jan 18 16:13:03 2013
+@@ -18,6 +18,8 @@
+ 
+ #include <cmsys/String.h>
+ 
++#include <assert.h>
++
+ //----------------------------------------------------------------------------
+ #if !defined(__SUNPRO_CC) || __SUNPRO_CC > 0x510
+ static
+@@ -289,6 +291,17 @@ static const struct TargetPropertyNode : public cmGene
+ 
+     cmGeneratorTarget* target = context->Target;
+     std::string propertyName = *parameters.begin();
++
++    if (!target && parameters.size() == 1)
++      {
++      reportError(context, content->GetOriginalExpression(),
++          "$<TARGET_PROPERTY:prop> may only be used with targets.  It may not "
++          "be used with add_custom_command.  Specify the target to read a "
++          "property from using the $<TARGET_PROPERTY:tgt,prop> signature "
++          "instead.");
++      return std::string();
++      }
++
+     if (parameters.size() == 2)
+       {
+       if (parameters.begin()->empty() && parameters[1].empty())
+@@ -348,6 +361,8 @@ static const struct TargetPropertyNode : public cmGene
+                     "Property name not supported.");
+       return std::string();
+       }
++
++    assert(target);
+ 
+     cmGeneratorExpressionDAGChecker dagChecker(context->Backtrace,
+                                                target->GetName(),

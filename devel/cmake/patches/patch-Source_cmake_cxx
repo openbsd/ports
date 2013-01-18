@@ -1,0 +1,20 @@
+$OpenBSD: patch-Source_cmake_cxx,v 1.8 2013/01/18 22:17:06 dcoppa Exp $
+
+Bugfix: don't crash if the link.txt file contains empty lines
+(upstream git commit 8ff1d4714fb7cd42eb3cd8db041b529e433eb7c8)
+
+--- Source/cmake.cxx.orig	Tue Nov 27 14:26:33 2012
++++ Source/cmake.cxx	Fri Jan 18 16:18:31 2013
+@@ -3299,6 +3299,12 @@ int cmake::ExecuteLinkScript(std::vector<std::string>&
+   int result = 0;
+   while(result == 0 && cmSystemTools::GetLineFromStream(fin, command))
+     {
++    // Skip empty command lines.
++    if(command.find_first_not_of(" \t") == command.npos)
++      {
++      continue;
++      }
++
+     // Setup this command line.
+     const char* cmd[2] = {command.c_str(), 0};
+     cmsysProcess_SetCommand(cp, cmd);
