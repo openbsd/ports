@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/12/13 17:58:27 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/01/18 17:10:09 jeremy Exp $
 ${GEM_BIN}/rackup${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -10,7 +10,10 @@ ${GEM_LIB}/gems/${DISTNAME}/SPEC
 ${GEM_LIB}/gems/${DISTNAME}/bin/
 ${GEM_LIB}/gems/${DISTNAME}/bin/rackup
 ${GEM_LIB}/gems/${DISTNAME}/contrib/
+${GEM_LIB}/gems/${DISTNAME}/contrib/rack.png
+${GEM_LIB}/gems/${DISTNAME}/contrib/rack.svg
 ${GEM_LIB}/gems/${DISTNAME}/contrib/rack_logo.svg
+${GEM_LIB}/gems/${DISTNAME}/contrib/rdoc.css
 ${GEM_LIB}/gems/${DISTNAME}/example/
 ${GEM_LIB}/gems/${DISTNAME}/example/lobster.ru
 ${GEM_LIB}/gems/${DISTNAME}/example/protectedlobster.rb
@@ -32,6 +35,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rack/backports/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/backports/uri/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/backports/uri/common_18.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/backports/uri/common_192.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rack/backports/uri/common_193.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/body_proxy.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/builder.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/cascade.rb
@@ -95,12 +99,27 @@ ${GEM_LIB}/gems/${DISTNAME}/test/builder/
 ${GEM_LIB}/gems/${DISTNAME}/test/builder/anything.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/builder/comment.ru
 ${GEM_LIB}/gems/${DISTNAME}/test/builder/end.ru
+${GEM_LIB}/gems/${DISTNAME}/test/builder/line.ru
 ${GEM_LIB}/gems/${DISTNAME}/test/builder/options.ru
 ${GEM_LIB}/gems/${DISTNAME}/test/cgi/
+${GEM_LIB}/gems/${DISTNAME}/test/cgi/assets/
+${GEM_LIB}/gems/${DISTNAME}/test/cgi/assets/folder/
+${GEM_LIB}/gems/${DISTNAME}/test/cgi/assets/folder/test.js
+${GEM_LIB}/gems/${DISTNAME}/test/cgi/assets/fonts/
+${GEM_LIB}/gems/${DISTNAME}/test/cgi/assets/fonts/font.eot
+${GEM_LIB}/gems/${DISTNAME}/test/cgi/assets/images/
+${GEM_LIB}/gems/${DISTNAME}/test/cgi/assets/images/image.png
+${GEM_LIB}/gems/${DISTNAME}/test/cgi/assets/index.html
+${GEM_LIB}/gems/${DISTNAME}/test/cgi/assets/javascripts/
+${GEM_LIB}/gems/${DISTNAME}/test/cgi/assets/javascripts/app.js
+${GEM_LIB}/gems/${DISTNAME}/test/cgi/assets/stylesheets/
+${GEM_LIB}/gems/${DISTNAME}/test/cgi/assets/stylesheets/app.css
 ${GEM_LIB}/gems/${DISTNAME}/test/cgi/lighttpd.conf
 ${GEM_LIB}/gems/${DISTNAME}/test/cgi/rackup_stub.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/cgi/sample_rackup.ru
 ${GEM_LIB}/gems/${DISTNAME}/test/cgi/test
+${GEM_LIB}/gems/${DISTNAME}/test/cgi/test+directory/
+${GEM_LIB}/gems/${DISTNAME}/test/cgi/test+directory/test+file
 ${GEM_LIB}/gems/${DISTNAME}/test/cgi/test.fcgi
 ${GEM_LIB}/gems/${DISTNAME}/test/cgi/test.ru
 ${GEM_LIB}/gems/${DISTNAME}/test/gemloader.rb
@@ -115,6 +134,9 @@ ${GEM_LIB}/gems/${DISTNAME}/test/multipart/filename_and_modification_param
 ${GEM_LIB}/gems/${DISTNAME}/test/multipart/filename_with_escaped_quotes
 ${GEM_LIB}/gems/${DISTNAME}/test/multipart/filename_with_escaped_quotes_and_modification_param
 ${GEM_LIB}/gems/${DISTNAME}/test/multipart/filename_with_percent_escaped_quotes
+${GEM_LIB}/gems/${DISTNAME}/test/multipart/filename_with_unescaped_percentages
+${GEM_LIB}/gems/${DISTNAME}/test/multipart/filename_with_unescaped_percentages2
+${GEM_LIB}/gems/${DISTNAME}/test/multipart/filename_with_unescaped_percentages3
 ${GEM_LIB}/gems/${DISTNAME}/test/multipart/filename_with_unescaped_quotes
 ${GEM_LIB}/gems/${DISTNAME}/test/multipart/ie
 ${GEM_LIB}/gems/${DISTNAME}/test/multipart/mixed_files
@@ -129,6 +151,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/registering_handler/
 ${GEM_LIB}/gems/${DISTNAME}/test/registering_handler/rack/
 ${GEM_LIB}/gems/${DISTNAME}/test/registering_handler/rack/handler/
 ${GEM_LIB}/gems/${DISTNAME}/test/registering_handler/rack/handler/registering_myself.rb
+${GEM_LIB}/gems/${DISTNAME}/test/spec_auth.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_auth_basic.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_auth_digest.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_body_proxy.rb
@@ -175,6 +198,10 @@ ${GEM_LIB}/gems/${DISTNAME}/test/spec_thin.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_urlmap.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_utils.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_webrick.rb
+${GEM_LIB}/gems/${DISTNAME}/test/static/
+${GEM_LIB}/gems/${DISTNAME}/test/static/another/
+${GEM_LIB}/gems/${DISTNAME}/test/static/another/index.html
+${GEM_LIB}/gems/${DISTNAME}/test/static/index.html
 ${GEM_LIB}/gems/${DISTNAME}/test/testrequest.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/unregistered_handler/
 ${GEM_LIB}/gems/${DISTNAME}/test/unregistered_handler/rack/
