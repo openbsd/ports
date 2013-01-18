@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1100 2013/01/18 17:08:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.1101 2013/01/18 18:05:35 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1235,6 +1235,7 @@
      SUBDIR += ruby-transaction-simple
      SUBDIR += ruby-trollop
      SUBDIR += ruby-uuidtools
+     SUBDIR += ruby-yajl
      SUBDIR += ruby-zentest
      SUBDIR += scons
      SUBDIR += sdcc
