@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/11/07 18:39:32 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/01/18 11:51:38 bmercer Exp $
 lib/X11/fonts/
 @fontdir lib/X11/fonts/adobe-source-code-pro/
 lib/X11/fonts/adobe-source-code-pro/SourceCodePro-Black.otf
@@ -9,6 +9,8 @@ lib/X11/fonts/adobe-source-code-pro/SourceCodePro-ExtraLight.otf
 lib/X11/fonts/adobe-source-code-pro/SourceCodePro-ExtraLight.ttf
 lib/X11/fonts/adobe-source-code-pro/SourceCodePro-Light.otf
 lib/X11/fonts/adobe-source-code-pro/SourceCodePro-Light.ttf
+lib/X11/fonts/adobe-source-code-pro/SourceCodePro-Medium.otf
+lib/X11/fonts/adobe-source-code-pro/SourceCodePro-Medium.ttf
 lib/X11/fonts/adobe-source-code-pro/SourceCodePro-Regular.otf
 lib/X11/fonts/adobe-source-code-pro/SourceCodePro-Regular.ttf
 lib/X11/fonts/adobe-source-code-pro/SourceCodePro-Semibold.otf
