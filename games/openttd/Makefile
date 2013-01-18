@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2012/12/25 00:17:37 bentley Exp $
+# $OpenBSD: Makefile,v 1.28 2013/01/18 11:34:37 kirby Exp $
 
 COMMENT=	open source clone of the game Transport Tycoon Deluxe
 
 V =		1.2.3
+REVISION=	0
 DISTNAME =	openttd-${V}
 EXTRACT_SUFX=	-source.tar.gz
 GFX_V=		0.4.4
@@ -12,6 +13,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		opengfx-${GFX_V}.zip:0 \
 		opensfx-${SFX_V}.zip:1 \
 		openmsx-${MSX_V}.zip:2
+DIST_SUBDIR=	openttd
 
 CATEGORIES=	games
 
@@ -77,5 +79,6 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/opensfx-${SFX_V}/*.{cat,obs} ${GAMEDIR}/data
 	${INSTALL_DATA} ${WRKDIR}/openmsx-${MSX_V}/*.{mid,obm} ${GAMEDIR}/gm
 	rm -rf ${WRKINST}/bundle
+	rm -rf ${GAMEDIR}/media/openttd.desktop*
 
 .include <bsd.port.mk>

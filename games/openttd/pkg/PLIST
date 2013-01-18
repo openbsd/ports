@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2012/12/25 00:17:37 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.15 2013/01/18 11:34:37 kirby Exp $
 @bin bin/openttd
 @man man/man6/openttd.6
 share/applications/openttd.desktop
@@ -219,11 +219,6 @@ share/openttd/media/openttd.32.xpm
 share/openttd/media/openttd.48.png
 share/openttd/media/openttd.64.png
 share/openttd/media/openttd.64.xpm
-share/openttd/media/openttd.desktop
-share/openttd/media/openttd.desktop.filter.awk
-share/openttd/media/openttd.desktop.in
-share/openttd/media/openttd.desktop.install
-share/openttd/media/openttd.desktop.translation.awk
 share/openttd/media/openttd.ico
 share/openttd/media/openttd.svg
 share/openttd/scripts/
