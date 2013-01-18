@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2012/12/31 15:48:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2013/01/18 18:11:51 jasper Exp $
 
 COMMENT =	safe, customer facing template language
 
-DISTNAME =	liquid-2.2.2
+DISTNAME =	liquid-2.4.1
 CATEGORIES =	textproc
-
-REVISION =	3
 
 HOMEPAGE =	http://www.liquidmarkup.org/
 
@@ -21,6 +19,6 @@ CONFIGURE_STYLE =	ruby gem
 
 # distfile currently doesn't include the Rakefile or specs from the source
 # repository, but a future version might
-MODRUBY_REGRESS =	rake
+#MODRUBY_REGRESS =	rake
 
 .include <bsd.port.mk>
