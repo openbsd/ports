@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2013/01/16 19:28:48 pascal Exp $
+# $OpenBSD: Makefile,v 1.44 2013/01/18 19:09:58 bcallah Exp $
 
 ONLY_FOR_ARCHS = amd64 hppa i386 powerpc sparc sparc64
 DPB_PROPERTIES = parallel
@@ -51,7 +51,7 @@ FLAVOR ?=
 
 ONLY_FOR_ARCHS-ada = i386 amd64 sparc64
 ONLY_FOR_ARCHS-java = amd64 i386 sparc64
-NOT_FOR_ARCHS-go = hppa
+NOT_FOR_ARCHS-go = hppa mips64el
 
 MULTI_PACKAGES = -main -f95 -objc -java -c++ -estdc -ada -go
 
