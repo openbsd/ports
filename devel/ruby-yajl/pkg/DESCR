@@ -1,0 +1,2 @@
+This gem is a C binding to the excellent YAJL JSON parsing and
+generation library.
