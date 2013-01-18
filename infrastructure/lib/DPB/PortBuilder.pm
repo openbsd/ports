@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.29 2013/01/16 10:38:56 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.30 2013/01/18 21:11:55 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -178,9 +178,8 @@ sub build
 	close($fh);
 
 	my $job;
-	$job = DPB::Job::Port->new($log, $v, $self, $special, $core,
+	$job = DPB::Job::Port->new($log, $v, $lock, $self, $special, $core,
 	    sub {$self->end_lock($lock, $core, $job); $self->report($v, $job, $core); &$final_sub;});
-	$job->{lock} = $lock;
 	$core->start_job($job, $v);
 	if ($job->{parallel}) {
 		$core->can_swallow($job->{parallel}-1);

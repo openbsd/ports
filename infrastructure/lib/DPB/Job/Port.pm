@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.82 2013/01/16 10:38:56 espie Exp $
+# $OpenBSD: Port.pm,v 1.83 2013/01/18 21:11:55 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -180,7 +180,8 @@ sub finalize
 	if ($core->{status} == 0) {
 		my $v = $job->{v};
 		my $builder = $job->{builder};
-		$job->add_normal_tasks($builder->{dontclean}{$v->pkgpath});
+		$job->add_normal_tasks($builder->{dontclean}{$v->pkgpath}, 
+		    $core);
 	} else {
 		$job->{signature_only} = 1;
 	}
@@ -251,34 +252,6 @@ sub finalize
 	}
 }
 
-package DPB::Task::Port::ChecksumAndList;
-our @ISA =qw(DPB::Task::Port::Checksum);
-sub need_checksum
-{
-	my ($self, $log, $info) = @_;
-	my $need = $self->SUPER::need_checksum($log, $info);
-	if (!$need) {
-		for my $dist (values %{$info->{DIST}}) {
-			if (!-f $dist->listname) {
-				$need = 1;
-				$self->{need_list} = 1;
-			}
-		}
-	}
-	return $need;
-}
-
-sub run
-{
-	my ($self, $core) = @_;
-	my $job = $core->job;
-	my $exit = $self->SUPER::checksum($core);
-	if ($exit || !$self->{need_list}) {
-		exit($exit);
-	}
-	$self->{phase} = 'list-distfiles';
-	$self->DPB::Task::Port::run($core);
-}
 
 package DPB::Task::Port::Serialized;
 our @ISA = qw(DPB::Task::Port);
@@ -438,13 +411,8 @@ sub finalize
 			next if m/\s/;
 			push(@r, $_);
 		}
-		if ($v->{info}->has_property('nojunk')) {
-			print {$job->{lock}} "nojunk\n";
-			$job->{nojunk} = 1;
-		}
-		print {$job->{lock}} "needed=", join(' ', sort @r), "\n";
 		close $fh;
-		$job->{live_depends} = \@r;
+		$job->save_depends(\@r);
 	} else {
 		$core->{status} = 1;
 	}
@@ -698,7 +666,6 @@ package DPB::Port::TaskFactory;
 my $repo = {
 	default => 'DPB::Task::Port',
 	checksum => 'DPB::Task::Port::Checksum',
-	'checksum-and-list' => 'DPB::Task::Port::ChecksumAndList',
 	clean => 'DPB::Task::Port::Clean',
 	'show-prepare-results' => 'DPB::Task::Port::PrepareResults',
 	fetch => 'DPB::Task::Port::Fetch',
@@ -723,10 +690,11 @@ use Time::HiRes qw(time);
 
 sub new
 {
-	my ($class, $log, $v, $builder, $special, $core, $endcode) = @_;
+	my ($class, $log, $v, $lock, $builder, $special, $core, $endcode) = @_;
 	my $job = bless {
 	    tasks => [],
 	    log => $log, v => $v,
+	    lock => $lock,
 	    path => $v->fullpkgpath,
 	    special => $special,  current => '',
 	    builder => $builder},
@@ -759,7 +727,7 @@ sub new
 		    DPB::Task::Port::Signature->new('signature'));
 	} else {
 		$job->add_normal_tasks($builder->{dontclean}{$v->pkgpath},
-		    $prop);
+		    $core);
 	}
 	return $job;
 }
@@ -776,9 +744,20 @@ sub next_task
 	}
 }
 
+sub save_depends
+{
+	my ($job, $l) = @_;
+	$job->{live_depends} = $l;
+	if ($job->{v}{info}->has_property('nojunk')) {
+		print {$job->{lock}} "nojunk\n";
+		$job->{nojunk} = 1;
+	}
+	print {$job->{lock}} "needed=", join(' ', sort @$l), "\n";
+}
+
 sub has_depends
 {
-	my $self = shift;
+	my ($self, $core) = @_;
 	my $dep = {};
 	my $v = $self->{v};
 	if (exists $v->{info}{BDEPENDS}) {
@@ -810,8 +789,30 @@ sub has_depends
 		}
 	}
 	return 0 unless %$dep;
-	$self->{depends} = $dep;
-	return 1;
+	# XXX we are running this synchronously with other jobs on the
+	# same host, so we know exactly which live_depends we can reuse.
+	# try to see if other jobs that already have locks are enough to
+	# satisfy our depends, then we can completely avoid a pkg_add
+	my @live = ();
+	my %deps2 = %$dep;
+	for my $job ($core->same_host_jobs) {
+		next unless defined $job->{live_depends};
+		for my $d (@{$job->{live_depends}}) {
+			if (defined $deps2{$d}) {
+				delete $deps2{$d};
+				push(@live, $d);
+			}
+		}
+	}
+	if (!%deps2) {
+		$self->save_depends(\@live);
+		print {$self->{logfh}} "Avoided depends for ", 
+		    join(' ', @live), "\n";
+		return 0;
+	} else {
+		$self->{depends} = $dep;
+		return 1;
+	}
 }
 
 my $logsize = {};
@@ -826,10 +827,11 @@ sub add_build_info
 
 sub add_normal_tasks
 {
-	my ($self, $dontclean, $hostprop) = @_;
+	my ($self, $dontclean, $core) = @_;
 
 	my @todo;
 	my $builder = $self->{builder};
+	my $hostprop = $core->prop;
 	my $small = 0;
 	if (defined $times->{$self->{v}} && 
 	    $times->{$self->{v}} < ($hostprop->{small} // 120)) {
@@ -838,7 +840,7 @@ sub add_normal_tasks
 	if ($builder->{clean}) {
 		$self->insert_tasks(DPB::Task::Port::BaseClean->new('clean'));
 	}
-	if ($self->has_depends) {
+	if ($self->has_depends($core)) {
 		push(@todo, qw(depends show-prepare-results));
 	}
 	if ($hostprop->{junk}) {
