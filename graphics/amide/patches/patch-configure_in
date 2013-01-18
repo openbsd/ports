@@ -1,7 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.2 2011/05/19 15:28:27 ajacoutot Exp $
+$OpenBSD: patch-configure_in,v 1.3 2013/01/18 07:56:17 brad Exp $
 
 - Remove over-the-top optimization
-- Fix pthread library
 - Remove gnome-vfs2 dependency.
 
 --- configure.in.orig	Wed Dec  9 01:34:33 2009
@@ -17,15 +16,6 @@ $OpenBSD: patch-configure_in,v 1.2 2011/05/19 15:28:27 ajacoutot Exp $
  esac
  
  if test $CC = "gcc"; then
-@@ -92,7 +92,7 @@ AM_PATH_XMEDCON(0.10.0, FOUND_XMEDCON=yes, FOUND_XMEDC
- 
- dnl switch to C++ for DCMTK library stuff - also, if pthread is on the platform, probably need that
- AC_LANG_CPLUSPLUS
--AC_CHECK_LIB(pthread, pthread_mutex_init, THREAD_LIBS="-lpthread", THREAD_LIBS="")
-+AC_CHECK_LIB(pthread, pthread_mutex_init, THREAD_LIBS="-pthread", THREAD_LIBS="")
- AC_CHECK_LIB(dcmdata, main, FOUND_DCMDATA=yes, FOUND_DCMDATA=no, -lofstd  -lz -L/usr/local/dicom/lib -L/sw/lib $THREAD_LIBS)
- 
- dnl trying to phase out libfame use in favor of ffmpeg
 @@ -286,7 +286,6 @@ PKG_CHECK_MODULES(AMIDE_GTK,[
  ## gconf stuff is encapsulated in amide_gconf.c
  if (test $native_win32 = no); then

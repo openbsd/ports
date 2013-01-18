@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_mpeg_encode_c,v 1.2 2011/05/15 21:16:06 jasper Exp $
---- src/mpeg_encode.c.orig	Mon Nov 16 07:55:52 2009
-+++ src/mpeg_encode.c	Sun May 15 23:15:55 2011
+$OpenBSD: patch-src_mpeg_encode_c,v 1.3 2013/01/18 07:56:17 brad Exp $
+--- src/mpeg_encode.c.orig	Mon Nov 16 01:55:52 2009
++++ src/mpeg_encode.c	Fri Jan 18 02:18:00 2013
 @@ -141,7 +141,7 @@ static void convert_rgb_pixbuf_to_yuv(yuv_t * yuv, Gdk
  /* -------------------------------------------------------- */
  #ifdef AMIDE_FFMPEG_SUPPORT
@@ -10,3 +10,13 @@ $OpenBSD: patch-src_mpeg_encode_c,v 1.2 2011/05/15 21:16:06 jasper Exp $
  
  
  typedef struct {
+@@ -211,9 +211,6 @@ gboolean avcodec_initialized=FALSE;
+ 
+ static void mpeg_encoding_init(void) {
+   if (!avcodec_initialized) {
+-    /* must be called before using avcodec lib */
+-    avcodec_init();
+-    
+     /* register all the codecs */
+     avcodec_register_all();
+ 

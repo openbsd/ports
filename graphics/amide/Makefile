@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2012/12/21 12:13:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2013/01/18 07:56:17 brad Exp $
 
 COMMENT =	Amide a Medical Imaging Data Examiner
 
 DISTNAME =	amide-0.9.2
-REVISION =	14
+REVISION =	15
 CATEGORIES =	graphics
 
 HOMEPAGE =	http://amide.sourceforge.net/
@@ -43,7 +43,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 LIB_DEPENDS =	devel/gsl>=1.6 \
 		x11/gnome/libgnomecanvas \
 		graphics/xmedcon \
-		graphics/ffmpeg>=20100512 \
+		graphics/ffmpeg>=20121026 \
 		devel/gconf2
 
 USE_LIBTOOL =	Yes
