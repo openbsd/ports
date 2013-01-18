@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2012/10/08 17:19:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.28 2013/01/18 07:31:15 ajacoutot Exp $
 @conflict control-center-1*
 @conflict control-center2-*
 @conflict gnome-media-<2.91.2p3
@@ -448,7 +448,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/zu/LC_MESSAGES/gnome-control-center-2.0.mo
 share/pkgconfig/gnome-keybindings.pc
 share/polkit-1/actions/org.gnome.controlcenter.datetime.policy
-share/polkit-1/rules.d/
 share/polkit-1/rules.d/gnome-control-center.rules
 share/sounds/gnome/
 share/sounds/gnome/default/

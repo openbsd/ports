@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2013/01/05 12:53:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.83 2013/01/18 07:31:15 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.6.3
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		x11
 
@@ -16,25 +16,25 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm asn1
-WANTLIB += atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
-WANTLIB += canberra canberra-gtk3 colord crypto cups dbus-1 dbus-glib-1
-WANTLIB += drm enchant execinfo expat ffi fontconfig freetype
-WANTLIB += gailutil-3 gcrypt gdbm gdk-3 gdk_pixbuf-2.0 geoclue
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3 gnome-keyring
-WANTLIB += gnome-menu-3 goa-1.0 goa-backend-1.0 gobject-2.0 gpg-error
-WANTLIB += gssapi gstapp-0.10 gstaudio-0.10 gstbase-0.10 gstfft-0.10
-WANTLIB += gstinterfaces-0.10 gstpbutils-0.10 gstreamer-0.10 gstvideo-0.10
-WANTLIB += gthread-2.0 gtk-3 gtop-2.0 harfbuzz icudata icui18n
-WANTLIB += icule icuuc javascriptcoregtk-3.0 jpeg json json-glib-1.0
+WANTLIB += GL ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
+WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xtst
+WANTLIB += asn1 atk-1.0 atk-bridge-2.0 atspi avahi-client avahi-common
+WANTLIB += c cairo cairo-gobject canberra canberra-gtk3 colord
+WANTLIB += crypto cups dbus-1 dbus-glib-1 enchant execinfo expat
+WANTLIB += ffi fontconfig freetype gailutil-3 gcrypt gdbm gdk-3
+WANTLIB += gdk_pixbuf-2.0 geoclue gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gnome-desktop-3 gnome-keyring gnome-menu-3 goa-1.0
+WANTLIB += goa-backend-1.0 gobject-2.0 gpg-error gssapi gstapp-0.10
+WANTLIB += gstaudio-0.10 gstbase-0.10 gstfft-0.10 gstinterfaces-0.10
+WANTLIB += gstpbutils-0.10 gstreamer-0.10 gstvideo-0.10 gthread-2.0
+WANTLIB += gtk-3 gtop-2.0 harfbuzz ibus-1.0 icudata icui18n icule
+WANTLIB += icuuc javascriptcoregtk-3.0 jpeg json json-glib-1.0
 WANTLIB += krb5 kvm lcms2 ltdl m notify ogg orc-0.4 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png polkit-gobject-1
 WANTLIB += pthread pthread-stubs pulse pulse-mainloop-glib rest-0.7
 WANTLIB += secret-1 sndfile soup-2.4 soup-gnome-2.4 sqlite3 ssl
 WANTLIB += stdc++ upower-glib vorbis vorbisfile webkitgtk-3.0
 WANTLIB += xcb xcb-render xcb-shm xkbfile xml2 xslt z
-WANTLIB += X11-xcb Xtst avahi-client avahi-common
 
 MODULES=		devel/gettext \
 			x11/gnome
@@ -49,10 +49,10 @@ LIB_DEPENDS=		x11/gnome/desktop>=3.6.0 \
 			audio/libcanberra,-gtk3 \
 			graphics/colord
 
-BUILD_DEPENDS=		x11/gnome/settings-daemon>=3.6.1 \
+BUILD_DEPENDS=		x11/gnome/settings-daemon>=3.6.4 \
 			devel/iso-codes \
 			devel/gsettings-desktop-schemas
-RUN_DEPENDS=		x11/gnome/settings-daemon>=3.6.1 \
+RUN_DEPENDS=		x11/gnome/settings-daemon>=3.6.4 \
 			devel/iso-codes \
 			devel/gsettings-desktop-schemas
 
@@ -103,9 +103,6 @@ CONFIGURE_ARGS=	--disable-static \
 		--without-cheese \
 		--with-x \
 		--enable-cups
-
-# XXX requires ibus >= 1.4.99
-CONFIGURE_ARGS += --disable-ibus
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
