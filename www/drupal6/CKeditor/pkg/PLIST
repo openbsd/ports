@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/05/11 07:47:34 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/01/18 11:16:50 sthen Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}ckeditor/
@@ -1209,6 +1209,49 @@ ${DRUPAL_MODS}ckeditor/includes/jqueryUI/jquery-ui.min.js
 ${DRUPAL_MODS}ckeditor/includes/jqueryUI/jquery.ui.sortable.min.js
 ${DRUPAL_MODS}ckeditor/includes/jqueryUI/jquery.ui.widget.min.js
 ${DRUPAL_MODS}ckeditor/includes/jqueryUI/sort.js
+${DRUPAL_MODS}ckeditor/includes/uicolor/
+${DRUPAL_MODS}ckeditor/includes/uicolor/dialogs/
+${DRUPAL_MODS}ckeditor/includes/uicolor/dialogs/uicolor.js
+${DRUPAL_MODS}ckeditor/includes/uicolor/icons/
+${DRUPAL_MODS}ckeditor/includes/uicolor/icons/uicolor.png
+${DRUPAL_MODS}ckeditor/includes/uicolor/lang/
+${DRUPAL_MODS}ckeditor/includes/uicolor/lang/_translationstatus.txt
+${DRUPAL_MODS}ckeditor/includes/uicolor/lang/bg.js
+${DRUPAL_MODS}ckeditor/includes/uicolor/lang/cs.js
+${DRUPAL_MODS}ckeditor/includes/uicolor/lang/cy.js
+${DRUPAL_MODS}ckeditor/includes/uicolor/lang/da.js
+${DRUPAL_MODS}ckeditor/includes/uicolor/lang/de.js
+${DRUPAL_MODS}ckeditor/includes/uicolor/lang/el.js
+${DRUPAL_MODS}ckeditor/includes/uicolor/lang/en.js
+${DRUPAL_MODS}ckeditor/includes/uicolor/lang/eo.js
+${DRUPAL_MODS}ckeditor/includes/uicolor/lang/et.js
+${DRUPAL_MODS}ckeditor/includes/uicolor/lang/fa.js
+${DRUPAL_MODS}ckeditor/includes/uicolor/lang/fi.js
+${DRUPAL_MODS}ckeditor/includes/uicolor/lang/fr.js
+${DRUPAL_MODS}ckeditor/includes/uicolor/lang/he.js
+${DRUPAL_MODS}ckeditor/includes/uicolor/lang/hr.js
+${DRUPAL_MODS}ckeditor/includes/uicolor/lang/it.js
+${DRUPAL_MODS}ckeditor/includes/uicolor/lang/mk.js
+${DRUPAL_MODS}ckeditor/includes/uicolor/lang/nb.js
+${DRUPAL_MODS}ckeditor/includes/uicolor/lang/nl.js
+${DRUPAL_MODS}ckeditor/includes/uicolor/lang/no.js
+${DRUPAL_MODS}ckeditor/includes/uicolor/lang/pl.js
+${DRUPAL_MODS}ckeditor/includes/uicolor/lang/tr.js
+${DRUPAL_MODS}ckeditor/includes/uicolor/lang/ug.js
+${DRUPAL_MODS}ckeditor/includes/uicolor/lang/uk.js
+${DRUPAL_MODS}ckeditor/includes/uicolor/lang/vi.js
+${DRUPAL_MODS}ckeditor/includes/uicolor/lang/zh-cn.js
+${DRUPAL_MODS}ckeditor/includes/uicolor/plugin.js
+${DRUPAL_MODS}ckeditor/includes/uicolor/samples/
+${DRUPAL_MODS}ckeditor/includes/uicolor/samples/uicolor.html
+${DRUPAL_MODS}ckeditor/includes/uicolor/yui/
+${DRUPAL_MODS}ckeditor/includes/uicolor/yui/assets/
+${DRUPAL_MODS}ckeditor/includes/uicolor/yui/assets/hue_bg.png
+${DRUPAL_MODS}ckeditor/includes/uicolor/yui/assets/hue_thumb.png
+${DRUPAL_MODS}ckeditor/includes/uicolor/yui/assets/picker_mask.png
+${DRUPAL_MODS}ckeditor/includes/uicolor/yui/assets/picker_thumb.png
+${DRUPAL_MODS}ckeditor/includes/uicolor/yui/assets/yui.css
+${DRUPAL_MODS}ckeditor/includes/uicolor/yui/yui.js
 ${DRUPAL_MODS}ckeditor/plugins/
 ${DRUPAL_MODS}ckeditor/plugins/counter/
 ${DRUPAL_MODS}ckeditor/plugins/counter/plugin.js
@@ -1247,6 +1290,8 @@ ${DRUPAL_MODS}ckeditor/plugins/linktonode/jscripts/
 ${DRUPAL_MODS}ckeditor/plugins/linktonode/jscripts/functions.js
 ${DRUPAL_MODS}ckeditor/plugins/linktonode/plugin.js
 ${DRUPAL_MODS}ckeditor/plugins/mediaembed/
+${DRUPAL_MODS}ckeditor/plugins/mediaembed/dialogs/
+${DRUPAL_MODS}ckeditor/plugins/mediaembed/dialogs/mediaembed.js
 ${DRUPAL_MODS}ckeditor/plugins/mediaembed/images/
 ${DRUPAL_MODS}ckeditor/plugins/mediaembed/images/icon.png
 ${DRUPAL_MODS}ckeditor/plugins/mediaembed/images/placeholder.gif
