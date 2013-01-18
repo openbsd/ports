@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2012/01/20 14:48:50 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.6 2013/01/18 14:03:14 jasper Exp $
 
 # vax:	no fenv.h support
 NOT_FOR_ARCHS =		vax
+
+BROKEN-mips64 =		ICE on Interval_nt.h:98
 
 COMMENT =		Computational Geometry Algorithms Library
 
