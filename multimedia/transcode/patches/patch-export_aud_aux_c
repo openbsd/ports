@@ -1,0 +1,12 @@
+$OpenBSD: patch-export_aud_aux_c,v 1.5 2013/01/19 08:42:35 brad Exp $
+--- export/aud_aux.c.orig	Sat Nov 19 11:50:27 2011
++++ export/aud_aux.c	Fri Jan 18 22:28:02 2013
+@@ -359,7 +359,7 @@ static int tc_audio_init_ffmpeg(vob_t *vob, int o_code
+     //-- open codec --
+     //----------------
+     TC_LOCK_LIBAVCODEC;
+-    ret = avcodec_open(&mpa_ctx, mpa_codec);
++    ret = avcodec_open2(&mpa_ctx, mpa_codec, NULL);
+     TC_UNLOCK_LIBAVCODEC;
+     if (ret < 0) {
+         tc_warn("tc_audio_init_ffmpeg: could not open %s codec !",

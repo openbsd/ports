@@ -1,0 +1,106 @@
+$OpenBSD: patch-export_export_ffmpeg_c,v 1.6 2013/01/19 08:42:35 brad Exp $
+--- export/export_ffmpeg.c.orig	Sat Nov 19 11:50:27 2011
++++ export/export_ffmpeg.c	Fri Jan 18 22:50:29 2013
+@@ -180,7 +180,7 @@ static char *tc_strchrnul(const char *s, int c) {
+ 
+ 
+ /* START: COPIED FROM ffmpeg-0.5_p22846(ffmpeg.c, cmdutils.c) */
+-#include <libavcodec/opt.h>
++#include <libavutil/opt.h>
+ #include <libavutil/avstring.h>
+ #include <libswscale/swscale.h>
+ 
+@@ -362,6 +362,7 @@ static int opt_preset(const char *opt, const char *arg
+ MOD_init
+ {
+     char *user_codec_string = NULL;
++    AVDictionary *opts = NULL;
+ 
+     if (param->flag == TC_VIDEO) {
+         size_t fsize = 0;
+@@ -470,7 +471,6 @@ MOD_init
+     }
+ 
+     TC_LOCK_LIBAVCODEC;
+-    avcodec_init();
+     avcodec_register_all();
+     TC_UNLOCK_LIBAVCODEC;
+ 
+@@ -598,7 +598,6 @@ MOD_init
+         lavc_param_rc_max_rate = 1150;
+         lavc_param_rc_buffer_size = 40 * 8;
+         lavc_param_rc_buffer_aggressivity = 99;
+-        lavc_param_scan_offset = 0;
+ 
+         break;
+ 
+@@ -634,7 +633,7 @@ MOD_init
+         lavc_param_rc_max_rate = 2516;
+         lavc_param_rc_buffer_size = 224 * 8;
+         lavc_param_rc_buffer_aggressivity = 99;
+-        lavc_param_scan_offset = CODEC_FLAG_SVCD_SCAN_OFFSET;
++        av_dict_set(&opts, "scan_offset", "1", 0);
+ 
+         break;
+ 
+@@ -674,7 +673,7 @@ MOD_init
+ 
+         lavc_param_rc_buffer_size = 224 * 8;
+         lavc_param_rc_buffer_aggressivity = 99;
+-        lavc_param_scan_offset = CODEC_FLAG_SVCD_SCAN_OFFSET;
++        av_dict_set(&opts, "scan_offset", "1", 0);
+ 
+         break;
+ 
+@@ -1065,15 +1064,20 @@ MOD_init
+     lavc_venc_context->flags |= lavc_param_closedgop;
+     lavc_venc_context->flags |= lavc_param_trunc;
+     lavc_venc_context->flags |= lavc_param_aic;
+-    lavc_venc_context->flags |= lavc_param_umv;
++    if (lavc_param_umv)
++        av_dict_set(&opts, "umv", "1", 0);
+     lavc_venc_context->flags |= lavc_param_v4mv;
+-    lavc_venc_context->flags |= lavc_param_data_partitioning;
++    if (lavc_param_data_partitioning)
++        av_dict_set(&opts, "data_partitioning", "1", 0);
+     lavc_venc_context->flags |= lavc_param_cbp;
+     lavc_venc_context->flags |= lavc_param_mv0;
+     lavc_venc_context->flags |= lavc_param_qp_rd;
+-    lavc_venc_context->flags |= lavc_param_scan_offset;
+-    lavc_venc_context->flags |= lavc_param_ss;
+-    lavc_venc_context->flags |= lavc_param_alt;
++    if (lavc_param_scan_offset)
++        av_dict_set(&opts, "scan_offset", "1", 0);
++    if (lavc_param_ss)
++        av_dict_set(&opts, "structured_slices", "1", 0);
++    if (lavc_param_alt)
++        av_dict_set(&opts, "alternate_scan", "1", 0);
+     lavc_venc_context->flags |= lavc_param_ilme;
+ #if LIBAVCODEC_VERSION_INT < ((52<<16)+(0<<8)+0)   
+     lavc_venc_context->flags |= lavc_param_trell;
+@@ -1082,7 +1086,7 @@ MOD_init
+ #endif
+ 
+     if (lavc_param_gray)
+-        lavc_venc_context->flags |= CODEC_FLAG_GRAY;
++        av_dict_set(&opts, "gray", "1", 0);
+     if (lavc_param_normalize_aqp)
+         lavc_venc_context->flags |= CODEC_FLAG_NORMALIZE_AQP;
+ 
+@@ -1245,14 +1249,14 @@ MOD_init
+     //-- open codec --
+     //----------------
+     TC_LOCK_LIBAVCODEC;
+-    ret = avcodec_open(lavc_venc_context, lavc_venc_codec);
++    ret = avcodec_open2(lavc_venc_context, lavc_venc_codec, &opts);
+     TC_UNLOCK_LIBAVCODEC;
+     if (ret < 0) {
+       tc_log_warn(MOD_NAME, "could not open FFMPEG codec");
+       return TC_EXPORT_ERROR;
+     }
+ 
+-    if (lavc_venc_context->codec->encode == NULL) {
++    if (lavc_venc_context->codec->encode2 == NULL) {
+       tc_log_warn(MOD_NAME, "could not open FFMPEG codec "
+               "(lavc_venc_context->codec->encode == NULL)");
+       return TC_EXPORT_ERROR;

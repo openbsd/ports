@@ -1,0 +1,14 @@
+$OpenBSD: patch-import_probe_ffmpeg_c,v 1.1 2013/01/19 08:42:35 brad Exp $
+--- import/probe_ffmpeg.c.orig	Sat Nov 19 11:50:27 2011
++++ import/probe_ffmpeg.c	Fri Jan 18 19:58:49 2013
+@@ -99,8 +99,8 @@ void probe_ffmpeg(info_t *ipipe)
+ 
+     TC_INIT_LIBAVCODEC;
+ 
+-    ret = av_open_input_file(&lavf_dmx_context, ipipe->name,
+-                             NULL, 0, NULL);
++    ret = avformat_open_input(&lavf_dmx_context, ipipe->name,
++                             NULL, NULL);
+     if (ret != 0) {
+         tc_log_error(__FILE__, "unable to open '%s'"
+                                " (libavformat failure)",
