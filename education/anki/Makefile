@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2013/01/19 20:42:26 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2013/01/19 23:45:40 fgsch Exp $
 
 COMMENT	=	spaced learning system
 
 DISTNAME =	anki-2.0.5
+REVISION =	0
+
 CATEGORIES =	education
 
 HOMEPAGE =	http://ankisrs.net/
