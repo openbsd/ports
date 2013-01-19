@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2012/08/29 07:48:42 ajacoutot Exp $
---- configure.orig	Fri Nov  2 15:02:31 2007
-+++ configure	Mon Jan  2 17:53:12 2012
-@@ -36499,8 +36502,8 @@ ac_link='rm -rf SunWS_cache; ${CXX-g++} -o conftest${a
+$OpenBSD: patch-configure,v 1.5 2013/01/19 09:51:30 brad Exp $
+--- configure.orig	Fri Nov  2 06:02:31 2007
++++ configure	Fri Jan 18 14:49:40 2013
+@@ -36499,8 +36499,8 @@ ac_link='rm -rf SunWS_cache; ${CXX-g++} -o conftest${a
  
  	cat >conftest.$ac_ext <<_ACEOF
  extern "C" {
@@ -12,7 +12,7 @@ $OpenBSD: patch-configure,v 1.4 2012/08/29 07:48:42 ajacoutot Exp $
  		}
  
  		int main() {
-@@ -36537,11 +36540,11 @@ fi
+@@ -36537,11 +36537,11 @@ fi
  
  rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
  	OLD_LIBS=$LIBS
@@ -27,7 +27,7 @@ $OpenBSD: patch-configure,v 1.4 2012/08/29 07:48:42 ajacoutot Exp $
  		}
  
  		int main() {
-@@ -36784,7 +36787,7 @@ if test "${ac_cv_lib_FLAC_FLAC__stream_decoder_process
+@@ -36784,7 +36784,7 @@ if test "${ac_cv_lib_FLAC_FLAC__stream_decoder_process
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -36,7 +36,7 @@ $OpenBSD: patch-configure,v 1.4 2012/08/29 07:48:42 ajacoutot Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -37326,7 +37329,7 @@ ac_link='rm -rf SunWS_cache; ${CXX-g++} -o conftest${a
+@@ -37326,7 +37326,7 @@ ac_link='rm -rf SunWS_cache; ${CXX-g++} -o conftest${a
  
  
  
@@ -45,7 +45,7 @@ $OpenBSD: patch-configure,v 1.4 2012/08/29 07:48:42 ajacoutot Exp $
  do
  as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
  if { as_var=$as_ac_Header; eval "test \"\${$as_var+set}\" = set"; }; then
-@@ -37528,7 +37531,7 @@ if test $ac_cv_lib_mpcdec_mpc_decoder_setup = yes; the
+@@ -37528,7 +37528,7 @@ if test $ac_cv_lib_mpcdec_mpc_decoder_setup = yes; the
  		MPC_LIBS="-lmpcdec"
  
  cat >>confdefs.h <<\_ACEOF
