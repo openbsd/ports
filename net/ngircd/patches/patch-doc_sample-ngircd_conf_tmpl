@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_sample-ngircd_conf_tmpl,v 1.1.1.1 2012/09/29 12:32:01 fgsch Exp $
---- doc/sample-ngircd.conf.tmpl.orig	Wed Sep 26 12:53:36 2012
-+++ doc/sample-ngircd.conf.tmpl	Wed Sep 26 12:54:00 2012
+$OpenBSD: patch-doc_sample-ngircd_conf_tmpl,v 1.2 2013/01/19 20:40:57 fgsch Exp $
+--- doc/sample-ngircd.conf.tmpl.orig	Tue Jan  1 18:22:11 2013
++++ doc/sample-ngircd.conf.tmpl	Fri Jan 18 01:31:56 2013
 @@ -67,14 +67,14 @@
  	# Group ID under which the ngIRCd should run; you can use the name
  	# of the group or the numerical ID. ATTENTION: For this to work the
@@ -18,7 +18,7 @@ $OpenBSD: patch-doc_sample-ngircd_conf_tmpl,v 1.1.1.1 2012/09/29 12:32:01 fgsch 
  
  [Limits]
  	# Define some limits and timeouts for this ngIRCd instance. Default
-@@ -122,7 +122,7 @@
+@@ -126,7 +126,7 @@
  	# binary. By default ngIRCd won't use the chroot() feature.
  	# ATTENTION: For this to work the server must have been started
  	# with root privileges!
@@ -26,4 +26,4 @@ $OpenBSD: patch-doc_sample-ngircd_conf_tmpl,v 1.1.1.1 2012/09/29 12:32:01 fgsch 
 +	;ChrootDir = /var/ngircd
  
  	# Set this hostname for every client instead of the real one.
- 	# Please note: don't use the percentage sign ("%"), it is reserved for
+ 	# Use %x to add the hashed value of the original hostname.

@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_ngircd_ngircd_c,v 1.1.1.1 2012/09/29 12:32:01 fgsch Exp $
---- src/ngircd/ngircd.c.orig	Sun Sep 16 02:40:43 2012
-+++ src/ngircd/ngircd.c	Sun Sep 16 02:40:49 2012
-@@ -531,7 +531,7 @@ Setup_FDStreams(int fd)
- 
+$OpenBSD: patch-src_ngircd_ngircd_c,v 1.2 2013/01/19 20:40:57 fgsch Exp $
+--- src/ngircd/ngircd.c.orig	Tue Jan  1 18:22:33 2013
++++ src/ngircd/ngircd.c	Fri Jan 18 01:31:56 2013
+@@ -570,7 +570,7 @@ Setup_FDStreams(int fd)
+ #if !defined(SINGLE_USER_OS)
  
  /**
 - * Get user and group ID of unprivileged "nobody" user.
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_ngircd_ngircd_c,v 1.1.1.1 2012/09/29 12:32:01 fgsch Exp $
   *
   * @param uid	User ID
   * @param gid	Group ID
-@@ -555,7 +555,7 @@ NGIRCd_getNobodyID(uid_t *uid, gid_t *gid )
+@@ -594,7 +594,7 @@ NGIRCd_getNobodyID(uid_t *uid, gid_t *gid )
  	}
  #endif
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-src_ngircd_ngircd_c,v 1.1.1.1 2012/09/29 12:32:01 fgsch Exp $
  	if (!pwd)
  		return false;
  
-@@ -659,11 +659,11 @@ NGIRCd_Init(bool NGIRCd_NoDaemon)
+@@ -701,11 +701,11 @@ NGIRCd_Init(bool NGIRCd_NoDaemon)
  	if (Conf_UID == 0) {
  		pwd = getpwuid(0);
  		Log(LOG_INFO,
