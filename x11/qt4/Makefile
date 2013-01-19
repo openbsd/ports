@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2013/01/03 15:48:42 espie Exp $
+# $OpenBSD: Makefile,v 1.107 2013/01/19 11:08:09 espie Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 SHARED_ONLY =		Yes
@@ -63,7 +63,6 @@ PKGVERSION =	4.8.2
 DISTNAME =	qt-everywhere-opensource-src-${VERSION}
 
 CATEGORIES =	x11
-DPB_PROPERTIES =parallel
 MASTER_SITES =  http://releases.qt-project.org/qt4/source/
 
 HOMEPAGE =	http://qt.nokia.com/
