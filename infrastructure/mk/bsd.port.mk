@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1203 2013/01/07 17:46:14 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1204 2013/01/19 11:34:11 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -228,25 +228,25 @@ clean = ${_internal-clean}
 # need to go through an extra var because clean is set in stone,
 # on the cmdline.
 _clean = ${clean}
-.if empty(_clean) || ${_clean:L} == "depends"
+.if empty(_clean) || ${_clean} == "depends"
 _clean += work
 .endif
-.if ${_clean:L:Mall}
+.if ${_clean:Mall}
 _clean += work build packages plist
 .endif
 .if ${CLEANDEPENDS_${PKGPATH}:L} == "yes"
 _clean += depends
 .endif
-.if ${_clean:L:Mwork} || ${_clean:L:Mbuild}
+.if ${_clean:Mwork} || ${_clean:Mbuild}
 _clean += fake
 .endif
-.if ${_clean:L:Mforce}
+.if ${_clean:Mforce}
 _clean += -f
 .endif
 # check that clean is clean
 _okay_words = depends work fake -f flavors dist install sub packages package \
 	bulk force plist build all
-.for _w in ${_clean:L}
+.for _w in ${_clean}
 .  if !${_okay_words:M${_w}}
 ERRORS += "Fatal: unknown clean command: ${_w}\n(not in ${_okay_words})"
 .  endif
@@ -2817,18 +2817,18 @@ ${PACKAGE_REPOSITORY}/${_l}: ${PACKAGE_REPOSITORY}/${_o}
 # Cleaning up
 
 _internal-clean:
-.if ${_clean:L:Mdepends} && ${_CLEANDEPENDS:L} == "yes"
+.if ${_clean:Mdepends} && ${_CLEANDEPENDS:L} == "yes"
 	@PKGPATH=${PKGPATH} ${MAKE} all-dir-depends|${_sort_dependencies}|while read subdir; do \
 		${_flavor_fragment}; \
 		eval $$toset ${MAKE} _CLEANDEPENDS=No clean; \
 	done
 .endif
 	@${ECHO_MSG} "===>  Cleaning for ${FULLPKGNAME${SUBPACKAGE}}"
-.if ${_clean:L:Mfake}
+.if ${_clean:Mfake}
 	@if cd ${WRKINST} 2>/dev/null; then ${SUDO} rm -rf ${WRKINST}; fi
 .endif
-.if ${_clean:L:Mwork} || (${_clean:L:Mbuild} && ${SEPARATE_BUILD:L} == "no")
-.  if ${_clean:L:Mflavors}
+.if ${_clean:Mwork} || (${_clean:Mbuild} && ${SEPARATE_BUILD:L} == "no")
+.  if ${_clean:Mflavors}
 	@for i in ${.CURDIR}/w-*; do \
 		if [ -L $$i ]; then ${SUDO} rm -rf `readlink $$i`; fi; \
 		${SUDO} rm -rf $$i; \
@@ -2839,10 +2839,10 @@ _internal-clean:
 .  if !empty(WRKDIR_LINKNAME)
 	@if [ -L ${WRKDIR_LINKNAME} ]; then rm -f ${.CURDIR}/${WRKDIR_LINKNAME}; fi
 .  endif
-.elif ${_clean:L:Mbuild} && ${SEPARATE_BUILD:L} != "no"
+.elif ${_clean:Mbuild} && ${SEPARATE_BUILD:L} != "no"
 	@rm -rf ${WRKBUILD} ${_CONFIGURE_COOKIE} ${_BUILD_COOKIE}
 .endif
-.if ${_clean:L:Mdist}
+.if ${_clean:Mdist}
 	@${ECHO_MSG} "===>  Dist cleaning for ${FULLPKGNAME${SUBPACKAGE}}"
 	@if cd ${DISTDIR} 2>/dev/null; then \
 		rm -f ${MAKESUMFILES}; \
@@ -2851,22 +2851,22 @@ _internal-clean:
 	-@rmdir ${FULLDISTDIR}
 .  endif
 .endif
-.if ${_clean:L:Minstall}
-.  if ${_clean:L:Msub}
+.if ${_clean:Minstall}
+.  if ${_clean:Msub}
 	-${SUDO} ${_PKG_DELETE} ${PKGNAMES}
 .  else
 	-${SUDO} ${_PKG_DELETE} ${FULLPKGNAME${SUBPACKAGE}}
 .  endif
 .endif
-.if ${_clean:L:Mpackages} || ${_clean:L:Mpackage} && ${_clean:L:Msub}
+.if ${_clean:Mpackages} || ${_clean:Mpackage} && ${_clean:Msub}
 	rm -f ${_PACKAGE_COOKIES} ${_UPDATE_COOKIES}
-.elif ${_clean:L:Mpackage}
+.elif ${_clean:Mpackage}
 	rm -f ${_PACKAGE_COOKIES${SUBPACKAGE}} ${_UPDATE_COOKIE${SUBPACKAGE}}
 .endif
-.if ${_clean:L:Mbulk}
+.if ${_clean:Mbulk}
 	rm -f ${_BULK_COOKIE}
 .endif
-.if ${_clean:L:Mplist}
+.if ${_clean:Mplist}
 .  for _d in ${PLIST_DB:S/:/ /}
 .    for _p in ${PKGNAMES}
 	rm -f ${_d}/${_p}
