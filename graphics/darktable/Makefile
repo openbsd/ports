@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2012/09/15 08:37:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2013/01/19 11:22:37 ajacoutot Exp $
 
 # requires SSE
 ONLY_FOR_ARCHS=	i386 amd64
 
 COMMENT=	virtual lighttable and darkroom for photographers
 DISTNAME=	darktable-1.0.5
-REVISION=	1
+REVISION=	2
 
 SHARED_ONLY=	Yes
 
@@ -33,7 +33,6 @@ WANTLIB += lensfun # dlopen'd. this is "Extra" in check-lib-depends; that's ok,
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=darktable/}
 
 MODULES=	devel/cmake \
-		devel/gconf2 \
 		devel/gettext \
 		textproc/intltool
 
@@ -43,7 +42,7 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 LIB_DEPENDS=	devel/sdl \
 		graphics/exiv2>=0.22 \
 		graphics/lcms2 \
-		graphics/libgphoto2 \
+		graphics/libgphoto2>=2.5.0 \
 		graphics/lensfun \
 		graphics/openexr \
 		net/curl \

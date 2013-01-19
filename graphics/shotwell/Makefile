@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/01/13 15:42:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2013/01/19 11:22:37 ajacoutot Exp $
 
 # needs to allocate 512M
 VMEM_WARNING =	Yes
@@ -10,6 +10,7 @@ CATEGORIES =	graphics
 MASTER_SITES =	http://yorba.org/download/shotwell/stable/
 HOMEPAGE =	http://yorba.org/shotwell/
 EXTRACT_SUFX =	.tar.xz
+REVISION =	0
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -25,7 +26,7 @@ WANTLIB += gobject-2.0 gphoto2 gphoto2_port gstbase-0.10 gstpbutils-0.10
 WANTLIB += gstreamer-0.10 gthread-2.0 gtk-3 javascriptcoregtk-3.0
 WANTLIB += lcms2 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread pthread-stubs raw rest-0.7 soup-2.4
-WANTLIB += sqlite3 stdc++ unique-3.0 usb webkitgtk-3.0 xcb xcb-render
+WANTLIB += sqlite3 stdc++ unique-3.0 webkitgtk-3.0 xcb xcb-render
 WANTLIB += xcb-shm xml2 z atk-bridge-2.0 harfbuzz json-glib-1.0
 
 MODULES =	devel/dconf \
@@ -44,7 +45,7 @@ LIB_DEPENDS =	devel/json-glib \
 		devel/libgee06 \
 		devel/libunique3 \
 		graphics/libgexiv2>=0.4.1 \
-		graphics/libgphoto2 \
+		graphics/libgphoto2>=2.5.0 \
 		graphics/libraw>=0.14.5 \
 		net/librest \
 		www/webkit,gtk3>=1.6.1v0
