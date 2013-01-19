@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2013/01/18 08:15:55 brad Exp $
+# $OpenBSD: Makefile,v 1.36 2013/01/19 19:08:33 jeremy Exp $
 
 COMMENT=	advanced music player
 
@@ -34,6 +34,9 @@ MODULES=	devel/gettext \
 		lang/lua
 
 MODLUA_SA=	Yes
+
+BUILD_DEPENDS=	devel/autoconf/2.63 \
+		devel/automake/1.10
 
 LIB_DEPENDS=	audio/flac \
 		audio/jack \
