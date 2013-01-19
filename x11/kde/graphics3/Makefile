@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2013/01/14 12:09:59 zhuk Exp $
+# $OpenBSD: Makefile,v 1.107 2013/01/19 11:28:00 zhuk Exp $
 
 COMMENT-main =		K Desktop Environment, graphic applications
 COMMENT-kamera =	KDE interface to digital cameras
@@ -52,7 +52,7 @@ RUN_DEPENDS-kpov =	${RUN_DEPENDS} \
 			x11/gtk+2,-guic
 
 LIB_DEPENDS-kamera = 	${LIB_DEPENDS} \
-			graphics/libgphoto2
+			graphics/libgphoto2>=2.5
 RUN_DEPENDS-kamera =	${RUN_DEPENDS} \
 			devel/desktop-file-utils
 
@@ -68,7 +68,7 @@ WANTLIB-kamera =	${WANTLIB}
 WANTLIB-sane =		${WANTLIB}
 
 REVISION-main = 17
-REVISION-kamera = 8
+REVISION-kamera = 9
 REVISION-kpov = 8
 REVISION-sane = 12
 
