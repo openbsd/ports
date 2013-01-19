@@ -1,8 +1,9 @@
-$OpenBSD: patch-anki,v 1.1 2012/12/30 02:54:14 fgsch Exp $
---- anki.orig	Tue Oct 16 01:50:42 2012
-+++ anki	Tue Oct 16 01:50:51 2012
+$OpenBSD: patch-anki_anki,v 1.1 2013/01/19 20:42:26 fgsch Exp $
+--- anki/anki.orig	Sat Dec 22 00:12:33 2012
++++ anki/anki	Thu Jan 10 21:44:12 2013
 @@ -1,15 +1,4 @@
- #!/usr/bin/env python
+-#!/usr/bin/env python
++#!/usr/local/bin/python2.7
  
 -import os, sys
 -# system-wide install
@@ -15,5 +16,5 @@ $OpenBSD: patch-anki,v 1.1 2012/12/30 02:54:14 fgsch Exp $
 -# or git
 -sys.path.insert(0, os.path.join(base, "..", "libanki"))
 -# start
- import anki, aqt
+ import  aqt
  aqt.run()

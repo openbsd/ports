@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2012/12/30 02:54:14 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2013/01/19 20:42:26 fgsch Exp $
 
 COMMENT	=	spaced learning system
 
-DISTNAME =	anki-2.0.3
+DISTNAME =	anki-2.0.5
 CATEGORIES =	education
 
 HOMEPAGE =	http://ankisrs.net/
+
+MAINTAINER =	Federico G. Schwindt <fgsch@openbsd.org>
 
 # AGPL3
 PERMIT_PACKAGE_CDROM =	Yes
@@ -21,7 +23,7 @@ MODULES =	lang/python
 
 MODPY_VERSION =	2.7
 
-MODPY_ADJ_FILES = anki
+MODPY_ADJ_FILES = anki/anki
 
 RUN_DEPENDS =	audio/py-audio \
 		devel/desktop-file-utils \
@@ -39,7 +41,7 @@ do-build:
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/anki ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/anki/anki ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/anki.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
@@ -50,10 +52,12 @@ do-install:
 	    ${PREFIX}/share/pixmaps
 	${INSTALL_DATA_DIR} \
 	    ${PREFIX}/lib/python${MODPY_VERSION}/site-packages
-	cd ${WRKSRC}/libanki && pax -rw anki \
+	cd ${WRKSRC} && pax -rw anki \
 	    ${PREFIX}/lib/python${MODPY_VERSION}/site-packages
+	cd ${WRKSRC} && pax -rw locale \
+	    ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/anki
 	cd ${WRKSRC} && pax -rw aqt \
 	    ${PREFIX}/lib/python${MODPY_VERSION}/site-packages
-	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/{aqt,anki}/*.orig
+	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/anki/*.orig
 
 .include <bsd.port.mk>
