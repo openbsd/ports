@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2011/11/13 17:15:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2013/01/19 11:22:05 ajacoutot Exp $
 
 COMMENT =	digital camera command-line interface
 CATEGORIES =	graphics
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
-VERSION =	2.4.11
+VERSION =	2.5.0
 DISTNAME =	gphoto2-${VERSION}
 PKGNAME =	gphoto-${VERSION}
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 
 WANTLIB += c exif gphoto2 gphoto2_port jpeg ltdl m ncurses popt
-WANTLIB += pthread readline usb usb-1.0
+WANTLIB += pthread readline
 
 USE_LIBTOOL =		Yes
 USE_GROFF =		Yes
@@ -29,7 +29,6 @@ MAKE_FLAGS =		INTLLIBS='$$(LTLIBINTL)'
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
-			--without-aalib \
 			--without-cdk
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
@@ -37,10 +36,7 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			POPT_LIBS="-I${LOCALBASE}/lib -lpopt"
 
 MODULES =	devel/gettext
-LIB_DEPENDS =	graphics/libgphoto2>=2.4.11 \
+LIB_DEPENDS =	graphics/libgphoto2>=2.5.0 \
 		devel/popt
-
-pre-configure:
-	perl -pi -e 's,-lpthread,-pthread,g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
