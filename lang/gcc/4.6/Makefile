@@ -1,9 +1,7 @@
-# $OpenBSD: Makefile,v 1.44 2013/01/18 19:09:58 bcallah Exp $
+# $OpenBSD: Makefile,v 1.45 2013/01/20 02:23:40 tobiasu Exp $
 
 ONLY_FOR_ARCHS = amd64 hppa i386 powerpc sparc sparc64
 DPB_PROPERTIES = parallel
-# race condition in fake
-PARALLEL_INSTALL = No
 
 V = 4.6.3
 FULL_VERSION = $V
@@ -156,6 +154,7 @@ CONFIGURE_ARGS += ${CONFIGURE_SHARED}
 SEPARATE_BUILD = flavored
 
 USE_GMAKE = yes
+MAKE_FLAGS += --print-directory
 
 .if ${FLAVOR:Mfull}
 # you shouldn't skip bootstrap unless you know what you're doing
