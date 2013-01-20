@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/08/21 14:29:51 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/01/20 09:10:04 benoit Exp $
 lib/python${MODPY_VERSION}/site-packages/web/
-lib/python${MODPY_VERSION}/site-packages/web.py-${VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/web.${MODPY_PY_PREFIX}${VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/web/__init__.py
 lib/python${MODPY_VERSION}/site-packages/web/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/web/application.py
