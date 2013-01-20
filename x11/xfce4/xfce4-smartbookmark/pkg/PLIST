@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/01/02 17:12:22 landry Exp $
-lib/xfce4/panel-plugins/
-lib/xfce4/panel-plugins/libsmartbookmark.so
+@comment $OpenBSD: PLIST,v 1.7 2013/01/20 21:09:42 landry Exp $
+lib/xfce4/panel/plugins/libsmartbookmark.so
+share/locale/ar/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 share/locale/ast/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 share/locale/ca/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 share/locale/cs/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
@@ -17,6 +17,8 @@ share/locale/hu/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 share/locale/id/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 share/locale/it/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 share/locale/ja/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
+share/locale/ko/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
+share/locale/lt/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 share/locale/lv/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 share/locale/nl/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 share/locale/pl/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
@@ -33,5 +35,4 @@ share/locale/ur/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 share/locale/ur_PK/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
-share/xfce4/panel-plugins/
-share/xfce4/panel-plugins/smartbookmark.desktop
+share/xfce4/panel/plugins/smartbookmark.desktop
