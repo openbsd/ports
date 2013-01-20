@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.2 2013/01/13 19:49:37 ajacoutot Exp $
+$OpenBSD: README-main,v 1.3 2013/01/20 14:19:43 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -11,6 +11,6 @@ add the following line to /etc/rc.conf.local(8):
 Note that you MUST have a system-wide D-BUS daemon running BEFORE
 starting avahi.
 
-A rule similar to the one below can be used in pf.conf(5) to pass avahi
-(multicast) traffic:
-pass proto udp from any to 224.0.0.251 allow-opts
+A rule similar to the one below can be used in pf.conf(5) to pass
+incoming avahi (multicast) traffic:
+    pass proto udp from any to 224.0.0.251 port 5353 allow-opts
