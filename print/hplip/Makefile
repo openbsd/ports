@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2013/01/20 07:32:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2013/01/20 08:44:16 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -17,7 +17,7 @@ PKGNAME-hpcups=	hpcups-${V}
 PKGNAME-libs=	hplip-libs-${V}
 PKGNAME-gui=	hplip-gui-${V}
 
-REVISION-main=	1
+REVISION-main=	2
 REVISION-libs=	0
 REVISION-gui=	0
 REVISION-hpcups=1
@@ -179,6 +179,8 @@ pre-configure:
 		${WRKSRC}/ui/nodevicesform.py
 
 post-install:
+	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/hplip.state \
+		${PREFIX}/share/examples/hplip/db/hplip.state
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${PREFIX}/share/hplip
 	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/*.la

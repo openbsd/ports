@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.17 2013/01/20 07:32:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.18 2013/01/20 08:44:16 ajacoutot Exp $
 @conflict hplip-docs-*
 @conflict hplip-gui-<3.11.3p0
 @extraunexec rm -rf /var/log/hp/tmp/*
 @extraunexec rm -f /var/log/hp/*
-@extra /var/db/hp/hplip.state
 bin/hp-check
 bin/hp-clean
 bin/hp-config_usb_printer
@@ -75,6 +74,8 @@ share/examples/hplip/cups/pstotiff.types
 @sample ${SYSCONFDIR}/cups/pstotiff.types
 share/examples/hplip/db/
 @sample /var/db/hp/
+share/examples/hplip/db/hplip.state
+@sample /var/db/hp/hplip.state
 share/examples/hplip/dbus-1/
 share/examples/hplip/dbus-1/system.d/
 share/examples/hplip/dbus-1/system.d/com.hp.hplip.conf

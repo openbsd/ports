@@ -1,0 +1,5 @@
+[plugin]
+installed = 1
+eula = 1
+version = ${V}
+
