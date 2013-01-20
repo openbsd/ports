@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2012/08/23 17:42:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2013/01/20 12:52:34 brad Exp $
 
 COMMENT-main=	IAX client library
 COMMENT-tcl=	IAX client library, tcl bindings
@@ -6,11 +6,11 @@ COMMENT-iaxcomm=IAX softphone
 
 DISTNAME=	iaxclient-2.1beta3
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	9
+REVISION-main=	10
 PKGNAME-tcl=	${DISTNAME:S/iaxclient/iaxclient-tcl/}
-REVISION-tcl=	12
+REVISION-tcl=	13
 PKGNAME-iaxcomm= iaxcomm-1.1.0
-REVISION-iaxcomm= 13
+REVISION-iaxcomm= 14
 
 CATEGORIES=	telephony
 USE_LIBTOOL=	Yes
@@ -30,12 +30,11 @@ PERMIT_DISTFILES_FTP=	Yes
 MULTI_PACKAGES=	-main -tcl -iaxcomm
 MODULES=	devel/gettext x11/tk
 
-cWANTLIB	+= avcodec avutil gsm m mp3lame ogg orc-0.4 ossaudio portaudio
-cWANTLIB	+= pthread schroedinger-1.0 speex speexdsp sndio theora
-cWANTLIB	+= theoradec theoraenc vidcap vorbis vorbisenc vpx x264
-cWANTLIB	+= xvidcore z
+cWANTLIB	+= avcodec gsm m ogg orc-0.4 ossaudio portaudio pthread speex
+cWANTLIB	+= speexdsp sndio theora vidcap z
 
-WANTLIB-main 	+= c ${cWANTLIB}
+WANTLIB-main 	+= avutil c mp3lame schroedinger-1.0 theoradec theoraenc vorbis
+WANTLIB-main	+= vorbisenc vpx x264 ${cWANTLIB}
 
 WANTLIB-tcl	+= GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB-tcl	+= Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo
@@ -61,7 +60,7 @@ BUILD_DEPENDS=	${MODTK_BUILD_DEPENDS}
 LIB_DEPENDS=	audio/gsm \
 		audio/portaudio-svn \
 		audio/speex \
-		graphics/ffmpeg \
+		graphics/ffmpeg>=20121026 \
 		graphics/libvidcap
 
 LIB_DEPENDS-tcl=${LIB_DEPENDS} \
