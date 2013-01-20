@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_pkit_py,v 1.6 2012/06/26 06:17:11 ajacoutot Exp $
---- base/pkit.py.orig	Mon Jun 18 12:44:13 2012
-+++ base/pkit.py	Tue Jun 26 07:06:28 2012
+$OpenBSD: patch-base_pkit_py,v 1.7 2013/01/20 10:43:00 ajacoutot Exp $
+--- base/pkit.py.orig	Tue Nov 20 10:55:15 2012
++++ base/pkit.py	Sun Jan 20 10:13:19 2013
 @@ -346,8 +346,8 @@ def copyPluginFiles(src_dir):
          SANELIBDIR = '/usr/lib64/sane'
          LIBDIR = '/usr/lib64'
@@ -21,3 +21,12 @@ $OpenBSD: patch-base_pkit_py,v 1.6 2012/06/26 06:17:11 ajacoutot Exp $
  
      if 'gksu' in su_sudo:
          cmd = su_sudo % ("%s -u %s --reason %s" % (p_path, req, plugin_reason))
+@@ -511,7 +511,7 @@ def run_plugin_command(required=True, plugin_reason=PL
+ 
+ 
+ def policykit_version():
+-    if os.path.isdir("/usr/share/polkit-1"):
++    if os.path.isdir("${LOCALBASE}/share/polkit-1"):
+         return 1
+     elif os.path.isdir("/usr/share/PolicyKit"):
+         return 0
