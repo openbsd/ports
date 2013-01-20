@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2012/10/28 23:30:36 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2013/01/20 18:05:35 kili Exp $
 
 COMMENT=		generic interface for cryptographic operations
 
 DISTNAME=		crypto-api-0.10.2
-REVISION=		0
+REVISION=		1
 CATEGORIES=		security net
 
 HOMEPAGE=		http://trac.haskell.org/crypto-api/wiki

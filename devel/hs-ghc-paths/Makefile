@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2011/09/16 09:24:50 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/01/20 18:01:36 kili Exp $
 
 COMMENT =		knowledge of GHC's installation directories
 
 DISTNAME =		ghc-paths-0.1.0.8
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

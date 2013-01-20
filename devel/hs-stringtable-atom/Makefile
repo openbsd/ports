@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2012/12/02 20:43:10 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2013/01/20 18:03:29 kili Exp $
 
 COMMENT =		memoize strings as atoms
 
 DISTNAME =		stringtable-atom-0.0.6.1
-REVISION =		7
+REVISION =		8
 CATEGORIES =		devel
 
 # BSD3

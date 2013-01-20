@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2012/12/02 20:48:05 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2013/01/20 18:05:35 kili Exp $
 
 COMMENT =		crypto PRNG using AES in counter mode.
 
 DISTNAME =		cprng-aes-0.2.3
-REVISION =		2
+REVISION =		3
 CATEGORIES =		security
 
 # BSD3

@@ -1,22 +1,36 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/10/28 23:30:36 kili Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/01/20 18:05:35 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Crypto/
 lib/ghc/${DISTNAME}/Crypto/Hash/
 lib/ghc/${DISTNAME}/Crypto/Hash/MD2.hi
+lib/ghc/${DISTNAME}/Crypto/Hash/MD2.p_hi
 lib/ghc/${DISTNAME}/Crypto/Hash/MD4.hi
+lib/ghc/${DISTNAME}/Crypto/Hash/MD4.p_hi
 lib/ghc/${DISTNAME}/Crypto/Hash/MD5.hi
+lib/ghc/${DISTNAME}/Crypto/Hash/MD5.p_hi
 lib/ghc/${DISTNAME}/Crypto/Hash/RIPEMD160.hi
+lib/ghc/${DISTNAME}/Crypto/Hash/RIPEMD160.p_hi
 lib/ghc/${DISTNAME}/Crypto/Hash/SHA1.hi
+lib/ghc/${DISTNAME}/Crypto/Hash/SHA1.p_hi
 lib/ghc/${DISTNAME}/Crypto/Hash/SHA224.hi
+lib/ghc/${DISTNAME}/Crypto/Hash/SHA224.p_hi
 lib/ghc/${DISTNAME}/Crypto/Hash/SHA256.hi
+lib/ghc/${DISTNAME}/Crypto/Hash/SHA256.p_hi
 lib/ghc/${DISTNAME}/Crypto/Hash/SHA384.hi
+lib/ghc/${DISTNAME}/Crypto/Hash/SHA384.p_hi
 lib/ghc/${DISTNAME}/Crypto/Hash/SHA512.hi
+lib/ghc/${DISTNAME}/Crypto/Hash/SHA512.p_hi
 lib/ghc/${DISTNAME}/Crypto/Hash/SHA512t.hi
+lib/ghc/${DISTNAME}/Crypto/Hash/SHA512t.p_hi
 lib/ghc/${DISTNAME}/Crypto/Hash/Skein256.hi
+lib/ghc/${DISTNAME}/Crypto/Hash/Skein256.p_hi
 lib/ghc/${DISTNAME}/Crypto/Hash/Skein512.hi
+lib/ghc/${DISTNAME}/Crypto/Hash/Skein512.p_hi
 lib/ghc/${DISTNAME}/Crypto/Hash/Tiger.hi
+lib/ghc/${DISTNAME}/Crypto/Hash/Tiger.p_hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2012/10/28 23:30:36 kili Exp $
+# $OpenBSD: Makefile,v 1.14 2013/01/20 18:05:35 kili Exp $
 
 COMMENT=		certificates and Key Reader/Writer
 
 DISTNAME=		certificate-0.9.5
-REVISION=		4
+REVISION=		5
 CATEGORIES=		security
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>

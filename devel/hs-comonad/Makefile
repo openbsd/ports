@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2012/10/28 23:27:05 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2013/01/20 18:00:41 kili Exp $
 
 COMMENT =		Haskell 98 comonads
 
 DISTNAME =		comonad-1.1.1.6
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 # BSD3

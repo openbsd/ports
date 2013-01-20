@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2012/10/28 23:24:28 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2013/01/20 17:56:37 kili Exp $
 
 COMMENT=		Haskell interface to MPD
 
 DISTNAME=		libmpd-0.7.2
-REVISION=		1
+REVISION=		2
 CATEGORIES=		audio
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>

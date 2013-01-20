@@ -1,19 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/10/28 23:29:50 kili Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/01/20 18:04:22 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/TypeLevel/
 lib/ghc/${DISTNAME}/Data/TypeLevel.hi
+lib/ghc/${DISTNAME}/Data/TypeLevel.p_hi
 lib/ghc/${DISTNAME}/Data/TypeLevel/Bool.hi
+lib/ghc/${DISTNAME}/Data/TypeLevel/Bool.p_hi
 lib/ghc/${DISTNAME}/Data/TypeLevel/Num/
 lib/ghc/${DISTNAME}/Data/TypeLevel/Num.hi
+lib/ghc/${DISTNAME}/Data/TypeLevel/Num.p_hi
 lib/ghc/${DISTNAME}/Data/TypeLevel/Num/Aliases/
 lib/ghc/${DISTNAME}/Data/TypeLevel/Num/Aliases.hi
+lib/ghc/${DISTNAME}/Data/TypeLevel/Num/Aliases.p_hi
 lib/ghc/${DISTNAME}/Data/TypeLevel/Num/Aliases/TH.hi
+lib/ghc/${DISTNAME}/Data/TypeLevel/Num/Aliases/TH.p_hi
 lib/ghc/${DISTNAME}/Data/TypeLevel/Num/Ops.hi
+lib/ghc/${DISTNAME}/Data/TypeLevel/Num/Ops.p_hi
 lib/ghc/${DISTNAME}/Data/TypeLevel/Num/Reps.hi
+lib/ghc/${DISTNAME}/Data/TypeLevel/Num/Reps.p_hi
 lib/ghc/${DISTNAME}/Data/TypeLevel/Num/Sets.hi
+lib/ghc/${DISTNAME}/Data/TypeLevel/Num/Sets.p_hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

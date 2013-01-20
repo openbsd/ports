@@ -1,25 +1,36 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/10/28 23:28:20 kili Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/01/20 18:02:53 kili Exp $
 @conflict hs-network-bytestring-*
 @pkgpath net/hs-network-bytestring
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Network/
 lib/ghc/${DISTNAME}/Network.hi
+lib/ghc/${DISTNAME}/Network.p_hi
 lib/ghc/${DISTNAME}/Network/BSD.hi
+lib/ghc/${DISTNAME}/Network/BSD.p_hi
 lib/ghc/${DISTNAME}/Network/Socket/
 lib/ghc/${DISTNAME}/Network/Socket.hi
+lib/ghc/${DISTNAME}/Network/Socket.p_hi
 lib/ghc/${DISTNAME}/Network/Socket/ByteString/
 lib/ghc/${DISTNAME}/Network/Socket/ByteString.hi
+lib/ghc/${DISTNAME}/Network/Socket/ByteString.p_hi
 lib/ghc/${DISTNAME}/Network/Socket/ByteString/IOVec.hi
+lib/ghc/${DISTNAME}/Network/Socket/ByteString/IOVec.p_hi
 lib/ghc/${DISTNAME}/Network/Socket/ByteString/Internal.hi
+lib/ghc/${DISTNAME}/Network/Socket/ByteString/Internal.p_hi
 lib/ghc/${DISTNAME}/Network/Socket/ByteString/Lazy.hi
+lib/ghc/${DISTNAME}/Network/Socket/ByteString/Lazy.p_hi
 lib/ghc/${DISTNAME}/Network/Socket/ByteString/MsgHdr.hi
+lib/ghc/${DISTNAME}/Network/Socket/ByteString/MsgHdr.p_hi
 lib/ghc/${DISTNAME}/Network/Socket/Internal.hi
+lib/ghc/${DISTNAME}/Network/Socket/Internal.p_hi
 lib/ghc/${DISTNAME}/Network/URI.hi
+lib/ghc/${DISTNAME}/Network/URI.p_hi
 lib/ghc/${DISTNAME}/include/
 lib/ghc/${DISTNAME}/include/HsNet.h
 lib/ghc/${DISTNAME}/include/HsNetworkConfig.h
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

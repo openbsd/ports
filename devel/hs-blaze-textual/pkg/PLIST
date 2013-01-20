@@ -1,14 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/10/28 23:26:38 kili Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/01/20 18:00:41 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Blaze/
 lib/ghc/${DISTNAME}/Blaze/Text/
 lib/ghc/${DISTNAME}/Blaze/Text.hi
+lib/ghc/${DISTNAME}/Blaze/Text.p_hi
 lib/ghc/${DISTNAME}/Blaze/Text/Double/
 lib/ghc/${DISTNAME}/Blaze/Text/Double.hi
+lib/ghc/${DISTNAME}/Blaze/Text/Double.p_hi
 lib/ghc/${DISTNAME}/Blaze/Text/Double/Native.hi
+lib/ghc/${DISTNAME}/Blaze/Text/Double/Native.p_hi
 lib/ghc/${DISTNAME}/Blaze/Text/Int.hi
+lib/ghc/${DISTNAME}/Blaze/Text/Int.p_hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

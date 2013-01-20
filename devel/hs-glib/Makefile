@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2012/10/28 23:27:58 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2013/01/20 18:01:51 kili Exp $
 
 COMMENT =		Haskell bindings to glib
 
 DISTNAME =		glib-0.12.3.1
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 HOMEPAGE =		http://www.haskell.org/gtk2hs/

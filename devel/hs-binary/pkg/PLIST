@@ -1,13 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/10/28 23:26:37 kili Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/01/20 18:00:16 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/Binary/
 lib/ghc/${DISTNAME}/Data/Binary.hi
+lib/ghc/${DISTNAME}/Data/Binary.p_hi
 lib/ghc/${DISTNAME}/Data/Binary/Builder.hi
+lib/ghc/${DISTNAME}/Data/Binary/Builder.p_hi
 lib/ghc/${DISTNAME}/Data/Binary/Get.hi
+lib/ghc/${DISTNAME}/Data/Binary/Get.p_hi
 lib/ghc/${DISTNAME}/Data/Binary/Put.hi
+lib/ghc/${DISTNAME}/Data/Binary/Put.p_hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

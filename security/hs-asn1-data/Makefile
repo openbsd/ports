@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2012/10/28 23:30:36 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2013/01/20 18:05:35 kili Exp $
 
 COMMENT=		ASN1 data reader and writer for various forms
 
 DISTNAME=		asn1-data-0.6.1.2
-REVISION=		1
+REVISION=		2
 CATEGORIES=		security converters
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>

@@ -1,18 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/10/28 23:27:25 kili Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/01/20 18:01:36 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/Enumerator/
 lib/ghc/${DISTNAME}/Data/Enumerator.hi
+lib/ghc/${DISTNAME}/Data/Enumerator.p_hi
 lib/ghc/${DISTNAME}/Data/Enumerator/Binary.hi
+lib/ghc/${DISTNAME}/Data/Enumerator/Binary.p_hi
 lib/ghc/${DISTNAME}/Data/Enumerator/Compatibility.hi
+lib/ghc/${DISTNAME}/Data/Enumerator/Compatibility.p_hi
 lib/ghc/${DISTNAME}/Data/Enumerator/IO.hi
+lib/ghc/${DISTNAME}/Data/Enumerator/IO.p_hi
 lib/ghc/${DISTNAME}/Data/Enumerator/Internal.hi
+lib/ghc/${DISTNAME}/Data/Enumerator/Internal.p_hi
 lib/ghc/${DISTNAME}/Data/Enumerator/List.hi
+lib/ghc/${DISTNAME}/Data/Enumerator/List.p_hi
 lib/ghc/${DISTNAME}/Data/Enumerator/Text.hi
+lib/ghc/${DISTNAME}/Data/Enumerator/Text.p_hi
 lib/ghc/${DISTNAME}/Data/Enumerator/Trans.hi
+lib/ghc/${DISTNAME}/Data/Enumerator/Trans.p_hi
 lib/ghc/${DISTNAME}/Data/Enumerator/Util.hi
+lib/ghc/${DISTNAME}/Data/Enumerator/Util.p_hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/html/

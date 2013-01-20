@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2012/10/28 23:24:28 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2013/01/20 17:56:05 kili Exp $
 
 COMMENT =		enumerator interface for zlib compression
 
 DISTNAME =		zlib-enum-0.2.2.1
-REVISION =		0
+REVISION =		1
 CATEGORIES =		archivers devel
 
 # BSD3

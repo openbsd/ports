@@ -1,34 +1,56 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/10/28 23:30:15 kili Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/01/20 18:04:48 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Graphics/
 lib/ghc/${DISTNAME}/Graphics/UI/
 lib/ghc/${DISTNAME}/Graphics/UI/GLUT/
 lib/ghc/${DISTNAME}/Graphics/UI/GLUT.hi
+lib/ghc/${DISTNAME}/Graphics/UI/GLUT.p_hi
 lib/ghc/${DISTNAME}/Graphics/UI/GLUT/Begin.hi
+lib/ghc/${DISTNAME}/Graphics/UI/GLUT/Begin.p_hi
 lib/ghc/${DISTNAME}/Graphics/UI/GLUT/Callbacks/
 lib/ghc/${DISTNAME}/Graphics/UI/GLUT/Callbacks.hi
+lib/ghc/${DISTNAME}/Graphics/UI/GLUT/Callbacks.p_hi
 lib/ghc/${DISTNAME}/Graphics/UI/GLUT/Callbacks/Global.hi
+lib/ghc/${DISTNAME}/Graphics/UI/GLUT/Callbacks/Global.p_hi
 lib/ghc/${DISTNAME}/Graphics/UI/GLUT/Callbacks/Registration.hi
+lib/ghc/${DISTNAME}/Graphics/UI/GLUT/Callbacks/Registration.p_hi
 lib/ghc/${DISTNAME}/Graphics/UI/GLUT/Callbacks/Window.hi
+lib/ghc/${DISTNAME}/Graphics/UI/GLUT/Callbacks/Window.p_hi
 lib/ghc/${DISTNAME}/Graphics/UI/GLUT/Colormap.hi
+lib/ghc/${DISTNAME}/Graphics/UI/GLUT/Colormap.p_hi
 lib/ghc/${DISTNAME}/Graphics/UI/GLUT/Constants.hi
+lib/ghc/${DISTNAME}/Graphics/UI/GLUT/Constants.p_hi
 lib/ghc/${DISTNAME}/Graphics/UI/GLUT/Debugging.hi
+lib/ghc/${DISTNAME}/Graphics/UI/GLUT/Debugging.p_hi
 lib/ghc/${DISTNAME}/Graphics/UI/GLUT/DeviceControl.hi
+lib/ghc/${DISTNAME}/Graphics/UI/GLUT/DeviceControl.p_hi
 lib/ghc/${DISTNAME}/Graphics/UI/GLUT/Extensions.hi
+lib/ghc/${DISTNAME}/Graphics/UI/GLUT/Extensions.p_hi
 lib/ghc/${DISTNAME}/Graphics/UI/GLUT/Fonts.hi
+lib/ghc/${DISTNAME}/Graphics/UI/GLUT/Fonts.p_hi
 lib/ghc/${DISTNAME}/Graphics/UI/GLUT/GameMode.hi
+lib/ghc/${DISTNAME}/Graphics/UI/GLUT/GameMode.p_hi
 lib/ghc/${DISTNAME}/Graphics/UI/GLUT/Initialization.hi
+lib/ghc/${DISTNAME}/Graphics/UI/GLUT/Initialization.p_hi
 lib/ghc/${DISTNAME}/Graphics/UI/GLUT/Menu.hi
+lib/ghc/${DISTNAME}/Graphics/UI/GLUT/Menu.p_hi
 lib/ghc/${DISTNAME}/Graphics/UI/GLUT/Objects.hi
+lib/ghc/${DISTNAME}/Graphics/UI/GLUT/Objects.p_hi
 lib/ghc/${DISTNAME}/Graphics/UI/GLUT/Overlay.hi
+lib/ghc/${DISTNAME}/Graphics/UI/GLUT/Overlay.p_hi
 lib/ghc/${DISTNAME}/Graphics/UI/GLUT/QueryUtils.hi
+lib/ghc/${DISTNAME}/Graphics/UI/GLUT/QueryUtils.p_hi
 lib/ghc/${DISTNAME}/Graphics/UI/GLUT/State.hi
+lib/ghc/${DISTNAME}/Graphics/UI/GLUT/State.p_hi
 lib/ghc/${DISTNAME}/Graphics/UI/GLUT/Types.hi
+lib/ghc/${DISTNAME}/Graphics/UI/GLUT/Types.p_hi
 lib/ghc/${DISTNAME}/Graphics/UI/GLUT/Window.hi
+lib/ghc/${DISTNAME}/Graphics/UI/GLUT/Window.p_hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/include/
 lib/ghc/${DISTNAME}/include/HsGLUT.h
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 @comment share/doc/hs-${DISTNAME}/
 @comment share/doc/hs-${DISTNAME}/LICENSE

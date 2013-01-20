@@ -1,18 +1,27 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/10/28 23:30:36 kili Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/01/20 18:05:35 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Crypto/
 lib/ghc/${DISTNAME}/Crypto/Cipher/
 lib/ghc/${DISTNAME}/Crypto/Cipher/AES.hi
+lib/ghc/${DISTNAME}/Crypto/Cipher/AES.p_hi
 lib/ghc/${DISTNAME}/Crypto/Cipher/Camellia.hi
+lib/ghc/${DISTNAME}/Crypto/Cipher/Camellia.p_hi
 lib/ghc/${DISTNAME}/Crypto/Cipher/DSA.hi
+lib/ghc/${DISTNAME}/Crypto/Cipher/DSA.p_hi
 lib/ghc/${DISTNAME}/Crypto/Cipher/RC4.hi
+lib/ghc/${DISTNAME}/Crypto/Cipher/RC4.p_hi
 lib/ghc/${DISTNAME}/Crypto/Cipher/RSA.hi
+lib/ghc/${DISTNAME}/Crypto/Cipher/RSA.p_hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Number/
 lib/ghc/${DISTNAME}/Number/Generate.hi
+lib/ghc/${DISTNAME}/Number/Generate.p_hi
 lib/ghc/${DISTNAME}/Number/ModArithmetic.hi
+lib/ghc/${DISTNAME}/Number/ModArithmetic.p_hi
 lib/ghc/${DISTNAME}/Number/Serialize.hi
+lib/ghc/${DISTNAME}/Number/Serialize.p_hi
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

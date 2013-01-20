@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2012/10/28 23:26:37 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2013/01/20 17:59:47 kili Exp $
 
 COMMENT =		ANSI terminal package for Haskell
 
 DISTNAME =		ansi-terminal-0.5.5
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel
 
 HOMEPAGE =		http://batterseapower.github.com/ansi-terminal/

@@ -1,15 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/31 19:14:17 kili Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/01/20 17:59:47 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/Concurrent/
 lib/ghc/${DISTNAME}/Data/Concurrent/Deque/
 lib/ghc/${DISTNAME}/Data/Concurrent/Deque/Class.hi
+lib/ghc/${DISTNAME}/Data/Concurrent/Deque/Class.p_hi
 lib/ghc/${DISTNAME}/Data/Concurrent/Deque/Reference/
 lib/ghc/${DISTNAME}/Data/Concurrent/Deque/Reference.hi
+lib/ghc/${DISTNAME}/Data/Concurrent/Deque/Reference.p_hi
 lib/ghc/${DISTNAME}/Data/Concurrent/Deque/Reference/DequeInstance.hi
+lib/ghc/${DISTNAME}/Data/Concurrent/Deque/Reference/DequeInstance.p_hi
 lib/ghc/${DISTNAME}/Data/Concurrent/Deque/Tests.hi
+lib/ghc/${DISTNAME}/Data/Concurrent/Deque/Tests.p_hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

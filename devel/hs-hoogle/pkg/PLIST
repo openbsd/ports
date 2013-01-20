@@ -1,67 +1,114 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/10/28 23:27:58 kili Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/01/20 18:01:51 kili Exp $
 @newgroup _hoogle:689
 @newuser _hoogle:689:_hoogle:daemon:Hoogle account:/nonexistent:/sbin/nologin
 @bin bin/hoogle
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/Heap.hi
+lib/ghc/${DISTNAME}/Data/Heap.p_hi
 lib/ghc/${DISTNAME}/Data/TypeMap.hi
+lib/ghc/${DISTNAME}/Data/TypeMap.p_hi
 lib/ghc/${DISTNAME}/General/
 lib/ghc/${DISTNAME}/General/Base.hi
+lib/ghc/${DISTNAME}/General/Base.p_hi
 lib/ghc/${DISTNAME}/General/System.hi
+lib/ghc/${DISTNAME}/General/System.p_hi
 lib/ghc/${DISTNAME}/General/Util.hi
+lib/ghc/${DISTNAME}/General/Util.p_hi
 lib/ghc/${DISTNAME}/General/Web.hi
+lib/ghc/${DISTNAME}/General/Web.p_hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Hoogle/
 lib/ghc/${DISTNAME}/Hoogle.hi
+lib/ghc/${DISTNAME}/Hoogle.p_hi
 lib/ghc/${DISTNAME}/Hoogle/DataBase/
 lib/ghc/${DISTNAME}/Hoogle/DataBase/Aliases.hi
+lib/ghc/${DISTNAME}/Hoogle/DataBase/Aliases.p_hi
 lib/ghc/${DISTNAME}/Hoogle/DataBase/All.hi
+lib/ghc/${DISTNAME}/Hoogle/DataBase/All.p_hi
 lib/ghc/${DISTNAME}/Hoogle/DataBase/Instances.hi
+lib/ghc/${DISTNAME}/Hoogle/DataBase/Instances.p_hi
 lib/ghc/${DISTNAME}/Hoogle/DataBase/Items.hi
+lib/ghc/${DISTNAME}/Hoogle/DataBase/Items.p_hi
 lib/ghc/${DISTNAME}/Hoogle/DataBase/Serialise.hi
+lib/ghc/${DISTNAME}/Hoogle/DataBase/Serialise.p_hi
 lib/ghc/${DISTNAME}/Hoogle/DataBase/SubstrSearch.hi
+lib/ghc/${DISTNAME}/Hoogle/DataBase/SubstrSearch.p_hi
 lib/ghc/${DISTNAME}/Hoogle/DataBase/Suggest.hi
+lib/ghc/${DISTNAME}/Hoogle/DataBase/Suggest.p_hi
 lib/ghc/${DISTNAME}/Hoogle/DataBase/Type.hi
+lib/ghc/${DISTNAME}/Hoogle/DataBase/Type.p_hi
 lib/ghc/${DISTNAME}/Hoogle/DataBase/TypeSearch/
 lib/ghc/${DISTNAME}/Hoogle/DataBase/TypeSearch/All.hi
+lib/ghc/${DISTNAME}/Hoogle/DataBase/TypeSearch/All.p_hi
 lib/ghc/${DISTNAME}/Hoogle/DataBase/TypeSearch/Binding.hi
+lib/ghc/${DISTNAME}/Hoogle/DataBase/TypeSearch/Binding.p_hi
 lib/ghc/${DISTNAME}/Hoogle/DataBase/TypeSearch/EntryInfo.hi
+lib/ghc/${DISTNAME}/Hoogle/DataBase/TypeSearch/EntryInfo.p_hi
 lib/ghc/${DISTNAME}/Hoogle/DataBase/TypeSearch/Graph.hi
+lib/ghc/${DISTNAME}/Hoogle/DataBase/TypeSearch/Graph.p_hi
 lib/ghc/${DISTNAME}/Hoogle/DataBase/TypeSearch/Graphs.hi
+lib/ghc/${DISTNAME}/Hoogle/DataBase/TypeSearch/Graphs.p_hi
 lib/ghc/${DISTNAME}/Hoogle/DataBase/TypeSearch/Result.hi
+lib/ghc/${DISTNAME}/Hoogle/DataBase/TypeSearch/Result.p_hi
 lib/ghc/${DISTNAME}/Hoogle/DataBase/TypeSearch/TypeScore.hi
+lib/ghc/${DISTNAME}/Hoogle/DataBase/TypeSearch/TypeScore.p_hi
 lib/ghc/${DISTNAME}/Hoogle/Language/
 lib/ghc/${DISTNAME}/Hoogle/Language/Haskell.hi
+lib/ghc/${DISTNAME}/Hoogle/Language/Haskell.p_hi
 lib/ghc/${DISTNAME}/Hoogle/Query/
 lib/ghc/${DISTNAME}/Hoogle/Query/All.hi
+lib/ghc/${DISTNAME}/Hoogle/Query/All.p_hi
 lib/ghc/${DISTNAME}/Hoogle/Query/Parser.hi
+lib/ghc/${DISTNAME}/Hoogle/Query/Parser.p_hi
 lib/ghc/${DISTNAME}/Hoogle/Query/Render.hi
+lib/ghc/${DISTNAME}/Hoogle/Query/Render.p_hi
 lib/ghc/${DISTNAME}/Hoogle/Query/Suggest.hi
+lib/ghc/${DISTNAME}/Hoogle/Query/Suggest.p_hi
 lib/ghc/${DISTNAME}/Hoogle/Query/Type.hi
+lib/ghc/${DISTNAME}/Hoogle/Query/Type.p_hi
 lib/ghc/${DISTNAME}/Hoogle/Score/
 lib/ghc/${DISTNAME}/Hoogle/Score/All.hi
+lib/ghc/${DISTNAME}/Hoogle/Score/All.p_hi
 lib/ghc/${DISTNAME}/Hoogle/Score/Scoring.hi
+lib/ghc/${DISTNAME}/Hoogle/Score/Scoring.p_hi
 lib/ghc/${DISTNAME}/Hoogle/Score/Type.hi
+lib/ghc/${DISTNAME}/Hoogle/Score/Type.p_hi
 lib/ghc/${DISTNAME}/Hoogle/Search/
 lib/ghc/${DISTNAME}/Hoogle/Search/All.hi
+lib/ghc/${DISTNAME}/Hoogle/Search/All.p_hi
 lib/ghc/${DISTNAME}/Hoogle/Search/Results.hi
+lib/ghc/${DISTNAME}/Hoogle/Search/Results.p_hi
 lib/ghc/${DISTNAME}/Hoogle/Store/
 lib/ghc/${DISTNAME}/Hoogle/Store/All.hi
+lib/ghc/${DISTNAME}/Hoogle/Store/All.p_hi
 lib/ghc/${DISTNAME}/Hoogle/Store/ReadBuffer.hi
+lib/ghc/${DISTNAME}/Hoogle/Store/ReadBuffer.p_hi
 lib/ghc/${DISTNAME}/Hoogle/Store/Type.hi
+lib/ghc/${DISTNAME}/Hoogle/Store/Type.p_hi
 lib/ghc/${DISTNAME}/Hoogle/Store/WriteBuffer.hi
+lib/ghc/${DISTNAME}/Hoogle/Store/WriteBuffer.p_hi
 lib/ghc/${DISTNAME}/Hoogle/Type/
 lib/ghc/${DISTNAME}/Hoogle/Type/All.hi
+lib/ghc/${DISTNAME}/Hoogle/Type/All.p_hi
 lib/ghc/${DISTNAME}/Hoogle/Type/Docs.hi
+lib/ghc/${DISTNAME}/Hoogle/Type/Docs.p_hi
 lib/ghc/${DISTNAME}/Hoogle/Type/Item.hi
+lib/ghc/${DISTNAME}/Hoogle/Type/Item.p_hi
 lib/ghc/${DISTNAME}/Hoogle/Type/Language.hi
+lib/ghc/${DISTNAME}/Hoogle/Type/Language.p_hi
 lib/ghc/${DISTNAME}/Hoogle/Type/ParseError.hi
+lib/ghc/${DISTNAME}/Hoogle/Type/ParseError.p_hi
 lib/ghc/${DISTNAME}/Hoogle/Type/Result.hi
+lib/ghc/${DISTNAME}/Hoogle/Type/Result.p_hi
 lib/ghc/${DISTNAME}/Hoogle/Type/TagStr.hi
+lib/ghc/${DISTNAME}/Hoogle/Type/TagStr.p_hi
 lib/ghc/${DISTNAME}/Hoogle/Type/TypeSig.hi
+lib/ghc/${DISTNAME}/Hoogle/Type/TypeSig.p_hi
 lib/ghc/${DISTNAME}/Paths_hoogle.hi
+lib/ghc/${DISTNAME}/Paths_hoogle.p_hi
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
@@ -107,6 +154,9 @@ share/hs-${DISTNAME}/resources/template_example.html
 @owner _hoogle
 @group _hoogle
 @sample ${HOOGLEDB}/
+@mode
+@owner
+@group
 @exec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/register.sh -v0
 @unexec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/unregister.sh -v0 --force
 lib/ghc/${DISTNAME}/unregister.sh

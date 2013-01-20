@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2012/10/28 23:31:50 kili Exp $
+# $OpenBSD: Makefile,v 1.15 2013/01/20 18:07:10 kili Exp $
 
 COMMENT =		bindings to the X11 graphics library for GHC
 
 DISTNAME =		X11-1.6.0
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		x11 devel
 

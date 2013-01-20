@@ -1,22 +1,32 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/10/28 23:30:36 kili Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/01/20 18:05:35 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/Certificate/
 lib/ghc/${DISTNAME}/Data/Certificate/KeyDSA.hi
+lib/ghc/${DISTNAME}/Data/Certificate/KeyDSA.p_hi
 lib/ghc/${DISTNAME}/Data/Certificate/KeyRSA.hi
+lib/ghc/${DISTNAME}/Data/Certificate/KeyRSA.p_hi
 lib/ghc/${DISTNAME}/Data/Certificate/PEM.hi
+lib/ghc/${DISTNAME}/Data/Certificate/PEM.p_hi
 lib/ghc/${DISTNAME}/Data/Certificate/X509/
 lib/ghc/${DISTNAME}/Data/Certificate/X509.hi
+lib/ghc/${DISTNAME}/Data/Certificate/X509.p_hi
 lib/ghc/${DISTNAME}/Data/Certificate/X509/Cert.hi
+lib/ghc/${DISTNAME}/Data/Certificate/X509/Cert.p_hi
 lib/ghc/${DISTNAME}/Data/Certificate/X509/Ext.hi
+lib/ghc/${DISTNAME}/Data/Certificate/X509/Ext.p_hi
 lib/ghc/${DISTNAME}/Data/Certificate/X509/Internal.hi
+lib/ghc/${DISTNAME}/Data/Certificate/X509/Internal.p_hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/System/
 lib/ghc/${DISTNAME}/System/Certificate/
 lib/ghc/${DISTNAME}/System/Certificate/X509/
 lib/ghc/${DISTNAME}/System/Certificate/X509.hi
+lib/ghc/${DISTNAME}/System/Certificate/X509.p_hi
 lib/ghc/${DISTNAME}/System/Certificate/X509/Unix.hi
+lib/ghc/${DISTNAME}/System/Certificate/X509/Unix.p_hi
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

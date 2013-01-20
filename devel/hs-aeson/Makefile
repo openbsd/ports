@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2012/10/28 23:26:37 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2013/01/20 17:59:47 kili Exp $
 
 COMMENT =		fast JSON parsing and encoding
 
 DISTNAME =		aeson-0.6.0.2
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 # BSD3

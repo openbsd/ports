@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2012/10/28 23:30:15 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2013/01/20 18:05:13 kili Exp $
 
 COMMENT =		Haskell package for determining the hostname
 
 DISTNAME =		hostname-1.0
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel net
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

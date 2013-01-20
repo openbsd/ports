@@ -1,12 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/31 19:15:05 kili Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/01/20 17:59:47 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Control/
 lib/ghc/${DISTNAME}/Control/Monad/
 lib/ghc/${DISTNAME}/Control/Monad/Par/
 lib/ghc/${DISTNAME}/Control/Monad/Par/Class.hi
+lib/ghc/${DISTNAME}/Control/Monad/Par/Class.p_hi
 lib/ghc/${DISTNAME}/Control/Monad/Par/Unsafe.hi
+lib/ghc/${DISTNAME}/Control/Monad/Par/Unsafe.p_hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

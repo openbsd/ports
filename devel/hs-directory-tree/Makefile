@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2012/10/28 23:27:24 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2013/01/20 18:01:36 kili Exp $
 
 COMMENT =		directory-like tree datatype
 
 DISTNAME =		directory-tree-0.10.0
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 MAINTAINER =		Jim Razmus II <jim@openbsd.org>

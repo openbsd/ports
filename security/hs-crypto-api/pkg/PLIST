@@ -1,16 +1,25 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/10/28 23:30:36 kili Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/01/20 18:05:35 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Crypto/
 lib/ghc/${DISTNAME}/Crypto/CPoly.hi
+lib/ghc/${DISTNAME}/Crypto/CPoly.p_hi
 lib/ghc/${DISTNAME}/Crypto/Classes.hi
+lib/ghc/${DISTNAME}/Crypto/Classes.p_hi
 lib/ghc/${DISTNAME}/Crypto/HMAC.hi
+lib/ghc/${DISTNAME}/Crypto/HMAC.p_hi
 lib/ghc/${DISTNAME}/Crypto/Modes.hi
+lib/ghc/${DISTNAME}/Crypto/Modes.p_hi
 lib/ghc/${DISTNAME}/Crypto/Padding.hi
+lib/ghc/${DISTNAME}/Crypto/Padding.p_hi
 lib/ghc/${DISTNAME}/Crypto/Random.hi
+lib/ghc/${DISTNAME}/Crypto/Random.p_hi
 lib/ghc/${DISTNAME}/Crypto/Types.hi
+lib/ghc/${DISTNAME}/Crypto/Types.p_hi
 lib/ghc/${DISTNAME}/Crypto/Util.hi
+lib/ghc/${DISTNAME}/Crypto/Util.p_hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

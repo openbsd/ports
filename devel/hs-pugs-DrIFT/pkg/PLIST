@@ -1,13 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/10/28 23:28:49 kili Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/01/20 18:03:12 kili Exp $
 @bin bin/pugs-DrIFT
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/DrIFT/
 lib/ghc/${DISTNAME}/DrIFT/JSON.hi
+lib/ghc/${DISTNAME}/DrIFT/JSON.p_hi
 lib/ghc/${DISTNAME}/DrIFT/Perl5.hi
+lib/ghc/${DISTNAME}/DrIFT/Perl5.p_hi
 lib/ghc/${DISTNAME}/DrIFT/Perl6Class.hi
+lib/ghc/${DISTNAME}/DrIFT/Perl6Class.p_hi
 lib/ghc/${DISTNAME}/DrIFT/YAML.hi
+lib/ghc/${DISTNAME}/DrIFT/YAML.p_hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

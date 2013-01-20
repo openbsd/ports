@@ -1,19 +1,29 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/10/28 23:27:05 kili Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/01/20 18:01:18 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/Convertible/
 lib/ghc/${DISTNAME}/Data/Convertible.hi
+lib/ghc/${DISTNAME}/Data/Convertible.p_hi
 lib/ghc/${DISTNAME}/Data/Convertible/Base.hi
+lib/ghc/${DISTNAME}/Data/Convertible/Base.p_hi
 lib/ghc/${DISTNAME}/Data/Convertible/Instances/
 lib/ghc/${DISTNAME}/Data/Convertible/Instances.hi
+lib/ghc/${DISTNAME}/Data/Convertible/Instances.p_hi
 lib/ghc/${DISTNAME}/Data/Convertible/Instances/C.hi
+lib/ghc/${DISTNAME}/Data/Convertible/Instances/C.p_hi
 lib/ghc/${DISTNAME}/Data/Convertible/Instances/Map.hi
+lib/ghc/${DISTNAME}/Data/Convertible/Instances/Map.p_hi
 lib/ghc/${DISTNAME}/Data/Convertible/Instances/Num.hi
+lib/ghc/${DISTNAME}/Data/Convertible/Instances/Num.p_hi
 lib/ghc/${DISTNAME}/Data/Convertible/Instances/Text.hi
+lib/ghc/${DISTNAME}/Data/Convertible/Instances/Text.p_hi
 lib/ghc/${DISTNAME}/Data/Convertible/Instances/Time.hi
+lib/ghc/${DISTNAME}/Data/Convertible/Instances/Time.p_hi
 lib/ghc/${DISTNAME}/Data/Convertible/Utils.hi
+lib/ghc/${DISTNAME}/Data/Convertible/Utils.p_hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

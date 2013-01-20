@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2012/10/28 23:31:14 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2013/01/20 18:06:28 kili Exp $
 
 COMMENT=		XML parser and renderer with HTML 5 quirks mode
 
 DISTNAME=		xmlhtml-0.2.0.2
-REVISION=		0
+REVISION=		1
 CATEGORIES=		textproc
 
 # BSD3

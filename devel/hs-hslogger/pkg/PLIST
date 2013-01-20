@@ -1,18 +1,27 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/10/28 23:27:58 kili Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/01/20 18:01:52 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/System/
 lib/ghc/${DISTNAME}/System/Log/
 lib/ghc/${DISTNAME}/System/Log.hi
+lib/ghc/${DISTNAME}/System/Log.p_hi
 lib/ghc/${DISTNAME}/System/Log/Formatter.hi
+lib/ghc/${DISTNAME}/System/Log/Formatter.p_hi
 lib/ghc/${DISTNAME}/System/Log/Handler/
 lib/ghc/${DISTNAME}/System/Log/Handler.hi
+lib/ghc/${DISTNAME}/System/Log/Handler.p_hi
 lib/ghc/${DISTNAME}/System/Log/Handler/Growl.hi
+lib/ghc/${DISTNAME}/System/Log/Handler/Growl.p_hi
 lib/ghc/${DISTNAME}/System/Log/Handler/Log4jXML.hi
+lib/ghc/${DISTNAME}/System/Log/Handler/Log4jXML.p_hi
 lib/ghc/${DISTNAME}/System/Log/Handler/Simple.hi
+lib/ghc/${DISTNAME}/System/Log/Handler/Simple.p_hi
 lib/ghc/${DISTNAME}/System/Log/Handler/Syslog.hi
+lib/ghc/${DISTNAME}/System/Log/Handler/Syslog.p_hi
 lib/ghc/${DISTNAME}/System/Log/Logger.hi
+lib/ghc/${DISTNAME}/System/Log/Logger.p_hi
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

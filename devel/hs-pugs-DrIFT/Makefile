@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2012/12/31 15:48:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2013/01/20 18:03:12 kili Exp $
 
 COMMENT =		DrIFT with pugs-specific rules
 
 DISTNAME =		pugs-DrIFT-2.2.3.20120203
-REVISION =		2
+REVISION =		3
 CATEGORIES =		devel
 HOMEPAGE =		http://pugscode.org/
 

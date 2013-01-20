@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2012/10/28 23:27:05 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2013/01/20 18:00:41 kili Exp $
 
 COMMENT =		command line parser library
 
 DISTNAME =		cmdargs-0.9.5
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 HOMEPAGE =		http://community.haskell.org/~ndm/cmdargs/
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2012/10/28 23:27:58 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2013/01/20 18:02:11 kili Exp $
 
 COMMENT =		Iteratee monad provides strict, safe, and functional I/O
 
 DISTNAME =		iteratee-0.8.8.2
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 MAINTAINER =		Jim Razmus II <jim@openbsd.org>, \

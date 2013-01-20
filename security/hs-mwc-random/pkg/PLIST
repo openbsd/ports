@@ -1,13 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/10/28 23:30:36 kili Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/01/20 18:05:35 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/System/
 lib/ghc/${DISTNAME}/System/Random/
 lib/ghc/${DISTNAME}/System/Random/MWC/
 lib/ghc/${DISTNAME}/System/Random/MWC.hi
+lib/ghc/${DISTNAME}/System/Random/MWC.p_hi
 lib/ghc/${DISTNAME}/System/Random/MWC/CondensedTable.hi
+lib/ghc/${DISTNAME}/System/Random/MWC/CondensedTable.p_hi
 lib/ghc/${DISTNAME}/System/Random/MWC/Distributions.hi
+lib/ghc/${DISTNAME}/System/Random/MWC/Distributions.p_hi
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

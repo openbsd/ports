@@ -1,21 +1,30 @@
-@comment $OpenBSD: PLIST-lib,v 1.9 2012/10/28 23:31:50 kili Exp $
+@comment $OpenBSD: PLIST-lib,v 1.10 2013/01/20 18:07:11 kili Exp $
 lib/ghc/
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/XMonad/
 lib/ghc/${DISTNAME}/XMonad.hi
+lib/ghc/${DISTNAME}/XMonad.p_hi
 lib/ghc/${DISTNAME}/XMonad/Config.hi
+lib/ghc/${DISTNAME}/XMonad/Config.p_hi
 lib/ghc/${DISTNAME}/XMonad/Core.hi
+lib/ghc/${DISTNAME}/XMonad/Core.p_hi
 lib/ghc/${DISTNAME}/XMonad/Layout.hi
+lib/ghc/${DISTNAME}/XMonad/Layout.p_hi
 lib/ghc/${DISTNAME}/XMonad/Main.hi
+lib/ghc/${DISTNAME}/XMonad/Main.p_hi
 lib/ghc/${DISTNAME}/XMonad/ManageHook.hi
+lib/ghc/${DISTNAME}/XMonad/ManageHook.p_hi
 lib/ghc/${DISTNAME}/XMonad/Operations.hi
+lib/ghc/${DISTNAME}/XMonad/Operations.p_hi
 lib/ghc/${DISTNAME}/XMonad/StackSet.hi
+lib/ghc/${DISTNAME}/XMonad/StackSet.p_hi
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/CONFIG
-share/doc/hs-${DISTNAME}/LICENSE
+@comment share/doc/hs-${DISTNAME}/LICENSE
 share/doc/hs-${DISTNAME}/html/
 share/doc/hs-${DISTNAME}/html/XMonad-Config.html
 share/doc/hs-${DISTNAME}/html/XMonad-Core.html
@@ -76,7 +85,6 @@ share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif
 share/doc/hs-${DISTNAME}/html/synopsis.png
 share/doc/hs-${DISTNAME}/html/xmonad.haddock
-@comment share/doc/hs-${DISTNAME}/LICENSE
 share/doc/hs-${DISTNAME}/xmonad.hs
 @exec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/register.sh -v0
 @unexec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/unregister.sh -v0 --force

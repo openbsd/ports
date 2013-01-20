@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/10/31 19:21:14 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2013/01/20 18:05:02 kili Exp $
 
 COMMENT =		abstract syntax and utilities for embedded languages
 
 DISTNAME =		syntactic-1.4
+REVISION =		0
 CATEGORIES =		devel lang
 
 # BSD3

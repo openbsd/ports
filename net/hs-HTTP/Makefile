@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2012/12/02 20:21:43 kili Exp $
+# $OpenBSD: Makefile,v 1.21 2013/01/20 18:05:13 kili Exp $
 
 COMMENT =		library for client-side HTTP
 
 DISTNAME =		HTTP-4000.2.5
+REVISION =		0
 CATEGORIES =		net devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

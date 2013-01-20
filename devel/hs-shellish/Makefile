@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2012/10/28 23:29:18 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2013/01/20 18:03:29 kili Exp $
 
 COMMENT =		shell-/perl- like (systems) programming in Haskell
 
 DISTNAME =		shellish-0.1.4
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

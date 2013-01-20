@@ -1,17 +1,26 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/10/28 23:24:28 kili Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/01/20 17:58:07 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Database/
 lib/ghc/${DISTNAME}/Database/HDBC/
 lib/ghc/${DISTNAME}/Database/HDBC.hi
+lib/ghc/${DISTNAME}/Database/HDBC.p_hi
 lib/ghc/${DISTNAME}/Database/HDBC/ColTypes.hi
+lib/ghc/${DISTNAME}/Database/HDBC/ColTypes.p_hi
 lib/ghc/${DISTNAME}/Database/HDBC/DriverUtils.hi
+lib/ghc/${DISTNAME}/Database/HDBC/DriverUtils.p_hi
 lib/ghc/${DISTNAME}/Database/HDBC/Locale.hi
+lib/ghc/${DISTNAME}/Database/HDBC/Locale.p_hi
 lib/ghc/${DISTNAME}/Database/HDBC/SqlValue.hi
+lib/ghc/${DISTNAME}/Database/HDBC/SqlValue.p_hi
 lib/ghc/${DISTNAME}/Database/HDBC/Statement.hi
+lib/ghc/${DISTNAME}/Database/HDBC/Statement.p_hi
 lib/ghc/${DISTNAME}/Database/HDBC/Types.hi
+lib/ghc/${DISTNAME}/Database/HDBC/Types.p_hi
 lib/ghc/${DISTNAME}/Database/HDBC/Utils.hi
+lib/ghc/${DISTNAME}/Database/HDBC/Utils.p_hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

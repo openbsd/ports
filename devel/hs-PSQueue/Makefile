@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2012/10/28 23:26:01 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2013/01/20 17:59:47 kili Exp $
 
 COMMENT =		priority search queue
 
 DISTNAME =		PSQueue-1.1
-REVISION =		4
+REVISION =		5
 CATEGORIES =		devel
 
 MAINTAINER =		Jim Razmus II <jim@openbsd.org>

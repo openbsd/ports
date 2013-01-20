@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/10/28 23:31:14 kili Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/01/20 18:06:14 kili Exp $
 @comment bin/spoj-eugene
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
@@ -6,11 +6,16 @@ lib/ghc/${DISTNAME}/Data/ByteString/
 lib/ghc/${DISTNAME}/Data/ByteString/Nums/
 lib/ghc/${DISTNAME}/Data/ByteString/Nums/Careless/
 lib/ghc/${DISTNAME}/Data/ByteString/Nums/Careless.hi
+lib/ghc/${DISTNAME}/Data/ByteString/Nums/Careless.p_hi
 lib/ghc/${DISTNAME}/Data/ByteString/Nums/Careless/Float.hi
+lib/ghc/${DISTNAME}/Data/ByteString/Nums/Careless/Float.p_hi
 lib/ghc/${DISTNAME}/Data/ByteString/Nums/Careless/Hex.hi
+lib/ghc/${DISTNAME}/Data/ByteString/Nums/Careless/Hex.p_hi
 lib/ghc/${DISTNAME}/Data/ByteString/Nums/Careless/Int.hi
+lib/ghc/${DISTNAME}/Data/ByteString/Nums/Careless/Int.p_hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

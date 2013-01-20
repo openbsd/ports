@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2012/10/28 23:27:05 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2013/01/20 18:00:41 kili Exp $
 
 COMMENT =		command line parsing and online help
 
 DISTNAME =		cmdlib-0.3.5
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

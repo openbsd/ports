@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2012/10/28 23:26:38 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2013/01/20 18:00:41 kili Exp $
 
 COMMENT =		integrate blaze-builder and enumerator
 
 DISTNAME =		blaze-builder-enumerator-0.2.0.4
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 HOMEPAGE =		https://github.com/meiersi/blaze-builder-enumerator
 

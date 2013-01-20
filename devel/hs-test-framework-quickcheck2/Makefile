@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2012/12/02 20:19:36 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2013/01/20 18:03:47 kili Exp $
 
 COMMENT =		QuickCheck2 support for hs-test-framework
 
 DISTNAME =		test-framework-quickcheck2-0.2.12.3
+REVISION =		0
 CATEGORIES =		devel
 
 HOMEPAGE =		http://batterseapower.github.com/test-framework/

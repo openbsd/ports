@@ -1,24 +1,35 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/12/02 20:23:25 kili Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/01/20 18:03:12 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Control/
 lib/ghc/${DISTNAME}/Control/Monad/
 lib/ghc/${DISTNAME}/Control/Monad/Primitive.hi
+lib/ghc/${DISTNAME}/Control/Monad/Primitive.p_hi
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/Primitive/
 lib/ghc/${DISTNAME}/Data/Primitive.hi
+lib/ghc/${DISTNAME}/Data/Primitive.p_hi
 lib/ghc/${DISTNAME}/Data/Primitive/Addr.hi
+lib/ghc/${DISTNAME}/Data/Primitive/Addr.p_hi
 lib/ghc/${DISTNAME}/Data/Primitive/Array.hi
+lib/ghc/${DISTNAME}/Data/Primitive/Array.p_hi
 lib/ghc/${DISTNAME}/Data/Primitive/ByteArray.hi
+lib/ghc/${DISTNAME}/Data/Primitive/ByteArray.p_hi
 lib/ghc/${DISTNAME}/Data/Primitive/Internal/
 lib/ghc/${DISTNAME}/Data/Primitive/Internal/Compat.hi
+lib/ghc/${DISTNAME}/Data/Primitive/Internal/Compat.p_hi
 lib/ghc/${DISTNAME}/Data/Primitive/Internal/Operations.hi
+lib/ghc/${DISTNAME}/Data/Primitive/Internal/Operations.p_hi
 lib/ghc/${DISTNAME}/Data/Primitive/MachDeps.hi
+lib/ghc/${DISTNAME}/Data/Primitive/MachDeps.p_hi
 lib/ghc/${DISTNAME}/Data/Primitive/MutVar.hi
+lib/ghc/${DISTNAME}/Data/Primitive/MutVar.p_hi
 lib/ghc/${DISTNAME}/Data/Primitive/Types.hi
+lib/ghc/${DISTNAME}/Data/Primitive/Types.p_hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/include/
 lib/ghc/${DISTNAME}/include/primitive-memops.h
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

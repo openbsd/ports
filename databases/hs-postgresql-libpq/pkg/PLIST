@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/01/11 20:19:49 kili Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/01/20 17:58:07 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Database/
 lib/ghc/${DISTNAME}/Database/PostgreSQL/
 lib/ghc/${DISTNAME}/Database/PostgreSQL/LibPQ.hi
+lib/ghc/${DISTNAME}/Database/PostgreSQL/LibPQ.p_hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2012/10/28 23:30:36 kili Exp $
+@comment $OpenBSD: PLIST,v 1.11 2013/01/20 18:05:35 kili Exp $
 @comment bin/HMACTest
 @comment bin/QuickTest
 @comment bin/RSATest
@@ -9,38 +9,65 @@ lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Codec/
 lib/ghc/${DISTNAME}/Codec/Binary/
 lib/ghc/${DISTNAME}/Codec/Binary/BubbleBabble.hi
+lib/ghc/${DISTNAME}/Codec/Binary/BubbleBabble.p_hi
 lib/ghc/${DISTNAME}/Codec/Encryption/
 lib/ghc/${DISTNAME}/Codec/Encryption/AES.hi
+lib/ghc/${DISTNAME}/Codec/Encryption/AES.p_hi
 lib/ghc/${DISTNAME}/Codec/Encryption/AESAux.hi
+lib/ghc/${DISTNAME}/Codec/Encryption/AESAux.p_hi
 lib/ghc/${DISTNAME}/Codec/Encryption/Blowfish.hi
+lib/ghc/${DISTNAME}/Codec/Encryption/Blowfish.p_hi
 lib/ghc/${DISTNAME}/Codec/Encryption/BlowfishAux.hi
+lib/ghc/${DISTNAME}/Codec/Encryption/BlowfishAux.p_hi
 lib/ghc/${DISTNAME}/Codec/Encryption/DES.hi
+lib/ghc/${DISTNAME}/Codec/Encryption/DES.p_hi
 lib/ghc/${DISTNAME}/Codec/Encryption/DESAux.hi
+lib/ghc/${DISTNAME}/Codec/Encryption/DESAux.p_hi
 lib/ghc/${DISTNAME}/Codec/Encryption/Modes.hi
+lib/ghc/${DISTNAME}/Codec/Encryption/Modes.p_hi
 lib/ghc/${DISTNAME}/Codec/Encryption/Padding.hi
+lib/ghc/${DISTNAME}/Codec/Encryption/Padding.p_hi
 lib/ghc/${DISTNAME}/Codec/Encryption/RSA/
 lib/ghc/${DISTNAME}/Codec/Encryption/RSA.hi
+lib/ghc/${DISTNAME}/Codec/Encryption/RSA.p_hi
 lib/ghc/${DISTNAME}/Codec/Encryption/RSA/EMEOAEP.hi
+lib/ghc/${DISTNAME}/Codec/Encryption/RSA/EMEOAEP.p_hi
 lib/ghc/${DISTNAME}/Codec/Encryption/RSA/MGF.hi
+lib/ghc/${DISTNAME}/Codec/Encryption/RSA/MGF.p_hi
 lib/ghc/${DISTNAME}/Codec/Encryption/RSA/NumberTheory.hi
+lib/ghc/${DISTNAME}/Codec/Encryption/RSA/NumberTheory.p_hi
 lib/ghc/${DISTNAME}/Codec/Encryption/TEA.hi
+lib/ghc/${DISTNAME}/Codec/Encryption/TEA.p_hi
 lib/ghc/${DISTNAME}/Codec/Text/
 lib/ghc/${DISTNAME}/Codec/Text/Raw.hi
+lib/ghc/${DISTNAME}/Codec/Text/Raw.p_hi
 lib/ghc/${DISTNAME}/Codec/Utils.hi
+lib/ghc/${DISTNAME}/Codec/Utils.p_hi
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/Digest/
 lib/ghc/${DISTNAME}/Data/Digest/MD5.hi
+lib/ghc/${DISTNAME}/Data/Digest/MD5.p_hi
 lib/ghc/${DISTNAME}/Data/Digest/MD5Aux.hi
+lib/ghc/${DISTNAME}/Data/Digest/MD5Aux.p_hi
 lib/ghc/${DISTNAME}/Data/Digest/SHA1.hi
+lib/ghc/${DISTNAME}/Data/Digest/SHA1.p_hi
 lib/ghc/${DISTNAME}/Data/Digest/SHA2.hi
+lib/ghc/${DISTNAME}/Data/Digest/SHA2.p_hi
 lib/ghc/${DISTNAME}/Data/Digest/SHA224.hi
+lib/ghc/${DISTNAME}/Data/Digest/SHA224.p_hi
 lib/ghc/${DISTNAME}/Data/Digest/SHA256.hi
+lib/ghc/${DISTNAME}/Data/Digest/SHA256.p_hi
 lib/ghc/${DISTNAME}/Data/Digest/SHA384.hi
+lib/ghc/${DISTNAME}/Data/Digest/SHA384.p_hi
 lib/ghc/${DISTNAME}/Data/Digest/SHA512.hi
+lib/ghc/${DISTNAME}/Data/Digest/SHA512.p_hi
 lib/ghc/${DISTNAME}/Data/HMAC.hi
+lib/ghc/${DISTNAME}/Data/HMAC.p_hi
 lib/ghc/${DISTNAME}/Data/LargeWord.hi
+lib/ghc/${DISTNAME}/Data/LargeWord.p_hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/ReadMe.tex

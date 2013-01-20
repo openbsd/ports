@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/01/11 20:17:21 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2013/01/20 18:05:13 kili Exp $
 
 COMMENT =		Haskell binding to libcurl
 
 DISTNAME =		curl-1.3.8
+REVISION =		0
 CATEGORIES =		net
 
 HOMEPAGE =		https://github.com/GaloisInc/curl

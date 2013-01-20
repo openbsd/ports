@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/10/28 23:26:01 kili Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/01/20 17:59:15 kili Exp $
 @comment bin/basic-tests
 @comment bin/extended-tests
 @comment bin/optimize-1-tests
@@ -8,11 +8,17 @@ lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Test/
 lib/ghc/${DISTNAME}/Test/HUnit/
 lib/ghc/${DISTNAME}/Test/HUnit.hi
+lib/ghc/${DISTNAME}/Test/HUnit.p_hi
 lib/ghc/${DISTNAME}/Test/HUnit/Base.hi
+lib/ghc/${DISTNAME}/Test/HUnit/Base.p_hi
 lib/ghc/${DISTNAME}/Test/HUnit/Lang.hi
+lib/ghc/${DISTNAME}/Test/HUnit/Lang.p_hi
 lib/ghc/${DISTNAME}/Test/HUnit/Terminal.hi
+lib/ghc/${DISTNAME}/Test/HUnit/Terminal.p_hi
 lib/ghc/${DISTNAME}/Test/HUnit/Text.hi
+lib/ghc/${DISTNAME}/Test/HUnit/Text.p_hi
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

@@ -1,21 +1,31 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/12/02 20:25:06 kili Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/01/20 18:03:29 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Control/
 lib/ghc/${DISTNAME}/Control/Concurrent/
 lib/ghc/${DISTNAME}/Control/Concurrent/STM/
 lib/ghc/${DISTNAME}/Control/Concurrent/STM.hi
+lib/ghc/${DISTNAME}/Control/Concurrent/STM.p_hi
 lib/ghc/${DISTNAME}/Control/Concurrent/STM/TArray.hi
+lib/ghc/${DISTNAME}/Control/Concurrent/STM/TArray.p_hi
 lib/ghc/${DISTNAME}/Control/Concurrent/STM/TBQueue.hi
+lib/ghc/${DISTNAME}/Control/Concurrent/STM/TBQueue.p_hi
 lib/ghc/${DISTNAME}/Control/Concurrent/STM/TChan.hi
+lib/ghc/${DISTNAME}/Control/Concurrent/STM/TChan.p_hi
 lib/ghc/${DISTNAME}/Control/Concurrent/STM/TMVar.hi
+lib/ghc/${DISTNAME}/Control/Concurrent/STM/TMVar.p_hi
 lib/ghc/${DISTNAME}/Control/Concurrent/STM/TQueue.hi
+lib/ghc/${DISTNAME}/Control/Concurrent/STM/TQueue.p_hi
 lib/ghc/${DISTNAME}/Control/Concurrent/STM/TVar.hi
+lib/ghc/${DISTNAME}/Control/Concurrent/STM/TVar.p_hi
 lib/ghc/${DISTNAME}/Control/Monad/
 lib/ghc/${DISTNAME}/Control/Monad/STM.hi
+lib/ghc/${DISTNAME}/Control/Monad/STM.p_hi
 lib/ghc/${DISTNAME}/Control/Sequential/
 lib/ghc/${DISTNAME}/Control/Sequential/STM.hi
+lib/ghc/${DISTNAME}/Control/Sequential/STM.p_hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

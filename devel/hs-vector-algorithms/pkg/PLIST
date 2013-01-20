@@ -1,21 +1,31 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/10/28 23:29:51 kili Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/01/20 18:04:22 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/Vector/
 lib/ghc/${DISTNAME}/Data/Vector/Algorithms/
 lib/ghc/${DISTNAME}/Data/Vector/Algorithms/AmericanFlag.hi
+lib/ghc/${DISTNAME}/Data/Vector/Algorithms/AmericanFlag.p_hi
 lib/ghc/${DISTNAME}/Data/Vector/Algorithms/Common.hi
+lib/ghc/${DISTNAME}/Data/Vector/Algorithms/Common.p_hi
 lib/ghc/${DISTNAME}/Data/Vector/Algorithms/Heap.hi
+lib/ghc/${DISTNAME}/Data/Vector/Algorithms/Heap.p_hi
 lib/ghc/${DISTNAME}/Data/Vector/Algorithms/Insertion.hi
+lib/ghc/${DISTNAME}/Data/Vector/Algorithms/Insertion.p_hi
 lib/ghc/${DISTNAME}/Data/Vector/Algorithms/Intro.hi
+lib/ghc/${DISTNAME}/Data/Vector/Algorithms/Intro.p_hi
 lib/ghc/${DISTNAME}/Data/Vector/Algorithms/Merge.hi
+lib/ghc/${DISTNAME}/Data/Vector/Algorithms/Merge.p_hi
 lib/ghc/${DISTNAME}/Data/Vector/Algorithms/Optimal.hi
+lib/ghc/${DISTNAME}/Data/Vector/Algorithms/Optimal.p_hi
 lib/ghc/${DISTNAME}/Data/Vector/Algorithms/Radix.hi
+lib/ghc/${DISTNAME}/Data/Vector/Algorithms/Radix.p_hi
 lib/ghc/${DISTNAME}/Data/Vector/Algorithms/Search.hi
+lib/ghc/${DISTNAME}/Data/Vector/Algorithms/Search.p_hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/include/
 lib/ghc/${DISTNAME}/include/vector.h
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

@@ -1,14 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/10/28 23:28:49 kili Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/01/20 18:03:12 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/System/
 lib/ghc/${DISTNAME}/System/Console/
 lib/ghc/${DISTNAME}/System/Console/Readline.hi
+lib/ghc/${DISTNAME}/System/Console/Readline.p_hi
 lib/ghc/${DISTNAME}/System/Console/SimpleLineEditor.hi
+lib/ghc/${DISTNAME}/System/Console/SimpleLineEditor.p_hi
 lib/ghc/${DISTNAME}/include/
 lib/ghc/${DISTNAME}/include/HsReadline.h
 lib/ghc/${DISTNAME}/include/HsReadlineConfig.h
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

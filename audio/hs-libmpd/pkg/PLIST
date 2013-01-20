@@ -1,23 +1,36 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/10/28 23:24:28 kili Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/01/20 17:56:37 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Network/
 lib/ghc/${DISTNAME}/Network/MPD/
 lib/ghc/${DISTNAME}/Network/MPD.hi
+lib/ghc/${DISTNAME}/Network/MPD.p_hi
 lib/ghc/${DISTNAME}/Network/MPD/Commands/
 lib/ghc/${DISTNAME}/Network/MPD/Commands.hi
+lib/ghc/${DISTNAME}/Network/MPD/Commands.p_hi
 lib/ghc/${DISTNAME}/Network/MPD/Commands/Arg.hi
+lib/ghc/${DISTNAME}/Network/MPD/Commands/Arg.p_hi
 lib/ghc/${DISTNAME}/Network/MPD/Commands/Extensions.hi
+lib/ghc/${DISTNAME}/Network/MPD/Commands/Extensions.p_hi
 lib/ghc/${DISTNAME}/Network/MPD/Commands/Parse.hi
+lib/ghc/${DISTNAME}/Network/MPD/Commands/Parse.p_hi
 lib/ghc/${DISTNAME}/Network/MPD/Commands/Query.hi
+lib/ghc/${DISTNAME}/Network/MPD/Commands/Query.p_hi
 lib/ghc/${DISTNAME}/Network/MPD/Commands/Types.hi
+lib/ghc/${DISTNAME}/Network/MPD/Commands/Types.p_hi
 lib/ghc/${DISTNAME}/Network/MPD/Commands/Util.hi
+lib/ghc/${DISTNAME}/Network/MPD/Commands/Util.p_hi
 lib/ghc/${DISTNAME}/Network/MPD/Core/
 lib/ghc/${DISTNAME}/Network/MPD/Core.hi
+lib/ghc/${DISTNAME}/Network/MPD/Core.p_hi
 lib/ghc/${DISTNAME}/Network/MPD/Core/Class.hi
+lib/ghc/${DISTNAME}/Network/MPD/Core/Class.p_hi
 lib/ghc/${DISTNAME}/Network/MPD/Core/Error.hi
+lib/ghc/${DISTNAME}/Network/MPD/Core/Error.p_hi
 lib/ghc/${DISTNAME}/Network/MPD/Util.hi
+lib/ghc/${DISTNAME}/Network/MPD/Util.p_hi
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

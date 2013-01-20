@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/10/31 19:12:27 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2013/01/20 17:59:47 kili Exp $
 
 COMMENT =		singleton tuple
 
 DISTNAME =		OneTuple-0.2.1
+REVISION =		0
 CATEGORIES =		devel
 
 # BSD3

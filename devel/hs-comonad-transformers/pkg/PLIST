@@ -1,21 +1,30 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/10/28 23:27:05 kili Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/01/20 18:00:42 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Control/
 lib/ghc/${DISTNAME}/Control/Comonad/
 lib/ghc/${DISTNAME}/Control/Comonad/Hoist/
 lib/ghc/${DISTNAME}/Control/Comonad/Hoist/Class.hi
+lib/ghc/${DISTNAME}/Control/Comonad/Hoist/Class.p_hi
 lib/ghc/${DISTNAME}/Control/Comonad/Trans/
 lib/ghc/${DISTNAME}/Control/Comonad/Trans/Class.hi
+lib/ghc/${DISTNAME}/Control/Comonad/Trans/Class.p_hi
 lib/ghc/${DISTNAME}/Control/Comonad/Trans/Env.hi
+lib/ghc/${DISTNAME}/Control/Comonad/Trans/Env.p_hi
 lib/ghc/${DISTNAME}/Control/Comonad/Trans/Identity.hi
+lib/ghc/${DISTNAME}/Control/Comonad/Trans/Identity.p_hi
 lib/ghc/${DISTNAME}/Control/Comonad/Trans/Store.hi
+lib/ghc/${DISTNAME}/Control/Comonad/Trans/Store.p_hi
 lib/ghc/${DISTNAME}/Control/Comonad/Trans/Traced.hi
+lib/ghc/${DISTNAME}/Control/Comonad/Trans/Traced.p_hi
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/Functor/
 lib/ghc/${DISTNAME}/Data/Functor/Composition.hi
+lib/ghc/${DISTNAME}/Data/Functor/Composition.p_hi
 lib/ghc/${DISTNAME}/Data/Functor/Coproduct.hi
+lib/ghc/${DISTNAME}/Data/Functor/Coproduct.p_hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

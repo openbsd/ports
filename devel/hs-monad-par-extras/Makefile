@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/10/31 19:18:58 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2013/01/20 18:02:12 kili Exp $
 
 COMMENT =		combinators and extra features for Par monads
 
 DISTNAME =		monad-par-extras-0.3.2
+REVISION =		0
 CATEGORIES =		devel
 
 # BSD3

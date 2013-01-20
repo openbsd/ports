@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2012/10/28 23:31:33 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2013/01/20 18:06:55 kili Exp $
 
 COMMENT =		web application interface
 
 DISTNAME =		wai-1.2.0.3
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel www
 HOMEPAGE =		http://github.com/snoyberg/wai
 

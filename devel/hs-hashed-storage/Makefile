@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2012/10/28 23:27:58 kili Exp $
+# $OpenBSD: Makefile,v 1.18 2013/01/20 18:01:51 kili Exp $
 
 COMMENT =		hashed file storage support code for Haskell
 
 DISTNAME =		hashed-storage-0.5.9
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

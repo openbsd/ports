@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2012/10/28 23:28:50 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2013/01/20 18:03:29 kili Exp $
 
 COMMENT =		safe wrappers for some base functions
 
 DISTNAME =		safe-0.3.2
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 HOMEPAGE =		http://community.haskell.org/~ndm/safe/
 

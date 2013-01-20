@@ -1,14 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/10/28 23:27:05 kili Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/01/20 18:00:41 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/Serialize/
 lib/ghc/${DISTNAME}/Data/Serialize.hi
+lib/ghc/${DISTNAME}/Data/Serialize.p_hi
 lib/ghc/${DISTNAME}/Data/Serialize/Builder.hi
+lib/ghc/${DISTNAME}/Data/Serialize/Builder.p_hi
 lib/ghc/${DISTNAME}/Data/Serialize/Get.hi
+lib/ghc/${DISTNAME}/Data/Serialize/Get.p_hi
 lib/ghc/${DISTNAME}/Data/Serialize/IEEE754.hi
+lib/ghc/${DISTNAME}/Data/Serialize/IEEE754.p_hi
 lib/ghc/${DISTNAME}/Data/Serialize/Put.hi
+lib/ghc/${DISTNAME}/Data/Serialize/Put.p_hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

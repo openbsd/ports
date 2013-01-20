@@ -1,25 +1,34 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/10/28 23:27:58 kili Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/01/20 18:02:12 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Control/
 lib/ghc/${DISTNAME}/Control/Concurrent/
 lib/ghc/${DISTNAME}/Control/Concurrent/Chan/
 lib/ghc/${DISTNAME}/Control/Concurrent/Chan/Lifted.hi
+lib/ghc/${DISTNAME}/Control/Concurrent/Chan/Lifted.p_hi
 lib/ghc/${DISTNAME}/Control/Concurrent/Lifted.hi
+lib/ghc/${DISTNAME}/Control/Concurrent/Lifted.p_hi
 lib/ghc/${DISTNAME}/Control/Concurrent/MVar/
 lib/ghc/${DISTNAME}/Control/Concurrent/MVar/Lifted.hi
+lib/ghc/${DISTNAME}/Control/Concurrent/MVar/Lifted.p_hi
 lib/ghc/${DISTNAME}/Control/Concurrent/QSem/
 lib/ghc/${DISTNAME}/Control/Concurrent/QSem/Lifted.hi
+lib/ghc/${DISTNAME}/Control/Concurrent/QSem/Lifted.p_hi
 lib/ghc/${DISTNAME}/Control/Concurrent/QSemN/
 lib/ghc/${DISTNAME}/Control/Concurrent/QSemN/Lifted.hi
+lib/ghc/${DISTNAME}/Control/Concurrent/QSemN/Lifted.p_hi
 lib/ghc/${DISTNAME}/Control/Concurrent/SampleVar/
 lib/ghc/${DISTNAME}/Control/Concurrent/SampleVar/Lifted.hi
+lib/ghc/${DISTNAME}/Control/Concurrent/SampleVar/Lifted.p_hi
 lib/ghc/${DISTNAME}/Control/Exception/
 lib/ghc/${DISTNAME}/Control/Exception/Lifted.hi
+lib/ghc/${DISTNAME}/Control/Exception/Lifted.p_hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/System/
 lib/ghc/${DISTNAME}/System/Timeout/
 lib/ghc/${DISTNAME}/System/Timeout/Lifted.hi
+lib/ghc/${DISTNAME}/System/Timeout/Lifted.p_hi
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

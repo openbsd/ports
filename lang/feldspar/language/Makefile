@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2012/10/31 19:22:44 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2013/01/20 18:05:02 kili Exp $
 
 COMMENT=		language front-end and interpreter for the Feldspar DSL
 
 DISTNAME=		feldspar-language-0.6.0.2
+REVISION=		0
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		devel/hs-QuickAnnotate>=0.6,<0.7 \

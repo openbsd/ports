@@ -1,22 +1,35 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/10/28 23:27:58 kili Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/01/20 18:01:51 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Bundled/
 lib/ghc/${DISTNAME}/Bundled/Posix.hi
+lib/ghc/${DISTNAME}/Bundled/Posix.p_hi
 lib/ghc/${DISTNAME}/Bundled/SHA256.hi
+lib/ghc/${DISTNAME}/Bundled/SHA256.p_hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Storage/
 lib/ghc/${DISTNAME}/Storage/Hashed/
 lib/ghc/${DISTNAME}/Storage/Hashed.hi
+lib/ghc/${DISTNAME}/Storage/Hashed.p_hi
 lib/ghc/${DISTNAME}/Storage/Hashed/AnchoredPath.hi
+lib/ghc/${DISTNAME}/Storage/Hashed/AnchoredPath.p_hi
 lib/ghc/${DISTNAME}/Storage/Hashed/Darcs.hi
+lib/ghc/${DISTNAME}/Storage/Hashed/Darcs.p_hi
 lib/ghc/${DISTNAME}/Storage/Hashed/Hash.hi
+lib/ghc/${DISTNAME}/Storage/Hashed/Hash.p_hi
 lib/ghc/${DISTNAME}/Storage/Hashed/Index.hi
+lib/ghc/${DISTNAME}/Storage/Hashed/Index.p_hi
 lib/ghc/${DISTNAME}/Storage/Hashed/Monad.hi
+lib/ghc/${DISTNAME}/Storage/Hashed/Monad.p_hi
 lib/ghc/${DISTNAME}/Storage/Hashed/Packed.hi
+lib/ghc/${DISTNAME}/Storage/Hashed/Packed.p_hi
 lib/ghc/${DISTNAME}/Storage/Hashed/Plain.hi
+lib/ghc/${DISTNAME}/Storage/Hashed/Plain.p_hi
 lib/ghc/${DISTNAME}/Storage/Hashed/Tree.hi
+lib/ghc/${DISTNAME}/Storage/Hashed/Tree.p_hi
 lib/ghc/${DISTNAME}/Storage/Hashed/Utils.hi
+lib/ghc/${DISTNAME}/Storage/Hashed/Utils.p_hi
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

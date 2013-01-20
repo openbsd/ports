@@ -1,14 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/31 19:20:42 kili Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/01/20 18:04:22 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/Tuple/
 lib/ghc/${DISTNAME}/Data/Tuple/All.hi
+lib/ghc/${DISTNAME}/Data/Tuple/All.p_hi
 lib/ghc/${DISTNAME}/Data/Tuple/Curry.hi
+lib/ghc/${DISTNAME}/Data/Tuple/Curry.p_hi
 lib/ghc/${DISTNAME}/Data/Tuple/Select.hi
+lib/ghc/${DISTNAME}/Data/Tuple/Select.p_hi
 lib/ghc/${DISTNAME}/Data/Tuple/Sequence.hi
+lib/ghc/${DISTNAME}/Data/Tuple/Sequence.p_hi
 lib/ghc/${DISTNAME}/Data/Tuple/Update.hi
+lib/ghc/${DISTNAME}/Data/Tuple/Update.p_hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/html/

@@ -1,16 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/10/28 23:31:14 kili Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/01/20 18:06:14 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Text/
 lib/ghc/${DISTNAME}/Text/Show/
 lib/ghc/${DISTNAME}/Text/Show/ByteString/
 lib/ghc/${DISTNAME}/Text/Show/ByteString.hi
+lib/ghc/${DISTNAME}/Text/Show/ByteString.p_hi
 lib/ghc/${DISTNAME}/Text/Show/ByteString/Char.hi
+lib/ghc/${DISTNAME}/Text/Show/ByteString/Char.p_hi
 lib/ghc/${DISTNAME}/Text/Show/ByteString/Float.hi
+lib/ghc/${DISTNAME}/Text/Show/ByteString/Float.p_hi
 lib/ghc/${DISTNAME}/Text/Show/ByteString/Int.hi
+lib/ghc/${DISTNAME}/Text/Show/ByteString/Int.p_hi
 lib/ghc/${DISTNAME}/Text/Show/ByteString/Integer.hi
+lib/ghc/${DISTNAME}/Text/Show/ByteString/Integer.p_hi
 lib/ghc/${DISTNAME}/Text/Show/ByteString/Util.hi
+lib/ghc/${DISTNAME}/Text/Show/ByteString/Util.p_hi
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

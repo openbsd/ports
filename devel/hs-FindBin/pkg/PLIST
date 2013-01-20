@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/10/28 23:26:01 kili Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/01/20 17:59:15 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/System/
 lib/ghc/${DISTNAME}/System/Environment/
 lib/ghc/${DISTNAME}/System/Environment/FindBin.hi
+lib/ghc/${DISTNAME}/System/Environment/FindBin.p_hi
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

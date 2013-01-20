@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2012/10/28 23:27:58 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2013/01/20 18:01:51 kili Exp $
 
 COMMENT =		command-line interface for user input
 
 DISTNAME =		haskeline-0.6.4.7
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

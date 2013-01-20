@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2012/10/28 23:30:36 kili Exp $
+# $OpenBSD: Makefile,v 1.17 2013/01/20 18:05:35 kili Exp $
 
 COMMENT =	Haskell cryptographic library
 CATEGORIES =	security
 
 DISTNAME =	Crypto-4.2.5
-REVISION =	0
+REVISION =	1
 # Historically named with a lower case `c'.
 PKGNAME =	${DISTNAME:S,C,hs-c,}
 HOMEPAGE =	http://www.haskell.org/crypto/

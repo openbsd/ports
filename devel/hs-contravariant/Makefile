@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2012/10/28 23:27:05 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2013/01/20 18:01:18 kili Exp $
 
 COMMENT =		Haskell 98 contravariant functors
 
 DISTNAME =		contravariant-0.2.0.2
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 # BSD3

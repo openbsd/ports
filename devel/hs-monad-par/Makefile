@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/10/31 19:19:40 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2013/01/20 18:02:12 kili Exp $
 
 COMMENT =		parallel programming based on a monad
 
 DISTNAME =		monad-par-0.3
+REVISION =		0
 CATEGORIES =		devel
 
 # BSD3

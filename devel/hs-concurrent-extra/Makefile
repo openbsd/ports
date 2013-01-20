@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2012/12/02 20:46:08 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2013/01/20 18:00:42 kili Exp $
 
 COMMENT =		extra concurrency primitives
 
 DISTNAME =		concurrent-extra-0.7.0.4
-REVISION =		2
+REVISION =		3
 CATEGORIES =		devel
 
 # BSD3

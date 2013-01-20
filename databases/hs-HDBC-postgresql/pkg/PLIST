@@ -1,19 +1,29 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/10/28 23:24:28 kili Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/01/20 17:58:07 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Database/
 lib/ghc/${DISTNAME}/Database/HDBC/
 lib/ghc/${DISTNAME}/Database/HDBC/PostgreSQL/
 lib/ghc/${DISTNAME}/Database/HDBC/PostgreSQL.hi
+lib/ghc/${DISTNAME}/Database/HDBC/PostgreSQL.p_hi
 lib/ghc/${DISTNAME}/Database/HDBC/PostgreSQL/Connection.hi
+lib/ghc/${DISTNAME}/Database/HDBC/PostgreSQL/Connection.p_hi
 lib/ghc/${DISTNAME}/Database/HDBC/PostgreSQL/ConnectionImpl.hi
+lib/ghc/${DISTNAME}/Database/HDBC/PostgreSQL/ConnectionImpl.p_hi
 lib/ghc/${DISTNAME}/Database/HDBC/PostgreSQL/ErrorCodes.hi
+lib/ghc/${DISTNAME}/Database/HDBC/PostgreSQL/ErrorCodes.p_hi
 lib/ghc/${DISTNAME}/Database/HDBC/PostgreSQL/PTypeConv.hi
+lib/ghc/${DISTNAME}/Database/HDBC/PostgreSQL/PTypeConv.p_hi
 lib/ghc/${DISTNAME}/Database/HDBC/PostgreSQL/Parser.hi
+lib/ghc/${DISTNAME}/Database/HDBC/PostgreSQL/Parser.p_hi
 lib/ghc/${DISTNAME}/Database/HDBC/PostgreSQL/Statement.hi
+lib/ghc/${DISTNAME}/Database/HDBC/PostgreSQL/Statement.p_hi
 lib/ghc/${DISTNAME}/Database/HDBC/PostgreSQL/Types.hi
+lib/ghc/${DISTNAME}/Database/HDBC/PostgreSQL/Types.p_hi
 lib/ghc/${DISTNAME}/Database/HDBC/PostgreSQL/Utils.hi
+lib/ghc/${DISTNAME}/Database/HDBC/PostgreSQL/Utils.p_hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

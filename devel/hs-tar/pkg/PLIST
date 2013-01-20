@@ -1,18 +1,27 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/10/28 23:29:19 kili Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/01/20 18:03:47 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Codec/
 lib/ghc/${DISTNAME}/Codec/Archive/
 lib/ghc/${DISTNAME}/Codec/Archive/Tar/
 lib/ghc/${DISTNAME}/Codec/Archive/Tar.hi
+lib/ghc/${DISTNAME}/Codec/Archive/Tar.p_hi
 lib/ghc/${DISTNAME}/Codec/Archive/Tar/Check.hi
+lib/ghc/${DISTNAME}/Codec/Archive/Tar/Check.p_hi
 lib/ghc/${DISTNAME}/Codec/Archive/Tar/Entry.hi
+lib/ghc/${DISTNAME}/Codec/Archive/Tar/Entry.p_hi
 lib/ghc/${DISTNAME}/Codec/Archive/Tar/Pack.hi
+lib/ghc/${DISTNAME}/Codec/Archive/Tar/Pack.p_hi
 lib/ghc/${DISTNAME}/Codec/Archive/Tar/Read.hi
+lib/ghc/${DISTNAME}/Codec/Archive/Tar/Read.p_hi
 lib/ghc/${DISTNAME}/Codec/Archive/Tar/Types.hi
+lib/ghc/${DISTNAME}/Codec/Archive/Tar/Types.p_hi
 lib/ghc/${DISTNAME}/Codec/Archive/Tar/Unpack.hi
+lib/ghc/${DISTNAME}/Codec/Archive/Tar/Unpack.p_hi
 lib/ghc/${DISTNAME}/Codec/Archive/Tar/Write.hi
+lib/ghc/${DISTNAME}/Codec/Archive/Tar/Write.p_hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

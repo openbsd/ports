@@ -1,19 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/10/28 23:29:50 kili Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/01/20 18:04:22 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/System/
 lib/ghc/${DISTNAME}/System/PosixCompat/
 lib/ghc/${DISTNAME}/System/PosixCompat.hi
+lib/ghc/${DISTNAME}/System/PosixCompat.p_hi
 lib/ghc/${DISTNAME}/System/PosixCompat/Extensions.hi
+lib/ghc/${DISTNAME}/System/PosixCompat/Extensions.p_hi
 lib/ghc/${DISTNAME}/System/PosixCompat/Files.hi
+lib/ghc/${DISTNAME}/System/PosixCompat/Files.p_hi
 lib/ghc/${DISTNAME}/System/PosixCompat/Temp.hi
+lib/ghc/${DISTNAME}/System/PosixCompat/Temp.p_hi
 lib/ghc/${DISTNAME}/System/PosixCompat/Time.hi
+lib/ghc/${DISTNAME}/System/PosixCompat/Time.p_hi
 lib/ghc/${DISTNAME}/System/PosixCompat/Types.hi
+lib/ghc/${DISTNAME}/System/PosixCompat/Types.p_hi
 lib/ghc/${DISTNAME}/System/PosixCompat/Unistd.hi
+lib/ghc/${DISTNAME}/System/PosixCompat/Unistd.p_hi
 lib/ghc/${DISTNAME}/System/PosixCompat/User.hi
+lib/ghc/${DISTNAME}/System/PosixCompat/User.p_hi
 lib/ghc/${DISTNAME}/include/
 lib/ghc/${DISTNAME}/include/HsUnixCompat.h
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

@@ -1,11 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/10/28 23:29:19 kili Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/01/20 18:03:29 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/StringTable/
 lib/ghc/${DISTNAME}/StringTable/Atom.hi
+lib/ghc/${DISTNAME}/StringTable/Atom.p_hi
 lib/ghc/${DISTNAME}/StringTable/AtomMap.hi
+lib/ghc/${DISTNAME}/StringTable/AtomMap.p_hi
 lib/ghc/${DISTNAME}/StringTable/AtomSet.hi
+lib/ghc/${DISTNAME}/StringTable/AtomSet.p_hi
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

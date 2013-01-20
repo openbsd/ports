@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/10/28 23:27:25 kili Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/01/20 18:01:51 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Graphics/
 lib/ghc/${DISTNAME}/Graphics/UI/
@@ -6,10 +6,13 @@ lib/ghc/${DISTNAME}/Graphics/UI/Gtk/
 lib/ghc/${DISTNAME}/Graphics/UI/Gtk/Glade/
 lib/ghc/${DISTNAME}/Graphics/UI/Gtk/Glade.chi
 lib/ghc/${DISTNAME}/Graphics/UI/Gtk/Glade.hi
+lib/ghc/${DISTNAME}/Graphics/UI/Gtk/Glade.p_hi
 lib/ghc/${DISTNAME}/Graphics/UI/Gtk/Glade/Types.chi
 lib/ghc/${DISTNAME}/Graphics/UI/Gtk/Glade/Types.hi
+lib/ghc/${DISTNAME}/Graphics/UI/Gtk/Glade/Types.p_hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/COPYING

@@ -1,18 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/10/28 23:30:36 kili Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/01/20 18:05:35 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/ASN1/
 lib/ghc/${DISTNAME}/Data/ASN1/BER.hi
+lib/ghc/${DISTNAME}/Data/ASN1/BER.p_hi
 lib/ghc/${DISTNAME}/Data/ASN1/BitArray.hi
+lib/ghc/${DISTNAME}/Data/ASN1/BitArray.p_hi
 lib/ghc/${DISTNAME}/Data/ASN1/CER.hi
+lib/ghc/${DISTNAME}/Data/ASN1/CER.p_hi
 lib/ghc/${DISTNAME}/Data/ASN1/DER.hi
+lib/ghc/${DISTNAME}/Data/ASN1/DER.p_hi
 lib/ghc/${DISTNAME}/Data/ASN1/Internal.hi
+lib/ghc/${DISTNAME}/Data/ASN1/Internal.p_hi
 lib/ghc/${DISTNAME}/Data/ASN1/Prim.hi
+lib/ghc/${DISTNAME}/Data/ASN1/Prim.p_hi
 lib/ghc/${DISTNAME}/Data/ASN1/Raw.hi
+lib/ghc/${DISTNAME}/Data/ASN1/Raw.p_hi
 lib/ghc/${DISTNAME}/Data/ASN1/Stream.hi
+lib/ghc/${DISTNAME}/Data/ASN1/Stream.p_hi
 lib/ghc/${DISTNAME}/Data/ASN1/Types.hi
+lib/ghc/${DISTNAME}/Data/ASN1/Types.p_hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

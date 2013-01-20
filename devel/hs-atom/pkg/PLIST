@@ -1,21 +1,34 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/10/28 23:26:37 kili Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/01/20 18:00:15 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Language/
 lib/ghc/${DISTNAME}/Language/Atom/
 lib/ghc/${DISTNAME}/Language/Atom.hi
+lib/ghc/${DISTNAME}/Language/Atom.p_hi
 lib/ghc/${DISTNAME}/Language/Atom/Analysis.hi
+lib/ghc/${DISTNAME}/Language/Atom/Analysis.p_hi
 lib/ghc/${DISTNAME}/Language/Atom/Code.hi
+lib/ghc/${DISTNAME}/Language/Atom/Code.p_hi
 lib/ghc/${DISTNAME}/Language/Atom/Common.hi
+lib/ghc/${DISTNAME}/Language/Atom/Common.p_hi
 lib/ghc/${DISTNAME}/Language/Atom/Compile.hi
+lib/ghc/${DISTNAME}/Language/Atom/Compile.p_hi
 lib/ghc/${DISTNAME}/Language/Atom/Elaboration.hi
+lib/ghc/${DISTNAME}/Language/Atom/Elaboration.p_hi
 lib/ghc/${DISTNAME}/Language/Atom/Example.hi
+lib/ghc/${DISTNAME}/Language/Atom/Example.p_hi
 lib/ghc/${DISTNAME}/Language/Atom/Expressions.hi
+lib/ghc/${DISTNAME}/Language/Atom/Expressions.p_hi
 lib/ghc/${DISTNAME}/Language/Atom/Language.hi
+lib/ghc/${DISTNAME}/Language/Atom/Language.p_hi
 lib/ghc/${DISTNAME}/Language/Atom/Scheduling.hi
+lib/ghc/${DISTNAME}/Language/Atom/Scheduling.p_hi
 lib/ghc/${DISTNAME}/Language/Atom/UeMap.hi
+lib/ghc/${DISTNAME}/Language/Atom/UeMap.p_hi
 lib/ghc/${DISTNAME}/Language/Atom/Unit.hi
+lib/ghc/${DISTNAME}/Language/Atom/Unit.p_hi
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

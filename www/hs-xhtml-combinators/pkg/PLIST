@@ -1,23 +1,35 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/10/28 23:31:33 kili Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/01/20 18:06:55 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Text/
 lib/ghc/${DISTNAME}/Text/XHtmlCombinators/
 lib/ghc/${DISTNAME}/Text/XHtmlCombinators.hi
+lib/ghc/${DISTNAME}/Text/XHtmlCombinators.p_hi
 lib/ghc/${DISTNAME}/Text/XHtmlCombinators/Attributes/
 lib/ghc/${DISTNAME}/Text/XHtmlCombinators/Attributes.hi
+lib/ghc/${DISTNAME}/Text/XHtmlCombinators/Attributes.p_hi
 lib/ghc/${DISTNAME}/Text/XHtmlCombinators/Attributes/Internal/
 lib/ghc/${DISTNAME}/Text/XHtmlCombinators/Attributes/Internal.hi
+lib/ghc/${DISTNAME}/Text/XHtmlCombinators/Attributes/Internal.p_hi
 lib/ghc/${DISTNAME}/Text/XHtmlCombinators/Attributes/Internal/Safe.hi
+lib/ghc/${DISTNAME}/Text/XHtmlCombinators/Attributes/Internal/Safe.p_hi
 lib/ghc/${DISTNAME}/Text/XHtmlCombinators/Attributes/Safe.hi
+lib/ghc/${DISTNAME}/Text/XHtmlCombinators/Attributes/Safe.p_hi
 lib/ghc/${DISTNAME}/Text/XHtmlCombinators/Combinators.hi
+lib/ghc/${DISTNAME}/Text/XHtmlCombinators/Combinators.p_hi
 lib/ghc/${DISTNAME}/Text/XHtmlCombinators/Escape.hi
+lib/ghc/${DISTNAME}/Text/XHtmlCombinators/Escape.p_hi
 lib/ghc/${DISTNAME}/Text/XHtmlCombinators/Extras/
 lib/ghc/${DISTNAME}/Text/XHtmlCombinators/Extras/Lorem.hi
+lib/ghc/${DISTNAME}/Text/XHtmlCombinators/Extras/Lorem.p_hi
 lib/ghc/${DISTNAME}/Text/XHtmlCombinators/Internal.hi
+lib/ghc/${DISTNAME}/Text/XHtmlCombinators/Internal.p_hi
 lib/ghc/${DISTNAME}/Text/XHtmlCombinators/Render.hi
+lib/ghc/${DISTNAME}/Text/XHtmlCombinators/Render.p_hi
 lib/ghc/${DISTNAME}/Text/XHtmlCombinators/Safe.hi
+lib/ghc/${DISTNAME}/Text/XHtmlCombinators/Safe.p_hi
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

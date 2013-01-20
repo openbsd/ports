@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2012/10/28 23:27:58 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2013/01/20 18:02:12 kili Exp $
 
 COMMENT=		provides Word128, Word192 and various others large words
 
 DISTNAME=		largeword-1.0.0
-REVISION =		1
+REVISION =		2
 CATEGORIES=		devel
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>

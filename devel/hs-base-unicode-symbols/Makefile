@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2012/10/28 23:26:37 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2013/01/20 18:00:15 kili Exp $
 
 COMMENT =		Unicode symbols for common functions
 
 DISTNAME =		base-unicode-symbols-0.2.2.4
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 # BSD3

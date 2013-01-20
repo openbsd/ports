@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2012/10/28 23:31:33 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2013/01/20 18:06:55 kili Exp $
 
 COMMENT =		Snap framework dynamic loader
 
 DISTNAME =		snap-loader-dynamic-0.9.0.1
-REVISION =		0
+REVISION =		1
 CATEGORIES =		www
 HOMEPAGE =		http://snapframework.com/
 

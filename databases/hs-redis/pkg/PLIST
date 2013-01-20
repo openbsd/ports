@@ -1,22 +1,32 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/10/28 23:24:28 kili Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/01/20 17:58:07 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Database/
 lib/ghc/${DISTNAME}/Database/Redis/
 lib/ghc/${DISTNAME}/Database/Redis/ByteStringClass.hi
+lib/ghc/${DISTNAME}/Database/Redis/ByteStringClass.p_hi
 lib/ghc/${DISTNAME}/Database/Redis/Info.hi
+lib/ghc/${DISTNAME}/Database/Redis/Info.p_hi
 lib/ghc/${DISTNAME}/Database/Redis/Internal.hi
+lib/ghc/${DISTNAME}/Database/Redis/Internal.p_hi
 lib/ghc/${DISTNAME}/Database/Redis/Monad/
 lib/ghc/${DISTNAME}/Database/Redis/Monad.hi
+lib/ghc/${DISTNAME}/Database/Redis/Monad.p_hi
 lib/ghc/${DISTNAME}/Database/Redis/Monad/State.hi
+lib/ghc/${DISTNAME}/Database/Redis/Monad/State.p_hi
 lib/ghc/${DISTNAME}/Database/Redis/Redis.hi
+lib/ghc/${DISTNAME}/Database/Redis/Redis.p_hi
 lib/ghc/${DISTNAME}/Database/Redis/Utils/
 lib/ghc/${DISTNAME}/Database/Redis/Utils/Lock.hi
+lib/ghc/${DISTNAME}/Database/Redis/Utils/Lock.p_hi
 lib/ghc/${DISTNAME}/Database/Redis/Utils/Monad/
 lib/ghc/${DISTNAME}/Database/Redis/Utils/Monad/Lock.hi
+lib/ghc/${DISTNAME}/Database/Redis/Utils/Monad/Lock.p_hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
+share/doc/hs-${DISTNAME}/LICENSE
 share/doc/hs-${DISTNAME}/html/
 share/doc/hs-${DISTNAME}/html/Database-Redis-ByteStringClass.html
 share/doc/hs-${DISTNAME}/html/Database-Redis-Monad-State.html

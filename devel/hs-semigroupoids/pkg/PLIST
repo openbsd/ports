@@ -1,24 +1,36 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/10/28 23:28:50 kili Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/01/20 18:03:29 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/Functor/
 lib/ghc/${DISTNAME}/Data/Functor/Alt.hi
+lib/ghc/${DISTNAME}/Data/Functor/Alt.p_hi
 lib/ghc/${DISTNAME}/Data/Functor/Apply.hi
+lib/ghc/${DISTNAME}/Data/Functor/Apply.p_hi
 lib/ghc/${DISTNAME}/Data/Functor/Bind/
 lib/ghc/${DISTNAME}/Data/Functor/Bind.hi
+lib/ghc/${DISTNAME}/Data/Functor/Bind.p_hi
 lib/ghc/${DISTNAME}/Data/Functor/Bind/Trans.hi
+lib/ghc/${DISTNAME}/Data/Functor/Bind/Trans.p_hi
 lib/ghc/${DISTNAME}/Data/Functor/Plus.hi
+lib/ghc/${DISTNAME}/Data/Functor/Plus.p_hi
 lib/ghc/${DISTNAME}/Data/Semigroup/
 lib/ghc/${DISTNAME}/Data/Semigroup/Foldable.hi
+lib/ghc/${DISTNAME}/Data/Semigroup/Foldable.p_hi
 lib/ghc/${DISTNAME}/Data/Semigroup/Traversable.hi
+lib/ghc/${DISTNAME}/Data/Semigroup/Traversable.p_hi
 lib/ghc/${DISTNAME}/Data/Semigroupoid/
 lib/ghc/${DISTNAME}/Data/Semigroupoid.hi
+lib/ghc/${DISTNAME}/Data/Semigroupoid.p_hi
 lib/ghc/${DISTNAME}/Data/Semigroupoid/Dual.hi
+lib/ghc/${DISTNAME}/Data/Semigroupoid/Dual.p_hi
 lib/ghc/${DISTNAME}/Data/Semigroupoid/Static.hi
+lib/ghc/${DISTNAME}/Data/Semigroupoid/Static.p_hi
 lib/ghc/${DISTNAME}/Data/Traversable/
 lib/ghc/${DISTNAME}/Data/Traversable/Instances.hi
+lib/ghc/${DISTNAME}/Data/Traversable/Instances.p_hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

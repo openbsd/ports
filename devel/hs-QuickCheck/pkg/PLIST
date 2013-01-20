@@ -1,22 +1,36 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/10/28 23:26:37 kili Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/01/20 17:59:47 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Test/
 lib/ghc/${DISTNAME}/Test/QuickCheck/
 lib/ghc/${DISTNAME}/Test/QuickCheck.hi
+lib/ghc/${DISTNAME}/Test/QuickCheck.p_hi
 lib/ghc/${DISTNAME}/Test/QuickCheck/All.hi
+lib/ghc/${DISTNAME}/Test/QuickCheck/All.p_hi
 lib/ghc/${DISTNAME}/Test/QuickCheck/Arbitrary.hi
+lib/ghc/${DISTNAME}/Test/QuickCheck/Arbitrary.p_hi
 lib/ghc/${DISTNAME}/Test/QuickCheck/Exception.hi
+lib/ghc/${DISTNAME}/Test/QuickCheck/Exception.p_hi
 lib/ghc/${DISTNAME}/Test/QuickCheck/Function.hi
+lib/ghc/${DISTNAME}/Test/QuickCheck/Function.p_hi
 lib/ghc/${DISTNAME}/Test/QuickCheck/Gen.hi
+lib/ghc/${DISTNAME}/Test/QuickCheck/Gen.p_hi
 lib/ghc/${DISTNAME}/Test/QuickCheck/Modifiers.hi
+lib/ghc/${DISTNAME}/Test/QuickCheck/Modifiers.p_hi
 lib/ghc/${DISTNAME}/Test/QuickCheck/Monadic.hi
+lib/ghc/${DISTNAME}/Test/QuickCheck/Monadic.p_hi
 lib/ghc/${DISTNAME}/Test/QuickCheck/Poly.hi
+lib/ghc/${DISTNAME}/Test/QuickCheck/Poly.p_hi
 lib/ghc/${DISTNAME}/Test/QuickCheck/Property.hi
+lib/ghc/${DISTNAME}/Test/QuickCheck/Property.p_hi
 lib/ghc/${DISTNAME}/Test/QuickCheck/State.hi
+lib/ghc/${DISTNAME}/Test/QuickCheck/State.p_hi
 lib/ghc/${DISTNAME}/Test/QuickCheck/Test.hi
+lib/ghc/${DISTNAME}/Test/QuickCheck/Test.p_hi
 lib/ghc/${DISTNAME}/Test/QuickCheck/Text.hi
+lib/ghc/${DISTNAME}/Test/QuickCheck/Text.p_hi
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

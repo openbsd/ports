@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2012/10/28 23:27:25 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2013/01/20 18:01:36 kili Exp $
 
 COMMENT=		simple type class for success/failure computations
 
 DISTNAME=		failure-0.1.0.1
-REVISION=		2
+REVISION=		3
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.haskell.org/haskellwiki/Failure

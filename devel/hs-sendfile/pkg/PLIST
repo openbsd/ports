@@ -1,16 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/10/28 23:28:50 kili Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/01/20 18:03:29 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Network/
 lib/ghc/${DISTNAME}/Network/Socket/
 lib/ghc/${DISTNAME}/Network/Socket/SendFile/
 lib/ghc/${DISTNAME}/Network/Socket/SendFile.hi
+lib/ghc/${DISTNAME}/Network/Socket/SendFile.p_hi
 lib/ghc/${DISTNAME}/Network/Socket/SendFile/Handle.hi
+lib/ghc/${DISTNAME}/Network/Socket/SendFile/Handle.p_hi
 lib/ghc/${DISTNAME}/Network/Socket/SendFile/Internal.hi
+lib/ghc/${DISTNAME}/Network/Socket/SendFile/Internal.p_hi
 lib/ghc/${DISTNAME}/Network/Socket/SendFile/Iter.hi
+lib/ghc/${DISTNAME}/Network/Socket/SendFile/Iter.p_hi
 lib/ghc/${DISTNAME}/Network/Socket/SendFile/Portable.hi
+lib/ghc/${DISTNAME}/Network/Socket/SendFile/Portable.p_hi
 lib/ghc/${DISTNAME}/Network/Socket/SendFile/Util.hi
+lib/ghc/${DISTNAME}/Network/Socket/SendFile/Util.p_hi
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

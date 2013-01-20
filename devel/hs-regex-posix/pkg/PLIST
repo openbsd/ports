@@ -1,17 +1,24 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/10/28 23:28:50 kili Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/01/20 18:03:12 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Text/
 lib/ghc/${DISTNAME}/Text/Regex/
 lib/ghc/${DISTNAME}/Text/Regex/Posix/
 lib/ghc/${DISTNAME}/Text/Regex/Posix.hi
+lib/ghc/${DISTNAME}/Text/Regex/Posix.p_hi
 lib/ghc/${DISTNAME}/Text/Regex/Posix/ByteString/
 lib/ghc/${DISTNAME}/Text/Regex/Posix/ByteString.hi
+lib/ghc/${DISTNAME}/Text/Regex/Posix/ByteString.p_hi
 lib/ghc/${DISTNAME}/Text/Regex/Posix/ByteString/Lazy.hi
+lib/ghc/${DISTNAME}/Text/Regex/Posix/ByteString/Lazy.p_hi
 lib/ghc/${DISTNAME}/Text/Regex/Posix/Sequence.hi
+lib/ghc/${DISTNAME}/Text/Regex/Posix/Sequence.p_hi
 lib/ghc/${DISTNAME}/Text/Regex/Posix/String.hi
+lib/ghc/${DISTNAME}/Text/Regex/Posix/String.p_hi
 lib/ghc/${DISTNAME}/Text/Regex/Posix/Wrap.hi
+lib/ghc/${DISTNAME}/Text/Regex/Posix/Wrap.p_hi
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

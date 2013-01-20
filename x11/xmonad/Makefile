@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2012/10/28 23:31:50 kili Exp $
+# $OpenBSD: Makefile,v 1.38 2013/01/20 18:07:11 kili Exp $
 
 COMMENT-main =		tiling window manager
 COMMENT-lib =		libraries for runtime configuration
@@ -7,7 +7,7 @@ DISTNAME =		xmonad-0.10
 PKGNAME-main =		${DISTNAME}
 PKGNAME-lib =		${DISTNAME:S,-,-lib-,}
 REVISION-main =		1
-REVISION-lib =		2
+REVISION-lib =		3
 CATEGORIES =		x11
 HOMEPAGE =		http://www.xmonad.org/
 
@@ -38,6 +38,7 @@ LIB_DEPENDS-main =	${LIB_DEPENDS}
 # causes xmonad-lib to be installed in the wrong place.
 MODGHC_SETUP_CONF_ARGS +=	--docdir=\$$datadir/doc/hs-\$$pkgid
 MODGHC_SETUP_CONF_ARGS +=	--libsubdir=ghc/\$$pkgid
+MODGHC_SETUP_CONF_ARGS +=	--enable-library-profiling
 RUN_DEPENDS-lib +=		lang/ghc=${MODGHC_VER}
 
 USE_GROFF =		Yes

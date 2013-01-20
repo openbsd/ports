@@ -1,31 +1,49 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/10/28 23:31:14 kili Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/01/20 18:06:14 kili Exp $
 @conflict hs-attoparsec-text-*
 @pkgpath textproc/hs-attoparsec-text
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/Attoparsec/
 lib/ghc/${DISTNAME}/Data/Attoparsec.hi
+lib/ghc/${DISTNAME}/Data/Attoparsec.p_hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/ByteString/
 lib/ghc/${DISTNAME}/Data/Attoparsec/ByteString.hi
+lib/ghc/${DISTNAME}/Data/Attoparsec/ByteString.p_hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/ByteString/Char8.hi
+lib/ghc/${DISTNAME}/Data/Attoparsec/ByteString/Char8.p_hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/ByteString/FastSet.hi
+lib/ghc/${DISTNAME}/Data/Attoparsec/ByteString/FastSet.p_hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/ByteString/Internal.hi
+lib/ghc/${DISTNAME}/Data/Attoparsec/ByteString/Internal.p_hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/ByteString/Lazy.hi
+lib/ghc/${DISTNAME}/Data/Attoparsec/ByteString/Lazy.p_hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/Char8.hi
+lib/ghc/${DISTNAME}/Data/Attoparsec/Char8.p_hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/Combinator.hi
+lib/ghc/${DISTNAME}/Data/Attoparsec/Combinator.p_hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/Internal/
 lib/ghc/${DISTNAME}/Data/Attoparsec/Internal/Types.hi
+lib/ghc/${DISTNAME}/Data/Attoparsec/Internal/Types.p_hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/Lazy.hi
+lib/ghc/${DISTNAME}/Data/Attoparsec/Lazy.p_hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/Number.hi
+lib/ghc/${DISTNAME}/Data/Attoparsec/Number.p_hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/Text/
 lib/ghc/${DISTNAME}/Data/Attoparsec/Text.hi
+lib/ghc/${DISTNAME}/Data/Attoparsec/Text.p_hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/Text/FastSet.hi
+lib/ghc/${DISTNAME}/Data/Attoparsec/Text/FastSet.p_hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/Text/Internal.hi
+lib/ghc/${DISTNAME}/Data/Attoparsec/Text/Internal.p_hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/Text/Lazy.hi
+lib/ghc/${DISTNAME}/Data/Attoparsec/Text/Lazy.p_hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/Types.hi
+lib/ghc/${DISTNAME}/Data/Attoparsec/Types.p_hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/Zepto.hi
+lib/ghc/${DISTNAME}/Data/Attoparsec/Zepto.p_hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
