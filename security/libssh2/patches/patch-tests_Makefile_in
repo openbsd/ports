@@ -1,0 +1,12 @@
+$OpenBSD: patch-tests_Makefile_in,v 1.1 2013/01/20 09:00:44 benoit Exp $
+--- tests/Makefile.in.orig	Sat Jan 12 09:52:56 2013
++++ tests/Makefile.in	Sat Jan 12 09:53:11 2013
+@@ -239,7 +239,7 @@
+ LDADD = ../src/libssh2.la
+ @SSHD_TRUE@ssh2_SOURCES = ssh2.c
+ ctests = simple$(EXEEXT)
+-TESTS = $(ctests) mansyntax.sh $(am__append_1)
++TESTS = $(ctests) $(am__append_1)
+ check_PROGRAMS = $(ctests)
+ TESTS_ENVIRONMENT = SSHD=$(SSHD) EXEEXT=$(EXEEXT)
+ EXTRA_DIST = ssh2.sh mansyntax.sh etc/host etc/host.pub etc/user \

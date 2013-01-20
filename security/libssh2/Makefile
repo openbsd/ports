@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2011/11/26 09:25:46 benoit Exp $
+# $OpenBSD: Makefile,v 1.13 2013/01/20 09:00:41 benoit Exp $
 
 COMMENT =		library implementing the SSH2 protocol
 
-DISTNAME =		libssh2-1.3.0
+DISTNAME =		libssh2-1.4.3
 CATEGORIES =		security
-SHARED_LIBS +=		ssh2	5.1	# .1.1
+SHARED_LIBS +=		ssh2	6.0	# .1.1
 
 HOMEPAGE =              http://www.libssh2.org/
 
@@ -23,7 +23,6 @@ MASTER_SITES =		http://www.libssh2.org/download/
 
 CONFIGURE_STYLE =	gnu
 USE_LIBTOOL =		Yes
-USE_GROFF =		Yes
 
 # The second test will only pass if public key auth is configured for ${USER}
 REGRESS_IS_INTERACTIVE = Yes
