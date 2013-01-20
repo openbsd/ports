@@ -1,13 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/06/30 09:44:07 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/01/20 20:03:44 jasper Exp $
 bin/ccat
 bin/ccdecrypt
 bin/ccencrypt
+@bin bin/ccguess
 @bin bin/ccrypt
 @man man/man1/ccat.1
 @man man/man1/ccdecrypt.1
 @man man/man1/ccencrypt.1
+@man man/man1/ccguess.1
 @man man/man1/ccrypt.1
-share/emacs/site-lisp/ps-ccrypt.el
-share/emacs/site-lisp/ps-ccrypt.elc
-share/locale/de/LC_MESSAGES/ccrypt.mo
-share/locale/fr/LC_MESSAGES/ccrypt.mo
