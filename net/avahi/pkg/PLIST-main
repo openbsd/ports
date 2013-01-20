@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2011/07/20 08:45:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2013/01/20 10:44:17 ajacoutot Exp $
 @conflict howl-*
 @newgroup _avahi:629
 @newuser _avahi:629:629:daemon:Avahi User:/var/empty:/sbin/nologin
@@ -121,6 +121,8 @@ share/dbus-1/interfaces/org.freedesktop.Avahi.Server.xml
 share/dbus-1/interfaces/org.freedesktop.Avahi.ServiceBrowser.xml
 share/dbus-1/interfaces/org.freedesktop.Avahi.ServiceResolver.xml
 share/dbus-1/interfaces/org.freedesktop.Avahi.ServiceTypeBrowser.xml
+share/dbus-1/system-services/
+share/dbus-1/system-services/org.freedesktop.Avahi.service
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/avahi/
 @sample ${SYSCONFDIR}/avahi/
