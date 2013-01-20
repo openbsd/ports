@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2013/01/08 13:50:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2013/01/20 07:46:16 brad Exp $
 
 COMMENT=		ffmpeg elements for GStreamer
 
 V=			1.0.5
 DISTNAME=		gst-libav-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-libav-${V}
+REVISION=		0
 
 # sync with graphics/ffmpeg
 PERMIT_PACKAGE_CDROM=	patents
