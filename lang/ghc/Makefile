@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2013/01/20 17:51:14 kili Exp $
-
-BROKEN =		ports with Haskell libraries need new plists
+# $OpenBSD: Makefile,v 1.88 2013/01/20 18:07:58 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
