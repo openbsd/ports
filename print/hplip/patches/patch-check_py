@@ -1,6 +1,6 @@
-$OpenBSD: patch-check_py,v 1.8 2012/12/10 16:00:12 ajacoutot Exp $
+$OpenBSD: patch-check_py,v 1.9 2013/01/20 07:32:08 ajacoutot Exp $
 --- check.py.orig	Tue Nov 20 10:55:15 2012
-+++ check.py	Mon Dec 10 16:41:21 2012
++++ check.py	Sat Jan 19 11:53:40 2013
 @@ -115,9 +115,9 @@ def get_comment(package, Inst_status, installed_ver):
                  comment = "Python Programming is not supported if version is lessthan 2.2" 
      elif package == 'hpaio':
@@ -13,6 +13,24 @@ $OpenBSD: patch-check_py,v 1.8 2012/12/10 16:00:12 ajacoutot Exp $
      elif package == 'cupsext' or package == 'pcardext' or package == 'hpmudext':
          if Inst_status != 'OK':
              comment = "'Not Found or Failed to load, Please reinstall HPLIP'"
+@@ -337,7 +337,7 @@ class DependenciesCheck(CoreInstall):
+             'pyqt4':            (True,  ['gui_qt4'], "Python-Qt4", self.check_pyqt4,'4.0','FUNC#get_pyQt4_version'), # PyQt 4.x )
+             'pyqt4-dbus' :      (True,  ['gui_qt4'], "PyQt4-DBUS", self.check_pyqt4_dbus,'4.0','FUNC#get_pyQt4_version'), 
+             'pyqt':            (True,  ['gui_qt'], "Python-Qt", self.check_pyqt,'2.3','FUNC#get_pyQt_version'), 
+-            'python-devel' :    (True,  ['base'], "Python-SDK", self.check_python_devel,'2.2','python --version'),
++            'python-devel' :    (True,  ['base'], "Python-SDK", self.check_python_devel,'2.2','${MODPY_BIN} --version'),
+             'python-notify' :   (False, ['gui_qt4'], "Desktop-notifications", self.check_pynotify,'-','python-notify --version'), # Optional for libnotify style popups from hp-systray
+             'python-xml'  :     (True,  ['base'], "Python-XML-Lib", self.check_python_xml,'-','FUNC#get_python_xml_version'),
+             'pil':              (False, ['scan'], "Python-Image-Lib", self.check_pil,'-','FUNC#get_pil_version'), #required for commandline scanning with hp-scan
+@@ -348,7 +348,7 @@ class DependenciesCheck(CoreInstall):
+             COMPILEDEP:
+             { 'gcc' :             (True,  ['base'], 'gcc-Compiler', self.check_gcc, '-','gcc --version'),
+             'libtool':          (True,  ['base'], "Build-tools", self.check_libtool,'-','libtool --version'),
+-            'make' :            (True,  ['base'], "GNU-Build-tools", self.check_make,'3.0','make --version'),
++            'make' :            (True,  ['base'], "GNU-Build-tools", self.check_make,'-','-'),
+             },
+             PYEXT: 
+              { 'cupsext' :         (True,  ['base'], 'CUPS-Extension', self.check_cupsext,'-','FUNC#get_HPLIP_version'),
 @@ -533,9 +533,9 @@ try:
  
  

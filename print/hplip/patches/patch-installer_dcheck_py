@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_dcheck_py,v 1.4 2012/06/26 06:17:11 ajacoutot Exp $
---- installer/dcheck.py.orig	Mon Jun 18 12:41:59 2012
-+++ installer/dcheck.py	Tue Jun 26 07:06:29 2012
+$OpenBSD: patch-installer_dcheck_py,v 1.5 2013/01/20 07:32:08 ajacoutot Exp $
+--- installer/dcheck.py.orig	Tue Nov 20 10:51:37 2012
++++ installer/dcheck.py	Sat Jan 19 11:30:37 2013
 @@ -44,7 +44,7 @@ mod_output = ''
  def update_ld_output():
      # For library checks
@@ -19,3 +19,19 @@ $OpenBSD: patch-installer_dcheck_py,v 1.4 2012/06/26 06:17:11 ajacoutot Exp $
      log.debug("Searching for file '%s' in '%s'..." % (f, dir))
      for w in utils.walkFiles(dir, recurse=True, abs_paths=True, return_folders=False, pattern=f):
          log.debug("File found at '%s'" % w)
+@@ -373,9 +373,12 @@ def get_libpthread_version():
+     except ImportError:
+         return '-'
+     else:
+-        LIBC = ctypes.CDLL(ctypes.util.find_library('c'), use_errno=True)
+-        LIBC.gnu_get_libc_version.restype = ctypes.c_char_p
+-        return LIBC.gnu_get_libc_version()
++        if sys.platform.startswith('linux'):
++            LIBC = ctypes.CDLL(ctypes.util.find_library('c'), use_errno=True)
++            LIBC.gnu_get_libc_version.restype = ctypes.c_char_p
++            return LIBC.gnu_get_libc_version()
++        else:
++            return '-'
+ 
+ def get_python_xml_version():
+     try:
