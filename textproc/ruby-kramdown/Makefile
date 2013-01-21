@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/01/18 18:10:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/01/21 14:53:04 jasper Exp $
 
 COMMENT=	fast, pure Ruby Markdown parser
 
-DISTNAME=	kramdown-0.14.1
+DISTNAME=	kramdown-0.14.2
 
 CATEGORIES=	textproc
 

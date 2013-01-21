@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/01/18 18:10:09 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/01/21 14:53:04 jasper Exp $
 ${GEM_BIN}/kramdown${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -30,11 +30,14 @@ ${GEM_LIB}/gems/${DISTNAME}/doc/default.scss.css
 ${GEM_LIB}/gems/${DISTNAME}/doc/default.template
 ${GEM_LIB}/gems/${DISTNAME}/doc/design.scss.css
 ${GEM_LIB}/gems/${DISTNAME}/doc/documentation.page
+${GEM_LIB}/gems/${DISTNAME}/doc/documentation.template
 ${GEM_LIB}/gems/${DISTNAME}/doc/index.page
 ${GEM_LIB}/gems/${DISTNAME}/doc/installation.page
 ${GEM_LIB}/gems/${DISTNAME}/doc/links.markdown
+${GEM_LIB}/gems/${DISTNAME}/doc/metainfo
 ${GEM_LIB}/gems/${DISTNAME}/doc/news.feed
 ${GEM_LIB}/gems/${DISTNAME}/doc/news.page
+${GEM_LIB}/gems/${DISTNAME}/doc/options.page
 ${GEM_LIB}/gems/${DISTNAME}/doc/quickref.page
 ${GEM_LIB}/gems/${DISTNAME}/doc/sidebar.template
 ${GEM_LIB}/gems/${DISTNAME}/doc/syntax.page
@@ -391,6 +394,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/testcases/span/01_link/links_with_angle_bracket
 ${GEM_LIB}/gems/${DISTNAME}/test/testcases/span/01_link/links_with_angle_brackets.text
 ${GEM_LIB}/gems/${DISTNAME}/test/testcases/span/01_link/reference.html
 ${GEM_LIB}/gems/${DISTNAME}/test/testcases/span/01_link/reference.html.19
+${GEM_LIB}/gems/${DISTNAME}/test/testcases/span/01_link/reference.options
 ${GEM_LIB}/gems/${DISTNAME}/test/testcases/span/01_link/reference.text
 ${GEM_LIB}/gems/${DISTNAME}/test/testcases/span/02_emphasis/
 ${GEM_LIB}/gems/${DISTNAME}/test/testcases/span/02_emphasis/empty.html
