@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/04/03 15:57:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/01/21 14:41:07 ajacoutot Exp $
 @bin bin/xdg-user-dirs-gtk-update
 share/examples/xdg-user-dirs-gtk/
 share/examples/xdg-user-dirs-gtk/xdg/
@@ -18,6 +18,9 @@ share/locale/bn_IN/LC_MESSAGES/xdg-user-dirs-gtk.mo
 share/locale/ca/LC_MESSAGES/xdg-user-dirs-gtk.mo
 share/locale/crh/LC_MESSAGES/xdg-user-dirs-gtk.mo
 share/locale/cs/LC_MESSAGES/xdg-user-dirs-gtk.mo
+share/locale/csb/
+share/locale/csb/LC_MESSAGES/
+share/locale/csb/LC_MESSAGES/xdg-user-dirs-gtk.mo
 share/locale/da/LC_MESSAGES/xdg-user-dirs-gtk.mo
 share/locale/de/LC_MESSAGES/xdg-user-dirs-gtk.mo
 share/locale/dz/
@@ -72,6 +75,9 @@ share/locale/pt/LC_MESSAGES/xdg-user-dirs-gtk.mo
 share/locale/pt_BR/LC_MESSAGES/xdg-user-dirs-gtk.mo
 share/locale/ro/LC_MESSAGES/xdg-user-dirs-gtk.mo
 share/locale/ru/LC_MESSAGES/xdg-user-dirs-gtk.mo
+share/locale/si/
+share/locale/si/LC_MESSAGES/
+share/locale/si/LC_MESSAGES/xdg-user-dirs-gtk.mo
 share/locale/sk/LC_MESSAGES/xdg-user-dirs-gtk.mo
 share/locale/sl/LC_MESSAGES/xdg-user-dirs-gtk.mo
 share/locale/sq/LC_MESSAGES/xdg-user-dirs-gtk.mo
@@ -83,6 +89,7 @@ share/locale/sv/LC_MESSAGES/xdg-user-dirs-gtk.mo
 share/locale/ta/LC_MESSAGES/xdg-user-dirs-gtk.mo
 share/locale/te/LC_MESSAGES/xdg-user-dirs-gtk.mo
 share/locale/th/LC_MESSAGES/xdg-user-dirs-gtk.mo
+share/locale/tr/LC_MESSAGES/xdg-user-dirs-gtk.mo
 share/locale/uk/LC_MESSAGES/xdg-user-dirs-gtk.mo
 share/locale/vi/LC_MESSAGES/xdg-user-dirs-gtk.mo
 share/locale/zh_CN/LC_MESSAGES/xdg-user-dirs-gtk.mo
