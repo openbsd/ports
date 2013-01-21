@@ -1,0 +1,13 @@
+$OpenBSD: patch-kioslave_http_kcookiejar_kcookiejar_cpp,v 1.3 2013/01/21 19:12:21 zhuk Exp $
+Fix lost cookies problem. Backported from upstream:
+https://projects.kde.org/projects/kde/kdelibs/repository/revisions/794b14b8af5b610fc3eed6945f93f0c69dd49a9a
+--- kioslave/http/kcookiejar/kcookiejar.cpp.orig	Mon Jan 21 22:47:42 2013
++++ kioslave/http/kcookiejar/kcookiejar.cpp	Mon Jan 21 22:48:09 2013
+@@ -146,6 +146,7 @@ KHttpCookie::KHttpCookie(const QString &_host,
+        mExpireDate(_expireDate),
+        mProtocolVersion(_protocolVersion),
+        mSecure(_secure),
++       mCrossDomain(false),
+        mHttpOnly(_httpOnly),
+        mExplicitPath(_explicitPath)
+ {
