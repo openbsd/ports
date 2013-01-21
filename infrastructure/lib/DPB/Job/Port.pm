@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.89 2013/01/21 12:29:52 espie Exp $
+# $OpenBSD: Port.pm,v 1.90 2013/01/21 14:56:29 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -542,8 +542,13 @@ sub finalize
 			my $job = $core->job;
 			print {$job->{builder}{logsize}} 
 			    $job->{path}, " $job->{wrkdir} $sz\n";
-			print {$job->{builder}{rollinglog}} 
-			    $job->{path}, " $job->{wrkdir} $sz\n";
+			# XXX the rolling log might be shared with other dpb
+			# so it can be rewritten and sorted
+			# don't keep a handle on it, so that we always
+			# append new information to the correct filename
+		    	open(my $fh2, '>>', $job->{builder}{state}{size_log});
+			print $fh2 $job->{path}, " $job->{wrkdir} $sz\n";
+		    	last;
 		}
 	}
 	close($fh);
@@ -812,6 +817,11 @@ sub add_normal_tasks
 	    $times->{$self->{v}} < $hostprop->{small_timeout}) {
 		$small = 1;
 	}
+#	if (defined $times->{$self->{v}} &&
+#	    $times->{$self->{v}} < 4800) {
+#	    	$self->{special} = 1;
+#		print {$self->{logfh}} "Building in RAM\n";
+#	}
 	if ($builder->{clean}) {
 		$self->insert_tasks(DPB::Task::Port::BaseClean->new('clean'));
 	}

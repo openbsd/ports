@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.34 2013/01/21 12:29:52 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.35 2013/01/21 14:56:29 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -98,8 +98,6 @@ sub init
 	if ($self->{size}) {
 		$self->{logsize} = 
 		    DPB::Util->make_hot($self->logger->open("size"));
-		open($self->{rollinglog}, '>>', $self->{state}{size_log});
-		DPB::Util->make_hot($self->{rollinglog});
 	}
 	if ($self->{state}->defines("WRAP_MAKE")) {
 		$self->{rsslog} = $self->logger->logfile("rss");
