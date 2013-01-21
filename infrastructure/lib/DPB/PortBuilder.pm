@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.33 2013/01/21 12:03:32 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.34 2013/01/21 12:29:52 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -181,11 +181,15 @@ sub build
 	open my $fh, ">>", $log;
 	print $fh ">>> Building under ";
 	$v->quick_dump($fh);
-	close($fh);
 
 	my $job;
-	$job = DPB::Job::Port->new($log, $v, $lock, $self, $special, $core,
-	    sub {$self->end_lock($lock, $core, $job); $self->report($v, $job, $core); &$final_sub;});
+	$job = DPB::Job::Port->new($log, $fh, $v, $lock, $self, $special, $core,
+	    sub {
+	    	close($fh); 
+		$self->end_lock($lock, $core, $job); 
+		$self->report($v, $job, $core); 
+		&$final_sub;
+	    });
 	$core->start_job($job, $v);
 	if ($job->{parallel}) {
 		$core->can_swallow($job->{parallel}-1);
@@ -200,8 +204,14 @@ sub install
 {
 	my ($self, $v, $core) = @_;
 	my $log = $self->logger->make_logs($v);
-	my $job = DPB::Job::Port::Install->new($log, $v, $self,
-	    sub {$core->mark_ready; });
+	open my $fh, ">>", $log;
+	print $fh ">>> Installing under ";
+	$v->quick_dump($fh);
+	my $job = DPB::Job::Port::Install->new($log, $fh, $v, $self,
+	    sub {
+	    	close($fh);
+	    	$core->mark_ready; 
+	    });
 	$core->start_job($job, $v);
 	return $core;
 }
