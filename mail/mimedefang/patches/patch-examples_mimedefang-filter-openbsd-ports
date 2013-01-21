@@ -1,6 +1,6 @@
-$OpenBSD: patch-examples_mimedefang-filter-openbsd-ports,v 1.4 2012/12/05 18:51:56 ajacoutot Exp $
---- examples/mimedefang-filter-openbsd-ports.orig	Wed Dec  5 12:02:27 2012
-+++ examples/mimedefang-filter-openbsd-ports	Wed Dec  5 12:03:24 2012
+$OpenBSD: patch-examples_mimedefang-filter-openbsd-ports,v 1.5 2013/01/21 19:28:07 ajacoutot Exp $
+--- examples/mimedefang-filter-openbsd-ports.orig	Mon Jan 21 20:24:48 2013
++++ examples/mimedefang-filter-openbsd-ports	Mon Jan 21 20:25:43 2013
 @@ -3,9 +3,6 @@
  #
  # mimedefang-filter
@@ -113,7 +113,7 @@ $OpenBSD: patch-examples_mimedefang-filter-openbsd-ports,v 1.4 2012/12/05 18:51:
 +#    }
  }
 +
-+# Uncomment to disable filtering mails sent from localhost
++# Uncomment to disable processing any mails sent from localhost
 +# (mimedefang(8) must be stated with the `-r' flag).
 +#sub filter_relay {
 +#    my ($ip, $name) = @_;
