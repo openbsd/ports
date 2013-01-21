@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2013/01/21 18:37:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.38 2013/01/21 18:45:37 jasper Exp $
 
 COMMENT=		flexible communications framework, IRC component
 
@@ -18,5 +18,6 @@ BUILD_DEPENDS=		${RUN_DEPENDS} \
 			devel/py-twisted/words
 RUN_DEPENDS=		textproc/libxslt
 LIB_DEPENDS=		net/telepathy/telepathy-glib
+REGRESS_DEPENDS=	devel/py-twisted/words
 
 .include <bsd.port.mk>
