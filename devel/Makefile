@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1101 2013/01/18 18:05:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.1102 2013/01/21 14:35:47 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -293,6 +293,7 @@
      SUBDIR += kdbg
      SUBDIR += kdiff3
      SUBDIR += lam
+     SUBDIR += legit
      SUBDIR += leiningen
      SUBDIR += libIDL
      SUBDIR += libJudy
@@ -1053,12 +1054,14 @@
      SUBDIR += py-addons
      SUBDIR += py-altgraph
      SUBDIR += py-asn1
+     SUBDIR += py-async
      SUBDIR += py-babel
      SUBDIR += py-blinker
      SUBDIR += py-buildbot
      SUBDIR += py-buildslave
      SUBDIR += py-bytecodeassembler
      SUBDIR += py-cheetah
+     SUBDIR += py-clint
      SUBDIR += py-configobj
      SUBDIR += py-country
      SUBDIR += py-coverage
@@ -1076,6 +1079,8 @@
      SUBDIR += py-fpconst
      SUBDIR += py-gdata
      SUBDIR += py-gevent
+     SUBDIR += py-gitdb
+     SUBDIR += py-gitpython
      SUBDIR += py-gobject
      SUBDIR += py-gobject3
      SUBDIR += py-greenlet
@@ -1122,6 +1127,7 @@
      SUBDIR += py-silc
      SUBDIR += py-simplejson
      SUBDIR += py-sip
+     SUBDIR += py-smmap
      SUBDIR += py-subvertpy
      SUBDIR += py-suds
      SUBDIR += py-symboltype
