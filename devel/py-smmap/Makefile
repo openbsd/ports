@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2013/01/21 15:15:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2013/01/21 15:17:08 jasper Exp $
 
-COMMENT=		pure git implementation of an SMM manager
+COMMENT=		pure Python implementation of an SMM manager
 
 MODPY_EGG_VERSION=	0.8.2
 DISTNAME=		smmap-${MODPY_EGG_VERSION}
-REVISION=		0
+REVISION=		1
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel
 
