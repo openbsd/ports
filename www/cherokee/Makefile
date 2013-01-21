@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2012/12/12 02:17:40 brad Exp $
+# $OpenBSD: Makefile,v 1.37 2013/01/21 05:21:30 brad Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,6 +10,7 @@ COMMENT-streaming = Streaming module for Cherokee web server
 
 DIR =		1.2
 VERSION =	${DIR}.101
+REVISION =	0
 DISTNAME =	cherokee-${VERSION}
 
 PKGNAME-main =	${DISTNAME}
@@ -65,7 +66,7 @@ LIB_DEPENDS-mysql =	databases/mysql
 WANTLIB-mysql =		crypto m mysqlclient>=19 ssl z
 RUN_DEPENDS-mysql =	${BASE_PKGPATH}
 
-LIB_DEPENDS-streaming =	graphics/ffmpeg \
+LIB_DEPENDS-streaming =	graphics/ffmpeg>=20121026 \
 			archivers/bzip2
 WANTLIB-streaming += avcodec avformat avutil bz2 crypto m gsm
 WANTLIB-streaming += mp3lame ogg orc-0.4 pthread schroedinger-1.0
