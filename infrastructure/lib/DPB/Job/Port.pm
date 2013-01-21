@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.83 2013/01/18 21:11:55 espie Exp $
+# $OpenBSD: Port.pm,v 1.84 2013/01/21 02:01:08 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -758,36 +758,7 @@ sub save_depends
 sub has_depends
 {
 	my ($self, $core) = @_;
-	my $dep = {};
-	my $v = $self->{v};
-	if (exists $v->{info}{BDEPENDS}) {
-		for my $d (values %{$v->{info}{BDEPENDS}}) {
-			$dep->{$d->fullpkgname} = 1;
-		}
-	}
-	#XXX ?
-	if (exists $v->{info}{DEPENDS}) {
-		for my $d (values %{$v->{info}{DEPENDS}}) {
-			$dep->{$d->fullpkgname} = 1;
-		}
-	}
-	# recurse for extra stuff
-	if (exists $v->{info}{BEXTRA}) {
-		for my $two (values %{$v->{info}{BEXTRA}}) {
-			$two->quick_dump($self->{logfh});
-			if (exists $two->{info}{BDEPENDS}) {
-				for my $d (values %{$two->{info}{BDEPENDS}}) {
-					$dep->{$d->fullpkgname} = 1;
-				}
-			}
-			# XXX
-			if (exists $two->{info}{DEPENDS}) {
-				for my $d (values %{$two->{info}{DEPENDS}}) {
-					$dep->{$d->fullpkgname} = 1;
-				}
-			}
-		}
-	}
+	my $dep = $self->{v}{info}->solve_depends;
 	return 0 unless %$dep;
 	# XXX we are running this synchronously with other jobs on the
 	# same host, so we know exactly which live_depends we can reuse.
@@ -843,6 +814,7 @@ sub add_normal_tasks
 	if ($self->has_depends($core)) {
 		push(@todo, qw(depends show-prepare-results));
 	}
+	delete $self->{v}{info}{solved};
 	if ($hostprop->{junk}) {
 		if ($hostprop->{junk_count}++ >= $hostprop->{junk}) {
 			push(@todo, 'junk');
