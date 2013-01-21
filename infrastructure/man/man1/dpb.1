@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.63 2013/01/21 10:42:49 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.64 2013/01/21 12:07:01 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -38,7 +38,6 @@
 .Op Fl l Ar lockdir
 .Op Fl M Ar threshold
 .Op Fl P Ar pathlist
-.Op Fl S Ar sizefile
 .Op Fl X Ar pathlist
 .Op Ar pathlist ...
 .Ek
@@ -461,13 +460,9 @@ Note that
 .Fl R
 won't always work, as rebuilding a package when another version is already
 installed is not supported.
-It will go into an infinite loop with always-update packages such as sqlports
-or pkglocatedb.
 .It Fl s
 Compute workdir sizes before cleaning up, and stash them in log file
 .Pa ${LOGDIR}/size.log .
-.It Fl S Ar sizefile
-Read a size log file and use it for choosing to put WRKDIR in memory.
 .It Fl u
 Update existing packages during dependency solving.
 Can be used to run a bulk-build on a machine with installed packages,
@@ -583,7 +578,22 @@ Similarly, fetches will use the continue option of
 .Xr ftp 1 ,
 since distfiles are checksummed after the fetch anyways.
 .Sh LOCKS AND ERRORS
-When building a package,
+.Nm
+still uses the normal ports tree mechanism while building, which includes
+.Ev LOCKDIR .
+When starting up
+.Nm
+will normally detect stale locks from old dpb runs, and remove them.
+If this does not happen, builds will stay stuck in their initial stage,
+that is:
+.Ar show-prepare-results , patch , build
+depending on the port.
+A telltale message
+.Sq Awaiting lock ...
+can be found in the corresponding logfile
+.Pa paths/pkgpath.log
+.Pp
+In addition, when building a package,
 .Nm
 produces a lockfile in the locks directory, whose name is deduced from
 the basic pkgpath with slashes replaced by dots.
@@ -752,6 +762,12 @@ also records rolling build statistics under
 .Pa ${DISTDIR}/build-stats/${ARCH} ,
 and uses them automatically in the absence of
 .Fl b Ar logfile .
+.Pp
+If
+.Fl s
+is used, size information for successful builds will be recorded under
+.Pa ${DISTDIR}/build-stats/${ARCH}-size .
+This is then reused for the mfs threshold option.
 .Pp
 .Nm
 will also create a large number of log files under
