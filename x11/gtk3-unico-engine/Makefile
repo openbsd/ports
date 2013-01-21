@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2012/10/15 15:18:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2013/01/21 15:22:26 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Unico GTK+3 engine
 
-V=		1.0.2
+V=		1.0.2.1
 DISTNAME=	unico-${V}
 PKGNAME=	gtk3-unico-engine-${V}
-REVISION=	1
 
 CATEGORIES=	x11
 
@@ -28,7 +27,7 @@ WANTLIB += gtk-3 harfbuzz icudata icule icuuc m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += stdc++ xcb xcb-render xcb-shm z
 
-MASTER_SITES=	http://launchpad.net/unico/1.0/${V}/+download/
+MASTER_SITES=	http://distfiles.nl/
 
 MODULES=	devel/gettext
 
