@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.75 2013/01/10 12:27:21 espie Exp $
+# $OpenBSD: dpb,v 1.76 2013/01/21 12:03:32 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -156,7 +156,7 @@ sub handle_options
 			$state->heuristics->random;
 		},
 		M => sub {
-			$state->heuristics->set_threshold(shift)
+			$state->heuristics->set_threshold(shift);
 		},
 		P => sub {
 			push(@{$state->{paths}}, shift);
@@ -173,12 +173,9 @@ sub handle_options
 		b => sub {
 			push(@{$state->{build_files}}, shift);
 		},
-		S => sub {
-			$state->parse_size_file(shift, $state->heuristics);
-		},
 	};
 
-	$state->SUPER::handle_options('acemqrRsuUvh:xX:A:C:f:F:I:j:J:M:p:P:b:l:L:S:',
+	$state->SUPER::handle_options('acemqrRsuUvh:xX:A:C:f:F:I:j:J:M:p:P:b:l:L:',
     "[-acemrRsuUvx] [-A arch] [-C plist] [-f N] [-F N] [-I plist] [-J p] [-j N]",
     "[-p parallel] [-P plist] [-h hosts] [-L logdir] [-l lockdir] [-b log]",
     "[-M threshold] [-X plist] [path ...]");
@@ -229,6 +226,9 @@ sub handle_options
 	if (!$state->{subst}->value("NO_BUILD_STATS")) {
 		push @{$state->{build_files}}, "%f/build-stats/%a";
 	}
+#	if (!$state->{xpaths}) {
+#		$state->{xpaths} = ["%p/infrastructure/db/precious"];
+#	}
 	for my $cat (qw(build_files paths ipaths cpaths xpaths)) {
 		next unless defined $state->{$cat};
 		for my $f (@{$state->{$cat}}) {
@@ -236,6 +236,8 @@ sub handle_options
 		}
 	}
 	$state->{permanent_log} = $state->{build_files}[-1];
+	$state->{size_log} = $state->expand_path("%f/build-stats/%a-size");
+	$state->parse_size_file;
 
 	$state->{logger} = DPB::Logger->new($state->logdir, $state->opt('c'));
 	DPB::Limiter->setup($state->logger);
@@ -470,21 +472,33 @@ sub handle_build_files
 
 sub parse_size_file
 {
-	my ($state, $fname, @consumers) = @_;
-	open my $fh, '<', $fname or
-	    $state->fatal("Couldn't open build file #1: #2", $fname, $!);
+	my $state = shift;
+	return if $state->{fetch_only};
+	open my $fh, '<', $state->{size_log} or return;
+
+	File::Path::mkpath(File::Basename::dirname($state->{size_log}));
+
+	my $rewrite = {};
 	my $_;
 	while (<$fh>) {
 		chomp;
 		my ($pkgpath, $sz, $sz2) = split(/\s+/, $_);
 		if (defined $sz2) {
 			$sz += $sz2;
+			$rewrite->{$pkgpath} = "$sz $sz2";
+		} else {
+			$rewrite->{$pkgpath} = $sz;
 		}
 		my $o = DPB::PkgPath->new($pkgpath);
-		for my $c (@consumers) {
-			$c->add_size_info($o, $sz);
-		}
+		DPB::Heuristics->add_size_info($o, $sz);
 	}
+	close $fh;
+	open $fh, '>', $state->{size_log}.'.part' or return;
+	for my $p (sort keys %$rewrite) {
+		print $fh "$p $rewrite->{$p}\n";
+	}
+	close $fh;
+	rename $state->{size_log}.'.part', $state->{size_log};
 }
 
 package main;
@@ -538,6 +552,13 @@ $SIG{__DIE__} = sub {
 	}
 	die &Carp::longmess;
 };
+
+#use Devel::StackTrace;
+#$SIG{INFO} = sub {
+#	my $t = Devel::StackTrace->new;
+#	print $t->as_string;
+#	sleep 5;
+#};
 
 my $subdirlist = {};
 
@@ -596,7 +617,7 @@ while (!DPB::Core->avail) {
 	sleep 1;
 }
 my $core = DPB::Core->get;
-#my $dump = DPB::Util->make_hot($state->logger->open('dump'));
+my $dump = DPB::Util->make_hot($state->logger->open('dump'));
 $SIG{INFO} = sub {
 	$state->engine->info_dump($state->logger->open('info'));
 	# perl status may spew some garbage on the display,

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.87 2013/01/21 11:06:59 espie Exp $
+# $OpenBSD: Port.pm,v 1.88 2013/01/21 12:03:32 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -540,8 +540,10 @@ sub finalize
 		if ($line =~ m/^\s*(\d+)\s+/) {
 			my $sz = $1;
 			my $job = $core->job;
-			my $f2 = $job->{builder}->logger->open("size");
-			print $f2 $job->{path}, " $job->{wrkdir} $sz\n";
+			print {$job->{builder}{logsize}} 
+			    $job->{path}, " $job->{wrkdir} $sz\n";
+			print {$job->{builder}{rollinglog}} 
+			    $job->{path}, " $job->{wrkdir} $sz\n";
 		}
 	}
 	close($fh);
