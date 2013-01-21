@@ -1,9 +1,9 @@
-# $OpenBSD: xenocara.port.mk,v 1.5 2012/11/06 14:49:28 espie Exp $
+# $OpenBSD: xenocara.port.mk,v 1.6 2013/01/21 15:26:20 espie Exp $
 
 CATEGORIES = base xenocara
 COMMENT = Xenocara ${COMPONENT}
 FLAT = ${COMPONENT:S/\//./g:C/-([0-9])/_\1/g}
-VERSION ?= 1
+VERSION ?= 2
 DISTNAME = xc-${FLAT}-${VERSION}
 DISTFILES =
 

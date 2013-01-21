@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/11/01 09:58:05 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2013/01/21 15:26:20 espie Exp $
 COMPONENT = lib/libdrm
-XDEPS = lib/libX11
+XDEPS = lib/libX11 lib/libpciaccess
 .include <bsd.port.mk>
