@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2013/01/21 10:21:52 benoit Exp $
+# $OpenBSD: Makefile,v 1.7 2013/01/21 13:01:48 ajacoutot Exp $
 
 COMMENT =	unit test framework for C programs
 
-DISTNAME =	check-0.9.6
-SHARED_LIBS +=	check	1.0	# .0.0
-CATEGORIES =	devel
+DISTNAME =	check-0.9.9
+SHARED_LIBS +=  check                2.0      # unknown
 
-REVISION =	0
+CATEGORIES =	devel
 
 HOMEPAGE =	http://check.sf.net/
 
@@ -16,11 +15,13 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
+WANTLIB += pthread
+
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=check/}
 
 USE_LIBTOOL =		Yes
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS = 	--enable-plain-docdir
+CONFIGURE_ARGS = 	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

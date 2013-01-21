@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.3 2009/05/27 20:52:18 benoit Exp $
---- doc/Makefile.in.orig	Mon Dec 29 15:19:19 2008
-+++ doc/Makefile.in	Wed May 27 22:41:26 2009
-@@ -159,7 +159,7 @@ build_vendor = @build_vendor@
+$OpenBSD: patch-doc_Makefile_in,v 1.4 2013/01/21 13:01:48 ajacoutot Exp $
+--- doc/Makefile.in.orig	Mon Oct 22 16:04:26 2012
++++ doc/Makefile.in	Mon Jan 21 11:32:15 2013
+@@ -193,7 +193,7 @@ build_vendor = @build_vendor@
  builddir = @builddir@
  datadir = @datadir@
  datarootdir = @datarootdir@
@@ -10,22 +10,7 @@ $OpenBSD: patch-doc_Makefile_in,v 1.3 2009/05/27 20:52:18 benoit Exp $
  dvidir = @dvidir@
  exec_prefix = @exec_prefix@
  host = @host@
-@@ -227,11 +227,11 @@ EXTRA_DIST = $(example_docs) \
- 
- 
- # install money example
--exampledir = $(docdir)/example
-+exampledir = $(datadir)/examples/check/
- example_DATA = $(example_docs)
--examplesrcdir = $(docdir)/example/src
-+examplesrcdir = $(exampledir)/src
- examplesrc_DATA = $(example_src_docs)
--exampletestsdir = $(docdir)/example/tests
-+exampletestsdir = $(exampledir)/tests
- exampletests_DATA = $(example_tests_docs)
- all: all-am
- 
-@@ -717,47 +717,47 @@ check.texi: money.1-2.h.diff \
+@@ -785,47 +785,47 @@ $(srcdir)/check.texi: money.1-2.h.diff \
  # diff returns 1 if there is a difference, but we don't want make to
  # think that means there is an error
  money.1-2.h.diff: $(eg_src)/money.1.h $(eg_src)/money.2.h
@@ -81,4 +66,4 @@ $OpenBSD: patch-doc_Makefile_in,v 1.3 2009/05/27 20:52:18 benoit Exp $
 +	-cd $(eg_root); \
  	diff -u tests/check_money.6.c tests/check_money.7.c > @abs_builddir@/$@ || test $$? -eq 1; \
  	cd -;
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ 
