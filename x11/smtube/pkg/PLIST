@@ -1,0 +1,33 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/01/21 16:00:57 gonzalo Exp $
+@bin bin/smtube
+share/applications/smtube.desktop
+share/doc/smtube/
+share/doc/smtube/Changelog
+share/doc/smtube/Copying.txt
+share/doc/smtube/Copying_BSD.txt
+share/doc/smtube/Readme.txt
+share/doc/smtube/Release_notes.txt
+share/icons/hicolor/128x128/apps/smtube.png
+share/icons/hicolor/16x16/apps/smtube.png
+share/icons/hicolor/256x256/apps/smtube.png
+share/icons/hicolor/32x32/apps/smtube.png
+share/icons/hicolor/48x48/apps/smtube.png
+share/icons/hicolor/64x64/apps/smtube.png
+share/smtube/
+share/smtube/translations/
+share/smtube/translations/smtube_el.qm
+share/smtube/translations/smtube_en.qm
+share/smtube/translations/smtube_es.qm
+share/smtube/translations/smtube_eu.qm
+share/smtube/translations/smtube_gl.qm
+share/smtube/translations/smtube_hu.qm
+share/smtube/translations/smtube_ja.qm
+share/smtube/translations/smtube_lt.qm
+share/smtube/translations/smtube_pl.qm
+share/smtube/translations/smtube_pt.qm
+share/smtube/translations/smtube_ru_RU.qm
+share/smtube/translations/smtube_zh_CN.qm
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
