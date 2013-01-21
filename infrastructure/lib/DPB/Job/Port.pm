@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.84 2013/01/21 02:01:08 espie Exp $
+# $OpenBSD: Port.pm,v 1.85 2013/01/21 02:06:12 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -334,7 +334,8 @@ sub run
 		$try++;
 		$self->try_lock($core);
 		if ($job->{locked}) {
-			print {$job->{builder}{lockperf}} $core->hostname, 
+			print {$job->{builder}{lockperf}} 
+			    time(), ":", $core->hostname, 
 			    ": $self->{phase}: $try seconds\n";
 			exit(0);
 		}

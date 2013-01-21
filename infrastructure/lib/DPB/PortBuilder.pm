@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.30 2013/01/18 21:11:55 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.31 2013/01/21 02:06:12 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -94,7 +94,7 @@ sub init
 	File::Path::make_path($self->{fullrepo});
 	$self->{global} = $self->logger->open("build");
 	$self->{lockperf} = 
-	    DPB::Util->make_hot($self->logger->open("lock-perf"));
+	    DPB::Util->make_hot($self->logger->open("awaiting-locks"));
 	if ($self->{state}->defines("WRAP_MAKE")) {
 		$self->{rsslog} = $self->logger->logfile("rss");
 		$self->{wrapper} = $self->{state}->defines("WRAP_MAKE");
