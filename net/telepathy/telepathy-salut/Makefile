@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.34 2012/08/29 18:27:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2013/01/21 18:43:36 jasper Exp $
 
 COMMENT=		flexible communications framework, local-link component
 
-DISTNAME=		telepathy-salut-0.8.0
+DISTNAME=		telepathy-salut-0.8.1
 
 MASTER_SITES=		${MASTER_SITES_TP:=telepathy-salut/}
 
@@ -25,13 +25,12 @@ LIB_DEPENDS=		net/avahi \
 			devel/libsoup \
 			net/telepathy/telepathy-glib \
 			sysutils/e2fsprogs
+REGRESS_DEPENDS=	textproc/py-xmldiff
 
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/lib/ext/wocky
 
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-Werror \
 			--disable-avahi-tests
-
-REGRESS_DEPENDS=	textproc/py-xmldiff
 
 .include <bsd.port.mk>

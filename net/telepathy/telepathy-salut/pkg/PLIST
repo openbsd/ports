@@ -1,16 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/04/05 09:08:12 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/01/21 18:43:36 jasper Exp $
 lib/telepathy/
 lib/telepathy/salut-0/
 lib/telepathy/salut-0/lib/
-lib/telepathy/salut-0/lib/libsalut-plugins-0.8.0.so
+lib/telepathy/salut-0/lib/libsalut-plugins-0.8.1.so
 lib/telepathy/salut-0/lib/libsalut-plugins.a
 lib/telepathy/salut-0/lib/libsalut-plugins.la
 lib/telepathy/salut-0/lib/libsalut-plugins.so
-lib/telepathy/salut-0/lib/libwocky-telepathy-salut-0.8.0.so
+lib/telepathy/salut-0/lib/libwocky-telepathy-salut-0.8.1.so
 lib/telepathy/salut-0/lib/libwocky.a
 lib/telepathy/salut-0/lib/libwocky.la
 lib/telepathy/salut-0/lib/libwocky.so
-lib/telepathy/salut-0/plugins/
 @bin libexec/telepathy-salut
 @man man/man8/telepathy-salut.8
 share/dbus-1/services/org.freedesktop.Telepathy.ConnectionManager.salut.service
