@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.85 2013/01/21 02:06:12 espie Exp $
+# $OpenBSD: Port.pm,v 1.86 2013/01/21 10:46:42 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -806,7 +806,7 @@ sub add_normal_tasks
 	my $hostprop = $core->prop;
 	my $small = 0;
 	if (defined $times->{$self->{v}} && 
-	    $times->{$self->{v}} < ($hostprop->{small} // 120)) {
+	    $times->{$self->{v}} < $hostprop->{small_timeout}) {
 		$small = 1;
 	}
 	if ($builder->{clean}) {

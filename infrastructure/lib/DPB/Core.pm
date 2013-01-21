@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.28 2013/01/10 10:26:34 espie Exp $
+# $OpenBSD: Core.pm,v 1.29 2013/01/21 10:46:42 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -31,6 +31,8 @@ sub new
 	if (defined $prop->{stuck}) {
 		$prop->{stuck_timeout} = $prop->{stuck} * $prop->{sf};
 	}
+	$prop->{small} //= 120;
+	$prop->{small_timeout} = $prop->{small} * $prop->{sf};
 #	if ($class->name_is_localhost($name)) {
 #		delete $prop->{wait_timeout};
 #	}
