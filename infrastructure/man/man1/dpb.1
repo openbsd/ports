@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.62 2013/01/20 21:29:55 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.63 2013/01/21 10:42:49 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: January 20 2013 $
+.Dd $Mdocdate: January 21 2013 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -96,7 +96,10 @@ Option
 .Fl h Ar file
 is used to specify hosts to use,
 .Ar file
-can be as simple as a list of hosts to use, one host per line.
+can be as simple as a list of hosts to use, one host per line
+(but it is recommended to also include a
+.Ar STARTUP
+script).
 .Pp
 As
 .Nm
@@ -250,6 +253,14 @@ One host per line, plus properties, such as:
 espie@aeryn jobs=4 arch=i386
 .Ed
 .Pp
+The special line
+.Bd -literal -offset indent
+STARTUP=path
+.Ed
+.Pp
+will define a script which will be run at start-up on each build machine.
+This script must exist locally.
+.Pp
 The special hostname
 .Ar DEFAULT
 can be used to preset defaults.
@@ -282,12 +293,12 @@ See
 .Fl J
 option.
 .It memory=thr
-Builds everything below that wrkdir threshold in /tmp, assuming
-it is a memory filesystem.
-Avoid for now, as
-.Xr mfs 8
-has serious race conditions which yield
-random errors under stress conditions such as bulk build.
+Build everything below that wrkdir threshold in 
+.Pa /tmp/ports ,
+assuming it is a memory filesystem.
+.Ar thr
+is the sum, in KBytes, of ports that will be allowed under
+.Pa /tmp .
 .It parallel=p
 Run big ports on several cores.
 See
@@ -302,6 +313,12 @@ The machine (or machines) with the highest speed factor will
 get access to all jobs, whereas other machines will be clamped
 to stuff which does not take too long.
 Requires previous build information to be effective.
+.It small=s
+Ports known to build under that duration are deemed to be small, so
+.Nm
+won't bother calling fine-grained steps for patch/configure/fake.
+It will go straight to build and package instead.
+Defaults to 120 seconds.
 .It stuck=s
 Stuck timeout (in seconds * sf) after which tasks which show no progress
 will get killed.
@@ -309,14 +326,6 @@ will get killed.
 Defines a specific connection timeout for ssh to that host.
 .El
 .Pp
-The
-.Ar hosts
-file can also define a start-up script, as
-.Bd -literal -offset indent
-STARTUP=path
-.Ed
-.Pp
-which will be run at start-up on each machine.
 There are no fine-grained options to control
 .Xr ssh 1
 options, as those can be specified through virtual host declarations in
@@ -399,12 +408,10 @@ Defaults to
 .Pc .
 Override to keep local, as locks don't really like NFS.
 .It Fl M Ar threshold
-Build ports besides the memory threshold within
-.Pa /tmp .
-Avoid for now, as
-.Xr mfs 8
-has serious race conditions which yield
-random errors under stress conditions such as bulk build.
+Build ports below the memory threshold under
+.Pa /tmp/ports .
+.Ar threshold
+is the sum, in KBytes, of ports allowed to build there.
 .It Fl m
 Force tty-style reporting.
 .It Fl P Ar pathlist
