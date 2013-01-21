@@ -1,4 +1,6 @@
-Pure git implementation of a sliding window memory map manager.
+Pure python implementation of a sliding memory map to help unifying
+memory mapped access on 32 and 64 bit systems and to help managing
+resources more efficiently.
 
 When reading from many possibly large files in a fashion similar to
 random access, it is usually the fastest and most efficient to use
