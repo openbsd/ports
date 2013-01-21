@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.212 2013/01/14 17:02:15 brad Exp $
+# $OpenBSD: Makefile,v 1.213 2013/01/21 16:23:05 brad Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 
 COMMENT =		movie player supporting many formats
 
-V =			20110309
+V =			20120725
 FFMPEG_V =		20121026
 
 SUBST_VARS += 		PREFIX CONFDIR
@@ -15,7 +15,7 @@ SUBST_VARS += 		PREFIX CONFDIR
 # Distfiles must be hand-rolled, see README
 N =			mplayer
 DISTNAME =		mplayer-${V}
-REVISION =		22
+EXTRACT_SUFX =		.tar.xz
 
 CATEGORIES =		x11 multimedia
 
@@ -30,13 +30,12 @@ PERMIT_DISTFILES_FTP =		Yes
 WANTLIB =	GL X11 Xext Xinerama Xss Xv Xxf86dga Xxf86vm ass avcodec \
 		avformat avutil bluray bz2 c cdda_interface cdda_paranoia \
 		crypto dv dvdnavmini dvdread enca fontconfig freetype \
-		fribidi gsm jpeg lcms m mng mp3lame ncurses ogg>=5 orc-0.4 \
-		png postproc pthread SDL schroedinger-1.0>=2.0 sndio speex \
-		stdc++ swscale theoradec theoraenc ungif util vpx x264>=5 \
+		fribidi jpeg m mng mp3lame ncurses ogg>=5 opus png postproc \
+		pthread SDL sndio speex stdc++ swscale ungif util x264>=5 \
 		xvidcore z
 
 # we use a snapshot
-MASTER_SITES =	http://theunixzoo.co.uk/distfiles/
+MASTER_SITES =	http://comstyle.com/source/
 
 MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
@@ -50,12 +49,12 @@ LIB_DEPENDS =	graphics/png \
 		audio/speex \
 		audio/libogg \
 		audio/lame \
+		audio/opus \
 		multimedia/libbluray \
 		multimedia/libdv \
 		devel/fribidi \
 		graphics/libmng \
 		archivers/bzip2 \
-		multimedia/schroedinger>=1.0.10 \
 		multimedia/x264>=20101023 \
 		devel/sdl>=1.2.5 \
 		multimedia/libass \
@@ -148,7 +147,7 @@ WANTLIB +=	vorbisenc vorbis
 CONFIGURE_ARGS += --disable-tremor-internal
 .endif
 
-CONFIGURE_ENV += TMPDIR="${WRKBUILD}"
+CONFIGURE_ENV += LOCALBASE="${LOCALBASE}" TMPDIR="${WRKBUILD}"
 
 # binutils 2.15 does not do sse3 for i386/amd64
 .if ${MACHINE_ARCH:Mi386} || ${MACHINE_ARCH:Mamd64}
@@ -198,24 +197,20 @@ CONFIGURE_ARGS += --disable-jack
 
 NO_REGRESS =	Yes
 
+DOCDIR =	${PREFIX}/share/doc/mplayer
+EXAMPLEDIR =	${PREFIX}/share/examples/mplayer
+
 # copy in rtunes and sndio backends
 post-extract:
 	@cp ${FILESDIR}/ao_rtunes.c ${FILESDIR}/ao_sndio.c ${WRKSRC}/libao2
 	@cp ${FILESDIR}/ai_sndio.c ${WRKSRC}/stream
 
-# subst PREFIX in a patch, careful with update-patches!
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/DOCS/xml/configure
-
-post-build:
-	@cd ${WRKSRC}/DOCS/xml && ${MAKE_PROGRAM}
-
-DOCDIR =	${PREFIX}/share/doc/mplayer
-EXAMPLEDIR = 	${PREFIX}/share/examples/mplayer
-
 # link FFmpeg sources to where build expects
 pre-patch:
 	ln -s ${WRKDIR}/graphics/ffmpeg/ffmpeg-git-${FFMPEG_V} ${WRKSRC}/ffmpeg
+
+post-build:
+	@cd ${WRKSRC} && ${MAKE_PROGRAM} doc
 
 # install docs
 post-install:

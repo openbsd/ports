@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2011/08/17 15:12:15 edd Exp $
+$OpenBSD: README,v 1.5 2013/01/21 16:23:05 brad Exp $
 
 Porting notes for MPlayer
 =========================
@@ -46,7 +46,7 @@ cd mplayer-YYYYMMDD
 ./version.sh (this should create a version.h)
 find . -name '.svn' | xargs rm -Rf
 cd ..
-tar zcvf mplayer-YYYYMMDD.tar.gz mplayer-YYYYMMDD
+tar cvf - mplayer-YYYYMMDD | xz -c -8e > mplayer-YYYYMMDD.tar.xz
 
 Testing Mencoder
 ----------------

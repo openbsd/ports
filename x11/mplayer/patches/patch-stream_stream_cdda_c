@@ -1,0 +1,15 @@
+$OpenBSD: patch-stream_stream_cdda_c,v 1.1 2013/01/21 16:23:05 brad Exp $
+--- stream/stream_cdda.c.orig	Sat May  5 02:18:19 2012
++++ stream/stream_cdda.c	Sat May  5 02:18:45 2012
+@@ -439,9 +439,11 @@ static int open_cdda(stream_t *st,int m, void* opts, i
+   else if(p->search_overlap == 0)
+     mode &= ~PARANOIA_MODE_OVERLAP;
+ #ifndef CONFIG_LIBCDIO
++#if 0
+   // HACK against libcdparanoia's stupid caching model that
+   // queues up a huge number of requests leading to stuttering
+   paranoia_cachemodel_size(priv->cdp, 24);
++#endif
+   // For some incomprehensible reason cdparanoia breaks the
+   // track->sector lookup of calling paranoia_modeset with
+   // PARANOIA_MODE_DISABLE

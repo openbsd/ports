@@ -1,12 +1,12 @@
-$OpenBSD: patch-libvo_x11_common_c,v 1.4 2010/11/08 21:25:44 edd Exp $
---- libvo/x11_common.c.orig	Sat Nov  6 05:50:16 2010
-+++ libvo/x11_common.c	Sat Nov  6 05:50:59 2010
-@@ -735,7 +735,7 @@ void vo_x11_decoration(Display * vo_Display, Window w,
+$OpenBSD: patch-libvo_x11_common_c,v 1.5 2013/01/21 16:23:05 brad Exp $
+--- libvo/x11_common.c.orig	Sat May  5 01:10:01 2012
++++ libvo/x11_common.c	Sat May  5 01:30:37 2012
+@@ -732,7 +732,7 @@ void vo_x11_decoration(Display * vo_Display, Window w,
  void vo_x11_classhint(Display * display, Window window, const char *name)
  {
      XClassHint wmClass;
 -    pid_t pid = getpid();
 +    long pid = getpid();
+     long prop = pid & 0x7FFFFFFF;
  
      wmClass.res_name = vo_winname ? vo_winname : name;
-     wmClass.res_class = "MPlayer";

@@ -1,0 +1,37 @@
+$OpenBSD: patch-fmt-conversion_c,v 1.1 2013/01/21 16:23:05 brad Exp $
+--- fmt-conversion.c.orig	Sat Jan 19 01:18:41 2013
++++ fmt-conversion.c	Sat Jan 19 03:48:23 2013
+@@ -57,18 +57,20 @@ static const struct {
+     {IMGFMT_RGB8,    PIX_FMT_BGR8},
+     {IMGFMT_RGB4,    PIX_FMT_BGR4},
+     {IMGFMT_BGR8,    PIX_FMT_PAL8},
+-// NB: This works only because PIX_FMT_0RGB32 is a CPP Macro.
+-//     note that most other PIX_FMT values are enums
+-#ifdef PIX_FMT_0RGB32
+     {IMGFMT_BGR32,   PIX_FMT_0RGB32},
++#if LIBAVUTIL_VERSION_INT >= AV_VERSION_INT(52, 14, 100)
+     {IMGFMT_BGRA,    PIX_FMT_BGR0},
+     {IMGFMT_RGBA,    PIX_FMT_RGB0},
+     {IMGFMT_RGB64LE, PIX_FMT_RGBA64LE},
+     {IMGFMT_RGB64BE, PIX_FMT_RGBA64BE},
++#endif
++#if LIBAVUTIL_VERSION_INT >= AV_VERSION_INT(51, 50, 100)
+     {IMGFMT_422A,    PIX_FMT_YUVA422P},
++#endif
++#if LIBAVUTIL_VERSION_INT >= AV_VERSION_INT(51, 35, 101)
+     {IMGFMT_444A,    PIX_FMT_YUVA444P},
+ #endif
+-#if LIBAVUTIL_VERSION_INT >= AV_VERSION_INT(51, 20, 1)
++#if LIBAVUTIL_VERSION_INT >= AV_VERSION_INT(52, 14, 100)
+     {IMGFMT_GBR24P,  PIX_FMT_GBRP},
+     {IMGFMT_GBR12PLE,  PIX_FMT_GBRP12LE},
+     {IMGFMT_GBR12PBE,  PIX_FMT_GBRP12BE},
+@@ -86,6 +88,8 @@ static const struct {
+     {IMGFMT_444P14_BE,  PIX_FMT_YUV444P14BE},
+     {IMGFMT_444P12_LE,  PIX_FMT_YUV444P12LE},
+     {IMGFMT_444P12_BE,  PIX_FMT_YUV444P12BE},
++#endif
++#if 0
+     {IMGFMT_Y8A,        PIX_FMT_GRAY8A},
+ #endif
+     {IMGFMT_Y16_LE,  PIX_FMT_GRAY16LE},

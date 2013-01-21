@@ -9,8 +9,5 @@ drivers of SDL).  Most of them support software or hardware scaling,
 so you can enjoy movies in fullscreen.
 
 Flavors:
-  sdl: enables sdl, requires devel/sdl
-  debug: enables debugging information
-  no_x11: disables gui and most video output.
   aa: enables ascii art, requires graphics/aalib
   jack: enables jack, requires audio/jack
