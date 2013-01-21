@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.10 2012/08/23 20:03:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2013/01/21 10:26:13 benoit Exp $
 
 COMMENT=		genealogical database and programming system
-DISTNAME=		lifelines-3.0.60
-REVISION=		4
+DISTNAME=		lifelines-3.0.62
 CATEGORIES=		misc
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=lifelines/}
 
@@ -24,7 +23,6 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 BUILD_DEPENDS=		devel/bison
 MODULES=		devel/gettext
 USE_GMAKE=		Yes
-USE_GROFF =		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/lifelines
