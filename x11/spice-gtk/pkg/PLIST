@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/09/27 14:57:59 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/01/21 18:19:05 jasper Exp $
 @bin bin/snappy
 @bin bin/spicy
 @bin bin/spicy-stats
@@ -8,6 +8,7 @@ include/spice-client-glib-2.0/channel-display.h
 include/spice-client-glib-2.0/channel-inputs.h
 include/spice-client-glib-2.0/channel-main.h
 include/spice-client-glib-2.0/channel-playback.h
+include/spice-client-glib-2.0/channel-port.h
 include/spice-client-glib-2.0/channel-record.h
 include/spice-client-glib-2.0/channel-smartcard.h
 include/spice-client-glib-2.0/channel-usbredir.h
@@ -56,6 +57,7 @@ share/gtk-doc/html/spice-gtk/SpiceGtkSession.html
 share/gtk-doc/html/spice-gtk/SpiceInputsChannel.html
 share/gtk-doc/html/spice-gtk/SpiceMainChannel.html
 share/gtk-doc/html/spice-gtk/SpicePlaybackChannel.html
+share/gtk-doc/html/spice-gtk/SpicePortChannel.html
 share/gtk-doc/html/spice-gtk/SpiceRecordChannel.html
 share/gtk-doc/html/spice-gtk/SpiceSession.html
 share/gtk-doc/html/spice-gtk/SpiceSmartcardChannel.html
