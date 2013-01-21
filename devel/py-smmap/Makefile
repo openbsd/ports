@@ -1,0 +1,22 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2013/01/21 14:31:24 jasper Exp $
+
+COMMENT=		pure git implementation of an SMM manager
+
+MODPY_EGG_VERSION=	0.8.2
+DISTNAME=		smmap-${MODPY_EGG_VERSION}
+PKGNAME=		py-${DISTNAME}
+CATEGORIES=		devel
+
+# BSD
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM= Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+MASTER_SITES=		${MASTER_SITE_PYPI:=s/smmap/}
+
+MODULES=		lang/python
+
+MODPY_SETUPTOOLS=	Yes
+
+.include <bsd.port.mk>

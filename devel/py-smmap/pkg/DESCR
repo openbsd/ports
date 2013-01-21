@@ -1,0 +1,5 @@
+Pure git implementation of a sliding window memory map manager.
+
+When reading from many possibly large files in a fashion similar to
+random access, it is usually the fastest and most efficient to use
+memory maps.
