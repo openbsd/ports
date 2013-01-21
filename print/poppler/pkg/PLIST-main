@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.16 2012/07/13 15:03:19 kili Exp $
+@comment $OpenBSD: PLIST-main,v 1.17 2013/01/21 19:08:00 kili Exp $
 @conflict poppler-qt-<0.5.4p0
 @pkgpath print/poppler
 %%SHARED%%
@@ -63,6 +63,7 @@ include/poppler/StdinPDFDocBuilder.h
 include/poppler/Stream-CCITT.h
 include/poppler/Stream.h
 include/poppler/TextOutputDev.h
+include/poppler/UTF.h
 include/poppler/UTF8.h
 include/poppler/UnicodeCClassTables.h
 include/poppler/UnicodeCompTables.h
@@ -120,6 +121,7 @@ include/poppler/goo/PNGWriter.h
 include/poppler/goo/TiffWriter.h
 include/poppler/goo/gfile.h
 include/poppler/goo/gmem.h
+include/poppler/goo/grandom.h
 include/poppler/goo/gstrtod.h
 include/poppler/goo/gtypes.h
 include/poppler/poppler-config.h
@@ -180,6 +182,7 @@ share/gtk-doc/html/poppler/api-index-0-14.html
 share/gtk-doc/html/poppler/api-index-0-16.html
 share/gtk-doc/html/poppler/api-index-0-18.html
 share/gtk-doc/html/poppler/api-index-0-20.html
+share/gtk-doc/html/poppler/api-index-0-22.html
 share/gtk-doc/html/poppler/api-index-deprecated.html
 share/gtk-doc/html/poppler/api-index-full.html
 share/gtk-doc/html/poppler/ch01.html

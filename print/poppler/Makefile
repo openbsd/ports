@@ -1,28 +1,24 @@
-# $OpenBSD: Makefile,v 1.70 2012/11/05 19:32:27 kili Exp $
+# $OpenBSD: Makefile,v 1.71 2013/01/21 19:08:00 kili Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt=	qt interface to PDF rendering library
 COMMENT-qt4=	qt4 interface to PDF rendering library
 COMMENT-utils=	PDF conversion tools and utilities
 
-V=		0.20.5
+V=		0.22.0
 DISTNAME=	poppler-$V
 CATEGORIES=	print
 PKGNAME-main=	poppler-$V
-REVISION-main=	0
 PKGNAME-utils=	poppler-utils-$V
-REVISION-utils=	0
 PKGNAME-qt=	poppler-qt-$V
-REVISION-qt=	0
 PKGNAME-qt4=	poppler-qt4-$V
-REVISION-qt4=	0
 OLDSHIT = poppler-0.16.7
 
-SHARED_LIBS +=  poppler              15.0     # 28.0
-SHARED_LIBS +=  poppler-glib         11.0     # 12.0
-SHARED_LIBS +=  poppler-qt           10.0     # 3.0
-SHARED_LIBS +=  poppler-qt4          11.0     # 4.0
-SHARED_LIBS +=  poppler-cpp          3.0      # 2.0
+SHARED_LIBS +=	poppler              16.0     # 34.0
+SHARED_LIBS +=	poppler-glib         12.0     # 14.0
+SHARED_LIBS +=	poppler-qt           11.0     # 3.0
+SHARED_LIBS +=	poppler-qt4          12.0     # 6.0
+SHARED_LIBS +=	poppler-cpp          4.0      # 2.0
 
 DISTFILES = ${DISTNAME}${EXTRACT_SUFX} ${OLDSHIT}${EXTRACT_SUFX}
 
@@ -83,17 +79,17 @@ LIB_DEPENDS-qt4=${MODQT4_LIB_DEPENDS} \
 LIB_DEPENDS-utils=${MODGETTEXT_LIB_DEPENDS} \
 		print/poppler
 
-WANTLIB-main=	${cWANTLIB} Xext Xfixes ffi \
-		glib-2.0 gobject-2.0 gthread-2.0 \
+WANTLIB-main=	${cWANTLIB} Xext ffi \
+		gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
 		pixman-1 openjpeg \
-		X11 Xau Xdamage Xdmcp Xrender cairo pcre png \
-		pthread-stubs xcb xcb-render lcms2 GL Xxf86vm \
-		drm xcb-shm ${MODGETTEXT_WANTLIB}
+		X11 Xau Xdmcp Xrender cairo pcre png \
+		pthread-stubs xcb xcb-render lcms2 \
+		xcb-shm ${MODGETTEXT_WANTLIB}
 WANTLIB-qt=	${cWANTLIB} lcms2 openjpeg poppler png ${MODQT3_WANTLIB}
 WANTLIB-qt4=	${cWANTLIB} ${MODQT4_WANTLIB} ICE QtGui QtXml SM X11 Xext Xi \
                 Xinerama Xrender lcms2 openjpeg png poppler QtCore QtGui QtXml
-WANTLIB-utils=	GL X11 Xau Xdamage Xdmcp Xext Xfixes Xrender Xxf86vm \
-		c cairo drm expat ffi fontconfig freetype glib-2.0 \
+WANTLIB-utils=	X11 Xau Xdmcp Xext Xrender \
+		c cairo expat ffi fontconfig freetype glib-2.0 \
 		gobject-2.0 gthread-2.0 jpeg lcms2 m pcre pixman-1 png \
 		pthread pthread-stubs stdc++ tiff xcb xcb-render xcb-shm \
 		openjpeg poppler z ${cWANTLIB} ${MODGETTEXT_WANTLIB}
