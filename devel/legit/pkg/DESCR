@@ -1,0 +1,6 @@
+Legit is a complementary command-line interface for Git, optimized for
+workflow simplicity. It is heavily inspired by GitHub for Mac.
+
+To install the git aliases, run the following command:
+
+	$ legit install

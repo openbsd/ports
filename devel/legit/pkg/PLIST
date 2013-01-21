@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/01/21 14:31:53 jasper Exp $
+bin/legit
+lib/python${MODPY_VERSION}/site-packages/legit/
+lib/python${MODPY_VERSION}/site-packages/legit-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/legit-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/legit-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/legit-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/legit-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/legit-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/legit-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/legit/__init__.py
+lib/python${MODPY_VERSION}/site-packages/legit/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/legit/bootstrap.py
+lib/python${MODPY_VERSION}/site-packages/legit/bootstrap.pyc
+lib/python${MODPY_VERSION}/site-packages/legit/cli.py
+lib/python${MODPY_VERSION}/site-packages/legit/cli.pyc
+lib/python${MODPY_VERSION}/site-packages/legit/core.py
+lib/python${MODPY_VERSION}/site-packages/legit/core.pyc
+lib/python${MODPY_VERSION}/site-packages/legit/helpers.py
+lib/python${MODPY_VERSION}/site-packages/legit/helpers.pyc
+lib/python${MODPY_VERSION}/site-packages/legit/scm.py
+lib/python${MODPY_VERSION}/site-packages/legit/scm.pyc
+lib/python${MODPY_VERSION}/site-packages/legit/settings.py
+lib/python${MODPY_VERSION}/site-packages/legit/settings.pyc
