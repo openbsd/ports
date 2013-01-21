@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.65 2013/01/21 12:32:51 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.66 2013/01/21 14:59:45 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -38,6 +38,7 @@
 .Op Fl l Ar lockdir
 .Op Fl M Ar threshold
 .Op Fl P Ar pathlist
+.Op Fl S Ar sizelog
 .Op Fl X Ar pathlist
 .Op Ar pathlist ...
 .Ek
@@ -461,6 +462,9 @@ Note that
 .Fl R
 won't always work, as rebuilding a package when another version is already
 installed is not supported.
+.It Fl S Ar sizelog
+Change the rolling log of build sizes from its default path
+.Pa %f/build-stats/%a-size
 .It Fl s
 Compute workdir sizes before cleaning up, and stash them in log file
 .Pa ${LOGDIR}/size.log .
@@ -767,7 +771,11 @@ and uses them automatically in the absence of
 If
 .Fl s
 is used, size information for successful builds will be recorded under
-.Pa ${DISTDIR}/build-stats/${ARCH}-size .
+.Pa ${DISTDIR}/build-stats/${ARCH}-size
+.Po
+by default, location adjustable with
+.Fl S Ar sizelog
+.Pc .
 This is then reused for the mfs threshold option.
 .Pp
 .Nm
