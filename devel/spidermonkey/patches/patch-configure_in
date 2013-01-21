@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.1.1.1 2012/04/07 13:48:18 landry Exp $
+$OpenBSD: patch-configure_in,v 1.2 2013/01/21 20:02:09 bcallah Exp $
 --- configure.in.orig	Thu Mar 31 21:08:36 2011
-+++ configure.in	Wed Apr  4 16:46:03 2012
++++ configure.in	Fri Jan 18 20:37:47 2013
 @@ -1211,7 +1211,7 @@ WIN_TOP_SRC=
  MOZ_USER_DIR=".mozilla"
  
@@ -10,6 +10,24 @@ $OpenBSD: patch-configure_in,v 1.1.1.1 2012/04/07 13:48:18 landry Exp $
  
  MOZ_COMPONENT_NSPR_LIBS='-L$(LIBXUL_DIST)/bin $(NSPR_LIBS)'
  
+@@ -1534,7 +1534,7 @@ arm*)
+     CPU_ARCH=arm
+     ;;
+ 
+-mips|mipsel)
++mips*)
+     CPU_ARCH="mips"
+     ;;
+ esac
+@@ -2515,7 +2515,7 @@ ia64*-hpux*)
+     alpha-*)
+     	AC_DEFINE(_ALPHA_)
+ 	;;
+-    mips-*)
++    mips*-*)
+     	AC_DEFINE(_MIPS_)
+ 	;;
+     x86_64-*)
 @@ -2582,7 +2582,7 @@ ia64*-hpux*)
  	;;
  
