@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2013/01/15 14:30:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.111 2013/01/21 11:00:38 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		2.98
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
 
@@ -24,8 +24,8 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm archive
-WANTLIB += atk-1.0 bz2 c cairo cairo-gobject dbus-1 drm expat
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender archive
+WANTLIB += atk-1.0 bz2 c cairo cairo-gobject dbus-1 expat
 WANTLIB += ffi fontconfig freetype gcrypt gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gmime-2.6 gmodule-2.0
 WANTLIB += gnome-keyring gobject-2.0 gpg-error gpod
@@ -34,7 +34,7 @@ WANTLIB += gstpbutils-0.10 gstreamer-0.10 gsttag-0.10 gthread-2.0
 WANTLIB += gtk-3 json-glib-1.0 lzma m notify pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0 pixman-1 plist
 WANTLIB += png pthread pthread-stubs soup-2.4 soup-gnome-2.4 sqlite3
-WANTLIB += stdc++ tdb totem-plparser xcb xcb-render xcb-shm xml2
+WANTLIB += tdb totem-plparser xcb xcb-render xcb-shm xml2
 WANTLIB += z crypto curl idn lua5.1 quvi ssl icuuc
 WANTLIB += atk-bridge-2.0 atspi grilo-0.2 harfbuzz icudata icule
 
