@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/05/27 20:52:15 benoit Exp $
+# $OpenBSD: Makefile,v 1.6 2013/01/21 10:21:52 benoit Exp $
 
 COMMENT =	unit test framework for C programs
 
@@ -6,9 +6,9 @@ DISTNAME =	check-0.9.6
 SHARED_LIBS +=	check	1.0	# .0.0
 CATEGORIES =	devel
 
-HOMEPAGE =	http://check.sf.net/
+REVISION =	0
 
-MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
+HOMEPAGE =	http://check.sf.net/
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
