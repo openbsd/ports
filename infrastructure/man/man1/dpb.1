@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.64 2013/01/21 12:07:01 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.65 2013/01/21 12:32:51 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -313,7 +313,8 @@ get access to all jobs, whereas other machines will be clamped
 to stuff which does not take too long.
 Requires previous build information to be effective.
 .It small=s
-Ports known to build under that duration are deemed to be small, so
+Small threshold (in seconds * sf):
+ports known to build under that duration are deemed to be small, so
 .Nm
 won't bother calling fine-grained steps for patch/configure/fake.
 It will go straight to build and package instead.
