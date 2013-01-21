@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/12/30 22:43:54 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/01/21 06:55:32 benoit Exp $
 lib/python${MODPY_VERSION}/site-packages/PyX-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/pyx/
 lib/python${MODPY_VERSION}/site-packages/pyx/__init__.py
@@ -90,6 +90,8 @@ lib/python${MODPY_VERSION}/site-packages/pyx/font/font.py
 lib/python${MODPY_VERSION}/site-packages/pyx/font/font.pyc
 lib/python${MODPY_VERSION}/site-packages/pyx/font/metric.py
 lib/python${MODPY_VERSION}/site-packages/pyx/font/metric.pyc
+lib/python${MODPY_VERSION}/site-packages/pyx/font/pfmfile.py
+lib/python${MODPY_VERSION}/site-packages/pyx/font/pfmfile.pyc
 lib/python${MODPY_VERSION}/site-packages/pyx/font/t1code.py
 lib/python${MODPY_VERSION}/site-packages/pyx/font/t1code.pyc
 lib/python${MODPY_VERSION}/site-packages/pyx/font/t1file.py
@@ -128,6 +130,13 @@ lib/python${MODPY_VERSION}/site-packages/pyx/mathutils.py
 lib/python${MODPY_VERSION}/site-packages/pyx/mathutils.pyc
 lib/python${MODPY_VERSION}/site-packages/pyx/mesh.py
 lib/python${MODPY_VERSION}/site-packages/pyx/mesh.pyc
+lib/python${MODPY_VERSION}/site-packages/pyx/metapost/
+lib/python${MODPY_VERSION}/site-packages/pyx/metapost/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pyx/metapost/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pyx/metapost/mp_path.py
+lib/python${MODPY_VERSION}/site-packages/pyx/metapost/mp_path.pyc
+lib/python${MODPY_VERSION}/site-packages/pyx/metapost/path.py
+lib/python${MODPY_VERSION}/site-packages/pyx/metapost/path.pyc
 lib/python${MODPY_VERSION}/site-packages/pyx/normpath.py
 lib/python${MODPY_VERSION}/site-packages/pyx/normpath.pyc
 lib/python${MODPY_VERSION}/site-packages/pyx/path.py
@@ -171,6 +180,8 @@ share/examples/${MODPY_PY_PREFIX}pyx/3dgraphs/surface.txt
 share/examples/${MODPY_PY_PREFIX}pyx/README
 share/examples/${MODPY_PY_PREFIX}pyx/axis/
 share/examples/${MODPY_PY_PREFIX}pyx/axis/README
+share/examples/${MODPY_PY_PREFIX}pyx/axis/grid.py
+share/examples/${MODPY_PY_PREFIX}pyx/axis/grid.txt
 share/examples/${MODPY_PY_PREFIX}pyx/axis/link.py
 share/examples/${MODPY_PY_PREFIX}pyx/axis/link.txt
 share/examples/${MODPY_PY_PREFIX}pyx/axis/log.py
@@ -217,6 +228,8 @@ share/examples/${MODPY_PY_PREFIX}pyx/drawing/
 share/examples/${MODPY_PY_PREFIX}pyx/drawing/README
 share/examples/${MODPY_PY_PREFIX}pyx/drawing/arrow.py
 share/examples/${MODPY_PY_PREFIX}pyx/drawing/arrow.txt
+share/examples/${MODPY_PY_PREFIX}pyx/drawing/metapost.py
+share/examples/${MODPY_PY_PREFIX}pyx/drawing/metapost.txt
 share/examples/${MODPY_PY_PREFIX}pyx/drawing/path.py
 share/examples/${MODPY_PY_PREFIX}pyx/drawing/path.txt
 share/examples/${MODPY_PY_PREFIX}pyx/drawing/pathitem.py
@@ -245,6 +258,9 @@ share/examples/${MODPY_PY_PREFIX}pyx/graphs/change.py
 share/examples/${MODPY_PY_PREFIX}pyx/graphs/change.txt
 share/examples/${MODPY_PY_PREFIX}pyx/graphs/function.py
 share/examples/${MODPY_PY_PREFIX}pyx/graphs/function.txt
+share/examples/${MODPY_PY_PREFIX}pyx/graphs/join.dat
+share/examples/${MODPY_PY_PREFIX}pyx/graphs/join.py
+share/examples/${MODPY_PY_PREFIX}pyx/graphs/join.txt
 share/examples/${MODPY_PY_PREFIX}pyx/graphs/lissajous.py
 share/examples/${MODPY_PY_PREFIX}pyx/graphs/lissajous.txt
 share/examples/${MODPY_PY_PREFIX}pyx/graphs/minimal.dat
@@ -258,6 +274,8 @@ share/examples/${MODPY_PY_PREFIX}pyx/graphstyles/cal.py
 share/examples/${MODPY_PY_PREFIX}pyx/graphstyles/cal.txt
 share/examples/${MODPY_PY_PREFIX}pyx/graphstyles/changesymbol.py
 share/examples/${MODPY_PY_PREFIX}pyx/graphstyles/changesymbol.txt
+share/examples/${MODPY_PY_PREFIX}pyx/graphstyles/density.py
+share/examples/${MODPY_PY_PREFIX}pyx/graphstyles/density.txt
 share/examples/${MODPY_PY_PREFIX}pyx/graphstyles/errorbar.dat
 share/examples/${MODPY_PY_PREFIX}pyx/graphstyles/errorbar.py
 share/examples/${MODPY_PY_PREFIX}pyx/graphstyles/errorbar.txt
@@ -297,6 +315,8 @@ share/examples/${MODPY_PY_PREFIX}pyx/text/marker.py
 share/examples/${MODPY_PY_PREFIX}pyx/text/marker.txt
 share/examples/${MODPY_PY_PREFIX}pyx/text/texrunner.py
 share/examples/${MODPY_PY_PREFIX}pyx/text/texrunner.txt
+share/examples/${MODPY_PY_PREFIX}pyx/text/textalongpath.py
+share/examples/${MODPY_PY_PREFIX}pyx/text/textalongpath.txt
 share/examples/${MODPY_PY_PREFIX}pyx/text/textbox.py
 share/examples/${MODPY_PY_PREFIX}pyx/text/textbox.txt
 share/examples/${MODPY_PY_PREFIX}pyx/text/valign.py
