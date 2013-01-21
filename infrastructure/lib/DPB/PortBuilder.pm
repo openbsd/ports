@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.31 2013/01/21 02:06:12 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.32 2013/01/21 11:27:24 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -219,29 +219,47 @@ sub init
 
 my $uptodate = {};
 
-sub check_signature
+sub equal_signatures
 {
 	my ($self, $core, $v) = @_;
-	my $name = $v->fullpkgname;
-	return 0 unless -f "$self->{fullrepo}/$name.tgz";
-	if ($uptodate->{$name}) {
-		return 1;
-	}
-	# check the package
-	my $p = $self->{repository}->find("$name.tgz");
+	my $p = $self->{repository}->find($v->fullpkgname.".tgz");
 	my $plist = $p->plist(\&OpenBSD::PackingList::UpdateInfoOnly);
 	my $pkgsig = $plist->signature->string;
 	# and the port
 	my $portsig = $self->{state}->grabber->grab_signature($core,
 	    $v->fullpkgpath);
-	if ($portsig eq $pkgsig) {
+	return $portsig eq $pkgsig;
+}
+
+sub check_signature
+{
+	my ($self, $core, $v) = @_;
+	my $name = $v->fullpkgname;
+	if ($uptodate->{$name}) {
+		return 1;
+	}
+	if (-f "$self->{fullrepo}/$name.tgz" && 
+	    $self->equal_signatures($core, $v)) {
 		$uptodate->{$name} = 1;
 		print {$self->{logrebuild}} "$name: uptodate\n";
 		return 1;
 	} else {
+		# XXX clean this first, so we skip over it in the loop
+		$self->{state}->grabber->clean_packages($core, $v->fullpkgpath);
 		print {$self->{logrebuild}} "$name: rebuild\n";
-		$self->{state}->grabber->clean_packages($core,
-		    $v->fullpkgpath);
+		for my $w ($v->build_path_list) {
+			$name = $w->fullpkgname;
+			next unless -f "$self->{fullrepo}/$name.tgz";
+			next if $uptodate->{$name};
+			if ($self->equal_signatures($core, $w)) {
+				$uptodate->{$name} = 1;
+				print {$self->{logrebuild}} "$name: uptodate\n";
+				next;
+			}
+			print {$self->{logrebuild}} "$name: rebuild\n";
+			$self->{state}->grabber->clean_packages($core,
+			    $w->fullpkgpath);
+		}
 		return 0;
 	}
 }
