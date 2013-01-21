@@ -1,0 +1,14 @@
+$OpenBSD: patch-common_Operation_vala,v 1.1 2013/01/21 08:23:30 ajacoutot Exp $
+
+https://bugzilla.redhat.com/show_bug.cgi?id=892063
+
+--- common/Operation.vala.orig	Tue Aug 21 17:08:23 2012
++++ common/Operation.vala	Mon Jan 21 08:43:45 2013
+@@ -223,6 +223,7 @@ public abstract class Operation : Object
+     finished = true;
+ 
+     unclaim_bus();
++    yield DejaDup.clean_tempdirs();
+ 
+     done(success, cancelled, detail);
+   }

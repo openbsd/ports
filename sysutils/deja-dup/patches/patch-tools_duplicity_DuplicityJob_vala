@@ -1,0 +1,21 @@
+$OpenBSD: patch-tools_duplicity_DuplicityJob_vala,v 1.1 2013/01/21 08:23:30 ajacoutot Exp $
+
+https://bugzilla.redhat.com/show_bug.cgi?id=892063
+
+--- tools/duplicity/DuplicityJob.vala.orig	Tue Aug 21 17:08:23 2012
++++ tools/duplicity/DuplicityJob.vala	Mon Jan 21 08:44:03 2013
+@@ -1459,13 +1459,7 @@ internal class DuplicityJob : DejaDup.ToolJob
+     }
+ 
+     /* Start duplicity instance */
+-    try {
+-      inst.start(argv, envp, needs_root);
+-    }
+-    catch (Error e) {
+-      show_error(e.message);
+-      done(false, false, null);
+-    }
++    inst.start.begin(argv, envp, needs_root);
+   }
+ }
+ 
