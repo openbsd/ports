@@ -1,7 +1,7 @@
-$OpenBSD: patch-gettext-runtime_intl_Makefile_in,v 1.5 2010/07/03 03:23:22 naddy Exp $
---- gettext-runtime/intl/Makefile.in.orig	Fri Jun  4 00:53:31 2010
-+++ gettext-runtime/intl/Makefile.in	Mon Jun 28 20:20:26 2010
-@@ -220,7 +220,7 @@ libintl.a libgnuintl.a: $(OBJECTS)
+$OpenBSD: patch-gettext-runtime_intl_Makefile_in,v 1.6 2013/01/21 22:08:52 naddy Exp $
+--- gettext-runtime/intl/Makefile.in.orig	Tue Dec 25 06:16:50 2012
++++ gettext-runtime/intl/Makefile.in	Fri Jan 18 18:39:38 2013
+@@ -219,7 +219,7 @@ libintl.a libgnuintl.a: $(OBJECTS)
  libintl.la libgnuintl.la: $(OBJECTS) $(OBJECTS_RES_@WOE32@)
  	$(AM_V_GEN)$(LIBTOOL) $(AM_V_lt) --tag=CC --mode=link \
  	  $(CC) $(CPPFLAGS) $(CFLAGS) $(XCFLAGS) $(LDFLAGS) -o $@ \
@@ -10,3 +10,12 @@ $OpenBSD: patch-gettext-runtime_intl_Makefile_in,v 1.5 2010/07/03 03:23:22 naddy
  	  $(OBJECTS_RES_@WOE32@) \
  	  -version-info $(LTV_CURRENT):$(LTV_REVISION):$(LTV_AGE) \
  	  -rpath $(libdir) \
+@@ -456,7 +456,7 @@ install-data: all
+ 	  $(mkdir_p) $(DESTDIR)$(gettextsrcdir); \
+ 	  $(INSTALL_DATA) VERSION $(DESTDIR)$(gettextsrcdir)/VERSION; \
+ 	  $(INSTALL_DATA) ChangeLog.inst $(DESTDIR)$(gettextsrcdir)/ChangeLog; \
+-	  dists="COPYING.LIB-2.0 COPYING.LIB-2.1 $(DISTFILES.common)"; \
++	  dists="COPYING.LIB $(DISTFILES.common)"; \
+ 	  for file in $$dists; do \
+ 	    $(INSTALL_DATA) $(srcdir)/$$file \
+ 			    $(DESTDIR)$(gettextsrcdir)/$$file; \

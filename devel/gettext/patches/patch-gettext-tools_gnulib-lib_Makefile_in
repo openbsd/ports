@@ -1,12 +1,12 @@
-$OpenBSD: patch-gettext-tools_gnulib-lib_Makefile_in,v 1.3 2010/07/03 03:23:22 naddy Exp $
---- gettext-tools/gnulib-lib/Makefile.in.orig	Tue Jun 29 00:25:09 2010
-+++ gettext-tools/gnulib-lib/Makefile.in	Tue Jun 29 00:25:36 2010
-@@ -1803,7 +1803,7 @@ EXTRA_libgettextlib_la_SOURCES = acl_entries.c argmatc
- # Need @LTLIBICONV@ because linebreak.c and striconv.c use iconv().
- # Need @LIB_ACL@ because copy-file.c uses acl.h.
- # Need @LTLIBC@ for -no-undefined to work on many platforms.
--libgettextlib_la_LDFLAGS = $(AM_LDFLAGS) -release @VERSION@ \
-+libgettextlib_la_LDFLAGS = $(AM_LDFLAGS) \
- 	$(LTLIBUNISTRING) @LTLIBINTL@ @LTLIBICONV@ @LIB_ACL@ @LTLIBC@ \
- 	@LTNOUNDEF@ $(am__append_3) $(am__append_12)
- ARG_NONNULL_H = arg-nonnull.h
+$OpenBSD: patch-gettext-tools_gnulib-lib_Makefile_in,v 1.4 2013/01/21 22:08:52 naddy Exp $
+--- gettext-tools/gnulib-lib/Makefile.in.orig	Tue Dec 25 06:33:32 2012
++++ gettext-tools/gnulib-lib/Makefile.in	Wed Jan 16 23:00:46 2013
+@@ -2091,7 +2091,7 @@ EXTRA_libgettextlib_la_SOURCES = acl_entries.c atexit.
+ #libgettextlib_la_LDFLAGS += $(LTLIBUNISTRING) @LTLIBINTL@ @LTLIBICONV@ @LIB_ACL@
+ libgettextlib_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(LIB_ACL) \
+ 	$(LTLIBICONV) $(LTLIBINTL) $(LTLIBTHREAD) $(LTLIBUNISTRING) \
+-	$(OPENMP_CFLAGS) @INTL_MACOSX_LIBS@ -release @VERSION@ \
++	$(OPENMP_CFLAGS) @INTL_MACOSX_LIBS@ \
+ 	$(am__append_3) $(am__append_12)
+ 
+ # Specify that libgettextlib should installed in $(libdir).

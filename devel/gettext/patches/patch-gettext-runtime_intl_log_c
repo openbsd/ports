@@ -1,7 +1,7 @@
-$OpenBSD: patch-gettext-runtime_intl_log_c,v 1.3 2010/07/03 03:23:22 naddy Exp $
---- gettext-runtime/intl/log.c.orig	Mon Jun 28 20:31:59 2010
-+++ gettext-runtime/intl/log.c	Mon Jun 28 23:05:31 2010
-@@ -68,6 +68,7 @@ _nl_log_untranslated_locked (const char *logfilename, 
+$OpenBSD: patch-gettext-runtime_intl_log_c,v 1.4 2013/01/21 22:08:52 naddy Exp $
+--- gettext-runtime/intl/log.c.orig	Tue Dec  4 07:28:58 2012
++++ gettext-runtime/intl/log.c	Wed Jan 16 23:06:10 2013
+@@ -66,6 +66,7 @@ _nl_log_untranslated_locked (const char *logfilename, 
  {
    FILE *logfile;
    const char *separator;
@@ -9,7 +9,7 @@ $OpenBSD: patch-gettext-runtime_intl_log_c,v 1.3 2010/07/03 03:23:22 naddy Exp $
  
    /* Can we reuse the last opened logfile?  */
    if (last_logfilename == NULL || strcmp (logfilename, last_logfilename) != 0)
-@@ -84,10 +85,11 @@ _nl_log_untranslated_locked (const char *logfilename, 
+@@ -82,10 +83,11 @@ _nl_log_untranslated_locked (const char *logfilename, 
            last_logfilename = NULL;
          }
        /* Open the logfile.  */

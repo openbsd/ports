@@ -1,7 +1,7 @@
-$OpenBSD: patch-gettext-tools_tests_Makefile_in,v 1.4 2010/07/03 03:23:22 naddy Exp $
---- gettext-tools/tests/Makefile.in.orig	Mon Jun 28 23:49:26 2010
-+++ gettext-tools/tests/Makefile.in	Mon Jun 28 23:49:49 2010
-@@ -1440,7 +1440,7 @@ AM_CPPFLAGS = \
+$OpenBSD: patch-gettext-tools_tests_Makefile_in,v 1.5 2013/01/21 22:08:52 naddy Exp $
+--- gettext-tools/tests/Makefile.in.orig	Tue Dec 25 06:33:34 2012
++++ gettext-tools/tests/Makefile.in	Wed Jan 16 23:06:10 2013
+@@ -1699,7 +1699,7 @@ AM_CPPFLAGS = \
  # INTL_MACOSX_LIBS is needed because the programs depend on libintl.la
  # but libtool doesn't put -Wl,-framework options into .la files.
  LDADD = $(LDADD_@USE_INCLUDED_LIBINTL@) @INTL_MACOSX_LIBS@
