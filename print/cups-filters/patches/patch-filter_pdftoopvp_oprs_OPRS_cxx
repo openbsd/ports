@@ -1,0 +1,16 @@
+$OpenBSD: patch-filter_pdftoopvp_oprs_OPRS_cxx,v 1.5 2013/01/21 19:08:49 kili Exp $
+
+Fix build with poppler-0.22. A similar fix was already in the snapshot
+of january 19th and will probably be included in cups-filters-1.0.30.
+
+--- filter/pdftoopvp/oprs/OPRS.cxx.orig	Mon Sep 10 21:52:00 2012
++++ filter/pdftoopvp/oprs/OPRS.cxx	Sat Jan 19 10:52:40 2013
+@@ -235,7 +235,7 @@ SplashError OPRS::drawImage(SplashImageSource src, voi
+ 			      SplashColorMode srcMode, GBool srcAlpha,
+ 			      int w, int h, SplashCoord *mat) {
+     if (rasterMode) {
+-	return splash->drawImage(src,srcData,srcMode,srcAlpha,w,h,mat);
++	return splash->drawImage(src,srcData,srcMode,srcAlpha,w,h,mat, gFalse);
+     } else {
+ 	return opvpSplash->drawImage(src,srcData,srcMode,srcAlpha,w,h,mat);
+     }

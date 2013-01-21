@@ -1,0 +1,16 @@
+$OpenBSD: patch-filter_pdftoopvp_OPVPOutputDev_cxx,v 1.1 2013/01/21 19:08:49 kili Exp $
+
+Fix build with poppler-0.22. A similar fix was already in the snapshot
+of january 19th and will probably be included in cups-filters-1.0.30.
+
+--- filter/pdftoopvp/OPVPOutputDev.cxx.orig	Fri Jul 20 10:22:23 2012
++++ filter/pdftoopvp/OPVPOutputDev.cxx	Sat Jan 19 10:54:05 2013
+@@ -1805,7 +1805,7 @@ void OPVPOutputDev::drawSoftMaskedImage(GfxState *stat
+   maskColor[0] = 0;
+   maskSplash->clear(maskColor);
+   maskSplash->drawImage(&imageSrc, &imgMaskData,
+-			splashModeMono8, gFalse, maskWidth, maskHeight, mat);
++			splashModeMono8, gFalse, maskWidth, maskHeight, mat, gFalse);
+   delete imgMaskData.imgStr;
+   maskStr->close();
+   gfree(imgMaskData.lookup);
