@@ -1,0 +1,4 @@
+GitPython provides object model read and write access to your git
+repository. Access repository information conveniently, alter the index
+directly, handle remotes, or go down to low-level object database access
+with big-files support.
