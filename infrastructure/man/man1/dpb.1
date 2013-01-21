@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.66 2013/01/21 14:59:45 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.67 2013/01/21 21:33:32 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -204,12 +204,12 @@ Make the terminal cursor invisible if possible.
 Avoids flickering on slow graphics cards.
 .It Ar NO_BUILD_STATS
 Disable reading/saving of default build stats under
+.Pa ${DISTDIR}/build-stats/${ARCH} .
 .It Ar NO_HISTORY
 Do not update the distfiles history.
 For instance, if
 .Nm
 is run a second time after a problem during the first run.
-.Pa ${DISTDIR}/build-stats/${ARCH} .
 .It Ar STARTUP
 Define a start-up script on the command-line, override any host file contents.
 .It Ar STUCK_TIMEOUT
