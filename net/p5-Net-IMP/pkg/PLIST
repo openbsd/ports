@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/09/26 18:37:42 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/01/21 20:49:56 bluhm Exp $
 ${P5SITE}/Net/
 ${P5SITE}/Net/IMP/
 ${P5SITE}/Net/IMP.pm
@@ -6,7 +6,6 @@ ${P5SITE}/Net/IMP/Base.pm
 ${P5SITE}/Net/IMP/Cascade.pm
 ${P5SITE}/Net/IMP/Debug.pm
 ${P5SITE}/Net/IMP/Filter.pm
-${P5SITE}/Net/IMP/HTTP_AddXFooHeader.pm
 ${P5SITE}/Net/IMP/Pattern.pm
 ${P5SITE}/Net/IMP/ProtocolPinning.pm
 ${P5SITE}/Net/IMP/SessionLog.pm
@@ -15,7 +14,6 @@ ${P5SITE}/Net/IMP/SessionLog.pm
 @man man/man3p/Net::IMP::Cascade.3p
 @man man/man3p/Net::IMP::Debug.3p
 @man man/man3p/Net::IMP::Filter.3p
-@man man/man3p/Net::IMP::HTTP_AddXFooHeader.3p
 @man man/man3p/Net::IMP::Pattern.3p
 @man man/man3p/Net::IMP::ProtocolPinning.3p
 @man man/man3p/Net::IMP::SessionLog.3p
