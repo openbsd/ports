@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.504 2012/11/01 14:49:25 zinke Exp $
+# $OpenBSD: Makefile,v 1.505 2013/01/21 16:02:23 gonzalo Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -232,6 +232,7 @@
      SUBDIR += slim-themes
      SUBDIR += slock
      SUBDIR += smplayer
+     SUBDIR += smtube
      SUBDIR += spectrwm
      SUBDIR += spice-gtk
      SUBDIR += sselp
