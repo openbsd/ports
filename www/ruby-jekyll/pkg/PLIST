@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/20 18:21:08 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/01/21 18:21:22 jasper Exp $
 ${GEM_BIN}/jekyll${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/History.txt
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/README.textile
@@ -26,7 +27,6 @@ ${GEM_LIB}/gems/${DISTNAME}/jekyll.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/jekyll/
 ${GEM_LIB}/gems/${DISTNAME}/lib/jekyll.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/jekyll/albino.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/jekyll/converter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/jekyll/converters/
 ${GEM_LIB}/gems/${DISTNAME}/lib/jekyll/converters/identity.rb
@@ -42,12 +42,19 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/jekyll/generators/pagination.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/jekyll/layout.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/jekyll/migrators/
 ${GEM_LIB}/gems/${DISTNAME}/lib/jekyll/migrators/csv.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/jekyll/migrators/drupal.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/jekyll/migrators/enki.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/jekyll/migrators/joomla.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/jekyll/migrators/marley.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/jekyll/migrators/mephisto.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/jekyll/migrators/mt.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/jekyll/migrators/posterous.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/jekyll/migrators/rss.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/jekyll/migrators/textpattern.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/jekyll/migrators/tumblr.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/jekyll/migrators/typo.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/jekyll/migrators/wordpress.com.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/jekyll/migrators/wordpress.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/jekyll/migrators/wordpressdotcom.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/jekyll/page.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/jekyll/plugin.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/jekyll/post.rb
@@ -56,7 +63,11 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/jekyll/static_file.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/jekyll/tags/
 ${GEM_LIB}/gems/${DISTNAME}/lib/jekyll/tags/highlight.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/jekyll/tags/include.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/jekyll/tags/post_url.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/
+${GEM_LIB}/gems/${DISTNAME}/test/fixtures/
+${GEM_LIB}/gems/${DISTNAME}/test/fixtures/broken_front_matter1.erb
+${GEM_LIB}/gems/${DISTNAME}/test/fixtures/front_matter.erb
 ${GEM_LIB}/gems/${DISTNAME}/test/helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/source/
 ${GEM_LIB}/gems/${DISTNAME}/test/source/.htaccess
@@ -89,6 +100,8 @@ ${GEM_LIB}/gems/${DISTNAME}/test/source/_posts/2010-01-09-date-override.textile
 ${GEM_LIB}/gems/${DISTNAME}/test/source/_posts/2010-01-09-time-override.textile
 ${GEM_LIB}/gems/${DISTNAME}/test/source/_posts/2010-01-09-timezone-override.textile
 ${GEM_LIB}/gems/${DISTNAME}/test/source/_posts/2010-01-16-override-data.textile
+${GEM_LIB}/gems/${DISTNAME}/test/source/_posts/2011-04-12-md-extension.md
+${GEM_LIB}/gems/${DISTNAME}/test/source/_posts/2011-04-12-text-extension.text
 ${GEM_LIB}/gems/${DISTNAME}/test/source/about.html
 ${GEM_LIB}/gems/${DISTNAME}/test/source/category/
 ${GEM_LIB}/gems/${DISTNAME}/test/source/category/_posts/
@@ -111,6 +124,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/source/z_category/_posts/
 ${GEM_LIB}/gems/${DISTNAME}/test/source/z_category/_posts/2008-9-23-categories.textile
 ${GEM_LIB}/gems/${DISTNAME}/test/suite.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_configuration.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_convertible.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_core_ext.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_filters.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_generated_site.rb
@@ -119,6 +133,8 @@ ${GEM_LIB}/gems/${DISTNAME}/test/test_page.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_pager.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_post.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_rdiscount.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_redcarpet.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_redcloth.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_site.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_tags.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
