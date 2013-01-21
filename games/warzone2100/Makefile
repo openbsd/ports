@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.18 2011/11/07 13:55:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2013/01/21 16:37:41 pascal Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=	3D realtime strategy on a future earth
 
-DISTNAME=	warzone2100-2.3.9
+DISTNAME=	warzone2100-3.1.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=warzone2100/}
+EXTRACT_SUFX=	.tar.xz
 
 HOMEPAGE=	http://wz2100.net/
 
@@ -16,18 +17,20 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	GL GLC GLU SDL X11 c m physfs ogg openal png popt \
-		pthread sndio stdc++ theora vorbis vorbisfile z
+WANTLIB += GL GLEW GLU QtNetwork QtScript SDL X11 Xrandr c expat
+WANTLIB += fontconfig freetype fribidi m ogg openal physfs png
+WANTLIB += pthread stdc++ theora vorbis vorbisfile z
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext \
+		x11/qt4
 LIB_DEPENDS=	audio/libogg \
 		audio/libvorbis \
 		audio/openal>=20110627 \
+		devel/fribidi \
 		devel/physfs \
-		devel/popt \
 		devel/sdl \
+		graphics/glew \
 		graphics/png \
-		graphics/quesoglc \
 		multimedia/libtheora
 BUILD_DEPENDS=	archivers/unzip \
 		archivers/zip \
@@ -37,18 +40,21 @@ RUN_DEPENDS=	devel/desktop-file-utils
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.65
-CONFIGURE_ARGS+=--disable-motif \
-		--with-distributor="OpenBSD"
+AUTOCONF_VERSION= 2.69
+CONFIGURE_ARGS+= --with-distributor="OpenBSD"
 CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include/libpng \
 		    -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
+		PKG_CONFIG_LIBDIR="/usr/lib/pkgconfig:${X11BASE}/lib/pkgconfig:${LOCALBASE}/lib/pkgconfig:${LOCALBASE}/lib/qt4/pkgconfig" \
 		YACC="bison -y" \
-		ac_cv_prog_LEX="gflex"
+		ac_cv_prog_LEX="flex" \
+		ac_cv_path_MOC4="${LOCALBASE}/bin/moc4" \
+		ac_cv_path_UIC4="${LOCALBASE}/bin/uic4"
 
-pre-build:
+pre-configure:
 .for _prog in git svn svnversion
 	@cd ${WRKDIR}/bin && ln -sf /usr/bin/true ${_prog}
 .endfor
+	@cd ${WRKDIR}/bin && ln -sf ${LOCALBASE}/bin/gflex flex
 
 .include <bsd.port.mk>

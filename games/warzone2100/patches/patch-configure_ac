@@ -1,12 +1,29 @@
-$OpenBSD: patch-configure_ac,v 1.5 2011/11/06 21:12:37 dcoppa Exp $
---- configure.ac.orig	Sun Oct 23 16:28:21 2011
-+++ configure.ac	Sun Nov  6 10:06:45 2011
-@@ -422,7 +422,7 @@ AC_CHECK_LIB(popt, poptGetContext, AC_SUBST([POPT_LIBS
+$OpenBSD: patch-configure_ac,v 1.6 2013/01/21 16:37:41 pascal Exp $
+--- configure.ac.orig	Tue Jan 15 00:54:06 2013
++++ configure.ac	Mon Jan 21 00:16:22 2013
+@@ -135,15 +135,11 @@ case ${host_os} in
+ 		AC_SUBST([WIN32_LIBS], [${WIN32_LIBS}])
+ 		LDFLAGS="-Wl,-subsystem,windows ${LDFLAGS}"
+ 		;;
+-	*openbsd*)
+-		AC_DEFINE([_XOPEN_SOURCE], 600, [Enable POSIX extensions if present])
+-		# Make sure that backtrace_symbols_fd (GNU raw back trace extension) has some symbols to work with
+-		LDFLAGS="-Wl,-export-dynamic ${LDFLAGS}"
+-		;;
+ 	*)
+ 		# Some platforms don't need _XOPEN_SOURCE
+ 		case ${host_os} in
+ 			*freebsd*) ;;
++			*openbsd*) ;;
+ 			*)
+ 				AC_DEFINE([_XOPEN_SOURCE], 600, [Enable POSIX extensions if present])
+ 				;;
+@@ -292,7 +288,7 @@ fi
  
- # Look for PhysicsFS
- AC_CHECK_HEADER(physfs.h, , AC_MSG_ERROR([PhysicsFS header not found.]))
--AC_CHECK_LIB(physfs, PHYSFS_init, AC_SUBST([PHYSFS_LIBS], [-lphysfs]), AC_MSG_ERROR([PhysicsFS not found.]), [${WIN32_LIBS}])
-+AC_CHECK_LIB(physfs, PHYSFS_init, AC_SUBST([PHYSFS_LIBS], [-lphysfs]), AC_MSG_ERROR([PhysicsFS not found.]), [-pthread])
- 
- # Look for OpenGL
- CPPFLAGS_SAVE="$CPPFLAGS"
+ WZ_WARNINGS_GCC="-Wall -Wextra ${WZ_Wno_}unused-parameter ${WZ_Wno_}sign-compare -Wcast-align -Wwrite-strings -Wpointer-arith ${WZ_Wno_}format-security"
+ WZ_WARNINGS_GCC_C="${WZ_WARNINGS_GCC} -Wstrict-prototypes -Wdeclaration-after-statement ${CFLAGS_IGNORE_WARNINGS}"
+-WZ_WARNINGS_GCC_CXX="${WZ_Wno_}enum-compare ${WZ_WARNINGS_GCC}"
++WZ_WARNINGS_GCC_CXX="${WZ_WARNINGS_GCC}"
+ if test "x$enable_debug" = "xyes" ; then
+ 	if test "x$cc_icc" = "xyes" ; then
+ 		WZ_CFLAGS="${WZ_CFLAGS} -O0 -g -Wcheck -Werror"

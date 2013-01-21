@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/11/06 21:12:37 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/01/21 16:37:41 pascal Exp $
 @bin bin/warzone2100
 share/applications/warzone2100.desktop
 share/doc/warzone2100/
@@ -64,6 +64,7 @@ share/locale/ca_ES/LC_MESSAGES/warzone2100.mo
 share/locale/cs/LC_MESSAGES/warzone2100.mo
 share/locale/da/LC_MESSAGES/warzone2100.mo
 share/locale/de/LC_MESSAGES/warzone2100.mo
+share/locale/el/LC_MESSAGES/warzone2100.mo
 share/locale/en_GB/
 share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/warzone2100.mo
@@ -104,11 +105,6 @@ share/locale/zh_CN/LC_MESSAGES/warzone2100.mo
 share/locale/zh_TW/LC_MESSAGES/warzone2100.mo
 share/warzone2100/
 share/warzone2100/base.wz
-share/warzone2100/mods/
-share/warzone2100/mods/multiplay/
-share/warzone2100/mods/multiplay/dydo-ai.wz
-share/warzone2100/mods/multiplay/ntw.wz
-share/warzone2100/mods/multiplay/old-1.10-balance.wz
 share/warzone2100/mp.wz
 share/warzone2100/music/
 share/warzone2100/music/menu.ogg
