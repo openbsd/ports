@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.86 2013/01/21 10:46:42 espie Exp $
+# $OpenBSD: Port.pm,v 1.87 2013/01/21 11:06:59 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -776,15 +776,15 @@ sub has_depends
 			}
 		}
 	}
-	if (!%deps2) {
+	my $c = scalar(%deps2);
+	if (!$c) {
 		$self->save_depends(\@live);
 		print {$self->{logfh}} "Avoided depends for ", 
 		    join(' ', @live), "\n";
-		return 0;
 	} else {
 		$self->{depends} = $dep;
-		return 1;
 	}
+	return $c;
 }
 
 my $logsize = {};
@@ -812,12 +812,15 @@ sub add_normal_tasks
 	if ($builder->{clean}) {
 		$self->insert_tasks(DPB::Task::Port::BaseClean->new('clean'));
 	}
+	$hostprop->{junk_count} //= 0;
 	if ($self->has_depends($core)) {
+		$hostprop->{junk_count}++;
 		push(@todo, qw(depends show-prepare-results));
 	}
+	# gc stuff we will no longer need
 	delete $self->{v}{info}{solved};
 	if ($hostprop->{junk}) {
-		if ($hostprop->{junk_count}++ >= $hostprop->{junk}) {
+		if ($hostprop->{junk_count} >= $hostprop->{junk}) {
 			push(@todo, 'junk');
 		}
 	}
