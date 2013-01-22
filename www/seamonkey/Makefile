@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.125 2013/01/21 16:06:19 landry Exp $
+# $OpenBSD: Makefile,v 1.126 2013/01/22 23:59:22 sthen Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
@@ -17,6 +17,7 @@ ENIG_V =		1.5.0
 PKGNAME-enigmail =	enigmail-seamonkey-${ENIG_V}
 EPOCH-lightning =	0
 EPOCH-enigmail =	0
+REVISION-main =		0
 REVISION-lightning =	0
 REVISION-enigmail =	0
 
@@ -47,9 +48,9 @@ MODPY_RUNDEP =	No
 # necessary glue to build with the correct compiler after fx 17
 MODULES +=		gcc4 lang/clang
 MODGCC4_VERSION =	4.6
-MODGCC4_ARCHS =		powerpc
+MODGCC4_ARCHS =		i386 powerpc
 MODGCC4_LANGS =		c c++
-MODCLANG_ARCHS =	i386 amd64
+MODCLANG_ARCHS =	amd64
 MODCLANG_LANGS =	c c++
 
 NO_REGRESS=	Yes

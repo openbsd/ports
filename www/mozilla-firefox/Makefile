@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.222 2013/01/19 23:50:16 landry Exp $
+# $OpenBSD: Makefile,v 1.223 2013/01/22 23:59:22 sthen Exp $
 
 COMMENT =	Mozilla web browser
 BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
@@ -7,6 +7,7 @@ BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
 # Don't forget to update devel/xulrunner/2.0 if patches changes.
 
 MOZILLA_VERSION =	18.0.1
+REVISION =		0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
@@ -34,9 +35,9 @@ MODPY_RUNDEP =	No
 # necessary glue to build with the correct compiler after fx 17
 MODULES +=		gcc4 lang/clang
 MODGCC4_VERSION =	4.6
-MODGCC4_ARCHS =		powerpc
+MODGCC4_ARCHS =		i386 powerpc
 MODGCC4_LANGS =		c c++
-MODCLANG_ARCHS =	i386 amd64
+MODCLANG_ARCHS =	amd64
 MODCLANG_LANGS =	c c++
 
 USE_GROFF =	Yes
