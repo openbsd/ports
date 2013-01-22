@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.141 2013/01/09 21:41:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.142 2013/01/22 14:30:46 sthen Exp $
 
 MULTI_PACKAGES=	-main -ntlm
 
@@ -10,6 +10,7 @@ COMMENT-ldap=	LDAP authentication/ACL support for Squid
 COMMENT-ntlm=	NTLM authentication/ACL support for Squid
 
 V=		3.2.6
+REVISION-main=	0
 
 DISTNAME=	squid-$V
 PKGNAME-main=	squid-$V
@@ -32,7 +33,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c m pthread stdc++
 
-WANTLIB-main=	${WANTLIB} asn1 crypto gssapi krb5 ssl
+WANTLIB-main=	${WANTLIB} asn1 crypto execinfo gssapi krb5 ssl
+
+LIB_DEPENDS-main= devel/libexecinfo
 
 SYSCONFDIR=	${BASESYSCONFDIR}/squid
 LOCALSTATEDIR=	${BASELOCALSTATEDIR}/squid
@@ -48,7 +51,9 @@ STOREIO=	aufs ufs diskd #coss rock
 
 SEPARATE_BUILD=	Yes
 AUTOCONF_VERSION= 2.68
-CONFIGURE_STYLE= autoconf
+AUTOMAKE_VERSION= 1.11
+BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} ${MODGNU_AUTOMAKE_DEPENDS}
+CONFIGURE_STYLE= gnu
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/cfgaux
 
 USE_GROFF=	Yes
@@ -82,6 +87,7 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--enable-referer-log \
 		--enable-removal-policies="lru heap" \
 		--enable-ssl \
+		--enable-stacktraces \
 		--enable-storeio="${STOREIO}" \
 		--with-default-user="_squid" \
 		--with-filedescriptors=8192 \
@@ -118,6 +124,9 @@ RUN_DEPENDS-ntlm= net/samba,ads ${BASE_PKGPATH}
 post-extract:
 	@cp ${FILESDIR}/krb5-config ${WRKDIR}/bin
 	@chmod a+x ${WRKDIR}/bin/krb5-config
+
+post-patch:
+	cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} LOCALBASE=${LOCALBASE} ./bootstrap.sh
 
 pre-build:
 	@cd ${WRKSRC}; \

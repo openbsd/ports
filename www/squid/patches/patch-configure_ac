@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.4 2012/12/17 18:56:56 sthen Exp $
---- configure.ac.orig	Mon Dec 10 09:54:50 2012
-+++ configure.ac	Mon Dec 17 18:56:23 2012
+$OpenBSD: patch-configure_ac,v 1.5 2013/01/22 14:30:46 sthen Exp $
+--- configure.ac.orig	Wed Jan  9 01:42:47 2013
++++ configure.ac	Tue Jan 22 12:58:39 2013
 @@ -566,6 +566,16 @@ for module in $squid_disk_module_candidates none; do
                fi
              fi
@@ -18,3 +18,21 @@ $OpenBSD: patch-configure_ac,v 1.4 2012/12/17 18:56:56 sthen Exp $
            solaris)
              if test "x$GCC" = "xyes" ; then
                SQUID_CFLAGS="$SQUID_CFLAGS -D_REENTRANT -pthreads"
+@@ -3112,9 +3122,16 @@ if test "x$squid_host_os" = "xmingw" ; then
+   ac_cv_func_statfs='yes'
+ fi
+ 
++dnl Some systems (mostly BSDs) require -lexecinfo for backtrace_symbols_fd()
++AC_CHECK_LIB(execinfo,backtrace_symbols_fd,[BACKTRACE_LIB="-lexecinfo"])
++oLIBS=$LIBS
++LIBS="$BACKTRACE_LIB"
++AC_CHECK_FUNCS(backtrace_symbols_fd)
++LIBS=$oLIBS
++AC_SUBST(BACKTRACE_LIB)
++
+ dnl Check for library functions
+ AC_CHECK_FUNCS(\
+-	backtrace_symbols_fd \
+ 	bcopy \
+ 	bswap_16 \
+ 	bswap_32 \
