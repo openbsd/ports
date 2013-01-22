@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.183 2013/01/07 11:37:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.184 2013/01/22 07:07:58 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,13 +6,10 @@ COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
 
 GNOME_PROJECT=		evolution
-GNOME_VERSION=		3.6.2
+GNOME_VERSION=		3.6.3
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}
-
-REVISION-main=		0
-REVISION-plugins=	0
 
 # NOTE: when R changes, increment EVO_VERSION accordingly and bump:
 # mail/evolution-ews
@@ -56,23 +53,23 @@ MODULES=		devel/dconf \
 			x11/gnome
 
 BUILD_DEPENDS=		devel/bison \
-			devel/gsettings-desktop-schemas>=3.6.0 \
+			devel/gsettings-desktop-schemas \
 			devel/iso-codes \
 			x11/gnome/icon-theme
 
 LIB_DEPENDS=		databases/evolution-data-server>=${GNOME_VERSION} \
 			devel/libnotify \
-			www/gtkhtml4>=3.6.0
+			www/gtkhtml4
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			audio/libcanberra,-gtk3 \
 			databases/openldap \
 			security/nss \
 			www/webkit,gtk3 \
-			x11/gnome/desktop>=3.6.0
+			x11/gnome/desktop
 
 RUN_DEPENDS-main=	${RUN_DEPENDS} \
-			devel/gsettings-desktop-schemas>=3.6.0 \
+			devel/gsettings-desktop-schemas \
 			x11/gnome/icon-theme
 
 # gstreamer1(-plugins-base) is needed for the audio-inline plugin
