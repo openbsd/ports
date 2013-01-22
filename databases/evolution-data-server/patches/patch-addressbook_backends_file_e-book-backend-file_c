@@ -1,10 +1,10 @@
-$OpenBSD: patch-addressbook_backends_file_e-book-backend-file_c,v 1.17 2012/11/11 18:10:01 ajacoutot Exp $
+$OpenBSD: patch-addressbook_backends_file_e-book-backend-file_c,v 1.18 2013/01/22 06:29:55 ajacoutot Exp $
 
 XXX remove when we have a 64-bit time_t
 
---- addressbook/backends/file/e-book-backend-file.c.orig	Wed Nov  7 13:32:10 2012
-+++ addressbook/backends/file/e-book-backend-file.c	Sun Nov 11 18:43:39 2012
-@@ -764,7 +764,7 @@ e_book_backend_file_create_unique_id (void)
+--- addressbook/backends/file/e-book-backend-file.c.orig	Sat Jan 19 18:35:45 2013
++++ addressbook/backends/file/e-book-backend-file.c	Tue Jan 22 07:02:16 2013
+@@ -765,7 +765,7 @@ e_book_backend_file_create_unique_id (void)
  	 * it's doubtful 2^32 id's will be created in a second, so we
  	 * should be okay. */
  	static guint c = 0;

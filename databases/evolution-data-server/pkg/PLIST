@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2012/11/06 08:35:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.34 2013/01/22 06:29:55 ajacoutot Exp $
 include/evolution-data-server-${R}/
 include/evolution-data-server-${R}/camel/
 include/evolution-data-server-${R}/camel/camel-address.h
@@ -410,6 +410,7 @@ share/gtk-doc/html/camel/CamelFolderSearch.html
 share/gtk-doc/html/camel/CamelFolderSummary.html
 share/gtk-doc/html/camel/CamelGpgContext.html
 share/gtk-doc/html/camel/CamelIMAPXConnManager.html
+share/gtk-doc/html/camel/CamelIMAPXFolder.html
 share/gtk-doc/html/camel/CamelIMAPXServer.html
 share/gtk-doc/html/camel/CamelIMAPXSettings.html
 share/gtk-doc/html/camel/CamelIMAPXStore.html
@@ -519,7 +520,6 @@ share/gtk-doc/html/camel/api-index-deprecated.html
 share/gtk-doc/html/camel/api-index-full.html
 share/gtk-doc/html/camel/camel-CamelDB.html
 share/gtk-doc/html/camel/camel-CamelIMAPXCommand.html
-share/gtk-doc/html/camel/camel-CamelIMAPXFolder.html
 share/gtk-doc/html/camel/camel-CamelIMAPXJob.html
 share/gtk-doc/html/camel/camel-CamelLocalSettings.html
 share/gtk-doc/html/camel/camel-CamelMsgPort.html
