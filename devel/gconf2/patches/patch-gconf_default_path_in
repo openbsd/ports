@@ -1,6 +1,6 @@
-$OpenBSD: patch-gconf_default_path_in,v 1.7 2011/04/04 13:14:45 ajacoutot Exp $
---- gconf/default.path.in.orig	Mon Apr  4 13:52:07 2011
-+++ gconf/default.path.in	Mon Apr  4 14:56:36 2011
+$OpenBSD: patch-gconf_default_path_in,v 1.8 2013/01/22 06:10:28 ajacoutot Exp $
+--- gconf/default.path.in.orig	Thu Apr 26 03:12:49 2012
++++ gconf/default.path.in	Tue Jan 22 07:03:47 2013
 @@ -6,12 +6,12 @@
  # See the GConf manual for details
  
@@ -15,9 +15,9 @@ $OpenBSD: patch-gconf_default_path_in,v 1.7 2011/04/04 13:14:45 ajacoutot Exp $
 +include /var/db/gconf/2/local-mandatory.path
  
  # Now see where users want us to look - basically the user can stick arbitrary 
- # sources in a ~/.gconf.path file and they're inserted here
-@@ -21,15 +21,15 @@ include "$(HOME)/.gconf.path"
- xml:readwrite:$(HOME)/.gconf
+ # sources in a ~/.config/gconf.path file and they're inserted here
+@@ -24,15 +24,15 @@ include "$(HOME)/.gconf.path"
+ xml:readwrite:$(DEFAULTUSERSOURCE)
  
  # Location for system-wide settings that are set by the defaults mechanism
 -xml:readonly:@sysgconfdir@/gconf.xml.system
