@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2012/12/29 18:28:49 fgsch Exp $
+# $OpenBSD: Makefile,v 1.10 2013/01/22 16:07:57 stsp Exp $
 
 COMMENT =		Python HTTP client library
 
 MODPY_EGG_VERSION =	0.7.7
+REVISION = 		0
 DISTNAME =		httplib2-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -31,6 +32,8 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}httplib2
 	${INSTALL_DATA} ${WRKSRC}/README \
 	    ${PREFIX}/share/doc/${MODPY_PY_PREFIX}httplib2
+	ln -sf /etc/ssl/cert.pem \
+	    ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/httplib2/cacerts.txt
 
 do-regress:
 	${MODPY_BIN} ${WRKSRC}/python${MODPY_MAJOR_VERSION}/httplib2test.py
