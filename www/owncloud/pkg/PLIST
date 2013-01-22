@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2012/12/20 15:18:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2013/01/22 12:08:01 ajacoutot Exp $
 @extra owncloud/config/config.php
 owncloud/
 owncloud/.htaccess.dist
@@ -2287,26 +2287,6 @@ owncloud/apps/media/templates/
 owncloud/apps/media/templates/music.php
 owncloud/apps/media/templates/player.php
 owncloud/apps/media/templates/settings.php
-owncloud/apps/remoteStorage/
-owncloud/apps/remoteStorage/BearerAuth.php
-owncloud/apps/remoteStorage/ajax/
-owncloud/apps/remoteStorage/ajax/revokeToken.php
-owncloud/apps/remoteStorage/appinfo/
-owncloud/apps/remoteStorage/appinfo/app.php
-owncloud/apps/remoteStorage/appinfo/database.xml
-owncloud/apps/remoteStorage/appinfo/info.xml
-owncloud/apps/remoteStorage/appinfo/version
-owncloud/apps/remoteStorage/appinfo/webfinger.php
-owncloud/apps/remoteStorage/auth.php
-owncloud/apps/remoteStorage/img/
-owncloud/apps/remoteStorage/img/remoteStorage.png
-owncloud/apps/remoteStorage/lib_remoteStorage.php
-owncloud/apps/remoteStorage/oauth_ro_auth.php
-owncloud/apps/remoteStorage/settings.php
-owncloud/apps/remoteStorage/templates/
-owncloud/apps/remoteStorage/templates/auth.php
-owncloud/apps/remoteStorage/templates/settings.php
-owncloud/apps/remoteStorage/webdav.php
 owncloud/apps/tasks/
 owncloud/apps/tasks/ajax/
 owncloud/apps/tasks/ajax/addtask.php
