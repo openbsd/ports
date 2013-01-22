@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2013/01/07 14:34:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2013/01/22 08:31:34 landry Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,6 +11,8 @@ EXTRACT_SUFX=	.tar.xz
 
 PKGNAME-main=	gtk+3-${V}
 PKGNAME-cups=	gtk+3-cups-${V}
+REVISION-main =	0
+REVISION-cups =	0
 
 # grep ^GTK_BINARY_VERSION ${WRKSRC}/Makefile (after do-configure)
 GTK_BINARY_VERSION=3.0.0
@@ -95,7 +97,8 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 # sync archs list with devel/spidermonkey
 # colord depends on polkit which depends on spidermonkey
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64" || \
-    ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "sparc64"
+    ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "sparc64" || \
+    ${MACHINE_ARCH} == "mips64el" || ${MACHINE_ARCH} == "mips64"
 LIB_DEPENDS-cups += graphics/colord
 WANTLIB-cups +=	colord lcms2
 .else
