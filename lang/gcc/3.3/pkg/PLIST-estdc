@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST-estdc,v 1.3 2012/05/04 08:47:55 pascal Exp $
-@option no-default-conflict
-@conflict libstdc++->=3.3,<3.4
-@pkgpath lang/egcs/stable,-estdc
-%%SHARED%%
