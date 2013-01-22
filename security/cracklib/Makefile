@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2011/09/16 11:41:38 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/01/22 16:49:51 benoit Exp $
 
 COMMENT =		sensible unix password cracker
 
-DISTNAME =		cracklib-2.8.18
-REVISION =		1
-SHARED_LIBS =		crack	0.1	# .10.1
+DISTNAME =		cracklib-2.8.22
+SHARED_LIBS =		crack	0.2	# .10.1
 CATEGORIES =		security
 
 HOMEPAGE =		http://sourceforge.net/projects/cracklib/

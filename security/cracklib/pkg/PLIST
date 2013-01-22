@@ -1,15 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/10/31 09:51:39 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/01/22 16:49:53 benoit Exp $
 %%SHARED%%
 include/crack.h
 include/packer.h
 lib/libcrack.a
 lib/libcrack.la
-lib/python${MODPY_VERSION}/site-packages/_cracklibmodule.a
-lib/python${MODPY_VERSION}/site-packages/_cracklibmodule.la
-lib/python${MODPY_VERSION}/site-packages/_cracklibmodule.so
+lib/python${MODPY_VERSION}/site-packages/_cracklib.a
+lib/python${MODPY_VERSION}/site-packages/_cracklib.la
+lib/python${MODPY_VERSION}/site-packages/_cracklib.so
 lib/python${MODPY_VERSION}/site-packages/cracklib.py
 lib/python${MODPY_VERSION}/site-packages/cracklib.pyc
 lib/python${MODPY_VERSION}/site-packages/cracklib.pyo
+lib/python${MODPY_VERSION}/site-packages/test_cracklib.py
+lib/python${MODPY_VERSION}/site-packages/test_cracklib.pyc
+lib/python${MODPY_VERSION}/site-packages/test_cracklib.pyo
 @bin sbin/cracklib-check
 sbin/cracklib-format
 @bin sbin/cracklib-packer
