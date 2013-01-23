@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.155 2013/01/05 18:13:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.156 2013/01/23 09:36:30 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,7 +11,8 @@ DISTNAME=	gtk+-${V}
 PKGNAME-main=	gtk+2-${V}
 PKGNAME-guic=	gtk-update-icon-cache-${V}
 
-REVISION-main=	1
+REVISION-main=	2
+REVISION-guic=	0
 
 CATEGORIES=	x11 devel
 
@@ -40,37 +41,35 @@ MULTI_PACKAGES=	-main -guic
 MODULES=	devel/gettext \
 		lang/python
 
+BUILD_DEPENDS=	devel/gobject-introspection
+LIB_DEPENDS=	graphics/gdk-pixbuf2
+
 RUN_DEPENDS-main= ${RUN_DEPENDS} \
 		${BASE_PKGPATH},-guic \
-		x11/hicolor-icon-theme \
-		misc/shared-mime-info
+		x11/hicolor-icon-theme
 
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		devel/glib2 \
 		devel/pango \
 		devel/atk \
-		graphics/gdk-pixbuf2 \
 		print/cups,-libs
 
 WANTLIB-main += ${WANTLIB} c pthread glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB-main += gio-2.0 pango-1.0 pangocairo-1.0 pangoft2-1.0 atk-1.0
 WANTLIB-main += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB-main += Xi Xinerama Xrandr Xrender Xxf86vm cairo drm expat
-WANTLIB-main += fontconfig freetype pixman-1 pthread-stubs stdc++ xcb
+WANTLIB-main += Xi Xinerama Xrandr Xrender cairo expat dbus-1 icuuc
+WANTLIB-main += fontconfig freetype pixman-1 pthread-stubs xcb icule
 WANTLIB-main += xcb-render xcb-shm png asn1 crypto cups gssapi krb5 ssl
-WANTLIB-main += harfbuzz icudata icule icuuc avahi-client avahi-common
-WANTLIB-main += dbus-1
+WANTLIB-main += harfbuzz icudata avahi-client avahi-common
 
 # python is only used by gtk-builder-convert, so let's not enforce the
 # dependency
 MODPY_BUILDDEP=	No
 MODPY_RUNDEP=	No
 
-BUILD_DEPENDS=	devel/gobject-introspection
-
 RUN_DEPENDS-guic= ${RUN_DEPENDS} \
 		x11/hicolor-icon-theme
-LIB_DEPENDS-guic= graphics/gdk-pixbuf2
+
 WANTLIB-guic += ${WANTLIB}
 WANTLIB-guic += c pthread
 
