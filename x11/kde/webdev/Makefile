@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2012/11/18 17:05:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.41 2013/01/23 21:10:38 zhuk Exp $
 
 COMMENT = 		web development tool
 CATEGORIES =		x11 x11/kde
@@ -9,7 +9,7 @@ SHARED_LIBS +=	kommanderplugin      1.0      # .0.0
 SHARED_LIBS +=	kommanderwidget      1.0      # .0.0
 SHARED_LIBS +=	kommanderwidgets     1.0      # .0.0
 
-REVISION =	7
+REVISION =	8
 
 MODULES =	x11/kde devel/gettext
 

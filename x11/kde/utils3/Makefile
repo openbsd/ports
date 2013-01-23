@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2012/06/15 08:30:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2013/01/23 21:10:38 zhuk Exp $
 
 COMMENT = 		K Desktop Environment, utilities
 CATEGORIES =		x11 x11/kde
@@ -25,7 +25,7 @@ LIB_DEPENDS =	x11/kde/libs3 \
 
 SEPARATE_BUILD =	flavored
 
-REVISION = 10
+REVISION = 11
 WANTLIB = ICE SM X11 Xau Xdmcp Xext Xi Xrender Xss Xtst art_lgpl_2 c crypto \
 	fam gdk glib gmodule gmp gtk idn jpeg kvm lib/kde3/DCOP lib/kde3/kabc \
 	lib/kde3/kdecore>=6 lib/kde3/kdefx lib/kde3/kdeprint lib/kde3/kdesu \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2012/06/15 08:30:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2013/01/23 21:10:38 zhuk Exp $
 @conflict quanta-*
 @pkgpath x11/kde/quanta
 @bin bin/kfilereplace
@@ -10,11 +10,11 @@
 @bin bin/kxsldbg
 @bin bin/quanta
 @bin bin/xsldbg
-include/kommander_export.h
-include/kommanderfactory.h
-include/kommanderplugin.h
-include/kommanderwidget.h
-include/specials.h
+include/kde/kommander_export.h
+include/kde/kommanderfactory.h
+include/kde/kommanderplugin.h
+include/kde/kommanderwidget.h
+include/kde/specials.h
 ${KDE}/libkfilereplacepart.la
 ${KDE}/libkfilereplacepart.so
 ${KDE}/libkimagemapeditor.la

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2013/01/12 11:21:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2013/01/23 21:10:38 zhuk Exp $
 @pkgpath x11/kde/sdk3
 bin/adddebug
 bin/build-progress.sh
@@ -79,34 +79,34 @@ bin/svnversions
 @bin bin/umbrello
 @bin bin/xml2pot
 bin/zonetab2pot.py
-include/cvsjob_stub.h
-include/cvsservice_stub.h
-include/kbabel/
-include/kbabel/catalog.h
-include/kbabel/catalogfileplugin.h
-include/kbabel/catalogitem.h
-include/kbabel/catalogsettings.h
-include/kbabel/catalogview.h
-include/kbabel/dictchooser.h
-include/kbabel/dictionarymenu.h
-include/kbabel/editcmd.h
-include/kbabel/findoptions.h
-include/kbabel/itempart.h
-include/kbabel/kbabeldatatool.h
-include/kbabel/kbabeldictbox.h
-include/kbabel/kbabeldictiface.h
-include/kbabel/kbproject.h
-include/kbabel/kbprojectmanager.h
-include/kbabel/msgfmt.h
-include/kbabel/poinfo.h
-include/kbabel/projectsettings.h
-include/kbabel/regexpextractor.h
-include/kbabel/searchengine.h
-include/kbabel/tagextractor.h
-include/kprofilemethod.h
-include/kspy.h
-include/kunittest/runnergui.h
-include/repository_stub.h
+include/kde/cvsjob_stub.h
+include/kde/cvsservice_stub.h
+include/kde/kbabel/
+include/kde/kbabel/catalog.h
+include/kde/kbabel/catalogfileplugin.h
+include/kde/kbabel/catalogitem.h
+include/kde/kbabel/catalogsettings.h
+include/kde/kbabel/catalogview.h
+include/kde/kbabel/dictchooser.h
+include/kde/kbabel/dictionarymenu.h
+include/kde/kbabel/editcmd.h
+include/kde/kbabel/findoptions.h
+include/kde/kbabel/itempart.h
+include/kde/kbabel/kbabeldatatool.h
+include/kde/kbabel/kbabeldictbox.h
+include/kde/kbabel/kbabeldictiface.h
+include/kde/kbabel/kbproject.h
+include/kde/kbabel/kbprojectmanager.h
+include/kde/kbabel/msgfmt.h
+include/kde/kbabel/poinfo.h
+include/kde/kbabel/projectsettings.h
+include/kde/kbabel/regexpextractor.h
+include/kde/kbabel/searchengine.h
+include/kde/kbabel/tagextractor.h
+include/kde/kprofilemethod.h
+include/kde/kspy.h
+include/kde/kunittest/runnergui.h
+include/kde/repository_stub.h
 ${KDE}/cervisia.la
 ${KDE}/cervisia.so
 ${KDE}/cvsaskpass.la

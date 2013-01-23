@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2012/06/15 08:30:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2013/01/23 21:10:38 zhuk Exp $
 
 COMMENT = 		some useless KDE applications
 CATEGORIES =		x11 x11/kde games
@@ -14,7 +14,7 @@ LIB_DEPENDS = 		x11/kde/libs3
 
 SEPARATE_BUILD =	flavored
 
-REVISION = 7
+REVISION = 8
 WANTLIB = ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c fam idn jpeg \
 	lib/kde3/DCOP lib/kde3/kdecore>=6 lib/kde3/kdefx lib/kde3/kdeprint \
 	lib/kde3/kdesu lib/kde3/kdeui lib/kde3/khtml lib/kde3/kio lib/kde3/kjs \

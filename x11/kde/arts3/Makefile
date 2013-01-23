@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2012/09/01 14:37:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.77 2013/01/23 21:10:37 zhuk Exp $
 
 COMMENT =		K Desktop Environment, aRTs
 CATEGORIES =		x11 x11/kde
@@ -38,7 +38,7 @@ CONFIGURE_ARGS +=	${ENABLE_SHARED} \
 			--without-jack \
 			--without-esd
 
-REVISION =	6
+REVISION =	7
 WANTLIB = ICE SM X11 Xext audiofile c glib-2.0 gmodule-2.0 \
 	gthread-2.0 jpeg m mad ogg pcre png pthread sndio stdc++ \
 	vorbis vorbisenc vorbisfile xcb z mng Xrender Xt Xxf86vm \

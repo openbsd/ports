@@ -1,6 +1,24 @@
-$OpenBSD: patch-acinclude_m4,v 1.2 2011/07/06 15:01:13 dcoppa Exp $
---- acinclude.m4.orig	Wed Aug 20 18:00:01 2008
-+++ acinclude.m4	Wed Jul  6 16:58:17 2011
+$OpenBSD: patch-acinclude_m4,v 1.3 2013/01/23 21:10:38 zhuk Exp $
+--- acinclude.m4.orig	Wed Aug 20 19:37:50 2008
++++ acinclude.m4	Thu Nov 22 00:17:24 2012
+@@ -1809,7 +1809,7 @@ AC_CACHE_VAL(ac_cv_have_kde,
+ 
+ if test "$kde_qtver" = 1; then
+   kde_check_header="ksock.h"
+-  kde_check_lib="libkdecore.la"
++  kde_check_lib="libkonsolepart.la"
+ else
+   kde_check_header="ksharedptr.h"
+   kde_check_lib="libkio.la"
+@@ -1830,7 +1830,7 @@ So, check this please and use another prefix!])
+ fi
+ 
+ kde_libdirs="$kde_libs_prefix/lib${kdelibsuff} /usr/lib/kde/lib${kdelibsuff} /usr/local/kde/lib${kdelibsuff} /usr/kde/lib${kdelibsuff} /usr/lib${kdelibsuff}/kde /usr/lib${kdelibsuff}/kde3 /usr/lib${kdelibsuff} /usr/X11R6/lib${kdelibsuff} /usr/local/lib${kdelibsuff} /opt/kde3/lib${kdelibsuff} /opt/kde/lib${kdelibsuff} /usr/X11R6/kde/lib${kdelibsuff}"
+-test -n "$KDEDIR" && kde_libdirs="$KDEDIR/lib${kdelibsuff} $KDEDIR $kde_libdirs"
++test -n "$KDEDIR" && kde_libdirs="$KDEDIR/lib${kdelibsuff}/kde3 $KDEDIR/lib${kdelibsuff} $KDEDIR $kde_libdirs"
+ kde_libdirs="$ac_kde_libraries $libdir $kde_libdirs"
+ AC_FIND_FILE($kde_check_lib, $kde_libdirs, kde_libdir)
+ ac_kde_libraries="$kde_libdir"
 @@ -4419,7 +4419,10 @@ AC_DEFUN([KDE_CHECK_LIBPTHREAD],
  
    dnl Un-special-case for FreeBSD.

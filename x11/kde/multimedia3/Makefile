@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2013/01/14 12:35:19 zhuk Exp $
+# $OpenBSD: Makefile,v 1.76 2013/01/23 21:10:38 zhuk Exp $
 
 COMMENT = 		K Desktop Environment, multimedia applications
 CATEGORIES =		x11 x11/kde
@@ -60,7 +60,7 @@ SEPARATE_BUILD =	flavored
 CONFIGURE_ARGS +=	--without-lame
 CONFIGURE_ENV +=	aktion_has_xanim=yes
 
-REVISION =	11
+REVISION =	12
 WANTLIB = FLAC>=8 ICE SM X11 Xau Xdmcp Xext Xrender Xv Xxf86dga Xxf86vm akode \
 	art_lgpl_2 audiofile c cdda_interface cdda_paranoia expat fam \
 	fontconfig freetype glib-2.0 gmodule-2.0 gobject-2.0 gstreamer-0.10 \

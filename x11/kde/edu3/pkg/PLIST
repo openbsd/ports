@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.36 2012/06/15 08:30:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.37 2013/01/23 21:10:37 zhuk Exp $
 @bin bin/apmount
 @bin bin/blinken
 @bin bin/celestrongps
@@ -35,21 +35,21 @@ bin/pykig.py
 @bin bin/skycommander
 @bin bin/spotlight2kvtml
 @bin bin/temma
-include/kstarsinterface.h
-include/libkdeedu/
-include/libkdeedu/kdeeduglossary.h
-include/libkdeedu/keduvocdata.h
-include/libkdeedu/kplotaxis.h
-include/libkdeedu/kplotobject.h
-include/libkdeedu/kplotwidget.h
-include/libkiten/
-include/libkiten/asyndeta.h
-include/libkiten/deinf.h
-include/libkiten/dict.h
-include/libkiten/kromajiedit.h
-include/libkiten/rad.h
-include/libkiten/widgets.h
-include/simclockinterface.h
+include/kde/kstarsinterface.h
+include/kde/libkdeedu/
+include/kde/libkdeedu/kdeeduglossary.h
+include/kde/libkdeedu/keduvocdata.h
+include/kde/libkdeedu/kplotaxis.h
+include/kde/libkdeedu/kplotobject.h
+include/kde/libkdeedu/kplotwidget.h
+include/kde/libkiten/
+include/kde/libkiten/asyndeta.h
+include/kde/libkiten/deinf.h
+include/kde/libkiten/dict.h
+include/kde/libkiten/kromajiedit.h
+include/kde/libkiten/rad.h
+include/kde/libkiten/widgets.h
+include/kde/simclockinterface.h
 ${KDE}/kfile_drgeo.la
 ${KDE}/kfile_drgeo.so
 ${KDE}/kfile_kig.la

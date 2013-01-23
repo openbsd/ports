@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2012/06/15 08:30:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.30 2013/01/23 21:10:38 zhuk Exp $
 @bin bin/ark
 @bin bin/irkick
 @bin bin/kcalc
@@ -17,22 +17,22 @@
 @bin bin/kwalletmanager
 @bin bin/kwikdisk
 @bin bin/superkaramba
-include/kmultiformlistbox.h
-include/kmultiformlistboxentry.h
-include/kmultiformlistboxfactory.h
-include/ksim/
-include/ksim/chart.h
-include/ksim/common.h
-include/ksim/ksimconfig.h
-include/ksim/label.h
-include/ksim/led.h
-include/ksim/pluginglobal.h
-include/ksim/pluginloader.h
-include/ksim/pluginmodule.h
-include/ksim/progress.h
-include/ksim/themeloader.h
-include/ksim/themetypes.h
-include/kwidgetstreamer.h
+include/kde/kmultiformlistbox.h
+include/kde/kmultiformlistboxentry.h
+include/kde/kmultiformlistboxfactory.h
+include/kde/ksim/
+include/kde/ksim/chart.h
+include/kde/ksim/common.h
+include/kde/ksim/ksimconfig.h
+include/kde/ksim/label.h
+include/kde/ksim/led.h
+include/kde/ksim/pluginglobal.h
+include/kde/ksim/pluginloader.h
+include/kde/ksim/pluginmodule.h
+include/kde/ksim/progress.h
+include/kde/ksim/themeloader.h
+include/kde/ksim/themetypes.h
+include/kde/kwidgetstreamer.h
 ${KDE}/ark.la
 ${KDE}/ark.so
 ${KDE}/irkick.la

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2012/06/15 08:30:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2013/01/23 21:10:37 zhuk Exp $
 @unexec-delete rm -f %D/share/icons/mono/icon-theme.cache
 @bin bin/kmag
 @bin bin/kmousetool
@@ -6,7 +6,7 @@
 @bin bin/ksayit
 @bin bin/kttsd
 @bin bin/kttsmgr
-include/ksayit_fxplugin.h
+include/kde/ksayit_fxplugin.h
 ${KDE}/kbstate_panelapplet.la
 ${KDE}/kbstate_panelapplet.so
 ${KDE}/kcm_kttsd.la

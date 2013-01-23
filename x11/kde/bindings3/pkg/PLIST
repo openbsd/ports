@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2013/01/15 17:31:18 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.27 2013/01/23 21:10:37 zhuk Exp $
 @bin bin/embedjs
 @bin bin/jsaccess
 @bin bin/kjscmd
@@ -10,34 +10,34 @@ bin/rbkdesh
 bin/rbqtapi
 bin/rbqtsh
 @bin bin/rbuic
-include/kjsembed/
-include/kjsembed/customobject_imp.h
-include/kjsembed/global.h
-include/kjsembed/jsbinding.h
-include/kjsembed/jsbindingplugin.h
-include/kjsembed/jsbuiltin.h
-include/kjsembed/jsbuiltin_imp.h
-include/kjsembed/jsconsolewidget.h
-include/kjsembed/jseventmapper.h
-include/kjsembed/jseventutils.h
-include/kjsembed/jsfactory.h
-include/kjsembed/jsfactory_imp.h
-include/kjsembed/jsobjecteventproxy.h
-include/kjsembed/jsobjectproxy.h
-include/kjsembed/jsobjectproxy_imp.h
-include/kjsembed/jsopaqueproxy.h
-include/kjsembed/jsopaqueproxy_imp.h
-include/kjsembed/jsproxy.h
-include/kjsembed/jsproxy_imp.h
-include/kjsembed/jssecuritypolicy.h
-include/kjsembed/jsvalueproxy.h
-include/kjsembed/jsvalueproxy_imp.h
-include/kjsembed/kjsembedpart.h
-include/kjsembed/kjsembedpart_imp.h
-include/kjsembed/slotproxy.h
-include/kjsembed/slotutils.h
-include/kjsembed/xmlactionclient.h
-include/smoke.h
+include/kde/kjsembed/
+include/kde/kjsembed/customobject_imp.h
+include/kde/kjsembed/global.h
+include/kde/kjsembed/jsbinding.h
+include/kde/kjsembed/jsbindingplugin.h
+include/kde/kjsembed/jsbuiltin.h
+include/kde/kjsembed/jsbuiltin_imp.h
+include/kde/kjsembed/jsconsolewidget.h
+include/kde/kjsembed/jseventmapper.h
+include/kde/kjsembed/jseventutils.h
+include/kde/kjsembed/jsfactory.h
+include/kde/kjsembed/jsfactory_imp.h
+include/kde/kjsembed/jsobjecteventproxy.h
+include/kde/kjsembed/jsobjectproxy.h
+include/kde/kjsembed/jsobjectproxy_imp.h
+include/kde/kjsembed/jsopaqueproxy.h
+include/kde/kjsembed/jsopaqueproxy_imp.h
+include/kde/kjsembed/jsproxy.h
+include/kde/kjsembed/jsproxy_imp.h
+include/kde/kjsembed/jssecuritypolicy.h
+include/kde/kjsembed/jsvalueproxy.h
+include/kde/kjsembed/jsvalueproxy_imp.h
+include/kde/kjsembed/kjsembedpart.h
+include/kde/kjsembed/kjsembedpart_imp.h
+include/kde/kjsembed/slotproxy.h
+include/kde/kjsembed/slotutils.h
+include/kde/kjsembed/xmlactionclient.h
+include/kde/smoke.h
 ${KDE}/libcustomobjectplugin.la
 ${KDE}/libcustomobjectplugin.so
 ${KDE}/libcustomqobjectplugin.la
@@ -61,7 +61,9 @@ lib/libsmokekde.la
 @lib lib/libsmokekde.so.${LIBsmokekde_VERSION}
 lib/libsmokeqt.la
 @lib lib/libsmokeqt.so.${LIBsmokeqt_VERSION}
+lib/python2.5/
 lib/python2.5/pydcop.py
+lib/python2.5/site-packages/
 lib/python2.5/site-packages/pcop.la
 lib/python2.5/site-packages/pcop.so
 ${MODRUBY_SITEDIR}/KDE/
