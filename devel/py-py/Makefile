@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2012/06/27 19:09:50 rpointel Exp $
+# $OpenBSD: Makefile,v 1.16 2013/01/23 11:44:37 benoit Exp $
 
 COMMENT=		cross-python path, ini-parsing, io, code, log facilities
 
-MODPY_EGG_VERSION=	1.4.7
+MODPY_EGG_VERSION =	1.4.12
 DISTNAME=		py-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION =		0
 
 EXTRACT_SUFX=		.zip
 
