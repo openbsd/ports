@@ -1,39 +1,22 @@
-$OpenBSD: patch-configure,v 1.6 2012/02/28 00:20:41 jeremy Exp $
+$OpenBSD: patch-configure,v 1.7 2013/01/23 18:18:41 jeremy Exp $
 
-Fix so name, checking for DOT and DOXYGEN.
+Fix so name.
 
 Override the arch setting to remove OpenBSD version from it,
 so ports don't have to be bumped when OpenBSD version changes.
 
---- configure.orig	Thu Feb 16 01:04:54 2012
-+++ configure	Thu Feb 16 08:18:24 2012
-@@ -15563,13 +15563,13 @@ fi
- if test x"$enable_pthread" = xyes; then
-     for pthread_lib in thr pthread pthreads c c_r root; do
- 	as_ac_Lib=`$as_echo "ac_cv_lib_$pthread_lib''_pthread_kill" | $as_tr_sh`
--{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_kill in -l$pthread_lib" >&5
--$as_echo_n "checking for pthread_kill in -l$pthread_lib... " >&6; }
-+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_kill in -$pthread_lib" >&5
-+$as_echo_n "checking for pthread_kill in -$pthread_lib... " >&6; }
- if eval \${$as_ac_Lib+:} false; then :
-   $as_echo_n "(cached) " >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-l$pthread_lib  $LIBS"
-+LIBS="-$pthread_lib  $LIBS"
- cat confdefs.h - <<_ACEOF >conftest.$ac_ext
- /* end confdefs.h.  */
- 
-@@ -16633,7 +16633,7 @@ case "$enable_shared" in #(
-   openbsd*) :
- 
+--- configure.orig	Wed Jan 16 20:57:31 2013
++++ configure	Thu Jan 17 08:59:36 2013
+@@ -39481,7 +39481,7 @@ _ACEOF
+ 	 ;;
+   openbsd*)
  	SOLIBS='$(LIBS)'
 -	LIBRUBY_SO='lib$(RUBY_SO_NAME).so.$(MAJOR).'`expr ${MINOR} \* 10 + ${TEENY}`
 +	LIBRUBY_SO='lib$(RUBY_SO_NAME).so.'${LIBruby19_VERSION}
- 	 ;; #(
-   solaris*) :
- 
-@@ -17455,7 +17455,10 @@ _ACEOF
+ 	 ;;
+   solaris*)
+ 	SOLIBS='$(LIBS)'
+@@ -40500,7 +40500,10 @@ _ACEOF
  _ACEOF
  
  else

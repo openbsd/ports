@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ri_docs,v 1.4 2012/10/24 22:49:05 jeremy Exp $
+@comment $OpenBSD: PLIST-ri_docs,v 1.5 2013/01/23 18:18:41 jeremy Exp $
 @option no-default-conflict
 @conflict ruby-ri_docs->=1.9,<1.10
 share/ri/${RUBYLIBREV}/system/ACL/
@@ -27,9 +27,11 @@ share/ri/${RUBYLIBREV}/system/ARGF/cdesc-ARGF.ri
 share/ri/${RUBYLIBREV}/system/ARGF/chars-i.ri
 share/ri/${RUBYLIBREV}/system/ARGF/close-i.ri
 share/ri/${RUBYLIBREV}/system/ARGF/closed%3f-i.ri
+share/ri/${RUBYLIBREV}/system/ARGF/codepoints-i.ri
 share/ri/${RUBYLIBREV}/system/ARGF/each-i.ri
 share/ri/${RUBYLIBREV}/system/ARGF/each_byte-i.ri
 share/ri/${RUBYLIBREV}/system/ARGF/each_char-i.ri
+share/ri/${RUBYLIBREV}/system/ARGF/each_codepoint-i.ri
 share/ri/${RUBYLIBREV}/system/ARGF/each_line-i.ri
 share/ri/${RUBYLIBREV}/system/ARGF/eof%3f-i.ri
 share/ri/${RUBYLIBREV}/system/ARGF/eof-i.ri
@@ -6220,6 +6222,7 @@ share/ri/${RUBYLIBREV}/system/Object/is_a%3f-i.ri
 share/ri/${RUBYLIBREV}/system/Object/kind_of%3f-i.ri
 share/ri/${RUBYLIBREV}/system/Object/ln-i.ri
 share/ri/${RUBYLIBREV}/system/Object/method-i.ri
+share/ri/${RUBYLIBREV}/system/Object/methods-i.ri
 share/ri/${RUBYLIBREV}/system/Object/mkdir-i.ri
 share/ri/${RUBYLIBREV}/system/Object/mkmf-i.ri
 share/ri/${RUBYLIBREV}/system/Object/mv-i.ri
@@ -6227,8 +6230,11 @@ share/ri/${RUBYLIBREV}/system/Object/nil%3f-i.ri
 share/ri/${RUBYLIBREV}/system/Object/object_id-i.ri
 share/ri/${RUBYLIBREV}/system/Object/pretty_print-i.ri
 share/ri/${RUBYLIBREV}/system/Object/pretty_print_cycle-i.ri
+share/ri/${RUBYLIBREV}/system/Object/private_methods-i.ri
+share/ri/${RUBYLIBREV}/system/Object/protected_methods-i.ri
 share/ri/${RUBYLIBREV}/system/Object/psych_to_yaml-i.ri
 share/ri/${RUBYLIBREV}/system/Object/public_method-i.ri
+share/ri/${RUBYLIBREV}/system/Object/public_methods-i.ri
 share/ri/${RUBYLIBREV}/system/Object/public_send-i.ri
 share/ri/${RUBYLIBREV}/system/Object/remove_instance_variable-i.ri
 share/ri/${RUBYLIBREV}/system/Object/respond_to%3f-i.ri
