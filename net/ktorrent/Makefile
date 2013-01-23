@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2011/09/16 11:13:38 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2013/01/23 21:45:08 zhuk Exp $
 
 SHARED_ONLY=	Yes
 
@@ -48,7 +48,7 @@ USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 MODGNU_CONFIG_GUESS_DIRS= ${MODKDE_CONFIG_GUESS_DIRS}
 CONFIGURE_ARGS=	${MODKDE_CONFIGURE_ARGS}
-CONFIGURE_ARGS+= --with-extra-includes=${LOCALBASE}/include/sigc++-2.0:${LOCALBASE}/lib/sigc++-2.0/include
+CONFIGURE_ARGS+= --with-extra-includes=${LOCALBASE}/include/sigc++-2.0:${LOCALBASE}/lib/sigc++-2.0/include:${LOCALBASE}/include
 CONFIGURE_ENV=	${MODKDE_CONFIGURE_ENV}
 
 .include <bsd.port.mk>

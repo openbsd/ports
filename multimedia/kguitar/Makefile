@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2012/08/27 09:34:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2013/01/23 21:44:10 zhuk Exp $
 
 COMMENT =		guitar tab editor
 
@@ -38,6 +38,8 @@ CONFIGURE_ARGS +=	--disable-midisupport \
 			--with-qt-includes="${LOCALBASE}/include/X11/qt3" \
 			--with-extra-libs="${LOCALBASE}/lib" \
 			--with-extra-includes="${LOCALBASE}/include/libpng"
+
+CONFIGURE_ENV =		KDEDIR=${LOCALBASE}
 
 PORTHOME=		${WRKDIR}
 
