@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2011/09/16 09:24:51 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2013/01/23 21:17:30 zhuk Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	graphical debugger for KDE
@@ -29,5 +29,6 @@ USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= autoconf autoheader
 CONFIGURE_ARGS+= ${MODKDE_CONFIGURE_ARGS}
 CONFIGURE_ARGS+= --with-kde-version=3
+CONFIGURE_ENV=	KDEDIR=${LOCALBASE}
 
 .include <bsd.port.mk>

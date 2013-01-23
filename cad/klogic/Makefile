@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2011/11/01 19:00:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2013/01/23 21:16:30 zhuk Exp $
 
 SHARED_ONLY=	Yes
 COMMENT= 	logic circuit simulator for KDE
@@ -24,6 +24,7 @@ WANTLIB += stdc++ util xcb z
 LIB_DEPENDS=	x11/kde/libs3
 
 MODULES=	x11/kde devel/gettext
+MODKDE_VERSION=	3.1
 
 PORTHOME=	${WRKDIR}
 
@@ -32,9 +33,10 @@ MAKE_FLAGS=	${MODKDE_MAKE_FLAGS}
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= gnu autoconf
 MODGNU_CONFIG_GUESS_DIRS= ${MODKDE_CONFIG_GUESS_DIRS}
 CONFIGURE_ARGS=	${MODKDE_CONFIGURE_ARGS}
 CONFIGURE_ENV=	${MODKDE_CONFIGURE_ENV}
+AUTOCONF_VERSION=	2.57
 
 .include <bsd.port.mk>

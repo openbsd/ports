@@ -1,6 +1,6 @@
-$OpenBSD: patch-aclocal_m4,v 1.1 2003/03/01 07:08:34 pvalchev Exp $
---- aclocal.m4.orig	Wed Mar 20 14:23:10 2002
-+++ aclocal.m4	Fri Feb 28 22:50:06 2003
+$OpenBSD: patch-aclocal_m4,v 1.2 2013/01/23 21:17:30 zhuk Exp $
+--- aclocal.m4.orig	Thu Mar 21 00:23:10 2002
++++ aclocal.m4	Wed Nov 21 22:20:46 2012
 @@ -606,7 +606,7 @@ ac_libs_safe="$LIBS"
  
  CXXFLAGS="$CXXFLAGS -I$qt_includes"
@@ -28,3 +28,12 @@ $OpenBSD: patch-aclocal_m4,v 1.1 2003/03/01 07:08:34 pvalchev Exp $
  AC_SUBST(LIB_QT)
  
  ])
+@@ -841,7 +841,7 @@ AC_CACHE_VAL(ac_cv_have_kde,
+ if test -z "$1"; then
+ 
+ kde_incdirs="/usr/lib/kde/include /usr/local/kde/include /usr/kde/include /usr/include/kde /usr/include /opt/kde/include $x_includes $qt_includes"
+-test -n "$KDEDIR" && kde_incdirs="$KDEDIR/include $KDEDIR $kde_incdirs"
++test -n "$KDEDIR" && kde_incdirs="$KDEDIR/include $KDEDIR/include/kde $KDEDIR $kde_incdirs"
+ kde_incdirs="$ac_kde_includes $kde_incdirs"
+ AC_FIND_FILE(ksock.h, $kde_incdirs, kde_incdir)
+ ac_kde_includes="$kde_incdir"
