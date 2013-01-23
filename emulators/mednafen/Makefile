@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2012/10/20 17:35:18 edd Exp $
+# $OpenBSD: Makefile,v 1.7 2013/01/23 21:36:06 benoit Exp $
 
 COMMENT =	emulates numerous game consoles
 
-V =		0.9.26
+V =		0.9.28
 DISTNAME =	mednafen-${V}-wip
 PKGNAME =	mednafen-${V}
 
