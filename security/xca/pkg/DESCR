@@ -1,0 +1,4 @@
+X Certificate and Key management is an interface for managing asymetric
+keys like RSA or DSA. It is intended as a small CA for creation and
+signing certificates. It uses the OpenSSL library for the cryptographic
+operations.

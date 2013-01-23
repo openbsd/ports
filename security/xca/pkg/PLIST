@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/01/23 08:38:53 jasper Exp $
+@bin bin/xca
+@man man/man1/xca.1
+share/applications/xca.desktop
+share/mime/packages/xca.xml
+share/pixmaps/
+share/pixmaps/xca-32x32.xpm
+share/xca/
+share/xca/CA.xca
+share/xca/HTTPS_client.xca
+share/xca/HTTPS_server.xca
+share/xca/aia.txt
+share/xca/dn.txt
+share/xca/eku.txt
+share/xca/oids.txt
+share/xca/release.txt
+share/xca/xca.html
+share/xca/xca_de.qm
+share/xca/xca_es.qm
+share/xca/xca_fr.qm
+share/xca/xca_ru.qm
+share/xca/xca_tr.qm
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime

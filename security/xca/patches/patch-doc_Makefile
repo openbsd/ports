@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_Makefile,v 1.1.1.1 2013/01/23 08:38:53 jasper Exp $
+--- doc/Makefile.orig	Mon Jan 21 15:14:08 2013
++++ doc/Makefile	Mon Jan 21 15:14:14 2013
+@@ -24,7 +24,7 @@ install: xca.1.gz xca.html
+ 	install -m 755 -d $(destdir)$(docdir) \
+ 		$(destdir)$(prefix)/$(mandir)/man1
+ 	install -m 644 xca*.html $(destdir)$(docdir)
+-	install xca.1.gz $(destdir)$(prefix)/$(mandir)/man1
++	install xca.1 $(destdir)$(prefix)/$(mandir)/man1
+ 
+ app: xca.html
+ 	mkdir -p $(APPDIR)/Resources
