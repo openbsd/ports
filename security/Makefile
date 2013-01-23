@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.302 2012/11/28 11:40:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.303 2013/01/23 08:39:27 jasper Exp $
 
      SUBDIR =
      SUBDIR += ADMfzap
@@ -258,6 +258,7 @@
      SUBDIR += vomit
      SUBDIR += vpnc
      SUBDIR += wpa_supplicant
+     SUBDIR += xca
      SUBDIR += xmlsec
      SUBDIR += yubikey-personalization-gui
      SUBDIR += yubiserve
