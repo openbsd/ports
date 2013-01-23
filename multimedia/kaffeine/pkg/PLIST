@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.13 2012/06/15 08:32:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2013/01/23 21:43:16 zhuk Exp $
 @bin bin/kaffeine
-include/kaffeine/
-include/kaffeine/kaffeineaudioencoder.h
-include/kaffeine/kaffeinepart.h
-include/kaffeine/mrl.h
-include/kaffeine/xine_part.h
-include/kaffeine/xine_part_iface.h
+include/kde/kaffeine/
+include/kde/kaffeine/kaffeineaudioencoder.h
+include/kde/kaffeine/kaffeinepart.h
+include/kde/kaffeine/mrl.h
+include/kde/kaffeine/xine_part.h
+include/kde/kaffeine/xine_part_iface.h
 ${KDE}/libkaffeineoggvorbis.la
 ${KDE}/libkaffeineoggvorbis.so
 ${KDE}/libxinepart.la
@@ -83,8 +83,6 @@ share/icons/hicolor/64x64/apps/kaffeine.png
 share/locale/ar/LC_MESSAGES/kaffeine-${VERSION}.mo
 share/locale/bg/LC_MESSAGES/kaffeine-${VERSION}.mo
 share/locale/bn/LC_MESSAGES/kaffeine-${VERSION}.mo
-share/locale/br/
-share/locale/br/LC_MESSAGES/
 share/locale/br/LC_MESSAGES/kaffeine-${VERSION}.mo
 share/locale/ca/LC_MESSAGES/kaffeine-${VERSION}.mo
 share/locale/cs/LC_MESSAGES/kaffeine-${VERSION}.mo
@@ -102,8 +100,6 @@ share/locale/hu/LC_MESSAGES/kaffeine-${VERSION}.mo
 share/locale/it/LC_MESSAGES/kaffeine-${VERSION}.mo
 share/locale/ja/LC_MESSAGES/kaffeine-${VERSION}.mo
 share/locale/ka/LC_MESSAGES/kaffeine-${VERSION}.mo
-share/locale/km/
-share/locale/km/LC_MESSAGES/
 share/locale/km/LC_MESSAGES/kaffeine-${VERSION}.mo
 share/locale/lt/LC_MESSAGES/kaffeine-${VERSION}.mo
 share/locale/mk/LC_MESSAGES/kaffeine-${VERSION}.mo
@@ -127,8 +123,6 @@ share/locale/sv/LC_MESSAGES/kaffeine-${VERSION}.mo
 share/locale/tg/LC_MESSAGES/kaffeine-${VERSION}.mo
 share/locale/tr/LC_MESSAGES/kaffeine-${VERSION}.mo
 share/locale/uk/LC_MESSAGES/kaffeine-${VERSION}.mo
-share/locale/uz/
-share/locale/uz/LC_MESSAGES/
 share/locale/uz/LC_MESSAGES/kaffeine-${VERSION}.mo
 share/locale/xx/
 share/locale/xx/LC_MESSAGES/
