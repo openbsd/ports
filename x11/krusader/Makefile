@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2012/06/15 08:30:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2013/01/23 21:47:04 zhuk Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	twin panel file manager for KDE
 
 DISTNAME=	krusader-1.80.0
-REVISION=	6
+REVISION=	7
 
 CATEGORIES=	x11 x11/kde
 
@@ -44,9 +44,7 @@ LIB_DEPENDS=	x11/kde/libs3 \
 AUTOCONF_VERSION=2.61
 
 CONFIGURE_STYLE=autoconf
-CONFIGURE_ENV=	${MODKDE_CONFIGURE_ENV} \
-		KDEDIR=${LOCALBASE}/bin \
-		QTDIR=${LOCALBASE}/bin
+CONFIGURE_ENV=	${MODKDE_CONFIGURE_ENV}
 CONFIGURE_ARGS=	${MODQT_CONFIGURE_ARGS} \
 		--disable-dependency-tracking \
 		--with-extra-libs="${LOCALBASE}/lib" \
