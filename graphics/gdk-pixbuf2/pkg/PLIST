@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2012/09/18 06:40:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2013/01/23 09:03:17 ajacoutot Exp $
 @conflict gtk+2-<2.22
 @conflict gtk+2-docs-<2.22
 @unexec-delete rm -f %D/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache
@@ -25,40 +25,6 @@ include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixdata.h
 lib/gdk-pixbuf-2.0/
 lib/gdk-pixbuf-2.0/2.10.0/
 lib/gdk-pixbuf-2.0/2.10.0/loaders/
-@comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-ani.a
-@comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-ani.la
-@comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-bmp.a
-@comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-bmp.la
-@comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-gif.a
-@comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-gif.la
-@comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-icns.a
-@comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-icns.la
-@comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-ico.a
-@comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-ico.la
-@comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-jasper.a
-@comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-jasper.la
-@comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-jpeg.a
-@comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-jpeg.la
-@comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-pcx.a
-@comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-pcx.la
-@comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-png.a
-@comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-png.la
-@comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-pnm.a
-@comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-pnm.la
-@comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-qtif.a
-@comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-qtif.la
-@comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-ras.a
-@comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-ras.la
-@comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-tga.a
-@comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-tga.la
-@comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-tiff.a
-@comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-tiff.la
-@comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-wbmp.a
-@comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-wbmp.la
-@comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-xbm.a
-@comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-xbm.la
-@comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-xpm.a
-@comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-xpm.la
 lib/girepository-1.0/
 lib/girepository-1.0/GdkPixbuf-2.0.typelib
 lib/libgdk_pixbuf-2.0.a
@@ -123,8 +89,6 @@ share/locale/af/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/ang/
 share/locale/ang/LC_MESSAGES/
 share/locale/ang/LC_MESSAGES/gdk-pixbuf.mo
-share/locale/ar/
-share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/as/
 share/locale/as/LC_MESSAGES/
@@ -132,19 +96,13 @@ share/locale/as/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/ast/
 share/locale/ast/LC_MESSAGES/
 share/locale/ast/LC_MESSAGES/gdk-pixbuf.mo
-share/locale/az/
-share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/be/LC_MESSAGES/gdk-pixbuf.mo
-share/locale/be@latin/
-share/locale/be@latin/LC_MESSAGES/
 share/locale/be@latin/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/bg/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/bn/
 share/locale/bn/LC_MESSAGES/
 share/locale/bn/LC_MESSAGES/gdk-pixbuf.mo
-share/locale/bn_IN/
-share/locale/bn_IN/LC_MESSAGES/
 share/locale/bn_IN/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/br/
 share/locale/br/LC_MESSAGES/
@@ -153,8 +111,6 @@ share/locale/bs/
 share/locale/bs/LC_MESSAGES/
 share/locale/bs/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/ca/LC_MESSAGES/gdk-pixbuf.mo
-share/locale/ca@valencia/
-share/locale/ca@valencia/LC_MESSAGES/
 share/locale/ca@valencia/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/crh/
 share/locale/crh/LC_MESSAGES/
@@ -163,8 +119,6 @@ share/locale/cs/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/csb/
 share/locale/csb/LC_MESSAGES/
 share/locale/csb/LC_MESSAGES/gdk-pixbuf.mo
-share/locale/cy/
-share/locale/cy/LC_MESSAGES/
 share/locale/cy/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/da/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/de/LC_MESSAGES/gdk-pixbuf.mo
@@ -178,8 +132,6 @@ share/locale/en@shaw/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/en_CA/
 share/locale/en_CA/LC_MESSAGES/
 share/locale/en_CA/LC_MESSAGES/gdk-pixbuf.mo
-share/locale/en_GB/
-share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/eo/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/es/LC_MESSAGES/gdk-pixbuf.mo
@@ -196,8 +148,6 @@ share/locale/gu/
 share/locale/gu/LC_MESSAGES/
 share/locale/gu/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/he/LC_MESSAGES/gdk-pixbuf.mo
-share/locale/hi/
-share/locale/hi/LC_MESSAGES/
 share/locale/hi/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/hr/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/hu/LC_MESSAGES/gdk-pixbuf.mo
@@ -232,8 +182,6 @@ share/locale/ku/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/li/
 share/locale/li/LC_MESSAGES/
 share/locale/li/LC_MESSAGES/gdk-pixbuf.mo
-share/locale/lt/
-share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/lv/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/mai/
@@ -254,8 +202,6 @@ share/locale/mn/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/mr/
 share/locale/mr/LC_MESSAGES/
 share/locale/mr/LC_MESSAGES/gdk-pixbuf.mo
-share/locale/ms/
-share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/my/
 share/locale/my/LC_MESSAGES/
@@ -278,8 +224,6 @@ share/locale/oc/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/or/
 share/locale/or/LC_MESSAGES/
 share/locale/or/LC_MESSAGES/gdk-pixbuf.mo
-share/locale/pa/
-share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/pl/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/ps/
@@ -294,15 +238,11 @@ share/locale/si/LC_MESSAGES/
 share/locale/si/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/sk/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/sl/LC_MESSAGES/gdk-pixbuf.mo
-share/locale/sq/
-share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/sr/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/sr@ije/
 share/locale/sr@ije/LC_MESSAGES/
 share/locale/sr@ije/LC_MESSAGES/gdk-pixbuf.mo
-share/locale/sr@latin/
-share/locale/sr@latin/LC_MESSAGES/
 share/locale/sr@latin/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/sv/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/ta/
@@ -332,8 +272,6 @@ share/locale/uz@cyrillic/
 share/locale/uz@cyrillic/LC_MESSAGES/
 share/locale/uz@cyrillic/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/vi/LC_MESSAGES/gdk-pixbuf.mo
-share/locale/wa/
-share/locale/wa/LC_MESSAGES/
 share/locale/wa/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/xh/
 share/locale/xh/LC_MESSAGES/
