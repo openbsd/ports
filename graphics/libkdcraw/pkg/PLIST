@@ -1,14 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/09/10 16:43:41 sthen Exp $
-include/libkdcraw/
-include/libkdcraw/dcrawinfocontainer.h
-include/libkdcraw/dcrawsettingswidget.h
-include/libkdcraw/kdcraw.h
-include/libkdcraw/libkdcraw_export.h
-include/libkdcraw/rawdecodingsettings.h
-include/libkdcraw/rawfiles.h
-include/libkdcraw/rcombobox.h
-include/libkdcraw/rnuminput.h
-include/libkdcraw/version.h
+@comment $OpenBSD: PLIST,v 1.5 2013/01/23 21:28:55 zhuk Exp $
+include/kde/libkdcraw/
+include/kde/libkdcraw/dcrawinfocontainer.h
+include/kde/libkdcraw/dcrawsettingswidget.h
+include/kde/libkdcraw/kdcraw.h
+include/kde/libkdcraw/libkdcraw_export.h
+include/kde/libkdcraw/rawdecodingsettings.h
+include/kde/libkdcraw/rawfiles.h
+include/kde/libkdcraw/rcombobox.h
+include/kde/libkdcraw/rnuminput.h
+include/kde/libkdcraw/version.h
 lib/libkdcraw.la
 @lib lib/libkdcraw.so.${LIBkdcraw_VERSION}
 lib/pkgconfig/libkdcraw.pc

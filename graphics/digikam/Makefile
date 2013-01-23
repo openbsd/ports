@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2013/01/19 11:26:02 zhuk Exp $
+# $OpenBSD: Makefile,v 1.37 2013/01/23 21:28:21 zhuk Exp $
 
 COMMENT =		digital image kde application
 CATEGORIES =		graphics x11 x11/kde
 V =			0.9.6
 DISTNAME =		digikam-$V
-REVISION =		6
+REVISION =		7
 SHARED_LIBS +=		digikam              3.0      # .0.0
 HOMEPAGE =		http://www.digikam.org/
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=digikam/}

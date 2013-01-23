@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/07/18 19:45:13 espie Exp $
-include/libkexif/
-include/libkexif/kexifdata.h
-include/libkexif/kexifdialog.h
-include/libkexif/kexifutils.h
-include/libkexif/kexifwidget.h
-include/libkexif/libkexif_export.h
+@comment $OpenBSD: PLIST,v 1.6 2013/01/23 21:29:13 zhuk Exp $
+include/kde/libkexif/
+include/kde/libkexif/kexifdata.h
+include/kde/libkexif/kexifdialog.h
+include/kde/libkexif/kexifutils.h
+include/kde/libkexif/kexifwidget.h
+include/kde/libkexif/libkexif_export.h
 lib/libkexif.la
 @lib lib/libkexif.so.${LIBkexif_VERSION}
 lib/pkgconfig/libkexif.pc

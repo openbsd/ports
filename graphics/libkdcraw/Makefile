@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2011/11/02 09:57:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2013/01/23 21:28:55 zhuk Exp $
 
 COMMENT =	grab raw data from digital cameras
 
 DISTNAME =	libkdcraw-0.1.9
-REVISION =	2
+REVISION =	3
 CATEGORIES =	graphics devel
 
 HOMEPAGE =	http://www.kipi-plugins.org/drupal/
