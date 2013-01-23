@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/01/23 09:03:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2013/01/23 18:03:39 ajacoutot Exp $
 
 COMMENT=	graphic library for gtk+2
 
@@ -39,9 +39,16 @@ RUN_DEPENDS +=		misc/shared-mime-info
 MODGNOME_TOOLS=	goi
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--disable-Bsymbolic \
+CONFIGURE_ARGS=	--disable-gtk-doc \
+		--disable-Bsymbolic \
 		--with-libjasper \
 		--with-x11
+
+# If one of these tools is found at configure stage, it might be used,
+# no matter whether we use --disable-gtk-doc or not.
+CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
+		ac_cv_path_GTKDOC_REBASE="" \
+		ac_cv_path_GTKDOC_MKPDF=""
 
 post-install:
 	rm ${PREFIX}/lib/gdk-pixbuf-2.0/2.10.0/loaders/*.{a,la}
