@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_decode_proto_c,v 1.2 2011/04/07 20:09:45 benoit Exp $
---- src/decode_proto.c.orig	Sun Feb  6 11:10:46 2011
-+++ src/decode_proto.c	Sat Apr  2 17:13:26 2011
-@@ -26,6 +26,7 @@
+$OpenBSD: patch-src_decode_proto_c,v 1.3 2013/01/23 10:17:48 benoit Exp $
+--- src/decode_proto.c.orig	Mon May 30 21:50:22 2011
++++ src/decode_proto.c	Sat Jul 16 11:38:35 2011
+@@ -30,6 +30,7 @@
  #ifdef HAVE_ARPA_INET_H
  #include <arpa/inet.h>
  #endif
@@ -9,13 +9,3 @@ $OpenBSD: patch-src_decode_proto_c,v 1.2 2011/04/07 20:09:45 benoit Exp $
  #include "prot_types.h"
  #include "util.h"
  #include "decode_proto.h"
-@@ -165,7 +166,9 @@
-  {"WLAN",   DLT_IEEE802_11,    LINK6,   get_wlan }, 
-  /* Wireless with radiotap header */
-  {"WLAN+RTAP",  DLT_IEEE802_11_RADIO, LINK6, get_radiotap }, 
-+#ifndef __OpenBSD__
-  {"PPI",  DLT_PPI, LINK6, get_ppi }, /* PPI encapsulation */
-+#endif
-  {NULL,   0, 0 } /* terminating entry, must be last */
- };
- 
