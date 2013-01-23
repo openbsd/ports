@@ -1,10 +1,83 @@
-$OpenBSD: patch-addressbook_backends_ldap_e-book-backend-ldap_c,v 1.10 2012/11/11 18:10:01 ajacoutot Exp $
+$OpenBSD: patch-addressbook_backends_ldap_e-book-backend-ldap_c,v 1.11 2013/01/23 15:36:53 ajacoutot Exp $
+
+From a84d0269dcd3978232cf5dce77ae4a6d7f6107fd Mon Sep 17 00:00:00 2001
+From: Milan Crha <mcrha@redhat.com>
+Date: Tue, 22 Jan 2013 19:44:41 +0000
+Subject: Bug #692278 - LDAP backend mutex deadlock on finalize
 
 XXX remove when we have a 64-bit time_t
 
---- addressbook/backends/ldap/e-book-backend-ldap.c.orig	Sun Oct 21 03:22:03 2012
-+++ addressbook/backends/ldap/e-book-backend-ldap.c	Sun Nov 11 18:44:42 2012
-@@ -1272,11 +1272,11 @@ create_dn_from_contact (EContact *contact,
+--- addressbook/backends/ldap/e-book-backend-ldap.c.orig	Wed Jan 23 16:17:06 2013
++++ addressbook/backends/ldap/e-book-backend-ldap.c	Wed Jan 23 16:17:10 2013
+@@ -214,7 +214,7 @@ struct _EBookBackendLDAPPrivate {
+ 	gboolean marked_for_offline;
+ 
+ 	/* our operations */
+-	GStaticRecMutex op_hash_mutex;
++	GStaticRecMutex op_hash_mutex; /* lock also eds_ldap_handler_lock before this lock */
+ 	GHashTable *id_to_op;
+ 	gint active_ops;
+ 	guint poll_timeout;
+@@ -1147,6 +1147,7 @@ ldap_op_add (LDAPOp *op,
+ 	op->handler = handler;
+ 	op->dtor = dtor;
+ 
++	g_static_rec_mutex_lock (&eds_ldap_handler_lock);
+ 	g_static_rec_mutex_lock (&bl->priv->op_hash_mutex);
+ 	if (g_hash_table_lookup (bl->priv->id_to_op, &op->id)) {
+ 		g_warning ("conflicting ldap msgid's");
+@@ -1161,6 +1162,7 @@ ldap_op_add (LDAPOp *op,
+ 			LDAP_POLL_INTERVAL,
+ 			(GSourceFunc) poll_ldap, bl);
+ 	g_static_rec_mutex_unlock (&bl->priv->op_hash_mutex);
++	g_static_rec_mutex_unlock (&eds_ldap_handler_lock);
+ }
+ 
+ static void
+@@ -1169,6 +1171,7 @@ ldap_op_finished (LDAPOp *op)
+ 	EBookBackend *backend = op->backend;
+ 	EBookBackendLDAP *bl = E_BOOK_BACKEND_LDAP (backend);
+ 
++	g_static_rec_mutex_lock (&eds_ldap_handler_lock);
+ 	g_static_rec_mutex_lock (&bl->priv->op_hash_mutex);
+ 	g_hash_table_remove (bl->priv->id_to_op, &op->id);
+ 
+@@ -1176,10 +1179,8 @@ ldap_op_finished (LDAPOp *op)
+ 	book_view_notify_status (bl, find_book_view (bl), "");
+ 
+ 	/* should handle errors here */
+-	g_static_rec_mutex_lock (&eds_ldap_handler_lock);
+ 	if (bl->priv->ldap)
+ 		ldap_abandon (bl->priv->ldap, op->id);
+-	g_static_rec_mutex_unlock (&eds_ldap_handler_lock);
+ 
+ 	if (op->dtor)
+ 		op->dtor (op);
+@@ -1193,6 +1194,7 @@ ldap_op_finished (LDAPOp *op)
+ 		}
+ 	}
+ 	g_static_rec_mutex_unlock (&bl->priv->op_hash_mutex);
++	g_static_rec_mutex_unlock (&eds_ldap_handler_lock);
+ }
+ 
+ static void
+@@ -1202,6 +1204,7 @@ ldap_op_change_id (LDAPOp *op,
+ 	EBookBackend *backend = op->backend;
+ 	EBookBackendLDAP *bl = E_BOOK_BACKEND_LDAP (backend);
+ 
++	g_static_rec_mutex_lock (&eds_ldap_handler_lock);
+ 	g_static_rec_mutex_lock (&bl->priv->op_hash_mutex);
+ 	g_hash_table_remove (bl->priv->id_to_op, &op->id);
+ 
+@@ -1209,6 +1212,7 @@ ldap_op_change_id (LDAPOp *op,
+ 
+ 	g_hash_table_insert (bl->priv->id_to_op, &op->id, op);
+ 	g_static_rec_mutex_unlock (&bl->priv->op_hash_mutex);
++	g_static_rec_mutex_unlock (&eds_ldap_handler_lock);
+ }
+ 
+ static GError *
+@@ -1272,11 +1276,11 @@ create_dn_from_contact (EContact *contact,
  	}
  
  	dn = g_strdup_printf (
@@ -18,3 +91,56 @@ XXX remove when we have a 64-bit time_t
  
  	g_free (cn_part);
  
+@@ -5226,10 +5230,11 @@ ldap_cancel_op (gpointer key,
+ 	LDAPOp *op = value;
+ 
+ 	/* ignore errors, its only best effort? */
+-	g_static_rec_mutex_lock (&eds_ldap_handler_lock);
++	/* lock is held by the caller */
++	/* g_static_rec_mutex_lock (&eds_ldap_handler_lock); */
+ 	if (bl->priv->ldap)
+ 		ldap_abandon (bl->priv->ldap, op->id);
+-	g_static_rec_mutex_unlock (&eds_ldap_handler_lock);
++	/* g_static_rec_mutex_unlock (&eds_ldap_handler_lock); */
+ }
+ 
+ static void
+@@ -5237,9 +5242,11 @@ ldap_cancel_all_operations (EBookBackend *backend)
+ {
+ 	EBookBackendLDAP *bl = E_BOOK_BACKEND_LDAP (backend);
+ 
++	g_static_rec_mutex_lock (&eds_ldap_handler_lock);
+ 	g_static_rec_mutex_lock (&bl->priv->op_hash_mutex);
+ 	g_hash_table_foreach (bl->priv->id_to_op, ldap_cancel_op, bl);
+ 	g_static_rec_mutex_unlock (&bl->priv->op_hash_mutex);
++	g_static_rec_mutex_unlock (&eds_ldap_handler_lock);
+ }
+ 
+ static void
+@@ -5533,10 +5540,11 @@ call_dtor (gint msgid,
+ 
+ 	bl = E_BOOK_BACKEND_LDAP (op->backend);
+ 
+-	g_static_rec_mutex_lock (&eds_ldap_handler_lock);
++	/* lock is held by the caller */
++	/* g_static_rec_mutex_lock (&eds_ldap_handler_lock); */
+ 	if (bl->priv->ldap)
+ 		ldap_abandon (bl->priv->ldap, op->id);
+-	g_static_rec_mutex_unlock (&eds_ldap_handler_lock);
++	/* g_static_rec_mutex_unlock (&eds_ldap_handler_lock); */
+ 
+ 	op->dtor (op);
+ 
+@@ -5550,10 +5558,12 @@ e_book_backend_ldap_finalize (GObject *object)
+ 
+ 	priv = E_BOOK_BACKEND_LDAP_GET_PRIVATE (object);
+ 
++	g_static_rec_mutex_lock (&eds_ldap_handler_lock);
+ 	g_static_rec_mutex_lock (&priv->op_hash_mutex);
+ 	g_hash_table_foreach_remove (priv->id_to_op, (GHRFunc) call_dtor, NULL);
+ 	g_hash_table_destroy (priv->id_to_op);
+ 	g_static_rec_mutex_unlock (&priv->op_hash_mutex);
++	g_static_rec_mutex_unlock (&eds_ldap_handler_lock);
+ 	g_static_rec_mutex_free (&priv->op_hash_mutex);
+ 
+ 	/* Remove the timeout before unbinding to avoid a race. */
