@@ -1,0 +1,99 @@
+$OpenBSD: patch-modules_mail_e-mail-shell-view_c,v 1.1 2013/01/23 15:15:00 ajacoutot Exp $
+
+From b19b5a6c30216e7663022bd406bcffbf8e6d5aa3 Mon Sep 17 00:00:00 2001
+From: Milan Crha <mcrha@redhat.com>
+Date: Wed, 23 Jan 2013 14:25:19 +0000
+Subject: Bug #639698 - Crash in mail_shell_view_execute_search()
+
+--- modules/mail/e-mail-shell-view.c.orig	Sat Jan 19 18:35:13 2013
++++ modules/mail/e-mail-shell-view.c	Wed Jan 23 15:46:55 2013
+@@ -546,8 +546,8 @@ all_accounts:
+ 	 * account-wide searches still in progress. */
+ 	text = e_shell_searchbar_get_search_text (searchbar);
+ 	if (text == NULL || *text == '\0') {
+-		CamelStore *selected_store;
+-		gchar *selected_folder_name;
++		CamelStore *selected_store = NULL;
++		gchar *selected_folder_name = NULL;
+ 
+ 		if (priv->search_account_all != NULL) {
+ 			g_object_unref (priv->search_account_all);
+@@ -565,13 +565,17 @@ all_accounts:
+ 		 * avoid search conflicts, so we can't just grab the
+ 		 * folder URI and let the asynchronous callbacks run
+ 		 * after we've already kicked off the search. */
+-		em_folder_tree_get_selected (
+-			folder_tree, &selected_store, &selected_folder_name);
+-		folder = camel_store_get_folder_sync (
+-			selected_store, selected_folder_name,
+-			CAMEL_STORE_FOLDER_INFO_FAST, NULL, NULL);
+-		e_mail_reader_set_folder (reader, folder);
+-		g_object_unref (selected_store);
++		if (em_folder_tree_get_selected (folder_tree, &selected_store, &selected_folder_name) &&
++		    selected_store && selected_folder_name) {
++			folder = camel_store_get_folder_sync (
++				selected_store, selected_folder_name,
++				CAMEL_STORE_FOLDER_INFO_FAST, NULL, NULL);
++			e_mail_reader_set_folder (reader, folder);
++			g_object_unref (folder);
++		}
++
++		if (selected_store)
++			g_object_unref (selected_store);
+ 		g_free (selected_folder_name);
+ 
+ 		gtk_widget_set_sensitive (GTK_WIDGET (combo_box), TRUE);
+@@ -610,7 +614,7 @@ all_accounts:
+ 	camel_service_connect_sync (service, NULL, NULL);
+ 
+ 	search_folder = (CamelVeeFolder *) camel_vee_folder_new (
+-		CAMEL_STORE (service), _("All Account Search"), 0);
++		CAMEL_STORE (service), _("All Account Search"), CAMEL_STORE_FOLDER_PRIVATE);
+ 	priv->search_account_all = search_folder;
+ 
+ 	g_object_unref (service);
+@@ -643,8 +647,8 @@ current_account:
+ 	 * account-wide searches still in progress. */
+ 	text = e_shell_searchbar_get_search_text (searchbar);
+ 	if (text == NULL || *text == '\0') {
+-		CamelStore *selected_store;
+-		gchar *selected_folder_name;
++		CamelStore *selected_store = NULL;
++		gchar *selected_folder_name = NULL;
+ 
+ 		if (priv->search_account_current != NULL) {
+ 			g_object_unref (priv->search_account_current);
+@@ -662,13 +666,17 @@ current_account:
+ 		 * avoid search conflicts, so we can't just grab the
+ 		 * folder URI and let the asynchronous callbacks run
+ 		 * after we've already kicked off the search. */
+-		em_folder_tree_get_selected (
+-			folder_tree, &selected_store, &selected_folder_name);
+-		folder = camel_store_get_folder_sync (
+-			selected_store, selected_folder_name,
+-			CAMEL_STORE_FOLDER_INFO_FAST, NULL, NULL);
+-		e_mail_reader_set_folder (reader, folder);
+-		g_object_unref (selected_store);
++		if (em_folder_tree_get_selected (folder_tree, &selected_store, &selected_folder_name) &&
++		    selected_store && selected_folder_name) {
++			folder = camel_store_get_folder_sync (
++				selected_store, selected_folder_name,
++				CAMEL_STORE_FOLDER_INFO_FAST, NULL, NULL);
++			e_mail_reader_set_folder (reader, folder);
++			g_object_unref (folder);
++		}
++
++		if (selected_store)
++			g_object_unref (selected_store);
+ 		g_free (selected_folder_name);
+ 
+ 		gtk_widget_set_sensitive (GTK_WIDGET (combo_box), TRUE);
+@@ -707,7 +715,7 @@ current_account:
+ 	camel_service_connect_sync (service, NULL, NULL);
+ 
+ 	search_folder = (CamelVeeFolder *) camel_vee_folder_new (
+-		CAMEL_STORE (service), _("Account Search"), 0);
++		CAMEL_STORE (service), _("Account Search"), CAMEL_STORE_FOLDER_PRIVATE);
+ 	priv->search_account_current = search_folder;
+ 
+ 	g_object_unref (service);
