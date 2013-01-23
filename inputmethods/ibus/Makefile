@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2013/01/17 23:40:26 fgsch Exp $
+# $OpenBSD: Makefile,v 1.31 2013/01/23 18:05:57 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	intelligent input bus framework
 
 DISTNAME =	ibus-1.5.1
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	ibus-1.0	2.0
 
@@ -22,13 +22,13 @@ PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
-		Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 \
+		Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 \
 		atk-bridge-2.0 atspi c cairo cairo-gobject dbus-1 dconf \
-		drm expat ffi fontconfig freetype gdk-3 gdk-x11-2.0 \
+		expat ffi fontconfig freetype gdk-3 gdk-x11-2.0 \
 		gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 \
 		gthread-2.0 gtk-3 gtk-x11-2.0 harfbuzz icudata icule \
 		icuuc m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
-		pixman-1 png pthread pthread-stubs stdc++ xcb xcb-render \
+		pixman-1 png pthread pthread-stubs xcb xcb-render \
 		xcb-shm z
 
 MASTER_SITES =	http://ibus.googlecode.com/files/
