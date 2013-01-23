@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2013/01/22 08:31:34 landry Exp $
+# $OpenBSD: Makefile,v 1.61 2013/01/23 10:06:15 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,15 +11,13 @@ EXTRACT_SUFX=	.tar.xz
 
 PKGNAME-main=	gtk+3-${V}
 PKGNAME-cups=	gtk+3-cups-${V}
-REVISION-main =	0
-REVISION-cups =	0
+REVISION-main=	1
+REVISION-cups=	1
 
-# grep ^GTK_BINARY_VERSION ${WRKSRC}/Makefile (after do-configure)
-GTK_BINARY_VERSION=3.0.0
-SUBST_VARS=	GTK_BINARY_VERSION
-# XXX temporary, remove the following line from PLIST-main
+# XXX temporary, remove the following lines from PLIST-main
 # (immodules.cache file moved, so give a change for people to update)
-# @unexec rm -f ${SYSCONFDIR}/gtk-3.0/gtk.immodules
+# @unexec-delete rm -f ${SYSCONFDIR}/gtk-3.0/gtk.immodules
+# @unexec-update rm -f ${SYSCONFDIR}/gtk-3.0/gtk.immodules
 
 CATEGORIES=	x11 devel
 
@@ -38,12 +36,12 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo cairo-gobject
-WANTLIB += drm expat ffi fontconfig freetype gdk_pixbuf-2.0 gio-2.0
+WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo cairo-gobject
+WANTLIB += expat ffi fontconfig freetype gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs
 WANTLIB += ICE SM dbus-1 harfbuzz icudata icule icuuc pthread
-WANTLIB += xcb xcb-render xcb-shm z stdc++ atk-bridge-2.0 atspi
+WANTLIB += xcb xcb-render xcb-shm z atk-bridge-2.0 atspi
 
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/gtk+/${V:C/^([0-9]+\.[0-9]+).*/\1/}/}
 
@@ -59,8 +57,7 @@ BUILD_DEPENDS +=textproc/docbook \
 		textproc/libxslt
 
 RUN_DEPENDS-main= ${RUN_DEPENDS} \
-		x11/hicolor-icon-theme \
-		misc/shared-mime-info
+		x11/hicolor-icon-theme
 
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		devel/pango>=1.32.0 \
@@ -120,6 +117,6 @@ FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/gtk+3
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/gtk-3.0/modules
-	rm ${PREFIX}/lib/gtk-3.0/${GTK_BINARY_VERSION}/{printbackends,immodules}/*.{a,la}
+	rm ${PREFIX}/lib/gtk-3.0/3.0.0/{printbackends,immodules}/*.{a,la}
 
 .include <bsd.port.mk>
