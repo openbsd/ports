@@ -1,30 +1,31 @@
-$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.1 2012/10/08 08:48:01 jasper Exp $
+$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.2 2013/01/24 18:46:23 jasper Exp $
 
-If no source was set, fallback to /etc/pkg.conf.
-https://projects.puppetlabs.com/issues/16752
+Support pkg.conf on OpenBSD
+https://github.com/puppetlabs/puppet/commit/64fd71e1bb99e574ce22778badc71afda9d76853
 
---- lib/puppet/provider/package/openbsd.rb.orig	Tue Oct  2 15:59:02 2012
-+++ lib/puppet/provider/package/openbsd.rb	Tue Oct  2 15:59:17 2012
-@@ -56,8 +56,21 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+--- lib/puppet/provider/package/openbsd.rb.orig	Wed Dec 19 20:25:27 2012
++++ lib/puppet/provider/package/openbsd.rb	Wed Jan 23 23:59:58 2013
+@@ -56,8 +56,22 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
      should = @resource.should(:ensure)
  
      unless @resource[:source]
 -      raise Puppet::Error,
 -      "You must specify a package source for BSD packages"
 +      if File.exist?("/etc/pkg.conf")
-+        pkgconf = File.open("/etc/pkg.conf", "rb").readlines {|f| f.read}
-+        installpath = pkgconf.grep(/^installpath/).first
-+        if (installpath)
-+          installpath.sub!(/installpath\s+=\s+/, '')
-+          installpath.sub!(/\n/, '')
-+          @resource[:source] = installpath
-+        else
++        File.open("/etc/pkg.conf", "rb").readlines.each do |line|
++          if matchdata = line.match(/^installpath\s*=\s*(.+)\s*$/i)
++            @resource[:source] = matchdata[1]
++            break
++          end
++        end
++
++        unless @resource[:source]
 +          raise Puppet::Error,
-+          "No valid installpath found in /etc/pkg.conf and no source was set for BSD packages."
++          "No valid installpath found in /etc/pkg.conf and no source was set"
 +        end
 +      else
 +        raise Puppet::Error,
-+        "You must specify a package source for BSD packages"
++        "You must specify a package source or configure an installpath in /etc/pkg.conf"
 +      end
      end
  
