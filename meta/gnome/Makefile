@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2013/01/06 10:41:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2013/01/24 10:41:54 ajacoutot Exp $
 
 COMMENT-main=	GNOME desktop meta-package (base installation)
 COMMENT-extra=	GNOME desktop meta-package (full installation)
@@ -9,7 +9,7 @@ PKGNAME=	gnome-${V}
 PKGNAME-main=	gnome-${V}
 PKGNAME-extra=	gnome-extra-${V}
 
-REVISION-main=	2
+REVISION-main=	3
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 		Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -31,11 +31,14 @@ RUN_DEPENDS-main += \
 		x11/gnome/system-monitor \
 		x11/gnome/terminal
 
+# yelp.desktop menu entry (from yelp: OnlyShowIn=GNOME;)
+RUN_DEPENDS-main += x11/gnome/user-docs
+
 # gconf2 and polkit are already dependencies and we want to be able to
 # handle system-wide gconf entries.
 RUN_DEPENDS-main += devel/gconf2,-polkit
 
-# colord and gtk+3 are already dependencies (obviously)
+# colord and gtk+3 are already dependencies
 RUN_DEPENDS-main += graphics/colord-gtk
 
 # GNOME spooler is CUPS (gnome-printers-panel in gnome-control-center),
