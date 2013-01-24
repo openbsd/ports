@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_vio_csync_vio_c,v 1.1.1.1 2012/10/16 09:41:44 ajacoutot Exp $
---- src/vio/csync_vio.c.orig	Fri Oct  5 13:54:22 2012
-+++ src/vio/csync_vio.c	Tue Oct 16 11:24:13 2012
-@@ -53,7 +53,7 @@
+$OpenBSD: patch-src_vio_csync_vio_c,v 1.2 2013/01/24 15:04:22 ajacoutot Exp $
+--- src/vio/csync_vio.c.orig	Thu Jan 24 10:39:42 2013
++++ src/vio/csync_vio.c	Thu Jan 24 15:49:05 2013
+@@ -54,7 +54,7 @@
  int csync_vio_init(CSYNC *ctx, const char *module, const char *args) {
    csync_stat_t sb;
    char *path = NULL;
@@ -9,4 +9,4 @@ $OpenBSD: patch-src_vio_csync_vio_c,v 1.1.1.1 2012/10/16 09:41:44 ajacoutot Exp 
 +  const char *err = NULL;
    csync_vio_method_t *m = NULL;
    csync_vio_method_init_fn init_fn;
-   const _TCHAR *mpath = NULL;
+   _TCHAR *mpath = NULL;

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/16 09:41:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/01/24 15:04:22 ajacoutot Exp $
 @bin bin/ocsync
 include/ocsync/
 include/ocsync/csync.h
@@ -51,5 +51,3 @@ share/examples/ocsync/ocsync.conf
 @sample ${SYSCONFDIR}/ocsync/ocsync.conf
 share/examples/ocsync/ocsync_exclude.conf
 @sample ${SYSCONFDIR}/ocsync/ocsync_exclude.conf
-share/examples/ocsync/ocsync_log.conf
-@sample ${SYSCONFDIR}/ocsync/ocsync_log.conf
