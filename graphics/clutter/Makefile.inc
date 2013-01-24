@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.11 2012/09/27 13:00:39 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.12 2013/01/24 07:10:05 ajacoutot Exp $
 
 SHARED_ONLY?=		Yes
 
@@ -24,7 +24,14 @@ MODULES +=		devel/gettext \
 LIBTOOL_FLAGS?=		--tag=disable-static
 
 CONFIGURE_STYLE?=	gnu
-CONFIGURE_ARGS +=	--disable-static
+CONFIGURE_ARGS +=	--disable-static \
+			--disable-gtk-doc
+
+# If one of these tools is found at configure stage, it might be used,
+# no matter whether we use --disable-gtk-doc or not.
+CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
+		ac_cv_path_GTKDOC_REBASE="" \
+		ac_cv_path_GTKDOC_MKPDF=""
 
 API_VERSION?=		1.0
 MAJOR?=			1.12
