@@ -1,9 +1,13 @@
 #!/bin/sh
 #
-# $OpenBSD: bird6.rc,v 1.1 2011/05/02 10:49:46 sthen Exp $
+# $OpenBSD: bird6.rc,v 1.2 2013/01/24 10:04:15 sthen Exp $
 
 daemon="${TRUEPREFIX}/sbin/bird6"
 
 . /etc/rc.d/rc.subr
+
+rc_stop() {
+	${TRUEPREFIX}/sbin/birdc6 down
+}
 
 rc_cmd $1

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2013/01/24 09:56:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2013/01/24 10:04:15 sthen Exp $
 
 COMMENT-main=	BIRD internet routing daemon
 COMMENT-doc=	BIRD internet routing daemon (documentation)
 
 V=		1.3.9
 DISTNAME=	bird-$V
+REVISION=	0
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME:S/-/-doc-/}${EXTRACT_SUFX}
 
@@ -25,6 +26,9 @@ WANTLIB-main=	c ncurses readline
 MULTI_PACKAGES=	-main -doc
 FULLPKGNAME-doc=bird-doc-$V
 FULLPKGPATH-doc=net/bird,-doc
+
+# IPv6 support must be built with separate flags, however the filenames
+# do not conflict, so the two packages may be installed together.
 FLAVORS=	v6
 FLAVOR?=
 SUBST_VARS+=	SIX
