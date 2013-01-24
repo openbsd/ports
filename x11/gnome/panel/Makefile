@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.127 2013/01/24 10:39:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.128 2013/01/24 10:40:56 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	GNOME panel
 
 GNOME_PROJECT=	gnome-panel
 GNOME_VERSION=	3.6.2
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS=	panel-applet-4            1.1 # 1.1
 
@@ -56,7 +56,6 @@ LIB_DEPENDS=	databases/evolution-data-server>=3.6.0p3 \
 		x11/gnome/libgweather>=3.6.0 \
 		x11/gnome/menus>=3.2.0 \
 		x11/gnome/librsvg
-RUN_DEPENDS=	x11/gnome/icon-theme-symbolic
 
 # notification-area-applet
 RUN_DEPENDS +=	sysutils/notification-daemon
