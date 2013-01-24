@@ -1,10 +1,10 @@
-$OpenBSD: patch-XMonad_Util_Loggers_hs,v 1.2 2012/01/12 11:12:38 dcoppa Exp $
+$OpenBSD: patch-XMonad_Util_Loggers_hs,v 1.3 2013/01/24 09:44:18 dcoppa Exp $
 
 Use our apm(8) instead of linux-only acpi
 
---- XMonad/Util/Loggers.hs.orig	Sat Nov 19 00:26:06 2011
-+++ XMonad/Util/Loggers.hs	Wed Jan 11 10:15:37 2012
-@@ -121,7 +121,7 @@ aumixVolume = logCmd "aumix -vq"
+--- XMonad/Util/Loggers.hs.orig	Tue Jan  1 02:32:44 2013
++++ XMonad/Util/Loggers.hs	Tue Jan 22 16:06:00 2013
+@@ -120,7 +120,7 @@ aumixVolume = logCmd "aumix -vq"
  --   At some point it would be nice to make this more general\/have
  --   fewer dependencies (assumes @\/usr\/bin\/acpi@ and @sed@ are installed.)
  battery :: Logger

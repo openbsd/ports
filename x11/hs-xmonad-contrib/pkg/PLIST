@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/01/20 18:07:11 kili Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/01/24 09:44:18 dcoppa Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/XMonad/
@@ -47,12 +47,16 @@ lib/ghc/${DISTNAME}/XMonad/Actions/GroupNavigation.hi
 lib/ghc/${DISTNAME}/XMonad/Actions/GroupNavigation.p_hi
 lib/ghc/${DISTNAME}/XMonad/Actions/KeyRemap.hi
 lib/ghc/${DISTNAME}/XMonad/Actions/KeyRemap.p_hi
+lib/ghc/${DISTNAME}/XMonad/Actions/Launcher.hi
+lib/ghc/${DISTNAME}/XMonad/Actions/Launcher.p_hi
 lib/ghc/${DISTNAME}/XMonad/Actions/MessageFeedback.hi
 lib/ghc/${DISTNAME}/XMonad/Actions/MessageFeedback.p_hi
 lib/ghc/${DISTNAME}/XMonad/Actions/MouseGestures.hi
 lib/ghc/${DISTNAME}/XMonad/Actions/MouseGestures.p_hi
 lib/ghc/${DISTNAME}/XMonad/Actions/MouseResize.hi
 lib/ghc/${DISTNAME}/XMonad/Actions/MouseResize.p_hi
+lib/ghc/${DISTNAME}/XMonad/Actions/Navigation2D.hi
+lib/ghc/${DISTNAME}/XMonad/Actions/Navigation2D.p_hi
 lib/ghc/${DISTNAME}/XMonad/Actions/NoBorders.hi
 lib/ghc/${DISTNAME}/XMonad/Actions/NoBorders.p_hi
 lib/ghc/${DISTNAME}/XMonad/Actions/OnScreen.hi
@@ -71,6 +75,8 @@ lib/ghc/${DISTNAME}/XMonad/Actions/RotSlaves.hi
 lib/ghc/${DISTNAME}/XMonad/Actions/RotSlaves.p_hi
 lib/ghc/${DISTNAME}/XMonad/Actions/Search.hi
 lib/ghc/${DISTNAME}/XMonad/Actions/Search.p_hi
+lib/ghc/${DISTNAME}/XMonad/Actions/ShowText.hi
+lib/ghc/${DISTNAME}/XMonad/Actions/ShowText.p_hi
 lib/ghc/${DISTNAME}/XMonad/Actions/SimpleDate.hi
 lib/ghc/${DISTNAME}/XMonad/Actions/SimpleDate.p_hi
 lib/ghc/${DISTNAME}/XMonad/Actions/SinkAll.hi
@@ -101,6 +107,8 @@ lib/ghc/${DISTNAME}/XMonad/Actions/WindowNavigation.hi
 lib/ghc/${DISTNAME}/XMonad/Actions/WindowNavigation.p_hi
 lib/ghc/${DISTNAME}/XMonad/Actions/WithAll.hi
 lib/ghc/${DISTNAME}/XMonad/Actions/WithAll.p_hi
+lib/ghc/${DISTNAME}/XMonad/Actions/Workscreen.hi
+lib/ghc/${DISTNAME}/XMonad/Actions/Workscreen.p_hi
 lib/ghc/${DISTNAME}/XMonad/Actions/WorkspaceCursors.hi
 lib/ghc/${DISTNAME}/XMonad/Actions/WorkspaceCursors.p_hi
 lib/ghc/${DISTNAME}/XMonad/Actions/WorkspaceNames.hi
@@ -136,8 +144,14 @@ lib/ghc/${DISTNAME}/XMonad/Doc/Extending.p_hi
 lib/ghc/${DISTNAME}/XMonad/Hooks/
 lib/ghc/${DISTNAME}/XMonad/Hooks/CurrentWorkspaceOnTop.hi
 lib/ghc/${DISTNAME}/XMonad/Hooks/CurrentWorkspaceOnTop.p_hi
+lib/ghc/${DISTNAME}/XMonad/Hooks/DebugEvents.hi
+lib/ghc/${DISTNAME}/XMonad/Hooks/DebugEvents.p_hi
 lib/ghc/${DISTNAME}/XMonad/Hooks/DebugKeyEvents.hi
 lib/ghc/${DISTNAME}/XMonad/Hooks/DebugKeyEvents.p_hi
+lib/ghc/${DISTNAME}/XMonad/Hooks/DebugStack.hi
+lib/ghc/${DISTNAME}/XMonad/Hooks/DebugStack.p_hi
+lib/ghc/${DISTNAME}/XMonad/Hooks/DynamicBars.hi
+lib/ghc/${DISTNAME}/XMonad/Hooks/DynamicBars.p_hi
 lib/ghc/${DISTNAME}/XMonad/Hooks/DynamicHooks.hi
 lib/ghc/${DISTNAME}/XMonad/Hooks/DynamicHooks.p_hi
 lib/ghc/${DISTNAME}/XMonad/Hooks/DynamicLog.hi
@@ -297,6 +311,8 @@ lib/ghc/${DISTNAME}/XMonad/Layout/NoBorders.hi
 lib/ghc/${DISTNAME}/XMonad/Layout/NoBorders.p_hi
 lib/ghc/${DISTNAME}/XMonad/Layout/NoFrillsDecoration.hi
 lib/ghc/${DISTNAME}/XMonad/Layout/NoFrillsDecoration.p_hi
+lib/ghc/${DISTNAME}/XMonad/Layout/OnHost.hi
+lib/ghc/${DISTNAME}/XMonad/Layout/OnHost.p_hi
 lib/ghc/${DISTNAME}/XMonad/Layout/OneBig.hi
 lib/ghc/${DISTNAME}/XMonad/Layout/OneBig.p_hi
 lib/ghc/${DISTNAME}/XMonad/Layout/PerWorkspace.hi
@@ -393,6 +409,8 @@ lib/ghc/${DISTNAME}/XMonad/Util/Cursor.hi
 lib/ghc/${DISTNAME}/XMonad/Util/Cursor.p_hi
 lib/ghc/${DISTNAME}/XMonad/Util/CustomKeys.hi
 lib/ghc/${DISTNAME}/XMonad/Util/CustomKeys.p_hi
+lib/ghc/${DISTNAME}/XMonad/Util/DebugWindow.hi
+lib/ghc/${DISTNAME}/XMonad/Util/DebugWindow.p_hi
 lib/ghc/${DISTNAME}/XMonad/Util/Dmenu.hi
 lib/ghc/${DISTNAME}/XMonad/Util/Dmenu.p_hi
 lib/ghc/${DISTNAME}/XMonad/Util/Dzen.hi
@@ -473,9 +491,11 @@ share/doc/hs-${DISTNAME}/html/XMonad-Actions-FocusNth.html
 share/doc/hs-${DISTNAME}/html/XMonad-Actions-GridSelect.html
 share/doc/hs-${DISTNAME}/html/XMonad-Actions-GroupNavigation.html
 share/doc/hs-${DISTNAME}/html/XMonad-Actions-KeyRemap.html
+share/doc/hs-${DISTNAME}/html/XMonad-Actions-Launcher.html
 share/doc/hs-${DISTNAME}/html/XMonad-Actions-MessageFeedback.html
 share/doc/hs-${DISTNAME}/html/XMonad-Actions-MouseGestures.html
 share/doc/hs-${DISTNAME}/html/XMonad-Actions-MouseResize.html
+share/doc/hs-${DISTNAME}/html/XMonad-Actions-Navigation2D.html
 share/doc/hs-${DISTNAME}/html/XMonad-Actions-NoBorders.html
 share/doc/hs-${DISTNAME}/html/XMonad-Actions-OnScreen.html
 share/doc/hs-${DISTNAME}/html/XMonad-Actions-PerWorkspaceKeys.html
@@ -485,6 +505,7 @@ share/doc/hs-${DISTNAME}/html/XMonad-Actions-Promote.html
 share/doc/hs-${DISTNAME}/html/XMonad-Actions-RandomBackground.html
 share/doc/hs-${DISTNAME}/html/XMonad-Actions-RotSlaves.html
 share/doc/hs-${DISTNAME}/html/XMonad-Actions-Search.html
+share/doc/hs-${DISTNAME}/html/XMonad-Actions-ShowText.html
 share/doc/hs-${DISTNAME}/html/XMonad-Actions-SimpleDate.html
 share/doc/hs-${DISTNAME}/html/XMonad-Actions-SinkAll.html
 share/doc/hs-${DISTNAME}/html/XMonad-Actions-SpawnOn.html
@@ -500,6 +521,7 @@ share/doc/hs-${DISTNAME}/html/XMonad-Actions-WindowGo.html
 share/doc/hs-${DISTNAME}/html/XMonad-Actions-WindowMenu.html
 share/doc/hs-${DISTNAME}/html/XMonad-Actions-WindowNavigation.html
 share/doc/hs-${DISTNAME}/html/XMonad-Actions-WithAll.html
+share/doc/hs-${DISTNAME}/html/XMonad-Actions-Workscreen.html
 share/doc/hs-${DISTNAME}/html/XMonad-Actions-WorkspaceCursors.html
 share/doc/hs-${DISTNAME}/html/XMonad-Actions-WorkspaceNames.html
 share/doc/hs-${DISTNAME}/html/XMonad-Config-Arossato.html
@@ -516,7 +538,10 @@ share/doc/hs-${DISTNAME}/html/XMonad-Doc-Developing.html
 share/doc/hs-${DISTNAME}/html/XMonad-Doc-Extending.html
 share/doc/hs-${DISTNAME}/html/XMonad-Doc.html
 share/doc/hs-${DISTNAME}/html/XMonad-Hooks-CurrentWorkspaceOnTop.html
+share/doc/hs-${DISTNAME}/html/XMonad-Hooks-DebugEvents.html
 share/doc/hs-${DISTNAME}/html/XMonad-Hooks-DebugKeyEvents.html
+share/doc/hs-${DISTNAME}/html/XMonad-Hooks-DebugStack.html
+share/doc/hs-${DISTNAME}/html/XMonad-Hooks-DynamicBars.html
 share/doc/hs-${DISTNAME}/html/XMonad-Hooks-DynamicHooks.html
 share/doc/hs-${DISTNAME}/html/XMonad-Hooks-DynamicLog.html
 share/doc/hs-${DISTNAME}/html/XMonad-Hooks-EwmhDesktops.html
@@ -595,6 +620,7 @@ share/doc/hs-${DISTNAME}/html/XMonad-Layout-MultiToggle.html
 share/doc/hs-${DISTNAME}/html/XMonad-Layout-Named.html
 share/doc/hs-${DISTNAME}/html/XMonad-Layout-NoBorders.html
 share/doc/hs-${DISTNAME}/html/XMonad-Layout-NoFrillsDecoration.html
+share/doc/hs-${DISTNAME}/html/XMonad-Layout-OnHost.html
 share/doc/hs-${DISTNAME}/html/XMonad-Layout-OneBig.html
 share/doc/hs-${DISTNAME}/html/XMonad-Layout-PerWorkspace.html
 share/doc/hs-${DISTNAME}/html/XMonad-Layout-PositionStoreFloat.html
@@ -642,6 +668,7 @@ share/doc/hs-${DISTNAME}/html/XMonad-Prompt-XMonad.html
 share/doc/hs-${DISTNAME}/html/XMonad-Prompt.html
 share/doc/hs-${DISTNAME}/html/XMonad-Util-Cursor.html
 share/doc/hs-${DISTNAME}/html/XMonad-Util-CustomKeys.html
+share/doc/hs-${DISTNAME}/html/XMonad-Util-DebugWindow.html
 share/doc/hs-${DISTNAME}/html/XMonad-Util-Dmenu.html
 share/doc/hs-${DISTNAME}/html/XMonad-Util-Dzen.html
 share/doc/hs-${DISTNAME}/html/XMonad-Util-EZConfig.html
@@ -734,9 +761,11 @@ share/doc/hs-${DISTNAME}/html/mini_XMonad-Actions-FocusNth.html
 share/doc/hs-${DISTNAME}/html/mini_XMonad-Actions-GridSelect.html
 share/doc/hs-${DISTNAME}/html/mini_XMonad-Actions-GroupNavigation.html
 share/doc/hs-${DISTNAME}/html/mini_XMonad-Actions-KeyRemap.html
+share/doc/hs-${DISTNAME}/html/mini_XMonad-Actions-Launcher.html
 share/doc/hs-${DISTNAME}/html/mini_XMonad-Actions-MessageFeedback.html
 share/doc/hs-${DISTNAME}/html/mini_XMonad-Actions-MouseGestures.html
 share/doc/hs-${DISTNAME}/html/mini_XMonad-Actions-MouseResize.html
+share/doc/hs-${DISTNAME}/html/mini_XMonad-Actions-Navigation2D.html
 share/doc/hs-${DISTNAME}/html/mini_XMonad-Actions-NoBorders.html
 share/doc/hs-${DISTNAME}/html/mini_XMonad-Actions-OnScreen.html
 share/doc/hs-${DISTNAME}/html/mini_XMonad-Actions-PerWorkspaceKeys.html
@@ -746,6 +775,7 @@ share/doc/hs-${DISTNAME}/html/mini_XMonad-Actions-Promote.html
 share/doc/hs-${DISTNAME}/html/mini_XMonad-Actions-RandomBackground.html
 share/doc/hs-${DISTNAME}/html/mini_XMonad-Actions-RotSlaves.html
 share/doc/hs-${DISTNAME}/html/mini_XMonad-Actions-Search.html
+share/doc/hs-${DISTNAME}/html/mini_XMonad-Actions-ShowText.html
 share/doc/hs-${DISTNAME}/html/mini_XMonad-Actions-SimpleDate.html
 share/doc/hs-${DISTNAME}/html/mini_XMonad-Actions-SinkAll.html
 share/doc/hs-${DISTNAME}/html/mini_XMonad-Actions-SpawnOn.html
@@ -761,6 +791,7 @@ share/doc/hs-${DISTNAME}/html/mini_XMonad-Actions-WindowGo.html
 share/doc/hs-${DISTNAME}/html/mini_XMonad-Actions-WindowMenu.html
 share/doc/hs-${DISTNAME}/html/mini_XMonad-Actions-WindowNavigation.html
 share/doc/hs-${DISTNAME}/html/mini_XMonad-Actions-WithAll.html
+share/doc/hs-${DISTNAME}/html/mini_XMonad-Actions-Workscreen.html
 share/doc/hs-${DISTNAME}/html/mini_XMonad-Actions-WorkspaceCursors.html
 share/doc/hs-${DISTNAME}/html/mini_XMonad-Actions-WorkspaceNames.html
 share/doc/hs-${DISTNAME}/html/mini_XMonad-Config-Arossato.html
@@ -777,7 +808,10 @@ share/doc/hs-${DISTNAME}/html/mini_XMonad-Doc-Developing.html
 share/doc/hs-${DISTNAME}/html/mini_XMonad-Doc-Extending.html
 share/doc/hs-${DISTNAME}/html/mini_XMonad-Doc.html
 share/doc/hs-${DISTNAME}/html/mini_XMonad-Hooks-CurrentWorkspaceOnTop.html
+share/doc/hs-${DISTNAME}/html/mini_XMonad-Hooks-DebugEvents.html
 share/doc/hs-${DISTNAME}/html/mini_XMonad-Hooks-DebugKeyEvents.html
+share/doc/hs-${DISTNAME}/html/mini_XMonad-Hooks-DebugStack.html
+share/doc/hs-${DISTNAME}/html/mini_XMonad-Hooks-DynamicBars.html
 share/doc/hs-${DISTNAME}/html/mini_XMonad-Hooks-DynamicHooks.html
 share/doc/hs-${DISTNAME}/html/mini_XMonad-Hooks-DynamicLog.html
 share/doc/hs-${DISTNAME}/html/mini_XMonad-Hooks-EwmhDesktops.html
@@ -856,6 +890,7 @@ share/doc/hs-${DISTNAME}/html/mini_XMonad-Layout-MultiToggle.html
 share/doc/hs-${DISTNAME}/html/mini_XMonad-Layout-Named.html
 share/doc/hs-${DISTNAME}/html/mini_XMonad-Layout-NoBorders.html
 share/doc/hs-${DISTNAME}/html/mini_XMonad-Layout-NoFrillsDecoration.html
+share/doc/hs-${DISTNAME}/html/mini_XMonad-Layout-OnHost.html
 share/doc/hs-${DISTNAME}/html/mini_XMonad-Layout-OneBig.html
 share/doc/hs-${DISTNAME}/html/mini_XMonad-Layout-PerWorkspace.html
 share/doc/hs-${DISTNAME}/html/mini_XMonad-Layout-PositionStoreFloat.html
@@ -903,6 +938,7 @@ share/doc/hs-${DISTNAME}/html/mini_XMonad-Prompt-XMonad.html
 share/doc/hs-${DISTNAME}/html/mini_XMonad-Prompt.html
 share/doc/hs-${DISTNAME}/html/mini_XMonad-Util-Cursor.html
 share/doc/hs-${DISTNAME}/html/mini_XMonad-Util-CustomKeys.html
+share/doc/hs-${DISTNAME}/html/mini_XMonad-Util-DebugWindow.html
 share/doc/hs-${DISTNAME}/html/mini_XMonad-Util-Dmenu.html
 share/doc/hs-${DISTNAME}/html/mini_XMonad-Util-Dzen.html
 share/doc/hs-${DISTNAME}/html/mini_XMonad-Util-EZConfig.html

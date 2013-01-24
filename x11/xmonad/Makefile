@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.38 2013/01/20 18:07:11 kili Exp $
+# $OpenBSD: Makefile,v 1.39 2013/01/24 09:44:18 dcoppa Exp $
 
 COMMENT-main =		tiling window manager
 COMMENT-lib =		libraries for runtime configuration
 
-DISTNAME =		xmonad-0.10
+DISTNAME =		xmonad-0.11
 PKGNAME-main =		${DISTNAME}
 PKGNAME-lib =		${DISTNAME:S,-,-lib-,}
-REVISION-main =		1
-REVISION-lib =		3
 CATEGORIES =		x11
 HOMEPAGE =		http://www.xmonad.org/
 
@@ -48,7 +46,7 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/CONFIG ${PREFIX}/share/doc/hs-${DISTNAME}
 	@${INSTALL_DATA} ${WRKSRC}/man/xmonad.hs ${PREFIX}/share/doc/hs-${DISTNAME}/xmonad.hs
 	@# Don't know why, but it installs the xmonad.hs into that directory:
-	@rm -rf ${PREFIX}/share/hs-${DISTNAME}
+	@rm -rf ${PREFIX}/share/${DISTNAME}
 
 # Needs to be built with different configuration.
 NO_REGRESS =	Yes
