@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2012/12/13 19:37:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2013/01/24 07:31:58 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -43,8 +43,10 @@ LIB_DEPENDS=		x11/gtk+3>=3.3.18
 MODGNOME_TOOLS= 	goi
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--disable-Bsymbolic \
-			--disable-gnome-pty-helper
+CONFIGURE_ARGS=		--disable-gnome-pty-helper
+
+# error: -Bsymbolic requested but not supported by ld
+CONFIGURE_ARGS +=	--disable-Bsymbolic
 
 # XXX: https://bugzilla.gnome.org/show_bug.cgi?id=675987
 post-install:

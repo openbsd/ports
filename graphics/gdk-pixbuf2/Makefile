@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2013/01/23 18:03:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2013/01/24 07:31:58 ajacoutot Exp $
 
 COMMENT=	graphic library for gtk+2
 
@@ -40,7 +40,6 @@ MODGNOME_TOOLS=	goi
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-gtk-doc \
-		--disable-Bsymbolic \
 		--with-libjasper \
 		--with-x11
 

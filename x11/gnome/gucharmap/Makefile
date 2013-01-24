@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2012/11/13 08:24:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.68 2013/01/24 07:31:58 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -37,6 +37,7 @@ LIB_DEPENDS+=		x11/gtk+3,-main
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 
-CONFIGURE_ARGS=		--disable-Bsymbolic
+# error: -Bsymbolic requested but not supported by ld
+CONFIGURE_ARGS +=	--disable-Bsymbolic
 
 .include <bsd.port.mk>

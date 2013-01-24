@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2012/12/19 07:34:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.104 2013/01/24 07:31:58 ajacoutot Exp $
 
 # Don't pull in x11/py-gtk2 on these archs; build fails with binutils 2.15
 NOT_FOR_ARCHS-python=	mips64 mips64el
@@ -66,9 +66,11 @@ post-install:
 MODGNOME_TOOLS= 	goi
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--disable-Bsymbolic \
-			--disable-gnome-pty-helper \
+CONFIGURE_ARGS+=	--disable-gnome-pty-helper \
 			--with-gtk=2.0 \
 			--program-suffix=2
+
+# error: -Bsymbolic requested but not supported by ld
+CONFIGURE_ARGS +=	--disable-Bsymbolic
 
 .include <bsd.port.mk>

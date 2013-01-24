@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2012/12/28 09:54:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.84 2013/01/24 07:31:58 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -40,8 +40,10 @@ LIB_DEPENDS=	graphics/gdk-pixbuf2 \
 
 CONFIGURE_ARGS=	--disable-gtk-theme \
 		--disable-tools \
-		--disable-Bsymbolic \
 		--disable-rsvg-view
+
+# error: -Bsymbolic requested but not supported by ld
+CONFIGURE_ARGS +=	--disable-Bsymbolic
 
 ### https://bugzilla.gnome.org/show_bug.cgi?id=653323
 AUTOCONF_VERSION=2.69
