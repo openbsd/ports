@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.186 2013/01/24 08:06:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.187 2013/01/24 10:12:11 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -11,7 +11,7 @@ GNOME_VERSION=		3.6.3
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}
 
-REVISION-main=		1
+REVISION-main=		2
 
 # NOTE: when R changes, increment EVO_VERSION accordingly and bump:
 # mail/evolution-ews
@@ -110,6 +110,8 @@ FAKE_FLAGS=		autostartdir=${PREFIX}/share/examples/evolution/xdg/autostart
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/modules/spamassassin/evolution-spamassassin.c \
 		${WRKSRC}/modules/bogofilter/evolution-bogofilter.c
+	perl -pi -e 's,/usr/bin,${LOCALBASE}/bin,g' \
+		${WRKSRC}/data/org.gnome.evolution.spamassassin.gschema.xml.in
 
 post-install:
 	rm ${PREFIX}/lib/evolution/${R}/{modules,plugins}/*.la
