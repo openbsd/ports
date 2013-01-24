@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.13 2012/10/06 09:17:23 landry Exp $
+# $OpenBSD: Makefile,v 1.14 2013/01/24 21:31:18 jasper Exp $
 
 BROKEN-hppa =		lack of atomic ops
+BROKEN-mips64 =		lack of atomic ops
 
 SHARED_ONLY =		Yes
 
