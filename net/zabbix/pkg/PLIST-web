@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-web,v 1.18 2012/11/04 22:16:04 robert Exp $
+@comment $OpenBSD: PLIST-web,v 1.19 2013/01/24 18:48:15 robert Exp $
 @pkgpath net/zabbix,-web,mysql
 @pkgpath net/zabbix,-web,pgsql
 conf/modules.sample/zabbix.conf
@@ -12,7 +12,6 @@ zabbix/adm.images.php
 zabbix/adm.macros.php
 zabbix/adm.other.php
 zabbix/adm.regexps.php
-zabbix/adm.triggerdisplayingoptions.php
 zabbix/adm.triggerdisplayoptions.php
 zabbix/adm.triggerseverities.php
 zabbix/adm.valuemapping.php
@@ -59,7 +58,6 @@ zabbix/api/classes/CTemplate.php
 zabbix/api/classes/CTemplateScreen.php
 zabbix/api/classes/CTemplateScreenItem.php
 zabbix/api/classes/CTrigger.php
-zabbix/api/classes/CTriggerExpression.php
 zabbix/api/classes/CTriggerGeneral.php
 zabbix/api/classes/CTriggerPrototype.php
 zabbix/api/classes/CUser.php
@@ -98,7 +96,6 @@ zabbix/conf/
 @owner
 zabbix/conf.import.php
 zabbix/conf/.htaccess
-zabbix/conf/COPYING
 zabbix/conf/maintenance.inc.php
 zabbix/conf/zabbix.conf.php.example
 zabbix/css.css
@@ -211,6 +208,10 @@ zabbix/images/general/sort_up.png
 zabbix/images/general/sort_up_blue.png
 zabbix/images/general/sort_up_od.png
 zabbix/images/general/tick.png
+zabbix/images/general/tr_space.gif
+zabbix/images/general/tr_top_bottom.gif
+zabbix/images/general/tr_top_right.gif
+zabbix/images/general/tr_top_right_bottom.gif
 zabbix/images/general/transparent.png
 zabbix/images/general/tree/
 zabbix/images/general/tree/minus.gif
@@ -349,7 +350,6 @@ zabbix/include/classes/class.cradiobuttonlist.php
 zabbix/include/classes/class.crow.php
 zabbix/include/classes/class.cserverinfo.php
 zabbix/include/classes/class.cspan.php
-zabbix/include/classes/class.cstringparser.php
 zabbix/include/classes/class.csubmit.php
 zabbix/include/classes/class.ctable.php
 zabbix/include/classes/class.ctableinfo.php
@@ -417,6 +417,8 @@ zabbix/include/classes/import/readers/CImportReader.php
 zabbix/include/classes/import/readers/CImportReaderFactory.php
 zabbix/include/classes/import/readers/CJsonImportReader.php
 zabbix/include/classes/import/readers/CXmlImportReader.php
+zabbix/include/classes/parsers/
+zabbix/include/classes/parsers/CTriggerExpression.php
 zabbix/include/classes/screens/
 zabbix/include/classes/screens/CScreenActions.php
 zabbix/include/classes/screens/CScreenBase.php
@@ -447,6 +449,7 @@ zabbix/include/classes/tree/CServiceTree.php
 zabbix/include/classes/tree/CTree.php
 zabbix/include/classes/validators/
 zabbix/include/classes/validators/CTimePeriodValidator.php
+zabbix/include/classes/validators/CTriggerFunctionValidator.php
 zabbix/include/classes/validators/CValidator.php
 zabbix/include/config.inc.php
 zabbix/include/db.inc.php
@@ -631,6 +634,8 @@ zabbix/js/main.js
 zabbix/js/menu.js
 zabbix/js/prototype.js
 zabbix/js/servercheck.js
+zabbix/js/vendors/
+zabbix/js/vendors/activity-indicator.js
 zabbix/jsLoader.php
 zabbix/jsrpc.php
 zabbix/latest.php
@@ -657,6 +662,14 @@ zabbix/locale/es/
 zabbix/locale/es/LC_MESSAGES/
 zabbix/locale/es/LC_MESSAGES/frontend.mo
 zabbix/locale/es/LC_MESSAGES/frontend.po
+zabbix/locale/fa/
+zabbix/locale/fa/LC_MESSAGES/
+zabbix/locale/fa/LC_MESSAGES/frontend.mo
+zabbix/locale/fa/LC_MESSAGES/frontend.po
+zabbix/locale/fi/
+zabbix/locale/fi/LC_MESSAGES/
+zabbix/locale/fi/LC_MESSAGES/frontend.mo
+zabbix/locale/fi/LC_MESSAGES/frontend.po
 zabbix/locale/fr/
 zabbix/locale/fr/LC_MESSAGES/
 zabbix/locale/fr/LC_MESSAGES/frontend.mo
@@ -665,6 +678,10 @@ zabbix/locale/hu/
 zabbix/locale/hu/LC_MESSAGES/
 zabbix/locale/hu/LC_MESSAGES/frontend.mo
 zabbix/locale/hu/LC_MESSAGES/frontend.po
+zabbix/locale/id/
+zabbix/locale/id/LC_MESSAGES/
+zabbix/locale/id/LC_MESSAGES/frontend.mo
+zabbix/locale/id/LC_MESSAGES/frontend.po
 zabbix/locale/it/
 zabbix/locale/it/LC_MESSAGES/
 zabbix/locale/it/LC_MESSAGES/frontend.mo
@@ -694,6 +711,10 @@ zabbix/locale/pt_BR/
 zabbix/locale/pt_BR/LC_MESSAGES/
 zabbix/locale/pt_BR/LC_MESSAGES/frontend.mo
 zabbix/locale/pt_BR/LC_MESSAGES/frontend.po
+zabbix/locale/pt_PT/
+zabbix/locale/pt_PT/LC_MESSAGES/
+zabbix/locale/pt_PT/LC_MESSAGES/frontend.mo
+zabbix/locale/pt_PT/LC_MESSAGES/frontend.po
 zabbix/locale/ru/
 zabbix/locale/ru/LC_MESSAGES/
 zabbix/locale/ru/LC_MESSAGES/frontend.mo
@@ -850,7 +871,6 @@ zabbix/trigger_prototypes.php
 zabbix/triggers.php
 zabbix/usergrps.php
 zabbix/users.php
-zabbix/vtext.php
 zabbix/warning.php
 @cwd ${LOCALBASE}
 share/examples/php-${MODPHP_VERSION}/

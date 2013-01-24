@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.8 2012/11/04 22:16:04 robert Exp $
---- configure.orig	Sun Nov  4 23:05:14 2012
-+++ configure	Sun Nov  4 23:06:19 2012
-@@ -5989,6 +5989,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
+$OpenBSD: patch-configure,v 1.9 2013/01/24 18:48:15 robert Exp $
+--- configure.orig	Wed Jan 23 19:03:56 2013
++++ configure	Wed Jan 23 19:04:53 2013
+@@ -6011,6 +6011,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
  $as_echo_n "checking for field ss_family in struct sockaddr_storage... " >&6; }
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
@@ -9,56 +9,21 @@ $OpenBSD: patch-configure,v 1.8 2012/11/04 22:16:04 robert Exp $
  #include <sys/socket.h>
  int
  main ()
-@@ -8668,7 +8669,7 @@ $as_echo "yes" >&6; }
+@@ -8730,7 +8731,7 @@ $as_echo "yes" >&6; }
  
  			 JABBER_INCDIR="$IKSEMEL_CPPFLAGS"
  			 JABBER_LIBDIR="$IKSEMEL_LDFLAGS"
 -			 JABBER_LIBS="-liksemel"
-+			 JABBER_LIBS="-liksemel -pthread"
++			 JABBER_LIBS="-liksemel -lpthread"
  
  fi
         else
-@@ -8678,7 +8679,7 @@ $as_echo_n "checking for iksemel support... " >&6; }
+@@ -8740,7 +8741,7 @@ $as_echo_n "checking for iksemel support... " >&6; }
                 if test -f $_libiksemel_with/include/iksemel.h; then
                         JABBER_INCDIR="-I$_libiksemel_with/include"
                         JABBER_LIBDIR="-L$_libiksemel_with/lib"
 -                       JABBER_LIBS="-liksemel"
-+                       JABBER_LIBS="-liksemel -pthread"
++                       JABBER_LIBS="-liksemel -lpthread"
  		       { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
  $as_echo "yes" >&6; }
                 else
-@@ -10509,7 +10510,7 @@ $as_echo "no" >&6; }
- 
-        if test "x$found_ldap" != "xno"; then
-                if test "x$enable_static" = "xyes"; then
--                       LDAP_LIBS=" -lgnutls -lpthread -lsasl2 $LDAP_LIBS"
-+                       LDAP_LIBS=" -lgnutls -pthread -lsasl2 $LDAP_LIBS"
-                fi
- 
-                LDAP_CPPFLAGS="-I$LDAP_INCDIR"
-@@ -10568,13 +10569,13 @@ else
-   as_fn_error "Not found GnuTLS library" "$LINENO" 5
- fi
- 
--                       { $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -lpthread" >&5
--$as_echo_n "checking for main in -lpthread... " >&6; }
-+                       { $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -pthread" >&5
-+$as_echo_n "checking for main in -pthread... " >&6; }
- if test "${ac_cv_lib_pthread_main+set}" = set; then :
-   $as_echo_n "(cached) " >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lpthread  $LIBS"
-+LIBS="-pthread  $LIBS"
- cat confdefs.h - <<_ACEOF >conftest.$ac_ext
- /* end confdefs.h.  */
- 
-@@ -10603,7 +10604,7 @@ if test "x$ac_cv_lib_pthread_main" = x""yes; then :
- #define HAVE_LIBPTHREAD 1
- _ACEOF
- 
--  LIBS="-lpthread $LIBS"
-+  LIBS="-pthread $LIBS"
- 
- else
-   as_fn_error "Not found Pthread library" "$LINENO" 5
