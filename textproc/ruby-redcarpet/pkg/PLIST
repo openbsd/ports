@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/09/14 10:37:57 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/01/24 21:24:31 jasper Exp $
 ${GEM_BIN}/redcarpet${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/COPYING
+${GEM_LIB}/gems/${DISTNAME}/Gemfile
+${GEM_LIB}/gems/${DISTNAME}/Gemfile.lock
 ${GEM_LIB}/gems/${DISTNAME}/README.markdown
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/bin/

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2013/01/09 17:38:52 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2013/01/24 21:24:31 jasper Exp $
 
 COMMENT=	fast, safe and extensible Markdown to (X)HTML parser
 
-DISTNAME=	redcarpet-2.1.1
-REVISION =	1
+DISTNAME=	redcarpet-2.2.2
 
 CATEGORIES=	textproc
 
