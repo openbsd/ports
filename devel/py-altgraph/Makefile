@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2011/12/03 08:32:14 benoit Exp $
+# $OpenBSD: Makefile,v 1.6 2013/01/25 15:59:59 benoit Exp $
 
 COMMENT=		Python graph (network) package
 
-MODPY_EGG_VERSION=	0.9
+MODPY_EGG_VERSION=	0.10.1
 DISTNAME=		altgraph-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
