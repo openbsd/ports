@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2010/12/03 11:44:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2013/01/25 16:27:10 benoit Exp $
 
 COMMENT=        flexible deep comparison
 
 MODULES=	cpan
-DISTNAME=	Test-Deep-0.106
-REVISION=	0
+DISTNAME=	Test-Deep-0.110
 CATEGORIES=     devel
-USE_GROFF =	Yes
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
