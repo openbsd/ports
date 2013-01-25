@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2013/01/07 17:19:43 bentley Exp $
+# $OpenBSD: Makefile,v 1.70 2013/01/25 09:09:22 bentley Exp $
 
     SUBDIR =
     SUBDIR += BasiliskII
@@ -25,6 +25,7 @@
     SUBDIR += mastergear
     SUBDIR += mednafen
     SUBDIR += mupen64plus
+    SUBDIR += nestopia
     SUBDIR += openmsx
     SUBDIR += qemu
     SUBDIR += pcsxr
