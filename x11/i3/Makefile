@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.57 2013/01/11 09:44:12 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.58 2013/01/25 10:34:02 dcoppa Exp $
 
 COMMENT =	improved dynamic tiling window manager
 
 DISTNAME =	i3-4.4
-REVISION =	3
+REVISION =	4
 CATEGORIES =	x11
 
 EXTRACT_SUFX =	.tar.bz2
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP =     Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =   Yes
 
-WANTLIB =	GL X11 Xcursor Xext Xrender c cairo ev expat \
+WANTLIB =	X11 Xcursor Xext Xrender c cairo ev expat \
 		fontconfig freetype glib-2.0 gobject-2.0 m \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
 		pixman-1 png pthread pthread-stubs \
