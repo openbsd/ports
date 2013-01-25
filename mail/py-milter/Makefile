@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2011/09/16 10:31:22 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/01/25 15:18:36 benoit Exp $
 
 COMMENT =	Python interface to sendmail milter API
 
-MODPY_EGG_VERSION = 0.9.3
+MODPY_EGG_VERSION = 0.9.7
 DISTNAME =	pymilter-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:S/py/py-/}
-REVISION=	1
 CATEGORIES =	mail
 
 HOMEPAGE =	http://www.bmsi.com/python/milter.html
@@ -16,7 +15,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =	milter
+WANTLIB =	milter ${MODPY_WANTLIB} pthread
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=pymilter/}
 
