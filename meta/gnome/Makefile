@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2013/01/24 10:41:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2013/01/25 07:56:16 ajacoutot Exp $
 
 COMMENT-main=	GNOME desktop meta-package (base installation)
 COMMENT-extra=	GNOME desktop meta-package (full installation)
@@ -9,7 +9,7 @@ PKGNAME=	gnome-${V}
 PKGNAME-main=	gnome-${V}
 PKGNAME-extra=	gnome-extra-${V}
 
-REVISION-main=	3
+REVISION-main=	4
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 		Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -30,9 +30,6 @@ RUN_DEPENDS-main += \
 		x11/gnome/session \
 		x11/gnome/system-monitor \
 		x11/gnome/terminal
-
-# yelp.desktop menu entry (from yelp: OnlyShowIn=GNOME;)
-RUN_DEPENDS-main += x11/gnome/user-docs
 
 # gconf2 and polkit are already dependencies and we want to be able to
 # handle system-wide gconf entries.

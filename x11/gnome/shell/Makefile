@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2013/01/18 07:10:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2013/01/25 07:56:17 ajacoutot Exp $
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		3.6.2
-REVISION=		3
+REVISION=		4
 
 HOMEPAGE=		http://live.gnome.org/GnomeShell
 
@@ -66,9 +66,12 @@ RUN_DEPENDS=		devel/py-gobject3 \
 # be installed separately or as part of the "gnome-extra" meta-package.
 #RUN_DEPENDS +=		mail/evolution
 
+# yelp.desktop menu entry (from yelp: OnlyShowIn=GNOME;)
+RUN_DEPENDS +=		x11/gnome/user-docs
+
 # add required introspection libs that are not in the dependency chain
-RUN_DEPENDS +=	inputmethods/ibus \
-		x11/gnome/gdm
+RUN_DEPENDS +=		inputmethods/ibus \
+			x11/gnome/gdm
 
 MODGNOME_DESKTOP_FILE=	Yes
 
