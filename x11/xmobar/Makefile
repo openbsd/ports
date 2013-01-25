@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2012/12/02 20:49:28 kili Exp $
+# $OpenBSD: Makefile,v 1.19 2013/01/25 08:37:16 dcoppa Exp $
 
 COMMENT =		minimalistic text based status bar
 
-DISTNAME =		xmobar-0.15
-REVISION =		3
+DISTNAME =		xmobar-0.16
 CATEGORIES =		x11
 HOMEPAGE =		http://projects.haskell.org/xmobar
 
@@ -29,7 +28,7 @@ BUILD_DEPENDS =		devel/hs-mtl \
 			x11/hs-X11>=1.3.0 \
 			x11/hs-X11-xft>=0.2 \
 			x11/hs-dbus>=0.10 \
-			audio/hs-libmpd>=0.5
+			audio/hs-libmpd>=0.8
 
 LIB_DEPENDS =		textproc/libxml
 

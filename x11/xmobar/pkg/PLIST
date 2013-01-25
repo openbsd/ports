@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/07/17 14:55:21 kili Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/01/25 08:37:17 dcoppa Exp $
 @bin bin/xmobar
-@comment share/doc/${DISTNAME}/
-@comment share/doc/${DISTNAME}/LICENSE
+@comment share/doc/${FULLPKGNAME}/
+@comment share/doc/${FULLPKGNAME}/license
 share/examples/xmobar/
 share/examples/xmobar/xmobarrc

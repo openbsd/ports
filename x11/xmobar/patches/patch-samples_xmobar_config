@@ -1,9 +1,13 @@
-$OpenBSD: patch-samples_xmobar_config,v 1.2 2012/09/26 07:09:20 dcoppa Exp $
---- samples/xmobar.config.orig	Mon Jun  4 02:55:49 2012
-+++ samples/xmobar.config	Mon Sep 24 21:36:56 2012
-@@ -6,15 +6,11 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
+$OpenBSD: patch-samples_xmobar_config,v 1.3 2013/01/25 08:37:17 dcoppa Exp $
+--- samples/xmobar.config.orig	Mon Dec  3 00:47:56 2012
++++ samples/xmobar.config	Thu Jan 24 12:28:53 2013
+@@ -4,18 +4,15 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
+        , bgColor = "black"
+        , fgColor = "grey"
         , position = Top
++       , hideOnStart = False
         , lowerOnStart = True
+        , persistent = False
         , commands = [ Run Weather "EGPF" ["-t","<station>: <tempC>C","-L","18","-H","25","--normal","green","--high","red","--low","lightblue"] 36000
 -                    , Run Network "eth0" ["-L","0","-H","32","--normal","green","--high","red"] 10
 -                    , Run Network "eth1" ["-L","0","-H","32","--normal","green","--high","red"] 10
@@ -18,5 +22,5 @@ $OpenBSD: patch-samples_xmobar_config,v 1.2 2012/09/26 07:09:20 dcoppa Exp $
         , sepChar = "%"
         , alignSep = "}{"
 -       , template = "%cpu% | %memory% * %swap% | %eth0% - %eth1% }{ <fc=#ee9a00>%date%</fc>| %EGPF% | %uname%"
-+       , template = "%battery% }{ <fc=#ee9a00>%date%</fc>| %EGPF% | %uname%"
++       , template = "%battery% }{ <fc=#ee9a00>%date%</fc> | %EGPF% | %uname%"
         }

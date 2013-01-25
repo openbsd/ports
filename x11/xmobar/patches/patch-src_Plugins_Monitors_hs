@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_Plugins_Monitors_hs,v 1.3 2012/09/26 07:09:20 dcoppa Exp $
---- src/Plugins/Monitors.hs.orig	Mon Jun  4 02:55:49 2012
-+++ src/Plugins/Monitors.hs	Mon Sep 24 21:36:56 2012
+$OpenBSD: patch-src_Plugins_Monitors_hs,v 1.4 2013/01/25 08:37:17 dcoppa Exp $
+--- src/Plugins/Monitors.hs.orig	Wed Jan 23 17:48:00 2013
++++ src/Plugins/Monitors.hs	Wed Jan 23 17:54:33 2013
 @@ -21,20 +21,20 @@ import Plugins
  
- import Plugins.Monitors.Common ( runM )
+ import Plugins.Monitors.Common (runM)
  import Plugins.Monitors.Weather
 -import Plugins.Monitors.Net
 -import Plugins.Monitors.Mem
@@ -35,64 +35,68 @@ $OpenBSD: patch-src_Plugins_Monitors_hs,v 1.3 2012/09/26 07:09:20 dcoppa Exp $
  #ifdef IWLIB
  import Plugins.Monitors.Wireless
  #endif
-@@ -49,23 +49,23 @@ import Plugins.Monitors.Mpris
+@@ -50,24 +50,24 @@ import Plugins.Monitors.Mpris
  #endif
  
- data Monitors = Weather      Station    Args Rate
--              | Network      Interface  Args Rate
--              | BatteryP     [String]   Args Rate
--              | DiskU        DiskSpec   Args Rate
--              | DiskIO       DiskSpec   Args Rate
--              | Thermal      Zone       Args Rate
--              | ThermalZone  ZoneNo     Args Rate
--              | Memory       Args       Rate
--              | Swap         Args       Rate
--              | Cpu          Args       Rate
--              | MultiCpu     Args       Rate
-+--              | Network      Interface  Args Rate
-+--              | BatteryP     [String]   Args Rate
-+--              | DiskU        DiskSpec   Args Rate
-+--              | DiskIO       DiskSpec   Args Rate
-+--              | Thermal      Zone       Args Rate
-+--              | ThermalZone  ZoneNo     Args Rate
-+--              | Memory       Args       Rate
-+--              | Swap         Args       Rate
-+--              | Cpu          Args       Rate
-+--              | MultiCpu     Args       Rate
-               | Battery      Args       Rate
--              | Brightness   Args       Rate
--              | CpuFreq      Args       Rate
--              | CoreTemp     Args       Rate
--              | TopProc      Args       Rate
--              | TopMem       Args       Rate
--              | Uptime       Args       Rate
-+--              | Brightness   Args       Rate
-+--              | CpuFreq      Args       Rate
-+--              | CoreTemp     Args       Rate
-+--              | TopProc      Args       Rate
-+--              | TopMem       Args       Rate
-+--              | Uptime       Args       Rate
+ data Monitors = Weather      Station     Args Rate
+-              | Network      Interface   Args Rate
+-              | DynNetwork               Args Rate
+-              | BatteryP     [String]    Args Rate
+-              | DiskU        DiskSpec    Args Rate
+-              | DiskIO       DiskSpec    Args Rate
+-              | Thermal      Zone        Args Rate
+-              | ThermalZone  ZoneNo      Args Rate
+-              | Memory       Args        Rate
+-              | Swap         Args        Rate
+-              | Cpu          Args        Rate
+-              | MultiCpu     Args        Rate
++--            | Network      Interface   Args Rate
++--            | DynNetwork               Args Rate
++--            | BatteryP     [String]    Args Rate
++--            | DiskU        DiskSpec    Args Rate
++--            | DiskIO       DiskSpec    Args Rate
++--            | Thermal      Zone        Args Rate
++--            | ThermalZone  ZoneNo      Args Rate
++--            | Memory       Args        Rate
++--            | Swap         Args        Rate
++--            | Cpu          Args        Rate
++--            | MultiCpu     Args        Rate
+               | Battery      Args        Rate
+-              | Brightness   Args        Rate
+-              | CpuFreq      Args        Rate
+-              | CoreTemp     Args        Rate
+-              | TopProc      Args        Rate
+-              | TopMem       Args        Rate
+-              | Uptime       Args        Rate
++--            | Brightness   Args        Rate
++--            | CpuFreq      Args        Rate
++--            | CoreTemp     Args        Rate
++--            | TopProc      Args        Rate
++--            | TopMem       Args        Rate
++--            | Uptime       Args        Rate
  #ifdef IWLIB
                | Wireless Interface  Args Rate
  #endif
-@@ -93,23 +93,23 @@ type DiskSpec  = [(String, String)]
+@@ -96,24 +96,24 @@ type DiskSpec  = [(String, String)]
  
  instance Exec Monitors where
      alias (Weather s _ _) = s
 -    alias (Network i _ _) = i
+-    alias (DynNetwork _ _) = "dynnetwork"
 -    alias (Thermal z _ _) = z
 -    alias (ThermalZone z _ _) = "thermal" ++ show z
 -    alias (Memory _ _) = "memory"
 -    alias (Swap _ _) = "swap"
 -    alias (Cpu _ _) = "cpu"
 -    alias (MultiCpu _ _) = "multicpu"
-+--    alias (Network i _ _) = i
-+--    alias (Thermal z _ _) = z
-+--    alias (ThermalZone z _ _) = "thermal" ++ show z
-+--    alias (Memory _ _) = "memory"
-+--    alias (Swap _ _) = "swap"
-+--    alias (Cpu _ _) = "cpu"
-+--    alias (MultiCpu _ _) = "multicpu"
++--  alias (Network i _ _) = i
++--  alias (DynNetwork _ _) = "dynnetwork"
++--  alias (Thermal z _ _) = z
++--  alias (ThermalZone z _ _) = "thermal" ++ show z
++--  alias (Memory _ _) = "memory"
++--  alias (Swap _ _) = "swap"
++--  alias (Cpu _ _) = "cpu"
++--  alias (MultiCpu _ _) = "multicpu"
      alias (Battery _ _) = "battery"
 -    alias (BatteryP _ _ _)= "battery"
 -    alias (Brightness _ _) = "bright"
@@ -103,43 +107,45 @@ $OpenBSD: patch-src_Plugins_Monitors_hs,v 1.3 2012/09/26 07:09:20 dcoppa Exp $
 -    alias (DiskU _ _ _) = "disku"
 -    alias (DiskIO _ _ _) = "diskio"
 -    alias (Uptime _ _) = "uptime"
-+--    alias (BatteryP _ _ _)= "battery"
-+--    alias (Brightness _ _) = "bright"
-+--    alias (CpuFreq _ _) = "cpufreq"
-+--    alias (TopProc _ _) = "top"
-+--    alias (TopMem _ _) = "topmem"
-+--    alias (CoreTemp _ _) = "coretemp"
-+--    alias (DiskU _ _ _) = "disku"
-+--    alias (DiskIO _ _ _) = "diskio"
-+--    alias (Uptime _ _) = "uptime"
++--  alias (BatteryP _ _ _)= "battery"
++--  alias (Brightness _ _) = "bright"
++--  alias (CpuFreq _ _) = "cpufreq"
++--  alias (TopProc _ _) = "top"
++--  alias (TopMem _ _) = "topmem"
++--  alias (CoreTemp _ _) = "coretemp"
++--  alias (DiskU _ _ _) = "disku"
++--  alias (DiskIO _ _ _) = "diskio"
++--  alias (Uptime _ _) = "uptime"
  #ifdef IWLIB
      alias (Wireless i _ _) = i ++ "wi"
  #endif
-@@ -123,25 +123,25 @@ instance Exec Monitors where
+@@ -128,26 +128,26 @@ instance Exec Monitors where
      alias (Mpris1 _ _ _) = "mpris1"
      alias (Mpris2 _ _ _) = "mpris2"
  #endif
 -    start (Network  i a r) = startNet i a r
+-    start (DynNetwork a r) = startDynNet a r
 -    start (Cpu a r) = startCpu a r
 -    start (MultiCpu a r) = startMultiCpu a r
 -    start (TopProc a r) = startTop a r
 -    start (TopMem a r) = runM a topMemConfig runTopMem r
-+--    start (Network  i a r) = startNet i a r
-+--    start (Cpu a r) = startCpu a r
-+--    start (MultiCpu a r) = startMultiCpu a r
-+--    start (TopProc a r) = startTop a r
-+--    start (TopMem a r) = runM a topMemConfig runTopMem r
++--  start (Network  i a r) = startNet i a r
++--  start (DynNetwork a r) = startDynNet a r
++--  start (Cpu a r) = startCpu a r
++--  start (MultiCpu a r) = startMultiCpu a r
++--  start (TopProc a r) = startTop a r
++--  start (TopMem a r) = runM a topMemConfig runTopMem r
      start (Weather s a r) = runM (a ++ [s]) weatherConfig runWeather r
 -    start (Thermal z a r) = runM (a ++ [z]) thermalConfig runThermal r
 -    start (ThermalZone z a r) =
 -      runM (a ++ [show z]) thermalZoneConfig runThermalZone r
 -    start (Memory a r) = runM a memConfig runMem r
 -    start (Swap a r) = runM a swapConfig runSwap r
-+--    start (Thermal z a r) = runM (a ++ [z]) thermalConfig runThermal r
-+--    start (ThermalZone z a r) =
-+--      runM (a ++ [show z]) thermalZoneConfig runThermalZone r
-+--    start (Memory a r) = runM a memConfig runMem r
-+--    start (Swap a r) = runM a swapConfig runSwap r
++--  start (Thermal z a r) = runM (a ++ [z]) thermalConfig runThermal r
++--  start (ThermalZone z a r) =
++--    runM (a ++ [show z]) thermalZoneConfig runThermalZone r
++--  start (Memory a r) = runM a memConfig runMem r
++--  start (Swap a r) = runM a swapConfig runSwap r
      start (Battery a r) = runM a battConfig runBatt r
 -    start (BatteryP s a r) = runM a battConfig (runBatt' s) r
 -    start (Brightness a r) = runM a brightConfig runBright r
@@ -148,13 +154,13 @@ $OpenBSD: patch-src_Plugins_Monitors_hs,v 1.3 2012/09/26 07:09:20 dcoppa Exp $
 -    start (DiskU s a r) = runM a diskUConfig (runDiskU s) r
 -    start (DiskIO s a r) = startDiskIO s a r
 -    start (Uptime a r) = runM a uptimeConfig runUptime r
-+--    start (BatteryP s a r) = runM a battConfig (runBatt' s) r
-+--    start (Brightness a r) = runM a brightConfig runBright r
-+--    start (CpuFreq a r) = runM a cpuFreqConfig runCpuFreq r
-+--    start (CoreTemp a r) = runM a coreTempConfig runCoreTemp r
-+--    start (DiskU s a r) = runM a diskUConfig (runDiskU s) r
-+--    start (DiskIO s a r) = startDiskIO s a r
-+--    start (Uptime a r) = runM a uptimeConfig runUptime r
++--  start (BatteryP s a r) = runM a battConfig (runBatt' s) r
++--  start (Brightness a r) = runM a brightConfig runBright r
++--  start (CpuFreq a r) = runM a cpuFreqConfig runCpuFreq r
++--  start (CoreTemp a r) = runM a coreTempConfig runCoreTemp r
++--  start (DiskU s a r) = runM a diskUConfig (runDiskU s) r
++--  start (DiskIO s a r) = startDiskIO s a r
++--  start (Uptime a r) = runM a uptimeConfig runUptime r
  #ifdef IWLIB
      start (Wireless i a r) = runM (a ++ [i]) wirelessConfig runWireless r
  #endif
