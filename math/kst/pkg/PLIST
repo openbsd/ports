@@ -1,20 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.3 2006/06/12 11:15:56 espie Exp $
-bin/d2asc
-bin/kst
-bin/kstcmd
-include/kst_export.h
-include/kstdatasource.h
-include/kstdateparser.h
-include/kstextcalendarsystem.h
-include/kstextcalendarsystemgregorian.h
-include/kstextdatepicker.h
-include/kstextdatetbl.h
-include/kstextdatetime.h
-include/kstextdatetimeedit.h
-include/kstextdatewidget.h
-include/kstobject.h
-include/kstsharedptr.h
-include/rwlock.h
+@comment $OpenBSD: PLIST,v 1.4 2013/01/25 09:42:06 zhuk Exp $
+@bin bin/d2asc
+@bin bin/kst
+@bin bin/kstcmd
+include/kde/kst_export.h
+include/kde/kstdatasource.h
+include/kde/kstdateparser.h
+include/kde/kstextcalendarsystem.h
+include/kde/kstextcalendarsystemgregorian.h
+include/kde/kstextdatepicker.h
+include/kde/kstextdatetbl.h
+include/kde/kstextdatetime.h
+include/kde/kstextdatetimeedit.h
+include/kde/kstextdatewidget.h
+include/kde/kstobject.h
+include/kde/kstsharedptr.h
+include/kde/rwlock.h
 ${KDE}/kstdata_ascii.la
 ${KDE}/kstdata_ascii.so
 ${KDE}/kstdata_dirfile.la
@@ -749,8 +749,6 @@ share/icons/locolor/32x32/apps/kst.png
 share/icons/locolor/32x32/mimetypes/
 share/icons/locolor/32x32/mimetypes/kst.png
 share/locale/bg/LC_MESSAGES/kst.mo
-share/locale/br/
-share/locale/br/LC_MESSAGES/
 share/locale/br/LC_MESSAGES/kst.mo
 share/locale/br/LC_MESSAGES/kstplugineditor.mo
 share/locale/ca/LC_MESSAGES/kst.mo
@@ -806,6 +804,8 @@ share/locale/rw/LC_MESSAGES/kst.mo
 share/locale/rw/LC_MESSAGES/kstplugineditor.mo
 share/locale/sr/LC_MESSAGES/kst.mo
 share/locale/sr/LC_MESSAGES/kstplugineditor.mo
+share/locale/sr@Latn/
+share/locale/sr@Latn/LC_MESSAGES/
 share/locale/sr@Latn/LC_MESSAGES/kst.mo
 share/locale/sr@Latn/LC_MESSAGES/kstplugineditor.mo
 share/locale/sv/LC_MESSAGES/kst.mo
@@ -834,3 +834,7 @@ share/servicetypes/kst/kstdatasourceplugin.desktop
 share/servicetypes/kst/kstextension.desktop
 share/servicetypes/kst/kstfilter.desktop
 share/servicetypes/kst/kstplugin.desktop
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/locolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/locolor
