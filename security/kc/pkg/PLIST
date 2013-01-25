@@ -1,3 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/25 14:04:06 okan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/01/25 11:09:20 jasper Exp $
 @bin bin/kc
-man/cat1/kc.1
+@man man/man1/kc.1
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/kc/
+share/kc/pwsafe_convert.pl
