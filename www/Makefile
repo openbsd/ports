@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.595 2013/01/19 11:56:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.596 2013/01/25 08:58:36 dcoppa Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
      SUBDIR += analog
      SUBDIR += ap2-mod_fastcgi
      SUBDIR += ap2-mod_fcgid
+     SUBDIR += ap2-mod_jk
      SUBDIR += ap2-mod_perl
      SUBDIR += apache-httpd
      SUBDIR += aria2
