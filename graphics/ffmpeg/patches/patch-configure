@@ -1,7 +1,15 @@
-$OpenBSD: patch-configure,v 1.33 2013/01/14 02:14:41 brad Exp $
+$OpenBSD: patch-configure,v 1.34 2013/01/25 09:46:22 brad Exp $
 --- configure.orig	Tue Sep 18 22:44:40 2012
-+++ configure	Tue Jan  8 06:02:20 2013
-@@ -1205,7 +1205,6 @@ HAVE_LIST="
++++ configure	Thu Jan 24 16:11:00 2013
+@@ -1185,6 +1185,7 @@ HAVE_LIST="
+     GetProcessTimes
+     getrusage
+     gnu_as
++    gsm_h
+     ibm_asm
+     inet_aton
+     inline_asm
+@@ -1205,7 +1206,6 @@ HAVE_LIST="
      machine_ioctl_bt848_h
      machine_ioctl_meteor_h
      makeinfo
@@ -9,7 +17,7 @@ $OpenBSD: patch-configure,v 1.33 2013/01/14 02:14:41 brad Exp $
      MapViewOfFile
      memalign
      mkstemp
-@@ -2618,6 +2617,7 @@ case $target_os in
+@@ -2618,6 +2618,7 @@ case $target_os in
          enable pic
          disable symver
          SHFLAGS='-shared'
@@ -17,7 +25,7 @@ $OpenBSD: patch-configure,v 1.33 2013/01/14 02:14:41 brad Exp $
          oss_indev_extralibs="-lossaudio"
          oss_outdev_extralibs="-lossaudio"
          ;;
-@@ -2800,7 +2800,7 @@ die_license_disabled version3 libvo_amrwbenc
+@@ -2800,7 +2801,7 @@ die_license_disabled version3 libvo_amrwbenc
  
  enabled version3 && { enabled gpl && enable gplv3 || enable lgplv3; }
  
@@ -26,16 +34,26 @@ $OpenBSD: patch-configure,v 1.33 2013/01/14 02:14:41 brad Exp $
  
  enable_pic() {
      enable pic
-@@ -3138,7 +3138,7 @@ enabled libdirac   && require_pkg_config dirac        
+@@ -3138,7 +3139,9 @@ enabled libdirac   && require_pkg_config dirac        
      "dirac_decoder_init dirac_encoder_init"
  enabled libfaac    && require2 libfaac "stdint.h faac.h" faacEncGetVersion -lfaac
  enabled libfreetype && require_pkg_config freetype2 "ft2build.h freetype/freetype.h" FT_Init_FreeType
 -enabled libgsm     && require  libgsm gsm/gsm.h gsm_create -lgsm
-+enabled libgsm     && require  libgsm gsm.h gsm_create -lgsm
++enabled libgsm     && { for gsm_hdr in "gsm.h" "gsm/gsm.h"; do
++                            check_lib "${gsm_hdr}" gsm_create -lgsm && break;
++                        done || die "ERROR: libgsm not found"; }
  enabled libmodplug && require  libmodplug libmodplug/modplug.h ModPlug_Load -lmodplug
  enabled libmp3lame && require  "libmp3lame >= 3.98.3" lame/lame.h lame_set_VBR_quality -lmp3lame
  enabled libnut     && require  libnut libnut.h nut_demuxer_init -lnut
-@@ -3714,6 +3714,7 @@ comment=$2
+@@ -3291,7 +3294,6 @@ enabled extra_warnings && check_cflags -Winline
+ # add some linker flags
+ check_ldflags -Wl,--warn-common
+ check_ldflags -Wl,-rpath-link=libpostproc:libswresample:libswscale:libavfilter:libavdevice:libavformat:libavcodec:libavutil
+-test_ldflags -Wl,-Bsymbolic && append SHFLAGS -Wl,-Bsymbolic
+ 
+ echo "X{};" > $TMPV
+ if test_ldflags -Wl,--version-script,$TMPV; then
+@@ -3714,6 +3716,7 @@ comment=$2
  version=$3
  libs=$4
  requires=$5
@@ -43,7 +61,7 @@ $OpenBSD: patch-configure,v 1.33 2013/01/14 02:14:41 brad Exp $
  enabled ${name#lib} || return 0
  mkdir -p $name
  cat <<EOF > $name/$name.pc
-@@ -3728,7 +3729,7 @@ Version: $version
+@@ -3728,7 +3731,7 @@ Version: $version
  Requires: $(enabled shared || echo $requires)
  Requires.private: $(enabled shared && echo $requires)
  Conflicts:
@@ -52,7 +70,7 @@ $OpenBSD: patch-configure,v 1.33 2013/01/14 02:14:41 brad Exp $
  Libs.private: $(enabled shared && echo $libs)
  Cflags: -I\${includedir}
  EOF
-@@ -3748,11 +3749,11 @@ Cflags: -I\${includedir}
+@@ -3748,11 +3751,11 @@ Cflags: -I\${includedir}
  EOF
  }
  
