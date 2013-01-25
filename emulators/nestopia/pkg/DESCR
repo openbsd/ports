@@ -1,0 +1,9 @@
+Nestopia is an accuracy-focused emulator for the Nintendo Entertainment
+System/Famicom (and Famicom Disk System). It is a computer program that
+acts like a physical piece of hardware. In other words, this is a method
+of preserving videogame history, with the welcome side effect of
+allowing you to play NES games on a modern computer.
+
+Nestopia uses highly optimized cycle exact emulation, allowing it to run
+titles that rely on precise timing, many of which break under inferior
+emulators.

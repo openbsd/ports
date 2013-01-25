@@ -1,0 +1,19 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2013/01/25 09:08:23 bentley Exp $
+--- Makefile.orig	Tue Jan 22 10:20:43 2013
++++ Makefile	Fri Jan 25 01:36:56 2013
+@@ -192,13 +192,13 @@ $(BIN): $(OBJS)
+ install:
+ 	mkdir -p $(DATADIR)/icons
+ 	mkdir -p $(PREFIX)/share/pixmaps
++	mkdir -p $(PREFIX)/share/applications
+ 	install -m 0755 $(BIN) $(BINDIR)
+-	install -m 0644 source/unix/icons/nestopia.desktop $(DATADIR)
++	install -m 0644 source/unix/icons/nestopia.desktop $(PREFIX)/share/applications
+ 	install -m 0644 NstDatabase.xml $(DATADIR)
+ 	install -m 0644 source/unix/icons/*.png $(DATADIR)/icons
+ 	install -m 0644 source/unix/icons/*.svg $(DATADIR)/icons
+ 	install -m 0644 source/unix/icons/nestopia.svg $(PREFIX)/share/pixmaps
+-	xdg-desktop-menu install --novendor $(DATADIR)/nestopia.desktop
+ 
+ uninstall:
+ 	xdg-desktop-menu uninstall $(DATADIR)/nestopia.desktop

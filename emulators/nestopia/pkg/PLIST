@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/01/25 09:08:23 bentley Exp $
+@bin bin/nestopia
+share/applications/nestopia.desktop
+share/nestopia/
+share/nestopia/NstDatabase.xml
+share/nestopia/icons/
+share/nestopia/icons/nespad.svg
+share/nestopia/icons/nestopia.svg
+share/nestopia/icons/nestopia128.png
+share/nestopia/icons/nestopia32.png
+share/nestopia/icons/nestopia48.png
+share/nestopia/icons/nestopia64.png
+share/nestopia/icons/nestopia96.png
+share/pixmaps/
+share/pixmaps/nestopia.svg
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
