@@ -1,0 +1,5 @@
+Mupen64Plus is a cross-platform plugin-based N64 emulator which is
+capable of accurately playing many games. Included are four MIPS R4300
+CPU emulators, with dynamic recompilers for 32-bit x86 and 64-bit amd64
+systems, as well as plugins for video, audio, input, and lower-level
+functions. This package contains the default plugins.
