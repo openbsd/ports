@@ -1,0 +1,12 @@
+$OpenBSD: patch-native_configure,v 1.1.1.1 2013/01/25 08:51:16 dcoppa Exp $
+--- native/configure.orig	Tue May 29 09:35:01 2012
++++ native/configure	Wed Nov 28 11:31:08 2012
+@@ -3648,7 +3648,7 @@ for as_dir in $PATH
+ do
+   IFS=$as_save_IFS
+   test -z "$as_dir" && as_dir=.
+-  for lt_ac_prog in sed gsed; do
++  for lt_ac_prog in sed; do
+     for ac_exec_ext in '' $ac_executable_extensions; do
+       if $as_executable_p "$as_dir/$lt_ac_prog$ac_exec_ext"; then
+         lt_ac_sed_list="$lt_ac_sed_list $as_dir/$lt_ac_prog$ac_exec_ext"

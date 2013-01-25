@@ -1,0 +1,25 @@
+$OpenBSD: README,v 1.1.1.1 2013/01/25 08:51:16 dcoppa Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Before you can use ap2-mod_jk, you need to enable it in your Apache2
+configuration.
+
+Edit ${SYSCONFDIR}/apache2/httpd2.conf and add the following lines:
+
+	LoadModule jk_module ${TRUEPREFIX}/lib/apache2/mod_jk.so
+	<IfModule jk_module>
+	JkWorkersFile ${SYSCONFDIR}/apache2/workers.properties
+	JkLogFile "logs/mod_jk.log"
+	JkLogLevel info
+	JkLogStampFormat "[%a %b %d %H:%M:%S %Y] "
+	JkRequestLogFormat "%w %V %T"
+	JkMountFile ${SYSCONFDIR}/apache2/uriworkermap.properties
+	</IfModule>
+
+Restart your httpd2 for changes to make effect.
+
+You also need to edit ${SYSCONFDIR}/apache2/uriworkermap.properties to reflect
+your environment.

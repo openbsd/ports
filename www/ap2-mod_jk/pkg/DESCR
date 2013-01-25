@@ -1,0 +1,3 @@
+mod_jk is a DSO module for Apache2. It connects Apache to Tomcat.
+mod_jk can be configured to off-load SSL processing to Apache, serve
+static content for webapps and load balance multiple Tomcat servers.
