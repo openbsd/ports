@@ -1,1 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/11/14 13:25:50 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/01/25 10:06:33 jasper Exp $
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/examples/msp430/
+share/examples/msp430/Makefile

@@ -1,0 +1,12 @@
+$OpenBSD: README,v 1.1 2013/01/25 10:06:33 jasper Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+To aid development with MSP430 on OpenBSD, a sample Makefile has been
+installed into ${PREFIX}/share/examples/msp430/Makefile .
+
+Using the provided Makefile template, $SOURCES will default to
+'main.c'. This can be compiled with the default 'all' target, and
+uploaded to the device using the 'program' target.
