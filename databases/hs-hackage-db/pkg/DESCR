@@ -1,0 +1,4 @@
+This module provides simple access to the Hackage database by means
+of Data.Map.  Note that once the database has been parsed, it can
+be accessed quickly, but the inital cost of reading 00-index.tar
+is fairly high.
