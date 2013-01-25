@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_console_blargg_endian_h,v 1.1 2013/01/25 10:24:42 jasper Exp $
+
+Correctly handle unrecognized architectures' endianness.
+
+--- src/console/blargg_endian.h.orig	Thu Dec  6 09:05:32 2012
++++ src/console/blargg_endian.h	Thu Dec  6 09:08:57 2012
+@@ -37,9 +37,9 @@
+ 
+ #if defined (MSB_FIRST)     || defined (__BIG_ENDIAN__) || defined (WORDS_BIGENDIAN) || \
+ 	defined (__sparc__)     ||  BLARGG_CPU_POWERPC || \
+-	(defined (BIG_ENDIAN) && BIG_ENDIAN+0 != 4321)
++	(defined (BIG_ENDIAN) && BIG_ENDIAN+0 != 4321) || defined(_BIG_ENDIAN)
+ 	#define BLARGG_BIG_ENDIAN 1
+-#elif !defined (__mips__)
++#elif !defined (__mips__) || defined(_LITTLE_ENDIAN)
+ 	// No endian specified; assume little-endian, since it's most common
+ 	#define BLARGG_LITTLE_ENDIAN 1
+ #endif
