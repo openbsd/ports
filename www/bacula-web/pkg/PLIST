@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/12/17 14:55:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/01/25 09:45:27 ajacoutot Exp $
 @extraunexec rm -rf %D/bacula-web/application/view/cache/*
 @unexec-delete rm -f /var/www/conf/modules/bacula-web.conf
 bacula-web/
@@ -34,6 +34,10 @@ bacula-web/application/locale/it_IT/
 bacula-web/application/locale/it_IT/LC_MESSAGES/
 bacula-web/application/locale/it_IT/LC_MESSAGES/messages.mo
 bacula-web/application/locale/it_IT/LC_MESSAGES/messages.po
+bacula-web/application/locale/nl_NL/
+bacula-web/application/locale/nl_NL/LC_MESSAGES/
+bacula-web/application/locale/nl_NL/LC_MESSAGES/messages.mo
+bacula-web/application/locale/nl_NL/LC_MESSAGES/messages.po
 bacula-web/application/locale/pt_BR/
 bacula-web/application/locale/pt_BR/LC_MESSAGES/
 bacula-web/application/locale/pt_BR/LC_MESSAGES/messages.mo
@@ -70,6 +74,7 @@ bacula-web/application/view/style/header.css
 bacula-web/application/view/style/images/
 bacula-web/application/view/style/images/canceled.png
 bacula-web/application/view/style/images/error.png
+bacula-web/application/view/style/images/home_w.png
 bacula-web/application/view/style/images/ok.png
 bacula-web/application/view/style/images/running.png
 bacula-web/application/view/style/images/search.png
@@ -87,8 +92,6 @@ bacula-web/core/app/cerrorhandler.class.php
 bacula-web/core/app/cmodel.class.php
 bacula-web/core/app/cview.class.php
 bacula-web/core/bweb.inc.php
-bacula-web/core/cfg/
-bacula-web/core/cfg/config.class.php
 bacula-web/core/db/
 bacula-web/core/db/cdb.class.php
 bacula-web/core/db/cdbquery.class.php
