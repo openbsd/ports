@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2012/09/22 08:41:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2013/01/26 09:14:35 sthen Exp $
 
 COMMENT=	real-time strategy game
 
@@ -26,7 +26,7 @@ MODULES=	devel/scons \
 MODSCONS_FLAGS=	CPPPATH="${CPPPATH} ${LOCALBASE}/include/libpng" \
 		LIBS="-lm" \
 		opengl=1
-
+BUILD_DEPENDS=	devel/sdl-image
 LIB_DEPENDS=	devel/sdl \
 		multimedia/libtheora \
 		audio/libvorbis \
