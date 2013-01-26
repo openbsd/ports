@@ -1,0 +1,56 @@
+$OpenBSD: patch-base_queues_py,v 1.1 2013/01/26 12:25:54 ajacoutot Exp $
+--- base/queues.py.orig	Sat Jan 26 13:18:00 2013
++++ base/queues.py	Sat Jan 26 13:17:47 2013
+@@ -66,7 +66,7 @@ class DetectedDevice:
+ 
+ ##### METHODS #####
+ 
+-# Checks 'lp' group is added o not
++# Checks '_cups' group is added o not
+ def check_user_groups():
+     result = False
+     sts,output = utils.run('groups')
+@@ -78,14 +78,14 @@ def check_user_groups():
+         grp_list= output.split(' ')
+         cnt = 0
+         while cnt < len(grp_list) :
+-            if grp_list[cnt] == 'lp':
++            if grp_list[cnt] == '_cups':
+                 result = True
+                 break
+             cnt += 1
+             
+     return result
+ 
+-# This function adds the groups ('lp') to user 
++# This function adds the groups ('_cups') to user 
+ def add_group(core):
+     result = False
+     add_user_to_group = core.get_distro_ver_data('add_user_to_group', '')
+@@ -111,7 +111,7 @@ def add_group(core):
+     cmd =su_sudo % usermod
+     log.info("cmd = %s" %cmd)
+ #    sts, output = utils.run(cmd, True, password_f, -1,True,cmd)  
+-    sts, output = utils.run(cmd, True, password_f, 1, True, "Please enter root/superuser password to add 'lp' group")
++    sts, output = utils.run(cmd, True, password_f, 1, True, "Please enter root/superuser password to add '_cups' group")
+     if sts == 0:
+         result = True
+         
+@@ -364,7 +364,7 @@ def main_function(mode = GUI_MODE, ui_toolkit= UI_TOOL
+             core.init()
+             if add_group(core) is False:
+                 Error_Found = True
+-                log.error("Failed to add lp group to user[%s]. Manually add 'lp' group to usergroups. And reboot system."%prop.username)
++                log.error("Failed to add _cups group to user[%s]. Manually add '_cups' group to usergroups. And reboot system."%prop.username)
+             else:
+                 log.info("Groups added successfully and reboot is required. Please reboot system to take effect.")
+         mapofDevices = parseQueues()
+@@ -411,7 +411,7 @@ def main_function(mode = GUI_MODE, ui_toolkit= UI_TOOL
+             core.init()
+             if add_group(core) is False:
+                 Error_Found = True
+-                dialog.showMessage("User must be part of 'lp' group.\nManually add 'lp' group to '%s' user. " %prop.username)
++                dialog.showMessage("User must be part of '_cups' group.\nManually add '_cups' group to '%s' user. " %prop.username)
+             else:
+                 dialog.showSuccessMessage("Groups added successfully and reboot is required. Please reboot system to take effect.")
+ 

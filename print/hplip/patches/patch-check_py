@@ -1,6 +1,6 @@
-$OpenBSD: patch-check_py,v 1.9 2013/01/20 07:32:08 ajacoutot Exp $
+$OpenBSD: patch-check_py,v 1.10 2013/01/26 12:25:54 ajacoutot Exp $
 --- check.py.orig	Tue Nov 20 10:55:15 2012
-+++ check.py	Sat Jan 19 11:53:40 2013
++++ check.py	Sat Jan 26 13:15:17 2013
 @@ -115,9 +115,9 @@ def get_comment(package, Inst_status, installed_ver):
                  comment = "Python Programming is not supported if version is lessthan 2.2" 
      elif package == 'hpaio':
@@ -13,6 +13,15 @@ $OpenBSD: patch-check_py,v 1.9 2013/01/20 07:32:08 ajacoutot Exp $
      elif package == 'cupsext' or package == 'pcardext' or package == 'hpmudext':
          if Inst_status != 'OK':
              comment = "'Not Found or Failed to load, Please reinstall HPLIP'"
+@@ -218,7 +218,7 @@ def check_user_groups(str_grp, avl_grps):
+         grps =re.sub(r'\s', '', str(grps))
+         exp_grp_list = grps.split(',')
+     else:
+-        exp_grp_list.append('lp')
++        exp_grp_list.append('_cups')
+ 
+     log.debug("Requied groups list =[%s]"%exp_grp_list)
+ 
 @@ -337,7 +337,7 @@ class DependenciesCheck(CoreInstall):
              'pyqt4':            (True,  ['gui_qt4'], "Python-Qt4", self.check_pyqt4,'4.0','FUNC#get_pyQt4_version'), # PyQt 4.x )
              'pyqt4-dbus' :      (True,  ['gui_qt4'], "PyQt4-DBUS", self.check_pyqt4_dbus,'4.0','FUNC#get_pyQt4_version'), 
