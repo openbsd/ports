@@ -1,7 +1,7 @@
-$OpenBSD: patch-avahi-daemon_main_c,v 1.6 2013/01/20 10:44:17 ajacoutot Exp $
---- avahi-daemon/main.c.orig	Wed Feb 23 14:10:07 2011
-+++ avahi-daemon/main.c	Mon Apr 25 11:42:00 2011
-@@ -1101,8 +1106,10 @@ static int run_server(DaemonConfig *c) {
+$OpenBSD: patch-avahi-daemon_main_c,v 1.7 2013/01/26 10:25:31 ajacoutot Exp $
+--- avahi-daemon/main.c.orig	Thu Nov 18 04:00:26 2010
++++ avahi-daemon/main.c	Sat Jan 26 10:40:53 2013
+@@ -1101,8 +1101,10 @@ static int run_server(DaemonConfig *c) {
  
      ignore_signal(SIGPIPE);
  
