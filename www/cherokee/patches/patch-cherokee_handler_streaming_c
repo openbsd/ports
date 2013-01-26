@@ -1,4 +1,7 @@
-$OpenBSD: patch-cherokee_handler_streaming_c,v 1.1 2013/01/21 05:21:30 brad Exp $
+$OpenBSD: patch-cherokee_handler_streaming_c,v 1.2 2013/01/26 12:47:44 brad Exp $
+
+Update for newer FFmpeg API.
+
 --- cherokee/handler_streaming.c.orig	Fri Jan 18 03:22:41 2013
 +++ cherokee/handler_streaming.c	Fri Jan 18 03:39:40 2013
 @@ -110,10 +110,6 @@ cherokee_handler_streaming_free (cherokee_handler_stre

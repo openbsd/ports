@@ -1,4 +1,7 @@
-$OpenBSD: patch-export_export_ffmpeg_c,v 1.6 2013/01/19 08:42:35 brad Exp $
+$OpenBSD: patch-export_export_ffmpeg_c,v 1.7 2013/01/26 12:47:44 brad Exp $
+
+Update for newer FFmpeg API.
+
 --- export/export_ffmpeg.c.orig	Sat Nov 19 11:50:27 2011
 +++ export/export_ffmpeg.c	Fri Jan 18 22:50:29 2013
 @@ -180,7 +180,7 @@ static char *tc_strchrnul(const char *s, int c) {

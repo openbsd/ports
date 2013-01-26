@@ -1,4 +1,7 @@
-$OpenBSD: patch-import_probe_ffmpeg_c,v 1.1 2013/01/19 08:42:35 brad Exp $
+$OpenBSD: patch-import_probe_ffmpeg_c,v 1.2 2013/01/26 12:47:44 brad Exp $
+
+Update for newer FFmpeg API.
+
 --- import/probe_ffmpeg.c.orig	Sat Nov 19 11:50:27 2011
 +++ import/probe_ffmpeg.c	Fri Jan 18 19:58:49 2013
 @@ -99,8 +99,8 @@ void probe_ffmpeg(info_t *ipipe)

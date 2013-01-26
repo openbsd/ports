@@ -1,4 +1,7 @@
-$OpenBSD: patch-export_ffmpeg_cfg_c,v 1.1 2013/01/19 08:42:35 brad Exp $
+$OpenBSD: patch-export_ffmpeg_cfg_c,v 1.2 2013/01/26 12:47:44 brad Exp $
+
+Update for newer FFmpeg API.
+
 --- export/ffmpeg_cfg.c.orig	Sat Nov 19 11:50:27 2011
 +++ export/ffmpeg_cfg.c	Fri Jan 18 22:38:18 2013
 @@ -160,9 +160,9 @@ TCConfigEntry lavcopts_conf[]={

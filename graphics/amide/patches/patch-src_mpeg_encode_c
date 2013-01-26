@@ -1,4 +1,7 @@
-$OpenBSD: patch-src_mpeg_encode_c,v 1.3 2013/01/18 07:56:17 brad Exp $
+$OpenBSD: patch-src_mpeg_encode_c,v 1.4 2013/01/26 12:47:44 brad Exp $
+
+Update for newer FFmpeg API.
+
 --- src/mpeg_encode.c.orig	Mon Nov 16 01:55:52 2009
 +++ src/mpeg_encode.c	Fri Jan 18 02:18:00 2013
 @@ -141,7 +141,7 @@ static void convert_rgb_pixbuf_to_yuv(yuv_t * yuv, Gdk

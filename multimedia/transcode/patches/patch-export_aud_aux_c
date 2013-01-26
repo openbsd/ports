@@ -1,4 +1,7 @@
-$OpenBSD: patch-export_aud_aux_c,v 1.5 2013/01/19 08:42:35 brad Exp $
+$OpenBSD: patch-export_aud_aux_c,v 1.6 2013/01/26 12:47:44 brad Exp $
+
+Update for newer FFmpeg API.
+
 --- export/aud_aux.c.orig	Sat Nov 19 11:50:27 2011
 +++ export/aud_aux.c	Fri Jan 18 22:28:02 2013
 @@ -359,7 +359,7 @@ static int tc_audio_init_ffmpeg(vob_t *vob, int o_code
