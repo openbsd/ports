@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2012/12/16 11:35:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2013/01/26 09:46:35 brad Exp $
 
 COMMENT=		Media Transfer Protocol (MTP) implementation
 
-DISTNAME=		libmtp-1.1.3
-REVISION=		0
-SHARED_LIBS +=  mtp                  5.0      # 9.3
+DISTNAME=		libmtp-1.1.5
+SHARED_LIBS +=		mtp	5.1	# 9.5
 CATEGORIES=		devel
 
 HOMEPAGE=		http://libmtp.sourceforge.net/

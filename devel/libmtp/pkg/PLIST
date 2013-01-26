@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/12/16 11:35:24 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/01/26 09:46:35 brad Exp $
 %%SHARED%%
 @bin bin/mtp-albumart
 @bin bin/mtp-albums
@@ -31,38 +31,21 @@ share/doc/libmtp/html/
 share/doc/libmtp/html/__stdint_8h_source.html
 share/doc/libmtp/html/annotated.html
 share/doc/libmtp/html/bc_s.png
-share/doc/libmtp/html/bdwn.png
 share/doc/libmtp/html/classes.html
 share/doc/libmtp/html/closed.png
 share/doc/libmtp/html/delfile_8c-example.html
 share/doc/libmtp/html/detect_8c-example.html
 share/doc/libmtp/html/device-flags_8h.html
 share/doc/libmtp/html/device-flags_8h_source.html
-share/doc/libmtp/html/dir_68267d1309a1af8e8297ef4c3efbcdba.html
+share/doc/libmtp/html/dir_bb3a45700f8b636266dda7e86f379deb.html
+share/doc/libmtp/html/dirs.html
 share/doc/libmtp/html/doxygen.css
 share/doc/libmtp/html/doxygen.png
-share/doc/libmtp/html/dynsections.js
 share/doc/libmtp/html/examples.html
 share/doc/libmtp/html/examples_8h_source.html
 share/doc/libmtp/html/files.html
 share/doc/libmtp/html/files_8c-example.html
 share/doc/libmtp/html/folders_8c-example.html
-share/doc/libmtp/html/ftv2blank.png
-share/doc/libmtp/html/ftv2cl.png
-share/doc/libmtp/html/ftv2doc.png
-share/doc/libmtp/html/ftv2folderclosed.png
-share/doc/libmtp/html/ftv2folderopen.png
-share/doc/libmtp/html/ftv2lastnode.png
-share/doc/libmtp/html/ftv2link.png
-share/doc/libmtp/html/ftv2mlastnode.png
-share/doc/libmtp/html/ftv2mnode.png
-share/doc/libmtp/html/ftv2mo.png
-share/doc/libmtp/html/ftv2node.png
-share/doc/libmtp/html/ftv2ns.png
-share/doc/libmtp/html/ftv2plastnode.png
-share/doc/libmtp/html/ftv2pnode.png
-share/doc/libmtp/html/ftv2splitbar.png
-share/doc/libmtp/html/ftv2vertline.png
 share/doc/libmtp/html/functions.html
 share/doc/libmtp/html/functions_vars.html
 share/doc/libmtp/html/getfile_8c-example.html
@@ -99,7 +82,6 @@ share/doc/libmtp/html/group__tracks.html
 share/doc/libmtp/html/group__types.html
 share/doc/libmtp/html/hotplug_8c-example.html
 share/doc/libmtp/html/index.html
-share/doc/libmtp/html/jquery.js
 share/doc/libmtp/html/libmtp_8c.html
 share/doc/libmtp/html/libmtp_8h.html
 share/doc/libmtp/html/libmtp_8h_source.html
@@ -107,10 +89,12 @@ share/doc/libmtp/html/libusb-glue_8h.html
 share/doc/libmtp/html/libusb-glue_8h_source.html
 share/doc/libmtp/html/mainpage_8h_source.html
 share/doc/libmtp/html/modules.html
+share/doc/libmtp/html/mtpz_8c.html
+share/doc/libmtp/html/mtpz_8h.html
+share/doc/libmtp/html/mtpz_8h_source.html
 share/doc/libmtp/html/music-players_8h.html
 share/doc/libmtp/html/music-players_8h_source.html
 share/doc/libmtp/html/nav_f.png
-share/doc/libmtp/html/nav_g.png
 share/doc/libmtp/html/nav_h.png
 share/doc/libmtp/html/newfolder_8c-example.html
 share/doc/libmtp/html/open.png
@@ -168,11 +152,10 @@ share/doc/libmtp/html/struct__PTPUSBEventContainer.html
 share/doc/libmtp/html/struct__PTP__USB.html
 share/doc/libmtp/html/structfilemap__struct.html
 share/doc/libmtp/html/structmtpdevice__list__struct.html
+share/doc/libmtp/html/structmtpz__rsa__struct.html
 share/doc/libmtp/html/structpropertymap__struct.html
 share/doc/libmtp/html/structtagptp__chdk__videosettings.html
 share/doc/libmtp/html/structtext__struct.html
-share/doc/libmtp/html/sync_off.png
-share/doc/libmtp/html/sync_on.png
 share/doc/libmtp/html/tab_a.png
 share/doc/libmtp/html/tab_b.png
 share/doc/libmtp/html/tab_h.png
