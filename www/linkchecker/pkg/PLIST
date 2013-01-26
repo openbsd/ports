@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.21 2012/07/05 11:37:51 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.22 2013/01/26 14:43:08 jasper Exp $
 bin/linkchecker
 @comment bin/linkchecker-gui
+bin/linkchecker-nagios
 lib/python${MODPY_VERSION}/site-packages/LinkChecker-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/_LinkChecker_configdata.py
 lib/python${MODPY_VERSION}/site-packages/_LinkChecker_configdata.pyc
@@ -15,6 +16,8 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/__init__.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/linkcheck/ansicolor.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/ansicolor.pyc
+lib/python${MODPY_VERSION}/site-packages/linkcheck/better_exchook2.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/better_exchook2.pyc
 lib/python${MODPY_VERSION}/site-packages/linkcheck/bookmarks/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/bookmarks/__init__.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/bookmarks/__init__.pyc
@@ -31,10 +34,10 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/bookmarks/safari.pyc
 lib/python${MODPY_VERSION}/site-packages/linkcheck/cache/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/cache/__init__.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/cache/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/linkcheck/cache/addrinfo.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/cache/addrinfo.pyc
 lib/python${MODPY_VERSION}/site-packages/linkcheck/cache/connection.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/cache/connection.pyc
+lib/python${MODPY_VERSION}/site-packages/linkcheck/cache/content.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/cache/content.pyc
 lib/python${MODPY_VERSION}/site-packages/linkcheck/cache/cookie.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/cache/cookie.pyc
 lib/python${MODPY_VERSION}/site-packages/linkcheck/cache/robots_txt.py
@@ -64,6 +67,8 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/checker/mailtourl.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/checker/mailtourl.pyc
 lib/python${MODPY_VERSION}/site-packages/linkcheck/checker/nntpurl.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/checker/nntpurl.pyc
+lib/python${MODPY_VERSION}/site-packages/linkcheck/checker/pooledconnection.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/checker/pooledconnection.pyc
 lib/python${MODPY_VERSION}/site-packages/linkcheck/checker/proxysupport.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/checker/proxysupport.pyc
 lib/python${MODPY_VERSION}/site-packages/linkcheck/checker/telneturl.py
@@ -74,6 +79,10 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/checker/urlbase.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/checker/urlbase.pyc
 lib/python${MODPY_VERSION}/site-packages/linkcheck/clamav.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/clamav.pyc
+lib/python${MODPY_VERSION}/site-packages/linkcheck/cmdline.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/cmdline.pyc
+lib/python${MODPY_VERSION}/site-packages/linkcheck/colorama.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/colorama.pyc
 lib/python${MODPY_VERSION}/site-packages/linkcheck/configuration/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/configuration/__init__.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/configuration/__init__.pyc
@@ -205,6 +214,8 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/logger/html.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/logger/html.pyc
 lib/python${MODPY_VERSION}/site-packages/linkcheck/logger/none.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/logger/none.pyc
+lib/python${MODPY_VERSION}/site-packages/linkcheck/logger/sitemapxml.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/logger/sitemapxml.pyc
 lib/python${MODPY_VERSION}/site-packages/linkcheck/logger/sql.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/logger/sql.pyc
 lib/python${MODPY_VERSION}/site-packages/linkcheck/logger/text.py
@@ -248,6 +259,7 @@ share/examples/linkchecker/check_for_x_errors.sh
 share/examples/linkchecker/check_urls.sh
 share/examples/linkchecker/linkchecker-completion
 share/linkchecker/
+share/linkchecker/ca-certificates.crt
 share/linkchecker/examples/
 share/linkchecker/examples/check.js
 share/linkchecker/examples/index.html

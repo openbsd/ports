@@ -1,6 +1,6 @@
---- setup.py.orig	Sun Jun 10 17:17:44 2012
-+++ setup.py	Sun Jul  1 19:54:30 2012
-@@ -314,6 +314,7 @@ class MyInstallLib (install_lib, object):
+--- setup.py.orig	Tue Jan 22 15:59:18 2013
++++ setup.py	Tue Jan 22 16:06:05 2013
+@@ -355,6 +355,7 @@ class MyInstallLib (install_lib, object):
              else:
                  val = getattr(cmd_obj, attr)
              if attr == 'install_data':
@@ -8,7 +8,7 @@
                  cdir = os.path.join(val, "share", "linkchecker")
                  data.append('config_dir = %r' % cnormpath(cdir))
              elif attr == 'install_lib':
-@@ -609,11 +610,11 @@ data_files = [
+@@ -650,11 +651,11 @@ data_files = [
  ]
  
  if os.name == 'posix':
@@ -25,24 +25,24 @@
                ['config/linkchecker-completion',
                 'doc/examples/check_blacklist.sh',
                 'doc/examples/check_for_x_errors.sh',
-@@ -841,9 +842,6 @@ o a command line, GUI and web interface
+@@ -898,9 +899,6 @@ o a command line, GUI and web interface
          'py2app': MyPy2app,
          'register': MyRegister,
      },
 -    package_dir = {
--        'dns': 'third_party/dnspython/dns',
+-        'linkcheck_dns.dns': 'third_party/dnspython/dns',
 -    },
      packages = [
          'linkcheck',
          'linkcheck.bookmarks',
-@@ -856,10 +854,6 @@ o a command line, GUI and web interface
+@@ -913,10 +911,6 @@ o a command line, GUI and web interface
          'linkcheck.HtmlParser',
          'linkcheck.logger',
          'linkcheck.network',
--        'dns',
--        'dns.rdtypes',
--        'dns.rdtypes.ANY',
--        'dns.rdtypes.IN',
+-        'linkcheck_dns.dns',
+-        'linkcheck_dns.dns.rdtypes',
+-        'linkcheck_dns.dns.rdtypes.ANY',
+-        'linkcheck_dns.dns.rdtypes.IN',
      ],
      ext_modules = [
          Extension('linkcheck.HtmlParser.htmlsax',
