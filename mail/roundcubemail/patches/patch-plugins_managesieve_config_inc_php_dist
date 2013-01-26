@@ -1,6 +1,6 @@
-$OpenBSD: patch-plugins_managesieve_config_inc_php_dist,v 1.1 2011/10/11 22:04:28 sthen Exp $
---- plugins/managesieve/config.inc.php.dist.orig	Thu Sep  8 14:23:44 2011
-+++ plugins/managesieve/config.inc.php.dist	Thu Sep  8 14:24:37 2011
+$OpenBSD: patch-plugins_managesieve_config_inc_php_dist,v 1.2 2013/01/26 14:36:16 sthen Exp $
+--- plugins/managesieve/config.inc.php.dist.orig	Fri Jan 25 17:00:48 2013
++++ plugins/managesieve/config.inc.php.dist	Sat Jan 26 14:27:03 2013
 @@ -1,7 +1,8 @@
  <?php
  
