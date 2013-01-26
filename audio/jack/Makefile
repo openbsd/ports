@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2012/12/09 07:29:57 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2013/01/26 15:53:20 bcallah Exp $
 
 SHARED_ONLY =		Yes
 
@@ -7,7 +7,7 @@ COMMENT =		low latency sound server
 V =			0.121.3
 DISTNAME =		jack-audio-connection-kit-${V}
 PKGNAME =		jack-${V}
-REVISION =		2
+REVISION =		3
 CATEGORIES =		audio
 
 SHARED_LIBS +=		jack		0.0	# 0.28
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += c celt0>=1 m pthread readline samplerate sndfile
-WANTLIB += sndio termcap
+WANTLIB += sndio termcap FLAC ogg vorbis vorbisenc
 
 MASTER_SITES =		${HOMEPAGE}downloads/
 

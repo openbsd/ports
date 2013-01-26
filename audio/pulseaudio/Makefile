@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2013/01/14 05:52:34 brad Exp $
+# $OpenBSD: Makefile,v 1.42 2013/01/26 15:53:20 bcallah Exp $
 
 # XXX
 # fix autospawn lock (patch-src_daemon_main_c)
@@ -21,7 +21,7 @@ COMMENT=		cross-platform networked sound server
 VERSION=		3.0
 DISTNAME=		pulseaudio-${VERSION}
 EXTRACT_SUFX=		.tar.xz
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS +=  pulse                2.0      # .15.3
 SHARED_LIBS +=  pulse-simple         0.0      # .0.3
@@ -42,7 +42,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ICE SM X11 X11-xcb Xext Xi Xtst c crypto execinfo gdbm
 WANTLIB += glib-2.0 json ltdl m pcre pthread sndfile sndio speexdsp
-WANTLIB += ssl xcb
+WANTLIB += ssl xcb FLAC ogg vorbis vorbisenc
 
 MASTER_SITES=		http://freedesktop.org/software/pulseaudio/releases/
 TAR=			${LOCALBASE}/bin/gtar

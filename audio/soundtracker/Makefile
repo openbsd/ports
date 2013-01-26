@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2011/10/12 12:54:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2013/01/26 15:53:20 bcallah Exp $
 
 COMMENT=		music tracking tool for X11
 
 V=			0.6.8
 DISTNAME=		soundtracker_$V.gtk2_17092006_1613
 PKGNAME=		soundtracker-$V
-REVISION=		3
+REVISION=		4
 CATEGORIES=		audio
 HOMEPAGE=		http://www.shaltev.org/programming.html
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://www.shaltev.org/data/
 EXTRACT_SUFX=		.tar.bz2
 
-WANTLIB += GL ICE ORBit-2 SM X11 Xcomposite Xcursor Xdamage Xext
+WANTLIB += ICE ORBit-2 SM X11 Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0
 WANTLIB += bonobo-2 bonobo-activation bonoboui-2 c cairo expat
 WANTLIB += fontconfig freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0

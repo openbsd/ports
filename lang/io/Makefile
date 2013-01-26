@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/12/17 23:55:28 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2013/01/26 15:53:20 bcallah Exp $
 
 SHARED_ONLY = 	Yes
 ONLY_FOR_ARCHS =i386 amd64
@@ -7,6 +7,7 @@ COMMENT = 	embeddable prototype-based language
 
 DISTNAME = 	stevedekorte-io-2011.09.12-106-g02f9800
 PKGNAME = 	io-20110905
+REVISION =	0
 
 CATEGORIES =	lang
 
@@ -27,7 +28,7 @@ PERMIT_PACKAGE_FTP= 	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL X11 Xext Xrender atk-1.0 c cairo clutter-1.0 curses e2fs-uuid
+WANTLIB += X11 Xext Xrender atk-1.0 c cairo clutter-1.0 curses e2fs-uuid
 WANTLIB += edit event_core event_extra expat fontconfig freetype
 WANTLIB += glib-2.0 gmp gobject-2.0 iconv intl jpeg lzo2 m memcached
 WANTLIB += mysqlclient ogg pango-1.0 pcre pcreposix pixman-1 png
@@ -36,9 +37,7 @@ WANTLIB += sqlite3 theora tiff vorbis xcb xcb-render xcb-shm xml2
 WANTLIB += yajl z
 
 LIB_DEPENDS =	archivers/lzo2 \
-		audio/libogg \
 		audio/libsndfile \
-		audio/libvorbis \
 		mysql-client-*:databases/mysql,-main \
 		databases/qdbm \
 		devel/atk \

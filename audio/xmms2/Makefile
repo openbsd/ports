@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2012/09/01 14:36:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2013/01/26 15:53:20 bcallah Exp $
 
 COMMENT =		audio player daemon with library management
 BROKEN-sparc64 =	waf build goes into an infinite loop
@@ -6,7 +6,7 @@ BROKEN-sparc64 =	waf build goes into an infinite loop
 V =			0.8
 DISTNAME =		xmms2-${V}DrO_o
 PKGNAME =		xmms2-${V}
-REVISION=	0
+REVISION =		1
 
 SHARED_LIBS +=		xmmsclient++		2.0 # 4.0.0
 SHARED_LIBS +=		xmmsclient++-glib	1.0 # 1.0.0
@@ -27,10 +27,10 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += FLAC ao avahi-client avahi-common avahi-glib avcodec
 WANTLIB += avutil c curl gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gsm gthread-2.0 jack m mad mp3lame ncurses ogg orc-0.4
+WANTLIB += gthread-2.0 jack m mad ncurses ogg orc-0.4
 WANTLIB += pcre pthread readline schroedinger-1.0 sndfile speex
-WANTLIB += sqlite3 stdc++ theoradec theoraenc vorbis vorbisenc
-WANTLIB += vorbisfile vorbisidec vpx x264 xml2 xvidcore z
+WANTLIB += sqlite3 stdc++ theoradec theoraenc vorbis
+WANTLIB += vorbisfile vorbisidec vpx x264 xml2
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=xmms2/}
 
@@ -51,7 +51,6 @@ LIB_DEPENDS =		devel/glib2 \
 			audio/libao \
 			audio/jack \
 			textproc/libxml \
-			audio/flac \
 			net/curl \
 			audio/libmad \
 			net/avahi \

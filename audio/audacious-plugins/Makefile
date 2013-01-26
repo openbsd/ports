@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2013/01/14 02:26:19 brad Exp $
+# $OpenBSD: Makefile,v 1.57 2013/01/26 15:53:20 bcallah Exp $
 
 SHARED_ONLY =		Yes
 
@@ -7,7 +7,7 @@ COMMENT =		input and output plugins for Audacious
 V =			3.3.3
 
 DISTNAME =		audacious-plugins-$V
-REVISION =		0
+REVISION =		1
 CATEGORIES =		audio multimedia
 
 HOMEPAGE =		http://audacious-media-player.org/
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += FLAC GL SDL X11 Xcomposite Xext Xrender atk-1.0 audcore
+WANTLIB += FLAC SDL X11 Xcomposite Xext Xrender atk-1.0 audcore
 WANTLIB += audgui audtag avcodec avformat avutil cairo cairo-gobject
 WANTLIB += cddb cdio cdio_cdda cue curl dbus-1 dbus-glib-1 expat
 WANTLIB += faad fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0

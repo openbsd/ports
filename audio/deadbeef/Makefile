@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2013/01/03 11:54:49 shadchin Exp $
+# $OpenBSD: Makefile,v 1.4 2013/01/26 15:53:20 bcallah Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		DeaDBeeF is an audio player
 DISTNAME =		deadbeef-0.5.6
+REVISION =		0
 CATEGORIES =		audio
 
 HOMEPAGE =		http://deadbeef.sourceforge.net/
@@ -14,7 +15,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += FLAC GL ICE Imlib2 SM X11 Xcomposite Xcursor Xdamage
+WANTLIB += FLAC ICE Imlib2 SM X11 Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 avcodec
 WANTLIB += avformat avutil c cairo cddb cdio crypto curl dbus-1
 WANTLIB += expat faad ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
@@ -22,8 +23,8 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 harfbuzz icudata icule icuuc idn m mad
 WANTLIB += mms mpcdec ogg pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs sndfile sndio
-WANTLIB += ssl vorbis vorbisfile wavpack xcb xcb-render xcb-shm
-WANTLIB += z zip
+WANTLIB += ssl vorbis vorbisenc vorbisfile wavpack xcb xcb-render
+WANTLIB += xcb-shm z zip
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=deadbeef/}
 EXTRACT_SUFX =		.tar.bz2

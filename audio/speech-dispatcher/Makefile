@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2012/09/01 14:36:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2013/01/26 15:53:20 bcallah Exp $
 
 COMMENT=	common interface to speech synthesis
 
 DISTNAME=	speech-dispatcher-0.7.1
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  sdaudio              0.0      # 2.4
 SHARED_LIBS +=  speechd              0.0      # 5.0
@@ -19,7 +19,8 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ao c dotconf-1.1 espeak glib-2.0 gmodule-2.0 gthread-2.0
-WANTLIB += m pcre portaudio pthread sndfile sndio stdc++
+WANTLIB += m pcre portaudio pthread sndfile sndio stdc++ FLAC ogg
+WANTLIB += vorbis vorbisenc
 
 MASTER_SITES=	http://devel.freebsoft.org/pub/projects/speechd/
 
