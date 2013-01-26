@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/09/27 07:45:34 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/01/26 14:43:51 jasper Exp $
 %%SHARED%%
 include/gtksourceview-${MAJOR_VERSION}/
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/
@@ -302,8 +302,6 @@ share/locale/oc/LC_MESSAGES/gtksourceview-${MAJOR_VERSION}.mo
 share/locale/or/
 share/locale/or/LC_MESSAGES/
 share/locale/or/LC_MESSAGES/gtksourceview-${MAJOR_VERSION}.mo
-share/locale/pa/
-share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/gtksourceview-${MAJOR_VERSION}.mo
 share/locale/pl/LC_MESSAGES/gtksourceview-${MAJOR_VERSION}.mo
 share/locale/pt/LC_MESSAGES/gtksourceview-${MAJOR_VERSION}.mo
