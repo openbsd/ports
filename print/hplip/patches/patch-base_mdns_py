@@ -1,10 +1,10 @@
-$OpenBSD: patch-base_mdns_py,v 1.3 2013/01/26 12:25:54 ajacoutot Exp $
+$OpenBSD: patch-base_mdns_py,v 1.4 2013/01/26 19:38:00 ajacoutot Exp $
 
 XXX Unable to setup multicast socket... [Errno 22] Invalid argument
 
 --- base/mdns.py.orig	Tue Nov 20 10:55:15 2012
-+++ base/mdns.py	Sat Jan 26 10:17:55 2013
-@@ -211,12 +211,12 @@ def detectNetworkDevices(ttl=4, timeout=10):
++++ base/mdns.py	Sat Jan 26 19:13:23 2013
+@@ -211,9 +211,9 @@ def detectNetworkDevices(ttl=4, timeout=10):
          pass
  
      try:
@@ -12,12 +12,8 @@ XXX Unable to setup multicast socket... [Errno 22] Invalid argument
 -        s.setsockopt(socket.SOL_IP, socket.IP_MULTICAST_IF, socket.inet_aton(intf) + socket.inet_aton('0.0.0.0'))
 -        s.setsockopt(socket.SOL_IP, socket.IP_MULTICAST_LOOP ,1)
 +        s.setsockopt(socket.IPPROTO_IP, socket.IP_MULTICAST_TTL, ttl)
-+        s.setsockopt(socket.IPPROTO_IP, socket.IP_MULTICAST_IF, socket.inet_aton(intf) + socket.inet_aton('0.0.0.0'))
-+        s.setsockopt(socket.IPPROTO_IP, socket.IP_MULTICAST_LOOP ,1)
++        s.setsockopt(socket.IPPROTO_IP, socket.IP_MULTICAST_IF, socket.inet_aton(intf))
++        s.setsockopt(socket.IPPROTO_IP, socket.IP_MULTICAST_LOOP, struct.pack('B', 1))
      except Exception, e:
          log.error("Unable to setup multicast socket for mDNS: %s" % e)
--        return {}
-+        pass
- 
-     now = time.time()
-     next = now
+         return {}
