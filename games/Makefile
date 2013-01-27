@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.253 2013/01/04 23:11:53 stsp Exp $
+# $OpenBSD: Makefile,v 1.254 2013/01/27 23:55:42 stsp Exp $
 
      SUBDIR =
      SUBDIR += abuse
@@ -98,6 +98,7 @@
      SUBDIR += hex-a-hop
      SUBDIR += icebreaker
      SUBDIR += ivan
+     SUBDIR += jag
      SUBDIR += jbrickshooter
      SUBDIR += kbilliards
      SUBDIR += kobodeluxe
