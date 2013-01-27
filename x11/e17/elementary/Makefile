@@ -1,0 +1,46 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2013/01/27 15:51:11 rpe Exp $
+
+COMMENT =		basic widget set, based on EFL
+DISTNAME =		elementary-1.7.5
+
+SHARED_LIBS +=  elementary                0.0 # 8.5
+
+# LGPLv2.1
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
+
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender Xss Xtst c cares crypto curl dbus-1
+WANTLIB += ecore ecore_con ecore_evas ecore_file ecore_imf ecore_imf_evas
+WANTLIB += ecore_input ecore_input_evas ecore_ipc ecore_x edbus
+WANTLIB += edje eet efreet efreet_mime efreet_trash eina eio embryo
+WANTLIB += emotion ethumb ethumb_client evas exif expat ffi fontconfig
+WANTLIB += freetype fribidi glib-2.0 gobject-2.0 gthread-2.0 harfbuzz
+WANTLIB += icudata icule icuuc idn jpeg m pcre pthreadssl xcb z
+WANTLIB += ${MODLUA_WANTLIB}
+
+MODULES =		devel/gettext \
+			lang/lua
+
+USE_GMAKE =		Yes
+USE_LIBTOOL =		Yes
+
+RUN_DEPENDS =		devel/desktop-file-utils
+
+LIB_DEPENDS +=		x11/e17/e_dbus>=1.7.5v1 \
+			x11/e17/edje>=1.7.5v2 \
+			x11/e17/eet>=1.7.5v2 \
+			x11/e17/efreet>=1.7.5v2 \
+			x11/e17/eio>=1.7.5 \
+			x11/e17/emotion>=1.7.5 \
+			x11/e17/ethumb>=1.7.5 \
+			${MODLUA_LIB_DEPENDS}
+
+CONFIGURE_ARGS +=	--disable-doc
+
+FULLARCH =              ${MACHINE_ARCH:S/amd64/x86_64/}
+SUBST_VARS +=           FULLARCH OSREV VERSION
+
+.include <bsd.port.mk>

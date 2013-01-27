@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_bin_quicklaunch_c,v 1.1.1.1 2013/01/27 15:51:11 rpe Exp $
+--- src/bin/quicklaunch.c.orig	Sat Jan 19 17:14:26 2013
++++ src/bin/quicklaunch.c	Sat Jan 19 17:14:52 2013
+@@ -136,11 +136,11 @@ handle_run(int fd, unsigned long bytes)
+ #ifdef HAVE_ENVIRON
+    if (envir)
+      {
+-#ifdef HAVE_CLEARENV
++/* #ifdef HAVE_CLEARENV
+         clearenv();
+-#else
++#else */
+         environ = NULL;
+-#endif
++/* #endif */
+         for (i = 0; i < envnum; i++)
+           {
+              off = ((unsigned long *)(buf))[2 + argc + i] - sizeof(unsigned long);
