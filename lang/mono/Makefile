@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2013/01/27 10:45:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.77 2013/01/27 13:52:35 sthen Exp $
 
 COMMENT=	cross platform, open source .NET developement framework
 
@@ -42,7 +42,6 @@ USE_GROFF =	Yes
 SUBST_VARS=	LIBTOOL
 
 BUILD_DEPENDS=	devel/bison \
-		devel/libexecinfo \
 		${RUN_DEPENDS}
 RUN_DEPENDS=	x11/libgdiplus
 LIB_DEPENDS=	devel/boehm-gc
@@ -51,7 +50,8 @@ WANTLIB +=	gc
 AUTOCONF_VERSION=2.68
 CONFIGURE_STYLE=autoconf
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include"
+		CPPFLAGS="-I${LOCALBASE}/include" \
+		ac_cv_header_execinfo_h=no
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-gc=boehm \
 		--enable-quiet-build=no \
