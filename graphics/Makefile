@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.337 2012/12/19 07:53:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.338 2013/01/27 15:00:52 kirby Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -122,6 +122,7 @@
      SUBDIR += libexif-gtk
      SUBDIR += libgexiv2
      SUBDIR += libgphoto2
+     SUBDIR += libiptcdata
      SUBDIR += libkdcraw
      SUBDIR += libkexif
      SUBDIR += libkexiv2
@@ -210,6 +211,7 @@
      SUBDIR += qiv
      SUBDIR += quesoglc
      SUBDIR += rawstudio
+     SUBDIR += rawtherapee
      SUBDIR += ruby-color
      SUBDIR += ruby-gruff
      SUBDIR += ruby-mini_magick
