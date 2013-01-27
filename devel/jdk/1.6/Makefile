@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2012/10/24 18:44:51 kurt Exp $
+# $OpenBSD: Makefile,v 1.37 2013/01/27 20:10:10 kurt Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS= 	amd64 i386
@@ -89,7 +89,7 @@ FETCH_MANUALLY+=	" http://download.java.net/jdk6/6u3/promoted/b05/${JRLMOZ}"
 FETCH_MANUALLY+=	""
 FETCH_MANUALLY+=	"Get the BSD patchset file:"
 FETCH_MANUALLY+=	" ${PATCHSET}"
-FETCH_MANUALLY+=	"from http://www.eyesbeyond.com/freebsddom/java/jdk16.html"
+FETCH_MANUALLY+=	"from http://www.intricatesoftware.com/OpenBSD/java/JDK16JRLConfirm.html"
 
 FLAVORS=		no_web with_ipv6
 PSEUDO_FLAVORS=		native_bootstrap
