@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2013/01/24 13:52:09 kurt Exp $
+# $OpenBSD: Makefile,v 1.76 2013/01/27 10:45:30 sthen Exp $
 
 COMMENT=	cross platform, open source .NET developement framework
 
@@ -42,6 +42,7 @@ USE_GROFF =	Yes
 SUBST_VARS=	LIBTOOL
 
 BUILD_DEPENDS=	devel/bison \
+		devel/libexecinfo \
 		${RUN_DEPENDS}
 RUN_DEPENDS=	x11/libgdiplus
 LIB_DEPENDS=	devel/boehm-gc
