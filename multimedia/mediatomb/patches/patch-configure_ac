@@ -1,7 +1,16 @@
-$OpenBSD: patch-configure_ac,v 1.2 2010/11/09 13:26:31 jasper Exp $
+$OpenBSD: patch-configure_ac,v 1.3 2013/01/27 14:13:30 brad Exp $
 --- configure.ac.orig	Wed Apr  7 18:38:51 2010
-+++ configure.ac	Sun Nov  7 13:02:11 2010
-@@ -342,8 +342,13 @@ AC_CHECK_HEADERS([langinfo.h locale.h],[],[AC_MSG_WARN
++++ configure.ac	Sun Jan 27 08:44:06 2013
+@@ -327,6 +327,8 @@ AC_HEADER_STAT
+ AC_LANG_C
+ AM_PROG_CC_C_O
+ 
++AC_CHECK_FUNCS([arc4random],[],[])
++
+ AC_CHECK_HEADERS([time.h syslog.h stddef.h unistd.h arpa/inet.h fcntl.h], [],
+                  [AC_MSG_ERROR(required header not found)]) 
+ 
+@@ -342,8 +344,13 @@ AC_CHECK_HEADERS([langinfo.h locale.h],[],[AC_MSG_WARN
  AC_CHECK_HEADERS([sys/utsname.h])
  
  AC_CHECK_HEADERS([sched.h ctype.h],[],[])
@@ -16,7 +25,7 @@ $OpenBSD: patch-configure_ac,v 1.2 2010/11/09 13:26:31 jasper Exp $
  AC_CHECK_FUNCS([mkdir], [],
                [AC_MSG_ERROR(required function not found)])
  
-@@ -692,6 +697,8 @@ if test $DARWIN_OS -eq 1 ; then
+@@ -692,6 +699,8 @@ if test $DARWIN_OS -eq 1 ; then
          AC_MSG_NOTICE([You are running OSX, assuming threadsafe gethostbyname version])
  elif test $CYGWIN_OS -eq 1; then
          AC_MSG_NOTICE([Your are building under Cygwin, assuming threadsafe gethostbyname implementation])
@@ -25,7 +34,7 @@ $OpenBSD: patch-configure_ac,v 1.2 2010/11/09 13:26:31 jasper Exp $
  fi
  
  AC_CHECK_FUNCS([gethostbyname_r],[],
-@@ -758,7 +765,7 @@ if test "x$PTHREAD_LIB_OPTION_ENABLED" = xyes; then
+@@ -758,7 +767,7 @@ if test "x$PTHREAD_LIB_OPTION_ENABLED" = xyes; then
  else
      ACX_PTHREAD(,AC_MSG_ERROR(POSIX threads missing))
  
