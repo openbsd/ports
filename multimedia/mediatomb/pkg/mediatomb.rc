@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# $OpenBSD: mediatomb.rc,v 1.1 2013/01/27 10:06:50 sthen Exp $
+
+daemon="${TRUEPREFIX}/bin/mediatomb -d"
+daemon_flags="-c ${SYSCONFDIR}/mediatomb/config.xml -u _mediatomb -g _mediatomb -l /var/log/mediatomb"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1

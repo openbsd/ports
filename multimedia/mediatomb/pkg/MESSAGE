@@ -1,7 +1,0 @@
-To start mediatomb at boot time, place the following in /etc/rc.local:
-
-if [ -x ${TRUEPREFIX}/bin/mediatomb ] ; then
-	echo -n ' mediatomb'
-	su _mediatomb -c "${TRUEPREFIX}/bin/mediatomb \
-		-c ${SYSCONFDIR}/mediatomb/config.xml -d"
-fi

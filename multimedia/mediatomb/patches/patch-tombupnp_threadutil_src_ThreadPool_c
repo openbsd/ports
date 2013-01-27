@@ -1,7 +1,17 @@
-$OpenBSD: patch-tombupnp_threadutil_src_ThreadPool_c,v 1.2 2010/11/09 13:26:31 jasper Exp $
+$OpenBSD: patch-tombupnp_threadutil_src_ThreadPool_c,v 1.3 2013/01/27 10:06:50 sthen Exp $
 --- tombupnp/threadutil/src/ThreadPool.c.orig	Thu Mar 25 10:58:13 2010
-+++ tombupnp/threadutil/src/ThreadPool.c	Sun Nov  7 12:25:04 2010
-@@ -372,8 +372,10 @@ tp->stats.totalJobsLQ++; tp->stats.totalTimeLQ += diff
++++ tombupnp/threadutil/src/ThreadPool.c	Fri May 18 13:19:05 2012
+@@ -141,7 +141,8 @@ SetPolicyType( PolicyType in )
+ static int
+ SetPriority( ThreadPriority priority )
+ {
+-#if defined(HAVE_SCHED_GET_PRIORITY_MIN) && defined(HAVE_SCHED_GET_PRIORITY_MAX)
++#if defined(_POSIX_THREAD_PRIORITY_SCHEDULING) && (_POSIX_THREAD_PRIORITY_SCHEDULING > 0)
++  && defined(HAVE_SCHED_GET_PRIORITY_MIN) && defined(HAVE_SCHED_GET_PRIORITY_MAX)
+     int currentPolicy;
+     int minPriority = 0;
+     int maxPriority = 0;
+@@ -372,8 +373,10 @@ tp->stats.totalJobsLQ++; tp->stats.totalTimeLQ += diff
      gettimeofday( &t, NULL );
  #if defined(WIN32)
      srand( ( unsigned int )(t.tv_usec/1000) + (unsigned int)ithread_get_current_thread_id(  ).p );

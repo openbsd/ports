@@ -1,17 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/09/21 13:28:31 edd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/01/27 10:06:50 sthen Exp $
 @newgroup _mediatomb:656
 @newuser _mediatomb:656:_mediatomb:daemon:Mediatomb Account:/var/empty:/bin/sh
+@extra /var/log/mediatomb
+@extraunexec rm -rf /var/db/mediatomb/*
 @bin bin/mediatomb
 @man man/man1/mediatomb.1
 share/examples/mediatomb/
+share/examples/mediatomb/config.xml
 @mode 770
 @owner _mediatomb
-@group _mediatomb
+@group wheel
 @sample ${SYSCONFDIR}/mediatomb/
-share/examples/mediatomb/config.xml
-@sample ${SYSCONFDIR}/mediatomb/config.xml
-@extraunexec rm -rf /var/db/mediatomb/*
 @sample /var/db/mediatomb/
+@mode 660
+@sample ${SYSCONFDIR}/mediatomb/config.xml
 @mode
 @owner
 @group
@@ -109,3 +111,4 @@ share/mediatomb/web/std_treelook.css
 share/mediatomb/web/top.html
 share/mediatomb/web/topleft.html
 share/mediatomb/web/topright.html
+@rcscript ${RCDIR}/mediatomb

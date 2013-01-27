@@ -1,0 +1,30 @@
+$OpenBSD: patch-tombupnp_upnp_src_genlib_net_uri_uri_c,v 1.1 2013/01/27 10:06:50 sthen Exp $
+
+Fix double-slash issue with some samsung tv firmware;
+http://sourceforge.net/tracker/index.php?func=detail&aid=3532724&group_id=129766&atid=715782
+
+--- tombupnp/upnp/src/genlib/net/uri/uri.c.orig	Thu Mar 25 14:58:12 2010
++++ tombupnp/upnp/src/genlib/net/uri/uri.c	Sat Jan 26 13:22:12 2013
+@@ -1042,7 +1042,8 @@ parse_uri( const char *in,
+         out->path_type = REL_PATH;
+     }
+ 
+-    if( ( ( begin_hostport + 1 ) < max ) && ( in[begin_hostport] == '/' )
++    //parse hostport only if scheme was found
++    if( ( begin_hostport > 0 ) && ( ( begin_hostport + 1 ) < max ) && ( in[begin_hostport] == '/' )
+         && ( in[begin_hostport + 1] == '/' ) ) {
+         begin_hostport += 2;
+ 
+@@ -1059,6 +1060,12 @@ parse_uri( const char *in,
+         out->hostport.text.size = 0;
+         out->hostport.text.buff = 0;
+         begin_path = begin_hostport;
++
++        //remove excessive leading slashes (fix for Samsung Smart TV 2012)
++        while( ( ( begin_path + 1 ) < max ) && ( in[begin_path] == '/' ) && ( in[begin_path + 1] == '/') ) {
++            begin_path++;
++        }
++
+     }
+ 
+     begin_fragment =
