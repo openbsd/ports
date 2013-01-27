@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.77 2013/01/21 14:50:30 espie Exp $
+# $OpenBSD: dpb,v 1.78 2013/01/27 23:15:57 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -293,7 +293,7 @@ sub start_cores
 	}
 
 	my $default_prop = { 
-		junk => 100, 
+		junk => 150, 
 		parallel => '/2',
 		wait_timeout => 600,
 		small => 120,
