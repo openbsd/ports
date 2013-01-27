@@ -1,7 +1,7 @@
-$OpenBSD: patch-provider_soap_soapdefs_h,v 1.6 2012/08/30 14:28:22 ajacoutot Exp $
---- provider/soap/soapdefs.h.orig	Wed Aug  8 17:14:56 2012
-+++ provider/soap/soapdefs.h	Thu Aug 30 15:25:51 2012
-@@ -6,7 +6,9 @@
+$OpenBSD: patch-provider_soap_soapdefs_h,v 1.7 2013/01/27 13:06:20 robert Exp $
+--- provider/soap/soapdefs.h.orig	Sun Jan 20 17:35:20 2013
++++ provider/soap/soapdefs.h	Sun Jan 20 17:36:35 2013
+@@ -6,13 +6,20 @@
   * gSoap will not undef HAVE_STRTOD_L and HAVE_SPRINTF_L (if they
   * were defined in the first place).
   */
@@ -11,16 +11,17 @@ $OpenBSD: patch-provider_soap_soapdefs_h,v 1.6 2012/08/30 14:28:22 ajacoutot Exp
  
  
  #include <platform.h>
-@@ -17,7 +19,12 @@
-  * this limit.
-  */
- #ifndef _FORTIFY_SOURCE
-+# ifdef __OpenBSD__
-+#  include <sys/types.h>
-+#  include <sys/select.h>
-+# else
- # include <bits/types.h>
+ 
+-# include <bits/types.h>
+-# undef __FD_SETSIZE
+-# define __FD_SETSIZE 8192
++#ifdef __OpenBSD__
++#include <sys/types.h>
++#include <sys/select.h>
++#else
++#include <bits/types.h>
 +#endif
- # undef __FD_SETSIZE
- # define __FD_SETSIZE 8192
- #endif
++#undef __FD_SETSIZE
++#define __FD_SETSIZE 8192
+ 
+ #endif // ndef SOAPDEFS_H_

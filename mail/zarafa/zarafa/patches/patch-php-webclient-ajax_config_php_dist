@@ -1,8 +1,8 @@
-$OpenBSD: patch-php-webclient-ajax_config_php_dist,v 1.7 2012/08/30 14:28:22 ajacoutot Exp $
---- php-webclient-ajax/config.php.dist.orig	Mon Aug 27 10:01:07 2012
-+++ php-webclient-ajax/config.php.dist	Mon Aug 27 10:02:21 2012
-@@ -11,9 +11,9 @@
- 	define("CONFIG_CHECK", TRUE);
+$OpenBSD: patch-php-webclient-ajax_config_php_dist,v 1.8 2013/01/27 13:06:20 robert Exp $
+--- php-webclient-ajax/config.php.dist.orig	Wed Dec  5 15:22:58 2012
++++ php-webclient-ajax/config.php.dist	Sun Jan 20 17:18:38 2013
+@@ -17,9 +17,9 @@
+ 	define("CONFIG_CHECK_COOKIES_SSL", FALSE);
  
  	// Default Zarafa server to connect to.
 -	define("DEFAULT_SERVER","file:///var/run/zarafa");
@@ -13,7 +13,7 @@ $OpenBSD: patch-php-webclient-ajax_config_php_dist,v 1.7 2012/08/30 14:28:22 aja
  
  	// When using a single-signon system on your webserver, but Zarafa is on another server
  	// you can use https to access the zarafa server, and authenticate using an SSL certificate.
-@@ -46,12 +46,13 @@
+@@ -52,12 +52,13 @@
  
  	// Defines the temp path (absolute). Here uploaded attachments will be saved.
  	// The web client doesn't work without this directory.
@@ -29,7 +29,7 @@ $OpenBSD: patch-php-webclient-ajax_config_php_dist,v 1.7 2012/08/30 14:28:22 aja
  
  	// Define the relative URL for dialogs, this string is appended with HTTP GET arguments
  	define("DIALOG_URL", "index.php?load=dialog&");
-@@ -146,7 +147,7 @@
+@@ -158,7 +159,7 @@
  
  	// Spellchecker, change here to enable
  	define('FCKEDITOR_SPELLCHECKER_ENABLED', false);

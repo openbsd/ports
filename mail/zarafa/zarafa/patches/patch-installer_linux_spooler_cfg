@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_linux_spooler_cfg,v 1.6 2012/08/30 14:28:22 ajacoutot Exp $
---- installer/linux/spooler.cfg.orig	Wed Aug  8 16:35:33 2012
-+++ installer/linux/spooler.cfg	Mon Aug 27 10:32:59 2012
+$OpenBSD: patch-installer_linux_spooler_cfg,v 1.7 2013/01/27 13:06:20 robert Exp $
+--- installer/linux/spooler.cfg.orig	Wed Jan 23 12:48:53 2013
++++ installer/linux/spooler.cfg	Sun Jan 27 12:59:52 2013
 @@ -11,16 +11,16 @@ smtp_port = 25
  server_socket	=	file:///var/run/zarafa
  
@@ -31,7 +31,7 @@ $OpenBSD: patch-installer_linux_spooler_cfg,v 1.6 2012/08/30 14:28:22 ajacoutot 
  
  # The password of the SSL Key
  sslkey_pass = replace-with-server-cert-password
-@@ -138,13 +138,13 @@ archive_on_send = no
+@@ -140,13 +140,13 @@ archive_on_send = no
  plugin_enabled = yes
  
  # Path to the spooler plugin manager

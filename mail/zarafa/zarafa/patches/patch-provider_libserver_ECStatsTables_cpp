@@ -1,0 +1,33 @@
+$OpenBSD: patch-provider_libserver_ECStatsTables_cpp,v 1.1 2013/01/27 13:06:20 robert Exp $
+--- provider/libserver/ECStatsTables.cpp.orig	Wed Dec  5 16:06:38 2012
++++ provider/libserver/ECStatsTables.cpp	Sun Jan 27 12:53:49 2013
+@@ -319,15 +319,26 @@ void ECSessionStatsTable::GetSessionData(ECSession *lp
+ 	// To get up-to-date CPU stats, check each of the active threads on the session
+ 	// for their CPU usage, and add that to the already-logged time on the session
+ 	for (iterBS = sd.busystates.begin(); iterBS != sd.busystates.end(); iterBS++) {
++#ifdef OPENBSD
++		struct tms now;
++
++		if(iterBS->threadid == NULL)
++			continue;
++
++		times(&now);
++
++		sd.dblUser += (now.tms_utime / CLOCKS_PER_SEC) - timespec2dbl(iterBS->threadstart);
++#else
+ 		clockid_t clock;
+ 		struct timespec now;
+-		
++
+ 		if(pthread_getcpuclockid(iterBS->threadid, &clock) != 0)
+ 			continue;
+-			
++
+ 		clock_gettime(clock, &now);
+-		
++
+ 		sd.dblUser += timespec2dbl(now) - timespec2dbl(iterBS->threadstart);
++#endif
+ 		sd.dblReal += GetTimeOfDay() - iterBS->start;
+ 	}
+ 

@@ -1,10 +1,10 @@
-$OpenBSD: patch-common_platform_h,v 1.7 2012/05/05 16:56:17 ajacoutot Exp $
---- common/platform.h.orig	Thu May  3 16:37:09 2012
-+++ common/platform.h	Sat May  5 17:40:42 2012
-@@ -55,7 +55,12 @@
+$OpenBSD: patch-common_platform_h,v 1.8 2013/01/27 13:06:20 robert Exp $
+--- common/platform.h.orig	Sun Jan 20 17:29:12 2013
++++ common/platform.h	Sun Jan 20 17:29:47 2013
+@@ -70,7 +70,12 @@
+ 
+   // We have to include this now in case select.h is included too soon.
    // Increase our maximum amount of file descriptors to 8192
-   // But only if you don't have a glibc that doesn't check for this compiletime limit
-   #ifndef _FORTIFY_SOURCE
 +  #if OPENBSD
 +  #include <sys/types.h>
 +  #include <sys/select.h>
@@ -13,4 +13,4 @@ $OpenBSD: patch-common_platform_h,v 1.7 2012/05/05 16:56:17 ajacoutot Exp $
 +  #endif
    #undef __FD_SETSIZE
    #define __FD_SETSIZE 8192
-   #endif
+ 

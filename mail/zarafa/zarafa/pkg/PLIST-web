@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-web,v 1.19 2012/08/30 14:28:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST-web,v 1.20 2013/01/27 13:06:20 robert Exp $
 @conflict php5-mapi-*
 @pkgpath mail/zarafa/webaccess
 @pkgpath mail/zarafa/zarafa,-php
@@ -920,6 +920,7 @@ zarafa-webaccess/server/PEAR/XML/Unserializer.php
 zarafa-webaccess/server/PEAR/XML/Util.php
 zarafa-webaccess/server/class.configcheck.php
 zarafa-webaccess/server/core/
+zarafa-webaccess/server/core/class.attachmentstate.php
 zarafa-webaccess/server/core/class.bus.php
 zarafa-webaccess/server/core/class.conversion.php
 zarafa-webaccess/server/core/class.createZipArchive.php
@@ -1100,6 +1101,7 @@ zarafa-webaccess/server/modules/class.todayappointmentlistmodule.php
 zarafa-webaccess/server/modules/class.todayfolderlistmodule.php
 zarafa-webaccess/server/modules/class.todaytasklistmodule.php
 zarafa-webaccess/server/modules/class.usergroupmodule.php
+zarafa-webaccess/server/sys_get_temp_dir.php
 zarafa-webaccess/server/upload_attachment.php
 zarafa-webaccess/server/util.php
 zarafa-webaccess/static.php

@@ -1,6 +1,5 @@
-$OpenBSD: patch-common_ECLogger_cpp,v 1.16 2012/10/29 19:07:40 robert Exp $
---- common/ECLogger.cpp.orig	Thu Oct 18 19:06:56 2012
-+++ common/ECLogger.cpp	Mon Oct 29 20:06:21 2012
+--- common/ECLogger.cpp.orig	Wed Jan 23 13:42:30 2013
++++ common/ECLogger.cpp	Sun Jan 27 13:13:59 2013
 @@ -56,6 +56,10 @@
  #include "stringutil.h"
  #include "charset/localeutil.h"
@@ -47,7 +46,19 @@ $OpenBSD: patch-common_ECLogger_cpp,v 1.16 2012/10/29 19:07:40 robert Exp $
  		strftime(timestring, _LOG_TSSIZE, "%c", &local);
  
  	return timestring;
-@@ -230,7 +240,7 @@ void ECLogger_File::DoPrefix() {
+@@ -146,7 +156,11 @@ int ECLogger::snprintf(char *str, size_t size, const c
+ 	int len = 0;
+ 
+ 	va_start(va, format);
++#ifndef __OpenBSD__
+ 	len = _vsnprintf_l(str, size, format, datalocale, va);
++#else
++	len = _vsnprintf_l(str, size, format, va);
++#endif
+ 	va_end(va);
+ 	
+ 	return len;
+@@ -242,7 +256,7 @@ void ECLogger_File::DoPrefix() {
  	if (timestamp)
  		fnPrintf(log, "%s: ", MakeTimestamp());
  	if (prefix == LP_TID)
@@ -56,7 +67,7 @@ $OpenBSD: patch-common_ECLogger_cpp,v 1.16 2012/10/29 19:07:40 robert Exp $
  	else if (prefix == LP_PID)
  		fnPrintf(log, "[%5d] ", getpid());
  }
-@@ -290,7 +300,11 @@ void ECLogger_File::Log(int loglevel, const char *form
+@@ -302,7 +316,11 @@ void ECLogger_File::Log(int loglevel, const char *form
  
  void ECLogger_File::LogVA(int loglevel, const char *format, va_list& va) {
  	pthread_mutex_lock(&msgbuflock);
@@ -68,7 +79,7 @@ $OpenBSD: patch-common_ECLogger_cpp,v 1.16 2012/10/29 19:07:40 robert Exp $
  
  	pthread_mutex_lock(&filelock);
  
-@@ -433,7 +447,11 @@ void ECLogger_Tee::LogVA(int loglevel, const char *for
+@@ -445,7 +463,11 @@ void ECLogger_Tee::LogVA(int loglevel, const char *for
  	LoggerList::iterator iLogger;
  
  	pthread_mutex_lock(&msgbuflock);
@@ -80,7 +91,7 @@ $OpenBSD: patch-common_ECLogger_cpp,v 1.16 2012/10/29 19:07:40 robert Exp $
  
  	for (iLogger = m_loggers.begin(); iLogger != m_loggers.end(); ++iLogger)
  		(*iLogger)->Log(loglevel, std::string(msgbuffer));
-@@ -482,7 +500,7 @@ void ECLogger_Pipe::Log(int loglevel, const std::strin
+@@ -494,7 +516,7 @@ void ECLogger_Pipe::Log(int loglevel, const std::strin
  	off += 1;
  
  	if (prefix == LP_TID)
@@ -89,7 +100,7 @@ $OpenBSD: patch-common_ECLogger_cpp,v 1.16 2012/10/29 19:07:40 robert Exp $
  	else if (prefix == LP_PID)
  		len = snprintf(msgbuffer+off, _LOG_BUFSIZE -off, "[%5d] ", getpid());
  	if (len < 0) len = 0;
-@@ -518,14 +536,18 @@ void ECLogger_Pipe::LogVA(int loglevel, const char *fo
+@@ -530,14 +552,18 @@ void ECLogger_Pipe::LogVA(int loglevel, const char *fo
  	off += 1;
  
  	if (prefix == LP_TID)
@@ -109,7 +120,7 @@ $OpenBSD: patch-common_ECLogger_cpp,v 1.16 2012/10/29 19:07:40 robert Exp $
  	// -1 can be returned on formatting error (eg. %ls in C locale)
  	if (len < 0) len = 0;
  	len = min(len, _LOG_BUFSIZE -off -2); // yes, -2, otherwise we could have 2 \0 at the end of the buffer
-@@ -598,9 +620,13 @@ namespace PrivatePipe {
+@@ -610,9 +636,13 @@ namespace PrivatePipe {
  		int l;
  		bool bNPTL = true;
  

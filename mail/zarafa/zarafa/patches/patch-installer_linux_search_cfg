@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_linux_search_cfg,v 1.1 2012/08/30 14:28:22 ajacoutot Exp $
---- installer/linux/search.cfg.orig	Mon Aug 27 10:21:32 2012
-+++ installer/linux/search.cfg	Mon Aug 27 10:22:48 2012
+$OpenBSD: patch-installer_linux_search_cfg,v 1.2 2013/01/27 13:06:20 robert Exp $
+--- installer/linux/search.cfg.orig	Wed Dec  5 15:23:27 2012
++++ installer/linux/search.cfg	Sun Jan 20 17:18:38 2013
 @@ -2,19 +2,19 @@
  # INDEXED SEARCH SERVICE SETTINGS
  
@@ -47,7 +47,7 @@ $OpenBSD: patch-installer_linux_search_cfg,v 1.1 2012/08/30 14:28:22 ajacoutot E
  
  ##############################################################
  # LOG SETTINGS
-@@ -83,7 +83,7 @@ index_attachments	= no
+@@ -96,7 +96,7 @@ index_attachments	= no
  index_attachment_max_size = 5M
  
  # Scripts to attachment to text parser

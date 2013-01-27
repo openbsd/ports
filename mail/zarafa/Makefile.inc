@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile.inc,v 1.24 2012/10/28 21:51:08 robert Exp $
+# $OpenBSD: Makefile.inc,v 1.25 2013/01/27 13:06:20 robert Exp $
 
 SHARED_ONLY=	Yes
 
-V?=		7.1.1
-BUILD?=		37812
+V?=		7.1.3
+BUILD?=		40304
 DISTNAME?=	zcp-${V}
 
 CATEGORIES+=	mail/zarafa
