@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-python,v 1.1.1.1 2013/01/27 14:51:15 kirby Exp $
+lib/python${MODPY_VERSION}/site-packages/iptcdata.a
+lib/python${MODPY_VERSION}/site-packages/iptcdata.la
+lib/python${MODPY_VERSION}/site-packages/iptcdata.so

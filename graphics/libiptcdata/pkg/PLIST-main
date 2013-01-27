@@ -1,0 +1,46 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2013/01/27 14:51:15 kirby Exp $
+@bin bin/iptc
+include/libiptcdata/
+include/libiptcdata/_stdint.h
+include/libiptcdata/iptc-data.h
+include/libiptcdata/iptc-dataset.h
+include/libiptcdata/iptc-jpeg.h
+include/libiptcdata/iptc-log.h
+include/libiptcdata/iptc-mem.h
+include/libiptcdata/iptc-tag.h
+include/libiptcdata/iptc-utils.h
+lib/libiptcdata.a
+lib/libiptcdata.la
+@lib lib/libiptcdata.so.${LIBiptcdata_VERSION}
+lib/pkgconfig/libiptcdata.pc
+share/gtk-doc/
+share/gtk-doc/html/
+share/gtk-doc/html/libiptcdata/
+share/gtk-doc/html/libiptcdata/ch01.html
+share/gtk-doc/html/libiptcdata/ch02.html
+share/gtk-doc/html/libiptcdata/ch03.html
+share/gtk-doc/html/libiptcdata/home.png
+share/gtk-doc/html/libiptcdata/index.html
+share/gtk-doc/html/libiptcdata/index.sgml
+share/gtk-doc/html/libiptcdata/iptc-about.html
+share/gtk-doc/html/libiptcdata/iptc-commandline.html
+share/gtk-doc/html/libiptcdata/iptc-i18n.html
+share/gtk-doc/html/libiptcdata/iptc-libjpeg.html
+share/gtk-doc/html/libiptcdata/iptc-overview.html
+share/gtk-doc/html/libiptcdata/left.png
+share/gtk-doc/html/libiptcdata/libiptcdata-data.html
+share/gtk-doc/html/libiptcdata/libiptcdata-dataset.html
+share/gtk-doc/html/libiptcdata/libiptcdata-jpeg.html
+share/gtk-doc/html/libiptcdata/libiptcdata-log.html
+share/gtk-doc/html/libiptcdata/libiptcdata-mem.html
+share/gtk-doc/html/libiptcdata/libiptcdata-tag.html
+share/gtk-doc/html/libiptcdata/libiptcdata-utils.html
+share/gtk-doc/html/libiptcdata/libiptcdata.devhelp
+share/gtk-doc/html/libiptcdata/libiptcdata.devhelp2
+share/gtk-doc/html/libiptcdata/right.png
+share/gtk-doc/html/libiptcdata/style.css
+share/gtk-doc/html/libiptcdata/up.png
+share/locale/de/LC_MESSAGES/iptc.mo
+share/locale/de/LC_MESSAGES/libiptcdata.mo
+share/locale/it/LC_MESSAGES/iptc.mo
+share/locale/it/LC_MESSAGES/libiptcdata.mo
