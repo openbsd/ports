@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/10/28 21:49:58 robert Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/01/27 13:06:45 robert Exp $
 zarafa-webapp/
 zarafa-webapp/.htaccess
 zarafa-webapp/client/
@@ -1449,6 +1449,7 @@ zarafa-webapp/server/notifiers/class.newmailnotifier.php
 zarafa-webapp/server/notifiers/class.notifier.php
 zarafa-webapp/server/notifiers/class.stickynotelistnotifier.php
 zarafa-webapp/server/notifiers/class.tasklistnotifier.php
+zarafa-webapp/server/sys_get_temp_dir.php
 zarafa-webapp/server/upload_attachment.php
 zarafa-webapp/server/util.php
 zarafa-webapp/version
