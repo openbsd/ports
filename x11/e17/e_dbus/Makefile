@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2013/01/08 08:13:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2013/01/27 15:57:29 rpe Exp $
 
 COMMENT =		enlightenment DBus component
-DISTNAME =		e_dbus-1.7.4
-
-REVISION = 		1
+DISTNAME =		e_dbus-1.7.5
 EPOCH = 		1
 
-SO_VERSION =		3.0	# 8.4
+SO_VERSION =		4.0	# 8.5
 .for _lib in edbus enotify econnman0_7x ehal eofono ebluez eukit
 SHARED_LIBS +=		${_lib} ${SO_VERSION}
 .endfor
@@ -30,7 +28,7 @@ MODULES =		devel/gettext
 
 LIB_DEPENDS =		x11/dbus \
 			devel/fribidi \
-			x11/e17/ecore>=3.0
+			x11/e17/ecore>=1.7.5v2
 
 CONFIGURE_ARGS =	--disable-doc
 

@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2013/01/08 08:13:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2013/01/27 15:57:29 rpe Exp $
 
 COMMENT =		core event/X abstraction layer
-DISTNAME =		ecore-1.7.4
-
-REVISION = 		2
+DISTNAME =		ecore-1.7.5
 EPOCH =			2
 
-SO_VERSION =		3.0		# 8.4
+SO_VERSION =		3.0		# 8.5
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 .for _lib in ecore ecore_con ecore_evas ecore_file ecore_imf \
@@ -35,7 +33,7 @@ LIB_DEPENDS =		devel/glib2 \
 			inputmethods/ibus \
 			net/curl \
 			net/libcares \
-			x11/e17/evas>=3.0
+			x11/e17/evas>=1.7.5v2
 
 CONFIGURE_ARGS +=	--disable-doc \
 			--disable-gnutls \

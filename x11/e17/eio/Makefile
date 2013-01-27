@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2013/01/08 08:13:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2013/01/27 15:57:29 rpe Exp $
 
 COMMENT =		async i/o library
 
-DISTNAME =		eio-1.7.4
-REVISION =		2
+DISTNAME =		eio-1.7.5
 
-SHARED_LIBS +=		eio 1.0 	# 8.4
+SHARED_LIBS +=		eio 1.0 	# 8.5
 
 # LGPL v2.1
 PERMIT_PACKAGE_CDROM =	Yes
@@ -18,9 +17,7 @@ WANTLIB += ssl z
 
 MODULES =		devel/gettext
 
-LIB_DEPENDS =		x11/e17/eina>=3.0 \
-			x11/e17/eet>=3.0 \
-			x11/e17/ecore>=3.0
+LIB_DEPENDS =		x11/e17/ecore>=1.7.5v2
 
 USE_LIBTOOL =		Yes
 

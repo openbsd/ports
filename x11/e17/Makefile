@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2012/11/10 15:01:34 stsp Exp $
+# $OpenBSD: Makefile,v 1.9 2013/01/27 15:57:29 rpe Exp $
 
      SUBDIR =
      SUBDIR += e
@@ -9,7 +9,10 @@
      SUBDIR += efreet
      SUBDIR += eina
      SUBDIR += eio
+     SUBDIR += elementary
      SUBDIR += embryo
+     SUBDIR += emotion
+     SUBDIR += ethumb
      SUBDIR += evas
 
 .include <bsd.port.subdir.mk>
