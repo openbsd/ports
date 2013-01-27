@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/01/27 15:51:11 rpe Exp $
+# $OpenBSD: Makefile,v 1.2 2013/01/27 17:35:56 rpe Exp $
 
 COMMENT =		basic widget set, based on EFL
 DISTNAME =		elementary-1.7.5
@@ -18,7 +18,7 @@ WANTLIB += ecore_input ecore_input_evas ecore_ipc ecore_x edbus
 WANTLIB += edje eet efreet efreet_mime efreet_trash eina eio embryo
 WANTLIB += emotion ethumb ethumb_client evas exif expat ffi fontconfig
 WANTLIB += freetype fribidi glib-2.0 gobject-2.0 gthread-2.0 harfbuzz
-WANTLIB += icudata icule icuuc idn jpeg m pcre pthreadssl xcb z
+WANTLIB += icudata icule icuuc idn jpeg m pcre pthread ssl xcb z
 WANTLIB += ${MODLUA_WANTLIB}
 
 MODULES =		devel/gettext \
