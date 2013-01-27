@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2012/09/09 17:15:59 robert Exp $
+@comment $OpenBSD: PLIST,v 1.11 2013/01/27 13:08:53 robert Exp $
 @extraunexec rm -rf /var/www/var/db/z-push/*
 @extraunexec rm -rf /var/www/var/log/z-push/*
 @unexec-delete rm -f /var/www/conf/modules/z-push.conf
@@ -12,8 +12,6 @@ z-push/backend/combined/config.php
 z-push/backend/combined/exporter.php
 z-push/backend/combined/importer.php
 z-push/backend/imap.php
-z-push/backend/kolab/
-z-push/backend/kolab/kolab.php
 z-push/backend/maildir.php
 z-push/backend/searchldap/
 z-push/backend/searchldap/config.php
