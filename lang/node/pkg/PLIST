@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2013/01/13 14:53:40 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.12 2013/01/27 03:56:06 abieber Exp $
 @pkgpath www/node
 @bin bin/node
 bin/node-gyp
@@ -192,6 +192,7 @@ lib/node_modules/fstream-npm/fstream-npm.js
 lib/node_modules/fstream-npm/node_modules/
 lib/node_modules/fstream-npm/node_modules/fstream-ignore/
 lib/node_modules/fstream-npm/node_modules/fstream-ignore/.npmignore
+lib/node_modules/fstream-npm/node_modules/fstream-ignore/LICENSE
 lib/node_modules/fstream-npm/node_modules/fstream-ignore/README.md
 lib/node_modules/fstream-npm/node_modules/fstream-ignore/example/
 lib/node_modules/fstream-npm/node_modules/fstream-ignore/example/basic.js
