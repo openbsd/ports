@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.91 2013/01/21 15:08:25 espie Exp $
+# $OpenBSD: Port.pm,v 1.92 2013/01/27 23:15:12 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -429,7 +429,7 @@ sub setup
 {
 	my ($task, $core) = @_;
 	# zap things HERE
-	if ($core->prop->{junk_count} < $core->prop->{junk}) {
+	if ($core->prop->{depends_count} < $core->prop->{junk}) {
 		$task->junk_unlock($core);
 		return $core->job->next_task($core);
 	}
@@ -468,7 +468,7 @@ sub run
 
 	$self->handle_output($job);
 	# we got pre-empted
-	if ($core->prop->{junk_count} < $core->prop->{junk}) {
+	if ($core->prop->{depends_count} < $core->prop->{junk}) {
 		exit(2);
 	}
 
@@ -490,6 +490,8 @@ sub finalize
 	my ($self, $core) = @_;
 	if ($core->{status} == 0) {
 		$core->prop->{junk_count} = 0;
+		$core->prop->{ports_count} = 0;
+		$core->prop->{depends_count} = 0;
 	}
 	$core->{status} = 0;
 	$self->SUPER::finalize($core);
@@ -712,7 +714,6 @@ sub new
 
 	$job->{endcode} = sub { 
 		close($job->{logfh}); 
-		$builder->register_built($v); 
 		&$endcode; };
 
 	my $prop = $core->prop;
@@ -783,7 +784,7 @@ sub has_depends
 			}
 		}
 	}
-	my $c = scalar(%deps2);
+	my $c = scalar(keys %deps2);
 	if (!$c) {
 		$self->save_depends(\@live);
 		print {$self->{logfh}} "Avoided depends for ", 
@@ -816,23 +817,28 @@ sub add_normal_tasks
 	    $times->{$self->{v}} < $hostprop->{small_timeout}) {
 		$small = 1;
 	}
-#	if (defined $times->{$self->{v}} &&
-#	    $times->{$self->{v}} < 4800) {
-#	    	$self->{special} = 1;
-#		print {$self->{logfh}} "Building in RAM\n";
-#	}
 	if ($builder->{clean}) {
 		$self->insert_tasks(DPB::Task::Port::BaseClean->new('clean'));
 	}
 	$hostprop->{junk_count} //= 0;
-	if ($self->has_depends($core)) {
+	$hostprop->{depends_count} //= 0;
+	$hostprop->{ports_count} //= 0;
+	my $c = $self->has_depends($core);
+	$hostprop->{ports_count}++;
+	$hostprop->{depends_count} += $c;
+	if ($c) {
 		$hostprop->{junk_count}++;
 		push(@todo, qw(depends show-prepare-results));
 	}
 	# gc stuff we will no longer need
 	delete $self->{v}{info}{solved};
 	if ($hostprop->{junk}) {
-		if ($hostprop->{junk_count} >= $hostprop->{junk}) {
+		if ($hostprop->{depends_count} >= $hostprop->{junk}) {
+			my $fh = $self->{builder}->logger->open("junk");
+			print $fh time(), ": ", $core->hostname,
+			    ": depends=$hostprop->{depends_count} ",
+			    " ports=$hostprop->{ports_count} ",
+			    " junk=$hostprop->{junk_count} \n";
 			push(@todo, 'junk');
 		}
 	}

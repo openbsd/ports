@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.35 2013/01/21 14:56:29 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.36 2013/01/27 23:15:12 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -116,10 +116,6 @@ sub check
 {
 	my ($self, $v) = @_;
 	return -f $self->pkgfile($v);
-}
-
-sub register_built
-{
 }
 
 sub checks_rebuild
@@ -282,6 +278,9 @@ sub check
 {
 	my ($self, $v) = @_;
 	return 0 unless $self->SUPER::check($v);
+
+	my $name = $v->fullpkgname;
+	print {$self->{logrebuild}} "$name uptodate (cached): $uptodate->{$name}\n";
 	return $uptodate->{$v->fullpkgname};
 }
 
@@ -291,12 +290,3 @@ sub checks_rebuild
 	return 1 unless $uptodate->{$v->fullpkgname};
 }
 
-sub register_built
-{
-	my ($self, $v) = @_;
-	for my $w ($v->build_path_list) {
-		$uptodate->{$w->fullpkgname} = -f $self->pkgfile($w);
-	}
-}
-
-1;
