@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/01/27 15:53:18 rpe Exp $
+@bin bin/ethumb
+@bin bin/ethumbd
+@bin bin/ethumbd_client
+include/ethumb-1/
+include/ethumb-1/Ethumb.h
+include/ethumb-1/Ethumb_Client.h
+include/ethumb-1/Ethumb_Plugin.h
+lib/ethumb/
+lib/ethumb/plugins/
+lib/ethumb/plugins/data/
+lib/ethumb/plugins/data/emotion_template.edj
+lib/ethumb/plugins/emotion.la
+lib/ethumb/plugins/emotion.so
+lib/libethumb.la
+@lib lib/libethumb.so.${LIBethumb_VERSION}
+lib/libethumb_client.la
+@lib lib/libethumb_client.so.${LIBethumb_client_VERSION}
+lib/pkgconfig/ethumb.pc
+lib/pkgconfig/ethumb_client.pc
+@bin libexec/ethumbd_slave
+share/dbus-1/services/org.enlightenment.Ethumb.service
+share/ethumb/
+share/ethumb/data/
+share/ethumb/data/frames/
+share/ethumb/data/frames/default.edj
