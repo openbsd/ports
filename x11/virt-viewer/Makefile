@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2012/10/11 10:04:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2013/01/27 17:47:45 jasper Exp $
 
 COMMENT=	graphics viewer for KVM guest displays
 
 DISTNAME=	virt-viewer-0.5.4
-REVISION=	1
+REVISION=	2
 CATEGORIES=	x11
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -56,5 +56,7 @@ post-install:
 	cd ${WRKSRC}/icons/${s}x${s}/ && ${MAKE_ENV} ${MAKE_PROGRAM} install-iconDATA
 .endfor
 	rm -r ${PREFIX}/share/icons/hicolor/apps/
+	${INSTALL_SCRIPT} ${WRKSRC}/data/spice-xpi-client-remote-viewer \
+		${PREFIX}/libexec/
 
 .include <bsd.port.mk>
