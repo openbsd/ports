@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/12/22 16:27:59 ajacoutot Exp $
-bin/amoebax
+@comment $OpenBSD: PLIST,v 1.3 2013/01/27 10:26:45 benoit Exp $
+@bin bin/amoebax
 @man man/man6/amoebax.6
 share/amoebax/
 share/amoebax/fonts/
@@ -85,7 +85,6 @@ share/amoebax/sfx/die.wav
 share/amoebax/sfx/levelup.wav
 share/amoebax/sfx/youlose.wav
 share/amoebax/sfx/youwin.wav
-share/applications/
 share/applications/amoebax.desktop
 share/doc/amoebax/
 share/doc/amoebax/manual.pdf
