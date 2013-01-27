@@ -1,0 +1,5 @@
+Emotion is a video (and audio) codec playback library that acts as
+a front-end to libxine or gstreamer (or something else more generic)
+that provides and evas object as a control object and video output
+point. It makes using video API's much simpler and easier while
+it's at it.

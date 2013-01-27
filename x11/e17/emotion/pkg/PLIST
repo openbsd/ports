@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/01/27 15:52:16 rpe Exp $
+@bin bin/emotion_test
+include/emotion-1/
+include/emotion-1/Emotion.h
+include/emotion-1/Emotion_Generic_Plugin.h
+lib/edje/modules/
+lib/edje/modules/emotion/
+lib/edje/modules/emotion/openbsd${OSREV}-${FULLARCH}-1.0.0/
+lib/edje/modules/emotion/openbsd${OSREV}-${FULLARCH}-1.0.0/module.la
+lib/edje/modules/emotion/openbsd${OSREV}-${FULLARCH}-1.0.0/module.so
+lib/emotion/
+lib/emotion/em_generic.la
+lib/emotion/em_generic.so
+lib/emotion/gstreamer.la
+lib/emotion/gstreamer.so
+lib/libemotion.la
+@lib lib/libemotion.so.${LIBemotion_VERSION}
+lib/pkgconfig/emotion.pc
+share/emotion/
+share/emotion/data/
+share/emotion/data/icon.edj
+share/emotion/data/theme.edj
+@comment share/emotion/examples/
