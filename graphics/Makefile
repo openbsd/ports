@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.338 2013/01/27 15:00:52 kirby Exp $
+# $OpenBSD: Makefile,v 1.339 2013/01/28 07:56:39 jasper Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -198,6 +198,7 @@
      SUBDIR += povray
      SUBDIR += pstoedit
      SUBDIR += py-Imaging
+     SUBDIR += py-Pillow
      SUBDIR += py-cairo
      SUBDIR += py-dot
      SUBDIR += py-gd
