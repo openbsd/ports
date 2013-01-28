@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.40 2013/01/28 15:52:04 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.41 2013/01/28 17:36:11 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -246,11 +246,11 @@ sub equal_signatures
 sub check_signature
 {
 	my ($self, $core, $v) = @_;
-	my $rebuild = 0;
+	my $okay = 1;
 	for my $w ($v->build_path_list) {
 		my $name = $w->fullpkgname;
 		if (!-f "$self->{fullrepo}/$name.tgz") {
-			$rebuild = 1;
+			$okay = 0;
 			next;
 		}
 		next if $uptodate->{$name};
@@ -262,9 +262,9 @@ sub check_signature
 		print "$name: rebuild\n";
 		$self->{state}->grabber->clean_packages($core,
 		    $w->fullpkgpath);
-	    	$rebuild = 1;
+	    	$okay = 0;
 	}
-	return $rebuild;
+	return $okay;
 }
 
 # this is due to the fact check_signature is within a child
