@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.81 2013/01/28 10:50:46 espie Exp $
+# $OpenBSD: dpb,v 1.82 2013/01/28 12:23:45 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -269,6 +269,10 @@ sub start_cores
 	if ($state->define_present('STUCK_TIMEOUT')) {
 		$override_prop->{stuck} = 
 		    $state->{subst}->value('STUCK_TIMEOUT');
+	}
+	if ($state->define_present('FETCH_TIMEOUT')) {
+		$override_prop->{fetch_timeout} = 
+		    $state->{subst}->value('FETCH_TIMEOUT');
 	}
 	if ($state->define_present('SMALL_TIME')) {
 		$override_prop->{small} = 

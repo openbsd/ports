@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.31 2013/01/28 10:14:17 espie Exp $
+# $OpenBSD: Core.pm,v 1.32 2013/01/28 12:23:45 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -178,6 +178,12 @@ sub stuck_timeout
 {
 	my $self = shift;
 	return $self->prop->{stuck_timeout};
+}
+
+sub fetch_timeout
+{
+	my $self = shift;
+	return $self->prop->{fetch_timeout};
 }
 
 sub memory
