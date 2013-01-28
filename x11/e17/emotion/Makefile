@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/01/27 15:52:16 rpe Exp $
+# $OpenBSD: Makefile,v 1.2 2013/01/28 08:17:15 rpe Exp $
 
 COMMENT =		video (and audio) codec playback library
 DISTNAME =		emotion-1.7.5
@@ -34,8 +34,5 @@ LIB_DEPENDS =		devel/orc \
 
 
 CONFIGURE_ARGS +=	--disable-doc
-
-FULLARCH =		${MACHINE_ARCH:S/amd64/x86_64/}
-SUBST_VARS +=		FULLARCH OSREV VERSION
 
 .include <bsd.port.mk>

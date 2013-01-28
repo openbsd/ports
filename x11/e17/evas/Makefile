@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/01/27 15:57:29 rpe Exp $
+# $OpenBSD: Makefile,v 1.27 2013/01/28 08:17:15 rpe Exp $
 
 COMMENT =		canvas API for X
 VERSION = 		1.7.5
@@ -80,8 +80,5 @@ CONFIGURE_ENV +=	CXXFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include
 			CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
 			CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib"
-
-FULLARCH =		${MACHINE_ARCH:S/amd64/x86_64/}
-SUBST_VARS +=		FULLARCH OSREV VERSION
 
 .include <bsd.port.mk>

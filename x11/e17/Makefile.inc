@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.16 2013/01/08 08:13:28 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.17 2013/01/28 08:17:15 rpe Exp $
 
 CATEGORIES ?=		x11
 
@@ -19,6 +19,9 @@ NO_REGRESS ?=		Yes
 
 SHARED_ONLY ?=		Yes
 LIBTOOL_FLAGS ?=	--tag=disable-static
+
+FULLARCH =		${MACHINE_ARCH:S/amd64/x86_64/}
+SUBST_VARS +=		FULLARCH OSREV VERSION
 
 #FLAVORS = debug
 #FLAVOR ?=

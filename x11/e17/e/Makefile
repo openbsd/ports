@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2013/01/27 15:57:29 rpe Exp $
+# $OpenBSD: Makefile,v 1.43 2013/01/28 08:17:15 rpe Exp $
 
 COMMENT =		the enlightened window manager
 
@@ -98,9 +98,6 @@ USE_LIBTOOL =		Yes
 # Stupid crap in /src/modules/illume/dicts chokes in regular make.
 # Some issue with the "(US)" bit
 USE_GMAKE =		Yes
-
-FULLARCH =		${MACHINE_ARCH:S/amd64/x86_64/}
-SUBST_VARS +=		FULLARCH OSREV VERSION
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/enlightenment

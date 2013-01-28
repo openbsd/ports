@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/01/27 15:57:29 rpe Exp $
+# $OpenBSD: Makefile,v 1.14 2013/01/28 08:17:15 rpe Exp $
 
 COMMENT =		EFL API for data types
 VERSION = 		1.7.5
@@ -46,9 +46,6 @@ CONFIGURE_ARGS =	--disable-doc \
 
 CONFIGURE_ENV =		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
-
-FULLARCH =		${MACHINE_ARCH:S/amd64/x86_64/}
-SUBST_VARS +=		FULLARCH VERSION
 
 REGRESS_TARGET = 	check-local
 

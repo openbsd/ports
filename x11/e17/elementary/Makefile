@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/01/27 17:35:56 rpe Exp $
+# $OpenBSD: Makefile,v 1.3 2013/01/28 08:17:15 rpe Exp $
 
 COMMENT =		basic widget set, based on EFL
 DISTNAME =		elementary-1.7.5
@@ -39,8 +39,5 @@ LIB_DEPENDS +=		x11/e17/e_dbus>=1.7.5v1 \
 			${MODLUA_LIB_DEPENDS}
 
 CONFIGURE_ARGS +=	--disable-doc
-
-FULLARCH =              ${MACHINE_ARCH:S/amd64/x86_64/}
-SUBST_VARS +=           FULLARCH OSREV VERSION
 
 .include <bsd.port.mk>
