@@ -1,0 +1,4 @@
+libircclient is a small but extremely powerful library which implements
+the IRC protocol. It is designed to be small, fast, portable and
+compatible with the RFC standards as well as non-standard but popular
+features. It is perfect for building the IRC clients and bots.

@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2013/01/28 13:49:52 stsp Exp $
+@lib lib/libircclient.so.${LIBircclient_VERSION}

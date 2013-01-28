@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2013/01/28 13:49:52 stsp Exp $
+--- configure.orig	Mon Jan 28 12:32:29 2013
++++ configure	Mon Jan 28 12:32:51 2013
+@@ -4390,8 +4390,6 @@ fi
+ 
+ if test "$use_debug" = "yes"; then
+ 	CFLAGS="${CFLAGS} -g -DENABLE_DEBUG"
+-else
+-	CFLAGS="${CFLAGS} -O3"
+ fi
+ 
+ # Choosing the target
