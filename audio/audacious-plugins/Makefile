@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2013/01/26 15:53:20 bcallah Exp $
+# $OpenBSD: Makefile,v 1.58 2013/01/28 13:44:30 sthen Exp $
 
 SHARED_ONLY =		Yes
 
@@ -7,7 +7,7 @@ COMMENT =		input and output plugins for Audacious
 V =			3.3.3
 
 DISTNAME =		audacious-plugins-$V
-REVISION =		1
+REVISION =		2
 CATEGORIES =		audio multimedia
 
 HOMEPAGE =		http://audacious-media-player.org/

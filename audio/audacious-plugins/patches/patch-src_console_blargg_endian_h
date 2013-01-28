@@ -1,18 +1,17 @@
-$OpenBSD: patch-src_console_blargg_endian_h,v 1.1 2013/01/25 10:24:42 jasper Exp $
-
-Correctly handle unrecognized architectures' endianness.
-
---- src/console/blargg_endian.h.orig	Thu Dec  6 09:05:32 2012
-+++ src/console/blargg_endian.h	Thu Dec  6 09:08:57 2012
-@@ -37,9 +37,9 @@
+$OpenBSD: patch-src_console_blargg_endian_h,v 1.2 2013/01/28 13:44:30 sthen Exp $
+--- src/console/blargg_endian.h.orig	Mon Jan 28 12:58:16 2013
++++ src/console/blargg_endian.h	Mon Jan 28 12:59:10 2013
+@@ -28,6 +28,13 @@
+ 	#elif __BYTE_ORDER == __BIG_ENDIAN
+ 		#define BLARGG_BIG_ENDIAN 1
+ 	#endif
++#elif defined(__OpenBSD__)
++	#include <machine/endian.h>
++	#if _BYTE_ORDER == _LITTLE_ENDIAN
++		#define BLARGG_LITTLE_ENDIAN 1
++	#elif _BYTE_ORDER == _BIG_ENDIAN
++		#define BLARGG_BIG_ENDIAN 1
++	#endif
+ #else
  
- #if defined (MSB_FIRST)     || defined (__BIG_ENDIAN__) || defined (WORDS_BIGENDIAN) || \
- 	defined (__sparc__)     ||  BLARGG_CPU_POWERPC || \
--	(defined (BIG_ENDIAN) && BIG_ENDIAN+0 != 4321)
-+	(defined (BIG_ENDIAN) && BIG_ENDIAN+0 != 4321) || defined(_BIG_ENDIAN)
- 	#define BLARGG_BIG_ENDIAN 1
--#elif !defined (__mips__)
-+#elif !defined (__mips__) || defined(_LITTLE_ENDIAN)
- 	// No endian specified; assume little-endian, since it's most common
- 	#define BLARGG_LITTLE_ENDIAN 1
- #endif
+ #if defined (LSB_FIRST) || defined (__LITTLE_ENDIAN__) || BLARGG_CPU_X86 || \
