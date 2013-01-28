@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.71 2013/01/28 13:48:31 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.72 2013/01/28 23:07:36 nigel Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -694,7 +694,7 @@ the current jobs are finished unless
 .Pp
 .Nm
 also checks for files named
-.Pa <hostname>-stop
+.Pa stop-<hostname>
 in its log directory.
 If such a file exists, then it won't start new jobs on
 the corresponding machine.
@@ -904,9 +904,6 @@ they were not responding, or because of incorrect checksums.
 List of URLs that fetched correctly, along with timing statistics.
 .It Pa fetch/manually.log
 List of pkgpaths that require manual intervention, in human-readable form.
-.It Pa <hostname>-stop
-Not a logfile at all, but created by the user to stop hostname creating
-new jobs.
 .It Pa <hostname>.sig.log
 Complete library signature of the host.
 .It Pa junk.log
@@ -977,6 +974,9 @@ Mostly useful for making plots and tweaking performance.
 Not a logfile at all, but a file created by the user to stop
 .Nm
 creating new jobs.
+.It Pa stop-<hostname>
+Not a logfile at all, but created by the user to stop hostname creating
+new jobs.
 .It Pa vars.log
 Logs the directories that were walked in the ports tree for dependency
 information, including the path to a dependency that triggered this
