@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.4 2011/06/22 12:55:26 espie Exp $
+# $OpenBSD: make-plist,v 1.5 2013/01/28 21:27:59 sthen Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -953,7 +953,7 @@ sub handle_file
 			    next;
 		    	}
 			bad_files($short, $p);
-			if (($file->type eq 'library' || $file->type eq 'plugin') && !$shared_only) {
+			if (($file->type eq 'plugin') && !$shared_only) {
 				if (defined $p->{shared}) {
 				    $p->{wantshared} = 1;
 				    $p = $p->{shared};
@@ -1002,7 +1002,7 @@ sub handle_file
 	return unless defined $o;
 
 	bad_files($short, $p);
-	if (($file->type eq 'library' || $file->type eq 'plugin') && !$shared_only) {
+	if (($file->type eq 'plugin') && !$shared_only) {
 		$p->{wantshared} = 1;
 		$p = $p->{shared};
 	}
