@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.68 2013/01/27 18:43:11 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.69 2013/01/28 10:24:24 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: January 27 2013 $
+.Dd $Mdocdate: January 28 2013 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -293,12 +293,17 @@ See
 .Fl J
 option.
 .It memory=thr
-Build everything below that wrkdir threshold in 
+Build everything below that wrkdir threshold in
 .Pa /tmp/ports ,
 assuming it is a memory filesystem.
 .Ar thr
 is the sum, in KBytes, of ports that will be allowed under
 .Pa /tmp .
+.Nm
+understands suffixes, such as
+.Fl M Ar 2G
+or
+.Fl M Ar 500M .
 .It parallel=p
 Run big ports on several cores.
 See
@@ -346,9 +351,9 @@ Each
 stage is followed by a
 .Ar show-prepare-results
 stage.
-Every
+After every
 .Ar p
-build, it will be followed by a
+new dependencies, it will be followed by a
 .Ar junk
 stage which uses
 .Xr pkg_delete 1
@@ -374,7 +379,7 @@ solves by preventing more than one job on a given host to be in the
 stages at one time, by using a per-host lock.
 .Pp
 Defaults to
-.Ar 250 .
+.Ar 150 .
 Can be disabled by setting to
 .Ar 0 .
 .Pp
@@ -795,6 +800,13 @@ together with its pid.
 This log just exists to verify, along with
 .Pa engine.log ,
 whether correct affinity was heeded.
+.It Pa awaiting-locks.log
+This is purely for gathering performance statistics, about how much
+lock contention happened around
+.Xr pkg_add 1
+and
+.xr pkg_delete 1
+usage.
 .It Pa build.log
 Actual build log.
 Each line summarizes build of a single pkgpath, as:
@@ -883,9 +895,6 @@ Lists of equivalent pkgpaths for the build, when default flavors and default sub
 .It Pa fetch/bad.log
 List of URLs that did not lead to a correct distfile, either because
 they were not responding, or because of incorrect checksums.
-.It Pa fetch/distfiles.log
-Full list of distfiles seen through this build.
-Can be used to remove old distfiles.
 .It Pa fetch/good.log
 List of URLs that fetched correctly, along with timing statistics.
 .It Pa fetch/manually.log
@@ -895,6 +904,15 @@ Not a logfile at all, but created by the user to stop hostname creating
 new jobs.
 .It Pa <hostname>.sig.log
 Complete library signature of the host.
+.It Pa junk.log
+Option
+.Fl J
+counts the number of dependencies directly added to decide when to run
+.Nm pkg_delete Fl a .
+This file sums up how many ports were built, and how many ports had 
+dependencies each time
+.Nm
+decides to junk.
 .It Pa locks/
 Directory where locks are created.
 The slash in a pkgpath is replaced with a dot like so:
