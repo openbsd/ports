@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.92 2013/01/27 23:15:12 espie Exp $
+# $OpenBSD: Port.pm,v 1.93 2013/01/28 13:25:59 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -126,7 +126,10 @@ sub make_sure_we_have_packages
 			print {$job->{logfh}} ">>> Missing $f\n";
 		}
 	}
-	return if $check;
+	if ($check) {
+		$job->{builder}->register_packages($job->{v});
+		return;
+	}
 	if (!defined $job->{waiting}) {
 		$job->{waiting} = 0;
 	}
@@ -169,6 +172,7 @@ sub run
 {
 	my ($self, $core) = @_;
 	my $job = $core->job;
+	$self->handle_output($job);
 	exit($job->{builder}->check_signature($core, $job->{v}));
 }
 
@@ -184,6 +188,7 @@ sub finalize
 		    $core);
 	} else {
 		$job->{signature_only} = 1;
+		$job->{builder}->register_packages($job->{v});
 	}
 	return 1;
 }

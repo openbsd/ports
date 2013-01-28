@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.37 2013/01/27 23:17:00 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.38 2013/01/28 13:25:59 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -119,6 +119,10 @@ sub check
 }
 
 sub checks_rebuild
+{
+}
+
+sub register_packages
 {
 }
 
@@ -251,11 +255,13 @@ sub check_signature
 	if (-f "$self->{fullrepo}/$name.tgz" && 
 	    $self->equal_signatures($core, $v)) {
 		$uptodate->{$name} = 1;
+		print "$name: uptodate\n";
 		print {$self->{logrebuild}} "$name: uptodate\n";
 		return 1;
 	} else {
 		# XXX clean this first, so we skip over it in the loop
 		$self->{state}->grabber->clean_packages($core, $v->fullpkgpath);
+		print "$name: rebuild\n";
 		print {$self->{logrebuild}} "$name: rebuild\n";
 		for my $w ($v->build_path_list) {
 			$name = $w->fullpkgname;
@@ -263,14 +269,28 @@ sub check_signature
 			next if $uptodate->{$name};
 			if ($self->equal_signatures($core, $w)) {
 				$uptodate->{$name} = 1;
+				print "$name: uptodate\n";
 				print {$self->{logrebuild}} "$name: uptodate\n";
 				next;
 			}
+			print "$name: rebuild\n";
 			print {$self->{logrebuild}} "$name: rebuild\n";
 			$self->{state}->grabber->clean_packages($core,
 			    $w->fullpkgpath);
 		}
 		return 0;
+	}
+}
+
+# this is due to the fact check_signature is within a child
+sub register_packages
+{
+	my ($self, $v) = @_;
+	for my $w ($v->build_path_list) {
+		my $name = $w->fullpkgname;
+		if (-f "$self->{fullrepo}/$name.tgz") {
+			$uptodate->{$name} = 1;
+		}
 	}
 }
 
