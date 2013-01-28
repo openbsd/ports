@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.69 2013/01/28 10:24:24 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.70 2013/01/28 12:24:51 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -46,13 +46,10 @@
 .Nm
 is used to build ports on a cluster of machines, or on a single machine
 with several cores.
-Its name is an acronym for
-.Sq distributed ports builder .
 .Nm
-walks the ports tree to figure out dependencies, and starts building
+walks the ports tree to figure out dependencies, and starts building ports
 as soon as it can.
 .Pp
-On a clean machine,
 .Nm
 will run with sensible defaults if used without options.
 Note, however, that it will produce logs, lock files, packages, and package
@@ -94,10 +91,11 @@ through NFS, including distfiles and built packages, but the WRKOBJDIR
 should be local to each machine.
 Option
 .Fl h Ar file
-is used to specify hosts to use,
+is used to specify hosts to use, where
 .Ar file
-can be as simple as a list of hosts to use, one host per line
-(but it is recommended to also include a
+may contain lots of information,
+but can be as simple as a list of hosts to use, one host per line
+(however, it is recommended to also include a
 .Ar STARTUP
 script).
 .Pp
@@ -140,14 +138,18 @@ Walk the whole tree and builds all packages (default if no
 .Ar pathlist
 is given).
 .It Fl b Ar logfile
-Prime the heuristics module with a previous build log, so that packages that
-take a long time to build will happen earlier.
+Explicitly prime the heuristics module with a previous build log,
+so that packages that take a long time to build will happen earlier.
+The rolling log under
+.Pa %f/build-stats/%a
+is automatically used.
 .It Fl c
 Clean port working directory and log before each build.
 .It Fl C Ar pathlist
 Don't clean port working directories after build.
-Use a list of simple
-.Xr pkgpath 7 ,
+Only use simple
+.Xr pkgpath 7
+in the list,
 as this does not take subpackages and flavors into account.
 .It Fl D Ar PARAM Ns = Ns Ar value
 Set defined parameter to value.
@@ -191,6 +193,9 @@ provided they didn't end in error.
 This is usually the right thing to do after a crash, or after killing dpb
 abruptly.
 Sometimes, one may want manual control over which locks to remove.
+.It Ar FETCH_TIMEOUT
+Timeout (in seconds) after which fetches that don't show
+any progress will be killed.
 .It Ar FTP_ONLY
 Don't fetch distfiles that are not allowed for ftp.
 .It Ar HISTORY_ONLY
@@ -909,7 +914,7 @@ Option
 .Fl J
 counts the number of dependencies directly added to decide when to run
 .Nm pkg_delete Fl a .
-This file sums up how many ports were built, and how many ports had 
+This file sums up how many ports were built, and how many ports had
 dependencies each time
 .Nm
 decides to junk.
