@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.254 2013/01/27 23:55:42 stsp Exp $
+# $OpenBSD: Makefile,v 1.255 2013/01/28 14:00:20 stsp Exp $
 
      SUBDIR =
      SUBDIR += abuse
@@ -117,6 +117,7 @@
      SUBDIR += maelstrom
      SUBDIR += manaplus
      SUBDIR += meandmyshadow
+     SUBDIR += megaglest
      SUBDIR += micropolis
      SUBDIR += minetest
      SUBDIR += mirrormagic
