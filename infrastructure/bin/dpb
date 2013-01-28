@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.78 2013/01/27 23:15:57 espie Exp $
+# $OpenBSD: dpb,v 1.79 2013/01/28 09:56:00 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -559,12 +559,22 @@ $SIG{__DIE__} = sub {
 	die &Carp::longmess;
 };
 
-#use Devel::StackTrace;
-#$SIG{INFO} = sub {
-#	my $t = Devel::StackTrace->new;
-#	print $t->as_string;
-#	sleep 5;
-#};
+$SIG{INFO} = sub {
+	print "Trace:\n";
+	my $x = 1;
+	while (1) {
+		my @c;
+		{
+			package DB;
+			our @args;
+			@c = caller($x);
+		}
+		last if !@c;
+		print "#$x: $c[3]( ", join(', ', @DB::args), " )\n\tat line $c[2] of $c[1]\n";
+		$x++;
+	}
+	sleep 5;
+};
 
 my $subdirlist = {};
 
@@ -624,12 +634,6 @@ while (!DPB::Core->avail) {
 }
 my $core = DPB::Core->get;
 my $dump = DPB::Util->make_hot($state->logger->open('dump'));
-$SIG{INFO} = sub {
-	$state->engine->info_dump($state->logger->open('info'));
-	# perl status may spew some garbage on the display,
-	# remove it during next refresh
-	$reporter->refresh;
-};
 
 my $last_time = time() - $state->{display_timeout};
 
