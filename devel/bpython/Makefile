@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/01/28 08:18:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/01/28 14:09:12 nigel Exp $
 
 COMMENT=	fancy interface to the Python interpreter
 
@@ -25,7 +25,7 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		devel/py-urwid \
 		textproc/py-pygments
 REGRESS_DEPENDS=devel/py-mock \
-		devel/py-twisted-core \
+		devel/py-twisted/core \
 		${RUN_DEPENDS}
 
 .include <bsd.port.mk>
