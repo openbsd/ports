@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.93 2013/01/28 13:25:59 espie Exp $
+# $OpenBSD: Port.pm,v 1.94 2013/01/28 13:31:40 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -121,15 +121,14 @@ sub make_sure_we_have_packages
 	# check ALL BUILD_PACKAGES
 	for my $w ($job->{v}->build_path_list) {
 		my $f = $job->{builder}->pkgfile($w);
-		unless (-f $f) {
+		if (-f $f) {
+			$job->{builder}->register_package($w);
+		} else {
 			$check = 0;
 			print {$job->{logfh}} ">>> Missing $f\n";
 		}
 	}
-	if ($check) {
-		$job->{builder}->register_packages($job->{v});
-		return;
-	}
+	return if $check;
 	if (!defined $job->{waiting}) {
 		$job->{waiting} = 0;
 	}
@@ -188,7 +187,12 @@ sub finalize
 		    $core);
 	} else {
 		$job->{signature_only} = 1;
-		$job->{builder}->register_packages($job->{v});
+		for my $w ($job->{v}->build_path_list) {
+			my $f = $job->{builder}->pkgfile($w);
+			if (-f $f) {
+				$job->{builder}->register_package($w);
+			}
+		}
 	}
 	return 1;
 }
