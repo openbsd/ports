@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.79 2013/01/28 09:56:00 espie Exp $
+# $OpenBSD: dpb,v 1.80 2013/01/28 10:14:17 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -155,9 +155,6 @@ sub handle_options
 			$state->{random} = 1;
 			$state->heuristics->random;
 		},
-		M => sub {
-			$state->heuristics->set_threshold(shift);
-		},
 		P => sub {
 			push(@{$state->{paths}}, shift);
 		},
@@ -290,6 +287,9 @@ sub start_cores
 	}
 	if ($state->defines("ALWAYS_CLEAN")) {
 		$override_prop->{always_clean} = 1;
+	}
+	if ($state->opt('M')) {
+		$override_prop->{mem} = $state->opt('M');
 	}
 
 	my $default_prop = { 

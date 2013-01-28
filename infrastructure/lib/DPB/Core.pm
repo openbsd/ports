@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.30 2013/01/27 17:54:45 espie Exp $
+# $OpenBSD: Core.pm,v 1.31 2013/01/28 10:14:17 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -30,6 +30,16 @@ sub new
 	$prop->{umask} //= sprintf("0%o", umask);
 	if (defined $prop->{stuck}) {
 		$prop->{stuck_timeout} = $prop->{stuck} * $prop->{sf};
+	}
+	if (defined $prop->{mem}) {
+		my $_ = $prop->{mem};
+		if (s/K$//) {
+		} elsif (s/M$//) {
+			$_ *= 1024;
+		} elsif (s/G$//) {
+			$_ *= 1024 * 1024;
+		}
+		$prop->{memory} = $_;
 	}
 	$prop->{small} //= 120;
 	$prop->{small_timeout} = $prop->{small} * $prop->{sf};
@@ -788,9 +798,6 @@ sub parse_hosts_file
 		}
 		if (defined $prop->{arch} && $prop->{arch} ne $state->arch) {
 			next;
-		}
-		if (defined $prop->{mem}) {
-			$prop->{memory} = $prop->{mem};
 		}
 		if ($host eq 'DEFAULT') {
 			$default = { %$prop };

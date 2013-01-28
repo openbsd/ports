@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Heuristics.pm,v 1.16 2013/01/10 22:42:21 espie Exp $
+# $OpenBSD: Heuristics.pm,v 1.17 2013/01/28 10:14:17 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -78,13 +78,6 @@ sub equates
 	}
 }
 
-my $threshold;
-sub set_threshold
-{
-	my ($self, $t) = @_;
-	$threshold = $t;
-}
-
 sub add_size_info
 {
 	my ($self, $path, $sz) = @_;
@@ -96,12 +89,13 @@ my $used_per_host = {};
 
 sub special_parameters
 {
-	my ($self, $host, $v) = @_;
-	my $t = $host->{prop}->{memory} // $threshold;
+	my ($self, $core, $v) = @_;
+	my $t = $core->memory;
+	return 0 if !defined $t;
 	my $p = $v->pkgpath_and_flavors;
 	# we build in memory if we know this port and it's light enough
 	if (defined $t && defined $wrkdir{$p}) {
-		my $hostname = $host->name;
+		my $hostname = $core->hostname;
 		$used_per_host->{$hostname} //= 0;
 		if ($used_per_host->{$hostname} + $wrkdir{$p} <= $t) {
 			$used_per_host->{$hostname} += $wrkdir{$p};
