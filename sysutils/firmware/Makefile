@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/06/12 00:20:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2013/01/28 17:12:06 stsp Exp $
 
      SUBDIR =
      SUBDIR += acx
@@ -13,6 +13,7 @@
      SUBDIR += rsu
      SUBDIR += uath
      SUBDIR += ueagle
+     SUBDIR += ulpt
      SUBDIR += upgt
      SUBDIR += urtwn
      SUBDIR += uvideo
