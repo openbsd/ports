@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.39 2013/01/28 13:31:40 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.40 2013/01/28 15:52:04 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -246,34 +246,25 @@ sub equal_signatures
 sub check_signature
 {
 	my ($self, $core, $v) = @_;
-	my $name = $v->fullpkgname;
-	if ($uptodate->{$name}) {
-		return 1;
-	}
-	if (-f "$self->{fullrepo}/$name.tgz" && 
-	    $self->equal_signatures($core, $v)) {
-		$uptodate->{$name} = 1;
-		print "$name: uptodate\n";
-		return 1;
-	} else {
-		# XXX clean this first, so we skip over it in the loop
-		$self->{state}->grabber->clean_packages($core, $v->fullpkgpath);
-		print "$name: rebuild\n";
-		for my $w ($v->build_path_list) {
-			$name = $w->fullpkgname;
-			next unless -f "$self->{fullrepo}/$name.tgz";
-			next if $uptodate->{$name};
-			if ($self->equal_signatures($core, $w)) {
-				$uptodate->{$name} = 1;
-				print "$name: uptodate\n";
-				next;
-			}
-			print "$name: rebuild\n";
-			$self->{state}->grabber->clean_packages($core,
-			    $w->fullpkgpath);
+	my $rebuild = 0;
+	for my $w ($v->build_path_list) {
+		my $name = $w->fullpkgname;
+		if (!-f "$self->{fullrepo}/$name.tgz") {
+			$rebuild = 1;
+			next;
 		}
-		return 0;
+		next if $uptodate->{$name};
+		if ($self->equal_signatures($core, $w)) {
+			$uptodate->{$name} = 1;
+			print "$name: uptodate\n";
+			next;
+		}
+		print "$name: rebuild\n";
+		$self->{state}->grabber->clean_packages($core,
+		    $w->fullpkgpath);
+	    	$rebuild = 1;
 	}
+	return $rebuild;
 }
 
 # this is due to the fact check_signature is within a child
