@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2013/01/02 19:01:12 landry Exp $
+# $OpenBSD: Makefile,v 1.36 2013/01/28 07:30:17 landry Exp $
 
 COMMENT=	Xfce4 volume mixer
 
@@ -24,6 +24,7 @@ LIB_DEPENDS=	devel/libunique \
 # needed for libgstossaudio..
 RUN_DEPENDS=	multimedia/gstreamer-0.10/plugins-good
 CONFIGURE_ARGS+=	--disable-linker-opts
+CONFIGURE_ARGS+=	--disable-keybinder
 
 WANTLIB += GL ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
