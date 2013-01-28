@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/01/28 11:03:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2013/01/28 11:36:09 sthen Exp $
 
 COMMENT=	IEEE 802.1X supplicant
 
@@ -25,6 +25,7 @@ USE_GMAKE=	Yes
 USE_GROFF=	Yes
 NO_REGRESS=	Yes
 MAKE_FLAGS=	V=1
+MAKE_ENV=	CFLAGS="${CFLAGS}" CC="${CC}"
 
 WRKSRC=		${WRKDIST}/wpa_supplicant
 
