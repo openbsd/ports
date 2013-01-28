@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2011/04/17 10:07:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2013/01/28 21:08:04 sthen Exp $
 
 COMMENT=	lightweight regexp matching library with additional features
 
-DISTNAME=		tre-0.7.6
-REVISION=		1
+DISTNAME=		tre-0.8.0
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		textproc
 
@@ -19,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-SHARED_LIBS+=		tre		6.4	# .6.4
+SHARED_LIBS +=	tre                  7.0      # 5.0
 
 WANTLIB=		c
 
