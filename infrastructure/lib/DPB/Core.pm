@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.32 2013/01/28 12:23:45 espie Exp $
+# $OpenBSD: Core.pm,v 1.33 2013/01/29 11:16:58 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -32,7 +32,10 @@ sub new
 		$prop->{stuck_timeout} = $prop->{stuck} * $prop->{sf};
 	}
 	if (defined $prop->{mem}) {
-		my $_ = $prop->{mem};
+		$prop->{memory} = $prop->{mem};
+	}
+	if (defined $prop->{memory}) {
+		my $_ = $prop->{memory};
 		if (s/K$//) {
 		} elsif (s/M$//) {
 			$_ *= 1024;
