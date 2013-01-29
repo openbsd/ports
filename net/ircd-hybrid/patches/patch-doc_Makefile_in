@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.1 2012/11/05 23:45:30 brad Exp $
---- doc/Makefile.in.orig	Sat Jul 21 16:39:19 2012
-+++ doc/Makefile.in	Sat Jul 21 18:03:14 2012
-@@ -329,25 +329,25 @@ uninstall-man8:
+$OpenBSD: patch-doc_Makefile_in,v 1.2 2013/01/29 23:50:04 brad Exp $
+--- doc/Makefile.in.orig	Mon Jan 28 14:39:31 2013
++++ doc/Makefile.in	Tue Jan 29 13:02:30 2013
+@@ -343,25 +343,25 @@ uninstall-man8:
  	dir='$(DESTDIR)$(man8dir)'; $(am__uninstall_files_from_dir)
  install-dist_sysconfDATA: $(dist_sysconf_DATA)
  	@$(NORMAL_INSTALL)
@@ -27,14 +27,14 @@ $OpenBSD: patch-doc_Makefile_in,v 1.1 2012/11/05 23:45:30 brad Exp $
  uninstall-dist_sysconfDATA:
  	@$(NORMAL_UNINSTALL)
 -	@list='$(dist_sysconf_DATA)'; test -n "$(sysconfdir)" || list=; \
-+	@list='$(dist_sysconf_DATA)'; test -n "$(DESTDIR)$(prefix)/share/examples/ircd-hybrid" || list=; \
++	@list='$(dist_sysconf_DATA)'; test -n "$(prefix)/share/examples/ircd-hybrid" || list=; \
  	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
 -	dir='$(DESTDIR)$(sysconfdir)'; $(am__uninstall_files_from_dir)
 +	dir='$(DESTDIR)$(prefix)/share/examples/ircd-hybrid'; $(am__uninstall_files_from_dir)
- tags: TAGS
- TAGS:
+ tags TAGS:
  
-@@ -404,7 +404,7 @@ check-am: all-am
+ ctags CTAGS:
+@@ -403,7 +403,7 @@ check-am: all-am
  check: check-am
  all-am: Makefile $(MANS) $(DATA)
  installdirs:

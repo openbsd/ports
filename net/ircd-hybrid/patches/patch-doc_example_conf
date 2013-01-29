@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_example_conf,v 1.2 2012/12/31 22:54:56 brad Exp $
---- doc/example.conf.orig	Thu Dec 20 07:28:02 2012
-+++ doc/example.conf	Fri Dec 21 18:51:52 2012
-@@ -101,7 +101,7 @@ serverinfo {
+$OpenBSD: patch-doc_example_conf,v 1.3 2013/01/29 23:50:04 brad Exp $
+--- doc/example.conf.orig	Mon Jan 28 14:39:31 2013
++++ doc/example.conf	Tue Jan 29 12:58:58 2013
+@@ -114,7 +114,7 @@ serverinfo {
  	 *	chmod 0600 rsa.key
  	 *	chmod 0644 rsa.pub
  	 */
@@ -10,7 +10,7 @@ $OpenBSD: patch-doc_example_conf,v 1.2 2012/12/31 22:54:56 brad Exp $
  
  	/*
  	 * ssl_certificate_file: the path to the file containing our
-@@ -121,7 +121,7 @@ serverinfo {
+@@ -134,7 +134,7 @@ serverinfo {
  	 *	Common Name: irc.someirc.net
  	 *	E-mail: you@domain.com
  	 */
@@ -19,7 +19,7 @@ $OpenBSD: patch-doc_example_conf,v 1.2 2012/12/31 22:54:56 brad Exp $
  
  	/*
  	 * ssl_dh_param_file:
-@@ -138,7 +138,7 @@ serverinfo {
+@@ -151,7 +151,7 @@ serverinfo {
  	 * regarding specific OpenSSL dhparam command-line options
  	 * can be found in the OpenSSL manual.
  	 */
@@ -28,7 +28,7 @@ $OpenBSD: patch-doc_example_conf,v 1.2 2012/12/31 22:54:56 brad Exp $
  
  	/*
  	 * ssl_cipher_list:
-@@ -413,7 +413,7 @@ operator {
+@@ -445,7 +445,7 @@ operator {
  	 * A password should not be defined when this is used, see 
  	 * doc/challenge.txt for more information.
  	 */
@@ -37,7 +37,7 @@ $OpenBSD: patch-doc_example_conf,v 1.2 2012/12/31 22:54:56 brad Exp $
  
  	/* class: the class the oper joins when they successfully /oper */
  	class = "opers";
-@@ -1169,8 +1169,8 @@ modules {
+@@ -1201,8 +1201,8 @@ modules {
  	 * path: other paths to search for modules specified below
  	 * and in "/module load".
  	 */

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/11/05 23:45:30 brad Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/01/29 23:50:04 brad Exp $
 @conflict bnc-*
 @conflict irc-*
 @conflict ircd-ratbox-*
@@ -121,6 +121,8 @@ lib/ircd-hybrid/modules/autoload/m_wallops.la
 lib/ircd-hybrid/modules/autoload/m_wallops.so
 lib/ircd-hybrid/modules/autoload/m_watch.la
 lib/ircd-hybrid/modules/autoload/m_watch.so
+lib/ircd-hybrid/modules/autoload/m_webirc.la
+lib/ircd-hybrid/modules/autoload/m_webirc.so
 lib/ircd-hybrid/modules/autoload/m_who.la
 lib/ircd-hybrid/modules/autoload/m_who.so
 lib/ircd-hybrid/modules/autoload/m_whois.la
