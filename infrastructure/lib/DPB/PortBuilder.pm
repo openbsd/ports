@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.41 2013/01/28 17:36:11 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.42 2013/01/29 15:11:41 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -250,6 +250,7 @@ sub check_signature
 	for my $w ($v->build_path_list) {
 		my $name = $w->fullpkgname;
 		if (!-f "$self->{fullrepo}/$name.tgz") {
+			print "$name: absent\n";
 			$okay = 0;
 			next;
 		}
