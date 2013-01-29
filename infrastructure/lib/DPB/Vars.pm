@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.31 2013/01/10 16:20:10 espie Exp $
+# $OpenBSD: Vars.pm,v 1.32 2013/01/29 15:11:02 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -215,7 +215,7 @@ sub clean
 	$core->start_pipe(sub {
 		my $shell = shift;
 		$class->run_command($core, $shell, $grabber, {$subdir => 1},
-			'clean=packages')
+			'clean=package')
 	}, "CLEAN-PACKAGES");
 	my $fh = $core->fh;
 	while (<$fh>) {
