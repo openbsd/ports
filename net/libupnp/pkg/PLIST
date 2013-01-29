@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/11/06 11:48:28 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/01/29 16:14:06 sthen Exp $
 %%SHARED%%
 include/upnp/
 include/upnp/FreeList.h
@@ -20,9 +20,12 @@ include/upnp/upnpdebug.h
 include/upnp/upnptools.h
 lib/libixml.a
 lib/libixml.la
+@lib lib/libixml.so.${LIBixml_VERSION}
 lib/libthreadutil.a
 lib/libthreadutil.la
+@lib lib/libthreadutil.so.${LIBthreadutil_VERSION}
 lib/libupnp.a
 lib/libupnp.la
+@lib lib/libupnp.so.${LIBupnp_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/libupnp.pc
