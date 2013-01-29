@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.505 2013/01/21 16:02:23 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.506 2013/01/29 19:24:48 bcallah Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -129,6 +129,7 @@
      SUBDIR += jwm
      SUBDIR += kde
      SUBDIR += kdirstat
+     SUBDIR += keybinder
      SUBDIR += keynav
      SUBDIR += klavaro
      SUBDIR += kmplayer
