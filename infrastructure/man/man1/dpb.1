@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.73 2013/01/29 16:14:44 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.74 2013/01/29 16:19:41 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -38,7 +38,6 @@
 .Op Fl l Ar lockdir
 .Op Fl M Ar threshold
 .Op Fl P Ar pathlist
-.Op Fl S Ar sizelog
 .Op Fl X Ar pathlist
 .Op Ar pathlist ...
 .Ek
@@ -268,6 +267,10 @@ STARTUP=path
 .Pp
 will define a script which will be run at start-up on each build machine.
 This script must exist locally.
+This script will always be run under ${PORTSDIR}, with environment
+variables MAKE and PORTSDIR set.
+It can be a list, e.g.,
+STARTUP=/bin/sh /some/path
 .Pp
 The special hostname
 .Ar DEFAULT
@@ -475,12 +478,11 @@ Note that
 .Fl R
 won't always work, as rebuilding a package when another version is already
 installed is not supported.
-.It Fl S Ar sizelog
-Change the rolling log of build sizes from its default path
-.Pa %f/build-stats/%a-size
 .It Fl s
 Compute workdir sizes before cleaning up, and stash them in log file
-.Pa ${LOGDIR}/size.log .
+.Pa %L/size.log .
+Also maintain a rolling log of build sizes under
+.Pa %f/build-stats/%a-size .
 .It Fl u
 Update existing packages during dependency solving.
 Can be used to run a bulk-build on a machine with installed packages,
