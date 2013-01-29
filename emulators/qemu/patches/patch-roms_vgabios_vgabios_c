@@ -1,0 +1,14 @@
+$OpenBSD: patch-roms_vgabios_vgabios_c,v 1.1 2013/01/29 10:57:03 sthen Exp $
+
+http://lists.gnu.org/archive/html/qemu-devel/2013-01/msg03650.html
+
+--- roms/vgabios/vgabios.c.orig	Tue Jan 29 10:05:22 2013
++++ roms/vgabios/vgabios.c	Tue Jan 29 10:06:15 2013
+@@ -204,6 +204,7 @@ vgabios_website:
+ .byte	0x00
+ 
+ #ifdef PCIBIOS
++.align 4 // DWORD alignment required by PCI Firmware Specification
+ vgabios_pci_data:
+ .ascii "PCIR"
+ #ifdef CIRRUS
