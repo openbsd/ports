@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2012/09/03 18:05:25 jeremy Exp $
+# $OpenBSD: Makefile,v 1.4 2013/01/29 22:37:05 jeremy Exp $
 
 COMMENT =	access a MySQL database from JRuby
 
-V =		5.1.13
-DISTNAME =	jdbc-mysql-${V}
+DISTNAME =	jdbc-mysql-5.1.22.1
 CATEGORIES =	databases
 
 # MIT
@@ -16,7 +15,6 @@ MODULES =	lang/ruby
 FLAVORS =	jruby
 FLAVOR =	jruby
 
-SUBST_VARS =	DISTNAME V
 CONFIGURE_STYLE =	ruby gem
 
 .include <bsd.port.mk>
