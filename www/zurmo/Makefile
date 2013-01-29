@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/01/29 10:25:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2013/01/29 10:48:41 ajacoutot Exp $
 
 COMMENT=	customer relationship management (CRM) software
 
@@ -36,9 +36,6 @@ RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-curl \
 		misc/memcached \
 		www/pecl-APC \
 		www/pecl-memcache
-
-# XXX needs memcached >= 2.2.0
-#RUN_DEPENDS +=	misc/memcached
 
 do-extract:
 	mkdir ${WRKDIST}
