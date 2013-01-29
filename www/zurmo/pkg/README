@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2012/08/04 15:19:32 ajacoutot Exp $
+$OpenBSD: README,v 1.2 2013/01/29 10:25:08 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -21,16 +21,24 @@ ${SYSCONFDIR}/php-${MODPHP_VERSION}.ini.
 MySQL settings
 ==============
 The following MySQL server settings are required by Zurmo and must be
-set or modified in ${SYSCONFDIR}/my.cnf:
+set or modified under the [mysqld] section in ${SYSCONFDIR}/my.cnf:
 
-max_sp_recursion_depth = 20
-thread_stack = 524288
-optimizer_search_depth = 0
+character-set-server=utf8
+collation-server=utf8_unicode_ci
+default-storage-engine=INNODB
+max_sp_recursion_depth=100
 max_allowed_packet = 20M
-log_bin_trust_function_creators = 1
+thread_stack = 512K
+optimizer-search-depth = 0
+log_bin = 0
 
 Finishing the installation
 ==========================
-Point your web browser to:
+Make sure memcached(1) is running then point your web browser to:
     http://<hostname>/zurmo/app/index.php
 to run the installation script.
+
+Upgrades
+========
+Please refer to the online documentation at:
+    http://zurmo.org/upgrades
