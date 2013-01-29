@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2011/11/16 00:20:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2013/01/29 00:05:43 brad Exp $
 
 COMMENT=	client and servers for the WIDE DHCPv6 protocol
 
-DISTNAME=       wide-dhcpv6-20080615
-REVISION=	1
-CATEGORIES=     net
-MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=wide-dhcpv6/}
+DISTNAME=	wide-dhcpv6-20080615
+REVISION=	2
+CATEGORIES=	net
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wide-dhcpv6/}
 
 HOMEPAGE=	http://wide-dhcpv6.sourceforge.net/
 
@@ -21,6 +21,9 @@ CONFIGURE_STYLE=	gnu
 WANTLIB=		c
 USE_GROFF =		Yes
 NO_REGRESS=		Yes
+
+pre-build:
+	@perl -pi -e s,dprintf,debugprintf, ${WRKSRC}/*
 
 do-install:
 .for p in dhcp6c dhcp6s dhcp6relay dhcp6ctl
