@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/01/08 15:59:05 sthen Exp $
-
+# $OpenBSD: Makefile,v 1.17 2013/01/29 23:52:28 brad Exp $
 
 COMMENT =	smalltalk system, vm
 
@@ -7,7 +6,7 @@ SRCV =		1
 DISTFILES =	Squeak-$V-${SRCV}.src.tar.gz
 
 PKGNAME =	squeak-vm-$V.${SRCV}
-REVISION =	2
+REVISION =	3
 
 WRKDIST =	${WRKDIR}/Squeak-$V-${SRCV}
 WRKSRC =	${WRKDIST}/platforms/unix/config
@@ -15,6 +14,8 @@ WRKSRC =	${WRKDIST}/platforms/unix/config
 SEPARATE_BUILD =	Yes
 
 MASTER_SITES =	${SQUEAK_SITE}unix-linux/
+
+RUN_DEPENDS =		squeak-sources-${SOURCEV}:lang/squeak/sources
 
 CONFIGURE_STYLE =	gnu
 AUTOCONF_VERSION =	2.60
@@ -41,6 +42,8 @@ post-extract:
 	mkdir ${WRKDIST}/platforms/unix/vm-sound-OpenBSD
 	cd ${WRKDIST}/platforms/unix && cp vm-sound-Sun/acinclude.m4 vm-sound-OpenBSD && cp vm-sound-Sun/sqUnixSoundSun.c vm-sound-OpenBSD/sqUnixSoundOpenBSD.c
 
-RUN_DEPENDS =		squeak-sources-${SOURCEV}:lang/squeak/sources
+pre-build:
+	@perl -pi -e s,dprintf,debugprintf, ${WRKDIST}/platforms/unix/vm/*.c
+	@perl -pi -e s,"define dprintf","define debugprintf", ${WRKDIST}/platforms/unix/vm/debug.h
 
 .include <bsd.port.mk>
