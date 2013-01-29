@@ -1,0 +1,7 @@
+Keybinder is a library for registering global keyboard shortcuts.
+It works with GTK-based applications using the X Window System.
+
+This library originates in Tomboy and has been widely reused without
+having a separate release. This package has taken the python bindings
+from the Deskbar Applet project, and broken it out to a standalone
+project. The library was subsequently rewritten in major parts.

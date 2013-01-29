@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2013/01/29 19:16:30 bcallah Exp $
+@lib lib/libkeybinder.so.${LIBkeybinder_VERSION}
+include/keybinder.h
+lib/pkgconfig/keybinder.pc
