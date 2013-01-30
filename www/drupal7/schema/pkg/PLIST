@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/05/31 15:07:03 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/01/30 15:28:25 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}schema/
@@ -13,10 +13,3 @@ ${DRUPAL_MODS}schema/schema.install
 ${DRUPAL_MODS}schema/schema.module
 ${DRUPAL_MODS}schema/tests/
 ${DRUPAL_MODS}schema/tests/schema_regression.test
-${DRUPAL_MODS}schema/translations/
-${DRUPAL_MODS}schema/translations/Kopie von schema.de.po
-${DRUPAL_MODS}schema/translations/de.mo
-${DRUPAL_MODS}schema/translations/de.po
-${DRUPAL_MODS}schema/translations/schema.de.mo
-${DRUPAL_MODS}schema/translations/schema.mo
-${DRUPAL_MODS}schema/translations/schema.pot

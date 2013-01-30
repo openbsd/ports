@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/05/31 15:05:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/01/30 15:28:25 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_THEMES}newsflash/
@@ -12,15 +12,24 @@ ${DRUPAL_THEMES}newsflash/css/black.css
 ${DRUPAL_THEMES}newsflash/css/blue.css
 ${DRUPAL_THEMES}newsflash/css/copper.css
 ${DRUPAL_THEMES}newsflash/css/green.css
+${DRUPAL_THEMES}newsflash/css/ie-rtl.css
 ${DRUPAL_THEMES}newsflash/css/ie.css
+${DRUPAL_THEMES}newsflash/css/nosuckerfish-rtl.css
 ${DRUPAL_THEMES}newsflash/css/nosuckerfish.css
 ${DRUPAL_THEMES}newsflash/css/red.css
+${DRUPAL_THEMES}newsflash/css/suckerfish_aqua-rtl.css
 ${DRUPAL_THEMES}newsflash/css/suckerfish_aqua.css
+${DRUPAL_THEMES}newsflash/css/suckerfish_black-rtl.css
 ${DRUPAL_THEMES}newsflash/css/suckerfish_black.css
+${DRUPAL_THEMES}newsflash/css/suckerfish_blue-rtl.css
 ${DRUPAL_THEMES}newsflash/css/suckerfish_blue.css
+${DRUPAL_THEMES}newsflash/css/suckerfish_copper-rtl.css
 ${DRUPAL_THEMES}newsflash/css/suckerfish_copper.css
+${DRUPAL_THEMES}newsflash/css/suckerfish_green-rtl.css
 ${DRUPAL_THEMES}newsflash/css/suckerfish_green.css
+${DRUPAL_THEMES}newsflash/css/suckerfish_red-rtl.css
 ${DRUPAL_THEMES}newsflash/css/suckerfish_red.css
+${DRUPAL_THEMES}newsflash/css/suckerfish_violet-rtl.css
 ${DRUPAL_THEMES}newsflash/css/suckerfish_violet.css
 ${DRUPAL_THEMES}newsflash/css/violet.css
 ${DRUPAL_THEMES}newsflash/favicon.ico
@@ -71,6 +80,7 @@ ${DRUPAL_THEMES}newsflash/images/green/SubmitBG.png
 ${DRUPAL_THEMES}newsflash/images/green/add.png
 ${DRUPAL_THEMES}newsflash/images/green/logo.png
 ${DRUPAL_THEMES}newsflash/images/menu_arrow.png
+${DRUPAL_THEMES}newsflash/images/menu_arrowl.png
 ${DRUPAL_THEMES}newsflash/images/noavatar_mini.gif
 ${DRUPAL_THEMES}newsflash/images/red/
 ${DRUPAL_THEMES}newsflash/images/red/BottomBG.png
@@ -96,6 +106,7 @@ ${DRUPAL_THEMES}newsflash/newsflash.info
 ${DRUPAL_THEMES}newsflash/print.css
 ${DRUPAL_THEMES}newsflash/screenshot-drupal.org.png
 ${DRUPAL_THEMES}newsflash/screenshot.png
+${DRUPAL_THEMES}newsflash/style-rtl.css
 ${DRUPAL_THEMES}newsflash/style.css
 ${DRUPAL_THEMES}newsflash/template.php
 ${DRUPAL_THEMES}newsflash/templates/
@@ -112,5 +123,3 @@ ${DRUPAL_THEMES}newsflash/themedscreens/copper-style.png
 ${DRUPAL_THEMES}newsflash/themedscreens/green-style.png
 ${DRUPAL_THEMES}newsflash/themedscreens/red-style.png
 ${DRUPAL_THEMES}newsflash/themedscreens/violet-style.png
-${DRUPAL_THEMES}newsflash/translations/
-${DRUPAL_THEMES}newsflash/translations/de.po

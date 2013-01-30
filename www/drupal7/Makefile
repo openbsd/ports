@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2012/07/13 10:12:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2013/01/30 15:28:25 espie Exp $
 
 SUBDIR =
 SUBDIR += CKeditor
@@ -86,7 +86,7 @@ SUBDIR += token
 SUBDIR += ubercart
 #SUBDIR += user_import
 #SUBDIR += user_pic_perm	n/a for 7
-#SUBDIR += user_readonly
+SUBDIR += user_readonly
 #SUBDIR += view_unpublished
 SUBDIR += views
 #SUBDIR += views_bulk_operations
