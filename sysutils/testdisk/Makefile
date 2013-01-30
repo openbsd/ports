@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/27 09:32:09 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.11 2013/01/30 17:19:24 benoit Exp $
 
 COMMENT =	data recovery software
 
-VERSION =	6.11.3
+VERSION =	6.13
 DISTNAME =	testdisk-${VERSION}
-REVISION =	2
 CATEGORIES =	sysutils
 
 HOMEPAGE =	http://www.cgsecurity.org/
@@ -26,12 +25,14 @@ SUBST_VARS +=		VERSION
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-USE_GROFF =		Yes
 
 LIB_DEPENDS =		sysutils/e2fsprogs \
 			graphics/jpeg
 
 WANTLIB =		c crypto e2fs-uuid ext2fs ext2fs_com_err \
 			jpeg ncursesw z
+
+post-install:
+			${INSTALL_DATA} ${WRKSRC}/doc/online.html ${PREFIX}/share/doc/${DISTNAME}/html
 
 .include <bsd.port.mk>
