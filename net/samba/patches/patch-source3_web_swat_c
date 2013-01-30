@@ -1,7 +1,7 @@
-$OpenBSD: patch-source3_web_swat_c,v 1.1 2012/04/10 22:01:20 sthen Exp $
---- source3/web/swat.c.orig	Sat Apr  7 14:23:20 2012
-+++ source3/web/swat.c	Tue Apr 10 22:56:36 2012
-@@ -243,8 +243,10 @@ static int include_html(const char *fname)
+$OpenBSD: patch-source3_web_swat_c,v 1.2 2013/01/30 23:22:05 brad Exp $
+--- source3/web/swat.c.orig	Tue Jan 29 03:49:31 2013
++++ source3/web/swat.c	Wed Jan 30 06:24:32 2013
+@@ -245,8 +245,10 @@ static int include_html(const char *fname)
  	fd = web_open(fname, O_RDONLY, 0);
  
  	if (fd == -1) {
