@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2013/01/30 08:26:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2013/01/30 09:06:03 ajacoutot Exp $
 
 COMMENT =		event logging framework
 
 V =			0.9.5
 DISTNAME =		zeitgeist-${V}
+REVISION =		0
 
 CATEGORIES =		productivity
 
@@ -27,11 +28,11 @@ MODULES =		devel/gettext \
 BUILD_DEPENDS =		lang/vala \
 			textproc/p5-XML-Parser \
 			textproc/py-rdflib \
-			textproc/raptor \
+			textproc/raptor
 
 RUN_DEPENDS =		devel/py-gobject \
 			devel/py-xdg \
-			x11/dbus-python \
+			x11/dbus-python
 
 WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += pcre pthread sqlite3 z
