@@ -1,23 +1,24 @@
-$OpenBSD: README,v 1.2 2013/01/28 17:16:22 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2013/01/30 11:02:50 stsp Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
 Before using foo2zjs you may need to get some extra files from the web:
-ICM profiles (for color correction) and firmware using the command
+ICM profiles (for color correction) and/or firmware using the command
     ${TRUEPREFIX}/share/doc/foo2zjs/getweb
 
 Then copy the downloaded file(s) into the corresponding directory under
     ${TRUEPREFIX}/share/foo2*
 
-If your printer require a firmware load, run the following command as
-root each time the device is powered up:
+If your printer requires a firmware load and attaches as ugen(4) device,
+run the following command as root each time the device is powered up:
     cat ${TRUEPREFIX}/share/foo2zjs/firmware/XXX.dl > /dev/ugenN.EE
 -> XXX is your printer firmware name
 -> /dev/ugenN.EE is the ugen(4) device (N) and endpoint (EE) of your
    printer (which can be found using `sudo usbdevs -vd`)
 Alternatively, hotplugd(8) attach/detach scripts can automate this.
 
-Firmwares for some printers are available in the sysutils/firmware/ulpt
-port (they will be available under /etc/firmware/).
+Firmware for some printers is available in the sysutils/firmware/ulpt
+port and will be installed under /etc/firmware/. If your printer
+attaches as ulpt(4) device the firmware will be loaded automatically.
