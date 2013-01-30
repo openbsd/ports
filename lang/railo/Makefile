@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2012/06/30 20:47:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2013/01/30 23:37:32 sthen Exp $
 
 COMMENT=		open-source CFML engine
 
-V=			3.3.4.003
+V=			4.0.2.002
 DISTNAME=		railo-$V
 EXTRACT_SUFX=		.war
 
@@ -39,14 +39,15 @@ do-extract:
 # patch/edit/update-patches cycle. Also strips horizontal whitespace at eol.
 pre-patch:
 	perl -pi -e 's,<servlet-name>,<servlet-name>PKG_,g;' \
-	    -e 's,\h*$$,,;' ${WRKSRC}/WEB-INF/web.xml
+	    -e 's,\h*\r*$$,,;' ${WRKSRC}/WEB-INF/web.xml
 
 post-patch:
 	perl -pi -e 's,/var/tomcat/,${CATALINA_BASE}/,g' ${WRKSRC}/WEB-INF/web.xml
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/railo ${PREFIX}/lib ${PREFIX}/conf
-	${INSTALL_DATA} ${WRKSRC}/WEB-INF/lib/* ${PREFIX}/lib/
+	cd ${WRKSRC}/WEB-INF/lib && pax -rw * ${PREFIX}/lib/
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/*
 	${INSTALL_DATA} ${WRKSRC}/index.cfm ${PREFIX}/railo/index.cfm.dist
 	${INSTALL_DATA} ${WRKSRC}/WEB-INF/web.xml ${PREFIX}/conf/web-railo.xml.dist
 

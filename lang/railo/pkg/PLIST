@@ -1,16 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/17 13:12:28 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/01/30 23:37:32 sthen Exp $
 @extraunexec rm -rf %D/railo/server-config/* %D/railo/web-config/*
 @extraunexec rm -rf %D/webapps/ROOT/WEB-INF/flex
+conf/
 conf/web-railo.xml.dist
 @owner _tomcat
 @group _tomcat
 @sample conf/web-railo.xml
-@group
 @owner
+@group
 lib/
+lib/ESAPI.jar
+lib/License.txt
 lib/PDFBox.jar
 lib/PDFRenderer.jar
 lib/antlr.jar
+lib/apache-commons-httpclient.jar
+lib/apache-commons-httpcore.jar
+lib/apache-commons-httpmime.jar
+lib/apache-commons-sanselan.jar
 lib/apache-jakarta-commons-codec.jar
 lib/apache-jakarta-commons-collections.jar
 lib/apache-jakarta-commons-compress.jar
@@ -34,7 +41,10 @@ lib/apache-lucene-similarity.jar
 lib/apache-lucene-snowball.jar
 lib/apache-lucene-spellchecker.jar
 lib/apache-lucene.jar
+lib/apache-poi-ooxml-schemas.jar
+lib/apache-poi-ooxml.jar
 lib/apache-poi-tm-extractors.jar
+lib/apache-poi.jar
 lib/apache-ws-axis-ant.jar
 lib/apache-ws-axis.jar
 lib/apache-xml-xalan.jar
@@ -59,6 +69,7 @@ lib/icepdf-core.jar
 lib/jacob.jar
 lib/javaparser.jar
 lib/javassist.jar
+lib/javasysmon.jar
 lib/jcommon.jar
 lib/jencrypt.jar
 lib/jffmpeg.jar
@@ -70,38 +81,42 @@ lib/jpedal_gpl.jar
 lib/jta.jar
 lib/jtds.jar
 lib/jug.jar
-lib/license-apache.txt
-lib/license-eclipse.txt
-lib/license-hypersonic.txt
-lib/license-jacob.txt
-lib/license-janino.txt
-lib/license-jencrypt.txt
-lib/license-jmimemagic.txt
-lib/license-joda.txt
-lib/license-jtds.txt
-lib/license-mssql.txt
-lib/license-mysql.txt
-lib/license-openamf.txt
-lib/license-pd4ml.txt
-lib/license-pdfbox.txt
-lib/license-sun.txt
-lib/license-tagsoup.txt
+lib/junit.jar
+lib/license/
+lib/license/license-apache.txt
+lib/license/license-eclipse.txt
+lib/license/license-hypersonic.txt
+lib/license/license-jacob.txt
+lib/license/license-janino.txt
+lib/license/license-javasysmon.txt
+lib/license/license-jencrypt.txt
+lib/license/license-jmimemagic.txt
+lib/license/license-joda.txt
+lib/license/license-jtds.txt
+lib/license/license-mssql.txt
+lib/license/license-mysql.txt
+lib/license/license-openamf.txt
+lib/license/license-pd4ml.txt
+lib/license/license-pdfbox.txt
+lib/license/license-sun.txt
+lib/license/license-tagsoup.txt
 lib/lowagie.itext.jar
 lib/metadata-extractor.jar
-lib/microsoft-msbase.jar
 lib/microsoft-mssqlserver.jar
-lib/microsoft-msutil.jar
 lib/microsoft-sqljdbc.jar
 lib/mysql-connector-java-bin.jar
 lib/objectweb-asm-all.jar
+lib/ojdbc14.jar
 lib/openamf-astranslator.jar
 lib/openamf.jar
 lib/postgresql.jar
 lib/railo-sl4j.jar
 lib/railo.jar
+lib/resolver.jar
 lib/serializer.jar
 lib/slf4j-api.jar
 lib/ss_css2.jar
+lib/stax-api.jar
 lib/sun-activation.jar
 lib/sun-jai_codec.jar
 lib/sun-jai_core.jar
@@ -117,8 +132,10 @@ lib/sun-xml.saaj.jar
 lib/tagsoup.jar
 lib/versions
 lib/w3c-dom.jar
+lib/web.xml.sample
 lib/xdb.jar
 lib/xml-apis.jar
+lib/xmlbeans.jar
 lib/xmlparserv2.jar
 @owner _tomcat
 @group _tomcat
