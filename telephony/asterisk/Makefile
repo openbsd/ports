@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.169 2013/01/22 23:26:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.170 2013/01/30 20:59:41 sthen Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 
 VER=			10.12.1
+REVISION=		0
+REVISION-main=
 DISTNAME=		asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 PKGNAME-main=		asterisk-${VER}
 
@@ -215,7 +217,7 @@ EXAMPLEFILES=		cdr.conf extensions.ael extensions.conf logger.conf \
 # subpackages aren't flavoured, so overwrite the default name/path
 FULLPKGNAME$i ?=	asterisk$i-${VER}
 FULLPKGPATH$i ?=	${PKGPATH},$i
-RUN_DEPENDS$i +=	asterisk-${VER}:${BUILD_PKGPATH}
+RUN_DEPENDS$i +=	asterisk-${VER}:telephony/asterisk
 .endfor
 
 post-patch:
