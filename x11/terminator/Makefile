@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.7 2012/06/15 08:30:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2013/01/30 16:12:36 bcallah Exp $
 
 COMMENT=		GTK2 terminal emulator with split-window and tabs support
 
-MODPY_EGG_VERSION=	0.95
+MODPY_EGG_VERSION=	0.96
 DISTNAME=		terminator-${MODPY_EGG_VERSION}
-REVISION=		5
 
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.tenshu.net/terminator/
 
-MAINTAINER=		Jochem Kossen <jochem@jkossen.nl>
+MAINTAINER=		Juan Francisco Cantero Hurtado <iam@juanfra.info>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -25,13 +24,14 @@ MODULES=		lang/python \
 RUN_DEPENDS=		devel/vte,-python \
 			devel/py-notify \
 			devel/desktop-file-utils \
-			x11/gtk+2,-guic
+			x11/gtk+2,-guic \
+			x11/keybinder,-python
 
 NO_REGRESS=		Yes
 
 MODPY_SETUPTOOLS=	Yes
 MODPY_SETUP=		setup.py --without-icon-cache
-# --single-version-externally-managed option used by MODPY doesn't exist (from audio/picard)
+# --single-version-externally-managed option used by MODPY doesn't exist
 MODPY_DISTUTILS_INSTALL=install --prefix=${LOCALBASE} --root=${DESTDIR}
 
 .include <bsd.port.mk>
