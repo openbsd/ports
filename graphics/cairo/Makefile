@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.44 2013/01/16 14:28:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2013/01/30 13:17:51 brad Exp $
 
 COMMENT=		vector graphics library
 
 DISTNAME=		cairo-1.12.8
+REVISION=		1
 SHARED_LIBS+=		cairo 12.1
 SHARED_LIBS+=		cairo-gobject 1.0
 SHARED_LIBS+=		cairo-script-interpreter 1.0
 CATEGORIES=		graphics
 DPB_PROPERTIES=		parallel
 EXTRACT_SUFX=		.tar.xz
-REVISION=		0
 
 HOMEPAGE=		http://cairographics.org/
 
@@ -47,6 +47,9 @@ CONFIGURE_ARGS +=	--enable-tee
 CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
 		ac_cv_path_GTKDOC_REBASE="" \
 		ac_cv_path_GTKDOC_MKPDF=""
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/src/cairo.pc.in
 
 post-install:
 	rm ${PREFIX}/lib/cairo/*.{a,la}
