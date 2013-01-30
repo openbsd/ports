@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2013/01/30 09:06:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2013/01/30 09:42:45 jasper Exp $
 
 COMMENT =		event logging framework
 
 V =			0.9.5
 DISTNAME =		zeitgeist-${V}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		productivity
 
-HOMEPAGE =		http://launchpad.net/zeitgeist/
+HOMEPAGE =		http://zeitgeist-project.com/
 
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
