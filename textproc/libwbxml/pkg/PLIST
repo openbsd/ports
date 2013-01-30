@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/10/24 20:27:40 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2013/01/30 11:08:28 zhuk Exp $
 @bin bin/wbxml2xml
 @bin bin/xml2wbxml
 include/wbxml/
@@ -8,8 +7,12 @@ include/wbxml/wbxml_config.h
 include/wbxml/wbxml_conv.h
 include/wbxml/wbxml_defines.h
 include/wbxml/wbxml_errors.h
+@lib lib/libwbxml2.so.${LIBwbxml2_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/libwbxml2.pc
+share/cmake/
+share/cmake/Modules/
+share/cmake/Modules/FindLibWbxml2.cmake
 share/doc/libwbxml/
 share/doc/libwbxml/AUTHORS
 share/doc/libwbxml/BUGS

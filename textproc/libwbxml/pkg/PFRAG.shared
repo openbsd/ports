@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/10/24 20:27:40 jasper Exp $
-@lib lib/libwbxml2.so.${LIBwbxml2_VERSION}
