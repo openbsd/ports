@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.84 2012/11/27 12:12:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.85 2013/01/31 15:08:09 giovanni Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
 SHARED_ONLY=	Yes
 
 DISTNAME=	gimp-2.8.2
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS+=	gimp-2.0	272.0	# 800.0
 SHARED_LIBS+=	gimpbase-2.0	272.0	# 800.0
@@ -74,11 +74,18 @@ USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+=--enable-gimp-console \
+		--disable-gtk-doc \
+		--disable-gtk-doc-html \
 		--with-libcurl \
 		--without-gvfs \
 		--without-webkit
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+# If one of these tools is found at configure stage, it might be used,
+# no matter whether we use --disable-gtk-doc or not.
+CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
+				ac_cv_path_GTKDOC_REBASE="" \
+				ac_cv_path_GTKDOC_MKPDF=""
 
 post-install:
 	@rm ${PREFIX}/lib/gimp/2.0/modules/*.{a,la}
