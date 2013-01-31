@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_gui_c,v 1.31 2013/01/11 13:20:50 dcoppa Exp $
+$OpenBSD: patch-src_gui_c,v 1.32 2013/01/31 11:56:36 dcoppa Exp $
 
 Fix some layout issues when playing audio only files
 (upstream svn revision r2390)
@@ -11,6 +11,9 @@ Fix usage of symbolic icons
 Resize player when on 'videopresent' event
 (upstream svn revision r2391)
 
+Bugfix: subtitles not hidden by default when specified
+(upstream svn revision r2397)
+
 Fix some problems on initial volume setup
 (upstream svn revision r2378)
 
@@ -18,7 +21,7 @@ Don't monitor system volume when running in softvol mode
 (upstream svn revision r2377)
 
 --- src/gui.c.orig	Fri Oct 26 19:22:31 2012
-+++ src/gui.c	Fri Jan 11 11:53:21 2013
++++ src/gui.c	Thu Jan 31 12:39:22 2013
 @@ -497,6 +497,7 @@ void adjust_layout()
      gint total_width;
      gint handle_size;
@@ -414,7 +417,22 @@ Don't monitor system volume when running in softvol mode
          break;
      case ATTRIBUTE_AUDIO_TRACK:
          name = gmtk_media_player_get_attribute_string(GMTK_MEDIA_PLAYER(media), ATTRIBUTE_AUDIO_TRACK);
-@@ -6718,6 +6867,9 @@ void player_media_state_changed_callback(GtkButton * b
+@@ -6547,9 +6696,11 @@ void player_attribute_changed_callback(GmtkMediaTracke
+ 
+         break;
+     case ATTRIBUTE_SUB_VISIBLE:
+-        gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(menuitem_view_subtitles),
+-                                       gmtk_media_player_get_attribute_boolean(GMTK_MEDIA_PLAYER(media),
+-                                                                               ATTRIBUTE_SUB_VISIBLE));
++        if (showsubtitles) {
++            gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(menuitem_view_subtitles),
++                                           gmtk_media_player_get_attribute_boolean(GMTK_MEDIA_PLAYER(media),
++                                                                                   ATTRIBUTE_SUB_VISIBLE));
++        }
+         break;
+     case ATTRIBUTE_HAS_CHAPTERS:
+         if (gmtk_media_player_get_attribute_boolean(GMTK_MEDIA_PLAYER(media), ATTRIBUTE_HAS_CHAPTERS)
+@@ -6718,6 +6869,9 @@ void player_media_state_changed_callback(GtkButton * b
      gchar *tip_text = NULL;
  #endif
      gchar *short_filename = NULL;
@@ -424,7 +442,7 @@ Don't monitor system volume when running in softvol mode
  
      gm_log(verbose, G_LOG_LEVEL_MESSAGE, "in media state change with state = %s dontplaynext = %i",
             gmtk_media_state_to_string(media_state), dontplaynext);
-@@ -6774,7 +6926,11 @@ void player_media_state_changed_callback(GtkButton * b
+@@ -6774,7 +6928,11 @@ void player_media_state_changed_callback(GtkButton * b
          // break purposely not put here, so gui is properly updated
      case MEDIA_STATE_STOP:
  #ifdef GTK3_ENABLED
@@ -437,7 +455,7 @@ Don't monitor system volume when running in softvol mode
  #else
          gtk_image_set_from_stock(GTK_IMAGE(image_play), GTK_STOCK_MEDIA_PLAY, button_size);
  #endif
-@@ -6810,7 +6966,11 @@ void player_media_state_changed_callback(GtkButton * b
+@@ -6810,7 +6968,11 @@ void player_media_state_changed_callback(GtkButton * b
          if (idledata->mapped_af_export == NULL)
              map_af_export_file(idledata);
  #ifdef GTK3_ENABLED
@@ -450,7 +468,15 @@ Don't monitor system volume when running in softvol mode
  #else
          gtk_image_set_from_stock(GTK_IMAGE(image_play), GTK_STOCK_MEDIA_PAUSE, button_size);
  #endif
-@@ -6855,7 +7015,11 @@ void player_media_state_changed_callback(GtkButton * b
+@@ -6837,6 +6999,7 @@ void player_media_state_changed_callback(GtkButton * b
+         if (idledata->videopresent)
+             dbus_disable_screensaver();
+         gmtk_media_tracker_set_text(GMTK_MEDIA_TRACKER(tracker), _("Playing"));
++        gmtk_media_player_set_attribute_boolean(GMTK_MEDIA_PLAYER(media), ATTRIBUTE_SUB_VISIBLE, showsubtitles);
+         dbus_send_event("MediaPlaying", 0);
+         g_idle_add(set_media_label, idledata);
+         if (gmtk_media_player_get_attribute_string(GMTK_MEDIA_PLAYER(media), ATTRIBUTE_TITLE) != NULL) {
+@@ -6855,7 +7018,11 @@ void player_media_state_changed_callback(GtkButton * b
          break;
      case MEDIA_STATE_PAUSE:
  #ifdef GTK3_ENABLED
@@ -463,7 +489,7 @@ Don't monitor system volume when running in softvol mode
  #else
          gtk_image_set_from_stock(GTK_IMAGE(image_play), GTK_STOCK_MEDIA_PLAY, button_size);
  #endif
-@@ -7664,9 +7828,24 @@ GtkWidget *create_window(gint windowid)
+@@ -7664,9 +7831,24 @@ GtkWidget *create_window(gint windowid)
      gtk_drag_dest_add_uri_targets(window);
      //Connect the signal for DnD
      g_signal_connect(G_OBJECT(window), "drag_data_received", G_CALLBACK(drop_callback), NULL);
@@ -488,7 +514,7 @@ Don't monitor system volume when running in softvol mode
      media = gmtk_media_player_new();
      g_signal_connect_swapped(G_OBJECT(media), "media_state_changed",
                               G_CALLBACK(player_media_state_changed_callback), NULL);
-@@ -7682,10 +7861,20 @@ GtkWidget *create_window(gint windowid)
+@@ -7682,10 +7864,20 @@ GtkWidget *create_window(gint windowid)
      media_label = gtk_label_new("");
      gtk_widget_set_size_request(media_label, 300, 100);
      gtk_label_set_ellipsize(GTK_LABEL(media_label), PANGO_ELLIPSIZE_END);
@@ -509,7 +535,7 @@ Don't monitor system volume when running in softvol mode
      details_table = gtk_table_new(20, 2, FALSE);
      g_signal_connect(details_vbox, "show", G_CALLBACK(view_option_show_callback), NULL);
      g_signal_connect(details_vbox, "size_allocate", G_CALLBACK(view_option_size_allocate_callback), NULL);
-@@ -7717,7 +7906,12 @@ GtkWidget *create_window(gint windowid)
+@@ -7717,7 +7909,12 @@ GtkWidget *create_window(gint windowid)
      g_signal_connect(plvbox, "size_allocate", G_CALLBACK(view_option_size_allocate_callback), NULL);
      //if (remember_loc)
      //      gtk_paned_set_position(GTK_PANED(pane),loc_panel_position);
@@ -522,7 +548,7 @@ Don't monitor system volume when running in softvol mode
      if (windowid == 0)
          gtk_box_pack_start(GTK_BOX(vbox_master), menubar, FALSE, FALSE, 0);
      gtk_widget_show(menubar);
-@@ -7726,15 +7920,33 @@ GtkWidget *create_window(gint windowid)
+@@ -7726,15 +7923,33 @@ GtkWidget *create_window(gint windowid)
      gtk_container_add(GTK_CONTAINER(window), vbox_master);
      icon_theme = gtk_icon_theme_get_default();
  #ifdef GTK3_ENABLED
@@ -565,7 +591,7 @@ Don't monitor system volume when running in softvol mode
  #else
      image_play = gtk_image_new_from_stock(GTK_STOCK_MEDIA_PLAY, button_size);
      image_stop = gtk_image_new_from_stock(GTK_STOCK_MEDIA_STOP, button_size);
-@@ -8390,6 +8602,10 @@ void show_fs_controls()
+@@ -8390,6 +8605,10 @@ void show_fs_controls()
      GdkScreen *screen;
      GdkRectangle rect;
      GtkAllocation alloc;
@@ -576,7 +602,7 @@ Don't monitor system volume when running in softvol mode
      if (fs_controls == NULL && fullscreen) {
          fs_controls = gtk_window_new(GTK_WINDOW_POPUP);
          gtk_widget_add_events(fs_controls, GDK_ENTER_NOTIFY_MASK);
-@@ -8398,7 +8614,11 @@ void show_fs_controls()
+@@ -8398,7 +8617,11 @@ void show_fs_controls()
          g_signal_connect(G_OBJECT(fs_controls), "leave_notify_event", G_CALLBACK(fs_controls_left), NULL);
          g_object_ref(hbox);
  #ifdef GTK3_ENABLED
@@ -589,7 +615,7 @@ Don't monitor system volume when running in softvol mode
  #else
          gtk_image_set_from_stock(GTK_IMAGE(image_fs), GTK_STOCK_LEAVE_FULLSCREEN, button_size);
  #endif
-@@ -8428,11 +8648,18 @@ void show_fs_controls()
+@@ -8428,11 +8651,18 @@ void show_fs_controls()
  
  void hide_fs_controls()
  {
