@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2012/06/02 16:09:40 fgsch Exp $
+# $OpenBSD: Makefile,v 1.22 2013/01/31 22:27:36 fgsch Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -8,7 +8,7 @@ MULTI_PACKAGES =	-main -tools
 COMMENT-main =		emulates a massive variety of arcades machines
 COMMENT-tools =		tools to manipulate MAME/MESS roms and disk images
 
-V =			0146
+V =			0148
 DISTNAME =		mame${V}s
 PKGNAME-main =		sdlmame-${V:S/0/0./}
 PKGNAME-tools =		sdlmame-tools-${V:S/0/0./}
@@ -17,6 +17,8 @@ CATEGORIES =		emulators games
 
 HOMEPAGE =		http://mamedev.org/
 
+MAINTAINER =		Federico G. Schwindt <fgsch@openbsd.org>
+
 # MAME Distribution License, see http://mamedev.org/license.html
 # history.dat : Creative Commons Attribution 3.0
 PERMIT_PACKAGE_CDROM =		may not sell
@@ -24,14 +26,15 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	may not sell
 PERMIT_DISTFILES_FTP =		Yes
 
-WANTLIB =	GL SDL SDL_ttf X11 Xcomposite Xcursor Xdamage Xext \
+WANTLIB =	SDL SDL_ttf X11 Xcomposite Xcursor Xdamage Xext \
 		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \
 		fontconfig freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 \
 		gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread \
 		pthread-stubs stdc++ util xcb xcb-render xcb-shm z
 
-MASTER_SITES =		http://mamedev.org/downloader.php?file=releases/
+MASTER_SITES =		http://mamedev.org/downloader.php?file=releases/ \
+			http://whiper.com/mame/${V:S/0//}/
 MASTER_SITES0 =		http://mamedev.org/updates/
 MASTER_SITES1 = 	http://www.arcade-history.com/dats/
 
@@ -40,9 +43,10 @@ DIST_SUBDIR =		mame
 
 # PATCHFILES doesn't work for .zip
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
-			mamehistory${V:S/0//}.zip:1
+			history${V:S/0//}e.zip:1
 
-MODULES =		devel/gettext
+MODULES =		devel/gettext \
+			lang/python
 
 RUN_DEPENDS-main =	fonts/liberation-fonts
 LIB_DEPENDS =		devel/gconf2 \
@@ -57,6 +61,8 @@ MAKE_ENV +=		PTR64=1
 .endif
 USE_GMAKE =		Yes
 
+CONFIGURE_STYLE =	none
+
 MAKE_FILE =		makefile
 
 NO_REGRESS =		Yes
@@ -70,7 +76,13 @@ pre-patch:
 #	${PATCH} ${PATCH_DIST_ARGS} < ${WRKDIR}/${V}u${v}.diff
 #.endfor
 	@perl -pi -e 's|\r\n|\n|g' ${WRKDIST}/makefile \
-	    ${WRKDIST}/src/emu/fileio.h
+	    ${WRKDIST}/src/emu/fileio.h \
+	    ${WRKDIST}/src/emu/machine/netlist.h \
+	    ${WRKDIST}/src/osd/sdl/sdl.mak
+
+pre-build:
+	@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
+	${SUBST_CMD} ${WRKDIST}/src/osd/sdl/sdl.mak
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mame ${PREFIX}/bin/sdlmame
