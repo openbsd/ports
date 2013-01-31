@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2012/06/15 08:30:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2013/01/31 18:58:18 zhuk Exp $
 
 COMMENT=	yet another kuake KDE terminal emulator
 
 DISTNAME=	yakuake-2.8.1
-REVISION=	6
+REVISION=	7
 CATEGORIES=	x11 x11/kde
 
 EXTRACT_SUFX=	.tar.bz2
@@ -18,8 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=yakuake/}
 
-WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c fam idn \
-		jpeg m png pthread rpcsvc stdc++ util z pthread-stubs xcb \
+WANTLIB=	ICE SM X11 Xext Xfixes Xrender Xt art_lgpl_2 c expat fam \
+		fontconfig freetypeidn m png pthread stdc++ util z xcb \
 		kdecore kdefx kdesu kdeui kio kwalletclient DCOP
 
 MODULES=	devel/gettext \
@@ -27,9 +27,11 @@ MODULES=	devel/gettext \
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+2,-guic
-LIB_DEPENDS=	x11/kde/libs3
 
-USE_GMAKE=	Yes
+# for Konsole KPart
+RUN_DEPENDS+=	x11/kde/base3
+
+LIB_DEPENDS=	x11/kde/libs3
 
 PORTHOME?=	${WRKDIR}
 MODKDE_VERSION=	3.5.8
