@@ -1,0 +1,37 @@
+$OpenBSD: patch-mscore_CMakeLists_txt,v 1.1.1.1 2013/02/01 06:26:48 bcallah Exp $
+--- mscore/CMakeLists.txt.orig	Tue Mar 13 09:37:09 2012
++++ mscore/CMakeLists.txt	Sat Jan 12 22:46:32 2013
+@@ -147,11 +147,11 @@ include(${QT_USE_FILE})
+ ## alsa >= 1.0.0
+ ##
+ 
+-if (APPLE OR MINGW)
++if (APPLE OR MINGW OR UNIX)
+ 	message("Disabling ALSA support due to OS X or MINGW build.")
+       set (USE_ALSA 0)
+       set (HAS_MIDI 1)
+-else (APPLE OR MINGW)
++else (APPLE OR MINGW OR UNIX)
+       PKGCONFIG (alsa 1.0.0 ALSA_INCDIR ALSA_LIBDIR ALSA_LIB ALSA_CPP )
+       if (NOT ALSA_INCDIR)
+             message(FATAL_ERROR "Fatal error: ALSA >= 1.0.0 required")
+@@ -160,7 +160,7 @@ else (APPLE OR MINGW)
+             set (USE_ALSA 1)
+             set (HAS_MIDI 1)
+       endif (NOT ALSA_INCDIR)
+-endif (APPLE OR MINGW)
++endif (APPLE OR MINGW OR UNIX)
+ 
+ 
+ ##
+@@ -421,8 +421,8 @@ add_custom_target(lupdate
+ 
+ add_custom_target(lrelease
+    COMMAND ${PROJECT_SOURCE_DIR}/gen-qt-projectfile ${PROJECT_SOURCE_DIR} > mscore.pro
+-   COMMAND lrelease ${PROJECT_SOURCE_DIR}/share/locale/*.ts
+-   COMMAND lrelease ${PROJECT_SOURCE_DIR}/share/plugins/musescore.com/translations/*.ts
++   COMMAND lrelease4 ${PROJECT_SOURCE_DIR}/share/locale/*.ts
++   COMMAND lrelease4 ${PROJECT_SOURCE_DIR}/share/plugins/musescore.com/translations/*.ts
+    WORKING_DIRECTORY ${PROJECT_BINARY_DIR}
+    )
+ 
