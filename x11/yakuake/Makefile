@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/01/31 18:58:18 zhuk Exp $
+# $OpenBSD: Makefile,v 1.13 2013/02/01 08:39:34 rpe Exp $
 
 COMMENT=	yet another kuake KDE terminal emulator
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=yakuake/}
 
 WANTLIB=	ICE SM X11 Xext Xfixes Xrender Xt art_lgpl_2 c expat fam \
-		fontconfig freetypeidn m png pthread stdc++ util z xcb \
+		fontconfig freetype idn m png pthread stdc++ util z xcb \
 		kdecore kdefx kdesu kdeui kio kwalletclient DCOP
 
 MODULES=	devel/gettext \
