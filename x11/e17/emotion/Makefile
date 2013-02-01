@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/01/28 08:17:15 rpe Exp $
+# $OpenBSD: Makefile,v 1.3 2013/02/01 16:34:36 naddy Exp $
 
 COMMENT =		video (and audio) codec playback library
 DISTNAME =		emotion-1.7.5
+REVISION =		0
 
 SHARED_LIBS +=  emotion                   0.0 # 8.5
 
