@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2012/06/21 13:54:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2013/02/01 09:48:38 brad Exp $
 
 ONLY_FOR_ARCHS=		i386
 
@@ -6,7 +6,7 @@ COMMENT=		OpenAFS distributed filesystem
 
 VERSION=		1.4.7
 DISTNAME=		openafs-${VERSION}
-REVISION=		20
+REVISION=		21
 
 CATEGORIES=		net
 
@@ -51,6 +51,11 @@ post-patch:
 	@sed 's/%OSrev%/'${OSrev}'/g;s/i386/'${ARCH}'/g' \
 		${FILESDIR}/param.i386_obsd.h \
 		> ${WRKSRC}/src/config/param.${ARCH}_obsd${OSrev}.h
+
+pre-build:
+	@perl -pi -e s,dprintf,debugprintf, ${WRKSRC}/src/bucoord/*.[ch]
+	@perl -pi -e s,dprintf,debugprintf, ${WRKSRC}/src/config/*.h
+	@perl -pi -e s,dprintf,debugprintf, ${WRKSRC}/src/sgistuff/*.c
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/openafs
