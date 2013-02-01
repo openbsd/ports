@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/02/01 17:11:59 sthen Exp $
-
-BROKEN=		crashes at startup
+# $OpenBSD: Makefile,v 1.24 2013/02/01 17:26:15 ajacoutot Exp $
 
 COMMENT=	fast and lightweight file manager
 
