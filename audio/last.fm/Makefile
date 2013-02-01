@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2013/01/04 15:50:26 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.19 2013/02/01 16:04:02 dcoppa Exp $
+
+BROKEN =		no support for the new Last.fm API v2.0
 
 COMMENT =		official Last.fm client
 
