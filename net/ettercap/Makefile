@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.57 2013/01/10 18:11:14 sthen Exp $
-
-BROKEN=		broken mutex locking
-# see http://marc.info/?l=openbsd-ports&m=135577437106908&w=2
+# $OpenBSD: Makefile,v 1.58 2013/02/01 22:10:18 kili Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	multi-purpose sniffer/interceptor/logger
 
-DISTNAME=	ettercap-0.7.5.1
+DISTNAME=	ettercap-0.7.5.3
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ettercap/}
 
@@ -31,6 +28,14 @@ LIB_DEPENDS=	net/libnet/1.1 \
 
 FLAVORS=	no_x11
 FLAVOR?=
+
+# Crude hack to let src/ec_inet.c compile. Those two symbols where
+# defined in an enum in include/ec_inet.h before ettercap-0.7.5.2.
+# They are currently also defined in include/missing/nameser.h, but this
+# can't be used because it introduces other errors, and, more
+# importantly, because using those NS_* macros in src/ec_inet.c is just
+# wrong.
+CFLAGS+=	-DNS_IN6ADDRSZ=16 -DNS_INT16SZ=2
 
 CONFIGURE_ARGS+= -DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		-DMAN_INSTALLDIR="${TRUEPREFIX}/man"
