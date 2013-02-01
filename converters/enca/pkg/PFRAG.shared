@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/04/13 13:26:42 jasper Exp $
-@lib lib/libenca.so.${LIBenca_VERSION}
