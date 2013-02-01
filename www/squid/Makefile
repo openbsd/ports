@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.143 2013/01/23 20:39:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.144 2013/02/01 17:34:33 sthen Exp $
 
 MULTI_PACKAGES=	-main -ntlm
 
@@ -9,8 +9,7 @@ COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
 COMMENT-ntlm=	NTLM authentication/ACL support for Squid
 
-V=		3.2.6
-REVISION-main=	0
+V=		3.2.7
 
 DISTNAME=	squid-$V
 PKGNAME-main=	squid-$V
