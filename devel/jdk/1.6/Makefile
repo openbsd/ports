@@ -1,216 +1,231 @@
-# $OpenBSD: Makefile,v 1.37 2013/01/27 20:10:10 kurt Exp $
+# $OpenBSD: Makefile,v 1.38 2013/02/01 15:34:35 kurt Exp $
 
-SHARED_ONLY=		Yes
-ONLY_FOR_ARCHS= 	amd64 i386
+SHARED_ONLY=	Yes
+ONLY_FOR_ARCHS=	amd64 i386
 
-COMMENT-main=		Java2(TM) Standard Edition Dev Kit v${V}
-COMMENT-jre=		Java2(TM) Standard Edition Runtime Environment v${V}
-V=			1.6.0.03
-PKGNAME=		jdk-${V}
-PKGNAME-main=		jdk-${V}
-REVISION-main =		19
-PKGNAME-jre=		jre-${V}
-REVISION-jre =		19
+COMMENT-main=	Java2(TM) SE Dev Kit v${VERSION}
+COMMENT-jre=	Java2(TM) SE Runtime Environment v${VERSION}
+VERSION=	1.6.0.${UPDATE}
+UPDATE=		32
+BUILD=		b27
+PKGNAME=	jdk-${VERSION}
+PKGNAME-main=	jdk-${VERSION}
+PKGNAME-jre=	jre-${VERSION}
 
-CATEGORIES=		devel/jdk java
-DPB_PROPERTIES=		parallel
+# see jaxp/jaxp.properties & jaxws/jaxws.properties 
+# in ${WRKDIR} for names and download locations of extra distfiles
 
-MULTI_PACKAGES= 	-main -jre
+JDK_SRC=	openjdk-6-src-${BUILD}-26_oct_2012.tar.gz
+PATCH_SET=	openjdk-6u${UPDATE}-patch-set-20130113.zip
+PAXP_SRC=	jaxp144_04.zip
+JAXWS_SRC=	jdk6-jaxws2_1_6-2011_06_13.zip
+JAF_SRC=	jdk6-jaf-b20.zip
 
-HOMEPAGE=		https://jdk6.dev.java.net/
+DISTFILES=	${JDK_SRC} ${PATCH_SET}:1 ${PAXP_SRC}:2 ${JAXWS_SRC}:3 ${JAF_SRC}:4
+EXTRACT_ONLY=	${JDK_SRC} ${PATCH_SET}
+DIST_SUBDIR=	jdk
 
-MAINTAINER=		Kurt Miller <kurt@openbsd.org>
+CATEGORIES=	devel/jdk java
 
-JRLSRC=			jdk-6u3-fcs-src-b05-jrl-24_sep_2007.jar
-JRLBIN=			jdk-6u3-fcs-bin-b05-jrl-24_sep_2007.jar
-JRLMOZ=			jdk-6u3-fcs-mozilla_headers-b05-unix-24_sep_2007.jar
-PATCHSET=		bsd-jdk16-patches-4.tar.bz2
+MULTI_PACKAGES=	-main -jre
 
-DISTFILES=		${JRLSRC} \
-			${JRLBIN} \
-			${JRLMOZ} \
-			${PATCHSET}
-DIST_SUBDIR=		jdk
-
-MASTER_SITES=		http://download.java.net/jdk6/6u3/promoted/b05/
-
-# Java Research License
-# http://www.java.net/jrl.csp
-PERMIT_PACKAGE_CDROM=	JRL
-PERMIT_PACKAGE_FTP=	JRL
-PERMIT_DISTFILES_CDROM= JRL
-PERMIT_DISTFILES_FTP=	JRL
-
-NO_REGRESS=		Yes
-
-VMEM_WARNING=		Yes
-BUILD_DEPENDS=		archivers/gtar \
-			archivers/zip \
-			archivers/unzip \
-			archivers/bzip2 \
-			print/cups,-libs \
-			x11/openmotif
-MODULES=		converters/libiconv gcc4
-MODGCC4_VERSION=	4.6
-MODGCC4_ARCHS=		*
-MODGCC4_LANGS=		java
-WANTLIB=		X11 Xext Xi Xtst c m ossaudio pthread \
-			sndio stdc++ z
-
-USE_GMAKE=		Yes
-USE_GROFF =		Yes
-
-# Don't call make -jN, instead pass MAKE_JOBS to HOTSPOT_BUILD_JOBS
-PARALLEL_BUILD=		No
-
-TAR=			${LOCALBASE}/bin/gtar
-
-MAKE_ENV=		ALT_MOTIF_DIR="${LOCALBASE}" \
-			ALT_CUPS_HEADERS_PATH="${LOCALBASE}/include" \
-			ALT_DEVTOOLS_PATH="${LOCALBASE}/bin" \
-			SKIP_FASTDEBUG_BUILD=true \
-			DEV_ONLY=true \
-			NO_DOCS=true \
-			CC="${CC}" \
-			CXX="${CXX}" \
-			DEFAULT_LIBPATH="/usr/lib:${X11BASE}/lib:${LOCALBASE}/lib" \
-			USER="${USER}" \
-			HOTSPOT_BUILD_JOBS=${MAKE_JOBS}
-
-# Error message for distfile.
-FETCH_MANUALLY=		"You must manually fetch the distribution files, place"
-FETCH_MANUALLY+=	"them in ${FULLDISTDIR} and then run make again."
-FETCH_MANUALLY+=	"Get the JDK 6u3 Source file:"
-FETCH_MANUALLY+=	" http://download.java.net/jdk6/6u3/promoted/b05/${JRLSRC}"
-FETCH_MANUALLY+=	"and the JDK Binaries file:"
-FETCH_MANUALLY+=	" http://download.java.net/jdk6/6u3/promoted/b05/${JRLBIN}"
-FETCH_MANUALLY+=	"and the Mozilla Binaries file:"
-FETCH_MANUALLY+=	" http://download.java.net/jdk6/6u3/promoted/b05/${JRLMOZ}"
-FETCH_MANUALLY+=	""
-FETCH_MANUALLY+=	"Get the BSD patchset file:"
-FETCH_MANUALLY+=	" ${PATCHSET}"
-FETCH_MANUALLY+=	"from http://www.intricatesoftware.com/OpenBSD/java/JDK16JRLConfirm.html"
-
-FLAVORS=		no_web with_ipv6
-PSEUDO_FLAVORS=		native_bootstrap
+FLAVORS=	with_ipv6
+PSEUDO_FLAVORS=	native_bootstrap
 FLAVOR?=
 
-.if !${FLAVOR:L:Mwith_ipv6}
-MAKE_ENV+=		DONT_ENABLE_IPV6=YES
-.endif
+HOMEPAGE=	http://openjdk.java.net/
 
-# handle jar files in post-extract
-EXTRACT_CASES+=		*.jar) true ;;
+MASTER_SITES=	http://download.java.net/openjdk/jdk6/promoted/${BUILD}/ \
+		http://openbsd.dead-parrot.de/distfiles/ \
+		http://distfiles.nl/
+MASTER_SITES1=	http://www.intricatesoftware.com/distfiles/ \
+		http://openbsd.dead-parrot.de/distfiles/ \
+		http://distfiles.nl/
+MASTER_SITES2=  http://download.java.net/jaxp/openjdk/jdk6/ \
+		http://icedtea.classpath.org/download/drops/ \
+		http://openbsd.dead-parrot.de/distfiles/ \
+		http://distfiles.nl/
+MASTER_SITES3=  http://download.java.net/glassfish/components/jax-ws/openjdk/jdk6/ \
+		http://icedtea.classpath.org/download/drops/ \
+		http://openbsd.dead-parrot.de/distfiles/ \
+		http://distfiles.nl/
+MASTER_SITES4=  https://java.net/downloads/jax-ws/OpenJDK6/ \
+		http://icedtea.classpath.org/download/drops/ \
+		http://openbsd.dead-parrot.de/distfiles/ \
+		http://distfiles.nl/
+MASTER_SITES5=	${MASTER_SITE_APACHE:=ant/binaries/} \
+		http://archive.apache.org/dist/ant/binaries/
+
+MAINTAINER=	Kurt Miller <kurt@openbsd.org>
+
+# GPLv2 w/CLASSPATH exception
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+USE_GROFF=	Yes
+NO_REGRESS=	Yes
+
+VMEM_WARNING=	Yes
+BUILD_DEPENDS=	archivers/zip \
+		archivers/unzip \
+		print/cups,-libs \
+		x11/openmotif
+MODULES=	converters/libiconv
+WANTLIB=	X11 Xext Xi Xtst c freetype m pthread sndio stdc++ z
 
 .if ${FLAVOR:L:Mnative_bootstrap}
 INSTALLED!= (pkg_info -e "jdk->=1.6,<1.7" -q && echo yes) || echo no
 .if ${INSTALLED:L} != "yes"
 ERRORS += "Fatal: This flavor requires an installed 1.6 jdk package"
 .endif
-BUILD_DEPENDS+=		jdk->=1.6,<1.7:devel/jdk/1.6
-MAKE_ENV+=		ALT_BOOTDIR="${LOCALBASE}/${JDKHOME}"
+BUILD_DEPENDS+=	jdk->=1.6,<1.7:devel/jdk/1.6 \
+		devel/apache-ant>=1.8.2
+ALT_BOOTDIR=	${LOCALBASE}/${JDKHOME}
 .else
-DISTFILES+=		bsd-jdk16-gensrc.tar.gz \
-			xalan-j_2_7_0-bin.tar.gz \
-			ecj-3.7.1.jar
-FETCH_MANUALLY+=	"Get the file:"
-FETCH_MANUALLY+=	"    bsd-jdk16-gensrc.tar.gz"
-FETCH_MANUALLY+=	"from http://www.intricatesoftware.com/distfiles/bsd-jdk16-gensrc.tar.gz"
-FETCH_MANUALLY+=	"Get the Apache Xalan Java file:"
-FETCH_MANUALLY+=	"    xalan-j_2_7_0-bin.tar.gz"
-FETCH_MANUALLY+=	"from http://archive.apache.org/dist/xml/xalan-j/"
-FETCH_MANUALLY+=	"Get the Eclipse Java Compiler file:"
-FETCH_MANUALLY+=	"    ecj-3.7.1.jar"
-FETCH_MANUALLY+=	"from http://archive.eclipse.org/eclipse/downloads/drops/R-3.7.1-201109091335/ecj-3.7.1.jar"
-MAKE_ENV+=		ALT_BOOTDIR=${WRKDIST} \
-			ALT_BOOTSTRAP=yes \
-			ECJ_JAR=${FULLDISTDIR}/ecj-3.7.1.jar
+BOOT_JDK=	openjdk6-bootjdk-${ARCH}-20130128.tar.gz
+APACHE_ANT=	apache-ant-1.8.4-bin.tar.gz
+DISTFILES+=	${BOOT_JDK}:1 ${APACHE_ANT}:5
+EXTRACT_ONLY+=	${BOOT_JDK} ${APACHE_ANT}
+MAKE_ENV+=	ANT_HOME=${WRKDIST}/apache-ant-1.8.4 \
+		LD_LIBRARY_PATH=${WRKDIST}/bootjdk-libs
+ALT_BOOTDIR=	${WRKDIST}/bootjdk
 .endif
 
-.if !${FLAVOR:L:Mno_web}
-MAKE_ENV+=		BUILD_DEPLOY=true
-.else
-MAKE_ENV+=		BUILD_DEPLOY=false
-MESSAGE=		${PKGDIR}/MESSAGE-no_web
+USE_GMAKE=	Yes
+
+DPB_PROPERTIES=	parallel
+
+# Don't call make -jN, instead pass MAKE_JOBS to HOTSPOT_BUILD_JOBS
+PARALLEL_BUILD=	No
+
+MAKE_ENV+=	ALT_BOOTDIR=${ALT_BOOTDIR} \
+		ALT_FREETYPE_HEADERS_PATH=${X11BASE}/include \
+		ALT_FREETYPE_LIB_PATH=${X11BASE}/lib \
+		ALT_MOTIF_DIR="${LOCALBASE}" \
+		ALT_DROPS_DIR=${FULLDISTDIR} \
+		ALT_PACKAGE_PATH=${LOCALBASE} \
+		ALT_X11_PATH=${X11BASE} \
+		ALT_CACERTS_FILE=${FILESDIR}/cacerts \
+		SKIP_FASTDEBUG_BUILD=true \
+		NO_DOCS=true \
+		MILESTONE=fcs \
+		BUILD_NUMBER=${BUILD} \
+		JDK_UPDATE_VERSION=${UPDATE} \
+		CC="${CC}" \
+		CXX="${CXX}" \
+		DEFAULT_LIBPATH="/usr/lib:${X11BASE}/lib:${LOCALBASE}/lib" \
+		USER="${USER}" \
+		WARNINGS_ARE_ERRORS="" \
+		HOTSPOT_BUILD_JOBS=${MAKE_JOBS}
+
+.if !${FLAVOR:L:Mwith_ipv6}
+MAKE_ENV+=	DONT_ENABLE_IPV6=YES
 .endif
 
-JDKHOME=		jdk-1.6.0
-JREHOME=		jre-1.6.0
+JDKHOME=	jdk-1.6.0
+JREHOME=	jre-1.6.0
 
-SUBST_VARS=		JDKHOME JREHOME
+SUBST_VARS=	JDKHOME JREHOME
 
 .if ${MACHINE_ARCH} == "i386"
-PKG_ARGS+=              -Dclient_vm=1
+PKG_ARGS+=	-Dclient_vm=1
 .else
-PKG_ARGS+=              -Dclient_vm=0
+PKG_ARGS+=	-Dclient_vm=0
 .endif
 
 # Deal with Sun's internal build structure
-WRKDIST=		${WRKDIR}
-WRKSRC=         	${WRKDIR}/control/make
-OUTPUTDIR=		${WRKDIR}/control/build/bsd-${MACHINE_ARCH:S/i386/i586/}
-JDKIMAGEDIR=		${OUTPUTDIR}/j2sdk-image
-JREIMAGEDIR=		${OUTPUTDIR}/j2re-image
+WRKDIST=	${WRKDIR}
+OUTPUTDIR=	${WRKDIR}/build/bsd-${MACHINE_ARCH:S/i386/i586/}
+JDKIMAGEDIR=	${OUTPUTDIR}/j2sdk-image
+JREIMAGEDIR=	${OUTPUTDIR}/j2re-image
 
-.include <bsd.own.mk>
+COPYDIRS=	hotspot/agent/src/os/linux \
+		hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/linux \
+		hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/linux/amd64 \
+		hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/linux/x86 \
+		hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/linux \
+		hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/linux_amd64 \
+		hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/linux_x86 \
+		hotspot/src/os/linux/vm \
+		hotspot/src/os_cpu/linux_x86/vm \
+		hotspot/src/os_cpu/linux_zero/vm \
+		hotspot/make/linux \
+		hotspot/make/linux/makefiles \
+		jdk/src/linux/doc/man \
+		jdk/src/linux/doc/man/ja
 
-ACCEPT_JRL_LICENSE ?= No
+COPYFILES=	hotspot/agent/src/share/classes/sun/jvm/hotspot/LinuxVtblAccess.java \
+		corba/make/common/Defs-linux.gmk \
+		corba/make/common/shared/Defs-linux.gmk \
+		jdk/make/com/sun/tools/attach/mapfile-linux \
+		jdk/make/common/Defs-linux.gmk \
+		jdk/make/common/shared/Defs-linux.gmk \
+		jdk/make/java/nio/mapfile-linux \
+		jdk/make/netbeans/common/architectures/name-Linux.properties \
+		jdk/make/sun/awt/mapfile-vers-linux \
+		jdk/make/tools/sharing/classlist.linux \
+		jdk/src/solaris/classes/java/lang/UNIXProcess.java.linux \
+		jdk/src/solaris/classes/sun/awt/fontconfigs/linux.fontconfig.properties \
+		jdk/src/solaris/classes/sun/tools/attach/LinuxAttachProvider.java \
+		jdk/src/solaris/classes/sun/tools/attach/LinuxVirtualMachine.java \
+		jdk/src/solaris/hpi/include/largefile_linux.h \
+		jdk/src/solaris/native/java/net/linux_close.c \
+		jdk/src/solaris/native/sun/tools/attach/LinuxVirtualMachine.c
 
-.if ${ACCEPT_JRL_LICENSE:L} != "yes"
-BROKEN += \n
-BROKEN += You must read and accept Sun's JRL license located\n
-BROKEN += at ${FILESDIR}/JavaResearchLicense.txt\n
-BROKEN += To indicate your acceptance of the JRL add ACCEPT_JRL_LICENSE=Yes\n
-BROKEN += to /etc/mk.conf and restart the build
-.endif
-
+# create initial bsd src from linux src (except for threads_solaris.c)
 post-extract:
-	@rm -rf ${WRKDIR}/tmp
-	@mkdir ${WRKDIR}/tmp && \
-		cd ${WRKDIR}/tmp && \
-		${CC} ${CFLAGS} -o ${WRKDIR}/tmp/x_x2zip ${FILESDIR}/x_x2zip.c
-.for jar in ${JRLSRC} ${JRLBIN} ${JRLMOZ}
-	@cd ${WRKDIR}/tmp && \
-		unzip -qo ${FULLDISTDIR}/${jar} X_X && \
-		./x_x2zip "YES I ACCEPT THE CLICK THROUGH LICENSE.  " X_X && \
-		cd ${WRKDIR} && \
-		unzip -q ${WRKDIR}/tmp/X_X.zip -x */lib*.so
-.endfor
-	@cd ${WRKDIR} && \
-		mkdir deploy/src/plugin/share/plugin && \
-		mv share/plugin/mozilla_headers_18 deploy/src/plugin/share/plugin
-	@cp -f ${FILESDIR}/cacerts ${WRKDIR}/j2se/src/share/lib/security
-	@cp ${FILESDIR}/PLATFORM_API_BSDOS_PCM.c ${WRKDIR}/j2se/src/solaris/native/com/sun/media/sound/engine
-	@rm -rf ${WRKDIR}/tmp ${WRKDIR}/share
+	@for d in ${COPYDIRS}; do \
+		mkdir -p `echo ${WRKDIST}/$$d | sed 's/linux/bsd/g;'`; \
+		cd ${WRKDIST}/$$d; \
+		for f in *; do \
+			if [ -f $$f ]; then \
+				t=`echo ${WRKDIST}/$$d/$$f | sed 's/linux/bsd/g; s/Linux/Bsd/g'`; \
+				sed 's/linux/bsd/g; s/Linux/Bsd/g' < $$f > $$t; \
+			fi; \
+		done; \
+	done
+	@for f in ${COPYFILES}; do \
+		t=`echo $$f | sed 's/linux/bsd/g; s/Linux/Bsd/g'`; \
+		sed 's/linux/bsd/g; s/Linux/Bsd/g' < ${WRKDIST}/$$f > ${WRKDIST}/$$t; \
+	done
+	@sed 's/solaris/bsd/g; s/Solaris/Bsd/g' \
+		< ${WRKDIST}/jdk/src/solaris/hpi/native_threads/src/threads_solaris.c \
+		> ${WRKDIST}/jdk/src/solaris/hpi/native_threads/src/threads_bsd.c
+	@cp ${FILESDIR}/PLATFORM_API_BSDOS_PCM.c \
+		${WRKDIR}/jdk/src/solaris/native/com/sun/media/sound
+	@perl -pi -e 's|build-policy install-limited|build-policy install-unlimited|' \
+		${WRKDIST}/jdk/make/javax/crypto/Makefile
 
 pre-patch:
 	@cd ${WRKDIR} &&  \
-		${PATCH} -p0 -z .orig.bsd --quiet < ${WRKDIR}/jdk16.patches
-
-.if !${FLAVOR:L:Mnative_bootstrap}
-post-patch:
-	@cd ${WRKDIR}/bin && \
-		chmod +x bootscript
-.for prog in java javac javah jar
-	@cd ${WRKDIR}/bin && \
-		ln -s bootscript ${prog}
-.endfor
-.endif
+		${PATCH} -p0 -z .orig.u${UPDATE} --quiet < ${WRKDIR}/${PATCH_SET:R}
 
 post-build:
-	@rm -rf ${JDKIMAGEDIR}/man/ja \
-		${JDKIMAGEDIR}/man/ja_JP.eucJP \
-		${JREIMAGEDIR}/man/ja \
-		${JREIMAGEDIR}/man/ja_JP.eucJP
+	@rm -rf ${JDKIMAGEDIR}/man/ja ${JREIMAGEDIR}/man/ja
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${JDKHOME}
 	cd ${JDKIMAGEDIR} && tar -cf - * | tar -C ${PREFIX}/${JDKHOME} -xf - 
 	${INSTALL_DATA_DIR} ${PREFIX}/${JREHOME}
 	cd ${JREIMAGEDIR} && tar -cf - * | tar -C ${PREFIX}/${JREHOME} -xf -
-	cd ${WRKDIR} && \
-		${INSTALL_DATA} JavaResearchLicense.txt ${PREFIX}/${JDKHOME}/LICENSE && \
-		${INSTALL_DATA} JavaResearchLicense.txt ${PREFIX}/${JDKHOME}/jre/LICENSE && \
-		${INSTALL_DATA} JavaResearchLicense.txt ${PREFIX}/${JREHOME}/LICENSE
 
 .include <bsd.port.mk>
+
+# The bootjdk is the jdk image with some parts deleted
+# and a copy of the system shared libs needed to run it.
+# The parts deleted are not needed for bootstrap and would
+# require more system shared libs to be saved.
+build-bootjdk: ${_BUILD_COOKIE}
+	@rm -rf ${WRKDIR}/tmp
+	@mkdir -p ${WRKDIR}/tmp/bootjdk
+	@mkdir -p ${WRKDIR}/tmp/bootjdk-libs
+	@cd ${JDKIMAGEDIR} && tar -cf - * | tar -C ${WRKDIR}/tmp/bootjdk -xf - 
+	@cd ${WRKDIR}/tmp/bootjdk/bin && rm appletviewer policytool
+	@cd ${WRKDIR}/tmp/bootjdk/jre/lib/${ARCH} && rm libnpt.so libinstrument.so libsplashscreen.so xawt/libmawt.so libfontmanager.so
+	@ldd ${WRKDIR}/tmp/bootjdk/bin/unpack200 | \
+		grep rlib | cut -d"/" -f 2-20 | \
+		xargs -I % cp /% ${WRKDIR}/tmp/bootjdk-libs
+	@cd ${WRKDIR}/tmp && tar czf openjdk6-bootjdk-${ARCH}-$$(date +%Y%m%d).tar.gz bootjdk*
+	@echo "New bootjdk is located at ${WRKDIR}/tmp/openjdk6-bootjdk-${ARCH}-$$(date +%Y%m%d).tar.gz"
