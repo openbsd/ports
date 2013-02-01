@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.787 2013/01/28 13:52:09 stsp Exp $
+# $OpenBSD: Makefile,v 1.788 2013/02/01 22:16:29 todd Exp $
 
      SUBDIR =
      SUBDIR += BitTorrent
@@ -32,6 +32,9 @@
      SUBDIR += bird
      SUBDIR += bird,v6
      SUBDIR += bitlbee
+     SUBDIR += bitlbee,otr
+     SUBDIR += bitlbee,libpurple
+     SUBDIR += bitlbee,otr,libpurple
      SUBDIR += bnc
      SUBDIR += bro
      SUBDIR += btpd
