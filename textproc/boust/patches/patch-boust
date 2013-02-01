@@ -1,4 +1,4 @@
-$OpenBSD: patch-boust,v 1.2 2003/12/27 23:36:46 jose Exp $
+$OpenBSD: patch-boust,v 1.3 2013/02/01 17:07:41 stu Exp $
 --- boust.orig	Thu Nov  7 00:06:00 2002
 +++ boust	Wed Nov  6 23:53:47 2002
 @@ -2,9 +2,9 @@
@@ -6,10 +6,10 @@ $OpenBSD: patch-boust,v 1.2 2003/12/27 23:36:46 jose Exp $
  # If it is, run tclsh, otherwise, run wish.
  # (The backslash makes the following line a comment as well... \
 -THESH="wish"
-+THESH="wish8.4"
++THESH="${MODTK_BIN}"
  # blah\
 -for arg in "$@" ; do if [ "$arg" == "--o" ] ; then THESH="tclsh" ; fi ; done ; \
-+for arg in "$@" ; do if [ "$arg" == "--o" ] ; then THESH="tclsh8.4" ; fi ; done ; \
++for arg in "$@" ; do if [ "$arg" == "--o" ] ; then THESH="${MODTCL_BIN}" ; fi ; done ; \
  # \
  exec $THESH "$0" "$@"
  

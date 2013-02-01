@@ -1,3 +1,9 @@
+$OpenBSD: README,v 1.1 2013/02/01 17:07:41 stu Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
 The X11 fonts for ${FULLPKGNAME} have been installed to
 
   ${FONTDIR}
