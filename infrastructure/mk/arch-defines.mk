@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.11 2013/01/08 00:36:17 brad Exp $
+# $OpenBSD: arch-defines.mk,v 1.12 2013/02/01 05:18:48 brad Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -19,7 +19,7 @@ APM_ARCHS = amd64 arm i386 loongson macppc sparc sparc64 zaurus
 BE_ARCHS = hppa hppa64 m68k m88k mips64 powerpc sparc sparc64
 LE_ARCHS = alpha amd64 arm i386 mips64el sh vax
 LP64_ARCHS = alpha amd64 hppa64 sparc64 mips64 mips64el
-NO_SHARED_ARCHS = m88k vax
+NO_SHARED_ARCHS = vax
 GCC4_ARCHS = alpha amd64 arm armish beagle gumstix i386 hppa hppa64 \
 	landisk loongson macppc mips64 \
 	mips64el mvmeppc palm powerpc sgi sh socppc sparc sparc64 zaurus
