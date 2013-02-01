@@ -1,0 +1,26 @@
+$OpenBSD: patch-libedataserverui_e-name-selector_c,v 1.1 2013/02/01 16:21:36 ajacoutot Exp $
+
+From d92dc8b420cd599143649dca65bed55a035dd5b6 Mon Sep 17 00:00:00 2001
+From: Milan Crha <mcrha@redhat.com>
+Date: Thu, 31 Jan 2013 16:33:07 +0000
+Subject: Bug #689476 - Slow composer open (ENameSelector object leaks)
+
+--- libedataserverui/e-name-selector.c.orig	Sat Jan 19 18:35:45 2013
++++ libedataserverui/e-name-selector.c	Fri Feb  1 17:02:15 2013
+@@ -331,6 +331,16 @@ name_selector_dispose (GObject *object)
+ 	g_array_set_size (priv->source_books, 0);
+ 	g_array_set_size (priv->sections, 0);
+ 
++	if (priv->dialog) {
++		gtk_widget_destroy (GTK_WIDGET (priv->dialog));
++		priv->dialog = NULL;
++	}
++
++	if (priv->model) {
++		g_object_unref (priv->model);
++		priv->model = NULL;
++	}
++
+ 	/* Chain up to parent's dispose() method. */
+ 	G_OBJECT_CLASS (e_name_selector_parent_class)->dispose (object);
+ }
