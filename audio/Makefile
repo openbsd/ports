@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.295 2013/01/13 17:01:58 bcallah Exp $
+# $OpenBSD: Makefile,v 1.296 2013/02/01 06:27:52 bcallah Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -125,6 +125,7 @@
      SUBDIR += mpegaudio
      SUBDIR += mpg123
      SUBDIR += mpg321
+     SUBDIR += mscore
      SUBDIR += mt-daapd
      SUBDIR += multimux
      SUBDIR += musepack
