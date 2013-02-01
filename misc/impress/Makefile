@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/19 07:23:11 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/02/01 15:20:36 stu Exp $
 
 COMMENT=	publishing and presentation tool
 
 VERSION=	1.1b9
 DISTNAME=	impress-${VERSION}
+REVISION=	0
 DISTFILES=	imp${VERSION}.tar.gz
 CATEGORIES=	misc
 
@@ -18,8 +19,12 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-RUN_DEPENDS=    x11/tk/8.4
+MODULES=	x11/tk
+RUN_DEPENDS=	${MODTK_RUN_DEPENDS}
 
 NO_REGRESS=	Yes
+
+pre-configure:
+	@${MODTCL_WISH_ADJ} ${WRKSRC}/src/impress.tcl
 
 .include <bsd.port.mk>
