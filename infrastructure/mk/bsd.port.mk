@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1206 2013/02/02 12:29:20 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1207 2013/02/02 13:23:24 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -170,7 +170,6 @@ WRKOBJDIR_${PKGPATH} ?= ${WRKOBJDIR_MFS}
 .else
 WRKOBJDIR_${PKGPATH} ?= ${WRKOBJDIR}
 .endif
-WRKOBJDIR_${PKGPATH} ?= ${WRKOBJDIR}
 FAKEOBJDIR_${PKGPATH} ?= ${FAKEOBJDIR}
 
 BULK_${PKGPATH} ?= ${BULK}
