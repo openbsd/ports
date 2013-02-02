@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.382 2013/01/19 05:12:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.383 2013/02/02 16:00:55 jasper Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -349,6 +349,7 @@
      SUBDIR += ruby-syntax
      SUBDIR += ruby-templater
      SUBDIR += ruby-treetop
+     SUBDIR += ruby-yard
      SUBDIR += rxp
      SUBDIR += sablotron
      SUBDIR += sgmlformat
