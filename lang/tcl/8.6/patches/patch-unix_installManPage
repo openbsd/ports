@@ -1,0 +1,22 @@
+$OpenBSD: patch-unix_installManPage,v 1.1.1.1 2013/02/02 11:15:01 stu Exp $
+--- unix/installManPage.orig	Wed Feb 15 18:02:37 2012
++++ unix/installManPage	Wed Feb 15 19:32:56 2012
+@@ -94,6 +94,9 @@ esac
+ 
+ SrcDir=`dirname $ManPage`
+ 
++Section=0
++Cat='${LOCALBASE}/bin/groff -Tascii -mandoc -Wall -mtty-char -P -c -- -'
++
+ ########################################################################
+ ### Process Page to Create Target Pages
+ ###
+@@ -105,7 +108,7 @@ for Target in $Names; do
+     if test -z "$First" ; then
+ 	First=$Target
+ 	sed -e "/man\.macros/r $SrcDir/man.macros" -e "/man\.macros/d" \
+-	    $ManPage > $Dir/$First
++	    $ManPage | $Cat > $Dir/$First
+ 	chmod 444 $Dir/$First
+ 	$Gzip $Dir/$First
+     else
