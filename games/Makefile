@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.255 2013/01/28 14:00:20 stsp Exp $
+# $OpenBSD: Makefile,v 1.256 2013/02/02 03:09:47 bentley Exp $
 
      SUBDIR =
      SUBDIR += abuse
@@ -153,6 +153,7 @@
      SUBDIR += qstat
      SUBDIR += quake
      SUBDIR += quake2
+     SUBDIR += renpy
      SUBDIR += rftg
      SUBDIR += ri-li
      SUBDIR += roadfighter
