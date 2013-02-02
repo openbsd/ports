@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.48 2013/01/28 12:23:45 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.49 2013/02/02 09:02:11 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -110,12 +110,6 @@ sub filename
 {
 	my $self = shift;
 	return $self->distdir($self->{name});
-}
-
-sub listname
-{
-	my $self = shift;
-	return $self->distdir('list', $self->{name}.".gz");
 }
 
 sub checked_already
@@ -660,8 +654,6 @@ sub finalize
 		return $job->bad_file($self->{fetcher}, $core);
 	}
 	rename($job->{file}->tempfilename, $job->{file}->filename);
-	# and remove anything we might have listed
-	unlink($job->{file}->listname);
 	$job->{file}->cache;
 	my $sz = $job->{file}->{sz};
 	if (defined $self->{fetcher}->{initial_sz}) {
