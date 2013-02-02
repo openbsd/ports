@@ -1,17 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.9 2012/10/19 09:34:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2013/02/02 09:05:29 ajacoutot Exp $
 @conflict foomatic-db-<4.0.20091207p1
 @conflict foo2zjs-cup-*
 @pkgpath print/foo2zjs,-cups
 @pkgpath print/foo2zjs,-main
-@unexec-delete rm -f %D/share/foo2hiperc/icm/*
-@unexec-delete rm -f %D/share/foo2hp/icm/*
-@unexec-delete rm -f %D/share/foo2lava/icm/*
-@unexec-delete rm -f %D/share/foo2oak/icm/*
-@unexec-delete rm -f %D/share/foo2qpdl/icm/*
-@unexec-delete rm -f %D/share/foo2slx/icm/*
-@unexec-delete rm -f %D/share/foo2xqx/firmware/*
-@unexec-delete rm -f %D/share/foo2zjs/firmware/*
-@unexec-delete rm -f %D/share/foo2zjs/icm/*
+@extraunexec rm -f %D/share/foo2hiperc/icm/*
+@extraunexec rm -f %D/share/foo2hp/icm/*
+@extraunexec rm -f %D/share/foo2lava/icm/*
+@extraunexec rm -f %D/share/foo2oak/icm/*
+@extraunexec rm -f %D/share/foo2qpdl/icm/*
+@extraunexec rm -f %D/share/foo2slx/icm/*
+@extraunexec rm -f %D/share/foo2xqx/firmware/*
+@extraunexec rm -f %D/share/foo2zjs/firmware/*
+@extraunexec rm -f %D/share/foo2zjs/icm/*
 @bin bin/arm2hpdl
 @bin bin/command2foo2lava-pjl
 @bin bin/foo2hiperc
@@ -173,6 +173,7 @@ share/foomatic/db/source/PPD/foo2zjs/Minolta-magicolor_2200_DL.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Minolta-magicolor_2300_DL.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Minolta-magicolor_2430_DL.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Oki-C110.ppd.gz
+share/foomatic/db/source/PPD/foo2zjs/Oki-C301dn.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Oki-C3100.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Oki-C310dn.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Oki-C3200.ppd.gz
@@ -190,12 +191,14 @@ share/foomatic/db/source/PPD/foo2zjs/Samsung-CLP-300.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Samsung-CLP-310.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Samsung-CLP-315.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Samsung-CLP-325.ppd.gz
+share/foomatic/db/source/PPD/foo2zjs/Samsung-CLP-365.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Samsung-CLP-600.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Samsung-CLP-610.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Samsung-CLP-620.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Samsung-CLX-2160.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Samsung-CLX-3160.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Samsung-CLX-3175.ppd.gz
+share/foomatic/db/source/PPD/foo2zjs/Samsung-CLX-3185.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Xerox-Phaser_6110.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Xerox-Phaser_6115MFP.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Xerox-Phaser_6121MFP.ppd.gz
@@ -334,6 +337,7 @@ share/foomatic/db/source/printer/Minolta-magicolor_2200_DL.xml
 share/foomatic/db/source/printer/Minolta-magicolor_2300_DL.xml
 share/foomatic/db/source/printer/Minolta-magicolor_2430_DL.xml
 share/foomatic/db/source/printer/Oki-C110.xml
+share/foomatic/db/source/printer/Oki-C301dn.xml
 share/foomatic/db/source/printer/Oki-C3100.xml
 share/foomatic/db/source/printer/Oki-C310dn.xml
 share/foomatic/db/source/printer/Oki-C3200.xml
@@ -351,12 +355,14 @@ share/foomatic/db/source/printer/Samsung-CLP-300.xml
 share/foomatic/db/source/printer/Samsung-CLP-310.xml
 share/foomatic/db/source/printer/Samsung-CLP-315.xml
 share/foomatic/db/source/printer/Samsung-CLP-325.xml
+share/foomatic/db/source/printer/Samsung-CLP-365.xml
 share/foomatic/db/source/printer/Samsung-CLP-600.xml
 share/foomatic/db/source/printer/Samsung-CLP-610.xml
 share/foomatic/db/source/printer/Samsung-CLP-620.xml
 share/foomatic/db/source/printer/Samsung-CLX-2160.xml
 share/foomatic/db/source/printer/Samsung-CLX-3160.xml
 share/foomatic/db/source/printer/Samsung-CLX-3175.xml
+share/foomatic/db/source/printer/Samsung-CLX-3185.xml
 share/foomatic/db/source/printer/Xerox-Phaser_6110.xml
 share/foomatic/db/source/printer/Xerox-Phaser_6115MFP.xml
 share/foomatic/db/source/printer/Xerox-Phaser_6121MFP.xml
