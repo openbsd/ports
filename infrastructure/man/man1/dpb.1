@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.74 2013/01/29 16:19:41 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.75 2013/02/02 10:38:26 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: January 29 2013 $
+.Dd $Mdocdate: February 2 2013 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -38,6 +38,7 @@
 .Op Fl l Ar lockdir
 .Op Fl M Ar threshold
 .Op Fl P Ar pathlist
+.Op Fl S Ar logfile
 .Op Fl X Ar pathlist
 .Op Ar pathlist ...
 .Ek
@@ -478,6 +479,10 @@ Note that
 .Fl R
 won't always work, as rebuilding a package when another version is already
 installed is not supported.
+.It Fl S Ar logfile
+Read
+.Ar logfile
+as an initial workdir size log.
 .It Fl s
 Compute workdir sizes before cleaning up, and stash them in log file
 .Pa %L/size.log .
