@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/10/01 08:57:12 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/02/02 15:41:17 dcoppa Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/FileDownloader.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/FileDownloader.pyc
@@ -17,5 +16,12 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/__init__.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/__main__.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/__main__.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/update.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/update.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/utils.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/utils.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/version.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/version.pyc
+@man man/man1/youtube-dl.1
+share/doc/youtube-dl/
+share/doc/youtube-dl/README.txt

@@ -1,12 +1,12 @@
-$OpenBSD: patch-youtube_dl_FileDownloader_py,v 1.4 2012/11/30 09:41:54 dcoppa Exp $
---- youtube_dl/FileDownloader.py.orig	Tue Nov 27 18:26:48 2012
-+++ youtube_dl/FileDownloader.py	Thu Nov 29 11:21:51 2012
-@@ -525,7 +525,7 @@ class FileDownloader(object):
- 		# Download using rtmpdump. rtmpdump returns exit code 2 when
- 		# the connection was interrumpted and resuming appears to be
- 		# possible. This is part of rtmpdump's normal usage, AFAIK.
--		basic_args = ['rtmpdump', '-q'] + [[], ['-W', player_url]][player_url is not None] + ['-r', url, '-o', tmpfilename]
-+		basic_args = ['rtmpdump'] + [[], ['-W', player_url]][player_url is not None] + ['-r', url, '-o', tmpfilename]
- 		args = basic_args + [[], ['-e', '-k', '1']][self.params.get('continuedl', False)]
- 		if self.params.get('verbose', False):
- 			try:
+$OpenBSD: patch-youtube_dl_FileDownloader_py,v 1.5 2013/02/02 15:41:17 dcoppa Exp $
+--- youtube_dl/FileDownloader.py.orig	Tue Jan 22 13:37:23 2013
++++ youtube_dl/FileDownloader.py	Tue Jan 22 13:37:44 2013
+@@ -567,7 +567,7 @@ class FileDownloader(object):
+         # Download using rtmpdump. rtmpdump returns exit code 2 when
+         # the connection was interrumpted and resuming appears to be
+         # possible. This is part of rtmpdump's normal usage, AFAIK.
+-        basic_args = ['rtmpdump', '-q', '-r', url, '-o', tmpfilename]
++        basic_args = ['rtmpdump', '-r', url, '-o', tmpfilename]
+         if player_url is not None:
+             basic_args += ['-W', player_url]
+         if page_url is not None:
