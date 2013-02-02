@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2010/09/30 07:15:36 ajacoutot Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2013/02/02 09:24:08 ajacoutot Exp $
 lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-ani.so
 lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-bmp.so
 lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-gif.so
@@ -16,5 +16,3 @@ lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-tiff.so
 lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-wbmp.so
 lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-xbm.so
 lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-xpm.so
-@lib lib/libgdk_pixbuf-2.0.so.${LIBgdk_pixbuf-2.0_VERSION}
-@lib lib/libgdk_pixbuf_xlib-2.0.so.${LIBgdk_pixbuf_xlib-2.0_VERSION}

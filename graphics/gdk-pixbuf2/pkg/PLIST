@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2013/01/23 09:03:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2013/02/02 09:24:08 ajacoutot Exp $
 @conflict gtk+2-<2.22
 @conflict gtk+2-docs-<2.22
 @unexec-delete rm -f %D/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache
@@ -29,8 +29,10 @@ lib/girepository-1.0/
 lib/girepository-1.0/GdkPixbuf-2.0.typelib
 lib/libgdk_pixbuf-2.0.a
 lib/libgdk_pixbuf-2.0.la
+@lib lib/libgdk_pixbuf-2.0.so.${LIBgdk_pixbuf-2.0_VERSION}
 lib/libgdk_pixbuf_xlib-2.0.a
 lib/libgdk_pixbuf_xlib-2.0.la
+@lib lib/libgdk_pixbuf_xlib-2.0.so.${LIBgdk_pixbuf_xlib-2.0_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/gdk-pixbuf-2.0.pc
 lib/pkgconfig/gdk-pixbuf-xlib-2.0.pc
