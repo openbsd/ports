@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2012/10/21 16:38:24 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2013/02/02 04:39:56 bentley Exp $
 
 COMMENT-main=		ur-quan masters: sdl port of star control 2; multiplayer
 COMMENT-content=	ur-quan masters: game content
@@ -30,17 +30,19 @@ PKGNAME-remix2=		uqm-remix2-${VER}
 PKGNAME-remix3=		uqm-remix3-${VER}
 PKGNAME-threedomusic=	uqm-threedomusic-${VER}
 PKGNAME-voice=		uqm-voice-${VER}
-REVISION-main=		0
-REVISION-content=	0
-REVISION-remix1=	0
-REVISION-remix2=	0
-REVISION-remix3=	0
-REVISION-threedomusic=	0
-REVISION-voice=		0
+REVISION-main=		1
+REVISION-content=	1
+REVISION-remix1=	1
+REVISION-remix2=	1
+REVISION-remix3=	1
+REVISION-threedomusic=	1
+REVISION-voice=		1
 EXTRACT_ONLY=		${PDIST}
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sc2/}
 
 HOMEPAGE=		http://sc2.sourceforge.net/
+
+MAINTAINER =		Anthony J. Bentley <anthony@cathet.us>
 
 # code GPLv2+, data Creative Commons Attribution-NonCommercial-ShareAlike 2.5
 # NC does not apply to unmodified uqm distributions, but mark it to be safe

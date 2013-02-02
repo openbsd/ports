@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2012/09/29 05:08:26 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2013/02/02 04:39:56 bentley Exp $
 
 COMMENT =	Nintendo DS emulator
 
 DISTNAME =	desmume-0.9.7
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	emulators
 
 HOMEPAGE =	http://desmume.org/
+
+MAINTAINER =	Anthony J. Bentley <anthony@cathet.us>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =		Yes

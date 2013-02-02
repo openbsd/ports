@@ -1,12 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2013/01/10 12:19:50 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2013/02/02 04:39:55 bentley Exp $
 
 COMMENT =		circuit simulator, based on Berkeley SPICE
 
 DISTNAME =		ngspice-25
+REVISION =		0
 
 CATEGORIES =		cad
 
 HOMEPAGE =		http://ngspice.sourceforge.net/
+
+MAINTAINER =		Anthony J. Bentley <anthony@cathet.us>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

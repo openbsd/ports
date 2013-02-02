@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.5 2013/01/11 13:44:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2013/02/02 04:39:56 bentley Exp $
 
 COMMENT =		emulator for Nintendo Game Boy (Color/Advance)
 
 DISTNAME =		vbam-1.8.0.1054-src
 PKGNAME =		${DISTNAME:S/-src//}
-REVISION=		2
+REVISION =		3
 
 CATEGORIES =		emulators
 
 HOMEPAGE =		http://www.vba-m.com
+
+MAINTAINER =		Anthony J. Bentley <anthony@cathet.us>
 
 # GPLv2+ (see doc/License.txt)
 PERMIT_PACKAGE_CDROM =		Yes

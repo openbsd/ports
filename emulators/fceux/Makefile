@@ -1,12 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2013/01/07 03:14:00 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2013/02/02 04:39:56 bentley Exp $
 
 COMMENT =		emulator for Nintendo Entertainment System
 
 DISTNAME =		fceux-2.2.0.src
 PKGNAME =		${DISTNAME:S/.src//}
+REVISION =		0
 CATEGORIES =		emulators games
 
 HOMEPAGE =		http://fceux.com/
+
+MAINTAINER =		Anthony J. Bentley <anthony@cathet.us>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =		Yes
