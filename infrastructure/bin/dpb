@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.82 2013/01/28 12:23:45 espie Exp $
+# $OpenBSD: dpb,v 1.83 2013/02/02 10:36:31 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -232,11 +232,7 @@ sub handle_options
 			$f = $state->expand_path($f);
 		}
 	}
-	if ($state->opt('S')) {
-		$state->{size_log} = $state->opt('S');
-	} else {
-		$state->{size_log} = "%f/build-stats/%a-size";
-	}
+	$state->{size_log} = "%f/build-stats/%a-size";
 
 	$state->{permanent_log} = $state->{build_files}[-1];
 	$state->{size_log} = $state->expand_path($state->{size_log});
@@ -484,7 +480,7 @@ sub parse_size_file
 {
 	my $state = shift;
 	return if $state->{fetch_only};
-	open my $fh, '<', $state->{size_log} or return;
+	open my $fh, '<', $state->opt('S') // $state->{size_log}  or return;
 
 	File::Path::mkpath(File::Basename::dirname($state->{size_log}));
 
@@ -492,20 +488,25 @@ sub parse_size_file
 	my $_;
 	while (<$fh>) {
 		chomp;
+		my $pkgname;
 		my ($pkgpath, $sz, $sz2) = split(/\s+/, $_);
+		my $i = " $sz";
+		if ($pkgpath =~ m/^(.*)\((.*)\)$/) {
+			($pkgpath, $pkgname) = ($1, $2);
+			$i ="($pkgname) $sz";
+		}
 		if (defined $sz2) {
 			$sz += $sz2;
-			$rewrite->{$pkgpath} = "$sz $sz2";
-		} else {
-			$rewrite->{$pkgpath} = $sz;
+			$i .=" $sz2";
 		}
+		$rewrite->{$pkgpath} = $i;
 		my $o = DPB::PkgPath->new($pkgpath);
 		DPB::Heuristics->add_size_info($o, $sz);
 	}
 	close $fh;
 	open $fh, '>', $state->{size_log}.'.part' or return;
 	for my $p (sort keys %$rewrite) {
-		print $fh "$p $rewrite->{$p}\n";
+		print $fh "$p$rewrite->{$p}\n";
 	}
 	close $fh;
 	rename $state->{size_log}.'.part', $state->{size_log};
