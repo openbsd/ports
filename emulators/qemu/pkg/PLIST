@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2012/09/24 17:55:36 brad Exp $
+@comment $OpenBSD: PLIST,v 1.24 2013/02/02 11:30:34 brad Exp $
 @conflict kqemu-*
 @conflict qemu-*
 @pkgpath emulators/kqemu
@@ -56,7 +56,6 @@ share/examples/qemu/target-x86_64.conf
 share/qemu/
 share/qemu/bamboo.dtb
 share/qemu/bios.bin
-share/qemu/cpus-x86_64.conf
 share/qemu/keymaps/
 share/qemu/keymaps/ar
 share/qemu/keymaps/bepo
