@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.72 2013/01/28 10:14:17 espie Exp $
+# $OpenBSD: Engine.pm,v 1.73 2013/02/02 13:35:17 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -337,11 +337,9 @@ sub already_done
 sub start_build
 {
 	my ($self, $v, $core, $lock) = @_;
-	my $special = $self->{engine}{heuristics}->special_parameters($core, $v);
-	$self->log('J', $v, " ".$core->hostname." ".$special);
+	$self->log('J', $v, " ".$core->hostname);
 	$self->{engine}{affinity}->start($v, $core);
-	$self->{builder}->build($v, $core, $special,
-	    $lock, sub {$self->end($core, $v)});
+	$self->{builder}->build($v, $core, $lock, sub {$self->end($core, $v)});
 }
 
 sub end_build

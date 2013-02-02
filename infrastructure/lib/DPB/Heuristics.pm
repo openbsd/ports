@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Heuristics.pm,v 1.18 2013/01/31 10:29:58 espie Exp $
+# $OpenBSD: Heuristics.pm,v 1.19 2013/02/02 13:35:17 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -25,7 +25,7 @@ package DPB::Heuristics;
 # for now, we don't create a separate object, we assume everything here is
 # "global"
 
-my (%weight, %bad_weight, %wrkdir, %needed_by);
+my (%weight, %bad_weight, %wrkdir, %needed_by, %pkgname);
 
 sub new
 {
@@ -80,8 +80,24 @@ sub equates
 
 sub add_size_info
 {
-	my ($self, $path, $sz) = @_;
+	my ($self, $path, $pkgname, $sz) = @_;
 	$wrkdir{$path->pkgpath_and_flavors} = $sz;
+	if (defined $pkgname) {
+		$pkgname{$path->fullpkgpath} = $pkgname;
+	}
+}
+
+sub match_pkgname
+{
+	my ($self, $v) = @_;
+	my $p = $pkgname{$v->fullpkgpath};
+	if (!defined $p) {
+		return 0;
+	}
+	if ($p eq $v->fullpkgname) {
+		return 1;
+	}
+	return 0;
 }
 
 my $used_memory = {};

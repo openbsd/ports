@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.42 2013/01/29 15:11:41 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.43 2013/02/02 13:35:17 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -47,6 +47,19 @@ sub new
 	}
 	$self->init;
 	return $self;
+}
+
+sub want_size
+{
+	my ($self, $v) = @_;
+	if (!$self->{size}) {
+		return 0;
+	}
+	if ($self->{heuristics}->match_pkgname($v)) {
+		return random(10) < 1;
+	} else {
+		return 1;
+	}
 }
 
 sub rebuild_class
@@ -172,12 +185,17 @@ sub end_lock
 
 sub build
 {
-	my ($self, $v, $core, $special, $lock, $final_sub) = @_;
+	my ($self, $v, $core, $lock, $final_sub) = @_;
 	my $start = time();
 	my $log = $self->logger->make_logs($v);
+	my $special = $self->{heuristics}->special_parameters($core, $v);
 
 	open my $fh, ">>", $log;
-	print $fh ">>> Building under ";
+	if ($special) {
+		print $fh ">>> Building in memory under ";
+	} else {
+		print $fh ">>> Building under ";
+	}
 	$v->quick_dump($fh);
 
 	my $job;

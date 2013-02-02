@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.96 2013/02/02 12:31:06 espie Exp $
+# $OpenBSD: Port.pm,v 1.97 2013/02/02 13:35:17 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -845,7 +845,7 @@ sub add_normal_tasks
 		push(@todo, qw(fake));
 	}
 	push(@todo, qw(package));
-	if ($builder->{size}) {
+	if ($builder->want_size($self->{v})) {
 		push @todo, 'show-size';
 	}
 	if (!$dontclean) {
