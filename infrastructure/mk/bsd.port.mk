@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1205 2013/02/02 12:28:50 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1206 2013/02/02 12:29:20 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -76,12 +76,21 @@ BULK ?= Auto
 RECURSIVE_FETCH_LIST ?= No
 WRKDIR_LINKNAME ?= 
 _FETCH_MAKEFILE ?= /dev/stdout
+
+.if ${USE_SYSTRACE:L} == "yes"
+WRKOBJDIR_MFS ?!= readlink -fn /tmp/pobj
+.else
+WRKOBJDIR_MFS ?= /tmp/pobj
+.endif
+
+USE_MFS ?= No
 .if ${USE_SYSTRACE:L} == "yes"
 WRKOBJDIR ?!= readlink -fn ${PORTSDIR}/pobj
 .else
 WRKOBJDIR ?= ${PORTSDIR}/pobj
 .endif
 FAKEOBJDIR ?=
+
 BULK_TARGETS ?=
 BULK_DO ?=
 CHECK_LIB_DEPENDS ?= No
@@ -156,8 +165,14 @@ ERRORS += "Fatal: building ports requires correctly installed X11"
 # local path locations
 .include "${PORTSDIR}/infrastructure/mk/pkgpath.mk"
 
+.if ${USE_MFS:L} == "yes"
+WRKOBJDIR_${PKGPATH} ?= ${WRKOBJDIR_MFS}
+.else
+WRKOBJDIR_${PKGPATH} ?= ${WRKOBJDIR}
+.endif
 WRKOBJDIR_${PKGPATH} ?= ${WRKOBJDIR}
 FAKEOBJDIR_${PKGPATH} ?= ${FAKEOBJDIR}
+
 BULK_${PKGPATH} ?= ${BULK}
 BULK_TARGETS_${PKGPATH} ?= ${BULK_TARGETS}
 BULK_DO_${PKGPATH} ?= ${BULK_DO}
@@ -686,17 +701,20 @@ WRKINST ?= ${WRKDIR}/fake-${ARCH}${_FLAVOR_EXT2}
 .endif
 
 .if ${SEPARATE_BUILD:L:Mflavored}
-OLD_WRKDIR_NAME = w-${PKGNAME}
+_WRKDIR_STEM = ${PKGNAME}
 .else
-OLD_WRKDIR_NAME = w-${PKGNAME}${_FLAVOR_EXT2}
+_WRKDIR_STEM = ${PKGNAME}${_FLAVOR_EXT2}
 .endif
 
+OLD_WRKDIR_NAME = w-${_WRKDIR_STEM}
+
+_WRKDIRS = ${.CURDIR}/${OLD_WRKDIR_NAME}
+
 .if !empty(WRKOBJDIR_${PKGPATH})
-.  if ${SEPARATE_BUILD:L:Mflavored}
-WRKDIR ?= ${WRKOBJDIR_${PKGPATH}}/${PKGNAME}
-.  else
-WRKDIR ?= ${WRKOBJDIR_${PKGPATH}}/${PKGNAME}${_FLAVOR_EXT2}
-.  endif
+WRKDIR ?= ${WRKOBJDIR_${PKGPATH}}/${_WRKDIR_STEM}
+_WRKDIRS += ${WRKOBJDIR_${PKGPATH}}/${_WRKDIR_STEM}
+_WRKDIRS += ${WRKOBJDIR}/${_WRKDIR_STEM}
+_WRKDIRS += ${WRKOBJDIR_MFS}/${_WRKDIR_STEM}
 .else
 WRKDIR ?= ${.CURDIR}/${OLD_WRKDIR_NAME}
 .endif
@@ -2834,8 +2852,12 @@ _internal-clean:
 		${SUDO} rm -rf $$i; \
 	done
 .  endif
-	@if [ -L ${WRKDIR} ]; then rm -rf `readlink ${WRKDIR}`; fi
-	@rm -rf ${WRKDIR}
+.  for l in ${_WRKDIRS}
+.    if "$l" != ""
+	@if [ -L $l ]; then rm -rf `readlink $l`; fi
+	@rm -rf $l
+.    endif
+.  endfor
 .  if !empty(WRKDIR_LINKNAME)
 	@if [ -L ${WRKDIR_LINKNAME} ]; then rm -f ${.CURDIR}/${WRKDIR_LINKNAME}; fi
 .  endif
