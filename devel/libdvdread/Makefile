@@ -1,11 +1,11 @@
-#$OpenBSD: Makefile,v 1.22 2013/01/20 15:11:22 espie Exp $
+#$OpenBSD: Makefile,v 1.23 2013/02/02 11:47:47 espie Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	accessing DVD files
 
 DISTNAME =	libdvdread-4.2.0
-REVISION =	1
+REVISION =	2
 CATEGORIES =	devel
 MASTER_SITES =	${HOMEPAGE}releases/
 EXTRACT_SUFX =	.tar.bz2
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_FTP =	Yes
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 
-RUN_DEPENDS =	converters/libdvdcss>=1.2.12p0
+LIB_DEPENDS =	converters/libdvdcss>=1.2.12p0
 
 MAKE_ENV =	LIBDVDREAD_VERSION=${LIBdvdread_VERSION}
 
@@ -32,7 +32,11 @@ CONFIGURE_SCRIPT = configure2
 CONFIGURE_ARGS =--prefix="${PREFIX}" \
 		--cc="${CC}" \
 		--extra-cflags="${CFLAGS}" \
+		--extra-cflags="-I${LOCALBASE}/include -DHAVE_DVDCSS_DVDCSS_H" \
+		--extra-ldflags="-L${LOCALBASE}/lib" \
 		--disable-debug \
 		--disable-opts
+
+WANTLIB += dvdcss
 
 .include <bsd.port.mk>
