@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.94 2013/01/28 13:31:40 espie Exp $
+# $OpenBSD: Port.pm,v 1.95 2013/02/02 12:30:32 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -81,7 +81,7 @@ sub run
 		push(@args, "MAKE_JOBS=$job->{parallel}");
 	}
 	if ($job->{special}) {
-		push(@args, "WRKOBJDIR=/tmp/ports");
+		push(@args, "USE_MFS=Yes");
 	}
 	if ($builder->{fetch}) {
 		push(@args, "NO_CHECKSUM=Yes");
