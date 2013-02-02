@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.95 2013/02/02 12:30:32 espie Exp $
+# $OpenBSD: Port.pm,v 1.96 2013/02/02 12:31:06 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -531,34 +531,14 @@ sub finalize
 		if ($line =~ m/^\s*(\d+)\s+/) {
 			my $sz = $1;
 			my $job = $core->job;
-			$core->job->{wrkdir} = $sz;
-		}
-	}
-	close($fh);
-	return 1;
-}
-
-package DPB::Task::Port::ShowFakeSize;
-our @ISA = qw(DPB::Task::Port::ShowSize);
-
-sub finalize
-{
-	my ($self, $core) = @_;
-	my $fh = $self->{fh};
-	if ($core->{status} == 0) {
-		my $line = <$fh>;
-		$line = <$fh>;
-		if ($line =~ m/^\s*(\d+)\s+/) {
-			my $sz = $1;
-			my $job = $core->job;
-			print {$job->{builder}{logsize}} 
-			    $job->{path}, " $job->{wrkdir} $sz\n";
+			my $info = $job->{path}."(".$job->{v}->fullpkgname.") $sz\n";
+			print {$job->{builder}{logsize}} $info;
 			# XXX the rolling log might be shared with other dpb
 			# so it can be rewritten and sorted
 			# don't keep a handle on it, so that we always
 			# append new information to the correct filename
 		    	open(my $fh2, '>>', $job->{builder}{state}{size_log});
-			print $fh2 $job->{path}, " $job->{wrkdir} $sz\n";
+			print $fh2 $info;
 		}
 	}
 	close($fh);
@@ -689,7 +669,6 @@ my $repo = {
 	fetch => 'DPB::Task::Port::Fetch',
 	depends => 'DPB::Task::Port::Depends',
 	'show-size' => 'DPB::Task::Port::ShowSize',
-	'show-fake-size' => 'DPB::Task::Port::ShowFakeSize',
 	'junk' => 'DPB::Task::Port::Uninstall',
 };
 
@@ -862,15 +841,12 @@ sub add_normal_tasks
 	}
 	push(@todo, qw(build));
 
-	if ($builder->{size}) {
-		push @todo, 'show-size';
-	}
 	if (!$small) {
 		push(@todo, qw(fake));
 	}
 	push(@todo, qw(package));
 	if ($builder->{size}) {
-		push @todo, 'show-fake-size';
+		push @todo, 'show-size';
 	}
 	if (!$dontclean) {
 		push @todo, 'clean';
