@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2012/08/04 14:36:09 ajacoutot Exp $
-@lib lib/libcupsfilters.so.${LIBcupsfilters_VERSION}
-@lib lib/libfontembed.so.${LIBfontembed_VERSION}

@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/12/30 17:46:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/02/02 08:55:12 ajacoutot Exp $
 @conflict cups-<1.6.0
 @exec-update [ -h ${SYSCONFDIR}/fonts/conf.d/99-pdftoopvp.conf ] && rm -f ${SYSCONFDIR}/fonts/conf.d/99-pdftoopvp.conf || true
-%%SHARED%%
 @bin bin/ttfread
 include/cupsfilters/
 include/cupsfilters/driver.h
@@ -14,8 +13,10 @@ include/fontembed/iofn.h
 include/fontembed/sfnt.h
 lib/libcupsfilters.a
 lib/libcupsfilters.la
+@lib lib/libcupsfilters.so.${LIBcupsfilters_VERSION}
 lib/libfontembed.a
 lib/libfontembed.la
+@lib lib/libfontembed.so.${LIBfontembed_VERSION}
 lib/pkgconfig/libcupsfilters.pc
 lib/pkgconfig/libfontembed.pc
 @bin libexec/cups/backend/parallel

@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2013/01/05 12:53:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2013/02/02 08:55:12 ajacoutot Exp $
 
 # XXX remove @exec-update when we branch 5.4-current
 
 COMMENT=	OpenPrinting CUPS filters
 
-DISTNAME=	cups-filters-1.0.28
+DISTNAME=	cups-filters-1.0.29
 CATEGORIES=	print
-REVISION=	0
 
 SHARED_LIBS +=  cupsfilters               0.0 # 1.0
 SHARED_LIBS +=  fontembed                 0.0 # 1.0
@@ -48,6 +47,8 @@ RUN_DEPENDS +=	print/foomatic-db-engine
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
+
+MAKE_FLAGS=	DLOPEN_LIBS=""
 
 FAKE_FLAGS=	pkgfontconfigdir=${PREFIX}/share/examples/cups-filters
 
