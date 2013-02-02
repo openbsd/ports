@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.98 2013/02/02 11:30:34 brad Exp $
+# $OpenBSD: Makefile,v 1.99 2013/02/02 23:51:45 brad Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc sparc64
 
 COMMENT=	multi system emulator
 
 DISTNAME=	qemu-1.3.1
+REVISION=	0
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/
 EXTRACT_SUFX=	.tar.bz2
