@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/09/30 09:51:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/02/02 10:05:43 zhuk Exp $
 
 COMMENT =		Qt wrapper for Zeitgeist, event logging framework
 
@@ -31,7 +31,7 @@ MODULES =		devel/cmake \
 			x11/qt4
 
 BUILD_DEPENDS =		productivity/zeitgeist \
-			x11/kde4/automoc
+			devel/automoc
 RUN_DEPENDS =		productivity/zeitgeist
 
 NO_REGRESS =		Yes

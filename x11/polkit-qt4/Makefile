@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/12/16 08:18:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2013/02/02 10:05:43 zhuk Exp $
 
 SHARED_ONLY=	Yes
 
@@ -35,7 +35,7 @@ MODULES=	devel/gettext \
 		devel/cmake \
 		x11/qt4
 
-BUILD_DEPENDS=	x11/kde4/automoc
+BUILD_DEPENDS=	devel/automoc
 
 LIB_DEPENDS=	sysutils/polkit
 
