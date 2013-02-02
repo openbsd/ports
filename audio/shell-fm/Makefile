@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2013/01/04 15:50:26 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.21 2013/02/02 12:51:12 dcoppa Exp $
 
 COMMENT=		console based player for last.fm radio streams
 
-DISTNAME=		shell-fm-0.20120417
-REVISION=		1
+DISTNAME=		shell-fm-0.20121206
 
 CATEGORIES=		audio
 
@@ -15,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB +=		ao c m mad stdc++ tag tag_c z
+WANTLIB +=		ao c m mad tag tag_c
 
 MASTER_SITES=		http://distfiles.nl/
 
