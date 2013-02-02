@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/02/02 03:09:08 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2013/02/02 08:14:49 ajacoutot Exp $
 
 COMMENT =		visual novel engine
 
 V =			6.14.1
+MODPY_EGG_VERSION =	${V}.366
 DISTNAME =		renpy-${V}-source
 PKGNAME =		${DISTNAME:S/-source//}
+REVISION =		0
 
 CATEGORIES =		games
 
@@ -17,7 +19,7 @@ PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
 WANTLIB +=		GLEW SDL avcodec avformat avutil freetype fribidi m
-WANTLIB +=		png pthread python2.7 swscale z
+WANTLIB +=		png pthread ${MODPY_WANTLIB} swscale z
 
 MASTER_SITES =		http://www.renpy.org/dl/${V}/
 EXTRACT_SUFX =		.tar.bz2
@@ -38,7 +40,6 @@ NO_REGRESS =		Yes
 WRKSRC =		${WRKDIST}/module
 
 MODPY_ADJ_FILES =	../renpy.py
-SUBST_VARS +=		MODPY_BIN
 
 pre-install:
 	rm ${WRKDIST}/launcher/game/project.rpy.orig

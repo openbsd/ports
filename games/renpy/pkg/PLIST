@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/02/02 03:09:09 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/02/02 08:14:49 ajacoutot Exp $
 bin/renpy
-lib/python${MODPY_VERSION}/site-packages/Ren_Py-6.14.1.366-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/Ren_Py-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/_renpy.so
 lib/python${MODPY_VERSION}/site-packages/_renpy_font.so
 lib/python${MODPY_VERSION}/site-packages/_renpybidi.so
