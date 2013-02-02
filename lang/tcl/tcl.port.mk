@@ -1,4 +1,4 @@
-# $OpenBSD: tcl.port.mk,v 1.13 2012/08/13 21:06:43 stu Exp $
+# $OpenBSD: tcl.port.mk,v 1.14 2013/02/02 11:15:33 stu Exp $
 
 CATEGORIES +=		lang/tcl
 
@@ -10,6 +10,9 @@ MODTCL_LIB ?=		tcl84
 .elif ${MODTCL_VERSION} == 8.5
 _MODTCL_SPEC = 		tcl->=${MODTCL_VERSION},<8.6
 MODTCL_LIB ?=		tcl85
+.elif ${MODTCL_VERSION} == 8.6
+_MODTCL_SPEC = 		tcl->=${MODTCL_VERSION},<8.7
+MODTCL_LIB ?=		tcl86
 .endif
 
 MODTCL_BIN ?=		${LOCALBASE}/bin/tclsh${MODTCL_VERSION}

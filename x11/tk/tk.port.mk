@@ -1,4 +1,4 @@
-# $OpenBSD: tk.port.mk,v 1.11 2011/01/05 16:04:14 stu Exp $
+# $OpenBSD: tk.port.mk,v 1.12 2013/02/02 11:18:28 stu Exp $
 
 CATEGORIES +=		x11/tk
 
@@ -11,6 +11,9 @@ MODTK_LIB ?=		tk84
 .elif ${MODTK_VERSION} == 8.5
 _MODTK_SPEC = 		tk->=${MODTK_VERSION},<8.6
 MODTK_LIB ?=		tk85
+.elif ${MODTK_VERSION} == 8.6
+_MODTK_SPEC = 		tk->=${MODTK_VERSION},<8.7
+MODTK_LIB ?=		tk86
 .endif
 
 MODTK_BIN ?=		${LOCALBASE}/bin/wish${MODTK_VERSION}
