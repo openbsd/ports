@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2010/12/03 11:44:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2013/02/02 17:38:43 jasper Exp $
 
 COMMENT=	preparation of internationalized strings
 
-DISTNAME=	Unicode-Stringprep-1.103
-REVISION=	0
+DISTNAME=	Unicode-Stringprep-1.104
 CATEGORIES=	converters
 
 # perl
