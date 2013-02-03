@@ -1,0 +1,14 @@
+$OpenBSD: patch-exmh_MASTER,v 1.1 2013/02/03 14:02:30 stu Exp $
+--- exmh.MASTER.orig	Mon Jun 14 11:24:58 2004
++++ exmh.MASTER	Sat Feb  2 18:05:56 2013
+@@ -28,6 +28,10 @@ if {$tcl_version < 8.0} {
+ # appear all alone.
+ wm withdraw .
+ 
++if {[package vsatisfies [package present Tcl] 8.5]} {
++    font create fixed {*}[dict merge [font configure TkFixedFont] [dict create -size -10]]
++}
++
+ proc auto_path_update { path } {
+     # Add library directories to the auto_path,
+     # ensuring that later paths have precedence

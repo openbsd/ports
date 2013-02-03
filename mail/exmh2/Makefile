@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2010/11/19 07:23:06 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2013/02/03 14:02:30 stu Exp $
 
 COMMENT=		Tcl/Tk interface to the MH mail system
 
 DISTNAME=		exmh-2.7.2
-REVISION =		0
+REVISION =		1
 CATEGORIES=     	mail
 
 HOMEPAGE=		http://www.beedub.com/exmh/
@@ -20,9 +20,6 @@ MASTER_SITES=		ftp://ftp.funet.fi/pub/languages/tcl/tcl/exmh/ \
 			ftp://ftp.tcl.tk/pub/tcl/exmh/
 
 MODULES=		x11/tk
-# XXX broken fonts with 8.5
-MODTCL_VERSION=		8.4
-MODTK_VERSION=		8.4
 BUILD_DEPENDS=		${MODTCL_RUN_DEPENDS}
 RUN_DEPENDS=		lang/expect\
 			mail/nmh\

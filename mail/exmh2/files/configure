@@ -12,8 +12,8 @@ my $domain = "";
 
 my $prefix = exists $ENV{"PREFIX"} ? $ENV{"PREFIX"} : "/usr/local";
 my $localbase = exists $ENV{"LOCALBASE"} ? $ENV{"LOCALBASE"} : "/usr/local";
-my $modtcl_bin = exists $ENV{"MODTCL_BIN"} ? $ENV{"MODTCL_BIN"} : "$localbase/bin/tclsh.4";
-my $modtk_bin = exists $ENV{"MODTK_BIN"} ? $ENV{"MODTK_BIN"} : "$localbase/bin/wish8.4";
+my $modtcl_bin = exists $ENV{"MODTCL_BIN"} ? $ENV{"MODTCL_BIN"} : "$localbase/bin/tclsh8.5";
+my $modtk_bin = exists $ENV{"MODTK_BIN"} ? $ENV{"MODTK_BIN"} : "$localbase/bin/wish8.5";
 my $config = "
 # Saved state from exmh.install
 # Mon Mar 14 10:59:18 MST 2005
