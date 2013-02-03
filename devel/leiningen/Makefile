@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/11/29 17:42:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2013/02/03 15:03:03 jasper Exp $
 
 COMMENT=	tool for building of code, written in Clojure
 
@@ -29,8 +29,6 @@ RUN_DEPENDS=	devel/apache-ant \
 		java/asm \
 		java/javaPathHelper \
 		shells/bash
-
-SUBST_VARS+=	MODJAVA_JAR_DIR
 
 do-configure:
 	${SUBST_CMD} ${WRKSRC}/lein-pkg

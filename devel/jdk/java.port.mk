@@ -1,4 +1,4 @@
-# $OpenBSD: java.port.mk,v 1.30 2011/12/15 21:31:29 kili Exp $
+# $OpenBSD: java.port.mk,v 1.31 2013/02/03 15:03:03 jasper Exp $
 
 # Set MODJAVA_VER to x.y or x.y+ based on the version
 # of the jdk needed for the port. x.y  means any x.y jdk.
@@ -104,7 +104,7 @@ do-build:
 		${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/ant \
 		-buildfile ${MODJAVA_BUILD_FILE} ${MODJAVA_BUILD_TARGET} \
 		${MODJAVA_BUILD_ARGS}
-.   endif 
+.   endif
 .endif
 
 # Convenience variables.
@@ -116,3 +116,6 @@ MODJAVA_SHARE_DIR = ${PREFIX}/share/java/
 MODJAVA_JAR_DIR   = ${MODJAVA_SHARE_DIR}/classes/
 MODJAVA_EXAMPLE_DIR = ${MODJAVA_SHARE_DIR}/examples/
 MODJAVA_DOC_DIR   = ${MODJAVA_SHARE_DIR}/doc/
+
+SUBST_VARS +=	MODJAVA_SHARE_DIR MODJAVA_JAR_DIR MODJAVA_EXAMPLE_DIR \
+		MODJAVA_DOC_DIR
