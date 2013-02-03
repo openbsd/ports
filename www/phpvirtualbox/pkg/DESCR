@@ -1,0 +1,7 @@
+phpVirtualBox is an open source, AJAX implementation of the VirtualBox
+user interface written in PHP. As a modern web interface, it allows you
+to access and control remote VirtualBox instances. Much of its verbage
+and some of its code is based on the (inactive) vboxweb project.
+phpVirtualBox was designed to allow users to administer VirtualBox in a
+headless environment - mirroring the VirtualBox GUI through its web
+interface.
