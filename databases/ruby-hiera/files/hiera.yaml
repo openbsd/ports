@@ -1,0 +1,17 @@
+# $OpenBSD: hiera.yaml,v 1.1.1.1 2013/02/03 16:44:03 jasper Exp $
+
+---
+:backends:
+  - yaml
+
+:logger: console
+
+:hierarchy:
+  - "%{location}"
+  - common
+
+:yaml:
+   :datadir: /etc/puppet/hieradata
+
+:puppet:
+   :datasource: data
