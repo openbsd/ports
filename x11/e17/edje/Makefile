@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/01/27 15:57:29 rpe Exp $
+# $OpenBSD: Makefile,v 1.31 2013/02/03 12:09:27 rpe Exp $
 
 COMMENT =		complex graphical design & layout library
 DISTNAME =		edje-1.7.5
@@ -21,12 +21,12 @@ WANTLIB += harfbuzz idn icudata icule icuuc jpeg m pcre pthread
 WANTLIB += ssl xcb z ${MODLUA_WANTLIB}
 
 MODULES =		devel/gettext \
-			lang/lua
+			lang/lua \
+			x11/e17
+
+MODE17_MIME_DB =	Yes
 
 USE_LIBTOOL =		Yes
-
-BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		misc/shared-mime-info>=0.21
 
 LIB_DEPENDS +=		devel/fribidi \
 			x11/e17/eio>=1.7.5 \

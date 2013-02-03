@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/01/28 17:58:09 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/02/03 12:09:27 rpe Exp $
 @bin bin/elementary_config
 @bin bin/elementary_quicklaunch
 @bin bin/elementary_run
@@ -154,25 +154,20 @@ include/elementary-1/elm_widget_web.h
 include/elementary-1/elm_win.h
 lib/edje/modules/elm/
 lib/edje/modules/elm/openbsd${OSREV}-${FULLARCH}-1.0.0/
-lib/edje/modules/elm/openbsd${OSREV}-${FULLARCH}-1.0.0/module.la
 lib/edje/modules/elm/openbsd${OSREV}-${FULLARCH}-1.0.0/module.so
 lib/elementary/
 lib/elementary/modules/
 lib/elementary/modules/access_output/
 lib/elementary/modules/access_output/openbsd${OSREV}-${FULLARCH}-${VERSION}/
-lib/elementary/modules/access_output/openbsd${OSREV}-${FULLARCH}-${VERSION}/module.la
 lib/elementary/modules/access_output/openbsd${OSREV}-${FULLARCH}-${VERSION}/module.so
 lib/elementary/modules/datetime_input_ctxpopup/
 lib/elementary/modules/datetime_input_ctxpopup/openbsd${OSREV}-${FULLARCH}-${VERSION}/
-lib/elementary/modules/datetime_input_ctxpopup/openbsd${OSREV}-${FULLARCH}-${VERSION}/module.la
 lib/elementary/modules/datetime_input_ctxpopup/openbsd${OSREV}-${FULLARCH}-${VERSION}/module.so
 lib/elementary/modules/test_entry/
 lib/elementary/modules/test_entry/openbsd${OSREV}-${FULLARCH}-${VERSION}/
-lib/elementary/modules/test_entry/openbsd${OSREV}-${FULLARCH}-${VERSION}/module.la
 lib/elementary/modules/test_entry/openbsd${OSREV}-${FULLARCH}-${VERSION}/module.so
 lib/elementary/modules/test_map/
 lib/elementary/modules/test_map/openbsd${OSREV}-${FULLARCH}-${VERSION}/
-lib/elementary/modules/test_map/openbsd${OSREV}-${FULLARCH}-${VERSION}/module.la
 lib/elementary/modules/test_map/openbsd${OSREV}-${FULLARCH}-${VERSION}/module.so
 lib/elementary_testql.la
 lib/elementary_testql.so

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2013/02/01 16:34:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2013/02/03 12:09:27 rpe Exp $
 
 COMMENT =		canvas API for X
 VERSION = 		1.7.5
 DISTNAME =		evas-${VERSION}
-REVISION =		0
+REVISION =		1
 EPOCH =			2
 
 SHARED_LIBS +=  evas                 3.0      # 8.5
@@ -21,7 +21,10 @@ WANTLIB += eet eina expat ffi fontconfig freetype fribidi gif
 WANTLIB += glib-2.0 gobject-2.0 gthread-2.0 harfbuzz icudata icule
 WANTLIB += icuuc jpeg m pcre png pthread ssl stdc++ tiff xcb z
 
-MODULES=		devel/gettext
+MODULES=		devel/gettext \
+			x11/e17
+
+MODE17_PURGE_LA =	lib/evas/modules
 
 VMEM_WARNING =	Yes
 

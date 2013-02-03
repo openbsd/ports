@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2013/02/01 16:34:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2013/02/03 12:09:27 rpe Exp $
 
 COMMENT =		the enlightened window manager
 
@@ -6,7 +6,7 @@ VERSION = 		0.17.0
 DISTNAME =		enlightenment-${VERSION}
 PKGNAME =		enlightenment-${VERSION:S/-//}
 
-REVISION = 		3
+REVISION = 		4
 EPOCH =			1
 
 # BSD
@@ -16,7 +16,11 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MODULES +=		devel/gettext \
-			lang/lua
+			lang/lua \
+			x11/e17
+
+MODE17_DESKTOP_FILE =	Yes
+MODE17_PURGE_LA =	lib/enlightenment/modules
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xss Xtst c cares crypto
@@ -31,8 +35,6 @@ WANTLIB += ssl xcb xcb-keysyms xcb-shape z ${MODLUA_WANTLIB}
 
 LIB_DEPENDS =		x11/e17/elementary>=1.7.5 \
 			devel/libexecinfo
-
-RUN_DEPENDS =		devel/desktop-file-utils
 
 CONFIGURE_ARGS +=	--disable-doc \
 			--disable-nls

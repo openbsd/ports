@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2013/02/01 16:34:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2013/02/03 12:09:27 rpe Exp $
 
 COMMENT =		basic widget set, based on EFL
 
 VERSION =		1.7.5
 DISTNAME =		elementary-${VERSION}
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  elementary                0.0 # 8.5
 
@@ -25,12 +25,15 @@ WANTLIB += icudata icule icuuc idn jpeg m pcre pthread ssl xcb z
 WANTLIB += ${MODLUA_WANTLIB}
 
 MODULES =		devel/gettext \
-			lang/lua
+			lang/lua \
+			x11/e17
+
+MODE17_DESKTOP_FILE =	Yes
+MODE17_ICON_CACHE =	Yes
+MODE17_PURGE_LA =	lib/edje/modules lib/elementary/modules
 
 USE_GMAKE =		Yes
 USE_LIBTOOL =		Yes
-
-RUN_DEPENDS =		devel/desktop-file-utils
 
 LIB_DEPENDS +=		x11/e17/e_dbus>=1.7.5v1 \
 			x11/e17/edje>=1.7.5v2 \
