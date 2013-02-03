@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.75 2013/02/02 10:38:26 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.76 2013/02/03 13:38:13 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: February 2 2013 $
+.Dd $Mdocdate: February 3 2013 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -426,8 +426,14 @@ Defaults to
 .Pc .
 Override to keep local, as locks don't really like NFS.
 .It Fl M Ar threshold
-Build ports below the memory threshold under
-.Pa /tmp/ports .
+Build ports below the memory threshold under a
+.Xr mfs 8
+filesystem, as configured through
+.Ev WRKOBJDIR_MFS
+.Po
+see
+.Xr bsd.port.mk 5
+.Pc .
 .Ar threshold
 is the sum, in KBytes, of ports allowed to build there.
 .It Fl m
