@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.596 2013/01/25 08:58:36 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.597 2013/02/03 11:01:45 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -377,6 +377,7 @@
      SUBDIR += phpmemcachedadmin
      SUBDIR += phpmyadmin
      SUBDIR += phppgadmin
+     SUBDIR += phpvirtualbox
      SUBDIR += piwik
      SUBDIR += plans
      SUBDIR += pmwiki
