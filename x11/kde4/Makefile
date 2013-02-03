@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2010/06/24 07:45:06 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2013/02/03 14:24:08 zhuk Exp $
 
      SUBDIR =
 # don't even try to keep these sorted
 # basic bricks
-     SUBDIR += automoc
      SUBDIR += attica
      SUBDIR += akonadi
      SUBDIR += oxygen-icons
