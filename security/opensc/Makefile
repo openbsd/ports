@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2012/10/15 15:18:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2013/02/03 14:04:24 sthen Exp $
 
 COMMENT=	set of libraries and utilities to access smart cards
 
 DISTNAME=	opensc-0.11.13
-REVISION=	0
+REVISION=	1
 CATEGORIES=	security
 SHARED_LIBS +=  scconf               2.0      # .1.0
 SHARED_LIBS +=  opensc               2.0      # .1.0
@@ -17,8 +17,6 @@ MODGNU_SHARED_LIBS=opensc	'' \
 		pkcs11		''
 
 HOMEPAGE=	http://www.opensc-project.org/
-
-MAINTAINER=	Douglas Santos <dsantos@hydroxyl.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
