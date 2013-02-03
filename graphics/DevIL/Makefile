@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2012/09/20 14:04:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2013/02/03 12:53:11 kirby Exp $
 
 COMMENT=		library for powerful image loading capabilities
 
 DISTNAME=		DevIL-1.7.8
-REVISION=		5
+REVISION=		6
 SHARED_LIBS+=		IL	0.0 # 2.0
+SHARED_LIBS+=		ILU	0.0 # 2.0
+SHARED_LIBS+=		ILUT	0.0 # 2.0
 
 CATEGORIES=		graphics devel
 
@@ -19,10 +21,15 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=openil/}
 EXTRACT_SUFX=		.zip
 
-WANTLIB += Half Iex IlmImf IlmThread Imath jasper jpeg lcms m
-WANTLIB += mng png pthread stdc++ tiff z
+WANTLIB += GL GLU Half ICE Iex IlmImf IlmThread Imath SDL SM X11
+WANTLIB += Xdamage Xext Xfixes Xi Xmu Xrandr Xrender Xt Xxf86vm
+WANTLIB += c drm glut jasper jpeg lcms m mng png pthread sndio
+WANTLIB += stdc++ tiff usbhid xcb z
 
-LIB_DEPENDS=		graphics/ilmbase \
+MODULES=		converters/libiconv
+LIB_DEPENDS=		devel/sdl \
+			graphics/freeglut \
+			graphics/ilmbase \
 			graphics/jasper \
 			graphics/libmng \
 			graphics/lcms \
@@ -36,7 +43,10 @@ USE_LIBTOOL=		Yes
 AUTOCONF_VERSION=	2.61
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS+=	--with-squish=no \
-			--with-zlib=yes
+			--with-zlib=yes \
+			--enable-ILU \
+                        --enable-ILUT
+
 # This would only install three binary examples, we'll install it manually.
 CONFIGURE_ARGS+=	--with-examples=no
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng/ -I${X11BASE}/include" \

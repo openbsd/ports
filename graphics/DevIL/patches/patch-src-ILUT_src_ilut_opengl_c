@@ -1,0 +1,48 @@
+$OpenBSD: patch-src-ILUT_src_ilut_opengl_c,v 1.1 2013/02/03 12:53:11 kirby Exp $
+--- src-ILUT/src/ilut_opengl.c.orig	Mon Sep 14 15:22:33 2009
++++ src-ILUT/src/ilut_opengl.c	Mon Sep 14 15:25:13 2009
+@@ -58,7 +58,7 @@ void *aglGetProcAddress( const GLubyte *name ) {
+ //	#pragma comment(lib, "freeglut.lib")
+ #endif
+ 
+-#ifdef linux
++#if defined(linux) || defined (__OpenBSD__)
+ 	// fix for glXGetProcAddressARB
+ 	#define GLX_GLXEXT_PROTOTYPES
+ 	#include <GL/glx.h>
+@@ -84,7 +84,7 @@ void *aglGetProcAddress( const GLubyte *name ) {
+ 
+ static ILboolean HasCubemapHardware = IL_FALSE;
+ static ILboolean HasNonPowerOfTwoHardware = IL_FALSE;
+-#if defined(_WIN32) || defined(_WIN64) || defined(linux) || defined(__APPLE__)
++#if defined(_WIN32) || defined(_WIN64) || defined(linux) || defined(__APPLE__) || defined (__OpenBSD__)
+ 	ILGLTEXIMAGE3DARBPROC			ilGLTexImage3D = NULL;
+ 	ILGLTEXSUBIMAGE3DARBPROC		ilGLTexSubImage3D = NULL;
+ 	ILGLCOMPRESSEDTEXIMAGE2DARBPROC	ilGLCompressed2D = NULL;
+@@ -127,7 +127,7 @@ ILboolean ilutGLInit()
+ 			IsExtensionSupported("GL_EXT_texture3D")) {
+ 				ilGLCompressed3D = (ILGLCOMPRESSEDTEXIMAGE3DARBPROC)wglGetProcAddress("glCompressedTexImage3DARB");
+ 		}
+-	#elif linux
++	#elif defined(linux) || defined (__OpenBSD__)
+ 		if (IsExtensionSupported("GL_ARB_texture_compression") &&
+ 			IsExtensionSupported("GL_EXT_texture_compression_s3tc")) {
+ 				ilGLCompressed2D = (ILGLCOMPRESSEDTEXIMAGE2DARBPROC)
+@@ -246,7 +246,7 @@ ILuint GLGetDXTCNum(ILenum DXTCFormat)
+ ILboolean ILAPIENTRY ilutGLTexImage_(GLuint Level, GLuint Target, ILimage *Image)
+ {
+ 	ILimage	*ImageCopy, *OldImage;
+-#if defined (_MSC_VER) || defined (linux) || defined(__APPLE__)
++#if defined (_MSC_VER) || defined (linux) || defined(__APPLE__) || defined (__OpenBSD__)
+ 	ILenum	DXTCFormat;
+ 	ILuint	Size;
+ 	ILubyte	*Buffer;
+@@ -259,7 +259,7 @@ ILboolean ILAPIENTRY ilutGLTexImage_(GLuint Level, GLu
+ 
+ 	OldImage = ilGetCurImage();
+ 
+-#if defined (_MSC_VER) || defined (linux) || defined(__APPLE__)
++#if defined (_MSC_VER) || defined (linux) || defined(__APPLE__) || defined (__OpenBSD__)
+ 	if (ilutGetBoolean(ILUT_GL_USE_S3TC) && ilGLCompressed2D != NULL) {
+ 		if (Image->DxtcData != NULL && Image->DxtcSize != 0) {
+ 			DXTCFormat = GLGetDXTCNum(Image->DxtcFormat);
