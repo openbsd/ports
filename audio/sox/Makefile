@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.53 2012/07/09 13:25:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2013/02/03 13:19:23 sthen Exp $
 
 COMMENT=	Sound eXchange, the Swiss Army knife of audio manipulation
 
-DISTNAME=	sox-14.4.0
-SHARED_LIBS +=	sox 3.0 # .2.0
+DISTNAME=	sox-14.4.1
+SHARED_LIBS +=	sox 3.0 # .2.1
 
 CATEGORIES=	audio
 HOMEPAGE=	http://sox.sourceforge.net/
 MAINTAINER=	Jan Stary <hans@stare.cz>
-REVISION=	1
 
 # code is GPLv2+, however as opencore is under Apache License we must use
 # sox under the terms of GPLv3 to avoid license conflict.
