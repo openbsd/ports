@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.76 2013/02/03 13:38:13 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.77 2013/02/03 22:27:28 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -494,6 +494,10 @@ Compute workdir sizes before cleaning up, and stash them in log file
 .Pa %L/size.log .
 Also maintain a rolling log of build sizes under
 .Pa %f/build-stats/%a-size .
+In order to save time,
+.Nm
+will actually not always compute new sizes for known directories, but mostly
+for new ones, or when the package name changes.
 .It Fl u
 Update existing packages during dependency solving.
 Can be used to run a bulk-build on a machine with installed packages,
