@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1104 2013/02/02 09:55:51 zhuk Exp $
+# $OpenBSD: Makefile,v 1.1105 2013/02/03 16:47:44 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1203,6 +1203,7 @@
      SUBDIR += ruby-i18n
      SUBDIR += ruby-isolate
      SUBDIR += ruby-jeweler
+     SUBDIR += ruby-json_pure
      SUBDIR += ruby-kgio
      SUBDIR += ruby-kgio,ruby18
      SUBDIR += ruby-linecache
