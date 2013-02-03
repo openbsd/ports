@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.43 2013/02/02 13:35:17 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.44 2013/02/03 21:17:21 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -56,7 +56,7 @@ sub want_size
 		return 0;
 	}
 	if ($self->{heuristics}->match_pkgname($v)) {
-		return random(10) < 1;
+		return rand(10) < 1;
 	} else {
 		return 1;
 	}
