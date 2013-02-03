@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.57 2012/11/14 08:00:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.58 2013/02/03 17:31:52 jasper Exp $
 
 COMMENT=		compiler for the GObject type system
 
 GNOME_PROJECT=		vala
 GNOME_VERSION=		0.18.1
 API_V=			0.18
+REVISION=		0
 
 SHARED_LIBS +=  vala-0.18            0.0      # 0.0
 
@@ -26,9 +27,7 @@ WANTLIB += c pcre pthread ffi glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 MODULES=		devel/gettext \
 			x11/gnome
 
-BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		textproc/libxslt \
-			textproc/p5-XML-LibXML
+BUILD_DEPENDS=		textproc/libxslt
 LIB_DEPENDS=		devel/glib2
 REGRESS_DEPENDS=	shells/bash
 
