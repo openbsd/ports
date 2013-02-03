@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.58 2013/02/01 22:10:18 kili Exp $
+# $OpenBSD: Makefile,v 1.59 2013/02/03 23:07:02 nigel Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	multi-purpose sniffer/interceptor/logger
 
 DISTNAME=	ettercap-0.7.5.3
+REVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ettercap/}
 
@@ -21,6 +22,8 @@ WANTLIB += panel pcap pcre pthread ssl z
 
 MODULES=	devel/cmake \
 		devel/gettext
+
+BUILD_DEPENDS +=	devel/bison
 
 LIB_DEPENDS=	net/libnet/1.1 \
 		net/curl \
