@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/19 07:23:15 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/02/03 13:21:42 zhuk Exp $
 
 COMMENT =	multimedia layer from qt4/kde4
 CATEGORIES =	multimedia devel
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP =     Yes
 
 SHARED_LIBS +=		phonon 5.0
 SHARED_LIBS +=		phononexperimental 0.0
-BUILD_DEPENDS +=	x11/kde4/automoc
+BUILD_DEPENDS +=	devel/automoc
 
 MODULES =		x11/qt4 devel/cmake
 

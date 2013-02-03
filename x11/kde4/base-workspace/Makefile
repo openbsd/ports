@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/07/06 21:25:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2013/02/03 13:21:42 zhuk Exp $
 
 COMMENT =		K Desktop Environment, base workspace
 DISTNAME =		kdebase-workspace-${VERSION}
@@ -16,7 +16,7 @@ LIB_DEPENDS +=	x11/kde4/libs \
 		misc/gpsd \
 		audio/xmms \
 
-BUILD_DEPENDS +=	x11/kde4/automoc
+BUILD_DEPENDS +=	devel/automoc
 
 SUBST_VARS +=	VERSION
 USE_GROFF =	Yes

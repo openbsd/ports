@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/07/06 21:25:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2013/02/03 13:21:42 zhuk Exp $
 
 COMMENT=		K Desktop Environment, pim
 DISTNAME=		kdepim-${VERSION}
@@ -48,7 +48,7 @@ SHARED_LIBS +=	mimelib              0.0      # .1.1
 
 MODULES =		devel/gettext
 
-BUILD_DEPENDS +=	x11/kde4/automoc
+BUILD_DEPENDS +=	devel/automoc
 LIB_DEPENDS+=		x11/kde4/libs \
 			x11/kde4/pimlibs
 

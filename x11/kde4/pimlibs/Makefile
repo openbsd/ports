@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/07/06 21:25:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2013/02/03 13:21:42 zhuk Exp $
 
 COMMENT =		K Desktop Environment, pimlibs
 DISTNAME =		kdepimlibs-${VERSION}
@@ -40,7 +40,7 @@ SHARED_LIBS += 	gpgmepp		     0.0      # .2.4
 MODULES =	devel/gettext
 
 BUILD_DEPENDS += devel/boost \
-		x11/kde4/automoc
+		devel/automoc
 LIB_DEPENDS +=	x11/kde4/libs \
 		security/cyrus-sasl2 \
 		databases/openldap \

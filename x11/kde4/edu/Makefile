@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/22 08:37:02 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/02/03 13:21:42 zhuk Exp $
 
 COMMENT =		K Desktop Environment, edu
 DISTNAME =		kdeedu-${VERSION}
@@ -19,7 +19,7 @@ SHARED_LIBS +=  compoundviewer            0.0 # 4.4
 # ocaml is not a real dependency, as it's only needed in relation to libfacile
 
 BUILD_DEPENDS +=	math/eigen2 \
-			x11/kde4/automoc 
+			devel/automoc 
 
 LIB_DEPENDS +=	x11/kde4/libs \
 		math/cfitsio \

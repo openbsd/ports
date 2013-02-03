@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/22 08:37:02 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/02/03 13:21:42 zhuk Exp $
 
 COMMENT =		K Desktop Environment, artwork
 DISTNAME =		kdeartwork-${VERSION}
@@ -6,7 +6,7 @@ DISTNAME =		kdeartwork-${VERSION}
 LIB_DEPENDS += 	x11/kde4/libs \
 		x11/kde4/base-workspace
 BUILD_DEPENDS+=	x11/xscreensaver \
-		x11/kde4/automoc \
+		devel/automoc \
 		math/eigen2
 
 WANTLIB += GL GLU ICE SM X11 Xau Xdmcp Xext Xft Xpm Xt c kdecore>=8 kdeui \

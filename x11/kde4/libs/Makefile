@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/22 08:37:02 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2013/02/03 13:21:42 zhuk Exp $
 
 COMMENT =		K Desktop Environment, libraries
 DISTNAME =		kdelibs-${VERSION}
@@ -40,7 +40,7 @@ SHARED_LIBS +=	nepomukquery         0.0      # .4.4
 
 
 BUILD_DEPENDS += misc/shared-mime-info \
-		x11/kde4/automoc \
+		devel/automoc \
 		misc/shared-desktop-ontologies
 
 RUN_DEPENDS +=  misc/shared-mime-info \

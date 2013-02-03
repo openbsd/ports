@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/22 08:37:02 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/02/03 13:21:42 zhuk Exp $
 
 COMMENT =		K Desktop Environment, base
 DISTNAME =		kdebase-${VERSION}
@@ -9,7 +9,7 @@ SHARED_LIBS +=	dolphinprivate       0.0      # .1.0
 SHARED_LIBS +=	konquerorprivate     0.0      # .4.0
 
 USE_GROFF =	Yes
-BUILD_DEPENDS +=	x11/kde4/automoc
+BUILD_DEPENDS +=	devel/automoc
 LIB_DEPENDS +=		x11/kde4/libs \
 			multimedia/phonon \
 			x11/kde4/qimageblitz

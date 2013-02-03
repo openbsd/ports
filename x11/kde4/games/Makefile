@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/22 08:37:02 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/02/03 13:21:42 zhuk Exp $
 
 COMMENT =		K Desktop Environment, games
 DISTNAME =		kdegames-${VERSION}
@@ -13,7 +13,7 @@ SHARED_LIBS +=	pala          	     0.0      # .0.1
 SHARED_LIBS +=	iris_ksirk    	     0.0      # .2.0
 
 
-BUILD_DEPENDS += x11/kde4/automoc
+BUILD_DEPENDS += devel/automoc
 LIB_DEPENDS +=	x11/kde4/libs \
 		multimedia/phonon
 
