@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.77 2013/02/03 22:27:28 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.78 2013/02/04 11:35:27 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: February 3 2013 $
+.Dd $Mdocdate: February 4 2013 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -316,6 +316,12 @@ understands suffixes, such as
 .Fl M Ar 2G
 or
 .Fl M Ar 500M .
+.Pp
+Note that you should always allow for some margin, as
+.Nm
+makes its decision based on the size information collected during previous
+builds, so in cases of significant updates, the work directory size will
+usually grow.
 .It parallel=p
 Run big ports on several cores.
 See
