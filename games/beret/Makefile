@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2012/05/08 15:57:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2013/02/04 15:36:35 bcallah Exp $
 
 COMMENT=	2D puzzle-platformer game
 DISTNAME=	beret-1.2.1pl1
+REVISION=	0
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://kiwisauce.com/beret/
 
-MAINTAINER=	Brian Callahan <bcallah@devio.us>
+MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
 
 # LGPLv3
 # AveriaSans-regular.ttf: SIL Open Font License
