@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/11 16:32:27 fgsch Exp $
+# $OpenBSD: Makefile,v 1.10 2013/02/04 13:11:43 jasper Exp $
 
 COMMENT=		Web Tools Platform for Eclipse
 
@@ -6,7 +6,7 @@ V=			1.5.4
 DISTNAME=		wtp-sdk-R-${V}-200705021353
 PKGNAME=		eclipse-plugin-wtp-sdk-${V}
 REVISION =		0
-CATEGORIES=		devel/eclipse/plugins java
+CATEGORIES+=		java
 EXTRACT_SUFX=		.zip
 PKG_ARCH=		*
 

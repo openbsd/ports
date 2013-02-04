@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2011/09/16 09:24:49 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/02/04 13:11:43 jasper Exp $
 
 COMMENT=		IVY plug-in for Eclipse IDE
 
 VERSION=		1.2.0
 DISTNAME=		org.jayasoft.ivyde.eclipse_${VERSION}
 PKGNAME=		eclipse-plugin-ivyde-${VERSION}
-CATEGORIES=		devel/eclipse/plugins java
+CATEGORIES+=		java
 EXTRACT_SUFX=		.zip
 REVISION =		0
 

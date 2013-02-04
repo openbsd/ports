@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2013/02/04 13:06:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2013/02/04 13:11:43 jasper Exp $
 
 COMMENT=		SubVersion plug-in for Eclipse IDE
 
 V=			1.2.1
 DISTNAME=		site-${V}
 PKGNAME=		eclipse-plugin-subclipse-${V}
-CATEGORIES=		devel/eclipse/plugins java
+CATEGORIES+=		java
 EXTRACT_SUFX=		.zip
 REVISION =		1
 

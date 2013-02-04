@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2011/09/16 09:24:49 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/02/04 13:11:43 jasper Exp $
 
 COMMENT=		graphical editing environment for eclipse
 
 V=			3.2.2
 DISTNAME=		GEF-SDK-${V}
 PKGNAME=		eclipse-plugin-gef-sdk-${V}
-CATEGORIES=		devel/eclipse/plugins java
+CATEGORIES+=		java
 REVISION =		0
 
 HOMEPAGE=		http://www.eclipse.org/gef/

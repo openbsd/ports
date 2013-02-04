@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/09/16 09:24:49 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/02/04 13:11:43 jasper Exp $
 
 COMMENT =	Python development plug-in for Eclipse
 
@@ -9,7 +9,7 @@ DISTNAME =	org.python.pydev.feature-${V}.${SVN}
 PKGNAME =	py-dev-${V}
 REVISION =	2
 
-CATEGORIES =	devel lang/python
+CATEGORIES +=	lang/python
 
 HOMEPAGE =	http://pydev.sourceforge.net/
 
