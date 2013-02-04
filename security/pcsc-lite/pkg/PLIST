@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/08/06 13:03:12 dcoppa Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.5 2013/02/04 09:25:20 dcoppa Exp $
 bin/pcsc-spy
 include/PCSC/
 include/PCSC/debuglog.h
@@ -10,8 +9,10 @@ include/PCSC/winscard.h
 include/PCSC/wintypes.h
 lib/libpcsclite.a
 lib/libpcsclite.la
+@lib lib/libpcsclite.so.${LIBpcsclite_VERSION}
 lib/libpcscspy.a
 lib/libpcscspy.la
+@lib lib/libpcscspy.so.${LIBpcscspy_VERSION}
 lib/pkgconfig/libpcsclite.pc
 @man man/man1/pcsc-spy.1
 @man man/man5/reader.conf.5
