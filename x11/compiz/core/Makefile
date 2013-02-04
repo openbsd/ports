@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2012/12/23 12:25:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2013/02/04 10:33:33 brett Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,13 +6,13 @@ COMMENT =	OpenGL window and compositing manager
 
 V =		0.8.2
 DISTNAME =	compiz-${V}
-REVISION=	13
+REVISION=	14
 
 SHARED_LIBS =	decoration	0.0
 
 CATEGORIES =	x11
 
-HOMEPAGE =	http://www.compiz-fusion.org/
+HOMEPAGE =	http://www.compiz.org/
 
 # MIT, GPL and LGPL
 PERMIT_PACKAGE_CDROM =	Yes
@@ -30,7 +30,7 @@ WANTLIB += pcre pixman-1 png pthread pthread-stubs startup-notification-1
 WANTLIB += wnck-1 xcb xcb-aux xcb-render xcb-shm xml2 xslt z
 WANTLIB += harfbuzz icudata icule icuuc stdc++
 
-MASTER_SITES =	http://releases.compiz-fusion.org/${V}/
+MASTER_SITES =	http://releases.compiz.org/${V}/
 
 MODULES =	devel/gconf2 \
 		devel/gettext \
