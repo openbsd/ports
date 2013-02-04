@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.70 2013/01/21 09:49:20 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.71 2013/02/04 09:19:44 dcoppa Exp $
 
 COMMENT=		window manager based on the original Blackbox code
 
 DISTNAME=		fluxbox-1.3.3
 
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		x11
 
