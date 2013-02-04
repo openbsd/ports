@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2012/07/02 13:42:34 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.10 2013/02/04 16:26:59 jasper Exp $
 
 COMMENT =		continuous integration server
 
-VERSION =		1.472
+VERSION =		1.500
 DISTNAME =		jenkins
 PKGNAME =		jenkins-${VERSION}
 DIST_SUBDIR =		jenkins-${VERSION}
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		http://mirrors.jenkins-ci.org/war/${VERSION}/
-EXTRACT_ONLY =		
+EXTRACT_ONLY =		# empty
 EXTRACT_SUFX =		.war
 
 MODULES =		java

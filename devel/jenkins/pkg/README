@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2012/04/22 11:41:55 ajacoutot Exp $
+$OpenBSD: README,v 1.6 2013/02/04 16:26:59 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -34,3 +34,7 @@ If you are upgrading from Hudson to Jenkins, you can copy the old
 content of /var/hudson/.hudson into /var/jenkins/.jenkins, e.g.,
 	# cp -r /var/hudson/.hudson/* /var/jenkins/.jenkins
 	# chown -R _jenkins:_jenkins /var/jenkins/.jenkins
+
+Please be aware that Jenkins offers an upgrade for the CVS plugin. It is
+strongly advised *not* to upgrade this plugin as the updated version assumes
+a GNU rlog command line option (-S) is available.

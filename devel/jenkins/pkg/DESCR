@@ -4,3 +4,5 @@ http://www.martinfowler.com/articles/continuousIntegration.html).
 Written in Java and with a web-based configuration interface, Jenkins
 can be run standalone (contains its own tiny web server) or in any
 standard Java-capable web server or application server.
+But not limited to Java: can test almost anything, particularly
+projects built with Make, Ant, Maven, or similar.
