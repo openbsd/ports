@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/02/04 13:11:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2013/02/04 13:13:39 jasper Exp $
 
 COMMENT=		Perl plugin for Eclipse IDE
 
@@ -11,8 +11,6 @@ CATEGORIES+=		perl5
 HOMEPAGE=		http://e-p-i-c.sourceforge.net/
 
 MAINTAINER=		Carlos Valiente <yo@virutass.net>
-
-EXTRACT_SUFX=		.zip
 
 # Common Public License Version 1.0 (http://www.eclipse.org/legal/cpl-v10.html)
 PERMIT_PACKAGE_CDROM=	commercial distribution defend and indemnify clauses

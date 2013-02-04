@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/02/04 13:11:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2013/02/04 13:13:39 jasper Exp $
 
 COMMENT =	Python development plug-in for Eclipse
 
@@ -22,7 +22,6 @@ PERMIT_DISTFILES_CDROM =EPL Indemnify clause
 PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=pydev/}
-EXTRACT_SUFX =	.zip
 
 RUN_DEPENDS=	devel/eclipse/sdk
 
