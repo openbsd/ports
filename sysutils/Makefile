@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.280 2013/01/18 18:07:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.281 2013/02/04 10:37:34 rpe Exp $
 
      SUBDIR =
      SUBDIR += LPRng
      SUBDIR += accountsservice
      SUBDIR += anacron
+     SUBDIR += ansible
      SUBDIR += apachetop
      SUBDIR += apc-upsd
      SUBDIR += apcupsd
