@@ -1,6 +1,6 @@
-$OpenBSD: patch-data_icons_Makefile_am,v 1.1.1.1 2011/07/10 09:56:51 jasper Exp $
---- data/icons/Makefile.am.orig	Sat Jun 25 18:12:08 2011
-+++ data/icons/Makefile.am	Wed Jun 29 18:46:09 2011
+$OpenBSD: patch-data_icons_Makefile_am,v 1.2 2013/02/04 15:03:12 bcallah Exp $
+--- data/icons/Makefile.am.orig	Thu Jan 31 23:27:40 2013
++++ data/icons/Makefile.am	Thu Jan 31 23:27:54 2013
 @@ -9,8 +9,8 @@ icons_DATA = manaplus.png \
  	     manaplus.xpm
  

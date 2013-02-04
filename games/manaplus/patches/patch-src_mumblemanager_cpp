@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_mumblemanager_cpp,v 1.1.1.1 2011/07/10 09:56:51 jasper Exp $
---- src/mumblemanager.cpp.orig	Sun Jun 12 13:44:19 2011
-+++ src/mumblemanager.cpp	Sun Jun 26 17:46:02 2011
-@@ -7,6 +7,7 @@
+$OpenBSD: patch-src_mumblemanager_cpp,v 1.2 2013/02/04 15:03:12 bcallah Exp $
+--- src/mumblemanager.cpp.orig	Thu Jan 31 23:28:58 2013
++++ src/mumblemanager.cpp	Thu Jan 31 23:29:48 2013
+@@ -16,6 +16,7 @@
  
  #include "utils/mathutils.h"
  
@@ -9,30 +9,3 @@ $OpenBSD: patch-src_mumblemanager_cpp,v 1.1.1.1 2011/07/10 09:56:51 jasper Exp $
  #include <stdio.h>
  #include <stdlib.h>
  #include <wchar.h>
-@@ -39,7 +40,7 @@ MumbleManager::~MumbleManager()
-     {
- #ifdef WIN32
-         UnmapViewOfFile(mLinkedMem);
--#elif defined __FreeBSD__ || defined __DragonFly__ || defined __APPLE__
-+#elif defined BSD4_4
- #else
-         munmap(mLinkedMem, sizeof(struct LinkedMem));
- #endif
-@@ -73,7 +74,7 @@ void MumbleManager::setMapBase(uint16_t mapid)
- 
- void MumbleManager::init()
- {
--#if defined __FreeBSD__ || defined __DragonFly__ || defined __APPLE__
-+#if defined BSD4_4
-     return;
- #endif
- 
-@@ -100,7 +101,7 @@ void MumbleManager::init()
-         logger->log1("MumbleManager::init can't map MumbleLink");
-         return;
-     }
--#elif defined __FreeBSD__ || defined __DragonFly__ || defined __APPLE__
-+#elif defined BSD4_4
- #else
-     char memName[256];
-     snprintf(memName, 256, "/MumbleLink.%d", getuid());
