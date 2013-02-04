@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2011/12/20 11:37:10 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2013/02/04 07:55:26 jasper Exp $
+@conflict py-Pillow-*
 @pkgpath graphics/py-Imaging
 @pkgpath graphics/py-Imaging,-main[,python2.4][,python2.5][,python2.6][,python2.7]
 include/python${MODPY_VERSION}/ImPlatform.h
