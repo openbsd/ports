@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/10/23 11:09:57 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/02/04 07:59:45 dcoppa Exp $
 @group daemon
 pear/
 pear/lib/
@@ -257,6 +257,8 @@ pear/lib/Predis/ResponseErrorInterface.php
 pear/lib/Predis/ResponseObjectInterface.php
 pear/lib/Predis/ResponseQueued.php
 pear/lib/Predis/ServerException.php
+pear/lib/Predis/Session/
+pear/lib/Predis/Session/SessionHandler.php
 pear/lib/Predis/Transaction/
 pear/lib/Predis/Transaction/AbortedMultiExecException.php
 pear/lib/Predis/Transaction/MultiExecContext.php
