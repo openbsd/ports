@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1207 2013/02/02 13:23:24 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1208 2013/02/04 20:44:41 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -817,6 +817,7 @@ PKGFILE${_S} = ${_PKG_REPO}${_PKGFILE${_S}}
 .if empty(SUBPACKAGE) || ${SUBPACKAGE} == "-"
 FULLPKGPATH ?= ${PKGPATH}${FLAVOR_EXT:S/-/,/g}
 FULLPKGPATH- = ${FULLPKGPATH}
+_FULLPKGPATH = ${PKGPATH}${_FLAVOR_EXT2:S/-/,/g}
 _ALLPKGPATHS = ${FULLPKGPATH}
 .else
 _ALLPKGPATHS = ${PKGPATH}${FLAVOR_EXT:S/-/,/g}
@@ -825,6 +826,7 @@ FULLPKGPATH${_S} ?= ${PKGPATH},${_S}${FLAVOR_EXT:S/-/,/g}
 _ALLPKGPATHS += ${FULLPKGPATH${_S}}
 .  endfor
 FULLPKGPATH = ${FULLPKGPATH${SUBPACKAGE}}
+_FULLPKGPATH = ${PKGPATH},${SUBPACKAGE}${_FLAVOR_EXT2:S/-/,/g}
 .endif
 
 # A few aliases for *-install targets
@@ -3144,12 +3146,12 @@ _recurse-run-dir-depends:
 run-dir-depends:
 .if !empty(_RUN_DEP)
 	@${_depfile_fragment}; \
-	if ! fgrep -q -e "r|${FULLPKGPATH}|" -e "a|${FULLPKGPATH}" $${_DEPENDS_FILE}; then \
-		echo "r|${FULLPKGPATH}|" >>$${_DEPENDS_FILE}; \
-		self=${FULLPKGPATH} PKGPATH=${PKGPATH} ${MAKE} _recurse-run-dir-depends; \
+	if ! fgrep -q -e "r|${_FULLPKGPATH}|" -e "a|${_FULLPKGPATH}" $${_DEPENDS_FILE}; then \
+		echo "r|${_FULLPKGPATH}|" >>$${_DEPENDS_FILE}; \
+		self=${_FULLPKGPATH} PKGPATH=${PKGPATH} ${MAKE} _recurse-run-dir-depends; \
 	fi
 .else
-	@echo "${FULLPKGPATH} ${FULLPKGPATH}"
+	@echo "${_FULLPKGPATH} ${_FULLPKGPATH}"
 .endif
 
 # recursively build a list of dirs for package regression, ready for tsort
@@ -3170,12 +3172,12 @@ _recurse-regress-dir-depends:
 regress-dir-depends:
 .if !empty(_REGRESS_DEP)
 	@${_depfile_fragment}; \
-	if ! fgrep -q -e "R|${FULLPKGPATH}|" $${_DEPENDS_FILE}; then \
-		echo "R|${FULLPKGPATH}|" >>$${_DEPENDS_FILE}; \
-		self=${FULLPKGPATH} PKGPATH=${PKGPATH} ${MAKE} _recurse-regress-dir-depends; \
+	if ! fgrep -q -e "R|${_FULLPKGPATH}|" $${_DEPENDS_FILE}; then \
+		echo "R|${_FULLPKGPATH}|" >>$${_DEPENDS_FILE}; \
+		self=${_FULLPKGPATH} PKGPATH=${PKGPATH} ${MAKE} _recurse-regress-dir-depends; \
 	fi
 .else
-	@echo "${FULLPKGPATH} ${FULLPKGPATH}"
+	@echo "${_FULLPKGPATH} ${_FULLPKGPATH}"
 .endif
 
 # recursively build a list of dirs for package building, ready for tsort
@@ -3212,23 +3214,23 @@ _build-dir-depends:
 build-dir-depends:
 .if !empty(_BUILD_DEP)
 	@${_depfile_fragment}; \
-	if ! fgrep -q -e "b|${FULLPKGPATH}|" -e "a|${_dir}|" $${_DEPENDS_FILE}; then \
-		echo "b|${FULLPKGPATH}|" >>$${_DEPENDS_FILE}; \
-		self=${FULLPKGPATH} PKGPATH=${PKGPATH} ${MAKE} _build-dir-depends; \
+	if ! fgrep -q -e "b|${_FULLPKGPATH}|" -e "a|${_dir}|" $${_DEPENDS_FILE}; then \
+		echo "b|${_FULLPKGPATH}|" >>$${_DEPENDS_FILE}; \
+		self=${_FULLPKGPATH} PKGPATH=${PKGPATH} ${MAKE} _build-dir-depends; \
 	fi
 .else
-	@echo "${FULLPKGPATH} ${FULLPKGPATH}"
+	@echo "${_FULLPKGPATH} ${_FULLPKGPATH}"
 .endif
 
 all-dir-depends:
 .if !empty(_BUILD_DEP) || !empty(_RUN_DEP)
 	@${_depfile_fragment}; \
-	if ! fgrep -q "|${FULLPKGPATH}|" $${_DEPENDS_FILE}; then \
-		echo "|${FULLPKGPATH}|" >>$${_DEPENDS_FILE}; \
-		self=${FULLPKGPATH} PKGPATH=${PKGPATH} ${MAKE} _recurse-all-dir-depends; \
+	if ! fgrep -q "|${_FULLPKGPATH}|" $${_DEPENDS_FILE}; then \
+		echo "|${_FULLPKGPATH}|" >>$${_DEPENDS_FILE}; \
+		self=${_FULLPKGPATH} PKGPATH=${PKGPATH} ${MAKE} _recurse-all-dir-depends; \
 	fi
 .else
-	@echo "${FULLPKGPATH} ${FULLPKGPATH}"
+	@echo "${_FULLPKGPATH} ${_FULLPKGPATH}"
 .endif
 
 # simpler list of package depends, no need to tsort, no duplicates
@@ -3247,7 +3249,7 @@ _recurse-show-run-depends:
 show-run-depends:
 .if !empty(_RUN_DEP)
 	@${_depfile_fragment}; \
-	echo "|${FULLPKGPATH}|" >>$${_DEPENDS_FILE}; \
+	echo "|${_FULLPKGPATH}|" >>$${_DEPENDS_FILE}; \
 	for d in ${_RUN_DEP}; do \
 		fgrep -q -e "|$$d|" $${_DEPENDS_FILE} && continue; \
 		echo "$$d"; \
