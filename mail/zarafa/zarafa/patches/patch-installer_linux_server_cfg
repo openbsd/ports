@@ -1,4 +1,4 @@
-$OpenBSD: patch-installer_linux_server_cfg,v 1.17 2013/01/27 13:06:20 robert Exp $
+$OpenBSD: patch-installer_linux_server_cfg,v 1.18 2013/02/04 07:14:20 ajacoutot Exp $
 --- installer/linux/server.cfg.orig	Sun Jan 27 13:00:14 2013
 +++ installer/linux/server.cfg	Sun Jan 27 13:02:27 2013
 @@ -42,16 +42,16 @@ local_admin_users	= root
@@ -55,7 +55,7 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.17 2013/01/27 13:06:20 robert Exp
  
  # Path with CA certificates, e.g. /etc/ssl/certs
 -server_ssl_ca_path	=
-+server_ssl_ca_path	= ${SYSCONFDIR}/ssl/cert.pem
++server_ssl_ca_path	= /etc/ssl/cert.pem
  
  # Accept SSLv2 only connections. Normally v3 connections are used.
  server_ssl_enable_v2 = no
