@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.92 2013/02/01 16:34:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.93 2013/02/04 21:23:40 tobiasu Exp $
 
-# TODO: hppa mips64 mips64el sh sparc
-ONLY_FOR_ARCHS = alpha i386 sparc64 powerpc amd64 arm
+# TODO: hppa mips64 mips64el sparc
+ONLY_FOR_ARCHS = alpha i386 sparc64 powerpc amd64 arm sh
 
 DPB_PROPERTIES = parallel
 
@@ -170,6 +170,11 @@ CONFIGURE_ARGS += --enable-cpp
 CONFIGURE_ARGS += --with-gnu-as
 CONFIGURE_ARGS += --with-gnu-ld
 CONFIGURE_ARGS += ${CONFIGURE_SHARED}
+
+.if ${MACHINE_ARCH} == "sh"
+CONFIGURE_ARGS += -disable-multilib
+CONFIGURE_ARGS += --with-endian=little
+.endif
 
 post-patch:
 	cd ${WRKDIST}/libstdc++-v3 && AUTOCONF_VERSION=2.59 autoconf
