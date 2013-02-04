@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.84 2013/02/02 13:35:17 espie Exp $
+# $OpenBSD: dpb,v 1.85 2013/02/04 09:43:57 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -482,6 +482,7 @@ sub parse_size_file
 	return if $state->{fetch_only};
 	open my $fh, '<', $state->opt('S') // $state->{size_log}  or return;
 
+	print "Reading size stats...";
 	File::Path::mkpath(File::Basename::dirname($state->{size_log}));
 
 	my $rewrite = {};
@@ -508,11 +509,13 @@ sub parse_size_file
 		DPB::Heuristics->add_size_info($o, $pkgname, $sz);
 	}
 	close $fh;
+	print "zapping old stuff...";
 	open $fh, '>', $state->{size_log}.'.part' or return;
 	for my $p (sort keys %$rewrite) {
 		print $fh "$p$rewrite->{$p}\n";
 	}
 	close $fh;
+	print "Done\n";
 	rename $state->{size_log}.'.part', $state->{size_log};
 }
 
@@ -579,7 +582,9 @@ $SIG{INFO} = sub {
 			@c = caller($x);
 		}
 		last if !@c;
-		print "#$x: $c[3]( ", join(', ', @DB::args), " )\n\tat line $c[2] of $c[1]\n";
+		print "#$x: $c[3]( ", 
+		    join(', ', map { defined $_ ? $_ : "<undef>" } @DB::args), 
+		    " )\n\tat line $c[2] of $c[1]\n";
 		$x++;
 	}
 	sleep 5;
