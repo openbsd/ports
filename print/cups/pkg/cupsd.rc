@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: cupsd.rc,v 1.14 2012/05/28 15:18:18 ajacoutot Exp $
+# $OpenBSD: cupsd.rc,v 1.15 2013/02/04 14:46:24 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/cupsd"
 
@@ -9,9 +9,9 @@ daemon="${TRUEPREFIX}/sbin/cupsd"
 pexp="${daemon}"
 
 _lpfiles="/usr/bin/lpq /usr/bin/lpr /usr/bin/lprm /usr/sbin/lpc \
-	  /usr/sbin/lpd /usr/share/man/cat1/lpq.0 /usr/share/man/cat1/lpr.0 \
-	  /usr/share/man/cat1/lprm.0 /usr/share/man/cat8/lpc.0 \
-	  /usr/share/man/cat8/lpd.0"
+	  /usr/sbin/lpd /usr/share/man/man1/lpq.1 /usr/share/man/man1/lpr.1 \
+	  /usr/share/man/man1/lprm.1 /usr/share/man/man8/lpc.8 \
+	  /usr/share/man/man8/lpd.8"
 
 rc_pre() {
 	${daemon} -t || return 1
