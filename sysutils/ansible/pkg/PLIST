@@ -1,0 +1,286 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/02/04 10:35:14 rpe Exp $
+bin/ansible
+bin/ansible-doc
+bin/ansible-playbook
+bin/ansible-pull
+lib/python${MODPY_VERSION}/site-packages/ansible/
+lib/python${MODPY_VERSION}/site-packages/ansible-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/ansible/__init__.py
+lib/python${MODPY_VERSION}/site-packages/ansible/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/callback_plugins/
+lib/python${MODPY_VERSION}/site-packages/ansible/callback_plugins/__init__.py
+lib/python${MODPY_VERSION}/site-packages/ansible/callback_plugins/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/callback_plugins/noop.py
+lib/python${MODPY_VERSION}/site-packages/ansible/callback_plugins/noop.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/callbacks.py
+lib/python${MODPY_VERSION}/site-packages/ansible/callbacks.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/color.py
+lib/python${MODPY_VERSION}/site-packages/ansible/color.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/constants.py
+lib/python${MODPY_VERSION}/site-packages/ansible/constants.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/errors.py
+lib/python${MODPY_VERSION}/site-packages/ansible/errors.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/inventory/
+lib/python${MODPY_VERSION}/site-packages/ansible/inventory/__init__.py
+lib/python${MODPY_VERSION}/site-packages/ansible/inventory/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/inventory/expand_hosts.py
+lib/python${MODPY_VERSION}/site-packages/ansible/inventory/expand_hosts.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/inventory/group.py
+lib/python${MODPY_VERSION}/site-packages/ansible/inventory/group.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/inventory/host.py
+lib/python${MODPY_VERSION}/site-packages/ansible/inventory/host.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/inventory/ini.py
+lib/python${MODPY_VERSION}/site-packages/ansible/inventory/ini.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/inventory/script.py
+lib/python${MODPY_VERSION}/site-packages/ansible/inventory/script.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/inventory/vars_plugins/
+lib/python${MODPY_VERSION}/site-packages/ansible/inventory/vars_plugins/__init__.py
+lib/python${MODPY_VERSION}/site-packages/ansible/inventory/vars_plugins/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/inventory/vars_plugins/group_vars.py
+lib/python${MODPY_VERSION}/site-packages/ansible/inventory/vars_plugins/group_vars.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/module_common.py
+lib/python${MODPY_VERSION}/site-packages/ansible/module_common.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/playbook/
+lib/python${MODPY_VERSION}/site-packages/ansible/playbook/__init__.py
+lib/python${MODPY_VERSION}/site-packages/ansible/playbook/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/playbook/play.py
+lib/python${MODPY_VERSION}/site-packages/ansible/playbook/play.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/playbook/task.py
+lib/python${MODPY_VERSION}/site-packages/ansible/playbook/task.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/__init__.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/__init__.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/add_host.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/add_host.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/async.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/async.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/copy.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/copy.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/debug.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/debug.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/fail.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/fail.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/fetch.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/fetch.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/group_by.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/group_by.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/normal.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/normal.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/pause.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/pause.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/raw.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/raw.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/script.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/script.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/template.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/template.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/connection.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/connection.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/connection_plugins/
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/connection_plugins/__init__.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/connection_plugins/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/connection_plugins/fireball.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/connection_plugins/fireball.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/connection_plugins/local.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/connection_plugins/local.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/connection_plugins/paramiko_ssh.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/connection_plugins/paramiko_ssh.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/connection_plugins/ssh.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/connection_plugins/ssh.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/filter_plugins/
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/filter_plugins/__init__.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/filter_plugins/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/filter_plugins/core.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/filter_plugins/core.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/__init__.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/dnstxt.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/dnstxt.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/env.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/env.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/file.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/file.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/fileglob.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/fileglob.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/items.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/items.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/lines.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/lines.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/pipe.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/pipe.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/redis_kv.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/redis_kv.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/template.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/template.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/poller.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/poller.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/return_data.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/return_data.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/utils/
+lib/python${MODPY_VERSION}/site-packages/ansible/utils/__init__.py
+lib/python${MODPY_VERSION}/site-packages/ansible/utils/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/utils/module_docs.py
+lib/python${MODPY_VERSION}/site-packages/ansible/utils/module_docs.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/utils/plugins.py
+lib/python${MODPY_VERSION}/site-packages/ansible/utils/plugins.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/utils/template.py
+lib/python${MODPY_VERSION}/site-packages/ansible/utils/template.pyc
+@man man/man1/ansible-doc.1
+@man man/man1/ansible-playbook.1
+@man man/man1/ansible-pull.1
+@man man/man1/ansible.1
+@man man/man3/ansible.add_host.3
+@man man/man3/ansible.apt.3
+@man man/man3/ansible.apt_repository.3
+@man man/man3/ansible.assemble.3
+@man man/man3/ansible.async_status.3
+@man man/man3/ansible.authorized_key.3
+@man man/man3/ansible.command.3
+@man man/man3/ansible.copy.3
+@man man/man3/ansible.cron.3
+@man man/man3/ansible.debug.3
+@man man/man3/ansible.easy_install.3
+@man man/man3/ansible.ec2.3
+@man man/man3/ansible.facter.3
+@man man/man3/ansible.fail.3
+@man man/man3/ansible.fetch.3
+@man man/man3/ansible.file.3
+@man man/man3/ansible.fireball.3
+@man man/man3/ansible.get_url.3
+@man man/man3/ansible.git.3
+@man man/man3/ansible.group.3
+@man man/man3/ansible.group_by.3
+@man man/man3/ansible.ini_file.3
+@man man/man3/ansible.lineinfile.3
+@man man/man3/ansible.mail.3
+@man man/man3/ansible.mount.3
+@man man/man3/ansible.mysql_db.3
+@man man/man3/ansible.mysql_user.3
+@man man/man3/ansible.nagios.3
+@man man/man3/ansible.ohai.3
+@man man/man3/ansible.pause.3
+@man man/man3/ansible.ping.3
+@man man/man3/ansible.pip.3
+@man man/man3/ansible.postgresql_db.3
+@man man/man3/ansible.postgresql_user.3
+@man man/man3/ansible.raw.3
+@man man/man3/ansible.script.3
+@man man/man3/ansible.seboolean.3
+@man man/man3/ansible.selinux.3
+@man man/man3/ansible.service.3
+@man man/man3/ansible.setup.3
+@man man/man3/ansible.shell.3
+@man man/man3/ansible.slurp.3
+@man man/man3/ansible.subversion.3
+@man man/man3/ansible.supervisorctl.3
+@man man/man3/ansible.svr4pkg.3
+@man man/man3/ansible.template.3
+@man man/man3/ansible.user.3
+@man man/man3/ansible.virt.3
+@man man/man3/ansible.wait_for.3
+@man man/man3/ansible.yum.3
+share/ansible/
+share/ansible/add_host
+share/ansible/apt
+share/ansible/apt_repository
+share/ansible/assemble
+share/ansible/async_status
+share/ansible/async_wrapper
+share/ansible/authorized_key
+share/ansible/command
+share/ansible/copy
+share/ansible/cron
+share/ansible/debug
+share/ansible/easy_install
+share/ansible/ec2
+share/ansible/facter
+share/ansible/fail
+share/ansible/fetch
+share/ansible/file
+share/ansible/fireball
+share/ansible/get_url
+share/ansible/git
+share/ansible/group
+share/ansible/group_by
+share/ansible/ini_file
+share/ansible/lineinfile
+share/ansible/mail
+share/ansible/mount
+share/ansible/mysql_db
+share/ansible/mysql_user
+share/ansible/nagios
+share/ansible/ohai
+share/ansible/pause
+share/ansible/ping
+share/ansible/pip
+share/ansible/postgresql_db
+share/ansible/postgresql_user
+share/ansible/raw
+share/ansible/script
+share/ansible/seboolean
+share/ansible/selinux
+share/ansible/service
+share/ansible/setup
+share/ansible/shell
+share/ansible/slurp
+share/ansible/subversion
+share/ansible/supervisorctl
+share/ansible/svr4pkg
+share/ansible/template
+share/ansible/user
+share/ansible/virt
+share/ansible/wait_for
+share/ansible/yum
+share/doc/ansible/
+share/doc/ansible/COPYING
+share/doc/ansible/README.md
+share/examples/ansible/
+@sample ${SYSCONFDIR}/ansible/
+share/examples/ansible/ansible.cfg
+@sample ${SYSCONFDIR}/ansible/ansible.cfg
+share/examples/ansible/hosts
+@sample ${SYSCONFDIR}/ansible/hosts
+share/examples/ansible/playbooks/
+share/examples/ansible/playbooks/ansible_pull.yml
+share/examples/ansible/playbooks/batch_size_control.yml
+share/examples/ansible/playbooks/conditionals_part1.yml
+share/examples/ansible/playbooks/conditionals_part2.yml
+share/examples/ansible/playbooks/conditionals_part3.yml
+share/examples/ansible/playbooks/custom_filters.yml
+share/examples/ansible/playbooks/delegation.yml
+share/examples/ansible/playbooks/file_secontext.yml
+share/examples/ansible/playbooks/filter_plugins/
+share/examples/ansible/playbooks/filter_plugins/custom_plugins.py
+share/examples/ansible/playbooks/get_url.yml
+share/examples/ansible/playbooks/group_by.yml
+share/examples/ansible/playbooks/group_commands.yml
+share/examples/ansible/playbooks/handlers/
+share/examples/ansible/playbooks/handlers/handlers.yml
+share/examples/ansible/playbooks/intermediate_example.yml
+share/examples/ansible/playbooks/intro_example.yml
+share/examples/ansible/playbooks/loop_plugins.yml
+share/examples/ansible/playbooks/loop_with_items.yml
+share/examples/ansible/playbooks/mysql.yml
+share/examples/ansible/playbooks/nested_playbooks.yml
+share/examples/ansible/playbooks/postgresql.yml
+share/examples/ansible/playbooks/prompts.yml
+share/examples/ansible/playbooks/register_logic.yml
+share/examples/ansible/playbooks/selective_file_sources.yml
+share/examples/ansible/playbooks/tags.yml
+share/examples/ansible/playbooks/tasks/
+share/examples/ansible/playbooks/tasks/base.yml
+share/examples/ansible/playbooks/templates/
+share/examples/ansible/playbooks/templates/custom-filters.j2
+share/examples/ansible/playbooks/templates/etc_cron.d_ansible-pull.j2
+share/examples/ansible/playbooks/templates/etc_logrotate.d_ansible-pull.j2
+share/examples/ansible/playbooks/templates/foo.j2
+share/examples/ansible/playbooks/templates/hostvars.j2
+share/examples/ansible/playbooks/user_commands.yml
+share/examples/ansible/playbooks/vars/
+share/examples/ansible/playbooks/vars/CentOS.yml
+share/examples/ansible/playbooks/vars/defaults.yml
+share/examples/ansible/playbooks/vars/external_vars.yml
