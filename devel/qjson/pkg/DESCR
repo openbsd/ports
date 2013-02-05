@@ -1,0 +1,3 @@
+QJson is a Qt-based library that maps JSON data to QVariant objects.
+JSON arrays will be mapped to QVariantList instances, while JSON's
+objects will be mapped to QVariantMap.
