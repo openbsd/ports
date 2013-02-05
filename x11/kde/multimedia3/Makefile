@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.76 2013/01/23 21:10:38 zhuk Exp $
+# $OpenBSD: Makefile,v 1.77 2013/02/05 11:47:43 sthen Exp $
 
-COMMENT = 		K Desktop Environment, multimedia applications
+COMMENT =		K Desktop Environment, multimedia applications
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
+REVISION =		13
 DISTNAME =		kdemultimedia-${VERSION}
 MODKDE_VERSION =	3.5.8
 SHARED_LIBS +=	artsbuilder          1.0      # .0.0
@@ -35,7 +36,7 @@ SHARED_LIBS +=	arts_mpeglib-0.3.0   1.0      # .0.3
 
 MODULES =	x11/kde devel/gettext
 
-LIB_DEPENDS = 	x11/kde/libs3 \
+LIB_DEPENDS =	x11/kde/libs3 \
 		x11/kde/arts3 \
 		audio/libogg \
 		audio/flac \
@@ -60,19 +61,21 @@ SEPARATE_BUILD =	flavored
 CONFIGURE_ARGS +=	--without-lame
 CONFIGURE_ENV +=	aktion_has_xanim=yes
 
-REVISION =	12
-WANTLIB = FLAC>=8 ICE SM X11 Xau Xdmcp Xext Xrender Xv Xxf86dga Xxf86vm akode \
-	art_lgpl_2 audiofile c cdda_interface cdda_paranoia expat fam \
-	fontconfig freetype glib-2.0 gmodule-2.0 gobject-2.0 gstreamer-0.10 \
-	gthread-2.0 idn jpeg lib/kde3/DCOP lib/kde3/artsc lib/kde3/artsflow \
-	lib/kde3/artsflow_idl lib/kde3/artskde lib/kde3/kdecore>=6 \
-	lib/kde3/kdefakes lib/kde3/kdefx lib/kde3/kdeprint lib/kde3/kdesu \
-	lib/kde3/kdeui lib/kde3/khtml lib/kde3/kio lib/kde3/kjs \
-	lib/kde3/kmedia2_idl lib/kde3/kmediaplayer lib/kde3/kmid \
-	lib/kde3/kparts lib/kde3/kutils lib/kde3/kwalletclient lib/kde3/mcop \
-	lib/kde3/qtmcop lib/kde3/soundserver_idl ltdl m mad ogg ossaudio pcre \
-	pcreposix png pthread pthread-stubs sndio stdc++ tag theora \
-	util vorbis vorbisenc vorbisfile xcb xine xml2 z
+WANTLIB += FLAC>=8 GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi
+WANTLIB += Xinerama Xmu Xrandr Xrender Xt Xv Xxf86dga Xxf86vm akode
+WANTLIB += art_lgpl_2 audiofile avutil c cdda_interface cdda_paranoia
+WANTLIB += drm expat fam ffi fontconfig freetype glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 gstreamer-0.10 gthread-2.0 idn jpeg lcms
+WANTLIB += lib/kde3/DCOP lib/kde3/artsc lib/kde3/artsflow
+WANTLIB += lib/kde3/artsflow_idl lib/kde3/artskde lib/kde3/kdecore>=6
+WANTLIB += lib/kde3/kdefakes lib/kde3/kdefx lib/kde3/kdeprint
+WANTLIB += lib/kde3/kdesu lib/kde3/kdeui lib/kde3/khtml lib/kde3/kio
+WANTLIB += lib/kde3/kjs lib/kde3/kmedia2_idl lib/kde3/kmediaplayer
+WANTLIB += lib/kde3/kmid lib/kde3/kparts lib/kde3/kutils
+WANTLIB += lib/kde3/kwalletclient lib/kde3/mcop lib/kde3/qtmcop
+WANTLIB += lib/kde3/soundserver_idl ltdl m mad mng ogg ossaudio pcre
+WANTLIB += pcreposix png pthread sndio stdc++ tag theora util
+WANTLIB += vorbis vorbisenc vorbisfile xcb xine xml2 z
 
 
 post-extract:

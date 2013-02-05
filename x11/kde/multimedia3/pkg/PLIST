@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2013/01/23 21:10:38 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.38 2013/02/05 11:47:43 sthen Exp $
 @bin bin/artsbuilder
 @bin bin/artscontrol
 @bin bin/juk
@@ -473,7 +473,6 @@ lib/mcop/RawWriter.mcopclass
 lib/mcop/SplayPlayObject.mcopclass
 lib/mcop/VoiceRemoval.mcopclass
 lib/mcop/WAVPlayObject.mcopclass
-lib/mcop/akodeFFMPEGPlayObject.mcopclass
 lib/mcop/akodeMPCPlayObject.mcopclass
 lib/mcop/akodeMPEGPlayObject.mcopclass
 lib/mcop/akodePlayObject.mcopclass
