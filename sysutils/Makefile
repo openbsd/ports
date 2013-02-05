@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.281 2013/02/04 10:37:34 rpe Exp $
+# $OpenBSD: Makefile,v 1.282 2013/02/05 18:01:25 jasper Exp $
 
      SUBDIR =
      SUBDIR += LPRng
@@ -168,6 +168,7 @@
      SUBDIR += ruby-posix-spawn
      SUBDIR += ruby-puppet
      SUBDIR += ruby-puppet-lint
+     SUBDIR += ruby-puppet-lint,ruby18
      SUBDIR += ruby-vlad
      SUBDIR += runit
      SUBDIR += safecat
