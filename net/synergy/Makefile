@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/01/08 20:35:36 bcallah Exp $
+# $OpenBSD: Makefile,v 1.16 2013/02/05 10:39:29 ajacoutot Exp $
 
 COMMENT=		mouse and keyboard sharing utility
 
@@ -25,7 +25,7 @@ BUILD_DEPENDS=		archivers/gtar
 # The synergy devs decided to release a fucked tarball.
 # Our tar complains, then errors out.
 # tar: Invalid header, starting valid header search.
-TAR=			gtar
+TAR=			${LOCALBASE}/bin/gtar
 
 MODULES=		devel/cmake
 

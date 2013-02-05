@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/06/13 14:03:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/02/05 10:39:29 ajacoutot Exp $
 
 COMMENT =	VHDL tags generator
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
 MASTER_SITES =	http://www.peterantoine.me.uk/downloads/
-TAR =		gtar
+TAR =		${LOCALBASE}/bin/gtar
 
 BUILD_DEPENDS = archivers/gtar
 

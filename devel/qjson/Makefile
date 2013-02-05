@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/02/05 10:31:01 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/02/05 10:39:29 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 CATEGORIES =	devel
@@ -13,7 +13,7 @@ WANTLIB =	m stdc++
 
 MASTER_SITES =	https://github.com/downloads/flavio/qjson/
 EXTRACT_SUFX =	.tar.bz2
-TAR =		gtar
+TAR =		${LOCALBASE}/bin/gtar
 
 # LGPLv2
 PERMIT_DISTFILES_CDROM =	Yes

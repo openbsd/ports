@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2013/01/24 08:46:36 zhuk Exp $
+# $OpenBSD: Makefile,v 1.82 2013/02/05 10:39:29 ajacoutot Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -35,7 +35,7 @@ MASTER_SITES0=	http://hg.services.openoffice.org/binaries/ \
 		http://ooo.itc.hu/oxygenoffice/download/libreoffice/ \
 		http://dev-www.libreoffice.org/src/
 
-TAR=		/usr/local/bin/gtar
+TAR=		${LOCALBASE}/bin/gtar
 EDISTFILES=	libreoffice-core-${VERSION}.tar.xz
 
 COMPONENTS=	binfilter dictionaries help translations

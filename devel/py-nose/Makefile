@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2012/06/27 19:03:32 rpointel Exp $
+# $OpenBSD: Makefile,v 1.21 2013/02/05 10:39:29 ajacoutot Exp $
 
 COMMENT=		discovery-based unittest extension
 
@@ -39,7 +39,7 @@ USE_GROFF =		Yes
 MODPY_SETUPTOOLS=	Yes
 
 # problem with upstream tar and our tar
-TAR=gtar
+TAR=${LOCALBASE}/bin/gtar
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}nose
