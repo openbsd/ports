@@ -1,28 +1,52 @@
-# $OpenBSD: Makefile,v 1.30 2012/09/08 16:00:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2013/02/05 13:07:09 brad Exp $
 
 COMMENT=		ffmpeg element for GStreamer
 
 V=			0.10.13
 DISTNAME=		gst-ffmpeg-${V}
 PKGNAME=		gstreamer-ffmpeg-${V}
-REVISION=		3
+REVISION=		4
 
 # sync with graphics/ffmpeg
 PERMIT_PACKAGE_CDROM=	patents
 
-WANTLIB += avcodec avformat avutil bz2 ffi glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gsm gstaudio-0.10 gstbase-0.10 gstinterfaces-0.10
-WANTLIB += gstpbutils-0.10 gstreamer-0.10 gstvideo-0.10 gthread-2.0
-WANTLIB += m mp3lame ogg orc-0.4 pcre postproc pthread schroedinger-1.0
-WANTLIB += speex swscale theoradec theoraenc vorbis vorbisenc
-WANTLIB += vpx x264 xml2 xvidcore z
+WANTLIB += bz2 ffi glib-2.0 gmodule-2.0 gobject-2.0 gstaudio-0.10
+WANTLIB += gstbase-0.10 gstinterfaces-0.10 gstpbutils-0.10 gstreamer-0.10
+WANTLIB += gstvideo-0.10 gthread-2.0 m orc-0.4 pcre pthread xml2
+WANTLIB += z
 
 MASTER_SITES=		${MASTER_SITE_GST:=gst-ffmpeg/}
 
-LIB_DEPENDS=		${P}/plugins-base \
-			graphics/ffmpeg
+LIB_DEPENDS=		${P}/plugins-base
 
-CONFIGURE_ARGS=		--with-system-ffmpeg \
-			--disable-shave
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
+BUILD_DEPENDS +=	devel/yasm
+.endif
+
+.if ${MACHINE_ARCH:Marm}
+# uses ARM EABI
+GST_LIBAV_ARCH=		generic
+.else
+GST_LIBAV_ARCH=		${MACHINE_ARCH}
+.endif
+
+ffmpeg_CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+			--arch=${GST_LIBAV_ARCH} \
+			--cc=${CC} \
+			--enable-gpl \
+			--disable-altivec \
+			--disable-armv5te \
+			--disable-armv6 \
+			--disable-armv6t2 \
+			--disable-armvfp \
+			--disable-debug \
+			--disable-iwmmxt
+
+CONFIGURE_ARGS=		--with-ffmpeg-extra-configure="${ffmpeg_CONFIGURE_ARGS}"
+
+MAKE_ENV=		V=1
+
+# make sure bundled libav headers are chosen over the system FFmpeg ones
+CPPFLAGS +=		-I../../gst-libs -I../../gst-libs/ext/libav
 
 .include <bsd.port.mk>

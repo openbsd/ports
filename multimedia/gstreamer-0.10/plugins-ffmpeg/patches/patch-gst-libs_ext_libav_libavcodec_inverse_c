@@ -1,0 +1,13 @@
+$OpenBSD: patch-gst-libs_ext_libav_libavcodec_inverse_c,v 1.1 2013/02/05 13:07:09 brad Exp $
+
+libavutil.a(inverse.o)(.rodata+0x0): multiple definition of `ff_inverse'
+
+--- gst-libs/ext/libav/libavcodec/inverse.c.orig	Mon Feb  4 09:16:28 2013
++++ gst-libs/ext/libav/libavcodec/inverse.c	Mon Feb  4 09:17:12 2013
+@@ -1 +1,5 @@
+-#include "libavutil/inverse.c"
++//#include "libavutil/inverse.c"
++
++#include "libavutil/intmath.h"
++
++extern const uint32_t ff_inverse[257];
