@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1105 2013/02/03 16:47:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.1106 2013/02/05 11:16:14 zhuk Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1159,6 +1159,7 @@
      SUBDIR += pysvn
      SUBDIR += pyusb
      SUBDIR += qgit
+     SUBDIR += qjson
      SUBDIR += qt-creator
      SUBDIR += qt4-eventsview
      SUBDIR += quilt
@@ -1266,6 +1267,7 @@
      SUBDIR += slib-guile
      SUBDIR += smarty
      SUBDIR += smpeg
+     SUBDIR += sparsehash
      SUBDIR += spe
      SUBDIR += spice-protocol
      SUBDIR += spidermonkey
