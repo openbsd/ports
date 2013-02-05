@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2012/12/13 16:34:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.44 2013/02/05 22:41:35 sthen Exp $
 
 COMMENT=	Fast-Light Tool Kit
 
@@ -24,14 +24,9 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += X11 Xau Xdmcp Xext Xft Xinerama c fontconfig jpeg m
 WANTLIB += png pthread stdc++ z
 
-MASTER_SITES=	ftp://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/fltk/${VER}/ \
-		ftp://ftp.rz.tu-bs.de/pub/mirror/ftp.easysw.com/ftp/pub/fltk/${VER}/ \
-		http://mirror.nu6.org//ftp.easysw.com/pub/fltk/${VER}/ \
-		http://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/fltk/${VER}/ \
-		http://ftp.rz.tu-bs.de/pub/mirror/ftp.easysw.com/ftp/pub/fltk/${VER}/ \
+MASTER_SITES=	http://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/fltk/${VER}/ \
 		http://ftp.easysw.com/pub/fltk/${VER}/ \
-		ftp://ftp.easysw.com/pub/fltk/${VER}/ \
-		ftp://ftp3.easysw.com/pub/fltk/${VER}/
+		ftp://ftp.easysw.com/pub/fltk/${VER}/
 
 LIB_DEPENDS=	graphics/jpeg \
 		graphics/png
