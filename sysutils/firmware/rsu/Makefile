@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2011/06/12 00:20:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2013/02/05 21:52:40 sthen Exp $
 
 FW_DRIVER=	rsu
-FW_VER=		1.1
-REVISION=	0
+FW_VER=		1.2
 
 WRKDIST=	${WRKDIR}
 EXTRACT_SUFX=	.tgz
