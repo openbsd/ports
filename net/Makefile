@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.788 2013/02/01 22:16:29 todd Exp $
+# $OpenBSD: Makefile,v 1.789 2013/02/05 15:09:26 jasper Exp $
 
      SUBDIR =
      SUBDIR += BitTorrent
@@ -14,6 +14,7 @@
      SUBDIR += amsn
      SUBDIR += amule
      SUBDIR += angst
+     SUBDIR += apache-activemq
      SUBDIR += ap-utils
      SUBDIR += archie
      SUBDIR += argus
