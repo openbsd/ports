@@ -1,0 +1,22 @@
+$OpenBSD: patch-ext_libclementine-common_core_logging_cpp,v 1.1.1.1 2013/02/05 14:00:16 zhuk Exp $
+backtrace() is probably present on GNU and Solaris only.
+--- ext/libclementine-common/core/logging.cpp.orig	Wed Nov 28 20:42:49 2012
++++ ext/libclementine-common/core/logging.cpp	Wed Nov 28 21:11:45 2012
+@@ -224,7 +224,7 @@ QString DemangleSymbol(const QString& symbol) {
+ }
+ 
+ void DumpStackTrace() {
+-#ifdef Q_OS_UNIX
++#ifdef HAVE_BACKTRACE
+   void* callstack[128];
+   int callstack_size = backtrace(reinterpret_cast<void**>(&callstack), sizeof(callstack));
+   char** symbols = backtrace_symbols(reinterpret_cast<void**>(&callstack), callstack_size);
+@@ -234,7 +234,7 @@ void DumpStackTrace() {
+   }
+   free(symbols);
+ #else
+-  qLog(Debug) << "FIXME: Implement printing stack traces on this platform";
++  qLog(Debug) << "FIXME: Implement printing stack traces on this platform or port backtrace() from GNU libc";
+ #endif
+ }
+ 

@@ -1,0 +1,13 @@
+$OpenBSD: patch-ext_libclementine-common_CMakeLists_txt,v 1.1.1.1 2013/02/05 14:00:16 zhuk Exp $
+--- ext/libclementine-common/CMakeLists.txt.orig	Wed Nov 28 21:14:19 2012
++++ ext/libclementine-common/CMakeLists.txt	Wed Nov 28 21:10:02 2012
+@@ -40,3 +40,9 @@ target_link_libraries(libclementine-common
+   ${CMAKE_THREAD_LIBS_INIT}
+   chardet
+ )
++
++include(CheckFunctionExists)
++check_function_exists(backtrace HAVE_BACKTRACE)
++if(HAVE_BACKTRACE)
++  add_definitions(-DHAVE_BACKTRACE)
++endif(HAVE_BACKTRACE)
