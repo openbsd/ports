@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/02/05 11:09:11 zhuk Exp $
+include/chromaprint.h
+@lib lib/libchromaprint.so.${LIBchromaprint_VERSION}
+lib/pkgconfig/libchromaprint.pc

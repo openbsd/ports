@@ -1,0 +1,7 @@
+Chromaprint is the core component of the Acoustid project. It's a
+client-side library that implements a custom algorithm for extracting
+fingerprints from any audio source.
+
+Overview of the fingerprint extraction process can be found in the blog
+post "How does Chromaprint work?":
+http://oxygene.sk/lukas/2011/01/how-does-chromaprint-work/
