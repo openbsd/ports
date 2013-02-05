@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1208 2013/02/04 20:44:41 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1209 2013/02/05 11:22:50 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2856,7 +2856,7 @@ _internal-clean:
 .  for l in ${_WRKDIRS}
 .    if "$l" != ""
 	@if [ -L $l ]; then rm -rf `readlink $l`; fi
-	@rm -rf $l
+	@if [ -e $l ]; then rm -rf $l; fi
 .    endif
 .  endfor
 .  if !empty(WRKDIR_LINKNAME)
