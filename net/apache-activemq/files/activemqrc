@@ -1,0 +1,172 @@
+# ------------------------------------------------------------------------
+# Configuration file for running Apache Active MQ as standalone provider
+#
+# This file overwrites the predefined settings of the sysv init-script
+#
+# Active MQ installation dir
+if [ -z "$ACTIVEMQ_HOME" ] ; then
+# try to find ACTIVEMQ
+if [ -d /opt/activemq ] ; then
+ACTIVEMQ_HOME=/opt/activemq
+fi
+
+if [ -d "${HOME}/opt/activemq" ] ; then
+ACTIVEMQ_HOME="${HOME}/opt/activemq"
+fi
+
+## resolve links - $0 may be a link to activemq's home
+PRG="$0"
+progname=`basename "$0"`
+saveddir=`pwd`
+
+# need this for relative symlinks
+dirname_prg=`dirname "$PRG"`
+cd "$dirname_prg"
+
+while [ -h "$PRG" ] ; do
+ls=`ls -ld "$PRG"`
+link=`expr "$ls" : '.*-> (.*)$'`
+if expr "$link" : '.*/.*' > /dev/null; then
+PRG="$link"
+else
+PRG=`dirname "$PRG"`"/$link"
+fi
+done
+
+ACTIVEMQ_HOME=`dirname "$PRG"`/..
+
+cd "$saveddir"
+
+# make it fully qualified
+ACTIVEMQ_HOME=`cd "$ACTIVEMQ_HOME" && pwd`
+fi
+
+if [ -z "$ACTIVEMQ_BASE" ] ; then
+ACTIVEMQ_BASE="$ACTIVEMQ_HOME"
+fi
+
+# Active MQ configuration directory
+if [ -z "$ACTIVEMQ_CONF" ] ; then
+
+# For backwards compat with old variables we let ACTIVEMQ_CONFIG_DIR set ACTIVEMQ_CONF
+if [ -z "$ACTIVEMQ_CONFIG_DIR" ] ; then
+ACTIVEMQ_CONF="$ACTIVEMQ_BASE/conf"
+else
+ACTIVEMQ_CONF="$ACTIVEMQ_CONFIG_DIR"
+fi
+fi
+
+# Configure a user with non root priviledges, if no user is specified do not change user
+if [ -z "$ACTIVEMQ_USER" ] ; then
+ACTIVEMQ_USER=""
+fi
+
+# Active MQ data directory
+if [ -z "$ACTIVEMQ_DATA" ] ; then
+
+# For backwards compat with old variables we let ACTIVEMQ_DATA_DIR set ACTIVEMQ_DATA
+if [ -z "$ACTIVEMQ_DATA_DIR" ] ; then
+ACTIVEMQ_DATA="$ACTIVEMQ_BASE/data"
+else
+ACTIVEMQ_DATA="$ACTIVEMQ_DATA_DIR"
+fi
+fi
+
+if [ -z "$ACTIVEMQ_TMP" ] ; then
+ACTIVEMQ_TMP="$ACTIVEMQ_BASE/tmp"
+fi
+
+setCurrentUser(){
+CUSER=`whoami 2>/dev/null`
+
+# Solaris fix
+if [ ! $? -eq 0 ]; then
+CUSER=`/usr/ucb/whoami 2>/dev/null`
+fi
+}
+
+if [ ! -d "$ACTIVEMQ_DATA" ]; then
+setCurrentUser
+if ( [ -z "$ACTIVEMQ_USER" ] || [ "$ACTIVEMQ_USER" = "$CUSER" ] );then
+mkdir $ACTIVEMQ_DATA
+elif [ "`id -u`" = "0" ];then
+su -c "mkdir $ACTIVEMQ_DATA" - $ACTIVEMQ_USER;
+fi
+fi
+
+# Location of the pidfile
+if [ -z "$ACTIVEMQ_PIDFILE" ]; then
+ACTIVEMQ_PIDFILE="$ACTIVEMQ_DATA/activemq-`hostname`.pid"
+fi
+
+# Location of the java installation
+# Specify the location of your java installation using JAVA_HOME, or specify the
+# path to the "java" binary using JAVACMD
+# (set JAVACMD to "auto" for automatic detection)
+#JAVA_HOME=""
+JAVACMD="auto"
+
+# Set jvm memory configuration
+#if [ -z "$ACTIVEMQ_OPTS_MEMORY" ] ; then
+#ACTIVEMQ_OPTS_MEMORY="-Xms1G -Xmx1G"
+#fi
+
+# Uncomment to enable audit logging
+#ACTIVEMQ_OPTS="$ACTIVEMQ_OPTS -Dorg.apache.activemq.audit=true"
+
+# Set jvm jmx configuration
+# This enables jmx access over a configured jmx-tcp-port.
+# You have to configure the first four settings if you run a ibm jvm, caused by the
+# fact that IBM's jvm does not support VirtualMachine.attach(PID).
+# JMX access is needed for quering a running activemq instance to gain data or to
+# trigger management operations.
+#
+# Example for ${ACTIVEMQ_CONF}/jmx.access:
+# ---
+# # The "monitorRole" role has readonly access.
+# # The "controlRole" role has readwrite access.
+# monitorRole readonly
+# controlRole readwrite
+# ---
+#
+# Example for ${ACTIVEMQ_CONF}/jmx.password:
+# ---
+# # The "monitorRole" role has password "abc123".
+# # # The "controlRole" role has password "abcd1234".
+# monitorRole abc123
+# controlRole abcd1234
+# ---
+#
+# ACTIVEMQ_SUNJMX_START="-Dcom.sun.management.jmxremote.port=11099 "
+# ACTIVEMQ_SUNJMX_START="$ACTIVEMQ_SUNJMX_START -Dcom.sun.management.jmxremote.password.file=${ACTIVEMQ_CONF}/jmx.password"
+# ACTIVEMQ_SUNJMX_START="$ACTIVEMQ_SUNJMX_START -Dcom.sun.management.jmxremote.access.file=${ACTIVEMQ_CONF}/jmx.access"
+# ACTIVEMQ_SUNJMX_START="$ACTIVEMQ_SUNJMX_START -Dcom.sun.management.jmxremote.ssl=false"
+ACTIVEMQ_SUNJMX_START="$ACTIVEMQ_SUNJMX_START -Dcom.sun.management.jmxremote"
+
+# Set jvm jmx configuration for controlling the broker process
+# You only have to configure the first four settings if you run a ibm jvm, caused by the
+# fact that IBM's jvm does not support VirtualMachine.attach(PID)
+# (see also com.sun.management.jmxremote.port, .jmx.password.file and .jmx.access.file )
+#ACTIVEMQ_SUNJMX_CONTROL="--jmxurl service:jmx:rmi:///jndi/rmi://127.0.0.1:11099/jmxrmi --jmxuser controlRole --jmxpassword abcd1234"
+ACTIVEMQ_SUNJMX_CONTROL=""
+
+# Specify the queue manager URL for using "browse" option of sysv initscript
+if [ -z "$ACTIVEMQ_QUEUEMANAGERURL" ]; then
+ACTIVEMQ_QUEUEMANAGERURL="--amqurl tcp://localhost:61616"
+fi
+
+# Set additional JSE arguments
+ACTIVEMQ_SSL_OPTS="$SSL_OPTS"
+
+# Uncomment to enable YourKit profiling
+#ACTIVEMQ_DEBUG_OPTS="-agentlib:yjpagent"
+
+# Uncomment to enable remote debugging
+#ACTIVEMQ_DEBUG_OPTS="-Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"
+
+# ActiveMQ tries to shutdown the broker by jmx,
+# after a specified number of seconds send SIGKILL
+if [ -z "$ACTIVEMQ_KILL_MAXSECONDS" ]; then
+ACTIVEMQ_KILL_MAXSECONDS=30
+fi
+
