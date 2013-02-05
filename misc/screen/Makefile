@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.62 2012/02/20 22:20:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2013/02/05 14:51:16 sthen Exp $
 # Please adjust www/faq/faq15.html if updating.
 
 COMMENT=	multi-screen window manager
 
 VERSION=	4.0.3
 DISTNAME=	screen-${VERSION}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNU:=screen/}
 

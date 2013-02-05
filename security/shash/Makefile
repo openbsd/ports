@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/20 17:22:45 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/02/05 14:51:16 sthen Exp $
 
 COMMENT=	generates or checks digests or mac
 
 DISTNAME=	shash-0.2.6
+REVISION=	0
 CATEGORIES=     security
 
 HOMEPAGE=	http://mcrypt.hellug.gr/shash/

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2011/11/10 14:13:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2013/02/05 14:51:16 sthen Exp $
 
 COMMENT=	unique standard tape archiver
 
 DISTNAME=	star-1.5.1
+REVISION=	0
 CATEGORIES=	archivers sysutils
 HOMEPAGE=	http://cdrecord.berlios.de/old/private/star.html
 
