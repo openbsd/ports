@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_Makefile_in,v 1.3 2012/06/01 09:10:20 pascal Exp $
+$OpenBSD: patch-lib_Makefile_in,v 1.4 2013/02/05 21:16:19 jasper Exp $
 
 Do not install charset.alias, which is already provided by 
 converters/libiconv
 
---- lib/Makefile.in.orig	Sat May 19 20:59:19 2012
-+++ lib/Makefile.in	Sun May 27 00:01:07 2012
-@@ -1674,7 +1674,7 @@ install-exec-localcharset: all-local
+--- lib/Makefile.in.orig	Wed May 30 22:31:33 2012
++++ lib/Makefile.in	Tue Feb  5 22:12:25 2013
+@@ -1673,7 +1673,7 @@ install-exec-localcharset: all-local
  	  case '$(host_os)' in \
  	    darwin[56]*) \
  	      need_charset_alias=true ;; \
