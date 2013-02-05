@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.297 2013/02/05 11:37:24 zhuk Exp $
+# $OpenBSD: Makefile,v 1.298 2013/02/05 14:04:03 zhuk Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -25,6 +25,7 @@
      SUBDIR += celt
      SUBDIR += celt051
      SUBDIR += chromaprint
+     SUBDIR += clementine
      SUBDIR += cmixer
      SUBDIR += cmt
      SUBDIR += cmu-sphinx3
@@ -79,6 +80,7 @@
      SUBDIR += libdca
      SUBDIR += libgpod
      SUBDIR += libid3tag
+     SUBDIR += liblastfm
      SUBDIR += liblo
      SUBDIR += libmad
      SUBDIR += libmikmod
