@@ -1,0 +1,33 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/02/05 13:57:56 zhuk Exp $
+include/lastfm/
+include/lastfm/AbstractType.h
+include/lastfm/Album.h
+include/lastfm/Artist.h
+include/lastfm/Audioscrobbler.h
+include/lastfm/Auth.h
+include/lastfm/Chart.h
+include/lastfm/Fingerprint.h
+include/lastfm/FingerprintId.h
+include/lastfm/FingerprintableSource.h
+include/lastfm/InternetConnectionMonitor.h
+include/lastfm/Library.h
+include/lastfm/Mbid.h
+include/lastfm/NetworkAccessManager.h
+include/lastfm/NetworkConnectionMonitor.h
+include/lastfm/Playlist.h
+include/lastfm/RadioStation.h
+include/lastfm/RadioTuner.h
+include/lastfm/ScrobbleCache.h
+include/lastfm/ScrobblePoint.h
+include/lastfm/Tag.h
+include/lastfm/Tasteometer.h
+include/lastfm/Track.h
+include/lastfm/UrlBuilder.h
+include/lastfm/User.h
+include/lastfm/XmlQuery.h
+include/lastfm/Xspf.h
+include/lastfm/global.h
+include/lastfm/misc.h
+include/lastfm/ws.h
+@lib lib/liblastfm.so.${LIBlastfm_VERSION}
+@lib lib/liblastfm_fingerprint.so.${LIBlastfm_fingerprint_VERSION}

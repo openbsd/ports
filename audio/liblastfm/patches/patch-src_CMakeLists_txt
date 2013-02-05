@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_CMakeLists_txt,v 1.1.1.1 2013/02/05 13:57:56 zhuk Exp $
+--- src/CMakeLists.txt.orig	Tue Nov 27 19:54:59 2012
++++ src/CMakeLists.txt	Tue Nov 27 19:58:55 2012
+@@ -1,7 +1,11 @@
+ 
++find_package(Threads REQUIRED)
++
+ add_definitions(${QT_DEFINITIONS})
+ include_directories(${QT_INCLUDES} ${CMAKE_CURRENT_BINARY_DIR})
+ set(liblastfm_LIBRARIES
++    c
++    ${CMAKE_THREAD_LIBS_INIT}
+     ${QT_QTCORE_LIBRARY}
+     ${QT_QTNETWORK_LIBRARY}
+     ${QT_QTXML_LIBRARY}
