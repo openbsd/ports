@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.8 2012/07/08 09:02:10 ajacoutot Exp $
-@lib lib/libgnutls-openssl.so.${LIBgnutls-openssl_VERSION}
-@lib lib/libgnutls.so.${LIBgnutls_VERSION}
-@lib lib/libgnutlsxx.so.${LIBgnutlsxx_VERSION}

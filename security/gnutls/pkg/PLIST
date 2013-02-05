@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2012/12/08 08:20:10 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.21 2013/02/05 07:37:33 ajacoutot Exp $
 @bin bin/certtool
 @bin bin/crywrap
 @bin bin/gnutls-cli
@@ -24,6 +23,7 @@ include/gnutls/pkcs11.h
 include/gnutls/pkcs12.h
 include/gnutls/tpm.h
 include/gnutls/x509.h
+include/gnutls/xssl.h
 info/gnutls-client-server-use-case.png
 @info info/gnutls-guile.info
 info/gnutls-handshake-sequence.png
@@ -38,10 +38,16 @@ info/gnutls-x509.png
 info/pkcs11-vision.png
 lib/libgnutls-openssl.a
 lib/libgnutls-openssl.la
+@lib lib/libgnutls-openssl.so.${LIBgnutls-openssl_VERSION}
+lib/libgnutls-xssl.a
+lib/libgnutls-xssl.la
+@lib lib/libgnutls-xssl.so.${LIBgnutls-xssl_VERSION}
 lib/libgnutls.a
 lib/libgnutls.la
+@lib lib/libgnutls.so.${LIBgnutls_VERSION}
 lib/libgnutlsxx.a
 lib/libgnutlsxx.la
+@lib lib/libgnutlsxx.so.${LIBgnutlsxx_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/gnutls.pc
 @man man/man1/certtool.1
@@ -150,6 +156,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_credentials_clear.3
 @man man/man3/gnutls_credentials_set.3
 @man man/man3/gnutls_db_check_entry.3
+@man man/man3/gnutls_db_check_entry_time.3
 @man man/man3/gnutls_db_get_ptr.3
 @man man/man3/gnutls_db_remove_session.3
 @man man/man3/gnutls_db_set_cache_expiration.3
@@ -524,7 +531,10 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_pubkey_verify_hash.3
 @man man/man3/gnutls_pubkey_verify_hash2.3
 @man man/man3/gnutls_random_art.3
+@man man/man3/gnutls_range_split.3
+@man man/man3/gnutls_record_can_use_length_hiding.3
 @man man/man3/gnutls_record_check_pending.3
+@man man/man3/gnutls_record_cork.3
 @man man/man3/gnutls_record_disable_padding.3
 @man man/man3/gnutls_record_get_direction.3
 @man man/man3/gnutls_record_get_discarded.3
@@ -532,9 +542,14 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_record_recv.3
 @man man/man3/gnutls_record_recv_seq.3
 @man man/man3/gnutls_record_send.3
+@man man/man3/gnutls_record_send_range.3
+@man man/man3/gnutls_record_set_max_empty_records.3
 @man man/man3/gnutls_record_set_max_size.3
+@man man/man3/gnutls_record_set_timeout.3
+@man man/man3/gnutls_record_uncork.3
 @man man/man3/gnutls_rehandshake.3
 @man man/man3/gnutls_rnd.3
+@man man/man3/gnutls_rnd_refresh.3
 @man man/man3/gnutls_rsa_export_get_modulus_bits.3
 @man man/man3/gnutls_rsa_export_get_pubkey.3
 @man man/man3/gnutls_rsa_params_cpy.3
@@ -552,6 +567,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_server_name_set.3
 @man man/man3/gnutls_session_channel_binding.3
 @man man/man3/gnutls_session_enable_compatibility_mode.3
+@man man/man3/gnutls_session_force_valid.3
 @man man/man3/gnutls_session_get_data.3
 @man man/man3/gnutls_session_get_data2.3
 @man man/man3/gnutls_session_get_id.3
@@ -695,6 +711,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_x509_crq_set_attribute_by_oid.3
 @man man/man3/gnutls_x509_crq_set_basic_constraints.3
 @man man/man3/gnutls_x509_crq_set_challenge_password.3
+@man man/man3/gnutls_x509_crq_set_dn.3
 @man man/man3/gnutls_x509_crq_set_dn_by_oid.3
 @man man/man3/gnutls_x509_crq_set_key.3
 @man man/man3/gnutls_x509_crq_set_key_purpose_oid.3
@@ -780,9 +797,11 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_x509_crt_set_crl_dist_points2.3
 @man man/man3/gnutls_x509_crt_set_crq.3
 @man man/man3/gnutls_x509_crt_set_crq_extensions.3
+@man man/man3/gnutls_x509_crt_set_dn.3
 @man man/man3/gnutls_x509_crt_set_dn_by_oid.3
 @man man/man3/gnutls_x509_crt_set_expiration_time.3
 @man man/man3/gnutls_x509_crt_set_extension_by_oid.3
+@man man/man3/gnutls_x509_crt_set_issuer_dn.3
 @man man/man3/gnutls_x509_crt_set_issuer_dn_by_oid.3
 @man man/man3/gnutls_x509_crt_set_key.3
 @man man/man3/gnutls_x509_crt_set_key_purpose_oid.3
@@ -866,6 +885,8 @@ share/examples/gnutls/ex-client-psk.c
 share/examples/gnutls/ex-client-resume.c
 share/examples/gnutls/ex-client-srp.c
 share/examples/gnutls/ex-client-x509.c
+share/examples/gnutls/ex-client-xssl1.c
+share/examples/gnutls/ex-client-xssl2.c
 share/examples/gnutls/ex-crq.c
 share/examples/gnutls/ex-ocsp-client.c
 share/examples/gnutls/ex-pkcs11-list.c
