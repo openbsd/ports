@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.39 2012/11/06 08:29:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.40 2013/02/05 07:43:28 ajacoutot Exp $
 bin/opera
 lib/opera/
 lib/opera/gstreamer/
@@ -9,6 +9,7 @@ lib/opera/liboperagtk2.so
 lib/opera/liboperagtk3.so
 lib/opera/liboperakde4.so
 lib/opera/opera
+lib/opera/opera_autoupdatechecker
 lib/opera/plugins/
 lib/opera/plugins/README
 lib/opera/pluginwrapper/
@@ -42,6 +43,7 @@ share/icons/hicolor/48x48/mimetypes/opera-extension.png
 share/icons/hicolor/scalable/mimetypes/opera-extension.svg
 share/mime/packages/opera-extension.xml
 share/opera/
+share/opera/cert.pem
 share/opera/defaults/
 share/opera/defaults/bookmarks.adr
 share/opera/defaults/dictionaries.xml
@@ -304,6 +306,9 @@ share/opera/region/in/
 share/opera/region/in/bookmarks.adr
 share/opera/region/in/search.ini
 share/opera/region/in/standard_speeddial.ini
+share/opera/region/ke/
+share/opera/region/ke/bookmarks.adr
+share/opera/region/ke/standard_speeddial.ini
 share/opera/region/latin_america/
 share/opera/region/latin_america/bookmarks.adr
 share/opera/region/latin_america/search.ini
