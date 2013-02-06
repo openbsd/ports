@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/19 07:23:06 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/02/06 21:02:10 gsoares Exp $
 
 COMMENT=	simple mail counter
 
@@ -20,7 +20,7 @@ CONFIGURE_STYLE= perl
 USE_GROFF =	Yes
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/cmail 
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/cmail
 	${INSTALL_DATA}	${WRKSRC}/cmailrc.sample ${PREFIX}/share/examples/cmail
 
 .include <bsd.port.mk>
