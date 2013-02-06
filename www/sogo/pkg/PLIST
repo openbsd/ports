@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2013/01/30 18:28:46 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.17 2013/02/06 17:36:11 sebastia Exp $
 @newgroup _sogo:659
 @newuser _sogo:659:_sogo:daemon:SOGo user:/var/sogo:/bin/sh
 include/GDLContentStore/
@@ -1254,7 +1254,6 @@ lib/GNUstep/SOGo/Templates/ContactsUI/UIxContactEditor.wox
 lib/GNUstep/SOGo/Templates/ContactsUI/UIxContactFoldersView.wox
 lib/GNUstep/SOGo/Templates/ContactsUI/UIxContactView.wox
 lib/GNUstep/SOGo/Templates/ContactsUI/UIxContactsFilterPanel.wox
-lib/GNUstep/SOGo/Templates/ContactsUI/UIxContactsListView.wox
 lib/GNUstep/SOGo/Templates/ContactsUI/UIxContactsMailerSelection.wox
 lib/GNUstep/SOGo/Templates/ContactsUI/UIxContactsUserFolders.wox
 lib/GNUstep/SOGo/Templates/ContactsUI/UIxContactsUserRightsEditor.wox
