@@ -1,0 +1,12 @@
+$OpenBSD: patch-3rdparty_libprojectm_CMakeLists_txt,v 1.1 2013/02/06 13:23:03 zhuk Exp $
+--- 3rdparty/libprojectm/CMakeLists.txt.orig	Wed Feb  6 16:10:58 2013
++++ 3rdparty/libprojectm/CMakeLists.txt	Wed Feb  6 16:11:33 2013
+@@ -164,7 +164,7 @@ CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/libproject
+ CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/config.inp.in" "${CMAKE_CURRENT_SOURCE_DIR}/config.inp" @ONLY)
+ 
+ if(BUNDLE_PROJECTM_PRESETS)
+-  FILE(GLOB presets "presets/*.milk" "presets/*.prjm" "presets/*.tga")
++  FILE(GLOB presets "${CMAKE_CURRENT_SOURCE_DIR}/presets/*.milk" "${CMAKE_CURRENT_SOURCE_DIR}/presets/*.prjm" "${CMAKE_CURRENT_SOURCE_DIR}/presets/*.tga")
+   if (APPLE)
+     foreach (preset ${presets})
+       get_filename_component(PRESET_NAME ${preset} NAME)

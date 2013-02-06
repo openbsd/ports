@@ -1,7 +1,16 @@
-$OpenBSD: patch-ext_libclementine-common_core_logging_cpp,v 1.1.1.1 2013/02/05 14:00:16 zhuk Exp $
+$OpenBSD: patch-ext_libclementine-common_core_logging_cpp,v 1.2 2013/02/06 13:23:03 zhuk Exp $
 backtrace() is probably present on GNU and Solaris only.
---- ext/libclementine-common/core/logging.cpp.orig	Wed Nov 28 20:42:49 2012
-+++ ext/libclementine-common/core/logging.cpp	Wed Nov 28 21:11:45 2012
+--- ext/libclementine-common/core/logging.cpp.orig	Thu Oct 11 15:16:39 2012
++++ ext/libclementine-common/core/logging.cpp	Wed Feb  6 17:06:07 2013
+@@ -21,7 +21,7 @@
+ #include <QtGlobal>
+ 
+ #include <cxxabi.h>
+-#ifdef Q_OS_UNIX
++#ifdef EXECINFO_FOUND
+ #include <execinfo.h>
+ #endif
+ 
 @@ -224,7 +224,7 @@ QString DemangleSymbol(const QString& symbol) {
  }
  
