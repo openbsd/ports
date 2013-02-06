@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/01/31 22:27:36 fgsch Exp $
+# $OpenBSD: Makefile,v 1.23 2013/02/06 09:08:29 sthen Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -81,7 +81,7 @@ pre-patch:
 	    ${WRKDIST}/src/osd/sdl/sdl.mak
 
 pre-build:
-	@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
+	-@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
 	${SUBST_CMD} ${WRKDIST}/src/osd/sdl/sdl.mak
 
 do-install:
