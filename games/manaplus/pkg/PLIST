@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/02/04 15:03:12 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/02/06 15:16:10 bcallah Exp $
 @conflict tmw-*
 @conflict tmw-music-*
 @pkgpath games/tmw
@@ -171,6 +171,9 @@ share/manaplus/data/help/tips/12.txt
 share/manaplus/data/help/tips/13.txt
 share/manaplus/data/help/tips/14.txt
 share/manaplus/data/help/tips/15.txt
+share/manaplus/data/help/tips/16.txt
+share/manaplus/data/help/tips/17.txt
+share/manaplus/data/help/tips/18.txt
 share/manaplus/data/help/tips/2.txt
 share/manaplus/data/help/tips/3.txt
 share/manaplus/data/help/tips/4.txt
@@ -247,6 +250,7 @@ share/manaplus/data/themes/enchilado/world.xml
 share/manaplus/data/themes/jewelry/
 share/manaplus/data/themes/jewelry/CHANGELOG.txt
 share/manaplus/data/themes/jewelry/LICENSE.txt
+share/manaplus/data/themes/jewelry/avatarlistbox.xml
 share/manaplus/data/themes/jewelry/beingpopup.xml
 share/manaplus/data/themes/jewelry/browserbox.xml
 share/manaplus/data/themes/jewelry/button.xml
@@ -271,6 +275,7 @@ share/manaplus/data/themes/jewelry/emotes.xml
 share/manaplus/data/themes/jewelry/equipment.xml
 share/manaplus/data/themes/jewelry/equipment_background.xml
 share/manaplus/data/themes/jewelry/equipmentbox.png
+share/manaplus/data/themes/jewelry/extendedlistbox.xml
 share/manaplus/data/themes/jewelry/help.xml
 share/manaplus/data/themes/jewelry/incomplete_icon.xml
 share/manaplus/data/themes/jewelry/info.xml
@@ -302,7 +307,10 @@ share/manaplus/data/themes/jewelry/scrollbuttons.xml
 share/manaplus/data/themes/jewelry/scrollbuttons_pressed.xml
 share/manaplus/data/themes/jewelry/sell.xml
 share/manaplus/data/themes/jewelry/server.xml
+share/manaplus/data/themes/jewelry/serverslistbox.xml
 share/manaplus/data/themes/jewelry/shop.xml
+share/manaplus/data/themes/jewelry/shoplistbox.xml
+share/manaplus/data/themes/jewelry/skilllistbox.xml
 share/manaplus/data/themes/jewelry/slider.xml
 share/manaplus/data/themes/jewelry/slider_highlighted.xml
 share/manaplus/data/themes/jewelry/social.xml
