@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2012/01/16 11:01:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2013/02/06 07:13:57 ajacoutot Exp $
 bin/audiofile-config
 @bin bin/sfconvert
 @bin bin/sfinfo
@@ -7,6 +7,7 @@ include/audiofile.h
 include/aupvlist.h
 lib/libaudiofile.a
 lib/libaudiofile.la
+@lib lib/libaudiofile.so.${LIBaudiofile_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/audiofile.pc
 @man man/man1/sfconvert.1
@@ -16,6 +17,14 @@ lib/pkgconfig/audiofile.pc
 @man man/man3/afGetFrameCount.3
 @man man/man3/afGetFrameSize.3
 @man man/man3/afGetTrackBytes.3
+@man man/man3/afInitAESChannelData.3
+@man man/man3/afInitAESChannelDataTo.3
+@man man/man3/afInitByteOrder.3
+@man man/man3/afInitChannels.3
+@man man/man3/afInitCompression.3
+@man man/man3/afInitFileFormat.3
+@man man/man3/afInitRate.3
+@man man/man3/afInitSampleFormat.3
 @man man/man3/afNewFileSetup.3
 @man man/man3/afOpenFile.3
 @man man/man3/afQuery.3
@@ -34,4 +43,3 @@ lib/pkgconfig/audiofile.pc
 @man man/man3/afTellFrame.3
 @man man/man3/afWriteFrames.3
 @man man/man3/afWriteMisc.3
-%%SHARED%%
