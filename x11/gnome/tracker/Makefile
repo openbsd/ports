@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.125 2012/11/16 07:22:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.126 2013/02/06 15:54:46 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT-evolution=	(meta-)tracker indexer plugin for evolution
 COMMENT-nautilus=	(meta-)tracker tagging plugin for nautilus
 
 GNOME_PROJECT=	tracker
-GNOME_VERSION=	0.14.4
+GNOME_VERSION=	0.14.5
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker.
@@ -16,9 +16,6 @@ PKGNAME=	meta-tracker-${VERSION}
 PKGNAME-main=		meta-tracker-${VERSION}
 PKGNAME-evolution=	evolution-meta-tracker-${VERSION}
 PKGNAME-nautilus=	nautilus-meta-tracker-${VERSION}
-
-REVISION-main =		2
-REVISION-nautilus =	1
 
 # Only get the first x.y which is needed in the PLIST.
 # NOTE: when MAJ_V changes, increment TRACKER_VERSION accordingly and bump:
@@ -51,18 +48,17 @@ MODULES=	devel/gettext \
 
 MULTI_PACKAGES=	-main -nautilus
 
-WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm drm expat ffi fontconfig
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes z icui18n
+WANTLIB += Xi Xinerama Xrandr Xrender expat ffi fontconfig pthread
 WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += kvm m pcre pixman-1 pthread-stubs xcb xcb-render xcb-shm
-WANTLIB += ICE SM atk-bridge-2.0 atspi harfbuzz icudata icule
-WANTLIB += z icui18n pthread icuuc
+WANTLIB += ICE SM atk-bridge-2.0 atspi harfbuzz icudata icule icuuc
 
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += archive atk-1.0 bz2 c cairo cairo-gobject
 WANTLIB-main += dbus-1 dbus-glib-1 e2fs-uuid enca exempi exif gconf-2
-WANTLIB-main += gcrypt gdk-3 gdk_pixbuf-2.0 gee gif gmime-2.6
-WANTLIB-main += gnome-keyring gpg-error gsf-1 gtk-3
+WANTLIB-main += gcrypt gdk-3 gdk_pixbuf-2.0 gee-0.8 gif gmime-2.6
+WANTLIB-main += gnome-keyring gpg-error gsf-1 gtk-3 Xau
 WANTLIB-main += jpeg lcms2 lzma openjpeg panel-applet-4 cue
 WANTLIB-main += pango-1.0 pangocairo-1.0 pangoft2-1.0 png poppler poppler-glib
 WANTLIB-main += rest-0.7 soup-2.4 soup-gnome-2.4 sqlite3 stdc++
@@ -89,7 +85,7 @@ WANTLIB-nautilus += lib/tracker-${MAJ_V}/tracker-common
 WANTLIB-nautilus += lib/tracker-${MAJ_V}/tracker-data
 WANTLIB-nautilus += atk-1.0 cairo cairo-gobject e2fs-uuid gdk-3 gdk_pixbuf-2.0
 WANTLIB-nautilus += gtk-3 nautilus-extension pango-1.0 pangocairo-1.0 dbus-1
-WANTLIB-nautilus += pangoft2-1.0 png sqlite3 tracker-sparql-0.14 stdc++
+WANTLIB-nautilus += pangoft2-1.0 png sqlite3 tracker-sparql-0.14
 
 BUILD_DEPENDS=		lang/vala
 
@@ -98,7 +94,7 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			x11/gnome/totem-pl-parser \
 			print/poppler \
 			devel/libgsf \
-			devel/libgee06 \
+			devel/libgee \
 			net/librest \
 			sysutils/upower \
 			textproc/exempi \
