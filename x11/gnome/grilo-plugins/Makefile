@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2012/12/11 17:54:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2013/02/06 15:55:09 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,6 +7,7 @@ COMMENT=	plugins for Grilo
 GNOME_PROJECT=	grilo-plugins
 GNOME_VERSION=	0.2.5
 API=		0.2
+REVISION=	0
 
 TRACKER_VERSION=0.14
 SUBST_VARS=	API TRACKER_VERSION
@@ -26,7 +27,7 @@ WANTLIB += gcrypt gdata gio-2.0 glib-2.0 gmime-2.6 gmodule-2.0
 WANTLIB += gnome-keyring gobject-2.0 gpg-error grilo-0.2 grlnet-0.2
 WANTLIB += gssdp-1.0 gthread-2.0 gupnp-1.0 gupnp-av-1.0 idn kvm
 WANTLIB += lua5.1 lzma m nspr4 nss3 oauth pcre plc4 plds4 quvi
-WANTLIB += rest-0.7 smime3 softokn3 soup-2.4 soup-gnome-2.4 sqlite3
+WANTLIB += smime3 softokn3 soup-2.4 soup-gnome-2.4 sqlite3
 WANTLIB += ssl ssl3 totem-plparser xml2 z pthread icui18n icuuc
 WANTLIB += gck-1 gcr-base-3 goa-1.0 p11-kit json-glib-1.0
 WANTLIB += tracker-sparql-${TRACKER_VERSION}
@@ -39,7 +40,6 @@ MODULES=	devel/gettext \
 LIB_DEPENDS=	devel/libgdata \
 		mail/gmime \
 		net/gupnp/av \
-		net/librest \
 		net/quvi/libquvi \
 		security/nss \
 		x11/gnome/grilo>=0.2.4 \
