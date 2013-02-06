@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/02/05 10:36:34 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/02/06 07:17:44 ajacoutot Exp $
 include/google/
 include/google/dense_hash_map
 include/google/dense_hash_set
@@ -26,22 +26,23 @@ include/sparsehash/sparse_hash_set
 include/sparsehash/sparsetable
 include/sparsehash/template_util.h
 include/sparsehash/type_traits.h
+lib/pkgconfig/
 lib/pkgconfig/libsparsehash.pc
-share/doc/${DISTNAME}/
-share/doc/${DISTNAME}/AUTHORS
-share/doc/${DISTNAME}/COPYING
-share/doc/${DISTNAME}/ChangeLog
-share/doc/${DISTNAME}/INSTALL
-share/doc/${DISTNAME}/NEWS
-share/doc/${DISTNAME}/README
-share/doc/${DISTNAME}/README_windows.txt
-share/doc/${DISTNAME}/TODO
-share/doc/${DISTNAME}/dense_hash_map.html
-share/doc/${DISTNAME}/dense_hash_set.html
-share/doc/${DISTNAME}/designstyle.css
-share/doc/${DISTNAME}/implementation.html
-share/doc/${DISTNAME}/index.html
-share/doc/${DISTNAME}/performance.html
-share/doc/${DISTNAME}/sparse_hash_map.html
-share/doc/${DISTNAME}/sparse_hash_set.html
-share/doc/${DISTNAME}/sparsetable.html
+share/doc/sparsehash/
+share/doc/sparsehash/AUTHORS
+share/doc/sparsehash/COPYING
+share/doc/sparsehash/ChangeLog
+share/doc/sparsehash/INSTALL
+share/doc/sparsehash/NEWS
+share/doc/sparsehash/README
+share/doc/sparsehash/README_windows.txt
+share/doc/sparsehash/TODO
+share/doc/sparsehash/dense_hash_map.html
+share/doc/sparsehash/dense_hash_set.html
+share/doc/sparsehash/designstyle.css
+share/doc/sparsehash/implementation.html
+share/doc/sparsehash/index.html
+share/doc/sparsehash/performance.html
+share/doc/sparsehash/sparse_hash_map.html
+share/doc/sparsehash/sparse_hash_set.html
+share/doc/sparsehash/sparsetable.html
