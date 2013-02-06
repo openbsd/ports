@@ -1,10 +1,10 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2008/08/19 22:20:40 jasper Exp $
+$OpenBSD: patch-Makefile_in,v 1.3 2013/02/06 20:37:34 jturner Exp $
 
 Fix fake-stage.
 
---- Makefile.in.orig	Sat Jan 26 16:06:27 2008
-+++ Makefile.in	Fri Aug 15 15:16:45 2008
-@@ -57,8 +57,8 @@ VERSION = 1.`cat $(srcdir)/build/minor-version-number`
+--- Makefile.in.orig	Thu Dec 27 11:46:24 2012
++++ Makefile.in	Tue Feb  5 18:31:15 2013
+@@ -71,8 +71,8 @@ VERSION = 1.`cat $(srcdir)/build/minor-version-number`
  RUNNABLE = scheme48
  CONFIG_SCRIPT = scheme48-config
  MANPAGE = $(RUNNABLE).$(manext)
@@ -15,23 +15,3 @@ Fix fake-stage.
  
  distdir = /tmp
  
-@@ -356,7 +356,7 @@ install: enough dirs \
- 
- inst-vm:
- 	$(INSTALL_PROGRAM) $(VM) $(DESTDIR)$(LIB)
--	if [-e $(VM).a]; then $(INSTALL_PROGRAM) $(VM).a $(DESTDIR)$(LIB); fi
-+	if [ -e $(VM).a]; then $(INSTALL_PROGRAM) $(VM).a $(DESTDIR)$(LIB); fi
- 
- inst-image:
- 	rm -f '/tmp/$(IMAGE)'
-@@ -416,8 +416,8 @@ inst-config-script:
- 	    -e 's,@LD\@,$(LD),g'					\
- 	    -e 's,@DYNAMIC_EXTERNALS_CFLAGS\@,$(DYNAMIC_EXTERNALS_CFLAGS),g' \
- 	    -e 's,@DYNAMIC_EXTERNALS_LDFLAGS\@,$(DYNAMIC_EXTERNALS_LDFLAGS),g' \
--	< $(srcdir)/build/$(CONFIG_SCRIPT).in > $$config_script &&	\
--	chmod +x $$config_script
-+	< $(srcdir)/build/$(CONFIG_SCRIPT).in > $(DESTDIR)$$config_script &&	\
-+	chmod +x $(DESTDIR)$$config_script
- 
- inst-externals:
- 	$(INSTALL_PROGRAM) $(POSIX_EXTERNAL) $(SRFI_27_EXTERNAL) $(DESTDIR)$(LIB)/

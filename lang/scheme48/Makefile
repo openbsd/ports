@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2012/04/20 10:48:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2013/02/06 20:37:34 jturner Exp $
 
 COMMENT=	Scheme Underground's implementation of R5RS
 
-V=		1.8
+V=		1.9
 DISTNAME=	scheme48-$V
-REVISION=	2
 CATEGORIES=	lang
 
 HOMEPAGE=	http://www.s48.org/
@@ -23,11 +22,10 @@ EXTRACT_SUFX=		.tgz
 WANTLIB=		c m pthread
 
 USE_GMAKE=		Yes
-USE_GROFF=		Yes
 ALL_TARGET=		enough
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		LDFLAGS="-Wl,--export-dynamic -pthread"
+CONFIGURE_ENV=		LD="${CC}" LDFLAGS="-Wl,--export-dynamic"
 
 post-install: 
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/scheme48

@@ -1,3 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2008/08/19 22:20:40 jasper Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2013/02/06 20:37:34 jturner Exp $
+lib/scheme48/ffi-test.so
 lib/scheme48/posix.so
+lib/scheme48/r6rs.so
 lib/scheme48/srfi-27.so
