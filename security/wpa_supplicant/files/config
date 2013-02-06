@@ -1,4 +1,4 @@
-# $OpenBSD: config,v 1.2 2013/01/28 11:03:16 sthen Exp $
+# $OpenBSD: config,v 1.3 2013/02/06 17:27:13 sthen Exp $
 # see defconfig and README for notes
 
 CFLAGS += -I${LOCALBASE}/include/PCSC
@@ -10,6 +10,7 @@ CONFIG_DRIVER_WIRED=y
 CONFIG_DRIVER_OPENBSD=y
 CONFIG_IEEE8021X_EAPOL=y
 CONFIG_PEERKEY=y
+CONFIG_PKCS12=y
 
 CONFIG_EAP_MD5=y
 CONFIG_EAP_MSCHAPV2=y
@@ -31,6 +32,5 @@ CONFIG_EAP_SIM=y
 CONFIG_PCSC=y
 CONFIG_SMARTCARD=y
 
-# privilege separation, see README.
-# WIP: not yet tested.
+# privilege separation, see README.  not working yet.
 # CONFIG_PRIVSEP=y

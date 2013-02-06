@@ -1,16 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/01/28 11:03:16 sthen Exp $
-@comment @man man/man8/wpa_priv.8
+@comment $OpenBSD: PLIST,v 1.4 2013/02/06 17:27:13 sthen Exp $
 @comment @bin sbin/wpa_priv
 @man man/man5/wpa_supplicant.conf.5
 @man man/man8/wpa_background.8
 @man man/man8/wpa_cli.8
 @comment @man man/man8/wpa_gui.8
 @man man/man8/wpa_passphrase.8
+@comment @man man/man8/wpa_priv.8
 @man man/man8/wpa_supplicant.8
 @bin sbin/wpa_cli
 @bin sbin/wpa_passphrase
 @bin sbin/wpa_supplicant
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/wpa_supplicant/
 share/examples/wpa_supplicant/wpa_supplicant.conf
 @sample ${SYSCONFDIR}/wpa_supplicant.conf
 share/examples/wpa_supplicant/wpa_supplicant.conf.dist
+@rcscript ${RCDIR}/wpa_supplicant

@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# $OpenBSD: wpa_supplicant.rc,v 1.1 2013/02/06 17:27:13 sthen Exp $
+
+daemon="${TRUEPREFIX}/sbin/wpa_supplicant -B"
+daemon_flags="-c ${SYSCONFDIR}/wpa_supplicant.conf -D openbsd -i athn0"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1

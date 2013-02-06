@@ -1,0 +1,35 @@
+$OpenBSD: README,v 1.1 2013/02/06 17:27:13 sthen Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Configuring wireless interfaces
+===============================
+Configure your interface in the normal way using ifconfig(8) commands
+or via /etc/hostname.<iface>. You must explicitly set 802.1x mode; it is
+also recommended that the BSSID is configured explicitly, e.g.:
+
+# ifconfig rsu0 nwid humppa bssid 11:22:33:44:55:66 wpa wpaakms 802.1x up
+
+Access-point scanning is not currently supported by the OpenBSD code in
+wpa_supplicant, so ap_scan=0 should be set in ${SYSCONFDIR}/wpa_supplicant.conf.
+
+Starting wpa_supplicant at boot time
+====================================
+An rc.d(8) script is provided to start wpa_supplicant, so you can add the
+usual line to /etc/rc.conf.local:
+
+pkg_scripts="${pkg_scripts} wpa_supplicant"
+
+The interface name must be given on the command line - this is preset to
+"athn0" in the rc.d script. To use an alternative interface, do _not_
+modify the ${RCDIR}/wpa_supplicant script, but instead change this in
+/etc/rc.conf.local by adding a line using the format of one of the
+following examples:
+
+# 802.11 wireless
+wpa_supplicant_flags="-c ${SYSCONFDIR}/wpa_supplicant.conf -D openbsd -i ral0"
+
+# wired
+wpa_supplicant_flags="-c ${SYSCONFDIR}/wpa_supplicant.conf -D wired -i em0"
