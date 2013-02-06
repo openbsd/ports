@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2013/01/25 07:56:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2013/02/06 07:14:48 ajacoutot Exp $
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		3.6.2
-REVISION=		4
+REVISION=		5
 
 HOMEPAGE=		http://live.gnome.org/GnomeShell
 
@@ -14,8 +14,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
-WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
+WANTLIB += GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
 WANTLIB += asn1 atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
 WANTLIB += camel-1.2 canberra canberra-gtk3 clutter-1.0 cogl cogl-pango
 WANTLIB += com_err croco-0.6 crypto dbus-1 dbus-glib-1 drm
@@ -32,7 +32,7 @@ WANTLIB += pixman-1 plc4 plds4 png polkit-agent-1 polkit-gobject-1
 WANTLIB += pthread pthread-stubs pulse pulse-mainloop-glib smime3
 WANTLIB += sndfile softokn3 soup-2.4 sqlite3 ssl3 startup-notification-1
 WANTLIB += stdc++ telepathy-glib telepathy-logger vorbis vorbisfile
-WANTLIB += xcb xcb-aux xcb-render xcb-shm
+WANTLIB += xcb xcb-aux xcb-render xcb-shm FLAC Xtst vorbisenc
 
 MODULES=		devel/dconf \
 			devel/gettext \
@@ -77,14 +77,14 @@ MODGNOME_DESKTOP_FILE=	Yes
 
 LIBTOOL_FLAGS= 		--tag=disable-static
 
-CONFIGURE_STYLE=	autoconf
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-static \
 			--without-systemd
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.11
-BUILD_DEPENDS +=	devel/autoconf/${AUTOCONF_VERSION} \
-			devel/automake/${AUTOMAKE_VERSION} \
+BUILD_DEPENDS +=	${MODGNU_AUTOMAKE_DEPENDS} \
+			${MODGNU_AUTOCONF_DEPENDS} \
 			devel/libtool \
 			x11/gnome/common
 
