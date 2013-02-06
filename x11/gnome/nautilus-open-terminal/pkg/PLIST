@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/09/29 10:52:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/02/06 14:23:07 ajacoutot Exp $
 lib/nautilus/extensions-3.0/libnautilus-open-terminal.so
 share/locale/ar/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/as/LC_MESSAGES/nautilus-open-terminal.mo
@@ -61,7 +61,7 @@ share/locale/uk/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/vi/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/zh_CN/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/zh_TW/LC_MESSAGES/nautilus-open-terminal.mo
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/nautilus-open-terminal.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2012/11/27 08:15:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2013/02/06 14:23:06 ajacoutot Exp $
 @bin bin/ekiga
 bin/ekiga-config-tool
 @bin bin/ekiga-helper
@@ -639,10 +639,10 @@ share/omf/ekiga/ekiga-uk.omf
 share/omf/ekiga/ekiga-zh_CN.omf
 share/pixmaps/ekiga/
 share/pixmaps/ekiga/ekiga-logo.png
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/ekiga.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1
 share/sounds/
 share/sounds/ekiga/
 share/sounds/ekiga/busytone.wav

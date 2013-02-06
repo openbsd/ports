@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/11/12 14:22:13 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/02/06 14:23:06 ajacoutot Exp $
 @bin bin/compiz
 @bin bin/gtk-window-decorator
 include/compiz/
@@ -172,7 +172,7 @@ share/locale/zh_TW/LC_MESSAGES/compiz.mo
 share/locale/zu/
 share/locale/zu/LC_MESSAGES/
 share/locale/zu/LC_MESSAGES/compiz.mo
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/compiz-annotate.schemas
 ${SCHEMAS_INSTDIR}/compiz-blur.schemas
@@ -207,4 +207,4 @@ ${SCHEMAS_INSTDIR}/compiz-water.schemas
 ${SCHEMAS_INSTDIR}/compiz-wobbly.schemas
 ${SCHEMAS_INSTDIR}/compiz-zoom.schemas
 ${SCHEMAS_INSTDIR}/gwd.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1

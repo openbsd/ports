@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2012/09/29 10:52:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2013/02/06 14:23:07 ajacoutot Exp $
 @bin bin/planner
 include/planner-1.0/
 include/planner-1.0/libplanner/
@@ -287,10 +287,10 @@ share/planner/ui/sql-plugin.ui
 share/planner/ui/task-view.ui
 share/planner/ui/time-table-view.ui
 share/planner/ui/xml-planner-plugin.ui
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/planner.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-mime-database %D/share/mime

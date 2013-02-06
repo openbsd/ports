@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.29 2012/09/06 12:37:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.30 2013/02/06 14:23:06 ajacoutot Exp $
 @conflict gstreamer-plugins-bad-<0.10.22
 @conflict gstreamer-jpeg-*
 @conflict gstreamer-png-*
@@ -129,7 +129,7 @@ share/locale/vi/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
 share/locale/zh_CN/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
 share/locale/zh_HK/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
 share/locale/zh_TW/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/gstreamer-${VERSION}.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1

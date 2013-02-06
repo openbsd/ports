@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2012/09/27 16:18:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2013/02/06 14:23:06 ajacoutot Exp $
 @conflict gnucash-docs-<=2.2.0
 @pkgpath productivity/gnucash-docs
 bin/gnc-fq-check
@@ -1357,7 +1357,7 @@ share/omf/gnucash-docs/
 share/omf/gnucash-docs/gnucash-guide-C.omf
 share/omf/gnucash-docs/gnucash-help-C.omf
 share/omf/gnucash-docs/gnucash-help-de_DE.omf
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/apps_gnucash_dialog_business_common.schemas
 ${SCHEMAS_INSTDIR}/apps_gnucash_dialog_commodities.schemas
@@ -1374,7 +1374,7 @@ ${SCHEMAS_INSTDIR}/apps_gnucash_import_qif.schemas
 ${SCHEMAS_INSTDIR}/apps_gnucash_warnings.schemas
 ${SCHEMAS_INSTDIR}/apps_gnucash_window_pages_account_tree.schemas
 ${SCHEMAS_INSTDIR}/apps_gnucash_window_pages_register.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database

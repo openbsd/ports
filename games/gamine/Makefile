@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2012/06/15 08:32:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2013/02/06 14:23:06 ajacoutot Exp $
 
 COMMENT=	interactive game for young children
 
 DISTNAME=	gamine-1.1
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	games
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2012/09/29 10:52:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2013/02/06 14:23:06 ajacoutot Exp $
 %%SHARED%%
 @bin bin/gnome-open
 include/libgnome-2.0/
@@ -191,7 +191,7 @@ share/pixmaps/
 share/pixmaps/backgrounds/
 share/pixmaps/backgrounds/gnome/
 share/pixmaps/backgrounds/gnome/background-default.jpg
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/desktop_gnome_accessibility_keyboard.schemas
 ${SCHEMAS_INSTDIR}/desktop_gnome_accessibility_startup.schemas
@@ -211,4 +211,4 @@ ${SCHEMAS_INSTDIR}/desktop_gnome_sound.schemas
 ${SCHEMAS_INSTDIR}/desktop_gnome_thumbnail_cache.schemas
 ${SCHEMAS_INSTDIR}/desktop_gnome_thumbnailers.schemas
 ${SCHEMAS_INSTDIR}/desktop_gnome_typing_break.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1

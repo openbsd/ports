@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2012/09/06 12:38:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.113 2013/02/06 14:23:06 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -13,7 +13,7 @@ REVISION-main=	2
 PKGNAME-finch=	finch-${VERSION}
 REVISION-finch=	2
 PKGNAME-libpurple= libpurple-${VERSION}
-REVISION-libpurple= 2
+REVISION-libpurple= 3
 .for i in -finch -libpurple
 FULLPKGNAME$i= ${PKGNAME$i}${FLAVOR_EXT:S/-gtkspell//}
 FULLPKGPATH$i= ${PKGPATH},$i${FLAVOR_EXT:S/-gtkspell//:S/-/,/g}

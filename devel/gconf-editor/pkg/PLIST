@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2012/06/15 08:32:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2013/02/06 14:23:06 ajacoutot Exp $
 @bin bin/gconf-editor
 @man man/man1/gconf-editor.1
 share/applications/gconf-editor.desktop
@@ -348,10 +348,10 @@ share/omf/gconf-editor/gconf-editor-uk.omf
 share/omf/gconf-editor/gconf-editor-zh_CN.omf
 share/omf/gconf-editor/gconf-editor-zh_HK.omf
 share/omf/gconf-editor/gconf-editor-zh_TW.omf
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/gconf-editor.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

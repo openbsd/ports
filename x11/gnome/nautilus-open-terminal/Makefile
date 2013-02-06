@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2012/09/29 10:52:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2013/02/06 14:23:07 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	open terminal from a nautilus folder
 
 GNOME_PROJECT=	nautilus-open-terminal
 GNOME_VERSION=	0.19
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	sysutils
 

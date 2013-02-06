@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2012/09/29 10:52:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2013/02/06 14:23:07 ajacoutot Exp $
 @pkgpath x11/gnome/vfs2
 @pkgpath x11/gnome/vfs2,-main
 @pkgpath x11/gnome/vfs2,-smb
@@ -251,11 +251,11 @@ share/locale/zh_CN/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/zu/LC_MESSAGES/gnome-vfs-2.0.mo
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/desktop_default_applications.schemas
 ${SCHEMAS_INSTDIR}/desktop_gnome_url_handlers.schemas
 ${SCHEMAS_INSTDIR}/system_dns_sd.schemas
 ${SCHEMAS_INSTDIR}/system_http_proxy.schemas
 ${SCHEMAS_INSTDIR}/system_smb.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1

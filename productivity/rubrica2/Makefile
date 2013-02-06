@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2012/09/21 14:48:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2013/02/06 14:23:06 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	addressbook manager
 
 DISTNAME=	rubrica2-2.0.7
-REVISION=	5
+REVISION=	6
 EPOCH=		0
 
 CATEGORIES=	productivity x11
