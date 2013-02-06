@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2013/01/04 01:17:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2013/02/06 23:13:17 landry Exp $
 
 COMMENT=	Xfce4 advanced calendar
 
 XFCE_GOODIE=	orage
-XFCE_VERSION=	4.8.3
-REVISION=	3
+XFCE_VERSION=	4.8.4
 
 HOMEPAGE=	http://www.xfce.org/projects/orage
 # GPLv2
