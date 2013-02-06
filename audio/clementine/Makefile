@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/02/06 13:23:03 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2013/02/06 20:47:41 zhuk Exp $
 
 SHARED_ONLY =	Yes
 CATEGORIES =	audio x11
@@ -64,6 +64,10 @@ CONFIGURE_ARGS +=	-DENABLE_BREAKPAD:Bool=No
 
 # Unported stuff
 CONFIGURE_ARGS +=	-DENABLE_SOUNDMENU:Bool=No
+
+# XXX Builds tend to sometimes omit projectM presets when this option
+# is missing. To be investigated.
+CONFIGURE_ARGS +=	-DBUNDLE_PROJECTM_PRESETS:Bool=Yes
 
 post-extract:
 	cp ${FILESDIR}/FindExecinfo.cmake ${WRKSRC}/cmake
