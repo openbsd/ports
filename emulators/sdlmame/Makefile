@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/02/06 09:08:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2013/02/06 10:19:52 sthen Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -79,9 +79,9 @@ pre-patch:
 	    ${WRKDIST}/src/emu/fileio.h \
 	    ${WRKDIST}/src/emu/machine/netlist.h \
 	    ${WRKDIST}/src/osd/sdl/sdl.mak
+	@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
 
 pre-build:
-	-@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
 	${SUBST_CMD} ${WRKDIST}/src/osd/sdl/sdl.mak
 
 do-install:
