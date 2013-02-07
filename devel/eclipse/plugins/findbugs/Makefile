@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/02/07 20:12:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2013/02/07 20:21:03 jasper Exp $
 
 COMMENT=		Eclipse plugin for Java program checker (bytecode analyzer)
 
@@ -20,8 +20,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=findbugs/}
-
-RUN_DEPENDS=		devel/eclipse/sdk>=3.2
 
 SUBST_VARS=		V
 

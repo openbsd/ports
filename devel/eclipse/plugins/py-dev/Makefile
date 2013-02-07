@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/02/07 20:12:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2013/02/07 20:21:03 jasper Exp $
 
 COMMENT =	Python development plug-in for Eclipse
 
@@ -7,7 +7,7 @@ SVN =		2788
 SUBST_VARS =	V SVN
 DISTNAME =	org.python.pydev.feature-${V}.${SVN}
 PKGNAME =	py-dev-${V}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES +=	lang/python
 
@@ -22,10 +22,6 @@ PERMIT_DISTFILES_CDROM =EPL Indemnify clause
 PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=pydev/}
-
-RUN_DEPENDS=	devel/eclipse/sdk
-
-WRKDIST =	${WRKDIR}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/eclipse/

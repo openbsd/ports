@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2013/02/07 20:12:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2013/02/07 20:21:03 jasper Exp $
 
 COMMENT=		Ruby Development Tools for Eclipse IDE
 
 V=			0.8.0
 DISTNAME=		org.rubypeople.rdt-0.8.0.604272100PRD
 PKGNAME=		eclipse-plugin-rdt-${V}
-REVISION=		3
+REVISION=		4
 CATEGORIES+=		lang/ruby
 
 HOMEPAGE=		http://rubyeclipse.sourceforge.net/
@@ -22,9 +22,6 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=rubyeclipse/}
 
 MODULES=		lang/ruby
 MODRUBY_BUILDDEP=	No
-RUN_DEPENDS=		devel/eclipse/sdk>=3.1
-			
-WRKDIST=		${WRKDIR}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/eclipse

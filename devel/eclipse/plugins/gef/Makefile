@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/02/07 20:12:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2013/02/07 20:21:03 jasper Exp $
 
 COMMENT=		graphical editing environment for eclipse
 
@@ -19,10 +19,6 @@ PERMIT_DISTFILES_CDROM=	commercial distribution defend and indemnify clauses
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://download.eclipse.org/tools/gef/downloads/drops/R-3.2.2-200702081315/
-
-RUN_DEPENDS=		devel/eclipse/sdk>=3.2
-
-WRKDIST=		${WRKDIR}
 
 do-install:
 	cd ${WRKDIST} && tar cfL - eclipse | \

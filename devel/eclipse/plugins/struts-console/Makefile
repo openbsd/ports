@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/02/07 20:12:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2013/02/07 20:21:03 jasper Exp $
 
 COMMENT=		configuration tool for Struts web framework
 
@@ -25,7 +25,8 @@ TAR=			${LOCALBASE}/bin/gtar
 EXTRACT_SUFX=		.tar.gz
 
 BUILD_DEPENDS=		archivers/gtar
-RUN_DEPENDS=		devel/eclipse/sdk>=3.2
+
+WRKDIST=		${WRKDIR}/${DISTNAME}
 
 PKG_ARCH=		*
 
