@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/02/02 11:15:01 stu Exp $
+# $OpenBSD: Makefile,v 1.2 2013/02/07 22:46:53 stu Exp $
 
 COMMENT =		Tool Command Language
 
 DISTNAME =		tcl8.6.0
 PKGNAME =		tcl-8.6.0
+REVISION =		0
 SHARED_LIBS =		tcl86 0.0
 CATEGORIES =		lang lang/tcl
 HOMEPAGE =		http://www.tcl.tk/
@@ -18,7 +19,7 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB =		c m pthread z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tcl/}
-DISTFILES =		${DISTNAME}-src.tar.gz
+DISTFILES =		tcl-core8.6.0-src.tar.gz
 
 MAKE_FLAGS +=		TCL_PACKAGE_PATH='$$(prefix)/lib/tcl' \
 			TCL_LIBRARY='$$(prefix)/lib/tcl/tcl$$(VERSION)'
