@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2012/08/26 15:43:51 stu Exp $
+# $OpenBSD: Makefile,v 1.9 2013/02/07 15:22:58 stu Exp $
 
 COMMENT =	Tcl implementation for the CLR
 
 V =		1.0
-P =		4567.36231
+P =		4691.37889
 DISTNAME =	eagle-${V}
-PKGNAME =	${DISTNAME}-beta24
+PKGNAME =	${DISTNAME}-beta26
 CATEGORIES =	lang lang/tcl
 HOMEPAGE =	http://eagle.to/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
@@ -41,9 +41,7 @@ EAGLE_LIB_DIR =	${EAGLE_INS_DIR}/lib/Eagle${V}
 EAGLE_BIN =	${PREFIX}/bin/eagle
 
 # Some tests are too timing-sensitive to succeed everywhere so don't run them
-# Socket-2.2 hangs so skip it
-EAGLE_REGRESS_FLAGS =	-notFile 'benchmark.eagle delayout.eagle perf*.eagle' \
-			-skip socket-2.2
+EAGLE_REGRESS_FLAGS = -notFile 'benchmark.eagle delayout.eagle perf*.eagle'
 
 do-install:
 	${INSTALL_DATA_DIR} ${EAGLE_BIN_DIR} ${EAGLE_LIB_DIR}
