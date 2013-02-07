@@ -1,0 +1,3 @@
+Interface standard for SQL databases and connectivity
+that aims to make it easy to write portable and
+secure Tcl scripts that access SQL databases.

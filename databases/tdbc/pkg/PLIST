@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/02/07 05:21:19 stu Exp $
+include/tdbc/
+include/tdbc/tdbc.h
+include/tdbc/tdbcDecls.h
+include/tdbc/tdbcInt.h
+lib/tcl/tdbc/
+@lib lib/tcl/tdbc/libtdbc100.so.${LIBtdbc100_VERSION}
+lib/tcl/tdbc/libtdbcstub100.a
+lib/tcl/tdbc/pkgIndex.tcl
+lib/tcl/tdbc/tdbc.tcl
+lib/tcl/tdbc/tdbcConfig.sh
+@man man/man3/Tdbc_Init.3
+@man man/mann/tdbc.n
+@man man/mann/tdbc_connection.n
+@man man/mann/tdbc_mapSqlState.n
+@man man/mann/tdbc_resultset.n
+@man man/mann/tdbc_statement.n
+@man man/mann/tdbc_tokenize.n

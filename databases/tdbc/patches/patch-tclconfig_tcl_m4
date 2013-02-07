@@ -1,0 +1,12 @@
+$OpenBSD: patch-tclconfig_tcl_m4,v 1.1.1.1 2013/02/07 05:21:19 stu Exp $
+--- tclconfig/tcl.m4.orig	Fri Dec 28 16:34:20 2012
++++ tclconfig/tcl.m4	Fri Dec 28 16:36:00 2012
+@@ -4055,7 +4055,7 @@ AC_DEFUN([TEA_EXPORT_CONFIG], [
+     #--------------------------------------------------------------------
+ 
+     # pkglibdir must be a fully qualified path and (not ${exec_prefix}/lib)
+-    eval pkglibdir="[$]{libdir}/$1${PACKAGE_VERSION}"
++    eval pkglibdir="[$]{libdir}/$1"
+     if test "${TCL_LIB_VERSIONS_OK}" = "ok"; then
+ 	eval $1_LIB_FLAG="-l$1${PACKAGE_VERSION}${DBGX}"
+ 	eval $1_STUB_LIB_FLAG="-l$1stub${PACKAGE_VERSION}${DBGX}"
