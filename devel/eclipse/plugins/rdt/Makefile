@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/02/04 13:13:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2013/02/07 20:12:52 jasper Exp $
 
 COMMENT=		Ruby Development Tools for Eclipse IDE
 
@@ -24,9 +24,6 @@ MODULES=		lang/ruby
 MODRUBY_BUILDDEP=	No
 RUN_DEPENDS=		devel/eclipse/sdk>=3.1
 			
-NO_BUILD=		Yes
-NO_REGRESS=		Yes
-
 WRKDIST=		${WRKDIR}
 
 do-install:

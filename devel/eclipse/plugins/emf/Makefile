@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/02/04 13:13:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2013/02/07 20:12:52 jasper Exp $
 
 COMMENT=		Eclipse Modeling Framework (EMF)
 
@@ -21,9 +21,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://download.eclipse.org/modeling/emf/emf/downloads/drops/${V}/R200705141058/
 
 RUN_DEPENDS=		devel/eclipse/sdk>=3.2
-
-NO_BUILD=		Yes
-NO_REGRESS=		Yes
 
 WRKDIST=		${WRKDIR}
 

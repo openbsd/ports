@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/02/04 13:13:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2013/02/07 20:12:52 jasper Exp $
 
 COMMENT=		SubVersion plug-in for Eclipse IDE
 
@@ -27,9 +27,6 @@ MASTER_SITES=		http://subclipse.tigris.org/files/documents/906/37653/
 FETCH_CMD=		lynx -accept_all_cookies -source >${DISTDIR}/$$f
 
 RUN_DEPENDS=		devel/eclipse/sdk>=3.2
-
-NO_BUILD=		Yes
-NO_REGRESS=		Yes
 
 WRKDIST=		${WRKDIR}
 

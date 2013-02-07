@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/02/04 13:13:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2013/02/07 20:12:52 jasper Exp $
 
 COMMENT=		Web Tools Platform for Eclipse
 
@@ -24,9 +24,6 @@ MASTER_SITES=		http://download.eclipse.org/webtools/downloads/drops/R1.5/R-${V}-
 BUILD_DEPENDS=		archivers/gtar
 RUN_DEPENDS=		devel/eclipse/plugins/emf>=2.2.0 \
 			devel/eclipse/plugins/gef>=3.2.2
-
-NO_BUILD=		Yes
-NO_REGRESS=		Yes
 
 WRKDIST=		${WRKDIR}
 

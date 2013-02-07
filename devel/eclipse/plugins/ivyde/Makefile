@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/02/04 13:13:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2013/02/07 20:12:52 jasper Exp $
 
 COMMENT=		IVY plug-in for Eclipse IDE
 
@@ -23,9 +23,6 @@ MASTER_SITES=		http://www.jaya.free.fr/downloads/ivyde/
 RUN_DEPENDS=		devel/eclipse/sdk
 
 SUBST_VARS=		VERSION
-
-NO_BUILD=		Yes
-NO_REGRESS=		Yes
 
 WRKDIST=		${WRKDIR}
 
