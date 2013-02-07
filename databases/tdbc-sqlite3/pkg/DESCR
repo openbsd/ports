@@ -1,0 +1,5 @@
+Provides a database interface that conforms to Tcl DataBase Connectivity (TDBC)
+and allows a Tcl script to connect to a SQLite3 database.
+
+It is also provided as a working example of how to write a database driver
+in Tcl, so that driver authors have a starting point for further development.
