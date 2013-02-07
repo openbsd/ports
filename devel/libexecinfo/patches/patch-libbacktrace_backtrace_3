@@ -1,0 +1,13 @@
+$OpenBSD: patch-libbacktrace_backtrace_3,v 1.1 2013/02/07 12:30:44 zhuk Exp $
+We renamed the library to execinfo.
+--- libbacktrace/backtrace.3.orig	Thu Feb  7 14:51:59 2013
++++ libbacktrace/backtrace.3	Thu Feb  7 14:52:20 2013
+@@ -22,7 +22,7 @@
+ .Nm backtrace
+ .Nd glibc and libexecinfo backtrace compatible API
+ .Sh SYNOPSIS
+-.Fd #include <backtrace.h>
++.Fd #include <execinfo.h>
+ .Ft int
+ .Fn backtrace "void **buffer" "int depth"
+ .Ft char **

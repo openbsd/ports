@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2012/09/27 15:45:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2013/02/07 12:30:44 zhuk Exp $
 
 COMMENT =	clone of backtrace facility found in the GNU libc
 
 V =		0.2
 DISTNAME =	backtrace-$V
 PKGNAME =	libexecinfo-$V
-REVISION =	2
+REVISION =	3
 EPOCH =		0
 CATEGORIES =	devel
 
