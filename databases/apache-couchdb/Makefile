@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.15 2013/02/07 16:06:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2013/02/07 17:28:29 jasper Exp $
 
 COMMENT =	distributed, document-oriented database
 
 COUCH_VER =	1.0.4
 DISTNAME =	apache-couchdb-${COUCH_VER}
+REVISION =	0
 CATEGORIES =	databases
 
 HOMEPAGE =	http://couchdb.apache.org/
-
-MAINTAINER =	Benoit Chesneau <benoitc@e-engura.org>
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM =	Yes
