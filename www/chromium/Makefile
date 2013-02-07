@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.122 2013/02/05 06:23:25 robert Exp $
+# $OpenBSD: Makefile,v 1.123 2013/02/07 19:13:49 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 
@@ -35,7 +35,6 @@ MODULES=	gcc4 lang/python
 
 MODGCC4_ARCHS=	*
 MODGCC4_LANGS=	c++
-MODGCC4_VERSION=4.6
 
 MODPY_RUNDEP=	No
 

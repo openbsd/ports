@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.144 2013/02/01 17:34:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.145 2013/02/07 19:13:49 ajacoutot Exp $
 
 MULTI_PACKAGES=	-main -ntlm
 
@@ -64,7 +64,6 @@ USE_LIBTOOL=	Yes
 # optimizer is disabled, see e.g.
 # http://www.squid-cache.org/mail-archive/squid-users/201208/0060.html
 MODULES+=	gcc4
-MODGCC4_VERSION= 4.6
 MODGCC4_ARCHS=	powerpc
 MODGCC4_LANGS=	c c++
 

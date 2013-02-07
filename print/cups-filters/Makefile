@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/02/02 08:55:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2013/02/07 19:13:49 ajacoutot Exp $
 
 # XXX remove @exec-update when we branch 5.4-current
 
@@ -31,7 +31,6 @@ MASTER_SITES=	http://www.openprinting.org/download/cups-filters/
 MODULES +=	gcc4
 MODGCC4_ARCHS=	*
 MODGCC4_LANGS=	c++
-MODGCC4_VERSION=4.6
 
 BUILD_DEPENDS=	print/ghostscript/gnu
 

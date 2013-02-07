@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2013/01/11 13:44:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2013/02/07 19:13:49 ajacoutot Exp $
 
 BROKEN-hppa =		undefined references to __sync atomic ops
 BROKEN-mips64 =		undefined references to __sync atomic ops
@@ -32,7 +32,6 @@ MODULES=		gcc4 devel/gettext
 # https://github.com/rakshasa/rtorrent/issues/28
 MODGCC4_ARCHS=		sparc64
 MODGCC4_LANGS=		c++
-MODGCC4_VERSION=	4.6
 
 BUILD_DEPENDS=		devel/cppunit
 LIB_DEPENDS=		net/libtorrent>=0.12.9 \

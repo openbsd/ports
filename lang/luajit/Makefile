@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/12/02 19:09:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2013/02/07 19:13:49 ajacoutot Exp $
 
 ONLY_FOR_ARCHS = powerpc arm i386 amd64
 # for mips64* gcc 4.6 is needed, but that doesn't build on this arch (yet)
@@ -30,7 +30,6 @@ MASTER_SITES =	${HOMEPAGE}download/
 MODULES =	lang/lua
 
 MODULES +=	gcc4
-MODGCC4_VERSION = 4.6
 MODGCC4_ARCHS =	powerpc
 MODGCC4_LANGS =	c
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2013/02/07 18:39:58 robert Exp $
+# $OpenBSD: Makefile,v 1.84 2013/02/07 19:13:49 ajacoutot Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -141,7 +141,6 @@ BUILD_DEPENDS +=	print/cups,-libs \
 MODULES+=	gcc4
 MODGCC4_ARCHS=	*
 MODGCC4_LANGS=	c++
-MODGCC4_VERSION=4.6
 
 MODULES+=	lang/python \
 		devel/gettext

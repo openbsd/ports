@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2013/01/13 02:18:47 brad Exp $
+# $OpenBSD: Makefile,v 1.32 2013/02/07 19:13:49 ajacoutot Exp $
 
 # uses gcj which is only supported on select archs
 ONLY_FOR_ARCHS=	amd64 i386 sparc64
@@ -28,7 +28,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	devel/gettext gcc4
-MODGCC4_VERSION= 4.6
 MODGCC4_ARCHS=	*
 MODGCC4_LANGS=	java
 USE_GROFF =	Yes
