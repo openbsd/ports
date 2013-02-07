@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.98 2013/02/03 21:45:52 espie Exp $
+# $OpenBSD: Port.pm,v 1.99 2013/02/07 06:46:58 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -824,7 +824,7 @@ sub add_normal_tasks
 	if ($hostprop->{junk}) {
 		if ($hostprop->{depends_count} >= $hostprop->{junk}) {
 			my $fh = $self->{builder}->logger->open("junk");
-			print $fh time(), ": ", $core->hostname,
+			print $fh "$$@", CORE::time(), ": ", $core->hostname,
 			    ": depends=$hostprop->{depends_count} ",
 			    " ports=$hostprop->{ports_count} ",
 			    " junk=$hostprop->{junk_count} -> $self->{path}\n";
