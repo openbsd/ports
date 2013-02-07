@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2013/01/16 20:25:30 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2013/02/07 14:21:04 stu Exp $
 @pkgpath textproc/xml2rfc,no_x11
 bin/xml2rfc
 share/doc/xml2rfc/
@@ -17,5 +17,6 @@ share/doc/xml2rfc/rfc2629.xml
 share/doc/xml2rfc/rfc2629.xsd
 share/doc/xml2rfc/test.txt
 share/doc/xml2rfc/test.xml
+share/doc/xml2rfc/xml.xsd
 share/xml2rfc/
 share/xml2rfc/xml2rfc.tcl
