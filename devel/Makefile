@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1106 2013/02/05 11:16:14 zhuk Exp $
+# $OpenBSD: Makefile,v 1.1107 2013/02/07 22:58:49 stu Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1284,6 +1284,7 @@
      SUBDIR += tclap
      SUBDIR += tclcl
      SUBDIR += tcllib
+     SUBDIR += tclthread
      SUBDIR += teensyloader
      SUBDIR += tig
      SUBDIR += tkcvs
