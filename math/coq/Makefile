@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/02/07 12:16:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2013/02/07 22:03:36 nigel Exp $
 
 COMMENT=		proof assistant based on a typed lambda calculus
 
@@ -25,7 +25,8 @@ WANTLIB += xcb xcb-render xcb-shm z
 MASTER_SITES=	${HOMEPAGE}distrib/V${V}/files/
 
 RUN_DEPENDS=	x11/lablgtk2
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		sysutils/findlib
 
 DESTDIRNAME=	COQINSTALLPREFIX
 
