@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.7 2011/04/01 07:38:16 jasper Exp $
---- Makefile.in.orig	Wed Aug 11 20:18:54 2010
-+++ Makefile.in	Fri Apr  1 09:37:58 2011
-@@ -291,18 +291,18 @@ version_stage = @version_stage@
+$OpenBSD: patch-Makefile_in,v 1.8 2013/02/07 16:06:43 jasper Exp $
+--- Makefile.in.orig	Thu Dec 20 22:00:16 2012
++++ Makefile.in	Tue Jan 15 21:25:59 2013
+@@ -332,18 +332,18 @@ version_stage = @version_stage@
  SUBDIRS = bin etc src share test var utils
  ACLOCAL_AMFLAGS = -I m4
  localdoc_DATA = \

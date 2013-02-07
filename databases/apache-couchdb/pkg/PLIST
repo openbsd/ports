@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/11/24 08:18:09 landry Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/02/07 16:06:43 jasper Exp $
 @newgroup _couchdb:621
 @newuser _couchdb:621:_couchdb:daemon:CouchDB account:/var/couchdb:/bin/sh
 %%SHARED%%
@@ -94,16 +94,16 @@ lib/couchdb/erlang/lib/etap/ebin/etap_report.beam
 lib/couchdb/erlang/lib/etap/ebin/etap_request.beam
 lib/couchdb/erlang/lib/etap/ebin/etap_string.beam
 lib/couchdb/erlang/lib/etap/ebin/etap_web.beam
-lib/couchdb/erlang/lib/ibrowse-1.5.2/
-lib/couchdb/erlang/lib/ibrowse-1.5.2/ebin/
-lib/couchdb/erlang/lib/ibrowse-1.5.2/ebin/ibrowse.app
-lib/couchdb/erlang/lib/ibrowse-1.5.2/ebin/ibrowse.beam
-lib/couchdb/erlang/lib/ibrowse-1.5.2/ebin/ibrowse_app.beam
-lib/couchdb/erlang/lib/ibrowse-1.5.2/ebin/ibrowse_http_client.beam
-lib/couchdb/erlang/lib/ibrowse-1.5.2/ebin/ibrowse_lb.beam
-lib/couchdb/erlang/lib/ibrowse-1.5.2/ebin/ibrowse_lib.beam
-lib/couchdb/erlang/lib/ibrowse-1.5.2/ebin/ibrowse_sup.beam
-lib/couchdb/erlang/lib/ibrowse-1.5.2/ebin/ibrowse_test.beam
+lib/couchdb/erlang/lib/ibrowse-2.2.0/
+lib/couchdb/erlang/lib/ibrowse-2.2.0/ebin/
+lib/couchdb/erlang/lib/ibrowse-2.2.0/ebin/ibrowse.app
+lib/couchdb/erlang/lib/ibrowse-2.2.0/ebin/ibrowse.beam
+lib/couchdb/erlang/lib/ibrowse-2.2.0/ebin/ibrowse_app.beam
+lib/couchdb/erlang/lib/ibrowse-2.2.0/ebin/ibrowse_http_client.beam
+lib/couchdb/erlang/lib/ibrowse-2.2.0/ebin/ibrowse_lb.beam
+lib/couchdb/erlang/lib/ibrowse-2.2.0/ebin/ibrowse_lib.beam
+lib/couchdb/erlang/lib/ibrowse-2.2.0/ebin/ibrowse_sup.beam
+lib/couchdb/erlang/lib/ibrowse-2.2.0/ebin/ibrowse_test.beam
 lib/couchdb/erlang/lib/mochiweb-r113/
 lib/couchdb/erlang/lib/mochiweb-r113/ebin/
 lib/couchdb/erlang/lib/mochiweb-r113/ebin/mochifmt.beam
@@ -181,6 +181,8 @@ share/couchdb/www/image/running.png
 share/couchdb/www/image/save.png
 share/couchdb/www/image/sidebar-toggle.png
 share/couchdb/www/image/spinner.gif
+share/couchdb/www/image/spinner_33.gif
+share/couchdb/www/image/spinner_6b.gif
 share/couchdb/www/image/test_failure.gif
 share/couchdb/www/image/test_success.gif
 share/couchdb/www/image/thead-key.gif
@@ -215,6 +217,7 @@ share/couchdb/www/script/oauth.js
 share/couchdb/www/script/sha1.js
 share/couchdb/www/script/test/
 share/couchdb/www/script/test/all_docs.js
+share/couchdb/www/script/test/attachment_conflicts.js
 share/couchdb/www/script/test/attachment_names.js
 share/couchdb/www/script/test/attachment_paths.js
 share/couchdb/www/script/test/attachment_views.js
