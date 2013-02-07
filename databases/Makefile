@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.233 2013/02/03 16:45:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.234 2013/02/07 14:19:53 stu Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -238,6 +238,8 @@
      SUBDIR += sqsh
      SUBDIR += strigi
      SUBDIR += tdb
+     SUBDIR += tdbc
+     SUBDIR += tdbc-sqlite3
      SUBDIR += tinycdb
      SUBDIR += xapian-core
      SUBDIR += xmysql
