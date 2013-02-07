@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/02/07 05:21:19 stu Exp $
+# $OpenBSD: Makefile,v 1.2 2013/02/07 07:15:03 ajacoutot Exp $
 
 COMMENT =	Tcl Database Connectivity
 
@@ -26,7 +26,7 @@ RUN_DEPENDS =		${MODTCL_RUN_DEPENDS}
 FAKE_FLAGS =		PKG_DIR=tdbc
 SEPARATE_BUILD =	Yes
 USE_GROFF =		Yes
-CONFIGURE_STYLE =	gnu autoconf no-autoheader
+CONFIGURE_STYLE =	autoconf no-autoheader
 
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--with-tcl=${MODTCL_LIBDIR} \
