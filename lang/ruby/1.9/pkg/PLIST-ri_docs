@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ri_docs,v 1.5 2013/01/23 18:18:41 jeremy Exp $
+@comment $OpenBSD: PLIST-ri_docs,v 1.6 2013/02/07 19:02:20 jeremy Exp $
 @option no-default-conflict
 @conflict ruby-ri_docs->=1.9,<1.10
 share/ri/${RUBYLIBREV}/system/ACL/
@@ -12804,6 +12804,7 @@ share/ri/${RUBYLIBREV}/system/Socket/udp_server_sockets-c.ri
 share/ri/${RUBYLIBREV}/system/Socket/unix-c.ri
 share/ri/${RUBYLIBREV}/system/Socket/unix_server_loop-c.ri
 share/ri/${RUBYLIBREV}/system/Socket/unix_server_socket-c.ri
+share/ri/${RUBYLIBREV}/system/Socket/unix_socket_abstract_name%3f-c.ri
 share/ri/${RUBYLIBREV}/system/Socket/unpack_sockaddr_in-c.ri
 share/ri/${RUBYLIBREV}/system/Socket/unpack_sockaddr_un-c.ri
 share/ri/${RUBYLIBREV}/system/SocketError/

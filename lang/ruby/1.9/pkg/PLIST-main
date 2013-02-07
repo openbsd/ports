@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2012/10/24 22:49:05 jeremy Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2013/02/07 19:02:20 jeremy Exp $
 @option no-default-conflict
 @conflict ruby->=1.9,<1.10
 bin/erb19
@@ -871,17 +871,17 @@ lib/ruby/gems/${RUBYLIBREV}/gems/
 lib/ruby/gems/${RUBYLIBREV}/gems/rake-0.9.2.2/
 lib/ruby/gems/${RUBYLIBREV}/gems/rake-0.9.2.2/bin/
 lib/ruby/gems/${RUBYLIBREV}/gems/rake-0.9.2.2/bin/rake
-lib/ruby/gems/${RUBYLIBREV}/gems/rdoc-3.9.4/
-lib/ruby/gems/${RUBYLIBREV}/gems/rdoc-3.9.4/bin/
-lib/ruby/gems/${RUBYLIBREV}/gems/rdoc-3.9.4/bin/rdoc
-lib/ruby/gems/${RUBYLIBREV}/gems/rdoc-3.9.4/bin/ri
+lib/ruby/gems/${RUBYLIBREV}/gems/rdoc-3.9.5/
+lib/ruby/gems/${RUBYLIBREV}/gems/rdoc-3.9.5/bin/
+lib/ruby/gems/${RUBYLIBREV}/gems/rdoc-3.9.5/bin/rdoc
+lib/ruby/gems/${RUBYLIBREV}/gems/rdoc-3.9.5/bin/ri
 lib/ruby/gems/${RUBYLIBREV}/specifications/
 lib/ruby/gems/${RUBYLIBREV}/specifications/bigdecimal-1.1.0.gemspec
 lib/ruby/gems/${RUBYLIBREV}/specifications/io-console-0.3.gemspec
 lib/ruby/gems/${RUBYLIBREV}/specifications/json-1.5.4.gemspec
 lib/ruby/gems/${RUBYLIBREV}/specifications/minitest-2.5.1.gemspec
 lib/ruby/gems/${RUBYLIBREV}/specifications/rake-0.9.2.2.gemspec
-lib/ruby/gems/${RUBYLIBREV}/specifications/rdoc-3.9.4.gemspec
+lib/ruby/gems/${RUBYLIBREV}/specifications/rdoc-3.9.5.gemspec
 lib/ruby/site_ruby/
 lib/ruby/site_ruby/${RUBYLIBREV}/
 lib/ruby/site_ruby/${RUBYLIBREV}/${SUB}/
