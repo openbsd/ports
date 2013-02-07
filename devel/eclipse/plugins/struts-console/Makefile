@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/02/07 20:21:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2013/02/07 20:23:14 jasper Exp $
 
 COMMENT=		configuration tool for Struts web framework
 
@@ -20,11 +20,6 @@ PERMIT_DISTFILES_CDROM=	no redistribution
 PERMIT_DISTFILES_FTP=	no redistribution
 
 MASTER_SITES=		http://www.jamesholmes.com/struts/
-
-TAR=			${LOCALBASE}/bin/gtar
-EXTRACT_SUFX=		.tar.gz
-
-BUILD_DEPENDS=		archivers/gtar
 
 WRKDIST=		${WRKDIR}/${DISTNAME}
 
