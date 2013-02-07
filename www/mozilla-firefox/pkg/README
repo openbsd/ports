@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.7 2012/10/10 20:56:14 landry Exp $
+$OpenBSD: README,v 1.8 2013/02/07 18:54:27 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -36,15 +36,6 @@ Firefox looks for plugins in ~/.mozilla/plugins and
 ${TRUEPREFIX}/lib/mozilla/plugins.
 If the environment variable MOZ_PLUGIN_PATH is specified, this
 location will be overridden.
-
-Enabling ECC cipher suites
-==========================
-Open the URL about:config and type security.ssl3 in the search
-filter. This will bring up a list of all available cipher suites.
-Double-click on any cipher to toggle its state. For example, to
-enable TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, double-click on
-security.ssl3.ecdhe_ecdsa_aes128_sha until its boolean entry in the
-Value column changes to true.
 
 Debugging
 =========
