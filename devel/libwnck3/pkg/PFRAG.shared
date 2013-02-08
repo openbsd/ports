@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/04/29 07:30:49 jasper Exp $
-@lib lib/libwnck-3.so.${LIBwnck-3_VERSION}

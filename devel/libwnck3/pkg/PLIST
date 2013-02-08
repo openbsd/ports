@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/11/13 08:12:21 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.5 2013/02/08 18:37:26 jasper Exp $
 @bin bin/wnck-urgency-monitor3
 @bin bin/wnckprop3
 include/libwnck-3.0/
@@ -21,6 +20,7 @@ lib/girepository-1.0/
 lib/girepository-1.0/Wnck-3.0.typelib
 lib/libwnck-3.a
 lib/libwnck-3.la
+@lib lib/libwnck-3.so.${LIBwnck-3_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/libwnck-3.0.pc
 share/gir-1.0/
@@ -215,8 +215,6 @@ share/locale/oc/LC_MESSAGES/libwnck-3.0.mo
 share/locale/or/
 share/locale/or/LC_MESSAGES/
 share/locale/or/LC_MESSAGES/libwnck-3.0.mo
-share/locale/pa/
-share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/libwnck-3.0.mo
 share/locale/pl/LC_MESSAGES/libwnck-3.0.mo
 share/locale/pt/LC_MESSAGES/libwnck-3.0.mo

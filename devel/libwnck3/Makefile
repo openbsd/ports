@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2012/11/13 08:12:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2013/02/08 18:37:26 jasper Exp $
 
 COMMENT=		window navigator construction kit
 
 GNOME_PROJECT=		libwnck
-GNOME_VERSION=		3.4.4
+GNOME_VERSION=		3.4.5
 PKGNAME=		${GNOME_PROJECT}3-${GNOME_VERSION}
 
 SHARED_LIBS +=  wnck-3               2.0      # 2.0
@@ -19,16 +19,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL X11 X11-xcb XRes Xau Xcomposite Xcursor Xdamage
-WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
-WANTLIB += atk-1.0 c cairo cairo-gobject drm expat ffi fontconfig
+WANTLIB += ICE SM X11 X11-xcb XRes Xcomposite Xcursor Xdamage
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0
+WANTLIB += atspi c cairo cairo-gobject dbus-1 expat ffi fontconfig
 WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gthread-2.0 gtk-3 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += startup-notification-1 stdc++ xcb xcb-aux xcb-render
-WANTLIB += xcb-shm z
-WANTLIB += ICE SM atk-bridge-2.0 atspi dbus-1 harfbuzz icudata
-WANTLIB += icule icuuc
+WANTLIB += gobject-2.0 gthread-2.0 gtk-3 harfbuzz icudata icule
+WANTLIB += icuuc m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 png pthread pthread-stubs startup-notification-1
+WANTLIB += xcb xcb-aux xcb-render xcb-shm z
 
 MODULES=		devel/gettext \
 			x11/gnome
