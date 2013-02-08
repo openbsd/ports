@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2012/10/15 09:48:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.86 2013/02/08 17:12:31 bcallah Exp $
 
 SHARED_ONLY=	Yes
 
@@ -124,7 +124,11 @@ CONFIGURE_ARGS+= --disable$s
 .endfor
 
 post-install:
+# This will fail if no_nautilus is found in FLAVOR, so make sure we don't
+# do it if it is.
+.if !${FLAVOR:L:Mno_nautilus}
 	rm ${PREFIX}/lib/nautilus/extensions-${MAJ_V}/*.la
+.endif
 	rm ${PREFIX}/lib/evince/4/backends/*.la
 
 .include <bsd.port.mk>
