@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/10/12 18:13:38 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2013/02/08 02:55:16 bcallah Exp $
 
 COMMENT =		3D light cycle game
 
 DISTNAME =		armagetronad-0.2.8.3.2.src
 PKGNAME =		${DISTNAME:S/.src//}
+REVISION =		0
 
 CATEGORIES =		games
 
@@ -33,8 +34,7 @@ CONFIGURE_ARGS +=	--enable-games=no \
 			--disable-useradd \
 			--disable-initscripts \
 			--disable-sysinstall \
-			--disable-binreloc \
-			--enable-music
+			--disable-binreloc
 
 WRKDIST =		${WRKDIR}/${DISTNAME:S/.src//}
 
