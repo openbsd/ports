@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2013/02/06 20:37:34 jturner Exp $
+# $OpenBSD: Makefile,v 1.10 2013/02/08 14:39:50 jturner Exp $
 
 COMMENT=	Scheme Underground's implementation of R5RS
 
 V=		1.9
 DISTNAME=	scheme48-$V
+REVISION=	0
 CATEGORIES=	lang
 
 HOMEPAGE=	http://www.s48.org/
@@ -30,7 +31,7 @@ CONFIGURE_ENV=		LD="${CC}" LDFLAGS="-Wl,--export-dynamic"
 post-install: 
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/scheme48
 	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${WRKSRC}/doc/*.ps \
-		${PREFIX}/share/doc/scheme48
+		${WRKSRC}/doc/*.pdf ${PREFIX}/share/doc/scheme48
 	${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/doc/scheme48
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/scheme48/html
 	${INSTALL_DATA} ${WRKSRC}/doc/html/* \
