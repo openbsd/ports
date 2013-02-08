@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.85 2013/02/08 16:27:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.86 2013/02/08 16:45:25 naddy Exp $
 
 COMMENT=	get files from FTP, Gopher, HTTP or HTTPS servers
 
 DISTNAME=	curl-7.26.0
-REVISION=	0
+REVISION=	1
 SHARED_LIBS=	curl                 23.0     # .6.0
 CATEGORIES=	net
 MASTER_SITES=	http://curl.haxx.se/download/ \
@@ -29,6 +29,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-ca-bundle=/etc/ssl/cert.pem \
 		--with-libidn=${LOCALBASE} \
 		--without-libssh2
+CONFIGURE_ENV=	ac_cv_path_NROFF=/usr/bin/mandoc
 
 # speed up some time-consuming configure tests
 CONFIGURE_ENV+=curl_cv_func_select_args="int,fd_set *,struct timeval *,int"
