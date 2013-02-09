@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/11/01 14:43:45 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/02/09 15:17:46 ajacoutot Exp $
 bin/cu
 @owner uucp
 @mode 4555
@@ -53,3 +53,5 @@ share/examples/uucp/passwd
 share/examples/uucp/port
 share/examples/uucp/sys1
 share/examples/uucp/sys2
+@exec-add /usr/bin/chsh -s %D/libexec/uucp/uucico uucp
+@unexec-delete /usr/bin/chsh -s /sbin/nologin uucp
