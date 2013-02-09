@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2012/02/16 22:27:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2013/02/09 14:49:51 sthen Exp $
 
 COMMENT=	mailing list manager with web interface
 
@@ -44,7 +44,7 @@ CONFIGURE_ARGS+=	--prefix='${MMHOME}' \
 
 FLAVORS=	postfix
 FLAVOR?=
-.if ${FLAVOR:L:Mpostfix}
+.if ${FLAVOR:Mpostfix}
 CONFIGURE_ARGS+=--with-mail-gid=_mailman
 .else
 CONFIGURE_ARGS+=--with-mail-gid=daemon

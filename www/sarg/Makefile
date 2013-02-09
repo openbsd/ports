@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/01/21 08:30:01 rpe Exp $
+# $OpenBSD: Makefile,v 1.16 2013/02/09 14:49:53 sthen Exp $
 
 COMMENT=		Squid Analysis Report Generator
 
@@ -39,7 +39,7 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/cfgaux
 FLAVORS=		ldap
 FLAVOR?=
 
-.if ${FLAVOR:L:Mldap}
+.if ${FLAVOR:Mldap}
 CONFIGURE_ARGS+=	--with-ldap
 LIB_DEPENDS+=		databases/openldap
 WANTLIB+=		ldap

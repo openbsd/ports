@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2012/10/01 12:49:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2013/02/09 14:49:53 sthen Exp $
 
 # XXX add vala to MODGNOME_TOOLS on update
 
@@ -105,7 +105,7 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			textproc/libxslt \
 			graphics/gdk-pixbuf2
 
-.if ${FLAVOR:L:Mno_ui}
+.if ${FLAVOR:Mno_ui}
 CONFIGURE_ARGS+=	--without-ui
 .else
 MULTI_PACKAGES+=	-ui
@@ -127,7 +127,7 @@ LIB_DEPENDS-ui=		${LIB_DEPENDS} \
 			x11/gtksourceview3
 .endif
 
-.if ${FLAVOR:L:Mno_mysql}
+.if ${FLAVOR:Mno_mysql}
 CONFIGURE_ARGS+=	--without-mysql
 .else
 RUN_DEPENDS-mysql=	${MODGETTEXT_RUN_DEPENDS}
@@ -140,7 +140,7 @@ LIB_DEPENDS-mysql=	${LIB_DEPENDS} \
 CONFIGURE_ARGS+=	--with-mysql="${LOCALBASE}"
 .endif
 
-.if ${FLAVOR:L:Mno_pgsql}
+.if ${FLAVOR:Mno_pgsql}
 CONFIGURE_ARGS+=	--without-postgres
 .else
 RUN_DEPENDS-pgsql=	${MODGETTEXT_RUN_DEPENDS}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/09/17 10:29:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2013/02/09 14:49:53 sthen Exp $
 
 COMMENT=	turns Apache into an MP3 or Ogg streaming server
 
@@ -32,11 +32,11 @@ NO_REGRESS=	Yes
 EXAMPLESRC=	${WRKSRC}/support
 CONF=		${EXAMPLESRC}/mp3.conf
 
-.if ${FLAVOR:L:Mmysql} && ${FLAVOR:L:Mpostgresql}
+.if ${FLAVOR:Mmysql} && ${FLAVOR:Mpostgresql}
 ERRORS+= "Fatal: mutually exclusive flavors: ${FLAVORS}"
 .endif
 
-.if ${FLAVOR:L:Mmysql}
+.if ${FLAVOR:Mmysql}
 LIB_DEPENDS+=	databases/mysql
 CONFIGURE_ARGS+=--with-mysql="${LOCALBASE}/bin"
 CONF=		${EXAMPLESRC}/mp3_with_mysql.conf
@@ -44,7 +44,7 @@ EXAMPLES+=	${EXAMPLESRC}/mysql_schema
 WANTLIB+=	crypto lib/mysql/mysqlclient>=10 m ssl z
 .endif
 
-.if ${FLAVOR:L:Mpostgresql}
+.if ${FLAVOR:Mpostgresql}
 LIB_DEPENDS+=	databases/postgresql
 CONFIGURE_ARGS+=--with-postgres="${LOCALBASE}"
 CONF=		${FILESDIR}/mp3_with_postgresql.conf

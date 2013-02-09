@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2012/10/30 14:18:25 giovanni Exp $
+# $OpenBSD: Makefile,v 1.62 2013/02/09 14:49:52 sthen Exp $
 
 COMMENT=	small, easy to set up, fast and very secure FTP server
 
@@ -34,7 +34,7 @@ MODULES=	converters/libiconv
 FLAVORS=	ldap mysql postgresql virtual_chroot
 FLAVOR?=
 
-.if ${FLAVOR:L:Mldap}
+.if ${FLAVOR:Mldap}
 LIB_DEPENDS+= 	openldap-client->=2,<3:databases/openldap
 WANTLIB +=	ldap>=2 lber
 CONFIGURE_ARGS+= --with-ldap="${LOCALBASE}"
@@ -42,7 +42,7 @@ DOCS+=	README.LDAP pureftpd.schema
 CONF_FILE+= pureftpd-ldap.conf
 .endif
 
-.if ${FLAVOR:L:Mmysql}
+.if ${FLAVOR:Mmysql}
 LIB_DEPENDS+=	databases/mysql
 WANTLIB +=	lib/mysql/mysqlclient>=10
 CONFIGURE_ARGS+= --with-mysql="${LOCALBASE}"
@@ -51,7 +51,7 @@ CONF_FILE+= pureftpd-mysql.conf
 WANTLIB+=	m z
 .endif
 
-.if ${FLAVOR:L:Mpostgresql}
+.if ${FLAVOR:Mpostgresql}
 LIB_DEPENDS+=	databases/postgresql
 WANTLIB +=	pq>=2
 CONFIGURE_ARGS+= --with-pgsql="${LOCALBASE}"
@@ -60,7 +60,7 @@ CONF_FILE+= pureftpd-pgsql.conf
 WANTLIB+=	m z
 .endif
 
-.if ${FLAVOR:L:Mvirtual_chroot}
+.if ${FLAVOR:Mvirtual_chroot}
 CONFIGURE_ARGS+= --with-virtualchroot
 .endif
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2012/11/12 18:01:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.83 2013/02/09 14:49:53 sthen Exp $
 
 COMMENT-main=	GNOME Virtual File System
 COMMENT-smb=	samba module for GVFS
@@ -71,7 +71,7 @@ MULTI_PACKAGES=		-main
 PSEUDO_FLAVORS=		no_smb
 FLAVOR?=
 
-.if ${FLAVOR:L:Mno_smb}
+.if ${FLAVOR:Mno_smb}
 CONFIGURE_ARGS+= --disable-samba
 .else
 CONFIGURE_ARGS+= --enable-samba

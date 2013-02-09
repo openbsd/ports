@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.12 2010/07/10 16:57:22 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.13 2013/02/09 14:49:53 sthen Exp $
 
 FLAVOR ?=
 FLAVORS ?=		debug
@@ -30,7 +30,7 @@ CONFIGURE_ENV +=		QTDIR=${MODQT_LIBDIR} HOME=${WRKDIR}
 SEPARATE_BUILD =		simple
 
 #CONFIGURE_ARGS +=	--debug-output --debug-trycompile
-.if ${FLAVOR:L:Mdebug}
+.if ${FLAVOR:Mdebug}
 CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE:String=Debug
 .else
 CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE:String=Release

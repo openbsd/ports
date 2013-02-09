@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2012/12/21 13:22:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.77 2013/02/09 14:49:53 sthen Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -96,7 +96,7 @@ FLAVOR ?=
 # eases PLIST/PFRAGs
 SUBST_VARS =	WEBKIT_API_VERSION GTK_API_VERSION
 
-.if ${FLAVOR:L:Mgtk3}
+.if ${FLAVOR:Mgtk3}
 FULLPKGNAME =	webkit-gtk3-${V}
 LIB_DEPENDS +=	x11/gtk+3,-main
 WANTLIB +=	cairo-gobject gailutil-3 gdk-3 gtk-3
@@ -116,7 +116,7 @@ SHARED_LIBS += webkitgtk-${WEBKIT_API_VERSION}		4.0 #.13.2
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Source/WebCore/plugins/PluginDatabase.cpp
 
-.if ${FLAVOR:L:Mgtk3}
+.if ${FLAVOR:Mgtk3}
 post-install:
 	mv ${PREFIX}/bin/GtkLauncher ${PREFIX}/bin/GtkLauncher-3
 .endif

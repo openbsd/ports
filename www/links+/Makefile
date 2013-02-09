@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2013/01/05 11:06:39 rpe Exp $
+# $OpenBSD: Makefile,v 1.48 2013/02/09 14:49:53 sthen Exp $
 
 COMMENT=	graphics and text browser
 
@@ -31,7 +31,7 @@ USE_GROFF =	Yes
 FLAVORS=	no_x11
 FLAVOR?=
 
-.if !${FLAVOR:L:Mno_x11}
+.if !${FLAVOR:Mno_x11}
 LIB_DEPENDS+=	graphics/jpeg \
 		graphics/png \
 		graphics/tiff

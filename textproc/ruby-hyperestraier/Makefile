@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2012/09/21 13:17:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2013/02/09 14:49:53 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -23,7 +23,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=hyperestraier/}
 
 FLAVORS =		ruby19
 FLAVOR ?=		
-.if ${FLAVOR:L:Mruby19}
+.if ${FLAVOR:Mruby19}
 MODRUBY_REV =		1.9
 FULLPKGNAME =		ruby19-hyperestraier-1.0.0
 BIN_SUFFIX =		19
@@ -50,7 +50,7 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/estcmd.rb
 
 post-install:
-.if ${FLAVOR:L:Mruby19}
+.if ${FLAVOR:Mruby19}
 	mv ${PREFIX}/bin/estcmd{,19}.rb
 .endif
 	${INSTALL_DATA_DIR} ${MODRUBY_EXAMPLEDIR}/hyperestraier

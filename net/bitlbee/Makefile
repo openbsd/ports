@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2013/01/30 21:45:42 okan Exp $
+# $OpenBSD: Makefile,v 1.48 2013/02/09 14:49:51 sthen Exp $
 
 COMMENT=		IRC proxy to connect to AIM, ICQ, Jabber, MSN and Yahoo
 
@@ -45,12 +45,12 @@ SUBST_VARS=		DB_DIR
 FLAVORS =		libpurple otr
 FLAVOR ?=
 
-.if ${FLAVOR:L:Mlibpurple}
+.if ${FLAVOR:Mlibpurple}
 CONFIGURE_ARGS +=	--purple=1
 LIB_DEPENDS +=		net/pidgin,-libpurple
 WANTLIB +=		purple
 .endif
-.if ${FLAVOR:L:Motr}
+.if ${FLAVOR:Motr}
 CONFIGURE_ARGS +=	--otr=1
 LIB_DEPENDS +=		security/libotr security/libgcrypt
 WANTLIB +=		gcrypt otr

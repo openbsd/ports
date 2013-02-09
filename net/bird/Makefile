@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/01/24 10:04:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2013/02/09 14:49:51 sthen Exp $
 
 COMMENT-main=	BIRD internet routing daemon
 COMMENT-doc=	BIRD internet routing daemon (documentation)
@@ -33,7 +33,7 @@ FLAVORS=	v6
 FLAVOR?=
 SUBST_VARS+=	SIX
 
-.if ${FLAVOR:L:Mv6}
+.if ${FLAVOR:Mv6}
 FULLPKGNAME-main= bird-v6-$V
 FULLPKGPATH-main= net/bird,-main,v6
 SIX=		6
@@ -51,7 +51,7 @@ FAKE_FLAGS=	sysconfdir=${TRUEPREFIX}/share/examples/bird
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 
-.if ${FLAVOR:L:Mv6}
+.if ${FLAVOR:Mv6}
 CONFIGURE_ARGS+=--enable-ipv6
 .endif
 

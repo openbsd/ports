@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2011/09/16 12:29:18 espie Exp $
+# $OpenBSD: Makefile,v 1.67 2013/02/09 14:49:54 sthen Exp $
 
 COMMENT=	display the Earth on X11
 
@@ -28,7 +28,7 @@ RUN_DEPENDS=	geo/openbsd-developers
 
 FLAVORS=	no_map
 FLAVOR?=
-.if ${FLAVOR:L:Mno_map}
+.if ${FLAVOR:Mno_map}
 DISTFILES=	${DISTNAME}-no-map${EXTRACT_SUFX}
 
 # Kludge install for no map around

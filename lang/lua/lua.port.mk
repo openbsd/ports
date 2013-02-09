@@ -1,4 +1,4 @@
-# $OpenBSD: lua.port.mk,v 1.24 2012/12/11 22:12:12 sthen Exp $
+# $OpenBSD: lua.port.mk,v 1.25 2013/02/09 14:49:51 sthen Exp $
 
 CATEGORIES+=	lang/lua
 
@@ -21,7 +21,7 @@ FLAVORS+=		lua52
 FLAVOR?=		# empty
 
 # without a flavor, assume ${MODLUA_DEFAULT_VERSION}
-.if ${FLAVOR:L:Mlua52}
+.if ${FLAVOR:Mlua52}
 MODLUA_VERSION=		5.2
 .else
 MODLUA_VERSION?=	${MODLUA_DEFAULT_VERSION}

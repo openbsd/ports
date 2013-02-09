@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.17 2013/01/28 08:17:15 rpe Exp $
+# $OpenBSD: Makefile.inc,v 1.18 2013/02/09 14:49:53 sthen Exp $
 
 CATEGORIES ?=		x11
 
@@ -25,7 +25,7 @@ SUBST_VARS +=		FULLARCH OSREV VERSION
 
 #FLAVORS = debug
 #FLAVOR ?=
-#.if ${FLAVOR:L:Mdebug}
+#.if ${FLAVOR:Mdebug}
 #CFLAGS +=		-O0 -g
 #INSTALL_STRIP =
 #.endif

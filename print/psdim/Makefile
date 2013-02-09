@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/03/29 13:38:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2013/02/09 14:49:52 sthen Exp $
 
 COMMENT=		intelligent n-up printing
 
@@ -32,7 +32,7 @@ SEPARATE_BUILD=		Yes
 FLAVORS=		a4
 FLAVOR?=
 
-.if defined(FLAVOR) && ${FLAVOR:L} == "a4"
+.if defined(FLAVOR) && ${FLAVOR} == "a4"
 CONFIGURE_ARGS+=	--enable-a4
 .endif
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2011/09/25 14:42:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.58 2013/02/09 14:49:52 sthen Exp $
 
 COMMENT=	sniffing tools for penetration testing
 
@@ -30,7 +30,7 @@ USE_GROFF =		Yes
 FLAVORS=	no_x11
 FLAVOR?=
 
-.if ${FLAVOR:L} == "no_x11"
+.if ${FLAVOR} == "no_x11"
 CONFIGURE_ARGS+=	--without-x
 .else
 WANTLIB+=	ICE SM X11 Xmu

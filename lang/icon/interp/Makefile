@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/11/17 08:05:17 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2013/02/09 14:49:51 sthen Exp $
 
 COMMENT-main=		programming language with generators, X11 and more
 COMMENT-main-no_x11=	programming language with generators
@@ -42,7 +42,7 @@ LIBDIR=${TRUEPREFIX}/lib/icon
 WANTLIB-compiler=	c
 WANTLIB-main=		c m pthread
 
-.if ${FLAVOR:L:Mno_x11}
+.if ${FLAVOR:Mno_x11}
 CONFIGURE_TARGET=	Configure
 .else
 CONFIGURE_TARGET=	X-Configure

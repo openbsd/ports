@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2013/01/18 20:54:44 gsoares Exp $
+# $OpenBSD: Makefile,v 1.35 2013/02/09 14:49:52 sthen Exp $
 
 COMMENT=	internet relay chat (irc) server
 
@@ -32,7 +32,7 @@ USE_GROFF =	Yes
 FLAVORS=	ipv6 hub
 FLAVOR?=	
 
-.if ${FLAVOR:L:Mipv6}
+.if ${FLAVOR:Mipv6}
 CONFIGURE_ARGS+=	--enable-ip6
 .endif
 
@@ -46,7 +46,7 @@ WRKBUILD=	${WRKSRC}/support
 SUBST_VARS=	CONFDIR
 
 pre-configure:
-.if ${FLAVOR:L:Mhub}
+.if ${FLAVOR:Mhub}
 	@perl -pi -e 's,^/\* #define\tHUB \*/,#define\tHUB,g' ${WRKSRC}/support/config.h.dist
 .endif
 	@cp $(WRKSRC)/support/config.h.dist $(WRKSRC)/support/config.h

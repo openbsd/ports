@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.54 2013/01/26 17:57:51 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.55 2013/02/09 14:49:51 sthen Exp $
 
 # ruby module
 
@@ -53,8 +53,8 @@ FLAVOR =		ruby19
 
 # Check for conflicting FLAVORs and set MODRUBY_REV appropriately based
 # on the FLAVOR.
-.    if ${FLAVOR:L:Mruby18}
-.      if ${FLAVOR:L:Mruby19} || ${FLAVOR:L:Mjruby} || ${FLAVOR:L:Mrbx}
+.    if ${FLAVOR:Mruby18}
+.      if ${FLAVOR:Mruby19} || ${FLAVOR:Mjruby} || ${FLAVOR:Mrbx}
 ERRORS+=		"Fatal: Conflicting flavors used: ${FLAVOR}"
 .      endif
 MODRUBY_REV=		1.8
@@ -64,20 +64,20 @@ MODRUBY_REV=		1.8
 SUBST_VARS+=	PKGPATH
 PKG_ARGS+=	-f ${PORTSDIR}/lang/ruby/ruby18.PLIST
 
-.    elif ${FLAVOR:L:Mruby19}
-.      if ${FLAVOR:L:Mruby18} || ${FLAVOR:L:Mjruby} || ${FLAVOR:L:Mrbx}
+.    elif ${FLAVOR:Mruby19}
+.      if ${FLAVOR:Mruby18} || ${FLAVOR:Mjruby} || ${FLAVOR:Mrbx}
 ERRORS+=		"Fatal: Conflicting flavors used: ${FLAVOR}"
 .      endif
 MODRUBY_REV=		1.9
 
-.    elif ${FLAVOR:L:Mjruby}
-.      if ${FLAVOR:L:Mruby18} || ${FLAVOR:L:Mruby19} || ${FLAVOR:L:Mrbx}
+.    elif ${FLAVOR:Mjruby}
+.      if ${FLAVOR:Mruby18} || ${FLAVOR:Mruby19} || ${FLAVOR:Mrbx}
 ERRORS+=		"Fatal: Conflicting flavors used: ${FLAVOR}"
 .      endif
 MODRUBY_REV=		jruby
 
-.    elif ${FLAVOR:L:Mrbx}
-.      if ${FLAVOR:L:Mruby18} || ${FLAVOR:L:Mruby19} || ${FLAVOR:L:Mjruby}
+.    elif ${FLAVOR:Mrbx}
+.      if ${FLAVOR:Mruby18} || ${FLAVOR:Mruby19} || ${FLAVOR:Mjruby}
 ERRORS+=		"Fatal: Conflicting flavors used: ${FLAVOR}"
 .      endif
 MODRUBY_REV=		rbx

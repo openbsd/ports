@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/11/30 15:53:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2013/02/09 14:49:53 sthen Exp $
 
 COMMENT =		filter, redirector and access controller for Squid
 
@@ -43,7 +43,7 @@ REGRESS_TARGET =	test
 FLAVORS =	ldap mysql
 FLAVOR ?=
 
-.if ${FLAVOR:L:Mldap}
+.if ${FLAVOR:Mldap}
 LIB_DEPENDS +=		databases/openldap
 WANTLIB +=		ldap
 CONFIGURE_ARGS +=	--with-ldap=yes
@@ -51,7 +51,7 @@ CONFIGURE_ARGS +=	--with-ldap=yes
 CONFIGURE_ARGS +=	--with-ldap=no
 .endif
 
-.if ${FLAVOR:L:Mmysql}
+.if ${FLAVOR:Mmysql}
 LIB_DEPENDS +=		databases/mysql
 CONFIGURE_ARGS +=	--with-mysql=${LOCALBASE}
 WANTLIB +=		mysqlclient z

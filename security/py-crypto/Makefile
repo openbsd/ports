@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2012/07/02 16:36:33 mpi Exp $
+# $OpenBSD: Makefile,v 1.29 2013/02/09 14:49:52 sthen Exp $
 
 SHARED_ONLY =		Yes
 
@@ -51,7 +51,7 @@ do-configure:
 post-install:
 	${INSTALL_DATA_DIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.if ${FLAVOR:L:Mpython3}
+.if ${FLAVOR:Mpython3}
 	mv ${PREFIX}/share/doc/py-crypto ${PREFIX}/share/doc/py3-crypto
 .endif
 

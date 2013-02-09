@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2012/02/20 18:25:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.81 2013/02/09 14:49:53 sthen Exp $
 
 COMMENT=	pager/text-based web browser
 
@@ -32,7 +32,7 @@ CONFIGURE_ARGS=	--disable-xface \
 NO_REGRESS=	Yes
 USE_GROFF=	Yes
 
-.if ${FLAVOR:L:Mimage}
+.if ${FLAVOR:Mimage}
 LIB_DEPENDS+=	x11/gtk+2
 CONFIGURE_ARGS+=--with-imagelib=gtk2
 WANTLIB += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
@@ -45,7 +45,7 @@ WANTLIB += pthread-stubs xcb xcb-render xcb-shm
 CONFIGURE_ARGS+=--enable-image=no
 .endif
 
-.if ${FLAVOR:L:Mjapanese}
+.if ${FLAVOR:Mjapanese}
 FULLPKGNAME=	ja-${PKGNAME}${FLAVOR_EXT:S/-japanese//}
 CATEGORIES+=	japanese
 CONFIGURE_ARGS+=--enable-japanese=E

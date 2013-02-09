@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2012/07/12 20:17:45 rpointel Exp $
+# $OpenBSD: Makefile,v 1.99 2013/02/09 14:49:51 sthen Exp $
 
 COMMENT =		lightweight and user-friendly e-mail client
 
@@ -49,7 +49,7 @@ CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 FLAVORS= 		compface
 FLAVOR?=
 
-.if ${FLAVOR:L:Mcompface}
+.if ${FLAVOR:Mcompface}
 LIB_DEPENDS+=		mail/faces
 WANTLIB+=		compface
 CONFIGURE_ARGS +=	--enable-compface

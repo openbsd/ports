@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2013/01/16 01:49:02 brad Exp $
+# $OpenBSD: Makefile,v 1.90 2013/02/09 14:49:50 sthen Exp $
 
 # requires ELF visibility support when on a shared arch
 ONLY_FOR_ARCHS=	${GCC3_ARCHS} ${GCC4_ARCHS} ${NO_SHARED_ARCHS}
@@ -52,13 +52,13 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ENV+= ac_cv_lib_usb_hid_init=no \
 		ac_cv_header_usb_h=no
 
-.if ${FLAVOR:L:Maa}
+.if ${FLAVOR:Maa}
 WANTLIB+=	aa
 LIB_DEPENDS+=	graphics/aalib
 CONFIGURE_ARGS+= --enable-video-aalib
 .endif
 
-.if ${FLAVOR:L:Mno_x11}
+.if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS+= --without-x \
 		 --disable-video-x11
 .else

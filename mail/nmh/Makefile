@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2013/01/02 04:19:54 william Exp $
+# $OpenBSD: Makefile,v 1.35 2013/02/09 14:49:51 sthen Exp $
 
 COMMENT=		new MH mail handling program
 
@@ -37,7 +37,7 @@ FLAVOR?=
 CONFIGURE_ENV+=		ac_cv_header_db_h=no
 USE_GROFF =		Yes
 
-.if ${FLAVOR:L:Msasl}
+.if ${FLAVOR:Msasl}
 MODULES +=		converters/libiconv
 WANTLIB +=		sasl2
 LIB_DEPENDS+=		security/cyrus-sasl2

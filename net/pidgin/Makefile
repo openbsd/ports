@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2013/02/06 14:23:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.114 2013/02/09 14:49:52 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -106,7 +106,7 @@ FLAVOR?=
 
 MULTI_PACKAGES= -main -finch -libpurple
 
-.if ${FLAVOR:L:Maudio}
+.if ${FLAVOR:Maudio}
 LIB_DEPENDS+=		multimedia/gstreamer-0.10/core>=0.10,<=0.11 \
 			multimedia/gstreamer-0.10/plugins-base
 WANTLIB+=		gstreamer-0.10 gstinterfaces-0.10
@@ -118,12 +118,12 @@ LIB_DEPENDS-main+=	libpurple-${VERSION}:${BUILD_PKGPATH},-libpurple
 LIB_DEPENDS-finch+=	libpurple-${VERSION}:${BUILD_PKGPATH},-libpurple
 .endif
 
-.if ${FLAVOR:L:Mdebug}
+.if ${FLAVOR:Mdebug}
 CONFIGURE_ARGS+=	--enable-debug
 DEBUG=			-O0 -g
 .endif
 
-.if ${FLAVOR:L:Mgtkspell}
+.if ${FLAVOR:Mgtkspell}
 LIB_DEPENDS-main+=	textproc/gtkspell
 WANTLIB-main+=		enchant gtkspell
 .else

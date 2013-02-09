@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2012/09/18 11:28:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.69 2013/02/09 14:49:52 sthen Exp $
 
 COMMENT =	mirroring/synchronization over low bandwidth links
 
@@ -32,7 +32,7 @@ CONFIGURE_ARGS =--with-included-popt \
 		--with-rsh="ssh -T" \
 		--with-nobody-group=_rsync
 
-.if ${FLAVOR:L:Miconv}
+.if ${FLAVOR:Miconv}
 CONFIGURE_ENV += CPPFLAGS='-I${LOCALBASE}/include' \
 		LDFLAGS='-L${LOCALBASE}/lib'
 MODULES += converters/libiconv

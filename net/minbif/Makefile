@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/05/11 12:03:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2013/02/09 14:49:52 sthen Exp $
 
 COMMENT =	IRC-friendly instant messaging client
 
@@ -29,7 +29,7 @@ NO_REGRESS =	Yes
 #FLAVORS = full
 #FLAVOR ?=
 #
-#.if ${FLAVOR:L:Mfull}
+#.if ${FLAVOR:Mfull}
 #LIB_DEPENDS=	net/pidgin,-libpurple,audio \
 #		multimedia/gstreamer-0.10/core \
 #		net/farsight2 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/02/05 14:51:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2013/02/09 14:49:52 sthen Exp $
 
 COMMENT=		performs consistency checks on BIND files
 
@@ -18,7 +18,7 @@ MASTER_SITES=		ftp://ftp.ee.lbl.gov/old/
 FLAVORS=		static
 FLAVOR?=
 
-.if ${FLAVOR:L} == "static"
+.if ${FLAVOR} == "static"
 CONFIGURE_ENV+=		LDFLAGS=-static
 .else
 WANTLIB=		c

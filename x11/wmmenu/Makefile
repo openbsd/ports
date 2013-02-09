@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2012/12/13 16:34:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2013/02/09 14:49:54 sthen Exp $
 
 COMMENT=		wm-dockapp; A popup menu of icons that launch programs
 
@@ -24,7 +24,7 @@ LIB_DEPENDS=		devel/libdockapp
 FLAVORS=		gdk_pixbuf
 FLAVOR?=
 
-.if ${FLAVOR:L:Mgdk_pixbuf}
+.if ${FLAVOR:Mgdk_pixbuf}
 MAKE_FLAGS=		GDKPIXBUF2=1
 LIB_DEPENDS+=		graphics/gdk-pixbuf2
 CFLAGS+=		-pthread

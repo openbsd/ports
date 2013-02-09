@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2012/03/08 12:13:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2013/02/09 14:49:52 sthen Exp $
 
 COMMENT=	Secure Internet Live Conferencing (SILC) server
 
@@ -31,7 +31,7 @@ BUILD_DEPENDS+=	devel/yasm
 FLAVORS=	operops
 FLAVOR?=
 
-.if ${FLAVOR:L:Moperops}
+.if ${FLAVOR:Moperops}
 PATCH_LIST+=	patch-* operops-*
 .endif
 

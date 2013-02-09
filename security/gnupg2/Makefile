@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2012/10/31 10:26:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2013/02/09 14:49:52 sthen Exp $
 
 COMMENT = 	gnu privacy guard - a free PGP replacement
 
@@ -44,7 +44,7 @@ LIB_DEPENDS =		archivers/bzip2 \
 			net/curl \
 			devel/pth
 
-.if ${FLAVOR:L:Mldap}
+.if ${FLAVOR:Mldap}
 CONFIGURE_ARGS +=	--enable-ldap
 WANTLIB +=		ldap
 LIB_DEPENDS +=		databases/openldap

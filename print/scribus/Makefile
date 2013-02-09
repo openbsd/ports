@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2012/10/28 12:08:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.46 2013/02/09 14:49:52 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -55,7 +55,7 @@ CONFIGURE_ARGS +=	-DCMAKE_SKIP_RPATH:BOOL=1 \
 			-DCMAKE_CXX_FLAGS="${CXXFLAGS}" \
 			-DCMAKE_C_FLAGS="${CFLAGS}"
 
-.if ${FLAVOR:L:Mdebug}
+.if ${FLAVOR:Mdebug}
 CONFIGURE_ARGS+=-DWANT_DEBUG=1
 .endif
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2011/09/16 09:24:56 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/02/09 14:49:51 sthen Exp $
 
 COMMENT=		unit testing framework for Python
 
@@ -23,7 +23,7 @@ FLAVOR?=
 
 MODULES=	lang/python
 
-.if !${FLAVOR:L:Mno_x11}
+.if !${FLAVOR:Mno_x11}
 BUILD_DEPENDS=	${MODPY_TKINTER_DEPENDS}
 RUN_DEPENDS=	${MODPY_TKINTER_DEPENDS}
 .endif

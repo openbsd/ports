@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/01/02 11:21:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2013/02/09 14:49:53 sthen Exp $
 
 COMMENT=	WWW and FTP proxy cache and accelerator
 
@@ -59,7 +59,7 @@ CONFIGURE_ARGS+=--datadir="${PREFIX}/share/squid" \
 		--with-pthreads \
 		--enable-follow-x-forwarded-for
 
-.if ${FLAVOR:L:Mldap}
+.if ${FLAVOR:Mldap}
 BASIC_AUTH+=	LDAP
 DIGEST_AUTH+=	ldap
 EXTERNAL_ACL+=	ldap_group
@@ -69,7 +69,7 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 .endif
 
-.if ${FLAVOR:L:Mntlm}
+.if ${FLAVOR:Mntlm}
 AUTH+=         ntlm
 BASIC_AUTH+=   SMB
 EXTERNAL_ACL+= wbinfo_group
@@ -77,7 +77,7 @@ RUN_DEPENDS+=  net/samba,ads
 CONFIGURE_ARGS+=--enable-ntlm-auth-helpers="fakeauth SMB"
 .endif
 
-.if ${FLAVOR:L:Msnmp}
+.if ${FLAVOR:Msnmp}
 CONFIGURE_ARGS+=--enable-snmp
 .endif
 

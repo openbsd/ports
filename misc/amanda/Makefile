@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2012/04/28 10:52:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2013/02/09 14:49:51 sthen Exp $
 
 COMMENT-main=	network-capable tape backup (client and tape server)
 COMMENT-client=	network-capable tape backup (client only)
@@ -70,14 +70,14 @@ USE_GROFF =	Yes
 
 # Use this flavor to speed things up if you have large AMANDA
 # databases.
-.if ${FLAVOR:L:Mdb}
+.if ${FLAVOR:Mdb}
 WANTLIB+=	lib/db4/db
 LIB_DEPENDS+=	databases/db/v4
 CONFIGURE_ARGS+= --with-db=db
 CFLAGS+=	 -L${LOCALBASE}/lib
 .endif
 
-.if ${FLAVOR:L:Mgpg}
+.if ${FLAVOR:Mgpg}
 BUILD_DEPENDS+=  security/gnupg
 CONFIGURE_ENV+=  GZIP=${LOCALBASE}/bin/gpgzip
 .endif

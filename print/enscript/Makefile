@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/11/20 09:48:39 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2013/02/09 14:49:52 sthen Exp $
 
 COMMENT=		convert ASCII files to PostScript
 
@@ -27,7 +27,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-nls
 USE_GROFF =		Yes
 
-.if !${FLAVOR:L:Ma4}
+.if !${FLAVOR:Ma4}
 CONFIGURE_ARGS+=	--with-media=Letter
 .endif
 

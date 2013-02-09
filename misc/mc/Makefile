@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2013/01/02 07:18:46 shadchin Exp $
+# $OpenBSD: Makefile,v 1.47 2013/02/09 14:49:51 sthen Exp $
 
 COMMENT=		free Norton Commander clone with many useful features
 
@@ -25,7 +25,7 @@ USE_GROFF=		Yes
 FLAVORS=		no_x11
 FLAVOR?=
 
-.if ${FLAVOR:L:Mno_x11}
+.if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS+=	--without-x
 .endif
 

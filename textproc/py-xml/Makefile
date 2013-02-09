@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2011/09/27 21:29:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2013/02/09 14:49:53 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -32,7 +32,7 @@ MODPY_DISTUTILS_BUILDARGS=	--with-libexpat=/usr \
 FLAVORS=pyexpat
 FLAVOR?=
 
-.if ${FLAVOR:L:Mpyexpat}
+.if ${FLAVOR:Mpyexpat}
 WANTLIB += expat
 .endif
 

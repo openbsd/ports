@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2013/02/07 07:39:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2013/02/09 14:49:52 sthen Exp $
 
 COMMENT=	format files for printing on PostScript printers
 
@@ -35,7 +35,7 @@ BUILD_DEPENDS=	devel/gperf
 FLAVORS=	a4
 FLAVOR?=
 
-.if ${FLAVOR:L} == "a4"
+.if ${FLAVOR} == "a4"
 PAPERSIZE=	A4
 BUILD_DEPENDS+=	print/psutils,a4
 RUN_DEPENDS+=	psutils-*-a4:print/psutils,a4

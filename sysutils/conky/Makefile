@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2012/12/31 09:36:38 chrisz Exp $
+# $OpenBSD: Makefile,v 1.37 2013/02/09 14:49:53 sthen Exp $
 
 ONLY_FOR_ARCHS= ${APM_ARCHS}
 
@@ -36,8 +36,8 @@ USE_LIBTOOL=	Yes
 FLAVORS=	no_x11 audacious xmms2
 FLAVOR?=
 
-.if ${FLAVOR:L:Mno_x11}
-.  if ${FLAVOR:L:Maudacious} || ${FLAVOR:L:Mxmms2}
+.if ${FLAVOR:Mno_x11}
+.  if ${FLAVOR:Maudacious} || ${FLAVOR:Mxmms2}
 ERRORS+="Fatal: nonsense combination of flavors"
 .  else
 CONFIGURE_ARGS+=--disable-double-buffer \
@@ -53,7 +53,7 @@ WANTLIB += Imlib2 X11 Xdamage Xext Xfixes Xft
 WANTLIB += Xrender expat fontconfig freetype xcb
 .endif
 
-.if ${FLAVOR:L:Maudacious}
+.if ${FLAVOR:Maudacious}
 CONFIGURE_ARGS+=--enable-audacious=yes
 LIB_DEPENDS +=	audio/audacious devel/harfbuzz
 WANTLIB +=	GL ICE Xau Xcomposite Xcursor Xdmcp Xi Xinerama \
@@ -66,7 +66,7 @@ WANTLIB +=	GL ICE Xau Xcomposite Xcursor Xdmcp Xi Xinerama \
 		pthread-stubs SM stdc++ xcb-render xcb-shm
 .endif
 
-.if ${FLAVOR:L:Mxmms2}
+.if ${FLAVOR:Mxmms2}
 CONFIGURE_ARGS+=--enable-xmms2
 LIB_DEPENDS+=	audio/xmms2
 WANTLIB+=	xmmsclient

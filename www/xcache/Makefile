@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2012/09/11 23:41:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2013/02/09 14:49:53 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -43,7 +43,7 @@ NO_REGRESS=	Yes
 FLAVORS=	coverager
 FLAVOR?=
 
-.if ${FLAVOR:L:Mcoverager}
+.if ${FLAVOR:Mcoverager}
 CONFIGURE_ARGS+=	--enable-xcache-coverager
 .endif
 
@@ -62,7 +62,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/xcache.ini \
 		${PREFIX}/share/examples/php-${MODPHP_VERSION}
 
-.if ${FLAVOR:L:Mcoverager}
+.if ${FLAVOR:Mcoverager}
 	${INSTALL_DATA_DIR} ${WRKINST}${WEBROOT}/xcache/coverager
 	cd ${WRKSRC}/coverager && ${INSTALL_DATA} * ${WRKINST}${WEBROOT}/xcache/coverager
 .endif

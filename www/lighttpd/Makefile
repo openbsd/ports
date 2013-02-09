@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2013/01/25 08:00:23 brad Exp $
+# $OpenBSD: Makefile,v 1.107 2013/02/09 14:49:53 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -45,13 +45,13 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 FLAVORS=	ldap mysql
 FLAVOR?=
 
-.if ${FLAVOR:L:Mldap}
+.if ${FLAVOR:Mldap}
 CONFIGURE_ARGS+= --with-ldap
 LIB_DEPENDS+=	databases/openldap
 WANTLIB+=	sasl2 asn1 com_err gssapi krb5 lber ldap
 .endif
 
-.if ${FLAVOR:L:Mmysql}
+.if ${FLAVOR:Mmysql}
 CONFIGURE_ARGS+= --with-mysql
 LIB_DEPENDS+=	databases/mysql
 WANTLIB +=	mysqlclient>=10

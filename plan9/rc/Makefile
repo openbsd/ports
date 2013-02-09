@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2012/03/29 13:38:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2013/02/09 14:49:52 sthen Exp $
 
 COMMENT=	shell (clone of plan9 shell)
 
@@ -35,17 +35,17 @@ FLAVOR+=readline
 FLAVOR+=editline
 .endif
 
-.if ${FLAVOR:L} == "readline"
+.if ${FLAVOR} == "readline"
 CONFIGURE_ARGS+= --with-readline
 WANTLIB+=		readline termcap
-.elif ${FLAVOR:L} == "editline"
+.elif ${FLAVOR} == "editline"
 DISTFILES=	${DISTNAME}.tar.gz editline-1.5.tar.gz:0
 EDITLINE=	${WRKSRC}/../editline
 CONFIGURE_ARGS+= --with-editline
 CONFIGURE_ENV=	LIBS="-L${EDITLINE}"
 .endif
 
-.if ${FLAVOR:L} == "editline"
+.if ${FLAVOR} == "editline"
 pre-configure:
 	@echo "===>  Compiling editline"
 	@cd ${EDITLINE} && ${MAKE_PROGRAM}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/22 08:36:49 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/02/09 14:49:53 sthen Exp $
 
 SHARED_ONLY =		Yes
 
@@ -27,7 +27,7 @@ FLAVOR ?=
 
 # set TMPDIR before starting browser. A 'mozdebug'
 # file is generated in that location.
-.if ${FLAVOR:L} == "debug"
+.if ${FLAVOR} == "debug"
 DEBUG =		-g
 CFLAGS +=	-DDEBUG
 .endif

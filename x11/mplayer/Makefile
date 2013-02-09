@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.213 2013/01/21 16:23:05 brad Exp $
+# $OpenBSD: Makefile,v 1.214 2013/02/09 14:49:54 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -176,19 +176,19 @@ CONFIGURE_ARGS += --target=generic-openbsd
 FLAVORS =	debug aa jack
 FLAVOR ?=
 
-.if ${FLAVOR:L:Mdebug}
+.if ${FLAVOR:Mdebug}
 CONFIGURE_ARGS += --enable-debug=3 \
 		--disable-sighandler
 .endif
 
-.if ${FLAVOR:L:Maa}
+.if ${FLAVOR:Maa}
 LIB_DEPENDS +=	graphics/aalib
 WANTLIB +=	aa>=1.3
 .else
 CONFIGURE_ARGS += --disable-aa
 .endif
 
-.if ${FLAVOR:L:Mjack}
+.if ${FLAVOR:Mjack}
 LIB_DEPENDS +=	audio/jack
 WANTLIB +=	jack
 .else

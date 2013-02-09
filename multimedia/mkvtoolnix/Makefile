@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2012/03/08 12:13:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2013/02/09 14:49:51 sthen Exp $
 
 COMMENT =	create, alter and inspect Matroska files
 
@@ -54,7 +54,7 @@ USE_GROFF =	Yes
 FLAVORS =	no_x11
 FLAVOR ?=
 
-.if ${FLAVOR:L:Mno_x11}
+.if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS += --disable-gui --disable-wxwidgets
 .else
 LIB_DEPENDS +=	x11/wxWidgets>=2.8.10
@@ -76,7 +76,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/man/ja/$i.1 ${PREFIX}/man/ja.po
 	${INSTALL_DATA} ${WRKSRC}/doc/man/zh_CN/$i.1 ${PREFIX}/man/zh_CN.po	
 .endfor
-.if !${FLAVOR:L:Mno_x11}
+.if !${FLAVOR:Mno_x11}
 	${INSTALL_PROGRAM} ${WRKBUILD}/src/mmg/mmg ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/doc/man/mmg.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/mkvtoolnix/images

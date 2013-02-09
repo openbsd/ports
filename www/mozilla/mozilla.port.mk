@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.50 2013/01/11 22:51:44 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.51 2013/02/09 14:49:53 sthen Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -134,7 +134,7 @@ CONFIGURE_ARGS +=--disable-freetypetest		\
 FLAVORS +=	debug
 FLAVOR ?=
 
-.if ${FLAVOR:L:Mdebug}
+.if ${FLAVOR:Mdebug}
 CONFIGURE_ARGS +=	--enable-debug \
 			--enable-profiling \
 			--enable-debug-symbols=yes \

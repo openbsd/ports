@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/22 09:34:10 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/02/09 14:49:53 sthen Exp $
 
 COMMENT=	portable, encrypted, compressed tunnel
 
@@ -30,7 +30,7 @@ USE_GROFF =	Yes
 
 BUILD_DEPENDS=	archivers/bzip2
 
-.if ${FLAVOR:L:Mudp_spoof}
+.if ${FLAVOR:Mudp_spoof}
 WANTLIB +=	lib/libnet-1.0/net=0
 LIB_DEPENDS+=	libnet->=1.0,<1.1:net/libnet/1.0
 LIBNET_DEFS=	`libnet-config-1.0 --defines`

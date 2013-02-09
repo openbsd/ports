@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.164 2013/02/06 13:07:05 brad Exp $
+# $OpenBSD: Makefile,v 1.165 2013/02/09 14:49:54 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -160,7 +160,7 @@ FLAVOR?=
 
 MULTI_PACKAGES=	-main
 
-.if !${FLAVOR:L:Mno_jack}
+.if !${FLAVOR:Mno_jack}
 MULTI_PACKAGES+=-jack
 .endif
 

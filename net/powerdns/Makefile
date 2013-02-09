@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2012/05/17 21:39:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2013/02/09 14:49:52 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -42,7 +42,7 @@ FLAVOR?=
 BACKENDS=		gsqlite3
 
 # MySQL
-.if ${FLAVOR:L:Mno_mysql}
+.if ${FLAVOR:Mno_mysql}
 CONFIGURE_ARGS+=	--without-mysql
 .else
 MULTI_PACKAGES+=	-mysql
@@ -54,7 +54,7 @@ BACKENDS+=		gmysql
 .endif
 
 # PostgreSQL
-.if ${FLAVOR:L:Mno_pgsql}
+.if ${FLAVOR:Mno_pgsql}
 CONFIGURE_ARGS+=	--without-pgsql
 .else
 MULTI_PACKAGES+=	-pgsql
@@ -67,7 +67,7 @@ BACKENDS+=		gpgsql
 .endif
 
 # LDAP
-.if ${FLAVOR:L:Mno_ldap}
+.if ${FLAVOR:Mno_ldap}
 CONFIGURE_ARGS+=	--without-ldap
 .else
 MULTI_PACKAGES+=	-ldap

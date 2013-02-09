@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2013/02/03 23:07:02 nigel Exp $
+# $OpenBSD: Makefile,v 1.60 2013/02/09 14:49:51 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -43,7 +43,7 @@ CFLAGS+=	-DNS_IN6ADDRSZ=16 -DNS_INT16SZ=2
 CONFIGURE_ARGS+= -DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		-DMAN_INSTALLDIR="${TRUEPREFIX}/man"
 
-.if ${FLAVOR:L:Mno_x11}
+.if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS+= -DENABLE_GTK=off
 .else
 LIB_DEPENDS+=	x11/gtk+2

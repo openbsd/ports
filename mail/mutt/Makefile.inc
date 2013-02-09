@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.37 2011/05/04 07:49:40 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.38 2013/02/09 14:49:51 sthen Exp $
 
 CATEGORIES=	mail
 
@@ -51,7 +51,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ISPELL="${LOCALBASE}/bin/ispell"
 
-.if ${FLAVOR:L:Mslang}
+.if ${FLAVOR:Mslang}
 LIB_DEPENDS+=		devel/libslang
 CONFIGURE_ARGS+=	--with-slang="${PREFIX}"
 WANTLIB+=		m termlib slang>=14
@@ -62,7 +62,7 @@ WANTLIB+=		ncurses
 
 # compressed folder support
 DIST_COMPRESSED?=	patch-${VERSION}.rr.compressed.1.gz:0
-.if ${FLAVOR:L:Mcompressed}
+.if ${FLAVOR:Mcompressed}
 PATCHFILES+=		${DIST_COMPRESSED}
 PATCH_DIST_STRIP=	-p1
 CONFIGURE_ARGS+=	--enable-compressed
@@ -70,12 +70,12 @@ CONFIGURE_ARGS+=	--enable-compressed
 SUPDISTFILES+=		${DIST_COMPRESSED}
 .endif
 
-.if ${FLAVOR:L:Mmixmaster}
+.if ${FLAVOR:Mmixmaster}
 CONFIGURE_ARGS+=	--with-mixmaster="${LOCALBASE}/sbin/mixmaster"
 RUN_DEPENDS+=		mail/mixmaster
 .endif
 
-.if ${FLAVOR:L:Midn}
+.if ${FLAVOR:Midn}
 CONFIGURE_ARGS+=	--with-idn
 LIB_DEPENDS+=		devel/libidn
 WANTLIB+=		idn>=16

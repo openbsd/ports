@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2013/01/19 08:42:35 brad Exp $
+# $OpenBSD: Makefile,v 1.54 2013/02/09 14:49:51 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -98,7 +98,7 @@ CONFIGURE_ARGS+=--enable-a52 \
 CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
-.if ${FLAVOR:L:Mlzo}
+.if ${FLAVOR:Mlzo}
 CONFIGURE_ARGS+=--enable-lzo
 WANTLIB +=	lzo2
 LIB_DEPENDS+=	archivers/lzo2
@@ -107,7 +107,7 @@ PKG_ARGS+=	-Dlzo=1
 PKG_ARGS+=	-Dlzo=0
 .endif
 
-.if ${FLAVOR:L:Mmjpegtools}
+.if ${FLAVOR:Mmjpegtools}
 CONFIGURE_ARGS+=--enable-mjpegtools
 WANTLIB +=	mjpegutils-1.9
 LIB_DEPENDS+=	multimedia/mjpegtools
@@ -117,7 +117,7 @@ PKG_ARGS+=	-Dmjpegtools=1
 PKG_ARGS+=	-Dmjpegtools=0
 .endif
 
-.if ${FLAVOR:L:Mquicktime}
+.if ${FLAVOR:Mquicktime}
 CONFIGURE_ARGS+=--enable-libquicktime
 LIB_DEPENDS+=	multimedia/libquicktime
 WANTLIB +=	quicktime
@@ -127,7 +127,7 @@ PKG_ARGS+=	-Dquicktime=1
 PKG_ARGS+=	-Dquicktime=0
 .endif
 
-.if ${FLAVOR:L:Maltivec}
+.if ${FLAVOR:Maltivec}
 ONLY_FOR_ARCHS=	powerpc
 CONFIGURE_ARGS+=--enable-altivec
 .else

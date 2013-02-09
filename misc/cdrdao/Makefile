@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2012/07/04 07:46:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2013/02/09 14:49:51 sthen Exp $
 
 COMMENT=	write audio/data CD-Rs in disk-at-once mode
 
@@ -27,7 +27,7 @@ MAKE_ENV=		CCOM="${CC}"
 FLAVORS=	audio
 FLAVOR?=
 
-.if ${FLAVOR:L:Maudio}
+.if ${FLAVOR:Maudio}
 CONFIGURE_ARGS+=	--with-lame-lib=${LOCALBASE}/lib \
 			--with-lame-include=${LOCALBASE}/include
 BUILD_DEPENDS+=		audio/libmad

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2012/12/31 16:34:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.84 2013/02/09 14:49:52 sthen Exp $
 
 COMMENT=	GNU privacy guard - a free PGP replacement
 
@@ -46,14 +46,14 @@ MAKE_FLAGS=	LIBINTL="-L${LOCALBASE}/lib -lintl -liconv" \
 FLAVORS=	card ldap
 FLAVOR?=
 
-.if ${FLAVOR:L:Mcard}
+.if ${FLAVOR:Mcard}
 LIB_DEPENDS+=		devel/libusb-compat
 WANTLIB +=		usb pthread
 .else
 CONFIGURE_ARGS+=	--disable-card-support --without-libusb
 .endif
 
-.if ${FLAVOR:L:Mldap}
+.if ${FLAVOR:Mldap}
 CONFIGURE_ARGS+=	--enable-ldap
 LIB_DEPENDS+=		databases/openldap
 WANTLIB +=		ldap>=8

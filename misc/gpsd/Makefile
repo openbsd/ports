@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2012/12/21 13:04:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.51 2013/02/09 14:49:51 sthen Exp $
 
 COMMENT-main=		service daemon that monitors one or more GPSes
 COMMENT-x11=		GUI test apps using gpsd
@@ -49,7 +49,7 @@ BUILD_DEPENDS=		textproc/docbook-xsl
 RUN_DEPENDS-main=	${MODPY_RUN_DEPENDS}
 LIB_DEPENDS-main=	devel/libusb1
 
-.if ${FLAVOR:L:Mno_x11}
+.if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS+=	--without-x
 CONFIGURE_ENV +=	LDFLAGS="-lm -pthread -lutil"
 .else

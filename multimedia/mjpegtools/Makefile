@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2012/09/05 16:31:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2013/02/09 14:49:51 sthen Exp $
 
 COMMENT=		tools to edit/modify/encode video streams
 
@@ -52,11 +52,11 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 FLAVORS=		quicktime optimized
 FLAVOR?=
 
-.if !${FLAVOR:L:Moptimized}
+.if !${FLAVOR:Moptimized}
 CONFIGURE_ARGS+=	--disable-simd-accel
 .endif
 
-.if ${FLAVOR:L:Mquicktime}
+.if ${FLAVOR:Mquicktime}
 LIB_DEPENDS +=		multimedia/libquicktime
 WANTLIB+=		quicktime>=2
 .else

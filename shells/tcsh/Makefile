@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2013/02/05 14:51:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2013/02/09 14:49:53 sthen Exp $
 
 COMMENT=	extended C-shell with many useful features
 
@@ -23,7 +23,7 @@ WANTLIB=	c termlib
 FLAVORS=	static
 FLAVOR?=
 
-.if ${FLAVOR:L} == "static"
+.if ${FLAVOR} == "static"
 CONFIGURE_ENV=	LDFLAGS="-static"
 .endif
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2012/10/15 10:13:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.51 2013/02/09 14:49:52 sthen Exp $
 
 COMMENT=	Matt's traceroute - network diagnostic tool#'
 
@@ -24,7 +24,7 @@ CONFIGURE_STYLE=gnu
 FLAVORS=	gtk
 
 FLAVOR?=
-.if ${FLAVOR:L} == "gtk"
+.if ${FLAVOR} == "gtk"
 BROKEN= fails at runtime with "No nameservers defined"
 MODULES+=		devel/gettext
 CONFIGURE_ARGS+=	--with-gtk-prefix=${LOCALBASE}

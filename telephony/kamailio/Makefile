@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2012/12/02 20:21:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2013/02/09 14:49:53 sthen Exp $
 
 COMMENT-main =		mature and flexible open source SIP server
 
@@ -80,7 +80,7 @@ MAKE_FLAGS =	FLAVOUR=kamailio \
 		LIBsrutils_VERSION=${LIBsrutils_VERSION}
 
 PSEUDO_FLAVORS +=	no_postgresql
-.if !${FLAVOR:L:Mno_postgresql}
+.if !${FLAVOR:Mno_postgresql}
 MULTI_PACKAGES +=	-postgresql
 COMMENT-postgresql =	kamailio postgresql module
 KAMAILIO_MODULES +=	db_postgres
@@ -89,7 +89,7 @@ LIB_DEPENDS-postgresql =databases/postgresql,-main telephony/kamailio,-main
 .endif
 
 PSEUDO_FLAVORS +=	no_mysql
-.if !${FLAVOR:L:Mno_mysql}
+.if !${FLAVOR:Mno_mysql}
 MULTI_PACKAGES +=	-mysql
 COMMENT-mysql =		kamailio mysql module
 KAMAILIO_MODULES +=	db_mysql
@@ -99,7 +99,7 @@ LIB_DEPENDS-mysql =	databases/mysql,-main telephony/kamailio,-main
 .endif
 
 PSEUDO_FLAVORS +=	no_ldap
-.if !${FLAVOR:L:Mno_ldap}
+.if !${FLAVOR:Mno_ldap}
 MULTI_PACKAGES +=	-ldap
 COMMENT-ldap =		kamailio LDAP modules
 KAMAILIO_MODULES +=	ldap h350
@@ -108,7 +108,7 @@ LIB_DEPENDS-ldap =	databases/openldap,-main telephony/kamailio,-main
 .endif
 
 PSEUDO_FLAVORS +=	no_xmlrpc
-.if !${FLAVOR:L:Mno_xmlrpc}
+.if !${FLAVOR:Mno_xmlrpc}
 MULTI_PACKAGES +=	-xmlrpc
 COMMENT-xmlrpc =	kamailio XML-RPC module
 KAMAILIO_MODULES +=	mi_xmlrpc
@@ -119,7 +119,7 @@ LIB_DEPENDS-xmlrpc =	net/xmlrpc-c telephony/kamailio,-main
 .endif
 
 PSEUDO_FLAVORS +=	no_snmpstats
-.if !${FLAVOR:L:Mno_snmpstats}
+.if !${FLAVOR:Mno_snmpstats}
 MULTI_PACKAGES +=	-snmpstats
 COMMENT-snmpstats =	kamailio snmpstats module
 KAMAILIO_MODULES +=	snmpstats
@@ -128,7 +128,7 @@ LIB_DEPENDS-snmpstats =	net/net-snmp telephony/kamailio,-main
 .endif
 
 PSEUDO_FLAVORS +=	no_carrierroute
-.if !${FLAVOR:L:Mno_carrierroute}
+.if !${FLAVOR:Mno_carrierroute}
 MULTI_PACKAGES +=	-carrierroute
 COMMENT-carrierroute =	kamailio carrierroute module
 KAMAILIO_MODULES +=	carrierroute
@@ -140,7 +140,7 @@ LIB_DEPENDS-carrierroute = devel/libconfuse \
 .endif
 
 PSEUDO_FLAVORS +=	no_perl
-.if !${FLAVOR:L:Mno_perl}
+.if !${FLAVOR:Mno_perl}
 MULTI_PACKAGES +=	-perl
 COMMENT-perl =		kamailio perl modules
 KAMAILIO_MODULES +=	perl perlvdb
@@ -151,7 +151,7 @@ RUN_DEPENDS-perl =	databases/p5-ldap
 
 # TODO
 #PSEUDO_FLAVORS +=	no_radius
-#.if !${FLAVOR:L:Mno_radius}
+#.if !${FLAVOR:Mno_radius}
 #MULTI_PACKAGES +=	-radius
 #COMMENT-radius =	kamailio RADIUS modules
 #KAMAILIO_MODULES +=	auth_radius misc_radius peering

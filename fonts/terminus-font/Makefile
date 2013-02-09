@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2012/10/29 15:19:03 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/02/09 14:49:51 sthen Exp $
 
 COMMENT =		fixed width fonts especially for long hacking sessions
 
@@ -30,7 +30,7 @@ USE_GMAKE =		Yes
 FLAVORS =		symquotes
 FLAVOR ?=
 
-.if ${FLAVOR:L:Msymquotes}
+.if ${FLAVOR:Msymquotes}
 post-patch:
 	${PATCH} -d ${WRKSRC} < ${WRKSRC}/alt/gq2.diff
 .endif

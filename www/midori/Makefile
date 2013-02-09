@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2012/10/03 06:36:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2013/02/09 14:49:53 sthen Exp $
 
 COMMENT =	lightweight web browser
 
@@ -24,7 +24,7 @@ NO_REGRESS =	Yes
 FLAVORS =	gtk3
 FLAVOR ?=
 
-.if ${FLAVOR:L:Mgtk3}
+.if ${FLAVOR:Mgtk3}
 CONFIGURE_ARGS +=	--enable-gtk3
 LIB_DEPENDS =	www/webkit,gtk3 \
 		x11/gnome/gcr \

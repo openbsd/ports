@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2012/10/15 15:18:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2013/02/09 14:49:52 sthen Exp $
 
 COMMENT-main=	parallelized login hacker
 COMMENT-gui=	GTK frontend for hydra
@@ -35,7 +35,7 @@ NO_REGRESS=	Yes
 MAKE_FLAGS=	CC=${CC}
 CFLAGS +=	-I${LOCALBASE}/include
 
-.if ${FLAVOR:L:Mno_x11}
+.if ${FLAVOR:Mno_x11}
 ALL_TARGET=	hydra pw-inspector
 
 do-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2012/03/17 23:01:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2013/02/09 14:49:51 sthen Exp $
 
 COMMENT-canna=		X input method for Japanese, canna support
 COMMENT-canna-wnn=	X input method for Japanese, canna and wnn support
@@ -40,10 +40,10 @@ PORT_DOCDIR=${PREFIX}/share/doc/kinput2
 pre-configure:
 	mv -f ${WRKSRC}/Kinput2.conf ${WRKSRC}/Kinput2.conf.org
 	cp ${FILESDIR}/Kinput2.conf ${WRKSRC}/Kinput2.conf
-.if ${FLAVOR:L:Mwnn}
+.if ${FLAVOR:Mwnn}
 	echo "#define UseWnn" >>${WRKSRC}/Kinput2.conf
 .endif
-.if ${FLAVOR:L:Mcanna}
+.if ${FLAVOR:Mcanna}
 	echo "#define UseCanna" >>${WRKSRC}/Kinput2.conf
 .endif
 

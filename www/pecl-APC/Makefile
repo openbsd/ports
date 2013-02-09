@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2012/09/05 09:24:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2013/02/09 14:49:53 sthen Exp $
 
 COMMENT=	Alternative PHP Cache
 
@@ -22,7 +22,7 @@ CONFIGURE_ARGS=	--enable-apc
 FLAVORS=	shm
 FLAVOR?=
 
-.if ${FLAVOR:L:Mshm}
+.if ${FLAVOR:Mshm}
 CONFIGURE_ARGS+=	--disable-apc-mmap
 .endif
 

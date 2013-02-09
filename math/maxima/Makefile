@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/01/04 14:05:41 edd Exp $
+# $OpenBSD: Makefile,v 1.27 2013/02/09 14:49:51 sthen Exp $
 
 COMMENT=		GPL computer algebra system based on DOE Macsyma
 
@@ -32,7 +32,7 @@ USE_GROFF =		Yes
 FLAVORS=		no_x11
 FLAVOR?=
 
-.if !${FLAVOR:L:Mno_x11}
+.if !${FLAVOR:Mno_x11}
 MODULES+=		x11/tk
 RUN_DEPENDS +=		${MODTK_RUN_DEPENDS} \
 			math/gnuplot

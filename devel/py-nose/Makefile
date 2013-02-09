@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/02/05 10:39:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2013/02/09 14:49:50 sthen Exp $
 
 COMMENT=		discovery-based unittest extension
 
@@ -26,7 +26,7 @@ MODULES=		lang/python
 FLAVORS=		python3
 FLAVOR?=
 
-.if ${FLAVOR:L:Mpython3}
+.if ${FLAVOR:Mpython3}
 NO_REGRESS=		Yes
 .else
 REGRESS_DEPENDS=	devel/py-nose \
@@ -51,7 +51,7 @@ post-install:
 		find . ! -type d -exec ${INSTALL_DATA} {} \
 			${PREFIX}/share/examples/${MODPY_PY_PREFIX}nose/{} \;
 	rm ${PREFIX}/bin/nosetests-${MODPY_VERSION}
-.if ${FLAVOR:L:Mpython3}
+.if ${FLAVOR:Mpython3}
 	mv ${PREFIX}/bin/nosetests \
 		${PREFIX}/bin/nosetests${MODPY_BIN_SUFFIX}
 	mv ${PREFIX}/man/man1/nosetests.1 \

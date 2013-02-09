@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2013/02/01 17:15:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2013/02/09 14:49:52 sthen Exp $
 
 ONLY_FOR_ARCHS=		i386
 
@@ -68,7 +68,7 @@ post-install:
 		${PREFIX}/sbin/openafs-setup
 	chmod u+x ${PREFIX}/sbin/openafs-setup
 
-.if ${FLAVOR:L:Mdebug}
+.if ${FLAVOR:Mdebug}
 CONFIGURE_ARGS+=	--enable-debug
 CONFIGURE_ARGS+=	--enable-debug-lwp
 .endif

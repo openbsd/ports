@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.20 2012/11/30 19:38:09 chrisz Exp $
+# $OpenBSD: Makefile.inc,v 1.21 2013/02/09 14:49:52 sthen Exp $
 
 DISTNAME=	unison-$V
 CATEGORIES=	net
@@ -22,7 +22,7 @@ USE_GMAKE=	Yes
 FLAVORS=	no_x11
 FLAVOR?=
 
-.if ${FLAVOR:L:Mno_x11}
+.if ${FLAVOR:Mno_x11}
 MAKE_FLAGS=	UISTYLE=text
 .else
 MODULES +=	devel/gettext

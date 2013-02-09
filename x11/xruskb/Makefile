@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/09/04 19:02:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/02/09 14:49:54 sthen Exp $
 
 COMMENT=	english-russian keyboard switcher for X11
 
@@ -21,7 +21,7 @@ CONFIGURE_STYLE=gnu
 FLAVORS=	motif
 FLAVOR?=
 
-.if ${FLAVOR:L:Mmotif}
+.if ${FLAVOR:Mmotif}
 LIB_DEPENDS+=	x11/openmotif
 WANTLIB+=	Xm
 CONFIGURE_ARGS=	--with-toolkit=motif

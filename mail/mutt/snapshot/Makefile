@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2012/09/27 17:26:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.72 2013/02/09 14:49:51 sthen Exp $
 
 COMMENT=	tty-based e-mail client, development version
 
@@ -21,7 +21,7 @@ CONFIGURE_ARGS= --enable-hcache \
 LIB_DEPENDS=	databases/qdbm
 BUILD_DEPENDS+=	textproc/docbook-xsl
 
-.if ${FLAVOR:L:Msasl}
+.if ${FLAVOR:Msasl}
 CONFIGURE_ARGS+= --with-sasl=${LOCALBASE}
 LIB_DEPENDS+=	security/cyrus-sasl2
 WANTLIB+=	sasl2
@@ -32,7 +32,7 @@ MUTTRCDIR=	doc/
 DIST_COMPRESSED=compressed-5302767aa6aa.gz:2
 DIST_SIDEBAR=	sidebar-5302767aa6aa.gz:2
 
-.if ${FLAVOR:L:Msidebar}
+.if ${FLAVOR:Msidebar}
 PATCHFILES+=		${DIST_SIDEBAR}
 PATCH_DIST_STRIP=	-p1
 .else

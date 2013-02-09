@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2011/09/16 10:31:22 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2013/02/09 14:49:51 sthen Exp $
 
 COMMENT=	GRaphing, Advanced Computation and Exploration of data
 
@@ -39,10 +39,10 @@ WANTLIB +=	jpeg>=62 png>=2 t1>=5 tiff>=35 pdf>=2
 FLAVORS=	no_x11 fftw netcdf xmhtml
 FLAVOR?=
 
-.if ${FLAVOR:L:Mno_x11}
+.if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS+=	--without-x
 NO_REGRESS=		Yes
-.  if ${FLAVOR:L:Mxmhtml}
+.  if ${FLAVOR:Mxmhtml}
 ERRORS+=	"Fatal: Flavors 'no_x11' and 'xmhtml' are mutually exclusive."
 .  endif
 .else
@@ -50,7 +50,7 @@ REGRESS_IS_INTERACTIVE=	x11
 LIB_DEPENDS+=		x11/openmotif
 WANTLIB+=		ICE SM X11 Xext Xmu Xpm Xt Xm
 MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
-.  if ${FLAVOR:L:Mxmhtml}
+.  if ${FLAVOR:Mxmhtml}
 LIB_DEPENDS +=		www/xmhtml
 WANTLIB +=		XmHTML>=1
 CONFIGURE_ARGS+=	--enable-xmhtml
@@ -60,7 +60,7 @@ CONFIGURE_ARGS+=	--disable-xmhtml
 CONFIGURE_ENV=		LDFLAGS=-lm
 .endif
 
-.if ${FLAVOR:L:Mfftw}
+.if ${FLAVOR:Mfftw}
 LIB_DEPENDS +=		math/fftw
 WANTLIB +=		fftw>=2
 CONFIGURE_ARGS+=	--with-fftw
@@ -68,7 +68,7 @@ CONFIGURE_ARGS+=	--with-fftw
 CONFIGURE_ARGS+=	--without-fftw
 .endif
 
-.if ${FLAVOR:L:Mnetcdf}
+.if ${FLAVOR:Mnetcdf}
 LIB_DEPENDS +=		math/netcdf
 WANTLIB +=		netcdf>=1
 CONFIGURE_ARGS+=	--enable-netcdf
@@ -78,7 +78,7 @@ CONFIGURE_ARGS+=	--disable-netcdf
 
 GRACE_DIR=${TRUEPREFIX}/grace
 post-install:
-.if ${FLAVOR:L:Mno_x11}
+.if ${FLAVOR:Mno_x11}
 	ln -sf ${GRACE_DIR}/bin/grace ${PREFIX}/bin/grace
 	ln -sf ${GRACE_DIR}/bin/grace ${PREFIX}/bin/gracebat
 .else

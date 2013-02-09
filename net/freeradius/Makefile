@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2012/09/16 12:44:02 pea Exp $
+# $OpenBSD: Makefile,v 1.44 2013/02/09 14:49:51 sthen Exp $
 
 SHARED_ONLY=	Yes
 SHARED_LIBS +=  freeradius-radius    4.1      # .0.0
@@ -84,7 +84,7 @@ WANTLIB-main=		${WANTLIB} c com_err krb5 pcap pthread readline \
 PSEUDO_FLAVORS=	no_ldap no_mysql no_pgsql no_iodbc
 FLAVOR?=		
 
-.if ${FLAVOR:L:Mno_iodbc}
+.if ${FLAVOR:Mno_iodbc}
 CONFIGURE_ARGS+=	--without-rlm_sql_iodbc
 .else
 MULTI_PACKAGES+=	-iodbc
@@ -94,7 +94,7 @@ LIB_DEPENDS-iodbc=	databases/iodbc
 WANTLIB-iodbc=		iodbc>=2 pthread
 .endif
 
-.if ${FLAVOR:L:Mno_ldap}
+.if ${FLAVOR:Mno_ldap}
 CONFIGURE_ARGS+=	--without-rlm_ldap
 .else
 MULTI_PACKAGES+=	-ldap
@@ -105,7 +105,7 @@ WANTLIB-ldap=		${WANTLIB} sasl2 asn1 com_err gssapi krb5 \
 			lber>=8 ldap_r>=8 freeradius-radius>=1 pthread
 .endif
 
-.if ${FLAVOR:L:Mno_mysql}
+.if ${FLAVOR:Mno_mysql}
 CONFIGURE_ARGS+=	--without-rlm_sql_mysql
 .else
 MULTI_PACKAGES+=	-mysql
@@ -114,7 +114,7 @@ LIB_DEPENDS-mysql=	databases/mysql
 WANTLIB-mysql=		${WANTLIB} m pthread z mysqlclient_r>=16
 .endif
 
-.if ${FLAVOR:L:Mno_pgsql}
+.if ${FLAVOR:Mno_pgsql}
 CONFIGURE_ARGS+=	--without-rlm_sql_postgresql
 .else
 MULTI_PACKAGES+=	-pgsql

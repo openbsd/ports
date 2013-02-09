@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2012/12/21 11:32:39 landry Exp $
+# $OpenBSD: Makefile,v 1.12 2013/02/09 14:49:53 sthen Exp $
 
 COMMENT =	free open-source SQL full-text search engine
 BROKEN-hppa =	internal compiler error: internal consistency failure
@@ -37,7 +37,7 @@ CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
 FLAVORS =	pgsql
 FLAVOR ?=
 
-.if ${FLAVOR:L:Mpgsql}
+.if ${FLAVOR:Mpgsql}
 CONFIGURE_ARGS +=--with-pgsql \
 		--without-mysql
 LIB_DEPENDS +=	databases/postgresql

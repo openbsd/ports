@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2013/02/05 14:49:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.68 2013/02/09 14:49:53 sthen Exp $
 
 COMMENT-main=		UPS monitoring program supporting many brands
 COMMENT-cgi=		CGIs for monitoring Nut-based UPSs
@@ -67,13 +67,13 @@ PSEUDO_FLAVORS=		no_snmp no_xml
 FLAVOR?=
 MULTI_PACKAGES=		-main -cgi
 
-.if ${FLAVOR:L:Mno_snmp}
+.if ${FLAVOR:Mno_snmp}
 CONFIGURE_ARGS+=	--without-snmp
 .else
 MULTI_PACKAGES+=	-snmp
 .endif
 
-.if ${FLAVOR:L:Mno_xml}
+.if ${FLAVOR:Mno_xml}
 CONFIGURE_ARGS+=	--without-neon
 .else
 MULTI_PACKAGES+=	-xml

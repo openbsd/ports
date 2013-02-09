@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/06/27 19:19:46 rpointel Exp $
+# $OpenBSD: Makefile,v 1.3 2013/02/09 14:49:50 sthen Exp $
 
 COMMENT=		cross-project testing tool for Python
 
@@ -36,7 +36,7 @@ REGRESS_DEPENDS=	devel/py-test${MODPY_FLAVOR}
 do-regress:
 	cd ${WRKSRC} && ${LOCALBASE}/bin/py.test${MODPY_BIN_SUFFIX} testing
 
-.if ${FLAVOR:L:Mpython3}
+.if ${FLAVOR:Mpython3}
 post-install:
 	mv ${PREFIX}/bin/py.test ${PREFIX}/bin/py.test${MODPY_BIN_SUFFIX}
 .endif

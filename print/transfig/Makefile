@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2010/11/20 09:48:40 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2013/02/09 14:49:52 sthen Exp $
 
 COMMENT=	tools to convert Xfig's .fig files
 
@@ -29,7 +29,7 @@ FLAVORS=	a4
 FLAVOR?=
 WANTLIB=	X11 Xpm c m z png>=2
 
-.if ${FLAVOR:L:Ma4}
+.if ${FLAVOR:Ma4}
 PATCH_LIST=	patch-* a4-*
 .endif
 

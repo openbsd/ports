@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2012/04/28 10:51:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2013/02/09 14:49:51 sthen Exp $
 
 SHARED_LIBS +=  ft                   0.0      # .0.0
 
@@ -34,7 +34,7 @@ CONFIGURE_STYLE=	gnu
 SEPARATE_BUILD=		Yes
 SYSCONFDIR=		${BASESYSCONFDIR}/flow-tools
 
-.if !${FLAVOR:L:Mpgsql}
+.if !${FLAVOR:Mpgsql}
 CONFIGURE_ARGS+=	--without-postgresql
 .else
 WANTLIB +=		pq

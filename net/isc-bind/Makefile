@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/01/04 13:34:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2013/02/09 14:49:52 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon
 
@@ -33,7 +33,7 @@ MASTER_SITES0=	http://ss.vix.com/~vixie/
 FLAVORS=	ratelimit
 FLAVOR?=
 
-.if ${FLAVOR:L:Mratelimit}
+.if ${FLAVOR:Mratelimit}
 PATCHFILES+=	rl-${RV}.patch:0
 .else
 SUPDISTFILES+=	rl-${RV}.patch:0

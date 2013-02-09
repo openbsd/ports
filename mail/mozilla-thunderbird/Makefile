@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.165 2013/01/11 23:06:36 landry Exp $
+# $OpenBSD: Makefile,v 1.166 2013/02/09 14:49:51 sthen Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
@@ -33,7 +33,7 @@ SO_VERSION =	27.0
 
 MOZILLA_LIBS = ldap60 ldif60 mozalloc mozgnome prldap60 xpcom xul calbasecomps \
 	enigmime-${XPCOM_ABI}-gcc3 subprocess-${XPCOM_ABI}-gcc3
-#.if ${FLAVOR:L:Mdebug}
+#.if ${FLAVOR:Mdebug}
 #MOZILLA_LIBS +=	addrbook bayesflt fts3tok mailview mime mimeemitter msgbase \
 #	msgcompose msgdb msgimap msglocal msgmdn msgnews vcard msgbaseutil
 #.endif

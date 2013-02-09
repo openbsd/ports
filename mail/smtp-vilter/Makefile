@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2011/09/16 10:31:22 espie Exp $
+# $OpenBSD: Makefile,v 1.50 2013/02/09 14:49:51 sthen Exp $
 
 COMMENT=	sendmail milter to scan messages for viruses and spam
 
@@ -27,7 +27,7 @@ NO_REGRESS=	Yes
 FLAVORS=	ldap
 FLAVOR?=
 
-.if ${FLAVOR:L:Mldap}
+.if ${FLAVOR:Mldap}
 MAKE_FLAGS+=	-DENABLE_LDAP
 LIB_DEPENDS+=	databases/openldap
 WANTLIB += ldap_r lber

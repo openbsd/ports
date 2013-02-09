@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2013/01/04 00:24:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2013/02/09 14:49:52 sthen Exp $
 
 COMMENT=	multi-threaded routing daemon
 
@@ -47,7 +47,7 @@ FAKE_FLAGS=	exampledir='${PREFIX}/share/examples/quagga' \
 FLAVORS=	snmp
 FLAVOR?=
 
-.if ${FLAVOR:L:Msnmp}
+.if ${FLAVOR:Msnmp}
 LIB_DEPENDS=	net/net-snmp
 WANTLIB+=	crypto netsnmp
 CONFIGURE_ARGS+= --enable-snmp

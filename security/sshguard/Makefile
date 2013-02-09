@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/03/07 17:44:16 rpointel Exp $
+# $OpenBSD: Makefile,v 1.5 2013/02/09 14:49:53 sthen Exp $
 
 COMMENT=	protect against brute force attacks on sshd and others
 
@@ -24,7 +24,7 @@ NO_REGRESS=	Yes
 FLAVORS =	tcpd
 FLAVOR?=
 
-.if ${FLAVOR:L:Mtcpd}
+.if ${FLAVOR:Mtcpd}
 CONFIGURE_ARGS = --with-firewall=hosts
 .else
 CONFIGURE_ARGS = --with-firewall=pf 

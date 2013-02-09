@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2013/01/14 13:17:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2013/02/09 14:49:53 sthen Exp $
 
 COMMENT=	MS Word, Excel, Powerpoint ==> ASCII or TeX
 
@@ -20,7 +20,7 @@ WANTLIB=	c m
 FLAVORS=	tk
 FLAVOR?=
 
-.if ${FLAVOR:L:Mtk}
+.if ${FLAVOR:Mtk}
 MODULES=	x11/tk
 RUN_DEPENDS=	${MODTK_RUN_DEPENDS}
 CONFIGURE_ARGS+=--with-wish=${MODTK_BIN}

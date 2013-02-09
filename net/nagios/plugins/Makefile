@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2012/06/28 23:10:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2013/02/09 14:49:52 sthen Exp $
 
 COMMENT-main=	nagios base plugins
 COMMENT-fping=	fping plugin
@@ -59,7 +59,7 @@ FLAVOR?=
 
 MULTI_PACKAGES=	-main -fping -game
 
-.if ! ${FLAVOR:L:Mno_db}
+.if ! ${FLAVOR:Mno_db}
 MULTI_PACKAGES+=-ldap -mysql -pgsql
 CONFIGURE_ARGS+=--with-mysql=${LOCALBASE} \
 		--with-pgsql=${LOCALBASE}
@@ -68,17 +68,17 @@ CFLAGS+=	-DLDAP_DEPRECATED
 CONFIGURE_ARGS+=--without-mysql --without-pgsql
 .endif
 
-.if ! ${FLAVOR:L:Mno_ntp}
+.if ! ${FLAVOR:Mno_ntp}
 MULTI_PACKAGES+=-ntp
 BUILD_DEPENDS+=	net/ntp
 .endif
 
-.if ! ${FLAVOR:L:Mno_samba}
+.if ! ${FLAVOR:Mno_samba}
 MULTI_PACKAGES+=-samba
 BUILD_DEPENDS+=	net/samba
 .endif
 
-.if ! ${FLAVOR:L:Mno_snmp}
+.if ! ${FLAVOR:Mno_snmp}
 MULTI_PACKAGES+=-snmp
 BUILD_DEPENDS+=	net/p5-Net-SNMP \
 		net/net-snmp

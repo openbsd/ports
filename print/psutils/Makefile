@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2012/04/28 12:16:29 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2013/02/09 14:49:52 sthen Exp $
 
 COMMENT=	utilities for manipulating PostScript documents
 
@@ -30,7 +30,7 @@ USE_GROFF =	Yes
 FLAVORS=	a4
 FLAVOR?=
 
-.if ${FLAVOR:L} == a4
+.if ${FLAVOR} == a4
 PAPERSIZE=	a4
 .else
 PAPERSIZE=	letter

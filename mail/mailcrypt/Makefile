@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/03/02 16:01:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2013/02/09 14:49:51 sthen Exp $
 
 COMMENT=	emacs interface to PGP and GnuPG
 
@@ -21,15 +21,15 @@ FLAVOR?=	gnupg
 
 BUILD_DEPENDS=	emacs->=21,<22:editors/emacs21
 
-.if ${FLAVOR:L:Mgnupg}
+.if ${FLAVOR:Mgnupg}
 RUN_DEPENDS=	security/gnupg
 .endif
 
-.if ${FLAVOR:L:Mpgp}
+.if ${FLAVOR:Mpgp}
 RUN_DEPENDS=	pgp->=2,<3:security/pgp
 .endif
 
-.if ${FLAVOR:L:Mpgp5}
+.if ${FLAVOR:Mpgp5}
 RUN_DEPENDS=	pgp->=5,<6:security/pgp5
 .endif
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2012/10/18 08:12:16 giovanni Exp $
+# $OpenBSD: Makefile,v 1.33 2013/02/09 14:49:53 sthen Exp $
 
 COMMENT=	apache HTTP server
 
@@ -27,7 +27,7 @@ LIB_DEPENDS=		devel/pcre
 FLAVORS=		ldap
 FLAVOR?=
 
-.if ${FLAVOR:L:Mldap}
+.if ${FLAVOR:Mldap}
 CONFIGURE_ARGS+=	--with-ldap --enable-ldap --enable-authnz-ldap
 WANTLIB+=		asn1 com_err gssapi krb5 sasl2 ldap lber
 LIB_DEPENDS+=		databases/openldap
@@ -104,7 +104,7 @@ post-install:
 	mv ${PREFIX}/sbin/${i} ${PREFIX}/sbin/${i}2
 .endfor
 
-.if ${FLAVOR:L:Mldap}
+.if ${FLAVOR:Mldap}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ap2-mod_auth_ldap
 .for i in mod_ldap.html mod_authnz_ldap.html.en \
 	mod_authnz_ldap.html mod_ldap.html.en

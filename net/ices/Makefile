@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2012/03/29 13:38:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2013/02/09 14:49:51 sthen Exp $
 
 COMMENT=	icecast source for streaming MP3
 
@@ -37,7 +37,7 @@ LIB_DEPENDS=	audio/lame \
 FLAVORS=	python mp4
 FLAVOR?=
 
-.if ${FLAVOR:L:Mpython}
+.if ${FLAVOR:Mpython}
 MODULES+=	lang/python
 CONFIGURE_ARGS+=--with-python=${MODPY_BIN}
 LIB_DEPENDS+=	${MODPY_LIB_DEPENDS}
@@ -45,7 +45,7 @@ LIB_DEPENDS+=	${MODPY_LIB_DEPENDS}
 CONFIGURE_ARGS+=--without-python
 .endif
 
-.if ${FLAVOR:L:Mmp4}
+.if ${FLAVOR:Mmp4}
 CONFIGURE_ARGS+=--with-faad=${LOCALBASE}
 LIB_DEPENDS+=	audio/faad \
 		multimedia/libmp4v2

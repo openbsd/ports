@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2012/04/28 10:51:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2013/02/09 14:49:51 sthen Exp $
 
 COMMENT=	flexible POP3 server
 
@@ -31,7 +31,7 @@ USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 # enable support for APOP authentication.
-.if ${FLAVOR:L:Mapop}
+.if ${FLAVOR:Mapop}
 CONFIGURE_ARGS+= --enable-userconfig --enable-apop
 .else
 CONFIGURE_ARGS+= --disable-userconfig --disable-apop

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2012/09/01 14:36:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2013/02/09 14:49:52 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -38,7 +38,7 @@ CONFIGURE_ARGS+=--with-pic \
 FLAVORS=	socks
 FLAVOR?=
 
-.if ${FLAVOR:L:Msocks}
+.if ${FLAVOR:Msocks}
 CONFIGURE_ARGS+=	--with-socks
 BUILD_DEPENDS+=		security/dante
 .endif

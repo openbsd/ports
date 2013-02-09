@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2012/03/17 10:47:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2013/02/09 14:49:51 sthen Exp $
 
 COMMENT=	filtering local mail delivery agent
 
@@ -27,7 +27,7 @@ FLAVORS=	lmtp
 FLAVOR?=
 
 USE_GROFF =	Yes
-.if ${FLAVOR:L:Mlmtp}
+.if ${FLAVOR:Mlmtp}
 CFLAGS+=	-DLMTP
 .endif
 

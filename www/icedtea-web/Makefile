@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/11/10 10:37:27 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2013/02/09 14:49:53 sthen Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	Java web browser plugin
@@ -39,7 +39,7 @@ BUILD_DEPENDS =	archivers/zip \
 TAR =		${LOCALBASE}/bin/gtar
 USE_GMAKE =	Yes
 
-.if ${FLAVOR:L:Mgtk3}
+.if ${FLAVOR:Mgtk3}
 CONFIGURE_ARGS +=	--with-gtk=3
 LIB_DEPENDS =	x11/gtk+3
 WANTLIB += cairo-gobject gdk-3 gtk-3

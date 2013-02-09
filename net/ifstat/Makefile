@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/11/16 00:10:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2013/02/09 14:49:52 sthen Exp $
 
 COMMENT=		tool to monitor interface bandwidth usage
 
@@ -28,7 +28,7 @@ NO_REGRESS=		Yes
 FLAVORS=		snmp
 FLAVOR?=
 
-.if ${FLAVOR:L} == "snmp"
+.if ${FLAVOR} == "snmp"
 WANTLIB +=		netsnmp
 LIB_DEPENDS=		net/net-snmp
 CONFIGURE_ARGS+=	--with-snmp=${LOCALBASE}

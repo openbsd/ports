@@ -1,4 +1,4 @@
-# $OpenBSD: kde.port.mk,v 1.37 2013/01/23 21:10:37 zhuk Exp $
+# $OpenBSD: kde.port.mk,v 1.38 2013/02/09 14:49:53 sthen Exp $
 
 SHARED_ONLY ?=	Yes
 
@@ -20,7 +20,7 @@ MODKDE_CONFIGURE_ARGS +=	--includedir=${PREFIX}/include/kde
 MODKDE_CONFIGURE_ARGS +=	--with-xdmdir=/var/X11/kdm
 MODKDE_CONFIGURE_ARGS +=	--enable-mitshm
 MODKDE_CONFIGURE_ARGS +=	--with-xinerama
-.if ${FLAVOR:L:Mdebug}
+.if ${FLAVOR:Mdebug}
 MODKDE_CONFIGURE_ARGS +=	--enable-debug=yes
 .else
 MODKDE_CONFIGURE_ARGS +=	--disable-debug

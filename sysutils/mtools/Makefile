@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2012/03/29 13:39:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2013/02/09 14:49:53 sthen Exp $
 
 COMMENT=	read/write/list/format DOS disks under Unix
 
@@ -29,7 +29,7 @@ USE_GROFF =	Yes
 FLAVORS=	no_x11
 FLAVOR?=
 
-.if ${FLAVOR:L:Mno_x11}
+.if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS=		--with-x=no
 .else
 WANTLIB+=		ICE SM X11 Xau pthread-stubs xcb

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2010/11/19 07:23:06 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2013/02/09 14:49:51 sthen Exp $
 
 COMMENT=		generate a cross-referenced HTML mail archive
 
@@ -34,7 +34,7 @@ USE_GROFF =		Yes
 FLAVORS=		gdbm
 FLAVOR?=
 
-.if ${FLAVOR:L} == "gdbm"
+.if ${FLAVOR} == "gdbm"
 CONFIGURE_ARGS +=--with-gdbm=${LOCALBASE}
 LIB_DEPENDS +=	databases/gdbm
 WANTLIB +=	gdbm

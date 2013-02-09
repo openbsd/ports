@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/04/28 10:52:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2013/02/09 14:49:51 sthen Exp $
 
 COMMENT-main=	fully featured POP3 and IMAP4 proxy server
 COMMENT-ldap=	LDAP backend for perdition mail proxy
@@ -66,7 +66,7 @@ LIB_DEPENDS-main=	databases/db/v4 \
 			devel/vanessa/socket \
 			devel/popt
 
-.if ${FLAVOR:L:Mno_ldap}
+.if ${FLAVOR:Mno_ldap}
 CONFIGURE_ARGS+=	--disable-ldap
 .else
 SHARED_LIBS +=  	perditiondb_ldap             0.0  # .0.0
@@ -80,7 +80,7 @@ WANTLIB-ldap= 		asn1 com_err crypto gssapi krb5 ssl util sasl2 \
 			ldap>=2 lber>=2
 .endif
 
-.if ${FLAVOR:L:Mno_mysql}
+.if ${FLAVOR:Mno_mysql}
 CONFIGURE_ARGS+=	--disable-mysql
 .else
 SHARED_LIBS +=  	perditiondb_mysql            0.0  # .0.0
@@ -94,7 +94,7 @@ WANTLIB-mysql=		crypto ssl util m z lib/mysql/mysqlclient>=10 \
 			vanessa_adt>=0.3 vanessa_logger>=0.3
 .endif
 
-.if ${FLAVOR:L:Mno_pgsql}
+.if ${FLAVOR:Mno_pgsql}
 CONFIGURE_ARGS+=	--disable-pg
 .else 
 SHARED_LIBS +=  	perditiondb_postgresql       0.0  # .0.0

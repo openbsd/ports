@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.145 2013/02/07 19:13:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.146 2013/02/09 14:49:53 sthen Exp $
 
 MULTI_PACKAGES=	-main -ntlm
 
@@ -108,7 +108,7 @@ FAKE_FLAGS=	sysconfdir=$E \
 		DEFAULT_MIME_TABLE=$E/mime.conf
 REGRESS_DEPENDS= devel/cppunit
 
-.if !${FLAVOR:L:Mno_ldap}
+.if !${FLAVOR:Mno_ldap}
 MULTI_PACKAGES+= -ldap
 BASIC_AUTH+=	LDAP
 DIGEST_AUTH+=	LDAP

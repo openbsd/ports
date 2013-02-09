@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/02/05 14:51:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2013/02/09 14:49:53 sthen Exp $
 
 COMMENT=	generates or checks digests or mac
 
@@ -24,7 +24,7 @@ USE_GROFF =		Yes
 FLAVORS=		static
 FLAVOR?=
 
-.if ${FLAVOR:L:Mstatic}
+.if ${FLAVOR:Mstatic}
 BUILD_DEPENDS+=		security/mhash
 CONFIGURE_ARGS+=	--enable-static-link
 .else

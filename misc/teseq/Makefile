@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/08/06 12:21:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2013/02/09 14:49:51 sthen Exp $
 
 COMMENT=	analyze terminal control sequences
 
@@ -25,7 +25,7 @@ WANTLIB=	c
 CONFIGURE_STYLE=gnu
 MAKE_FLAGS=	AM_CFLAGS=""
 
-.if ${FLAVOR:L:Mregress}
+.if ${FLAVOR:Mregress}
 BUILD_DEPENDS=	devel/check
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

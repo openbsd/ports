@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/02/07 18:22:30 robert Exp $
+# $OpenBSD: Makefile,v 1.23 2013/02/09 14:49:53 sthen Exp $
 
 COMMENT=		industrial-grade ticketing system
 
@@ -104,10 +104,10 @@ BUILD_DEPENDS+=		security/gnupg \
 FLAVORS=		pgsql sqlite
 FLAVOR?=
 
-.if ${FLAVOR:L:Mpgsql}
+.if ${FLAVOR:Mpgsql}
 RUN_DEPENDS+=		databases/p5-DBD-Pg
 CONFIGURE_ARGS+=	--with-db-type=Pg
-.elif ${FLAVOR:L:Msqlite}
+.elif ${FLAVOR:Msqlite}
 RUN_DEPENDS+=		databases/p5-DBD-SQLite
 CONFIGURE_ARGS+=	--with-db-type=SQLite
 .else

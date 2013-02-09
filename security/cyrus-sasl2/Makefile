@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2013/01/07 19:35:20 matthieu Exp $
+# $OpenBSD: Makefile,v 1.69 2013/02/09 14:49:52 sthen Exp $
 
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
 
@@ -48,7 +48,7 @@ FLAVOR?=
 BRKFLAVORMSG=	choose either mysql, pgsql or sqlite3
 PKG_ARGS?=	-Dsql=0
 
-.if ${FLAVOR:L:Mdb4}
+.if ${FLAVOR:Mdb4}
 CONFIGURE_ARGS+=--with-dblib=berkeley \
 		--with-bdb-libdir="${LOCALBASE}/lib/db4" \
 		--with-bdb-incdir="${LOCALBASE}/include/db4"
@@ -60,7 +60,7 @@ CONFIGURE_ARGS+=--with-dblib=ndbm \
 		--without-bdb-incdir
 .endif
 
-.if ${FLAVOR:L:Mldap}
+.if ${FLAVOR:Mldap}
 WANTLIB+=	ssl
 LIB_DEPENDS+=	openldap-client->=2,<3:databases/openldap
 CONFIGURE_ARGS+=--with-ldap=${LOCALBASE} \
@@ -70,8 +70,8 @@ WANTLIB +=	lber lber-2.4 ldap ldap-2.4
 CONFIGURE_ARGS+=--without-ldap
 .endif
 
-.if ${FLAVOR:L:Mmysql}
-.if ${FLAVOR:L:Mpgsql} || ${FLAVOR:L:Msqlite3}
+.if ${FLAVOR:Mmysql}
+.if ${FLAVOR:Mpgsql} || ${FLAVOR:Msqlite3}
 ERRORS+=	${BRKFLAVORMSG}
 .endif
 PKG_ARGS=	-Dsql=1
@@ -83,8 +83,8 @@ CONFIGURE_ARGS+=--enable-sql \
 		--without-sqlite3
 .endif
 
-.if ${FLAVOR:L:Mpgsql}
-.if ${FLAVOR:L:Mmysql} || ${FLAVOR:L:Msqlite3}
+.if ${FLAVOR:Mpgsql}
+.if ${FLAVOR:Mmysql} || ${FLAVOR:Msqlite3}
 ERRORS+=	${BRKFLAVORMSG}
 .endif
 PKG_ARGS=	-Dsql=1
@@ -97,8 +97,8 @@ CONFIGURE_ARGS+=--enable-sql \
 CFLAGS+=	-I${LOCALBASE}/include/postgresql
 .endif
 
-.if ${FLAVOR:L:Msqlite3}
-.if ${FLAVOR:L:Mmysql} || ${FLAVOR:L:Mpgsql}
+.if ${FLAVOR:Msqlite3}
+.if ${FLAVOR:Mmysql} || ${FLAVOR:Mpgsql}
 ERRORS+=		${BRKFLAVORMSG}
 .endif
 PKG_ARGS=	-Dsql=1
@@ -120,11 +120,11 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/cyrus-sasl
 	${INSTALL_DATA} ${WRKSRC}/doc/{*.html,*.txt} ${PREFIX}/share/doc/cyrus-sasl
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/cyrus-sasl
-.if ${FLAVOR:L:Mmysql} || ${FLAVOR:L:Mpgsql} || ${FLAVOR:L:Msqlite3}
+.if ${FLAVOR:Mmysql} || ${FLAVOR:Mpgsql} || ${FLAVOR:Msqlite3}
 	${INSTALL_DATA} ${FILESDIR}/Sendmail.conf-sql \
 		${PREFIX}/share/examples/cyrus-sasl
 .endif
-.if ${FLAVOR:L:Mldap}
+.if ${FLAVOR:Mldap}
 	${INSTALL_DATA} ${WRKSRC}/saslauthd/LDAP_SASLAUTHD \
 		${PREFIX}/share/doc/cyrus-sasl
 	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/saslauthd.conf \

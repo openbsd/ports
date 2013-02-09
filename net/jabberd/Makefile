@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2012/08/24 07:24:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.44 2013/02/09 14:49:52 sthen Exp $
 
 COMMENT=		jabber server
 DISTNAME=		jabberd-2.0s11
@@ -43,7 +43,7 @@ CONFIGURE_ARGS=		--enable-debug \
 EXTRA_INCLUDE_PATH=	${LOCALBASE}/include
 EXTRA_LIBRARY_PATH=	${LOCALBASE}/lib
 
-.if ${FLAVOR:L:Mmysql}
+.if ${FLAVOR:Mmysql}
 LIB_DEPENDS+=		databases/mysql
 WANTLIB +=		lib/mysql/mysqlclient>=10
 CONFIGURE_ARGS+=	--enable-mysql
@@ -51,7 +51,7 @@ CONFIGURE_ARGS+=	--enable-mysql
 CONFIGURE_ARGS+=	--disable-mysql
 .endif
 
-.if ${FLAVOR:L:Mpostgresql}
+.if ${FLAVOR:Mpostgresql}
 LIB_DEPENDS+=		databases/postgresql
 WANTLIB +=		pq>=4
 CONFIGURE_ARGS+=	--enable-pgsql
@@ -59,7 +59,7 @@ CONFIGURE_ARGS+=	--enable-pgsql
 CONFIGURE_ARGS+=	--disable-pgsql
 .endif
 
-.if ${FLAVOR:L:Mdb}
+.if ${FLAVOR:Mdb}
 LIB_DEPENDS+=		databases/db/v4
 WANTLIB +=		lib/db4/db>=4
 CONFIGURE_ARGS+=	--enable-db
@@ -68,7 +68,7 @@ EXTRA_INCLUDE_PATH:=	${EXTRA_INCLUDE_PATH}:${LOCALBASE}/include/db4
 CONFIGURE_ARGS+=	--disable-db
 .endif
 
-.if ${FLAVOR:L:Mldap}
+.if ${FLAVOR:Mldap}
 LIB_DEPENDS+=		databases/openldap>=2.3
 WANTLIB +=		ldap>=8 lber>=8
 CONFIGURE_ARGS+=	--enable-ldap
@@ -78,7 +78,7 @@ CONFIGURE_ARGS+=	--disable-ldap
 .endif
 
 .for s in ${STORAGES}
-.  if ${FLAVOR:L:M$s}
+.  if ${FLAVOR:M$s}
 storage_flag=1
 .  endif
 .endfor

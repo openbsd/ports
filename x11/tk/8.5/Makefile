@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2012/11/19 15:10:48 stu Exp $
+# $OpenBSD: Makefile,v 1.28 2013/02/09 14:49:54 sthen Exp $
 
 COMMENT =		graphical toolkit for Tcl
 
@@ -54,7 +54,7 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 FLAVORS =		threaded
 FLAVOR ?=
 
-.if ${FLAVOR:L:Mthreaded}
+.if ${FLAVOR:Mthreaded}
 CONFIGURE_ARGS +=	--enable-threads
 WANTLIB +=		pthread
 LIB_DEPENDS +=		tcl->=8.5.13,<8.5.14-threaded:lang/tcl/8.5,threaded

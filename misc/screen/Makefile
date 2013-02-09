@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2013/02/05 14:51:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.64 2013/02/09 14:49:51 sthen Exp $
 # Please adjust www/faq/faq15.html if updating.
 
 COMMENT=	multi-screen window manager
@@ -28,12 +28,12 @@ USE_GROFF =	Yes
 FLAVORS=	static shm
 FLAVOR?=
 
-.if ${FLAVOR:L} == "static"
+.if ${FLAVOR} == "static"
 CONFIGURE_ENV=	LDFLAGS="-static"
 .else
 WANTLIB=	c curses util
 .endif
-.if ${FLAVOR:L} == "shm"
+.if ${FLAVOR} == "shm"
 PATCH_LIST=	patch-* shmpatch-*
 .endif
 

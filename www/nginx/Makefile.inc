@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2012/09/24 19:29:05 jeremy Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2013/02/09 14:49:53 sthen Exp $
 
 COMMENT=	robust and small HTTP server and mail proxy server
 
@@ -58,14 +58,14 @@ LUADISTFILES+=		simpl-ngx_devel_kit-v0.2.17-0-gbc97eea.tar.gz:0
 LUADISTFILES+=		chaoslawful-lua-nginx-module-v0.6.1-0-ge282c1c.tar.gz:0
 SUBSTFILES=		conf/nginx.conf
 
-.if ${FLAVOR:L:Mpassenger}
+.if ${FLAVOR:Mpassenger}
 CONFIGURE_ARGS+=	--add-module=${LOCALBASE}/lib/phusion-passenger19/ext/nginx
 BUILD_DEPENDS+=		www/ruby-passenger,-main,ruby19
 RUN_DEPENDS+=		ruby-passenger-*|ruby19-passenger-*:www/ruby-passenger,-main
 WANTLIB+=		m pthread stdc++
 .endif
 
-.if ${FLAVOR:L:Mlua}
+.if ${FLAVOR:Mlua}
 CONFIGURE_ARGS+=	--add-module=${WRKSRC}/simpl-ngx_devel_kit
 CONFIGURE_ARGS+=	--add-module=${WRKSRC}/chaoslawful-lua-nginx-module
 CONFIGURE_ENV+=		MODLUA_INCL_DIR=${MODLUA_INCL_DIR} \
@@ -82,7 +82,7 @@ SUPDISTFILES+=		${LUADISTFILES}
 NO_REGRESS=		Yes
 ALL_TARGET=
 
-.if ${FLAVOR:L:Mlua}
+.if ${FLAVOR:Mlua}
 pre-patch:
 	cd ${WRKSRC} && \
 	    mv ../simpl-ngx_devel_kit-* simpl-ngx_devel_kit && \

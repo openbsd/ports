@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2012/11/27 12:16:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2013/02/09 14:49:52 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -87,7 +87,7 @@ CONFIGURE_ARGS=		-DCMAKE_C_FLAGS="${CFLAGS}" \
 			-DWITH_NM:BOOL=OFF \
 			-DBIPR:BOOL=OFF
 
-.if ${FLAVOR:L:Mmozilla}
+.if ${FLAVOR:Mmozilla}
 BUILD_DEPENDS +=	devel/xulrunner/1.9,-devel>=1.9.1
 MULTI_PACKAGES +=	-mozilla
 CONFIGURE_ARGS +=	-DWITH_MOZJS:BOOL=ON
@@ -95,7 +95,7 @@ CONFIGURE_ARGS +=	-DWITH_MOZJS:BOOL=ON
 CONFIGURE_ARGS +=	-DWITH_MOZJS:BOOL=OFF
 .endif
 
-.if ${FLAVOR:L:Mwebkit}
+.if ${FLAVOR:Mwebkit}
 MULTI_PACKAGES +=	-webkit
 CONFIGURE_ARGS +=	-DWITH_WEBKIT3:BOOL=ON
 .else

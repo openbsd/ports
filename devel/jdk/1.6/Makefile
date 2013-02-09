@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2013/02/07 19:06:55 kurt Exp $
+# $OpenBSD: Makefile,v 1.42 2013/02/09 14:49:50 sthen Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	amd64 i386
@@ -77,7 +77,7 @@ BUILD_DEPENDS=	archivers/zip \
 MODULES=	converters/libiconv
 WANTLIB=	X11 Xext Xi Xtst c freetype m pthread sndio stdc++ z
 
-.if ${FLAVOR:L:Mnative_bootstrap}
+.if ${FLAVOR:Mnative_bootstrap}
 INSTALLED!= (pkg_info -e "jdk->=1.6,<1.7" -q && echo yes) || echo no
 .if ${INSTALLED:L} != "yes"
 ERRORS += "Fatal: This flavor requires an installed 1.6 jdk package"
@@ -125,7 +125,7 @@ MAKE_ENV+=	ALT_BOOTDIR=${ALT_BOOTDIR} \
 		WARNINGS_ARE_ERRORS="" \
 		HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS}
 
-.if !${FLAVOR:L:Mwith_ipv6}
+.if !${FLAVOR:Mwith_ipv6}
 MAKE_ENV+=	DONT_ENABLE_IPV6=YES
 .endif
 

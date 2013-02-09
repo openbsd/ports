@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2013/01/14 12:14:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2013/02/09 14:49:52 sthen Exp $
 
 COMMENT-main=	host and service monitor
 COMMENT-web=	cgis and webpages for nagios
@@ -50,7 +50,7 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 FLAVORS=	chroot
 FLAVOR?=
 
-.if ${FLAVOR:L:Mchroot}
+.if ${FLAVOR:Mchroot}
 CHROOT=		/var/www
 PATCH_LIST=	patch-* chroot-*
 .else
@@ -61,7 +61,7 @@ WANTLIB=	c m
 
 PREFIX-web=	/var/www
 # overwrite RUN_DEPENDS in order to only depend on the base package
-.if ${FLAVOR:L:Mchroot}
+.if ${FLAVOR:Mchroot}
 WANTLIB-web=
 LIB_DEPENDS-web=
 RUN_DEPENDS-web= nagios-${V}-chroot:net/nagios/nagios,chroot

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2012/08/18 12:41:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.104 2013/02/09 14:49:54 sthen Exp $
 
 COMMENT-main=		C++ X11 GUI toolkit
 COMMENT-examples=	examples and tutorial for qt3
@@ -97,7 +97,7 @@ CONFIGURE_ARGS=	-qt-gif -system-libmng -system-libpng -system-libjpeg -system-zl
 
 MULTI_PACKAGES+=-main -html -examples -mysql -postgresql -sqlite2
 
-.if ${FLAVOR:L:Mdebug}
+.if ${FLAVOR:Mdebug}
 CONFIGURE_ARGS+=-debug
 PKGDEBUG=-debug
 FLAVOR += no_examples
@@ -207,7 +207,7 @@ PROGRAMS=assistant linguist lrelease lupdate qm2ts qmake qtconfig
 
 post-configure:
 	perl -pi.bak -e 's,-L(\Q${WRKDIST}\E|\Q$$(LOCALBASE)\E)/lib,,' ${WRKDIST}/lib/qt-mt.pc
-.if !${FLAVOR:L:Mdebug}
+.if !${FLAVOR:Mdebug}
 	@cd ${WRKSRC} && cp -R examples examples-src
 	@find ${WRKSRC}/examples-src -name '*.orig' |xargs rm -f
 	@find ${WRKSRC}/examples-src -name '.moc' |xargs rm -rf

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2012/11/16 17:05:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2013/02/09 14:49:52 sthen Exp $
 
 COMMENT-main=	portable low-level networking library
 COMMENT-python= python interface to libdnet
@@ -39,7 +39,7 @@ USE_GROFF =		Yes
 RUN_DEPENDS-main=
 
 CONFIGURE_ARGS +=	--without-check
-.if ${FLAVOR:L:Mno_python}
+.if ${FLAVOR:Mno_python}
 CONFIGURE_ARGS+=	--without-python
 .else
 MODULES+=		lang/python

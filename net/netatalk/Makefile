@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2013/01/09 23:06:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2013/02/09 14:49:52 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -42,7 +42,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 FLAVORS=	avahi
 FLAVOR?=
 
-.if ${FLAVOR:L:Mavahi}
+.if ${FLAVOR:Mavahi}
 WANTLIB+=	avahi-client avahi-common dbus-1
 LIB_DEPENDS+=	net/avahi
 .else
