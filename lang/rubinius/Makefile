@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2011/12/30 10:42:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2013/02/10 11:10:02 bcallah Exp $
 
 SHARED_ONLY=	Yes
 
 BROKEN-sparc64 = vm segfaults when building openssl extension
+BROKEN-mips64 = no atomics for this arch
+BROKEN-mips64el = no atomics for this arch
 
 COMMENT =	Ruby virtual machine and core library
 
@@ -30,8 +32,7 @@ MASTER_SITES =	http://asset.rubini.us/
 
 BUILD_DEPENDS =	devel/bison \
 		devel/ruby-rake \
-		devel/libffi \
-		devel/llvm>=3.0
+		devel/libffi
 LIB_DEPENDS =	databases/gdbm \
 		databases/db/v4 \
 		${MODRUBY_LIB_DEPENDS}
