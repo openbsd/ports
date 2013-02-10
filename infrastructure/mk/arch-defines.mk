@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.12 2013/02/01 05:18:48 brad Exp $
+# $OpenBSD: arch-defines.mk,v 1.13 2013/02/10 20:27:42 miod Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -23,8 +23,8 @@ NO_SHARED_ARCHS = vax
 GCC4_ARCHS = alpha amd64 arm armish beagle gumstix i386 hppa hppa64 \
 	landisk loongson macppc mips64 \
 	mips64el mvmeppc palm powerpc sgi sh socppc sparc sparc64 zaurus
-GCC3_ARCHS = aviion luna88k m88k mvme88k
-GCC2_ARCHS = hp300 m68k mvme68k vax
+GCC3_ARCHS = aviion hp300 luna88k m68k m88k mvme68k mvme88k
+GCC2_ARCHS = vax
 # XXX easier for ports that depend on mono
 MONO_ARCHS = amd64 i386
 LLVM_ARCHS = amd64 i386 powerpc mips64 mips64el sparc sparc64
