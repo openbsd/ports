@@ -1,4 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.10 2012/12/06 15:46:11 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.11 2013/02/11 07:43:06 jasper Exp $
+@pkgpath editors/emacs22,-main
+@pkgpath editors/emacs22,-el
+@pkgpath editors/emacs23,-main
+@pkgpath editors/emacs23,-el
+%%no_x11%%
+%%athena%%
+%%gtk3%%
 @bin bin/ctags
 @bin bin/ebrowse
 @bin bin/emacs
