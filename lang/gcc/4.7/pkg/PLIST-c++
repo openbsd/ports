@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST-c++,v 1.2 2012/05/03 11:22:29 espie Exp $
+@comment $OpenBSD: PLIST-c++,v 1.3 2013/02/11 14:29:54 jasper Exp $
 @conflict libstdc++->=4.8
 @bin bin/ec++
 @bin bin/eg++
+@bin bin/${CONFIG}-ec++
+@bin bin/${CONFIG}-eg++
 include/c++/
 include/c++/${V}/
 include/c++/${V}/algorithm

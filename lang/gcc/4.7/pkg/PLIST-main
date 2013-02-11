@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2012/04/23 15:56:45 pascal Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2013/02/11 14:29:54 jasper Exp $
 @pkgpath lang/gcc/4.7
 %%SHARED%%
 @bin bin/ecpp
@@ -7,8 +7,6 @@
 @bin bin/egcc-nm
 @bin bin/egcc-ranlib
 @bin bin/egcov
-@bin bin/${CONFIG}-ec++
-@bin bin/${CONFIG}-eg++
 @bin bin/${CONFIG}-egcc
 @bin bin/${CONFIG}-egcc-ar
 @bin bin/${CONFIG}-egcc-nm
