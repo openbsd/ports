@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2013/01/21 20:02:09 bcallah Exp $
+$OpenBSD: patch-Makefile_in,v 1.3 2013/02/12 20:02:53 landry Exp $
 Don't do the horrible symlink dance
 --- Makefile.in.orig	Thu Mar 31 21:08:36 2011
 +++ Makefile.in	Fri Jan 18 22:20:16 2013
@@ -16,7 +16,7 @@ Don't do the horrible symlink dance
  #############################################
  
 -ifeq (,$(filter-out powerpc sparc,$(TARGET_CPU)))
-+ifeq (,$(filter-out powerpc mips64 mips64el sparc sparc64,$(TARGET_CPU)))
++ifeq (,$(filter-out powerpc alpha hppa mips64 mips64el sparc sparc64,$(TARGET_CPU)))
  
  VPATH +=	$(srcdir)/assembler \
  		$(srcdir)/assembler/wtf \
