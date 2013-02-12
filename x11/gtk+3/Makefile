@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2013/01/23 13:28:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2013/02/12 20:15:37 landry Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,8 +11,8 @@ EXTRACT_SUFX=	.tar.xz
 
 PKGNAME-main=	gtk+3-${V}
 PKGNAME-cups=	gtk+3-cups-${V}
-REVISION-main=	2
-REVISION-cups=	1
+REVISION-main=	3
+REVISION-cups=	2
 
 # XXX temporary, remove the following line from PLIST-main
 # (immodules.cache file moved, so give a change for people to update)
@@ -93,6 +93,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 # sync archs list with devel/spidermonkey
 # colord depends on polkit which depends on spidermonkey
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64" || \
+    ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "hppa" || \
     ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "sparc64" || \
     ${MACHINE_ARCH} == "mips64el" || ${MACHINE_ARCH} == "mips64"
 LIB_DEPENDS-cups += graphics/colord
