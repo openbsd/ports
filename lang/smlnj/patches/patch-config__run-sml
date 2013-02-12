@@ -1,0 +1,9 @@
+$OpenBSD: patch-config__run-sml,v 1.1 2013/02/12 22:32:39 jasper Exp $
+--- config/_run-sml.orig	Fri May 13 23:34:14 2011
++++ config/_run-sml	Tue Feb 12 23:18:58 2013
+@@ -1,4 +1,5 @@
+ #!@SHELL@
++SMLNJ_HOME=${TRUEPREFIX}/smlnj
+ #
+ # The standard driver for SML/NJ under the new runtime system
+ #

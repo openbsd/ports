@@ -1,0 +1,9 @@
+$OpenBSD: patch-config__heap2exec,v 1.1 2013/02/12 22:32:39 jasper Exp $
+--- config/_heap2exec.orig	Thu Apr 20 19:28:53 2006
++++ config/_heap2exec	Tue Feb 12 23:18:58 2013
+@@ -1,4 +1,5 @@
+ #!@SHELL@
++SMLNJ_HOME=${TRUEPREFIX}/smlnj
+ 
+ CMD=`basename "$0"`
+ 

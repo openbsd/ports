@@ -1,0 +1,9 @@
+$OpenBSD: patch-config__ml-build,v 1.1 2013/02/12 22:32:39 jasper Exp $
+--- config/_ml-build.orig	Tue Feb 13 00:05:27 2007
++++ config/_ml-build	Tue Feb 12 23:18:58 2013
+@@ -1,4 +1,5 @@
+ #!@SHELL@
++SMLNJ_HOME=${TRUEPREFIX}/smlnj
+ 
+ if [ x${SMLNJ_HOME} = x ] ; then
+     BIN_DIR="@BINDIR@"

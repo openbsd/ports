@@ -1,0 +1,9 @@
+$OpenBSD: patch-config__arch-n-opsys,v 1.3 2013/02/12 22:32:39 jasper Exp $
+--- config/_arch-n-opsys.orig	Sat Jul 28 07:32:38 2012
++++ config/_arch-n-opsys	Tue Feb 12 23:18:58 2013
+@@ -1,4 +1,5 @@
+ #!@SHELL@
++SMLNJ_HOME=${TRUEPREFIX}/smlnj
+ #
+ # .arch-n-opsys  -- get architecture and system info
+ #

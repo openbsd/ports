@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2013/01/16 12:20:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2013/02/12 22:32:39 jasper Exp $
 
 ONLY_FOR_ARCHS=i386
 
 COMMENT=	New Jersey Standard ML
 
 V=		110.75
+REVISION= 	0
 
 PKGNAME=	smlnj-$V
 CATEGORIES=	lang
@@ -52,6 +53,9 @@ post-extract:
 
 do-build:
 	cd ${WRKDIR} && unset PWD && \
+	for file in "config/_*"; do  \
+		${SUBST_CMD} ${WRKDIR}/$$file; \
+	done; \
 	FILESDIR="$(FILESDIR)" ./config/install.sh
 
 do-install:
