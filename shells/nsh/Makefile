@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/09/17 13:51:51 phessler Exp $
+# $OpenBSD: Makefile,v 1.2 2013/02/12 16:23:33 chris Exp $
 COMMENT =		network switch style shell
 
-V =			20120523
+V =			1.0
 DISTNAME =		nsh-${V}
-PKGNAME =		nsh-0.0.${V}
+PKGNAME =		nsh-${V}
 
 CATEGORIES =		shells net
 HOMEPAGE =		http://www.nmedia.net/nsh/
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += c edit termcap
+WANTLIB += c edit termcap sqlite3
 
 MASTER_SITES =		ftp://ftp.nmedia.net/pub/nsh/
 WRKDIST =		${WRKDIR}/nsh

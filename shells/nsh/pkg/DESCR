@@ -1,5 +1,4 @@
-NSH consolidates configuration for interfaces, bridging, routing, PF
-packet filtering, NAT, queueing, BGP, OSPF, RIP, IPsec, DHCP, DVMRP,
-SNMP, relayd, sshd, inetd, ftp-proxy, resolv.conf and NTP. It presents
-the user with a vaguely cisco-like interface with all configuration in
-one easy to read text list.
+NSH is a CLI intended for OpenBSD-based network appliances. It replaces
+ifconfig, sysctl and route with its own simple command language, and
+consolidates configuration and control of other daemons into one place,
+presenting the user with a vaguely cisco-like interface.
