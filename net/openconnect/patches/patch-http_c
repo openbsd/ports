@@ -1,6 +1,8 @@
-$OpenBSD: patch-http_c,v 1.1 2013/02/11 21:16:33 sthen Exp $
+$OpenBSD: patch-http_c,v 1.2 2013/02/12 21:39:47 jasper Exp $
 
 http://git.infradead.org/users/dwmw2/openconnect.git/commitdiff/26f752c3dbf69227679fc6bebb4ae071aecec491
+
+CVE-2012-6128, openconnect buffer overflow
 
 --- http.c.orig	Thu Jul 12 12:59:38 2012
 +++ http.c	Mon Feb 11 20:27:07 2013
