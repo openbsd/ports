@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2013/02/09 14:49:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2013/02/13 18:13:12 sthen Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	amd64 i386
@@ -88,7 +88,12 @@ ALT_BOOTDIR=	${LOCALBASE}/${JDKHOME}
 .else
 BOOT_JDK=	openjdk6-bootjdk-${ARCH}-20130128.tar.gz
 APACHE_ANT=	apache-ant-1.8.4-bin.tar.gz
-DISTFILES+=	${BOOT_JDK}:1 ${APACHE_ANT}:5
+.include <bsd.port.arch.mk>
+.if (${ARCH}==amd64) || (${ARCH}==i386)
+DISTFILES+=	${BOOT_JDK}:1
+.endif
+DISTFILES+=	${APACHE_ANT}:5
+SUPDISTFILES+=	openjdk6-bootjdk-amd64-20130128.tar.gz:1 openjdk6-bootjdk-i386-20130128.tar.gz:1
 EXTRACT_ONLY+=	${BOOT_JDK} ${APACHE_ANT}
 MAKE_ENV+=	ANT_HOME=${WRKDIST}/apache-ant-1.8.4 \
 		LD_LIBRARY_PATH=${WRKDIST}/bootjdk-libs
