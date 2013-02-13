@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.144 2013/02/04 07:14:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.145 2013/02/13 08:02:37 robert Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
@@ -6,7 +6,7 @@ COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
 PKGNAME=	zarafa-${V}
 PKGNAME-main=	zarafa-${V}
 PKGNAME-web=	zarafa-webaccess-${V}
-REVISION-main=	0
+REVISION-main=	1
 
 CATEGORIES=	mail www productivity
 
@@ -34,7 +34,8 @@ MODPHP_DO_SAMPLE=mapi
 MESSAGE-main=	# empty
 UNMESSAGE-main=	# empty
 
-BUILD_DEPENDS=	textproc/xmlto
+BUILD_DEPENDS=	devel/swig \
+		textproc/xmlto
 
 # libcurl is searched by configure but unused
 BUILD_DEPENDS += net/curl
@@ -101,7 +102,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 		ac_cv_lib_pam_pam_start=no
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-static \
-		--disable-swig \
 		--with-mapi-configdir=${SYSCONFDIR}/mapi \
 		--with-userscript-prefix=${SYSCONFDIR}/zarafa/userscripts \
 		--with-quotatemplate-prefix=${SYSCONFDIR}/zarafa/quotamail \
