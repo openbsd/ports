@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2012/09/23 16:57:34 jeremy Exp $
+# $OpenBSD: Makefile,v 1.3 2013/02/13 18:19:37 jasper Exp $
 
 COMMENT =	generate and display ruby documentation
 
 DISTNAME =	rdoc-3.11
-REVISION =	0
-CATEGORIES =	devel	
+REVISION =	1
+CATEGORIES =	devel
 
 HOMEPAGE =	http://docs.seattlerb.org/rdoc/
 
