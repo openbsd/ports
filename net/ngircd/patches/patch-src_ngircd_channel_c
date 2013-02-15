@@ -1,0 +1,36 @@
+KICK: Fix denial of service bug
+Test if the user that it is to be kicked is on the channel before user
+channel modes are tested. Otherwise assert( cl2chan != NULL ); in
+line 742 would fail and stop the service.
+
+$OpenBSD: patch-src_ngircd_channel_c,v 1.1 2013/02/15 09:54:36 fgsch Exp $
+--- src/ngircd/channel.c.orig	Fri Feb 15 09:07:40 2013
++++ src/ngircd/channel.c	Fri Feb 15 09:07:53 2013
+@@ -326,6 +326,13 @@ Channel_Kick(CLIENT *Peer, CLIENT *Target, CLIENT *Ori
+ 		}
+ 	}
+ 
++	/* Check that the client to be kicked is on the specified channel */
++	if (!Channel_IsMemberOf(chan, Target)) {
++		IRC_WriteStrClient(Origin, ERR_USERNOTINCHANNEL_MSG,
++				   Client_ID(Origin), Client_ID(Target), Name );
++		return;
++	}
++
+ 	if(Client_Type(Peer) == CLIENT_USER) {
+ 		/* Channel mode 'Q' and user mode 'q' on target: nobody but
+ 		 * IRC Operators and servers can kick the target user */
+@@ -380,13 +387,6 @@ Channel_Kick(CLIENT *Peer, CLIENT *Target, CLIENT *Ori
+ 				Client_ID(Origin), Name);
+ 			return;
+ 		}
+-	}
+-
+-	/* Check that the client to be kicked is on the specified channel */
+-	if (!Channel_IsMemberOf(chan, Target)) {
+-		IRC_WriteStrClient(Origin, ERR_USERNOTINCHANNEL_MSG,
+-				   Client_ID(Origin), Client_ID(Target), Name );
+-		return;
+ 	}
+ 
+ 	/* Kick Client from channel */
