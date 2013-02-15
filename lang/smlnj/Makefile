@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2013/02/12 22:32:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2013/02/15 12:06:11 sthen Exp $
 
 ONLY_FOR_ARCHS=i386
 
 COMMENT=	New Jersey Standard ML
 
 V=		110.75
-REVISION= 	0
+REVISION=	1
 
 PKGNAME=	smlnj-$V
 CATEGORIES=	lang
@@ -56,7 +56,7 @@ do-build:
 	for file in "config/_*"; do  \
 		${SUBST_CMD} ${WRKDIR}/$$file; \
 	done; \
-	FILESDIR="$(FILESDIR)" ./config/install.sh
+	FILESDIR="$(FILESDIR)" SMLNJ_HOME="${WRKSRC}" ./config/install.sh
 
 do-install:
 	rm -rf ${SML_BASE}

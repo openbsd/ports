@@ -1,9 +1,9 @@
-$OpenBSD: patch-config__link-sml,v 1.1 2013/02/12 22:32:39 jasper Exp $
+$OpenBSD: patch-config__link-sml,v 1.2 2013/02/15 12:06:11 sthen Exp $
 --- config/_link-sml.orig	Tue Jan  4 00:13:16 2005
 +++ config/_link-sml	Tue Feb 12 23:18:58 2013
 @@ -1,4 +1,5 @@
  #!@SHELL@
-+SMLNJ_HOME=${TRUEPREFIX}/smlnj
++[ -z "$SMLNJ_HOME" ] && SMLNJ_HOME=${TRUEPREFIX}/smlnj
  #
  # The standard "link" script for SML/NJ
  #
