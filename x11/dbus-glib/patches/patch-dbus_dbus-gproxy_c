@@ -1,0 +1,31 @@
+$OpenBSD: patch-dbus_dbus-gproxy_c,v 1.1 2013/02/16 09:05:36 ajacoutot Exp $
+
+From 166978a09cf5edff4028e670b6074215a4c75eca Mon Sep 17 00:00:00 2001
+From: Colin Walters <walters@verbum.org>
+Date: Thu, 14 Feb 2013 15:19:34 +0000
+Subject: CVE-2013-0292: dbus-gproxy: Verify sender of NameOwnerChanged signals to be o.f.DBus
+
+--- dbus/dbus-gproxy.c.orig	Mon Jun 25 18:18:59 2012
++++ dbus/dbus-gproxy.c	Sat Feb 16 09:17:41 2013
+@@ -1250,8 +1250,11 @@ dbus_g_proxy_manager_filter (DBusConnection    *connec
+       GSList *tmp;
+       const char *sender;
+ 
++      sender = dbus_message_get_sender (message);
++
+       /* First we handle NameOwnerChanged internally */
+-      if (dbus_message_is_signal (message,
++      if (g_strcmp0 (sender, DBUS_SERVICE_DBUS) == 0 &&
++	  dbus_message_is_signal (message,
+ 				  DBUS_INTERFACE_DBUS,
+ 				  "NameOwnerChanged"))
+ 	{
+@@ -1279,8 +1282,6 @@ dbus_g_proxy_manager_filter (DBusConnection    *connec
+ 	      dbus_g_proxy_manager_replace_name_owner (manager, name, prev_owner, new_owner);
+ 	    }
+ 	}
+-
+-      sender = dbus_message_get_sender (message);
+ 
+       /* dbus spec requires these, libdbus validates */
+       g_assert (dbus_message_get_path (message) != NULL);

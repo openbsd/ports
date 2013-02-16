@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2012/09/27 15:51:15 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.17 2013/02/16 09:05:36 ajacoutot Exp $
 @bin bin/dbus-binding-tool
 include/dbus-1.0/
 include/dbus-1.0/dbus/
@@ -10,6 +9,7 @@ include/dbus-1.0/dbus/dbus-gtype-specialized.h
 include/dbus-1.0/dbus/dbus-gvalue-parse-variant.h
 lib/libdbus-glib-1.a
 lib/libdbus-glib-1.la
+@lib lib/libdbus-glib-1.so.${LIBdbus-glib-1_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/dbus-glib-1.pc
 @bin libexec/dbus-bash-completion-helper
