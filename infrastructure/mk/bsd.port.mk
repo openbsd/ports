@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1211 2013/02/11 14:31:14 jasper Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1212 2013/02/18 12:07:42 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2384,7 +2384,8 @@ ${_BULK_COOKIE}:
 ${_WRKDIR_COOKIE}:
 	@rm -rf ${WRKDIR}
 	@if test -h ${PORTSDIR}; then \
-		echo 1>&2 "Fatal: ${PORTSDIR} is a symlink. Please set to the real directory"; \
+		echo 1>&2 "Fatal: ${PORTSDIR} is a symlink."; \
+		echo 1>&2 "Please point PORTSDIR to the real directory (in /etc/mk.conf)"; \
 		exit 1; \
 	fi
 .if ${PORTS_BUILD_XENOCARA_TOO:L} != "yes"
