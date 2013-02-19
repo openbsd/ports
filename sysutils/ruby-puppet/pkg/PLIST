@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2013/01/14 17:35:59 robert Exp $
+@comment $OpenBSD: PLIST,v 1.26 2013/02/19 16:11:17 ajacoutot Exp $
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
 @extraunexec rm -rf ${SYSCONFDIR}/puppet/*
@@ -925,32 +925,29 @@ ${MODRUBY_SITEDIR}/semver.rb
 @man man/man8/puppet-secret_agent.8
 @man man/man8/puppet-status.8
 @man man/man8/puppet.8
-${MODRUBY_RELEXAMPLEDIR}/puppet/
-@sample ${SYSCONFDIR}/puppet/
-@sample ${SYSCONFDIR}/puppet/modules/
-${MODRUBY_RELEXAMPLEDIR}/puppet/fileserver.conf
-@sample ${SYSCONFDIR}/puppet/fileserver.conf
-${MODRUBY_RELEXAMPLEDIR}/puppet/namespaceauth.conf
-@sample ${SYSCONFDIR}/puppet/namespaceauth.conf
-${MODRUBY_RELEXAMPLEDIR}/puppet/puppet.conf
-@sample ${SYSCONFDIR}/puppet/puppet.conf
-${MODRUBY_RELEXAMPLEDIR}/puppet/tagmail.conf
-@sample ${SYSCONFDIR}/puppet/tagmail.conf
-@mode 770
-@group _puppet
-@sample ${SYSCONFDIR}/puppet/ssl/
-@mode 755
-@owner _puppet
-@sample /var/puppet/
-@sample /var/puppet/facts/
-@sample /var/puppet/plugins/
-@sample /var/puppet/reports/
-@mode
-@owner
-@group
 share/emacs/
 share/emacs/site-lisp/
 share/emacs/site-lisp/puppet-mode-init.el
 share/emacs/site-lisp/puppet-mode.el
+${MODRUBY_RELEXAMPLEDIR}-puppet/
+@sample ${SYSCONFDIR}/puppet/
+@sample ${SYSCONFDIR}/puppet/manifests/
+@sample ${SYSCONFDIR}/puppet/modules/
+${MODRUBY_RELEXAMPLEDIR}-puppet/auth.conf
+@sample ${SYSCONFDIR}/puppet/auth.conf
+${MODRUBY_RELEXAMPLEDIR}-puppet/fileserver.conf
+@sample ${SYSCONFDIR}/puppet/fileserver.conf
+${MODRUBY_RELEXAMPLEDIR}-puppet/namespaceauth.conf
+${MODRUBY_RELEXAMPLEDIR}-puppet/puppet-queue.conf
+${MODRUBY_RELEXAMPLEDIR}-puppet/puppet.conf
+@sample ${SYSCONFDIR}/puppet/puppet.conf
+${MODRUBY_RELEXAMPLEDIR}-puppet/tagmail.conf
+@mode 0755
+@group _puppet
+@owner _puppet
+@sample /var/puppet/
+@mode
+@group
+@owner
 @rcscript ${RCDIR}/puppetd
 @rcscript ${RCDIR}/puppetmasterd

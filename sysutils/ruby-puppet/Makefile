@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.50 2013/01/24 18:46:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.51 2013/02/19 16:11:16 ajacoutot Exp $
 
 COMMENT=	centralised configuration management for networks
 
 VERSION=	3.0.2
 DISTNAME=	puppet-${VERSION}
 PKGNAME=	ruby-${DISTNAME}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	sysutils net
 
 HOMEPAGE=	http://reductivelabs.com/projects/puppet/
@@ -25,17 +25,15 @@ RUN_DEPENDS=	converters/ruby-json,${MODRUBY_FLAVOR} \
 		sysutils/ruby-facter \
 		${MODRUBY_ICONV_DEPENDS}
 
-USE_GROFF =	Yes
 NO_REGRESS=	Yes
 NO_BUILD=	Yes
 
 do-install:
 	${SUBST_CMD} ${WRKSRC}/lib/puppet/defaults.rb
-	${INSTALL_DATA_DIR} ${MODRUBY_EXAMPLEDIR}/puppet
 	@cd ${WRKSRC} && ${ALL_FAKE_FLAGS} ${RUBY} install.rb
-	for f in `ls -1 ${WRKSRC}/examples/etc/puppet/*.conf`; do \
-		${INSTALL_DATA} $$f ${MODRUBY_EXAMPLEDIR}/puppet; \
-	done
+	mv ${WRKINST}${SYSCONFDIR}/puppet ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-puppet
+	${INSTALL_DATA} ${WRKSRC}/conf/*.conf ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-puppet
+	${INSTALL_DATA} ${FILESDIR}/puppet.conf ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-puppet
 	${INSTALL_DATA_DIR} ${PREFIX}/share/emacs/site-lisp/
 	${INSTALL_DATA} ${WRKSRC}/ext/emacs/* ${PREFIX}/share/emacs/site-lisp/
 
