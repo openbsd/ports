@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2013/01/22 12:08:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2013/02/20 15:32:21 ajacoutot Exp $
 @extra owncloud/config/config.php
 owncloud/
 owncloud/.htaccess.dist
@@ -420,11 +420,6 @@ owncloud/3rdparty/XML/Parser.php
 owncloud/3rdparty/XML/Parser/Simple.php
 owncloud/3rdparty/aws-sdk/
 owncloud/3rdparty/aws-sdk/README.md
-owncloud/3rdparty/aws-sdk/_compatibility_test/
-owncloud/3rdparty/aws-sdk/_compatibility_test/README.md
-owncloud/3rdparty/aws-sdk/_compatibility_test/sdk_compatibility.inc.php
-owncloud/3rdparty/aws-sdk/_compatibility_test/sdk_compatibility_test.php
-owncloud/3rdparty/aws-sdk/_compatibility_test/sdk_compatibility_test_cli.php
 owncloud/3rdparty/aws-sdk/_docs/
 owncloud/3rdparty/aws-sdk/_docs/CHANGELOG.md
 owncloud/3rdparty/aws-sdk/_docs/CONTRIBUTORS.md
