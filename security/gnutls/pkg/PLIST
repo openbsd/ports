@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2013/02/05 07:37:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2013/02/21 15:55:32 ajacoutot Exp $
 @bin bin/certtool
 @bin bin/crywrap
 @bin bin/gnutls-cli
@@ -535,7 +535,6 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_record_can_use_length_hiding.3
 @man man/man3/gnutls_record_check_pending.3
 @man man/man3/gnutls_record_cork.3
-@man man/man3/gnutls_record_disable_padding.3
 @man man/man3/gnutls_record_get_direction.3
 @man man/man3/gnutls_record_get_discarded.3
 @man man/man3/gnutls_record_get_max_size.3
