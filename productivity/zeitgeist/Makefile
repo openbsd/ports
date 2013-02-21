@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/01/30 09:42:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2013/02/21 08:07:34 jasper Exp $
 
 COMMENT =		event logging framework
 
@@ -28,7 +28,8 @@ MODULES =		devel/gettext \
 BUILD_DEPENDS =		lang/vala \
 			textproc/p5-XML-Parser \
 			textproc/py-rdflib \
-			textproc/raptor
+			textproc/raptor \
+			x11/dbus
 
 RUN_DEPENDS =		devel/py-gobject \
 			devel/py-xdg \
