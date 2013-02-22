@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Signature.pm,v 1.3 2012/07/04 08:59:10 espie Exp $
+# $OpenBSD: Signature.pm,v 1.4 2013/02/22 19:58:12 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -29,6 +29,11 @@ sub best
 	$h->{$lib->stem} = $lib;
 }
 
+sub is_empty
+{
+	my $h = shift;
+	return keys %$h == 0;
+}
 sub new
 {
 	my $class = shift;
@@ -147,6 +152,10 @@ sub matches
 	my ($self, $core, $logger) = @_;
 	$self->{host} = $core->hostname;
 	if (!defined $ref) {
+		# couldn't read system dir, can't possibly be okay.
+		if ($self->{'/usr'}->is_empty) {
+			return 0;
+		}
 		$ref = $self;
 		return 1;
 	} else {
