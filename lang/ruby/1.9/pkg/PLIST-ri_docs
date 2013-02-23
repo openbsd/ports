@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ri_docs,v 1.6 2013/02/07 19:02:20 jeremy Exp $
+@comment $OpenBSD: PLIST-ri_docs,v 1.7 2013/02/23 01:22:26 jeremy Exp $
 @option no-default-conflict
 @conflict ruby-ri_docs->=1.9,<1.10
 share/ri/${RUBYLIBREV}/system/ACL/
@@ -9115,6 +9115,8 @@ share/ri/${RUBYLIBREV}/system/REXML/Document/encoding-i.ri
 share/ri/${RUBYLIBREV}/system/REXML/Document/entity_expansion_count-i.ri
 share/ri/${RUBYLIBREV}/system/REXML/Document/entity_expansion_limit%3d-c.ri
 share/ri/${RUBYLIBREV}/system/REXML/Document/entity_expansion_limit-c.ri
+share/ri/${RUBYLIBREV}/system/REXML/Document/entity_expansion_text_limit%3d-c.ri
+share/ri/${RUBYLIBREV}/system/REXML/Document/entity_expansion_text_limit-c.ri
 share/ri/${RUBYLIBREV}/system/REXML/Document/expanded_name-i.ri
 share/ri/${RUBYLIBREV}/system/REXML/Document/name-i.ri
 share/ri/${RUBYLIBREV}/system/REXML/Document/new-c.ri
@@ -9597,6 +9599,7 @@ share/ri/${RUBYLIBREV}/system/REXML/Text/check-c.ri
 share/ri/${RUBYLIBREV}/system/REXML/Text/clone-i.ri
 share/ri/${RUBYLIBREV}/system/REXML/Text/doctype-i.ri
 share/ri/${RUBYLIBREV}/system/REXML/Text/empty%3f-i.ri
+share/ri/${RUBYLIBREV}/system/REXML/Text/expand-c.ri
 share/ri/${RUBYLIBREV}/system/REXML/Text/indent_text-i.ri
 share/ri/${RUBYLIBREV}/system/REXML/Text/inspect-i.ri
 share/ri/${RUBYLIBREV}/system/REXML/Text/new-c.ri

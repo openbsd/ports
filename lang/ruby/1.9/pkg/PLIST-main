@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2013/02/07 19:02:20 jeremy Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2013/02/23 01:22:26 jeremy Exp $
 @option no-default-conflict
 @conflict ruby->=1.9,<1.10
 bin/erb19
@@ -878,7 +878,7 @@ lib/ruby/gems/${RUBYLIBREV}/gems/rdoc-3.9.5/bin/ri
 lib/ruby/gems/${RUBYLIBREV}/specifications/
 lib/ruby/gems/${RUBYLIBREV}/specifications/bigdecimal-1.1.0.gemspec
 lib/ruby/gems/${RUBYLIBREV}/specifications/io-console-0.3.gemspec
-lib/ruby/gems/${RUBYLIBREV}/specifications/json-1.5.4.gemspec
+lib/ruby/gems/${RUBYLIBREV}/specifications/json-1.5.5.gemspec
 lib/ruby/gems/${RUBYLIBREV}/specifications/minitest-2.5.1.gemspec
 lib/ruby/gems/${RUBYLIBREV}/specifications/rake-0.9.2.2.gemspec
 lib/ruby/gems/${RUBYLIBREV}/specifications/rdoc-3.9.5.gemspec
