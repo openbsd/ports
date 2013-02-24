@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2013/01/26 15:53:20 bcallah Exp $
+# $OpenBSD: Makefile,v 1.77 2013/02/24 14:47:52 sthen Exp $
 
 COMMENT-main=		bad elements for GStreamer
 COMMENT-neon=		neon element for GStreamer (plugins-bad)
@@ -12,7 +12,7 @@ PKGNAME-main=		gstreamer-plugins-bad-${V}
 PKGNAME-neon=		gstreamer-neon-${V}
 PKGNAME-mjpeg=		gstreamer-mjpeg-${V}
 
-REVISION-main=		10
+REVISION-main=		11
 REVISION-mjpeg=		4
 REVISION-neon=		3
 
@@ -107,6 +107,7 @@ CONFIGURE_ARGS=		--disable-acm \
 			--disable-ofa \
 			--disable-openal \
 			--disable-opencv \
+			--disable-opus \
 			--disable-quicktime \
 			--disable-real \
 			--disable-spc \
