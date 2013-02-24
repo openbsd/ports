@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2012/12/23 12:25:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.57 2013/02/24 14:46:29 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -58,6 +58,8 @@ WANTLIB-main=		${WANTLIB} ICE SM X11-xcb c dbus-1 gmp hogweed nettle \
 
 WANTLIB-docs=
 
+# XXX libgcrypt shouldn't be needed:
+BUILD_DEPENDS+=		security/libgcrypt
 LIB_DEPENDS=		x11/gtk+2 \
 			devel/libexecinfo \
 			mail/libetpan \
