@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.146 2013/02/09 14:49:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.147 2013/02/24 11:18:38 espie Exp $
 
 MULTI_PACKAGES=	-main -ntlm
 
@@ -16,6 +16,8 @@ PKGNAME-main=	squid-$V
 PKGNAME-ldap=	squid-ldap-$V
 PKGNAME-ntlm=	squid-ntlm-$V
 CATEGORIES=	www
+REVISION-main = 0
+REVISION-ldap = 0
 
 # bzr repository at https://code.launchpad.net/squid
 MASTER_SITES=	${HOMEPAGE}Versions/v${V:R:R}/${V:R}/
@@ -34,7 +36,7 @@ WANTLIB += c m pthread stdc++
 
 WANTLIB-main=	${WANTLIB} asn1 crypto execinfo gssapi krb5 ssl
 
-LIB_DEPENDS-main= devel/libexecinfo
+LIB_DEPENDS-main= ${LIB_DEPENDS} devel/libexecinfo
 
 SYSCONFDIR=	${BASESYSCONFDIR}/squid
 LOCALSTATEDIR=	${BASELOCALSTATEDIR}/squid
@@ -114,7 +116,7 @@ BASIC_AUTH+=	LDAP
 DIGEST_AUTH+=	LDAP
 EXTERNAL_ACL+=	LDAP_group
 RUN_DEPENDS-ldap= ${BASE_PKGPATH}
-LIB_DEPENDS-ldap= databases/openldap
+LIB_DEPENDS-ldap= ${LIB_DEPENDS} databases/openldap
 WANTLIB-ldap +=	${WANTLIB} asn1 com_err crypto gssapi krb5
 WANTLIB-ldap +=	lber-2.4 ldap-2.4 sasl2 ssl
 .endif
