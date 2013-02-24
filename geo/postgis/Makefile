@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/11/24 08:56:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2013/02/24 14:45:08 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -29,6 +29,7 @@ LIB_DEPENDS=	geo/gdal \
 RUN_DEPENDS=	databases/postgresql,-server
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		textproc/docbook-xsl \
+		textproc/wdg-sgml-lib \
 		graphics/ImageMagick
 
 USE_GMAKE=	Yes
