@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2013/02/12 20:15:37 landry Exp $
+# $OpenBSD: Makefile,v 1.64 2013/03/02 13:49:16 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,12 +11,8 @@ EXTRACT_SUFX=	.tar.xz
 
 PKGNAME-main=	gtk+3-${V}
 PKGNAME-cups=	gtk+3-cups-${V}
-REVISION-main=	3
-REVISION-cups=	2
-
-# XXX temporary, remove the following line from PLIST-main
-# (immodules.cache file moved, so give a change for people to update)
-# @unexec rm -f ${SYSCONFDIR}/gtk-3.0/gtk.immodules
+REVISION-main=	4
+REVISION-cups=	3
 
 CATEGORIES=	x11 devel
 
@@ -34,7 +30,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo cairo-gobject
 WANTLIB += expat ffi fontconfig freetype gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 m pango-1.0
