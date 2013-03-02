@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/01/16 07:09:50 ajacoutot Exp $
-bin/caribou
+@comment $OpenBSD: PLIST,v 1.6 2013/03/02 14:02:36 ajacoutot Exp $
+@bin bin/caribou
 bin/caribou-preferences
 include/libcaribou/
 include/libcaribou/caribou.h
@@ -30,13 +30,6 @@ lib/python${MODPY_VERSION}/site-packages/caribou/antler/main.pyo
 lib/python${MODPY_VERSION}/site-packages/caribou/antler/window.py
 lib/python${MODPY_VERSION}/site-packages/caribou/antler/window.pyc
 lib/python${MODPY_VERSION}/site-packages/caribou/antler/window.pyo
-lib/python${MODPY_VERSION}/site-packages/caribou/daemon/
-lib/python${MODPY_VERSION}/site-packages/caribou/daemon/__init__.py
-lib/python${MODPY_VERSION}/site-packages/caribou/daemon/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/caribou/daemon/__init__.pyo
-lib/python${MODPY_VERSION}/site-packages/caribou/daemon/main.py
-lib/python${MODPY_VERSION}/site-packages/caribou/daemon/main.pyc
-lib/python${MODPY_VERSION}/site-packages/caribou/daemon/main.pyo
 lib/python${MODPY_VERSION}/site-packages/caribou/i18n.py
 lib/python${MODPY_VERSION}/site-packages/caribou/i18n.pyc
 lib/python${MODPY_VERSION}/site-packages/caribou/i18n.pyo
@@ -60,7 +53,6 @@ libexec/antler-keyboard
 share/antler/
 share/antler/dark-key-border.svg
 share/antler/style.css
-share/applications/caribou.desktop
 share/caribou/
 share/caribou/layouts/
 share/caribou/layouts/fullscale/
@@ -152,5 +144,3 @@ share/vala/vapi/caribou-1.0.deps
 share/vala/vapi/caribou-1.0.vapi
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database

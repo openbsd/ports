@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2013/01/16 07:09:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/02 14:02:36 ajacoutot Exp $
 
 COMMENT=	input assistive technology
 
 GNOME_PROJECT=	caribou
-GNOME_VERSION=	0.4.7
+GNOME_VERSION=	0.4.8
 
 SHARED_LIBS +=  caribou                   0.0 # 0.0
 
@@ -15,15 +15,15 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xtst Xxf86vm
-WANTLIB += atk-1.0 atk-bridge-2.0 atspi cairo cairo-gobject dbus-1
-WANTLIB += drm expat ffi fontconfig freetype gdk-3 gdk-x11-2.0
+WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender Xtst atk-1.0 atk-bridge-2.0
+WANTLIB += atspi c cairo cairo-gobject clutter-1.0 cogl cogl-pango
+WANTLIB += dbus-1 expat ffi fontconfig freetype gdk-3 gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gee-0.8 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 gtk-3 gtk-x11-2.0 harfbuzz
-WANTLIB += icudata icule icuuc m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs stdc++ xcb
-WANTLIB += xcb-render xcb-shm xkbfile xklavier xml2 z
+WANTLIB += icudata icule icuuc json-glib-1.0 m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += xcb xcb-render xcb-shm xkbfile xklavier xml2 z
 
 MODULES=	devel/gettext \
 		devel/dconf \
@@ -31,19 +31,15 @@ MODULES=	devel/gettext \
 		x11/gnome
 
 BUILD_DEPENDS=	devel/py-gobject3 \
-		graphics/clutter/core \
 		lang/vala
 
-RUN_DEPENDS=	devel/py-gobject3 \
-		graphics/clutter/core \
-		x11/gnome/py-atspi
+RUN_DEPENDS=	devel/py-gobject3
 
 LIB_DEPENDS=	devel/libgee \
+		graphics/clutter/core \
 		x11/gnome/libxklavier \
 		x11/gtk+2 \
 		x11/gtk+3
-
-MODGNOME_DESKTOP_FILE=	Yes
 
 LIBTOOL_FLAGS=	--tag=disable-static
 
@@ -54,9 +50,7 @@ CONFIGURE_ARGS=	--disable-static
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/caribou
 
-# XXX until they come up with a proper icon
 post-install:
-	echo "NoDisplay=true" >> ${PREFIX}/share/applications/caribou.desktop
 	rm ${PREFIX}/lib/gtk-{2,3}.0/modules/*.la
 
 .include <bsd.port.mk>
