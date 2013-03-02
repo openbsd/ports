@@ -1,18 +1,15 @@
-# $OpenBSD: Makefile,v 1.156 2013/01/23 09:36:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.157 2013/03/02 13:48:32 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	multi-platform graphical toolkit
 COMMENT-guic=	gtk+ icon theme caching utility
 
-V=		2.24.14
+V=		2.24.16
 DISTNAME=	gtk+-${V}
 
 PKGNAME-main=	gtk+2-${V}
 PKGNAME-guic=	gtk-update-icon-cache-${V}
-
-REVISION-main=	2
-REVISION-guic=	0
 
 CATEGORIES=	x11 devel
 
@@ -56,7 +53,7 @@ LIB_DEPENDS-main= ${LIB_DEPENDS} \
 
 WANTLIB-main += ${WANTLIB} c pthread glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB-main += gio-2.0 pango-1.0 pangocairo-1.0 pangoft2-1.0 atk-1.0
-WANTLIB-main += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB-main += X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB-main += Xi Xinerama Xrandr Xrender cairo expat dbus-1 icuuc
 WANTLIB-main += fontconfig freetype pixman-1 pthread-stubs xcb icule
 WANTLIB-main += xcb-render xcb-shm png asn1 crypto cups gssapi krb5 ssl
