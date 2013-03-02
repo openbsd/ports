@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2012/12/18 15:54:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2013/03/02 13:51:59 ajacoutot Exp $
 share/mime/
 share/mime/packages/
 share/mime/packages/freedesktop.org.xml
@@ -38,6 +38,9 @@ share/locale/en_GB/LC_MESSAGES/shared-mime-info.mo
 share/locale/eo/LC_MESSAGES/shared-mime-info.mo
 share/locale/es/LC_MESSAGES/shared-mime-info.mo
 share/locale/eu/LC_MESSAGES/shared-mime-info.mo
+share/locale/fa/
+share/locale/fa/LC_MESSAGES/
+share/locale/fa/LC_MESSAGES/shared-mime-info.mo
 share/locale/fa_IR/
 share/locale/fa_IR/LC_MESSAGES/
 share/locale/fa_IR/LC_MESSAGES/shared-mime-info.mo
@@ -52,10 +55,17 @@ share/locale/he/LC_MESSAGES/shared-mime-info.mo
 share/locale/hi/
 share/locale/hi/LC_MESSAGES/
 share/locale/hi/LC_MESSAGES/shared-mime-info.mo
+share/locale/hr/LC_MESSAGES/shared-mime-info.mo
 share/locale/hu/LC_MESSAGES/shared-mime-info.mo
+share/locale/ia/
+share/locale/ia/LC_MESSAGES/
+share/locale/ia/LC_MESSAGES/shared-mime-info.mo
 share/locale/id/LC_MESSAGES/shared-mime-info.mo
 share/locale/it/LC_MESSAGES/shared-mime-info.mo
 share/locale/ja/LC_MESSAGES/shared-mime-info.mo
+share/locale/ka/
+share/locale/ka/LC_MESSAGES/
+share/locale/ka/LC_MESSAGES/shared-mime-info.mo
 share/locale/kk/
 share/locale/kk/LC_MESSAGES/
 share/locale/kk/LC_MESSAGES/shared-mime-info.mo
@@ -70,8 +80,6 @@ share/locale/ms/LC_MESSAGES/shared-mime-info.mo
 share/locale/nb/LC_MESSAGES/shared-mime-info.mo
 share/locale/nl/LC_MESSAGES/shared-mime-info.mo
 share/locale/nn/LC_MESSAGES/shared-mime-info.mo
-share/locale/pa/
-share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/shared-mime-info.mo
 share/locale/pl/LC_MESSAGES/shared-mime-info.mo
 share/locale/pt/LC_MESSAGES/shared-mime-info.mo
@@ -91,6 +99,9 @@ share/locale/sr@latin/
 share/locale/sr@latin/LC_MESSAGES/
 share/locale/sr@latin/LC_MESSAGES/shared-mime-info.mo
 share/locale/sv/LC_MESSAGES/shared-mime-info.mo
+share/locale/te/
+share/locale/te/LC_MESSAGES/
+share/locale/te/LC_MESSAGES/shared-mime-info.mo
 share/locale/tr/LC_MESSAGES/shared-mime-info.mo
 share/locale/uk/LC_MESSAGES/shared-mime-info.mo
 share/locale/vi/LC_MESSAGES/shared-mime-info.mo
@@ -98,6 +109,7 @@ share/locale/wa/
 share/locale/wa/LC_MESSAGES/
 share/locale/wa/LC_MESSAGES/shared-mime-info.mo
 share/locale/zh_CN/LC_MESSAGES/shared-mime-info.mo
+share/locale/zh_HK/LC_MESSAGES/shared-mime-info.mo
 share/locale/zh_TW/LC_MESSAGES/shared-mime-info.mo
 @comment no checksum
 share/mime/XMLnamespaces
