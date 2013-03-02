@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.51 2013/01/06 11:57:21 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.52 2013/03/02 13:08:49 espie Exp $
 # ex:ts=4 sw=4 filetype=make:
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
@@ -131,7 +131,7 @@ _recursive_targets = \
 	describe dump-vars homepage-links print-plist print-plist-all \
 	print-plist-contents print-plist-libs \
 	show verbose-show show-size show-fake-size \
-	check-register check-register-all lock unlock
+	check-register check-register-all lock unlock list-distinfo
 
 _dangerous_recursive_targets = \
 	makesum plist update-patches update-plist 

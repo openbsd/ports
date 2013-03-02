@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1212 2013/02/18 12:07:42 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1213 2013/03/02 13:08:49 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1944,26 +1944,15 @@ makesum: fetch-all
 	@sort -u -o ${CHECKSUM_FILE} ${CHECKSUM_FILE}
 .endif
 
-
-addsum: fetch-all
-.if !defined(NO_CHECKSUM)
-	@touch ${CHECKSUM_FILE}
-	@cd ${DISTDIR} && \
-	 	for cipher in ${_CIPHERS}; do \
-			cksum -b -a $$cipher ${MAKESUMFILES} >> ${CHECKSUM_FILE}; \
-	    done
-	@cd ${DISTDIR} && \
-		for file in ${MAKESUMFILES}; do \
-			${_size_fragment} >> ${CHECKSUM_FILE}; \
-		done
-	@sort -u -o ${CHECKSUM_FILE} ${CHECKSUM_FILE}
-	@if [ `sed -e 's/\=.*$$//' ${CHECKSUM_FILE} | uniq -d | wc -l` -ne 0 ]; then \
-		echo "Inconsistent checksum in ${CHECKSUM_FILE}"; \
-		exit 1; \
+list-distinfo:
+	@if test -e ${CHECKSUM_FILE}; then cat ${CHECKSUM_FILE}; \
 	else \
-		${ECHO_MSG} "${CHECKSUM_FILE} updated okay, don't forget to remove cruft"; \
+		if ! test -z "${DISTFILES}"; then \
+			echo 1>&2 "${CHECKSUM_FILE} not found"; \
+			exit 1; \
+		fi; \
 	fi
-.endif
+
 
 ################################################################
 # Dependency checking
@@ -2199,6 +2188,22 @@ _internal-fetch:
 
 
 _internal-checksum: _internal-fetch
+	@fgrep SIZE ${CHECKSUM_FILE} | sed -e '/SIZE (\(.*\)).*/s//\1/'|\
+	while read i; do \
+		for j in ${MAKESUMFILES}; do \
+			missing=true; \
+			if test $$i = $$j; then \
+				missing=false; \
+				break; \
+			fi; \
+		done; \
+		if $$missing; then \
+			bad=true; \
+			echo 1>&2 "!!! File '$$i' not found in ${CHECKSUM_FILE}"; \
+			echo 1>&2 "!!! Read up on SUPDISTFILES in bsd.port.mk(5)"; \
+			exit 1; \
+		fi; \
+	done
 .  if ! defined(NO_CHECKSUM)
 	@if [ -z "${DISTFILES}" ]; then \
 	  ${ECHO_MSG} ">> No distfiles."; \
@@ -2724,6 +2729,7 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 	fi
 .  endfor
 .endif
+	@mkdir -p ${PKGDIR}
 	@cd ${PKGDIR} && for i in *.rc; do \
 		if test X"$$i" != "X*.rc"; then \
 			r=${WRKINST}${RCDIR}/$${i%.rc}; \
@@ -3370,7 +3376,7 @@ _all_phony = ${_recursive_depends_targets} \
 	_internal_install _internal_runlib-depends _license-check \
 	print-package-args _print-package-signature-lib \
 	_print-package-signature-run _print-packagename _recurse-all-dir-depends \
-	_recurse-regress-dir-depends _recurse-run-dir-depends _refetch addsum \
+	_recurse-regress-dir-depends _recurse-run-dir-depends _refetch \
 	build-depends build-depends-list checkpatch clean clean-depends \
 	delete-package depends distpatch do-build do-configure do-distpatch \
 	do-extract do-install do-regress fetch-all \
