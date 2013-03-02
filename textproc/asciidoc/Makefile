@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2012/10/15 15:06:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/02 14:08:48 ajacoutot Exp $
 
 COMMENT=	text document format for writing documents and man pages
 
-DISTNAME=	asciidoc-8.6.5
-REVISION=	1
+DISTNAME=	asciidoc-8.6.8
 CATEGORIES=	textproc
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
@@ -23,42 +22,28 @@ RUN_DEPENDS=	textproc/docbook-xsl
 
 MODPY_ADJ_FILES=a2x.py \
 		asciidoc.py \
-		filters/{code,graphviz,latex,music}/*.py
+		asciidocapi.py \
+		filters/{code,graphviz,latex,music,tests}/*.py
 
-NO_BUILD=	Yes
+PKG_ARCH=	*
+USE_GMAKE=	Yes
 NO_REGRESS=	Yes
-USE_GROFF =	Yes
+
+FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples
+
+CONFIGURE_STYLE=gnu
 
 post-configure:
 	@perl -pi -e 's,/etc,${SYSCONFDIR},g' ${WRKSRC}/asciidoc.py
 
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/asciidoc.py ${PREFIX}/bin/asciidoc
-	${INSTALL_SCRIPT} ${WRKSRC}/a2x.py ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/asciidoc.1 ${WRKSRC}/doc/a2x.1 \
-				${PREFIX}/man/man1
-
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/asciidoc \
-				${PREFIX}/share/examples/asciidoc/filters \
-				${PREFIX}/share/examples/asciidoc/docbook-xsl \
-				${PREFIX}/share/examples/asciidoc/stylesheets \
-				${PREFIX}/share/examples/asciidoc/javascripts \
-				${PREFIX}/share/examples/asciidoc/images/icons/callouts
-
-	${INSTALL_DATA} ${WRKSRC}/*.conf ${PREFIX}/share/examples/asciidoc
-
-	cd ${WRKSRC}/filters/ && umask 022 && pax -rw . \
-		${PREFIX}/share/examples/asciidoc/filters
-
-	${INSTALL_DATA} ${WRKSRC}/docbook-xsl/*.xsl \
-		${PREFIX}/share/examples/asciidoc/docbook-xsl
-	${INSTALL_DATA} ${WRKSRC}/stylesheets/*.css \
-		${PREFIX}/share/examples/asciidoc/stylesheets
-	${INSTALL_DATA} ${WRKSRC}/javascripts/*.js \
-		${PREFIX}/share/examples/asciidoc/javascripts
-	${INSTALL_DATA} ${WRKSRC}/images/icons/*.png \
-		${PREFIX}/share/examples/asciidoc/images/icons
-	${INSTALL_DATA} ${WRKSRC}/images/icons/callouts/* \
-		${PREFIX}/share/examples/asciidoc/images/icons/callouts
+post-install:
+	${INSTALL_DATA_DIR} ${WRKINST}${MODPY_SITEPKG}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/asciidoc/vim/{syntax,ftdetect}
+	${INSTALL_DATA} ${WRKSRC}/asciidocapi.py \
+		${WRKINST}${MODPY_SITEPKG}/asciidocapi.py
+	${INSTALL_DATA} ${WRKSRC}/vim/syntax/asciidoc.vim \
+		${PREFIX}/share/examples/asciidoc/vim/syntax/
+	${INSTALL_DATA} ${WRKSRC}/vim/ftdetect/asciidoc_filetype.vim \
+		${PREFIX}/share/examples/asciidoc/vim/ftdetect/
 
 .include <bsd.port.mk>

@@ -1,12 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/07/18 10:28:45 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/03/02 14:08:48 ajacoutot Exp $
+bin/a2x
 bin/a2x.py
 bin/asciidoc
+bin/asciidoc.py
+lib/python${MODPY_VERSION}/site-packages/asciidocapi.py
 @man man/man1/a2x.1
 @man man/man1/asciidoc.1
 share/examples/asciidoc/
 @sample ${SYSCONFDIR}/asciidoc/
 share/examples/asciidoc/asciidoc.conf
 @sample ${SYSCONFDIR}/asciidoc/asciidoc.conf
+share/examples/asciidoc/dblatex/
+@sample ${SYSCONFDIR}/asciidoc/dblatex/
+share/examples/asciidoc/dblatex/asciidoc-dblatex.sty
+@sample ${SYSCONFDIR}/asciidoc/dblatex/asciidoc-dblatex.sty
+share/examples/asciidoc/dblatex/asciidoc-dblatex.xsl
+@sample ${SYSCONFDIR}/asciidoc/dblatex/asciidoc-dblatex.xsl
 share/examples/asciidoc/docbook-xsl/
 @sample ${SYSCONFDIR}/asciidoc/docbook-xsl/
 share/examples/asciidoc/docbook-xsl/chunked.xsl
@@ -31,18 +40,12 @@ share/examples/asciidoc/filters/
 @sample ${SYSCONFDIR}/asciidoc/filters/
 share/examples/asciidoc/filters/code/
 @sample ${SYSCONFDIR}/asciidoc/filters/code/
-share/examples/asciidoc/filters/code/code-filter-readme.txt
-@sample ${SYSCONFDIR}/asciidoc/filters/code/code-filter-readme.txt
-share/examples/asciidoc/filters/code/code-filter-test.txt
-@sample ${SYSCONFDIR}/asciidoc/filters/code/code-filter-test.txt
 share/examples/asciidoc/filters/code/code-filter.conf
 @sample ${SYSCONFDIR}/asciidoc/filters/code/code-filter.conf
 share/examples/asciidoc/filters/code/code-filter.py
 @sample ${SYSCONFDIR}/asciidoc/filters/code/code-filter.py
 share/examples/asciidoc/filters/graphviz/
 @sample ${SYSCONFDIR}/asciidoc/filters/graphviz/
-share/examples/asciidoc/filters/graphviz/asciidoc-graphviz-sample.txt
-@sample ${SYSCONFDIR}/asciidoc/filters/graphviz/asciidoc-graphviz-sample.txt
 share/examples/asciidoc/filters/graphviz/graphviz-filter.conf
 @sample ${SYSCONFDIR}/asciidoc/filters/graphviz/graphviz-filter.conf
 share/examples/asciidoc/filters/graphviz/graphviz2png.py
@@ -55,16 +58,12 @@ share/examples/asciidoc/filters/latex/latex2png.py
 @sample ${SYSCONFDIR}/asciidoc/filters/latex/latex2png.py
 share/examples/asciidoc/filters/music/
 @sample ${SYSCONFDIR}/asciidoc/filters/music/
-share/examples/asciidoc/filters/music/music-filter-test.txt
-@sample ${SYSCONFDIR}/asciidoc/filters/music/music-filter-test.txt
 share/examples/asciidoc/filters/music/music-filter.conf
 @sample ${SYSCONFDIR}/asciidoc/filters/music/music-filter.conf
 share/examples/asciidoc/filters/music/music2png.py
 @sample ${SYSCONFDIR}/asciidoc/filters/music/music2png.py
 share/examples/asciidoc/filters/source/
 @sample ${SYSCONFDIR}/asciidoc/filters/source/
-share/examples/asciidoc/filters/source/source-highlight-filter-test.txt
-@sample ${SYSCONFDIR}/asciidoc/filters/source/source-highlight-filter-test.txt
 share/examples/asciidoc/filters/source/source-highlight-filter.conf
 @sample ${SYSCONFDIR}/asciidoc/filters/source/source-highlight-filter.conf
 share/examples/asciidoc/help.conf
@@ -77,6 +76,7 @@ share/examples/asciidoc/images/
 @sample ${SYSCONFDIR}/asciidoc/images/
 share/examples/asciidoc/images/icons/
 @sample ${SYSCONFDIR}/asciidoc/images/icons/
+share/examples/asciidoc/images/icons/README
 share/examples/asciidoc/images/icons/callouts/
 @sample ${SYSCONFDIR}/asciidoc/images/icons/callouts/
 share/examples/asciidoc/images/icons/callouts/1.png
@@ -143,6 +143,8 @@ share/examples/asciidoc/javascripts/toc.js
 @sample ${SYSCONFDIR}/asciidoc/javascripts/toc.js
 share/examples/asciidoc/lang-de.conf
 @sample ${SYSCONFDIR}/asciidoc/lang-de.conf
+share/examples/asciidoc/lang-el.conf
+@sample ${SYSCONFDIR}/asciidoc/lang-el.conf
 share/examples/asciidoc/lang-en.conf
 @sample ${SYSCONFDIR}/asciidoc/lang-en.conf
 share/examples/asciidoc/lang-es.conf
@@ -167,30 +169,35 @@ share/examples/asciidoc/slidy.conf
 @sample ${SYSCONFDIR}/asciidoc/slidy.conf
 share/examples/asciidoc/stylesheets/
 @sample ${SYSCONFDIR}/asciidoc/stylesheets/
-share/examples/asciidoc/stylesheets/asciidoc-manpage.css
-@sample ${SYSCONFDIR}/asciidoc/stylesheets/asciidoc-manpage.css
 share/examples/asciidoc/stylesheets/asciidoc.css
 @sample ${SYSCONFDIR}/asciidoc/stylesheets/asciidoc.css
 share/examples/asciidoc/stylesheets/docbook-xsl.css
 @sample ${SYSCONFDIR}/asciidoc/stylesheets/docbook-xsl.css
-share/examples/asciidoc/stylesheets/flask-manpage.css
-@sample ${SYSCONFDIR}/asciidoc/stylesheets/flask-manpage.css
-share/examples/asciidoc/stylesheets/flask.css
-@sample ${SYSCONFDIR}/asciidoc/stylesheets/flask.css
 share/examples/asciidoc/stylesheets/pygments.css
 @sample ${SYSCONFDIR}/asciidoc/stylesheets/pygments.css
 share/examples/asciidoc/stylesheets/slidy.css
 @sample ${SYSCONFDIR}/asciidoc/stylesheets/slidy.css
 share/examples/asciidoc/stylesheets/toc2.css
 @sample ${SYSCONFDIR}/asciidoc/stylesheets/toc2.css
-share/examples/asciidoc/stylesheets/volnitsky-manpage.css
-@sample ${SYSCONFDIR}/asciidoc/stylesheets/volnitsky-manpage.css
-share/examples/asciidoc/stylesheets/volnitsky.css
-@sample ${SYSCONFDIR}/asciidoc/stylesheets/volnitsky.css
 share/examples/asciidoc/stylesheets/xhtml11-quirks.css
 @sample ${SYSCONFDIR}/asciidoc/stylesheets/xhtml11-quirks.css
 share/examples/asciidoc/text.conf
 @sample ${SYSCONFDIR}/asciidoc/text.conf
+share/examples/asciidoc/themes/
+@sample ${SYSCONFDIR}/asciidoc/themes/
+share/examples/asciidoc/themes/flask/
+@sample ${SYSCONFDIR}/asciidoc/themes/flask/
+share/examples/asciidoc/themes/flask/flask.css
+@sample ${SYSCONFDIR}/asciidoc/themes/flask/flask.css
+share/examples/asciidoc/themes/volnitsky/
+@sample ${SYSCONFDIR}/asciidoc/themes/volnitsky/
+share/examples/asciidoc/themes/volnitsky/volnitsky.css
+@sample ${SYSCONFDIR}/asciidoc/themes/volnitsky/volnitsky.css
+share/examples/asciidoc/vim/
+share/examples/asciidoc/vim/ftdetect/
+share/examples/asciidoc/vim/ftdetect/asciidoc_filetype.vim
+share/examples/asciidoc/vim/syntax/
+share/examples/asciidoc/vim/syntax/asciidoc.vim
 share/examples/asciidoc/wordpress.conf
 @sample ${SYSCONFDIR}/asciidoc/wordpress.conf
 share/examples/asciidoc/xhtml11-quirks.conf
