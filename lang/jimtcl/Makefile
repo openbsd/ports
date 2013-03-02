@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2011/11/14 18:30:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/02 12:42:39 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		small footprint implementation of Tcl
 
 DISTNAME=		jimtcl-0.72
-REVISION=		1
+REVISION=		2
 SHARED_LIBS=		jim 0.0
 CATEGORIES=		lang devel
 
-HOMEPAGE=		http://jim.berlios.de/
+HOMEPAGE=		http://jim.tcl.tk/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
