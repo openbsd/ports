@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2012/12/27 20:33:59 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.42 2013/03/02 20:55:58 brad Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		Gtk+3 media player based on BMP and XMMS
 
-DISTNAME =		audacious-3.3.3
+DISTNAME =		audacious-3.3.4
 
 SHARED_LIBS =		audclient	3.0 	# 2.0
 SHARED_LIBS +=		audcore		2.0 	# 1.0
@@ -21,11 +21,10 @@ PERMIT_DISTFILES_FTP =	Yes
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 
-WANTLIB += GL X11 Xrender atk-1.0 c cairo cairo-gobject dbus-1>=6
-WANTLIB += dbus-glib-1 expat fontconfig freetype gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gtk-3 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += guess m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
-WANTLIB += png pthread pthread-stubs xcb xcb-render xcb-shm z Xext
+WANTLIB += atk-1.0 c cairo cairo-gobject dbus-1 dbus-glib-1 expat
+WANTLIB += fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-3 guess m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pthread z
 
 MASTER_SITES =		http://distfiles.audacious-media-player.org/
 
