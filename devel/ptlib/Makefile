@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.18 2012/11/27 08:12:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/02 14:05:36 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	portable tools library
 
-DISTNAME=	ptlib-2.10.9
+DISTNAME=	ptlib-2.10.10
 
-SHARED_LIBS=	pt	5.0	# 2.10.3
+SHARED_LIBS=	pt	5.1	# 2.10.10
 
 EXTRACT_SUFX=	.tar.bz2
 
@@ -22,8 +22,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += SDL c crypto expat lber ldap ldap_r m pthread sasl2
-WANTLIB += sndio ssl stdc++
+WANTLIB += SDL c crypto expat lber ldap ldap_r m pthread sndio
+WANTLIB += ssl stdc++
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=opalvoip/}
 
