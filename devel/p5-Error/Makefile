@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2012/05/14 05:02:42 rpointel Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/02 12:36:36 sthen Exp $
 
 COMMENT=	error/exception handling in an OO-ish way
 
 MODULES=	cpan
-DISTNAME=	Error-0.17018
+DISTNAME=	Error-0.17019
 CATEGORIES=	devel
 
 # perl
