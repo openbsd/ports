@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/01/04 07:55:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/02 12:21:26 jasper Exp $
 
 COMMENT=		configuration editing tool and API
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${HOMEPAGE}/download/
+MASTER_SITES=		http://download.augeas.net/
 
 MODULES=		devel/gettext
 
