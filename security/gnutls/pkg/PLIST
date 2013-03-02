@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.22 2013/02/21 15:55:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2013/03/02 14:07:22 ajacoutot Exp $
 @bin bin/certtool
 @bin bin/crywrap
+@bin bin/danetool
 @bin bin/gnutls-cli
 @bin bin/gnutls-cli-debug
 @bin bin/gnutls-serv
@@ -210,6 +211,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_handshake_set_max_packet_length.3
 @man man/man3/gnutls_handshake_set_post_client_hello_function.3
 @man man/man3/gnutls_handshake_set_private_extensions.3
+@man man/man3/gnutls_handshake_set_random.3
 @man man/man3/gnutls_handshake_set_timeout.3
 @man man/man3/gnutls_hash.3
 @man man/man3/gnutls_hash_deinit.3
@@ -393,6 +395,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_pkcs11_privkey_import_url.3
 @man man/man3/gnutls_pkcs11_privkey_init.3
 @man man/man3/gnutls_pkcs11_privkey_set_pin_function.3
+@man man/man3/gnutls_pkcs11_privkey_status.3
 @man man/man3/gnutls_pkcs11_reinit.3
 @man man/man3/gnutls_pkcs11_set_pin_function.3
 @man man/man3/gnutls_pkcs11_set_token_function.3
@@ -535,6 +538,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_record_can_use_length_hiding.3
 @man man/man3/gnutls_record_check_pending.3
 @man man/man3/gnutls_record_cork.3
+@man man/man3/gnutls_record_disable_padding.3
 @man man/man3/gnutls_record_get_direction.3
 @man man/man3/gnutls_record_get_discarded.3
 @man man/man3/gnutls_record_get_max_size.3
@@ -631,10 +635,14 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_tpm_key_list_get_url.3
 @man man/man3/gnutls_tpm_privkey_delete.3
 @man man/man3/gnutls_tpm_privkey_generate.3
+@man man/man3/gnutls_transport_get_int.3
+@man man/man3/gnutls_transport_get_int2.3
 @man man/man3/gnutls_transport_get_ptr.3
 @man man/man3/gnutls_transport_get_ptr2.3
 @man man/man3/gnutls_transport_set_errno.3
 @man man/man3/gnutls_transport_set_errno_function.3
+@man man/man3/gnutls_transport_set_int.3
+@man man/man3/gnutls_transport_set_int2.3
 @man man/man3/gnutls_transport_set_ptr.3
 @man man/man3/gnutls_transport_set_ptr2.3
 @man man/man3/gnutls_transport_set_pull_function.3

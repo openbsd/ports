@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.71 2013/02/21 15:55:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.72 2013/03/02 14:07:22 ajacoutot Exp $
 
 # XXX check why our getopt_long(3) fails the configure test
 # + rm patch-gl_unistd_in_h
 
 COMMENT=	GNU Transport Layer Security library
 
-V=		3.1.7
+V=		3.1.9
 DISTNAME=	gnutls-${V}
 EXTRACT_SUFX=	.tar.xz
-REVISION=	0
 
 CATEGORIES=	security
 
-SHARED_LIBS +=  gnutls               39.2     # 44.0
+SHARED_LIBS +=  gnutls               39.3     # 44.0
 SHARED_LIBS +=  gnutlsxx             29.1     # 29.0
 SHARED_LIBS +=  gnutls-xssl          0.0      # 0.0
 SHARED_LIBS +=  gnutls-openssl       27.2     # 27.2
@@ -69,12 +68,7 @@ CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
 		ac_cv_path_GTKDOC_REBASE="" \
 		ac_cv_path_GTKDOC_MKPDF=""
 
-# XXX empty man page
-EMPTY_MP=	${PREFIX}/man/man3/gnutls_record_disable_padding.3
 post-install:
-	if [ $$(stat -f %z ${EMPTY_MP}) -ne 0 ]; then exit 1; fi
-	rm ${EMPTY_MP}
-
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gnutls
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnutls
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/gnutls
@@ -83,7 +77,5 @@ post-install:
 	# needed by at least:
 	# devel/libvmime, security/prelude/manager, textproc/iksemel
 	${INSTALL} -m 555 ${FILESDIR}/libgnutls-config ${PREFIX}/bin
-	# --disable-libdane (net/unbound)
-	rm ${PREFIX}/{bin/danetool,lib/pkgconfig/gnutls-dane.pc}
 
 .include <bsd.port.mk>
