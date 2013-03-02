@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2011/12/02 08:29:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2013/03/02 12:33:01 jasper Exp $
 
 COMMENT=        build tool for java applications
 
-DISTNAME=	apache-ant-1.8.2
-REVISION=	3
+DISTNAME=	apache-ant-1.8.4
 CATEGORIES=	devel
 
 HOMEPAGE=	http://ant.apache.org/
@@ -21,7 +20,7 @@ MASTER_SITES=	${MASTER_SITE_APACHE:=ant/binaries/} \
 EXTRACT_SUFX=	-bin.tar.bz2
 
 MODULES=	java
-MODJAVA_VER=	1.5+
+MODJAVA_VER=	1.6+
 
 RUN_DEPENDS=	java/javaPathHelper
 BUILD_DEPENDS=	archivers/gtar
@@ -42,7 +41,7 @@ do-install:
 	@ln -s ${TRUEPREFIX}/ant/bin/$i ${PREFIX}/bin/$i
 .endfor
 	@${INSTALL_DATA_DIR} ${ANTDOCS}
-	@cp -Rp ${WRKDIST}/docs/* ${ANTDOCS}
+	@cp -Rp ${WRKDIST}/manual/* ${ANTDOCS}
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${ANTDOCS}
 	@cd ${WRKDIST} && ${INSTALL_DATA} ${TXT} ${ANTDOCS}
 	@${INSTALL_DATA_DIR} ${ANTHOME}/lib
