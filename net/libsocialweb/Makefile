@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2012/10/15 15:17:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/02 12:21:10 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -32,6 +32,7 @@ WANTLIB += json-glib-1.0 m pcre pthread rest-0.7 rest-extras-0.7
 WANTLIB += soup-2.4 soup-gnome-2.4 xml2 z sqlite3
 
 MODGNOME_TOOLS= 	goi vala
+BUILD_DEPENDS=		textproc/libxslt
 LIB_DEPENDS=		devel/json-glib \
 			net/librest \
 			devel/gconf2 \
