@@ -1,4 +1,2 @@
-Hiera is a simple pluggable Hierarchical Database. It can be used to
-store various information and therefor is a good fit for the
-representation of infrastructure information. It can be used to querying
-multiple data backends e.g. YAML or Puppet.
+Hiera is a pluggable (YAML, JSON, Puppet) hierarchical database for
+storing infrastructure representation data.

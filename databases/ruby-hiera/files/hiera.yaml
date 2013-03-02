@@ -1,17 +1,17 @@
-# $OpenBSD: hiera.yaml,v 1.1.1.1 2013/02/03 16:44:03 jasper Exp $
+# $OpenBSD: hiera.yaml,v 1.2 2013/03/02 13:59:20 ajacoutot Exp $
 
 ---
 :backends:
   - yaml
-
-:logger: console
-
 :hierarchy:
-  - "%{location}"
-  - common
+  - defaults
+  - %{clientcert}
+  - %{environment}
+  - global
 
 :yaml:
-   :datadir: /etc/puppet/hieradata
-
-:puppet:
-   :datasource: data
+# datadir is empty here, so hiera uses its defaults:
+# - /var/db/hiera on *nix
+# - %CommonAppData%\PuppetLabs\hiera\var on Windows
+# When specifying a datadir, make sure the directory exists.
+  :datadir:

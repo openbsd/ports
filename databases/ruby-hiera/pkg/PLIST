@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/02/03 16:44:03 jasper Exp $
-${GEM_BIN}/hiera${GEM_BIN_SUFFIX}
+@comment $OpenBSD: PLIST,v 1.2 2013/03/02 13:59:20 ajacoutot Exp $
+@extraunexec rm -rf /var/db/hiera/*
+${GEM_BIN}/hiera
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/COPYING
@@ -31,5 +32,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/unit/console_logger_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/hiera_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/util_spec.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
-share/examples/ruby-${GEM_MAN_SUFFIX}-hiera/
-share/examples/ruby-${GEM_MAN_SUFFIX}-hiera/hiera.yaml
+${MODRUBY_RELEXAMPLEDIR}-hiera/
+${MODRUBY_RELEXAMPLEDIR}-hiera/hiera.yaml
+@sample ${SYSCONFDIR}/hiera.yaml
+@sample /var/db/hiera

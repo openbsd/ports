@@ -1,13 +1,17 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/02/03 16:44:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/02 13:59:20 ajacoutot Exp $
 
 COMMENT=		simple pluggable hierarchical database
 
-DISTNAME=		hiera-1.1.2
+V=			1.1.2
+DISTNAME=		hiera-${V}
+PKGNAME=		ruby-hiera-${V}
+REVISION=		0
+
 CATEGORIES=		databases
 
-HOMEPAGE=		https://github.com/puppetlabs/hiera
+HOMEPAGE=		http://projects.puppetlabs.com/projects/hiera
 
-MODULES=		lang/ruby
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # Apachev2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -15,15 +19,28 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+MODULES=		lang/ruby
+
+MODRUBY_HANDLE_FLAVORS=	No
+
 CONFIGURE_STYLE=	ruby gem
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		devel/ruby-json_pure,${MODRUBY_FLAVOR}
 
-EXAMPLE_DIR=		${PREFIX}/share/examples/ruby-${GEM_MAN_SUFFIX}-hiera/
+REGRESS_DEPENDS=	devel/ruby-mocha,${MODRUBY_FLAVOR}
+MODRUBY_REGRESS=	rspec2
+
+pre-configure:
+	perl -pi -e 's,/var/lib,/var/db,g' \
+		${WRKSRC}/lib/hiera/backend.rb \
+		${WRKSRC}/lib/hiera/util.rb \
+		${WRKSRC}/spec/unit/util_spec.rb \
+		${WRKSRC}/README.md
 
 post-install:
-	${INSTALL_DATA_DIR} ${EXAMPLE_DIR}
-	${INSTALL_DATA} ${FILESDIR}/hiera.yaml ${EXAMPLE_DIR}
+	${INSTALL_DATA_DIR} ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-hiera
+	${INSTALL_DATA} ${FILESDIR}/hiera.yaml \
+		${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-hiera
 
 .include <bsd.port.mk>
