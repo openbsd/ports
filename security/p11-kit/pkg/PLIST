@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/11/24 15:01:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/03/02 13:55:56 ajacoutot Exp $
 %%SHARED%%
 @bin bin/p11-kit
 include/p11-kit-1/
@@ -16,7 +16,6 @@ share/examples/p11-kit/pkcs11/
 @sample ${SYSCONFDIR}/pkcs11/
 @sample ${SYSCONFDIR}/pkcs11/modules/
 share/examples/p11-kit/pkcs11/pkcs11.conf.example
-@sample ${SYSCONFDIR}/pkcs11/pkcs11.conf.example
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/p11-kit/
