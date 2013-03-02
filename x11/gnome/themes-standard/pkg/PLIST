@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2012/11/13 07:28:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2013/03/02 13:59:59 ajacoutot Exp $
 @conflict gnome-themes-<2.32.1p3
 @unexec-delete rm -f %D/share/icons/Adwaita/icon-theme.cache
 @unexec-delete rm -f %D/share/icons/HighContrast/icon-theme.cache
@@ -2906,6 +2906,7 @@ share/locale/eu/LC_MESSAGES/gnome-themes-standard.mo
 share/locale/fa/LC_MESSAGES/gnome-themes-standard.mo
 share/locale/fi/LC_MESSAGES/gnome-themes-standard.mo
 share/locale/fr/LC_MESSAGES/gnome-themes-standard.mo
+share/locale/fur/LC_MESSAGES/gnome-themes-standard.mo
 share/locale/fy/
 share/locale/fy/LC_MESSAGES/
 share/locale/fy/LC_MESSAGES/gnome-themes-standard.mo
@@ -2963,7 +2964,11 @@ share/themes/Adwaita/gtk-2.0/Arrows/arrow-down-small-insens.png
 share/themes/Adwaita/gtk-2.0/Arrows/arrow-down-small-prelight.png
 share/themes/Adwaita/gtk-2.0/Arrows/arrow-down-small.png
 share/themes/Adwaita/gtk-2.0/Arrows/arrow-down.png
+share/themes/Adwaita/gtk-2.0/Arrows/arrow-left-insens.png
+share/themes/Adwaita/gtk-2.0/Arrows/arrow-left-prelight.png
 share/themes/Adwaita/gtk-2.0/Arrows/arrow-left.png
+share/themes/Adwaita/gtk-2.0/Arrows/arrow-right-insens.png
+share/themes/Adwaita/gtk-2.0/Arrows/arrow-right-prelight.png
 share/themes/Adwaita/gtk-2.0/Arrows/arrow-right.png
 share/themes/Adwaita/gtk-2.0/Arrows/arrow-up-insens.png
 share/themes/Adwaita/gtk-2.0/Arrows/arrow-up-prelight.png
@@ -2996,23 +3001,32 @@ share/themes/Adwaita/gtk-2.0/Check-Radio/option-checked.png
 share/themes/Adwaita/gtk-2.0/Check-Radio/option-unchecked-insensitive.png
 share/themes/Adwaita/gtk-2.0/Check-Radio/option-unchecked.png
 share/themes/Adwaita/gtk-2.0/Entry/
-share/themes/Adwaita/gtk-2.0/Entry/combo-entry-border-active-rtl.png
-share/themes/Adwaita/gtk-2.0/Entry/combo-entry-border-active.png
-share/themes/Adwaita/gtk-2.0/Entry/combo-entry-border-disabled-rtl.png
-share/themes/Adwaita/gtk-2.0/Entry/combo-entry-border-disabled.png
-share/themes/Adwaita/gtk-2.0/Entry/combo-entry-border-rtl.png
-share/themes/Adwaita/gtk-2.0/Entry/combo-entry-border.png
+share/themes/Adwaita/gtk-2.0/Entry/combo-entry-border-active-bg.png
+share/themes/Adwaita/gtk-2.0/Entry/combo-entry-border-active-notebook.png
+share/themes/Adwaita/gtk-2.0/Entry/combo-entry-border-active-rtl-bg.png
+share/themes/Adwaita/gtk-2.0/Entry/combo-entry-border-active-rtl-notebook.png
+share/themes/Adwaita/gtk-2.0/Entry/combo-entry-border-bg.png
+share/themes/Adwaita/gtk-2.0/Entry/combo-entry-border-disabled-bg.png
+share/themes/Adwaita/gtk-2.0/Entry/combo-entry-border-disabled-notebook.png
+share/themes/Adwaita/gtk-2.0/Entry/combo-entry-border-disabled-rtl-bg.png
+share/themes/Adwaita/gtk-2.0/Entry/combo-entry-border-disabled-rtl-notebook.png
+share/themes/Adwaita/gtk-2.0/Entry/combo-entry-border-notebook.png
+share/themes/Adwaita/gtk-2.0/Entry/combo-entry-border-rtl-bg.png
+share/themes/Adwaita/gtk-2.0/Entry/combo-entry-border-rtl-notebook.png
 share/themes/Adwaita/gtk-2.0/Entry/combo-entry-button-active-rtl.png
 share/themes/Adwaita/gtk-2.0/Entry/combo-entry-button-active.png
 share/themes/Adwaita/gtk-2.0/Entry/combo-entry-button-disabled-rtl.png
 share/themes/Adwaita/gtk-2.0/Entry/combo-entry-button-disabled.png
 share/themes/Adwaita/gtk-2.0/Entry/combo-entry-button-rtl.png
 share/themes/Adwaita/gtk-2.0/Entry/combo-entry-button.png
-share/themes/Adwaita/gtk-2.0/Entry/entry-bg-disabled.png
-share/themes/Adwaita/gtk-2.0/Entry/entry-bg.png
-share/themes/Adwaita/gtk-2.0/Entry/entry-border-active.png
-share/themes/Adwaita/gtk-2.0/Entry/entry-border-disabled.png
-share/themes/Adwaita/gtk-2.0/Entry/entry-border.png
+share/themes/Adwaita/gtk-2.0/Entry/entry-border-active-bg.png
+share/themes/Adwaita/gtk-2.0/Entry/entry-border-active-notebook.png
+share/themes/Adwaita/gtk-2.0/Entry/entry-border-bg.png
+share/themes/Adwaita/gtk-2.0/Entry/entry-border-disabled-bg.png
+share/themes/Adwaita/gtk-2.0/Entry/entry-border-disabled-notebook.png
+share/themes/Adwaita/gtk-2.0/Entry/entry-border-fill-solid.png
+share/themes/Adwaita/gtk-2.0/Entry/entry-border-fill.png
+share/themes/Adwaita/gtk-2.0/Entry/entry-border-notebook.png
 share/themes/Adwaita/gtk-2.0/Expanders/
 share/themes/Adwaita/gtk-2.0/Expanders/minus.png
 share/themes/Adwaita/gtk-2.0/Expanders/plus.png
@@ -3027,10 +3041,8 @@ share/themes/Adwaita/gtk-2.0/Menu-Menubar/
 share/themes/Adwaita/gtk-2.0/Menu-Menubar/menubar.png
 share/themes/Adwaita/gtk-2.0/Menu-Menubar/menubar_button.png
 share/themes/Adwaita/gtk-2.0/Others/
-share/themes/Adwaita/gtk-2.0/Others/bg.png
 share/themes/Adwaita/gtk-2.0/Others/focus.png
 share/themes/Adwaita/gtk-2.0/Others/null.png
-share/themes/Adwaita/gtk-2.0/Others/ruler.png
 share/themes/Adwaita/gtk-2.0/Others/tree_header.png
 share/themes/Adwaita/gtk-2.0/ProgressBar/
 share/themes/Adwaita/gtk-2.0/ProgressBar/progressbar.png
@@ -3056,6 +3068,8 @@ share/themes/Adwaita/gtk-2.0/Scrollbars/slider-vert.png
 share/themes/Adwaita/gtk-2.0/Scrollbars/trough-scrollbar-horiz.png
 share/themes/Adwaita/gtk-2.0/Scrollbars/trough-scrollbar-vert.png
 share/themes/Adwaita/gtk-2.0/Shadows/
+share/themes/Adwaita/gtk-2.0/Shadows/frame-gap-end.png
+share/themes/Adwaita/gtk-2.0/Shadows/frame-gap-start.png
 share/themes/Adwaita/gtk-2.0/Shadows/frame.png
 share/themes/Adwaita/gtk-2.0/Spin/
 share/themes/Adwaita/gtk-2.0/Spin/down-background-disable-rtl.png
