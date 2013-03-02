@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.25 2012/11/27 08:13:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2013/03/02 14:05:59 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Open Phone Abstraction Library
 
-DISTNAME=	opal-3.10.9
+DISTNAME=	opal-3.10.10
 
-SHARED_LIBS=	opal	3.0	# 3.10.9
+SHARED_LIBS=	opal	3.1	# 3.10.10
 
 EXTRACT_SUFX=	.tar.bz2
 
@@ -27,7 +27,7 @@ WANTLIB += speexdsp stdc++ theora tiff x264
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=opalvoip/}
 
-LIB_DEPENDS=	devel/ptlib>=2.10.9 \
+LIB_DEPENDS=	devel/ptlib>=2.10.10 \
 		audio/celt \
 		telephony/spandsp
 
