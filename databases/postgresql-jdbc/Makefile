@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/12/17 18:02:44 kili Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/02 12:45:19 jasper Exp $
 
 COMMENT-main=		JDBC Driver for PostgreSQL
 COMMENT-docs=		API docs for PostgreSQL JDBC Driver
@@ -9,7 +9,7 @@ PKGNAME-main=		postgresql-jdbc-${V:S/-/./}
 PKGNAME-docs=		postgresql-jdbc-docs-${V:S/-/./}
 PKG_ARCH-docs=		*
 CATEGORIES=		databases
-REVISION-main =		1
+REVISION-main =		2
 
 MULTI_PACKAGES=		-main -docs
 
@@ -27,7 +27,7 @@ MASTER_SITES=		${HOMEPAGE}/download/
 EXTRACT_SUFX=		.src.tar.gz
 
 MODULES=		java
-MODJAVA_VER?=		1.5+
+MODJAVA_VER?=		1.6+
 MODJAVA_JRERUN=		yes
 MODJAVA_BUILD=		ant
 MODJAVA_BUILD_TARGET=	all publicapi

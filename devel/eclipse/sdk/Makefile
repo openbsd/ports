@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2012/04/07 13:11:27 landry Exp $
+# $OpenBSD: Makefile,v 1.69 2013/03/02 12:45:19 jasper Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS=		amd64 i386
@@ -12,13 +12,13 @@ ECLIPSE_VER=		3.2.2
 DISTNAME=		eclipse-sourceBuild-srcIncluded-${ECLIPSE_VER}
 PKGNAME=		eclipse-sdk-${ECLIPSE_VER}
 PKGNAME-main=		eclipse-sdk-${ECLIPSE_VER}
-REVISION-main=		19
+REVISION-main=		20
 PKGNAME-swt=		swt-${ECLIPSE_VER}
-REVISION-swt=		4
+REVISION-swt=		5
 PKGNAME-gnome=		swt-gnome-${ECLIPSE_VER}
-REVISION-gnome=		4
+REVISION-gnome=		5
 PKGNAME-browser=	swt-browser-${ECLIPSE_VER}
-REVISION-browser=	7
+REVISION-browser=	8
 SHARED_LIBS=		swt-atk-gtk-3236	4.0 \
 			swt-awt-gtk-3236	4.0 \
 			swt-gtk-3236		4.0 \
@@ -54,7 +54,7 @@ EXTRACT_SUFX=		.zip
 VMEM_WARNING=		Yes
 
 MODULES=		java devel/gettext
-MODJAVA_VER=		1.5+
+MODJAVA_VER=		1.6+
 
 BUILD_DEPENDS=		devel/xulrunner/1.9,-devel>=1.9 \
 			devel/apache-ant>=1.6.1

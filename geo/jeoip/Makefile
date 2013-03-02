@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2011/12/15 21:33:19 kili Exp $
+# $OpenBSD: Makefile,v 1.21 2013/03/02 12:45:19 jasper Exp $
 
 COMMENT=		Java interface to GeoIP database
 DISTNAME=		jeoip-0.5
-REVISION=		10
+REVISION=		11
 CATEGORIES=		geo net
 PKG_ARCH=		*
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://www.darwinsys.com/freeware/
 
 MODULES=		java
-MODJAVA_VER=		1.5+
+MODJAVA_VER=		1.6+
 MODJAVA_JRERUN=		Yes
 MODJAVA_BUILD=		ant
 MODJAVA_BUILD_TARGET=	jar docs

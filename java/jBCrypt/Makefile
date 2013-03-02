@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/05/23 15:02:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/02 12:45:19 jasper Exp $
 
 COMMENT=	BCrypt library for Java
 
 DISTNAME=	jBCrypt-0.3
+REVISION=	0
 
 CATEGORIES=	security
 
@@ -19,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://www.mindrot.org/files/jBCrypt/
 
 MODULES=		java
-MODJAVA_VER=		1.5+
+MODJAVA_VER=		1.6+
 MODJAVA_JRERUN=		yes
 MODJAVA_BUILD=		ant
 
