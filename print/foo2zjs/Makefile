@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.39 2013/02/02 09:05:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2013/03/02 13:51:30 ajacoutot Exp $
 
 COMMENT=	driver for ZjStream wire protocol compatible printers
 
-VERSION=	20130122
+VERSION=	20130220
 DISTNAME=	foo2zjs-${VERSION}
 
 CATEGORIES=	print

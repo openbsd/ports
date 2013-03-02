@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2013/02/02 09:05:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2013/03/02 13:51:30 ajacoutot Exp $
 @conflict foomatic-db-<4.0.20091207p1
 @conflict foo2zjs-cup-*
 @pkgpath print/foo2zjs,-cups
@@ -121,7 +121,6 @@ share/foo2zjs/firmware/
 share/foo2zjs/gamma-lookup.ps
 share/foo2zjs/gamma.ps
 share/foo2zjs/icm/
-share/foomatic/
 share/foomatic/db/
 share/foomatic/db/source/
 share/foomatic/db/source/PPD/
