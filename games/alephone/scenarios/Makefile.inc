@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile.inc,v 1.4 2012/01/27 21:35:24 phessler Exp $
+#	$OpenBSD: Makefile.inc,v 1.5 2013/03/02 12:38:46 sthen Exp $
 
 DIST_SUBDIR ?=	alephone
 
@@ -15,6 +15,10 @@ MASTER_SITES4 = http://archives2.bungie.org/manuals/
 MASTER_SITES5 = http://files3.bungie.org/trilogy/
 
 RUN_DEPENDS =	games/alephone/alephone
+
+# technically not, but it saves recompressing 300MB on vax to make some
+# useless packages
+BUILD_DEPENDS += games/alephone/alephone
 
 
 NO_BUILD =	Yes
