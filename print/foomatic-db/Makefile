@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/02/02 08:56:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2013/03/02 13:50:07 ajacoutot Exp $
 
 PKG_ARCH=		*
 
@@ -7,6 +7,7 @@ COMMENT=		Foomatic PPD data
 V=			20130202
 DISTNAME=		foomatic-db-4.0-${V}
 PKGNAME=		foomatic-db-4.0.${V}
+REVISION=		0
 
 CATEGORIES=		print
 
