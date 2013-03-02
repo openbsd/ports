@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2013/01/15 10:18:11 jasper Exp $
-
-BROKEN-sparc64=		cast increases required alignment of target type
-BROKEN-hppa=		cast increases required alignment of target type
-BROKEN-mips64=		cast increases required alignment of target type
+# $OpenBSD: Makefile,v 1.12 2013/03/02 12:42:03 jasper Exp $
 
 COMMENT=		window and compositing manager
 
 GNOME_PROJECT=		mutter
 GNOME_VERSION=		3.6.2
+REVISION=		0
 
 SHARED_LIBS +=  mutter                    0.0 # 0.0
 
@@ -49,5 +46,7 @@ DESKTOP_FILES=		Yes
 LIBTOOL_FLAGS+= 	--tag=disable-static
 
 CONFIGURE_ARGS +=	--disable-static
+# disable -Werror which breaks at least hppa/mips64/sparc64
+CONFIGURE_ARGS +=	--enable-compile-warnings=yes
 
 .include <bsd.port.mk>
