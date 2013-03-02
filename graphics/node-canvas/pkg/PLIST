@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/09/23 17:29:48 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/03/02 12:29:09 jasper Exp $
 lib/node_modules/canvas/
 lib/node_modules/canvas/.gitmodules
 lib/node_modules/canvas/.npmignore
@@ -21,6 +21,7 @@ lib/node_modules/canvas/build/Release/.deps/Release/obj.target/canvas/src/Canvas
 lib/node_modules/canvas/build/Release/.deps/Release/obj.target/canvas/src/CanvasGradient.o.d
 lib/node_modules/canvas/build/Release/.deps/Release/obj.target/canvas/src/CanvasPattern.o.d
 lib/node_modules/canvas/build/Release/.deps/Release/obj.target/canvas/src/CanvasRenderingContext2d.o.d
+lib/node_modules/canvas/build/Release/.deps/Release/obj.target/canvas/src/FontFace.o.d
 lib/node_modules/canvas/build/Release/.deps/Release/obj.target/canvas/src/Image.o.d
 lib/node_modules/canvas/build/Release/.deps/Release/obj.target/canvas/src/ImageData.o.d
 lib/node_modules/canvas/build/Release/.deps/Release/obj.target/canvas/src/PixelArray.o.d
@@ -36,6 +37,7 @@ lib/node_modules/canvas/build/Release/obj.target/canvas/src/Canvas.o
 lib/node_modules/canvas/build/Release/obj.target/canvas/src/CanvasGradient.o
 lib/node_modules/canvas/build/Release/obj.target/canvas/src/CanvasPattern.o
 lib/node_modules/canvas/build/Release/obj.target/canvas/src/CanvasRenderingContext2d.o
+lib/node_modules/canvas/build/Release/obj.target/canvas/src/FontFace.o
 lib/node_modules/canvas/build/Release/obj.target/canvas/src/Image.o
 lib/node_modules/canvas/build/Release/obj.target/canvas/src/ImageData.o
 lib/node_modules/canvas/build/Release/obj.target/canvas/src/PixelArray.o
@@ -54,8 +56,6 @@ lib/node_modules/canvas/lib/image.js
 lib/node_modules/canvas/lib/jpegstream.js
 lib/node_modules/canvas/lib/pixelarray.js
 lib/node_modules/canvas/lib/pngstream.js
-lib/node_modules/canvas/out.pdf
-lib/node_modules/canvas/out.png
 lib/node_modules/canvas/package.json
 lib/node_modules/canvas/src/
 lib/node_modules/canvas/src/Canvas.cc
@@ -66,6 +66,8 @@ lib/node_modules/canvas/src/CanvasPattern.cc
 lib/node_modules/canvas/src/CanvasPattern.h
 lib/node_modules/canvas/src/CanvasRenderingContext2d.cc
 lib/node_modules/canvas/src/CanvasRenderingContext2d.h
+lib/node_modules/canvas/src/FontFace.cc
+lib/node_modules/canvas/src/FontFace.h
 lib/node_modules/canvas/src/Image.cc
 lib/node_modules/canvas/src/Image.h
 lib/node_modules/canvas/src/ImageData.cc
@@ -79,4 +81,7 @@ lib/node_modules/canvas/src/color.cc
 lib/node_modules/canvas/src/color.h
 lib/node_modules/canvas/src/init.cc
 lib/node_modules/canvas/util/
+lib/node_modules/canvas/util/cairo_include.sh
+lib/node_modules/canvas/util/has_cairo_freetype.sh
 lib/node_modules/canvas/util/has_lib.sh
+lib/node_modules/canvas/util/lib_lookup.sh

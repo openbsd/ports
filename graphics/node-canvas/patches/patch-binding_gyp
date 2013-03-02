@@ -1,9 +1,9 @@
-$OpenBSD: patch-binding_gyp,v 1.1 2012/09/23 17:29:48 jasper Exp $
---- binding.gyp.orig	Sun Aug 12 20:55:01 2012
-+++ binding.gyp	Sun Sep 23 19:19:30 2012
-@@ -43,9 +43,11 @@
+$OpenBSD: patch-binding_gyp,v 1.2 2013/03/02 12:29:09 jasper Exp $
+--- binding.gyp.orig	Wed Jan 16 22:50:42 2013
++++ binding.gyp	Mon Feb 18 20:06:57 2013
+@@ -46,9 +46,11 @@
            ]
-         }, {  # 'OS!="win"'
+         }, { # 'OS!="win"'
            'libraries': [
 -            '-lpixman-1',
 -            '-lcairo'
@@ -14,5 +14,5 @@ $OpenBSD: patch-binding_gyp,v 1.1 2012/09/23 17:29:48 jasper Exp $
 +            '<!@(pkg-config cairo --cflags-only-I | sed s/-I//g)'
 +          ],
          }],
-         ['with_pango=="true"', {
+         ['with_freetype=="true"', {
            'defines': [

@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2012/12/05 00:48:30 abieber Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/02 12:29:09 jasper Exp $
 
 COMMENT =	Cairo-backed Canvas implementation for Node.js
 
-NPM_VERSION =	0.13.1
+NPM_VERSION =	1.0.0
 NPM_NAME =	canvas
 CATEGORIES =	graphics
-
-REVISION = 0
 
 HOMEPAGE =	https://github.com/learnboost/node-canvas
 
