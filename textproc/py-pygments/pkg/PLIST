@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/11/29 23:45:06 landry Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/03/02 12:30:10 jasper Exp $
 bin/pygmentize
 lib/python${MODPY_VERSION}/site-packages/Pygments-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Pygments-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -53,16 +53,26 @@ lib/python${MODPY_VERSION}/site-packages/pygments/lexers/_asybuiltins.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/_asybuiltins.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/_clbuiltins.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/_clbuiltins.pyc
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/_lassobuiltins.py
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/_lassobuiltins.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/_luabuiltins.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/_luabuiltins.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/_mapping.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/_mapping.pyc
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/_openedgebuiltins.py
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/_openedgebuiltins.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/_phpbuiltins.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/_phpbuiltins.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/_postgres_builtins.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/_postgres_builtins.pyc
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/_robotframeworklexer.py
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/_robotframeworklexer.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/_scilab_builtins.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/_scilab_builtins.pyc
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/_sourcemodbuiltins.py
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/_sourcemodbuiltins.pyc
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/_stan_builtins.py
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/_stan_builtins.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/_vimbuiltins.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/_vimbuiltins.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/agile.py
@@ -71,8 +81,12 @@ lib/python${MODPY_VERSION}/site-packages/pygments/lexers/asm.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/asm.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/compiled.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/compiled.pyc
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/dalvik.py
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/dalvik.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/dotnet.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/dotnet.pyc
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/foxpro.py
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/foxpro.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/functional.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/functional.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/hdl.py
