@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/05/18 19:51:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/02 12:48:39 sthen Exp $
 
 COMMENT=	web-based rack/IP management
 
-DISTNAME=	RackTables-0.19.12
+DISTNAME=	RackTables-0.20.3
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	www
 
@@ -35,13 +35,15 @@ FAKE_FLAGS=     DESTDIR=${WRKINST} prefix=${PREFIX} \
 		datadir=/var/www \
 		docdir=/var/www/racktables \
 		scriptdir=/var/www/racktables \
-		staticdir=/var/www/htdocs/racktables \
-		applibdir=/var/www/htdocs/racktables/inc \
-		indexdir=/var/www/htdocs/racktables
+		indexdir=/var/www/racktables/wwwroot \
+		staticdir=/var/www/racktables/wwwroot \
+		applibdir=/var/www/racktables/wwwroot/inc
 INSTALL_TARGET=	install install-docs
 
 post-install:
 	cd ${WRKINST}/var/www; \
-	    chown -R ${SHAREOWN}:${SHAREGRP} racktables htdocs/racktables
+	${INSTALL_DATA_DIR} htdocs/racktables racktables/plugins; \
+	echo "<?php require '../../racktables/wwwroot/index.php'; ?>" > htdocs/racktables/index.php; \
+	chown -R ${SHAREOWN}:${SHAREGRP} racktables htdocs/racktables
 
 .include <bsd.port.mk>
