@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/02 12:33:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/02 12:35:01 jasper Exp $
 
 COMMENT=	software project management and comprehension tool
 
@@ -30,7 +30,7 @@ NO_REGRESS=	Yes
 
 MAVEN_HOME=	${LOCALBASE}/${DISTNAME}
 SAMPLEDIR=	${PREFIX}/share/examples/maven
-SUBST_VARS+=	DISTNAME
+SUBST_VARS+=	DISTNAME V
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${DISTNAME}

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/03/02 12:33:57 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/03/02 12:35:01 jasper Exp $
 ${DISTNAME}/
 ${DISTNAME}/LICENSE.txt
 ${DISTNAME}/NOTICE.txt
@@ -20,17 +20,17 @@ ${DISTNAME}/lib/aether-util-1.13.1.jar
 ${DISTNAME}/lib/commons-cli-1.2.jar
 ${DISTNAME}/lib/ext/
 ${DISTNAME}/lib/ext/README.txt
-${DISTNAME}/lib/maven-aether-provider-3.0.5.jar
-${DISTNAME}/lib/maven-artifact-3.0.5.jar
-${DISTNAME}/lib/maven-compat-3.0.5.jar
-${DISTNAME}/lib/maven-core-3.0.5.jar
-${DISTNAME}/lib/maven-embedder-3.0.5.jar
-${DISTNAME}/lib/maven-model-3.0.5.jar
-${DISTNAME}/lib/maven-model-builder-3.0.5.jar
-${DISTNAME}/lib/maven-plugin-api-3.0.5.jar
-${DISTNAME}/lib/maven-repository-metadata-3.0.5.jar
-${DISTNAME}/lib/maven-settings-3.0.5.jar
-${DISTNAME}/lib/maven-settings-builder-3.0.5.jar
+${DISTNAME}/lib/maven-aether-provider-${V}.jar
+${DISTNAME}/lib/maven-artifact-${V}.jar
+${DISTNAME}/lib/maven-compat-${V}.jar
+${DISTNAME}/lib/maven-core-${V}.jar
+${DISTNAME}/lib/maven-embedder-${V}.jar
+${DISTNAME}/lib/maven-model-${V}.jar
+${DISTNAME}/lib/maven-model-builder-${V}.jar
+${DISTNAME}/lib/maven-plugin-api-${V}.jar
+${DISTNAME}/lib/maven-repository-metadata-${V}.jar
+${DISTNAME}/lib/maven-settings-${V}.jar
+${DISTNAME}/lib/maven-settings-builder-${V}.jar
 ${DISTNAME}/lib/plexus-cipher-1.7.jar
 ${DISTNAME}/lib/plexus-component-annotations-1.5.5.jar
 ${DISTNAME}/lib/plexus-interpolation-1.14.jar
