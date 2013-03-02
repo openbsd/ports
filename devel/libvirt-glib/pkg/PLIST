@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/11/27 16:09:07 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/03/02 12:28:26 jasper Exp $
 include/libvirt-gconfig-1.0/
 include/libvirt-gconfig-1.0/libvirt-gconfig/
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-capabilities-cpu-feature.h
@@ -43,6 +43,10 @@ include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-power-managem
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-redirdev.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-seclabel.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-serial.h
+include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-smartcard-host-certificates.h
+include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-smartcard-host.h
+include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-smartcard-passthrough.h
+include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-smartcard.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-snapshot.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-sound.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-timer-pit.h
