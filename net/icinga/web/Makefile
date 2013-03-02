@@ -1,21 +1,22 @@
-# $OpenBSD: Makefile,v 1.14 2012/12/27 14:51:54 rpe Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/02 12:41:55 sthen Exp $
 
 COMMENT =	web UI for icinga
-DISTNAME =	icinga-web-1.8.1
+DISTNAME =	icinga-web-1.8.2
 
 MODULES=	lang/php
 
-RUN_DEPENDS =	www/pear \
+COMMON =	www/pear \
+		shells/bash
+
+RUN_DEPENDS =	${COMMON_DEPENDS} \
 		lang/php/${MODPHP_VERSION},-gd \
-		lang/php/${MODPHP_VERSION},-ldap \
 		lang/php/${MODPHP_VERSION},-xsl \
 		php-pdo_mysql-${MODPHP_VSPEC}|php-pdo_pgsql-${MODPHP_VSPEC}:lang/php/${MODPHP_VERSION},-pdo_mysql \
 		net/icinga/core \
-		net/icinga/core,-ido \
-		shells/bash
-# Optional php extensions: soap xmlrpc memcache
+		net/icinga/core,-ido
+# Optional php extensions: ldap soap xmlrpc memcache
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	${COMMON_DEPENDS}
 
 LOCALSTATEDIR =	${BASELOCALSTATEDIR}/icinga
 

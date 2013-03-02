@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2012/12/27 14:51:54 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.11 2013/03/02 12:41:55 sthen Exp $
 @conflict icinga-api-*
 @pkgpath net/icinga/core,-api
 app/
@@ -692,6 +692,7 @@ app/modules/AppKit/lib/model/
 app/modules/AppKit/lib/model/AppKitBaseModel.class.php
 app/modules/AppKit/lib/storage/
 app/modules/AppKit/lib/storage/AppKitDoctrineSessionStorage.class.php
+app/modules/AppKit/lib/storage/AppKitMemcacheSessionStorage.class.php
 app/modules/AppKit/lib/translator/
 app/modules/AppKit/lib/translator/AppKitGettextTranslator.class.php
 app/modules/AppKit/lib/translator/AppKitTranslationManager.class.php
@@ -7934,9 +7935,6 @@ pub/images/icons/zones.png
 pub/index.php
 pub/soap/
 pub/soap/.htaccess
-pub/soap/icinga.wsdl
-pub/soap/index.php
-pub/soapRequestTest.php
 pub/styles/
 pub/styles/exception.css
 pub/styles/icinga-cronk-icons.css
