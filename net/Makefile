@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.789 2013/02/05 15:09:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.790 2013/03/02 14:16:43 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += BitTorrent
@@ -135,6 +135,7 @@
      SUBDIR += icmpinfo
      SUBDIR += ifmcstat
      SUBDIR += ifstat
+     SUBDIR += ifstat,snmp
      SUBDIR += iftop
      SUBDIR += igmpproxy
      SUBDIR += ii
