@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.16 2013/01/16 14:36:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/02 14:06:24 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	H.323 video conferencing library
 
-V=		1_24_99
+V=		1_25_0
 DISTNAME=	h323plus-v${V}
 PKGNAME=	h323plus-${V:S/_/./g}
 CATEGORIES=	net devel
-REVISION=	0
 
-SHARED_LIBS=	h323	4.0    # 1.25.1
+SHARED_LIBS=	h323	4.1    # 1.25.0
 
 HOMEPAGE=	http://www.h323plus.org/
 
@@ -25,11 +24,9 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += SDL c crypto expat lber ldap ldap_r m pt pthread ssl
 WANTLIB += stdc++
 
-# version 1_24_99 is a cvs checkout from 01-16-2013
-#MASTER_SITES=	${HOMEPAGE}source/download/
-MASTER_SITES=	http://distfiles.bsdfrog.org/
+MASTER_SITES=	${HOMEPAGE}source/download/
 
-LIB_DEPENDS=	devel/ptlib
+LIB_DEPENDS=	devel/ptlib>=2.10.0
 
 WRKDIST=	${WRKDIR}/h323plus
 
