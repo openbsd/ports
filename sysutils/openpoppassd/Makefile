@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2011/06/23 22:50:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/02 14:18:45 ajacoutot Exp $
 
 COMMENT=		daemon for changing passwords
 
 DISTNAME=		openpoppassd-1.1
-REVISION =		3
+REVISION =		4
 CATEGORIES=		sysutils
 
 HOMEPAGE=		http://www.ostc.de/projects.html\#openpoppassd
