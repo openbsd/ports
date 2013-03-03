@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/02/06 15:16:10 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/03/03 15:14:25 bcallah Exp $
 @conflict tmw-*
 @conflict tmw-music-*
 @pkgpath games/tmw
@@ -301,6 +301,7 @@ share/manaplus/data/themes/jewelry/radio.xml
 share/manaplus/data/themes/jewelry/resize.xml
 share/manaplus/data/themes/jewelry/scroll.xml
 share/manaplus/data/themes/jewelry/scroll_background.xml
+share/manaplus/data/themes/jewelry/scroll_hbackground.xml
 share/manaplus/data/themes/jewelry/scroll_highlighted.xml
 share/manaplus/data/themes/jewelry/scroll_vbackground.xml
 share/manaplus/data/themes/jewelry/scrollbuttons.xml
