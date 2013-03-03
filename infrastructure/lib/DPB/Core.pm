@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.33 2013/01/29 11:16:58 espie Exp $
+# $OpenBSD: Core.pm,v 1.34 2013/03/03 00:49:14 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -337,6 +337,7 @@ sub run_task
 	if (!defined $pid) {
 		die "Oops: task ".$core->task->name." couldn't start\n";
 	} elsif ($pid == 0) {
+		$DB::inhibit_exit = 0;
 		for my $sig (keys %SIG) {
 			$SIG{$sig} = 'DEFAULT';
 		}
@@ -796,6 +797,9 @@ sub parse_hosts_file
 		if (m/^STARTUP=\s*(.*)\s*$/) {
 			$state->{startup_script} = $1;
 			next;
+		}
+		if (m/^LOGSIZE=\s*1\s*$/) {
+			$state->{opt}{s} = 1;
 		}
 		# copy default properties
 		my $prop = { %$default };
