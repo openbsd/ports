@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Signature.pm,v 1.4 2013/02/22 19:58:12 espie Exp $
+# $OpenBSD: Signature.pm,v 1.5 2013/03/03 00:50:00 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -18,10 +18,16 @@ use strict;
 use warnings;
 
 use OpenBSD::LibSpec;
+use OpenBSD::LibSpec::Build;
+
 package DPB::Signature::Dir;
 sub best
 {
 	my ($h, $lib) = @_;
+	if ($lib->is_static) {
+		$h->{a}->{$lib->stem} = 1;
+		return;
+	}
 	my $old = $h->{$lib->stem} //= $lib;
 	return if $old eq $lib;
 	return if $old->major > $lib->major;
@@ -46,6 +52,7 @@ sub compare1
 	my $r = '';
 	while (my ($stem, $lib) = each %$s1) {
 		next if $stem eq 'la';
+		next if $stem eq 'a';
 		if (!defined $s2->{$stem}) {
 			$r .= "Can't find ".$lib->to_string." on $h2\n";
 		} elsif ($s2->{$stem}->to_string ne $lib->to_string) {
@@ -59,6 +66,11 @@ sub compare1
 			$r .= "$h2 does not have $k.la (from $h1)\n";
 		}
 	}
+	for my $k (keys %{$s1->{a}}) {
+		if (!defined $s2->{a}{$k}) {
+			$r .= "$h2 does not have $k.a (from $h1)\n";
+		}
+	}
 	return $r;
 }
 
@@ -67,12 +79,18 @@ sub print_out
 	my ($self, $dir, $fh) = @_;
 	for my $k (sort keys %$self) {
 		next if $k eq 'la';
+		next if $k eq 'a';
 		next if !defined $self->{$k};
 		print $fh "\t", $self->{$k}->to_string, "\n";
 	}
 	if (defined $self->{la}) {
 		for my $v (sort keys %{$self->{la}}) {
 			print $fh "\t$dir/$v.la\n";
+		}
+	}
+	if (defined $self->{a}) {
+		for my $v (sort keys %{$self->{a}}) {
+			print $fh "\t$dir/$v.a\n";
 		}
 	}
 }
@@ -108,7 +126,7 @@ sub process
 		if ($_ =~ m/(.*).la/) {
 			$repo->{la}->{$1} = 1;
 		} else {
-			my $lib = OpenBSD::Library->from_string("$self->{dir}/$_");
+			my $lib = OpenBSD::Library::Build->from_string("$self->{dir}/$_");
 			next unless $lib->is_valid;
 			$repo->best($lib);
 		}
