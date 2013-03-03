@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_stdio_c,v 1.1 2013/03/03 12:29:44 sthen Exp $
+
+don't run past the end of kLabel_bit[] / kLabel_Byte[] for (stupidly)
+high bandwidths.
+
+--- src/stdio.c.orig	Sat Mar  2 02:07:53 2013
++++ src/stdio.c	Sat Mar  2 02:07:36 2013
+@@ -210,12 +210,12 @@ void byte_snprintf( char* outString, int inLen,
+                 conv = kConv_Unit;
+ 
+                 if ( isupper((int)inFormat) ) {
+-                    while ( tmpNum >= 1024.0  &&  conv <= kConv_Giga ) {
++                    while ( tmpNum >= 1024.0  &&  conv < kConv_Giga ) {
+                         tmpNum /= 1024.0;
+                         conv++;
+                     }
+                 } else {
+-                    while ( tmpNum >= 1000.0  &&  conv <= kConv_Giga ) {
++                    while ( tmpNum >= 1000.0  &&  conv < kConv_Giga ) {
+                         tmpNum /= 1000.0;
+                         conv++;
+                     }

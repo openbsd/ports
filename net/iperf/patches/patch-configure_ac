@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure_ac,v 1.1 2013/03/03 12:29:44 sthen Exp $
+--- configure.ac.orig	Sat Mar  2 01:58:53 2013
++++ configure.ac	Sat Mar  2 01:59:05 2013
+@@ -39,9 +39,7 @@ dnl Checks for programs
+ dnl ===================================================================
+ 
+ AC_PROG_CXX
+-CXXFLAGS=`echo " $CXXFLAGS " | sed -e "s/ -g / /"` # do not want it implicitly
+ AC_PROG_CC
+-CFLAGS=`echo " $CFLAGS " | sed -e "s/ -g / /"` # do not want it implicitly
+ AC_ISC_POSIX
+ AC_PROG_INSTALL
+ AC_PROG_MAKE_SET
