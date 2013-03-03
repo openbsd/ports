@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2012/12/10 07:20:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2013/03/03 17:44:43 ajacoutot Exp $
 
 ONLY_FOR_ARCHS-mono=	${MONO_ARCHS}
 
@@ -6,7 +6,7 @@ COMMENT-main=	MIME messages creation and parsing library
 COMMENT-mono=	mono bindings for gmime
 
 GNOME_PROJECT=	gmime
-GNOME_VERSION=	2.6.13
+GNOME_VERSION=	2.6.15
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-mono=	gmime-sharp-${GNOME_VERSION}
@@ -43,10 +43,7 @@ CONFIGURE_ENV=	DOLT_BASH="/bin/ksh"
 
 ### mono subpackage
 PSEUDO_FLAVORS=	no_mono
-# XXX disable mono unconditionally, lang/mono is often problematic to build
-# and nothing needs gmime-sharp in the tree
-#FLAVOR ?=
-FLAVOR=	no_mono
+FLAVOR ?=
 
 MODMONO_DEPS=   No
 DLLMAP_FILES=	mono/gmime-sharp.dll.config
