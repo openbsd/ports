@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortInfo.pm,v 1.23 2013/01/21 02:01:08 espie Exp $
+# $OpenBSD: PortInfo.pm,v 1.24 2013/03/03 00:40:42 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -302,13 +302,18 @@ sub dump
 }
 
 my $string = "ignored already";
-my $s2 = "stub name";
+my $s2 = "stub_name";
 my $stub_info = bless { IGNORE => bless(\$string, "AddIgnore"),
 		FULLPKGNAME => bless(\$s2, "AddInfoShow")}, __PACKAGE__;
 
 sub stub
 {
 	return $stub_info;
+}
+
+sub is_stub
+{
+	return shift eq $stub_info;
 }
 
 use Data::Dumper;
