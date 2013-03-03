@@ -1,8 +1,8 @@
-$OpenBSD: patch-toolkit_mozapps_installer_packager_mk,v 1.16 2013/01/11 22:57:14 landry Exp $
+$OpenBSD: patch-toolkit_mozapps_installer_packager_mk,v 1.17 2013/03/03 17:34:15 landry Exp $
 install headers/idl/sdk libs only if xulrunner
---- toolkit/mozapps/installer/packager.mk.orig	Wed Nov 21 17:11:34 2012
-+++ toolkit/mozapps/installer/packager.mk	Tue Nov 27 16:38:51 2012
-@@ -890,12 +890,12 @@ ifeq (bundle,$(MOZ_FS_LAYOUT))
+--- toolkit/mozapps/installer/packager.mk.orig	Wed Jan  9 20:20:40 2013
++++ toolkit/mozapps/installer/packager.mk	Sat Jan 12 14:39:38 2013
+@@ -900,12 +900,12 @@ ifeq (bundle,$(MOZ_FS_LAYOUT))
  	$(error "make install" is not supported on this platform. Use "make package" instead.)
  endif
  	$(NSINSTALL) -D $(DESTDIR)$(installdir)

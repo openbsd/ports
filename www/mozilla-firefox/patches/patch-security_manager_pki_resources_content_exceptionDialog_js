@@ -1,8 +1,8 @@
-$OpenBSD: patch-security_manager_pki_resources_content_exceptionDialog_js,v 1.5 2012/11/24 10:21:50 landry Exp $
+$OpenBSD: patch-security_manager_pki_resources_content_exceptionDialog_js,v 1.6 2013/03/03 17:34:15 landry Exp $
 Focus the 'add exception' button in the unknown ssl cert warning window
---- security/manager/pki/resources/content/exceptionDialog.js.orig	Wed Oct 17 16:33:03 2012
-+++ security/manager/pki/resources/content/exceptionDialog.js	Wed Oct 17 21:59:03 2012
-@@ -260,6 +260,7 @@ function updateCertStatus() {
+--- security/manager/pki/resources/content/exceptionDialog.js.orig	Wed Jan  9 20:20:30 2013
++++ security/manager/pki/resources/content/exceptionDialog.js	Sat Jan 12 14:39:38 2013
+@@ -262,6 +262,7 @@ function updateCertStatus() {
  
        // In these cases, we do want to enable the "Add Exception" button
        gDialog.getButton("extra1").disabled = false;
