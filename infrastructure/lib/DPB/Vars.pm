@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.32 2013/01/29 15:11:02 espie Exp $
+# $OpenBSD: Vars.pm,v 1.33 2013/03/03 00:50:15 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -49,6 +49,7 @@ sub get
 	pipe(my $rh, my $wh);
 	my $pid = fork();
 	if ($pid == 0) {
+		$DB::inhibit_exit = 0;
 		print $wh "print-data:\n";
 		for my $_ (@names) {
 			print $wh "\t\@echo \${$_}\n";
