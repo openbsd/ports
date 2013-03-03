@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: BasePkgPath.pm,v 1.3 2012/12/28 06:40:11 espie Exp $
+# $OpenBSD: BasePkgPath.pm,v 1.4 2013/03/03 11:11:08 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -96,6 +96,13 @@ sub basic_list
 	}
 	return @list;
 }
+
+sub debug_dump
+{
+	my $self = shift;
+	return $self->fullpkgpath;
+}
+
 # string version, with everything in a standard order
 sub fullpkgpath
 {

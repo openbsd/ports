@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.86 2013/03/03 00:51:57 espie Exp $
+# $OpenBSD: dpb,v 1.87 2013/03/03 11:11:08 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -26,22 +26,51 @@ BEGIN {
 # inspired by Carp::Always
 	$olddie = $SIG{__DIE__};
 	$oldwarn = $SIG{__WARN__};
-	$SIG{__WARN__} = sub {
-		require Carp;
+	sub trace_message
+	{
+		my $msg = '';
+		my $x = 1;
+		while (1) {
+			my @c;
+			{
+				package DB;
+				our @args;
+				@c = caller($x+1);
+			}
+			last if !@c;
+			$msg .= "$c[3](". 
+			    join(', ', map { 
+				    if (!defined $_) {
+					'<undef>';
+				    } else {
+					my $string;
+					eval { $string = $_->debug_dump };
+					if (defined $string) {
+					    "$_($string)";
+					} else {
+					    $_;
+					}
+				    }
+				} @DB::args). 
+			    ") called at $c[1] line $c[2]\n";
+			$x++;
+		}
+		return $msg;
+	}
 
+	$SIG{__WARN__} = sub {
 		my $_ = pop @_;
 		s/(.*)( at .*? line .*?\n$)/$1/s;
 		push @_, $_;
 		$SIG{__WARN__} = $oldwarn;
 		if (defined $reporter) {
-			$reporter->myprint(&Carp::longmess);
+			$reporter->myprint(&trace_message);
 		} else {
-			warn &Carp::longmess;
+			warn &trace_message;
 		}
 	};
 
 	$SIG{__DIE__} = sub {
-		require Carp;
 		my $_ = pop @_;
 		s/(.*)( at .*? line .*?\n$)/$1/s;
 		push @_, $_;
@@ -49,8 +78,14 @@ BEGIN {
 			$reporter->reset_cursor;
 		}
 		$SIG{__DIE__} = $olddie;
-		die &Carp::longmess;
+		die &trace_message;
 	};
+
+	$SIG{INFO} = sub {
+		print "Trace:\n", &trace_message;
+		sleep 1;
+	};
+
 }
 
 END {
@@ -582,25 +617,6 @@ sub report
 		($keep_going ? "" : " STOPPED!").
 		"\n";
 }
-
-$SIG{INFO} = sub {
-	print "Trace:\n";
-	my $x = 1;
-	while (1) {
-		my @c;
-		{
-			package DB;
-			our @args;
-			@c = caller($x);
-		}
-		last if !@c;
-		print "#$x: $c[3]( ", 
-		    join(', ', map { defined $_ ? $_ : "<undef>" } @DB::args), 
-		    " )\n\tat line $c[2] of $c[1]\n";
-		$x++;
-	}
-	sleep 5;
-};
 
 my $subdirlist = {};
 

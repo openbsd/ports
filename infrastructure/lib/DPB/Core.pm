@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.34 2013/03/03 00:49:14 espie Exp $
+# $OpenBSD: Core.pm,v 1.35 2013/03/03 11:11:08 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -295,6 +295,12 @@ sub cleanup
 			kill INT => $pid;
 		}
 	}
+}
+
+sub debug_dump
+{
+	my $self = shift;
+	return $self->hostname;
 }
 
 OpenBSD::Handler->register( sub { __PACKAGE__->cleanup });
