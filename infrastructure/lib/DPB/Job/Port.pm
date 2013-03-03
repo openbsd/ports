@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.99 2013/02/07 06:46:58 espie Exp $
+# $OpenBSD: Port.pm,v 1.100 2013/03/03 00:42:40 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -120,6 +120,12 @@ sub make_sure_we_have_packages
 	my $check = 1;
 	# check ALL BUILD_PACKAGES
 	for my $w ($job->{v}->build_path_list) {
+		if ($w->{info}->is_stub) {
+			print {$job->{logfh}} ">>> ", $w->fullpkgpath,
+			 " may be missing\n", 
+			 ">>> but it can't be installed, so we don't care\n";
+			next;
+		}
 		my $f = $job->{builder}->pkgfile($w);
 		if (-f $f) {
 			$job->{builder}->register_package($w);
