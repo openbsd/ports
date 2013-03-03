@@ -1,24 +1,22 @@
-# $OpenBSD: Makefile,v 1.128 2013/02/07 19:13:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.129 2013/03/03 17:39:15 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
 COMMENT-enigmail =	Mozilla Seamonkey GnuPG extension
 BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
 
-MOZILLA_VERSION=	2.15.2
+MOZILLA_VERSION=	2.16
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	suite
 
 MULTI_PACKAGES =	-main -lightning -enigmail
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-seamonkey-2.0beta1
-ENIG_V =		1.5.0
+PKGNAME-lightning =	lightning-seamonkey-2.1beta1
+ENIG_V =		1.5.1
 PKGNAME-enigmail =	enigmail-seamonkey-${ENIG_V}
 EPOCH-lightning =	0
 EPOCH-enigmail =	0
-REVISION-lightning =	1
-REVISION-enigmail =	1
 
 #MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_PROJECT}/nightly/${MOZILLA_VERSION}-candidates/build1/source/
 MASTER_SITES0 =	http://www.mozilla-enigmail.org/download/source/
@@ -26,12 +24,12 @@ DISTFILES +=	${MOZILLA_PROJECT}-${MOZILLA_VERSION}.source.tar.bz2 \
 		enigmail-${ENIG_V}.tar.gz:0
 EXTRACT_CASES =	enigmail-*.tar.gz) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | tar -C comm-${MOZILLA_BRANCH}/mailnews/extensions/ -xf -;;
 
-SO_VERSION =	28.0
+SO_VERSION =	29.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 
 MOZILLA_LIBS = ldap60 ldif60 mozalloc mozgnome prldap60 suite xpcom xul calbasecomps \
-	enigmime-${XPCOM_ABI}-gcc3 subprocess-${XPCOM_ABI}-gcc3
+	subprocess-${XPCOM_ABI}-gcc3
 
 CATEGORIES=	www mail net news
 
@@ -64,9 +62,8 @@ WANTLIB-lightning =	lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/xpcom \
 			c m stdc++ nspr4 plc4 plds4 pthread
 
 RUN_DEPENDS-enigmail =	security/gnupg
-LIB_DEPENDS-enigmail =	${LIB_DEPENDS-lightning}
-WANTLIB-enigmail =	${WANTLIB-lightning}
-
+LIB_DEPENDS-enigmail =
+WANTLIB-enigmail =
 # build lightning xpi
 CONFIGURE_ARGS +=	--enable-calendar
 
@@ -110,7 +107,7 @@ post-install:
 	${INSTALL_MAN} ${WRKBUILD}/mozilla/dist/man/man1/seamonkey.1 ${PREFIX}/man/man1/
 
 .for xpi guid in ${GUIDS}
-	${UNZIP} -oq ${WRKBUILD}/mozilla/dist/xpi-stage/${xpi}.xpi -d ${EXTDIR}/${guid}
+	${UNZIP} -oq ${WRKBUILD}/mozilla/dist/xpi-stage/${xpi}*.xpi -d ${EXTDIR}/${guid}
 .endfor
 	# install desktop file
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/ ; \
@@ -122,6 +119,6 @@ post-install:
 		${PREFIX}/share/pixmaps/${MOZILLA_PROJECT}.png
 
 	# cleanup useless dirs from #798450 (fx 18?)
-	rmdir ${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/modules{/services-{aitc,common,crypto,notifications,sync{/engines,}},/identity,/commonjs{/promise,},}
+	rmdir ${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/modules{/services-{aitc,common,crypto,notifications,sync{/engines,/stages,}},/identity,/commonjs{/promise,},/accessibility,}
 
 .include <bsd.port.mk>
