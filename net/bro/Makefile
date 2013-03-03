@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/19 22:31:32 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/03 08:12:05 landry Exp $
 
 COMMENT=	highly flexible sniffer/NIDS
 
@@ -32,6 +32,13 @@ LIB_DEPENDS=	net/GeoIP \
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.59
+
+CONFIGURE_ARGS =--disable-gtk-doc
+# If one of these tools is found at configure stage, it might be used,
+# no matter whether we use --disable-gtk-doc or not.
+CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
+		ac_cv_path_GTKDOC_REBASE="" \
+		ac_cv_path_GTKDOC_MKPDF=""
 
 WRKDIST=	${WRKDIR}/bro-${V}
 
