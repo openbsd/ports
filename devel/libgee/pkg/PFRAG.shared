@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2012/03/29 07:24:25 ajacoutot Exp $
-@lib lib/libgee-0.8.so.${LIBgee-0.8_VERSION}
