@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.8 2011/05/14 14:01:15 ajacoutot Exp $
-@lib lib/libgsf-1.so.${LIBgsf-1_VERSION}
