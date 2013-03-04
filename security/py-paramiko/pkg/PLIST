@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2013/01/08 16:19:04 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.17 2013/03/04 07:37:47 benoit Exp $
 lib/python${MODPY_VERSION}/site-packages/paramiko/
 lib/python${MODPY_VERSION}/site-packages/paramiko-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/paramiko-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -159,6 +159,7 @@ share/doc/${MODPY_PY_PREFIX}paramiko/paramiko.compress.ZlibCompressor-class.html
 share/doc/${MODPY_PY_PREFIX}paramiko/paramiko.compress.ZlibDecompressor-class.html
 share/doc/${MODPY_PY_PREFIX}paramiko/paramiko.config-module.html
 share/doc/${MODPY_PY_PREFIX}paramiko/paramiko.config-pysrc.html
+share/doc/${MODPY_PY_PREFIX}paramiko/paramiko.config.LazyFqdn-class.html
 share/doc/${MODPY_PY_PREFIX}paramiko/paramiko.dsskey-module.html
 share/doc/${MODPY_PY_PREFIX}paramiko/paramiko.dsskey-pysrc.html
 share/doc/${MODPY_PY_PREFIX}paramiko/paramiko.file-module.html
