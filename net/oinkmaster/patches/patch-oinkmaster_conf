@@ -1,6 +1,6 @@
-$OpenBSD: patch-oinkmaster_conf,v 1.7 2012/10/13 02:56:15 lteo Exp $
---- oinkmaster.conf.orig	Sat Feb 18 07:35:21 2006
-+++ oinkmaster.conf	Sun Oct  7 21:38:12 2012
+$OpenBSD: patch-oinkmaster_conf,v 1.8 2013/03/04 04:30:35 lteo Exp $
+--- oinkmaster.conf.orig	Sat Feb 18 13:35:21 2006
++++ oinkmaster.conf	Thu Feb  7 22:15:47 2013
 @@ -27,7 +27,7 @@
  #
  # The location of the official Snort rules you should use depends
@@ -21,10 +21,10 @@ $OpenBSD: patch-oinkmaster_conf,v 1.7 2012/10/13 02:56:15 lteo Exp $
 -# 5a081649c06a277e1022e1284bdc8fabda70e2a4/snortrules-snapshot-2.4.tar.gz
 -# See the Oinkmaster FAQ Q1 and http://www.snort.org/rules/ for
 -# more information.
-+# http://www.snort.org/reg-rules/<filename>/<oinkcode>
++# https://www.snort.org/reg-rules/<filename>/<oinkcode>
 +# For example, if your code is 5a081649c06a277e1022e1284bdc8fabda70e2a4
-+# and you use Snort 2.9.3.1, the url to use would be (without the wrap):
-+# http://www.snort.org/reg-rules/snortrules-snapshot-2931.tar.gz/
++# and you use Snort 2.9.4.0, the url to use would be (without the wrap):
++# https://www.snort.org/reg-rules/snortrules-snapshot-2940.tar.gz/
 +# 5a081649c06a277e1022e1284bdc8fabda70e2a4
 +# See http://www.snort.org/snort-rules/cli for more information.
  
@@ -34,19 +34,19 @@ $OpenBSD: patch-oinkmaster_conf,v 1.7 2012/10/13 02:56:15 lteo Exp $
  
 -# Example for Snort 2.4
 -# url = http://www.snort.org/pub-bin/oinkmaster.cgi/<oinkcode>/snortrules-snapshot-2.4.tar.gz
-+# Example for Snort 2.9.3.1 registered user release
-+# url = http://www.snort.org/reg-rules/snortrules-snapshot-2931.tar.gz/<oinkcode>
++# Example for Snort 2.9.4.0 registered user release
++# url = https://www.snort.org/reg-rules/snortrules-snapshot-2940.tar.gz/<oinkcode>
  
 -# Example for Snort-current ("current" means cvs snapshots).
 -# url = http://www.snort.org/pub-bin/oinkmaster.cgi/<oinkcode>/snortrules-snapshot-CURRENT.tar.gz
-+# Example for Snort 2.9.3.1 subscriber release
-+# url = http://www.snort.org/sub-rules/snortrules-snapshot-2931.tar.gz/<oinkcode>
++# Example for Snort 2.9.4.0 subscriber release
++# url = https://www.snort.org/sub-rules/snortrules-snapshot-2940.tar.gz/<oinkcode>
  
 -# Example for Community rules
 -# url = http://www.snort.org/pub-bin/downloads.cgi/Download/comm_rules/Community-Rules.tar.gz
 +# Example for Snort edge rulepack (latest versioned rulepack)
 +# See http://www.snort.org/snort-rules/cli for details
-+# url = http://www.snort.org/reg-rules/snortrules-snapshot-edge.tar.gz/<oinkcode>
++# url = https://www.snort.org/reg-rules/snortrules-snapshot-edge.tar.gz/<oinkcode>
  
 -# Example for rules from the Bleeding Snort project
 -# url = http://www.bleedingsnort.com/bleeding.rules.tar.gz

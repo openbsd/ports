@@ -1,11 +1,40 @@
-$OpenBSD: patch-oinkmaster_pl,v 1.1 2012/10/13 02:56:15 lteo Exp $
---- oinkmaster.pl.orig	Sat Feb 18 07:35:21 2006
-+++ oinkmaster.pl	Sun Oct  7 21:54:11 2012
-@@ -771,6 +771,7 @@ sub sanity_check()
+$OpenBSD: patch-oinkmaster_pl,v 1.2 2013/03/04 04:30:35 lteo Exp $
+--- oinkmaster.pl.orig	Sat Feb 18 13:35:21 2006
++++ oinkmaster.pl	Thu Feb  7 22:16:27 2013
+@@ -770,7 +770,8 @@ sub sanity_check()
+     $#{$config{url}} = -1;
      foreach my $url (@urls) {
          clean_exit("incorrect URL: \"$url\"")
-           unless ($url =~ /^((?:https*|ftp|file|scp):\/\/.+\.(?:tar\.gz|tgz))$/
-+            || $url =~ /^((?:https*):\/\/www\.snort\.org\/(sub|reg)-rules\/.+\.tar\.gz\/[0-9a-f]{40})$/
+-          unless ($url =~ /^((?:https*|ftp|file|scp):\/\/.+\.(?:tar\.gz|tgz))$/
++          unless ($url =~ /^((?:https?|ftp|file|scp):\/\/.+\.(?:tar\.gz|tgz))$/
++            || $url =~ /^((?:https?):\/\/www\.snort\.org\/(sub|reg)-rules\/.+\.tar\.gz\/[0-9a-f]{40})$/
              || $url =~ /^(dir:\/\/.+)/);
          my $ok_url = $1;
+ 
+@@ -791,7 +792,7 @@ sub sanity_check()
+   # Wget must be found if url is http[s]:// or ftp://.
+     if ($config{use_external_bins}) {
+         clean_exit("wget not found in PATH ($ENV{PATH}).")
+-          if ($config{'url'} =~ /^(https*|ftp):/ && !is_in_path("wget"));
++          if ($config{'url'} =~ /^(https?|ftp):/ && !is_in_path("wget"));
+     }
+ 
+   # scp must be found if scp://...
+@@ -895,7 +896,7 @@ sub download_file($ $)
+     @user_agent_opt = ("-U", $config{user_agent}) if (exists($config{user_agent}));
+ 
+   # Use wget if URL starts with "http[s]" or "ftp" and we use external binaries.
+-    if ($config{use_external_bins} && $url =~ /^(?:https*|ftp)/) {
++    if ($config{use_external_bins} && $url =~ /^(?:https?|ftp)/) {
+         print STDERR "Downloading file from $obfuscated_url... "
+           unless ($config{quiet});
+ 
+@@ -925,7 +926,7 @@ sub download_file($ $)
+         }
+ 
+   # Use LWP if URL starts with "http[s]" or "ftp" and use_external_bins=0.
+-    } elsif (!$config{use_external_bins} && $url =~ /^(?:https*|ftp)/) {
++    } elsif (!$config{use_external_bins} && $url =~ /^(?:https?|ftp)/) {
+         print STDERR "Downloading file from $obfuscated_url... "
+           unless ($config{quiet});
  
