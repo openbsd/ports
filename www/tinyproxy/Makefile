@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2012/09/15 14:39:47 fgsch Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/04 11:34:51 jasper Exp $
 
 COMMENT =		lightweight HTTP/SSL proxy
 
@@ -16,11 +16,10 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
-BUILD_DEPENDS =		textproc/asciidoc
+BUILD_DEPENDS =		textproc/asciidoc>=8.6.8
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	A2X=${LOCALBASE}/bin/a2x.py
 
 WANTLIB =		c
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2012/10/25 14:21:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2013/03/04 11:34:51 jasper Exp $
 
 ONLY_FOR_ARCHS=		${APM_ARCHS}
 
@@ -25,7 +25,7 @@ WANTLIB += c confuse ossaudio yajl
 
 USE_GMAKE=		Yes
 
-BUILD_DEPENDS=		textproc/asciidoc
+BUILD_DEPENDS=		textproc/asciidoc>=8.6.8
 LIB_DEPENDS=		devel/libconfuse \
 			devel/libyajl
 
@@ -34,8 +34,7 @@ NO_REGRESS=		Yes
 # XXX: Optimizing results in seg. faults on at least amd64.
 CFLAGS+=		-O0
 
-MAKE_ENV+=		A2X=a2x.py \
-			SYSCONFDIR=${PREFIX}/share/examples/i3status/
+MAKE_ENV+=		SYSCONFDIR=${PREFIX}/share/examples/i3status/
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Makefile

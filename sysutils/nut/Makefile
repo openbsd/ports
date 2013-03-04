@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2013/02/09 14:49:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.69 2013/03/04 11:34:51 jasper Exp $
 
 COMMENT-main=		UPS monitoring program supporting many brands
 COMMENT-cgi=		CGIs for monitoring Nut-based UPSs
@@ -40,7 +40,7 @@ MASTER_SITES=		${HOMEPAGE}source/2.6/
 MODULES=		devel/gettext \
 			lang/python
 MODPY_RUNDEP=		No
-BUILD_DEPENDS+=		textproc/asciidoc \
+BUILD_DEPENDS+=		textproc/asciidoc>=8.6.8 \
 			textproc/docbook-xsl
 
 WEB_ROOT=		/var/www
@@ -59,7 +59,6 @@ CONFIGURE_ARGS+=	--datadir=${PREFIX}/share/ups \
 			--with-statepath=/var/db/nut \
 			--with-user=${NUT_USER} \
 			--with-group=${NUT_USER} \
-			A2X=${LOCALBASE}/bin/a2x.py \
 			CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS}"
 
