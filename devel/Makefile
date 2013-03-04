@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1107 2013/02/07 22:58:49 stu Exp $
+# $OpenBSD: Makefile,v 1.1108 2013/03/04 23:47:13 jturner Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -102,6 +102,7 @@
      SUBDIR += flawfinder
      SUBDIR += flex
      SUBDIR += fossil
+     SUBDIR += fossil,static
      SUBDIR += fox
      SUBDIR += fribidi
      SUBDIR += gconf-editor
