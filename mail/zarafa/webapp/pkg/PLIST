@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/01/27 13:06:45 robert Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/03/04 17:45:46 robert Exp $
 zarafa-webapp/
 zarafa-webapp/.htaccess
 zarafa-webapp/client/
@@ -609,6 +609,7 @@ zarafa-webapp/client/resources/icons/new/checknames.png
 zarafa-webapp/client/resources/icons/new/cogwheel.png
 zarafa-webapp/client/resources/icons/new/collapse_east.png
 zarafa-webapp/client/resources/icons/new/collapse_west.png
+zarafa-webapp/client/resources/icons/new/contact.png
 zarafa-webapp/client/resources/icons/new/contact_card.png
 zarafa-webapp/client/resources/icons/new/contact_card_view.png
 zarafa-webapp/client/resources/icons/new/contact_color.png
@@ -621,7 +622,9 @@ zarafa-webapp/client/resources/icons/new/decline_appointment.png
 zarafa-webapp/client/resources/icons/new/delegates.png
 zarafa-webapp/client/resources/icons/new/delete.png
 zarafa-webapp/client/resources/icons/new/distlist.png
+zarafa-webapp/client/resources/icons/new/download.png
 zarafa-webapp/client/resources/icons/new/drafts.png
+zarafa-webapp/client/resources/icons/new/edit_recipient.png
 zarafa-webapp/client/resources/icons/new/envelope.png
 zarafa-webapp/client/resources/icons/new/floppy.png
 zarafa-webapp/client/resources/icons/new/folder.png
@@ -635,6 +638,8 @@ zarafa-webapp/client/resources/icons/new/folder_public.png
 zarafa-webapp/client/resources/icons/new/folder_rename.png
 zarafa-webapp/client/resources/icons/new/folder_sent.png
 zarafa-webapp/client/resources/icons/new/forward.png
+zarafa-webapp/client/resources/icons/new/funnel.png
+zarafa-webapp/client/resources/icons/new/info.png
 zarafa-webapp/client/resources/icons/new/insert.gif
 zarafa-webapp/client/resources/icons/new/invite_attendees.png
 zarafa-webapp/client/resources/icons/new/journal.png
@@ -669,6 +674,7 @@ zarafa-webapp/client/resources/icons/new/note_yellow_large.png
 zarafa-webapp/client/resources/icons/new/oof.png
 zarafa-webapp/client/resources/icons/new/paperclip.png
 zarafa-webapp/client/resources/icons/new/plug.png
+zarafa-webapp/client/resources/icons/new/preview.png
 zarafa-webapp/client/resources/icons/new/print_email.png
 zarafa-webapp/client/resources/icons/new/propose_new_time.png
 zarafa-webapp/client/resources/icons/new/refresh.png
@@ -676,6 +682,7 @@ zarafa-webapp/client/resources/icons/new/reply.png
 zarafa-webapp/client/resources/icons/new/reply_all.png
 zarafa-webapp/client/resources/icons/new/right_preview.png
 zarafa-webapp/client/resources/icons/new/rss.png
+zarafa-webapp/client/resources/icons/new/seal.png
 zarafa-webapp/client/resources/icons/new/signature.png
 zarafa-webapp/client/resources/icons/new/spanner.png
 zarafa-webapp/client/resources/icons/new/stub.png
@@ -705,6 +712,10 @@ zarafa-webapp/client/resources/icons/note_delete.png
 zarafa-webapp/client/resources/icons/note_edit.png
 zarafa-webapp/client/resources/icons/note_error.png
 zarafa-webapp/client/resources/icons/note_go.png
+zarafa-webapp/client/resources/icons/notifications/
+zarafa-webapp/client/resources/icons/notifications/error.png
+zarafa-webapp/client/resources/icons/notifications/info.png
+zarafa-webapp/client/resources/icons/notifications/warning.png
 zarafa-webapp/client/resources/icons/report.png
 zarafa-webapp/client/resources/icons/rss.png
 zarafa-webapp/client/resources/icons/rss_add.png
@@ -1018,7 +1029,6 @@ zarafa-webapp/client/resources/images/grid/sort_desc.png
 zarafa-webapp/client/resources/images/grid/x-grid3-hd-btn.png
 zarafa-webapp/client/resources/images/loading.gif
 zarafa-webapp/client/resources/images/login.png
-zarafa-webapp/client/resources/images/loginWebappXmas.jpg
 zarafa-webapp/client/resources/images/loginicons.png
 zarafa-webapp/client/resources/images/logo_zarafa.jpg
 zarafa-webapp/client/resources/images/mail/
@@ -1045,7 +1055,7 @@ zarafa-webapp/client/resources/images/tabs/scroll-right.gif
 zarafa-webapp/client/resources/images/tip-sprite.gif
 zarafa-webapp/client/resources/images/today_gradient.png
 zarafa-webapp/client/resources/images/today_tentative.png
-zarafa-webapp/client/resources/images/toolBarWebappXmas.jpg
+zarafa-webapp/client/resources/images/zarafa_logo_notext.png
 zarafa-webapp/client/resources/images/zarafa_logo_top.gif
 zarafa-webapp/client/resources/images/zarafa_top_background.gif
 zarafa-webapp/client/resources/images/zarafa_top_logo.gif
@@ -1078,6 +1088,7 @@ zarafa-webapp/client/third-party/resources/icons/htmleditorplugins/wordpaste.png
 zarafa-webapp/client/third-party/ux-thirdparty.js
 zarafa-webapp/client/translations.js.php
 zarafa-webapp/client/webclient.php
+zarafa-webapp/client/welcome.php
 zarafa-webapp/client/zarafa.js
 zarafa-webapp/config.php.dist
 @sample zarafa-webapp/config.php
@@ -1153,6 +1164,7 @@ zarafa-webapp/plugins/folderwidgets/resources/images/
 zarafa-webapp/plugins/folderwidgets/resources/images/appointments.png
 zarafa-webapp/plugins/folderwidgets/resources/images/mail.png
 zarafa-webapp/plugins/folderwidgets/resources/images/tasks.png
+zarafa-webapp/plugins/folderwidgets/resources/images/today_tentative.png
 zarafa-webapp/plugins/oauthlib/
 zarafa-webapp/plugins/oauthlib/manifest.xml
 zarafa-webapp/plugins/oauthlib/php/
@@ -1183,8 +1195,6 @@ zarafa-webapp/plugins/quickitems/js/quickitems.js
 zarafa-webapp/plugins/quickitems/manifest.xml
 zarafa-webapp/plugins/quickitems/resources/
 zarafa-webapp/plugins/quickitems/resources/images/
-zarafa-webapp/plugins/quickitems/resources/images/bug.png
-zarafa-webapp/plugins/quickitems/resources/images/feature.png
 zarafa-webapp/plugins/quickitems/resources/images/quickappt.png
 zarafa-webapp/plugins/quickitems/resources/images/quickcontact.png
 zarafa-webapp/plugins/quickitems/resources/images/quickmail.png
@@ -1212,6 +1222,13 @@ zarafa-webapp/plugins/statslogging/manifest.xml
 zarafa-webapp/plugins/statslogging/php/
 zarafa-webapp/plugins/statslogging/php/class.pluginstatsloggingmodule.php
 zarafa-webapp/plugins/statslogging/php/plugin.statslogging.php
+zarafa-webapp/plugins/webappmanual/
+zarafa-webapp/plugins/webappmanual/config.php
+zarafa-webapp/plugins/webappmanual/js/
+zarafa-webapp/plugins/webappmanual/js/webappmanual.js
+zarafa-webapp/plugins/webappmanual/manifest.xml
+zarafa-webapp/plugins/webappmanual/php/
+zarafa-webapp/plugins/webappmanual/php/plugin.webappmanual.php
 zarafa-webapp/plugins/xmpp/
 zarafa-webapp/plugins/xmpp/config.php.dist
 @sample zarafa-webapp/plugins/xmpp/config.php
@@ -1314,6 +1331,9 @@ zarafa-webapp/server/language/de_DE.UTF-8/
 zarafa-webapp/server/language/de_DE.UTF-8/LC_MESSAGES/
 zarafa-webapp/server/language/de_DE.UTF-8/LC_MESSAGES/zarafa_webapp.mo
 zarafa-webapp/server/language/de_DE.UTF-8/language.txt
+zarafa-webapp/server/language/el_GR.UTF-8/
+zarafa-webapp/server/language/el_GR.UTF-8/LC_MESSAGES/
+zarafa-webapp/server/language/el_GR.UTF-8/LC_MESSAGES/zarafa_webapp.mo
 zarafa-webapp/server/language/en_US.UTF-8/
 zarafa-webapp/server/language/en_US.UTF-8/LC_MESSAGES/
 zarafa-webapp/server/language/en_US.UTF-8/LC_MESSAGES/zarafa_webapp.mo
@@ -1329,6 +1349,9 @@ zarafa-webapp/server/language/es_ES.UTF-8/language.txt
 zarafa-webapp/server/language/et_EE.UTF-8/
 zarafa-webapp/server/language/et_EE.UTF-8/LC_MESSAGES/
 zarafa-webapp/server/language/et_EE.UTF-8/LC_MESSAGES/zarafa_webapp.mo
+zarafa-webapp/server/language/fa_IR.UTF-8/
+zarafa-webapp/server/language/fa_IR.UTF-8/LC_MESSAGES/
+zarafa-webapp/server/language/fa_IR.UTF-8/LC_MESSAGES/zarafa_webapp.mo
 zarafa-webapp/server/language/fi_FI.UTF-8/
 zarafa-webapp/server/language/fi_FI.UTF-8/LC_MESSAGES/
 zarafa-webapp/server/language/fi_FI.UTF-8/LC_MESSAGES/zarafa_webapp.mo
@@ -1337,6 +1360,9 @@ zarafa-webapp/server/language/fr_FR.UTF-8/
 zarafa-webapp/server/language/fr_FR.UTF-8/LC_MESSAGES/
 zarafa-webapp/server/language/fr_FR.UTF-8/LC_MESSAGES/zarafa_webapp.mo
 zarafa-webapp/server/language/fr_FR.UTF-8/language.txt
+zarafa-webapp/server/language/gl_ES.UTF-8/
+zarafa-webapp/server/language/gl_ES.UTF-8/LC_MESSAGES/
+zarafa-webapp/server/language/gl_ES.UTF-8/LC_MESSAGES/zarafa_webapp.mo
 zarafa-webapp/server/language/he_IL.UTF-8/
 zarafa-webapp/server/language/he_IL.UTF-8/LC_MESSAGES/
 zarafa-webapp/server/language/he_IL.UTF-8/LC_MESSAGES/zarafa_webapp.mo
@@ -1410,6 +1436,7 @@ zarafa-webapp/server/language/zh_CN.UTF-8/language.txt
 zarafa-webapp/server/language/zh_TW.UTF-8/
 zarafa-webapp/server/language/zh_TW.UTF-8/LC_MESSAGES/
 zarafa-webapp/server/language/zh_TW.UTF-8/LC_MESSAGES/zarafa_webapp.mo
+zarafa-webapp/server/language/zh_TW.UTF-8/language.txt
 zarafa-webapp/server/manifest.dtd
 zarafa-webapp/server/modules/
 zarafa-webapp/server/modules/class.addressbookitemmodule.php
@@ -1431,8 +1458,7 @@ zarafa-webapp/server/modules/class.module.php
 zarafa-webapp/server/modules/class.reminderlistmodule.php
 zarafa-webapp/server/modules/class.resolvenamesmodule.php
 zarafa-webapp/server/modules/class.restoreitemslistmodule.php
-zarafa-webapp/server/modules/class.rulesitemmodule.php
-zarafa-webapp/server/modules/class.ruleslistmodule.php
+zarafa-webapp/server/modules/class.rulesmodule.php
 zarafa-webapp/server/modules/class.settingsmodule.php
 zarafa-webapp/server/modules/class.stickynoteitemmodule.php
 zarafa-webapp/server/modules/class.stickynotelistmodule.php

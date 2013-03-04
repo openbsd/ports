@@ -1,19 +1,7 @@
-$OpenBSD: patch-etc_zarafa_webapp_config_php,v 1.2 2012/06/20 13:07:48 ajacoutot Exp $
---- etc/zarafa/webapp/config.php.orig	Wed Jun 20 15:00:23 2012
-+++ etc/zarafa/webapp/config.php	Wed Jun 20 15:00:23 2012
-@@ -11,9 +11,9 @@
- 	define("CONFIG_CHECK", TRUE);
- 
- 	// Default Zarafa server to connect to.
--	define("DEFAULT_SERVER","file:///var/run/zarafa");
-+	#define("DEFAULT_SERVER","file:///var/run/zarafa");
- 	#define("DEFAULT_SERVER","file://\\\\.\\pipe\\zarafa");
--	#define("DEFAULT_SERVER","http://localhost:236/zarafa");
-+	define("DEFAULT_SERVER","http://localhost:236/zarafa");
- 
- 	// When using a single-signon system on your webserver, but Zarafa is on another server
- 	// you can use https to access the zarafa server, and authenticate using an SSL certificate.
-@@ -40,12 +40,13 @@
+$OpenBSD: patch-etc_zarafa_webapp_config_php,v 1.3 2013/03/04 17:45:46 robert Exp $
+--- etc/zarafa/webapp/config.php.orig	Thu Feb 14 17:57:36 2013
++++ etc/zarafa/webapp/config.php	Thu Feb 14 17:58:17 2013
+@@ -46,12 +46,13 @@
  
  	// Defines the temp path (absolute). Here uploaded attachments will be saved.
  	// The web client doesn't work without this directory.
@@ -24,8 +12,8 @@ $OpenBSD: patch-etc_zarafa_webapp_config_php,v 1.2 2012/06/20 13:07:48 ajacoutot
  	set_include_path(BASE_PATH. PATH_SEPARATOR . 
  	                 BASE_PATH."server/PEAR/" .  PATH_SEPARATOR . 
 -	                 "/usr/share/php/");
-+	                 "/include/php/" .  PATH_SEPARATOR .
-+	                 "/var/www/include/php/");
++			 "/include/php/" .  PATH_SEPARATOR .
++			 "/var/www/include/php/");
  
  	// Define the path to the plugin directory (No slash at the end)
  	define("PATH_PLUGIN_DIR", "plugins");
