@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2013/02/10 19:45:55 robert Exp $
+@comment $OpenBSD: PLIST,v 1.16 2013/03/04 17:48:22 robert Exp $
 bin/pcre-config
 @bin bin/pcregrep
 @bin bin/pcretest
@@ -43,6 +43,7 @@ lib/pkgconfig/libpcreposix.pc
 @man man/man3/pcre16_get_stringtable_entries.3
 @man man/man3/pcre16_get_substring.3
 @man man/man3/pcre16_get_substring_list.3
+@man man/man3/pcre16_jit_exec.3
 @man man/man3/pcre16_jit_stack_alloc.3
 @man man/man3/pcre16_jit_stack_free.3
 @man man/man3/pcre16_maketables.3
@@ -51,6 +52,33 @@ lib/pkgconfig/libpcreposix.pc
 @man man/man3/pcre16_study.3
 @man man/man3/pcre16_utf16_to_host_byte_order.3
 @man man/man3/pcre16_version.3
+@man man/man3/pcre32.3
+@man man/man3/pcre32_assign_jit_stack.3
+@man man/man3/pcre32_compile.3
+@man man/man3/pcre32_compile2.3
+@man man/man3/pcre32_config.3
+@man man/man3/pcre32_copy_named_substring.3
+@man man/man3/pcre32_copy_substring.3
+@man man/man3/pcre32_dfa_exec.3
+@man man/man3/pcre32_exec.3
+@man man/man3/pcre32_free_study.3
+@man man/man3/pcre32_free_substring.3
+@man man/man3/pcre32_free_substring_list.3
+@man man/man3/pcre32_fullinfo.3
+@man man/man3/pcre32_get_named_substring.3
+@man man/man3/pcre32_get_stringnumber.3
+@man man/man3/pcre32_get_stringtable_entries.3
+@man man/man3/pcre32_get_substring.3
+@man man/man3/pcre32_get_substring_list.3
+@man man/man3/pcre32_jit_exec.3
+@man man/man3/pcre32_jit_stack_alloc.3
+@man man/man3/pcre32_jit_stack_free.3
+@man man/man3/pcre32_maketables.3
+@man man/man3/pcre32_pattern_to_host_byte_order.3
+@man man/man3/pcre32_refcount.3
+@man man/man3/pcre32_study.3
+@man man/man3/pcre32_utf32_to_host_byte_order.3
+@man man/man3/pcre32_version.3
 @man man/man3/pcre_assign_jit_stack.3
 @man man/man3/pcre_compile.3
 @man man/man3/pcre_compile2.3
@@ -68,6 +96,7 @@ lib/pkgconfig/libpcreposix.pc
 @man man/man3/pcre_get_stringtable_entries.3
 @man man/man3/pcre_get_substring.3
 @man man/man3/pcre_get_substring_list.3
+@man man/man3/pcre_jit_exec.3
 @man man/man3/pcre_jit_stack_alloc.3
 @man man/man3/pcre_jit_stack_free.3
 @man man/man3/pcre_maketables.3
@@ -75,6 +104,7 @@ lib/pkgconfig/libpcreposix.pc
 @man man/man3/pcre_refcount.3
 @man man/man3/pcre_study.3
 @man man/man3/pcre_utf16_to_host_byte_order.3
+@man man/man3/pcre_utf32_to_host_byte_order.3
 @man man/man3/pcre_version.3
 @man man/man3/pcreapi.3
 @man man/man3/pcrebuild.3
@@ -123,6 +153,7 @@ share/doc/pcre/html/pcre_get_stringnumber.html
 share/doc/pcre/html/pcre_get_stringtable_entries.html
 share/doc/pcre/html/pcre_get_substring.html
 share/doc/pcre/html/pcre_get_substring_list.html
+share/doc/pcre/html/pcre_jit_exec.html
 share/doc/pcre/html/pcre_jit_stack_alloc.html
 share/doc/pcre/html/pcre_jit_stack_free.html
 share/doc/pcre/html/pcre_maketables.html
