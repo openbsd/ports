@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/09/18 12:43:08 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.6 2013/03/04 18:53:54 ajacoutot Exp $
 @bin bin/secret-tool
 include/libsecret-1/
 include/libsecret-1/libsecret/
@@ -21,6 +20,7 @@ lib/girepository-1.0/Secret-1.typelib
 lib/girepository-1.0/SecretUnstable-0.typelib
 lib/libsecret-1.a
 lib/libsecret-1.la
+@lib lib/libsecret-1.so.${LIBsecret-1_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/libsecret-1.pc
 lib/pkgconfig/libsecret-unstable.pc
@@ -86,8 +86,19 @@ share/gtk-doc/html/libsecret-1/vala-examples.html
 share/gtk-doc/html/libsecret-1/vala-lookup-example.html
 share/gtk-doc/html/libsecret-1/vala-remove-example.html
 share/gtk-doc/html/libsecret-1/vala-store-example.html
+share/locale/cs/LC_MESSAGES/libsecret.mo
+share/locale/es/LC_MESSAGES/libsecret.mo
+share/locale/gl/LC_MESSAGES/libsecret.mo
+share/locale/it/LC_MESSAGES/libsecret.mo
 share/locale/ja/LC_MESSAGES/libsecret.mo
 share/locale/pl/LC_MESSAGES/libsecret.mo
+share/locale/pt_BR/LC_MESSAGES/libsecret.mo
+share/locale/ru/LC_MESSAGES/libsecret.mo
+share/locale/sl/LC_MESSAGES/libsecret.mo
+share/locale/sr/LC_MESSAGES/libsecret.mo
+share/locale/sr@latin/
+share/locale/sr@latin/LC_MESSAGES/
+share/locale/sr@latin/LC_MESSAGES/libsecret.mo
 share/vala/
 share/vala/vapi/
 share/vala/vapi/libsecret-1.deps

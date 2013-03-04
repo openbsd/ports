@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2012/07/14 07:51:47 ajacoutot Exp $
-@lib lib/libsecret-1.so.${LIBsecret-1_VERSION}
