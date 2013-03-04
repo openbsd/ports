@@ -8,10 +8,6 @@ It features:
 * Copy audio CDs.
 * Support multisession burning.
 * Record to and burn from existing CD ISO images.
-* Drag and drop to create data CDs (including drag and drop to/from the Nautilus
-  file manager).
+* Drag and drop to create data CDs (including drag and drop to/from Nautilus
 * Create audio CDs from existing WAV, MP3, FLAC, and Ogg files.
 * Integrate with GConf for storage of application settings.
-
-To ensure correct operation of GnomeBaker, the user needs RW access to
-the CD/DVD device(s).
