@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2012/10/23 08:10:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2013/03/04 23:44:39 jturner Exp $
 
 COMMENT =		simple distributed software configuration management
 
-DISTNAME =		fossil-src-20121022124804
-PKGNAME =		fossil-1.24
+DISTNAME =		fossil-src-20130216000435
+PKGNAME =		fossil-1.25
 EPOCH =			0
 CATEGORIES =		devel www
 
@@ -29,10 +29,15 @@ BUILD_DEPENDS =		${MODTCL_BUILD_DEPENDS}
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS =	--disable-internal-sqlite --disable-lineedit
+CONFLICT_MARKER =	fossil-*-!static
 
 .if ${FLAVOR} == "static"
 CONFIGURE_ARGS +=	--static --with-openssl=none
+PREFIX =		/var/www
+CONFLICT_MARKER =	fossil-*-static
 .endif
+
+SUBST_VARS +=		CONFLICT_MARKER
 
 REGRESS_DEPENDS =	${MODTCL_RUN_DEPENDS}
 
@@ -43,6 +48,7 @@ do-regress:
 	@cd ${WRKSRC} && ${MODTCL_BIN} test/tester.tcl fossil
 
 do-install:
+	${INSTALL_PROGRAM_DIR} ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/fossil ${PREFIX}/bin
 
 .include <bsd.port.mk>

@@ -1,2 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/23 19:06:46 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/03/04 23:44:39 jturner Exp $
+@option no-default-conflict
+@conflict ${CONFLICT_MARKER}
 @bin bin/fossil
