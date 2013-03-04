@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2013/01/27 03:56:06 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.13 2013/03/04 14:29:24 abieber Exp $
 @pkgpath www/node
 @bin bin/node
 bin/node-gyp
@@ -427,6 +427,7 @@ lib/node_modules/npm-registry-client/lib/get.js
 lib/node_modules/npm-registry-client/lib/publish.js
 lib/node_modules/npm-registry-client/lib/request.js
 lib/node_modules/npm-registry-client/lib/star.js
+lib/node_modules/npm-registry-client/lib/stars.js
 lib/node_modules/npm-registry-client/lib/tag.js
 lib/node_modules/npm-registry-client/lib/unpublish.js
 lib/node_modules/npm-registry-client/lib/upload.js
@@ -513,6 +514,7 @@ lib/node_modules/npm/doc/cli/edit.md
 lib/node_modules/npm/doc/cli/explore.md
 lib/node_modules/npm/doc/cli/faq.md
 lib/node_modules/npm/doc/cli/folders.md
+lib/node_modules/npm/doc/cli/global.md
 lib/node_modules/npm/doc/cli/help-search.md
 lib/node_modules/npm/doc/cli/help.md
 lib/node_modules/npm/doc/cli/index.md
@@ -532,6 +534,7 @@ lib/node_modules/npm/doc/cli/rebuild.md
 lib/node_modules/npm/doc/cli/registry.md
 lib/node_modules/npm/doc/cli/removing-npm.md
 lib/node_modules/npm/doc/cli/restart.md
+lib/node_modules/npm/doc/cli/rm.md
 lib/node_modules/npm/doc/cli/root.md
 lib/node_modules/npm/doc/cli/run-script.md
 lib/node_modules/npm/doc/cli/scripts.md
@@ -539,6 +542,7 @@ lib/node_modules/npm/doc/cli/search.md
 lib/node_modules/npm/doc/cli/semver.md
 lib/node_modules/npm/doc/cli/shrinkwrap.md
 lib/node_modules/npm/doc/cli/star.md
+lib/node_modules/npm/doc/cli/stars.md
 lib/node_modules/npm/doc/cli/start.md
 lib/node_modules/npm/doc/cli/stop.md
 lib/node_modules/npm/doc/cli/submodule.md
@@ -611,6 +615,7 @@ lib/node_modules/npm/html/doc/edit.html
 lib/node_modules/npm/html/doc/explore.html
 lib/node_modules/npm/html/doc/faq.html
 lib/node_modules/npm/html/doc/folders.html
+lib/node_modules/npm/html/doc/global.html
 lib/node_modules/npm/html/doc/help-search.html
 lib/node_modules/npm/html/doc/help.html
 lib/node_modules/npm/html/doc/index.html
@@ -631,6 +636,7 @@ lib/node_modules/npm/html/doc/rebuild.html
 lib/node_modules/npm/html/doc/registry.html
 lib/node_modules/npm/html/doc/removing-npm.html
 lib/node_modules/npm/html/doc/restart.html
+lib/node_modules/npm/html/doc/rm.html
 lib/node_modules/npm/html/doc/root.html
 lib/node_modules/npm/html/doc/run-script.html
 lib/node_modules/npm/html/doc/scripts.html
@@ -638,6 +644,7 @@ lib/node_modules/npm/html/doc/search.html
 lib/node_modules/npm/html/doc/semver.html
 lib/node_modules/npm/html/doc/shrinkwrap.html
 lib/node_modules/npm/html/doc/star.html
+lib/node_modules/npm/html/doc/stars.html
 lib/node_modules/npm/html/doc/start.html
 lib/node_modules/npm/html/doc/stop.html
 lib/node_modules/npm/html/doc/submodule.html
@@ -695,6 +702,7 @@ lib/node_modules/npm/lib/search.js
 lib/node_modules/npm/lib/set.js
 lib/node_modules/npm/lib/shrinkwrap.js
 lib/node_modules/npm/lib/star.js
+lib/node_modules/npm/lib/stars.js
 lib/node_modules/npm/lib/start.js
 lib/node_modules/npm/lib/stop.js
 lib/node_modules/npm/lib/submodule.js
@@ -784,6 +792,7 @@ lib/node_modules/npm/man/man1/
 @man lib/node_modules/npm/man/man1/set.1
 @man lib/node_modules/npm/man/man1/shrinkwrap.1
 @man lib/node_modules/npm/man/man1/star.1
+@man lib/node_modules/npm/man/man1/stars.1
 @man lib/node_modules/npm/man/man1/start.1
 @man lib/node_modules/npm/man/man1/stop.1
 @man lib/node_modules/npm/man/man1/submodule.1
