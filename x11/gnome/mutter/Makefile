@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/02 12:42:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/04 14:13:23 jasper Exp $
 
 COMMENT=		window and compositing manager
 
 GNOME_PROJECT=		mutter
-GNOME_VERSION=		3.6.2
-REVISION=		0
+GNOME_VERSION=		3.6.3
 
 SHARED_LIBS +=  mutter                    0.0 # 0.0
 
@@ -14,17 +13,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
-WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
-WANTLIB += atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
-WANTLIB += canberra canberra-gtk3 clutter-1.0 cogl cogl-pango
-WANTLIB += dbus-1 drm expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 gtk-3 harfbuzz icudata icule icuuc json-glib-1.0
-WANTLIB += ltdl m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png pthread pthread-stubs startup-notification-1
-WANTLIB += stdc++ vorbis vorbisfile xcb xcb-aux xcb-render xcb-shm
-WANTLIB += z
+WANTLIB += ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0
+WANTLIB += atspi c cairo cairo-gobject canberra canberra-gtk3
+WANTLIB += clutter-1.0 cogl cogl-pango dbus-1 expat ffi fontconfig
+WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 gtk-3
+WANTLIB += harfbuzz icudata icule icuuc json-glib-1.0 ltdl m ogg
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png pthread pthread-stubs startup-notification-1 vorbis
+WANTLIB += vorbisfile xcb xcb-aux xcb-render xcb-shm z
 
 MODULES=		devel/dconf \
 			devel/gettext \
