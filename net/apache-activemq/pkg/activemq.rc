@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: activemq.rc,v 1.1.1.1 2013/02/05 15:08:45 jasper Exp $
+# $OpenBSD: activemq.rc,v 1.2 2013/03/04 15:48:41 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/activemq"
 
@@ -9,18 +9,16 @@ daemon="${TRUEPREFIX}/bin/activemq"
 rc_reload=NO
 
 rc_start() {
-        ${rcexec} "env PATH=$PATH:$(dirname `javaPathHelper -c
-apache-activemq`) ${daemon} start"
+	${rcexec} "PATH=$PATH:$(dirname $(${LOCALBASE}/bin/javaPathHelper -c apache-activemq)) ${daemon} start"
 }
  
 rc_check() {
-        env PATH=$PATH:$(dirname `javaPathHelper -c apache-activemq`)
-${daemon} status   
+	PATH=$PATH:$(dirname $(${LOCALBASE}/bin/javaPathHelper -c apache-activemq)) ${daemon} status   
 }
 
 rc_stop() {
-        pid=$(rc_check | tail -1 | perl -pi -e 's,.*pid \x27(.*)\x27.*,$1,g')
-        kill ${pid}
+	pid=$(rc_check | tail -1 | perl -pi -e 's,.*pid \x27(.*)\x27.*,$1,g')
+	kill ${pid}
 }
 
 rc_cmd $1
