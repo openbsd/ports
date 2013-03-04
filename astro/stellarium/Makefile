@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2012/08/26 12:42:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2013/03/04 19:54:57 bcallah Exp $
 
 COMMENT=	free open source planetarium
 
-DISTNAME=	stellarium-0.11.4a
-WRKDIST=	${WRKDIR}/stellarium-0.11.4
+DISTNAME=	stellarium-0.12.0
 
 CATEGORIES=	astro x11
 
@@ -28,7 +27,8 @@ MODULES=	devel/gettext \
 
 # used to download more stars definitions
 RUN_DEPENDS=	net/curl \
-		devel/desktop-file-utils
+		devel/desktop-file-utils \
+		x11/gtk+2,-guic
 
 CONFIGURE_STYLE=cmake
 CONFIGURE_ENV=	HOME=${WRKDIR}
