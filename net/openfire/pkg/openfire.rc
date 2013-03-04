@@ -1,12 +1,12 @@
 #!/bin/sh
 #
-# $OpenBSD: openfire.rc,v 1.2 2011/03/09 17:08:00 ajacoutot Exp $
+# $OpenBSD: openfire.rc,v 1.3 2013/03/04 15:56:13 ajacoutot Exp $
 
 OPENFIRE_HOME="${TRUEPREFIX}/openfire"
 OPENFIRE_LIB="${OPENFIRE_HOME}/lib"
 
-JAVACMD="$(javaPathHelper -c openfire)"
-JAVA_HOME="$(javaPathHelper -h openfire)"
+JAVACMD="$(${LOCALBASE}/bin/javaPathHelper -c openfire)"
+JAVA_HOME="$(${LOCALBASE}/bin/javaPathHelper -h openfire)"
 
 daemon="${JAVACMD}"
 daemon_flags="-server -DopenfireHome=${OPENFIRE_HOME} -Dopenfire.lib.dir=${OPENFIRE_LIB} -jar ${OPENFIRE_LIB}/startup.jar"
