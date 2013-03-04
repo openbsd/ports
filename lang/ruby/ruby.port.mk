@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.55 2013/02/09 14:49:51 sthen Exp $
+# $OpenBSD: ruby.port.mk,v 1.56 2013/03/04 18:39:06 zhuk Exp $
 
 # ruby module
 
@@ -378,7 +378,7 @@ _GEM_PATCHED=	${DISTNAME}${EXTRACT_SUFX}
 MODRUBY_EXTRACT_TARGET = \
     mkdir -p ${WRKDIST} ${_GEM_CONTENT}; \
     cd ${_GEM_CONTENT} && tar -xf ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}; \
-    cd ${WRKDIST} && tar -xzf ${_GEM_DATAFILE} && rm ${_GEM_DATAFILE}; \
+    cd ${WRKDIST} && tar -xzf ${_GEM_DATAFILE} && rm -f ${_GEM_DATAFILE}; \
     gzcat ${_GEM_CONTENT}/metadata.gz > ${WRKDIST}/.metadata; \
     rm -f ${_GEM_CONTENT}/*.gz.sig
 
@@ -388,7 +388,7 @@ MODRUBY_EXTRACT_TARGET = \
 MODRUBY_BUILD_TARGET = \
     if [ -f ${WRKDIST}/.metadata ]; then \
 	    cd ${WRKDIST} && gzip .metadata && \
-		    mv .metadata.gz ${_GEM_CONTENT}/metadata.gz; \
+		    mv -f .metadata.gz ${_GEM_CONTENT}/metadata.gz; \
     fi; \
     cd ${WRKDIST} && find . -type f \! -name '*.orig'  -print | \
 	    pax -wz -s '/^\.\///' -f ${_GEM_DATAFILE}; \
