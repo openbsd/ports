@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/08/04 14:59:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/03/05 07:57:31 ajacoutot Exp $
 @pkgpath graphics/colord,-gtk
-%%SHARED%%
 include/colord-1/
 include/colord-1/colord-gtk/
 include/colord-1/colord-gtk.h
+include/colord-1/colord-gtk/cd-sample-widget.h
 include/colord-1/colord-gtk/cd-sample-window.h
 include/colord-1/colord-gtk/cd-version.h
 include/colord-1/colord-gtk/cd-window-sync.h
@@ -12,6 +12,7 @@ lib/girepository-1.0/
 lib/girepository-1.0/ColordGtk-1.0.typelib
 lib/libcolord-gtk.a
 lib/libcolord-gtk.la
+@lib lib/libcolord-gtk.so.${LIBcolord-gtk_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/colord-gtk.pc
 share/gir-1.0/

@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2012/08/04 14:59:04 ajacoutot Exp $
-@lib lib/libcolord-gtk.so.${LIBcolord-gtk_VERSION}
