@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.79 2013/02/06 14:29:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2013/03/05 10:26:58 sthen Exp $
+
+# gconf2-polkit requires spidermonkey
+ONLY_FOR_ARCHS-polkit=	alpha amd64 i386 hppa mips64el mips64 powerpc sparc64
 
 COMMENT-main=	configuration database system for GNOME
 COMMENT-polkit=	PolicyKit integration for GConf2
@@ -64,12 +67,21 @@ MODGNOME_TOOLS=	goi
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--without-openldap \
-		--enable-defaults-service \
 		--disable-gtk \
 		--disable-orbit
 
 FAKE_FLAGS=	sysgconfdir=${PREFIX}/share/examples/gconf2 \
 		sysconfdir=${PREFIX}/share/examples/gconf2
+
+PSEUDO_FLAVORS=	no_polkit
+FLAVOR?=
+
+.include <bsd.port.arch.mk>
+.if !${BUILD_PACKAGES:M-polkit}
+CONFIGURE_ARGS+= --disable-defaults-service
+.else
+CONFIGURE_ARGS+= --enable-defaults-service
+.endif
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/gsettings/gsettings-data-convert.1
