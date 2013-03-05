@@ -1,14 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/03/02 13:55:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/03/05 09:53:20 ajacoutot Exp $
 %%SHARED%%
 @bin bin/p11-kit
 include/p11-kit-1/
 include/p11-kit-1/p11-kit/
+include/p11-kit-1/p11-kit/iter.h
 include/p11-kit-1/p11-kit/p11-kit.h
 include/p11-kit-1/p11-kit/pin.h
 include/p11-kit-1/p11-kit/pkcs11.h
 include/p11-kit-1/p11-kit/uri.h
 lib/libp11-kit.a
 lib/libp11-kit.la
+@lib lib/libp11-kit.so.${LIBp11-kit_VERSION}
+lib/pkcs11/
 lib/pkgconfig/
 lib/pkgconfig/p11-kit-1.pc
 share/examples/p11-kit/
@@ -19,13 +22,14 @@ share/examples/p11-kit/pkcs11/pkcs11.conf.example
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/p11-kit/
-share/gtk-doc/html/p11-kit/api-index-full.html
+share/gtk-doc/html/p11-kit/ch01s03.html
 share/gtk-doc/html/p11-kit/config-example.html
-share/gtk-doc/html/p11-kit/config-format.html
-share/gtk-doc/html/p11-kit/config-global.html
-share/gtk-doc/html/p11-kit/config-locations.html
-share/gtk-doc/html/p11-kit/config-module.html
 share/gtk-doc/html/p11-kit/config.html
+share/gtk-doc/html/p11-kit/devel-building-style.html
+share/gtk-doc/html/p11-kit/devel-building.html
+share/gtk-doc/html/p11-kit/devel-commands.html
+share/gtk-doc/html/p11-kit/devel-paths.html
+share/gtk-doc/html/p11-kit/devel.html
 share/gtk-doc/html/p11-kit/gtk-doc.css
 share/gtk-doc/html/p11-kit/home.png
 share/gtk-doc/html/p11-kit/index.html
@@ -37,10 +41,21 @@ share/gtk-doc/html/p11-kit/p11-kit-PIN-Callbacks.html
 share/gtk-doc/html/p11-kit/p11-kit-URIs.html
 share/gtk-doc/html/p11-kit/p11-kit-Utilities.html
 share/gtk-doc/html/p11-kit/p11-kit.devhelp2
+share/gtk-doc/html/p11-kit/p11-kit.html
+share/gtk-doc/html/p11-kit/pkcs11.conf.html
 share/gtk-doc/html/p11-kit/reference.html
 share/gtk-doc/html/p11-kit/right.png
 share/gtk-doc/html/p11-kit/sharing-initialize.html
 share/gtk-doc/html/p11-kit/sharing-module.html
 share/gtk-doc/html/p11-kit/sharing.html
 share/gtk-doc/html/p11-kit/style.css
+share/gtk-doc/html/p11-kit/tools.html
+share/gtk-doc/html/p11-kit/trust-disable.html
+share/gtk-doc/html/p11-kit/trust-glib-networking.html
+share/gtk-doc/html/p11-kit/trust-nss.html
+share/gtk-doc/html/p11-kit/trust.html
 share/gtk-doc/html/p11-kit/up.png
+share/p11-kit/
+share/p11-kit/modules/
+share/p11-kit/modules/p11-kit-trust.module
+share/p11-kit/p11-kit-extract-trust

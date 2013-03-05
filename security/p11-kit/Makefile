@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/02 13:55:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/05 09:53:20 ajacoutot Exp $
 
 COMMENT=	library for loading and enumurating of PKCS\#11 modules
 
-DISTNAME=	p11-kit-0.14
-REVISION=	0
+DISTNAME=	p11-kit-0.16.0
 
 CATEGORIES=	security
 
@@ -19,16 +18,19 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c pthread
+WANTLIB += c pthread tasn1
 
 MASTER_SITES=	${HOMEPAGE}releases/
+
+LIB_DEPENDS=	security/libtasn1
 
 USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-gtk-doc \
-		--with-module-path=${PREFIX}/lib/pkcs11
+		--with-module-path=${PREFIX}/lib/pkcs11 \
+		--with-system-anchors=/etc/ssl/cert.pem
 
 # no translation yet
 CONFIGURE_ARGS += --disable-nls
@@ -40,5 +42,8 @@ CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
 		ac_cv_path_GTKDOC_MKPDF=""
 
 FAKE_FLAGS=	exampledir=${PREFIX}/share/examples/p11-kit/pkcs11
+
+post-install:
+	rm ${PREFIX}/lib/pkcs11/*.{a,la}
 
 .include <bsd.port.mk>

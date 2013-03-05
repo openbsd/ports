@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/08/22 08:04:14 ajacoutot Exp $
-@lib lib/libp11-kit.so.${LIBp11-kit_VERSION}
+@comment $OpenBSD: PFRAG.shared,v 1.2 2013/03/05 09:53:20 ajacoutot Exp $
+lib/pkcs11/p11-kit-trust.so
