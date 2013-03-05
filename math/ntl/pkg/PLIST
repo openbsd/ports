@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/05/22 09:03:33 benoit Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.6 2013/03/05 08:26:06 benoit Exp $
 include/NTL/
 include/NTL/FFT.h
 include/NTL/FacVec.h
@@ -92,6 +91,7 @@ include/NTL/vector.h
 include/NTL/version.h
 include/NTL/xdouble.h
 lib/libntl.a
+@lib lib/libntl.so.${LIBntl_VERSION}
 share/doc/NTL/
 share/doc/NTL/GF2.txt
 share/doc/NTL/GF2E.txt
