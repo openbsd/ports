@@ -1,14 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/11/08 23:24:42 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/03/05 09:09:57 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
-${GEM_LIB}/gems/${DISTNAME}/CHANGELOG
-${GEM_LIB}/gems/${DISTNAME}/INSTALL
+${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
+${GEM_LIB}/gems/${DISTNAME}/INSTALL.md
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/NOTICE
-${GEM_LIB}/gems/${DISTNAME}/README
-${GEM_LIB}/gems/${DISTNAME}/UPGRADE
-${GEM_LIB}/gems/${DISTNAME}/admin/
-${GEM_LIB}/gems/${DISTNAME}/admin/runtests.rb
+${GEM_LIB}/gems/${DISTNAME}/README.md
+${GEM_LIB}/gems/${DISTNAME}/UPGRADE.md
 ${GEM_LIB}/gems/${DISTNAME}/examples/
 ${GEM_LIB}/gems/${DISTNAME}/examples/README
 ${GEM_LIB}/gems/${DISTNAME}/examples/active_record_openid_store/
@@ -115,8 +113,10 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/openid/dh.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/openid/extension.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/openid/extensions/
 ${GEM_LIB}/gems/${DISTNAME}/lib/openid/extensions/ax.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/openid/extensions/oauth.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/openid/extensions/pape.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/openid/extensions/sreg.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/openid/extensions/ui.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/openid/extras.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/openid/fetchers.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/openid/kvform.rb
@@ -127,11 +127,13 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/openid/server.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/openid/store/
 ${GEM_LIB}/gems/${DISTNAME}/lib/openid/store/filesystem.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/openid/store/interface.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/openid/store/memcache.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/openid/store/memory.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/openid/store/nonce.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/openid/trustroot.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/openid/urinorm.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/openid/util.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/openid/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/openid/yadis/
 ${GEM_LIB}/gems/${DISTNAME}/lib/openid/yadis/accept.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/openid/yadis/constants.rb
@@ -163,6 +165,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/data/test_discover/openid_1_and_2_xrds.xml
 ${GEM_LIB}/gems/${DISTNAME}/test/data/test_discover/openid_1_and_2_xrds_bad_delegate.xml
 ${GEM_LIB}/gems/${DISTNAME}/test/data/test_discover/openid_and_yadis.html
 ${GEM_LIB}/gems/${DISTNAME}/test/data/test_discover/openid_no_delegate.html
+${GEM_LIB}/gems/${DISTNAME}/test/data/test_discover/openid_utf8.html
 ${GEM_LIB}/gems/${DISTNAME}/test/data/test_discover/yadis_0entries.xml
 ${GEM_LIB}/gems/${DISTNAME}/test/data/test_discover/yadis_2_bad_local_id.xml
 ${GEM_LIB}/gems/${DISTNAME}/test/data/test_discover/yadis_2entries_delegate.xml
@@ -211,6 +214,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/test_kvpost.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_linkparse.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_message.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_nonce.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_oauth.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_openid_yadis.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_pape.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_parsehtml.rb
@@ -219,6 +223,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/test_server.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_sreg.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_stores.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_trustroot.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_ui.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_urinorm.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_util.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_xrds.rb
