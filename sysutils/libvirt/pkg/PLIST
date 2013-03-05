@@ -1,13 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/11/27 16:08:54 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/03/05 13:06:27 jasper Exp $
 @bin bin/virsh
 @bin bin/virt-host-validate
 bin/virt-pki-validate
 bin/virt-xml-validate
 include/libvirt/
+include/libvirt/libvirt-lxc.h
 include/libvirt/libvirt-qemu.h
 include/libvirt/libvirt.h
 include/libvirt/virterror.h
 @comment lib/charset.alias
+lib/libvirt-lxc.a
+lib/libvirt-lxc.la
+@lib lib/libvirt-lxc.so.${LIBvirt-lxc_VERSION}
 lib/libvirt-qemu.a
 lib/libvirt-qemu.la
 @lib lib/libvirt-qemu.so.${LIBvirt-qemu_VERSION}
@@ -16,13 +20,12 @@ lib/libvirt.la
 @lib lib/libvirt.so.${LIBvirt_VERSION}
 lib/pkgconfig/libvirt.pc
 lib/python${MODPY_VERSION}/site-packages/libvirt.py
+lib/python${MODPY_VERSION}/site-packages/libvirt_lxc.py
 lib/python${MODPY_VERSION}/site-packages/libvirt_qemu.py
-@comment lib/python${MODPY_VERSION}/site-packages/libvirtmod.a
-@comment lib/python${MODPY_VERSION}/site-packages/libvirtmod.la
 lib/python${MODPY_VERSION}/site-packages/libvirtmod.so
-@comment lib/python${MODPY_VERSION}/site-packages/libvirtmod_qemu.a
-@comment lib/python${MODPY_VERSION}/site-packages/libvirtmod_qemu.la
+lib/python${MODPY_VERSION}/site-packages/libvirtmod_lxc.so
 lib/python${MODPY_VERSION}/site-packages/libvirtmod_qemu.so
+libexec/libvirt-guests.sh
 @man man/man1/virsh.1
 @man man/man1/virt-host-validate.1
 @man man/man1/virt-pki-validate.1
@@ -164,6 +167,7 @@ share/gtk-doc/html/libvirt/up.png
 share/libvirt/
 share/libvirt/api/
 share/libvirt/api/libvirt-api.xml
+share/libvirt/api/libvirt-lxc-api.xml
 share/libvirt/api/libvirt-qemu-api.xml
 share/libvirt/cpu_map.xml
 share/libvirt/schemas/

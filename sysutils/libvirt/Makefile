@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2012/11/27 16:08:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/05 13:06:27 jasper Exp $
 
 COMMENT=		tool/library for managing platform virtualization
 
-DISTNAME=		libvirt-1.0.0
+DISTNAME=		libvirt-1.0.3
 CATEGORIES=		sysutils devel
 
-SHARED_LIBS +=  virt-qemu                 0.1 # 10.2
-SHARED_LIBS +=  virt                      0.1 # 10.2
+SHARED_LIBS +=  virt-qemu                 0.2 # 1000.3
+SHARED_LIBS +=  virt                      0.2 # 1000.3
+SHARED_LIBS +=	virt-lxc		  0.0 # 1000.3
 
 HOMEPAGE=		http://libvirt.org/
 
@@ -43,7 +44,7 @@ USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-avahi \
-			--with-libssh2 \
+			--with-ssh2 \
 			--with-python \
 			--without-yajl \
 			--without-netcf \
@@ -66,5 +67,8 @@ FAKE_FLAGS=		confdir=${PREFIX}/share/examples/libvirt \
 # nwfilters are only used by libvirtd, which is (currently) disabled on OpenBSD
 FAKE_FLAGS+=		NWFILTER_DIR=${TMPDIR} \
 			FILTERS=""
+
+post-install:
+	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/*.{a,la}
 
 .include <bsd.port.mk>
