@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2012/01/12 03:17:08 bentley Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/05 08:02:35 bentley Exp $
 
 COMMENT =		GIF decoding library
 
 NETSURF_PROJECT =	libnsgif
 NETSURF_VERSION =	0.0.3
+REVISION =		0
 
 WRKDIST =		${WRKDIR}/${DISTNAME}
 

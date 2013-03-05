@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2012/01/12 03:17:08 bentley Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2013/03/05 08:02:35 bentley Exp $
 
 CATEGORIES +=	www/netsurf
 
@@ -7,6 +7,7 @@ CATEGORIES +=	www/netsurf
 PKGNAME ?=	${DISTNAME:S/-src//}
 DISTNAME ?=	${NETSURF_PROJECT}-${NETSURF_VERSION}-src
 
+MAINTAINER ?=	Anthony J. Bentley <anthony@cathet.us>
 HOMEPAGE ?=	http://www.netsurf-browser.org/projects/${NETSURF_PROJECT}/
 MASTER_SITES ?=	http://www.netsurf-browser.org/projects/releases/
 
