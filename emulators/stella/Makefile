@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2013/01/05 21:43:13 benoit Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/05 13:42:13 benoit Exp $
 
 COMMENT =		Atari 2600 VCS emulator
 
-DISTNAME =		stella-3.7.5
+DISTNAME =		stella-3.8.1
 CATEGORIES =		emulators
 DISTFILES =		${DISTNAME}-src.tar.gz
 
