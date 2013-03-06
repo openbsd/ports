@@ -1,14 +1,14 @@
-$OpenBSD: patch-bin_mvn,v 1.3 2013/02/06 17:46:44 jasper Exp $
---- bin/mvn.orig	Mon Feb  4 22:39:01 2013
-+++ bin/mvn	Mon Feb  4 22:40:16 2013
+$OpenBSD: patch-bin_mvn,v 1.4 2013/03/06 13:12:47 kurt Exp $
+--- bin/mvn.orig	Tue Feb 19 08:54:21 2013
++++ bin/mvn	Tue Mar  5 23:18:26 2013
 @@ -36,8 +36,8 @@
  
  if [ -z "$MAVEN_SKIP_RC" ] ; then
  
 -  if [ -f /etc/mavenrc ] ; then
 -    . /etc/mavenrc
-+  if [ -f %%SYSCONFDIR%%/mavenrc ] ; then
-+    . %%SYSCONFDIR%%/mavenrc
++  if [ -f %%SYSCONFDIR%%/maven/maven.rc ] ; then
++    . %%SYSCONFDIR%%/maven/maven.rc
    fi
  
    if [ -f "$HOME/.mavenrc" ] ; then
