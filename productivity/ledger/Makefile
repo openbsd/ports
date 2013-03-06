@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.9 2012/03/29 13:38:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/06 05:04:40 bentley Exp $
 
 COMMENT=	command line double-entry accounting ledger
 
 DISTNAME=	ledger-2.6.3
-REVISION=	0
+REVISION=	1
 CATEGORIES=	productivity
 
-HOMEPAGE=	http://www.newartisans.com/ledger.html
+HOMEPAGE=	http://www.ledger-cli.org/
 
 MAINTAINER=	Sergey Bronnikov <estetus@gmail.com>
 
 SHARED_LIBS=	amounts	0.0
 
-# GPL
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
