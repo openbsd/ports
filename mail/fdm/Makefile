@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2012/03/22 10:47:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/06 15:12:01 benoit Exp $
 
 COMMENT=	fetch, filter and deliver mail
 
-DISTNAME=	fdm-1.6
-REVISION=	3
+DISTNAME=	fdm-1.7
 CATEGORIES=	mail
 
 HOMEPAGE=	http://fdm.sourceforge.net/
@@ -22,6 +21,10 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=fdm/}
 LIB_DEPENDS +=	databases/tdb>=1.2.7
 
 FAKE_FLAGS=	PREFIX=${PREFIX}
+
+pre-build:
+	cd ${WRKSRC} && ksh configure
+	cd ${WRKSRC} && awk -ftools/makemanual.awk < MANUAL.in > MANUAL
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/fdm
