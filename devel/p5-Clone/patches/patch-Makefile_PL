@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile_PL,v 1.2 2008/10/03 18:29:09 jasper Exp $
---- Makefile.PL.orig	Mon Oct 15 06:57:20 2007
-+++ Makefile.PL	Fri Oct  3 14:48:15 2008
-@@ -8,8 +8,6 @@ WriteMakefile(
-     'LIBS'	=> [''],   # e.g., '-lm' 
-     'DEFINE'	=> '',     # e.g., '-DHAVE_SOMETHING' 
-     'INC'	=> '',     # e.g., '-I/usr/include/other' 
--#    'OPTIMIZE'	=> '-g',     # e.g., '-I/usr/include/other' 
--    'OPTIMIZE'	=> '-O3',     # e.g., '-I/usr/include/other' 
-     clean => {FILES => '_Inline'},
- );
- 
+$OpenBSD: patch-Makefile_PL,v 1.3 2013/03/06 07:28:02 benoit Exp $
+--- Makefile.PL.orig	Sun Dec  9 16:18:58 2012
++++ Makefile.PL	Sat Mar  2 19:29:45 2013
+@@ -13,8 +13,6 @@ WriteMakefile(
+     'LIBS'          => [''],     # e.g., '-lm'
+     'DEFINE'        => '',       # e.g., '-DHAVE_SOMETHING'
+     'INC'           => '',       # e.g., '-I/usr/include/other'
+-#   'OPTIMIZE'      => '-g',     # e.g., '-I/usr/include/other'
+-    'OPTIMIZE'      => '-O3',    # e.g., '-I/usr/include/other'
+     clean           => { FILES => '_Inline' },
+     META_MERGE      => {
+       resources => {
