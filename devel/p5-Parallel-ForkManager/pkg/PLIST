@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/05/15 15:04:51 gsoares Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/03/06 17:20:53 okan Exp $
 ${P5SITE}/Parallel/
 ${P5SITE}/Parallel/ForkManager.pm
 @man man/man3p/Parallel::ForkManager.3p
 share/examples/p5-Parallel-ForkManager/
 share/examples/p5-Parallel-ForkManager/callback.pl
+share/examples/p5-Parallel-ForkManager/callback_data.pl
 share/examples/p5-Parallel-ForkManager/parallel_get.pl
