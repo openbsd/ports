@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/02/01 06:26:48 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/06 20:37:56 bcallah Exp $
 
 COMMENT =	WYSIWYG music notation software
-DISTNAME =	mscore-1.2
+DISTNAME =	mscore-1.3
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	audio x11
+SUBST_VARS +=	DISTNAME
 
 SHARED_ONLY =	Yes
 
@@ -17,11 +18,17 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
-WANTLIB += c m portaudio pthread sndfile sndio stdc++ z
+WANTLIB += c m portaudio pthread sndfile sndio z
 WANTLIB += QtCore QtDesigner QtGui QtNetwork QtScript
 WANTLIB += QtScriptTools QtSvg QtWebKit QtXml QtXmlPatterns
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=mscore/}
+
+# We get an internal compiler error: Segmentation Fault with
+# in-base gcc, so use gcc 4.6
+MODULES +=		gcc4
+MODGCC4_ARCHS +=	*
+MODGCC4_LANGS +=	c++
 
 BUILD_DEPENDS =	devel/cmake
 
