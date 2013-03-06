@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2012/08/23 15:52:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/06 15:09:29 gsoares Exp $
 
 COMMENT =		perl extension for wait3 system call
 
 SHARED_ONLY =		Yes
 MODULES =		cpan
-DISTNAME =		Proc-Wait3-0.03
-REVISION =		0
+DISTNAME =		Proc-Wait3-0.04
 CATEGORIES =		sysutils
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>
 
