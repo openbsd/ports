@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/01/29 10:25:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/03/06 08:51:00 ajacoutot Exp $
 zurmo/
 zurmo/License.txt
 zurmo/README.text
@@ -24,7 +24,13 @@ zurmo/app/protected/commands/bootstrap.php
 zurmo/app/protected/commands/roots.php
 zurmo/app/protected/commands/tests/
 zurmo/app/protected/commands/tests/unit/
+zurmo/app/protected/commands/tests/unit/DatabaseCommandTest.php
 zurmo/app/protected/commands/tests/unit/EmailCommandTest.php
+zurmo/app/protected/commands/tests/unit/ImportCommandTest.php
+zurmo/app/protected/commands/tests/unit/InstallCommandTest.php
+zurmo/app/protected/commands/tests/unit/JobManagerCommandTest.php
+zurmo/app/protected/commands/tests/unit/ManageMetadataCommandTest.php
+zurmo/app/protected/commands/tests/unit/UpdateSchemaCommandTest.php
 zurmo/app/protected/commands/zurmoc
 zurmo/app/protected/commands/zurmoc.bat
 zurmo/app/protected/commands/zurmoc.php
@@ -189,6 +195,7 @@ zurmo/app/protected/core/elements/actions/ListLinkActionElement.php
 zurmo/app/protected/core/elements/actions/ListRowActionElement.php
 zurmo/app/protected/core/elements/actions/MassDeleteLinkActionElement.php
 zurmo/app/protected/core/elements/actions/MassEditLinkActionElement.php
+zurmo/app/protected/core/elements/actions/ModalListLinkActionElement.php
 zurmo/app/protected/core/elements/actions/RelatedDeleteLinkActionElement.php
 zurmo/app/protected/core/elements/actions/RelatedListLinkActionElement.php
 zurmo/app/protected/core/elements/actions/RelatedUnlinkActionElement.php
@@ -240,6 +247,7 @@ zurmo/app/protected/core/interfaces/CollectionAttributeFormInterface.php
 zurmo/app/protected/core/interfaces/DerivedElementInterface.php
 zurmo/app/protected/core/interfaces/ElementActionTypeInterface.php
 zurmo/app/protected/core/interfaces/PortletViewInterface.php
+zurmo/app/protected/core/interfaces/UserPersistentSettingsCleanupForPortletInterface.php
 zurmo/app/protected/core/messages/
 zurmo/app/protected/core/messages/de/
 zurmo/app/protected/core/messages/de/Default.php
@@ -280,6 +288,7 @@ zurmo/app/protected/core/models/RedBeanSqlExecuteManager.php
 zurmo/app/protected/core/models/RedBeansCache.php
 zurmo/app/protected/core/models/ZurmoRedBeanLinkManager.php
 zurmo/app/protected/core/models/ZurmoRedBeanPluginQueryLogger.php
+zurmo/app/protected/core/models/ZurmoRedBeanQueryFileLogger.php
 zurmo/app/protected/core/modules/
 zurmo/app/protected/core/modules/Module.php
 zurmo/app/protected/core/portlets/
@@ -488,6 +497,7 @@ zurmo/app/protected/core/utils/ModelAttributeToMixedArrayTypeUtil.php
 zurmo/app/protected/core/utils/ModelAttributeToMixedTypeUtil.php
 zurmo/app/protected/core/utils/ModelAttributeToOperatorTypeUtil.php
 zurmo/app/protected/core/utils/ModelDataProviderUtil.php
+zurmo/app/protected/core/utils/NullModalListLinkProvider.php
 zurmo/app/protected/core/utils/PostUtil.php
 zurmo/app/protected/core/utils/RandomDataUtil.php
 zurmo/app/protected/core/utils/RedBeanDatabaseBuilderUtil.php
@@ -508,6 +518,7 @@ zurmo/app/protected/core/utils/UpgradeUtil.php
 zurmo/app/protected/core/utils/UploadedFileUtil.php
 zurmo/app/protected/core/utils/W3CValidatorServiceUtil.php
 zurmo/app/protected/core/utils/WebServiceXCurrencyServiceUtil.php
+zurmo/app/protected/core/utils/Zurmo.php
 zurmo/app/protected/core/utils/ZurmoCache.php
 zurmo/app/protected/core/utils/ZurmoCurrencyCodes.php
 zurmo/app/protected/core/utils/ZurmoHtml.php
@@ -1100,6 +1111,7 @@ zurmo/app/protected/modules/activities/rules/ActivityMashableActivityRules.php
 zurmo/app/protected/modules/activities/rules/AllLatestActivitiesListPortletRules.php
 zurmo/app/protected/modules/activities/tests/
 zurmo/app/protected/modules/activities/tests/unit/
+zurmo/app/protected/modules/activities/tests/unit/AccountLatestActivtiesForPortletViewTest.php
 zurmo/app/protected/modules/activities/tests/unit/ActivitiesActionSecurityTest.php
 zurmo/app/protected/modules/activities/tests/unit/ActivitiesImportTest.php
 zurmo/app/protected/modules/activities/tests/unit/ActivitiesObserverTest.php
@@ -1202,8 +1214,10 @@ zurmo/app/protected/modules/comments/rules/badges/CreateCommentGameBadgeRules.ph
 zurmo/app/protected/modules/comments/tests/
 zurmo/app/protected/modules/comments/tests/unit/
 zurmo/app/protected/modules/comments/tests/unit/CommentTest.php
+zurmo/app/protected/modules/comments/tests/unit/CommentsUtilText.php
 zurmo/app/protected/modules/comments/utils/
 zurmo/app/protected/modules/comments/utils/CommentZurmoControllerUtil.php
+zurmo/app/protected/modules/comments/utils/CommentsUtil.php
 zurmo/app/protected/modules/comments/views/
 zurmo/app/protected/modules/comments/views/CommentForSocialItemInlineEditView.php
 zurmo/app/protected/modules/comments/views/CommentInlineEditView.php
@@ -1380,6 +1394,7 @@ zurmo/app/protected/modules/conversations/data/ConversationsDemoEmailNotificatio
 zurmo/app/protected/modules/conversations/elements/
 zurmo/app/protected/modules/conversations/elements/actions/
 zurmo/app/protected/modules/conversations/elements/actions/ConversationDeleteLinkActionElement.php
+zurmo/app/protected/modules/conversations/elements/actions/ConversationsClosedLinkActionElement.php
 zurmo/app/protected/modules/conversations/elements/actions/ConversationsCreatedLinkActionElement.php
 zurmo/app/protected/modules/conversations/elements/actions/ConversationsParticipantLinkActionElement.php
 zurmo/app/protected/modules/conversations/elements/actions/CreateConversationFromRelatedListLinkActionElement.php
@@ -1388,6 +1403,7 @@ zurmo/app/protected/modules/conversations/elements/actions/security/Conversation
 zurmo/app/protected/modules/conversations/elements/derived/
 zurmo/app/protected/modules/conversations/elements/derived/ConversationItemsElement.php
 zurmo/app/protected/modules/conversations/elements/derived/ConversationLatestElement.php
+zurmo/app/protected/modules/conversations/elements/derived/ConversationOpenCloseElement.php
 zurmo/app/protected/modules/conversations/elements/derived/MultiplePeopleForConversationElement.php
 zurmo/app/protected/modules/conversations/elements/derived/OnChangeProcessMultiplePeopleForConversationElement.php
 zurmo/app/protected/modules/conversations/forms/
@@ -1452,6 +1468,7 @@ zurmo/app/protected/modules/designer/adapters/DerivedAttributesAdapter.php
 zurmo/app/protected/modules/designer/adapters/DropDownDependencyModelDerivedAttributesAdapter.php
 zurmo/app/protected/modules/designer/adapters/DropDownDependencyToMappingLayoutAdapter.php
 zurmo/app/protected/modules/designer/adapters/DropDownModelAttributesAdapter.php
+zurmo/app/protected/modules/designer/adapters/HasOneModelAttributesAdapter.php
 zurmo/app/protected/modules/designer/adapters/LayoutMetadataAdapter.php
 zurmo/app/protected/modules/designer/adapters/ModelAttributesAdapter.php
 zurmo/app/protected/modules/designer/adapters/ModelFormAttributesAdapter.php
@@ -1497,6 +1514,7 @@ zurmo/app/protected/modules/designer/forms/attributes/DecimalAttributeForm.php
 zurmo/app/protected/modules/designer/forms/attributes/DropDownAttributeForm.php
 zurmo/app/protected/modules/designer/forms/attributes/DropDownDependencyAttributeForm.php
 zurmo/app/protected/modules/designer/forms/attributes/EmailAddressInformationAttributeForm.php
+zurmo/app/protected/modules/designer/forms/attributes/HasOneModelAttributeForm.php
 zurmo/app/protected/modules/designer/forms/attributes/IntegerAttributeForm.php
 zurmo/app/protected/modules/designer/forms/attributes/MaxLengthAttributeForm.php
 zurmo/app/protected/modules/designer/forms/attributes/MinMaxValueAttributeForm.php
@@ -1583,6 +1601,7 @@ zurmo/app/protected/modules/designer/tests/unit/DropDownDependencyCustomFieldMap
 zurmo/app/protected/modules/designer/tests/unit/DropDownDependencyDerivedAttributeDesignerUtilTest.php
 zurmo/app/protected/modules/designer/tests/unit/DropDownDependencyToMappingLayoutAdapterTest.php
 zurmo/app/protected/modules/designer/tests/unit/DropDownModelAttributesAdapterTest.php
+zurmo/app/protected/modules/designer/tests/unit/HasOneModelAttributesAdapterTest.php
 zurmo/app/protected/modules/designer/tests/unit/ModelMetadataUtilTest.php
 zurmo/app/protected/modules/designer/tests/unit/ModuleMetadataFormAdaptersTest.php
 zurmo/app/protected/modules/designer/tests/unit/MultiSelectDropDownFormTest.php
@@ -1663,6 +1682,7 @@ zurmo/app/protected/modules/emailMessages/controllers/DefaultController.php
 zurmo/app/protected/modules/emailMessages/controllers/DemoController.php
 zurmo/app/protected/modules/emailMessages/controllers/filters/
 zurmo/app/protected/modules/emailMessages/controllers/filters/EmailConfigurationCheckControllerFilter.php
+zurmo/app/protected/modules/emailMessages/controllers/filters/EmailMessagesRequiringArchivingCheckControllerFilter.php
 zurmo/app/protected/modules/emailMessages/controllers/filters/UserEmailConfigurationCheckControllerFilter.php
 zurmo/app/protected/modules/emailMessages/data/
 zurmo/app/protected/modules/emailMessages/data/EmailMessagesDefaultDataMaker.php
@@ -1671,7 +1691,6 @@ zurmo/app/protected/modules/emailMessages/elements/
 zurmo/app/protected/modules/emailMessages/elements/EmailAddressInformationElement.php
 zurmo/app/protected/modules/emailMessages/elements/EmailMessageContentElement.php
 zurmo/app/protected/modules/emailMessages/elements/EmailMessageSenderElement.php
-zurmo/app/protected/modules/emailMessages/elements/EmailMessageSentDateTimeElement.php
 zurmo/app/protected/modules/emailMessages/elements/EmailSignatureElement.php
 zurmo/app/protected/modules/emailMessages/elements/SendATestEmailToElement.php
 zurmo/app/protected/modules/emailMessages/elements/TestImapConnectionElement.php
@@ -1713,7 +1732,7 @@ zurmo/app/protected/modules/emailMessages/models/EmailMessageSendError.php
 zurmo/app/protected/modules/emailMessages/models/EmailMessageSender.php
 zurmo/app/protected/modules/emailMessages/models/EmailSignature.php
 zurmo/app/protected/modules/emailMessages/rules/
-zurmo/app/protected/modules/emailMessages/rules/EmailMessageArchivingEmailAddressNotMachingNotificationRules.php
+zurmo/app/protected/modules/emailMessages/rules/EmailMessageArchivingEmailAddressNotMatchingNotificationRules.php
 zurmo/app/protected/modules/emailMessages/rules/EmailMessageMashableActivityRules.php
 zurmo/app/protected/modules/emailMessages/tests/
 zurmo/app/protected/modules/emailMessages/tests/functional/
@@ -1734,6 +1753,7 @@ zurmo/app/protected/modules/emailMessages/tests/unit/ArchivedEmailMatchingUtilTe
 zurmo/app/protected/modules/emailMessages/tests/unit/ClearSentNotificationsEmailJobTest.php
 zurmo/app/protected/modules/emailMessages/tests/unit/CreateEmailMessageFormTest.php
 zurmo/app/protected/modules/emailMessages/tests/unit/EmailAccountTest.php
+zurmo/app/protected/modules/emailMessages/tests/unit/EmailArchivingJobDocumentationTest.php
 zurmo/app/protected/modules/emailMessages/tests/unit/EmailArchivingJobTest.php
 zurmo/app/protected/modules/emailMessages/tests/unit/EmailArchivingUtilTest.php
 zurmo/app/protected/modules/emailMessages/tests/unit/EmailBoxTest.php
@@ -1778,6 +1798,7 @@ zurmo/app/protected/modules/emailMessages/views/NoGlobalEmailConfigurationYetVie
 zurmo/app/protected/modules/emailMessages/views/NoUserEmailConfigurationYetView.php
 zurmo/app/protected/modules/emailMessages/views/TestEmailMessageView.php
 zurmo/app/protected/modules/emailMessages/views/TestImapConnectionMessageView.php
+zurmo/app/protected/modules/emailMessages/views/ZeroEmailMessagesRequiringArchivingView.php
 zurmo/app/protected/modules/export/
 zurmo/app/protected/modules/export/ExportModule.php
 zurmo/app/protected/modules/export/adapters/
@@ -1966,6 +1987,11 @@ zurmo/app/protected/modules/home/messages/it/Default.php
 zurmo/app/protected/modules/home/models/
 zurmo/app/protected/modules/home/models/Dashboard.php
 zurmo/app/protected/modules/home/tests/
+zurmo/app/protected/modules/home/tests/functional/
+zurmo/app/protected/modules/home/tests/functional/HomeTestSuite.html
+zurmo/app/protected/modules/home/tests/functional/cases/
+zurmo/app/protected/modules/home/tests/functional/cases/LoginSuperUser.html
+zurmo/app/protected/modules/home/tests/functional/cases/SortMyAccounts.html
 zurmo/app/protected/modules/home/tests/unit/
 zurmo/app/protected/modules/home/tests/unit/DashboardTest.php
 zurmo/app/protected/modules/home/tests/unit/DashboardTestHelper.php
@@ -2274,6 +2300,7 @@ zurmo/app/protected/modules/install/serviceHelpers/DatabaseThreadStackServiceHel
 zurmo/app/protected/modules/install/serviceHelpers/FilePermissionsServiceHelper.php
 zurmo/app/protected/modules/install/serviceHelpers/IMAPServiceHelper.php
 zurmo/app/protected/modules/install/serviceHelpers/InstanceFoldersServiceHelper.php
+zurmo/app/protected/modules/install/serviceHelpers/LdapServiceHelper.php
 zurmo/app/protected/modules/install/serviceHelpers/MbStringServiceHelper.php
 zurmo/app/protected/modules/install/serviceHelpers/MemcacheServiceHelper.php
 zurmo/app/protected/modules/install/serviceHelpers/PCREServiceHelper.php
@@ -2356,7 +2383,6 @@ zurmo/app/protected/modules/jobsManager/models/JobLog.php
 zurmo/app/protected/modules/jobsManager/rules/
 zurmo/app/protected/modules/jobsManager/rules/ClearAssetsFolderNotificationRules.php
 zurmo/app/protected/modules/jobsManager/rules/EnableMinifyNotificationRules.php
-zurmo/app/protected/modules/jobsManager/rules/HostInfoAndScriptUrlNotSetupNotificationRules.php
 zurmo/app/protected/modules/jobsManager/rules/JobCompletedWithErrorsNotificationRules.php
 zurmo/app/protected/modules/jobsManager/rules/JobsManagerAccessNotificationRules.php
 zurmo/app/protected/modules/jobsManager/rules/NewZurmoVersionAvailableNotificationRules.php
@@ -3022,6 +3048,7 @@ zurmo/app/protected/modules/tasks/views/related/OpenTasksForOpportunityRelatedLi
 zurmo/app/protected/modules/tasks/views/related/OpenTasksRelatedListView.php
 zurmo/app/protected/modules/users/
 zurmo/app/protected/modules/users/UserConfiguration.php
+zurmo/app/protected/modules/users/UserLdapIdentity.php
 zurmo/app/protected/modules/users/UsersModule.php
 zurmo/app/protected/modules/users/adapters/
 zurmo/app/protected/modules/users/adapters/UserConfigurationFormAdapter.php
@@ -3035,6 +3062,7 @@ zurmo/app/protected/modules/users/data/UsersDemoDataMaker.php
 zurmo/app/protected/modules/users/elements/
 zurmo/app/protected/modules/users/elements/AvatarTypeAndEmailElement.php
 zurmo/app/protected/modules/users/elements/BackgroundTextureElement.php
+zurmo/app/protected/modules/users/elements/DesktopNotificationElement.php
 zurmo/app/protected/modules/users/elements/OutboundSettingsCheckBoxElement.php
 zurmo/app/protected/modules/users/elements/ThemeColorElement.php
 zurmo/app/protected/modules/users/elements/UserElement.php
@@ -3077,6 +3105,7 @@ zurmo/app/protected/modules/users/rules/
 zurmo/app/protected/modules/users/rules/UserChangePasswordViewDesignerRules.php
 zurmo/app/protected/modules/users/rules/UserCreateViewDesignerRules.php
 zurmo/app/protected/modules/users/rules/UserEditAndDetailsViewDesignerRules.php
+zurmo/app/protected/modules/users/rules/UsersByRoleModalListViewDesignerRules.php
 zurmo/app/protected/modules/users/rules/UsersImportRules.php
 zurmo/app/protected/modules/users/rules/attributes/
 zurmo/app/protected/modules/users/rules/attributes/PasswordAttributeImportRules.php
@@ -3091,8 +3120,11 @@ zurmo/app/protected/modules/users/tests/functional/
 zurmo/app/protected/modules/users/tests/functional/UsersTestSuite.html
 zurmo/app/protected/modules/users/tests/functional/cases/
 zurmo/app/protected/modules/users/tests/functional/cases/AdvancedSearchUsers.html
+zurmo/app/protected/modules/users/tests/functional/cases/CheckDefaultPermissionsLoadedOnlyOnCreate.html
+zurmo/app/protected/modules/users/tests/functional/cases/CheckDefaultPermissionsSave.html
 zurmo/app/protected/modules/users/tests/functional/cases/CheckRememberMe.html
 zurmo/app/protected/modules/users/tests/functional/cases/CreateUser.html
+zurmo/app/protected/modules/users/tests/functional/cases/EditUsers.html
 zurmo/app/protected/modules/users/tests/functional/cases/LoginSuperUser.html
 zurmo/app/protected/modules/users/tests/functional/cases/MassEditUsers.html
 zurmo/app/protected/modules/users/tests/functional/cases/ViewWalkThrough.html
@@ -3103,16 +3135,20 @@ zurmo/app/protected/modules/users/tests/unit/UserElementsTest.php
 zurmo/app/protected/modules/users/tests/unit/UserGroupMembershipToViewAdapterTest.php
 zurmo/app/protected/modules/users/tests/unit/UserImportSanitizerUtilTest.php
 zurmo/app/protected/modules/users/tests/unit/UserImportTest.php
+zurmo/app/protected/modules/users/tests/unit/UserLdapTest.php
 zurmo/app/protected/modules/users/tests/unit/UserMappingRuleFormAndElementTypeUtilTest.php
 zurmo/app/protected/modules/users/tests/unit/UserPolicyRulesTest.php
 zurmo/app/protected/modules/users/tests/unit/UserSearchTest.php
 zurmo/app/protected/modules/users/tests/unit/UserStatusUtilTest.php
 zurmo/app/protected/modules/users/tests/unit/UserTest.php
 zurmo/app/protected/modules/users/tests/unit/UserTestHelper.php
+zurmo/app/protected/modules/users/tests/unit/UsersByRoleModalListControllerTest.php
 zurmo/app/protected/modules/users/tests/unit/UsersImportDataAnalyzerTest.php
 zurmo/app/protected/modules/users/tests/unit/files/
 zurmo/app/protected/modules/users/tests/unit/files/importAnalyzerTest.csv
 zurmo/app/protected/modules/users/tests/unit/walkthrough/
+zurmo/app/protected/modules/users/tests/unit/walkthrough/UserDefaultPermissionWalkthroughTest.php
+zurmo/app/protected/modules/users/tests/unit/walkthrough/UsersByRoleWalkthroughTest.php
 zurmo/app/protected/modules/users/tests/unit/walkthrough/UsersImportSuperUserWalkthroughTest.php
 zurmo/app/protected/modules/users/tests/unit/walkthrough/UsersRegularUserExportWalkthroughTest.php
 zurmo/app/protected/modules/users/tests/unit/walkthrough/UsersRegularUserWalkthroughTest.php
@@ -3120,7 +3156,9 @@ zurmo/app/protected/modules/users/tests/unit/walkthrough/UsersSuperUserExportWal
 zurmo/app/protected/modules/users/tests/unit/walkthrough/UsersSuperUserWalkthroughTest.php
 zurmo/app/protected/modules/users/utils/
 zurmo/app/protected/modules/users/utils/UserAccessUtil.php
+zurmo/app/protected/modules/users/utils/UserDetailsModalListLinkProvider.php
 zurmo/app/protected/modules/users/utils/UserStatusUtil.php
+zurmo/app/protected/modules/users/utils/UsersByRoleModalListControllerUtil.php
 zurmo/app/protected/modules/users/utils/analyzers/
 zurmo/app/protected/modules/users/utils/analyzers/UserStatusBatchAttributeValueDataAnalyzer.php
 zurmo/app/protected/modules/users/utils/sanitizers/
@@ -3147,6 +3185,7 @@ zurmo/app/protected/modules/users/views/UserEmailConfigurationEditView.php
 zurmo/app/protected/modules/users/views/UserGroupMembershipView.php
 zurmo/app/protected/modules/users/views/UserTimeZoneConfirmationView.php
 zurmo/app/protected/modules/users/views/UsersActionBarForSearchAndListView.php
+zurmo/app/protected/modules/users/views/UsersByRoleModalListView.php
 zurmo/app/protected/modules/users/views/UsersListView.php
 zurmo/app/protected/modules/users/views/UsersMassEditView.php
 zurmo/app/protected/modules/users/views/UsersModalListView.php
@@ -3166,12 +3205,15 @@ zurmo/app/protected/modules/zurmo/adapters/columns/
 zurmo/app/protected/modules/zurmo/adapters/columns/AddressListViewColumnAdapter.php
 zurmo/app/protected/modules/zurmo/adapters/columns/AuditEventListViewColumnAdapter.php
 zurmo/app/protected/modules/zurmo/adapters/columns/CalculatedNumberListViewColumnAdapter.php
+zurmo/app/protected/modules/zurmo/adapters/ldap/
+zurmo/app/protected/modules/zurmo/adapters/ldap/LdapConfigurationFormAdapter.php
 zurmo/app/protected/modules/zurmo/components/
 zurmo/app/protected/modules/zurmo/components/BeginRequestBehavior.php
 zurmo/app/protected/modules/zurmo/components/CommandBeginRequestBehavior.php
 zurmo/app/protected/modules/zurmo/components/EndRequestBehavior.php
 zurmo/app/protected/modules/zurmo/components/UserIdentity.php
 zurmo/app/protected/modules/zurmo/components/WebUser.php
+zurmo/app/protected/modules/zurmo/components/ZurmoAuthenticationHelper.php
 zurmo/app/protected/modules/zurmo/components/ZurmoBaseController.php
 zurmo/app/protected/modules/zurmo/components/ZurmoCurrencyHelper.php
 zurmo/app/protected/modules/zurmo/components/ZurmoDbStatePersister.php
@@ -3184,6 +3226,7 @@ zurmo/app/protected/modules/zurmo/components/ZurmoTimeZoneHelper.php
 zurmo/app/protected/modules/zurmo/components/ZurmoUrlManager.php
 zurmo/app/protected/modules/zurmo/controllers/
 zurmo/app/protected/modules/zurmo/controllers/ApiController.php
+zurmo/app/protected/modules/zurmo/controllers/AuthenticationController.php
 zurmo/app/protected/modules/zurmo/controllers/CurrencyApiController.php
 zurmo/app/protected/modules/zurmo/controllers/CurrencyController.php
 zurmo/app/protected/modules/zurmo/controllers/CustomFieldApiController.php
@@ -3194,6 +3237,7 @@ zurmo/app/protected/modules/zurmo/controllers/FileModelController.php
 zurmo/app/protected/modules/zurmo/controllers/GroupApiController.php
 zurmo/app/protected/modules/zurmo/controllers/GroupController.php
 zurmo/app/protected/modules/zurmo/controllers/LanguageController.php
+zurmo/app/protected/modules/zurmo/controllers/LdapController.php
 zurmo/app/protected/modules/zurmo/controllers/ReadPermissionsController.php
 zurmo/app/protected/modules/zurmo/controllers/RoleApiController.php
 zurmo/app/protected/modules/zurmo/controllers/RoleController.php
@@ -3229,6 +3273,7 @@ zurmo/app/protected/modules/zurmo/elements/ParentGroupElement.php
 zurmo/app/protected/modules/zurmo/elements/ParentRoleElement.php
 zurmo/app/protected/modules/zurmo/elements/RoleElement.php
 zurmo/app/protected/modules/zurmo/elements/SingleSeriesChartTypeStaticDropDownElement.php
+zurmo/app/protected/modules/zurmo/elements/TestLdapConnectionElement.php
 zurmo/app/protected/modules/zurmo/elements/TimeZoneStaticDropDownElement.php
 zurmo/app/protected/modules/zurmo/elements/actions/
 zurmo/app/protected/modules/zurmo/elements/actions/AuditEventsModalListLinkActionElement.php
@@ -3239,6 +3284,7 @@ zurmo/app/protected/modules/zurmo/elements/actions/GroupPoliciesEditLinkActionEl
 zurmo/app/protected/modules/zurmo/elements/actions/GroupRightsEditLinkActionElement.php
 zurmo/app/protected/modules/zurmo/elements/actions/GroupUserMembershipEditLinkActionElement.php
 zurmo/app/protected/modules/zurmo/elements/actions/RoleDeleteLinkActionElement.php
+zurmo/app/protected/modules/zurmo/elements/actions/UsersModalListLinkActionElement.php
 zurmo/app/protected/modules/zurmo/elements/actions/security/
 zurmo/app/protected/modules/zurmo/elements/actions/security/ActionSecurity.php
 zurmo/app/protected/modules/zurmo/elements/actions/security/ActionSecurityFactory.php
@@ -3254,6 +3300,7 @@ zurmo/app/protected/modules/zurmo/elements/actions/security/RightsOnlyActionSecu
 zurmo/app/protected/modules/zurmo/elements/derived/
 zurmo/app/protected/modules/zurmo/elements/derived/CalculatedNumberElement.php
 zurmo/app/protected/modules/zurmo/elements/derived/DerivedExplicitReadWriteModelPermissionsElement.php
+zurmo/app/protected/modules/zurmo/elements/derived/DerivedExplicitReadWritePermissionsUserConfigElement.php
 zurmo/app/protected/modules/zurmo/elements/derived/FilesElement.php
 zurmo/app/protected/modules/zurmo/elements/security/
 zurmo/app/protected/modules/zurmo/elements/security/ExplicitReadWriteModelPermissionsElement.php
@@ -3296,6 +3343,8 @@ zurmo/app/protected/modules/zurmo/forms/RolesSearchForm.php
 zurmo/app/protected/modules/zurmo/forms/SavedDynamicSearchForm.php
 zurmo/app/protected/modules/zurmo/forms/SecurityForm.php
 zurmo/app/protected/modules/zurmo/forms/ZurmoConfigurationForm.php
+zurmo/app/protected/modules/zurmo/forms/ldap/
+zurmo/app/protected/modules/zurmo/forms/ldap/LdapConfigurationForm.php
 zurmo/app/protected/modules/zurmo/interfaces/
 zurmo/app/protected/modules/zurmo/interfaces/MashableActivityInterface.php
 zurmo/app/protected/modules/zurmo/jobs/
@@ -3358,6 +3407,7 @@ zurmo/app/protected/modules/zurmo/tests/functional/GroupTestSuite.html
 zurmo/app/protected/modules/zurmo/tests/functional/RoleTestSuite.html
 zurmo/app/protected/modules/zurmo/tests/functional/SearchTestSuite.html
 zurmo/app/protected/modules/zurmo/tests/functional/cases/
+zurmo/app/protected/modules/zurmo/tests/functional/cases/CreateGroupWithNoMembers.html
 zurmo/app/protected/modules/zurmo/tests/functional/cases/CreateModifyGroup.html
 zurmo/app/protected/modules/zurmo/tests/functional/cases/CreateModifyRole.html
 zurmo/app/protected/modules/zurmo/tests/functional/cases/LoginSuperUser.html
@@ -3475,9 +3525,11 @@ zurmo/app/protected/modules/zurmo/tests/unit/walkthrough/
 zurmo/app/protected/modules/zurmo/tests/unit/walkthrough/CurrencyRegularUserWalkthroughTest.php
 zurmo/app/protected/modules/zurmo/tests/unit/walkthrough/CurrencySuperUserWalkthroughTest.php
 zurmo/app/protected/modules/zurmo/tests/unit/walkthrough/LanguageSuperUserWalkthroughTest.php
+zurmo/app/protected/modules/zurmo/tests/unit/walkthrough/LdapConfigurationSuperUserWalkthroughTest.php
 zurmo/app/protected/modules/zurmo/tests/unit/walkthrough/MiscRegularUserWalkthroughTest.php
 zurmo/app/protected/modules/zurmo/tests/unit/walkthrough/MiscSuperUserWalkthroughTest.php
 zurmo/app/protected/modules/zurmo/tests/unit/walkthrough/RequiredAttributesViewValidityWalkthroughTest.php
+zurmo/app/protected/modules/zurmo/tests/unit/walkthrough/ZurmoConfigurationFormAdapterSuperUserWalkthroughTest.php
 zurmo/app/protected/modules/zurmo/tests/unit/walkthrough/ZurmoDynamicSearchSuperUserWalkthroughTest.php
 zurmo/app/protected/modules/zurmo/tests/unit/walkthrough/ZurmoMixedModelsSearchSuperUserWalkthroughTest.php
 zurmo/app/protected/modules/zurmo/tests/unit/walkthrough/ZurmoRegularUserWalkthroughTest.php
@@ -3496,6 +3548,7 @@ zurmo/app/protected/modules/zurmo/utils/ForgetAllCacheUtil.php
 zurmo/app/protected/modules/zurmo/utils/GlobalSearchUtil.php
 zurmo/app/protected/modules/zurmo/utils/HtmlNotifyUtil.php
 zurmo/app/protected/modules/zurmo/utils/LanguagesToLanguageCollectionViewUtil.php
+zurmo/app/protected/modules/zurmo/utils/LdapUtil.php
 zurmo/app/protected/modules/zurmo/utils/MassDeleteInsufficientPermissionSkipSavingUtil.php
 zurmo/app/protected/modules/zurmo/utils/MassEditInsufficientPermissionSkipSavingUtil.php
 zurmo/app/protected/modules/zurmo/utils/MenuUtil.php
@@ -3522,6 +3575,7 @@ zurmo/app/protected/modules/zurmo/utils/ZurmoControllerUtil.php
 zurmo/app/protected/modules/zurmo/utils/ZurmoDatabaseCompatibilityUtil.php
 zurmo/app/protected/modules/zurmo/utils/ZurmoDefaultAdminViewUtil.php
 zurmo/app/protected/modules/zurmo/utils/ZurmoDefaultViewUtil.php
+zurmo/app/protected/modules/zurmo/utils/ZurmoNotificationUtil.php
 zurmo/app/protected/modules/zurmo/utils/ZurmoRandomDataUtil.php
 zurmo/app/protected/modules/zurmo/utils/ZurmoTips.php
 zurmo/app/protected/modules/zurmo/utils/ZurmoTipsUtil.php
@@ -3598,6 +3652,9 @@ zurmo/app/protected/modules/zurmo/views/ZurmoConfigurationPageView.php
 zurmo/app/protected/modules/zurmo/views/ZurmoDefaultPageView.php
 zurmo/app/protected/modules/zurmo/views/ZurmoDefaultView.php
 zurmo/app/protected/modules/zurmo/views/ZurmoPageView.php
+zurmo/app/protected/modules/zurmo/views/authentication/
+zurmo/app/protected/modules/zurmo/views/authentication/AuthenticationConfigurationListView.php
+zurmo/app/protected/modules/zurmo/views/authentication/AuthenticationConfigurationMenuView.php
 zurmo/app/protected/modules/zurmo/views/charts/
 zurmo/app/protected/modules/zurmo/views/charts/ChartConfigView.php
 zurmo/app/protected/modules/zurmo/views/charts/ChartView.php
@@ -3611,6 +3668,9 @@ zurmo/app/protected/modules/zurmo/views/development/DevelopmentMenuView.php
 zurmo/app/protected/modules/zurmo/views/language/
 zurmo/app/protected/modules/zurmo/views/language/LanguageTitleBarConfigurationListView.php
 zurmo/app/protected/modules/zurmo/views/language/LanguagesCollectionView.php
+zurmo/app/protected/modules/zurmo/views/ldap/
+zurmo/app/protected/modules/zurmo/views/ldap/LdapConfigurationEditAndDetailsView.php
+zurmo/app/protected/modules/zurmo/views/ldap/TestLdapConnectionView.php
 zurmo/app/protected/modules/zurmo/views/search/
 zurmo/app/protected/modules/zurmo/views/search/DynamicSearchRowView.php
 zurmo/app/protected/modules/zurmo/views/search/DynamicSearchView.php
@@ -3869,6 +3929,7 @@ zurmo/app/themes/default/images/welcome-gallery-4.png
 zurmo/app/themes/default/images/welcome-gallery-5.png
 zurmo/app/themes/default/images/welcome-gallery-6.png
 zurmo/app/themes/default/images/widget-close-btn.png
+zurmo/app/themes/default/images/z-logo-60x60.png
 zurmo/app/themes/default/images/zbutton-spinner.gif
 zurmo/app/themes/default/less/
 zurmo/app/themes/default/less/color-scheme.less

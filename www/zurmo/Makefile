@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2013/02/05 16:54:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/06 08:51:00 ajacoutot Exp $
 
 COMMENT=	customer relationship management (CRM) software
 
-V=		1.0.20
-DISTNAME=	zurmo-stable-${V}.46dd9c95bfed
+V=		1.1.20
+DISTNAME=	zurmo-stable-${V}.e84b9e76d27d
 PKGNAME=	zurmo-${V}
-REVISION=	1
 
 CATEGORIES=	www productivity
 
@@ -17,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://dev.zurmo.com/downloads/
+MASTER_SITES=	http://dev2.zurmo.com/downloads/
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
@@ -44,6 +43,7 @@ do-extract:
 
 do-install:
 	cp -Rp ${WRKDIST}/zurmo ${INSTDIR}
+	find ${PREFIX} -name '*.orig' -print0 | xargs -0 rm
 	# "Remove the api test entry script for production use."
 	# "If this website is in production mode, please remove the app/test.php file."
 	rm ${PREFIX}/zurmo/app/test.php

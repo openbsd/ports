@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2013/01/29 12:15:05 ajacoutot Exp $
+$OpenBSD: README,v 1.4 2013/03/06 08:51:00 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -40,5 +40,5 @@ to run the installation script.
 
 Upgrades
 ========
-Please refer to the online documentation at:
+Refer to the online documentation at:
     http://zurmo.org/upgrades
