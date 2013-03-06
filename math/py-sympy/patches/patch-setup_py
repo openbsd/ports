@@ -1,10 +1,10 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2012/06/07 10:19:25 edd Exp $
+$OpenBSD: patch-setup_py,v 1.2 2013/03/06 14:46:35 benoit Exp $
 
 Manual path
 
---- setup.py.origy	Wed May 30 20:54:45 2012
-+++ setup.py	Wed May 30 20:54:54 2012
-@@ -238,7 +238,7 @@ setup(
+--- setup.py.origy	Wed Oct 17 04:30:33 2012
++++ setup.py	Wed Mar  6 13:32:13 2013
+@@ -277,7 +277,7 @@ setup(
        scripts = ['bin/isympy'],
        ext_modules = [],
        package_data = { 'sympy.utilities.mathml' : ['data/*.xsl'] },
