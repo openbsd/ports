@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2012/10/18 20:04:58 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2013/03/06 18:34:58 zhuk Exp $
 @newgroup _icinga:667
 @newuser _icinga:667:_icinga:daemon:Icinga user:/var/icinga:/sbin/nologin
 @comment done this way (rather than SYSCONFDIR/*) for safety...
@@ -60,8 +60,8 @@ share/examples/icinga/updates/icinga.cfg_added_1.7_to_1.8.cfg
 @owner _icinga
 @group _icinga
 @sample /var/icinga/
-@sample /var/icinga/archives/
 @sample /var/log/icinga/
+@sample /var/log/icinga/archives/
 @sample /var/spool/icinga/
 @mode 775
 @group www
