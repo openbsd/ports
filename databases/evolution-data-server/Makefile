@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.130 2013/02/01 16:21:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.131 2013/03/07 07:53:47 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
-GNOME_VERSION=		3.6.3
-REVISION=		2
+GNOME_VERSION=		3.6.4
 
 # Only get the first x.y which is needed in the PLIST.
 R=			${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -34,7 +33,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender asn1 atk-1.0
 WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject com_err
 WANTLIB += crypto curl db dbus-1 expat ffi fontconfig freetype
