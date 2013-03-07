@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2013/01/22 07:21:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/07 09:38:18 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	evolution connector for MS Exchange via EWS
 
 GNOME_PROJECT=	evolution-ews
-GNOME_VERSION=	3.6.3
+GNOME_VERSION=	3.6.4
 
 CATEGORIES=	mail
 
@@ -27,16 +27,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt asn1 atk-1.0
-WANTLIB += atk-bridge-2.0 atspi cairo cairo-gobject camel-1.2
-WANTLIB += canberra canberra-gtk3 com_err crypto db dbus-1 dbus-glib-1
-WANTLIB += ebackend-1.2 ebook-1.2 ecal-1.2 edata-book-1.2 edata-cal-1.2
-WANTLIB += edataserver-1.2 edataserverui-3.0 enchant expat ffi
-WANTLIB += fontconfig freetype gailutil-3 gck-1 gcr-base-3 gcrypt
-WANTLIB += gdk-3 gdk_pixbuf-2.0 geoclue gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gnome-desktop-3 gnome-keyring goa-1.0 gobject-2.0 gpg-error
-WANTLIB += gssapi gstapp-0.10 gstaudio-0.10 gstbase-0.10 gstfft-0.10
+WANTLIB += GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender Xt asn1 atk-1.0 atk-bridge-2.0
+WANTLIB += atspi cairo cairo-gobject camel-1.2 canberra canberra-gtk3
+WANTLIB += com_err crypto db dbus-1 dbus-glib-1 ebackend-1.2 ebook-1.2
+WANTLIB += ecal-1.2 edata-book-1.2 edata-cal-1.2 edataserver-1.2
+WANTLIB += edataserverui-3.0 enchant expat ffi fontconfig freetype
+WANTLIB += gailutil-3 gck-1 gcr-base-3 gcrypt gdk-3 gdk_pixbuf-2.0
+WANTLIB += geoclue gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3
+WANTLIB += gnome-keyring goa-1.0 gobject-2.0 gpg-error gssapi
+WANTLIB += gstapp-0.10 gstaudio-0.10 gstbase-0.10 gstfft-0.10
 WANTLIB += gstinterfaces-0.10 gstpbutils-0.10 gstreamer-0.10 gstvideo-0.10
 WANTLIB += gthread-2.0 gtk-3 gtkhtml-4.0 gtkhtml-editor-4.0 harfbuzz
 WANTLIB += ical icalss icalvcal icudata icui18n icule icuuc javascriptcoregtk-3.0
