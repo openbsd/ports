@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2012/09/20 09:51:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/07 10:37:42 jasper Exp $
 
 TOOL=			gcc
 TOOL_V= 		4.6.3
@@ -28,11 +28,7 @@ SUBST_VARS+=		TOOL_V
 CONFIGURE_ARGS+= 	--enable-languages=${LANGS} 	\
 			--enable-cpp			\
 			--with-gmp=${LOCALBASE}		\
-			--with-mpfr=${LOCALBASE}	\
-			--with-mpc=${LOCALBASE}		\
 			--disable-lto
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 post-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} \
