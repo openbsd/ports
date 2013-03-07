@@ -1,7 +1,7 @@
-$OpenBSD: patch-server_dhcpd_c,v 1.1 2012/01/14 12:43:25 sthen Exp $
---- server/dhcpd.c.orig	Thu Apr 21 10:08:15 2011
-+++ server/dhcpd.c	Fri Dec 23 14:14:41 2011
-@@ -705,6 +705,12 @@ main(int argc, char **argv) {
+$OpenBSD: patch-server_dhcpd_c,v 1.2 2013/03/07 18:59:35 brad Exp $
+--- server/dhcpd.c.orig	Wed Jan  2 19:05:16 2013
++++ server/dhcpd.c	Sun Feb 24 23:40:23 2013
+@@ -707,6 +707,12 @@ main(int argc, char **argv) {
  	if (lftest)
  		exit (0);
  
