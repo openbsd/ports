@@ -1,0 +1,20 @@
+$OpenBSD: patch-addressbook_backends_ldap_e-book-backend-ldap_c,v 1.13 2013/03/07 08:18:20 ajacoutot Exp $
+
+XXX remove when we have a 64-bit time_t
+
+--- addressbook/backends/ldap/e-book-backend-ldap.c.orig	Tue Feb 26 15:58:36 2013
++++ addressbook/backends/ldap/e-book-backend-ldap.c	Thu Mar  7 08:47:07 2013
+@@ -1276,11 +1276,11 @@ create_dn_from_contact (EContact *contact,
+ 	}
+ 
+ 	dn = g_strdup_printf (
+-		"%s=%s%s%lu",
++		"%s=%s%s%llu",
+ 		get_dn_attribute_name (rootdn),
+ 		(cn_part && *cn_part) ? cn_part : "",
+ 		(cn_part && *cn_part) ? "." : "",
+-		time (NULL));
++		(long long)time (NULL));
+ 
+ 	g_free (cn_part);
+ 
