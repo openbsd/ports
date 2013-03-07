@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.12 2012/10/26 12:09:13 ajacoutot Exp $
+$OpenBSD: README,v 1.13 2013/03/07 17:41:38 stsp Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -15,7 +15,7 @@ directory. You can configure this as follows:
 
 "allow_url_fopen" needs to be enabled in PHP using _one_ of the
 following methods:
-    1. ${SYSCONFDIR}/php-{MODPHP_VERSION}.ini
+    1. ${SYSCONFDIR}/php-${MODPHP_VERSION}.ini
     allow_url_fopen = On
     2. /var/www/conf/httpd.conf (main server or VirtualHost)
     php_admin_value allow_url_fopen 1
@@ -37,8 +37,8 @@ another database, the corresponding package needs to be installed:
     php-pdo_pgsql or php-pdo_mysql
 
 When using SQLite, not further configuration is required. However, with
-MySQL or PostgreSQL, the file ${INSTADIR}/config/config.sample.php will
-need to be copied to ${INSTADIR}/config/config.php and configured
+MySQL or PostgreSQL, the file ${INSTDIR}/config/config.sample.php will
+need to be copied to ${INSTDIR}/config/config.php and configured
 accordingly.
 
 Cron job
