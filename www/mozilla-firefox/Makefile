@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.227 2013/03/03 17:34:15 landry Exp $
+# $OpenBSD: Makefile,v 1.228 2013/03/07 23:51:49 landry Exp $
 
 COMMENT =	Mozilla web browser
 BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
@@ -6,7 +6,7 @@ BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
 # Don't forget to bump www/firefox-i18n after updates.
 # Don't forget to update devel/xulrunner/2.0 if patches changes.
 
-MOZILLA_VERSION =	19.0.1
+MOZILLA_VERSION =	19.0.2
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
