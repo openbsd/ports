@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/02/04 10:35:14 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/03/07 07:32:14 rpe Exp $
 bin/ansible
 bin/ansible-doc
 bin/ansible-playbook
@@ -114,6 +114,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/pipe.py
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/pipe.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/redis_kv.py
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/redis_kv.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/sequence.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/sequence.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/template.py
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/template.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/poller.py
@@ -133,59 +135,10 @@ lib/python${MODPY_VERSION}/site-packages/ansible/utils/template.pyc
 @man man/man1/ansible-playbook.1
 @man man/man1/ansible-pull.1
 @man man/man1/ansible.1
-@man man/man3/ansible.add_host.3
-@man man/man3/ansible.apt.3
-@man man/man3/ansible.apt_repository.3
-@man man/man3/ansible.assemble.3
-@man man/man3/ansible.async_status.3
-@man man/man3/ansible.authorized_key.3
-@man man/man3/ansible.command.3
-@man man/man3/ansible.copy.3
-@man man/man3/ansible.cron.3
-@man man/man3/ansible.debug.3
-@man man/man3/ansible.easy_install.3
-@man man/man3/ansible.ec2.3
-@man man/man3/ansible.facter.3
-@man man/man3/ansible.fail.3
-@man man/man3/ansible.fetch.3
-@man man/man3/ansible.file.3
-@man man/man3/ansible.fireball.3
-@man man/man3/ansible.get_url.3
-@man man/man3/ansible.git.3
-@man man/man3/ansible.group.3
-@man man/man3/ansible.group_by.3
-@man man/man3/ansible.ini_file.3
-@man man/man3/ansible.lineinfile.3
-@man man/man3/ansible.mail.3
-@man man/man3/ansible.mount.3
-@man man/man3/ansible.mysql_db.3
-@man man/man3/ansible.mysql_user.3
-@man man/man3/ansible.nagios.3
-@man man/man3/ansible.ohai.3
-@man man/man3/ansible.pause.3
-@man man/man3/ansible.ping.3
-@man man/man3/ansible.pip.3
-@man man/man3/ansible.postgresql_db.3
-@man man/man3/ansible.postgresql_user.3
-@man man/man3/ansible.raw.3
-@man man/man3/ansible.script.3
-@man man/man3/ansible.seboolean.3
-@man man/man3/ansible.selinux.3
-@man man/man3/ansible.service.3
-@man man/man3/ansible.setup.3
-@man man/man3/ansible.shell.3
-@man man/man3/ansible.slurp.3
-@man man/man3/ansible.subversion.3
-@man man/man3/ansible.supervisorctl.3
-@man man/man3/ansible.svr4pkg.3
-@man man/man3/ansible.template.3
-@man man/man3/ansible.user.3
-@man man/man3/ansible.virt.3
-@man man/man3/ansible.wait_for.3
-@man man/man3/ansible.yum.3
 share/ansible/
 share/ansible/add_host
 share/ansible/apt
+share/ansible/apt_key
 share/ansible/apt_repository
 share/ansible/assemble
 share/ansible/async_status
@@ -197,6 +150,7 @@ share/ansible/cron
 share/ansible/debug
 share/ansible/easy_install
 share/ansible/ec2
+share/ansible/ec2_facts
 share/ansible/facter
 share/ansible/fail
 share/ansible/fetch
@@ -206,6 +160,7 @@ share/ansible/get_url
 share/ansible/git
 share/ansible/group
 share/ansible/group_by
+share/ansible/hg
 share/ansible/ini_file
 share/ansible/lineinfile
 share/ansible/mail
@@ -214,9 +169,11 @@ share/ansible/mysql_db
 share/ansible/mysql_user
 share/ansible/nagios
 share/ansible/ohai
+share/ansible/pacman
 share/ansible/pause
 share/ansible/ping
 share/ansible/pip
+share/ansible/pkgin
 share/ansible/postgresql_db
 share/ansible/postgresql_user
 share/ansible/raw
@@ -230,16 +187,19 @@ share/ansible/slurp
 share/ansible/subversion
 share/ansible/supervisorctl
 share/ansible/svr4pkg
+share/ansible/sysctl
 share/ansible/template
 share/ansible/user
 share/ansible/virt
 share/ansible/wait_for
 share/ansible/yum
 share/doc/ansible/
+share/doc/ansible/CHANGELOG.md
 share/doc/ansible/COPYING
 share/doc/ansible/README.md
 share/examples/ansible/
 @sample ${SYSCONFDIR}/ansible/
+share/examples/ansible/DOCUMENTATION.yaml
 share/examples/ansible/ansible.cfg
 @sample ${SYSCONFDIR}/ansible/ansible.cfg
 share/examples/ansible/hosts
@@ -284,3 +244,6 @@ share/examples/ansible/playbooks/vars/
 share/examples/ansible/playbooks/vars/CentOS.yml
 share/examples/ansible/playbooks/vars/defaults.yml
 share/examples/ansible/playbooks/vars/external_vars.yml
+share/examples/ansible/scripts/
+share/examples/ansible/scripts/uptime.py
+share/examples/ansible/scripts/yaml_to_ini.py
