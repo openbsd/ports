@@ -1,7 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/07/19 20:06:34 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/03/08 10:26:26 jasper Exp $
 lib/lua/${MODLUA_VERSION}/lgi/
 lib/lua/${MODLUA_VERSION}/lgi/corelgi${MODLUA_DEP}.so
 share/examples/${FULLPKGNAME}/
+share/examples/${FULLPKGNAME}/GDbus/
+share/examples/${FULLPKGNAME}/GDbus/list-system-services.lua
+share/examples/${FULLPKGNAME}/GnomeKeyring/
+share/examples/${FULLPKGNAME}/GnomeKeyring/list-keyrings-passwords.lua
 share/examples/${FULLPKGNAME}/cairo.lua
 share/examples/${FULLPKGNAME}/clutterdemo.lua
 share/examples/${FULLPKGNAME}/console.lua
@@ -32,6 +36,8 @@ share/examples/${FULLPKGNAME}/gtk-demo/demo-images.lua
 share/examples/${FULLPKGNAME}/gtk-demo/demo-infobar.lua
 share/examples/${FULLPKGNAME}/gtk-demo/demo-links.lua
 share/examples/${FULLPKGNAME}/gtk-demo/demo-menus.lua
+share/examples/${FULLPKGNAME}/gtk-demo/demo-ofw-mirror.lua
+share/examples/${FULLPKGNAME}/gtk-demo/demo-ofw-rotbutton.lua
 share/examples/${FULLPKGNAME}/gtk-demo/demo-paned.lua
 share/examples/${FULLPKGNAME}/gtk-demo/demo-pickers.lua
 share/examples/${FULLPKGNAME}/gtk-demo/demo-pixbufs.lua
@@ -66,6 +72,7 @@ share/examples/${FULLPKGNAME}/gtkpad.lua
 share/examples/${FULLPKGNAME}/gtkterminal.lua
 share/examples/${FULLPKGNAME}/mxwidgets.lua
 share/examples/${FULLPKGNAME}/repobrowser.lua
+share/examples/${FULLPKGNAME}/soupsvr.lua
 share/lua/${MODLUA_VERSION}/lgi/
 share/lua/${MODLUA_VERSION}/lgi.lua
 share/lua/${MODLUA_VERSION}/lgi/class.lua
@@ -78,6 +85,7 @@ share/lua/${MODLUA_VERSION}/lgi/log.lua
 share/lua/${MODLUA_VERSION}/lgi/namespace.lua
 share/lua/${MODLUA_VERSION}/lgi/override/
 share/lua/${MODLUA_VERSION}/lgi/override/Clutter.lua
+share/lua/${MODLUA_VERSION}/lgi/override/GLib-Timer.lua
 share/lua/${MODLUA_VERSION}/lgi/override/GLib-Variant.lua
 share/lua/${MODLUA_VERSION}/lgi/override/GLib.lua
 share/lua/${MODLUA_VERSION}/lgi/override/GObject-Closure.lua
@@ -91,5 +99,6 @@ share/lua/${MODLUA_VERSION}/lgi/override/Gtk.lua
 share/lua/${MODLUA_VERSION}/lgi/override/Pango.lua
 share/lua/${MODLUA_VERSION}/lgi/override/PangoCairo.lua
 share/lua/${MODLUA_VERSION}/lgi/override/cairo.lua
+share/lua/${MODLUA_VERSION}/lgi/package.lua
 share/lua/${MODLUA_VERSION}/lgi/record.lua
 share/lua/${MODLUA_VERSION}/lgi/version.lua

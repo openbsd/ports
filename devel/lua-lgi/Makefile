@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2012/09/20 21:10:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/08 10:26:26 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	lua bindings to libraries using GObject-Introspection
 
-DISTNAME=	lgi-0.6.2
+DISTNAME=	lgi-0.7.0
 PKGNAME=	lua-${DISTNAME}
-REVISION=	2
 CATEGORIES=	devel
 
 HOMEPAGE=	https://github.com/pavouk/lgi
@@ -21,12 +20,11 @@ MODULES=	devel/gettext \
 		lang/lua
 
 WANTLIB += ffi girepository-1.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0
+WANTLIB += pthread
 
 LIB_DEPENDS=	devel/gobject-introspection
 
-MASTER_SITES=	https://github.com/downloads/pavouk/lgi/ \
-		http://distfiles.nl/
+MASTER_SITES=	http://distfiles.nl/
 
 USE_GMAKE=	Yes
 MAKE_ENV=	MAKE=${MAKE_PROGRAM} LUA_CFLAGS="-I${MODLUA_INCL_DIR}" \
