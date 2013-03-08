@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/01/21 18:05:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/08 10:35:40 jasper Exp $
 
 COMMENT=	SPICE protocol headers
 
-DISTNAME=	spice-protocol-0.12.3
+DISTNAME=	spice-protocol-0.12.4
 CATEGORIES=	devel net
 
 HOMEPAGE=	http://spice-space.org/
