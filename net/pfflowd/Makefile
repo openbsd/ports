@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/19 22:31:37 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/08 02:04:37 djm Exp $
 
 COMMENT=	PF to NetFlow converter
 
 BROKEN=		needs updating for pfsync changes, try pflow(4) instead
 
 DISTNAME=	pfflowd-0.7
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.mindrot.org/files/pfflowd/
 
 HOMEPAGE=	http://www.mindrot.org/pfflowd.html
-
-MAINTAINER=	Damien Miller <djm@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

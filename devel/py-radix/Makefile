@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/16 09:24:55 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/08 02:04:37 djm Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Radix tree implementation for Python
 
 DISTNAME=	py-radix-0.4
-REVISION =	6
+REVISION =	7
 CATEGORIES=	devel net
-MAINTAINER=	Damien Miller <djm@openbsd.org>
 
 MASTER_SITES=	http://www2.mindrot.org/files/py-radix/
 HOMEPAGE=	http://www.mindrot.org/py-radix.html

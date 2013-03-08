@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.6 2011/09/16 09:24:55 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/08 02:04:37 djm Exp $
 
 COMMENT=		HTML parser/tokeniser based for HTML5
 
 MODPY_EGG_VERSION=	0.11.1
 DISTNAME=		html5lib-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION =		3
+REVISION =		4
 CATEGORIES=    		devel www textproc
 EXTRACT_SUFX=		.zip
 
 HOMEPAGE=		http://code.google.com/p/html5lib/
 MASTER_SITES=		http://html5lib.googlecode.com/files/
-
-MAINTAINER=		Damien Miller <djm@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes

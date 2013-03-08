@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/16 12:00:08 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/08 02:04:37 djm Exp $
 
 COMMENT=		personal publishing platform / weblog engine
 
 DISTNAME=		Zine-0.1.2
 PKGNAME=		py-${DISTNAME:L}
-REVISION=		4
+REVISION=		5
 
 CATEGORIES=		www
 
 HOMEPAGE=		http://zine.pocoo.org/
 MASTER_SITES=		${HOMEPAGE}releases/
-
-MAINTAINER=		Damien Miller <djm@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.10 2012/02/28 10:20:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/08 02:04:37 djm Exp $
 
 COMMENT=	command-line interface to Google services
 
 MODPY_EGG_VERSION= 0.9.13
 DISTNAME=	googlecl-${MODPY_EGG_VERSION}
+REVISION=	1
 
 CATEGORIES=	productivity devel www
 
 HOMEPAGE=	http://code.google.com/p/googlecl/
-
-MAINTAINER=	Damien Miller <djm@openbsd.org>
 
 MODULES=	lang/python
 PKG_ARCH=	*

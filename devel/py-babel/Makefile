@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.7 2011/09/16 09:24:54 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/08 02:04:37 djm Exp $
 
 COMMENT=		I18N/L10N tools for Python
 
 MODPY_EGG_VERSION=	0.9.6
 DISTNAME=		Babel-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME:L}
-REVISION=		0
+REVISION=		1
 CATEGORIES=    		devel
 
 HOMEPAGE=		http://babel.edgewall.org/
 MASTER_SITES=		http://ftp.edgewall.com/pub/babel/
-
-MAINTAINER=		Damien Miller <djm@openbsd.org>
 
 MODULES=		lang/python
 PKG_ARCH=		*

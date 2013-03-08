@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/01/13 10:12:52 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/08 02:04:37 djm Exp $
 
 COMMENT-main=	SSH and telnet client
 COMMENT-gui=	PuTTY GUI clients
@@ -6,13 +6,12 @@ COMMENT-gui=	PuTTY GUI clients
 DISTNAME=	putty-0.62
 PKGNAME-main=	${DISTNAME}
 PKGNAME-gui=	${DISTNAME:S/putty/putty-gui/}
+REVISION=	1
 CATEGORIES=	net security
 
 HOMEPAGE=	http://www.chiark.greenend.org.uk/~sgtatham/putty/
 MASTER_SITES=	http://the.earth.li/~sgtatham/putty/latest/ \
 		ftp://ftp.chiark.greenend.org.uk/users/sgtatham/putty-latest/
-
-MAINTAINER=	Damien Miller <djm@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

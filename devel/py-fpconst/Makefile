@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/16 09:24:55 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/08 02:04:37 djm Exp $
 
 COMMENT=	Python functions and constants for IEEE754 floating point
 
 DISTNAME=	fpconst-0.7.2
 PKGNAME=	${DISTNAME:S/^/py-/}
-REVISION =	6
+REVISION =	7
 CATEGORIES=    	devel
 
 HOMEPAGE=	http://research.warnes.net/projects/RStatServer/fpconst/
-
-MAINTAINER=	Damien Miller <djm@openbsd.org>
 
 MODULES=	lang/python
 

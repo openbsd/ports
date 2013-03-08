@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2010/12/03 11:45:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/08 02:04:37 djm Exp $
 
 COMMENT=	Charting library for Perl
 
 DISTNAME=	Chart-2.4.1
-REVISION=	1
+REVISION=	2
 CATEGORIES=	graphics
-
-MAINTAINER=	Damien Miller <djm@openbsd.org>
 
 RUN_DEPENDS=	graphics/p5-GD
 BUILD_DEPENDS=	${RUN_DEPENDS}
