@@ -1,6 +1,7 @@
---- jhead.c.orig	Fri Jun 22 17:00:21 2012
-+++ jhead.c	Sat Jan 12 10:34:05 2013
-@@ -162,7 +162,8 @@ static int FileEditComment(char * TempFileName, char *
+$OpenBSD: patch-jhead_c,v 1.11 2013/03/08 07:54:31 benoit Exp $
+--- jhead.c.orig	Wed Jan 30 18:02:56 2013
++++ jhead.c	Tue Mar  5 15:05:10 2013
+@@ -163,7 +163,8 @@
          }
          if (strlen(Editor) > PATH_MAX) ErrFatal("env too long");
  
@@ -10,28 +11,28 @@
          a = system(QuotedPath);
      }
  
-@@ -268,7 +269,8 @@ static int ModifyDescriptComment(char * OutComment, ch
+@@ -269,7 +270,8 @@
      if (!HasScandate && !ImageInfo.DateTime[0]){
          // Scan date is not in the file yet, and it doesn't have one built in.  Add it.
-         char Temp[30];
+         char Temp[40];
 -        sprintf(Temp, "scan_date=%s", ctime(&ImageInfo.FileDateTime));
-+	snprintf(Temp, sizeof(Temp),
-+	    "scan_date=%s", ctime(&ImageInfo.FileDateTime));
++        snprintf(Temp, sizeof(Temp),
++            "scan_date=%s", ctime(&ImageInfo.FileDateTime));
          strncat(OutComment, Temp, MAX_COMMENT_SIZE-5-strlen(OutComment));
          Modified = TRUE;
      }
-@@ -294,7 +296,9 @@ static int AutoResizeCmdStuff(void)
+@@ -296,7 +298,9 @@
  
-     if (scale < 0.5) scale = 0.5; // Don't scale down by more than a factor of two.
+     if (scale < 0.4) scale = 0.4; // Don't scale down by too much.
  
--    sprintf(CommandString, "mogrify -geometry %dx%d -quality 85 &i",(int)(ImageInfo.Width*scale), (int)(ImageInfo.Height*scale));
+-    sprintf(CommandString, "mogrify -geometry %dx%d -quality 80 &i",(int)(ImageInfo.Width*scale), (int)(ImageInfo.Height*scale));
 +    snprintf(CommandString, sizeof(CommandString),
-+        "mogrify -geometry %dx%d -quality 85 &i",
++        "mogrify -geometry %dx%d -quality 80 &i",
 +        (int)(ImageInfo.Width*scale), (int)(ImageInfo.Height*scale));
      return TRUE;
  }
  
-@@ -609,7 +613,8 @@ static void DoFileRenaming(const char * FileName)
+@@ -611,7 +615,8 @@
                          memcpy(pat, pattern+ppos, 4);
                          pat[a-ppos] = 'd'; // Replace 'i' with 'd' for '%d'
                          pat[a-ppos+1] = '\0';
@@ -41,7 +42,7 @@
                          nl = strlen(num);
                          l = strlen(pattern+a+1);
                          if (ppos+nl+l+1 >= PATH_MAX) ErrFatal("str overflow");
-@@ -625,7 +630,7 @@ static void DoFileRenaming(const char * FileName)
+@@ -627,7 +632,7 @@
          strftime(NewName, PATH_MAX, pattern, &tm);
      }else{
          // My favourite scheme.
@@ -50,7 +51,7 @@
               tm.tm_mon+1, tm.tm_mday, tm.tm_hour, tm.tm_min, tm.tm_sec);
      }
  
-@@ -654,7 +659,7 @@ static void DoFileRenaming(const char * FileName)
+@@ -656,7 +661,7 @@
              NameExtra[0] = 0;
          }
  
@@ -59,7 +60,7 @@
  
          if (!strcmp(FileName, NewName)) break; // Skip if its already this name.
  
-@@ -669,7 +674,8 @@ static void DoFileRenaming(const char * FileName)
+@@ -671,7 +676,8 @@
                  printf("%s --> %s\n",FileName, NewName);
  #ifdef _WIN32
                  if (RenameAssociatedFiles){
@@ -69,7 +70,7 @@
                      RenameAssociated(FileName, NewName);
                  }
  #endif
-@@ -702,7 +708,8 @@ static int DoAutoRotate(const char * FileName)
+@@ -704,7 +710,8 @@
                  ErrFatal("Orientation screwup");
              }
  
@@ -79,7 +80,7 @@
              ApplyCommand = RotateCommand;
              DoCommand(FileName, FALSE);
              ApplyCommand = NULL;
-@@ -721,7 +728,8 @@ static int DoAutoRotate(const char * FileName)
+@@ -723,7 +730,8 @@
                  strcpy(ThumbTempName_out, FileName);
                  strcat(ThumbTempName_out, ".tho");
                  SaveThumbnail(ThumbTempName_in);
@@ -89,7 +90,7 @@
                      Argument, ThumbTempName_out, ThumbTempName_in);
  
                  if (system(RotateCommand) == 0){
-@@ -749,7 +757,8 @@ static int RegenerateThumbnail(const char * FileName)
+@@ -751,7 +759,8 @@
          return FALSE;
      }
  
@@ -99,7 +100,7 @@
          RegenThumbnail, RegenThumbnail, FileName);
  
      if (system(ThumbnailGenCommand) == 0){
-@@ -1089,7 +1098,7 @@ void ProcessFile(const char * FileName)
+@@ -1091,7 +1100,7 @@
  
              // Print to temp buffer first to avoid putting null termination in destination.
              // snprintf() would do the trick, hbut not available everywhere (like FreeBSD 4.4)
