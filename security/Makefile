@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.304 2013/03/08 09:55:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.305 2013/03/08 09:57:33 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ADMfzap
@@ -29,7 +29,6 @@
      SUBDIR += corkscrew
      SUBDIR += cracklib
      SUBDIR += cryptcat
-     SUBDIR += ocaml-cryptokit
      SUBDIR += ctunnel
      SUBDIR += cvechecker
      SUBDIR += cyrus-sasl2
@@ -115,6 +114,7 @@
      SUBDIR += node-bcrypt
      SUBDIR += nss
      SUBDIR += oath-toolkit
+     SUBDIR += ocaml-cryptokit
      SUBDIR += ocaml-ssl
      SUBDIR += onesixtyone
      SUBDIR += opencdk
