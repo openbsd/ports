@@ -1,12 +1,12 @@
-$OpenBSD: patch-boost_throw_exception_hpp,v 1.3 2011/11/06 19:26:23 jasper Exp $
+$OpenBSD: patch-boost_throw_exception_hpp,v 1.4 2013/03/08 01:21:37 brad Exp $
 
 Fix for /usr/local/include/boost/throw_exception.hpp:57: warning:
 `inline' is not at  beginning of declaration which makes -Werror
 configure scripts bomb
 
---- boost/throw_exception.hpp.orig	Tue Dec 22 21:59:23 2009
-+++ boost/throw_exception.hpp	Thu Apr  8 13:36:37 2010
-@@ -55,7 +55,7 @@ void throw_exception( std::exception const & e ); // u
+--- boost/throw_exception.hpp.orig	Wed Oct 10 15:43:10 2012
++++ boost/throw_exception.hpp	Wed Oct 10 15:43:44 2012
+@@ -57,7 +57,7 @@ void throw_exception( std::exception const & e ); // u
  
  inline void throw_exception_assert_compatibility( std::exception const & ) { }
  

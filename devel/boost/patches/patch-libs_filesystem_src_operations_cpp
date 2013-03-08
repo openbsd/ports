@@ -1,19 +1,19 @@
-$OpenBSD: patch-libs_filesystem_src_operations_cpp,v 1.1 2011/11/06 20:05:47 jasper Exp $
---- libs/filesystem/src/operations.cpp.orig	Thu Nov  3 06:53:43 2011
-+++ libs/filesystem/src/operations.cpp	Thu Nov  3 06:54:19 2011
-@@ -58,14 +58,11 @@ using boost::system::system_category;
- 
- # else // BOOST_POSIX_API
+$OpenBSD: patch-libs_filesystem_src_operations_cpp,v 1.2 2013/03/08 01:21:38 brad Exp $
+--- libs/filesystem/src/operations.cpp.orig	Wed Oct 10 15:47:26 2012
++++ libs/filesystem/src/operations.cpp	Wed Oct 10 15:49:47 2012
+@@ -73,14 +73,11 @@ using std::wstring;
+     const fs::path dot_dot_path("..");
  #   include <sys/types.h>
+ #   include <sys/stat.h>
 -#   if !defined(__APPLE__) && !defined(__OpenBSD__)
-+#   ifndef __APPLE__
++#   if !defined(__APPLE__)
  #     include <sys/statvfs.h>
  #     define BOOST_STATVFS statvfs
  #     define BOOST_STATVFS_F_FRSIZE vfs.f_frsize
  #   else
--#ifdef __OpenBSD__
+-#     ifdef __OpenBSD__
 -#     include <sys/param.h>
--#endif
+-#     endif
  #     include <sys/mount.h>
  #     define BOOST_STATVFS statfs
- #     define BOOST_STATVFS_F_FRSIZE static_cast<boost::uintmax_t>( vfs.f_bsize )
+ #     define BOOST_STATVFS_F_FRSIZE static_cast<boost::uintmax_t>(vfs.f_bsize)

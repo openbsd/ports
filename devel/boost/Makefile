@@ -1,18 +1,20 @@
-# $OpenBSD: Makefile,v 1.42 2012/12/10 13:37:57 landry Exp $
+# $OpenBSD: Makefile,v 1.43 2013/03/08 01:21:37 brad Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
 COMMENT=	free peer-reviewed portable C++ source libraries
 
-VERSION=	1.42.0
+VERSION=	1.53.0
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME=	boost-${VERSION}
-REVISION=	15
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=boost/}
+EXTRACT_SUFX=	.tar.bz2
 
-SO_VERSION=	4.0
-BOOST_LIBS=	boost_date_time boost_date_time-mt \
+SO_VERSION=	5.0
+BOOST_LIBS=	boost_atomic-mt \
+		boost_chrono boost_chrono-mt \
+		boost_date_time boost_date_time-mt \
 		boost_filesystem boost_filesystem-mt \
 		boost_graph boost_graph-mt \
 		boost_iostreams boost_iostreams-mt \
@@ -22,14 +24,16 @@ BOOST_LIBS=	boost_date_time boost_date_time-mt \
 		boost_math_tr1 boost_math_tr1-mt \
 		boost_math_tr1f boost_math_tr1f-mt \
 		boost_math_tr1l boost_math_tr1l-mt \
-		boost_prg_exec_monitor-mt boost_prg_exec_monitor \
+		boost_prg_exec_monitor boost_prg_exec_monitor-mt \
 		boost_program_options boost_program_options-mt \
 		boost_python boost_python-mt \
+		boost_random boost_random-mt \
 		boost_regex boost_regex-mt \
 		boost_serialization boost_serialization-mt \
 		boost_signals boost_signals-mt \
 		boost_system boost_system-mt \
 		boost_thread-mt \
+		boost_timer boost_timer-mt \
 		boost_unit_test_framework boost_unit_test_framework-mt \
 		boost_wave boost_wave-mt \
 		boost_wserialization boost_wserialization-mt
@@ -59,12 +63,17 @@ BJAM_CONFIG=	-sNO_BZIP2=1 \
 		-d+2 -q \
 		-j ${MAKE_JOBS} \
 		cflags='${CFLAGS}' cxxflags='${CXXFLAGS}' \
-		variant=release link=static,shared threading=single,multi
+		variant=release link=static,shared threading=single,multi \
+		--layout=tagged
 
-BOOTSTRAP=	--without-icu \
-		--with-python=${MODPY_BIN} \
+# context uses MD bits and is missing support for Alpha,
+# PA-RISC, SPARC and SuperH. The author does not care
+# care about adding support for Alpha and PA-RISC.
+BOOTSTRAP=	--with-python=${MODPY_BIN} \
 		--with-python-root=${LOCALBASE} \
-		--with-python-version=${MODPY_VERSION}
+		--with-python-version=${MODPY_VERSION} \
+		--without-icu \
+		--without-libraries=context
 
 # python.port.mk makes assumptions about an empty CONFIGURE_STYLE
 CONFIGURE_STYLE= none
@@ -91,7 +100,7 @@ do-build:
 	    ./bjam ${BJAM_CONFIG}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tools/jam/src/bin.*/bjam \
+	${INSTALL_PROGRAM} ${WRKSRC}/tools/build/v2/engine/bin.*/bjam \
 	    ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/stage/lib/lib!(*.so) ${PREFIX}/lib
 	@cd ${WRKSRC} && \

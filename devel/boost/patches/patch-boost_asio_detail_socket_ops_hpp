@@ -1,12 +1,12 @@
-$OpenBSD: patch-boost_asio_detail_socket_ops_hpp,v 1.1 2010/03/30 11:01:10 robert Exp $
---- boost/asio/detail/socket_ops.hpp.orig	Tue May 12 18:06:50 2009
-+++ boost/asio/detail/socket_ops.hpp	Tue May 12 18:07:35 2009
-@@ -24,6 +24,8 @@
- #include <cstdlib>
- #include <cstring>
- #include <cerrno>
+$OpenBSD: patch-boost_asio_detail_socket_ops_hpp,v 1.2 2013/03/08 01:21:37 brad Exp $
+--- boost/asio/detail/socket_ops.hpp.orig	Wed Oct 10 15:25:04 2012
++++ boost/asio/detail/socket_ops.hpp	Wed Oct 10 15:26:49 2012
+@@ -15,6 +15,8 @@
+ # pragma once
+ #endif // defined(_MSC_VER) && (_MSC_VER >= 1200)
+ 
 +#include <netdb.h>
 +#include <unistd.h>
- #include <boost/detail/workaround.hpp>
- #include <new>
- #include <boost/asio/detail/pop_options.hpp>
+ #include <boost/asio/detail/config.hpp>
+ 
+ #include <boost/system/error_code.hpp>

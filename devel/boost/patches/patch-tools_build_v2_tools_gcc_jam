@@ -1,7 +1,7 @@
-$OpenBSD: patch-tools_build_v2_tools_gcc_jam,v 1.4 2011/09/19 19:53:20 naddy Exp $
---- tools/build/v2/tools/gcc.jam.orig	Wed Oct 28 08:47:51 2009
-+++ tools/build/v2/tools/gcc.jam	Sun Sep 18 13:12:45 2011
-@@ -269,7 +269,7 @@ class gcc-pch-generator : pch-generator
+$OpenBSD: patch-tools_build_v2_tools_gcc_jam,v 1.5 2013/03/08 01:21:38 brad Exp $
+--- tools/build/v2/tools/gcc.jam.orig	Wed Oct 10 15:55:07 2012
++++ tools/build/v2/tools/gcc.jam	Wed Oct 10 16:00:29 2012
+@@ -335,7 +335,7 @@ class gcc-pch-generator : pch-generator
  
          # return result of base class and pch-file property as usage-requirements
          return
@@ -10,7 +10,7 @@ $OpenBSD: patch-tools_build_v2_tools_gcc_jam,v 1.4 2011/09/19 19:53:20 naddy Exp
              $(pch-file)
            ;
      }
-@@ -299,7 +299,7 @@ toolset.flags gcc.compile PCH_FILE <pch>on : <pch-file
+@@ -365,7 +365,7 @@ toolset.flags gcc.compile PCH_FILE <pch>on : <pch-file
  
  # Declare flags and action for compilation.
  toolset.flags gcc.compile OPTIONS <optimization>off   : -O0 ;
@@ -19,7 +19,7 @@ $OpenBSD: patch-tools_build_v2_tools_gcc_jam,v 1.4 2011/09/19 19:53:20 naddy Exp
  toolset.flags gcc.compile OPTIONS <optimization>space : -Os ;
  
  toolset.flags gcc.compile OPTIONS <inlining>off  : -fno-inline ;
-@@ -473,11 +473,13 @@ rule compile.c ( targets * : sources * : properties * 
+@@ -599,11 +599,13 @@ rule compile.fortran ( targets * : sources * : propert
  
  actions compile.c++ bind PCH_FILE
  {
@@ -33,24 +33,24 @@ $OpenBSD: patch-tools_build_v2_tools_gcc_jam,v 1.4 2011/09/19 19:53:20 naddy Exp
      "$(CONFIG_COMMAND)" $(LANG) $(OPTIONS) $(USER_OPTIONS) -D$(DEFINES) -I"$(PCH_FILE:D)" -I"$(INCLUDES)" -c -o "$(<)" "$(>)"
  }
  
-@@ -795,6 +797,7 @@ rule link ( targets * : sources * : properties * )
+@@ -955,6 +957,7 @@ rule link ( targets * : sources * : properties * )
  
  actions link bind LIBRARIES
  {
-+    echo "$(CONFIG_COMMAND)" -L"$(LINKPATH)" -Wl,$(RPATH_OPTION:E=-R)$(SPACE)-Wl,"$(RPATH)" -Wl,-rpath-link$(SPACE)-Wl,"$(RPATH_LINK)" -o "$(<)" $(START-GROUP) "$(>)" "$(LIBRARIES)" $(FINDLIBS-ST-PFX) -l$(FINDLIBS-ST) $(FINDLIBS-SA-PFX) -l$(FINDLIBS-SA) $(END-GROUP) $(OPTIONS) $(USER_OPTIONS)
-     "$(CONFIG_COMMAND)" -L"$(LINKPATH)" -Wl,$(RPATH_OPTION:E=-R)$(SPACE)-Wl,"$(RPATH)" -Wl,-rpath-link$(SPACE)-Wl,"$(RPATH_LINK)" -o "$(<)" $(START-GROUP) "$(>)" "$(LIBRARIES)" $(FINDLIBS-ST-PFX) -l$(FINDLIBS-ST) $(FINDLIBS-SA-PFX) -l$(FINDLIBS-SA) $(END-GROUP) $(OPTIONS) $(USER_OPTIONS)
++    echo "$(CONFIG_COMMAND)" -L"$(LINKPATH)" -Wl,$(RPATH_OPTION:E=-R)$(SPACE)-Wl,$(RPATH) -Wl,-rpath-link$(SPACE)-Wl,"$(RPATH_LINK)" -o "$(<)" $(START-GROUP) "$(>)" "$(LIBRARIES)" $(FINDLIBS-ST-PFX) -l$(FINDLIBS-ST) $(FINDLIBS-SA-PFX) -l$(FINDLIBS-SA) $(END-GROUP) $(OPTIONS) $(USER_OPTIONS)
+     "$(CONFIG_COMMAND)" -L"$(LINKPATH)" -Wl,$(RPATH_OPTION:E=-R)$(SPACE)-Wl,$(RPATH) -Wl,-rpath-link$(SPACE)-Wl,"$(RPATH_LINK)" -o "$(<)" $(START-GROUP) "$(>)" "$(LIBRARIES)" $(FINDLIBS-ST-PFX) -l$(FINDLIBS-ST) $(FINDLIBS-SA-PFX) -l$(FINDLIBS-SA) $(END-GROUP) $(OPTIONS) $(USER_OPTIONS)
  
  }
-@@ -855,10 +858,10 @@ rule link.dll ( targets * : sources * : properties * )
-     JAM_SEMAPHORE on $(targets) = <s>gcc-link-semaphore ;
+@@ -1017,10 +1020,10 @@ rule link.dll ( targets * : sources * : properties * )
+     quote-rpath $(targets) ;
  }
  
 -# Differs from 'link' above only by -shared.
 +# Differs from 'link' above only by -shared and -fPIC.
  actions link.dll bind LIBRARIES
  {
--    "$(CONFIG_COMMAND)" -L"$(LINKPATH)" -Wl,$(RPATH_OPTION:E=-R)$(SPACE)-Wl,"$(RPATH)" "$(.IMPLIB-COMMAND)$(<[1])" -o "$(<[-1])" $(HAVE_SONAME)-Wl,$(SONAME_OPTION)$(SPACE)-Wl,$(<[-1]:D=) -shared $(START-GROUP) "$(>)" "$(LIBRARIES)" $(FINDLIBS-ST-PFX) -l$(FINDLIBS-ST) $(FINDLIBS-SA-PFX) -l$(FINDLIBS-SA) $(END-GROUP) $(OPTIONS) $(USER_OPTIONS)
-+    "$(CONFIG_COMMAND)" -L"$(LINKPATH)" -Wl,$(RPATH_OPTION:E=-R)$(SPACE)-Wl,"$(RPATH)" "$(.IMPLIB-COMMAND)$(<[1])" -o "$(<[-1])" $(HAVE_SONAME)-Wl,$(SONAME_OPTION)$(SPACE)-Wl,$(<[-1]:D=) -shared -fPIC $(START-GROUP) "$(>)" "$(LIBRARIES)" $(FINDLIBS-ST-PFX) -l$(FINDLIBS-ST) $(FINDLIBS-SA-PFX) -l$(FINDLIBS-SA) $(END-GROUP) $(OPTIONS) $(USER_OPTIONS)
+-    "$(CONFIG_COMMAND)" -L"$(LINKPATH)" -Wl,$(RPATH_OPTION:E=-R)$(SPACE)-Wl,$(RPATH) "$(.IMPLIB-COMMAND)$(<[1])" -o "$(<[-1])" $(HAVE_SONAME)-Wl,$(SONAME_OPTION)$(SPACE)-Wl,$(<[-1]:D=) -shared $(START-GROUP) "$(>)" "$(LIBRARIES)" $(FINDLIBS-ST-PFX) -l$(FINDLIBS-ST) $(FINDLIBS-SA-PFX) -l$(FINDLIBS-SA) $(END-GROUP) $(OPTIONS) $(USER_OPTIONS)
++    "$(CONFIG_COMMAND)" -L"$(LINKPATH)" -Wl,$(RPATH_OPTION:E=-R)$(SPACE)-Wl,$(RPATH) "$(.IMPLIB-COMMAND)$(<[1])" -o "$(<[-1])" $(HAVE_SONAME)-Wl,$(SONAME_OPTION)$(SPACE)-Wl,$(<[-1]:D=) -shared -fPIC $(START-GROUP) "$(>)" "$(LIBRARIES)" $(FINDLIBS-ST-PFX) -l$(FINDLIBS-ST) $(FINDLIBS-SA-PFX) -l$(FINDLIBS-SA) $(END-GROUP) $(OPTIONS) $(USER_OPTIONS)
  }
  
  rule setup-threading ( targets * : sources * : properties * )
