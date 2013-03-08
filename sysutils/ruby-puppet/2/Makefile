@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/08 16:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/08 16:19:15 ajacoutot Exp $
 
 VERSION=	2.7.20
-REVISION=	0
+REVISION=	1
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/etc/puppet/{fileserver,puppet,tagmail}.conf \

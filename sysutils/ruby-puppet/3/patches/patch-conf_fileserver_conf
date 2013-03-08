@@ -1,7 +1,10 @@
-$OpenBSD: patch-conf_fileserver_conf,v 1.1 2013/03/08 16:12:47 ajacoutot Exp $
---- conf/fileserver.conf.orig	Tue Feb 19 10:45:51 2013
-+++ conf/fileserver.conf	Tue Feb 19 10:46:03 2013
-@@ -0,0 +1,41 @@
+$OpenBSD: patch-conf_fileserver_conf,v 1.2 2013/03/08 16:19:15 ajacoutot Exp $
+--- conf/fileserver.conf.orig	Sat Feb  2 01:31:44 2013
++++ conf/fileserver.conf	Fri Mar  8 17:18:07 2013
+@@ -39,3 +39,44 @@
+ #
+ # If added to auth.conf BEFORE the "path /file" rule, the rule above
+ # will add stricter restrictions to the extra_files mount point.
 +# fileserver.conf
 +
 +# Puppet automatically serves PLUGINS and FILES FROM MODULES: anything in

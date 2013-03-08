@@ -1,8 +1,8 @@
-$OpenBSD: patch-examples_etc_puppet_fileserver_conf,v 1.1 2013/03/08 16:12:47 ajacoutot Exp $
---- examples/etc/puppet/fileserver.conf.orig	Thu Jun 21 00:24:36 2012
-+++ examples/etc/puppet/fileserver.conf	Thu Mar  7 11:12:28 2013
+$OpenBSD: patch-examples_etc_puppet_fileserver_conf,v 1.2 2013/03/08 16:19:15 ajacoutot Exp $
+--- examples/etc/puppet/fileserver.conf.orig	Thu Oct 18 18:52:08 2012
++++ examples/etc/puppet/fileserver.conf	Fri Mar  8 17:15:41 2013
 @@ -1,13 +1,41 @@
--# $Id: patch-examples_etc_puppet_fileserver_conf,v 1.1 2013/03/08 16:12:47 ajacoutot Exp $
+-# $Id: patch-examples_etc_puppet_fileserver_conf,v 1.2 2013/03/08 16:19:15 ajacoutot Exp $
 +# fileserver.conf
  
 -[dist]

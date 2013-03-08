@@ -1,7 +1,10 @@
-$OpenBSD: patch-conf_tagmail_conf,v 1.1 2013/03/08 16:12:47 ajacoutot Exp $
---- conf/tagmail.conf.orig	Tue Feb 19 10:46:15 2013
-+++ conf/tagmail.conf	Tue Feb 19 10:46:20 2013
-@@ -0,0 +1,16 @@
+$OpenBSD: patch-conf_tagmail_conf,v 1.2 2013/03/08 16:19:15 ajacoutot Exp $
+--- conf/tagmail.conf.orig	Sat Feb  2 01:31:44 2013
++++ conf/tagmail.conf	Fri Mar  8 17:18:07 2013
+@@ -14,3 +14,19 @@
+ # all: log-archive@example.com
+ # webserver, !mailserver: httpadmins@example.com
+ # emerg, crit: james@example.com, zach@example.com, ben@example.com
 +# tagmail.conf
 +
 +# This file configures the `tagmail` report, which can be enabled by including
