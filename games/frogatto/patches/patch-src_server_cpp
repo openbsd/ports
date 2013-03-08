@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_server_cpp,v 1.1 2013/03/08 01:31:25 brad Exp $
+
+replacement function call from upstream git. double-checked that this function disappeared in Boost 1.47.0
+
+--- src/server.cpp.orig	Thu Nov 22 14:51:25 2012
++++ src/server.cpp	Thu Nov 22 15:05:14 2012
+@@ -37,7 +37,11 @@ class server (public)
+ private:
+ 	void start_accept()
+ 	{
+-		socket_ptr socket(new tcp::socket(acceptor_.io_service()));
++		#if (BOOST_VERSION) <= 104600
++			socket_ptr socket(new tcp::socket(acceptor_.io_service()));
++		#else
++			socket_ptr socket(new tcp::socket(acceptor_.get_io_service()));
++		#endif
+ 		acceptor_.async_accept(*socket, boost::bind(&server::handle_accept, this, socket, boost::asio::placeholders::error));
+ 	}
+ 

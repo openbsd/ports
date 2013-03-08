@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2012/12/21 17:55:57 landry Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/08 01:30:37 brad Exp $
 
 VMEM_WARNING =	Yes
 ONLY_FOR_ARCHS = ${GCC4_ARCHS}
@@ -14,7 +14,7 @@ COMMENT =	blend seams in panoramic image mosaics
 DISTNAME =	enblend-enfuse-4.0
 PKGNAME =	${DISTNAME:L}
 WRKDIST =	${WRKDIR}/enblend-enfuse-4.0-753b534c819d
-REVISION =	2
+REVISION =	3
 CATEGORIES =	graphics
 
 HOMEPAGE =	http://enblend.sourceforge.net/
@@ -46,7 +46,8 @@ LIB_DEPENDS =	devel/boost \
 		graphics/png \
 		graphics/tiff
 
-CONFIGURE_STYLE = gnu
+CONFIGURE_STYLE = autoconf gnu
+AUTOCONF_VERSION = 2.61
 MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC}
 USE_GMAKE = Yes
 USE_GROFF =	Yes

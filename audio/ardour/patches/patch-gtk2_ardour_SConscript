@@ -1,7 +1,16 @@
-$OpenBSD: patch-gtk2_ardour_SConscript,v 1.1.1.1 2012/08/17 15:33:32 stsp Exp $
---- gtk2_ardour/SConscript.orig	Thu Apr 19 20:33:57 2012
-+++ gtk2_ardour/SConscript	Sat Aug 11 15:12:45 2012
-@@ -413,7 +413,7 @@ for style in ['', 'BOLD', 'ITALIC']:
+$OpenBSD: patch-gtk2_ardour_SConscript,v 1.2 2013/03/08 01:25:44 brad Exp $
+--- gtk2_ardour/SConscript.orig	Thu Apr 19 14:33:57 2012
++++ gtk2_ardour/SConscript	Sat Jan 26 01:17:52 2013
+@@ -27,6 +27,8 @@ gtkardour.Append(POTFILE=domain + '.pot')
+ if gtkardour['IS_OSX']:
+ 	gtkardour.Append (LINKFLAGS="-Xlinker -headerpad -Xlinker 2048")
+ 
++env.Append(LINKFLAGS = "-lboost_system-mt")
++
+ gtkardour.Merge ([
+     libraries['ardour'],
+     libraries['ardour_cp'],
+@@ -413,7 +415,7 @@ for style in ['', 'BOLD', 'ITALIC']:
  if env['GTKOSX']:
  	ardour_menus = env.Command ('ardour.menus', 'ardour.menus.in', "cpp -E -P -DGTKOSX -DTOP_MENUBAR ardour.menus.in ardour.menus", chdir=1)
  else:
@@ -10,7 +19,7 @@ $OpenBSD: patch-gtk2_ardour_SConscript,v 1.1.1.1 2012/08/17 15:33:32 stsp Exp $
  
  ardour_dark_theme = env.SubstInFile ('ardour2_ui_dark.rc', 'ardour2_ui_dark.rc.in', SUBST_DICT = my_font_dict)
  ardour_light_theme = env.SubstInFile ('ardour2_ui_light.rc', 'ardour2_ui_light.rc.in', SUBST_DICT = my_font_dict)
-@@ -529,14 +529,9 @@ if env['FREEDESKTOP']:
+@@ -529,14 +531,9 @@ if env['FREEDESKTOP']:
  	env.Alias('install', env.InstallAs(os.path.join(desktop_icon_install_prefix, '22x22', 'mimetypes', 'application-x-ardour2.png'), 'icons/application-x-ardour_22px.png'))
  	env.Alias('install', env.InstallAs(os.path.join(desktop_icon_install_prefix, '32x32', 'mimetypes', 'application-x-ardour2.png'), 'icons/application-x-ardour_32px.png'))
  	env.Alias('install', env.InstallAs(os.path.join(desktop_icon_install_prefix, '48x48', 'mimetypes', 'application-x-ardour2.png'), 'icons/application-x-ardour_48px.png'))

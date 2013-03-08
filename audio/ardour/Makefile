@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2013/01/11 13:44:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/08 01:25:44 brad Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 SHARED_ONLY =		Yes
+
 COMMENT =		digital audio workstation
+
 DISTNAME =		ardour-2.8.14
 CATEGORIES =		audio
 HOMEPAGE =		http://ardour.org
-REVISION =		2
+REVISION =		3
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -16,15 +18,15 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB = GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 	Xi Xinerama Xrandr Xrender Xxf86vm art_lgpl_2 atk-1.0 \
-	atkmm-1.6 aubio c cairo cairomm-1.0 curl drm execinfo \
-	expat fftw3 fftw3f fontconfig freetype gailutil gdk-x11-2.0 \
-	gdk_pixbuf-2.0 gdkmm-2.4 gio-2.0 giomm-2.4 glib-2.0 \
-	glibmm-2.4 gmodule-2.0 gnomecanvas-2 gnomecanvasmm-2.6 \
-	gobject-2.0 gthread-2.0 gtk-x11-2.0 gtkmm-2.4 jack \
+	atkmm-1.6 aubio boost_system-mt c cairo cairomm-1.0 curl drm \
+	execinfo expat fftw3 fftw3f fontconfig freetype gailutil \
+	gdk-x11-2.0 gdk_pixbuf-2.0 gdkmm-2.4 gio-2.0 giomm-2.4 \
+	glib-2.0 glibmm-2.4 gmodule-2.0 gnomecanvas-2 gnomecanvasmm-2.6 \
+	gobject-2.0 gthread-2.0 gtk-x11-2.0 gtkmm-2.4 harfbuzz jack \
 	lo lrdf m pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4 \
 	pcre pixman-1 png pthread pthread-stubs samplerate \
 	sigc-2.0 sndfile sndio stdc++ xcb xcb-render xcb-shm \
-	xml2 xslt z harfbuzz
+	xml2 xslt z
 
 # Use mirrors as official site has click-through donation-request download.
 MASTER_SITES =		http://stsp.name/openbsd/distfiles/ \
@@ -51,13 +53,13 @@ MODSCONS_ENV=	CC="${CC}" \
 		FREEDESKTOP=1 \
 		SYSLIBS=1
 
-BUILD_DEPENDS = 	devel/boost \
-			${RUN_DEPENDS}
+BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS = 		devel/desktop-file-utils \
 			x11/gtk+2,-guic \
 			misc/shared-mime-info
 LIB_DEPENDS =		audio/aubio \
 			audio/liblo \
+			devel/boost \
 			devel/libexecinfo \
 			math/fftw3 \
 			textproc/liblrdf \

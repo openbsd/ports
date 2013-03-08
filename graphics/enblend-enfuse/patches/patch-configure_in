@@ -1,0 +1,33 @@
+$OpenBSD: patch-configure_in,v 1.3 2013/03/08 01:30:37 brad Exp $
+
+adapt patch from http://enblend.hg.sourceforge.net/hgweb/enblend/enblend/diff/57db56afb9a9/configure.in
+
+--- configure.in.orig	Sat Nov 24 14:57:20 2012
++++ configure.in	Sat Nov 24 15:01:33 2012
+@@ -196,8 +196,26 @@ AC_CHECK_HEADER(boost/random/mersenne_twister.hpp, [],
+                 AC_MSG_ERROR([Boost "mersenne_twister" header file is required to compile Enblend.]))
+ AC_CHECK_HEADER(boost/scoped_ptr.hpp, [],
+                 AC_MSG_ERROR([Boost "scoped_ptr" header file is required to compile Enblend.]))
++AC_CHECK_HEADER(boost/system/error_code.hpp, [],
++                AC_MSG_ERROR([Boost "error code" header file is required to compile Enblend.]))
+ AC_CHECK_HEADER(boost/static_assert.hpp, [],
+                 AC_MSG_ERROR([Boost "static_assert" header file is required to compile Enblend.]))
++
++
++LIBS="-lboost_system $LIBS"
++AC_MSG_CHECKING([for new Boost system library])
++AC_LINK_IFELSE([AC_LANG_PROGRAM([[#include "boost/system/error_code.hpp"]],
++                                [[boost::system::generic_category();
++                                  boost::system::system_category()]])],
++               [AC_MSG_RESULT(yes)],
++               [AC_MSG_RESULT(no)
++                AC_MSG_CHECKING([for old Boost system library])
++                AC_LINK_IFELSE([AC_LANG_PROGRAM([[#include "boost/system/error_code.hpp"]],
++                                [[boost::system::get_generic_category();
++                                  boost::system::get_system_category()]])],
++                               [AC_MSG_RESULT(yes)],
++                               [AC_MSG_RESULT(no)
++                                AC_MSG_ERROR([Boost "system" library is required to compile Enblend.])])])
+ 
+ AC_ARG_WITH([boost-filesystem],
+             [AS_HELP_STRING([--with-boost-filesystem],
