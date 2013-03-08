@@ -1,0 +1,24 @@
+$OpenBSD: README,v 1.1.1.1 2013/03/08 10:45:27 jasper Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Apache Configuration
+====================
+Baikal has been installed into ${INSTDIR}.
+
+You should point this to the DocumentRoot of your web-server:
+   # ln -s ../baikal/html /var/www/htdocs/baikal
+(make sure you use a relative symlink since Apache is chrooted)
+
+You can ensure you have a working install by accessing:
+http://<hostname>/baikal/
+
+Alternatively you can setup a virtual host using the configuration
+provided in ${INSTDIR}/Specific/virtualhosts/
+
+Baikal administration
+=====================
+To administer Baikal the following URL needs to be accessed:
+http://<hostname>/baikal/
