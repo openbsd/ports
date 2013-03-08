@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1109 2013/03/08 10:40:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.1110 2013/03/08 10:43:04 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1198,6 +1198,7 @@
      SUBDIR += ruby-gems
      SUBDIR += ruby-gettext
      SUBDIR += ruby-gir_ffi
+     SUBDIR += ruby-gir_ffi,ruby18
      SUBDIR += ruby-git
      SUBDIR += ruby-highline
      SUBDIR += ruby-hoe
