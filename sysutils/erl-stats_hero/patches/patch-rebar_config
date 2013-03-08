@@ -1,0 +1,19 @@
+$OpenBSD: patch-rebar_config,v 1.1.1.1 2013/03/08 12:09:13 jasper Exp $
+--- rebar.config.orig	Mon Feb 25 16:27:33 2013
++++ rebar.config	Mon Feb 25 16:27:39 2013
+@@ -1,15 +1,6 @@
+ %% -*- mode: erlang;erlang-indent-level: 4;indent-tabs-mode: nil -*-
+ %% ex: ts=4 sw=4 ft=erlang et
+ 
+-{deps, [
+-
+-        {meck, ".*",
+-         {git, "git://github.com/eproxus/meck.git", {branch, "master"}}},
+-
+-        {edown, ".*",
+-         {git, "git://github.com/seth/edown.git", {branch, "master"}}}
+-        ]}.
+-
+ {cover_enabled, true}.
+ 
+ {edoc_opts, [{doclet, edown_doclet},

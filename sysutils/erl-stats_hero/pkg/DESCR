@@ -1,0 +1,3 @@
+The stats_hero application can help you instrument your Erlang
+application with metrics that will be reported to estatsd and browsable
+in Graphite.
