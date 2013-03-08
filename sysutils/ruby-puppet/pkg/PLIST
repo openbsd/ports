@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2013/02/19 16:11:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2013/03/08 10:40:23 robert Exp $
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
 @extraunexec rm -rf ${SYSCONFDIR}/puppet/*
@@ -265,6 +265,7 @@ ${MODRUBY_SITEDIR}/puppet/indirector/node/memory.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/node/plain.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/node/rest.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/node/store_configs.rb
+${MODRUBY_SITEDIR}/puppet/indirector/node/write_only_yaml.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/node/yaml.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/none.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/plain.rb
@@ -670,6 +671,7 @@ ${MODRUBY_SITEDIR}/puppet/settings/
 ${MODRUBY_SITEDIR}/puppet/settings.rb
 ${MODRUBY_SITEDIR}/puppet/settings/base_setting.rb
 ${MODRUBY_SITEDIR}/puppet/settings/boolean_setting.rb
+${MODRUBY_SITEDIR}/puppet/settings/config_file.rb
 ${MODRUBY_SITEDIR}/puppet/settings/directory_setting.rb
 ${MODRUBY_SITEDIR}/puppet/settings/duration_setting.rb
 ${MODRUBY_SITEDIR}/puppet/settings/errors.rb
@@ -677,6 +679,7 @@ ${MODRUBY_SITEDIR}/puppet/settings/file_setting.rb
 ${MODRUBY_SITEDIR}/puppet/settings/path_setting.rb
 ${MODRUBY_SITEDIR}/puppet/settings/string_setting.rb
 ${MODRUBY_SITEDIR}/puppet/settings/terminus_setting.rb
+${MODRUBY_SITEDIR}/puppet/settings/value_translator.rb
 ${MODRUBY_SITEDIR}/puppet/simple_graph.rb
 ${MODRUBY_SITEDIR}/puppet/ssl/
 ${MODRUBY_SITEDIR}/puppet/ssl.rb
@@ -688,6 +691,7 @@ ${MODRUBY_SITEDIR}/puppet/ssl/certificate_authority/interface.rb
 ${MODRUBY_SITEDIR}/puppet/ssl/certificate_factory.rb
 ${MODRUBY_SITEDIR}/puppet/ssl/certificate_request.rb
 ${MODRUBY_SITEDIR}/puppet/ssl/certificate_revocation_list.rb
+${MODRUBY_SITEDIR}/puppet/ssl/certificate_signer.rb
 ${MODRUBY_SITEDIR}/puppet/ssl/configuration.rb
 ${MODRUBY_SITEDIR}/puppet/ssl/digest.rb
 ${MODRUBY_SITEDIR}/puppet/ssl/host.rb
@@ -889,6 +893,7 @@ ${MODRUBY_SITEDIR}/puppet/util/windows/user.rb
 ${MODRUBY_SITEDIR}/puppet/util/zaml.rb
 ${MODRUBY_SITEDIR}/puppet/version.rb
 ${MODRUBY_SITEDIR}/semver.rb
+@man man/man8/extlookup2hiera.8
 @man man/man5/puppet.conf.5
 @man man/man8/puppet-agent.8
 @man man/man8/puppet-apply.8
@@ -937,8 +942,6 @@ ${MODRUBY_RELEXAMPLEDIR}-puppet/auth.conf
 @sample ${SYSCONFDIR}/puppet/auth.conf
 ${MODRUBY_RELEXAMPLEDIR}-puppet/fileserver.conf
 @sample ${SYSCONFDIR}/puppet/fileserver.conf
-${MODRUBY_RELEXAMPLEDIR}-puppet/namespaceauth.conf
-${MODRUBY_RELEXAMPLEDIR}-puppet/puppet-queue.conf
 ${MODRUBY_RELEXAMPLEDIR}-puppet/puppet.conf
 @sample ${SYSCONFDIR}/puppet/puppet.conf
 ${MODRUBY_RELEXAMPLEDIR}-puppet/tagmail.conf
