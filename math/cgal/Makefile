@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/01/18 14:03:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/08 01:26:55 brad Exp $
 
 # vax:	no fenv.h support
 NOT_FOR_ARCHS =		vax
@@ -7,9 +7,8 @@ BROKEN-mips64 =		ICE on Interval_nt.h:98
 
 COMMENT =		Computational Geometry Algorithms Library
 
-DISTNAME =		CGAL-3.8
+DISTNAME =		CGAL-4.1
 PKGNAME =		${DISTNAME:L}
-REVISION =		2
 
 SHARED_ONLY =		Yes
 SHARED_LIBS =		CGAL		0.0 \
@@ -39,6 +38,9 @@ MODULES =		devel/cmake \
 LIB_DEPENDS =		devel/boost \
 			devel/gmp \
 			devel/mpfr
+
+# wow, forgot to change version?
+WRKDIST =		${WRKDIR}/CGAL-3.8
 
 CFLAGS +=		-I${X11BASE}/include
 

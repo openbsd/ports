@@ -1,0 +1,14 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2013/03/08 01:27:41 brad Exp $
+add workaround from https://bugs.kde.org/show_bug.cgi?id=304111
+
+--- CMakeLists.txt.orig	Fri Nov 23 15:06:23 2012
++++ CMakeLists.txt	Fri Nov 23 15:07:11 2012
+@@ -96,6 +96,8 @@ set( CGAL_MODULES_DIR     ${CMAKE_SOURCE_DIR}/${CGAL_M
+ include(${CGAL_MODULES_DIR}/CGAL_Macros.cmake)
+ cgal_setup_module_path()
+ 
++add_definitions ( -DBOOST_TT_HAS_OPERATOR_HPP_INCLUDED )
++
+ message( STATUS "CGAL_REFERENCE_CACHE_DIR=${CGAL_REFERENCE_CACHE_DIR}" )
+ 
+ if ( RUNNING_CGAL_AUTO_TEST )
