@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/01/21 14:29:50 jasper Exp $
-HISTORY.rst
-README.rst
+@comment $OpenBSD: PLIST,v 1.2 2013/03/08 10:27:05 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/clint/
 lib/python${MODPY_VERSION}/site-packages/clint-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/clint/__init__.py
@@ -48,3 +46,6 @@ lib/python${MODPY_VERSION}/site-packages/clint/textui/progress.py
 lib/python${MODPY_VERSION}/site-packages/clint/textui/progress.pyc
 lib/python${MODPY_VERSION}/site-packages/clint/utils.py
 lib/python${MODPY_VERSION}/site-packages/clint/utils.pyc
+share/doc/clint/
+share/doc/clint/HISTORY.rst
+share/doc/clint/README.rst

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/01/21 14:29:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/08 10:27:05 jasper Exp $
 
 COMMENT=		Command-Line Application Tools
 
 MODPY_EGG_VERSION=	0.3.1
 DISTNAME=		clint-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 CATEGORIES=		devel
 
 # BSD
@@ -18,5 +19,9 @@ MASTER_SITES=		${MASTER_SITE_PYPI:=c/clint/}
 MODULES=		lang/python
 
 NO_REGRESS=		Yes
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/clint 
+	mv ${PREFIX}/*.rst ${PREFIX}/share/doc/clint
 
 .include <bsd.port.mk>
