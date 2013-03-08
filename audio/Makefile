@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.298 2013/02/05 14:04:03 zhuk Exp $
+# $OpenBSD: Makefile,v 1.299 2013/03/08 09:50:56 sthen Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -96,6 +96,7 @@
      SUBDIR += libsamplerate
      SUBDIR += libsidplay
      SUBDIR += libsndfile
+     SUBDIR += libsoxr
      SUBDIR += libvorbis
      SUBDIR += libworkman
      SUBDIR += lmms
