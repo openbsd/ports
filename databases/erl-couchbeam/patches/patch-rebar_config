@@ -1,0 +1,20 @@
+$OpenBSD: patch-rebar_config,v 1.1.1.1 2013/03/08 12:01:22 jasper Exp $
+--- rebar.config.orig	Tue Mar  5 09:06:21 2013
++++ rebar.config	Tue Mar  5 09:06:41 2013
+@@ -4,16 +4,3 @@
+     {application, ["couchbeam"]}
+     ]}.
+ 
+-{deps, [
+-    %% ejson for JSON and header parsing
+-    {ejson, ".*", {git,"http://github.com/benoitc/ejson.git",
+-                  "master"}},
+-
+-    %% erlang-oauth for oauth authentification
+-    {oauth, ".*", {git,"git://github.com/benoitc/erlang-oauth.git",
+-                   "master"}},
+-    
+-    %% ibrowse for doing HTTP requests
+-    {ibrowse, ".*", {git, "git://github.com/cmullaparthi/ibrowse.git",
+-                     "master"}}
+-]}.
