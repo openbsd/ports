@@ -1,0 +1,23 @@
+$OpenBSD: README,v 1.1.1.1 2013/03/08 10:43:52 jasper Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+SilverStripe has been installed into ${INSTDIR}
+
+You should point this to the DocumentRoot of your web-server:
+  # ln -s ../silverstripe /var/www/htdocs/silverstripe
+(make sure you use a relative symlink since Apache is chrooted)
+
+Database
+========
+SilverStripe can work with a PostgreSQL or MySQL database. According
+to which database is used, the corresponding package needs to be
+installed:
+    php-pgsql or php-mysqli
+
+Finishing the installation
+==========================
+Please refer to the online documentation available at:
+http://doc.silverstripe.org/framework/en/installation/
