@@ -1,0 +1,34 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/08 09:54:49 ajacoutot Exp $
+@newgroup _cvechecker:712
+@extraunexec rm /var/db/cvechecker/*.db 2>/dev/null || true
+@extraunexec rm /var/db/cvechecker/cache/* 2>/dev/null || true
+@extraunexec rm /var/db/cvechecker/local/* 2>/dev/null || true
+@bin bin/cvechecker
+bin/cvegenversdat
+bin/cvereport
+bin/cverules
+bin/pullcves
+@man man/man1/cvechecker.1
+@man man/man1/cvegenversdat.1
+@man man/man1/cvereport.1
+@man man/man1/cverules.1
+@man man/man1/pullcves.1
+share/cvechecker/
+share/cvechecker/csv2xml.awk
+share/cvechecker/cvereport.xsl
+share/cvechecker/mysql_cvechecker.sql
+share/cvechecker/nvdcve2simple.xsl
+share/cvechecker/report.css
+share/doc/cvechecker/
+share/doc/cvechecker/acknowledgements.xml
+share/doc/cvechecker/userguide.xml
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/examples/cvechecker/
+@mode 0660
+@group _cvechecker
+share/examples/cvechecker/cvechecker.conf
+@sample ${SYSCONFDIR}/cvechecker.conf
+@mode 0770
+@sample /var/db/cvechecker/
+@sample /var/db/cvechecker/cache/
+@sample /var/db/cvechecker/local/

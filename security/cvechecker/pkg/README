@@ -1,0 +1,48 @@
+$OpenBSD: README,v 1.1.1.1 2013/03/08 09:54:49 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Initial Configuration
+=====================
+
+The user running cvechecker(1) must be part of the _cvechecker group:
+    # usermod -G _cvechecker <username>
+
+Edit ${SYSCONFDIR}/cvechecker.conf to your particular setup, this is
+especially important when using MySQL as a backend.
+
+Database initialization
+-----------------------
+When using MySQL (cvechecker-3.2-mysql), a database and user must be
+setup. This step is not needed when using SQLite.
+    $ mysql -uroot -p<password>
+    mysql> CREATE DATABASE cvechecker;
+    mysql> GRANT ALL PRIVILEGES ON `cvechecker` . *
+        -> TO 'cvechecker_rw'@'localhost' IDENTIFIED BY 'password4cvechecker_rw';
+    mysql> QUIT
+
+Then the database initialization is done by running:
+    $ cvechecker -i
+(this step is required for both MySQL and SQLite).
+
+At last, the CVE data needs to be put into the database:
+    $ pullcves pull
+Note that the first time this command is run, it will take a long time.
+Subsequent calls to pullcves(1) will only update the current year and
+will be must faster. It is advised to run this command regularly to make
+sure the local CVE database is up to date with upstream.
+
+Getting started with cvechecker
+===============================
+
+cvechecker(1) will scan a list of files and check whether there is a
+corresponding CVE according to its version. For example, to check
+binaries from installed packages(7):
+    $ find ${LOCALBASE}/{bin,libexec,sbin} -type f -perm -o+x > scanlist.txt
+    $ cvechecker -b scanlist.txt
+    $ cvechecker -r
+
+More information is available in the "CVE Checker User Guide" at:
+    http://cvechecker.sourceforge.net/docs/userguide.html
