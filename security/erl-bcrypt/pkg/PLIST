@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/08 12:06:44 jasper Exp $
+lib/erlang/lib/erlang-bcrypt-${VERSION}/
+lib/erlang/lib/erlang-bcrypt-${VERSION}/ebin/
+lib/erlang/lib/erlang-bcrypt-${VERSION}/ebin/bcrypt.app
+lib/erlang/lib/erlang-bcrypt-${VERSION}/ebin/bcrypt.beam
+lib/erlang/lib/erlang-bcrypt-${VERSION}/ebin/bcrypt_app.beam
+lib/erlang/lib/erlang-bcrypt-${VERSION}/ebin/bcrypt_nif.beam
+lib/erlang/lib/erlang-bcrypt-${VERSION}/ebin/bcrypt_nif_worker.beam
+lib/erlang/lib/erlang-bcrypt-${VERSION}/ebin/bcrypt_pool.beam
+lib/erlang/lib/erlang-bcrypt-${VERSION}/ebin/bcrypt_port.beam
+lib/erlang/lib/erlang-bcrypt-${VERSION}/ebin/bcrypt_port_sup.beam
+lib/erlang/lib/erlang-bcrypt-${VERSION}/ebin/bcrypt_sup.beam
+lib/erlang/lib/erlang-bcrypt-${VERSION}/priv/
+lib/erlang/lib/erlang-bcrypt-${VERSION}/priv/bcrypt_nif.so
+lib/erlang/lib/erlang-bcrypt-${VERSION}/src/
+lib/erlang/lib/erlang-bcrypt-${VERSION}/src/bcrypt.erl
+lib/erlang/lib/erlang-bcrypt-${VERSION}/src/bcrypt_app.erl
+lib/erlang/lib/erlang-bcrypt-${VERSION}/src/bcrypt_nif.erl
+lib/erlang/lib/erlang-bcrypt-${VERSION}/src/bcrypt_nif_worker.erl
+lib/erlang/lib/erlang-bcrypt-${VERSION}/src/bcrypt_pool.erl
+lib/erlang/lib/erlang-bcrypt-${VERSION}/src/bcrypt_port.erl
+lib/erlang/lib/erlang-bcrypt-${VERSION}/src/bcrypt_port_sup.erl
+lib/erlang/lib/erlang-bcrypt-${VERSION}/src/bcrypt_sup.erl
