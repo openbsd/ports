@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 2012/10/15 14:55:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/08 10:33:28 jasper Exp $
 
 COMMENT =		open source message queue optimised for performance
 
-DISTNAME =		zeromq-2.2.0
+DISTNAME =		zeromq-3.2.2
 
 SHARED_ONLY =		Yes
-SHARED_LIBS +=		zmq                       1.0 # 1.0
+SHARED_LIBS +=	zmq                  2.0      # 3.0
 
 CATEGORIES =		net
-HOMEPAGE =		http://zeromq.org
-MAINTAINER =		Benoit Chesneau <benoitc@e-engura.org>
+HOMEPAGE =		http://zeromq.org/
 
 # LGPLv3
 PERMIT_PACKAGE_CDROM =	Yes
@@ -19,8 +18,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB=		pthread stdc++ ssl crypto m
 
-MASTER_SITES =		http://download.zeromq.org/ \
-			http://download.zeromq.org/historic/
+MASTER_SITES =		http://download.zeromq.org/
 
 USE_GMAKE =		Yes
 USE_LIBTOOL =		Yes

@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_ipc_listener_cpp,v 1.1 2013/03/08 10:33:28 jasper Exp $
+
+OpenBSD doesn't define EPROTO (yet), so pick the closest thing.
+
+--- src/ipc_listener.cpp.orig	Fri Mar  1 09:31:03 2013
++++ src/ipc_listener.cpp	Fri Mar  1 09:33:07 2013
+@@ -196,7 +196,7 @@ zmq::fd_t zmq::ipc_listener_t::accept ()
+     fd_t sock = ::accept (s, NULL, NULL);
+     if (sock == -1) {
+         errno_assert (errno == EAGAIN || errno == EWOULDBLOCK ||
+-            errno == EINTR || errno == ECONNABORTED || errno == EPROTO ||
++            errno == EINTR || errno == ECONNABORTED || errno == EOPNOTSUPP ||
+             errno == ENFILE);
+         return retired_fd;
+     }
