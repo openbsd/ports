@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2011/09/16 08:48:02 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/08 01:36:59 brad Exp $
 
 COMMENT =		the programmer's solid 3D CAD modeller
 
-V =			2011.06
+V =			2013.01
 DISTNAME =		openscad-${V}
-REVISION =		0
 
 CATEGORIES =		cad
 
@@ -18,11 +17,13 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		CGAL GL GLEW GLU boost_program_options-mt \
-			boost_thread-mt c gmp lib/qt4/QtGui lib/qt4/QtOpenGL m \
-			mpfr opencsg pthread stdc++
+WANTLIB += c m pthread stdc++
+WANTLIB += CGAL GL GLEW GLU ICE lib/qt4/QtGui lib/qt4/QtOpenGL
+WANTLIB += SM X11 Xext Xi Xinerama Xrender boost_filesystem-mt
+WANTLIB += boost_program_options-mt boost_regex-mt boost_system-mt
+WANTLIB += boost_thread-mt fontconfig freetype gmp mpfr opencsg
 
-MASTER_SITES =		https://github.com/downloads/openscad/openscad/
+MASTER_SITES =		https://openscad.googlecode.com/files/
 DISTFILES =		openscad-${V}.src.tar.gz
 
 MODULES =		x11/qt4
@@ -35,6 +36,8 @@ LIB_DEPENDS =		devel/boost \
 			graphics/glew \
 			graphics/opencsg \
 			math/cgal
+
+RUN_DEPENDS =		devel/desktop-file-utils
 
 QMAKE_ENV =		EIGEN2DIR=${LOCALBASE}/include/eigen2
 QMAKE_FLAGS =		VERSION=${V}

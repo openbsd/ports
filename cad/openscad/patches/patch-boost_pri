@@ -1,11 +1,12 @@
-$OpenBSD: patch-boost_pri,v 1.1.1.1 2011/04/29 18:55:37 matthew Exp $
---- boost.pri.orig	Thu Apr 28 13:38:05 2011
-+++ boost.pri	Thu Apr 28 13:38:12 2011
-@@ -13,6 +13,6 @@ boost {
-   win32 {
-      LIBS += -llibboost_thread-vc90-mt-s-1_46_1 -llibboost_program_options-vc90-mt-s-1_46_1
-   } else {
--     LIBS += -lboost_thread -lboost_program_options
-+     LIBS += -lboost_thread-mt -lboost_program_options-mt
+$OpenBSD: patch-boost_pri,v 1.2 2013/03/08 01:36:59 brad Exp $
+--- boost.pri.orig	Fri Jan 18 13:09:12 2013
++++ boost.pri	Fri Jan 18 13:13:08 2013
+@@ -61,7 +61,7 @@ boost {
+ 
+   isEmpty(BOOST_LINK_FLAGS) {
+     unix|macx {
+-      BOOST_LINK_FLAGS = -lboost_thread -lboost_program_options -lboost_filesystem -lboost_system -lboost_regex
++      BOOST_LINK_FLAGS = -lboost_thread-mt -lboost_program_options-mt -lboost_filesystem-mt -lboost_system-mt -lboost_regex-mt
+     }
    }
- }
+ 

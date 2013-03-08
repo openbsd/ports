@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/29 18:55:37 matthew Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/03/08 01:36:59 brad Exp $
 @bin bin/openscad
+share/applications/openscad.desktop
 share/openscad/
 share/openscad/examples/
 share/openscad/examples/example001.scad
@@ -31,6 +32,56 @@ share/openscad/examples/example019.scad
 share/openscad/examples/example020.scad
 share/openscad/examples/example021.scad
 share/openscad/examples/example022.scad
+share/openscad/examples/example023.scad
 share/openscad/libraries/
-share/openscad/libraries/boxes.scad
-share/openscad/libraries/shapes.scad
+share/openscad/libraries/MCAD/
+share/openscad/libraries/MCAD/3d_triangle.scad
+share/openscad/libraries/MCAD/README.markdown
+share/openscad/libraries/MCAD/TODO
+share/openscad/libraries/MCAD/__init__.py
+share/openscad/libraries/MCAD/bearing.scad
+share/openscad/libraries/MCAD/bitmap/
+share/openscad/libraries/MCAD/bitmap/README
+share/openscad/libraries/MCAD/bitmap/alphabet_block.scad
+share/openscad/libraries/MCAD/bitmap/bitmap.scad
+share/openscad/libraries/MCAD/bitmap/height_map.scad
+share/openscad/libraries/MCAD/bitmap/letter_necklace.scad
+share/openscad/libraries/MCAD/bitmap/name_tag.scad
+share/openscad/libraries/MCAD/boxes.scad
+share/openscad/libraries/MCAD/constants.scad
+share/openscad/libraries/MCAD/curves.scad
+share/openscad/libraries/MCAD/fonts.scad
+share/openscad/libraries/MCAD/gears.scad
+share/openscad/libraries/MCAD/get_submodules.py
+share/openscad/libraries/MCAD/gridbeam.scad
+share/openscad/libraries/MCAD/hardware.scad
+share/openscad/libraries/MCAD/involute_gears.scad
+share/openscad/libraries/MCAD/lego_compatibility.scad
+share/openscad/libraries/MCAD/lgpl-2.1.txt
+share/openscad/libraries/MCAD/materials.scad
+share/openscad/libraries/MCAD/math.scad
+share/openscad/libraries/MCAD/metric_fastners.scad
+share/openscad/libraries/MCAD/motors.scad
+share/openscad/libraries/MCAD/multiply.scad
+share/openscad/libraries/MCAD/nuts_and_bolts.scad
+share/openscad/libraries/MCAD/openscad_testing.py
+share/openscad/libraries/MCAD/openscad_utils.py
+share/openscad/libraries/MCAD/polyholes.scad
+share/openscad/libraries/MCAD/regular_shapes.scad
+share/openscad/libraries/MCAD/screw.scad
+share/openscad/libraries/MCAD/servos.scad
+share/openscad/libraries/MCAD/shapes.scad
+share/openscad/libraries/MCAD/stepper.scad
+share/openscad/libraries/MCAD/teardrop.scad
+share/openscad/libraries/MCAD/test_docs.py
+share/openscad/libraries/MCAD/test_mcad.py
+share/openscad/libraries/MCAD/transformations.scad
+share/openscad/libraries/MCAD/triangles.scad
+share/openscad/libraries/MCAD/trochoids.scad
+share/openscad/libraries/MCAD/units.scad
+share/openscad/libraries/MCAD/unregular_shapes.scad
+share/openscad/libraries/MCAD/utilities.scad
+share/pixmaps/
+share/pixmaps/openscad.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
