@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.598 2013/03/08 06:57:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.599 2013/03/08 10:44:24 jasper Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -471,6 +471,7 @@
      SUBDIR += sarg,ldap
      SUBDIR += seamonkey
      SUBDIR += seamonkey-i18n
+     SUBDIR += silverstripe
      SUBDIR += slowhttptest
      SUBDIR += snownews
      SUBDIR += sogo

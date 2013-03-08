@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1108 2013/03/04 23:47:13 jturner Exp $
+# $OpenBSD: Makefile,v 1.1109 2013/03/08 10:40:41 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1203,6 +1203,7 @@
      SUBDIR += ruby-hoe
      SUBDIR += ruby-home_run,ruby18
      SUBDIR += ruby-i18n
+     SUBDIR += ruby-indentation
      SUBDIR += ruby-isolate
      SUBDIR += ruby-jeweler
      SUBDIR += ruby-json_pure

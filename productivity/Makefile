@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.48 2012/10/22 18:13:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.49 2013/03/08 10:45:57 jasper Exp $
 
      SUBDIR =
+     SUBDIR += baikal
      SUBDIR += bruce
      SUBDIR += calcurse
      SUBDIR += davical
