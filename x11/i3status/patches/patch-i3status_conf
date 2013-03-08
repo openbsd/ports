@@ -1,12 +1,20 @@
-$OpenBSD: patch-i3status_conf,v 1.10 2012/10/12 07:57:26 dcoppa Exp $
+$OpenBSD: patch-i3status_conf,v 1.11 2013/03/08 10:23:13 jasper Exp $
 
 Adjust config file to be reasonably useful on OpenBSD out of the box.
 
---- i3status.conf.orig	Wed Oct  3 13:44:44 2012
-+++ i3status.conf	Thu Oct 11 19:31:41 2012
-@@ -1,41 +1,43 @@
+--- i3status.conf.orig	Wed Feb 27 10:56:44 2013
++++ i3status.conf	Wed Feb 27 23:24:44 2013
+@@ -1,49 +1,46 @@
+ # i3status configuration file.
+ # see "man i3status" for documentation.
+ 
+-# It is important that this file is edited as UTF-8.
+-# The following line should contain a sharp s:
+-# ß
+-# If the above line is not correctly displayed, fix your editor first!
+-
  general {
-+        output_format = "i3bar"
++	output_format = "i3bar"
          colors = true
          interval = 5
  }
@@ -21,7 +29,7 @@ Adjust config file to be reasonably useful on OpenBSD out of the box.
 +order += "ethernet em0"
  order += "battery 0"
  order += "load"
- order += "time"
+ order += "tztime local"
 +order += "cpu_temperature cpu0" 
 +order += "cpu_temperature acpitz0"
 +order += "volume master"
@@ -29,8 +37,8 @@ Adjust config file to be reasonably useful on OpenBSD out of the box.
 -wireless wlan0 {
 -        format_up = "W: (%quality at %essid) %ip"
 +cpu_temperature cpu0 {
-+        format = "C: %degrees C"
-+        path = "cpu0"
++         format = "C: %degrees C"
++         path = "cpu0"
 +}
 +
 +cpu_temperature acpitz0 {
@@ -51,7 +59,7 @@ Adjust config file to be reasonably useful on OpenBSD out of the box.
  
  battery 0 {
 -        format = "%status %percentage %remaining"
-+        format = "%status %percentage \% %remaining min."
++        format = "%status %percentage \% %remaining"
  }
  
 -run_watch DHCP {
@@ -62,13 +70,13 @@ Adjust config file to be reasonably useful on OpenBSD out of the box.
 -        pidfile = "/var/run/vpnc/pid"
 -}
 -
- time {
+ tztime local {
          format = "%Y-%m-%d %H:%M:%S"
  }
-@@ -46,4 +48,8 @@ load {
+@@ -54,4 +51,8 @@ load {
  
  disk "/" {
-         format = "%free (or: %percentage_used used, %percentage_used_of_avail used of avail, %percentage_free free, %percentage_avail avail)"
+         format = "%free"
 +}
 +
 +volume master {
