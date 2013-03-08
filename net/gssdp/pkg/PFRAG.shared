@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/07/04 15:18:31 jasper Exp $
-@lib lib/libgssdp-1.0.so.${LIBgssdp-1.0_VERSION}
