@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.303 2013/01/23 08:39:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.304 2013/03/08 09:55:59 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ADMfzap
@@ -31,6 +31,7 @@
      SUBDIR += cryptcat
      SUBDIR += ocaml-cryptokit
      SUBDIR += ctunnel
+     SUBDIR += cvechecker
      SUBDIR += cyrus-sasl2
      SUBDIR += cyrus-sasl2,db4
      SUBDIR += cyrus-sasl2,ldap
