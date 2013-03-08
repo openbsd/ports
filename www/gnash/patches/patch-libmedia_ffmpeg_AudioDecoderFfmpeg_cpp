@@ -1,0 +1,100 @@
+$OpenBSD: patch-libmedia_ffmpeg_AudioDecoderFfmpeg_cpp,v 1.1 2013/03/08 00:58:26 brad Exp $
+
+Update for newer FFmpeg API.
+
+--- libmedia/ffmpeg/AudioDecoderFfmpeg.cpp.orig	Thu Jan 19 14:17:48 2012
++++ libmedia/ffmpeg/AudioDecoderFfmpeg.cpp	Mon Feb 18 12:06:22 2013
+@@ -84,8 +84,10 @@ AudioDecoderFfmpeg::~AudioDecoderFfmpeg()
+ 
+ void AudioDecoderFfmpeg::setup(SoundInfo& info)
+ {
+-    // Init the avdecoder-decoder
++#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(52,6,2)
++    // Starting from this version avcodec_register calls avcodec_init
+     avcodec_init();
++#endif
+     avcodec_register_all();// change this to only register need codec?
+ 
+     enum CodecID codec_id;
+@@ -131,12 +133,20 @@ void AudioDecoderFfmpeg::setup(SoundInfo& info)
+         }
+     }
+ 
++#if LIBAVCODEC_VERSION_INT > AV_VERSION_INT(53,8,0)
++    _audioCodecCtx = avcodec_alloc_context3(_audioCodec);
++#else
+     _audioCodecCtx = avcodec_alloc_context();
++#endif
+     if (!_audioCodecCtx) {
+         throw MediaException(_("libavcodec couldn't allocate context"));
+     }
+ 
++#if LIBAVCODEC_VERSION_INT > AV_VERSION_INT(53,8,0)
++    int ret = avcodec_open2(_audioCodecCtx, _audioCodec, NULL);
++#else
+     int ret = avcodec_open(_audioCodecCtx, _audioCodec);
++#endif
+     if (ret < 0) {
+         av_free(_audioCodecCtx);
+         _audioCodecCtx=0;
+@@ -158,14 +168,14 @@ void AudioDecoderFfmpeg::setup(SoundInfo& info)
+             case CODEC_ID_PCM_U16LE:
+                 _audioCodecCtx->channels = (info.isStereo() ? 2 : 1);
+                 _audioCodecCtx->sample_rate = info.getSampleRate();
+-                _audioCodecCtx->sample_fmt = SAMPLE_FMT_S16; // ?! arbitrary ?
++                _audioCodecCtx->sample_fmt = AV_SAMPLE_FMT_S16; // ?! arbitrary ?
+                 _audioCodecCtx->frame_size = 1; 
+                 break;
+ 
+             default:
+                 _audioCodecCtx->channels = (info.isStereo() ? 2 : 1);
+                 _audioCodecCtx->sample_rate = info.getSampleRate();
+-                _audioCodecCtx->sample_fmt = SAMPLE_FMT_S16; // ?! arbitrary ?
++                _audioCodecCtx->sample_fmt = AV_SAMPLE_FMT_S16; // ?! arbitrary ?
+                 break;
+     }
+ }
+@@ -173,7 +183,10 @@ void AudioDecoderFfmpeg::setup(SoundInfo& info)
+ void AudioDecoderFfmpeg::setup(const AudioInfo& info)
+ {
+     // Init the avdecoder-decoder
++#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(52,6,2)
++    // Starting from this version avcodec_register calls avcodec_init
+     avcodec_init();
++#endif
+     avcodec_register_all();// change this to only register need codec?
+ 
+     enum CodecID codec_id = CODEC_ID_NONE;
+@@ -254,7 +267,11 @@ void AudioDecoderFfmpeg::setup(const AudioInfo& info)
+     _needsParsing = (_parser != NULL);
+ 
+     // Create an audioCodecCtx from the ffmpeg parser if exists/possible
++#if LIBAVCODEC_VERSION_INT > AV_VERSION_INT(53,8,0)
++    _audioCodecCtx = avcodec_alloc_context3(_audioCodec);
++#else
+     _audioCodecCtx = avcodec_alloc_context();
++#endif
+     if (!_audioCodecCtx) {
+         throw MediaException(_("AudioDecoderFfmpeg: libavcodec couldn't "
+                     "allocate context"));
+@@ -297,7 +314,7 @@ void AudioDecoderFfmpeg::setup(const AudioInfo& info)
+                 _audioCodecCtx->channels = (info.stereo ? 2 : 1);
+                 _audioCodecCtx->sample_rate = info.sampleRate;
+                 // was commented out (why?):
+-                _audioCodecCtx->sample_fmt = SAMPLE_FMT_S16; 
++                _audioCodecCtx->sample_fmt = AV_SAMPLE_FMT_S16;
+                 break;
+     }
+ 
+@@ -305,7 +322,11 @@ void AudioDecoderFfmpeg::setup(const AudioInfo& info)
+ #ifdef GNASH_DEBUG_AUDIO_DECODING
+     log_debug("  Opening codec");
+ #endif // GNASH_DEBUG_AUDIO_DECODING
++#if LIBAVCODEC_VERSION_INT > AV_VERSION_INT(53,8,0)
++    int ret = avcodec_open2(_audioCodecCtx, _audioCodec, NULL);
++#else
+     int ret = avcodec_open(_audioCodecCtx, _audioCodec);
++#endif
+     if (ret < 0) {
+         //avcodec_close(_audioCodecCtx);
+         av_free(_audioCodecCtx);

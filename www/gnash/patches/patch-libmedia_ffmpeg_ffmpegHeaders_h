@@ -1,0 +1,19 @@
+$OpenBSD: patch-libmedia_ffmpeg_ffmpegHeaders_h,v 1.1 2013/03/08 00:59:08 brad Exp $
+--- libmedia/ffmpeg/ffmpegHeaders.h.orig	Mon Feb 18 12:04:12 2013
++++ libmedia/ffmpeg/ffmpegHeaders.h	Mon Feb 18 12:06:22 2013
+@@ -83,5 +83,15 @@ extern "C" {
+ #define HAVE_SWSCALE_H 1
+ #endif
+ 
++#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(52,94,1)
++#define AV_SAMPLE_FMT_NONE SAMPLE_FMT_NONE
++#define AV_SAMPLE_FMT_U8   SAMPLE_FMT_U8
++#define AV_SAMPLE_FMT_S16  SAMPLE_FMT_S16
++#define AV_SAMPLE_FMT_S32  SAMPLE_FMT_S32
++#define AV_SAMPLE_FMT_FLT  SAMPLE_FMT_FLT
++#define AV_SAMPLE_FMT_DBL  SAMPLE_FMT_DBL
++
++#define AVSampleFormat SampleFormat
++#endif
+ 
+ #endif // GNASH_MEDIA_FFMPEG_HEADERS_H

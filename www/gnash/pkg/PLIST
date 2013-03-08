@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2013/02/05 11:50:48 brad Exp $
-@bin bin/findmicrophones
-@bin bin/findwebcams
+@comment $OpenBSD: PLIST,v 1.15 2013/03/08 00:58:26 brad Exp $
 bin/gnash
 bin/gnash-gtk-launcher
 @bin bin/gprocessor
@@ -199,8 +197,8 @@ lib/mozilla/plugins/
 lib/mozilla/plugins/libgnashplugin.so
 lib/pkgconfig/gnash.pc
 @comment @man man/man1/cygnal.1
-@man man/man1/findmicrophones.1
-@man man/man1/findwebcams.1
+@comment @man man/man1/findmicrophones.1
+@comment @man man/man1/findwebcams.1
 @comment @man man/man1/flvdumper.1
 @man man/man1/gnash-gtk-launcher.1
 @man man/man1/gnash.1

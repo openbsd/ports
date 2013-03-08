@@ -1,0 +1,53 @@
+$OpenBSD: patch-libmedia_ffmpeg_VideoDecoderFfmpeg_cpp,v 1.1 2013/03/08 00:58:26 brad Exp $
+
+Update for newer FFmpeg API.
+
+--- libmedia/ffmpeg/VideoDecoderFfmpeg.cpp.orig	Thu Jan 19 14:17:49 2012
++++ libmedia/ffmpeg/VideoDecoderFfmpeg.cpp	Mon Feb 18 12:06:22 2013
+@@ -171,7 +171,10 @@ VideoDecoderFfmpeg::init(enum CodecID codecId, int /*w
+         boost::uint8_t* extradata, int extradataSize)
+ {
+     // Init the avdecoder-decoder
++#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(52,6,2)
++    // Starting from this version avcodec_register calls avcodec_init
+     avcodec_init();
++#endif
+     avcodec_register_all();// change this to only register need codec?
+ 
+     _videoCodec = avcodec_find_decoder(codecId); 
+@@ -180,7 +183,11 @@ VideoDecoderFfmpeg::init(enum CodecID codecId, int /*w
+         throw MediaException(_("libavcodec can't decode this video format"));
+     }
+ 
++#if LIBAVCODEC_VERSION_INT > AV_VERSION_INT(53,8,0)
++    _videoCodecCtx.reset(new CodecContextWrapper(avcodec_alloc_context3(_videoCodec)));
++#else
+     _videoCodecCtx.reset(new CodecContextWrapper(avcodec_alloc_context()));
++#endif
+     if (!_videoCodecCtx->getContext()) {
+         throw MediaException(_("libavcodec couldn't allocate context"));
+     }
+@@ -203,7 +210,11 @@ VideoDecoderFfmpeg::init(enum CodecID codecId, int /*w
+     }
+ #endif
+ 
++#if LIBAVCODEC_VERSION_INT > AV_VERSION_INT(53,8,0)
++    int ret = avcodec_open2(ctx, _videoCodec, NULL);
++#else
+     int ret = avcodec_open(ctx, _videoCodec);
++#endif
+     if (ret < 0) {
+         boost::format msg = boost::format(_("libavcodec "
+                             "failed to initialize FFMPEG "
+@@ -529,7 +540,11 @@ get_buffer(AVCodecContext* avctx, AVFrame* pic)
+ 
+     static unsigned int pic_num = 0;
+     pic->type = FF_BUFFER_TYPE_USER;
++#if LIBAVCODEC_VERSION_MAJOR < 54
++    // This field has been unused for longer but has been removed with
++    // libavcodec 54.
+     pic->age  = ++pic_num - surface->getPicNum();
++#endif
+     surface->setPicNum(pic_num);
+     return 0;
+ #endif
