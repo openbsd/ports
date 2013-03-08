@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 2013/01/14 15:04:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2013/03/08 01:38:00 brad Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	personal search and metasearch
 
 DISTNAME=	pinot-1.03
+REVISION=	0
 
 SHARED_LIBS +=  xapianbackend             0.0 # 1.0
 
@@ -18,13 +19,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 atkmm-1.6
-WANTLIB += c cairo cairo-gobject cairomm-1.0 crypto curl dbus-1
-WANTLIB += dbus-glib-1 drm e2fs-uuid exiv2 expat ffi fontconfig
-WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gdkmm-3.0 gio-2.0 giomm-2.4
-WANTLIB += glib-2.0 glibmm-2.4 gmime-2.6 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 gtk-3 gtkmm-3.0 idn m pango-1.0 pangocairo-1.0
+WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
+WANTLIB += atk-bridge-2.0 atkmm-1.6 atspi c cairo cairo-gobject
+WANTLIB += cairomm-1.0 crypto curl dbus-1 dbus-glib-1 drm e2fs-uuid
+WANTLIB += exiv2 expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
+WANTLIB += gdkmm-3.0 gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gmime-2.6
+WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-3 gtkmm-3.0
+WANTLIB += harfbuzz icudata icule icuuc idn m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pangomm-1.4 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs sigc-2.0 sqlite3 ssl stdc++ tag textcat
 WANTLIB += xapian xcb xcb-render xcb-shm xml++-2.6 xml2 z icuuc
@@ -76,9 +78,6 @@ CONFIGURE_ARGS= ${CONFIGURE_SHARED} \
 		--with-http=curl \
 		--with-ssl=/usr \
 		--enable-gtkmm3
-
-# needs boost >= 1.48
-#CONFIGURE_ARGS += --disable-mempool
 
 .ifdef DEBUG
 CONFIGURE_ARGS+= --enable-debug
