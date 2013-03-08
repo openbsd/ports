@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.790 2013/03/02 14:16:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.791 2013/03/08 09:59:16 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += BitTorrent
@@ -593,6 +593,7 @@
      SUBDIR += weechat
      SUBDIR += weex
      SUBDIR += wget
+     SUBDIR += whatweb
      SUBDIR += wide-dhcp
      SUBDIR += wide-dhcpv6
      SUBDIR += winexe
