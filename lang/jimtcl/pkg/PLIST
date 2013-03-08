@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/09/16 20:07:35 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/03/08 10:24:47 jasper Exp $
+bin/build-jim-ext
 @bin bin/jimsh
 include/jim-config.h
 include/jim-eventloop.h
-include/jim-nvp.h
 include/jim-signal.h
 include/jim-subcmd.h
 include/jim-win32compat.h
