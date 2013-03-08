@@ -1,0 +1,23 @@
+$OpenBSD: patch-rebar_config,v 1.1.1.1 2013/03/08 11:54:39 jasper Exp $
+
+WARNING: deprecated port_envs option used
+Option 'port_envs' has been deprecated
+in favor of 'port_env'.
+'port_envs' will be removed soon.
+
+--- rebar.config.orig	Wed May 23 18:19:19 2012
++++ rebar.config	Tue Feb 26 13:21:33 2013
+@@ -2,12 +2,7 @@
+ 
+ {so_name, "ejson.so"}.
+ 
+-{deps, [
+-    {mochiweb, ".*", {git, "git://github.com/mochi/mochiweb.git", {tag,
+-        "1.5.1"}}}
+-]}.
+-
+-{port_envs, [
++{port_env, [
+     %% Make sure to link -lstdc++ on linux or solaris
+     {"(linux|solaris)", "LDFLAGS", "$LDFLAGS -lstdc++"}
+ 
