@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2012/09/23 17:00:49 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/08 10:41:58 jasper Exp $
 
 COMMENT=	Ruby-FFI-based binding to the GObjectIntrospection API
 
-DISTNAME=	gir_ffi-0.0.10
-REVISION=	1
+DISTNAME=	gir_ffi-0.5.0
 
 CATEGORIES=	devel
 
@@ -17,11 +16,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	lang/ruby
 
-FLAVORS=	ruby18
-FLAVOR=		ruby18
-
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	devel/ruby-ffi,${MODRUBY_FLAVOR}>=1.0.8
+RUN_DEPENDS=	devel/ruby-ffi,${MODRUBY_FLAVOR}>=1.2.0,<=1.3.0 \
+		devel/ruby-indentation,${MODRUBY_FLAVOR}>=0.0.6,<0.1.0
 
 CONFIGURE_STYLE=ruby gem ext
 
