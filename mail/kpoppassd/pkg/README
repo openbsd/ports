@@ -1,0 +1,12 @@
+$OpenBSD: README,v 1.1 2013/03/08 06:41:03 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+kpoppassd uses the LOG_LOCAL4 syslog(3) facility for logging.
+
+To start kpoppassd, the following line must be added to /etc/inetd.conf
+and inetd(8) must be (re)started.
+
+127.0.0.1:pop3pw stream tcp nowait root ${PREFIX}/libexec/kpoppassd kpoppassd

@@ -1,2 +1,2 @@
 If you don't plan on using this package anymore, remove the
-corresponding lines from /etc/inetd.conf and /etc/services.
+kpoppassd line from /etc/inetd.conf.
