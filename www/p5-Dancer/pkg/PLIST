@@ -1,0 +1,154 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/08 10:55:52 espie Exp $
+bin/dancer
+${P5SITE}/Dancer/
+${P5SITE}/Dancer.pm
+${P5SITE}/Dancer/App.pm
+${P5SITE}/Dancer/Config/
+${P5SITE}/Dancer/Config.pm
+${P5SITE}/Dancer/Config/Object.pm
+${P5SITE}/Dancer/Continuation/
+${P5SITE}/Dancer/Continuation.pm
+${P5SITE}/Dancer/Continuation/Halted.pm
+${P5SITE}/Dancer/Continuation/Route/
+${P5SITE}/Dancer/Continuation/Route.pm
+${P5SITE}/Dancer/Continuation/Route/ErrorSent.pm
+${P5SITE}/Dancer/Continuation/Route/FileSent.pm
+${P5SITE}/Dancer/Continuation/Route/Forwarded.pm
+${P5SITE}/Dancer/Continuation/Route/Passed.pm
+${P5SITE}/Dancer/Continuation/Route/Templated.pm
+${P5SITE}/Dancer/Cookbook.pod
+${P5SITE}/Dancer/Cookie.pm
+${P5SITE}/Dancer/Cookies.pm
+${P5SITE}/Dancer/Deployment.pod
+${P5SITE}/Dancer/Deprecation.pm
+${P5SITE}/Dancer/Development/
+${P5SITE}/Dancer/Development.pod
+${P5SITE}/Dancer/Development/Integration.pod
+${P5SITE}/Dancer/Engine.pm
+${P5SITE}/Dancer/Error.pm
+${P5SITE}/Dancer/Exception/
+${P5SITE}/Dancer/Exception.pm
+${P5SITE}/Dancer/Exception/Base.pm
+${P5SITE}/Dancer/Factory/
+${P5SITE}/Dancer/Factory/Hook.pm
+${P5SITE}/Dancer/FileUtils.pm
+${P5SITE}/Dancer/GetOpt.pm
+${P5SITE}/Dancer/HTTP.pm
+${P5SITE}/Dancer/Handler/
+${P5SITE}/Dancer/Handler.pm
+${P5SITE}/Dancer/Handler/Debug.pm
+${P5SITE}/Dancer/Handler/PSGI.pm
+${P5SITE}/Dancer/Handler/Standalone.pm
+${P5SITE}/Dancer/Hook/
+${P5SITE}/Dancer/Hook.pm
+${P5SITE}/Dancer/Hook/Properties.pm
+${P5SITE}/Dancer/Introduction.pod
+${P5SITE}/Dancer/Logger/
+${P5SITE}/Dancer/Logger.pm
+${P5SITE}/Dancer/Logger/Abstract.pm
+${P5SITE}/Dancer/Logger/Capture/
+${P5SITE}/Dancer/Logger/Capture.pm
+${P5SITE}/Dancer/Logger/Capture/Trap.pm
+${P5SITE}/Dancer/Logger/Console.pm
+${P5SITE}/Dancer/Logger/Diag.pm
+${P5SITE}/Dancer/Logger/File.pm
+${P5SITE}/Dancer/Logger/Note.pm
+${P5SITE}/Dancer/Logger/Null.pm
+${P5SITE}/Dancer/MIME.pm
+${P5SITE}/Dancer/ModuleLoader.pm
+${P5SITE}/Dancer/Object/
+${P5SITE}/Dancer/Object.pm
+${P5SITE}/Dancer/Object/Singleton.pm
+${P5SITE}/Dancer/Plugin/
+${P5SITE}/Dancer/Plugin.pm
+${P5SITE}/Dancer/Plugin/Ajax.pm
+${P5SITE}/Dancer/Plugins.pod
+${P5SITE}/Dancer/Renderer.pm
+${P5SITE}/Dancer/Request/
+${P5SITE}/Dancer/Request.pm
+${P5SITE}/Dancer/Request/Upload.pm
+${P5SITE}/Dancer/Response.pm
+${P5SITE}/Dancer/Route/
+${P5SITE}/Dancer/Route.pm
+${P5SITE}/Dancer/Route/Cache.pm
+${P5SITE}/Dancer/Route/Registry.pm
+${P5SITE}/Dancer/Serializer/
+${P5SITE}/Dancer/Serializer.pm
+${P5SITE}/Dancer/Serializer/Abstract.pm
+${P5SITE}/Dancer/Serializer/Dumper.pm
+${P5SITE}/Dancer/Serializer/JSON.pm
+${P5SITE}/Dancer/Serializer/Mutable.pm
+${P5SITE}/Dancer/Serializer/XML.pm
+${P5SITE}/Dancer/Serializer/YAML.pm
+${P5SITE}/Dancer/Session/
+${P5SITE}/Dancer/Session.pm
+${P5SITE}/Dancer/Session/Abstract.pm
+${P5SITE}/Dancer/Session/Simple.pm
+${P5SITE}/Dancer/Session/YAML.pm
+${P5SITE}/Dancer/SharedData.pm
+${P5SITE}/Dancer/Template/
+${P5SITE}/Dancer/Template.pm
+${P5SITE}/Dancer/Template/Abstract.pm
+${P5SITE}/Dancer/Template/Simple.pm
+${P5SITE}/Dancer/Template/TemplateToolkit.pm
+${P5SITE}/Dancer/Test.pm
+${P5SITE}/Dancer/Timer.pm
+${P5SITE}/Dancer/Tutorial.pod
+@man man/man1/dancer.1
+@man man/man3p/Dancer.3p
+@man man/man3p/Dancer::Config.3p
+@man man/man3p/Dancer::Config::Object.3p
+@man man/man3p/Dancer::Cookbook.3p
+@man man/man3p/Dancer::Cookie.3p
+@man man/man3p/Dancer::Cookies.3p
+@man man/man3p/Dancer::Deployment.3p
+@man man/man3p/Dancer::Deprecation.3p
+@man man/man3p/Dancer::Development.3p
+@man man/man3p/Dancer::Development::Integration.3p
+@man man/man3p/Dancer::Engine.3p
+@man man/man3p/Dancer::Error.3p
+@man man/man3p/Dancer::Exception.3p
+@man man/man3p/Dancer::Exception::Base.3p
+@man man/man3p/Dancer::FileUtils.3p
+@man man/man3p/Dancer::HTTP.3p
+@man man/man3p/Dancer::Handler::Debug.3p
+@man man/man3p/Dancer::Handler::PSGI.3p
+@man man/man3p/Dancer::Hook.3p
+@man man/man3p/Dancer::Hook::Properties.3p
+@man man/man3p/Dancer::Introduction.3p
+@man man/man3p/Dancer::Logger.3p
+@man man/man3p/Dancer::Logger::Abstract.3p
+@man man/man3p/Dancer::Logger::Capture.3p
+@man man/man3p/Dancer::Logger::Capture::Trap.3p
+@man man/man3p/Dancer::Logger::Console.3p
+@man man/man3p/Dancer::Logger::Diag.3p
+@man man/man3p/Dancer::Logger::File.3p
+@man man/man3p/Dancer::Logger::Note.3p
+@man man/man3p/Dancer::Logger::Null.3p
+@man man/man3p/Dancer::MIME.3p
+@man man/man3p/Dancer::ModuleLoader.3p
+@man man/man3p/Dancer::Object.3p
+@man man/man3p/Dancer::Object::Singleton.3p
+@man man/man3p/Dancer::Plugin.3p
+@man man/man3p/Dancer::Plugin::Ajax.3p
+@man man/man3p/Dancer::Plugins.3p
+@man man/man3p/Dancer::Request.3p
+@man man/man3p/Dancer::Request::Upload.3p
+@man man/man3p/Dancer::Response.3p
+@man man/man3p/Dancer::Route::Cache.3p
+@man man/man3p/Dancer::Serializer.3p
+@man man/man3p/Dancer::Serializer::JSON.3p
+@man man/man3p/Dancer::Serializer::Mutable.3p
+@man man/man3p/Dancer::Serializer::XML.3p
+@man man/man3p/Dancer::Serializer::YAML.3p
+@man man/man3p/Dancer::Session.3p
+@man man/man3p/Dancer::Session::Abstract.3p
+@man man/man3p/Dancer::Session::Simple.3p
+@man man/man3p/Dancer::Session::YAML.3p
+@man man/man3p/Dancer::Template.3p
+@man man/man3p/Dancer::Template::Abstract.3p
+@man man/man3p/Dancer::Template::Simple.3p
+@man man/man3p/Dancer::Template::TemplateToolkit.3p
+@man man/man3p/Dancer::Test.3p
+@man man/man3p/Dancer::Timer.3p
+@man man/man3p/Dancer::Tutorial.3p

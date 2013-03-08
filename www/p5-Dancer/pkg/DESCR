@@ -1,0 +1,3 @@
+Dancer is a simple perl web application framework.
+It has only a few dependencies, is easy to setup, and plays nice
+with other modern perl modules such as Moose.
