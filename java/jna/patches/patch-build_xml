@@ -1,0 +1,22 @@
+$OpenBSD: patch-build_xml,v 1.1 2013/03/08 10:25:34 jasper Exp $
+--- build.xml.orig	Tue Feb 12 23:28:31 2013
++++ build.xml	Tue Feb 12 23:29:10 2013
+@@ -105,7 +105,7 @@
+   <!-- Miscellaneous -->
+   <property name="build.compiler.emacs" value="true"/>
+ 
+-  <target name="default" depends="test" description="Build and Test."/>
++  <target name="default" depends="javadoc,jar,contrib-jars" description="Build and Test."/>
+ 
+   <target name="init" depends="-setup"/>
+   <target name="compile-test-single" depends="compile-tests"/>
+@@ -716,9 +716,6 @@ osname=macos
+     <jar jarfile="${build}/jws/jnidispatch.jar">
+       <fileset dir="${build.native}" includes="*jnidispatch.*"/>
+     </jar>
+-    <signjar alias="jna" keystore="jna.keystore" storepass="jnadev" lazy="true">
+-      <fileset dir="${build}/jws" includes="${jar},${testjar},junit.jar,jnidispatch.jar,clover.jar"/>
+-    </signjar>
+   </target>
+ 
+   <target name="android-test-setup" depends="compile-tests"
