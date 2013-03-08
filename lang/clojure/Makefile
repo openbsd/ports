@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/04/18 20:18:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/08 10:24:00 jasper Exp $
 
 COMMENT =		Lisp-1 dialect for the Java Virtual Machine
 
@@ -35,10 +35,9 @@ NO_REGRESS =		Yes
 
 CLOJURE_HOME =		${PREFIX}/clojure
 
-# Completions file created with:
-# (def completions (mapcat (comp keys ns-publics) (all-ns)))
-# (with-open [f (java.io.BufferedWriter. (java.io.FileWriter. "clj_completions"))]
-#    (.write f (apply str (interpose \newline completions))))
+# Maintainer target to generate completions file
+completions: install
+	${LOCALBASE}/bin/clojure ${FILESDIR}/clj_completions.clj
 
 do-install:
 	${INSTALL_DATA_DIR} ${CLOJURE_HOME}
