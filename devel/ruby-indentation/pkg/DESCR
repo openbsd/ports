@@ -1,0 +1,2 @@
+Library of extensions to Ruby's Array and String classes that allow
+indentation manipulation of Strings and Arrays of Strings.

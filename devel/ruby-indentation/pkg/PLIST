@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/08 10:38:41 jasper Exp $
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/README.rdoc
+${GEM_LIB}/gems/${DISTNAME}/gemspec
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/indentation/
+${GEM_LIB}/gems/${DISTNAME}/lib/indentation.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/indentation/array_mod.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/indentation/meta_info.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/indentation/string_mod.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/
+${GEM_LIB}/gems/${DISTNAME}/spec/.rspec
+${GEM_LIB}/gems/${DISTNAME}/spec/indentation_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
