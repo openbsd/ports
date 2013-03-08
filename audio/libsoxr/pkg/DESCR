@@ -1,0 +1,10 @@
+The SoX Resampler library `libsoxr' performs one-dimensional sample-rate
+conversion -- it may be used, for example, to resample PCM-encoded audio.
+For higher-dimensional resampling, such as for visual-image processing, you
+should look elsewhere.
+
+It aims to give fast and very high quality results for any constant
+(rational or irrational) resampling ratio.  Phase-response, preserved
+bandwidth, aliasing, and rejection level parameters are all configurable;
+alternatively, simple `preset' configurations may be selected.  An
+experimental, variable-rate resampling mode of operation is also included.
