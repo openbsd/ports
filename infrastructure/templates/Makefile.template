@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.61 2012/03/29 13:41:58 sthen Exp $
+# $OpenBSD: Makefile.template,v 1.62 2013/03/08 10:06:13 espie Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -60,7 +60,6 @@ CATEGORIES =		???
 # In case of GPL, version number must be appended (e.g. v2, v2+, v3).
 #PERMIT_PACKAGE_CDROM =	Yes | Reason if No
 #PERMIT_PACKAGE_FTP =	Yes | Reason if No
-#PERMIT_DISTFILES_CDROM =Yes | Reason if No
 #PERMIT_DISTFILES_FTP =	Yes | Reason if No
 
 # "make port-lib-depends-check" can help

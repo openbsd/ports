@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1213 2013/03/02 13:08:49 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1214 2013/03/08 10:06:13 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -114,7 +114,7 @@ _ALL_VARIABLES += DISTFILES PATCHFILES SUPDISTFILES DIST_SUBDIR MASTER_SITES \
 	MASTER_SITES0 MASTER_SITES1 MASTER_SITES2 MASTER_SITES3 MASTER_SITES4 \
 	MASTER_SITES5 MASTER_SITES6 MASTER_SITES7 MASTER_SITES8 MASTER_SITES9 \
 	CHECKSUM_FILE FETCH_MANUALLY MISSING_FILES \
-	PERMIT_DISTFILES_CDROM PERMIT_DISTFILES_FTP
+	PERMIT_DISTFILES_FTP
 _DPB_MULTI = ${MULTI_PACKAGES}
 .endif
 .if ${DPB:L:Mall}
@@ -215,13 +215,12 @@ _MAKEFILE_INC_DONE = Yes
 .endif
 
 .if !defined(PERMIT_PACKAGE_CDROM) || !defined(PERMIT_PACKAGE_FTP) || \
-	!defined(PERMIT_DISTFILES_CDROM) || !defined(PERMIT_DISTFILES_FTP)
+	!defined(PERMIT_DISTFILES_FTP)
 ERRORS += "The licensing info for ${FULLPKGNAME} is incomplete."
 ERRORS += "Please notify the OpenBSD port maintainer:"
 ERRORS += "    ${MAINTAINER}"
 _BAD_LICENSING = Yes
 PERMIT_PACKAGE_CDROM = No
-PERMIT_DISTFILES_CDROM = No
 PERMIT_PACKAGE_FTP = No
 PERMIT_DISTFILES_FTP = No
 .endif
@@ -2950,11 +2949,6 @@ describe:
 	@echo -n "n|"
 .    endif
 .    if ${PERMIT_PACKAGE_FTP${_S}:L} == "yes"
-	@echo -n "y|"
-.    else
-	@echo -n "n|"
-.    endif
-.    if ${PERMIT_DISTFILES_CDROM:L} == "yes"
 	@echo -n "y|"
 .    else
 	@echo -n "n|"
