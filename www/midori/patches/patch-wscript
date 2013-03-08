@@ -1,10 +1,10 @@
-$OpenBSD: patch-wscript,v 1.24 2012/10/22 21:18:59 landry Exp $
+$OpenBSD: patch-wscript,v 1.25 2013/03/08 14:25:07 landry Exp $
 
 Fix paths to config files.
 
---- wscript.orig	Wed Sep 19 23:17:43 2012
-+++ wscript	Mon Oct 22 23:15:43 2012
-@@ -73,7 +73,7 @@ def rc_file(self, node):
+--- wscript.orig	Wed Feb  6 00:28:05 2013
++++ wscript	Sun Mar  3 11:25:50 2013
+@@ -82,7 +82,7 @@ def rc_file(self, node):
      self.compiled_tasks.append (rctask)
  rc_file = extension ('.rc')(rc_file)
  Task.simple_task_type ('winrc', '${WINRC} -o${TGT} ${SRC}', color='BLUE',
@@ -13,15 +13,16 @@ Fix paths to config files.
  
  def configure (conf):
      def option_checkfatal (option, desc):
-@@ -237,7 +237,6 @@ def configure (conf):
-         granite = 'no '
-         conf.define ('GRANITE_VERSION', 'No')
+@@ -371,8 +371,6 @@ def configure (conf):
+                 '-Winit-self -Wundef -Wdeclaration-after-statement '
+                 '-Wmissing-format-attribute -Wnested-externs'.split ())
+     conf.env.append_value ('CCFLAGS', '-Wno-unused-variable -Wno-comment'.split ())
+-    if compiler == 'gcc':
+-        conf.env.append_value ('CCFLAGS', '-Wno-unused-but-set-variable'.split ())
  
--    check_pkg ('zeitgeist-1.0', '0.3.14', mandatory=False)
-     conf.check (lib='m', mandatory=True)
-     check_pkg ('gmodule-2.0', '2.8.0', False)
-     check_pkg ('gthread-2.0', '2.8.0', False)
-@@ -485,7 +484,7 @@ def build (bld):
+     if conf.env['UNIQUE_VERSION'] == '1.0.4':
+         Utils.pprint ('RED', 'unique 1.0.4 found, this version is erroneous.')
+@@ -470,7 +468,7 @@ def build (bld):
              'AUTHORS COPYING ChangeLog EXPAT README data/faq.html data/faq.css')
  
      # Install default configuration
@@ -30,7 +31,7 @@ Fix paths to config files.
  
      if bld.env['INTLTOOL']:
          obj = bld.new_task_gen ('intltool_po')
-@@ -554,7 +553,7 @@ def build (bld):
+@@ -534,7 +532,7 @@ def build (bld):
              for extension in extensions:
                  source = 'data/extensions/' + extension +  '/config'
                  if os.path.exists (source):
