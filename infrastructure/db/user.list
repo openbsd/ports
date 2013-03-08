@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.203 2013/01/15 23:01:40 sthen Exp $
+$OpenBSD: user.list,v 1.204 2013/03/08 09:07:33 ajacoutot Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -220,3 +220,4 @@ id  user		group		port options
 709 _dnsfilter		_dnsfilter	net/dnsfilter
 710 _nikto		_nikto		security/nikto
 711 _xl2tpd		_xl2tpd		net/xl2tpd
+712 			_cvechecker	security/cvechecker
