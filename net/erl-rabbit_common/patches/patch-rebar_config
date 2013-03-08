@@ -1,0 +1,8 @@
+$OpenBSD: patch-rebar_config,v 1.1.1.1 2013/03/08 12:05:16 jasper Exp $
+--- rebar.config.orig	Tue Feb 26 18:10:38 2013
++++ rebar.config	Tue Feb 26 18:10:43 2013
+@@ -1,4 +0,0 @@
+-{deps, [
+-        {gen_server2, "1.0.0",
+-         {git, "git://github.com/mdaguete/gen_server2.git", "master"}}
+-       ]}.
