@@ -1,8 +1,0 @@
-$OpenBSD: patch-src_remote-viewer_desktop,v 1.1.1.1 2012/09/18 08:32:45 jasper Exp $
---- src/remote-viewer.desktop.orig	Tue Sep 18 09:42:56 2012
-+++ src/remote-viewer.desktop	Tue Sep 18 09:43:43 2012
-@@ -4,3 +4,4 @@ Exec=remote-viewer %u
- Type=Application
- Terminal=False
- MimeType=x-scheme-handler/spice
-+Icon=virt-viewer
