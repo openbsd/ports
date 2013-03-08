@@ -1,0 +1,22 @@
+$OpenBSD: README,v 1.1 2013/03/08 13:38:25 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+To use twirssi, create a symlink in the irssi scripts directory:
+    $ mkdir ~/.irssi/scripts
+    $ ln -sf ${SCRIPT_DATA_DIR}/twirssi.pl ~/.irssi/scripts
+
+Then start irssi(1) and:
+    load the script:	/script load twirssi.pl
+    login to Twitter:	/twitter_login <username> <password>
+then follow the instructions.
+
+You can store your username and password configuration by running the
+following commands from an irssi(1) window:
+    /set twitter_usernames <username>
+    /set twitter_passwords <yourpassword>
+
+More information is available at:
+    http://www.twirssi.com/?using

@@ -1,7 +1,0 @@
-To use twirssi, create a symlink in the irssi scripts directory:
-
- $ mkdir ~/.irssi/scripts
- $ ln -sf ${SCRIPT_DATA_DIR}/twirssi.pl ~/.irssi/scripts
-
-In order to shorten URLs, it's advised to install p5-WWW-Shorten
-and set twirssi_always_shorten and short_url_provider accordingly.
