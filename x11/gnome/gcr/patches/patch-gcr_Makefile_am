@@ -1,0 +1,25 @@
+$OpenBSD: patch-gcr_Makefile_am,v 1.1 2013/03/08 06:39:05 ajacoutot Exp $
+
+From 35ca5d5ab45da27cca21bf0d5404429fd1c4224d Mon Sep 17 00:00:00 2001
+From: Stef Walter <stefw@gnome.org>
+Date: Tue, 12 Feb 2013 06:10:12 +0000
+Subject: Don't export duplicate secmem symbols
+
+--- gcr/Makefile.am.orig	Thu Feb 21 10:06:28 2013
++++ gcr/Makefile.am	Thu Feb 21 10:06:39 2013
+@@ -131,7 +131,6 @@ libgcr_base_@GCR_MAJOR@_la_SOURCES = \
+ 	gcr-internal.h \
+ 	gcr-key-mechanisms.h gcr-key-mechanisms.c \
+ 	gcr-library.c gcr-library.h \
+-	gcr-memory.c \
+ 	gcr-memory-icon.c gcr-memory-icon.h \
+ 	gcr-mock-prompter.c gcr-mock-prompter.h \
+ 	gcr-openpgp.c gcr-openpgp.h \
+@@ -180,7 +179,6 @@ libgcr_@GCR_MAJOR@_la_SOURCES = \
+ 	gcr-key-widget.c gcr-key-widget.h \
+ 	gcr-list-selector.c gcr-list-selector.h gcr-list-selector-private.h \
+ 	gcr-live-search.c gcr-live-search.h \
+-	gcr-memory.c \
+ 	gcr-memory-icon.c gcr-memory-icon.h \
+ 	gcr-pkcs11-import-interaction.c gcr-pkcs11-import-interaction.h \
+ 	gcr-pkcs11-import-dialog.c gcr-pkcs11-import-dialog.h \

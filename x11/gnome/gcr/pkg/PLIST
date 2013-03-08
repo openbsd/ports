@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/09/27 09:30:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/03/08 06:39:05 ajacoutot Exp $
 @conflict gnome-keyring-<3.4.0
 %%SHARED%%
 @bin bin/gcr-viewer
@@ -67,10 +67,13 @@ lib/girepository-1.0/Gck-1.typelib
 lib/girepository-1.0/Gcr-3.typelib
 lib/libgck-1.a
 lib/libgck-1.la
+@lib lib/libgck-1.so.${LIBgck-1_VERSION}
 lib/libgcr-3.a
 lib/libgcr-3.la
+@lib lib/libgcr-3.so.${LIBgcr-3_VERSION}
 lib/libgcr-base-3.a
 lib/libgcr-base-3.la
+@lib lib/libgcr-base-3.so.${LIBgcr-base-3_VERSION}
 lib/libmock-test-module.a
 lib/libmock-test-module.la
 lib/pkgconfig/

@@ -1,5 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2012/03/28 06:16:06 ajacoutot Exp $
-@lib lib/libgck-1.so.${LIBgck-1_VERSION}
-@lib lib/libgcr-3.so.${LIBgcr-3_VERSION}
-@lib lib/libgcr-base-3.so.${LIBgcr-base-3_VERSION}
+@comment $OpenBSD: PFRAG.shared,v 1.2 2013/03/08 06:39:05 ajacoutot Exp $
 lib/libmock-test-module.so
