@@ -1,0 +1,20 @@
+$OpenBSD: patch-lib_facter_kernelrelease_rb,v 1.1 2013/03/08 06:38:08 ajacoutot Exp $
+
+http://projects.puppetlabs.com/issues/19293
+
+--- lib/facter/kernelrelease.rb.orig	Fri Feb 15 10:06:57 2013
++++ lib/facter/kernelrelease.rb	Fri Feb 15 10:07:09 2013
+@@ -20,6 +20,13 @@ Facter.add(:kernelrelease) do
+   setcode 'oslevel -s'
+ end
+ 
++Facter.add("kernelrelease") do
++  confine :kernel => :openbsd
++  setcode do
++    Facter::Util::Resolution.exec("/sbin/sysctl -n kern.version").split(' ')[1]
++  end
++end
++
+ Facter.add(:kernelrelease) do
+   confine :kernel => %{windows}
+   setcode do

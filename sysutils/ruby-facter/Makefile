@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2013/01/17 19:52:14 robert Exp $
+# $OpenBSD: Makefile,v 1.29 2013/03/08 06:38:08 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Ruby library for retrieving facts from operating systems
 
 VERSION=	1.6.17
-REVISION=	1
+REVISION=	2
 
 DISTNAME=	facter-${VERSION}
 PKGNAME=	ruby-${DISTNAME}
@@ -13,8 +13,8 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
-HOMEPAGE=	http://reductivelabs.com/projects/facter/
-MASTER_SITES=	http://reductivelabs.com/downloads/facter/
+HOMEPAGE=	http://projects.puppetlabs.com/projects/facter
+MASTER_SITES=	https://puppetlabs.com/downloads/facter/
 
 # Apache
 PERMIT_PACKAGE_CDROM=	Yes
@@ -24,20 +24,17 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	lang/ruby
 
-USE_GROFF=	Yes
 NO_BUILD=	Yes
 
-REGRESS_DEPENDS= devel/ruby-mocha,${MODRUBY_FLAVOR}
-BUILD_DEPENDS += ${MODRUBY_BUILD_DEPENDS}
+REGRESS_DEPENDS=devel/ruby-mocha,${MODRUBY_FLAVOR}
+BUILD_DEPENDS=	${MODRUBY_BUILD_DEPENDS}
+MODRUBY_REGRESS=rake rspec2
 
 do-install:
-	${INSTALL_DATA_DIR} ${MODRUBY_EXAMPLEDIR}/facter
+	${INSTALL_DATA_DIR} ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-facter
 	@cd ${WRKSRC} && ${ALL_FAKE_FLAGS} ${RUBY} install.rb
 	${INSTALL_DATA} ${WRKSRC}/etc/facter.conf \
-			${MODRUBY_EXAMPLEDIR}/facter
+		${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-facter
 	cd ${PREFIX}/man/man8 && gunzip facter.8.gz
-
-MODRUBY_REGRESS = rake rspec2
-
 
 .include <bsd.port.mk>

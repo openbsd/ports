@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/10/08 08:49:07 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/03/08 06:38:08 ajacoutot Exp $
 bin/facter
 ${MODRUBY_SITEDIR}/facter/
 ${MODRUBY_SITEDIR}/facter.rb
@@ -85,6 +85,5 @@ ${MODRUBY_SITEDIR}/facter/virtual.rb
 ${MODRUBY_SITEDIR}/facter/vlans.rb
 ${MODRUBY_SITEDIR}/facter/xendomains.rb
 @man man/man8/facter.8
-${MODRUBY_RELEXAMPLEDIR}/
-${MODRUBY_RELEXAMPLEDIR}/facter/
-${MODRUBY_RELEXAMPLEDIR}/facter/facter.conf
+${MODRUBY_RELEXAMPLEDIR}-facter/
+${MODRUBY_RELEXAMPLEDIR}-facter/facter.conf
