@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_Makefile_in,v 1.4 2012/12/03 10:11:07 ajacoutot Exp $
---- src/Makefile.in.orig	Mon Nov 26 18:25:41 2012
-+++ src/Makefile.in	Mon Dec  3 10:22:08 2012
-@@ -1447,11 +1447,6 @@ uninstall-am: uninstall-dist_introspectionDATA \
- 
+$OpenBSD: patch-src_Makefile_in,v 1.5 2013/03/08 06:58:38 ajacoutot Exp $
+--- src/Makefile.in.orig	Sun Feb 17 22:07:40 2013
++++ src/Makefile.in	Fri Mar  1 09:17:05 2013
+@@ -1520,11 +1520,6 @@ cd-resources.h: colord.gresource.xml
+ 		$(srcdir)/colord.gresource.xml
  
  install-data-hook:
 -	if test -w $(DESTDIR)$(prefix)/; then \

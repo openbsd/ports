@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure,v 1.7 2012/12/03 10:11:07 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.8 2013/03/08 06:58:38 ajacoutot Exp $
 
 Fix DATADIRNAME: see LOCALBASE/share/aclocal/{glib-gettext.m4,intltool.m4}
 
 /var/lib -> /var/db
 
---- configure.orig	Mon Nov 26 18:25:42 2012
-+++ configure	Mon Dec  3 10:22:08 2012
-@@ -13505,6 +13505,9 @@ else
+--- configure.orig	Sun Feb 17 22:05:29 2013
++++ configure	Fri Mar  1 09:17:05 2013
+@@ -13866,6 +13866,9 @@ else
  fi
  
      ;;
@@ -16,12 +16,12 @@ Fix DATADIRNAME: see LOCALBASE/share/aclocal/{glib-gettext.m4,intltool.m4}
      *)
      DATADIRNAME=lib
      ;;
-@@ -16778,7 +16781,7 @@ fi
- 
+@@ -17543,7 +17546,7 @@ fi
+ fi
  
  # per-machine directory
 -CD_SYSTEM_PROFILES_DIR="\$(localstatedir)/lib/colord/icc"
 +CD_SYSTEM_PROFILES_DIR="\$(localstatedir)/db/colord/icc"
  
  
- ac_config_files="$ac_config_files Makefile etc/Makefile contrib/Makefile examples/Makefile man/Makefile doc/Makefile doc/api/Makefile doc/api/dbus/Makefile doc/api/version.xml data/Makefile data/org.freedesktop.ColorManager.conf data/tests/Makefile policy/Makefile rules/Makefile rules/69-cd-sensors.rules po/Makefile.in src/Makefile src/plugins/Makefile src/sensors/Makefile client/Makefile libcolord/cd-version.h libcolord/colord.pc libcolord/Makefile"
+ ac_config_files="$ac_config_files Makefile etc/Makefile contrib/Makefile contrib/session-helper/Makefile contrib/colord-sane/Makefile examples/Makefile man/Makefile doc/Makefile doc/api/Makefile doc/api/dbus/Makefile doc/api/version.xml data/Makefile data/figures/Makefile data/profiles/Makefile data/ti1/Makefile data/org.freedesktop.ColorManager.conf data/tests/Makefile policy/Makefile rules/Makefile rules/69-cd-sensors.rules po/Makefile.in src/Makefile src/plugins/Makefile src/sensors/Makefile client/Makefile lib/Makefile lib/colord/cd-version.h lib/colord/colord.pc lib/colord/Makefile lib/colorhug/Makefile lib/colorhug/colorhug.pc lib/colorhug/ch-version.h lib/dtp94/Makefile lib/huey/Makefile lib/munki/Makefile"

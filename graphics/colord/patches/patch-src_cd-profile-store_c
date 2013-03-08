@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_cd-profile-store_c,v 1.4 2012/12/03 10:11:07 ajacoutot Exp $
+$OpenBSD: patch-src_cd-profile-store_c,v 1.5 2013/03/08 06:58:38 ajacoutot Exp $
 
 /var/lib -> /var/db
 
---- src/cd-profile-store.c.orig	Fri Nov 23 12:32:36 2012
-+++ src/cd-profile-store.c	Mon Dec  3 10:22:08 2012
+--- src/cd-profile-store.c.orig	Wed Feb  6 11:11:45 2013
++++ src/cd-profile-store.c	Fri Mar  1 09:17:05 2013
 @@ -214,8 +214,8 @@ cd_profile_store_add_profile (CdProfileStore *profile_
  
  	/* is system wide? */
@@ -15,7 +15,7 @@ $OpenBSD: patch-src_cd-profile-store_c,v 1.4 2012/12/03 10:11:07 ajacoutot Exp $
  		cd_profile_set_is_system_wide (profile, TRUE);
  
  	/* parse the profile name */
-@@ -599,7 +599,7 @@ cd_profile_store_search (CdProfileStore *profile_store
+@@ -603,7 +603,7 @@ cd_profile_store_search (CdProfileStore *profile_store
  		if (ret)
  			success = TRUE;
  		ret = cd_profile_store_search_path (profile_store,
