@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.791 2013/03/08 09:59:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.792 2013/03/08 12:07:47 jasper Exp $
 
      SUBDIR =
      SUBDIR += BitTorrent
@@ -82,6 +82,11 @@
      SUBDIR += emesene
      SUBDIR += enet
      SUBDIR += epic4
+     SUBDIR += erl-amqp_client
+     SUBDIR += erl-gen_bunny
+     SUBDIR += erl-ibrowse
+     SUBDIR += erl-mini_s3
+     SUBDIR += erl-rabbit_common
      SUBDIR += etherape
      SUBDIR += ettercap
      SUBDIR += ettercap,no_x11

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.305 2013/03/08 09:57:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.306 2013/03/08 12:07:42 jasper Exp $
 
      SUBDIR =
      SUBDIR += ADMfzap
@@ -41,6 +41,8 @@
      SUBDIR += despoof
      SUBDIR += dsniff
      SUBDIR += dsniff,no_x11
+     SUBDIR += erl-bcrypt
+     SUBDIR += erl-oauth
      SUBDIR += fcrackzip
      SUBDIR += fragroute
      SUBDIR += fragrouter

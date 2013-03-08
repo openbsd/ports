@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.383 2013/02/02 16:00:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.384 2013/03/08 12:12:09 jasper Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -30,6 +30,8 @@
      SUBDIR += docx2txt
      SUBDIR += ebook-tools
      SUBDIR += enchant
+     SUBDIR += erl-edown
+     SUBDIR += erl-neotoma
      SUBDIR += eruby
      SUBDIR += exempi
      SUBDIR += fcbanner
