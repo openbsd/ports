@@ -1,0 +1,5 @@
+make every warn() and die() complains loudly in the calling package and 
+elsewhere. More often used on the command line:
+
+ perl -MCarp::Always script.pl
+

@@ -1,0 +1,24 @@
+$OpenBSD: patch-lib_Carp_Always_pm,v 1.1.1.1 2013/03/08 12:12:03 espie Exp $
+--- lib/Carp/Always.pm.orig	Mon Feb 18 11:24:02 2013
++++ lib/Carp/Always.pm	Mon Feb 18 11:25:13 2013
+@@ -9,6 +9,8 @@ our $VERSION = '0.12';
+ 
+ use Carp qw(verbose); # makes carp() cluck and croak() confess
+ 
++my %OLD_SIG;
++
+ sub _warn {
+   if ($_[-1] =~ /\n$/s) {
+     my $arg = pop @_;
+@@ -25,10 +27,9 @@ sub _die {
+     $arg =~ s/(.*)( at .*? line .*?\n$)/$1/s;
+     push @_, $arg;
+   }
++  $SIG{__DIE__} = $OLD_SIG{__DIE__};
+   die &Carp::longmess;
+ }
+-
+-my %OLD_SIG;
+ 
+ BEGIN {
+   @OLD_SIG{qw(__DIE__ __WARN__)} = @SIG{qw(__DIE__ __WARN__)};
