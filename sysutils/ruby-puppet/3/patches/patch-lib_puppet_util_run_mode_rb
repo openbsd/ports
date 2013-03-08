@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_puppet_util_run_mode_rb,v 1.4 2012/10/28 18:48:45 robert Exp $
+$OpenBSD: patch-lib_puppet_util_run_mode_rb,v 1.1 2013/03/08 16:12:47 ajacoutot Exp $
 --- lib/puppet/util/run_mode.rb.orig	Sun Oct 28 19:10:34 2012
 +++ lib/puppet/util/run_mode.rb	Sun Oct 28 19:10:42 2012
 @@ -59,7 +59,7 @@ module Puppet

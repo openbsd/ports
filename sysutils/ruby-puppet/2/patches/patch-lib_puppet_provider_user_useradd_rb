@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_puppet_provider_user_useradd_rb,v 1.2 2012/04/13 08:18:30 jasper Exp $
+$OpenBSD: patch-lib_puppet_provider_user_useradd_rb,v 1.1 2013/03/08 16:12:47 ajacoutot Exp $
 --- lib/puppet/provider/user/useradd.rb.orig	Tue Apr 10 20:23:16 2012
 +++ lib/puppet/provider/user/useradd.rb	Fri Apr 13 09:29:03 2012
 @@ -5,7 +5,7 @@ Puppet::Type.type(:user).provide :useradd, :parent => 

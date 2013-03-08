@@ -1,4 +1,4 @@
-$OpenBSD: patch-install_rb,v 1.7 2013/01/23 23:00:40 jasper Exp $
+$OpenBSD: patch-install_rb,v 1.1 2013/03/08 16:12:47 ajacoutot Exp $
 
 Don't gzip(1) the manual pages.
 

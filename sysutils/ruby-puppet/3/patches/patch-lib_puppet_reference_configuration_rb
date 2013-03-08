@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_puppet_reference_configuration_rb,v 1.5 2012/10/28 18:48:45 robert Exp $
+$OpenBSD: patch-lib_puppet_reference_configuration_rb,v 1.1 2013/03/08 16:12:47 ajacoutot Exp $
 --- lib/puppet/reference/configuration.rb.orig	Sat Oct 20 06:57:51 2012
 +++ lib/puppet/reference/configuration.rb	Sun Oct 28 19:09:31 2012
 @@ -24,7 +24,7 @@ config = Puppet::Util::Reference.newreference(:configu

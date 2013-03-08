@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_puppet_indirector_ldap_rb,v 1.1 2013/03/08 16:12:47 ajacoutot Exp $
+--- lib/puppet/indirector/ldap.rb.orig	Fri Oct 29 00:02:05 2010
++++ lib/puppet/indirector/ldap.rb	Fri Oct 29 00:14:56 2010
+@@ -43,7 +43,9 @@ class Puppet::Indirector::Ldap < Puppet::Indirector::T
+     rescue SystemExit,NoMemoryError
+       raise
+     rescue Exception => detail
+-      if count == 0
++      # XXX This is a bad workaround to avoid LDAP connection problems.
++      # We need to find the cause of the problem!
++      if count <= 10
+         # Try reconnecting to ldap if we get an exception and we haven't yet retried.
+         count += 1
+         @connection = nil

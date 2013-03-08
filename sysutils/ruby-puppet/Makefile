@@ -1,40 +1,7 @@
-# $OpenBSD: Makefile,v 1.53 2013/03/08 10:45:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2013/03/08 16:12:47 ajacoutot Exp $
 
-COMMENT=	centralised configuration management for networks
+    SUBDIR =
+    SUBDIR += 2
+    SUBDIR += 3
 
-VERSION=	3.1.0
-DISTNAME=	puppet-${VERSION}
-PKGNAME=	ruby-${DISTNAME}
-CATEGORIES=	sysutils net
-REVISION=	0
-
-HOMEPAGE=	https://puppetlabs.com
-MASTER_SITES=	${HOMEPAGE}/downloads/puppet/
-
-MAINTAINER=	Robert Nagy <robert@openbsd.org>
-
-# Apache
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-
-MODULES=	lang/ruby
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	converters/ruby-json,${MODRUBY_FLAVOR} \
-		sysutils/ruby-facter \
-		${MODRUBY_ICONV_DEPENDS}
-
-NO_REGRESS=	Yes
-NO_BUILD=	Yes
-
-do-install:
-	${SUBST_CMD} ${WRKSRC}/lib/puppet/defaults.rb
-	@cd ${WRKSRC} && ${ALL_FAKE_FLAGS} ${RUBY} install.rb
-	mv ${WRKINST}${SYSCONFDIR}/puppet ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-puppet
-	${INSTALL_DATA} ${WRKSRC}/conf/*.conf ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-puppet
-	${INSTALL_DATA} ${FILESDIR}/puppet.conf ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-puppet
-	${INSTALL_DATA_DIR} ${PREFIX}/share/emacs/site-lisp/
-	${INSTALL_DATA} ${WRKSRC}/ext/emacs/* ${PREFIX}/share/emacs/site-lisp/
-
-.include <bsd.port.mk>
+.include <bsd.port.subdir.mk>

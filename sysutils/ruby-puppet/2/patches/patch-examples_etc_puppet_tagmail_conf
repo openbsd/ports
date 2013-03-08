@@ -1,7 +1,8 @@
-$OpenBSD: patch-conf_tagmail_conf,v 1.1 2013/02/19 16:11:17 ajacoutot Exp $
---- conf/tagmail.conf.orig	Tue Feb 19 10:46:15 2013
-+++ conf/tagmail.conf	Tue Feb 19 10:46:20 2013
-@@ -0,0 +1,16 @@
+$OpenBSD: patch-examples_etc_puppet_tagmail_conf,v 1.1 2013/03/08 16:12:47 ajacoutot Exp $
+--- examples/etc/puppet/tagmail.conf.orig	Thu Mar  7 11:13:13 2013
++++ examples/etc/puppet/tagmail.conf	Thu Mar  7 11:13:23 2013
+@@ -1 +1,16 @@
+-all: user@domain.com
 +# tagmail.conf
 +
 +# This file configures the `tagmail` report, which can be enabled by including

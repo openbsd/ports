@@ -1,4 +1,4 @@
-$OpenBSD: patch-conf_fileserver_conf,v 1.1 2013/02/19 16:11:17 ajacoutot Exp $
+$OpenBSD: patch-conf_fileserver_conf,v 1.1 2013/03/08 16:12:47 ajacoutot Exp $
 --- conf/fileserver.conf.orig	Tue Feb 19 10:45:51 2013
 +++ conf/fileserver.conf	Tue Feb 19 10:46:03 2013
 @@ -0,0 +1,41 @@

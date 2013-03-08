@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.1 2012/09/19 09:56:01 robert Exp $
+$OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.1 2013/03/08 16:12:47 ajacoutot Exp $
 --- lib/puppet/provider/service/openbsd.rb.orig	Wed Sep 19 11:53:39 2012
 +++ lib/puppet/provider/service/openbsd.rb	Wed Sep 19 11:53:35 2012
 @@ -0,0 +1,38 @@

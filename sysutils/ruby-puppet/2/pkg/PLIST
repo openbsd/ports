@@ -1,20 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.27 2013/03/08 10:40:23 robert Exp $
+@comment $OpenBSD: PLIST,v 1.1 2013/03/08 16:12:47 ajacoutot Exp $
+@pkgpath sysutils/ruby-puppet
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
 @extraunexec rm -rf ${SYSCONFDIR}/puppet/*
 @extraunexec rm -rf /var/puppet/*
-bin/extlookup2hiera
+bin/filebucket
+bin/pi
 bin/puppet
-${MODRUBY_SITEDIR}/hiera/
-${MODRUBY_SITEDIR}/hiera/backend/
-${MODRUBY_SITEDIR}/hiera/backend/puppet_backend.rb
-${MODRUBY_SITEDIR}/hiera/scope.rb
-${MODRUBY_SITEDIR}/hiera_puppet.rb
+bin/puppetdoc
+bin/ralsh
 ${MODRUBY_SITEDIR}/puppet/
 ${MODRUBY_SITEDIR}/puppet.rb
 ${MODRUBY_SITEDIR}/puppet/agent/
 ${MODRUBY_SITEDIR}/puppet/agent.rb
-${MODRUBY_SITEDIR}/puppet/agent/disabler.rb
 ${MODRUBY_SITEDIR}/puppet/agent/locker.rb
 ${MODRUBY_SITEDIR}/puppet/application/
 ${MODRUBY_SITEDIR}/puppet/application.rb
@@ -60,7 +58,6 @@ ${MODRUBY_SITEDIR}/puppet/configurer/downloader.rb
 ${MODRUBY_SITEDIR}/puppet/configurer/fact_handler.rb
 ${MODRUBY_SITEDIR}/puppet/configurer/plugin_handler.rb
 ${MODRUBY_SITEDIR}/puppet/daemon.rb
-${MODRUBY_SITEDIR}/puppet/data_binding.rb
 ${MODRUBY_SITEDIR}/puppet/defaults.rb
 ${MODRUBY_SITEDIR}/puppet/dsl/
 ${MODRUBY_SITEDIR}/puppet/dsl.rb
@@ -134,7 +131,6 @@ ${MODRUBY_SITEDIR}/puppet/feature/eventlog.rb
 ${MODRUBY_SITEDIR}/puppet/feature/pson.rb
 ${MODRUBY_SITEDIR}/puppet/feature/rack.rb
 ${MODRUBY_SITEDIR}/puppet/feature/rails.rb
-${MODRUBY_SITEDIR}/puppet/feature/rdoc1.rb
 ${MODRUBY_SITEDIR}/puppet/feature/rubygems.rb
 ${MODRUBY_SITEDIR}/puppet/feature/selinux.rb
 ${MODRUBY_SITEDIR}/puppet/feature/ssh.rb
@@ -166,7 +162,6 @@ ${MODRUBY_SITEDIR}/puppet/file_serving/terminus_selector.rb
 ${MODRUBY_SITEDIR}/puppet/forge/
 ${MODRUBY_SITEDIR}/puppet/forge.rb
 ${MODRUBY_SITEDIR}/puppet/forge/cache.rb
-${MODRUBY_SITEDIR}/puppet/forge/errors.rb
 ${MODRUBY_SITEDIR}/puppet/forge/repository.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/
 ${MODRUBY_SITEDIR}/puppet/indirector.rb
@@ -174,7 +169,6 @@ ${MODRUBY_SITEDIR}/puppet/indirector/active_record.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/catalog/
 ${MODRUBY_SITEDIR}/puppet/indirector/catalog/active_record.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/catalog/compiler.rb
-${MODRUBY_SITEDIR}/puppet/indirector/catalog/json.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/catalog/queue.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/catalog/rest.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/catalog/static_compiler.rb
@@ -201,9 +195,6 @@ ${MODRUBY_SITEDIR}/puppet/indirector/certificate_status/file.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/certificate_status/rest.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/code.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/couch.rb
-${MODRUBY_SITEDIR}/puppet/indirector/data_binding/
-${MODRUBY_SITEDIR}/puppet/indirector/data_binding/hiera.rb
-${MODRUBY_SITEDIR}/puppet/indirector/data_binding/none.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/direct_file_server.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/envelope.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/exec.rb
@@ -236,7 +227,6 @@ ${MODRUBY_SITEDIR}/puppet/indirector/file_metadata/file_server.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/file_metadata/rest.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/file_metadata/selector.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/file_server.rb
-${MODRUBY_SITEDIR}/puppet/indirector/hiera.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/indirection.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/instrumentation_data/
 ${MODRUBY_SITEDIR}/puppet/indirector/instrumentation_data.rb
@@ -250,7 +240,8 @@ ${MODRUBY_SITEDIR}/puppet/indirector/instrumentation_probe/
 ${MODRUBY_SITEDIR}/puppet/indirector/instrumentation_probe.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/instrumentation_probe/local.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/instrumentation_probe/rest.rb
-${MODRUBY_SITEDIR}/puppet/indirector/json.rb
+${MODRUBY_SITEDIR}/puppet/indirector/inventory/
+${MODRUBY_SITEDIR}/puppet/indirector/inventory/yaml.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/key/
 ${MODRUBY_SITEDIR}/puppet/indirector/key/ca.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/key/disabled_ca.rb
@@ -265,9 +256,7 @@ ${MODRUBY_SITEDIR}/puppet/indirector/node/memory.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/node/plain.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/node/rest.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/node/store_configs.rb
-${MODRUBY_SITEDIR}/puppet/indirector/node/write_only_yaml.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/node/yaml.rb
-${MODRUBY_SITEDIR}/puppet/indirector/none.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/plain.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/queue.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/report/
@@ -332,7 +321,6 @@ ${MODRUBY_SITEDIR}/puppet/module_tool/errors/installer.rb
 ${MODRUBY_SITEDIR}/puppet/module_tool/errors/shared.rb
 ${MODRUBY_SITEDIR}/puppet/module_tool/errors/uninstaller.rb
 ${MODRUBY_SITEDIR}/puppet/module_tool/errors/upgrader.rb
-${MODRUBY_SITEDIR}/puppet/module_tool/install_directory.rb
 ${MODRUBY_SITEDIR}/puppet/module_tool/metadata.rb
 ${MODRUBY_SITEDIR}/puppet/module_tool/modulefile.rb
 ${MODRUBY_SITEDIR}/puppet/module_tool/shared_behaviors.rb
@@ -350,42 +338,60 @@ ${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/generator/tests/
 ${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/generator/tests/init.pp.erb
 ${MODRUBY_SITEDIR}/puppet/network/
 ${MODRUBY_SITEDIR}/puppet/network.rb
-${MODRUBY_SITEDIR}/puppet/network/auth_config_parser.rb
 ${MODRUBY_SITEDIR}/puppet/network/authconfig.rb
-${MODRUBY_SITEDIR}/puppet/network/authentication.rb
 ${MODRUBY_SITEDIR}/puppet/network/authorization.rb
 ${MODRUBY_SITEDIR}/puppet/network/authstore.rb
 ${MODRUBY_SITEDIR}/puppet/network/client_request.rb
 ${MODRUBY_SITEDIR}/puppet/network/format.rb
 ${MODRUBY_SITEDIR}/puppet/network/format_handler.rb
 ${MODRUBY_SITEDIR}/puppet/network/formats.rb
+${MODRUBY_SITEDIR}/puppet/network/handler/
+${MODRUBY_SITEDIR}/puppet/network/handler.rb
+${MODRUBY_SITEDIR}/puppet/network/handler/ca.rb
+${MODRUBY_SITEDIR}/puppet/network/handler/filebucket.rb
+${MODRUBY_SITEDIR}/puppet/network/handler/fileserver.rb
+${MODRUBY_SITEDIR}/puppet/network/handler/master.rb
+${MODRUBY_SITEDIR}/puppet/network/handler/report.rb
+${MODRUBY_SITEDIR}/puppet/network/handler/runner.rb
+${MODRUBY_SITEDIR}/puppet/network/handler/status.rb
 ${MODRUBY_SITEDIR}/puppet/network/http/
 ${MODRUBY_SITEDIR}/puppet/network/http.rb
 ${MODRUBY_SITEDIR}/puppet/network/http/api/
 ${MODRUBY_SITEDIR}/puppet/network/http/api.rb
 ${MODRUBY_SITEDIR}/puppet/network/http/api/v1.rb
 ${MODRUBY_SITEDIR}/puppet/network/http/compression.rb
-${MODRUBY_SITEDIR}/puppet/network/http/connection.rb
 ${MODRUBY_SITEDIR}/puppet/network/http/handler.rb
+${MODRUBY_SITEDIR}/puppet/network/http/mongrel/
+${MODRUBY_SITEDIR}/puppet/network/http/mongrel.rb
+${MODRUBY_SITEDIR}/puppet/network/http/mongrel/rest.rb
 ${MODRUBY_SITEDIR}/puppet/network/http/rack/
 ${MODRUBY_SITEDIR}/puppet/network/http/rack.rb
 ${MODRUBY_SITEDIR}/puppet/network/http/rack/httphandler.rb
 ${MODRUBY_SITEDIR}/puppet/network/http/rack/rest.rb
+${MODRUBY_SITEDIR}/puppet/network/http/rack/xmlrpc.rb
 ${MODRUBY_SITEDIR}/puppet/network/http/webrick/
 ${MODRUBY_SITEDIR}/puppet/network/http/webrick.rb
 ${MODRUBY_SITEDIR}/puppet/network/http/webrick/rest.rb
 ${MODRUBY_SITEDIR}/puppet/network/http_pool.rb
-${MODRUBY_SITEDIR}/puppet/network/resolver.rb
+${MODRUBY_SITEDIR}/puppet/network/http_server/
+${MODRUBY_SITEDIR}/puppet/network/http_server.rb
+${MODRUBY_SITEDIR}/puppet/network/http_server/mongrel.rb
+${MODRUBY_SITEDIR}/puppet/network/rest_authconfig.rb
+${MODRUBY_SITEDIR}/puppet/network/rest_authorization.rb
 ${MODRUBY_SITEDIR}/puppet/network/rest_controller.rb
 ${MODRUBY_SITEDIR}/puppet/network/rights.rb
 ${MODRUBY_SITEDIR}/puppet/network/server.rb
+${MODRUBY_SITEDIR}/puppet/network/xmlrpc/
+${MODRUBY_SITEDIR}/puppet/network/xmlrpc/processor.rb
+${MODRUBY_SITEDIR}/puppet/network/xmlrpc/server.rb
+${MODRUBY_SITEDIR}/puppet/network/xmlrpc/webrick_servlet.rb
 ${MODRUBY_SITEDIR}/puppet/node/
 ${MODRUBY_SITEDIR}/puppet/node.rb
 ${MODRUBY_SITEDIR}/puppet/node/environment.rb
 ${MODRUBY_SITEDIR}/puppet/node/facts.rb
+${MODRUBY_SITEDIR}/puppet/node/inventory.rb
 ${MODRUBY_SITEDIR}/puppet/parameter/
 ${MODRUBY_SITEDIR}/puppet/parameter.rb
-${MODRUBY_SITEDIR}/puppet/parameter/package_options.rb
 ${MODRUBY_SITEDIR}/puppet/parameter/path.rb
 ${MODRUBY_SITEDIR}/puppet/parameter/value.rb
 ${MODRUBY_SITEDIR}/puppet/parameter/value_collection.rb
@@ -438,10 +444,6 @@ ${MODRUBY_SITEDIR}/puppet/parser/functions/fail.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/file.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/fqdn_rand.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/generate.rb
-${MODRUBY_SITEDIR}/puppet/parser/functions/hiera.rb
-${MODRUBY_SITEDIR}/puppet/parser/functions/hiera_array.rb
-${MODRUBY_SITEDIR}/puppet/parser/functions/hiera_hash.rb
-${MODRUBY_SITEDIR}/puppet/parser/functions/hiera_include.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/include.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/inline_template.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/md5.rb
@@ -480,7 +482,6 @@ ${MODRUBY_SITEDIR}/puppet/provider/aixobject.rb
 ${MODRUBY_SITEDIR}/puppet/provider/augeas/
 ${MODRUBY_SITEDIR}/puppet/provider/augeas/augeas.rb
 ${MODRUBY_SITEDIR}/puppet/provider/cisco.rb
-${MODRUBY_SITEDIR}/puppet/provider/command.rb
 ${MODRUBY_SITEDIR}/puppet/provider/computer/
 ${MODRUBY_SITEDIR}/puppet/provider/computer/computer.rb
 ${MODRUBY_SITEDIR}/puppet/provider/confine/
@@ -512,6 +513,7 @@ ${MODRUBY_SITEDIR}/puppet/provider/group/windows_adsi.rb
 ${MODRUBY_SITEDIR}/puppet/provider/host/
 ${MODRUBY_SITEDIR}/puppet/provider/host/parsed.rb
 ${MODRUBY_SITEDIR}/puppet/provider/interface/
+${MODRUBY_SITEDIR}/puppet/provider/interface/base.rb
 ${MODRUBY_SITEDIR}/puppet/provider/interface/cisco.rb
 ${MODRUBY_SITEDIR}/puppet/provider/ldap.rb
 ${MODRUBY_SITEDIR}/puppet/provider/macauthorization/
@@ -554,7 +556,6 @@ ${MODRUBY_SITEDIR}/puppet/provider/package/pacman.rb
 ${MODRUBY_SITEDIR}/puppet/provider/package/pip.rb
 ${MODRUBY_SITEDIR}/puppet/provider/package/pkg.rb
 ${MODRUBY_SITEDIR}/puppet/provider/package/pkgdmg.rb
-${MODRUBY_SITEDIR}/puppet/provider/package/pkgin.rb
 ${MODRUBY_SITEDIR}/puppet/provider/package/pkgutil.rb
 ${MODRUBY_SITEDIR}/puppet/provider/package/portage.rb
 ${MODRUBY_SITEDIR}/puppet/provider/package/ports.rb
@@ -565,11 +566,6 @@ ${MODRUBY_SITEDIR}/puppet/provider/package/sun.rb
 ${MODRUBY_SITEDIR}/puppet/provider/package/sunfreeware.rb
 ${MODRUBY_SITEDIR}/puppet/provider/package/up2date.rb
 ${MODRUBY_SITEDIR}/puppet/provider/package/urpmi.rb
-${MODRUBY_SITEDIR}/puppet/provider/package/windows/
-${MODRUBY_SITEDIR}/puppet/provider/package/windows.rb
-${MODRUBY_SITEDIR}/puppet/provider/package/windows/exe_package.rb
-${MODRUBY_SITEDIR}/puppet/provider/package/windows/msi_package.rb
-${MODRUBY_SITEDIR}/puppet/provider/package/windows/package.rb
 ${MODRUBY_SITEDIR}/puppet/provider/package/yum.rb
 ${MODRUBY_SITEDIR}/puppet/provider/package/yumhelper.py
 ${MODRUBY_SITEDIR}/puppet/provider/package/zypper.rb
@@ -617,11 +613,11 @@ ${MODRUBY_SITEDIR}/puppet/provider/user/windows_adsi.rb
 ${MODRUBY_SITEDIR}/puppet/provider/vlan/
 ${MODRUBY_SITEDIR}/puppet/provider/vlan/cisco.rb
 ${MODRUBY_SITEDIR}/puppet/provider/zfs/
-${MODRUBY_SITEDIR}/puppet/provider/zfs/zfs.rb
+${MODRUBY_SITEDIR}/puppet/provider/zfs/solaris.rb
 ${MODRUBY_SITEDIR}/puppet/provider/zone/
 ${MODRUBY_SITEDIR}/puppet/provider/zone/solaris.rb
 ${MODRUBY_SITEDIR}/puppet/provider/zpool/
-${MODRUBY_SITEDIR}/puppet/provider/zpool/zpool.rb
+${MODRUBY_SITEDIR}/puppet/provider/zpool/solaris.rb
 ${MODRUBY_SITEDIR}/puppet/rails/
 ${MODRUBY_SITEDIR}/puppet/rails.rb
 ${MODRUBY_SITEDIR}/puppet/rails/benchmark.rb
@@ -648,6 +644,7 @@ ${MODRUBY_SITEDIR}/puppet/reference/configuration.rb
 ${MODRUBY_SITEDIR}/puppet/reference/function.rb
 ${MODRUBY_SITEDIR}/puppet/reference/indirection.rb
 ${MODRUBY_SITEDIR}/puppet/reference/metaparameter.rb
+${MODRUBY_SITEDIR}/puppet/reference/network.rb
 ${MODRUBY_SITEDIR}/puppet/reference/providers.rb
 ${MODRUBY_SITEDIR}/puppet/reference/report.rb
 ${MODRUBY_SITEDIR}/puppet/reference/type.rb
@@ -667,19 +664,6 @@ ${MODRUBY_SITEDIR}/puppet/resource/type.rb
 ${MODRUBY_SITEDIR}/puppet/resource/type_collection.rb
 ${MODRUBY_SITEDIR}/puppet/resource/type_collection_helper.rb
 ${MODRUBY_SITEDIR}/puppet/run.rb
-${MODRUBY_SITEDIR}/puppet/settings/
-${MODRUBY_SITEDIR}/puppet/settings.rb
-${MODRUBY_SITEDIR}/puppet/settings/base_setting.rb
-${MODRUBY_SITEDIR}/puppet/settings/boolean_setting.rb
-${MODRUBY_SITEDIR}/puppet/settings/config_file.rb
-${MODRUBY_SITEDIR}/puppet/settings/directory_setting.rb
-${MODRUBY_SITEDIR}/puppet/settings/duration_setting.rb
-${MODRUBY_SITEDIR}/puppet/settings/errors.rb
-${MODRUBY_SITEDIR}/puppet/settings/file_setting.rb
-${MODRUBY_SITEDIR}/puppet/settings/path_setting.rb
-${MODRUBY_SITEDIR}/puppet/settings/string_setting.rb
-${MODRUBY_SITEDIR}/puppet/settings/terminus_setting.rb
-${MODRUBY_SITEDIR}/puppet/settings/value_translator.rb
 ${MODRUBY_SITEDIR}/puppet/simple_graph.rb
 ${MODRUBY_SITEDIR}/puppet/ssl/
 ${MODRUBY_SITEDIR}/puppet/ssl.rb
@@ -691,9 +675,6 @@ ${MODRUBY_SITEDIR}/puppet/ssl/certificate_authority/interface.rb
 ${MODRUBY_SITEDIR}/puppet/ssl/certificate_factory.rb
 ${MODRUBY_SITEDIR}/puppet/ssl/certificate_request.rb
 ${MODRUBY_SITEDIR}/puppet/ssl/certificate_revocation_list.rb
-${MODRUBY_SITEDIR}/puppet/ssl/certificate_signer.rb
-${MODRUBY_SITEDIR}/puppet/ssl/configuration.rb
-${MODRUBY_SITEDIR}/puppet/ssl/digest.rb
 ${MODRUBY_SITEDIR}/puppet/ssl/host.rb
 ${MODRUBY_SITEDIR}/puppet/ssl/inventory.rb
 ${MODRUBY_SITEDIR}/puppet/ssl/key.rb
@@ -706,6 +687,7 @@ ${MODRUBY_SITEDIR}/puppet/transaction/event.rb
 ${MODRUBY_SITEDIR}/puppet/transaction/event_manager.rb
 ${MODRUBY_SITEDIR}/puppet/transaction/report.rb
 ${MODRUBY_SITEDIR}/puppet/transaction/resource_harness.rb
+${MODRUBY_SITEDIR}/puppet/transportable.rb
 ${MODRUBY_SITEDIR}/puppet/type/
 ${MODRUBY_SITEDIR}/puppet/type.rb
 ${MODRUBY_SITEDIR}/puppet/type/augeas.rb
@@ -775,16 +757,15 @@ ${MODRUBY_SITEDIR}/puppet/type/zpool.rb
 ${MODRUBY_SITEDIR}/puppet/util/
 ${MODRUBY_SITEDIR}/puppet/util.rb
 ${MODRUBY_SITEDIR}/puppet/util/adsi.rb
+${MODRUBY_SITEDIR}/puppet/util/autoload/
 ${MODRUBY_SITEDIR}/puppet/util/autoload.rb
+${MODRUBY_SITEDIR}/puppet/util/autoload/file_cache.rb
 ${MODRUBY_SITEDIR}/puppet/util/backups.rb
 ${MODRUBY_SITEDIR}/puppet/util/cacher.rb
 ${MODRUBY_SITEDIR}/puppet/util/checksums.rb
 ${MODRUBY_SITEDIR}/puppet/util/classgen.rb
 ${MODRUBY_SITEDIR}/puppet/util/colors.rb
-${MODRUBY_SITEDIR}/puppet/util/command_line/
 ${MODRUBY_SITEDIR}/puppet/util/command_line.rb
-${MODRUBY_SITEDIR}/puppet/util/command_line/puppet_option_parser.rb
-${MODRUBY_SITEDIR}/puppet/util/command_line/trollop.rb
 ${MODRUBY_SITEDIR}/puppet/util/constant_inflector.rb
 ${MODRUBY_SITEDIR}/puppet/util/diff.rb
 ${MODRUBY_SITEDIR}/puppet/util/docs.rb
@@ -792,6 +773,7 @@ ${MODRUBY_SITEDIR}/puppet/util/errors.rb
 ${MODRUBY_SITEDIR}/puppet/util/execution.rb
 ${MODRUBY_SITEDIR}/puppet/util/execution_stub.rb
 ${MODRUBY_SITEDIR}/puppet/util/feature.rb
+${MODRUBY_SITEDIR}/puppet/util/file_locking.rb
 ${MODRUBY_SITEDIR}/puppet/util/fileparsing.rb
 ${MODRUBY_SITEDIR}/puppet/util/filetype.rb
 ${MODRUBY_SITEDIR}/puppet/util/graph.rb
@@ -807,27 +789,22 @@ ${MODRUBY_SITEDIR}/puppet/util/instrumentation/listener.rb
 ${MODRUBY_SITEDIR}/puppet/util/instrumentation/listeners/
 ${MODRUBY_SITEDIR}/puppet/util/instrumentation/listeners/log.rb
 ${MODRUBY_SITEDIR}/puppet/util/instrumentation/listeners/performance.rb
-${MODRUBY_SITEDIR}/puppet/util/json_lockfile.rb
 ${MODRUBY_SITEDIR}/puppet/util/ldap/
 ${MODRUBY_SITEDIR}/puppet/util/ldap.rb
 ${MODRUBY_SITEDIR}/puppet/util/ldap/connection.rb
 ${MODRUBY_SITEDIR}/puppet/util/ldap/generator.rb
 ${MODRUBY_SITEDIR}/puppet/util/ldap/manager.rb
 ${MODRUBY_SITEDIR}/puppet/util/loadedfile.rb
-${MODRUBY_SITEDIR}/puppet/util/lockfile.rb
 ${MODRUBY_SITEDIR}/puppet/util/log/
 ${MODRUBY_SITEDIR}/puppet/util/log.rb
 ${MODRUBY_SITEDIR}/puppet/util/log/destination.rb
 ${MODRUBY_SITEDIR}/puppet/util/log/destinations.rb
-${MODRUBY_SITEDIR}/puppet/util/log/rate_limited_logger.rb
 ${MODRUBY_SITEDIR}/puppet/util/log_paths.rb
 ${MODRUBY_SITEDIR}/puppet/util/logging.rb
 ${MODRUBY_SITEDIR}/puppet/util/metaid.rb
 ${MODRUBY_SITEDIR}/puppet/util/methodhelper.rb
 ${MODRUBY_SITEDIR}/puppet/util/metric.rb
-${MODRUBY_SITEDIR}/puppet/util/monkey_patches/
 ${MODRUBY_SITEDIR}/puppet/util/monkey_patches.rb
-${MODRUBY_SITEDIR}/puppet/util/monkey_patches/lines.rb
 ${MODRUBY_SITEDIR}/puppet/util/nagios_maker.rb
 ${MODRUBY_SITEDIR}/puppet/util/network_device/
 ${MODRUBY_SITEDIR}/puppet/util/network_device.rb
@@ -870,9 +847,13 @@ ${MODRUBY_SITEDIR}/puppet/util/rdoc/parser.rb
 ${MODRUBY_SITEDIR}/puppet/util/reference.rb
 ${MODRUBY_SITEDIR}/puppet/util/resource_template.rb
 ${MODRUBY_SITEDIR}/puppet/util/retryaction.rb
-${MODRUBY_SITEDIR}/puppet/util/rubygems.rb
 ${MODRUBY_SITEDIR}/puppet/util/run_mode.rb
 ${MODRUBY_SITEDIR}/puppet/util/selinux.rb
+${MODRUBY_SITEDIR}/puppet/util/settings/
+${MODRUBY_SITEDIR}/puppet/util/settings.rb
+${MODRUBY_SITEDIR}/puppet/util/settings/boolean_setting.rb
+${MODRUBY_SITEDIR}/puppet/util/settings/file_setting.rb
+${MODRUBY_SITEDIR}/puppet/util/settings/setting.rb
 ${MODRUBY_SITEDIR}/puppet/util/storage.rb
 ${MODRUBY_SITEDIR}/puppet/util/subclass_loader.rb
 ${MODRUBY_SITEDIR}/puppet/util/suidmanager.rb
@@ -886,15 +867,15 @@ ${MODRUBY_SITEDIR}/puppet/util/windows.rb
 ${MODRUBY_SITEDIR}/puppet/util/windows/error.rb
 ${MODRUBY_SITEDIR}/puppet/util/windows/file.rb
 ${MODRUBY_SITEDIR}/puppet/util/windows/process.rb
-${MODRUBY_SITEDIR}/puppet/util/windows/registry.rb
 ${MODRUBY_SITEDIR}/puppet/util/windows/security.rb
 ${MODRUBY_SITEDIR}/puppet/util/windows/sid.rb
 ${MODRUBY_SITEDIR}/puppet/util/windows/user.rb
 ${MODRUBY_SITEDIR}/puppet/util/zaml.rb
 ${MODRUBY_SITEDIR}/puppet/version.rb
 ${MODRUBY_SITEDIR}/semver.rb
-@man man/man8/extlookup2hiera.8
 @man man/man5/puppet.conf.5
+@man man/man8/filebucket.8
+@man man/man8/pi.8
 @man man/man8/puppet-agent.8
 @man man/man8/puppet-apply.8
 @man man/man8/puppet-ca.8
@@ -930,6 +911,18 @@ ${MODRUBY_SITEDIR}/semver.rb
 @man man/man8/puppet-secret_agent.8
 @man man/man8/puppet-status.8
 @man man/man8/puppet.8
+@man man/man8/puppetca.8
+@man man/man8/puppetd.8
+@man man/man8/puppetdoc.8
+@man man/man8/puppetmasterd.8
+@man man/man8/puppetqd.8
+@man man/man8/puppetrun.8
+@man man/man8/ralsh.8
+sbin/puppetca
+sbin/puppetd
+sbin/puppetmasterd
+sbin/puppetqd
+sbin/puppetrun
 share/emacs/
 share/emacs/site-lisp/
 share/emacs/site-lisp/puppet-mode-init.el
@@ -942,6 +935,8 @@ ${MODRUBY_RELEXAMPLEDIR}-puppet/auth.conf
 @sample ${SYSCONFDIR}/puppet/auth.conf
 ${MODRUBY_RELEXAMPLEDIR}-puppet/fileserver.conf
 @sample ${SYSCONFDIR}/puppet/fileserver.conf
+${MODRUBY_RELEXAMPLEDIR}-puppet/namespaceauth.conf
+${MODRUBY_RELEXAMPLEDIR}-puppet/puppet-queue.conf
 ${MODRUBY_RELEXAMPLEDIR}-puppet/puppet.conf
 @sample ${SYSCONFDIR}/puppet/puppet.conf
 ${MODRUBY_RELEXAMPLEDIR}-puppet/tagmail.conf
