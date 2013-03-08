@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.339 2013/01/28 07:56:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.340 2013/03/08 06:59:59 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -224,7 +224,6 @@
      SUBDIR += sane-frontends
      SUBDIR += scratch
      SUBDIR += scrot
-     SUBDIR += shared-color-profiles
      SUBDIR += shared-color-targets
      SUBDIR += shotwell
      SUBDIR += simple-scan
