@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2012/03/29 13:38:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2013/03/08 01:40:16 brad Exp $
 
-COMMENT=	Qt4 poker game with online capabilities
+COMMENT=	texas hold'em poker game with online capabilities
 
-V=		0.8.3
+V=		1.0
 DISTNAME=	PokerTH-${V}-src
 PKGNAME=	pokerth-${V}
-REVISION=		0
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.pokerth.net/
@@ -16,23 +15,30 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+WANTLIB += c m pthread stdc++
+WANTLIB += ICE lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSql SDL SDL_mixer SM
+WANTLIB += X11 Xext Xi Xinerama Xrender boost_filesystem-mt boost_iostreams-mt
+WANTLIB += boost_program_options-mt boost_random-mt boost_regex-mt
+WANTLIB += boost_system-mt boost_thread-mt crypto curl fontconfig
+WANTLIB += freetype gsasl ircclient protobuf sqlite3 ssl tinyxml
+
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pokerth/}
 
 EXTRACT_SUFX=	.tar.bz2
 
-WANTLIB += QtGui QtNetwork QtSql SDL SDL_mixer boost_filesystem-mt
-WANTLIB += boost_iostreams-mt boost_program_options-mt boost_regex-mt
-WANTLIB += boost_system-mt boost_thread-mt c crypto curl gsasl
-WANTLIB += m pthread sqlite3 ssl stdc++
-
 MODULES=	devel/gettext \
 		x11/qt4
+
+BUILD_DEPENDS=	archivers/gtar
 
 RUN_DEPENDS=	devel/desktop-file-utils
 LIB_DEPENDS=	devel/sdl-mixer \
 		devel/boost \
+		devel/protobuf \
 		net/curl \
-		security/libgsasl
+		net/libircclient \
+		security/libgsasl \
+		textproc/tinyxml
 
 CONFIGURE_ENV=	HOME=${WRKDIR}
 
@@ -42,6 +48,7 @@ MAKE_FLAGS=	QMAKE_CXX=${CXX} \
 		PREFIX=${PREFIX}
 
 FAKE_FLAGS=	INSTALL_ROOT=${DESTDIR}
+TAR=		${LOCALBASE}/bin/gtar
 
 SEPARATE_BUILD=	Yes
 

@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_net_common_ircthread_cpp,v 1.1 2013/03/08 01:40:53 brad Exp $
+--- src/net/common/ircthread.cpp.orig	Fri Jan 18 16:06:46 2013
++++ src/net/common/ircthread.cpp	Fri Jan 18 16:07:24 2013
+@@ -33,6 +33,7 @@
+ #include <net/ircthread.h>
+ #include <net/socket_msg.h>
+ #include <libircclient/libircclient.h>
++#include <libircclient/libirc_rfcnumeric.h>
+ #include <boost/algorithm/string/predicate.hpp>
+ #include <queue>
+ #include <sstream>
