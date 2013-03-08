@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2012/06/15 08:30:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2013/03/08 09:10:37 landry Exp $
 @bin bin/xfdesktop
 @bin bin/xfdesktop-settings
 @man man/man1/xfdesktop.1
@@ -66,6 +66,7 @@ share/locale/ru/LC_MESSAGES/xfdesktop.mo
 share/locale/si/LC_MESSAGES/xfdesktop.mo
 share/locale/sk/LC_MESSAGES/xfdesktop.mo
 share/locale/sq/LC_MESSAGES/xfdesktop.mo
+share/locale/sr/LC_MESSAGES/xfdesktop.mo
 share/locale/sv/LC_MESSAGES/xfdesktop.mo
 share/locale/ta/LC_MESSAGES/xfdesktop.mo
 share/locale/te/LC_MESSAGES/xfdesktop.mo

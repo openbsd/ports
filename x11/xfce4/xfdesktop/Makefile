@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.46 2013/01/02 17:12:23 landry Exp $
+# $OpenBSD: Makefile,v 1.47 2013/03/08 09:10:37 landry Exp $
 
 COMMENT=	Xfce4 desktop manager
 
 XFCE_PROJECT=	xfdesktop
-REVISION=	1
+XFCE_VERSION =	4.10.1
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
@@ -26,15 +26,15 @@ LIB_DEPENDS=	x11/xfce4/libxfce4ui>=4.9.0 \
 		devel/libnotify \
 		devel/libwnck
 
-WANTLIB += GL ICE SM X11 X11-xcb XRes Xau Xcomposite Xcursor Xdamage
-WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
-WANTLIB += atk-1.0 c cairo dbus-1 dbus-glib-1 drm exo-1 expat
+WANTLIB += ICE SM X11 X11-xcb XRes Xcomposite Xcursor Xdamage
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender
+WANTLIB += atk-1.0 c cairo dbus-1 dbus-glib-1 exo-1 expat
 WANTLIB += ffi fontconfig freetype garcon-1 gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 m notify pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs startup-notification-1
 WANTLIB += thunarx-2 wnck-1 xcb xcb-aux xcb-render xcb-shm xfce4ui-1
-WANTLIB += xfce4util xfconf-0 z stdc++
+WANTLIB += xfce4util xfconf-0 z
 WANTLIB += harfbuzz icudata icule icuuc
 
 FAKE_FLAGS=	menudir=${PREFIX}/share/examples/xfdesktop
