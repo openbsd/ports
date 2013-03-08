@@ -1,0 +1,9 @@
+$OpenBSD: patch-rebar_config,v 1.1.1.1 2013/03/08 12:03:56 jasper Exp $
+--- rebar.config.orig	Mon Feb 25 11:42:35 2013
++++ rebar.config	Mon Feb 25 11:42:40 2013
+@@ -1,5 +1 @@
+-{deps, [
+-        {ibrowse, ".*", {git, "git://github.com/opscode/ibrowse",
+-                            {tag, "v4.0.1.1"}}}
+-        ]}.
+ {erl_opts, [warnings_as_errors, debug_info]}.
