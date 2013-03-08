@@ -1,0 +1,12 @@
+$OpenBSD: patch-rebar_config,v 1.1.1.1 2013/03/08 12:13:48 jasper Exp $
+--- rebar.config.orig	Tue Feb 26 19:40:48 2013
++++ rebar.config	Tue Feb 26 19:40:56 2013
+@@ -2,8 +2,3 @@
+ {erl_opts, [warnings_as_errors]}.
+ {cover_enabled, true}.
+ {edoc_opts, [{preprocess, true}]}.
+-
+-{deps, [
+-        {mochiweb, "1.5.1*", {git, "git://github.com/basho/mochiweb",
+-                            {tag, "1.5.1p3"}}}
+-        ]}.
