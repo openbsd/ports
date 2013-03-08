@@ -1,6 +1,6 @@
-$OpenBSD: patch-radicale_config_py,v 1.5 2012/05/23 18:02:09 sthen Exp $
---- radicale/config.py.orig	Tue Mar 13 09:46:54 2012
-+++ radicale/config.py	Wed May 23 19:00:00 2012
+$OpenBSD: patch-radicale_config_py,v 1.6 2013/03/08 10:38:01 jasper Exp $
+--- radicale/config.py.orig	Fri Aug  3 14:04:39 2012
++++ radicale/config.py	Sun Feb 24 17:39:19 2013
 @@ -43,8 +43,8 @@ INITIAL_CONFIG = {
          "daemon": "False",
          "pid": "",
@@ -16,20 +16,20 @@ $OpenBSD: patch-radicale_config_py,v 1.5 2012/05/23 18:02:09 sthen Exp $
          "type": "None",
          "public_users": "public",
          "private_users": "private",
--        "httpasswd_filename": "/etc/radicale/users",
-+        "httpasswd_filename": "${SYSCONFDIR}/radicale/users",
-         "httpasswd_encryption": "crypt",
-         "ldap_url": "ldap://localhost:389/",
-         "ldap_base": "ou=users,dc=example,dc=com",
-@@ -66,12 +66,10 @@ INITIAL_CONFIG = {
+-        "htpasswd_filename": "/etc/radicale/users",
++        "htpasswd_filename": "${SYSCONFDIR}/radicale/users",
+         "htpasswd_encryption": "crypt",
+         "imap_auth_host_name": "localhost",
+         "imap_auth_host_port": "143",
+@@ -68,12 +68,10 @@ INITIAL_CONFIG = {
          "courier_socket": ""},
      "storage": {
          "type": "filesystem",
--        "filesystem_folder":
--            os.path.expanduser("~/.config/radicale/collections"),
--        "git_folder":
--            os.path.expanduser("~/.config/radicale/collections")},
-+        "filesystem_folder": "/var/db/radicale/calendars",
+-        "filesystem_folder": os.path.expanduser(
+-            "~/.config/radicale/collections"),
+-        "git_folder": os.path.expanduser(
+-            "~/.config/radicale/collections")},
++        "filesystem_folder": "/var/db//radicale/calendars",
 +        "git_folder": "/var/db/radicale/calendars"},
      "logging": {
 -        "config": "/etc/radicale/logging",
@@ -37,7 +37,7 @@ $OpenBSD: patch-radicale_config_py,v 1.5 2012/05/23 18:02:09 sthen Exp $
          "debug": "False",
          "full_environment": "False"}}
  
-@@ -83,7 +81,7 @@ for section, values in INITIAL_CONFIG.items():
+@@ -85,7 +83,7 @@ for section, values in INITIAL_CONFIG.items():
      for key, value in values.items():
          _CONFIG_PARSER.set(section, key, value)
  
