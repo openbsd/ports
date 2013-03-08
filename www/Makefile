@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.599 2013/03/08 10:44:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.600 2013/03/08 10:57:55 espie Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -28,7 +28,7 @@
      SUBDIR += cgit
      SUBDIR += cherokee
      SUBDIR += chive
-     SUBDIR += chromium
+#     SUBDIR += chromium
      SUBDIR += chromium,proprietary
      SUBDIR += clearsilver
      SUBDIR += cms-ms
@@ -228,6 +228,7 @@
      SUBDIR += p5-Catalyst-View-Mason
      SUBDIR += p5-CatalystX-Component-Traits
      SUBDIR += p5-Config-ApacheFormat
+     SUBDIR += p5-Dancer
      SUBDIR += p5-Data-URIEncode
      SUBDIR += p5-Drupal-Admin
      SUBDIR += p5-FCGI-ProcManager
@@ -291,6 +292,7 @@
      SUBDIR += p5-HTTP-Response-Encoding
      SUBDIR += p5-HTTP-Server-Simple
      SUBDIR += p5-HTTP-Server-Simple-Mason
+     SUBDIR += p5-HTTP-Server-Simple-PSGI
      SUBDIR += p5-HTTP-Server-Simple-Recorder
      SUBDIR += p5-HTTPD-Log-Filter
      SUBDIR += p5-JavaScript-Minifier
