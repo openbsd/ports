@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.180 2013/01/15 13:09:15 ajacoutot Exp $
+# $OpenBSD: network.conf.template,v 1.181 2013/03/08 11:09:13 sthen Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -221,9 +221,7 @@ MASTER_SITE_APACHE+= \
 	http://www.apache.org/dist/
 
 MASTER_SITE_BERLIOS+=	\
-	http://download.berlios.de/ \
-	http://download2.berlios.de/ \
-	http://spacehopper.org/mirrors/berlios/
+	http://download.berlios.de/
 
 MASTER_SITE_MYSQL+= \
 	http://mirrors.ukfast.co.uk/sites/ftp.mysql.com/ \
