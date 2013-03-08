@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2012/05/20 20:48:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/08 10:35:15 jasper Exp $
 
 # Some assembly required
 ONLY_FOR_ARCHS =i386 amd64
@@ -6,8 +6,7 @@ SHARED_ONLY =	Yes
 
 COMMENT =	language agnostic asynchronous web server
 
-DISTNAME =	mongrel2-1.7.5
-REVISION=	2
+DISTNAME =	mongrel2-1.8.0
 CATEGORIES =	www
 
 HOMEPAGE =	http://mongrel2.org/
@@ -18,16 +17,18 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =		http://mongrel2.org/static/downloads/
-EXTRACT_SUFX =		.tar.bz2
+MASTER_SITES =		http://distfiles.nl/
+TAR =			${LOCALBASE}/bin/gtar
 
 WANTLIB += c pthread sqlite3 zmq
 
-LIB_DEPENDS =		net/zeromq
+BUILD_DEPENDS =		archivers/gtar
+LIB_DEPENDS =		net/zeromq>=3.2.0
 
 USE_GMAKE =		Yes
 MAKE_ARGS =		OPTFLAGS="-I${LOCALBASE}/include" \
-			OPTLIBS="-L${LOCALBASE}/lib"
+			OPTLIBS="-L${LOCALBASE}/lib" \
+			LD="${CC}"
 ALL_TARGET =		openbsd filters config_modules ${MAKE_ARGS}
 
 EXAMPLE_DIR =		${PREFIX}/share/examples/mongrel2

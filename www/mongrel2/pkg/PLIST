@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/07/06 01:23:50 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/03/08 10:35:15 jasper Exp $
 @bin bin/m2sh
 @bin bin/mongrel2
+@bin bin/procer
 lib/mongrel2/
 lib/mongrel2/config_modules/
 lib/mongrel2/config_modules/null.so
@@ -58,8 +59,10 @@ share/examples/mongrel2/chat/static/site.css
 share/examples/mongrel2/chat/static/text.css
 share/examples/mongrel2/chat/www.py
 share/examples/mongrel2/configs/
+share/examples/mongrel2/configs/.dexy
 share/examples/mongrel2/configs/any.conf
 share/examples/mongrel2/configs/complex.conf
+share/examples/mongrel2/configs/filters.conf
 share/examples/mongrel2/configs/mongrel2.conf
 share/examples/mongrel2/configs/multi.conf
 share/examples/mongrel2/configs/multi_handler.conf
@@ -95,12 +98,6 @@ share/examples/mongrel2/mp3stream/
 share/examples/mongrel2/mp3stream/handler.py
 share/examples/mongrel2/mp3stream/mp3stream.py
 share/examples/mongrel2/mp3stream/stream_conf.py
-share/examples/mongrel2/procer/
-share/examples/mongrel2/procer/Makefile
-share/examples/mongrel2/procer/procer.c
-share/examples/mongrel2/procer/procer.h
-share/examples/mongrel2/procer/profile.c
-share/examples/mongrel2/procer/rampart.c
 share/examples/mongrel2/python/
 share/examples/mongrel2/python/bin/
 share/examples/mongrel2/python/bin/m2shpy
@@ -129,6 +126,11 @@ share/examples/mongrel2/tornado/
 share/examples/mongrel2/tornado/README
 share/examples/mongrel2/tornado/auth_demo.py
 share/examples/mongrel2/tornado/authdemo.py
+share/examples/mongrel2/ws/
+share/examples/mongrel2/ws/mongrel2.conf
+share/examples/mongrel2/ws/python/
+share/examples/mongrel2/ws/python/echo.py
+share/examples/mongrel2/ws/python/wsutil.py
 share/examples/mongrel2/zcov/
 share/examples/mongrel2/zcov/LICENSE.txt
 share/examples/mongrel2/zcov/README.txt
