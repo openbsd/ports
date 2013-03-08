@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/06/15 08:32:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/03/08 01:24:44 brad Exp $
 @bin bin/aqsis
 @bin bin/aqsl
 @bin bin/aqsltell
 @bin bin/eqsl
 @bin bin/miqser
 @bin bin/piqsl
+@bin bin/ptview
 @bin bin/teqser
 include/aqsis/
 include/aqsis/aqsis.h
@@ -13,7 +14,6 @@ include/aqsis/inttype.h
 include/aqsis/ri/
 include/aqsis/ri/ndspy.h
 include/aqsis/ri/ri.h
-include/aqsis/ri/ri.inl
 include/aqsis/ri/rif.h
 include/aqsis/ri/ritypes.h
 include/aqsis/ri/shadeop.h
@@ -30,7 +30,6 @@ lib/aqsis/xpm_dspy.so
 @lib lib/libaqsis_core.so.${LIBaqsis_core_VERSION}
 @lib lib/libaqsis_math.so.${LIBaqsis_math_VERSION}
 @lib lib/libaqsis_ri2rib.so.${LIBaqsis_ri2rib_VERSION}
-@lib lib/libaqsis_ribparse.so.${LIBaqsis_ribparse_VERSION}
 @lib lib/libaqsis_riutil.so.${LIBaqsis_riutil_VERSION}
 @lib lib/libaqsis_shadervm.so.${LIBaqsis_shadervm_VERSION}
 @lib lib/libaqsis_slcomp.so.${LIBaqsis_slcomp_VERSION}
@@ -43,6 +42,7 @@ share/applications/aqsltell.desktop
 share/applications/eqsl.desktop
 share/applications/piqsl.desktop
 share/aqsis/
+share/aqsis/doc/
 share/aqsis/examples/
 share/aqsis/examples/features/
 share/aqsis/examples/features/archives/
@@ -98,6 +98,19 @@ share/aqsis/examples/features/textures/
 share/aqsis/examples/features/textures/grid.tif
 share/aqsis/examples/features/textures/render.sh
 share/aqsis/examples/features/textures/sticky.rib
+share/aqsis/examples/point_based_gi/
+share/aqsis/examples/point_based_gi/cornellbox/
+share/aqsis/examples/point_based_gi/cornellbox/all_passes.rib
+share/aqsis/examples/point_based_gi/cornellbox/ao.sl
+share/aqsis/examples/point_based_gi/cornellbox/bake_pass.rib
+share/aqsis/examples/point_based_gi/cornellbox/bake_points.sl
+share/aqsis/examples/point_based_gi/cornellbox/beauty_pass.rib
+share/aqsis/examples/point_based_gi/cornellbox/beauty_pass_ao.rib
+share/aqsis/examples/point_based_gi/cornellbox/beautycam.rib
+share/aqsis/examples/point_based_gi/cornellbox/geometry.rib
+share/aqsis/examples/point_based_gi/cornellbox/indirect.sl
+share/aqsis/examples/point_based_gi/cornellbox/lights.rib
+share/aqsis/examples/point_based_gi/cornellbox/shadow_pass.rib
 share/aqsis/examples/procedurals/
 share/aqsis/examples/procedurals/menger/
 share/aqsis/examples/procedurals/menger/README.txt
@@ -144,6 +157,8 @@ share/aqsis/shaders/
 share/aqsis/shaders/displacement/
 share/aqsis/shaders/displacement/AqDMap.sl
 share/aqsis/shaders/displacement/AqDMap.slx
+share/aqsis/shaders/displacement/asteroid.sl
+share/aqsis/shaders/displacement/asteroid.slx
 share/aqsis/shaders/displacement/borg_metal.sl
 share/aqsis/shaders/displacement/borg_metal.slx
 share/aqsis/shaders/displacement/bumpy.sl
@@ -191,12 +206,10 @@ share/aqsis/shaders/surface/AqSMap.sl
 share/aqsis/shaders/surface/AqSMap.slx
 share/aqsis/shaders/surface/DPBlueMarble.sl
 share/aqsis/shaders/surface/DPBlueMarble.slx
-share/aqsis/shaders/surface/DPProctext.h
 share/aqsis/shaders/surface/SpaceTest.sl
 share/aqsis/shaders/surface/SpaceTest.slx
 share/aqsis/shaders/surface/cd.sl
 share/aqsis/shaders/surface/cd.slx
-share/aqsis/shaders/surface/cddiffract.h
 share/aqsis/shaders/surface/cellnoisetest.sl
 share/aqsis/shaders/surface/cellnoisetest.slx
 share/aqsis/shaders/surface/constant.sl

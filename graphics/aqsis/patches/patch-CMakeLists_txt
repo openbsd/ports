@@ -1,20 +1,22 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2010/09/22 12:52:36 ajacoutot Exp $
---- CMakeLists.txt.orig	Sun Oct 11 14:34:28 2009
-+++ CMakeLists.txt	Tue Sep 21 09:23:56 2010
-@@ -155,8 +155,8 @@ include(FindResource)
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2013/03/08 01:24:44 brad Exp $
+--- CMakeLists.txt.orig	Tue Nov 20 17:31:42 2012
++++ CMakeLists.txt	Tue Nov 20 17:33:12 2012
+@@ -196,8 +196,8 @@ endif()
  # These are needed by version.h, as well as the packaging stuff.  Note that
  # some packaging variables are set in the platform-specific config files, and
  # these version variables are potentially used there.
 -set(VERSION_MAJOR 1)
--set(VERSION_MINOR 6)
+-set(VERSION_MINOR 8)
 +set(VERSION_MAJOR !!LIBaqsis_core_VERSION_R!!)
 +set(VERSION_MINOR !!LIBaqsis_core_VERSION_E!!)
- set(VERSION_BUILD 0)
+ set(VERSION_BUILD 2)
  set(SCM_REVISION 0) # "?"
  
-@@ -299,5 +299,4 @@ set(PROCEDURALPATH "${PROCEDURALPATH}" CACHE STRING "A
+@@ -350,7 +350,6 @@ set(PROCEDURALPATH "${PROCEDURALPATH}" CACHE STRING "A
  set(RESOURCEPATH "${RESOURCEPATH}" CACHE STRING "Aqsis resource searchpath")
  set(aqsisrc_name ${PROJECT_BINARY_DIR}/aqsisrc)
  configure_file(aqsisrc.in.cmake ${aqsisrc_name})
 -install(FILES ${aqsisrc_name} DESTINATION ${SYSCONFDIR} COMPONENT main)
  
+ #-------------------------------------------------------------------------------
+ # Generate an AqsisConfig.cmake file, for use by projects that want to link

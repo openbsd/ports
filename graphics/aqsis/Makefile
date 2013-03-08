@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2012/08/04 18:08:21 pascal Exp $
+# $OpenBSD: Makefile,v 1.21 2013/03/08 01:24:44 brad Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -6,15 +6,13 @@ SHARED_ONLY=	Yes
 
 COMMENT=	photorealistic 3D rendering solution
 
-V=		1.6.0
+V=		1.8.2
 DISTNAME=	aqsis-${V}
-REVISION=	5
 CATEGORIES=	graphics
 
-SO_VERSION=	0.0 # 1.6
-.for _lib in aqsis_core aqsis_math aqsis_ri2rib aqsis_ribparse \
-aqsis_riutil aqsis_shadervm aqsis_slcomp aqsis_slxargs aqsis_tex \
-aqsis_util
+SO_VERSION=	1.0 # 1.6
+.for _lib in aqsis_core aqsis_math aqsis_ri2rib aqsis_riutil \
+aqsis_shadervm aqsis_slcomp aqsis_slxargs aqsis_tex aqsis_util
 SHARED_LIBS+=	${_lib} ${SO_VERSION}
 .endfor
 
@@ -28,9 +26,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=aqsis/}
 
-WANTLIB += Half Iex Imath c m stdc++ z fltk tiff IlmImf IlmThread
-WANTLIB += pthread boost_filesystem-mt boost_iostreams-mt boost_regex-mt
-WANTLIB += boost_system-mt boost_thread-mt boost_wave-mt tiffxx
+WANTLIB += GL Half Iex IlmImf IlmThread Imath boost_filesystem-mt
+WANTLIB += boost_iostreams-mt boost_program_options-mt boost_regex-mt
+WANTLIB += boost_system-mt boost_thread-mt boost_wave-mt c
+WANTLIB += lib/qt4/QtCore lib/qt4/QtGui lib/qt4/QtOpenGL
+WANTLIB += m pthread stdc++ tiff tiffxx z
 
 MODULES=	devel/cmake
 
@@ -39,10 +39,10 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+2,-guic
 BUILD_DEPENDS=	textproc/libxslt \
 		devel/bison
-LIB_DEPENDS=	x11/fltk>=1.1.7p2 \
-		devel/boost \
+LIB_DEPENDS=	devel/boost \
 		graphics/tiff \
-		graphics/openexr
+		graphics/openexr \
+		x11/qt4
 
 NO_REGRESS=	Yes
 MODCMAKE_WANTCOLOR=No
