@@ -1,0 +1,20 @@
+$OpenBSD: patch-common_utils_c,v 1.1 2013/03/08 06:51:46 ajacoutot Exp $
+
+implicit declaration of function 'mkstemp'
+
+--- common/utils.c.orig	Fri Feb 22 18:00:50 2013
++++ common/utils.c	Fri Feb 22 18:01:05 2013
+@@ -1,5 +1,6 @@
+ #include "utils.h"
+ #include "string.h"
++#include <stdlib.h>
+ #include <dlfcn.h>
+ #include <sys/stat.h>
+ #include <errno.h>
+@@ -259,4 +260,4 @@ int createTempFile(char* szFileName, FILE** pFilePtr)
+     }
+ 
+     return iFD;
+-}
+\ No newline at end of file
++}

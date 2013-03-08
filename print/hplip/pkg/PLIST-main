@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.18 2013/01/20 08:44:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.19 2013/03/08 06:51:46 ajacoutot Exp $
 @conflict hplip-docs-*
 @conflict hplip-gui-<3.11.3p0
 @extraunexec rm -rf /var/log/hp/tmp/*
@@ -7,6 +7,7 @@ bin/hp-check
 bin/hp-clean
 bin/hp-config_usb_printer
 bin/hp-diagnose_queues
+bin/hp-doctor
 bin/hp-logcapture
 bin/hp-makeuri
 @bin bin/hp-mkuri
@@ -122,6 +123,10 @@ share/hplip/base/models.py
 share/hplip/base/models.pyc
 share/hplip/base/module.py
 share/hplip/base/module.pyc
+share/hplip/base/os_utils.py
+share/hplip/base/os_utils.pyc
+share/hplip/base/password.py
+share/hplip/base/password.pyc
 share/hplip/base/pexpect.py
 share/hplip/base/pexpect.pyc
 share/hplip/base/pkit.py
@@ -130,8 +135,12 @@ share/hplip/base/pml.py
 share/hplip/base/pml.pyc
 share/hplip/base/queues.py
 share/hplip/base/queues.pyc
+share/hplip/base/services.py
+share/hplip/base/services.pyc
 share/hplip/base/slp.py
 share/hplip/base/slp.pyc
+share/hplip/base/smart_install.py
+share/hplip/base/smart_install.pyc
 share/hplip/base/status.py
 share/hplip/base/status.pyc
 share/hplip/base/strings.py
@@ -206,6 +215,8 @@ share/hplip/diagnose_plugin.py
 share/hplip/diagnose_plugin.pyc
 share/hplip/diagnose_queues.py
 share/hplip/diagnose_queues.pyc
+share/hplip/doctor.py
+share/hplip/doctor.pyc
 share/hplip/fab.py
 share/hplip/fab.pyc
 share/hplip/fax/
@@ -248,6 +259,8 @@ share/hplip/installer/core_install.pyc
 share/hplip/installer/dcheck.py
 share/hplip/installer/dcheck.pyc
 share/hplip/installer/distros.dat
+share/hplip/installer/pluginhandler.py
+share/hplip/installer/pluginhandler.pyc
 share/hplip/levels.py
 share/hplip/levels.pyc
 share/hplip/linefeedcal.py

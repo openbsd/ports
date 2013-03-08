@@ -1,0 +1,30 @@
+$OpenBSD: patch-installer_pluginhandler_py,v 1.1 2013/03/08 06:51:46 ajacoutot Exp $
+--- installer/pluginhandler.py.orig	Fri Feb 22 17:52:29 2013
++++ installer/pluginhandler.py	Fri Feb 22 17:54:29 2013
+@@ -107,11 +107,11 @@ class PluginHandle(object):
+             ARCH = 'x86_%d' % BITNESS
+ 
+         if BITNESS == 64:
+-            SANELIBDIR = '/usr/lib64/sane'
+-            LIBDIR = '/usr/lib64'
++            SANELIBDIR = '${LOCALBASE}/lib/sane'
++            LIBDIR = '${LOCALBASE}/lib'
+         else:
+-            SANELIBDIR = '/usr/lib/sane'
+-            LIBDIR = '/usr/lib'
++            SANELIBDIR = '${LOCALBASE}/lib/sane'
++            LIBDIR = '${LOCALBASE}/lib'
+ 
+         copies = []
+ 
+@@ -269,8 +269,8 @@ class PluginHandle(object):
+     def __setPluginConfFile(self):
+         home = sys_conf.get('dirs', 'home')
+ 
+-        if os.path.exists('/etc/hp/plugin.conf'):
+-            self.__plugin_conf_file = "file:///etc/hp/plugin.conf"
++        if os.path.exists('${SYSCONFDIR}/hp/plugin.conf'):
++            self.__plugin_conf_file = "file://${SYSCONFDIR}/hp/plugin.conf"
+ 
+         elif os.path.exists(os.path.join(home, 'plugin.conf')):
+             self.__plugin_conf_file = "file://" + os.path.join(home, 'plugin.conf')

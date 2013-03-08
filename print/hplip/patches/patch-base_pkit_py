@@ -1,18 +1,7 @@
-$OpenBSD: patch-base_pkit_py,v 1.7 2013/01/20 10:43:00 ajacoutot Exp $
---- base/pkit.py.orig	Tue Nov 20 10:55:15 2012
-+++ base/pkit.py	Sun Jan 20 10:13:19 2013
-@@ -346,8 +346,8 @@ def copyPluginFiles(src_dir):
-         SANELIBDIR = '/usr/lib64/sane'
-         LIBDIR = '/usr/lib64'
-     else:
--        SANELIBDIR = '/usr/lib/sane'
--        LIBDIR = '/usr/lib'
-+        SANELIBDIR = '${LOCALBASE}/lib/sane'
-+        LIBDIR = '${LOCALBASE}/lib'
- 
-     copies = []
- 
-@@ -492,7 +492,7 @@ def run_plugin_command(required=True, plugin_reason=PL
+$OpenBSD: patch-base_pkit_py,v 1.8 2013/03/08 06:51:46 ajacoutot Exp $
+--- base/pkit.py.orig	Wed Feb 13 17:38:51 2013
++++ base/pkit.py	Fri Feb 22 15:05:18 2013
+@@ -363,7 +363,7 @@ def run_plugin_command(required=True, plugin_reason=PL
      if utils.which("hp-plugin"):
          p_path="hp-plugin"
      else:
@@ -20,8 +9,8 @@ $OpenBSD: patch-base_pkit_py,v 1.7 2013/01/20 10:43:00 ajacoutot Exp $
 +        p_path="${MODPY_BIN} ./plugin.py"
  
      if 'gksu' in su_sudo:
-         cmd = su_sudo % ("%s -u %s --reason %s" % (p_path, req, plugin_reason))
-@@ -511,7 +511,7 @@ def run_plugin_command(required=True, plugin_reason=PL
+         cmd = passwordObj.getAuthCmd() % ("%s -u %s --reason %s" % (p_path, req, plugin_reason))
+@@ -380,7 +380,7 @@ def run_plugin_command(required=True, plugin_reason=PL
  
  
  def policykit_version():

@@ -1,7 +1,7 @@
-$OpenBSD: patch-base_utils_py,v 1.7 2012/10/12 21:56:07 ajacoutot Exp $
---- base/utils.py.orig	Wed Oct 10 08:14:21 2012
-+++ base/utils.py	Fri Oct 12 23:39:47 2012
-@@ -525,7 +525,7 @@ class UserSettings(object): # Note: Deprecated after 2
+$OpenBSD: patch-base_utils_py,v 1.8 2013/03/08 06:51:46 ajacoutot Exp $
+--- base/utils.py.orig	Wed Feb 13 17:38:51 2013
++++ base/utils.py	Fri Feb 22 17:54:51 2013
+@@ -569,7 +569,7 @@ class UserSettings(object): # Note: Deprecated after 2
          if len(path):
              self.cmd_pcard = 'hp-unload -d %DEVICE_URI%'
          else:
@@ -10,7 +10,7 @@ $OpenBSD: patch-base_utils_py,v 1.7 2012/10/12 21:56:07 ajacoutot Exp $
  
          # Copy
          path = which('hp-makecopies')
-@@ -533,7 +533,7 @@ class UserSettings(object): # Note: Deprecated after 2
+@@ -577,7 +577,7 @@ class UserSettings(object): # Note: Deprecated after 2
          if len(path):
              self.cmd_copy = 'hp-makecopies -d %DEVICE_URI%'
          else:
@@ -19,7 +19,7 @@ $OpenBSD: patch-base_utils_py,v 1.7 2012/10/12 21:56:07 ajacoutot Exp $
  
          # Fax
          path = which('hp-sendfax')
-@@ -541,7 +541,7 @@ class UserSettings(object): # Note: Deprecated after 2
+@@ -585,7 +585,7 @@ class UserSettings(object): # Note: Deprecated after 2
          if len(path):
              self.cmd_fax = 'hp-sendfax -d %FAX_URI%'
          else:
@@ -28,7 +28,7 @@ $OpenBSD: patch-base_utils_py,v 1.7 2012/10/12 21:56:07 ajacoutot Exp $
  
          # Fax Address Book
          path = which('hp-fab')
-@@ -549,7 +549,7 @@ class UserSettings(object): # Note: Deprecated after 2
+@@ -593,7 +593,7 @@ class UserSettings(object): # Note: Deprecated after 2
          if len(path):
              self.cmd_fab = 'hp-fab'
          else:
@@ -37,15 +37,25 @@ $OpenBSD: patch-base_utils_py,v 1.7 2012/10/12 21:56:07 ajacoutot Exp $
  
      def load(self):
          self.loadDefaults()
-@@ -881,9 +881,8 @@ def all(S,f=lambda x:x):
+@@ -925,10 +925,9 @@ def all(S,f=lambda x:x):
          if not f(x): return False
      return True
  
 -BROWSERS = ['firefox', 'mozilla', 'konqueror', 'epiphany', 'skipstone'] # in preferred order
 -BROWSER_OPTS = {'firefox': '-new-tab', 'mozilla': '', 'konqueror': '', 'epiphany': '--new-tab', 'skipstone': ''}
--
 +BROWSERS = ['xdg-open']
 +BROWSER_OPTS = {'xdg-open' : ''}
  
+-
  def find_browser():
      if platform_avail and platform.system() == 'Darwin':
+         return "open"
+@@ -2059,7 +2058,7 @@ def check_user_groups(required_grps_str, avl_grps):
+         grps =re.sub(r'\s', '', str(grps))
+         exp_grp_list = grps.split(',')
+     else:
+-        exp_grp_list.append('lp')
++        exp_grp_list.append('_cups')
+ 
+     log.debug("Requied groups list =[%s]"%exp_grp_list)
+ 

@@ -1,7 +1,7 @@
-$OpenBSD: patch-installer_core_install_py,v 1.12 2013/01/20 07:32:08 ajacoutot Exp $
---- installer/core_install.py.orig	Tue Nov 20 10:51:37 2012
-+++ installer/core_install.py	Sat Jan 19 10:58:47 2013
-@@ -218,7 +218,7 @@ class CoreInstall(object):
+$OpenBSD: patch-installer_core_install_py,v 1.13 2013/03/08 06:51:46 ajacoutot Exp $
+--- installer/core_install.py.orig	Wed Feb 13 17:35:01 2013
++++ installer/core_install.py	Fri Feb 22 15:10:42 2013
+@@ -172,7 +172,7 @@ class CoreInstall(object):
          self.endian = utils.LITTLE_ENDIAN
          self.distro, self.distro_name, self.distro_version = DISTRO_UNKNOWN, '', DISTRO_VER_UNKNOWN
          self.distro_version_supported = False
@@ -10,7 +10,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.12 2013/01/20 07:32:08 ajacoutot E
          self.hplip_present = False
          self.have_dependencies = {}
          self.native_cups = True
-@@ -876,7 +876,7 @@ class CoreInstall(object):
+@@ -746,7 +746,7 @@ class CoreInstall(object):
  
  
      def check_make(self):
@@ -19,7 +19,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.12 2013/01/20 07:32:08 ajacoutot E
  
  
      def check_libusb(self):
-@@ -885,14 +885,14 @@ class CoreInstall(object):
+@@ -755,14 +755,14 @@ class CoreInstall(object):
              if not check_lib('libusb'):
                  return False
              if self.distro_name != "rhel":
@@ -36,7 +36,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.12 2013/01/20 07:32:08 ajacoutot E
              else:
                  return True
  
-@@ -902,11 +902,10 @@ class CoreInstall(object):
+@@ -772,11 +772,10 @@ class CoreInstall(object):
  
  
      def check_libcrypto(self):
@@ -50,7 +50,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.12 2013/01/20 07:32:08 ajacoutot E
  
  
      def check_libnetsnmp(self):
-@@ -958,7 +957,7 @@ class CoreInstall(object):
+@@ -828,7 +827,7 @@ class CoreInstall(object):
  
  
      def check_sane_devel(self):
@@ -59,7 +59,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.12 2013/01/20 07:32:08 ajacoutot E
  
  
      def check_xsane(self):
-@@ -1059,9 +1058,8 @@ class CoreInstall(object):
+@@ -929,9 +928,8 @@ class CoreInstall(object):
  
  
      def check_dbus(self):
@@ -71,7 +71,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.12 2013/01/20 07:32:08 ajacoutot E
  
  
      def check_cups_devel(self):
-@@ -1079,17 +1077,17 @@ class CoreInstall(object):
+@@ -949,12 +947,12 @@ class CoreInstall(object):
  
  
      def check_cups_image(self):
@@ -85,16 +85,8 @@ $OpenBSD: patch-installer_core_install_py,v 1.12 2013/01/20 07:32:08 ajacoutot E
 +        return locate_files('hplip.conf', '${SYSCONFDIR}/hp')
  
  
--    def check_hpssd(self):
--        log.debug("Checking for hpssd...")
--        return check_ps(['hpssd'])
-+#    def check_hpssd(self):
-+#        log.debug("Checking for hpssd...")
-+#        return check_ps(['hpssd'])
- 
- 
      def check_libtool(self):
-@@ -1109,14 +1107,14 @@ class CoreInstall(object):
+@@ -974,9 +972,9 @@ class CoreInstall(object):
      def check_cupsddk(self):
          log.debug("Checking for cups-ddk...")
          # TODO: Compute these paths some way or another...
@@ -107,38 +99,21 @@ $OpenBSD: patch-installer_core_install_py,v 1.12 2013/01/20 07:32:08 ajacoutot E
  
  
      def check_policykit(self):
-         log.debug("Checking for PolicyKit...")
--        return (check_file('PolicyKit.conf', "/etc/PolicyKit") and check_file('org.gnome.PolicyKit.AuthorizationManager.service', "/usr/share/dbus-1/services")) or (check_file('50-localauthority.conf', "/etc/polkit-1/localauthority.conf.d") and check_file('org.freedesktop.PolicyKit1.service', "/usr/share/dbus-1/system-services"))
-+        return (check_file('PolicyKit.conf', "/etc/PolicyKit") and check_file('org.gnome.PolicyKit.AuthorizationManager.service', "/usr/share/dbus-1/services")) or (check_file('org.freedesktop.PolicyKit1.service', "${LOCALBASE}/share/dbus-1/system-services"))
- 
-     def check_cupsext(self):
-         log.debug("Checking 'cupsext' CUPS extension...")
-@@ -1540,7 +1538,7 @@ class CoreInstall(object):
-             cmd = self.su_sudo() % '/etc/init.d/cupsys restart'
- 
+@@ -985,7 +983,7 @@ class CoreInstall(object):
+             return True
+         elif check_file('50-localauthority.conf', "/etc/polkit-1/localauthority.conf.d") and check_file('org.freedesktop.PolicyKit1.service', "/usr/share/dbus-1/system-services"):
+             return True
+-        elif check_file('org.freedesktop.PolicyKit1.conf','/etc/dbus-1/system.d'):
++        elif check_file('org.freedesktop.PolicyKit1.conf','${SYSCONFDIR}/dbus-1/system.d'):
+             return True
          else:
--            cmd = self.su_sudo() % 'killall -HUP cupsd'
-+            cmd = self.su_sudo() % 'pkill -HUP cupsd'
- 
-         self.run(cmd)
- 
-@@ -1883,7 +1881,7 @@ class CoreInstall(object):
+             return False
+@@ -1558,7 +1556,7 @@ class CoreInstall(object):
      def pre_build(self,distro_ver=None):
          cmds = []
          if self.get_distro_ver_data('fix_ppd_symlink', False,distro_ver):
--            cmds.append(self.su_sudo() % 'python ./installer/fix_symlink.py')
-+            cmds.append(self.su_sudo() % '${MODPY_BIN} ./installer/fix_symlink.py')
+-            cmds.append(self.passwordObj.getAuthCmd() % 'python ./installer/fix_symlink.py')
++            cmds.append(self.passwordObj.getAuthCmd() % '${MODPY_BIN} ./installer/fix_symlink.py')
  
          return cmds
  
-@@ -2058,8 +2056,8 @@ class CoreInstall(object):
-         url = "http://hplip.sf.net/plugin.conf"
-         home = sys_conf.get('dirs', 'home')
- 
--        if os.path.exists('/etc/hp/plugin.conf'):
--            url = "file:///etc/hp/plugin.conf"
-+        if os.path.exists('${SYSCONFDIR}/hp/plugin.conf'):
-+            url = "file://${SYSCONFDIR}/hp/plugin.conf"
- 
-         elif os.path.exists(os.path.join(home, 'plugin.conf')):
-             url = "file://" + os.path.join(home, 'plugin.conf')

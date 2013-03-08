@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2013/01/26 19:38:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2013/03/08 06:51:46 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ COMMENT-hpcups=	HP native CUPS driver
 COMMENT-libs=	HPLIP backend libraries
 COMMENT-gui=	HPLIP graphical tools
 
-V=		3.12.11
+V=		3.13.2
 DISTNAME=	hplip-${V}
 
 PKGNAME-main=	${DISTNAME}
@@ -16,12 +16,6 @@ PKGNAME-hpijs=	hpijs-${V}
 PKGNAME-hpcups=	hpcups-${V}
 PKGNAME-libs=	hplip-libs-${V}
 PKGNAME-gui=	hplip-gui-${V}
-
-REVISION-main=	6
-REVISION-libs=	0
-REVISION-gui=	2
-REVISION-hpcups=1
-REVISION-hpijs=	0
 
 SHARED_LIBS +=  hpmud		2.0 # .0.6
 SHARED_LIBS +=  hpip		2.0 # .0.1
@@ -161,6 +155,7 @@ pre-configure:
 		${WRKSRC}/fax/backend/hpfax.py \
 		${WRKSRC}/base/codes.py \
 		${WRKSRC}/base/g.py \
+		${WRKSRC}/base/services.py \
 		${WRKSRC}/prnt/cups.py \
 		${WRKSRC}/installer/core_install.py \
 		${WRKSRC}/doc/upgrading.html \
@@ -170,6 +165,7 @@ pre-configure:
 		${WRKSRC}/base/pkit.py \
 		${WRKSRC}/prnt/hpijs/foomatic-rip-hplip \
 		${WRKSRC}/installer/dcheck.py \
+		${WRKSRC}/installer/pluginhandler.py \
 		${WRKSRC}/base/magic.py \
 		${WRKSRC}/base/utils.py \
 		${WRKSRC}/scan.py \
@@ -184,5 +180,6 @@ post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${PREFIX}/share/hplip
 	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/*.la
+	rm ${PREFIX}/lib/sane/*.la
 
 .include <bsd.port.mk>

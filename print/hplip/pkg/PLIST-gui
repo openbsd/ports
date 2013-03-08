@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST-gui,v 1.9 2012/12/10 16:00:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST-gui,v 1.10 2013/03/08 06:51:46 ajacoutot Exp $
 @conflict hplip-<3.11.3p0
 bin/hp-align
-bin/hp-check-plugin
 bin/hp-colorcal
 bin/hp-devicesettings
 bin/hp-diagnose_plugin

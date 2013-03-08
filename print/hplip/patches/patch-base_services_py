@@ -1,0 +1,36 @@
+$OpenBSD: patch-base_services_py,v 1.1 2013/03/08 06:51:46 ajacoutot Exp $
+--- base/services.py.orig	Fri Feb 22 15:29:34 2013
++++ base/services.py	Fri Feb 22 15:33:02 2013
+@@ -67,6 +67,9 @@ def restart_cups():
+     elif os.path.exists('/etc/init.d/cupsys'):
+         return '/etc/init.d/cupsys restart'
+ 
++    elif os.path.exists('${RCDIR}/cupsd'):
++        return '${RCDIR}/cupsd restart'
++
+     else:
+         return 'killall -HUP cupsd'
+ 
+@@ -186,6 +189,22 @@ def start_service( service_name, passwordObj):
+         if sts ==0:
+             if 'stop' in out or 'inactive' in out:
+                 cmd_start = passwordObj.getAuthCmd()%('/etc/init.d/%s start'%service_name)
++                log.debug("cmd_start=%s"%cmd_start)
++                sts,out = utils.run(cmd_start, passwordObj)
++                if sts ==0:
++                    ret_Val = True
++            else:
++                ret_Val = True
++        else:
++            log.error("Fail to start %s service, please start %s service manually."%(service_name,service_name))
++
++    elif os.path.exists('${RCDIR}/%s'%service_name):
++        cmd_status = passwordObj.getAuthCmd()%('${RCDIR}/%s check'%service_name)
++        log.debug(cmd_status)
++        sts,out = utils.run(cmd_status, passwordObj)
++        if sts ==0:
++            if 'stop' in out or 'inactive' in out:
++                cmd_start = passwordObj.getAuthCmd()%('${RCDIR}/%s start'%service_name)
+                 log.debug("cmd_start=%s"%cmd_start)
+                 sts,out = utils.run(cmd_start, passwordObj)
+                 if sts ==0:

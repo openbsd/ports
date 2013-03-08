@@ -1,6 +1,6 @@
-$OpenBSD: patch-prnt_cups_py,v 1.5 2012/09/11 10:52:16 ajacoutot Exp $
---- prnt/cups.py.orig	Tue Sep  4 14:31:12 2012
-+++ prnt/cups.py	Tue Sep 11 08:05:33 2012
+$OpenBSD: patch-prnt_cups_py,v 1.6 2013/03/08 06:51:46 ajacoutot Exp $
+--- prnt/cups.py.orig	Wed Feb 13 17:34:10 2013
++++ prnt/cups.py	Fri Feb 22 15:17:48 2013
 @@ -187,8 +187,8 @@ ppd_pat = re.compile(r'''.*hp-(.*?)(-.*)*\.ppd.*''', r
  
  def getPPDPath(addtional_paths=None):
@@ -16,8 +16,8 @@ $OpenBSD: patch-prnt_cups_py,v 1.5 2012/09/11 10:52:16 ajacoutot Exp $
  
  def getAllowableMIMETypes():
      """
--        Scan all /etc/cups/*.convs and /usr/share/cups/mime 
-+        Scan all ${SYSCONFDIR}/cups/*.convs and ${LOCALBASE}/share/cups/mime 
+-        Scan all /etc/cups/*.convs and /usr/share/cups/mime
++        Scan all ${SYSCONFDIR}/cups/*.convs and ${LOCALBASE}/share/cups/mime
          files for allowable file formats.
      """
      paths = []

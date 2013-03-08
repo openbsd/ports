@@ -1,21 +1,12 @@
-$OpenBSD: patch-setup_py,v 1.4 2012/09/11 10:52:16 ajacoutot Exp $
---- setup.py.orig	Tue Sep  4 14:34:06 2012
-+++ setup.py	Tue Sep 11 08:05:33 2012
-@@ -125,7 +125,7 @@ def restart_cups():
-         return '/etc/init.d/cupsys restart'
- 
-     else:
--        return 'killall -HUP cupsd'
-+        return 'pkill -HUP cupsd'
- 
- 
- mod = module.Module(__mod__, __title__, __version__, __doc__, USAGE,
-@@ -879,7 +879,7 @@ else: # INTERACTIVE_MODE
+$OpenBSD: patch-setup_py,v 1.5 2013/03/08 06:51:46 ajacoutot Exp $
+--- setup.py.orig	Wed Feb 13 17:38:51 2013
++++ setup.py	Fri Feb 22 15:05:18 2013
+@@ -868,7 +868,7 @@ else: # INTERACTIVE_MODE
                  if len(path) > 0:
                      cmd = 'hp-testpage %s' % param
                  else:
 -                    cmd = 'python ./testpage.py %s' % param
 +                    cmd = '${MODPY_BIN} ./testpage.py %s' % param
  
-                 log.debug(cmd)
+                 os_utils.execute(cmd)
  

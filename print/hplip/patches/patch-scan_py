@@ -1,12 +1,12 @@
-$OpenBSD: patch-scan_py,v 1.7 2012/12/10 16:00:12 ajacoutot Exp $
---- scan.py.orig	Tue Nov 20 10:55:15 2012
-+++ scan.py	Mon Dec 10 16:41:21 2012
-@@ -1062,7 +1062,7 @@ try:
+$OpenBSD: patch-scan_py,v 1.8 2013/03/08 06:51:46 ajacoutot Exp $
+--- scan.py.orig	Wed Feb 13 17:38:51 2013
++++ scan.py	Fri Feb 22 15:05:18 2013
+@@ -1088,7 +1088,7 @@ try:
                  if hp_print:
                      cmd = 'hp-print %s &' % output
                  else:
 -                    cmd = "python ./print.py %s &" % output
 +                    cmd = "${MODPY_BIN} ./print.py %s &" % output
  
-                 os.system(cmd)
+                 os_utils.execute(cmd)
  
