@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2013/03/02 13:49:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2013/03/08 07:01:51 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.tar.xz
 PKGNAME-main=	gtk+3-${V}
 PKGNAME-cups=	gtk+3-cups-${V}
 REVISION-main=	4
-REVISION-cups=	3
+REVISION-cups=	4
 
 CATEGORIES=	x11 devel
 
@@ -69,7 +69,7 @@ LIB_DEPENDS-cups= ${LIB_DEPENDS} \
 
 WANTLIB-cups += ${WANTLIB}
 WANTLIB-cups += asn1 crypto cups gdk-3 gssapi gtk-3 krb5 ssl
-WANTLIB-cups += avahi-client avahi-common
+WANTLIB-cups += avahi-client avahi-common colordprivate
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes

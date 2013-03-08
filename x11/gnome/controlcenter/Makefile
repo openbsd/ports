@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2013/01/18 07:31:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.84 2013/03/08 07:01:51 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.6.3
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		x11
 
@@ -16,25 +16,26 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
-WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xtst
-WANTLIB += asn1 atk-1.0 atk-bridge-2.0 atspi avahi-client avahi-common
+WANTLIB += FLAC GL ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xtst asn1
+WANTLIB += atk-1.0 atk-bridge-2.0 atspi avahi-client avahi-common
 WANTLIB += c cairo cairo-gobject canberra canberra-gtk3 colord
-WANTLIB += crypto cups dbus-1 dbus-glib-1 enchant execinfo expat
-WANTLIB += ffi fontconfig freetype gailutil-3 gcrypt gdbm gdk-3
-WANTLIB += gdk_pixbuf-2.0 geoclue gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gnome-desktop-3 gnome-keyring gnome-menu-3 goa-1.0
-WANTLIB += goa-backend-1.0 gobject-2.0 gpg-error gssapi gstapp-0.10
-WANTLIB += gstaudio-0.10 gstbase-0.10 gstfft-0.10 gstinterfaces-0.10
-WANTLIB += gstpbutils-0.10 gstreamer-0.10 gstvideo-0.10 gthread-2.0
-WANTLIB += gtk-3 gtop-2.0 harfbuzz ibus-1.0 icudata icui18n icule
-WANTLIB += icuuc javascriptcoregtk-3.0 jpeg json json-glib-1.0
-WANTLIB += krb5 kvm lcms2 ltdl m notify ogg orc-0.4 pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png polkit-gobject-1
-WANTLIB += pthread pthread-stubs pulse pulse-mainloop-glib rest-0.7
-WANTLIB += secret-1 sndfile soup-2.4 soup-gnome-2.4 sqlite3 ssl
-WANTLIB += stdc++ upower-glib vorbis vorbisfile webkitgtk-3.0
-WANTLIB += xcb xcb-render xcb-shm xkbfile xml2 xslt z
+WANTLIB += colordprivate crypto cups dbus-1 dbus-glib-1 enchant
+WANTLIB += execinfo expat ffi fontconfig freetype gailutil-3 gcrypt
+WANTLIB += gdbm gdk-3 gdk_pixbuf-2.0 geoclue gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gnome-desktop-3 gnome-keyring gnome-menu-3
+WANTLIB += goa-1.0 goa-backend-1.0 gobject-2.0 gpg-error gssapi
+WANTLIB += gstapp-0.10 gstaudio-0.10 gstbase-0.10 gstfft-0.10
+WANTLIB += gstinterfaces-0.10 gstpbutils-0.10 gstreamer-0.10 gstvideo-0.10
+WANTLIB += gthread-2.0 gtk-3 gtop-2.0 harfbuzz ibus-1.0 icudata
+WANTLIB += icui18n icule icuuc javascriptcoregtk-3.0 jpeg json
+WANTLIB += json-glib-1.0 krb5 kvm lcms2 ltdl m notify ogg orc-0.4
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png polkit-gobject-1 pthread pthread-stubs pulse pulse-mainloop-glib
+WANTLIB += rest-0.7 secret-1 sndfile soup-2.4 soup-gnome-2.4 sqlite3
+WANTLIB += ssl stdc++ upower-glib vorbis vorbisenc vorbisfile
+WANTLIB += webkitgtk-3.0 xcb xcb-render xcb-shm xkbfile xml2 xslt
+WANTLIB += z
 
 MODULES=		devel/gettext \
 			x11/gnome
