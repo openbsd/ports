@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2012/12/08 18:56:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/08 10:21:21 ajacoutot Exp $
 
 COMMENT=	ensure your Puppet manifests conform with the style guide
 
 DISTNAME=	puppet-lint-0.3.2
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	sysutils
 
@@ -18,8 +18,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	lang/ruby
-
-RUN_DEPENDS=	sysutils/ruby-puppet
 
 CONFIGURE_STYLE=ruby gem
 
