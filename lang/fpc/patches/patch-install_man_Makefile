@@ -1,0 +1,12 @@
+$OpenBSD: patch-install_man_Makefile,v 1.1.1.1 2013/03/08 11:34:18 pascal Exp $
+
+Don't gzip manpages.
+
+--- install/man/Makefile.orig	Thu May  3 14:33:10 2012
++++ install/man/Makefile	Thu May  3 14:34:25 2012
+@@ -31,5 +31,3 @@ installman:
+ 	$(GINSTALL) -d -m 755 $(INSTALL_MANDIR)/man5
+ 	$(GINSTALL) -c -m 644 man1/*.1 $(INSTALL_MANDIR)/man1
+ 	$(GINSTALL) -c -m 644 man5/*.5 $(INSTALL_MANDIR)/man5
+-	find man1/*.1 -exec gzip -9f $(INSTALL_MANDIR)/'{}' \;
+-	find man5/*.5 -exec gzip -9f $(INSTALL_MANDIR)/'{}' \;

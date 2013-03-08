@@ -1,0 +1,30 @@
+$OpenBSD: patch-fpcsrc_compiler_systems_t_bsd_pas,v 1.1.1.1 2013/03/08 11:34:18 pascal Exp $
+
+Correct library search path for OpenBSD; always add -nopie to linker flags.
+
+--- fpcsrc/compiler/systems/t_bsd.pas.orig	Thu Feb 28 23:09:15 2013
++++ fpcsrc/compiler/systems/t_bsd.pas	Fri Mar  1 00:28:57 2013
+@@ -126,7 +126,10 @@ begin
+   Inherited Create;
+   if not Dontlinkstdlibpath Then
+    if not(target_info.system in systems_darwin) then
+-     LibrarySearchPath.AddPath(sysrootpath,'/lib;/usr/lib;/usr/X11R6/lib',true)
++     if not(target_info.system in systems_openbsd) then
++       LibrarySearchPath.AddPath(sysrootpath,'/lib;/usr/lib;/usr/X11R6/lib',true)
++     else
++       LibrarySearchPath.AddPath(sysrootpath,'/usr/lib;/usr/X11R6/lib;${LOCALBASE}/lib',true)
+    else
+      { Mac OS X doesn't have a /lib }
+      LibrarySearchPath.AddPath(sysrootpath,'/usr/lib',true)
+@@ -647,6 +650,11 @@ begin
+     else
+      DynLinKStr:=DynLinkStr+' -dynamic'; // one dash!
+    end;
++
++{ Use -nopie on OpenBSD }
++   if (target_info.system in systems_openbsd) then
++     Info.ExtraOptions:=Info.ExtraOptions+' -nopie';
++
+ { Write used files and libraries }
+   WriteResponseFile(false);
+ 

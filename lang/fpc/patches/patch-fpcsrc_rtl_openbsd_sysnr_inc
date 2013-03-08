@@ -1,0 +1,16 @@
+$OpenBSD: patch-fpcsrc_rtl_openbsd_sysnr_inc,v 1.1.1.1 2013/03/08 11:34:18 pascal Exp $
+
+Use correct getdirentries(2) syscall, not the (now deleted) compat one.
+http://svn.freepascal.org/cgi-bin/viewvc.cgi?view=revision&revision=23223
+
+--- fpcsrc/rtl/openbsd/sysnr.inc.orig	Thu Jul 26 19:33:38 2012
++++ fpcsrc/rtl/openbsd/sysnr.inc	Thu Jul 26 19:35:30 2012
+@@ -256,7 +256,7 @@ Const
+         syscall_nr_MAXSYSCALL   = 313;
+ 
+ { Aliases }
+-        syscall_nr_getdirentries = syscall_nr_ogetdirentries;
++        syscall_nr_getdirentries = syscall_nr_getdirentriesi49;
+         syscall_nr_waitpid      = syscall_nr_wait4;  // 7, added: ease of notation purposes
+ {        syscall_nr_getdents = syscall_nr_getdirentries; }
+ {$define USE_GETDIRENTRIES_SYSCALL}

@@ -1,0 +1,16 @@
+$OpenBSD: patch-install_man_man1_fpc_1,v 1.1.1.1 2013/03/08 11:34:18 pascal Exp $
+
+.PP doesn't take arguments.
+
+--- install/man/man1/fpc.1.orig	Thu May  3 14:49:31 2012
++++ install/man/man1/fpc.1	Thu May  3 14:51:55 2012
+@@ -252,7 +252,8 @@ Add 
+ to the include file search path.
+ This path is used when looking for include files.
+ 
+-.PP Options controlling the kind of output
++.PP
++Options controlling the kind of output
+ for more information on these options, see also the programmers manual.
+ .TP
+ .BI \-a

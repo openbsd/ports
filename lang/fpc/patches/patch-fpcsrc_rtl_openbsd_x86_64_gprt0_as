@@ -1,0 +1,19 @@
+$OpenBSD: patch-fpcsrc_rtl_openbsd_x86_64_gprt0_as,v 1.1.1.1 2013/03/08 11:34:18 pascal Exp $
+
+Add .note.openbsd.ident section, needed to identify as OpenBSD executable.
+http://svn.freepascal.org/cgi-bin/viewvc.cgi?view=revision&revision=23685
+
+--- fpcsrc/rtl/openbsd/x86_64/gprt0.as.orig	Thu Feb 28 23:57:52 2013
++++ fpcsrc/rtl/openbsd/x86_64/gprt0.as	Fri Mar  1 00:00:55 2013
+@@ -1,3 +1,11 @@
++	.section ".note.openbsd.ident", "a"
++	.p2align 2
++	.long	8
++	.long	4
++	.long	1
++	.ascii "OpenBSD\0"
++	.long	0
++	.previous
+ 	.file	"crt0.c"
+ 	.globl	__progname
+ 	.section	.rodata

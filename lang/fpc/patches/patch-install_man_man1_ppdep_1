@@ -1,0 +1,14 @@
+$OpenBSD: patch-install_man_man1_ppdep_1,v 1.1.1.1 2013/03/08 11:34:18 pascal Exp $
+
+Superflous .RE
+
+--- install/man/man1/ppdep.1.orig	Thu May  3 14:49:01 2012
++++ install/man/man1/ppdep.1	Thu May  3 14:49:11 2012
+@@ -89,7 +89,6 @@ Writes some diagnostic messages. If you use this optio
+ .I \-o
+ as well, since the diagnostic messages will also be written to 
+ standard output.
+-.RE
+ 
+ .SH SEE ALSO
+ .IP 
