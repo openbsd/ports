@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/16 10:02:37 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/08 01:34:19 brad Exp $
 
-COMMENT =		Constructive Solid Geometry rendering library
+COMMENT =		constructive solid geometry rendering library
 
-V =			1.3.1
+V =			1.3.2
 DISTNAME =		OpenCSG-${V}
-REVISION=		0
 PKGNAME =		opencsg-${V}
 
 SHARED_ONLY =		Yes
@@ -20,7 +19,8 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		GL GLEW GLU lib/qt4/QtGui m stdc++
+WANTLIB +=		GL GLEW lib/qt4/QtGui m stdc++ pthread
+WANTLIB +=		ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
 
 MODULES =		x11/qt4
 LIB_DEPENDS =		graphics/glew
