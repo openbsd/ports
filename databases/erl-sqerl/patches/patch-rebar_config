@@ -1,0 +1,26 @@
+$OpenBSD: patch-rebar_config,v 1.1.1.1 2013/03/08 10:56:57 jasper Exp $
+
+Don't let rebar handle dependency management since it'll download and
+build the dependencies in-place.
+
+--- rebar.config.orig	Mon Feb 25 10:04:08 2013
++++ rebar.config	Mon Feb 25 10:04:17 2013
+@@ -3,18 +3,6 @@
+ {erl_opts, [debug_info, warnings_as_errors]}.
+ {erl_first_files, ["src/sqerl_client.erl"]}.
+ 
+-{deps, [%% we have a patch to emysql pending merging
+-        {emysql, ".*", {git, "git://github.com/opscode/Emysql.git", {tag, "0.2.13.14"}}},
+-
+-        %% This is until a patch of ours gets merged into the main epgsql repo
+-        {epgsql, ".*",
+-         {git, "git://github.com/opscode/epgsql.git", "master"}},
+-
+-        {automeck, ".*",
+-         {git, "git://github.com/opscode/automeck.git", {branch, "master"}}},
+-        {pooler, ".*",
+-         {git, "git://github.com/seth/pooler.git", {tag, "0.0.2"}}}]}.
+-
+ {eunit_opts,
+  [verbose,
+   {report,{eunit_surefire,[{dir,"."}]}}]}.
