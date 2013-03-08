@@ -1,6 +1,6 @@
-$OpenBSD: patch-ext_ffi_c_libffi_bsd_mk,v 1.1.1.1 2010/12/20 18:04:16 jeremy Exp $
---- ext/ffi_c/libffi.bsd.mk.orig	Fri Dec 10 11:21:57 2010
-+++ ext/ffi_c/libffi.bsd.mk	Fri Dec 10 11:21:38 2010
+$OpenBSD: patch-ext_ffi_c_libffi_bsd_mk,v 1.2 2013/03/08 10:41:26 jasper Exp $
+--- ext/ffi_c/libffi.bsd.mk.orig	Thu Jan  1 01:00:00 1970
++++ ext/ffi_c/libffi.bsd.mk	Fri Feb 15 19:13:36 2013
 @@ -4,7 +4,7 @@
  #
  
@@ -9,8 +9,8 @@ $OpenBSD: patch-ext_ffi_c_libffi_bsd_mk,v 1.1.1.1 2010/12/20 18:04:16 jeremy Exp
 +LOCAL_LIBS += ${LIBFFI} -pthread
  
  LIBFFI_CFLAGS = ${FFI_MMAP_EXEC} -pthread
- LIBFFI_BUILD_DIR = ${.CURDIR}/libffi
-@@ -16,11 +16,11 @@ LIBFFI_BUILD_DIR = ${.CURDIR}/libffi
+ LIBFFI_BUILD_DIR = ${.CURDIR}/libffi-${arch}
+@@ -16,11 +16,11 @@ LIBFFI_BUILD_DIR = ${.CURDIR}/libffi-${arch}
  .endif
  
  

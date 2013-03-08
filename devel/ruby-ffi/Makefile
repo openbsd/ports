@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2013/01/09 17:38:52 jeremy Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/08 10:41:26 jasper Exp $
 
 COMMENT =	cross-platform dynamic library loading for ruby
 
-DISTNAME =	ffi-1.0.9
+DISTNAME =	ffi-1.2.0
 CATEGORIES =	devel
-REVISION =	3
 
 HOMEPAGE=	http://github.com/ffi/ffi
 
@@ -26,6 +25,9 @@ WANTLIB =	ffi
 LIB_DEPENDS =	devel/libffi
 
 CONFIGURE_STYLE = ruby gem ext
+
+post-extract:
+	rm ${WRKSRC}/ext/ffi_c/LongDouble.c.orig
 
 post-install:
 	rm -r ${GEM_ABS_PATH}/gems/${DISTNAME}/ext
