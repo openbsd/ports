@@ -1,3 +1,9 @@
+$OpenBSD: README,v 1.1 2013/03/08 06:42:09 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
 (1) Choose a selector name.  Current convention is to use a code for the
     current month and year, or just the year.  However, you are free to
     choose any name you wish, especially if you have a selector assignment

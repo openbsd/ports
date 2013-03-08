@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/03/06 12:26:33 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/03/08 06:42:09 ajacoutot Exp $
 @newgroup _dkim-milter:569
 @newuser _dkim-milter:569:_dkim-milter:daemon:dkim-milter Account:/nonexistent:/sbin/nologin
 bin/dkim-genkey
@@ -10,5 +10,6 @@ bin/dkim-genkey
 @man man/man8/dkim-genkey.8
 @man man/man8/dkim-testkey.8
 @man man/man8/dkim-testssp.8
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/dkim-milter/
 share/examples/dkim-milter/dkim-filter.conf.sample
