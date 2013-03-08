@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/06 13:12:47 kurt Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/08 10:40:08 jasper Exp $
 
 COMMENT=	software project management and comprehension tool
 
@@ -6,7 +6,7 @@ V=		3.0.5
 DISTNAME=	apache-maven-$V
 PKGNAME=	${DISTNAME:S/apache-//}
 CATEGORIES=	devel
-REVISON=	0
+REVISION=	0
 
 HOMEPAGE=	http://maven.apache.org/
 
