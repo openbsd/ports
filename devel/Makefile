@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1112 2013/03/08 12:08:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.1113 2013/03/08 12:14:54 espie Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -507,6 +507,7 @@
      SUBDIR += p5-Cache-Memcached
      SUBDIR += p5-Cache-Mmap
      SUBDIR += p5-Cache-Simple-TimedExpiry
+     SUBDIR += p5-Carp-Always
      SUBDIR += p5-Carp-Assert
      SUBDIR += p5-Carp-Assert-More
      SUBDIR += p5-Carp-Clan
