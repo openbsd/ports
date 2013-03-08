@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.49 2013/02/02 09:02:11 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.50 2013/03/08 10:42:01 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -51,6 +51,18 @@ sub distdir
 {
 	my ($self, @rest) = @_;
 	return join('/', $self->{repo}->distdir, @rest);
+}
+
+sub debug_dump
+{
+	my $self = shift;
+	my $msg = $self->logname;
+	if ($self->{okay}) {
+		$msg .= "(okay)";
+	}
+	if ($self->{checked}) {
+		$msg .= "(checked)";
+	}
 }
 
 sub cached
