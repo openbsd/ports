@@ -1,0 +1,5 @@
+HTTP::Server::Simple::PSGI is a HTTP::Server::Simple based HTTP
+server that can run PSGI applications. 
+
+It has no extra dependencies, so it can be used to set up a
+light-weight perl app server.

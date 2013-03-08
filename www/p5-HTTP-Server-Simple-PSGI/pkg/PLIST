@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/08 10:54:41 espie Exp $
+${P5SITE}/HTTP/Server/Simple/PSGI.pm
+@man man/man3p/HTTP::Server::Simple::PSGI.3p
