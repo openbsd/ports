@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/12/06 22:07:39 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/03/09 14:05:36 pascal Exp $
 @shell bin/zoid
 ${P5SITE}/Bundle/
 ${P5SITE}/Bundle/Zoidberg.pm
@@ -21,53 +21,21 @@ ${P5SITE}/Zoidberg/Utils/Error.pm
 ${P5SITE}/Zoidberg/Utils/FileSystem.pm
 ${P5SITE}/Zoidberg/Utils/GetOpt.pm
 ${P5SITE}/Zoidberg/Utils/Output.pm
-${P5SITE}/auto/Zoidberg/
-${P5SITE}/auto/Zoidberg/Fish/
-${P5SITE}/auto/Zoidberg/Fish/Commands/
-${P5SITE}/auto/Zoidberg/Fish/Commands/alias.al
-${P5SITE}/auto/Zoidberg/Fish/Commands/autosplit.ix
-${P5SITE}/auto/Zoidberg/Fish/Commands/bg.al
-${P5SITE}/auto/Zoidberg/Fish/Commands/dirs.al
-${P5SITE}/auto/Zoidberg/Fish/Commands/disown.al
-${P5SITE}/auto/Zoidberg/Fish/Commands/eval.al
-${P5SITE}/auto/Zoidberg/Fish/Commands/exec.al
-${P5SITE}/auto/Zoidberg/Fish/Commands/export.al
-${P5SITE}/auto/Zoidberg/Fish/Commands/false.al
-${P5SITE}/auto/Zoidberg/Fish/Commands/fg.al
-${P5SITE}/auto/Zoidberg/Fish/Commands/help.al
-${P5SITE}/auto/Zoidberg/Fish/Commands/help_command.al
-${P5SITE}/auto/Zoidberg/Fish/Commands/jobs.al
-${P5SITE}/auto/Zoidberg/Fish/Commands/kill.al
-${P5SITE}/auto/Zoidberg/Fish/Commands/newgrp.al
-${P5SITE}/auto/Zoidberg/Fish/Commands/popd.al
-${P5SITE}/auto/Zoidberg/Fish/Commands/pushd.al
-${P5SITE}/auto/Zoidberg/Fish/Commands/pwd.al
-${P5SITE}/auto/Zoidberg/Fish/Commands/read.al
-${P5SITE}/auto/Zoidberg/Fish/Commands/reload.al
-${P5SITE}/auto/Zoidberg/Fish/Commands/set.al
-${P5SITE}/auto/Zoidberg/Fish/Commands/setenv.al
-${P5SITE}/auto/Zoidberg/Fish/Commands/source.al
-${P5SITE}/auto/Zoidberg/Fish/Commands/symbols.al
-${P5SITE}/auto/Zoidberg/Fish/Commands/true.al
-${P5SITE}/auto/Zoidberg/Fish/Commands/type_command.al
-${P5SITE}/auto/Zoidberg/Fish/Commands/umask.al
-${P5SITE}/auto/Zoidberg/Fish/Commands/unalias.al
-${P5SITE}/auto/Zoidberg/Fish/Commands/unsetenv.al
-${P5SITE}/auto/Zoidberg/Fish/Commands/wait.al
-${P5SITE}/auto/Zoidberg/Fish/Commands/which.al
-${P5SITE}/auto/Zoidberg/Fish/Intel/
-${P5SITE}/auto/Zoidberg/Fish/Intel/autosplit.ix
-${P5SITE}/auto/Zoidberg/Fish/Intel/i__zoid.al
-${P5SITE}/auto/Zoidberg/Fish/Intel/i_cdpath.al
-${P5SITE}/auto/Zoidberg/Fish/Intel/i_cmd_make.al
-${P5SITE}/auto/Zoidberg/Fish/Intel/i_cmd_man.al
-${P5SITE}/auto/Zoidberg/Fish/Intel/i_env_vars.al
-${P5SITE}/auto/Zoidberg/Fish/Intel/i_man_opts.al
-${P5SITE}/auto/Zoidberg/Fish/Intel/i_users.al
-${P5SITE}/auto/Zoidberg/Fish/Intel/list_users.al
-${P5SITE}/auto/Zoidberg/Fish/Log/
-${P5SITE}/auto/Zoidberg/Fish/Log/autosplit.ix
-${P5SITE}/auto/Zoidberg/Fish/Log/fc.al
+${P5SITE}/auto/share/
+${P5SITE}/auto/share/dist/
+${P5SITE}/auto/share/dist/Zoidberg/
+${P5SITE}/auto/share/dist/Zoidberg/pixmaps/
+${P5SITE}/auto/share/dist/Zoidberg/pixmaps/zoid16.png
+${P5SITE}/auto/share/dist/Zoidberg/pixmaps/zoid32.png
+${P5SITE}/auto/share/dist/Zoidberg/pixmaps/zoid64.png
+${P5SITE}/auto/share/dist/Zoidberg/pixmaps/zoid70.png
+${P5SITE}/auto/share/dist/Zoidberg/plugins/
+${P5SITE}/auto/share/dist/Zoidberg/plugins/CPAN.pm
+${P5SITE}/auto/share/dist/Zoidberg/plugins/Commands.pl
+${P5SITE}/auto/share/dist/Zoidberg/plugins/Intel.pl
+${P5SITE}/auto/share/dist/Zoidberg/plugins/Log.pl
+${P5SITE}/auto/share/dist/Zoidberg/plugins/ReadLine.pl
+${P5SITE}/auto/share/dist/Zoidberg/zoidrc.example
 @man man/man1/zoid.1
 @man man/man1/zoidbuiltins.1
 @man man/man1/zoiddevel.1
@@ -93,23 +61,5 @@ ${P5SITE}/auto/Zoidberg/Fish/Log/fc.al
 share/doc/zoid/
 share/doc/zoid/Changes
 share/doc/zoid/README
-share/doc/zoid/examples/
-share/doc/zoid/examples/Menu.pl
-share/doc/zoid/examples/cpan.pl
-share/doc/zoid/examples/word_expansion.pl
-share/doc/zoid/index.html
-share/zoid/
-share/zoid/AppInfo.xml
-share/zoid/pixmaps/
-share/zoid/pixmaps/zoid16.png
-share/zoid/pixmaps/zoid32.png
-share/zoid/pixmaps/zoid64.png
-share/zoid/pixmaps/zoid70.png
-share/zoid/plugins/
-share/zoid/plugins/CPAN.pm
-share/zoid/plugins/Commands.pl
-share/zoid/plugins/Intel.pl
-share/zoid/plugins/Log.pl
-share/zoid/plugins/ReadLine.pl
-share/zoid/zoidrc.sample
+share/doc/zoid/zoidrc.sample
 @sample ${SYSCONFDIR}/zoidrc
