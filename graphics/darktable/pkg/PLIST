@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/09/14 09:50:19 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/03/09 11:18:14 sthen Exp $
 @bin bin/darktable
+@bin bin/darktable-cli
 @bin bin/darktable-cltest
 @bin bin/darktable-viewer
 lib/darktable/
@@ -17,11 +18,14 @@ lib/darktable/plugins/imageio/format/libtiff.so
 lib/darktable/plugins/imageio/storage/
 lib/darktable/plugins/imageio/storage/libdisk.so
 lib/darktable/plugins/imageio/storage/libemail.so
+lib/darktable/plugins/imageio/storage/libfacebook.so
 lib/darktable/plugins/imageio/storage/libflickr.so
 lib/darktable/plugins/imageio/storage/libgallery.so
+lib/darktable/plugins/imageio/storage/liblatex.so
 lib/darktable/plugins/imageio/storage/libpicasa.so
 lib/darktable/plugins/libatrous.so
 lib/darktable/plugins/libbasecurve.so
+lib/darktable/plugins/libbilat.so
 lib/darktable/plugins/libbilateral.so
 lib/darktable/plugins/libbloom.so
 lib/darktable/plugins/libborders.so
@@ -41,6 +45,7 @@ lib/darktable/plugins/libequalizer.so
 lib/darktable/plugins/libexposure.so
 lib/darktable/plugins/libflip.so
 lib/darktable/plugins/libgamma.so
+lib/darktable/plugins/libglobaltonemap.so
 lib/darktable/plugins/libgraduatednd.so
 lib/darktable/plugins/libgrain.so
 lib/darktable/plugins/libhighlights.so
@@ -82,6 +87,7 @@ lib/darktable/plugins/lighttable/libdarktable_label.so
 lib/darktable/plugins/lighttable/libexport.so
 lib/darktable/plugins/lighttable/libfilmstrip.so
 lib/darktable/plugins/lighttable/libfilter.so
+lib/darktable/plugins/lighttable/libgeotagging.so
 lib/darktable/plugins/lighttable/libglobal_toolbox.so
 lib/darktable/plugins/lighttable/libhinter.so
 lib/darktable/plugins/lighttable/libhistogram.so
@@ -90,6 +96,9 @@ lib/darktable/plugins/lighttable/libimage.so
 lib/darktable/plugins/lighttable/libimport.so
 lib/darktable/plugins/lighttable/libkeywords.so
 lib/darktable/plugins/lighttable/liblighttable_mode.so
+lib/darktable/plugins/lighttable/liblive_view.so
+lib/darktable/plugins/lighttable/liblocation.so
+lib/darktable/plugins/lighttable/libmap_settings.so
 lib/darktable/plugins/lighttable/libmetadata.so
 lib/darktable/plugins/lighttable/libmetadata_view.so
 lib/darktable/plugins/lighttable/libmodule_toolbox.so
@@ -99,6 +108,7 @@ lib/darktable/plugins/lighttable/libnavigation.so
 lib/darktable/plugins/lighttable/libratings.so
 lib/darktable/plugins/lighttable/librecentcollect.so
 lib/darktable/plugins/lighttable/libselect.so
+lib/darktable/plugins/lighttable/libsimilarity.so
 lib/darktable/plugins/lighttable/libsnapshots.so
 lib/darktable/plugins/lighttable/libstyles.so
 lib/darktable/plugins/lighttable/libtagging.so
@@ -108,6 +118,7 @@ lib/darktable/views/
 lib/darktable/views/libcapture.so
 lib/darktable/views/libdarkroom.so
 lib/darktable/views/liblighttable.so
+lib/darktable/views/libmap.so
 lib/libdarktable.so
 @man man/man1/darktable.1
 share/applications/darktable.desktop
@@ -115,17 +126,30 @@ share/darktable/
 share/darktable/darktable.gtkrc
 share/darktable/darktablerc
 share/darktable/gdb_commands
+share/darktable/js/
+share/darktable/js/builder.js
+share/darktable/js/effects.js
+share/darktable/js/lightbox-web.js
+share/darktable/js/lightbox.js
+share/darktable/js/prototype.js
+share/darktable/js/scriptaculous.js
 share/darktable/kernels/
 share/darktable/kernels/atrous.cl
 share/darktable/kernels/basic.cl
+share/darktable/kernels/bilateral.cl
 share/darktable/kernels/blendop.cl
 share/darktable/kernels/demosaic_ppg.cl
+share/darktable/kernels/extended.cl
 share/darktable/kernels/gaussian.cl
 share/darktable/kernels/highpass.cl
 share/darktable/kernels/nlmeans.cl
 share/darktable/kernels/programs.conf
 share/darktable/kernels/sharpen.cl
+share/darktable/kernels/soften.cl
+share/darktable/latex/
+share/darktable/latex/photobook.cls
 share/darktable/pixmaps/
+share/darktable/pixmaps/dt_logo_128x128.png
 share/darktable/pixmaps/idbutton.png
 share/darktable/pixmaps/off.png
 share/darktable/pixmaps/plugins/
@@ -182,8 +206,19 @@ share/darktable/rawspeed/
 share/darktable/rawspeed/cameras.xml
 share/darktable/rawspeed/showcameras.xsl
 share/darktable/style/
+share/darktable/style/bullet.gif
+share/darktable/style/close.gif
+share/darktable/style/closelabel.gif
+share/darktable/style/donate-button.gif
+share/darktable/style/download-icon.gif
 share/darktable/style/favicon.ico
+share/darktable/style/image-1.jpg
+share/darktable/style/lightbox.css
+share/darktable/style/loading.gif
+share/darktable/style/nextlabel.gif
+share/darktable/style/prevlabel.gif
 share/darktable/style/style.css
+share/darktable/style/thumb-1.jpg
 share/darktable/watermarks/
 share/darktable/watermarks/darktable.svg
 share/darktable/watermarks/hasselblad.svg
@@ -212,6 +247,10 @@ share/locale/it/LC_MESSAGES/darktable.mo
 share/locale/ja/LC_MESSAGES/darktable.mo
 share/locale/nl/LC_MESSAGES/darktable.mo
 share/locale/pl/LC_MESSAGES/darktable.mo
+share/locale/pt_BR/LC_MESSAGES/darktable.mo
+share/locale/pt_PT/
+share/locale/pt_PT/LC_MESSAGES/
+share/locale/pt_PT/LC_MESSAGES/darktable.mo
 share/locale/ro/LC_MESSAGES/darktable.mo
 share/locale/ru/LC_MESSAGES/darktable.mo
 share/locale/sq/LC_MESSAGES/darktable.mo

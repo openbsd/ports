@@ -1,9 +1,0 @@
-$OpenBSD: patch-tools_create_preferences_sh_in,v 1.1 2012/09/15 08:37:41 sthen Exp $
---- tools/create_preferences.sh.in.orig	Sat Sep 15 09:23:31 2012
-+++ tools/create_preferences.sh.in	Sat Sep 15 09:25:05 2012
-@@ -1,4 +1,4 @@
--#!/usr/bin/env bash
-+#!/bin/ksh
- 
- tabs='gui core'
- 
