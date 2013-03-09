@@ -1,0 +1,3 @@
+NetPGP is a standards-compliant library and suite of utilities
+providing digital signature and verification functionality, as well
+as data encryption and decryption, using RSA and DSA/Elgamal keys.

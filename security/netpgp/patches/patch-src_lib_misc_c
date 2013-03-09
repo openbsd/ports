@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_lib_misc_c,v 1.1.1.1 2013/03/09 16:02:24 pascal Exp $
+--- src/lib/misc.c.orig	Thu Nov  4 07:45:28 2010
++++ src/lib/misc.c	Thu Aug  2 14:52:01 2012
+@@ -436,7 +436,7 @@ hash_bignum(__ops_hash_t *hash, BIGNUM *bignum)
+ 		(void) fprintf(stderr, "hash_bignum: bad size\n");
+ 		return 0;
+ 	}
+-	if ((bn = calloc(1, len)) == NULL) {
++	if ((bn = calloc(1, len + 1)) == NULL) {
+ 		(void) fprintf(stderr, "hash_bignum: bad bn alloc\n");
+ 		return 0;
+ 	}
