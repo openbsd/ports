@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1214 2013/03/08 10:06:13 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1215 2013/03/09 00:09:14 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -212,6 +212,13 @@ _ARCH_DEFINES_INCLUDED = Done
 _MAKEFILE_INC_DONE = Yes
 .    include "${.CURDIR}/../Makefile.inc"
 .  endif
+.endif
+
+.if defined(PERMIT_PACKAGE_CDROM) && ${PERMIT_PACKAGE_CDROM:L} == "yes"
+PERMIT_PACKAGE_FTP ?= Yes
+PERMIT_DISTFILES_FTP ?= Yes
+.elif defined(PERMIT_PACKAGE_FTP) && ${PERMIT_PACKAGE_FTP:L} == "yes"
+PERMIT_DISTFILES_FTP ?= Yes
 .endif
 
 .if !defined(PERMIT_PACKAGE_CDROM) || !defined(PERMIT_PACKAGE_FTP) || \
