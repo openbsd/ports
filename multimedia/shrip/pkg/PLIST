@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/09 13:33:47 pascal Exp $
+@bin bin/shrip
+@man man/man1/shrip.1
+share/examples/shrip/
+share/examples/shrip/shrip.conf.sample
+@sample ${SYSCONFDIR}/shrip.conf

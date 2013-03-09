@@ -1,0 +1,10 @@
+$OpenBSD: patch-shrip_conf,v 1.1.1.1 2013/03/09 13:33:47 pascal Exp $
+--- shrip.conf.orig	Thu Jan 10 11:21:04 2013
++++ shrip.conf	Thu Jan 10 11:21:26 2013
+@@ -1,5 +1,5 @@
+ [main]
+-device=/dev/dvd
++device=/dev/cd0c
+ container=ogm
+ target-size=700
+ target-number=1
