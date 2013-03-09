@@ -1,20 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2010/12/03 11:46:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/09 15:30:50 sthen Exp $
 
 COMMENT=	HTML cleaning module
 
 MODULES=	cpan
-DISTNAME=	HTML-Scrubber-0.08
-REVISION=	0
+DISTNAME=	HTML-Scrubber-0.09
 CATEGORIES=	www
-USE_GROFF =	Yes
 
 MAINTAINER=	Sam Smith <s@msmith.net>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	www/p5-HTML-Parser
