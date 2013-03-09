@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2013/01/21 14:24:01 espie Exp $
+# $OpenBSD: Makefile,v 1.67 2013/03/09 13:34:42 pascal Exp $
 
      SUBDIR =
      SUBDIR += atomicparsley
@@ -53,6 +53,7 @@
      SUBDIR += recordmydesktop
      SUBDIR += regionset
      SUBDIR += schroedinger
+     SUBDIR += shrip
      SUBDIR += streamdvd
      SUBDIR += subrip
      SUBDIR += subtitleripper
