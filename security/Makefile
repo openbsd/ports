@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.306 2013/03/08 12:07:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.307 2013/03/09 16:03:02 pascal Exp $
 
      SUBDIR =
      SUBDIR += ADMfzap
@@ -110,6 +110,7 @@
      SUBDIR += mhash
      SUBDIR += nbaudit
      SUBDIR += nessus
+     SUBDIR += netpgp
      SUBDIR += nfsshell
      SUBDIR += nikto
      SUBDIR += nipper
