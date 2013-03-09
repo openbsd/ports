@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.74 2012/12/18 06:58:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2013/03/09 15:27:47 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		library for layout and rendering of text
 
-GNOME_VERSION=		1.32.5
+GNOME_VERSION=		1.32.6
 GNOME_PROJECT=		pango
 
-SHARED_LIBS +=  pango-1.0            3200.0   # 3200.4
-SHARED_LIBS +=  pangoft2-1.0         3200.0   # 3200.4
-SHARED_LIBS +=  pangoxft-1.0         3200.0   # 3200.4
-SHARED_LIBS +=  pangocairo-1.0       3200.0   # 3200.4
+SHARED_LIBS +=  pango-1.0            3200.1   # 3200.6
+SHARED_LIBS +=  pangoft2-1.0         3200.1   # 3200.6
+SHARED_LIBS +=  pangoxft-1.0         3200.1   # 3200.6
+SHARED_LIBS +=  pangocairo-1.0       3200.1   # 3200.6
 
 CATEGORIES=		devel x11
 
@@ -24,11 +24,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL X11 Xau Xdamage Xdmcp Xext Xfixes Xft Xrender Xxf86vm
-WANTLIB += c cairo drm expat ffi fontconfig freetype glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 harfbuzz icudata
-WANTLIB += icule icuuc m pcre pixman-1 png pthread pthread-stubs
-WANTLIB += stdc++ xcb xcb-render xcb-shm z
+WANTLIB += X11 Xext Xft Xrender c cairo expat ffi fontconfig>=8 freetype
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 harfbuzz
+WANTLIB += icudata icule icuuc m pcre pixman-1 png pthread pthread-stubs
+WANTLIB += xcb xcb-render xcb-shm z
 
 MODULES=		devel/gettext \
 			x11/gnome
@@ -36,7 +35,7 @@ MODULES=		devel/gettext \
 MODGNOME_TOOLS=		goi
 
 LIB_DEPENDS=		devel/glib2 \
-			devel/harfbuzz>=0.9.9
+			devel/harfbuzz
 
 LIBTOOL_FLAGS=		--tag=disable-static
 
