@@ -1,0 +1,72 @@
+$OpenBSD: patch-configure,v 1.6 2013/03/09 23:09:20 landry Exp $
+http://trac.osgeo.org/geotiff/changeset/1907
+unbreak with proj 4.8.0
+--- configure.orig	Thu Nov 12 14:53:29 2009
++++ configure	Sun Mar 10 00:01:20 2013
+@@ -21142,7 +21142,6 @@ fi
+ 
+ 
+ PROJ_CONFIG="no"
+-PROJECTS_H_CONFIG="no"
+ 
+ 
+ # Check whether --with-proj was given.
+@@ -21158,12 +21157,12 @@ if test "$PROJ_HOME" != "" -a "$PROJ_HOME" != "no" ; t
+     PROJ_HOME=$PROJ_HOME/src
+   fi
+ 
+-    if test -f "$PROJ_HOME/libproj.a" -a -f "$PROJ_HOME/projects.h" ; then
++    if test -f "$PROJ_HOME/libproj.a" -a -f "$PROJ_HOME/proj_api.h" ; then
+     PROJ_LIB=$PROJ_HOME/libproj.a
+     PROJ_INC=$PROJ_HOME
+     PROJ_CONFIG="yes"
+ 
+-    elif test -f "$PROJ_HOME/.libs/libproj.a" -a -f "$PROJ_HOME/projects.h" ; then
++    elif test -f "$PROJ_HOME/.libs/libproj.a" -a -f "$PROJ_HOME/proj_api.h" ; then
+     PROJ_LIB=$PROJ_HOME/.libs/libproj.a
+     PROJ_INC=$PROJ_HOME
+ 
+@@ -21175,7 +21174,7 @@ if test "$PROJ_HOME" != "" -a "$PROJ_HOME" != "no" ; t
+ 
+     PROJ_CONFIG="yes"
+   else
+-    echo "PROJ_HOME=$PROJ_HOME, but either projects.h or libproj.a not found!"
++    echo "PROJ_HOME=$PROJ_HOME, but either proj_api.h or libproj.a not found!"
+   fi
+ fi
+ 
+@@ -21185,7 +21184,7 @@ if test "$PROJ_HOME" = "no" ; then
+ 
+ elif test "$PROJ_LIB" != "" -a "$PROJ_INC" != "" ; then
+   echo "Found $PROJ_LIB"
+-  echo "Found $PROJ_INC/projects.h"
++  echo "Found $PROJ_INC/proj_api.h"
+ 
+   LIBS="$PROJ_LIB $LIBS"
+   PROJ_INC=-I$PROJ_INC
+@@ -21193,16 +21192,11 @@ elif test "$PROJ_LIB" != "" -a "$PROJ_INC" != "" ; the
+   PROJ_INC=$PROJ_INC
+ 
+   cat >>confdefs.h <<\_ACEOF
+-#define HAVE_PROJECTS_H 1
+-_ACEOF
+-
+-  cat >>confdefs.h <<\_ACEOF
+ #define HAVE_LIBPROJ 1
+ _ACEOF
+ 
+ 
+   PROJ_CONFIG="yes"
+-  PROJECTS_H_CONFIG="yes"
+ 
+ else
+ 
+@@ -21277,7 +21271,7 @@ _ACEOF
+ fi
+ 
+ 
+-for ac_header in projects.h
++for ac_header in proj_api.h
+ do
+ as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ if { as_var=$as_ac_Header; eval "test \"\${$as_var+set}\" = set"; }; then

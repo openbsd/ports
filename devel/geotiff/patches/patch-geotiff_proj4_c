@@ -1,0 +1,71 @@
+$OpenBSD: patch-geotiff_proj4_c,v 1.1 2013/03/09 23:09:20 landry Exp $
+http://trac.osgeo.org/geotiff/changeset/1907
+unbreak with proj 4.8.0
+--- geotiff_proj4.c.orig	Mon Oct 19 16:53:57 2009
++++ geotiff_proj4.c	Sun Mar 10 00:05:52 2013
+@@ -1299,7 +1299,7 @@ char * GTIFGetProj4Defn( GTIFDefn * psDefn )
+     return( strdup( szProjection ) );
+ }
+ 
+-#if !defined(HAVE_LIBPROJ) || !defined(HAVE_PROJECTS_H)
++#if !defined(HAVE_LIBPROJ)
+ 
+ int GTIFProj4ToLatLong( GTIFDefn * psDefn, int nPoints,
+                         double *padfX, double *padfY )
+@@ -1330,12 +1330,8 @@ int GTIFProj4FromLatLong( GTIFDefn * psDefn, int nPoin
+ }
+ #else
+ 
+-#include "projects.h"
++#include "proj_api.h"
+ 
+-#ifdef USE_PROJUV
+-#  define UV projUV
+-#endif
+-
+ /************************************************************************/
+ /*                        GTIFProj4FromLatLong()                        */
+ /*                                                                      */
+@@ -1348,7 +1344,7 @@ int GTIFProj4FromLatLong( GTIFDefn * psDefn, int nPoin
+ 
+ {
+     char	*pszProjection, **papszArgs;
+-    PJ		*psPJ;
++    projPJ		*psPJ;
+     int		i;
+     
+ /* -------------------------------------------------------------------- */
+@@ -1380,7 +1376,7 @@ int GTIFProj4FromLatLong( GTIFDefn * psDefn, int nPoin
+ /* -------------------------------------------------------------------- */
+     for( i = 0; i < nPoints; i++ )
+     {
+-        UV	sUV;
++        projUV	sUV;
+ 
+         sUV.u = padfX[i] * DEG_TO_RAD;
+         sUV.v = padfY[i] * DEG_TO_RAD;
+@@ -1408,7 +1404,7 @@ int GTIFProj4ToLatLong( GTIFDefn * psDefn, int nPoints
+ 
+ {
+     char	*pszProjection, **papszArgs;
+-    PJ		*psPJ;
++    projPJ		*psPJ;
+     int		i;
+     
+ /* -------------------------------------------------------------------- */
+@@ -1440,7 +1436,7 @@ int GTIFProj4ToLatLong( GTIFDefn * psDefn, int nPoints
+ /* -------------------------------------------------------------------- */
+     for( i = 0; i < nPoints; i++ )
+     {
+-        UV	sUV;
++        projUV	sUV;
+ 
+         sUV.u = padfX[i];
+         sUV.v = padfY[i];
+@@ -1456,5 +1452,5 @@ int GTIFProj4ToLatLong( GTIFDefn * psDefn, int nPoints
+     return TRUE;
+ }
+ 
+-#endif /* has projects.h and -lproj */
++#endif /* has proj_api.h and -lproj */
+ 
