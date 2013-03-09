@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.165 2013/02/09 14:49:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.166 2013/03/09 09:32:03 brad Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ COMMENT-jack=	JACK audio output module for VLC
 V=		2.0.5
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	3
+REVISION-main=	4
 PKGNAME-jack=	vlc-jack-${V}
 REVISION-jack=	1
 CATEGORIES=	x11
@@ -66,7 +66,7 @@ LIB_DEPENDS-main= ${MODQT4_LIB_DEPENDS} \
 		devel/libnotify>=0.7.2 \
 		devel/sdl \
 		devel/sdl-image \
-		graphics/ffmpeg>=20110408 \
+		graphics/ffmpeg>=20121026 \
 		graphics/libdvbpsi \
 		graphics/png \
 		multimedia/libass \
