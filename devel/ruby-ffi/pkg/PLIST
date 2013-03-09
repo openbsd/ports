@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/03/08 10:41:26 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/03/09 21:59:02 nigel Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/COPYING
@@ -74,8 +74,8 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/x86_64-linux/
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/x86_64-linux/types.conf
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/x86_64-netbsd/
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/x86_64-netbsd/types.conf
-${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/${MODRUBY_ARCH}/
-${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/${MODRUBY_ARCH}/types.conf
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/x86_64-openbsd/
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/x86_64-openbsd/types.conf
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/x86_64-solaris/
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/x86_64-solaris/types.conf
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/pointer.rb
