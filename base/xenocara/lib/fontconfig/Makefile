@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/11/01 09:58:05 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/09 17:09:57 espie Exp $
 COMPONENT = lib/fontconfig
-XDEPS = lib/freetype
+XDEPS = lib/freetype lib/libpthread-stubs
+VERSION = 3
 
 
 .include <bsd.port.mk>
