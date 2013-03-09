@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.236 2013/03/08 12:08:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.237 2013/03/09 06:38:30 fgsch Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -157,7 +157,6 @@
      SUBDIR += py-carbon
      SUBDIR += py-cdb
      SUBDIR += py-couchdb
-     SUBDIR += py-elixir
      SUBDIR += py-ldap
      SUBDIR += py-mysql
      SUBDIR += py-odbc

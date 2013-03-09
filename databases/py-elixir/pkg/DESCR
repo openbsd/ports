@@ -1,6 +1,0 @@
-A declarative layer on top of SQLAlchemy. It is a fairly thin
-wrapper, which provides the ability to create simple Python classes
-that map directly to relational database tables (this pattern is
-often referred to as the Active Record design pattern), providing
-many of the benefits of traditional databases without losing the
-convenience of Python objects.
