@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/03/09 11:18:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2013/03/09 11:20:32 sthen Exp $
 
 BROKEN= unlocks an unlocked mutex (rthread_sync.c 1.34)
 
@@ -18,9 +18,6 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL GLU ICE Iex IlmImf IlmThread Imath SDL SM X11 Xext
 WANTLIB += atk-1.0 c cairo curl exiv2 flickcurl freetype gdk-x11-2.0
