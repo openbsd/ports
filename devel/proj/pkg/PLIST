@@ -1,21 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/03/07 10:46:22 landry Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.3 2013/03/09 19:59:04 landry Exp $
 @bin bin/cs2cs
 @bin bin/geod
 bin/invgeod
 bin/invproj
 @bin bin/nad2bin
-@bin bin/nad2nad
 @bin bin/proj
-include/nad_list.h
 include/org_proj4_Projections.h
 include/proj_api.h
-include/projects.h
 lib/libproj.a
 lib/libproj.la
+@lib lib/libproj.so.${LIBproj_VERSION}
+lib/pkgconfig/
+lib/pkgconfig/proj.pc
 @man man/man1/cs2cs.1
 @man man/man1/geod.1
-@man man/man1/nad2nad.1
 @man man/man1/proj.1
 @man man/man3/pj_init.3
 share/proj/
