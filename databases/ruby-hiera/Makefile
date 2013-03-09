@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/02 13:59:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/09 09:38:51 ajacoutot Exp $
 
 COMMENT=		simple pluggable hierarchical database
 
 V=			1.1.2
 DISTNAME=		hiera-${V}
 PKGNAME=		ruby-hiera-${V}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		databases
 

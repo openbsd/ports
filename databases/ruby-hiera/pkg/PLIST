@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/03/02 13:59:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/03/09 09:38:51 ajacoutot Exp $
 @extraunexec rm -rf /var/db/hiera/*
 ${GEM_BIN}/hiera
 ${GEM_LIB}/cache/${DISTNAME}.gem
@@ -35,4 +35,4 @@ ${GEM_LIB}/specifications/${DISTNAME}.gemspec
 ${MODRUBY_RELEXAMPLEDIR}-hiera/
 ${MODRUBY_RELEXAMPLEDIR}-hiera/hiera.yaml
 @sample ${SYSCONFDIR}/hiera.yaml
-@sample /var/db/hiera
+@sample /var/db/hiera/
