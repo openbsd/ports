@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/02/07 08:46:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/10 20:26:05 jasper Exp $
 
 COMMENT=	perl script to Tidy Puppet manifests
 
-DISTNAME=	Puppet-Tidy-0.2
+DISTNAME=	Puppet-Tidy-0.3
 
 CATEGORIES=	sysutils
 
