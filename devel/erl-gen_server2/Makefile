@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/10 19:35:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/10 20:11:41 jasper Exp $
 
 COMMENT=	gen_server2 for OTP
 
@@ -20,7 +20,7 @@ MASTER_SITES=	http://distfiles.nl/
 MODULES=	lang/erlang
 
 do-build:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/rebar compile
+	cd ${WRKSRC} && ${REBAR_BIN} compile
 
 do-install:
 	${INSTALL_DATA_DIR} ${ERL_LIBDIR}/{ebin,src}

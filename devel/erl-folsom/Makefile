@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/10 19:35:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/10 20:11:41 jasper Exp $
 
 COMMENT=	expose Erlang events and metrics
 
@@ -26,10 +26,10 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/folsom.app.src
 
 do-build:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/rebar compile
+	cd ${WRKSRC} && ${REBAR_BIN} compile
 
 do-regress:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/rebar eunit
+	cd ${WRKSRC} && ${REBAR_BIN} eunit
 
 do-install:
 	${INSTALL_DATA_DIR} ${ERL_LIBDIR}/{ebin,include,src}

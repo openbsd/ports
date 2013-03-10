@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/10 19:35:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/10 20:11:41 jasper Exp $
 
 COMMENT=	collection of Erlang Performancy related tools
 
@@ -22,7 +22,7 @@ MODULES=	lang/erlang
 NO_REGRESS=	Yes
 
 do-build:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/rebar compile escriptize
+	cd ${WRKSRC} && ${REBAR_BIN} compile escriptize
 
 do-install:
 	${INSTALL_DATA_DIR} ${ERL_LIBDIR}/{ebin,priv,src}
