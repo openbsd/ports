@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2013/02/06 10:19:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/10 10:56:50 fgsch Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -10,8 +10,8 @@ COMMENT-tools =		tools to manipulate MAME/MESS roms and disk images
 
 V =			0148
 DISTNAME =		mame${V}s
-PKGNAME-main =		sdlmame-${V:S/0/0./}
-PKGNAME-tools =		sdlmame-tools-${V:S/0/0./}
+PKGNAME-main =		sdlmame-${V:S/0/0./}pl1
+PKGNAME-tools =		sdlmame-tools-${V:S/0/0./}pl1
 
 CATEGORIES =		emulators games
 
@@ -23,7 +23,6 @@ MAINTAINER =		Federico G. Schwindt <fgsch@openbsd.org>
 # history.dat : Creative Commons Attribution 3.0
 PERMIT_PACKAGE_CDROM =		may not sell
 PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	may not sell
 PERMIT_DISTFILES_FTP =		Yes
 
 WANTLIB =	SDL SDL_ttf X11 Xcomposite Xcursor Xdamage Xext \
@@ -43,6 +42,7 @@ DIST_SUBDIR =		mame
 
 # PATCHFILES doesn't work for .zip
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
+			${V}u1_diff.zip:0 \
 			history${V:S/0//}e.zip:1
 
 MODULES =		devel/gettext \
@@ -72,9 +72,9 @@ post-extract:
 	@${UNZIP} -oq ${WRKDIR}/mame.zip -d ${WRKSRC}
 
 pre-patch:
-#.for v in 1 2 3
-#	${PATCH} ${PATCH_DIST_ARGS} < ${WRKDIR}/${V}u${v}.diff
-#.endfor
+.for v in 1
+	${PATCH} ${PATCH_DIST_ARGS} < ${WRKDIR}/${V}u${v}.diff
+.endfor
 	@perl -pi -e 's|\r\n|\n|g' ${WRKDIST}/makefile \
 	    ${WRKDIST}/src/emu/fileio.h \
 	    ${WRKDIST}/src/emu/machine/netlist.h \

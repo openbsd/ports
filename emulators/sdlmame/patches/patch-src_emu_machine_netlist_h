@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_emu_machine_netlist_h,v 1.1 2013/01/31 22:27:36 fgsch Exp $
---- src/emu/machine/netlist.h.orig	Sun Jan 20 20:35:07 2013
-+++ src/emu/machine/netlist.h	Sun Jan 20 20:34:40 2013
-@@ -107,7 +107,7 @@ ATTR_COLD void NETLIST_NAME(_name)(netlist_setup_t &ne
- #define NETLIST_MEMREGION(_name)                                                    \
- 		netlist.parse((char *)downcast<netlist_t &>(netlist.netlist()).machine().root_device().memregion(_name)->base());       \
+$OpenBSD: patch-src_emu_machine_netlist_h,v 1.2 2013/03/10 10:56:50 fgsch Exp $
+--- src/emu/machine/netlist.h.orig	Tue Mar  5 19:13:20 2013
++++ src/emu/machine/netlist.h	Tue Mar  5 19:14:44 2013
+@@ -99,7 +99,7 @@ ATTR_COLD void NETLIST_NAME(_name)(netlist_setup_t &ne
  
+ #define NETLIST_MEMREGION(_name)                                                    \
+ 		netlist.parse((char *)downcast<netlist_t &>(netlist.netlist()).machine().root_device().memregion(_name)->base());
 -#if defined(__GNUC__) && (__GNUC__ >= 3)
 +#if defined(__GNUC__) && (__GNUC__ > 4) || ((__GNUC__ == 4) && (__GNUC_MINOR__ >= 3))
  #if !defined(__ppc__) && !defined (__PPC__) && !defined(__ppc64__) && !defined(__PPC64__)
