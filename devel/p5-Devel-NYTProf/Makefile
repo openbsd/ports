@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2013/02/06 22:37:47 bluhm Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/10 15:27:06 bluhm Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		powerful feature-rich perl source code profiler
 
-DISTNAME =		Devel-NYTProf-4.24
+DISTNAME =		Devel-NYTProf-4.25
 
 CATEGORIES =		devel
 
@@ -12,9 +12,6 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB +=		c z
 
