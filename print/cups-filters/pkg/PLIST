@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/02/02 08:55:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/03/10 08:17:53 ajacoutot Exp $
 @conflict cups-<1.6.0
 @exec-update [ -h ${SYSCONFDIR}/fonts/conf.d/99-pdftoopvp.conf ] && rm -f ${SYSCONFDIR}/fonts/conf.d/99-pdftoopvp.conf || true
 @bin bin/ttfread
@@ -69,6 +69,11 @@ share/doc/cups-filters/README
 share/examples/cups-filters/
 share/examples/cups-filters/99pdftoopvp.conf
 @sample ${SYSCONFDIR}/fonts/conf.d/99-pdftoopvp.conf
+share/examples/cups-filters/cups/
+@mode 0644
+share/examples/cups-filters/cups/cups-browsed.conf
+@sample ${SYSCONFDIR}/cups/cups-browsed.conf
+@mode
 share/ppd/
 share/ppd/cupsfilters/
 share/ppd/cupsfilters/Generic-PDF_Printer-PDF.ppd

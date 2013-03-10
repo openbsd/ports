@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2013/02/07 19:13:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/10 08:17:53 ajacoutot Exp $
 
 # XXX remove @exec-update when we branch 5.4-current
 
 COMMENT=	OpenPrinting CUPS filters
 
-DISTNAME=	cups-filters-1.0.29
+DISTNAME=	cups-filters-1.0.30
 CATEGORIES=	print
 
 SHARED_LIBS +=  cupsfilters               0.0 # 1.0
@@ -20,10 +20,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += asn1 avahi-client avahi-common c crypto cups cupsimage
-WANTLIB += dbus-1 expat fontconfig freetype gssapi iconv ijs intl
-WANTLIB += jpeg krb5 lcms2 m openjpeg pcre png poppler pthread
-WANTLIB += qpdf ssl stdc++ tiff z
+WANTLIB += asn1 avahi-client avahi-common avahi-glib c crypto
+WANTLIB += cups cupsimage dbus-1 expat fontconfig freetype glib-2.0
+WANTLIB += gssapi iconv ijs intl jpeg krb5 lcms2 m openjpeg pcre
+WANTLIB += png poppler pthread qpdf ssl stdc++ tiff z
 
 MASTER_SITES=	http://www.openprinting.org/download/cups-filters/
 
@@ -49,7 +49,8 @@ USE_LIBTOOL=	Yes
 
 MAKE_FLAGS=	DLOPEN_LIBS=""
 
-FAKE_FLAGS=	pkgfontconfigdir=${PREFIX}/share/examples/cups-filters
+FAKE_FLAGS=	pkgfontconfigdir=${PREFIX}/share/examples/cups-filters \
+		pkgcupsserverrootdir=${PREFIX}/share/examples/cups-filters/cups
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include \
@@ -58,6 +59,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--with-browseremoteprotocols=DNSSD,CUPS \
 		--with-test-font-path=${X11BASE}/lib/X11/fonts/TTF/DejaVuSans.ttf \
 		--with-acroread-path=${LOCALBASE}/bin/acroread \
 		--with-gs-path=${LOCALBASE}/bin/gs \
