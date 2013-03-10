@@ -1,7 +1,7 @@
-$OpenBSD: patch-mscore_CMakeLists_txt,v 1.1.1.1 2013/02/01 06:26:48 bcallah Exp $
---- mscore/CMakeLists.txt.orig	Tue Mar 13 09:37:09 2012
-+++ mscore/CMakeLists.txt	Sat Jan 12 22:46:32 2013
-@@ -147,11 +147,11 @@ include(${QT_USE_FILE})
+$OpenBSD: patch-mscore_CMakeLists_txt,v 1.2 2013/03/10 11:33:23 espie Exp $
+--- mscore/CMakeLists.txt.orig	Wed Feb 27 12:31:02 2013
++++ mscore/CMakeLists.txt	Sun Mar 10 01:51:36 2013
+@@ -151,11 +151,11 @@ include(${QT_USE_FILE})
  ## alsa >= 1.0.0
  ##
  
@@ -15,7 +15,7 @@ $OpenBSD: patch-mscore_CMakeLists_txt,v 1.1.1.1 2013/02/01 06:26:48 bcallah Exp 
        PKGCONFIG (alsa 1.0.0 ALSA_INCDIR ALSA_LIBDIR ALSA_LIB ALSA_CPP )
        if (NOT ALSA_INCDIR)
              message(FATAL_ERROR "Fatal error: ALSA >= 1.0.0 required")
-@@ -160,7 +160,7 @@ else (APPLE OR MINGW)
+@@ -164,7 +164,7 @@ else (APPLE OR MINGW)
              set (USE_ALSA 1)
              set (HAS_MIDI 1)
        endif (NOT ALSA_INCDIR)
@@ -24,7 +24,7 @@ $OpenBSD: patch-mscore_CMakeLists_txt,v 1.1.1.1 2013/02/01 06:26:48 bcallah Exp 
  
  
  ##
-@@ -421,8 +421,8 @@ add_custom_target(lupdate
+@@ -427,8 +427,8 @@ add_custom_target(lupdate
  
  add_custom_target(lrelease
     COMMAND ${PROJECT_SOURCE_DIR}/gen-qt-projectfile ${PROJECT_SOURCE_DIR} > mscore.pro
