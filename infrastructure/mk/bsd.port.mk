@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1215 2013/03/09 00:09:14 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1216 2013/03/10 22:27:15 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -120,9 +120,9 @@ _DPB_MULTI = ${MULTI_PACKAGES}
 .if ${DPB:L:Mall}
 _ALL_VARIABLES += HOMEPAGE DISTNAME \
 	BROKEN COMES_WITH \
-	REGRESS_DEPENDS USE_GMAKE USE_GROFF MODULES FLAVORS \
-	NO_BUILD NO_REGRESS SHARED_ONLY PSEUDO_FLAVORS \
-	REGRESS_IS_INTERACTIVE \
+	TEST_DEPENDS USE_GMAKE USE_GROFF MODULES FLAVORS \
+	NO_BUILD NO_TEST SHARED_ONLY PSEUDO_FLAVORS \
+	TEST_IS_INTERACTIVE \
 	CONFIGURE_STYLE USE_LIBTOOL SEPARATE_BUILD \
 	SHARED_LIBS TARGETS PSEUDO_FLAVOR \
 	MAINTAINER AUTOCONF_VERSION AUTOMAKE_VERSION CONFIGURE_ARGS \
@@ -280,6 +280,7 @@ ERRORS += "Fatal: unknown clean command: ${_w}\n(not in ${_okay_words})"
 CONFIGURE_STYLE ?=
 NO_DEPENDS ?= No
 NO_BUILD ?= No
+NO_TEST ?= No
 NO_REGRESS ?= No
 INSTALL_TARGET ?= install
 
@@ -439,8 +440,8 @@ FLAVORS ?=
 PSEUDO_FLAVORS ?=
 FLAVORS += ${PSEUDO_FLAVORS}
 
-.if !empty(FLAVORS:Mregress) && empty(FLAVOR:Mregress)
-NO_REGRESS = Yes
+.if !empty(FLAVORS:Mtest) && empty(FLAVOR:Mtest)
+NO_TEST = Yes
 .endif
 
 .if empty(SUBPACKAGE)
@@ -605,19 +606,19 @@ _INSTALL_COOKIES +=		${_INSTALL_COOKIE${_S}}
 .if ${SEPARATE_BUILD:L} != "no"
 _CONFIGURE_COOKIE =		${WRKBUILD}/.configure_done
 _BUILD_COOKIE =			${WRKBUILD}/.build_done
-_REGRESS_COOKIE =		${WRKBUILD}/.regress_done
+_TEST_COOKIE =			${WRKBUILD}/.test_done
 .else
 _CONFIGURE_COOKIE =		${WRKDIR}/.configure_done
 _BUILD_COOKIE =			${WRKDIR}/.build_done
-_REGRESS_COOKIE =		${WRKDIR}/.regress_done
+_TEST_COOKIE =			${WRKDIR}/.test_done
 .endif
 
 _ALL_COOKIES = ${_EXTRACT_COOKIE} ${_PATCH_COOKIE} ${_CONFIGURE_COOKIE} \
-	${_INSTALL_PRE_COOKIE} ${_BUILD_COOKIE} ${_REGRESS_COOKIE} \
+	${_INSTALL_PRE_COOKIE} ${_BUILD_COOKIE} ${_TEST_COOKIE} \
 	${_SYSTRACE_COOKIE} ${_PACKAGE_COOKIES} \
 	${_DISTPATCH_COOKIE} ${_PREPATCH_COOKIE} ${_FAKE_COOKIE} \
 	${_WRKDIR_COOKIE} ${_DEPBUILD_COOKIES} \
-	${_DEPRUN_COOKIES} ${_DEPREGRESS_COOKIES} ${_UPDATE_COOKIES} \
+	${_DEPRUN_COOKIES} ${_DEPTEST_COOKIES} ${_UPDATE_COOKIES} \
 	${_DEPBUILDLIB_COOKIES} ${_DEPRUNLIB_COOKIES} \
 	${_DEPBUILDWANTLIB_COOKIE} ${_DEPRUNWANTLIB_COOKIE} ${_DEPLIBSPECS_COOKIES}
 
@@ -749,16 +750,16 @@ ALL_TARGET ?= all
 
 FAKE_TARGET ?= ${INSTALL_TARGET}
 
-REGRESS_TARGET ?= regress
-REGRESS_FLAGS ?= 
-ALL_REGRESS_FLAGS = ${MAKE_FLAGS} ${REGRESS_FLAGS}
-REGRESS_LOGFILE ?= ${WRKDIR}/regress.log
-REGRESS_LOG ?= | tee ${REGRESS_LOGFILE}
+TEST_TARGET ?= test
+TEST_FLAGS ?= 
+ALL_TEST_FLAGS = ${MAKE_FLAGS} ${TEST_FLAGS}
+TEST_LOGFILE ?= ${WRKDIR}/test.log
+TEST_LOG ?= | tee ${TEST_LOGFILE}
 IS_INTERACTIVE ?= No
-REGRESS_IS_INTERACTIVE ?= No
+TEST_IS_INTERACTIVE ?= No
 
-.if ${REGRESS_IS_INTERACTIVE:L} == "x11"
-REGRESS_FLAGS += DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
+.if ${TEST_IS_INTERACTIVE:L} == "x11"
+TEST_FLAGS += DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
 XAUTHORITY ?= ${HOME}/.Xauthority
 .endif
 
@@ -1301,11 +1302,11 @@ MISSING_FILES += ${_F}
 # Don't build a port if it comes with the base system.
 ################################################################
 TRY_BROKEN ?= No
-_IGNORE_REGRESS ?=
-.if ${REGRESS_IS_INTERACTIVE:L} != "no" && defined(BATCH)
-_IGNORE_REGRESS += "has interactive tests"
-.elif ${REGRESS_IS_INTERACTIVE:L} == "no" && defined(INTERACTIVE)
-_IGNORE_REGRESS += "does not have interactive tests"
+_IGNORE_TEST ?=
+.if ${TEST_IS_INTERACTIVE:L} != "no" && defined(BATCH)
+_IGNORE_TEST += "has interactive tests"
+.elif ${TEST_IS_INTERACTIVE:L} == "no" && defined(INTERACTIVE)
+_IGNORE_TEST += "does not have interactive tests"
 .endif
 
 .if ${IS_INTERACTIVE:L} != "no" && defined(BATCH)
@@ -1397,7 +1398,7 @@ _FULL_PACKAGE_NAME ?= No
 
 # XXX save result pre-normalization, just for checking
 _CHECK_DEPENDS =
-.for _v in BUILD LIB RUN REGRESS
+.for _v in BUILD LIB RUN TEST
 _CHECK_DEPENDS +:= ${${_v}_DEPENDS}
 .endfor
 .for _s in ${MULTI_PACKAGES}
@@ -1413,10 +1414,10 @@ ERRORS += "Fatal: old style depends ${_CHECK_DEPENDS:M\:*}"
 # if the depends contains only pkgpath>=something
 # then we rebuild it as STEM->=something:pkgpath
 
-.for _v in BUILD LIB RUN REGRESS
+.for _v in BUILD LIB RUN TEST
 ${_v}_DEPENDS := ${${_v}_DEPENDS:C,^([^:]+/[^:<=>]+)([<=>][^:]+)$,STEM-\2:\1,}
 .endfor
-.for _v in BUILD REGRESS
+.for _v in BUILD TEST
 ${_v}_DEPENDS := ${${_v}_DEPENDS:C,^([^:]+/[^:<=>]+)([<=>][^:]+)(:patch|:configure|:build)$,STEM-\2:\1\3,}
 .endfor
 .for _s in ${MULTI_PACKAGES}
@@ -1457,16 +1458,16 @@ BUILD_DEPENDS += base/xenocara/meta
 .if ${NO_DEPENDS:L} == "no"
 _BUILD_DEPLIST = ${BUILD_DEPENDS}
 _RUN_DEPLIST = ${RUN_DEPENDS${SUBPACKAGE}}
-_REGRESS_DEPLIST = ${REGRESS_DEPENDS}
+_TEST_DEPLIST = ${TEST_DEPENDS}
 _BUILDLIB_DEPLIST = ${_BUILDLIB_DEPENDS}
 _RUNLIB_DEPLIST = ${LIB_DEPENDS${SUBPACKAGE}}
 .endif
 
-_DEPLIST = ${_BUILD_DEPLIST} ${_RUN_DEPLIST} ${_REGRESS_DEPLIST} \
+_DEPLIST = ${_BUILD_DEPLIST} ${_RUN_DEPLIST} ${_TEST_DEPLIST} \
 	${_BUILDLIB_DEPLIST} ${_RUNLIB_DEPLIST}
 
 # compute DEPBUILD_COOKIES and friends
-.for _DEP in BUILD RUN BUILDLIB RUNLIB REGRESS
+.for _DEP in BUILD RUN BUILDLIB RUNLIB TEST
 _DEP${_DEP}_COOKIES =
 .  for _i in ${_${_DEP}_DEPLIST}
 _DEP${_DEP}_COOKIES += ${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=],-,g}
@@ -1508,8 +1509,8 @@ _BUILD_DEP3 = ${BUILD_DEPENDS:${_mod}}
 _RUN_DEP2 = ${RUN_DEPENDS${SUBPACKAGE}:${_mod}}
 _RUN_DEP3 = ${RUN_DEPENDS${SUBPACKAGE}:${_mod}}
 
-_REGRESS_DEP2 = ${REGRESS_DEPENDS:${_mod}}
-_REGRESS_DEP3 = ${_REGRESS_DEP2}
+_TEST_DEP2 = ${TEST_DEPENDS:${_mod}}
+_TEST_DEP3 = ${_TEST_DEP2}
 
 .  if ${NO_SHARED_LIBS:L} != "yes"
 _RUN_DEP2 += ${LIB_DEPENDS${SUBPACKAGE}:${_mod}}
@@ -1557,7 +1558,7 @@ _DEPLIBSPECS_COOKIES = ${_DEPBUILDLIBSPECS_COOKIES} ${_DEPRUNLIBSPECS_COOKIES}
 # strip optional pkgspec, only keep the path
 _BUILD_DEP = ${_BUILD_DEP2:C,^[^:/]*:,,}
 _RUN_DEP = ${_RUN_DEP2:C,^[^:/]*:,,}
-_REGRESS_DEP = ${_REGRESS_DEP2:C,^[^:/]*:,,}
+_TEST_DEP = ${_TEST_DEP2:C,^[^:/]*:,,}
 
 REORDER_DEPENDENCIES ?=
 ECHO_REORDER ?= :
@@ -1969,7 +1970,7 @@ list-distinfo:
 _internal-depends: _internal-lib-depends _internal-build-depends \
 	_internal-buildlib-depends \
 	_internal-run-depends _internal-buildwantlib-depends \
-	_internal-runwantlib-depends _internal-regress-depends
+	_internal-runwantlib-depends _internal-test-depends
 
 _internal-prepare: _internal-build-depends _internal-buildlib-depends \
 	_internal-buildwantlib-depends
@@ -2079,7 +2080,7 @@ show-prepare-results: prepare
 _internal-build-depends: ${_DEPBUILD_COOKIES}
 _internal-run-depends: ${_DEPRUN_COOKIES}
 _internal-lib-depends: ${_DEPBUILDLIB_COOKIES}
-_internal-regress-depends: ${_DEPREGRESS_COOKIES}
+_internal-test-depends: ${_DEPTEST_COOKIES}
 _internal-buildlib-depends: ${_DEPBUILDLIB_COOKIES}
 _internal-runlib-depends: ${_DEPRUNLIB_COOKIES}
 
@@ -2140,7 +2141,7 @@ _internal-fetch-all:
 _internal-all _internal-build _internal-checksum _internal-configure \
 	_internal-deinstall _internal-extract _internal-fake _internal-fetch \
 	_internal-install _internal-install-all _internal-manpages-check \
-	_internal-package _internal-patch _internal-plist _internal-regress \
+	_internal-package _internal-patch _internal-plist _internal-test \
 	_internal-subpackage _internal-subupdate _internal-uninstall \
 	_internal-update _internal-update-or-install \
 	_internal-update-or-install-all _internal-update-plist \
@@ -2282,14 +2283,15 @@ _internal-update: ${_UPDATE_COOKIES}
 _internal-update-or-install: ${_FUPDATE_COOKIE${SUBPACKAGE}}
 _internal-update-or-install-all: ${_FUPDATE_COOKIES}
 
+regress: test
 
-.  if !empty(_IGNORE_REGRESS)
-_internal-regress:
+.  if !empty(_IGNORE_TEST)
+_internal-test:
 .    if !defined(IGNORE_SILENT)
-	@${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} ${_IGNORE_REGRESS}."
+	@${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} ${_IGNORE_TEST}."
 .    endif
 .  else
-_internal-regress: ${_BUILD_COOKIE} ${_DEPREGRESS_COOKIES} ${_REGRESS_COOKIE}
+_internal-test: ${_BUILD_COOKIE} ${_DEPTEST_COOKIES} ${_TEST_COOKIE}
 .  endif
 
 # packing list utilities.  This generates a packing list from a recently
@@ -2344,8 +2346,8 @@ update-patches:
 # if locking exists.
 
 .for _t in extract patch distpatch configure build all install fake \
-	subupdate fetch fetch-all checksum regress prepare \
-	depends lib-depends build-depends run-depends regress-depends \
+	subupdate fetch fetch-all checksum test prepare \
+	depends lib-depends build-depends run-depends test-depends \
 	clean manpages-check plist update-plist \
 	update update-or-install update-or-install-all package install-all
 .  if defined(_LOCK)
@@ -2640,11 +2642,11 @@ ${_BUILD_COOKIE}: ${_CONFIGURE_COOKIE}
 .endif
 	@${_MAKE_COOKIE} $@
 
-${_REGRESS_COOKIE}: ${_BUILD_COOKIE}
-.if ${NO_REGRESS:L} == "no"
+${_TEST_COOKIE}: ${_BUILD_COOKIE}
+.if ${NO_TEST:L} == "no"
 	@${ECHO_MSG} "===>  Regression check for ${FULLPKGNAME}${_MASTER}"
 # When interactive tests need X11
-.  if ${REGRESS_IS_INTERACTIVE:L} == "x11"
+.  if ${TEST_IS_INTERACTIVE:L} == "x11"
 .    if !defined(DISPLAY) || !exists(${XAUTHORITY})
 	@echo 1>&2 "The regression tests require a running instance of X."
 	@echo 1>&2 "You will also need to set the environment variable DISPLAY"
@@ -2653,23 +2655,23 @@ ${_REGRESS_COOKIE}: ${_BUILD_COOKIE}
 	@exit 1
 .    endif
 .  endif
-.  if target(pre-regress)
-	@${_MAKE} pre-regress
+.  if target(pre-test)
+	@${_MAKE} pre-test
 .  endif
-.  if target(do-regress)
+.  if target(do-test)
 	@cd ${.CURDIR} && exec 3>&1 && exit `exec 4>&1 1>&3; \
-		(exec; set +e; PKGPATH=${PKGPATH} ${MAKE} do-regress; \
-		echo $$? >&4) 2>&1 ${REGRESS_LOG}`
+		(exec; set +e; PKGPATH=${PKGPATH} ${MAKE} do-test; \
+		echo $$? >&4) 2>&1 ${TEST_LOG}`
 .  else
-# What REGRESS normally does:
+# What TEST normally does:
 	@cd ${WRKBUILD} && exec 3>&1 && exit `exec 4>&1 1>&3; \
 		(exec; set +e; ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
-		${ALL_REGRESS_FLAGS} -f ${MAKE_FILE} ${REGRESS_TARGET}; \
-		echo $$? >&4) 2>&1 ${REGRESS_LOG}`
-# End of REGRESS
+		${ALL_TEST_FLAGS} -f ${MAKE_FILE} ${TEST_TARGET}; \
+		echo $$? >&4) 2>&1 ${TEST_LOG}`
+# End of TEST
 .  endif
-.  if target(post-regress)
-	@${_MAKE} post-regress
+.  if target(post-test)
+	@${_MAKE} post-test
 .  endif
 .else
 	@echo 1>&2 "No regression check for ${FULLPKGNAME}"
@@ -2982,8 +2984,8 @@ print-run-depends:
 	@echo '" to run.'
 .endif
 
-# full-build-depends, full-all-depends, full-run-depends full-regress-depends
-.for _i in build all run regress
+# full-build-depends, full-all-depends, full-run-depends full-test-depends
+.for _i in build all run test
 full-${_i}-depends:
 	@PKGPATH=${PKGPATH} ${MAKE} ${_i}-dir-depends|${_sort_dependencies}|while read subdir; do \
 		${_flavor_fragment}; \
@@ -3013,8 +3015,8 @@ _license-check:
 .  endif
 .endfor
 
-# run-depends-list, build-depends-list, lib-depends-list, regress-depends-list
-.for _i in RUN BUILD LIB REGRESS
+# run-depends-list, build-depends-list, lib-depends-list, test-depends-list
+.for _i in RUN BUILD LIB TEST
 ${_i:L}-depends-list:
 .  if !empty(_${_i}_DEP3)
 	@echo -n "This port requires \""
@@ -3167,8 +3169,8 @@ run-dir-depends:
 .endif
 
 # recursively build a list of dirs for package regression, ready for tsort
-_recurse-regress-dir-depends:
-.for _dir in ${_REGRESS_DEP}
+_recurse-test-dir-depends:
+.for _dir in ${_TEST_DEP}
 	@echo "$$self ${_dir}"; \
 	if ! fgrep -q -e "R|${_dir}|" $${_DEPENDS_FILE}; then \
 		echo "R|${_dir}|" >> $${_DEPENDS_FILE}; \
@@ -3181,12 +3183,12 @@ _recurse-regress-dir-depends:
 	fi
 .endfor
 
-regress-dir-depends:
-.if !empty(_REGRESS_DEP)
+test-dir-depends:
+.if !empty(_TEST_DEP)
 	@${_depfile_fragment}; \
 	if ! fgrep -q -e "R|${_FULLPKGPATH}|" $${_DEPENDS_FILE}; then \
 		echo "R|${_FULLPKGPATH}|" >>$${_DEPENDS_FILE}; \
-		self=${_FULLPKGPATH} PKGPATH=${PKGPATH} ${MAKE} _recurse-regress-dir-depends; \
+		self=${_FULLPKGPATH} PKGPATH=${PKGPATH} ${MAKE} _recurse-test-dir-depends; \
 	fi
 .else
 	@echo "${_FULLPKGPATH} ${_FULLPKGPATH}"
@@ -3371,23 +3373,23 @@ _all_phony = ${_recursive_depends_targets} \
 	_internal-fetch-all \
 	_internal-install-all _internal-lib-depends _internal-manpages-check \
 	_internal-package _internal-package-only _internal-plist _internal-prepare \
-	_internal-regress _internal-regress-depends _internal-run-depends \
+	_internal-test _internal-test-depends _internal-run-depends \
 	_internal-runwantlib-depends _internal-subpackage _internal-subupdate \
 	_internal-update _internal-update _internal-update-plist \
 	_internal_install _internal_runlib-depends _license-check \
 	print-package-args _print-package-signature-lib \
 	_print-package-signature-run _print-packagename _recurse-all-dir-depends \
-	_recurse-regress-dir-depends _recurse-run-dir-depends _refetch \
+	_recurse-test-dir-depends _recurse-run-dir-depends _refetch \
 	build-depends build-depends-list checkpatch clean clean-depends \
 	delete-package depends distpatch do-build do-configure do-distpatch \
-	do-extract do-install do-regress fetch-all \
+	do-extract do-install do-test fetch-all \
 	install-all lib-depends lib-depends-list \
 	peek-ftp port-lib-depends-check post-build post-configure \
 	post-distpatch post-extract post-install \
-	post-patch post-regress pre-build pre-configure pre-extract pre-fake \
-	pre-install pre-patch pre-regress prepare \
+	post-patch post-test pre-build pre-configure pre-extract pre-fake \
+	pre-install pre-patch pre-test prepare \
 	print-build-depends print-run-depends rebuild \
-	regress-depends regress-depends-list run-depends run-depends-list \
+	test-depends test-depends-list run-depends run-depends-list \
     show-required-by subpackage uninstall _print-metadata \
 	run-depends-args lib-depends-args all-lib-depends-args wantlib-args \
 	port-wantlib-args fake-wantlib-args no-wantlib-args no-lib-depends-args \
