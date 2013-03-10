@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/10 19:35:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/10 19:45:14 jasper Exp $
 
 COMMENT=	Erlang CouchDB framework
 
@@ -19,10 +19,7 @@ MASTER_SITES=	http://distfiles.nl/
 
 MODULES=	lang/erlang
 
-BUILD_DEPENDS=	devel/erl-ejson \
-		net/erl-ibrowse \
-		security/erl-oauth \
-		www/erl-mochiweb
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/erl-ejson \
 		net/erl-ibrowse \
 		security/erl-oauth \
