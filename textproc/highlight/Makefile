@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2012/09/19 08:15:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/10 15:32:30 benoit Exp $
 
 COMMENT =		convert source code to markup formats
 
-DISTNAME =		highlight-3.9
-REVISION =		2
+DISTNAME =		highlight-3.13
 CATEGORIES =		textproc converters
 
 HOMEPAGE =		http://www.andre-simon.de/
@@ -12,9 +11,6 @@ MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c m stdc++ ${MODLUA_WANTLIB}
 

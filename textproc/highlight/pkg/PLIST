@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2012/01/08 07:46:23 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.10 2013/03/10 15:32:35 benoit Exp $
 @bin bin/highlight
 @man man/man1/highlight.1
 share/doc/highlight/
@@ -52,9 +52,11 @@ share/highlight/langDefs/clojure.lang
 share/highlight/langDefs/clp.lang
 share/highlight/langDefs/cobol.lang
 share/highlight/langDefs/coldfusion.lang
+share/highlight/langDefs/crk.lang
 share/highlight/langDefs/csharp.lang
 share/highlight/langDefs/css.lang
 share/highlight/langDefs/d.lang
+share/highlight/langDefs/dart.lang
 share/highlight/langDefs/diff.lang
 share/highlight/langDefs/dylan.lang
 share/highlight/langDefs/ebnf.lang
@@ -174,8 +176,8 @@ share/highlight/langDefs/squirrel.lang
 share/highlight/langDefs/sybase.lang
 share/highlight/langDefs/tcl.lang
 share/highlight/langDefs/tcsh.lang
-share/highlight/langDefs/test_re.lang
 share/highlight/langDefs/tex.lang
+share/highlight/langDefs/ts.lang
 share/highlight/langDefs/tsql.lang
 share/highlight/langDefs/ttcn3.lang
 share/highlight/langDefs/txt.lang
@@ -251,6 +253,7 @@ share/highlight/themes/nightshimmer.theme
 share/highlight/themes/nuvola.theme
 share/highlight/themes/olive.theme
 share/highlight/themes/orion.theme
+share/highlight/themes/oxygenated.theme
 share/highlight/themes/pablo.theme
 share/highlight/themes/peaksea.theme
 share/highlight/themes/print.theme
