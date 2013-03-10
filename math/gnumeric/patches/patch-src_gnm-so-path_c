@@ -1,16 +1,14 @@
-$OpenBSD: patch-src_gnm-so-path_c,v 1.1 2012/12/19 10:43:02 ajacoutot Exp $
---- src/gnm-so-path.c.orig	Wed Dec 19 10:44:47 2012
-+++ src/gnm-so-path.c	Wed Dec 19 10:45:47 2012
-@@ -30,7 +30,12 @@
- #include <goffice/goffice.h>
+$OpenBSD: patch-src_gnm-so-path_c,v 1.2 2013/03/10 12:17:57 ajacoutot Exp $
+--- src/gnm-so-path.c.orig	Sat Mar  2 22:21:08 2013
++++ src/gnm-so-path.c	Sun Mar 10 11:18:15 2013
+@@ -31,6 +31,10 @@
  #include <gsf/gsf-impl-utils.h>
  #include <glib/gi18n-lib.h>
-+#ifdef __OpenBSD__
-+#include <limits.h>
-+#define MAXDOUBLE DBL_MAX
-+#else
- #include <values.h>
-+#endif
  
++#ifndef MAXDOUBLE
++#define MAXDOUBLE DBL_MAX
++#endif
++
  #define CXML2C(s) ((char const *)(s))
  
+ static inline gboolean

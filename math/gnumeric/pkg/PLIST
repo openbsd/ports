@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.35 2012/12/19 10:43:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.36 2013/03/10 12:17:57 ajacoutot Exp $
 %%SHARED%%
 bin/gnumeric
 @bin bin/gnumeric-${GNOME_VERSION}
 @bin bin/ssconvert
+@bin bin/ssdiff
 @bin bin/ssgrep
 @bin bin/ssindex
 include/libspreadsheet-${API_VERSION}/
@@ -120,7 +121,6 @@ include/libspreadsheet-${API_VERSION}/spreadsheet/style-color.h
 include/libspreadsheet-${API_VERSION}/spreadsheet/style-conditions.h
 include/libspreadsheet-${API_VERSION}/spreadsheet/style-font.h
 include/libspreadsheet-${API_VERSION}/spreadsheet/style.h
-include/libspreadsheet-${API_VERSION}/spreadsheet/symbol.h
 include/libspreadsheet-${API_VERSION}/spreadsheet/tools/
 include/libspreadsheet-${API_VERSION}/spreadsheet/tools/dao.h
 include/libspreadsheet-${API_VERSION}/spreadsheet/tools/gnm-solver.h
@@ -320,6 +320,7 @@ lib/pkgconfig/
 lib/pkgconfig/libspreadsheet-${API_VERSION}.pc
 @man man/man1/gnumeric.1
 @man man/man1/ssconvert.1
+@man man/man1/ssdiff.1
 @man man/man1/ssgrep.1
 @man man/man1/ssindex.1
 share/applications/gnumeric.desktop
@@ -858,8 +859,6 @@ share/gnumeric/${GNOME_VERSION}/autoformat-templates/List/autoformat.List.basic.
 share/gnumeric/${GNOME_VERSION}/autoformat-templates/List/autoformat.List.green.xml
 share/gnumeric/${GNOME_VERSION}/autoformat-templates/List/autoformat.List.lila.xml
 share/gnumeric/${GNOME_VERSION}/autoformat-templates/List/autoformat.List.simple.xml
-share/gnumeric/${GNOME_VERSION}/doc/
-share/gnumeric/${GNOME_VERSION}/doc/C/
 share/gnumeric/${GNOME_VERSION}/templates/
 share/gnumeric/${GNOME_VERSION}/templates/calendar.gnumeric
 share/gnumeric/${GNOME_VERSION}/templates/invoice.gnumeric
