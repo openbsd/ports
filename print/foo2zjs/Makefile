@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2013/03/10 08:11:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2013/03/10 08:36:58 ajacoutot Exp $
 
 COMMENT=	driver for ZjStream wire protocol compatible printers
 
 VERSION=	20130306
 DISTNAME=	foo2zjs-${VERSION}
+REVISION=	0
 
 CATEGORIES=	print
 
@@ -46,7 +47,6 @@ post-patch:
 pre-configure:
 	perl -pi -e 's,/usr/bin,${PREFIX}/bin,g' \
 		${WRKSRC}/*.1in
-	perl -pi -e 's,\$\(shell ,\$\(,g' ${WRKSRC}/{,icc2ps}/Makefile
 	${SUBST_CMD} ${WRKSRC}/getweb.in
 
 post-install:
