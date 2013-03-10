@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/10 19:20:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/10 19:35:27 jasper Exp $
 
 COMMENT=	stripped down distribution of the rabbitmq-erlang client
 
@@ -23,8 +23,6 @@ RUN_DEPENDS=	net/erl-rabbit_common
 NO_REGRESS=	Yes
 
 MODULES=	lang/erlang
-
-CONFIGURE_STYLE=rebar
 
 do-build:
 	cd ${WRKSRC} && ${LOCALBASE}/bin/rebar compile

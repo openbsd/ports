@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/10 19:20:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/10 19:35:27 jasper Exp $
 
 COMMENT=	OTP process pool application
 
@@ -18,8 +18,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://distfiles.nl/
 
 MODULES=	lang/erlang
-
-CONFIGURE_STYLE=rebar
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/pooler.app.src

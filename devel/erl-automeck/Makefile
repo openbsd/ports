@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/10 19:20:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/10 19:35:26 jasper Exp $
 
 COMMENT=	streamlines setting up and used Meck-based mocks
 
@@ -18,8 +18,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://distfiles.nl/
 
 MODULES=	lang/erlang
-
-CONFIGURE_STYLE=rebar
 
 RUN_DEPENDS=	devel/erl-meck
 
