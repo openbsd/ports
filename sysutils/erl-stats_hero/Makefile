@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/03/08 12:09:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/10 19:20:06 jasper Exp $
 
 COMMENT=	general purpose stats and collection for Erlang
 
 VERSION=	0.0.1
 DISTNAME=	stats_hero-${VERSION}
 PKGNAME=	erl-${DISTNAME}
-CATEGORIES=	sysutils lang/erlang
+REVISION=	0
+CATEGORIES=	sysutils
 
 HOMEPAGE=	https://github.com/opscode/stats_hero
 
@@ -16,15 +17,14 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://distfiles.nl/
 
-BUILD_DEPENDS=	devel/rebar
+MODULES=	lang/erlang
+
+CONFIGURE_STYLE=rebar
+
 RUN_DEPENDS=	devel/erl-meck \
 		textproc/erl-edown
 
 ALL_TARGET=	compile
-REGRESS_TARGET=	eunit
-
-ERL_LIBDIR=	${PREFIX}/lib/erlang/lib/${DISTNAME}
-SUBST_VARS+=	VERSION
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/stats_hero.app.src

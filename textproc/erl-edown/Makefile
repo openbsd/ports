@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/03/08 12:10:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/10 19:20:06 jasper Exp $
 
 COMMENT=	EDoc extension for generating GitHub-flavored Markdown
 
@@ -6,7 +6,8 @@ COMMENT=	EDoc extension for generating GitHub-flavored Markdown
 VERSION=	0.3.1.1
 DISTNAME=	edown-${VERSION}
 PKGNAME=	erl-${DISTNAME}
-CATEGORIES=	textproc lang/erlang
+REVISION=	0
+CATEGORIES=	textproc
 
 HOMEPAGE=	https://github.com/seth/edown
 
@@ -17,13 +18,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://distfiles.nl/
 
-BUILD_DEPENDS=	devel/rebar
-RUN_DEPENDS=	lang/erlang
+MODULES=	lang/erlang
+
+CONFIGURE_STYLE=rebar
 
 NO_REGRESS=	Yes
-
-ERL_LIBDIR=	${PREFIX}/lib/erlang/lib/${DISTNAME}
-SUBST_VARS+=	VERSION
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/edown.app.src

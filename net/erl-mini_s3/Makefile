@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/10 17:40:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/10 19:20:06 jasper Exp $
 
 COMMENT=	s3 client API for Erlang
 
 VERSION=	0.0.1
 DISTNAME=	mini_s3-${VERSION}
 PKGNAME=	erl-${DISTNAME}
-CATEGORIES=	net lang/erlang
+REVISION=	0
+CATEGORIES=	net
 
 HOMEPAGE=	https://github.com/opscode/mini_s3
 
@@ -16,16 +17,13 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://distfiles.nl/
 
-USE_GMAKE=	Yes
+MODULES=	lang/erlang
 
-BUILD_DEPENDS=	devel/rebar
+CONFIGURE_STYLE=rebar
+
 RUN_DEPENDS=	net/erl-ibrowse
 
 ALL_TARGET=	compile
-REGRESS_TARGET=	eunit
-
-ERL_LIBDIR=	${PREFIX}/lib/erlang/lib/${DISTNAME}
-SUBST_VARS+=	VERSION
 
 do-install:
 	${INSTALL_DATA_DIR} ${ERL_LIBDIR}/{ebin,src}

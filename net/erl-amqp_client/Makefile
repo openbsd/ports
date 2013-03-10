@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/03/08 12:02:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/10 19:20:06 jasper Exp $
 
 COMMENT=	stripped down distribution of the rabbitmq-erlang client
 
 VERSION=	0.0.0.0
 DISTNAME=	amqp_client-${VERSION}
 PKGNAME=	erl-${DISTNAME}
-CATEGORIES=	net lang/erlang
+REVISION=	0
+CATEGORIES=	net
 
 HOMEPAGE=	https://github.com/seth/amqp_client
 
@@ -16,14 +17,14 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://distfiles.nl/
 
-BUILD_DEPENDS=	devel/rebar \
-		net/erl-rabbit_common
-RUN_DEPENDS=	lang/erlang \
-		net/erl-rabbit_common
+BUILD_DEPENDS=	net/erl-rabbit_common
+RUN_DEPENDS=	net/erl-rabbit_common
 
 NO_REGRESS=	Yes
-ERL_LIBDIR=	${PREFIX}/lib/erlang/lib/${DISTNAME}
-SUBST_VARS+=	VERSION
+
+MODULES=	lang/erlang
+
+CONFIGURE_STYLE=rebar
 
 do-build:
 	cd ${WRKSRC} && ${LOCALBASE}/bin/rebar compile

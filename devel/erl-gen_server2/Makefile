@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/03/08 11:57:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/10 19:20:06 jasper Exp $
 
 COMMENT=	gen_server2 for OTP
 
 VERSION=	1.0.0
 DISTNAME=	gen_server2-${VERSION}
 PKGNAME=	erl-${DISTNAME}
-CATEGORIES=	devel lang/erlang
+REVISION=	0
+CATEGORIES=	devel
 
 HOMEPAGE=	https://github.com/mdaguete/gen_server2
 
@@ -16,13 +17,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://distfiles.nl/
 
-BUILD_DEPENDS=	devel/rebar
-RUN_DEPENDS=	lang/erlang
+MODULES=	lang/erlang
 
-REGRESS_TARGET=	test
-
-ERL_LIBDIR=	${PREFIX}/lib/erlang/lib/${DISTNAME}
-SUBST_VARS+=	VERSION
+CONFIGURE_STYLE=rebar
 
 do-build:
 	cd ${WRKSRC} && ${LOCALBASE}/bin/rebar compile

@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/10 18:17:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/10 19:20:06 jasper Exp $
 
 COMMENT=	Erlang PostgreSQL client
 
 VERSION=	1.4.1
 DISTNAME=	epgsql-${VERSION}
 PKGNAME=	erl-${DISTNAME}
-CATEGORIES=	databases lang/erlang
+REVISION=	0
+CATEGORIES=	databases
 
 HOMEPAGE=	https://github.com/opscode/epgsql
 
@@ -15,13 +16,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://distfiles.nl/
-TAR=		${LOCALBASE}/bin/gtar
 
-BUILD_DEPENDS=	archivers/gtar \
-		devel/rebar
-RUN_DEPENDS=	lang/erlang
+MODULES=	lang/erlang
 
-USE_GMAKE=	Yes
+CONFIGURE_STYLE= rebar
+
 MAKE_ENV+=	VERSION=${VERSION}
 
 ALL_TARGET=	#empty
@@ -29,8 +28,6 @@ FAKE_TARGET=	app
 
 # Should actually have a 'dialyzer' target which creates the PLT on the fly.
 NO_REGRESS=	Yes
-
-SUBST_VARS+=	VERSION
 
 # The 'app' target creates a nice directory for us to actually install.
 post-install:

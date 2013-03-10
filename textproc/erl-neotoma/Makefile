@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/03/08 12:11:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/10 19:20:06 jasper Exp $
 
 COMMENT=	library for parsing expression grammars for Erlang
 
 VERSION=	1.6.0
 DISTNAME=	neotoma-${VERSION}
 PKGNAME=	erl-${DISTNAME}
-CATEGORIES=	textproc lang/erlang
+REVISION=	0
+CATEGORIES=	textproc
 
 HOMEPAGE=	https://github.com/seancribbs/neotoma
 
@@ -15,16 +16,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://distfiles.nl/
-TAR=		${LOCALBASE}/bin/gtar
 
-BUILD_DEPENDS=	archivers/gtar \
-		devel/rebar
-RUN_DEPENDS=	lang/erlang
+MODULES=	lang/erlang
+
+CONFIGURE_STYLE=rebar
 
 REGRESS_TARGET=	tests
-
-ERL_LIBDIR=	${PREFIX}/lib/erlang/lib/${DISTNAME}
-SUBST_VARS+=	VERSION
 
 do-install:
 	${INSTALL_DATA_DIR} ${ERL_LIBDIR}/{ebin,extra,priv,src}

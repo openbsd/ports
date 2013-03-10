@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/03/08 12:13:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/10 19:20:06 jasper Exp $
 
 COMMENT=	REST-based system for building web applications
 
 VERSION=	1.9.3
 DISTNAME=	webmachine-${VERSION}
 PKGNAME=	erl-${DISTNAME}
-CATEGORIES=	www lang/erlang
+REVISION=	0
+CATEGORIES=	www
 
 HOMEPAGE=	https://github.com/basho/webmachine
 
@@ -15,18 +16,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://distfiles.nl/
-TAR=		${LOCALBASE}/bin/gtar
 
-BUILD_DEPENDS=	archivers/gtar \
-		devel/rebar \
-		www/erl-mochiweb
-RUN_DEPENDS=	lang/erlang \
-		www/erl-mochiweb
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	www/erl-mochiweb
 
-REGRESS_TARGET=	test
+MODULES=	lang/erlang
 
-ERL_LIBDIR=	${PREFIX}/lib/erlang/lib/${DISTNAME}
-SUBST_VARS+=	VERSION
+CONFIGURE_STYLE=rebar
 
 do-install:
 	${INSTALL_DATA_DIR} ${ERL_LIBDIR}/{demo,ebin,include,priv,scripts,src}

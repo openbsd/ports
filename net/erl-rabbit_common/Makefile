@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/03/08 12:05:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/10 19:20:06 jasper Exp $
 
 COMMENT=	stripped down version of the RabbitMQ server
 
 VERSION=	2.1.0
 DISTNAME=	rabbit_common-${VERSION}
 PKGNAME=	erl-${DISTNAME}
-CATEGORIES=	net lang/erlang
+REVISION=	0
+CATEGORIES=	net
 
 HOMEPAGE=	https://github.com/seth/rabbit_common
 
@@ -16,14 +17,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://distfiles.nl/
 
-BUILD_DEPENDS=	devel/erl-gen_server2 \
-		devel/rebar
-RUN_DEPENDS=	lang/erlang
+BUILD_DEPENDS=	devel/erl-gen_server2
 
-REGRESS_TARGET=	test
+MODULES=	lang/erlang
 
-ERL_LIBDIR=	${PREFIX}/lib/erlang/lib/${DISTNAME}
-SUBST_VARS+=	VERSION
+CONFIGURE_STYLE=rebar
 
 do-build:
 	cd ${WRKSRC} && ${LOCALBASE}/bin/rebar compile

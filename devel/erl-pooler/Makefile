@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/10 18:17:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/10 19:20:06 jasper Exp $
 
 COMMENT=	OTP process pool application
 
 VERSION=	0.0.2
 DISTNAME=	pooler-${VERSION}
 PKGNAME=	erl-${DISTNAME}
-CATEGORIES=	devel lang/erlang
+REVISION=	0
+CATEGORIES=	devel
 
 HOMEPAGE=	https://github.com/seth/pooler
 
@@ -16,12 +17,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://distfiles.nl/
 
-BUILD_DEPENDS=	devel/rebar
-RUN_DEPENDS=	lang/erlang
+MODULES=	lang/erlang
 
-REGRESS_TARGET=	test
-ERL_LIBDIR=	${PREFIX}/lib/erlang/lib/${DISTNAME}
-SUBST_VARS+=	VERSION
+CONFIGURE_STYLE=rebar
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/pooler.app.src
