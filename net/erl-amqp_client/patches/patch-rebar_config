@@ -1,7 +1,0 @@
-$OpenBSD: patch-rebar_config,v 1.1.1.1 2013/03/08 12:02:38 jasper Exp $
---- rebar.config.orig	Tue Mar  5 08:55:36 2013
-+++ rebar.config	Tue Mar  5 08:55:39 2013
-@@ -1,3 +0,0 @@
--{deps, [{rabbit_common, ".*",
--         {git, "git://github.com/seth/rabbit_common.git", "master"}}
--       ]}.
