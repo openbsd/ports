@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.40 2013/03/02 13:51:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2013/03/10 08:11:05 ajacoutot Exp $
 
 COMMENT=	driver for ZjStream wire protocol compatible printers
 
-VERSION=	20130220
+VERSION=	20130306
 DISTNAME=	foo2zjs-${VERSION}
 
 CATEGORIES=	print
@@ -35,6 +35,10 @@ RUN_DEPENDS +=	print/foomatic-db-engine
 MAKE_FLAGS+=	CUPS_SERVERBIN=`cups-config --serverbin`
 
 NO_REGRESS=	Yes
+
+# remove CVS ID
+post-extract:
+	perl -pi -e "s,^VERSION=.*,VERSION=\'${VERSION}\'," ${WRKSRC}/getweb.in
 
 post-patch:
 	ln -sf ${WRKSRC}/modify-ppd ${WRKDIR}/bin/modify-ppd
