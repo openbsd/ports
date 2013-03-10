@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/03/08 12:03:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/10 12:32:54 jasper Exp $
 
 COMMENT=	Erlang HTTP client
 
 VERSION=	4.0.1.1
 DISTNAME=	ibrowse-${VERSION}
 PKGNAME=	erl-${DISTNAME}
+REVISION=	0
 CATEGORIES=	net lang/erlang
 
 HOMEPAGE=	https://github.com/opscode/ibrowse
@@ -17,7 +18,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://distfiles.nl/
 TAR=		${LOCALBASE}/bin/gtar
 
-BUILD_DEPENDS=	archivers/gtar
+BUILD_DEPENDS=	archivers/gtar \
+		devel/rebar
+RUN_DEPENDS=	lang/erlang
 
 USE_GMAKE=	Yes
 
