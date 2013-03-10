@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/12/18 09:01:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/10 22:28:04 espie Exp $
 
 COMMENT=		several programs to handle macintosh files and archives
 DISTNAME=		macutil2.0b3
@@ -8,7 +8,6 @@ CATEGORIES=		archivers
 # None
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	No
-PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	No
 
 REVISION =	2
@@ -24,7 +23,7 @@ WRKDIST=		${WRKDIR}/macutil
 MAKE_ENV=		CF="${CFLAGS}" \
 			CC=${CC}
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 post-extract:
 	@rm ${WRKDIST}/doc/README.crc.orig

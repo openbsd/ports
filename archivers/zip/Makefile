@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2010/10/18 16:47:00 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2013/03/10 22:28:05 espie Exp $
 
 COMMENT=	create/update ZIP files compatible with PKZip(tm)
 
@@ -12,16 +12,13 @@ HOMEPAGE=	http://infozip.sourceforge.net/
 
 # Conditional
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS_NOOPT="${CFLAGS} -I. -DUNIX"
 
 MAKE_FILE=	unix/Makefile
 ALL_TARGET=	generic
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 USE_GROFF =	Yes
 
 do-install:

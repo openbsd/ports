@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2010/07/11 15:57:47 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2013/03/10 22:28:05 espie Exp $
 
 COMMENT=	extract, view & test ACE archives
 
@@ -9,7 +9,6 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE:=utils/compress/}
 # Vague
 PERMIT_PACKAGE_CDROM=	no terms
 PERMIT_PACKAGE_FTP=	no terms
-PERMIT_DISTFILES_CDROM=	unclear terms
 PERMIT_DISTFILES_FTP=	unclear terms
 
 REVISION =	0
@@ -18,7 +17,7 @@ WANTLIB=		c
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -Wall -DUNIX -DCASEINSENSE"
 MAKE_FILE=	unix/makefile
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 pre-build:
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2012/04/30 13:55:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/10 22:28:05 espie Exp $
 
 COMMENT=	java-like zip interface
 DISTNAME=	zipios++-0.1.5.9+cvs.2004.02.07
@@ -13,9 +13,6 @@ DISTFILES=	zipios++_0.1.5.9+cvs.2004.02.07.orig.tar.gz \
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 REVISION =	1
 WANTLIB=		m stdc++ z

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2012/11/26 17:17:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.58 2013/03/10 22:28:05 espie Exp $
 
 COMMENT=	extract, list, and test RAR archives
 
@@ -18,9 +18,6 @@ HOMEPAGE=	http://www.rarlab.com/
 
 # nonstandard
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c crypto m stdc++
 
@@ -37,6 +34,6 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/readme.txt ${WRKSRC}/license.txt \
 		${PREFIX}/share/doc/unrar
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

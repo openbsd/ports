@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2011/09/16 08:26:10 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2013/03/10 22:28:05 espie Exp $
 
 COMMENT=	interactive astronomical ephemeris
 DISTNAME=	xephem-3.2.3
@@ -9,7 +9,6 @@ HOMEPAGE=	http://www.clearskyinstitute.com/xephem/
 
 PERMIT_PACKAGE_CDROM=   no modifications, no fee
 PERMIT_PACKAGE_FTP=     no modifications
-PERMIT_DISTFILES_CDROM= no fee
 PERMIT_DISTFILES_FTP=   Yes
 
 REVISION =	5
@@ -31,7 +30,7 @@ do-build:
 	@cd ${WRKSRC}/GUI/xephem && \
 	  ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} -f ${MAKE_FILE} ${ALL_TARGET}
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/X11/xephem/auxil

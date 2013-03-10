@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/06/02 17:09:31 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/10 22:28:04 espie Exp $
 
 COMMENT=	library for handling microsoft compression formats
 
@@ -11,9 +11,6 @@ HOMEPAGE=	http://www.cabextract.org.uk/libmspack/
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${HOMEPAGE}
 

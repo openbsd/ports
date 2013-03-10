@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2012/09/23 16:57:32 jeremy Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/10 22:28:05 espie Exp $
 
 COMMENT =	command-line utility for POSIX tar(1) archive files
 
@@ -10,15 +10,12 @@ HOMEPAGE =	http://ruwiki.rubyforge.org/
 
 # GPLv2/Ruby license
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 MODULES =		lang/ruby
 
 CONFIGURE_STYLE =	ruby gem
 
-do-regress:
+do-test:
 	@cd ${WRKBUILD}/tests && ${RUBY} testall.rb
 
 .include <bsd.port.mk>

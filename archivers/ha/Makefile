@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/07/11 15:57:47 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2013/03/10 22:28:04 espie Exp $
 
 COMMENT=	archive files using the HSC compression method
 
@@ -11,9 +11,6 @@ EXTRACT_SUFX=	.tgz
 FAKE=			all
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 REVISION =	1
 WANTLIB=		c
@@ -33,6 +30,6 @@ ALL_TARGET=	ha
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ha ${PREFIX}/bin
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

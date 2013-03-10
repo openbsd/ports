@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/10/24 20:58:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2013/03/10 22:28:05 espie Exp $
 
 V=		3.1.6
 COMMENT=	real-time satellite tracking and orbit propagation program
@@ -8,7 +8,6 @@ CATEGORIES=	astro
 # Commercial License
 PERMIT_PACKAGE_CDROM=	May not be bundled, according to copyright
 PERMIT_PACKAGE_FTP=	May not distribute modified version
-PERMIT_DISTFILES_CDROM=	May not be bundled, according to copyright
 PERMIT_DISTFILES_FTP=	Yes
 
 REVISION =	4
@@ -29,6 +28,6 @@ post-install:
 		${PREFIX}/lib/SatTrack/{data,pred,tle} \
 		${PREFIX}/share/doc/SatTrack
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

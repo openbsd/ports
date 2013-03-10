@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/12/18 09:01:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/10 22:28:05 espie Exp $
 
 COMMENT=	file compressor with a high compression ratio
 
@@ -10,9 +10,6 @@ MAINTAINER=	Lawrence Teo <lteo.openbsd1@calyptix.com>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}ftp/rzip/ \
 		${HOMEPAGE}ftp/rzip/old-versions/
@@ -25,6 +22,6 @@ CONFIGURE_STYLE=gnu dest
 CONFIGURE_ENV=	CPPFLAGS="-I${DEPBASE}/include" \
 		LDFLAGS="-L${DEPBASE}/lib"
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

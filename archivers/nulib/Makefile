@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2012/01/03 06:53:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2013/03/10 22:28:04 espie Exp $
 
 COMMENT=	NuFX archiver
 
@@ -12,14 +12,13 @@ EXTRACT_SUFX=	.tar.Z
 # Restrictive
 PERMIT_PACKAGE_CDROM=	no fee
 PERMIT_PACKAGE_FTP=	no terms
-PERMIT_DISTFILES_CDROM=	no fee
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c
 
 MAKE_FLAGS=	CC="${CC}" OPTIMIZE="${CFLAGS}"
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 WRKDIST=	${WRKDIR}/nulib
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2012/08/18 12:41:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2013/03/10 22:28:05 espie Exp $
 
 COMMENT=	extract files from ARJ archives
 
@@ -11,7 +11,6 @@ EXTRACT_SUFX=	.tgz
 # Restrictive
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	No
-PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	No
 
 WANTLIB=		c
@@ -23,6 +22,6 @@ do-install:
 	cd ${WRKSRC}; ${INSTALL_PROGRAM} unarj ${PREFIX}/bin
 	cd ${WRKSRC}; ${INSTALL_DATA} unarj.doc technote.doc ${PREFIX}/share/doc/unarj
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/10/18 16:47:00 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/10 22:28:04 espie Exp $
 
 COMMENT=	FREEZE / MELT compression program - often used in QNX
 
@@ -10,7 +10,6 @@ MASTER_SITES=	http://www.arcane-labs.net/download/OpenBSD/
 # None
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	No
-PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	No
 
 REVISION =	0
@@ -21,7 +20,7 @@ CONFIGURE_STYLE= gnu dest
 MAKE_FLAGS=	CFLAGS="${CFLAGS} -I."
 USE_GROFF =	Yes
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-configure:
 		${SUBST_CMD} ${WRKSRC}/Makefile \

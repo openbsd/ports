@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2010/10/18 16:47:00 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2013/03/10 22:28:04 espie Exp $
 
 COMMENT=	archive files using LZW compression (.lzh files)
 
@@ -13,8 +13,6 @@ MAINTAINER=	Yozo Toda <yozo@v007.vaio.ne.jp>
 # Restrictive
 PERMIT_PACKAGE_CDROM=	requires advance notification
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	requires advance notification
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP:=lha/22231/}

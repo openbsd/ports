@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/08/19 00:17:37 jolan Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/10 22:28:04 espie Exp $
 
 COMMENT=	file joiner/splitter
 DISTNAME=	lxsplit-0.2.4
@@ -10,13 +10,10 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=lxsplit/}
 HOMEPAGE=	http://lxsplit.sourceforge.net/
 
 # GPL
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
 WANTLIB=		c
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 USE_GMAKE=	Yes
 
 do-install:

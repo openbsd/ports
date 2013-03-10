@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/10/12 08:37:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/10 22:28:05 espie Exp $
 
 COMMENT =		Python implementation of the LZO library
 
@@ -14,9 +14,6 @@ MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 MASTER_SITES =	http://www.oberhumer.com/opensource/lzo/download/LZO-v1/
 
@@ -37,7 +34,7 @@ pre-install:
 		${INSTALL_DATA_DIR} ${EXAMPLEDIR}
 		${INSTALL_DATA} ${WRKSRC}/tests/*.py ${EXAMPLEDIR}
 
-do-regress:
+do-test:
 		@cd ${WRKSRC} && ${MAKE_PROGRAM} test
 
 .include <bsd.port.mk>

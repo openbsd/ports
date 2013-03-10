@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/05/16 13:25:49 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/10 22:28:05 espie Exp $
 
 COMMENT=	display the moon's phase
 
@@ -13,7 +13,6 @@ MAINTAINER=	Nick Nauwelaerts <nick@nauwelaerts.net>
 
 PERMIT_PACKAGE_CDROM=	copyrighted
 PERMIT_PACKAGE_FTP=	copyrighted
-PERMIT_DISTFILES_CDROM=	copyrighted
 PERMIT_DISTFILES_FTP=	copyrighted
 WANTLIB=		c
 
@@ -24,7 +23,7 @@ BUILD_DEPENDS=	archivers/lha
 
 MAKE_ENV=	CC="${CC}"
 MAKE_FILE=	makefile
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-extract:
 .for f in famplan.c luna.c luna.h makefile pyramid.c pyramid.h iprintf/makefile
