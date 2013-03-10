@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2012/12/19 10:42:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2013/03/10 12:17:34 ajacoutot Exp $
 include/libgoffice-${API_VERSION}/
 include/libgoffice-${API_VERSION}/goffice/
 include/libgoffice-${API_VERSION}/goffice/app/
@@ -213,6 +213,8 @@ lib/libgoffice-${API_VERSION}.la
 @lib lib/libgoffice-${API_VERSION}.so.${LIBgoffice-0.10_VERSION}
 lib/pkgconfig/libgoffice-${API_VERSION}.pc
 share/gtk-doc/html/goffice-${API_VERSION}/
+share/gtk-doc/html/goffice-${API_VERSION}/GOArrow.html
+share/gtk-doc/html/goffice-${API_VERSION}/GOBezierSpline.html
 share/gtk-doc/html/goffice-${API_VERSION}/GOCalendarButton.html
 share/gtk-doc/html/goffice-${API_VERSION}/GOCharmapSel.html
 share/gtk-doc/html/goffice-${API_VERSION}/GOCmdContext.html
@@ -224,11 +226,15 @@ share/gtk-doc/html/goffice-${API_VERSION}/GOComponent.html
 share/gtk-doc/html/goffice-${API_VERSION}/GOData.html
 share/gtk-doc/html/goffice-${API_VERSION}/GODataMatrix.html
 share/gtk-doc/html/goffice-${API_VERSION}/GODataScalar.html
+share/gtk-doc/html/goffice-${API_VERSION}/GODateConventions.html
 share/gtk-doc/html/goffice-${API_VERSION}/GODistribution.html
 share/gtk-doc/html/goffice-${API_VERSION}/GODoc.html
 share/gtk-doc/html/goffice-${API_VERSION}/GODocControl.html
+share/gtk-doc/html/goffice-${API_VERSION}/GOEditor.html
+share/gtk-doc/html/goffice-${API_VERSION}/GOErrorInfo.html
 share/gtk-doc/html/goffice-${API_VERSION}/GOFileSaver.html
 share/gtk-doc/html/goffice-${API_VERSION}/GOFontSel.html
+share/gtk-doc/html/goffice-${API_VERSION}/GOFormat.html
 share/gtk-doc/html/goffice-${API_VERSION}/GOFormatSel.html
 share/gtk-doc/html/goffice-${API_VERSION}/GOGraphWidget.html
 share/gtk-doc/html/goffice-${API_VERSION}/GOIOContext.html
@@ -237,6 +243,7 @@ share/gtk-doc/html/goffice-${API_VERSION}/GOLocaleSel.html
 share/gtk-doc/html/goffice-${API_VERSION}/GOMarker.html
 share/gtk-doc/html/goffice-${API_VERSION}/GOOptionMenu.html
 share/gtk-doc/html/goffice-${API_VERSION}/GOPalette.html
+share/gtk-doc/html/goffice-${API_VERSION}/GOPath.html
 share/gtk-doc/html/goffice-${API_VERSION}/GOPersist.html
 share/gtk-doc/html/goffice-${API_VERSION}/GOPixbuf.html
 share/gtk-doc/html/goffice-${API_VERSION}/GOPlugin.html
@@ -246,6 +253,7 @@ share/gtk-doc/html/goffice-${API_VERSION}/GOPluginService.html
 share/gtk-doc/html/goffice-${API_VERSION}/GORotationSel.html
 share/gtk-doc/html/goffice-${API_VERSION}/GOSearchReplace.html
 share/gtk-doc/html/goffice-${API_VERSION}/GOSelector.html
+share/gtk-doc/html/goffice-${API_VERSION}/GOString.html
 share/gtk-doc/html/goffice-${API_VERSION}/GOStyle.html
 share/gtk-doc/html/goffice-${API_VERSION}/GOStyledObject.html
 share/gtk-doc/html/goffice-${API_VERSION}/GOUndoUnary.html
@@ -269,7 +277,9 @@ share/gtk-doc/html/goffice-${API_VERSION}/Gog3DBox.html
 share/gtk-doc/html/goffice-${API_VERSION}/GogAxis.html
 share/gtk-doc/html/goffice-${API_VERSION}/GogAxisColorMap.html
 share/gtk-doc/html/goffice-${API_VERSION}/GogAxisLine.html
+share/gtk-doc/html/goffice-${API_VERSION}/GogAxisMap.html
 share/gtk-doc/html/goffice-${API_VERSION}/GogChart.html
+share/gtk-doc/html/goffice-${API_VERSION}/GogChartMap.html
 share/gtk-doc/html/goffice-${API_VERSION}/GogDataEditor.html
 share/gtk-doc/html/goffice-${API_VERSION}/GogDataset.html
 share/gtk-doc/html/goffice-${API_VERSION}/GogErrorBar.html
@@ -320,28 +330,18 @@ share/gtk-doc/html/goffice-${API_VERSION}/goffice-${API_VERSION}-File-utilities.
 share/gtk-doc/html/goffice-${API_VERSION}/goffice-${API_VERSION}-Files.html
 share/gtk-doc/html/goffice-${API_VERSION}/goffice-${API_VERSION}-GLib-extras.html
 share/gtk-doc/html/goffice-${API_VERSION}/goffice-${API_VERSION}-GOAccumulator.html
-share/gtk-doc/html/goffice-${API_VERSION}/goffice-${API_VERSION}-GOArrow.html
-share/gtk-doc/html/goffice-${API_VERSION}/goffice-${API_VERSION}-GOBezierSpline.html
 share/gtk-doc/html/goffice-${API_VERSION}/goffice-${API_VERSION}-GOColor.html
 share/gtk-doc/html/goffice-${API_VERSION}/goffice-${API_VERSION}-GOComplex.html
 share/gtk-doc/html/goffice-${API_VERSION}/goffice-${API_VERSION}-GODataCVector.html
-share/gtk-doc/html/goffice-${API_VERSION}/goffice-${API_VERSION}-GODateConventions.html
-share/gtk-doc/html/goffice-${API_VERSION}/goffice-${API_VERSION}-GOEditor.html
-share/gtk-doc/html/goffice-${API_VERSION}/goffice-${API_VERSION}-GOErrorInfo.html
 share/gtk-doc/html/goffice-${API_VERSION}/goffice-${API_VERSION}-GOFileOpeners.html
 share/gtk-doc/html/goffice-${API_VERSION}/goffice-${API_VERSION}-GOFont.html
-share/gtk-doc/html/goffice-${API_VERSION}/goffice-${API_VERSION}-GOFormat.html
-share/gtk-doc/html/goffice-${API_VERSION}/goffice-${API_VERSION}-GOPath.html
 share/gtk-doc/html/goffice-${API_VERSION}/goffice-${API_VERSION}-GOPattern.html
 share/gtk-doc/html/goffice-${API_VERSION}/goffice-${API_VERSION}-GOQuad.html
 share/gtk-doc/html/goffice-${API_VERSION}/goffice-${API_VERSION}-GORange.html
 share/gtk-doc/html/goffice-${API_VERSION}/goffice-${API_VERSION}-GORegexp.html
 share/gtk-doc/html/goffice-${API_VERSION}/goffice-${API_VERSION}-GORegression.html
-share/gtk-doc/html/goffice-${API_VERSION}/goffice-${API_VERSION}-GOString.html
 share/gtk-doc/html/goffice-${API_VERSION}/goffice-${API_VERSION}-Geometry-helpers.html
 share/gtk-doc/html/goffice-${API_VERSION}/goffice-${API_VERSION}-Gettings-Started-with-GOffice.html
-share/gtk-doc/html/goffice-${API_VERSION}/goffice-${API_VERSION}-GogAxisMap.html
-share/gtk-doc/html/goffice-${API_VERSION}/goffice-${API_VERSION}-GogChartMap.html
 share/gtk-doc/html/goffice-${API_VERSION}/goffice-${API_VERSION}-GogTool.html
 share/gtk-doc/html/goffice-${API_VERSION}/goffice-${API_VERSION}-Gradient.html
 share/gtk-doc/html/goffice-${API_VERSION}/goffice-${API_VERSION}-Graph-editor-dialog.html
@@ -357,7 +357,6 @@ share/gtk-doc/html/goffice-${API_VERSION}/goffice-${API_VERSION}-URL-utilities.h
 share/gtk-doc/html/goffice-${API_VERSION}/goffice-${API_VERSION}-Units.html
 share/gtk-doc/html/goffice-${API_VERSION}/goffice-${API_VERSION}-Utils.html
 share/gtk-doc/html/goffice-${API_VERSION}/goffice-${API_VERSION}-Windows-Metafiles-support.html
-share/gtk-doc/html/goffice-${API_VERSION}/goffice-${API_VERSION}.devhelp
 share/gtk-doc/html/goffice-${API_VERSION}/goffice-${API_VERSION}.devhelp2
 share/gtk-doc/html/goffice-${API_VERSION}/gsf-index.html
 share/gtk-doc/html/goffice-${API_VERSION}/home.png

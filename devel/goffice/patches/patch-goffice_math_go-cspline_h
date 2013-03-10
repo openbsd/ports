@@ -1,0 +1,15 @@
+$OpenBSD: patch-goffice_math_go-cspline_h,v 1.1 2013/03/10 12:17:34 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=695550
+
+--- goffice/math/go-cspline.h.orig	Sun Mar 10 11:00:13 2013
++++ goffice/math/go-cspline.h	Sun Mar 10 11:00:25 2013
+@@ -53,7 +53,7 @@ double *go_cspline_get_values (GOCSpline const *sp, do
+ double *go_cspline_get_derivs (GOCSpline const *sp, double const *x, int n);
+ double *go_cspline_get_integrals (GOCSpline const *sp, double const *x, int n);
+ 
+-#ifdef GOFFICE_WITH_LONG_DOUBLE
++#ifndef GOFFICE_WITH_LONG_DOUBLE
+ typedef struct _GOCSplinel GOCSplinel;
+ struct _GOCSplinel {
+ 	long double const *x, *y;
