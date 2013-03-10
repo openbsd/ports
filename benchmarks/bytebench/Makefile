@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/05/22 16:25:38 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/10 23:04:44 espie Exp $
 
 COMMENT=	BYTE magazine benchmark suite
 DISTNAME=       bytebench-3.1
@@ -7,7 +7,6 @@ CATEGORIES=	benchmarks
 # License: NONE
 PERMIT_PACKAGE_CDROM=	no license
 PERMIT_PACKAGE_FTP=	no license
-PERMIT_DISTFILES_CDROM=	no license
 PERMIT_DISTFILES_FTP=	no license
 
 MASTER_SITES=   ftp://ftp.42.org/pub/OLD/b/	\
@@ -16,7 +15,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAKE_ENV=	CC="${CC}"
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 		-${INSTALL_DATA_DIR} ${PREFIX}/lib/bytebench

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2011/05/22 18:04:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2013/03/10 23:04:44 espie Exp $
 
 COMMENT=	Network performance benchmark
 
@@ -16,15 +16,13 @@ HOMEPAGE=	http://www.netperf.org/netperf/NetperfPage.html
 
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	No
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m
 
 MAKE_FILE=	makefile
 MAKE_FLAGS+=	CC="${CC}" CFLAGS='${CFLAGS} -DDEBUG_LOG_FILE="\"/tmp/netperf.debug\"" -DUSE_LOOPER -DDO_DNS'
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 SHAREDIR=	${PREFIX}/share/netperf
 SCRIPTS=	arr_script snapshot_script \

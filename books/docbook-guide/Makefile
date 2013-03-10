@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/08/24 15:28:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/10 23:04:44 espie Exp $
 
 COMMENT=	the definite guide to DocBook
 
@@ -15,14 +15,11 @@ MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 # GNU Free Documentation License
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=	${WRKDIR}/tdg/en
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 PKG_ARCH=	*
 
 INSTALL_LOC=	${PREFIX}/share/doc/docbook-guide

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2012/06/15 08:32:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/10 23:04:44 espie Exp $
 
 COMMENT=		viewer for Gerber (RS-274X) files
 DISTNAME=		gerbv-2.5.0
@@ -13,9 +13,6 @@ SHARED_LIBS +=  gerbv                     0.1 # 1.5
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig

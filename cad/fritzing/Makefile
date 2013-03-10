@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2012/09/12 10:54:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/10 23:04:44 espie Exp $
 
 COMMENT=	interactive electronics designing software
 
@@ -12,9 +12,6 @@ HOMEPAGE=	http://fritzing.org/
 # Code: GPLv3+
 # Rest: CreativeCommons:BY-SA
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES=	${HOMEPAGE}download/$Vb/source-tarball/
 EXTRACT_SUFX=	.tar.bz2
@@ -23,7 +20,7 @@ WANTLIB += QtGui QtNetwork QtSql QtSvg QtXml c m pthread stdc++ z
 WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
 
 MODULES=        x11/qt4
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 BUILD_DEPENDS=	devel/boost
 RUN_DEPENDS=	devel/desktop-file-utils

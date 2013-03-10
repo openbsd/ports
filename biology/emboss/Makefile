@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/11/01 16:05:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/10 23:04:44 espie Exp $
 
 COMMENT=	European Molecular Biology Open Software Suite
 
@@ -14,10 +14,7 @@ CATEGORIES=	biology
 HOMEPAGE=	http://emboss.sourceforge.net/
 
 # GPL v2
-PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
 
 MASTER_SITES=	ftp://emboss.open-bio.org/pub/EMBOSS/
 

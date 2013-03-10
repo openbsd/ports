@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/18 16:57:46 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/10 23:04:44 espie Exp $
 
 COMMENT=	system performance measurement
 DISTNAME=	lmbench
@@ -7,9 +7,6 @@ CATEGORIES=	benchmarks
 
 # License: GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 # this is the new home site
@@ -27,7 +24,7 @@ MAN8=	lmbench.8 lat_proc.8 lat_mmap.8 lat_ctx.8 lat_syscall.8 lat_pipe.8 \
 	lat_mem_rd.8 bw_file_rd.8 bw_mem_cp.8 bw_mem_rd.8 bw_mem_wr.8 \
 	bw_mmap_rd.8 bw_pipe.8 bw_tcp.8 mhz.8 lmdd.8
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 test: build
 	@cd ${WRKSRC}; make results

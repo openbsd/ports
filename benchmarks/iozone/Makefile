@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2010/10/18 16:57:46 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2013/03/10 23:04:44 espie Exp $
 # Uses pthreads
 
 COMMENT=	performance test of sequential file I/O
@@ -13,13 +13,12 @@ HOMEPAGE=	http://www.iozone.org/
 
 PERMIT_PACKAGE_CDROM=	incomplete/bad license
 PERMIT_PACKAGE_FTP=	incomplete/bad license
-PERMIT_DISTFILES_CDROM=	incomplete/bad license
 PERMIT_DISTFILES_FTP=	incomplete/bad license
 WANTLIB=		c pthread
 
 MAKE_ENV=	CC="${CC}"
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 USE_GROFF =	Yes
 
 ALL_TARGET=	openbsd-threads

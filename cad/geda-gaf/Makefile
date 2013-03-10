@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2012/09/01 14:36:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/10 23:04:44 espie Exp $
 
 COMMENT =		suite of tools for electronic design automation
 DISTNAME =		geda-gaf-1.6.0
@@ -14,9 +14,6 @@ USE_GROFF =	Yes
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 			Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo \
@@ -51,8 +48,8 @@ post-extract:
 	@rm -f ${WRKSRC}/gnetlist/examples/vams/gschemrc.orig
 
 # MAKE_ENV hoses the regression test, so we do this manually
-do-regress:
-	cd ${WRKSRC} && ${MAKE_PROGRAM} ${ALL_REGRESS_FLAGS} \
-		-f ${MAKE_FILE} ${REGRESS_TARGET} ${REGRESS_LOG}
+do-test:
+	cd ${WRKSRC} && ${MAKE_PROGRAM} ${ALL_TEST_FLAGS} \
+		-f ${MAKE_FILE} ${TEST_TARGET} ${TEST_LOG}
 
 .include <bsd.port.mk>

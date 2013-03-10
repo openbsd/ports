@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/11/03 07:20:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2013/03/10 23:04:44 espie Exp $
 
 COMMENT=	reciprocating engine for X11
 PKGNAME=	xengine-1.0.1
@@ -12,8 +12,6 @@ MAINTAINER=	Paul Janzen <pjanzen@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	no fee
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	no fee
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xpm Xt c m
 
@@ -25,7 +23,7 @@ WRKDIST=	${WRKDIR}
 CONFIGURE_STYLE=	imake
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-distpatch:
 	@cd $(WRKSRC) && ${PATCH} ${PATCH_DIST_ARGS} < xengine.patch1

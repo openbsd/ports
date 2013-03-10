@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/09/16 08:48:02 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/10 23:04:45 espie Exp $
 
 COMMENT=	graphical circuit design and simulation tool
 
@@ -11,9 +11,6 @@ HOMEPAGE=	http://qucs.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=qucs/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2012/10/29 11:27:05 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/10 23:04:44 espie Exp $
 
 COMMENT=        O'Reilly Volume 3: Users Guide, Open Look
 
@@ -14,16 +14,13 @@ MAINTAINER=	Ian Darwin <ian@openbsd.org>
 
 # Open Publication License 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ftp.ora.com/pub/openlook/
 DISTFILES=	${DISTNAME}.pdf
 EXTRACT_ONLY=
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 PKG_ARCH=	*
 
 INSTALL_LOC=	${PREFIX}/share/doc/oreilly-x

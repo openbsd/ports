@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/11/26 21:54:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/10 23:04:44 espie Exp $
 
 COMMENT=		Common Lisp reference
 
@@ -8,13 +8,11 @@ CATEGORIES=		books lang
 
 PERMIT_PACKAGE_CDROM=	Commercial redistribution prohibited
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Commercial redistribution prohibited
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		ftp://ftp.lispworks.com/pub/software_tools/reference/
 
 NO_BUILD=		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 PKG_ARCH=		*
 
 DOC=			${PREFIX}/share/doc/clisp-hyperspec

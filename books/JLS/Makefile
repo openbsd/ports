@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/03/21 16:12:01 ian Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/10 23:04:44 espie Exp $
 
 COMMENT=        Sun's official Java Language Specification
 
@@ -16,7 +16,6 @@ MAINTAINER=	Ian Darwin <ian@openbsd.org>
 # http://java.sun.com/docs/books/jls/third_edition/html/jcopyright.html
 PERMIT_PACKAGE_CDROM=	Copyright
 PERMIT_PACKAGE_FTP=	Copyright
-PERMIT_DISTFILES_CDROM=	Copyright
 PERMIT_DISTFILES_FTP=	Copyright
 
 MASTER_SITES=	http://java.sun.com/docs/books/jls/download/
@@ -24,7 +23,7 @@ MASTER_SITES=	http://java.sun.com/docs/books/jls/download/
 EXTRACT_ONLY=
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 PKG_ARCH=	*
 
 INSTALL_LOC=	${PREFIX}/share/doc/java

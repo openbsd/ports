@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/15 00:22:49 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/10 23:04:44 espie Exp $
 
 COMMENT=		Gnu Circuit Analysis Package
 
@@ -12,9 +12,6 @@ MAINTAINER=		Andreas Bihlmaier <andreas.bihlmaier@gmx.de>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c m stdc++ readline termcap
 
@@ -31,7 +28,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/man/gnucap-man.pdf \
 		${PREFIX}/share/doc/gnucap/gnucap.pdf
 
-do-regress:
+do-test:
 	cd ${WRKSRC}/examples && ./runall ../src/gnucap
 
 .include <bsd.port.mk>

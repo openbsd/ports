@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2012/06/09 11:26:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/10 23:04:45 espie Exp $
 
 COMMENT=	Qt-based 2D CAD system
 
@@ -13,7 +13,6 @@ HOMEPAGE=	http://www.ribbonsoft.com/qcad.html
 # Source code is GPLv2 and data not specified
 PERMIT_PACKAGE_CDROM=	Non-free data files
 PERMIT_PACKAGE_FTP=	Non-free data files
-PERMIT_DISTFILES_CDROM=	Non-free data files
 PERMIT_DISTFILES_FTP=	Non-free data files
 
 WANTLIB=		X11 Xext c m pthread stdc++
@@ -23,7 +22,7 @@ MASTER_SITES=	http://www.ribbonsoft.com/archives/qcad/
 MODULES=	x11/qt3
 
 USE_GMAKE=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 PORTHOME=	${WRKDIR}
 

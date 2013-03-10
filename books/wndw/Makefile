@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/07/24 06:29:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/10 23:04:44 espie Exp $
 
 COMMENT-main =	Wireless Networking in the Developing World, English edition
 COMMENT-es =	Wireless Networking in the Developing World, Spanish edition
@@ -22,9 +22,6 @@ CATEGORIES =	books net
 
 # Creative Commons Attribution-ShareAlike 3.0
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MULTI_PACKAGES =-main -es -fr -ar -pt -id
 
@@ -52,7 +49,7 @@ EXTRACT_ONLY =
 PKG_ARCH =	*
 
 NO_BUILD =	Yes
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/wndw
