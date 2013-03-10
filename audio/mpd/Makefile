@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2013/01/10 14:01:51 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.53 2013/03/10 22:55:04 espie Exp $
 
 COMMENT =		Music Player Daemon
 DISTNAME =		mpd-0.17.3
@@ -8,9 +8,6 @@ MAINTAINER =		David Coppa <dcoppa@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		FLAC ao audiofile c cdio cdio_cdda cdio_paranoia \
 			curl glib-2.0 gthread-2.0 id3tag m mad \

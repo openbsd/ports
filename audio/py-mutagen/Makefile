@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2012/10/15 15:06:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/10 22:55:05 espie Exp $
 
 COMMENT =	Python module to handle audio metadata
 
@@ -14,9 +14,6 @@ MASTER_SITES =	${HOMEPAGE}files/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		lang/python
 
@@ -27,18 +24,18 @@ MODPY_ADJ_FILES =	mutagen/__init__.py \
 			tools/mutagen-inspect \
 			tools/mutagen-pony
 
-REGRESS_DEPENDS =	audio/faad \
+TEST_DEPENDS =		audio/faad \
 			audio/flac \
 			audio/py-eyed3 \
 			audio/py-vorbis \
 			audio/vorbis-tools \
 			multimedia/oggz
-REGRESS_TARGET =	test
+TEST_TARGET =		test
 
 pre-build:
 	@rm ${WRKDIST}/tools/*.orig
 
-do-regress:
-	${_MODPY_CMD} ${REGRESS_TARGET}
+do-test:
+	${_MODPY_CMD} ${TEST_TARGET}
 
 .include <bsd.port.mk>

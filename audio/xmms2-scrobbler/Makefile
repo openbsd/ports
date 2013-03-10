@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/15 00:22:49 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/10 22:55:06 espie Exp $
 
 COMMENT =		last.fm client for xmms2
 
@@ -12,9 +12,6 @@ MAINTAINER =		Amaury Gauthier <amaury.gauthier@etu.unilim.fr>
 
 # BSD 
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB +=		c curl pthread xmmsclient
 
@@ -24,6 +21,6 @@ LIB_DEPENDS =		audio/xmms2
 
 USE_GMAKE =		Yes
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 .include <bsd.port.mk>

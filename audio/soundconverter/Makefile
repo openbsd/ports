@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2012/09/06 11:57:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/10 22:55:05 espie Exp $
 
 COMMENT =		simple audio file converter for the GNOME Desktop
 
@@ -12,9 +12,6 @@ MAINTAINER =		Martin Pieuchot <mpi@openbsd.org>
 
 # GPLv3 
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${MASTER_SITE_BERLIOS:=soundconverter/}
 
@@ -36,7 +33,7 @@ CONFIGURE_ARGS =	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -liconv"
 USE_GMAKE =		Yes
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 PKG_ARCH=		*
 
 MODPY_ADJ_FILES =	src/soundconverter.py

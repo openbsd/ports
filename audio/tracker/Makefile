@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2011/10/21 17:43:30 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2013/03/10 22:55:06 espie Exp $
 
 COMMENT =	MOD player
 DISTNAME =	tracker-5.3
@@ -13,9 +13,6 @@ MAINTAINER =	Marc Espie <espie@openbsd.org>
 # OpenBSD has a special exemption. Other BSD should contact me (Marc Espie) 
 # for redistribution on the CD.
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c m sndio
 
@@ -28,7 +25,7 @@ MAKE_FLAGS =	MACHINE=openbsd CC=$(CC) INSTALL="$(INSTALL)" \
 		COMPRESSION_FILE='$${DESTDIR}${SYSCONFDIR}/compression_methods' \
 		PREFIX='$${DESTDIR}/${TRUEPREFIX}'
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 
 post-extract:

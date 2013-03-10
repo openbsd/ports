@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/04/30 19:22:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/10 22:55:06 espie Exp $
 
 COMMENT =	html5-powered web music server
 
@@ -15,9 +15,6 @@ MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
 # AGPLv3 (GNU Affero Public License)
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		lang/python
 
@@ -42,7 +39,7 @@ ZEYA_MODULES =		${WRKBUILD}/backends.py \
 			${WRKBUILD}/rhythmbox.py
 
 NO_BUILD =		Yes
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 PKG_ARCH =		*
 WRKDIST =		${WRKDIR}
 

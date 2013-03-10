@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2012/10/15 15:06:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/10 22:55:06 espie Exp $
 
 COMMENT =		minimalistic Mumble server
 
@@ -14,9 +14,6 @@ MAINTAINER =		Jonathon Sisson <sisson.j@gmail.com>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB = 		c config crypto protobuf-c ssl
 
@@ -28,7 +25,7 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS =	--with-ssl=openssl
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 post-configure:
 	${SUBST_CMD} ${WRKSRC}/src/conf.c ${WRKSRC}/src/conf.h

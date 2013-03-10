@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/01/09 17:38:52 jeremy Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/10 22:55:05 espie Exp $
 
 COMMENT =	ruby library for reading/writing vorbis comments
 
@@ -12,9 +12,6 @@ MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 
 # LGPLv2/MIT License
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	vorbis ogg
 
@@ -25,8 +22,8 @@ RUN_DEPENDS=	devel/ruby-cicphash,${MODRUBY_FLAVOR}
 LIB_DEPENDS =	audio/libvorbis
 
 CONFIGURE_STYLE = ruby gem ext
-REGRESS_DEPENDS = ${FULLPKGNAME}:${BUILD_PKGPATH}
-MODRUBY_REGRESS = ruby
-MODRUBY_REGRESS_TARGET = test/test_vorbis_comment.rb
+TEST_DEPENDS = ${FULLPKGNAME}:${BUILD_PKGPATH}
+MODRUBY_TEST = ruby
+MODRUBY_TEST_TARGET = test/test_vorbis_comment.rb
 
 .include <bsd.port.mk>

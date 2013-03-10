@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2013/02/03 13:19:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2013/03/10 22:55:05 espie Exp $
 
 COMMENT=	Sound eXchange, the Swiss Army knife of audio manipulation
 
@@ -12,9 +12,6 @@ MAINTAINER=	Jan Stary <hans@stare.cz>
 # code is GPLv2+, however as opencore is under Apache License we must use
 # sox under the terms of GPLv3 to avoid license conflict.
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		converters/libiconv
 
@@ -86,7 +83,7 @@ CONFIGURE_ENV= \
 	CPPFLAGS="-I${LOCALBASE}/include" \
 	LDFLAGS="-L${LOCALBASE}/lib"
 
-do-regress:
+do-test:
 	@cd ${WRKSRC}/src && ./tests.sh && ./testall.sh
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2011/10/31 16:55:41 stu Exp $
+# $OpenBSD: Makefile,v 1.28 2013/03/10 22:55:06 espie Exp $
 
 COMMENT =	Tcl/Tk CD player
 DISTNAME =	xcd-1.7
@@ -8,9 +8,6 @@ MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # custom free license; see top of cdplayer.cc
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	c m stdc++
 
@@ -28,7 +25,7 @@ FAKE_FLAGS =	BINDIR=${WRKINST}${PREFIX}/bin \
 		MANDIR=${WRKINST}${PREFIX}/man/man1
 
 USE_GROFF =	Yes
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 WRKDIST =	${WRKDIR}/xcd
 
 do-configure:

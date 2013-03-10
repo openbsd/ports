@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2012/01/03 07:03:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/10 22:55:02 espie Exp $
 
 COMMENT=	creates cover for audio cds using cddb and latex
 
@@ -11,9 +11,6 @@ HOMEPAGE=	http://www.vanhemert.co.uk/disc-cover.html
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=disc-cover/}
 
@@ -22,7 +19,7 @@ RUN_DEPENDS=	print/texlive/base \
 		www/p5-libwww \
 		audio/p5-Audio-CD
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 EX_DIR=		${PREFIX}/share/examples/disc-cover
 PNGS=		busy.png offline.png online.png

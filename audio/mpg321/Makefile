@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2012/07/13 09:05:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2013/03/10 22:55:04 espie Exp $
 
 # not very useful with static libao
 SHARED_ONLY=	Yes
@@ -14,9 +14,6 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mpg321/}
 DISTFILES=	mpg321_${VERSION}.orig.tar.gz

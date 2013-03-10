@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/12/27 12:02:33 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/10 22:55:02 espie Exp $
 
 COMMENT-main=		ncurses-based music player
 COMMENT-flac=		FLAC input plugin for cmus
@@ -17,9 +17,6 @@ MAINTAINER=		Donovan Watteau <tsoomi@gmail.com>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 EXTRACT_SUFX=		.tar.bz2
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=cmus/}
@@ -74,7 +71,7 @@ LIB_DEPENDS+=		audio/libvorbis
 WANTLIB-main+=		ogg vorbis>=0 vorbisfile>=1
 .endif
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 post-patch:
 	@cp ${FILESDIR}/sndio.c ${WRKSRC}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/02/01 16:04:02 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/10 22:55:03 espie Exp $
 
 BROKEN =		no support for the new Last.fm API v2.0
 
@@ -27,9 +27,6 @@ DIST_SUBDIR =		lastfm
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		ICE QtDBus QtGui QtNetwork QtSql \
 			QtXml SM X11 Xext Xi Xinerama Xrender \
@@ -46,7 +43,7 @@ LIB_DEPENDS =		audio/libgpod \
 RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/xdg-utils
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 LASTFM_LIBDIR = ${PREFIX}/lib/last.fm
 LASTFM_DATADIR = ${PREFIX}/share/last.fm

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/09/05 10:25:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2013/03/10 22:55:01 espie Exp $
 
 COMMENT=	high-quality MP3 encoder
 
@@ -16,8 +16,6 @@ HOMEPAGE=	http://bladeenc.mp3.no/
 # GPL
 PERMIT_PACKAGE_CDROM=	MP3 patent, http://mp3licensing.com/royalty/swenc.html
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	MP3 patent, http://mp3licensing.com/royalty/swenc.html
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m
 
 CONFIGURE_STYLE= gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2012/12/21 12:50:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2013/03/10 22:55:01 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -21,10 +21,7 @@ SHARED_LIBS=	beep	2.1
 HOMEPAGE=	http://sourceforge.net/projects/beepmp/
 
 # GPLv2+
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi \
 		Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig \

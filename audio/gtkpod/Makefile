@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2012/05/20 22:06:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2013/03/10 22:55:02 espie Exp $
 
 COMMENT=	GTK+2 program to synchronize an Apple iPod
 DISTNAME=	gtkpod-1.0.0
@@ -12,9 +12,6 @@ MAINTAINER=	Chris Kuethe <ckuethe@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += X11 Xcursor Xext Xfixes Xi Xinerama Xrandr Xrender
 WANTLIB += Xcomposite Xdamage c cairo expat fontconfig freetype m pthread

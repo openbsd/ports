@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/01/26 15:53:20 bcallah Exp $
+# $OpenBSD: Makefile,v 1.27 2013/03/10 22:55:05 espie Exp $
 
 COMMENT=		music tracking tool for X11
 
@@ -13,9 +13,6 @@ MAINTAINER=		Wilbern Cobb <wcobb@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.shaltev.org/data/
 EXTRACT_SUFX=		.tar.bz2

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2012/07/12 12:22:58 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/10 22:55:04 espie Exp $
 
 COMMENT=	implementation of the Adaptive Multi Rate speech codec
 
@@ -16,8 +16,6 @@ MAINTAINER=	Jan Stary <hans@stare.cz>
 # Apache 2.0
 PERMIT_PACKAGE_CDROM=	http://www.voiceage.com/amr_licterms.php
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= http://www.voiceage.com/amr_licterms.php
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += m
 

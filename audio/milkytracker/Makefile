@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2012/12/09 07:29:57 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/10 22:55:03 espie Exp $
 
 COMMENT =		Fasttracker II inspired MOD tracker
 
@@ -10,9 +10,6 @@ HOMEPAGE =		http://www.milkytracker.org/
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		SDL c m pthread stdc++ z
 

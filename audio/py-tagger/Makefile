@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/16 08:26:11 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/10 22:55:05 espie Exp $
 
 COMMENT=	Python ID3 tag reader/writer module
 
@@ -11,16 +11,13 @@ HOMEPAGE=	http://www.liquidx.net/pytagger/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.liquidx.net/static/pytagger/
 EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	lang/python
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 DOCSDIR=	${PREFIX}/share/doc/py-tagger
 EXAMPLESDIR=	${PREFIX}/share/examples/py-tagger

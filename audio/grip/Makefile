@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2013/01/17 13:30:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2013/03/10 22:55:02 espie Exp $
 
 COMMENT=	front-end to external cd audio rippers and mp3 encoders
 
@@ -11,9 +11,6 @@ MAINTAINER=	Steve Shockley <steve.shockley@shockley.net>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ICE ORBit-2 SM X11 Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0

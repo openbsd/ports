@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2012/08/27 13:53:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/10 22:55:06 espie Exp $
 
 COMMENT=	console napster client
 
@@ -12,15 +12,12 @@ MASTER_SITES=	http://bwap.clawz.com/downloads/
 HOMEPAGE=	http://www.TekNap.com/
 
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB=		c m ncurses panel pthread
 
 CONFIGURE_STYLE=	gnu dest
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 WRKDIST=	${WRKDIR}/TekNap
 

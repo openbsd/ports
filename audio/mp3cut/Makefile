@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/12/03 11:44:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/10 22:55:03 espie Exp $
 
 COMMENT =		cut and cat MP3 files
 
@@ -13,9 +13,6 @@ MAINTAINER =		Girish Venkatachalam <girish1729@gmail.com>
 
 # GPL/Artistic
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 CPAN_AUTHOR =		JV
 

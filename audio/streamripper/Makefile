@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2012/09/01 14:36:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/10 22:55:06 espie Exp $
 
 COMMENT=	rip shoutcast streams to local mp3s
 
@@ -14,9 +14,6 @@ MODULES=	devel/gettext
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c glib-2.0 iberty m mad>=2 ogg>=5.2 pthread vorbis>=3.0
 

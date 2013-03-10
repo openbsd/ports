@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2012/12/05 12:46:19 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/10 22:55:04 espie Exp $
 
 COMMENT =		ncurses mpd client inspired by ncmpc
 
@@ -15,9 +15,6 @@ MAINTAINER =		David Coppa <dcoppa@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${HOMEPAGE}stable/ \
 			http://distfiles.nl/
@@ -42,6 +39,6 @@ CONFIGURE_ARGS =	--enable-clock \
 			--with-taglib \
 			--without-fftw
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 .include <bsd.port.mk>

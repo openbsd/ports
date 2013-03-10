@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2012/01/03 07:03:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/10 22:55:02 espie Exp $
 
 COMMENT=	general multi-lingual speech synthesis system
 V=		1.95
@@ -43,12 +43,10 @@ FLAVOR?=
 .if ${FLAVOR:Mogi}
 DISTFILES+=	OGIresLPC-2.0.9.tar.gz:0
 PATCH_LIST=	ogi-* patch-*
-PERMIT_DISTFILES_CDROM=	no fee
 PERMIT_PACKAGE_CDROM=	no fee
 .endif
 
 # BSD-like
-PERMIT_DISTFILES_CDROM?=Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM?=	Yes
 PERMIT_PACKAGE_FTP=	Yes

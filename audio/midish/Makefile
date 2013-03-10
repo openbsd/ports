@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2012/10/15 14:55:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/10 22:55:03 espie Exp $
 
 COMMENT=		command line MIDI sequencer and filter
 DISTNAME=		midish-1.0.6
@@ -8,15 +8,12 @@ MAINTAINER=		Alexandre Ratchov <alex@caoua.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}
 WANTLIB=		c ncurses readline sndio
 CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS=		--prefix=${PREFIX}
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 MAKE_FLAGS=		CC="${CC}"
 
 do-install:

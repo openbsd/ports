@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2010/10/18 16:52:45 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2013/03/10 22:55:02 espie Exp $
 
 COMMENT=	u-law to gsm encoding audio converter and library
 
@@ -11,9 +11,6 @@ SHARED_LIBS=	gsm	1.0
 
 # ISC-like
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c
 
@@ -24,7 +21,7 @@ FAKE_FLAGS=	INSTALL_ROOT="${WRKINST}${PREFIX}"
 
 WRKDIST=	${WRKDIR}/gsm-1.0-pl13
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>
 

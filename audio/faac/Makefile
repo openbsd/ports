@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2012/06/15 12:51:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/10 22:55:02 espie Exp $
 
 COMMENT=	MPEG-2 and MPEG-4 AAC encoder
 
@@ -14,7 +14,6 @@ HOMEPAGE=	http://www.audiocoding.com/
 # LGPLv2 + MPEG reference (incompatible)
 PERMIT_PACKAGE_CDROM=	Cannot distribute
 PERMIT_PACKAGE_FTP=	Cannot distribute
-PERMIT_DISTFILES_CDROM=	Patents
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c m stdc++ mp4v2>=3

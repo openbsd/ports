@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/15 00:22:46 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/10 22:55:02 espie Exp $
 
 COMMENT=	Castilian Spanish male speaker (EL)
 DISTNAME=	festvox_ellpc11k
 
-PERMIT_DISTFILES_CDROM=	no fee
 PERMIT_PACKAGE_CDROM=	no fee
 
 RUN_DEPENDS=	audio/festival/core

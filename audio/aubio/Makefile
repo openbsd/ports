@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2012/08/18 07:18:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/10 22:55:01 espie Exp $
 
 COMMENT =		extract annotations from audio signals
 DISTNAME =		aubio-0.3.2
@@ -10,9 +10,6 @@ REVISION =		0
 
 # GPLv2+ 
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c m pthread fftw3f jack samplerate sndfile
 
@@ -33,12 +30,12 @@ CONFIGURE_FLAGS +=	--enable-test-progs
 CONFIGURE_ENV += 	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-REGRESS_TARGET = 	run-tests
+TEST_TARGET = 	run-tests
 # regress requires a running jackd instance
-REGRESS_IS_INTERACTIVE = Yes
-do-regress:
+TEST_IS_INTERACTIVE = Yes
+do-test:
 	(cd ${WRKSRC}/examples/tests && env -i ${MAKE_ENV} ${MAKE_PROGRAM} \
-		${ALL_REGRESS_FLAGS} -f ${MAKE_FILE} ${REGRESS_TARGET} \
-		${REGRESS_LOG})
+		${ALL_TEST_FLAGS} -f ${MAKE_FILE} ${TEST_TARGET} \
+		${TEST_LOG})
 
 .include <bsd.port.mk>

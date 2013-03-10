@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2012/12/09 07:29:57 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/10 22:55:02 espie Exp $
 
 COMMENT =		SoundFont2 software synthesizer
 DISTNAME =		fluidsynth-1.0.9
@@ -11,9 +11,6 @@ HOMEPAGE =		http://fluidsynth.resonance.org/trac
 
 # LGPL
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c jack m ncurses pthread readline sndio
 

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 22:27:38 simon Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/10 22:55:02 espie Exp $
 
 COMMENT=	oxford advanced learners' dictiction of current english
 DISTNAME=	festlex_OALD
 
-PERMIT_DISTFILES_CDROM=	no fee
 PERMIT_PACKAGE_CDROM=	no fee
 
 do-install:

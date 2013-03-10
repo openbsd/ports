@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2012/09/26 19:20:59 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/10 22:55:02 espie Exp $
 
 COMMENT=		compact speech synthesizer
 
@@ -13,9 +13,6 @@ HOMEPAGE=		http://espeak.sourceforge.net/
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=espeak/}
 EXTRACT_SUFX=		.zip
@@ -26,7 +23,7 @@ LIB_DEPENDS=		audio/portaudio-svn
 
 USE_GMAKE=		Yes
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 WRKSRC= 		${WRKDIST}/src
 

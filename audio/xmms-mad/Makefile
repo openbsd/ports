@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2012/10/15 14:55:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/10 22:55:06 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -12,9 +12,6 @@ MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += X11 Xext Xi m gdk glib gmodule gtk
 WANTLIB += xcb z id3tag xmms mad

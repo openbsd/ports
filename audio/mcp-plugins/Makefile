@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/12/09 07:29:57 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/10 22:55:03 espie Exp $
 
 SHARED_ONLY =		Yes
 
@@ -13,9 +13,6 @@ HOMEPAGE =		http://kokkinizita.net/linuxaudio/ladspa/index.html
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		m stdc++
 
@@ -25,7 +22,7 @@ MASTER_SITES =		http://kokkinizita.net/linuxaudio/downloads/
 
 MAKE_FLAGS =		CPPFLAGS="${CPPFLAGS} -D_REENTRANT -fPIC"
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 post-patch:
 	perl -pi -e 's#g\+\+ -shared#${CXX} -shared -fPIC#g' ${WRKSRC}/Makefile

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2010/11/15 00:22:46 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2013/03/10 22:55:02 espie Exp $
 
 V?=		1.95
 PKGNAME?=	${DISTNAME}-20040804
@@ -14,13 +14,12 @@ DIST_SUBDIR?=	festival/${PKGNAME}
 # festvox_cmu_us_slt_arctic_hts
 # festvox_cstr_us_awb_arctic_multisyn
 # festvox_cstr_us_jmk_arctic_multisyn
-PERMIT_DISTFILES_CDROM?=Yes
 PERMIT_DISTFILES_FTP?=	Yes
 PERMIT_PACKAGE_CDROM?=	Yes
 PERMIT_PACKAGE_FTP?=	Yes
 
 NO_BUILD?=	Yes
-NO_REGRESS?=	Yes
+NO_TEST?=	Yes
 
 ARCTIC_US_DEPS?=audio/festival/festlex/festlex_CMU \
 		audio/festival/festlex/festlex_POSLEX

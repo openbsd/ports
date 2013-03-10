@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2012/03/02 07:14:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2013/03/10 22:55:03 espie Exp $
 
 COMMENT=	lame ain't an MP3 encoder
 
@@ -15,8 +15,6 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2 - patent restriction
 PERMIT_PACKAGE_CDROM=	MP3 patent, http://mp3licensing.com/royalty/
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	MP3 patent, http://mp3licensing.com/royalty/
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c m ncurses
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2012/02/21 16:21:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2013/03/10 22:55:06 espie Exp $
 
 COMMENT=	MIDI to WAV renderer and player
 
@@ -18,7 +18,6 @@ HOMEPAGE=	http://timidity.sourceforge.net/
 # GPL, copyrighted patches in goemon patchset
 PERMIT_PACKAGE_CDROM=   copyrighted patches
 PERMIT_PACKAGE_FTP=     copyrighted patches
-PERMIT_DISTFILES_CDROM= copyrighted patches
 PERMIT_DISTFILES_FTP=   copyrighted patches
 
 WANTLIB=		c m ncurses sndio
@@ -60,7 +59,7 @@ CONFIGURE_ARGS+=--without-x
 .endif
 
 USE_GMAKE=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 WRKDIST=	${WRKDIR}
 WRKSRC=		${WRKDIR}/${DISTNAME}

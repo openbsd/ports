@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2012/01/03 07:03:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/10 22:55:02 espie Exp $
 
 COMMENT=		curses front-end for various audio players
 
@@ -12,9 +12,6 @@ MAINTAINER=		Victor Sahlstedt <salan@legonet.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE} \
 			http://spacehopper.org/mirrors/
@@ -22,7 +19,7 @@ MASTER_SITES=		${HOMEPAGE} \
 MODULES=		lang/python
 
 NO_BUILD=		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 PKG_ARCH=		*
 
 do-configure:

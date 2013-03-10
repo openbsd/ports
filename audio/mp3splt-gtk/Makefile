@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2012/09/06 12:38:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/10 22:55:04 espie Exp $
 
 COMMENT =	graphical mp3/ogg file splitter
 
@@ -11,9 +11,6 @@ HOMEPAGE =	http://mp3splt.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender c expat fontconfig freetype

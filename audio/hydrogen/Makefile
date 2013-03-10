@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2012/12/09 07:29:57 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/10 22:55:02 espie Exp $
 
 COMMENT=		software drum machine
 
@@ -10,9 +10,6 @@ HOMEPAGE=		http://www.hydrogen-music.org/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c m ogg pthread sndio stdc++ QtGui QtNetwork QtXml sndfile>=1
 WANTLIB += FLAC>=8 FLAC++>=7 jack archive lrdf
@@ -36,7 +33,7 @@ MODSCONS_FLAGS=		localinc="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			libarchive="1" sndio="1" oss="0" alsa="0" portmidi="0" \
 			portaudio="0" lash="0" lrdf="1"
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 post-extract:
 	cp ${FILESDIR}/Sndio{Audio,Midi}Driver.h \

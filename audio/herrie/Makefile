@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2012/09/01 14:36:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2013/03/10 22:55:02 espie Exp $
 
 COMMENT=		minimalistic console-based audio player
 
@@ -10,9 +10,6 @@ HOMEPAGE=		http://herrie.info/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c ncurses ogg pthread mad>=2 id3tag>=3 sndfile>=1
 WANTLIB += vorbis>=5 vorbisfile>=4 glib-2.0>=1000 gthread-2.0>=1000
@@ -45,7 +42,7 @@ CONFIGURE_ARGS= 	ncurses \
 			ao
 
 USE_GROFF =		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 LANGS=			ca da de es fi ga nl pl pt_BR ru sv tr uk vi zh_CN
 

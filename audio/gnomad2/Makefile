@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2011/10/12 12:54:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/10 22:55:02 espie Exp $
 
 COMMENT=		GTK+ tool for managing Creative and Dell audio players
 
@@ -10,9 +10,6 @@ HOMEPAGE=		http://gnomad2.sourceforge.net/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gnomad2/}
 

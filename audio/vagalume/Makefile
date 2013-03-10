@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2012/09/06 12:38:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2013/03/10 22:55:06 espie Exp $
 
 COMMENT=		last.fm client for GNOME
 
@@ -12,9 +12,6 @@ HOMEPAGE=		http://vagalume.igalia.com/
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo

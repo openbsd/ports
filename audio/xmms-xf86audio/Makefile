@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/11/14 18:44:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/10 22:55:06 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,9 +11,6 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}download/
 
@@ -23,7 +20,7 @@ LIB_DEPENDS=	audio/xmms
 WANTLIB=	X11 Xext Xi m gdk glib gmodule gtk xmms>=4
 
 MAKE_FLAGS=	CC="${CC}" OPT="${CFLAGS}" DEBUG=""
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/xmms/General

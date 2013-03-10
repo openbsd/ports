@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2013/02/04 16:20:53 brad Exp $
+# $OpenBSD: Makefile,v 1.33 2013/03/10 22:55:01 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,9 +19,6 @@ DISTFILES=	30375-${DISTNAME}${EXTRACT_SUFX}
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB=	FLAC c ltdl m mad ogg pthread samplerate sndio speex stdc++ \
 		vorbis vorbisenc vorbisfile z

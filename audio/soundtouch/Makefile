@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/08/21 14:37:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/10 22:55:05 espie Exp $
 
 COMMENT=	tempo/pitch audio processing library
 
@@ -12,9 +12,6 @@ HOMEPAGE=	http://www.surina.net/soundtouch/
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 

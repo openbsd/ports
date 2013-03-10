@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/11/08 23:14:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/10 22:55:05 espie Exp $
 
 COMMENT =	streaming audio server for Squeezebox network music players
 
@@ -19,7 +19,6 @@ HOMEPAGE =	http://wiki.slimdevices.com/index.php/SqueezeCenter
 # explicit permission being granted.
 PERMIT_PACKAGE_CDROM =	No
 PERMIT_PACKAGE_FTP =	No
-PERMIT_DISTFILES_CDROM =No
 PERMIT_DISTFILES_FTP =	No
 
 EXTRACT_SUFX =	.tgz
@@ -101,7 +100,7 @@ pre-configure:
 	    ${WRKSRC}/Slim/Utils/OS/Custom.pm
 
 NO_BUILD =	yes
-NO_REGRESS =	yes
+NO_TEST =	yes
 PMDIR =		libdata/perl5/site_perl/Slim
 SSLIBDIR =	libdata/squeezecenter
 SSSHAREDIR =	share/squeezecenter

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2012/06/13 11:12:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/10 22:55:05 espie Exp $
 
 COMMENT =	collection of perl scripts to manage your iPod
 
@@ -13,9 +13,6 @@ MASTER_SITES =	http://blinkenlights.ch/gnupod-dist/stable/ \
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 EXTRACT_SUFX =	.tgz
 MODULES =	perl
@@ -39,7 +36,7 @@ RUN_DEPENDS =	security/p5-Digest-SHA1 \
 		audio/vorbis-tools
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 post-install:
 	gunzip ${PREFIX}/man/man1/*.1.gz

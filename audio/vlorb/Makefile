@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/24 08:24:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/10 22:55:06 espie Exp $
 
 COMMENT=		audio CD to audio file encoder
 DISTNAME=		vlorb-1.2
@@ -9,9 +9,6 @@ HOMEPAGE=		http://jk.yazzy.org/projects/vlorb/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}/releases/
 
@@ -22,7 +19,7 @@ RUN_DEPENDS=		audio/cdparanoia \
 			audio/p5-cddb
 
 NO_BUILD=		Yes
-NO_REGRESS=		Yes
+NO_TEST =		Yes
 USE_GROFF =		Yes
 PKG_ARCH=		*
 

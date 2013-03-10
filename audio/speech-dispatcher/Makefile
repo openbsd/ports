@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/01/26 15:53:20 bcallah Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/10 22:55:05 espie Exp $
 
 COMMENT=	common interface to speech synthesis
 
@@ -14,9 +14,6 @@ HOMEPAGE=	http://devel.freebsoft.org/speechd
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ao c dotconf-1.1 espeak glib-2.0 gmodule-2.0 gthread-2.0
 WANTLIB += m pcre portaudio pthread sndfile sndio stdc++ FLAC ogg

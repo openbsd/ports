@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/01/02 13:31:53 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/10 22:55:04 espie Exp $
 
 COMMENT=	read tags of MP3 audio files
 
@@ -11,8 +11,5 @@ USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 .include <bsd.port.mk>

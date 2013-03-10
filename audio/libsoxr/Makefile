@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/03/08 09:50:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/10 22:55:03 espie Exp $
 
 COMMENT=	fast and high quality sample-rate conversion (SoX Resampler)
 
@@ -14,9 +14,6 @@ HOMEPAGE=	http://sourceforge.net/p/soxr/wiki/Home/
 
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += m
 

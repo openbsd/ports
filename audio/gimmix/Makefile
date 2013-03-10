@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2012/01/03 07:03:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/10 22:55:02 espie Exp $
 
 COMMENT=		small and easy to use graphical MPD client
 
@@ -10,9 +10,6 @@ HOMEPAGE=		http://gimmix.berlios.de/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig

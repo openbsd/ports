@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/12/13 16:34:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/10 22:55:03 espie Exp $
 
 COMMENT=		multi-platform CD-Player library
 
@@ -10,11 +10,8 @@ CATEGORIES=		audio
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 CONFIGURE_STYLE=	imake
 MAKE_FLAGS=		WM_LIBVER=${LIBworkman_VERSION}
 

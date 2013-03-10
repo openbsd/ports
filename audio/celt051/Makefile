@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/01/30 08:13:45 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/10 22:55:01 espie Exp $
 
 COMMENT =	ultra-low delay audio codec (051 API)
 
@@ -14,9 +14,6 @@ SHARED_LIBS +=  celt051                   0.0 # 0.0
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		http://downloads.xiph.org/releases/celt/
 

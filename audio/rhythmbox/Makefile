@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2013/01/21 11:00:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.112 2013/03/10 22:55:05 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -19,9 +19,6 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 
 # GPLv2 with exception clause
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender archive
@@ -100,7 +97,7 @@ CONFIGURE_ARGS +=	--disable-browser-plugin
 CONFIGURE_ENV +=	MOZILLA_PLUGINDIR=${PREFIX}/lib/mozilla-plugins
 
 # WRKBUILD/tests
-REGRESS_IS_INTERACTIVE=	x11
+TEST_IS_INTERACTIVE=	x11
 
 post-install:
 	rm ${PREFIX}/lib/rhythmbox/{,sample-}plugins/*/*.la
