@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/03/08 11:58:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/10 17:40:52 jasper Exp $
 
 COMMENT=	mocking library for Erlang
 
@@ -17,7 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://distfiles.nl/
 TAR=		${LOCALBASE}/bin/gtar
 
-BUILD_DEPENDS=	archivers/gtar
+BUILD_DEPENDS=	archivers/gtar \
+		devel/rebar
 
 USE_GMAKE=	Yes
 

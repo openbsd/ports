@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/03/08 11:53:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/10 17:40:52 jasper Exp $
 
 COMMENT=	Erlang dependency solver
 
 VERSION=	0.1.0a
 DISTNAME=	depsolver-${VERSION}
 PKGNAME=	erl-${DISTNAME}
+REVISION=	0
 CATEGORIES=	devel lang/erlang
 
 HOMEPAGE=	https://github.com/opscode/depsolver
@@ -18,6 +19,9 @@ MASTER_SITES=	http://distfiles.nl/
 TAR=		${LOCALBASE}/bin/gtar
 
 USE_GMAKE=	Yes
+
+BUILD_DEPENDS=	devel/rebar
+RUN_DEPENDS=	lang/erlang
 
 ALL_TARGET=	compile
 REGRESS_TARGET=	eunit

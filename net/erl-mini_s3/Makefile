@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/03/08 12:03:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/10 17:40:52 jasper Exp $
 
 COMMENT=	s3 client API for Erlang
 
@@ -18,6 +18,7 @@ MASTER_SITES=	http://distfiles.nl/
 
 USE_GMAKE=	Yes
 
+BUILD_DEPENDS=	devel/rebar
 RUN_DEPENDS=	net/erl-ibrowse
 
 ALL_TARGET=	compile
