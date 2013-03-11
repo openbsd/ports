@@ -1,4 +1,4 @@
-# $OpenBSD: erlang.port.mk,v 1.4 2013/03/11 11:20:27 espie Exp $
+# $OpenBSD: erlang.port.mk,v 1.5 2013/03/11 12:40:15 jasper Exp $
 #
 # Module for Erlang-based ports or modules
 
@@ -24,7 +24,7 @@ REBAR_BIN ?=		${LOCALBASE}/bin/rebar
 # management from the ports' Makefile.
 .  if ! target(pre-build)
 pre-build:
-	@cp /usr/local/bin/rebar ${WRKSRC}
+	@cp -f /usr/local/bin/rebar ${WRKSRC}
 	@perl -pi -e 'BEGIN{undef $$/;} s/{deps,.*?]}.//smg' ${WRKSRC}/rebar.config
 .  endif
 .endif
