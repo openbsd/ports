@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.39 2013/03/11 11:23:51 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.40 2013/03/11 12:17:36 sthen Exp $
 
 CATEGORIES=	mail
 
@@ -20,8 +20,6 @@ MODULES=	devel/gettext
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB+=	c crypto gssapi krb5 ssl
 
@@ -56,7 +54,7 @@ CONFIGURE_ARGS+=	--with-slang="${PREFIX}"
 WANTLIB+=		m termlib slang>=14
 .else
 CONFIGURE_ARGS+=	--with-curses
-WANTLIB+=		ncurses 
+WANTLIB+=		ncurses
 .endif
 
 # compressed folder support
