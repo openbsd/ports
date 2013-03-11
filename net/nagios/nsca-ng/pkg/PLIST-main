@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2013/03/11 19:27:31 sthen Exp $
+@man man/man5/nsca-ng.cfg.5
+@man man/man8/nsca-ng.8
+@bin sbin/nsca-ng
+share/examples/nsca-ng/
+share/examples/nsca-ng/README
+share/examples/nsca-ng/acknowledge
+share/examples/nsca-ng/debug_server
+share/examples/nsca-ng/disable_notifications
+share/examples/nsca-ng/downtime
+share/examples/nsca-ng/enable_notifications
+share/examples/nsca-ng/invoke_check
+share/examples/nsca-ng/nsca-ng.cfg
+@owner root
+@group wheel
+@mode 750
+@sample ${SYSCONFDIR}/nsca-ng.cfg
+@mode
+@group
+@owner
+@rcscript ${RCDIR}/nsca_ng

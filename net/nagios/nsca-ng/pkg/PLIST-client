@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST-client,v 1.1.1.1 2013/03/11 19:27:31 sthen Exp $
+@conflict nsca-client-*
+libexec/nagios/
+libexec/nagios/send_nsca
+@man man/man5/send_nsca.cfg.5
+@man man/man8/send_nsca.8
+@bin sbin/send_nsca
+share/examples/nsca-ng/
+share/examples/nsca-ng/send_nsca.cfg
+@owner root
+@group wheel
+@mode 750
+@sample ${SYSCONFDIR}/send_nsca.cfg

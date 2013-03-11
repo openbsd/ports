@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# $OpenBSD: nsca_ng.rc,v 1.1.1.1 2013/03/11 19:27:31 sthen Exp $
+
+daemon="${TRUEPREFIX}/sbin/nsca-ng"
+daemon_flags="-c ${SYSCONFDIR}/nsca-ng.cfg"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1
