@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/02/01 16:34:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/11 11:20:27 espie Exp $
 
 ONLY_FOR_ARCHS = ${GCC4_ARCHS}
 SYSV =		4.2.1
@@ -17,10 +17,7 @@ REVISION = 7
 
 CATEGORIES =	lang math
 
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_FTP =	Yes
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_DISTFILES_CDROM =Yes
 
 HOMEPAGE =	http://gcc.gnu.org/wiki/GFortran
 
@@ -47,7 +44,7 @@ WANTLIB-lib =
 LIB_DEPENDS-lib =
 RUN_DEPENDS-main =	${BASE_PKGPATH},-lib
 
-REGRESS_DEPENDS = 	devel/dejagnu \
+TEST_DEPENDS = 	devel/dejagnu \
 			devel/autogen
 
 BUILD_DEPENDS += devel/bison

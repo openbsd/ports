@@ -1,5 +1,5 @@
 # Ports collection makefile for	"hoc", the High Order Calculator
-# $OpenBSD: Makefile,v 1.26 2010/10/18 20:52:06 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2013/03/11 11:23:55 espie Exp $
 
 COMMENT=	from Kernighan & Pike: High Order Calculator
 
@@ -20,9 +20,6 @@ HOMEPAGE=	http://cm.bell-labs.com/cm/cs/who/bwk/
 # modify, and distribute this software... for any purpose and without
 # fee.. provided that the copyright notice appear in all copies..."
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m
 
 ALL_TARGET=	hoc

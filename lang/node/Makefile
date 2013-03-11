@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/04 14:29:24 abieber Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 11:20:28 espie Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
@@ -21,9 +21,6 @@ MAINTAINER=	Aaron Bieber <abieber@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}dist/${NODE_VERSION}/
 
@@ -47,7 +44,7 @@ RUN_DEPENDS=	devel/gmake \
 MODPY_ADJ_FILES= tools/node-waf \
 		tools/waf-light
 
-REGRESS_TARGET= test
+TEST_TARGET= test
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS= --openssl-use-sys \
 		--shared-zlib \

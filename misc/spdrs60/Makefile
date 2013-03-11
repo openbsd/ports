@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/09/16 10:31:23 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 11:23:58 espie Exp $
 
 COMMENT =	graphical SRCP client to control a digital model railway
 
@@ -13,9 +13,6 @@ MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM = 	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 MODULES =		x11/qt3
 WANTLIB += GL ICE SM X11 Xcursor Xext Xft Xi Xinerama Xmu Xrandr

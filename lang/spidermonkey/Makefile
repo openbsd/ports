@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2012/11/12 20:45:32 landry Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/11 11:20:28 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -21,9 +21,6 @@ CATEGORIES =	lang
 MAINTAINER =	Martynas Venckus <martynas@openbsd.org>
 # MPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 .if ${MACHINE_ARCH} == "i386"
 PKG_ARGS+=	-Djit=1 -Damd64=0

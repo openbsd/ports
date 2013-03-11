@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2012/07/04 18:10:06 stu Exp $
+# $OpenBSD: Makefile,v 1.34 2013/03/11 11:23:56 espie Exp $
 
 COMMENT=	checkbook balancing tool
 
@@ -10,9 +10,6 @@ MAINTAINER=	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 
@@ -23,7 +20,7 @@ RUN_DEPENDS=	misc/plan \
 
 FAKE_FLAGS=	MODTK_BIN=${MODTK_BIN}
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 PKG_ARCH=	*
 
 pre-configure:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/19 07:23:07 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/11 11:23:51 espie Exp $
 
 COMMENT=	scan mailboxes for messages matching a regular expression
 
@@ -10,9 +10,6 @@ HOMEPAGE=	http://www.mboxgrep.org/
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		c z pcre
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mboxgrep/}
@@ -26,7 +23,7 @@ CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 USE_GROFF =	Yes
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/mboxgrep ${PREFIX}/bin

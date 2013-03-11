@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2011/01/05 17:34:17 stu Exp $
+# $OpenBSD: Makefile,v 1.24 2013/03/11 11:23:58 espie Exp $
 
 COMMENT =	Tcl/Tk-based manual browser
 
@@ -9,9 +9,6 @@ MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # Artistic License
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=tkman/}
 MODULES =	x11/tk
@@ -20,7 +17,7 @@ RUN_DEPENDS =	${MODTK_RUN_DEPENDS} \
 		textproc/rman \
 		textproc/glimpse
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 pre-patch:
 	perl -pi -e 's!\r\n$$!\n!g;' ${WRKSRC}/Makefile

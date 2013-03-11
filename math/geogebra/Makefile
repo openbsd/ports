@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/08/21 07:18:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:23:54 espie Exp $
 
 COMMENT=	educational mathematical software
 
@@ -15,9 +15,6 @@ HOMEPAGE=	http://www.geogebra.org
 #   Creative Commons Attribution-Share Alike 3.0
 # See: http://www.geogebra.org/download/license.txt
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://geogebra.googlecode.com/files/
 
@@ -31,7 +28,7 @@ RUN_DEPENDS=		java/javaPathHelper \
 			x11/gtk+2,-guic
 
 NO_BUILD=		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 PKG_ARCH=		*
 WRKDIST=		${WRKDIR}/geogebra-${V}
 

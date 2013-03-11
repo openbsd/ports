@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2012/08/22 05:17:33 stu Exp $
+# $OpenBSD: Makefile,v 1.28 2013/03/11 11:23:54 espie Exp $
 
 COMMENT=	mail user agent for X in C with a Tcl/Tk frontend
 
@@ -11,9 +11,6 @@ HOMEPAGE=	http://www.tkrat.org/
 MAINTAINER=	Stuart Cassoff <stwo@users.sourceforge.net>
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	x11/tk
 WANTLIB=	c crypto ssl
@@ -37,7 +34,7 @@ CONFIGURE_ARGS=	--with-tcl-bin="${LOCALBASE}/bin" \
 		--with-tkconfig="${MODTK_LIBDIR}" \
 		--program-transform-name='s/2[.]1//'
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 DOCS=	CONFIGURATION doc/interface doc/userproc.example doc/userprocs
 

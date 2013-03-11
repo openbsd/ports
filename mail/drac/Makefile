@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/12/31 08:16:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 11:23:50 espie Exp $
 
 COMMENT=	dynamic relay authorization control daemon
 
@@ -11,9 +11,6 @@ HOMEPAGE=	http://mail.cc.umanitoba.ca/drac/
 
 # BSD alike
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 MASTER_SITES=	ftp://ftp.cc.umanitoba.ca/src/

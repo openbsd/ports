@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2013/02/24 14:46:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2013/03/11 11:23:50 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -21,9 +21,6 @@ HOMEPAGE=		http://www.claws-mail.org/
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sylpheed-claws/}
 EXTRACT_SUFX=		.tar.bz2
@@ -101,7 +98,6 @@ CONFIGURE_ARGS+=	--disable-jpilot
 
 .if ${FLAVOR:Mcompface}
 PERMIT_PACKAGE_CDROM=	No Fee
-PERMIT_DISTFILES_CDROM=	No Fee
 LIB_DEPENDS-main+=	mail/faces
 WANTLIB-main +=		compface>=1
 .else

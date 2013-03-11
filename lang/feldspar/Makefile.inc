@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2011/05/02 20:45:39 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2013/03/11 11:20:27 espie Exp $
 
 CATEGORIES?=		lang
 
@@ -10,7 +10,6 @@ PKGNAME?=		${DISTNAME}
 # BSD3
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES+=		lang/ghc

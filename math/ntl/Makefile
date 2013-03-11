@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/05 08:26:02 benoit Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/11 11:23:55 espie Exp $
 
 COMMENT =	Victor Shoup's Number Theory Library
 
@@ -11,10 +11,7 @@ HOMEPAGE =	http://www.shoup.net/ntl/
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_FTP =	Yes
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_DISTFILES_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
 
 WANTLIB =		m gmp stdc++
 
@@ -35,7 +32,7 @@ CONFIGURE_ARGS =	CC="${CC}" CFLAGS="${CFLAGS}" \
 
 WRKBUILD =		${WRKSRC}/src
 
-REGRESS_TARGET =	check
+TEST_TARGET =	check
 
 do-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/include/NTL

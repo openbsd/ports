@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/19 07:23:10 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 11:23:54 espie Exp $
 
 COMMENT=		ASCII art mathematics
 
@@ -12,15 +12,12 @@ MAINTAINER=		Matthias Kilian <kili@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://openbsd.dead-parrot.de/distfiles/
 
 WANTLIB=		c m stdc++ termcap readline
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 WRKDIST=		${WRKDIR}/aamath
 ALL_TARGET=
 MAKE_FLAGS=		CXX="${CXX}"

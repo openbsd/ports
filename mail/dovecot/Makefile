@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.201 2013/02/09 14:49:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.202 2013/03/11 11:23:50 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -33,9 +33,6 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # LGPLv2.1 and MIT
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB-server=	asn1 bz2 c crypto gssapi krb5 sqlite3 ssl z \
 		${MODLIBICONV_WANTLIB}

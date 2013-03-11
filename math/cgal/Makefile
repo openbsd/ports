@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/08 01:26:55 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 11:23:54 espie Exp $
 
 # vax:	no fenv.h support
 NOT_FOR_ARCHS =		vax
@@ -22,9 +22,6 @@ HOMEPAGE =		http://www.cgal.org/
 
 # mix of LGPLv2.1 and QPL; see http://www.cgal.org/license.html
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 # m>=5.3 for fenv.h support
 WANTLIB =		GL GLU ICE SM X11 Xext boost_thread-mt gmp gmpxx \

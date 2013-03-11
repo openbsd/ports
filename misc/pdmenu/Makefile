@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2012/04/30 19:22:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/11 11:23:58 espie Exp $
 
 COMMENT=		simple slang-based menu program
 
@@ -11,9 +11,6 @@ HOMEPAGE=		http://kitenet.net/programs/pdmenu/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c curses m slang
 
@@ -36,7 +33,7 @@ CONFIGURE_ENV=		LIBS="-lm -lcurses -lintl -liconv" \
 WRKDIST=		${WRKDIR}/pdmenu
 
 USE_GROFF =		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/pdmenu

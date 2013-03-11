@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2013/03/08 06:42:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2013/03/11 11:23:50 espie Exp $
 
 COMMENT=	DKIM milter
 
@@ -14,8 +14,6 @@ MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 # sendmail open source license
 PERMIT_PACKAGE_CDROM=		Patent
 PERMIT_PACKAGE_FTP=		Yes
-PERMIT_DISTFILES_CDROM=		Patent
-PERMIT_DISTFILES_FTP=		Yes
 
 WANTLIB=	c crypto milter pthread ssl
 

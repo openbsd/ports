@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/03/02 14:17:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2013/03/11 11:23:53 espie Exp $
 
 COMMENT=	server: allow users to change password from within Eudora
 
@@ -14,7 +14,6 @@ MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/ \
 # License: NONE
 PERMIT_PACKAGE_CDROM=	no license
 PERMIT_PACKAGE_FTP=	no license
-PERMIT_DISTFILES_CDROM=	no license
 PERMIT_DISTFILES_FTP=	no license
 WANTLIB=		c
 
@@ -25,7 +24,7 @@ WRKDIST=	${WRKDIR}/poppassd
 ALL_TARGET=	poppassd
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-install:
 	@strip ${PREFIX}/libexec/poppassd

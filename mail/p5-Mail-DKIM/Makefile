@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2012/11/09 17:07:48 giovanni Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 11:23:52 espie Exp $
 
 COMMENT=	DKIM and DomainKeys message-signing implementation
 
@@ -9,9 +9,6 @@ MAINTAINER=	William Yodlowsky <william@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
 CPAN_AUTHOR=	JASLONG

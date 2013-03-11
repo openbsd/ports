@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/11/17 16:22:38 gsoares Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 11:23:52 espie Exp $
 
 COMMENT=	library for creating easy mail filters
 
@@ -7,9 +7,6 @@ CATEGORIES=	mail
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
 CPAN_AUTHOR=		RJBS
@@ -17,7 +14,7 @@ CPAN_AUTHOR=		RJBS
 RUN_DEPENDS=    	devel/p5-File-HomeDir \
 			devel/p5-File-Tempdir \
 			mail/p5-Mail-Tools
-REGRESS_DEPENDS=	mail/p5-MIME-tools
+TEST_DEPENDS=	mail/p5-MIME-tools
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/Mail-Audit

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2012/12/28 16:43:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/11 11:20:27 espie Exp $
 
 COMMENT=	deductive database system similar to Prolog
 
@@ -10,9 +10,6 @@ HOMEPAGE=	http://datalog.sourceforge.net/
 
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c m readline termcap
 
@@ -27,7 +24,7 @@ MODLUA_SA=		Yes
 CONFIGURE_STYLE=	gnu
 
 # Some extra checks in addition to the check target
-post-regress:
+post-test:
 	cd ${WRKSRC} && /bin/sh try.sh
 
 .include <bsd.port.mk>

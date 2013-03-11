@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/11/07 03:06:48 stu Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 11:20:28 espie Exp $
 
 COMMENT =	learn Tcl interactively
 
@@ -9,16 +9,13 @@ MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # ISC
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	http://www.msen.com/~clif/
 DISTFILES =	tcltutor30b6.tgz
 MODULES =	x11/tk
 RUN_DEPENDS =	${MODTK_RUN_DEPENDS}
 NO_BUILD =	Yes
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 WRKDIST =	${WRKDIR}/TclTutor
 PKG_ARCH =	*
 SUBST_VARS +=	TT_LIB_DIR TT_LSN_DIR

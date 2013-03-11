@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/01/26 15:53:20 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:20:27 espie Exp $
 
 SHARED_ONLY = 	Yes
 ONLY_FOR_ARCHS =i386 amd64
@@ -24,9 +24,6 @@ MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP= 	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += X11 Xext Xrender atk-1.0 c cairo clutter-1.0 curses e2fs-uuid
 WANTLIB += edit event_core event_extra expat fontconfig freetype
@@ -84,7 +81,7 @@ pre-install:
 	find ${WRKDIST} -name '*.orig' -or -name '*.beforesubst' -print0 | \
 		xargs -r0 rm 
 
-do-regress:
+do-test:
 	cd ${WRKBUILD} && _build/binaries/io \
 		../libs/iovm/tests/correctness/run.io
 

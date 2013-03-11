@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/01/10 07:10:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 11:23:52 espie Exp $
 
 COMMENT=	lua text classification module and anti-spam solution
 
@@ -11,14 +11,11 @@ HOMEPAGE=	http://osbf-lua.luaforge.net/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	lang/lua
 MODLUA_SA=	Yes
 SHARED_ONLY=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-build:
 .for f in losbflib osbf_bayes osbf_aux

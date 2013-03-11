@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2012/01/26 08:03:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/11 11:23:51 espie Exp $
 
 COMMENT=	mailing list manager
 
@@ -13,7 +13,6 @@ HOMEPAGE=	http://www.greatcircle.com/majordomo/
 # Read http://www.greatcircle.com/majordomo/LICENSE
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	No
-PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	No
 WANTLIB=		c
 
@@ -29,7 +28,7 @@ MAKE_FLAGS+=	W_HOME=${PREFIX}/lib/majordomo \
 		POSIX=""
 USE_GROFF =	Yes
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 FAKE_TARGET=	install-scripts install-wrapper install-man
 FAKE_FLAGS+=	W_HOME=${WRKINST}${PREFIX}/lib/majordomo \

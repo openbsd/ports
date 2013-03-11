@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/19 07:23:06 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 11:23:51 espie Exp $
 
 COMMENT=		hashcash anti-spam / denial of service counter-measure tool
 
@@ -11,9 +11,6 @@ MAINTAINER=		Armin Wolfermann <armin@wolfermann.org>
 
 # public domain
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c
 
@@ -27,6 +24,6 @@ ALL_TARGET=		x86
 ALL_TARGET=		generic
 .endif
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 .include <bsd.port.mk>

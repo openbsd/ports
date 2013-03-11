@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/06/26 19:53:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:20:28 espie Exp $
 
 COMMENT=	lightweight Scheme implementation with subset of R5RS
 
@@ -9,9 +9,6 @@ HOMEPAGE=	http://tinyscheme.sourceforge.net/home.html
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tinyscheme/}
 
@@ -21,7 +18,7 @@ MAKE_FILE=	${WRKSRC}/makefile
 
 CFLAGS+=	-fPIC -DInitFile="\"${PREFIX}/share/tinyscheme/init.scm\""
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/scheme ${PREFIX}/bin/tinyscheme

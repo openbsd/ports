@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2012/10/15 15:06:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/11 11:23:54 espie Exp $
 
 COMMENT=		POP3-server with virtual domain support
 
@@ -8,9 +8,6 @@ CATEGORIES=		mail
 HOMEPAGE=		http://www.toontown.org/teapop/
 
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		c
 
 MASTER_SITES=		ftp://ftp.toontown.org/pub/teapop/
@@ -21,6 +18,6 @@ CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib"
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 
 USE_GROFF =		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 .include <bsd.port.mk>

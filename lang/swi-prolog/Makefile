@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2013/02/01 16:34:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.47 2013/03/11 11:20:28 espie Exp $
 
 BROKEN-mips64 = 	undefined reference to `__sync_fetch_and_add_8'
 BROKEN-hppa =		undefined reference to `__sync_fetch_and_add_4'
@@ -18,9 +18,6 @@ HOMEPAGE =		http://www.swi-prolog.org/
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${HOMEPAGE}/download/stable/src/ \
 			http://distfiles.nl/
@@ -69,7 +66,7 @@ post-install:
 # The following tests fail (hang). We remove them to allow the rest
 # of the tests to execute atleast.
 # When updating, uncomment these to see if they still fail.
-pre-regress:
+pre-test:
 	rm -f ${WRKBUILD}/src/Tests/thread/test_signal.pl
 	rm -f ${WRKBUILD}/src/Tests/core/test_resource_error.pl
 

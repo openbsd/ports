@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/11/05 08:24:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2013/03/11 11:23:58 espie Exp $
 
 COMMENT=	animated simulation of an ideal gas
 
@@ -10,15 +10,12 @@ CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SUNSITE:=X11/demos/}
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xt c m pthread-stubs xcb
 
 CONFIGURE_STYLE=imake
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-install:
 	@chmod 755 ${PREFIX}/bin/xgas

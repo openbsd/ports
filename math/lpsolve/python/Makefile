@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/11/03 03:27:48 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:23:55 espie Exp $
 
 COMMENT =		Python bindings for lpsolve
 DISTNAME =		lp_solve_${V}_Python_source
@@ -20,6 +20,6 @@ SUBST_VARS +=		NUMPY_PATH
 pre-configure:
 	${SUBST_CMD} ${WRKBUILD}/setup.py
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 .include <bsd.port.mk>

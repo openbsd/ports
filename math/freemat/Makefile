@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2012/12/21 18:25:03 landry Exp $
+# $OpenBSD: Makefile,v 1.30 2013/03/11 11:23:54 espie Exp $
 
 COMMENT=	environment for rapid engineering and scientific processing
 BROKEN-hppa =	undefined reference to lapack funcs
@@ -14,9 +14,6 @@ HOMEPAGE=	http://freemat.sourceforge.net/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL GLU ICE SM X11 Xext c m ncurses pcre pthread stdc++
 WANTLIB += z amd fftw3 fftw3f portaudio umfpack
@@ -34,7 +31,7 @@ LIB_DEPENDS=	audio/portaudio-svn \
 		math/umfpack
 
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 SUBST_VARS=	V
 

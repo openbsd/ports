@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/10/01 06:20:09 jsing Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 11:20:27 espie Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -16,9 +16,6 @@ MAINTAINER = 		Joel Sing <jsing@openbsd.org>
 
 # software: BSD, documentation: CC-BY-3.0
 PERMIT_PACKAGE_CDROM =	 Yes
-PERMIT_PACKAGE_FTP =	 Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	 Yes
 
 WANTLIB =		c m
 
@@ -67,7 +64,7 @@ do-build:
 		GOBIN=${WRKDIST}/bin \
 		GOROOT_FINAL=${GOROOT} ./make.bash --no-banner
 
-do-regress:
+do-test:
 	@cd ${WRKSRC} && \
 		ulimit -n 256 -d 2097152 && \
 		PATH=${WRKDIST}/bin:${PATH} GOROOT=${WRKDIST} ./run.bash

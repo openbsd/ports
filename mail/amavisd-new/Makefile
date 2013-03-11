@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2012/11/28 15:43:02 giovanni Exp $
+# $OpenBSD: Makefile,v 1.30 2013/03/11 11:23:50 espie Exp $
 
 COMMENT=		interface between mailer MTA and content checkers
 
@@ -11,9 +11,6 @@ MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE} \
 			http://mirrors.catpipe.net/amavisd-new/ \
@@ -44,7 +41,7 @@ RUN_DEPENDS=		archivers/arc \
 			sysutils/p5-Unix-Syslog
 
 NO_BUILD=		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 PKG_ARCH=		*
 

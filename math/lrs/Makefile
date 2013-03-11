@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/11/07 12:16:22 edd Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:23:55 espie Exp $
 
 COMMENT =		solve vertex enumeration and convex hull problems
 
@@ -14,9 +14,6 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c gmp
 
@@ -36,7 +33,7 @@ do-install:
 
 # A simple test to check it works
 REGRESS_FILES =		test.ine expected_outcome.ine openbsd_regress.sh
-do-regress:
+do-test:
 .for i in ${REGRESS_FILES}
 	cp ${FILESDIR}/${i} ${WRKBUILD}
 .endfor

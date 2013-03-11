@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2012/11/30 19:38:09 chrisz Exp $
+# $OpenBSD: Makefile,v 1.61 2013/03/11 11:20:28 espie Exp $
 
 NOT_FOR_ARCHS=	hppa
 
@@ -27,9 +27,6 @@ MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 # QPL/LGPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES+= lang/tcl x11/tk
 
@@ -69,7 +66,7 @@ PKG_ARGS +=	-Dnative=0
 .endif
 
 # XXX regress tests only work on archs with native-code compiler
-REGRESS_DEPENDS+=	${BUILD_PKGPATH}
+TEST_DEPENDS+=	${BUILD_PKGPATH}
 
 post-extract:
 	@cp ${WRKSRC}/asmrun/power-elf.S ${WRKSRC}/asmrun/power-bsd.S
@@ -95,7 +92,7 @@ post-install:
 
 # XXX one test in the suite (testsocket.ml) requires an active
 # connection to internet
-do-regress:
+do-test:
 	@cd ${WRKSRC}/testsuite && ulimit -Sn 256 && ${MAKE_PROGRAM} all
 
 .include <bsd.port.mk>

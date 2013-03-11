@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2012/01/24 02:20:35 okan Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/11 11:23:51 espie Exp $
 
 COMMENT=	mailing list manager
 
@@ -11,9 +11,6 @@ MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 MASTER_SITES=	http://mlmmj.org/releases/

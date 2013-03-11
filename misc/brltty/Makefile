@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2012/03/29 13:38:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 11:23:56 espie Exp $
 
 COMMENT=	access software for a blind person using a braille terminal
 
@@ -11,9 +11,6 @@ MAINTAINER=	Mario Lang <mlang@delysid.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c curses pthread
 
@@ -26,7 +23,7 @@ CONFIGURE_ARGS=	--with-install-root=${WRKINST} \
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/aux
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 SEPARATE_BUILD=	Yes
 
 post-install:

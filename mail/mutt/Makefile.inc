@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.38 2013/02/09 14:49:51 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.39 2013/03/11 11:23:51 espie Exp $
 
 CATEGORIES=	mail
 
@@ -21,7 +21,6 @@ MODULES=	devel/gettext
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB+=	c crypto gssapi krb5 ssl

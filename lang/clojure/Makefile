@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/08 10:24:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 11:20:27 espie Exp $
 
 COMMENT =		Lisp-1 dialect for the Java Virtual Machine
 
@@ -15,9 +15,6 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Eclipse Public License EPL 1.0
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		http://repo1.maven.org/maven2/org/clojure/clojure/$V/
 
@@ -31,7 +28,7 @@ RUN_DEPENDS =		java/javaPathHelper \
 			misc/rlwrap
 
 # Tests fail to compile (and need JAX-WS)
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 CLOJURE_HOME =		${PREFIX}/clojure
 

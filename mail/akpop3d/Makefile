@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/19 07:23:05 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/11 11:23:50 espie Exp $
 
 COMMENT=	small and secure POP3 daemon
 
@@ -9,9 +9,6 @@ HOMEPAGE=	http://www.synflood.at/akpop3d.html
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c crypto ssl
 
 MASTER_SITES=	http://www.synflood.at/akpop3d/ \
@@ -21,6 +18,6 @@ EXTRACT_SUFX=	.tar.bz2
 CONFIGURE_STYLE=gnu
 USE_GROFF =	Yes
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

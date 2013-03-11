@@ -1,4 +1,4 @@
-# $OpenBSD: node.port.mk,v 1.2 2012/12/05 00:40:28 abieber Exp $
+# $OpenBSD: node.port.mk,v 1.3 2013/03/11 11:20:28 espie Exp $
 
 # node module
 
@@ -41,15 +41,15 @@ NPM_TAR_DIR =		package
 WRKDIST =		${WRKDIR}/${NPM_TAR_DIR}
 
 .if ${CONFIGURE_STYLE:L:Mexpresso}
-REGRESS_DEPENDS += devel/node-expresso
-MODNODE_REGRESS_TARGET = \
+TEST_DEPENDS += devel/node-expresso
+MODNODE_TEST_TARGET = \
 	cd ${WRKDIST} && ${LOCALBASE}/bin/expresso;
-.if !defined(do-regress)
-do-regress:
-	${MODNODE_REGRESS_TARGET}
+.if !defined(do-test)
+do-test:
+	${MODNODE_TEST_TARGET}
 .endif
 .else
-REGRESS_TARGET ?=	test
+TEST_TARGET ?=	test
 .endif
 
 # List of npm package names to depend on.  Only necessary

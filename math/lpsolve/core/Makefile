@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/09/29 05:02:50 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:23:55 espie Exp $
 
 COMMENT =		mixed integer linear programming solver
 
@@ -54,6 +54,6 @@ post-install:
 	${TAR} zxf ${DISTDIR}/${DOCDISTFILE} -C ${DOCDIR}
 	chown -R ${SHAREOWN}:${SHAREGRP} ${DOCDIR}
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 .include <bsd.port.mk>

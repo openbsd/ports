@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/09/16 13:46:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:20:28 espie Exp $
 
 COMMENT=	Python as a hardware description and verification language
 
@@ -9,10 +9,7 @@ CATEGORIES=	lang
 HOMEPAGE=	http://www.myhdl.org/
 
 # LGPLv2.1
-PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=myhdl/}
 
@@ -23,7 +20,7 @@ post-install:
 	cd ${WRKSRC}/example/ && umask 022 && pax -rw . \
 		${PREFIX}/share/examples/myhdl/
 
-do-regress: fake
+do-test: fake
 	cd ${WRKSRC}/myhdl/test/core && \
 		env PYTHONPATH="${WRKINST}${MODPY_LIBDIR}/site-packages/" \
 			${MODPY_BIN} test_all.py

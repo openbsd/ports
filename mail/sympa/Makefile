@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2012/08/26 20:35:22 landry Exp $
+# $OpenBSD: Makefile,v 1.24 2013/03/11 11:23:54 espie Exp $
 
 COMMENT =	mailing list manager with web interface
 
@@ -13,9 +13,6 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${HOMEPAGE}/distribution/ \
 			${HOMEPAGE}/distribution/old/ \
@@ -74,7 +71,7 @@ RUN_DEPENDS =	archivers/p5-Archive-Zip \
 		www/p5-HTML-StripScripts-Parser \
 		www/p5-HTML-Tree
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/lib/confdef.pm

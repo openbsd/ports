@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/05 08:24:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 11:23:57 espie Exp $
 
 COMMENT=	GNU getopt(1) utility
 
@@ -11,9 +11,6 @@ HOMEPAGE=	http://software.frodo.looijaard.name/getopt/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/files/
 
@@ -28,7 +25,7 @@ MAKE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		CC="${CC}"
 USE_GROFF =	Yes
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	cd ${WRKSRC} && sed -e 's,/usr/local,${LOCALBASE},g' \

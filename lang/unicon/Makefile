@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2011/11/13 17:55:22 pirofti Exp $
+# $OpenBSD: Makefile,v 1.27 2013/03/11 11:20:29 espie Exp $
 
 # crashes & hangs on anything but i386
 ONLY_FOR_ARCHS=	i386
@@ -16,9 +16,6 @@ MASTER_SITES=	http://icon.cs.unlv.edu/v9/
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 # GPL
-PERMIT_DISTFILES_FTP= Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_PACKAGE_FTP= Yes
 PERMIT_PACKAGE_CDROM= Yes
 
 WANTLIB=	X11 Xpm c gdbm m pthread-stubs xcb
@@ -35,7 +32,7 @@ USE_GROFF =	Yes
 
 CONFIGURE_TARGET=X-Configure
 
-REGRESS_TARGET=	Test
+TEST_TARGET=	Test
 
 pre-configure:
 	cp -R ${FILESDIR}/openbsd ${WRKSRC}/config/unix

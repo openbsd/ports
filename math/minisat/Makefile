@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/11/02 19:18:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 11:23:55 espie Exp $
 
 COMMENT=		minimalistic Boolean satisfiability solver
 
@@ -12,9 +12,6 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}downloads/
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
@@ -25,7 +22,7 @@ WANTLIB +=		c m stdc++ z
 
 USE_GMAKE=		Yes
 ALL_TARGET=		minisat
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 MAKE_ENV+=		MROOT=${WRKBUILD}
 WRKDIST=		${WRKDIR}/minisat
 

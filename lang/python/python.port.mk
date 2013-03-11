@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.58 2013/02/09 14:49:51 sthen Exp $
+# $OpenBSD: python.port.mk,v 1.59 2013/03/11 11:20:28 espie Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -96,7 +96,7 @@ MODPY_RUN_DEPENDS +=	${MODPY_SETUPUTILS_DEPEND}
 BUILD_DEPENDS +=	${MODPY_SETUPUTILS_DEPEND}
 MODPY_SETUPUTILS =	Yes
 # The setuptools uses test target
-REGRESS_TARGET ?=	test
+TEST_TARGET ?=	test
 _MODPY_USERBASE =
 .else
 # Try to detect the case where a port will build regardless of setuptools
@@ -182,9 +182,9 @@ do-install:
 .  endif
 
 # setuptools supports regress testing from setup.py using a standard target
-.  if !target(do-regress) && ${MODPY_SETUPUTILS:L} == "yes"
-do-regress:
-	${_MODPY_CMD} ${REGRESS_TARGET}
+.  if !target(do-test) && ${MODPY_SETUPUTILS:L} == "yes"
+do-test:
+	${_MODPY_CMD} ${TEST_TARGET}
 .  endif
 
 .endif

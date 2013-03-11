@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2012/11/30 19:38:09 chrisz Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 11:20:28 espie Exp $
 
 # Fatal error: assertion sizeof(page_index) == GC_PAGESIZE failed on line 1110 of file gc.c
 ONLY_FOR_ARCHS= i386
@@ -17,9 +17,6 @@ MAINTAINER =	Alexander Shiryaev <shiryaev.a.v@gmail.com>
 
 # BSD-3
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	http://spivey.oriel.ox.ac.uk/wiki/resources/sw/
 
@@ -58,7 +55,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/makeprims.tcl \
 		${PREFIX}/lib/obc/makeprims.tcl
 
-do-regress:
+do-test:
 	cd ${WRKSRC}/test && ${MAKE_PROGRAM} && ./regress && ./bigtest
 
 .include <bsd.port.mk>

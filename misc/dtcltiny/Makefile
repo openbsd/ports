@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/10/15 15:06:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:23:57 espie Exp $
 
 COMMENT =		small SRCP client to control digital model trains
 
@@ -11,9 +11,6 @@ MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=dtcltiny/}
 

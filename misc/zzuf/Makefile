@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/07/26 06:07:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 11:23:59 espie Exp $
 
 COMMENT=		transparent application input fuzzer
 
@@ -9,9 +9,6 @@ MASTER_SITES=		http://libcaca.zoy.org/files/zzuf/
 
 # WTFPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c m
 

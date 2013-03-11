@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/10/15 15:18:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 11:20:27 espie Exp $
 
 ONLY_FOR_ARCHS=		amd64 i386
 
@@ -13,9 +13,6 @@ MAINTAINER=		Nuno Morgadinho <nuno.morgadinho@gmail.com>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c m
 
@@ -37,7 +34,7 @@ CONFIGURE_ARGS+= --with-install-dir='${PREFIX}/libdata/gprolog' \
 
 WRKDIST=		${WRKDIR}/${DISTNAME}/src
 
-REGRESS_DEPENDS=	textproc/gdiff
+TEST_DEPENDS=	textproc/gdiff
 
 post-install:
 	for i in gplc hexgplc gprolog pl2wam wam2ma ma2asm fd2c; do \

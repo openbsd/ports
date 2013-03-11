@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/02/15 12:06:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 11:20:28 espie Exp $
 
 ONLY_FOR_ARCHS=i386
 
@@ -15,8 +15,6 @@ HOMEPAGE=	http://www.smlnj.org/
 # http://www.smlnj.org/license.html
 PERMIT_PACKAGE_CDROM=	without fee
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	without fee
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c m
 
@@ -44,7 +42,7 @@ SML_EXES= 	heap2exec ml-antlr ml-build \
 	       	ml-ulex ml-yacc sml
 
 USE_GMAKE=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-extract:
 	mkdir -p ${WRKDIR}/base

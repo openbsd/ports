@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2013/02/06 18:17:12 kili Exp $
+# $OpenBSD: Makefile,v 1.90 2013/03/11 11:20:27 espie Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -25,7 +25,7 @@ XHTML_VER =		3000.2.1
 SUBST_VARS +=		XHTML_VER
 
 # Pull in lang/ghc to get MODGHC_VER and ONLY_FOR_ARCHS, which is maintained
-# in ghc.port.mk. lang/python needed for regress.
+# in ghc.port.mk. lang/python needed for regression tests.
 MODULES =		lang/ghc lang/python converters/libiconv
 
 PSEUDO_FLAVORS =	no_doc
@@ -36,9 +36,6 @@ MULTI_PACKAGES =	-main -doc
 # Distfile is bundled with other stuff like libffi, mingw
 # binaries, with BSD, GPLv2 and Perl artistic license.
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 PKG_ARCH-doc =		*
 BUILD_DEPENDS =		archivers/gtar \
@@ -122,7 +119,7 @@ FAKE_FLAGS +=		CREATE_SCRIPT="${INSTALL_SCRIPT} /dev/null " \
 # For mktexpk (via dvips when building the PostScript documentation):
 PORTHOME =		${WRKDIR}
 
-REGRESS_DEPENDS =	print/ghostscript/gnu
+TEST_DEPENDS =	print/ghostscript/gnu
 
 post-extract:
 # - Install a precompiled binary.
@@ -165,7 +162,7 @@ post-install:
 	rm package.conf.d/* && \
 	$$GHC_PKG recache
 
-do-regress:
+do-test:
 	ulimit -c 0 && \
 	cd ${WRKSRC}/testsuite/tests && \
 	exec ${SETENV} ${MAKE_ENV} HS_ENCODING=utf-8 \

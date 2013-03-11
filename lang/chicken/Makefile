@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2012/10/15 15:18:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/11 11:20:27 espie Exp $
 
 COMMENT=	practical and portable Scheme system
 
@@ -16,9 +16,6 @@ MASTER_SITES=	${HOMEPAGE}
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c m pthread
 
@@ -34,8 +31,8 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -pthread" \
 			LDFLAGS="-L${LOCALBASE}/lib -pthread"
 
-REGRESS_TARGET=		bench
-REGRESS_DEPENDS=	${FULLPKGNAME}:lang/chicken
+TEST_TARGET=		bench
+TEST_DEPENDS=	${FULLPKGNAME}:lang/chicken
 
 CFLAGS+=		-I${LOCALBASE}/include
 

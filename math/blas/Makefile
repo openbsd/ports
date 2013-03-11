@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2012/09/01 12:02:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/11 11:23:54 espie Exp $
 
 COMMENT=	Basic Linear Algebra Subprograms
 
@@ -15,9 +15,6 @@ HOMEPAGE=	http://www.netlib.org/blas/
 
 # freely available
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://spacehopper.org/mirrors/blas-20110419/ \
 		ftp://ftp.netlib.org/blas/ \

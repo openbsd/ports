@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2012/10/08 13:15:17 jeremy Exp $
+# $OpenBSD: Makefile,v 1.27 2013/03/11 11:20:28 espie Exp $
 
 COMMENT-main=		object oriented script language with threads
 COMMENT-iconv=		libiconv interface for ruby
@@ -77,6 +77,6 @@ VMEM_WARNING =		Yes
 # Known regression failures in OpenSSL extension on sparc64
 # Known regression failure in IO.readpartial on all arch
 # Known regression failure in test_connection_refused_in_request on all arch
-REGRESS_DEPENDS=	${FULLPKGNAME-main}:${BUILD_PKGPATH}
+TEST_DEPENDS=	${FULLPKGNAME-main}:${BUILD_PKGPATH}
 
 .include <bsd.port.mk>

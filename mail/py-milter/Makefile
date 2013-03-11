@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/01/25 15:18:36 benoit Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/11 11:23:53 espie Exp $
 
 COMMENT =	Python interface to sendmail milter API
 
@@ -11,9 +11,6 @@ HOMEPAGE =	http://www.bmsi.com/python/milter.html
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	milter ${MODPY_WANTLIB} pthread
 
@@ -21,7 +18,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=pymilter/}
 
 MODULES =	lang/python
 
-REGRESS_DEPENDS = ${RUN_DEPENDS} \
+TEST_DEPENDS = ${RUN_DEPENDS} \
 		  net/py-dns
 
 post-install:
@@ -30,7 +27,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-milter
 	${INSTALL_DATA} ${WRKSRC}/sample.py ${PREFIX}/share/examples/py-milter
 
-do-regress: fake
+do-test: fake
 	@cd ${WRKSRC} && ${MAKE_ENV} \
 	    PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} ./test.py
 

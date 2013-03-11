@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2012/12/05 09:38:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/11 11:23:51 espie Exp $
 
 COMMENT=	sendmail milter plugin for SpamAssassin spamd
 
@@ -13,12 +13,9 @@ MAINTAINER=	Daniel Hartmeier <dhartmei@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c pthread milter
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-configure:
 	@perl -pi -e 's,/etc/mi,${SYSCONFDIR}/mi,g' ${WRKSRC}/milter-spamd.{8,c}

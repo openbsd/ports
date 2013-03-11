@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2011/09/16 10:31:21 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2013/03/11 11:23:51 espie Exp $
 
 COMMENT=		new mail notification utility for KDE
 
@@ -14,9 +14,6 @@ MAINTAINER=		Stephan Tesch <stephan@tesch.cx>
 
 # GPL
 PERMIT_PACKAGE_CDROM=  	Yes
-PERMIT_PACKAGE_FTP=    	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=  	Yes
 
 WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c jpeg \
 			m png pthread pthread-stubs stdc++ util xcb z idn \

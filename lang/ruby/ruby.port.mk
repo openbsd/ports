@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.56 2013/03/04 18:39:06 zhuk Exp $
+# $OpenBSD: ruby.port.mk,v 1.57 2013/03/11 11:20:28 espie Exp $
 
 # ruby module
 
@@ -141,7 +141,7 @@ MODRUBY_RSPEC_DEPENDS =	devel/ruby-rspec/1,${MODRUBY_FLAVOR}<2.0
 MODRUBY_RSPEC2_DEPENDS = devel/ruby-rspec/rspec,${MODRUBY_FLAVOR}>=2.0
 
 # Set the path for the ruby interpreter and the rake and rspec
-# commands used by MODRUBY_REGRESS and manually in some port
+# commands used by MODRUBY_TEST and manually in some port
 # targets.
 .if ${MODRUBY_REV} == jruby
 RUBY=			${LOCALBASE}/jruby/bin/jruby
@@ -172,22 +172,22 @@ MODRUBY_BIN_RSPEC =	${LOCALBASE}/bin/rspec${MODRUBY_BINREV}
 .  endif
 .endif
 
-.if defined(MODRUBY_REGRESS)
-.  if !${MODRUBY_REGRESS:L:Mrspec} && \
-     !${MODRUBY_REGRESS:L:Mrspec2} && !${MODRUBY_REGRESS:L:Mrake} && \
-     !${MODRUBY_REGRESS:L:Mruby} && !${MODRUBY_REGRESS:L:Mtestrb}
-ERRORS += "Fatal: Unsupported MODRUBY_REGRESS value: ${MODRUBY_REGRESS}"
+.if defined(MODRUBY_TEST)
+.  if !${MODRUBY_TEST:L:Mrspec} && \
+     !${MODRUBY_TEST:L:Mrspec2} && !${MODRUBY_TEST:L:Mrake} && \
+     !${MODRUBY_TEST:L:Mruby} && !${MODRUBY_TEST:L:Mtestrb}
+ERRORS += "Fatal: Unsupported MODRUBY_TEST value: ${MODRUBY_TEST}"
 .  endif
 .else
 .  if ${CONFIGURE_STYLE:L:Mextconf} || ${CONFIGURE_STYLE:L:Mgem} || \
 	${CONFIGURE_STYLE:L:Msetup}
-.    if !target(do-regress)
+.    if !target(do-test)
 # Disable regress for extconf, gem, and setup based ports, since they
 # won't use make check for regress.
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 .    endif
 .  endif
-MODRUBY_REGRESS?=
+MODRUBY_TEST?=
 .endif
 
 .if ${MODRUBY_REV} == jruby
@@ -256,14 +256,14 @@ BUILD_DEPENDS+=		${MODRUBY_BUILD_DEPENDS}
 RUN_DEPENDS+=		${MODRUBY_RUN_DEPENDS}
 .endif
 
-.if ${MODRUBY_REGRESS:L:Mrake}
-REGRESS_DEPENDS+=	${MODRUBY_RAKE_DEPENDS}
+.if ${MODRUBY_TEST:L:Mrake}
+TEST_DEPENDS+=	${MODRUBY_RAKE_DEPENDS}
 .endif
-.if ${MODRUBY_REGRESS:L:Mrspec}
-REGRESS_DEPENDS+=	${MODRUBY_RSPEC_DEPENDS}
+.if ${MODRUBY_TEST:L:Mrspec}
+TEST_DEPENDS+=	${MODRUBY_RSPEC_DEPENDS}
 .endif
-.if ${MODRUBY_REGRESS:L:Mrspec2}
-REGRESS_DEPENDS+=	${MODRUBY_RSPEC2_DEPENDS}
+.if ${MODRUBY_TEST:L:Mrspec2}
+TEST_DEPENDS+=	${MODRUBY_RSPEC2_DEPENDS}
 .endif
 
 MODRUBY_RUBY_ADJ=	perl -pi -e 's,/usr/bin/env ruby,${RUBY},'
@@ -455,35 +455,35 @@ SUBST_VARS+=		^MODRUBY_SITEARCHDIR ^MODRUBY_SITEDIR MODRUBY_LIBREV \
 
 # regression stuff
 
-.if !empty(MODRUBY_REGRESS)
-.  if !target(do-regress)
+.if !empty(MODRUBY_TEST)
+.  if !target(do-test)
 
-.    if ${MODRUBY_REGRESS:L:Mrake}
-MODRUBY_REGRESS_BIN ?=	${RAKE} --trace
-.    elif ${MODRUBY_REGRESS:L:Mrspec}
-MODRUBY_REGRESS_BIN ?=	${RSPEC}
-.    elif ${MODRUBY_REGRESS:L:Mrspec2}
-MODRUBY_REGRESS_BIN ?=	${MODRUBY_BIN_RSPEC}
-.    elif ${MODRUBY_REGRESS:L:Mtestrb}
-MODRUBY_REGRESS_BIN ?=	${MODRUBY_BIN_TESTRB}
-.    elif ${MODRUBY_REGRESS:L:Mruby}
-MODRUBY_REGRESS_BIN ?=	${RUBY}
+.    if ${MODRUBY_TEST:L:Mrake}
+MODRUBY_TEST_BIN ?=	${RAKE} --trace
+.    elif ${MODRUBY_TEST:L:Mrspec}
+MODRUBY_TEST_BIN ?=	${RSPEC}
+.    elif ${MODRUBY_TEST:L:Mrspec2}
+MODRUBY_TEST_BIN ?=	${MODRUBY_BIN_RSPEC}
+.    elif ${MODRUBY_TEST:L:Mtestrb}
+MODRUBY_TEST_BIN ?=	${MODRUBY_BIN_TESTRB}
+.    elif ${MODRUBY_TEST:L:Mruby}
+MODRUBY_TEST_BIN ?=	${RUBY}
 .    endif
 
-.    if ${MODRUBY_REGRESS:L:Mrspec} || ${MODRUBY_REGRESS:L:Mrspec2}
-MODRUBY_REGRESS_TARGET ?=	spec
+.    if ${MODRUBY_TEST:L:Mrspec} || ${MODRUBY_TEST:L:Mrspec2}
+MODRUBY_TEST_TARGET ?=	spec
 .    else
-MODRUBY_REGRESS_TARGET ?=	test
+MODRUBY_TEST_TARGET ?=	test
 .    endif
 
-MODRUBY_REGRESS_ENV ?= 
+MODRUBY_TEST_ENV ?= 
 .    if ${MODRUBY_REV} == 1.9
-MODRUBY_REGRESS_ENV += RUBYLIB=.:"$$RUBYLIB"
+MODRUBY_TEST_ENV += RUBYLIB=.:"$$RUBYLIB"
 .    endif
-MODRUBY_REGRESS_DIR ?= ${WRKSRC}
-do-regress:
-	cd ${MODRUBY_REGRESS_DIR} && ${SETENV} ${MAKE_ENV} HOME=${WRKBUILD} \
-		${MODRUBY_REGRESS_ENV} ${MODRUBY_REGRESS_BIN} \
-		${MODRUBY_REGRESS_TARGET}
+MODRUBY_TEST_DIR ?= ${WRKSRC}
+do-test:
+	cd ${MODRUBY_TEST_DIR} && ${SETENV} ${MAKE_ENV} HOME=${WRKBUILD} \
+		${MODRUBY_TEST_ENV} ${MODRUBY_TEST_BIN} \
+		${MODRUBY_TEST_TARGET}
 .  endif
 .endif

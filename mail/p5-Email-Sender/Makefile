@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/08/01 19:42:19 stephan Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 11:23:52 espie Exp $
 
 COMMENT= 	library for sending email
 
@@ -11,9 +11,6 @@ CATEGORIES=	mail
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	devel/p5-Moose>=0.70 \
 		devel/p5-List-MoreUtils \
@@ -25,7 +22,7 @@ RUN_DEPENDS=	devel/p5-Moose>=0.70 \
 
 BUILD_DEPENDS = ${RUN_DEPENDS}
 
-REGRESS_DEPENDS=devel/p5-Test-MockObject \
+TEST_DEPENDS=devel/p5-Test-MockObject \
 		devel/p5-Sub-Override \
 		devel/p5-Test-JSON
 

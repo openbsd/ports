@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/02/09 14:49:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 11:23:53 espie Exp $
 
 COMMENT-main=	fully featured POP3 and IMAP4 proxy server
 COMMENT-ldap=	LDAP backend for perdition mail proxy
@@ -29,9 +29,6 @@ HOMEPAGE=	http://www.vergenet.net/linux/perdition/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}download/${DISTVER}/
 
@@ -51,7 +48,7 @@ CONFIGURE_ARGS+=	--enable-ssl \
 			--with-user=_perdition \
 			--with-group=_perdition
 
-NO_REGRESS=Yes
+NO_TEST=Yes
 
 PSEUDO_FLAVORS=		no_ldap no_mysql no_pgsql
 FLAVOR?=

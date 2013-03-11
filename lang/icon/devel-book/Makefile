@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/12/02 14:36:15 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:20:27 espie Exp $
 
 CATEGORIES=	books lang
 COMMENT=	Icon language implemention reference book
@@ -27,10 +27,7 @@ SUPDISTFILES=	ib1up.pdf ib2up.pdf
 # 'This book originally was published by Princeton University Press.
 # It is out of print and the rights have reverted to the authors, who hereby
 # place it in the public domain'.
-PERMIT_PACKAGE_FTP=Yes
 PERMIT_PACKAGE_CDROM=Yes
-PERMIT_DISTFILES_FTP=Yes
-PERMIT_DISTFILES_CDROM=Yes
 
 EXTRACT_ONLY=
 NO_BUILD=Yes

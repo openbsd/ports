@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/12/05 00:34:03 abieber Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:20:28 espie Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -23,9 +23,6 @@ MAINTAINER=	Aaron Bieber <abieber@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://deftly.net/
 
@@ -54,7 +51,7 @@ MAKE_ENV+=	V=1 CXX=c++ CCFLAGS+="${CFLAGS}" \
 
 NO_CCACHE=	Yes
 
-REGRESS_TARGET= check
+TEST_TARGET= check
 
 pre-configure:
 	@# Bad practice, but prevents a whole stack of patches.

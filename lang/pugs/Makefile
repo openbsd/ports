@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2012/10/11 14:39:45 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/11 11:20:28 espie Exp $
 
 BROKEN =		overlapping instances with hs-parsec >= 3.0
 COMMENT =		Perl 6 Implementation
@@ -10,9 +10,6 @@ HOMEPAGE =		http://pugscode.org/
 
 # BSD3
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 VMEM_WARNING =		Yes
 

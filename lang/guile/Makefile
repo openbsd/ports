@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2012/07/07 10:15:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2013/03/11 11:20:27 espie Exp $
 
 COMMENT=	GNU's Ubiquitous Intelligent Language for Extension
 
@@ -18,9 +18,6 @@ HOMEPAGE=	http://www.gnu.org/software/guile/
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c gmp>=6 ltdl m ncurses pthread readline
 
 LIB_DEPENDS=	devel/gmp>=4.1 \

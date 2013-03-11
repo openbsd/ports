@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/10/21 21:40:49 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 11:23:55 espie Exp $
 # Original from: Marc Espie
 # XXX This port installs in a somewhat unusual way.
 
@@ -19,7 +19,6 @@ ONLY_FOR_ARCHS=	i386
 
 
 FETCH_MANUALLY = "Mount the maple cdrom somewhere and make copy MAPLE_CDROM=mnt_point"
-PERMIT_DISTFILES_CDROM=	Commercial
 PERMIT_DISTFILES_FTP=	Commercial
 PERMIT_PACKAGE_FTP=	Commercial
 PERMIT_PACKAGE_CDROM=	Commercial

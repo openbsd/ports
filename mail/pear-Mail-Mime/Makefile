@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/09/16 10:31:22 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 11:23:53 espie Exp $
 
 COMMENT=	classes to create and decode MIME messages in PHP
 
@@ -11,8 +11,5 @@ PKG_ARCH=	*
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 .include <bsd.port.mk>

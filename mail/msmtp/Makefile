@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2012/10/29 13:41:06 gsoares Exp $
+# $OpenBSD: Makefile,v 1.36 2013/03/11 11:23:51 espie Exp $
 
 COMMENT =		SMTP plugin for MUAs
 
@@ -11,9 +11,6 @@ MAINTAINER =		Gleydson Soares <gsoares@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 WANTLIB =		c crypto ssl idn
 

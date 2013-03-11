@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/09/01 12:02:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 11:23:56 espie Exp $
 
 COMMENT=	unsymmetric multifrontal sparse LU factorization package
 
@@ -16,9 +16,6 @@ MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 AMD_DIR=	math/amd
 BUILD_DEPENDS=	${AMD_DIR}:patch \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/10/29 15:19:03 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 11:23:56 espie Exp $
 
 # Lacks p5-Term-Gnuplot regress dependency!
 
@@ -14,9 +14,6 @@ USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c m
 

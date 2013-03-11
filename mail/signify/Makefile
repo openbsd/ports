@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 19:59:20 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:23:53 espie Exp $
 
 COMMENT=	dynamic .signature generator
 
@@ -11,14 +11,11 @@ MAINTAINER=	Andreas Kahari <andreas.kahari@gmail.com>
 
 # Public domain
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=signify/}
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 USE_GROFF =	Yes
 PKG_ARCH=	*
 

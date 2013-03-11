@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/02/01 15:20:36 stu Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/11 11:23:57 espie Exp $
 
 COMMENT=	publishing and presentation tool
 
@@ -15,14 +15,11 @@ HOMEPAGE=	http://www.ntlug.org/~ccox/impress/
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 MODULES=	x11/tk
 RUN_DEPENDS=	${MODTK_RUN_DEPENDS}
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 pre-configure:
 	@${MODTCL_WISH_ADJ} ${WRKSRC}/src/impress.tcl

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/03/08 11:34:15 pascal Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:20:27 espie Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -17,9 +17,6 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
 # compiler: GPLv2+, packages/rtl: modified LGPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		ftp://ftp.freepascal.org/pub/fpc/dist/$V/source/
 MASTER_SITES0 =		http://distfiles.bsdfrog.org/
@@ -41,7 +38,7 @@ PKG_ARGS +=		-Damd64=0
 
 SUBST_VARS +=		V CONFIG
 
-REGRESS_DEPENDS =	devel/nasm
+TEST_DEPENDS =	devel/nasm
 
 MAKE_FLAGS =		NOGDB=1
 MAKE_ENV =		MKDIRPROG=/bin/mkdir ECHO=/bin/echo \
@@ -51,7 +48,7 @@ FAKE_FLAGS =		INSTALLEXE="${INSTALL_PROGRAM}" \
 			MKDIR="${INSTALL_DATA_DIR}" \
 			INSTALL="${INSTALL_DATA}"
 
-REGRESS_FLAGS =		TEST_FPC="${WRKSRC}/fpcsrc/compiler/${COMPNAME}" \
+TEST_FLAGS =		TEST_FPC="${WRKSRC}/fpcsrc/compiler/${COMPNAME}" \
 			FPC="${WRKSRC}/fpcsrc/compiler/${COMPNAME}" \
 			FPCOPT="-Fu${WRKSRC}/fpcsrc/rtl/units/${CONFIG}" \
 			FPCMAKE="${WRKSRC}/fpcsrc/utils/fpcm/fpcmake"
@@ -77,10 +74,10 @@ post-install:
 	# generate sample config file
 	${PREFIX}/bin/fpcmkcfg -d "basepath=${TRUEPREFIX}/lib/fpc/$V" \
 		-o ${PREFIX}/share/examples/fpc-$V/fpc.cfg.sample
-	# clean these up for regress
+	# clean these up for test
 	find ${WRKSRC} -name Package.fpc | xargs rm -f
 
-do-regress:
-	cd ${WRKSRC}/fpcsrc/tests && ${MAKE_PROGRAM} ${ALL_REGRESS_FLAGS} full
+do-test:
+	cd ${WRKSRC}/fpcsrc/tests && ${MAKE_PROGRAM} ${ALL_TEST_FLAGS} full
 
 .include <bsd.port.mk>

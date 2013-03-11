@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2013/02/03 14:02:30 stu Exp $
+# $OpenBSD: Makefile,v 1.33 2013/03/11 11:23:50 espie Exp $
 
 COMMENT=		Tcl/Tk interface to the MH mail system
 
@@ -12,9 +12,6 @@ MAINTAINER=		Michael Paddon <michael@paddon.org>
 
 # custom BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		ftp://ftp.funet.fi/pub/languages/tcl/tcl/exmh/ \
 			ftp://ftp.tcl.tk/pub/tcl/exmh/
@@ -27,7 +24,7 @@ RUN_DEPENDS=		lang/expect\
 			${MODTK_RUN_DEPENDS}
 USE_GROFF =		Yes
 NO_BUILD=		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 PKG_ARCH=		*
 
 do-configure:

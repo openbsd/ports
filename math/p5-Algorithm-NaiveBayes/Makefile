@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/12/27 11:41:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 11:23:55 espie Exp $
 
 COMMENT=	Bayesian prediction of categories
 
@@ -7,10 +7,7 @@ REVISION=	0
 CATEGORIES=	math
 
 # Perl
-PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
 
 MODULES=		cpan
 

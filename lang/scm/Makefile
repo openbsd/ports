@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2011/11/12 14:37:16 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2013/03/11 11:20:28 espie Exp $
 # losely based on the FreeBSD port
 
 .for m in alpha powerpc vax sparc sparc64
@@ -25,9 +25,6 @@ WRKDIST=	${WRKDIR}/scm
 
 # LGPLv3
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c curses termcap m readline
 
@@ -114,6 +111,6 @@ do-install:
 .endfor
 
 FAKE_FLAGS=exec_prefix=${WRKINST}${TRUEPREFIX}/
-REGRESS_TARGET=	check
+TEST_TARGET=	check
 
 .include <bsd.port.mk>

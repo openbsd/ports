@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/16 10:31:23 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 11:23:58 espie Exp $
 
 COMMENT =	Python interface to memcached
 
@@ -14,9 +14,6 @@ MAINTAINER =	Ben Lovett <ben@tilderoot.com>
 
 # Python
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	ftp://ftp.tummy.com/pub/python-memcached/
 
@@ -24,7 +21,7 @@ MODULES =	lang/python
 
 MODPY_SETUPTOOLS =	Yes
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 pre-install:
 	@perl -pi -e "s,#!.*python,#!${MODPY_BIN}," ${WRKSRC}/memcache.py

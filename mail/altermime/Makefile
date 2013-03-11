@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/05/30 16:47:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:23:50 espie Exp $
 
 COMMENT=	utility for altering mime-encoded mailpacks
 
@@ -12,14 +12,12 @@ HOMEPAGE=	http://www.pldaniels.com/altermime/
 # (see share/doc/altermime/LICENCE)
 PERMIT_PACKAGE_CDROM=	may not sell
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= may not sell
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c
 
 MASTER_SITES=	${HOMEPAGE}
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/altermime

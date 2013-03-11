@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2011/11/13 15:16:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2013/03/11 11:23:58 espie Exp $
 
 COMMENT=	X11/Motif schedule planner with calendar
 
@@ -10,9 +10,6 @@ HOMEPAGE=	http://www.bitrot.de/plan.html
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext Xpm Xt c m Xm
 
 MASTER_SITES=	ftp://ftp.fu-berlin.de/unix/graphics/plan/
@@ -27,7 +24,7 @@ FAKE_FLAGS=	PLANBASE=${WRKINST}${PREFIX} \
 MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-extract:
 	@rm -f ${WRKSRC}/../misc/plan.1.orig

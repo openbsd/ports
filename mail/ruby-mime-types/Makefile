@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2012/09/23 16:57:34 jeremy Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/11 11:23:53 espie Exp $
 
 COMMENT=		MIME type library for Ruby
 
@@ -10,9 +10,6 @@ HOMEPAGE=		http://mime-types.rubyforge.org/
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		lang/ruby
 

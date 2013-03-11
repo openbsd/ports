@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/07 10:18:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 11:20:28 espie Exp $
 
 COMMENT=		open-source CFML engine
 
@@ -14,9 +14,6 @@ MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES =		http://www.getrailo.org/down.cfm?item=/railo/remote/download/$V/custom/all/
 
@@ -25,7 +22,7 @@ RUN_DEPENDS=		tomcat->=7,<8:www/tomcat/v7
 SUBST_VARS=		CATALINA_BASE
 
 NO_BUILD=		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 PKG_ARCH=		*
 
 CATALINA_BASE=		/var/tomcat

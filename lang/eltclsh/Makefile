@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2012/10/10 22:09:29 stu Exp $
+# $OpenBSD: Makefile,v 1.26 2013/03/11 11:20:27 espie Exp $
 
 COMMENT =	Libedit interface to Tcl/Tk interpreters
 
@@ -13,9 +13,6 @@ MAINTAINER =	Matthieu Herrb <matthieu@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	 Yes
-PERMIT_PACKAGE_FTP =	 Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	 Yes
 
 MODULES +=	x11/tk
 WANTLIB += X11 Xext Xft Xrender Xss c edit expat fontconfig freetype
@@ -33,7 +30,7 @@ USE_GMAKE =		Yes
 USE_LIBTOOL =		Yes
 FAKE_FLAGS =		ELTCL_LIBRARY=${WRKINST}${MODTCL_TCLDIR}/eltcl
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 LIB_DEPENDS +=		${MODTK_LIB_DEPENDS}
 

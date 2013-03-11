@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/09/21 07:49:15 giovanni Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:23:53 espie Exp $
 
 COMMENT =	postfix greylist daemon
 
@@ -11,15 +11,12 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=sqlgrey/}
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 PKG_ARCH =		*
 EXTRACT_SUFX =		.tar.bz2
 
 NO_BUILD =		Yes
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 USE_GROFF =		Yes
 
 RUN_DEPENDS =		devel/p5-Net-Server \

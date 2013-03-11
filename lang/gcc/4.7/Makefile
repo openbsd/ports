@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/02/11 14:29:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2013/03/11 11:20:27 espie Exp $
 
 ONLY_FOR_ARCHS = amd64 i386 powerpc sparc64
 BROKEN-sparc64 = ICE in libgcc
@@ -72,7 +72,7 @@ USE_LIBTOOL =	Yes
 BUILD_DEPENDS +=	devel/bison \
 			devel/libexecinfo
 
-REGRESS_DEPENDS = 	devel/dejagnu \
+TEST_DEPENDS = 	devel/dejagnu \
 			devel/autogen
 
 MASTER_SITES =	${MASTER_SITE_GCC:=releases/gcc-$(FULL_VERSION)/}
@@ -82,7 +82,7 @@ MASTER_SITES1 =	ftp://sources.redhat.com/pub/java/
 LANGS = c
 .if ${BUILD_PACKAGES:M-c++}
 LANGS := ${LANGS},c++
-REGRESS_DEPENDS += 	${BUILD_PKGPATH},-estdc>=4.7,<4.8
+TEST_DEPENDS += 	${BUILD_PKGPATH},-estdc>=4.7,<4.8
 .endif
 .if ${BUILD_PACKAGES:M-f95}
 LANGS := ${LANGS},fortran
@@ -103,7 +103,7 @@ DISTFILES += ${ADASTRAP-${MACHINE_ARCH}}:0
 EXTRACT_ONLY += ${ADASTRAP-${MACHINE_ARCH}}
 EXTRA_ENV += ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
 CC = ${WRKDIR}/bin/egcc
-REGRESS_DEPENDS += ${BUILD_PKGPATH},-ada
+TEST_DEPENDS += ${BUILD_PKGPATH},-ada
 .endif
 #.if ${BUILD_PACKAGES:M-go}
 #LANGS := ${LANGS},go

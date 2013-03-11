@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/05/13 12:52:22 okan Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/11 11:23:51 espie Exp $
 
 COMMENT=	greylist milter
 
@@ -13,9 +13,6 @@ MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 # BSD license
 PERMIT_PACKAGE_CDROM=		Yes
-PERMIT_PACKAGE_FTP=		Yes
-PERMIT_DISTFILES_CDROM=		Yes
-PERMIT_DISTFILES_FTP=		Yes
 
 WANTLIB=	c pthread milter spf2
 
@@ -35,7 +32,7 @@ CONFIGURE_ARGS+=	--with-user=${USERNAME} \
 			--with-libspf2=${LOCALBASE}
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/greylist.conf \

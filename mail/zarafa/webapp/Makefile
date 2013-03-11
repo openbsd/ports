@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/04 17:45:46 robert Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/11 11:23:54 espie Exp $
 
 COMMENT=	next generation web interface for Zarafa
 
@@ -24,7 +24,7 @@ BUILD_DEPENDS=	rpm-*|rpm2cpio-*:converters/rpm2cpio
 RUN_DEPENDS=	mail/zarafa/zarafa,-web # php-mapi
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 PKG_ARCH=	*
 
 WRKDIST=	${WRKDIR}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2013/02/07 19:13:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2013/03/11 11:20:27 espie Exp $
 
 # uses gcj which is only supported on select archs
 ONLY_FOR_ARCHS=	amd64 i386 sparc64
@@ -23,9 +23,6 @@ HOMEPAGE=	http://www.gnu.org/software/classpath/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	devel/gettext gcc4
 MODGCC4_ARCHS=	*

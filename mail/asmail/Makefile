@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2011/07/04 00:25:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2013/03/11 11:23:50 espie Exp $
 
 COMMENT=	biff-type program, designed to match AfterStep
 
@@ -14,9 +14,6 @@ LIB_DEPENDS=	graphics/jpeg
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		ICE SM X11 Xext Xpm Xt c jpeg>=62
 
@@ -30,7 +27,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/sample.asmailrc
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/X11/pixmaps/cloud-e

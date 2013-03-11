@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2012/06/17 07:39:12 benoit Exp $
+# $OpenBSD: Makefile,v 1.24 2013/03/11 11:23:57 espie Exp $
 
 COMMENT =	generates ASCII banner art
 
@@ -11,9 +11,6 @@ MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c
 
@@ -25,7 +22,7 @@ DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 MAKE_FLAGS =	CC="${CC}" CFLAGS="${CFLAGS}" \
 		DEFAULTFONTDIR=${PREFIX}/share/figlet
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 pre-configure:
 	@perl -pi -e 's|%%OPENBSDFIGLET%%|${LOCALBASE}/share/figlet|g' ${WRKBUILD}/figlist

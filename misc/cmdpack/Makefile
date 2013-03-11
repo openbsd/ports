@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/01/09 23:00:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:23:56 espie Exp $
 
 COMMENT =		various ROM (and other) development tools
 
@@ -12,15 +12,12 @@ HOMEPAGE =		http://www.neillcorlett.com/cmdpack/
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 WANTLIB +=		c
 
 MASTER_SITES =		http://www.neillcorlett.com/downloads/
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 WRKSRC =		${WRKDIST}/src
 

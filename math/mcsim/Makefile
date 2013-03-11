@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/07/18 10:50:12 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/11 11:23:55 espie Exp $
 
 COMMENT=	monte carlo simulation software
 
@@ -13,16 +13,13 @@ FAKE_FLAGS=	PREFIX="${WRKINST}${PREFIX}"
 WRKDIST=	${WRKDIR}/mcsim
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m
 
 do-build:
 	@(cd ${WRKSRC}/mod && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS})
 	@(cd ${WRKSRC}/sim && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS})
 
-do-regress:
+do-test:
 	@(cd ${WRKSRC}/sim && chmod 755 Test_mcsim && ./Test_mcsim)
 
 do-install:

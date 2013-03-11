@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/11/19 07:23:10 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2013/03/11 11:23:54 espie Exp $
 
 COMMENT=	mail image display for X11
 
@@ -18,7 +18,6 @@ DISTFILES=	${DISTNAME}.tar.Z xfaces-sounds.tar.gz:0
 # License: "BSD NO"
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	No
-PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	No
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xpm Xt c m \
@@ -32,7 +31,7 @@ USE_GROFF =	Yes
 post-extract:
 	@ln -sf ../sounds ${WRKSRC}
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 pre-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/sounds

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2013/02/23 01:22:26 jeremy Exp $
+# $OpenBSD: Makefile,v 1.36 2013/03/11 11:20:28 espie Exp $
 
 BROKEN-sparc64 =	doesnt reliably build, and depending ports randomly fail to build
 
@@ -86,12 +86,12 @@ VMEM_WARNING =		Yes
 
 SUBST_VARS +=		RUBYLIBREV
 
-REGRESS_DEPENDS =	${FULLPKGNAME-main}:${BUILD_PKGPATH}
+TEST_DEPENDS =	${FULLPKGNAME-main}:${BUILD_PKGPATH}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ruby
 
-do-regress:
+do-test:
 	-cd ${WRKSRC} && make test-sample
 	-cd ${WRKSRC} && make btest-ruby
 	cd ${WRKSRC} && make test-all

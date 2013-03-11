@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/19 07:23:09 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/11 11:23:54 espie Exp $
 
 COMMENT=		wm-dockapp; multiple pop3 mailbox checker
 
@@ -12,12 +12,9 @@ HOMEPAGE=		http://wmmultipop3.sourceforge.net/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext Xpm c pthread-stubs xcb
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 WRKSRC=		${WRKDIST}/wmmultipop3
 

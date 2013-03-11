@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/24 21:06:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 11:20:27 espie Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -10,9 +10,6 @@ CATEGORIES=	lang
 HOMEPAGE=	http://www.cvsup.org/ezm3/
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m
 
 MASTER_SITES= 	ftp://ftp.FreeBSD.org/pub/FreeBSD/ \
@@ -52,6 +49,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/ezm3
 	${INSTALL_DATA} ${WRKSRC}/src/COPYRIGHT ${PREFIX}/share/ezm3
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2013/03/03 17:44:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2013/03/11 11:23:51 espie Exp $
 
 ONLY_FOR_ARCHS-mono=	${MONO_ARCHS}
 
@@ -19,9 +19,6 @@ HOMEPAGE=	http://spruce.sourceforge.net/gmime/
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB-main += ${MODGETTEXT_WANTLIB}
 WANTLIB-main += ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0

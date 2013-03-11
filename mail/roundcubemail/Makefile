@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2013/01/26 14:36:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.62 2013/03/11 11:23:53 espie Exp $
 
 COMMENT=	imap4 webmail client
 
@@ -10,15 +10,12 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv3+ with exceptions for skins & plugins
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=roundcubemail/}
 EXTRACT_SUFX=	.tar.gz
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 PKG_ARCH=	*
 
 PREFIX=		/var/www

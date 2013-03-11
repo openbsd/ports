@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/11/13 16:09:27 pirofti Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/11 11:23:56 espie Exp $
 
 # Memory hog, stuck for days on the same file during build.
 NOT_FOR_ARCHS=	sh
@@ -19,9 +19,6 @@ MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	X11 c m
 USE_GROFF =	Yes
@@ -33,9 +30,9 @@ MAKE_FLAGS=	Y_SITE="${Y_SITE}"
 WRKDIST=	${WRKDIR}/yorick-${VERSION:R}
 
 # Some tests require X started (or DISPLAY, etc set).
-REGRESS_IS_INTERACTIVE=	Yes
+TEST_IS_INTERACTIVE=	Yes
 SETENV=env
-REGRESS_TARGET=		check
+TEST_TARGET=		check
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/yorick/yorick ${PREFIX}/bin

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/02/08 14:39:50 jturner Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/11 11:20:28 espie Exp $
 
 COMMENT=	Scheme Underground's implementation of R5RS
 
@@ -13,9 +13,6 @@ MAINTAINER=	Aaron Hsu <arcfide@sacrideo.us>
 
 # 3-clause BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}/$V/
 EXTRACT_SUFX=		.tgz

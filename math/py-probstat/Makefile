@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2012/04/02 13:06:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 11:23:56 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -13,9 +13,6 @@ HOMEPAGE=	http://probstat.sourceforge.net/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=probstat/}
 EXTRACT_SUFX=	.tgz
@@ -24,7 +21,7 @@ WANTLIB=	${MODPY_WANTLIB}
 
 MODULES=	lang/python
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-probstat
 

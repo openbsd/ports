@@ -1,5 +1,5 @@
 # Icon library port
-# $OpenBSD: Makefile,v 1.24 2011/12/02 14:36:15 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/11 11:20:27 espie Exp $
 
 COMMENT=	useful and interesting programs for Icon
 
@@ -14,10 +14,7 @@ CATEGORIES=lang
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 # PD
-PERMIT_DISTFILES_CDROM=Yes
-PERMIT_DISTFILES_FTP=Yes
 PERMIT_PACKAGE_CDROM=Yes
-PERMIT_PACKAGE_FTP=Yes
 
 WRKDIST=${WRKDIR}/${DISTNAME}/ipl
 # if you really want, the ipl.tgz file holds precompiled u1/u2 files
@@ -65,7 +62,7 @@ do-build:
 	${BUILDENV} cd ${WRKSRC}/gpacks/xtiles && icont -s xtiles.icn
 .endif
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${IPL}/ucode

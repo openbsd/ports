@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/09/27 16:43:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 11:23:53 espie Exp $
 
 COMMENT=	simple shell based filters to use GnuPG within (Al)Pine
 
@@ -10,9 +10,6 @@ HOMEPAGE=	http://dougbarton.us/PGP/ppf/index.html
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://dougbarton.us/PGP/ppf/
 
@@ -25,7 +22,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--gnupg=gpg
 
 PKG_ARCH=	*
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKBUILD}/out/ppf_* ${PREFIX}/libexec

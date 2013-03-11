@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/12/03 11:45:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:23:52 espie Exp $
 
 COMMENT =	transform a HTML page in a MIME-Lite mail
 
@@ -8,9 +8,6 @@ CATEGORIES =	mail
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =	cpan
 RUN_DEPENDS =	mail/p5-MIME-Lite

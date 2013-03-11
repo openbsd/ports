@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/11/03 20:28:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 11:23:56 espie Exp $
 
 COMMENT=	graphical front-end for octave
 
@@ -10,9 +10,6 @@ HOMEPAGE=	http://qtoctave.wordpress.com/
 
 # GPL v2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	https://forja.rediris.es/frs/download.php/352/
 

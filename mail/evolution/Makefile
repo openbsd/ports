@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.189 2013/03/07 08:56:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.190 2013/03/11 11:23:50 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -27,9 +27,6 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 
 # # GPLv2+ - LGPLv2+ - OpenLDAP license - GFDL 1.1
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += camel-1.2 canberra ebook-1.2 ecal-1.2
 WANTLIB += edataserver-1.2 edataserverui-3.0 gdk-3 gdk_pixbuf-2.0

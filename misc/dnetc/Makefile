@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/19 07:23:11 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/11 11:23:57 espie Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64 m68k sparc
 
@@ -51,11 +51,10 @@ MAINTAINER=		Sico Bruins <openbsd@msh.xs4all.nl>
 
 PERMIT_PACKAGE_CDROM=	no redistribution
 PERMIT_PACKAGE_FTP=	no redistribution
-PERMIT_DISTFILES_CDROM=	no redistribution
 PERMIT_DISTFILES_FTP=	no redistribution
 
 NO_BUILD=		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 USE_GROFF =		Yes
 
 WRKSRC=			${WRKDIR}/dnetc${SV}-openbsd-${A}

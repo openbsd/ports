@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2012/08/06 12:21:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2013/03/11 11:23:54 espie Exp $
 
 COMMENT=	RPN and algebraic scientific calculator
 
@@ -11,9 +11,6 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=calcoo/}
 

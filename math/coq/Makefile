@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/02/07 22:03:36 nigel Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/11 11:23:54 espie Exp $
 
 COMMENT=		proof assistant based on a typed lambda calculus
 
@@ -11,9 +11,6 @@ MAINTAINER=		Yozo Toda <yozo@v007.vaio.ne.jp>
 
 # LGPL 2.1
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo expat fontconfig freetype
@@ -53,7 +50,7 @@ CONFIGURE_ARGS+=	-byteonly
 ALL_TARGET=		world
 # Order is important!
 INSTALL_TARGET=		install-byte install-ide-byte install
-REGRESS_TARGET=		check
+TEST_TARGET=		check
 
 post-install:
 	cd ${WRKDIST}; ${INSTALL_DATA} LICENSE COPYRIGHT CREDITS CHANGES \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/18 20:52:09 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/11 11:23:57 espie Exp $
 
 COMMENT=	convert English text to Jive
 
@@ -11,7 +11,6 @@ MASTER_SITES=	ftp://ftp.fr.freebsd.org/pub/FreeBSD/distfiles/ \
 # License: NONE
 PERMIT_PACKAGE_CDROM=	no license
 PERMIT_PACKAGE_FTP=	no license
-PERMIT_DISTFILES_CDROM=	no license
 PERMIT_DISTFILES_FTP=	no license
 
 WANTLIB=		c
@@ -19,7 +18,7 @@ WANTLIB=		c
 WRKDIST=	${WRKDIR}/jive
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/jive ${PREFIX}/bin

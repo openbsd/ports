@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2011/05/22 16:07:25 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2013/03/11 11:23:57 espie Exp $
 
 COMMENT=	Unix menuing shell
 
@@ -14,7 +14,6 @@ EXTRACT_ONLY=
 
 PERMIT_PACKAGE_CDROM=	no explict license
 PERMIT_PACKAGE_FTP=	no explict license
-PERMIT_DISTFILES_CDROM=	no explict license
 PERMIT_DISTFILES_FTP=	no explict license
 
 MASTER_SITES =		ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/
@@ -25,6 +24,6 @@ post-extract:
 	awk '{if (/^#!/) x++} {if(x) print $$0'}| /bin/sh)
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/11/14 17:58:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 11:23:57 espie Exp $
 
 COMMENT =	OpenMoko serial console tool
 
@@ -11,9 +11,6 @@ MAINTAINER =	Matthieu Herrb <matthieu@herrb.eu>
 
 # BSD
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 WANTLIB += c ftdi pthread usb
 
@@ -24,6 +21,6 @@ LIB_DEPENDS =		devel/libftdi
 MAKE_ENV=		LOCAL_BASE=${LOCALBASE} LDADD=-pthread
 MAKE_FLAGS=		BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man
 
-NO_REGRESS =		yes
+NO_TEST =		yes
 
 .include <bsd.port.mk>

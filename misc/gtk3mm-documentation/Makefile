@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2012/11/17 09:40:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 11:23:57 espie Exp $
 
 COMMENT=	documentation for gtk3mm
 
@@ -13,9 +13,6 @@ HOMEPAGE=	http://www.gtkmm.org/
 
 # GFDLv1.2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	x11/gnome
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/05/15 18:47:48 djm Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 11:23:58 espie Exp $
 
 COMMENT=	Set IBM Thinkpad BIOS bit to disable Wireless NIC ID check
 
@@ -8,9 +8,6 @@ DISTFILES=
 
 # ISC
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 ONLY_FOR_ARCHS=	i386
@@ -25,6 +22,6 @@ MAKE_ENV=	CC="${CC}"
 post-extract:		
 	@lndir ${.CURDIR}/src ${WRKDIR}
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

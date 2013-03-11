@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/09/16 10:31:22 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 11:23:56 espie Exp $
 
 COMMENT=		prover9/mace4 GUI
 
@@ -12,7 +12,7 @@ CONFIGURE_STYLE=	# empty
 
 PKG_ARCH=		*
 NO_BUILD=		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 MODPY_ADJ_FILES=	control.py files.py my_setup.py options.py \
 			partition_input.py platforms.py prover9-mace4.py \

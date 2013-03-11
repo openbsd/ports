@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/05 08:24:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 11:23:57 espie Exp $
 
 COMMENT=	terminal locking utility
 
@@ -10,9 +10,6 @@ HOMEPAGE=	http://www.marcuscom.com/
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB=		c
 
@@ -22,6 +19,6 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	with_setuid="no"
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/19 07:23:06 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 11:23:51 espie Exp $
 
 COMMENT=	IMAP synchronization tool
 
@@ -9,9 +9,6 @@ MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # WTFPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.linux-france.org/prj/imapsync/dist/
 
@@ -24,7 +21,7 @@ RUN_DEPENDS=	converters/p5-DateManip \
 		devel/p5-Term-ReadKey
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 USE_GROFF =	Yes
 PKG_ARCH=	*
 

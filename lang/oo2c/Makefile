@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/09/16 10:31:21 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:20:28 espie Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -18,9 +18,6 @@ MAINTAINER =	Alexander Shiryaev <shiryaev.a.v@gmail.com>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=ooc/}
 EXTRACT_SUFX =	.tar.bz2
@@ -41,6 +38,6 @@ CONFIGURE_ENV =		CFLAGS="${CFLAGS} -O0 -I${LOCALBASE}/include -DGC_PTR='void*'" 
 FAKE_FLAGS =		prefix="${WRKINST}${PREFIX}" \
 			mandir="${WRKINST}${PREFIX}/man/man1"
 
-REGRESS_TARGET =	test
+TEST_TARGET =	test
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/04/28 02:01:47 gsoares Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/11 11:23:54 espie Exp $
 
 COMMENT=	decode MS-TNEF MIME attachments
 
@@ -13,9 +13,6 @@ MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c
 

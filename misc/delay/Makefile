@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2012/08/18 12:41:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/11 11:23:57 espie Exp $
 
 COMMENT=	delay program with feedback to the user
 
@@ -11,9 +11,6 @@ HOMEPAGE=	http://onegeek.org/~tom/software/delay/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c curses
 
@@ -21,6 +18,6 @@ SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 USE_GROFF =	Yes
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

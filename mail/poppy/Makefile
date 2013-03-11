@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 19:59:18 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 11:23:53 espie Exp $
 
 COMMENT=	client to perform simple tasks with a POP3/IMAP server
 
@@ -10,9 +10,6 @@ HOMEPAGE=	http://www.cnpbagwell.com/projects.html
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	http://www.cnpbagwell.com/
 

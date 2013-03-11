@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/19 07:23:05 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/11 11:23:50 espie Exp $
 
 COMMENT=	speed mail delivery by sorting & batching addresses
 
@@ -15,9 +15,6 @@ MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 CONFIGURE_STYLE=gnu
@@ -25,6 +22,6 @@ USE_GROFF =	Yes
 
 MAKE_ENV=	CC="${CC}"
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

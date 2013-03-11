@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2012/09/01 12:02:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 11:23:54 espie Exp $
 
 COMMENT=	solve large scale eigenvalue problems
 
@@ -12,9 +12,6 @@ HOMEPAGE=	http://www.caam.rice.edu/software/ARPACK/
 
 # BSD license (not in distfile)
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}SRC/
 DISTFILES=	${DISTNAME}.tar.gz patch.tar.gz ug.ps.gz

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.86 2013/02/09 14:49:51 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.87 2013/03/11 11:23:53 espie Exp $
 
 COMMENT=	fast, secure sendmail replacement
 
@@ -23,7 +23,6 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 PERMIT_PACKAGE_CDROM=	cannot be sold, see section 4 of license
 PERMIT_PACKAGE_FTP=	yes
-PERMIT_DISTFILES_CDROM=	cannot be sold, see section 4 of license
 PERMIT_DISTFILES_FTP=	yes
 
 LIB_DEPENDS+=	devel/pcre
@@ -41,7 +40,7 @@ WANTLIB=	c crypto pcre pthread sqlite3 ssl
 
 ALL_TARGET=	default
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 FLAVORS+=	sasl2 ldap mysql pgsql db4
 FLAVOR?=

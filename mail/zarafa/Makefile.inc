@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.25 2013/01/27 13:06:20 robert Exp $
+# $OpenBSD: Makefile.inc,v 1.26 2013/03/11 11:23:54 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -15,7 +15,6 @@ MAINTAINER?=	Robert Nagy <robert@openbsd.org>
 # AGPLv3 (GNU Affero Public License) with exceptions
 PERMIT_PACKAGE_CDROM?=	Yes
 PERMIT_PACKAGE_FTP?=	Yes
-PERMIT_DISTFILES_CDROM?=Yes
 PERMIT_DISTFILES_FTP?=	Yes
 
 DIST_SUBDIR?=	zarafa

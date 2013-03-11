@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2012/02/24 07:18:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2013/03/11 11:23:57 espie Exp $
 
 COMMENT=	X11-based presentation tool
 
@@ -12,9 +12,6 @@ MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/mgp/
 HOMEPAGE=	http://member.wide.ad.jp/wg/mgp/
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c ICE jpeg lcms m SM util \
 		Xt Xau Xdmcp Xmu Xext X11 Xtst z \
@@ -39,7 +36,7 @@ CONFIGURE_ARGS=	--disable-vflib
 CONFIGURE_ARGS+= --enable-gif
 CONFIGURE_ARGS+= --enable-freetype-charset16
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-configure:
 	@cd ${WRKSRC}/contrib/xmindpath && \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/19 07:23:09 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 11:23:53 espie Exp $
 
 COMMENT=	Sendmail Log Analysis Report
 
@@ -11,15 +11,12 @@ HOMEPAGE=	http://www.klake.org/sma/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 MASTER_SITES=	http://www.klake.org/sma/dl/
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 ALL_TARGET=	sma
 
 pre-patch:

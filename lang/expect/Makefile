@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2012/03/29 13:38:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2013/03/11 11:20:27 espie Exp $
 
 COMMENT=	sophisticated scripter based on Tcl/Tk
 
@@ -13,9 +13,6 @@ MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # PD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c util m
 
@@ -51,6 +48,6 @@ CONFIGURE_ARGS +=--with-tk=no --libdir=${MODTCL_TCLDIR}
 .endif
 
 FAKE_FLAGS =		PKG_DIR=expect	
-REGRESS_TARGET =	test
+TEST_TARGET =	test
 
 .include <bsd.port.mk>

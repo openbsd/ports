@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/01/09 17:42:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 11:23:53 espie Exp $
 
 COMMENT-main=		UW e-mail client
 COMMENT-c-client=	UW c-client mail access routines
@@ -42,9 +42,6 @@ HOMEPAGE=		http://www.washington.edu/alpine/
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=re-alpine/}
 

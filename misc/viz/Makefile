@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/05 08:24:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 11:23:58 espie Exp $
 
 COMMENT=	Convert invisible (binary) characters to a visible form
 
@@ -9,13 +9,10 @@ CATEGORIES=	misc
 EXTRACT_SUFX=	.tgz
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c m
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

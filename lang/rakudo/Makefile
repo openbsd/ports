@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2012/12/07 08:44:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 11:20:28 espie Exp $
 
 # Memory hog, stuck for days on the same file during build.
 NOT_FOR_ARCHS =		sh
@@ -25,9 +25,6 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
 # Artistic 2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB = 		c gmp icudata icuuc m ncurses parrot pthread
 WANTLIB += 		readline stdc++ util ffi
@@ -49,7 +46,7 @@ CONFIGURE_ARGS +=	--prefix="${PREFIX}" \
 			--with-parrot="${LOCALBASE}/bin/parrot" \
 			--with-nqp="${LOCALBASE}/bin/nqp"
 
-REGRESS_TARGET =	rakudo-test rakudo-spectest
+TEST_TARGET =	rakudo-test rakudo-spectest
 
 post-install:
 	cd ${WRKSRC}/docs && ${INSTALL_DATA} UsingPerl6-draft.pdf \
@@ -57,7 +54,7 @@ post-install:
 	cd ${WRKSRC}/docs/announce && ${INSTALL_DATA} * \
 		${PREFIX}/share/doc/rakudo/announce
 
-pre-regress:
+pre-test:
 	#no need to check out git repository
 	perl -pi -e 's/spectest_checkout spectest_update// if /^testable/' \
 		${WRKSRC}/rakudo-${VERSION}/Makefile

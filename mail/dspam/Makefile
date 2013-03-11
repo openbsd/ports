@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2012/12/23 13:25:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2013/03/11 11:23:50 espie Exp $
 
 COMMENT=	anti-spam filter
 
@@ -16,9 +16,6 @@ MAINTAINER=     Todd T. Fries <todd@OpenBSD.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c m
 

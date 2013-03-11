@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/19 07:23:10 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 11:23:54 espie Exp $
 
 COMMENT=	library for handling FITS data
 CATEGORIES=	math graphics devel
@@ -17,10 +17,7 @@ CONFIGURE_STYLE=autoconf no-autoheader
 AUTOCONF_VERSION=2.13
 
 # Mostly BSD-style, with two chunks of GPL code
-PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_PACKAGE_FTP=	Yes
 
 ALL_TARGET=	all fitscopy imcopy listhead
 SHARED_LIBS=	cfitsio	0.0
@@ -41,8 +38,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/{fitscopy,imcopy,listhead} ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKBUILD}/cookbook.c ${DOCDIR}
 
-REGRESS_DEPENDS=math/cfitsio
-do-regress:
+TEST_DEPENDS=math/cfitsio
+do-test:
 	cd ${WRKBUILD} && ${MAKE} testprog
 	cd ${WRKBUILD} && ./testprog >testprog.lis
 	diff ${WRKBUILD}/testprog.lis ${WRKBUILD}/testprog.out

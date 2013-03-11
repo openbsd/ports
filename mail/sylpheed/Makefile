@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2013/02/09 14:49:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.100 2013/03/11 11:23:53 espie Exp $
 
 COMMENT =		lightweight and user-friendly e-mail client
 
@@ -12,9 +12,6 @@ HOMEPAGE=	http://sylpheed.sraoss.jp/en
 
 # GPLv2 - LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES =	devel/gettext
 LIB_DEPENDS +=		x11/gtk+2 \
@@ -54,7 +51,6 @@ LIB_DEPENDS+=		mail/faces
 WANTLIB+=		compface
 CONFIGURE_ARGS +=	--enable-compface
 PERMIT_PACKAGE_CDROM =  No fee
-PERMIT_DISTFILES_CDROM =No fee
 .else
 CONFIGURE_ARGS+=	--disable-compface
 .endif

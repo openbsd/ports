@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/02/10 11:10:02 bcallah Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/11 11:20:28 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -21,9 +21,6 @@ MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	c crypto curses db gdbm m pthread readline ssl stdc++ \
 		${MODRUBY_WANTLIB}
@@ -75,10 +72,10 @@ do-install:
 
 # 45/56 failures in mspec on i386/amd64, most of which are due to lacking
 # Fiber support
-do-regress:
+do-test:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${RAKE} vm:test
 	cd ${WRKSRC} && RUBY=${RUBY} ${RUBY} mspec/bin/mspec ci -f s
 
-REGRESS_DEPENDS = ${FULLPKGNAME}:${BUILD_PKGPATH}
+TEST_DEPENDS = ${FULLPKGNAME}:${BUILD_PKGPATH}
 
 .include <bsd.port.mk>

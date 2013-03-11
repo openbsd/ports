@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2012/10/15 15:06:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/11 11:20:28 espie Exp $
 
 COMMENT=	berkeley's implementation of the logo programming language
 DISTNAME=	ucblogo-5.5
@@ -10,12 +10,9 @@ HOMEPAGE=	http://www.cs.berkeley.edu/~bh/logo.html
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE SM X11 c m pthread-stubs termcap xcb
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 MAKE_FILE=	makefile
 ALL_TARGET=	logo makehelp helpfiles helpfiles/HELPCONTENTS

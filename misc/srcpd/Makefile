@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/07/09 14:54:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 11:23:58 espie Exp $
 
 COMMENT =	daemon to control digital model railroad systems
 
@@ -13,9 +13,6 @@ MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM = 	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 MODULES +=		converters/libiconv
 WANTLIB += 		c m pthread z xml2

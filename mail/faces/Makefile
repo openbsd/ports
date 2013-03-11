@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/11/19 07:23:06 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2013/03/11 11:23:51 espie Exp $
 
 COMMENT=	visual mail, user and print face server
 
@@ -9,8 +9,6 @@ CATEGORIES=	mail
 
 PERMIT_PACKAGE_CDROM=	no fee
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	no fee
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 c pthread-stubs xcb
 
 MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/faces/faces-1.6.1/
@@ -27,6 +25,6 @@ MAKE_ENV=	SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR}
 post-extract:
 	@cd ${WRKSRC} && cp Makefile.dist Makefile
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

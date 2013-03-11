@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/02/09 14:49:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/11 11:23:51 espie Exp $
 
 COMMENT=	emacs interface to PGP and GnuPG
 
@@ -10,9 +10,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mailcrypt/}
 HOMEPAGE=	http://mailcrypt.sourceforge.net/
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu dest
 
@@ -35,6 +32,6 @@ RUN_DEPENDS=	pgp->=5,<6:security/pgp5
 
 # broken test infrastructure that is more a test framework for
 # py-gnupg than mailcrypt.
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

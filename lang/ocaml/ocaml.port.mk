@@ -1,4 +1,4 @@
-# $OpenBSD: ocaml.port.mk,v 1.23 2013/01/03 14:32:11 chrisz Exp $
+# $OpenBSD: ocaml.port.mk,v 1.24 2013/03/11 11:20:28 espie Exp $
 
 # regular file usage for bytecode:
 # PLIST               -- bytecode base files
@@ -56,7 +56,7 @@ ALL_TARGET ?= -build -doc
 # XXX can't do ?= here, because INSTALL_TARGET is already initialized
 # with default value
 INSTALL_TARGET = -install
-REGRESS_TARGET ?= -test
+TEST_TARGET ?= -test
 _MODOASIS_SETUP = ${WRKDIR}/oasis_setup.byte
 
 ######################################################################
@@ -103,15 +103,15 @@ do-install:
 . endif
 
 ######################################################################
-# REGRESS
-MODOASIS_REGRESS_TARGET = cd ${WRKSRC}
-. for TARGET in ${REGRESS_TARGET}
-MODOASIS_REGRESS_TARGET += \
+# TEST
+MODOASIS_TEST_TARGET = cd ${WRKSRC}
+. for TARGET in ${TEST_TARGET}
+MODOASIS_TEST_TARGET += \
 	&& ${SETENV} ${MAKE_ENV} ${_MODOASIS_SETUP} ${TARGET}
 . endfor
-. if !target(do-regress)
-do-regress: 
-	${MODOASIS_REGRESS_TARGET}
+. if !target(do-test)
+do-test: 
+	${MODOASIS_TEST_TARGET}
 . endif
 
 .endif

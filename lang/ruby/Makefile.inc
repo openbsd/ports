@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.5 2011/11/17 11:47:12 jeremy Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2013/03/11 11:20:28 espie Exp $
 
 SHARED_ONLY ?=	Yes
 
@@ -13,7 +13,6 @@ MAINTAINER ?=	Jeremy Evans <jeremy@openbsd.org>
 # GPL/Artistic/BSD/Public Domain/Beer-Ware
 PERMIT_PACKAGE_CDROM ?= Yes
 PERMIT_PACKAGE_FTP ?= Yes
-PERMIT_DISTFILES_CDROM ?= Yes
 PERMIT_DISTFILES_FTP ?= Yes
 
 MASTER_SITES ?=	ftp://www.ruby-lang.org/pub/ruby/${VERSION:R}/ \

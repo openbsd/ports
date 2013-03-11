@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/06 15:12:01 benoit Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 11:23:51 espie Exp $
 
 COMMENT=	fetch, filter and deliver mail
 
@@ -10,9 +10,6 @@ MAINTAINER=	Nicholas Marriott <nicm@users.sourceforge.net>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB= c crypto ssl z tdb>=3.0
 

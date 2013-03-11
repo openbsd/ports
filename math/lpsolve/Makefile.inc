@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1 2012/05/11 23:29:30 edd Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2013/03/11 11:23:55 espie Exp $
 
 V_MAJOR ?=		5.5
 V ?=			${V_MAJOR}.2.0
@@ -11,5 +11,4 @@ MASTER_SITES ?=		${MASTER_SITE_SOURCEFORGE:=lpsolve/}
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM ?=		Yes
 PERMIT_PACKAGE_FTP ?=		Yes
-PERMIT_DISTFILES_CDROM ?=	Yes
 PERMIT_DISTFILES_FTP ?=		Yes

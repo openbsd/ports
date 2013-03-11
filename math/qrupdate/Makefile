@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/02/17 08:32:40 pirofti Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 11:23:56 espie Exp $
 
 COMMENT =	library for fast updates of QR and Cholesky decompositions
 
@@ -12,9 +12,6 @@ MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
 
 # GPL v3
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=qrupdate/}
 
@@ -33,8 +30,8 @@ MAKE_FLAGS =		FC="${FC}" FFLAGS="${FFLAGS}" \
 			BLAS= LAPACK=
 USE_GMAKE =		Yes
 
-REGRESS_TARGET =	test
-REGRESS_FLAGS =		BLAS="-lblas" LAPACK="-llapack"
+TEST_TARGET =	test
+TEST_FLAGS =		BLAS="-lblas" LAPACK="-llapack"
 
 SUBST_VARS =		MAKE_PROGRAM
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2012/09/01 12:02:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 11:23:54 espie Exp $
 
 COMMENT=	C interface to the BLAS library
 
@@ -16,9 +16,6 @@ MAINTAINER=	Chris Kuethe <ckuethe@openbsd.org>
 
 # freely available
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.netlib.org/blas/blast-forum/ \
 		ftp://netlib.bell-labs.com/netlib/blas/blast-forum/ \
@@ -42,15 +39,15 @@ MAKE_ENV=	SHLIB_MAJOR=${LIBcblas_VERSION:R} \
 		FC=${FC}
 FAKE_FLAGS=	LIBDIR=${LOCALBASE}/lib DEBUGLIBS=no
 
-REGRESS_FLAGS=	LOADER=${FC} CFLAGS="${CFLAGS}" INC="-I${WRKSRC}" \
+TEST_FLAGS=	LOADER=${FC} CFLAGS="${CFLAGS}" INC="-I${WRKSRC}" \
 		LIB="-L${WRKSRC} -lcblas -L${LOCALBASE}/lib -lblas"
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include
 
-do-regress:
+do-test:
 	@cd ${WRKDIST}/testing && \
-	${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} all1 ${ALL_REGRESS_FLAGS} && \
+	${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} all1 ${ALL_TEST_FLAGS} && \
 	export LD_LIBRARY_PATH="${WRKSRC}" && \
 		./xscblat1 && \
 		./xdcblat1 && \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/11/19 07:23:09 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/11 11:23:54 espie Exp $
 
 COMMENT=		verify email addresses and mailing lists
 
@@ -8,9 +8,6 @@ REVISION =		0
 CATEGORIES=		mail
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 MASTER_SITES=		http://ftp.ksut.edu.tw/FTP/Unix/Network/tools/
@@ -20,7 +17,7 @@ WRKDIST=		${WRKDIR}/
 MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS}" RES=""
 
 USE_GROFF =		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/vrfy ${PREFIX}/bin

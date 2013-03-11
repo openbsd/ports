@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/10/20 04:34:32 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:23:54 espie Exp $
 
 COMMENT =		finite-state compiler and C library
 
@@ -13,9 +13,6 @@ HOMEPAGE =		https://code.google.com/p/foma/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 WANTLIB +=		c readline termcap z
 
@@ -28,7 +25,7 @@ FAKE_FLAGS =		prefix="${WRKINST}${PREFIX}"
 
 USE_GMAKE =		Yes
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}/foma
 

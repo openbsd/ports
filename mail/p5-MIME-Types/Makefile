@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/12/03 11:45:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 11:23:52 espie Exp $
 
 COMMENT=	perl module to manage MIME types
 
@@ -8,9 +8,6 @@ CATEGORIES=	mail
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
 USE_GROFF =		Yes

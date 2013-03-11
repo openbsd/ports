@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2012/03/29 13:38:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2013/03/11 11:20:28 espie Exp $
 
 COMMENT =		Tool Command Language
 
@@ -12,9 +12,6 @@ MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c m
 
@@ -29,7 +26,7 @@ FAKE_FLAGS =		INSTALL_DATA_DIR="${INSTALL_DATA_DIR}" \
 			INSTALL_DATA="${INSTALL_DATA}" \
 			INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 
-REGRESS_FLAGS =		HOME=${TESTHOME}
+TEST_FLAGS =		HOME=${TESTHOME}
 SEPARATE_BUILD =	Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE =	autoconf no-autoheader old
@@ -57,11 +54,11 @@ CFLAGS +=		-O0
 .endif
 
 WRKSRC =		${WRKDIST}/unix
-REGRESS_TARGET =	test
+TEST_TARGET =	test
 
 TESTHOME =		${WRKDIR}/testhome
 
-pre-regress:
+pre-test:
 	@mkdir -p ${TESTHOME}
 
 post-install:

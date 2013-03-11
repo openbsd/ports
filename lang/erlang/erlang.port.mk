@@ -1,4 +1,4 @@
-# $OpenBSD: erlang.port.mk,v 1.3 2013/03/10 19:52:56 jasper Exp $
+# $OpenBSD: erlang.port.mk,v 1.4 2013/03/11 11:20:27 espie Exp $
 #
 # Module for Erlang-based ports or modules
 
@@ -51,17 +51,17 @@ RUN_DEPENDS +=		${MODERL_RUN_DEPENDS}
 .endif
 
 # Regression test handing:
-# If nothing is explicitly set, then MODERL_REGRESS=Yes and default
-# target 'test' is used. Otherwise, if MODERL_REGRESS=eunit, then
-# REGRESS_TARGET=eunit
-.if defined(NO_REGRESS) && ${NO_REGRESS:L:Mno}
-.  if ! defined(MODERL_REGRESS) || \
-     defined(MODERL_REGRESS) && ${MODERL_REGRESS:L:Myes}
-         REGRESS_TARGET ?= test
-.  elif defined(MODERL_REGRESS) && ${MODERL_REGRESS:L:Mno}
-     NO_REGRESS = yes
-.  elif defined(MODERL_REGRESS) && ${MODERL_REGRESS:L:Meunit}
-     REGRESS_TARGET ?= eunit
+# If nothing is explicitly set, then MODERL_TEST=Yes and default
+# target 'test' is used. Otherwise, if MODERL_TEST=eunit, then
+# TEST_TARGET=eunit
+.if defined(NO_TEST) && ${NO_TEST:L:Mno}
+.  if ! defined(MODERL_TEST) || \
+     defined(MODERL_TEST) && ${MODERL_TEST:L:Myes}
+         TEST_TARGET ?= test
+.  elif defined(MODERL_TEST) && ${MODERL_TEST:L:Mno}
+     NO_TEST = yes
+.  elif defined(MODERL_TEST) && ${MODERL_TEST:L:Meunit}
+     TEST_TARGET ?= eunit
 .endif
 .endif
 

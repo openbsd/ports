@@ -1,4 +1,4 @@
-# $OpenBSD: ghc.port.mk,v 1.27 2013/01/20 17:51:14 kili Exp $
+# $OpenBSD: ghc.port.mk,v 1.28 2013/03/11 11:20:27 espie Exp $
 # Module for Glasgow Haskell Compiler
 
 # Not yet ported to other architectures
@@ -110,8 +110,8 @@ do-install:
 .   endif
 .  endif
 
-.  if !target(do-regress)
-do-regress:
+.  if !target(do-test)
+do-test:
 	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
 		${MODGHC_SETUP_PROG} test
 .  endif

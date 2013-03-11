@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/03 21:40:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 11:23:50 espie Exp $
 
 COMMENT=	mh-e like mail user agent
 
@@ -11,9 +11,6 @@ MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/cue/snap/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c crypto z
 
@@ -33,6 +30,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/cue
 	${INSTALL_DATA} ${WRKSRC}/cue.hlp  ${PREFIX}/share/doc/cue
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 .include <bsd.port.mk>

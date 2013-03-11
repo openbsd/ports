@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/04/16 08:07:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:23:56 espie Exp $
 
 COMMENT =		computing the convex hull
 
@@ -13,9 +13,6 @@ HOMEPAGE =		http://www.qhull.org/
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c m stdc++
 
@@ -25,7 +22,7 @@ EXTRACT_SUFX =		.tgz
 
 MODULES =		devel/cmake
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 CFLAGS +=		-fno-strict-aliasing
 CONFIGURE_ARGS +=	-DDOC_INSTALL_DIR=${PREFIX}/share/doc/qhull

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2013/02/09 14:49:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2013/03/11 11:23:57 espie Exp $
 
 COMMENT=		free Norton Commander clone with many useful features
 
@@ -13,9 +13,6 @@ EXTRACT_SUFX=		.tar.bz2
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c m pcre pthread termcap glib-2.0 gmodule-2.0 slang
 

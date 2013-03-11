@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/11/05 08:24:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2013/03/11 11:23:56 espie Exp $
 
 COMMENT=	astrology program for X11 and alpha-numeric terminals
 
@@ -20,8 +20,6 @@ DISTFILES=	${EXTRACT_ONLY} ${EPHEM}
 
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	No
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		X11 c m pthread-stubs xcb
 
@@ -31,7 +29,7 @@ DIST_SUBDIR=	astrolog
 ALL_TARGET=	astrolog
 WRKDIST=	${WRKDIR}
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 _V=		${V:S/.//}
 SUBST_VARS=	_V

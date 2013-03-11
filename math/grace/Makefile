@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2013/02/09 14:49:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2013/03/11 11:23:54 espie Exp $
 
 COMMENT=	GRaphing, Advanced Computation and Exploration of data
 
@@ -10,9 +10,6 @@ HOMEPAGE=	http://plasma-gate.weizmann.ac.il/Grace/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m z
 
 GRACE_SITES=	ftp://plasma-gate.weizmann.ac.il/pub/ \
@@ -41,12 +38,12 @@ FLAVOR?=
 
 .if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS+=	--without-x
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 .  if ${FLAVOR:Mxmhtml}
 ERRORS+=	"Fatal: Flavors 'no_x11' and 'xmhtml' are mutually exclusive."
 .  endif
 .else
-REGRESS_IS_INTERACTIVE=	x11
+TEST_IS_INTERACTIVE=	x11
 LIB_DEPENDS+=		x11/openmotif
 WANTLIB+=		ICE SM X11 Xext Xmu Xpm Xt Xm
 MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'

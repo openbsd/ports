@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2013/02/09 14:49:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2013/03/11 11:23:57 espie Exp $
 
 COMMENT-main=		service daemon that monitors one or more GPSes
 COMMENT-x11=		GUI test apps using gpsd
@@ -23,9 +23,6 @@ MAINTAINER=		Chris Kuethe <ckuethe@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_BERLIOS:=gpsd/}
 

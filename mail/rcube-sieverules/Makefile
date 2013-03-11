@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/01/03 22:41:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 11:23:53 espie Exp $
 
 COMMENT=	roundcube plugin: sieve rules (managesieve)
 
@@ -11,14 +11,11 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://spacehopper.org/mirrors/
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 PKG_ARCH=	*
 
 PREFIX=		/var/www

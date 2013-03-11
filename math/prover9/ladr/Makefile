@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/09/08 14:48:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 11:23:56 espie Exp $
 
 COMMENT=		Library for Automated Deduction Research
 
@@ -18,7 +18,7 @@ UTIL_FILES=		utilities/attack \
 
 MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS}"
 
-REGRESS_TARGET=		test1 test2 test3
+TEST_TARGET=		test1 test2 test3
 
 BIN_DIR=		${PREFIX}/libexec/prover9/
 EXAMPLE_DIR=		${PREFIX}/share/examples/prover9/
@@ -38,7 +38,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/mace4.examples/* ${EXAMPLE_DIR}/mace4/
 	${INSTALL_DATA} ${WRKSRC}/prover9.examples/* ${EXAMPLE_DIR}/prover9/
 
-do-regress:
-	@cd ${WRKSRC} && ${MAKE_ENV} ${MAKE_PROGRAM} ${REGRESS_TARGET}
+do-test:
+	@cd ${WRKSRC} && ${MAKE_ENV} ${MAKE_PROGRAM} ${TEST_TARGET}
 
 .include <bsd.port.mk>

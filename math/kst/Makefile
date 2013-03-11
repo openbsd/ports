@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/01/25 09:42:06 zhuk Exp $
+# $OpenBSD: Makefile,v 1.21 2013/03/11 11:23:55 espie Exp $
 
 CATEGORIES=	math x11/kde
 COMMENT=	data viewing/plotting tool
@@ -17,9 +17,6 @@ HOMEPAGE=	http://kst-plot.kde.org/kst1/
 
 # GPLv2+, LGPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		x11/kde devel/gettext
 MODKDE_VERSION=		3.5.3

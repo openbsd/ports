@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2011/05/11 12:57:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2013/03/11 11:23:50 espie Exp $
 
 COMMENT=	Cubic Circle's POP3 daemon
 
@@ -14,8 +14,6 @@ PATCH_DIST_STRIP= -p1
 
 PERMIT_PACKAGE_CDROM=	no fee
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	no fee
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 MAKE_FLAGS=	CFLAGS="${CFLAGS} -DINET6" LDFLAGS="" MD5_OBJ=""
@@ -27,7 +25,7 @@ pre-configure:
 		mv ${f}.new ${f}
 .endfor
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	cd ${WRKSRC}; ${INSTALL_PROGRAM} cucipop makevpopdb ${PREFIX}/libexec

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2012/08/18 12:41:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/11 11:20:28 espie Exp $
 
 COMMENT=	fast POSIX-compliant awk
 
@@ -10,16 +10,13 @@ MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 # GPL V2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c m
 
 CONFIGURE_STYLE= gnu old
 
 ALL_TARGET=	mawk
-REGRESS_TARGET=	mawk_test
+TEST_TARGET=	mawk_test
 USE_GROFF =	Yes
 
 do-install:

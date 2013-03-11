@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2013/02/09 14:49:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2013/03/11 11:23:51 espie Exp $
 
 COMMENT=		new MH mail handling program
 
@@ -10,9 +10,6 @@ HOMEPAGE=		http://www.nongnu.org/nmh/
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c crypto edit ncurses ssl termcap
 
@@ -46,7 +43,7 @@ CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS+=	--with-cyrus-sasl
 .endif
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 post-install:
 	${INSTALL_SCRIPT} ${PREFIX}/share/doc/nmh/contrib/replyfilter \

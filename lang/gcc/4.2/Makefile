@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2013/02/04 21:23:40 tobiasu Exp $
+# $OpenBSD: Makefile,v 1.94 2013/03/11 11:20:27 espie Exp $
 
 # TODO: hppa mips64 mips64el sparc
 ONLY_FOR_ARCHS = alpha i386 sparc64 powerpc amd64 arm sh
@@ -74,7 +74,7 @@ USE_LIBTOOL =	Yes
 BUILD_DEPENDS += devel/bison
 
 
-REGRESS_DEPENDS = 	devel/dejagnu \
+TEST_DEPENDS = 	devel/dejagnu \
 			devel/autogen
 
 DISTNAME =   	gcc-${FULL_VERSION}
@@ -89,7 +89,7 @@ MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC} ${WRKSRC}/gcc
 LANGS = c
 .if ${BUILD_PACKAGES:M-c++}
 LANGS := ${LANGS},c++
-REGRESS_DEPENDS += 	libstdc++->=4.2,<4.3|libstdc++->=4.2v0,<4.3v0:${BUILD_PKGPATH},-estdc
+TEST_DEPENDS += 	libstdc++->=4.2,<4.3|libstdc++->=4.2v0,<4.3v0:${BUILD_PKGPATH},-estdc
 .endif
 .if ${BUILD_PACKAGES:M-f95}
 LANGS := ${LANGS},fortran
@@ -109,7 +109,7 @@ DISTFILES += ${ADASTRAP-${MACHINE_ARCH}}:0
 CONFIGURE_ENV = ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
 MAKE_ENV = ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
 CC = ${WRKDIR}/bin/egcc
-REGRESS_DEPENDS += ${BUILD_PKGPATH},-ada
+TEST_DEPENDS += ${BUILD_PKGPATH},-ada
 .endif
 
 post-extract:

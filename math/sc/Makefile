@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/06/26 09:48:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 11:23:56 espie Exp $
 
 COMMENT=	curses spreadsheet-calculator program
 
@@ -12,13 +12,10 @@ MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 
 # Public Domain
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c curses m termcap
 
 USE_GROFF=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

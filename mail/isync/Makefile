@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/02 12:39:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/11 11:23:51 espie Exp $
 
 COMMENT=	synchronize IMAP4 and maildir mailboxes
 
@@ -10,9 +10,6 @@ HOMEPAGE=	http://isync.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c crypto ssl lib/db4/db>=4
 

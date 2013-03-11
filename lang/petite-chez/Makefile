@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/11/11 20:12:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 11:20:28 espie Exp $
 
 ONLY_FOR_ARCHS =	i386
 COMMENT =		high-speed threaded Scheme interpreter
@@ -18,7 +18,6 @@ MAINTAINER =		Aaron W. Hsu <arcfide@sacrideo.us>
 # A few ambiguities, so err on the side of caution
 PERMIT_PACKAGE_CDROM =	Ambiguous
 PERMIT_PACKAGE_FTP =	Ambiguous
-PERMIT_DISTFILES_CDROM =Ambiguous
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c curses m pthread z
@@ -33,7 +32,7 @@ CONFIGURE_ARGS =	--machine=${MACHINE-TYPE} \
 			--threads
 USE_GROFF =		Yes
 			
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}/csv7.4
 WRKSRC =		${WRKDIST}/custom

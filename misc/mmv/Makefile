@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/18 20:52:09 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/11 11:23:57 espie Exp $
 
 COMMENT=	move/copy/append/link multiple files with wildcards
 
@@ -14,8 +14,6 @@ PATCHFILES=	mmv.pch.Z:0
 
 PERMIT_PACKAGE_CDROM=	no fee
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	no fee
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 DIST_SUBDIR=	${DISTNAME}
@@ -28,6 +26,6 @@ USE_GROFF =	Yes
 post-extract:
 	@cd ${WRKSRC} && cat mmv.c.? >mmv.c && rm mmv.c.?
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

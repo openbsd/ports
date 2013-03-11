@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/03/14 08:51:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 11:23:53 espie Exp $
 
 COMMENT=	spam relay database
 
@@ -13,14 +13,11 @@ MAINTAINER=	Daniel Hartmeier <dhartmei@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/relaydb ${PREFIX}/bin

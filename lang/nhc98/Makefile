@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2012/12/21 18:16:09 landry Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 11:20:28 espie Exp $
 
 COMMENT=	portable Haskell compiler
 
@@ -18,9 +18,6 @@ DISTFILES=	nhc98src-$V.tar.gz
 
 # BSDish
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c m
 
@@ -35,6 +32,6 @@ CONFIGURE_ARGS=		--prefix=${PREFIX} \
 # worse than with a cc-built nhc, so still stick with cc.
 CONFIGURE_ARGS+=--buildwith=cc
 
-REGRESS_TARGET=	test
+TEST_TARGET=	test
 
 .include <bsd.port.mk>

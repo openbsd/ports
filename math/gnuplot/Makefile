@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2011/12/05 22:36:54 espie Exp $
+# $OpenBSD: Makefile,v 1.54 2013/03/11 11:23:54 espie Exp $
 
 COMMENT =	command-driven interactive function plotting program
 
@@ -13,9 +13,6 @@ HOMEPAGE =	http://www.gnuplot.info/
 
 # see Copyright in source
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	c m ncurses readline stdc++ termcap z
 
@@ -37,7 +34,7 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include/libpng" \
 
 FAKE_FLAGS =		appdefaultdir="${PREFIX}/lib/X11/app-defaults/"
 
-REGRESS_IS_INTERACTIVE =	x11
+TEST_IS_INTERACTIVE =	x11
 
 SUBST_VARS =	V
 

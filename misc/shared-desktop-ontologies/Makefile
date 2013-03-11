@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/10/11 14:43:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 11:23:58 espie Exp $
 
 COMMENT = 		shared desktop ontologies
 PKG_ARCH =		*
@@ -14,12 +14,9 @@ MASTER_SITES = 		${MASTER_SITE_SOURCEFORGE:=oscaf/}
 
 # BSD - CC-BY
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		devel/cmake
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 .include <bsd.port.mk>

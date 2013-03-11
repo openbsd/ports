@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/12/17 22:01:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/11 11:23:53 espie Exp $
 
 COMMENT=	postfix greylist daemon
 
@@ -15,12 +15,9 @@ MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 NO_BUILD=		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		devel/p5-Net-Server \

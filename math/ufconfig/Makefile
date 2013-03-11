@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/11/01 09:35:09 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:23:56 espie Exp $
 
 PKG_ARCH =	*
 
@@ -14,9 +14,6 @@ HOMEPAGE =	http://www.cise.ufl.edu/research/sparse/UFconfig/
 
 # LGPL
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	${HOMEPAGE}
 WRKDIST =	${WRKDIR}/UFconfig
