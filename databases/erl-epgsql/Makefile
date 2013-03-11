@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/10 19:35:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 02:52:04 espie Exp $
 
 COMMENT=	Erlang PostgreSQL client
 
@@ -12,8 +12,6 @@ HOMEPAGE=	https://github.com/opscode/epgsql
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://distfiles.nl/
 
@@ -25,7 +23,7 @@ ALL_TARGET=	#empty
 FAKE_TARGET=	app
 
 # Should actually have a 'dialyzer' target which creates the PLT on the fly.
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 # The 'app' target creates a nice directory for us to actually install.
 post-install:

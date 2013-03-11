@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/10 19:35:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 02:52:04 espie Exp $
 
 COMMENT=	Erlang database layer
 
@@ -11,8 +11,6 @@ CATEGORIES=	databases
 
 # Apache2
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	http://distfiles.nl/
 
@@ -23,7 +21,7 @@ BUILD_DEPENDS=	databases/erl-Emysql \
 		devel/erl-pooler
 
 ALL_TARGET=	compile
-MODERL_REGRESS= eunit
+MODERL_TEST= eunit
 
 do-install:
 	${INSTALL_DATA_DIR} ${ERL_LIBDIR}/{ebin,include,src}

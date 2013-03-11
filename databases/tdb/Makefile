@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/09/26 09:30:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 02:52:09 espie Exp $
 
 COMMENT=	trivial database library
 
@@ -10,9 +10,6 @@ MAINTAINER=	Nicholas Marriott <nicm@users.sourceforge.net>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2011/12/20 11:39:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2013/03/11 02:52:07 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -18,10 +18,7 @@ CATEGORIES=		databases
 HOMEPAGE=		http://python-ldap.sourceforge.net/
 
 # Python
-PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
 
 WANTLIB-main=		crypto ssl ${MODPY_WANTLIB}
 
@@ -42,7 +39,7 @@ post-install:
 	cd ${WRKSRC}; tar cf - Demo | tar xf - -C ${EXAMPLESDIR}
 	find ${WRKINST} -name \*.egg-info -exec rm {} \;
 
-do-regress: fake
+do-test: fake
 	@cd ${WRKSRC}/Tests/Lib && ${MAKE_ENV} \
 		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
 		${MODPY_BIN} ./test_ldapurl.py

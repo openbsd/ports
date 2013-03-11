@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/08/23 14:54:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 02:52:07 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -17,9 +17,6 @@ LIB_DEPENDS =	databases/postgresql
 MAINTAINER=	Markus Friedl <markus@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c pq>=3
 
@@ -30,6 +27,6 @@ CONFIGURE_ENV+=	POSTGRES_HOME="${LOCALBASE}" \
 CONFIGURE_STYLE=perl
 
 # needs a database properly set up
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

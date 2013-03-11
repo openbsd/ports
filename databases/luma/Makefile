@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/01/02 20:40:21 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 02:52:05 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -13,9 +13,6 @@ HOMEPAGE=	http://luma.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=luma/}
 
@@ -25,7 +22,7 @@ RUN_DEPENDS=	x11/py-qt4 \
 		x11/gtk+2,-guic \
 		databases/py-ldap
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 # install the damn templates
 post-install:

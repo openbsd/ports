@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2012/07/10 15:22:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 02:52:05 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -12,10 +12,7 @@ MASTER_SITES=	${HOMEPAGE}
 HOMEPAGE=	http://www.nessie.de/mroth/lua-sqlite3/
 
 # MIT
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB += sqlite3>=8
 
@@ -27,8 +24,8 @@ CONFIGURE_ARGS+=--with-lua-dir=${PREFIX} \
 		--with-lua-includedir=${MODLUA_INCL_DIR}
 CFLAGS+=	-fPIC -DPIC
 
-REGRESS_DEPENDS=${BASE_PKGPATH}
-REGRESS_TARGET=	check
+TEST_DEPENDS=${BASE_PKGPATH}
+TEST_TARGET=	check
 
 pre-install:
 	@rm -f ${WRKSRC}/examples/path.lua

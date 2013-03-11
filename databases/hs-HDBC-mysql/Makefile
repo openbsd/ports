@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/01/20 17:58:07 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 02:52:05 espie Exp $
 
 COMMENT=		mysql driver for HDBC
 
@@ -12,9 +12,6 @@ MAINTAINER=		David Coppa <dcoppa@openbsd.org>
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES=		lang/ghc
 

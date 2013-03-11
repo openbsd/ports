@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/12/19 01:47:25 jmatthew Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 02:52:08 espie Exp $
 
 COMMENT=			distributed data store
 DISTNAME=			riak-1.2.0
@@ -10,9 +10,6 @@ MAINTAINER=			Jonathan Matthew <jmatthew@openbsd.org>
 
 # Apache License 2.0
 PERMIT_PACKAGE_CDROM=		Yes
-PERMIT_PACKAGE_FTP=		Yes
-PERMIT_DISTFILES_CDROM=		Yes
-PERMIT_DISTFILES_FTP=		Yes
 
 MASTER_SITES=			http://downloads.basho.com.s3-website-us-east-1.amazonaws.com/riak/1.2/1.2.0/
 

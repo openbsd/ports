@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2012/11/30 13:31:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 02:52:05 espie Exp $
 
 BROKEN-hppa=	undefined reference to `__sync_fetch_and_add_8'
 BROKEN-mips64=	undefined reference to `__sync_fetch_and_add_8'
@@ -16,9 +16,6 @@ HOMEPAGE=	http://fallabs.com/kyotocabinet/
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c m pthread stdc++ z
 

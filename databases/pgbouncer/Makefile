@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2012/10/16 13:21:12 pea Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/11 02:52:07 espie Exp $
 
 COMMENT = 	lightweight connection pooler for PostgreSQL
 
@@ -11,10 +11,7 @@ HOMEPAGE = 	http://wiki.postgresql.org/wiki/PgBouncer
 MAINTAINER = 	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_FTP = 	Yes
 PERMIT_PACKAGE_CDROM = 	Yes
-PERMIT_DISTFILES_FTP = 	Yes
-PERMIT_DISTFILES_CDROM =Yes
 
 WANTLIB = 	c event
 
@@ -34,6 +31,6 @@ USE_GROFF =		Yes
 # The actual regress tests are (cd ${WRKSRC}/test; ./test.sh)
 # They want to create full postgres install and also play with 
 # firewall (iptables)
-NO_REGRESS = 		Yes
+NO_TEST = 		Yes
 
 .include <bsd.port.mk>

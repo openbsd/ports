@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/10 19:45:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 02:52:04 espie Exp $
 
 COMMENT=	Erlang CouchDB framework
 
@@ -12,8 +12,6 @@ HOMEPAGE=	https://github.com/opscode/couchbeam
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://distfiles.nl/
 
@@ -26,7 +24,7 @@ RUN_DEPENDS=	devel/erl-ejson \
 		www/erl-mochiweb
 
 # needs a running couchdb instance
-REGRESS_IS_INTERACTIVE=	Yes
+TEST_IS_INTERACTIVE=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${ERL_LIBDIR}/{ebin,include,src}

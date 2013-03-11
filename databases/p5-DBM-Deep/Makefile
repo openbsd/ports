@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/12/03 11:44:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 02:52:06 espie Exp $
 
 COMMENT=	perl multi-level hash/array DBM that supports transactions
 
@@ -11,9 +11,6 @@ MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 MODULES=	cpan
 USE_GROFF =	Yes

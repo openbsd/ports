@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2012/04/08 22:01:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/11 02:52:05 espie Exp $
 
 COMMENT=	model class for catalyst
 
@@ -10,9 +10,6 @@ MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	devel/p5-Carp-Clan \
 		www/p5-Catalyst-Component-InstancePerContext \
@@ -33,9 +30,9 @@ RUN_DEPENDS=	devel/p5-Carp-Clan \
 		devel/p5-namespace-autoclean \
 		devel/p5-namespace-clean
 
-REGRESS_DEPENDS=	databases/p5-DBD-SQLite \
-			devel/p5-Test-Exception \
-			devel/p5-Test-Requires
+TEST_DEPENDS=	databases/p5-DBD-SQLite \
+		devel/p5-Test-Exception \
+		devel/p5-Test-Requires
 
 MAKE_ENV+=	TEST_POD=Yes \
 		C_M_DBIC_SCHEMA_TESTAPP=Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/12/03 11:44:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/11 02:52:06 espie Exp $
 
 COMMENT=	extensions to Class::DBI for MySQL
 
@@ -12,17 +12,14 @@ MAINTAINER=	Sam Smith <S@msmith.net>
 
 # Same as Perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	databases/p5-Class-DBI \
 		databases/p5-DBD-mysql
-REGRESS_DEPENDS=databases/mysql,-server
+TEST_DEPENDS=	databases/mysql,-server
 
-REGRESS_IS_INTERACTIVE=Yes
+TEST_IS_INTERACTIVE=Yes
 
-pre-regress:
+pre-test:
 	@mysqladmin ping >/dev/null 2>&1 || (echo 'mysql needs to be running'; exit 1)
 	-@mysqladmin create test >/dev/null 2>&1
 

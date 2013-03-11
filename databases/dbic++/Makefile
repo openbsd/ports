@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2012/09/28 07:52:14 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/11 02:52:04 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -16,9 +16,6 @@ SHARED_LIBS +=  dbdsqlite3                1.0 # 1.0
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 # port-lib-depends-check says that e2fs-uuid and pcrecpp are
 # Extra, but they are used in a .a file that doesn't have a
@@ -40,7 +37,7 @@ CONFIGURE_ARGS+=	-DCMAKE_MYSQL_VERSION=${LIBdbdmysql_VERSION} \
 
 WRKDIST=		${WRKDIR}/deepfryed-dbicpp
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 post-extract:
 	mv ${WRKDIR}/deepfryed-dbicpp-* ${WRKDIR}/deepfryed-dbicpp

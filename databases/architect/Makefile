@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/09/16 08:48:02 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 02:52:04 espie Exp $
 
 PKG_ARCH=		*
 
@@ -19,15 +19,12 @@ MAINTAINER=		Ian Darwin <ian@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		java
 MODJAVA_VER =		1.6+
 
 NO_BUILD=		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/architect/jdbc

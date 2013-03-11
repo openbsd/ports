@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/01/29 02:26:17 william Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 02:52:08 espie Exp $
 
 COMMENT=	high-performance server that centralizes key/data pairs
 
@@ -12,16 +12,13 @@ MAINTAINER=	William Yodlowsky <william@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c event
 
 MASTER_SITES=	http://download.pureftpd.org/pub/sharedance/
 
 CONFIGURE_STYLE=	simple
 
-REGRESS_TARGET= 	check
+TEST_TARGET= 	check
 
 EXAMPLESDIR=	${PREFIX}/share/examples/sharedance
 PHP_SCRIPTS=	session_handler.php sharedance.php \

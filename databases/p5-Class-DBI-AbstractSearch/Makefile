@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/12/03 11:44:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 02:52:06 espie Exp $
 
 COMMENT=	abstract Class::DBI's SQL with SQL::Abstract
 
@@ -12,12 +12,9 @@ USE_GROFF =	Yes
 
 # Same as Perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	databases/p5-Class-DBI \
 		databases/p5-SQL-Abstract-Limit
-REGRESS_DEPENDS=databases/p5-DBD-SQLite
+TEST_DEPENDS=	databases/p5-DBD-SQLite
 
 .include <bsd.port.mk>

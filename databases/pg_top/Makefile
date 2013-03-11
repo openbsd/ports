@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2012/07/10 12:08:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/11 02:52:07 espie Exp $
 
 COMMENT =	top for monitoring PostgreSQL processes
 
@@ -14,9 +14,6 @@ MAINTAINER=	Okan Demirmen <okan@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	c kvm m termcap
 

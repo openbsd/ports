@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2012/11/20 22:17:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/11 02:52:09 espie Exp $
 
 COMMENT=	SQL shell for FreeTDS
 
@@ -10,9 +10,6 @@ HOMEPAGE=	http://www.sqsh.org/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c ct>=2 curses m readline
 
@@ -27,7 +24,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		SYBASE="${LOCALBASE}"
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 ALL_TARGET=
 FAKE_TARGET=	install install.man

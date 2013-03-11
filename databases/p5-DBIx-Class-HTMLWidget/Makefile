@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/04/07 14:27:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 02:52:06 espie Exp $
 
 COMMENT=	publish DBIx::Class on the web
 
@@ -8,9 +8,6 @@ MODULES=	cpan
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	databases/p5-DBIx-Class \
 		www/p5-HTML-Widget

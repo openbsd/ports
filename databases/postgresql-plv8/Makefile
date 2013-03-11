@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/12/20 16:16:34 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 02:52:07 espie Exp $
 
 # v8 only works on these arches currently
 ONLY_FOR_ARCHS =	amd64 i386
@@ -17,9 +17,6 @@ MAINTAINER =		Jeremy Evans <jeremy@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c m stdc++ v8 execinfo pthread
 
@@ -34,10 +31,10 @@ MAKE_FLAGS =		V8DIR=${LOCALBASE}/lib
 USE_GMAKE =		Yes
 
 # Need to start the PostgreSQL server first
-REGRESS_IS_INTERACTIVE=	Yes
-REGRESS_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH}
+TEST_IS_INTERACTIVE=	Yes
+TEST_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH}
 
-do-regress:
+do-test:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} PGUSER=postgres \
 		gmake installcheck
 

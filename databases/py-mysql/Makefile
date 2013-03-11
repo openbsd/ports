@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2011/11/04 08:16:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.42 2013/03/11 02:52:07 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -16,10 +16,7 @@ HOMEPAGE =	http://mysql-python.sourceforge.net/
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # GPL
-PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
 
 WANTLIB =	crypto m pthread ssl z ${MODPY_WANTLIB}
 WANTLIB +=	lib/mysql/mysqlclient_r>=14
@@ -29,7 +26,7 @@ MASTER_SITES =  ${MASTER_SITE_SOURCEFORGE:=mysql-python/}
 MODULES =	lang/python
 LIB_DEPENDS =	databases/mysql
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 MODPY_SETUPTOOLS = Yes
 

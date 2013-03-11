@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2012/08/23 14:54:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/11 02:52:06 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,9 +11,6 @@ USE_GROFF =	Yes
 
 # GPL/Artistic License
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c m
 
@@ -29,6 +26,6 @@ CONFIGURE_ENV+=	SYBASE=${LOCALBASE}
 CONFIGURE_ARGS=	--chained=y --accept_test_defaults
 
 # after building, edit ${WRKSRC}/PWD to point at an available server
-REGRESS_IS_INTERACTIVE=	Yes
+TEST_IS_INTERACTIVE=	Yes
 
 .include <bsd.port.mk>

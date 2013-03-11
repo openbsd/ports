@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.211 2013/02/08 15:51:56 brad Exp $
+# $OpenBSD: Makefile,v 1.212 2013/03/11 02:52:05 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -24,9 +24,6 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m pthread
 
 LOCALSTATEDIR=	${BASELOCALSTATEDIR}/mysql
@@ -77,7 +74,7 @@ WANTLIB-server=		${WANTLIB} crypto mysqlclient ssl wrap z
 WANTLIB-main=		${WANTLIB} crypto ncursesw readline ssl z
 WANTLIB-tests=		${WANTLIB}
 
-REGRESS_TARGET=		test-force
+TEST_TARGET=		test-force
 
 post-install:
 	cd ${PREFIX}/lib && \

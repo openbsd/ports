@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2012/04/23 17:15:17 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/11 02:52:07 espie Exp $
 
 COMMENT =	SQLite3 adapter for Python
 
@@ -16,10 +16,7 @@ HOMEPAGE =	http://code.google.com/p/pysqlite/
 MASTER_SITES =	http://pysqlite.googlecode.com/files/
 
 # BSD-like
-PERMIT_PACKAGE_FTP =	Yes
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_DISTFILES_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
 
 WANTLIB +=	sqlite3>=8.6 ${MODPY_WANTLIB}
 BUILD_DEPENDS =	textproc/py-sphinx
@@ -39,7 +36,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/build/doc/sqlite3.txt \
 		${PREFIX}/share/doc/py-sqlite2/
 
-do-regress: fake
+do-test: fake
 	@cd ${WRKDIR} && \
 		${SETENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
 		${MODPY_BIN} -c 'from pysqlite2 import test; test.test()'

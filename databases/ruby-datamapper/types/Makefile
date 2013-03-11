@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2012/09/23 16:57:32 jeremy Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 02:52:08 espie Exp $
 
 COMMENT =	extra types for DataMapper models
 
@@ -11,7 +11,7 @@ RUN_DEPENDS =	databases/ruby-datamapper/core,${MODRUBY_FLAVOR}${DM_REL_VER_SPEC}
 		devel/ruby-uuidtools,${MODRUBY_FLAVOR}>=2.1.1,<2.2 \
 		devel/ruby-stringex,${MODRUBY_FLAVOR}>=1.1.0,<1.2
 
-REGRESS_DEPENDS =	${MODRUBY_ICONV_DEPENDS} \
+TEST_DEPENDS =	${MODRUBY_ICONV_DEPENDS} \
 			databases/ruby-do_sqlite3,${MODRUBY_FLAVOR} \
 			textproc/ruby-fastercsv,${MODRUBY_FLAVOR} \
 			devel/ruby-uuidtools,${MODRUBY_FLAVOR}

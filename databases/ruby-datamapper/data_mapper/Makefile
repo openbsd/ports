@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/09/23 16:57:32 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 02:52:08 espie Exp $
 
 COMMENT =	ruby Object Relational Mapper
 
@@ -15,6 +15,6 @@ RUN_DEPENDS =	databases/ruby-datamapper/core,${MODRUBY_FLAVOR}=${VERSION} \
 		databases/ruby-datamapper/types,${MODRUBY_FLAVOR}=${VERSION} \
 		databases/ruby-datamapper/validations,${MODRUBY_FLAVOR}=${VERSION} \
 
-REGRESS_DEPENDS =	databases/ruby-do_sqlite3,${MODRUBY_FLAVOR}
+TEST_DEPENDS =	databases/ruby-do_sqlite3,${MODRUBY_FLAVOR}
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/09/16 08:48:04 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 02:52:08 espie Exp $
 
 COMMENT =		Object Relational Manager
 
@@ -15,15 +15,12 @@ MAINTAINER =		Martynas Venckus <martynas@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${MASTER_SITE_PYPI:=S/SQLObject/}
 
 MODULES =		lang/python
 RUN_DEPENDS =		www/py-formencode
-REGRESS_DEPENDS =	${RUN_DEPENDS} \
+TEST_DEPENDS =	${RUN_DEPENDS} \
 			devel/py-nose \
 			devel/py-py
 
@@ -36,7 +33,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/*.py \
 		${PREFIX}/share/examples/py-sqlobject/
 
-do-regress:
+do-test:
 	cd ${WRKSRC}/sqlobject/tests && ${LOCALBASE}/bin/py.test
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2013/01/09 17:41:16 jeremy Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/11 02:52:08 espie Exp $
 
 COMMENT =		lightweight database library and ORM for Ruby
 
@@ -11,16 +11,13 @@ MAINTAINER =		Jeremy Evans <jeremy@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM = Yes
-PERMIT_PACKAGE_FTP = Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP = Yes
 
 MODULES =		lang/ruby
 
 CONFIGURE_STYLE =	ruby gem
 
-REGRESS_DEPENDS =	databases/ruby-sqlite3,${MODRUBY_FLAVOR}
-MODRUBY_REGRESS =	rake rspec
-MODRUBY_REGRESS_TARGET = spec spec_plugin spec_sqlite
+TEST_DEPENDS =	databases/ruby-sqlite3,${MODRUBY_FLAVOR}
+MODRUBY_TEST =	rake rspec
+MODRUBY_TEST_TARGET = spec spec_plugin spec_sqlite
 
 .include <bsd.port.mk>

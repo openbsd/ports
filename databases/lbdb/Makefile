@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/09/16 08:48:03 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 02:52:05 espie Exp $
 
 COMMENT-main =		little brother's database, email address query tools
 COMMENT-ldap =		LDAP support for lbdb
@@ -19,9 +19,6 @@ MULTI_PACKAGES =	-main -ldap
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 RUN_DEPENDS-ldap =	databases/p5-ldap \
 			databases/lbdb

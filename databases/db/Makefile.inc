@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.31 2011/10/17 10:10:59 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.32 2013/03/11 02:52:04 espie Exp $
 
 COMMENT-main=	Berkeley DB package, revision ${REV}
 COMMENT-tcl=	TCL bindings for Berkeley DB, revision ${REV}
@@ -11,9 +11,6 @@ MASTER_SITES=	http://download.oracle.com/berkeley-db/
 # License: BSD + SleepyCat's additions.
 # Must purchase license to redistribute if not distributing the source.
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 USE_LIBTOOL=		Yes
 
@@ -60,13 +57,13 @@ CONFIGURE_ARGS+=--enable-tcl \
 # this compiles slightly different code, some tests fail nevertheless
 #CONFIGURE_ARGS+=--enable-test
 
-do-regress:
+do-test:
 	@cd ${WRKBUILD}; env PATH=${PORTPATH} ${MODTCL_BIN} ${FILESDIR}/regress.tcl
 
 .else
 CONFIGURE_ARGS+=--disable-tcl
 # regression tests need tcl
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 .endif
 
 .if ${BUILD_PACKAGES:M-java}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2012/12/21 18:25:57 fgsch Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 02:52:07 espie Exp $
 
 COMMENT =	Python library for working with CouchDB
 
@@ -13,16 +13,13 @@ HOMEPAGE =	http://code.google.com/p/couchdb-python/
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	${MASTER_SITE_PYPI:=C/CouchDB/}
 
 MODULES =	lang/python
 
 RUN_DEPENDS =	${MODPY_JSON}
-REGRESS_DEPENDS = databases/apache-couchdb \
+TEST_DEPENDS = databases/apache-couchdb \
 		  ${BASE_PKGPATH}
 
 MODPY_SETUPTOOLS =	Yes
@@ -30,7 +27,7 @@ MODPY_SETUPTOOLS =	Yes
 # To run the tests, start apache-couchdb using the default configuration.
 # Alternatively, the tests will use the COUCHDB_URI environment variable
 # to connect to the database.
-REGRESS_IS_INTERACTIVE = Yes
+TEST_IS_INTERACTIVE = Yes
 
 post-install:
 	$(INSTALL_DATA_DIR) ${PREFIX}/share/examples/py-couchdb

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2012/09/05 20:10:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.68 2013/03/11 02:52:06 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,18 +11,15 @@ CATEGORIES=	databases
 LIB_DEPENDS=	databases/postgresql
 RUN_DEPENDS=	databases/p5-DBI>=1.52
 BUILD_DEPENDS=	${RUN_DEPENDS}
-REGRESS_DEPENDS=databases/postgresql,-server \
+TEST_DEPENDS=databases/postgresql,-server \
 		devel/p5-Test-Warn
 
-REGRESS_FLAGS=	DBI_DSN="dbi:Pg:dbname=template1" DBI_USER="_postgresql" \
+TEST_FLAGS=	DBI_DSN="dbi:Pg:dbname=template1" DBI_USER="_postgresql" \
 		DBI_PASS=""
 
 MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB+=	c m pq>=2
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/04/22 05:55:52 landry Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 02:52:06 espie Exp $
 
 COMMENT= 	database OO schema for Jifty
 
@@ -10,9 +10,6 @@ CATEGORIES=	databases www
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	devel/p5-Test-Warn
 RUN_DEPENDS=	databases/p5-DBI \
@@ -37,6 +34,6 @@ RUN_DEPENDS=	databases/p5-DBI \
 		www/p5-URI
 
 # a lot of tests will be skipped without DB connections
-REGRESS_DEPENDS=databases/p5-DBD-SQLite
+TEST_DEPENDS=databases/p5-DBD-SQLite
 
 .include <bsd.port.mk>

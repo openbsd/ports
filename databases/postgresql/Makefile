@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.171 2013/02/07 17:29:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.172 2013/03/11 02:52:07 espie Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
@@ -24,9 +24,6 @@ MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c com_err crypto m readline ssl termcap z
 
 MASTER_SITES= 	ftp://ftp5.us.postgresql.org/pub/PostgreSQL/source/v${VERSION}/ \
@@ -111,11 +108,11 @@ MAKE_ENV=	LIBpq_MAJOR=${LIBpq_VERSION:R} \
 #
 #	$ ulimit -p 128
 #	$ ulimit -n 1024
-#	$ make regress NO_REGRESS=No
+#	$ make test NO_TEST=No
 #
 # Note, you may also need to change a variety of SYSV IPC parameters.
 # See pkg/README-server for more details
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 DOCS=	${WRKSRC}/COPYRIGHT ${WRKSRC}/HISTORY \
 	${WRKSRC}/INSTALL ${WRKSRC}/README \

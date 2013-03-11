@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2012/10/14 22:07:08 stsp Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 02:52:05 espie Exp $
 
 COMMENT=	Open source LDAP software (server)
 
@@ -11,9 +11,6 @@ CATEGORIES=	databases net
 HOMEPAGE=	http://www.openldap.org/
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += asn1 c com_err crypto gssapi krb5 m perl pthread ssl
 WANTLIB += util wrap sasl2
@@ -58,7 +55,7 @@ CONFIGURE_ARGS+=	 --enable-slurpd
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/build
 
-REGRESS_TARGET=	test
+TEST_TARGET=	test
 
 LIB_DEPENDS+=		security/cyrus-sasl2
 CPPFLAGS+=		-I${LOCALBASE}/include/sasl

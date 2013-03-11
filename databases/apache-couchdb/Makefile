@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/02/07 17:28:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 02:52:04 espie Exp $
 
 COMMENT =	distributed, document-oriented database
 
@@ -11,9 +11,6 @@ HOMEPAGE =	http://couchdb.apache.org/
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =	devel/gettext
 
@@ -45,7 +42,7 @@ CONFIGURE_ARGS = ${CONFIGURE_SHARED} \
 # The 'erl -version' test in configure needs HOME to be set.
 CONFIGURE_ENV =	HOME=${PORTHOME}
 
-REGRESS_TARGET = check
+TEST_TARGET = check
 PORTHOME =	${WRKDIR}
 
 SUBST_VARS +=	COUCH_VER

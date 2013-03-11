@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2012/11/29 05:32:04 espie Exp $
+# $OpenBSD: Makefile,v 1.69 2013/03/11 02:52:08 espie Exp $
 
 COMMENT-main=	embedded SQL implementation
 COMMENT-tcl=	TCL bindings for Sqlite3
@@ -19,9 +19,6 @@ HOMEPAGE=	http://www.sqlite.org/
 
 # PD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB-main=	c ncurses pthread readline
 WANTLIB-lemon=	c
@@ -60,13 +57,13 @@ CONFIGURE_ARGS+=--with-tcl=${MODTCL_LIBDIR}
 CONFIGURE_ARGS+=TCLSH_CMD="${MODTCL_BIN}"
 CONFIGURE_ENV += TCLLIBDIR=${MODTCL_TCLDIR}/sqlite3
 
-REGRESS_TARGET=	test
+TEST_TARGET=	test
 
 .else
 CONFIGURE_ARGS+=--disable-tcl
 CONFIGURE_ARGS+=TCLSH_CMD=none
 CONFIGURE_ENV += CFLAGS=-I"${WRKSRC}/ext/fts3"
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 .endif
 
 # Don't include dependency on pthreads, weak pthread functions are

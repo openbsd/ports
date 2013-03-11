@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2012/08/23 14:54:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/11 02:52:06 espie Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	perl interface to gdbm
@@ -12,9 +12,6 @@ CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../../src/}
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB +=	c gdbm
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.120 2013/01/03 11:52:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.121 2013/03/11 02:52:05 espie Exp $
 
 COMMENT-main =		open-source LDAP software (client)
 COMMENT-server =	open-source LDAP software (server)
@@ -24,9 +24,6 @@ HOMEPAGE =	http://www.openldap.org/
 
 # OpenLDAP Public License
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += c crypto ssl asn1 com_err gssapi krb5 sasl2
 
@@ -81,7 +78,7 @@ CONFIGURE_ARGS +=	--enable-aci
 
 MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC} ${WRKSRC}/build
 
-REGRESS_TARGET =	test
+TEST_TARGET =	test
 
 MULTI_PACKAGES =	-main -server
 

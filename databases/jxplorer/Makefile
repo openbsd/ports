@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/12/15 21:53:25 kili Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/11 02:52:05 espie Exp $
 
 COMMENT=	standards compliant LDAP browser
 
@@ -13,9 +13,6 @@ HOMEPAGE=	http://www.pegacat.com/jxplorer/
 
 # CA Open Source Licence v1.0
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=jxplorer/}
 WRKDIST=	${WRKDIR}/jxplorer
@@ -26,7 +23,7 @@ MODJAVA_VER=	1.5+
 RUN_DEPENDS=	java/javaPathHelper
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-configure:
 	@cp ${FILESDIR}/jxplorer ${WRKSRC}

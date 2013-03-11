@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2012/11/15 00:04:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 02:52:09 espie Exp $
 
 COMMENT =	document indexer
 CATEGORIES =	databases devel textproc sysutils
@@ -15,9 +15,6 @@ MASTER_SITES =	http://spacehopper.org/mirrors/ \
 
 # LGPLv2+
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 SHARED_LIBS +=  searchclient       2.0
 SHARED_LIBS +=  streamanalyzer     2.0

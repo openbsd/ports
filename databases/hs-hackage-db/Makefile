@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/01/25 13:34:48 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 02:52:05 espie Exp $
 
 COMMENT =		access to the Hackage database via Data.Map
 
@@ -9,9 +9,6 @@ MAINTAINER =		Matthias Kilian <kili@openbsd.org>
 
 # BSD3
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		lang/ghc
 

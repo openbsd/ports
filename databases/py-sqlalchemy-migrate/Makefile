@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/01/10 17:50:23 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 02:52:07 espie Exp $
 
 COMMENT =		schema migration tools for SQLAlchemy
 
@@ -12,9 +12,6 @@ HOMEPAGE =		http://code.google.com/p/sqlalchemy-migrate/
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		http://sqlalchemy-migrate.googlecode.com/files/
 
@@ -25,7 +22,7 @@ RUN_DEPENDS =		databases/py-sqlalchemy \
 			devel/py-decorator \
 			www/py-tempita
 
-# regress needs unported py-cfgparse & py-scripttest
-NO_REGRESS =		Yes
+# test needs unported py-cfgparse & py-scripttest
+NO_TEST =		Yes
 
 .include <bsd.port.mk>

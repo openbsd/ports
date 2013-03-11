@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2011/11/03 14:27:05 nigel Exp $
+# $OpenBSD: Makefile,v 1.24 2013/03/11 02:52:07 espie Exp $
 
 COMMENT=	administration and development platform for PostgreSQL
 
@@ -12,9 +12,6 @@ MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # Artistic license
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	converters/libiconv
 

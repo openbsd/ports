@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2012/10/17 20:22:46 pea Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/11 02:52:08 espie Exp $
 
 COMMENT=	PostgreSQL tools from Skype
 
@@ -12,10 +12,7 @@ HOMEPAGE=	http://pgfoundry.org/projects/skytools
 MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
 
 WANTLIB= 	c ${MODPY_WANTLIB}
 
@@ -27,7 +24,7 @@ BUILD_DEPENDS=	databases/postgresql,-server
 
 RUN_DEPENDS=    databases/py-psycopg2
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
 

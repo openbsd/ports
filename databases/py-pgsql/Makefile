@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/12/20 11:26:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 02:52:07 espie Exp $
 
 COMMENT =	Python DB-API 2.0 compliant interface to PostgreSQL
 
@@ -14,9 +14,6 @@ MAINTAINER =	Pierre-Emmanuel Andre <pea@raveland.org>
 
 # Python
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=pypgsql/}
 
@@ -25,27 +22,27 @@ MODULES =	lang/python
 BUILD_DEPENDS =		databases/postgresql
 RUN_DEPENDS =		devel/py-mxDateTime
 LIB_DEPENDS =		databases/postgresql
-REGRESS_DEPENDS =	${RUN_DEPENDS}
+TEST_DEPENDS =	${RUN_DEPENDS}
 WANTLIB +=		pq>=5 ${MODPY_WANTLIB}
 
 # To run the tests, create and start a test database as follows:
 #     createdb -E UNICODE pypgsql
 #     createlang plpgsql pypgsql
-# The regress target will use the PGUSER, PGPASSWORD and PGHOST
+# The test target will use the PGUSER, PGPASSWORD and PGHOST
 # environment variables to connect to the database; see below for
 # defaults.
-REGRESS_IS_INTERACTIVE = Yes
+TEST_IS_INTERACTIVE = Yes
 
 PGUSER ?=		regressuser
 PGPASSWORD ?=		regresspass
 PGHOST ?=		localhost
-REGRESS_ENV =		"PGUSER=${PGUSER}" \
+TEST_ENV =		"PGUSER=${PGUSER}" \
 			"PGPASSWORD=${PGPASSWORD}" \
 			"PGHOST=${PGHOST}"
 
-do-regress: fake
+do-test: fake
 	cd ${WRKSRC} && ${SETENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
-		${REGRESS_ENV} ${MODPY_BIN} ./test/PgSQLTestCases.py
+		${TEST_ENV} ${MODPY_BIN} ./test/PgSQLTestCases.py
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-pgsql

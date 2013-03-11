@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2012/11/22 21:26:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2013/03/11 02:52:05 espie Exp $
 
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
@@ -18,10 +18,7 @@ HOMEPAGE=	http://www.freetds.org/
 # exception for "anything that is normally distributed...with the major
 # components...of the operating system on which the executable runs,
 # unless that component itself accompanies the executable."
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB += c crypto iodbc iodbcinst ncurses pthread readline ssl
 
@@ -40,7 +37,7 @@ BUILD_DEPENDS=  devel/doxygen,no_gui,bootstrap>=1.7.2 \
 LIB_DEPENDS=	databases/iodbc,-main
 
 # requires database server
-REGRESS_IS_INTERACTIVE=Yes
+TEST_IS_INTERACTIVE=Yes
 
 USE_LIBTOOL=	Yes
 USE_GROFF=	Yes

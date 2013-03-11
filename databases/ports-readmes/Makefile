@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2012/11/16 15:57:52 bentley Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 02:52:07 espie Exp $
 
 COMMENT =		readmes.html
 
@@ -9,9 +9,6 @@ DISTFILES =
 CATEGORIES =		databases
 
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 BUILD_DEPENDS =	databases/sqlports,-compact>=2.2 \
 		databases/p5-DBD-SQLite \

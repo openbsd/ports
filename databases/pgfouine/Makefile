@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/11/16 15:56:37 robert Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 02:52:07 espie Exp $
 
 COMMENT =	PostgreSQL log analyzer
 
@@ -12,16 +12,13 @@ HOMEPAGE =	http://pgfouine.projects.postgresql.org/
 MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_FTP =	Yes
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_DISTFILES_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
 
 MASTER_SITES =	http://pgfoundry.org/frs/download.php/2575/ \
 		http://pgfouine.projects.postgresql.org/releases/
 
 NO_BUILD =	Yes
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 PKG_ARCH =	*
 
 MODULES =	lang/php

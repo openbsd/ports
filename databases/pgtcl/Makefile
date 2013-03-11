@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2012/10/15 15:18:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/11 02:52:07 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -14,9 +14,6 @@ MAINTAINER=	Valery Masiutsin <val.masutin@gmail.com>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/2151/
 
@@ -37,7 +34,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		SHLIB_VERSION=${LIBpgtcl17_VERSION}
 
 FAKE_FLAGS=	PKG_DIR=pgtcl INSTALL_LIBRARY='${INSTALL_DATA}' PKG_HEADERS=
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 WRKDIST =	${WRKDIR}/lib${DISTNAME}
 ALL_TARGET =	 binaries libraries
 INSTALL_TARGET =install-binaries install-libraries

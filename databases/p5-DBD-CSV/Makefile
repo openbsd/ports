@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/06/27 18:41:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 02:52:06 espie Exp $
 
 COMMENT=	perl DBI driver for CSV files
 
@@ -12,9 +12,6 @@ MAINTAINER=	Chris Kuethe <ckuethe@ualberta.ca>
 
 # Perl
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 CPAN_AUTHOR=	HMBRAND
 

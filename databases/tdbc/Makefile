@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/02/07 07:15:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 02:52:09 espie Exp $
 
 COMMENT =	Tcl Database Connectivity
 
@@ -11,9 +11,6 @@ MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tcl/}
 MODULES =		lang/tcl
@@ -35,6 +32,6 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			SHLIB_VERSION=${LIBtdbc100_VERSION}
 
 AUTOCONF_VERSION =	2.59
-REGRESS_TARGET =	test
+TEST_TARGET =	test
 
 .include <bsd.port.mk>

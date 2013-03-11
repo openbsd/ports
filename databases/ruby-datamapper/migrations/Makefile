@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2012/09/23 16:57:32 jeremy Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/11 02:52:08 espie Exp $
 
 COMMENT =	write and specify DataMapper migrations
 
@@ -7,6 +7,6 @@ REVISION =	2
 
 RUN_DEPENDS =	databases/ruby-datamapper/core,${MODRUBY_FLAVOR}${DM_REL_VER_SPEC}
 
-REGRESS_DEPENDS =	databases/ruby-do_sqlite3,${MODRUBY_FLAVOR}
+TEST_DEPENDS =	databases/ruby-do_sqlite3,${MODRUBY_FLAVOR}
 
 .include <bsd.port.mk>

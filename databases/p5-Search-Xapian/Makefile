@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2012/10/25 14:06:26 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 02:52:07 espie Exp $
 
 COMMENT=		perl bindings for the xapian search library
 
@@ -11,9 +11,6 @@ HOMEPAGE=		http://xapian.org/
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		m stdc++ xapian
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2012/11/12 13:37:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/11 02:52:08 espie Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	RDF framework
@@ -16,9 +16,6 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=soprano/}
 
 # GPL/LGPL
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =  c m stdc++
 WANTLIB += lib/qt4/QtCore lib/qt4/QtDBus lib/qt4/QtNetwork lib/qt4/QtXml
@@ -39,8 +36,8 @@ RUN_DEPENDS =	devel/desktop-file-utils
 CONFIGURE_ARGS =	-DSOPRANO_DISABLE_SESAME2_BACKEND:Bool=Yes \
 			-DSOPRANO_BUILD_TESTS:Bool=Yes
 
-REGRESS_DEPENDS =	x11/dbus
-REGRESS_IS_INTERACTIVE = X11
+TEST_DEPENDS =	x11/dbus
+TEST_IS_INTERACTIVE = X11
 
 post-extract:
 	cd ${WRKDIST}/cmake/modules && \

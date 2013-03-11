@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/11/04 08:16:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2013/03/11 02:52:08 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -14,9 +14,6 @@ MASTER_SITES=	${HOMEPAGE}download/
 
 # BSD 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	lang/python \
 		devel/gettext
@@ -28,7 +25,7 @@ LIB_DEPENDS =	databases/freetds
 WANTLIB +=	ct>=1 ${MODPY_WANTLIB}
 
 MAKE_ENV+=	SYBASE="${LOCALBASE}"
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-sybase
 

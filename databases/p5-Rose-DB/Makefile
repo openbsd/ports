@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/12/03 11:44:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 02:52:06 espie Exp $
 
 COMMENT=	DBI wrapper and abstraction layer
 
@@ -11,9 +11,6 @@ CATEGORIES=	databases
 
 # Same as Perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	math/p5-Bit-Vector \
 		devel/p5-DateTime-Format-Pg \
@@ -26,5 +23,5 @@ RUN_DEPENDS=	math/p5-Bit-Vector \
 		devel/p5-Clone \
 		devel/p5-YAML-Syck
 
-REGRESS_FLAGS +=	AUTOMATED_TESTING=1
+TEST_FLAGS +=	AUTOMATED_TESTING=1
 .include <bsd.port.mk>

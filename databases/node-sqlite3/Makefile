@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/12/05 00:41:34 abieber Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 02:52:05 espie Exp $
 
 COMMENT =	sqlite3 bindings for Node.js
 
@@ -15,9 +15,6 @@ HOMEPAGE =	https://github.com/developmentseed/node-sqlite3
 
 # MIT
 PERMIT_PACKAGE_CDROM = Yes
-PERMIT_PACKAGE_FTP = Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP = Yes
 
 MODULES =		lang/node
 
@@ -28,7 +25,7 @@ WANTLIB =	sqlite3
 BUILD_DEPENDS =	${RUN_DEPENDS}
 
 # needs expresso and further love
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKDIST}/binding.gyp  
