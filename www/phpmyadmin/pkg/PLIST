@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.42 2013/01/18 15:17:43 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.43 2013/03/11 09:46:13 giovanni Exp $
 @group daemon
 phpMyAdmin/
 @comment phpMyAdmin/.travis.yml
@@ -515,6 +515,9 @@ phpMyAdmin/locale/it/LC_MESSAGES/phpmyadmin.mo
 phpMyAdmin/locale/ja/
 phpMyAdmin/locale/ja/LC_MESSAGES/
 phpMyAdmin/locale/ja/LC_MESSAGES/phpmyadmin.mo
+phpMyAdmin/locale/ko/
+phpMyAdmin/locale/ko/LC_MESSAGES/
+phpMyAdmin/locale/ko/LC_MESSAGES/phpmyadmin.mo
 phpMyAdmin/locale/lt/
 phpMyAdmin/locale/lt/LC_MESSAGES/
 phpMyAdmin/locale/lt/LC_MESSAGES/phpmyadmin.mo
