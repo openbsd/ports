@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2013/03/11 01:30:26 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2013/03/11 01:41:41 espie Exp $
 
 COMMENT=	Chinese(Big5) VT100 terminal emulator for X
 
@@ -13,6 +13,8 @@ MASTER_SITES=   ftp://ftp.tw.openbsd.org/pub/OpenBSD/distfiles/ \
 MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   no license
+PERMIT_PACKAGE_FTP=     no license
+PERMIT_DISTFILES_FTP=   no license
 
 WANTLIB=		c X11
 
