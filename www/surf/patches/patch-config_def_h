@@ -1,25 +1,27 @@
-$OpenBSD: patch-config_def_h,v 1.2 2012/10/30 18:27:55 zinke Exp $
---- config.def.h.orig	Thu Jul 12 12:42:19 2012
-+++ config.def.h	Tue Oct 30 18:28:18 2012
-@@ -7,7 +7,7 @@ static char *stylefile      = ".surf/style.css";
- static char *scriptfile     = ".surf/script.js";
- static char *cookiefile     = ".surf/cookies.txt";
+$OpenBSD: patch-config_def_h,v 1.3 2013/03/11 17:08:51 bcallah Exp $
+--- config.def.h.orig	Sun Mar 10 22:54:36 2013
++++ config.def.h	Sun Mar 10 22:59:08 2013
+@@ -12,7 +12,7 @@ static char *stylefile      = "~/.surf/style.css";
+ static char *scriptfile     = "~/.surf/script.js";
+ static char *cookiefile     = "~/.surf/cookies.txt";
  static time_t sessiontime   = 3600;
 -static char *cafile         = "/etc/ssl/certs/ca-certificates.crt";
 +static char *cafile         = "/etc/ssl/cert.pem";
  static char *strictssl      = FALSE; /* Refuse untrusted SSL connections */
- #define HIDE_BACKGROUND FALSE
- #define SPATIAL_BROWSING TRUE
-@@ -18,9 +18,9 @@ static char *strictssl      = FALSE; /* Refuse untrust
- 	p, q, winid, NULL } }
- #define DOWNLOAD(d) {			  \
+ static int   indicator_thickness = 2;
+ 
+@@ -35,11 +35,9 @@ static Bool hidebackground  = FALSE;
+ /* DOWNLOAD(URI, referer) */
+ #define DOWNLOAD(d, r) { \
  	.v = (char *[]){ "/bin/sh", "-c", \
--	"xterm -e \"wget '$0' \
----load-cookies ~/.surf/cookies.txt \
----user-agent '$1' ; sleep 5\"", d, useragent, NULL } }
-+	"xterm -e \"ftp '$0' \
-+-c ~/.surf/cookies.txt \
-+; sleep 5\"", d, NULL } }
- #define MODKEY GDK_CONTROL_MASK
- static Key keys[] = {
-     /* modifier	            keyval      function    arg             Focus */
+-		"st -e /bin/sh -c \"curl -J -O --user-agent '$1'" \
+-		" --referer '$2'" \
+-		" -b ~/.surf/cookies.txt -c ~/.surf/cookies.txt '$0';" \
+-		" sleep 5;\"", \
+-		d, useragent, r, NULL \
++		"xterm -e \"ftp '$0' \
++		-c ~/.surf/cookies.txt \
++		; sleep 5\"", d, NULL \
+ 	} \
+ }
+ 

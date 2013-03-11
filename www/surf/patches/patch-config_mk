@@ -1,8 +1,8 @@
-$OpenBSD: patch-config_mk,v 1.4 2012/10/30 18:27:55 zinke Exp $
+$OpenBSD: patch-config_mk,v 1.5 2013/03/11 17:08:51 bcallah Exp $
 use TRUEPREFIX instead of patching Makefile to remove DESTDIR
---- config.mk.orig	Sun Oct 28 18:52:06 2012
-+++ config.mk	Sun Oct 28 18:59:47 2012
-@@ -4,23 +4,22 @@ VERSION = 0.5
+--- config.mk.orig	Sun Mar 10 22:59:36 2013
++++ config.mk	Sun Mar 10 23:01:27 2013
+@@ -4,22 +4,22 @@ VERSION = 0.6
  # Customize below to fit your system
  
  # paths
@@ -16,24 +16,23 @@ use TRUEPREFIX instead of patching Makefile to remove DESTDIR
  
 -GTKINC = `pkg-config --cflags gtk+-2.0 webkit-1.0`
 -GTKLIB = `pkg-config --libs gtk+-2.0 webkit-1.0`
-+GTKINC!= pkg-config --cflags gtk+-2.0 webkit-1.0
-+GTKLIB!= pkg-config --libs gtk+-2.0 webkit-1.0
++GTKINC != pkg-config --cflags gtk+-2.0 webkit-1.0
++GTKLIB != pkg-config --libs gtk+-2.0 webkit-1.0
  
  # includes and libs
 -INCS = -I. -I/usr/include -I${X11INC} ${GTKINC}
 -LIBS = -L/usr/lib -lc -L${X11LIB} -lX11 ${GTKLIB} -lgthread-2.0
--#       -ljavascriptcoregtk-1.0
 +INCS = ${GTKINC}
 +LIBS = -pthread ${GTKLIB}
  
  # flags
- CPPFLAGS = -DVERSION=\"${VERSION}\"
+ CPPFLAGS = -DVERSION=\"${VERSION}\" -D_BSD_SOURCE
 -CFLAGS = -std=c99 -pedantic -Wall -Os ${INCS} ${CPPFLAGS}
 +CFLAGS += -std=c99 ${INCS} ${CPPFLAGS}
  LDFLAGS = -g ${LIBS}
  
  # Solaris
-@@ -28,4 +27,4 @@ LDFLAGS = -g ${LIBS}
+@@ -27,4 +27,4 @@ LDFLAGS = -g ${LIBS}
  #LDFLAGS = ${LIBS}
  
  # compiler and linker
