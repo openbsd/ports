@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/06/02 13:41:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:07:38 espie Exp $
 
 COMMENT =		commander keen clone
 DISTNAME =		clonekeen-src-84
@@ -15,9 +15,6 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 LIB_DEPENDS = 		devel/sdl
 WANTLIB =		SDL c m pthread stdc++
@@ -25,7 +22,7 @@ WANTLIB =		SDL c m pthread stdc++
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=clonekeen/}
 
 USE_X11 =		Yes
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 # LDFLAGS only used at link time
 CPPFLAGS = 	-I${LOCALBASE}/include

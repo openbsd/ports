@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2011/03/14 09:17:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2013/03/11 11:07:41 espie Exp $
 
 COMMENT=	colorful solitaire Mah Jongg game for X11
 
@@ -10,9 +10,6 @@ HOMEPAGE=	http://www.lcdf.org/~eddietwo/xmahjongg/
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB=	ICE SM X11 c m pthread-stubs stdc++ xcb
 

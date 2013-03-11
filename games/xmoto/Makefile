@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/09/19 08:15:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 11:07:41 espie Exp $
 
 COMMENT =	challenging 2D motocross platform game
 
@@ -15,9 +15,6 @@ MASTER_SITES =	http://download.tuxfamily.org/xmoto/xmoto/${V}/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += GL GLU SDL SDL_mixer SDL_net SDL_ttf X11 bz2 c curl jpeg
 WANTLIB += ${MODLUA_WANTLIB} m ode png pthread sqlite3 stdc++ xdg-basedir xml2 z
@@ -48,7 +45,7 @@ CONFIGURE_ENV =		CPPFLAGS="`pkg-config --cflags libpng sqlite3 sdl ${MODLUA_DEP}
 AUTOMAKE_VERSION =	1.11
 AUTOCONF_VERSION =	2.68
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}/${DISTNAME:S/-src//}
 

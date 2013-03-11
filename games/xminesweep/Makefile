@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/11/16 11:23:29 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/11 11:07:41 espie Exp $
 
 COMMENT=	Windows minesweeper
 
@@ -12,13 +12,11 @@ EXTRACT_SUFX=	.tar.Z
 
 PERMIT_PACKAGE_CDROM=	no fee
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	no fee
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xpm Xt c pthread-stubs xcb
 
 CONFIGURE_STYLE=imake
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

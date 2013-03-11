@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/16 09:48:09 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:06:05 espie Exp $
 
 COMMENT=	Scalable PostScript fonts for MetaFont
 
@@ -11,10 +11,7 @@ HOMEPAGE=	http://lilypond.org/mftrace/
 MAINTAINER=	Matt Jibson <dolmant@gmail.com>
 
 # GPL
-PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
 
 MASTER_SITES=	http://lilypond.org/download/sources/mftrace/
 
@@ -35,6 +32,6 @@ CONFIGURE_ARGS=	PYTHON=${MODPY_BIN}
 MAKE_FILE=	GNUmakefile
 FAKE_FLAGS=	MODPY_SITEPKG=${MODPY_SITEPKG}
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

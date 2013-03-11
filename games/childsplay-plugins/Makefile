@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/16 09:48:09 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 11:07:38 espie Exp $
 
 COMMENT=	additional games modules for childsplay
 
@@ -15,9 +15,6 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=childsplay/}
 
@@ -26,7 +23,7 @@ RUN_DEPENDS=	games/childsplay>=0.84
 
 PKG_ARCH=	*
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g;' \

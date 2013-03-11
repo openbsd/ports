@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/16 11:23:29 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 11:07:42 espie Exp $
 
 DISTNAME=	xscavenger-1.4.4
 REVISION =	2
@@ -7,9 +7,6 @@ CATEGORIES=	games
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xext c pthread-stubs sndio xcb
 
@@ -18,7 +15,7 @@ HOMEPAGE=	http://www.xdr.com/dash/scavenger.html
 MASTER_SITES=	http://www.xdr.com/dash/
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 CONFIGURE_STYLE= imake
 WRKSRC=		${WRKDIST}/src

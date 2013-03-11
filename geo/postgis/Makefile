@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/02/24 14:45:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 11:07:43 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -12,9 +12,6 @@ MAINTAINER=	Landry Breuil <landry@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}download/
 
@@ -52,7 +49,7 @@ post-install:
 # the garden regress suite needs postgis installed
 # no the regular test suite
 # some tests are known to fail, hence the || to stop the db
-do-regress:
+do-test:
 	regdir=$$(mktemp -t -d postgis-regress.XXXX) && \
 	LC_CTYPE=C initdb -D $${regdir} && \
 	LD_PRELOAD=libpthread.so pg_ctl -D $${regdir} -o '-p 12341' -l $${regdir}/log start && \

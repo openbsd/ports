@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2013/02/05 18:13:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.64 2013/03/11 11:02:49 espie Exp $
 
 COMMENT-main=		GNU editor: extensible, customizable, self documenting
 COMMENT-el=		elisp sources for those who want to read/modify them
@@ -21,9 +21,6 @@ HOMEPAGE=		http://www.gnu.org/software/emacs/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_GNU:=emacs/}
 DISTFILES=		emacs-${VERSION}a.tar.gz leim-${VERSION}.tar.gz
@@ -74,6 +71,6 @@ RUN_DEPENDS-main=
 
 PKG_ARCH-el=		*
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 .include <bsd.port.mk>

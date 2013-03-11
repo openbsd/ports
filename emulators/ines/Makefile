@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/15 23:22:08 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/11 11:06:04 espie Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -12,9 +12,6 @@ CATEGORIES=	emulators games
 HOMEPAGE=	http://www.komkon.org/fms/iNES/
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 EXTRACT_SUFX=	.tar.Z
@@ -22,7 +19,7 @@ EXTRACT_SUFX=	.tar.Z
 RUN_DEPENDS=	emulators/fedora/base
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 WRKDIST=	${WRKDIR}
 
 do-install:

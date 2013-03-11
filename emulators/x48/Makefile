@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/11/23 19:36:44 pascal Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/11 11:06:04 espie Exp $
 
 COMMENT=		HP48sx emulator
 
@@ -9,9 +9,6 @@ MAINTAINER=		Todd T. Fries <todd@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		X11 Xext c ncurses readline util
 
@@ -28,7 +25,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		LIBS="-lncurses -lutil"
 CONFIGURE_ARGS=		--with-appdefaultdir="${LOCALBASE}/lib/X11/app-defaults"
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 WRKDIST=		${WRKDIR}
 

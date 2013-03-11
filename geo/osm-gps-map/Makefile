@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2012/05/15 11:48:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/11 11:07:42 espie Exp $
 
 COMMENT=		Gtk+ Widget for Displaying OpenStreetMap tiles
 
@@ -11,9 +11,6 @@ HOMEPAGE=		http://nzjrs.github.com/osm-gps-map/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.johnstowers.co.nz/files/osm-gps-map/
 

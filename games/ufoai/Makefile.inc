@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2011/05/27 07:20:11 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2013/03/11 11:07:41 espie Exp $
 
 CATEGORIES = 	games games/ufoai
 
@@ -13,5 +13,4 @@ MASTER_SITES = 	${MASTER_SITE_SOURCEFORGE:=ufoai/}
 # Next release is planned to be fully free.
 PERMIT_PACKAGE_CDROM =  No
 PERMIT_PACKAGE_FTP =    No
-PERMIT_DISTFILES_CDROM =No
 PERMIT_DISTFILES_FTP =  No

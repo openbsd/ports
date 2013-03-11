@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/16 09:48:09 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:06:04 espie Exp $
 
 COMMENT=		asian font pack for acroread
 
@@ -12,7 +12,6 @@ MAINTAINER=		Yozo TODA <yozo@v007.vaio.ne.jp>
 
 PERMIT_PACKAGE_CDROM=	commercial software
 PERMIT_PACKAGE_FTP=	commercial software
-PERMIT_DISTFILES_CDROM= commercial software
 PERMIT_DISTFILES_FTP=	Adobe are control freaks
 
 MASTER_SITES=		http://download.adobe.com/pub/adobe/acrobatreader/unix/5.x/

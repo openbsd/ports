@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2012/12/19 20:09:13 kirby Exp $
+# $OpenBSD: Makefile,v 1.51 2013/03/11 11:07:41 espie Exp $
 
 COMMENT=	fantasy turn-based strategy game
 
@@ -15,9 +15,6 @@ EXTRACT_SUFX=	.tar.bz2
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL ICE SDL SDL_image SDL_mixer SDL_net SDL_ttf SM X11
 WANTLIB += Xext Xrender boost_iostreams-mt boost_program_options-mt
@@ -52,7 +49,7 @@ CONFIGURE_ARGS+=-DFIFO_DIR=/var/wesnothd \
 USE_LIBTOOL=	Yes
 SEPARATE_BUILD=	flavored
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 FLAVORS=	lite
 FLAVOR?=

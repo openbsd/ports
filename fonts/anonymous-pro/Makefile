@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/05/21 14:34:59 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:06:04 espie Exp $
 
 COMMENT = 	fixed width sans font designed especially for coders
 PKG_ARCH =	*
@@ -14,12 +14,9 @@ HOMEPAGE =	http://www.ms-studio.com/FontSales/anonymouspro.html
 
 # OFL http://scripts.sil.org/OFL
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 NO_BUILD =	Yes
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 FONTSDIR =	${PREFIX}/lib/X11/fonts/anonymous-pro
 
 WRKDIST =	${WRKDIR}/${DISTNAME}.001

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/07/11 12:08:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/11 11:07:40 espie Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 
@@ -14,9 +14,6 @@ MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	SDL c m pthread smpeg SDL_mixer SDL_image SDL_net
 
@@ -33,7 +30,7 @@ MAKE_FLAGS =	CC="${CC}" MAKE="${MAKE_PROGRAM}" X11_PATH="${X11BASE}" \
 
 ALL_TARGET =	sdl
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 N = rocksndiamonds
 

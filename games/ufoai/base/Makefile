@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2012/09/21 13:21:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 11:07:41 espie Exp $
 
 SHARED_ONLY = 		Yes
 
@@ -76,7 +76,7 @@ CONFIGURE_ENV +=	CFLAGS="${CFLAGS}" \
 				-I${LOCALBASE}/include/libpng" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -liconv -lexecinfo"
 
-NO_REGRESS = 		Yes
+NO_TEST = 		Yes
 
 ALL_TARGET = 		all uforadiant lang
 INSTALL_TARGET = 	install_exec

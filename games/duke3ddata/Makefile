@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/07/18 20:07:29 rfreeman Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:07:38 espie Exp $
 
 COMMENT =	duke nukem 3d shareware game data
 PKGNAME =	duke3ddata-1.0
@@ -12,13 +12,11 @@ MAINTAINER =	Ryan Freeman <rfreeman@openbsd.org>
 # shareware
 PERMIT_PACKAGE_CDROM =  "Data cannot be put on CDROM"
 PERMIT_PACKAGE_FTP =    Yes
-PERMIT_DISTFILES_CDROM ="Data cannot be put on CDROM"
-PERMIT_DISTFILES_FTP =  Yes
 
 MASTER_SITES =	ftp://ftp.3drealms.com/share/
 DISTFILES =	3dduke13.zip
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 NO_BUILD =	Yes
 PKG_ARCH =	*
 

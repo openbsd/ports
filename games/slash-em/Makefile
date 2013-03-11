@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2011/12/02 14:36:14 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/11 11:07:40 espie Exp $
 
 COMMENT =	dungeon explorin', hackin', game.  Hard
 DISTNAME =	se007e7f1
@@ -14,9 +14,6 @@ MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 WANTLIB =		c termlib
 
 WRKDIST =		${WRKDIR}/slashem-0.0.7E7F1
@@ -49,7 +46,7 @@ WANTLIB +=		X11 Xaw Xext Xmu Xpm Xt pthread-stubs xcb
 
 RUN_DEPENDS =		games/hackdata
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 do-configure:
 	@cd ${WRKSRC}/sys/unix; /bin/sh setup.sh symlinks

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2012/11/13 16:31:40 bentley Exp $
+# $OpenBSD: Makefile,v 1.24 2013/03/11 11:06:04 espie Exp $
 
 COMMENT=	MIPS R2000/R3000 simulator
 
@@ -12,9 +12,6 @@ MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt c m
 
@@ -28,7 +25,7 @@ CONFIGURE_STYLE=	imake
 MAKE_FLAGS=	PREFIX="${PREFIX}" \
 		CC="${CC}"
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-build:
 	(cd ${WRKDIST}/spim; ./Configure && ${MAKE_PROGRAM} ${MAKE_FLAGS})

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/16 11:23:27 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/11 11:07:39 espie Exp $
 
 COMMENT=	jezzball-style, penguin puzzle game
 
@@ -14,9 +14,6 @@ MASTER_SITES=	${HOMEPAGE}1.2.x/
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		SDL X11 Xext c m pthread pthread-stubs usbhid xcb \
 			SDL_mixer smpeg>=1.3
 
@@ -25,7 +22,7 @@ LIB_DEPENDS=	devel/sdl-mixer \
 
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 MAKE_ENV=	prefix="${PREFIX}" \
 		highscoredir="/var/games/icebreaker"
 

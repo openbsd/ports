@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2012/12/21 12:50:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/11 11:07:38 espie Exp $
 
 COMMENT=	32-card trick-taking game
 
@@ -11,9 +11,6 @@ HOMEPAGE=	http://gnomefiles.org/content/show.php/Belooted?content=131848
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://boby.joe.free.fr/dev/belooted/files/
 

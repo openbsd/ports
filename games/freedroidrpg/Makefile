@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2012/09/19 08:15:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/11 11:07:39 espie Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -14,10 +14,7 @@ HOMEPAGE =	http://www.freedroid.org/
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB += GL SDL SDL_gfx SDL_image SDL_mixer X11 c execinfo jpeg
 WANTLIB += ${MODLUA_WANTLIB} m ogg png pthread vorbis z

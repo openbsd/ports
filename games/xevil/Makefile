@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/11/16 11:23:29 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2013/03/11 11:07:41 espie Exp $
 #
 
 COMMENT=	side-view, fast-action, kill everything type of game
@@ -16,9 +16,6 @@ EXTRACT_SUFX=	.zip
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	X11 Xpm c m pthread-stubs stdc++ xcb
 
@@ -30,7 +27,7 @@ MAKE_FILE=	makefile
 ALL_TARGET=	openbsd
 MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" HOSTTYPE=openbsd
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xevil/html

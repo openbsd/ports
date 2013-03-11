@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/11/15 19:17:09 jeremy Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/11 11:02:50 espie Exp $
 
 COMMENT=		flexible and small GTK+ editor
 
@@ -14,8 +14,6 @@ MAINTAINER=		Jeremy Evans <jeremy@openbsd.org>
 # old Python license
 PERMIT_PACKAGE_CDROM=	may not sell
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	may not sell
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c cairo gdk-3 gdk_pixbuf-2.0 glib-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-3 pthread scintilla scintilla_lexers stdc++
@@ -27,7 +25,7 @@ LIB_DEPENDS=		x11/gtk+3 \
 			editors/scintilla
 
 USE_GMAKE=		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 WRKDIST=		${WRKDIR}/scite
 WRKSRC=			${WRKDIST}/gtk
 MAKE_FILE=		makefile

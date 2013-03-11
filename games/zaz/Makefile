@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/02/21 16:21:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:07:42 espie Exp $
 
 COMMENT =	zuma-like arkade game
 DISTNAME =	zaz-1.0.0
@@ -11,9 +11,6 @@ MAINTAINER =	Matthias Kilian <kili@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 WANTLIB =	GL SDL SDL_image c freetype ftgl m ogg pthread stdc++ \
 		theoradec theoraenc vorbis vorbisenc vorbisfile z

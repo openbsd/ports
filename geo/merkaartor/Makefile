@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/01/10 22:39:07 landry Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 11:07:42 espie Exp $
 
 COMMENT =	OpenStreetMap editor
 
@@ -13,13 +13,10 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	http://merkaartor.be/attachments/download/301/
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 MODULES =	devel/gettext x11/qt4
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+2,-guic

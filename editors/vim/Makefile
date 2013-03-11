@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.123 2011/12/02 14:36:14 espie Exp $
+# $OpenBSD: Makefile,v 1.124 2013/03/11 11:02:50 espie Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
@@ -41,9 +41,6 @@ PATCH_LIST=	patch-* sup-vax-*
 
 # donation-ware
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c curses
 
 USE_GROFF =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2011/12/20 11:14:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2013/03/11 11:02:49 espie Exp $
 
 COMMENT =	easy to use, graphical editor
 
@@ -39,9 +39,6 @@ CONFIGURE_ARGS += ${CONFIGURE_SHARED}
 CONFIGURE_ARGS += --enable-static --disable-mail-author
 
 # GPLv2+
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_FTP =	Yes
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_DISTFILES_CDROM =Yes
 
 .include <bsd.port.mk>

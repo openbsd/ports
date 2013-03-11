@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/11/13 23:26:32 fgsch Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/11 11:06:04 espie Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -17,8 +17,6 @@ HOMEPAGE =		http://rbelmont.mameworld.info/?page_id=163
 # MAME Distribution License, see http://mamedev.org/license.html
 PERMIT_PACKAGE_CDROM =		may not sell
 PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	may not sell
-PERMIT_DISTFILES_FTP =		Yes
 
 WANTLIB +=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB +=	Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1
@@ -37,7 +35,7 @@ LIB_DEPENDS =		devel/sdl devel/gconf2 x11/gtk+2
 
 USE_GMAKE =		Yes
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 MAKE_FLAGS =		OPT_FLAGS='-DINI_PATH="\"${SYSCONFDIR}/mess;\""'
 MAKE_ENV =		ARCH=$(ARCH) CC=$(CC) CFLAGS="$(CFLAGS)" LD=$(CC) \

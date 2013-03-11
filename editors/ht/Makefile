@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/01/03 08:23:18 benoit Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/11 11:02:50 espie Exp $
 
 COMMENT =		file editor/viewer/analyzer for executables
 
@@ -11,9 +11,6 @@ MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c m ncursesw stdc++
 

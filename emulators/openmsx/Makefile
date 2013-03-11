@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2012/12/23 03:25:18 bentley Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 11:06:04 espie Exp $
 
 BROKEN-powerpc =CPUCore.cc:2347: error: insn does not satisfy its constraints
 BROKEN-hppa =	OOM when building src/cpu/CPUCore.cc
@@ -15,7 +15,6 @@ MAINTAINER =	Anthony J. Bentley <anthony@cathet.us>
 
 PERMIT_PACKAGE_CDROM =	claims GPLv2, but no copyright notices in source files
 PERMIT_PACKAGE_FTP =	claims GPLv2, but no copyright notices in source files
-PERMIT_DISTFILES_CDROM =claims GPLv2, but no copyright notices in source files
 PERMIT_DISTFILES_FTP =	claims GPLv2, but no copyright notices in source files
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=openmsx/}
@@ -38,7 +37,7 @@ LIB_DEPENDS =	audio/libao \
 		textproc/libxml \
 		${MODTCL_LIB_DEPENDS}
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 MODULES =	converters/libiconv \
 		lang/python \

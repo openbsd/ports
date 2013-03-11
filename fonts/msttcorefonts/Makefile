@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/19 09:16:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:06:05 espie Exp $
 
 COMMENT=		Microsoft TrueType core fonts
 
@@ -13,7 +13,6 @@ MAINTAINER=		Steve Shockley <steve.shockley@shockley.net>
 # Font source files have a restrictive license
 PERMIT_PACKAGE_CDROM=	Restrictive license, can't distribute modified files
 PERMIT_PACKAGE_FTP=	Restrictive license, can't distribute modified files
-PERMIT_DISTFILES_CDROM=	may not sell
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=corefonts/}
@@ -22,7 +21,7 @@ DIST_SUBDIR=		${DISTNAME}
 BUILD_DEPENDS=		archivers/cabextract
 
 NO_BUILD=		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 PKG_ARCH=		*
 
 DISTFILES=		andale32.exe \

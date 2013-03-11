@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/11/15 23:22:08 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/11 11:06:04 espie Exp $
 
 ONLY_FOR_ARCHS=		i386
 
@@ -17,9 +17,6 @@ DISTFILES=		zsnes${VERSION:S/.//}src${EXTRACT_SUFX}
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		GL SDL c m png pthread stdc++ z
 
@@ -42,7 +39,7 @@ ALL_TARGET=
 
 WRKSRC=			${WRKDIST}/src
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 post-extract:
 	rm -fr ${WRKSRC}/obj

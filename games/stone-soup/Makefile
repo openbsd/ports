@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/01/12 16:21:43 stsp Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/11 11:07:40 espie Exp $
 
 COMMENT = 	dungeon crawl stone soup
 CATEGORIES = 	games
@@ -35,9 +35,7 @@ BUILD_DEPENDS = devel/bison \
 		graphics/pngcrush
 
 # Almost nethack...
-PERMIT_DISTFILES_FTP = 	Yes
 PERMIT_PACKAGE_FTP = 	Yes
-PERMIT_DISTFILES_CDROM = No gain
 PERMIT_PACKAGE_CDROM = 	No gain
 
 FLAVORS = 	no_x11
@@ -75,6 +73,6 @@ post-install:
 		${PREFIX}/share/applications
 .endif
 
-NO_REGRESS=Yes
+NO_TEST=Yes
 
 .include <bsd.port.mk>

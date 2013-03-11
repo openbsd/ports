@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile.inc,v 1.5 2013/03/02 12:38:46 sthen Exp $
+#	$OpenBSD: Makefile.inc,v 1.6 2013/03/11 11:07:37 espie Exp $
 
 DIST_SUBDIR ?=	alephone
 
@@ -22,4 +22,4 @@ BUILD_DEPENDS += games/alephone/alephone
 
 
 NO_BUILD =	Yes
-NO_REGRESS =	Yes
+NO_TEST =	Yes

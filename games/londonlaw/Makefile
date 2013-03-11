@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/16 09:48:10 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 11:07:39 espie Exp $
 
 COMMENT=		online multiplayer version of the Scotland Yard game
 
@@ -11,9 +11,6 @@ HOMEPAGE=		http://pessimization.com/software/londonlaw/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}
 
@@ -22,7 +19,7 @@ MODULES=		lang/python
 RUN_DEPENDS=		devel/py-twisted/core \
 			x11/py-wxPython
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/setup.py

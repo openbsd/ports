@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/11/16 11:23:28 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/03/11 11:07:41 espie Exp $
 #
 
 COMMENT=	XEVIOUS-like shooting game
@@ -12,7 +12,6 @@ HOMEPAGE=	http://www.nemoto.ecei.tohoku.ac.jp/~wai/index_e.html
 
 PERMIT_PACKAGE_CDROM=	possible copyright infringement
 PERMIT_PACKAGE_FTP=	possible copyright infringement
-PERMIT_DISTFILES_CDROM=	possible copyright infringement
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xext c m pthread-stubs xcb
@@ -22,7 +21,7 @@ MASTER_SITES=   http://www.nemoto.ecei.tohoku.ac.jp/~wai/Xbat/
 CONFIGURE_STYLE=imake
 WRKDIST=	${WRKDIR}/Xev111
 ALL_TARGET=	xbat
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/Xbat

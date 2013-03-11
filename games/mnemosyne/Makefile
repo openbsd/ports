@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2012/11/06 10:24:20 landry Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/11 11:07:39 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -13,9 +13,6 @@ HOMEPAGE=	http://www.mnemosyne-proj.org/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mnemosyne-proj/}
 
@@ -30,7 +27,7 @@ RUN_DEPENDS=	x11/py-qt4 \
 		www/py-CherryPy \
 		devel/desktop-file-utils
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 MODPY_ADJ_FILES =	${WRKSRC}/mnemosyne/pyqt_ui/mnemosyne
 

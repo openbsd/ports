@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/19 09:13:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:06:05 espie Exp $
 
 COMMENT=	extra japanese fonts, marumoji
 
@@ -27,8 +27,6 @@ EXTRACT_ONLY=
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-PERMIT_DISTFILES_CDROM=	No fee
-PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	No fee
 PERMIT_PACKAGE_FTP=	Yes
 
@@ -43,7 +41,7 @@ post-extract:
 	done
 	@for i in ${ALIASES} ${OTHER}; do cp $(FULLDISTDIR)/$$i ${WRKDIST}; done
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-install:
 	@cd ${FONTDIR} && mv fonts.alias fonts.alias-funet

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/12/06 14:12:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:07:38 espie Exp $
 
 COMMENT =		text adventure game
 
@@ -13,8 +13,6 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 # Commercial use prohibited.
 PERMIT_PACKAGE_CDROM =	no commercial use
 PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =no commercial use
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c termcap
 

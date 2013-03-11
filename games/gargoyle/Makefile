@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/09/16 09:48:10 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/11 11:07:39 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -20,8 +20,6 @@ MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 # Refer to ${WRKSRC}/License.txt.
 PERMIT_PACKAGE_CDROM =	noncommercial only for some parts
 PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =noncommercial only for some parts
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB +=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender c cairo expat fontconfig \
@@ -43,7 +41,7 @@ LIB_DEPENDS =	devel/sdl-sound \
 		graphics/jpeg
 
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}
 

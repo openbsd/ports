@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2011/09/16 09:48:10 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/11 11:07:39 espie Exp $
 
 COMMENT=	puzzle game for KDE
 
@@ -11,9 +11,6 @@ HOMEPAGE=	http://perso.wanadoo.fr/coquelle/taquin/
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=  Yes
-PERMIT_PACKAGE_FTP=    Yes
-PERMIT_DISTFILES_CDROM=Yes
-PERMIT_DISTFILES_FTP=  Yes
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c fam idn jpeg \
 		m png pthread pthread-stubs rpcsvc stdc++ util xcb z \

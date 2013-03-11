@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2012/08/24 08:29:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/11 11:07:42 espie Exp $
 
 MULTI_PACKAGES=	-utils -main -php -perl
 SHARED_ONLY=	Yes
@@ -22,9 +22,6 @@ CATEGORIES=	geo www
 HOMEPAGE=	http://www.mapserver.org/
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MAINTAINER=	Landry Breuil <landry@openbsd.org>
 

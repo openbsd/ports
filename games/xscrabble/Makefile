@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/11/16 11:23:29 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2013/03/11 11:07:42 espie Exp $
 
 COMMENT=	X11 version of the popular board game
 
@@ -17,9 +17,6 @@ MASTER_SITES=	ftp://ftp.ac-grenoble.fr/ge/educational_games/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xpm Xt c pthread-stubs \
 		xcb z bz2>=10
@@ -28,7 +25,7 @@ LIB_DEPENDS=	archivers/bzip2
 
 CONFIGURE_STYLE=imake noman
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 XSCRABBLEDIR=	${PREFIX}/lib/X11/xscrabble
 

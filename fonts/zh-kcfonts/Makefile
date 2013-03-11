@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/19 16:51:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:06:05 espie Exp $
 
 COMMENT=	extra chinese fonts
 
@@ -8,10 +8,7 @@ CATEGORIES=     fonts chinese x11
 
 MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
 
 MASTER_SITES=	http://cle.linux.org.tw/fonts/bitmap/KCFONTS/
 DIST_SUBDIR=    zh-kcfonts
@@ -21,7 +18,7 @@ CONFIGURE_STYLE= imake
 
 EXTRACT_ONLY=
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 PKG_ARCH=	*
 
 FONTS=		kc8x15.pcf.gz kc12x24.pcf.gz kc15f.pcf.gz kc24f.pcf.gz

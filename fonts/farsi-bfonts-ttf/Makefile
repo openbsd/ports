@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/19 09:16:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:06:05 espie Exp $
 
 COMMENT=	farsi bornaray fonts
 
@@ -16,7 +16,6 @@ HOMEPAGE=	http://www.bornaray.com/en_fonts.asp
 # No license
 PERMIT_PACKAGE_CDROM=	No license
 PERMIT_PACKAGE_FTP=	No license
-PERMIT_DISTFILES_CDROM= No license
 PERMIT_DISTFILES_FTP=	No license
 
 MASTER_SITES = 	http://www.borna.ir/download/fonts/ \
@@ -29,7 +28,7 @@ EXTRACT_CASES += *.exe) \
 	${UNZIP} -oq ${FULLDISTDIR}/$$archive -d ${WRKDIR};;
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 PKG_ARCH=	*
 
 FONTSDIR=	${PREFIX}/lib/X11/fonts/farsi-bfonts

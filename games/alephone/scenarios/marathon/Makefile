@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.9 2012/07/13 12:31:31 phessler Exp $
+#	$OpenBSD: Makefile,v 1.10 2013/03/11 11:07:37 espie Exp $
 PKG_ARCH =	*
 
 COMMENT =	marathon one data files
@@ -12,8 +12,6 @@ DISTFILES +=	Marathon_Manual.pdf:4
 # http://trilogyrelease.bungie.org/faq.html
 PERMIT_PACKAGE_CDROM =	not for sale
 PERMIT_PACKAGE_FTP =	YES
-PERMIT_DISTFILES_CDROM = not for sale
-PERMIT_DISTFILES_FTP =	YES
 
 EXTRACT_ONLY =	Marathon-${V}-Data.zip
 INSTALL_LOC =	${PREFIX}/share/alephone
@@ -28,6 +26,6 @@ do-install:
 	${INSTALL_DATA} ${FULLDISTDIR}/Marathon_Manual.pdf ${INSTALL_M}
 
 NO_BUILD =	Yes
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 .include <bsd.port.mk>

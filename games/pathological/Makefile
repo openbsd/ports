@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/09/16 09:48:10 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 11:07:40 espie Exp $
 
 COMMENT=	enriched clone of the game Logical by Rainbow Arts
 
@@ -9,9 +9,6 @@ HOMEPAGE=	http://pathological.sourceforge.net/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pathological/}
@@ -22,7 +19,7 @@ RUN_DEPENDS=	devel/pygame
 BUILD_DEPENDS=	graphics/netpbm
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 DOCDIR=		${PREFIX}/share/doc/pathological
 GAMEDIR=	${PREFIX}/share/pathological

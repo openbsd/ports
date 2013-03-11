@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2012/06/15 08:32:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2013/03/11 11:07:39 espie Exp $
 
 COMMENT=	brain teaser game
 
@@ -13,10 +13,7 @@ HOMEPAGE=	http://live.gnome.org/gbrainy
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
 
 MASTER_SITES=	http://gent.softcatala.org/jmas/gbrainy/
 EXTRACT_SUFX=	.tar.gz

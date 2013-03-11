@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/10/16 15:03:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 11:06:04 espie Exp $
 # $RuOBSD: Makefile,v 1.4 2009/02/05 06:38:32 form Exp $
 
 COMMENT=		DEC Professional 350 emulator based on SIMH
@@ -15,8 +15,6 @@ HOMEPAGE=		http://xhomer.isani.org/xhomer/
 # SIMH + GPLv2
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	No
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		X11 Xext Xxf86dga c m pthread-stubs xcb
 
@@ -26,7 +24,7 @@ USE_GMAKE=		Yes
 MAKE_ENV=		X11DIR=${X11BASE}
 ALL_TARGET=		xhomer
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/xhomer ${PREFIX}/bin

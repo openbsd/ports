@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2012/10/18 07:09:29 landry Exp $
+# $OpenBSD: Makefile,v 1.24 2013/03/11 11:07:42 espie Exp $
 
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
@@ -21,9 +21,6 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 # MIT/X
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES =	http://download.osgeo.org/gdal/
 
@@ -66,7 +63,7 @@ MAKE_FILE =	GNUmakefile
 MAKE_FLAGS =	LIBTOOL_FINISH=:
 USE_GMAKE =	Yes
 USE_LIBTOOL =	Yes
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include \
 			  -I${LOCALBASE}/include/libpng" \

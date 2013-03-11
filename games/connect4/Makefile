@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2011/05/17 09:05:49 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2013/03/11 11:07:38 espie Exp $
 
 COMMENT=	curses version of the classic game
 
@@ -10,7 +10,6 @@ CATEGORIES=	games
 # License: NONE
 PERMIT_PACKAGE_CDROM=	no license
 PERMIT_PACKAGE_FTP=	no license
-PERMIT_DISTFILES_CDROM=	no license
 PERMIT_DISTFILES_FTP=	no license
 WANTLIB=		c curses termcap
 
@@ -27,7 +26,7 @@ ALL_TARGET=	c4
 WRKDIST=	${WRKDIR}
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/c4 ${PREFIX}/bin/connect4

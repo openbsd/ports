@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/11/12 13:02:05 jsg Exp $
+# $OpenBSD: Makefile,v 1.21 2013/03/11 11:07:40 espie Exp $
 
 COMMENT=	collection of various tools for scummvm
 DISTNAME=	scummvm-tools-1.4.0
@@ -11,9 +11,6 @@ MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c m ogg stdc++ z FLAC mad png pthread vorbis \
 			vorbisenc vorbisfile \
@@ -22,7 +19,7 @@ WANTLIB=		c m ogg stdc++ z FLAC mad png pthread vorbis \
 			wx_gtk2_dbgrid wx_gtk2_html wx_gtk2_qa \
 			wx_gtk2_richtext wx_gtk2_xrc
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 USE_GMAKE=	Yes
 
 LIB_DEPENDS=	audio/flac \

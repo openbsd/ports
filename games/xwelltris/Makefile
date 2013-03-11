@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/12/02 14:36:14 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/11 11:07:42 espie Exp $
 
 COMMENT=	2.5 dimensional tetris-like game
 
@@ -12,13 +12,10 @@ HOMEPAGE=	http://xnc.jinr.ru/xwelltris/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c m stdc++
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 CONFIGURE_STYLE=gnu
 

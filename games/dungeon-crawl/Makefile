@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/16 11:23:26 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:07:38 espie Exp $
 
 COMMENT=	dungeon crawl
 CATEGORIES=	games
@@ -27,9 +27,7 @@ WANTLIB=	c m stdc++ ncurses
 
 # Almost nethack... http://www.dungeoncrawl.org/?d.l
 
-PERMIT_DISTFILES_FTP=Yes
 PERMIT_PACKAGE_FTP=Yes
-PERMIT_DISTFILES_CDROM=No gain
 PERMIT_PACKAGE_CDROM=No gain
 DOCDIR=${PREFIX}/share/doc/dungeon-crawl-$V
 
@@ -53,7 +51,7 @@ do-install:
 	${INSTALL_DATA} ${WRKDIST}/docs/versions.txt ${DOCDIR}
 	${INSTALL_DATA} ${WRKDIST}/readme.txt ${DOCDIR}/quickstart
 
-NO_REGRESS=Yes
+NO_TEST=Yes
 
 SUBST_VARS=V
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/16 11:23:28 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/11 11:07:41 espie Exp $
 
 COMMENT=	graphical tool to change Tux Paint's settings
 
@@ -13,9 +13,6 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tuxpaint/}
 
@@ -31,7 +28,7 @@ USE_GROFF =	Yes
 
 MAKE_ENV+=	SYSCONFDIR=${SYSCONFDIR} CXX=${CXX}
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 pre-configure:
 	@rm -rf ${WRKSRC}/obj

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/10/29 15:19:03 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:06:05 espie Exp $
 
 COMMENT =		monospace bitmap font, primarily aimed at programmers
 
@@ -14,13 +14,12 @@ MAINTAINER =		Rafael Sadowski <rafael@sizeofvoid.org>
 # FREE (c) Jorgen Ibsen (Though no license included in distribution)
 PERMIT_PACKAGE_CDROM =		No
 PERMIT_PACKAGE_FTP =		No
-PERMIT_DISTFILES_CDROM =	No
 PERMIT_DISTFILES_FTP =		No
 
 MASTER_SITES =		http://ftp.fi.debian.org/gentoo/distfiles/
 
 NO_BUILD =		Yes
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 USE_X11 =	Yes
 
 FONTDIR=	${PREFIX}/lib/X11/fonts/dina

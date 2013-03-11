@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.4 2012/12/24 09:23:07 bentley Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2013/03/11 11:06:04 espie Exp $
 
 ONLY_FOR_ARCHS ?=	amd64 i386
 SHARED_ONLY = 		Yes
@@ -26,4 +26,4 @@ BUILD_DEPENDS +=	emulators/mupen64plus/core>=1.99.5
 
 WRKBUILD ?=		${WRKDIST}/projects/unix
 
-NO_REGRESS ?=		Yes
+NO_TEST ?=		Yes

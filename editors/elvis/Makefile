@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2012/05/05 14:03:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/11 11:02:49 espie Exp $
 
 COMMENT=	clone of the ex/vi text editor
 
@@ -10,9 +10,6 @@ HOMEPAGE=	http://elvis.the-little-red-haired-girl.org/
 
 # Clarified Artistic License
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c curses
 
@@ -38,7 +35,7 @@ CFLAGS+=	-I${X11BASE}/include/freetype2
 WANTLIB+=	X11 Xft Xpm pthread-stubs xcb
 .endif
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	@rm -f ${WRKSRC}/{doc,data}/*.orig

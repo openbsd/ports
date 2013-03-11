@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2012/12/21 12:50:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2013/03/11 11:02:49 espie Exp $
 
 COMMENT=	lightweight Gtk text editor with syntax highlighting
 
@@ -16,9 +16,6 @@ EXTRACT_SUFX=	.tgz
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	GL X11 Xcomposite Xcursor Xdamage Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \
@@ -38,7 +35,7 @@ MAKE_FLAGS=	CC="${CC}" OPTI="${CFLAGS}"
 
 WRKSRC=		${WRKDIST}/src
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/interface.c

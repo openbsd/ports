@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/11/09 21:07:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:02:50 espie Exp $
 
 COMMENT=	ex/vi text editor with wide character support
 
@@ -11,9 +11,6 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://shell.uugrn.org/~naddy/
 

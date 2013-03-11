@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/07/16 13:59:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:07:42 espie Exp $
 
 COMMENT=		map-rendering engine for OpenStreetMap
 
@@ -10,9 +10,6 @@ HOMEPAGE=		http://trac.openstreetmap.ch/trac/memphis/
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://wenner.ch/files/public/mirror/memphis/
 

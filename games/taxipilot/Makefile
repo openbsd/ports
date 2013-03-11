@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/09/16 09:48:10 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2013/03/11 11:07:40 espie Exp $
 
 COMMENT=	silly little game based on Spacetaxi for the C64
 
@@ -12,9 +12,6 @@ MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=  Yes
-PERMIT_PACKAGE_FTP=    Yes
-PERMIT_DISTFILES_CDROM=Yes
-PERMIT_DISTFILES_FTP=  Yes
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c fam idn jpeg \
 		m png pthread pthread-stubs rpcsvc stdc++ util xcb z \
@@ -41,6 +38,6 @@ CONFIGURE_ARGS+= --with-extra-includes=${LOCALBASE}/include/libpng:${LOCALBASE}/
 CONFIGURE_ENV=	KDEDIR=${LOCALBASE} 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/admin
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

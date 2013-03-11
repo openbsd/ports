@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/16 09:48:10 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/11 11:07:40 espie Exp $
 
 COMMENT=	total conversion of the Space Hulk board game
 
@@ -11,9 +11,6 @@ HOMEPAGE=	http://r.vinot.free.fr/spacehulk/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		m c z stdc++ pthread
 
 MASTER_SITES=	${HOMEPAGE}

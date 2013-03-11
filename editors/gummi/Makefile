@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2012/11/24 21:49:46 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 11:02:49 espie Exp $
 
 COMMENT =		simple LaTeX editor
 
@@ -12,9 +12,6 @@ MAINTAINER =		Matthias Kilian <kili@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	GL X11 Xcomposite Xcursor Xdamage Xext \
                 Xfixes Xi Xinerama Xrandr Xrender c \

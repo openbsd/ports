@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2007/09/16 00:44:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.21 2013/03/11 11:02:50 espie Exp $
 
 COMMENT=	full screen simple editor
 
@@ -10,8 +10,6 @@ HOMEPAGE=	http://uemacs.tripod.com/
 
 PERMIT_PACKAGE_CDROM=	weird no fee license
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	weird no fee license
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c termcap
 
 MASTER_SITES=	ftp://aquest.com/pub/uemacs400/disk2/
@@ -24,6 +22,6 @@ WRKDIST=	${WRKDIR}
 pre-patch:
 	@cd ${WRKDIR} && cp -pR freebsd openbsd
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

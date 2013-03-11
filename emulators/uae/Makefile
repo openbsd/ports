@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2011/09/16 09:48:09 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/03/11 11:06:04 espie Exp $
 
 COMMENT=	UAE amiga emulator
 DISTNAME=	uae-0.8.25
@@ -8,9 +8,6 @@ CATEGORIES=	emulators x11
 HOMEPAGE=	http://uae.coresystems.de/
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama \
 		Xcomposite Xdamage gio-2.0 \
@@ -31,7 +28,7 @@ CONFIGURE_ARGS+=	--enable-dga --enable-vidmode \
 			--with-sdl-sound
 CONFIGURE_ENV=		ac_cv_header_sys_audioio_h=no
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 DOCS=		COMPATIBILITY CREDITS FAQ NEWS README README.PROGRAMMERS
 

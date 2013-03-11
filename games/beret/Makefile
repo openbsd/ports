@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/02/04 15:36:35 bcallah Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 11:07:38 espie Exp $
 
 COMMENT=	2D puzzle-platformer game
 DISTNAME=	beret-1.2.1pl1
@@ -12,9 +12,6 @@ MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
 # LGPLv3
 # AveriaSans-regular.ttf: SIL Open Font License
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c m SDL SDL_image SDL_mixer
 WANTLIB += SDL_ttf pthread
@@ -26,7 +23,7 @@ LIB_DEPENDS=	devel/sdl-image \
 		devel/sdl-ttf
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 ALL_TARGET=	beret
 CFLAGS+=	-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/SDL -Wall

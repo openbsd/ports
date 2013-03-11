@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/12/02 14:36:14 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:07:41 espie Exp $
 
 COMMENT=	tetrinet server
 
@@ -14,16 +14,13 @@ MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	c adns
 
 LIB_DEPENDS=	net/adns
 
 WRKSRC=		${WRKDIST}/src
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 FLAVORS=	ipv6
 FLAVOR?=

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/19 09:16:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:06:05 espie Exp $
 
 COMMENT-main=	English PK fonts (300dpi) for ghostscript, xdvi, etc.
 
@@ -12,7 +12,6 @@ CATEGORIES=	fonts print
 
 PERMIT_PACKAGE_CDROM=	no license
 PERMIT_PACKAGE_FTP=	no license
-PERMIT_DISTFILES_CDROM=	no license
 PERMIT_DISTFILES_FTP=	no license
 
 S= FreeBSD-jp/ports-jp/LOCAL_PORTS/pkfonts
@@ -33,7 +32,7 @@ COMMENT-dpi${dpi}=	${COMMENT-main:S/300dpi/${dpi}dpi/}
 .endfor
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 PKG_ARCH=	*
 
 do-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/11/08 09:30:52 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 11:07:40 espie Exp $
 
 COMMENT =		game based on the Sonic the Hedgehog universe
 
@@ -16,8 +16,6 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=opensnc/}
 # GPLv2 or later
 PERMIT_PACKAGE_CDROM=	contains potentially copyrighted artwork
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= contains potentially copyrighted artwork
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES =		devel/cmake
 
@@ -39,6 +37,6 @@ post-install:
 	    ${PREFIX}/bin/opensonic
 	chmod 755 ${PREFIX}/bin/opensonic
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

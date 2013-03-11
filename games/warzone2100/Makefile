@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/01/30 01:40:49 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2013/03/11 11:07:41 espie Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -14,9 +14,6 @@ HOMEPAGE=	http://wz2100.net/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL GLEW GLU QtNetwork QtScript SDL X11 Xrandr c expat
 WANTLIB += fontconfig freetype fribidi m ogg openal physfs png

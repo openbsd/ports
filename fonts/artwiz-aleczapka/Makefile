@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/10/29 15:19:03 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:06:04 espie Exp $
 
 COMMENT-main=	improved artwiz fonts
 COMMENT-de=	improved artwiz fonts (german pack)
@@ -23,15 +23,12 @@ MAINTAINER=	Patrick Keshishian <pkeshish@gmail.com>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=artwizaleczapka/}
 EXTRACT_SUFX=	.tar.bz2
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 PKG_ARCH=	*
 
 INST_DIR=	${PREFIX}/lib/X11/fonts/artwiz-aleczapka

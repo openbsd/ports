@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2011/12/15 17:59:21 fgsch Exp $
+# $OpenBSD: Makefile,v 1.46 2013/03/11 11:07:38 espie Exp $
 
 COMMENT=	gtk+2 chess board interface
 
@@ -9,9 +9,6 @@ HOMEPAGE=	http://www.bergo.eng.br/eboard/
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB =	GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama \
 		Xrandr Xrender atk-1.0 c cairo expat fontconfig freetype \
@@ -33,7 +30,7 @@ CONFIGURE_STYLE=simple
 CONFIGURE_ARGS=	--prefix="${PREFIX}" --compiler="${CXX}" \
 		--extra-flags="${CXXFLAGS}"
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 DOCS=	Crafty.txt FICS-Timeseal.txt GNUChess4.txt GNUChess5.txt \
 	Scripts.txt Sjeng.txt Themes.txt

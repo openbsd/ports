@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/01/26 09:14:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/11 11:07:38 espie Exp $
 
 COMMENT=	real-time strategy game
 
@@ -12,9 +12,6 @@ HOMEPAGE=	http://www.boswars.org/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.boswars.org/dist/releases/
 
@@ -33,7 +30,7 @@ LIB_DEPENDS=	devel/sdl \
 		graphics/png \
 		${MODLUA_LIB_DEPENDS}
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 DATA_DIR=	campaigns graphics intro maps languages scripts sounds units
 

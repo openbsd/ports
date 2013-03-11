@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/19 09:16:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:06:05 espie Exp $
 
 COMMENT=	collection of ATM fonts from the CICA archives
 
@@ -14,12 +14,11 @@ HOMEPAGE=	http://www.gimp.org/fonts.html
 # lots of different custom licenses, the worst one wins
 PERMIT_PACKAGE_CDROM=	may not sell
 PERMIT_PACKAGE_FTP=	no license
-PERMIT_DISTFILES_CDROM=	may not sell
 PERMIT_DISTFILES_FTP=	no license
 
 WRKDIST=	${WRKDIR}
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 PKG_ARCH=	*
 FREEFONTDIR=	${PREFIX}/lib/X11/fonts
 

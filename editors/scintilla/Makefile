@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/11/15 19:13:39 jeremy Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 11:02:50 espie Exp $
 
 COMMENT=	source code editing component for GTK+
 
@@ -17,14 +17,12 @@ MAINTAINER=	Jeremy Evans <jeremy@openbsd.org>
 # old Python license
 PERMIT_PACKAGE_CDROM=	may not sell
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	may not sell
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scintilla/}
 EXTRACT_SUFX=	.tgz
 
 USE_GMAKE=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 MAKE_FILE=	makefile
 MAKE_ENV=	CXX='${CXX}' CXXFLAGS='${CXXFLAGS}' \

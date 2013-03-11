@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2011/10/21 16:23:45 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/03/11 11:07:41 espie Exp $
 
 COMMENT=	concurrent multi-player battle strategy game
 
@@ -10,13 +10,11 @@ MASTER_SITES=	ftp://cns-ftp.bu.edu/pub/xbattle/
 
 PERMIT_PACKAGE_CDROM=	no fee
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	no fee
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xext c m pthread-stubs xcb
 
 CONFIGURE_STYLE=imake
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 USE_GROFF =	Yes
 
 post-install:

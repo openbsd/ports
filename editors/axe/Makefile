@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/11/15 23:22:07 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2013/03/11 11:02:49 espie Exp $
 
 COMMENT=		simple to use text editor for X11
 
@@ -9,8 +9,6 @@ CATEGORIES=		editors
 
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	No
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xpm Xt c \
 			pthread-stubs xcb
@@ -20,6 +18,6 @@ EXTRACT_SUFX=		.tar.Z
 
 CONFIGURE_STYLE=	imake
 USE_GROFF =		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 .include <bsd.port.mk>

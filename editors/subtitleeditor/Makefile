@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/01/11 13:44:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2013/03/11 11:02:50 espie Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -18,9 +18,6 @@ HOMEPAGE=	http://home.gna.org/subtitleeditor/
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 atkmm-1.6

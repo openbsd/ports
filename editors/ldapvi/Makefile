@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2012/09/01 14:36:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 11:02:50 espie Exp $
 
 COMMENT=	update LDAP entries with a text editor
 
@@ -13,9 +13,6 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.lichteblau.com/download/
 
@@ -36,7 +33,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 pre-build:
 	@perl -pi -e "s,/etc/ldap,${SYSCONFDIR}/openldap,g" ${WRKSRC}/ldapvi.1

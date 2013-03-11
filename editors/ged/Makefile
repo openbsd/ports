@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/11/29 20:14:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:02:49 espie Exp $
 
 COMMENT =		GNU version of standard text editor
 
@@ -14,9 +14,6 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c
 

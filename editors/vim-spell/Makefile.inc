@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2012/10/15 15:24:55 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2013/03/11 11:02:50 espie Exp $
 
 LANGS = 	af am bg ca cs cy da de el eo es fo fr ga gd gl he hr hu \
 		id it ku la lt lv mg mi ms nb nl nn ny pl pt ro ru rw sk \
@@ -17,7 +17,6 @@ REVISION =	1
 # GPLv2+, LGPL, GFDL
 PERMIT_PACKAGE_CDROM = 	Yes
 PERMIT_PACKAGE_FTP = 	Yes
-PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP = 	Yes
 
 LANG_NAME-af = 	Afrikaans

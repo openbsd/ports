@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/16 00:45:13 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:06:03 espie Exp $
 
 COMMENT=	Motorola Coldfire emulator
 
@@ -10,9 +10,6 @@ MAINTAINER=	Martin Reindl <martin@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}/files/
 
@@ -27,6 +24,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/coldfire
 	cp ${WRKBUILD}/boards/*.board ${PREFIX}/share/coldfire
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 .include <bsd.port.mk>

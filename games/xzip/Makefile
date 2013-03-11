@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2012/08/19 22:30:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 11:07:42 espie Exp $
 
 COMMENT=	z-code interpreter for X11 (Infocom game format)
 
@@ -15,7 +15,6 @@ MAINTAINER=	Carsten Ilchmann <ci2@gmx.net>
 # read xzip(6)
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	No
-PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	No
 WANTLIB=		X11 c pthread-stubs xcb
 
@@ -31,7 +30,7 @@ ALL_TARGET=	xzip
 
 CFLAGS+=	-DAUTO_END_MODE -I${X11BASE}/include
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xzip ${PREFIX}/bin

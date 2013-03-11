@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/09/22 07:53:57 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:02:49 espie Exp $
 
 COMMENT =	simple, distraction-free writing environment
 
@@ -12,9 +12,6 @@ MASTER_SITES =	${HOMEPAGE}
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES +=	x11/qt4
 RUN_DEPENDS +=	devel/desktop-file-utils x11/gtk+2,-guic

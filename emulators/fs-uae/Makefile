@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/12/20 22:29:32 edd Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 11:06:04 espie Exp $
 
 BROKEN-powerpc =	error: invalid 'asm': invalid %k value
 BROKEN-sparc64 =	error: invalid 'asm': invalid operand output code
@@ -14,9 +14,6 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
 # GPLv2, LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += GL GLU SDL X11 c glib-2.0 gthread-2.0 m openal png
 WANTLIB += pthread stdc++ z
@@ -38,7 +35,7 @@ USE_GMAKE =		Yes
 
 MAKE_FLAGS +=		prefix=${PREFIX} CXXFLAGS="${CXXFLAGS}" CFLAGS="${CFLAGS}"
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 # Hack to prevent Python module doing it's own do-build/do-install
 CONFIGURE_STYLE =	not_setup_tools

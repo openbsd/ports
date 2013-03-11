@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/08/22 07:17:02 sebastia Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 11:07:40 espie Exp $
 
 COMMENT=	space combat and trading game in the style of Elite
 
@@ -14,9 +14,6 @@ MAINTAINER=	Nicholas Marriott <nicm@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=oolite-linux/}
 EXTRACT_SUFX=	.tar.bz2

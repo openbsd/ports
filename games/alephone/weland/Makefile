@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/16 11:23:25 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:07:37 espie Exp $
 
 COMMENT =		marathon / alephone map editor
 
@@ -13,9 +13,6 @@ HOMEPAGE =		http://sourceforge.net/projects/weland/
 
 # GPL v2-only
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=weland/}
 EXTRACT_SUFX =		.zip
@@ -36,6 +33,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/Weland.exe ${PREFIX}/libexec/weland/
 	${INSTALL_SCRIPT} ${WRKSRC}/weland.sh ${PREFIX}/bin/weland
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 .include <bsd.port.mk>

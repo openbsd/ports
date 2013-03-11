@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/06/05 14:24:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:07:38 espie Exp $
 
 COMMENT =		platform game set in seville and in space
 VERSION = 		1.0.3
@@ -10,9 +10,6 @@ REVISION =		0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB = 	alleg c freetype m ogg png pthread stdc++ vorbis vorbisfile z
 
@@ -33,7 +30,7 @@ LDFLAGS =		-L${LOCALBASE}/lib -L${X11BASE}/lib \
 MAKE_FLAGS =		LDFLAGS="$(LDFLAGS)" DESTDIR="$(DESTDIR)"
 
 USE_GMAKE =		Yes
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 CFLAGS =		-O2 -pipe -pthread \
 			-I${LOCALBASE}/include/libpng \

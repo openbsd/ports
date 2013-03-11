@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/11/16 11:23:29 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2013/03/11 11:07:41 espie Exp $
 
 NOT_FOR_ARCHS=	${LP64_ARCHS}
 
@@ -14,8 +14,6 @@ MAINTAINER=	Paul Janzen <pjanzen@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	no fee
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	no fee
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xt c pthread-stubs xcb
 
@@ -33,6 +31,6 @@ WRKDIST=	${WRKDIR}
 pre-patch:
 	@cd $(WRKSRC) ; mv xinvaders.ma xinvaders.man
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

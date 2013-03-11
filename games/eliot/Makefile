@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/01/05 15:50:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 11:07:38 espie Exp $
 
 COMMENT =	scrabble game
 DISTNAME =	eliot-1.14
@@ -18,9 +18,6 @@ MASTER_SITES0 =	${MASTER_SITE_SAVANNAH:=eliot/dict/}
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =	x11/qt4 devel/gettext
 

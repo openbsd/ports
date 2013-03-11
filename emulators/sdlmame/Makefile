@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/03/10 10:56:50 fgsch Exp $
+# $OpenBSD: Makefile,v 1.26 2013/03/11 11:06:04 espie Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -23,7 +23,6 @@ MAINTAINER =		Federico G. Schwindt <fgsch@openbsd.org>
 # history.dat : Creative Commons Attribution 3.0
 PERMIT_PACKAGE_CDROM =		may not sell
 PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 WANTLIB =	SDL SDL_ttf X11 Xcomposite Xcursor Xdamage Xext \
 		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \
@@ -65,7 +64,7 @@ CONFIGURE_STYLE =	none
 
 MAKE_FILE =		makefile
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 VMEM_WARNING =		Yes
 
 post-extract:

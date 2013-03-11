@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/10/29 15:19:03 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:06:05 espie Exp $
 
 COMMENT=	extra Korean fonts
 
@@ -13,9 +13,6 @@ MASTER_SITES=	http://download.kldp.net/hanterm/hanterm-font/3.1/ \
 HOMEPAGE=	http://hanterm.org/
 
 PERMIT_PACKAGE_CDROM=	yes
-PERMIT_PACKAGE_FTP=	yes
-PERMIT_DISTFILES_CDROM=	yes
-PERMIT_DISTFILES_FTP=	yes
 
 # bdftopcf, mkfontdir
 
@@ -32,7 +29,7 @@ do-build:
 	egrep '\.pcf\.gz' ${WRKSRC}/fonts.dir | \
 		sed 's/\.pcf\.gz//g' > ${WRKSRC}/fonts.alias
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${FONTDIR}

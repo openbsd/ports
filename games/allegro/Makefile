@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2012/02/21 16:21:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/11 11:07:37 espie Exp $
 
 BROKEN-hppa =	./src/x/xdga2s.s:25: Error: symbol .text is already defined
 
@@ -17,9 +17,6 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=alleg/}
 
 # GPL
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 USE_GMAKE =		Yes
 USE_GROFF =		Yes
@@ -44,7 +41,7 @@ CONFIGURE_ARGS =	--enable-artsdigi=no \
 			--with-x
 MAKE_ENV +=		shared_major_minor=${LIBalleg_VERSION}
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 post-extract:
 	cp ${FILESDIR}/sndio.c ${WRKSRC}/src/unix

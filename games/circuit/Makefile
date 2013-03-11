@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2012/12/24 14:03:34 landry Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/11 11:07:38 espie Exp $
 
 COMMENT =	finish-the-cycle logic puzzle
 CATEGORIES =	games
@@ -10,10 +10,7 @@ REVISION =	7
 MASTER_SITES =	ftp://quatramaran.ens.fr/pub/cigaes/circuit/
 
 # BSD
-PERMIT_PACKAGE_FTP =	Yes
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_DISTFILES_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
 
 WANTLIB += X11 Xau Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig

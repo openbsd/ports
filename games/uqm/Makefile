@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2013/02/02 04:39:56 bentley Exp $
+# $OpenBSD: Makefile,v 1.39 2013/03/11 11:07:41 espie Exp $
 
 COMMENT-main=		ur-quan masters: sdl port of star control 2; multiplayer
 COMMENT-content=	ur-quan masters: game content
@@ -48,8 +48,6 @@ MAINTAINER =		Anthony J. Bentley <anthony@cathet.us>
 # NC does not apply to unmodified uqm distributions, but mark it to be safe
 PERMIT_PACKAGE_CDROM=	NonCommercial
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	NonCommercial
-PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS-main=	audio/libmikmod \
 			audio/tremor>=20120410 \
@@ -66,7 +64,7 @@ RUN_DEPENDS-main=	${PKGNAME-content}v0:games/uqm,-content
 WANTLIB-main=		c m pthread z SDL mikmod>=2.4 vorbisidec>=3 \
 			SDL_image
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 USE_GMAKE=	Yes
 
 PSEUDO_FLAVORS=	no_remix1 no_remix2 no_remix3 no_threedomusic no_voice

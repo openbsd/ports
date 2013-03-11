@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/08 01:40:16 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/11 11:07:40 espie Exp $
 
 COMMENT=	texas hold'em poker game with online capabilities
 
@@ -11,9 +11,6 @@ HOMEPAGE=	http://www.pokerth.net/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c m pthread stdc++
 WANTLIB += ICE lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSql SDL SDL_mixer SM
@@ -53,7 +50,7 @@ TAR=		${LOCALBASE}/bin/gtar
 SEPARATE_BUILD=	Yes
 
 VMEM_WARNING=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 USE_GMAKE=	Yes
 
 do-configure:

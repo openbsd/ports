@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2011/09/28 16:45:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/11 11:06:03 espie Exp $
 
 COMMENT=		General Atomistic Modelling Graphic Interface
 
@@ -11,9 +11,6 @@ HOMEPAGE=		http://www.gamgi.org/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		ftp://ftp.gamgi.org/gamgi/src/
 
@@ -32,7 +29,7 @@ WRKSRC= 		${WRKDIST}/src/
 MAKE_FILE=		${WRKSRC}/makefile
 ALL_TARGET=		# This comment intentionally left senseless.
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 DOC_DIR=		${PREFIX}/share/doc/gamgi/
 DATA_DIR=		${PREFIX}/share/gamgi/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/16 11:23:27 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 11:07:40 espie Exp $
 
 COMMENT=	free Lemmings-like game
 
@@ -13,9 +13,6 @@ MASTER_SITES=	${HOMEPAGE}files/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += SDL X11 Xi c m png pthread pthread-stubs xcb stdc++ z
 WANTLIB += SDL_mixer>=3 SDL_image>=2 boost_signals
@@ -28,7 +25,7 @@ LIB_DEPENDS=	devel/sdl-mixer \
 		devel/boost
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/pingus_main.cpp ${WRKSRC}/doc/pingus.6

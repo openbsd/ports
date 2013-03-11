@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2011/10/21 21:38:42 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2013/03/11 11:07:37 espie Exp $
 # Author: Thomas Biskup <rpg@saranxis.ruhr.de>
 
 COMMENT =	Ancient Domains of Mystery - roguelike
@@ -14,13 +14,12 @@ ONLY_FOR_ARCHS =i386
 
 # binary port
 NO_BUILD =	Yes
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 PERMIT_PACKAGE_CDROM =	no modify
 PERMIT_PACKAGE_FTP =	no modify
-PERMIT_DISTFILES_CDROM =no modify
 PERMIT_DISTFILES_FTP =	Yes
 
 WRKDIST	= ${WRKDIR}/adom

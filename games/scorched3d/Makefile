@@ -1,4 +1,4 @@
- # $OpenBSD: Makefile,v 1.6 2011/09/16 09:48:10 espie Exp $
+ # $OpenBSD: Makefile,v 1.7 2013/03/11 11:07:40 espie Exp $
 
 COMMENT =		modernization of the classic DOS game Scorched Earth
 
@@ -12,9 +12,6 @@ HOMEPAGE =		http://www.scorched3d.co.uk/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB +=		GL GLU c expat freetype m pthread stdc++ z
 WANTLIB +=		SDL SDL_net alut fftw3f jpeg openal png ogg vorbisfile

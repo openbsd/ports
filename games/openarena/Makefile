@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2012/10/18 21:23:51 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 11:07:40 espie Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 macppc
 
@@ -32,9 +32,6 @@ MASTER_SITES0 =		http://files.poulsander.com/~poul19/public_files/oa/dev088/ \
 
 # GPLv2 but contains software with other (free) licenses as well
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB-main =		GL c m pthread sndio ogg>=5 SDL>=7 vorbis>=7 \
 			vorbisfile>=5 curl
@@ -58,7 +55,7 @@ MAKE_FLAGS += 		ARCH=ppc \
 			COMPILE_ARCH=ppc
 .endif
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 WRKDIST =		${WRKDIR}/openarena-engine-source-${E_V}
 ALL_TARGET =		release
 

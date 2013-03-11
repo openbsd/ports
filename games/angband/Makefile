@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2012/04/11 16:16:33 edd Exp $
+# $OpenBSD: Makefile,v 1.27 2013/03/11 11:07:37 espie Exp $
 # Original from: Robert Ruehlmann
 
 COMMENT=		rogue-like game with X11 support
@@ -18,8 +18,6 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 # The angband license contains the line "other copyrights may also apply"
 PERMIT_PACKAGE_CDROM=	unclear license
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= unclear license
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c m ncurses
 
@@ -59,7 +57,7 @@ CONFIGURE_ARGS +=	--disable-sdl-mixer	# defaults to ON
 PKG_ARGS +=		-Dsdl=0
 .endif
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 pre-configure:
 	@perl -pi -e "s,/usr/share,${TRUEPREFIX}/share," \

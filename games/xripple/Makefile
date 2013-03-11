@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/16 11:23:29 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/11 11:07:42 espie Exp $
 
 COMMENT=	screen bottom ripples like a pool of water
 
@@ -13,14 +13,13 @@ MAINTAINER=	Michael Shalayeff <mickey@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	no license available
 PERMIT_PACKAGE_FTP=	no license available
-PERMIT_DISTFILES_CDROM=	no license available
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xext c m pthread-stubs xcb
 
 CONFIGURE_STYLE=imake
 ALL_TARGET=	xripple
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-configure:
 	@cd ${WRKSRC}; ${MAKE} clean

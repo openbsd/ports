@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/08 01:31:25 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 11:07:39 espie Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -17,7 +17,6 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv3 + see share/frogatto/LICENSE
 PERMIT_PACKAGE_CDROM=	may not charge
 PERMIT_PACKAGE_FTP=	may not modify
-PERMIT_DISTFILES_CDROM=	may not charge
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL GLU c m pthread stdc++ GLEW SDL SDL_image SDL_mixer
@@ -32,7 +31,7 @@ LIB_DEPENDS=	devel/sdl-image \
 		graphics/glew \
 		devel/boost
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 USE_GMAKE=	Yes
 ALL_TARGET=	game server
 

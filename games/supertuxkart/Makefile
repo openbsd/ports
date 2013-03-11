@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2012/12/16 15:31:40 pascal Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 11:07:40 espie Exp $
 
 COMMENT =		kart racing game with OSS mascots
 
@@ -15,9 +15,6 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += GL GLU ICE SM X11 Xext Xxf86vm c curl fribidi
 WANTLIB += m ogg openal pthread stdc++ vorbis vorbisfile
@@ -37,7 +34,7 @@ USE_GMAKE =		Yes
 
 WRKDIST =		${WRKDIR}/SuperTuxKart-${V}
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 # now needs a modified, internal version of Irrlicht.  glorious.
 pre-build:

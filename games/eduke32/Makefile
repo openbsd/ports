@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/01/13 09:26:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:07:38 espie Exp $
 
 COMMENT =	Enhanced Duke Nukem 3D engine
 RDATE =		20120301
@@ -16,7 +16,6 @@ MAINTAINER =	Ryan Freeman <rfreeman@openbsd.org>
 # GPLv2, BUILD license and shareware data
 PERMIT_PACKAGE_CDROM =  "BUILD engine license is not compatible with GPLv2."
 PERMIT_PACKAGE_FTP =    "BUILD engine license is not compatible with GPLv2."
-PERMIT_DISTFILES_CDROM ="BUILD engine license is not compatible with GPLv2."
 PERMIT_DISTFILES_FTP =  "BUILD engine license is not compatible with GPLv2."
 
 BUILD_DEPENDS = archivers/unzip \
@@ -45,7 +44,7 @@ MASTER_SITES =	http://dukeworld.duke4.net/eduke32/synthesis/old/${RDATE}-${RTAG}
 # make sure we can see compilation output, respect CC/CXX, don't strip!
 MAKE_FLAGS =	PRETTY_OUTPUT=0 CC="${CC}" CXX="${CXX}" DEBUGANYWAY=1
 USE_GMAKE =	Yes
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 WRKDIST =	${WRKDIR}/eduke32_${RDATE}-${RTAG}/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2012/10/15 15:18:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 11:07:42 espie Exp $
 
 COMMENT=		Z-code interpreter for X11
 
@@ -9,9 +9,6 @@ HOMEPAGE=		http://www.logicalshift.co.uk/unix/zoom/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xft Xrender c expat \
 			fontconfig freetype m pthread-stubs xcb z \

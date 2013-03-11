@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/10/21 17:43:30 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 11:07:40 espie Exp $
 
 COMMENT =	platform game featuring buggers equipped with weapons
 
@@ -20,16 +20,13 @@ DISTFILES =	${DISTNAME}${EXTRACT_SUFX} bam-${BAM_VERSION}${EXTRACT_SUFX}
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	GL GLU SDL X11 c m pthread stdc++ z
 LIB_DEPENDS =	devel/sdl
 
 MODULES =	lang/python
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 GAMEDIR =	${PREFIX}/share/teeworlds
 

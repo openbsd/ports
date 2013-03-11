@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/11/16 11:23:29 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2013/03/11 11:07:41 espie Exp $
 
 COMMENT=	John Horton Conway's Game of Life
 
@@ -11,9 +11,6 @@ HOMEPAGE=	http://www.catb.org/~esr/software.html
 MASTER_SITES = ${MASTER_SITE_OPENBSD}
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xext c curses pthread-stubs termcap xcb
 
@@ -23,7 +20,7 @@ WRKSRC=	${WRKDIST}/xlife
 MAKE_FLAGS=XLIFEPATSDIR=${PREFIX}/share/xlife
 FAKE_FLAGS=XLIFEPATSDIR=${TRUEPREFIX}/share/xlife
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 USE_GROFF =	Yes
 
 post-build:

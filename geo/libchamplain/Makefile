@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2012/07/16 18:52:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/11 11:07:42 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,9 +20,6 @@ HOMEPAGE=	http://projects.gnome.org/libchamplain/
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo cairo-gobject

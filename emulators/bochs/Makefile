@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2012/09/25 23:21:47 brad Exp $
+# $OpenBSD: Makefile,v 1.57 2013/03/11 11:06:03 espie Exp $
 
 COMMENT=	x86 machine simulator
 
@@ -10,9 +10,6 @@ HOMEPAGE=	http://bochs.sourceforge.net/
 
 # LGPLv2.1+ and MIT
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c m stdc++ termlib
 
@@ -56,7 +53,7 @@ WANTLIB+=	SDL X11 Xext Xpm Xrandr Xrender pthread sndio usbhid \
 		xcb
 .endif
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/docs-html/*.html ${PREFIX}/share/doc/bochs

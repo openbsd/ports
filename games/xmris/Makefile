@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/12/05 18:24:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2013/03/11 11:07:42 espie Exp $
 
 COMMENT=	Mr Do video arcade game for X11
 
@@ -13,8 +13,6 @@ EXTRACT_SUFX=	.tgz
 
 PERMIT_PACKAGE_CDROM=	no fee
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	no fee
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xt c m pthread-stubs xcb
 
@@ -30,7 +28,7 @@ MAKE_FLAGS=	XAPPLOADDIR=${PREFIX}/lib/X11/app-defaults \
 # Must override target, as `all' is a file
 ALL_TARGET=	xmris xmred xmris.0 xmred.0
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 USE_GROFF =	Yes
 
 .include <bsd.port.mk>

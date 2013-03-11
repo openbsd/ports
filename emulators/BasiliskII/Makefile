@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2012/12/21 12:13:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2013/03/11 11:06:03 espie Exp $
 
 COMMENT=		open source 68k Macintosh emulator
 
@@ -11,9 +11,6 @@ HOMEPAGE=		http://basilisk.cebix.net/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		devel/gettext
 
@@ -39,7 +36,7 @@ CONFIGURE_STYLE=	autoconf
 WRKDIST=		${WRKDIR}/BasiliskII-1.0
 WRKSRC=			${WRKDIR}/BasiliskII-1.0/src/Unix
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/BasiliskII

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/19 09:14:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:06:05 espie Exp $
 
 COMMENT=	extra chinese fonts
 
@@ -12,7 +12,6 @@ MASTER_SITES=	http://cle.linux.org.tw/fonts/bitmap/taipeifont/
 
 MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 
-PERMIT_DISTFILES_CDROM= no license
 PERMIT_DISTFILES_FTP=   no license
 PERMIT_PACKAGE_CDROM=   no license
 PERMIT_PACKAGE_FTP=     no license
@@ -22,7 +21,7 @@ FONTS=		taipei16.pcf.gz taipeik20.pcf.gz taipeim20.pcf.gz \
 
 DISTFILES=	${FONTS}
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 PKG_ARCH=	*
 EXTRACT_ONLY=
 

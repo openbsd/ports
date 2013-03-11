@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/02/28 11:53:04 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:06:05 espie Exp $
 
 COMMENT =		fonts from the League of Moveable Type
 
@@ -26,14 +26,11 @@ MAINTAINER=		Ian Darwin <ian@openbsd.org>
 # redistribute, and sell modified and unmodified copies of the Font Software..."
 # Allows redistribution of unmodified fonts even if bundled for sale with other software.
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 DIST_SUBDIR =		leaguefonts
 
 NO_BUILD =		Yes
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 INST_DIR=       ${PREFIX}/lib/X11/fonts/league-fonts/
 

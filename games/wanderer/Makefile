@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/16 11:23:28 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 11:07:41 espie Exp $
 
 COMMENT=	Rogue like adventure game
 
@@ -13,15 +13,12 @@ MAINTAINER=	Marina Brown <marina@surferz.net>
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		c curses
 
 MASTER_SITES=	http://www.e271.net/~marina/
 
 USE_GROFF =		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/wanderer

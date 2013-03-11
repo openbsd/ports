@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/09/16 09:48:10 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/11 11:07:40 espie Exp $
 
 V = 0.8.1
 COMMENT-client = race for the galaxy card game
@@ -17,10 +17,7 @@ REVISION-client =	1
 
 # Licence: GPL
 # official authorization from the game publisher (Rio Grande)
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP = Yes
 PERMIT_PACKAGE_CDROM = Yes
-PERMIT_PACKAGE_FTP = Yes
 
 CONFIGURE_STYLE = gnu
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/09/16 09:48:09 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2013/03/11 11:07:38 espie Exp $
 
 COMMENT=	Rampart arcade game clone for X11
 
@@ -10,9 +10,6 @@ HOMEPAGE=	http://www.linux-games.com/castle-combat/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=castle-combat/}
 
@@ -23,7 +20,7 @@ RUN_DEPENDS=	devel/pygame \
 		math/py-Numeric
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 pre-configure:
 	@perl -pi -e 's,!!MODPY_BIN!!,${MODPY_BIN},g' \

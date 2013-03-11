@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/01/08 15:43:54 shadchin Exp $
+# $OpenBSD: Makefile,v 1.21 2013/03/11 11:02:50 espie Exp $
 
 COMMENT=		LaTeX development environment
 DISTNAME=		texmaker-3.5.2
@@ -10,9 +10,6 @@ MAINTAINER=		Alexandr Shadchin <shadchin@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}
 EXTRACT_SUFX=		.tar.bz2
@@ -29,7 +26,7 @@ RUN_DEPENDS=		print/texlive/base \
 LIB_DEPENDS=		textproc/hunspell \
 			print/poppler,,-qt4
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 VMEM_WARNING=		Yes
 
 FAKE_FLAGS=		INSTALL_ROOT=${WRKINST}

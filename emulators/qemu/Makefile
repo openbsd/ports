@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2013/02/02 23:51:45 brad Exp $
+# $OpenBSD: Makefile,v 1.100 2013/03/11 11:06:04 espie Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc sparc64
 
@@ -16,9 +16,6 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # GPLv2, LGPLv2 and BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	GL SDL X11 c curl glib-2.0 gthread-2.0 jpeg m ncurses \
 		pixman-1 png pthread pthread-stubs util z
@@ -80,7 +77,7 @@ INSTALL_STRIP=
 CONFIGURE_ARGS+=--disable-debug-info
 .endif
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifup \

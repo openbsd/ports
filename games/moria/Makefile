@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/03/29 13:38:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 11:07:40 espie Exp $
 
 COMMENT=	The Dungeons of Moria
 
@@ -15,11 +15,9 @@ HOMEPAGE=	http://www-math.bgsu.edu/~grabine/moria.html
 
 PERMIT_PACKAGE_CDROM=	not-for-profit redistribution only
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	not-for-profit redistribution only
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c curses termcap
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 WRKDIST=	${WRKDIR}/umoria
 WRKSRC=		${WRKDIST}

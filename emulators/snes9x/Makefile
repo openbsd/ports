@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2012/08/19 21:20:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2013/03/11 11:06:04 espie Exp $
 
 COMMENT =	emulates the Super Nintendo Entertainment System
 
@@ -13,8 +13,6 @@ HOMEPAGE =	http://www.snes9x.com/
 # non-commercial
 PERMIT_PACKAGE_CDROM =	No
 PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = No
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender Xv atk-1.0 c cairo expat \
@@ -55,7 +53,7 @@ CONFIGURE_ARGS = --without-portaudio \
 CONFIGURE_ENV = CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 WRKSRC =	${WRKDIST}/gtk
 

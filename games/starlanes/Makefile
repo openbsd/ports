@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/18 18:00:18 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/11 11:07:40 espie Exp $
 
 COMMENT=	classic space-age stock trading game
 
@@ -8,16 +8,13 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE:=games/strategy/}
 
 # License: GPL
 PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
 WANTLIB=		c curses
 
 MAKE_FLAGS=	CC="${CC}"
 USE_GROFF =	Yes
 ALL_TARGET=
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 pre-build:
 	@rm ${WRKSRC}/starlanes

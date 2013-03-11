@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2012/12/03 21:44:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2013/03/11 11:02:50 espie Exp $
 
 COMMENT=	multilingual clone of vi/ex
 
@@ -14,9 +14,6 @@ PATCHFILES=	nvi-1.79.m17n-19991117.diff.gz:0
 
 # License: BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c termlib util
 
@@ -73,7 +70,7 @@ post-build:
 		${FILESDIR}/nvi-m17n > ${WRKDIR}/nvi-${encoding}
 .endfor
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-install:
 	@mv ${PREFIX}/share/vi/catalog/ru_SU.KOI8-R \

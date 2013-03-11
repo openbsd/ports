@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/09/16 09:48:09 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 11:06:05 espie Exp $
 
 COMMENT=	convert Big5/GB encoded files to postscript
 
@@ -10,10 +10,7 @@ CATEGORIES=	fonts chinese x11
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # GPL
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB=		c m ttf
 
@@ -26,7 +23,7 @@ LIB_DEPENDS=	print/freetype
 # python.port.mk overrides various targets when CONFIGURE_STYLE is empty
 CONFIGURE_STYLE=none
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 pre-configure:
 	perl -pi -e \

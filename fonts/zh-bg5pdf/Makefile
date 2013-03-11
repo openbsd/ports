@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/09/16 09:48:09 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 11:06:05 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -12,8 +12,6 @@ CATEGORIES=	fonts chinese print
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # GPL + Aladdin license
-PERMIT_DISTFILES_CDROM=	No
-PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
 
@@ -27,7 +25,7 @@ CONFIGURE_STYLE=none
 
 WRKDIST=	${WRKDIR}/bg5pdf
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Makefile

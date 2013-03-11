@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2012/09/17 12:50:09 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/11 11:02:49 espie Exp $
 
 COMMENT=	view and edit files in hexadecimal or ASCII
 
@@ -13,14 +13,11 @@ HOMEPAGE=	http://www.chez.com/prigaux/hexedit.html
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c curses
 
 CONFIGURE_STYLE= gnu dest
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 WRKDIST=	${WRKDIR}/hexedit
 

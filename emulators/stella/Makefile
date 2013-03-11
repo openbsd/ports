@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/05 13:42:13 benoit Exp $
+# $OpenBSD: Makefile,v 1.21 2013/03/11 11:06:04 espie Exp $
 
 COMMENT =		Atari 2600 VCS emulator
 
@@ -12,9 +12,6 @@ MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c stdc++ m z pthread SDL>=1.2 png
 
@@ -31,7 +28,7 @@ CONFIGURE_ARGS +=	--disable-gl
 
 USE_GMAKE =		Yes
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 DOCSBASE =		${WRKDIST}/docs
 HTMLDOCS =		${DOCSBASE}/*.html

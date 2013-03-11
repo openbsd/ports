@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2011/09/16 09:48:09 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/11 11:02:50 espie Exp $
 
 
 COMMENT =	X11 based RTF editor
@@ -11,10 +11,7 @@ MASTER_SITES =	ftp://ftp.nluug.nl/pub/editors/ted/
 
 DISTFILES =	ted-$V.src.tar.gz
 # GPL
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_FTP =	Yes
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_DISTFILES_CDROM =Yes
 
 WANTLIB += ICE SM X11 Xext Xmu Xpm Xt c m pthread-stubs xcb z
 WANTLIB += png jpeg tiff Xm
@@ -30,7 +27,7 @@ MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 
 ALL_TARGET =	compile.shared
 SHARED_ONLY =	Yes
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 AFMDIR =	${PREFIX}/share/Ted/afm
 INDDIR =	${PREFIX}/share/Ted/ind

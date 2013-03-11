@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2012/11/23 10:59:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 11:06:05 espie Exp $
 
 COMMENT=	extra Korean fonts
 
@@ -15,9 +15,6 @@ HOMEPAGE=	http://www.mizi.co.kr
 MAINTAINER=	Jung Lee <openwall77@gmail.com>
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 # bdftopcf, mkfontdir
 
@@ -35,7 +32,7 @@ do-build:
 	egrep '\.pcf\.gz' ${WRKSRC}/fonts.dir | \
 		sed 's/\.pcf\.gz//g' > ${WRKSRC}/fonts.alias
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${FONTDIR}

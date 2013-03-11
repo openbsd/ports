@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/11/16 11:23:29 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2013/03/11 11:07:42 espie Exp $
 
 COMMENT=	cuddlesome teddy for the X11 desktop
 
@@ -10,9 +10,6 @@ MASTER_SITES=	${HOMEPAGE}
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += X11 Xext c Imlib2
 
@@ -23,7 +20,7 @@ CONFIGURE_ENV=  CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 pre-configure:
 .for f in configure xteddy.c

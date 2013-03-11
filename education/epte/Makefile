@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/15 23:22:07 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:06:03 espie Exp $
 
 COMMENT=		electronic periodic table of the elements
 
@@ -13,9 +13,6 @@ WANTLIB +=		c ncurses
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=		${WRKDIR}/epte
 MAKE_FILE=		makefile
@@ -24,7 +21,7 @@ USE_GROFF =		Yes
 
 MASTER_SITES=		${HOMEPAGE}
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/epte.1

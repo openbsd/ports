@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/12/02 14:36:14 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/11 11:07:42 espie Exp $
 
 COMMENT=	Zangband (Zelazny Angband) with color, X11 support
 
@@ -12,8 +12,6 @@ MASTER_SITES=	ftp://ftp.sunet.se/pub/games/Angband/Variant/ZAngband/ \
 
 PERMIT_PACKAGE_CDROM=	not-for-profit redistribution only
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	not-for-profit redistribution only
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c ncurses
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2012/09/04 09:29:38 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2013/03/11 11:07:39 espie Exp $
 
 CATEGORIES =	games/gottcode games
 PKGNAME ?=	${DISTNAME:S/-src//}
@@ -10,7 +10,6 @@ MASTER_SITES ?=	${HOMEPAGE}
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WRKDIST ?=	${WRKDIR}/${DISTNAME:S/-src//}

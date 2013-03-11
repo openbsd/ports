@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2012/08/06 12:21:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/11 11:02:49 espie Exp $
 
 COMMENT=	binary visual display editor, based on vi
 
@@ -11,9 +11,6 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c ncurses
 
@@ -23,6 +20,6 @@ EXTRACT_SUFX=	.src.tar.gz
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--libdir=${PREFIX}/share
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

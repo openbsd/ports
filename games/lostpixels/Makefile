@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2012/09/19 08:15:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 11:07:39 espie Exp $
 
 BROKEN-sparc64 =	Illegal operands error building SDL_gfxPrimitives.cpp
 
@@ -14,9 +14,6 @@ CATEGORIES =		games
 
 # GPL v2 only
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=blinkensisters/}
 
@@ -37,7 +34,7 @@ WRKDIST =		${WRKDIR}/blinkensisters/lostpixels/game/software/
 
 SEPARATE_BUILD =	No
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKDIST}CMakeLists.txt

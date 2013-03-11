@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2012/09/07 08:12:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/11 11:07:39 espie Exp $
 
 SHARED_ONLY =		Yes
 
@@ -18,9 +18,6 @@ MAINTAINER =		James Wright <jamesw@bsdhosting.co.za>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${HOMEPAGE}/data/
 EXTRACT_SUFX =		.tar.bz2
@@ -30,7 +27,7 @@ USE_GMAKE =		Yes
 MAKE_ENV =	LD_PRELOAD=libpthread.so # XXX remove when perl is -lpthread
 
 # No regress tests here
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 MODULES =		perl \
 			devel/gettext

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2012/08/13 15:46:07 gsoares Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 11:06:04 espie Exp $
 
 COMMENT=		cisco 3600/7200 platform emulator
 
@@ -14,9 +14,6 @@ MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=		devel/libelf
 WANTLIB=		c elf pcap pthread
@@ -25,7 +22,7 @@ MAKE_ENV=		DYNAMIPS_ARCH=${DYNAMIPS_ARCH}
 
 USE_GMAKE=		Yes
 USE_GROFF=		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 .if ${MACHINE_ARCH} == "i386"
 DYNAMIPS_ARCH=	"x86"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2012/09/30 16:17:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 11:07:42 espie Exp $
 
 COMMENT =	Openstreetmap editor for handheld devices
 
@@ -13,9 +13,6 @@ HOMEPAGE =	http://wiki.openstreetmap.org/wiki/Osm2go
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	http://repository.maemo.org/extras-devel/pool/diablo/free/source/o/osm2go/
 
@@ -32,7 +29,7 @@ LIB_DEPENDS =	x11/gnome/libgnome \
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+2,-guic
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 WANTLIB += GL ORBit-2 X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 bonobo-2 bonobo-activation

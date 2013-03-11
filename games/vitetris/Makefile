@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/16 11:23:28 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 11:07:41 espie Exp $
 
 COMMENT =	terminal-based tetris clone in vein of nintendo tetris
 DISTNAME =	vitetris-0.51
@@ -11,9 +11,6 @@ MAINTAINER =	Ryan Freeman <ryan@slipgate.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	c ncurses
 
@@ -25,7 +22,7 @@ CONFIGURE_ARGS =	--prefix=${PREFIX} \
 			xlib=no
 
 ALL_TARGET =	# empty
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 CFLAGS+=	-fsigned-char
 

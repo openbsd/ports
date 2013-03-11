@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2012/10/15 15:18:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 11:06:03 espie Exp $
 
 COMMENT=	typing tutor for dvorak keyboards
 
@@ -10,16 +10,13 @@ MAINTAINER=    Pieter-Augustijn Van Malleghem <geekassault@planetinternet.be>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c ncurses
 
 MASTER_SITES=	http://distfiles.nl/
 
 MAKE_FLAGS=	CC="${CC}" PROF="${CFLAGS}"
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 pre-build:
 	@cd ${WRKBUILD}; ${MAKE_PROGRAM} clean

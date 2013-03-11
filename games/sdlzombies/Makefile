@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/16 11:23:28 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 11:07:40 espie Exp $
 
 COMMENT=	zombies clone
 
@@ -12,9 +12,6 @@ HOMEPAGE=	http://hocwp.free.fr/sdlzombies.html
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		SDL X11 Xext c m pthread pthread-stubs usbhid xcb \
 			SDL_image SDL_mixer
 

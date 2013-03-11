@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2013/01/16 16:39:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/11 11:06:04 espie Exp $
 
 COMMENT=	Commodore 64 emulator
 
@@ -14,10 +14,7 @@ MAINTAINER=	Marc Espie <espie@openbsd.org>
 HOMEPAGE=	http://frodo.cebix.net/
 
 # FreeWare
-PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
 
 WANTLIB=		SDL c m pthread sndio stdc++
 
@@ -45,7 +42,7 @@ WRKSRC=${WRKDIST}/Src
 post-patch:
 	cp ${FILESDIR}/SID_sndio.i	${WRKSRC}
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/Frodo ${PREFIX}/bin/frodo

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/09/16 09:48:08 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/11 11:02:50 espie Exp $
 
 COMMENT=	integrated LaTeX environment for KDE
 DISTNAME=	kile-2.0
@@ -14,9 +14,6 @@ EXTRACT_SUFX=	.tar.bz2
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += X11 Xau Xdmcp Xext Xrender ICE SM c m pthread stdc++ util z 
 WANTLIB += fam rpcsvc art_lgpl_2 jpeg pcre pcreposix png idn 

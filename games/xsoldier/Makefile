@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2012/04/28 10:52:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2013/03/11 11:07:42 espie Exp $
 
 COMMENT =	space-based shoot'em up game for X11
 
@@ -11,9 +11,6 @@ MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		ICE SM X11 Xpm c
 
@@ -23,7 +20,7 @@ CONFIGURE_STYLE =	gnu
 
 MAKE_FLAGS =		CC_OPTIMIZE="${CFLAGS}"
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 # template for pkg install
 post-install:
