@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:19 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 13:49:46 benoit Exp $
 
 COMMENT =	runtime module handling
 
 MODULES =	cpan
-DISTNAME =	Module-Runtime-0.011
+DISTNAME =	Module-Runtime-0.013
 CATEGORIES =	devel
 
 # same as perl
