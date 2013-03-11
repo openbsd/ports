@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortInfo.pm,v 1.24 2013/03/03 00:40:42 espie Exp $
+# $OpenBSD: PortInfo.pm,v 1.25 2013/03/11 11:55:22 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -204,7 +204,7 @@ sub quickie
 	return 1;
 }
 
-package AddRegressDepends;
+package AddTestDepends;
 our @ISA = qw(AddDepends);
 sub extra
 {
@@ -257,14 +257,14 @@ my %adder = (
 	MASTER_SITES9 => 'AddOrderedList',
 	PERMIT_DISTFILES_FTP => 'AddNegative',
 	PERMIT_DISTFILES_CDROM => 'AddNegative',
-# not yet used, provision for regression
-	REGRESS_DEPENDS => "AddRegressDepends",
-	NO_REGRESS => "AddYesNo",
-	REGRESS_IS_INTERACTIVE => "AddYesNo",
+# not yet used, provision for regression tests
+	TEST_DEPENDS => "AddTestDepends",
+	NO_TEST => "AddYesNo",
+	TEST_IS_INTERACTIVE => "AddYesNo",
 # extra stuff we're generating
 	DEPENDS => "AddDepends",	# all BUILD_DEPENDS/LIB_DEPENDS
 	EXTRA => "Extra",	# extract stuff and things in DEPENDS
-	EXTRA2 => "Extra",	# extract stuff and things in REGRESS_DEPENDS
+	EXTRA2 => "Extra",	# extract stuff and things in TEST_DEPENDS
 	BEXTRA => "Extra",	# EXTRA moved from todo to done
 	BDEPENDS => "AddDepends",# DEPENDS moved from todo to done
 	RDEPENDS => "AddDepends",# RUN_DEPENDS moved from todo to done
