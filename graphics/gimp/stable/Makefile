@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.86 2013/03/11 11:10:52 espie Exp $
+# $OpenBSD: Makefile,v 1.87 2013/03/11 16:21:45 giovanni Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
 SHARED_ONLY=	Yes
 
-DISTNAME=	gimp-2.8.2
-REVISION=	1
+DISTNAME=	gimp-2.8.4
 
 SHARED_LIBS+=	gimp-2.0	272.0	# 800.0
 SHARED_LIBS+=	gimpbase-2.0	272.0	# 800.0
@@ -50,17 +49,18 @@ LIB_DEPENDS=	x11/gtk+2 \
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
-		Xext Xfixes Xi Xinerama Xmu Xpm Xrandr Xrender Xt Xxf86vm \
-		aa asn1 atk-1.0 babl-0.1 bz2 c cairo croco-0.6 crypto \
-		cups cupsimage curl dbus-1 dbus-glib-1 drm execinfo \
+WANTLIB=	ICE SM X11 Xcomposite Xcursor Xdamage \
+		Xext Xfixes Xi Xinerama Xmu Xpm Xrandr Xrender Xt \
+		aa asn1 atk-1.0 avahi-client avahi-common babl-0.1 bz2 \
+		c cairo croco-0.6 crypto \
+		cups cupsimage curl dbus-1 dbus-glib-1 execinfo \
 		exif expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
 		gegl-0.2 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gs \
 		gssapi gthread-2.0 gtk-x11-2.0 harfbuzz icudata icule \
 		icuuc idn ijs jasper jbig2dec jpeg krb5 lcms lcms2 \
 		m mng ncurses openjpeg pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pcre pixman-1 png poppler poppler-glib pthread pthread-stubs \
-		rsvg-2 ssl stdc++ tiff wmf-0.2 wmflite-0.2 xcb xcb-render \
+		rsvg-2 ssl tiff wmf-0.2 wmflite-0.2 xcb xcb-render \
 		xcb-shm xml2 z
 
 MODULES=	devel/gettext \
