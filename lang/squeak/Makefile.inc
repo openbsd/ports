@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.5 2013/03/11 12:27:54 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2013/03/11 13:42:59 sthen Exp $
 
 CATEGORIES =	lang
 MAINTAINER =	Marc Espie <espie@openbsd.org>
@@ -6,7 +6,7 @@ MAINTAINER =	Marc Espie <espie@openbsd.org>
 # Apple license, similar to GPL, with a clause to protect Apple
 # against litigation
 # Large explanation on http://minnow.cc.gatech.edu/squeak/159
-PERMIT_DISTFILES_FTP =	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
 HOMEPAGE =	http://squeak.org/
 SQUEAK_SITE=	http://ftp.squeak.org/${MAJOR}.${MINOR}/
