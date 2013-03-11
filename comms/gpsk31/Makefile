@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/11/04 08:21:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2013/03/11 01:30:26 espie Exp $
 
 COMMENT=	gtk PSK31 send and receive
 
@@ -10,9 +10,6 @@ HOMEPAGE=	http://www.qsl.net/pg4i/linux/gpsk31.html
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=		devel/desktop-file-utils
 LIB_DEPENDS=		x11/gtk+2

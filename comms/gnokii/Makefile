@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2012/08/19 20:56:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2013/03/11 01:30:26 espie Exp $
 
 COMMENT=	tools to talk to GSM cellular phones
 
@@ -14,9 +14,6 @@ MASTER_SITES=	${HOMEPAGE}download/gnokii/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 FLAVORS=		no_x11
 FLAVOR?=
@@ -71,7 +68,7 @@ post-install:
 		${PREFIX}/share/pixmaps/xgnokii.xpm
 .endif
 
-do-regress:
+do-test:
 	cd ${WRKSRC}/testsuite && ./testit
 
 .include <bsd.port.mk>

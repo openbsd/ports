@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/06/02 12:09:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 01:30:26 espie Exp $
 
 COMMENT-term=	cli client for Intel AMT serial-over-lan
 COMMENT-main=	client and tools for Intel AMT serial-over-lan
@@ -17,9 +17,6 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB-term=	c
 WANTLIB-main=	${MODGETTEXT_WANTLIB} c gio-2.0 glib-2.0 gobject-2.0
@@ -44,7 +41,7 @@ FAKE_FLAGS=	mandir=${WRKINST}${PREFIX}/man
 
 USE_GMAKE=	Yes
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 MAKE_FILE=	GNUmakefile
 

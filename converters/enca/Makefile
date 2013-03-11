@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/02/01 11:49:42 giovanni Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 01:30:27 espie Exp $
 
 COMMENT=	detect character set and encoding of text files
 
@@ -10,9 +10,6 @@ HOMEPAGE=	http://gitorious.org/enca/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://dl.cihar.com/enca/
 

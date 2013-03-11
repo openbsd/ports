@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/07/08 18:03:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 01:30:26 espie Exp $
 
 COMMENT=	simplified-traditional chinese translate tool
 
@@ -15,9 +15,6 @@ MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB= 	c
 

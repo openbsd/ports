@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/11/13 13:54:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/11 01:30:26 espie Exp $
 
 COMMENT =		device firmware update (DFU) USB programmer
 
@@ -13,9 +13,6 @@ MAINTAINER =		Ian Darwin <ian@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${HOMEPAGE}/releases/
 
@@ -24,7 +21,7 @@ WANTLIB =		c usb pthread
 
 CONFIGURE_STYLE =	gnu
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/dfu-util.1 ${PREFIX}/man/man1

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/18 16:57:49 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/11 01:30:27 espie Exp $
 
 COMMENT=	receive/send files via ZMODEM protocol (unrestricted)
 
@@ -7,7 +7,6 @@ CATEGORIES=	comms
 
 PERMIT_PACKAGE_CDROM=	no license
 PERMIT_PACKAGE_FTP=	no license
-PERMIT_DISTFILES_CDROM=	no license
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
@@ -19,7 +18,7 @@ WRKDIST=	${WRKDIR}/zmtx-zmrx
 MAKE_FILE=	makefile
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 .for f in zmrx zmtx

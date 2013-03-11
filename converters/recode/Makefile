@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2012/08/06 14:10:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2013/03/11 01:30:28 espie Exp $
 
 COMMENT=	convert files between character sets and usages
 
@@ -15,9 +15,6 @@ MODULES=	devel/gettext \
 
 # (L)GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c
 
@@ -35,7 +32,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 post-extract:
 	@cd ${WRKSRC}/lib && cp -p error.c ../src
 
-post-regress:
+post-test:
 	@cd ${WRKBUILD}/tests && ${MAKE} \
 		PYTHON=${MODPY_BUILD} bigtest
 

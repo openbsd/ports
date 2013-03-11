@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/18 17:06:05 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/03/11 01:30:27 espie Exp $
 
 COMMENT=	converter to/from base64 encoding
 
@@ -9,9 +9,6 @@ HOMEPAGE=	http://www.fourmilab.ch/webtools/base64/
 
 # public domain
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 MASTER_SITES=	${HOMEPAGE}
@@ -19,6 +16,6 @@ MASTER_SITES=	${HOMEPAGE}
 CONFIGURE_STYLE=gnu
 ALL_TARGET=	prog
 USE_GROFF =	Yes
-REGRESS_TARGET=	wringer
+TEST_TARGET=	wringer
 
 .include <bsd.port.mk>

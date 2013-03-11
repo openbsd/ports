@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/15 00:22:50 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 01:30:28 espie Exp $
 
 COMMENT=	PPM to Pilot bitmap converter
 
@@ -10,9 +10,6 @@ HOMEPAGE=	http://www.isaac.cs.berkeley.edu/pilot/
 MAINTAINER=	Josh Rivel <dorqus@bsdfreek.com>
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c m netpbm
 
@@ -27,6 +24,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/Tbmptopnm ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKBUILD}/ppmtoTbmp ${PREFIX}/bin
 
-REGRESS_TARGET=	test
+TEST_TARGET=	test
 
 .include <bsd.port.mk>

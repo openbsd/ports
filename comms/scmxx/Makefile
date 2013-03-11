@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2012/08/19 22:30:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/11 01:30:27 espie Exp $
 
 COMMENT=		data exchange utility for Siemens mobile phones
 
@@ -11,9 +11,6 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=scmxx/}
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	devel/gettext
 
@@ -28,7 +25,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAKE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DNO_NL_LANGINFO" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 DOCS=		doc_sources.txt gsm0338.txt gsmcharset.txt
 SAMPLES=	sms.txt vCalendar.vcs vCard.vcf

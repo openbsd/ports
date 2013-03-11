@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2012/06/19 12:57:32 okan Exp $
+# $OpenBSD: Makefile,v 1.29 2013/03/11 01:30:27 espie Exp $
 
 COMMENT=	X amateur station tracking and info reporting
 
@@ -9,9 +9,6 @@ CATEGORIES=    	comms hamradio geo
 HOMEPAGE=	http://www.xastir.org/
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	$(MASTER_SITE_SOURCEFORGE:=xastir/)
 

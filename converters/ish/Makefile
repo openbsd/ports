@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/12/30 23:14:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/11 01:30:27 espie Exp $
 
 COMMENT=	binary-to-text file converter
 
@@ -8,7 +8,6 @@ CATEGORIES=	converters
 
 PERMIT_PACKAGE_CDROM=	no license
 PERMIT_PACKAGE_FTP=	no license
-PERMIT_DISTFILES_CDROM=	no license
 PERMIT_DISTFILES_FTP=	no license
 
 WANTLIB += c
@@ -21,7 +20,7 @@ MASTER_SITES=	\
 MAKE_FILE=	makefile
 MAKE_FLAGS=	CFLAGS="${CFLAGS}" CC="${CC}"
 ALL_TARGET=	ish dispish
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	cd ${WRKSRC}; ${INSTALL_PROGRAM} ish dispish ${PREFIX}/bin

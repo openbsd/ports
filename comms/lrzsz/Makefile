@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2012/10/15 14:55:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/11 01:30:26 espie Exp $
 
 COMMENT=	receive/send files via X/Y/ZMODEM protocol
 
@@ -12,8 +12,6 @@ MASTER_SITES=	http://www.ohse.de/uwe/releases/
 
 PERMIT_PACKAGE_CDROM=	possible copyright issue with rzsz
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	possible copyright issue with rzsz
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 SEPARATE_BUILD=	Yes

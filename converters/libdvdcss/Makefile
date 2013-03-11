@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/01/08 23:55:14 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2013/03/11 01:30:27 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -16,8 +16,6 @@ SHARED_LIBS=	dvdcss	3.0
 HOMEPAGE=	http://www.videolan.org/developers/libdvdcss.html
 
 # GPLv2+
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Free speech issue
 PERMIT_PACKAGE_FTP=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2012/12/11 11:01:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2013/03/11 01:30:27 espie Exp $
 
 COMMENT=	external MIME packer/unpacker
 
@@ -8,9 +8,6 @@ CATEGORIES=	converters mail news
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c
 
@@ -18,7 +15,7 @@ MASTER_SITES=	http://ftp.andrew.cmu.edu/pub/mpack/ \
 		ftp://ftp.andrew.cmu.edu/pub/mpack/
 
 CONFIGURE_STYLE= gnu
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 # less annoying for patching
 post-extract:

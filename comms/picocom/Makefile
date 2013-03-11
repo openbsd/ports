@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/10/23 09:39:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 01:30:27 espie Exp $
 # Original from: Nick Patavalis (npat@efault.net)
 #
 COMMENT			= minimal dumb-terminal emulation program
@@ -12,12 +12,9 @@ MAINTAINER		= Kyle Isom <coder@kyleisom.net>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM	= Yes
-PERMIT_PACKAGE_FTP	= Yes
-PERMIT_DISTFILES_CDROM	= Yes
-PERMIT_DISTFILES_FTP	= Yes
 
 WANTLIB			= c
-NO_REGRESS		= Yes
+NO_TEST			= Yes
 
 MAKE_FLAGS		= CC="${CC}" CFLAGS="${CFLAGS}"
 MAKE_ENV		= LDFLAGS="${LDFLAGS}"

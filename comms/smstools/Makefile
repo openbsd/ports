@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/01/14 01:36:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2013/03/11 01:30:27 espie Exp $
 
 COMMENT =	gateway to send and receive SMS through GSM mobile phones
 
@@ -12,9 +12,6 @@ MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	c mm
 
@@ -25,7 +22,7 @@ RUN_DEPENDS =	mail/procmail
 LIB_DEPENDS =	devel/mm
 
 USE_GMAKE =	Yes
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 WRKDIST =	${WRKDIR}/smstools3
 WRKSRC =	${WRKDIST}/src
 

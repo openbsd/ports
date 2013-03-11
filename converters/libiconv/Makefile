@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2012/11/15 11:24:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2013/03/11 01:30:27 espie Exp $
 
 COMMENT=	character set conversion library
 
@@ -16,9 +16,6 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # LGPLv2 and GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	c
 
 BUILD_DEPENDS=	devel/gperf

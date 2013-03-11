@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2011/03/14 09:17:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2013/03/11 01:30:27 espie Exp $
 
 COMMENT=	Tcl/Tk interface to Sam Leffler's fax package
 
@@ -10,9 +10,6 @@ MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ftp.hylafax.org/contrib/tkhylafax/ \
 		ftp://mirror.aarnet.edu.au/pub/hylafax/contrib/tkhylafax/ \
@@ -25,7 +22,7 @@ RUN_DEPENDS=	comms/hylafax \
 		print/gv
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Makefile \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/15 00:22:50 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/11 01:30:27 espie Exp $
 
 
 COMMENT=		SNPP, TAP, email notification application
@@ -14,9 +14,6 @@ MAINTAINER=		Todd T. Fries <todd@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sendpage/}
 

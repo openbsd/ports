@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2012/09/04 22:43:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/11 01:30:28 espie Exp $
 
 COMMENT=	character encoding converter generator package
 
@@ -9,8 +9,6 @@ CATEGORIES=	converters
 
 PERMIT_PACKAGE_CDROM=	no fee
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	no fee
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c
 
@@ -42,6 +40,6 @@ do-install:
 	cd ${WRKSRC}/doc && $(INSTALL_DATA) * ${LIBDIR}/doc
 	cd ${WRKSRC}/xlt && $(INSTALL_DATA) * ${LIBDIR}/xlt
 
-REGRESS_TARGET=	check
-REGRESS_DEPENDS=converters/trans
+TEST_TARGET=	check
+TEST_DEPENDS=converters/trans
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2012/10/29 15:19:02 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/11 01:30:26 espie Exp $
 
 COMMENT=	library for Chinese language processing
 
@@ -14,9 +14,6 @@ HOMEPAGE=	http://libtabe.sourceforge.net/
 MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB += c lib/db/db=3
 
@@ -34,6 +31,6 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/script
 WRKDIST=	${WRKDIR}/libtabe
 USE_X11 =	Yes
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

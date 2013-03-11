@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/18 16:57:48 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/11 01:30:26 espie Exp $
 
 COMMENT=	convert solar calendar to lunar calendar
 
@@ -12,15 +12,13 @@ MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	non-commercial use only
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	non-commercial use only
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c
 
 ALL_TARGET=
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/chinese

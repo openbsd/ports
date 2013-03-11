@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/22 08:56:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/11 01:30:28 espie Exp $
 
 COMMENT=		convert pf(4) logs to XML
 
@@ -11,9 +11,6 @@ HOMEPAGE=		http://akldev.free.fr/pflogx/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB= 		c expat m pcap stdc++
 
@@ -24,7 +21,7 @@ MAKE_FLAGS=		WITH_EXPAT=1 \
 			EXPAT_INCLUDEDIR="${X11BASE}/include" \
 			EXPAT_LIBDIR="${X11BASE}/lib"
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 WRKDIST=		${WRKDIR}/pflogx/
 

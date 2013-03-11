@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/10/15 15:06:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 01:30:26 espie Exp $
 
 COMMENT=	curses-based 3270 terminal editor
 
@@ -13,9 +13,6 @@ MAINTAINER=	Jeremy Evans <jeremy@openbsd.org>
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c crypto ssl ncursesw readline util
 
 MODULES=                converters/libiconv
@@ -31,6 +28,6 @@ post-install:
 	rm ${WRKINST}/etc/x3270/ibm_hosts
 	rmdir ${WRKINST}/etc/x3270
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 .include <bsd.port.mk>

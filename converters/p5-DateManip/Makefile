@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/01/13 09:37:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/11 01:30:27 espie Exp $
 
 COMMENT =	manipulate dates in perl
 DISTNAME =	Date-Manip-6.14
@@ -12,9 +12,6 @@ MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 CONFIGURE_STYLE =	modbuild
 

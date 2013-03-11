@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2011/05/11 06:22:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2013/03/11 01:30:26 espie Exp $
 
 COMMENT=	handle external logins, send and receive faxes
 
@@ -14,9 +14,6 @@ HOMEPAGE=	http://mgetty.greenie.net/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	yes
-PERMIT_PACKAGE_FTP=	yes
-PERMIT_DISTFILES_CDROM=	yes
-PERMIT_DISTFILES_FTP=	yes
 
 WANTLIB=	c m util
 
@@ -74,14 +71,14 @@ post-install:
 		${PREFIX}/share/examples/mgetty+sendfax/voice/scripts
 	@mv ${PREFIX}/man/man1/fax.1 ${PREFIX}/man/man7/fax.7
 
-REGRESS_TARGET=		check
+TEST_TARGET=		check
 TESTS_ENVIRONMENT=	MAKE=${GMAKE}
 
-do-regress:
+do-test:
 	@cd ${WRKBUILD} && \
 		exec ${SETENV} ${MAKE_ENV} \
 		TESTS_ENVIRONMENT='${TESTS_ENVIRONMENT}' \
-			${MAKE_PROGRAM} ${ALL_REGRESS_FLAGS} -f ${MAKE_FILE} \
-			${REGRESS_TARGET}
+			${MAKE_PROGRAM} ${ALL_TEST_FLAGS} -f ${MAKE_FILE} \
+			${TEST_TARGET}
 
 .include <bsd.port.mk>

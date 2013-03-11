@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/16 08:48:02 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 01:30:27 espie Exp $
 
 COMMENT=	radio contest logger
 
@@ -15,9 +15,6 @@ CONFIGURE_STYLE=autoheader gnu
 
 # License: GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	hamlib>=2 ncurses pthread ossaudio c m
 

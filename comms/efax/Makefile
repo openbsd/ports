@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/18 16:57:48 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2013/03/11 01:30:26 espie Exp $
 
 COMMENT=	small & simple FAX send/receive program
 
@@ -9,9 +9,6 @@ CATEGORIES=	comms
 MAINTAINER=	Ian Darwin <ian@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c
 
@@ -20,7 +17,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE:=apps/serialcomm/fax/}
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	cd ${WRKBUILD}; \

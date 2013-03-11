@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/23 22:01:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/11 01:30:27 espie Exp $
 
 COMMENT=	C++ class library for MIME messages
 
@@ -8,7 +8,6 @@ CATEGORIES=		converters
 
 PERMIT_PACKAGE_CDROM=	restrictive non-commercial license
 PERMIT_PACKAGE_FTP=	restrictive non-commercial license
-PERMIT_DISTFILES_CDROM=	restrictive non-commercial license
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SUNSITE:=devel/lang/c++/}
@@ -47,6 +46,6 @@ do-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/examples/mimepp
 .endfor
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>
