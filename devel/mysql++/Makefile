@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2013/01/12 11:46:28 brad Exp $
+# $OpenBSD: Makefile,v 1.37 2013/03/11 10:50:12 espie Exp $
 
 ONLY_FOR_ARCHS=		${GCC4_ARCHS}
 SHARED_ONLY =		Yes
@@ -16,9 +16,6 @@ HOMEPAGE =		http://tangentsoft.net/mysql++/
 
 # LPGLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += m mysqlclient stdc++
 
@@ -26,7 +23,7 @@ MASTER_SITES =		${HOMEPAGE}releases/
 
 LIB_DEPENDS =		databases/mysql
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 USE_GMAKE =		Yes
 AUTOCONF_VERSION =	2.59
 CONFIGURE_STYLE =	autoconf

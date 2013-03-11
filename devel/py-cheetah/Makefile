@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/09/16 09:24:55 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/11 10:50:25 espie Exp $
 
 COMMENT=		Python-powered template engine and code generator
 
@@ -12,14 +12,11 @@ HOMEPAGE=		http://www.cheetahtemplate.org/
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_PYPI:=C/Cheetah/}
 
 MODULES=		lang/python
-REGRESS_DEPENDS=	devel/py-cheetah
+TEST_DEPENDS=	devel/py-cheetah
 MODPY_SETUPTOOLS=	Yes
 MAKE_ENV+=		CHEETAH_USE_SETUPTOOLS=1
 MODPY_BADEGGS=		Cheetah
@@ -30,7 +27,7 @@ SUBST_VARS=		VERSION
 
 RUN_DEPENDS=		textproc/markdown
 
-do-regress:
+do-test:
 	mkdir /tmp/.cheetah
 	cd /tmp/.cheetah && cheetah test
 	rm -fr /tmp/.cheetah

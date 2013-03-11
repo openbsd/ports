@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/01/09 11:55:13 rpointel Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:31 espie Exp $
 
 COMMENT =		series of applications for Mercurial
 
@@ -13,9 +13,6 @@ MAINTAINER =		Remi Pointel <rpointel@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		http://bitbucket.org/tortoisehg/targz/downloads/
 
@@ -29,6 +26,6 @@ RUN_DEPENDS =		${BUILD_DEPENDS} \
 			devel/mercurial>=2.4.2 \
 			devel/py-iniparse
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 .include <bsd.port.mk>

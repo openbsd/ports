@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/15 19:45:58 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 10:50:06 espie Exp $
 
 COMMENT=	GNU versions of the rcs utilities
 DISTNAME=	rcs-5.7
@@ -11,15 +11,12 @@ MASTER_SITES=	${HOMEPAGE}
 HOMEPAGE=	http://www.cs.purdue.edu/homes/trinkle/RCS/
 
 # GPL
-PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
 
 WANTLIB=	c
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 CONFIGURE_STYLE=simple
 

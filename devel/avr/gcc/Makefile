@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2012/03/29 13:38:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/11 10:50:01 espie Exp $
 
 COMMENT=	Atmel AVR 8-bit RISC microcontrollers' XGCC
 
 V=4.3.4
 
 #GPLv3
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
 WANTLIB=		c gmp mpfr
 DIST_SUBDIR=gcc
 
@@ -52,7 +49,7 @@ USE_GMAKE=	Yes
 USE_GROFF =	Yes
 YACC=		bison
 
-REGRESS_DEPENDS=devel/dejagnu
+TEST_DEPENDS=devel/dejagnu
 
 SUBST_VARS=	V
 

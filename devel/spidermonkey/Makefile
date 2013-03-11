@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/05 10:27:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/11 10:50:31 espie Exp $
 
 SHARED_ONLY=	Yes
 # 1.8.5 is based on ffx 10 engine, broken at runtime on sparc64
@@ -25,9 +25,6 @@ MASTER_SITES =	http://ftp.mozilla.org/pub/mozilla.org/js/
 
 # MPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c m pthread readline nspr4 ncurses plc4 plds4 stdc++
 
@@ -43,7 +40,7 @@ PKG_ARGS+=	-Djit=0 -Damd64=0
 
 MODULES =	lang/python
 MODPY_RUNDEP =	No
-REGRESS_DEPENDS = ${MODPY_RUN_DEPENDS}
+TEST_DEPENDS = ${MODPY_RUN_DEPENDS}
 BUILD_DEPENDS =	archivers/zip
 LIB_DEPENDS =	devel/nspr
 

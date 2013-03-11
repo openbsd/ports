@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2011/09/16 09:24:52 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2013/03/11 10:50:12 espie Exp $
 
 COMMENT=		OpenCM change management system
 
@@ -16,9 +16,6 @@ MAINTAINER=		Todd T. Fries <todd@openbsd.org>
 
 # BSD/(GPL for diff3)
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c crypto ncurses pthread readline ssl z gc>=3
 
 MASTER_SITES=		${HOMEPAGE}releases/
@@ -37,7 +34,7 @@ CONFIGURE_ENV=		LDFLAGS="${LDFLAGS}" \
 
 MAKE_ENV= LDFLAGS="${LDFLAGS}"
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 MAKE_FLAGS+=		TEXI2DVI=: DVIPS=:
 MAKE_FLAGS+= LIBZ=-lz USOURCE_SUBDIRS="libgdiff src"

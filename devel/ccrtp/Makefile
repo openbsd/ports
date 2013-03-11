@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2012/12/23 12:25:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 10:50:02 espie Exp $
 
 COMMENT=	implementation of the Real-time Transport Protocol
 
@@ -13,9 +13,6 @@ HOMEPAGE=	http://www.gnutelephony.org/index.php/GNU_ccRTP
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += crypto ssl ccgnu2>=1 m pthread stdc++
 
@@ -29,6 +26,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		ac_cv_path_DOXYGEN=no \
 		ac_cv_path_LIBGCRYPT_CONFIG=no
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

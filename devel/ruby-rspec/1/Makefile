@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/09/23 16:57:34 jeremy Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 10:50:30 espie Exp $
 
 COMMENT =		ruby framework for Behaviour Driven Development
 DISTNAME =		rspec-1.3.2
@@ -17,7 +17,7 @@ post-install:
 
 # Requires heckle and quite a few other libraries to run its own
 # specs, so this is currently broken.
-REGRESS_DEPENDS =	devel/ruby-bundler,${MODRUBY_FLAVOR}>=1.0.21
-MODRUBY_REGRESS =	rake rspec
+TEST_DEPENDS =	devel/ruby-bundler,${MODRUBY_FLAVOR}>=1.0.21
+MODRUBY_TEST =	rake rspec
 
 .include <bsd.port.mk>

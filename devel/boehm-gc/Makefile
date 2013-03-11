@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2012/12/21 12:50:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2013/03/11 10:50:01 espie Exp $
 
 COMMENT-main=	garbage collection and memory leak detection for C and C++
 COMMENT-atomic=	access to hardware provided atomic memory operations
@@ -26,9 +26,6 @@ MAINTAINER=	Todd T. Fries <todd@openbsd.org>
 NOT_FOR_ARCHS=	m68k m88k vax mips64 mips64el
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += pthread
 

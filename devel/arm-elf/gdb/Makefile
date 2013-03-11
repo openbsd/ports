@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2012/09/28 18:55:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 10:50:01 espie Exp $
 
 COMMENT=	gdb for arm-elf cross-development
 
@@ -20,6 +20,6 @@ CONFIGURE_ARGS+=	--enable-multilib \
 			--enable-thumb \
 			--enable-interwork
 
-REGRESS_DEPENDS=devel/dejagnu
+TEST_DEPENDS=devel/dejagnu
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2012/09/23 16:57:33 jeremy Exp $
+# $OpenBSD: Makefile,v 1.21 2013/03/11 10:50:29 espie Exp $
 
 COMMENT=	simple rake/rubygems helper for project Rakefiles
 
@@ -8,9 +8,6 @@ CATEGORIES=	devel
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	lang/ruby
 
@@ -21,7 +18,7 @@ CONFIGURE_STYLE=ruby gem
 
 # Regress doesn't work in ruby 1.8, because it ships with
 # an old version of rdoc.
-REGRESS_DEPENDS =	math/graphviz
-MODRUBY_REGRESS =	rake
+TEST_DEPENDS =	math/graphviz
+MODRUBY_TEST =	rake
 
 .include <bsd.port.mk>

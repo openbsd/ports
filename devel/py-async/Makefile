@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/01/21 14:28:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:25 espie Exp $
 
 COMMENT=		async framework
 
@@ -9,9 +9,6 @@ CATEGORIES=		devel
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_PYPI:=a/async/}
 
@@ -21,6 +18,6 @@ CFLAGS=			-lz
 
 MODULES=		lang/python
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 .include <bsd.port.mk>

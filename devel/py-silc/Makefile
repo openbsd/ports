@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/09/16 09:24:56 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 10:50:26 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -17,9 +17,6 @@ MAINTAINER=	Martynas Venckus <martynas@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=python-silc/}
 EXTRACT_SUFX=	.tar.bz2
@@ -30,7 +27,7 @@ LIB_DEPENDS=	devel/silc-toolkit
 WANTLIB +=	silc>=7 silcclient>=5
 WANTLIB +=	${MODPY_WANTLIB}
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 pre-build:
 	@perl -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/setup.py

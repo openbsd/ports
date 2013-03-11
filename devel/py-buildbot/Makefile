@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2012/04/14 09:52:40 landry Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 10:50:25 espie Exp $
 
 COMMENT =	system to automate the compile/test cycle
 
@@ -14,9 +14,6 @@ MAINTAINER =	Piotr Sikora <piotr.sikora@frickle.com>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	http://buildbot.googlecode.com/files/
 
@@ -35,7 +32,7 @@ RUN_DEPENDS =	databases/py-sqlalchemy \
 		www/py-jinja2 \
 		${MODPY_JSON}
 
-REGRESS_DEPENDS =	${RUN_DEPENDS} \
+TEST_DEPENDS =	${RUN_DEPENDS} \
 			devel/py-mock
 
 HOMEDIR =		/var/buildbot
@@ -51,7 +48,7 @@ post-install:
 	cd ${WRKSRC} && pax -rw contrib ${PREFIX}/share/doc/py-buildbot
 	${INSTALL_MAN} ${WRKSRC}/docs/buildbot.1 ${PREFIX}/man/man1
 
-do-regress:
+do-test:
 	@${MAKE_ENV} PYTHONPATH=${WRKSRC} \
 	    ${LOCALBASE}/bin/trial --temp-directory=${WRKBUILD}/regress \
 	    buildbot.test

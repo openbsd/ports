@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/01/17 07:57:37 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:17 espie Exp $
 
 COMMENT =		program arguments processing module
 
@@ -9,9 +9,6 @@ CATEGORIES =		devel
 
 # Artistic License
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 MODULES =		cpan
 

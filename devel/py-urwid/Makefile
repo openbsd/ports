@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/10/08 13:26:02 rpointel Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 10:50:27 espie Exp $
 
 COMMENT =	console user interface library for python
 
@@ -11,13 +11,10 @@ HOMEPAGE =	http://excess.org/urwid/
 
 # GPL
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	${HOMEPAGE}
 
-REGRESS_DEPENDS =	devel/py-gobject \
+TEST_DEPENDS =	devel/py-gobject \
 			lang/python/${MODPY_VERSION},-tests
 
 MODULES =	lang/python

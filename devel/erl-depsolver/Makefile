@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/10 19:35:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:03 espie Exp $
 
 COMMENT=	Erlang dependency solver
 
@@ -12,15 +12,13 @@ HOMEPAGE=	https://github.com/opscode/depsolver
 
 # Apache2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://distfiles.nl/
 
 MODULES=	lang/erlang
 
 ALL_TARGET=	compile
-MODERL_REGRESS= eunit
+MODERL_TEST= eunit
 
 do-install:
 	${INSTALL_DATA_DIR} ${ERL_LIBDIR}/{ebin,src}

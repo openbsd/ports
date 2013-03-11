@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/05/26 11:53:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 10:50:01 espie Exp $
 
 VERSION =	2.67
 
@@ -10,7 +10,7 @@ CONFIGURE_ARGS +=	--without-lispdir \
 MODGNU_CONFIG_GUESS_DIRS =${WRKSRC}/build-aux
 MAKE_FLAGS =		EMACS=no
 FAKE_FLAGS =		EMACS=no
-REGRESS_DEPENDS =	devel/automake/1.11
-REGRESS_FLAGS +=	AUTOMAKE_VERSION=1.11
+TEST_DEPENDS =	devel/automake/1.11
+TEST_FLAGS +=	AUTOMAKE_VERSION=1.11
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/01/20 18:01:18 kili Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/11 10:50:07 espie Exp $
 
 COMMENT =		library to convert between different types
 
@@ -10,9 +10,6 @@ MAINTAINER =		David Coppa <dcoppa@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		lang/ghc
 

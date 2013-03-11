@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/08/23 15:08:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:21 espie Exp $
 
 SHARED_ONLY =		Yes
 COMMENT =		Simple DirectMedia Layer for Perl
@@ -15,10 +15,7 @@ CPAN_AUTHOR =		DGOEHRIG
 MAINTAINER =		James Wright <jamesw@bsdhosting.co.za>
 
 # GPLv2
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
 
 WANTLIB += GL GLU SDL c jpeg png pthread
 
@@ -36,8 +33,8 @@ CONFIGURE_STYLE =	perl modbuild
 USE_GROFF =		Yes
 
 # Set AUDIODEVICE to aucat socket if it is in use
-REGRESS_IS_INTERACTIVE =Yes
-REGRESS_FLAGS =		AUDIODEVICE="${AUDIODEVICE}"
+TEST_IS_INTERACTIVE =Yes
+TEST_FLAGS =		AUDIODEVICE="${AUDIODEVICE}"
 
 EXAMPLE_DIR =		${PREFIX}/share/examples/p5-SDL
 EXAMPLE_LOC =		${WRKSRC}/test

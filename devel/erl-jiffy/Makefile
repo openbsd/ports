@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/10 19:35:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 10:50:03 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -14,8 +14,6 @@ HOMEPAGE=	https://github.com/davisp/jiffy
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://distfiles.nl/
 

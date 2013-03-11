@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2013/01/20 17:59:15 kili Exp $
+# $OpenBSD: Makefile,v 1.44 2013/03/11 10:50:06 espie Exp $
 
 COMMENT-main =	documentation-generation tool for Haskell libraries
 COMMENT-lib =	haddock library
@@ -16,9 +16,6 @@ MULTI_PACKAGES =		-main -lib
 
 # BSD3
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		lang/ghc converters/libiconv
 MODGHC_BUILD =		cabal hackage register

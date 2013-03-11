@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/03/18 15:28:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 10:50:12 espie Exp $
 
 COMMENT =		object-oriented input system
 
@@ -17,9 +17,6 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
 # zlib/libpng
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		X11 m stdc++ xcb
 
@@ -39,7 +36,7 @@ CONFIGURE_ENV =		CPPFLAGS="-I${X11BASE}/include"
 AUTOCONF_VERSION =	2.60
 AUTOMAKE_VERSION =	1.10
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 post-extract:
 	find ${WRKSRC} -type f | xargs perl -pi -e 's/\015//g'

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/09/16 09:24:55 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:25 espie Exp $
 
 COMMENT =	add options to doctest examples while they are running
 
@@ -13,9 +13,6 @@ HOMEPAGE =	http://pypi.python.org/pypi/dtopt/
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	${MASTER_SITE_PYPI:=d/dtopt/}
 
@@ -23,7 +20,7 @@ MODULES =	lang/python
 
 MODPY_SETUPTOOLS =	Yes
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-dtopt

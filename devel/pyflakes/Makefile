@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/09/27 08:55:08 mpi Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 10:50:27 espie Exp $
 
 COMMENT =		passive checker of Python programs
 
@@ -13,14 +13,11 @@ MAINTAINER =		Martin Pieuchot <mpi@openbsd.org>
 
 # MIT 
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 MASTER_SITES =		${MASTER_SITE_PYPI:=p/pyflakes/}
 
 MODULES =		lang/python
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 .include <bsd.port.mk>

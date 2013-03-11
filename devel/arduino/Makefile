@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2012/12/05 13:14:52 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:00 espie Exp $
 
 COMMENT=	open-source electronics prototyping platform
 
@@ -12,9 +12,6 @@ HOMEPAGE=	http://www.arduino.cc/
 # arduino core + libraries: LGPLv2.1
 # frontend application: GPLv2 (not shipped yet)
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	http://arduino.googlecode.com/files/
 
@@ -26,7 +23,7 @@ RUN_DEPENDS=	devel/avr/binutils \
 BUILD_DEPENDS=	archivers/unzip
 
 NO_BUILD=       Yes
-NO_REGRESS=     Yes
+NO_TEST=     Yes
 PKG_ARCH=       *
 WRKDIST=	${WRKDIR}/arduino-${V}
 

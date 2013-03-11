@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/09/05 12:11:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/11 10:50:23 espie Exp $
 
 COMMENT= 	Perl extension to test methods for warnings
 
@@ -8,9 +8,6 @@ CATEGORIES=	devel
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	devel/p5-Sub-Uplevel>=0.12 \
 		devel/p5-Tree-DAG_Node>=1.02

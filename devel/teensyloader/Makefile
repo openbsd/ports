@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/12/13 08:27:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:31 espie Exp $
 
 COMMENT=	in-system programmer for Teensy boards
 
@@ -13,9 +13,6 @@ MAINTAINER=	Chris Kuethe <ckuethe@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 MASTER_SITES=		${HOMEPAGE}
@@ -24,7 +21,7 @@ CONFIGURE_STYLE=	None
 WRKDIST=		${WRKDIR}/teensy_loader_cli
 MAKE_FILE=		Makefile.bsd
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/teensyloader ${PREFIX}/bin

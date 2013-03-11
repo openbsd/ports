@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2012/07/16 13:15:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 10:50:25 espie Exp $
 
 COMMENT =	Python client library for Google data APIs
 
@@ -12,17 +12,14 @@ MAINTAINER =	frantisek holop <minusf@obiit.org>
 
 # Apache License 2.0
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	http://gdata-python-client.googlecode.com/files/
 
 MODULES =	lang/python
 
-REGRESS_IS_INTERACTIVE = Yes
+TEST_IS_INTERACTIVE = Yes
 
-do-regress: fake
+do-test: fake
 	@cd ${WRKSRC}/tests && ${MAKE_ENV} \
 		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} ./run_data_tests.py
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2012/09/01 14:36:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.96 2013/03/11 10:50:10 espie Exp $
 
 COMMENT=		portable library for obtaining system information
 
@@ -15,9 +15,6 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += Xau c kvm pcre pthread glib-2.0
 

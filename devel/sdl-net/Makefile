@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2012/06/01 15:58:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2013/03/11 10:50:30 espie Exp $
 
 COMMENT=	SDL cross-platform networking library
 
@@ -16,9 +16,6 @@ HOMEPAGE=	http://www.libsdl.org/projects/SDL_net/
 
 # Zlib
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB=	SDL m sndio usbhid
 

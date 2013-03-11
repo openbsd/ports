@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/03/14 09:17:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:16 espie Exp $
 
 COMMENT =	manipulate file metadata
 
@@ -12,14 +12,11 @@ MAINTAINER =	Simon Bertrang <simon@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 RUN_DEPENDS =	devel/p5-Best \
 		devel/p5-YAML
 
-# p5-Directory-Scratch should be REGRESS_DEPENDS but Module::Install screws up
+# p5-Directory-Scratch should be TEST_DEPENDS but Module::Install screws up
 BUILD_DEPENDS =	${RUN_DEPENDS} \
 		devel/p5-Directory-Scratch \
 		devel/p5-YAML-Syck

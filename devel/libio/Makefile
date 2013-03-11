@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:10 espie Exp $
 
 COMMENT=	abstraction for general data transport
 
@@ -10,13 +10,10 @@ HOMEPAGE=	http://monkey.org/~provos/libio/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=	${WRKDIR}/libio
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 CONFIGURE_STYLE=gnu
 

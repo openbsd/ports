@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2012/12/03 20:08:46 chrisz Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/11 10:50:02 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -17,9 +17,6 @@ HOMEPAGE =	http://coccinelle.lip6.fr/
 
 # GPLv2 only
 PERMIT_PACKAGE_CDROM =	 Yes
-PERMIT_PACKAGE_FTP =	 Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	 Yes
 
 WANTLIB += c curses m pthread util pcre ${MODPY_WANTLIB}
 
@@ -33,10 +30,10 @@ RUN_DEPENDS =		devel/ocaml-pcre \
 			sysutils/findlib \
 			sysutils/ggrep \
 			textproc/gdiff
-REGRESS_DEPENDS =	${FULLPKGPATH}
+TEST_DEPENDS =	${FULLPKGPATH}
 
 # asks questions at the end if it does better than expected
-REGRESS_IS_INTERACTIVE = Yes
+TEST_IS_INTERACTIVE = Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		MAKE_PROGRAM=${MAKE_PROGRAM}
@@ -46,7 +43,7 @@ CONFIGURE_ARGS =	--with-python=${MODPY_BIN}
 
 USE_GMAKE =		Yes
 
-REGRESS_TARGET =	test
+TEST_TARGET =	test
 
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mocaml_native_dynlink}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/15 19:45:59 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:10 espie Exp $
 
 COMMENT=	Extensible formatted print C library
 
@@ -13,13 +13,10 @@ EXTRACT_SUFX=	.tgz
 BUILD_DEPENDS=	devel/libutf
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 FAKE_FLAGS=	PREFIX=${WRKINST}${PREFIX}
 USE_GROFF =	Yes
-REGRESS_TARGET=	test
+TEST_TARGET=	test
 
 pre-build:
 	@cp ${FILESDIR}/Make.OpenBSD ${WRKSRC}

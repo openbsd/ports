@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/11/04 09:18:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/11 10:50:03 espie Exp $
 
 COMMENT =	C++ toolkit for GUI
 CATEGORIES =	devel
@@ -28,9 +28,6 @@ CONFIGURE_ARGS += \
 	--with-xft
 
 # LGPL or looser
-PERMIT_DISTFILES_FTP = Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_PACKAGE_FTP = Yes
 PERMIT_PACKAGE_CDROM = Yes
 USE_LIBTOOL =	Yes
 USE_GROFF =	Yes

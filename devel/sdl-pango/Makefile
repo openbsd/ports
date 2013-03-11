@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/15 19:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 10:50:30 espie Exp $
 
 COMMENT=	SDL wrapper around the Pango library
 
@@ -20,9 +20,6 @@ HOMEPAGE=	http://sdlpango.sourceforge.net/
 
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	SDL X11 Xau Xdmcp expat fontconfig freetype glib-2.0 \
 		gmodule-2.0 gobject-2.0 gthread-2.0 m pango-1.0 \
@@ -36,18 +33,18 @@ USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
-REGRESS_IS_INTERACTIVE=	x11
+TEST_IS_INTERACTIVE=	x11
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/sdl-pango
 	${INSTALL_DATA} ${WRKSRC}/docs/html/{*.html,*.css,*.png} \
 		${PREFIX}/share/doc/sdl-pango
 
-do-regress:
+do-test:
 	cd ${WRKSRC}/test && \
 	${CXX} -o testbench testbench.c \
 		-I../src `sdl-config --cflags` \
 		`sdl-config --libs` -L../src/.libs -lSDL_Pango && \
-	${SETENV} ${ALL_REGRESS_FLAGS} LD_LIBRARY_PATH=${WRKBUILD}/src/.libs ./testbench markup.txt
+	${SETENV} ${ALL_TEST_FLAGS} LD_LIBRARY_PATH=${WRKBUILD}/src/.libs ./testbench markup.txt
 
 .include <bsd.port.mk>

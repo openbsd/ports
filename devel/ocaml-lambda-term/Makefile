@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/01/10 18:55:30 chrisz Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:12 espie Exp $
 
 COMMENT =	library for manipulating the terminal
 CATEGORIES =	devel
@@ -13,10 +13,7 @@ HOMEPAGE =	http://forge.ocamlcore.org/projects/lambda-term
 
 
 # BSD3
-PERMIT_PACKAGE_FTP =		Yes
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_DISTFILES_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
 
 WANTLIB =	c ev m pthread charset
 

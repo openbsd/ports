@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/01/23 11:44:37 benoit Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 10:50:26 espie Exp $
 
 COMMENT=		cross-python path, ini-parsing, io, code, log facilities
 
@@ -16,9 +16,6 @@ MAINTAINER=		Eric Faurot <eric@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_PYPI:=p/py/}
 
@@ -31,6 +28,6 @@ MODPY_SETUPTOOLS=	Yes
 FLAVORS=		python3
 FLAVOR?=
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 .include <bsd.port.mk>

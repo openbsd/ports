@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/01/03 16:26:40 benoit Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:09 espie Exp $
 
 COMMENT =	event expression library
 DISTNAME =	libee-0.4.1
@@ -10,15 +10,12 @@ MAINTAINER =	David Hill <dhill@mindcry.org>
 
 # LGPLv2.1 
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += c estr
 
 MASTER_SITES =	${HOMEPAGE}/files/download/
 
-REGRESS_FLAGS =		CFLAGS+=-I${LOCALBASE}/include
+TEST_FLAGS =		CFLAGS+=-I${LOCALBASE}/include
 USE_LIBTOOL =		Yes
 
 LIB_DEPENDS =		devel/libestr

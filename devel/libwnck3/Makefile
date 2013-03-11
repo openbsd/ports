@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/02/08 18:37:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 10:50:11 espie Exp $
 
 COMMENT=		window navigator construction kit
 
@@ -15,9 +15,6 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ICE SM X11 X11-xcb XRes Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0

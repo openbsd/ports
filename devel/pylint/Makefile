@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/09/16 21:47:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 10:50:27 espie Exp $
 
 COMMENT-main=		lint-like code checker for Python code
 COMMENT-gui=		GUI for pylint
@@ -17,9 +17,6 @@ MAINTAINER=		Andreas Bihlmaier <andreas.bihlmaier@gmx.de>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		ftp://ftp.logilab.fr/pub/pylint/
 
@@ -29,11 +26,11 @@ MODULES=		lang/python
 RUN_DEPENDS=		devel/py-logilab-astng
 RUN_DEPENDS-gui=	${MODPY_TKINTER_DEPENDS} \
 			devel/pylint=${VERSION}
-REGRESS_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS=	${RUN_DEPENDS}
 
 SUBST_VARS+=		VERSION
 
-do-regress: fake
+do-test: fake
 	cd ${WRKSRC}/test && env \
 		PYTHONPATH=${WRKINST}${MODPY_SITEPKG}:${MODPY_SITEPKG} \
 		PYLINTHOME=${WRKINST} \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2012/12/29 19:58:22 landry Exp $
+# $OpenBSD: Makefile,v 1.46 2013/03/11 10:50:12 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 mips64 mips64el powerpc sparc sparc64 hppa
 SHARED_ONLY =	Yes
@@ -23,9 +23,6 @@ WANTLIB=		c pthread
 
 # MPL - Mozilla Public License
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://ftp.eu.mozilla.org/pub/mozilla.org/nspr/releases/v${VER}/src/ \
 			http://ftp.mozilla.org/pub/mozilla.org/nspr/releases/v${VER}/src/
@@ -42,7 +39,7 @@ CONFIGURE_ENV=		${MAKE_ENV}
 WRKSRC=			${WRKDIST}/mozilla/nsprpub
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build/autoconf
 
-do-regress:
+do-test:
 	${MAKE_PROGRAM} -C ${WRKSRC}/pr/tests
 	${MAKE_PROGRAM} -C ${WRKSRC}/lib/tests
 	@cd ${WRKSRC}/pr/tests && ulimit -Sn 192 && env TZ=gmt \

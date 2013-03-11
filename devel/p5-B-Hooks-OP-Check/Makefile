@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2012/08/23 15:00:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 10:50:13 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -11,9 +11,6 @@ CATEGORIES=		devel
 
 # perl
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB += c
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/12/02 08:29:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 10:50:09 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -15,9 +15,6 @@ HOMEPAGE=		http://www.jetbrains.com/idea/
 
 # Apache v2.0
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://download.jetbrains.com/idea/
 
@@ -28,7 +25,7 @@ BUILD_DEPENDS=		${MODJAVA_RUN_DEPENDS}
 
 RUN_DEPENDS=		devel/desktop-file-utils
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 SUBST_VARS+=		JAVA_HOME
 

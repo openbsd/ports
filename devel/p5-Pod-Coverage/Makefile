@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2012/04/27 18:46:15 gsoares Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 10:50:20 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -12,9 +12,6 @@ MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/p5-Devel-Symdump

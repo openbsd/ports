@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2012/10/01 17:47:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.49 2013/03/11 10:50:04 espie Exp $
 
 COMMENT=	GNU make
 
@@ -14,9 +14,6 @@ MODULES=	devel/gettext
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c
 

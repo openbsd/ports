@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1 2012/06/25 15:45:14 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2013/03/11 10:50:01 espie Exp $
 
 COMMENT ?=	GNU Standards-compliant Makefile generator
 HOMEPAGE ?=	http://www.gnu.org/software/automake/
@@ -12,6 +12,5 @@ CATEGORIES +=	devel
 # GPLv2
 PERMIT_PACKAGE_CDROM ?=		Yes
 PERMIT_PACKAGE_FTP ?=		Yes
-PERMIT_DISTFILES_CDROM ?=	Yes
 PERMIT_DISTFILES_FTP ?=		Yes
 

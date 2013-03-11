@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2012/09/23 16:57:34 jeremy Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 10:50:30 espie Exp $
 
 COMMENT=	open processes with handles on pid, stdin, stdout, stderr
 
@@ -8,9 +8,6 @@ CATEGORIES=	devel
 
 # Ruby license
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		lang/ruby
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/01/20 18:01:51 kili Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 10:50:07 espie Exp $
 
 COMMENT=		source code suggestions for Haskell
 
@@ -12,9 +12,6 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c m pthread util
 

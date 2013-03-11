@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/01/11 13:44:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/11 10:50:24 espie Exp $
 
 COMMENT =		C++ interface for pango
 
@@ -14,9 +14,6 @@ HOMEPAGE =		http://www.gtkmm.org/
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += GL X11 Xau Xdamage Xdmcp Xext Xfixes Xrender Xxf86vm
 WANTLIB += cairo cairomm-1.0 drm expat ffi fontconfig freetype

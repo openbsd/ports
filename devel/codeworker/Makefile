@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/15 19:45:57 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 10:50:02 espie Exp $
 
 COMMENT =		universal parsing tool & source code generator
 
@@ -14,9 +14,6 @@ MAINTAINER =		Vincent Auclair <auclair.vincent@gmail.com>
 
 # LGPL
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c m stdc++
 
@@ -29,7 +26,7 @@ MAKE_FLAGS =		CXXFLAGS='${CXXFLAGS}' CXX='${CXX}'
 
 USE_GMAKE =		Yes
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 WRKDIST=${WRKDIR}/CodeWorker${V:S/./_/g}
 

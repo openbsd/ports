@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2011/11/18 10:29:37 espie Exp $
+# $OpenBSD: Makefile,v 1.55 2013/03/11 10:50:10 espie Exp $
 
 COMMENT=	stack-based interpreter for terminal applications
 
@@ -14,9 +14,6 @@ HOMEPAGE=	http://www.s-lang.org/
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c m onig pcre png termcap z
 
@@ -33,8 +30,8 @@ USE_GROFF=		Yes
 
 CONFIGURE_ARGS=		--with-pnginc=${LOCALBASE}/include/libpng \
 			--with-pnglib=${LOCALBASE}/lib
-REGRESS_TARGET=		runtests
-REGRESS_FLAGS=		TCAPLIB="-ltermlib"
+TEST_TARGET=		runtests
+TEST_FLAGS=		TCAPLIB="-ltermlib"
 
 MAKE_ENV=		LIBslang_MAJOR=${LIBslang_VERSION:R} \
 			LIBslang_MINOR=${LIBslang_VERSION:E}

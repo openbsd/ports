@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/05/13 00:09:29 gsoares Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:20 espie Exp $
 
 COMMENT=	parallel job forking and management
 
@@ -7,9 +7,6 @@ CATEGORIES=	devel
 
 # Artistic
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 MODULES=	cpan
 

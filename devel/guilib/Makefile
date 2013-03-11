@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2012/03/29 13:38:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2013/03/11 10:50:06 espie Exp $
 
 COMMENT=	SDL C++ GUI widget library
 
@@ -14,9 +14,6 @@ HOMEPAGE=	http://www.libsdl.org/projects/GUIlib/
 
 # Public Domain
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB += SDL m sndio stdc++ usbhid
 

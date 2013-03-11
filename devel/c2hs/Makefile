@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2012/10/11 13:31:28 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.24 2013/03/11 10:50:02 espie Exp $
 
 COMMENT=		interface generator for Haskell to C bindings
 
@@ -16,9 +16,6 @@ SUBST_VARS=		V
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c m pthread util
 
@@ -43,7 +40,7 @@ post-install:
 # Note: tests are still broken (not maintained by upstream?)
 # Note 2: and (at least) the tests don't work with ghc-7 (because ghc
 # now defaults to Haskell-1010).
-do-regress:
+do-test:
 	@cd ${WRKDIST}/tests/system && ${MAKE_PROGRAM}
 
 .include <bsd.port.mk>

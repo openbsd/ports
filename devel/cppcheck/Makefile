@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2012/11/20 12:41:27 gsoares Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 10:50:02 espie Exp $
 
 COMMENT =		C/C++ static checker
 
@@ -12,9 +12,6 @@ MAINTAINER =		Gleydson Soares <gsoares@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c m pcre stdc++
 
@@ -25,7 +22,7 @@ LIB_DEPENDS =		devel/pcre
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=cppcheck/}
 
 ALL_TARGET =		cppcheck
-REGRESS_TARGET = 	test
+TEST_TARGET = 	test
 MAKE_FLAGS =		BIN=${PREFIX}/bin \
 			CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 			CPPFLAGS="-DHAVE_RULES -DTIXML_USE_STL -I${PREFIX}/include" \

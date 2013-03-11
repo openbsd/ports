@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/11/04 09:18:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/11 10:50:04 espie Exp $
 
 COMMENT=		utility library including a imlib2 wrapper
 
@@ -14,9 +14,6 @@ MAINTAINER=		Victor Sahlstedt <salan@legonet.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext freetype m xcb z
 
 MASTER_SITES=		http://www.linuxbrit.co.uk/downloads/

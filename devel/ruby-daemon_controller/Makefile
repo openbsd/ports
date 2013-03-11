@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/09/23 16:57:33 jeremy Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 10:50:29 espie Exp $
 
 COMMENT =		robust daemon management
 
@@ -12,15 +12,12 @@ MAINTAINER =		Jeremy Evans <jeremy@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		lang/ruby
 
 CONFIGURE_STYLE =	ruby gem
 
-MODRUBY_REGRESS =	rspec2
-MODRUBY_REGRESS_TARGET = spec/daemon_controller_spec.rb
+MODRUBY_TEST =	rspec2
+MODRUBY_TEST_TARGET = spec/daemon_controller_spec.rb
 
 .include <bsd.port.mk>

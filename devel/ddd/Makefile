@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2012/12/13 15:43:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.62 2013/03/11 10:50:02 espie Exp $
 
 COMMENT=	Data Display Debugger, graphical front-end for GDB, etc
 
@@ -11,9 +11,6 @@ HOMEPAGE=	http://www.gnu.org/software/ddd/
 
 # GPLv2 / LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE SM X11 Xaw Xau Xdmcp Xext Xmu Xpm Xt c m z stdc++ \
 		Xft Xrender expat fontconfig freetype ncurses \
@@ -23,7 +20,7 @@ MODULES=	converters/libiconv
 
 LIB_DEPENDS=	x11/openmotif
 
-REGRESS_IS_INTERACTIVE=x11
+TEST_IS_INTERACTIVE=x11
 
 VMEM_WARNING=	Yes
 USE_GMAKE=	Yes

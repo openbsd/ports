@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/10 20:11:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:03 espie Exp $
 
 COMMENT=	set of statistics functions for Erlang
 
@@ -12,14 +12,12 @@ HOMEPAGE=	https://github.com/boundary/bear
 
 # Apache2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://distfiles.nl/
 
 MODULES=	lang/erlang
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/bear.app.src

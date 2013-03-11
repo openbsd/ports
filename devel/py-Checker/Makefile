@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2011/09/16 09:24:54 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2013/03/11 10:50:25 espie Exp $
 
 COMMENT=	Python codes checker
 
@@ -12,9 +12,6 @@ HOMEPAGE=	http://pychecker.sourceforge.net/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pychecker/}
 
@@ -38,7 +35,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/pycheckrc ${EXAMPLESDIR}
 
-do-regress:
+do-test:
 	@cd ${WRKSRC} && sh ./test_check.sh
 
 .include <bsd.port.mk>

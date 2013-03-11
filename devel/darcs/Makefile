@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2013/01/17 13:19:05 kili Exp $
+# $OpenBSD: Makefile,v 1.51 2013/03/11 10:50:02 espie Exp $
 
 COMMENT =		advanced revision control system written in Haskell
 
@@ -42,7 +42,7 @@ BUILD_DEPENDS +=	devel/hs-QuickCheck>=2.3 \
 			devel/hs-test-framework-hunit>=0.2.2 \
 			devel/hs-test-framework-quickcheck2>=0.2.8
 
-REGRESS_DEPENDS =	devel/hs-hlint \
+TEST_DEPENDS =	devel/hs-hlint \
 			shells/bash \
 			sysutils/coreutils \
 			textproc/gsed
@@ -63,14 +63,11 @@ post-install:
 	${INSTALL_MAN} ${WRKBUILD}/dist/build/darcs/darcs.1 ${PREFIX}/man/man1
 
 # Some of the tests rely on GNU functionality.
-pre-regress:
+pre-test:
 	ln -fs ${LOCALBASE}/bin/gdate ${WRKDIR}/bin/date
 	ln -fs ${LOCALBASE}/bin/gsed ${WRKDIR}/bin/sed
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/04/08 19:14:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 10:50:22 espie Exp $
 
 COMMENT= 	tests strings for equality
 
@@ -10,8 +10,5 @@ CATEGORIES=	devel
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 .include <bsd.port.mk>

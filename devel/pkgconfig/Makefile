@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2012/09/12 08:47:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2013/03/11 10:50:24 espie Exp $
 
 COMMENT=		tool for managing library compile/link flags
 
@@ -16,9 +16,6 @@ CONFIGURE_ARGS+=	--with-pc_path=${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgcon
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c pcre glib-2.0 pthread
 USE_LIBTOOL=		Yes

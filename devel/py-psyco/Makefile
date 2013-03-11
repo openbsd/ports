@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2012/10/18 21:23:51 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/11 10:50:26 espie Exp $
 
 ONLY_FOR_ARCHS =	i386
 SHARED_ONLY =		Yes
@@ -16,9 +16,6 @@ HOMEPAGE =	http://psyco.sourceforge.net/
 
 # MIT
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=psyco/}
 
@@ -27,7 +24,7 @@ MODPY_VERSION ?= 2.5# not ported to python 2.7 yet.
 
 WRKDIST =	${WRKDIR}/psyco-${MODPY_EGG_VERSION}
 
-do-regress: fake
+do-test: fake
 	@cd ${WRKSRC}/test && env PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
 	    ${MODPY_BIN} ./test_base.py
 

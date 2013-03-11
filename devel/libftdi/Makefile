@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/11/13 13:54:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:10 espie Exp $
 
 COMMENT =	libftdi, interface to ftdi debug device
 
@@ -13,9 +13,6 @@ HOMEPAGE =	http://www.intra2net.com/en/developer/libftdi/
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c usb pthread usb-1.0
 
@@ -31,6 +28,6 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 USE_LIBTOOL = 		Yes
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 .include <bsd.port.mk>

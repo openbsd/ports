@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/01/07 22:13:40 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/11 10:50:11 espie Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	file system library for the lua language
@@ -12,9 +12,6 @@ HOMEPAGE=	http://www.keplerproject.org/luafilesystem/
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	lang/lua
 ALL_TARGET=	lib
@@ -28,7 +25,7 @@ do-install:
 		${MODLUA_DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/tests/*.lua ${MODLUA_EXAMPLEDIR}
 
-do-regress:
+do-test:
 	cp ${WRKDIST}/*.so ${WRKDIST}/tests
 	cd ${WRKDIST}/tests && ${MODLUA_BIN} test.lua
 

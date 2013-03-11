@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/07/06 16:41:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 10:50:12 espie Exp $
 
 TOOL=			binutils
 TOOL_V=			2.21.1a
@@ -15,6 +15,6 @@ CONFIGURE_ARGS+=	--enable-commonbfdlib=no
 
 WRKDIST=		${WRKDIR}/${DISTNAME:S/a$//}
 
-NO_REGRESS=		No
+NO_TEST=		No
 
 .include <bsd.port.mk>

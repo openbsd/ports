@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.21 2012/07/06 16:41:21 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.22 2013/03/11 10:50:12 espie Exp $
 
 #
 # XXX: Don't forget to adjust meta/msp430 when updating to new LTS
@@ -34,7 +34,6 @@ HOMEPAGE?=		http://mspgcc.sourceforge.net/
 # libc/msp430mcu: BSD3/ISC
 PERMIT_PACKAGE_CDROM?=   Yes
 PERMIT_PACKAGE_FTP?=     Yes
-PERMIT_DISTFILES_CDROM?= Yes
 PERMIT_DISTFILES_FTP?=   Yes
 
 MASTER_SITES?=		${MASTER_SITE_SOURCEFORGE:=mspgcc/}
@@ -70,4 +69,4 @@ LIBTOOL_FLAGS?=		--tag=disable-shared
 
 SEPARATE_BUILD?= 	Yes
 
-NO_REGRESS?=		Yes
+NO_TEST?=		Yes

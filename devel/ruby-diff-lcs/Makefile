@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2012/09/23 16:57:33 jeremy Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/11 10:50:29 espie Exp $
 
 COMMENT =		port of Algorithm::Diff that uses the LCS algorithm
 
@@ -8,9 +8,6 @@ CATEGORIES =		devel lang/ruby
 
 # Perl Artistic
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		lang/ruby
 

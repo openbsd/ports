@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2012/09/23 16:57:33 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 10:50:29 espie Exp $
 
 COMMENT =	case insensitive, case preserving hash class for ruby
 
@@ -12,14 +12,11 @@ MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 
 # MIT License
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =	lang/ruby
 CONFIGURE_STYLE = ruby gem
 
-do-regress:
+do-test:
 	cd ${WRKSRC} && ${RUBY} -I . test/test_cicphash.rb
 
 .include <bsd.port.mk>

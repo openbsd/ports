@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2012/12/13 16:34:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/11 10:50:15 espie Exp $
 
 COMMENT=		print arrays of data in a nicely formatted listing
 
@@ -10,8 +10,5 @@ USE_GROFF =		Yes
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 .include <bsd.port.mk>

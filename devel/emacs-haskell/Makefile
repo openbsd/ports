@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/11/12 11:49:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:03 espie Exp $
 
 COMMENT =		Emacs mode for editing Haskell code
 
@@ -12,9 +12,6 @@ HOMEPAGE =		http://projects.haskell.org/haskellmode-emacs/
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${HOMEPAGE}
 

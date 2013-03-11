@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2012/08/18 12:41:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2013/03/11 10:50:31 espie Exp $
 
 COMMENT=	Tcl/C++ interface used by ns and nam
 
@@ -12,9 +12,6 @@ HOMEPAGE=	http://otcl-tclcl.sourceforge.net/tclcl/
 
 # BSD
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 MODULES +=	x11/tk
 WANTLIB=		c m stdc++ otcl>=1
@@ -41,6 +38,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/libtclcl.a ${PREFIX}/lib
 	@ln -sf ${TRUEPREFIX}/lib/libtclcl.a ${PREFIX}/lib/libTcl.a
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

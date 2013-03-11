@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2012/03/09 14:15:32 stu Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 10:50:31 espie Exp $
 
 COMMENT =	Tcl Standard Library
 
@@ -9,9 +9,6 @@ MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD style
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=tcllib/}
 MODULES =	lang/tcl
@@ -76,7 +73,7 @@ do-install:
 	@chmod ${MANMODE} ${PREFIX}/man/mann/tcllib.n
 
 # Define TEST_MODULES to restrict to a subset of regression tests.
-do-regress:
+do-test:
 	${SETENV} ${MAKE_ENV} ${MODTCL_BIN} \
 	${WRKSRC}/sak.tcl test run -v ${TEST_MODULES}
 

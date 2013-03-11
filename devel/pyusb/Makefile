@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/11/13 13:54:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 10:50:27 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -12,12 +12,9 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pyusb/}
 HOMEPAGE=	http://pyusb.berlios.de/
 
 # BSD
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 MODULES=	lang/python
 

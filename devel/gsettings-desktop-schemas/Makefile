@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2013/01/11 10:07:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2013/03/11 10:50:06 espie Exp $
 
 COMMENT=	collection of shared GSettings schemas
 
@@ -12,9 +12,6 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	x11/gnome \
 		devel/dconf

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2012/04/18 09:42:19 stu Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 10:50:11 espie Exp $
 
 COMMENT =	multi-entry widget package for Tcl/Tk
 
@@ -11,15 +11,12 @@ MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # ISC style
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	${HOMEPAGE:=$N/}
 MODULES =	lang/tcl
 RUN_DEPENDS =	devel/wcb
 NO_BUILD =	Yes
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 PKG_ARCH =	*
 
 MT_LIB_DIR =	${PREFIX}/lib/tcl/$N

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2012/11/26 16:24:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.53 2013/03/11 10:50:04 espie Exp $
 
 COMMENT=	user interface builder for the gtk+3 toolkit
 
@@ -16,9 +16,6 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 
 # GPLv2 - LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0

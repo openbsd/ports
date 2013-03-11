@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2011/11/03 22:13:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2013/03/11 10:50:01 espie Exp $
 
 COMMENT=	convert ASP code to PHP code
 
@@ -10,10 +10,7 @@ HOMEPAGE=	http://asp2php.naken.cc/
 MASTER_SITES=	http://downloads.mikekohn.net/asp2php/
 
 # GPLv2
-PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
 
 WANTLIB += c
 
@@ -37,6 +34,6 @@ WANTLIB += GL gthread-2.0 pthread xcb-render xcb-shm
 
 WRKDIST=	${WRKDIR}/asp2php
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

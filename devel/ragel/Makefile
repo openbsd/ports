@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/11/15 16:35:15 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:27 espie Exp $
 
 COMMENT =	state machine compiler
 
@@ -9,9 +9,6 @@ HOMEPAGE =	http://www.complang.org/ragel/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM = Yes
-PERMIT_PACKAGE_FTP = Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP = Yes
 
 MASTER_SITES =		${HOMEPAGE}
 
@@ -23,10 +20,10 @@ USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		ac_cv_prog_RUBY=ruby18
 
-REGRESS_DEPENDS =	shells/bash \
+TEST_DEPENDS =	shells/bash \
 			textproc/gdiff
 
-do-regress:
+do-test:
 	cd ${WRKBUILD}/test && ${LOCALBASE}/bin/bash ./runtests
 
 .include <bsd.port.mk>

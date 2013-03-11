@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/06/01 17:41:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:15 espie Exp $
 
 COMMENT=		validate and convert data types
 
@@ -9,9 +9,6 @@ USE_GROFF =		Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	modbuild
 

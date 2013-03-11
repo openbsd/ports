@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/10/21 21:41:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 10:50:26 espie Exp $
 
 COMMENT=	alternative python bindings for subversion
 
@@ -11,9 +11,6 @@ HOMEPAGE=	http://launchpad.net/subvertpy
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://launchpad.net/subvertpy/trunk/${MODPY_EGG_VERSION}/+download/
 

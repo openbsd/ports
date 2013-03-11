@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/11/03 22:13:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:02 espie Exp $
 
 COMMENT=		various reusable C++-components
 
@@ -13,9 +13,6 @@ MAINTAINER=		Vijay Ramesh <vramesh2@uiuc.edu>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		pthread m stdc++
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/12/03 11:44:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 10:50:20 espie Exp $
 
 COMMENT=	implement PerlIO layers which let you handle bzip2 files
 
@@ -10,9 +10,6 @@ MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
 USE_GROFF =	Yes

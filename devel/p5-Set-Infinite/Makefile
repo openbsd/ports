@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/12/03 11:44:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:21 espie Exp $
 
 COMMENT =	sets of intervals
 
@@ -10,8 +10,5 @@ USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 .include <bsd.port.mk>

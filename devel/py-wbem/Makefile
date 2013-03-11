@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/03/31 08:30:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:27 espie Exp $
 
 COMMENT=		CIM operations over HTTP in Python
 
@@ -13,9 +13,6 @@ MAINTAINER=		Mark Peoples <marco@azbsd.org>
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pywbem/}
 

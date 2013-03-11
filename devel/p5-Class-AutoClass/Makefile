@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.11 2012/10/15 15:06:42 sthen Exp $
+#	$OpenBSD: Makefile,v 1.12 2013/03/11 10:50:13 espie Exp $
 
 COMMENT=	get and set methods and simplify object initialization
 
@@ -11,9 +11,6 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
 
@@ -21,6 +18,6 @@ CONFIGURE_STYLE=	modbuild
 
 RUN_DEPENDS=		devel/p5-Hash-AutoHash-Args \
 			devel/p5-IO-stringy
-REGRESS_DEPENDS=	devel/p5-Test-Deep
+TEST_DEPENDS=	devel/p5-Test-Deep
 
 .include <bsd.port.mk>

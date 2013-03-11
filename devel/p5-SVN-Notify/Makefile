@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/12/03 11:44:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 10:50:21 espie Exp $
 
 COMMENT=	subversion activity notification
 
@@ -10,9 +10,6 @@ CATEGORIES=	devel
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	devel/subversion,-perl \
 		www/p5-HTML-Parser

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2012/09/23 16:57:34 jeremy Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/11 10:50:30 espie Exp $
 
 COMMENT =	color strings using ANSI escape sequences
 
@@ -10,9 +10,6 @@ HOMEPAGE =	http://term-ansicolor.rubyforge.org/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		lang/ruby
 

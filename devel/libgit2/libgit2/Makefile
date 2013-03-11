@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2012/08/29 20:20:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 10:50:10 espie Exp $
 
 COMMENT=		the Git library, take 2
 
@@ -14,6 +14,6 @@ MASTER_SITES=		https://github.com/downloads/libgit2/libgit2/
 
 WANTLIB+= z
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 .include <bsd.port.mk>

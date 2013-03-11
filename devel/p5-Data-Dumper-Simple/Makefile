@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/12/03 11:44:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:15 espie Exp $
 
 COMMENT=		easily dump variables with names
 
@@ -8,10 +8,7 @@ REVISION=		0
 CATEGORIES=		devel
 
 # perl
-PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
 
 MODULES=		cpan
 USE_GROFF =		Yes

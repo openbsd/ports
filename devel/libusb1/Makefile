@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2012/08/25 15:25:51 mpi Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 10:50:10 espie Exp $
 
 COMMENT =		library for USB device access from userspace
 
@@ -16,9 +16,6 @@ MAINTAINER =		Martin Pieuchot <mpi@openbsd.org>
 
 # LGPL 2.1
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		pthread
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2013/02/05 10:32:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.83 2013/03/11 10:50:27 espie Exp $
 
 COMMENT =	exceptions to pkg_add rules
 CATEGORIES =	devel databases
@@ -11,9 +11,6 @@ MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 NO_BUILD =	Yes
 

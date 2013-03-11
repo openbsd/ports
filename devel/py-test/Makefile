@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/02/09 14:49:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 10:50:26 espie Exp $
 
 COMMENT=		cross-project testing tool for Python
 
@@ -15,9 +15,6 @@ HOMEPAGE=		http://pytest.org/latest/
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_PYPI:=p/pytest/}
 
@@ -31,9 +28,9 @@ FLAVORS=		python3
 FLAVOR?=
 
 RUN_DEPENDS=		devel/py-py${MODPY_FLAVOR}
-REGRESS_DEPENDS=	devel/py-test${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-test${MODPY_FLAVOR}
 
-do-regress:
+do-test:
 	cd ${WRKSRC} && ${LOCALBASE}/bin/py.test${MODPY_BIN_SUFFIX} testing
 
 .if ${FLAVOR:Mpython3}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2013/03/02 12:45:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.70 2013/03/11 10:50:03 espie Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS=		amd64 i386
@@ -42,8 +42,6 @@ MAINTAINER=		Kurt Miller <kurt@openbsd.org>
 # LGPL 2.1 
 PERMIT_PACKAGE_CDROM=	commercial distribution defend and indemnify clauses
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	commercial distribution defend and indemnify clauses
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITE_ECLIPSE+=	\
 	http://archive.eclipse.org/eclipse/downloads/drops/
@@ -118,7 +116,7 @@ MAKE_ENV=		ECLIPSE_BUILD=${ECLIPSE_BUILD} \
 
 FAKE_FLAGS=		${MAKE_ENV}
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 WRKDIST=		${WRKDIR}
 

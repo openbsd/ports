@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2012/05/01 06:58:45 sebastia Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 10:50:09 espie Exp $
 
 COMMENT=	object-oriented extensions to Tcl
 
@@ -17,9 +17,6 @@ MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # BSD style
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=incrtcl/}
 
@@ -48,7 +45,7 @@ FAKE_FLAGS =	libdir=${MODTCL_TCLDIR}/itcl
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure
 
-do-regress:
+do-test:
 	@cd ${WRKSRC} && ${SETENV} ITCL_LIBRARY=${WRKSRC}/library \
 		${MODTCL_BIN} tests/all.tcl -load \
 		"load ./libitcl34.so.${LIBitcl34_VERSION}"

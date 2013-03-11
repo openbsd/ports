@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2012/11/27 19:00:00 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:02 espie Exp $
 
 COMMENT =	analyze C source files and print a call graph
 
@@ -11,9 +11,6 @@ MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 WANTLIB =		c
 

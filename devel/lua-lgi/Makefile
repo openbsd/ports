@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/08 10:26:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 10:50:11 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -12,9 +12,6 @@ HOMEPAGE=	https://github.com/pavouk/lgi
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	devel/gettext \
 		lang/lua
@@ -30,8 +27,8 @@ USE_GMAKE=	Yes
 MAKE_ENV=	MAKE=${MAKE_PROGRAM} LUA_CFLAGS="-I${MODLUA_INCL_DIR}" \
 		LUA_LIBDIR="${MODLUA_LIBDIR}" LUA_SHAREDIR="${MODLUA_DATADIR}"
 
-REGRESS_TARGET= check
-REGRESS_IS_INTERACTIVE=x11
+TEST_TARGET= check
+TEST_IS_INTERACTIVE=x11
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/lgi/Makefile
@@ -41,7 +38,7 @@ post-install:
 	cd ${WRKSRC}/samples/ && umask 022 && \
 		pax -rw . ${MODLUA_EXAMPLEDIR}
 
-pre-regress:
+pre-test:
 	${SUBST_CMD} ${WRKSRC}/tests/Makefile
 
 .include <bsd.port.mk>

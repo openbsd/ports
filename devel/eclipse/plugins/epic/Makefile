@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/02/07 20:21:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 10:50:03 espie Exp $
 
 COMMENT=		Perl plugin for Eclipse IDE
 
@@ -15,8 +15,6 @@ MAINTAINER=		Carlos Valiente <yo@virutass.net>
 # Common Public License Version 1.0 (http://www.eclipse.org/legal/cpl-v10.html)
 PERMIT_PACKAGE_CDROM=	commercial distribution defend and indemnify clauses
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	commercial distribution defend and indemnify clauses
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=e-p-i-c/}
 

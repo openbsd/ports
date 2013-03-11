@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/15 19:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:31 espie Exp $
 
 COMMENT=	original Arch source control management CLI written in C
 
@@ -12,9 +12,6 @@ MAINTAINER=	Laurent Cheylus <foxy@free.fr>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m
 
 MASTER_SITES=	${MASTER_SITE_GNU:=gnu-arch/} \
@@ -29,7 +26,7 @@ USE_GMAKE=	Yes
 WRKDIST=	${WRKDIR}/${DISTNAME}/src
 WRKBUILD=	${WRKSRC}/=build
 
-REGRESS_TARGET=	test
+TEST_TARGET=	test
 
 DOCDIR=	${PREFIX}/share/doc/tla
 

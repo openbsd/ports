@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/16 09:24:52 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 10:50:20 espie Exp $
 
 COMMENT=		bridge that allows POE to be driven by Tk
 
@@ -10,9 +10,6 @@ MODULES=		cpan
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_ARGS+=	--default
 USE_GROFF =		Yes
@@ -22,6 +19,6 @@ RUN_DEPENDS+=		x11/p5-Tk \
 			devel/p5-POE>=1.006
 
 
-REGRESS_IS_INTERACTIVE= x11
+TEST_IS_INTERACTIVE= x11
 
 .include <bsd.port.mk>

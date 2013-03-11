@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2012/10/15 15:06:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/11 10:50:30 espie Exp $
 
 COMMENT =	generic interface to multiple Ruby template engines
 
@@ -10,9 +10,6 @@ HOMEPAGE =	http://github.com/rtomayko/tilt
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		lang/ruby
 

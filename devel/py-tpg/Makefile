@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2012/04/02 13:06:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/11 10:50:26 espie Exp $
 
 COMMENT=	parser generator in Python
 
@@ -11,9 +11,6 @@ HOMEPAGE=	http://christophe.delord.free.fr/en/tpg/
 
 # LGPL 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://christophe.delord.free.fr/soft/tpg/
 
@@ -28,7 +25,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 
-do-regress:
+do-test:
 	@cd ${WRKSRC} && ${MAKE_ENV} \
 		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} ./tpg_tests.py
 

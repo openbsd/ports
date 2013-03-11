@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2012/04/07 20:04:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/11 10:50:23 espie Exp $
 
 COMMENT=	test suite using WWW::Mechanize
 
@@ -10,9 +10,6 @@ USE_GROFF =	Yes
 
 # Artitistic License
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	devel/p5-Carp-Assert-More \
 		devel/p5-Test-LongString \

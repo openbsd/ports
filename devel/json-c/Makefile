@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/09/15 18:15:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 10:50:09 espie Exp $
 
 COMMENT=		JSON implementation in C
 
@@ -10,9 +10,6 @@ HOMEPAGE=		http://oss.metaparadigm.com/json-c/
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}
 

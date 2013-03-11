@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/12/05 18:24:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:03 espie Exp $
 
 COMMENT=		Device Tree Compiler
 
@@ -11,9 +11,6 @@ HOMEPAGE=		http://www.jdl.com/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://distfiles.nl/
 
@@ -24,7 +21,7 @@ BUILD_DEPENDS=		devel/bison
 USE_GMAKE=		Yes
 MAKE_ENV+=		V=1
 
-REGRESS_TARGET= 	check
+TEST_TARGET= 	check
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/{convert-dtsv0,ftdump,dtc} ${PREFIX}/bin

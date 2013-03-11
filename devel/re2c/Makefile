@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/15 19:46:08 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:27 espie Exp $
 
 COMMENT=		C-based regular expression scanner generator
 
@@ -10,9 +10,6 @@ MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
 # public domain
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c m stdc++
 

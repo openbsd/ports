@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/01/11 02:35:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:00 espie Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -17,11 +17,9 @@ WANTLIB =		c pthread
 # http://www.acpica.org/downloads/unix_source_code.php
 PERMIT_PACKAGE_CDROM =	export restrictions
 PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =export restrictions
-PERMIT_DISTFILES_FTP =	Yes
 
 USE_GMAKE =		Yes
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 BUILD_DEPENDS =		devel/flex devel/bison
 
 do-build:

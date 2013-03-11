@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2012/09/01 14:36:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2013/03/11 10:50:09 espie Exp $
 
 COMMENT=		IDL parsing library
 
@@ -17,9 +17,6 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 EXTRACT_SUFX=		.tar.bz2
 

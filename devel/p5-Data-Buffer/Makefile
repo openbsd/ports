@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/12/03 11:44:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:15 espie Exp $
 
 COMMENT= 	Perl module for creating read/write buffers
 
@@ -10,8 +10,5 @@ USE_GROFF =	Yes
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2012/10/15 15:06:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:19 espie Exp $
 
 COMMENT=		automatically apply roles at object creation time
 
@@ -8,9 +8,6 @@ CATEGORIES=		devel
 
 # perl
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 MODULES=		cpan
 
@@ -19,7 +16,7 @@ RUN_DEPENDS=		devel/p5-Moose \
 			devel/p5-namespace-autoclean
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
-REGRESS_DEPENDS=	devel/p5-Test-Exception \
+TEST_DEPENDS=	devel/p5-Test-Exception \
 			devel/p5-MooseX-Role-Parameterized # for author tests
 
 .include <bsd.port.mk>

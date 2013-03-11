@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2013/02/13 18:13:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2013/03/11 10:50:09 espie Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	amd64 i386
@@ -62,12 +62,9 @@ MAINTAINER=	Kurt Miller <kurt@openbsd.org>
 
 # GPLv2 w/CLASSPATH exception
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 USE_GROFF=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 VMEM_WARNING=	Yes
 BUILD_DEPENDS=	archivers/zip \

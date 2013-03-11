@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/09/09 20:27:47 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:10 espie Exp $
 
 COMMENT=	opensource implementation of the OFX specification
 
@@ -13,9 +13,6 @@ SHARED_LIBS=	ofx 6.0	# .5.0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libofx/}
 

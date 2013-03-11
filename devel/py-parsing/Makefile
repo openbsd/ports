@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/01/05 13:10:19 benoit Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/11 10:50:26 espie Exp $
 
 COMMENT =		Python parsing module
 
@@ -13,15 +13,12 @@ MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=pyparsing/}
 
 MODULES =	lang/python
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 DOCSDIR =	${PREFIX}/share/doc/py-parsing
 EXAMPLESDIR =	${PREFIX}/share/examples/py-parsing

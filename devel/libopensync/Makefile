@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2012/09/01 14:36:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 10:50:10 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -16,9 +16,6 @@ HOMEPAGE=	http://www.opensync.org/
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.opensync.org/download/releases/${V}/
 
@@ -37,6 +34,6 @@ LIB_DEPENDS=	textproc/libxml \
 
 CONFIGURE_ARGS=	-DCMAKE_INSTALL_PREFIX="${PREFIX}"
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

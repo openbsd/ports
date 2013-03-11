@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/12/30 17:59:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:31 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -14,9 +14,6 @@ HOMEPAGE=	http://www.clifford.at/stfl/
 
 # LGPLv3
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ncursesw pthread
 
@@ -26,7 +23,7 @@ MODULES=	converters/libiconv
 
 ALL_TARGET=	libstfl.so.${LIBstfl_VERSION}
 USE_GMAKE=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 MAKE_FLAGS=	FOUND_SPL=0 \
 		FOUND_SWIG=0 \

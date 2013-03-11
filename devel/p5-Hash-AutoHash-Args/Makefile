@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2012/10/15 15:06:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 10:50:17 espie Exp $
 
 COMMENT=	OO processing of keyword-based argument lists
 
@@ -8,9 +8,6 @@ CATEGORIES=	devel
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
 
@@ -18,6 +15,6 @@ CONFIGURE_STYLE=	modbuild
 USE_GROFF =		Yes
 
 RUN_DEPENDS=		devel/p5-Hash-AutoHash
-REGRESS_DEPENDS=	devel/p5-Test-Deep
+TEST_DEPENDS=	devel/p5-Test-Deep
 
 .include <bsd.port.mk>

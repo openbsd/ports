@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/12/19 22:35:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/11 10:50:27 espie Exp $
 
 COMMENT=		source code auditing tool
 
@@ -10,9 +10,6 @@ HOMEPAGE=		https://www.fortify.com/ssa-elements/threat-intelligence/rats.html
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c expat
 
@@ -26,7 +23,7 @@ MAKE_FLAGS=		CFLAGS='${CFLAGS} \
 			  -DDATADIR=\"${LOCALBASE}/share/rats\"'
 
 ALL_TARGET=		rats
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 USE_GMAKE=		Yes
 
 post-install:

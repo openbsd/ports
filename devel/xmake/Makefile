@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2012/03/16 14:30:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/11 10:50:32 espie Exp $
 
 COMMENT=	powerful make utility
 
@@ -8,9 +8,6 @@ HOMEPAGE=	http://apollo.backplane.com/xmake/
 
 # public domain
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c
 
@@ -28,6 +25,6 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/xmake.1     ${PREFIX}/man/man1
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2013/02/06 14:23:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2013/03/11 10:50:03 espie Exp $
 
 COMMENT=	editor for the GConf configuration system
 
@@ -15,9 +15,6 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo

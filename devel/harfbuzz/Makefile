@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/10 09:06:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/11 10:50:06 espie Exp $
 
 COMMENT=	text shaping library
 
@@ -16,9 +16,6 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += X11 Xext Xrender c cairo expat ffi fontconfig freetype
 WANTLIB += glib-2.0 gobject-2.0 graphite2 gthread-2.0 icudata

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/05/28 12:05:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:12 espie Exp $
 
 COMMENT=		assembler/disassembler/simulator for MSP430 MCUs
 
@@ -13,9 +13,6 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://downloads.mikekohn.net/naken430asm/
 
@@ -26,7 +23,7 @@ ALL_TARGET=		# This space intentionally left blank.
 MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS}" \
 			LDFLAGS="${LDFLAGS}"
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 # prefer our own config.mak over the configure generated one.
 do-configure:

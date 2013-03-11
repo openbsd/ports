@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/08/27 14:34:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:09 espie Exp $
 
 COMMENT=	library for parsing dsh-style configuration files
 
@@ -12,9 +12,6 @@ MASTER_SITES=	${HOMEPAGE}downloads/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 USE_LIBTOOL=		Yes
 

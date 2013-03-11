@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/09/28 18:55:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 10:50:01 espie Exp $
 
 COMMENT=	gcc for arm-elf cross-development
 
@@ -47,7 +47,7 @@ SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
 YACC=		bison
 
-REGRESS_DEPENDS=devel/dejagnu
+TEST_DEPENDS=devel/dejagnu
 
 post-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/16 09:24:56 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 10:50:27 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -14,16 +14,13 @@ HOMEPAGE=	http://www.cosc.canterbury.ac.nz/greg.ewing/python/Pyrex/
 
 # Free, check README.txt for details 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://distfiles.nl/ \
 		${HOMEPAGE}
 
 MODULES=	lang/python
 
-REGRESS_DEPENDS=math/py-Numeric
+TEST_DEPENDS=math/py-Numeric
 
 pre-build:
 	@perl -pi -e "s,/usr/bin/env python,${MODPY_BIN}," \
@@ -37,7 +34,7 @@ post-install:
 	@cd ${WRKSRC}/Doc && tar cvf - . | \
 		(cd ${PREFIX}/share/doc/pyrex && tar xf -)
 
-do-regress:
+do-test:
 	@cd ${WRKSRC}/Demos && \
 		make test PYTHON="PYTHONPATH=${WRKSRC} ${MODPY_BIN}"
 

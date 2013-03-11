@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.24 2012/12/04 21:05:30 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.25 2013/03/11 10:50:32 espie Exp $
 
 COMMENT-main =		standalone XUL/XPCOM runtime environment
 COMMENT-devel =		devel files for Gecko
@@ -15,9 +15,6 @@ MULTI_PACKAGES +=	-main -devel
 
 # MPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 # lots of logic in mozilla.port.mk
 MODULES =		www/mozilla devel/gettext lang/python

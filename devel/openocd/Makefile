@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/02/07 00:02:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:12 espie Exp $
 
 COMMENT =	Open On-Chip Debugging
 
@@ -13,9 +13,6 @@ MAINTAINER =	Sylvestre Gallon <ccna.syl@gmail.com>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += c ftdi jim m pthread usb usb-1.0
 
@@ -46,6 +43,6 @@ LIB_DEPENDS =	devel/libftdi \
 
 USE_GMAKE =	Yes
 USE_LIBTOOL =	Yes
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 .include <bsd.port.mk>

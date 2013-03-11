@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/01/20 18:03:12 kili Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/11 10:50:08 espie Exp $
 
 COMMENT =		portable Haskell/POSIX layer for Pugs
 
@@ -8,9 +8,6 @@ CATEGORIES =		devel
 
 # BSD3
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		lang/ghc
 MODGHC_BUILD =		cabal hackage haddock register

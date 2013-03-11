@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2012/08/23 15:08:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 10:50:19 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -13,15 +13,12 @@ MAINTAINER =	Simon Bertrang <simon@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 WANTLIB += c
 
 CPAN_AUTHOR =	GFUJI
 
-REGRESS_DEPENDS = devel/p5-Declare-Constraints-Simple \
+TEST_DEPENDS = devel/p5-Declare-Constraints-Simple \
 		  devel/p5-IO-String \
 		  devel/p5-Locale-US \
 		  devel/p5-Params-Coerce \

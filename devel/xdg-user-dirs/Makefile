@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/09/16 06:27:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/11 10:50:31 espie Exp $
 
 COMMENT=	utilities to manage well known user directories
 
@@ -11,9 +11,6 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://user-dirs.freedesktop.org/releases/
 

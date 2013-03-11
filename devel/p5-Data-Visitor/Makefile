@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2011/04/16 21:03:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/11 10:50:15 espie Exp $
 
 COMMENT=	visitor-style traversal of Perl data structures
 
@@ -10,9 +10,6 @@ MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	devel/p5-Data-Alias \
 		devel/p5-Moose>=0.89 \
@@ -20,7 +17,7 @@ RUN_DEPENDS=	devel/p5-Data-Alias \
 		devel/p5-Tie-ToObject \
 		devel/p5-namespace-clean
 
-REGRESS_DEPENDS=devel/p5-Test-MockObject>=1.04 \
+TEST_DEPENDS=devel/p5-Test-MockObject>=1.04 \
 		devel/p5-Test-use-ok
 
 .include <bsd.port.mk>

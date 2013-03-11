@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/02/09 14:49:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/11 10:50:26 espie Exp $
 
 COMMENT=		discovery-based unittest extension
 
@@ -14,9 +14,6 @@ MAINTAINER=		Martynas Venckus <martynas@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_PYPI:=n/nose/}
 
@@ -27,9 +24,9 @@ FLAVORS=		python3
 FLAVOR?=
 
 .if ${FLAVOR:Mpython3}
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 .else
-REGRESS_DEPENDS=	devel/py-nose \
+TEST_DEPENDS=	devel/py-nose \
 			devel/py-twisted/core \
 			devel/py-coverage
 .endif
@@ -59,7 +56,7 @@ post-install:
 .endif
 
 
-do-regress:
+do-test:
 	cd ${WRKSRC}/functional_tests && nosetests -v
 	cd ${WRKSRC}/unit_tests && nosetests -v
 

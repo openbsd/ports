@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/12/03 11:44:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 10:50:15 espie Exp $
 
 COMMENT=	handle data in a hierarchical structure
 
@@ -12,9 +12,6 @@ MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	devel/p5-Clone>=0.15 \
 		devel/p5-Test-Exception>=0.21

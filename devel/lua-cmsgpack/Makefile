@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/11/05 21:26:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:11 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,15 +11,12 @@ HOMEPAGE=	https://github.com/antirez/lua-cmsgpack
 
 # BSD
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	http://distfiles.nl/
 
 MODULES=	lang/lua
 
-REGRESS_DEPENDS=${BUILD_PKGPATH}
+TEST_DEPENDS=${BUILD_PKGPATH}
 
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -fPIC -I${MODLUA_INCL_DIR} -shared \
@@ -29,7 +26,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${MODLUA_LIBDIR}
 	${INSTALL_DATA} ${WRKSRC}/cmsgpack.so ${MODLUA_LIBDIR}
 
-do-regress:
+do-test:
 	cd ${WRKSRC} && ${MODLUA_BIN} test.lua
 
 .include <bsd.port.mk>

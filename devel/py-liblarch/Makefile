@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/06/11 13:44:22 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:26 espie Exp $
 
 COMMENT=		library to easily handle data structure
 
@@ -12,9 +12,6 @@ HOMEPAGE=		https://live.gnome.org/liblarch/
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://gtg.fritalk.com/publique/gtg.fritalk.com/liblarch/${MODPY_EGG_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/
 
@@ -22,6 +19,6 @@ MODULES=		lang/python
 
 RUN_DEPENDS=		devel/py-gobject
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/11/14 13:49:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/11 10:50:32 espie Exp $
 
 COMMENT=	complete rewrite of the NASM assembler
 
@@ -12,9 +12,6 @@ HOMEPAGE=	http://yasm.tortall.net/
 
 # BSD and Artistic/LGPLv2.0
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/12/03 11:44:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:17 espie Exp $
 
 COMMENT =	keeps track of file creation times
 
@@ -12,9 +12,6 @@ MAINTAINER =	Simon Bertrang <simon@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 RUN_DEPENDS =	devel/p5-File-Attributes
 BUILD_DEPENDS =	${RUN_DEPENDS}

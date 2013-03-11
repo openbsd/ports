@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2013/03/02 12:33:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2013/03/11 10:50:00 espie Exp $
 
 COMMENT=        build tool for java applications
 
@@ -10,9 +10,6 @@ HOMEPAGE=	http://ant.apache.org/
 # Apache Software License 2.0 &
 # W3C Consortium License (August 14 1998)
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_APACHE:=ant/binaries/} \
 		http://archive.apache.org/dist/ant/binaries/
@@ -26,7 +23,7 @@ RUN_DEPENDS=	java/javaPathHelper
 BUILD_DEPENDS=	archivers/gtar
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 TAR=		${LOCALBASE}/bin/gtar
 

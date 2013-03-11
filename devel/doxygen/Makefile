@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2012/12/23 13:25:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2013/03/11 10:50:03 espie Exp $
 
 # Memory hog, stuck for days on the same file during build.
 # XXX check with different optimizer level? see doc/install.doc
@@ -18,9 +18,6 @@ HOMEPAGE=	http://www.doxygen.org/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://ftp.stack.nl/pub/users/dimitri/ \
 		ftp://ftp.stack.nl/pub/users/dimitri/
@@ -68,7 +65,7 @@ MAKE_FLAGS+=	CXX=${CXX} CC=${CC} \
 FAKE_FLAGS+=	DESTDIR=
 WRKDIST=	${WRKDIR}/doxygen-${VERSION}
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 VMEM_WARNING=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/12/13 20:42:45 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 10:50:25 espie Exp $
 
 COMMENT =	network library for easy and scalable concurrency
 
@@ -12,9 +12,6 @@ HOMEPAGE =	http://www.gevent.org/
 
 # MPL
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	${MASTER_SITE_PYPI:=g/gevent/}
 

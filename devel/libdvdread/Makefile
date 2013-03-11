@@ -1,4 +1,4 @@
-#$OpenBSD: Makefile,v 1.23 2013/02/02 11:47:47 espie Exp $
+#$OpenBSD: Makefile,v 1.24 2013/03/11 10:50:09 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -17,10 +17,7 @@ HOMEPAGE =	http://dvdnav.mplayerhq.hu/
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 # GPLv2+
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
 
 LIB_DEPENDS =	converters/libdvdcss>=1.2.12p0
 

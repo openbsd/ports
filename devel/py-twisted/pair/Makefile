@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/12/08 20:15:40 eric Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:27 espie Exp $
 
 COMMENT=	low-level networking for Twisted
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://twistedmatrix.com/trac/wiki/TwistedPair
 
 MASTER_SITES=	http://twistedmatrix.com/Releases/Pair/${VERSION:R}/
 
-REGRESS_DEPENDS=devel/py-twisted/pair
+TEST_DEPENDS=devel/py-twisted/pair
 
 TRIAL_TARGET=	twisted.pair
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/10/17 11:56:22 pea Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:12 espie Exp $
 
 COMMENT=	new GNU Portable Threads Library
 
@@ -14,9 +14,6 @@ MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 EXTRACT_SUFX=		.tar.bz2
 

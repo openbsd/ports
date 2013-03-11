@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/01/20 18:01:52 kili Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/11 10:50:07 espie Exp $
 
 COMMENT =		versatile logging framework
 
@@ -11,9 +11,6 @@ MAINTAINER =		David Coppa <dcoppa@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		lang/ghc
 

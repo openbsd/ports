@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/04/02 03:18:17 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:11 espie Exp $
 
 COMMENT =	development environment for native Windows applications
 
@@ -17,13 +17,10 @@ MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
 # Headers: public domain
 # Compiler/toolchain: GPL
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 WANTLIB += c z
 USE_GMAKE =	Yes
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 EXTRACT_SUFX =	.tar.bz2
 EXTRACT_ONLY =	${DISTNAME}${EXTRACT_SUFX}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/12/03 11:44:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:20 espie Exp $
 
 COMMENT=	parser for plain-text configuration files
 
@@ -12,9 +12,6 @@ MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	devel/p5-Paranoid
 

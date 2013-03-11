@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2012/09/01 12:02:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 10:50:09 espie Exp $
 
 COMMENT=	simple C Library for entropy measurement
 
@@ -15,9 +15,6 @@ MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c m
 
@@ -29,7 +26,7 @@ MAKE_ENV=	SHLIB_MAJOR=${LIBdisorder_VERSION:R} \
 FAKE_FLAGS=	LIBDIR=${LOCALBASE}/lib DEBUGLIBS=no
 CFLAGS+=	-I${WRKSRC}/include
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-build:
 	cd ${WRKSRC}/tool \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/01/20 18:01:36 kili Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/11 10:50:07 espie Exp $
 
 COMMENT=		implementation of Oleg Kiselyov's left-fold enumerators
 
@@ -10,9 +10,6 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES=		lang/ghc
 

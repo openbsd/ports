@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/16 09:24:53 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 10:50:24 espie Exp $
 
 COMMENT=	regression testing framework for PHP 5
 
@@ -13,13 +13,10 @@ RUN_DEPENDS=	benchmarks/pear-Benchmark
 
 # PHP License
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
-REGRESS_DEPENDS=${RUN_DEPENDS}
+TEST_DEPENDS=${RUN_DEPENDS}
 
-do-regress: fake
+do-test: fake
 	@cd ${WRKSRC} && ${PEAR_PHPBIN} \
 		-d include_path="${WRKINST}${PEAR_LIBDIR}:${PEAR_LIBDIR}" \
 		Tests/AllTests.php

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/02/07 20:21:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 10:50:03 espie Exp $
 
 COMMENT=		Web Tools Platform for Eclipse
 
@@ -16,8 +16,6 @@ MAINTAINER=		Ian Darwin <ian@openbsd.org>
 # Eclipse Public License Version 1.0 (http://www.eclipse.org/legal/epl-v10.html)
 PERMIT_PACKAGE_CDROM=	commercial distribution defend and indemnify clauses
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	commercial distribution defend and indemnify clauses
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://download.eclipse.org/webtools/downloads/drops/R1.5/R-${V}-200705021353/
 

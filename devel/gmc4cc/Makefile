@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/09/02 21:54:08 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:04 espie Exp $
 
 COMMENT=	C compiler for GMC-4
 
@@ -14,9 +14,6 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/files/
 MASTER_SITES0=	http://distfiles.nl/
@@ -33,7 +30,7 @@ LIB_DEPENDS=	devel/gmp
 
 WRKDIST= 	${WRKDIR}/gmc4cc/
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gmc4cc ${PREFIX}/bin/

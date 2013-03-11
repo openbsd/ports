@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2012/07/10 15:22:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 10:50:11 espie Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	lua binding of posix and pcre regex libraries
@@ -13,9 +13,6 @@ EXTRACT_SUFX=	.zip
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 USE_GMAKE=	Yes
 MAKE_ENV+=	MAKE_PROGRAM=${MAKE_PROGRAM} \
@@ -26,7 +23,7 @@ LIB_DEPENDS=	devel/pcre \
 		${MODLUA_LIB_DEPENDS} \
 		textproc/oniguruma
 WANTLIB =	pcre>=1.0 ${MODLUA_WANTLIB} onig
-MODLUA_REGRESS_DEPENDS+=devel/luarexlib
+MODLUA_TEST_DEPENDS+=devel/luarexlib
 
 do-install:
 	${INSTALL_DATA_DIR} ${MODLUA_LIBDIR} ${MODLUA_DOCDIR}
@@ -36,7 +33,7 @@ do-install:
 		${MODLUA_LIBDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${MODLUA_DOCDIR}
 
-do-regress:
+do-test:
 	cd ${WRKDIST}/test && ${MODLUA_BIN} runtest.lua -v onig
 	cd ${WRKDIST}/test && ${MODLUA_BIN} runtest.lua -v pcre
 	cd ${WRKDIST}/test && ${MODLUA_BIN} runtest.lua -v posix

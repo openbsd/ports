@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/01/28 14:09:12 nigel Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 10:50:01 espie Exp $
 
 COMMENT=	fancy interface to the Python interpreter
 
@@ -10,9 +10,6 @@ HOMEPAGE=	http://bpython-interpreter.org/
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES=	${HOMEPAGE}/releases/
 
@@ -24,7 +21,7 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		devel/py-gobject3 \
 		devel/py-urwid \
 		textproc/py-pygments
-REGRESS_DEPENDS=devel/py-mock \
+TEST_DEPENDS=devel/py-mock \
 		devel/py-twisted/core \
 		${RUN_DEPENDS}
 

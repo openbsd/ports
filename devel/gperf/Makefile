@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2012/08/06 08:14:48 sebastia Exp $
+# $OpenBSD: Makefile,v 1.27 2013/03/11 10:50:04 espie Exp $
 
 COMMENT =	perfect hash functions, to help write parsers
 
@@ -11,9 +11,6 @@ HOMEPAGE =	http://www.gnu.org/software/gperf/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c m stdc++
 

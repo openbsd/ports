@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2012/10/02 01:54:47 lteo Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:09 espie Exp $
 
 COMMENT =	compares and merges multiple files or directories
 
@@ -11,10 +11,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=kdiff3/}
 MAINTAINER =	Lawrence Teo <lteo@openbsd.org>
 
 # GPLv2
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
 
 WANTLIB =	ICE QtGui SM X11 Xext Xi Xinerama Xrender
 WANTLIB +=	c fontconfig freetype m pthread stdc++

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/08/23 15:05:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:15 espie Exp $
 
 BROKEN-powerpc=	Segmentation fault during build
 
@@ -14,9 +14,6 @@ USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += c
 
@@ -26,7 +23,7 @@ RUN_DEPENDS = 	devel/p5-Event>=0.89 \
 		devel/p5-EV>=3.3 \
 		devel/p5-common-sense \
 		devel/p5-Guard>=0.5
-REGRESS_DEPENDS = ${RUN_DEPENDS}
+TEST_DEPENDS = ${RUN_DEPENDS}
 
 # will use hand-made assembler on i386/amd64
 # can force it to use sjlj like on other platforms, to

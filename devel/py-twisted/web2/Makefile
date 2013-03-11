@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/09/16 09:24:56 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 10:50:27 espie Exp $
 
 COMMENT=	experimental HTTP/1.1 server framework
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://twistedmatrix.com/trac/wiki/TwistedWeb2
 
 MASTER_SITES=	http://twistedmatrix.com/Releases/Web2/${VERSION:R}/
 
-REGRESS_DEPENDS=devel/py-twisted/web2 \
+TEST_DEPENDS=devel/py-twisted/web2 \
 		devel/py-twisted/web
 
 TRIAL_TARGET=	twisted.web2

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/10 20:11:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:03 espie Exp $
 
 COMMENT=	expose Erlang events and metrics
 
@@ -12,8 +12,6 @@ HOMEPAGE=	https://github.com/boundary/jiffy
 
 # Apache2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://distfiles.nl/
 
@@ -28,7 +26,7 @@ pre-configure:
 do-build:
 	cd ${WRKSRC} && ${REBAR_BIN} compile
 
-do-regress:
+do-test:
 	cd ${WRKSRC} && ${REBAR_BIN} eunit
 
 do-install:

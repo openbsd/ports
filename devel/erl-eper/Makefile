@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/10 20:11:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:03 espie Exp $
 
 COMMENT=	collection of Erlang Performancy related tools
 
@@ -12,14 +12,12 @@ HOMEPAGE=	https://github.com/massemanet/eper
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://distfiles.nl/
 
 MODULES=	lang/erlang
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-build:
 	cd ${WRKSRC} && ${REBAR_BIN} compile escriptize

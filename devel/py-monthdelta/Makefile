@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/01/04 13:56:21 benoit Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 10:50:26 espie Exp $
 
 COMMENT =		date computations with months
 
@@ -12,9 +12,6 @@ HOMEPAGE =		http://packages.python.org/MonthDelta
 
 # MIT
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 MASTER_SITES =		${MASTER_SITE_PYPI:=M/MonthDelta/}
 
@@ -22,6 +19,6 @@ MODULES =		lang/python
 
 MODPY_SETUPTOOLS =	Yes
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 .include <bsd.port.mk>

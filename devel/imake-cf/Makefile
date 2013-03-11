@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/09/23 07:59:29 matthieu Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:09 espie Exp $
 
 PKG_ARCH = 	*
 COMMENT =  	config files for imake
@@ -9,16 +9,13 @@ MASTER_SITES = 	http://ftp.x.org/pub/individual/util/
 
 REVISION =	2
 
-PERMIT_DISTFILES_CDROM = 	Yes
-PERMIT_DISTFILES_FTP = 		Yes
 PERMIT_PACKAGE_CDROM = 		Yes
-PERMIT_PACKAGE_FTP = 		Yes
 
 SUBST += 	-e 's|@prefix@|${X11BASE}|'
 SUBST += 	-e 's|@FONTROOTDIR@|${X11BASE}/lib/X11/fonts|'
 SUBST += 	-e 's|@ENCODINGSDIR|$${FONTROOTDIR}/encodings|'
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-build:
 	sed ${SUBST} <${WRKSRC}/site.def.in >${WRKSRC}/site.def

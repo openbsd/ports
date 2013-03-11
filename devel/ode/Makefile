@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2012/10/09 07:36:49 kirby Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:12 espie Exp $
 
 COMMENT =	high performance library for simulating rigid body dynamics
 SHARED_LIBS += 	ode	1.0	# 3.0
@@ -13,9 +13,6 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=opende/}
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += GL GLU X11 Xdamage Xext Xfixes Xxf86vm c drm m 
 WANTLIB += pthread stdc++ xcb 

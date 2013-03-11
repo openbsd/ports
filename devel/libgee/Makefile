@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/03/05 07:07:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2013/03/11 10:50:10 espie Exp $
 
 COMMENT=	GObject based collection library
 
@@ -16,9 +16,6 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ffi glib-2.0 gobject-2.0 gthread-2.0 pcre pthread
 

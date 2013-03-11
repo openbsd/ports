@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/04/20 19:51:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 10:50:19 espie Exp $
 
 COMMENT =	name your accessors foo() and set_foo()
 
@@ -8,9 +8,6 @@ CATEGORIES =	devel
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 RUN_DEPENDS =		devel/p5-Moose
 

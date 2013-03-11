@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/11/24 15:28:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/11 10:50:20 espie Exp $
 
 COMMENT=	portable multitasking and networking framework for perl
 
@@ -13,9 +13,6 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_ARGS=	--default
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/11/03 10:06:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 10:50:11 espie Exp $
 
 COMMENT=	framework for creating extensible applications
 
@@ -8,10 +8,7 @@ CATEGORIES=	devel lang
 HOMEPAGE=	http://monoaddins.codeplex.com/
 
 # MIT X11, MPL
-PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
 
 MASTER_SITES=	http://download.mono-project.com/sources/mono-addins/
 EXTRACT_SUFX=	.tar.bz2

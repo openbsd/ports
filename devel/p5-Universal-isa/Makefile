@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/12/03 11:44:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/11 10:50:24 espie Exp $
 
 COMMENT=	calling UNIVERSAL::isa as a function
 
@@ -13,9 +13,6 @@ MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=modbuild
 

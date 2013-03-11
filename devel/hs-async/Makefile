@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/01/20 18:00:15 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 10:50:06 espie Exp $
 
 COMMENT =		asynchronous IO operations
 
@@ -10,9 +10,6 @@ MAINTAINER =		Matthias Kilian <kili@openbsd.org>
 
 # BSD3
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		lang/ghc
 
@@ -23,6 +20,6 @@ RUN_DEPENDS =		devel/hs-stm>=2.2,<2.5
 
 # Needs --enable-test, which will probably set by ghc.port.mk soon
 # (when I have some numbers about build times).
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 .include <bsd.port.mk>

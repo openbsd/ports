@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/08 02:04:37 djm Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/11 10:50:25 espie Exp $
 
 COMMENT=	Python functions and constants for IEEE754 floating point
 
@@ -13,13 +13,10 @@ MODULES=	lang/python
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://research.warnes.net/~warnes/fpconst/
 
-do-regress: fake
+do-test: fake
 	@cd ${WRKSRC} && ${MAKE_ENV} \
 		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} ./fpconst.py
 

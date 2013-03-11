@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/03/10 22:51:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 10:50:20 espie Exp $
 
 COMMENT=	perl module to generate recursive descent parsers
 
@@ -9,8 +9,5 @@ USE_GROFF=	Yes
 
 # Artistic
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 .include <bsd.port.mk>

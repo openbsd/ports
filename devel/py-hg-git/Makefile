@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/01/04 01:30:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/11 10:50:25 espie Exp $
 
 COMMENT =	push/pull from a Git server repository using Mercurial
 
@@ -11,9 +11,6 @@ HOMEPAGE =		http://hg-git.github.com/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 # Ugly gymnastics to give a more sensible filename than "0.3.4.tar.gz"..
 MASTER_SITES =	https://bitbucket.org/durin42/hg-git/get/${MODPY_EGG_VERSION}${EXTRACT_SUFX}?dummy=/
@@ -25,18 +22,18 @@ WRKDIST =		${WRKDIR}/durin42-hg-git-586b7aa96466
 
 RUN_DEPENDS =		devel/py-dulwich \
 			devel/mercurial
-REGRESS_DEPENDS =	${RUN_DEPENDS} \
+TEST_DEPENDS =	${RUN_DEPENDS} \
 			archivers/bzip2 \
 			archivers/unzip \
 			devel/git,-main
 
 MODPY_BADEGGS =		hg-git
 
-pre-regress:
+pre-test:
 	perl -pi -e 's|python |python${MODPY_VERSION} |g' \
 	    ${WRKSRC}/tests/test-*
 
-do-regress:
+do-test:
 	cd ${WRKSRC}/tests && ${MODPY_BIN} run-tests.py \
 	    --with-hg=${LOCALBASE}/hg
 

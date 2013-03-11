@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/12/06 08:23:24 shadchin Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:11 espie Exp $
 
 COMMENT =	abstract the storage of configuration settings
 
@@ -13,9 +13,6 @@ HOMEPAGE =	http://www.atheme.org/project/mcs
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB = 	c mowgli
 
@@ -30,6 +27,6 @@ CONFIGURE_STYLE = gnu
 CONFIGURE_ARGS = --disable-gconf \
 		 --disable-kconfig
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 .include <bsd.port.mk>

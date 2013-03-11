@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/08 02:04:37 djm Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:27 espie Exp $
 
 COMMENT =		Commandline client for Bugzilla bug tracking systems
 
@@ -11,15 +11,12 @@ HOMEPAGE =		http://www.liquidx.net/pybugz/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		http://pybugz.googlecode.com/files/
 
 MODULES =		lang/python
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-bugz

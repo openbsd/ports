@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/10 19:35:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 10:50:03 espie Exp $
 
 COMMENT=	streamlines setting up and used Meck-based mocks
 
@@ -12,8 +12,6 @@ HOMEPAGE=	https://github.com/opscode/automeck
 
 # Apache2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://distfiles.nl/
 
@@ -21,7 +19,7 @@ MODULES=	lang/erlang
 
 RUN_DEPENDS=	devel/erl-meck
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${ERL_LIBDIR}/{ebin,priv,src}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/02/07 20:21:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/11 10:50:03 espie Exp $
 
 COMMENT=		UML diagram framework for Eclipse
 
@@ -14,8 +14,6 @@ MAINTAINER=		Kurt Miller <kurt@openbsd.org>
 # Common Public License Version 1.0 (http://www.eclipse.org/legal/cpl-v10.html)
 PERMIT_PACKAGE_CDROM=	commercial distribution defend and indemnify clauses
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	commercial distribution defend and indemnify clauses
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://download.eclipse.org/modeling/mdt/uml2/downloads/drops/${V}/R200702141227/
 

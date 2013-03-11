@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/10/24 05:59:26 stu Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:31 espie Exp $
 
 COMMENT =		Tk Standard Library
 
@@ -10,16 +10,13 @@ MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD style
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tcllib/}
 MODULES =		x11/tk
 BUILD_DEPENDS =		devel/tcllib
 RUN_DEPENDS =		devel/tcllib ${MODTK_RUN_DEPENDS}
-REGRESS_DEPENDS =	devel/tcllib ${MODTK_BUILD_DEPENDS}
-REGRESS_IS_INTERACTIVE =X11
+TEST_DEPENDS =	devel/tcllib ${MODTK_BUILD_DEPENDS}
+TEST_IS_INTERACTIVE =X11
 USE_GROFF =		Yes
 NO_BUILD =		Yes
 PKG_ARCH =		*
@@ -56,8 +53,8 @@ do-install:
 	@chown ${MANOWN}:${MANGRP} ${PREFIX}/man/mann/tklib.n
 	@chmod ${MANMODE} ${PREFIX}/man/mann/tklib.n
 
-do-regress:
-	${SETENV} ${MAKE_ENV} ${REGRESS_FLAGS} \
+do-test:
+	${SETENV} ${MAKE_ENV} ${TEST_FLAGS} \
 	${MODTCL_BIN} ${WRKSRC}/sak.tcl test
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/01/13 19:32:12 landry Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/11 10:50:32 espie Exp $
 
 # Does _not_ depend on desktop-file-utils, hicolor-icon-theme,
 # gtk-update-icon-cache, shared-mime-info... on purpose as it should
@@ -18,14 +18,11 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://portland.freedesktop.org/download/
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	ac_cv_path_XMLTO=""

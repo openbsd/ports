@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/09/05 07:31:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:12 espie Exp $
 
 COMMENT=		programming library for color text mode, widget based UIs
 
@@ -14,9 +14,6 @@ MASTER_SITES=		https://fedorahosted.org/releases/n/e/newt/
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 MODULES=		devel/gettext \
 			lang/python
@@ -36,7 +33,7 @@ CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAKE_FLAGS=		MAKE_PROGRAM=${MAKE_PROGRAM}
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 SUBST_VARS+=		VERSION
 

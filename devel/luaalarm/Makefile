@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2012/07/10 15:22:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 10:50:11 espie Exp $
 
 COMMENT=	alarm library for the lua language
 SHARED_ONLY=	Yes
@@ -17,9 +17,6 @@ HOMEPAGE=	http://www.tecgraf.puc-rio.br/~lhf/ftp/lua/
 
 # PD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	lang/lua
 
@@ -30,7 +27,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${MODLUA_LIBDIR}
 	${INSTALL_DATA} ${WRKSRC}/alarm.so ${MODLUA_LIBDIR}
 
-do-regress:
+do-test:
 	rm -f ${WRKDIST}/alarm.lua
 	cd ${WRKDIST} && ${MODLUA_BIN} test.lua
 

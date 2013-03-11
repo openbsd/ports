@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2012/04/04 12:55:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2013/03/11 10:50:06 espie Exp $
 
 COMMENT=	GNU Scientific Library
 
@@ -15,9 +15,6 @@ MAINTAINER=	Can Erkin Acar <canacar@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c m
 

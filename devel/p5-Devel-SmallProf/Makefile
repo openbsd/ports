@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/12/03 11:44:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 10:50:16 espie Exp $
 
 COMMENT=		per-line Perl profiler
 
@@ -11,8 +11,5 @@ USE_GROFF =		Yes
 MAINTAINER=		Srebrenko Sehic <haver@insecure.dk>
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2013/01/05 12:53:08 stsp Exp $
+# $OpenBSD: Makefile,v 1.117 2013/03/11 10:50:31 espie Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -40,9 +40,6 @@ MAINTAINER=	Stefan Sperling <stsp@openbsd.org>
 
 # BSD alike + Apache License 2.0
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_APACHE:=subversion/}
 EXTRACT_SUFX=	.tar.bz2
@@ -176,7 +173,7 @@ BUILD_DEPENDS+=		www/apache-httpd
 CONFIGURE_ARGS+=--without-apxs
 .endif
 
-REGRESS_DEPENDS=${MODPY_RUN_DEPENDS}
+TEST_DEPENDS=${MODPY_RUN_DEPENDS}
 SUBST_VARS+=	LOCALBASE SO_VERSION
 
 pre-patch:
@@ -189,10 +186,10 @@ pre-configure:
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} ./autogen.sh
 
 .if ${BUILD_PACKAGES:M-python}
-REGRESS_DEPENDS+=	${FULLPKGNAME-python}:${BUILD_PKGPATH},-python
+TEST_DEPENDS+=	${FULLPKGNAME-python}:${BUILD_PKGPATH},-python
 
 .if ${BUILD_PACKAGES:M-ruby}
-REGRESS_DEPENDS+=	${FULLPKGNAME-ruby}:${BUILD_PKGPATH},-ruby
+TEST_DEPENDS+=	${FULLPKGNAME-ruby}:${BUILD_PKGPATH},-ruby
 .endif
 
 pre-build:
@@ -220,22 +217,22 @@ post-build:
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
 		${MAKE_FLAGS} svn-populate-node-origins-index
 
-do-regress:
+do-test:
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
-		${ALL_REGRESS_FLAGS} check FS_TYPE=bdb
+		${ALL_TEST_FLAGS} check FS_TYPE=bdb
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
-		${ALL_REGRESS_FLAGS} check FS_TYPE=fsfs
+		${ALL_TEST_FLAGS} check FS_TYPE=fsfs
 .if ${BUILD_PACKAGES:M-perl}
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
-		${ALL_REGRESS_FLAGS} TMPDIR=${WRKBUILD} check-swig-pl
+		${ALL_TEST_FLAGS} TMPDIR=${WRKBUILD} check-swig-pl
 .endif
 .if ${BUILD_PACKAGES:M-python}
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
-		${ALL_REGRESS_FLAGS} check-swig-py
+		${ALL_TEST_FLAGS} check-swig-py
 .endif
 .if ${BUILD_PACKAGES:M-ruby}
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
-		${ALL_REGRESS_FLAGS} check-swig-rb
+		${ALL_TEST_FLAGS} check-swig-rb
 .endif
 
 post-install:

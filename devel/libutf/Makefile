@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 17:47:54 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:10 espie Exp $
 
 COMMENT=	UTF8 support library from Plan 9
 
@@ -11,12 +11,9 @@ MAINTAINER=	Markus Friedl <markus@openbsd.org>
 EXTRACT_SUFX=	.tgz
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 FAKE_FLAGS=	PREFIX=${WRKINST}${PREFIX}
 
 pre-build:

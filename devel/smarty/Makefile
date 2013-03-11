@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/01/12 15:15:23 benoit Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/11 10:50:31 espie Exp $
 
 COMMENT-main =	template engine for PHP
 COMMENT-docs =	documentation for Smarty
@@ -16,9 +16,6 @@ HOMEPAGE =	http://www.smarty.net
 
 # PHP License
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	${HOMEPAGE}/do_download.php?download_file=
 MASTER_SITES0 =	${HOMEPAGE}/distributions/manual/en/ \
@@ -36,7 +33,7 @@ CHROOT_DIR =	/var/www
 PREFIX-main =	${CHROOT_DIR}
 
 NO_BUILD =	Yes
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 PKG_ARCH =	*
 

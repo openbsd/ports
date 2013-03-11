@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2012/04/23 17:15:18 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:02 espie Exp $
 
 COMMENT =	patch-set and bug tracking system for CVS
 
@@ -13,9 +13,6 @@ MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	${HOMEPAGE}
 
@@ -27,7 +24,7 @@ MAKE_FLAGS =	BCC="${CC} ${CFLAGS} -I${LOCALBASE}/include" \
 		TCC="${CC} ${CFLAGS} -I${LOCALBASE}/include" \
 		LIBSQLITE="`pkg-config --libs sqlite3` -lm"
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/wikiinit.c

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/01/20 18:01:18 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 10:50:07 espie Exp $
 
 COMMENT =		constraint manipulation
 
@@ -8,9 +8,6 @@ CATEGORIES =		devel
 
 # BSD3
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		lang/ghc
 

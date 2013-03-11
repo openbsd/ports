@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2012/09/23 16:57:34 jeremy Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 10:50:30 espie Exp $
 
 COMMENT =	dependency-injection/inversion-of-control container for Ruby
 
@@ -8,9 +8,6 @@ CATEGORIES =	devel
 
 # bsd/ruby
 PERMIT_PACKAGE_CDROM =		yes
-PERMIT_PACKAGE_FTP =		yes
-PERMIT_DISTFILES_CDROM =	yes
-PERMIT_DISTFILES_FTP =		yes
 
 MODULES =	lang/ruby
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2011/12/02 08:29:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2013/03/11 10:50:12 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -16,9 +16,6 @@ HOMEPAGE=		http://www.netbeans.org/
 # For external components see:
 #   http://www.netbeans.info/downloads/licence/netbeans-3rd-party.txt
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://download.netbeans.org/netbeans/${V}/final/zip/
 EXTRACT_SUFX=		-201007282301-ml.zip
@@ -30,7 +27,7 @@ RUN_DEPENDS=		java/javaPathHelper \
 			devel/desktop-file-utils
 
 NO_BUILD=		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 WRKDIST=		${WRKDIR}/netbeans
 

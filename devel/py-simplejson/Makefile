@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2012/04/22 09:17:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/11 10:50:26 espie Exp $
 
 COMMENT =		JSON encoder/decoder
 
@@ -14,18 +14,15 @@ MAINTAINER =		Martynas Venckus <martynas@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${MASTER_SITE_PYPI:=s/simplejson/}
 
 MODULES =		lang/python
-REGRESS_DEPENDS =	devel/py-nose
+TEST_DEPENDS =	devel/py-nose
 
 WANTLIB +=		${MODPY_WANTLIB}
 
-do-regress:
+do-test:
 	cd ${WRKSRC} && ${LOCALBASE}/bin/nosetests
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2011/10/13 16:26:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.53 2013/03/11 10:50:11 espie Exp $
 
 COMMENT=		window navigator construction kit
 
@@ -15,9 +15,6 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 EXTRACT_SUFX=		.tar.bz2
 

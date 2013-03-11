@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/02/07 20:21:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 10:50:03 espie Exp $
 
 COMMENT =	Python development plug-in for Eclipse
 
@@ -18,8 +18,6 @@ MAINTAINER=	Ian Darwin <ian@openbsd.org>
 # Eclipse Public License
 PERMIT_PACKAGE_CDROM =	EPL Indemnify clause
 PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =EPL Indemnify clause
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=pydev/}
 

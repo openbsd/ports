@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/01/05 23:15:50 benoit Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 10:50:25 espie Exp $
 
 COMMENT =		country, language, currency and scripts definitions
 
@@ -12,9 +12,6 @@ HOMEPAGE =		http://pypi.python.org/pypi/pycountry
 
 # LGPL2.1
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 MASTER_SITES=		${MASTER_SITE_PYPI:=p/pycountry/}
 
@@ -23,7 +20,7 @@ EXTRACT_SUFX =		.zip
 MODULES =		lang/python
 
 MODPY_SETUPTOOLS =	Yes
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 post-configure:
 			rm ${WRKSRC}/src/pycountry/db.py.orig

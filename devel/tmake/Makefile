@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/10/04 12:56:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 10:50:31 espie Exp $
 
 COMMENT=	cross-platform makefile tool from TrollTech
 
@@ -10,14 +10,11 @@ HOMEPAGE=	http://www.trolltech.com/developer/downloads/qt/freebies/
 
 # Permission to use, copy, modify, and distribute
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ftp.trolltech.com/freebies/tmake/
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 PKG_ARCH=	*
 
 MODULES=	x11/qt3

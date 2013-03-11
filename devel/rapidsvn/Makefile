@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/16 09:24:56 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 10:50:27 espie Exp $
 
 COMMENT=	graphical subversion client
 
@@ -17,9 +17,6 @@ MASTER_SITES=	${HOMEPAGE}download/release/${VERSION}/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/12/22 20:21:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:14 espie Exp $
 
 COMMENT=		faster Class::Std
 
@@ -8,9 +8,6 @@ CATEGORIES=		devel
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
 

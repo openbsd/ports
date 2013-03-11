@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2012/04/05 11:40:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2013/03/11 10:50:30 espie Exp $
 
 COMMENT=	SDL image library
 
@@ -13,9 +13,6 @@ HOMEPAGE=	http://www.libsdl.org/projects/SDL_image/
 
 # Zlib
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB=	SDL jpeg m png sndio tiff usbhid webp z
 

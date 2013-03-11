@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/01/09 17:38:52 jeremy Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 10:50:30 espie Exp $
 
 COMMENT=	code coverage tool for Ruby
 
@@ -10,9 +10,6 @@ MAINTAINER=	Jeremy Evans <jeremy@openbsd.org>
 
 # MIT License
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	lang/ruby
 

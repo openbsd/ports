@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/12/03 11:44:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2013/03/11 10:50:15 espie Exp $
 
 COMMENT=	curses(3) based terminal widgets
 
@@ -13,16 +13,13 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Curses/}
 
 # Artistic 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	devel/p5-Curses
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 # Regress tests require an interactive terminal
-REGRESS_FLAGS=	TERM=${TERM}
-REGRESS_IS_INTERACTIVE=	Yes
+TEST_FLAGS=	TERM=${TERM}
+TEST_IS_INTERACTIVE=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p5-Curses-Widgets

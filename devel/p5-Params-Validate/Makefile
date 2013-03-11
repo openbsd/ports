@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2012/08/23 15:08:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2013/03/11 10:50:20 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -12,13 +12,10 @@ USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB += c
 
-REGRESS_DEPENDS=	devel/p5-Test-Taint>=1.04 \
+TEST_DEPENDS=	devel/p5-Test-Taint>=1.04 \
 			devel/p5-Readonly>=1.03 \
 			devel/p5-Readonly-XS>=1.05
 

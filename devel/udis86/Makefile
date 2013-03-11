@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/05/13 22:19:14 pirofti Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:31 espie Exp $
 
 COMMENT =	easy-to-use minimalistic disassembler library
 
@@ -13,9 +13,6 @@ MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=udis86/}
 

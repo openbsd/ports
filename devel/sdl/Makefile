@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2013/02/09 14:49:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.91 2013/03/11 10:50:30 espie Exp $
 
 # requires ELF visibility support when on a shared arch
 ONLY_FOR_ARCHS=	${GCC3_ARCHS} ${GCC4_ARCHS} ${NO_SHARED_ARCHS}
@@ -18,9 +18,6 @@ HOMEPAGE=	http://www.libsdl.org/
 
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB=	m sndio usbhid
 
@@ -68,7 +65,7 @@ CONFIGURE_ARGS+= --without-x \
 WANTLIB+=	X11 Xau Xdmcp Xext Xrandr Xrender pthread-stubs xcb
 .endif
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 pre-configure:
 	@mkdir -p ${WRKSRC}/src/audio/libsndio

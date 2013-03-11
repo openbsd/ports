@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2012/01/29 02:41:33 william Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 10:50:17 espie Exp $
 
 COMMENT=	module to read a file starting at the end
 
@@ -10,8 +10,5 @@ MAINTAINER=	William Yodlowsky <william@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 .include <bsd.port.mk>

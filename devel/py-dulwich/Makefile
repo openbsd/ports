@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2012/10/15 14:55:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 10:50:25 espie Exp $
 
 COMMENT =	pure Python implementation of Git file formats and protocols
 
@@ -13,9 +13,6 @@ HOMEPAGE =		http://samba.org/~jelmer/dulwich/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 MASTER_SITES =		${HOMEPAGE}
 
@@ -24,11 +21,11 @@ MODPY_SETUPTOOLS =	Yes
 
 MODPY_BADEGGS =		dulwich
 
-REGRESS_DEPENDS =	devel/py-nose
+TEST_DEPENDS =	devel/py-nose
 
 WANTLIB +=	${MODPY_WANTLIB}
 
-do-regress:
+do-test:
 	cd ${WRKSRC} && nosetests
 
 .include <bsd.port.mk>

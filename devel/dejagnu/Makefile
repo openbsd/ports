@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2011/05/07 14:03:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2013/03/11 10:50:03 espie Exp $
 
 COMMENT=	framework to test programs
 
@@ -10,9 +10,6 @@ HOMEPAGE=	http://www.gnu.org/software/dejagnu/
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	lang/expect,no_tk
 RUN_DEPENDS=	lang/expect,no_tk

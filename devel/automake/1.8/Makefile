@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2012/07/20 12:03:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 10:50:01 espie Exp $
 
 VERSION=	1.8
 DISTNAME=	automake-${VERSION}.5
@@ -17,9 +17,9 @@ MAKE_FLAGS+=		MAKEINFO="makeinfo --no-split" \
 			pkgvdatadir=${PREFIX}/share/automake${SUFFIX} \
 			APIVERSION=${VERSION}
 
-REGRESS_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
+TEST_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 			devel/libtool
-REGRESS_FLAGS=		AUTOCONF_VERSION=${AUTOCONF_VERSION}
+TEST_FLAGS=		AUTOCONF_VERSION=${AUTOCONF_VERSION}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/doc/automake.texi

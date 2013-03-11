@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/15 19:45:57 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 10:50:02 espie Exp $
 
 COMMENT=		graphical representation of CVS repository
 
@@ -8,9 +8,6 @@ HOMEPAGE=		http://www.akhphd.au.dk/~bertho/cvsgraph
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c jpeg m png z gd>=18
 
 MODULES=		converters/libiconv
@@ -29,7 +26,7 @@ CONFIGURE_ARGS=		--with-gd-inc=${LOCALBASE}/include \
 			--with-freetype-lib=${X11BASE}/lib
 USE_GROFF =		Yes
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 pre-build:
 	@perl -pi -e 's,!!SYSCONFDIR!!,${SYSCONFDIR},g' ${WRKSRC}/cvsgraph.1

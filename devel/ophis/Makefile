@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/10/14 22:29:57 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:12 espie Exp $
 
 COMMENT =		65xx-series cross-assembler
 
@@ -12,15 +12,12 @@ HOMEPAGE =		https://hkn.eecs.berkeley.edu/~mcmartin/ophis/
 
 # BSD
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 MASTER_SITES =		${HOMEPAGE}
 
 MODULES =		lang/python
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ophis

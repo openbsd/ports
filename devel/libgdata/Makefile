@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2012/09/30 11:02:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2013/03/11 10:50:10 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -18,9 +18,6 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += crypto curl dbus-1 ffi gck-1 gcr-base-3 gcrypt gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gnome-keyring goa-1.0 gobject-2.0

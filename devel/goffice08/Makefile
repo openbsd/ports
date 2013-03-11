@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/12/19 10:40:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:04 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,9 +18,6 @@ SUBST_VARS=	GNOME_VERSION API_VERSION
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 bz2 cairo

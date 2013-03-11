@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/16 09:24:56 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 10:50:27 espie Exp $
 
 COMMENT =		libraries for WSGI development
 
@@ -15,9 +15,6 @@ MAINTAINER =		Martynas Venckus <martynas@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		http://www.owlfish.com/software/wsgiutils/downloads/
 
@@ -34,7 +31,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/* \
 	    ${PREFIX}/share/examples/py-wsgiutils/
 
-do-regress:
+do-test:
 	cd ${WRKSRC}/tests && touch __init__.py \
 	    CookieTests/__init__.py RequestObjectTests/__init__.py
 	cd ${WRKSRC} && ${MODPY_BIN} runtests.py

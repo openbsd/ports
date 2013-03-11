@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/01/09 00:07:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/11 10:50:02 espie Exp $
 
 COMMENT=		migrate repositories from CVS to Subversion/GIT/BZR
 
@@ -14,20 +14,17 @@ HOMEPAGE=		http://cvs2svn.tigris.org/
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	lang/python
 
 RUN_DEPENDS=	devel/subversion,-python \
 		${MODPY_RUN_DEPENDS},-bsddb
 
-REGRESS_DEPENDS=${RUN_DEPENDS}
+TEST_DEPENDS=${RUN_DEPENDS}
 
-REGRESS_FLAGS=	PYTHON=${MODPY_BIN}
+TEST_FLAGS=	PYTHON=${MODPY_BIN}
 
-REGRESS_TARGET=	check
+TEST_TARGET=	check
 
 DOCFILES=	BUGS CHANGES COPYING HACKING README doc/design-notes.txt
 DOCDIR=		${PREFIX}/share/doc/cvs2svn

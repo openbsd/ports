@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2012/02/21 22:19:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/11 10:50:11 espie Exp $
 
 COMMENT=	Streamlined replacement for make
 
@@ -18,15 +18,12 @@ BUILD_DEPENDS=	devel/libfmt \
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c
 
 FAKE_FLAGS=	PREFIX=${WRKINST}${PREFIX}
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 MAKE_FLAGS=	CC="${CC}"
 
 pre-build:

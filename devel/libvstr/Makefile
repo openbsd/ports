@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/03/29 13:38:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:11 espie Exp $
 
 COMMENT =	string library designed for network communication
 
@@ -14,13 +14,10 @@ HOMEPAGE =	http://www.and.org/vstr/
 
 # mostly LGPLv2.1+, assert_loop.c GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		ftp://ftp.and.org/pub/james/vstr/$V/
 
-REGRESS_FLAGS =		CPPFLAGS="${CPPFLAGS} -I${WRKSRC}/include"
+TEST_FLAGS =		CPPFLAGS="${CPPFLAGS} -I${WRKSRC}/include"
 
 SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes

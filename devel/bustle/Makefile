@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/10/11 13:31:28 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:01 espie Exp $
 
 COMMENT=	D-Bus profiler
 
@@ -10,9 +10,6 @@ HOMEPAGE=	http://willthompson.co.uk/bustle/
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo

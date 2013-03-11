@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2012/10/15 15:06:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 10:50:02 espie Exp $
 
 NOT_FOR_ARCHS =	arm mips64 mips64el sparc64 hppa
 
@@ -15,9 +15,6 @@ MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
 
 # GPL v2
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 MASTER_SITES =		${HOMEPAGE}
 EXTRACT_SUFX =		.tar.bz2

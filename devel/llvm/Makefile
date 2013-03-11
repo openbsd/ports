@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2013/01/08 10:14:13 brad Exp $
+# $OpenBSD: Makefile,v 1.60 2013/03/11 10:50:11 espie Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -23,9 +23,6 @@ HOMEPAGE =	http://www.llvm.org/
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	c m pthread stdc++
 
@@ -34,7 +31,7 @@ WRKDIST =	${WRKDIR}/llvm-${LLVM_V}.src
 MODULES =	devel/cmake \
 		lang/python
 
-REGRESS_DEPENDS = devel/dejagnu
+TEST_DEPENDS = devel/dejagnu
 BUILD_DEPENDS +=	textproc/py-sphinx
 
 VMEM_WARNING =	Yes
@@ -43,7 +40,7 @@ MAKE_FLAGS =	OPTIMIZE_OPTION="${CFLAGS}" \
 		VERBOSE=Yes \
 		INSTALL="install -c"
 
-REGRESS_FLAGS =	RUNTESTFLAGS=
+TEST_FLAGS =	RUNTESTFLAGS=
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_ARGS =	-DLLVM_ENABLE_FFI:Bool=False \

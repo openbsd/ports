@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/10/04 07:40:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/11 10:50:17 espie Exp $
 
 COMMENT=	parses long function arguments
 
@@ -10,9 +10,6 @@ USE_GROFF =	Yes
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/p5-Log-Agent>=0.105

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2012/10/15 15:18:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/11 10:50:31 espie Exp $
 
 COMMENT=	AVR microcontroller hardware in-system programmer
 
@@ -12,9 +12,6 @@ MAINTAINER=	Martin Reindl <martin@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m stdc++
 USE_GROFF =		Yes
 

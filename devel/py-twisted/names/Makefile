@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/12/08 20:15:40 eric Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 10:50:27 espie Exp $
 
 COMMENT=	DNS protocol implementation
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://twistedmatrix.com/trac/wiki/TwistedNames
 
 MASTER_SITES=	http://twistedmatrix.com/Releases/Names/${VERSION:R}/
 
-REGRESS_DEPENDS=devel/py-twisted/names
+TEST_DEPENDS=devel/py-twisted/names
 
 TRIAL_TARGET=	twisted.names
 

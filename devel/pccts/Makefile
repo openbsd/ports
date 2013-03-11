@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2012/10/15 15:06:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/11 10:50:24 espie Exp $
 
 COMMENT=	Purdue Compiler Construction Tool Set
 
@@ -11,9 +11,6 @@ EXTRACT_SUFX=	.zip
 HOMEPAGE=	http://www.polhode.com/pccts.html
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 MAKE_FILE=	makefile
@@ -23,7 +20,7 @@ ALL_TARGET=
 
 WRKDIST=	${WRKDIR}/pccts
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/pccts

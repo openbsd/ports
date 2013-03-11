@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/01/23 21:17:30 zhuk Exp $
+# $OpenBSD: Makefile,v 1.31 2013/03/11 10:50:09 espie Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	graphical debugger for KDE
@@ -10,9 +10,6 @@ HOMEPAGE=	http://members.nextra.at/johsixt/kdbg.html
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	art_lgpl_2 jpeg ICE SM X11 Xext Xrender c m \
 		fam rpcsvc png pthread stdc++ util z idn Xau Xdmcp \

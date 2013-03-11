@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/05/11 18:58:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:20 espie Exp $
 
 COMMENT =		POE component base class implementing Observer pattern
 
@@ -10,9 +10,6 @@ CATEGORIES =		devel
 
 # perl
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		cpan
 

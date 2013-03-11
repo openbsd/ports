@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 17:47:54 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 10:50:10 espie Exp $
 
 PKG_ARCH=	*
 COMMENT=	manpages for the standard C++ library
@@ -13,13 +13,10 @@ EXTRACT_SUFX=	.tar.bz2
 
 # GFDL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 USE_GROFF =	Yes
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	cd ${WRKSRC}/man3 && \

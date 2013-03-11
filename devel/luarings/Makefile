@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/08/12 17:25:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 10:50:11 espie Exp $
 
 COMMENT =	multiple states library for the lua language
 SHARED_ONLY =	Yes
@@ -12,9 +12,6 @@ HOMEPAGE =	http://www.keplerproject.org/rings/
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	http://github.com/downloads/keplerproject/rings/
 
@@ -36,7 +33,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/*.so ${MODLUA_LIBDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/us/* ${MODLUA_DOCDIR}
 
-do-regress:
+do-test:
 	cp ${WRKDIST}/src/*.so ${WRKDIST}/tests
 	cp ${WRKDIST}/src/*.lua ${WRKDIST}/tests
 .for r in ${REGRESS_FILES}

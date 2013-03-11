@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/02/27 18:53:45 shadchin Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 10:50:10 espie Exp $
 
 SHARED_ONLY =		Yes
 
@@ -14,9 +14,6 @@ HOMEPAGE =		http://www.atheme.org/project/libguess
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		mowgli
 
@@ -29,6 +26,6 @@ MAKE_ENV =		LIB_MAJOR=${LIBguess_VERSION:R} \
 
 CONFIGURE_STYLE =	gnu
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 .include <bsd.port.mk>

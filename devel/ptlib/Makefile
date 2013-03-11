@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/02 14:05:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/11 10:50:25 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,9 +18,6 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # MPL 1.0
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += SDL c crypto expat lber ldap ldap_r m pthread sndio
 WANTLIB += ssl stdc++
@@ -62,7 +59,7 @@ MAKE_FLAGS=	MAJOR_VERSION=${LIBpt_VERSION:R} \
 		DEBUG_SONAME=libpt_d.so.${LIBpt_VERSION}
 
 USE_GMAKE=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-extract:
 	@mkdir ${WRKSRC}/plugins/sound_sndio

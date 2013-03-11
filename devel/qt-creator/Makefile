@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/01/05 20:32:02 zhuk Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 10:50:27 espie Exp $
 
 BROKEN-powerpc =	qdoc3 goes into an infinite loop
 
@@ -31,9 +31,6 @@ HOMEPAGE =		http://qt.nokia.com/products/appdev/developer-tools/developer-tools
 
 # LGPL 2.1 with C++ headers exception (more permissive than LGPL)
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB +=	c m pthread stdc++ sqlite3
 WANTLIB +=	QtDBus QtWebKit QtXmlPatterns QtDesigner>=7 
@@ -51,7 +48,7 @@ SEPARATE_BUILD =	Yes
 
 ALL_TARGET = 		all qch_docs
 
-#NO_REGRESS =		Yes
+#NO_TEST =		Yes
 
 FAKE_FLAGS =		INSTALL_ROOT=${WRKINST}${TRUEPREFIX}
 

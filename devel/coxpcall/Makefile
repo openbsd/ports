@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2012/09/19 08:15:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 10:50:02 espie Exp $
 
 PKG_ARCH =	*
 
@@ -13,15 +13,12 @@ MAINTAINER =	Scott Vokes <vokes.s@gmail.com>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		http://luaforge.net/frs/download.php/3406/
 
 MODULES =		lang/lua
 NO_BUILD =		Yes
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${MODLUA_DATADIR}

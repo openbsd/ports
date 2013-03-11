@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2011/09/28 09:51:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2013/03/11 10:50:26 espie Exp $
 
 COMMENT=	ORBit2 Python bindings
 
@@ -12,9 +12,6 @@ HOMEPAGE=	http://www.pygtk.org/
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 EXTRACT_SUFX=		.tar.bz2
 
@@ -47,7 +44,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/echo/*.{idl,py} ${PREFIX}/share/examples/py-orbit/echo/
 	${INSTALL_DATA} ${WRKSRC}/examples/threaded/*.{idl,py} ${PREFIX}/share/examples/py-orbit/threaded/
 
-do-regress: fake
+do-test: fake
 	cd ${WRKSRC}/tests && \
 		env PYTHONPATH="${WRKINST}${MODPY_LIBDIR}/site-packages" ${MODPY_BIN} everything_inprocess.py -v
 

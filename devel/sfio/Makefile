@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/15 19:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:30 espie Exp $
 
 COMMENT=	Safe/Fast I/O Library
 
@@ -15,9 +15,6 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	Wilbern Cobb <wcobb@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 USE_GROFF =	Yes
 post-extract:
@@ -43,7 +40,7 @@ do-install:
 	    install_unithreaded install_multithreaded
 	${INSTALL_MAN} ${WRKDIR}/man/man3/sfio.3 ${PREFIX}/man/man3
 
-do-regress:
+do-test:
 	cd ${WRKDIR}/src/lib/sfio/Sfio_t && ./runtest -mt -lpthread
 
 .include <bsd.port.mk>

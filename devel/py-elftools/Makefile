@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/07/09 09:28:53 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:25 espie Exp $
 
 COMMENT =		ELF and DWARF parser library for Python
 
@@ -12,9 +12,6 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
 # Public domain
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${MASTER_SITE_PYPI:=p/pyelftools/}
 MODULES =		lang/python
@@ -29,7 +26,7 @@ post-install:
 		${INSTALL_SCRIPT} $$i ${EXAMPLEDIR}; \
 	done
 
-do-regress:
+do-test:
 	cd ${WRKSRC} && ${MODPY_BIN} test/run_all_unittests.py
 
 .include <bsd.port.mk>

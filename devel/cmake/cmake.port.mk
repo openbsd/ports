@@ -1,4 +1,4 @@
-# $OpenBSD: cmake.port.mk,v 1.15 2013/01/03 15:48:42 espie Exp $
+# $OpenBSD: cmake.port.mk,v 1.16 2013/03/11 10:50:02 espie Exp $
 
 BUILD_DEPENDS+=	devel/cmake>=2.8.0
 
@@ -36,7 +36,7 @@ MODCMAKE_configure=	cd ${WRKBUILD} && ${_SYSTRACE_CMD} ${SETENV} \
 
 SEPARATE_BUILD ?=	Yes
 
-REGRESS_TARGET ?=	test
+TEST_TARGET ?=	test
 
 MODCMAKE_WANTCOLOR ?= No
 MODCMAKE_VERBOSE ?= Yes

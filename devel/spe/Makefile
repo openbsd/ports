@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/09/16 09:24:58 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/11 10:50:31 espie Exp $
 
 COMMENT=	SPE -- Stani's Python Editor
 
@@ -13,10 +13,7 @@ HOMEPAGE=	http://pythonide.stani.be/
 MAINTAINER=	Joerg Zinke <mail@umaxx.net>
 
 # GPLv3
-PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
 
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=python/}
 
@@ -29,6 +26,6 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		security/py-crypto \
 		devel/py-Checker
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

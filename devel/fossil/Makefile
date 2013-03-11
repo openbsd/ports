@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2013/03/04 23:44:39 jturner Exp $
+# $OpenBSD: Makefile,v 1.37 2013/03/11 10:50:03 espie Exp $
 
 COMMENT =		simple distributed software configuration management
 
@@ -14,9 +14,6 @@ MASTER_SITES =		${HOMEPAGE}download/
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 FLAVORS=		static
 FLAVOR?=
@@ -39,12 +36,12 @@ CONFLICT_MARKER =	fossil-*-static
 
 SUBST_VARS +=		CONFLICT_MARKER
 
-REGRESS_DEPENDS =	${MODTCL_RUN_DEPENDS}
+TEST_DEPENDS =	${MODTCL_RUN_DEPENDS}
 
 post-extract:
 	@rm -f ${WRKSRC}/src/sqlite3.h
 
-do-regress:
+do-test:
 	@cd ${WRKSRC} && ${MODTCL_BIN} test/tester.tcl fossil
 
 do-install:

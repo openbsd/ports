@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/11/13 13:54:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 10:50:03 espie Exp $
 
 COMMENT =		Device Firmware Update-based programmer for Atmel chips
 
@@ -12,9 +12,6 @@ HOMEPAGE =		http://dfu-programmer.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c pthread usb-1.0
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2012/09/01 14:36:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/11 10:50:27 espie Exp $
 
 BROKEN=		does not work with Qt >= 4.6
 
@@ -6,10 +6,7 @@ COMMENT=	event viewer for qt4
 CATEGORIES=	devel x11
 
 # GPL
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
 
 SHARED_LIBS=	eventsview	0.0
 .for l v in $(SHARED_LIBS)

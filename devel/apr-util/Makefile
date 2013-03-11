@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2012/12/21 12:13:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2013/03/11 10:50:00 espie Exp $
 
 COMMENT=	companion library to APR
 
@@ -18,9 +18,6 @@ FLAVOR?=
 
 # Apache License 2.0
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += pthread
 

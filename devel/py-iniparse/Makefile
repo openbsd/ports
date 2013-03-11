@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/03/27 18:19:39 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:25 espie Exp $
 
 COMMENT =		INI parser for Python
 
@@ -12,17 +12,14 @@ HOMEPAGE =		http://code.google.com/p/iniparse/
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${MASTER_SITE_PYPI:=i/iniparse/}
 
 MODULES =		lang/python
 
-REGRESS_DEPENDS =		lang/python/${MODPY_VERSION},-tests
+TEST_DEPENDS =		lang/python/${MODPY_VERSION},-tests
 
-do-regress:
+do-test:
 	cd ${WRKSRC} &&  ${SETENV} ${MAKE_ENV} \
 		${MODPY_BIN} runtests.py
 

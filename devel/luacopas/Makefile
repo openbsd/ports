@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2012/09/19 08:15:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/11 10:50:11 espie Exp $
 
 PKG_ARCH =      *
 
@@ -13,13 +13,10 @@ HOMEPAGE=	http://www.keplerproject.org/copas/
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	lang/lua
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 MODLUA_RUN_DEPENDS+=	devel/coxpcall \
 		net/luasocket
 

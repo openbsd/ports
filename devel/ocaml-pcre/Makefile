@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2012/11/30 19:38:09 chrisz Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 10:50:12 espie Exp $
 
 COMMENT =	OCaml Perl-compatible regexp library
 CATEGORIES =	devel textproc
@@ -14,10 +14,7 @@ HOMEPAGE =	https://bitbucket.org/mmottl/pcre-ocaml/
 
 
 # GPLv2+
-PERMIT_PACKAGE_FTP =		Yes
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_DISTFILES_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
 
 MODULES =	lang/ocaml
 

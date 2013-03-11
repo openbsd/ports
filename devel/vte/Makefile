@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2013/01/24 07:31:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.105 2013/03/11 10:50:31 espie Exp $
 
 # Don't pull in x11/py-gtk2 on these archs; build fails with binutils 2.15
 NOT_FOR_ARCHS-python=	mips64 mips64el
@@ -26,9 +26,6 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		devel/gettext \
 			lang/python \

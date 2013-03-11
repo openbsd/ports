@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/09/16 09:24:56 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:27 espie Exp $
 
 COMMENT =	qt git repository viewer
 CATEGORIES =	devel x11
@@ -19,10 +19,7 @@ CONFIGURE_ARGS += ${MODQT_CONFIGURE_ARGS}
 RUN_DEPENDS = devel/git
 
 # GPLv2
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
 
 WANTLIB += ICE SM X11 Xft c m pthread pthread-stubs stdc++ xcb
 

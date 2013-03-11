@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/09/16 09:24:56 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:26 espie Exp $
 
 COMMENT =		serial interface class for Python
 
@@ -14,10 +14,7 @@ HOMEPAGE =		http://pyserial.wiki.sourceforge.net/pySerial
 MAINTAINER =		Daniel Gruber <daniel@tydirium.org>
 
 # Python license
-PERMIT_PACKAGE_FTP =	Yes
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_DISTFILES_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=pyserial/}
 
@@ -35,7 +32,7 @@ post-install:
 
 # NOTE: tests require a serial setup; see ${WRKSRC}/examples/test.py 
 # for more information
-do-regress:
+do-test:
 	cd ${WRKSRC} && \
 	for _test in ${WRKSRC}/examples/test*; do \
 		PYTHONPATH=. ${MODPY_BIN} $${_test}; \

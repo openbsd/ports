@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2012/08/04 22:25:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/11 10:50:01 espie Exp $
 
 VERSION =	2.13
 REVISION =	2
@@ -11,6 +11,6 @@ FAKE_FLAGS = 	acdatadir=${WRKINST}${PREFIX}/share/autoconf${SUFFIX}
 post-install:
 	cd ${PREFIX}/info && mv autoconf.info autoconf${SUFFIX}.info && rm standards.info
 
-REGRESS_DEPENDS=devel/dejagnu
+TEST_DEPENDS=devel/dejagnu
 
 .include <bsd.port.mk>

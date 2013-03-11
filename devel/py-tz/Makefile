@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/09 14:28:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/11 10:50:27 espie Exp $
 
 COMMENT =		Python API for dealing with timezones
 
@@ -12,15 +12,13 @@ MAINTAINER =		frantisek holop <minusf@obiit.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${MASTER_SITE_PYPI:=p/pytz/}
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 
-do-regress: fake
+do-test: fake
 	cd ${WRKSRC}/pytz/tests && ${MAKE_ENV} \
 		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
 		${MODPY_BIN} ./test_tzinfo.py

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/16 09:24:55 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 10:50:25 espie Exp $
 
 COMMENT=		template language for XML based vocabularies
 
@@ -15,9 +15,6 @@ MAINTAINER=		Martynas Venckus <martynas@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.kid-templating.org/dist/${VERSION}/
 
@@ -38,7 +35,7 @@ post-install:
 		find . -type d -exec ${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-kid/{} \; && \
 		find . ! -type d -exec ${INSTALL_DATA} {} ${PREFIX}/share/examples/py-kid/{} \;
 
-do-regress:
+do-test:
 	cd ${WRKSRC} && ${MODPY_BIN} run_tests.py
 
 .include <bsd.port.mk>

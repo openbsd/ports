@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2012/10/15 15:06:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 10:50:27 espie Exp $
 
 COMMENT=	process management module for Twisted
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://twistedmatrix.com/trac/wiki/TwistedRunner
 
 MASTER_SITES=	http://twistedmatrix.com/Releases/Runner/${VERSION:R}/
 
-REGRESS_DEPENDS=devel/py-twisted/runner
+TEST_DEPENDS=devel/py-twisted/runner
 
 TRIAL_TARGET=	twisted.runner
 

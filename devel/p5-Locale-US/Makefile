@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/12/03 11:44:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:18 espie Exp $
 
 COMMENT=	map two-letter codes to state names and vice versa (US)
 
@@ -12,8 +12,5 @@ MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 .include <bsd.port.mk>

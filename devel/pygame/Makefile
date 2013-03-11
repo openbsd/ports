@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2011/09/16 09:24:56 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2013/03/11 10:50:27 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -13,9 +13,6 @@ HOMEPAGE=	http://www.pygame.org/
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += SDL X11 jpeg png pthread-stubs smpeg xcb SDL_ttf SDL_image SDL_mixer
 
@@ -38,7 +35,7 @@ DOCDIR=		${PREFIX}/share/doc/pygame
 DOCSUBDIRS=	ref tut tut/chimp tut/surfarray \
 		tut/tom
 
-REGRESS_IS_INTERACTIVE=	x11
+TEST_IS_INTERACTIVE=	x11
 
 # fix perms
 post-extract:
@@ -66,7 +63,7 @@ post-install:
 	@perl -pi -e 's,/usr/bin/env python,/usr/bin/env python${MODPY_VERSION},g' \
 		${PREFIX}/share/examples/pygame/*.py
 
-do-regress: fake
+do-test: fake
 	@cd ${WRKSRC} && ${MAKE_ENV} \
 		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
 			${MODPY_BIN} ./run_tests.py

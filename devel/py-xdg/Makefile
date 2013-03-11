@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/08/04 15:11:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 10:50:27 espie Exp $
 
 COMMENT=	python library to access freedesktop.org standards
 
@@ -14,15 +14,12 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://people.freedesktop.org/~takluyver/
 
 MODULES=	lang/python
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/xdg/{BaseDirectory.py,Menu.py}

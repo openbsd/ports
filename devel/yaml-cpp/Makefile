@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/03/03 10:33:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 10:50:32 espie Exp $
 
 COMMENT =		YAML parser and emitter in C++
 DISTNAME =		yaml-cpp-0.3.0
@@ -11,9 +11,6 @@ HOMEPAGE =		http://code.google.com/p/yaml-cpp/
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += m stdc++
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2012/10/15 15:06:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/11 10:50:27 espie Exp $
 
 COMMENT=	chat and instant messaging module for Twisted
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://twistedmatrix.com/trac/wiki/TwistedWords
 MASTER_SITES=	http://twistedmatrix.com/Releases/Words/${VERSION:R}/
 
 
-REGRESS_DEPENDS=devel/py-twisted/words
+TEST_DEPENDS=devel/py-twisted/words
 RUN_DEPENDS=	devel/py-twisted/web
 
 TRIAL_TARGET=	twisted.words

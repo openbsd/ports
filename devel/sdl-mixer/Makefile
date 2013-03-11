@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2012/06/01 15:58:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2013/03/11 10:50:30 espie Exp $
 
 COMMENT=	SDL multi-channel audio mixer library
 
@@ -14,9 +14,6 @@ HOMEPAGE=	http://www.libsdl.org/projects/SDL_mixer/
 
 # Zlib
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB=	FLAC SDL c m mikmod ogg pthread smpeg>=1 sndio \
 		usbhid vorbis vorbisfile
@@ -41,7 +38,7 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 pre-build:
 	@${SUBST_CMD} ${WRKSRC}/timidity/config.h

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2012/08/18 12:41:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2013/03/11 10:50:03 espie Exp $
 
 # m68k: mmap configure test causes system hang
 # arm: doesn't build super-old and broken assember files
@@ -17,9 +17,6 @@ HOMEPAGE=	http://www.haible.de/bruno/packages-ffcall.html
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 USE_LIBTOOL=	Yes

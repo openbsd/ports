@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/09/23 17:00:49 jeremy Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 10:50:30 espie Exp $
 
 COMMENT=	a ruby timer based on SIGALRM
 
@@ -9,9 +9,6 @@ CATEGORIES=	devel
 
 # ruby or gpl
 PERMIT_PACKAGE_CDROM=	yes
-PERMIT_PACKAGE_FTP=	yes
-PERMIT_DISTFILES_CDROM=	yes
-PERMIT_DISTFILES_FTP=	yes
 
 MODULES=	lang/ruby
 
@@ -24,9 +21,9 @@ FLAVOR=		ruby18
 # which is dead upstream and won't be imported.  You can
 # manually install the gem if you want to run the regress
 # tests.
-#REGRESS_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH} \
+#TEST_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH} \
 #			devel/ruby-mocha,${MODRUBY_FLAVOR}
-#MODRUBY_REGRESS =	ruby
-#MODRUBY_REGRESS_TARGET = -rubygems test/all_tests.rb
+#MODRUBY_TEST =	ruby
+#MODRUBY_TEST_TARGET = -rubygems test/all_tests.rb
 
 .include <bsd.port.mk>

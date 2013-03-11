@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/09/16 09:24:56 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:26 espie Exp $
 
 COMMENT =		symbol type for python
 
@@ -15,9 +15,6 @@ MAINTAINER =		Martynas Venckus <martynas@openbsd.org>
 
 # PSF
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${MASTER_SITE_PYPI:=S/SymbolType/}
 EXTRACT_SUFX =		.zip

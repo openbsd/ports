@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2012/02/25 10:25:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2013/03/11 10:50:10 espie Exp $
 
 COMMENT-main=	generic shared library support script
 COMMENT-ltdl=	GNU libtool system independent dlopen wrapper
@@ -18,9 +18,6 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 AUTOCONF_VERSION= 2.67
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS}
@@ -45,7 +42,7 @@ RUN_DEPENDS-main=	devel/libtool,-ltdl
 pre-configure:
 	@cd ${WRKDIR}/bin && ln -sf /usr/bin/true g77	
 
-do-regress:
+do-test:
 	@cd ${WRKDIR}/bin && ln -sf \
 	    ${LOCALBASE}/bin/autoconf-${AUTOCONF_VERSION} autoconf
 	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} check

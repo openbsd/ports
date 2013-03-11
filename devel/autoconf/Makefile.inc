@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2012/08/04 22:25:19 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2013/03/11 10:50:01 espie Exp $
 
 # most parts common to all autoconfs actually
 COMMENT ?=	automatically configure source code on many Un*x platforms
@@ -10,7 +10,6 @@ HOMEPAGE ?=	http://www.gnu.org/software/autoconf/
 MAINTAINER ?=	Marc Espie <espie@openbsd.org>
 
 # GPL
-PERMIT_DISTFILES_CDROM ?=	Yes
 PERMIT_DISTFILES_FTP ?=	Yes
 PERMIT_PACKAGE_CDROM ?=	Yes
 PERMIT_PACKAGE_FTP ?=	Yes

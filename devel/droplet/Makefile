@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/12/23 13:25:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 10:50:03 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -16,9 +16,6 @@ MAINTAINER=		Rafael Sadowski <rafael@sizeofvoid.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		crypto json m pthread ssl xml2 z
 

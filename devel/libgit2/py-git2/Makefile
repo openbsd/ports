@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/08/12 17:19:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:10 espie Exp $
 
 COMMENT=		libgit2 bindings in Python
 
@@ -14,6 +14,6 @@ LIB_DEPENDS=		devel/libgit2/libgit2>=0.17.0
 
 WRKDIST= 		${WRKDIR}/libgit2-pygit2-a1716a3/
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 .include <bsd.port.mk>

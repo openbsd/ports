@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2012/07/20 12:03:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/11 10:50:01 espie Exp $
 
 VERSION=	1.9
 DISTNAME=	automake-${VERSION}.6
@@ -23,7 +23,7 @@ CONFIGURE_ARGS=		--infodir=${PREFIX}/info
 MAKE_FLAGS+=		pkgvdatadir=${PREFIX}/share/automake${SUFFIX} \
 			APIVERSION=${VERSION}
 
-REGRESS_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
+TEST_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 			${MODPY_RUN_DEPENDS} \
 			devel/libtool \
 			devel/gmake \
@@ -33,18 +33,18 @@ REGRESS_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 			print/texlive/base \
 			devel/dejagnu
 
-REGRESS_ENV=		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+TEST_ENV=		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 			MAKE=${GMAKE}
 
 post-patch:
 	cd ${WRKSRC}; touch aclocal.m4 Makefile.in configure
 
-do-regress:
+do-test:
 	    ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 	    @cd ${WRKBUILD} && \
-	    	exec ${SETENV} ${MAKE_ENV} ${REGRESS_ENV} \
-		    ${MAKE_PROGRAM} ${ALL_REGRESS_FLAGS} -f ${MAKE_FILE} \
-		    ${REGRESS_TARGET}
+	    	exec ${SETENV} ${MAKE_ENV} ${TEST_ENV} \
+		    ${MAKE_PROGRAM} ${ALL_TEST_FLAGS} -f ${MAKE_FILE} \
+		    ${TEST_TARGET}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/doc/automake.texi

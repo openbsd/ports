@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2013/01/09 00:02:15 brad Exp $
+# $OpenBSD: Makefile,v 1.34 2013/03/11 10:50:12 espie Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -16,9 +16,6 @@ MAINTAINER=	Gallon Sylvestre <ccna.syl@gmail.com>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c
 
@@ -31,6 +28,6 @@ DESTDIRNAME=	INSTALLROOT
 ALL_TARGET=	everything
 INSTALL_TARGET=	install_everything
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

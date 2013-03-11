@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/05/17 22:23:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:03 espie Exp $
 
 COMMENT=	fast lexical analyzer generator
 
@@ -10,9 +10,6 @@ HOMEPAGE=	http://flex.sourceforge.net/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c m
 
