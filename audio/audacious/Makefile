@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2013/03/10 22:55:01 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2013/03/11 01:13:36 espie Exp $
 
 SHARED_ONLY =		Yes
 
@@ -16,7 +16,7 @@ CATEGORIES =		audio multimedia
 HOMEPAGE =		http://audacious-media-player.org/
 
 # BSD
-PERMIT_DISTFILES_CDROM =Yes
+PERMIT_PACKAGE_CDROM =Yes
 
 WANTLIB += atk-1.0 c cairo cairo-gobject dbus-1 dbus-glib-1 expat
 WANTLIB += fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
