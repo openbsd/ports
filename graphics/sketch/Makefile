@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/05/15 18:34:20 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:10:55 espie Exp $
 
 COMMENT =		3D scene description translator for TeX
 
@@ -11,9 +11,6 @@ HOMEPAGE =		http://www.frontiernet.net/~eugene.ressler/
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB +=		c m
 
@@ -21,7 +18,7 @@ MASTER_SITES =		${HOMEPAGE}
 
 MAKE_FILE =		makefile
 USE_GMAKE =		Yes
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 ALL_TARGET =
 
 do-install:

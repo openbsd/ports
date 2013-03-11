@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2012/08/18 12:41:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2013/03/11 11:12:33 espie Exp $
 
 COMMENT=	less + zcat + ISO-2022 - a pager similar to more and pg
 
@@ -23,9 +23,6 @@ MAINTAINER=Marc Espie <espie@openbsd.org>
 
 #		BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c ncurses
 
 CONFIGURE_STYLE=	gnu dest

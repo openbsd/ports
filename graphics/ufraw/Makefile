@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2013/03/08 11:28:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2013/03/11 11:10:56 espie Exp $
 
 COMMENT=	read and manipulate raw images from digital cameras
 
@@ -12,8 +12,6 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 bz2 c cairo cfitsio exiv2 expat

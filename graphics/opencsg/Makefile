@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/08 01:34:19 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 11:10:54 espie Exp $
 
 COMMENT =		constructive solid geometry rendering library
 
@@ -15,9 +15,6 @@ HOMEPAGE =		http://www.opencsg.org/
 
 # GPLv2 with CGAL exception
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB +=		GL GLEW lib/qt4/QtGui m stdc++ pthread
 WANTLIB +=		ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype

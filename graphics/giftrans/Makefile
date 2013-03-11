@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/24 21:21:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/11 11:10:52 espie Exp $
 
 COMMENT=	handle GIF89a transparent option and interlace mode
 
@@ -8,15 +8,12 @@ CATEGORIES=	graphics
 
 # BSD-like, badly worded
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/infosystems/misc/tools/
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-configure:
 	@perl -pi -e 's,/usr/lib,${X11BASE}/lib,g' ${WRKSRC}/giftrans.c

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2012/12/22 11:46:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/11 11:10:52 espie Exp $
 
 COMMENT = 			seam-carving smart rescale gimp plugin
 CATEGORIES =			graphics
@@ -9,10 +9,7 @@ MASTER_SITES =			${HOMEPAGE}local--files/en%3Adownload-page-sources/
 EXTRACT_SUFX =			.tar.bz2
 
 # GPLv2
-PERMIT_PACKAGE_FTP = 		Yes
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_DISTFILES_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
 
 MODULES =			textproc/intltool \
 				devel/gettext

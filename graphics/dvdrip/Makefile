@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2012/10/15 15:06:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 11:10:52 espie Exp $
 
 COMMENT=	full featured DVD copy program
 
@@ -11,9 +11,6 @@ HOMEPAGE=	http://www.exit1.org/dvdrip/
 
 # Artistic and GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 MASTER_SITES=	http://www.exit1.org/dvdrip/dist/
@@ -34,8 +31,8 @@ CONFIGURE_STYLE=perl
 USE_GROFF =	Yes
 CONFIGURE_ENV=	SKIP_UNPACK_REQUIRED_MODULES=1
 
-REGRESS_DEPENDS=x11/p5-Gtk2-Ex-FormFactory
-REGRESS_FLAGS=	HOME=${TMPDIR}
+TEST_DEPENDS=x11/p5-Gtk2-Ex-FormFactory
+TEST_FLAGS=	HOME=${TMPDIR}
 
 pre-build:
 	@perl -pi -e "s,/usr/sbin/fping,${LOCALBASE}/sbin/fping,g" \

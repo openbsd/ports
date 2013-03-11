@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2012/06/17 21:55:20 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/11 11:10:51 espie Exp $
 
 COMMENT=		DICOM toolkit
 
@@ -14,9 +14,6 @@ MASTER_SITES=		ftp://dicom.offis.de/pub/dicom/offis/software/dcmtk/dcmtk354/
 # Several ISC and BSDish
 # ftp://dicom.offis.de/pub/dicom/offis/software/dcmtk/dcmtk354/COPYRIGHT
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c crypto m ssl stdc++ wrap z jpeg>=62 png>=4 \
 			tiff>=36 xml2>=9
 
@@ -43,7 +40,7 @@ FAKE_FLAGS=		DESTDIR=${WRKINST} \
 USE_GROFF =		Yes
 
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 .include <bsd.port.mk>
 

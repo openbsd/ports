@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2012/12/03 15:59:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/11 11:10:54 espie Exp $
 
 COMMENT=	tools and library routines for working with GIF images
 
@@ -13,9 +13,6 @@ HOMEPAGE=	http://sourceforge.net/projects/libungif/
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m
 
 USE_LIBTOOL=		Yes

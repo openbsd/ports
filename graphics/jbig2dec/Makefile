@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/03/29 13:38:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 11:10:53 espie Exp $
 
 SHARED_LIBS +=	jbig2dec             0.0      # 0.0
 
@@ -14,9 +14,6 @@ HOMEPAGE =	http://jbig2dec.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		http://ghostscript.com/~giles/jbig2/jbig2dec/
 MASTER_SITES0 =		http://jbig2dec.sourceforge.net/ubc/
@@ -35,9 +32,9 @@ CONFIGURE_ENV =		LDFLAGS="`pkg-config --libs libpng`"
 
 MODULES =		lang/python
 MODPY_RUNDEP =		No
-REGRESS_DEPENDS =	${BUILD_DEPENDS}
+TEST_DEPENDS =	${BUILD_DEPENDS}
 
-pre-regress:
+pre-test:
 	${SUBST_CMD} -c ${WRKSRC}/test_jbig2dec.py ${WRKBUILD}/test_jbig2dec.py
 	${INSTALL_DATA_DIR} ${WRKBUILD}/ubc/
 	mv ${WRKDIR}/*bmp ${WRKDIR}/*jb2 ${WRKBUILD}/ubc/

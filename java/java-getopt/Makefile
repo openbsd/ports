@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/09/16 10:02:38 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:12:34 espie Exp $
 
 COMMENT=	Java port of GNU getopt family functions
 
@@ -9,10 +9,7 @@ CATEGORIES=	devel
 HOMEPAGE=	http://www.urbanophile.com/arenn/hacking/download.html
 
 # LGPLv2+
-PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
 
 MASTER_SITES=	${HOMEPAGE:=/../getopt/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/01/11 13:44:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/11 11:10:54 espie Exp $
 
 COMMENT =	toolkit for developing mapping applications
 
@@ -15,15 +15,12 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	https://github.com/downloads/mapnik/mapnik/
 MODULES =	devel/scons lang/python
 
 VMEM_WARNING =	Yes
-REGRESS_DEPENDS =	devel/py-nose
+TEST_DEPENDS =	devel/py-nose
 BUILD_DEPENDS =	graphics/py-cairo
 
 LIB_DEPENDS =	devel/boost \
@@ -57,7 +54,7 @@ pre-configure:
 	# subst shlib version
 	${SUBST_CMD} ${WRKSRC}/src/build.py
 
-do-regress:
+do-test:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MODPY_BIN} tests/run_tests.py 
 
 .include <bsd.port.mk>

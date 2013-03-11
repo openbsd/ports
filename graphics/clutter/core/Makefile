@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2012/10/17 11:32:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/11 11:10:51 espie Exp $
 
 COMMENT=		OpenGL-based interactive canvas library
 
@@ -27,7 +27,7 @@ MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
 CONFIGURE_ARGS=		--enable-x11-backend
 
-REGRESS_IS_INTERACTIVE=	X11
+TEST_IS_INTERACTIVE=	X11
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/clutter/Makefile.in

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/10/30 14:28:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 11:10:55 espie Exp $
 
 COMMENT=	Python interface to Graphviz's Dot#'
 
@@ -11,9 +11,6 @@ HOMEPAGE=	http://code.google.com/p/pydot/
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://pydot.googlecode.com/files/
 
@@ -23,6 +20,6 @@ BUILD_DEPENDS=	devel/py-parsing
 RUN_DEPENDS=	devel/py-parsing \
 		math/graphviz
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

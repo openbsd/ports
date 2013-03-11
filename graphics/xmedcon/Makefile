@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2011/11/02 09:57:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/11 11:10:56 espie Exp $
 
 COMMENT =	medical image conversion
 
@@ -13,9 +13,6 @@ MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2 - LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
@@ -42,6 +39,6 @@ CONFIGURE_ARGS += ${CONFIGURE_SHARED} \
 CONFIGURE_ENV = CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
                          
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 .include <bsd.port.mk>

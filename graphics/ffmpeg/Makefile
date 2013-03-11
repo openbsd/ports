@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2013/01/25 09:46:22 brad Exp $
+# $OpenBSD: Makefile,v 1.96 2013/03/11 11:10:52 espie Exp $
 
 COMMENT=	audio/video converter and streamer
 
@@ -26,8 +26,6 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # LGPLv2.1 and GPLv2
 PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	SDL X11 Xext Xfixes bz2 c crypto gsm m mp3lame pthread \
 		schroedinger-1.0>=2 sndio speex ssl theoradec theoraenc \
@@ -166,7 +164,7 @@ CONFIGURE_ARGS+=--disable-stripping
 ALL_TARGET=	all tools/qt-faststart
 
 # regression tests incompatible with libswscale
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 HTML_DOCS=	developer faq ffmpeg ffplay ffprobe ffserver general libavfilter
 

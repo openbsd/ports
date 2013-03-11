@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/01/19 11:27:01 zhuk Exp $
+# $OpenBSD: Makefile,v 1.31 2013/03/11 11:10:53 espie Exp $
 
 COMMENT-main =		kde image plugins
 COMMENT-cal =		kde image calendar plugin
@@ -68,9 +68,6 @@ MAKE_FLAGS +=		${MODKDE_MAKE_FLAGS} LIB_TIFF='-ltiff -lz'
 MAKE_FLAGS +=		LIBRESOLV=
 
 # GPL
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
 
 .include <bsd.port.mk>

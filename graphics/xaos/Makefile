@@ -13,9 +13,6 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		X11 Xext c gsl gslcblas m png z
 
@@ -28,7 +25,7 @@ LIB_DEPENDS =		graphics/png \
 
 USE_GMAKE =		Yes
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--with-gsl=yes \

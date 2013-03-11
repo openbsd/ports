@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.12 2013/01/24 07:10:05 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.13 2013/03/11 11:10:51 espie Exp $
 
 SHARED_ONLY?=		Yes
 
@@ -15,7 +15,6 @@ MAINTAINER?=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM?=  Yes
 PERMIT_PACKAGE_FTP?=    Yes
-PERMIT_DISTFILES_CDROM?=Yes
 PERMIT_DISTFILES_FTP?=  Yes
 
 MODULES +=		devel/gettext \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2012/12/31 12:03:09 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.48 2013/03/11 11:10:52 espie Exp $
 
 COMMENT=	lightweight image viewer
 
@@ -12,9 +12,6 @@ MAINTAINER=	David Coppa <dcoppa@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	Imlib2 X11 Xinerama c curl exif giblib>=1 m png
 
@@ -37,7 +34,7 @@ FAKE_FLAGS=	PREFIX="${PREFIX}"
 
 USE_GMAKE=	Yes
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-configure:
 	${SUBST_CMD} ${WRKSRC}/examples/themes ${WRKSRC}/man/feh.pre \

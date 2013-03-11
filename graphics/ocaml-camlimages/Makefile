@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/11/30 19:38:09 chrisz Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:10:54 espie Exp $
 
 COMMENT=	image manipulation functions for Objective Caml
 CATEGORIES=	graphics
@@ -14,10 +14,7 @@ WRKDIST=	${WRKDIR}/camlspotter-camlimages-c803efa9d5d3
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 HOMEPAGE=	http://cristal.inria.fr/camlimages/
 
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	lang/ocaml
 
@@ -49,8 +46,8 @@ MAKE_FLAGS+=	CFLAGS="${CFLAGS} \
 			-L${X11BASE}/lib \
 			-L${LOCALBASE}/lib"
 
-# regress exists, but needs manual run and then user interaction
-NO_REGRESS=	Yes
+# test exists, but needs manual run and then user interaction
+TEST_IS_INTERACTIVE = Yes
 
 OMAKE=		omake --force-dotomake --dotomake ${WRKSRC}/omake_cache
 

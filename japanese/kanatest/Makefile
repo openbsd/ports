@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2012/10/15 15:06:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2013/03/11 11:12:33 espie Exp $
 
 COMMENT =	beginner's drill tool to learn Japanese kana characters
 
@@ -11,9 +11,6 @@ HOMEPAGE =	http://clay.ll.pl/kanatest/
 
 # GPL
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo expat fontconfig freetype
@@ -34,6 +31,6 @@ CONFIGURE_STYLE = gnu
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
                 LDFLAGS="-L${LOCALBASE}/lib"
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 .include <bsd.port.mk>

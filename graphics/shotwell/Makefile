@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/01/19 11:22:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2013/03/11 11:10:55 espie Exp $
 
 # needs to allocate 512M
 VMEM_WARNING =	Yes
@@ -14,9 +14,6 @@ REVISION =	0
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo
@@ -50,7 +47,7 @@ LIB_DEPENDS =	devel/json-glib \
 		net/librest \
 		www/webkit,gtk3>=1.6.1v0
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 # beware: configure is an horrible homemade shell script
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS =	--disable-schemas-compile \

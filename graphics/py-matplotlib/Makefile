@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2012/02/28 23:01:23 rpointel Exp $
+# $OpenBSD: Makefile,v 1.43 2013/03/11 11:10:55 espie Exp $
 
 VMEM_WARNING=	Yes
 
@@ -13,9 +13,6 @@ HOMEPAGE=	http://matplotlib.sourceforge.net/
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdmcp Xext Xfixes Xi Xinerama \
 		Xrandr Xrender Xdamage expat fontconfig freetype m z stdc++ \
@@ -44,7 +41,7 @@ MAKE_ENV+=	EXTRA_INCLUDES="${WRKSRC} ${LOCALBASE}/include/libpng ${MODTCL_INCDIR
 		LDSHARED="${CC} -shared -fPIC"
 
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-install:
 	# Make examples use MODPY_VER

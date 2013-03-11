@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/01/18 08:12:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:10:54 espie Exp $
 
 SHARED_ONLY =		Yes
 
@@ -23,9 +23,6 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += GL GLEW GLU Half ICE Iex IlmImf IlmThread Imath QtGui
 WANTLIB += QtOpenGL SM X11 Xext boost_filesystem-mt boost_python-mt

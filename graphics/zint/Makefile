@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/09/18 06:26:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:10:56 espie Exp $
 
 COMMENT-main =		library for encoding data in several barcode variants
 COMMENT-x11 = 		graphical interface for the zint barcode generator
@@ -22,9 +22,6 @@ MAINTAINER =		Kirill Bychkov <yason@linklevel.net>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 cWANTLIB = 		c m png z
 WANTLIB-main = 		${cWANTLIB}
@@ -43,7 +40,7 @@ MULTI_PACKAGES = 	-main
 PSEUDO_FLAVORS = 	no_x11
 FLAVOR ?=
 
-REGRESS_DEPENDS = 	${BASE_PKGPATH},-main
+TEST_DEPENDS = 	${BASE_PKGPATH},-main
 
 .if !${FLAVOR:Mno_x11}
 MULTI_PACKAGES +=       -x11
@@ -59,7 +56,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/zint.png ${PREFIX}/share/pixmaps/
 .endif
 
-do-regress:
+do-test:
 	cd ${WRKSRC}/frontend/ && /bin/sh ./test.sh
 
 .include <bsd.port.mk>

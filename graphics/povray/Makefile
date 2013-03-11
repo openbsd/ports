@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2012/03/30 19:57:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/11 11:10:55 espie Exp $
 
 COMMENT=	3D image rendering package
 
@@ -10,8 +10,6 @@ HOMEPAGE=	http://www.povray.org/
 
 PERMIT_PACKAGE_CDROM=	Perhaps we qualify for commercial distribution
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Our CDs are not too expensive, see povlegal.doc but I think we should ask them anyway
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ICE SM X11 Xpm c jpeg m stdc++ tiff z
 
@@ -54,7 +52,7 @@ MAKE_FLAGS+=		povconfdir=${PREFIX}/share/examples/povray/ \
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config ${WRKSRC}/libraries/png
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 # Replace the source files for the included libpng.
 post-extract:

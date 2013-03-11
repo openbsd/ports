@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/01/28 07:55:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:10:55 espie Exp $
 
 COMMENT=		Python Imaging Library (fork)
 
@@ -12,9 +12,6 @@ HOMEPAGE=		https://github.com/python-imaging/Pillow
 # PIL Software License
 # Permission to use, copy, modify and distribute freely.
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=		${MASTER_SITE_PYPI:=P/Pillow/}
 EXTRACT_SUFX=		.zip
@@ -33,7 +30,7 @@ LIB_DEPENDS=		graphics/lcms \
 
 MODPY_SETUPTOOLS=	Yes
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 INCL_DIR=		${PREFIX}/include/python${MODPY_VERSION}
 

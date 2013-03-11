@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/08/19 16:31:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:10:56 espie Exp $
 
 COMMENT=	fast and simple image viewer
 
@@ -12,9 +12,6 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c drm expat

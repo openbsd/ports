@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2013/03/09 22:55:25 benoit Exp $
+# $OpenBSD: Makefile,v 1.60 2013/03/11 11:10:55 espie Exp $
 
 COMMENT =		optimizer for PNG files
 
@@ -18,7 +18,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=pmt/}
 
 MAKE_FLAGS =		CC="${CC}" LD="${CC}" CFLAGS="${CFLAGS} -I. -DZ_SOLO"
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pngcrush ${PREFIX}/bin

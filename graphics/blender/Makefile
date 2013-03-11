@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2012/11/26 15:02:40 pascal Exp $
+# $OpenBSD: Makefile,v 1.49 2013/03/11 11:10:51 espie Exp $
 
 COMMENT =	3D creation software
 BROKEN-sparc64 = error: cast from 'ccl::uchar*' to 'CUdeviceptr' loses precision
@@ -15,9 +15,6 @@ VMEM_WARNING =	Yes
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/
@@ -54,7 +51,7 @@ WANTLIB += boost_filesystem-mt boost_regex-mt boost_system-mt
 WANTLIB += boost_thread-mt c freetype jpeg m openal openjpeg png
 WANTLIB += pthread ${MODPY_WANTLIB} stdc++ swscale tiff util z
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 CFLAGS +=	-I${LOCALBASE}/include -I${X11BASE}/include -pthread
 

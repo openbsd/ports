@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/27 15:30:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:10:54 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -13,10 +13,7 @@ CATEGORIES=		graphics
 HOMEPAGE=		http://fukuchi.org/works/qrencode/index.en.html
 
 # LGPLv2.1
-PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
 
 MASTER_SITES=		${HOMEPAGE:=/../}
 
@@ -33,12 +30,12 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 CONFIGURE_ENV+= 	png_CFLAGS="`pkg-config --cflags libpng`" \
 			png_LIBS="`pkg-config --libs libpng`"
 
-REGRESS_TARGETS= 	test_qrinput test_bitstream test_estimatebit \
+TEST_TARGETS= 	test_qrinput test_bitstream test_estimatebit \
 			test_qrspec test_rs test_qrencode prof_qrencode \
 			test_split test_monkey
 
-do-regress:
-.for r in ${REGRESS_TARGETS}
+do-test:
+.for r in ${TEST_TARGETS}
 	cd ${WRKSRC}/tests/ && ./$r
 .endfor
 

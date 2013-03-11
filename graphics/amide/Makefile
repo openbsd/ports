@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/01/18 07:56:17 brad Exp $
+# $OpenBSD: Makefile,v 1.26 2013/03/11 11:10:51 espie Exp $
 
 COMMENT =	Amide a Medical Imaging Data Examiner
 
@@ -12,9 +12,6 @@ MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =   Yes
-PERMIT_PACKAGE_FTP =     Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =   Yes
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm art_lgpl_2
@@ -61,7 +58,7 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--disable-libdcmdata \
 			--enable-ffmpeg
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 post-extract:
 	@rm -f ${WRKSRC}/src/ui_common.c.orig

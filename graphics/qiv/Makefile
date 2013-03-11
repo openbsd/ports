@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2012/03/29 06:05:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2013/03/11 11:10:55 espie Exp $
 
 COMMENT=		very small and pretty fast gdk/Imlib image viewer
 
@@ -17,9 +17,6 @@ LIB_DEPENDS=		devel/libmagic \
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL Imlib2 X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender c cairo expat fontconfig
@@ -31,6 +28,6 @@ WANTLIB += z
 MODULES=		devel/gettext
 
 USE_GMAKE=		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 .include <bsd.port.mk>

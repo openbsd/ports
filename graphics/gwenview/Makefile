@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2011/11/03 14:57:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.53 2013/03/11 11:10:53 espie Exp $
 
 COMMENT=	image viewer for KDE
 
@@ -13,9 +13,6 @@ HOMEPAGE=	http://gwenview.sourceforge.net/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE SM X11 Xcursor Xext Xfixes Xrender \
 		art_lgpl_2 c expat idn jpeg m mng png pthread \

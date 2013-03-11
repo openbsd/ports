@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/03/20 16:36:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 11:10:54 espie Exp $
 
 COMMENT=	parametrical modeling of 3D humanoid characters
 
@@ -11,9 +11,6 @@ HOMEPAGE=	http://www.dedalo-3d.com/
 
 # GPLv2 / MIT
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL GLU ICE SM X11 Xdamage Xext Xfixes Xi Xmu Xt Xxf86vm
 WANTLIB += animorph c drm glut m mhgui png stdc++ xcb z

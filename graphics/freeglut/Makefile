@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/09/11 10:07:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 11:10:52 espie Exp $
 
 COMMENT =		open source alternative to glut
 DISTNAME =		freeglut-2.8.0
@@ -9,9 +9,6 @@ MAINTAINER =		Tobias Ulmer <tobiasu@tmux.org>
 
 # X11
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += GL X11 Xdamage Xext Xfixes Xi Xrandr Xrender Xxf86vm
 WANTLIB += drm m stdc++ usbhid xcb
@@ -24,6 +21,6 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--enable-warnings=no
 CONFIGURE_ENV +=	LDFLAGS="-L${X11BASE}/lib"
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2012/12/22 11:46:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/11 11:10:53 espie Exp $
 
 SHARED_ONLY =			Yes
 
@@ -12,10 +12,7 @@ MASTER_SITES =			${HOMEPAGE}local--files/en:download-page/
 EXTRACT_SUFX =			.tar.bz2
 
 # Library is LGPLv3, examples are GPLv3
-PERMIT_PACKAGE_FTP = 		Yes
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_DISTFILES_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
 
 CONFIGURE_STYLE =		gnu
 USE_LIBTOOL =			Yes

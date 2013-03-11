@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/12/22 09:47:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 11:10:55 espie Exp $
 
 COMMENT-main=	OCR Engine developed at HP Labs
 
@@ -17,9 +17,6 @@ HOMEPAGE=	http://tesseract-ocr.googlecode.com/
 
 # Apache License 2.0
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MULTI_PACKAGES=	-main
 

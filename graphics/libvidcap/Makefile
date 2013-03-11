@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/03/29 13:38:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:10:54 espie Exp $
 
 COMMENT=	video capture library
 
@@ -13,9 +13,6 @@ MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libvidcap/}
 

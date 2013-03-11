@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/12/19 07:53:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:10:53 espie Exp $
 
 COMMENT=	MathML and SVG rendering library
 
@@ -16,9 +16,6 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 
 # LGPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL X11 Xau Xdamage Xdmcp Xext Xfixes Xrender Xxf86vm
 WANTLIB += c cairo drm expat ffi fontconfig freetype gdk_pixbuf-2.0

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2011/07/16 09:30:10 benoit Exp $
+# $OpenBSD: Makefile,v 1.36 2013/03/11 11:10:55 espie Exp $
 
 COMMENT =	two-dimensional drawing tool and hyper-object browser
 
@@ -13,9 +13,6 @@ MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # Trolltech Q License
 PERMIT_PACKAGE_CDROM =	yes
-PERMIT_PACKAGE_FTP =	yes
-PERMIT_DISTFILES_CDROM =yes
-PERMIT_DISTFILES_FTP =	yes
 
 WANTLIB =	X11 Xau Xdmcp Xext c m z
 
@@ -30,7 +27,7 @@ USE_GROFF =	Yes
 
 MAKE_FLAGS =	MODULE_CFLAGS="${CFLAGS}"
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 post-extract:
 	@cp -f ${WRKDIR}/${DISTNAME}/Tgif.tmpl-openbsd \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/01/23 21:30:18 zhuk Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/11 11:10:53 espie Exp $
 
 COMMENT =		kde image plugins api
 CATEGORIES =		graphics devel x11 x11/kde
@@ -38,9 +38,6 @@ MAKE_FLAGS +=		LIBRESOLV=
 SUBST_VARS +=		V
 
 # GPL
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
 
 .include <bsd.port.mk>

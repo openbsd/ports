@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/03/29 13:38:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:10:56 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -14,9 +14,6 @@ MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	z
 
@@ -40,7 +37,7 @@ CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		LIBtkpng09_VERSION=${LIBtkpng09_VERSION} \
 		CFLAGS="${CFLAGS} -pthread"
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 SUBST_VARS =	SHLIB_VERSION
 
 post-install:

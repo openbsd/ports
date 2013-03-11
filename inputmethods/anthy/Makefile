@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/12/02 14:36:14 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 11:12:33 espie Exp $
 
 COMMENT-main =	japanese input method
 COMMENT-emacs =	emacs files for anthy
@@ -18,9 +18,6 @@ HOMEPAGE = 	http://anthy.sourceforge.jp/
 
 # GPL, part LGPL
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB-main =	c m
 
@@ -44,6 +41,6 @@ BUILD_DEPENDS =	editors/emacs21
 .endif
 
 # can't make sense of any of these tests
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/02/03 12:53:11 kirby Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 11:10:51 espie Exp $
 
 COMMENT=		library for powerful image loading capabilities
 
@@ -14,9 +14,6 @@ HOMEPAGE=		http://openil.sourceforge.net/
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=openil/}
 EXTRACT_SUFX=		.zip
@@ -55,7 +52,7 @@ CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng/
 WRKDIST=		${WRKDIR}/${DISTNAME:L}
 
 # Too many Linuxisms in testing tools
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 post-extract:
 	chmod +x ${WRKSRC}/configure

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2012/12/21 18:50:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2013/03/11 11:10:53 espie Exp $
 
 BROKEN-hppa =	run dep on enblend-enfuse which will not build on hppa
 
@@ -34,9 +34,6 @@ MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += GL GLEW GLU Half Iex Imath IlmImf IlmThread ICE SM X11
 WANTLIB += Xext Xi Xmu boost_date_time-mt boost_filesystem-mt
@@ -70,7 +67,7 @@ USE_GROFF =		Yes
 MODULES +=		devel/cmake
 CONFIGURE_ENV =		MANDIR=man
 CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE:STRING=Release
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 pre-patch:
 	find ${WRKSRC} -name '*.orig' | xargs rm

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/11/13 13:54:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 11:10:55 espie Exp $
 
 COMMENT=	S10sh - a Canon PowerShot digital camera driver
 
@@ -13,9 +13,6 @@ MAINTAINER=	Markus Friedl <markus@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	readline c termcap usb pthread
 
@@ -25,7 +22,7 @@ LIB_DEPENDS=	devel/libusb-compat
 
 CONFIGURE_STYLE= simple
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/s10sh ${PREFIX}/bin

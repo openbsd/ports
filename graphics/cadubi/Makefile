@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/17 08:05:13 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/11 11:10:51 espie Exp $
 
 DISTNAME=	cadubi-1.3
 REVISION =	0
@@ -6,9 +6,6 @@ CATEGORIES=	graphics editors
 
 # perl artistic
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 COMMENT=	ASCII drawing utility
 HOMEPAGE=	http://langworth.com/cadubi.html
@@ -17,7 +14,7 @@ MASTER_SITES=	http://langworth.com/downloads/
 RUN_DEPENDS=	devel/p5-Term-ReadKey
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 PKG_ARCH=	*
 
 do-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/01/12 14:03:41 shadchin Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/11 11:10:52 espie Exp $
 
 COMMENT=	portable DjVu viewer and browser plugin
 
@@ -12,9 +12,6 @@ MAINTAINER=	Alexandr Shadchin <shadchin@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ICE QtGui QtNetwork SM X11 Xext Xi Xinerama Xrender
 WANTLIB += c djvulibre fontconfig freetype m pthread stdc++ tiff
@@ -36,7 +33,7 @@ CONFIGURE_ARGS=	--with-tiff=${LOCALBASE}
 CONFIGURE_ENV+=	QTDIR="${MODQT4_QTDIR}" \
 		CPPFLAGS="-I${X11BASE}/include"
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 WRKDIST=	${WRKDIR}/${DISTNAME:S/djview/djview4/}
 

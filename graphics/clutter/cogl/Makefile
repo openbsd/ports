@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/01/04 19:21:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 11:10:51 espie Exp $
 
 COMMENT=		modern 3D graphics API
 
@@ -22,14 +22,14 @@ LIB_DEPENDS=		devel/pango \
 
 CONFIGURE_ARGS+=	--with-gl-libname=libGL.so
 
-REGRESS_DEPENDS=	shells/bash
-REGRESS_IS_INTERACTIVE=	x11
+TEST_DEPENDS=	shells/bash
+TEST_IS_INTERACTIVE=	x11
 
 pre-configure:
 	perl -pi -e 's,/bin/bash,${LOCALBASE}/bin/bash,' \
 		${WRKSRC}/tests/conform/run-tests.sh
 
-do-regress:
+do-test:
 	cd ${WRKSRC}/tests && ${MAKE_PROGRAM} test
 
 .include <bsd.port.mk>

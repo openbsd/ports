@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/01/27 14:56:43 kirby Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:10:55 espie Exp $
 
 COMMENT =		RAW image processing application
 
@@ -12,9 +12,6 @@ MAINTAINER = 		Kirill Bychkov <kirby@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 atkmm-1.6 bz2 c cairo cairomm-1.0
@@ -41,6 +38,6 @@ CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE=Release \
 			-DOPTION_OMP=OFF \
 			-DCMAKE_CXX_FLAGS_RELEASE=${CXXFLAGS}
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 .include <bsd.port.mk>

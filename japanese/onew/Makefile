@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/12/02 14:36:14 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 11:12:34 espie Exp $
 
 COMMENT=	library for Japanese Input Method Wnn4
 
@@ -17,9 +17,6 @@ MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Japan/onew/ \
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 FLAVORS=wnn4 canna
 FLAVOR?=canna
@@ -50,7 +47,7 @@ post-patch:
 MAKE_FLAGS=LOCALBASE=${LOCALBASE} CFLAGS='${CFLAGS}'
 SUBST_VARS=FLAVOR_EXT
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libonew.a ${PREFIX}/lib/${LIB_NAME}

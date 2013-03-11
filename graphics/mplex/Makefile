@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2012/08/18 12:41:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 11:10:54 espie Exp $
 
 COMMENT=	Multiplexes MPEG component streams into system layers
 
@@ -9,14 +9,11 @@ MAINTAINER=	Wilbern Cobb <wcobb@openbsd.org>
 
 # GNU
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m
 
 MASTER_SITES=	http://mirror.csoft.org/mplex/
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mplex ${PREFIX}/bin

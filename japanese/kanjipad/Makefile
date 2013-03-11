@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/11/01 16:27:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 11:12:33 espie Exp $
 
 COMMENT=	Japanese handwriting recognition
 
@@ -9,10 +9,7 @@ CATEGORIES=	japanese
 HOMEPAGE=	http://fishsoup.net/software/kanjipad/
 
 # GPLv2
-PERMIT_PACKAGE_FTP=Yes
 PERMIT_PACKAGE_CDROM=Yes
-PERMIT_DISTFILES_FTP=Yes
-PERMIT_DISTFILES_CDROM=Yes
 
 MASTER_SITES=	${HOMEPAGE}
 

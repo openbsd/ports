@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2012/03/29 13:38:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 11:10:53 espie Exp $
 
 COMMENT=	opendivx decoding API
 
@@ -12,8 +12,6 @@ MASTER_SITES=	${MASTER_SITE_OPENBSD}
 # Mayo licence, h263 decoding
 PERMIT_PACKAGE_CDROM=	No commercial use plus patent issue
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	No commercial use plus patent issue
-PERMIT_DISTFILES_FTP=	Yes
 
 USE_LIBTOOL=		Yes
 SEPARATE_BUILD=		Yes

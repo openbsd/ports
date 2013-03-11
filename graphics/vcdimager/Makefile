@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2012/03/29 13:38:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 11:10:56 espie Exp $
 
 COMMENT=	(S)VCD authoring software
 
@@ -14,9 +14,6 @@ HOMEPAGE=	http://www.vcdimager.org/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c m z xml2>=11 cdio iso9660 popt
 

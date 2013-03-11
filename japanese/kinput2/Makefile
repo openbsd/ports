@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2013/02/09 14:49:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2013/03/11 11:12:33 espie Exp $
 
 COMMENT-canna=		X input method for Japanese, canna support
 COMMENT-canna-wnn=	X input method for Japanese, canna and wnn support
@@ -12,9 +12,6 @@ CATEGORIES=	japanese x11
 
 # License: NOFEE
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt c
 
@@ -47,7 +44,7 @@ pre-configure:
 	echo "#define UseCanna" >>${WRKSRC}/Kinput2.conf
 .endif
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/kinput2

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2012/09/19 08:15:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 11:10:53 espie Exp $
 
 COMMENT =		extensible drawing editor
 
@@ -23,9 +23,6 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += GL QtGui X11 Xrender c cairo expat fontconfig freetype
 WANTLIB += glib-2.0 gobject-2.0 ${MODLUA_WANTLIB} m pixman-1 png
@@ -55,7 +52,7 @@ FAKE_FLAGS +=		INSTALL_ROOT=${WRKINST} \
 			IPEDOCDIR=${PREFIX}/share/doc/ipe
 
 USE_GMAKE =		Yes
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 WRKDIST = ${WRKDIR}/${PKGNAME}
 WRKSRC = ${WRKDIST}/src

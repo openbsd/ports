@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/02/06 14:23:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2013/03/11 11:10:51 espie Exp $
 
 COMMENT=	gtk2 comic book viewer
 
@@ -9,9 +9,6 @@ CATEGORIES=	graphics
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=comix/}
 
@@ -29,7 +26,7 @@ RUN_DEPENDS=	graphics/py-Imaging \
 		devel/desktop-file-utils
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-extract:
 		${GUNZIP_CMD} ${WRKSRC}/comix.1.gz ${WRKSRC}/mime/comicthumb.1.gz

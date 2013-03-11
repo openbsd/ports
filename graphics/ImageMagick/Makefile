@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.125 2012/08/28 15:20:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.126 2013/03/11 11:10:51 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -27,9 +27,6 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=imagemagick/} \
 
 # http://www.imagemagick.org/script/license.php
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB =		c bz2>=10 djvulibre fftw3 jasper>=1 jbig>=1.2 jpeg \
 			lcms2 lzma ltdl m perl png>=4 pthread stdc++ \

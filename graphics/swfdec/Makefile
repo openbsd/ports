@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2012/09/06 12:38:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2013/03/11 11:10:55 espie Exp $
 
 COMMENT=	flash rendering library
 
@@ -11,10 +11,7 @@ CATEGORIES=	graphics
 HOMEPAGE=	http://swfdec.freedesktop.org/
 
 # LGPLv2.1
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}download/swfdec/0.8/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/10/15 15:18:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:10:52 espie Exp $
 
 COMMENT=		c++ library for common image format
 
@@ -15,9 +15,6 @@ MAINTAINER=		Eric Faurot <eric@openbsd.org>
 
 # GPL / "FreeImage Public Nons^WLicense"
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		stdc++
 
@@ -36,7 +33,7 @@ MAKE_TARGET=		Makefile.gnu
 post-extract:
 	perl -pi -e 's/\015//g' ${WRKSRC}/Makefile.gnu
 
-do-regress:
+do-test:
 	cd ${WRKSRC}/TestAPI && ${MAKE_PROGRAM}
 
 .include <bsd.port.mk>

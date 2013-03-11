@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2012/01/29 13:18:30 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 11:10:54 espie Exp $
 
 COMMENT=	ab initio MOLecular DENsity display program
 
@@ -18,7 +18,6 @@ DISTFILES=
 # Free for private, non-profit use. Commercial license required otherwise
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	No
-PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	No
 
 MASTER_SITES=	ftp://ftp.cmbi.ru.nl/pub/molgraph/molden/
@@ -32,7 +31,7 @@ BUILD_DEPENDS=	${MODFORTRAN_BUILD_DEPENDS}
 LIB_DEPENDS=	${MODFORTRAN_LIB_DEPENDS}
 
 USE_GMAKE=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 MAKE_FILE=	makefile
 
 do-install:

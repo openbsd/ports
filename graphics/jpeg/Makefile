@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2012/10/15 21:31:07 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2013/03/11 11:10:53 espie Exp $
 
 COMMENT=	IJG's JPEG compression utilities#'
 
@@ -12,9 +12,6 @@ HOMEPAGE=	http://www.ijg.org/
 
 # BSD-style
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}files/
 DISTFILES=	jpegsrc.v$V.tar.gz

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2012/09/01 12:02:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 11:10:52 espie Exp $
 
 COMMENT=	load PNG graphics files and bind them to an OpenGL texture
 
@@ -15,9 +15,6 @@ HOMEPAGE=	http://www.wyatt100.freeserve.co.uk/
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
@@ -26,9 +23,9 @@ WANTLIB=	GL png>=5
 LIB_DEPENDS=	graphics/png
 
 
-REGRESS_IS_INTERACTIVE=	x11
+TEST_IS_INTERACTIVE=	x11
 
-REGRESS_DEPENDS=	graphics/freeglut
+TEST_DEPENDS=	graphics/freeglut
 
 DIST_SUBDIR=	${DISTNAME}-${VERSION}
 WRKDIST=	${WRKDIR}
@@ -49,7 +46,7 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/glpng.htm \
 		${PREFIX}/share/doc/glpng/glpng.html
 
-do-regress:
+do-test:
 	cd ${WRKDIR}/Example \
 	&& ${CC} ${CFLAGS} -o Test Test.c -lm -lz \
 		-L${X11BASE}/lib -lGLU -lXi -lXmu \

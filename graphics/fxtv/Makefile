@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2012/02/21 22:19:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2013/03/11 11:10:52 espie Exp $
 
 # we use "macppc" and not "powerpc" on purpose here ; i.e. bktr(4) needed
 ONLY_FOR_ARCHS=	i386 macppc amd64
@@ -28,15 +28,13 @@ RUN_DEPENDS=	audio/sox>=12.12 \
 # BSD license
 PERMIT_PACKAGE_CDROM=	Runtime dependencies have patents
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xext Xmu Xpm Xt Xxf86dga Xxf86vm c m \
 			ossaudio pthread-stubs xcb z tiff>=35 jpeg>=62 \
 			Xaw3d>=6.1
 
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 MAKE_FLAGS=	CFLAGS="${CFLAGS}" \
 		X11BASE="${X11BASE}" \

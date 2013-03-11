@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/17 08:05:12 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:10:51 espie Exp $
 
 COMMENT =	game programming library for C/C++ developers
 
@@ -18,9 +18,6 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=alpng/}
 # "Altered source versions must be plainly marked as such
 #  and must not be misrepresented as being the original software."
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 USE_GMAKE =		Yes
 BUILD_DEPENDS +=	games/allegro
@@ -28,7 +25,7 @@ RUN_DEPENDS +=		games/allegro
 
 MAKE_FILE =		makefile
 MAKE_FLAGS =		CFLAGS=-I${LOCALBASE}/include
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 do-extract:
 	@mkdir ${WRKSRC}

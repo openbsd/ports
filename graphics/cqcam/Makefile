@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/17 08:05:13 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2013/03/11 11:10:51 espie Exp $
 
 ONLY_FOR_ARCHS= i386
 
@@ -10,9 +10,6 @@ CATEGORIES=	graphics
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m stdc++ jpeg>=62
 
 HOMEPAGE=	http://www.cs.duke.edu/~reynolds/cqcam/
@@ -30,7 +27,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_FLAGS=	CLIENTS="cli webcam"
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/cqcam

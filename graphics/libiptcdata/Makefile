@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/01/27 14:51:15 kirby Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:10:53 espie Exp $
 
 SHARED_ONLY = 		Yes
 
@@ -17,9 +17,6 @@ HOMEPAGE =		http://libiptcdata.sourceforge.net/
 
 # LGPL
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 cWANTLIB =		m util pthread
 WANTLIB-main = 		${cWANTLIB} ${MODGETTEXT_WANTLIB} c
@@ -39,6 +36,6 @@ CONFIGURE_ENV += 	PYTHON_VERSION=${MODPY_VERSION} \
 
 MULTI_PACKAGES = 	-main -python
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 .include <bsd.port.mk>

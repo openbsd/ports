@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2012/11/06 12:59:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2013/03/11 11:10:52 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -23,9 +23,6 @@ HOMEPAGE=	http://gegl.org/
 
 # GPLv3/LGPLv3
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gegl/${V:R}/ \
 		ftp://ftp.sunet.se/pub/gnu/babl/${V:R}/ \

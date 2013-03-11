@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2012/07/16 07:23:50 giovanni Exp $
+# $OpenBSD: Makefile,v 1.24 2013/03/11 11:10:53 espie Exp $
 
 COMMENT=	extract digital camera info tags from JPEG images
 
@@ -13,9 +13,6 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=libexif/}
 EXTRACT_SUFX=		.tar.bz2

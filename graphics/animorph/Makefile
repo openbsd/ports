@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2012/03/15 13:38:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 11:10:51 espie Exp $
 
 COMMENT=	morphing engine
 
@@ -12,9 +12,6 @@ HOMEPAGE=	http://www.dedalo-3d.com/
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += m stdc++
 

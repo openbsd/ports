@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2011/09/16 10:02:38 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2013/03/11 11:12:33 espie Exp $
 
 COMMENT-main= 	canna (kana-kanji converter) libraries
 COMMENT-dict=	canna (kana-kanji converter) dictionaries
@@ -35,9 +35,7 @@ BUILD_DEPENDS=	japanese/groff
 HOMEPAGE =	http://www.nec.co.jp/canna/
 
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	No Fee
-PERMIT_DISTFILES_CDROM=	No Fee
 
 MULTI_PACKAGES=-main -dict -server
 
@@ -62,6 +60,6 @@ MAKE_FLAGS=	LIBRKC_VERSION=$(LIBRKC_VERSION) \
 		COPTS="${COPTS}"
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

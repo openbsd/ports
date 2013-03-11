@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/17 08:05:13 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2013/03/11 11:10:51 espie Exp $
 
 COMMENT=	programs and library for the 'X-face' mail and news header
 
@@ -10,7 +10,6 @@ HOMEPAGE=	http://freshmeat.net/projects/compface/
 
 PERMIT_PACKAGE_CDROM=	No fee
 PERMIT_PACKAGE_FTP=	No
-PERMIT_DISTFILES_CDROM=	No fee
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
@@ -19,7 +18,7 @@ MAINTAINER=	Hans-Guenter Weigand <hgw@d1906.inka.de>
 CONFIGURE_STYLE=gnu
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/{compface,uncompface} ${PREFIX}/bin

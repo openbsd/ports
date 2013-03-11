@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/03/10 09:05:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:10:53 espie Exp $
 
 COMMENT=	rendering for complex writing systems
 
@@ -26,10 +26,10 @@ MODULES=	devel/cmake \
 MODPY_BUILDDEP=	No
 MODPY_RUNDEP=	No
 
-REGRESS_DEPENDS=${MODPY_RUN_DEPENDS}
+TEST_DEPENDS=${MODPY_RUN_DEPENDS}
 
 # regress tests need python
-pre-regress:
+pre-test:
 	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 
 .include <bsd.port.mk>

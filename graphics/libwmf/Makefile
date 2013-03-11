@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/11/02 09:57:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/11 11:10:54 espie Exp $
 
 COMMENT=	WMF handling and conversion library
 
@@ -17,9 +17,6 @@ MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB +=	X11 c expat freetype m xcb z jpeg png
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wvware/}

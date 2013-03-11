@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2012/08/18 12:41:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 11:10:54 espie Exp $
 
 COMMENT=	UCB's MPEG-I video stream encoder
 
@@ -9,8 +9,6 @@ CATEGORIES=	graphics
 # BSD
 PERMIT_PACKAGE_CDROM=   patents
 PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= patents
-PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		c m jpeg>=62
 
 MASTER_SITES=	http://bmrc.berkeley.edu/ftp/pub/multimedia/mpeg/encode/
@@ -20,7 +18,7 @@ LIB_DEPENDS=    graphics/jpeg
 WRKDIST=	${WRKDIR}/mpeg_encode
 USE_GROFF =	Yes
 
-REGRESS_TARGET=	test_all
+TEST_TARGET=	test_all
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mpeg_encode ${PREFIX}/bin

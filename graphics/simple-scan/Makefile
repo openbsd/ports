@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/03/08 07:01:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2013/03/11 11:10:55 espie Exp $
 
 COMMENT=	simple scanning utility
 
@@ -14,9 +14,6 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += atk-1.0 c cairo cairo-gobject colord colordprivate
 WANTLIB += expat fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2012/07/11 08:59:57 giovanni Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 11:10:54 espie Exp $
 
 PKG_ARCH=	*
 
@@ -15,9 +15,6 @@ MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mapivi/}
 
@@ -30,7 +27,7 @@ RUN_DEPENDS=	x11/p5-Tk>=804.025 \
 		x11/p5-Tk-Splash
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/mapivi

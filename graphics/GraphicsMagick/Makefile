@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2012/12/23 20:40:39 brad Exp $
+# $OpenBSD: Makefile,v 1.29 2013/03/11 11:10:51 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,9 +19,6 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # http://www.graphicsmagick.org/www/Copyright.html
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		ICE SM X11 Xext bz2 c freetype jasper jbig jpeg lcms2 \
 			ltdl lzma m png pthread stdc++ tiff wmflite-0.2 \

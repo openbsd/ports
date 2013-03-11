@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/01/19 11:22:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/11 11:10:52 espie Exp $
 
 COMMENT =	digital camera command-line interface
 CATEGORIES =	graphics
@@ -14,10 +14,7 @@ HOMEPAGE =	http://gphoto.sourceforge.net/
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=gphoto/}
 
 # GPLv2
-PERMIT_PACKAGE_FTP =		Yes
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_DISTFILES_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
 
 WANTLIB += c exif gphoto2 gphoto2_port jpeg ltdl m ncurses popt
 WANTLIB += pthread readline

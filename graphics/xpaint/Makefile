@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2011/11/02 09:57:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.51 2013/03/11 11:10:56 espie Exp $
 
 COMMENT=		simple paint program
 
@@ -12,9 +12,6 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sf-xpaint/}
 EXTRACT_SUFX=		.tar.bz2
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xpm Xt c m \
 			z jpeg>=62 tiff>=36 png>=4
@@ -27,6 +24,6 @@ LIB_DEPENDS=		graphics/jpeg \
 CONFIGURE_STYLE= 	imake
 ALL_TARGET=		xaw
 USE_GROFF =		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 .include <bsd.port.mk>

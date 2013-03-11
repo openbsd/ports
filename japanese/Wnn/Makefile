@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2012/09/23 08:07:04 matthieu Exp $
+# $OpenBSD: Makefile,v 1.67 2013/03/11 11:12:33 espie Exp $
 
 COMMENT-main = 		Japanese input method
 COMMENT-dict =		dictionaries for Japanese Wnn
@@ -66,9 +66,6 @@ MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 #		BSD
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 EXTRACT_ONLY =	Wnn4.2.tar.gz
 WRKDIST =	${WRKDIR}/Xsi
@@ -135,7 +132,7 @@ do-build:
 
 ALL_TARGET =		World
 INSTALL_TARGET =	install install.man
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PORT_JDOCDIR}

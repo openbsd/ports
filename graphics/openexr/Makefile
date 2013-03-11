@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2012/12/21 12:13:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/11 11:10:54 espie Exp $
 
 COMMENT-main=	high dynamic range image format
 COMMENT-tools=	image viewing tools for OpenEXR
@@ -19,9 +19,6 @@ HOMEPAGE=	http://www.openexr.com/
 # Modified BSD license
 # `name of ILM not to be used for advertizing without written agreement'
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SAVANNAH:=openexr/}
 
@@ -34,7 +31,7 @@ WANTLIB-tools=		${WANTLIB-main} c m pthread stdc++ IlmImf>=4
 LIB_DEPENDS-tools=	${LIB_DEPENDS-main} graphics/openexr
 PKG_ARCH-doc=		*
 
-# Regress unhappy with separate build
+# Test unhappy with separate build
 #SEPARATE_BUILD=	Yes
 
 CONFIGURE_STYLE=	gnu

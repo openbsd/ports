@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/01/11 13:44:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/11 11:10:51 espie Exp $
 
 COMMENT=		C++ interface for cairo
 
@@ -11,9 +11,6 @@ HOMEPAGE=		http://cairographics.org/cairomm/
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL X11 Xau Xdamage Xdmcp Xext Xfixes Xrender Xxf86vm
 WANTLIB += cairo drm expat ffi fontconfig freetype glib-2.0 gobject-2.0

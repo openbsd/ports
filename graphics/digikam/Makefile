@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2013/01/23 21:28:21 zhuk Exp $
+# $OpenBSD: Makefile,v 1.38 2013/03/11 11:10:52 espie Exp $
 
 COMMENT =		digital image kde application
 CATEGORIES =		graphics x11 x11/kde
@@ -54,9 +54,6 @@ MAKE_FLAGS +=		${MODKDE_MAKE_FLAGS} LIBKEXIF_LIBS='-L${PREFIX}/lib -lkexif -lint
 MAKE_FLAGS +=		LIBRESOLV=
  
 # GPL
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
 
 .include <bsd.port.mk>

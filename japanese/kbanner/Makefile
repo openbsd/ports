@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/18 18:13:15 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/11 11:12:33 espie Exp $
 
 COMMENT=	display kanji files in large letters
 
@@ -12,14 +12,11 @@ EXTRACT_SUFX=	.tar.Z
 HOMEPAGE=	http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/program.html
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 ALL_TARGET=	kbanner
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2012/08/04 21:17:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.61 2013/03/11 11:10:54 espie Exp $
 
 COMMENT=	toolkit for converting images between different formats
 
@@ -7,9 +7,6 @@ SHARED_LIBS=	netpbm	2.0
 CATEGORIES=	graphics
 HOMEPAGE=	http://netpbm.sourceforge.net/
 
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=netpbm/}
@@ -53,6 +50,6 @@ pre-build:
 	cp ${FILESDIR}/Makefile.config.OpenBSD ${WRKSRC}/Makefile.config
 	cd ${WRKSRC}; buildtools/stamp-date >lib/compile.h
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

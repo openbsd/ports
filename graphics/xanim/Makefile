@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2011/11/02 09:57:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2013/03/11 11:10:56 espie Exp $
 
 COMMENT=	X11 animation player with support for lots of formats
 
@@ -16,8 +16,6 @@ MASTER_SITES0=ftp://ftp.ut.ee/pub/graphics/xanim/modules/
 # License: NOFEE
 PERMIT_PACKAGE_CDROM=	No Fee
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	No Fee
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xt c m z
 
@@ -65,7 +63,7 @@ post-configure:
 CONFIGURE_STYLE=	imake
 DOCDIR=${PREFIX}/share/doc/xanim
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}

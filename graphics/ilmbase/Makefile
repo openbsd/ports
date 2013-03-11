@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/17 08:05:14 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 11:10:53 espie Exp $
 
 COMMENT=	ILM base libraries
 
@@ -16,9 +16,6 @@ HOMEPAGE=	http://www.openexr.com/
 # Modified BSD license
 # `name of ILM not to be used for advertizing without written agreement'
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SAVANNAH:=openexr/}
 

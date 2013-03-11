@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/08 10:25:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/11 11:12:34 espie Exp $
 
 COMMENT=	Java Native Access (JNA)
 
@@ -12,9 +12,6 @@ HOMEPAGE=	https://github.com/twall/jna
 
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 # git tag of $V
 MASTER_SITES=	http://distfiles.nl/
@@ -40,7 +37,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${_BD}/jna.jar ${MODJAVA_JAR_DIR}
 	cp -r ${WRKSRC}/www/javadoc/ ${MODJAVA_DOC_DIR}
 
-do-regress:
+do-test:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/ant test
 
 .include <bsd.port.mk>

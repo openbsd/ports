@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/01/23 21:29:32 zhuk Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 11:10:53 espie Exp $
 
 COMMENT =	kde wrapper around exiv2
 CATEGORIES =	graphics
@@ -23,10 +23,7 @@ MODULES =		devel/gettext \
 			x11/kde
 
 # GPL
-PERMIT_DISTFILES_CDROM =Yes
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_DISTFILES_FTP =	Yes
-PERMIT_PACKAGE_FTP =	Yes
 
 WANTLIB += DCOP GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft
 WANTLIB += Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2

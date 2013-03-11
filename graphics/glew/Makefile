@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2012/08/27 12:40:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 11:10:52 espie Exp $
 
 COMMENT=	GL Extension Wrangler library
 
@@ -16,9 +16,6 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	GL GLU X11 Xext Xi Xmu c m
 
@@ -29,7 +26,7 @@ MAKE_FLAGS=	LD=${CC}
 
 USE_GMAKE=	Yes
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-extract:
 	@cp ${FILESDIR}/Makefile.openbsd ${WRKSRC}/config

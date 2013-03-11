@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/08 01:30:37 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/11 11:10:52 espie Exp $
 
 VMEM_WARNING =	Yes
 ONLY_FOR_ARCHS = ${GCC4_ARCHS}
@@ -23,9 +23,6 @@ MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+, MIT
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	GL GLEW GLU Half ICE Iex IlmImf IlmThread Imath SM X11 Xi Xmu
 WANTLIB +=	boost_filesystem boost_system c glut>=4 jpeg lcms m png pthread

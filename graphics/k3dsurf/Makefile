@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/11/02 08:46:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 11:10:53 espie Exp $
 
 COMMENT=	visualize and manipulate mathematical models
 
@@ -10,16 +10,13 @@ HOMEPAGE=	http://k3dsurf.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=k3dsurf/}
 
 WANTLIB=	GL GLU X11 Xext Xmu c m pthread stdc++
 
 MODULES=	x11/qt3
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 PORTHOME=	${WRKDIR}
 

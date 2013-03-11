@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/07/19 09:28:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 11:12:33 espie Exp $
 
 COMMENT=	converts Japanese fonts in PostScript documents
 
@@ -15,9 +15,6 @@ DISTFILES=kanjips.tar.Z jis32.Z:0 jis48.Z:0
 EXTRACT_ONLY=kanjips.tar.Z
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c m
 
@@ -40,7 +37,7 @@ do-configure:
 	cd ${WRKDIST} && perl -pi.bak ${FILESDIR}/remove-quotes \
 		`sed <todo -e 's,.SH,,'`
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 FONTDIR=${PREFIX}/share/kanjips_font
 DOCDIR=${PREFIX}/share/doc/kanjips

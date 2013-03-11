@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2011/09/16 10:02:39 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2013/03/11 11:12:34 espie Exp $
 
 COMMENT=	regression testing utility for use with the Java language
 
@@ -17,8 +17,6 @@ MAINTAINER=	Ian Darwin <ian@openbsd.org>
 # Commercial distribution defend and indemnify clauses
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	No
-PERMIT_DISTFILES_FTP=	Yes
 
 # github is bad for getting reliable distfiles from.
 MASTER_SITES=	http://distfiles.nl/
@@ -29,7 +27,7 @@ MODJAVA_VER=	1.6+
 MODJAVA_JRERUN=	yes
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 JAR_DIR=	${PREFIX}/share/java/classes/junit/
 DOC_DIR=	${PREFIX}/share/java/junit/

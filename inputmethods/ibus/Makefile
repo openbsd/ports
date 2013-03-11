@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2013/01/23 18:05:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2013/03/11 11:12:33 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -17,9 +17,6 @@ MAINTAINER =	Federico G. Schwindt <fgsch@openbsd.org>
 
 # LGPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 		Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 \
