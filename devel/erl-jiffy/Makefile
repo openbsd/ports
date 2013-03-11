@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 10:50:03 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 13:02:16 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -21,8 +21,7 @@ MODULES=	lang/erlang
 
 WANTLIB=	stdc++
 
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/src/jiffy.app.src
+ERL_APP_SUBST=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${ERL_LIBDIR}/{ebin,priv,src}

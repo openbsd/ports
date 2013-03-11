@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:03 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 13:02:16 jasper Exp $
 
 COMMENT=	logging library used for chef
 
@@ -20,8 +20,7 @@ MODULES=	lang/erlang
 
 ALL_TARGET=	compile
 
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/src/fast_log.app.src
+ERL_APP_SUBST=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${ERL_LIBDIR}/{ebin,include,src}

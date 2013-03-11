@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:42:41 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 13:02:16 jasper Exp $
 
 COMMENT=	EDoc extension for generating GitHub-flavored Markdown
 
@@ -20,8 +20,7 @@ MODULES=	lang/erlang
 
 NO_TEST=	Yes
 
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/src/edown.app.src
+ERL_APP_SUBST=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${ERL_LIBDIR}/{ebin,src}

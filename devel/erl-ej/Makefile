@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 10:50:03 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 13:02:16 jasper Exp $
 
 COMMENT=	module for working with Erlang terms representing JSON
 
@@ -17,8 +17,7 @@ MASTER_SITES=	http://distfiles.nl/
 
 MODULES=	lang/erlang
 
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/src/ej.app.src
+ERL_APP_SUBST=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${ERL_LIBDIR}/{ebin,include,src}

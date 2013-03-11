@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:03 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 13:02:16 jasper Exp $
 
 COMMENT=	set of statistics functions for Erlang
 
@@ -17,10 +17,9 @@ MASTER_SITES=	http://distfiles.nl/
 
 MODULES=	lang/erlang
 
-NO_TEST=	Yes
+ERL_APP_SUBST=	Yes
 
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/src/bear.app.src
+NO_TEST=	Yes
 
 do-build:
 	cd ${WRKSRC} && ${REBAR_BIN} compile

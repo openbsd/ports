@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:41:30 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 13:02:16 jasper Exp $
 
 COMMENT=	general purpose stats and collection for Erlang
 
@@ -22,8 +22,7 @@ RUN_DEPENDS=	devel/erl-meck \
 
 ALL_TARGET=	compile
 
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/src/stats_hero.app.src
+ERL_APP_SUBST=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${ERL_LIBDIR}/{ebin,include,src}

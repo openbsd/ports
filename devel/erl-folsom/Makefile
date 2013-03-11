@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:03 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 13:02:16 jasper Exp $
 
 COMMENT=	expose Erlang events and metrics
 
@@ -20,8 +20,7 @@ MODULES=	lang/erlang
 RUN_DEPENDS=	devel/erl-automeck \
 		devel/erl-bear
 
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/src/folsom.app.src
+ERL_APP_SUBST=	Yes
 
 do-build:
 	cd ${WRKSRC} && ${REBAR_BIN} compile
