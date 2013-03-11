@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.17 2013/03/11 11:23:54 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.18 2013/03/11 12:27:54 sthen Exp $
 
 # keep in sync with www/mozilla/mozilla.port.mk
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
@@ -17,8 +17,6 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 # Mozilla public license
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	https://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/${FV}/linux-i686/xpi/ \
 		http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/${FV}/linux-i686/xpi/ \

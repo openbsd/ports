@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2013/03/11 11:35:48 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2013/03/11 12:27:54 sthen Exp $
 
 COMMENT=	raw IP packet construction library
 
@@ -9,8 +9,6 @@ HOMEPAGE=	http://www.packetfactory.net/projects/libnet/
 
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= autoconf no-autoheader
 

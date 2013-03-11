@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2013/03/11 11:44:50 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2013/03/11 12:27:54 sthen Exp $
 
 COMMENT-main =	Java servlet 2.5 and Java server pages 2.1 server
 COMMENT-examples =example applications and full documentation
@@ -36,8 +36,6 @@ PREFIX-examples =${CATALINA_BASE}
 
 # Apache Software License 2.0
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 TAR =		${LOCALBASE}/bin/gtar
 

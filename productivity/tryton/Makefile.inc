@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.12 2013/03/11 11:37:55 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.13 2013/03/11 12:27:54 sthen Exp $
 
 MODPY_EGG_VERSION ?=	2.6.3
 
@@ -12,8 +12,6 @@ MAINTAINER ?=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 DIST_SUBDIR=		tryton
 MASTER_SITES=		http://downloads2.tryton.org/${MODPY_EGG_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/

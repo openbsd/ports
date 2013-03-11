@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.22 2013/03/11 11:35:57 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.23 2013/03/11 12:27:54 sthen Exp $
 
 DISTNAME=	unison-$V
 CATEGORIES=	net
@@ -9,8 +9,6 @@ MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c m util
 

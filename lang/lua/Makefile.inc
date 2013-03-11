@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2013/03/11 11:20:28 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2013/03/11 12:27:53 sthen Exp $
 
 COMMENT=	powerful, light-weight programming language (version ${VERSION})
 
@@ -15,8 +15,6 @@ HOMEPAGE=	http://www.lua.org/
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MAKE_FLAGS+=	CC="${CC}"
 

@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile.inc,v 1.2 2013/03/11 11:35:56 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2013/03/11 12:27:54 sthen Exp $
 
 CATEGORIES?=	net multimedia
 
 HOMEPAGE=	http://quvi.sourceforge.net/
 
 # LGPLv2.1+
-PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=quvi/}
 

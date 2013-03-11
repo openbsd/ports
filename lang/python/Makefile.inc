@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.94 2013/03/11 11:20:28 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.95 2013/03/11 12:27:54 sthen Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -44,8 +44,6 @@ MAINTAINER=	Damien Miller <djm@openbsd.org>
 # PSF license <http://www.python.org/${VERSION}/license.html>
 # A summary of changes to Python is required to be distributed
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 .if ${VERSION} < 3.2
 LIB_SUFX =	

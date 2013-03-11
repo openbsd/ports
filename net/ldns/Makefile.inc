@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.26 2013/03/11 11:35:48 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.27 2013/03/11 12:27:54 sthen Exp $
 
 VERSION=	1.6.16
 
@@ -12,8 +12,6 @@ HOMEPAGE=	http://www.nlnetlabs.nl/projects/ldns/
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 SEPARATE_BUILD=		Yes
 USE_LIBTOOL=		Yes

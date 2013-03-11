@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.37 2013/03/11 11:20:28 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.38 2013/03/11 12:27:54 sthen Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -33,8 +33,6 @@ MASTER_SITES0=		http://spacehopper.org/mirrors/ \
 # UPGRADERS: please read BOTH the PHP and Zend licenses
 # and make sure they are safe before an upgrade
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 SHARED_ONLY=		Yes
 

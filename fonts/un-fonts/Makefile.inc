@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2013/03/11 11:06:05 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2013/03/11 12:27:54 sthen Exp $
 
 CATEGORIES ?=	fonts x11 japanese korean
 
@@ -8,8 +8,6 @@ WRKDIST = 	${WRKDIR}/un-fonts
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	yes
-PERMIT_PACKAGE_FTP =	yes
-PERMIT_DISTFILES_FTP =	yes
 
 FONTDIR ?=	${PREFIX}/lib/X11/fonts/korean
 
