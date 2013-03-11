@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:44:41 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 13:00:47 jasper Exp $
 
 COMMENT=	REST-based system for building web applications
 
@@ -19,8 +19,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	www/erl-mochiweb
 
 MODULES=	lang/erlang
-
-CONFIGURE_STYLE=rebar
 
 do-install:
 	${INSTALL_DATA_DIR} ${ERL_LIBDIR}/{demo,ebin,include,priv,scripts,src}
