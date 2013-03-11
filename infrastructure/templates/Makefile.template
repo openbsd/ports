@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.63 2013/03/11 11:51:04 espie Exp $
+# $OpenBSD: Makefile.template,v 1.64 2013/03/11 14:45:20 espie Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -139,7 +139,7 @@ MASTER_SITES =		???
 #FLAVORS =	1 2 3 a b
 #FLAVOR ?=
 # grab multiple choice value
-#CHOICE = ${FLAVOR:L:Na:Nb}
+#CHOICE = ${FLAVOR:Na:Nb}
 # check that CHOICE is 1 OR 2 OR 3, or error out
 #.if ${CHOICE} == "1"
 # code for 1
@@ -151,10 +151,10 @@ MASTER_SITES =		???
 #ERRORS += "Fatal: Conflicting flavor: ${FLAVOR}"
 #.endif
 # check for switches
-#.if ${FLAVOR:L:Ma}
+#.if ${FLAVOR:Ma}
 # code for a
 #.endif
-#.if ${FLAVOR:L:Mb}
+#.if ${FLAVOR:Mb}
 # code for b
 #.endif
 
