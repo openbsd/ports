@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:41:33 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 12:17:51 espie Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	G.729a voice codec for Asterisk
@@ -13,6 +13,7 @@ HOMEPAGE=	http://asterisk.hosting.lv/
 # GPL frontend to patented algorithm; free to use for non-commercial purposes
 PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_FTP=	contains non-compiled proprietary Intel code
 
 WANTLIB += c
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:07:37 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/11 12:17:51 espie Exp $
 
 PKG_ARCH=	*
 
@@ -13,6 +13,7 @@ MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
 # Conditional
 PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	space constraints
 
 NO_BUILD=	Yes
 NO_TEST=	Yes

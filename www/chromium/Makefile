@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.124 2013/03/11 11:44:41 espie Exp $
+# $OpenBSD: Makefile,v 1.125 2013/03/11 12:17:51 espie Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 
@@ -22,6 +22,7 @@ FLAVOR?=
 # BSD-like
 .if ${FLAVOR:Mproprietary}
 PERMIT_PACKAGE_CDROM=	patents
+PERMIT_PACKAGE_FTP =	Yes
 .else
 PERMIT_PACKAGE_CDROM=	Yes
 .endif
