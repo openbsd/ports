@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.33 2013/03/03 00:50:15 espie Exp $
+# $OpenBSD: Vars.pm,v 1.34 2013/03/11 12:23:40 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -59,9 +59,6 @@ COMMENT = test
 CATEGORIES = test
 PKGPATH = test/a
 PERMIT_PACKAGE_CDROM=Yes
-PERMIT_PACKAGE_FTP=Yes
-PERMIT_DISTFILES_CDROM=Yes
-PERMIT_DISTFILES_FTP=Yes
 WRKOBJDIR=
 IGNORE=Yes
 _MAKEFILE_INC_DONE=Yes
