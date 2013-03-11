@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.47 2013/03/11 11:37:54 espie Exp $
+# $OpenBSD: Makefile,v 1.48 2013/03/11 23:04:32 fgsch Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	DTP program
 DISTNAME=	scribus-1.4.1
 CATEGORIES=	print
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	http://www.scribus.net/
 
