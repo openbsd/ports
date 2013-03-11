@@ -1,10 +1,10 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: perl.port.mk,v 1.20 2012/08/15 09:38:11 espie Exp $
+# $OpenBSD: perl.port.mk,v 1.21 2013/03/11 11:50:17 espie Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
-REGRESS_TARGET ?=	test
+TEST_TARGET ?=	test
 MODPERL_BUILD ?= Build
 SHARED_ONLY ?= No
 
@@ -56,9 +56,9 @@ MODPERL_BUILD_TARGET = \
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} perl \
 		${MODPERL_BUILD} build
 
-MODPERL_REGRESS_TARGET = \
+MODPERL_TEST_TARGET = \
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} perl \
-		${MODPERL_BUILD} ${REGRESS_TARGET}
+		${MODPERL_BUILD} ${TEST_TARGET}
 MODPERL_INSTALL_TARGET = \
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} perl \
 		${MODPERL_BUILD} destdir=${WRKINST} ${FAKE_TARGET}
@@ -67,9 +67,9 @@ MODPERL_INSTALL_TARGET = \
 do-build: 
 	@${MODPERL_BUILD_TARGET}
 .  endif
-.  if !target(do-regress)
-do-regress:
-	@${MODPERL_REGRESS_TARGET}
+.  if !target(do-test)
+do-test:
+	@${MODPERL_TEST_TARGET}
 .  endif
 .  if !target(do-install)
 do-install:
