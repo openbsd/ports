@@ -36,7 +36,7 @@ holds all the information retrieved through various variables, e.g.,:
     PKG_ARCH 
     PSEUDO_FLAVOR
     PSEUDO_FLAVORS 
-    REGRESS_IS_INTERACTIVE 
+    TEST_IS_INTERACTIVE 
     REVISION
     SEPARATE_BUILD 
     SHARED_LIBS 
@@ -78,7 +78,7 @@ All depends are stored in a single table, including the type:
 R -> run
 L -> lib
 B -> build
-Regress -> regress
+T -> test
 with FULLDEPENDS the full text of the dependency, DEPENDSPATH the PKGPATH
 we depend upon, PKGSPEC the spec we depend upon (if explicit), and REST
 the rest.

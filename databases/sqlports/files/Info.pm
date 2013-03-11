@@ -1,4 +1,4 @@
-# $OpenBSD: Info.pm,v 1.6 2013/03/08 10:05:31 espie Exp $
+# $OpenBSD: Info.pm,v 1.7 2013/03/11 11:53:51 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -65,7 +65,7 @@ our $vars = {
     MODULES => 'ModulesVar',
     MULTI_PACKAGES => 'MultiVar',
     NO_BUILD => 'YesNoVar',
-    NO_REGRESS => 'YesNoVar',
+    NO_TEST => 'YesNoVar',
     NOT_FOR_ARCHS => 'NotForArchListVar',
     ONLY_FOR_ARCHS => 'OnlyForArchListVar',
     PERMIT_DISTFILES_FTP=> 'YesKeyVar',
@@ -76,8 +76,8 @@ our $vars = {
     PKG_ARCH => 'ArchKeyVar',
     PSEUDO_FLAVOR => 'AnyVar',
     PSEUDO_FLAVORS => 'PseudoFlavorsVar',
-    REGRESS_DEPENDS => 'RegressDependsVar',
-    REGRESS_IS_INTERACTIVE => 'AnyVar',
+    TEST_DEPENDS => 'TestDependsVar',
+    TEST_IS_INTERACTIVE => 'AnyVar',
     REVISION => 'AnyVar',
     RUN_DEPENDS => 'RunDependsVar',
     SEPARATE_BUILD => 'YesKeyVar',

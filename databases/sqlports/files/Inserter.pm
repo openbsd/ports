@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Inserter.pm,v 1.11 2012/05/20 11:06:07 espie Exp $
+# $OpenBSD: Inserter.pm,v 1.12 2013/03/11 11:53:51 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -263,7 +263,7 @@ our $c = {
 	Library => 0,
 	Run => 1,
 	Build => 2,
-	Regress => 3
+	Test => 3
 };
 
 sub convert_depends
@@ -427,7 +427,7 @@ our $c = {
 	Library => 'L',
 	Run => 'R',
 	Build => 'B',
-	Regress => 'Regress'
+	Test => 'T'
 };
 
 sub add_error

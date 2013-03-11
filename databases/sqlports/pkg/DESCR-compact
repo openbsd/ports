@@ -41,7 +41,7 @@ stored in specialized tables, e.g.,:
     PKG_ARCH 
     PSEUDO_FLAVOR
     PSEUDO_FLAVORS 
-    REGRESS_IS_INTERACTIVE 
+    TEST_IS_INTERACTIVE 
     REVISION
     SEPARATE_BUILD 
     SHARED_ONLY 
@@ -81,7 +81,7 @@ All depends are stored in a single table, including the type:
 0 -> library
 1 -> run
 2 -> build
-3 -> regress
+3 -> test
 with FULLDEPENDS the full text of the dependency, DEPENDSPATH the PKGPATH
 we depend upon, PKGSPEC the spec we depend upon (if explicit), and REST
 the rest.

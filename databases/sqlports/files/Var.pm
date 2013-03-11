@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.17 2013/03/08 10:04:01 espie Exp $
+# $OpenBSD: Var.pm,v 1.18 2013/03/11 11:53:51 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -302,9 +302,9 @@ package BuildDependsVar;
 our @ISA = qw(DependsVar);
 sub depends_type() { 'Build' }
 
-package RegressDependsVar;
+package TestDependsVar;
 our @ISA = qw(DependsVar);
-sub depends_type() { 'Regress' }
+sub depends_type() { 'Test' }
 
 # Stuff that gets stored in another table
 package SecondaryVar;
