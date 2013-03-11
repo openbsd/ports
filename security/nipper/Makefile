@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/20 17:22:44 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 11:41:26 espie Exp $
 
 COMMENT =		audit network device configuration
 
@@ -13,8 +13,6 @@ HOMEPAGE =		http://nipper.sf.net/
 # GPLv3, but "cannot be used as part of a commercial product"
 PERMIT_PACKAGE_CDROM =	No
 PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =No
-PERMIT_DISTFILES_FTP =	Yes
 
 EXTRACT_SUFX =		.tgz
 
@@ -26,7 +24,7 @@ CONFIGURE_STYLE =	cmake
 MODULES +=		devel/cmake
 
 USE_GROFF =		Yes
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/CMakeLists.txt

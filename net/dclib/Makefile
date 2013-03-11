@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2012/12/23 13:25:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 11:35:46 espie Exp $
 
 COMMENT=	Library for direct-connect protocol
 
@@ -13,9 +13,6 @@ MAINTAINER=	Andrew Sveikauskas <asveikau@mail.rochester.edu>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += crypto m ssl stdc++ z bz2 xml2
 

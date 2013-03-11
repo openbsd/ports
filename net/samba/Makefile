@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.177 2013/02/09 14:49:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.178 2013/03/11 11:35:56 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -23,9 +23,6 @@ MAINTAINER=		Ian McWilliam <kaosagnt@tpg.com.au>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=		Yes
-PERMIT_PACKAGE_FTP=		Yes
-PERMIT_DISTFILES_CDROM=		Yes
-PERMIT_DISTFILES_FTP=		Yes
 
 WANTLIB += asn1 c crypto cups execinfo gssapi iniparser krb5 m ncurses
 WANTLIB += popt pthread readline ssl talloc tdb z
@@ -126,9 +123,9 @@ RUN_DEPENDS-docs=
 
 # REGRESSION testing is currently borked. Builds, runs
 # tests fail. Fix one day.
-NO_REGRESS=		Yes
-#REGRESS_TARGET=	test
-#.ifmake regress
+NO_TEST=		Yes
+#TEST_TARGET=	test
+#.ifmake test
 #CONFIGURE_ARGS+=	--enable-socket-wrapper \
 #			--enable-nss-wrapper
 #.endif

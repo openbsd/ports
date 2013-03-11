@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/01 19:25:57 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 11:41:32 espie Exp $
 
 COMMENT =		statistical analyzer for binary streams
 
@@ -14,9 +14,6 @@ MAINTAINER =		Igor Zinovik <zinovik.igor@gmail.com>
 
 # 4-clause BSD
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c m
 

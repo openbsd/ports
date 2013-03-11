@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/01/27 14:13:30 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/11 11:35:44 espie Exp $
 
 COMMENT =	UPnP media server
 
@@ -12,9 +12,6 @@ HOMEPAGE =	http://mediatomb.cc/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	avformat avutil c crypto curl exif expat ffmpegthumbnailer idn
 WANTLIB +=	m magic mozjs mp4v2 pthread sqlite3 ssl stdc++ tag z

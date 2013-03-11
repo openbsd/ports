@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/01/16 14:18:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2013/03/11 11:35:47 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -17,9 +17,6 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += SDL c crypto expat h323 kvm lber ldap ldap_r lua5.1
 WANTLIB += m netsnmp netsnmpagent netsnmpmibs pt pthread ssh ssl
@@ -42,7 +39,7 @@ LIB_DEPENDS=	net/h323plus>=1.24.99 \
 
 USE_GMAKE=	Yes
 ALL_TARGET=	optshared # XXX gkdefault
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/09/01 20:59:19 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 11:46:09 espie Exp $
 
 COMMENT=		simple, lightweight tiling and floating window manager
 
@@ -13,9 +13,6 @@ MAINTAINER=		Alexander Polakov <polachok@gmail.com>
 
 # MIT/X
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += X11 Xau Xdmcp Xft Xrandr Xrender c expat fontconfig
 WANTLIB += freetype pthread-stubs xcb z
@@ -30,6 +27,6 @@ MAKE_ENV+=		CONF="${SYSCONFDIR}/xdg/echinus"
 MAKE_ENV+=		CLFAGS_EXTRA="${CFLAGS}"
 MAKE_ENV+=		CC="${CC}"
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 .include <bsd.port.mk>

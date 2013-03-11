@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2010/10/18 21:41:47 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2013/03/11 11:41:27 espie Exp $
 
 COMMENT=	Pretty Good Privacy 5.0i (world wide use)
 
@@ -17,8 +17,6 @@ HOMEPAGE=	http://www.pgpi.com
 
 PERMIT_PACKAGE_CDROM=	no commercial use
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	no commercial use
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m
 
 CONFIGURE_STYLE= gnu

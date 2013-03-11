@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2012/02/21 16:21:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/11 11:41:28 espie Exp $
 
 COMMENT=	logs smurf attacks
 DISTNAME=	smurflog-2.1
@@ -10,15 +10,12 @@ MASTER_SITES=	${MASTER_SITE_PACKETSTORM:=UNIX/loggers/}
 MAINTAINER=	Todd T. Fries <todd@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c pcap
 
 AUTOCONF_VERSION=	2.13
 CONFIGURE_STYLE=	autoconf no-autoheader
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/smurflog/

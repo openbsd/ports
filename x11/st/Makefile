@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2012/11/08 20:27:54 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 11:46:15 espie Exp $
 
 COMMENT=		simple X terminal
 
@@ -14,9 +14,6 @@ MAINTAINER=		Joerg Zinke <zinke@openbsd.org>
 
 # MIT/X Consortium License
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c util X11 Xext Xft fontconfig
 
@@ -28,6 +25,6 @@ MAKE_ENV=		LDFLAGS="${LDFLAGS}"
 FAKE_FLAGS=		DESTDIR=""
 WRKDIST=		${WRKDIR}/st-${DISTNAME}
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 .include <bsd.port.mk>

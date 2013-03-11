@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/15 23:29:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/11 11:41:26 espie Exp $
 
 COMMENT=	NetBus client
 
@@ -8,8 +8,6 @@ CATEGORIES=	security
 
 PERMIT_PACKAGE_CDROM=	no obvious license
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	no obvious license
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 MASTER_SITES=	http://ns2.crw.se/~tm/projects/lxnb/
@@ -17,7 +15,7 @@ MASTER_SITES=	http://ns2.crw.se/~tm/projects/lxnb/
 pre-build:
 	rm -f ${WRKSRC}/lxnetbus
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lxnetbus ${PREFIX}/bin/lxnb

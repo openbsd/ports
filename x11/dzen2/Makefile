@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/09/16 12:29:13 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 11:46:09 espie Exp $
 
 COMMENT-main=	general purpose messaging, notification and menu program
 COMMENT-gadgets=gadgets and scripts for dzen2
@@ -17,9 +17,6 @@ MULTI_PACKAGES=		-main -gadgets
 
 # MIT/X
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB-main=		X11 c Xinerama Xpm
 WANTLIB-gadgets=	X11 c
 
@@ -35,7 +32,7 @@ MAKE_FLAGS=		CC=${CC} \
 
 GADGETS=		dbar gdbar gcpubar textwidth
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 post-patch:
 	@perl -pi -e 's,\@DZEN\@,${LOCALBASE}/bin/dzen2,' \

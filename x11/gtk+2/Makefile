@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.158 2013/03/04 17:12:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.159 2013/03/11 11:46:12 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -23,9 +23,6 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ffi gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 m pcre png z
@@ -72,7 +69,7 @@ WANTLIB-guic += c pthread
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
-REGRESS_IS_INTERACTIVE= x11
+TEST_IS_INTERACTIVE= x11
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include/freetype2/ \

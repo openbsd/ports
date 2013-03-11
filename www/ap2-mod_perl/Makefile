@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2012/04/28 09:53:07 stsp Exp $
+# $OpenBSD: Makefile,v 1.21 2013/03/11 11:44:41 espie Exp $
 
 COMMENT=	module that embeds a Perl interpreter into Apache2
 
@@ -16,9 +16,6 @@ MAINTAINER=	Srebrenko Sehic <haver@insecure.dk>
 
 # Apache Software License
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 SHARED_ONLY=		Yes
 

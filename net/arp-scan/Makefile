@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/03 21:28:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 11:35:45 espie Exp $
 
 COMMENT =	ARP scanning and fingerprinting tool
 DISTNAME =	arp-scan-1.8
@@ -14,10 +14,7 @@ DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		oui-iab-20130303.tar.bz2:0
 
 # GPLv3+
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
 
 WANTLIB =		c pcap
 

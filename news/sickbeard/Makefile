@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/07/10 10:29:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:35:59 espie Exp $
 
 COMMENT =			search for TV serie nzb-files via web interface
 DISTNAME =			midgetspy-Sick-Beard-b3a7afe
@@ -11,9 +11,6 @@ REVISION =			0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 MASTER_SITES = 			http://www.nazgul.ch/pub/
 
@@ -23,7 +20,7 @@ BUILD_DEPENDS =			${_MODPY_BUILD_DEPENDS}
 RUN_DEPENDS =			news/sabnzbd
 
 NO_BUILD =			Yes
-NO_REGRESS =			Yes
+NO_TEST =			Yes
 PKG_ARCH =			*
 
 WRKSRC =			${WRKDIR}/midgetspy-Sick-Beard-b3a7afe

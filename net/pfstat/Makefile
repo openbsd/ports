@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2011/06/23 22:50:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2013/03/11 11:35:54 espie Exp $
 
 COMMENT-main=	packet filter statistics visualization
 COMMENT-daemon=	pfstat daemon
@@ -18,9 +18,6 @@ MAINTAINER=	Daniel Hartmeier <dhartmei@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=		graphics/gd
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/22 08:36:55 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2013/03/11 11:46:08 espie Exp $
 
 COMMENT=	blow holes through windows
 
@@ -10,9 +10,6 @@ MASTER_SITES=	http://hpux.connect.org.uk/ftp/hpux/X11/Demos/blast-1.0/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext c
 
 USE_GROFF =		Yes
@@ -20,7 +17,7 @@ USE_GROFF =		Yes
 do-build:
 	cd ${WRKSRC} && ${CC} blast.c -I${X11BASE}/include ${CFLAGS} -L$(X11BASE)/lib -lX11 -lXext -o blast
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	$(INSTALL_PROGRAM) $(WRKSRC)/blast $(PREFIX)/bin/blast

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/01/30 16:12:36 bcallah Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/11 11:46:16 espie Exp $
 
 COMMENT=		GTK2 terminal emulator with split-window and tabs support
 
@@ -13,9 +13,6 @@ MAINTAINER=		Juan Francisco Cantero Hurtado <iam@juanfra.info>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://launchpad.net/terminator/trunk/${MODPY_EGG_VERSION}/+download/
 
@@ -27,7 +24,7 @@ RUN_DEPENDS=		devel/vte,-python \
 			x11/gtk+2,-guic \
 			x11/keybinder,-python
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 MODPY_SETUPTOOLS=	Yes
 MODPY_SETUP=		setup.py --without-icon-cache

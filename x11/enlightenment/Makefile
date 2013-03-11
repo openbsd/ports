@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2012/12/23 13:25:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.62 2013/03/11 11:46:09 espie Exp $
 
 COMMENT=	themed window manager
 
@@ -17,9 +17,6 @@ MAINTAINER=	Amit Kulkarni <amitkulz@gmail.com>
 
 # X11
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ICE Imlib2 SM X11 Xcomposite Xdamage Xext Xfixes Xft
 WANTLIB += Xinerama Xrandr Xrender audiofile c esd expat ffi fontconfig

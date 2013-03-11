@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/09 09:31:12 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/11 11:35:44 espie Exp $
 
 COMMENT=	free H.264/MPEG-4 AVC encoder
 
@@ -32,7 +32,7 @@ CONFIGURE_ARGS+=--disable-asm \
 		--enable-static \
 		--prefix=${PREFIX}
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>
 

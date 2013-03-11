@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/22 08:36:52 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 11:44:47 espie Exp $
 
 COMMENT=	apache HTTP server request library
 SHARED_ONLY=	Yes
@@ -16,9 +16,6 @@ MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # Artistic + GPL
 PERMIT_PACKAGE_CDROM=  Yes
-PERMIT_PACKAGE_FTP=    Yes
-PERMIT_DISTFILES_CDROM=Yes
-PERMIT_DISTFILES_FTP=  Yes
 WANTLIB=	apr-1 aprutil-1 db expat
 
 USE_LIBTOOL=	Yes
@@ -32,9 +29,9 @@ BUILD_DEPENDS=	devel/p5-ExtUtils-XSBuilder
 LIB_DEPENDS=	devel/apr \
 		devel/apr-util \
 		www/ap2-mod_perl
-REGRESS_DEPENDS=www/p5-Apache-Test
+TEST_DEPENDS=www/p5-Apache-Test
 
-post-regress:
+post-test:
 	cd ${WRKSRC}/glue/perl && \
 	    LD_LIBRARY_PATH="${WRKSRC}/library/.libs:${LOCALBASE}" ${MAKE} test
 

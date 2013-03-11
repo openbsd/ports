@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2013/01/08 09:30:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.97 2013/03/11 11:46:08 espie Exp $
 
 # DPB: not parallel-safe
 
@@ -18,10 +18,7 @@ HOMEPAGE=	http://dbus.freedesktop.org/
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2+
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB += ICE SM X11 c expat kvm pthread xcb
 

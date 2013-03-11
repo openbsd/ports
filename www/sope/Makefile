@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2013/02/06 17:35:51 sebastia Exp $
+# $OpenBSD: Makefile,v 1.30 2013/03/11 11:44:49 espie Exp $
 
 COMMENT-main=		Skyrix Object Publishing Environment
 COMMENT-mysql=		SOPE MySQL adaptor
@@ -25,9 +25,6 @@ MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # LGPLv2 or later
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 MULTI_PACKAGES=	-main -mysql -postgres
 
@@ -59,7 +56,7 @@ MAKE_ENV+=	OBJC_INCLUDE_PATH="${LOCALBASE}/include/postgresql;${LOCALBASE}/inclu
 MAKE_FLAGS+=	MAJOR_VERSION=${SO_MAJOR} MINOR_VERSION=${SO_MINOR}
 MAKE_FLAGS+=	SOPE_MAJOR_VERSION=4 SOPE_MINOR_VERSION=9
 CONFIGURE_ENV+=	${MAKE_ENV}
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 WRKDIST =	${WRKDIR}/SOPE
 

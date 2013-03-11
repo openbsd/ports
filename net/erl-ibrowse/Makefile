@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/10 19:35:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:35:46 espie Exp $
 
 COMMENT=	Erlang HTTP client
 
@@ -12,8 +12,6 @@ HOMEPAGE=	https://github.com/opscode/ibrowse
 
 # LGPL / BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://distfiles.nl/
 

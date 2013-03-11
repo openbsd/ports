@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2012/10/15 15:18:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 11:35:58 espie Exp $
 
 COMMENT =		No News is Good News (Fast CLI Point & Read Newsreader)
 DISTNAME =		nn-6.7.3
@@ -12,8 +12,6 @@ MAINTAINER =		Aaron W. Hsu <arcfide@sacrideo.us>
 # Requirement
 PERMIT_PACKAGE_CDROM =	CDs not sold at cost
 PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = CDs not sold at cost
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c termlib
 
@@ -22,7 +20,7 @@ MASTER_SITES =		ftp://ftp.nndev.org/pub/nn-6.7/ \
 EXTRACT_SUFX =		.tar.Z
 
 USE_GROFF =		Yes
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 MAKE_ENV =		CC="${CC}"
 
 .if "${MACHINE_ARCH}" == "alpha"

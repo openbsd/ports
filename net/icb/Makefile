@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2012/08/19 22:30:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2013/03/11 11:35:47 espie Exp $
 
 COMMENT=	Internet CB - mostly-defunct chat client
 
@@ -10,16 +10,13 @@ MASTER_SITES=	ftp://ftp.swcp.com/pub/icb/clients/unix/
 EXTRACT_SUFX=	.tar.Z
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c curses termcap
 
 do-configure:
 	@sed -e s,@PREFIX@,${PREFIX},g \
 	     -e s,@CC@,${CC},g ${FILESDIR}/config > ${WRKSRC}/config
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/icb

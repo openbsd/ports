@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2012/04/22 20:50:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 11:35:57 espie Exp $
 
 COMMENT =	ssl/ssh multiplexer
 
@@ -11,9 +11,6 @@ HOMEPAGE =	http://www.rutschle.net/tech/sslh.shtml
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 MASTER_SITES =	http://www.rutschle.net/tech/ \
 		http://mirror2.openwrt.org/sources/
@@ -21,7 +18,7 @@ MASTER_SITES =	http://www.rutschle.net/tech/ \
 WANTLIB =	c wrap
 
 MAKE_FLAGS =	CC="${CC}"
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/sslh

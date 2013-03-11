@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2012/09/23 16:57:35 jeremy Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/11 11:44:49 espie Exp $
 
 COMMENT=		automate interaction with websites
 
@@ -10,9 +10,6 @@ HOMEPAGE=		http://mechanize.rubyforge.org/mechanize
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
 			${MODRUBY_RAKE_DEPENDS}

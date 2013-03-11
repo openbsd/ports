@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2012/03/29 13:38:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 11:35:48 espie Exp $
 
 COMMENT=	TCP/IP traffic logging tool
 
@@ -11,9 +11,6 @@ HOMEPAGE=	http://ojnk.sourceforge.net
 MAINTAINER=	Brian Caswell <bmc@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c pcap pthread
 
 USE_GMAKE=	Yes

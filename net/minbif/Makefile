@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/02/09 14:49:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/11 11:35:49 espie Exp $
 
 COMMENT =	IRC-friendly instant messaging client
 
@@ -12,9 +12,6 @@ MASTER_SITES=	${HOMEPAGE}attachments/download/50/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES =	devel/gettext devel/cmake
 
@@ -23,7 +20,7 @@ WANTLIB =	purple c glib-2.0 gthread-2.0 m pthread stdc++
 CONFIGURE_ENV+=	CPPFLAGS+="-I${X11BASE}/include"
 
 USE_GROFF =	Yes
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 # commented out atm, needs testing
 #FLAVORS = full

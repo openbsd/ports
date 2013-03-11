@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/12/03 11:46:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 11:41:26 espie Exp $
 
 COMMENT=	Perl module to authenticate against a RADIUS server
 
@@ -12,9 +12,6 @@ MAINTAINER=	Abel Abraham Camarillo Ojeda <acamari@the00z.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Authen/}
 WRKDIST=	${WRKDIR}/${DISTNAME:S/RadiusPerl/Authen-Radius/}
@@ -24,14 +21,14 @@ RUN_DEPENDS=	security/p5-MD5>=1.7 \
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_GROFF =	Yes
-REGRESS_IS_INTERACTIVE=	Yes
+TEST_IS_INTERACTIVE=	Yes
 
 pre-configure:
 	perl -pi -e \
 	    s,/etc/raddb,${WRKINST}/${PREFIX}/share/examples/p5-Authen-Radius, \
 	    ${WRKSRC}/install-radius-db.PL
 
-regress:
-	cd ${WRKSRC}; make test
+do-regress:
+	cd ${WRKSRC} && ${MAKE} test
 
 .include <bsd.port.mk>

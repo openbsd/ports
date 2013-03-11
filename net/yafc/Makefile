@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2012/10/15 15:18:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/11 11:35:58 espie Exp $
 
 COMMENT=	powerful console ftp client with many features
 
@@ -12,9 +12,6 @@ MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c ncurses readline
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2012/12/11 15:30:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.70 2013/03/11 11:35:49 espie Exp $
 
 COMMENT-main=	extendable SNMP implementation
 COMMENT-perl=	SNMP modules for Perl
@@ -27,9 +27,6 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB-main=		c crypto kvm m perl util wrap
 WANTLIB-perl=		crypto m netsnmp netsnmpagent netsnmptrapd netsnmpmibs
@@ -65,7 +62,7 @@ CONFIGURE_ARGS=   ${CONFIGURE_SHARED} \
 	--with-temp-file-pattern=/tmp/snmpdXXXXXXXXXXXX \
 	--with-logfile="/var/log/snmpd" \
 	--with-persistent-directory="/var/net-snmp"
-REGRESS_TARGET=	test
+TEST_TARGET=	test
 
 pre-configure:
 	@if ! fgrep '#define NETSNMP_DEFAULT_MIBS "${DEFAULT_MIBS}"' \

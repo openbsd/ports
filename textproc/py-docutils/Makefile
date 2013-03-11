@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2012/08/09 08:48:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 11:42:46 espie Exp $
 
 COMMENT =	process plaintext documentation into other formats
 
@@ -14,9 +14,6 @@ HOMEPAGE =	http://docutils.sourceforge.net/
 
 # BSD/GPL/Python Software License
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=docutils/}
 
@@ -29,7 +26,7 @@ pre-build:
 	@mv ${WRKSRC}/tools/rst${file}{.py,}
 .endfor
 
-do-regress: fake
+do-test: fake
 	@cd ${WRKSRC}/test && ${MODPY_BIN} ./alltests.py
 
 .include <bsd.port.mk>

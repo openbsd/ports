@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/12/28 18:13:51 rpe Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:44:41 espie Exp $
 
 COMMENT=		free real-time logfile analyzer
 
@@ -12,9 +12,6 @@ MAINTAINER=		Robert Peichaer <rpe@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=awstats/}
 
@@ -22,7 +19,7 @@ RUN_DEPENDS=		net/p5-Geo-IP \
 			www/p5-libwww
 
 NO_BUILD=		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 PKG_ARCH=		*
 

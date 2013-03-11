@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/01/02 17:12:21 landry Exp $
+# $OpenBSD: Makefile,v 1.31 2013/03/11 11:46:17 espie Exp $
 
 COMMENT=	Xfce4 notification daemon
 
@@ -8,10 +8,7 @@ REVISION=	20
 
 MASTER_SITES=	http://archive.xfce.org/src/archive/${XFCE_GOODIE}/${XFCE_BRANCH}/
 # GPLv2
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
 MODXFCE_DESKTOP_FILE=	Yes

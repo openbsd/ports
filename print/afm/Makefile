@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2007/09/15 21:36:44 merdely Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 11:37:53 espie Exp $
 
 COMMENT=	Adobe Font Metrics
 
@@ -10,8 +10,6 @@ EXTRACT_SUFX=	-tar.Z
 
 PERMIT_PACKAGE_CDROM=	no obvious license
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	no obvious license
-PERMIT_DISTFILES_FTP=	Yes
 
 MAKE_ENV=	INSTALL_DATA="${INSTALL_DATA}"
 
@@ -19,7 +17,7 @@ pre-patch:
 	@rm -rf ${WRKSRC}/RCS
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 PKG_ARCH=	*
 
 .include <bsd.port.mk>

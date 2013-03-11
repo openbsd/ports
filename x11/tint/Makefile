@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/09/16 12:29:17 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/11 11:46:16 espie Exp $
 
 ONLY_FOR_ARCHS= ${APM_ARCHS}
 
@@ -16,9 +16,6 @@ MAINTAINER=	Edd Barrett <edd@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	Imlib2>=2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \
@@ -40,7 +37,7 @@ MODULES=	devel/cmake lang/python devel/gettext
 
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 CONFIGURE_ARGS=	-DMANDIR="${PREFIX}/man"
 

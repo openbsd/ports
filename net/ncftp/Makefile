@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2011/11/19 15:58:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.43 2013/03/11 11:35:49 espie Exp $
 
 COMMENT=	ftp replacement with advanced user interface
 
@@ -10,9 +10,6 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c ncurses
 
@@ -34,6 +31,6 @@ CONFIGURE_ARGS=	--disable-ccdv
 CONFIGURE_ENV=	TAR=/bin/tar
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/sh
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

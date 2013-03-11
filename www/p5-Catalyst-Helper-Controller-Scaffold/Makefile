@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/12/03 11:46:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 11:44:44 espie Exp $
 
 COMMENT=		catalyst helper for CRUD scaffolding
 
@@ -10,9 +10,6 @@ USE_GROFF =		Yes
 
 # same as perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=		databases/p5-Class-DBI-AsForm \
 			www/p5-Catalyst-Plugin-FormValidator \

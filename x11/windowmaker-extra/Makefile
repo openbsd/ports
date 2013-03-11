@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2012/12/13 16:34:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/11 11:46:16 espie Exp $
 
 COMMENT=		themes and icons for Window Maker
 
@@ -11,15 +11,12 @@ HOMEPAGE=		http://www.windowmaker.info/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_WINDOWMAKER:=source/release/}
 
 RUN_DEPENDS=		x11/windowmaker
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--prefix="${PREFIX}"

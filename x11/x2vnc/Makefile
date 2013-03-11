@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/24 21:15:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/11 11:46:17 espie Exp $
 
 COMMENT=	one keyboard and/or mouse, multiple X and VNC displays
 
@@ -8,9 +8,6 @@ CATEGORIES=	x11
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xext Xss c
 
@@ -23,7 +20,7 @@ CONFIGURE_STYLE=	imake
 
 ALL_TARGET=	x2vnc x2vnc.0
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_MAN} ${WRKSRC}/x2vnc.0 ${PREFIX}/man/cat1

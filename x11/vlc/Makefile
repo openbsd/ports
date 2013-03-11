@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.166 2013/03/09 09:32:03 brad Exp $
+# $OpenBSD: Makefile,v 1.167 2013/03/11 11:46:16 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -25,8 +25,6 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # LGPLv2.1+ and GPLv2+
 PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB-common=	dbus-1 m pthread ${MODGETTEXT_WANTLIB}
 WANTLIB-main=	GL ICE lib/qt4/QtGui QtCore SM SDL SDL_image X11 Xcomposite \

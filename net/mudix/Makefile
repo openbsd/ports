@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2012/08/18 12:41:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 11:35:49 espie Exp $
 
 COMMENT=	ncurses-based MUD client with triggers, aliases, colors
 
@@ -10,9 +10,6 @@ MAINTAINER=	Mathieu Braem <majeu@bsdaemon.be>
 
 # BSD-style
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c curses panel
 
 MASTER_SITES=	http://dw.nl.eu.org/mudix/
@@ -24,6 +21,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/mudix
 	${INSTALL_DATA} ${WRKSRC}/sample.usr ${PREFIX}/share/mudix
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/18 21:25:08 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/11 11:35:58 espie Exp $
 
 COMMENT=	assemble usenet binaries
 
@@ -7,9 +7,6 @@ DISTNAME=	aub
 CATEGORIES=	news
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../../scripts/news/nntpstuff/aub/}
 DISTFILES=	aub aub.1 BUG_FIXES
@@ -17,7 +14,7 @@ DIST_SUBDIR=	aub
 EXTRACT_CASES=	*) cp ${FULLDISTDIR}/$$archive . ;;
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 PKG_ARCH=	*
 WRKDIST=	${WRKDIR}
 USE_GROFF =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/11/16 00:20:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/11 11:35:58 espie Exp $
 
 COMMENT=	client and servers for the WIDE DHCP protocol
 
@@ -11,16 +11,13 @@ MASTER_SITES=   ftp://sh.wide.ad.jp/WIDE/free-ware/dhcp/
 HOMEPAGE=	http://www.sfc.wide.ad.jp/~tomy/dhcp/index-e.html
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c kvm 
 
 MAKE_FLAGS=	OSTYPE=OpenBSD CC=${CC} CFLAGS="${CFLAGS} -g -Wall -I. -I${WRKBUILD}/server" 
 FAKE_FLAGS= 	SBIN=${WRKINST}${PREFIX}/sbin MAN=${WRKINST}${PREFIX}/man LIBEXEC=${WRKINST}${PREFIX}/libexec
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 DOCS=		README README.jis db_sample/intro.dhcp db_sample/intro.dhcp.jis
 EXAMPLES=	dhcpdb.pool dhcpdb.relay dhcpdb.server

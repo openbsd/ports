@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/03/08 01:32:25 brad Exp $
+# $OpenBSD: Makefile,v 1.31 2013/03/11 11:35:44 espie Exp $
 
 COMMENT =	create, alter and inspect Matroska files
 
@@ -10,9 +10,6 @@ HOMEPAGE =	http://www.bunkus.org/videotools/mkvtoolnix/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	boost_system-mt>=1.1 boost_regex-mt>=1.1 \
 		boost_filesystem-mt>=1.1 \
@@ -64,7 +61,7 @@ WANTLIB +=	wx_base wx_base_net wx_base_odbc wx_base_xml wx_gtk2_adv \
 CONFIGURE_ARGS += --enable-gui --enable-wxwidgets
 .endif
 
-NO_REGRESS =    Yes
+NO_TEST =    Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/man/ja.po

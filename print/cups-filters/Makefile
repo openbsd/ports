@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/10 08:17:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/11 11:37:53 espie Exp $
 
 # XXX remove @exec-update when we branch 5.4-current
 
@@ -16,9 +16,6 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv3 - LGPLv2 - GPLv2+ - MIT
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += asn1 avahi-client avahi-common avahi-glib c crypto
 WANTLIB += cups cupsimage dbus-1 expat fontconfig freetype glib-2.0

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2012/11/30 19:38:09 chrisz Exp $
+# $OpenBSD: Makefile,v 1.52 2013/03/11 11:35:49 espie Exp $
 
 COMMENT =	e-donkey client
 DISTNAME =	mldonkey-3.1.3
@@ -11,10 +11,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=mldonkey/}
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_FTP =	Yes
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_DISTFILES_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
 
 EXTRACT_SUFX =		.tar.bz2
 
@@ -60,7 +57,7 @@ FAKE_FLAGS =	OCAML_NATIVE=yes
 FAKE_FLAGS =	OCAML_NATIVE=no
 .endif
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 .include <bsd.port.arch.mk>
 post-install:

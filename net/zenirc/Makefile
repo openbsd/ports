@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/09/16 11:13:41 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 11:35:58 espie Exp $
 
 COMMENT-main=	IRC client for Emacs
 COMMENT-el=	elisp sources of zenirc
@@ -16,9 +16,6 @@ MAINTAINER=	Alexandre Anriot <aanriot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ftp.zenirc.org/pub/zenirc/
 
@@ -36,6 +33,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/emacs/lisp/zenirc/
 	@cp ${WRKSRC}/src/*.el ${PREFIX}/share/emacs/lisp/zenirc/
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

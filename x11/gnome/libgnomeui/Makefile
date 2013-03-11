@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2012/09/29 10:52:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2013/03/11 11:46:11 espie Exp $
 
 COMMENT=		user interface components for GNOME
 
@@ -10,9 +10,6 @@ SHARED_LIBS +=	gnomeui-2      2400.0         # .2400.2
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 EXTRACT_SUFX=		.tar.bz2
 

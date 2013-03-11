@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2012/11/09 16:15:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2013/03/11 11:35:57 espie Exp $
 
 COMMENT-main=		people aggregation library
 COMMENT-tracker=	(meta-)tracker backend for folks
@@ -61,7 +61,7 @@ LIB_DEPENDS-tracker=	${MODGETTEXT_LIB_DEPENDS} \
 			${BASE_PKGPATH},-main \
 			x11/gnome/tracker>=0.14.0
 
-REGRESS_DEPENDS=	${FULLPKGNAME}:${BASE_PKGPATH}
+TEST_DEPENDS=	${FULLPKGNAME}:${BASE_PKGPATH}
 
 MODGNOME_TOOLS= 	goi vala
 

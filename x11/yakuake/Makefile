@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/02/01 08:39:34 rpe Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 11:46:19 espie Exp $
 
 COMMENT=	yet another kuake KDE terminal emulator
 
@@ -12,9 +12,6 @@ HOMEPAGE=	http://yakuake.kde.org/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=yakuake/}
 

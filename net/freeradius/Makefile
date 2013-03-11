@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2013/02/09 14:49:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2013/03/11 11:35:46 espie Exp $
 
 SHARED_ONLY=	Yes
 SHARED_LIBS +=  freeradius-radius    4.1      # .0.0
@@ -31,9 +31,6 @@ MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # GPLv2 - LGPLv2 - OpenSSL exemption
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	crypto ssl
 
@@ -60,9 +57,9 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-rlm-krb5-include-dir=/usr/include/kerberosV \
 		--with-system-libltdl
 
-REGRESS_TARGET=	tests
-REGRESS_DEPENDS=freeradius-$V:net/freeradius
-REGRESS_IS_INTERACTIVE=Yes # doesn't exit properly
+TEST_TARGET=	tests
+TEST_DEPENDS=freeradius-$V:net/freeradius
+TEST_IS_INTERACTIVE=Yes # doesn't exit properly
 
 MULTI_PACKAGES=	-main
 SUBST_VARS+=	V
@@ -138,7 +135,7 @@ post-install:
 .endfor
 	rm ${PREFIX}/lib/freeradius/*.la ${PREFIX}/lib/freeradius/*.a
 
-pre-regress:
+pre-test:
 	perl -pi -e 's,\$${DESTDIR},${DESTDIR},g' ${WRKSRC}/raddb/radiusd.conf
 
 .include <bsd.port.mk>

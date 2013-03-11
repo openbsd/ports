@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/03/04 07:37:46 benoit Exp $
+# $OpenBSD: Makefile,v 1.29 2013/03/11 11:41:28 espie Exp $
 
 COMMENT = 	Python module that implements the SSH2 protocol
 
@@ -13,9 +13,6 @@ MAINTAINER = 		Benoit Lecocq <benoit@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM = 	Yes
-PERMIT_PACKAGE_FTP = 	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP = 	Yes
 
 MASTER_SITES = 	${MASTER_SITE_PYPI:=p/paramiko/}
 
@@ -24,7 +21,7 @@ MODULES = 	lang/python
 MODPY_SETUPTOOLS = Yes
 
 RUN_DEPENDS = 	security/py-crypto
-REGRESS_DEPENDS = ${RUN_DEPENDS}
+TEST_DEPENDS = ${RUN_DEPENDS}
 
 pre-build:
 	@perl -pi -e "s,^\#\!/usr/bin/env python,#!${MODPY_BIN}," \
@@ -37,7 +34,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/demos/* \
 	  ${PREFIX}/share/examples/py-paramiko
 
-do-regress:
+do-test:
 	cd ${WRKSRC} && ${MODPY_BIN} test.py --verbose
 
 .include <bsd.port.mk>

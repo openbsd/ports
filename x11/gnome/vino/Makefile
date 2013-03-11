@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2012/11/20 08:59:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.51 2013/03/11 11:46:12 espie Exp $
 
 COMMENT=	GNOME desktop sharing server
 
@@ -12,9 +12,6 @@ HOMEPAGE=	https://live.gnome.org/Vino
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xtst Xxf86vm

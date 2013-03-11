@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2013/01/28 07:26:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2013/03/11 11:37:53 espie Exp $
 
 COMMENT=		Foomatic PPD print filters
 
@@ -12,9 +12,6 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c dbus-1 m pthread
 

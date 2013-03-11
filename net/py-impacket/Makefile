@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/09/16 11:13:40 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 11:35:55 espie Exp $
 
 COMMENT =		Python classes providing access to network packets
 
@@ -13,9 +13,6 @@ HOMEPAGE =		http://oss.coresecurity.com/projects/impacket.html
 
 # Apache
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		http://oss.coresecurity.com/repo/
 
@@ -26,7 +23,7 @@ MODULES =		lang/python
 RUN_DEPENDS =		security/py-crypto \
 			net/py-pcapy
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-impacket

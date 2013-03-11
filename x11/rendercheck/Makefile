@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/06/02 17:09:32 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/11 11:46:15 espie Exp $
 
 COMMENT=	X Render extension test suite
 
@@ -11,9 +11,6 @@ MAINTAINER=	Matthieu Herrb <matthieu@openbsd.org>
 
 # X11/MIT
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xrender c pthread-stubs xcb
 

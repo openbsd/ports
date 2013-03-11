@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2012/11/22 18:37:32 pascal Exp $
+# $OpenBSD: Makefile,v 1.62 2013/03/11 11:35:57 espie Exp $
 
 COMMENT=	anonymity service using onion routing
 
@@ -10,9 +10,6 @@ MAINTAINER=	Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c crypto event m pthread ssl z
 

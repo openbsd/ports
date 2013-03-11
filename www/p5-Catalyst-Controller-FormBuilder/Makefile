@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2012/04/08 21:58:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 11:44:44 espie Exp $
 
 COMMENT=	Catalyst FormBuilder Base Controller
 
@@ -11,9 +11,6 @@ MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	devel/p5-MRO-Compat \
 		devel/p5-Test-WWW-Mechanize-Catalyst \

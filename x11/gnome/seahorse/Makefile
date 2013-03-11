@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2012/11/12 08:21:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.79 2013/03/11 11:46:12 espie Exp $
 
 COMMENT=		GNOME encryption interface
 
@@ -11,9 +11,6 @@ HOMEPAGE=		http://projects.gnome.org/seahorse/
 
 # GPLv2/GFDLv1.1
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm asn1 assuan atk-1.0

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2012/09/23 16:57:35 jeremy Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 11:42:47 espie Exp $
 
 COMMENT =		builds man pages
 
@@ -12,9 +12,6 @@ MAINTAINER =		Jeremy Evans <jeremy@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		lang/ruby
 
@@ -34,7 +31,7 @@ RUN_DEPENDS =		textproc/ruby-hpricot,${MODRUBY_FLAVOR}>=0.8.2 \
 			textproc/ruby-rdiscount,${MODRUBY_FLAVOR}>=1.5.8 \
 			www/ruby-sinatra,${MODRUBY_FLAVOR}
 
-MODRUBY_REGRESS =	rake
-MODRUBY_REGRESS_ENV =	RUBYOPT=-rubygems
+MODRUBY_TEST =	rake
+MODRUBY_TEST_ENV =	RUBYOPT=-rubygems
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2013/01/05 19:45:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.76 2013/03/11 11:41:29 espie Exp $
 
 COMMENT=	GNU Bourne Again Shell
 
@@ -11,9 +11,6 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_GNU:=bash/}
 MASTER_SITES0=	${MASTER_SITE_GNU:=bash/${DISTNAME}-patches/}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2007/09/15 22:36:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 11:35:55 espie Exp $
 
 COMMENT=	programmable ncurses-based AIM client
 DISTNAME=	pork-0.99.8.1
@@ -9,9 +9,6 @@ HOMEPAGE=	http://ojnk.sourceforge.net/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c m ncurses perl util
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2012/07/10 15:22:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/11 11:35:48 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -12,12 +12,9 @@ HOMEPAGE=	http://www.tecgraf.puc-rio.br/~diego/professional/luasocket/
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	lang/lua
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 MAKE_FILE=	makefile
 

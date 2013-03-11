@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2011/07/03 22:38:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/11 11:41:32 espie Exp $
 
 COMMENT=	copy stdin to a qmail-style maildir
 
@@ -15,13 +15,11 @@ MAINTAINER=	Armin Wolfermann <armin@wolfermann.org>
 # BSD+DJB
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	No
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c
 
 ALL_TARGET=	maildir safecat
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/safecat ${PREFIX}/bin/safecat

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/09/16 12:00:08 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 11:44:48 espie Exp $
 
 COMMENT=		handle HTML forms on the client side
 
@@ -16,9 +16,6 @@ MAINTAINER=		Will Maier <wcmaier@openbsd.org>
 
 # BSD-like or ZPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/07 13:27:13 nigel Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 11:41:32 espie Exp $
 
 COMMENT=		forensic toolkit based on TCT
 
@@ -15,8 +15,6 @@ MAINTAINER=		Nigel Taylor <nigel@openbsd.org>
 # CPLv1 & IBM & GPLv2
 PERMIT_PACKAGE_CDROM=	commercial contributor must indemnify all others
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	commercial contributor must indemnify all others
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sleuthkit/}
 
@@ -27,7 +25,7 @@ USE_GROFF =		Yes
 
 RUN_DEPENDS=		converters/p5-DateManip
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 pre-configure:
 	@perl -pi -e "s:%%PREFIX%%:${PREFIX}:" ${WRKSRC}/man/sorter.1

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/11/05 10:43:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 11:46:15 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -17,9 +17,6 @@ HOMEPAGE=	http://www.riverbankcomputing.co.uk/software/pyqt/intro
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	GL GLU X11 Xext Xmu c m pthread stdc++ qui
 
@@ -27,7 +24,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/py-sip>=4.8.1
 LIB_DEPENDS=	x11/qt3
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 MASTER_SITES=	http://www.riverbankcomputing.co.uk/static/Downloads/PyQt3/ \
 		http://spacehopper.org/mirrors/

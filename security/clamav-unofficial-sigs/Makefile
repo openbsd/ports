@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/08/09 00:34:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:41:24 espie Exp $
 
 COMMENT =	fetch and update unofficial signatures for ClamAV
 
@@ -11,9 +11,6 @@ MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	 Yes
-PERMIT_PACKAGE_FTP =	 Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	 Yes
 
 MASTER_SITES =	http://www.inetmsg.com/pub/ \
 		http://www.inetmsg.com/pub/archive/
@@ -21,7 +18,7 @@ MASTER_SITES =	http://www.inetmsg.com/pub/ \
 RUN_DEPENDS =	net/curl net/rsync security/gnupg
 
 NO_BUILD =	Yes
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 PKG_ARCH =	*
 

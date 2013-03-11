@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2012/11/13 08:40:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.92 2013/03/11 11:46:10 espie Exp $
 
 COMMENT=		Eye of GNOME, image viewing and cataloging program
 
@@ -11,9 +11,6 @@ HOMEPAGE=		https://live.gnome.org/EyeOfGnome/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0

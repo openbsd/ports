@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2012/04/08 21:58:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 11:44:44 espie Exp $
 
 COMMENT =	flexible caching support for Catalyst
 
@@ -11,14 +11,11 @@ MAINTAINER =	Simon Bertrang <simon@openbsd.org>
 
 # Perl/MIT
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 BUILD_DEPENDS =		devel/p5-Test-Weaken
 RUN_DEPENDS =		devel/p5-MRO-Compat \
 			www/p5-Catalyst-Runtime
-REGRESS_DEPENDS =	devel/p5-Test-Exception \
+TEST_DEPENDS =	devel/p5-Test-Exception \
 			devel/p5-Test-Deep
 
 .include <bsd.port.mk>

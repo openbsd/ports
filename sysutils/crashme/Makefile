@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/04/20 20:14:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:41:29 espie Exp $
 
 COMMENT =		test operating environment software robustness
 
@@ -12,11 +12,9 @@ CATEGORIES =		sysutils
 # BSD
 PERMIT_PACKAGE_CDROM =	without fee
 PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		http://distfiles.nl/
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 WANTLIB =		c
 
 do-build:

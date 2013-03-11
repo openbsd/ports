@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/11/19 22:31:34 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/11 11:35:49 espie Exp $
 # Uses pthreads
 
 COMMENT=		daemon/libs/toolkit for routing BGP4+, RIP, OSPF, etc.
@@ -12,9 +12,6 @@ HOMEPAGE=		http://sourceforge.net/projects/mrt
 CATEGORIES=     	net
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 CONFIGURE_ARGS+=	--disable-ipv6 --disable-thread
@@ -26,7 +23,7 @@ CONFIGURE_STYLE=	gnu
 WRKDIST=		${WRKDIR}/mrt-${V}/src
 
 USE_GROFF =		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 FAKE_FLAGS=		DESTDIR=${WRKINST}/${TRUEPREFIX}/sbin \
 			MANDIR=${WRKINST}/${TRUEPREFIX}/man

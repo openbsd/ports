@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2012/04/08 21:58:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 11:44:44 espie Exp $
 
 COMMENT =	formular fu for catalyst
 
@@ -11,9 +11,6 @@ MAINTAINER =	Simon Bertrang <simon@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 BUILD_DEPENDS =		devel/p5-Task-Weaken
 
@@ -25,7 +22,7 @@ RUN_DEPENDS =		devel/p5-Config-Any>=0.23 \
 			devel/p5-MRO-Compat \
 			devel/p5-namespace-autoclean
 
-REGRESS_DEPENDS =	devel/p5-Config-General \
+TEST_DEPENDS =	devel/p5-Config-General \
 			devel/p5-Test-WWW-Mechanize>=1.16 \
 			devel/p5-Test-WWW-Mechanize-Catalyst \
 			textproc/p5-Catalyst-View-TT \

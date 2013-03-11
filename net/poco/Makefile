@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2012/04/23 17:15:18 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/11 11:35:55 espie Exp $
 
 COMMENT =	POCO C++ libraries for network based applications
 
@@ -19,9 +19,6 @@ MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # Boost software license
 PERMIT_PACKAGE_CDROM =  	Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 WANTLIB += c crypto m pthread ssl stdc++ iodbc iodbcinst mysqlclient
 WANTLIB += expat pcre sqlite3 z
@@ -37,7 +34,7 @@ CONFIGURE_ARGS =	--config=OpenBSD --no-tests --no-samples \
 			--library-path=${LOCALBASE}/lib
 MAKE_FLAGS =		ODBCLIBDIR=${LOCALBASE}/lib
 MAKE_ENV += 		CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
-REGRESS_TARGET =	tests
+TEST_TARGET =	tests
 
 pre-configure:
 	cp ${FILESDIR}/OpenBSD ${WRKSRC}/build/config/

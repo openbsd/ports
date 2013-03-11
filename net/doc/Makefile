@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/18 18:36:46 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 11:35:46 espie Exp $
 
 COMMENT=	automated domain testing tool
 
@@ -8,9 +8,6 @@ CATEGORIES=    	net
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		ftp://ftp.shub-internet.org/pub/shub/brad/dns/
 
@@ -19,7 +16,7 @@ do-build:
 	sed "s,y0y0y0,${PREFIX}/libexec/doc/," ${WRKSRC}/doc.dist >${WRKSRC}/doc
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/libexec/doc

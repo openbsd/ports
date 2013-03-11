@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/12/22 20:15:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:42:45 espie Exp $
 
 COMMENT=		extension to add XPath support to XML::DOM
 
@@ -7,9 +7,6 @@ CATEGORIES=		textproc
 
 # perl
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 MODULES=		cpan
 

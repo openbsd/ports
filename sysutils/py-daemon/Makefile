@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/09/16 11:41:40 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:41:32 espie Exp $
 
 COMMENT=		library to implement a Unix daemon process
 
@@ -13,9 +13,6 @@ HOMEPAGE=		http://pypi.python.org/pypi/python-daemon/
 
 # PSF-2+
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES=		${MASTER_SITE_PYPI:=p/python-daemon/}
 
@@ -23,7 +20,7 @@ MODULES=		lang/python
 
 MODPY_SETUPTOOLS=	Yes
 
-REGRESS_DEPENDS=	devel/py-minimock \
+TEST_DEPENDS=	devel/py-minimock \
 			sysutils/py-lockfile
 
 post-install:

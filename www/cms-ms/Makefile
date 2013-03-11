@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2012/09/10 09:16:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 11:44:41 espie Exp $
 
 COMMENT=		easy to use and powerfull CMS
 
@@ -11,14 +11,11 @@ HOMEPAGE=		http://www.cmsmadesimple.org/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=		http://s3.amazonaws.com/cmsms/downloads/7100/
 
 NO_BUILD=		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 PKG_ARCH=		*
 EXTRACT_ONLY=
 

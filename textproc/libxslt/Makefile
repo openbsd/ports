@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2012/09/30 12:21:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.73 2013/03/11 11:42:42 espie Exp $
 
 COMMENT-main=		XSLT C Library for GNOME
 COMMENT-python= 	Python bindings for libxslt
@@ -19,9 +19,6 @@ MASTER_SITES=		ftp://xmlsoft.org/libxslt/ \
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		gpg-error m z
 

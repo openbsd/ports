@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/03/18 09:27:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 11:44:47 espie Exp $
 
 COMMENT=		configurable web traversal engine
 
@@ -7,9 +7,6 @@ CATEGORIES=		www
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
 

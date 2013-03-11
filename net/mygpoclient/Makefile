@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/04/20 10:50:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:35:49 espie Exp $
 
 COMMENT=		gpodder.net client library
 
@@ -10,14 +10,11 @@ HOMEPAGE=		http://thp.io/2010/mygpoclient/
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}
 
 MODULES=		lang/python
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 .include <bsd.port.mk>

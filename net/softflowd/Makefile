@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2012/09/04 03:40:34 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 11:35:56 espie Exp $
 
 COMMENT=	flow-based network traffic analyser
 
@@ -8,9 +8,6 @@ CATEGORIES=	net
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www2.mindrot.org/files/softflowd/
 
@@ -19,6 +16,6 @@ WANTLIB=	c pcap
 CONFIGURE_STYLE= gnu
 
 USE_GROFF =	Yes
-NO_REGRESS= Yes
+NO_TEST= Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/04/17 18:04:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 11:37:55 espie Exp $
 
 COMMENT=		tightly integrated, free office package
 
@@ -11,9 +11,6 @@ HOMEPAGE=		http://siag.nu/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ICE Mowitz SM X11 Xext Xmu Xpm Xt c m ncurses neXtaw
 WANTLIB += termcap

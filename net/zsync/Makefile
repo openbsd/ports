@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/03 20:10:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 11:35:58 espie Exp $
 
 COMMENT=	gzip-aware file mirroring over http
 
@@ -13,9 +13,6 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # Artistic v2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c m
 

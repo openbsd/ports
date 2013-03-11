@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/05/18 20:53:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:44:48 espie Exp $
 
 COMMENT=	memcached server admin in PHP
 
@@ -12,9 +12,6 @@ HOMEPAGE=	http://phpmemcacheadmin.googlecode.com/
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}files/
 
@@ -22,7 +19,7 @@ MODULES=		lang/php
 RUN_DEPENDS=		www/pecl-memcache
 
 NO_BUILD=		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 PKG_ARCH=		*
 WRKDIST=		${WRKDIR}

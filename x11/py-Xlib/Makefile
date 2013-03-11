@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/09/16 12:29:17 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/11 11:46:15 espie Exp $
 
 COMMENT=		fully functional X client library for Python programs
 
@@ -13,9 +13,6 @@ HOMEPAGE=		http://python-xlib.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=python-xlib/}
 
@@ -25,7 +22,7 @@ BUILD_DEPENDS=		textproc/texi2html
 
 TESTS=			events_be events_le rdb requests_be requests_le
 
-do-regress:
+do-test:
 .for t in ${TESTS}
 	cd ${WRKSRC}/test && ${MODPY_BIN} test_${t}.py
 .endfor

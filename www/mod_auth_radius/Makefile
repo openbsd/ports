@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/09/17 10:29:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/11 11:44:43 espie Exp $
 
 REVISION=	8
 DISTNAME=	mod_auth_radius-1.5.7
@@ -7,9 +7,6 @@ MODULES+=	apache-module
 
 # Apache
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODAPACHE_NAME=		radius_auth
 MODAPACHE_ENABLE=	mod_auth_radius-enable
@@ -20,7 +17,7 @@ HOMEPAGE=	http://www.freeradius.org/mod_auth_radius/
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/
 EXTRACT_SUFX=	.tar
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-build:
 	@cd ${WRKSRC}; /usr/sbin/apxs -c mod_auth_radius.c

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2012/08/18 12:41:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2013/03/11 11:35:49 espie Exp $
 
 COMMENT=	UCB/LBNL Network Animator
 
@@ -14,9 +14,6 @@ HOMEPAGE=	http://nsnam.sourceforge.net/
 
 # BSD
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 MODULES	+=		x11/tk
 WANTLIB +=		X11 Xext c m otcl stdc++ z
@@ -39,7 +36,7 @@ CONFIGURE_ARGS=	--with-tcl-ver=${MODTCL_VERSION} \
 
 ALL_TARGET=
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure

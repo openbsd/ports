@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/09/16 12:29:16 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 11:46:14 espie Exp $
 
 COMMENT=	capture standard error output, display in separate window
 
@@ -9,9 +9,6 @@ CATEGORIES=	x11 devel perl5
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Tk/}
 
@@ -20,6 +17,6 @@ RUN_DEPENDS=	x11/p5-Tk
 CONFIGURE_STYLE= perl
 USE_GROFF =	Yes
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

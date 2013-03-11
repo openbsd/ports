@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2011/11/04 08:43:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2013/03/11 11:41:25 espie Exp $
 
 COMMENT=	graphical interface for GnuPG
 
@@ -10,9 +10,6 @@ HOMEPAGE=	http://www.gnupg.org/gpa.html
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://wald.intevation.org/frs/download.php/350/
 EXTRACT_SUFX=	.tar.bz2

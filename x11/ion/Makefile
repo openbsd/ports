@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2012/09/19 08:15:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.58 2013/03/11 11:46:13 espie Exp $
 
 COMMENT=	light, keyboard friendly window manager
 
@@ -13,9 +13,6 @@ MASTER_SITES=	http://modeemi.cs.tut.fi/~tuomov/dl/
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE X11 m c SM Xext ${MODLUA_WANTLIB}
 
@@ -27,7 +24,7 @@ LIB_DEPENDS=	${MODLUA_LIB_DEPENDS}
 
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/system.mk

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/12/03 11:45:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 11:35:52 espie Exp $
 
 COMMENT=	recursive FTP client module
 
@@ -12,9 +12,6 @@ MAINTAINER=	Sam Smith <s@msmith.net>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST =	${WRKDIR}/Net-FTP-Recursive
 

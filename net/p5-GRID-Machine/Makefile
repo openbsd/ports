@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/08/07 14:03:58 okan Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:35:50 espie Exp $
 
 COMMENT =	Remote Procedure Calls over a SSH link
 
@@ -13,9 +13,6 @@ MAINTAINER =	Okan Demirmen <okan@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 RUN_DEPENDS =	devel/p5-Module-Which
 

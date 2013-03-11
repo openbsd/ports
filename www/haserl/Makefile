@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/10/26 23:11:52 rpe Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:44:42 espie Exp $
 
 COMMENT=	tiny cgi web script handler using shell or Lua
 
@@ -12,9 +12,6 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2 only
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c
 

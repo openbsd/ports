@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2012/04/08 21:58:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/11 11:44:44 espie Exp $
 
 COMMENT=	catalyst plugin to Config::Any
 
@@ -11,9 +11,6 @@ MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	devel/p5-Config-Any>=0.23 \
 		devel/p5-Data-Visitor \

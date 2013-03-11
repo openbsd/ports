@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/20 19:56:52 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 11:42:47 espie Exp $
 
 COMMENT=		HTML, XHTML validator
 
@@ -11,9 +11,6 @@ MAINTAINER=		Gerardo Santana Gomez Garrido <gerardo.santana@gmail.com>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}
 EXTRACT_SUFX=
@@ -24,7 +21,7 @@ RUN_DEPENDS=		textproc/lq-sp \
 
 WRKDIST=		${WRKDIR}
 NO_BUILD=		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 PKG_ARCH=		*
 
 do-install:

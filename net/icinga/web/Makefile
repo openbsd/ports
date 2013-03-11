@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/02 12:41:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 11:35:47 espie Exp $
 
 COMMENT =	web UI for icinga
 DISTNAME =	icinga-web-1.8.2
@@ -40,7 +40,7 @@ CONFIGURE_ARGS += \
 	--with-api-host=127.0.0.1 \
 	--with-db-host=127.0.0.1
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 NO_BUILD =	Yes
 
 INSTALL_TARGET = install install-apache-config

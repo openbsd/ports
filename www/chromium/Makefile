@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.123 2013/02/07 19:13:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.124 2013/03/11 11:44:41 espie Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 
@@ -20,9 +20,6 @@ FLAVORS=	proprietary
 FLAVOR?=
 
 # BSD-like
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
 .if ${FLAVOR:Mproprietary}
 PERMIT_PACKAGE_CDROM=	patents
 .else
@@ -78,7 +75,7 @@ MAKE_ENV=	BUILDTYPE=${BUILDTYPE} V=1
 
 USE_GMAKE=	Yes
 
-REGRESS_TARGET=	base_unittests
+TEST_TARGET=	base_unittests
 
 CONFIGURE_STYLE=none # prevent python MODULE from overriding do-build
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \

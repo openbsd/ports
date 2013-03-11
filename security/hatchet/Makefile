@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/20 17:22:43 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:41:25 espie Exp $
 
 COMMENT=	PF firewall log analysis
 
@@ -10,14 +10,11 @@ MAINTAINER=	Jason Dixon <jdixon@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/downloads/
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 PKG_ARCH=	*
 
 PREFIX=		/var/www

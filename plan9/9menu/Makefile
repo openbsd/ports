@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2011/01/13 08:47:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2013/03/11 11:37:53 espie Exp $
 
 COMMENT=	simple menu patterned after plan9
 
@@ -13,7 +13,6 @@ EXTRACT_SUFX=	.shar.gz
 # nonstandard license
 PERMIT_PACKAGE_CDROM =	No
 PERMIT_PACKAGE_FTP =	No
-PERMIT_DISTFILES_CDROM = No
 PERMIT_DISTFILES_FTP =	No
 WANTLIB=		X11 c pthread-stubs xcb
 
@@ -27,7 +26,7 @@ ALL_TARGET=	9menu
 
 WRKDIST=	${WRKDIR}
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/9menu ${PREFIX}/bin

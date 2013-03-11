@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/08 02:04:37 djm Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 11:35:55 espie Exp $
 
 COMMENT-main=	SSH and telnet client
 COMMENT-gui=	PuTTY GUI clients
@@ -15,9 +15,6 @@ MASTER_SITES=	http://the.earth.li/~sgtatham/putty/latest/ \
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	autoconf automake
 CONFIGURE_ENV=		CPPFLAGS="-I.././" \
@@ -45,7 +42,7 @@ LIB_DEPENDS-gui=	x11/gtk+2
 AUTO_ENV=		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 			AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 post-patch:
 	@echo "Running aclocal-${AUTOMAKE_VERSION} in ${WRKSRC}"

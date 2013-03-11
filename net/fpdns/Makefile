@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/10/15 15:18:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:35:46 espie Exp $
 
 COMMENT =	remotely determine DNS server versions
 
@@ -10,9 +10,6 @@ MASTER_SITES =	http://bigio.snb.it/openbsd/distfiles/
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 CONFIGURE_STYLE = perl
 

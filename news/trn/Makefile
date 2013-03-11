@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2012/03/29 13:38:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/11 11:35:59 espie Exp $
 
 COMMENT=	threaded newsreader
 
@@ -11,8 +11,6 @@ DISTNAME=	trn-4.0-test$V
 PKGNAME=	trn-4.0.$V
 
 PERMIT_PACKAGE_FTP=Yes
-PERMIT_DISTFILES_FTP=Yes
-PERMIT_DISTFILES_CDROM=Yes
 # Technically, we could put trn on CD-Rom, provided we include the distfile
 # as well...
 PERMIT_PACKAGE_CDROM=No
@@ -37,6 +35,6 @@ FAKE_FLAGS= \
 post-install:
 	find ${PREFIX}/lib/trn/HelpFiles | xargs chown ${SHAREOWN}:${SHAREGRP} 
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

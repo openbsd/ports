@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2012/10/13 08:57:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2013/03/11 11:37:54 espie Exp $
 
 COMMENT=		printer (CUPS) administration tool
 
@@ -12,9 +12,6 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://cyberelk.net/tim/data/system-config-printer/1.3/
 EXTRACT_SUFX=		.tar.xz

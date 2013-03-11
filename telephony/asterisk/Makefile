@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.170 2013/01/30 20:59:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.171 2013/03/11 11:41:33 espie Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
@@ -21,8 +21,6 @@ MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 # notes in codecs/ilbc/LICENSE_ADDENDUM.
 PERMIT_PACKAGE_CDROM=	patent licensing clauses in iLBC
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= patent licensing clauses in iLBC
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB-main +=	c crypto curl execinfo gsm idn iksemel
 WANTLIB-main += m ogg pthread spandsp sqlite3 ssl stdc++ termcap
@@ -207,7 +205,7 @@ LIB_DEPENDS-speex=	audio/speex>=1.2rc1
 CONFIGURE_ARGS+=	--with-speex=no
 .endif
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 INSTALL_TARGET=		install samples
 EXAMPLEDIR=		${PREFIX}/share/examples/asterisk
 EXAMPLEFILES=		cdr.conf extensions.ael extensions.conf logger.conf \

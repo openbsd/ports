@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.150 2013/02/04 14:46:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.151 2013/03/11 11:37:53 espie Exp $
 
 COMMENT-main=		Common Unix Printing System
 COMMENT-libs=		CUPS libraries and headers
@@ -27,9 +27,6 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2 - LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += asn1 avahi-client avahi-common crypto gssapi krb5 m pthread
 WANTLIB += ssl stdc++ z

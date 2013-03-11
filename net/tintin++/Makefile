@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/07/12 22:07:42 sthen Exp $ 
+# $OpenBSD: Makefile,v 1.17 2013/03/11 11:35:57 espie Exp $ 
 
 COMMENT=	client program to help playing muds
 
@@ -12,9 +12,6 @@ EXTRACT_SUFX=   .tar.Z
 
 # Public Domain
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c
 
@@ -22,7 +19,7 @@ CONFIGURE_STYLE=	gnu old
 
 WRKDIST=	${WRKDIR}/tintin++/src
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/tintin

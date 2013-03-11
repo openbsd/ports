@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2013/02/18 07:53:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.55 2013/03/11 11:44:42 espie Exp $
 
 # XXX fix building with glib2 >= 2.29 (G_CONST_RETURN is deprecated)
 CFLAGS +=	"-DG_CONST_RETURN=const"
@@ -27,9 +27,6 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 
 # GPLv2/LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo

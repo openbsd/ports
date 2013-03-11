@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/20 17:22:43 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 11:41:24 espie Exp $
 
 COMMENT=		netcat enhanced with twofish encryption
 
@@ -17,7 +17,6 @@ MAINTAINER=		Laurent Fanis <laurent@humppa.nl>
 # Added Twofish encryption is under Cryptix General Licence
 PERMIT_PACKAGE_CDROM=	No clear Licence
 PERMIT_PACKAGE_FTP=	No clear Licence
-PERMIT_DISTFILES_CDROM= No clear Licence
 PERMIT_DISTFILES_FTP=	No clear Licence
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=cryptcat/}
@@ -28,7 +27,7 @@ ALL_TARGET=		openbsd
 
 WRKDIST=		${WRKDIR}/unix
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cryptcat ${PREFIX}/bin

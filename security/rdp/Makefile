@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/11/26 14:56:15 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/11 11:41:28 espie Exp $
 
 COMMENT=	ICMP router discovery protocol spoofer
 
@@ -12,8 +12,6 @@ LIB_DEPENDS=	net/libnet/1.0
 
 PERMIT_PACKAGE_CDROM=	no license
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	no license
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c pcap lib/libnet-1.0/net=0
 
 WRKDIST=	${WRKDIR}
@@ -22,7 +20,7 @@ do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -I${PREFIX}/include/libnet-1.0 -o rdp \
 		icmp_rdp.c -L${PREFIX}/lib/libnet-1.0 -lnet -lpcap
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rdp ${PREFIX}/sbin

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2012/10/15 15:18:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 11:35:45 espie Exp $
 
 COMMENT=		ARP reply daemon
 
@@ -10,9 +10,6 @@ MAINTAINER=		Jason Peel <jsyn@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c pcap event dnet
 
 MASTER_SITES=		http://www.citi.umich.edu/u/provos/honeyd/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2012/09/27 17:59:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2013/03/11 11:42:41 espie Exp $
 
 COMMENT=	GTK C code documentation system
 
@@ -12,9 +12,6 @@ HOMEPAGE=	http://www.gtk.org/gtk-doc/
 
 # GPLv3 - GFDLv1.1
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		x11/gnome \
 			lang/python
@@ -32,7 +29,7 @@ RUN_DEPENDS=		textproc/openjade \
 			textproc/docbook-xsl \
 			editors/vim,no_x11
 
-REGRESS_DEPENDS=	shells/bash
+TEST_DEPENDS=	shells/bash
 
 pre-configure:
 	perl -pi -e "s,/bin/bash,${LOCALBASE}/bin/bash," \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2012/06/25 19:24:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 11:35:55 espie Exp $
 
 COMMENT=	Precision Time Protocol daemon
 
@@ -10,9 +10,6 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # ISC
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ptpd/}
 

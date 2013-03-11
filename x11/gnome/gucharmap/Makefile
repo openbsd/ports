@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2013/01/24 07:31:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2013/03/11 11:46:10 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -13,9 +13,6 @@ HOMEPAGE=		http://live.gnome.org/Gucharmap
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo

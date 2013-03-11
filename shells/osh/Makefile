@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/06/26 22:02:32 pascal Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:41:29 espie Exp $
 
 COMMENT =		Sixth Edition UNIX Shell
 
@@ -12,9 +12,6 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c
 
@@ -22,7 +19,7 @@ MASTER_SITES =		${HOMEPAGE}/src/
 
 MAKE_FLAGS =		SYSCONFDIR="${SYSCONFDIR}" PREFIX="${TRUEPREFIX}"
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples

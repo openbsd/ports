@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/09/16 11:13:39 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 11:35:50 espie Exp $
 
 COMMENT-main =		tools to collect and process netflow data
 COMMENT-nfprofile =	filters data from nfdump according to profiles
@@ -23,9 +23,6 @@ MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c z
 
@@ -67,6 +64,6 @@ post-install:
 	head -119 ${WRKSRC}/bin/sflow.c > ${PREFIX}/share/doc/nfdump/COPYRIGHT
 
 CONFIGURE_ENV =		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib"
-REGRESS_FLAGS =		TZ=CET
+TEST_FLAGS =		TZ=CET
 
 .include <bsd.port.mk>

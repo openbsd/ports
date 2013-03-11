@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/22 08:36:55 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/11 11:44:50 espie Exp $
 
 COMMENT=		utility to mirror web pages
 
@@ -10,9 +10,6 @@ MAINTAINER=		Jeff Bachtel <jeff@cepheid.org>
 
 # Artistic license
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}
 

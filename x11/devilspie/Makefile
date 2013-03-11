@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2012/12/23 13:25:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/11 11:46:08 espie Exp $
 
 COMMENT=	window manipulation tool
 
@@ -12,9 +12,6 @@ MAINTAINER=	Olle Nilsson <olle@vexed.se>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat

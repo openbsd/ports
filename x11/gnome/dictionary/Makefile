@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2012/09/28 07:10:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 11:46:10 espie Exp $
 
 COMMENT=		GNOME dictionary application
 
@@ -9,9 +9,6 @@ SHARED_LIBS +=  gdict-1.0                 8.0 # 6.7
 
 # GPLv2 - LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo

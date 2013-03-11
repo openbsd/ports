@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2012/06/15 08:30:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/11 11:46:13 espie Exp $
 
 COMMENT=	gtk+2 based xmessage(1) clone
 
@@ -11,9 +11,6 @@ HOMEPAGE=	http://homepages.ihug.co.nz/~trmusson/programs.html\#gxmessage
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://homepages.ihug.co.nz/~trmusson/stuff/
 

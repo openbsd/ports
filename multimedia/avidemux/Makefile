@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2013/01/21 21:23:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.40 2013/03/11 11:35:43 espie Exp $
 
 COMMENT=	free video editor
 
@@ -16,9 +16,6 @@ HOMEPAGE=	http://fixounet.free.fr/avidemux/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	yes
-PERMIT_PACKAGE_FTP=	yes
-PERMIT_DISTFILES_CDROM=	yes
-PERMIT_DISTFILES_FTP=	yes
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xv Xxf86vm atk-1.0 c cairo drm

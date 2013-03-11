@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2011/09/16 11:41:41 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2013/03/11 11:42:45 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,9 +20,6 @@ LIB_DEPENDS=	textproc/libxml \
 
 # GPL/Artistic
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c gcrypt gpg-error m util z xml2>=6 xslt>=1 exslt>=7
 

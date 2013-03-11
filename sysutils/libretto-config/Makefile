@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/19 07:43:01 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 11:41:30 espie Exp $
 
 COMMENT=	Libretto BIOS Setting Program
 
@@ -12,8 +12,6 @@ ONLY_FOR_ARCHS=	i386
 
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c 
 
 MASTER_SITES=	http://club.pep.ne.jp/~ishioka/Software/Linux/libapm/
@@ -21,7 +19,7 @@ MASTER_SITES=	http://club.pep.ne.jp/~ishioka/Software/Linux/libapm/
 WRKDIST=	${WRKDIR}/libapm
 DOCDIR=		${PREFIX}/share/doc/libretto-config
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/libapm ${PREFIX}/sbin/libretto-config

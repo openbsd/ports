@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/03/29 13:38:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:35:50 espie Exp $
 
 COMMENT=		network traffic and bandwidth usage in real time
 
@@ -10,9 +10,6 @@ MAINTAINER=		Gonzalo L. R. <gonzalo@x61.com.ar>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}
 

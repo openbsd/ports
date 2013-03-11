@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/04/09 08:03:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 11:42:43 espie Exp $
 
 COMMENT=		parse, analyze and manipulate Perl
 
@@ -8,9 +8,6 @@ CATEGORIES=		textproc
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 CPAN_AUTHOR=		ADAMK
 
@@ -19,7 +16,7 @@ RUN_DEPENDS=		devel/p5-Clone>=0.30 \
 			devel/p5-IO-String \
 			devel/p5-List-MoreUtils \
 			devel/p5-Params-Util
-REGRESS_DEPENDS=	devel/p5-Class-Inspector \
+TEST_DEPENDS=	devel/p5-Class-Inspector \
 			devel/p5-File-Remove \
 			devel/p5-Hook-LexWrap \
 			devel/p5-Task-Weaken \

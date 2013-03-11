@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2013/03/02 13:54:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2013/03/11 11:41:29 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -37,9 +37,6 @@ WANTLIB += c pthread crypto ssl z m stdc++
 # FDL (docs), LGPL (some libraries), and PD
 # http://bacula.org/en/dev-manual/main/main/Bacula_Copyright_Trademark_.html
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 BACULACONF=		/etc/bacula
 BACULASTATE=		/var/bacula
@@ -49,7 +46,7 @@ CONFIGURE_STYLE=	simple
 USE_GMAKE=		yes
 USE_GROFF=		yes
 USE_LIBTOOL=		gnu# ports libtool passes libtool-only parameters to linker
-NO_REGRESS=		yes
+NO_TEST=		yes
 
 PSEUDO_FLAVORS=		no_bat no_server
 FLAVORS=		pgsql mysql sqlite3

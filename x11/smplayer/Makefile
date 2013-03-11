@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/01/07 11:45:21 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/11 11:46:15 espie Exp $
 
 COMMENT =		complete front-end for MPlayer
 
@@ -12,9 +12,6 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
 # GPLv2 (docs/en/gpl.html)
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += ICE QtGui QtNetwork QtXml SM X11 Xext Xi Xinerama Xrender
 WANTLIB += c fontconfig freetype m pthread stdc++ z
@@ -30,7 +27,7 @@ RUN_DEPENDS =		x11/mplayer>=20090708 \
 
 USE_GMAKE =		Yes
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 ALL_TARGET =		src/smplayer
 

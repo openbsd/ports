@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2009/11/10 14:33:50 pea Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2013/03/11 11:35:49 espie Exp $
 
 V = 	1.2.0
 
@@ -10,7 +10,6 @@ MAINTAINER =    Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =  Yes
-PERMIT_DISTFILES_CDROM = Yes
 PERMIT_PACKAGE_FTP =    Yes
 PERMIT_DISTFILES_FTP =  Yes
 

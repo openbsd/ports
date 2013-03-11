@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/24 21:15:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:46:19 espie Exp $
 
 COMMENT=	fast tool to graph and visualize lots of data
 
@@ -11,9 +11,6 @@ MAINTAINER=	Markus Friedl <markus@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 c m
 
 MASTER_SITES=	${HOMEPAGE}xplot/
@@ -22,6 +19,6 @@ USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu dest
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

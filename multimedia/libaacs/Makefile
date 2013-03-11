@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/09/25 21:58:59 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:35:44 espie Exp $
 
 SHARED_ONLY =		Yes
 
@@ -17,8 +17,6 @@ EXTRACT_SUFX =		.tar.bz2
 # LGPL v2.1
 PERMIT_PACKAGE_CDROM =	Free speech issue
 PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Free speech issue
-PERMIT_DISTFILES_FTP =	Yes
 
 SHARED_LIBS +=		aacs	1.0	# 2.0
 

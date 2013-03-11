@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/11/26 14:56:15 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2013/03/11 11:41:25 espie Exp $
 
 COMMENT=	IP stack integrity checker
 
@@ -10,9 +10,6 @@ HOMEPAGE=	http://isic.sourceforge.net/
 
 # modified BSD license
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c lib/libnet-1.1/net=11
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=isic/}
@@ -26,6 +23,6 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include/libnet-1.1 \
 		LIBS="-L${LOCALBASE}/lib/libnet-1.1 -lnet"
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

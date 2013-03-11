@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/01/22 12:54:53 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 11:35:49 espie Exp $
 
 COMMENT=	monitors the status of mirrors
 
@@ -11,9 +11,6 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # free license, see head of ${WRKSRC}/Mirmon.pm
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
@@ -21,7 +18,7 @@ MODULES=	perl
 ICONDIR=	${PREFIX}/share/examples/mirmon/icons
 
 RUN_DEPENDS=	net/rsync net/wget
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 PKG_ARCH=	*
 
 do-build:

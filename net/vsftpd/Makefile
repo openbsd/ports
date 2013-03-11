@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2012/10/05 02:27:50 brad Exp $
+# $OpenBSD: Makefile,v 1.33 2013/03/11 11:35:58 espie Exp $
 
 COMMENT=		FTP daemon which aims to be secure
 
@@ -11,9 +11,6 @@ MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2+OpenSSL exemption
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c crypto ssl util wrap
 
@@ -24,7 +21,7 @@ ALL_TARGET=		vsftpd
 MAKE_FLAGS=		CC="${CC}" \
 			CFLAGS="${CFLAGS}"
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 do-configure:
 	@perl -pi -e "s,%%SYSCONFDIR%%,${SYSCONFDIR}," ${WRKSRC}/defs.h

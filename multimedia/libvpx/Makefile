@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2012/08/27 20:42:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/11 11:35:44 espie Exp $
 
 COMMENT=	Google VP8 video codec
 
@@ -18,9 +18,6 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c m pthread
 
@@ -41,7 +38,7 @@ CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--disable-optimizations
 CONFIGURE_ENV=	LD="${CC}"
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 ALL_TARGET=
 

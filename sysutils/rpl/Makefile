@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/20 17:22:42 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 11:41:32 espie Exp $
 
 COMMENT =		replace strings with new strings in multiple text files
 
@@ -11,9 +11,6 @@ MASTER_SITES =		http://downloads.laffeycomputer.com/current_builds/
 
 # GPL
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 CONFIGURE_STYLE =	gnu
 USE_GROFF =		Yes

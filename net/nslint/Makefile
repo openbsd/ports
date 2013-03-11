@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/02/09 14:49:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/11 11:35:50 espie Exp $
 
 COMMENT=		performs consistency checks on BIND files
 
@@ -9,9 +9,6 @@ CATEGORIES=		net
 MAINTAINER=		Wangden Kelsang <wngdn@src.uchicago.edu>
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		ftp://ftp.ee.lbl.gov/old/
 
@@ -29,6 +26,6 @@ ALL_TARGET=		nslint
 INSTALL_TARGET=		install install-man
 USE_GROFF =		Yes
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 .include <bsd.port.mk>

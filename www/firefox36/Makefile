@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2012/12/04 21:05:30 landry Exp $
+# $OpenBSD: Makefile,v 1.31 2013/03/11 11:44:41 espie Exp $
 
 COMMENT =	Mozilla web browser
 
@@ -21,9 +21,6 @@ CATEGORIES =	www
 
 # mozilla public license
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 # needed for convert xpm icon to png
 BUILD_DEPENDS +=	graphics/netpbm
@@ -35,7 +32,7 @@ MODPY_RUNDEP =	No
 
 USE_GROFF =	Yes
 # Regression tests are too hard to adapt to run here
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 CONFIGURE_STYLE =	autoconf no-autoheader
 CONFIGURE_ARGS +=	--enable-official-branding

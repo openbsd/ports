@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/02/02 10:05:43 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 11:46:15 espie Exp $
 
 # /usr/bin/ld: CMakeFiles/smokeqtcore.dir/x_4.cpp.o(.gnu.linkonce.t._ZN13__smokeqtcore9x_QBuffer4x_25EPN5Smoke9StackItemE+0x54): cannot reach 00000d7d___dynamic_cast+0, recompile with -ffunction-sections
 #/usr/bin/ld: CMakeFiles/smokeqtcore.dir/x_4.cpp.o(.gnu.linkonce.t._ZN13__smokeqtcore9x_QBuffer4x_25EPN5Smoke9StackItemE+0x54): cannot handle R_PARISC_PCREL17F for __dynamic_cast
@@ -34,9 +34,6 @@ HOMEPAGE =		http://techbase.kde.org/Development/Languages/Ruby
 
 # GPLv2/LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		http://files.rubyforge.vm.bytemark.co.uk/korundum/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2012/12/21 12:13:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 11:35:45 espie Exp $
 
 COMMENT=	Atmel/NWN wireless access point configuration tools
 
@@ -11,9 +11,6 @@ HOMEPAGE=	http://ap-utils.polesye.net/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c ncurses menu
 

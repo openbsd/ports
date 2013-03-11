@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/01/27 15:57:29 rpe Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/11 11:46:09 espie Exp $
 
 COMMENT =		implementations of freedesktop.org specifications
 DISTNAME =		efreet-1.7.5
@@ -13,9 +13,6 @@ SHARED_LIBS +=		${_lib} ${SO_VERSION}
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += c cares crypto curl ecore ecore_con ecore_file eet
 WANTLIB += eina glib-2.0 idn jpeg m pcre pthread ssl z

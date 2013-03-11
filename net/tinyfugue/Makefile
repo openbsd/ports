@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2012/08/18 12:41:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2013/03/11 11:35:57 espie Exp $
 
 COMMENT=	programmable MUD client, with macro support and more
 
@@ -13,9 +13,6 @@ MAINTAINER=	Markus Lude <markus.lude@gmx.de>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m termcap z 
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tinyfugue/} \
@@ -31,7 +28,7 @@ MAKE_ENV=	TFVER="${DISTNAME:S/^tf-//}" \
 MAKE_FILE=	${WRKSRC}/unix/Makefile
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 SYMLINKS=	kb-bash.tf,bind-bash.tf kb-emacs.tf,bind-emacs.tf \
 		complete.tf,completion.tf factoral.tf,factorial.tf \

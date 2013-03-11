@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/09/16 12:29:17 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 11:46:14 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -14,9 +14,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gaim-libnotify/}
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo drm

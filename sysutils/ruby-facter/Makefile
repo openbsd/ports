@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2013/03/08 06:38:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2013/03/11 11:41:32 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,17 +18,14 @@ MASTER_SITES=	https://puppetlabs.com/downloads/facter/
 
 # Apache
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	lang/ruby
 
 NO_BUILD=	Yes
 
-REGRESS_DEPENDS=devel/ruby-mocha,${MODRUBY_FLAVOR}
+TEST_DEPENDS=devel/ruby-mocha,${MODRUBY_FLAVOR}
 BUILD_DEPENDS=	${MODRUBY_BUILD_DEPENDS}
-MODRUBY_REGRESS=rake rspec2
+MODRUBY_TEST=rake rspec2
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-facter

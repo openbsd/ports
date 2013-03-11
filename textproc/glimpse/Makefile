@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/11/20 19:56:48 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/11 11:42:41 espie Exp $
 
 COMMENT=	text search engine
 
@@ -8,8 +8,6 @@ CATEGORIES=	textproc databases
 
 PERMIT_PACKAGE_CDROM=	no fee
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	no fee
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c 
 
 MASTER_SITES=   ftp://ftp.cs.arizona.edu/glimpse/
@@ -23,7 +21,7 @@ pre-configure:
 CFLAGS+=-D__STRICT_ANSI__ -Dlog=mylog
 USE_GROFF =	Yes
 VMEM_WARNING=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/glimpse

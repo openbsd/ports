@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2012/10/16 17:58:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.54 2013/03/11 11:46:10 espie Exp $
 
 COMMENT=		plugins for Gedit
 
@@ -11,9 +11,6 @@ HOMEPAGE=		http://live.gnome.org/Gedit/Plugins
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo cairo-gobject

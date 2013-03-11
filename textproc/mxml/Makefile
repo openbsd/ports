@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/12/09 07:29:57 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 11:42:42 espie Exp $
 
 COMMENT=		minimal XML library
 
@@ -12,9 +12,6 @@ HOMEPAGE=		http://www.easysw.com/~mike/mxml/
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c
 
@@ -26,6 +23,6 @@ CONFIGURE_ENV+=		LIBmxml_VERSION=${LIBmxml_VERSION}
 MAKE_ENV+=		LIBmxml_VERSION=${LIBmxml_VERSION}
 USE_GROFF =		Yes
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 .include <bsd.port.mk>

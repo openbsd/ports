@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/10/03 08:41:58 sebastia Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/11 11:42:40 espie Exp $
 
 COMMENT =	XML parser for Tcl
 
@@ -13,9 +13,6 @@ SHARED_LIBS +=	Tclxml32	0.0
 
 # custom
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 MODULES =		lang/tcl
 WANTLIB +=		m z exslt xslt iconv xml2
@@ -25,7 +22,7 @@ LIB_DEPENDS +=		textproc/libxml \
 RUN_DEPENDS =		${MODTCL_RUN_DEPENDS} \
 			devel/tcllib
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS += ${CONFIGURE_SHARED} \
 		--with-tcl=${MODTCL_LIBDIR} \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/01/29 19:16:30 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:46:13 espie Exp $
 
 COMMENT-main =		library for registering keyboard shortcuts
 COMMENT-python =	python bindings for keybinder
@@ -17,9 +17,6 @@ MAINTAINER =		Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+ 
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		http://kaizer.se/publicfiles/keybinder/
 

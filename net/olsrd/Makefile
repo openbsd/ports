@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/11/16 00:20:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/11 11:35:50 espie Exp $
 
 COMMENT-main=		OLSR routing daemon
 COMMENT-gui=		OLSR routing daemon GUI
@@ -22,9 +22,6 @@ MAINTAINER=	Martin Reindl <martin@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MULTI_PACKAGES= -main -gui -plugins
 
@@ -48,7 +45,7 @@ RUN_DEPENDS-plugins=	olsrd-${VERSION}:net/olsrd
 
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 MODULES=	devel/gettext
 

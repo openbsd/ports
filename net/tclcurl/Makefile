@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2012/12/21 12:13:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/11 11:35:57 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -12,9 +12,6 @@ MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	crypto idn ssl z curl>=2.2
 
@@ -36,6 +33,6 @@ CONFIGURE_ARGS+=--with-tcl=${MODTCL_LIBDIR} \
 		SHLIB_VERSION=${LIBTclCurl7196_VERSION} \
 		CFLAGS="${CFLAGS} -pthread"
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 .include <bsd.port.mk>

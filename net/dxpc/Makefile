@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2012/10/29 15:19:03 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2013/03/11 11:35:46 espie Exp $
 
 COMMENT =	X11 over a low bandwidth link
 VERSION =	3.8.2
@@ -10,9 +10,6 @@ MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 #		BSD
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		http://www.vigor.nu/dxpc/${VERSION}/
 HOMEPAGE =		http://www.vigor.nu/dxpc/
@@ -28,6 +25,6 @@ CONFIGURE_ARGS +=	--with-lzo-lib=${DEPBASE}
 
 MAKE_FLAGS +=		LDFLAGS=-L${DEPBASE}/lib
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 .include <bsd.port.mk>

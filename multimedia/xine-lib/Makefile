@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2012/11/29 20:18:21 brad Exp $
+# $OpenBSD: Makefile,v 1.99 2013/03/11 11:35:44 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,8 +18,6 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	FLAC GL GLU ICE SDL SM X11 Xext Xinerama Xv XvMCW a52 avcodec \
 		avutil bluray c cdio dca dvdnav dvdread expat faad fontconfig \
@@ -77,7 +75,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
 		ac_cv_header_execinfo_h=no
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-install:
 	@find ${PREFIX}/lib/xine/plugins -name '*.a' -print | xargs rm

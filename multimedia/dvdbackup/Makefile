@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/19 07:23:12 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 11:35:43 espie Exp $
 
 COMMENT=		DVD ripper
 
@@ -10,16 +10,13 @@ HOMEPAGE=		http://dvd-create.sourceforge.net/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://dvd-create.sourceforge.net/
 
 LIB_DEPENDS=		multimedia/libdvdnav
 WANTLIB=		c dvdnav dvdread pthread
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 CFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib

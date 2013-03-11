@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/12/03 11:46:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/11 11:41:27 espie Exp $
 
 COMMENT=	perl5 interface to GnuPG using scalars
 
@@ -14,7 +14,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERMIT_PACKAGE_CDROM=	no license
 PERMIT_PACKAGE_FTP=	no license
-PERMIT_DISTFILES_CDROM=	no license
 PERMIT_DISTFILES_FTP=	no license
 
 .include <bsd.port.mk>	

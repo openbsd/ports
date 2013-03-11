@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2013/03/08 07:01:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.85 2013/03/11 11:46:10 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -12,9 +12,6 @@ CATEGORIES=		x11
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += FLAC GL ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xtst asn1

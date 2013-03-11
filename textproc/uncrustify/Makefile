@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/10/13 21:03:53 rpointel Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 11:42:47 espie Exp $
 
 COMMENT =		source code beautifier
 
@@ -13,9 +13,6 @@ MAINTAINER =		Remi Pointel <rpointel@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += c m stdc++
 
@@ -31,7 +28,7 @@ MAKE_FLAGS = V=1
 MODPY_RUNDEP = No
 MODPY_BUILDDEP = No
 
-do-regress:
+do-test:
 	cd ${WRKSRC}/tests && ${MODPY_BIN} ./run_tests.py
 
 .include <bsd.port.mk>

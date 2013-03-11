@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2012/09/06 12:38:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 11:35:47 espie Exp $
 
 COMMENT=		DLNA integration for GUPnP
 
@@ -26,6 +26,6 @@ RUN_DEPENDS+=		multimedia/gstreamer-0.10/plugins-good
 RUN_DEPENDS+=		multimedia/gstreamer-0.10/plugins-ugly
 
 # Needs media files which aren't distributed with the tarball.
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 .include <bsd.port.mk>

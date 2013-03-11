@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2010/11/22 08:36:47 espie Exp $
+# $OpenBSD: Makefile,v 1.54 2013/03/11 11:44:40 espie Exp $
 
 COMMENT=	extremely fast program for analysing WWW logfiles
 
@@ -22,9 +22,6 @@ HOMEPAGE=	http://www.analog.cx/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c m jpeg png z gd>=18 pcre
 
@@ -57,7 +54,7 @@ pre-configure:
 	@sed -e "s,@PREFIX@,${PREFIX},g" < ${WRKSRC}/anlgform.pl.src \
 		> ${WRKSRC}/anlgform.pl
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/analog

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2012/10/16 08:36:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/11 11:46:10 espie Exp $
 
 COMMENT=	common automake macros for GNOME
 
@@ -7,9 +7,6 @@ GNOME_VERSION=	3.6.0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	x11/gnome
 

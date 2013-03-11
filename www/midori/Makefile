@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2013/03/08 14:25:07 landry Exp $
+# $OpenBSD: Makefile,v 1.57 2013/03/11 11:44:43 espie Exp $
 
 COMMENT =	lightweight web browser
 
@@ -10,15 +10,12 @@ CATEGORIES =	www
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =	x11/xfce4 devel/waf
 
 MODXFCE_DESKTOP_FILE =	Yes
 MODXFCE_ICON_CACHE =	Yes
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 FLAVORS =	gtk3
 FLAVOR ?=

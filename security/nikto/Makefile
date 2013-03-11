@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/01/12 17:38:14 nigel Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/11 11:41:26 espie Exp $
 
 COMMENT =	web and CGI vulnerability scanner with SSL support
 
@@ -12,9 +12,6 @@ MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	http://www.cirt.net/nikto/ \
 		http://www.cirt.net/nikto/ARCHIVE/
@@ -24,7 +21,7 @@ EXTRACT_SUFX =	.tar.bz2
 RUN_DEPENDS =	security/p5-Net_SSLeay
 
 NO_BUILD =	Yes
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 PKG_ARCH =	*
 
 pre-configure:

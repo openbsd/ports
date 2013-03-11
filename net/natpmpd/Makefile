@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/12/23 15:15:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:35:49 espie Exp $
 
 COMMENT=		daemon implementing NAT-PMP protocol for pf(4)
 
@@ -12,9 +12,6 @@ MAINTAINER=		Matt Dainty <matt@bodgit-n-scarper.com>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c event
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/03/03 18:41:14 rpointel Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:41:30 espie Exp $
 
 COMMENT =		system downtime monitoring
 DISTNAME =		downtimed-0.5
@@ -11,9 +11,6 @@ MAINTAINER =		Remi Pointel <rpointel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 USE_GROFF =		Yes
 

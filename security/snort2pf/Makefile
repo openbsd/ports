@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/06/02 13:41:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:41:28 espie Exp $
 
 COMMENT=		block "nasty" hosts with pf(4) based on Snort's rules
 
@@ -9,16 +9,13 @@ REVISION=		0
 HOMEPAGE=		http://sourceforge.net/projects/snort2pf/
 
 # BSD
-PERMIT_DISTFILES_FTP=   Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_PACKAGE_FTP=     Yes
 PERMIT_PACKAGE_CDROM=   Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=snort2pf/}
 
 PKG_ARCH=		*
 NO_BUILD=		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 RUN_DEPENDS=		net/p5-Net-Patricia
 

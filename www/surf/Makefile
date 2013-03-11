@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2012/10/30 18:27:55 zinke Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 11:44:49 espie Exp $
 
 COMMENT =	simple webbrowser based on webkit/gtk+
 
@@ -10,9 +10,6 @@ MAINTAINER=	Joerg Zinke <zinke@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo expat fontconfig freetype
@@ -34,6 +31,6 @@ RUN_DEPENDS =	x11/dmenu
 RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-ffmpeg \
 		multimedia/gstreamer-0.10/plugins-good
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 .include <bsd.port.mk>

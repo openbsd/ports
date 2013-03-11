@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/09/16 12:29:13 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 11:46:09 espie Exp $
 
 COMMENT=	GTK-based BDF font editor
 
@@ -10,9 +10,6 @@ HOMEPAGE=	http://www.math.nmsu.edu/~mleisher/Software/gbdfed/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
@@ -33,7 +30,7 @@ CONFIGURE_STYLE=gnu
 # leakage from bsd.own.mk
 MAKE_ENV=	STATIC=""
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/gbdfed ${PREFIX}/bin

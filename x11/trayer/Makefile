@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/01/21 17:58:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 11:46:16 espie Exp $
 
 COMMENT=		lightweight GTK2-based systray
 
@@ -8,9 +8,6 @@ CATEGORIES=		x11
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xmu Xrandr Xrender atk-1.0 c cairo expat fontconfig
@@ -29,7 +26,7 @@ LIB_DEPENDS=		x11/gtk+2
 
 MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS} -DG_DISABLE_DEPRECATED"
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/trayer ${PREFIX}/bin

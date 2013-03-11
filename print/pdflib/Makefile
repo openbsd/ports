@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/20 09:48:39 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2013/03/11 11:37:54 espie Exp $
 
 COMMENT=		C library to produce PDF files
 
@@ -11,8 +11,6 @@ HOMEPAGE=		http://www.pdflib.com/pdflib/
 
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	No
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.pdflib.com/pdflib/download/
 
@@ -41,7 +39,7 @@ CONFIGURE_ENV=		LDFLAGS="-L${DEPBASE}/lib" \
 			LIBS="-lm"
 MAKE_ENV=		${CONFIGURE_ENV}
 
-REGRESS_TARGET=		test
+TEST_TARGET=		test
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pdflib

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/23 21:26:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 11:37:54 espie Exp $
 
 COMMENT=	convert Postscript to Encapsulated Postscript
 
@@ -11,9 +11,6 @@ MAINTAINER=	Laurence Tratt <laurie@tratt.net>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.tm.uka.de/~bless/
 
@@ -22,7 +19,7 @@ RUN_DEPENDS=	print/ghostscript/gnu
 WANTLIB=	c
 WRKDIST= 	${WRKDIR}/ps2eps
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-build:
 	${CC} ${CFLAGS} -o ${WRKBUILD}/bbox ${WRKSRC}/src/C/bbox.c

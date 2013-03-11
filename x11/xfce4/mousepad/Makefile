@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/01/02 18:32:21 landry Exp $
+# $OpenBSD: Makefile,v 1.28 2013/03/11 11:46:17 espie Exp $
 
 COMMENT=	Xfce4 simple text editor
 
@@ -7,10 +7,7 @@ XFCE_GOODIE=	mousepad
 
 HOMEPAGE=	http://www.xfce.org/projects/mousepad
 # GPLv2
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
 MODXFCE_DESKTOP_FILE=	Yes

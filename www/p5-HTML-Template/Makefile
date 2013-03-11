@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/19 08:02:56 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 11:44:46 espie Exp $
 
 COMMENT=	use HTML Templates from CGI scripts
 
@@ -13,8 +13,5 @@ MAINTAINER=	Jim Dew <jdew@yggdrasil.ca>
 
 # GPL/Artistic license
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 .include <bsd.port.mk>

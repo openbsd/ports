@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/20 09:48:39 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 11:37:53 espie Exp $
 
 COMMENT=	LaTeX2e class for overhead transparencies
 
@@ -7,8 +7,6 @@ CATEGORIES=	print
 
 PERMIT_PACKAGE_CDROM=	not-for-profit redistribution only
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	not-for-profit redistribution only
-PERMIT_DISTFILES_FTP=	Yes
 
 EXTRACT_CASES=	*) cp ${FULLDISTDIR}/$$archive ${WRKDIST};;
 
@@ -36,6 +34,6 @@ do-install:
 		${INSTALL_DATA} ${WRKDIST}/{foils.cls,foil*.clo,fltfonts.def,foils.sty} ${CLS_DIR}
 		${INSTALL_DATA} ${WRKDIST}/{foiltex.{dvi,dtx},sampfoil.tex} ${DOC_DIR}
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

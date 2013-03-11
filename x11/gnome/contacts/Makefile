@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2012/11/12 14:02:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 11:46:10 espie Exp $
 
 COMMENT=		contacts manager for GNOME
 
@@ -9,9 +9,6 @@ CATEGORIES=		productivity
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM= 	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm asn1 atk-1.0 c cairo

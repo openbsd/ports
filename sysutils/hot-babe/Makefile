@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/09/16 11:41:40 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2013/03/11 11:41:30 espie Exp $
 
 COMMENT=	small utility which displays system activity
 
@@ -12,9 +12,6 @@ MAINTAINER=	Jan Lindblom <cl0wn@ludd.ltu.se>
 
 # Artistic License
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender c cairo expat fontconfig
@@ -28,6 +25,6 @@ MODULES=	devel/gettext
 LIB_DEPENDS=	x11/gtk+2
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

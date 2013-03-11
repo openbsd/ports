@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2012/05/20 16:44:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 11:35:45 espie Exp $
 
 COMMENT=	network distribution package for CVS repositories
 
@@ -12,9 +12,6 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	https://bitbucket.org/mux/csup/get/
 DIST_SUBDIR=	csup

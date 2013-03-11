@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2013/02/09 14:49:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2013/03/11 11:41:30 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -17,9 +17,6 @@ HOMEPAGE=	http://www.gkrellm.net/
 
 # GPLv3 with OpenSSL license exception
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 
 MASTER_SITES=	http://members.dslextreme.com/users/billw/gkrellm/
@@ -50,7 +47,7 @@ WANTLIB-client += pangoft2-1.0 pixman-1 png pthread-stubs ssl xcb z
 WANTLIB-client += gio-2.0 gobject-2.0 gdk_pixbuf-2.0
 WANTLIB-client += GL Xxf86vm drm xcb-render xcb-shm
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 USE_GMAKE=	Yes
 
 ALL_TARGET=	openbsd

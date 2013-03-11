@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/24 21:31:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2013/03/11 11:37:53 espie Exp $
 
 COMMENT=	X11 version of Rob Pike's editor, sam
 
@@ -15,16 +15,13 @@ EXTRACT_CASES=	*.shar.gz) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | /bin/sh;;
 MAINTAINER=	Markus Friedl <markus@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xt c pthread-stubs xcb
 
 USE_GROFF =	Yes
 
 WRKDIST=	${WRKDIR}
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 SAMDOCDIR=	${PREFIX}/share/doc/sam
 SAMDOCFILES=	README doc/sam.ps doc/sam.tut.ms doc/se.ps doc/Sam.ad

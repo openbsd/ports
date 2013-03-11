@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/02/03 15:12:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:46:19 espie Exp $
 
 COMMENT=		display graphical dialogs from shell scripts or command line
 
@@ -9,9 +9,6 @@ HOMEPAGE=		http://yad.googlecode.com/
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}/files/
 EXTRACT_SUFX=		.tar.xz

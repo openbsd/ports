@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/09/20 20:51:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 11:35:47 espie Exp $
 
 COMMENT=		collection of GTK+ widgets on top of GUPnp
 
@@ -23,9 +23,9 @@ WANTLIB += xcb xcb-render xcb-shm xml2 z
 
 LIB_DEPENDS=		net/gupnp/core
 
-REGRESS_IS_INTERACTIVE=x11
+TEST_IS_INTERACTIVE=x11
 
-do-regress:
+do-test:
 	${WRKSRC}/tests/test-view
 
 .include <bsd.port.mk>

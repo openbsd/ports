@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2012/04/20 09:27:29 pascal Exp $
+# $OpenBSD: Makefile,v 1.27 2013/03/11 11:44:48 espie Exp $
 
 COMMENT=	web proxy with advanced filtering capabilities
 
@@ -13,16 +13,13 @@ MAINTAINER=	Michael Erdely <merdely@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c pcre pcreposix pthread z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ijbswa/}
 EXTRACT_SUFX=	-src.tar.gz
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 USE_GMAKE=	Yes
 MAKE_FILE=	GNUmakefile

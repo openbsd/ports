@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2012/09/25 22:00:00 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 11:35:44 espie Exp $
 
 SHARED_ONLY =		Yes
 
@@ -18,9 +18,6 @@ EXTRACT_SUFX =		.tar.bz2
 
 # LGPL v2.1
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 SHARED_LIBS +=		bluray		1.0	# 3.0
 WANTLIB +=		c m pthread xml2 z

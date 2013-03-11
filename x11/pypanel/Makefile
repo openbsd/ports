@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/16 12:29:17 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 11:46:15 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -13,9 +13,6 @@ HOMEPAGE=	http://pypanel.sourceforge.net/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	X11 Xext Xft freetype m z Imlib2
 
@@ -27,7 +24,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	x11/py-Xlib
 LIB_DEPENDS=	graphics/imlib2
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 PYTHONPATH=	${WRKINST}${MODPY_SITEPKG}
 

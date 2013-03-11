@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/07/30 07:55:14 benoit Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 11:46:09 espie Exp $
 
 COMMENT =	fast light toolkit
 
@@ -15,9 +15,6 @@ HOMEPAGE =	http://www.fltk.org/
 
 # FLTK/GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB = 	X11 Xcursor Xext Xft Xi Xinerama Xrender c fontconfig m \
 		pthread stdc++ z jpeg png
@@ -59,9 +56,9 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 # shared libs are disabled until fltk2 stabilises
 CONFIGURE_ARGS=	--disable-shared
 
-REGRESS_IS_INTERACTIVE= x11
+TEST_IS_INTERACTIVE= x11
 
-do-regress:
+do-test:
 	@cd ${WRKSRC}/test && \
 		${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} && \
 		./demo

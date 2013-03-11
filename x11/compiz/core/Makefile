@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/02/06 14:23:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/11 11:46:08 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -16,9 +16,6 @@ HOMEPAGE =	http://www.compiz.org/
 
 # MIT, GPL and LGPL
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += GL GLU ICE SM X11 X11-xcb XRes Xau Xcomposite
 WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr

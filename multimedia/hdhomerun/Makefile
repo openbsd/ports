@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2012/08/27 09:34:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 11:35:44 espie Exp $
 
 COMMENT=	HDHomeRun Config CLI utility & firmware
 FW=		hdhomerun_atsc_firmware_20110323.bin \
@@ -18,13 +18,10 @@ MASTER_SITES=	http://download.silicondust.com/hdhomerun/
 HOMEPAGE=	http://www.silicondust.com/
 
 # LGPLv3+
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
 
 ALL_TARGET=	hdhomerun_config
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 USE_GMAKE=	Yes
 WANTLIB=	c pthread
 WRKDIST=	${WRKDIR}/libhdhomerun

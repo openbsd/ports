@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/04/08 22:04:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 11:42:43 espie Exp $
 
 COMMENT=	use shorter names in catalyst tt views (deprecated)
 
@@ -9,9 +9,6 @@ USE_GROFF =	Yes
 
 # Artistic + GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	textproc/p5-Catalyst-View-TT \
 		www/p5-Catalyst-Plugin-Singleton \

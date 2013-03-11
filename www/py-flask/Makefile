@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/10 10:57:51 fgsch Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 11:44:48 espie Exp $
 
 COMMENT = 	microframework based on Werkzeug and Jinja 2
 
@@ -26,7 +26,7 @@ RUN_DEPENDS =	devel/py-blinker \
 		${MODPY_JSON}
 BUILD_DEPENDS =	textproc/py-sphinx \
 		www/py-werkzeug>=0.7
-REGRESS_DEPENDS = ${RUN_DEPENDS}
+TEST_DEPENDS = ${RUN_DEPENDS}
 
 post-build:
 	cd ${WRKSRC}/docs && PYTHONPATH=.. $(MAKE_PROGRAM) html

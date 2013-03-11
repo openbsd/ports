@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2012/10/29 15:19:03 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 11:44:42 espie Exp $
 
 COMMENT=	little and fast Web crawler
 
@@ -10,9 +10,6 @@ HOMEPAGE=	http://larbin.sourceforge.net/index-eng.html
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += adns>=1 c m pthread stdc++
 
@@ -23,7 +20,7 @@ LIB_DEPENDS=		net/adns
 CONFIGURE_STYLE=	simple
 CONFIGURE_ENV=		CC="${CC}" MAKE=${MAKE_PROGRAM}
 MAKE_ENV=		CC="${CC}" CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 # uses makedepend
 USE_X11 =		Yes

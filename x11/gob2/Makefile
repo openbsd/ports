@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2012/12/19 07:29:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 11:46:12 espie Exp $
 
 COMMENT=		GTK+ Object Builder
 
@@ -11,9 +11,6 @@ HOMEPAGE=		http://www.gnome.org/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		devel/gettext \
 			x11/gnome

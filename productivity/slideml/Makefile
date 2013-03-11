@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2012/01/30 12:37:23 jsing Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 11:37:55 espie Exp $
 
 COMMENT =		HTML slide generator based on SlideML
 
@@ -12,9 +12,6 @@ MAINTAINER =		Laurent Fanis <laurent@openbsd.org>
 
 #W3C Software Notice and License & BSD
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		http://opensource.conformal.com/snapshots/slideml/
 EXTRACT_SUFX =		.tgz
@@ -22,7 +19,7 @@ EXTRACT_SUFX =		.tgz
 RUN_DEPENDS =		graphics/p5-Image-Size 
 
 NO_BUILD =		Yes
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 DATA_DIR =		${PREFIX}/share/slideml
 DOC_DIR =		${PREFIX}/share/doc/slideml

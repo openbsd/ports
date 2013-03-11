@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/02/06 17:36:11 sebastia Exp $
+# $OpenBSD: Makefile,v 1.29 2013/03/11 11:44:49 espie Exp $
 
 COMMENT = 	web based groupware server
 
@@ -19,9 +19,6 @@ MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # LGPLv2/GPLv2
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 MODULES =		x11/gnustep
 MODGNUSTEP_NEEDS_GUI =	No

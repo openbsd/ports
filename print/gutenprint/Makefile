@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2013/01/05 12:53:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2013/03/11 11:37:53 espie Exp $
 
 COMMENT=		high quality print drivers for foomatic and CUPS
 
@@ -22,9 +22,6 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += asn1 c crypto cups cupsimage gssapi ijs krb5 m ncurses
 WANTLIB += pthread readline ssl z avahi-client avahi-common dbus-1

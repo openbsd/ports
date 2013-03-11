@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/22 08:36:56 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/11 11:46:09 espie Exp $
 
 COMMENT=	win95-like window manager based on fvwm 2.x
 
@@ -17,7 +17,6 @@ LIB_DEPENDS=	audio/rplay
 
 PERMIT_PACKAGE_CDROM=	no license
 PERMIT_PACKAGE_FTP=	no license
-PERMIT_DISTFILES_CDROM=	no license
 PERMIT_DISTFILES_FTP=	no license
 
 WANTLIB=		X11 Xext Xpm c rplay
@@ -25,7 +24,7 @@ WANTLIB=		X11 Xext Xpm c rplay
 USE_GROFF =	Yes
 
 CONFIGURE_STYLE= gnu dest
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/fvwm/fvwm95.man ${PREFIX}/man/man1/fvwm95.1

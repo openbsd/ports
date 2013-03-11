@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2013/02/09 14:49:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2013/03/11 11:41:29 espie Exp $
 
 ONLY_FOR_ARCHS= ${APM_ARCHS}
 
@@ -14,9 +14,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=conky/}
 
 # mostly GPLv3; see COPYING
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB=	c crypto kvm idn m ncurses ossaudio pthread ssl z \
 		glib-2.0 pcre curl xml2 ${MODLUA_WANTLIB}

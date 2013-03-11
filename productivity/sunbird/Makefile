@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2012/12/04 21:05:30 landry Exp $
+# $OpenBSD: Makefile,v 1.49 2013/03/11 11:37:55 espie Exp $
 
 COMMENT =		Mozilla calendar
 
@@ -29,15 +29,12 @@ MOZILLA_LIBS = calbasecomps accessibility auth autoconfig caps chardet chrome \
 
 # MPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES =	www/mozilla devel/gettext lang/python
 MODPY_RUN_DEP =	No
 
 # Regression tests are too hard to adapt to run here
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 # use files and patches from mail/mozilla-thunderbird
 # XXX impossible until we can build sb from tb 5+

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/05/20 08:40:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 11:35:49 espie Exp $
 
 COMMENT=		helper routines for writing Nagios plugins
 
@@ -9,9 +9,6 @@ USE_GROFF =		Yes
 
 # same as Perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 CPAN_AUTHOR=		TONVOON
 

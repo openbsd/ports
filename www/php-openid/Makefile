@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/11/16 15:56:38 robert Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 11:44:47 espie Exp $
 
 COMMENT=		OpenID authentication for PHP
 
@@ -8,9 +8,6 @@ CATEGORIES=		www security
 
 # Apache 2.0 license
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 HOMEPAGE=		http://openidenabled.com/php-openid/
 
@@ -18,7 +15,7 @@ MASTER_SITES=		http://openidenabled.com/files/php-openid/packages/
 EXTRACT_SUFX=		.tar.bz2
 
 NO_BUILD=		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 PKG_ARCH=		*
 
 # Although this library is not PEAR, installing it into

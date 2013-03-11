@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/24 21:15:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 11:46:19 espie Exp $
 
 COMMENT=	magnify, rotate, mirror the image on the X11 screen
 
@@ -11,13 +11,11 @@ EXTRACT_SUFX=	.tgz
 # custom
 PERMIT_PACKAGE_CDROM=	may not sell
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	may not sell
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext c 
 
 USE_GROFF =	Yes
 CONFIGURE_STYLE=	imake
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/01/25 08:37:16 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/11 11:46:19 espie Exp $
 
 COMMENT =		minimalistic text based status bar
 
@@ -10,9 +10,6 @@ MAINTAINER =		Jona Joachim <jaj@hcl-club.lu>
 
 # BSD3
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		X11 Xext Xft Xinerama Xrandr c m pthread \
 			util xml2
@@ -45,6 +42,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLEDIR}
 	${INSTALL_DATA} ${WRKSRC}/samples/xmobar.config ${EXAMPLEDIR}/xmobarrc
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 .include <bsd.port.mk>

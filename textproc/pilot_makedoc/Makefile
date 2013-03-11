@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2012/09/04 07:35:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/11 11:42:46 espie Exp $
 
 COMMENT=	convert text into the Doc format used by PalmPilots
 
@@ -13,13 +13,12 @@ EXTRACT_ONLY=
 # License: NONE
 PERMIT_PACKAGE_CDROM=	no license
 PERMIT_PACKAGE_FTP=	no license
-PERMIT_DISTFILES_CDROM=	no license
 PERMIT_DISTFILES_FTP=	no license
 WANTLIB=		c m stdc++ 
 
 WRKDIST=	${WRKDIR}
 ALL_TARGET=	pilot_makedoc
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-extract:
 		@cp ${FULLDISTDIR}/${DISTFILES} ${WRKDIR}

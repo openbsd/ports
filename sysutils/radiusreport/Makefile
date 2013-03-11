@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/20 17:22:42 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 11:41:32 espie Exp $
 
 COMMENT=	RADIUS log file analysis tool
 
@@ -11,12 +11,9 @@ EXTRACT_SUFX=	.tar
 HOMEPAGE=	http://www.pgregg.com/projects/radiusreport/
 
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 PKG_ARCH=	*
 
 do-install:

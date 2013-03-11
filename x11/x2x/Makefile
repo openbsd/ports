@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/11/22 09:33:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2013/03/11 11:46:17 espie Exp $
 
 COMMENT=	one keyboard/mouse to multiple X displays
 
@@ -10,9 +10,6 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += X11 Xau Xdmcp Xext Xtst c
 
@@ -21,7 +18,7 @@ MASTER_SITES=	ftp://gatekeeper.dec.com/pub/DEC/SRC/x2x/ \
 		ftp://ftp.europe.digital.com/pub/DEC/SRC/x2x/
 
 CONFIGURE_STYLE=imake
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 pre-build:
 	@mandoc -man ${WRKSRC}/x2x.1 > ${WRKSRC}/x2x.man

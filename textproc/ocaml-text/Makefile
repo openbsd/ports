@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/11/30 19:38:09 chrisz Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:42:42 espie Exp $
 
 COMMENT =	library for dealing with unicode text
 CATEGORIES =	devel textproc
@@ -12,10 +12,7 @@ HOMEPAGE =	http://ocaml-text.forge.ocamlcore.org/
 
 
 # BSD3
-PERMIT_PACKAGE_FTP =		Yes
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_DISTFILES_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
 
 MODULES =	lang/ocaml
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/22 08:36:55 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 11:44:50 espie Exp $
 
 COMMENT=		WWW OFFLine Explorer
 
@@ -10,9 +10,6 @@ HOMEPAGE=		http://www.gedanken.demon.co.uk/wwwoffle/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 MASTER_SITES=		http://distfiles.nl/
@@ -25,7 +22,7 @@ MAKE_ENV=		FLAVOR="${FLAVOR}"
 MAKE_FLAGS=		prefix="${PREFIX}"
 
 USE_GROFF =		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 # These index.htmls are symlinks and @sample doesn't like that.
 post-install:

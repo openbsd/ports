@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2012/06/09 11:26:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 11:41:32 espie Exp $
 
 COMMENT =	Really Awesome New Cisco confIg Differ
 
@@ -12,9 +12,7 @@ MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # Custom
 PERMIT_PACKAGE_CDROM =	not for commercial use
-PERMIT_DISTFILES_CDROM =not for commercial use
 PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	c util
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2011/10/26 16:12:08 mglocker Exp $
+# $OpenBSD: Makefile,v 1.40 2013/03/11 11:44:43 espie Exp $
 
 COMMENT=		Nostromo webserver
 
@@ -12,13 +12,10 @@ MAINTAINER=		Marcus Glocker <marcus@nazgul.ch>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c crypto ssl
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 # Change bsd.port.mk vars
 WRKSRC=			${WRKDIST}/src

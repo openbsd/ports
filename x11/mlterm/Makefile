@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2012/12/17 18:39:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2013/03/11 11:46:14 espie Exp $
 
 COMMENT=	color terminal emulator with unicode support
 DISTNAME=	mlterm-2.9.0
@@ -12,9 +12,6 @@ MAINTAINER=	Waldemar Brodkorb <wbx@openbsd.de>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xft Xi Xinerama Xrandr Xrender atk-1.0 c cairo
@@ -41,7 +38,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include/freetype2"
 MAKE_ENV=	LIBkik_VERSION=${LIBkik_VERSION} \
 		LIBmkf_VERSION=${LIBmkf_VERSION}
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mlterm

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2012/01/26 15:37:48 okan Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 11:41:24 espie Exp $
 
 COMMENT=	secure concurrent multi-server terminal control
 
@@ -13,9 +13,6 @@ MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=clusterssh/}
 
@@ -29,7 +26,7 @@ RUN_DEPENDS=	x11/p5-Tk \
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 # one test fails due to hard coded xterm path
-REGRESS_DEPENDS=devel/p5-Test-Trap \
+TEST_DEPENDS=devel/p5-Test-Trap \
 		devel/p5-Test-Pod \
 		devel/p5-Test-Pod-Coverage \
 		devel/p5-Test-DistManifest

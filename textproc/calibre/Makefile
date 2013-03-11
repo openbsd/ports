@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2012/12/23 12:25:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 11:42:40 espie Exp $
 
 COMMENT =		ebook management application
 
@@ -11,9 +11,6 @@ HOMEPAGE =		http://calibre-ebook.com/
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		lang/python \
 			x11/qt4
@@ -61,7 +58,7 @@ MAKE_ENV +=		WITH_USB=no
 
 WRKDIST =		${WRKDIR}/calibre
 PORTHOME =		${WRKDIR}
-NO_REGRESS = 		Yes
+NO_TEST = 		Yes
 MODPY_SETUPTOOLS =	Yes
 
 ## setup.py doesn't like the options in our python module

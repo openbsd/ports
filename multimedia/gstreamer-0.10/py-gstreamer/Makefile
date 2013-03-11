@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2012/09/06 12:37:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/11 11:35:43 espie Exp $
 
 COMMENT=		Python bindings for GStreamer
 
@@ -27,7 +27,7 @@ RUN_DEPENDS=		x11/py-gtk2 \
 			textproc/libxml,-python
 LIB_DEPENDS=		${P}/plugins-base
 
-REGRESS_DEPENDS=	${P}/plugins-good
+TEST_DEPENDS=	${P}/plugins-good
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-gcov \

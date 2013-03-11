@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2013/03/05 14:10:40 gsoares Exp $
+# $OpenBSD: Makefile,v 1.68 2013/03/11 11:41:28 espie Exp $
 
 COMMENT=	SSL encryption wrapper for standard network daemons
 
@@ -9,9 +9,6 @@ MAINTAINER=	Gleydson Soares <gsoares@openbsd.org>
 
 # GPLv2+ with OpenSSL exemption
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c crypto pthread ssl util wrap z
 
@@ -27,7 +24,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-ssl=/usr \
 			--with-threads=fork
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/auto
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 USE_GROFF =		Yes

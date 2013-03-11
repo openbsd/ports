@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2012/06/29 21:03:35 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/11 11:42:41 espie Exp $
 
 COMMENT =		query the online Dutch Van Dale dictionary
 DISTNAME =		gnuvd-1.0.11
@@ -11,9 +11,6 @@ MAINTAINER =		Steven Mestdagh <steven@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${HOMEPAGE}
 

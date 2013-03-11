@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/03/29 13:38:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:35:50 espie Exp $
 
 COMMENT =		LDAP authentication plugin for OpenVPN 2.x
 
@@ -13,9 +13,6 @@ MAINTAINER =		Joel Sing <jsing@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	 Yes
-PERMIT_PACKAGE_FTP =	 Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	 Yes
 
 WANTLIB =		lber ldap objc
 

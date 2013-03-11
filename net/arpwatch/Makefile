@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/03/03 21:29:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2013/03/11 11:35:45 espie Exp $
 
 COMMENT=	monitor arp & rarp requests
 
@@ -15,9 +15,6 @@ MASTER_SITES0=	http://spacehopper.org/mirrors/
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c pcap
 
@@ -26,7 +23,7 @@ CONFIGURE_ARGS=		--quiet
 MAKE_FLAGS+=		ARPDIR=/var/arpwatch
 
 USE_GROFF=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/arpwatch
 

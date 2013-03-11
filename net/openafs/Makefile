@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2013/02/09 14:49:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2013/03/11 11:35:50 espie Exp $
 
 ONLY_FOR_ARCHS=		i386
 
@@ -16,9 +16,6 @@ MAINTAINER=		Todd T. Fries <todd@openbsd.org>
 
 # IBM Public License 1.0
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c
 
@@ -28,7 +25,7 @@ MASTER_SITES=		http://www.openafs.org/dl/openafs/${VERSION}/
 
 EXTRACT_SUFX=		-src.tar.bz2
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 AUTOCONF_VERSION=	2.60
 CONFIGURE_STYLE=	automake autoconf

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2012/08/19 22:30:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2013/03/11 11:35:55 espie Exp $
 
 COMMENT=	PPTP client package for Microsoft VPN servers
 
@@ -13,13 +13,10 @@ MAINTAINER=	Stefan Sperling <stsp@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB=		c util
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 MAKE_ENV+=	PPPD=/usr/sbin/ppp
 CFLAGS+=	-DUSER_PPP

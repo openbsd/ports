@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2011/06/29 09:18:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2013/03/11 11:44:47 espie Exp $
 
 COMMENT=	library for WWW access in Perl
 
@@ -10,9 +10,6 @@ USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=LWP/}
 

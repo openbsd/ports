@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/09/16 11:13:41 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 11:37:54 espie Exp $
 
 COMMENT =	desktop bugzilla browser
 
@@ -17,15 +17,12 @@ MASTER_SITES =	http://d1.almworks.com/.files/
 # http://almworks.com/eula.html
 # permission to distribute granted by ALM Works in private mail
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =	java
 MODJAVA_VER =	1.7+
 
 RUN_DEPENDS =	java/javaPathHelper
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 NO_BUILD =	Yes
 
 do-install:

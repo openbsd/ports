@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2010/12/10 11:56:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2013/03/11 11:35:54 espie Exp $
 
 COMMENT=	event-driven IRC-client module
 
@@ -10,9 +10,6 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
 MODCPAN_EXAMPLES=	Yes
@@ -25,7 +22,7 @@ RUN_DEPENDS=	devel/p5-Object-Pluggable \
 
 # Not listed in PREREQ_PM, but needed for SSL connections.
 RUN_DEPENDS=	security/p5-POE-Component-SSLify
-REGRESS_DEPENDS=${RUN_DEPENDS}
+TEST_DEPENDS=${RUN_DEPENDS}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/p5-POE-Component-IRC

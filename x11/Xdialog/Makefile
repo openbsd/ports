@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2012/12/21 12:13:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 11:46:08 espie Exp $
 
 COMMENT=	X11 counterpart of curses-based misc/dialog
 
@@ -10,9 +10,6 @@ HOMEPAGE=	http://xdialog.dyns.net/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig

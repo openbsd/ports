@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2012/08/12 18:07:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 11:42:40 espie Exp $
 
 COMMENT =	XML and HTML processing toolkit
 DISTNAME =	arabica-2010-November
@@ -12,9 +12,6 @@ SHARED_LIBS +=	arabica	0.0 # 0.0
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE =	gnu
 

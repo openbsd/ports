@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2012/04/08 21:58:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/11 11:44:45 espie Exp $
 
 COMMENT=	per-user session for catalyst
 
@@ -9,9 +9,6 @@ USE_GROFF =	Yes
 
 # Artistic + GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	www/p5-Catalyst-Plugin-Session \
 		security/p5-Catalyst-Plugin-Authentication \
@@ -21,7 +18,7 @@ RUN_DEPENDS=	www/p5-Catalyst-Plugin-Session \
 		devel/p5-namespace-autoclean \
 		devel/p5-Object-Signature
 
-REGRESS_DEPENDS=devel/p5-Test-WWW-Mechanize-Catalyst
+TEST_DEPENDS=devel/p5-Test-WWW-Mechanize-Catalyst
 
 CONFIGURE_STYLE =	modinst
 

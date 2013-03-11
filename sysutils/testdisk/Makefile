@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/01/30 17:19:24 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 11:41:33 espie Exp $
 
 COMMENT =	data recovery software
 
@@ -14,9 +14,6 @@ MAINTAINER =	Landry Breuil <gaston@gcu.info>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		converters/libiconv
 

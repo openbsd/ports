@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2013/02/09 14:49:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.82 2013/03/11 11:44:50 espie Exp $
 
 COMMENT=	pager/text-based web browser
 
@@ -9,9 +9,6 @@ HOMEPAGE=	http://w3m.sourceforge.net/
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c crypto curses gc>=3 m pthread ssl z
 
@@ -29,7 +26,7 @@ CONFIGURE_ARGS=	--disable-xface \
 		--with-termlib=curses \
 		--with-gc=${LOCALBASE}
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 USE_GROFF=	Yes
 
 .if ${FLAVOR:Mimage}

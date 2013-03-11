@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2012/07/10 07:53:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/11 11:41:33 espie Exp $
 
 COMMENT=	modified OpenBSD top command
 
@@ -12,13 +12,10 @@ MAINTAINER=	Mark Lumsden <mark@cyodesigns.com>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 WANTLIB=	c curses
 
 do-install:

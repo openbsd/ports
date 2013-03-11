@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2013/03/06 18:34:58 zhuk Exp $
+# $OpenBSD: Makefile,v 1.43 2013/03/11 11:35:47 espie Exp $
 
 V =			1.8.4
 
@@ -72,8 +72,8 @@ INSTALL_TARGET = install-unstripped install-idoutils \
 
 # perl tests work; C tests require --enable-libtap in configure and
 # fixing up WRKSRC/tap/configure
-REGRESS_TARGET = test
-REGRESS_DEPENDS = devel/p5-IPC-Run3
+TEST_TARGET = test
+TEST_DEPENDS = devel/p5-IPC-Run3
 # devel/p5-Test-Most
 
 post-install:

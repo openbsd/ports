@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/06/16 12:52:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:44:47 espie Exp $
 
 COMMENT=	easy to use web gallery
 
@@ -10,16 +10,13 @@ HOMEPAGE=	http://www.photoshow-gallery.com/
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://distfiles.bsdfrog.org/
 
 MODULES=	lang/php
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 PKG_ARCH=	*
 
 PREFIX=		/var/www

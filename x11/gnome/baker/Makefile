@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2013/03/04 13:46:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2013/03/11 11:46:10 espie Exp $
 
 COMMENT=		CD/DVD authoring application for GNOME
 
@@ -12,9 +12,6 @@ HOMEPAGE=		http://gnomebaker.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL ICE ORBit-2 SM X11 Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/03/04 15:56:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2013/03/11 11:35:50 espie Exp $
 
 COMMENT=	XMPP real time collaboration server
 DISTNAME=	openfire_src_3_7_1
@@ -11,12 +11,9 @@ MASTER_SITES=	http://www.igniterealtime.org/downloadServlet?filename=openfire/
 HOMEPAGE=	http://www.igniterealtime.org/projects/openfire/index.jsp
 
 # ASL 2.0
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
 
-NO_REGRESS=	yes
+NO_TEST=	yes
 
 MODULES=java
 MODJAVA_VER =	1.7+

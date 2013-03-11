@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/06/23 22:50:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/11 11:46:16 espie Exp $
 
 COMMENT=		stylish window manager
 
@@ -10,9 +10,6 @@ HOMEPAGE=		http://www.all-day-breakfast.com/wm2/
 
 # X11/MIT
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		X11 Xext Xau Xdmcp c m stdc++
 
@@ -22,7 +19,7 @@ FAKE_FLAGS=		PREFIX="${PREFIX}"
 
 USE_GROFF =		Yes
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 post-patch:
 	cp ${FILESDIR}/Makefile ${WRKSRC}

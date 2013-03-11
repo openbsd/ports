@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/02/09 14:49:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2013/03/11 11:35:46 espie Exp $
 
 SHARED_LIBS +=  ft                   0.0      # .0.0
 
@@ -17,9 +17,6 @@ HOMEPAGE=	http://code.google.com/p/flow-tools/
 MASTER_SITES=	http://flow-tools.googlecode.com/files/
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 FLAVORS=		pgsql
 FLAVOR?=

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2012/12/04 16:39:54 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 11:46:15 espie Exp $
 
 COMMENT=		small tiling window manager
 
@@ -13,16 +13,13 @@ MAINTAINER=		Gonzalo L. R. <gonzalo@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += X11 X11-xcb Xcursor Xft c util xcb xcb-aux xcb-icccm
 WANTLIB += xcb-keysyms xcb-randr xcb-xtest
 
 MASTER_SITES=	http://opensource.conformal.com/snapshots/spectrwm/
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 RUN_DEPENDS=	x11/dmenu>=4.5
 

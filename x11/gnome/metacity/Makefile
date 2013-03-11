@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2012/10/16 06:29:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.83 2013/03/11 11:46:11 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -15,9 +15,6 @@ HOMEPAGE=	https://live.gnome.org/Metacity
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm

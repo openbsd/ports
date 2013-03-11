@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/04 14:13:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 11:46:11 espie Exp $
 
 COMMENT=		window and compositing manager
 
@@ -9,9 +9,6 @@ SHARED_LIBS +=  mutter                    0.0 # 0.0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0

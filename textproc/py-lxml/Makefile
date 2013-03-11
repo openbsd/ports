@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/11/27 16:40:17 rpointel Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 11:42:46 espie Exp $
 
 COMMENT=	Python binding for the libxml2 and libxslt libraries
 
@@ -13,10 +13,7 @@ MASTER_SITES=	${HOMEPAGE}
 HOMEPAGE=	http://codespeak.net/lxml/
 
 # BSD
-PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
 
 WANTLIB=	m xml2 z exslt xslt ${MODPY_WANTLIB}
 
@@ -32,7 +29,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-lxml
 	@cp -r ${WRKSRC}/doc/* ${PREFIX}/share/doc/py-lxml/
 
-do-regress:
+do-test:
 	cd ${WRKSRC} && cp lib.openbsd-*/lxml/*.so src/lxml; \
 	    ${MODPY_BIN} test.py
 

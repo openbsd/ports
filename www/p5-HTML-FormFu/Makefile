@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2012/04/07 19:50:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 11:44:45 espie Exp $
 
 COMMENT =	HTML form creation, rendering and validation framework
 
@@ -11,9 +11,6 @@ MAINTAINER =	Simon Bertrang <simon@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 BUILD_DEPENDS =		devel/p5-Task-Weaken
 
@@ -44,7 +41,7 @@ RUN_DEPENDS =		devel/p5-Class-Accessor-Chained \
 			www/p5-HTML-TokeParser-Simple \
 			www/p5-libwww
 
-REGRESS_DEPENDS =	devel/p5-Test-NoWarnings
+TEST_DEPENDS =	devel/p5-Test-NoWarnings
 
 CONFIGURE_STYLE =	modinst
 

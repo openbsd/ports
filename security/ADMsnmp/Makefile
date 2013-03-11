@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/11/20 17:22:42 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/11 11:41:24 espie Exp $
 
 COMMENT=		SNMP audit scanner
 
@@ -12,7 +12,6 @@ MAINTAINER=		Jason Peel <jsyn@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   no license
 PERMIT_PACKAGE_FTP=     no license
-PERMIT_DISTFILES_CDROM= no license
 PERMIT_DISTFILES_FTP=   no license
 WANTLIB=		c
 
@@ -22,7 +21,7 @@ MASTER_SITES=		ftp://adm.freelsd.net/pub/ADM/ \
 
 WRKDIST=		${WRKDIR}/ADMsnmp
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 do-build:
 	cd ${WRKSRC} ; ${CC} ${CFLAGS} \

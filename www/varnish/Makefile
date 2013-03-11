@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2012/10/19 16:27:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/11 11:44:50 espie Exp $
 
 SHARED_ONLY =		Yes
 
@@ -15,9 +15,6 @@ HOMEPAGE =		http://www.varnish-cache.org/
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB = 		c curses edit m pcre pthread
 
@@ -31,7 +28,7 @@ USE_GROFF =		Yes
 CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.68
 
-REGRESS_TARGET =	check
+TEST_TARGET =	check
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/varnish

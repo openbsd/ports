@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2012/12/13 16:34:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/11 11:46:17 espie Exp $
 
 COMMENT=		wm-dockapp; weather monitor
 
@@ -10,9 +10,6 @@ HOMEPAGE=		http://people.debian.org/~godisch/wmweather/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		X11 Xext Xpm c curl
 
@@ -22,7 +19,7 @@ LIB_DEPENDS=		net/curl
 
 USE_GMAKE=		Yes
 USE_GROFF =		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-xmessage

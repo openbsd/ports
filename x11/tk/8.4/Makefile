@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2012/03/29 13:39:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2013/03/11 11:46:16 espie Exp $
 
 COMMENT =		graphical toolkit for Tcl
 
@@ -12,9 +12,6 @@ MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		X11 c m tcl84
 
@@ -30,7 +27,7 @@ FAKE_FLAGS =		INSTALL_DATA_DIR="${INSTALL_DATA_DIR}" \
 			INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 			TK_PKG_DIR='tcl/tk$$(VERSION)'
 
-REGRESS_FLAGS =		HOME=${TESTHOME}
+TEST_FLAGS =		HOME=${TESTHOME}
 SEPARATE_BUILD =	Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE =	autoconf no-autoheader old
@@ -55,13 +52,13 @@ CONFIGURE_ENV +=	EXTRA_INSTALL_BINARIES='@echo "Installing libtk84.a to $$(LIB_I
 			&& (cd $$(LIB_INSTALL_DIR) ; $$(RANLIB) libtk84.a)'
 .endif
 
-REGRESS_IS_INTERACTIVE = x11
+TEST_IS_INTERACTIVE = x11
 WRKSRC =		${WRKDIST}/unix
-REGRESS_TARGET =	test
+TEST_TARGET =	test
 
 TESTHOME =		${WRKDIR}/testhome
 
-pre-regress:
+pre-test:
 	@mkdir -p ${TESTHOME}
 
 post-install:

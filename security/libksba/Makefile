@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/10/15 15:06:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 11:41:25 espie Exp $
 
 COMMENT = 	X.509 library
 
@@ -15,9 +15,6 @@ MAINTAINER = 	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM = 	Yes
-PERMIT_PACKAGE_FTP = 	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP = 	Yes
 
 EXTRACT_SUFX = 		.tar.bz2
 

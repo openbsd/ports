@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2012/12/08 13:17:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/11 11:46:15 espie Exp $
 
 # from upstream, removed at next update
 MASTER_SITES0=		https://github.com/FreeRDP/Remmina/commit/
@@ -25,9 +25,6 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		https://github.com/FreeRDP/Remmina/downloads/
 

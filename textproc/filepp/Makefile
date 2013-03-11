@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/20 19:56:48 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 11:42:41 espie Exp $
 
 COMMENT =	cpp-like generic file pre-processor
 
@@ -11,14 +11,11 @@ MAINTAINER =	William Yodlowsky <william@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 CONFIGURE_STYLE =	gnu dest
 NO_BUILD =		Yes
 PKG_ARCH =		*
-REGRESS_TARGET =	fulltest
+TEST_TARGET =	fulltest
 USE_GROFF =		Yes
 
 post-configure:

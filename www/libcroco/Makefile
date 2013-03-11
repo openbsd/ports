@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/01/24 07:31:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/11 11:44:42 espie Exp $
 
 COMMENT=		generic CSS parsing library for GNOME project
 
@@ -14,9 +14,6 @@ HOMEPAGE=		http://www.freespiders.org/projects/libcroco/
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c glib-2.0 m pcre pthread xml2 z
 

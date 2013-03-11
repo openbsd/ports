@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2012/09/21 14:48:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2013/03/11 11:42:41 espie Exp $
 
 COMMENT=	gtk+2 spelling checker
 DISTNAME=	gtkspell-2.0.16
@@ -14,10 +14,7 @@ HOMEPAGE=	http://gtkspell.sourceforge.net/
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo drm

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2011/07/07 00:08:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2013/03/11 11:41:30 espie Exp $
 
 COMMENT=	change background image with GkrellM2
 
@@ -10,7 +10,6 @@ HOMEPAGE=	http://www.bender-suhl.de/stefan/english/comp/gkrellmbgchg.html
 
 PERMIT_PACKAGE_CDROM=	no license
 PERMIT_PACKAGE_FTP=	no license
-PERMIT_DISTFILES_CDROM=	no license
 PERMIT_DISTFILES_FTP=	no license
 
 MASTER_SITES=	http://www.bender-suhl.de/stefan/comp/sources/old/ \

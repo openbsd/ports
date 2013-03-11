@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2013/02/09 14:49:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2013/03/11 11:35:49 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -14,9 +14,6 @@ HOMEPAGE=	http://netatalk.sourceforge.net/
 
 # GPLv2+ and BSD or similar
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	asn1 c crypto db>=4 gcrypt gpg-error gssapi krb5 pthread \
 		rpcsvc wrap
@@ -49,7 +46,7 @@ LIB_DEPENDS+=	net/avahi
 CONFIGURE_ARGS+= --disable-zeroconf
 .endif
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-extract:
 	@${INSTALL} -m 555 ${FILESDIR}/krb5-config ${WRKDIR}/bin

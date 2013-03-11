@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2012/10/18 06:22:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2013/03/11 11:46:15 espie Exp $
 
 COMMENT=	extensible window manager
 
@@ -18,9 +18,6 @@ HOMEPAGE=	http://sawfish.wikia.com/
 # GPLv2
 # Sounds: Artistic License 2.0
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	archivers/gtar \
 		x11/rep-gtk>=0.90.8.1
@@ -55,7 +52,7 @@ CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include -pthread" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/themes/Makefile.in

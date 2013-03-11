@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2011/07/06 13:41:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/11 11:41:32 espie Exp $
 
 COMMENT=	signal or reprioritize specified processes
 
@@ -10,9 +10,6 @@ CATEGORIES=     	sysutils
 MAINTAINER=		Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	yes
-PERMIT_PACKAGE_FTP=	yes
-PERMIT_DISTFILES_CDROM=	yes
-PERMIT_DISTFILES_FTP=	yes
 WANTLIB=		c
 
 MASTER_SITES=		ftp://fast.cs.utah.edu/pub/skill-${VERSION}/
@@ -21,7 +18,7 @@ EXTRACT_SUFX=		.tgz
 MAKE_FLAGS=		CC='${CC}' CFLAGS='${CFLAGS}'
 USE_GROFF =		Yes
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 do-configure:
 	@cd ${WRKDIST}; ./Config

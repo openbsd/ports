@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/04 04:30:35 lteo Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/11 11:35:50 espie Exp $
 
 COMMENT=	update your Snort rules
 
@@ -13,14 +13,11 @@ MAINTAINER=	Markus Lude <markus.lude@gmx.de>
 
 # License: BSD
 PERMIT_PACKAGE_CDROM= 	Yes
-PERMIT_PACKAGE_FTP=   	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP= 	Yes
 
 RUN_DEPENDS=		net/wget
 
 NO_BUILD=Yes
-NO_REGRESS=Yes
+NO_TEST=Yes
 PKG_ARCH=*
 USE_GROFF =	Yes
 

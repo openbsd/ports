@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/11/20 19:56:47 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/11 11:42:40 espie Exp $
 
 COMMENT=	approximate grep (fast approximate pattern-matching tool)
 
@@ -13,7 +13,6 @@ EXTRACT_SUFX=	.tar.Z
 PERMIT_PACKAGE_FTP=	may not modify
 PERMIT_PACKAGE_CDROM=	no fee
 PERMIT_DISTFILES_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	no fee
 WANTLIB=		c
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}"
@@ -21,7 +20,7 @@ MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET=
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/agrep

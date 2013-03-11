@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 09:15:13 benoit Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 11:35:55 espie Exp $
 
 COMMENT =		GeoIP Python API
 
@@ -25,7 +25,7 @@ WANTLIB =		GeoIP>=8
 
 EXAMPLEDIR =		${PREFIX}/share/examples/py-GeoIP
 NO_TEST =		Yes
- 
+
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLEDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/${MODPY_ADJ_FILES} ${EXAMPLEDIR}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/01/14 02:15:46 brad Exp $
+# $OpenBSD: Makefile,v 1.26 2013/03/11 11:35:43 espie Exp $
 
 COMMENT=	re-encode many media file formats to Ogg Theora
 
@@ -13,8 +13,6 @@ HOMEPAGE=	http://www.v2v.cc/~j/${N}/
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	patents in FFmpeg
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += avcodec avdevice avfilter avformat avutil c m ogg postproc
 WANTLIB += swscale theoradec theoraenc vorbis vorbisenc
@@ -29,7 +27,7 @@ MODULES=	devel/scons converters/libiconv
 
 MODSCONS_FLAGS=	libkate=0
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/${N} ${PREFIX}/bin

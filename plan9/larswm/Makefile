@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2011/01/13 08:47:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2013/03/11 11:37:53 espie Exp $
 
 COMMENT=	9wm with automatic window tiling and virtual desktops
 
@@ -15,14 +15,13 @@ MAINTAINER =	William Yodlowsky <william@openbsd.org>
 # nonstandard license
 PERMIT_PACKAGE_CDROM =	No
 PERMIT_PACKAGE_FTP =	No
-PERMIT_DISTFILES_CDROM = No
 PERMIT_DISTFILES_FTP =	No
 
 WANTLIB =	ICE SM X11 Xau Xdmcp Xext Xmu Xt c pthread-stubs xcb
 
 CONFIGURE_STYLE=imake
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 DOCS=   ChangeLog README README.9wm
 

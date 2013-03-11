@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2012/08/25 10:07:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/11 11:41:25 espie Exp $
 
 COMMENT=	processes logfiles and perform certain actions
 
@@ -8,9 +8,6 @@ CATEGORIES=	security
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 HOMEPAGE=	http://www.crypt.gen.nz/logsurfer/
@@ -20,7 +17,7 @@ MASTER_SITES=	http://kerryt.orcon.net.nz/ \
 
 CONFIGURE_STYLE=	gnu
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 NOT_FOR_ARCHS=	${LP64_ARCHS}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2012/05/02 13:40:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 11:35:49 espie Exp $
 
 COMMENT-main=	nagios service check acceptor
 COMMENT-client=	nagios service check acceptor - client
@@ -16,9 +16,6 @@ HOMEPAGE=	http://www.nagios.org/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://spacehopper.org/mirrors/
 
@@ -33,7 +30,7 @@ CONFIGURE_ARGS=		--with-nsca-user=_nagios \
 
 MULTI_PACKAGES=		-main -client
 
-REGRESS_DEPENDS=	devel/p5-Clone \
+TEST_DEPENDS=	devel/p5-Clone \
 			devel/p5-Parallel-Forker
 RUN_DEPENDS-main=	net/nagios/nagios
 
@@ -41,7 +38,7 @@ pre-build:
 	@perl -pi -e "s,%%SYSCONFDIR%%,${SYSCONFDIR}," ${WRKSRC}/src/nsca.c \
 		${WRKSRC}/src/send_nsca.c
 
-do-regress:
+do-test:
 	@cd ${WRKSRC}/nsca_tests && ./runtests
 
 do-install:

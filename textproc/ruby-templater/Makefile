@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2012/09/23 16:57:35 jeremy Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 11:42:47 espie Exp $
 
 COMMENT =	system for generating files
 
@@ -10,9 +10,6 @@ HOMEPAGE =	http://templater.rubyforge.org/
 
 # MIT
 PERMIT_PACKAGE_CDROM = Yes
-PERMIT_PACKAGE_FTP = Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP = Yes
 
 MODULES =		lang/ruby
 
@@ -23,7 +20,7 @@ RUN_DEPENDS =		devel/ruby-highline,${MODRUBY_FLAVOR}>=1.4.0 \
 
 CONFIGURE_STYLE =	ruby gem
 
-MODRUBY_REGRESS =	rspec
-MODRUBY_REGRESS_TARGET = spec/*_spec.rb
+MODRUBY_TEST =	rspec
+MODRUBY_TEST_TARGET = spec/*_spec.rb
 
 .include <bsd.port.mk>

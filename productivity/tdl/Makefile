@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/05 07:57:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 11:37:55 espie Exp $
 
 COMMENT=	to-do list manager
 
@@ -16,13 +16,10 @@ WANTLIB=	c readline termcap
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= simple
 
 USE_GROFF=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

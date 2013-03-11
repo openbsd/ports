@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2011/11/22 15:34:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2013/03/11 11:41:28 espie Exp $
 
 COMMENT-main=	XML security library
 COMMENT-docs=	XML security library documentation
@@ -18,9 +18,6 @@ HOMEPAGE=	http://www.aleksey.com/xmlsec/
 
 # MIT Licence
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c crypto gcrypt gmp gnutls gpg-error hogweed ltdl m
 WANTLIB += nettle ssl tasn1 xml2 xslt z p11-kit
@@ -52,7 +49,7 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-REGRESS_DEPENDS=	security/xmlsec
-REGRESS_FLAGS=		ABS_BUILDDIR="${WRKSRC}"
+TEST_DEPENDS=	security/xmlsec
+TEST_FLAGS=		ABS_BUILDDIR="${WRKSRC}"
 
 .include <bsd.port.mk>

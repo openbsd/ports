@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/07/08 21:23:24 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:35:49 espie Exp $
 
 COMMENT =	command-line .torrent file creator
 
@@ -10,15 +10,12 @@ MAINTAINER =	Gonzalo L. R. <gonzalo@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	c crypto pthread
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=mktorrent/}
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 MAKE_FILE =	BSDmakefile
 MAKE_FLAGS =	USE_PTHREADS=1 \

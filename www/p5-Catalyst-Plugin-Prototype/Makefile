@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2012/04/07 20:50:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/11 11:44:44 espie Exp $
 
 COMMENT=		catalyst plugin for prototype
 
@@ -12,9 +12,6 @@ MAINTAINER=		Sean Comeau <scomeau@obscurity.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=		www/p5-Catalyst-Runtime \
 			devel/p5-Class-Data-Inheritable \

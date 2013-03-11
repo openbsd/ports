@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/11/14 18:42:50 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:41:28 espie Exp $
 
 COMMENT =	fetch ssh AuthorizedKeys from LDAP
 
@@ -9,9 +9,6 @@ EXTRACT_SUFX=
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES =	http://ftp.redhat.com/pub/redhat/linux/enterprise/6Server/en/os/SRPMS/
 
@@ -29,7 +26,7 @@ CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.62
 CONFIGURE_ARGS =	--with-ldap=${LOCALBASE} \
 			--without-pam
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 ALL_TARGET =	ssh-ldap-helper
 
 BUILD_DEPENDS=	rpm-*|rpm2cpio-*:converters/rpm2cpio \

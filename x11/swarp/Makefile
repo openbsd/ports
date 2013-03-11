@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/11/01 14:38:10 zinke Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:46:15 espie Exp $
 
 COMMENT=		simple pointer warping for X
 
@@ -12,9 +12,6 @@ MAINTAINER=		Joerg Zinke <zinke@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		X11 c
 
@@ -24,6 +21,6 @@ MAKE_FLAGS=		CC="${CC}"
 MAKE_ENV=		LDFLAGS="${LDFLAGS}"
 FAKE_FLAGS=		DESTDIR=""
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 .include <bsd.port.mk>

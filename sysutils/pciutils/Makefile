@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/07/11 18:17:52 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 11:41:32 espie Exp $
 
 NOT_FOR_ARCHS =		sparc m68k m88k vax
 
@@ -13,9 +13,6 @@ MAINTAINER =		Matthieu Herrb <matthieu@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c z
 
@@ -28,7 +25,7 @@ USE_GMAKE =		Yes
 MAKE_ENV =		CC="${CC}"
 FAKE_FLAGS =		PREFIX=${TRUEPREFIX} MANDIR=${TRUEPREFIX}/man
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 INSTALL_TARGET =	install install-lib
 

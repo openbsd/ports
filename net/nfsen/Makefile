@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2012/12/28 21:03:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/11 11:35:50 espie Exp $
 
 MULTI_PACKAGES=		-main -web
 COMMENT-main=		web-based front end for the nfdump netflow tools
@@ -17,9 +17,6 @@ MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=nfsen/}
 
@@ -33,7 +30,7 @@ RUN_DEPENDS-main=	${COMMON_DEPENDS} \
 			nfsen-web-$V:net/nfsen,-web
 
 NO_BUILD=		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 PREFIX-web=		/var/www
 WWWDIR=			${WRKINST}${PREFIX-web}/htdocs
 PKG_ARCH=		*

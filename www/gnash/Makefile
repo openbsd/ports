@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2013/03/08 00:58:26 brad Exp $
+# $OpenBSD: Makefile,v 1.56 2013/03/11 11:44:42 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,9 +20,6 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	SDL X11 agg avcodec avformat avutil boost_iostreams \
 		boost_program_options-mt boost_thread-mt c curl fontconfig \
@@ -64,7 +61,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 INSTALL_TARGET=	install install-plugins
 
 # testsuite available at http://www.gnashdev.org/testcases/
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 SUBST_VARS=	VER
 

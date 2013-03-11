@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/09/16 12:29:17 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 11:46:15 espie Exp $
 
 SHARED_ONLY =		Yes
 
@@ -15,12 +15,9 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=qwt/}
 # Qwt License, Version 1.0
 # http://qwt.sourceforge.net/qwtlicense.html
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		x11/qt4
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 USE_GMAKE =		Yes
 
 MAKE_FLAGS =		LIBqwt_VERSION=${LIBqwt_VERSION}

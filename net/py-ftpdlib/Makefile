@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/01/09 16:09:32 benoit Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:35:55 espie Exp $
 
 COMMENT=		FTP server library for Python
 
@@ -11,10 +11,7 @@ CATEGORIES=		net
 HOMEPAGE=		http://pyftpdlib.googlecode.com/
 
 # MIT
-PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
 
 MASTER_SITES=		${HOMEPAGE}/files/
 
@@ -22,6 +19,6 @@ MODULES=		lang/python
 
 MODPY_SETUPTOOLS =	Yes
  
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 .include <bsd.port.mk>

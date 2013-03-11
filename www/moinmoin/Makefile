@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/01/09 11:56:34 rpointel Exp $
+# $OpenBSD: Makefile,v 1.28 2013/03/11 11:44:43 espie Exp $
 
 COMMENT =	wiki engine written in python
 
@@ -13,9 +13,6 @@ HOMEPAGE =	http://moinmo.in/
 # GPLv2 and several other ones claiming compliance with GPLv2 or
 # actually being less restrictive.
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	http://static.moinmo.in/files/
 
@@ -23,7 +20,7 @@ MODULES =	lang/python
 
 MODPY_VERSION =	2.7
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 post-configure:
 	@cd ${WRKSRC}/wiki/server && perl -pi -e \

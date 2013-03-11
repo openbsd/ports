@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2012/11/17 16:45:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 11:46:16 espie Exp $
 
 COMMENT=		tree window manager
 DISTNAME=		treewm-0.4.5
@@ -14,9 +14,6 @@ MAINTAINER=		William Yodlowsky <bsd@openbsd.rutgers.edu>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xmu Xpm Xt Xxf86vm c m stdc++
 
@@ -32,7 +29,7 @@ MAKE_FLAGS=		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 DESTDIRNAME=	ROOT
 FAKE_FLAGS=		DOCFILES="ChangeLog PROBLEMS README README.tiling"
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/treewm

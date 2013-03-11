@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/22 08:36:55 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/11 11:46:08 espie Exp $
 
 COMMENT=	Amiga Workbench lookalike window manager
 
@@ -13,7 +13,6 @@ HOMEPAGE=	http://www.lysator.liu.se/~marcus/amiwm.html
 
 PERMIT_PACKAGE_CDROM=	restrictive
 PERMIT_PACKAGE_FTP=	restrictive
-PERMIT_DISTFILES_CDROM=	restrictive
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xext Xmu c m
 
@@ -22,6 +21,6 @@ CONFIGURE_STYLE= 	gnu dest
 
 CONFIGURE_ENV=		CPPFLAGS='${CPPFLAGS} -I${X11BASE}/include'
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

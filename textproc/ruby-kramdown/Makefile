@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/01/21 14:53:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:42:46 espie Exp $
 
 COMMENT=	fast, pure Ruby Markdown parser
 
@@ -10,9 +10,6 @@ HOMEPAGE=	http://kramdown.rubyforge.org/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	lang/ruby
 

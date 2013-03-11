@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2012/10/15 15:18:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 11:41:26 espie Exp $
 
 COMMENT=	OTP and S/Key calculator for X
 
@@ -10,9 +10,6 @@ HOMEPAGE=	http://original.killa.net/infosec/otpCalc/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
@@ -34,6 +31,6 @@ ALL_TARGET=	otpCalc otpCalc.1
 
 LIB_DEPENDS=	x11/gtk+2
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

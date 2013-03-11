@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2013/01/21 19:08:00 kili Exp $
+# $OpenBSD: Makefile,v 1.72 2013/03/11 11:37:54 espie Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt=	qt interface to PDF rendering library
@@ -27,10 +27,7 @@ HOMEPAGE=	http://poppler.freedesktop.org/
 MAINTAINER=	Matthias Kilian <kili@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/01/22 16:07:57 stsp Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/11 11:44:48 espie Exp $
 
 COMMENT =		Python HTTP client library
 
@@ -13,9 +13,6 @@ HOMEPAGE =		http://code.google.com/p/httplib2/
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		http://httplib2.googlecode.com/files/
 
@@ -35,7 +32,7 @@ post-install:
 	ln -sf /etc/ssl/cert.pem \
 	    ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/httplib2/cacerts.txt
 
-do-regress:
+do-test:
 	${MODPY_BIN} ${WRKSRC}/python${MODPY_MAJOR_VERSION}/httplib2test.py
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2012/10/15 15:18:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 11:41:24 espie Exp $
 
 COMMENT=		automated password generator
 
@@ -10,9 +10,6 @@ HOMEPAGE=		http://www.adel.nursat.kz/apg/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m
 
 MASTER_SITES=		http://www.adel.nursat.kz/apg/download/ \
@@ -22,7 +19,7 @@ MAKE_FLAGS=		CC="${CC}" FLAGS="${CFLAGS}" \
 			LIBS="" USE_SHA=APG_USE_SHA
 
 USE_GROFF =	 	Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/man/apg.1 ${PREFIX}/man/man1

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/08/22 07:14:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:42:43 espie Exp $
 
 COMMENT=		transform LaTeX source files to POD
 
@@ -9,9 +9,6 @@ MODULES=		cpan
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=		textproc/p5-LaTeX-TOM \
 			devel/p5-List-MoreUtils \

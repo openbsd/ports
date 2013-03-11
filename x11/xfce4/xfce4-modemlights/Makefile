@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2012/04/30 13:29:04 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 11:46:18 espie Exp $
 
 COMMENT =	Xfce4 ppp connection monitor panel plugin
 
@@ -7,10 +7,7 @@ XFCE_PLUGIN =	modemlights
 REVISION =	6
 
 # GPLv2
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
 
 MODULES =	x11/xfce4
 LIB_DEPENDS =	x11/xfce4/libxfcegui4

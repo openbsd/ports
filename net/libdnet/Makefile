@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2013/02/09 14:49:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2013/03/11 11:35:48 espie Exp $
 
 COMMENT-main=	portable low-level networking library
 COMMENT-python= python interface to libdnet
@@ -17,9 +17,6 @@ HOMEPAGE=	http://code.google.com/p/libdnet/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c
 
@@ -46,8 +43,8 @@ MODULES+=		lang/python
 MULTI_PACKAGES+=	-python
 CONFIGURE_ARGS+=	--with-python
 MAKE_FLAGS=		PYTHON=${MODPY_BIN}
-REGRESS_DEPENDS=	net/libdnet,-python
-REGRESS_FLAGS=		TESTS_ENVIRONMENT=${MODPY_BIN}
+TEST_DEPENDS=	net/libdnet,-python
+TEST_FLAGS=		TESTS_ENVIRONMENT=${MODPY_BIN}
 WANTLIB-python=
 .endif
 

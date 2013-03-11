@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2011/09/16 11:13:40 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2013/03/11 11:35:57 espie Exp $
 
 COMMENT=	resend network traffic saved by tcpdump
 
@@ -12,9 +12,6 @@ MAINTAINER=	Nigel Taylor <nigel@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=tcpreplay/}
 

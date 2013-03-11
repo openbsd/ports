@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2012/12/31 22:53:43 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/11 11:35:48 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -15,9 +15,6 @@ MAINTAINER =	Simon Bertrang <simon@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 WANTLIB =		c crypto ltdl sqlite3 ssl z
 
@@ -43,7 +40,7 @@ CONFIGURE_ARGS =	--enable-openssl=/usr \
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 # Hack to make the nick length configurable at build time
 NICKLEN ?=

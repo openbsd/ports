@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2012/03/17 15:10:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2013/03/11 11:42:42 espie Exp $
 
 COMMENT=	graphical front end to Unix diff
 
@@ -11,9 +11,6 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB:=applications/}
 
 # X11
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xmu Xt c m Xm
 
@@ -22,7 +19,7 @@ USE_GROFF =	Yes
 CONFIGURE_STYLE=imake
 MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/X11/mgdiff

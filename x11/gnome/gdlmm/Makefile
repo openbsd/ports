@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/01/11 13:44:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 11:46:10 espie Exp $
 
 COMMENT=	C++ binding for gdl
 
@@ -10,9 +10,6 @@ SHARED_LIBS +=  gdlmm-3.0                 0.0 # 1.0
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 atkmm-1.6

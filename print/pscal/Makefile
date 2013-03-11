@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 21:36:45 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:37:54 espie Exp $
 
 COMMENT=	utility for generating PostScript calendars
 
@@ -10,14 +10,11 @@ HOMEPAGE=	http://www.panix.com/~mbh/projects.html
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.panix.com/~mbh/pscal/
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 PKG_ARCH=	*
 
 do-install:

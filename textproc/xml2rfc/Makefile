@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2013/02/07 14:21:04 stu Exp $
+# $OpenBSD: Makefile,v 1.36 2013/03/11 11:42:47 espie Exp $
 
 COMMENT=	convert memos written in XML to the RFC format
 
@@ -13,13 +13,10 @@ MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES+=	x11/tk
 RUN_DEPENDS+=	${MODTK_RUN_DEPENDS}
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 PKG_ARCH=	*
 
 do-build:

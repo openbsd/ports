@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2012/12/31 08:41:27 landry Exp $
+# $OpenBSD: Makefile,v 1.34 2013/03/11 11:41:26 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -22,9 +22,6 @@ MAINTAINER=		Martynas Venckus <martynas@openbsd.org>
 
 # mozilla public license
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += c pthread z nspr4 plc4 plds4 sqlite3
 
 #for regular releases
@@ -67,7 +64,7 @@ do-install:
 	chown ${BINOWN}:${BINGRP} ${PREFIX}/{bin/nss-config,lib/pkgconfig/nss.pc}
 	chmod +x ${PREFIX}/bin/nss-config
 
-do-regress:
+do-test:
 	cd ${WRKSRC}/tests && ${SETENV} ${MAKE_ENV} \
 		PATH="${NSSOBJ}/bin:${PATH}" \
 		LD_LIBRARY_PATH="${NSSOBJ}/lib" /bin/sh ./all.sh

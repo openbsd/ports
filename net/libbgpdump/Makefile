@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/19 22:31:34 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 11:35:48 espie Exp $
 
 COMMENT=	library to analyze MRT-format BGP dump files
 
@@ -12,8 +12,6 @@ CATEGORIES=	net
 # License_NCC: "for any purpose and without fee".
 PERMIT_PACKAGE_CDROM=	without fee
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	without fee
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.ris.ripe.net/source/bgpdump/
 
@@ -25,7 +23,7 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS}"
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 MAKE_FLAGS+=	LIBbgpdump_VERSION=${LIBbgpdump_VERSION}
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 pre-configure:
 	perl -pi -e s,libbgpdump\.so,libbgpdump.so.${LIBbgpdump_VERSION},g \

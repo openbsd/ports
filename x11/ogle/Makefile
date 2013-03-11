@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2013/02/09 14:49:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2013/03/11 11:46:14 espie Exp $
 
 ONLY_FOR_ARCHS =	alpha i386 powerpc sparc64 amd64
 
@@ -19,10 +19,7 @@ CONFIGURE_STYLE =	gnu
 
 #FAKE=all
 # GPL
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
 
 WANTLIB += ICE SM X11 Xext Xinerama Xv Xxf86vm a52 c
 WANTLIB += dvdread jpeg m mad sndio xcb xml2 z

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2013/02/09 14:49:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.53 2013/03/11 11:37:53 espie Exp $
 
 COMMENT=	format files for printing on PostScript printers
 
@@ -15,9 +15,7 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv3 or later, includes AFM files from Adobe with still unclear
 # terms (see ${WRKSRC}/afm/MustRead.html).
 PERMIT_PACKAGE_CDROM=	without charge
-PERMIT_DISTFILES_CDROM=	without charge
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c m
 

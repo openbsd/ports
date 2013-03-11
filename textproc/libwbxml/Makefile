@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/01/30 11:08:28 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 11:42:42 espie Exp $
 
 CATEGORIES =		textproc devel
 COMMENT =		C library for handling WBXML documents
@@ -11,9 +11,6 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libwbxml/}
 
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c expat
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2012/02/21 22:19:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/11 11:41:30 espie Exp $
 
 COMMENT=		mastering tools for DVD+RW/+R/-R/-RW
 
@@ -9,9 +9,6 @@ HOMEPAGE=		http://fy.chalmers.se/~appro/linux/DVD+RW/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}tools/
 
@@ -25,7 +22,7 @@ MAKE_FLAGS+=		CFLAGS="${CFLAGS}" \
 			CXXFLAGS="${CXXFLAGS} -fno-exceptions"
 
 USE_GROFF =		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 do-install:
 .for prog in growisofs dvd+rw-format dvd+rw-booktype dvd+rw-mediainfo

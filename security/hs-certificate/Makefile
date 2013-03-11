@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/01/20 18:05:35 kili Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 11:41:25 espie Exp $
 
 COMMENT=		certificates and Key Reader/Writer
 
@@ -10,9 +10,6 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # 3-clause BSD
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES=		lang/ghc
 

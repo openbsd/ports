@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2012/09/01 14:36:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 11:42:42 espie Exp $
 
 SHARED_LIBS +=  translate                 0.0 # 0.0
 
@@ -15,9 +15,6 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c ffi glib-2.0 gio-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += pcre pthread soup-2.4 xml2

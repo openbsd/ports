@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2012/03/29 13:38:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2013/03/11 11:37:53 espie Exp $
 
 COMMENT=	clone of the Plan9 editor 'acme'
 
@@ -15,9 +15,6 @@ MAINTAINER= 	rich cannings <cannings@cvs.openbsd.org>
 
 # BSD licence
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xg Xt c frame m plan9c pthread-stubs xcb
 
 LIB_DEPENDS=		plan9/9libs
@@ -28,7 +25,7 @@ CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS=		--with-9libs=${LOCALBASE}/include/9libs
 CONFIGURE_ENV=		mhw_cv_mod_9libs_lib_path=${LOCALBASE}/lib
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 post-install:
 	${INSTALL_MAN} ${FILESDIR}/wily.1 ${PREFIX}/man/man1

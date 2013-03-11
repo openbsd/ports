@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/11/16 15:56:38 robert Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:44:47 espie Exp $
 
 COMMENT=		Markdown implementation for PHP
 
@@ -11,15 +11,12 @@ HOMEPAGE=		http://michelf.com/projects/php-markdown/
 
 # modified BSD
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=		http://michelf.com/docs/projets/
 EXTRACT_SUFX=		.zip
 
 NO_BUILD=       	Yes
-NO_REGRESS=     	Yes
+NO_TEST=     	Yes
 PKG_ARCH=       	*
 
 # Although this library is not PEAR, installing it into

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2012/04/22 12:15:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 11:44:48 espie Exp $
 
 COMMENT =	rapid web application development framework
 
@@ -13,9 +13,6 @@ HOMEPAGE =	http://www.pylonshq.com/
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	${MASTER_SITE_PYPI:=P/Pylons/}
 
@@ -36,7 +33,7 @@ RUN_DEPENDS =	devel/py-decorator \
 		www/py-webhelpers \
 		www/py-webob \
 		www/py-webtest
-REGRESS_DEPENDS = ${RUN_DEPENDS} \
+TEST_DEPENDS = ${RUN_DEPENDS} \
 		  devel/py-coverage \
 		  www/py-genshi \
 		  www/py-jinja2 \
@@ -44,7 +41,7 @@ REGRESS_DEPENDS = ${RUN_DEPENDS} \
 
 MODPY_SETUPTOOLS = Yes
 
-do-regress:
+do-test:
 	cd ${WRKSRC} && env PYTHONPATH=. ${LOCALBASE}/bin/nosetests
 
 .include <bsd.port.mk>

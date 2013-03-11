@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/09/09 20:56:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 11:44:41 espie Exp $
 
 COMMENT =		simple weblog
 
@@ -11,13 +11,10 @@ MAINTAINER =		Jason Dixon <jdixon@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 MASTER_SITES =	http://www.dixongroup.net/
 NO_BUILD =	Yes
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 PKG_ARCH =	*
 
 PREFIX =	/var/www

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/01/18 15:04:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 11:44:41 espie Exp $
 
 COMMENT =	content scanning web filter
 DISTNAME =	dansguardian-2.12.0.3
@@ -9,9 +9,6 @@ HOMEPAGE =	http://www.dansguardian.org/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c m pcre pcreposix stdc++ z
 

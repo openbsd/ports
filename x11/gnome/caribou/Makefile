@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/04 10:52:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 11:46:10 espie Exp $
 
 COMMENT=	input assistive technology
 
@@ -11,9 +11,6 @@ HOMEPAGE=	https://live.gnome.org/Caribou/
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender Xtst atk-1.0 atk-bridge-2.0

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2012/06/06 18:28:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.83 2013/03/11 11:42:47 espie Exp $
 
 COMMENT=	PDF viewer for X11
 
@@ -14,9 +14,6 @@ HOMEPAGE=	http://www.foolabs.com/xpdf/
 
 # GPLv2 only or GPLv3 only or both (at our choice)
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS+=	x11/openmotif
 USE_GMAKE=	Yes
@@ -34,7 +31,7 @@ RUN_DEPENDS=	print/ghostscript/gnu-fonts
 WANTLIB=	ICE SM X11 Xext Xpm Xt freetype Xm \
 		c m pthread stdc++ z
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/xpdf

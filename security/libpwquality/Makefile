@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2012/06/19 09:48:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 11:41:25 espie Exp $
 
 COMMENT =	library to generate, and check strenght of passwords
 
@@ -14,9 +14,6 @@ HOMEPAGE =	https://fedorahosted.org/libpwquality/
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		https://fedorahosted.org/releases/l/i/libpwquality/
 EXTRACT_SUFX =		.tar.bz2

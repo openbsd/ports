@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2012/11/18 17:50:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2013/03/11 11:46:10 espie Exp $
 
 COMMENT=		GNOME Docking Library
 
@@ -10,9 +10,6 @@ SHARED_LIBS +=  gdl-3                3.0      # 5.1
 
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo cairo-gobject

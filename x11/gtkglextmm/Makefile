@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/01/11 13:44:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:46:13 espie Exp $
 
 COMMENT =		C++ bindings for gtkglext
 
@@ -14,9 +14,6 @@ HOMEPAGE =		http://projects.gnome.org/gtkglext/
 
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=gtkglext/}
 

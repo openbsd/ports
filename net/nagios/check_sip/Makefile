@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/19 22:31:34 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 11:35:49 espie Exp $
 
 COMMENT=		Nagios plugin to check SIP
 
@@ -13,12 +13,9 @@ MASTER_SITES=		http://spacehopper.org/mirrors/
 
 # Artistic License 2.0
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 NO_BUILD=		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 EXTRACT_SUFX=
 RUN_DEPENDS=		net/sipsak \

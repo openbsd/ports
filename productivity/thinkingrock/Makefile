@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/16 11:13:42 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 11:37:55 espie Exp $
 
 COMMENT=	collecting and processing thoughts according to GTD
 
@@ -13,8 +13,6 @@ HOMEPAGE=	http://www.trgtd.com.au/
 # CDDL
 PERMIT_PACKAGE_CDROM=	CDDL
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	CDDL
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=thinkingrock/}
 
@@ -26,7 +24,7 @@ RUN_DEPENDS=	java/javaPathHelper \
 		devel/xdg-utils
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 PKG_ARCH=	*
 

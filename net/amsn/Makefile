@@ -1,4 +1,4 @@
-#$OpenBSD: Makefile,v 1.25 2012/09/30 07:49:04 jasper Exp $
+#$OpenBSD: Makefile,v 1.26 2013/03/11 11:35:45 espie Exp $
 
 COMMENT=	open source MSN Messenger clone
 
@@ -14,9 +14,6 @@ MAINTAINER=	Azwaw OUSADOU <bsdmaniak@gmail.com>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=project/amsn/amsn/${V}/}
 EXTRACT_SUFX=	.tar.bz2
@@ -52,7 +49,7 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include \
 
 WRKDIST=	${WRKDIR}/amsn-$V/
 
-NO_REGRESS=	Yes # Generic tcl/tk tests.
+NO_TEST=	Yes # Generic tcl/tk tests.
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/amsn*

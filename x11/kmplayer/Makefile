@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/01/17 11:35:43 zhuk Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 11:46:13 espie Exp $
 
 COMMENT=	front-end/embeddable KPart for MPlayer
 CATEGORIES=	x11 x11/kde
@@ -30,10 +30,7 @@ MAKE_ENV=		${CONFIGURE_ENV}
 MAKE_FLAGS+=		${MODKDE_MAKE_FLAGS}
 
 # GPLv2+
-PERMIT_PACKAGE_FTP=Yes
 PERMIT_PACKAGE_CDROM=Yes
-PERMIT_DISTFILES_FTP=Yes
-PERMIT_DISTFILES_CDROM=Yes
 WANTLIB=	ICE SM X11 Xext Xrender art_lgpl_2 artsflow artsflow_idl \
 		audiofile c \
 		kmedia2_idl kwalletclient m mad mcop ogg \

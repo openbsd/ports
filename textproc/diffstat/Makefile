@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2012/08/17 13:57:59 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 11:42:41 espie Exp $
 
 COMMENT=		accumulates and displays statistics from a diff file
 
@@ -12,9 +12,6 @@ HOMEPAGE=		http://dickey.his.com/diffstat/diffstat.html
 
 # ISC-like
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c
 

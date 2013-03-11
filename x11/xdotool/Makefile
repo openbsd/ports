@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/23 07:24:04 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 11:46:17 espie Exp $
 
 COMMENT=	fake keyboard and mouse input
 
@@ -15,9 +15,6 @@ HOMEPAGE=	http://www.semicomplete.com/projects/xdotool/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://semicomplete.googlecode.com/files/
 
@@ -35,6 +32,6 @@ FAKE_FLAGS=	PREFIX="${PREFIX}" \
 
 # The regression test suite has way too many dependencies, so leave
 # it disabled for now
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

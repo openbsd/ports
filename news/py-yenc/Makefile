@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/11/01 16:36:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/11 11:35:59 espie Exp $
 
 COMMENT=		yEnc encoding/decoding extension for Python
 
@@ -14,15 +14,12 @@ MAINTAINER=		Mikko Tolmunen <oskari@sefirosu.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		lang/python
 
 WANTLIB=		${MODPY_WANTLIB}
 
-REGRESS_DEPENDS=	news/py-yenc
+TEST_DEPENDS=	news/py-yenc
 
 CFLAGS+=		-g -O2
 
@@ -34,7 +31,7 @@ post-install:
 	cd ${WRKSRC}/examples; tar -cf - * | \
 	    (cd ${PREFIX}/share/examples/py-yenc; tar -xf -)
 
-do-regress:
+do-test:
 	cd ${WRKSRC}/test && ${MODPY_BIN} test.py
 
 .include <bsd.port.mk>

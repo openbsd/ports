@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/02 14:01:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 11:35:50 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -15,9 +15,6 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c iniparser neon pthread smbclient sqlite3 ssh
 
@@ -47,7 +44,7 @@ CONFIGURE_ARGS=	-DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include -pthread" \
 		-DSYSCONF_INSTALL_DIR=${PREFIX}/share/examples \
 		-DCMAKE_BUILD_TYPE=Release
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 USE_GROFF=	Yes
 
 .include <bsd.port.mk>

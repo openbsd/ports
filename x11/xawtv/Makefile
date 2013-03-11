@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2011/04/17 17:54:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2013/03/11 11:46:17 espie Exp $
 
 # we use "macppc" and not "powerpc" on purpose here ; i.e. bktr(4) needed
 ONLY_FOR_ARCHS=	i386 macppc amd64 alpha
@@ -17,9 +17,6 @@ MASTER_SITES=	http://dl.bytesex.org/releases/xawtv/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ICE SM X11 Xau Xaw Xdmcp Xext Xft Xinerama Xmu Xpm
 WANTLIB += Xrandr Xrender Xt Xv Xxf86dga Xxf86vm c expat fontconfig
@@ -37,7 +34,7 @@ CONFIGURE_ARGS+=--disable-aa --disable-motif --disable-gl \
 		--disable-dv --disable-quicktime
 
 MAKE_FLAGS=	verbose=yes SYSCONFDIR="${SYSCONFDIR}"
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
 

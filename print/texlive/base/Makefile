@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2012/12/20 22:44:37 edd Exp $
+# $OpenBSD: Makefile,v 1.64 2013/03/11 11:37:54 espie Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
@@ -68,7 +68,7 @@ WRKBUILD =              ${WRKSRC}/Work
 CONFIGURE_SCRIPT =      ../configure
 MAKE_ENV =		${CONFIGURE_ENV}
 # Not worth the effort.
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 USE_GMAKE =	Yes
 USE_LIBTOOL =	Yes

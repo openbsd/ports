@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2012/05/26 12:40:30 matthieu Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 11:44:50 espie Exp $
 
 COMMENT=		IPv6 to IPv4 web proxy
 
@@ -9,9 +9,6 @@ HOMEPAGE=		http://www.dillema.net/software/www6to4.html
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 MASTER_SITES=		http://www.dillema.net/software/www6to4/
@@ -26,6 +23,6 @@ do-install:
 	perl -i -pe 's:/etc(/www6to4_forward.conf):${SYSCONFDIR}$$1:' \
 		${PREFIX}/share/examples/www6to4/www6to4.conf
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 .include <bsd.port.mk>

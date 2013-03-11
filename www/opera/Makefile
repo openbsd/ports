@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2013/02/06 14:47:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2013/03/11 11:44:43 espie Exp $
 
 ONLY_FOR_ARCHS=	i386
 SHARED_ONLY=	Yes
@@ -19,7 +19,6 @@ HOMEPAGE=	http://www.opera.com/
 
 PERMIT_PACKAGE_CDROM=	Commercial software
 PERMIT_PACKAGE_FTP=	Commercial software
-PERMIT_DISTFILES_CDROM=	Commercial software
 PERMIT_DISTFILES_FTP=	Commercial software
 
 MASTER_SITES=	ftp://ftp.opera.com/pub/opera/linux/${V:S/.//}/
@@ -31,7 +30,7 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+2,-guic
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-extract:
 	mv ${WRKSRC}/share/man ${WRKSRC}/man

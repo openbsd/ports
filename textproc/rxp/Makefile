@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/05/22 18:04:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/11 11:42:47 espie Exp $
 
 COMMENT=	validating namespace-aware XML parser
 
@@ -10,15 +10,12 @@ HOMEPAGE=	http://www.cogsci.ed.ac.uk/~richard/rxp.html
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c 
 
 MASTER_SITES=	ftp://quatramaran.ens.fr/pub/espie/
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rxp ${PREFIX}/bin

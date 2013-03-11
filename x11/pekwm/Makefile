@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2012/11/12 10:03:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/11 11:46:14 espie Exp $
 
 COMMENT=	aewm++ based pretty themable window manager
 
@@ -11,9 +11,6 @@ MAINTAINER=	Nicholas Marriott <nicm@users.sourceforge.net>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ICE SM X11 Xext Xft Xinerama Xpm Xrandr c jpeg m png
 WANTLIB += stdc++ z
@@ -26,7 +23,7 @@ LIB_DEPENDS=	graphics/jpeg \
 		graphics/png
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \

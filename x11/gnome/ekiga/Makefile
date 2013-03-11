@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2013/03/02 14:06:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2013/03/11 11:46:10 espie Exp $
 
 # if ekiga ever moves to gstreamer, detect_sndiosink_devices() will need
 # to be implemented in:
@@ -20,9 +20,6 @@ HOMEPAGE=	http://www.ekiga.org/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += SDL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender Xv asn1 atk-1.0 boost_signals-mt c cairo

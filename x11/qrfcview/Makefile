@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/09/16 12:29:17 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 11:46:15 espie Exp $
 
 COMMENT=	viewer for IETF RFCs
 
@@ -10,9 +10,6 @@ HOMEPAGE=	http://qrfcview.berlios.de/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender c expat fontconfig
 WANTLIB += freetype glib-2.0 gobject-2.0 gthread-2.0
@@ -24,7 +21,7 @@ MASTER_SITES=	${MASTER_SITE_BERLIOS:=qrfcview/}
 EXTRACT_SUFX=	.tgz
 
 MODULES=	x11/qt4 devel/gettext
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-configure:
 	perl -pi -e "s/!!CXXFLAGS!!/${CXXFLAGS}/" ${WRKSRC}/src/src.pro

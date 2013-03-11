@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2012/09/27 09:05:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 11:46:11 espie Exp $
 
 COMMENT=	interface components for OpenPGP
 
@@ -13,9 +13,6 @@ HOMEPAGE=	http://live.gnome.org/Seahorse/libcryptui/
 
 # GPLv2/LGPLv2/GFDLv1.1
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm assuan

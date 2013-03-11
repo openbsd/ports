@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/10 08:39:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 11:35:53 espie Exp $
 
 COMMENT=	perl interface to the Twitter API
 
@@ -10,9 +10,6 @@ MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
 RUN_DEPENDS=	converters/p5-JSON-Any \
@@ -27,7 +24,7 @@ RUN_DEPENDS=	converters/p5-JSON-Any \
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		devel/p5-Test-Fatal \
 		devel/p5-Test-Warn
-REGRESS_DEPENDS=devel/p5-Test-Deep \
+TEST_DEPENDS=devel/p5-Test-Deep \
 		devel/p5-Test-Spelling
 
 MAKE_ENV=	TEST_POD=Yes

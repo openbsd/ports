@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/07/08 12:17:56 sebastia Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:35:57 espie Exp $
 
 COMMENT=		stub DNS resolver library
 
@@ -11,9 +11,6 @@ MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 HOMEPAGE=		http://www.corpit.ru/mjt/udns.html
 MASTER_SITES=		http://www.corpit.ru/mjt/udns/ \
@@ -29,7 +26,7 @@ ALL_TARGET=		staticlib static
 .endif
 
 CONFIGURE_STYLE=	simple
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/udns.h ${PREFIX}/include

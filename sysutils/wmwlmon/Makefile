@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/20 17:22:42 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/11 11:41:33 espie Exp $
 
 COMMENT=		wm-dockapp; wireless interface monitor
 
@@ -13,13 +13,10 @@ MAINTAINER=		Marcus Glocker <marcus@nazgul.ch>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext Xpm c m pthread-stubs xcb
 
 USE_GROFF =		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmwlmon ${PREFIX}/bin/wmwlmon

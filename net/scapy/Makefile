@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2012/01/12 03:16:24 bluhm Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/11 11:35:56 espie Exp $
 
 COMMENT=	powerful interactive packet manipulation in python
 
@@ -14,9 +14,6 @@ MAINTAINER=	Jonathan Armani <armani@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/files/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ethertypes
@@ -28,7 +25,7 @@ RUN_DEPENDS=	net/libdnet,-python \
 		net/py-libpcap \
 		security/py-crypto \
 		math/py-gnuplot
-REGRESS_DEPENDS=${RUN_DEPENDS}
+TEST_DEPENDS=${RUN_DEPENDS}
 
 PKG_ARCH=	*
 
@@ -44,7 +41,7 @@ post-install:
 	${INSTALL_DATA} ${DISTDIR}/ethertypes ${PREFIX}/share/examples/scapy
 
 # some tests require root.
-do-regress:
+do-test:
 	ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python
 	cd ${WRKSRC}/test; PATH=${WRKDIR}/bin:${PATH} ${WRKSRC}/test/run_tests
 

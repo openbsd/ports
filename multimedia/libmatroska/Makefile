@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/10/04 08:59:41 giovanni Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 11:35:44 espie Exp $
 
 COMMENT=	extensible open standard audio/video container library
 
@@ -14,10 +14,7 @@ HOMEPAGE=	http://www.matroska.org/
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # LGPLv2.1+
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB=	ebml>=2.1 m stdc++
 
@@ -29,7 +26,7 @@ FAKE_FLAGS+=	prefix=${DESTDIR}${PREFIX}
 
 USE_GMAKE=	Yes
 
-REGRESS_TARGET=	test
+TEST_TARGET=	test
 
 WRKSRC=		${WRKDIST}/make/linux
 

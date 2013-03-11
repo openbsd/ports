@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/02 14:08:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/11 11:42:40 espie Exp $
 
 COMMENT=	text document format for writing documents and man pages
 
@@ -11,9 +11,6 @@ HOMEPAGE=	http://www.methods.co.nz/asciidoc/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=asciidoc/}
 
@@ -27,7 +24,7 @@ MODPY_ADJ_FILES=a2x.py \
 
 PKG_ARCH=	*
 USE_GMAKE=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples
 

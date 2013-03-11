@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2012/12/13 15:19:19 kurt Exp $
+# $OpenBSD: Makefile,v 1.26 2013/03/11 11:44:43 espie Exp $
 
 COMMENT=		Apache-Tomcat AJP Connector
 
@@ -13,13 +13,10 @@ MODULES+=		apache-module
 
 # Apache Software License 2.0
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_APACHE:=tomcat/tomcat-connectors/jk/}
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 

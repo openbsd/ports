@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/16 11:13:38 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/11 11:35:46 espie Exp $
 
 COMMENT =		client for the Windows Live Messenger chat network
 
@@ -13,9 +13,6 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=emesene/}
 
 # GPLv2 or later; LGPLv2.1, PSF license for various bits
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		lang/python
 RUN_DEPENDS =		x11/py-gtk2 \

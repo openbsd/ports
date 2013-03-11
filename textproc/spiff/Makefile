@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/07/03 22:55:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 11:42:47 espie Exp $
 
 COMMENT=	very flexible diff-like program
 
@@ -13,11 +13,10 @@ MAINTAINER=	Ian Darwin <ian@openbsd.org>
 # custom
 PERMIT_PACKAGE_CDROM=	no fee
 PERMIT_PACKAGE_FTP=	may not modify
-PERMIT_DISTFILES_CDROM=	no fee
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m 
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/spiff ${PREFIX}/bin

@@ -1,19 +1,16 @@
-# $OpenBSD: Makefile,v 1.9 2011/04/01 16:46:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 11:46:15 espie Exp $
 
 DISTNAME=	ratmen-2.2.3
 CATEGORIES=	x11
 
 # same license as plan9/9menu
 PERMIT_PACKAGE_CDROM=	yes
-PERMIT_PACKAGE_FTP=	yes
-PERMIT_DISTFILES_CDROM=	yes
-PERMIT_DISTFILES_FTP=	yes
 WANTLIB=		X11 c
 
 COMMENT=	launch commands with your keyboard
 MASTER_SITES=	http://www.update.uu.se/~zrajm/programs/ratmen/
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-build:
 	cd $(WRKSRC) && \

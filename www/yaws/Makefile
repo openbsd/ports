@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2012/10/30 20:29:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/11 11:44:50 espie Exp $
 
 COMMENT-main=		high performance webserver written in Erlang, libraries
 COMMENT-web=		high performance webserver written in Erlang, docroot
@@ -15,9 +15,6 @@ HOMEPAGE=		http://yaws.hyber.org/
 
 # BSD-3
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}/download/
 
@@ -39,7 +36,7 @@ RUN_DEPENDS-main=	${BASE_PKGPATH},-web
 
 USE_GMAKE=		Yes
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 PREFIX-web=		/var
 

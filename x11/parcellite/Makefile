@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/05/04 07:47:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:46:14 espie Exp $
 
 COMMENT=	lightweight GTK+ clipboard manager
 
@@ -12,9 +12,6 @@ HOMEPAGE=	http://parcellite.sourceforge.net/
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	yes
-PERMIT_PACKAGE_FTP=	yes
-PERMIT_DISTFILES_CDROM=	yes
-PERMIT_DISTFILES_FTP=	yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=parcellite/}
 

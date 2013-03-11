@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/08/26 17:04:49 stu Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:46:08 espie Exp $
 
 COMMENT =	dbus bindings for Tcl
 
@@ -11,9 +11,6 @@ MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # ISC
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	c dbus-1 pthread
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=dbus-tcl/}
@@ -22,7 +19,7 @@ BUILD_DEPENDS =	${MODTCL_BUILD_DEPENDS} devel/tcllib
 LIB_DEPENDS =	x11/dbus
 RUN_DEPENDS =	${MODTCL_RUN_DEPENDS}
 FAKE_FLAGS =	INSTALL_PROGRAM="${INSTALL_DATA}"
-REGRESS_FLAGS =	LD_PRELOAD=/usr/lib/libpthread.so
+TEST_FLAGS =	LD_PRELOAD=/usr/lib/libpthread.so
 SEPARATE_BUILD =Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
@@ -34,7 +31,7 @@ CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--enable-threads \
 		SHLIB_VERSION=${LIBdbus-tcl11_VERSION}
 
-REGRESS_IS_INTERACTIVE = X11
-REGRESS_TARGET = test
+TEST_IS_INTERACTIVE = X11
+TEST_TARGET = test
 
 .include <bsd.port.mk>

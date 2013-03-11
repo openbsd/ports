@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/03 08:12:05 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 11:35:45 espie Exp $
 
 COMMENT=	highly flexible sniffer/NIDS
 
@@ -18,9 +18,6 @@ MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM= 	Yes
-PERMIT_PACKAGE_FTP=   	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP= 	Yes
 
 WANTLIB=	c crypto m pcap ssl stdc++ termcap z GeoIP>=5 magic>=1
 
@@ -44,6 +41,6 @@ WRKDIST=	${WRKDIR}/bro-${V}
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/bro
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

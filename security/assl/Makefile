@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/01/04 18:19:57 benoit Exp $
+# $OpenBSD: Makefile,v 1.26 2013/03/11 11:41:24 espie Exp $
 
 COMMENT=		hide awful SSL API in a sane interface
 
@@ -14,9 +14,6 @@ MAINTAINER=		David Hill <dhill@mindcry.org>
 
 # ISC
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 EG_DIR=			${PREFIX}/share/examples/assl
 

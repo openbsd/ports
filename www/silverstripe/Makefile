@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/03/08 10:43:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:44:49 espie Exp $
 
 COMMENT=	innovative open source CMS and framework
 
@@ -14,9 +14,6 @@ HOMEPAGE=	http://www.silverstripe.org/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/assets/releases/
 TAR=		${LOCALBASE}/bin/gtar
@@ -28,7 +25,7 @@ RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-gd \
 		www/xcache
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 PKG_ARCH=	*
 
 PREFIX=		/var/www

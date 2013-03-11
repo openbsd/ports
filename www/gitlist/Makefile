@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/11/07 07:53:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:44:42 espie Exp $
 
 COMMENT=		elegant and modern git repository browser
 
@@ -11,16 +11,13 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =  Yes
-PERMIT_PACKAGE_FTP =    Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =  Yes
 
 MASTER_SITES=		https://s3.amazonaws.com/gitlist/
 
 MODULES=		lang/php
 
 NO_BUILD=		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 PKG_ARCH=		*
 
 PREFIX=			/var/www

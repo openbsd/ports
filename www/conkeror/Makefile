@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/16 12:00:06 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:44:41 espie Exp $
 
 COMMENT =		keyboard-oriented Mozilla-based browser
 
@@ -15,9 +15,6 @@ MAINTAINER =		Joshua Elsasser <joshe@openbsd.org>
 
 # mozilla public license
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c m pthread stdc++
 
@@ -32,7 +29,7 @@ MAKE_ENV =		CONKEROR_DATE=${DATE} \
 			CONKEROR_GITREV=${GITREV} \
 			XULRUNNER=xulrunner1.9
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/contrib/man/conkeror.1

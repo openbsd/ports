@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2012/04/22 12:13:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/11 11:44:48 espie Exp $
 
 COMMENT =		load, configure, compose WSGI applications and servers
 
@@ -12,15 +12,12 @@ HOMEPAGE =		http://pythonpaste.org/deploy/
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${MASTER_SITE_PYPI:=P/PasteDeploy/}
 
 MODULES =		lang/python
 RUN_DEPENDS =		www/py-paste
-REGRESS_DEPENDS =	${RUN_DEPENDS} \
+TEST_DEPENDS =	${RUN_DEPENDS} \
 			devel/py-nose \
 			devel/py-py
 

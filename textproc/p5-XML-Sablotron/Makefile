@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2012/08/27 16:16:28 benoit Exp $
+# $OpenBSD: Makefile,v 1.29 2013/03/11 11:42:45 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -16,9 +16,6 @@ MAINTAINER=	Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2 / MPL1.1
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 # perl updates should force this to update, hence perl is listed as WANTLIB
 # even though it will be marked 'Extra' by check-lib-depends.

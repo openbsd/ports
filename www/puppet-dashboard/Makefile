@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2012/09/23 17:11:34 jeremy Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 11:44:48 espie Exp $
 
 COMMENT=	overview of your Puppet ecosystem
 
@@ -12,9 +12,6 @@ HOMEPAGE=	http://www.puppetlabs.com/puppet/related-projects/dashboard/
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES=	lang/ruby
 
@@ -28,7 +25,7 @@ RUN_DEPENDS=	databases/ruby-mysql,${MODRUBY_FLAVOR} \
 
 PKG_ARCH=	*
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 PREFIX=         /var/www
 INSTDIR=        ${PREFIX}/puppet-dashboard

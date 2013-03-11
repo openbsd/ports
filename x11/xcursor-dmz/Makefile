@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/07/29 14:19:33 mpi Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:46:17 espie Exp $
 
 COMMENT =	style neutral scalable cursor themes
 
@@ -14,9 +14,6 @@ MAINTAINER =	Martin Pieuchot <mpi@openbsd.org>
 
 # CC by-sa 3.0
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES=	http://jimmac.musichall.cz/zip/
 DISTFILES =	${DISTNAME}.tar.bz2 \
@@ -24,7 +21,7 @@ DISTFILES =	${DISTNAME}.tar.bz2 \
 
 PKG_ARCH=		*
 NO_BUILD=		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 WRKDIST=		${WRKDIR}
 DMZDIR=			${PREFIX}/lib/X11/icons/dmz/cursors

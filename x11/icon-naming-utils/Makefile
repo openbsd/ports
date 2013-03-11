@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2012/03/19 10:28:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 11:46:13 espie Exp $
 
 COMMENT=		compatibility tools from the Tango project
 
@@ -10,9 +10,6 @@ HOMEPAGE=		http://tango.freedesktop.org/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}/releases/
 
@@ -24,6 +21,6 @@ PKG_ARCH=		*
 
 CONFIGURE_STYLE=	gnu
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 .include <bsd.port.mk>

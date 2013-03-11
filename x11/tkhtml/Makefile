@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/03/29 13:39:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 11:46:16 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -15,9 +15,6 @@ MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 MODULES =		x11/tk
 BUILD_DEPENDS =		${MODTK_BUILD_DEPENDS}
@@ -37,7 +34,7 @@ CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 			--datadir=${PREFIX}/share/examples \
 			LIBTkhtml30_VERSION=${LIBTkhtml30_VERSION}
 FAKE_FLAGS =		PKG_DIR=tkhtml
-REGRESS_TARGET =	test
-REGRESS_IS_INTERACTIVE = X11
+TEST_TARGET =	test
+TEST_IS_INTERACTIVE = X11
 
 .include <bsd.port.mk>

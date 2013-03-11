@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/09/16 12:29:13 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 11:46:09 espie Exp $
 
 COMMENT=	gamma-adjusting utility
 
@@ -12,9 +12,6 @@ HOMEPAGE=	http://www.pcbypaul.com/software/GAMMApage.html
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.pcbypaul.com/software/dl/
 
@@ -23,7 +20,7 @@ MODULES=	lang/python
 RUN_DEPENDS=	x11/py-gtk2
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 PKG_ARCH=	*
 
 pre-configure:

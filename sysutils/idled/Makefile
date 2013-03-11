@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/19 07:43:01 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2013/03/11 11:41:30 espie Exp $
 
 COMMENT=	log out idle users and those hogging resources
 
@@ -11,14 +11,12 @@ FAKE_FLAGS=	PREFIX=${PREFIX}
 
 PERMIT_PACKAGE_CDROM=	no fee
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	no fee
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 MAKE_ENV=	SYSCONFDIR="${SYSCONFDIR}"
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-extract:
 	@cd ${WRKSRC} && ${MAKE_PROGRAM} clean

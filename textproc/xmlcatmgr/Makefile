@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/22 08:56:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 11:42:47 espie Exp $
 
 COMMENT=	small utility used to manipulate SGML and XML catalogs
 
@@ -10,9 +10,6 @@ HOMEPAGE=	http://xmlcatmgr.sourceforge.net/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xmlcatmgr/}

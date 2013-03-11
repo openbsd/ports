@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/02/09 14:49:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/11 11:41:29 espie Exp $
 
 COMMENT-main =		daemon for controlling APC UPSes
 COMMENT-cgi =		CGI scripts for web monitoring
@@ -20,9 +20,6 @@ MAINTAINER =		Kirill Bychkov <yason@linklevel.net>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		devel/gettext
 LIB_DEPENDS-main =
@@ -32,7 +29,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=apcupsd/}
 
 CONFIGURE_STYLE =	gnu
 USE_GMAKE =		Yes
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 MAKE_FLAGS =		VERBOSE=2
 
 WEB_ROOT =		/var/www

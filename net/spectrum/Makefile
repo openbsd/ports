@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/16 11:13:40 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 11:35:56 espie Exp $
 
 COMMENT=        XMPP transport/gateway
 
@@ -12,9 +12,6 @@ MAINTAINER=     Sebastian Reitenbach <sebastia@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 MODULES=	lang/python devel/cmake
 WANTLIB += c m pthread stdc++ gloox purple glib-2.0 gthread-2.0 event
@@ -31,7 +28,7 @@ SPVARDIR=	/var/spectrum
 CONFIGURE_STYLE=cmake
 CONFIGURE_ENV += LDFLAGS=-pthread
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 SUBST_VARS=    	SPVARDIR
 
 pre-configure:

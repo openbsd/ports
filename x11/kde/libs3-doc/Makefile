@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/22 08:37:02 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/11 11:46:13 espie Exp $
 
 BROKEN=			evaluate whether this still makes sense
 COMMENT=		X11 toolkit, libraries documentation
@@ -25,7 +25,7 @@ do-build:
 	qt2kdoc -u "file:${LOCALBASE}/share/doc/qt3/html" \
 	    -o ${WRKDIST}/qt ${LOCALBASE}/share/doc/qt3/html
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	mkdir -p ${DDIR}

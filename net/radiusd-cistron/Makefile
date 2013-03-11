@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2011/05/11 12:03:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2013/03/11 11:35:56 espie Exp $
 
 COMMENT=	Cistron RADIUS server
 
@@ -17,9 +17,6 @@ RUN_DEPENDS=	net/p5-Net-Telnet \
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c
 
@@ -32,7 +29,7 @@ FAKE_FLAGS+=	BINDIR='${WRKINST}${PREFIX}/bin' \
 		MANDIR='${WRKINST}${PREFIX}/man' \
 		RADIUS_DIR='${WRKINST}${PREFIX}/share/examples/radiusd-cistron'
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-install:
 	${INSTALL_MAN} ${WRKDIST}/doc/clients.5rad ${PREFIX}/man/man5/clients.5

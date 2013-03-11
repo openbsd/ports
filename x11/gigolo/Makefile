@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/19 07:54:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 11:46:09 espie Exp $
 
 COMMENT =	GVfs mountpoint manager
 
@@ -13,14 +13,11 @@ MAINTAINER =	Landry Breuil <gaston@gcu.info>
 HOMEPAGE =	http://www.uvena.de/gigolo/
 
 # GPLv2
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =	Yes
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
 
 MODULES =	x11/xfce4 devel/waf
 CONFIGURE_ARGS =	--mandir=${PREFIX}/man
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 MODXFCE_DESKTOP_FILE =	Yes
 USE_GROFF =	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2012/12/09 07:29:57 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 11:35:44 espie Exp $
 
 COMMENT =		read and manipulate the MP4 container format
 
@@ -14,8 +14,6 @@ HOMEPAGE =		https://code.google.com/p/mp4v2/
 # MPLv1.1
 PERMIT_PACKAGE_CDROM =	Patents
 PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Patents
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c m stdc++
 

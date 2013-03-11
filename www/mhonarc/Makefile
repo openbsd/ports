@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2012/05/07 20:13:50 pascal Exp $
+# $OpenBSD: Makefile,v 1.30 2013/03/11 11:44:43 espie Exp $
 
 COMMENT=		highly customizable e-mail to HTML converter
 
@@ -17,9 +17,6 @@ MAINTAINER=		Christian Rueger <cr+openbsd@rueger-net.de>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	perl
 

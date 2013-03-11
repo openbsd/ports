@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2011/08/25 22:40:21 bluhm Exp $
+# $OpenBSD: Makefile,v 1.27 2013/03/11 11:35:57 espie Exp $
 
 COMMENT=		TCP dump file analysis tool
 
@@ -10,9 +10,6 @@ MASTER_SITES=		${HOMEPAGE}download/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c m pcap 
 
@@ -27,7 +24,7 @@ CONFIGURE_ENV=		YACC=bison
 ALL_TARGET=		tcptrace
 
 USE_GROFF =		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 DOCFILES=	ARGS COPYRIGHT FAQ README README.mailing_list README.modules \
 		README.tput_graphs WWW dot_tcptracerc

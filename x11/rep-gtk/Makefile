@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2012/07/07 09:19:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.56 2013/03/11 11:46:15 espie Exp $
 
 COMMENT=	GTK+ binding for librep Lisp environment
 
@@ -14,9 +14,6 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
@@ -42,6 +39,6 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 .include <bsd.port.mk>

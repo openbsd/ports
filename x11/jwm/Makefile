@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/11/07 22:16:28 edd Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 11:46:13 espie Exp $
 
 COMMENT=		Joe's Window Manager
 
@@ -12,9 +12,6 @@ MAINTAINER=		Edd Barrett <edd@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		X11 Xext Xft Xinerama Xmu Xpm Xrender c fribidi \
 			jpeg m png z
@@ -27,7 +24,7 @@ LIB_DEPENDS=		devel/fribidi>=0.19.2 \
 			graphics/png \
 			graphics/jpeg
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 USE_GROFF=		Yes
 CONFIGURE_STYLE=	gnu

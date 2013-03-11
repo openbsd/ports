@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2008/06/02 17:02:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/11 11:35:49 espie Exp $
 
 COMMENT=	NetBIOS name network scanner
 
@@ -10,14 +10,11 @@ HOMEPAGE=	http://www.inetcat.net/software/nbtscan.html
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 WRKDIST=	${WRKDIR}/${DISTNAME}a
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 CONFIGURE_STYLE=gnu
 

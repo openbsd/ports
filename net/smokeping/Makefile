@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/01/06 07:54:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2013/03/11 11:35:56 espie Exp $
 
 COMMENT=	latency logging and graphing system
 
@@ -15,9 +15,6 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/p5-Config-Grammar \
@@ -31,7 +28,7 @@ RUN_DEPENDS=	devel/p5-Config-Grammar \
 		www/p5-libwww
 SYSCONFDIR=	${BASESYSCONFDIR}/smokeping
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 USE_GMAKE=	Yes
 PKG_ARCH=	*
 

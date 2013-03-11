@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2012/08/18 12:41:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2013/03/11 11:35:46 espie Exp $
 
 COMMENT =		quickly ping N hosts w/o flooding the network
 
@@ -14,9 +14,6 @@ MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2013/01/18 15:30:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.77 2013/03/11 11:46:19 espie Exp $
 
 COMMENT=		screen saver and locker for the X Window System
 
@@ -10,9 +10,6 @@ HOMEPAGE=		http://www.jwz.org/xscreensaver/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL GLU ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xmu Xpm Xrandr Xrender Xt Xxf86misc Xxf86vm
@@ -43,7 +40,7 @@ RUN_DEPENDS +=		devel/xdg-utils
 
 USE_GMAKE=		Yes
 USE_GROFF=		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-hackdir="${PREFIX}/libexec/xscreensaver" \

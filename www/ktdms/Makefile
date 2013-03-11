@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/11/16 15:56:37 robert Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/11 11:44:42 espie Exp $
 
 COMMENT=	web-based document management system
 
@@ -12,14 +12,11 @@ HOMEPAGE=	http://www.knowledgetree.com/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=kt-dms/}
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 PKG_ARCH=	*
 
 PREFIX=		/var/www

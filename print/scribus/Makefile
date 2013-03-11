@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2013/02/09 14:49:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2013/03/11 11:37:54 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,9 +11,6 @@ HOMEPAGE=	http://www.scribus.net/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB +=	QtGui QtNetwork QtXml aspell c cairo cups execinfo
 WANTLIB +=	fontconfig freetype jpeg lcms2 m pthread stdc++

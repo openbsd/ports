@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/20 19:56:52 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/11 11:42:47 espie Exp $
 
 COMMENT=	create a document with syntax highlighting
 
@@ -11,9 +11,6 @@ HOMEPAGE=	http://www.gnu.org/software/src-highlite/source-highlight.html
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB=		c m stdc++ boost_regex
 
@@ -32,7 +29,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		YACC="yacc"
 
-REGRESS_TARGET=	check
+TEST_TARGET=	check
 
 post-extract:
 	chmod +x ${WRKSRC}/build-aux/install-sh

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/01/10 22:33:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 11:41:30 espie Exp $
 
 COMMENT=	system monitoring framework written in Ruby
 
@@ -9,9 +9,6 @@ CATEGORIES=	sysutils
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	lang/ruby
 
@@ -27,9 +24,9 @@ post-install:
 	@mkdir -p ${PREFIX}/share/examples/god
 	@cp -r ${WRKSRC}/examples/* ${PREFIX}/share/examples/god/
 
-REGRESS_DEPENDS =	devel/ruby-mocha,${MODRUBY_FLAVOR}
+TEST_DEPENDS =	devel/ruby-mocha,${MODRUBY_FLAVOR}
 
-do-regress:
+do-test:
 	cd ${WRKSRC} && RUBYOPT=-rubygems ${MODRUBY_BIN_TESTRB} test/test_*.rb
 
 .include <bsd.port.mk>

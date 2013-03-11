@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/09/03 15:09:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:44:48 espie Exp $
 
 COMMENT =		high-level cross-protocol url-grabber
 
@@ -10,9 +10,6 @@ CATEGORIES =		www
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${MASTER_SITE_PYPI:=u/urlgrabber/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2012/03/29 13:38:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2013/03/11 11:35:50 espie Exp $
 
 COMMENT=	easy-to-use, robust, and highly configurable VPN
 
@@ -12,9 +12,6 @@ MAINTAINER=	Felix Kronlage <fkr@openbsd.org>
 
 # GPLv2 only
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c crypto ssl lzo2
 

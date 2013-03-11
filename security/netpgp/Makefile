@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/03/09 16:02:24 pascal Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:41:26 espie Exp $
 
 COMMENT =		BSD-licensed PGP implementation
 
@@ -21,9 +21,9 @@ WANTLIB +=		bz2 c crypto z
 MASTER_SITES =		ftp://ftp.netbsd.org/pub/pkgsrc/distfiles/LOCAL_PORTS/
 
 LIB_DEPENDS =		archivers/bzip2
-REGRESS_DEPENDS =	devel/autoconf/2.68
+TEST_DEPENDS =	devel/autoconf/2.68
 
-REGRESS_FLAGS =		AUTOCONF_VERSION=2.68
+TEST_FLAGS =		AUTOCONF_VERSION=2.68
 
 USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu

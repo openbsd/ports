@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2012/11/29 14:07:22 giovanni Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/11 11:41:32 espie Exp $
 
 ONLY_FOR_ARCHS=		amd64 i386 powerpc
 
@@ -22,9 +22,6 @@ CONFIGURE_ARGS=		--with-docdir=${PREFIX}/share/doc/smartmontools \
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m stdc++ util
 
 .include <bsd.port.mk>

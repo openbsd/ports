@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2012/08/22 07:15:52 sebastia Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 11:46:12 espie Exp $
 
 COMMENT =	GNUstep webservices framework
 
@@ -19,8 +19,8 @@ MODGNUSTEP_NEEDS_GUI = 	No
 
 MAKE_FLAGS +=	WebServices_INTERFACE_VERSION=${LIBWebServices_VERSION}
 
-NO_REGRESS =	No
-do-regress:
+NO_TEST =	No
+do-test:
 	cd ${WRKSRC}/tests/ && LD_LIBRARY_PATH=../obj ./test
 
 .include <bsd.port.mk>

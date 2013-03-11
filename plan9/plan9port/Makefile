@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/06/27 10:43:07 pascal Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:37:53 espie Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 BROKEN-powerpc =	threading issues
@@ -17,9 +17,6 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 # mostly LPL (see LICENSE)
 # certain fonts may NOT be redistributed separately
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		X11 Xext c kvm m pthread util
 
@@ -39,7 +36,7 @@ WRKDIST =		${WRKDIR}/plan9
 
 PLAN9 =			${PREFIX}/plan9
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 SCRIPTS = \" \"\" 9 9.rc 9a 9ar 9c 9fs 9l B E Getdir adict awd bundle \
 	codereview \

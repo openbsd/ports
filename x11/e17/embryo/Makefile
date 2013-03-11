@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/01/27 15:57:29 rpe Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 11:46:09 espie Exp $
 
 COMMENT =		C like scripting language used in E17
 
@@ -9,9 +9,6 @@ SHARED_LIBS +=		embryo 3.0 	# 8.5
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += c eina m pthread
 

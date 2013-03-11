@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/26 17:45:13 sebastia Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:44:43 espie Exp $
 
 COMMENT=	Apache module for non-ascii filename interoperability
 
@@ -10,9 +10,6 @@ HOMEPAGE=	http://webdav.todo.gr.jp/
 
 # Apache-like
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}download/
 
@@ -23,7 +20,7 @@ MODULES=	apache-module \
 
 MODAPACHE_NAME=	encoding
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-build:
 	cd ${WRKSRC} && /usr/sbin/apxs -Wc,"${CFLAGS}" -I${LOCALBASE}/include -c mod_encoding.c \

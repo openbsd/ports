@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/01/13 08:47:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/11 11:37:53 espie Exp $
 
 COMMENT=	hacked 9wm, with support for virtual screens
 
@@ -13,7 +13,6 @@ MAINTAINER =	William Yodlowsky <william@openbsd.org>
 # nonstandard license
 PERMIT_PACKAGE_CDROM =	No
 PERMIT_PACKAGE_FTP =	No
-PERMIT_DISTFILES_CDROM = No
 PERMIT_DISTFILES_FTP =	No
 
 WANTLIB =	X11 Xau Xdmcp Xext c pthread-stubs xcb
@@ -22,7 +21,7 @@ MASTER_SITES=	http://www.grassouille.org/code/w9wm/src/
 
 CONFIGURE_STYLE=imake
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 WRKSRC=${WRKDIR}/${DISTNAME}.orig
 

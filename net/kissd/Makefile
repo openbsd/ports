@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 18:36:49 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 11:35:48 espie Exp $
 
 COMMENT=	server for KiSS DP-500 network movie player
 
@@ -12,13 +12,10 @@ MAINTAINER=	Daniel Hartmeier <dhartmei@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/kissd ${PREFIX}/bin/kissd

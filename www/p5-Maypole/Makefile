@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/12/03 11:46:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 11:44:46 espie Exp $
 
 COMMENT=	Perl MVC for web applications
 
@@ -12,9 +12,6 @@ MAINTAINER=	Sam Smith <S@msmith.net>
 
 # Same as Perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Apache/}
 

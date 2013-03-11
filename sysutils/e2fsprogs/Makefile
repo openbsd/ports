@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2012/08/18 12:41:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2013/03/11 11:41:30 espie Exp $
 
 COMMENT=	utilities to manipulate ext2 filesystems
 
@@ -16,9 +16,6 @@ HOMEPAGE=	http://e2fsprogs.sourceforge.net/
 
 # GPLv2/LGPLv2/BSD/MIT
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c
 

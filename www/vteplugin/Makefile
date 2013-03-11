@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/09/26 14:30:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/11 11:44:50 espie Exp $
 
 COMMENT =	npapi vte-based terminal for web browsers
 
@@ -7,10 +7,7 @@ REVISION =	10
 CATEGORIES =	www x11
 
 # WTFPL
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig

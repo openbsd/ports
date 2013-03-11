@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/09/16 12:29:16 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/11 11:46:14 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,9 +11,6 @@ CATEGORIES=	x11
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes glade-2.0
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
@@ -34,7 +31,7 @@ LIB_DEPENDS=	textproc/libxml \
 RUN_DEPENDS=	devel/p5-Glib2 \
 		x11/p5-Gtk2
 
-REGRESS_IS_INTERACTIVE=x11
+TEST_IS_INTERACTIVE=x11
 
 pre-configure:
 	perl -pi -e 's,!!CFLAGS!!,${CFLAGS},g' ${WRKSRC}/Makefile.PL

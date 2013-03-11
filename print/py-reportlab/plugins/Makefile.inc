@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.4 2010/11/20 09:48:40 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2013/03/11 11:37:54 espie Exp $
 
 CATEGORIES=	print graphics
 
@@ -9,7 +9,6 @@ MAINTAINER=	Aleksander Piotrowski <alek@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 EXTRACT_SUFX=	.tgz
@@ -18,4 +17,4 @@ MODULES=	lang/python
 
 RUN_DEPENDS=	print/py-reportlab/reportlab
 
-REGRESS_DEPENDS=${RUN_DEPENDS}
+TEST_DEPENDS=${RUN_DEPENDS}

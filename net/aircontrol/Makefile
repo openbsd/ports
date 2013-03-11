@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/09/19 09:17:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/11 11:35:45 espie Exp $
 
 COMMENT =	management tool for Ubiquiti wireless devices
 
@@ -11,7 +11,6 @@ HOMEPAGE  =	http://www.ubnt.com/aircontrol
 
 PERMIT_PACKAGE_CDROM =	 proprietary license
 PERMIT_PACKAGE_FTP =	 proprietary license
-PERMIT_DISTFILES_CDROM = proprietary license
 PERMIT_DISTFILES_FTP =	 proprietary license
 
 MASTER_SITES =	http://www.ubnt.com/downloads/aircontrol/
@@ -25,7 +24,7 @@ RUN_DEPENDS =	java/javaPathHelper
 PREFIX =	/var/aircontrol
 
 NO_BUILD =	Yes
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 WRKDIST =	${WRKDIR}/aircontrol
 

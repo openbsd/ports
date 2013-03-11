@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2012/08/18 12:41:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/11 11:46:16 espie Exp $
 
 COMMENT=	twm with a virtual desktop
 
@@ -9,9 +9,6 @@ CATEGORIES=	x11
 
 # BSD-like/badly worded
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		ICE SM X11 Xext Xmu Xpm Xt c Xau Xdmcp
 
@@ -23,7 +20,7 @@ USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	imake
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tvtwm ${PREFIX}/bin

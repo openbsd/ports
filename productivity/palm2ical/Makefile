@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/09/04 07:03:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:37:55 espie Exp $
 
 COMMENT =	Palm Databook/Calendar export to iCalendar
 
@@ -13,9 +13,6 @@ EXTRACT_SUFX =	.zip
 
 # Artistic
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WRKDIST =	${WRKDIR}
 NO_BUILD =	Yes
@@ -26,7 +23,7 @@ RUN_DEPENDS =	databases/p5-Palm \
 		devel/p5-DateTime-Format-ICal \
 		devel/p5-Data-ICal-TimeZone
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/fixpdb ${PREFIX}/bin/

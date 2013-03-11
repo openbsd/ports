@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.214 2013/02/09 14:49:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.215 2013/03/11 11:46:14 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -24,8 +24,6 @@ HOMEPAGE =		http://www.mplayerhq.hu/
 # GPLv2
 PERMIT_PACKAGE_CDROM =		patents
 PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 WANTLIB =	GL X11 Xext Xinerama Xss Xv Xxf86dga Xxf86vm ass avcodec \
 		avformat avutil bluray bz2 c cdda_interface cdda_paranoia \
@@ -195,7 +193,7 @@ WANTLIB +=	jack
 CONFIGURE_ARGS += --disable-jack
 .endif
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 DOCDIR =	${PREFIX}/share/doc/mplayer
 EXAMPLEDIR =	${PREFIX}/share/examples/mplayer

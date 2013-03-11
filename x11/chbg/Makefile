@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2012/12/23 12:25:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/11 11:46:08 espie Exp $
 
 COMMENT=		Desktop wallpaper manager and X11 screensaver
 
@@ -12,9 +12,6 @@ EXTRACT_SUFX=		.tar.bz2
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.beebgames.com/sw/
 

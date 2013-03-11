@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2012/09/10 20:54:40 landry Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/11 11:42:40 espie Exp $
 
 COMMENT =	versatile file searching tool
 
@@ -13,9 +13,6 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES =	https://launchpad.net/catfish-search/0.4/0.4.0.1/+download/
 

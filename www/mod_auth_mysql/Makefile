@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/09/17 10:29:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2013/03/11 11:44:43 espie Exp $
 
 COMMENT=	Apache MySQL authentication module
 
@@ -13,9 +13,6 @@ MODULES+=	apache-module
 
 # Apache license
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += lib/mysql/mysqlclient>=10
 
@@ -23,7 +20,7 @@ MODAPACHE_NAME=	auth_mysql
 
 LIB_DEPENDS=    databases/mysql
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-build:
 	@${MODAPACHE_CREATE_ENABLE_SCRIPT}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2012/08/29 07:37:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 11:37:55 espie Exp $
 
 COMMENT=	generate and manipulate maps of your thoughts
 
@@ -9,9 +9,6 @@ HOMEPAGE=	http://www.insilmaril.de/vym/
 
 # modified GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=vym/}
 EXTRACT_SUFX=	.tar.bz2
@@ -28,7 +25,7 @@ RUN_DEPENDS=	archivers/zip \
 		textproc/libxslt
 
 PORTHOME=	${WRKDIR}
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 SHARE_DIRS=	flags flags/freemind icons scripts styles
 

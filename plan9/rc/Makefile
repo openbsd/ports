@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/02/09 14:49:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/11 11:37:53 espie Exp $
 
 COMMENT=	shell (clone of plan9 shell)
 
@@ -13,9 +13,6 @@ SUPDISTFILES=	editline-1.5.tar.gz:0
 MAINTAINER=	Markus Friedl <markus@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c
 
@@ -27,7 +24,7 @@ FLAVORS=	readline editline
 FLAVOR?=
 
 USE_GROFF =	Yes
-REGRESS_TARGET= trip
+TEST_TARGET= trip
 
 .if defined(WITH_READLINE) && ${WITH_READLINE:U} == YES
 FLAVOR+=readline

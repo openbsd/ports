@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/10/26 20:17:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 11:35:44 espie Exp $
 
 COMMENT=	SWF manipulation and generation utilities
 
@@ -11,9 +11,6 @@ HOMEPAGE=	http://www.swftools.org/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c fftw3 freetype jpeg m mp3lame stdc++ ungif z
 
@@ -33,6 +30,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		ac_cv_header_zzip_lib_h=no \
 		ac_cv_header_pdflib_h=no
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

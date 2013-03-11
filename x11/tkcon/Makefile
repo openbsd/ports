@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/01/05 16:48:22 stu Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 11:46:16 espie Exp $
 
 COMMENT =		enhanced Tk console
 
@@ -10,9 +10,6 @@ MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD-like
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		x11/tk
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tkcon/}
@@ -20,7 +17,7 @@ BUILD_DEPENDS =		devel/tcllib>=1.11.1
 RUN_DEPENDS =		${MODTK_RUN_DEPENDS}
 USE_GROFF =		Yes
 NO_BUILD =		Yes
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 PKG_ARCH =		*
 
 DOCDIR =		${PREFIX}/share/doc/tkcon

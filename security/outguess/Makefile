@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/18 21:41:46 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/11 11:41:26 espie Exp $
 
 COMMENT=	universal steganography tool
 
@@ -11,12 +11,9 @@ HOMEPAGE=	http://www.outguess.org/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 CONFIGURE_STYLE=gnu dest
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/jpeg-6b-steg

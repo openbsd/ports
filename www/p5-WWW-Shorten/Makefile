@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/04/07 08:29:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:44:47 espie Exp $
 
 COMMENT=		interface to URL shortening sites
 
@@ -7,9 +7,6 @@ CATEGORIES=		www
 
 # Artistic 2.0
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
 

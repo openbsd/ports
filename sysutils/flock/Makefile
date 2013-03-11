@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/05/25 21:21:15 robert Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:41:30 espie Exp $
 
 COMMENT=	flock(2) manager for shell scripts
 
@@ -17,14 +17,11 @@ MASTER_SITES=	http://blade2k.humppa.hu/distfiles/
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 # MIT
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB=	c
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-extract:
 	@cp ${FULLDISTDIR}/flock-${V}.c ${WRKSRC}

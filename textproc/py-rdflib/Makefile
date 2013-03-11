@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/09/29 10:27:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:42:46 espie Exp $
 
 PKG_ARCH =	*
 
@@ -14,9 +14,6 @@ HOMEPAGE=	https://github.com/RDFLib/rdflib
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		https://github.com/downloads/RDFLib/rdflib/
 
@@ -34,7 +31,7 @@ MODPY_ADJ_FILES =	rdflib/plugins/parsers/ntriples.py \
 EXAMPLES_DIR =		${PREFIX}/share/examples/py-rdflib/
 
 # Stupid infrastructure needs absolute imports
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLES_DIR}

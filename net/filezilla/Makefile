@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2012/12/19 17:00:09 giovanni Exp $
+# $OpenBSD: Makefile,v 1.28 2013/03/11 11:35:46 espie Exp $
 
 COMMENT=	fast FTP and SFTP GUI client with a lot of features
 
@@ -16,9 +16,6 @@ HOMEPAGE=	http://www.filezilla-project.org/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c m pthread stdc++ tasn1 z gmp hogweed nettle
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes
@@ -57,7 +54,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 USE_GMAKE=	Yes
 WRKDIST=	${WRKDIR}/filezilla-$V
 
-do-regress:
+do-test:
 	@cd ${WRKBUILD}/tests && ${MAKE_PROGRAM} check-TESTS
 
 .include <bsd.port.mk>

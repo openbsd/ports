@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2012/08/18 12:41:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 11:35:57 espie Exp $
 
 COMMENT=	BPF traffic collector
 
@@ -10,13 +10,10 @@ MASTER_SITES=	http://spacehopper.org/mirrors/ \
 EXTRACT_SUFX=	.tgz
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c pcap
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/trafd/trafd ${PREFIX}/sbin

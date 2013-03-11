@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/01/12 15:43:43 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/11 11:44:50 espie Exp $
 
 COMMENT-main =	yahoo ui library toolkit
 COMMENT-docs =	yahoo ui library examples
@@ -17,9 +17,6 @@ HOMEPAGE =	http://developer.yahoo.com/yui/
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	http://yuilibrary.com/downloads/yui2/
 
@@ -27,7 +24,7 @@ EXTRACT_ONLY =
 BUILD_DEPENDS =	archivers/unzip
 
 NO_BUILD =	Yes
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 PKG_ARCH =	*
 

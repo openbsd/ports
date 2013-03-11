@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2012/11/27 19:58:49 gsoares Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/11 11:35:50 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,9 +11,6 @@ CATEGORIES=	net geo
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GeoIP>=8
 

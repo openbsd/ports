@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2012/10/15 15:18:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2013/03/11 11:35:45 espie Exp $
 
 COMMENT=		small and efficient HTTP crawler
 
@@ -10,9 +10,6 @@ HOMEPAGE=		http://www.monkey.org/~provos/crawl/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c event lib/db/db=3
 
@@ -25,6 +22,6 @@ CONFIGURE_ARGS=		--with-db="${LOCALBASE}"
 CONFIGURE_ENV=		CFLAGS="${CFLAGS} -I/usr/local/include/db"
 USE_GROFF =		Yes
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 .include <bsd.port.mk>

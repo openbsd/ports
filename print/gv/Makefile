@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2011/06/05 15:03:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.38 2013/03/11 11:37:53 espie Exp $
 
 COMMENT= 	PostScript and PDF previewer
 
@@ -12,9 +12,6 @@ MASTER_SITES=	${MASTER_SITE_GNU:=gv/}
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ICE SM X11 Xext Xmu Xpm Xt c m Xaw3d Xinerama
 

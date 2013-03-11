@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/03/23 13:39:28 claudio Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:35:49 espie Exp $
 
 COMMENT=	iSCSI (RFC 3720) target from NetBSD
 
@@ -14,9 +14,6 @@ HOMEPAGE=	http://www.alistaircrooks.co.uk/software.html
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c pthread
 

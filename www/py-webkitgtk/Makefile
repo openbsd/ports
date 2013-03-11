@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/10/13 06:55:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2013/03/11 11:44:48 espie Exp $
 
 COMMENT=		python bindings for the WebKit GTK+ port
 
@@ -12,9 +12,6 @@ HOMEPAGE=		http://pywebkitgtk.googlecode.com/
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}/files/
 EXTRACT_SUFX=		.tar.bz2

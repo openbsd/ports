@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2012/09/10 09:16:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/11 11:44:43 espie Exp $
 
 COMMENT=	learning management system
 
@@ -10,16 +10,13 @@ HOMEPAGE=	http://www.moodle.org/
 
 # GPLv2+ (note if updating Moodle 2.x is GPLv3+)
 PERMIT_PACKAGE_CDROM=  Yes
-PERMIT_PACKAGE_FTP=    Yes
-PERMIT_DISTFILES_CDROM=Yes
-PERMIT_DISTFILES_FTP=  Yes
 
 MASTER_SITES=	http://download.moodle.org/download.php/direct/stable19/
 EXTRACT_SUFX=	.tgz
 
 EXTRACT_ONLY=
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 PKG_ARCH=	*
 
 PREFIX=		/var/www

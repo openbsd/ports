@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.25 2012/11/23 04:26:09 brad Exp $
+# $OpenBSD: Makefile.inc,v 1.26 2013/03/11 11:35:48 espie Exp $
 
 VERSION=	1.6.16
 
@@ -13,7 +13,6 @@ MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 SEPARATE_BUILD=		Yes
@@ -22,6 +21,6 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		ac_cv_prog_doxygen= \
 			cv_prog_cc_flag_O2=
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 CHECKSUM_FILE=		${.CURDIR}/../distinfo

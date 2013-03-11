@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2013/02/09 14:49:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2013/03/11 11:35:55 espie Exp $
 
 COMMENT=	small, easy to set up, fast and very secure FTP server
 
@@ -17,9 +17,6 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c crypto ssl
 
 SEPARATE_BUILD=	Yes

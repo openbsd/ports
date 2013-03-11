@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/11/25 07:50:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 11:46:11 espie Exp $
 
 COMMENT=	integrated LaTeX environment for GNOME
 
@@ -11,9 +11,6 @@ HOMEPAGE=	http://projects.gnome.org/latexila/
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/08 13:38:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/11 11:35:57 espie Exp $
 
 COMMENT=	Twitter script for irssi
 
@@ -10,8 +10,6 @@ HOMEPAGE=	http://www.twirssi.com/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 EXTRACT_ONLY=
@@ -22,7 +20,7 @@ RUN_DEPENDS=	net/irssi \
 		www/p5-WWW-Shorten
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 PKG_ARCH=	*
 
 SCRIPT_DATA_DIR=	${PREFIX}/share/twirssi

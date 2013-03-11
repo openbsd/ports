@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.147 2013/02/24 11:18:38 espie Exp $
+# $OpenBSD: Makefile,v 1.148 2013/03/11 11:44:49 espie Exp $
 
 MULTI_PACKAGES=	-main -ntlm
 
@@ -28,9 +28,6 @@ HOMEPAGE=	http://www.squid-cache.org/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c m pthread stdc++
 
@@ -108,7 +105,7 @@ E=		${TRUEPREFIX}/share/examples/squid
 FAKE_FLAGS=	sysconfdir=$E \
 		DEFAULT_CONFIG_FILE=$E/squid.conf \
 		DEFAULT_MIME_TABLE=$E/mime.conf
-REGRESS_DEPENDS= devel/cppunit
+TEST_DEPENDS= devel/cppunit
 
 .if !${FLAVOR:Mno_ldap}
 MULTI_PACKAGES+= -ldap

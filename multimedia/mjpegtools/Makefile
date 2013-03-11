@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2013/02/09 14:49:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2013/03/11 11:35:44 espie Exp $
 
 COMMENT=		tools to edit/modify/encode video streams
 
@@ -18,9 +18,6 @@ HOMEPAGE=		http://mjpeg.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		GL SDL SDL_gfx X11 Xau Xcomposite Xcursor Xdamage \
 			Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm \

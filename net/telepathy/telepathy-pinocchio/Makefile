@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2012/11/17 09:40:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 11:35:57 espie Exp $
 
 COMMENT=		connection manager meant for testing Telepathy
 
@@ -13,7 +13,7 @@ MODPY_ADJ_FILES=	bin/pinocchio-ctl
 
 USE_GMAKE=		No
 CONFIGURE_STYLE=	# empty
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/pinocchio/common.py

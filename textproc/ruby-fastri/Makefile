@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2012/09/23 16:57:35 jeremy Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 11:42:46 espie Exp $
 
 COMMENT=		alternative to ruby ri command-line tool
 
@@ -10,15 +10,12 @@ HOMEPAGE=		http://rubyforge.org/projects/fastri/
 
 # Ruby license
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		lang/ruby
 
 CONFIGURE_STYLE=	ruby gem
 
-REGRESS_DEPENDS=	devel/ruby-rcov,${MODRUBY_FLAVOR}
-MODRUBY_REGRESS=	rake
+TEST_DEPENDS=	devel/ruby-rcov,${MODRUBY_FLAVOR}
+MODRUBY_TEST=	rake
 
 .include <bsd.port.mk>

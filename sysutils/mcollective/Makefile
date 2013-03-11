@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/12/21 19:34:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:41:31 espie Exp $
 
 PKG_ARCH=	*
 
@@ -15,16 +15,13 @@ EXTRACT_SUFX=	.tgz
 
 # GFDL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	net/ruby-stomp \
 		converters/ruby-json \
 		devel/ruby-systemu
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 MODULES=	lang/ruby
 

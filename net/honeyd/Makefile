@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2011/11/16 00:10:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2013/03/11 11:35:47 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -13,9 +13,6 @@ HOMEPAGE=	http://www.honeyd.org/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c edit event m ncurses pcap pthread util z
 WANTLIB += 	${MODPY_WANTLIB} dnet>=1 pcre>=1 eventextra>=1

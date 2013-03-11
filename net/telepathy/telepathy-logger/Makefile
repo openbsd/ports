@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2012/11/05 07:10:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2013/03/11 11:35:57 espie Exp $
 
 COMMENT=	flexible communications framework, logger component
 
@@ -30,6 +30,6 @@ LIB_DEPENDS=	net/telepathy/telepathy-glib \
 MODGCONF2_SCHEMAS_DIR=	telepathy-logger
 MODPY_RUNDEP=		No
 
-REGRESS_IS_INTERACTIVE=x11
+TEST_IS_INTERACTIVE=x11
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/09/16 12:29:13 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/11 11:46:09 espie Exp $
 
 COMMENT=	edit enlightenment's keybindings
 
@@ -8,9 +8,6 @@ CATEGORIES=    	x11
 
 # X11
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig

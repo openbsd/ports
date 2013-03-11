@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2011/07/15 13:26:56 benoit Exp $
+# $OpenBSD: Makefile,v 1.27 2013/03/11 11:44:49 espie Exp $
 
 COMMENT =	command line interface to popular WWW search engines
 
@@ -11,9 +11,6 @@ MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # Public Domain 
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${HOMEPAGE}/dist/
 
@@ -34,8 +31,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/HACKING \
 		${PREFIX}/share/doc/surfraw
 
-REGRESS_DEPENDS =	www/p5-libwww \
+TEST_DEPENDS =	www/p5-libwww \
 			www/surfraw
-REGRESS_TARGET =	test
+TEST_TARGET =	test
 
 .include <bsd.port.mk>

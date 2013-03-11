@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2012/10/26 06:49:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2013/03/11 11:37:54 espie Exp $
 
 COMMENT =	labels and business card designer
 
@@ -17,9 +17,6 @@ HOMEPAGE =	http://glabels.sourceforge.net
 # GPLv3/LGPLv3/MIT      
 # Attribution-ShareAlike 3.0 Unported
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm asn1 atk-1.0 c cairo

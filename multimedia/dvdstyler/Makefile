@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/11/22 09:05:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/11 11:35:43 espie Exp $
 
 BROKEN=			needs an update
 
@@ -13,9 +13,6 @@ HOMEPAGE=		http://www.dvdstyler.de/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=dvdstyler/}
 EXTRACT_SUFX=		.tar.bz2
@@ -58,7 +55,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/dvdstyler/templates

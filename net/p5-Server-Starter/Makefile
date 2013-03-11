@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/01/06 08:46:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:35:54 espie Exp $
 
 COMMENT =		superdaemon for hot-deploying server programs
 
@@ -16,8 +16,5 @@ RUN_DEPENDS =		devel/p5-List-MoreUtils \
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 .include <bsd.port.mk>

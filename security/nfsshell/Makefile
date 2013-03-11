@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2012/03/18 16:50:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/11 11:41:26 espie Exp $
 
 COMMENT=	NFS auditing tool
 
@@ -13,14 +13,12 @@ MASTER_SITES=	ftp://ftp.cs.vu.nl/pub/leendert/
 
 PERMIT_PACKAGE_CDROM=	no obvious license
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	no obvious license
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c readline termcap
 
 ALL_TARGET=	nfs
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nfs ${PREFIX}/bin/nfsshell

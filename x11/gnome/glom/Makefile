@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/01/11 13:44:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2013/03/11 11:46:10 espie Exp $
 
 COMMENT=		GNOME database designer and user interface
 
@@ -17,9 +17,6 @@ HOMEPAGE=		http://www.glom.org/
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		devel/gettext \
 			lang/python \
@@ -67,7 +64,7 @@ CONFIGURE_ENV+= 	ac_cv_path_DOT= \
 			ac_cv_path_DOXYGEN=
 CONFIGURE_ARGS+=	--disable-update-mime-database
 
-REGRESS_IS_INTERACTIVE=	x11
+TEST_IS_INTERACTIVE=	x11
 
 post-install:
 	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/*.{a,la}

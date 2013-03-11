@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2013/03/11 09:46:13 giovanni Exp $
+# $OpenBSD: Makefile,v 1.79 2013/03/11 11:44:48 espie Exp $
 
 COMMENT=	tool to handle the administration of MySQL over the web
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=phpmyadmin/}
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 PKG_ARCH=	*
 
 PREFIX=		/var/www

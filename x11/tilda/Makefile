@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2011/09/26 19:49:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/11 11:46:16 espie Exp $
 
 COMMENT=		drop-down terminal emulator
 
@@ -10,9 +10,6 @@ HOMEPAGE=		http://tilda.sourceforge.net/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=tilda/}
 

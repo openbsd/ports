@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/01/05 19:15:09 sebastia Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 11:46:13 espie Exp $
 
 COMMENT=	build mega-widgets using the Itcl object system
 
@@ -14,9 +14,6 @@ HOMEPAGE=	http://incrtcl.sourceforge.net/itk/
 
 # BSD style
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES =	x11/tk
 WANTLIB +=	X11 ${MODTK_WANTLIB} itcl34
@@ -50,9 +47,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${MODTCL_INCDIR}/generic \
 FAKE_FLAGS =    libdir=${MODTCL_TCLDIR}/itk
 
 # This regression test wants an X11 display
-REGRESS_IS_INTERACTIVE=Yes
+TEST_IS_INTERACTIVE=Yes
 
-do-regress:
+do-test:
 	@cd ${WRKSRC} && env ITK_LIBRARY=${WRKSRC}/library \
 		${MODTK_BIN} tests/all.tcl -load \
 		"load ./libitk33.so.${LIBitk33_VERSION}; package require Tk"

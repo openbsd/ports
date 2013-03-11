@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2013/02/09 14:49:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2013/03/11 11:35:49 espie Exp $
 
 COMMENT=	Matt's traceroute - network diagnostic tool#'
 
@@ -11,9 +11,6 @@ HOMEPAGE=	http://www.bitwizard.nl/mtr/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	yes
-PERMIT_PACKAGE_FTP=	yes
-PERMIT_DISTFILES_CDROM=	yes
-PERMIT_DISTFILES_FTP=	yes
 
 WANTLIB=		c m termcap
 

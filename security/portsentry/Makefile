@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/15 23:30:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 11:41:27 espie Exp $
 
 COMMENT=	port scan detection and active defense
 
@@ -10,8 +10,6 @@ MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 # Common Public License
 PERMIT_PACKAGE_CDROM=  	commercial distribution defend and indemnify clauses
 PERMIT_PACKAGE_FTP=    	Yes
-PERMIT_DISTFILES_CDROM=	commercial distribution defend and indemnify clauses
-PERMIT_DISTFILES_FTP= 	Yes
 WANTLIB=		c
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sentrytools/}
@@ -42,6 +40,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/portsentry/
 .endfor
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk> 

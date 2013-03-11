@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/01/16 20:54:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:35:58 espie Exp $
 
 COMMENT=	l2tp client/server
 
@@ -13,9 +13,6 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c util
 
@@ -24,7 +21,7 @@ MASTER_SITES=	http://ftp.openswan.org/xl2tpd/ \
 		ftp://ftp.xelerance.com/xl2tpd/
 
 FAKE_FLAGS=	DESTDIR= MANDIR=${WRKINST}${PREFIX}/man
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-configure:
 	perl -pi -e 's,/etc,${SYSCONFDIR},' ${WRKSRC}/file.h

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2013/02/09 14:49:53 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2013/03/11 11:44:43 espie Exp $
 
 COMMENT=	robust and small HTTP server and mail proxy server
 
@@ -15,7 +15,6 @@ MAINTAINER=	William Yodlowsky <william@openbsd.org>
 # BSD-like
 PERMIT_PACKAGE_CDROM=	yes
 PERMIT_PACKAGE_FTP=	yes
-PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
 
 WANTLIB=	c crypto pcre ssl z
@@ -79,7 +78,7 @@ DISTFILES+=		${LUADISTFILES}
 SUPDISTFILES+=		${LUADISTFILES}
 .endif
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 ALL_TARGET=
 
 .if ${FLAVOR:Mlua}

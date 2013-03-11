@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2012/11/30 19:38:09 chrisz Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/11 11:37:55 espie Exp $
 
 COMMENT=		curses calendar front-end to remind
 
@@ -14,9 +14,6 @@ MASTER_SITES=		${HOMEPAGE}
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c m ncurses
 
@@ -27,7 +24,7 @@ USE_GMAKE=		Yes
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		misc/remind
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/wyrd

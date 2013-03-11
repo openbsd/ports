@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2007/09/15 23:29:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 11:41:24 espie Exp $
 
 COMMENT=	Back Orifice Unix client by the cDc
 
@@ -11,16 +11,13 @@ MASTER_SITES=	http://orifice.rotten.com/cDc/ \
 		http://www.cultdeadcow.com/tools/
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 CONFIGURE_STYLE=	gnu
 
 WRKDIST=	${WRKDIR}/bo
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bounix ${PREFIX}/bin

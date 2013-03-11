@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2012/11/08 13:56:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.92 2013/03/11 11:46:12 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -19,9 +19,6 @@ HOMEPAGE=	http://projects.gnome.org/totem/
 
 # GPLv2 with exception clause - LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MULTI_PACKAGES=	-main -nautilus
 

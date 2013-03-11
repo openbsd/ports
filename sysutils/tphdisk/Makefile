@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/07/30 14:36:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 11:41:33 espie Exp $
 
 # not useful on anything else
 ONLY_FOR_ARCHS=	i386
@@ -14,13 +14,10 @@ MASTER_SITES=	http://samba.org/ftp/unpacked/junkcode/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	yes
-PERMIT_PACKAGE_FTP=	yes
-PERMIT_DISTFILES_CDROM=	yes
-PERMIT_DISTFILES_FTP=	yes
 
 EXTRACT_ONLY=
 WRKDIST=	${WRKDIR}
-NO_REGRESS=	yes
+NO_TEST=	yes
 
 FAKE_FLAGS=	PREFIX="${PREFIX}"
 MAKE_FILE=	${FILESDIR}/Makefile

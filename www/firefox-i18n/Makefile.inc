@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.19 2013/03/07 23:51:49 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.20 2013/03/11 11:44:41 espie Exp $
 
 # keep in sync with working archs.. sigh
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
@@ -18,7 +18,6 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 # Mozilla public license
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	https://ftp.mozilla.org/pub/mozilla.org/firefox/releases/${FV}/linux-i686/xpi/ \
@@ -37,7 +36,7 @@ RUN_DEPENDS =	firefox-${FV:S/b/beta/}:www/mozilla-firefox
 
 DIST_SUBDIR =	mozilla/${NAME}-${FV}
 NO_BUILD =	Yes
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 EXTRACT_ONLY =
 
 .for i in ${LANGUAGES}

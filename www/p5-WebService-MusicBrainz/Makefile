@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/03/31 13:57:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 11:44:47 espie Exp $
 
 COMMENT=		interface to Music Brainz
 
@@ -10,9 +10,6 @@ USE_GROFF =		Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	modbuild
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/11/04 08:43:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 11:41:28 espie Exp $
 
 COMMENT =		Python bindings for cracklib
 
@@ -14,9 +14,6 @@ MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # MIT/X Consortium License
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		http://download.savannah.gnu.org/releases/python-crack/
 
@@ -37,6 +34,6 @@ AUTOCONF_VERSION =	2.59
 post-install:
 			find ${WRKINST} -name \*.egg-info -exec rm {} \;
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/09/17 10:29:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/11 11:44:43 espie Exp $
 
 COMMENT=	Apache Kerberos authentication module
 
@@ -13,14 +13,11 @@ MAINTAINER=	Jason Meltzer <jmeltzer@openbsd.org>
 
 # combination of 2- and 3-clause BSD, MIT, and export crypto warnings
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ssl gssapi krb5 crypto
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=modauthkerb/}
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 USE_GMAKE=	Yes
 
 MODAPACHE_NAME=	auth_kerb

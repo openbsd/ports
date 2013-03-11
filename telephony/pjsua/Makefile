@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2012/08/20 08:24:42 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.30 2013/03/11 11:41:33 espie Exp $
 
 COMMENT=		lightweight sip client
 
@@ -15,9 +15,6 @@ MAINTAINER=		Christopher Zimmermann <madroach@zakweb.de>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB =		c crypto gsm>=1.0 m opencore-amrnb portaudio \
 			pthread speex speexdsp ssl
@@ -40,7 +37,7 @@ CONFIGURE_ENV+=		CFLAGS="-I${LOCALBASE}/include" \
 			ac_cv_lib_uuid_uuid_generate=no
 
 USE_GMAKE=		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 post-patch:
 	rm -f ${WRKSRC}/configure

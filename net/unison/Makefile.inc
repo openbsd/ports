@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.21 2013/02/09 14:49:52 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.22 2013/03/11 11:35:57 espie Exp $
 
 DISTNAME=	unison-$V
 CATEGORIES=	net
@@ -10,7 +10,6 @@ MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c m util
@@ -42,7 +41,7 @@ MAKE_FLAGS+=	NATIVE=${MODOCAML_NATIVE:S/Yes/true/:S/No/false/} \
 		OCAMLOPT=ocamlopt.opt \
 		CFLAGS=
 
-REGRESS_TARGET=	selftest
+TEST_TARGET=	selftest
 PORTHOME=	${WRKDIR}
 
 # Avoid multiple all:: entries and use the real target entry.

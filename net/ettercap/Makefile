@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2013/02/09 14:49:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2013/03/11 11:35:46 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -13,9 +13,6 @@ HOMEPAGE=	http://www.ettercap-project.org/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB += c crypto curl curses form lib/libnet-1.1/net=11 menu ncurses
 WANTLIB += panel pcap pcre pthread ssl z
@@ -54,7 +51,7 @@ WANTLIB += atk-1.0 cairo curl freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += glib-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 pango-1.0
 .endif
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-install:
 	mv ${WRKINST}/etc/ettercap ${PREFIX}/share/examples/ettercap

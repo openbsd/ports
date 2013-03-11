@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/10/12 15:20:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:35:46 espie Exp $
 
 COMMENT-main=		secure communications between a DNS client and resolver
 COMMENT-plugins=	example plugins for dnscrypt-proxy
@@ -15,9 +15,6 @@ MAINTAINER=		Frank Denis <dnscrypt@pureftpd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MULTI_PACKAGES=		-main -plugins
 

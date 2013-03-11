@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2012/01/12 10:44:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.82 2013/03/11 11:35:49 espie Exp $
 
 COMMENT=	multi-router traffic grapher
 
@@ -11,9 +11,6 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c jpeg m png z gd>=18
 
@@ -37,7 +34,7 @@ CONFIGURE_ARGS+=--with-gd-inc="${LOCALBASE}/include" \
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 # SUBST_CMD mangles the file
 pre-configure:

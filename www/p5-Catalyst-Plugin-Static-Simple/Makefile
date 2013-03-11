@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/12/03 11:46:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 11:44:45 espie Exp $
 
 COMMENT= 	serving static pages with catalyst
 
@@ -12,9 +12,6 @@ MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	devel/p5-Moose \
 		devel/p5-MooseX-Types \
@@ -22,7 +19,7 @@ RUN_DEPENDS=	devel/p5-Moose \
 		www/p5-Catalyst-Runtime>=5.80008 \
 		mail/p5-MIME-Types>=1.25
 BUILD_DEPENDS=	${RUN_DEPENDS}
-REGRESS_DEPENDS=www/p5-Catalyst-Plugin-SubRequest>=0.15
+TEST_DEPENDS=www/p5-Catalyst-Plugin-SubRequest>=0.15
 
 MAKE_ENV=	TEST_POD=Yes
 

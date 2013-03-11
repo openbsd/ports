@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/02/16 21:59:17 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:37:53 espie Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64 powerpc sparc64 mips64 mips64el
 
@@ -17,13 +17,10 @@ MAINTAINER=	Stanley Lieber <stanley.lieber@gmail.com>
 
 # Lucent Public License Version 1.02
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB =	X11 c pthread
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 MAKE_FLAGS=	CONF=unix AUDIO=none
 
 WRKDIST=	${WRKDIR}/drawterm/

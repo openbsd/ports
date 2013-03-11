@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2011/12/07 06:18:05 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2013/03/11 11:46:14 espie Exp $
 
 COMMENT=	configuration utility for openbox
 
@@ -12,9 +12,6 @@ HOMEPAGE=	http://openbox.org/wiki/Obconf
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://distfiles.nl/
 #http://icculus.org/openbox/obconf/

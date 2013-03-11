@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2012/08/19 22:30:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2013/03/11 11:35:57 espie Exp $
 
 COMMENT=	DNS proxy that supports IPv6 <==> IPv4 record translation
 
@@ -11,16 +11,13 @@ HOMEPAGE=	http://www.dillema.net/software/totd.html
 
 # BSD/ISC (built-in webserver is LGPL but we don't compile it in)
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c 
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS += 	--enable-stf
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 MAKE_FLAGS=		CC="${CC}" SYSCONFDIR="${SYSCONFDIR}"
 

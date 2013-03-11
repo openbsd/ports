@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2012/10/15 15:06:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 11:44:46 espie Exp $
 
 COMMENT=	track sessions and, optionally, users
 
@@ -12,9 +12,6 @@ MAINTAINER=	Sam Smith <S@msmith.net>
 
 # Same as Maypole which is same as Perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Apache/SIMON/}
 

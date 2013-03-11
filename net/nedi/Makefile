@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2012/08/06 08:47:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 11:35:49 espie Exp $
 
 COMMENT =			network discovery tool
 
@@ -13,9 +13,6 @@ MAINTAINER =			Marcus Glocker <marcus@nazgul.ch>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 MASTER_SITES =			${HOMEPAGE}/pub/
 

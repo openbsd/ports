@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 18:36:58 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 11:35:56 espie Exp $
 
 COMMENT =	network traffic monitor and statistics
 DISTNAME =	slurm-0.3.3
@@ -11,9 +11,6 @@ MAINTAINER =	Ryan Freeman <ryan@slipgate.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	c ncurses
 

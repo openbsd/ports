@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/05/03 22:07:44 pascal Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:35:45 espie Exp $
 
 COMMENT =		terminal status monitor for Tor
 
@@ -16,9 +16,6 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		http://archive.torproject.org/arm/
 EXTRACT_SUFX =		.tar.bz2
@@ -29,7 +26,7 @@ RUN_DEPENDS =		net/tor \
 			devel/desktop-file-utils \
 			x11/gnome/librsvg
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}/arm
 

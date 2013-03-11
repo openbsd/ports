@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2012/10/15 15:18:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/11 11:35:46 espie Exp $
 
 COMMENT-main=	Dictionary Server Protocol client
 COMMENT-server=	Dictionary Server Protocol server
@@ -17,9 +17,6 @@ HOMEPAGE=	http://www.dict.org
 
 # GPL v2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c z
 
 MASTER_SITES=	ftp://ftp.us0.dict.org/pub/dict/ \
@@ -33,7 +30,7 @@ CONFIGURE_ARGS=	--without-local-zlib \
 
 MULTI_PACKAGES=	-main -server
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 pre-build:
 	@perl -pi -e "s,/etc,${SYSCONFDIR},g" ${WRKSRC}/*.[18]

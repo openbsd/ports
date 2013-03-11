@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2013/03/08 18:12:38 zhuk Exp $
+# $OpenBSD: Makefile,v 1.109 2013/03/11 11:46:15 espie Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 SHARED_ONLY =		Yes
@@ -76,9 +76,6 @@ FLAVOR ?=
 # GPLv3, or LGPL.
 # (GPLv2 not needed, since LGPL is more free)
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MAKE_ENV =	QTDIR="${WRKDIST}" EXTRA_SAMPLES="${EXTRA_SAMPLES}" \
 		SYS_CXX="${CXX}" SYS_CXXFLAGS="${CXXFLAGS}" \
@@ -267,7 +264,7 @@ QT_PKGCFGDIR =	${QT_BASEDIR}/pkgconfig
 DOCS =	README
 
 VMEM_WARNING =	Yes
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 PROGRAMS4 =	assistant designer findtr linguist lrelease lupdate moc qmake \
 		qtconfig uic uic3

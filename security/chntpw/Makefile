@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/11/04 08:43:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 11:41:24 espie Exp $
 
 ONLY_FOR_ARCHS =	i386 amd64
 
@@ -17,9 +17,6 @@ MAINTAINER =		Ian Darwin <ian@openbsd.org>
 
 # Mix of GPL and LGPL
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 WANTLIB =		c
 
 MASTER_SITES =		http://pogostick.net/~pnh/ntpasswd/
@@ -28,7 +25,7 @@ MAKE_ENV =		CC=$(CC)
 
 USE_GMAKE =		Yes
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}/chntpw-${V}/
 

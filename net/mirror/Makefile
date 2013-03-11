@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/18 18:36:49 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/03/11 11:35:49 espie Exp $
 
 COMMENT=	mirror packages on remote sites
 
@@ -15,14 +15,13 @@ HOMEPAGE=	http://sunsite.org.uk/packages/mirror/
 
 PERMIT_PACKAGE_CDROM=	may not modify
 PERMIT_PACKAGE_FTP=	may not modify
-PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MAKE_FILE=	makefile
 
 WRKDIST=	${WRKDIR}
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 DOCDIR=		${PREFIX}/share/doc/mirror
 DOCS=		copyright.html index.html mirror-faq.html mirror.html \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/11/22 08:37:05 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2013/03/11 11:46:17 espie Exp $
 
 COMMENT=		graphic disk usage viewer
 
@@ -8,9 +8,6 @@ CATEGORIES=     	x11
 
 # custom
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xpm Xt c
 
@@ -24,6 +21,6 @@ USE_GROFF =		Yes
 CONFIGURE_STYLE=	imake
 WRKDIST=		${WRKDIR}
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 .include <bsd.port.mk>

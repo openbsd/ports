@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2012/04/08 21:58:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 11:44:44 espie Exp $
 
 COMMENT=	I18N for Catalyst
 
@@ -11,9 +11,6 @@ MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	devel/p5-Locale-Maketext-Lexicon \
 		devel/p5-MRO-Compat \

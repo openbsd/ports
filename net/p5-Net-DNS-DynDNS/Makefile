@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/03/16 23:14:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 11:35:52 espie Exp $
 
 COMMENT =	update dyndns.org with correct ip address
 
@@ -8,9 +8,6 @@ CATEGORIES =	net
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 RUN_DEPENDS =	www/p5-libwww
 BUILD_DEPENDS =	${RUN_DEPENDS}

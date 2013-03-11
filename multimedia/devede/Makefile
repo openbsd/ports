@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2012/11/08 07:18:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2013/03/11 11:35:43 espie Exp $
 
 COMMENT=	video DVDs and CDs creation tool
 
@@ -12,9 +12,6 @@ HOMEPAGE=	http://www.rastersoft.com/programas/devede.html
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.rastersoft.com/descargas/
 
@@ -31,7 +28,7 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 
 PKG_ARCH=	*
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 MODPY_ADJ_FILES=devede
 

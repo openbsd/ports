@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/08 02:04:37 djm Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/11 11:44:49 espie Exp $
 
 COMMENT=		personal publishing platform / weblog engine
 
@@ -13,9 +13,6 @@ MASTER_SITES=		${HOMEPAGE}releases/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes
@@ -43,7 +40,7 @@ post-install:
 	${INSTALL_DATA}	${WRKSRC}/README ${PREFIX}/share/doc/py-zine
 	${INSTALL_DATA}	${WRKSRC}/INSTALL ${PREFIX}/share/doc/py-zine
 
-do-regress:
+do-test:
 	cd ${WRKSRC} && ./scripts/run-tests
 
 .include <bsd.port.mk>

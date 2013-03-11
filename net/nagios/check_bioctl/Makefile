@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2012/04/04 21:49:44 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 11:35:49 espie Exp $
 
 PKG_ARCH =		*
 
@@ -14,12 +14,9 @@ MASTER_SITES =		https://www.monitoringexchange.org/attachment/download/Check-Plu
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 NO_BUILD =		Yes
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 RUN_DEPENDS =		net/nagios/plugins,-main
 

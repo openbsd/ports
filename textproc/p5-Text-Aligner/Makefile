@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/12/31 17:21:45 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 11:42:44 espie Exp $
 
 COMMENT=	justify strings to various alignment styles
 
@@ -11,8 +11,5 @@ MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 .include <bsd.port.mk>

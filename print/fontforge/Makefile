@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2011/09/16 11:13:41 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2013/03/11 11:37:53 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -21,10 +21,7 @@ HOMEPAGE=		http://fontforge.sourceforge.net/
 MAINTAINER=		Matthias Kilian <kili@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=fontforge/}
 
@@ -62,7 +59,7 @@ USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 post-extract:
 	find ${WRKSRC} -name \*.orig -o -name \*.rej | xargs rm

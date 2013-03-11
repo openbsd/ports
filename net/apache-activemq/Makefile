@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/04 15:48:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 11:35:45 espie Exp $
 
 PKG_ARCH=	*
 
@@ -12,9 +12,6 @@ CATEGORIES=	net
 
 # Apache2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_APACHE:=activemq/apache-activemq/${V}/}
 EXTRACT_SUFX=	-bin.tar.gz
@@ -27,7 +24,7 @@ RUN_DEPENDS=	java/javaPathHelper
 SUBST_VARS +=	V
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	rm -r ${WRKSRC}/bin/macosx/ ${WRKSRC}/bin/linux-x86-* ${WRKSRC}/bin/*.orig

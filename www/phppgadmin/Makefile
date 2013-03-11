@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2012/09/10 09:16:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2013/03/11 11:44:48 espie Exp $
 
 COMMENT=	tool to handle the administration of PostgreSQL over the web
 
@@ -11,14 +11,11 @@ MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=phppgadmin/}
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 PKG_ARCH=	*
 
 MODULES=	lang/php

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2012/06/13 12:41:14 okan Exp $
+# $OpenBSD: Makefile,v 1.39 2013/03/11 11:44:43 espie Exp $
 
 COMMENT=	module that embeds a Perl interpreter into Apache
 
@@ -19,9 +19,6 @@ MODAPACHE_FILE=	${MODAPACHE_LOCATION}/libperl.so
 
 # Apache
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m perl util 
 
 RUN_DEPENDS=		devel/p5-Devel-Symdump \
@@ -31,7 +28,7 @@ BUILD_DEPENDS=		${RUN_DEPENDS}
 
 SUBST_VARS=	PKGNAME
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 CONFIGURE_STYLE= perl
 CONFIGURE_ARGS=	USE_APXS="1" EVERYTHING="1" WITH_APXS="/usr/sbin/apxs"

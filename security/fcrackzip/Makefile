@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2012/11/23 10:59:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 11:41:24 espie Exp $
 
 COMMENT =	ZIP password cracker
 
@@ -12,9 +12,6 @@ MAINTAINER =	Jung Lee <openwall77@gmail.com>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	yes
-PERMIT_PACKAGE_FTP =	yes
-PERMIT_DISTFILES_CDROM =yes
-PERMIT_DISTFILES_FTP =	yes
 
 WANTLIB +=	c
 

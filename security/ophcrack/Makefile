@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/10 12:45:09 benoit Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 11:41:26 espie Exp $
 
 COMMENT =		password cracker based on rainbow tables
 
@@ -47,6 +47,6 @@ CONFIGURE_ENV +=	QTDIR="${MODQT4_QTDIR}" \
 CONFIGURE_ARGS =	--disable-gui --disable-graph
 .endif
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 .include <bsd.port.mk>

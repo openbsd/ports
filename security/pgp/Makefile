@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2012/06/04 21:04:42 pascal Exp $
+# $OpenBSD: Makefile,v 1.35 2013/03/11 11:41:27 espie Exp $
 
 COMMENT=	Pretty Good Privacy 2.6.3ia
 
@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.netsw.org/crypto/systems/pgp/ \
 		
 PERMIT_PACKAGE_CDROM=	no commercial use
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	no commercial use
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 PGP_DOC_DIR=	${PREFIX}/share/doc/pgp
@@ -52,7 +50,7 @@ do-build:
 		-DMAX_NAMELEN=255 -DPGP_DOC_DIR=\\\"${PGP_DOC_DIR}\\\" \
 		`cat ${WRKDIR}/.endian`"
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/pgp

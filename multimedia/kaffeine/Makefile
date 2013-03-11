@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/01/23 21:43:16 zhuk Exp $
+# $OpenBSD: Makefile,v 1.31 2013/03/11 11:35:44 espie Exp $
 
 COMMENT=	video player for KDE
 
@@ -15,9 +15,6 @@ SHARED_LIBS=	kaffeineaudioencoder	0.0
 HOMEPAGE=	http://kaffeine.sourceforge.net/
 
 # GPLv2+
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ICE SM X11 Xau Xdmcp Xext Xinerama Xrender Xtst art_lgpl_2

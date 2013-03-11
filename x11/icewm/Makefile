@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2012/06/04 21:05:36 pascal Exp $
+# $OpenBSD: Makefile,v 1.53 2013/03/11 11:46:13 espie Exp $
 
 COMMENT=	small and fast window manager
 
@@ -10,9 +10,6 @@ HOMEPAGE=	http://www.icewm.org/
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ICE SM X11 Xau Xdmcp Xext Xft Xinerama Xrandr Xrender
 WANTLIB += c expat fontconfig freetype gdk_pixbuf-2.0 gdk_pixbuf_xlib-2.0

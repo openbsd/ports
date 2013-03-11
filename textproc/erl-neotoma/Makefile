@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/10 19:35:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 11:42:41 espie Exp $
 
 COMMENT=	library for parsing expression grammars for Erlang
 
@@ -12,14 +12,12 @@ HOMEPAGE=	https://github.com/seancribbs/neotoma
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://distfiles.nl/
 
 MODULES=	lang/erlang
 
-REGRESS_TARGET=	tests
+TEST_TARGET=	tests
 
 do-install:
 	${INSTALL_DATA_DIR} ${ERL_LIBDIR}/{ebin,extra,priv,src}

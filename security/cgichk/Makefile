@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2007/09/15 23:29:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 11:41:24 espie Exp $
 
 COMMENT=	scans webservers for vulnerable CGI programs
 
@@ -12,9 +12,6 @@ CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 WRKDIST=        ${WRKDIR}/cgichk3
@@ -23,7 +20,7 @@ MAKE_FLAGS=	CC='${CC}' CFLAGS='${CFLAGS} \
 			-DCGICHK_CONF="\"${SYSCONFDIR}/cgichk.conf\""'
 MAKE_ENV=	SYSCONFDIR="${SYSCONFDIR}"
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cgichk ${PREFIX}/bin

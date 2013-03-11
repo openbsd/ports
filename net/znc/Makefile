@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2012/11/17 00:16:54 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 11:35:58 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -14,9 +14,6 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c crypto m ssl stdc++
 
@@ -27,6 +24,6 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS= --disable-optimization
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

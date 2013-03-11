@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/09 15:24:13 benoit Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 11:35:55 espie Exp $
 
 COMMENT=	SNMP framework for Python
 
@@ -30,6 +30,6 @@ post-install:
 	cd ${WRKSRC}/docs; tar cf - . | tar xf - -C ${DOCSDIR} 
 	cd ${WRKSRC}/examples; tar cf - . | tar xf - -C ${EXAMPLESDIR}
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 .include <bsd.port.mk>

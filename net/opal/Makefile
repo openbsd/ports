@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/03/02 14:05:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2013/03/11 11:35:50 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,9 +18,6 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # MPL 1.0
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c celt0>=1 crypto gsm m ogg pt spandsp speex
 WANTLIB += speexdsp stdc++ theora tiff x264
@@ -43,7 +40,7 @@ MAKE_FLAGS=	RELEASE_LIB_NAME=libopal.so.${LIBopal_VERSION} \
 		RELEASE_LIB_FILENAME_SHARED_PAT=libopal.so.${LIBopal_VERSION}
 
 USE_GMAKE=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/plugins
 

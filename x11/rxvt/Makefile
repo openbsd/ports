@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2012/12/07 18:23:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.49 2013/03/11 11:46:15 espie Exp $
 
 COMMENT-main=	color, low memory usage, xterm replacement
 COMMENT-clock=	analog clock for X11 w/appoint. reminder and mail notif
@@ -19,9 +19,6 @@ HOMEPAGE=	http://www.rxvt.org/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS-main =	devel/desktop-file-utils
 
@@ -48,7 +45,7 @@ CONFIGURE_ARGS=		--enable-utmp \
 			--enable-rxvt-scroll \
 			--with-encoding=noenc
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications

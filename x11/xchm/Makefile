@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/10/17 17:29:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 11:46:17 espie Exp $
 
 COMMENT=	display chm files
 
@@ -10,9 +10,6 @@ HOMEPAGE=	http://xchm.sourceforge.net/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xchm/}
 
@@ -28,7 +25,7 @@ WANTLIB += wx_base_net wx_gtk2_dbgrid wx_gtk2_aui wx_gtk2_richtext
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications

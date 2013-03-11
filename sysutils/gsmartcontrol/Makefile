@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/01/11 13:44:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 11:41:30 espie Exp $
 
 COMMENT=	graphical hard drive inspection tool (smartctl front-end)
 
@@ -12,9 +12,6 @@ HOMEPAGE=	http://gsmartcontrol.berlios.de/
 
 # GPLv2 or GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 atkmm-1.6 c cairo cairomm-1.0

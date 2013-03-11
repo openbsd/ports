@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2012/05/17 23:13:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 11:44:49 espie Exp $
 
 COMMENT=	web-based tool for managing racks of equipment
 
@@ -16,9 +16,6 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+, icons CC:Attribution 2.5
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=rackmonkey/}
 
@@ -29,7 +26,7 @@ RUN_DEPENDS=	p5-DBD-SQLite-*|p5-DBD-Pg-*|p5-DBD-mysql-*:databases/p5-DBD-SQLite 
 		www/p5-HTML-Template \
 		www/p5-HTML-Parser
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 PREFIX=		/var/www
 PKG_ARCH=	*
 

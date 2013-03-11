@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2012/11/15 19:58:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/11 11:44:41 espie Exp $
 
 COMMENT =	web frontend for git repositories
 
@@ -17,9 +17,6 @@ HOMEPAGE =		http://git.zx2c4.com/cgit/about/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 USE_GMAKE =	yes
 

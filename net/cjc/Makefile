@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/11/16 16:00:00 rpointel Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 11:35:45 espie Exp $
 
 COMMENT=		Jabber client for text terminals
 
@@ -12,9 +12,6 @@ MAINTAINER=		Will Maier <wcmaier@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://cloud.github.com/downloads/Jajcus/cjc/
 
@@ -22,7 +19,7 @@ MODULES=	lang/python
 
 RUN_DEPENDS=	net/py-xmpp
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-extract:
 	@cp ${FILESDIR}/setup.py ${WRKSRC}

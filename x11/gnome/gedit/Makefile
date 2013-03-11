@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2012/11/13 14:11:33 giovanni Exp $
+# $OpenBSD: Makefile,v 1.93 2013/03/11 11:46:10 espie Exp $
 
 COMMENT=		lightweight GNOME text editor
 
@@ -12,9 +12,6 @@ HOMEPAGE=		http://projects.gnome.org/gedit/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
@@ -56,7 +53,7 @@ CONFIGURE_ARGS=		--disable-static \
 			--enable-gvfs-metadata \
 			--disable-updater
 
-REGRESS_IS_INTERACTIVE=	X11
+TEST_IS_INTERACTIVE=	X11
 
 post-install:
 	rm ${PREFIX}/lib/gedit/plugins/*.la

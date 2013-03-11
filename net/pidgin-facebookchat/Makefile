@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2012/06/29 23:48:48 steven Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 11:35:55 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -13,10 +13,7 @@ CATEGORIES =	net
 HOMEPAGE =	http://code.google.com/p/pidgin-facebookchat/
 
 # GPL v3
-PERMIT_PACKAGE_FTP =	Yes
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_DISTFILES_FTP =	Yes
-PERMIT_DISTFILES_CDROM =	Yes
 
 MASTER_SITES =	http://pidgin-facebookchat.googlecode.com/files/
 EXTRACT_SUFX =	.tar.bz2
@@ -31,7 +28,7 @@ WANTLIB =	json-glib-1.0>=1.0
 MAKE_FLAGS =	LINUX32_COMPILER="${CC}" LOCALBASE=${LOCALBASE}
 ALL_TARGET =	libfacebook.so
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/purple-2/

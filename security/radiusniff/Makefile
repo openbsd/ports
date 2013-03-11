@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2007/09/15 23:30:01 merdely Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/11 11:41:28 espie Exp $
 
 COMMENT=		radius sniffer
 
@@ -7,8 +7,6 @@ CATEGORIES=     	security
 
 PERMIT_PACKAGE_CDROM=	not specified, vague license
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	not specified, vague license
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c pcap
 
 EXTRACT_SUFX=		.tgz
@@ -16,7 +14,7 @@ MASTER_SITES=		http://adm.freelsd.net/ADM/
 
 WRKSRC=			${WRKDIR}/radiusniff-0.2
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 do-build:
 	cd ${WRKSRC} && ${CC} -DOPENBSD \

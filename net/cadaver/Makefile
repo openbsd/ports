@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2012/12/23 12:25:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/11 11:35:45 espie Exp $
 
 COMMENT=		command-line WebDAV client
 
@@ -10,9 +10,6 @@ HOMEPAGE=		http://www.webdav.org/cadaver/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += asn1 c crypto curses expat gssapi krb5 readline ssl
 WANTLIB += z neon proxy pthread
@@ -23,7 +20,7 @@ LIB_DEPENDS=		net/neon
 
 MASTER_SITES=		${HOMEPAGE}
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-ssl \
 			--with-expat \

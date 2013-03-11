@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2013/01/18 12:23:24 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.30 2013/03/11 11:35:49 espie Exp $
 
 COMMENT-main =	flexible network host monitoring, client
 COMMENT-server =flexible network host monitoring, server
@@ -15,9 +15,6 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=munin/}
 # Mostly GPLv2.
 # DejaVuSans.ttf and DejaVuSansMono.ttf has a non-restrictive license.
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 

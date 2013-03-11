@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2013/01/20 20:25:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2013/03/11 11:46:10 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -16,9 +16,6 @@ HOMEPAGE=		http://live.gnome.org/Gnote
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 atkmm-1.6

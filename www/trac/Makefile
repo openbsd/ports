@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2013/02/03 14:27:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2013/03/11 11:44:50 espie Exp $
 
 COMMENT=	wiki and bug tracking system for software projects
 
@@ -18,9 +18,6 @@ MODPY_SETUPTOOLS=	Yes
 
 # BSD
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 MODULES=	lang/python
 
@@ -34,7 +31,7 @@ RUN_DEPENDS=	${COMMON_DEPS} \
 
 BUILD_DEPENDS=	${COMMON_DEPS}
 
-do-regress:
+do-test:
 	@cd ${WRKSRC} && PYTHONPATH=. ${MODPY_BIN} ./trac/test.py
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2013/02/09 14:49:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.70 2013/03/11 11:41:24 espie Exp $
 
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
 
@@ -15,9 +15,6 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # see the COPYRIGHT file in package sources
 PERMIT_PACKAGE_CDROM=	yes
-PERMIT_PACKAGE_FTP=	yes
-PERMIT_DISTFILES_CDROM=	yes
-PERMIT_DISTFILES_FTP=	yes
 
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-sasl/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/12/04 08:53:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 11:35:56 espie Exp $
 
 COMMENT=		remote filesystem snapshot utility
 
@@ -12,9 +12,6 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.rsnapshot.org/downloads/
 
@@ -23,7 +20,7 @@ RUN_DEPENDS=		net/rsync \
 			devel/p5-Lchown
 
 PKG_ARCH=		*
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS+=	--sysconfdir=${SYSCONFDIR}

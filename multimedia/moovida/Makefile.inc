@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.6 2012/09/06 11:39:24 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2013/03/11 11:35:44 espie Exp $
 
 VERSION =	1.0.7
 CATEGORIES =	multimedia x11
@@ -10,7 +10,6 @@ MASTER_SITES =	http://www.moovida.com/media/public/
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =	lang/python

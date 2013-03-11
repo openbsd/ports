@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/15 22:36:52 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 11:35:45 espie Exp $
 
 COMMENT=	simple port scan detector
 
@@ -10,12 +10,9 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	Brian Caswell <bmc@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 PKG_ARCH=	*
 
 do-install:

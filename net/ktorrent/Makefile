@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/01/23 21:45:08 zhuk Exp $
+# $OpenBSD: Makefile,v 1.29 2013/03/11 11:35:48 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,9 +18,6 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	art_lgpl_2 jpeg GL ICE SM X11 Xau Xcursor Xdmcp Xext \
 		Xfixes Xft Xi Xinerama Xmu Xrandr Xrender Xt c dbus-1 \
 		expat fontconfig freetype lcms m mng pcre pcreposix \

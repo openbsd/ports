@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2013/02/09 14:49:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2013/03/11 11:46:09 espie Exp $
 
 COMMENT=	color X11 terminal emulator with transparency support
 COMMENT-kanji=	color japanese terminal emulator with transparency support
@@ -17,8 +17,6 @@ HOMEPAGE=	http://www.eterm.org/
 # GPL with some custom licenses
 PERMIT_PACKAGE_CDROM=	may not sell
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	may not sell
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/download/ \
 		${MASTER_SITE_SOURCEFORGE:=eterm/}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/09/16 11:13:43 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 11:37:55 espie Exp $
 
 COMMENT =	command-line oriented todo list system
 
@@ -14,13 +14,10 @@ EXTRACT_SUFX =	.tar.bz2
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST =	${WRKDIR}/yokadi-${MODPY_EGG_VERSION}
 MODULES =	lang/python
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 RUN_DEPENDS =	devel/py-dateutil \
 		databases/py-sqlobject

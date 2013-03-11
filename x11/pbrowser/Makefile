@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2012/10/15 15:06:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2013/03/11 11:46:14 espie Exp $
 
 COMMENT=		graphical ports system frontend
 
@@ -11,9 +11,6 @@ HOMEPAGE=		http://www.bytelabs.org/pbrowser.html
 
 # BSD licence
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \

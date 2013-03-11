@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2012/08/04 15:28:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 11:35:56 espie Exp $
 
 COMMENT =	highly reliable Enterprise Messaging System
 
@@ -14,9 +14,6 @@ MAINTAINER =	Piotr Sikora <piotr.sikora@frickle.com>
 
 # MPL
 PERMIT_PACKAGE_CDROM = Yes
-PERMIT_PACKAGE_FTP = Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP = Yes
 
 MASTER_SITES =	http://www.rabbitmq.com/releases/rabbitmq-server/v${V}/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2012/10/15 15:06:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 11:42:44 espie Exp $
 
 COMMENT=		provide commonly requested regular expressions
 
@@ -9,8 +9,5 @@ CATEGORIES=		textproc
 
 # MIT
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 .include <bsd.port.mk>

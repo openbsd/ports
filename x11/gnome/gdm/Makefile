@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.146 2013/01/24 10:41:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.147 2013/03/11 11:46:10 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -15,9 +15,6 @@ SHARED_LIBS +=  gdmsimplegreeter          0.0 # 1.0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm accountsservice

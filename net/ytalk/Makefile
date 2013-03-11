@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/02/09 14:49:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2013/03/11 11:35:58 espie Exp $
 COMMENT=	enhanced talk that allows for multiple parties
 
 DISTNAME=	ytalk-3.1.1
@@ -10,9 +10,6 @@ MASTER_SITES=	ftp://quatramaran.ens.fr/pub/orabidoo/ytalk/
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c ncurses 
 
 AUTOCONF_VERSION=2.13
@@ -27,7 +24,7 @@ CONFIGURE_ARGS+= --without-x
 WANTLIB+=	ICE SM X11 pthread-stubs xcb
 .endif
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 INSTALL_TARGET=	install.bin install.man
 

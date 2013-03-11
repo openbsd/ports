@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2012/09/25 11:37:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 11:41:29 espie Exp $
 
 COMMENT-main =		system metrics collection engine
 COMMENT-mysql =		collectd mysql plugin
@@ -27,9 +27,6 @@ SHARED_ONLY =		Yes
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${HOMEPAGE}/files/
 

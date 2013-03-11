@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/01/20 18:05:13 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:35:47 espie Exp $
 
 COMMENT =		Haskell binding to libcurl
 
@@ -12,9 +12,6 @@ MAINTAINER =		David Schaefer <dawedawe@gmx.de>
 
 # BSD3
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		lang/ghc
 

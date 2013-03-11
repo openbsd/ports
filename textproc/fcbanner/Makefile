@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/24 21:38:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:42:41 espie Exp $
 
 COMMENT =	fontconfig-based alternative to banner(1)
 
@@ -12,9 +12,6 @@ MASTER_SITES =	${HOMEPAGE}
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	c expat fontconfig freetype z
 
@@ -33,6 +30,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/fcbanner
 	${INSTALL_DATA} ${WRKSRC}/fcbanner.txt ${PREFIX}/share/doc/fcbanner
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 .include <bsd.port.mk>

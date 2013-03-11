@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2012/12/17 15:04:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 11:46:10 espie Exp $
 
 BROKEN=			Invalid object type `GitgWindow'
 
@@ -18,9 +18,6 @@ HOMEPAGE=		https://live.gnome.org/Gitg
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		devel/dconf \
 			devel/gettext \

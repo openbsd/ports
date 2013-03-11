@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/22 08:36:50 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 11:44:44 espie Exp $
 
 COMMENT=	easily generate and process stateful forms
 
@@ -15,11 +15,8 @@ HOMEPAGE=	http://www.formbuilder.org/
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
-REGRESS_DEPENDS=textproc/p5-Template \
+TEST_DEPENDS=textproc/p5-Template \
 		textproc/p5-Text-Template \
 		www/p5-HTML-Template
 

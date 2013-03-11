@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/03/14 09:15:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 11:44:45 espie Exp $
 
 COMMENT=	cleans up HTML code for web browsers, not humans
 
@@ -10,8 +10,5 @@ USE_GROFF =	Yes
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 .include <bsd.port.mk>

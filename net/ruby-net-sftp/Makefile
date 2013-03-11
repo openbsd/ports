@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2012/09/23 16:57:34 jeremy Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/11 11:35:56 espie Exp $
 
 COMMENT =	pure-ruby implementation of the SFTP client protocol
 
@@ -8,9 +8,6 @@ CATEGORIES =	net
 
 # bsd/ruby
 PERMIT_PACKAGE_CDROM =		yes
-PERMIT_PACKAGE_FTP =		yes
-PERMIT_DISTFILES_CDROM =	yes
-PERMIT_DISTFILES_FTP =		yes
 
 MODULES =	lang/ruby
 
@@ -19,8 +16,8 @@ RUN_DEPENDS =	net/ruby-net-ssh,${MODRUBY_FLAVOR}>=2.0.0
 
 CONFIGURE_STYLE = ruby gem
 
-REGRESS_DEPENDS =	devel/ruby-mocha,${MODRUBY_FLAVOR}
-do-regress:
+TEST_DEPENDS =	devel/ruby-mocha,${MODRUBY_FLAVOR}
+do-test:
 	@cd ${WRKBUILD} && ${RUBY} -rubygems -Ilib test/test_all.rb
 
 .include <bsd.port.mk>

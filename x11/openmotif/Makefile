@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2012/10/29 12:16:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.57 2013/03/11 11:46:14 espie Exp $
 
 COMMENT-main=		Motif toolkit
 COMMENT-demos=		Motif toolkit demos
@@ -22,9 +22,6 @@ HOMEPAGE=		http://motif.ics.com/
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MULTI_PACKAGES=		-demos -main
 
@@ -66,7 +63,7 @@ WANTLIB=		ICE SM X11 Xext Xt c Xft Xmu Xrender \
 WANTLIB-demos=		${WANTLIB} Xm Mrm
 
 # XXX  Large, complicated, only partially automated test suite available
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 pre-patch:
 	cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh

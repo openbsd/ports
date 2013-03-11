@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/01/05 19:20:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:42:47 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,16 +18,13 @@ HOMEPAGE=	http://www.grinninglizard.com/tinyxml/
 
 # zlib license
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += m stdc++
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tinyxml/}
 
 WRKDIST=	${WRKDIR}/tinyxml
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-build:
 .for i in tinyxml.cpp tinystr.cpp tinyxmlerror.cpp tinyxmlparser.cpp

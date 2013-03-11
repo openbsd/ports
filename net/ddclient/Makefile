@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2012/04/04 01:08:31 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 11:35:46 espie Exp $
 
 COMMENT=		Dynamic DNS service update client
 
@@ -11,16 +11,13 @@ MAINTAINER=		Joerg Zinke <mail@umaxx.net>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=ddclient/}
 
 RUN_DEPENDS=		security/p5-IO-Socket-SSL
 
 NO_BUILD=		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 PKG_ARCH=		*
 
 SAMPLES=	sample-etc_cron.d_ddclient sample-etc_ddclient.conf \

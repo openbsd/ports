@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2012/09/23 16:57:35 jeremy Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/11 11:35:56 espie Exp $
 
 COMMENT=	SNMP network management library for Ruby
 
@@ -8,9 +8,6 @@ CATEGORIES=	net
 
 # bsd/ruby
 PERMIT_PACKAGE_CDROM=	yes
-PERMIT_PACKAGE_FTP=	yes
-PERMIT_DISTFILES_CDROM=	yes
-PERMIT_DISTFILES_FTP=	yes
 
 MODULES=	lang/ruby
 

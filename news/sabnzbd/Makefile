@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/06/25 20:54:14 mglocker Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:35:59 espie Exp $
 
 COMMENT =			retrieve and process nzb-files via web interface
 VERSION =			0.7.0
@@ -10,9 +10,6 @@ MAINTAINER =			Marcus Glocker <marcus@nazgul.ch>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 MASTER_SITES =			${MASTER_SITE_SOURCEFORGE:=sabnzbdplus/}
 
@@ -28,7 +25,7 @@ RUN_DEPENDS =			archivers/par2cmdline \
 				security/py-openssl
 
 NO_BUILD =			Yes
-NO_REGRESS =			Yes
+NO_TEST =			Yes
 PKG_ARCH =			*
 
 WRKSRC =			${WRKDIR}/SABnzbd-${VERSION}

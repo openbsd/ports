@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2012/12/21 13:01:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2013/03/11 11:35:59 espie Exp $
 
 COMMENT=	threaded NNTP- and spool-based UseNet newsreader
 
@@ -24,8 +24,6 @@ MODULES=	devel/gettext
 # vms/vms.c
 PERMIT_PACKAGE_CDROM=	no fee
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	no fee
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c>=58.2 icuuc idn ncurses pcre pthread
 
@@ -60,7 +58,7 @@ LIB_DEPENDS+=	devel/pcre \
 ALL_TARGET=	build
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 FILES=		tin.defaults mime.types
 

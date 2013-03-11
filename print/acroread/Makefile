@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2012/10/11 15:05:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2013/03/11 11:37:53 espie Exp $
 
 ONLY_FOR_ARCHS=	i386
 SHARED_ONLY=	Yes
@@ -25,7 +25,6 @@ SHARED_LIBS=	ACE	2.07 \
 
 PERMIT_PACKAGE_CDROM=	commercial software
 PERMIT_PACKAGE_FTP=	commercial software
-PERMIT_DISTFILES_CDROM=	commercial software
 PERMIT_DISTFILES_FTP=	Adobe are control freaks
 
 MULTI_PACKAGES=	-main -plugins
@@ -40,7 +39,7 @@ RUN_DEPENDS-plugins=	print/acroread,-main
 
 WRKDIST=	${WRKDIR}/AdobeReader
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/Acrobat7

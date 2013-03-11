@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2012/04/23 08:57:46 bentley Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 11:46:09 espie Exp $
 
 COMMENT=	3D earth viewer with GPS support
 
@@ -12,9 +12,6 @@ HOMEPAGE=	http://gaia-clean.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gaia-clean/}
 
@@ -26,7 +23,7 @@ MODSCONS_FLAGS=	prefix=${PREFIX} \
 		datadir=share/gaia \
 		gpsd=1
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 LIB_DEPENDS=	devel/sdl \
 		misc/gpsd \
 		net/curl \

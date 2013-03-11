@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2012/09/21 13:23:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2013/03/11 11:46:12 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -16,9 +16,6 @@ HOMEPAGE=	http://projects.gnome.org/totem/
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += archive bz2 crypto curl dbus-1 expat ffi gcrypt gio-2.0
 WANTLIB += glib-2.0 gmime-2.6 gmodule-2.0 gnome-keyring gobject-2.0

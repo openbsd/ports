@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/02/09 14:49:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2013/03/11 11:46:16 espie Exp $
 
 COMMENT =		graphical toolkit for Tcl
 
@@ -11,9 +11,6 @@ MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		X11 Xext Xft Xss c m tcl85
 
@@ -35,7 +32,7 @@ FAKE_FLAGS =		INSTALL_DATA_DIR="${INSTALL_DATA_DIR}" \
 			DEMO_INSTALL_DIR="${WRKINST}${TRUEPREFIX}/share/examples/tk8.5" \
 			TK_PKG_DIR='tcl/tk$$(VERSION)'
 
-REGRESS_FLAGS =		HOME=${TESTHOME} TESTFLAGS="${TESTFLAGS}"
+TEST_FLAGS =		HOME=${TESTHOME} TESTFLAGS="${TESTFLAGS}"
 SEPARATE_BUILD =	Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE =	gnu old
@@ -71,15 +68,15 @@ CONFIGURE_ARGS +=	EXTRA_INSTALL_BINARIES='@echo "Installing libtk85.a to $$(LIB_
 			&& (cd $$(LIB_INSTALL_DIR) ; $$(RANLIB) libtk85.a)'
 .endif
 
-REGRESS_IS_INTERACTIVE = X11
+TEST_IS_INTERACTIVE = X11
 WRKSRC =		${WRKDIST}/unix
-REGRESS_TARGET =	test
+TEST_TARGET =	test
 
 TESTHOME =		${WRKDIR}/testhome
 # Use TESTFLAGS to control the Tk tests
 TESTFLAGS =
 
-pre-regress:
+pre-test:
 	mkdir -p ${TESTHOME}
 
 post-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/09/16 11:13:40 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/11 11:35:55 espie Exp $
 
 COMMENT=	Internet Relay Chat (IRC) protocol client library for Python
 
@@ -11,15 +11,12 @@ HOMEPAGE=	http://python-irclib.sourceforge.net/
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=python-irclib/}
 
 MODULES=	lang/python
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 EXAMPLES=	dccreceive dccsend irccat irccat2 servermap testbot.py
 EXAMPLESDIR=	${PREFIX}/share/examples/py-irclib

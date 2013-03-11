@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2012/09/01 14:37:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 11:46:12 espie Exp $
 
 COMMENT=		gtk+-2 theme switcher
 
@@ -16,9 +16,6 @@ EXTRACT_SUFX=		.tar.bz2
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
@@ -34,7 +31,7 @@ MODULES=		devel/gettext
 
 USE_GMAKE=		Yes
 USE_GROFF =		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 post-extract:
 	@perl -pi -e 's,/usr,${PREFIX},; s,share/,,;' ${WRKSRC}/Metadata

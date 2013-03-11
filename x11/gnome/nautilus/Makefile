@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2012/11/13 07:48:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.116 2013/03/11 11:46:11 espie Exp $
 
 COMMENT=		GNOME file manager
 
@@ -25,9 +25,6 @@ HOMEPAGE=		http://www.gnome.org/projects/nautilus/
 
 # GPLv2 - LGPLv2 - GFPLv1.1
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
@@ -77,8 +74,8 @@ MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/nautilus
 
 # needs 'org.gnome.nautilus.preferences'
-REGRESS_DEPENDS=	${BASE_PKGPATH}
-REGRESS_IS_INTERACTIVE=	x11
+TEST_DEPENDS=	${BASE_PKGPATH}
+TEST_IS_INTERACTIVE=	x11
 
 post-install:
 	rm ${PREFIX}/lib/nautilus/extensions-3.0/*.{a,la}

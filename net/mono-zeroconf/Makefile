@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/11/02 07:21:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 11:35:49 espie Exp $
 
 COMMENT=	Zero Configuration Networking library for Mono
 
@@ -13,9 +13,6 @@ MASTER_SITES=	http://download.banshee-project.org/mono-zeroconf/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	lang/mono
 

@@ -1,4 +1,4 @@
-# $OpenBSD: kde4.port.mk,v 1.1 2013/02/02 09:27:37 zhuk Exp $
+# $OpenBSD: kde4.port.mk,v 1.2 2013/03/11 11:46:13 espie Exp $
 
 # The version of KDE SC in x11/kde4
 _MODKDE4_STABLE =	4.4.5
@@ -205,7 +205,7 @@ FLAVORS +=	debug
 .endif
 
 .if ${CONFIGURE_STYLE:Mcmake}
-. if "${NO_REGRESS:L}" != "yes"
+. if "${NO_TEST:L}" != "yes"
 # Enable regression tests if any
 MODKDE4_CONF_ARGS +=	-DKDE4_BUILD_TESTS:Bool=Yes
 . endif

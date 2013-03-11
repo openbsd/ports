@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2013/01/21 18:43:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2013/03/11 11:35:57 espie Exp $
 
 COMMENT=		flexible communications framework, local-link component
 
@@ -25,7 +25,7 @@ LIB_DEPENDS=		net/avahi \
 			devel/libsoup \
 			net/telepathy/telepathy-glib \
 			sysutils/e2fsprogs
-REGRESS_DEPENDS=	textproc/py-xmldiff
+TEST_DEPENDS=	textproc/py-xmldiff
 
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/lib/ext/wocky
 

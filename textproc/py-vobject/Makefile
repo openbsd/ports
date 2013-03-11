@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/05/02 07:49:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 11:42:46 espie Exp $
 
 COMMENT=		iCalendar library for Python
 
@@ -12,9 +12,6 @@ HOMEPAGE=		http://vobject.skyhouseconsulting.com/
 
 # Apache 1.1
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}
 
@@ -25,6 +22,6 @@ MODPY_SETUPTOOLS=	Yes
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		devel/py-dateutil
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/08 07:09:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 11:35:47 espie Exp $
 
 COMMENT=		API for handling SSDP resource discovery and announcement
 
@@ -13,10 +13,7 @@ HOMEPAGE=		https://live.gnome.org/GUPnP/
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # LGPLv2
-PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
 
 MODULES=		devel/gettext \
 			x11/gnome

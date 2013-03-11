@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/12/20 15:21:30 giovanni Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 11:44:47 espie Exp $
 
 COMMENT-main=	base classes for common PHP tasks
 COMMENT-utils=	utilities for managing pear extensions
@@ -17,9 +17,6 @@ MASTER_SITES=	http://blade2k.humppa.hu/
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MULTI_PACKAGES=		-main -utils
 
@@ -32,7 +29,7 @@ PREFIX-main=	/var/www
 PREFIX-utils=	/usr/local
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 SUBST_VARS=	MODPHP_BIN
 

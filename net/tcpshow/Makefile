@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2012/08/18 12:41:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/11 11:35:57 espie Exp $
 
 COMMENT=	decode tcpdump(1) output
 
@@ -12,8 +12,6 @@ EXTRACT_CASES=	*)cp ${FULLDISTDIR}/$$archive ${WRKDIST};;
 
 PERMIT_PACKAGE_CDROM=	no fee
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	no fee
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 WRKDIST=	${WRKDIR}
@@ -22,7 +20,7 @@ do-build:
 	cd ${WRKSRC}; ${CC} ${CFLAGS} -DNOETHERNAMES -o tcpshow tcpshow.c
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcpshow ${PREFIX}/bin

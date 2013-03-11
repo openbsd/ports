@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/10 15:32:30 benoit Exp $
+# $OpenBSD: Makefile,v 1.21 2013/03/11 11:42:41 espie Exp $
 
 COMMENT =		convert source code to markup formats
 
@@ -31,7 +31,7 @@ MAKE_FLAGS =		CXX=${CXX} \
 			CFLAGS+="`pkg-config --cflags ${MODLUA_DEP}`" \
 			LUA_LIBS="`pkg-config --libs ${MODLUA_DEP}`"
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 SHARE_DIRS =		langDefs themes
 

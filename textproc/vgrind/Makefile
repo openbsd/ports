@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/06/06 19:12:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:42:47 espie Exp $
 
 COMMENT=		grind nice listings of programs
 
@@ -8,9 +8,6 @@ CATEGORIES=		textproc
 
 # 3-clause BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB +=		c
 
@@ -18,7 +15,7 @@ MASTER_SITES=		http://distfiles.nl/
 
 RUN_DEPENDS=		textproc/groff>=1.21
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 pre-configure:
 	cd ${WRKSRC}; ${SUBST_CMD} vgrind{.sh,.1,efs.5} pathnames.h

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/11/22 11:52:52 pascal Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:46:13 espie Exp $
 
 COMMENT =		fast, real time 3D engine
 DISTNAME =		irrlicht-1.8
@@ -14,9 +14,6 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
 # BSD-style (zlib/libpng)
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += 		GL Xxf86vm bz2 jpeg m png stdc++>=51.0 z
 
@@ -43,7 +40,7 @@ MAKE_ENV +=		CC="${CC}" \
 			SO_VERSION="${SO_VERSION}"
 MAKE_FLAGS +=		CXXINCS="-I../../include -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng -I${X11BASE}/include" \
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 WRKSRC =		${WRKDIST}/source/Irrlicht
 

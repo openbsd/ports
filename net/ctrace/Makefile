@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/03/30 09:00:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/11 11:35:45 espie Exp $
 
 COMMENT=	multiprotocol traceroute tool
 
@@ -9,7 +9,6 @@ HOMEPAGE=	http://www.pratyeka.org/ctrace/
 
 PERMIT_PACKAGE_CDROM=   no license
 PERMIT_PACKAGE_FTP=     no license
-PERMIT_DISTFILES_CDROM= no license
 PERMIT_DISTFILES_FTP=   no license
 
 MASTER_SITES=	${HOMEPAGE}download/
@@ -19,7 +18,7 @@ RUN_DEPENDS=	devel/p5-List-MoreUtils \
 		www/p5-libwww
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 USE_GROFF =	Yes
 PKG_ARCH=	*
 

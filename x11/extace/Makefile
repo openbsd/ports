@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/09/16 12:29:13 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 11:46:09 espie Exp $
 
 COMMENT=	audio visualization plugin for the X-Window System
 
@@ -10,9 +10,6 @@ HOMEPAGE=	http://extace.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=extace/}
 

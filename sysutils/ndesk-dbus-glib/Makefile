@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/20 17:22:41 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 11:41:31 espie Exp $
 
 COMMENT=	C\# implementation of dbus - GLib integration
 DISTNAME=	ndesk-dbus-glib-0.4.1
@@ -10,9 +10,6 @@ HOMEPAGE=	http://www.ndesk.org/DBusSharp
 
 # MIT-X11
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	lang/mono
 

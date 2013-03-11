@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2011/01/14 22:50:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/11 11:41:31 espie Exp $
 
 COMMENT=	modular log analyzer
 
@@ -12,9 +12,6 @@ MASTER_SITES=	${HOMEPAGE}/download/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	devel/gettext
 
@@ -34,7 +31,7 @@ CONFIGURE_ENV += LOCALBASE="${LOCALBASE}" \
 		 LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 MAKE_FLAGS=	INTLLIBS="-L${LOCALBASE}/lib -lintl -liconv"
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 EXAMPLES=	doc/*.conf doc/*-dist
 DOCS=		doc/*.txt 

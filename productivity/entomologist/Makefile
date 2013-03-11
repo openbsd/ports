@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2012/12/23 13:25:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/11 11:37:54 espie Exp $
 
 COMMENT =	bug tracker client
 DISTNAME =	entomologist-0.6
@@ -10,9 +10,6 @@ HOMEPAGE =	http://entomologist.sourceforge.net
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =	x11/qt4
 RUN_DEPENDS =	devel/desktop-file-utils \
@@ -25,7 +22,7 @@ MAKE_FLAGS =	CXX=${CXX} \
 		QMAKE_CXXFLAGS="${CXXFLAGS} -g"
 FAKE_FLAGS =	INSTALL_ROOT=${DESTDIR}
 CONFIGURE_ARGS =	PREFIX=${PREFIX}
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/main.cpp

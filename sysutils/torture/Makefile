@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2012/10/15 15:06:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 11:41:33 espie Exp $
 
 COMMENT =		set of kernel torture tools
 
@@ -10,13 +10,10 @@ MAINTAINER =		Thordur I. Bjornsson <thib@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =   Yes
-PERMIT_PACKAGE_FTP =     Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =   Yes
 
 MASTER_SITES =	http://notendur.hi.is/~thb45/
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 WANTLIB =	c
 
 MAKE_FLAGS =	BINDIR="${TRUEPREFIX}/sbin" \

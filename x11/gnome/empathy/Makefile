@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2013/01/09 11:29:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.116 2013/03/11 11:46:10 espie Exp $
 
 COMMENT= 		Telepathy based messenger for GNOME
 
@@ -11,9 +11,6 @@ HOMEPAGE=		http://live.gnome.org/Empathy
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		devel/dconf \
 			devel/gettext \

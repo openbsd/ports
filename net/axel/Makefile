@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2012/10/15 15:18:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 11:35:45 espie Exp $
 
 COMMENT=	tiny download accelerator
 DISTNAME=	axel-2.4
@@ -10,9 +10,6 @@ MAINTAINER=	Girish Venkatachalam <girish1729@gmail.com>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://alioth.debian.org/frs/download.php/3015/
 
@@ -22,7 +19,7 @@ MODULES=	devel/gettext
 
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 CONFIGURE_STYLE=simple
 CONFIGURE_ARGS=	--prefix=${PREFIX} \

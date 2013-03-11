@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2011/10/23 10:28:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.91 2013/03/11 11:35:48 espie Exp $
 
 COMMENT=	shell-like command line ftp and sftp client
 
@@ -11,9 +11,6 @@ MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB=	c crypto curses expat m readline ssl stdc++ util
 
@@ -32,7 +29,7 @@ CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
 
 MODULES=	devel/gettext
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/lftp
 

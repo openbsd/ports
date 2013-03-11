@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2013/02/09 14:49:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.57 2013/03/11 11:35:49 espie Exp $
 
 COMMENT-main=	host and service monitor
 COMMENT-web=	cgis and webpages for nagios
@@ -15,9 +15,6 @@ HOMEPAGE=	http://www.nagios.org/
 
 # GPLv2 only
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MULTI_PACKAGES=	-main -web
 
@@ -73,7 +70,7 @@ RUN_DEPENDS-web= nagios-${V}-!chroot:net/nagios/nagios
 
 WANTLIB-main=	${WANTLIB} ltdl>=4 pthread
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 CFLAGS+=	-D_DIRENT_HAVE_D_TYPE
 

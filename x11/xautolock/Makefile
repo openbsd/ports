@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/22 08:37:05 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/11 11:46:17 espie Exp $
 
 COMMENT= 		fire up programs in case of user inactivity under X
 
@@ -14,15 +14,12 @@ MAINTAINER=		Matthieu Herrb <matthieu@openbsd.org>
 
 # License: GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		X11 Xau Xdmcp Xext Xss c
 
 USE_GROFF =		Yes
 CONFIGURE_STYLE=        imake
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 .include <bsd.port.mk>

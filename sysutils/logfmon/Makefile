@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/06/23 10:33:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:41:30 espie Exp $
 
 COMMENT=		log file monitoring daemon
 
@@ -12,15 +12,12 @@ MAINTAINER=		Tom Doherty <tom@singlesecond.com>
 
 # ISC
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c m pthread
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=logfmon/}
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/logfmon

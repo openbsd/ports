@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2012/01/08 11:05:54 eric Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/11 11:35:58 espie Exp $
 
 COMMENT=		retrieve and process nzb-files
 
@@ -10,9 +10,6 @@ HOMEPAGE=		http://www.hellanzb.com/trac/
 
 # BSD-3
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.hellanzb.com/distfiles/
 
@@ -26,7 +23,7 @@ RUN_DEPENDS=		archivers/par2cmdline \
 
 MODPY_ADJ_FILES=	hellanzb.py
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Hellanzb/Core.py

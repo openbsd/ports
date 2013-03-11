@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2012/09/05 19:57:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/11 11:35:49 espie Exp $
 
 COMMENT=	Nagios Remote Plugin Executor
 
@@ -14,9 +14,6 @@ HOMEPAGE=	http://www.nagios.org/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c crypto ssl wrap
 
@@ -45,6 +42,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/check_nrpe ${PREFIX}/libexec/nagios
 	${INSTALL_PROGRAM} ${WRKSRC}/src/nrpe ${PREFIX}/sbin
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

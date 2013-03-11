@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/12/17 22:01:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/11 11:35:47 espie Exp $
 # $RuOBSD: Makefile,v 1.1.1.1 2002/04/08 02:46:36 form Exp $
 
 COMMENT=		IP accounting daemon simulating Cisco ip accounting
@@ -9,9 +9,6 @@ CATEGORIES=		net
 HOMEPAGE=		http://sourceforge.net/projects/ipcad/
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c pcap pthread
 
@@ -20,7 +17,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=ipcad/}
 CONFIGURE_STYLE=	gnu
 USE_GROFF=		Yes
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/ipcad ${PREFIX}/sbin

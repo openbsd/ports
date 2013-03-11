@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2012/03/15 13:38:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/11 11:44:43 espie Exp $
 
 COMMENT=	bandwidth limiter for Apache
 
@@ -18,13 +18,10 @@ MODULES+=	apache-module
 
 # Apache Group licence
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 SUBST_VARS=	PKGNAME HOMEPAGE
 DIST_SUBDIR=	${DISTNAME:S/-${V}//}
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 MODAPACHE_NAME=	bandwidth
 

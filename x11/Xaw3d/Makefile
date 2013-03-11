@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/10/24 21:15:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2013/03/11 11:46:08 espie Exp $
 
 COMMENT=	3D Athena Widget set that looks like Motif
 
@@ -11,9 +11,6 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB:=widgets/Xaw3d/R6.3/}
 
 # X11/badly worded
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xext Xmu Xpm Xt Xau Xdmcp
 
 
@@ -26,7 +23,7 @@ post-extract:
 	@mkdir -p ${WRKSRC}/X11/Xaw3d
 	@cd ${WRKSRC}/X11/Xaw3d; ln -sf ../../*.h .
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/Xaw3d

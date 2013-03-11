@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/22 10:16:08 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 11:46:12 espie Exp $
 
 COMMENT=	gui for ogle
 CATEGORIES=	x11
@@ -22,7 +22,7 @@ WRKSRC=		${WRKDIST}
 MAKE_FILE=	gb.make
 ALL_TARGET=
 USE_GMAKE=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 CONFIGURE_ENV=LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} LP64_ARCHS="${LP64_ARCHS}"
 
@@ -51,9 +51,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}
 	${INSTALL_DATA} ${WRKDIST}/desktop/goggles_manual.pdf ${DOCDIR}
 # GPL
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 
 .include <bsd.port.mk>

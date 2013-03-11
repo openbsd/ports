@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2012/03/17 18:55:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/11 11:37:53 espie Exp $
 
 COMMENT=		converts .dvi files to plain text
 
@@ -8,16 +8,13 @@ CATEGORIES=     	print
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 MASTER_SITES=		http://www.mesa.nl/pub/dvi2tty/
 
 MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS}"
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 do-install:
 .for prog in dvi2tty disdvi

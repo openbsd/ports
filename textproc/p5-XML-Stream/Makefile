@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/04/01 07:08:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 11:42:45 espie Exp $
 
 COMMENT=		creates and XML Stream connection and parses return data
 
@@ -10,9 +10,6 @@ USE_GROFF =		Yes
 
 # LGPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=		security/p5-Authen-SASL \
 			security/p5-IO-Socket-SSL

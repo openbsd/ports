@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2013/02/03 12:09:27 rpe Exp $
+# $OpenBSD: Makefile,v 1.46 2013/03/11 11:46:09 espie Exp $
 
 COMMENT =		the enlightened window manager
 
@@ -11,9 +11,6 @@ EPOCH =			1
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES +=		devel/gettext \
 			lang/lua \

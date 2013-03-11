@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/09/16 11:13:41 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 11:37:54 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,7 +19,7 @@ WRKDIST=	${WRKDIR}
 pre-build:
 	@perl -pi -e 's#!!LOCALBASE!!#${LOCALBASE}#g' ${WRKSRC}/setup.py
 
-do-regress: fake
+do-test: fake
 	@cd ${WRKSRC} && ${MAKE_ENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
 		${MODPY_BIN} ./test_renderPM.py
 

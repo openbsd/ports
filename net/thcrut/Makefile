@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/06/15 11:46:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/11 11:35:57 espie Exp $
 
 COMMENT=	local network discovery tool
 
@@ -12,7 +12,6 @@ LIB_DEPENDS=	net/libnet/1.0
 
 PERMIT_PACKAGE_CDROM=	no license
 PERMIT_PACKAGE_FTP=	no license
-PERMIT_DISTFILES_CDROM=	no license
 PERMIT_DISTFILES_FTP=	no license
 
 WANTLIB=		c pcap lib/libnet-1.0/net=0

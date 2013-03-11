@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/03/07 18:59:35 brad Exp $
+# $OpenBSD: Makefile,v 1.31 2013/03/11 11:35:48 espie Exp $
 
 COMMENT-main=	ISC DHCP Server
 COMMENT-client=	ISC DHCP Client
@@ -24,9 +24,6 @@ MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 # ISC
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c
 
@@ -38,7 +35,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+= 	--enable-early-chroot \
 			--enable-paranoia \
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 EXAMPLEDIR=		share/examples/isc-dhcp
 

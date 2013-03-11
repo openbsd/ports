@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/12/03 11:45:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 11:35:50 espie Exp $
 
 COMMENT=	extension that implements PayPal IPN v1.5
 
@@ -9,15 +9,12 @@ USE_GROFF=	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 MODULES=	cpan
 
 RUN_DEPENDS=	security/p5-Net_SSLeay \
 		www/p5-libwww
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

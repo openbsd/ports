@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/03/16 08:44:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:37:53 espie Exp $
 
 COMMENT=	serve 9P from Unix
 
@@ -13,9 +13,6 @@ MAINTAINER=	Stanley Lieber <stanley.lieber@gmail.com>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 WRKDIST=	${WRKDIR}
@@ -24,7 +21,7 @@ MAKE_FILE=	makefile
 
 MAKE_FLAGS=	CC=${CC}
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/u9fs ${PREFIX}/bin/u9fs

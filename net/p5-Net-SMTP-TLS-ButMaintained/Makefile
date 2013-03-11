@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/12/30 12:01:32 bluhm Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:35:53 espie Exp $
 
 COMMENT=	Perl module for SMTP with TLS/AUTH support
 
@@ -8,9 +8,6 @@ CATEGORIES=	net mail
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	security/p5-Digest-HMAC \
 		security/p5-Net_SSLeay \

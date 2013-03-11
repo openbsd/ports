@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/04/17 17:56:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/11 11:35:50 espie Exp $
 
 COMMENT=		netcat-like program with transparent SSL support
 
@@ -14,7 +14,6 @@ MAINTAINER=		Will Maier <willmaier@ml1.net>
 # None
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	No
-PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	No
 
 WANTLIB=		crypto ssl c
@@ -22,7 +21,7 @@ WANTLIB=		crypto ssl c
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=nssl/}
 EXTRACT_SUFX=		.tgz
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 WRKDIST=		${WRKDIR}/nssl
 

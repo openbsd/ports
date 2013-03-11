@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/22 08:36:55 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:44:50 espie Exp $
 
 COMMENT=	fully featured mod_perl content management system
 
@@ -16,9 +16,6 @@ MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=  Yes
-PERMIT_PACKAGE_FTP=    Yes
-PERMIT_DISTFILES_CDROM=Yes
-PERMIT_DISTFILES_FTP=  Yes
 
 RUN_DEPENDS=	archivers/p5-Archive-Zip \
 		converters/p5-JSON \
@@ -60,7 +57,7 @@ RUN_DEPENDS=	archivers/p5-Archive-Zip \
 		www/p5-libwww
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 PREFIX=         /var/www
 INSTDIR=        ${PREFIX}/WebGUI

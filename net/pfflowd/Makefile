@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/08 02:04:37 djm Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 11:35:54 espie Exp $
 
 COMMENT=	PF to NetFlow converter
 
@@ -13,12 +13,9 @@ HOMEPAGE=	http://www.mindrot.org/pfflowd.html
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c pcap util 
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS}"
 USE_GROFF =		Yes
 

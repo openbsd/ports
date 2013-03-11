@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2012/09/28 06:26:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 11:46:11 espie Exp $
 
 COMMENT=	python bindings for at-spi2
 
@@ -11,9 +11,6 @@ HOMEPAGE=	http://www.linuxfoundation.org/en/AT-SPI_on_D-Bus
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	x11/gnome \
 		lang/python
@@ -27,6 +24,6 @@ RUN_DEPENDS=	devel/py-gobject3>=3.4.0 \
 		x11/gnome/at-spi2-core>=2.6.0
 
 # connects to DBus
-REGRESS_IS_INTERACTIVE=	x11
+TEST_IS_INTERACTIVE=	x11
 
 .include <bsd.port.mk>

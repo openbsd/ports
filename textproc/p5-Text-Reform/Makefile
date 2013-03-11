@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/01/01 12:57:23 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 11:42:44 espie Exp $
 
 COMMENT=		perl module to formating plaintext
 
@@ -11,9 +11,6 @@ MAINTAINER=		Sam Smith <s@msmith.net>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 DEMOS_DIR =	${PREFIX}/share/examples/p5-Text-Reform
 

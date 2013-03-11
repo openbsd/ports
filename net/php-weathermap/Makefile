@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/11/16 15:56:37 robert Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 11:35:54 espie Exp $
 
 COMMENT=	graphical network traffic map
 
@@ -14,9 +14,6 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}files/
 
@@ -25,7 +22,7 @@ MODULES=	lang/php
 RUN_DEPENDS=	www/pear \
 		lang/php/${MODPHP_VERSION},-gd
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 PKG_ARCH=	*
 WRKDIST=	${WRKDIR}/weathermap

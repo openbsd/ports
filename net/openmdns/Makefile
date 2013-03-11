@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/01/22 13:42:44 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 11:35:50 espie Exp $
 
 COMMENT =		MDNS/DNS-SD daemon
 
@@ -12,9 +12,6 @@ HOMEPAGE =		http://www.haesbaert.org/openmdns/
 
 # ISC
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		http://www.haesbaert.org/openmdns/releases/ \
 			http://x61.com.ar/mirrors/openmdns/

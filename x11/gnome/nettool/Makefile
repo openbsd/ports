@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2012/09/01 14:36:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2013/03/11 11:46:11 espie Exp $
 
 COMMENT=	GNOME interface for various networking tools
 
@@ -10,9 +10,6 @@ CATEGORIES=	net
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo

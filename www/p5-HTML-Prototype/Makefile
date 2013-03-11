@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/22 08:36:51 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 11:44:45 espie Exp $
 
 COMMENT=	AJAX framework for perl
 
@@ -18,10 +18,7 @@ post-extract:
 	PROTODIR=${WRKDIST} ACULOUSDIR=${WRKDIR}/scriptaculous-js-1.7.0 perl ${FILESDIR}/update Controls src/controls DragDrop src/dragdrop Effects src/effects Js lib/prototype
 
 # Perl licence, javascript code is MIT like
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
 
 CONFIGURE_STYLE=	modbuild
 

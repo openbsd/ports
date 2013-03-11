@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/09/16 12:29:15 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2013/03/11 11:46:13 espie Exp $
 
 COMMENT=		gui cd image editor
 
@@ -12,9 +12,6 @@ MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 EXTRACT_SUFX=		.tar.bz2
 
@@ -34,7 +31,7 @@ WANTLIB += gtk-x11-2.0
 
 USE_GMAKE=		Yes
 USE_GROFF =	Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 FAKE_FLAGS=	MYMANPATH=${WRKINST}/${TRUEPREFIX}/man/man1 \
 		DESTDIR=""

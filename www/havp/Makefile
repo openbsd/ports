@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/05/17 09:10:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 11:44:42 espie Exp $
 
 COMMENT=	web proxy with antivirus filter
 
@@ -14,9 +14,6 @@ MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c m pthread stdc++ clamav
 
@@ -27,7 +24,7 @@ CONFIGURE_ARGS=		--disable-locking \
 			--disable-trophie
 CONFIGURE_ENV=	LDFLAGS="-pthread"
 USE_GMAKE=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/havp

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.28 2011/07/07 00:08:35 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.29 2013/03/11 11:41:30 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,6 @@ CATEGORIES+=	sysutils/gkrellm
 # GPLv2+
 PERMIT_PACKAGE_CDROM?=	Yes
 PERMIT_PACKAGE_FTP?=	Yes
-PERMIT_DISTFILES_CDROM?=Yes
 PERMIT_DISTFILES_FTP?=	Yes
 
 .if ! defined(WANTLIB)
@@ -28,7 +27,7 @@ WANTLIB+=	${EXTRA_WANTLIB}
 BUILD_DEPENDS+=	sysutils/gkrellm/gkrellm,-client>=2.2.0
 RUN_DEPENDS+=	sysutils/gkrellm/gkrellm,-client>=2.2.0
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 USE_GMAKE=	Yes
 
 PLUGINDIR=	${PREFIX}/lib/gkrellm2/plugins

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/07/31 15:42:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:42:42 espie Exp $
 
 COMMENT=	language guessing library
 
@@ -12,9 +12,6 @@ HOMEPAGE=	http://software.wise-guys.nl/libtextcat/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c
 
@@ -33,7 +30,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/libtextcat
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/libtextcat
 
-do-regress:
+do-test:
 	cd ${WRKSRC}/langclass/ && \
 		for t in `ls ShortTexts/*.txt`; do \
 		../src/testtextcat conf.txt < $$t; \

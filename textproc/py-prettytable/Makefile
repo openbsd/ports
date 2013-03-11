@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/08/11 12:12:00 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:42:46 espie Exp $
 
 COMMENT =	Python library for pretty-printing tabular data
 
@@ -16,9 +16,6 @@ PKG_ARCH =	*
 
 # 3 clause BSD
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/03/08 09:58:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:35:58 espie Exp $
 
 COMMENT=	web scanner
 
@@ -11,9 +11,6 @@ MASTER_SITES=	http://www.morningstarsecurity.com/downloads/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	lang/ruby
 
@@ -26,7 +23,7 @@ RUN_DEPENDS=	converters/ruby-json,${MODRUBY_FLAVOR} \
 MODRUBY_ADJ_FILES=	whatweb
 
 PKG_ARCH=	*
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 NO_BUILD=	Yes
 
 do-install:

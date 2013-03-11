@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/02/05 10:39:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 11:35:57 espie Exp $
 
 COMMENT=		mouse and keyboard sharing utility
 
@@ -12,9 +12,6 @@ HOMEPAGE=		http://synergy-foss.org/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ICE SM X11 Xext Xi Xinerama Xrandr Xtst c m pthread stdc++
 
@@ -29,7 +26,7 @@ TAR=			${LOCALBASE}/bin/gtar
 
 MODULES=		devel/cmake
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 pre-patch:
 	@cd ${WRKSRC} ; perl -pi -e 's/\r$$//' CMakeLists.txt

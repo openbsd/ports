@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2012/03/29 13:38:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.71 2013/03/11 11:35:46 espie Exp $
 
 COMMENT=	(E)nhanced (P)rogrammable (I)RC-II (C)lient
 
@@ -14,9 +14,6 @@ HOMEPAGE=	http://www.epicsol.org/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c crypto m ncurses ssl
 
@@ -36,7 +33,7 @@ WANTLIB+=       perl util
 INSTALL_TARGET=	install installhelp
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 SUBST_VARS=	VERSION
 

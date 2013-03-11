@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/12/03 11:46:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/11 11:42:45 espie Exp $
 
 COMMENT=	perl module to build DOM Level 1 structures
 
@@ -17,8 +17,5 @@ RUN_DEPENDS=	textproc/p5-XML-Parser>=2.30	\
 
 # GPL/Artistic
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2012/11/12 20:45:32 landry Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/11 11:42:41 espie Exp $
 
 COMMENT =	html help viewer
 
@@ -11,9 +11,6 @@ HOMEPAGE =	http://code.google.com/p/chmsee/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	http://chmsee.googlecode.com/files/
 
@@ -41,6 +38,6 @@ LIB_DEPENDS =	devel/nspr \
 		security/libgcrypt
 
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 .include <bsd.port.mk>

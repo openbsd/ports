@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/08 02:04:37 djm Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 11:37:55 espie Exp $
 
 COMMENT=	command-line interface to Google services
 
@@ -15,16 +15,13 @@ PKG_ARCH=	*
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://googlecl.googlecode.com/files/
 
 MODPY_SETUPTOOLS= Yes
 USE_GROFF =	Yes
 RUN_DEPENDS=	devel/py-gdata
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 # Use the version of python we are configured against.
 post-extract:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2012/09/24 19:33:50 pea Exp $
+# $OpenBSD: Makefile,v 1.68 2013/03/11 11:41:29 espie Exp $
 
 COMMENT=	Z shell, Bourne shell-compatible
 
@@ -14,9 +14,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=zsh/}
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c m pcre ncursesw
 
@@ -42,7 +39,7 @@ SUBST_VARS=	V
 
 # required for regression tests
 PORTHOME=	${WRKDIR}
-REGRESS_FLAGS=	INSTALL_PROGRAM="install -c -s -m 555" \
+TEST_FLAGS=	INSTALL_PROGRAM="install -c -s -m 555" \
 		INSTALL_DATA="install -c -m 444" \
 		INSTALL="install -c" \
 		TMPPREFIX=${WRKBUILD}/tmp \

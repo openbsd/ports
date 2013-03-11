@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2011/09/16 11:13:39 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2013/03/11 11:35:55 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -14,9 +14,6 @@ HOMEPAGE=	http://pycurl.sourceforge.net/
 
 # dual: LGPL or MIT-like
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}download/ \
 		${HOMEPAGE}download/00-OLD-VERSIONS/
@@ -26,7 +23,7 @@ MODULES=	lang/python
 LIB_DEPENDS=	net/curl
 WANTLIB=	crypto idn ssl z curl>=12
 
-do-regress: fake
+do-test: fake
 	@cd ${WRKSRC}/tests && ${MAKE_ENV} \
 		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
 		${MODPY_BIN} ./test_getinfo.py

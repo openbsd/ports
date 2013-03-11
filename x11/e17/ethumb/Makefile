@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/01/27 15:53:18 rpe Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:46:09 espie Exp $
 
 COMMENT =		EFL thumbnail generation library
 DISTNAME =		ethumb-1.7.5
@@ -8,9 +8,6 @@ SHARED_LIBS +=	ethumb_client             0.0 # 8.5
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender Xss Xtst c cares crypto curl dbus-1

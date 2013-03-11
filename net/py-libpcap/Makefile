@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2011/09/16 11:13:40 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2013/03/11 11:35:55 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -12,10 +12,7 @@ CATEGORIES=	net
 HOMEPAGE=	http://pylibpcap.sourceforge.net/
 
 # BSD
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
 WANTLIB=		pcap
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pylibpcap/}
@@ -25,7 +22,7 @@ MODPY_ADJ_FILES=examples/*.py
 
 BUILD_DEPENDS=	devel/swig
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-libpcap
 

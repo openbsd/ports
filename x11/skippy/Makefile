@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/06/02 13:41:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/11 11:46:15 espie Exp $
 
 COMMENT=		full-screen X11 task-switcher like Apple's Expose
 
@@ -13,15 +13,12 @@ HOMEPAGE=		http://thegraveyard.org/skippy.php
 
 # X11
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xext Xft Xinerama Xrender c expat fontconfig \
 		freetype m z pthread-stubs xcb Imlib2
 
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 LIB_DEPENDS=		graphics/imlib2
 

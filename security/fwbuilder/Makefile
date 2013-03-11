@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2012/10/21 14:20:53 sebastia Exp $
+# $OpenBSD: Makefile,v 1.30 2013/03/11 11:41:24 espie Exp $
 
 # Consumes more than 512MB on at least i386 when building qrc_MainRes.o
 VMEM_WARNING =	Yes
@@ -10,10 +10,7 @@ CATEGORIES =	net security
 HOMEPAGE =	http://www.fwbuilder.org/
 
 # GPLv2+ mostly, some code under BSD-like
-PERMIT_PACKAGE_FTP =	Yes
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_DISTFILES_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=fwbuilder/}
 
@@ -48,10 +45,10 @@ LIB_DEPENDS =	net/net-snmp \
 		textproc/libxslt \
 		x11/qt4
 		
-REGRESS_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH}
-REGRESS_TARGET =	tests
-REGRESS_ENV +=		COPTS="${COPTS}"
-REGRESS_IS_INTERACTIVE =	X11
+TEST_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH}
+TEST_TARGET =	tests
+TEST_ENV +=		COPTS="${COPTS}"
+TEST_IS_INTERACTIVE =	X11
 
 WANTLIB += c crypto m netsnmp QtGui QtNetwork
 WANTLIB += pthread stdc++ util xml2 xslt z

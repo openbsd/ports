@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2013/02/09 14:49:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2013/03/11 11:42:46 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -17,10 +17,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pyxml/}
 HOMEPAGE=	http://sourceforge.net/projects/pyxml/
 
 # BSD, badly worded
-PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
 
 MODULES=	lang/python
 
@@ -38,7 +35,7 @@ WANTLIB += expat
 
 WANTLIB +=	${MODPY_WANTLIB}
 
-REGRESS_DEPENDS= lang/python/${MODPY_VERSION},-tests
+TEST_DEPENDS= lang/python/${MODPY_VERSION},-tests
 
 DOC_DIR=	${PREFIX}/share/doc/py-xml/
 SRC_DOCDIR=	${WRKSRC}/doc
@@ -52,7 +49,7 @@ post-install:
 	${INSTALL_DATA} ${SRC_DOCDIR}/xmlproc/* ${DOC_DIR}/xmlproc/
 	@cd ${SRC_DOCDIR}/ && ${INSTALL_DATA} ${DOCEXT} ${DOC_DIR}
 
-do-regress: fake
+do-test: fake
 	@cd ${WRKSRC}/test && ${MAKE_ENV} \
 		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} ./regrtest.py
 

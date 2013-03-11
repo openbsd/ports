@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/01/28 08:17:15 rpe Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 11:46:09 espie Exp $
 
 COMMENT =		EFL API for data types
 VERSION = 		1.7.5
@@ -9,9 +9,6 @@ SHARED_LIBS +=  eina                 3.0      # 8.5
 
 # LGPL v2.1
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += 		m pthread
 
@@ -47,6 +44,6 @@ CONFIGURE_ARGS =	--disable-doc \
 CONFIGURE_ENV =		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
-REGRESS_TARGET = 	check-local
+TEST_TARGET = 	check-local
 
 .include <bsd.port.mk>

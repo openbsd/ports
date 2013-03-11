@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2012/08/18 12:41:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2013/03/11 11:35:50 espie Exp $
 
 COMMENT=	UCB/LBNL Network Simulator Version 2
 
@@ -12,9 +12,6 @@ HOMEPAGE=	http://nsnam.sourceforge.net/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES +=	x11/tk
 WANTLIB +=	X11 Xext c m pcap stdc++ otcl
@@ -42,7 +39,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ns2
 	${INSTALL_DATA} ${WRKSRC}/tcl/ex/*.tcl ${PREFIX}/share/examples/ns2
 
-do-regress:
+do-test:
 	cd ${WRKSRC} && ./validate
 
 .include <bsd.port.mk>

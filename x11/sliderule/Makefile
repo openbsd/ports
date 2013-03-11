@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/05/22 16:04:46 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/11 11:46:15 espie Exp $
 
 COMMENT=	slide rule component of X11R3's xcalc
 
@@ -9,7 +9,6 @@ CATEGORIES=	x11
 
 PERMIT_PACKAGE_CDROM=	no license
 PERMIT_PACKAGE_FTP=	no license
-PERMIT_DISTFILES_CDROM=	no license
 PERMIT_DISTFILES_FTP=	no license
 
 MASTER_SITES =	ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/
@@ -20,6 +19,6 @@ USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	imake
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

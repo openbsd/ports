@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/22 08:36:56 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 11:46:09 espie Exp $
 
 COMMENT=		minimalist window manager for the X Window System
 
@@ -11,9 +11,6 @@ MAINTAINER=		Victor Sahlstedt <salan@legonet.org>
 
 # 9wm license
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext Xrandr c
 
 MASTER_SITES=		${HOMEPAGE}
@@ -21,7 +18,7 @@ MASTER_SITES=		${HOMEPAGE}
 USE_GROFF =		Yes
 MAKE_FLAGS=		XROOT='${X11BASE}' CC='${CC}'
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 DOCDIR=			${PREFIX}/share/doc/evilwm
 

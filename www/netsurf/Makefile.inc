@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.4 2013/03/05 08:02:35 bentley Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2013/03/11 11:44:43 espie Exp $
 
 CATEGORIES +=	www/netsurf
 
@@ -16,12 +16,11 @@ WRKDIST ?=	${WRKDIR}/${DISTNAME:S/-src//}
 # MIT for libs / GPLv2 for netsurf
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 DESTDIRNAME =	${DESTDIR}
 
-REGRESS_TARGET =test
+TEST_TARGET =test
 USE_GMAKE =	Yes
 
 # not used for browser

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/08 10:36:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:46:15 espie Exp $
 
 COMMENT=	GTK client and libraries for SPICE remote desktop servers
 
@@ -15,9 +15,6 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/../../download/gtk/
 EXTRACT_SUFX=	.tar.bz2

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/20 17:22:43 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/11 11:41:24 espie Exp $
 
 COMMENT=		control chroot and su access rights by application
 
@@ -13,9 +13,6 @@ MAINTAINER=		Jason Peel <jsyn@openbsd.org>
 
 # BSD-style
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 MASTER_SITES=		ftp://ftp.porcupine.org/pub/security/ \
@@ -24,7 +21,7 @@ MASTER_SITES=		ftp://ftp.porcupine.org/pub/security/ \
 ALL_TARGET=		chrootuid
 MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS}"
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 USE_GROFF =		Yes
 
 do-install:

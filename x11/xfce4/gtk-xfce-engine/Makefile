@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2013/01/02 17:12:21 landry Exp $
+# $OpenBSD: Makefile,v 1.40 2013/03/11 11:46:17 espie Exp $
 
 COMMENT-main=	Xfce4 theme engine for Gtk+2
 COMMENT-gtk3=	Xfce4 theme engine for Gtk+3
@@ -15,10 +15,7 @@ REVISION-gtk3 =	0
 HOMEPAGE=	http://www.xfce.org/projects/
 
 # GPLv2
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
 MODXFCE_PURGE_LA =	lib/gtk-2.0/2.10.0/engines lib/gtk-3.0/3.0.0/theming-engines

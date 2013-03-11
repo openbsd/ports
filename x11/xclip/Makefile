@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/22 08:37:05 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/11 11:46:17 espie Exp $
 
 COMMENT=		command line interface to X selections
 DISTNAME=		xclip-0.11
@@ -10,13 +10,10 @@ MAINTAINER=		Ilya Voronin <ivoronin@ivoronin.pp.ru>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB+=		X11 Xmu c
 
-NO_REGRESS=		yes
+NO_TEST=		yes
 USE_GMAKE=		yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu

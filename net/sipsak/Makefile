@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/05/22 14:03:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/11 11:35:56 espie Exp $
 
 COMMENT =	SIP swiss army knife
 
@@ -16,9 +16,6 @@ LIB_DEPENDS =	net/libcares
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c crypto cares
 

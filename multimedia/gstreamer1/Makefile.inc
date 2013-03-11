@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.5 2012/09/22 09:25:06 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2013/03/11 11:35:44 espie Exp $
 
 # Most frequent usage of the GStreamer packages:
 # core		base library
@@ -28,7 +28,6 @@ GST_PKGNAME_PREFIX=	gstreamer1
 # GPLv2 - GPLv2+ - LGPLv2
 PERMIT_PACKAGE_CDROM ?=	Yes
 PERMIT_PACKAGE_FTP ?=	Yes
-PERMIT_DISTFILES_CDROM ?=	Yes
 PERMIT_DISTFILES_FTP ?=	Yes
 
 VERSION=		1.0
@@ -41,10 +40,10 @@ P=			multimedia/${GST_PKGNAME_PREFIX}
 
 .if defined(MULTI_PACKAGES)
 .for i in ${MULTI_PACKAGES}
-REGRESS_DEPENDS +=	${BASE_PKGPATH},${i}
+TEST_DEPENDS +=	${BASE_PKGPATH},${i}
 .endfor
 .else
-REGRESS_DEPENDS +=	${BASE_PKGPATH}
+TEST_DEPENDS +=	${BASE_PKGPATH}
 .endif
 
 MODULES +=		devel/gettext

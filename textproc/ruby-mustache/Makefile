@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/09/23 16:57:35 jeremy Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/11 11:42:46 espie Exp $
 
 COMMENT =		logic-free template language
 
@@ -8,9 +8,6 @@ CATEGORIES =		textproc
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		lang/ruby
 
@@ -22,8 +19,8 @@ post-install:
 		mv mustache.5 ${WRKINST}/${LOCALBASE}/man/man5/mustache${GEM_MAN_SUFFIX}.5
 	rm -r ${WRKINST}/${LOCALBASE}/${GEM_LIB}/gems/${DISTNAME}/man
 
-REGRESS_DEPENDS =	textproc/ruby-ronn,${MODRUBY_FLAVOR}
-MODRUBY_REGRESS =	testrb
-MODRUBY_REGRESS_TARGET = -I lib test/*_test.rb
+TEST_DEPENDS =	textproc/ruby-ronn,${MODRUBY_FLAVOR}
+MODRUBY_TEST =	testrb
+MODRUBY_TEST_TARGET = -I lib test/*_test.rb
 
 .include <bsd.port.mk>

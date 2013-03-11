@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2012/09/01 14:36:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2013/03/11 11:37:54 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -23,10 +23,7 @@ HOMEPAGE=		http://lilypond.org/web/
 MAINTAINER=		Matthias Kilian <kili@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
 
 MASTER_BASE=		http://download.linuxaudio.org/lilypond/
 MASTER_SITES=		${MASTER_BASE}sources/v${VERSION:C,\.[0-9]*$,,}/
@@ -97,17 +94,17 @@ post-install:
 
 # Regression tests temporarily disabled, because we don't
 # build the documentation for now.
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
-REGRESS_DEPENDS=	graphics/ImageMagick \
+TEST_DEPENDS=	graphics/ImageMagick \
 			print/lilypond-test-baseline:patch
 
-pre-regress:
+pre-test:
 .for d in input/regression input/regression/musicxml
 	-@mv ${WRKDIR}/print/lilypond-test-baseline/${DISTNAME}/$d/out-test-baseline ${WRKBUILD}/$d
 .endfor
 
-post-regress:
+post-test:
 	@echo Please check ${WRKBUILD}/out/test-results/index.html for \
 		any graphical anomalities.
 

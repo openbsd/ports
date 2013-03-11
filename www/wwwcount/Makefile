@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/10/19 08:02:58 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2013/03/11 11:44:50 espie Exp $
 
 COMMENT=	access counter, clock and date for WWW pages
 
@@ -18,9 +18,6 @@ HOMEPAGE=	http://www.muquit.com/muquit/software/Count/Count.html
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 CONFIGURE_STYLE=gnu
@@ -32,7 +29,7 @@ pre-configure:
 	@sed -e "s,@PREFIX@,${PREFIX},g" -e "s,@WWWDIR@,${WWWDIR},g" \
 		${FILESDIR}/config.h.in > ${WRKSRC}/src/config.h
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 .for d in A B C D E bang cd cdd cdr

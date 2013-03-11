@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2013/03/04 04:23:18 lteo Exp $
+# $OpenBSD: Makefile,v 1.75 2013/03/11 11:35:56 espie Exp $
 
 SHARED_ONLY =		Yes
 
@@ -17,9 +17,6 @@ MAINTAINER =		Markus Lude <markus.lude@gmx.de>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c crypto daq dnet m pcap pcre pthread z
 
@@ -67,6 +64,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${PREFIX}/share/doc/snort
 .endfor
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 .include <bsd.port.mk>

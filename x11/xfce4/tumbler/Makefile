@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/01/13 17:55:29 landry Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 11:46:18 espie Exp $
 
 COMMENT=	D-Bus thumbnailing service
 
@@ -8,10 +8,7 @@ XFCE_GOODIE=	tumbler
 SHARED_LIBS+=	tumbler-1 0.0
 
 # GPLv2
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
 MODXFCE_PURGE_LA =	lib/tumbler-1/plugins lib/tumbler-1/plugins/cache

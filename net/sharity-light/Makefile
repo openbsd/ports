@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2012/08/18 12:41:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/11 11:35:56 espie Exp $
 
 COMMENT=	userland smbfs --- SMB to NFS protocols converter
 
@@ -14,14 +14,11 @@ HOMEPAGE=	http://www.obdev.at/products/sharity-light/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 MAKE_FLAGS=	ARCH="" THE_CC="${CC}" CFLAGS="${CFLAGS} -Wall"
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2011/01/05 17:43:48 dhill Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/11 11:44:45 espie Exp $
 
 COMMENT=	high-performance dynamic web authoring system
 
@@ -12,9 +12,6 @@ MAINTAINER=	David Hill <dhill@openbsd.org>
 
 # Artistic License
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/p5-Cache-Cache>=1.02 \
@@ -29,7 +26,7 @@ RUN_DEPENDS=	devel/p5-Cache-Cache>=1.02 \
 
 MAKE_ENV=       TEST_POD=Yes
 
-REGRESS_DEPENDS=devel/p5-Test-Memory-Cycle \
+TEST_DEPENDS=devel/p5-Test-Memory-Cycle \
 		devel/p5-PadWalker
 
 CONFIGURE_STYLE=	modbuild

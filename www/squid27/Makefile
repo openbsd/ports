@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/02/09 14:49:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 11:44:49 espie Exp $
 
 COMMENT=	WWW and FTP proxy cache and accelerator
 
@@ -14,9 +14,6 @@ HOMEPAGE=	http://www.squid-cache.org/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	asn1 c com_err crypto krb5 gssapi m pthread ssl
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2012/08/06 17:35:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2013/03/11 11:35:45 espie Exp $
 
 COMMENT=	point-to-point bandwidth measurement tool
 
@@ -9,13 +9,10 @@ MASTER_SITES=	ftp://ftp.ens.fr/pub/unix/syst/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/bing

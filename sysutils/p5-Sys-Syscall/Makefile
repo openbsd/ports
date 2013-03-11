@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/05/14 10:06:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/11 11:41:31 espie Exp $
 
 COMMENT =	access to more system calls than Perl normally provides
 
@@ -9,8 +9,5 @@ CATEGORIES =	sysutils
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 .include <bsd.port.mk>

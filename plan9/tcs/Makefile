@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/18 21:25:08 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/11 11:37:53 espie Exp $
 
 COMMENT=	translate character sets
 
@@ -14,9 +14,6 @@ EXTRACT_CASES=	*.shar.Z) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | /bin/sh;;
 MAINTAINER=	Markus Friedl <markus@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 MAKE_FLAGS=	CFLAGS="${CFLAGS} -D_POSIX_SOURCE"
@@ -26,7 +23,7 @@ ALL_TARGET=	tcs
 WRKDIST=	${WRKDIR}
 USE_GROFF =	Yes
 
-do-regress:
+do-test:
 	cd ${WRKSRC}; ./regress
 
 do-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2013/02/09 14:49:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2013/03/11 11:35:49 espie Exp $
 
 COMMENT-main=	nagios base plugins
 COMMENT-fping=	fping plugin
@@ -29,9 +29,6 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 # see below for WANTLIB
 
@@ -118,6 +115,6 @@ WANTLIB-main=		${WANTLIB} crypto m ssl
 MODULES=	devel/gettext
 
 # many broken tests, but...
-REGRESS_IS_INTERACTIVE=Yes
+TEST_IS_INTERACTIVE=Yes
 
 .include <bsd.port.mk>

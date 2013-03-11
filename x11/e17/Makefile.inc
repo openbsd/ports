@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.18 2013/02/09 14:49:53 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.19 2013/03/11 11:46:09 espie Exp $
 
 CATEGORIES ?=		x11
 
@@ -15,7 +15,7 @@ DIST_SUBDIR ?=		e17
 
 CONFIGURE_STYLE ?=	gnu
 
-NO_REGRESS ?=		Yes
+NO_TEST ?=		Yes
 
 SHARED_ONLY ?=		Yes
 LIBTOOL_FLAGS ?=	--tag=disable-static

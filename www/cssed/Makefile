@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2012/12/23 12:25:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2013/03/11 11:44:41 espie Exp $
 
 COMMENT=	CSS editor
 
@@ -10,9 +10,6 @@ HOMEPAGE=	http://cssed.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	yes
-PERMIT_PACKAGE_FTP=	yes
-PERMIT_DISTFILES_CDROM=	yes
-PERMIT_DISTFILES_FTP=	yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=cssed/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2012/03/29 08:17:41 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/11 11:46:09 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -13,16 +13,13 @@ HOMEPAGE=	http://fbpanel.sourceforge.net/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=fbpanel/}
 
 MODULES=	devel/gettext
 
 USE_GMAKE=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 CONFIGURE_STYLE=simple
 

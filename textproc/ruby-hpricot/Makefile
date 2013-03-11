@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/01/09 17:38:52 jeremy Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 11:42:46 espie Exp $
 
 COMMENT=		flexible HTML parser
 
@@ -10,9 +10,6 @@ HOMEPAGE=		http://code.whytheluckystiff.net/hpricot/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=		${MODRUBY_RAKE_DEPENDS}
 
@@ -20,9 +17,9 @@ MODULES=		lang/ruby
 
 CONFIGURE_STYLE=	ruby gem ext
 
-REGRESS_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH}
+TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH}
 
-do-regress:
+do-test:
 	@cd ${WRKSRC} && ${RUBY} -rubygems -Ilib:test \
 		-e "ARGV.each { |f| load f unless f =~ /^-/  }" \
 		"test/test_preserved.rb" "test/test_paths.rb" \

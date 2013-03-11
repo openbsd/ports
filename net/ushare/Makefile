@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2012/11/07 14:53:59 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 11:35:58 espie Exp $
 
 COMMENT=	UPnP A/V media server
 
@@ -12,9 +12,6 @@ HOMEPAGE=	http://ushare.geexbox.org/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c pthread ixml threadutil>=1 upnp>=1
 
@@ -25,7 +22,7 @@ MODULES=	devel/gettext
 LIB_DEPENDS=	net/libupnp>=1.6.17
 
 USE_GMAKE=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 CONFIGURE_STYLE= simple
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lintl -liconv"

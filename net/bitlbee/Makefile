@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2013/02/09 14:49:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2013/03/11 11:35:45 espie Exp $
 
 COMMENT=		IRC proxy to connect to AIM, ICQ, Jabber, MSN and Yahoo
 
@@ -11,9 +11,6 @@ MAINTAINER=		Tom Doherty <tom@singlesecond.com>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB +=		c pthread glib-2.0 gmodule-2.0 ssl crypto
 
@@ -56,7 +53,7 @@ LIB_DEPENDS +=		security/libotr security/libgcrypt
 WANTLIB +=		gcrypt otr
 .endif
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 # don't hide compile command lines
 pre-configure:

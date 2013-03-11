@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.18 2013/03/09 17:43:51 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.19 2013/03/11 11:44:49 espie Exp $
 
 # keep in sync with working archs.. sigh
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
@@ -18,7 +18,6 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 # Mozilla public license
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	https://ftp.mozilla.org/pub/mozilla.org/seamonkey/releases/${FV}/langpack/ \
@@ -30,7 +29,7 @@ RUN_DEPENDS =	seamonkey-${FV:S/b/beta/}:www/seamonkey
 
 DIST_SUBDIR =	mozilla/${NAME}-${FV}
 NO_BUILD =	Yes
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 EXTRACT_ONLY =
 
 # needed to have all distfiles in distinfo

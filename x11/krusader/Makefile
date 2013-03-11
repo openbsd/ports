@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/01/23 21:47:04 zhuk Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 11:46:13 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -13,9 +13,6 @@ HOMEPAGE=	http://krusader.sourceforge.net/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=krusader/}
 

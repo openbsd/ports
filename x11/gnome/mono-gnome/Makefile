@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2011/11/04 09:56:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2013/03/11 11:46:11 espie Exp $
 
 COMMENT=	.NET language bindings for assorted GNOME libraries
 
@@ -13,9 +13,6 @@ HOMEPAGE=	http://mono-project.com/GtkSharp
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 EXTRACT_SUFX=		.tar.bz2
 

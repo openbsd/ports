@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/09/16 12:29:17 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 11:46:15 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -15,10 +15,7 @@ HOMEPAGE=	http://www.wxpython.org/
 MAINTAINER=	Aleksander Piotrowski <alek@openbsd.org>
 
 # modified LGPL
-PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wxpython/}
 EXTRACT_SUFX=	.tar.bz2
@@ -34,7 +31,7 @@ WRKSRC=		${WRKDIST}/wxPython
 
 SUBST_VARS +=	WRKINST
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 pre-build:
 	${SUBST_CMD} ${WRKSRC}/config.py

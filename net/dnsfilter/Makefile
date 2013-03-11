@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/12/04 16:10:25 florian Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/11 11:35:46 espie Exp $
 
 COMMENT=		dns rate limiter for divert(4)
 
@@ -10,15 +10,12 @@ MAINTAINER=		Florian Obser <florian+dnsfilter@narrans.de>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c ldns util
 
 MASTER_SITES=	${HOMEPAGE}
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 LIB_DEPENDS=	net/ldns/libldns
 

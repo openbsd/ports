@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2011/11/11 15:21:24 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2013/03/11 11:35:56 espie Exp $
 
 CATEGORIES?=	net multimedia
 
@@ -8,7 +8,6 @@ HOMEPAGE=	http://quvi.sourceforge.net/
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=quvi/}
 

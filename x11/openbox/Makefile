@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2012/10/23 14:30:56 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.68 2013/03/11 11:46:14 espie Exp $
 
 COMMENT =	small, fast & usable window manager
 
@@ -16,9 +16,6 @@ MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += ICE Imlib2 SM X11 X11-xcb Xau Xcursor Xext Xfixes Xft
 WANTLIB += Xinerama Xrandr Xrender c expat ffi fontconfig freetype

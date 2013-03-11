@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/11/12 13:32:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 11:42:46 espie Exp $
 
 SHARED_LIBS +=	raptor2              0.0      # 0.0
 
@@ -13,9 +13,6 @@ MASTER_SITES=		http://download.librdf.org/source/
 
 # LGPL 2.1+, GPL 2+ or Apache 2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c crypto idn m ssl z curl>=12 xml2>=7 xslt>=1 yajl
 

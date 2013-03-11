@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/12/17 22:01:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 11:44:48 espie Exp $
 
 COMMENT=	HTTP caching proxy
 
@@ -14,9 +14,6 @@ MASTER_SITES=	http://freehaven.net/~chrisd/polipo/
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c
 
@@ -36,6 +33,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/polipo
 	${INSTALL_DATA} ${WRKSRC}/*.sample ${PREFIX}/share/examples/polipo
 
-NO_REGRESS=     Yes
+NO_TEST=     Yes
 
 .include <bsd.port.mk>

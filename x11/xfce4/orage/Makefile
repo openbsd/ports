@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2013/02/06 23:13:17 landry Exp $
+# $OpenBSD: Makefile,v 1.43 2013/03/11 11:46:17 espie Exp $
 
 COMMENT=	Xfce4 advanced calendar
 
@@ -7,10 +7,7 @@ XFCE_VERSION=	4.8.4
 
 HOMEPAGE=	http://www.xfce.org/projects/orage
 # GPLv2
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
 MODXFCE_DESKTOP_FILE=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/16 12:29:15 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/11 11:46:13 espie Exp $
 
 COMMENT =	GTK+2 widget to display large amounts of numerical data
 
@@ -15,9 +15,6 @@ MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB = 	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender expat fontconfig freetype \

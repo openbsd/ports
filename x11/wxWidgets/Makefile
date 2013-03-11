@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2012/12/10 20:51:24 edd Exp $
+# $OpenBSD: Makefile,v 1.45 2013/03/11 11:46:17 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -39,10 +39,7 @@ SHARED_LIBS =	wx_base			3.0	\
 HOMEPAGE =	http://www.wxwidgets.org/
 
 # modified LGPL
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
 
 MULTI_PACKAGES = -main -media
 
@@ -57,7 +54,7 @@ MODULES	=	devel/gettext
 
 BUILD_DEPENDS =	devel/cppunit
 LIB_DEPENDS =	x11/gtk+2
-REGRESS_DEPENDS = ${BUILD_PKGPATH}>=${V}
+TEST_DEPENDS = ${BUILD_PKGPATH}>=${V}
 
 LIB_DEPENDS-main = ${LIB_DEPENDS} \
 		   archivers/libmspack \
@@ -104,7 +101,7 @@ CONFIGURE_ENV += wx_cv_version_script=no
 CONFIGURE_ARGS += --enable-debug
 .endif
 
-do-regress:
+do-test:
 	@cd ${WRKSRC}/tests && \
 		${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} && ./test
 

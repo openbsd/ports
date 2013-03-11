@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2012/09/04 03:40:34 jeremy Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 11:35:55 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -12,9 +12,6 @@ CATEGORIES=	net
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB+=	z ft
 
@@ -24,7 +21,7 @@ MASTER_SITES=	http://pyflowtools.googlecode.com/files/
 LIB_DEPENDS=	net/flow-tools
 MODULES=	lang/python
 
-NO_REGRESS= 	Yes
+NO_TEST= 	Yes
 
 MODPY_DISTUTILS_BUILD=	build_ext
 MODPY_DISTUTILS_BUILDARGS=-I${LOCALBASE}/include -L${LOCALBASE}/lib

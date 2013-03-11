@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2011/06/01 23:34:53 kili Exp $
+# $OpenBSD: Makefile,v 1.28 2013/03/11 11:41:25 espie Exp $
 
 COMMENT=	scan C/C++ source code for security problems
 
@@ -10,7 +10,6 @@ EXTRACT_SUFX=	.tgz
 
 PERMIT_PACKAGE_CDROM=	commercial. licensing restrictions.
 PERMIT_PACKAGE_FTP=	commercial. licensing restrictions.
-PERMIT_DISTFILES_CDROM=	commercial. licensing restrictions.
 PERMIT_DISTFILES_FTP=	commercial. licensing restrictions.
 WANTLIB=		c m stdc++
 
@@ -22,7 +21,7 @@ CONFIGURE_ARGS=	--prefix='${PREFIX}' \
 
 WRKDIST=	${WRKDIR}/its4
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 USE_GROFF=	Yes
 
 FETCH_MANUALLY=	"The source to this port may not be automatically fetched" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2013/02/04 10:05:53 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.71 2013/03/11 11:46:12 espie Exp $
 
 COMMENT =		GTK+/GNOME frontend for MPlayer
 V =			1.0.7
@@ -15,9 +15,6 @@ MASTER_SITES =		http://gnome-mplayer.googlecode.com/files/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		GL X11 Xext Xrender Xss atk-1.0 c cairo \
 			cairo-gobject curl dbus-1 dbus-glib-1 \

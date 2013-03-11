@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/07/18 18:49:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/11 11:35:48 espie Exp $
 
 # see md.h, add others
 ONLY_FOR_ARCHS =	amd64 alpha i386 sparc
@@ -16,9 +16,6 @@ MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # MPLv1.1 or GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=state-threads/}
 
@@ -28,7 +25,7 @@ MAKE_FLAGS =		CC='${CC}' CFLAGS='${CFLAGS} -fPIC -DOPENBSD' \
 
 USE_GMAKE =		Yes
 ALL_TARGET =		openbsd-optimized
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 do-install:
 	${INSTALL_PROGRAM} \

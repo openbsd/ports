@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/19 22:31:32 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/11 11:35:45 espie Exp $
 
 COMMENT=	simple IRC relay proxy with support for virtual hosting
 
@@ -12,9 +12,6 @@ HOMEPAGE=	http://gotbnc.com/
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 RUN_DEPENDS=		misc/dialog
@@ -26,7 +23,7 @@ pre-configure:
 	@mv ${WRKSRC}/bncsetup.new ${WRKSRC}/bncsetup
 
 ALL_TARGET=	ALL
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/bnc

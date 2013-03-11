@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/03/02 06:30:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/11 11:46:16 espie Exp $
 
 COMMENT =	sets the window manager name property of the root window
 
@@ -10,15 +10,12 @@ HOMEPAGE =	http://tools.suckless.org/wmname
 
 # MIT/X
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	X11 c
 
 MASTER_SITES =	http://dl.suckless.org/tools/
 
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 .include <bsd.port.mk>

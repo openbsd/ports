@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/06/19 19:06:21 stsp Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 11:35:49 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -14,10 +14,7 @@ HOMEPAGE=	http://microblog-purple.googlecode.com/
 MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/files/
 
@@ -39,7 +36,7 @@ LIB_DEPENDS=	net/pidgin,-libpurple \
 USE_GMAKE=	Yes
 ALL_TARGET=	build
 MAKE_ENV=	MAKE_PROGRAM=${MAKE_PROGRAM}
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/global.mak

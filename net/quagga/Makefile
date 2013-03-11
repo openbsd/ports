@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2013/02/09 14:49:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2013/03/11 11:35:55 espie Exp $
 
 COMMENT=	multi-threaded routing daemon
 
@@ -14,9 +14,6 @@ HOMEPAGE=	http://www.quagga.net/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c curses m readline termcap
 
