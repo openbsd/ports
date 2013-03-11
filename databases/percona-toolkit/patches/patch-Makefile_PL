@@ -1,8 +1,8 @@
-$OpenBSD: patch-Makefile_PL,v 1.5 2013/01/11 11:21:26 giovanni Exp $
---- Makefile.PL.orig	Tue Jan  8 22:49:57 2013
-+++ Makefile.PL	Fri Jan 11 12:17:27 2013
+$OpenBSD: patch-Makefile_PL,v 1.6 2013/03/11 09:49:04 giovanni Exp $
+--- Makefile.PL.orig	Thu Feb 14 18:59:10 2013
++++ Makefile.PL	Fri Feb 22 17:52:40 2013
 @@ -5,10 +5,10 @@ WriteMakefile(
-     VERSION   => '2.1.8',
+     VERSION   => '2.1.9',
      EXE_FILES => [ <bin/*> ],
      MAN1PODS  => {
 -      'docs/percona-toolkit.pod' => 'blib/man1/percona-toolkit.1p',

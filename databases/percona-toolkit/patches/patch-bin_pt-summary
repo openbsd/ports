@@ -1,14 +1,12 @@
-$OpenBSD: patch-bin_pt-summary,v 1.5 2012/10/09 15:39:13 giovanni Exp $
---- bin/pt-summary.orig	Tue Sep 25 17:35:54 2012
-+++ bin/pt-summary	Tue Oct  9 16:54:29 2012
-@@ -2279,8 +2279,9 @@ sigtrap() { local PTFUNCNAME=sigtrap;
- 
+$OpenBSD: patch-bin_pt-summary,v 1.6 2013/03/11 09:49:04 giovanni Exp $
+--- bin/pt-summary.orig	Thu Feb 14 18:59:10 2013
++++ bin/pt-summary	Fri Feb 22 17:53:46 2013
+@@ -2289,7 +2289,7 @@ sigtrap() { local PTFUNCNAME=sigtrap;
  # Execute the program if it was not included from another file.  This makes it
  # possible to include without executing, and thus test.
-+set +u
  if    [ "${0##*/}" = "$TOOL" ] \
--   || [ "${0##*/}" = "bash" -a "$_" = "$0" ]; then
-+   || [ "${0##*/}" = "sh" -a "$_" = "$0" ]; then
+-   || [ "${0##*/}" = "bash" -a "${_:-""}" = "$0" ]; then
++   || [ "${0##*/}" = "sh" -a "${_:-""}" = "$0" ]; then
  
     # Set up temporary dir.
     mk_tmpdir
