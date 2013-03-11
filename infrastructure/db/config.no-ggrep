@@ -1,5 +1,5 @@
-# $OpenBSD: config.no-ggrep,v 1.1 2011/12/10 11:15:16 espie Exp $
+# $OpenBSD: config.no-ggrep,v 1.2 2013/03/11 14:45:24 ajacoutot Exp $
 # included unless sysutils/ggrep
 ac_cv_path_GREP=${ac_cv_path_GREP=/usr/bin/grep}
 ac_cv_path_EGREP=${ac_cv_path_EGREP=/usr/bin/egrep}
-ac_cv_path_FGREP=${ac_cv_path_EGREP=/usr/bin/fgrep}
+ac_cv_path_FGREP=${ac_cv_path_FGREP=/usr/bin/fgrep}
