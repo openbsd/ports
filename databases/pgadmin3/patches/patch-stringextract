@@ -1,0 +1,12 @@
+$OpenBSD: patch-stringextract,v 1.1 2013/03/11 20:59:05 sthen Exp $
+--- stringextract.orig	Mon Mar 11 20:51:36 2013
++++ stringextract	Mon Mar 11 20:51:44 2013
+@@ -56,7 +56,7 @@ xgettext -k_ -k__ -kwxPLURAL:1,2 -j -s -o pgadmin3.pot
+ xgettext -k_ -k__ -kwxPLURAL:1,2 -j -s -o pgadmin3.pot pgadmin/include/*.h
+ xgettext -k_ -k__ -kwxPLURAL:1,2 -j -s -o pgadmin3.pot pgadmin/include/*.h
+ 
+-TMPDIR=`mktemp -d tmpwork.XXXX` || exit 1
++TMPDIR=`mktemp -d tmpwork.XXXXXXXXXX` || exit 1
+ echo "$TMPDIR"
+ 
+ mkdir $TMPDIR/pgadmin

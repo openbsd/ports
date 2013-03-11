@@ -1,0 +1,12 @@
+$OpenBSD: patch-usr_bin_mysql-zrm-scheduler,v 1.1 2013/03/11 20:59:05 sthen Exp $
+--- usr/bin/mysql-zrm-scheduler.orig	Mon Mar 11 20:48:00 2013
++++ usr/bin/mysql-zrm-scheduler	Mon Mar 11 20:48:10 2013
+@@ -351,7 +351,7 @@ if ( $interval eq "monthly" ) {
+ }
+ 
+ 
+-($mycrontab_fh, $mycrontab) = mkstemp( "/tmp/zrmcrontabXXXXX" );
++($mycrontab_fh, $mycrontab) = mkstemp( "/tmp/zrmcrontabXXXXXXXXXX" );
+ 
+ system ("crontab -l > $mycrontab 2> /dev/null");
+ $exit_value  = $? >> 8;

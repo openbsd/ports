@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 02:52:07 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/11 20:59:05 sthen Exp $
 
-COMMENT= 	database schema manipulation
+COMMENT=	database schema manipulation
 
 DISTNAME=	SQL-Translator-0.11007
-REVISION=	0
+REVISION=	1
 CATEGORIES=	databases devel
 MODULES=	cpan
-USE_GROFF =	Yes
 
 HOMEPAGE=	http://sqlfairy.sourceforge.net/
 

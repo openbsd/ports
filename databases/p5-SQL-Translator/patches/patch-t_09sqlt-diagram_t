@@ -1,0 +1,12 @@
+$OpenBSD: patch-t_09sqlt-diagram_t,v 1.1 2013/03/11 20:59:05 sthen Exp $
+--- t/09sqlt-diagram.t.orig	Mon Mar 11 20:49:30 2013
++++ t/09sqlt-diagram.t	Mon Mar 11 20:49:35 2013
+@@ -22,7 +22,7 @@ my @data = qw(data mysql Apache-Session-MySQL.sql);
+ my $sqlt_diagram = catfile($Bin, updir, @script);
+ my $test_data = catfile($Bin, @data);
+ 
+-my $tmp = mktemp('sqlXXXXX');
++my $tmp = mktemp('sqlXXXXXXXXXX');
+ 
+ ok(-e $sqlt_diagram); 
+ my @cmd = ($^X, $sqlt_diagram, "-d", "MySQL", "-o", $tmp, $test_data);

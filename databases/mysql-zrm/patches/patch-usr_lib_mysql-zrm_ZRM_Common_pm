@@ -1,6 +1,6 @@
-$OpenBSD: patch-usr_lib_mysql-zrm_ZRM_Common_pm,v 1.3 2010/05/05 17:03:19 giovanni Exp $
---- usr/lib/mysql-zrm/ZRM/Common.pm.orig	Thu Feb  4 01:19:25 2010
-+++ usr/lib/mysql-zrm/ZRM/Common.pm	Wed May  5 12:10:00 2010
+$OpenBSD: patch-usr_lib_mysql-zrm_ZRM_Common_pm,v 1.4 2013/03/11 20:59:05 sthen Exp $
+--- usr/lib/mysql-zrm/ZRM/Common.pm.orig	Thu Feb  4 00:19:25 2010
++++ usr/lib/mysql-zrm/ZRM/Common.pm	Mon Mar 11 20:48:14 2013
 @@ -90,9 +90,9 @@ our $LOGGER;
  our $INDEX_FILENAME="index";
  our $MYSQL_ZRM_CONFIG_FILE=catfile( $MYSQL_ZRM_BASEDIR, "mysql-zrm.conf");
@@ -14,3 +14,12 @@ $OpenBSD: patch-usr_lib_mysql-zrm_ZRM_Common_pm,v 1.3 2010/05/05 17:03:19 giovan
  our $TAR_EXCLUDE_OPTION=" --exclude";
  our $COMPRESS_FILENAME="backup-data";
  our $COMPRESS_LOGICAL_FILENAME="backup-sql";
+@@ -1349,7 +1349,7 @@ sub createConfigFile()
+ #	if( $action eq "check" ){
+ 		#return;
+ 	#}
+-	$confFileHandle = new File::Temp(TEMPLATE=>"tmpXXXXX",DIR=>$backupset_dir,SUFFIX=>".conf", UNLINK=>1);
++	$confFileHandle = new File::Temp(TEMPLATE=>"tmpXXXXXXXXXX",DIR=>$backupset_dir,SUFFIX=>".conf", UNLINK=>1);
+ 	$ENV{'ZRM_CONF'} = "$confFileHandle";
+ 	if( $verbose ){
+ 		&printLog( "ZRM Temporary configuration file = $confFileHandle\n" );
