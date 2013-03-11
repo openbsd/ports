@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST-bin,v 1.5 2013/02/04 07:55:26 jasper Exp $
-@conflict py-Pillow-*
-@pkgpath graphics/py-Imaging,-bin[,python2.5][,python2.6][,python2.7]
-bin/pilconvert
-bin/pildriver
-bin/pilfile
-bin/pilfont
-bin/pilprint

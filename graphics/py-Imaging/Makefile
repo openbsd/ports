@@ -1,26 +1,14 @@
-# $OpenBSD: Makefile,v 1.60 2013/03/11 11:10:55 espie Exp $
+# $OpenBSD: Makefile,v 1.61 2013/03/11 22:57:13 fgsch Exp $
 
 SHARED_ONLY=		Yes
 
-COMMENT-main=		Python imaging library
-COMMENT-examples=	example programs for the Python Imaging Library
-COMMENT-bin=		binaries for the Python Imaging Library
-COMMENT-docs=		documentation for the Python Imaging Library
+COMMENT =		Python imaging library
 
 MODPY_EGG_VERSION=	1.1.7
 DISTNAME=		Imaging-${MODPY_EGG_VERSION}
-PKGNAME-main=		py-${DISTNAME}
-FULLPKGNAME-examples=	py-Imaging-examples-${MODPY_EGG_VERSION}
-EPOCH-examples=		0
-FULLPKGPATH-examples=	graphics/py-Imaging,-examples
-PKGNAME-bin=		py-Imaging-bin-${MODPY_EGG_VERSION}
-FULLPKGNAME-docs=	py-Imaging-docs-${MODPY_EGG_VERSION}
-FULLPKGPATH-docs=	graphics/py-Imaging,-docs
+PKGNAME =		py-${DISTNAME}
 
-REVISION-main=		8
-REVISION-examples=	5
-REVISION-bin=		6
-REVISION-docs=		4
+REVISION =		9
 
 CATEGORIES=		graphics
 
@@ -30,26 +18,22 @@ HOMEPAGE=		http://www.pythonware.com/products/pil/
 # Permission to use, copy, modify and distribute freely.
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB-main=		freetype z jpeg>=62 lcms ${MODTK_WANTLIB} \
-			${MODPY_WANTLIB}
+WANTLIB =		freetype jpeg>=62 lcms pthread z \
+			${MODTK_WANTLIB} ${MODPY_WANTLIB}
 
 MASTER_SITES=		http://effbot.org/media/downloads/
 
 MODULES=		lang/python x11/tk
 
 RUN_DEPENDS=		${MODPY_TKINTER_DEPENDS}
-RUN_DEPENDS-bin=	${RUN_DEPENDS} \
-			graphics/py-Imaging
-BUILD_DEPENDS=		${RUN_DEPENDS}
-LIB_DEPENDS-main=	graphics/jpeg \
-			graphics/lcms \
+BUILD_DEPENDS =		${RUN_DEPENDS}
+LIB_DEPENDS =		graphics/lcms \
 			${MODTK_LIB_DEPENDS}
-
-MULTI_PACKAGES= -main -examples -bin -docs
 
 MODPY_ADJ_FILES=	Scripts/pil*.py
 
 INCDIR=${PREFIX}/include/python${MODPY_VERSION}
+
 post-install:
 	${INSTALL_SCRIPT_DIR} ${PREFIX}/share/examples/py-Imaging
 	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/*.py \
