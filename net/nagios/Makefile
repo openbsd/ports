@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/05/21 11:06:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/11 19:27:49 sthen Exp $
 
   SUBDIR =
   SUBDIR += check_bioctl
@@ -14,6 +14,7 @@
   SUBDIR += nagios,chroot
   SUBDIR += nrpe
   SUBDIR += nsca
+  SUBDIR += nsca-ng
   SUBDIR += p5-Nagios-Plugin
   SUBDIR += plugins
 
