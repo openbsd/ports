@@ -1,4 +1,4 @@
-# $OpenBSD: erlang.port.mk,v 1.5 2013/03/11 12:40:15 jasper Exp $
+# $OpenBSD: erlang.port.mk,v 1.6 2013/03/11 13:01:39 jasper Exp $
 #
 # Module for Erlang-based ports or modules
 
@@ -69,4 +69,13 @@ RUN_DEPENDS +=		${MODERL_RUN_DEPENDS}
 .if ! target(dialyzer)
 dialyzer:
 	cd ${WRKSRC} && ${REBAR_BIN} dialyzer
+.endif
+
+# Some modules don't have a 'version' set and try to retrieve this through git.
+# Patch the .app.src files to have ${VERSION} and set ERL_APP_SUBST=Yes.
+.if defined(ERL_APP_SUBST) && ${ERL_APP_SUBST:L} == "yes"
+.if ! target(pre-configure)
+pre-configure:
+	cd ${WRKSRC}/src/ && ${SUBST_CMD} *.app.src
+.endif
 .endif
