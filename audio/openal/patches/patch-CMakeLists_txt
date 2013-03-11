@@ -1,0 +1,12 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.5 2013/03/11 15:26:15 bcallah Exp $
+--- CMakeLists.txt.orig	Thu Mar  7 10:11:07 2013
++++ CMakeLists.txt	Thu Mar  7 10:11:45 2013
+@@ -797,7 +797,7 @@ ENDIF()
+ # Install alsoft.conf configuration file
+ IF(ALSOFT_CONFIG)
+     INSTALL(FILES alsoftrc.sample
+-            DESTINATION share/openal
++            DESTINATION share/examples/openal
+     )
+     MESSAGE(STATUS "Installing sample configuration")
+     MESSAGE(STATUS "")
