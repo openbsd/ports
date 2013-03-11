@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 01:30:26 espie Exp $	
+# $OpenBSD: Makefile,v 1.10 2013/03/11 10:48:55 espie Exp $	
 
 COMMENT=	convert between GB and BIG-5 codes
 
@@ -9,6 +9,7 @@ MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 
 # Fairly restrictive licence
 PERMIT_PACKAGE_CDROM=	No
+PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB=		c
 
