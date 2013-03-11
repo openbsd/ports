@@ -1,0 +1,20 @@
+$OpenBSD: patch-pfstat_conf_example,v 1.1 2013/03/11 19:50:04 sthen Exp $
+--- pfstat.conf.example.orig	Sun Feb 24 22:13:10 2013
++++ pfstat.conf.example	Sun Feb 24 22:13:31 2013
+@@ -6,7 +6,7 @@
+ # collect
+ #   global
+ #     states entries|searches|inserts|removals [diff]
+-#     counters match|bad-offset|fragment|...|synproxy [diff]
++#     counters match|bad-offset|fragment|...|translate [diff]
+ #              (see pfctl -si output, same strings)
+ #   interface name pass|block packets|bytes in|out v4|v6 [diff]
+ #   queue name passed|dropped|other packets|bytes|number [diff]
+@@ -85,6 +85,7 @@ collect 26 = global counters state-insert   diff
+ collect 27 = global counters state-limit    diff
+ collect 28 = global counters src-limit      diff
+ collect 29 = global counters synproxy       diff
++collect 30 = global counters translate      diff
+ 
+ image "/var/www/htdocs/benzedrine.cx/pfstat-errors.jpg" {
+ 	from 1 days to now

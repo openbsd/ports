@@ -1,0 +1,12 @@
+$OpenBSD: patch-parse_y,v 1.1 2013/03/11 19:50:04 sthen Exp $
+--- parse.y.orig	Sun Feb 24 22:12:50 2013
++++ parse.y	Sun Feb 24 22:13:05 2013
+@@ -133,7 +133,7 @@ coldef		: GLOBAL STRING STRING
+ 			    "short", "normalize", "memory", "bad-timestamp",
+ 			    "congestion", "ip-option", "proto-cksum",
+ 			    "state-mismatch", "state-insert", "state-limit",
+-			    "src-limit", "synproxy", 0 };
++			    "src-limit", "synproxy", "translate", NULL };
+ 			int i;
+ 
+ 			$$.type = 0;
