@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.195 2012/10/11 21:51:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.196 2013/03/11 09:37:44 ajacoutot Exp $
 
      SUBDIR =
+     SUBDIR += alacarte
      SUBDIR += anjuta
      SUBDIR += anjuta-extras
      SUBDIR += at-spi2-atk
