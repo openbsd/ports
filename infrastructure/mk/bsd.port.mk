@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1216 2013/03/10 22:27:15 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1217 2013/03/12 06:56:27 ajacoutot Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2674,7 +2674,7 @@ ${_TEST_COOKIE}: ${_BUILD_COOKIE}
 	@${_MAKE} post-test
 .  endif
 .else
-	@echo 1>&2 "No regression check for ${FULLPKGNAME}"
+	@echo 1>&2 "No regression test for ${FULLPKGNAME}"
 .endif
 	@${_MAKE_COOKIE} $@
 
