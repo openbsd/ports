@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/10 22:55:05 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/12 00:59:50 brad Exp $
 
 COMMENT=		portable cross-platform audio API
 
-DISTNAME=		portaudio-svn-1406
-REVISION=		4
+DISTNAME=		portaudio-svn-1851
 CATEGORIES=		audio
+MASTER_SITES=		http://comstyle.com/source/
+EXTRACT_SUFX=		.tar.xz
 
 SHARED_LIBS=		portaudio	1.0
 
@@ -13,13 +14,11 @@ HOMEPAGE=		http://www.portaudio.com/
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c m pthread sndio
-
-MASTER_SITES=		http://jakemsr.trancell.org/distfiles/
+WANTLIB=		m pthread sndio
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
-AUTOCONF_VERSION=	2.61
+AUTOCONF_VERSION=	2.68
 CONFIGURE_STYLE=	autoconf no-autoheader
 CONFIGURE_ARGS=		--without-alsa --without-oss --without-jack
 

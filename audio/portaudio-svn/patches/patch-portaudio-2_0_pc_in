@@ -1,0 +1,12 @@
+$OpenBSD: patch-portaudio-2_0_pc_in,v 1.1 2013/03/12 00:59:50 brad Exp $
+--- portaudio-2.0.pc.in.orig	Sun Sep  2 22:02:42 2012
++++ portaudio-2.0.pc.in	Sun Sep  2 22:05:07 2012
+@@ -8,5 +8,6 @@ Description: Portable audio I/O
+ Requires:
+ Version: 19
+ 
+-Libs: -L${libdir} -lportaudio @LIBS@
+-Cflags: -I${includedir} @THREAD_CFLAGS@
++Libs: -L${libdir} -lportaudio
++Libs.private: @LIBS@
++Cflags: -I${includedir}

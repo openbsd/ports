@@ -1,18 +1,19 @@
---- Makefile.in.orig	Tue Feb 26 02:37:48 2008
-+++ Makefile.in	Sun Jan 18 10:09:36 2009
-@@ -120,6 +120,7 @@ LTOBJS := $(OBJS:.o=.lo)
- SRC_DIRS = \
- 	src/common \
- 	src/hostapi/alsa \
+$OpenBSD: patch-Makefile_in,v 1.4 2013/03/12 00:59:50 brad Exp $
+--- Makefile.in.orig	Thu Jul  5 23:44:34 2012
++++ Makefile.in	Thu Jul  5 23:49:34 2012
+@@ -146,6 +146,7 @@ SRC_DIRS = \
+ 	src/hostapi/dsound \
+ 	src/hostapi/jack \
+ 	src/hostapi/oss \
 +	src/hostapi/sndio \
- 	src/hostapi/asihpi \
- 	src/hostapi/asio \
- 	src/hostapi/coreaudio \
-@@ -136,7 +137,7 @@ SRC_DIRS = \
+ 	src/hostapi/wasapi \
+ 	src/hostapi/wdmks \
+ 	src/hostapi/wmme \
+@@ -155,7 +156,7 @@ SRC_DIRS = \
  SUBDIRS =
  @ENABLE_CXX_TRUE@SUBDIRS += bindings/cpp
  
--all: lib/$(PALIB) all-recursive tests
+-all: lib/$(PALIB) all-recursive tests examples selftests
 +all: lib/$(PALIB) all-recursive
  
  tests: bin-stamp $(TESTS)

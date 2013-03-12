@@ -372,7 +372,7 @@ OpenStream(struct PaUtilHostApiRepresentation *hostApi,
 	}	
 	s->base.streamInfo.inputLatency = 0;
 	s->base.streamInfo.outputLatency = (mode & SIO_PLAY) ?
-	    (double)(par.bufsz + PaUtil_GetBufferProcessorOutputLatency(&s->bufproc)) / (double)par.rate : 0;
+	    (double)(par.bufsz + PaUtil_GetBufferProcessorOutputLatencyFrames(&s->bufproc)) / (double)par.rate : 0;
 	s->base.streamInfo.sampleRate = par.rate;
 	s->active = 0;
 	s->stopped = 1;

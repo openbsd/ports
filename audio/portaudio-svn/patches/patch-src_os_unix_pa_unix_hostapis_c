@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_os_unix_pa_unix_hostapis_c,v 1.1 2009/03/14 02:31:40 jakemsr Exp $
---- src/os/unix/pa_unix_hostapis.c.orig	Thu May 22 01:47:01 2008
-+++ src/os/unix/pa_unix_hostapis.c	Sun Mar  8 22:53:55 2009
+$OpenBSD: patch-src_os_unix_pa_unix_hostapis_c,v 1.2 2013/03/12 00:59:50 brad Exp $
+--- src/os/unix/pa_unix_hostapis.c.orig	Thu Jul  5 23:44:45 2012
++++ src/os/unix/pa_unix_hostapis.c	Thu Jul  5 23:49:33 2012
 @@ -44,6 +44,7 @@
  
  PaError PaJack_Initialize( PaUtilHostApiRepresentation **hostApi, PaHostApiIndex index );
@@ -9,15 +9,14 @@ $OpenBSD: patch-src_os_unix_pa_unix_hostapis_c,v 1.1 2009/03/14 02:31:40 jakemsr
  PaError PaOSS_Initialize( PaUtilHostApiRepresentation **hostApi, PaHostApiIndex index );
  /* Added for IRIX, Pieter, oct 2, 2003: */
  PaError PaSGI_Initialize( PaUtilHostApiRepresentation **hostApi, PaHostApiIndex index );
-@@ -79,6 +80,11 @@ PaUtilHostApiInitializer *paHostApiInitializers[] =
+@@ -78,6 +79,10 @@ PaUtilHostApiInitializer *paHostApiInitializers[] =
  #endif
  
  #endif  /* __linux__ */
 +
-+
 +#ifdef PA_USE_SNDIO
-+        PaSndio_Initialize,
++	PaSndio_Initialize,
 +#endif
  
- #ifdef PA_USE_JACK
+ #if PA_USE_JACK
          PaJack_Initialize,

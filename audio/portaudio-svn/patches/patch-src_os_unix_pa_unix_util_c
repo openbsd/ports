@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_os_unix_pa_unix_util_c,v 1.1 2012/05/19 06:04:22 ajacoutot Exp $
---- src/os/unix/pa_unix_util.c.orig	Wed May 16 20:58:26 2012
-+++ src/os/unix/pa_unix_util.c	Wed May 16 21:06:25 2012
-@@ -218,6 +218,7 @@ static PaError BoostPriority( PaUnixThread* self )
+$OpenBSD: patch-src_os_unix_pa_unix_util_c,v 1.2 2013/03/12 00:59:50 brad Exp $
+--- src/os/unix/pa_unix_util.c.orig	Thu Jul  5 23:44:45 2012
++++ src/os/unix/pa_unix_util.c	Thu Jul  5 23:49:33 2012
+@@ -251,6 +251,7 @@ static PaError BoostPriority( PaUnixThread* self )
  
      assert( self );
  
@@ -9,7 +9,7 @@ $OpenBSD: patch-src_os_unix_pa_unix_util_c,v 1.1 2012/05/19 06:04:22 ajacoutot E
      if( pthread_setschedparam( self->thread, SCHED_FIFO, &spm ) != 0 )
      {
          PA_UNLESS( errno == EPERM, paInternalError );  /* Lack permission to raise priority */
-@@ -228,6 +229,7 @@ static PaError BoostPriority( PaUnixThread* self )
+@@ -261,6 +262,7 @@ static PaError BoostPriority( PaUnixThread* self )
      {
          result = 1; /* Success */
      }
@@ -17,7 +17,7 @@ $OpenBSD: patch-src_os_unix_pa_unix_util_c,v 1.1 2012/05/19 06:04:22 ajacoutot E
  error:
      return result;
  }
-@@ -266,8 +268,10 @@ PaError PaUnixThread_New( PaUnixThread* self, void* (*
+@@ -299,8 +301,10 @@ PaError PaUnixThread_New( PaUnixThread* self, void* (*
  #endif
  
      PA_UNLESS( !pthread_attr_init( &attr ), paInternalError );
@@ -28,7 +28,7 @@ $OpenBSD: patch-src_os_unix_pa_unix_util_c,v 1.1 2012/05/19 06:04:22 ajacoutot E
  
      PA_UNLESS( !pthread_create( &self->thread, &attr, threadFunc, threadArg ), paInternalError );
      started = 1;
-@@ -314,7 +318,9 @@ PaError PaUnixThread_New( PaUnixThread* self, void* (*
+@@ -347,7 +351,9 @@ PaError PaUnixThread_New( PaUnixThread* self, void* (*
          {
              int policy;
              struct sched_param spm;
