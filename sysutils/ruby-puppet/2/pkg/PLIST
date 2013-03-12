@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2013/03/08 16:12:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/03/12 18:52:11 robert Exp $
 @pkgpath sysutils/ruby-puppet
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
@@ -197,6 +197,7 @@ ${MODRUBY_SITEDIR}/puppet/indirector/code.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/couch.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/direct_file_server.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/envelope.rb
+${MODRUBY_SITEDIR}/puppet/indirector/errors.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/exec.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/face.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/facts/
@@ -209,6 +210,7 @@ ${MODRUBY_SITEDIR}/puppet/indirector/facts/memory.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/facts/network_device.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/facts/rest.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/facts/store_configs.rb
+${MODRUBY_SITEDIR}/puppet/indirector/resource/validator.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/facts/yaml.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/file_bucket_file/
 ${MODRUBY_SITEDIR}/puppet/indirector/file_bucket_file/file.rb
