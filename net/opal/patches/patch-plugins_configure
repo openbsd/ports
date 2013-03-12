@@ -1,12 +1,12 @@
-$OpenBSD: patch-plugins_configure,v 1.9 2012/11/27 08:13:15 ajacoutot Exp $
---- plugins/configure.orig	Mon Nov 26 11:48:31 2012
-+++ plugins/configure	Tue Nov 27 08:23:29 2012
+$OpenBSD: patch-plugins_configure,v 1.10 2013/03/12 05:19:57 brad Exp $
+--- plugins/configure.orig	Tue Feb 19 21:18:10 2013
++++ plugins/configure	Mon Mar 11 19:55:41 2013
 @@ -6481,7 +6481,7 @@ $as_echo "#define PLUGIN_CODEC_DLL_EXPORTS 1" >>confde
  
          *)
            CFLAGS="$CFLAGS -fPIC"
 -          LDSO='-shared -Wl,-soname,$(SONAME)'
-+          LDSO='-shared -fPIC -Wl,-soname,$(SONAME)'
++          LDSO='-shared -fPIC'
            PLUGINEXT=so
            for ac_header in sys/time.h sys/file.h netinet/in.h
  do :

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2013/03/11 11:35:50 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2013/03/12 05:19:57 brad Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Open Phone Abstraction Library
 
 DISTNAME=	opal-3.10.10
+REVISION=	0
 
 SHARED_LIBS=	opal	3.1	# 3.10.10
 

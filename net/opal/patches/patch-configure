@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.7 2013/03/02 14:05:59 ajacoutot Exp $
---- configure.orig	Wed Feb 20 03:18:59 2013
-+++ configure	Sun Feb 24 09:19:31 2013
+$OpenBSD: patch-configure,v 1.8 2013/03/12 05:19:57 brad Exp $
+--- configure.orig	Tue Feb 19 21:18:59 2013
++++ configure	Mon Mar 11 19:55:11 2013
 @@ -4601,7 +4601,7 @@ fi
  
  WFLAGS=
@@ -15,7 +15,7 @@ $OpenBSD: patch-configure,v 1.7 2013/03/02 14:05:59 ajacoutot Exp $
  
  
 -          LDSOOPTS="-shared -Wl,-soname,\$(LIB_FILENAME_SHARED_PAT)"
-+          LDSOOPTS="-shared -fPIC -Wl,-soname,\$(LIB_FILENAME_SHARED_PAT)"
++          LDSOOPTS="-shared -fPIC"
  
            HAVE_RANLIB=yes
          ;;
