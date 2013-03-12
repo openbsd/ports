@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.4 2013/03/12 16:22:59 ajacoutot Exp $
+--- configure.orig	Tue Mar 12 17:10:16 2013
++++ configure	Tue Mar 12 17:10:37 2013
+@@ -16504,7 +16504,7 @@ else
+ $as_echo "yes" >&6; }
+ 	ac_cv_flac=yes
+ fi
+-		FLAC_CFLAGS=`echo $FLAC_CFLAGS | $SED "s/FLAC$//"`
++		FLAC_CFLAGS=`echo $FLAC_CFLAGS | $SED "s/\/FLAC//"`
+ 		if test "$ac_cv_flac" = "no" ; then
+ 			enable_flac=no
+ 		fi
