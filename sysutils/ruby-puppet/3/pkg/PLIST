@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2013/03/08 16:12:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/03/12 18:53:49 robert Exp $
 @pkgpath sysutils/ruby-puppet
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
@@ -207,6 +207,7 @@ ${MODRUBY_SITEDIR}/puppet/indirector/data_binding/hiera.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/data_binding/none.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/direct_file_server.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/envelope.rb
+${MODRUBY_SITEDIR}/puppet/indirector/errors.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/exec.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/face.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/facts/
@@ -219,6 +220,7 @@ ${MODRUBY_SITEDIR}/puppet/indirector/facts/memory.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/facts/network_device.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/facts/rest.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/facts/store_configs.rb
+${MODRUBY_SITEDIR}/puppet/indirector/resource/validator.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/facts/yaml.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/file_bucket_file/
 ${MODRUBY_SITEDIR}/puppet/indirector/file_bucket_file/file.rb
@@ -894,8 +896,8 @@ ${MODRUBY_SITEDIR}/puppet/util/windows/user.rb
 ${MODRUBY_SITEDIR}/puppet/util/zaml.rb
 ${MODRUBY_SITEDIR}/puppet/version.rb
 ${MODRUBY_SITEDIR}/semver.rb
-@man man/man8/extlookup2hiera.8
 @man man/man5/puppet.conf.5
+@man man/man8/extlookup2hiera.8
 @man man/man8/puppet-agent.8
 @man man/man8/puppet-apply.8
 @man man/man8/puppet-ca.8
