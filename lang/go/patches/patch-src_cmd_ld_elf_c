@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_cmd_ld_elf_c,v 1.1 2012/09/19 21:10:38 sthen Exp $
---- src/cmd/ld/elf.c.orig	Thu Jun 14 04:23:38 2012
-+++ src/cmd/ld/elf.c	Mon Sep 17 11:38:32 2012
-@@ -348,20 +348,16 @@ elfwriteinterp(vlong stridx)
+$OpenBSD: patch-src_cmd_ld_elf_c,v 1.2 2013/03/12 09:57:11 jsing Exp $
+--- src/cmd/ld/elf.c.orig	Mon Sep 24 05:43:12 2012
++++ src/cmd/ld/elf.c	Sun Nov 18 02:37:55 2012
+@@ -351,20 +351,16 @@ elfwriteinterp(vlong stridx)
  	return sh->size;
  }
  
@@ -29,7 +29,7 @@ $OpenBSD: patch-src_cmd_ld_elf_c,v 1.1 2012/09/19 21:10:38 sthen Exp $
  	sh->addr = startva + resoff - n;
  	sh->off = resoff - n;
  	sh->size = n;
-@@ -369,8 +365,9 @@ elfnetbsdsig(ElfShdr *sh, uint64 startva, uint64 resof
+@@ -372,8 +368,9 @@ elfnetbsdsig(ElfShdr *sh, uint64 startva, uint64 resof
  	return n;
  }
  
@@ -41,7 +41,7 @@ $OpenBSD: patch-src_cmd_ld_elf_c,v 1.1 2012/09/19 21:10:38 sthen Exp $
  	ElfShdr *sh = nil;
  	int i;
  
-@@ -378,15 +375,79 @@ elfwritenetbsdsig(vlong stridx) {
+@@ -381,15 +378,79 @@ elfwritenetbsdsig(vlong stridx) {
  		if(shdr[i]->name == stridx)
  			sh = shdr[i];
  	if(sh == nil)

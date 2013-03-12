@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_pkg_runtime_sys_openbsd_amd64_s,v 1.2 2012/04/15 13:37:27 jsing Exp $
---- src/pkg/runtime/sys_openbsd_amd64.s.orig	Wed Mar 28 15:49:26 2012
-+++ src/pkg/runtime/sys_openbsd_amd64.s	Fri Mar  2 02:03:18 2012
-@@ -8,20 +8,23 @@
+$OpenBSD: patch-src_pkg_runtime_sys_openbsd_amd64_s,v 1.3 2013/03/12 09:57:11 jsing Exp $
+--- src/pkg/runtime/sys_openbsd_amd64.s.orig	Mon Sep 24 05:43:12 2012
++++ src/pkg/runtime/sys_openbsd_amd64.s	Sun Nov 18 03:23:21 2012
+@@ -8,20 +8,25 @@
  
  #include "zasm_GOOS_GOARCH.h"
  
@@ -23,11 +23,13 @@ $OpenBSD: patch-src_pkg_runtime_sys_openbsd_amd64_s,v 1.2 2012/04/15 13:37:27 js
 +	MOVQ	fn+24(FP), R12
  
 -	MOVL	$251, AX		// sys_rfork
-+	LEAQ	8(SP), DI
-+	MOVQ	$0, 0(DI)		// tf_tcb
-+	MOVQ	$0, 8(DI)		// tf_tid
-+	MOVL	$0, 16(DI)		// tf_flags
-+	MOVL	$328, AX		// sys___tfork
++	LEAQ	m_procid(R8), AX
++	MOVQ	SP, DI			// arg 1 - params
++	MOVQ	$0, 0(DI)		//   tf_tcb
++	MOVQ	AX, 8(DI)		//   tf_tid
++	MOVQ	SI, 16(DI)		//   tf_stack
++	MOVQ	$24, SI			// arg 2 - psize
++	MOVL	$8, AX			// sys___tfork
  	SYSCALL
  
 -	// Return if rfork syscall failed
@@ -35,7 +37,22 @@ $OpenBSD: patch-src_pkg_runtime_sys_openbsd_amd64_s,v 1.2 2012/04/15 13:37:27 js
  	JCC	3(PC)
  	NEGL	AX
  	RET
-@@ -53,7 +56,8 @@ TEXT runtime·rfork_thread(SB),7,$0
+@@ -31,14 +36,6 @@ TEXT runtime·rfork_thread(SB),7,$0
+ 	JEQ	2(PC)
+ 	RET
+ 
+-	// In child, on new stack.
+-	MOVQ	SI, SP
+-
+-	// Initialize m->procid to thread ID
+-	MOVL	$299, AX		// sys_getthrid
+-	SYSCALL
+-	MOVQ	AX, m_procid(R8)
+-
+ 	// Set FS to point at m->tls.
+ 	LEAQ	m_tls(R8), DI
+ 	CALL	runtime·settls(SB)
+@@ -53,7 +50,8 @@ TEXT runtime·rfork_thread(SB),7,$0
  	CALL	R12
  
  	// It shouldn't return.  If it does, exit
@@ -45,7 +62,7 @@ $OpenBSD: patch-src_pkg_runtime_sys_openbsd_amd64_s,v 1.2 2012/04/15 13:37:27 js
  	SYSCALL
  	JMP	-3(PC)			// keep exiting
  
-@@ -67,14 +71,15 @@ TEXT runtime·thrsleep(SB),7,$0
+@@ -67,14 +65,15 @@ TEXT runtime·thrsleep(SB),7,$0
  	MOVL	16(SP), SI		// arg 2 - clock_id
  	MOVQ	24(SP), DX		// arg 3 - tp
  	MOVQ	32(SP), R10		// arg 4 - lock
@@ -63,7 +80,7 @@ $OpenBSD: patch-src_pkg_runtime_sys_openbsd_amd64_s,v 1.2 2012/04/15 13:37:27 js
  	SYSCALL
  	RET
  
-@@ -83,13 +88,14 @@ TEXT runtime·exit(SB),7,$-8
+@@ -83,13 +82,14 @@ TEXT runtime·exit(SB),7,$-8
  	MOVL	8(SP), DI		// arg 1 - exit status
  	MOVL	$1, AX			// sys_exit
  	SYSCALL
@@ -81,7 +98,7 @@ $OpenBSD: patch-src_pkg_runtime_sys_openbsd_amd64_s,v 1.2 2012/04/15 13:37:27 js
  	RET
  
  TEXT runtime·write(SB),7,$-8
-@@ -140,7 +146,7 @@ TEXT time·now(SB), 7, $32
+@@ -140,7 +140,7 @@ TEXT time·now(SB), 7, $32
  	MOVL	$116, AX		// sys_gettimeofday
  	SYSCALL
  	MOVQ	8(SP), AX		// sec
@@ -90,7 +107,7 @@ $OpenBSD: patch-src_pkg_runtime_sys_openbsd_amd64_s,v 1.2 2012/04/15 13:37:27 js
  
  	// sec is in AX, usec in DX
  	MOVQ	AX, sec+0(FP)
-@@ -154,7 +160,7 @@ TEXT runtime·nanotime(SB),7,$32
+@@ -154,7 +154,7 @@ TEXT runtime·nanotime(SB),7,$32
  	MOVL	$116, AX		// sys_gettimeofday
  	SYSCALL
  	MOVQ	8(SP), AX		// sec
@@ -99,7 +116,7 @@ $OpenBSD: patch-src_pkg_runtime_sys_openbsd_amd64_s,v 1.2 2012/04/15 13:37:27 js
  
  	// sec is in AX, usec in DX
  	// return nsec in AX
-@@ -170,9 +176,19 @@ TEXT runtime·sigaction(SB),7,$-8
+@@ -170,9 +170,19 @@ TEXT runtime·sigaction(SB),7,$-8
  	MOVL	$46, AX
  	SYSCALL
  	JCC	2(PC)
@@ -120,7 +137,7 @@ $OpenBSD: patch-src_pkg_runtime_sys_openbsd_amd64_s,v 1.2 2012/04/15 13:37:27 js
  TEXT runtime·sigtramp(SB),7,$64
  	get_tls(BX)
  	
-@@ -226,7 +242,7 @@ TEXT runtime·munmap(SB),7,$0
+@@ -226,7 +236,7 @@ TEXT runtime·munmap(SB),7,$0
  	MOVL	$73, AX			// sys_munmap
  	SYSCALL
  	JCC	2(PC)
@@ -129,7 +146,7 @@ $OpenBSD: patch-src_pkg_runtime_sys_openbsd_amd64_s,v 1.2 2012/04/15 13:37:27 js
  	RET
  
  TEXT runtime·sigaltstack(SB),7,$-8
-@@ -235,7 +251,7 @@ TEXT runtime·sigaltstack(SB),7,$-8
+@@ -235,20 +245,17 @@ TEXT runtime·sigaltstack(SB),7,$-8
  	MOVQ	$288, AX		// sys_sigaltstack
  	SYSCALL
  	JCC	2(PC)
@@ -138,8 +155,15 @@ $OpenBSD: patch-src_pkg_runtime_sys_openbsd_amd64_s,v 1.2 2012/04/15 13:37:27 js
  	RET
  
  // set tls base to DI
-@@ -248,7 +264,7 @@ TEXT runtime·settls(SB),7,$8
- 	MOVQ	$165, AX		// sys_sysarch
+-TEXT runtime·settls(SB),7,$8
++TEXT runtime·settls(SB),7,$0
+ 	// adjust for ELF: wants to use -16(FS) and -8(FS) for g and m
+ 	ADDQ	$16, DI
+-	MOVQ	DI, 0(SP)
+-	MOVQ	SP, SI
+-	MOVQ	$12, DI			// AMD64_SET_FSBASE (machine/sysarch.h)
+-	MOVQ	$165, AX		// sys_sysarch
++	MOVQ	$329, AX		// sys___settcb
  	SYSCALL
  	JCC	2(PC)
 -	MOVL	$0xf1, 0xf1  // crash
@@ -147,7 +171,7 @@ $OpenBSD: patch-src_pkg_runtime_sys_openbsd_amd64_s,v 1.2 2012/04/15 13:37:27 js
  	RET
  
  TEXT runtime·sysctl(SB),7,$0
-@@ -260,7 +276,7 @@ TEXT runtime·sysctl(SB),7,$0
+@@ -260,7 +267,7 @@ TEXT runtime·sysctl(SB),7,$0
  	MOVQ	48(SP), R9		// arg 6 - newlen
  	MOVQ	$202, AX		// sys___sysctl
  	SYSCALL
