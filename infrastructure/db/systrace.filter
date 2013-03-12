@@ -75,6 +75,7 @@
 	native-fswrite: filename eq "" then deny[enoent]
 	native-fswrite: filename eq "/dev/crypto" then permit
 	native-fswrite: filename eq "/dev/null" then permit
+	native-fswrite: filename eq "/dev/ptm" then permit
 	native-fswrite: filename eq "/dev/stdout" then permit
 	native-fswrite: filename eq "/dev/tty" then permit
 	native-fswrite: filename eq "/dev/zero" then permit
