@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2013/03/06 08:51:00 ajacoutot Exp $
+$OpenBSD: README,v 1.5 2013/03/12 06:13:33 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -40,5 +40,9 @@ to run the installation script.
 
 Upgrades
 ========
+After upgrading, it is advised to clear the cache and re-log into Zurmo
+by pointing your browser to:
+    http://<hostname>/zurmo/app/index.php/zurmo/default/login?clearCache=1
+
 Refer to the online documentation at:
     http://zurmo.org/upgrades
