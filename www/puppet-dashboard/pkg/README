@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2013/03/12 10:44:50 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2013/03/12 10:59:50 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -56,6 +56,15 @@ ${SYSCONFDIR}/puppet/puppet.conf needs to be edited accordingly:
 [master]
     reports = store, http
     reporturl = http://dashboard.domain.tld:3000/reports/upload
+
+Node Classification
+-------------------
+To use the Dashboard external node classifier (ENC) alongside Puppet DSL
+node definitions, the master should contain the following lines (to be
+adapted accordingly):
+[master]
+    node_terminus = exec
+    external_nodes = /usr/bin/env PUPPET_DASHBOARD_URL=http://localhost:3000 ${INSTDIR}/bin/external_node
 
 Maintenance
 ===========

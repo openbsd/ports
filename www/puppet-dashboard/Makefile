@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/12 10:44:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/12 10:59:50 ajacoutot Exp $
 
 COMMENT=	overview of your Puppet ecosystem
 
 DISTNAME=	puppet-dashboard-1.2.22
 CATEGORIES=	www sysutils
+REVISION=	0
 
 HOMEPAGE=	https://puppetlabs.com/puppet/related-projects/dashboard/
 
@@ -34,6 +35,8 @@ pre-configure:
 	perl -pi -e 's,/usr/share,${PREFIX},g' \
 		${WRKSRC}/examples/puppet-dashboard.cleanup_reports.cron \
 		${WRKSRC}/lib/data_generator.rb
+	perl -pi -e 's, /usr/bin/ruby,${RUBY},' ${WRKSRC}/bin/external_node
+
 
 do-install:
 	mkdir -p ${INSTDIR}
