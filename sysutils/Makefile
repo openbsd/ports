@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.283 2013/03/08 12:10:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.284 2013/03/12 07:35:16 jasper Exp $
 
      SUBDIR =
      SUBDIR += LPRng
@@ -54,6 +54,7 @@
      SUBDIR += dwdiff
      SUBDIR += e2fsprogs
      SUBDIR += entr
+     SUBDIR += erchef
      SUBDIR += erl-lager
      SUBDIR += erl-stats_hero
      SUBDIR += eventlog
