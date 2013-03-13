@@ -1,9 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.20 2013/01/14 02:14:41 brad Exp $
-@lib lib/libavcodec.so.${LIBavcodec_VERSION}
-@lib lib/libavdevice.so.${LIBavdevice_VERSION}
-@lib lib/libavfilter.so.${LIBavfilter_VERSION}
-@lib lib/libavformat.so.${LIBavformat_VERSION}
-@lib lib/libavutil.so.${LIBavutil_VERSION}
-@lib lib/libpostproc.so.${LIBpostproc_VERSION}
-@lib lib/libswresample.so.${LIBswresample_VERSION}
-@lib lib/libswscale.so.${LIBswscale_VERSION}

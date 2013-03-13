@@ -1,16 +1,16 @@
-$OpenBSD: patch-library_mak,v 1.1 2013/01/14 02:14:41 brad Exp $
---- library.mak.orig	Thu Sep 13 23:19:10 2012
-+++ library.mak	Thu Sep 13 23:23:29 2012
-@@ -42,7 +42,7 @@ $(SUBDIR)$(SLIBNAME): $(SUBDIR)$(SLIBNAME_WITH_MAJOR)
+$OpenBSD: patch-library_mak,v 1.2 2013/03/13 02:26:45 brad Exp $
+--- library.mak.orig	Sun Jan 13 21:30:15 2013
++++ library.mak	Tue Jan 15 02:04:32 2013
+@@ -53,7 +53,7 @@ $(SUBDIR)$(SLIBNAME): $(SUBDIR)$(SLIBNAME_WITH_MAJOR)
  
  $(SUBDIR)$(SLIBNAME_WITH_MAJOR): $(OBJS) $(SUBDIR)lib$(NAME).ver
  	$(SLIB_CREATE_DEF_CMD)
--	$$(LD) $(SHFLAGS) $(LDFLAGS) -o $$@ $$(filter %.o,$$^) $(FFEXTRALIBS) $(EXTRAOBJS)
-+	$$(LD) $(SHFLAGS) $(LDFLAGS) -o $$@ $$(filter %.o,$$^) $(LIB$(NAME)_EXTRALIBS) $(EXTRAOBJS)
+-	$$(LD) $(SHFLAGS) $(LDFLAGS) $$(LD_O) $$(filter %.o,$$^) $(FFEXTRALIBS)
++	$$(LD) $(SHFLAGS) $(LDFLAGS) $$(LD_O) $$(filter %.o,$$^) $(LIB$(NAME)_EXTRALIBS)
  	$(SLIB_EXTRA_CMD)
  
  ifdef SUBDIR
-@@ -61,8 +61,6 @@ distclean:: clean
+@@ -70,8 +70,6 @@ distclean:: clean
  install-lib$(NAME)-shared: $(SUBDIR)$(SLIBNAME)
  	$(Q)mkdir -p "$(SHLIBDIR)"
  	$$(INSTALL) -m 755 $$< "$(SHLIBDIR)/$(SLIB_INSTALL_NAME)"

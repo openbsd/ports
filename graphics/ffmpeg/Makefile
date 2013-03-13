@@ -1,22 +1,21 @@
-# $OpenBSD: Makefile,v 1.96 2013/03/11 11:10:52 espie Exp $
+# $OpenBSD: Makefile,v 1.97 2013/03/13 02:26:44 brad Exp $
 
 COMMENT=	audio/video converter and streamer
 
-V=		20121026
+V=		20130214
 DISTNAME=	ffmpeg-git-${V}
 PKGNAME=	ffmpeg-${V}
-REVISION=	2
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://comstyle.com/source/
 EXTRACT_SUFX=	.tar.xz
 
-SHARED_LIBS=	avcodec		18.0 \
-		avdevice	6.0 \
-		avfilter	4.0 \
-		avformat	16.0 \
-		avutil		10.0 \
-		postproc	15.0 \
-		swresample	0.0 \
+SHARED_LIBS=	avcodec		19.0 \
+		avdevice	7.0 \
+		avfilter	5.0 \
+		avformat	17.0 \
+		avutil		11.0 \
+		postproc	15.1 \
+		swresample	0.1 \
 		swscale		5.0
 
 HOMEPAGE=	http://ffmpeg.org/
@@ -27,9 +26,9 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB=	SDL X11 Xext Xfixes bz2 c crypto gsm m mp3lame pthread \
-		schroedinger-1.0>=2 sndio speex ssl theoradec theoraenc \
-		vorbis vorbisenc vpx x264>=8 xvidcore z
+WANTLIB=	SDL X11 Xext Xfixes bz2 c crypto gsm m mp3lame opus \
+		pthread schroedinger-1.0>=2 sndio speex ssl theoradec \
+		theoraenc vorbis vorbisenc vpx x264>=8 xvidcore z
 
 BUILD_DEPENDS=	textproc/texi2html
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
@@ -38,6 +37,7 @@ BUILD_DEPENDS+=	devel/yasm
 LIB_DEPENDS=	archivers/bzip2 \
 		audio/lame \
 		audio/libvorbis \
+		audio/opus \
 		audio/speex \
 		audio/gsm \
 		devel/sdl \
@@ -48,7 +48,7 @@ LIB_DEPENDS=	archivers/bzip2 \
 		multimedia/xvidcore
 
 # inter-library dependencies for the current configuration
-LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -lgsm -lmp3lame -lschroedinger-1.0 -lspeex -ltheoradec -ltheoraenc -lvorbis -lvorbisenc -lvpx -lx264 -lxvidcore -lz -pthread
+LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -lgsm -lmp3lame -lopus -lschroedinger-1.0 -lspeex -ltheoradec -ltheoraenc -lvorbis -lvorbisenc -lvpx -lx264 -lxvidcore -lz -pthread
 LIBavdevice_EXTRALIBS=-L${X11BASE}/lib -lX11 -lXext -lXfixes -lsndio
 LIBavfilter_EXTRALIBS=
 LIBavformat_EXTRALIBS=-L${LOCALBASE}/lib -lbz2 -lssl -lcrypto -pthread
@@ -81,17 +81,20 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--disable-armv5te \
 		--disable-armv6 \
 		--disable-armv6t2 \
-		--disable-armvfp \
 		--disable-debug \
 		--disable-indev=jack \
 		--disable-indev=oss \
-		--disable-iwmmxt \
+		--disable-mips32r2 \
+		--disable-mipsdspr1 \
+		--disable-mipsdspr2 \
 		--disable-neon \
 		--disable-outdev=oss \
 		--disable-outdev=sdl \
+		--disable-vfp \
 		--enable-gpl \
 		--enable-libgsm \
 		--enable-libmp3lame \
+		--enable-libopus \
 		--enable-libschroedinger \
 		--enable-libspeex \
 		--enable-libtheora \
@@ -101,7 +104,6 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--enable-libxvid \
 		--enable-nonfree \
 		--enable-openssl \
-		--enable-runtime-cpudetect \
 		--enable-x11grab \
 		--extra-cflags="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		--extra-libs="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
@@ -124,9 +126,9 @@ CONFIGURE_ENV+=	LIBavcodec_EXTRALIBS="${LIBavcodec_EXTRALIBS}" \
 		LIBpostproc_LINKFLAGS="" \
 		LIBswresample_LINKFLAGS="" \
 		LIBswscale_LINKFLAGS="" \
-		LIBavcodec_REQUIRES="libavutil schroedinger-1.0 speex theoraenc vpx x264" \
-		LIBavdevice_REQUIRES="libavformat libavcodec libavfilter libavutil" \
-		LIBavfilter_REQUIRES="libavformat libavcodec libavutil libswresample libswscale" \
+		LIBavcodec_REQUIRES="libavutil opus schroedinger-1.0 speex theoraenc vpx x264" \
+		LIBavdevice_REQUIRES="libavcodec libavfilter libavformat libavutil" \
+		LIBavfilter_REQUIRES="libavcodec libavformat libavutil libpostproc libswresample libswscale" \
 		LIBavformat_REQUIRES="libavcodec libavutil" \
 		LIBavutil_REQUIRES="" \
 		LIBpostproc_REQUIRES="libavutil" \
@@ -147,8 +149,8 @@ MAKE_ENV=	V=1
 
 MAKE_FLAGS=	${VERSION_FLAGS} \
 		LIBavcodec_EXTRALIBS="-lavutil ${LIBavcodec_EXTRALIBS}" \
-		LIBavdevice_EXTRALIBS="-lavformat -lavcodec -lavfilter -lavutil ${LIBavdevice_EXTRALIBS}" \
-		LIBavfilter_EXTRALIBS="-lavformat -lavcodec -lavutil -lswresample -lswscale ${LIBavfilter_EXTRALIBS}" \
+		LIBavdevice_EXTRALIBS="-lavcodec -lavfilter -lavformat -lavutil ${LIBavdevice_EXTRALIBS}" \
+		LIBavfilter_EXTRALIBS="-lavcodec -lavformat -lavutil -lpostproc -lswresample -lswscale ${LIBavfilter_EXTRALIBS}" \
 		LIBavformat_EXTRALIBS="-lavcodec -lavutil ${LIBavformat_EXTRALIBS}" \
 		LIBavutil_EXTRALIBS="${LIBavutil_EXTRALIBS}" \
 		LIBpostproc_EXTRALIBS="-lavutil ${LIBpostproc_EXTRALIBS}" \
