@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/13 21:44:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/13 21:44:35 jasper Exp $
 
 COMMENT=	html editor designed for the experienced web designer
 
@@ -14,7 +14,7 @@ MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://www.erjobe.info/mainwiki/pmwiki/uploads/Main/August/
+MASTER_SITES=	${HOMEPAGE:=../mainwiki/pmwiki/uploads/Main/August/}
 
 MODULES=	x11/tk
 
