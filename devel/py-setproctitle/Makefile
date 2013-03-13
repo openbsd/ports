@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 10:50:26 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/13 09:01:31 benoit Exp $
 
 COMMENT =		library for getting/setting process names
 
-MODPY_EGG_VERSION =	1.1.6
+MODPY_EGG_VERSION =	1.1.7
 DISTNAME =		setproctitle-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -20,7 +20,7 @@ MODULES =		lang/python
 FLAVORS =		python3
 FLAVOR ?=
 
-WANTLIB +=		${MODPY_WANTLIB}
+WANTLIB +=		${MODPY_WANTLIB} pthread
 
 BUILD_DIR =		build/lib.${MODPY_VERSION}
 MODPY_DISTUTILS_BUILDARGS = --build-lib ${BUILD_DIR}

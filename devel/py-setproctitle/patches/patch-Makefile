@@ -1,10 +1,10 @@
-$OpenBSD: patch-Makefile,v 1.1 2012/04/17 13:00:43 mpi Exp $
+$OpenBSD: patch-Makefile,v 1.2 2013/03/13 09:01:35 benoit Exp $
 
 Copy missing file for python3 flavor and remove non supported cp option.
 
---- Makefile.orig	Mon Feb  6 13:49:36 2012
-+++ Makefile	Sun Apr  8 15:58:50 2012
-@@ -29,7 +29,7 @@
+--- Makefile.orig	Tue Feb  7 22:44:32 2012
++++ Makefile	Mon Mar 11 23:37:03 2013
+@@ -29,7 +29,7 @@ build:
  check: build tests/pyrun2
  	PYTHONPATH=`pwd`/$(BUILD_DIR):$$PYTHONPATH \
  	ROOT_PATH=$(ROOT_PATH) \
@@ -13,7 +13,7 @@ Copy missing file for python3 flavor and remove non supported cp option.
  
  tests/pyrun2: tests/pyrun.c
  	$(CC) $(PYINC) -o $@ $< $(PYLIB)
-@@ -48,9 +48,10 @@
+@@ -48,9 +48,10 @@ py3: MANIFEST
  	$(MKDIR) py3
  	$(MKDIR) py3/src
  	$(MKDIR) py3/tests
