@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/03/11 19:27:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/13 09:55:56 sthen Exp $
 
 COMMENT-main=	server to accept passive check results for Nagios/Icinga
 COMMENT-client=	client to send passive check results to Nagios/Icinga
@@ -27,6 +27,7 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-server
+SEPARATE_BUILD=		Yes
 
 MULTI_PACKAGES=		-main -client
 
