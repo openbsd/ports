@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2013/03/11 11:42:41 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2013/03/13 22:50:26 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -52,7 +52,6 @@ NO_TEST=		Yes
 # XXX: Bad, but saves a metric buttload of patches.
 pre-configure:
 	ln -sf ${RUBY} ${WRKDIR}/bin/ruby
-	${MODRUBY_ADJ_REPLACE}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gonzui/
