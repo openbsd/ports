@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2013/03/11 11:35:48 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2013/03/13 00:20:56 brad Exp $
 
 COMMENT=		BitTorrent library written in C++
 
 DISTNAME=		libtorrent-0.12.9
-REVISION=		1
+REVISION=		2
 EPOCH=			0
 SHARED_LIBS +=  	torrent 20.0	# .14.1
 CATEGORIES=		net devel
@@ -22,8 +22,7 @@ LIB_DEPENDS=		devel/libsigc++-2
 
 USE_LIBTOOL=		Yes
 
-AUTOCONF_VERSION=	2.68
-CONFIGURE_STYLE=	autoconf
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-static \
 			--with-kqueue \
