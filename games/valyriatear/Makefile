@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/03/13 15:49:53 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/13 22:44:45 bentley Exp $
 
 V =		0.5.0
 COMMENT =	free J-RPG game
@@ -17,7 +17,8 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 PERMIT_PACKAGE_CDROM =		Yes
 
 WANTLIB += GL GLU ICE SDL SDL_image SDL_ttf SM X11 Xext c jpeg
-WANTLIB += lua5.1 m ogg openal png pthread stdc++ vorbis vorbisfile z
+WANTLIB += m ogg openal png pthread stdc++ vorbis vorbisfile z
+WANTLIB += ${MODLUA_WANTLIB}
 
 MASTER_SITES =	https://github.com/Bertram25/ValyriaTear/archive/${V}/
 
@@ -44,7 +45,7 @@ NO_TEST =	Yes
 # Otherwise we get a bunch of undefined references linker errors.
 # I pushed this upstream; next update this goes away.
 post-extract:
-	cp ${FILESDIR}/* ${WRKSRC}/CMake/Modules/
+	cp ${FILESDIR}/*.cmake ${WRKSRC}/CMake/Modules/
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/valyriatear
