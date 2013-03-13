@@ -1,5 +1,0 @@
-#!/bin/sh
-#
-# $OpenBSD: activemq,v 1.1.1.1 2013/02/05 15:08:45 jasper Exp $
-
-exec ${TRUEPREFIX}/activemq/bin/activemq "$@"

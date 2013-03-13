@@ -1,4 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/03/02 12:31:35 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/03/13 16:30:11 ajacoutot Exp $
+@newgroup _activemq:714
+@newuser _activemq:714:714:daemon:Apache ActiveMQ:/var/empty:/sbin/nologin
+@extraunexec rm -rf %D/activemq/data/audit.log
+@extraunexec rm -rf %D/activemq/data/*[!activemq.log]
+@extraunexec rm -rf %D/activemq/tmp/*
 activemq/
 activemq/LICENSE
 activemq/NOTICE
@@ -11,41 +16,13 @@ activemq/bin/activemq-admin
 activemq/bin/activemq.jar
 activemq/bin/diag
 activemq/bin/wrapper.jar
-activemq/conf/
-@sample ${SYSCONFDIR}/default/
-activemq/conf/activemq-command.xml
-activemq/conf/activemq-demo.xml
-activemq/conf/activemq-dynamic-network-broker1.xml
-activemq/conf/activemq-dynamic-network-broker2.xml
-activemq/conf/activemq-jdbc.xml
-activemq/conf/activemq-scalability.xml
-activemq/conf/activemq-security.xml
-activemq/conf/activemq-specjms.xml
-activemq/conf/activemq-static-network-broker1.xml
-activemq/conf/activemq-static-network-broker2.xml
-activemq/conf/activemq-stomp.xml
-activemq/conf/activemq-throughput.xml
-activemq/conf/activemq.xml
-activemq/conf/activemqrc
-@sample ${SYSCONFDIR}/default/activemq
-activemq/conf/broker-localhost.cert
-activemq/conf/broker.ks
-activemq/conf/broker.ts
-activemq/conf/camel.xml
-activemq/conf/client.ks
-activemq/conf/client.ts
-activemq/conf/credentials-enc.properties
-activemq/conf/credentials.properties
-activemq/conf/jetty-demo.xml
-activemq/conf/jetty-realm.properties
-activemq/conf/jetty.xml
-activemq/conf/jmx.access
-activemq/conf/jmx.password
-activemq/conf/log4j.properties
-activemq/conf/logging.properties
+@owner _activemq
+@group _activemq
 activemq/data/
 @comment no checksum
 activemq/data/activemq.log
+@owner
+@group
 activemq/docs/
 activemq/docs/index.html
 activemq/example/
@@ -404,7 +381,70 @@ activemq/webapps/index.html
 activemq/webapps/styles/
 activemq/webapps/styles/site.css
 activemq/webapps/styles/type-settings.css
-bin/activemq
-bin/activemq-admin
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/examples/activemq/
+share/examples/activemq/activemqrc
+@sample ${SYSCONFDIR}/activemqrc
+share/examples/activemq/conf/
+@sample activemq/conf/
+share/examples/activemq/conf/activemq-command.xml
+@sample activemq/conf/activemq-command.xml
+share/examples/activemq/conf/activemq-demo.xml
+@sample activemq/conf/activemq-demo.xml
+share/examples/activemq/conf/activemq-dynamic-network-broker1.xml
+@sample activemq/conf/activemq-dynamic-network-broker1.xml
+share/examples/activemq/conf/activemq-dynamic-network-broker2.xml
+@sample activemq/conf/activemq-dynamic-network-broker2.xml
+share/examples/activemq/conf/activemq-jdbc.xml
+@sample activemq/conf/activemq-jdbc.xml
+share/examples/activemq/conf/activemq-scalability.xml
+@sample activemq/conf/activemq-scalability.xml
+share/examples/activemq/conf/activemq-security.xml
+@sample activemq/conf/activemq-security.xml
+share/examples/activemq/conf/activemq-specjms.xml
+@sample activemq/conf/activemq-specjms.xml
+share/examples/activemq/conf/activemq-static-network-broker1.xml
+@sample activemq/conf/activemq-static-network-broker1.xml
+share/examples/activemq/conf/activemq-static-network-broker2.xml
+@sample activemq/conf/activemq-static-network-broker2.xml
+share/examples/activemq/conf/activemq-stomp.xml
+@sample activemq/conf/activemq-stomp.xml
+share/examples/activemq/conf/activemq-throughput.xml
+@sample activemq/conf/activemq-throughput.xml
+share/examples/activemq/conf/activemq.xml
+@sample activemq/conf/activemq.xml
+share/examples/activemq/conf/broker-localhost.cert
+@sample activemq/conf/broker-localhost.cert
+share/examples/activemq/conf/broker.ks
+@sample activemq/conf/broker.ks
+share/examples/activemq/conf/broker.ts
+@sample activemq/conf/broker.ts
+share/examples/activemq/conf/camel.xml
+@sample activemq/conf/camel.xml
+share/examples/activemq/conf/client.ks
+@sample activemq/conf/client.ks
+share/examples/activemq/conf/client.ts
+@sample activemq/conf/client.ts
+share/examples/activemq/conf/credentials-enc.properties
+@sample activemq/conf/credentials-enc.properties
+share/examples/activemq/conf/credentials.properties
+@sample activemq/conf/credentials.properties
+share/examples/activemq/conf/jetty-demo.xml
+@sample activemq/conf/jetty-demo.xml
+share/examples/activemq/conf/jetty-realm.properties
+@sample activemq/conf/jetty-realm.properties
+share/examples/activemq/conf/jetty.xml
+@sample activemq/conf/jetty.xml
+share/examples/activemq/conf/jmx.access
+@sample activemq/conf/jmx.access
+share/examples/activemq/conf/jmx.password
+@sample activemq/conf/jmx.password
+share/examples/activemq/conf/log4j.properties
+@sample activemq/conf/log4j.properties
+share/examples/activemq/conf/logging.properties
+@sample activemq/conf/logging.properties
+@owner _activemq
+@group _activemq
+@sample activemq/tmp/
+@owner
+@group
 @rcscript ${RCDIR}/activemq

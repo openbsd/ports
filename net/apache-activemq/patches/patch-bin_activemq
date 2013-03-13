@@ -1,19 +1,42 @@
-$OpenBSD: patch-bin_activemq,v 1.1.1.1 2013/02/05 15:08:45 jasper Exp $
-
-Don't reserve more memory upfront than the default limits allow.
-
---- bin/activemq.orig	Tue Oct  2 18:15:33 2012
-+++ bin/activemq	Tue Feb  5 08:43:45 2013
-@@ -151,9 +151,9 @@ fi
- JAVACMD="auto"
+$OpenBSD: patch-bin_activemq,v 1.2 2013/03/13 16:30:11 ajacoutot Exp $
+--- bin/activemq.orig	Wed Feb  6 17:53:14 2013
++++ bin/activemq	Wed Mar 13 16:03:24 2013
+@@ -29,7 +29,7 @@
  
- # Set jvm memory configuration
--if [ -z "$ACTIVEMQ_OPTS_MEMORY" ] ; then
--    ACTIVEMQ_OPTS_MEMORY="-Xms1G -Xmx1G"
--fi
-+#if [ -z "$ACTIVEMQ_OPTS_MEMORY" ] ; then
-+#    ACTIVEMQ_OPTS_MEMORY="-Xms1G -Xmx1G"
-+#fi
+ # ------------------------------------------------------------------------
+ # CONFIGURATION
+-ACTIVEMQ_CONFIGS="/etc/default/activemq $HOME/.activemqrc"
++ACTIVEMQ_CONFIGS="/etc/activemqrc $HOME/.activemqrc"
  
- # Uncomment to enable audit logging
- #ACTIVEMQ_OPTS="$ACTIVEMQ_OPTS -Dorg.apache.activemq.audit=true"
+ # Backup invocation parameters
+ COMMANDLINE_ARGS="$@"
+@@ -37,7 +37,7 @@ COMMANDLINE_ARGS="$@"
+ # For using instances
+ if ( basename $0 | grep "activemq-instance-" > /dev/null);then
+    INST="`basename $0|sed 's/^activemq-instance-//;s/\.sh$//'`"
+-   ACTIVEMQ_CONFIGS="/etc/default/activemq-instance-${INST} $HOME/.activemqrc-instance-${INST}"
++   ACTIVEMQ_CONFIGS="/etc/activemqrc-instance-${INST} $HOME/.activemqrc-instance-${INST}"
+    echo "INFO: Using alternative activemq configuration files: $ACTIVEMQ_CONFIGS"
+ fi
+ 
+@@ -593,7 +593,6 @@ invoke_stop(){
+          echo
+          echo "INFO: Regular shutdown not successful,  sending SIGKILL to process with pid '$PID'"
+          kill -KILL $PID
+-         RET="1"
+        fi
+     elif [ -f "$ACTIVEMQ_PIDFILE" ];then
+        echo "ERROR: No or outdated process id in '$ACTIVEMQ_PIDFILE'"
+@@ -651,10 +650,10 @@ Tasks provided by the sysv init script:
+                       (see next usage section)
+ 
+ Configuration of this script:
+-    The configuration of this script can be placed on /etc/default/activemq or $HOME/.activemqrc.
++    The configuration of this script can be placed on /etc/activemqrc or $HOME/.activemqrc.
+     To use additional configurations for running multiple instances on the same operating system
+     rename or symlink script to a name matching to activemq-instance-<INSTANCENAME>.
+-    This changes the configuration location to /etc/default/activemq-instance-<INSTANCENAME> and
++    This changes the configuration location to /etc/activemqrc-instance-<INSTANCENAME> and
+     \$HOME/.activemqrc-instance-<INSTANCENAME>. Configuration files in /etc have higher precedence.
+ EOF
+   exit $RET
