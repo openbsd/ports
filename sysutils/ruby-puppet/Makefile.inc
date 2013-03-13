@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2013/03/11 12:27:54 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2013/03/13 09:56:19 ajacoutot Exp $
 
 COMMENT ?=	centralised configuration management for networks
 DISTNAME ?=	puppet-${VERSION}
@@ -12,6 +12,7 @@ FILESDIR ?=	${.CURDIR}/../files
 
 CATEGORIES +=	sysutils net
 MODULES +=	lang/ruby
+SUBST_VARS +=	RUBY
 
 BUILD_DEPENDS +=${RUN_DEPENDS}
 RUN_DEPENDS +=	converters/ruby-json,${MODRUBY_FLAVOR} \

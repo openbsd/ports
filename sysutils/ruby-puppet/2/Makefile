@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/12 18:52:11 robert Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/13 09:56:19 ajacoutot Exp $
 
 VERSION=	2.7.21
+REVISION=	0
 
 # remove CVS ID
 post-extract:
