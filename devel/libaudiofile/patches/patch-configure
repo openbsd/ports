@@ -1,4 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2013/03/12 16:22:59 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.5 2013/03/13 07:19:47 ajacoutot Exp $
+
+https://github.com/mpruett/audiofile/commit/edb0f83dbf35338788a26e26ef9f17f42b51d6fc
+
 --- configure.orig	Tue Mar 12 17:10:16 2013
 +++ configure	Tue Mar 12 17:10:37 2013
 @@ -16504,7 +16504,7 @@ else
@@ -6,7 +9,7 @@ $OpenBSD: patch-configure,v 1.4 2013/03/12 16:22:59 ajacoutot Exp $
  	ac_cv_flac=yes
  fi
 -		FLAC_CFLAGS=`echo $FLAC_CFLAGS | $SED "s/FLAC$//"`
-+		FLAC_CFLAGS=`echo $FLAC_CFLAGS | $SED "s/\/FLAC//"`
++		FLAC_CFLAGS=`echo $FLAC_CFLAGS | $SED "s:include/FLAC:include:"`
  		if test "$ac_cv_flac" = "no" ; then
  			enable_flac=no
  		fi
