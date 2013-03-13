@@ -1,12 +1,19 @@
-$OpenBSD: patch-etc_client_cfg_dist,v 1.1 2011/12/21 19:34:28 jasper Exp $
---- etc/client.cfg.dist.orig	Fri Dec 16 09:26:51 2011
-+++ etc/client.cfg.dist	Fri Dec 16 09:27:45 2011
+$OpenBSD: patch-etc_client_cfg_dist,v 1.2 2013/03/13 13:33:51 jasper Exp $
+--- etc/client.cfg.dist.orig	Thu Jan 10 18:43:11 2013
++++ etc/client.cfg.dist	Wed Mar 13 13:17:08 2013
 @@ -1,7 +1,7 @@
  topicprefix = /topic/
  main_collective = mcollective
  collectives = mcollective
 -libdir = /usr/libexec/mcollective
-+libdir = ${TRUEPREFIX}/share/mcollective/plugins
- logfile = /dev/null
- loglevel = info
++libdir = ${TRUEPREFIX}/share/mcollective
+ logger_type = console
+ loglevel = warn
+ 
+@@ -17,5 +17,5 @@ plugin.stomp.password = secret
+ 
+ # Facts
+ factsource = yaml
+-plugin.yaml = /etc/mcollective/facts.yaml
++plugin.yaml = ${SYSCONFDIR}/mcollective/facts.yaml
  
