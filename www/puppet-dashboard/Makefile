@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/12 10:59:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/13 10:16:12 ajacoutot Exp $
 
 COMMENT=	overview of your Puppet ecosystem
 
 DISTNAME=	puppet-dashboard-1.2.22
 CATEGORIES=	www sysutils
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://puppetlabs.com/puppet/related-projects/dashboard/
 
@@ -27,7 +27,7 @@ NO_TEST=	Yes
 
 PREFIX=         /var/www
 INSTDIR=        ${PREFIX}/puppet-dashboard
-SUBST_VARS=     INSTDIR MODRUBY_BINREV
+SUBST_VARS=     INSTDIR MODRUBY_BINREV RUBY
 
 pre-configure:
 	cd ${WRKSRC} && grep -Elr 'env.*ruby' . | \

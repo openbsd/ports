@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# $OpenBSD: puppet_dashboard.rc,v 1.1 2013/03/13 10:16:13 ajacoutot Exp $
+
+daemon="./script/server -d"
+daemon_flags="-e production"
+daemon_user="_puppet-dashboard"
+
+. /etc/rc.d/rc.subr
+
+pexp="(${RUBY} ${daemon}${daemon_flags:+ ${daemon_flags}}|ruby${MODRUBY_BINREV}:.*delayed_job)"
+rc_reload=NO
+
+rc_check() {
+	pgrep -u ${daemon_user} -f "^${pexp}"
+}
+
+rc_start() {
+	${rcexec} "cd ${INSTDIR} && \
+		${daemon} ${daemon_flags}" || return 1
+	sleep 1
+	${rcexec} "cd ${INSTDIR} && \
+		env RAILS_ENV=production script/delayed_job -p dashboard -n 4 -m start"
+}
+
+rc_stop() {
+	pkill -INT -u ${daemon_user} -f "^${pexp}"
+}
+
+rc_cmd $1

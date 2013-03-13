@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2013/03/12 10:59:50 ajacoutot Exp $
+$OpenBSD: README,v 1.4 2013/03/13 10:16:13 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -34,19 +34,10 @@ following command must be run to create the tables:
 Note that this command *must* also be run after a Puppet Dashboard
 upgrade.
 
-Running the Dashboard
-=====================
-
-These commands will start a Rails server on port 3000 then start the
-delayed job workers to asynchronously process resource-intensive tasks.
-They can be added to rc.conf.local(5) to start Puppet Dashboard at boot
-time.
-
-    # cd ${INSTDIR} && sudo -u _puppet-dashboard ./script/server -d -e production 2>/dev/null
-    # cd ${INSTDIR} && sudo -u _puppet-dashboard env RAILS_ENV=production script/delayed_job -p dashboard -n 4 -m start 2>/dev/null
-
 Puppet Configuration
 ====================
+
+By default, Puppet Dashboard will start a Rails server on port 3000.
 
 To use the Dashboard for reports, all agent nodes must submit reports to
 the master and the master must send reports to the Dashboard.
