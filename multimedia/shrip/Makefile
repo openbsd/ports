@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:35:44 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/13 17:12:45 pascal Exp $
 
 COMMENT =		shell client for ogmrip
 
 DISTNAME =		shrip-0.6.0
+REVISION =		0
 
 CATEGORIES =		multimedia
 
@@ -28,6 +29,6 @@ NO_TEST =		Yes
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/shrip
 	${INSTALL_DATA} ${WRKSRC}/shrip.conf \
-		${PREFIX}/share/examples/shrip/shrip.conf.sample
+		${PREFIX}/share/examples/shrip
 
 .include <bsd.port.mk>
