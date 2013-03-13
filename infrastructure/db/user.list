@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.205 2013/03/13 15:43:09 ajacoutot Exp $
+$OpenBSD: user.list,v 1.206 2013/03/13 16:18:23 ajacoutot Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -222,3 +222,4 @@ id  user		group		port options
 711 _xl2tpd		_xl2tpd		net/xl2tpd
 712 			_cvechecker	security/cvechecker
 713 _puppet-dashboard	_puppet-dashboard	www/puppet-dashboard
+714 _activemq		_activemq	net/apache-activemq
