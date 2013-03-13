@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.57 2013/03/11 11:20:28 espie Exp $
+# $OpenBSD: ruby.port.mk,v 1.58 2013/03/13 22:49:37 ajacoutot Exp $
 
 # ruby module
 
@@ -273,10 +273,7 @@ MODRUBY_ADJ_REPLACE=	for pat in ${MODRUBY_ADJ_FILES:QL}; do \
 			 find ${WRKSRC} -type f -name "$$pat" -print0 | \
 			  xargs -0r ${MODRUBY_RUBY_ADJ} ; \
 			done
-.  if !target(pre-configure)
-pre-configure:
-	${MODRUBY_ADJ_REPLACE}
-.  endif
+MODRUBY_pre-configure += ${MODRUBY_ADJ_REPLACE}
 .endif
 
 .if ${CONFIGURE_STYLE:L:Mext} || ${CONFIGURE_STYLE:L:Mextconf}
