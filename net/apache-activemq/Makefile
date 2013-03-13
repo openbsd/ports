@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/13 16:30:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/13 18:19:48 ajacoutot Exp $
 
 PKG_ARCH=	*
 
@@ -6,7 +6,7 @@ COMMENT=	open source message broker implementing JMS 1.1
 
 V=		5.8.0
 DISTNAME=	apache-activemq-$V
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	net
 
@@ -29,7 +29,8 @@ NO_BUILD=	Yes
 NO_TEST=	Yes
 
 do-install:
-	rm -r ${WRKSRC}/bin/macosx/ ${WRKSRC}/bin/linux-x86-* ${WRKSRC}/bin/*.orig
+	rm -r ${WRKSRC}/bin/{macosx,linux-x86-*,*.orig} \
+		${WRKSRC}/data/activemq.log
 	${INSTALL_DATA_DIR} ${PREFIX}/activemq/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/activemq/conf
 	cd ${WRKSRC} && tar cf - * | tar xf - -C ${PREFIX}/activemq/
