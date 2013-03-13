@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.257 2013/02/04 15:13:35 bcallah Exp $
+# $OpenBSD: Makefile,v 1.258 2013/03/13 15:50:57 bcallah Exp $
 
      SUBDIR =
      SUBDIR += abuse
@@ -194,6 +194,7 @@
      SUBDIR += tuxpaint-stamps
      SUBDIR += ufoai
      SUBDIR += uqm
+     SUBDIR += valyriatear
      SUBDIR += vectoroids
      SUBDIR += vitetris
      SUBDIR += vodovod
