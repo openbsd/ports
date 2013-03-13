@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/11 11:35:44 espie Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.21 2013/03/13 00:36:36 brad Exp $
 
 COMMENT=	DVD navigation library
 
