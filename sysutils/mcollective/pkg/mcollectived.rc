@@ -1,12 +1,12 @@
 #!/bin/sh
 #
-# $OpenBSD: mcollectived.rc,v 1.1 2011/09/20 14:03:20 uwe Exp $
+# $OpenBSD: mcollectived.rc,v 1.2 2013/03/13 22:54:26 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/mcollectived"
 
 . /etc/rc.d/rc.subr
 
-pexp=".*ruby.* ${daemon}${daemon_flags:+ ${daemon_flags}}"
+pexp="${RUBY} ${daemon}${daemon_flags:+ ${daemon_flags}}"
 rc_reload=NO
 
 rc_cmd $1
