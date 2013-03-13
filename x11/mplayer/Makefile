@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.215 2013/03/11 11:46:14 espie Exp $
+# $OpenBSD: Makefile,v 1.216 2013/03/13 02:28:11 brad Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,8 +7,8 @@ ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 
 COMMENT =		movie player supporting many formats
 
-V =			20120725
-FFMPEG_V =		20121026
+V =			20130214
+FFMPEG_V =		20130214
 
 SUBST_VARS += 		PREFIX CONFDIR
 
@@ -117,6 +117,7 @@ CONFIGURE_ARGS += --disable-smb \
 		--disable-openal \
 		--disable-libdca \
 		--disable-liba52 \
+		--disable-libilbc \
 		--disable-libmpeg2 \
 		--disable-toolame \
 		--disable-twolame \
@@ -142,7 +143,6 @@ CONFIGURE_ARGS += --disable-libvorbis
 .else
 LIB_DEPENDS +=	audio/libvorbis
 WANTLIB +=	vorbisenc vorbis
-CONFIGURE_ARGS += --disable-tremor-internal
 .endif
 
 CONFIGURE_ENV += LOCALBASE="${LOCALBASE}" TMPDIR="${WRKBUILD}"
@@ -151,6 +151,7 @@ CONFIGURE_ENV += LOCALBASE="${LOCALBASE}" TMPDIR="${WRKBUILD}"
 .if ${MACHINE_ARCH:Mi386} || ${MACHINE_ARCH:Mamd64}
 CONFIGURE_ARGS += --enable-runtime-cpudetection
 CONFIGURE_ARGS += --disable-ssse3
+CONFIGURE_ARGS += --disable-sse4
 .endif
 
 # again binutils 2.15 limits what we can do here too
@@ -161,8 +162,7 @@ CONFIGURE_ARGS += --enable-runtime-cpudetection
 
 .if ${MACHINE_ARCH:Marm}
 # disable common floating point decoders that have integer alternatives
-CONFIGURE_ARGS += --disable-mp3lib \
-		--disable-decoder=mp3on4float \
+CONFIGURE_ARGS += --disable-decoder=mp3on4float \
 		--disable-decoder=mp3adufloat \
 		--disable-decoder=mp3float \
 		--disable-decoder=mp2float \
