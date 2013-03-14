@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/03/05 09:53:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/03/14 20:08:14 ajacoutot Exp $
 %%SHARED%%
 @bin bin/p11-kit
 include/p11-kit-1/
@@ -28,7 +28,9 @@ share/gtk-doc/html/p11-kit/config.html
 share/gtk-doc/html/p11-kit/devel-building-style.html
 share/gtk-doc/html/p11-kit/devel-building.html
 share/gtk-doc/html/p11-kit/devel-commands.html
+share/gtk-doc/html/p11-kit/devel-debugging.html
 share/gtk-doc/html/p11-kit/devel-paths.html
+share/gtk-doc/html/p11-kit/devel-testing.html
 share/gtk-doc/html/p11-kit/devel.html
 share/gtk-doc/html/p11-kit/gtk-doc.css
 share/gtk-doc/html/p11-kit/home.png
