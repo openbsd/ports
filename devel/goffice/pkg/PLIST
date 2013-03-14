@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2013/03/10 12:17:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2013/03/14 09:00:44 ajacoutot Exp $
 include/libgoffice-${API_VERSION}/
 include/libgoffice-${API_VERSION}/goffice/
 include/libgoffice-${API_VERSION}/goffice/app/
@@ -170,6 +170,7 @@ include/libgoffice-${API_VERSION}/goffice/utils/go-undo.h
 include/libgoffice-${API_VERSION}/goffice/utils/go-units.h
 include/libgoffice-${API_VERSION}/goffice/utils/goffice-utils.h
 include/libgoffice-${API_VERSION}/goffice/utils/regutf8.h
+lib/girepository-1.0/GOffice-${API_VERSION}.typelib
 lib/goffice/
 lib/goffice/${GNOME_VERSION}/
 lib/goffice/${GNOME_VERSION}/plugins/
@@ -212,6 +213,7 @@ lib/goffice/${GNOME_VERSION}/plugins/smoothing/types.xml
 lib/libgoffice-${API_VERSION}.la
 @lib lib/libgoffice-${API_VERSION}.so.${LIBgoffice-0.10_VERSION}
 lib/pkgconfig/libgoffice-${API_VERSION}.pc
+share/gir-1.0/GOffice-${API_VERSION}.gir
 share/gtk-doc/html/goffice-${API_VERSION}/
 share/gtk-doc/html/goffice-${API_VERSION}/GOArrow.html
 share/gtk-doc/html/goffice-${API_VERSION}/GOBezierSpline.html

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.36 2013/03/10 12:17:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.37 2013/03/14 09:01:13 ajacoutot Exp $
 %%SHARED%%
 bin/gnumeric
 @bin bin/gnumeric-${GNOME_VERSION}
@@ -142,6 +142,8 @@ include/libspreadsheet-${API_VERSION}/spreadsheet/workbook-view.h
 include/libspreadsheet-${API_VERSION}/spreadsheet/workbook.h
 include/libspreadsheet-${API_VERSION}/spreadsheet/xml-io-version.h
 include/libspreadsheet-${API_VERSION}/spreadsheet/xml-sax.h
+lib/girepository-1.0/
+lib/girepository-1.0/Gnm-${API_VERSION}.typelib
 lib/gnumeric/
 lib/gnumeric/${GNOME_VERSION}/
 lib/gnumeric/${GNOME_VERSION}/plugins/
@@ -324,6 +326,8 @@ lib/pkgconfig/libspreadsheet-${API_VERSION}.pc
 @man man/man1/ssgrep.1
 @man man/man1/ssindex.1
 share/applications/gnumeric.desktop
+share/gir-1.0/
+share/gir-1.0/Gnm-${API_VERSION}.gir
 share/glib-2.0/schemas/org.gnome.gnumeric.dialogs.gschema.xml
 share/glib-2.0/schemas/org.gnome.gnumeric.gschema.xml
 share/glib-2.0/schemas/org.gnome.gnumeric.plugin.gschema.xml

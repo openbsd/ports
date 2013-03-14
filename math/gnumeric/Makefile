@@ -1,13 +1,16 @@
-# $OpenBSD: Makefile,v 1.80 2013/03/11 11:23:54 espie Exp $
+# $OpenBSD: Makefile,v 1.81 2013/03/14 09:01:13 ajacoutot Exp $
 
 COMMENT=		spreadsheet application for GNOME
 
 GNOME_PROJECT=		gnumeric
 GNOME_VERSION=		1.12.1
+REVISION=		0
 
 CATEGORIES=    		math
 
 HOMEPAGE=		http://www.gnome.org/projects/gnumeric/
+
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # sync GOFFICE_API_VERSION with devel/goffice API_VERSION
 # sync GOFFICE_VERSION with devel/goffice GNOME_VERSION
@@ -33,13 +36,11 @@ MODULES=		devel/dconf \
 			devel/gettext \
 			x11/gnome
 
-LIB_DEPENDS=		devel/goffice=${GOFFICE_VERSION}
+LIB_DEPENDS=		devel/goffice=${GOFFICE_VERSION}p1
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
-MODGNOME_TOOLS= 	yelp
-# XXX when goi is enabled in devel/goffice
-#MODGNOME_TOOLS +=	goi
+MODGNOME_TOOLS= 	goi yelp
 
 USE_GROFF=		Yes
 

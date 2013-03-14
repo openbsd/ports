@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2013/03/11 10:50:04 espie Exp $
+# $OpenBSD: Makefile,v 1.49 2013/03/14 09:00:44 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ COMMENT=	document centric objects and utilities
 # GOFFICE_VERSION in math/gnumeric then bump REVISION.
 GNOME_PROJECT=	goffice
 GNOME_VERSION=	0.10.1
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  goffice-0.10              0.0 # 10.0
 
@@ -16,6 +16,8 @@ CATEGORIES=	devel
 
 API_VERSION=	0.10
 SUBST_VARS=	GNOME_VERSION API_VERSION
+
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -39,8 +41,7 @@ LIB_DEPENDS=		devel/libgsf \
 			x11/gnome/librsvg \
 			x11/gtk+3
 
-# XXX undefined reference to `go_cspline_get_type'
-#MODGNOME_TOOLS=		goi
+MODGNOME_TOOLS=		goi
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
 LIBTOOL_FLAGS=		--tag=disable-static
