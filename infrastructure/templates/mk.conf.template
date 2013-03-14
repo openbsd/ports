@@ -1,4 +1,4 @@
-# $OpenBSD: mk.conf.template,v 1.9 2012/11/02 01:44:19 sthen Exp $
+# $OpenBSD: mk.conf.template,v 1.10 2013/03/14 16:05:45 ajacoutot Exp $
 
 # This file contains some mk.conf entries suitable for ports work.
 #
@@ -15,9 +15,6 @@
 # Set additional warning flags when compiling:
 #WARNINGS=Yes
 #CDIAGFLAGS=-Wall
-
-# Accept Java research license, useful for bulk builds
-#ACCEPT_JRL_LICENSE=Yes
 
 # Common(ish) misspellings:
 .poison BUILD_DEPEND
