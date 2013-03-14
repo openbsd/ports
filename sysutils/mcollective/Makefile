@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/13 22:54:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/14 07:58:08 ajacoutot Exp $
 
 COMMENT=	framework for server orchestration/parallel job execution
 
 DISTNAME=	mcollective-2.3.0
 EXTRACT_SUFX=	.tgz
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	sysutils
 

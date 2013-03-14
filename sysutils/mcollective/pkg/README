@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2013/03/13 13:33:51 jasper Exp $
+$OpenBSD: README,v 1.2 2013/03/14 07:58:08 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -9,12 +9,11 @@ Middleware layer
 
 In order to use MCollective a middleware layer needs to be present
 inside the network. While RabbitMQ is supported, it is advised to use
-ActiveMQ. The packages can be installed with their respective
-commands:
+ActiveMQ. The packages can be installed with their respective commands:
 
-    pkg_add apache-activemq
+    # pkg_add apache-activemq
 or
-    pkg_add rabbitmq
+    # pkg_add rabbitmq
 
 Configuration
 =============
