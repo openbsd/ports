@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.4 2013/03/11 12:27:54 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2013/03/14 20:01:13 ajacoutot Exp $
 
 CATEGORIES=	net
 
 HOMEPAGE=	http://miniupnp.free.fr/
-
-MAINTAINER ?=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2012/10/18 14:56:55 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/14 20:01:13 ajacoutot Exp $
 
 COMMENT-main=	UPnP IGD client lightweight library
 COMMENT-python=	python module for miniupnpc
@@ -9,6 +9,9 @@ DISTNAME=	miniupnpc-${MODPY_EGG_VERSION}
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-python= py-${DISTNAME}
+
+REVISION-main=	0
+REVISION-python=0
 
 SHARED_LIBS +=	miniupnpc 0.0
 
