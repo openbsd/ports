@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 10:50:27 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/14 10:24:15 benoit Exp $
 
 COMMENT =		test runner with JUnit like XML reporting
 
-MODPY_EGG_VERSION =	1.3.1
+MODPY_EGG_VERSION =	1.4.3
 DISTNAME =		unittest-xml-reporting-${MODPY_EGG_VERSION}
 PKGNAME =		py-xmlrunner-${MODPY_EGG_VERSION}
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/12/19 10:39:20 mpi Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/03/14 10:24:17 benoit Exp $
 lib/python${MODPY_VERSION}/site-packages/unittest_xml_reporting-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/unittest_xml_reporting-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/unittest_xml_reporting-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -16,14 +16,5 @@ lib/python${MODPY_VERSION}/site-packages/xmlrunner/extra/djangotestrunner.pyc
 lib/python${MODPY_VERSION}/site-packages/xmlrunner/tests/
 lib/python${MODPY_VERSION}/site-packages/xmlrunner/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/xmlrunner/tests/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/xmlrunner/tests/fixtures/
-lib/python${MODPY_VERSION}/site-packages/xmlrunner/tests/fixtures/errord_test_case.xml
-lib/python${MODPY_VERSION}/site-packages/xmlrunner/tests/fixtures/failed_test_case.xml
-lib/python${MODPY_VERSION}/site-packages/xmlrunner/tests/fixtures/mixed_test_case.xml
-lib/python${MODPY_VERSION}/site-packages/xmlrunner/tests/fixtures/successful_test_case.xml
-lib/python${MODPY_VERSION}/site-packages/xmlrunner/tests/fixtures/unicode_error_diff.xml
-lib/python${MODPY_VERSION}/site-packages/xmlrunner/tests/fixtures/unicode_error_nodiff.xml
 lib/python${MODPY_VERSION}/site-packages/xmlrunner/tests/testsuite.py
 lib/python${MODPY_VERSION}/site-packages/xmlrunner/tests/testsuite.pyc
-lib/python${MODPY_VERSION}/site-packages/xmlrunner/tests/testsuite_cases.py
-lib/python${MODPY_VERSION}/site-packages/xmlrunner/tests/testsuite_cases.pyc
