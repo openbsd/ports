@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2013/03/14 09:20:17 landry Exp $
+# $OpenBSD: Makefile,v 1.59 2013/03/14 09:25:09 sthen Exp $
 
 COMMENT-main=		interactive spelling checker
 COMMENT-dutch=		ispell dictionary for Dutch
@@ -19,14 +19,12 @@ HOMEPAGE=	http://fmg-www.cs.ucla.edu/geoff/ispell.html
 MASTER_SITES=	http://fmg-www.cs.ucla.edu/geoff/tars/ \
 		ftp://ftp.netsw.org/dict/tools/
 MASTER_SITES0=	ftp://ftp.freebsd.org/pub/FreeBSD/ports/distfiles/
-MASTER_SITES1=	ftp://ftp.robot.ireq.ca/pub/ispell/
+MASTER_SITES1=	http://spacehopper.org/mirrors/
 MASTER_SITES2=	ftp://ftp.informatik.uni-kiel.de/pub/kiel/dicts/
 MASTER_SITES3=	http://www.sslug.dk/locale/ispell/iswedish/
-MASTER_SITES4=	ftp://mch5.chem.msu.su/pub/russian/ispell/ \
-		ftp://ftp.afti.nsu.ru/pub/mirrors/russian-ispell/
-MASTER_SITES5=	http://natura.di.uminho.pt/download/sources/Dictionaries/ispell/
-MASTER_SITES6=	http://sk-spell.sk.cx/files/
-MASTER_SITES7=	http://www.datsi.fi.upm.es/~coes/
+MASTER_SITES4=	http://natura.di.uminho.pt/download/sources/Dictionaries/ispell/
+MASTER_SITES5=	http://sk-spell.sk.cx/files/
+MASTER_SITES6=	http://www.datsi.fi.upm.es/~coes/
 
 DIST_SUBDIR=	ispell
 
@@ -44,10 +42,10 @@ DISTFILES=	${DISTNAME}.tar.gz \
 		${FRENCH_DICT}.tar.gz:1 \
 		${GERMAN_DICT}.tar.gz:2 \
 		${SWEDISH_DICT}.tar.gz:3 \
-		${RUSSIAN_DICT}.tar.gz:4 \
-		${PORTUGUESE_DICT}.tar.gz:5 \
-		${SLOVAK_DICT}.tar.gz:6  \
-		${SPANISH_DICT}.tar.gz:7
+		${RUSSIAN_DICT}.tar.gz:1 \
+		${PORTUGUESE_DICT}.tar.gz:4 \
+		${SLOVAK_DICT}.tar.gz:5  \
+		${SPANISH_DICT}.tar.gz:6
 
 EXTRACT_ONLY=	${DISTNAME}.tar.gz \
 		${DUTCH_DICT}.tar.gz \
@@ -70,6 +68,7 @@ REVISION$i?=	6
 # ispell: BSD-like
 # dictionaries: GPL or BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
+
 WANTLIB-main=		c termcap
 
 PERMIT_PACKAGE_CDROM-german=	no license
