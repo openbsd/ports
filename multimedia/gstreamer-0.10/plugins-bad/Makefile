@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2013/02/24 14:47:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.78 2013/03/14 13:25:21 brad Exp $
 
 COMMENT-main=		bad elements for GStreamer
 COMMENT-neon=		neon element for GStreamer (plugins-bad)
@@ -12,7 +12,7 @@ PKGNAME-main=		gstreamer-plugins-bad-${V}
 PKGNAME-neon=		gstreamer-neon-${V}
 PKGNAME-mjpeg=		gstreamer-mjpeg-${V}
 
-REVISION-main=		11
+REVISION-main=		12
 REVISION-mjpeg=		4
 REVISION-neon=		3
 
@@ -32,18 +32,18 @@ WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 xml2
 WANTLIB += pthread z m pcre gstreamer-0.10 ffi
 
 WANTLIB-main += ${WANTLIB}
-WANTLIB-main += BPM SDL SoundTouch X11 Xau Xdmcp Xext Xrender FLAC
+WANTLIB-main += BPM GL SDL SoundTouch X11 Xext Xfixes Xrender
 WANTLIB-main += ass bz2 cairo cdaudio croco-0.6 crypto
 WANTLIB-main += curl dca dvdnav dvdread enca expat fontconfig freetype
 WANTLIB-main += fribidi gdk_pixbuf-2.0 gio-2.0 gsm gstapp-0.10 gstaudio-0.10
 WANTLIB-main += gstbase-0.10 gstcontroller-0.10 gstfft-0.10 gstinterfaces-0.10
 WANTLIB-main += gstpbutils-0.10 gstriff-0.10 gstrtp-0.10 gstsdp-0.10
 WANTLIB-main += gsttag-0.10 gstvideo-0.10 idn jasper jpeg lrdf mms
-WANTLIB-main += mpcdec orc-0.4 ogg pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB-main += mpcdec opus orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-main += pixman-1 png pthread-stubs raptor2 rsvg-2 schroedinger-1.0
 WANTLIB-main += sndfile sndio spandsp ssl stdc++ tiff usbhid vpx xcb
-WANTLIB-main += xcb-render xcb-shm xslt harfbuzz icudata icule icuuc vorbis
-WANTLIB-main += vorbisenc yajl
+WANTLIB-main += xcb-render xcb-shm xslt harfbuzz icudata icule icuuc
+WANTLIB-main += yajl
 
 WANTLIB-neon += ${WANTLIB}
 WANTLIB-neon += asn1 crypto expat gssapi gstbase-0.10 krb5 neon proxy
@@ -64,6 +64,7 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			audio/libdca \
 			audio/libsndfile \
 			audio/musepack \
+			audio/opus \
 			audio/soundtouch \
 			devel/sdl \
 			graphics/jasper \
@@ -107,7 +108,6 @@ CONFIGURE_ARGS=		--disable-acm \
 			--disable-ofa \
 			--disable-openal \
 			--disable-opencv \
-			--disable-opus \
 			--disable-quicktime \
 			--disable-real \
 			--disable-spc \
