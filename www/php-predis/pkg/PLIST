@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/02/04 07:59:45 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/03/14 09:04:23 dcoppa Exp $
 @group daemon
 pear/
 pear/lib/
@@ -183,6 +183,7 @@ pear/lib/Predis/Connection/ConnectionParameters.php
 pear/lib/Predis/Connection/ConnectionParametersInterface.php
 pear/lib/Predis/Connection/MasterSlaveReplication.php
 pear/lib/Predis/Connection/PhpiredisConnection.php
+pear/lib/Predis/Connection/PhpiredisStreamConnection.php
 pear/lib/Predis/Connection/PredisCluster.php
 pear/lib/Predis/Connection/RedisCluster.php
 pear/lib/Predis/Connection/ReplicationConnectionInterface.php
