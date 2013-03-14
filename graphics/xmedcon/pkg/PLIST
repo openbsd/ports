@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/03/13 17:58:47 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.5 2013/03/14 10:04:29 benoit Exp $
 @bin bin/medcon
 @bin bin/xmedcon
 bin/xmedcon-config
@@ -41,6 +40,7 @@ include/m-xtract.h
 include/medcon.h
 lib/libmdc.a
 lib/libmdc.la
+@lib lib/libmdc.so.${LIBmdc_VERSION}
 @man man/man1/medcon.1
 @man man/man1/xmedcon-config.1
 @man man/man1/xmedcon.1

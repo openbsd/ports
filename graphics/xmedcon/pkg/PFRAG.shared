@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2005/12/26 20:10:50 steven Exp $
-@lib lib/libmdc.so.${LIBmdc_VERSION}
