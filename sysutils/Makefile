@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.284 2013/03/12 07:35:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.285 2013/03/14 08:05:46 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += LPRng
@@ -98,6 +98,7 @@
      SUBDIR += lsof
      SUBDIR += luastatgrab
      SUBDIR += mac-robber
+     SUBDIR += mcollective
      SUBDIR += memtest86+
      SUBDIR += memtester
      SUBDIR += mencal
