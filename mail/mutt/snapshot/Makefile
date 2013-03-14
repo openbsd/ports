@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2013/03/14 10:14:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.74 2013/03/14 10:16:06 sthen Exp $
 
 COMMENT=	tty-based e-mail client, development version
 
@@ -32,6 +32,7 @@ MUTTRCDIR=	doc/
 DIST_COMPRESSED=compressed-5302767aa6aa.gz:2
 DIST_SIDEBAR=	sidebar-5302767aa6aa.gz:2
 
+# http://cedricduval.free.fr/mutt/patches/
 PATCHFILES+=	trashfolder-5302767aa6aa.gz:2
 
 .if ${FLAVOR:Msidebar}
