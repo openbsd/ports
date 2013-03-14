@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2013/03/11 11:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.63 2013/03/14 20:36:16 sthen Exp $
 
 COMMENT=	themed window manager
 
@@ -7,13 +7,11 @@ DISTNAME=	e16-$V
 PKGNAME=	enlightenment-$V
 DOCS=		e16-docs-0.16.8.0.2
 THEMES=		e16-themes-1.0.1
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.enlightenment.org/
-
-MAINTAINER=	Amit Kulkarni <amitkulz@gmail.com>
 
 # X11
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.32 2013/03/11 11:46:15 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2013/03/14 20:36:16 sthen Exp $
 
 COMMENT=		terminal emulator for X
 
 DISTNAME=		roxterm-2.0.1
-REVISION=		6
+REVISION=		7
 CATEGORIES=		x11
 
 HOMEPAGE=		http://roxterm.sourceforge.net/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=roxterm/}
-
-MAINTAINER=		Amit Kulkarni <amitkulz@gmail.com>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
