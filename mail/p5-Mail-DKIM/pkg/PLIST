@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/11/09 17:07:48 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/03/14 16:18:23 giovanni Exp $
 ${P5SITE}/Mail/DKIM/
 ${P5SITE}/Mail/DKIM.pm
 ${P5SITE}/Mail/DKIM/Algorithm/
@@ -38,6 +38,7 @@ ${P5SITE}/Mail/DKIM/Verifier.pm
 @man man/man3p/Mail::DKIM::AuthorDomainPolicy.3p
 @man man/man3p/Mail::DKIM::Canonicalization::Base.3p
 @man man/man3p/Mail::DKIM::Canonicalization::DkimCommon.3p
+@man man/man3p/Mail::DKIM::DNS.3p
 @man man/man3p/Mail::DKIM::DkPolicy.3p
 @man man/man3p/Mail::DKIM::DkSignature.3p
 @man man/man3p/Mail::DKIM::DkimPolicy.3p

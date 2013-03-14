@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:23:52 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/14 16:18:23 giovanni Exp $
 
 COMMENT=	DKIM and DomainKeys message-signing implementation
 
-DISTNAME=	Mail-DKIM-0.39
+DISTNAME=	Mail-DKIM-0.40
 CATEGORIES=	mail
 
 MAINTAINER=	William Yodlowsky <william@openbsd.org>
@@ -16,6 +16,7 @@ CPAN_AUTHOR=	JASLONG
 RUN_DEPENDS=	security/p5-Crypt-OpenSSL-RSA \
 		mail/p5-Mail-Tools \
 		net/p5-Net-DNS
+TEST_DEPENDS=	${RUN_DEPENDS}
 
 MODCPAN_EXAMPLES=	Yes
 
