@@ -1,0 +1,6 @@
+Debian Almquist shell (dash) is a Unix shell, much smaller than bash
+but still aiming at POSIX-compliancy.  It is a direct descendant of the
+NetBSD version of the Almquist Shell (ash).
+
+Flavor:
+	static   - static build, useful for chroots
