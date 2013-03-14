@@ -1,0 +1,17 @@
+$OpenBSD: patch-cups-config_in,v 1.1 2013/03/14 07:22:33 brad Exp $
+
+Remove overlinking for shared libraries.
+
+https://www.cups.org/str.php?L4294+P0+S-2+C0+I0+E0+M20+Q
+
+--- cups-config.in.orig	Sat Sep  1 01:39:51 2012
++++ cups-config.in	Sat Sep  1 01:41:39 2012
+@@ -105,7 +105,7 @@ while test $# -gt 0; do
+ 	    ;;
+ 	--libs)
+ 	    if test $static = no; then
+-	        libs="@EXTLINKCUPS@ $LIBS";
++	        libs="@EXTLINKCUPS@";
+  	        if test $image = yes; then
+  	            libs="@EXTLINKCUPSIMAGE@ $libs"
+ 		fi
