@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2013/01/18 11:55:27 dcoppa Exp $
+$OpenBSD: README,v 1.2 2013/03/14 09:21:17 dcoppa Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -15,9 +15,9 @@ terminfo files to the remote host:
 $ ssh remotemachine mkdir -p .terminfo/r
 $ scp ${TRUEPREFIX}/share/terminfo/r/rxvt-unicode* remotemachine:.terminfo/r/
 
-If this isn't possible and/or desirable, another workaround is
-overriding the default terminal type name via the user's "~/.Xdefaults"
-file. e.g.:
+If this isn't possible or desirable, another workaround is overriding
+the default terminal type name via the user's "~/.Xdefaults" file.
+e.g.:
 
 URxvt*termName: rxvt-256color
 
