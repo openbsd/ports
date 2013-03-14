@@ -4,3 +4,5 @@ results to a central monitoring server running Nagios in a secure manner.
 nsca	- This program runs as a daemon on the central server that
 	  runs Nagios. It listens for host and service check results
 	  from remote machines (sent using the send_nsca program).
+
+Please note: it is recommended that NCSA-ng is used for new installations.

@@ -4,3 +4,5 @@ results to a central monitoring server running Nagios in a secure manner.
 send_nsca	- This is the client program that is used to send service
 		  check information from a remote machine to the nsca daemon
 		  on the central machine that runs Nagios.
+
+Please note: it is recommended that NCSA-ng is used for new installations.
