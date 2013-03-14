@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2013/03/11 11:44:43 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2013/03/14 07:48:55 ajacoutot Exp $
 
 COMMENT=	easy and universal access to shared and/or personnal files
 
-V=		4.5.7
+V=		4.5.8
 DISTNAME=	owncloud-${V}
-REVISION=	0
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	www
@@ -22,7 +21,7 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # Silk icons: Creative Commons Attribution
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${HOMEPAGE}releases/
+MASTER_SITES=	http://download.owncloud.org/community/
 
 # Yubikey support
 MASTER_SITES0=		http://nerd.hu/
