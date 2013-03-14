@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.116 2013/03/11 11:46:10 espie Exp $
+# $OpenBSD: Makefile,v 1.117 2013/03/14 07:51:45 jasper Exp $
 
 COMMENT= 		Telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
-GNOME_VERSION=		3.6.3
-
+GNOME_VERSION=		3.6.4
 CATEGORIES=		net
 
 HOMEPAGE=		http://live.gnome.org/Empathy
@@ -17,12 +16,12 @@ MODULES=		devel/dconf \
 			lang/python \
 			x11/gnome
 
-WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm atk-1.0
+WANTLIB += GL ICE SM X11 Xcomposite Xcursor Xdamage
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt atk-1.0
 WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject canberra
 WANTLIB += canberra-gtk3 champlain-0.12 champlain-gtk-0.12 clutter-1.0
 WANTLIB += clutter-gst-2.0 clutter-gtk-1.0 cogl cogl-pango dbus-1
-WANTLIB += dbus-glib-1 drm enchant execinfo expat farstream-0.2
+WANTLIB += dbus-glib-1 enchant execinfo expat farstream-0.2
 WANTLIB += ffi folks folks-telepathy fontconfig freetype gailutil-3
 WANTLIB += gck-1 gcr-3 gcr-base-3 gcrypt gdbm gdk-3 gdk_pixbuf-2.0
 WANTLIB += gee geoclue gio-2.0 glib-2.0 gmodule-2.0 gmp gnome-keyring
@@ -39,6 +38,7 @@ WANTLIB += soup-gnome-2.4 sqlite3 stdc++ tasn1 telepathy-farstream
 WANTLIB += telepathy-glib telepathy-logger vorbis vorbisfile webkitgtk-3.0
 WANTLIB += xcb xcb-render xcb-shm xml2 xslt z zeitgeist-1.0
 WANTLIB += X11-xcb Xtst
+WANTLIB += FLAC graphite2 vorbisenc
 
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/iso-codes \
