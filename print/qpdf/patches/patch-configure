@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2012/08/24 07:38:57 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.2 2013/03/14 20:30:33 ajacoutot Exp $
 --- configure.orig	Sat Aug 11 19:41:38 2012
 +++ configure	Thu Aug 23 20:27:47 2012
 @@ -15399,8 +15399,8 @@ fi
@@ -7,7 +7,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2012/08/24 07:38:57 ajacoutot Exp $
  make_okay=0
 -if make --version >/dev/null 2>&1; then
 -  v=`make --version | grep 'GNU Make' | sed -e 's/.*Make //'`
-+if gmake --version >/dev/null 2>&1; then
++if ${MAKE_PROGRAM} --version >/dev/null 2>&1; then
 +  v=`gmake --version | grep 'GNU Make' | sed -e 's/.*Make //'`
    maj=`echo $v | cut -d. -f 1`
    min=`echo $v | cut -d. -f 2`
