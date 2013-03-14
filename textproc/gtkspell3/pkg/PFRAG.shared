@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2012/11/15 14:49:14 ajacoutot Exp $
-@lib lib/libgtkspell3-3.so.${LIBgtkspell3-3_VERSION}
