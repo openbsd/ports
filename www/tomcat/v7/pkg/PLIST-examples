@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.12 2013/01/22 11:47:31 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.13 2013/03/14 08:23:31 dcoppa Exp $
 @conflict jakarta-tomcat-examples-*
 @pkgpath www/jakarta-tomcat/v7,-examples
 @owner _tomcat
@@ -1031,6 +1031,9 @@ webapps/docs/api/org/apache/jasper/compiler/AttributeParser.html
 webapps/docs/api/org/apache/jasper/compiler/BeanRepository.html
 webapps/docs/api/org/apache/jasper/compiler/Compiler.html
 webapps/docs/api/org/apache/jasper/compiler/ELFunctionMapper.html
+webapps/docs/api/org/apache/jasper/compiler/ELInterpreter.html
+webapps/docs/api/org/apache/jasper/compiler/ELInterpreterFactory.DefaultELInterpreter.html
+webapps/docs/api/org/apache/jasper/compiler/ELInterpreterFactory.html
 webapps/docs/api/org/apache/jasper/compiler/ELParser.html
 webapps/docs/api/org/apache/jasper/compiler/ErrorDispatcher.html
 webapps/docs/api/org/apache/jasper/compiler/ErrorHandler.html

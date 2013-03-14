@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.14 2013/01/22 11:47:31 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/14 08:23:31 dcoppa Exp $
 
 MAJ_VER =	7
 MIN_VER =	0
-MICRO_VER =	35
+MICRO_VER =	37
 
 .include <bsd.port.mk>
