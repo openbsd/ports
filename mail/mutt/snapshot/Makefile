@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.72 2013/02/09 14:49:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.73 2013/03/14 10:14:10 sthen Exp $
 
 COMMENT=	tty-based e-mail client, development version
 
 DISTNAME=	mutt-1.5.21
 EPOCH=		0
-REVISION=	0
+REVISION=	1
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mutt/} \
 		${MASTER_SITES_MUTT:=devel/}
 
@@ -32,9 +32,10 @@ MUTTRCDIR=	doc/
 DIST_COMPRESSED=compressed-5302767aa6aa.gz:2
 DIST_SIDEBAR=	sidebar-5302767aa6aa.gz:2
 
+PATCHFILES+=	trashfolder-5302767aa6aa.gz:2
+
 .if ${FLAVOR:Msidebar}
 PATCHFILES+=		${DIST_SIDEBAR}
-PATCH_DIST_STRIP=	-p1
 .else
 SUPDISTFILES+=		${DIST_SIDEBAR}
 .endif

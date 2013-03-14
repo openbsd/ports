@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.40 2013/03/11 12:17:36 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.41 2013/03/14 10:14:10 sthen Exp $
 
 CATEGORIES=	mail
 
@@ -39,6 +39,7 @@ CONFIGURE_ARGS+=--enable-external_dotlock \
 		--with-gss \
 		--with-ssl
 FAKE_FLAGS=	sysconfdir="${PREFIX}/share/examples/mutt"
+PATCH_DIST_STRIP= -p1
 
 .if defined(DEBUG)
 CONFIGURE_ARGS+=--enable-debug
@@ -61,7 +62,6 @@ WANTLIB+=		ncurses
 DIST_COMPRESSED?=	patch-${VERSION}.rr.compressed.1.gz:0
 .if ${FLAVOR:Mcompressed}
 PATCHFILES+=		${DIST_COMPRESSED}
-PATCH_DIST_STRIP=	-p1
 CONFIGURE_ARGS+=	--enable-compressed
 .else
 SUPDISTFILES+=		${DIST_COMPRESSED}
