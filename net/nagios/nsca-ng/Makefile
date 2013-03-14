@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/13 09:55:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/14 10:19:38 sthen Exp $
 
 COMMENT-main=	server to accept passive check results for Nagios/Icinga
 COMMENT-client=	client to send passive check results to Nagios/Icinga
 
 V=		1.0
+REVISION-main=	0
 DISTNAME=	nsca-ng-$V
 PKGNAME-main=	nsca-ng-$V
 PKGNAME-client=	nsca-ng-client-$V
