@@ -1,12 +1,12 @@
-$OpenBSD: patch-config_mk,v 1.5 2012/03/26 12:53:24 dcoppa Exp $
+$OpenBSD: patch-config_mk,v 1.6 2013/03/14 13:25:30 dcoppa Exp $
 
 zap redundant CFLAGS
 
 enable builtin EXIF support
 
---- config.mk.orig	Tue Mar  6 13:15:59 2012
-+++ config.mk	Fri Mar  9 09:40:50 2012
-@@ -15,13 +15,12 @@ example_dir = ${main_dir}/share/doc/feh/examples
+--- config.mk.orig	Thu Feb 14 12:53:26 2013
++++ config.mk	Thu Mar 14 13:45:54 2013
+@@ -16,13 +16,12 @@ desktop_dir = ${main_dir}/share/applications
  
  # default CFLAGS
  CFLAGS ?= -g -O2

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.48 2013/03/11 11:10:52 espie Exp $
+# $OpenBSD: Makefile,v 1.49 2013/03/14 13:25:30 dcoppa Exp $
 
 COMMENT=	lightweight image viewer
 
-DISTNAME=	feh-2.8
+DISTNAME=	feh-2.9.1
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	graphics
 
@@ -23,6 +23,8 @@ LIB_DEPENDS=	devel/giblib \
 
 # needed for jpegtran on NO_SHARED_LIBS archs
 RUN_DEPENDS=	graphics/jpeg
+
+RUN_DEPENDS+=	devel/desktop-file-utils
 
 CFLAGS+=	-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/libpng \

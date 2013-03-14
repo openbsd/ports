@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/10/11 07:49:07 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/03/14 13:25:30 dcoppa Exp $
 @bin bin/feh
 bin/feh-cam
 bin/gen-cam-menu
 @man man/man1/feh-cam.1
 @man man/man1/feh.1
 @man man/man1/gen-cam-menu.1
+share/applications/feh.desktop
 share/doc/feh/
 share/doc/feh/AUTHORS
 share/doc/feh/ChangeLog
@@ -31,3 +32,5 @@ share/feh/images/menubg_black.png
 share/feh/images/menubg_brushed.png
 share/feh/images/menubg_default.png
 share/feh/images/menubg_sky.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
