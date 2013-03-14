@@ -1,15 +1,6 @@
-$OpenBSD: patch-secblock_h,v 1.3 2012/02/29 12:46:30 dcoppa Exp $
+$OpenBSD: patch-secblock_h,v 1.4 2013/03/14 11:16:02 dcoppa Exp $
 --- secblock.h.orig	Fri Aug  6 18:46:20 2010
 +++ secblock.h	Wed Feb 29 10:10:22 2012
-@@ -88,7 +88,7 @@ class AllocatorWithCleanup : public AllocatorBase<T> (
- 
- 	pointer allocate(size_type n, const void * = NULL)
- 	{
--		CheckSize(n);
-+		this->CheckSize(n);
- 		if (n == 0)
- 			return NULL;
- 
 @@ -120,7 +120,7 @@ class AllocatorWithCleanup : public AllocatorBase<T> (
  	// VS.NET STL enforces the policy of "All STL-compliant allocators have to provide a
  	// template class member called rebind".

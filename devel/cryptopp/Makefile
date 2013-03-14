@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 10:50:02 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/14 11:16:02 dcoppa Exp $
 
 COMMENT = 	C++ library of cryptographic algorithms
 CATEGORIES = 	devel security
 
 HOMEPAGE = 	http://www.cryptopp.com/
 MASTER_SITES = 	${HOMEPAGE}
-DISTNAME = 	cryptopp561
-PKGNAME = 	cryptopp-5.6.1
-REVISION =	2
+DISTNAME = 	cryptopp562
+PKGNAME = 	cryptopp-5.6.2
 
 EXTRACT_SUFX = 	.zip
 WRKDIST = 	${WRKDIR}
@@ -30,7 +29,7 @@ MAKE_FLAGS +=	CXXFLAGS="${CXXFLAGS} -Wno-deprecated \
 			-DCRYPTOPP_DISABLE_SSSE3 \
 			-DCRYPTOPP_DISABLE_AESNI \
 			-DNDEBUG -fPIC" \
-		LDFLAGS="-pthread" \
+		LDFLAGS="-lpthread" \
 		PREFIX=${PREFIX} \
 		LIBcryptopp_VERSION=${LIBcryptopp_VERSION}
 MAKE_FILE = 	${WRKDIR}/GNUmakefile

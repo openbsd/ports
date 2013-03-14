@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/06/24 07:55:18 dcoppa Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.3 2013/03/14 11:16:02 dcoppa Exp $
 include/cryptopp/
 include/cryptopp/3way.h
 include/cryptopp/adler32.h
@@ -107,6 +106,7 @@ include/cryptopp/seed.h
 include/cryptopp/serpent.h
 include/cryptopp/serpentp.h
 include/cryptopp/sha.h
+include/cryptopp/sha3.h
 include/cryptopp/shacal2.h
 include/cryptopp/shark.h
 include/cryptopp/simple.h
@@ -136,3 +136,4 @@ include/cryptopp/zdeflate.h
 include/cryptopp/zinflate.h
 include/cryptopp/zlib.h
 lib/libcryptopp.a
+@lib lib/libcryptopp.so.${LIBcryptopp_VERSION}
