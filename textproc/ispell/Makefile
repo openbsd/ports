@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2013/03/11 11:42:42 espie Exp $
+# $OpenBSD: Makefile,v 1.58 2013/03/14 09:20:17 landry Exp $
 
 COMMENT-main=		interactive spelling checker
 COMMENT-dutch=		ispell dictionary for Dutch
@@ -73,6 +73,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB-main=		c termcap
 
 PERMIT_PACKAGE_CDROM-german=	no license
+PERMIT_PACKAGE_FTP-german=	no license
 
 RUN_DEPENDS=	textproc/ispell
 RUN_DEPENDS-main=
