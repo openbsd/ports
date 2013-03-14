@@ -1,7 +1,7 @@
-$OpenBSD: patch-xdg_Menu_py,v 1.6 2012/08/04 15:11:00 ajacoutot Exp $
---- xdg/Menu.py.orig	Thu Jul 26 00:59:15 2012
-+++ xdg/Menu.py	Tue Jul 31 17:02:00 2012
-@@ -551,7 +551,7 @@ def parse(filename=None):
+$OpenBSD: patch-xdg_Menu_py,v 1.7 2013/03/14 19:50:54 ajacoutot Exp $
+--- xdg/Menu.py.orig	Tue Nov  6 00:41:29 2012
++++ xdg/Menu.py	Thu Mar 14 20:48:43 2013
+@@ -558,7 +558,7 @@ def parse(filename=None):
          filename = __getFileName(candidate)
          
      if not filename:
