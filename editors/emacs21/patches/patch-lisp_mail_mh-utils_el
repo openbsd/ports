@@ -1,0 +1,21 @@
+$OpenBSD: patch-lisp_mail_mh-utils_el,v 1.1 2013/03/15 14:09:22 sthen Exp $
+--- lisp/mail/mh-utils.el.orig	Sun Mar 10 20:36:56 2013
++++ lisp/mail/mh-utils.el	Sun Mar 10 20:40:42 2013
+@@ -635,7 +635,7 @@ directory names."
+ 		  ;; components, then look for lib/mh or mh/lib.
+ 		  (or (mh-path-search
+ 		       (mapcar (lambda (p) (expand-file-name p mh-base))
+-			       '("lib/mh" "etc/nmh" "/etc/nmh" "mh/lib" "etc" "lib"))
++			       '("lib/nmh" "lib/mh" "etc/nmh" "/etc/nmh" "mh/lib" "etc" "lib"))
+ 		       "components"
+ 		       'file-exists-p))))
+ 	(or (and mh-lib-progs
+@@ -643,7 +643,7 @@ directory names."
+ 	    (setq mh-lib-progs
+ 		  (or (mh-path-search
+ 		       (mapcar (lambda (p) (expand-file-name p mh-base))
+-			       '("lib/mh" "libexec/nmh" "lib/nmh" "mh/lib" "lib"))
++			       '("libexec" "lib/mh" "libexec/nmh" "lib/nmh" "mh/lib" "lib"))
+ 		       "mhl")
+ 		      (mh-path-search '("/usr/local/bin/mh/") "mhl")
+ 		      (mh-path-search exec-path "mhl") ;unlikely

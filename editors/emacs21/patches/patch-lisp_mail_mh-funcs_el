@@ -1,0 +1,21 @@
+$OpenBSD: patch-lisp_mail_mh-funcs_el,v 1.1 2013/03/15 14:09:22 sthen Exp $
+--- lisp/mail/mh-funcs.el.orig	Sun Mar 10 20:36:26 2013
++++ lisp/mail/mh-funcs.el	Sun Mar 10 20:36:52 2013
+@@ -211,7 +211,7 @@ The messages are formatted by mhl.  See the variable m
+   (let ((print-command
+ 	 (if (numberp msg-or-seq)
+ 	     (format "%s -nobell -clear %s %s | %s"
+-		     (expand-file-name "mhl" mh-lib)
++		     (expand-file-name "mhl" mh-lib-progs)
+ 		     (mh-msg-filename msg-or-seq)
+ 		     (if (stringp mhl-formfile)
+ 			 (format "-form %s" mhl-formfile)
+@@ -223,7 +223,7 @@ The messages are formatted by mhl.  See the variable m
+ 			         (format "Sequence from %s" mh-current-folder))))
+ 	     (format "(scan -clear %s ; %s -nobell -clear %s %s) | %s"
+ 		     (mapconcat (function (lambda (msg) msg)) msg-or-seq " ")
+-		     (expand-file-name "mhl" mh-lib)
++		     (expand-file-name "mhl" mh-lib-progs)
+ 		     (if (stringp mhl-formfile)
+ 			 (format "-form %s" mhl-formfile)
+ 		       "")

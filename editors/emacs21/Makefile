@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2013/03/11 11:02:49 espie Exp $
+# $OpenBSD: Makefile,v 1.65 2013/03/15 14:09:22 sthen Exp $
 
 COMMENT-main=		GNU editor: extensible, customizable, self documenting
 COMMENT-el=		elisp sources for those who want to read/modify them
@@ -11,7 +11,7 @@ FULLPKGNAME-el=		emacs-el-${VERSION}
 FULLPKGPATH-el=		editors/emacs21,-el
 FULLPKGNAME-leim=	emacs-leim-${VERSION}
 FULLPKGPATH-leim=	editors/emacs21,-leim
-REVISION-main=		21
+REVISION-main=		22
 REVISION-el=		6
 REVISION-leim=		6
 
@@ -26,7 +26,6 @@ MASTER_SITES=		${MASTER_SITE_GNU:=emacs/}
 DISTFILES=		emacs-${VERSION}a.tar.gz leim-${VERSION}.tar.gz
 
 MULTI_PACKAGES=		-main -el -leim
-USE_GROFF =		Yes
 
 FLAVORS=		no_x11
 FLAVOR?=
@@ -72,5 +71,9 @@ RUN_DEPENDS-main=
 PKG_ARCH-el=		*
 
 NO_TEST=		Yes
+
+post-build:
+	cd ${WRKSRC}; src/emacs -batch -f batch-byte-compile \
+	    lisp/mail/mh-{funcs,utils}.el
 
 .include <bsd.port.mk>
