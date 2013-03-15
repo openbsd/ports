@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_tools_moc_main_cpp,v 1.1 2013/03/15 17:01:31 landry Exp $
+https://bugreports.qt-project.org/browse/QTBUG-22829
+Fix for the BOOST_JOIN parse error in games/pokerth & cad/openscad + other places...
+
+--- src/tools/moc/main.cpp.orig	Wed Mar 13 11:20:37 2013
++++ src/tools/moc/main.cpp	Wed Mar 13 11:22:12 2013
+@@ -187,6 +187,12 @@ int runMoc(int _argc, char **_argv)
+     Moc moc;
+     pp.macros["Q_MOC_RUN"];
+     pp.macros["__cplusplus"];
++
++    // http://pkgs.fedoraproject.org/cgit/qt.git/commit/?id=22f92f680b88a10f179eaa121b367446a6c80f7a
++
++    pp.macros["BOOST_TT_HAS_OPERATOR_HPP_INCLUDED"];
++    pp.macros["BOOST_LEXICAL_CAST_INCLUDED"];
++
+     QByteArray filename;
+     QByteArray output;
+     FILE *in = 0;
