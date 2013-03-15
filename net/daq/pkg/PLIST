@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/09/26 01:40:32 lteo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/03/15 02:57:17 lteo Exp $
 %%SHARED%%
 bin/daq-modules-config
 include/daq.h
@@ -15,9 +15,14 @@ lib/daq/daq_pcap.a
 lib/daq/daq_pcap.la
 lib/libdaq.a
 lib/libdaq.la
+@lib lib/libdaq.so.${LIBdaq_VERSION}
 lib/libdaq_static.a
 lib/libdaq_static.la
 lib/libdaq_static_modules.a
 lib/libdaq_static_modules.la
 lib/libsfbpf.a
 lib/libsfbpf.la
+@lib lib/libsfbpf.so.${LIBsfbpf_VERSION}
+share/doc/daq/
+share/doc/daq/ChangeLog
+share/doc/daq/README
