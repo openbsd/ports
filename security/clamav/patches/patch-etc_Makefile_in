@@ -1,7 +1,7 @@
-$OpenBSD: patch-etc_Makefile_in,v 1.9 2011/03/02 14:36:49 sthen Exp $
---- etc/Makefile.in.orig	Mon Feb  7 16:43:23 2011
-+++ etc/Makefile.in	Mon Feb  7 19:14:39 2011
-@@ -431,6 +431,8 @@ uninstall-am:
+$OpenBSD: patch-etc_Makefile_in,v 1.10 2013/03/15 15:10:06 sthen Exp $
+--- etc/Makefile.in.orig	Mon Mar 11 15:23:20 2013
++++ etc/Makefile.in	Fri Mar 15 14:38:57 2013
+@@ -430,6 +430,8 @@ uninstall-am:
  
  
  install-data-local:
