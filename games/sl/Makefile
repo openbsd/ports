@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:07:40 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/15 16:14:50 bcallah Exp $
 
 COMMENT =			Steam Locomotive
 DISTNAME =			sl-3.03
+REVISION =			0
 CATEGORIES =			games
 
 HOMEPAGE =			http://www.tkl.iis.u-tokyo.ac.jp/~toyoda/index_e.html
