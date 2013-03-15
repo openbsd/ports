@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/05/27 10:43:48 alek Exp $
-bin/mtn
+@comment $OpenBSD: PLIST,v 1.3 2013/03/15 16:13:53 landry Exp $
+@bin bin/mtn
 @info info/monotone.info
 share/doc/monotone/
 share/doc/monotone/monotone.html

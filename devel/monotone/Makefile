@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:11 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/15 16:13:53 landry Exp $
 
 COMMENT=	distributed version control system
 
 VERSION=	0.39
 DISTNAME=	monotone-${VERSION}
 CATEGORIES=	devel
+REVISION =	0
 
 HOMEPAGE=	http://monotone.ca/
 
@@ -17,7 +18,7 @@ WANTLIB += c m stdc++ z
 MASTER_SITES=	${HOMEPAGE}downloads/${VERSION}/
 
 MODULES=	devel/gettext
-BUILD_DEPENDS=	devel/boost
+BUILD_DEPENDS=	devel/boost>=1.53.0
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
