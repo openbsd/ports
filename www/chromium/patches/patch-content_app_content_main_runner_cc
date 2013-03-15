@@ -1,6 +1,6 @@
-$OpenBSD: patch-content_app_content_main_runner_cc,v 1.5 2013/01/18 21:38:02 robert Exp $
---- content/app/content_main_runner.cc.orig	Mon Jan 14 19:48:26 2013
-+++ content/app/content_main_runner.cc	Mon Jan 14 22:57:29 2013
+$OpenBSD: patch-content_app_content_main_runner_cc,v 1.6 2013/03/15 08:30:33 robert Exp $
+--- content/app/content_main_runner.cc.orig	Thu Feb 21 04:26:21 2013
++++ content/app/content_main_runner.cc	Fri Feb 22 19:40:32 2013
 @@ -99,7 +99,7 @@ extern int PpapiBrokerMain(const MainFunctionParams&);
  extern int RendererMain(const content::MainFunctionParams&);
  extern int UtilityMain(const MainFunctionParams&);
@@ -28,7 +28,7 @@ $OpenBSD: patch-content_app_content_main_runner_cc,v 1.5 2013/01/18 21:38:02 rob
  // On platforms that use the zygote, we have a special subset of
  // subprocesses that are launched via the zygote.  This function
  // fills in some process-launching bits around ZygoteMain().
-@@ -449,7 +449,7 @@ int RunNamedProcessTypeMain(
+@@ -451,7 +451,7 @@ int RunNamedProcessTypeMain(
      }
    }
  
@@ -37,7 +37,7 @@ $OpenBSD: patch-content_app_content_main_runner_cc,v 1.5 2013/01/18 21:38:02 rob
    // Zygote startup is special -- see RunZygote comments above
    // for why we don't use ZygoteMain directly.
    if (process_type == switches::kZygoteProcess)
-@@ -566,7 +566,7 @@ static void ReleaseFreeMemoryThunk() {
+@@ -580,7 +580,7 @@ static void ReleaseFreeMemoryThunk() {
                 kPrimaryIPCChannel + base::GlobalDescriptors::kBaseDescriptor);
  #endif  // !OS_ANDROID && !OS_IOS
  

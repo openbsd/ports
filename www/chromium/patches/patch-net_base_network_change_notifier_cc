@@ -1,7 +1,7 @@
-$OpenBSD: patch-net_base_network_change_notifier_cc,v 1.7 2012/11/07 06:59:45 robert Exp $
---- net/base/network_change_notifier.cc.orig	Wed Oct 31 20:01:42 2012
-+++ net/base/network_change_notifier.cc	Tue Nov  6 22:45:35 2012
-@@ -229,7 +229,6 @@ NetworkChangeNotifier* NetworkChangeNotifier::Create()
+$OpenBSD: patch-net_base_network_change_notifier_cc,v 1.8 2013/03/15 08:30:33 robert Exp $
+--- net/base/network_change_notifier.cc.orig	Thu Feb 21 04:27:45 2013
++++ net/base/network_change_notifier.cc	Fri Feb 22 19:40:32 2013
+@@ -324,7 +324,6 @@ NetworkChangeNotifier* NetworkChangeNotifier::Create()
  #elif defined(OS_MACOSX)
    return new NetworkChangeNotifierMac();
  #else

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2013/01/18 21:38:02 robert Exp $
+@comment $OpenBSD: PLIST,v 1.23 2013/03/15 08:30:33 robert Exp $
 bin/chrome
 chrome/
 @bin chrome/chrome
@@ -250,6 +250,7 @@ chrome/resources/inspector/resourceView.css
 chrome/resources/inspector/resourcesPanel.css
 chrome/resources/inspector/revisionHistory.css
 chrome/resources/inspector/scriptsPanel.css
+chrome/resources/inspector/spectrum.css
 chrome/resources/inspector/splitView.css
 chrome/resources/inspector/tabbedPane.css
 chrome/resources/inspector/textEditor.css

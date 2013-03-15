@@ -1,0 +1,26 @@
+$OpenBSD: patch-third_party_libvpx_libvpx_gyp,v 1.8 2013/03/15 08:30:33 robert Exp $
+--- third_party/libvpx/libvpx.gyp.orig	Sat Mar  9 10:46:18 2013
++++ third_party/libvpx/libvpx.gyp	Sat Mar  9 10:52:50 2013
+@@ -40,7 +40,7 @@
+       'conditions': [
+         # TODO(jimbankoski): Hack to ensure we pass -msse2 for files containing
+         # SSE intrinsics. See http://crbug/162675
+-        ['target_arch=="ia32" or target_arch=="x64"', {
++        ['(target_arch=="ia32" or target_arch=="x64") and disable_sse2!=1', {
+           'targets' : [
+             {
+               'target_name': 'libvpx_intrinsics',
+@@ -120,13 +120,11 @@
+                   'includes': [
+                     'libvpx_srcs_x86.gypi',
+                   ],
+-                  'dependencies': [ 'libvpx_intrinsics', ],
+                 }],
+                 [ 'target_arch=="x64"', {
+                   'includes': [
+                     'libvpx_srcs_x86_64.gypi',
+                   ],
+-                  'dependencies': [ 'libvpx_intrinsics', ],
+                 }],
+                 ['clang == 1', {
+                   'xcode_settings': {

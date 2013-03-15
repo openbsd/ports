@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_chrome_browser_gypi,v 1.16 2013/01/18 21:38:02 robert Exp $
---- chrome/chrome_browser.gypi.orig	Tue Jan  8 03:46:06 2013
-+++ chrome/chrome_browser.gypi	Mon Jan 14 22:22:08 2013
-@@ -454,8 +454,6 @@
+$OpenBSD: patch-chrome_chrome_browser_gypi,v 1.17 2013/03/15 08:30:33 robert Exp $
+--- chrome/chrome_browser.gypi.orig	Thu Mar  7 21:02:41 2013
++++ chrome/chrome_browser.gypi	Fri Mar  8 18:09:13 2013
+@@ -410,8 +410,6 @@
          'browser/chrome_browser_main_android.cc',
          'browser/chrome_browser_main_android.h',
          'browser/chrome_browser_main_extra_parts.h',
@@ -10,21 +10,37 @@ $OpenBSD: patch-chrome_chrome_browser_gypi,v 1.16 2013/01/18 21:38:02 robert Exp
          'browser/chrome_browser_main_mac.h',
          'browser/chrome_browser_main_mac.mm',
          'browser/chrome_browser_main_posix.cc',
-@@ -1032,8 +1030,6 @@
-         'browser/media_gallery/media_gallery_database_types.cc',
-         'browser/media_gallery/media_gallery_database_types.h',
-         'browser/media_gallery/mtp_device_delegate_impl.h',
--        'browser/media_gallery/mtp_device_delegate_impl_linux.cc',
--        'browser/media_gallery/mtp_device_delegate_impl_linux.h',
-         'browser/memory_details.cc',
-         'browser/memory_details.h',
-         'browser/memory_details_android.cc',
-@@ -1981,14 +1977,10 @@
+@@ -1012,22 +1010,6 @@
+         'browser/media/media_stream_capture_indicator.h',
+         'browser/media/media_stream_devices_controller.cc',
+         'browser/media/media_stream_devices_controller.h',
+-        'browser/media_gallery/linux/mtp_device_delegate_impl_linux.cc',
+-        'browser/media_gallery/linux/mtp_device_delegate_impl_linux.h',
+-        'browser/media_gallery/linux/mtp_device_object_enumerator.cc',
+-        'browser/media_gallery/linux/mtp_device_object_enumerator.h',
+-        'browser/media_gallery/linux/mtp_device_operations_utils.cc',
+-        'browser/media_gallery/linux/mtp_device_operations_utils.h',
+-        'browser/media_gallery/linux/mtp_get_file_info_worker.cc',
+-        'browser/media_gallery/linux/mtp_get_file_info_worker.h',
+-        'browser/media_gallery/linux/mtp_open_storage_worker.cc',
+-        'browser/media_gallery/linux/mtp_open_storage_worker.h',
+-        'browser/media_gallery/linux/mtp_read_directory_worker.cc',
+-        'browser/media_gallery/linux/mtp_read_directory_worker.h',
+-        'browser/media_gallery/linux/mtp_read_file_worker.cc',
+-        'browser/media_gallery/linux/mtp_read_file_worker.h',
+-        'browser/media_gallery/linux/mtp_recursive_device_object_enumerator.cc',
+-        'browser/media_gallery/linux/mtp_recursive_device_object_enumerator.h',
+         'browser/media_gallery/media_file_system_registry.cc',
+         'browser/media_gallery/media_file_system_registry.h',
+         'browser/media_gallery/media_galleries_dialog_controller.cc',
+@@ -2024,22 +2006,16 @@
          'browser/system_monitor/media_device_notifications_utils.h',
          'browser/system_monitor/media_storage_util.cc',
          'browser/system_monitor/media_storage_util.h',
 -        'browser/system_monitor/media_transfer_protocol_device_observer_linux.cc',
 -        'browser/system_monitor/media_transfer_protocol_device_observer_linux.h',
+         'browser/system_monitor/portable_device_watcher_win.cc',
+         'browser/system_monitor/portable_device_watcher_win.h',
          'browser/system_monitor/removable_device_constants.cc',
          'browser/system_monitor/removable_device_constants.h',
          'browser/system_monitor/removable_device_notifications_chromeos.cc',
@@ -34,3 +50,9 @@ $OpenBSD: patch-chrome_chrome_browser_gypi,v 1.16 2013/01/18 21:38:02 robert Exp
          'browser/system_monitor/removable_device_notifications_mac.h',
          'browser/system_monitor/removable_device_notifications_mac.mm',
          'browser/system_monitor/removable_device_notifications_window_win.cc',
+         'browser/system_monitor/removable_device_notifications_window_win.h',
+-        'browser/system_monitor/udev_util_linux.cc',
+-        'browser/system_monitor/udev_util_linux.h',
+         'browser/system_monitor/volume_mount_watcher_win.cc',
+         'browser/system_monitor/volume_mount_watcher_win.h',
+         'browser/tab_contents/background_contents.cc',

@@ -1,11 +1,13 @@
-$OpenBSD: patch-ui_gfx_codec_png_codec_cc,v 1.2 2012/08/26 18:47:01 robert Exp $
---- ui/gfx/codec/png_codec.cc.orig	Tue Aug 14 09:02:26 2012
-+++ ui/gfx/codec/png_codec.cc	Wed Aug 15 23:14:39 2012
-@@ -16,6 +16,7 @@
+$OpenBSD: patch-ui_gfx_codec_png_codec_cc,v 1.3 2013/03/15 08:30:33 robert Exp $
+--- ui/gfx/codec/png_codec.cc.orig	Tue Mar 12 18:14:14 2013
++++ ui/gfx/codec/png_codec.cc	Tue Mar 12 18:16:27 2013
+@@ -14,7 +14,8 @@
+ #include "third_party/skia/include/core/SkColorPriv.h"
+ 
  extern "C" {
- #if defined(USE_SYSTEM_LIBPNG)
- #include <png.h>
-+#include <zlib.h>
- #else
- #include "third_party/libpng/png.h"
- #endif
+-#include "third_party/libpng/png.h"
++
++#include <png.h>
+ 
+ #if defined(USE_SYSTEM_ZLIB)
+ #include <zlib.h>

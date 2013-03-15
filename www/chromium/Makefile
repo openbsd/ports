@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.125 2013/03/11 12:17:51 espie Exp $
+# $OpenBSD: Makefile,v 1.126 2013/03/15 08:30:33 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 
 COMMENT=		Chromium browser
 
-V=			24.0.1312.68
+V=			25.0.1364.160
 DISTNAME=		chromium-${V}
 
 CATEGORIES=		www
@@ -40,9 +40,10 @@ WANTLIB += X11 Xext Xfixes Xrender Xss bz2 c cairo cups dbus-1 event
 WANTLIB += execinfo expat fontconfig freetype gconf-2 gcrypt gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += jpeg m nspr4 nss3 nssutil3 pango-1.0 pangocairo-1.0
-WANTLIB += plc4 png pthread pthread-stubs smime3 speex estdc++
+WANTLIB += plc4 png pthread smime3 speex estdc++
 WANTLIB += xml2 xslt
-WANTLIB += atk-1.0 usb-1.0 Xrandr pixman-1 plds4 sndio z
+WANTLIB += atk-1.0 usb-1.0 Xrandr sndio
+WANTLIB += Xcomposite
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
@@ -55,6 +56,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		devel/flex \
 		shells/bash \
 		sysutils/flock \
+		sysutils/pciutils \
 		x11/gnome/libgnome-keyring
 # required for parallel building
 BUILD_DEPENDS+= gmake->=3.82p2:devel/gmake
@@ -107,11 +109,16 @@ GYP_DEFS=	-Duse_system_bzip2=1 \
 		-Duse_sndio=1 \
 		-DOS=openbsd
 
+# Note: these keys are for OpenBSD use ONLY. For your own distribution,
+# please get your own set of keys. It's free!
+GYP_DEFS+=	-Dgoogle_api_key='AIzaSyA015yecfJyWi8UQpneQVrNzIKlxjv4MhI' \
+		-Dgoogle_default_client_id='451220141585.apps.googleusercontent.com' \
+		-Dgoogle_default_client_secret='nQcDyaBvDyCeDrsRqKIWSHJn'
+
 .if ${FLAVOR:Mproprietary}
 GYP_DEFS+=	-Dffmpeg_branding=Chrome \
 		-Dproprietary_codecs=1
 .endif
-
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/webkit/plugins/npapi/plugin_list_posix.cc

@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_libvpx_source_libvpx_build_make_obj_int_extract_c,v 1.1 2012/10/12 16:46:10 robert Exp $
---- third_party/libvpx/source/libvpx/build/make/obj_int_extract.c.orig	Wed Oct 10 19:32:55 2012
-+++ third_party/libvpx/source/libvpx/build/make/obj_int_extract.c	Wed Oct 10 19:33:27 2012
-@@ -213,7 +213,11 @@ bail:
+$OpenBSD: patch-third_party_libvpx_source_libvpx_build_make_obj_int_extract_c,v 1.2 2013/03/15 08:30:33 robert Exp $
+--- third_party/libvpx/source/libvpx/build/make/obj_int_extract.c.orig	Thu Feb 21 04:38:43 2013
++++ third_party/libvpx/source/libvpx/build/make/obj_int_extract.c	Fri Feb 22 19:40:32 2013
+@@ -184,7 +184,11 @@ bail:
  }
  
  #elif defined(__ELF__)
@@ -12,4 +12,4 @@ $OpenBSD: patch-third_party_libvpx_source_libvpx_build_make_obj_int_extract_c,v 
 +#endif
  
  #define COPY_STRUCT(dst, buf, ofst, sz) do {\
-         if(ofst + sizeof((*(dst))) > sz) goto bail;\
+     if(ofst + sizeof((*(dst))) > sz) goto bail;\

@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_browser_memory_details_cc,v 1.12 2013/01/18 21:38:02 robert Exp $
---- chrome/browser/memory_details.cc.orig	Tue Jan  8 03:41:59 2013
-+++ chrome/browser/memory_details.cc	Mon Jan 14 19:47:35 2013
+$OpenBSD: patch-chrome_browser_memory_details_cc,v 1.13 2013/03/15 08:30:33 robert Exp $
+--- chrome/browser/memory_details.cc.orig	Thu Feb 21 04:32:50 2013
++++ chrome/browser/memory_details.cc	Fri Feb 22 19:40:32 2013
 @@ -31,7 +31,7 @@
  #include "grit/generated_resources.h"
  #include "ui/base/l10n/l10n_util.h"
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_memory_details_cc,v 1.12 2013/01/18 21:38:02 robe
  #include "content/public/browser/zygote_host_linux.h"
  #endif
  
-@@ -195,7 +195,7 @@ void MemoryDetails::CollectChildInfoOnIOThread() {
+@@ -198,7 +198,7 @@ void MemoryDetails::CollectChildInfoOnIOThread() {
  void MemoryDetails::CollectChildInfoOnUIThread() {
    DCHECK(BrowserThread::CurrentlyOn(BrowserThread::UI));
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_browser_memory_details_cc,v 1.12 2013/01/18 21:38:02 robe
    const pid_t zygote_pid = content::ZygoteHost::GetInstance()->GetPid();
    const pid_t sandbox_helper_pid =
        content::ZygoteHost::GetInstance()->GetSandboxHelperPid();
-@@ -338,7 +338,7 @@ void MemoryDetails::CollectChildInfoOnUIThread() {
+@@ -341,7 +341,7 @@ void MemoryDetails::CollectChildInfoOnUIThread() {
        }
      }
  

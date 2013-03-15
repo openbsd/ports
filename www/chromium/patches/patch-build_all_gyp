@@ -1,0 +1,11 @@
+$OpenBSD: patch-build_all_gyp,v 1.6 2013/03/15 08:30:33 robert Exp $
+--- build/all.gyp.orig	Fri Feb 22 19:51:04 2013
++++ build/all.gyp	Fri Feb 22 19:51:17 2013
+@@ -207,7 +207,6 @@
+             '../jingle/jingle.gyp:jingle_unittests',
+             '../ppapi/ppapi_internal.gyp:ppapi_unittests',
+             '../printing/printing.gyp:printing_unittests',
+-            '../remoting/remoting.gyp:remoting_unittests',
+             '../sync/sync.gyp:sync_unit_tests',
+             '../third_party/cacheinvalidation/cacheinvalidation.gyp:cacheinvalidation_unittests',
+             '../third_party/libphonenumber/libphonenumber.gyp:libphonenumber_unittests',

@@ -1,6 +1,6 @@
-$OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.7 2013/01/18 21:38:02 robert Exp $
---- content/browser/child_process_launcher.cc.orig	Mon Jan 14 19:49:36 2013
-+++ content/browser/child_process_launcher.cc	Tue Jan 15 19:32:28 2013
+$OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.8 2013/03/15 08:30:33 robert Exp $
+--- content/browser/child_process_launcher.cc.orig	Thu Feb 21 04:26:28 2013
++++ content/browser/child_process_launcher.cc	Fri Feb 22 19:40:32 2013
 @@ -53,7 +53,7 @@ class ChildProcessLauncher::Context
          termination_status_(base::TERMINATION_STATUS_NORMAL_TERMINATION),
          exit_code_(RESULT_CODE_NORMAL_EXIT),
@@ -82,7 +82,7 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.7 2013/01/18 21:38
    bool zygote_;
  #endif
  };
-@@ -423,7 +423,7 @@ base::TerminationStatus ChildProcessLauncher::GetChild
+@@ -424,7 +424,7 @@ base::TerminationStatus ChildProcessLauncher::GetChild
        *exit_code = context_->exit_code_;
      return context_->termination_status_;
    }
@@ -90,4 +90,4 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.7 2013/01/18 21:38
 +#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
    if (context_->zygote_) {
      context_->termination_status_ = ZygoteHostImpl::GetInstance()->
-         GetTerminationStatus(handle, &context_->exit_code_);
+         GetTerminationStatus(handle, known_dead, &context_->exit_code_);
