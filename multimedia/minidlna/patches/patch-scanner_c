@@ -1,6 +1,6 @@
-$OpenBSD: patch-scanner_c,v 1.1.1.1 2012/10/10 10:45:05 sthen Exp $
---- scanner.c.orig	Sat Sep 22 01:45:51 2012
-+++ scanner.c	Sat Sep 22 01:46:11 2012
+$OpenBSD: patch-scanner_c,v 1.2 2013/03/15 17:15:24 sthen Exp $
+--- scanner.c.orig	Fri Jun 29 22:11:29 2012
++++ scanner.c	Fri Mar 15 16:53:37 2013
 @@ -26,6 +26,7 @@
  #include <sys/stat.h>
  #include <sys/time.h>
@@ -9,3 +9,21 @@ $OpenBSD: patch-scanner_c,v 1.1.1.1 2012/10/10 10:45:05 sthen Exp $
  
  #include "config.h"
  
+@@ -138,7 +139,7 @@ insert_containers(const char * name, const char *path,
+ 	if( strstr(class, "imageItem") )
+ 	{
+ 		char *date = NULL, *cam = NULL;
+-		char date_taken[13], camera[64];
++		char date_taken[24], camera[64];
+ 		static struct virtual_item last_date;
+ 		static struct virtual_item last_cam;
+ 		static struct virtual_item last_camdate;
+@@ -159,7 +160,7 @@ insert_containers(const char * name, const char *path,
+ 		}
+ 		else
+ 		{
+-			strcpy(date_taken, _("Unknown Date"));
++			snprintf(date_taken, sizeof(date_taken), "%s", _("Unknown Date"));
+ 		}
+ 		if( valid_cache && strcmp(last_date.name, date_taken) == 0 )
+ 		{
