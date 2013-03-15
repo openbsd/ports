@@ -1,0 +1,16 @@
+$OpenBSD: patch-perdition_options_h,v 1.1 2013/03/15 15:17:36 sthen Exp $
+
+Auth timeout used for SO_RECVTIMEO in ssl.c which has a max of
+USHRT_MAX hz otherwise it fails with EDOM.
+
+--- perdition/options.h.orig	Thu Mar 14 13:58:46 2013
++++ perdition/options.h	Thu Mar 14 14:00:47 2013
+@@ -145,7 +145,7 @@
+ #define DEFAULT_STRIP_DOMAIN                 STATE_NONE
+ #define DEFAULT_SERVER_RESP_LINE             0
+ #define DEFAULT_TIMEOUT                      1800 /*in seconds*/
+-#define DEFAULT_AUTHENTICATE_TIMEOUT         DEFAULT_TIMEOUT
++#define DEFAULT_AUTHENTICATE_TIMEOUT         60 /*in seconds*/
+ #ifdef WITH_USER
+ #define DEFAULT_USERNAME                     WITH_USER
+ #else

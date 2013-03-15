@@ -1,36 +1,39 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2008/06/08 10:55:25 simon Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2013/03/15 15:17:36 sthen Exp $
 @pkgpath mail/perdition
 @newgroup _perdition:573
 @newuser _perdition:573:573:daemon:Perdition proxy:/var/empty:/sbin/nologin
-%%SHARED%%
-bin/makebdb
-include/jain.h
-lib/libjain.a
-lib/libjain.la
+@bin bin/makebdb
 lib/libperditiondb_bdb.a
 lib/libperditiondb_bdb.la
+@lib lib/libperditiondb_bdb.so.${LIBperditiondb_bdb_VERSION}
 lib/libperditiondb_daemon.a
 lib/libperditiondb_daemon.la
+@lib lib/libperditiondb_daemon.so.${LIBperditiondb_daemon_VERSION}
 lib/libperditiondb_daemon_base.a
 lib/libperditiondb_daemon_base.la
+@lib lib/libperditiondb_daemon_base.so.${LIBperditiondb_daemon_base_VERSION}
 lib/libperditiondb_nis.a
 lib/libperditiondb_nis.la
+@lib lib/libperditiondb_nis.so.${LIBperditiondb_nis_VERSION}
 lib/libperditiondb_posix_regex.a
 lib/libperditiondb_posix_regex.la
+@lib lib/libperditiondb_posix_regex.so.${LIBperditiondb_posix_regex_VERSION}
 @man man/man1/makebdb.1
 @man man/man5/perditiondb.5
 @man man/man8/perdition.8
 @man man/man8/perdition.imap4.8
 @man man/man8/perdition.imap4s.8
 @man man/man8/perdition.imaps.8
+@man man/man8/perdition.managesieve.8
 @man man/man8/perdition.pop3.8
 @man man/man8/perdition.pop3s.8
-sbin/perdition
-sbin/perdition.imap4
-sbin/perdition.imap4s
-sbin/perdition.imaps
-sbin/perdition.pop3
-sbin/perdition.pop3s
+@bin sbin/perdition
+@bin sbin/perdition.imap4
+@bin sbin/perdition.imap4s
+@bin sbin/perdition.imaps
+@bin sbin/perdition.managesieve
+@bin sbin/perdition.pop3
+@bin sbin/perdition.pop3s
 share/examples/perdition/
 @sample ${SYSCONFDIR}/perdition/
 share/examples/perdition/Makefile

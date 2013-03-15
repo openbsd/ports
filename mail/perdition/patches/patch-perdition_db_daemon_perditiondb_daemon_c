@@ -1,7 +1,7 @@
-$OpenBSD: patch-perdition_db_daemon_perditiondb_daemon_c,v 1.1.1.1 2006/11/16 23:26:00 msf Exp $
---- perdition/db/daemon/perditiondb_daemon.c.orig	Mon Nov 13 13:28:08 2006
-+++ perdition/db/daemon/perditiondb_daemon.c	Mon Nov 13 13:29:53 2006
-@@ -176,7 +176,7 @@ dbserver_get2(const char *key_str, const
+$OpenBSD: patch-perdition_db_daemon_perditiondb_daemon_c,v 1.2 2013/03/15 15:17:36 sthen Exp $
+--- perdition/db/daemon/perditiondb_daemon.c.orig	Wed Sep  1 08:13:30 2010
++++ perdition/db/daemon/perditiondb_daemon.c	Sat Nov 13 10:09:27 2010
+@@ -237,7 +237,7 @@ dbserver_get2(const char *key_str, const char *UNUSED(
  
  	perdition_un_init(&sock);
  

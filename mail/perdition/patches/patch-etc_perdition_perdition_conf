@@ -1,6 +1,6 @@
-$OpenBSD: patch-etc_perdition_perdition_conf,v 1.1.1.1 2006/11/16 23:26:00 msf Exp $
---- etc/perdition/perdition.conf.orig	Tue Nov  7 11:44:00 2006
-+++ etc/perdition/perdition.conf	Tue Nov  7 11:47:50 2006
+$OpenBSD: patch-etc_perdition_perdition_conf,v 1.2 2013/03/15 15:17:36 sthen Exp $
+--- etc/perdition/perdition.conf.orig	Wed Sep  1 08:13:30 2010
++++ etc/perdition/perdition.conf	Sat Nov 13 10:09:26 2010
 @@ -132,9 +132,9 @@
  
  # g|group GROUP:
@@ -12,9 +12,9 @@ $OpenBSD: patch-etc_perdition_perdition_conf,v 1.1.1.1 2006/11/16 23:26:00 msf E
 +#g _perdition
 +#group _perdition
  
- # I|capability|pop_capability|imap_capability STRING:
- # Capabilities for the protocol.
-@@ -258,9 +258,9 @@
+ # imap_capability STRING:
+ # Capabilities for IMAP4 and IMAP4S
+@@ -296,9 +296,9 @@
  
  # u|username USERNAME:
  # User to run as.

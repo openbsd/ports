@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-ldap,v 1.1.1.1 2006/11/16 23:26:00 msf Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST-ldap,v 1.2 2013/03/15 15:17:36 sthen Exp $
 lib/libperditiondb_ldap.a
 lib/libperditiondb_ldap.la
+@lib lib/libperditiondb_ldap.so.${LIBperditiondb_ldap_VERSION}
 @man man/man8/perditiondb_ldap_makedb.8
 sbin/perditiondb_ldap_makedb

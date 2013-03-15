@@ -1,7 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.2 2008/06/08 10:55:25 simon Exp $
-@lib lib/libjain.so.${LIBjain_VERSION}
-@lib lib/libperditiondb_bdb.so.${LIBperditiondb_bdb_VERSION}
-@lib lib/libperditiondb_daemon.so.${LIBperditiondb_daemon_VERSION}
-@lib lib/libperditiondb_daemon_base.so.${LIBperditiondb_daemon_base_VERSION}
-@lib lib/libperditiondb_nis.so.${LIBperditiondb_nis_VERSION}
-@lib lib/libperditiondb_posix_regex.so.${LIBperditiondb_posix_regex_VERSION}

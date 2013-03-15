@@ -1,0 +1,22 @@
+$OpenBSD: patch-perdition_perdition_8,v 1.1 2013/03/15 15:17:36 sthen Exp $
+
+Sync with new options.h default.
+
+--- perdition/perdition.8.orig	Thu Mar 14 14:02:11 2013
++++ perdition/perdition.8	Thu Mar 14 14:04:38 2013
+@@ -752,10 +752,11 @@ Perdition allows two idle timeouts to be configured. \
+ is used before the user has been successfully authenticated with the
+ back-end server. And after that \-\-timeout is used.
+ 
+-The default value for both timeouts is is 1800.
+-A timeout value of 0 means that the timeouts are disabled and clients and
+-back\-end servers can idle indefinitely, though in practice a TCP timeout
+-will be in effect.
++The default value for \-\-authentication_timeout is 60 seconds.
++The default value for \-\-timeout is 1800 seconds.
++A timeout value of 0 means that the timeouts are disabled and clients
++and back\-end servers can idle indefinitely, though in practice a
++TCP timeout will be in effect.
+ .SH LOOP DETECTION
+ The greeting that perdition displays when accepting an incoming connection
+ is "+OK POP3 Ready <hostname>" or "* OK IMAP4 Ready <hostname>" in POP3 and
