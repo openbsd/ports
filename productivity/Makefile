@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2013/03/08 10:45:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.50 2013/03/15 16:15:09 bcallah Exp $
 
      SUBDIR =
      SUBDIR += baikal
@@ -27,6 +27,7 @@
      SUBDIR += rednotebook
      SUBDIR += rubrica2
      SUBDIR += siag
+     SUBDIR += sl
      SUBDIR += slideml
      SUBDIR += sunbird
      SUBDIR += taskjuggler
