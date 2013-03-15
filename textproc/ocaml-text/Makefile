@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:42:42 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/15 07:45:17 ajacoutot Exp $
 
 COMMENT =	library for dealing with unicode text
 CATEGORIES =	devel textproc
@@ -20,6 +20,9 @@ RUN_DEPENDS =	lang/ocaml devel/ocaml-pcre
 BUILD_DEPENDS =	sysutils/findlib devel/ocaml-pcre
 LIB_DEPENDS =	converters/libiconv
 WANTLIB =	iconv
+
+# patch-setup_ml
+BUILD_DEPENDS +=devel/gmake
 
 CONFIGURE_STYLE =	oasis
 CONFIGURE_ARGS =	--enable-pcre
