@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/15 15:17:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/15 16:41:19 sthen Exp $
 
 COMMENT-main=	fully featured POP3 and IMAP4 proxy server
 COMMENT-ldap=	LDAP backend for perdition mail proxy
@@ -6,6 +6,7 @@ COMMENT-mysql=  MySQL backend for perdition mail proxy
 COMMENT-pgsql=	PostgreSQL backend for perdition mail proxy
 
 DISTVER=	1.19-rc5
+REVISION=	0
 DISTNAME=	perdition-${DISTVER}
 PKGNAME-main=	perdition-${DISTVER:S/-//}
 PKGNAME-ldap=	perdition-ldap-${DISTVER:S/-//}
@@ -35,16 +36,18 @@ MASTER_SITES=	${HOMEPAGE}download/${DISTVER}/
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 
-CONFIGURE_STYLE=gnu
-CFLAGS+=-I${LOCALBASE}/include -I${LOCALBASE}/include/db4
-CONFIGURE_ENV+="LDFLAGS=-L${LOCALBASE}/lib"
+CONFIGURE_STYLE= gnu
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/db4" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
-CONFIGURE_ARGS+=	--disable-silent-rules \
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-ssl \
-			--with-ssl-includes=/usr/include \
-			--with-ssl-libraries=/usr/lib \
+			--disable-cdb \
 			--disable-gdbm \
 			--disable-odbc \
+			--disable-pam \
+			--with-ssl-includes=/usr/include \
+			--with-ssl-libraries=/usr/lib \
 			--with-user=_perdition \
 			--with-group=_perdition
 
