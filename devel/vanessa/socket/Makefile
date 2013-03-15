@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/15 19:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/15 15:13:36 sthen Exp $
 
-COMMENT=	provides abstract data types (ADTs)
+COMMENT=	provides simplified TCP/IP socket operations
 
-VERSION=	0.0.7
+VERSION=	0.0.12
 DISTNAME=	vanessa_socket-${VERSION}
 
-SHARED_LIBS=	vanessa_socket			0.4	# 0.4
+SHARED_LIBS=	vanessa_socket			1.0	# 3.0
 
 MASTER_SITES=	${MASTER_SITE_VANESSA:=vanessa_socket/${VERSION}/}
 
-WANTLIB=	c vanessa_logger>=0.3 popt
+MODULES=	devel/gettext
+WANTLIB=	c vanessa_logger>=1.0 popt
 
-USE_GROFF =	Yes
-LIB_DEPENDS=	devel/vanessa/logger \
+LIB_DEPENDS=	vanessa_logger->=0.0.10:devel/vanessa/logger \
 		devel/popt
 
 .include <bsd.port.mk>

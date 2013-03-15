@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/11/06 10:57:38 msf Exp $
-@lib lib/libvanessa_adt.so.${LIBvanessa_adt_VERSION}

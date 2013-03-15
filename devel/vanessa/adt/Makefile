@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/15 19:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/15 15:13:36 sthen Exp $
 
 COMMENT=	provides abstract data types (ADTs)
 
-VERSION=	0.0.6
+VERSION=	0.0.9
 DISTNAME=	vanessa_adt-${VERSION}
 
-SHARED_LIBS=	vanessa_adt			0.3	# 0.3
+SHARED_LIBS=	vanessa_adt			1.0	# 1.0
 
 MASTER_SITES=	${MASTER_SITE_VANESSA:=vanessa_adt/${VERSION}/}
 
-LIB_DEPENDS=	devel/vanessa/logger
-WANTLIB =	vanessa_logger>=0.3
+LIB_DEPENDS=	vanessa_logger->=0.0.10:devel/vanessa/logger
+WANTLIB =	vanessa_logger>=1.0
 
 .include <bsd.port.mk>

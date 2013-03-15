@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/06 10:57:38 msf Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2013/03/15 15:13:36 sthen Exp $
 include/vanessa_adt.h
 lib/libvanessa_adt.a
 lib/libvanessa_adt.la
+@lib lib/libvanessa_adt.so.${LIBvanessa_adt_VERSION}
