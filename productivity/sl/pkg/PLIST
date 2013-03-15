@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/15 16:11:05 bcallah Exp $
+@conflict sl-*
+bin/sl
+share/examples/sl/
+share/examples/sl/sl.tcl
