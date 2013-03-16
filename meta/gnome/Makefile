@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.46 2013/03/11 09:38:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2013/03/16 20:06:46 ajacoutot Exp $
 
 COMMENT-main=	GNOME desktop meta-package (base installation)
 COMMENT-extra=	GNOME desktop meta-package (full installation)
 
-V=		3.6.2
+V=		3.6.3
 PKGNAME=	gnome-${V}
 
 PKGNAME-main=	gnome-${V}
 PKGNAME-extra=	gnome-extra-${V}
-
-REVISION-main=	5
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 		Antoine Jacoutot <ajacoutot@openbsd.org>
