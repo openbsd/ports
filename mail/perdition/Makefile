@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/15 16:41:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/16 01:30:25 sthen Exp $
 
 COMMENT-main=	fully featured POP3 and IMAP4 proxy server
 COMMENT-ldap=	LDAP backend for perdition mail proxy
@@ -6,7 +6,7 @@ COMMENT-mysql=  MySQL backend for perdition mail proxy
 COMMENT-pgsql=	PostgreSQL backend for perdition mail proxy
 
 DISTVER=	1.19-rc5
-REVISION=	0
+REVISION=	1
 DISTNAME=	perdition-${DISTVER}
 PKGNAME-main=	perdition-${DISTVER:S/-//}
 PKGNAME-ldap=	perdition-ldap-${DISTVER:S/-//}
@@ -83,7 +83,7 @@ LIB_DEPENDS-mysql=	databases/mysql \
 			devel/vanessa/adt \
 			devel/vanessa/logger
 WANTLIB-mysql=		crypto ssl util m z lib/mysql/mysqlclient>=10 \
-			vanessa_adt>=0.3 vanessa_logger>=0.3
+			vanessa_adt>=1.0 vanessa_logger>=1.0
 
 .if !${BUILD_PACKAGES:M-mysql}
 CONFIGURE_ARGS+=	--disable-mysql
@@ -95,8 +95,8 @@ CONFIGURE_ARGS+=	--with-mysql-libraries=${LOCALBASE}/lib/mysql \
 LIB_DEPENDS-pgsql=	databases/postgresql \
 			devel/vanessa/adt \
 			devel/vanessa/logger
-WANTLIB-pgsql=		crypto ssl util pq>=2 vanessa_adt>=0.3 \
-			vanessa_logger>=0.3
+WANTLIB-pgsql=		crypto ssl util pq>=2 vanessa_adt>=1.0 \
+			vanessa_logger>=1.0
 
 .if !${BUILD_PACKAGES:M-pgsql}
 CONFIGURE_ARGS+=	--disable-pg
