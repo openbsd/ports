@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/12 00:59:50 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/16 10:56:30 ratchov Exp $
 
 COMMENT=		portable cross-platform audio API
 
@@ -6,6 +6,7 @@ DISTNAME=		portaudio-svn-1851
 CATEGORIES=		audio
 MASTER_SITES=		http://comstyle.com/source/
 EXTRACT_SUFX=		.tar.xz
+REVISION=		0
 
 SHARED_LIBS=		portaudio	1.0
 

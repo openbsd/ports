@@ -294,7 +294,7 @@ OpenStream(struct PaUtilHostApiRepresentation *hostApi,
 
 	DPR("OpenStream: mode = %x, trying rate = %u\n", mode, par.rate);
 
-	hdl = sio_open(NULL, mode, 0);
+	hdl = sio_open(SIO_DEVANY, mode, 0);
 	if (hdl == NULL)
 		return paUnanticipatedHostError;
 	if (!sio_setpar(hdl, &par)) {
@@ -659,13 +659,13 @@ PaSndio_Initialize(PaUtilHostApiRepresentation **hostApi, PaHostApiIndex hostApi
 	info->structVersion = 2;
 	info->name = "default";
 	info->hostApi = hostApiIndex;
-	info->maxInputChannels = 65536;
-	info->maxOutputChannels = 65536;
+	info->maxInputChannels = 128;
+	info->maxOutputChannels = 128;
 	info->defaultLowInputLatency = 0.01;
 	info->defaultLowOutputLatency = 0.01;
 	info->defaultHighInputLatency = 0.5;
 	info->defaultHighOutputLatency = 0.5;
-	info->defaultSampleRate = 192000;
+	info->defaultSampleRate = 48000;
 	sndioHostApi->infos[0] = info;
 	
 	*hostApi = &sndioHostApi->base;
