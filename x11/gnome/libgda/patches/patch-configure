@@ -1,25 +1,11 @@
-$OpenBSD: patch-configure,v 1.26 2012/09/21 13:23:06 ajacoutot Exp $
-
-Don't do bash pattern substitutions.
+$OpenBSD: patch-configure,v 1.27 2013/03/16 21:56:37 ajacoutot Exp $
 
 Our libdb does not follow upstream naming (libdb.so.XX versus
 libdb-5.0.so).
 
---- configure.orig	Sat Aug 25 19:18:47 2012
-+++ configure	Fri Sep 21 08:57:38 2012
-@@ -20378,9 +20378,9 @@ $as_echo_n "checking if gobject-introspection is corre
-             INTROSPECTION_COMPILER=`$PKG_CONFIG --variable=g_ir_compiler gobject-introspection-1.0`
-             INTROSPECTION_GENERATE=`$PKG_CONFIG --variable=g_ir_generate gobject-introspection-1.0`
-             INTROSPECTION_GIRDIR=`$PKG_CONFIG --variable=girdir gobject-introspection-1.0`
--            INTROSPECTION_GIRDIR=${INTROSPECTION_GIRDIR/$datadir/\$(datadir)}
-+            INTROSPECTION_GIRDIR=`echo ${INTROSPECTION_GIRDIR} | sed -e 's,$datadir,\$\(datadir\),g'`
-             INTROSPECTION_TYPELIBDIR="$($PKG_CONFIG --variable=typelibdir gobject-introspection-1.0)"
--            INTROSPECTION_TYPELIBDIR=${INTROSPECTION_TYPELIBDIR/$libdir/\$(libdir)}
-+            INTROSPECTION_TYPELIBDIR=`echo ${INTROSPECTION_TYPELIBDIR} | sed -e 's,$libdir,\$\($libdir\),g'`
-             INTROSPECTION_CFLAGS=`$PKG_CONFIG --cflags gobject-introspection-1.0`
-             INTROSPECTION_LIBS=`$PKG_CONFIG --libs gobject-introspection-1.0`
-             INTROSPECTION_MAKEFILE=$introspection_makefile
-@@ -21454,9 +21454,9 @@ $as_echo_n "checking for Berkeley DB files in $d... " 
+--- configure.orig	Fri Jan 25 08:57:56 2013
++++ configure	Sat Mar 16 21:15:00 2013
+@@ -21803,9 +21803,9 @@ $as_echo_n "checking for Berkeley DB files in $d... " 
  		        db_libfile="$d/$bdb_loclibdir/libdb$sversion$bdb_libext"
          	        try_headers="db.h db$version/db.h db$sversion/db.h"
  		    else

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2013/03/11 11:46:11 espie Exp $
+# $OpenBSD: Makefile,v 1.70 2013/03/16 21:56:37 ajacoutot Exp $
 
 # XXX add vala to MODGNOME_TOOLS on update
 
@@ -11,7 +11,7 @@ COMMENT-pgsql=		PostreSQL backend for libgda
 COMMENT-ui=		GTK+ extension and tools for libgda
 
 GNOME_PROJECT=		libgda
-GNOME_VERSION=		5.1.1
+GNOME_VERSION=		5.1.2
 
 # NOTE: when GDA_MAJOR changes, increment GDA_MAJOR accordingly and bump:
 # x11/gnome/libgdamm
@@ -22,12 +22,6 @@ PKGNAME-ldap=		libgda-ldap-${GNOME_VERSION}
 PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}
 PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
 PKGNAME-ui=		libgda-ui-${GNOME_VERSION}
-
-REVISION-main=		0
-REVISION-ldap=		0
-REVISION-mysql=		0
-REVISION-pgsql=		0
-REVISION-ui=		0
 
 EPOCH-main=		2
 EPOCH-ldap=		0
@@ -40,6 +34,7 @@ SHARED_LIBS +=  gda-5.0                   1.0 # 5.1
 SHARED_LIBS +=  gda-report-5.0            1.0 # 5.1
 SHARED_LIBS +=  gda-ui-5.0                1.0 # 5.1
 SHARED_LIBS +=  gda-xslt-5.0              1.0 # 5.1
+SHARED_LIBS +=  gdadata-5.0               0.0 # 0.0
 
 HOMEPAGE=		http://www.gnome-db.org/
 
@@ -69,21 +64,25 @@ LIB_DEPENDS=		devel/glib2 \
 			textproc/libxml \
 			x11/gnome/libsecret
 
-BUILD_DEPENDS=		databases/db/v4
+BUILD_DEPENDS=		databases/db/v4 \
+			devel/iso-codes
 
 TEST_DEPENDS=	devel/check
 
-MODGNOME_TOOLS= 	goi yelp
+MODGNOME_TOOLS= 	goi vala yelp
 
 LIBTOOL_FLAGS=		--tag=disable-static
-USE_GROFF =		Yes
 CONFIGURE_ARGS+=	--disable-static \
 			--enable-system-sqlite \
+			--enable-gda-gi \
+			--enable-gdaui-gi \
+			--enable-gdaui-vala \
+			--enable-vala-extensions \
 			--with-bdb="${LOCALBASE}" \
 			--without-firebird \
 			--without-oracle \
 			--without-mdb \
-			--with-java=no
+			--without-java
 MODGNOME_CPPFLAGS=	-I${LOCALBASE}/include/db4/
 MODGNOME_LDFLAGS=	-lm
 CONFIGURE_ENV=		LIBCRYPTO_CFLAGS="-I/usr/include/ssl" \
@@ -92,12 +91,14 @@ CONFIGURE_ENV=		LIBCRYPTO_CFLAGS="-I/usr/include/ssl" \
 
 FAKE_FLAGS=		configdir="${PREFIX}/share/examples/libgda"
 
-WANTLIB-main += ${WANTLIB} c gcrypt gpg-error ncurses
+WANTLIB-main += ${WANTLIB} c gcrypt gpg-error ncurses gee-0.8
 WANTLIB-main += readline soup-2.4 crypto gdk_pixbuf-2.0 png xslt
 
 RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS} \
-			${MODGNOME_RUN_DEPENDS_yelp}
+			${MODGNOME_RUN_DEPENDS_yelp} \
+			devel/iso-codes
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
+			devel/libgee \
 			devel/libsoup \
 			textproc/libxslt \
 			graphics/gdk-pixbuf2
@@ -110,12 +111,12 @@ CONFIGURE_ARGS+=	--with-ui
 # XXX graphviz depends on deprecated libgnomeui
 CONFIGURE_ARGS+=	--with-graphviz=no
 WANTLIB-ui += ${WANTLIB}
-WANTLIB-ui += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB-ui += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo
-WANTLIB-ui += cairo-gobject drm expat fontconfig freetype gda-${GDA_MAJOR}
+WANTLIB-ui += X11 Xcomposite Xcursor Xdamage Xext Xfixes graphite2
+WANTLIB-ui += Xi Xinerama Xrandr Xrender atk-1.0 c cairo
+WANTLIB-ui += cairo-gobject expat fontconfig freetype gda-${GDA_MAJOR}
 WANTLIB-ui += gdk-3 gdk_pixbuf-2.0 goocanvas-2.0 gtk-3 gtksourceview-3.0
 WANTLIB-ui += pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB-ui += pthread-stubs xcb xcb-render xcb-shm stdc++ icuuc
+WANTLIB-ui += pthread-stubs xcb xcb-render xcb-shm icuuc
 WANTLIB-ui += ICE SM atk-bridge-2.0 atspi harfbuzz icudata icule dbus-1
 LIB_DEPENDS-ui=		${LIB_DEPENDS} \
 			graphics/goocanvas2 \
@@ -166,6 +167,6 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure
 
 post-install:
-	rm ${PREFIX}/lib/libgda-${GDA_MAJOR}/providers/*.la
+	rm ${PREFIX}/lib/libgda-${GDA_MAJOR}/{plugins,providers}/*.la
 
 .include <bsd.port.mk>

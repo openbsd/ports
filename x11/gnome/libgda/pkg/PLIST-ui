@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ui,v 1.20 2012/09/21 13:23:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST-ui,v 1.21 2013/03/16 21:56:37 ajacoutot Exp $
 @conflict libgda-<4.2.8p1v2
 @bin bin/gda-browser-${GDA_MAJOR}
 @bin bin/gda-control-center-${GDA_MAJOR}
@@ -31,6 +31,7 @@ include/libgda-${GDA_MAJOR}/libgda-ui/gdaui-rt-editor.h
 include/libgda-${GDA_MAJOR}/libgda-ui/gdaui-server-operation.h
 include/libgda-${GDA_MAJOR}/libgda-ui/gdaui-tree-store.h
 include/libgda-${GDA_MAJOR}/libgda-ui/libgda-ui.h
+lib/girepository-1.0/Gdaui-${GDA_MAJOR}.typelib
 lib/libgda-${GDA_MAJOR}/plugins/
 lib/libgda-${GDA_MAJOR}/plugins/gdaui-entry-filesel-spec.xml
 lib/libgda-${GDA_MAJOR}/plugins/gdaui-entry-format-spec.xml
@@ -431,6 +432,18 @@ share/gtk-doc/html/gda-browser/UILayout.png
 share/gtk-doc/html/gda-browser/code_orga.html
 share/gtk-doc/html/gda-browser/core.html
 share/gtk-doc/html/gda-browser/extrawidgets.html
+share/gtk-doc/html/gda-browser/fdl-section1.html
+share/gtk-doc/html/gda-browser/fdl-section10.html
+share/gtk-doc/html/gda-browser/fdl-section2.html
+share/gtk-doc/html/gda-browser/fdl-section3.html
+share/gtk-doc/html/gda-browser/fdl-section4.html
+share/gtk-doc/html/gda-browser/fdl-section5.html
+share/gtk-doc/html/gda-browser/fdl-section6.html
+share/gtk-doc/html/gda-browser/fdl-section7.html
+share/gtk-doc/html/gda-browser/fdl-section8.html
+share/gtk-doc/html/gda-browser/fdl-section9.html
+share/gtk-doc/html/gda-browser/fdl-using.html
+share/gtk-doc/html/gda-browser/fdl.html
 share/gtk-doc/html/gda-browser/gda-browser-BrowserPage.html
 share/gtk-doc/html/gda-browser/gda-browser-Data-Manager-perspective.html
 share/gtk-doc/html/gda-browser/gda-browser-Query-Exec-perspective.html
@@ -558,6 +571,7 @@ share/libgda-${GDA_MAJOR}/ui/gdaui-entry-number.xml
 share/libgda-${GDA_MAJOR}/ui/gdaui-entry-string.xml
 share/pixmaps/
 share/pixmaps/gda-browser-${GDA_MAJOR}.png
+share/vala/vapi/libgdaui-${GDA_MAJOR}.vapi
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
