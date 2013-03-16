@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/10 22:55:01 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/16 09:31:05 brad Exp $
 
 SHARED_ONLY =	Yes
-CATEGORIES =	audio x11
-COMMENT =	Qt4-based heavy featured music player
+
+COMMENT =	Qt4-based featureful music player
+
 DISTNAME =	clementine-1.1.1
+REVISION =	1
+CATEGORIES =	audio x11
+
 HOMEPAGE =	http://clementine-player.org/
-REVISION =	0
 
 MAINTAINER =	Vadim Zhukov <persgray@gmail.com>
 MASTER_SITES =	http://clementine-player.googlecode.com/files/
