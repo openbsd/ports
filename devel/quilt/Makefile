@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/10/08 15:14:25 rpe Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/16 08:25:55 landry Exp $
 
 COMMENT=		quilt
 
@@ -9,9 +9,6 @@ HOMEPAGE=		http://savannah.nongnu.org/projects/quilt/
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c
 
