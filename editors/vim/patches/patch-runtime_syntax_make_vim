@@ -1,7 +1,7 @@
-$OpenBSD: patch-runtime_syntax_make_vim,v 1.3 2010/09/09 22:29:29 ckuethe Exp $
---- runtime/syntax/make.vim.orig	Sat May 15 04:03:57 2010
-+++ runtime/syntax/make.vim	Tue Sep  7 15:51:10 2010
-@@ -22,6 +22,9 @@ syn match makeInclude	"^ *[-s]\=include"
+$OpenBSD: patch-runtime_syntax_make_vim,v 1.4 2013/03/16 22:56:44 sthen Exp $
+--- runtime/syntax/make.vim.orig	Thu Mar  7 15:08:35 2013
++++ runtime/syntax/make.vim	Thu Mar  7 15:31:10 2013
+@@ -26,6 +26,9 @@ syn match makeInclude	"^ *[-s]\=include"
  syn match makeStatement	"^ *vpath"
  syn match makeExport    "^ *\(export\|unexport\)\>"
  syn match makeOverride	"^ *override"
@@ -11,7 +11,7 @@ $OpenBSD: patch-runtime_syntax_make_vim,v 1.3 2010/09/09 22:29:29 ckuethe Exp $
  hi link makeOverride makeStatement
  hi link makeExport makeStatement
  
-@@ -37,25 +40,29 @@ syn case match
+@@ -41,25 +44,29 @@ syn case match
  " identifiers
  syn region makeIdent	start="\$(" skip="\\)\|\\\\" end=")" contains=makeStatement,makeIdent,makeSString,makeDString
  syn region makeIdent	start="\${" skip="\\}\|\\\\" end="}" contains=makeStatement,makeIdent,makeSString,makeDString
@@ -33,8 +33,8 @@ $OpenBSD: patch-runtime_syntax_make_vim,v 1.3 2010/09/09 22:29:29 ckuethe Exp $
  " make targets
 -" syn match makeSpecTarget	"^\.\(SUFFIXES\|PHONY\|DEFAULT\|PRECIOUS\|IGNORE\|SILENT\|EXPORT_ALL_VARIABLES\|KEEP_STATE\|LIBPATTERNS\|NOTPARALLEL\|DELETE_ON_ERROR\|INTERMEDIATE\|POSIX\|SECONDARY\)\>"
 +" syn match makeSpecTarget	"^\.\(SUFFIXES\|PHONY\|DEFAULT\|PRECIOUS\|IGNORE\|SILENT\|EXPORT_ALL_VARIABLES\|KEEP_STATE\|LIBPATTERNS\|NOTPARALLEL\|DELETE_ON_ERROR\|INTERMEDIATE\|POSIX\|SECONDARY\|MAIN\)\>"
- syn match makeImplicit		"^\.[A-Za-z0-9_./\t -]\+\s*:[^=]"me=e-2 nextgroup=makeSource
  syn match makeImplicit		"^\.[A-Za-z0-9_./\t -]\+\s*:$"me=e-1 nextgroup=makeSource
+ syn match makeImplicit		"^\.[A-Za-z0-9_./\t -]\+\s*:[^=]"me=e-2 nextgroup=makeSource
  
  syn region makeTarget	transparent matchgroup=makeTarget start="^[A-Za-z0-9_./$()%-][A-Za-z0-9_./\t $()%-]*:\{1,2}[^:=]"rs=e-1 end=";"re=e-1,me=e-1 end="[^\\]$" keepend contains=makeIdent,makeSpecTarget,makeNextLine skipnl nextGroup=makeCommands
  syn match makeTarget		"^[A-Za-z0-9_./$()%*@-][A-Za-z0-9_./\t $()%*@-]*::\=\s*$" contains=makeIdent,makeSpecTarget skipnl nextgroup=makeCommands,makeCommandError
@@ -46,7 +46,7 @@ $OpenBSD: patch-runtime_syntax_make_vim,v 1.3 2010/09/09 22:29:29 ckuethe Exp $
  
  syn match makeCommandError "^\s\+\S.*" contained
  syn region makeCommands start=";"hs=s+1 start="^\t" end="^[^\t#]"me=e-1,re=e-1 end="^$" contained contains=makeCmdNextLine,makeSpecial,makeComment,makeIdent,makePreCondit,makeDefine,makeDString,makeSString nextgroup=makeCommandError
-@@ -63,14 +70,15 @@ syn match makeCmdNextLine	"\\\n."he=e-1 contained
+@@ -67,14 +74,15 @@ syn match makeCmdNextLine	"\\\n."he=e-1 contained
  
  
  " Statements / Functions (GNU make)

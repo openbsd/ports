@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-no_x11-main,v 1.3 2008/10/17 14:56:53 ckuethe Exp $
+@comment $OpenBSD: PFRAG.no-no_x11-main,v 1.4 2013/03/16 22:56:44 sthen Exp $
 bin/eview
 bin/evim
 bin/gview
@@ -7,87 +7,4 @@ bin/gvimdiff
 bin/gvimtutor
 bin/rgview
 bin/rgvim
-@man man/fr.ISO8859-1/man1/eview.1
-@man man/fr.ISO8859-1/man1/evim.1
-@man man/fr.ISO8859-1/man1/gview.1
-@man man/fr.ISO8859-1/man1/gvim.1
-@man man/fr.ISO8859-1/man1/gvimdiff.1
-@man man/fr.ISO8859-1/man1/rgview.1
-@man man/fr.ISO8859-1/man1/rgvim.1
-@man man/fr.UTF-8/man1/eview.1
-@man man/fr.UTF-8/man1/evim.1
-@man man/fr.UTF-8/man1/gview.1
-@man man/fr.UTF-8/man1/gvim.1
-@man man/fr.UTF-8/man1/gvimdiff.1
-@man man/fr.UTF-8/man1/rgview.1
-@man man/fr.UTF-8/man1/rgvim.1
-@man man/fr/man1/eview.1
-@man man/fr/man1/evim.1
-@man man/fr/man1/gview.1
-@man man/fr/man1/gvim.1
-@man man/fr/man1/gvimdiff.1
-@man man/fr/man1/rgview.1
-@man man/fr/man1/rgvim.1
-@man man/it.ISO8859-1/man1/eview.1
-@man man/it.ISO8859-1/man1/evim.1
-@man man/it.ISO8859-1/man1/gview.1
-@man man/it.ISO8859-1/man1/gvim.1
-@man man/it.ISO8859-1/man1/gvimdiff.1
-@man man/it.ISO8859-1/man1/rgview.1
-@man man/it.ISO8859-1/man1/rgvim.1
-@man man/it.UTF-8/man1/eview.1
-@man man/it.UTF-8/man1/evim.1
-@man man/it.UTF-8/man1/gview.1
-@man man/it.UTF-8/man1/gvim.1
-@man man/it.UTF-8/man1/gvimdiff.1
-@man man/it.UTF-8/man1/rgview.1
-@man man/it.UTF-8/man1/rgvim.1
-@man man/it/man1/eview.1
-@man man/it/man1/evim.1
-@man man/it/man1/gview.1
-@man man/it/man1/gvim.1
-@man man/it/man1/gvimdiff.1
-@man man/it/man1/rgview.1
-@man man/it/man1/rgvim.1
-@man man/man1/eview.1
 @man man/man1/evim.1
-@man man/man1/gview.1
-@man man/man1/gvim.1
-@man man/man1/gvimdiff.1
-@man man/man1/rgview.1
-@man man/man1/rgvim.1
-@man man/pl.ISO8859-2/man1/eview.1
-@man man/pl.ISO8859-2/man1/evim.1
-@man man/pl.ISO8859-2/man1/gview.1
-@man man/pl.ISO8859-2/man1/gvim.1
-@man man/pl.ISO8859-2/man1/gvimdiff.1
-@man man/pl.ISO8859-2/man1/rgview.1
-@man man/pl.ISO8859-2/man1/rgvim.1
-@man man/pl.UTF-8/man1/eview.1
-@man man/pl.UTF-8/man1/evim.1
-@man man/pl.UTF-8/man1/gview.1
-@man man/pl.UTF-8/man1/gvim.1
-@man man/pl.UTF-8/man1/gvimdiff.1
-@man man/pl.UTF-8/man1/rgview.1
-@man man/pl.UTF-8/man1/rgvim.1
-@man man/pl/man1/eview.1
-@man man/pl/man1/evim.1
-@man man/pl/man1/gview.1
-@man man/pl/man1/gvim.1
-@man man/pl/man1/gvimdiff.1
-@man man/pl/man1/rgview.1
-@man man/pl/man1/rgvim.1
-@man man/ru.KOI8-R/man1/eview.1
-@man man/ru.KOI8-R/man1/evim.1
-@man man/ru.KOI8-R/man1/gview.1
-@man man/ru.KOI8-R/man1/gvim.1
-@man man/ru.KOI8-R/man1/gvimdiff.1
-@man man/ru.KOI8-R/man1/rgview.1
-@man man/ru.KOI8-R/man1/rgvim.1
-@man man/ru.UTF-8/man1/eview.1
-@man man/ru.UTF-8/man1/evim.1
-@man man/ru.UTF-8/man1/gview.1
-@man man/ru.UTF-8/man1/gvim.1
-@man man/ru.UTF-8/man1/gvimdiff.1
-@man man/ru.UTF-8/man1/rgview.1
-@man man/ru.UTF-8/man1/rgvim.1

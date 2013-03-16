@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_auto_configure,v 1.8 2011/06/15 12:27:06 sthen Exp $
---- src/auto/configure.orig	Wed Jun 15 13:26:17 2011
-+++ src/auto/configure	Wed Jun 15 13:26:18 2011
-@@ -11514,6 +11514,7 @@ $as_echo_n "checking for sysctl... " >&6; }
+$OpenBSD: patch-src_auto_configure,v 1.9 2013/03/16 22:56:44 sthen Exp $
+--- src/auto/configure.orig	Thu Mar  7 15:08:35 2013
++++ src/auto/configure	Thu Mar  7 15:25:57 2013
+@@ -11689,6 +11689,7 @@ $as_echo_n "checking for sysctl... " >&6; }
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  #include <sys/types.h>
@@ -9,7 +9,7 @@ $OpenBSD: patch-src_auto_configure,v 1.8 2011/06/15 12:27:06 sthen Exp $
  #include <sys/sysctl.h>
  int
  main ()
-@@ -12135,7 +12136,7 @@ if ac_fn_c_try_link "$LINENO"; then :
+@@ -12315,7 +12316,7 @@ if ac_fn_c_try_link "$LINENO"; then :
  $as_echo "gettext() works" >&6; }; have_gettext="yes"
  else
    olibs=$LIBS
