@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/03/15 16:11:05 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/16 13:25:21 bcallah Exp $
 
 COMMENT =	substantially more useful ls
 DISTNAME =	sl-ls-1.1.2
@@ -20,7 +20,7 @@ RUN_DEPENDS =	${MODTCL_RUN_DEPENDS}
 NO_BUILD =	Yes
 NO_TEST =	Yes
 
-post-extract:
+pre-configure:
 # XXX: Use ${MODTCL_TCLSH_ADJ} someday
 	perl -pi -e s,/usr/bin/tclsh,${PREFIX}/bin/tclsh${MODTCL_VERSION},g ${WRKSRC}/sl
 
