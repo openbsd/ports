@@ -1,6 +1,11 @@
-$OpenBSD: patch-src_tools_moc_main_cpp,v 1.1 2013/03/15 17:01:31 landry Exp $
+$OpenBSD: patch-src_tools_moc_main_cpp,v 1.2 2013/03/16 08:44:55 brad Exp $
+
+Workaround moc's inability to properly parse C++ macros within
+some of Boost's headers. This issue may come up again with other
+headers from Boost requiring additional entries to be added. The
+C++ parser from Qt5's moc has been fixed.
+
 https://bugreports.qt-project.org/browse/QTBUG-22829
-Fix for the BOOST_JOIN parse error in games/pokerth & cad/openscad + other places...
 
 --- src/tools/moc/main.cpp.orig	Wed Mar 13 11:20:37 2013
 +++ src/tools/moc/main.cpp	Wed Mar 13 11:22:12 2013
