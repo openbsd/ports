@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/15 07:40:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/16 11:18:13 rpe Exp $
 
 COMMENT=	GTK+2 frontend to CUPS
 
@@ -39,7 +39,9 @@ USE_GMAKE=	Yes
 AUTOMAKE_VERSION=1.11
 AUTOCONF_VERSION=2.69
 # libtoolize(1)
-BUILD_DEPENDS+=	devel/libtool
+BUILD_DEPENDS+=	devel/libtool \
+		${MODGNU_AUTOMAKE_DEPENDS} \
+		${MODGNU_AUTOCONF_DEPENDS}
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
