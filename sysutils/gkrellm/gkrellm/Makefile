@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2013/03/11 11:41:30 espie Exp $
+# $OpenBSD: Makefile,v 1.68 2013/03/17 09:47:07 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,8 +9,8 @@ V=		2.3.5
 DISTNAME=	gkrellm-${V}
 PKGNAME-main=	gkrellm-server-${V}
 PKGNAME-client=	gkrellm-${V}
-REVISION-main=	5
-REVISION-client=3
+REVISION-main=	6
+REVISION-client=4
 CATEGORIES=	sysutils sysutils/gkrellm
 
 HOMEPAGE=	http://www.gkrellm.net/
@@ -18,11 +18,9 @@ HOMEPAGE=	http://www.gkrellm.net/
 # GPLv3 with OpenSSL license exception
 PERMIT_PACKAGE_CDROM=   Yes
 
-
 MASTER_SITES=	http://members.dslextreme.com/users/billw/gkrellm/
 EXTRACT_SUFX=	.tar.bz2
 
-USE_GROFF =	Yes
 PSEUDO_FLAVORS=	no_client
 FLAVOR?=
 
@@ -39,13 +37,12 @@ LIB_DEPENDS=		devel/glib2
 LIB_DEPENDS-client=	${LIB_DEPENDS} \
 			x11/gtk+2
 
-WANTLIB-client += ${WANTLIB} gdk-x11-2.0 gtk-x11-2.0
-WANTLIB-client += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
-WANTLIB-client += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 cairo crypto
-WANTLIB-client += expat fontconfig freetype m pango-1.0 pangocairo-1.0
-WANTLIB-client += pangoft2-1.0 pixman-1 png pthread-stubs ssl xcb z
-WANTLIB-client += gio-2.0 gobject-2.0 gdk_pixbuf-2.0
-WANTLIB-client += GL Xxf86vm drm xcb-render xcb-shm
+WANTLIB-client += ${WANTLIB}
+WANTLIB-client += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB-client += Xinerama Xrandr Xrender atk-1.0 cairo crypto fontconfig
+WANTLIB-client += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 gobject-2.0
+WANTLIB-client += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB-client += ssl z
 
 NO_TEST=	Yes
 USE_GMAKE=	Yes

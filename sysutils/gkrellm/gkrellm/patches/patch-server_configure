@@ -1,0 +1,13 @@
+$OpenBSD: patch-server_configure,v 1.1 2013/03/17 09:47:07 ajacoutot Exp $
+--- server/configure.orig	Sun Mar 17 10:42:38 2013
++++ server/configure	Sun Mar 17 10:42:52 2013
+@@ -13,9 +13,6 @@ do
+ 	fi
+ done
+ 
+-PKG_INCLUDE=`pkg-config gtk+-2.0 --cflags`
+-PKG_LIB=`pkg-config gtk+-2.0 --libs`
+-
+ rm -f configure.h configure.log test test.o test.c
+ 
+ touch configure.h
