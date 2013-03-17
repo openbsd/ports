@@ -1,8 +1,11 @@
-$OpenBSD: README-server,v 1.6 2012/05/23 21:33:04 sthen Exp $
+$OpenBSD: README-server,v 1.7 2013/03/17 07:22:23 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
+
+Initial setup
+=============
 
 If you are installing MySQL for the first time, you have to create
 a default database first. In order to create the database, please run
@@ -31,3 +34,25 @@ For larger servers and dedicated database servers, these numbers
 and memory limits (e.g. datasize and stacksize) may also need to be
 increased. Please report any changes and experiences to the package
 maintainers so that we can update this file for future versions.
+
+chrooted daemons and MySQL socket
+=================================
+
+For external program running under a chroot(8) to be able to access the
+MySQL server without using a network connection, the socket must be
+placed inside the chroot.
+
+e.g. httpd(8) or nginx(8): connecting to MySQL from PHP
+-------------------------------------------------------
+Create a directory for the MySQL socket:
+
+    # install -d -m 0711 -o _mysql -g _mysql /var/www/var/run/mysql
+
+Adjust ${SYSCONFDIR}/my.cnf to put and connect to the MySQL socket
+within the chroot:
+
+    [client]
+    socket = /var/www/var/run/mysql/mysql.sock
+
+    [mysqld]
+    socket = /var/www/var/run/mysql/mysql.sock
