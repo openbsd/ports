@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2012/09/10 09:16:33 jasper Exp $
+$OpenBSD: README,v 1.2 2013/03/17 07:21:17 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -19,11 +19,6 @@ Choose a database system:
 
 Mantis can use a PostgreSQL or MySQL database.  Install either the php-pgsql
 or the php-mysql package before you use Mantis.
-
-MySQL Database:
-
-Install the database such that the Unix socket is in
-/var/www/var/run/mysql/
 
 Configuring:
 

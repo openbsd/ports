@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.6 2012/10/10 22:04:57 robert Exp $
+$OpenBSD: README-server,v 1.7 2013/03/17 07:21:17 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -54,23 +54,6 @@ through the web interface at http://<hostname>/zabbix/setup.php.
 
 MySQL (InnoDB)
 ==============
-
-MySQL users running with chroot'ed httpd might like to take the
-following steps to place the mysql socket inside the chroot:
-
-Create a directory for the mysql socket.
-
-    mkdir -p /var/www/var/run/mysql
-
-Adjust ${SYSCONFDIR}/my.cnf to put the mysql socket into the chroot,
-
-    [client]
-    socket = /var/www/var/run/mysql/mysql.sock
-
-    [mysqld]
-    socket = /var/www/var/run/mysql/mysql.sock
-
-and set DBSocket in the Zabbix configuration appropriately.
 
 Connect to MySQL, and create a user and database for Zabbix;
 
