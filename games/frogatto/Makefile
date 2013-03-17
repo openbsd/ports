@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:07:39 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/17 18:35:26 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
 COMMENT=	2D adventure platformer game
 
-DISTNAME=	frogatto-1.1.1
+# repackaged source from github minux the MacOS* dirs
+DISTNAME=	frogatto-1.3.20130317
+MASTER_SITES=	http://distfiles.bsdfrog.org/
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	0
 
 CATEGORIES=	games
 
@@ -19,11 +20,9 @@ PERMIT_PACKAGE_CDROM=	may not charge
 PERMIT_PACKAGE_FTP=	may not modify
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL GLU c m pthread stdc++ GLEW SDL SDL_image SDL_mixer
-WANTLIB += SDL_ttf boost_iostreams-mt boost_regex-mt boost_system-mt
-WANTLIB += boost_thread-mt png
-
-MASTER_SITES=	${HOMEPAGE}files/
+WANTLIB += GL GLEW GLU SDL SDL_image SDL_mixer SDL_ttf X11 boost_iostreams-mt
+WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt c jpeg
+WANTLIB += m png pthread stdc++ tiff webp z
 
 LIB_DEPENDS=	devel/sdl-image \
 		devel/sdl-mixer \
@@ -35,7 +34,13 @@ NO_TEST=	Yes
 USE_GMAKE=	Yes
 ALL_TARGET=	game server
 
-SUBST_VARS=	CXX CFLAGS CXXFLAGS
+CXXFLAGS +=	-I${LOCALBASE}/include
+
+MAKE_ENV=	CXX=${CXX} CXXFLAGS="${CXXFLAGS}"
+
+# src/difficulty.hpp:20:34: error: no newline at end of file
+post-extract:
+	echo >> ${WRKSRC}/src/difficulty.hpp
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Makefile \
@@ -43,12 +48,22 @@ pre-configure:
 		${WRKSRC}/src/filesystem.cpp
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/game ${PREFIX}/bin/frogatto
-	${INSTALL_PROGRAM} ${WRKBUILD}/server ${PREFIX}/bin/frogatto-server
 	${INSTALL_DATA_DIR} ${PREFIX}/share/frogatto
+	${INSTALL_PROGRAM} ${WRKBUILD}/game ${PREFIX}/share/frogatto/
+	${INSTALL_PROGRAM} ${WRKBUILD}/server ${PREFIX}/share/frogatto/
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/frogatto
-.for i in data images music sounds
+.for i in data images modules music
 	cp -R ${WRKSRC}/${i} ${PREFIX}/share/frogatto
 .endfor
+	rm -rf ${PREFIX}/share/frogatto/modules/frogatto/music_aac*
+.for i in frogatto frogatto-server
+	echo "#!/bin/sh" > ${PREFIX}/bin/${i}
+	echo "#" >> ${PREFIX}/bin/${i}
+	echo >> ${PREFIX}/bin/${i}
+	chown ${BINOWN}:${BINGRP} ${PREFIX}/bin/${i}
+	chmod ${BINMODE} ${PREFIX}/bin/${i}
+.endfor
+	echo "cd ${TRUEPREFIX}/share/frogatto && ./game \"\$$@\"" >> ${PREFIX}/bin/frogatto
+	echo "cd ${TRUEPREFIX}/share/frogatto && ./server \"\$$@\"" >> ${PREFIX}/bin/frogatto-server
 
 .include <bsd.port.mk>
