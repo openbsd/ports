@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:41:27 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/17 05:17:01 benoit Exp $
 
 COMMENT =	interface to md4 message-digest algorithm
 
-DISTNAME =	Digest-MD4-1.5
+DISTNAME =	Digest-MD4-1.8
 CATEGORIES =	security
-
-REVISION =	3
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
