@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1217 2013/03/12 06:56:27 ajacoutot Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1218 2013/03/17 10:35:05 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -30,6 +30,15 @@ ERRORS += "Fatal: Use 'env SUBPACKAGE=${SUBPACKAGE} ${MAKE}' instead."
 ERRORS += "Fatal: Variable $v is obsolete, use PACKAGE_REPOSITORY instead."
 .  endif
 .endfor
+.if defined(PERMIT_DISTFILES_CDROM)
+ERRORS += "Fatal: Variable PERMIT_DISTFILES_CDROM is obsolete."
+.endif
+.for v in NO_REGRESS REGRESS_IS_INTERACTIVE REGRESS_DEPENDS
+.  if defined($v)
+ERRORS += "Fatal: $v has been replaced with ${v:S/REGRESS/TEST/}."
+.  endif
+.endfor
+
 .for t in pre-fetch do-fetch post-fetch pre-package do-package post-package
 .  if target($t)
 ERRORS += "Fatal: you're not allowed to override $t"
@@ -213,25 +222,6 @@ _MAKEFILE_INC_DONE = Yes
 .    include "${.CURDIR}/../Makefile.inc"
 .  endif
 .endif
-
-.if defined(PERMIT_PACKAGE_CDROM) && ${PERMIT_PACKAGE_CDROM:L} == "yes"
-PERMIT_PACKAGE_FTP ?= Yes
-PERMIT_DISTFILES_FTP ?= Yes
-.elif defined(PERMIT_PACKAGE_FTP) && ${PERMIT_PACKAGE_FTP:L} == "yes"
-PERMIT_DISTFILES_FTP ?= Yes
-.endif
-
-.if !defined(PERMIT_PACKAGE_CDROM) || !defined(PERMIT_PACKAGE_FTP) || \
-	!defined(PERMIT_DISTFILES_FTP)
-ERRORS += "The licensing info for ${FULLPKGNAME} is incomplete."
-ERRORS += "Please notify the OpenBSD port maintainer:"
-ERRORS += "    ${MAINTAINER}"
-_BAD_LICENSING = Yes
-PERMIT_PACKAGE_CDROM = No
-PERMIT_PACKAGE_FTP = No
-PERMIT_DISTFILES_FTP = No
-.endif
-
 .if defined(verbose-show)
 .MAIN: verbose-show
 .elif defined(show)
@@ -281,7 +271,6 @@ CONFIGURE_STYLE ?=
 NO_DEPENDS ?= No
 NO_BUILD ?= No
 NO_TEST ?= No
-NO_REGRESS ?= No
 INSTALL_TARGET ?= install
 
 .if ${CONFIGURE_STYLE:L:Mautomake} || ${CONFIGURE_STYLE:L:Mautoconf} || \
@@ -311,6 +300,7 @@ _MODULES_DONE =
 ###
 ### Variable setup that can happen after modules
 ###
+
 
 # some introspection
 TARGETS =
@@ -419,6 +409,24 @@ ALL_FAKE_FLAGS += -j${MAKE_JOBS}
 
 .if !defined(_BSD_PORT_ARCH_MK_INCLUDED)
 .  include "${PORTSDIR}/infrastructure/mk/bsd.port.arch.mk"
+.endif
+
+.if defined(PERMIT_PACKAGE_CDROM) && ${PERMIT_PACKAGE_CDROM:L} == "yes"
+PERMIT_PACKAGE_FTP ?= Yes
+PERMIT_DISTFILES_FTP ?= Yes
+.elif defined(PERMIT_PACKAGE_FTP) && ${PERMIT_PACKAGE_FTP:L} == "yes"
+PERMIT_DISTFILES_FTP ?= Yes
+.endif
+
+.if !defined(PERMIT_PACKAGE_CDROM) || !defined(PERMIT_PACKAGE_FTP) || \
+	!defined(PERMIT_DISTFILES_FTP)
+ERRORS += "The licensing info for ${FULLPKGNAME} is incomplete."
+ERRORS += "Please notify the OpenBSD port maintainer:"
+ERRORS += "    ${MAINTAINER}"
+_BAD_LICENSING = Yes
+PERMIT_PACKAGE_CDROM = No
+PERMIT_PACKAGE_FTP = No
+PERMIT_DISTFILES_FTP = No
 .endif
 
 .if ${MACHINE_ARCH} != ${ARCH}
@@ -2644,7 +2652,7 @@ ${_BUILD_COOKIE}: ${_CONFIGURE_COOKIE}
 
 ${_TEST_COOKIE}: ${_BUILD_COOKIE}
 .if ${NO_TEST:L} == "no"
-	@${ECHO_MSG} "===>  Regression check for ${FULLPKGNAME}${_MASTER}"
+	@${ECHO_MSG} "===>  Regression tests for ${FULLPKGNAME}${_MASTER}"
 # When interactive tests need X11
 .  if ${TEST_IS_INTERACTIVE:L} == "x11"
 .    if !defined(DISPLAY) || !exists(${XAUTHORITY})
@@ -2674,7 +2682,7 @@ ${_TEST_COOKIE}: ${_BUILD_COOKIE}
 	@${_MAKE} post-test
 .  endif
 .else
-	@echo 1>&2 "No regression test for ${FULLPKGNAME}"
+	@echo 1>&2 "No regression tests for ${FULLPKGNAME}"
 .endif
 	@${_MAKE_COOKIE} $@
 
@@ -3168,7 +3176,7 @@ run-dir-depends:
 	@echo "${_FULLPKGPATH} ${_FULLPKGPATH}"
 .endif
 
-# recursively build a list of dirs for package regression, ready for tsort
+# recursively build a list of dirs for package regression tests, ready for tsort
 _recurse-test-dir-depends:
 .for _dir in ${_TEST_DEP}
 	@echo "$$self ${_dir}"; \
