@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui4_devmgr5_py,v 1.8 2013/03/08 06:51:46 ajacoutot Exp $
---- ui4/devmgr5.py.orig	Wed Feb 13 17:35:05 2013
-+++ ui4/devmgr5.py	Fri Feb 22 15:05:19 2013
-@@ -1014,7 +1014,7 @@ class DevMgr5(QMainWindow,  Ui_MainWindow):
+$OpenBSD: patch-ui4_devmgr5_py,v 1.9 2013/03/17 13:04:30 ajacoutot Exp $
+--- ui4/devmgr5.py.orig	Fri Mar  8 08:11:44 2013
++++ ui4/devmgr5.py	Sun Mar 17 13:51:21 2013
+@@ -1022,7 +1022,7 @@ class DevMgr5(QMainWindow,  Ui_MainWindow):
                      return
  
                  hplip_conf = ConfigParser.ConfigParser()
@@ -10,7 +10,7 @@ $OpenBSD: patch-ui4_devmgr5_py,v 1.8 2013/03/08 06:51:46 ajacoutot Exp $
                  hplip_conf.readfp(fp)
                  fp.close()
  
-@@ -2091,7 +2091,7 @@ class DevMgr5(QMainWindow,  Ui_MainWindow):
+@@ -2093,7 +2093,7 @@ class DevMgr5(QMainWindow,  Ui_MainWindow):
          if utils.which('hp-setup'):
              cmd = 'hp-setup --gui'
          else:
@@ -19,7 +19,7 @@ $OpenBSD: patch-ui4_devmgr5_py,v 1.8 2013/03/08 06:51:46 ajacoutot Exp $
  
          log.debug(cmd)
          utils.run(cmd)
-@@ -2103,7 +2103,7 @@ class DevMgr5(QMainWindow,  Ui_MainWindow):
+@@ -2105,7 +2105,7 @@ class DevMgr5(QMainWindow,  Ui_MainWindow):
          if utils.which('hp-setup'):
              cmd = 'hp-setup --gui --remove'
          else:

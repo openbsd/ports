@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-hpijs,v 1.23 2013/03/08 06:51:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST-hpijs,v 1.24 2013/03/17 13:04:31 ajacoutot Exp $
 @conflict hplip-libs-<=3.9.8
 @conflict hpcups-<=3.2.11
 @pkgpath print/hpijs
@@ -453,10 +453,10 @@ share/foomatic/db/source/PPD/HP/hp-laserjet_3390-hpijs-pcl3.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_3390-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_3392-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_4-ps.ppd.gz
-share/foomatic/db/source/PPD/HP/hp-laserjet_400_m401dne-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_4000_series-hpijs-pcl3.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_4000_series-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_400_m401-ps.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-laserjet_400_m401dne-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_400_mfp_m425-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_4050_series-hpijs-pcl3.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_4050_series-ps.ppd.gz
