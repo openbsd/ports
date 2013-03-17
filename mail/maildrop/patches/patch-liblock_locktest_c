@@ -1,4 +1,7 @@
-$OpenBSD: patch-liblock_locktest_c,v 1.1 2006/11/03 13:52:19 mbalmer Exp $
+$OpenBSD: patch-liblock_locktest_c,v 1.2 2013/03/17 19:37:36 rpe Exp $
+
+mktemp change
+
 --- liblock/locktest.c.orig	Mon Dec  6 11:18:55 1999
 +++ liblock/locktest.c	Sat Jan  7 20:36:26 2006
 @@ -5,6 +5,7 @@
@@ -13,7 +16,7 @@ $OpenBSD: patch-liblock_locktest_c,v 1.1 2006/11/03 13:52:19 mbalmer Exp $
  
  int main()
  {
-+#define FILENAME	"courier-authlib.locktest.XXXXX"
++#define FILENAME	"maildrop.locktest.XXXXXXXXXX"
  int	fd[2];
  pid_t	p;
  int	s;
