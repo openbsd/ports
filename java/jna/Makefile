@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:12:34 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/17 14:02:11 kurt Exp $
 
 COMMENT=	Java Native Access (JNA)
 
 V=		3.5.1
-DISTNAME=	jna-$V
+DISTNAME=	jna-$V-a31faf3026
+PKGNAME=	jna-$V
+EXTRACT_SUFX=	.zip
 CATEGORIES=	devel
+REVISION=	0
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
@@ -20,7 +23,7 @@ MODULES=	java
 MODJAVA_VER=	1.6+
 MODJAVA_BUILD=	ant
 
-# jnalib/build.xml specifically wants gmake (and ggrep)
+# build.xml specifically wants gmake (and ggrep)
 USE_GMAKE=	Yes
 
 BUILD_DEPENDS=	sysutils/ggrep
