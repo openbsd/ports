@@ -1,6 +1,11 @@
-$OpenBSD: patch-rebar_config,v 1.1.1.1 2013/03/12 07:30:55 jasper Exp $
+$OpenBSD: patch-rebar_config,v 1.2 2013/03/17 14:55:40 jasper Exp $
 
-https://github.com/opscode/chef_certgen/pull/1
+commit 7071ab370d3de9eb152f65cbcc11be3db1e85199
+Author: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date:   Mon Mar 11 11:43:20 2013 +0100
+
+    Fixup linking on OpenBSD.
+    https://github.com/opscode/chef_certgen/pull/1
 
 --- rebar.config.orig	Mon Mar 11 11:26:58 2013
 +++ rebar.config	Mon Mar 11 11:28:04 2013
