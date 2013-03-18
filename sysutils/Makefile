@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.285 2013/03/14 08:05:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.286 2013/03/18 09:02:35 ajacoutot Exp $
 
      SUBDIR =
-     SUBDIR += LPRng
      SUBDIR += accountsservice
      SUBDIR += anacron
      SUBDIR += ansible
