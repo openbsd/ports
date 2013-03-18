@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.793 2013/03/18 19:55:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.794 2013/03/18 19:59:07 naddy Exp $
 
      SUBDIR =
      SUBDIR += BitTorrent
@@ -55,8 +55,6 @@
      SUBDIR += crawl
      SUBDIR += ctrace
      SUBDIR += curl
-     SUBDIR += cvsup
-     SUBDIR += cvsup,no_x11
      SUBDIR += cvsync
      SUBDIR += daq
      SUBDIR += darkstat
