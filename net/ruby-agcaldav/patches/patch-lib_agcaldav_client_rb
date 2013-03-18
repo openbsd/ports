@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_agcaldav_client_rb,v 1.1.1.1 2013/03/18 20:22:50 jasper Exp $
+$OpenBSD: patch-lib_agcaldav_client_rb,v 1.2 2013/03/18 21:45:41 jasper Exp $
 
 commit c13ea74da87d56c526f0187abe30e9d185f43374
 Author: Geoff Evans <gbeevans@me.com>
@@ -10,8 +10,13 @@ Author: Geoff Evans <gbeevans@me.com>
 Date:   Wed Mar 6 12:34:46 2013 +1300
 Subject:Fix Digest to work over ssl.
 
+commit 7b411e884b3884ca1f49338e1e2f12925c58ae0d
+Author: Geoff Evans <gbeevans@me.com>
+Date:   Tue Mar 19 10:08:31 2013 +1300
+Subject:Fix find_events for pure ruby
+
 --- lib/agcaldav/client.rb.orig	Thu Jan  1 01:00:00 1970
-+++ lib/agcaldav/client.rb	Mon Mar 18 11:06:49 2013
++++ lib/agcaldav/client.rb	Mon Mar 18 22:31:42 2013
 @@ -17,6 +17,7 @@ module AgCalDAV
          @proxy_host = proxy_uri.host
          @proxy_port = proxy_uri.port.to_i
@@ -45,7 +50,7 @@ Subject:Fix Digest to work over ssl.
      end
  
      def __create_http
-@@ -44,14 +63,22 @@ module AgCalDAV
+@@ -44,14 +63,26 @@ module AgCalDAV
        events = []
        res = nil
        __create_http.start {|http|
@@ -60,9 +65,13 @@ Subject:Fix Digest to work over ssl.
 +		else
 +			req.add_field 'Authorization', digestauth('REPORT')
 +		end
-+		
-+        req.body = AgCalDAV::Request::ReportVEVENT.new(DateTime.parse(data[:start]).utc.strftime("%Y%m%dT%H%M%S"), 
-+                                                       DateTime.parse(data[:end]).utc.strftime("%Y%m%dT%H%M%S") ).to_xml
++		    if data[:start].is_a? Integer
++          req.body = AgCalDAV::Request::ReportVEVENT.new(Time.at(data[:start]).utc.strftime("%Y%m%dT%H%M%S"), 
++                                                        Time.at(data[:end]).utc.strftime("%Y%m%dT%H%M%S") ).to_xml
++        else
++          req.body = AgCalDAV::Request::ReportVEVENT.new(DateTime.parse(data[:start]).utc.strftime("%Y%m%dT%H%M%S"), 
++                                                        DateTime.parse(data[:end]).utc.strftime("%Y%m%dT%H%M%S") ).to_xml
++        end
          res = http.request(req)
        } 
          errorhandling res
@@ -71,7 +80,7 @@ Subject:Fix Digest to work over ssl.
          xml = REXML::Document.new(res.body)
          REXML::XPath.each( xml, '//c:calendar-data/', {"c"=>"urn:ietf:params:xml:ns:caldav"} ){|c| result << c.text}
          r = Icalendar.parse(result)      
-@@ -70,8 +97,12 @@ module AgCalDAV
+@@ -70,16 +101,21 @@ module AgCalDAV
      def find_event uuid
        res = nil
        __create_http.start {|http|
@@ -86,7 +95,20 @@ Subject:Fix Digest to work over ssl.
          res = http.request( req )
        }  
        errorhandling res
-@@ -89,7 +120,11 @@ module AgCalDAV
+-      r = Icalendar.parse(res.body)
+-      unless r.empty?
+-        r.first.events.first 
++      begin
++      	r = Icalendar.parse(res.body)
++      rescue
++      	return false
+       else
+-        return false
++      	r.first.events.first 
+       end
+ 
+       
+@@ -89,7 +125,11 @@ module AgCalDAV
        res = nil
        __create_http.start {|http|
          req = Net::HTTP::Delete.new("#{@url}/#{uuid}.ics")
@@ -99,7 +121,7 @@ Subject:Fix Digest to work over ssl.
          res = http.request( req )
        }
        errorhandling res
-@@ -126,7 +161,11 @@ module AgCalDAV
+@@ -126,7 +166,11 @@ module AgCalDAV
        __create_http.start { |http|
          req = Net::HTTP::Put.new("#{@url}/#{uuid}.ics")
          req['Content-Type'] = 'text/calendar'
@@ -112,7 +134,19 @@ Subject:Fix Digest to work over ssl.
          req.body = cstring
          res = http.request( req )
        }
-@@ -159,7 +198,11 @@ module AgCalDAV
+@@ -147,19 +191,15 @@ module AgCalDAV
+     
+     end
+ 
+-   
+-
+-
+-
+-
+-
+-
+-
+     def find_todo uuid
        res = nil
        __create_http.start {|http|
          req = Net::HTTP::Get.new("#{@url}/#{uuid}.ics")
@@ -125,7 +159,7 @@ Subject:Fix Digest to work over ssl.
          res = http.request( req )
        }  
        errorhandling res
-@@ -196,7 +239,11 @@ module AgCalDAV
+@@ -196,7 +236,11 @@ module AgCalDAV
        __create_http.start { |http|
          req = Net::HTTP::Put.new("#{@url}/#{uuid}.ics")
          req['Content-Type'] = 'text/calendar'
@@ -138,7 +172,7 @@ Subject:Fix Digest to work over ssl.
          req.body = cstring
          res = http.request( req )
        }
-@@ -210,7 +257,11 @@ module AgCalDAV
+@@ -210,7 +254,11 @@ module AgCalDAV
  
        __create_http.start {|http|
          req = Net::HTTP::Report.new(@url, initheader = {'Content-Type'=>'application/xml'} )
@@ -151,22 +185,20 @@ Subject:Fix Digest to work over ssl.
          req.body = AgCalDAV::Request::ReportVTODO.new.to_xml
          res = http.request( req )
        }
-@@ -219,29 +270,54 @@ module AgCalDAV
+@@ -219,29 +267,52 @@ module AgCalDAV
      end
  
      private
 +    
 +    def digestauth method
-+
++		
 +	    h = Net::HTTP.new @duri.host, @duri.port
-+	    
-+	    req = Net::HTTP::Get.new @duri.request_uri
-+
 +	    if @ssl
-+	        h.use_ssl = @ssl
-+	        h.verify_mode = OpenSSL::SSL::VERIFY_NONE
++	    	h.use_ssl = @ssl
++	    	h.verify_mode = OpenSSL::SSL::VERIFY_NONE
 +	    end
-+
++	    req = Net::HTTP::Get.new @duri.request_uri
++	    
 +	    res = h.request req
 +	    # res is a 401 response with a WWW-Authenticate header
 +	    
