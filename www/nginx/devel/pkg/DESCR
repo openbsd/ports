@@ -24,3 +24,6 @@ coroutines) into the nginx event model by means of nginx subrequests.
 deployment of Ruby web applications, such as those built on the revolutionary
 Ruby on Rails web framework, a breeze. It follows the usual Ruby on Rails
 conventions, such as "Don't-Repeat-Yourself".
+
+	naxsi - This Nginx module embeds Naxsi into nginx core. Naxsi is
+a high performance, low rules maintenance, Web Application Firewall module.

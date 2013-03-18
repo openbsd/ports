@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.5 2013/03/11 12:27:54 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2013/03/18 21:39:31 landry Exp $
 
 COMMENT=	robust and small HTTP server and mail proxy server
 
@@ -7,6 +7,7 @@ CATEGORIES=	www
 
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES0=	http://dropbox.eait.uq.edu.au/uqdgwynn/distfiles/
+MASTER_SITES1 =	http://naxsi.googlecode.com/files/
 
 HOMEPAGE=	http://nginx.org/
 
@@ -22,8 +23,19 @@ LIB_DEPENDS+=	devel/pcre
 NGINX_DIR=	/var/nginx
 SUBST_VARS=	NGINX_DIR
 
+FLAVORS=		lua naxsi passenger
+FLAVOR?=
+
+# must be first option on configure line ?
+.if ${FLAVOR:Mnaxsi}
+DISTFILES +=		${NAXSIDISTFILES}
+CONFIGURE_ARGS =	--add-module=${WRKSRC}/../naxsi-core-0.49/naxsi_src/
+.else
+SUPDISTFILES+=		${NAXSIDISTFILES}
+.endif
+
 CONFIGURE_STYLE=	simple
-CONFIGURE_ARGS=		--prefix=${SYSCONFDIR}/nginx \
+CONFIGURE_ARGS+=	--prefix=${SYSCONFDIR}/nginx \
 			--conf-path=${SYSCONFDIR}/nginx/nginx.conf \
 			--sbin-path=${PREFIX}/sbin/nginx \
 			--pid-path=/var/run/nginx.pid \
@@ -47,13 +59,11 @@ CONFIGURE_ARGS=		--prefix=${SYSCONFDIR}/nginx \
 			--with-mail_ssl_module \
 			--with-ipv6
 
-FLAVORS=		lua passenger
-FLAVOR?=
-
-DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
+DISTFILES+=		${DISTNAME}${EXTRACT_SUFX}
 LUADISTFILES+=		simpl-ngx_devel_kit-v0.2.17-0-gbc97eea.tar.gz:0
 LUADISTFILES+=		chaoslawful-lua-nginx-module-v0.6.1-0-ge282c1c.tar.gz:0
 SUBSTFILES=		conf/nginx.conf
+NAXSIDISTFILES +=	naxsi-core-0.49.tgz:1
 
 .if ${FLAVOR:Mpassenger}
 CONFIGURE_ARGS+=	--add-module=${LOCALBASE}/lib/phusion-passenger19/ext/nginx

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2012/09/26 19:46:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/18 21:39:31 landry Exp $
 
 VERSION=	1.2.3
-REVISION=	1
+REVISION=	2
 
 .include <bsd.port.mk>
