@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/12/21 19:27:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/03/18 10:24:08 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
@@ -15,4 +15,7 @@ ${GEM_LIB}/gems/${DISTNAME}/samples/d.rb
 ${GEM_LIB}/gems/${DISTNAME}/samples/e.rb
 ${GEM_LIB}/gems/${DISTNAME}/samples/f.rb
 ${GEM_LIB}/gems/${DISTNAME}/systemu.gemspec
+${GEM_LIB}/gems/${DISTNAME}/test/
+${GEM_LIB}/gems/${DISTNAME}/test/systemu_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/testing.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
