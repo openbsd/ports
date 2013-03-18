@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/03/18 09:37:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/03/18 13:48:18 ajacoutot Exp $
 bin/mco
 ${MODRUBY_SITEDIR}/mcollective/
 ${MODRUBY_SITEDIR}/mcollective.rb
@@ -547,7 +547,7 @@ share/doc/mcollective/rdoc-style.css
 share/examples/mcollective/
 @sample ${SYSCONFDIR}/mcollective/
 share/examples/mcollective/client.cfg
-@mode 0600
+@mode 0640
 @sample ${SYSCONFDIR}/mcollective/client.cfg
 @mode
 share/examples/mcollective/facts.yaml
