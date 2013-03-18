@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/03/18 10:52:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/03/18 11:09:56 ajacoutot Exp $
 @comment needs a RW homedir to prevent java.io.IOException
 @newgroup _activemq:714
 @newuser _activemq:714:714:daemon:Apache ActiveMQ:/var/db/activemq:/sbin/nologin
-@extraunexec rm -rf /var/db/activemq/{data,tmp}/*
+@extraunexec rm -rf /var/db/activemq/{data,tmp,activemq-data}/*
 activemq/
 activemq/LICENSE
 activemq/NOTICE
@@ -379,10 +379,10 @@ activemq/webapps/styles/type-settings.css
 share/examples/activemq/
 share/examples/activemq/activemqrc
 @sample ${SYSCONFDIR}/activemqrc
+share/examples/activemq/conf/
 @mode 0750
 @owner _activemq
 @group _activemq
-share/examples/activemq/conf/
 @sample ${SYSCONFDIR}/activemq/
 @mode
 @owner
