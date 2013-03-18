@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/03/12 18:52:11 robert Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/03/18 15:07:56 ajacoutot Exp $
 @pkgpath sysutils/ruby-puppet
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
@@ -210,7 +210,6 @@ ${MODRUBY_SITEDIR}/puppet/indirector/facts/memory.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/facts/network_device.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/facts/rest.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/facts/store_configs.rb
-${MODRUBY_SITEDIR}/puppet/indirector/resource/validator.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/facts/yaml.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/file_bucket_file/
 ${MODRUBY_SITEDIR}/puppet/indirector/file_bucket_file/file.rb
@@ -271,6 +270,7 @@ ${MODRUBY_SITEDIR}/puppet/indirector/resource/active_record.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/resource/ral.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/resource/rest.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/resource/store_configs.rb
+${MODRUBY_SITEDIR}/puppet/indirector/resource/validator.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/resource_type/
 ${MODRUBY_SITEDIR}/puppet/indirector/resource_type.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/resource_type/parser.rb
@@ -925,6 +925,7 @@ sbin/puppetd
 sbin/puppetmasterd
 sbin/puppetqd
 sbin/puppetrun
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/emacs/
 share/emacs/site-lisp/
 share/emacs/site-lisp/puppet-mode-init.el
