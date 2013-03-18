@@ -1,8 +1,0 @@
-csup is a software package for updating collections of files across
-a network.  It is a rewrite of the CVSup client program in C.
-
-Unlike more traditional network distribution packages, such as rdist and
-sup, csup has specific optimizations for distributing CVS repositories.
-csup takes advantage of the properties of CVS repositories and the files
-they contain (in particular, RCS files), enabling it to perform updates
-much faster than traditional systems.

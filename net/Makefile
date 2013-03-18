@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.792 2013/03/08 12:07:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.793 2013/03/18 19:55:25 naddy Exp $
 
      SUBDIR =
      SUBDIR += BitTorrent
@@ -53,7 +53,6 @@
      SUBDIR += coccinella
      SUBDIR += courtney
      SUBDIR += crawl
-     SUBDIR += csup
      SUBDIR += ctrace
      SUBDIR += curl
      SUBDIR += cvsup
