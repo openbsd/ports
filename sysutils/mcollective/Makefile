@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/14 07:58:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/18 09:37:46 ajacoutot Exp $
 
 COMMENT=	framework for server orchestration/parallel job execution
 
 DISTNAME=	mcollective-2.3.0
 EXTRACT_SUFX=	.tgz
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	sysutils
 
@@ -34,9 +34,7 @@ MODRUBY_ADJ_FILES=mco mcollectived mc-call-agent
 MAKE_FILE=	ext/Makefile
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/ext/Makefile
-	perl -pi -e 's,/etc,${SYSCONFDIR},g;' \
-		-e 's,/usr/libexec,${TRUEPREFIX}/libexec,g' \
+	${SUBST_CMD} ${WRKSRC}/ext/Makefile \
 		${WRKSRC}/etc/server.cfg.dist \
 		${WRKSRC}/etc/client.cfg.dist \
 

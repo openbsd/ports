@@ -1,0 +1,34 @@
+$OpenBSD: patch-etc_client_cfg_dist,v 1.4 2013/03/18 09:37:46 ajacoutot Exp $
+--- etc/client.cfg.dist.orig	Mon Mar 18 10:24:07 2013
++++ etc/client.cfg.dist	Mon Mar 18 10:24:59 2013
+@@ -1,7 +1,7 @@
+ topicprefix = /topic/
+ main_collective = mcollective
+ collectives = mcollective
+-libdir = /usr/libexec/mcollective
++libdir = ${TRUEPREFIX}/libexec/mcollective
+ logger_type = console
+ loglevel = warn
+ 
+@@ -15,7 +15,20 @@ plugin.stomp.port = 61613
+ plugin.stomp.user = mcollective
+ plugin.stomp.password = secret
+ 
++# ActiveMQ connector
++#connector = activemq
++#plugin.activemq.pool.size = 2
++#plugin.activemq.pool.1.host = stomp1.domain.tld
++#plugin.activemq.pool.1.port = 61613
++#plugin.activemq.pool.1.user = me
++#plugin.activemq.pool.1.password = secret
++
++#plugin.activemq.pool.2.host = stomp2.domain.tld
++#plugin.activemq.pool.2.port = 61613
++#plugin.activemq.pool.2.user = me
++#plugin.activemq.pool.2.password = secret
++
+ # Facts
+ factsource = yaml
+-plugin.yaml = /etc/mcollective/facts.yaml
++plugin.yaml = ${SYSCONFDIR}/mcollective/facts.yaml
+ 
