@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/09/20 07:01:15 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/03/18 10:02:27 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gemtest
@@ -6,7 +6,6 @@ ${GEM_LIB}/gems/${DISTNAME}/COPYING
 ${GEM_LIB}/gems/${DISTNAME}/GPL
 ${GEM_LIB}/gems/${DISTNAME}/History.txt
 ${GEM_LIB}/gems/${DISTNAME}/Manifest.txt
-${GEM_LIB}/gems/${DISTNAME}/PostInstall.txt
 ${GEM_LIB}/gems/${DISTNAME}/README.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/config/
@@ -45,9 +44,6 @@ ${GEM_LIB}/gems/${DISTNAME}/script/recur1.ics
 ${GEM_LIB}/gems/${DISTNAME}/script/tryit.rb
 ${GEM_LIB}/gems/${DISTNAME}/script/txt2html
 ${GEM_LIB}/gems/${DISTNAME}/test/
-${GEM_LIB}/gems/${DISTNAME}/test.ical
-${GEM_LIB}/gems/${DISTNAME}/test.ics
-${GEM_LIB}/gems/${DISTNAME}/test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/component/
 ${GEM_LIB}/gems/${DISTNAME}/test/component/test_event.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/component/test_timezone.rb
@@ -65,7 +61,6 @@ ${GEM_LIB}/gems/${DISTNAME}/test/test_conversions.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_parameter.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_parser.rb
-${GEM_LIB}/gems/${DISTNAME}/test2.rb
 ${GEM_LIB}/gems/${DISTNAME}/website/
 ${GEM_LIB}/gems/${DISTNAME}/website/index.html
 ${GEM_LIB}/gems/${DISTNAME}/website/index.txt
