@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 11:46:10 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/18 20:07:19 landry Exp $
 
 COMMENT=	input assistive technology
 
@@ -28,6 +28,7 @@ MODULES=	devel/gettext \
 		x11/gnome
 
 BUILD_DEPENDS=	devel/py-gobject3 \
+		textproc/libxslt \
 		lang/vala
 
 RUN_DEPENDS=	devel/py-gobject3
