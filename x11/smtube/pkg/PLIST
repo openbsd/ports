@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/01/21 16:00:57 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/03/18 21:38:58 bcallah Exp $
 @bin bin/smtube
 share/applications/smtube.desktop
 share/doc/smtube/
@@ -20,12 +20,16 @@ share/smtube/translations/smtube_en.qm
 share/smtube/translations/smtube_es.qm
 share/smtube/translations/smtube_eu.qm
 share/smtube/translations/smtube_gl.qm
+share/smtube/translations/smtube_he_IL.qm
 share/smtube/translations/smtube_hu.qm
 share/smtube/translations/smtube_ja.qm
 share/smtube/translations/smtube_lt.qm
+share/smtube/translations/smtube_nn_NO.qm
 share/smtube/translations/smtube_pl.qm
 share/smtube/translations/smtube_pt.qm
+share/smtube/translations/smtube_pt_BR.qm
 share/smtube/translations/smtube_ru_RU.qm
+share/smtube/translations/smtube_uk.qm
 share/smtube/translations/smtube_zh_CN.qm
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
