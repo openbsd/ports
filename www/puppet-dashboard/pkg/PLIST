@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/03/13 10:16:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/03/18 14:25:41 ajacoutot Exp $
 @newgroup _puppet-dashboard:713
 @newuser _puppet-dashboard:713:713:daemon:Puppet Dashboard:/var/empty:/sbin/nologin
 @owner _puppet-dashboard
@@ -5021,3 +5021,4 @@ puppet-dashboard/vendor/rails/railties/railties.gemspec
 @cwd ${LOCALBASE}/share/doc/pkg-readmes
 ${FULLPKGNAME}
 @rcscript ${RCDIR}/puppet_dashboard
+@rcscript ${RCDIR}/puppet_dashboard_workers
