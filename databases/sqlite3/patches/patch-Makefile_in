@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.21 2012/11/29 05:32:04 espie Exp $
---- Makefile.in.orig	Thu Oct  4 21:49:23 2012
-+++ Makefile.in	Thu Nov 29 06:30:18 2012
+$OpenBSD: patch-Makefile_in,v 1.22 2013/03/18 10:58:16 espie Exp $
+--- Makefile.in.orig	Wed Jan  9 14:51:48 2013
++++ Makefile.in	Mon Mar 18 11:53:00 2013
 @@ -187,7 +187,7 @@ LIBOBJS1 = sqlite3.lo
  
  # Determine the real value of LIBOBJ based on the 'configure' script
@@ -74,7 +74,7 @@ $OpenBSD: patch-Makefile_in,v 1.21 2012/11/29 05:32:04 espie Exp $
  TESTFIXTURE_SRC = $(TESTSRC) $(TOP)/src/tclsqlite.c $(TESTFIXTURE_SRC$(USE_AMALGAMATION))
  
  testfixture$(TEXE):	$(TESTFIXTURE_SRC)
-@@ -909,18 +918,12 @@ lib_install:	libsqlite3.la
+@@ -912,18 +921,12 @@ lib_install:	libsqlite3.la
  	$(INSTALL) -d $(DESTDIR)$(libdir)
  	$(LTINSTALL) libsqlite3.la $(DESTDIR)$(libdir)
  	
@@ -96,7 +96,7 @@ $OpenBSD: patch-Makefile_in,v 1.21 2012/11/29 05:32:04 espie Exp $
  	$(INSTALL) -d $(DESTDIR)$(TCLLIBDIR)
  	$(LTINSTALL) libtclsqlite3.la $(DESTDIR)$(TCLLIBDIR)
  	rm -f $(DESTDIR)$(TCLLIBDIR)/libtclsqlite3.la $(DESTDIR)$(TCLLIBDIR)/libtclsqlite3.a
-@@ -945,6 +948,8 @@ clean:	
+@@ -947,6 +950,8 @@ clean:	
  
  distclean:	clean
  	rm -f config.log config.status libtool Makefile sqlite3.pc
