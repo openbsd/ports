@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/11/08 23:24:40 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/03/18 12:17:11 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
@@ -16,6 +16,7 @@ ${GEM_LIB}/gems/${DISTNAME}/examples/run/
 ${GEM_LIB}/gems/${DISTNAME}/examples/run/ctrl_crash.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/run/ctrl_exec.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/run/ctrl_exit.rb
+${GEM_LIB}/gems/${DISTNAME}/examples/run/ctrl_hanging.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/run/ctrl_keep_pid_files.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/run/ctrl_monitor.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/run/ctrl_multiple.rb
@@ -23,22 +24,25 @@ ${GEM_LIB}/gems/${DISTNAME}/examples/run/ctrl_normal.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/run/ctrl_ontop.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/run/ctrl_optionparser.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/run/ctrl_proc.rb
-${GEM_LIB}/gems/${DISTNAME}/examples/run/ctrl_proc.rb.output
 ${GEM_LIB}/gems/${DISTNAME}/examples/run/ctrl_proc_multiple.rb
-${GEM_LIB}/gems/${DISTNAME}/examples/run/ctrl_proc_multiple.rb.output
+${GEM_LIB}/gems/${DISTNAME}/examples/run/ctrl_proc_rand.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/run/ctrl_proc_simple.rb
+${GEM_LIB}/gems/${DISTNAME}/examples/run/ctrl_slowstop.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/run/myserver.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/run/myserver_crashing.rb
-${GEM_LIB}/gems/${DISTNAME}/examples/run/myserver_crashing.rb.output
 ${GEM_LIB}/gems/${DISTNAME}/examples/run/myserver_exiting.rb
+${GEM_LIB}/gems/${DISTNAME}/examples/run/myserver_hanging.rb
+${GEM_LIB}/gems/${DISTNAME}/examples/run/myserver_slowstop.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/daemons/
 ${GEM_LIB}/gems/${DISTNAME}/lib/daemons.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/daemons/application.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/daemons/application_group.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/daemons/change_privilege.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/daemons/cmdline.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/daemons/controller.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/daemons/daemonize.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/daemons/etc_extension.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/daemons/exceptions.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/daemons/monitor.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/daemons/pid.rb
