@@ -1,0 +1,5 @@
+QuaZIP is the C++ wrapper for Gilles Vollant's ZIP/UNZIP package (aka
+minizip) using Trolltech's Qt library.
+
+It uses existing ZIP/UNZIP package C code and therefore depends on the
+zlib library.
