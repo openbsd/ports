@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/18 20:22:14 jasper Exp $
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/.autotest
+${GEM_LIB}/gems/${DISTNAME}/.gemtest
+${GEM_LIB}/gems/${DISTNAME}/History.txt
+${GEM_LIB}/gems/${DISTNAME}/Manifest.txt
+${GEM_LIB}/gems/${DISTNAME}/README.txt
+${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/net/
+${GEM_LIB}/gems/${DISTNAME}/lib/net/http/
+${GEM_LIB}/gems/${DISTNAME}/lib/net/http/digest_auth.rb
+${GEM_LIB}/gems/${DISTNAME}/sample/
+${GEM_LIB}/gems/${DISTNAME}/sample/auth_server.rb
+${GEM_LIB}/gems/${DISTNAME}/sample/net_http_example.rb
+${GEM_LIB}/gems/${DISTNAME}/test/
+${GEM_LIB}/gems/${DISTNAME}/test/test_net_http_digest_auth.rb
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
