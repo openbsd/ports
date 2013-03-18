@@ -1,9 +1,16 @@
-$OpenBSD: patch-bindings_Perl_Makefile_PL_in,v 1.2 2007/01/02 11:11:18 ajacoutot Exp $
---- bindings/Perl/Makefile.PL.in.orig	Tue Mar 14 15:48:06 2006
-+++ bindings/Perl/Makefile.PL.in	Thu Oct 19 12:24:40 2006
-@@ -41,8 +41,9 @@ WriteMakefile(
+$OpenBSD: patch-bindings_Perl_Makefile_PL_in,v 1.3 2013/03/18 22:13:42 sthen Exp $
+
+PERL_POLLUTE removal :-
+Allow pilot-link's perl bindings to build with newer Perl.
+From Debian ticket 628510
+
+--- bindings/Perl/Makefile.PL.in.orig	Sat Mar 17 19:03:45 2007
++++ bindings/Perl/Makefile.PL.in	Mon Mar 18 22:07:45 2013
+@@ -39,10 +39,10 @@ WriteMakefile(
+     'VERSION'    => '@PILOT_LINK_VERS@.@PILOT_LINK_MAJOR@.@PILOT_LINK_MINOR@@PILOT_LINK_PATCH@',
+     'XSPROTOARG' => '-noprototypes',
      'INC'        => "-I$plincdir",
-     'DEFINE'     => '-DPERL_POLLUTE',
+-    'DEFINE'     => '-DPERL_POLLUTE',
      'PREFIX'     => "$prefix",
 -    'INSTALLDIRS'=> 'vendor',
 +    'INSTALLDIRS'=> 'site',

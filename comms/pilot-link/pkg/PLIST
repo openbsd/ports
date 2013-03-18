@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2010/03/25 10:32:53 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.17 2013/03/18 22:13:42 sthen Exp $
 @bin bin/pilot-addresses
 @bin bin/pilot-clip
 @bin bin/pilot-csd
@@ -83,13 +83,15 @@ include/pi-versamail.h
 include/pi-version.h
 lib/libpisock.a
 lib/libpisock.la
+@lib lib/libpisock.so.${LIBpisock_VERSION}
 lib/libpisync.a
 lib/libpisync.la
+@lib lib/libpisync.so.${LIBpisync_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/pilot-link.pc
 @comment libdata/perl5/${MACHINE_ARCH}-openbsd/
-@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.10.1/
-@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.10.1/perllocal.pod
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.12.2/
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.12.2/perllocal.pod
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/PDA/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/PDA/Pilot.pm
@@ -138,7 +140,6 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/PDA/Pilot/autosplit.ix
 @man man/man3p/PDA::Pilot.3p
 @man man/man3p/PDA::Pilot.3pm
 @man man/man7/pilot-link.7
-share/aclocal/
 share/aclocal/pilot-link.m4
 share/doc/pilot-link/
 share/doc/pilot-link/README.debugging
