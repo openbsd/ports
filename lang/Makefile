@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.148 2013/03/08 11:35:15 pascal Exp $
+# $OpenBSD: Makefile,v 1.149 2013/03/18 20:01:14 naddy Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -19,7 +19,6 @@
      SUBDIR += erlang
      SUBDIR += expect
      SUBDIR += expect,no_tk
-     SUBDIR += ezm3
      SUBDIR += feldspar
      SUBDIR += fpc
      SUBDIR += freehdl
