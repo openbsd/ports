@@ -1,4 +1,4 @@
-$OpenBSD: patch-bin_activemq,v 1.2 2013/03/13 16:30:11 ajacoutot Exp $
+$OpenBSD: patch-bin_activemq,v 1.3 2013/03/18 10:52:56 ajacoutot Exp $
 --- bin/activemq.orig	Wed Feb  6 17:53:14 2013
 +++ bin/activemq	Wed Mar 13 16:03:24 2013
 @@ -29,7 +29,7 @@
@@ -6,7 +6,7 @@ $OpenBSD: patch-bin_activemq,v 1.2 2013/03/13 16:30:11 ajacoutot Exp $
  # ------------------------------------------------------------------------
  # CONFIGURATION
 -ACTIVEMQ_CONFIGS="/etc/default/activemq $HOME/.activemqrc"
-+ACTIVEMQ_CONFIGS="/etc/activemqrc $HOME/.activemqrc"
++ACTIVEMQ_CONFIGS="${SYSCONFDIR}/activemqrc $HOME/.activemqrc"
  
  # Backup invocation parameters
  COMMANDLINE_ARGS="$@"
@@ -15,7 +15,7 @@ $OpenBSD: patch-bin_activemq,v 1.2 2013/03/13 16:30:11 ajacoutot Exp $
  if ( basename $0 | grep "activemq-instance-" > /dev/null);then
     INST="`basename $0|sed 's/^activemq-instance-//;s/\.sh$//'`"
 -   ACTIVEMQ_CONFIGS="/etc/default/activemq-instance-${INST} $HOME/.activemqrc-instance-${INST}"
-+   ACTIVEMQ_CONFIGS="/etc/activemqrc-instance-${INST} $HOME/.activemqrc-instance-${INST}"
++   ACTIVEMQ_CONFIGS="${SYSCONFDIR}/activemqrc-instance-${INST} $HOME/.activemqrc-instance-${INST}"
     echo "INFO: Using alternative activemq configuration files: $ACTIVEMQ_CONFIGS"
  fi
  
@@ -32,11 +32,11 @@ $OpenBSD: patch-bin_activemq,v 1.2 2013/03/13 16:30:11 ajacoutot Exp $
  
  Configuration of this script:
 -    The configuration of this script can be placed on /etc/default/activemq or $HOME/.activemqrc.
-+    The configuration of this script can be placed on /etc/activemqrc or $HOME/.activemqrc.
++    The configuration of this script can be placed on ${SYSCONFDIR}/activemqrc or $HOME/.activemqrc.
      To use additional configurations for running multiple instances on the same operating system
      rename or symlink script to a name matching to activemq-instance-<INSTANCENAME>.
 -    This changes the configuration location to /etc/default/activemq-instance-<INSTANCENAME> and
-+    This changes the configuration location to /etc/activemqrc-instance-<INSTANCENAME> and
++    This changes the configuration location to ${SYSCONFDIR}/activemqrc-instance-<INSTANCENAME> and
      \$HOME/.activemqrc-instance-<INSTANCENAME>. Configuration files in /etc have higher precedence.
  EOF
    exit $RET
