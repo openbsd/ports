@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2011/12/13 18:38:18 jeremy Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2013/03/19 15:06:06 ajacoutot Exp $
 @pkgpath www/ruby-passenger,${MODRUBY_FLAVOR}
 lib/phusion-passenger${GEM_MAN_SUFFIX}
 ${GEM_BIN}/passenger${GEM_BIN_SUFFIX}
@@ -1734,5 +1734,5 @@ ${GEM_LIB}/specifications/${DISTNAME}.gemspec
 @man man/man8/passenger-memory-stats${GEM_MAN_SUFFIX}.8
 @man man/man8/passenger-status${GEM_MAN_SUFFIX}.8
 share/nginx/
-@sample ${SYSCONFDIR}/nginx/
 share/nginx/nginx-passenger${GEM_MAN_SUFFIX}.conf.sample
+@sample ${SYSCONFDIR}/nginx/nginx-passenger.conf
