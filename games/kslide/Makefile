@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 11:07:39 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/19 13:07:13 nigel Exp $
 
 COMMENT=	puzzle game for KDE
 
 DISTNAME=	kslide-0.90
-REVISION =	3
+REVISION =	4
 CATEGORIES=	games
 
 HOMEPAGE=	http://perso.wanadoo.fr/coquelle/taquin/
@@ -12,9 +12,11 @@ MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=  Yes
 
-WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c fam idn jpeg \
-		m png pthread pthread-stubs rpcsvc stdc++ util xcb z \
-		kdecore>=4 DCOP kdefx kdesu kdeui kio kwalletclient
+WANTLIB =	DCOP GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft
+WANTLIB +=	Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 c drm
+WANTLIB +=	expat fam fontconfig freetype idn jpeg kdecore>=4 kdefx
+WANTLIB +=	kdesu kdeui kio kwalletclient lcms m mng png pthread
+WANTLIB +=	pthread-stubs stdc++ util xcb z
 
 MASTER_SITES=	http://david.bieder.free.fr/eric/taquin/ \
 		http://perso.wanadoo.fr/coquelle/taquin/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2013/01/23 21:10:38 zhuk Exp $
+# $OpenBSD: Makefile,v 1.60 2013/03/19 13:07:14 nigel Exp $
 
 COMMENT-main = 		K Desktop Environment, developer extensions
 COMMENT-svn = 		K Desktop Environment, svn extensions
@@ -7,9 +7,9 @@ VERSION =		3.5.10
 DISTNAME =		kdesdk-${VERSION}
 
 PKGNAME-main =		${DISTNAME}
-REVISION-main =		11
+REVISION-main =		12
 PKGNAME-svn =		kdesvn-${VERSION}
-REVISION-svn =		9
+REVISION-svn =		10
 
 MODKDE_VERSION =	3.5.8
 SHARED_LIBS +=	cvsservice           1.0      # .0.1
@@ -37,21 +37,24 @@ LIB_DEPENDS-svn = 	${LIB_DEPENDS} \
 
 SEPARATE_BUILD =	flavored
 
-WANTLIB	= ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c fam idn jpeg \
+WANTLIB	= ICE SM X11 Xext Xrender art_lgpl_2 c fam idn \
 	lib/kde3/DCOP lib/kde3/kdecore>=6 lib/kde3/kdefx lib/kde3/kdesu \
 	lib/kde3/kdeui lib/kde3/kio lib/kde3/kwalletclient m png pthread \
-	pthread-stubs rpcsvc stdc++ util xcb z
+	pthread-stubs stdc++ util xcb z
 WANTLIB-main = ${WANTLIB}
 WANTLIB-svn = ${WANTLIB}
 
-WANTLIB-main += Xfixes Xt expat fontconfig freetype kabc kdeprint \
-	khtml kjs kparts kresources kspell ktexteditor ktnef ktnef kunittest \
-	kutils lib/kde3/kcal lib/kde3/kmime pcre pcreposix qui-mt vcard xml2 \
-	xslt
-WANTLIB-svn += apr-1 aprutil-1 asn1 crypto db expat gssapi krb5 \
-	neon sasl2 sqlite3 ssl svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 \
-	svn_fs_base-1 svn_fs_fs-1 svn_fs_util-1 svn_ra-1 svn_ra_local-1 \
-	svn_ra_neon-1 svn_ra_svn-1 svn_repos-1 svn_subr-1 svn_wc-1
+WANTLIB-main +=	GL GLU Xcursor Xdamage Xfixes Xft Xi Xinerama Xmu Xrandr Xt
+WANTLIB-main +=	Xxf86vm drm expat fontconfig freetype jpeg kabc kdeprint khtml
+WANTLIB-main +=	kjs kparts kresources kspell ktexteditor ktnef ktnef
+WANTLIB-main +=	kunittest kutils lcms lib/kde3/kcal lib/kde3/kmime mng pcre
+WANTLIB-main +=	pcreposix qui-mt vcard xml2 xslt
+
+WANTLIB-svn +=	Xfixes Xt apr-1 aprutil-1 asn1 crypto db expat fontconfig
+WANTLIB-svn +=	freetype gssapi krb5 magic neon proxy sasl2 sqlite3 ssl
+WANTLIB-svn +=	svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 svn_fs_base-1
+WANTLIB-svn +=	svn_fs_fs-1 svn_fs_util-1 svn_ra-1 svn_ra_local-1
+WANTLIB-svn +=	svn_ra_neon-1 svn_ra_svn-1 svn_repos-1 svn_subr-1 svn_wc-1
 
 post-patch:
 	find "${WRKSRC}"/scripts -type f | while read F; do \

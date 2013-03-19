@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:35:55 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/19 13:07:13 nigel Exp $
 
 COMMENT=		GUI for synergy
 
 DISTNAME=		qsynergy-0.9.1
-REVISION=		0
+REVISION=		1
 CATEGORIES=		net x11
 
 HOMEPAGE=		http://sourceforge.net/projects/qsynergy/
@@ -15,7 +15,8 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=qsynergy/}
 
 MODULES=		x11/qt4
 
-WANTLIB += QtGui QtNetwork c m pthread stdc++
+WANTLIB += 		ICE QtGui QtNetwork SM X11 Xext Xi Xinerama Xrender
+WANTLIB += 		c fontconfig freetype m pthread stdc++
 
 RUN_DEPENDS=		devel/desktop-file-utils \
 			net/synergy

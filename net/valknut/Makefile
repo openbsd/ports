@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:35:58 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/19 13:07:14 nigel Exp $
 
 COMMENT=	Graphical Direct-Connect client
 
 DISTNAME=	valknut-0.3.7
-REVISION=	3
+REVISION=	4
 CATEGORIES=	net
 
 HOMEPAGE=	http://wxdcgui.sourceforge.net/
@@ -15,9 +15,10 @@ MODULES=	converters/libiconv x11/qt3
 LIB_DEPENDS=	net/dclib \
 		graphics/jpeg \
 		archivers/bzip2
-WANTLIB=	ICE SM X11 Xau Xdmcp Xext c crypto m png \
-		pthread pthread-stubs ssl stdc++ xcb xml2 z \
-		dc jpeg bz2
+WANTLIB =	GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi Xinerama
+WANTLIB +=	Xmu Xrandr Xrender Xt Xxf86vm bz2 c crypto dc drm expat
+WANTLIB +=	fontconfig freetype jpeg lcms m mng png pthread
+WANTLIB +=	pthread-stubs ssl stdc++ xcb xml2 z
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes

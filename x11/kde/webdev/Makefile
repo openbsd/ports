@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2013/01/23 21:10:38 zhuk Exp $
+# $OpenBSD: Makefile,v 1.42 2013/03/19 13:07:14 nigel Exp $
 
 COMMENT = 		web development tool
 CATEGORIES =		x11 x11/kde
@@ -9,7 +9,7 @@ SHARED_LIBS +=	kommanderplugin      1.0      # .0.0
 SHARED_LIBS +=	kommanderwidget      1.0      # .0.0
 SHARED_LIBS +=	kommanderwidgets     1.0      # .0.0
 
-REVISION =	8
+REVISION =	9
 
 MODULES =	x11/kde devel/gettext
 
@@ -27,14 +27,16 @@ SEPARATE_BUILD = 	flavored
 
 USE_LIBTOOL =		gnu
 
-WANTLIB = ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c cvsservice exslt fam \
-	gcrypt gpg-error idn jpeg kmdi knewstuff lib/kde3/DCOP lib/kde3/kabc \
-	lib/kde3/katepartinterfaces lib/kde3/kdecore>=6 lib/kde3/kdefx \
-	lib/kde3/kdeprint lib/kde3/kdesu lib/kde3/kdeui lib/kde3/khtml \
-	lib/kde3/kio lib/kde3/kjs lib/kde3/kparts lib/kde3/kresources \
-	lib/kde3/kspell lib/kde3/ktexteditor lib/kde3/kutils \
-	lib/kde3/kwalletclient lib/kde3/vcard m pcre pcreposix png pthread \
-	pthread-stubs stdc++ util xcb xml2 xslt z
+WANTLIB =	ICE SM X11 Xext Xfixes Xrender Xt art_lgpl_2 c cvsservice
+WANTLIB +=	expat exslt fam fontconfig freetype gcrypt gpg-error
+WANTLIB +=	idn jpeg kmdi knewstuff lib/kde3/DCOP lib/kde3/kabc
+WANTLIB +=	lib/kde3/katepartinterfaces lib/kde3/kdecore>=6
+WANTLIB +=	lib/kde3/kdefx lib/kde3/kdeprint lib/kde3/kdesu
+WANTLIB +=	lib/kde3/kdeui lib/kde3/khtml lib/kde3/kio lib/kde3/kjs
+WANTLIB +=	lib/kde3/kparts lib/kde3/kresources lib/kde3/kspell
+WANTLIB +=	lib/kde3/ktexteditor lib/kde3/kutils lib/kde3/kwalletclient
+WANTLIB +=	lib/kde3/vcard m pcre pcreposix png pthread pthread-stubs
+WANTLIB +=	stdc++ util xcb xml2 xslt z
 
 # don't pick up gtar
 CONFIGURE_ENV=		TAR=tar

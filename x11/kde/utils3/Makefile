@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2013/01/23 21:10:38 zhuk Exp $
+# $OpenBSD: Makefile,v 1.72 2013/03/19 13:07:14 nigel Exp $
 
 COMMENT = 		K Desktop Environment, utilities
 CATEGORIES =		x11 x11/kde
@@ -25,13 +25,16 @@ LIB_DEPENDS =	x11/kde/libs3 \
 
 SEPARATE_BUILD =	flavored
 
-REVISION = 11
-WANTLIB = ICE SM X11 Xau Xdmcp Xext Xi Xrender Xss Xtst art_lgpl_2 c crypto \
-	fam gdk glib gmodule gmp gtk idn jpeg kvm lib/kde3/DCOP lib/kde3/kabc \
-	lib/kde3/kdecore>=6 lib/kde3/kdefx lib/kde3/kdeprint lib/kde3/kdesu \
-	lib/kde3/kdeui lib/kde3/kio lib/kde3/kparts lib/kde3/kresources \
-	lib/kde3/kutils lib/kde3/kwalletclient lib/kde3/vcard m netsnmp png \
-	pthread pthread-stubs python2.5 stdc++ util xcb xmms z
+REVISION = 12
+WANTLIB =	GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi
+WANTLIB +=	Xinerama Xmu Xrandr Xrender Xss Xt Xtst Xxf86vm art_lgpl_2 c
+WANTLIB +=	crypto drm expat fam fontconfig freetype gdk glib gmodule
+WANTLIB +=	gmp gtk idn jpeg knewstuff kvm lcms lib/kde3/DCOP
+WANTLIB +=	lib/kde3/kabc lib/kde3/kdecore>=6 lib/kde3/kdefx
+WANTLIB +=	lib/kde3/kdeprint lib/kde3/kdesu lib/kde3/kdeui lib/kde3/kio
+WANTLIB +=	lib/kde3/kparts lib/kde3/kresources lib/kde3/kutils
+WANTLIB +=	lib/kde3/kwalletclient lib/kde3/vcard m mng netsnmp png
+WANTLIB +=	pthread pthread-stubs python2.5 stdc++ util xcb xmms z
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/HTML/en/common

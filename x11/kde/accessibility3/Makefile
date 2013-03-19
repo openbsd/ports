@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2013/01/23 21:10:37 zhuk Exp $
+# $OpenBSD: Makefile,v 1.49 2013/03/19 13:07:14 nigel Exp $
 
 COMMENT = 		X11 toolkit, accessibility aids
 CATEGORIES =		x11 x11/kde
@@ -16,17 +16,20 @@ LIB_DEPENDS =	x11/kde/libs3
 
 SEPARATE_BUILD =	flavored
 
-REVISION =	12
+REVISION =	13
 
-WANTLIB = ICE SM X11 Xau Xdmcp Xext Xi Xrender Xtst art_lgpl_2 artsflow \
-	artsflow_idl audiofile c fam glib-2.0 gmodule-2.0 gthread-2.0 idn jpeg \
-	kmedia2_idl lib/kde3/DCOP lib/kde3/artskde lib/kde3/kabc \
-	lib/kde3/kdecore>=6 lib/kde3/kdefx lib/kde3/kdeprint lib/kde3/kdesu \
-	lib/kde3/kdeui lib/kde3/kio lib/kde3/kparts lib/kde3/kresources \
-	lib/kde3/kspell lib/kde3/ktexteditor lib/kde3/kutils \
-	lib/kde3/kwalletclient lib/kde3/vcard m mad mcop ogg pcre png pthread \
-	pthread-stubs qtmcop sndio soundserver_idl stdc++ util vorbis \
-	vorbisenc vorbisfile xcb z
+WANTLIB =	GL FLAC ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi
+WANTLIB +=	Xinerama Xmu Xrandr Xrender Xt Xtst Xxf86vm art_lgpl_2
+WANTLIB +=	artsflow artsflow_idl audiofile c drm expat fam fontconfig
+WANTLIB +=	freetype glib-2.0 gmodule-2.0 gthread-2.0 idn jpeg
+WANTLIB +=	kmedia2_idl lcms lib/kde3/DCOP lib/kde3/artskde
+WANTLIB +=	lib/kde3/kabc lib/kde3/kdecore>=6 lib/kde3/kdefx
+WANTLIB +=	lib/kde3/kdeprint lib/kde3/kdesu lib/kde3/kdeui lib/kde3/kio
+WANTLIB +=	lib/kde3/kparts lib/kde3/kresources lib/kde3/kspell
+WANTLIB +=	lib/kde3/ktexteditor lib/kde3/kutils lib/kde3/kwalletclient
+WANTLIB +=	lib/kde3/vcard m mad mcop mng ogg pcre png pthread
+WANTLIB +=	pthread-stubs qtmcop sndio soundserver_idl stdc++ util
+WANTLIB +=	vorbis vorbisenc vorbisfile xcb z
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/HTML/en/common

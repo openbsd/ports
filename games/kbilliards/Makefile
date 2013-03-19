@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2013/03/11 11:07:39 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2013/03/19 13:07:13 nigel Exp $
 
 COMMENT= 		billiard game
 CATEGORIES=		x11 x11/kde games
 DISTNAME=		kbilliards-0.8.7b
-REVISION =		7
+REVISION =		8
 
 HOMEPAGE=		http://www.hostnotfound.it/kbilliards.php
 MASTER_SITES=		http://www.hostnotfound.it/kbilliards/
@@ -12,13 +12,13 @@ EXTRACT_SUFX=		.tar.bz2
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 artsflow \
-		artsflow_idl audiofile bz2 c fam glib-2.0 \
-		gmodule-2.0 gthread-2.0 idn jpeg kmedia2_idl m mad \
-		mcop ogg pcre png pthread pthread-stubs qt-mt qtmcop rpcsvc \
-		sndio soundserver_idl stdc++ util vorbis vorbisenc \
-		vorbisfile xcb z kdecore>=6 kdesu kdeui DCOP kdeprint \
-		kio kwalletclient kdefx artskde kparts
+WANTLIB =	DCOP FLAC ICE SM X11 Xext Xfixes Xrender Xt art_lgpl_2
+WANTLIB +=	artsflow artsflow_idl artskde audiofile bz2 c expat fam 
+WANTLIB +=	fontconfig freetype glib-2.0 gmodule-2.0 gthread-2.0 idn 
+WANTLIB +=	kdecore>=6 kdefx kdeprint kdesu kdeui kio kmedia2_idl kparts
+WANTLIB +=	kwalletclient m mad mcop ogg pcre png pthread pthread-stubs
+WANTLIB +=	qt-mt qtmcop sndio soundserver_idl stdc++ util vorbis
+WANTLIB +=	vorbisenc vorbisfile xcb z
 
 MODULES=		x11/kde	devel/gettext
 

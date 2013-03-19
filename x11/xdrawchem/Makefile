@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:46:17 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/19 13:07:14 nigel Exp $
 
 COMMENT=	two-dimensional molecule drawing program
 
 DISTNAME=	xdrawchem-1.9.9
-REVISION=	4
+REVISION=	5
 CATEGORIES=	x11 biology
 
 HOMEPAGE=	http://xdrawchem.sourceforge.net/
@@ -13,7 +13,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xdrawchem/}
 
-WANTLIB=	c m pthread stdc++ z
+WANTLIB =	GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi Xinerama
+WANTLIB +=	Xmu Xrandr Xrender Xt Xxf86vm c drm expat fontconfig
+WANTLIB +=	freetype jpeg lcms m mng png pthread pthread-stubs stdc++ xcb z
 
 MODULES=	x11/qt3
 

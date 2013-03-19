@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 10:50:27 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/19 13:07:13 nigel Exp $
 
 BROKEN-powerpc =	qdoc3 goes into an infinite loop
 
@@ -7,7 +7,7 @@ SHARED_ONLY =		Yes
 V = 			1.3.1
 DISTNAME =		qt-creator-${V}-src
 PKGNAME =		qt-creator-${V}
-REVISION =		5
+REVISION =		6
 EXTRACT_SUFX = 		.zip
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 
@@ -36,6 +36,7 @@ WANTLIB +=	c m pthread stdc++ sqlite3
 WANTLIB +=	QtDBus QtWebKit QtXmlPatterns QtDesigner>=7 
 WANTLIB +=	QtDesignerComponents>=7 QtGui>=8 QtHelp QtNetwork>=7 
 WANTLIB +=	QtScript QtSql>=7 QtSvg>=7 QtXml>=7 phonon
+WANTLIB +=	ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
 MASTER_SITES =	http://get.qt.nokia.com/qtcreator/
 
 MODULES =	x11/qt4

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2012/06/15 08:30:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/19 13:07:14 nigel Exp $
 
 COMMENT= 		kde front end for ogle
 CATEGORIES=		x11 x11/kde 
@@ -17,10 +17,12 @@ CONFIGURE_ARGS+=--with-ogle-includes=${LOCALBASE}/include
 
 MODULES=	x11/kde devel/gettext
 
-REVISION = 8
-WANTLIB += ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c dvdcontrol fam idn \
-	jpeg lib/kde3/DCOP lib/kde3/kdecore>=4 lib/kde3/kdefx lib/kde3/kdesu \
-	lib/kde3/kdeui lib/kde3/kio lib/kde3/kwalletclient m msgevents png \
-	pthread pthread-stubs qt-mt stdc++ util xcb xml2 z
+REVISION = 9
+WANTLIB +=	ICE SM X11 Xext Xfixes Xrender Xt art_lgpl_2 c
+WANTLIB +=	dvdcontrol expat fam fontconfig freetype idn lib/kde3/DCOP
+WANTLIB +=	lib/kde3/kdecore>=4 lib/kde3/kdefx lib/kde3/kdesu
+WANTLIB +=	lib/kde3/kdeui lib/kde3/kio lib/kde3/kwalletclient m
+WANTLIB +=	msgevents png pthread pthread-stubs qt-mt stdc++ util xcb
+WANTLIB +=	xml2 z
 
 .include <bsd.port.mk>
