@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 10:50:12 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/19 09:46:51 benoit Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		unbless perl objects
 
-DISTNAME=		Acme-Damn-0.04
-REVISION=		0
+DISTNAME =		Acme-Damn-0.05
 CATEGORIES=		devel
 
 MODULES=		cpan
-USE_GROFF=		Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
