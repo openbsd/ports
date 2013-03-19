@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/08 11:34:18 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/03/19 18:47:46 pascal Exp $
 %%amd64%%
 %%i386%%
 @bin bin/bin2obj
@@ -1751,6 +1751,8 @@ lib/fpc/${V}/units/${CONFIG}/rtl/charset.o
 lib/fpc/${V}/units/${CONFIG}/rtl/charset.ppu
 lib/fpc/${V}/units/${CONFIG}/rtl/classes.o
 lib/fpc/${V}/units/${CONFIG}/rtl/classes.ppu
+lib/fpc/${V}/units/${CONFIG}/rtl/clocale.o
+lib/fpc/${V}/units/${CONFIG}/rtl/clocale.ppu
 lib/fpc/${V}/units/${CONFIG}/rtl/cmem.o
 lib/fpc/${V}/units/${CONFIG}/rtl/cmem.ppu
 lib/fpc/${V}/units/${CONFIG}/rtl/convutils.o
