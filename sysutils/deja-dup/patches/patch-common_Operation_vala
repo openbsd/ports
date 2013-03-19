@@ -1,9 +1,9 @@
-$OpenBSD: patch-common_Operation_vala,v 1.1 2013/01/21 08:23:30 ajacoutot Exp $
+$OpenBSD: patch-common_Operation_vala,v 1.2 2013/03/19 09:21:22 ajacoutot Exp $
 
-https://bugzilla.redhat.com/show_bug.cgi?id=892063
+rhbz#892063
 
 --- common/Operation.vala.orig	Tue Aug 21 17:08:23 2012
-+++ common/Operation.vala	Mon Jan 21 08:43:45 2013
++++ common/Operation.vala	Tue Mar 19 10:10:32 2013
 @@ -223,6 +223,7 @@ public abstract class Operation : Object
      finished = true;
  
