@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/12/23 03:27:22 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/03/19 13:03:02 sthen Exp $
 lib/pkgconfig/libquvi-scripts.pc
 @man man/man7/libquvi-scripts.7
 share/libquvi-scripts/
@@ -13,6 +13,7 @@ share/libquvi-scripts/lua/website/101greatgoals.lua
 share/libquvi-scripts/lua/website/1tvru.lua
 share/libquvi-scripts/lua/website/README
 share/libquvi-scripts/lua/website/academicearth.lua
+share/libquvi-scripts/lua/website/ardmediathek.lua
 share/libquvi-scripts/lua/website/audioboo.lua
 share/libquvi-scripts/lua/website/bbc.lua
 share/libquvi-scripts/lua/website/beeg.lua
@@ -24,7 +25,6 @@ share/libquvi-scripts/lua/website/clipfish.lua
 share/libquvi-scripts/lua/website/dailymotion.lua
 share/libquvi-scripts/lua/website/deviantclip.lua
 share/libquvi-scripts/lua/website/empflix.lua
-share/libquvi-scripts/lua/website/fastjizz.lua
 share/libquvi-scripts/lua/website/foxnews.lua
 share/libquvi-scripts/lua/website/funnyordie.lua
 share/libquvi-scripts/lua/website/gaskrank.lua
@@ -37,8 +37,7 @@ share/libquvi-scripts/lua/website/keezmovies.lua
 share/libquvi-scripts/lua/website/lego.lua
 share/libquvi-scripts/lua/website/liveleak.lua
 share/libquvi-scripts/lua/website/metacafe.lua
-share/libquvi-scripts/lua/website/mgnetwork.lua
-share/libquvi-scripts/lua/website/pornhub.lua
+share/libquvi-scripts/lua/website/myspass.lua
 share/libquvi-scripts/lua/website/publicsenat.lua
 share/libquvi-scripts/lua/website/quvi/
 share/libquvi-scripts/lua/website/quvi/bit.lua
@@ -66,6 +65,7 @@ share/libquvi-scripts/lua/website/tvrain.lua
 share/libquvi-scripts/lua/website/videa.lua
 share/libquvi-scripts/lua/website/videobash.lua
 share/libquvi-scripts/lua/website/vimeo.lua
+share/libquvi-scripts/lua/website/wdrmaus.lua
 share/libquvi-scripts/lua/website/xhamster.lua
 share/libquvi-scripts/lua/website/xnxx.lua
 share/libquvi-scripts/lua/website/xvideos.lua
