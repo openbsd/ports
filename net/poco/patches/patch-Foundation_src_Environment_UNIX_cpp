@@ -1,33 +1,31 @@
-$OpenBSD: patch-Foundation_src_Environment_UNIX_cpp,v 1.2 2013/03/19 22:17:07 sthen Exp $
+$OpenBSD: patch-Foundation_src_Environment_UNIX_cpp,v 1.3 2013/03/19 23:13:50 sthen Exp $
 
-fix use of unavailable sysctlbyname
+prefer sysconf; we don't have sysctlbyname.
+https://github.com/pocoproject/poco/issues/130
 
 --- Foundation/src/Environment_UNIX.cpp.orig	Thu Dec 16 05:43:25 2010
-+++ Foundation/src/Environment_UNIX.cpp	Tue Mar 19 22:16:26 2013
-@@ -129,12 +129,26 @@ std::string EnvironmentImpl::nodeNameImpl()
++++ Foundation/src/Environment_UNIX.cpp	Tue Mar 19 22:19:21 2013
+@@ -128,7 +128,11 @@ std::string EnvironmentImpl::nodeNameImpl()
+ 
  unsigned EnvironmentImpl::processorCountImpl()
  {
- #if defined(POCO_OS_FAMILY_BSD)
-+#  if defined(__OpenBSD__)
-+	int mib[2];
-+	int ncpus = 0;
-+	size_t len = 0;
-+	mib[0] = CTL_HW;
-+	mib[1] = HW_NCPU;	/* Get the number of CPU's present */
-+	len = sizeof(ncpus);
-+	if (sysctl(mib, 2, &ncpus, &len, NULL, 0) != 0) {
-+		printf("Couldn't determine hw.ncpu.\n");
-+		return 1; /* we have at least 1 cpu... */
-+	}
-+	return ncpus;
-+#  else
+-#if defined(POCO_OS_FAMILY_BSD)
++#if defined(_SC_NPROCESSORS_ONLN)
++	int count = sysconf(_SC_NPROCESSORS_ONLN);
++	if (count <= 0) count = 1;
++	return static_cast<int>(count);
++#elif defined(POCO_OS_FAMILY_BSD)
  	unsigned count;
  	std::size_t size = sizeof(count);
  	if (sysctlbyname("hw.ncpu", &count, &size, 0, 0))
- 		return 1;
- 	else
+@@ -137,10 +141,6 @@ unsigned EnvironmentImpl::processorCountImpl()
  		return count;
-+#  endif
  #elif POCO_OS == POCO_OS_HPUX
  	return pthread_num_processors_np();
- #elif defined(_SC_NPROCESSORS_ONLN)
+-#elif defined(_SC_NPROCESSORS_ONLN)
+-	int count = sysconf(_SC_NPROCESSORS_ONLN);
+-	if (count <= 0) count = 1;
+-	return static_cast<int>(count);
+ #else
+ 	return 1;
+ #endif

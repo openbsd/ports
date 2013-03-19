@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:35:55 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/19 23:13:50 sthen Exp $
 
 COMMENT =	POCO C++ libraries for network based applications
 
 VERSION =	1.4.0
 DISTNAME =	poco-${VERSION}-all
 PKGNAME =	poco-${VERSION}
-REVISION=		1
+REVISION =	2
 CATEGORIES =	net devel
 SHLIB_VERSION =	0.1
 .for _lib in PocoMySQL PocoNetSSL PocoODBC PocoSQLite PocoZip \
@@ -18,10 +18,11 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=poco/}
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # Boost software license
-PERMIT_PACKAGE_CDROM =  	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c crypto m pthread ssl stdc++ iodbc iodbcinst mysqlclient
 WANTLIB += expat pcre sqlite3 z
+
 LIB_DEPENDS =	databases/iodbc \
 		databases/mysql \
 		devel/pcre
@@ -33,8 +34,8 @@ CONFIGURE_ARGS =	--config=OpenBSD --no-tests --no-samples \
 			--unbundled --include-path=${LOCALBASE}/include \
 			--library-path=${LOCALBASE}/lib
 MAKE_FLAGS =		ODBCLIBDIR=${LOCALBASE}/lib
-MAKE_ENV += 		CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
-TEST_TARGET =	tests
+MAKE_ENV +=		CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
+TEST_TARGET =		tests
 
 pre-configure:
 	cp ${FILESDIR}/OpenBSD ${WRKSRC}/build/config/
