@@ -1,4 +1,4 @@
-$OpenBSD: patch-jruby-launcher_unixlauncher_cpp,v 1.2 2011/11/08 23:58:08 jeremy Exp $
+$OpenBSD: patch-jruby-launcher_unixlauncher_cpp,v 1.3 2013/03/19 23:43:06 jeremy Exp $
 
 Attempt to replicate the following shell code:
 
@@ -8,14 +8,15 @@ Without this, if the JAVA_HOME environment variable is not
 defined, bin/jruby will segfault when run.
 
 --- jruby-launcher/unixlauncher.cpp.orig	Wed Dec 31 16:00:00 1969
-+++ jruby-launcher/unixlauncher.cpp	Thu Nov  3 15:05:53 2011
-@@ -1,4 +1,5 @@
++++ jruby-launcher/unixlauncher.cpp	Mon May 21 14:43:20 2012
+@@ -1,5 +1,6 @@
  #include <stdlib.h>
+ #include <unistd.h>
 +#include <string.h>
  #include "unixlauncher.h"
  #include "utilsfuncs.h"
  
-@@ -37,6 +38,44 @@ int UnixLauncher::run(int argc, char* argv[], char* en
+@@ -45,6 +46,44 @@ int UnixLauncher::run(int argc, char* argv[], char* en
      prepareOptions();
  
      string java("");

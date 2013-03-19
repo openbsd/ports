@@ -1,34 +1,17 @@
-$OpenBSD: patch-build_xml,v 1.5 2012/04/04 20:24:00 jeremy Exp $
+$OpenBSD: patch-build_xml,v 1.6 2013/03/19 23:43:06 jeremy Exp $
 
 Don't install the jruby launcher when running the regress specs,
 as it fails due to a make error and it isn't necessary for the
 regress tests.
 
-Also, don't fork for the regress tests, as otherwise the JVM
-exits abnormally.
-
---- build.xml.orig	Wed Feb 22 09:14:56 2012
-+++ build.xml	Wed Feb 22 14:22:46 2012
-@@ -809,13 +809,6 @@
-       <env key="GEM_PATH" value=""/> <!-- to ignore any gems installed in ~/.gem -->
-       <arg line="-S gem uninstall --all jruby-launcher"/>
-     </java>
--    <java classname="org.jruby.Main" fork="true" maxmemory="${jruby.launch.memory}" failonerror="true">
--      <classpath refid="build.classpath"/>
--      <classpath path="${jruby.classes.dir}"/>
--      <sysproperty key="jruby.home" value="${basedir}"/>
--      <env key="GEM_PATH" value=""/> <!-- to ignore any gems installed in ~/.gem -->
--      <arg line="-S gem install ${jruby.launcher.gem}"/>
--    </java>
-   </target>
+--- build.xml.orig	Tue Aug  7 07:49:40 2012
++++ build.xml	Tue Aug  7 12:37:33 2012
+@@ -702,7 +702,7 @@ other than ASM, which is rewritten to avoid conflicts.
+         </emma>
+     </target>
  
-   <target name="test" depends="
-@@ -916,7 +909,7 @@
-       <echo message="compile=@{compile.mode}, jit.threshold=@{jit.threshold}, jit.maxsize=@{jit.maxsize}, jit.max=@{jit.max}, objectspace=@{objectspace.enabled} threadpool=@{thread.pooling} reflection=@{reflection} version=@{jruby.version}"/>
-       <taskdef name="junit" classname="org.apache.tools.ant.taskdefs.optional.junit.JUnitTask" classpath="${build.lib.dir}/junit.jar"/>
+-    <target name="install-gems" depends="install-dev-gems,install-jruby-launcher-gem"/>
++    <target name="install-gems" depends="install-dev-gems"/>
  
--      <junit jvm="${jruby.test.jvm}" fork="yes" forkMode="once" haltonfailure="true" dir="${basedir}" maxmemory="${jruby.test.memory}" showoutput="true" timeout="1800000">
-+      <junit jvm="${jruby.test.jvm}" haltonfailure="false" dir="${basedir}" maxmemory="${jruby.test.memory}" showoutput="true" timeout="1800000">
- 	<classpath refid="test.class.path"/>
- 
-         <sysproperty key="jruby.compile.invokedynamic" value="true"/>
+     <condition property="dev.gems.installed">
+         <uptodate>

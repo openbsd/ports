@@ -1,17 +1,18 @@
-$OpenBSD: patch-default_build_properties,v 1.1 2012/04/04 20:24:00 jeremy Exp $
+$OpenBSD: patch-default_build_properties,v 1.2 2013/03/19 23:43:06 jeremy Exp $
 
 Reduce amount of memory used when launching jruby.  It doesn't
 require 1G, and without this patch you can't build JRuby on a
 system with only 1G of memory.
 
---- default.build.properties.orig	Wed Feb 22 15:09:01 2012
-+++ default.build.properties	Wed Feb 22 15:09:23 2012
-@@ -59,7 +59,7 @@ html.test.results.dir=${test.results.dir}/html
- html.test.coverage.results.dir=${test.results.dir}/html-coverage
+--- default.build.properties.orig	Tue Aug  7 07:49:40 2012
++++ default.build.properties	Tue Aug  7 12:35:45 2012
+@@ -61,8 +61,8 @@ html.test.results.dir=${test.results.dir}/html
+ test.coverage.results.dir=${test.results.dir}/coverage
  javac.version=1.5
- jruby.compile.memory=384M
+ jruby.compile.memory=512M
 -jruby.launch.memory=1024M
 +jruby.launch.memory=512M
- jruby.test.memory=768M
+-jruby.test.memory=768M
++jruby.test.memory=512M
+ jruby.test.memory.permgen=512M
  jruby.test.jvm=java
- rake.args=
