@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2013/03/19 18:18:38 ajacoutot Exp $
+$OpenBSD: README,v 1.6 2013/03/19 18:50:53 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -92,13 +92,17 @@ Next, ${SYSCONFDIR}/nginx/nginx.conf needs to be modified with the
 following requirements as a start:
 
 * http{} block
-    passenger_root ${LOCALBASE}/lib/phusion-passengerXX;
-    passenger_ruby ${LOCALBASE}/bin/rubyXX;
-(where XX is the ruby(1) BINREV, e.g. 19)
+    passenger_root /path/to/passenger;
+    passenger_ruby /path/to/ruby;
+
+Where:
+/path/to/passenger = `passenger-configXX --root`
+/path/to/ruby = `which rubyXX`
+"XX" is the ruby(1) BINREV used by Passenger, e.g. 19.
 
 * server{} block
         listen       3000;
-        root         /var/www/puppet-dashboard/public;
+        root         ${INSTDIR}/public;
         passenger_enabled on;
 
 The nginx(8) daemon installed from packages(7) is started by the
