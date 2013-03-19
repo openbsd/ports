@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_PL,v 1.1 2011/12/14 14:23:53 jasper Exp $
+$OpenBSD: patch-Makefile_PL,v 1.2 2013/03/19 12:30:57 sthen Exp $
 
-Doh't install demo script that needs additional files to be installed.
+Don't install demo script that needs additional files to be installed.
 
 --- Makefile.PL.orig	Wed Dec 14 15:16:58 2011
 +++ Makefile.PL	Wed Dec 14 15:17:02 2011
