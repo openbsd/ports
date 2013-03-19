@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2013/03/13 10:16:13 ajacoutot Exp $
+$OpenBSD: README,v 1.5 2013/03/19 18:18:38 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -75,6 +75,38 @@ Dashboard. Adding the following line to the root's crontab(5) will clean
 up reports older than 1 month and will run every night:
 0	0	*	*	*	cd ${INSTDIR} && sudo -u _puppet-dashboard rake${MODRUBY_BINREV} RAILS_ENV=production reports:prune upto=1 unit=mon
 
+Phusion Passenger Integration (i.e. mod_rails)
+==============================================
+
+The WEBrick server script provided by Puppet Dashboard is not fit for
+production. For better performance, it is advised to run the Dashboard
+under Passenger along with a compatible web server.
+
+e.g. with nginx
+---------------
+The nginx(8) package provides a FLAVOR for passenger support which the
+version in the base system doesn't, so it must be installed first:
+    # pkg_add nginx--passenger
+
+Next, ${SYSCONFDIR}/nginx/nginx.conf needs to be modified with the
+following requirements as a start:
+
+* http{} block
+    passenger_root ${LOCALBASE}/lib/phusion-passengerXX;
+    passenger_ruby ${LOCALBASE}/bin/rubyXX;
+(where XX is the ruby(1) BINREV, e.g. 19)
+
+* server{} block
+        listen       3000;
+        root         /var/www/puppet-dashboard/public;
+        passenger_enabled on;
+
+The nginx(8) daemon installed from packages(7) is started by the
+"enginx" rc.d(8) script and obviously puppet_dashboard must be
+disabled (the workers must be enabled though).
+Here's a sample rc.conf.local(5) extract:
+pkg_scripts="${pkg_scripts} enginx puppet_dashboard_workers"
+
 Going further
 =============
 
@@ -82,7 +114,6 @@ Setting up followings is out of the scope of this README but should be
 considered when running Puppet Dashboard in production.
 - authentication (by default, anyone can access the Dashboard)
 - https (for encrypted communication)
-- Passenger (with Apache or Nginx for better performance)
 
 More information is available at:
     http://docs.puppetlabs.com/dashboard/manual/1.2/index.html
