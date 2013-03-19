@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/10/12 20:44:12 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/03/19 10:50:00 benoit Exp $
 ${P5SITE}/Sub/
 ${P5SITE}/Sub/Uplevel.pm
-${P5SITE}/Sub/Uplevel.pod
 @man man/man3p/Sub::Uplevel.3p
