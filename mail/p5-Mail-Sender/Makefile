@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:23:52 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/19 12:15:19 sthen Exp $
 
-COMMENT= 	send mail with attachments through SMTP
+COMMENT=	send mail with attachments through SMTP
 
-MODULES=	cpan 
-USE_GROFF =	Yes
+MODULES=	cpan
 
-DISTNAME=	Mail-Sender-0.8.16
-REVISION=	0
+DISTNAME=	Mail-Sender-0.8.22
 CATEGORIES=	mail
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
+
+pre-patch:
+	cd ${WRKSRC} && perl -i -pe 's/\r$$//' Config.PL
 
 .include <bsd.port.mk>

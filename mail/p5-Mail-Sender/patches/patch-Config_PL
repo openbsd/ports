@@ -1,11 +1,12 @@
-$OpenBSD: patch-Config_PL,v 1.2 2008/10/10 12:11:31 jasper Exp $
---- Config.PL.orig	Mon Jul 14 22:44:08 2008
-+++ Config.PL	Fri Oct 10 13:48:02 2008
-@@ -71,6 +71,7 @@ nmake.exe may be found at ftp://ftp.microsoft.com/Soft
+$OpenBSD: patch-Config_PL,v 1.3 2013/03/19 12:15:19 sthen Exp $
+--- Config.PL.orig	Tue Mar 19 12:11:36 2013
++++ Config.PL	Tue Mar 19 12:12:01 2013
+@@ -73,6 +73,8 @@ nmake.exe may be found at ftp://ftp.microsoft.com/Soft
      }
  }
  
 +exit;
++
  print "\nSpecify$new defaults for Mail::Sender? (y/N) ";
  $res = <STDIN>;
  exit unless $res =~ /^y$/i;
