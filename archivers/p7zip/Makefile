@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/10 22:28:04 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/19 19:03:12 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -21,6 +21,7 @@ MAINTAINER=	Josh Grosse <josh@jggimi.homeip.net>
 # LGPL, except unRar plugin which is licensed as Freeware
 PERMIT_PACKAGE_CDROM-rar=	no fee
 PERMIT_PACKAGE_CDROM=		Yes
+PERMIT_PACKAGE_FTP=		Yes
 
 WANTLIB=	m pthread stdc++
 WANTLIB-main=	${WANTLIB} c
