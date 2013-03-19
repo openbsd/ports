@@ -1,10 +1,10 @@
-$OpenBSD: patch-Foundation_src_Environment_UNIX_cpp,v 1.1.1.1 2010/07/28 18:13:01 sebastia Exp $
+$OpenBSD: patch-Foundation_src_Environment_UNIX_cpp,v 1.2 2013/03/19 22:17:07 sthen Exp $
 
 fix use of unavailable sysctlbyname
 
---- Foundation/src/Environment_UNIX.cpp.orig	Mon Jul 19 12:13:06 2010
-+++ Foundation/src/Environment_UNIX.cpp	Mon Jul 19 12:22:52 2010
-@@ -128,12 +128,26 @@ std::string EnvironmentImpl::nodeNameImpl()
+--- Foundation/src/Environment_UNIX.cpp.orig	Thu Dec 16 05:43:25 2010
++++ Foundation/src/Environment_UNIX.cpp	Tue Mar 19 22:16:26 2013
+@@ -129,12 +129,26 @@ std::string EnvironmentImpl::nodeNameImpl()
  unsigned EnvironmentImpl::processorCountImpl()
  {
  #if defined(POCO_OS_FAMILY_BSD)
