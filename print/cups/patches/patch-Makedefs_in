@@ -1,21 +1,21 @@
-$OpenBSD: patch-Makedefs_in,v 1.9 2012/08/04 14:37:04 ajacoutot Exp $
+$OpenBSD: patch-Makedefs_in,v 1.10 2013/03/19 18:20:09 ajacoutot Exp $
 
 BSD_INSTALL_PROGRAM is used to respect INSTALL_STRIP.
 
 --- Makedefs.in.orig	Wed May 23 01:58:31 2012
-+++ Makedefs.in	Thu Jul 26 10:01:21 2012
++++ Makedefs.in	Tue Mar 19 19:10:01 2013
 @@ -40,12 +40,12 @@ SHELL		=	/bin/sh
  # Installation programs...
  #
  
 -INSTALL_BIN	=	$(LIBTOOL) $(INSTALL) -c -m 555 @INSTALL_STRIP@
-+INSTALL_BIN	=	$(LIBTOOL) $(BSD_INSTALL_PROGRAM)
++INSTALL_BIN	=	$(BSD_INSTALL_PROGRAM)
  INSTALL_COMPDATA =	$(INSTALL) -c -m 444 @INSTALL_GZIP@
  INSTALL_CONFIG	=	$(INSTALL) -c -m @CUPS_CONFIG_FILE_PERM@
  INSTALL_DATA	=	$(INSTALL) -c -m 444
  INSTALL_DIR	=	$(INSTALL) -d
 -INSTALL_LIB	=	$(LIBTOOL) $(INSTALL) -c -m 555 @INSTALL_STRIP@
-+INSTALL_LIB	=	$(LIBTOOL) $(BSD_INSTALL_PROGRAM)
++INSTALL_LIB	=	$(BSD_INSTALL_PROGRAM)
  INSTALL_MAN	=	$(INSTALL) -c -m 444
  INSTALL_SCRIPT	=	$(INSTALL) -c -m 555
  
