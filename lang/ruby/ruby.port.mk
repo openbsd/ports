@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.58 2013/03/13 22:49:37 ajacoutot Exp $
+# $OpenBSD: ruby.port.mk,v 1.59 2013/03/19 23:46:41 jeremy Exp $
 
 # ruby module
 
@@ -24,7 +24,7 @@ MODRUBY_HANDLE_FLAVORS ?= No
 # If ruby.pork.mk should handle FLAVORs, define a separate FLAVOR
 # for each ruby interpreter
 .    if !defined(FLAVORS)
-FLAVORS?=		ruby18 ruby19 rbx jruby
+FLAVORS?=		ruby18 ruby19 ruby20 rbx jruby
 .    endif
 
 # Instead of adding flavors to the end of the package name, we use
@@ -47,40 +47,28 @@ SUBST_VARS+=		GEM_BIN_SUFFIX GEM_MAN_SUFFIX
 
 FLAVOR?=
 # Without a FLAVOR, assume the use of ruby 1.9.
-.     if empty(FLAVOR)
+.    if empty(FLAVOR)
 FLAVOR =		ruby19
-.     endif
+.    endif
 
 # Check for conflicting FLAVORs and set MODRUBY_REV appropriately based
 # on the FLAVOR.
-.    if ${FLAVOR:Mruby18}
-.      if ${FLAVOR:Mruby19} || ${FLAVOR:Mjruby} || ${FLAVOR:Mrbx}
-ERRORS+=		"Fatal: Conflicting flavors used: ${FLAVOR}"
+.    for i in ruby18 ruby19 ruby20 jruby rbx
+.      if ${FLAVOR:M$i}
+MODRUBY_REV = ${i:C/ruby([0-9])/\1./}
+.        if ${FLAVOR:N$i:Mruby18} || ${FLAVOR:N$i:Mruby19} || \
+            ${FLAVOR:N$i:Mruby20} || ${FLAVOR:N$i:Mjruby} || \
+	    ${FLAVOR:N$i:Mrbx}
+ERRORS += "Fatal: Conflicting flavors used: ${FLAVOR}"
+.        endif
 .      endif
-MODRUBY_REV=		1.8
+.    endfor
 
+.    if ${FLAVOR:Mruby18}
 # Handle updates from older ruby 1.8 ports that didn't use the ruby18
 # FLAVOR by adding a @pkgpath entry to the PLIST.
 SUBST_VARS+=	PKGPATH
 PKG_ARGS+=	-f ${PORTSDIR}/lang/ruby/ruby18.PLIST
-
-.    elif ${FLAVOR:Mruby19}
-.      if ${FLAVOR:Mruby18} || ${FLAVOR:Mjruby} || ${FLAVOR:Mrbx}
-ERRORS+=		"Fatal: Conflicting flavors used: ${FLAVOR}"
-.      endif
-MODRUBY_REV=		1.9
-
-.    elif ${FLAVOR:Mjruby}
-.      if ${FLAVOR:Mruby18} || ${FLAVOR:Mruby19} || ${FLAVOR:Mrbx}
-ERRORS+=		"Fatal: Conflicting flavors used: ${FLAVOR}"
-.      endif
-MODRUBY_REV=		jruby
-
-.    elif ${FLAVOR:Mrbx}
-.      if ${FLAVOR:Mruby18} || ${FLAVOR:Mruby19} || ${FLAVOR:Mjruby}
-ERRORS+=		"Fatal: Conflicting flavors used: ${FLAVOR}"
-.      endif
-MODRUBY_REV=		rbx
 .    endif
 .  endif
 .endif
@@ -106,20 +94,25 @@ MODRUBY_PKG_PREFIX =	${MODRUBY_FLAVOR}
 GEM_BIN_SUFFIX =	
 
 .if ${MODRUBY_REV} == 1.8
-MODRUBY_LIBREV=		1.8
-MODRUBY_BINREV=		18
-MODRUBY_PKG_PREFIX=	ruby
+MODRUBY_LIBREV =	1.8
+MODRUBY_BINREV =	18
+MODRUBY_PKG_PREFIX =	ruby
 MODRUBY_FLAVOR =	ruby18
-GEM_MAN_SUFFIX =	
+GEM_MAN_SUFFIX =
 .elif ${MODRUBY_REV} == 1.9
-MODRUBY_LIBREV=		1.9.1
-MODRUBY_BINREV=		19
+MODRUBY_LIBREV =	1.9.1
+MODRUBY_BINREV =	19
 MODRUBY_FLAVOR =	ruby19
-GEM_BIN_SUFFIX=		19
-# Have the ruby 1.9 manpage match the binary name.
+GEM_BIN_SUFFIX =	19
+GEM_MAN_SUFFIX =	${GEM_BIN_SUFFIX}
+.elif ${MODRUBY_REV} == 2.0
+MODRUBY_LIBREV =	2.0
+MODRUBY_BINREV =	20
+MODRUBY_FLAVOR =	ruby20
+GEM_BIN_SUFFIX =	20
 GEM_MAN_SUFFIX =	${GEM_BIN_SUFFIX}
 .elif ${MODRUBY_REV} == jruby
-MODRUBY_LIBREV=		1.8
+MODRUBY_LIBREV =	1.9
 
 # Set these during development of ruby.port.mk to make sure
 # nothing is broken.  However, turn them off before committing,
@@ -149,9 +142,6 @@ RAKE=			${RUBY} -S rake
 RSPEC=			${RUBY} -S spec
 MODRUBY_BIN_RSPEC =	${RUBY} -S rspec
 MODRUBY_BIN_TESTRB =	${RUBY} -S testrb
-
-# Without this, JRuby often fails with a memory error.
-MAKE_ENV+=		JAVA_MEM='-Xms256m -Xmx256m'
 .elif ${MODRUBY_REV} == rbx
 RUBY=			${LOCALBASE}/bin/rbx
 RAKE=			${RUBY} -S rake
@@ -192,8 +182,7 @@ MODRUBY_TEST?=
 
 .if ${MODRUBY_REV} == jruby
 .  if ${CONFIGURE_STYLE:L:Mext} || ${CONFIGURE_STYLE:L:Mextconf}
-# Only jruby 1.6.0+ can build C extensions
-MODRUBY_RUN_DEPENDS=	lang/jruby>=1.6.0
+ERRORS += "Fatal: Ruby C extensions are unsupported on JRuby"
 .  else
 MODRUBY_RUN_DEPENDS=	lang/jruby
 .  endif
@@ -343,7 +332,7 @@ SUBST_VARS+=	^GEM_LIB ^GEM_BIN DISTNAME
 .  if ${MODRUBY_REV} == jruby
 GEM=		${RUBY} -S gem
 GEM_BIN =	jruby/bin
-GEM_LIB =	jruby/lib/ruby/gems/${MODRUBY_LIBREV}
+GEM_LIB =	jruby/lib/ruby/gems/1.8
 GEM_BASE_LIB=	${GEM_BASE}/jruby/${MODRUBY_LIBREV}
 .  elif ${MODRUBY_REV} == rbx
 GEM=		${RUBY} -S gem
@@ -359,6 +348,7 @@ GEM_BASE_LIB=	${GEM_BASE}/ruby/${MODRUBY_LIBREV}
 GEM_BASE=	${WRKDIR}/gem-tmp/.gem
 GEM_ABS_PATH=	${PREFIX}/${GEM_LIB}
 GEM_BASE_BIN=	${GEM_BASE_LIB}/bin
+
 # We purposely do not install documentation for ruby gems, because
 # the filenames are generated differently on different ruby versions,
 # and most use 1 file per method, which is insane.
@@ -377,7 +367,7 @@ MODRUBY_EXTRACT_TARGET = \
     cd ${_GEM_CONTENT} && tar -xf ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}; \
     cd ${WRKDIST} && tar -xzf ${_GEM_DATAFILE} && rm -f ${_GEM_DATAFILE}; \
     gzcat ${_GEM_CONTENT}/metadata.gz > ${WRKDIST}/.metadata; \
-    rm -f ${_GEM_CONTENT}/*.gz.sig
+    rm -f ${_GEM_CONTENT}/*.gz.sig ${_GEM_CONTENT}/checksums.yaml.gz
 
 # Rebuild the gem manually after possible patching, then install it to a
 # temporary directory (not the final directory under fake, since that would
@@ -391,7 +381,7 @@ MODRUBY_BUILD_TARGET = \
 	    pax -wz -s '/^\.\///' -f ${_GEM_DATAFILE}; \
     cd ${_GEM_CONTENT} && tar -cf ${WRKDIR}/${_GEM_PATCHED} *.gz; \
     mkdir -p ${GEM_BASE}; \
-    env -i ${MAKE_ENV} HOME=${GEM_BASE}/.. GEM_HOME=${GEM_BASE} \
+    env -i ${MAKE_ENV} HOME=`dirname ${GEM_BASE}` GEM_HOME=${GEM_BASE} \
 	    make="make V=1" \
 	    ${GEM} install ${GEM_FLAGS} ${WRKDIR}/${_GEM_PATCHED} \
 	    -- ${CONFIGURE_ARGS}
@@ -474,9 +464,7 @@ MODRUBY_TEST_TARGET ?=	test
 .    endif
 
 MODRUBY_TEST_ENV ?= 
-.    if ${MODRUBY_REV} == 1.9
 MODRUBY_TEST_ENV += RUBYLIB=.:"$$RUBYLIB"
-.    endif
 MODRUBY_TEST_DIR ?= ${WRKSRC}
 do-test:
 	cd ${MODRUBY_TEST_DIR} && ${SETENV} ${MAKE_ENV} HOME=${WRKBUILD} \
