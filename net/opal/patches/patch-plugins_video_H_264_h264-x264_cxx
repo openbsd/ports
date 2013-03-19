@@ -1,25 +1,22 @@
-$OpenBSD: patch-plugins_video_H_264_h264-x264_cxx,v 1.4 2013/03/12 05:19:57 brad Exp $
+$OpenBSD: patch-plugins_video_H_264_h264-x264_cxx,v 1.5 2013/03/19 22:06:44 landry Exp $
 
 LOCALBASE/include/libavutil/common.h:170: error: 'UINT64_C' was not declared in this scope,
 so move headers so that __STDC_CONSTANT_MACROS is defined at the right time.
 
---- plugins/video/H.264/h264-x264.cxx.orig	Tue Feb 19 21:18:02 2013
-+++ plugins/video/H.264/h264-x264.cxx	Mon Mar 11 19:52:33 2013
-@@ -36,14 +36,14 @@
-  * $Date: 2013/03/12 05:19:57 $
-  */
+--- plugins/video/H.264/h264-x264.cxx.orig	Tue Mar 19 22:15:18 2013
++++ plugins/video/H.264/h264-x264.cxx	Tue Mar 19 22:52:56 2013
+@@ -1071,13 +1071,10 @@ class MyDecoder : public PluginCodec<MY_CODEC>
+         return false;
  
-+#include "../common/ffmpeg.h"
-+#include "../common/dyna.h"
-+
- #ifndef PLUGIN_CODEC_DLL_EXPORTS
- #include "plugin-config.h"
- #endif
+       m_context->workaround_bugs = FF_BUG_AUTODETECT;
+-      m_context->error_recognition = FF_ER_AGGRESSIVE;
+       m_context->idct_algo = FF_IDCT_H264;
+       m_context->error_concealment = FF_EC_GUESS_MVS | FF_EC_DEBLOCK;
+       m_context->flags = CODEC_FLAG_INPUT_PRESERVED | CODEC_FLAG_EMU_EDGE;
+-      m_context->flags2 = CODEC_FLAG2_BRDO |
+-                          CODEC_FLAG2_MEMC_ONLY |
+-                          CODEC_FLAG2_DROP_FRAME_TIMECODE |
++      m_context->flags2 = CODEC_FLAG2_DROP_FRAME_TIMECODE |
+                           CODEC_FLAG2_SKIP_RD |
+                           CODEC_FLAG2_CHUNKS;
  
- #include <codec/opalplugin.hpp>
--
--#include "../common/ffmpeg.h"
--#include "../common/dyna.h"
- 
- #include "shared/h264frame.h"
- #include "shared/x264wrap.h"
