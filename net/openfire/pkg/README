@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2012/08/06 08:46:59 ajacoutot Exp $
+$OpenBSD: README,v 1.6 2013/03/19 16:55:01 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -20,6 +20,8 @@ $OpenBSD: README,v 1.5 2012/08/06 08:46:59 ajacoutot Exp $
 3) After starting openfire, you may access the web interface at
    http://[hostname]:9090/; when you first login there is a configuration
    dialog. After enabling SSL, you can use https://[hostname]:9091/
+   When creating the admin account, note that the default username
+   is "admin", not the email address you enter.
 
 4) openfire's automated setup and plugin installation services require
    several directories to be writable by the _openfire user.  When you

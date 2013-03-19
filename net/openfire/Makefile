@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2013/03/11 11:35:50 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2013/03/19 16:55:01 sthen Exp $
 
 COMMENT=	XMPP real time collaboration server
-DISTNAME=	openfire_src_3_7_1
-PKGNAME=	openfire-3.7.1
+V=		3.8.1
+DISTNAME=	openfire_src_${V:S/./_/g}
+PKGNAME=	openfire-$V
 CATEGORIES=	net
-REVISION=	0
 
 MASTER_SITES=	http://www.igniterealtime.org/downloadServlet?filename=openfire/
 
@@ -15,15 +15,15 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 NO_TEST=	yes
 
-MODULES=java
-MODJAVA_VER =	1.7+
-MODJAVA_JRE =	Yes
-MODJAVA_BUILD = ant
+MODULES=	java
+MODJAVA_VER=	1.7+
+MODJAVA_JRE=	Yes
+MODJAVA_BUILD=	ant
 
-RUN_DEPENDS =	java/javaPathHelper
+RUN_DEPENDS=	java/javaPathHelper
 
 WRKDIST=	${WRKDIR}/openfire_src
-WRKSRC= 	${WRKDIST}/build/
+WRKSRC=		${WRKDIST}/build/
 
 OPENFIREDEST=	${PREFIX}/openfire
 DATADIRS=	lib logs plugins resources

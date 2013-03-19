@@ -1,6 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/03/09 16:50:40 ian Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/03/19 16:55:01 sthen Exp $
 @newgroup _openfire:632
 @newuser _openfire:632:_openfire:daemon:openfire user:/var/empty:/bin/sh
+@extraunexec rm -rf %D/openfire/conf/*
+@extraunexec rm -rf %D/openfire/embedded-db
+@extraunexec rm -rf %D/openfire/logs/*
 @mode 775
 @owner root
 @group _openfire
@@ -382,6 +385,7 @@ share/doc/openfire/database.html
 share/doc/openfire/db-integration-guide.html
 share/doc/openfire/install-guide.html
 share/doc/openfire/ldap-guide.html
+share/doc/openfire/pluggable-roster-support-guide.html
 share/doc/openfire/plugin-dev-guide.html
 share/doc/openfire/ssl-guide.html
 share/doc/openfire/translator-guide.html
