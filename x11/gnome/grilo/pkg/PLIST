@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/09/28 11:11:21 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.7 2013/03/19 17:42:08 jasper Exp $
 @bin bin/grilo-simple-playlist
 @bin bin/grilo-test-ui-${API}
 @bin bin/grl-inspect-${API}
@@ -35,8 +34,10 @@ lib/girepository-1.0/Grl-${API}.typelib
 lib/girepository-1.0/GrlNet-${API}.typelib
 lib/libgrilo-${API}.a
 lib/libgrilo-${API}.la
+@lib lib/libgrilo-${API}.so.${LIBgrilo-0.2_VERSION}
 lib/libgrlnet-${API}.a
 lib/libgrlnet-${API}.la
+@lib lib/libgrlnet-${API}.so.${LIBgrlnet-0.2_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/grilo-${API}.pc
 lib/pkgconfig/grilo-net-${API}.pc
