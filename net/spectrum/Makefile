@@ -1,35 +1,38 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:35:56 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/19 23:15:03 sthen Exp $
 
-COMMENT=        XMPP transport/gateway
+COMMENT =	XMPP transport/gateway
 
 DISTNAME =	spectrum-1.4.7
 REVISION =	3
-CATEGORIES=     net
+CATEGORIES =	net
 
-HOMEPAGE=       http://spectrum.im/
+HOMEPAGE =	http://spectrum.im/
 MASTER_SITES =	${HOMEPAGE}/attachments/download/37/
-MAINTAINER=     Sebastian Reitenbach <sebastia@openbsd.org>
+MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES=	lang/python devel/cmake
 WANTLIB += c m pthread stdc++ gloox purple glib-2.0 gthread-2.0 event
 WANTLIB += PocoData PocoFoundation PocoMySQL PocoODBC PocoSQLite Magick++
-LIB_DEPENDS=	net/py-xmpppy \
+
+MODULES =	lang/python devel/cmake
+
+LIB_DEPENDS =	net/py-xmpppy \
 		net/gloox \
 		net/pidgin,-libpurple \
 		net/poco \
 		graphics/ImageMagick
 RUN_DEPENDS =	net/py-xmpppy
 
-SPVARDIR=	/var/spectrum
+SPVARDIR =	/var/spectrum
 
-CONFIGURE_STYLE=cmake
+CONFIGURE_STYLE = cmake
+
 CONFIGURE_ENV += LDFLAGS=-pthread
 USE_GROFF =	Yes
-NO_TEST=	Yes
-SUBST_VARS=    	SPVARDIR
+NO_TEST =	Yes
+SUBST_VARS =	SPVARDIR
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/spectrumctl/spectrumctl.py \
