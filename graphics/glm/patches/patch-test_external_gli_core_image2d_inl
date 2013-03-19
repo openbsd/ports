@@ -1,0 +1,12 @@
+$OpenBSD: patch-test_external_gli_core_image2d_inl,v 1.1.1.1 2013/03/19 15:47:41 sthen Exp $
+--- test/external/gli/core/image2d.inl.orig	Tue Mar 19 15:32:34 2013
++++ test/external/gli/core/image2d.inl	Tue Mar 19 15:32:41 2013
+@@ -96,7 +96,7 @@ namespace gli
+ 			};
+ 
+ 			return Desc[Format];
+-		};
++		}
+ 
+ 		inline image2D::size_type sizeBlock
+ 		(
