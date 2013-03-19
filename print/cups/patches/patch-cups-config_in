@@ -1,6 +1,4 @@
-$OpenBSD: patch-cups-config_in,v 1.1 2013/03/14 07:22:33 brad Exp $
-
-Remove overlinking for shared libraries.
+$OpenBSD: patch-cups-config_in,v 1.2 2013/03/19 08:49:14 ajacoutot Exp $
 
 https://www.cups.org/str.php?L4294+P0+S-2+C0+I0+E0+M20+Q
 

@@ -1,10 +1,10 @@
-$OpenBSD: patch-scheduler_log_c,v 1.2 2012/08/04 14:37:04 ajacoutot Exp $
+$OpenBSD: patch-scheduler_log_c,v 1.3 2013/03/19 08:49:14 ajacoutot Exp $
 
 log.c:289: warning: passing argument 1 of 'localtime' from incompatible pointer type
 
---- scheduler/log.c.orig	Thu Jan  5 06:50:57 2012
-+++ scheduler/log.c	Sat Feb  4 15:58:39 2012
-@@ -235,6 +235,7 @@ char *					/* O - Date/time string */
+--- scheduler/log.c.orig	Wed Dec 12 19:03:02 2012
++++ scheduler/log.c	Tue Mar 19 08:15:45 2013
+@@ -251,6 +251,7 @@ char *					/* O - Date/time string */
  cupsdGetDateTime(struct timeval *t,	/* I - Time value or NULL for current */
                   cupsd_time_t   format)	/* I - Format to use */
  {
@@ -12,7 +12,7 @@ log.c:289: warning: passing argument 1 of 'localtime' from incompatible pointer 
    struct timeval	curtime;	/* Current time value */
    struct tm		*date;		/* Date/time value */
    static struct timeval	last_time = { 0, 0 };
-@@ -286,7 +287,8 @@ cupsdGetDateTime(struct timeval *t,	/* I - Time value 
+@@ -302,7 +303,8 @@ cupsdGetDateTime(struct timeval *t,	/* I - Time value 
      * (*BSD and Darwin store the timezone offset in the tm structure)
      */
  

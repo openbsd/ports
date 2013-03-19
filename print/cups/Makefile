@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.152 2013/03/14 07:22:33 brad Exp $
+# $OpenBSD: Makefile,v 1.153 2013/03/19 08:49:14 ajacoutot Exp $
 
 COMMENT-main=		Common Unix Printing System
 COMMENT-libs=		CUPS libraries and headers
 
-VERSION=		1.6.1
+VERSION=		1.6.2
 DISTNAME=		cups-${VERSION}-source
 EXTRACT_SUFX=		.tar.bz2
-
-REVISION-main=		14
-REVISION-libs=		6
 
 PKGNAME-main=		cups-${VERSION}
 PKGNAME-libs=		cups-libs-${VERSION}
@@ -70,7 +67,7 @@ LIBS_ENV=		LIBcups_VERSION=${LIBcups_VERSION} \
 			LIBcupsppdc_VERSION=${LIBcupsppdc_VERSION} \
 
 FAKE_FLAGS=		BUILDROOT=${WRKINST} \
-			DBUSDIR=${PREFIX}/share/examples/cups/dbus-1/system.d \
+			DBUSDIR=${PREFIX}/share/examples/cups/dbus-1 \
 			ICONDIR=${PREFIX}/share/icons \
 			MENUDIR=${PREFIX}/share/applications \
 			SERVERROOT=${WRKINST}${PREFIX}/share/examples/cups
