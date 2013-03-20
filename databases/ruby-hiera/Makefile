@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 02:52:08 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/20 06:56:05 ajacoutot Exp $
 
 COMMENT=		simple pluggable hierarchical database
 
@@ -25,8 +25,8 @@ CONFIGURE_STYLE=	ruby gem
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		devel/ruby-json_pure,${MODRUBY_FLAVOR}
 
-TEST_DEPENDS=	devel/ruby-mocha,${MODRUBY_FLAVOR}
-MODRUBY_TEST=	rspec2
+TEST_DEPENDS=		devel/ruby-mocha,${MODRUBY_FLAVOR}
+MODRUBY_TEST=		rspec2
 
 pre-configure:
 	perl -pi -e 's,/var/lib,/var/db,g' \
