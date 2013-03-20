@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2013/01/23 21:10:37 zhuk Exp $
+# $OpenBSD: Makefile,v 1.83 2013/03/20 19:13:50 jeremy Exp $
 
 COMMENT = 		K Desktop Environment, extra language support
 CATEGORIES =		x11 x11/kde devel
@@ -10,6 +10,7 @@ SHARED_LIBS +=	smokeqt              4.0      # .3.2
 SHARED_LIBS +=	smokekde             4.0      # .3.2
 
 MODULES =	x11/kde devel/gettext lang/ruby
+MODRUBY_REV =	1.8
 
 RUN_DEPENDS +=	devel/desktop-file-utils \
 		x11/gtk+2,-guic

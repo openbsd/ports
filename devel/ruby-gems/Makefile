@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/03/11 10:50:29 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2013/03/20 19:13:50 jeremy Exp $
 
 COMMENT=	package management framework for the Ruby language
 
@@ -17,6 +17,7 @@ MASTER_SITES=	http://production.cf.rubygems.org/rubygems/
 EXTRACT_SUFX=	.tgz
 
 MODULES= 	lang/ruby
+MODRUBY_REV=	1.8
 
 CONFIGURE_STYLE=ruby setup
 

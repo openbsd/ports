@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/03/13 22:50:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2013/03/20 19:13:50 jeremy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -19,6 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		m
 
 MODULES=		lang/ruby lang/ocaml
+MODRUBY_REV=		1.8
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gonzui/}
 

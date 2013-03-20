@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 11:42:41 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/20 19:13:50 jeremy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -19,6 +19,7 @@ WANTLIB=		c m ${MODRUBY_WANTLIB}
 MASTER_SITES=		${HOMEPAGE}archive/
 
 MODULES=		lang/ruby
+MODRUBY_REV=		1.8
 
 LIB_DEPENDS=		${MODRUBY_LIB_DEPENDS}
 

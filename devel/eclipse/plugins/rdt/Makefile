@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 10:50:03 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/20 19:13:50 jeremy Exp $
 
 COMMENT=		Ruby Development Tools for Eclipse IDE
 
@@ -20,6 +20,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=rubyeclipse/}
 
 MODULES=		lang/ruby
 MODRUBY_BUILDDEP=	No
+MODRUBY_REV=		1.8
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/eclipse

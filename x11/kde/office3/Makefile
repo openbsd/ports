@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2013/01/23 21:10:38 zhuk Exp $
+# $OpenBSD: Makefile,v 1.80 2013/03/20 19:13:50 jeremy Exp $
 
 COMMENT=		office suite for KDE
 
@@ -77,6 +77,7 @@ MODKDE_VERSION=	3.5.7
 AUTOCONF_VERSION=2.61
 
 MODULES =	x11/kde devel/gettext lang/ruby
+MODRUBY_REV=	1.8
 
 RUN_DEPENDS+=	devel/desktop-file-utils \
 		x11/gtk+2,-guic

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/20 07:08:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/20 19:13:50 jeremy Exp $
 
 COMMENT=	overview of your Puppet ecosystem
 
@@ -12,6 +12,7 @@ HOMEPAGE=	https://puppetlabs.com/puppet/related-projects/dashboard/
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	lang/ruby
+MODRUBY_REV=	1.8
 
 MASTER_SITES=	http://puppetlabs.com/downloads/dashboard/
 

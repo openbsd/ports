@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2013/03/11 11:35:56 espie Exp $
+# $OpenBSD: Makefile,v 1.69 2013/03/20 19:13:50 jeremy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -68,6 +68,7 @@ LIB_DEPENDS-python=	rrdtool-${VERSION}:net/rrdtool
 RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS}
 MODPY_EGG_VERSION=	0.2.1
 
+MODRUBY_REV=		1.8
 LIB_DEPENDS-ruby=	rrdtool-${VERSION}:net/rrdtool \
 			${MODRUBY_LIB_DEPENDS}
 WANTLIB-ruby=		c m rrd ${MODRUBY_WANTLIB}

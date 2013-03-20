@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2013/03/11 10:50:31 espie Exp $
+# $OpenBSD: Makefile,v 1.56 2013/03/20 19:13:50 jeremy Exp $
 
 COMMENT=	simplified wrapper and interface generator
 
@@ -18,6 +18,7 @@ WANTLIB=		c m stdc++
 
 MODULES=	lang/python lang/tcl lang/ruby
 MODRUBY_RUNDEP=	No
+MODRUBY_REV=	1.8
 MODPY_RUNDEP=	No
 BUILD_DEPENDS=	${MODTCL_BUILD_DEPENDS} \
 		lang/guile

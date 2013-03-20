@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.59 2013/03/19 23:46:41 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.60 2013/03/20 19:13:50 jeremy Exp $
 
 # ruby module
 
@@ -73,13 +73,10 @@ PKG_ARGS+=	-f ${PORTSDIR}/lang/ruby/ruby18.PLIST
 .  endif
 .endif
 
-# Other non-gem and non-extconf based ruby ports currently default to
-# using ruby 1.8 for backwards compatibility with older ports.  Such
-# ports that require a different ruby version should set MODRUBY_REV
-# in their makefile to either 1.9 or jruby to build on ruby 1.9 or
-# jruby respectively.  For new ports, try to use the most current
-# version of ruby that the port supports.
-MODRUBY_REV?=		1.8
+# The default ruby version to use for non-gem/extconf ports.
+# Defaults to ruby 1.9 for consistency with the default ruby19
+# FLAVOR for gem/extconf ports.
+MODRUBY_REV?=		1.9
 
 # Have the man pages for the rbx and jruby versions of a gem file
 # use an -rbx or -jruby suffix to avoid conflicts with the

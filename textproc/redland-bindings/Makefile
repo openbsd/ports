@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:42:46 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/20 19:13:50 jeremy Exp $
 
 COMMENT-main=		Redland librdf Perl Bindings
 #COMMENT-lua=		Redland librdf Lua Bindings
@@ -63,6 +63,7 @@ RUN_DEPENDS-php=	${MODPHP_RUN_DEPENDS}
 
 MODULES+=		lang/ruby
 CONFIGURE_ARGS+=	--with-ruby
+MODRUBY_REV=		1.8
 MODRUBY_RUNDEP=		No
 CONFIGURE_ENV+=		RUBY=${RUBY}
 LIB_DEPENDS-ruby=	${LIB_DEPENDS} ${MODRUBY_LIB_DEPENDS}

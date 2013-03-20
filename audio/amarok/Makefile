@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2013/03/10 22:55:01 espie Exp $
+# $OpenBSD: Makefile,v 1.56 2013/03/20 19:13:50 jeremy Exp $
 
 CATEGORIES =	audio x11 x11/kde
 COMMENT =	music player for KDE
@@ -41,7 +41,8 @@ SHARED_LIBS +=	http11               0.0      # .0.0
 
 MODULES =		x11/kde lang/ruby devel/gettext
 MODKDE_VERSION =	3.5.7
-MODRUBY_BUILDDEP=	No
+MODRUBY_BUILDDEP =	No
+MODRUBY_REV =		1.8
 CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.61
 CONFIGURE_ARGS +=	${MODKDE_CONFIGURE_ARGS}

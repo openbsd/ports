@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/03/11 11:41:24 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2013/03/20 19:13:50 jeremy Exp $
 
 COMMENT =	powerful webserver security scanner for network
 
@@ -18,6 +18,7 @@ MAINTAINER =	Jung Lee <openwall77@gmail.com>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODRUBY_HANDLE_FLAVORS =	No
+MODRUBY_REV =		1.8
 CONFIGURE_STYLE =	ruby extconf
 
 MODULES =	lang/ruby

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2013/03/11 11:37:54 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2013/03/20 19:13:50 jeremy Exp $
 
 COMMENT-context =	texlive texmf for conTeXt
 COMMENT-docs =		texlive documentation
@@ -27,6 +27,7 @@ RUN_DEPENDS-full =	texlive_texmf-minimal-${V}:print/texlive/texmf,-main \
 			texlive_base-${V}:print/texlive/base
 # We dont use auto module deps for these, as MODULES is not per SUBPACKAGE
 MODULES +=		lang/ruby lang/python
+MODRUBY_REV =		1.8
 MODRUBY_BUILDDEP =	No
 MODRUBY_RUNDEP =	No
 MODPY_BUILDDEP =	No

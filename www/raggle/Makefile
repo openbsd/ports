@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:44:49 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/20 19:13:50 jeremy Exp $
 
 COMMENT=	console RSS aggregator
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	${HOMEPAGE}/files/
 
 MODULES=	lang/ruby
+MODRUBY_REV=	1.8
 RUN_DEPENDS=	devel/ruby-ncurses,${MODRUBY_FLAVOR}
 BUILD_DEPENDS+=${MODRUBY_BUILD_DEPENDS}
 

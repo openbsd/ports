@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:23:58 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/20 19:13:50 jeremy Exp $
 
 COMMENT =		text-based presentation program
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =		http://synflood.at/tpp/
 
 MODULES =		lang/ruby
+MODRUBY_REV=		1.8
 RUN_DEPENDS =		devel/ruby-ncurses,${MODRUBY_FLAVOR} \
 			misc/figlet
 

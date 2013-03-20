@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2013/03/11 11:42:46 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2013/03/20 19:13:50 jeremy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -25,6 +25,7 @@ MODRUBY_REV =		1.9
 FULLPKGNAME =		ruby19-hyperestraier-1.0.0
 BIN_SUFFIX =		19
 .else
+MODRUBY_REV =		1.8
 BIN_SUFFIX =		
 .endif
 SUBST_VARS +=		BIN_SUFFIX

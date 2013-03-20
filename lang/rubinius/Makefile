@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 11:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/20 19:13:50 jeremy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -24,6 +24,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =	c crypto curses db gdbm m pthread readline ssl stdc++ \
 		${MODRUBY_WANTLIB}
+MODRUBY_REV=	1.8
 
 MASTER_SITES =	http://asset.rubini.us/
 
