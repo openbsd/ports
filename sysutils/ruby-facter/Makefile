@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2013/03/11 11:41:32 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2013/03/20 06:50:05 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Ruby library for retrieving facts from operating systems
 
 VERSION=	1.6.17
-REVISION=	2
+REVISION=	3
 
 DISTNAME=	facter-${VERSION}
 PKGNAME=	ruby-${DISTNAME}
@@ -22,6 +22,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES=	lang/ruby
 
 NO_BUILD=	Yes
+PKG_ARCH=	*
 
 TEST_DEPENDS=devel/ruby-mocha,${MODRUBY_FLAVOR}
 BUILD_DEPENDS=	${MODRUBY_BUILD_DEPENDS}
