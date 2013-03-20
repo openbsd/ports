@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2012/12/13 08:35:43 dcoppa Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2013/03/20 06:26:04 ajacoutot Exp $
 @conflict jakarta-tomcat-*
 @pkgpath www/tomcat/v7
 @newgroup _tomcat:526
 @newuser _tomcat:526:_tomcat:daemon:Tomcat Account:/nonexistent:/sbin/nologin
+@extraunexec rm -rf ${CATALINA_BASE}/logs/* ${CATALINA_BASE}/work/*
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/tomcat/
 @owner _tomcat
@@ -154,4 +155,3 @@ tomcat/webapps/manager/index.jsp
 tomcat/webapps/manager/status.xsd
 tomcat/webapps/manager/xform.xsl
 @rcscript ${RCDIR}/tomcat
-@extraunexec rm -rf ${CATALINA_BASE}/logs/* ${CATALINA_BASE}/work/*
