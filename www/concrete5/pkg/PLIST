@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/09/30 19:24:35 robert Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/03/20 10:38:07 jasper Exp $
 @group daemon
 concrete5/
+concrete5/.DS_Store
 concrete5/INSTALL
 concrete5/LICENSE.TXT
 concrete5/blocks/
@@ -247,8 +248,6 @@ concrete5/concrete/blocks/slideshow/fileset_row_include.php
 concrete5/concrete/blocks/slideshow/form_setup_html.php
 concrete5/concrete/blocks/slideshow/icon.png
 concrete5/concrete/blocks/slideshow/image_row_include.php
-concrete5/concrete/blocks/slideshow/tools/
-concrete5/concrete/blocks/slideshow/tools/map_display.php.bak
 concrete5/concrete/blocks/slideshow/view.css
 concrete5/concrete/blocks/slideshow/view.php
 concrete5/concrete/blocks/survey/
@@ -488,6 +487,7 @@ concrete5/concrete/controllers/dashboard/system/registration/public_registration
 concrete5/concrete/controllers/dashboard/system/seo/
 concrete5/concrete/controllers/dashboard/system/seo/bulk_seo_tool.php
 concrete5/concrete/controllers/dashboard/system/seo/controller.php
+concrete5/concrete/controllers/dashboard/system/seo/excluded.php
 concrete5/concrete/controllers/dashboard/system/seo/search_index.php
 concrete5/concrete/controllers/dashboard/system/seo/statistics.php
 concrete5/concrete/controllers/dashboard/system/seo/tracking_codes/
@@ -672,6 +672,7 @@ concrete5/concrete/core/controllers/single_pages/dashboard/system/registration/p
 concrete5/concrete/core/controllers/single_pages/dashboard/system/seo/
 concrete5/concrete/core/controllers/single_pages/dashboard/system/seo.php
 concrete5/concrete/core/controllers/single_pages/dashboard/system/seo/bulk_seo_tool.php
+concrete5/concrete/core/controllers/single_pages/dashboard/system/seo/excluded.php
 concrete5/concrete/core/controllers/single_pages/dashboard/system/seo/search_index.php
 concrete5/concrete/core/controllers/single_pages/dashboard/system/seo/statistics.php
 concrete5/concrete/core/controllers/single_pages/dashboard/system/seo/tracking_codes.php
@@ -704,6 +705,7 @@ concrete5/concrete/core/controllers/single_pages/profile/messages.php
 concrete5/concrete/core/controllers/single_pages/register.php
 concrete5/concrete/core/controllers/single_pages/upgrade.php
 concrete5/concrete/core/helpers/
+concrete5/concrete/core/helpers/ajax.php
 concrete5/concrete/core/helpers/array.php
 concrete5/concrete/core/helpers/date.php
 concrete5/concrete/core/helpers/encryption.php
@@ -731,6 +733,7 @@ concrete5/concrete/core/helpers/navigation.php
 concrete5/concrete/core/helpers/number.php
 concrete5/concrete/core/helpers/pagination.php
 concrete5/concrete/core/helpers/rating.php
+concrete5/concrete/core/helpers/security.php
 concrete5/concrete/core/helpers/spellchecker.php
 concrete5/concrete/core/helpers/text.php
 concrete5/concrete/core/helpers/url.php
@@ -773,8 +776,9 @@ concrete5/concrete/core/libraries/environment.php
 concrete5/concrete/core/libraries/environment_record.php
 concrete5/concrete/core/libraries/events.php
 concrete5/concrete/core/libraries/file/
+concrete5/concrete/core/libraries/file/importer.php
+concrete5/concrete/core/libraries/file/inspector.php
 concrete5/concrete/core/libraries/file/types.php
-concrete5/concrete/core/libraries/file_importer.php
 concrete5/concrete/core/libraries/file_type_inspector.php
 concrete5/concrete/core/libraries/flv_file_type_inspector.php
 concrete5/concrete/core/libraries/image_file_type_inspector.php
@@ -794,6 +798,12 @@ concrete5/concrete/core/libraries/newsflow.php
 concrete5/concrete/core/libraries/newsflow_item.php
 concrete5/concrete/core/libraries/newsflow_slot_item.php
 concrete5/concrete/core/libraries/object.php
+concrete5/concrete/core/libraries/page_cache/
+concrete5/concrete/core/libraries/page_cache/library.php
+concrete5/concrete/core/libraries/page_cache/record.php
+concrete5/concrete/core/libraries/page_cache/types/
+concrete5/concrete/core/libraries/page_cache/types/file.php
+concrete5/concrete/core/libraries/page_cache/unknown_record.php
 concrete5/concrete/core/libraries/private_message_mail_importer.php
 concrete5/concrete/core/libraries/request.php
 concrete5/concrete/core/libraries/update.php
@@ -1091,6 +1101,7 @@ concrete5/concrete/css/ccm_app/twitter_bootstrap/component-animations.less
 concrete5/concrete/css/ccm_app/twitter_bootstrap/dropdowns.less
 concrete5/concrete/css/ccm_app/twitter_bootstrap/forms.less
 concrete5/concrete/css/ccm_app/twitter_bootstrap/grid.less
+concrete5/concrete/css/ccm_app/twitter_bootstrap/grid_frontend.less
 concrete5/concrete/css/ccm_app/twitter_bootstrap/hero-unit.less
 concrete5/concrete/css/ccm_app/twitter_bootstrap/labels-badges.less
 concrete5/concrete/css/ccm_app/twitter_bootstrap/layouts.less
@@ -1338,6 +1349,7 @@ concrete5/concrete/flash/uploader/images/file_xls.png
 concrete5/concrete/flash/uploader/images/file_zip.png
 concrete5/concrete/flash/uploader/uploader.swf
 concrete5/concrete/helpers/
+concrete5/concrete/helpers/ajax.php
 concrete5/concrete/helpers/array.php
 concrete5/concrete/helpers/concrete/
 concrete5/concrete/helpers/concrete/asset_library.php
@@ -1382,6 +1394,7 @@ concrete5/concrete/helpers/concrete/upgrade/version_552.php
 concrete5/concrete/helpers/concrete/upgrade/version_560.php
 concrete5/concrete/helpers/concrete/upgrade/version_5601.php
 concrete5/concrete/helpers/concrete/upgrade/version_5602.php
+concrete5/concrete/helpers/concrete/upgrade/version_561.php
 concrete5/concrete/helpers/concrete/urls.php
 concrete5/concrete/helpers/concrete/user.php
 concrete5/concrete/helpers/concrete/validation.php
@@ -1411,6 +1424,7 @@ concrete5/concrete/helpers/navigation.php
 concrete5/concrete/helpers/number.php
 concrete5/concrete/helpers/pagination.php
 concrete5/concrete/helpers/rating.php
+concrete5/concrete/helpers/security.php
 concrete5/concrete/helpers/spellchecker.php
 concrete5/concrete/helpers/text.php
 concrete5/concrete/helpers/url.php
@@ -1605,6 +1619,8 @@ concrete5/concrete/images/icons/filetypes/mp4.png
 concrete5/concrete/images/icons/filetypes/mpe.png
 concrete5/concrete/images/icons/filetypes/mpeg.png
 concrete5/concrete/images/icons/filetypes/mpg.png
+concrete5/concrete/images/icons/filetypes/ogg.png
+concrete5/concrete/images/icons/filetypes/ogv.png
 concrete5/concrete/images/icons/filetypes/pdf.png
 concrete5/concrete/images/icons/filetypes/php.png
 concrete5/concrete/images/icons/filetypes/png.png
@@ -1623,6 +1639,7 @@ concrete5/concrete/images/icons/filetypes/tmp.png
 concrete5/concrete/images/icons/filetypes/ttf.png
 concrete5/concrete/images/icons/filetypes/txt.png
 concrete5/concrete/images/icons/filetypes/url.png
+concrete5/concrete/images/icons/filetypes/webm.png
 concrete5/concrete/images/icons/filetypes/wma.png
 concrete5/concrete/images/icons/filetypes/wmv.png
 concrete5/concrete/images/icons/filetypes/xls.png
@@ -1787,22 +1804,19 @@ concrete5/concrete/js/bootstrap/bootstrap.dropdown.js
 concrete5/concrete/js/bootstrap/bootstrap.popover.js
 concrete5/concrete/js/bootstrap/bootstrap.tooltip.js
 concrete5/concrete/js/bootstrap/bootstrap.transitions.js
-concrete5/concrete/js/bootstrap/build/
-concrete5/concrete/js/bootstrap/build/bootstrap.js
 concrete5/concrete/js/ccm.app.js
 concrete5/concrete/js/ccm.base.js
+concrete5/concrete/js/ccm.dashboard.js
 concrete5/concrete/js/ccm.spellchecker.js
 concrete5/concrete/js/ccm_app/
-concrete5/concrete/js/ccm_app/_jquery.colorpicker.js
-concrete5/concrete/js/ccm_app/_jquery.hoverIntent.js
-concrete5/concrete/js/ccm_app/_jquery.liveupdate.js
-concrete5/concrete/js/ccm_app/_jquery.metadata.js
-concrete5/concrete/js/ccm_app/build/
-concrete5/concrete/js/ccm_app/build/ccm.app.js
 concrete5/concrete/js/ccm_app/chosen.jquery.js
 concrete5/concrete/js/ccm_app/dashboard.js
 concrete5/concrete/js/ccm_app/filemanager.js
+concrete5/concrete/js/ccm_app/jquery.colorpicker.js
 concrete5/concrete/js/ccm_app/jquery.cookie.js
+concrete5/concrete/js/ccm_app/jquery.hoverIntent.js
+concrete5/concrete/js/ccm_app/jquery.liveupdate.js
+concrete5/concrete/js/ccm_app/jquery.metadata.js
 concrete5/concrete/js/ccm_app/layouts.js
 concrete5/concrete/js/ccm_app/legacy_dialog.js
 concrete5/concrete/js/ccm_app/newsflow.js
@@ -2080,7 +2094,7 @@ concrete5/concrete/js/tiny_mce/plugins/searchreplace/langs/
 concrete5/concrete/js/tiny_mce/plugins/searchreplace/langs/en_dlg.js
 concrete5/concrete/js/tiny_mce/plugins/searchreplace/searchreplace.htm
 concrete5/concrete/js/tiny_mce/plugins/spellchecker/
-concrete5/concrete/js/tiny_mce/plugins/spellchecker/changelog
+concrete5/concrete/js/tiny_mce/plugins/spellchecker/changelog.txt
 concrete5/concrete/js/tiny_mce/plugins/spellchecker/classes/
 concrete5/concrete/js/tiny_mce/plugins/spellchecker/classes/EnchantSpell.php
 concrete5/concrete/js/tiny_mce/plugins/spellchecker/classes/GoogleSpell.php
@@ -3630,6 +3644,12 @@ concrete5/concrete/libraries/marketplace.php
 concrete5/concrete/libraries/model.php
 concrete5/concrete/libraries/newsflow.php
 concrete5/concrete/libraries/object.php
+concrete5/concrete/libraries/page_cache/
+concrete5/concrete/libraries/page_cache/library.php
+concrete5/concrete/libraries/page_cache/record.php
+concrete5/concrete/libraries/page_cache/types/
+concrete5/concrete/libraries/page_cache/types/file.php
+concrete5/concrete/libraries/page_cache/unknown_record.php
 concrete5/concrete/libraries/request.php
 concrete5/concrete/libraries/update.php
 concrete5/concrete/libraries/view.php
@@ -3645,6 +3665,7 @@ concrete5/concrete/mail/private_message_response_enabled.php
 concrete5/concrete/mail/spam_detected.php
 concrete5/concrete/mail/user_register.php
 concrete5/concrete/mail/user_register_approval_required.php
+concrete5/concrete/mail/user_registered_approval_complete.php
 concrete5/concrete/mail/validate_user_email.php
 concrete5/concrete/models/
 concrete5/concrete/models/area.php
@@ -4042,6 +4063,7 @@ concrete5/concrete/single_pages/dashboard/system/registration/public_registratio
 concrete5/concrete/single_pages/dashboard/system/registration/view.php
 concrete5/concrete/single_pages/dashboard/system/seo/
 concrete5/concrete/single_pages/dashboard/system/seo/bulk_seo_tool.php
+concrete5/concrete/single_pages/dashboard/system/seo/excluded.php
 concrete5/concrete/single_pages/dashboard/system/seo/search_index.php
 concrete5/concrete/single_pages/dashboard/system/seo/statistics.php
 concrete5/concrete/single_pages/dashboard/system/seo/tracking_codes.php
@@ -4079,6 +4101,7 @@ concrete5/concrete/single_pages/upgrade.php
 concrete5/concrete/single_pages/user_error.php
 concrete5/concrete/startup/
 concrete5/concrete/startup/autoload.php
+concrete5/concrete/startup/check_page_cache.php
 concrete5/concrete/startup/config_check.php
 concrete5/concrete/startup/config_check_complete.php
 concrete5/concrete/startup/debug_logging.php
@@ -4092,8 +4115,10 @@ concrete5/concrete/startup/magic_quotes_gpc_check.php
 concrete5/concrete/startup/maintenance_mode_check.php
 concrete5/concrete/startup/optional_menu_buttons.php
 concrete5/concrete/startup/packages.php
+concrete5/concrete/startup/permission_cache_check.php
 concrete5/concrete/startup/process.php
 concrete5/concrete/startup/required.php
+concrete5/concrete/startup/security.php
 concrete5/concrete/startup/session.php
 concrete5/concrete/startup/shutdown.php
 concrete5/concrete/startup/timezone.php
