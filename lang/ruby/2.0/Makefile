@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/03/19 23:38:23 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/20 07:27:30 jasper Exp $
 
 COMMENT-main =		object oriented script language with threads
 COMMENT-gdbm =		gdbm interface for ruby
@@ -81,7 +81,7 @@ VMEM_WARNING =		Yes
 
 SUBST_VARS +=		RUBYLIBREV
 
-REGRESS_DEPENDS =	${FULLPKGNAME-main}:${BUILD_PKGPATH}
+TEST_DEPENDS =		${FULLPKGNAME-main}:${BUILD_PKGPATH}
 
 pre-install:
 	find ${WRKSRC} -name '*.orig' -print0 | xargs -0 rm 
@@ -89,7 +89,7 @@ pre-install:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ruby
 
-do-regress:
+do-test:
 	-cd ${WRKSRC} && make test-sample
 	-cd ${WRKSRC} && make btest-ruby
 	cd ${WRKSRC} && make test-all TESTOPTS="-v -q -x test/ruby/test_io.rb -x test/net/http/test_http.rb"
