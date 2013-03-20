@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/18 13:48:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/20 08:23:19 ajacoutot Exp $
 
 COMMENT=	framework for server orchestration/parallel job execution
 
@@ -18,9 +18,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	http://downloads.puppetlabs.com/mcollective/
 
 MODULES=	lang/ruby
-
-# only supports ruby 1.8 for now
-MODRUBY_REV=	1.8
 
 RUN_DEPENDS=	net/ruby-stomp,${MODRUBY_FLAVOR}
 
