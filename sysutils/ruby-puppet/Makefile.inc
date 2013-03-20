@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.5 2013/03/13 14:35:38 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2013/03/20 06:55:19 ajacoutot Exp $
 
+PKG_ARCH ?=	*
 COMMENT ?=	centralised configuration management for networks
 DISTNAME ?=	puppet-${VERSION}
 PKGNAME ?=	ruby-${DISTNAME}
@@ -13,8 +14,11 @@ PKGDIR ?=	${.CURDIR}/../pkg
 PLIST ?=	${.CURDIR}/pkg/PLIST
 
 CATEGORIES +=	sysutils net
-MODULES +=	lang/ruby
 SUBST_VARS +=	RUBY
+
+# ruby 1.8 supports both version 2 and 3
+# (http://downloads.puppetlabs.com/hiera/)
+MODULES +=	lang/ruby
 
 BUILD_DEPENDS +=${RUN_DEPENDS}
 RUN_DEPENDS +=	converters/ruby-json,${MODRUBY_FLAVOR} \
