@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1218 2013/03/17 10:35:05 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1219 2013/03/20 10:48:00 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -411,6 +411,20 @@ ALL_FAKE_FLAGS += -j${MAKE_JOBS}
 .  include "${PORTSDIR}/infrastructure/mk/bsd.port.arch.mk"
 .endif
 
+.for _S in ${MULTI_PACKAGES}
+PERMIT_PACKAGE_CDROM${_S} ?= ${PERMIT_PACKAGE_CDROM}
+.  if defined(PERMIT_PACKAGE_FTP)
+PERMIT_PACKAGE_FTP${_S} ?= ${PERMIT_PACKAGE_FTP}
+.  endif
+.  if defined(PERMIT_PACKAGE_CDROM${_S}) && ${PERMIT_PACKAGE_CDROM${_S}:L} == "yes"
+PERMIT_PACKAGE_FTP${_S} ?= Yes
+.  endif
+.  if !defined(PERMIT_PACKAGE_CDROM${_S}) || !defined(PERMIT_PACKAGE_FTP${_S})
+ERRORS += "The licensing info for ${FULLPKGNAME${_S}} is incomplete."
+_BAD_LICENSING = Yes
+.  endif
+.endfor
+
 .if defined(PERMIT_PACKAGE_CDROM) && ${PERMIT_PACKAGE_CDROM:L} == "yes"
 PERMIT_PACKAGE_FTP ?= Yes
 PERMIT_DISTFILES_FTP ?= Yes
@@ -421,12 +435,19 @@ PERMIT_DISTFILES_FTP ?= Yes
 .if !defined(PERMIT_PACKAGE_CDROM) || !defined(PERMIT_PACKAGE_FTP) || \
 	!defined(PERMIT_DISTFILES_FTP)
 ERRORS += "The licensing info for ${FULLPKGNAME} is incomplete."
+_BAD_LICENSING = Yes
+.endif
+
+.if defined(_BAD_LICENSING)
 ERRORS += "Please notify the OpenBSD port maintainer:"
 ERRORS += "    ${MAINTAINER}"
-_BAD_LICENSING = Yes
 PERMIT_PACKAGE_CDROM = No
 PERMIT_PACKAGE_FTP = No
 PERMIT_DISTFILES_FTP = No
+.  for _S in ${MULTI_PACKAGES}
+PERMIT_PACKAGE_CDROM${_S} = No
+PERMIT_PACKAGE_FTP${_S} = No
+.  endfor
 .endif
 
 .if ${MACHINE_ARCH} != ${ARCH}
@@ -780,8 +801,8 @@ PKGFILES += ${PKGFILE${_s}}
 
 STATIC_PLIST ?= Yes
 .for _s in ${MULTI_PACKAGES}
-.  for _v in PKG_ARCH PERMIT_PACKAGE_FTP PERMIT_PACKAGE_CDROM \
-	RUN_DEPENDS WANTLIB LIB_DEPENDS PREFIX CATEGORIES STATIC_PLIST
+.  for _v in PKG_ARCH RUN_DEPENDS WANTLIB LIB_DEPENDS PREFIX CATEGORIES \
+	STATIC_PLIST
 ${_v}${_s} ?= ${${_v}}
 .  endfor
 .endfor
