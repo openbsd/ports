@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.100 2013/03/11 11:06:04 espie Exp $
+# $OpenBSD: Makefile,v 1.101 2013/03/20 00:46:01 brad Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc sparc64
 
 COMMENT=	multi system emulator
 
-DISTNAME=	qemu-1.3.1
-REVISION=	0
+DISTNAME=	qemu-1.4.0
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/
 EXTRACT_SUFX=	.tar.bz2
@@ -17,7 +16,7 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # GPLv2, LGPLv2 and BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	GL SDL X11 c curl glib-2.0 gthread-2.0 jpeg m ncurses \
+WANTLIB=	GL SDL X11 c curl glib-2.0 gnutls gthread-2.0 jpeg m ncurses \
 		pixman-1 png pthread pthread-stubs util z
 
 MODULES=	devel/gettext \
@@ -27,7 +26,8 @@ LIB_DEPENDS=	devel/glib2 \
 		devel/sdl \
 		graphics/jpeg \
 		graphics/png \
-		net/curl
+		net/curl \
+		security/gnutls
 
 MODPY_RUNDEP=	No
 
@@ -63,7 +63,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--disable-uuid \
 		--disable-usb-redir \
 		--disable-vnc-sasl \
-		--disable-vnc-tls \
 		--with-coroutine=sigaltstack
 
 FLAVORS=	debug

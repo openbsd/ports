@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2013/02/02 11:30:34 brad Exp $
+@comment $OpenBSD: PLIST,v 1.25 2013/03/20 00:46:01 brad Exp $
 @conflict kqemu-*
 @conflict qemu-*
 @pkgpath emulators/kqemu
@@ -54,6 +54,7 @@ share/examples/qemu/target-x86_64.conf
 @sample ${SYSCONFDIR}/qemu/
 @sample ${SYSCONFDIR}/qemu/target-x86_64.conf
 share/qemu/
+share/qemu/acpi-dsdt.aml
 share/qemu/bamboo.dtb
 share/qemu/bios.bin
 share/qemu/keymaps/
@@ -109,6 +110,7 @@ share/qemu/pxe-ne2k_pci.rom
 share/qemu/pxe-pcnet.rom
 share/qemu/pxe-rtl8139.rom
 share/qemu/pxe-virtio.rom
+share/qemu/q35-acpi-dsdt.aml
 share/qemu/qemu-icon.bmp
 share/qemu/s390-zipl.rom
 share/qemu/sgabios.bin
