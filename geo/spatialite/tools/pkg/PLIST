@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/20 21:55:28 landry Exp $
+@bin bin/exif_loader
+@bin bin/shp_doctor
+@bin bin/spatialite
+@bin bin/spatialite_convert
+@bin bin/spatialite_gml
+@bin bin/spatialite_network
+@bin bin/spatialite_osm_filter
+@bin bin/spatialite_osm_map
+@bin bin/spatialite_osm_net
+@bin bin/spatialite_osm_raw
+@bin bin/spatialite_tool

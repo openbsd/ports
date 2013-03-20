@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/20 21:55:28 landry Exp $
+include/readosm.h
+lib/libreadosm.la
+@lib lib/libreadosm.so.${LIBreadosm_VERSION}
+lib/pkgconfig/
+lib/pkgconfig/readosm.pc

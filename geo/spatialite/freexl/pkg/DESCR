@@ -1,0 +1,6 @@
+FreeXL is an open source library to extract valid data from within an
+Excel (.xls) spreadsheet.  FreeXL intends to be simple, lightweight, and
+completely ignores any GUI-related oddity.  Note that the final goal
+means that FreeXL ignores at all fonts, sizes and alignments, and most
+formats. It ignores Pivot Table, Charts, Formulas, Visual Basic macros
+and so on.

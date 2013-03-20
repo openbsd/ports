@@ -1,0 +1,18 @@
+ spatialite-tools is a collection of open source Command Line Interface
+(CLI) tools supporting SpatiaLite.
+
+* spatialite: a complete CLI front-end, more or less equivalent to the
+  well known sqlite3 front-end, but fully supporting SpatiaLite
+* spatialite_tool: a tool supporting import/export of Shapefiles and
+   DBF-files
+* shp_doctor: a diagnostic tool to check anomalous shapefiles
+* exif_loader: an import tool for EXIF or EXIF-GPS (JPEG) pictures
+* spatialite_osm_raw: a tool importing OSM files (raw format tables,
+  strictly corresponding to XML input)
+* spatialite_osm_filter: a tool allowing to re-export spatially
+  selected OSM files form a raw-format DB
+* spatialite_osm_map: a tool importing map layers from an OSM file
+* spatialite_osm_net: a tool creating a road network from an OSM file
+* spatialite_network: a tool creating a VirtualNetwork (supporting
+  shortest path / routing SQL queries)
+* spatialite_gml: a tool importing GML files

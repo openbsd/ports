@@ -1,0 +1,3 @@
+SpatiaLite is an open source library intended to extend the SQLite core
+to support fully fledged Spatial SQL capabilities. It provides a
+complete and powerful Spatial DBMS (mostly OGC-SFS compliant).

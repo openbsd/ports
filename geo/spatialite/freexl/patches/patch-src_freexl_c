@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_freexl_c,v 1.1.1.1 2013/03/20 21:55:28 landry Exp $
+--- src/freexl.c.orig	Sun Mar 10 15:06:33 2013
++++ src/freexl.c	Sun Mar 10 15:08:00 2013
+@@ -98,6 +98,7 @@ lround (double num)
+ }
+ #endif
+ 
++#ifndef swap16
+ static void
+ swap16 (biff_word16 * word)
+ {
+@@ -106,7 +107,9 @@ swap16 (biff_word16 * word)
+     word->bytes[0] = word->bytes[1];
+     word->bytes[1] = save;
+ }
++#endif
+ 
++#ifndef swap32
+ static void
+ swap32 (biff_word32 * word)
+ {
+@@ -119,6 +122,7 @@ swap32 (biff_word32 * word)
+     word->bytes[2] = save1;
+     word->bytes[3] = save0;
+ }
++#endif
+ 
+ static void
+ swap_float (biff_float * word)

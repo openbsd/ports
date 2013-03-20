@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2013/03/20 21:55:28 landry Exp $
+--- src/Makefile.in.orig	Sun Mar 10 15:29:28 2013
++++ src/Makefile.in	Sun Mar 10 15:29:37 2013
+@@ -52,7 +52,7 @@ POST_UNINSTALL = :
+ build_triplet = @build@
+ host_triplet = @host@
+ @ANDROID_TRUE@@MINGW_FALSE@am__append_1 = -ldl
+-@ANDROID_FALSE@@MINGW_FALSE@am__append_2 = -lpthread -ldl
++@ANDROID_FALSE@@MINGW_FALSE@am__append_2 = -lpthread
+ subdir = src
+ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4

@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/20 21:55:28 landry Exp $
+@bin bin/rasterlite_grid
+@bin bin/rasterlite_load
+@bin bin/rasterlite_pyramid
+@bin bin/rasterlite_tool
+@bin bin/rasterlite_topmost
+include/rasterlite.h
+lib/librasterlite.a
+lib/librasterlite.la
+@lib lib/librasterlite.so.${LIBrasterlite_VERSION}
+lib/pkgconfig/
+lib/pkgconfig/rasterlite.pc

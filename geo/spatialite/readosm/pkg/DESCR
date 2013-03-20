@@ -1,0 +1,4 @@
+ReadOSM is a simple library intended for extracting the contents from
+Open Street Map files: both input formats (.osm XML based and .osm.pbf
+based on Google's Protocol Buffer serialization) are indifferently
+supported.

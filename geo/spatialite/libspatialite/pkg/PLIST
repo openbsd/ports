@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/20 21:55:28 landry Exp $
+include/spatialite/
+include/spatialite.h
+include/spatialite/debug.h
+include/spatialite/gaiaaux.h
+include/spatialite/gaiaexif.h
+include/spatialite/gaiageo.h
+include/spatialite/gg_advanced.h
+include/spatialite/gg_const.h
+include/spatialite/gg_core.h
+include/spatialite/gg_dynamic.h
+include/spatialite/gg_formats.h
+include/spatialite/gg_mbr.h
+include/spatialite/gg_structs.h
+include/spatialite/spatialite.h
+include/spatialite/sqlite.h
+lib/libspatialite.la
+@lib lib/libspatialite.so.${LIBspatialite_VERSION}
+lib/pkgconfig/
+lib/pkgconfig/spatialite.pc

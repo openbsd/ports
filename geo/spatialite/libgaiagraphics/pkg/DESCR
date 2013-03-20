@@ -1,0 +1,7 @@
+libgaiagraphics is an open source library supporting common-utility
+raster handling methods, and is built on the top of the following well
+known graphics libraries:
+* libjpeg
+* libpng
+* libtiff / libgeotiff
+* cairo
