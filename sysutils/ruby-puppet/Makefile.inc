@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.6 2013/03/20 06:55:19 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2013/03/20 07:12:22 ajacoutot Exp $
 
 PKG_ARCH ?=	*
 COMMENT ?=	centralised configuration management for networks
@@ -16,8 +16,14 @@ PLIST ?=	${.CURDIR}/pkg/PLIST
 CATEGORIES +=	sysutils net
 SUBST_VARS +=	RUBY
 
-# ruby 1.8 supports both version 2 and 3
-# (http://downloads.puppetlabs.com/hiera/)
+# Ruby 1.8 supports both version 2 and 3 of Puppet
+# (http://docs.puppetlabs.com/guides/platforms.html).
+# For maintenance/ease of use, the following ports should use the same
+# Ruby version as Puppet:
+#  databases/ruby-hiera
+#  sysutils/mcollective
+#  sysutils/ruby-facter
+#  www/puppet-dashboard
 MODULES +=	lang/ruby
 
 BUILD_DEPENDS +=${RUN_DEPENDS}
