@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 10:50:11 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/20 10:20:39 jasper Exp $
 
 COMMENT=		libvirt wrapper suited for GObject-based applications
 
-DISTNAME=		libvirt-glib-0.1.5
+DISTNAME=		libvirt-glib-0.1.6
 CATEGORIES=		devel sysutils
 
 SHARED_LIBS +=  virt-gconfig-1.0          0.1 # 1.5
@@ -35,5 +35,8 @@ USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
+
+post-install:
+	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/*.{a,la}
 
 .include <bsd.port.mk>

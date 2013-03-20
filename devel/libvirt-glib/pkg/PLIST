@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/03/02 12:28:26 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/03/20 10:20:39 jasper Exp $
 include/libvirt-gconfig-1.0/
 include/libvirt-gconfig-1.0/libvirt-gconfig/
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-capabilities-cpu-feature.h
@@ -113,8 +113,6 @@ lib/pkgconfig/libvirt-gconfig-1.0.pc
 lib/pkgconfig/libvirt-glib-1.0.pc
 lib/pkgconfig/libvirt-gobject-1.0.pc
 lib/python${MODPY_VERSION}/site-packages/libvirtglib.py
-@comment lib/python${MODPY_VERSION}/site-packages/libvirtglibmod.a
-@comment lib/python${MODPY_VERSION}/site-packages/libvirtglibmod.la
 lib/python${MODPY_VERSION}/site-packages/libvirtglibmod.so
 share/gir-1.0/LibvirtGConfig-1.0.gir
 share/gir-1.0/LibvirtGLib-1.0.gir
