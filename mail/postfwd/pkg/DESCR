@@ -1,0 +1,7 @@
+Postfwd is a policy server that combines complex Postfix restrictions
+in a ruleset similar to those of most firewalls. Postfwd
+uses the Postfix policy delegation protocol to control access to
+the mail system before a message has been accepted. It allows you
+to choose an action (e.g. reject, dunno) for a combination of several
+SMTP parameters (like sender and recipient address, size or the
+client's TLS fingerprint).

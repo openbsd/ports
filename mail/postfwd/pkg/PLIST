@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/20 14:22:06 giovanni Exp $
+@newgroup _postfwd:715
+@newuser _postfwd:715:715:daemon:Postfwd Daemon:/var/empty:/sbin/nologin
+@man man/man8/postfwd2.8
+sbin/postfwd2
+share/doc/postfwd/
+share/doc/postfwd/postfwd2-chroot.html
+share/doc/postfwd/postfwd2-chroot.txt
+share/doc/postfwd/postfwd2.CHANGELOG
+share/doc/postfwd/postfwd2.html
+share/doc/postfwd/postfwd2.txt
+share/examples/postfwd/
+@sample ${SYSCONFDIR}/postfix/
+share/examples/postfwd/postfwd.cf.sample
+@sample ${SYSCONFDIR}/postfix/postfwd2.cf
+@rcscript ${RCDIR}/postfwd2
