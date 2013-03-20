@@ -1,0 +1,42 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/20 21:47:34 landry Exp $
+include/spatialindex/
+include/spatialindex/LineSegment.h
+include/spatialindex/MVRTree.h
+include/spatialindex/MovingPoint.h
+include/spatialindex/MovingRegion.h
+include/spatialindex/Point.h
+include/spatialindex/RTree.h
+include/spatialindex/Region.h
+include/spatialindex/SpatialIndex.h
+include/spatialindex/TPRTree.h
+include/spatialindex/TimePoint.h
+include/spatialindex/TimeRegion.h
+include/spatialindex/Version.h
+include/spatialindex/capi/
+include/spatialindex/capi/BoundsQuery.h
+include/spatialindex/capi/CountVisitor.h
+include/spatialindex/capi/CustomStorage.h
+include/spatialindex/capi/DataStream.h
+include/spatialindex/capi/Error.h
+include/spatialindex/capi/IdVisitor.h
+include/spatialindex/capi/Index.h
+include/spatialindex/capi/LeafQuery.h
+include/spatialindex/capi/ObjVisitor.h
+include/spatialindex/capi/Utility.h
+include/spatialindex/capi/sidx_api.h
+include/spatialindex/capi/sidx_config.h
+include/spatialindex/capi/sidx_impl.h
+include/spatialindex/tools/
+include/spatialindex/tools/PointerPool.h
+include/spatialindex/tools/PoolPointer.h
+include/spatialindex/tools/SmartPointer.h
+include/spatialindex/tools/Tools.h
+include/spatialindex/tools/rand48.h
+lib/libspatialindex.a
+lib/libspatialindex.la
+@lib lib/libspatialindex.so.${LIBspatialindex_VERSION}
+lib/libspatialindex_c.a
+lib/libspatialindex_c.la
+@lib lib/libspatialindex_c.so.${LIBspatialindex_c_VERSION}
+lib/pkgconfig/
+lib/pkgconfig/libspatialindex.pc
