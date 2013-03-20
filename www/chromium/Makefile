@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.127 2013/03/15 23:08:48 robert Exp $
+# $OpenBSD: Makefile,v 1.128 2013/03/20 16:20:04 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 
@@ -6,6 +6,7 @@ COMMENT=		Chromium browser
 
 V=			25.0.1364.173
 DISTNAME=		chromium-${V}
+REVISION=		0
 
 CATEGORIES=		www
 
@@ -41,7 +42,7 @@ WANTLIB += execinfo expat fontconfig freetype gconf-2 gcrypt gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += jpeg m nspr4 nss3 nssutil3 pango-1.0 pangocairo-1.0
 WANTLIB += plc4 png pthread smime3 speex estdc++
-WANTLIB += xml2 xslt
+WANTLIB += xml2 xslt vpx
 WANTLIB += atk-1.0 usb-1.0 Xrandr sndio
 WANTLIB += Xcomposite
 
@@ -68,7 +69,8 @@ LIB_DEPENDS=	devel/libexecinfo \
 		textproc/libxslt \
 		x11/gtk+2 \
 		audio/speex \
-		print/cups,-libs
+		print/cups,-libs \
+		multimedia/libvpx
 
 .include <bsd.own.mk>
 
@@ -93,10 +95,10 @@ GYP_DEFS=	-Duse_system_bzip2=1 \
 		-Duse_system_libjpeg=1 \
 		-Duse_system_libpng=1 \
 		-Duse_system_libusb=1 \
+		-Duse_system_libvpx=1 \
 		-Duse_system_libxml=1 \
 		-Duse_system_speex=1 \
 		-Duse_system_sqlite=0 \
-		-Duse_system_vpx=0 \
 		-Duse_system_yasm=0 \
 		-Duse_system_zlib=0 \
 		-Ddisable_nacl=1 \
@@ -130,8 +132,6 @@ pre-configure:
 	@cp -pR ${WRKSRC}/third_party/ffmpeg/chromium/config/Chromium/linux/${_arch}/libavutil \
 		${WRKSRC}/third_party/ffmpeg/chromium/config/Chromium/openbsd/${_arch}/libavutil
 .endfor
-	@cp -R ${WRKSRC}/third_party/libvpx/source/config/linux \
-		${WRKSRC}/third_party/libvpx/source/config/openbsd
 	@mkdir -p ${WRKSRC}/media/audio/sndio
 	@cp files/sndio_output.{cc,h} ${WRKSRC}/media/audio/sndio
 
