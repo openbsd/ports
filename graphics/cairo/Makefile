@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2013/03/18 15:05:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2013/03/20 00:25:52 sthen Exp $
 
 COMMENT=		vector graphics library
 
@@ -21,8 +21,7 @@ WANTLIB += pthread pthread-stubs xcb xcb-render xcb-shm z
 # LGPLv2.1 / MPL 1.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		http://mirrors.slackware.com/slackware/slackware-current/source/l/cairo/ \
-			http://cairographics.org/releases/
+MASTER_SITES=		http://cairographics.org/releases/
 
 MODULES=		devel/gettext
 
