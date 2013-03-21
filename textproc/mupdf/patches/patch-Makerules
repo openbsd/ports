@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makerules,v 1.6 2012/08/17 13:30:16 sthen Exp $
---- Makerules.orig	Wed Aug  8 19:40:23 2012
-+++ Makerules	Thu Aug  9 14:54:01 2012
+$OpenBSD: patch-Makerules,v 1.7 2013/03/21 01:26:03 sthen Exp $
+--- Makerules.orig	Wed Feb 13 14:25:07 2013
++++ Makerules	Thu Mar 21 01:01:34 2013
 @@ -5,6 +5,7 @@ OS := $(OS:MINGW%=MINGW)
  
  CFLAGS += -Wall
@@ -17,7 +17,7 @@ $OpenBSD: patch-Makerules,v 1.6 2012/08/17 13:30:16 sthen Exp $
  
  ifeq "$(OS)" "Linux"
  SYS_FREETYPE_INC := `pkg-config --cflags freetype2`
-@@ -32,6 +34,13 @@ ifeq "$(OS)" "FreeBSD"
+@@ -39,6 +41,13 @@ ifeq "$(OS)" "SunOS"
  SYS_FREETYPE_INC := `pkg-config --cflags freetype2`
  LDFLAGS += -L/usr/local/lib
  X11_LIBS := -lX11 -lXext

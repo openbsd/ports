@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2013/03/11 11:42:42 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2013/03/21 01:26:03 sthen Exp $
 
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
-V =		1.1
-REVISION =	2
+V =		1.2
 DISTNAME =	mupdf-$V-source
+EXTRACT_SUFX =	.zip
 PKGNAME =	mupdf-${V:S/-rc/rc/}
 
 CATEGORIES =	textproc x11
@@ -36,13 +36,13 @@ CFLAGS +=	-ffunction-sections
 
 # -I flags prepend mupdf's own, to allow building with previous ver installed
 MAKE_ENV +=	CFLAGS="${CFLAGS} -I$(WRKSRC)/fitz -I$(WRKSRC)/pdf -I$(WRKSRC)/xps" \
-		LDFLAGS="${LDFLAGS}" CC=${CC} CXX=${CXX} \
-		MANDIR="${WRKINST}${PREFIX}/man/man1" build= verbose=1
+		LDFLAGS="${LDFLAGS}" CC=${CC} CXX=${CXX} build= verbose=1
 
-FAKE_FLAGS =	prefix=${WRKINST}${PREFIX} mandir=${WRKINST}${PREFIX}/man
+FAKE_FLAGS =	prefix=${PREFIX} mandir=${PREFIX}/man
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/debian/mupdf.pc
+	rm -rf ${WRKSRC}/thirdparty
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/ \

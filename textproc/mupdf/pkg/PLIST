@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/08/17 13:30:16 sthen Exp $
-@bin bin/mubusy
+@comment $OpenBSD: PLIST,v 1.8 2013/03/21 01:26:03 sthen Exp $
 @bin bin/mudraw
 @bin bin/mupdf
 include/fitz.h
@@ -10,9 +9,9 @@ include/muxps.h
 lib/libfitz.a
 lib/pkgconfig/
 lib/pkgconfig/mupdf.pc
-@man man/man1/mubusy.1
 @man man/man1/mudraw.1
 @man man/man1/mupdf.1
+@man man/man1/mutool.1
 share/application-registry/
 share/application-registry/mupdf.applications
 share/applications/mupdf.desktop
