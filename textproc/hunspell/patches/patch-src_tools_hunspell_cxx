@@ -1,21 +1,24 @@
-$OpenBSD: patch-src_tools_hunspell_cxx,v 1.2 2010/11/14 14:25:24 sthen Exp $
---- src/tools/hunspell.cxx.orig	Mon Jul  5 11:06:21 2010
-+++ src/tools/hunspell.cxx	Sat Sep 25 11:45:07 2010
-@@ -61,26 +61,17 @@
+$OpenBSD: patch-src_tools_hunspell_cxx,v 1.3 2013/03/21 08:57:49 fgsch Exp $
+--- src/tools/hunspell.cxx.orig	Fri Jan 21 17:01:29 2011
++++ src/tools/hunspell.cxx	Tue Mar  5 22:56:02 2013
+@@ -61,28 +61,14 @@
  #include "firstparser.hxx"
  
  #define LIBDIR \
 -    "/usr/share/hunspell:" \
 -    "/usr/share/myspell:" \
--    "/usr/share/myspell/dicts"
+-    "/usr/share/myspell/dicts:" \
+-    "/Library/Spelling"
 +    "${PREFIX}/share/hunspell:" \
 +    "${LOCALBASE}/share/myspell:" \
 +    "${LOCALBASE}/share/myspell/dicts:" \
 +    "${LOCALBASE}/share/mozilla-dicts"
  #define USEROOODIR \
-     ".openoffice.org/3/user/wordbook:" \
-     ".openoffice.org2/user/wordbook:" \
-     ".openoffice.org2.0/user/wordbook"
+-    ".openoffice.org/3/user/wordbook:" \
+-    ".openoffice.org2/user/wordbook:" \
+-    ".openoffice.org2.0/user/wordbook:" \
+-    "Library/Spelling"
++    ".config/libreoffice/3/user/wordbook"
  #define OOODIR \
 -    "/opt/openoffice.org/basis3.0/share/dict/ooo:" \
 -    "/usr/lib/openoffice.org/basis3.0/share/dict/ooo:" \
@@ -29,8 +32,7 @@ $OpenBSD: patch-src_tools_hunspell_cxx,v 1.2 2010/11/14 14:25:24 sthen Exp $
 -    "/usr/lib/openoffice.org2.1/share/dict/ooo:" \
 -    "/opt/openoffice.org2.0/share/dict/ooo:" \
 -    "/usr/lib/openoffice.org2.0/share/dict/ooo"
-+    "${LOCALBASE}/openoffice.org3/share/extension/install:" \
-+    "${LOCALBASE}/openoffice/share/dict/ooo"
++    "${LOCALBASE}/lib/libreoffice/share/wordbook"
  #define HOME getenv("HOME")
  #define DICBASENAME ".hunspell_"
  #define LOGFILE "/tmp/hunspell.log"
