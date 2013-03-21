@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2013/01/05 22:52:07 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.14 2013/03/21 14:32:04 sthen Exp $
 bin/smokeinfo
 bin/smokeping
 bin/smokeping_cgi
@@ -57,6 +57,7 @@ lib/Smokeping/probes/OpenSSHJunOSPing.pm
 lib/Smokeping/probes/Radius.pm
 lib/Smokeping/probes/RemoteFPing.pm
 lib/Smokeping/probes/SSH.pm
+lib/Smokeping/probes/SendEmail.pm
 lib/Smokeping/probes/SipSak.pm
 lib/Smokeping/probes/TCPPing.pm
 lib/Smokeping/probes/TacacsPlus.pm
@@ -113,6 +114,7 @@ lib/Smokeping/sorters/base.pm
 @man man/man3/Smokeping_probes_Radius.3
 @man man/man3/Smokeping_probes_RemoteFPing.3
 @man man/man3/Smokeping_probes_SSH.3
+@man man/man3/Smokeping_probes_SendEmail.3
 @man man/man3/Smokeping_probes_SipSak.3
 @man man/man3/Smokeping_probes_TCPPing.3
 @man man/man3/Smokeping_probes_TacacsPlus.3
