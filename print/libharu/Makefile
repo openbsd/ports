@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/21 08:35:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/21 09:01:56 ajacoutot Exp $
 
 COMMENT =	PDF creation library
 
@@ -22,8 +22,6 @@ AUTOMAKE_VERSION =	1.11
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-png=${LOCALBASE}
-
-USE_LIBTOOL =	Yes
 
 #  for libtoolize
 BUILD_DEPENDS =	devel/libtool \

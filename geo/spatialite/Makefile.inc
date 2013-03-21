@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2013/03/20 21:55:28 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2013/03/21 09:01:56 ajacoutot Exp $
 
 CATEGORIES ?=	geo
 
@@ -18,4 +18,3 @@ CONFIGURE_ENV ?=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng/
 			LDFLAGS="-L${LOCALBASE}/lib" lt_cv_dlopen_libs=
 
 LIBTOOL_FLAGS ?=	--tag=disable-static
-USE_LIBTOOL ?=	Yes
