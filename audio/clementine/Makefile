@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/16 09:31:05 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/21 16:05:00 zhuk Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	Qt4-based featureful music player
 
 DISTNAME =	clementine-1.1.1
-REVISION =	1
+REVISION =	2
 CATEGORIES =	audio x11
 
 HOMEPAGE =	http://clementine-player.org/
@@ -32,6 +32,7 @@ WANTLIB += plist
 MODULES =		devel/cmake devel/gettext x11/qt4
 
 BUILD_DEPENDS =		devel/boost \
+			devel/cmake>=2.8.10.2p3 \
 			devel/sparsehash
 
 RUN_DEPENDS =		devel/desktop-file-utils \
@@ -70,6 +71,6 @@ CONFIGURE_ARGS +=	-DENABLE_SOUNDMENU:Bool=No
 CONFIGURE_ARGS +=	-DBUNDLE_PROJECTM_PRESETS:Bool=Yes
 
 post-extract:
-	cp ${FILESDIR}/FindExecinfo.cmake ${WRKSRC}/cmake
+	cp ${FILESDIR}/config.h.in ${WRKSRC}/ext/libclementine-common/
 
 .include <bsd.port.mk>

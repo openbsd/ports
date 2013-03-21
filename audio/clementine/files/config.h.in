@@ -1,0 +1,6 @@
+
+#cmakedefine01	HAVE_BACKTRACE
+
+#if HAVE_BACKTRACE
+#include <${BACKTRACE_INCLUDES}>
+#endif
