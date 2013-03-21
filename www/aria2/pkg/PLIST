@@ -1,6 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/12/06 15:04:15 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/03/21 18:08:03 gonzalo Exp $
 @bin bin/aria2c
 @man man/man1/aria2c.1
+man/pt/
+man/pt/man1/
+@man man/pt/man1/aria2c.1
 man/ru/
 man/ru/man1/
 @man man/ru/man1/aria2c.1
