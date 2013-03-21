@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/08/19 06:44:00 jasper Exp $
-@lib lib/libleveldb.so.${LIBleveldb_VERSION}
