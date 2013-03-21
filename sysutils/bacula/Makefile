@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2013/03/11 11:41:29 espie Exp $
+# $OpenBSD: Makefile,v 1.57 2013/03/21 15:04:18 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -15,7 +15,9 @@ FULLPKGNAME-bat=	bacula-bat-$V
 FULLPKGPATH-bat=	${PKGPATH},-bat
 CATEGORIES=		sysutils
 
-REVISION-server=	1
+REVISION-server=	2
+REVISION-main=		0
+REVISION-bat=		0
 
 # XXX build fails if a previous version is installed
 SHARED_LIBS +=  bac                  4.0
@@ -29,7 +31,7 @@ SHARED_LIBS +=  baccats              ${BACCATS_LIBV}
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=bacula/}
 HOMEPAGE=		http://www.bacula.org/
 
-MAINTAINER=		Michael Erdely <merdely@openbsd.org>
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 WANTLIB += c pthread crypto ssl z m stdc++
 
