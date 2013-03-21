@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2012/11/11 17:13:32 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.23 2013/03/21 10:21:49 zhuk Exp $
 @bin bin/ccmake
 @bin bin/cmake
 @bin bin/cpack
@@ -251,6 +251,7 @@ share/cmake/Modules/FindArmadillo.cmake
 share/cmake/Modules/FindBISON.cmake
 share/cmake/Modules/FindBLAS.cmake
 share/cmake/Modules/FindBZip2.cmake
+share/cmake/Modules/FindBacktrace.cmake
 share/cmake/Modules/FindBoost.cmake
 share/cmake/Modules/FindBullet.cmake
 share/cmake/Modules/FindCABLE.cmake
