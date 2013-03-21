@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:20:27 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/21 22:21:05 sthen Exp $
 
 SHARED_ONLY = 	Yes
 ONLY_FOR_ARCHS =i386 amd64
@@ -7,7 +7,7 @@ COMMENT = 	embeddable prototype-based language
 
 DISTNAME = 	stevedekorte-io-2011.09.12-106-g02f9800
 PKGNAME = 	io-20110905
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	lang
 
