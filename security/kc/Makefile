@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:41:25 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/21 09:48:45 jasper Exp $
 
 COMMENT =	console based password storing application
 
-DISTNAME =	kc-2.2.1
+DISTNAME =	kc-2.3.0
 CATEGORIES =    security
 
 HOMEPAGE =	http://code.google.com/p/keychain
@@ -18,7 +18,7 @@ WANTLIB =	c crypto edit ncursesw xml2 pcre
 LIB_DEPENDS =	textproc/libxml \
 		devel/pcre
 
-# only required for the pwsafe_convert.pl utility,
+# only required for the pwsafe_to_kc.pl utility,
 # and not for kc itself.
 RUN_DEPENDS =	www/p5-HTML-Parser
 
@@ -28,6 +28,6 @@ TEST_TARGET =test
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/kc
-	${INSTALL} ${WRKBUILD}/pwsafe_convert.pl ${PREFIX}/share/kc/
+	${INSTALL} ${WRKBUILD}/pwsafe_to_kc.pl ${PREFIX}/share/kc/
 
 .include <bsd.port.mk>
