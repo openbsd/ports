@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1219 2013/03/20 10:48:00 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1220 2013/03/21 08:28:33 ajacoutot Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -363,7 +363,7 @@ CONFIGURE_ENV += MAKE=${MAKE_PROGRAM}
 .else
 MAKE_PROGRAM = ${MAKE}
 .endif
-USE_LIBTOOL ?= No
+USE_LIBTOOL ?= Yes
 _lt_libs =
 .if ${USE_LIBTOOL:L} != "no"
 .  if ${USE_LIBTOOL:L} == "gnu"
