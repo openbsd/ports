@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/06/07 00:08:32 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.4 2013/03/21 10:43:34 jasper Exp $
 bin/qhacc
 @bin bin/qhacc-cli
 bin/qhacc-config
@@ -19,66 +18,97 @@ include/sqldbplugin.h
 include/tableops.h
 lib/libacct.a
 lib/libacct.la
+@lib lib/libacct.so.${LIBacct_VERSION}
 lib/libarcio.a
 lib/libarcio.la
+@lib lib/libarcio.so.${LIBarcio_VERSION}
 lib/libaves.a
 lib/libaves.la
+@lib lib/libaves.so.${LIBaves_VERSION}
 lib/libbalances.a
 lib/libbalances.la
+@lib lib/libbalances.so.${LIBbalances_VERSION}
 lib/libbudget.a
 lib/libbudget.la
+@lib lib/libbudget.so.${LIBbudget_VERSION}
 lib/libcliimpio.a
 lib/libcliimpio.la
+@lib lib/libcliimpio.so.${LIBcliimpio_VERSION}
 lib/libdbbase.a
 lib/libdbbase.la
+@lib lib/libdbbase.so.${LIBdbbase_VERSION}
 lib/libdeltas.a
 lib/libdeltas.la
+@lib lib/libdeltas.so.${LIBdeltas_VERSION}
 lib/libdoublebargraph.a
 lib/libdoublebargraph.la
+@lib lib/libdoublebargraph.so.${LIBdoublebargraph_VERSION}
 lib/libdoublelinegraph.a
 lib/libdoublelinegraph.la
+@lib lib/libdoublelinegraph.so.${LIBdoublelinegraph_VERSION}
 lib/libextprgio.a
 lib/libextprgio.la
+@lib lib/libextprgio.so.${LIBextprgio_VERSION}
 lib/libfiledbio.a
 lib/libfiledbio.la
+@lib lib/libfiledbio.so.${LIBfiledbio_VERSION}
 lib/libgraphbase.a
 lib/libgraphbase.la
+@lib lib/libgraphbase.so.${LIBgraphbase_VERSION}
 lib/libjournal.a
 lib/libjournal.la
+@lib lib/libjournal.so.${LIBjournal_VERSION}
 lib/libmbudget.a
 lib/libmbudget.la
+@lib lib/libmbudget.so.${LIBmbudget_VERSION}
 lib/libmonthlygraph.a
 lib/libmonthlygraph.la
+@lib lib/libmonthlygraph.so.${LIBmonthlygraph_VERSION}
 lib/libnativedbio.a
 lib/libnativedbio.la
+@lib lib/libnativedbio.so.${LIBnativedbio_VERSION}
 lib/libpayee.a
 lib/libpayee.la
+@lib lib/libpayee.so.${LIBpayee_VERSION}
 lib/libpiegraph.a
 lib/libpiegraph.la
+@lib lib/libpiegraph.so.${LIBpiegraph_VERSION}
 lib/libprofitloss.a
 lib/libprofitloss.la
+@lib lib/libprofitloss.so.${LIBprofitloss_VERSION}
 lib/libqhacc.a
 lib/libqhacc.la
+@lib lib/libqhacc.so.${LIBqhacc_VERSION}
 lib/libqhaccext.a
 lib/libqhaccext.la
+@lib lib/libqhaccext.so.${LIBqhaccext_VERSION}
 lib/libqhaccutils.a
 lib/libqhaccutils.la
+@lib lib/libqhaccutils.so.${LIBqhaccutils_VERSION}
 lib/libqifio.a
 lib/libqifio.la
+@lib lib/libqifio.so.${LIBqifio_VERSION}
 lib/libshares.a
 lib/libshares.la
+@lib lib/libshares.so.${LIBshares_VERSION}
 lib/libsinglebargraph.a
 lib/libsinglebargraph.la
+@lib lib/libsinglebargraph.so.${LIBsinglebargraph_VERSION}
 lib/libsinglelinegraph.a
 lib/libsinglelinegraph.la
+@lib lib/libsinglelinegraph.so.${LIBsinglelinegraph_VERSION}
 lib/libtbal.a
 lib/libtbal.la
+@lib lib/libtbal.so.${LIBtbal_VERSION}
 lib/libtrans.a
 lib/libtrans.la
+@lib lib/libtrans.so.${LIBtrans_VERSION}
 lib/libupgradeio.a
 lib/libupgradeio.la
+@lib lib/libupgradeio.so.${LIBupgradeio_VERSION}
 lib/libxmlio.a
 lib/libxmlio.la
+@lib lib/libxmlio.so.${LIBxmlio_VERSION}
 lib/plugins/
 lib/plugins/db/
 lib/plugins/db/libextprgio.so
