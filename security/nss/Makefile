@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.35 2013/03/18 20:38:13 landry Exp $
+# $OpenBSD: Makefile,v 1.36 2013/03/21 12:49:42 landry Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		libraries to support development of security-enabled apps
 
-VERSION=		3.14.2
+VERSION=		3.14.3
 DISTNAME =		nss-${VERSION}
 
-SO_VERSION=		33.1
+SO_VERSION=		33.2
 .for _lib in freebl3 nss3 nssckbi nssdbm3 nssutil3 smime3 softokn3 ssl3
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
 .endfor
