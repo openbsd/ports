@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/11 11:02:50 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2013/03/21 08:59:29 fgsch Exp $
 
 COMMENT-main =		easy to use LaTeX and ConTeXt editor
 COMMENT-python =	Python scripting for TeXworks
@@ -12,6 +12,7 @@ PKGNAME-main =		texworks-${V}
 PKGNAME-lua =		texworks-lua-${V}
 PKGNAME-python =	texworks-python-${V}
 
+REVISION-main =		0
 REVISION-lua =		0
 
 WRKDIST =		${WRKDIR}/texworks-${V}
@@ -31,7 +32,7 @@ MODULES =		x11/qt4 \
 SHARED_ONLY =		Yes
 
 WANTLIB += ICE QtDBus QtGui QtScript QtScriptTools QtXml SM X11
-WANTLIB += Xext Xi Xinerama Xrender c fontconfig freetype hunspell-1.2
+WANTLIB += Xext Xi Xinerama Xrender c fontconfig freetype hunspell-1.3
 WANTLIB += m poppler-qt4 pthread stdc++ z
 
 WANTLIB-lua =	${MODLUA_WANTLIB}

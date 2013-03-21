@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2013/03/11 11:02:50 espie Exp $
+# $OpenBSD: Makefile,v 1.86 2013/03/21 08:59:29 fgsch Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -16,6 +16,8 @@ PKGNAME-kde=	libreoffice-kde-${VERSION}
 PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel
+
+REVISION-main =	0
 
 SHARED_LIBS +=  lcms2                     2.3 # 2.3
 
@@ -168,7 +170,7 @@ WANTLIB-main+=	ICE SM X11 Xcomposite Xcursor Xdamage \
 		png pthread pthread-stubs ssl xcb xml2 z gdk_pixbuf-2.0 \
 		util ${MODGETTEXT_WANTLIB}
 WANTLIB-main+=	GL xcb-render xcb-shm
-WANTLIB-main+=	hunspell-1.2 gdk_pixbuf_xlib-2.0
+WANTLIB-main+=	hunspell-1.3 gdk_pixbuf_xlib-2.0
 WANTLIB-main+=	idn
 WANTLIB-main+=	${MODPY_WANTLIB}
 
