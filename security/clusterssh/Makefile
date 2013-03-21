@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:41:24 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/21 19:07:56 sthen Exp $
 
 COMMENT=	secure concurrent multi-server terminal control
 
@@ -32,5 +32,8 @@ TEST_DEPENDS=devel/p5-Test-Trap \
 		devel/p5-Test-DistManifest
 
 MAKE_ENV=	TEST_POD=Yes
+
+post-extract:
+	cd ${WRKSRC}; chmod -R u+w MYMETA.json
 
 .include <bsd.port.mk>
