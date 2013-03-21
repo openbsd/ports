@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.384 2013/03/08 12:12:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.385 2013/03/21 21:36:30 sthen Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -255,7 +255,6 @@
      SUBDIR += p5-XML-SAX-Expat-Incremental
      SUBDIR += p5-XML-SAX-ExpatXS
      SUBDIR += p5-XML-SAX-Writer
-     SUBDIR += p5-XML-Sablotron
      SUBDIR += p5-XML-Simple
      SUBDIR += p5-XML-Smart
      SUBDIR += p5-XML-Stream
