@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 10:50:12 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/21 08:33:52 landry Exp $
 
 COMMENT =		open source MPI-2 implementation
 BROKEN-hppa =		error: Could not determine global symbol label prefix
@@ -33,6 +33,7 @@ MASTER_SITES =		${HOMEPAGE}/software/ompi/v${V:C/^([0-9]+\.[0-9]+).*/\1/}/downlo
 
 USE_GROFF =		Yes
 # XXX: uses a locally modified libtool.
+USE_LIBTOOL =		No
 
 FAKE_FLAGS =		sysconfdir=${PREFIX}/share/examples/openmpi/
 CONFIGURE_STYLE =	gnu

@@ -1,6 +1,10 @@
-# $OpenBSD: Makefile,v 1.48 2013/03/12 09:01:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2013/03/21 08:33:52 landry Exp $
 
 BROKEN-hppa =	no __sync_bool_compare_and_swap support nor asm fallback
+
+# XXX use the bundled libtool because it needs some specific options we
+# don't have.
+USE_LIBTOOL=	No
 
 PV=		5.3
 V=		${PV}.22

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.153 2013/03/19 08:49:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.154 2013/03/21 08:33:51 landry Exp $
 
 COMMENT-main=		Common Unix Printing System
 COMMENT-libs=		CUPS libraries and headers
@@ -41,6 +41,10 @@ MASTER_SITES=		http://ftp.easysw.com/pub/cups/${VERSION}/ \
 WRKDIST=		${WRKDIR}/${DISTNAME:S/-source//}
 
 MULTI_PACKAGES=		-main -libs
+
+# XXX $(LIBTOOL) is hardcoded in some Makefiles even when *not* using
+# --enable-libtool-unsupported
+USE_LIBTOOL=		No
 
 BUILD_DEPENDS=		${MODGNU_AUTOMAKE_DEPENDS} \
 			${MODGNU_AUTOCONF_DEPENDS}

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.33 2012/11/30 12:56:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2013/03/21 08:33:52 landry Exp $
 
-# doesn't set USE_LIBTOOL but use the bundled one because it needs some
-# specific options we don't have.
+# XXX use the bundled libtool because it needs some specific options we
+# don't have.
+USE_LIBTOOL=	No
 
 PV=		5.2
 V=		5.2.17

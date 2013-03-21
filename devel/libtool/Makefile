@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2013/03/11 10:50:10 espie Exp $
+# $OpenBSD: Makefile,v 1.81 2013/03/21 08:33:52 landry Exp $
 
 COMMENT-main=	generic shared library support script
 COMMENT-ltdl=	GNU libtool system independent dlopen wrapper
@@ -24,6 +24,9 @@ BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS}
 
 MAKE_ENV+= ${_lt_libs}
 MAKE_FLAGS+= ${_lt_libs}
+
+# do not set libtool(1) to /usr/bin/libtool, for obvious reasons
+USE_LIBTOOL=	No
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}

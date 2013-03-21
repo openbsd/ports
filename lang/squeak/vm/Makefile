@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/01/29 23:52:28 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/21 08:33:52 landry Exp $
 
 COMMENT =	smalltalk system, vm
 
@@ -24,6 +24,7 @@ CONFIGURE_ENV =		LDFLAGS="-lpthread ${LDFLAGS}" RANLIB=ranlib \
 			ac_cv_socklen_t=yes
 USE_GMAKE =		Yes
 USE_GROFF =		Yes
+USE_LIBTOOL =		No
 
 WANTLIB =		GL X11 m c SM util Xext ICE Xrender Xt pthread \
 			pthread-stubs xcb

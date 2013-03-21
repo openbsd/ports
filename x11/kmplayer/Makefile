@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:46:13 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/21 08:33:52 landry Exp $
 
 COMMENT=	front-end/embeddable KPart for MPlayer
 CATEGORIES=	x11 x11/kde
@@ -22,6 +22,7 @@ CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.52
 CONFIGURE_ARGS+=	${MODKDE_CONFIGURE_ARGS}
 USE_GMAKE=		Yes
+USE_LIBTOOL =		No
 PORTHOME=${WRKDIR}
 
 CONFIGURE_ENV+=		${MODKDE_CONFIGURE_ENV}
