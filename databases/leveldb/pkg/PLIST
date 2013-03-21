@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/03/21 21:30:30 pascal Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.5 2013/03/21 21:36:02 pascal Exp $
 include/leveldb/
 include/leveldb/c.h
 include/leveldb/cache.h
