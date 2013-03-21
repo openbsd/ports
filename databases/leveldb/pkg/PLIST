@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/08/21 00:28:34 jmatthew Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/03/21 21:30:30 pascal Exp $
 %%SHARED%%
 include/leveldb/
 include/leveldb/c.h
@@ -15,6 +15,7 @@ include/leveldb/table.h
 include/leveldb/table_builder.h
 include/leveldb/write_batch.h
 lib/libleveldb.a
+@lib lib/libleveldb.so.${LIBleveldb_VERSION}
 share/doc/leveldb/
 share/doc/leveldb/bench/
 share/doc/leveldb/bench/db_bench_sqlite3.cc

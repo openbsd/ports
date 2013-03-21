@@ -1,11 +1,13 @@
-$OpenBSD: patch-Makefile,v 1.2 2012/08/21 00:28:34 jmatthew Exp $
+$OpenBSD: patch-Makefile,v 1.3 2013/03/21 21:30:30 pascal Exp $
 
 Allow SHARED_MAJOR and SHARED_MINOR to be overridden.
 This doesn't affect kMajorVersion and kMinorVersion in db.h,
 but nothing uses them anyway.
 
---- Makefile.orig	Fri Aug 17 22:08:25 2012
-+++ Makefile	Fri Aug 17 22:08:04 2012
+Do not use SONAME.
+
+--- Makefile.orig	Wed May 30 18:56:59 2012
++++ Makefile	Tue Mar 19 14:06:40 2013
 @@ -69,8 +69,8 @@ SHARED3 = $(SHARED1)
  SHARED = $(SHARED1)
  else
@@ -17,3 +19,12 @@ but nothing uses them anyway.
  SHARED1 = libleveldb.$(PLATFORM_SHARED_EXT)
  SHARED2 = $(SHARED1).$(SHARED_MAJOR)
  SHARED3 = $(SHARED1).$(SHARED_MAJOR).$(SHARED_MINOR)
+@@ -82,7 +82,7 @@ $(SHARED2): $(SHARED3)
+ endif
+ 
+ $(SHARED3):
+-	$(CXX) $(LDFLAGS) $(PLATFORM_SHARED_LDFLAGS)$(SHARED2) $(CXXFLAGS) $(PLATFORM_SHARED_CFLAGS) $(SOURCES) -o $(SHARED3)
++	$(CXX) $(LDFLAGS) $(PLATFORM_SHARED_LDFLAGS) $(CXXFLAGS) $(PLATFORM_SHARED_CFLAGS) $(SOURCES) -o $(SHARED3)
+ 
+ endif  # PLATFORM_SHARED_EXT
+ 

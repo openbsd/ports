@@ -1,11 +1,22 @@
-$OpenBSD: patch-build_detect_platform,v 1.4 2012/08/21 13:51:12 ajacoutot Exp $
+$OpenBSD: patch-build_detect_platform,v 1.5 2013/03/21 21:30:30 pascal Exp $
 
 Skip checks for <cstdatomic>, snappy and tcmalloc.  We don't
 have any of these, and with our current binutils, c++ -o /dev/null
 deletes /dev/null, which is kind of bad.
 
---- build_detect_platform.orig	Thu May 31 02:56:59 2012
-+++ build_detect_platform	Mon Aug 20 10:25:20 2012
+Do not use SONAME.
+
+--- build_detect_platform.orig	Wed May 30 18:56:59 2012
++++ build_detect_platform	Tue Mar 19 14:05:59 2013
+@@ -51,7 +51,7 @@ PLATFORM_CCFLAGS=
+ PLATFORM_CXXFLAGS=
+ PLATFORM_LDFLAGS=
+ PLATFORM_SHARED_EXT="so"
+-PLATFORM_SHARED_LDFLAGS="-shared -Wl,-soname -Wl,"
++PLATFORM_SHARED_LDFLAGS="-shared"
+ PLATFORM_SHARED_CFLAGS="-fPIC"
+ PLATFORM_SHARED_VERSIONED=true
+ 
 @@ -132,36 +132,8 @@ if [ "$CROSS_COMPILE" = "true" ]; then
      # Cross-compiling; do not try any compilation tests.
      true
