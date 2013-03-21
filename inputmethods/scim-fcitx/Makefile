@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:12:33 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/21 08:46:31 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -28,7 +28,6 @@ EXTRACT_SUFX=	.tar.bz2
 LIB_DEPENDS=	inputmethods/scim
 
 WRKDIST=	${WRKDIR}/fcitx
-USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 
 CONFIGURE_STYLE=gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2013/03/11 11:35:57 espie Exp $
+# $OpenBSD: Makefile,v 1.49 2013/03/21 08:46:35 ajacoutot Exp $
 
 COMMENT=	validating DNS resolver
 
@@ -16,7 +16,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	gnu
-USE_LIBTOOL=		Yes
 NO_TEST=		Yes
 
 SHARED_LIBS+=		unbound 3.3

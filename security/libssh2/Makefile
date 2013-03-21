@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:41:25 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/21 08:48:53 ajacoutot Exp $
 
 COMMENT =		library implementing the SSH2 protocol
 
@@ -19,7 +19,6 @@ WANTLIB =		crypto ssl z
 MASTER_SITES =		http://www.libssh2.org/download/
 
 CONFIGURE_STYLE =	gnu
-USE_LIBTOOL =		Yes
 
 # The second test will only pass if public key auth is configured for ${USER}
 TEST_IS_INTERACTIVE = Yes

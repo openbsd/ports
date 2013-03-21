@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/03/11 01:30:26 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2013/03/21 08:45:13 ajacoutot Exp $
 
 COMMENT-main=	radio/rotator control library
 COMMENT-python=	python bindings for hamlib
@@ -49,7 +49,6 @@ RUN_DEPENDS-tcl=	${MODTCL_RUN_DEPENDS}
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=hamlib/}
 
-USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS= 	--with-cxx-binding \

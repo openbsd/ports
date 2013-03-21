@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2013/03/11 16:21:45 giovanni Exp $
+# $OpenBSD: Makefile,v 1.88 2013/03/21 08:45:18 ajacoutot Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
@@ -68,7 +68,6 @@ MODULES=	devel/gettext \
 		lang/python
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+=--enable-gimp-console \
 		--disable-gtk-doc \

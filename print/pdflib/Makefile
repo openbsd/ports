@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/11 11:37:54 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/21 08:46:35 ajacoutot Exp $
 
 COMMENT=		C library to produce PDF files
 
@@ -19,7 +19,6 @@ WANTLIB=		m z jpeg png>=2 tiff>=35
 LIB_DEPENDS=		graphics/png \
 			graphics/tiff
 
-USE_LIBTOOL=		Yes
 
 FAKE=			lib
 CONFIGURE_STYLE=	autoconf dest

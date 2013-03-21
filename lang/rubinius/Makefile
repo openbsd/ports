@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/20 19:13:50 jeremy Exp $
+# $OpenBSD: Makefile,v 1.24 2013/03/21 08:46:32 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -37,7 +37,6 @@ LIB_DEPENDS =	databases/gdbm \
 MODULES =	lang/ruby
 
 USE_GMAKE =	Yes
-USE_LIBTOOL=	Yes
 
 RBX_ARCH =	${MACHINE_ARCH}-openbsd
 RAKE_VER =	0.8.7

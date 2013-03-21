@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:10:55 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/21 08:45:19 ajacoutot Exp $
 
 COMMENT=	translate PostScript/PDF graphics to other vector formats
 
@@ -18,7 +18,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pstoedit/}
 RUN_DEPENDS=	print/ghostscript/gnu
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}	\

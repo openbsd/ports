@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/21 08:48:57 ajacoutot Exp $
 
 COMMENT=	graphics viewer for KVM guest displays
 
@@ -15,7 +15,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	http://virt-manager.org/download/sources/virt-viewer/
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi

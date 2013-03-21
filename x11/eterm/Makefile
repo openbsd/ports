@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2013/03/11 11:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2013/03/21 08:48:56 ajacoutot Exp $
 
 COMMENT=	color X11 terminal emulator with transparency support
 COMMENT-kanji=	color japanese terminal emulator with transparency support
@@ -29,7 +29,6 @@ MODULES+=	converters/libiconv
 LIB_DEPENDS=	devel/libast \
 		print/freetype
 
-USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 
 AUTOCONF_VERSION=2.59

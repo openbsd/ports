@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 10:50:25 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/21 08:45:16 ajacoutot Exp $
 
 COMMENT=	GNU portable threads
 
@@ -11,7 +11,6 @@ HOMEPAGE=	http://www.gnu.org/software/pth/
 
 PERMIT_PACKAGE_CDROM=	Yes
 
-USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 
 CONFIGURE_STYLE= gnu

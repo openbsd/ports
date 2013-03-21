@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/10 08:49:47 landry Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/21 08:45:16 ajacoutot Exp $
 
 COMMENT=	cartographic projection utilities
 
@@ -27,7 +27,6 @@ CONFIGURE_STYLE=	gnu
 WANTLIB=		c m pthread
 CONFIGURE_ENV=		LDFLAGS='-pthread'
 
-USE_LIBTOOL=		Yes
 
 BUILD_DEPENDS=		archivers/unzip
 

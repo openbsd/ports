@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/13 00:36:36 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/21 08:46:33 ajacoutot Exp $
 
 COMMENT=	DVD navigation library
 
@@ -29,7 +29,6 @@ BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 
 LIB_DEPENDS=	devel/libdvdread>=4.2.0
 
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 
 post-patch:

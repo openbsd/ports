@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.118 2013/03/20 19:13:50 jeremy Exp $
+# $OpenBSD: Makefile,v 1.119 2013/03/21 08:45:16 ajacoutot Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -133,7 +133,6 @@ LIB_DEPENDS-gnome-keyring= ${MAINSPEC} \
 RUN_DEPENDS-gnome-keyring=	${MODGETTEXT_RUN_DEPENDS}
 
 MAKE_FLAGS=	MAKE=${MAKE_PROGRAM}
-USE_LIBTOOL=	Yes
 AUTOCONF_VERSION=2.64
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	PYTHON2=${MODPY_BIN} MKDIR="/bin/mkdir -p"

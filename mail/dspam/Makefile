@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2013/03/11 11:23:50 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2013/03/21 08:46:32 ajacoutot Exp $
 
 COMMENT=	anti-spam filter
 
@@ -19,7 +19,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c m
 
-USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 SEPARATE_BUILD=		Yes

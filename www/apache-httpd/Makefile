@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2013/03/11 11:44:41 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2013/03/21 08:48:55 ajacoutot Exp $
 
 COMMENT=	apache HTTP server
 
@@ -35,7 +35,6 @@ LIB_DEPENDS+=		apr-util-*-!ldap:devel/apr-util
 
 MODULES=		converters/libiconv
 
-USE_LIBTOOL=		Yes
 
 MASTER_SITES=		${MASTER_SITE_APACHE:=httpd/}
 

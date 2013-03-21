@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:10:54 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/21 08:45:18 ajacoutot Exp $
 
 COMMENT =		library for reading RAW files
 
@@ -23,7 +23,6 @@ NO_TEST =		Yes
 LIB_DEPENDS =		graphics/jasper \
 			graphics/lcms2
 
-USE_LIBTOOL =		Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \

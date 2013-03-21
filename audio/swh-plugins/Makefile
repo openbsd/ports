@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/10 22:55:06 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/21 08:45:13 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -22,7 +22,6 @@ BUILD_DEPENDS =		audio/ladspa \
 			devel/libtool
 LIB_DEPENDS =		math/fftw3,float
 
-USE_LIBTOOL =		Yes
 
 AUTOMAKE_VERSION =	1.9
 AUTOCONF_VERSION =	2.59

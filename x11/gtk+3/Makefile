@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2013/03/11 11:46:12 espie Exp $
+# $OpenBSD: Makefile,v 1.67 2013/03/21 08:48:56 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -69,7 +69,6 @@ WANTLIB-cups += asn1 crypto cups gdk-3 gssapi gtk-3 krb5 ssl
 WANTLIB-cups += avahi-client avahi-common colordprivate
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 TEST_IS_INTERACTIVE= x11
 
 CONFIGURE_STYLE= gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 11:23:57 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/21 08:46:33 ajacoutot Exp $
 
 COMMENT=	task-based timeclock for KDE
 
@@ -40,6 +40,5 @@ CONFIGURE_ARGS+= --with-extra-includes="${LOCALBASE}/include/libpng:${LOCALBASE}
 CONFIGURE_ARGS+= --with-xinerama
 CONFIGURE_ENV=	KDEDIR="${LOCALBASE}"
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/admin
-USE_LIBTOOL=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2013/03/11 10:50:30 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2013/03/21 08:45:16 ajacoutot Exp $
 
 COMMENT=	SDL cross-platform networking library
 
@@ -22,7 +22,6 @@ WANTLIB=	SDL m sndio usbhid
 MODULES=	converters/libiconv
 LIB_DEPENDS=	devel/sdl
 
-USE_LIBTOOL=	Yes
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+=${CONFIGURE_SHARED} \

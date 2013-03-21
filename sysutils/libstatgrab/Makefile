@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:41:30 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/21 08:48:54 ajacoutot Exp $
 
 COMMENT=	system statistics gathering library
 
@@ -19,7 +19,6 @@ WANTLIB=	c ncurses
 MASTER_SITES=	ftp://ftp.i-scream.org/pub/i-scream/libstatgrab/ \
 		ftp://ftp.uk.i-scream.org/pub/i-scream/libstatgrab/
 
-USE_LIBTOOL=	Yes
 NO_TEST=	Yes
 
 CONFIGURE_STYLE=gnu

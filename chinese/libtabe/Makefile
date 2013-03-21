@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 01:30:26 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/03/21 08:45:13 ajacoutot Exp $
 
 COMMENT=	library for Chinese language processing
 
@@ -21,7 +21,6 @@ MASTER_SITES=	http://www.kpvs.tp.edu.tw/
 
 LIB_DEPENDS=	databases/db/v3
 
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS=	--with-db-inc=${LOCALBASE}/include/db \
 		--with-db-lib=${LOCALBASE}/lib/db \

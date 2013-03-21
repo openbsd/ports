@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:46:13 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/21 08:48:56 ajacoutot Exp $
 
 COMMENT-main =		library for registering keyboard shortcuts
 COMMENT-python =	python bindings for keybinder
@@ -57,7 +57,6 @@ CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
 		ac_cv_path_GTKDOC_MKPDF=""
 
 USE_GMAKE =		Yes
-USE_LIBTOOL =		Yes
 LIBTOOL_FLAGS =		--tag=disable-static
 
 post-install:

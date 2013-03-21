@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/20 10:20:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/21 08:45:16 ajacoutot Exp $
 
 COMMENT=		libvirt wrapper suited for GObject-based applications
 
@@ -31,7 +31,6 @@ BUILD_DEPENDS=		devel/gobject-introspection \
 LIB_DEPENDS=		sysutils/libvirt
 
 USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}

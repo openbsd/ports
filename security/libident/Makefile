@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 11:41:25 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/21 08:48:53 ajacoutot Exp $
 
 COMMENT=	library to interface the ident protocol server (rfc1413)
 
@@ -14,7 +14,6 @@ HOMEPAGE=	http://www.remlab.net/libident/
 PERMIT_PACKAGE_CDROM=	Yes
 
 CONFIGURE_STYLE=	gnu
-USE_LIBTOOL=		Yes
 
 USE_GROFF=	Yes
 

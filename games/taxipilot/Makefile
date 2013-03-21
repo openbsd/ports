@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/19 13:07:13 nigel Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/21 08:45:17 ajacoutot Exp $
 
 COMMENT=	silly little game based on Spacetaxi for the C64
 
@@ -31,7 +31,6 @@ MAKE_ENV=	${CONFIGURE_ENV}
 # Ensure Qt3 will always be at the front
 MAKE_FLAGS=	CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}'
 
-USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	 ${MODQT_CONFIGURE_ARGS}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:07:42 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/21 08:45:17 ajacoutot Exp $
 
 COMMENT=		map-rendering engine for OpenStreetMap
 
@@ -24,7 +24,6 @@ BUILD_DEPENDS=		devel/gobject-introspection
 
 LIB_DEPENDS=		graphics/cairo
 
-USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu

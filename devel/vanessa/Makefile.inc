@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2013/03/15 15:13:36 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2013/03/21 08:45:16 ajacoutot Exp $
 
 CATEGORIES ?=	devel
 
@@ -8,8 +8,6 @@ HOMEPAGE ?=	http://www.vergenet.net/linux/vanessa/
 PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITE_VANESSA ?=	${HOMEPAGE}download/
-
-USE_LIBTOOL ?=		Yes
 
 CONFIGURE_STYLE ?=	gnu
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:02 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/21 08:45:14 ajacoutot Exp $
 
 COMMENT=		various reusable C++-components
 
@@ -20,7 +20,6 @@ MASTER_SITES=		http://www.tntnet.org/download/
 
 MODULES=		converters/libiconv
 
-USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu

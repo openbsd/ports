@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/10 22:55:05 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/21 08:45:13 ajacoutot Exp $
 
 COMMENT=	common interface to speech synthesis
 
@@ -33,7 +33,6 @@ LIB_DEPENDS=	audio/espeak \
 		devel/dotconf \
 		devel/glib2
 
-USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

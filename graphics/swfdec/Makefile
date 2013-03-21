@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2013/03/11 11:10:55 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2013/03/21 08:45:19 ajacoutot Exp $
 
 COMMENT=	flash rendering library
 
@@ -36,7 +36,6 @@ RUN_DEPENDS=	multimedia/gstreamer-0.10/plugins-good \
 		multimedia/gstreamer-0.10/plugins-ffmpeg
 MODULES=	devel/gettext
 
-USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-audio=sndio \
 			--enable-gtk \

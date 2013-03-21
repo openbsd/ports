@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2013/03/11 11:20:27 espie Exp $
+# $OpenBSD: Makefile,v 1.51 2013/03/21 08:46:32 ajacoutot Exp $
 
 ONLY_FOR_ARCHS = alpha amd64 hppa i386 powerpc sparc64
 DPB_PROPERTIES = parallel
@@ -68,7 +68,6 @@ SUPDISTFILES =	${ADASTRAP-i386}:0 ${ADASTRAP-amd64}:0 ${ADASTRAP-sparc64}:0 \
 		${ECJ}:1
 EXTRACT_ONLY =	${DISTNAME}.tar.bz2
 
-USE_LIBTOOL =	Yes
 
 BUILD_DEPENDS +=	devel/bison \
 			devel/libexecinfo

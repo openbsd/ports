@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/03/11 01:30:27 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2013/03/21 08:45:13 ajacoutot Exp $
 
 BROKEN-hppa=		linking .libs/python-libpst.o fails
 
@@ -44,7 +44,6 @@ LIB_DEPENDS-python=	${MODLIBICONV_LIB_DEPENDS} \
 			${BASE_PKGPATH} \
 			devel/boost
 
-USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 USE_GROFF =		Yes
 

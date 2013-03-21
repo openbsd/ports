@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 10:50:04 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/21 08:45:15 ajacoutot Exp $
 
 COMMENT =		C++ application-level logging library
 
@@ -23,7 +23,6 @@ LIB_DEPENDS =		devel/gflags
 TEST_DEPENDS =	devel/gtest
 BUILD_DEPENDS +=	${TEST_DEPENDS}
 
-USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--with-gflags=${LOCALBASE}

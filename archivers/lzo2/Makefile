@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/10 22:28:04 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/21 08:45:11 ajacoutot Exp $
 
 COMMENT=	portable speedy lossless data compression library
 
@@ -21,6 +21,5 @@ CONFIGURE_ARGS+= --enable-static \
 
 TEST_TARGET=	test
 
-USE_LIBTOOL=	Yes
 
 .include <bsd.port.mk>

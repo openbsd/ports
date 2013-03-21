@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:46:08 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/21 08:48:55 ajacoutot Exp $
 
 COMMENT=		modern look Athena widgets
 
@@ -18,7 +18,6 @@ MASTER_SITES=		http://siag.nu/pub/widgets/
 PERMIT_PACKAGE_CDROM=	Yes
 
 
-USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 USE_X11 =		Yes

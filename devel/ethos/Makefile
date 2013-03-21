@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 10:50:03 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/03/21 08:45:14 ajacoutot Exp $
 
 # XXX fix building with glib2 >= 2.29 (G_CONST_RETURN is deprecated)
 CFLAGS +=      "-DG_CONST_RETURN=const"
@@ -28,7 +28,6 @@ CONFIGURE_ARGS =	--disable-shave \
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-USE_LIBTOOL =	Yes
 USE_GMAKE =	Yes
 
 MODULES =	lang/python \

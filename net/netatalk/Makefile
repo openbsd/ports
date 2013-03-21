@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2013/03/11 11:35:49 espie Exp $
+# $OpenBSD: Makefile,v 1.48 2013/03/21 08:46:34 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -23,7 +23,6 @@ LIB_DEPENDS=	databases/db/v4 \
 		security/libgcrypt 
 
 USE_GROFF=	Yes
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--disable-cups \
 		--disable-overwrite \

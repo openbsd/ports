@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/17 14:42:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/21 08:45:14 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -52,7 +52,6 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 
 MODULES=	devel/gettext
 
-USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 
 CONFIGURE_STYLE=gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 10:50:11 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/21 08:45:16 ajacoutot Exp $
 
 COMMENT=	C++ class library for working with Internet mail
 
@@ -40,7 +40,6 @@ WRKDIST=	${WRKDIR}/libvmime-${VMIME_V}
 # our old gcc is <cxx0x; so "-pedantic" warnings are turned into errors
 CFLAGS +=	-fpermissive
 
-USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 
 BUILD_DEPENDS=	archivers/bzip2

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/03/11 11:10:51 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2013/03/21 08:45:17 ajacoutot Exp $
 
 COMMENT =	Amide a Medical Imaging Data Examiner
 
@@ -43,7 +43,6 @@ LIB_DEPENDS =	devel/gsl>=1.6 \
 		graphics/ffmpeg>=20121026 \
 		devel/gconf2
 
-USE_LIBTOOL =	Yes
 USE_GMAKE =	Yes
 USE_GROFF =		Yes
 

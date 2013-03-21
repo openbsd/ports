@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:46:14 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/21 08:48:56 ajacoutot Exp $
 
 COMMENT=	collection of additional GTK widgets
 
@@ -15,7 +15,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	http://releases.chipx86.com/libsexy/libsexy/
 
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 
 MODULES=	devel/gettext

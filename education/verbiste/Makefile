@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 11:06:03 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/21 08:45:17 ajacoutot Exp $
 
 COMMENT=	French and Italian conjugation system
 
@@ -28,7 +28,6 @@ WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs stdc++ xcb xcb-render xcb-shm xml2 z
 
-USE_LIBTOOL=	Yes
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static \

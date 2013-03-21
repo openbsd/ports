@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2013/03/11 11:35:49 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2013/03/21 08:46:34 ajacoutot Exp $
 
 COMMENT-main=	nagios base plugins
 COMMENT-fping=	fping plugin
@@ -39,7 +39,6 @@ BUILD_DEPENDS=	games/qstat \
 
 FAKE_FLAGS=	setuid_root_mode=0555
 
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.67
 CONFIGURE_ENV=	PATH_TO_FPING=${LOCALBASE}/sbin/fping \

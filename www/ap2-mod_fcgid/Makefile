@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:44:41 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/21 08:48:55 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -17,7 +17,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 BUILD_DEPENDS+=		www/apache-httpd
 
-USE_LIBTOOL=		Yes
 NO_TEST=		Yes
 
 pre-configure:

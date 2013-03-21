@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/03/11 10:50:10 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2013/03/21 08:45:15 ajacoutot Exp $
 
 COMMENT=	GNUstep/OPENSTEP property lists compatibility library
 
@@ -16,7 +16,6 @@ HOMEPAGE=	http://www.windowmaker.info/
 PERMIT_PACKAGE_CDROM=	Yes
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}

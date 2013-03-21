@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 11:07:42 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/21 08:45:17 ajacoutot Exp $
 
 COMMENT=		modular geoinformation service on top of D-Bus
 
@@ -28,7 +28,6 @@ LIB_DEPENDS =		devel/libsoup,-gnome \
 			x11/dbus-glib
 
 USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \

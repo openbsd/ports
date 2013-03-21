@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 11:12:33 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/21 08:46:32 ajacoutot Exp $
 
 COMMENT=	japanese handwriting
 
@@ -16,7 +16,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 CONFIGURE_ENV=CPPFLAGS=-I${LOCALBASE}/include
 CONFIGURE_STYLE=gnu
 
-USE_LIBTOOL=	Yes
 
 MODULES=	devel/gettext
 

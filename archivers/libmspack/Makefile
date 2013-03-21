@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/10 22:28:04 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/21 08:45:11 ajacoutot Exp $
 
 COMMENT=	library for handling microsoft compression formats
 
@@ -14,7 +14,6 @@ PERMIT_PACKAGE_CDROM=   Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=${CONFIGURE_SHARED}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/11 11:10:52 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2013/03/21 08:45:18 ajacoutot Exp $
 
 COMMENT=		OpenGL Extrusion library
 
@@ -18,7 +18,6 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=project/gle/gle/${DISTNAME}/}
 
 BUILD_DEPENDS=		graphics/freeglut
 
-USE_LIBTOOL=		Yes
 SEPARATE_BUILD= 	Yes
 
 CONFIGURE_STYLE=	gnu

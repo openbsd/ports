@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 10:50:04 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/21 08:45:15 ajacoutot Exp $
 
 COMMENT=	GNU Linear Programming Kit
 
@@ -18,7 +18,6 @@ WANTLIB=		c m gmp>=7 z
 
 LIB_DEPENDS=		devel/gmp
 
-USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \

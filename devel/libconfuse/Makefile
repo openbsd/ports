@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 10:50:09 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/21 08:45:15 ajacoutot Exp $
 
 COMMENT=		configuration file parser library
 DISTNAME=		confuse-2.7
@@ -21,7 +21,6 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include"
 
-USE_LIBTOOL=		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/libconfuse/tutorial/

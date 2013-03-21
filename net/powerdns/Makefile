@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/03/11 11:35:55 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2013/03/21 08:46:35 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -80,7 +80,6 @@ BUILD_DEPENDS+=		${MODGNU_AUTOCONF_DEPENDS}
 
 SYSCONFDIR=		${BASESYSCONFDIR}/pdns
 
-USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.65
 CONFIGURE_ARGS+=	--disable-shared \

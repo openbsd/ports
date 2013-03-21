@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2013/03/19 13:07:13 nigel Exp $
+# $OpenBSD: Makefile,v 1.33 2013/03/21 08:45:15 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	graphical debugger for KDE
@@ -22,7 +22,6 @@ MODULES=	x11/kde devel/gettext
 
 LIB_DEPENDS=	x11/kde/libs3
 
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= autoconf autoheader
 CONFIGURE_ARGS+= ${MODKDE_CONFIGURE_ARGS}
 CONFIGURE_ARGS+= --with-kde-version=3

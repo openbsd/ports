@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:46:15 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/21 08:48:57 ajacoutot Exp $
 
 # /usr/bin/ld: CMakeFiles/smokeqtcore.dir/x_4.cpp.o(.gnu.linkonce.t._ZN13__smokeqtcore9x_QBuffer4x_25EPN5Smoke9StackItemE+0x54): cannot reach 00000d7d___dynamic_cast+0, recompile with -ffunction-sections
 #/usr/bin/ld: CMakeFiles/smokeqtcore.dir/x_4.cpp.o(.gnu.linkonce.t._ZN13__smokeqtcore9x_QBuffer4x_25EPN5Smoke9StackItemE+0x54): cannot handle R_PARISC_PCREL17F for __dynamic_cast
@@ -46,7 +46,6 @@ WANTLIB += pthread ruby19 stdc++
 BUILD_DEPENDS =		devel/automoc
 LIB_DEPENDS =		x11/qt4
 
-USE_LIBTOOL =		Yes
 
 # ruby 1.8 not supported as it requires LD_PRELOAD hacks for pthreads
 MODRUBY_HANDLE_FLAVORS = Yes	

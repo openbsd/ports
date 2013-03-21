@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2013/03/11 11:41:29 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2013/03/21 08:48:53 ajacoutot Exp $
 
 COMMENT=	framework for defining and tracking users
 
@@ -38,7 +38,6 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-pid-file=/var/run/ConsoleKit/pid \
 		--disable-pam-module \
 
-USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 
 FAKE_FLAGS=	DBUS_SYS_DIR=${TRUEPREFIX}/share/examples/consolekit/dbus-1 \

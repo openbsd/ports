@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.199 2013/03/11 10:50:04 espie Exp $
+# $OpenBSD: Makefile,v 1.200 2013/03/21 08:45:15 ajacoutot Exp $
 
 COMMENT=		general-purpose utility library
 
@@ -51,7 +51,6 @@ TEST_DEPENDS=	devel/desktop-file-utils \
 			x11/dbus-python
 
 USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \

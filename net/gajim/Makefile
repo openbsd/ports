@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2013/03/11 11:35:47 espie Exp $
+# $OpenBSD: Makefile,v 1.59 2013/03/21 08:46:34 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -21,7 +21,6 @@ CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 
 MODULES=	lang/python \

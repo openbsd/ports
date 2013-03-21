@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/03/11 11:46:14 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2013/03/21 08:48:56 ajacoutot Exp $
 
 COMMENT=	color terminal emulator with unicode support
 DISTNAME=	mlterm-2.9.0
@@ -29,7 +29,6 @@ LIB_DEPENDS=	x11/gtk+2
 
 MODULES=	devel/gettext
 
-USE_LIBTOOL=	Yes
 AUTOCONF_VERSION=2.13
 CONFIGURE_STYLE=autoconf
 CONFIGURE_ARGS=	--enable-anti-alias --enable-utmp \

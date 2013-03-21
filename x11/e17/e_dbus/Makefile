@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 11:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/21 08:48:55 ajacoutot Exp $
 
 COMMENT =		enlightenment DBus component
 DISTNAME =		e_dbus-1.7.5
@@ -12,7 +12,6 @@ SHARED_LIBS +=		${_lib} ${SO_VERSION}
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-USE_LIBTOOL =		Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender Xss Xtst c cares crypto curl dbus-1

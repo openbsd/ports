@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 10:50:24 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/21 08:45:16 ajacoutot Exp $
 
 COMMENT=		wrapper class around the pcre library
 
@@ -26,7 +26,6 @@ CONFIGURE_ENV=          CPPFLAGS="-I${LOCALBASE}/include" \
                         LDFLAGS="-L${LOCALBASE}/lib"
 
 USE_GMAKE=      	Yes
-USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
 
 do-test:

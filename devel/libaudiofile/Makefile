@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2013/03/12 16:22:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2013/03/21 08:45:15 ajacoutot Exp $
 
 COMMENT=	SGI audiofile library clone
 
@@ -23,7 +23,6 @@ WANTLIB += FLAC c m ogg stdc++
 
 LIB_DEPENDS=	audio/flac
 
-USE_LIBTOOL=	Yes
 
 SEPARATE_BUILD=	Yes
 

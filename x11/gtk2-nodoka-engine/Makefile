@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:46:13 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/21 08:48:56 ajacoutot Exp $
 
 COMMENT =	GTK+2 engine from Fedora
 
@@ -25,7 +25,6 @@ WANTLIB += z ffi stdc++
 MASTER_SITES =	http://fedorahosted.org/releases/n/o/nodoka/
 
 SHARED_ONLY =	Yes
-USE_LIBTOOL =	Yes
 
 MODULES =	devel/gettext
 LIBTOOL_FLAGS+=	--tag=disable-static

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/03/11 10:50:30 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2013/03/21 08:45:16 ajacoutot Exp $
 
 COMMENT=	C++ wrapper for the Simple DirectMedia Layer
 
@@ -29,7 +29,6 @@ LIB_DEPENDS=	devel/sdl
 
 SEPARATE_BUILD= Yes
 
-USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 
 CONFIGURE_STYLE= gnu

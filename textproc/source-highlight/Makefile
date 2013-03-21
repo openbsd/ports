@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 11:42:47 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/21 08:48:55 ajacoutot Exp $
 
 COMMENT=	create a document with syntax highlighting
 
@@ -19,7 +19,6 @@ MASTER_SITES=	${MASTER_SITE_GNU:=src-highlite/}
 LIB_DEPENDS=	devel/boost
 BUILD_DEPENDS=	textproc/texi2html
 
-USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 
 CONFIGURE_STYLE= gnu

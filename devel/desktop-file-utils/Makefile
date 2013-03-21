@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2013/03/11 10:50:03 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2013/03/21 08:45:14 ajacoutot Exp $
 
 COMMENT=	utilities for dot.desktop entries
 
@@ -23,7 +23,6 @@ MODULES=	devel/gettext
 
 LIB_DEPENDS=	devel/glib2
 
-USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu

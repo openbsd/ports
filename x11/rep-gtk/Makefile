@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2013/03/11 11:46:15 espie Exp $
+# $OpenBSD: Makefile,v 1.57 2013/03/21 08:48:57 ajacoutot Exp $
 
 COMMENT=	GTK+ binding for librep Lisp environment
 
@@ -32,7 +32,6 @@ LIB_DEPENDS= 		x11/gtk+2
 MODULES=		devel/gettext
 
 USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}

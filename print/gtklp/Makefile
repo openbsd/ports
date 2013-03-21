@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/16 11:18:13 rpe Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/21 08:46:35 ajacoutot Exp $
 
 COMMENT=	GTK+2 frontend to CUPS
 
@@ -33,7 +33,6 @@ LIB_DEPENDS=	x11/gtk+2 \
 # package is only useful if cups is installed
 RUN_DEPENDS +=	print/cups
 
-USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 
 AUTOMAKE_VERSION=1.11

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:10:54 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/21 08:45:18 ajacoutot Exp $
 
 COMMENT=	parametrical modeling of 3D humanoid characters
 
@@ -27,7 +27,6 @@ BUILD_DEPENDS=	sysutils/coreutils \
 RUN_DEPENDS=	graphics/aqsis
 LIB_DEPENDS=	graphics/mhgui>=0.2
 
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

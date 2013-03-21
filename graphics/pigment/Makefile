@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:10:55 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/21 08:45:19 ajacoutot Exp $
 
 COMMENT =	3D scene graph library for rich UI
 
@@ -27,7 +27,6 @@ CONFIGURE_ENV +=	LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include"
 
 MODULES =	devel/gettext
-USE_LIBTOOL =	Yes
 USE_GMAKE =	Yes
 # needs a check-enabled gstreamer
 NO_TEST =	Yes

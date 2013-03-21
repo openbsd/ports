@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 10:50:10 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/21 08:45:15 ajacoutot Exp $
 
 COMMENT =		asynchronous I/O readiness notification library
 
@@ -20,6 +20,5 @@ WANTLIB =		pthread
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libivykis/$V/}
 
 CONFIGURE_STYLE =	gnu
-USE_LIBTOOL =		Yes
 
 .include <bsd.port.mk>

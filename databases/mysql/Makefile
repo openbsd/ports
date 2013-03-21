@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.213 2013/03/17 07:22:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.214 2013/03/21 08:45:14 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -41,7 +41,6 @@ CXXFLAGS=	${CFLAGS} -felide-constructors -fno-exceptions -fno-rtti
 
 VMEM_WARNING=	Yes
 
-USE_LIBTOOL=	Yes
 USE_GROFF=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.63

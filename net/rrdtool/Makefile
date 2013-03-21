@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2013/03/20 19:13:50 jeremy Exp $
+# $OpenBSD: Makefile,v 1.70 2013/03/21 08:46:35 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -32,7 +32,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	${HOMEPAGE}pub/
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 
 MULTI_PACKAGES=	-main -perl -python -ruby

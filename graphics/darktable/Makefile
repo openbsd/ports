@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2013/03/09 11:20:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2013/03/21 08:45:18 ajacoutot Exp $
 
 BROKEN= unlocks an unlocked mutex (rthread_sync.c 1.34)
 
@@ -53,7 +53,6 @@ LIB_DEPENDS=	devel/json-glib \
 		x11/gtk+2
 
 SEPARATE_BUILD=	Yes
-USE_LIBTOOL=	Yes
 USE_GROFF=	Yes
 
 CONFIGURE_STYLE= cmake

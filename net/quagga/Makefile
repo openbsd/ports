@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2013/03/11 11:35:55 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2013/03/21 08:46:35 ajacoutot Exp $
 
 COMMENT=	multi-threaded routing daemon
 
@@ -22,7 +22,6 @@ SUBST_VARS=	LOCALSTATEDIR
 
 BUILD_DEPENDS=	lang/gawk
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 SYSCONFDIR=	${BASESYSCONFDIR}/quagga
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= autoconf

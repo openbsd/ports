@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:10 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/21 08:45:15 ajacoutot Exp $
 
 COMMENT =	libftdi, interface to ftdi debug device
 
@@ -26,7 +26,6 @@ CONFIGURE_ARGS+=	--disable-libftdipp \
 			--without-docs
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-USE_LIBTOOL = 		Yes
 
 NO_TEST =		Yes
 

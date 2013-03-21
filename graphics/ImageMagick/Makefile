@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.126 2013/03/11 11:10:51 espie Exp $
+# $OpenBSD: Makefile,v 1.127 2013/03/21 08:45:17 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -55,7 +55,6 @@ BUILD_DEPENDS =		${RUN_DEPENDS}
 
 ALL_TARGET=		all perl-build
 
-USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2013/03/10 22:28:04 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2013/03/21 08:45:11 ajacoutot Exp $
 
 COMMENT=	portable speedy lossless data compression library
 
@@ -21,7 +21,6 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/acconfig
 
 TEST_TARGET=	test
 
-USE_LIBTOOL=	Yes
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/lzo
 	${INSTALL_DATA}	${WRKSRC}/doc/* ${PREFIX}/share/doc/lzo

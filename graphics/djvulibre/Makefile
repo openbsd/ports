@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/03/11 11:10:52 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2013/03/21 08:45:18 ajacoutot Exp $
 
 COMMENT=	view, decode and encode DjVu files
 
@@ -26,7 +26,6 @@ RUN_DEPENDS+=	x11/gtk+2,-guic
 BUILD_DEPENDS+=	x11/gnome/librsvg
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 
 AUTOCONF_VERSION=	2.67

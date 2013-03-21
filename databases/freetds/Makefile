@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2013/03/11 02:52:05 espie Exp $
+# $OpenBSD: Makefile,v 1.59 2013/03/21 08:45:14 ajacoutot Exp $
 
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
@@ -39,7 +39,6 @@ LIB_DEPENDS=	databases/iodbc,-main
 # requires database server
 TEST_IS_INTERACTIVE=Yes
 
-USE_LIBTOOL=	Yes
 USE_GROFF=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \

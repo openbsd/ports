@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:10:51 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/21 08:45:17 ajacoutot Exp $
 
 COMMENT=		library for powerful image loading capabilities
 
@@ -35,7 +35,6 @@ LIB_DEPENDS=		devel/sdl \
 			graphics/tiff \
 			graphics/png
 
-USE_LIBTOOL=		Yes
 
 AUTOCONF_VERSION=	2.61
 CONFIGURE_STYLE=	autoconf

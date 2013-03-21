@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:37:54 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/21 08:46:35 ajacoutot Exp $
 
 # libgs from ghostscript is only provided on shared libs archs
 SHARED_ONLY=	Yes
@@ -29,7 +29,6 @@ MODULES=	converters/libiconv
 # in the no_x11 FLAVOR
 LIB_DEPENDS=	ghostscript-*-!no_x11:print/ghostscript/gnu
 
-USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 11:35:48 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/03/21 08:46:34 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -20,7 +20,6 @@ LIB_DEPENDS =	devel/libtool,-ltdl \
 		devel/pcre
 
 USE_GROFF =	Yes
-USE_LIBTOOL =	Yes
 LIBTOOL_FLAGS =	--tag=disable-static
 CONFIGURE_STYLE = gnu
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \

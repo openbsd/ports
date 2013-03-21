@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:35:48 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/21 08:46:34 ajacoutot Exp $
 
 COMMENT=	library for navigating to arbitrary packets in a trace file
 
@@ -15,7 +15,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		pcap
 
-USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc/libpcapnav
 

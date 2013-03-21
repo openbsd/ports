@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/03/11 11:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2013/03/21 08:48:55 ajacoutot Exp $
 
 COMMENT =		core event/X abstraction layer
 DISTNAME =		ecore-1.7.5
@@ -17,7 +17,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES =		devel/gettext
 
-USE_LIBTOOL =		Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender Xss Xtst cares crypto curl eet eina

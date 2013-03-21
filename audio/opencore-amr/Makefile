@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/10 22:55:04 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/21 08:45:13 ajacoutot Exp $
 
 COMMENT=	implementation of the Adaptive Multi Rate speech codec
 
@@ -23,6 +23,5 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=opencore-amr/}
 
 SEPARATE_BUILD=		yes
 CONFIGURE_STYLE=	gnu
-USE_LIBTOOL=		Yes
 
 .include <bsd.port.mk>

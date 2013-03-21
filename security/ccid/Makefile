@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:41:24 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/21 08:48:53 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -24,7 +24,6 @@ WANTLIB =	pcsclite pthread usb-1.0
 LIB_DEPENDS =	devel/libusb1 \
 		security/pcsc-lite>=1.8.3
 
-USE_LIBTOOL =	Yes
 
 CONFIGURE_STYLE = gnu
 

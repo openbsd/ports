@@ -1,4 +1,4 @@
-# $OpenBSD: pecl.port.mk,v 1.3 2013/03/11 11:20:28 espie Exp $
+# $OpenBSD: pecl.port.mk,v 1.4 2013/03/21 08:46:32 ajacoutot Exp $
 # PHP PECL module
 
 MODULES +=	lang/php
@@ -19,7 +19,6 @@ EXTRACT_SUFX ?=	.tgz
 AUTOCONF_VERSION ?= 2.62
 AUTOMAKE_VERSION ?= 1.9
 
-USE_LIBTOOL ?=	Yes
 LIBTOOL_FLAGS += --tag=disable-static
 
 DESTDIRNAME ?=	INSTALL_ROOT

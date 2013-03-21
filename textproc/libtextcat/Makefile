@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:42:42 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/21 08:48:54 ajacoutot Exp $
 
 COMMENT=	language guessing library
 
@@ -17,7 +17,6 @@ WANTLIB += c
 
 MASTER_SITES=	http://software.wise-guys.nl/download/
 
-USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}

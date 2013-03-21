@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/10 22:55:01 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/21 08:45:12 ajacoutot Exp $
 
 COMMENT =	ultra-low delay audio codec (051 API)
 
@@ -21,7 +21,6 @@ WANTLIB =		c m ogg sndio
 
 LIB_DEPENDS =		audio/libogg
 
-USE_LIBTOOL =		Yes
 
 CONFIGURE_STYLE =	gnu
 

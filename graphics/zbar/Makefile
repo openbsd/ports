@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.17 2013/03/11 11:10:56 espie Exp $
+#	$OpenBSD: Makefile,v 1.18 2013/03/21 08:45:19 ajacoutot Exp $
 
 COMMENT=	ZBar barcode reader
 DISTNAME=	zbar-0.10
@@ -43,7 +43,6 @@ USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-video --without-qt
-USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 
 .include <bsd.port.mk>

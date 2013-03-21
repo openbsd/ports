@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:10:55 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/21 08:45:19 ajacoutot Exp $
 
 COMMENT = 		Python charting module
 
@@ -17,7 +17,6 @@ PERMIT_PACKAGE_CDROM = 	Yes
 MASTER_SITES = 		${MASTER_SITE_PYPI:=p/pycha/}
 
 MODULES = 		lang/python
-USE_LIBTOOL = 		Yes
 MODPY_SETUPTOOLS = 	Yes
 
 RUN_DEPENDS = 		graphics/py-cairo

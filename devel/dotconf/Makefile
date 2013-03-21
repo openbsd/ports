@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 10:50:03 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/21 08:45:14 ajacoutot Exp $
 
 COMMENT=		simple, powerful configuration-file parser
 
@@ -15,7 +15,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		${HOMEPAGE}/download/v1.1/
 
-USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 

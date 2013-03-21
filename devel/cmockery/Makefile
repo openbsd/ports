@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 10:50:02 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/21 08:45:14 ajacoutot Exp $
 
 COMMENT =		library to simplify writing unit tests for C applications
 
@@ -18,7 +18,6 @@ MASTER_SITES =		${HOMEPAGE}files/
 
 CONFIGURE_STYLE =	gnu
 
-USE_LIBTOOL =		Yes
 
 MAKE_FLAGS =		docdir="$(PREFIX)/share/doc/cmockery"
 

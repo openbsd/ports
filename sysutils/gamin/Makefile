@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2013/03/11 11:41:30 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2013/03/21 08:48:54 ajacoutot Exp $
 
 # XXX fix building with glib2 >= 2.29 (G_CONST_RETURN is deprecated)
 CFLAGS +=	"-DG_CONST_RETURN=const"
@@ -59,7 +59,6 @@ MODPY_RUNDEP=		No
 MODGNOME_CPPFLAGS=	-pthread
 MODGNOME_LDFLAGS=	-pthread
 
-USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-docs \

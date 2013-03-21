@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 11:12:33 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/21 08:46:31 ajacoutot Exp $
 
 COMMENT=	japanese handwriting input widget
 
@@ -19,7 +19,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 CONFIGURE_ENV=CPPFLAGS=-I${LOCALBASE}/include
 CONFIGURE_STYLE=gnu
 
-USE_LIBTOOL=	Yes
 
 LIB_DEPENDS=	x11/gtk+2 \
 		inputmethods/tomoe

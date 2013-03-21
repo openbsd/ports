@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 11:10:51 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/21 08:45:17 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -26,7 +26,6 @@ WANTLIB=	m
 
 LIBTOOL_FLAGS=	--tag=disable-static
 
-USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 
 SUBST_VARS=	API_VERSION

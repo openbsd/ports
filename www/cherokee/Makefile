@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2013/03/11 11:44:41 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2013/03/21 08:48:55 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -73,7 +73,6 @@ RUN_DEPENDS-streaming = ${BASE_PKGPATH}
 
 USE_GROFF =	Yes
 USE_GMAKE =	Yes
-USE_LIBTOOL =	Yes
 LIBTOOL_FLAGS =	--tag=disable-static
 
 FAKE_FLAGS =	cherokeeconfdir="${PREFIX}/share/examples/cherokee/etc" \

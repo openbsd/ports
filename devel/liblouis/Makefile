@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:10 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/21 08:45:15 ajacoutot Exp $
 
 COMMENT=	braille translator and back-translator
 
@@ -23,7 +23,6 @@ MODPY_ADJ_FILES=tools/lou_harnessGenerator
 
 BUILD_DEPENDS=	devel/help2man
 
-USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \

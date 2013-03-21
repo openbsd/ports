@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:42:42 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/21 08:48:54 ajacoutot Exp $
 
 COMMENT =		light RDF manipulation with LADSPA plugin support
 
@@ -26,7 +26,6 @@ BUILD_DEPENDS =		audio/ladspa \
 LIB_DEPENDS =		devel/libyajl \
 			textproc/raptor
 
-USE_LIBTOOL =		Yes
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.11
 CONFIGURE_STYLE =	gnu

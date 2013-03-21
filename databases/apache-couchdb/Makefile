@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 02:52:04 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/21 08:45:14 ajacoutot Exp $
 
 COMMENT =	distributed, document-oriented database
 
@@ -32,7 +32,6 @@ MAKE_FLAGS =	LDFLAGS="-L${LOCALBASE}/lib -pthread" \
 		default_sysconf_data=""
 
 USE_GMAKE =	Yes
-USE_LIBTOOL =	Yes
 
 CONFIGURE_STYLE = gnu
 CONFIGURE_ARGS = ${CONFIGURE_SHARED} \

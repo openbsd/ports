@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:41:25 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/21 08:48:53 ajacoutot Exp $
 
 COMMENT = 	library to secure any kind of communication streams
 
@@ -20,7 +20,6 @@ WANTLIB = 	c m
 
 EXTRACT_SUFX = 	.tgz
 
-USE_LIBTOOL = 	Yes
 
 WRKDIST = 	${WRKDIR}
 

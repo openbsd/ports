@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2013/03/11 11:20:27 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2013/03/21 08:46:32 ajacoutot Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64
 
@@ -23,7 +23,6 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=clisp/}
 EXTRACT_SUFX=		.tar.bz2
 
 USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
 
 SEPARATE_BUILD=		Yes

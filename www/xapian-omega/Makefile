@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:44:50 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/21 08:48:55 ajacoutot Exp $
 
 COMMENT=	web search application
 
@@ -16,7 +16,6 @@ WANTLIB += c m e2fs-uuid stdc++ z xapian pcre magic
 
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${V}/
 
-USE_LIBTOOL=	Yes
 
 LIB_DEPENDS=	databases/xapian-core>=${V} \
 		devel/pcre \

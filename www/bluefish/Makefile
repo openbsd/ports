@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2013/03/11 11:44:41 espie Exp $
+# $OpenBSD: Makefile,v 1.67 2013/03/21 08:48:55 ajacoutot Exp $
 
 COMMENT=	HTML editor for experienced web designers
 
@@ -40,7 +40,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 
 post-install:
 	rm ${PREFIX}/lib/bluefish/*.{a,la}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:46:13 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/21 08:48:56 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -33,7 +33,6 @@ WANTLIB += pangoft2-1.0 pcre png
 
 LIB_DEPENDS =	x11/gtk+2
 
-USE_LIBTOOL =	Yes
 
 WRKDIST= 	${WRKDIR}/rezlooks-$V
 

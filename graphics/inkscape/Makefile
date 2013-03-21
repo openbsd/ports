@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/03/11 11:10:53 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2013/03/21 08:45:18 ajacoutot Exp $
 
 COMMENT=	SVG vector drawing application
 
@@ -49,7 +49,6 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		textproc/py-lxml
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 USE_GROFF=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.68

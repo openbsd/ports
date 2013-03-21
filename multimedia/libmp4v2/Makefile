@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:35:44 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/21 08:46:33 ajacoutot Exp $
 
 COMMENT =		read and manipulate the MP4 container format
 
@@ -21,7 +21,6 @@ MASTER_SITES =		https://mp4v2.googlecode.com/files/
 EXTRACT_SUFX =		.tar.bz2
 
 BUILD_DEPENDS =		devel/help2man
-USE_LIBTOOL =		Yes
 USE_GROFF =		Yes
 USE_GMAKE =		Yes
 MAKE_FILE =		GNUmakefile

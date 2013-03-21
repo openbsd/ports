@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2013/03/10 22:55:02 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2013/03/21 08:45:12 ajacoutot Exp $
 
 COMMENT-main=	MPEG-2 and MPEG-4 AAC decoder
 COMMENT-xmms=	XMMS input plugin for AAC files
@@ -40,7 +40,6 @@ LIB_DEPENDS-xmms=	${BUILD_PKGPATH} \
 RUN_DEPENDS-xmms=	${MODGETTEXT_RUN_DEPENDS}
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 AUTOCONF_VERSION= 2.61
 AUTOMAKE_VERSION= 1.9

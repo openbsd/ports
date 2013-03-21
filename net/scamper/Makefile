@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:35:56 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/21 08:46:35 ajacoutot Exp $
 
 SHARED_LIBS +=  scamperfile               0.0 # 0.0
 
@@ -22,7 +22,6 @@ WANTLIB += c m
 MASTER_SITES = ${HOMEPAGE}
 
 USE_GROFF =		Yes
-USE_LIBTOOL =		Yes
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-privsep-user=_scamper

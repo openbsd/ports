@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2013/03/14 20:36:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.64 2013/03/21 08:48:56 ajacoutot Exp $
 
 COMMENT=	themed window manager
 
@@ -39,7 +39,6 @@ RUN_DEPENDS=	devel/desktop-file-utils
 SEPARATE_BUILD=	Yes
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \

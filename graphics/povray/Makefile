@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/03/11 11:10:55 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2013/03/21 08:45:19 ajacoutot Exp $
 
 COMMENT=	3D image rendering package
 
@@ -24,7 +24,6 @@ PNG_V=			1.2.49
 MASTER_SITES0=		${MASTER_SITE_SOURCEFORGE:=libpng/}
 DISTFILES=		${EXTRACT_ONLY} libpng-${PNG_V}.tar.gz:0
 
-USE_LIBTOOL=		yes
 
 LIB_DEPENDS=		graphics/jpeg \
 			graphics/tiff

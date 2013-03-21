@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:12:33 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/21 08:46:31 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -27,7 +27,6 @@ LIB_DEPENDS=	inputmethods/scim
 
 SUBST_VARS=     MODQT_PLUGINS
 
-USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 
 CONFIGURE_STYLE=gnu

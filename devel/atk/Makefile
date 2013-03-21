@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2013/03/11 10:50:01 espie Exp $
+# $OpenBSD: Makefile,v 1.52 2013/03/21 08:45:14 ajacoutot Exp $
 
 COMMENT=	accessibility toolkit used by gtk+
 
@@ -27,7 +27,6 @@ MODGNOME_TOOLS= goi
 LIB_DEPENDS=	devel/glib2>=2.33.14
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE= gnu
 

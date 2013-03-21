@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:10:56 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/21 08:45:19 ajacoutot Exp $
 
 COMMENT=	(S)VCD authoring software
 
@@ -19,7 +19,6 @@ WANTLIB += c m z xml2>=11 cdio iso9660 popt
 
 MODULES=		devel/gettext
 
-USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 USE_GROFF =		Yes
 

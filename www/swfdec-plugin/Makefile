@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:44:50 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/21 08:48:55 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -31,7 +31,6 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 LIB_DEPENDS=	graphics/swfdec
 RUN_DEPENDS=	x11/gtk+2,-guic
 
-USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS= --with-plugin-dir="${LOCALBASE}/lib/mozilla/plugins/"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:44:40 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/21 08:48:55 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -25,7 +25,6 @@ NO_TEST=	Yes
 
 RUN_DEPENDS=	www/apache-httpd
 BUILD_DEPENDS=	${RUN_DEPENDS}
-USE_LIBTOOL=	Yes
 MAKE_FLAGS=	top_dir=${LOCALBASE}/share/apache2 \
 		APXS=${LOCALBASE}/sbin/apxs2 \
 		APACHECTL=${LOCALBASE}/sbin/apachectl2

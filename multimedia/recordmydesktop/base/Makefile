@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2012/08/27 09:34:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/21 08:46:33 ajacoutot Exp $
 
 COMMENT =		record desktop sessions to an Ogg-Theora-Vorbis file
 
@@ -13,7 +13,6 @@ LIB_DEPENDS =		audio/libvorbis \
 			multimedia/libtheora
 WANTLIB +=		vorbis vorbisfile vorbisenc theora
 
-USE_LIBTOOL =		Yes
 USE_GROFF =		Yes
 
 CONFIGURE_STYLE	=	gnu

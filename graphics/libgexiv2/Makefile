@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:10:53 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/21 08:45:18 ajacoutot Exp $
 
 COMMENT=	GObject wrapper around exiv2
 CATEGORIES=	graphics
@@ -15,7 +15,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	http://yorba.org/download/gexiv2/0.4/
 EXTRACT_SUFX=	.tar.bz2
 
-USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=simple
 CONFIGURE_ARGS=	--prefix='${PREFIX}' \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2013/03/11 11:35:45 espie Exp $
+# $OpenBSD: Makefile,v 1.89 2013/03/21 08:46:33 ajacoutot Exp $
 
 ONLY_FOR_ARCHS-mono=	${MONO_ARCHS}
 
@@ -200,7 +200,6 @@ CONFIGURE_ARGS+= --disable-qt4
 .endif
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 
 MODPY_RUNDEP=	No
 MODMONO_DEPS=	No

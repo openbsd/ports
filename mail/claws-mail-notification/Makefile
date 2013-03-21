@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2013/03/11 11:23:50 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2013/03/21 08:46:32 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -25,7 +25,6 @@ WANTLIB += gtk-x11-2.0 m notify pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread-stubs xcb xcb-render xcb-shm z
 WANTLIB += ffi harfbuzz icudata icule icuuc pthread stdc++
 
-USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 
 MODULES=	devel/gettext

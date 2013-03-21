@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 11:44:41 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/21 08:48:55 ajacoutot Exp $
 
 COMMENT=		FastCGI Development Kit
 
@@ -19,7 +19,6 @@ WANTLIB=		c m stdc++
 
 MASTER_SITES=		${HOMEPAGE}/dist/
 
-USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 

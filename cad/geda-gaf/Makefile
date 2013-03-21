@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/10 23:04:44 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/21 08:45:13 ajacoutot Exp $
 
 COMMENT =		suite of tools for electronic design automation
 DISTNAME =		geda-gaf-1.6.0
@@ -9,7 +9,6 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 REVISION =		5
 
 SHARED_LIBS = 		geda	0.0	# 38.0
-USE_LIBTOOL =		Yes
 USE_GROFF =	Yes
 
 # GPLv2+

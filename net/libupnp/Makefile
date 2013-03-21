@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:35:48 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/21 08:46:34 ajacoutot Exp $
 
 COMMENT=	Universal Plug and Play SDK
 
@@ -20,7 +20,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pupnp/}
 
 WANTLIB =	pthread
 
-USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE= gnu
 # HAVE_COMPAT does not do anything

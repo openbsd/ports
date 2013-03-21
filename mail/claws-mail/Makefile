@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2013/03/11 11:23:50 espie Exp $
+# $OpenBSD: Makefile,v 1.59 2013/03/21 08:46:32 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -79,7 +79,6 @@ CONFIGURE_ARGS+=	--disable-gnomeprint \
 
 MODULES=		devel/gettext
 USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 CONFIGURE_STYLE=	autoconf

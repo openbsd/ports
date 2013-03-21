@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:46:13 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/21 08:48:56 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -30,7 +30,6 @@ MODULES=	devel/gettext
 
 LIB_DEPENDS=	x11/gtk+3
 
-USE_LIBTOOL=	Yes
 
 LIBTOOL_FLAGS =	--tag=disable-static
 

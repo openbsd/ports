@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2013/03/11 10:50:00 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2013/03/21 08:45:14 ajacoutot Exp $
 
 COMMENT=	Apache Portable Runtime
 
@@ -20,7 +20,6 @@ WANTLIB += pthread
 
 MASTER_SITES=	${MASTER_SITE_APACHE:=apr/}
 
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--includedir=${LOCALBASE}/include/apr-1/ \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/20 09:50:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/21 08:45:16 ajacoutot Exp $
 
 # XXX doesn't build if already installed
 COMMENT=	graphical subversion client
@@ -19,7 +19,6 @@ MASTER_SITES=	${HOMEPAGE}download/release/${VERSION}/
 PERMIT_PACKAGE_CDROM=	Yes
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 
 WANTLIB += ICE SDL SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm apr-1 aprutil-1

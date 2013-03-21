@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2013/03/13 00:20:56 brad Exp $
+# $OpenBSD: Makefile,v 1.37 2013/03/21 08:46:34 ajacoutot Exp $
 
 COMMENT=		BitTorrent library written in C++
 
@@ -20,7 +20,6 @@ WANTLIB=		crypto m sigc-2.0 stdc++
 BUILD_DEPENDS=		devel/cppunit
 LIB_DEPENDS=		devel/libsigc++-2
 
-USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \

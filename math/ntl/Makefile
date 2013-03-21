@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 11:23:55 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/21 08:46:33 ajacoutot Exp $
 
 COMMENT =	Victor Shoup's Number Theory Library
 
@@ -21,7 +21,6 @@ LIB_DEPENDS =		devel/gmp
 
 MAKE_FILE =		makefile
 
-USE_LIBTOOL =		Yes
 
 CONFIGURE_STYLE = 	simple
 CONFIGURE_ARGS =	CC="${CC}" CFLAGS="${CFLAGS}" \

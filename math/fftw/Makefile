@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:23:54 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/21 08:46:32 ajacoutot Exp $
 
 COMMENT=	C routines for computing the Discrete Fourier Transform
 
@@ -18,7 +18,6 @@ MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ \
 		ftp://ftp.kusastro.kyoto-u.ac.jp/pub/src/GNU/fftw/ \
 		http://fftw.mirror.fr/
 
-USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 

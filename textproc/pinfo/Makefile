@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:42:46 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/21 08:48:54 ajacoutot Exp $
 
 COMMENT=		info viewer with lynx-style navigation
 
@@ -16,7 +16,6 @@ MASTER_SITES=		https://alioth.debian.org/frs/download.php/1502/ \
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c ncurses readline 
 
-USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
 
 MODULES+=		devel/gettext

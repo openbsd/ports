@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2013/03/11 11:10:51 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2013/03/21 08:45:17 ajacoutot Exp $
 
 COMMENT=	ascii art library
 
@@ -15,7 +15,6 @@ HOMEPAGE=	http://aa-project.sourceforge.net/aalib/
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c m ncurses X11 xcb
 
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 

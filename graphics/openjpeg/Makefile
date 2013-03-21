@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:10:54 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/21 08:45:19 ajacoutot Exp $
 
 COMMENT=		open-source JPEG 2000 codec library
 
@@ -22,7 +22,6 @@ MASTER_SITES=		http://openjpeg.googlecode.com/files/
 
 CONFIGURE_STYLE=	gnu
 SEPARATE_BUILD=		Yes
-USE_LIBTOOL=		Yes
 
 LIB_DEPENDS=		graphics/lcms2 \
 			graphics/png

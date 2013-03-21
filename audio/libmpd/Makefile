@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/10 22:55:03 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/21 08:45:12 ajacoutot Exp $
 
 COMMENT=		mpd client library
 
@@ -20,7 +20,6 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=musicpd/}
 LIB_DEPENDS=		devel/glib2
 WANTLIB=		glib-2.0 pcre
 
-USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 
 MODULES=		devel/gettext

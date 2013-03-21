@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:12 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/21 08:45:16 ajacoutot Exp $
 
 COMMENT =	Open On-Chip Debugging
 
@@ -42,7 +42,6 @@ LIB_DEPENDS =	devel/libftdi \
 		lang/jimtcl
 
 USE_GMAKE =	Yes
-USE_LIBTOOL =	Yes
 NO_TEST =	Yes
 
 .include <bsd.port.mk>

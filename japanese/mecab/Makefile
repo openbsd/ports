@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:12:33 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/21 08:46:32 ajacoutot Exp $
 
 # .libs/libmecab.so.0.0: undefined reference to `__sync_val_compare_and_swap_4'
 # .libs/libmecab.so.0.0: undefined reference to `__sync_add_and_fetch_4'
@@ -39,7 +39,6 @@ LIB_DEPENDS-main = ${MODLIBICONV_LIB_DEPENDS}
 RUN_DEPENDS-main = mecab-ipadic-*:japanese/mecab,-ipadic
 RUN_DEPENDS-ipadic =
 
-USE_LIBTOOL =	Yes
 
 CONFIGURE_STYLE = gnu
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \

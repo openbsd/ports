@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2013/03/11 11:41:28 espie Exp $
+# $OpenBSD: Makefile,v 1.69 2013/03/21 08:48:53 ajacoutot Exp $
 
 COMMENT=	SSL encryption wrapper for standard network daemons
 
@@ -26,7 +26,6 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/auto
 NO_TEST=		Yes
 USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
 
 do-install:

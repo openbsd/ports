@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2013/03/11 11:02:49 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2013/03/21 08:45:17 ajacoutot Exp $
 
 COMMENT =	easy to use, graphical editor
 
@@ -16,7 +16,6 @@ FLAVORS =	python
 FLAVOR ?=
 
 WANTLIB =	X11 c util xcb
-USE_LIBTOOL =	Yes
 
 MASTER_SITES =	http://fossies.org/linux/misc/
 

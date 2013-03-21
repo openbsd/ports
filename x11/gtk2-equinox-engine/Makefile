@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:46:12 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/21 08:48:56 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -29,7 +29,6 @@ WANTLIB += z ffi stdc++
 
 MASTER_SITES=	http://gnome-look.org/CONTENT/content-files/
 
-USE_LIBTOOL=	Yes
 
 MODULES=	devel/gettext
 

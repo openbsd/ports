@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 11:23:54 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/21 08:46:33 ajacoutot Exp $
 
 COMMENT=	GiNaC is Not a Computer Algebra System (CAS)
 
@@ -22,7 +22,6 @@ WANTLIB=	c m ncurses readline stdc++ gmp cln
 LIB_DEPENDS=	devel/cln
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 

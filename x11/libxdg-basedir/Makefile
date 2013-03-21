@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:46:14 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/21 08:48:56 ajacoutot Exp $
 
 COMMENT =	implementation of the XDG Base Directory specification
 
@@ -13,7 +13,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =	http://n.ethz.ch/student/nevillm/download/libxdg-basedir/
 
-USE_LIBTOOL =		yes
 CONFIGURE_STYLE =	gnu
 
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \

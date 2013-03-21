@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2013/03/11 11:46:14 espie Exp $
+# $OpenBSD: Makefile,v 1.55 2013/03/21 08:48:56 ajacoutot Exp $
 
 ONLY_FOR_ARCHS =	alpha i386 powerpc sparc64 amd64
 
@@ -37,7 +37,6 @@ USE_GROFF =	Yes
 FLAVORS =	altivec
 FLAVOR ?=
 
-USE_LIBTOOL =	Yes
 CONFIGURE_ARGS =	--disable-oss --disable-sunaudio --enable-obsdaudio
 
 .if ${FLAVOR} == "altivec"

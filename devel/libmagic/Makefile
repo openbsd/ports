@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 10:50:10 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/21 08:45:15 ajacoutot Exp $
 
 COMMENT=	library to determine file type
 
@@ -20,6 +20,5 @@ WANTLIB += z
 MASTER_SITES=	ftp://ftp.astron.com/pub/file/
 
 CONFIGURE_STYLE= gnu
-USE_LIBTOOL=	Yes
 
 .include <bsd.port.mk>

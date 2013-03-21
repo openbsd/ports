@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:35:49 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/21 08:46:34 ajacoutot Exp $
 
 COMMENT=	iSCSI (RFC 3720) target from NetBSD
 
@@ -23,7 +23,6 @@ MASTER_SITES=	http://ftp.netbsd.org/pub/NetBSD/packages/distfiles/ \
 		ftp://ftp.netbsd.org/pub/NetBSD/packages/distfiles/
 
 CONFIGURE_STYLE=gnu
-USE_LIBTOOL=	Yes
 
 pre-configure:
 	cd ${WRKSRC}/src/target; perl -pi -e \

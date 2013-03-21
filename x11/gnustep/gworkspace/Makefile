@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2012/08/22 07:15:52 sebastia Exp $
+# $OpenBSD: Makefile,v 1.21 2013/03/21 08:48:56 ajacoutot Exp $
 
 COMMENT=	GNUstep workspace manager
 
@@ -21,7 +21,6 @@ WANTLIB +=	c m pthread sqlite3 PreferencePanes
 BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS}
 LIB_DEPENDS +=		x11/gnustep/systempreferences
 
-USE_LIBTOOL =		Yes
 AUTOCONF_VERSION =	2.52
 
 CONFIGURE_STYLE =	gnu

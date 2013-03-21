@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:44:47 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/21 08:48:55 ajacoutot Exp $
 
 COMMENT=	apache HTTP server request library
 SHARED_ONLY=	Yes
@@ -18,7 +18,6 @@ MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 PERMIT_PACKAGE_CDROM=  Yes
 WANTLIB=	apr-1 aprutil-1 db expat
 
-USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu

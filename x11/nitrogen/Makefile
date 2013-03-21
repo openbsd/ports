@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:46:14 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/21 08:48:56 ajacoutot Exp $
 
 COMMENT=		background browser and setter for X11
 
@@ -15,7 +15,6 @@ MASTER_SITES=		${HOMEPAGE}/files/
 
 MODULES=		devel/gettext
 
-USE_LIBTOOL=		Yes
 
 WANTLIB += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 atkmm-1.6 c cairo cairomm-1.0

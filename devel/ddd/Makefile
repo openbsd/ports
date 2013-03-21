@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2013/03/11 10:50:02 espie Exp $
+# $OpenBSD: Makefile,v 1.63 2013/03/21 08:45:14 ajacoutot Exp $
 
 COMMENT=	Data Display Debugger, graphical front-end for GDB, etc
 
@@ -24,7 +24,6 @@ TEST_IS_INTERACTIVE=x11
 
 VMEM_WARNING=	Yes
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 AUTOCONF_VERSION=2.61
 CONFIGURE_STYLE=autoconf

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2013/03/11 10:50:31 espie Exp $
+# $OpenBSD: Makefile,v 1.46 2013/03/21 08:45:16 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -38,7 +38,6 @@ CATEGORIES-perl=	devel perl5
 WANTLIB-perl=		c uuid>=12
 LIB_DEPENDS-perl=	${BASE_PKGPATH}
 
-USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-perl --with-cxx \

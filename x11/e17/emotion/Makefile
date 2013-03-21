@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/21 08:48:55 ajacoutot Exp $
 
 COMMENT =		video (and audio) codec playback library
 DISTNAME =		emotion-1.7.5
@@ -24,8 +24,6 @@ MODULES =		devel/gettext \
 			x11/e17
 
 MODE17_PURGE_LA =	lib/edje/modules/emotion
-
-USE_LIBTOOL =		Yes
 
 LIB_DEPENDS =		devel/orc \
 			multimedia/gstreamer-0.10/plugins-base \

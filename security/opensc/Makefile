@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 11:41:26 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/21 08:48:53 ajacoutot Exp $
 
 COMMENT=	set of libraries and utilities to access smart cards
 
@@ -28,7 +28,6 @@ WANTLIB=	c crypto ltdl ncurses readline z openct>=1
 LIB_DEPENDS=	security/openct
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu old

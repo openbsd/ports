@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2013/03/10 22:55:06 espie Exp $
+# $OpenBSD: Makefile,v 1.48 2013/03/21 08:45:13 ajacoutot Exp $
 
 COMMENT=	play, encode, and manage Ogg Vorbis files
 
@@ -24,7 +24,6 @@ LIB_DEPENDS=	audio/libao \
 		audio/speex \
 		audio/libvorbis
 
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--without-kate
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

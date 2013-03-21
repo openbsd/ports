@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/10 22:55:05 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/21 08:45:13 ajacoutot Exp $
 
 COMMENT=		utility for Rio mp3 players
 
@@ -18,7 +18,6 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=rioutil/}
 
 LIB_DEPENDS=		devel/libusb-compat
 
-USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-libusb

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 02:52:07 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/21 08:45:14 ajacoutot Exp $
 
 COMMENT=	ODBC driver for PostgreSQL
 VERSION=	08.03.0400
@@ -24,7 +24,6 @@ LIB_DEPENDS =		databases/postgresql>=8.3 \
 WANTLIB =		pq iodbc iodbcinst pthread com_err crypto ssl
 
 USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.60
 CONFIGURE_ARGS+=	--with-iodbc --without-unixodbc --enable-pthreads

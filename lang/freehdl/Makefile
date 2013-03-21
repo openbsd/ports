@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:20:27 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/21 08:46:32 ajacoutot Exp $
 
 COMMENT=	open-source (C++ generating) VHDL simulator
 
@@ -22,7 +22,6 @@ MASTER_SITES=	${HOMEPAGE}/~enaroska/
 WANTLIB += c m stdc++
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 
 # Configure checks for gnu libtool, but the build will use "our" libtool
 BUILD_DEPENDS=  devel/libtool

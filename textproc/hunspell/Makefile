@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:42:41 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/21 08:48:54 ajacoutot Exp $
 
 COMMENT =	spelling, stemming, morphological analysis and generation
 
@@ -28,7 +28,6 @@ CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 			--with-ui \
 			--with-readline
 
-USE_LIBTOOL =		yes
 USE_GROFF =		Yes
 
 # default dictionary

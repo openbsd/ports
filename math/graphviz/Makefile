@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2013/03/11 11:23:54 espie Exp $
+# $OpenBSD: Makefile,v 1.51 2013/03/21 08:46:33 ajacoutot Exp $
 
 COMMENT-main=	graph drawing software
 
@@ -70,7 +70,6 @@ WANTLIB += ltdl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs rsvg-2 stdc++ xcb xcb-render
 WANTLIB += xcb-shm xml2 z ${MODTK_LIB} Xft Xss perl util
 
-USE_LIBTOOL=	Yes
 USE_GMAKE =	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu

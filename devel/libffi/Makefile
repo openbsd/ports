@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 10:50:09 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/21 08:45:15 ajacoutot Exp $
 
 # XXX: cannot be updated to a newer version before the binutils in base
 # is updated to 2.17.
@@ -25,7 +25,6 @@ MASTER_SITES=		ftp://sourceware.org/pub/libffi/
 
 TEST_DEPENDS=	devel/dejagnu
 
-USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}

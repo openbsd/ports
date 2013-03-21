@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/10 22:28:04 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/03/21 08:45:11 ajacoutot Exp $
 
 COMMENT=	multi-format archive and compression library
 
@@ -19,7 +19,6 @@ WANTLIB=	bz2 c expat lzma z
 LIB_DEPENDS=	archivers/bzip2 \
 		archivers/xz
 
-USE_LIBTOOL=	Yes
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}

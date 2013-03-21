@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:46:13 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/21 08:48:56 ajacoutot Exp $
 
 COMMENT =	platform independent hotkey handling for Gtk+ applications
 
@@ -18,7 +18,6 @@ MASTER_SITES =	http://launchpadlibrarian.net/31288851/
 
 MODULES =	devel/gettext \
 		textproc/intltool
-USE_LIBTOOL =	Yes
 CONFIGURE_STYLE =gnu
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

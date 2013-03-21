@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:46:14 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/21 08:48:56 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -31,7 +31,6 @@ LIB_DEPENDS=	net/pidgin,-libpurple \
 BUILD_DEPENDS=	net/pidgin
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

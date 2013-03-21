@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/03/11 10:50:10 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2013/03/21 08:45:15 ajacoutot Exp $
 
 COMMENT=		callback framework for C++
 
@@ -24,7 +24,6 @@ MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libsigc++/${V:C/^([0-9]+\.[0-9]+).*/
 
 SEPARATE_BUILD=		Yes
 USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED}

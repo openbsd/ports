@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2013/03/11 11:10:52 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2013/03/21 08:45:18 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -36,7 +36,6 @@ WANTLIB += gthread-2.0 m pcre z execinfo ffi stdc++
 MODULES=	devel/gettext \
 		textproc/intltool
 
-USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 
 USE_GMAKE=	Yes

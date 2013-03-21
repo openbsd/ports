@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:35:44 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/21 08:46:33 ajacoutot Exp $
 
 COMMENT=	xml2swf and swf2xml processor with import functionalities
 
@@ -19,7 +19,6 @@ LIB_DEPENDS=	graphics/png \
 		textproc/libxslt
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 
 NO_TEST=	Yes

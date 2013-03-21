@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2013/03/19 19:58:06 kili Exp $
+# $OpenBSD: Makefile,v 1.74 2013/03/21 08:46:35 ajacoutot Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt=	qt interface to PDF rendering library
@@ -110,7 +110,6 @@ CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
 		ac_cv_path_GTKDOC_REBASE="" \
 		ac_cv_path_GTKDOC_MKPDF=""
 
-USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 
 post-extract:

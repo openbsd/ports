@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2013/03/18 22:13:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.71 2013/03/21 08:45:13 ajacoutot Exp $
 
 COMMENT=	tools to connect your PalmOS(R) compatible handheld
 
@@ -28,7 +28,6 @@ LIB_DEPENDS=		graphics/png \
 			devel/popt
 
 USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	gnu

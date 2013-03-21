@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:10:53 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/21 08:45:18 ajacoutot Exp $
 
 SHARED_ONLY =			Yes
 
@@ -15,7 +15,6 @@ EXTRACT_SUFX =			.tar.bz2
 PERMIT_PACKAGE_CDROM =		Yes
 
 CONFIGURE_STYLE =		gnu
-USE_LIBTOOL =			Yes
 SEPARATE_BUILD =		simple
 #CONFIGURE_ENV =			CFLAGS="${CFLAGS} ${COPTS}"
 

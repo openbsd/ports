@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:10:53 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/21 08:45:18 ajacoutot Exp $
 
 COMMENT=	library for decoding/generating MPEG TS/DVB PSI tables
 
@@ -18,7 +18,6 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
 
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 
 .include <bsd.port.mk>

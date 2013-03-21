@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:46:19 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/21 08:48:57 ajacoutot Exp $
 
 COMMENT=	displays text on your screen
 
@@ -22,7 +22,6 @@ CONFIGURE_ARGS+=	--disable-new-plugin \
 			--disable-gdk_pixbuftest \
 			--disable-beep_media_player_plugin
 
-USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2013/03/11 11:06:03 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2013/03/21 08:45:17 ajacoutot Exp $
 
 COMMENT=	interactive geometry program
 
@@ -30,7 +30,6 @@ LIB_DEPENDS=	devel/libglade2 \
 		lang/guile
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

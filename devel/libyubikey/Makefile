@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:11 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/21 08:45:16 ajacoutot Exp $
 
 COMMENT=	Yubikey OTP library
 
@@ -17,6 +17,5 @@ WANTLIB += c
 
 CONFIGURE_STYLE=	gnu
 
-USE_LIBTOOL=		Yes
 
 .include <bsd.port.mk>

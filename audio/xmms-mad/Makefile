@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/10 22:55:06 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/21 08:45:13 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -22,7 +22,6 @@ LIB_DEPENDS=	audio/xmms audio/libmad audio/libid3tag
 
 MODULES=	devel/gettext
 
-USE_LIBTOOL=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

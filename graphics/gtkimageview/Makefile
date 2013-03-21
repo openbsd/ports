@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:10:53 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/21 08:45:18 ajacoutot Exp $
 
 COMMENT=	image viewer widget for gtk
 
@@ -27,7 +27,6 @@ MODULES=	devel/gettext
 LIB_DEPENDS=	x11/gtk+2,-main
 
 USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

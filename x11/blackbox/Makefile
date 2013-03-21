@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2013/03/11 11:46:08 espie Exp $
+# $OpenBSD: Makefile,v 1.51 2013/03/21 08:48:55 ajacoutot Exp $
 
 COMMENT=	small & pretty window manager for 8 and more bits displays
 
@@ -18,7 +18,6 @@ WANTLIB=		X11 Xau Xdmcp Xext Xft Xrender c expat m fontconfig \
 MODULES=		converters/libiconv
 
 USE_GROFF =		Yes
-USE_LIBTOOL=		Yes
 LIBTOOL_FLAGS=		--tag=disable-shared
 CONFIGURE_STYLE=	gnu
 

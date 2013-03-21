@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:41:25 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/21 08:48:53 ajacoutot Exp $
 
 COMMENT =	library to generate, and check strenght of passwords
 
@@ -25,7 +25,6 @@ MODULES =		devel/gettext \
 
 LIB_DEPENDS =		security/cracklib
 
-USE_LIBTOOL =		Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--with-python-rev=${MODPY_VERSION} \

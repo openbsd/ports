@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2013/03/11 11:46:12 espie Exp $
+# $OpenBSD: Makefile,v 1.76 2013/03/21 08:48:56 ajacoutot Exp $
 
 COMMENT=	General Toolkit for X11 GUI
 
@@ -22,7 +22,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += X11 Xau Xdmcp Xext Xi m pthread-stubs xcb glib gmodule
 
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --with-xinput="xfree"

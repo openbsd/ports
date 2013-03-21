@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2013/03/11 11:41:24 espie Exp $
+# $OpenBSD: Makefile,v 1.74 2013/03/21 08:48:53 ajacoutot Exp $
 
 # XXX check why our getopt_long(3) fails the configure test
 # + rm patch-gl_unistd_in_h
@@ -36,7 +36,6 @@ LIB_DEPENDS=	devel/libidn \
 		security/p11-kit
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 
 # regression tests need this
 PORTHOME=	${WRKDIR}

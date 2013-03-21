@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:10:53 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/21 08:45:18 ajacoutot Exp $
 
 COMMENT=	GTK2 interface to libexif
 
@@ -26,7 +26,6 @@ MODULES=	devel/gettext
 LIB_DEPENDS=	x11/gtk+2 \
 		graphics/libexif
 
-USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

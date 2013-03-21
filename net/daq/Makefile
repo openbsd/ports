@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/15 02:57:17 lteo Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/21 08:46:34 ajacoutot Exp $
 
 COMMENT =	data acquisition library for snort
 
@@ -21,7 +21,6 @@ WANTLIB =		pcap
 
 MASTER_SITES =		http://www.snort.org/dl/snort-current/
 
-USE_LIBTOOL =		Yes
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu

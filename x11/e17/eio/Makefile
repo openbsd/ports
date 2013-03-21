@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/21 08:48:55 ajacoutot Exp $
 
 COMMENT =		async i/o library
 
@@ -16,7 +16,6 @@ MODULES =		devel/gettext
 
 LIB_DEPENDS =		x11/e17/ecore>=1.7.5v2
 
-USE_LIBTOOL =		Yes
 
 CONFIGURE_ARGS =	--disable-doc
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/10 22:28:05 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/21 08:45:11 ajacoutot Exp $
 
 COMMENT=	astronomical julian date calculator
 
@@ -16,7 +16,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=jday/}
 WANTLIB=	c
 
 SEPARATE_BUILD=	Yes
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 

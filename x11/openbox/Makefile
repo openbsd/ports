@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2013/03/11 11:46:14 espie Exp $
+# $OpenBSD: Makefile,v 1.69 2013/03/21 08:48:56 ajacoutot Exp $
 
 COMMENT =	small, fast & usable window manager
 
@@ -44,7 +44,6 @@ API_V = 	${V:R}
 SUBST_VARS =	API_V
 
 USE_GMAKE =	Yes
-USE_LIBTOOL =	Yes
 MODPY_RUNDEP =	No
 MODPY_ADJ_FILES =data/autostart/openbox-xdg-autostart
 

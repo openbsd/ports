@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2013/03/11 01:30:26 espie Exp $
+# $OpenBSD: Makefile,v 1.65 2013/03/21 08:45:13 ajacoutot Exp $
 
 COMMENT=	desktop organizer software for the palm pilot
 
@@ -29,7 +29,6 @@ RUN_DEPENDS=	devel/desktop-file-utils
 MODULES=	devel/gettext \
 		textproc/intltool
 
-USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
 

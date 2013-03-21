@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/10 22:55:04 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/21 08:45:13 ajacoutot Exp $
 
 COMMENT=	IETF audio codec
 
@@ -18,7 +18,6 @@ MASTER_SITES=	http://downloads.xiph.org/releases/opus/ \
 
 WANTLIB=	m
 
-USE_LIBTOOL=	Yes
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}

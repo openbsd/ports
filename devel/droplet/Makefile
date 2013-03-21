@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 10:50:03 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/21 08:45:14 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -32,7 +32,6 @@ BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
 LIB_DEPENDS=		textproc/libxml \
 			devel/json-c
 
-USE_LIBTOOL=		Yes
 AUTOCONF_VERSION=	2.68
 AUTOMAKE_VERSION=	1.11
 CONFIGURE_STYLE=	gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/03/11 11:37:55 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2013/03/21 08:48:52 ajacoutot Exp $
 
 COMMENT=	personal accounting application
 SHARED_ONLY =	Yes
@@ -37,7 +37,6 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+2,-guic
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 USE_GROFF=	Yes
 
 CONFIGURE_STYLE=gnu

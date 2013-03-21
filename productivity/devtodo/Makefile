@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/11 11:37:54 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2013/03/21 08:48:52 ajacoutot Exp $
 
 COMMENT=		reminder/task program aimed at developers
 
@@ -16,7 +16,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c m ncurses readline stdc++
 
-USE_LIBTOOL=		Yes
 USE_GROFF=		Yes
 CONFIGURE_STYLE=	gnu
 

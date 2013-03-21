@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 11:10:55 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/21 08:45:19 ajacoutot Exp $
 
 COMMENT=	MPEG and VCD video playback in XMMS
 SHARED_ONLY=	Yes
@@ -23,7 +23,6 @@ MODULES=	converters/libiconv
 LIB_DEPENDS=	audio/xmms \
 		devel/smpeg
 
-USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 
 SEPARATE_BUILD=	Yes

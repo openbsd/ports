@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/10 22:28:04 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/21 08:45:11 ajacoutot Exp $
 
 COMMENT=	C library for manipulating tar files
 
@@ -19,7 +19,6 @@ WANTLIB=	c z
 MASTER_SITES=	http://distfiles.nl/ \
 		ftp://ftp.feep.net/pub/software/libtar/
 
-USE_LIBTOOL=	Yes
 NO_TEST=	Yes
 
 CONFIGURE_STYLE=gnu

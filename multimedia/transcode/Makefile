@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2013/03/11 11:35:44 espie Exp $
+# $OpenBSD: Makefile,v 1.56 2013/03/21 08:46:33 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -66,7 +66,6 @@ BUILD_DEPENDS+=	devel/libtool \
 		${MODGNU_AUTOMAKE_DEPENDS}
 
 SEPARATE_BUILD=	Yes
-USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 CONFIGURE_STYLE= gnu

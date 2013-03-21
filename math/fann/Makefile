@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:23:54 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/21 08:46:32 ajacoutot Exp $
 
 COMMENT=		Fast Artificial Neural Network Library
 
@@ -19,7 +19,6 @@ EXTRACT_SUFX=		.zip
 
 WRKDIST=		${WRKDIR}/fann-2.1.0
 
-USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 
 post-install:

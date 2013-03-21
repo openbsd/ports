@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/16 01:30:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/21 08:46:32 ajacoutot Exp $
 
 COMMENT-main=	fully featured POP3 and IMAP4 proxy server
 COMMENT-ldap=	LDAP backend for perdition mail proxy
@@ -34,7 +34,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	${HOMEPAGE}download/${DISTVER}/
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/db4" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:37:53 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/21 08:46:35 ajacoutot Exp $
 
 # XXX remove @exec-update when we branch 5.4-current
 
@@ -42,7 +42,6 @@ LIB_DEPENDS=	print/cups,-libs \
 RUN_DEPENDS +=	print/foomatic-db-engine
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 
 MAKE_FLAGS=	DLOPEN_LIBS=""
 

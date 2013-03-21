@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:12:33 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/21 08:46:31 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -34,7 +34,6 @@ LIB_DEPENDS=	x11/gtk+2 \
 		chinese/libchewing \
 		inputmethods/scim
 
-USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 
 CONFIGURE_STYLE=gnu

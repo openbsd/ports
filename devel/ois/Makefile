@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 10:50:12 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/21 08:45:16 ajacoutot Exp $
 
 COMMENT =		object-oriented input system
 
@@ -28,7 +28,6 @@ BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
 			devel/libtool
 
-USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 CONFIGURE_ENV =		CPPFLAGS="-I${X11BASE}/include"

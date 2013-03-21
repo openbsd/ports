@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:35:48 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/21 08:46:34 ajacoutot Exp $
 
 COMMENT=	Berkeley Internet Name Daemon
 
@@ -41,7 +41,6 @@ LIB_DEPENDS=	textproc/libxml
 SUBST_VARS=	LOCALSTATEDIR
 
 SEPARATE_BUILD=	Yes
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-threads \

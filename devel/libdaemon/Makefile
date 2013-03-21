@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 10:50:09 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/21 08:45:15 ajacoutot Exp $
 
 COMMENT=		lightweight C library that eases the writing of daemons
 
@@ -17,6 +17,5 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS= 	${CONFIGURE_SHARED} \
 			--disable-lynx
 
-USE_LIBTOOL=		Yes
 
 .include <bsd.port.mk>

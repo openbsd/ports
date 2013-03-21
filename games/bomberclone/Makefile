@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:07:38 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/21 08:45:17 ajacoutot Exp $
 
 COMMENT=	bomberman clone with multiplayer mode
 
@@ -20,7 +20,6 @@ EXTRACT_SUFX=	.tar.bz2
 LIB_DEPENDS=	devel/sdl-image \
 		devel/sdl-mixer
 
-USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:12:34 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/21 08:46:32 ajacoutot Exp $
 
 COMMENT=	hangul input library
 
@@ -19,7 +19,6 @@ MODULES=	converters/libiconv
 
 MASTER_SITES=	http://kldp.net/frs/download.php/5417/
 
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2013/03/11 10:50:31 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2013/03/21 08:45:16 ajacoutot Exp $
 
 COMMENT=	toolkit for the development of SILC applications
 
@@ -21,7 +21,6 @@ PERMIT_PACKAGE_CDROM=   Yes
 BUILD_DEPENDS+= devel/yasm
 .endif
 
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.63
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"

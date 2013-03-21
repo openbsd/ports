@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/18 14:45:14 bcallah Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/21 08:45:17 ajacoutot Exp $
 
 COMMENT =	extended client for The Mana World
 
@@ -34,7 +34,6 @@ LIB_DEPENDS =	devel/sdl-image \
 		net/curl \
 		textproc/libxml
 
-USE_LIBTOOL = 		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--without-librt --without-internalguichan
 

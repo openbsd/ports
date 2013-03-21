@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2013/03/11 11:41:32 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2013/03/21 08:48:54 ajacoutot Exp $
 
 COMMENT=	framework for granting privileged operations to users
 
@@ -35,7 +35,6 @@ RUN_DEPENDS=	x11/dbus
 # dlopen() libmozjs185.so
 RUN_DEPENDS +=	devel/spidermonkey
 
-USE_LIBTOOL=	Yes
 # needs AM_PROG_LIBTOOL
 BUILD_DEPENDS+=	devel/libtool
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 11:10:53 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/03/21 08:45:18 ajacoutot Exp $
 
 COMMENT=		color ascii art library
 
@@ -17,7 +17,6 @@ HOMEPAGE=		http://caca.zoy.org/
 MASTER_SITES=		${HOMEPAGE}/files/libcaca/ \
 			http://distfiles.nl/
 
-USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
 
 FLAVORS=		no_x11

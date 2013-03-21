@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.32 2013/03/11 02:52:04 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.33 2013/03/21 08:45:14 ajacoutot Exp $
 
 COMMENT-main=	Berkeley DB package, revision ${REV}
 COMMENT-tcl=	TCL bindings for Berkeley DB, revision ${REV}
@@ -12,7 +12,6 @@ MASTER_SITES=	http://download.oracle.com/berkeley-db/
 # Must purchase license to redistribute if not distributing the source.
 PERMIT_PACKAGE_CDROM=	Yes
 
-USE_LIBTOOL=		Yes
 
 CONFIGURE_SCRIPT=	../dist/configure
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \

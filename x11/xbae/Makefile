@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:46:17 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/21 08:48:57 ajacoutot Exp $
 
 COMMENT=	Motif-based table widget
 
@@ -23,7 +23,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xbae/}
 
 MODULES=	converters/libiconv
 
-USE_LIBTOOL=	Yes
 LIB_DEPENDS+=	x11/openmotif
 USE_GROFF =	Yes
 CONFIGURE_STYLE= gnu

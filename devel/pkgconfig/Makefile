@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2013/03/11 10:50:24 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2013/03/21 08:45:16 ajacoutot Exp $
 
 COMMENT=		tool for managing library compile/link flags
 
@@ -18,7 +18,6 @@ CONFIGURE_ARGS+=	--with-pc_path=${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgcon
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c pcre glib-2.0 pthread
-USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
 
 MODULES=		devel/gettext

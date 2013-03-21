@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:41:25 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/21 08:48:53 ajacoutot Exp $
 
 COMMENT=	IPC library used by GnuPG and gpgme
 
@@ -15,7 +15,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=		ftp://ftp.gnupg.org/gcrypt/libassuan/
 EXTRACT_SUFX=		.tar.bz2
 
-USE_LIBTOOL=		Yes
 
 MODULES=		devel/gettext \
 			textproc/intltool

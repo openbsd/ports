@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 02:52:09 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/21 08:45:14 ajacoutot Exp $
 
 COMMENT=	trivial database library
 
@@ -19,7 +19,6 @@ MASTER_SITES=	http://samba.org/ftp/tdb/
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS= --disable-python
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 MAKE_FLAGS=	TDB_SOLIB=libtdb.so.${LIBtdb_VERSION} \
 		TDB_SONAME=libtdb.so.${LIBtdb_VERSION}
 

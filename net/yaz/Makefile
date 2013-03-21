@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:35:58 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/21 08:46:35 ajacoutot Exp $
 
 COMMENT=		Z39.50/SR client and API library
 DISTNAME=		yaz-3.0.49
@@ -16,7 +16,6 @@ MAINTAINER=		Andreas Bihlmaier <andreas.bihlmaier@gmx.de>
 # Revised BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
 
 MODULES=		devel/gettext

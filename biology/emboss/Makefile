@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/10 23:04:44 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/21 08:45:13 ajacoutot Exp $
 
 COMMENT=	European Molecular Biology Open Software Suite
 
@@ -20,7 +20,6 @@ MASTER_SITES=	ftp://emboss.open-bio.org/pub/EMBOSS/
 
 WANTLIB += X11 c m xcb
 
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+= --without-java
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

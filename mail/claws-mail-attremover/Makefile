@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 11:23:50 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/21 08:46:32 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -17,7 +17,6 @@ HOMEPAGE =	http://www.claws-mail.org/plugins.php
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-USE_LIBTOOL =	Yes
 LIBTOOL_FLAGS =	--tag=disable-static
 
 MODULES =	devel/gettext

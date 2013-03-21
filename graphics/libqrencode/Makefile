@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:10:54 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/21 08:45:18 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -21,7 +21,6 @@ WANTLIB += c m png z
 
 LIB_DEPENDS=		graphics/png
 
-USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \

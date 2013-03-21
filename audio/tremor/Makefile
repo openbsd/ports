@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/10 22:55:06 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/21 08:45:13 ajacoutot Exp $
 
 COMMENT=	integer-only, fully Ogg Vorbis compliant decoder library
 
@@ -26,7 +26,6 @@ BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
 AUTOCONF_VERSION=	2.61
 AUTOMAKE_VERSION=	1.10
 
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 
 WRKDIST=	${WRKDIR}/Tremor

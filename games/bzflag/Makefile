@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/03/11 11:07:38 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2013/03/21 08:45:17 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -26,7 +26,6 @@ LIB_DEPENDS=	devel/sdl \
 RUN_DEPENDS=	devel/desktop-file-utils
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.68

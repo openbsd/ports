@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 10:50:06 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/21 08:45:15 ajacoutot Exp $
 
 COMMENT=	text shaping library
 
@@ -27,7 +27,6 @@ MASTER_SITES=	http://www.freedesktop.org/software/harfbuzz/release/
 MODULES=	devel/gettext
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 
 LIB_DEPENDS=	graphics/cairo \
 		graphics/graphite2 \

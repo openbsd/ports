@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 11:35:44 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/21 08:46:33 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -51,7 +51,6 @@ LIB_DEPENDS =		audio/flac \
 			graphics/jpeg \
 			x11/kde/libs3
 
-USE_LIBTOOL =		Yes
 LIBTOOL_FLAGS +=	--tag=disable-static
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--with-qt-dir=${MODQT_QTDIR} \

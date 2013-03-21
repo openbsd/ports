@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2013/03/11 11:35:47 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2013/03/21 08:46:34 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -21,7 +21,6 @@ WANTLIB += 	${MODPY_WANTLIB} dnet>=1 pcre>=1 eventextra>=1
 PATCH_LIST=	patch-* align-*
 .endif
 
-USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 
 MODULES=	lang/python

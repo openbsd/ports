@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 11:10:52 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/03/21 08:45:18 ajacoutot Exp $
 
 COMMENT =	digital camera command-line interface
 CATEGORIES =	graphics
@@ -19,7 +19,6 @@ PERMIT_PACKAGE_CDROM =		Yes
 WANTLIB += c exif gphoto2 gphoto2_port jpeg ltdl m ncurses popt
 WANTLIB += pthread readline
 
-USE_LIBTOOL =		Yes
 USE_GROFF =		Yes
 
 MAKE_FLAGS =		INTLLIBS='$$(LTLIBINTL)'

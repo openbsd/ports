@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/21 08:48:56 ajacoutot Exp $
 
 COMMENT =	gnome-mplayer toolkit
 DISTNAME =	gmtk-1.0.7
@@ -36,7 +36,6 @@ LIB_DEPENDS =		x11/gtk+3
 
 RUN_DEPENDS =		x11/mplayer
 
-USE_LIBTOOL =		yes
 
 CONFIGURE_STYLE =	gnu
 

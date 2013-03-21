@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:10:54 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/21 08:45:18 ajacoutot Exp $
 
 COMMENT =		library for processing panoramic images
 DISTNAME =		libpano13-2.9.18
@@ -20,7 +20,6 @@ WANTLIB +=		c jpeg m png tiff z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=panotools/}
 
-USE_LIBTOOL =		Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE =	automake
 # builds work with SEPARATE_BUILD, but tests don't.

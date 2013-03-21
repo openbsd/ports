@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/03/10 22:55:06 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2013/03/21 08:45:13 ajacoutot Exp $
 
 COMMENT=		last.fm client for GNOME
 
@@ -42,7 +42,6 @@ LIB_DEPENDS=		devel/libidn \
 			x11/gtk+2
 
 USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	gnu

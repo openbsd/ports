@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 10:50:10 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/21 08:45:16 ajacoutot Exp $
 
 COMMENT=	libusb-0.1 compatibility layer for libusb1
 
@@ -25,7 +25,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libusb/}
 
 LIB_DEPENDS=	devel/libusb1
 
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS= ${CONFIGURE_SHARED}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/16 10:56:30 ratchov Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/21 08:45:13 ajacoutot Exp $
 
 COMMENT=		portable cross-platform audio API
 
@@ -18,7 +18,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		m pthread sndio
 
 USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
 AUTOCONF_VERSION=	2.68
 CONFIGURE_STYLE=	autoconf no-autoheader
 CONFIGURE_ARGS=		--without-alsa --without-oss --without-jack

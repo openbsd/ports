@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:44:41 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/21 08:48:55 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -22,7 +22,6 @@ RUN_DEPENDS =	www/apache-httpd
 BUILD_DEPENDS =	${RUN_DEPENDS}
 
 USE_GMAKE =	Yes
-USE_LIBTOOL =	Yes
 NO_TEST =	Yes
 
 CONFIGURE_STYLE =gnu

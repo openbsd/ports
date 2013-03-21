@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2013/03/18 10:58:16 espie Exp $
+# $OpenBSD: Makefile,v 1.71 2013/03/21 08:45:14 ajacoutot Exp $
 
 COMMENT-main=	embedded SQL implementation
 COMMENT-tcl=	TCL bindings for Sqlite3
@@ -23,7 +23,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB-main=	c ncurses pthread readline
 WANTLIB-lemon=	c
 
-USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 
 CFLAGS+=	-DSQLITE_ENABLE_COLUMN_METADATA \

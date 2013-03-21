@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2013/03/10 22:55:02 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2013/03/21 08:45:12 ajacoutot Exp $
 
 COMMENT=		tag editor for various audio file formats
 
@@ -35,7 +35,6 @@ LIB_DEPENDS=		audio/id3lib \
 			audio/wavpack \
 			x11/gtk+2
 
-USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:42:42 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/21 08:48:54 ajacoutot Exp $
 
 COMMENT=	import and export WordPerfect(tm) documents
 
@@ -28,7 +28,6 @@ MODULES=		devel/gettext
 LIB_DEPENDS=		devel/libgsf
 TEST_DEPENDS=	devel/cppunit
 
-USE_LIBTOOL=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS=		--without-docs
 

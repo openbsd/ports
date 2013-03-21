@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2013/03/11 10:50:30 espie Exp $
+# $OpenBSD: Makefile,v 1.92 2013/03/21 08:45:16 ajacoutot Exp $
 
 # requires ELF visibility support when on a shared arch
 ONLY_FOR_ARCHS=	${GCC3_ARCHS} ${GCC4_ARCHS} ${NO_SHARED_ARCHS}
@@ -31,7 +31,6 @@ FLAVORS=	aa no_x11
 FLAVOR?=
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/test

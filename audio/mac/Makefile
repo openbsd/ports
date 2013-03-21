@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/10 22:55:03 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/21 08:45:12 ajacoutot Exp $
 
 ONLY_FOR_ARCHS= amd64 arm i386
 
@@ -22,7 +22,6 @@ WANTLIB=	c m stdc++
 
 MASTER_SITES=	http://bsd.cenkes.org/myports/
 
-USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
 

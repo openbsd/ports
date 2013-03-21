@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/19 13:07:14 nigel Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/21 08:46:35 ajacoutot Exp $
 
 COMMENT=	Graphical Direct-Connect client
 
@@ -20,7 +20,6 @@ WANTLIB +=	Xmu Xrandr Xrender Xt Xxf86vm bz2 c crypto dc drm expat
 WANTLIB +=	fontconfig freetype jpeg lcms m mng png pthread
 WANTLIB +=	pthread-stubs ssl stdc++ xcb xml2 z
 
-USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS= ${MODQT_CONFIGURE_ARGS}

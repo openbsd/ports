@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:44:50 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/21 08:48:55 ajacoutot Exp $
 
 COMMENT=		modular webapplication server for C++
 
@@ -29,7 +29,6 @@ MODULES=		converters/libiconv
 BUILD_DEPENDS=		archivers/zip
 LIB_DEPENDS= 		devel/cxxtools
 
-USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu

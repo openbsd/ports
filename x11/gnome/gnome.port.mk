@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.63 2012/09/27 14:14:31 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.64 2013/03/21 08:48:56 ajacoutot Exp $
 #
 # Module for GNOME related ports
 
@@ -11,7 +11,6 @@ CATEGORIES+=		x11/gnome
 .endif
 
 .if ${NO_BUILD:L} == "no"
-USE_LIBTOOL?=		Yes
 MODULES+=		textproc/intltool
 .   if defined(CONFIGURE_STYLE) && ${CONFIGURE_STYLE:Mgnu}
         CONFIGURE_ARGS += ${CONFIGURE_SHARED}

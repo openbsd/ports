@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/11 01:30:27 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/21 08:45:13 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,7 +19,6 @@ HOMEPAGE=	http://www.videolan.org/developers/libdvdcss.html
 PERMIT_PACKAGE_CDROM=	Free speech issue
 PERMIT_PACKAGE_FTP=	Yes
 
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.68
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/.auto

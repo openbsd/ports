@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2013/03/11 10:50:06 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2013/03/21 08:45:15 ajacoutot Exp $
 
 COMMENT=	SDL C++ GUI widget library
 
@@ -21,7 +21,6 @@ LIB_DEPENDS=	devel/sdl
 
 MODULES=	converters/libiconv
 
-USE_LIBTOOL=		Yes
 SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		LDFLAGS="-L${X11BASE}/lib"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2013/03/11 11:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2013/03/21 08:48:55 ajacoutot Exp $
 
 COMMENT =		complex graphical design & layout library
 DISTNAME =		edje-1.7.5
@@ -23,7 +23,6 @@ MODULES =		devel/gettext \
 
 MODE17_MIME_DB =	Yes
 
-USE_LIBTOOL =		Yes
 
 LIB_DEPENDS +=		devel/fribidi \
 			x11/e17/eio>=1.7.5 \

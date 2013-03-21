@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 10:50:10 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/03/21 08:45:15 ajacoutot Exp $
 
 COMMENT=		Media Transfer Protocol (MTP) implementation
 
@@ -22,7 +22,6 @@ MAKE_ENV+=		DOXYGEN_ENCODE_PATH_STRIP=${WRKSRC}
 LIB_DEPENDS=		devel/libusb1 \
 			security/libgcrypt
 
-USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-doxygen
 CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib -pthread" \

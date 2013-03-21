@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:42:40 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/21 08:48:54 ajacoutot Exp $
 
 COMMENT =	XML and HTML processing toolkit
 DISTNAME =	arabica-2010-November
@@ -17,7 +17,6 @@ CONFIGURE_STYLE =	gnu
 
 BUILD_DEPENDS =	devel/boost
 CONFIGURE_ENV =	CPPFLAGS='-I${LOCALBASE}/include'
-USE_LIBTOOL =	Yes
 WANTLIB +=	c expat m stdc++
 
 VMEM_WARNING =	Yes

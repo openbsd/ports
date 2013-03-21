@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:41:30 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/21 08:48:54 ajacoutot Exp $
 
 COMMENT=		manage and configure devices that supports IPMI
 
@@ -16,7 +16,6 @@ WANTLIB=		m ncurses readline crypto c
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=ipmitool/}
 
 SEPARATE_BUILD=		Yes
-USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-dependency-tracking
 CONFIGURE_ARGS+=	--disable-intf-free

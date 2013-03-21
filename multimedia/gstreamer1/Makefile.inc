@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.6 2013/03/11 11:35:44 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2013/03/21 08:46:33 ajacoutot Exp $
 
 # Most frequent usage of the GStreamer packages:
 # core		base library
@@ -49,7 +49,6 @@ TEST_DEPENDS +=	${BASE_PKGPATH}
 MODULES +=		devel/gettext
 
 USE_GMAKE ?=		Yes
-USE_LIBTOOL ?=		Yes
 LIBTOOL_FLAGS ?=	--tag=disable-static
 AUTOCONF_VERSION ?=	2.69
 

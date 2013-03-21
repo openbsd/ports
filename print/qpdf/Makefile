@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/14 20:30:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/21 08:46:35 ajacoutot Exp $
 
 COMMENT=	PDF transformation and inspection utility
 
@@ -20,7 +20,6 @@ WANTLIB += c m pcre stdc++ z
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=qpdf/}
 
 VMEM_WARNING=	Yes
-USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 
 SUBST_VARS=	MAKE_PROGRAM

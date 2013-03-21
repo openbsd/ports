@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:35:45 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/21 08:46:33 ajacoutot Exp $
 
 COMMENT=		command-line podcast downloader
 
@@ -30,7 +30,6 @@ CONFIGURE_STYLE=        gnu
 CONFIGURE_ENV=          CPPFLAGS="-lm -I${LOCALBASE}/include" \
                         LDFLAGS="-L${LOCALBASE}/lib"
 
-USE_LIBTOOL=    	Yes
 USE_GROFF =		Yes
 
 post-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/19 13:07:13 nigel Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/21 08:45:19 ajacoutot Exp $
 
 COMMENT =		viewers for OpenEXR
 DISTNAME =		openexr_viewers-1.0.1
@@ -25,7 +25,6 @@ LIB_DEPENDS =		graphics/openexr-ctl \
 
 SEPARATE_BUILD =	Yes
 
-USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu
 
 .include <bsd.port.mk>

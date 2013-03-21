@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 11:12:33 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/21 08:46:31 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -38,7 +38,6 @@ LIB_DEPENDS =	x11/gtk+2
 FAKE_FLAGS =	sysconfdir=${PREFIX}/share/examples/scim 
 
 USE_GMAKE =	Yes
-USE_LIBTOOL =	Yes
 LIBTOOL_FLAGS =	--tag=disable-static
 CONFIGURE_STYLE = gnu
 CONFIGURE_ARGS = ${CONFIGURE_SHARED} \

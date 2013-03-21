@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2013/03/11 11:35:50 espie Exp $
+# $OpenBSD: Makefile,v 1.57 2013/03/21 08:46:34 ajacoutot Exp $
 
 COMMENT=	Network Time Protocol reference implementation
 
@@ -23,7 +23,6 @@ WANTLIB=	c crypto edit kvm m termcap
 # enabling SEPARATE_BUILD causes the parser to be rebuilt .y -> .c,
 # which requires bison
 
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-parse-clocks \
 		--with-binsubdir=sbin

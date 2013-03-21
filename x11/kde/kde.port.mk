@@ -1,4 +1,4 @@
-# $OpenBSD: kde.port.mk,v 1.38 2013/02/09 14:49:53 sthen Exp $
+# $OpenBSD: kde.port.mk,v 1.39 2013/03/21 08:48:56 ajacoutot Exp $
 
 SHARED_ONLY ?=	Yes
 
@@ -76,6 +76,5 @@ WANTLIB +=	lib/qt3/qt-mt>=3.33
 PATCH_LIST =	${PORTSDIR}/x11/kde/patches-3.5.7/patch-* patch-* ${SUP_PATCH_LIST}
 AUTOCONF ?=	/bin/sh ${WRKDIST}/admin/cvs.sh configure
 WANTLIB +=	lib/qt3/qt-mt>=3.33
-USE_LIBTOOL ?=	Yes
 LIBTOOL_FLAGS =	--tag=disable-static
 .endif

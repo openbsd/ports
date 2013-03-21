@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:10:53 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/21 08:45:18 ajacoutot Exp $
 
 COMMENT=	image processing and analysis library
 
@@ -21,7 +21,6 @@ LIB_DEPENDS=	graphics/libwebp \
 		graphics/libungif \
 		graphics/tiff
 
-USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \

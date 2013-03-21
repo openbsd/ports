@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/09 20:18:47 landry Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/21 08:45:17 ajacoutot Exp $
 
 BROKEN-hppa =	undefined reference to `std::auto_ptr<geos::geom::Envelope>::~auto_ptr()'
 COMMENT=	2d geometry and topology engine
@@ -19,7 +19,6 @@ WANTLIB=	m stdc++
 BUILD_DEPENDS=	devel/doxygen>=1.7.2
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-pic

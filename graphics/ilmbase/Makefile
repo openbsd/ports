@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:10:53 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/21 08:45:18 ajacoutot Exp $
 
 COMMENT=	ILM base libraries
 
@@ -25,6 +25,5 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	LIBS="-lstdc++ -lm"
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/11 11:10:51 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2013/03/21 08:45:17 ajacoutot Exp $
 
 COMMENT=	device color profile management daemon
 
@@ -38,7 +38,6 @@ LIB_DEPENDS=	graphics/lcms2 \
 TEST_DEPENDS=STEM-=${V}:${BUILD_PKGPATH}
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

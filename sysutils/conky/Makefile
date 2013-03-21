@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2013/03/11 11:41:29 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2013/03/21 08:48:53 ajacoutot Exp $
 
 ONLY_FOR_ARCHS= ${APM_ARCHS}
 
@@ -28,7 +28,6 @@ LIB_DEPENDS=	devel/glib2 \
 		textproc/libxml \
 		${MODLUA_LIB_DEPENDS}
 
-USE_LIBTOOL=	Yes
 
 FLAVORS=	no_x11 audacious xmms2
 FLAVOR?=

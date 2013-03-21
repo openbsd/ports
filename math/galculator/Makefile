@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2013/03/11 11:23:54 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2013/03/21 08:46:33 ajacoutot Exp $
 
 COMMENT=	GTK-based scientific calculator
 
@@ -32,7 +32,6 @@ LIB_DEPENDS=	x11/gtk+3
 
 SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

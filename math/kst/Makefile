@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/11 11:23:55 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/21 08:46:33 ajacoutot Exp $
 
 CATEGORIES=	math x11/kde
 COMMENT=	data viewing/plotting tool
@@ -28,7 +28,6 @@ CONFIGURE_ARGS=		${MODKDE_CONFIGURE_ARGS} \
 CONFIGURE_ENV=		${MODKDE_CONFIGURE_ENV}
 CONFIG_GUESS_DIRS=	${MODKDE_CONFIG_GUESS_DIR}
 MAKE_FLAGS=		${MODKDE_MAKE_FLAGS}
-USE_LIBTOOL=		Yes
 LIBTOOL_FLAGS =		--tag=disable-static
 PORTHOME =		${WRKDIR}
 SEPARATE_BUILD =	Yes

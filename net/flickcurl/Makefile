@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:35:46 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/21 08:46:34 ajacoutot Exp $
 
 COMMENT =		flickr API library and utility
 
@@ -20,7 +20,6 @@ WANTLIB =		c crypto curl>=10 idn>=16 m raptor2 ssl \
 
 MASTER_SITES =		http://download.dajobe.org/flickcurl/
 
-USE_LIBTOOL =		Yes
 USE_GROFF =		Yes
 
 LIB_DEPENDS =		net/curl \

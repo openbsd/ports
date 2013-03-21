@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/03/11 11:23:58 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2013/03/21 08:46:33 ajacoutot Exp $
 
 COMMENT =	Red Hat package manager
 
@@ -20,7 +20,6 @@ WANTLIB += 	bz2 c popt z
 LIB_DEPENDS +=	archivers/bzip2 \
 		devel/popt
 
-USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.13
 

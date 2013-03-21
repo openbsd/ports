@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.6 2013/03/11 10:50:10 espie Exp $
+#	$OpenBSD: Makefile,v 1.7 2013/03/21 08:45:15 ajacoutot Exp $
 
 COMMENT=	complex numbers math library
 
@@ -24,6 +24,5 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-mpfr=${LOCALBASE} \
 			--with-gmp=${LOCALBASE}
 
-USE_LIBTOOL=		Yes
 
 .include <bsd.port.mk>

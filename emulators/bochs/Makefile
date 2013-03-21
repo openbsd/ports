@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2013/03/11 11:06:03 espie Exp $
+# $OpenBSD: Makefile,v 1.58 2013/03/21 08:45:17 ajacoutot Exp $
 
 COMMENT=	x86 machine simulator
 
@@ -13,7 +13,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c m stdc++ termlib
 
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--enable-all-optimizations \
 		--enable-avx \

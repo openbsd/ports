@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2013/03/11 11:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.73 2013/03/21 08:48:56 ajacoutot Exp $
 
 COMMENT=		window manager based on the original Blackbox code
 
@@ -27,7 +27,6 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 USE_GROFF =		Yes
 

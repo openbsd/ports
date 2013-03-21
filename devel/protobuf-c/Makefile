@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 10:50:25 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/21 08:45:16 ajacoutot Exp $
 
 COMMENT =		c protocol buffers
 
@@ -21,7 +21,6 @@ WANTLIB =		c m protobuf protoc pthread stdc++ z
 
 LIB_DEPENDS =		devel/protobuf
 
-USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu
 
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \

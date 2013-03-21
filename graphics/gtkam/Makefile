@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2013/03/11 11:10:53 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2013/03/21 08:45:18 ajacoutot Exp $
 
 COMMENT=	digital camera frontend
 
@@ -29,7 +29,6 @@ RUN_DEPENDS=	devel/desktop-file-utils
 MODULES=	devel/gettext \
 		textproc/intltool
 
-USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 USE_GMAKE =	Yes
 

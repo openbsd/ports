@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 10:50:00 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/21 08:45:14 ajacoutot Exp $
 
 COMMENT=		ANSI C command line parser
 
@@ -14,7 +14,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=argtable/}
 
-USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 FAKE_FLAGS=		exampledir=${PREFIX}/share/examples/argtable2

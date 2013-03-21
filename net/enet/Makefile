@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:35:46 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/21 08:46:34 ajacoutot Exp $
 
 COMMENT =		network library for games
 DISTNAME =		enet-1.3.3
@@ -15,7 +15,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		${HOMEPAGE}/download/
 
-USE_LIBTOOL =		Yes
 
 CONFIGURE_STYLE =	gnu
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/03/11 11:35:48 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2013/03/21 08:46:34 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,7 +20,6 @@ RUN_DEPENDS=	net/irssi
 PERMIT_PACKAGE_CDROM=   Yes
 
 # Needs AC_PROG_LIBTOOL
-USE_LIBTOOL =	Yes
 BUILD_DEPENDS += devel/libtool
 LIBTOOL_FLAGS=	--tag=disable-static
 CONFIGURE_STYLE= gnu

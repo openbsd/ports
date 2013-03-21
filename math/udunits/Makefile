@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:23:56 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/21 08:46:33 ajacoutot Exp $
 
 COMMENT =		library to manipulate units of physical quantities
 DISTNAME =		udunits-2.1.24
@@ -14,7 +14,6 @@ MASTER_SITES =		ftp://ftp.unidata.ucar.edu/pub/udunits/
 
 SHARED_LIBS =		udunits2 1.0
 
-USE_LIBTOOL =		Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =         CPPFLAGS="-I${LOCALBASE}/include" \

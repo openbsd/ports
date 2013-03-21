@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:09 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/21 08:45:15 ajacoutot Exp $
 
 COMMENT=	event notification library
 
@@ -20,7 +20,6 @@ MASTER_SITES=	https://github.com/downloads/libevent/libevent/
 
 WANTLIB=	crypto pthread ssl
 
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 

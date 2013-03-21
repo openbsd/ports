@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:41:25 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/21 08:48:53 ajacoutot Exp $
 
 COMMENT=	portable OTR messaging library and toolkit
 
@@ -22,7 +22,6 @@ MODULES=	devel/gettext
 
 LIB_DEPENDS=	security/libgcrypt
 
-USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	gnu

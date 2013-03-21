@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2013/03/11 11:07:40 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2013/03/21 08:45:17 ajacoutot Exp $
 
 COMMENT-main =		Quake/QuakeWorld client
 COMMENT-libs =		Quake common libs
@@ -73,7 +73,6 @@ LIB_DEPENDS-libs =	audio/flac \
 			devel/sdl \
 			graphics/png
 
-USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--with-clients=glx,sdl,sdl32,sgl,x11 \
 			--with-gl-driver=libGL.so \

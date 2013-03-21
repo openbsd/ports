@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/03/11 11:02:50 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2013/03/21 08:45:17 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -50,7 +50,6 @@ MODULES+=	devel/gettext \
 		textproc/intltool
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 USE_GROFF=	Yes
 
 LIBTOOL_FLAGS= --tag=disable-static

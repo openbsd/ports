@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:35:48 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/21 08:46:34 ajacoutot Exp $
 
 COMMENT=	implementation of Gadu-Gadu IM protocol
 
@@ -16,7 +16,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	pthread z
 
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-tests \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2013/03/11 11:07:41 espie Exp $
+# $OpenBSD: Makefile,v 1.52 2013/03/21 08:45:17 ajacoutot Exp $
 
 COMMENT=	fantasy turn-based strategy game
 
@@ -46,7 +46,6 @@ CONFIGURE_ARGS+=-DFIFO_DIR=/var/wesnothd \
 		-DENABLE_STRICT_COMPILATION=OFF \
 		-DMANDIR=${PREFIX}/man
 
-USE_LIBTOOL=	Yes
 SEPARATE_BUILD=	flavored
 
 NO_TEST=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:10 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/21 08:45:15 ajacoutot Exp $
 
 COMMENT=	opensource implementation of the OFX specification
 
@@ -22,7 +22,6 @@ WANTLIB=	c m pthread stdc++ osp
 LIB_DEPENDS=	textproc/opensp
 BUILD_DEPENDS =	devel/help2man
 
-USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lm" \

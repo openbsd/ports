@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:35:44 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/21 08:46:33 ajacoutot Exp $
 
 COMMENT=	portable ASS/SSA subtitle renderer
 
@@ -21,7 +21,6 @@ MODULES=	converters/libiconv
 LIB_DEPENDS=	converters/enca \
 		devel/fribidi>=0.19.2
 
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--disable-harfbuzz
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

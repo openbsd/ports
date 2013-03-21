@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2013/03/11 11:37:53 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2013/03/21 08:46:35 ajacoutot Exp $
 
 COMMENT=		high quality print drivers for foomatic and CUPS
 
@@ -42,7 +42,6 @@ RUN_DEPENDS +=		print/foomatic-db
 RUN_DEPENDS +=		print/foomatic-db-engine
 
 USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:10:52 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/21 08:45:18 ajacoutot Exp $
 
 COMMENT =		geometry viewer for OOGL file formats
 
@@ -27,7 +27,6 @@ WANTLIB += fontconfig freetype jpeg m png
 WANTLIB += stdc++ xcb z
 
 USE_GMAKE =	Yes
-USE_LIBTOOL = 	Yes
 
 SUBST_VARS +=	V
 

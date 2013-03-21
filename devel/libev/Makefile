@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 10:50:09 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/21 08:45:15 ajacoutot Exp $
 
 COMMENT =	high-performance event loop library
 
@@ -19,7 +19,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		m
 
-USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu
 
 .include <bsd.port.mk>

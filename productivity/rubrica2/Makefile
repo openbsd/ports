@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:37:55 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/21 08:48:53 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -35,7 +35,6 @@ MODULES=	devel/gettext \
 		devel/gconf2
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 
 MODGCONF2_SCHEMAS_DIR= rubrica2
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:23:55 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/21 08:46:33 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -18,7 +18,6 @@ MASTER_SITES=		${HOMEPAGE}
 
 WANTLIB += m stdc++
 
-USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 

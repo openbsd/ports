@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/03/19 13:07:14 nigel Exp $
+# $OpenBSD: Makefile,v 1.26 2013/03/21 08:48:56 ajacoutot Exp $
 
 COMMENT=	graphical disk usage utility for KDE
 
@@ -36,7 +36,6 @@ MAKE_ENV=	${MODKDE_CONFIGURE_ENV}
 MAKE_FLAGS=	${MODKDE_MAKE_FLAGS}
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION=	2.57
 MODGNU_CONFIG_GUESS_DIRS=	${MODKDE_CONFIG_GUESS_DIRS}

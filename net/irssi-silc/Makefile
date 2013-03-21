@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2013/03/11 11:35:48 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2013/03/21 08:46:34 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -28,7 +28,6 @@ RUN_DEPENDS=	net/irssi>=0.8.15
 MAKE_FLAGS=	libfe_common_silc_la_LDFLAGS=-avoid-version \
 		libsilc_core_la_LDFLAGS=-avoid-version
 
-USE_LIBTOOL=	  Yes
 LIBTOOL_FLAGS+=	  --tag=disable-static
 USE_GROFF =	Yes
 CONFIGURE_STYLE=  autoconf

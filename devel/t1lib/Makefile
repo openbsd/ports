@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/03/11 10:50:31 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2013/03/21 08:45:16 ajacoutot Exp $
 
 COMMENT=	Type 1 rasterizer library for UNIX/X11
 
@@ -16,7 +16,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=	c m
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/ac-tools
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \

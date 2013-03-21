@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2012/11/15 10:12:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2013/03/21 08:48:56 ajacoutot Exp $
 
 COMMENT=		OSS replacement for the Nomachine nxclient
 
@@ -8,7 +8,6 @@ CATEGORIES=		sysutils
 HOMEPAGE=		http://opennx.sourceforge.net/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=opennx/}
 
-USE_LIBTOOL=		Yes
 
 WANTLIB += GL ICE SDL SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm

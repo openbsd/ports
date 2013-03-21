@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 11:46:13 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/21 08:48:56 ajacoutot Exp $
 
 COMMENT=	OpenGL extension to GTK+ 2.0 and later
 
@@ -32,7 +32,6 @@ LIB_DEPENDS=	x11/gtk+2 \
 		devel/pangox-compat>=0.0.2
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 

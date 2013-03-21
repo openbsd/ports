@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2013/03/11 11:02:49 espie Exp $
+# $OpenBSD: Makefile,v 1.89 2013/03/21 08:45:16 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -46,7 +46,6 @@ WANTLIB += harfbuzz icudata icule icuuc
 
 MASTER_SITES=   ${HOMEPAGE}/downloads/abiword/${VERSION}/source/
 
-USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 USE_GROFF=	Yes
 

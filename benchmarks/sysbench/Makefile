@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/10 23:04:44 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/21 08:45:13 ajacoutot Exp $
 
 COMMENT =	modular, cross-platform and multi-threaded benchmark tool
 DISTNAME =	sysbench-0.4.8
@@ -22,7 +22,6 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		PREFIX=${PREFIX}
 
 USE_GMAKE =		yes
-USE_LIBTOOL =		yes
 
 FLAVORS =		mysql pgsql
 FLAVOR ?=

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 02:52:09 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/21 08:45:14 ajacoutot Exp $
 
 COMMENT=	search engine library
 
@@ -18,7 +18,6 @@ WANTLIB += c m stdc++ z e2fs-uuid
 
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${V}/
 
-USE_LIBTOOL=	Yes
 
 # needs uuid_generate(3) which devel/uuid does not provide
 LIB_DEPENDS=	sysutils/e2fsprogs

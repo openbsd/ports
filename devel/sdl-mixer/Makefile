@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2013/03/11 10:50:30 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2013/03/21 08:45:16 ajacoutot Exp $
 
 COMMENT=	SDL multi-channel audio mixer library
 
@@ -26,7 +26,6 @@ LIB_DEPENDS=	audio/flac \
 		devel/sdl \
 		devel/smpeg
 
-USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \

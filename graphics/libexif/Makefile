@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/11 11:10:53 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/21 08:45:18 ajacoutot Exp $
 
 COMMENT=	extract digital camera info tags from JPEG images
 
@@ -22,7 +22,6 @@ SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-docs
 USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
 WANTLIB=		m
 
 post-install:

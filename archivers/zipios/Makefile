@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/10 22:28:05 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/21 08:45:11 ajacoutot Exp $
 
 COMMENT=	java-like zip interface
 DISTNAME=	zipios++-0.1.5.9+cvs.2004.02.07
@@ -17,7 +17,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 REVISION =	1
 WANTLIB=		m stdc++ z
 CONFIGURE_STYLE=	gnu
-USE_LIBTOOL=		Yes
 post-extract:
 	for i in depcomp install-sh missing mkinstalldirs; do \
 		rm ${WRKDIST}/$$i; \

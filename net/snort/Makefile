@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2013/03/11 11:35:56 espie Exp $
+# $OpenBSD: Makefile,v 1.76 2013/03/21 08:46:35 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -22,7 +22,6 @@ WANTLIB =		c crypto daq dnet m pcap pcre pthread z
 
 MASTER_SITES =		http://www.snort.org/dl/snort-current/
 
-USE_LIBTOOL =		Yes
 USE_GROFF =		Yes
 
 SEPARATE_BUILD =	Yes

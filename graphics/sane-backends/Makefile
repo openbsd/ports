@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2013/03/11 11:10:55 espie Exp $
+# $OpenBSD: Makefile,v 1.57 2013/03/21 08:45:19 ajacoutot Exp $
 
 COMMENT=	API for accessing scanners, backends
 
@@ -40,7 +40,6 @@ LIB_DEPENDS=	graphics/tiff \
 FLAVORS=	snmp
 FLAVOR?=
 
-USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 USE_GROFF=	Yes
 NO_TEST=	Yes

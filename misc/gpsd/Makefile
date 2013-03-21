@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2013/03/11 11:23:57 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2013/03/21 08:46:33 ajacoutot Exp $
 
 COMMENT-main=		service daemon that monitors one or more GPSes
 COMMENT-x11=		GUI test apps using gpsd
@@ -28,7 +28,6 @@ MASTER_SITES=		${MASTER_SITE_BERLIOS:=gpsd/}
 
 MODULES +=		lang/python lang/php
 MODPHP_BUILDDEP=	No
-USE_LIBTOOL=		yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-ntpshm \

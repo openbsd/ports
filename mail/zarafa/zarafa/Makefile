@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.145 2013/02/13 08:02:37 robert Exp $
+# $OpenBSD: Makefile,v 1.146 2013/03/21 08:46:32 ajacoutot Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
@@ -73,7 +73,6 @@ LIB_DEPENDS-web= ${BASE_PKGPATH}>=${V}
 RUN_DEPENDS-web= ${MODPHP_RUN_DEPENDS} \
 		${MODGETTEXT_RUN_DEPENDS}
 
-USE_LIBTOOL=	yes
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
 

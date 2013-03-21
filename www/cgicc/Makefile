@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:44:41 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/21 08:48:55 ajacoutot Exp $
 
 COMMENT=	c++ compliant CGI applications libraries
 
@@ -16,7 +16,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += m stdc++
 
-USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static

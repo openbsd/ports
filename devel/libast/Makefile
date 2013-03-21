@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 10:50:09 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/21 08:45:15 ajacoutot Exp $
 
 COMMENT=		library of assorted spiffy things
 
@@ -19,7 +19,6 @@ MASTER_SITES=		http://www.eterm.org/download/
 
 LIB_DEPENDS=		graphics/imlib2
 
-USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

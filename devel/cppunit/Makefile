@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:02 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/21 08:45:14 ajacoutot Exp $
 
 COMMENT=	c++ unit testing framework
 DISTNAME=	cppunit-1.12.1
@@ -12,7 +12,6 @@ HOMEPAGE=	http://cppunit.sourceforge.net/
 PERMIT_PACKAGE_CDROM=	Yes
 
 USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
 WANTLIB=		c m stdc++
 

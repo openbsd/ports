@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 11:07:43 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/21 08:45:17 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -36,7 +36,6 @@ CONFIGURE_ENV=	LDFLAGS=-L${LOCALBASE}/lib \
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-xsldir=${PREFIX}/share/xsl/docbook/ \
 		--libdir=${PREFIX}/lib/postgresql
-USE_LIBTOOL = Yes
 
 DOCDIR =	${PREFIX}/share/doc/postgresql/postgis/
 

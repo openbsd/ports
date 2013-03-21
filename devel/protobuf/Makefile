@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 10:50:25 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/21 08:45:16 ajacoutot Exp $
 
 COMMENT =		c++ protocol buffers
 
@@ -25,7 +25,6 @@ TEST_DEPENDS =	devel/gtest
 
 SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
-USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} --with-zlib 
 

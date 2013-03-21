@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/11 11:44:50 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/21 08:48:55 ajacoutot Exp $
 
 COMMENT=	Motif widget capable of displaying HTML 3.2 conforming text
 
@@ -19,7 +19,6 @@ RUN_DEPENDS=	graphics/jpeg \
 NO_TEST=	Yes
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 
 EXMP_DIR=   ${PREFIX}/share/examples/XmHTML
 DOCS_DIR=   ${PREFIX}/share/doc/XmHTML

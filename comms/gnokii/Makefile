@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2013/03/11 01:30:26 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2013/03/21 08:45:13 ajacoutot Exp $
 
 COMMENT=	tools to talk to GSM cellular phones
 
@@ -20,7 +20,6 @@ FLAVOR?=
 
 WANTLIB=		c
 
-USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 USE_GROFF =		Yes
 

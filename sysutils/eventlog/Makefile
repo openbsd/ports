@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:41:30 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/21 08:48:53 ajacoutot Exp $
 
 COMMENT =	replacement for the syslog() API
 
@@ -19,7 +19,6 @@ MASTER_SITES =	http://www.balabit.com/downloads/files/eventlog/0.2/
 
 WANTLIB =		c
 
-USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu
 
 post-install:

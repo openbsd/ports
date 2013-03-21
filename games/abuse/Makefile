@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2013/03/11 11:07:37 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2013/03/21 08:45:17 ajacoutot Exp $
 
 COMMENT =	SDL port of the legendary 2D platform shooter
 
@@ -40,7 +40,6 @@ DISTFILES = 	${DISTNAME}.tar.gz \
 		${ABUSE_SFX}.tar.gz:0
 
 SEPARATE_BUILD =Yes
-USE_LIBTOOL =	Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--enable-release \

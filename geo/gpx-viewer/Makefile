@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 11:07:42 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/03/21 08:45:17 ajacoutot Exp $
 
 COMMENT =	gpx file viewer
 
@@ -20,7 +20,6 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			ac_cv_path_VALAC=""
 USE_GMAKE =		yes
-USE_LIBTOOL =		yes
 CONFIGURE_ARGS +=	--disable-database-updates
 
 MODULES =	devel/gettext \

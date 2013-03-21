@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/10 23:04:45 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/21 08:45:13 ajacoutot Exp $
 
 COMMENT =		circuit simulator, based on Berkeley SPICE
 
@@ -15,7 +15,6 @@ MAINTAINER =		Anthony J. Bentley <anthony@cathet.us>
 PERMIT_PACKAGE_CDROM =	Yes
 
 USE_GMAKE =		yes
-USE_LIBTOOL =		yes
 CONFIGURE_STYLE =	gnu
 WANTLIB +=		c m ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xt
 WANTLIB +=		Xpm pthread-stubs xcb

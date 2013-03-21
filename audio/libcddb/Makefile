@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/10 22:55:03 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/21 08:45:12 ajacoutot Exp $
 
 COMMENT=		library to access data on a CDDB server
 
@@ -18,7 +18,6 @@ MODULES=		converters/libiconv
 
 WANTLIB=		c
 
-USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--without-cdio

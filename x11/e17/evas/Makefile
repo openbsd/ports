@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/03/11 11:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2013/03/21 08:48:56 ajacoutot Exp $
 
 COMMENT =		canvas API for X
 VERSION = 		1.7.5
@@ -11,7 +11,6 @@ SHARED_LIBS +=  evas                 3.0      # 8.5
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-USE_LIBTOOL =		Yes
 
 WANTLIB += GL X11 Xdamage Xext Xfixes Xrender Xxf86vm crypto drm
 WANTLIB += eet eina expat ffi fontconfig freetype fribidi gif

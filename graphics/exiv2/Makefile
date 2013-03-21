@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 11:10:52 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/21 08:45:18 ajacoutot Exp $
 
 COMMENT=	manipulate image meta-data such as exif and ipct
 
@@ -16,7 +16,6 @@ MASTER_SITES=	${HOMEPAGE}
 
 WANTLIB += 	c m stdc++ z expat pthread
 
-USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:12:33 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/21 08:46:31 ajacoutot Exp $
 
 COMMENT =	library to deal with Japanese kana-to-kanji conversion
 
@@ -28,7 +28,6 @@ LIB_DEPENDS =	devel/libgee06 \
 		devel/json-glib
 
 USE_GMAKE =	Yes
-USE_LIBTOOL =	Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =	DATADIRNAME=share

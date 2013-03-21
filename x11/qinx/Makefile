@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/19 13:07:14 nigel Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/21 08:48:57 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -33,7 +33,6 @@ MAKE_ENV=	KDEDIR="${LOCALBASE}"
 MAKE_FLAGS=	${MODKDE_MAKE_FLAGS}
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.59

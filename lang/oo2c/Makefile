@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/21 08:46:32 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -28,7 +28,6 @@ BUILD_DEPENDS =	sysutils/ggrep \
 		textproc/libxslt
 LIB_DEPENDS =	devel/boehm-gc
 
-USE_LIBTOOL =		Yes
 USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	gnu

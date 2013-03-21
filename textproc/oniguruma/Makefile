@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:42:42 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/21 08:48:54 ajacoutot Exp $
 
 COMMENT=	regular expressions library
 DISTNAME=	onig-5.9.2
@@ -12,7 +12,6 @@ HOMEPAGE=	http://www.geocities.jp/kosako3/oniguruma/
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
 

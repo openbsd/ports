@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:10:54 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/21 08:45:19 ajacoutot Exp $
 
 COMMENT =		OpenEXR bindings for CTL
 DISTNAME =		openexr_ctl-1.0.1
@@ -24,7 +24,6 @@ LIB_DEPENDS =		graphics/openexr \
 
 SEPARATE_BUILD =	Yes
 
-USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu
 # Running the configure test makes mips64 rather unhappy.
 CONFIGURE_ARGS +=	--disable-openexrtest

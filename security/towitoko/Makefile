@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:41:28 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/21 08:48:53 ajacoutot Exp $
 
 COMMENT=		library and utilities for towitoko card readers
 
@@ -16,7 +16,6 @@ WANTLIB=		c pthread
 
 MASTER_SITES=		http://www.geocities.com/cprados/files/
 
-USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	gnu

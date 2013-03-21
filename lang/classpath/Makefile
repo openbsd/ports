@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2013/03/11 11:20:27 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2013/03/21 08:46:32 ajacoutot Exp $
 
 # uses gcj which is only supported on select archs
 ONLY_FOR_ARCHS=	amd64 i386 sparc64
@@ -53,7 +53,6 @@ MASTER_SITES=	${MASTER_SITE_GNU:=classpath/}
 MASTER_SITES0=	http://archive.eclipse.org/eclipse/downloads/drops/R-3.2.2-200702121330/
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2013/03/11 11:35:46 espie Exp $
+# $OpenBSD: Makefile,v 1.88 2013/03/21 08:46:33 ajacoutot Exp $
 
 COMMENT=	get files from FTP, Gopher, HTTP or HTTPS servers
 
@@ -20,7 +20,6 @@ MODULES=	devel/gettext
 LIB_DEPENDS=	devel/libidn
 WANTLIB=	c crypto idn ssl z
 
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-ca-bundle=/etc/ssl/cert.pem \

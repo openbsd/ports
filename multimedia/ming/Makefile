@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:35:44 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/21 08:46:33 ajacoutot Exp $
 
 COMMENT=	Flash 4/5 movie output library
 
@@ -20,7 +20,6 @@ LIB_DEPENDS=	graphics/libungif \
 BUILD_DEPENDS=	devel/bison
 
 YACC=		bison
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.65
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}

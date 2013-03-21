@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/21 08:48:56 ajacoutot Exp $
 
 COMMENT=	audio visualization plugin for the X-Window System
 
@@ -25,7 +25,6 @@ LIB_DEPENDS=	x11/gtk+2 \
 		audio/esound \
 		math/fftw3
 
-USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

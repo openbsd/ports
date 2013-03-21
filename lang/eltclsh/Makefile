@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/03/11 11:20:27 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2013/03/21 08:46:32 ajacoutot Exp $
 
 COMMENT =	Libedit interface to Tcl/Tk interpreters
 
@@ -27,7 +27,6 @@ CONFIGURE_ARGS =	--with-tcl=${MODTCL_LIBDIR} \
 			--datadir=\$${prefix}/lib/tcl
 
 USE_GMAKE =		Yes
-USE_LIBTOOL =		Yes
 FAKE_FLAGS =		ELTCL_LIBRARY=${WRKINST}${MODTCL_TCLDIR}/eltcl
 
 NO_TEST =		Yes

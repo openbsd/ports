@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2013/03/17 13:04:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.72 2013/03/21 08:46:35 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -93,7 +93,6 @@ RUN_DEPENDS-gui= x11/py-qt4 \
 		devel/desktop-file-utils
 LIB_DEPENDS-gui= # empty
 
-USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 FAKE_FLAGS=	hplip_confdir=${PREFIX}/share/examples/hplip/hp \
 		hplip_statedir=${PREFIX}/share/examples/hplip/db \

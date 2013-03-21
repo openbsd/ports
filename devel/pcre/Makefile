@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2013/03/11 10:50:24 espie Exp $
+# $OpenBSD: Makefile,v 1.50 2013/03/21 08:45:16 ajacoutot Exp $
 
 COMMENT=	perl-compatible regular expression library
 
@@ -24,7 +24,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c curses m readline stdc++
 
-USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \

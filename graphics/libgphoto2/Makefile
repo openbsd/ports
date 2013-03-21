@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/03/11 11:10:53 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2013/03/21 08:45:18 ajacoutot Exp $
 
 COMMENT =	digital camera library
 CATEGORIES =	graphics devel
@@ -23,7 +23,6 @@ WANTLIB += pthread usb usb-1.0 z
 
 MAKE_FLAGS =		INTLLIBS='$$(LTLIBINTL)'
 
-USE_LIBTOOL =		Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \

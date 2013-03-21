@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:12:33 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/21 08:46:31 ajacoutot Exp $
 
 COMMENT =	japanese skk input engine for ibus
 
@@ -34,7 +34,6 @@ LIB_DEPENDS =	inputmethods/ibus \
 		inputmethods/libskk
 
 USE_GMAKE =	Yes
-USE_LIBTOOL =	Yes
 
 CONFIGURE_STYLE = gnu
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \

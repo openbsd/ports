@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:10:56 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/21 08:45:19 ajacoutot Exp $
 
 COMMENT=	fast and simple image viewer
 
@@ -31,7 +31,6 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+2,-guic
 
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

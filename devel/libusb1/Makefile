@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 10:50:10 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/21 08:45:16 ajacoutot Exp $
 
 COMMENT =		library for USB device access from userspace
 
@@ -22,7 +22,6 @@ WANTLIB =		pthread
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libusb/}
 EXTRACT_SUFX =		.tar.bz2
 
-USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 

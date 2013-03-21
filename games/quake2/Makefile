@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/11 11:07:40 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/21 08:45:17 ajacoutot Exp $
 
 ONLY_FOR_ARCHS= 	amd64 i386
 SHARED_ONLY=		Yes
@@ -25,7 +25,6 @@ MODULES=		converters/libiconv
 LIB_DEPENDS=		devel/sdl
 
 SEPARATE_BUILD=		Yes
-USE_LIBTOOL=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-opengl=${X11BASE} --without-svgalib \

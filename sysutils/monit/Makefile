@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/03/11 11:41:31 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2013/03/21 08:48:54 ajacoutot Exp $
 
 COMMENT=	monitoring and managing daemons utility
 
@@ -20,7 +20,6 @@ MASTER_SITES=	${HOMEPAGE}/dist/
 
 CONFIGURE_STYLE=gnu
 
-USE_LIBTOOL=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/monit

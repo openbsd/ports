@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:37:55 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/21 08:48:52 ajacoutot Exp $
 
 COMMENT=	command line double-entry accounting ledger
 
@@ -24,7 +24,6 @@ LIB_DEPENDS=	devel/gmp \
 
 SEPARATE_BUILD=	Yes
 
-USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

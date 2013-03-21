@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/11 11:41:26 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2013/03/21 08:48:53 ajacoutot Exp $
 
 COMMENT=	strong hash library
 
@@ -17,7 +17,6 @@ MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 
 CONFIGURE_STYLE= gnu

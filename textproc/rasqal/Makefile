@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:42:46 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/21 08:48:54 ajacoutot Exp $
 
 COMMENT=		RDF Query Library for Redland
 DISTNAME=		rasqal-0.9.29
@@ -18,7 +18,6 @@ WANTLIB += ssl xml2 xslt yajl z
 
 MODULES=		devel/gettext
 
-USE_LIBTOOL=		Yes
 
 BUILD_DEPENDS=		textproc/raptor
 

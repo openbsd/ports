@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 10:50:01 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/21 08:45:14 ajacoutot Exp $
 
 COMMENT=	C++ reference implementation of the Atlas protocol
 
@@ -25,7 +25,6 @@ MASTER_SITES=	ftp://ftp.ecs.soton.ac.uk/pub/worldforge/acorn/0.4/src/ \
 
 WANTLIB+=	m stdc++
 
-USE_LIBTOOL=	Yes
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu

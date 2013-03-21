@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2013/03/11 10:50:31 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2013/03/21 08:45:16 ajacoutot Exp $
 
 COMMENT=	MPEG video player library with sound support
 
@@ -21,7 +21,6 @@ WANTLIB=	SDL c m pthread sndio stdc++ usbhid
 MODULES=	converters/libiconv
 LIB_DEPENDS=	devel/sdl
 
-USE_LIBTOOL=	Yes
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \

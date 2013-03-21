@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2013/03/10 22:55:03 espie Exp $
+# $OpenBSD: Makefile,v 1.51 2013/03/21 08:45:12 ajacoutot Exp $
 
 COMMENT=	portable audio output library
 
@@ -16,7 +16,6 @@ MASTER_SITES=	http://downloads.xiph.org/releases/ao/
 
 WANTLIB=	sndio
 
-USE_LIBTOOL=	Yes
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
 

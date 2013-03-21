@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/14 07:27:01 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/21 08:48:57 ajacoutot Exp $
 
 COMMENT=		C++ library to create, manipulate and render SVG files
 
@@ -34,7 +34,6 @@ LIB_DEPENDS =	graphics/ffmpeg>=20121026 \
 		graphics/cairo \
 		x11/wxWidgets
 
-USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 

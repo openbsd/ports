@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:46:17 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/21 08:48:57 ajacoutot Exp $
 
 COMMENT =	simple archive manager
 CATEGORIES =	x11 archivers
@@ -15,7 +15,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	devel/gettext
 USE_GMAKE =	Yes
-USE_LIBTOOL =	Yes
 
 CONFIGURE_STYLE =	gnu
 

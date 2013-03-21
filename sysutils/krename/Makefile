@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:41:30 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/21 08:48:54 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -43,7 +43,6 @@ LIB_DEPENDS =	graphics/libart \
 		x11/kde/libs3
 
 USE_GMAKE =		Yes
-USE_LIBTOOL =		Yes
 LIBTOOL_FLAGS =		--tag=disable-static
 
 AUTOCONF_VERSION =	2.60

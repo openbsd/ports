@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2012/12/23 03:27:22 bentley Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/21 08:46:35 ajacoutot Exp $
 
 COMMENT=	library to parse flash media stream URLs
 
@@ -15,7 +15,6 @@ RUN_DEPENDS=	net/quvi/scripts
 LIB_DEPENDS=	net/curl \
 		${MODLUA_LIB_DEPENDS}
 
-USE_LIBTOOL=	Yes
 
 MODLUA_SA=	Yes
 

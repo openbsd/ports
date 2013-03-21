@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/10 22:55:04 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/21 08:45:13 ajacoutot Exp $
 
 COMMENT=	audio file volume normalizer
 
@@ -35,6 +35,5 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 LIB_DEPENDS=	audio/libmad \
 		devel/libaudiofile
 
-USE_LIBTOOL=	Yes
 
 .include <bsd.port.mk>

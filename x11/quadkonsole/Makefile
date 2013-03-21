@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/19 13:07:14 nigel Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/21 08:48:57 ajacoutot Exp $
 
 COMMENT=	terminal application that embeds Konsole for KDE
 
@@ -28,7 +28,6 @@ MODKDE_VERSION=	3.3.0
 MAKE_FLAGS+=	${MODKDE_MAKE_FLAGS}
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.59
 CONFIGURE_ARGS+=${MODKDE_CONFIGURE_ARGS}

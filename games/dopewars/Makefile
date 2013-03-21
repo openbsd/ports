@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2013/03/11 11:07:38 espie Exp $
+# $OpenBSD: Makefile,v 1.58 2013/03/21 08:45:17 ajacoutot Exp $
 
 COMMENT=	game where you deal drugs on the streets of NY
 
@@ -21,7 +21,6 @@ RUN_DEPENDS+=   devel/desktop-file-utils
 
 LOCALSTATEDIR=	${BASELOCALSTATEDIR}/games
 
-USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --enable-nls \

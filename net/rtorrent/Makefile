@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2013/03/11 11:35:56 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2013/03/21 08:46:35 ajacoutot Exp $
 
 BROKEN-hppa =		undefined references to __sync atomic ops
 BROKEN-mips64 =		undefined references to __sync atomic ops
@@ -34,7 +34,6 @@ BUILD_DEPENDS=		devel/cppunit
 LIB_DEPENDS=		net/libtorrent>=0.12.9 \
 			net/curl
 
-USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV +=	LDFLAGS=-pthread
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \

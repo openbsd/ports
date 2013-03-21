@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/11 11:20:27 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2013/03/21 08:46:32 ajacoutot Exp $
 
 COMMENT=	practical and portable Scheme system
 
@@ -20,7 +20,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c m pthread
 
 USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
 
 LIB_DEPENDS +=		devel/libffi

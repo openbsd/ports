@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2013/03/11 11:35:43 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2013/03/21 08:46:33 ajacoutot Exp $
 
 COMMENT=	free video editor
 
@@ -39,7 +39,6 @@ LIB_DEPENDS=	x11/gtk+2 \
 		multimedia/xvidcore \
 		multimedia/x264
 
-USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 
 AUTOCONF_VERSION=2.60

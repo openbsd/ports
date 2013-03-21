@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/19 13:07:14 nigel Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/21 08:48:56 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -28,7 +28,6 @@ PORTHOME=	${WRKDIR}
 MODULES=	x11/kde devel/gettext
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 

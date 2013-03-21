@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 11:20:27 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/21 08:46:32 ajacoutot Exp $
 
 COMMENT = 	embeddable common-lisp
 CATEGORIES = 	lang
@@ -20,7 +20,6 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=ecls/}
 
 CONFIGURE_STYLE = 	gnu
 USE_GMAKE = 		Yes
-USE_LIBTOOL = 		Yes
 USE_GROFF =		Yes
 NO_TEST = 		Yes
 CONFIGURE_ENV +=	CPPFLAGS=-I${LOCALBASE}/include \

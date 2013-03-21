@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:23:51 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/21 08:46:32 ajacoutot Exp $
 
 COMMENT=	mail purpose library
 
@@ -22,7 +22,6 @@ LIB_DEPENDS+=	net/curl \
 		devel/libidn \
 		security/cyrus-sasl2
 
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --without-gnutls --with-sasl=${LOCALBASE}

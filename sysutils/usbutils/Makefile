@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:41:33 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/21 08:48:54 ajacoutot Exp $
 
 COMMENT =		utility used to display information about USB devices
 
@@ -32,7 +32,6 @@ BUILD_DEPENDS +=        devel/libtool
 WRKDIST = 		${WRKDIR}/usbutils-${VERSION}
 
 USE_GMAKE =		Yes
-USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

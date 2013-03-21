@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.159 2013/03/11 11:46:12 espie Exp $
+# $OpenBSD: Makefile,v 1.160 2013/03/21 08:48:56 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -68,7 +68,6 @@ WANTLIB-guic += ${WANTLIB}
 WANTLIB-guic += c pthread
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 TEST_IS_INTERACTIVE= x11
 
 CONFIGURE_STYLE= gnu

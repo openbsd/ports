@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2013/03/11 11:37:55 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2013/03/21 08:48:53 ajacoutot Exp $
 
 COMMENT=		reminder program for prevention of RSI
 
@@ -33,7 +33,6 @@ MODULES=		devel/gettext \
 			lang/python \
 			textproc/intltool
 
-USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:42:46 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/21 08:48:54 ajacoutot Exp $
 
 SHARED_LIBS +=	raptor2              0.0      # 0.0
 
@@ -18,7 +18,6 @@ WANTLIB=		c crypto idn m ssl z curl>=12 xml2>=7 xslt>=1 yajl
 
 MODULES=		devel/gettext
 
-USE_LIBTOOL=		Yes
 USE_GROFF=		Yes
 
 LIB_DEPENDS=		devel/libyajl \

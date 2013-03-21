@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/21 08:48:55 ajacoutot Exp $
 
 COMMENT =		C like scripting language used in E17
 
@@ -16,7 +16,6 @@ MODULES =		converters/libiconv
 
 LIB_DEPENDS =		x11/e17/eina>=1.7.5v1
 
-USE_LIBTOOL =		Yes
 
 CONFIGURE_ARGS =	--disable-doc
 

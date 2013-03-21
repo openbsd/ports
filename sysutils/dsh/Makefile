@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:41:30 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/21 08:48:53 ajacoutot Exp $
 
 COMMENT=	dancers shell or distributed shell
 
@@ -17,7 +17,6 @@ LIB_DEPENDS=		devel/libdshconfig
 
 MODULES=		devel/gettext
 
-USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ENV =         CPPFLAGS="-I${LOCALBASE}/include" \

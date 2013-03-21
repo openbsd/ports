@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/21 08:48:56 ajacoutot Exp $
 
 COMMENT =		EFL thumbnail generation library
 DISTNAME =		ethumb-1.7.5
@@ -20,8 +20,6 @@ WANTLIB += m pcre pthread ssl xcb z ${MODLUA_WANTLIB}
 
 MODULES =		devel/gettext \
 			lang/lua
-
-USE_LIBTOOL =		Yes
 
 LIB_DEPENDS =		graphics/libexif \
 			x11/e17/ecore>=1.7.5v2 \

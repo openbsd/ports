@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/03/11 11:44:43 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2013/03/21 08:48:55 ajacoutot Exp $
 
 COMMENT=		Apache-Tomcat AJP Connector
 
@@ -18,7 +18,6 @@ MASTER_SITES=		${MASTER_SITE_APACHE:=tomcat/tomcat-connectors/jk/}
 
 NO_TEST=		Yes
 USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
 
 MODAPACHE_NAME=		jk
 MODAPACHE_FILE=		${MODAPACHE_LOCATION}/apache-1.3/mod_jk.so

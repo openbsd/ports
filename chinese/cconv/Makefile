@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 01:30:26 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/21 08:45:13 ajacoutot Exp $
 
 COMMENT=	simplified-traditional chinese translate tool
 
@@ -22,7 +22,6 @@ MASTER_SITES=	http://cconv.googlecode.com/files/
 
 MODULES=	converters/libiconv
 
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 
 FAKE_FLAGS=	includedir=${PREFIX}/include/cconv/

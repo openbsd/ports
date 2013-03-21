@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 11:10:55 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/21 08:45:19 ajacoutot Exp $
 
 COMMENT-main=	OCR Engine developed at HP Labs
 
@@ -47,7 +47,6 @@ LIB_DEPENDS-main=graphics/leptonica
 
 MASTER_SITES=	${HOMEPAGE}/files/
 
-USE_LIBTOOL=	Yes
 
 AUTOCONF_VERSION=2.65
 AUTOMAKE_VERSION=1.10

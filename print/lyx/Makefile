@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2013/03/11 11:37:54 espie Exp $
+# $OpenBSD: Makefile,v 1.66 2013/03/21 08:46:35 ajacoutot Exp $
 
 COMMENT=	graphical frontend for LaTeX (nearly WYSIWYG)
 
@@ -28,7 +28,6 @@ WANTLIB += boost_regex-mt>=1 boost_signals-mt>=1
 WANTLIB += glib-2.0 gmodule-2.0 enchant
 
 SEPARATE_BUILD=	Yes
-USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
 

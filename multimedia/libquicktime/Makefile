@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2013/03/11 11:35:44 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2013/03/21 08:46:33 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -44,7 +44,6 @@ VMEM_WARNING=	Yes
 
 MAKE_ENV=	DOXYGEN_ENCODE_PATH_STRIP=${WRKSRC}
 
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--enable-gpl \
 		--enable-static \

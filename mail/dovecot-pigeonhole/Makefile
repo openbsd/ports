@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/11 11:23:50 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/21 08:46:32 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -31,7 +31,6 @@ WANTLIB=	${MODLIBICONV_WANTLIB} c crypto ssl \
 MODULES=	converters/libiconv
 LIB_DEPENDS=	mail/dovecot=${V_DOVECOT_FULL}
 
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--docdir=${PREFIX}/share/doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 10:50:06 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/21 08:45:15 ajacoutot Exp $
 
 COMMENT=	C++ GUI library designed for games
 
@@ -22,7 +22,6 @@ WANTLIB += m stdc++
 
 BUILD_DEPENDS=	devel/sdl-image
 
-USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \

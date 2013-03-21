@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 11:10:54 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/21 08:45:19 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=		${GCC4_ARCHS}
 
@@ -67,7 +67,6 @@ LIB_DEPENDS-docs=	# empty
 RUN_DEPENDS-docs=	# empty
 PKG_ARCH-docs=		*
 
-USE_LIBTOOL=		Yes
 
 VMEM_WARNING=		Yes
 

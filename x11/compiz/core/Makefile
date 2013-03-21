@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 11:46:08 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/21 08:48:55 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -42,7 +42,6 @@ LIB_DEPENDS =	devel/startup-notification \
 		x11/gtk+2
 
 USE_GMAKE =	Yes
-USE_LIBTOOL =	Yes
 
 LIBTOOL_FLAGS=	--tag=disable-static
 

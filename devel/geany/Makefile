@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2013/03/11 10:50:04 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2013/03/21 08:45:15 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -23,7 +23,6 @@ MODULES=	devel/gettext \
 		textproc/intltool
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2013/03/11 11:10:53 espie Exp $
+# $OpenBSD: Makefile,v 1.46 2013/03/21 08:45:18 ajacoutot Exp $
 
 COMMENT=	IJG's JPEG compression utilities#'
 
@@ -19,7 +19,6 @@ DISTFILES=	jpegsrc.v$V.tar.gz
 WANTLIB=	c
 
 SEPARATE_BUILD=	Yes
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 # Symbol versioning triggers weird linking problems in dependent ports.

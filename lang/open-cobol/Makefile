@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/21 08:46:32 ajacoutot Exp $
 
 COMMENT=	open source COBOL compiler
 
@@ -18,7 +18,6 @@ LIB_DEPENDS=	databases/db/v4 \
 	 	devel/gmp
 
 MODULES=	devel/gettext
-USE_LIBTOOL=	Yes
 
 WANTLIB=	c db gmp m ncurses
 

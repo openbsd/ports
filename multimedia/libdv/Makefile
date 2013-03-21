@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 11:35:44 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/21 08:46:33 ajacoutot Exp $
 
 COMMENT=		Quasar DV codec
 
@@ -17,7 +17,6 @@ MODULES=		devel/gettext
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=libdv/}
 
-USE_LIBTOOL=		Yes
 
 SHARED_LIBS=		dv	5.0
 

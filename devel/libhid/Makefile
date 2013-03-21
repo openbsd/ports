@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:10 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/21 08:45:15 ajacoutot Exp $
 
 COMMENT =	user-space USB HID access library written in C
 
@@ -23,7 +23,6 @@ WANTLIB += 	c usb pthread usb-1.0
 LIB_DEPENDS = 	devel/libusb-compat
 
 USE_GMAKE = 		Yes
-USE_LIBTOOL =		Yes
 USE_GROFF =		Yes
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE = 	gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 10:50:26 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/21 08:45:16 ajacoutot Exp $
 
 COMMENT=		python bindings for libnotify
 
@@ -34,7 +34,6 @@ LIB_DEPENDS=		devel/libnotify>=0.7.2 \
 			devel/libffi
 
 USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 
 CONFIGURE_STYLE=	gnu

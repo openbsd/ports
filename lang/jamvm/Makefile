@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 11:20:27 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/21 08:46:32 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386 sparc64
 
@@ -28,7 +28,6 @@ BUILD_DEPENDS=	lang/jikes>=1.22 \
 
 RUN_DEPENDS=	lang/classpath>=0.98
 
-USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu

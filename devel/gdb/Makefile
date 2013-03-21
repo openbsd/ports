@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/11 10:50:04 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/21 08:45:15 ajacoutot Exp $
 
 COMMENT=	GNU debugger
 CATEGORIES=	devel
@@ -28,7 +28,6 @@ CONFIGURE_ARGS=	--program-transform-name=s,^,e, \
 
 USE_GMAKE=	Yes
 
-USE_LIBTOOL =	Yes
 MODULES +=	lang/python
 LIB_DEPENDS += 	${MODPY_LIB_DEPENDS}
 MODPY_BUILDDEP = No

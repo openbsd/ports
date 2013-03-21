@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 11:20:27 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/21 08:46:32 ajacoutot Exp $
 
 ONLY_FOR_ARCHS = ${GCC4_ARCHS}
 SYSV =		4.2.1
@@ -30,7 +30,6 @@ DISTNAME =   	gcc-$V
 DISTFILES =	${DISTNAME}.tar.bz2
 DIST_SUBDIR =	gcc
 
-USE_LIBTOOL =	Yes
 USE_GMAKE =	Yes
 
 MULTI_PACKAGES =	-main -lib

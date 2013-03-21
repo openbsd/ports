@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 11:41:33 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/03/21 08:48:54 ajacoutot Exp $
 
 ONLY_FOR_ARCHS =${APM_ARCHS}
 
@@ -40,7 +40,6 @@ CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
 FAKE_FLAGS =	sysconfdir=${PREFIX}/share/examples/upower
 
 USE_GMAKE =	Yes
-USE_LIBTOOL =	Yes
 
 MODULES =	textproc/intltool
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/21 08:48:55 ajacoutot Exp $
 
 COMMENT =		basic widget set, based on EFL
 
@@ -30,7 +30,6 @@ MODE17_ICON_CACHE =	Yes
 MODE17_PURGE_LA =	lib/edje/modules lib/elementary/modules
 
 USE_GMAKE =		Yes
-USE_LIBTOOL =		Yes
 
 LIB_DEPENDS +=		x11/e17/e_dbus>=1.7.5v1 \
 			x11/e17/edje>=1.7.5v2 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/10 22:55:03 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/21 08:45:12 ajacoutot Exp $
 
 COMMENT=		communicate with some Creative and Dell audio players
 
@@ -18,7 +18,6 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=libnjb/}
 
 LIB_DEPENDS=		devel/libusb-compat
 
-USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib"

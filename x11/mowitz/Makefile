@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:46:14 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/21 08:48:56 ajacoutot Exp $
 
 COMMENT=		widgets library
 
@@ -20,7 +20,6 @@ MASTER_SITES=		http://siag.nu/pub/mowitz/
 
 LIB_DEPENDS=		x11/neXtaw
 
-USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib"
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:35:57 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/21 08:46:35 ajacoutot Exp $
 
 COMMENT =		socks proxy for use with tor
 
@@ -21,7 +21,6 @@ RUN_DEPENDS =		net/tor
 
 FAKE_FLAGS =		CONFDIR=${PREFIX}/share/examples/torsocks
 
-USE_LIBTOOL =		Yes
 
 CONFIGURE_STYLE =	gnu
 

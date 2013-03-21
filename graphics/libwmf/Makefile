@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 11:10:54 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/21 08:45:18 ajacoutot Exp $
 
 COMMENT=	WMF handling and conversion library
 
@@ -24,7 +24,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wvware/}
 LIB_DEPENDS=	graphics/jpeg \
 		graphics/png
 
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-png=${LOCALBASE} \

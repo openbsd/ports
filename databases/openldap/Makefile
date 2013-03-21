@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.121 2013/03/11 02:52:05 espie Exp $
+# $OpenBSD: Makefile,v 1.122 2013/03/21 08:45:14 ajacoutot Exp $
 
 COMMENT-main =		open-source LDAP software (client)
 COMMENT-server =	open-source LDAP software (server)
@@ -39,7 +39,6 @@ SEPARATE_BUILD =	Yes
 AUTOCONF_VERSION =	2.65
 CONFIGURE_STYLE =	autoconf
 
-USE_LIBTOOL =		Yes
 USE_GROFF =		Yes
 
 FLAVOR ?=

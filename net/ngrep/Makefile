@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2013/03/11 11:35:50 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2013/03/21 08:46:34 ajacoutot Exp $
 
 COMMENT=	network grep
 
@@ -19,7 +19,6 @@ LIB_DEPENDS=	devel/pcre
 NO_TEST=	Yes
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 AUTOCONF_VERSION= 2.60
 CONFIGURE_STYLE= autoconf no-autoheader
 CONFIGURE_ARGS+= --enable-ipv6 \

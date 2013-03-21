@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/20 23:08:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/21 08:48:55 ajacoutot Exp $
 
 COMMENT=		Website META Language: off-line HTML generation toolkit
 
@@ -24,8 +24,6 @@ RUN_DEPENDS=		devel/p5-Term-ReadKey \
 			www/tidyp>=1.04p1
 BUILD_DEPENDS=		${RUN_DEPENDS}
 TEST_DEPENDS=		${RUN_DEPENDS}
-
-USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-openworld

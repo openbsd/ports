@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:41:34 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/21 08:48:54 ajacoutot Exp $
 
 COMMENT=	open source SIP User-Agent library
 
@@ -25,7 +25,6 @@ BUILD_DEPENDS=		devel/check
 LIB_DEPENDS=		devel/glib2
 
 USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}

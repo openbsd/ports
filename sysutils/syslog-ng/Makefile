@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2013/03/11 11:41:33 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2013/03/21 08:48:54 ajacoutot Exp $
 
 COMMENT=	syslogd replacement
 
@@ -46,7 +46,6 @@ CONFIGURE_ENV +=	OPENSSL_CFLAGS="-I/usr/include/openssl" \
 			LIBDBI_CFLAGS="-I/usr/include/openssl" \
 			LIBDBI_LIBS="-ldbi"
 USE_GMAKE =	Yes
-USE_LIBTOOL =	Yes
 USE_GROFF =	Yes
 
 CFLAGS +=	-I${LOCALBASE}/include

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:41:25 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/21 08:48:53 ajacoutot Exp $
 
 COMMENT=	library for fingerprint reader devices
 
@@ -32,7 +32,6 @@ LIB_DEPENDS=		graphics/ImageMagick \
 			devel/libusb1>=1.0.8p3 \
 			security/nss
 
-USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.68

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/10 22:55:02 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/21 08:45:12 ajacoutot Exp $
 
 COMMENT=		library for manipulating ID3v1 and ID3v2 tags
 
@@ -21,6 +21,5 @@ USE_GMAKE=		Yes
 NO_TEST=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED}
-USE_LIBTOOL=		Yes
 
 .include <bsd.port.mk>

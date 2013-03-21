@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 11:10:52 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/21 08:45:18 ajacoutot Exp $
 
 COMMENT =	simple and fast image viewer for X
 
@@ -29,7 +29,6 @@ LIB_DEPENDS =	x11/gtk+2
 RUN_DEPENDS =	devel/desktop-file-utils
 
 USE_GMAKE =	yes
-USE_LIBTOOL =	yes
 
 # regress tests in po dir are broken
 NO_TEST =	yes

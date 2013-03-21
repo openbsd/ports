@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:10:51 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/21 08:45:18 ajacoutot Exp $
 
 COMMENT=	GTK+ support library for colord
 
@@ -38,7 +38,6 @@ LIB_DEPENDS=	graphics/colord>=0.1.22 \
 		x11/gtk+3
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2013/03/11 02:52:05 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2013/03/21 08:45:14 ajacoutot Exp $
 
 COMMENT-main=		ODBC 3.x driver manager
 COMMENT-admin=		ODBC 3.x driver manager admin application
@@ -30,7 +30,6 @@ MASTER_SITES=		${HOMEPAGE}downloads/iODBC/
 
 MODULES=		devel/gettext
 
-USE_LIBTOOL=		Yes
 USE_GROFF=		Yes
 
 CONFIGURE_STYLE=	gnu

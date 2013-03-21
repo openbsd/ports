@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2013/03/10 22:55:01 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2013/03/21 08:45:11 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -70,7 +70,6 @@ RUN_DEPENDS-vorbis=	${BUILD_PKGPATH}
 WANTLIB-main=	${WANTLIB} ICE SM pthread audiofile c sndio esd>=2.34 \
 		glade-2.0>=0.4 xml2>=9
 
-USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+=--disable-alsa \

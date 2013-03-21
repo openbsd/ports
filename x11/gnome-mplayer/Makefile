@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2013/03/11 11:46:12 espie Exp $
+# $OpenBSD: Makefile,v 1.72 2013/03/21 08:48:56 ajacoutot Exp $
 
 COMMENT =		GTK+/GNOME frontend for MPlayer
 V =			1.0.7
@@ -40,7 +40,6 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gnome/icon-theme-symbolic>=3.6.2 \
 			x11/gtk+2,-guic
 
-USE_LIBTOOL =		Yes
 
 USE_GMAKE =		Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2013/03/11 11:46:14 espie Exp $
+# $OpenBSD: Makefile,v 1.58 2013/03/21 08:48:56 ajacoutot Exp $
 
 COMMENT-main=		Motif toolkit
 COMMENT-demos=		Motif toolkit demos
@@ -39,7 +39,6 @@ CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include -I${LOCALB
 MAKE_ENV=		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 			AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
 
-USE_LIBTOOL=		Yes
 
 MAKE_FLAGS=		SOMRMREV=${LIBMrm_VERSION}	\
 			SOUILREV=${LIBUil_VERSION}	\

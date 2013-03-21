@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2013/03/20 20:18:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.84 2013/03/21 08:46:35 ajacoutot Exp $
 
 COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
@@ -67,7 +67,6 @@ BUILD_DEPENDS=	archivers/gtar
 TAR=		${LOCALBASE}/bin/gtar
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-shared \
 		--enable-external-natpmp

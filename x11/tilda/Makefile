@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 11:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/21 08:48:57 ajacoutot Exp $
 
 COMMENT=		drop-down terminal emulator
 
@@ -29,7 +29,6 @@ LIB_DEPENDS=		devel/libconfuse \
 			devel/vte
 
 USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 

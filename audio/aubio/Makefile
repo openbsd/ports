@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/10 22:55:01 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/21 08:45:11 ajacoutot Exp $
 
 COMMENT =		extract annotations from audio signals
 DISTNAME =		aubio-0.3.2
@@ -22,7 +22,6 @@ BUILD_DEPENDS =		devel/swig \
 LIB_DEPENDS =		audio/jack \
 			math/fftw3,float
 
-USE_LIBTOOL =		Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS += 	${CONFIGURE_SHARED}

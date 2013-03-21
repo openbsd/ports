@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2013/03/11 11:44:42 espie Exp $
+# $OpenBSD: Makefile,v 1.57 2013/03/21 08:48:55 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -44,7 +44,6 @@ LIB_DEPENDS=	audio/speex \
 		x11/gtk+2
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 AUTOCONF_VERSION=2.64
 CONFIGURE_STYLE= autoconf

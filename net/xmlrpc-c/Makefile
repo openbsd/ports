@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:35:58 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/21 08:46:35 ajacoutot Exp $
 
 COMMENT=	XML-RPC C/C++ client-server implementation
 CATEGORIES=	net devel textproc
@@ -32,7 +32,6 @@ MODULES=		devel/gettext
 LIB_DEPENDS=		net/curl
 
 CONFIGURE_STYLE=	gnu
-USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 
 MAKE_ENV=		COPTS="${CFLAGS}"

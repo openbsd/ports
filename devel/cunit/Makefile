@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:02 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/21 08:45:14 ajacoutot Exp $
 
 COMMENT =		c unit testing framework
 
@@ -23,7 +23,6 @@ EXTRACT_SUFX =		-src.tar.bz2
 FAKE_FLAGS +=		docdir=${PREFIX}/share/doc/CUnit/ \
 			dochdrdir=${PREFIX}/share/doc/CUnit/headers/
 
-USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	autoconf
 CONFIGURE_ENV =		LDFLAGS="-lncurses"
 CONFIGURE_ARGS +=	--enable-curses

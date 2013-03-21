@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 01:13:36 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/21 08:45:12 ajacoutot Exp $
 
 COMMENT =		library for decoding mod-like music formats
 
@@ -17,7 +17,6 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=modplug-xmms/}
 
 WANTLIB +=		m stdc++
 
-USE_LIBTOOL =		Yes
 
 NO_TEST =		Yes
 

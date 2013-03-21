@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2013/03/11 11:35:58 espie Exp $
+# $OpenBSD: Makefile,v 1.85 2013/03/21 08:46:35 ajacoutot Exp $
 
 COMMENT=	GTK+2 IRC client
 
@@ -35,7 +35,6 @@ LIB_DEPENDS=	x11/gtk+2 \
 		x11/dbus-glib \
 		x11/libsexy
 
-USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 MODGCONF2_SCHEMAS_DIR= xchat
 MODGCONF2_LIBDEP= No

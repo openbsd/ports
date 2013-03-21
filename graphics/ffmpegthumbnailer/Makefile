@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/11 11:10:52 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/21 08:45:18 ajacoutot Exp $
 
 COMMENT=	lightweight video thumbnailer for file managers
 
@@ -20,7 +20,6 @@ LIB_DEPENDS=	graphics/ffmpeg \
 		graphics/jpeg \
 		graphics/png
 
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.69
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

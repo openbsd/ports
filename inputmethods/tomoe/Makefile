@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:12:33 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/21 08:46:31 ajacoutot Exp $
 
 COMMENT=	japanese handwriting recognition library
 
@@ -16,7 +16,6 @@ SHARED_LIBS=	tomoe 0.0
 PERMIT_PACKAGE_CDROM=	Yes
 
 CONFIGURE_STYLE=gnu
-USE_LIBTOOL=	Yes
 WANTLIB=	c m
 
 .include <bsd.port.mk>

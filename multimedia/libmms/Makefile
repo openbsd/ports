@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:35:44 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/21 08:46:33 ajacoutot Exp $
 
 COMMENT =	library for parsing mms:// and mmsh:// type network streams
 
@@ -21,7 +21,6 @@ MODULES =	devel/gettext
 LIB_DEPENDS =	devel/glib2
 
 SEPARATE_BUILD = Yes
-USE_LIBTOOL =	Yes
 CONFIGURE_STYLE = gnu
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2013/03/11 09:37:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2013/03/21 08:48:56 ajacoutot Exp $
 
 COMMENT=		fd.o menu editor for GNOME
 
@@ -18,7 +18,6 @@ RUN_DEPENDS=		devel/py-gobject3 \
 			x11/gnome/menus
 
 PKG_ARCH=		*
-USE_LIBTOOL=		No
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:37:54 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/21 08:46:35 ajacoutot Exp $
 
 COMMENT=	python bindings for poppler
 
@@ -33,7 +33,6 @@ BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		x11/py-gtk2>=2.10
 
 CONFIGURE_STYLE=	gnu
-USE_LIBTOOL=		Yes
 
 LIBTOOL_FLAGS+= 	--tag=disable-static
 

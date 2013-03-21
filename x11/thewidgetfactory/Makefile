@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/21 08:48:57 ajacoutot Exp $
 
 COMMENT=	showcase for GTK+ 2 widgets
 
@@ -27,7 +27,6 @@ CONFIGURE_STYLE=gnu
 
 MODULES+=	devel/gettext
 
-USE_LIBTOOL=	Yes
 NO_TEST=	Yes
 
 .include <bsd.port.mk>

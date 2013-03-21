@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:09 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/21 08:45:15 ajacoutot Exp $
 
 COMMENT =	library for string essentials
 DISTNAME =	libestr-0.1.4
@@ -13,7 +13,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =	${HOMEPAGE}/files/download/
 
-USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 

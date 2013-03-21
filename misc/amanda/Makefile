@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2013/03/11 11:23:56 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2013/03/21 08:46:33 ajacoutot Exp $
 
 COMMENT-main=	network-capable tape backup (client and tape server)
 COMMENT-client=	network-capable tape backup (client only)
@@ -79,7 +79,6 @@ BUILD_DEPENDS+=  security/gnupg
 CONFIGURE_ENV+=  GZIP=${LOCALBASE}/bin/gpgzip
 .endif
 
-USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-shared
 
 OLD_DOC_DIR=	${PREFIX}/share/amanda

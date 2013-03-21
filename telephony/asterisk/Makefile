@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.171 2013/03/11 11:41:33 espie Exp $
+# $OpenBSD: Makefile,v 1.172 2013/03/21 08:48:54 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
@@ -57,7 +57,6 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 AUTOCONF_VERSION=	2.68

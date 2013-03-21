@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 11:46:13 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/21 08:48:56 ajacoutot Exp $
 
 COMMENT=	GDI+ comptible API
 
@@ -28,7 +28,6 @@ EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	devel/gettext
 
-USE_LIBTOOL=	Yes
 
 LIB_DEPENDS=	devel/pango \
 		graphics/tiff \

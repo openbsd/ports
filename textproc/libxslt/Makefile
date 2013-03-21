@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2013/03/16 09:59:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.76 2013/03/21 08:48:54 ajacoutot Exp $
 
 COMMENT-main=		XSLT C Library for GNOME
 COMMENT-python= 	Python bindings for libxslt
@@ -35,7 +35,6 @@ LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
 			textproc/libxml>=2.6.27 \
 			security/libgcrypt
 
-USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \

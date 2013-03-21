@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:41:32 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/21 08:48:54 ajacoutot Exp $
 
 BROKEN-hppa =		lack of atomic ops
 BROKEN-mips64 =		lack of atomic ops
@@ -46,7 +46,6 @@ MASTER_SITES =		http://www.rsyslog.com/files/download/rsyslog/ \
 
 CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.65
-USE_LIBTOOL =		Yes
 LIBTOOL_FLAGS = 	--tag=disable-static
 USE_GROFF =	Yes
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \

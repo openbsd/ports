@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2013/03/11 11:46:08 espie Exp $
+# $OpenBSD: Makefile,v 1.98 2013/03/21 08:48:55 ajacoutot Exp $
 
 # DPB: not parallel-safe
 
@@ -25,7 +25,6 @@ WANTLIB += ICE SM X11 c expat kvm pthread xcb
 MASTER_SITES=	${HOMEPAGE}releases/dbus/
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 
 AUTOCONF_VERSION=2.68
 CONFIGURE_STYLE=autoconf

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 11:10:52 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/21 08:45:18 ajacoutot Exp $
 
 COMMENT=	portable DjVu viewer and browser plugin
 
@@ -26,7 +26,6 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+2,-guic
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-tiff=${LOCALBASE}

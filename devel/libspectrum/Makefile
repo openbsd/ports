@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 10:50:10 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/21 08:45:16 ajacoutot Exp $
 
 COMMENT=		ZX Spectrum emulator file format library
 DISTNAME=		libspectrum-1.0.0
@@ -25,7 +25,6 @@ LIB_DEPENDS=		devel/glib2 \
 			devel/libaudiofile
 
 USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	gnu

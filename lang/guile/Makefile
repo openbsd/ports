@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2013/03/11 11:20:27 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2013/03/21 08:46:32 ajacoutot Exp $
 
 COMMENT=	GNU's Ubiquitous Intelligent Language for Extension
 
@@ -28,7 +28,6 @@ MODULES=	devel/gettext
 
 SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	gnu
-USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 
 # Needed because otherwise regress tests won't build:

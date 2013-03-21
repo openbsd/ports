@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:44:50 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/21 08:48:55 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -23,7 +23,6 @@ LIB_DEPENDS = 		devel/pcre
 
 MASTER_SITES =		http://repo.varnish-cache.org/source/
 
-USE_LIBTOOL =		Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.68

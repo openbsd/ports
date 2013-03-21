@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 11:10:53 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/03/21 08:45:18 ajacoutot Exp $
 
 COMMENT =		kde image plugins api
 CATEGORIES =		graphics devel x11 x11/kde
@@ -22,7 +22,6 @@ WANTLIB += Xt Xxf86vm drm expat fontconfig freetype lcms mng
 
 MODULES =	x11/kde devel/gettext
 
-USE_LIBTOOL =		Yes
 LIBTOOL_FLAGS +=	--tag=disable-static
 CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.61

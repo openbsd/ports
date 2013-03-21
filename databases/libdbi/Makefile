@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 02:52:05 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/21 08:45:14 ajacoutot Exp $
 
 COMMENT =		database-independent abstraction layer
 DISTNAME =		libdbi-0.8.3
@@ -13,7 +13,6 @@ MAINTAINER =		Michael Erdely <merdely@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu
 WANTLIB =		m
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2013/03/20 00:25:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2013/03/21 08:45:17 ajacoutot Exp $
 
 COMMENT=		vector graphics library
 
@@ -25,7 +25,6 @@ MASTER_SITES=		http://cairographics.org/releases/
 
 MODULES=		devel/gettext
 
-USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 
 LIB_DEPENDS=		archivers/lzo2 \

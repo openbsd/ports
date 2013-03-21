@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2013/03/11 11:10:56 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2013/03/21 08:45:19 ajacoutot Exp $
 
 COMMENT=	read and manipulate raw images from digital cameras
 
@@ -33,7 +33,6 @@ LIB_DEPENDS=	gimp->=2,<3:graphics/gimp/stable \
 MODULES=	devel/gettext
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

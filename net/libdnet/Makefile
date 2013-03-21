@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2013/03/19 23:36:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2013/03/21 08:46:34 ajacoutot Exp $
 
 COMMENT-main=	portable low-level networking library
 COMMENT-python= python interface to libdnet
@@ -26,7 +26,6 @@ PSEUDO_FLAVORS=		no_python
 NOT_FOR_ARCHS-python=	${NO_SHARED_ARCHS}
 FLAVOR?=
 
-USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 MULTI_PACKAGES=		-main -python

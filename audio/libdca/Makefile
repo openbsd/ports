@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/10 22:55:03 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/21 08:45:12 ajacoutot Exp $
 
 COMMENT=	free DTS Coherent Acoustics decoder
 
@@ -18,7 +18,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c m ossaudio
 
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 
 .include <bsd.port.mk>

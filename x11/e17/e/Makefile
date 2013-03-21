@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2013/03/11 11:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.47 2013/03/21 08:48:55 ajacoutot Exp $
 
 COMMENT =		the enlightened window manager
 
@@ -92,7 +92,6 @@ CONFIGURE_ARGS +=	--disable-doc \
 CONFIGURE_ENV +=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib"
 
-USE_LIBTOOL =		Yes
 
 # Stupid crap in /src/modules/illume/dicts chokes in regular make.
 # Some issue with the "(US)" bit

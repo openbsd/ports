@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 11:10:53 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/21 08:45:18 ajacoutot Exp $
 
 COMMENT=	free MPEG-2 video stream decoder
 
@@ -15,7 +15,6 @@ HOMEPAGE=	http://libmpeg2.sourceforge.net/
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=	ICE SM X11 Xext Xv c xcb
 
-USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.61

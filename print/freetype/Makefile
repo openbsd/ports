@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2013/03/11 11:37:53 espie Exp $
+# $OpenBSD: Makefile,v 1.46 2013/03/21 08:46:35 ajacoutot Exp $
 
 COMMENT-main=	free and portable TrueType font rendering engine
 COMMENT-doc=	documentation for FreeType
@@ -22,7 +22,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		m
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}

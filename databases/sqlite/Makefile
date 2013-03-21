@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/11 02:52:08 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/21 08:45:14 ajacoutot Exp $
 
 COMMENT=	Embedded SQL implementation
 DISTNAME=	sqlite-2.8.17
@@ -15,7 +15,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 AUTOCONF_VERSION=2.59
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 
 WANTLIB=	c ncurses readline
 

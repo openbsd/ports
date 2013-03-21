@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/19 16:07:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/21 08:48:53 ajacoutot Exp $
 
 COMMENT=	library for loading and enumurating of PKCS\#11 modules
 
@@ -22,7 +22,6 @@ MASTER_SITES=	${HOMEPAGE}releases/
 
 LIB_DEPENDS=	security/libtasn1
 
-USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \

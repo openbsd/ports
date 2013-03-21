@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2013/03/11 10:50:04 espie Exp $
+# $OpenBSD: Makefile,v 1.69 2013/03/21 08:45:15 ajacoutot Exp $
 
 COMMENT=		GObject Introspection
 
@@ -30,7 +30,6 @@ BUILD_DEPENDS=		devel/bison \
 			graphics/cairo
 RUN_DEPENDS=		graphics/cairo
 
-USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
 
 YACC=			bison

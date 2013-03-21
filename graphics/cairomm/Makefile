@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 11:10:51 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/03/21 08:45:17 ajacoutot Exp $
 
 COMMENT=		C++ interface for cairo
 
@@ -25,7 +25,6 @@ LIB_DEPENDS=		graphics/cairo \
 MODULES=		devel/gettext
 
 SEPARATE_BUILD=		Yes
-USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}

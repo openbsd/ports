@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:10:55 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/21 08:45:19 ajacoutot Exp $
 
 COMMENT =	python bindings for pigment
 
@@ -22,7 +22,6 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV +=	LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${X11BASE}/include  -L${LOCALBASE}/include"
 
-USE_LIBTOOL =	Yes
 USE_GMAKE =	Yes
 
 RUN_DEPENDS =	multimedia/gstreamer-0.10/py-gstreamer

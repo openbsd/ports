@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/11 11:07:42 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/21 08:45:17 ajacoutot Exp $
 
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
@@ -62,7 +62,6 @@ MODPY_ADJ_FILES =	swig/python/scripts/*.py
 MAKE_FILE =	GNUmakefile
 MAKE_FLAGS =	LIBTOOL_FINISH=:
 USE_GMAKE =	Yes
-USE_LIBTOOL =	Yes
 NO_TEST =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include \

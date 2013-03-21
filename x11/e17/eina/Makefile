@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/21 08:48:55 ajacoutot Exp $
 
 COMMENT =		EFL API for data types
 VERSION = 		1.7.5
@@ -14,7 +14,6 @@ WANTLIB += 		m pthread
 
 MODULES =		converters/libiconv
 
-USE_LIBTOOL =		Yes
 
 CONFIGURE_ARGS =	--disable-doc \
 			--enable-mempool-chained-pool=static \

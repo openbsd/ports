@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2013/03/11 11:42:41 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2013/03/21 08:48:54 ajacoutot Exp $
 
 COMMENT=	gtk+2 spelling checker
 DISTNAME=	gtkspell-2.0.16
@@ -26,7 +26,6 @@ WANTLIB += xcb-shm z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gtkspell/}
 
-USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 
 MODULES=	devel/gettext \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:37:54 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/21 08:46:35 ajacoutot Exp $
 
 COMMENT =		X11 printing system
 
@@ -23,7 +23,6 @@ EXTRACT_SUFX =		.tar.bz2
 BUILD_DEPENDS =		print/xprintproto
 
 USE_GROFF =		Yes
-USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu
 
 NO_TEST =		Yes

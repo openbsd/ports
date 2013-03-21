@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2013/03/10 22:55:03 espie Exp $
+# $OpenBSD: Makefile,v 1.51 2013/03/21 08:45:12 ajacoutot Exp $
 
 COMMENT=	lame ain't an MP3 encoder
 
@@ -24,7 +24,6 @@ MODULES=	converters/libiconv
 
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
-USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/11 11:20:27 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/21 08:46:32 ajacoutot Exp $
 
 ONLY_FOR_ARCHS = amd64 i386 powerpc sparc64
 BROKEN-sparc64 = ICE in libgcc
@@ -67,7 +67,6 @@ ECJ =		ecj-4.5.jar
 SUPDISTFILES =	${ADASTRAP-i386}:0 ${ADASTRAP-amd64}:0 ${ECJ}:1
 EXTRACT_ONLY =	${DISTNAME}.tar.bz2
 
-USE_LIBTOOL =	Yes
 
 BUILD_DEPENDS +=	devel/bison \
 			devel/libexecinfo

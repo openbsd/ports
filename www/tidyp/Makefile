@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:44:50 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/21 08:48:55 ajacoutot Exp $
 
 COMMENT=	validate, correct and pretty-print HTML
 
@@ -20,7 +20,6 @@ MASTER_SITES=	http://github.com/downloads/petdance/tidyp/
 
 CONFIGURE_STYLE=gnu
 
-USE_LIBTOOL=	Yes
 
 # Upstream references a non-existing test script...
 NO_TEST=	Yes

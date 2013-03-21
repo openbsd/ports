@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2013/03/11 11:35:55 espie Exp $
+# $OpenBSD: Makefile,v 1.117 2013/03/21 08:46:35 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -72,7 +72,6 @@ MODGCONF2_SCHEMAS_DIR=	pidgin
 MODGCONF2_LIBDEP=	No
 
 SEPARATE_BUILD=	Yes
-USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.68

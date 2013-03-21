@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2013/03/11 11:35:49 espie Exp $
+# $OpenBSD: Makefile,v 1.71 2013/03/21 08:46:34 ajacoutot Exp $
 
 COMMENT-main=	extendable SNMP implementation
 COMMENT-perl=	SNMP modules for Perl
@@ -44,7 +44,6 @@ DEFAULT_MIBS=		IP-MIB:IF-MIB:TCP-MIB:UDP-MIB:SNMPv2-MIB:RFC1213-MIB
 # - base OpenBSD mibs (/usr/share/snmp/mibs), SNMPD-CONF pulls in the rest
 OPENBSD_MIBS=		OPENBSD-SNMPD-CONF
 
-USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=  autoconf
 AUTOCONF_VERSION= 2.68

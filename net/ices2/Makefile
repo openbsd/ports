@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 11:35:47 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/21 08:46:34 ajacoutot Exp $
 
 COMMENT=	icecast source for streaming Ogg Vorbis
 
@@ -18,7 +18,6 @@ AUTOMAKE_VERSION=1.9
 CONFIGURE_STYLE=autoconf automake
 CONFIGURE_ARGS=	--program-suffix=2 --disable-sun-audio
 
-USE_LIBTOOL =	Yes
 # Needs AC_PROG_LIBTOOL	
 BUILD_DEPENDS += devel/libtool
 MODULES=	converters/libiconv

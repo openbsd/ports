@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2013/03/11 11:41:24 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2013/03/21 08:48:53 ajacoutot Exp $
 
 COMMENT=	SOCKS client and server
 
@@ -26,7 +26,6 @@ CONFIGURE_ARGS+= --enable-static
 
 MODGNU_CONFIG_GUESS_DIRS+= ${WRKSRC}
 
-USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 
 post-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 11:37:55 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/21 08:48:52 ajacoutot Exp $
 
 COMMENT=	qt home accounting program
 
@@ -30,7 +30,6 @@ WANTLIB += Xmu Xrandr Xrender Xt Xxf86vm drm expat fontconfig
 WANTLIB += freetype jpeg lcms mng png z
 
 MODULES=	x11/qt3
-USE_LIBTOOL=	Yes
 
 MAKE_ENV=	QTDIR=${MODQT_LIBDIR} LOCALBASE=${LOCALBASE} X11BASE=${X11BASE}
 MAKE_FLAGS=	QTLIBDIR=${MODQT_LIBDIR} QTINCDIR=${MODQT_INCDIR}

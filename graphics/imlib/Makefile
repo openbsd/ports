@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2013/03/11 11:10:53 espie Exp $
+# $OpenBSD: Makefile,v 1.69 2013/03/21 08:45:18 ajacoutot Exp $
 
 COMMENT=	image manipulation library for X11
 
@@ -24,7 +24,6 @@ WANTLIB=	ICE SM X11 Xext Xi c glib gmodule m \
 PERMIT_PACKAGE_CDROM=	Yes
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu

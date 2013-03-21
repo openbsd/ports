@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2013/03/14 20:36:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2013/03/21 08:48:57 ajacoutot Exp $
 
 COMMENT=		terminal emulator for X
 
@@ -34,7 +34,6 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 			x11/gnome/librsvg \
 			x11/gtk+2,-guic
 
-USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu

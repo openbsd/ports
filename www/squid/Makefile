@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.149 2013/03/12 14:58:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.150 2013/03/21 08:48:55 ajacoutot Exp $
 
 MULTI_PACKAGES=	-main -ntlm
 
@@ -55,7 +55,6 @@ CONFIGURE_STYLE= gnu
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/cfgaux
 
 USE_GROFF=	Yes
-USE_LIBTOOL=	Yes
 
 # gcc 4.2: src/ipc/StoreMap.cc fails with "unrecognizable insn" unless
 # optimizer is disabled, see e.g.

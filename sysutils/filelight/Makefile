@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/19 13:07:14 nigel Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/21 08:48:53 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -31,7 +31,6 @@ LIB_DEPENDS=	x11/kde/libs3
 
 PORTHOME=	${WRKDIR}
 
-USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 USE_GMAKE=	Yes
 MAKE_FLAGS=	${MODKDE_MAKE_FLAGS}

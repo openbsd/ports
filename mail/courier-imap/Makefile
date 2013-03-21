@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2013/03/11 11:23:50 espie Exp $
+# $OpenBSD: Makefile,v 1.87 2013/03/21 08:46:32 ajacoutot Exp $
 
 COMMENT-main=		imap server for maildir format mailboxes
 COMMENT-pop3=		pop3 server for maildir format mailboxes
@@ -24,7 +24,6 @@ WANTLIB=		c courierauth courierauthsasl gdbm idn
 WANTLIB-pop3=		c courierauth courierauthsasl idn ${MODGETTEXT_WANTLIB}
 
 USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
 USE_GROFF=		Yes
 CONFIGURE_STYLE=	gnu
 

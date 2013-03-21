@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:41:24 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/21 08:48:53 ajacoutot Exp $
 
 COMMENT =		sensible unix password cracker
 
@@ -20,7 +20,6 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=cracklib/}
 MODULES =		lang/python \
 			devel/gettext
                         
-USE_LIBTOOL =		Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	${CONFIGURE_SHARED} \

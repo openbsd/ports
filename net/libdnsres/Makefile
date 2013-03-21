@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:35:48 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/21 08:46:34 ajacoutot Exp $
 
 COMMENT=	non-blocking thread-safe API for resolving DNS names
 
@@ -15,7 +15,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	http://monkey.org/~provos/
 
 CONFIGURE_STYLE=gnu
-USE_LIBTOOL=	yes
 USE_GROFF =	Yes
 
 .include <bsd.port.mk>

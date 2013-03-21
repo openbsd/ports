@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 10:50:12 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/21 08:45:16 ajacoutot Exp $
 
 COMMENT=	library and toolset to operate arrays of data
 
@@ -20,7 +20,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=	c m pthread
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.67
 

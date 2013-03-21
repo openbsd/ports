@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/03/14 20:36:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2013/03/21 08:48:57 ajacoutot Exp $
 
 COMMENT=	MS-Explorer like file manager for X
 
@@ -22,7 +22,6 @@ WANTLIB +=	FOX-1.6>=1
 
 RUN_DEPENDS=	devel/desktop-file-utils
 
-USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
 

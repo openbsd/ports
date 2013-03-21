@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 02:52:05 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/21 08:45:14 ajacoutot Exp $
 
 COMMENT=	C++ client API for PostgreSQL
 
@@ -19,7 +19,6 @@ MASTER_SITES=	http://pqxx.org/download/software/libpqxx/ \
 
 LIB_DEPENDS=	databases/postgresql
 
-USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}

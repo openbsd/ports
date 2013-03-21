@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:11 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/21 08:45:16 ajacoutot Exp $
 
 COMMENT=		logging API for C++
 
@@ -19,7 +19,6 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 CXXFLAGS+=		-fPIC
 
-USE_LIBTOOL=		Yes
 
 pre-configure:
 	echo "# This file automatically generated" >> ${WRKSRC}/libversions

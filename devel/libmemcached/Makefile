@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 10:50:10 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/21 08:45:15 ajacoutot Exp $
 
 COMMENT=		C C++ API for memcached
 
@@ -12,7 +12,6 @@ MASTER_SITES=		http://launchpad.net/libmemcached/1.0/${VERSION}/+download/
 
 MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
 
-USE_LIBTOOL=		Yes
 SHARED_LIBS +=  memcached                 0.0 # 0.0
 SHARED_LIBS +=  hashkit                   0.0 # 0.0
 SHARED_LIBS +=  memcachedprotocol         0.0 # 0.0

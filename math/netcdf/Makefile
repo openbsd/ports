@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 11:23:55 espie Exp $ 
+# $OpenBSD: Makefile,v 1.23 2013/03/21 08:46:33 ajacoutot Exp $ 
 
 BROKEN-powerpc=	fails to build
 BROKEN-hppa =	fails to configure
@@ -33,7 +33,6 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-f90
 
 USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
 SEPARATE_BUILD=		Yes
 

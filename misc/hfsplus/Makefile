@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/03/11 11:23:57 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2013/03/21 08:46:33 ajacoutot Exp $
 
 COMMENT=	hfsplus filesystem access tool
 
@@ -19,7 +19,6 @@ MASTER_SITES=		http://distfiles.nl/
 EXTRACT_SUFX=		.src.tar.bz2
 
 USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
 
 AUTOCONF_VERSION=	2.59
 AUTOMAKE_VERSION=	1.9
