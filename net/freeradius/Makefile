@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2013/03/11 11:35:46 espie Exp $
+# $OpenBSD: Makefile,v 1.46 2013/03/21 08:41:16 brad Exp $
 
 SHARED_ONLY=	Yes
 SHARED_LIBS +=  freeradius-radius    4.1      # .0.0
@@ -85,7 +85,6 @@ FLAVOR?=
 CONFIGURE_ARGS+=	--without-rlm_sql_iodbc
 .else
 MULTI_PACKAGES+=	-iodbc
-BUILD_DEPENDS+=		databases/iodbc
 CONFIGURE_ARGS+=	--with-rlm_sql_iodbc
 LIB_DEPENDS-iodbc=	databases/iodbc
 WANTLIB-iodbc=		iodbc>=2 pthread
@@ -95,7 +94,6 @@ WANTLIB-iodbc=		iodbc>=2 pthread
 CONFIGURE_ARGS+=	--without-rlm_ldap
 .else
 MULTI_PACKAGES+=	-ldap
-BUILD_DEPENDS+=		databases/openldap
 LIB_DEPENDS-ldap=	databases/openldap \
 			${BASE_PKGPATH}
 WANTLIB-ldap=		${WANTLIB} sasl2 asn1 com_err gssapi krb5 \
@@ -106,7 +104,6 @@ WANTLIB-ldap=		${WANTLIB} sasl2 asn1 com_err gssapi krb5 \
 CONFIGURE_ARGS+=	--without-rlm_sql_mysql
 .else
 MULTI_PACKAGES+=	-mysql
-BUILD_DEPENDS+=		databases/mysql
 LIB_DEPENDS-mysql=	databases/mysql
 WANTLIB-mysql=		${WANTLIB} m pthread z mysqlclient_r>=16
 .endif
@@ -115,7 +112,6 @@ WANTLIB-mysql=		${WANTLIB} m pthread z mysqlclient_r>=16
 CONFIGURE_ARGS+=	--without-rlm_sql_postgresql
 .else
 MULTI_PACKAGES+=	-pgsql
-BUILD_DEPENDS+=		databases/postgresql
 CONFIGURE_ARGS+=	--with-rlm-sql-postgresql-include-dir=${LOCALBASE}/include/postgresql
 LIB_DEPENDS-pgsql=	databases/postgresql
 WANTLIB-pgsql=		pq>=2
