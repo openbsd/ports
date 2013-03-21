@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/03/20 21:45:55 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/21 08:35:44 sthen Exp $
 
 COMMENT =	PDF creation library
 
@@ -26,7 +26,9 @@ CONFIGURE_ARGS =	--with-png=${LOCALBASE}
 USE_LIBTOOL =	Yes
 
 #  for libtoolize
-BUILD_DEPENDS =	devel/libtool
+BUILD_DEPENDS =	devel/libtool \
+		${MODGNU_AUTOCONF_DEPENDS} \
+		${MODGNU_AUTOMAKE_DEPENDS}
 
 LIB_DEPENDS =	graphics/png
 WANTLIB =	m png z
