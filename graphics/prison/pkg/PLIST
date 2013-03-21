@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/21 08:26:19 zhuk Exp $
+include/prison/
+include/prison/AbstractBarcode
+include/prison/BarcodeItem
+include/prison/BarcodeWidget
+include/prison/DataMatrixBarcode
+include/prison/QRCodeBarcode
+include/prison/abstractbarcode.h
+include/prison/barcodeitem.h
+include/prison/barcodewidget.h
+include/prison/datamatrixbarcode.h
+include/prison/prison_export.h
+include/prison/qrcodebarcode.h
+lib/cmake/
+lib/cmake/Prison/
+lib/cmake/Prison/PrisonConfig.cmake
+@lib lib/libprison.so.${LIBprison_VERSION}
