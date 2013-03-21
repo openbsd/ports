@@ -1,15 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:15 espie Exp $
-
-BROKEN-powerpc=	Segmentation fault during build
+# $OpenBSD: Makefile,v 1.6 2013/03/21 20:58:24 sthen Exp $
 
 COMMENT =	coroutines for perl
 
 SHARED_ONLY =	Yes
 MODULES =	cpan
-DISTNAME =	Coro-5.25
-REVISION =	0
+DISTNAME =	Coro-6.23
 CATEGORIES =	devel
-USE_GROFF =	Yes
 
 
 # perl
