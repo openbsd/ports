@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 01:30:28 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/21 09:59:52 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,12 +6,8 @@ COMMENT =	JSON serialising/deserialising, done correctly and fast
 
 MODULES =	cpan
 USE_GROFF =	Yes
-DISTNAME =	JSON-XS-2.29
-# there was a version with three digits after the dot,
-# pad to that length for seamless updates
-PKGNAME =	p5-${DISTNAME}0
-REVISION =	2
-EPOCH =		0
+DISTNAME =	JSON-XS-2.33
+EPOCH =		1
 CATEGORIES =	converters
 
 MAINTAINER =	Simon Bertrang <simon@openbsd.org>
