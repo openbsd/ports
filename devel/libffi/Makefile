@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/21 15:52:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/21 16:22:51 jasper Exp $
 
 # m68k - needs ELF and serious tinkering
 # m88k - missing code
@@ -8,7 +8,7 @@ NOT_FOR_ARCHS= 		m68k m88k vax
 COMMENT=		Foreign Function Interface
 
 DISTNAME=		libffi-3.0.9
-REVISION=		0
+REVISION=		1
 SHARED_LIBS +=  ffi                  0.0      # .5.9
 CATEGORIES=		devel
 
