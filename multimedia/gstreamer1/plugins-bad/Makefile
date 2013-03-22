@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/14 13:23:26 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/22 17:22:35 ajacoutot Exp $
 
 COMMENT=		bad elements for GStreamer
 
-V=			1.0.5
+V=			1.0.6
 DISTNAME=		gst-plugins-bad-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-bad-${V}
-REVISION=		0
 
-SHARED_LIBS +=  gstbasecamerabinsrc-1.0   0.0 # 5.0
-SHARED_LIBS +=  gstbasevideo-1.0          0.0 # 5.0
-SHARED_LIBS +=  gstcodecparsers-1.0       0.0 # 5.0
-SHARED_LIBS +=  gstphotography-1.0        0.0 # 5.0
-SHARED_LIBS +=  gstsignalprocessor-1.0    0.0 # 5.0
+SHARED_LIBS +=  gstbasecamerabinsrc-1.0   0.0 # 6.0
+SHARED_LIBS +=  gstbasevideo-1.0          0.0 # 6.0
+SHARED_LIBS +=  gstcodecparsers-1.0       0.0 # 6.0
+SHARED_LIBS +=  gstphotography-1.0        0.0 # 6.0
+SHARED_LIBS +=  gstsignalprocessor-1.0    0.0 # 6.0
 
 MASTER_SITES =		${MASTER_SITE_GST:=gst-plugins-bad/}
 
@@ -20,7 +19,7 @@ WANTLIB += fribidi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gstapp-1.0
 WANTLIB += gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
 WANTLIB += gstreamer-1.0 gstrtp-1.0 gstsdp-1.0 gsttag-1.0 gstvideo-1.0
 WANTLIB += gthread-2.0 m mms opus orc-0.4 pcre pthread schroedinger-1.0
-WANTLIB += stdc++ z
+WANTLIB += stdc++ z pthread-stubs
 
 MODULES =		devel/dconf
 
