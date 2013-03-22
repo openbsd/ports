@@ -1,6 +1,6 @@
-$OpenBSD: patch-third_party_ffmpeg_chromium_config_Chromium_openbsd_ia32_config_asm,v 1.4 2013/01/18 21:38:02 robert Exp $
---- third_party/ffmpeg/chromium/config/Chromium/openbsd/ia32/config.asm.orig	Tue Jan  8 03:46:29 2013
-+++ third_party/ffmpeg/chromium/config/Chromium/openbsd/ia32/config.asm	Fri Jan 18 08:19:49 2013
+$OpenBSD: patch-third_party_ffmpeg_chromium_config_Chromium_openbsd_ia32_config_asm,v 1.5 2013/03/22 07:46:04 robert Exp $
+--- third_party/ffmpeg/chromium/config/Chromium/openbsd/ia32/config.asm.orig	Tue Mar 12 20:03:14 2013
++++ third_party/ffmpeg/chromium/config/Chromium/openbsd/ia32/config.asm	Thu Mar 21 23:49:02 2013
 @@ -1,89 +1,1394 @@
 -%define ARCH_X86
 -%define ARCH_X86_32
@@ -365,7 +365,7 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chromium_openbsd_ia32_config_
 +%define CONFIG_AVISYNTH 0
 +%define CONFIG_BZLIB 0
 +%define CONFIG_CRYSTALHD 0
-+%define CONFIG_DCT 1
++%define CONFIG_DCT 0
 +%define CONFIG_DWT 0
 +%define CONFIG_DXVA2 0
 +%define CONFIG_FAST_UNALIGNED 1
@@ -446,24 +446,24 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chromium_openbsd_ia32_config_
 +%define CONFIG_AANDCTTABLES 0
 +%define CONFIG_AC3DSP 0
 +%define CONFIG_AVUTIL 1
-+%define CONFIG_ERROR_RESILIENCE 1
++%define CONFIG_ERROR_RESILIENCE 0
 +%define CONFIG_GCRYPT 0
 +%define CONFIG_GOLOMB 1
 +%define CONFIG_GPLV3 0
-+%define CONFIG_H264CHROMA 1
-+%define CONFIG_H264DSP 1
++%define CONFIG_H264CHROMA 0
++%define CONFIG_H264DSP 0
 +%define CONFIG_H264PRED 1
 +%define CONFIG_H264QPEL 1
 +%define CONFIG_HUFFMAN 0
 +%define CONFIG_LGPLV3 0
 +%define CONFIG_LPC 0
-+%define CONFIG_MPEGAUDIODSP 1
-+%define CONFIG_MPEGVIDEO 1
++%define CONFIG_MPEGAUDIODSP 0
++%define CONFIG_MPEGVIDEO 0
 +%define CONFIG_MPEGVIDEOENC 0
 +%define CONFIG_NETTLE 0
 +%define CONFIG_RANGECODER 0
 +%define CONFIG_RTPDEC 0
-+%define CONFIG_SINEWIN 1
++%define CONFIG_SINEWIN 0
 +%define CONFIG_VP3DSP 1
 +%define CONFIG_AAC_ADTSTOASC_BSF 0
 +%define CONFIG_CHOMP_BSF 0
@@ -539,7 +539,7 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chromium_openbsd_ia32_config_
 +%define CONFIG_H263_DECODER 0
 +%define CONFIG_H263I_DECODER 0
 +%define CONFIG_H263P_DECODER 0
-+%define CONFIG_H264_DECODER 1
++%define CONFIG_H264_DECODER 0
 +%define CONFIG_H264_CRYSTALHD_DECODER 0
 +%define CONFIG_H264_VDA_DECODER 0
 +%define CONFIG_H264_VDPAU_DECODER 0
@@ -675,7 +675,7 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chromium_openbsd_ia32_config_
 +%define CONFIG_ZEROCODEC_DECODER 0
 +%define CONFIG_ZLIB_DECODER 0
 +%define CONFIG_ZMBV_DECODER 0
-+%define CONFIG_AAC_DECODER 1
++%define CONFIG_AAC_DECODER 0
 +%define CONFIG_AAC_LATM_DECODER 0
 +%define CONFIG_AC3_DECODER 0
 +%define CONFIG_ALAC_DECODER 0
@@ -707,7 +707,7 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chromium_openbsd_ia32_config_
 +%define CONFIG_MP1FLOAT_DECODER 0
 +%define CONFIG_MP2_DECODER 0
 +%define CONFIG_MP2FLOAT_DECODER 0
-+%define CONFIG_MP3_DECODER 1
++%define CONFIG_MP3_DECODER 0
 +%define CONFIG_MP3FLOAT_DECODER 0
 +%define CONFIG_MP3ADU_DECODER 0
 +%define CONFIG_MP3ADUFLOAT_DECODER 0
@@ -913,8 +913,8 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chromium_openbsd_ia32_config_
 +%define CONFIG_MLP_DEMUXER 0
 +%define CONFIG_MM_DEMUXER 0
 +%define CONFIG_MMF_DEMUXER 0
-+%define CONFIG_MOV_DEMUXER 1
-+%define CONFIG_MP3_DEMUXER 1
++%define CONFIG_MOV_DEMUXER 0
++%define CONFIG_MP3_DEMUXER 0
 +%define CONFIG_MPC_DEMUXER 0
 +%define CONFIG_MPC8_DEMUXER 0
 +%define CONFIG_MPEGPS_DEMUXER 0
@@ -1422,7 +1422,7 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chromium_openbsd_ia32_config_
 +%define CONFIG_OSS_OUTDEV 0
 +%define CONFIG_SDL_OUTDEV 0
 +%define CONFIG_SNDIO_OUTDEV 0
-+%define CONFIG_AAC_PARSER 1
++%define CONFIG_AAC_PARSER 0
 +%define CONFIG_AAC_LATM_PARSER 0
 +%define CONFIG_AC3_PARSER 0
 +%define CONFIG_ADX_PARSER 0
@@ -1438,11 +1438,11 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chromium_openbsd_ia32_config_
 +%define CONFIG_GSM_PARSER 0
 +%define CONFIG_H261_PARSER 0
 +%define CONFIG_H263_PARSER 0
-+%define CONFIG_H264_PARSER 1
++%define CONFIG_H264_PARSER 0
 +%define CONFIG_MJPEG_PARSER 0
 +%define CONFIG_MLP_PARSER 0
 +%define CONFIG_MPEG4VIDEO_PARSER 0
-+%define CONFIG_MPEGAUDIO_PARSER 1
++%define CONFIG_MPEGAUDIO_PARSER 0
 +%define CONFIG_MPEGVIDEO_PARSER 0
 +%define CONFIG_PNG_PARSER 0
 +%define CONFIG_PNM_PARSER 0
