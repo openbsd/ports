@@ -1,25 +1,16 @@
-$OpenBSD: patch-configure_in,v 1.13 2012/08/04 18:07:03 pascal Exp $
---- configure.in.orig	Sun Mar  6 17:54:58 2011
-+++ configure.in	Fri May 25 01:07:10 2012
-@@ -48,7 +48,7 @@ dnl FLTK library versions...
+$OpenBSD: patch-configure_in,v 1.14 2013/03/22 22:50:25 bcallah Exp $
+--- configure.in.orig	Fri Mar 22 17:39:21 2013
++++ configure.in	Fri Mar 22 17:41:32 2013
+@@ -39,7 +39,7 @@ dnl FLTK library versions...
  FL_MAJOR_VERSION=1
  FL_MINOR_VERSION=3
- FL_PATCH_VERSION=0
+ FL_PATCH_VERSION=1
 -FL_API_VERSION=${FL_MAJOR_VERSION}.${FL_MINOR_VERSION}
 +FL_API_VERSION=${LIBfltk_VERSION}
  
  AC_SUBST(FL_MAJOR_VERSION)
  AC_SUBST(FL_MINOR_VERSION)
-@@ -789,7 +789,7 @@ if test "x$enable_threads" != xno -a x$check_pthread =
- 
-     if test x$ac_cv_header_pthread_h = xyes; then
- 	dnl Check various threading options for the platforms we support
--	for flag in -lpthreads -lpthread -pthread; do
-+	for flag in -pthread; do
-             AC_MSG_CHECKING([for pthread_create using $flag])
- 	    SAVELIBS="$LIBS"
- 	    LIBS="$flag $LIBS"
-@@ -923,7 +923,7 @@ case $uname_GUI in
+@@ -914,7 +914,7 @@ case $uname_GUI in
  	    AC_MSG_WARN(Ignoring libraries \"$X_PRE_LIBS\" requested by configure.)
  	fi
  
@@ -28,7 +19,7 @@ $OpenBSD: patch-configure_in,v 1.13 2012/08/04 18:07:03 pascal Exp $
  	CFLAGS="$CFLAGS $X_CFLAGS"
  	CXXFLAGS="$CXXFLAGS $X_CFLAGS"
  	LDFLAGS="$X_LIBS $LDFLAGS"
-@@ -1147,7 +1147,7 @@ if test -n "$GCC"; then
+@@ -1138,7 +1138,7 @@ if test -n "$GCC"; then
          if test "x$with_optim" != x; then
  	    OPTIM="$with_optim $OPTIM"
  	else

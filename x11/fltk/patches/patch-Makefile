@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.5 2012/08/04 18:07:03 pascal Exp $
---- Makefile.orig	Tue Feb 15 16:29:03 2011
-+++ Makefile	Fri May 25 01:03:08 2012
-@@ -27,7 +27,7 @@
+$OpenBSD: patch-Makefile,v 1.6 2013/03/22 22:50:25 bcallah Exp $
+--- Makefile.orig	Tue Jul 19 00:49:30 2011
++++ Makefile	Fri Mar 22 17:43:11 2013
+@@ -18,7 +18,7 @@
  
  include makeinclude
  

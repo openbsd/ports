@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2012/08/04 18:07:03 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.13 2013/03/22 22:50:25 bcallah Exp $
 bin/fltk-config
 @bin bin/fluid
 include/FL/
@@ -145,10 +145,13 @@ include/FL/names.h
 include/FL/win32.H
 include/FL/x.H
 lib/libfltk.a
+@lib lib/libfltk.so.${LIBfltk_VERSION}
 lib/libfltk_forms.a
+@lib lib/libfltk_forms.so.${LIBfltk_forms_VERSION}
 lib/libfltk_gl.a
+@lib lib/libfltk_gl.so.${LIBfltk_gl_VERSION}
 lib/libfltk_images.a
+@lib lib/libfltk_images.so.${LIBfltk_images_VERSION}
 @man man/man1/fltk-config.1
 @man man/man1/fluid.1
 @man man/man3/fltk.3
-%%SHARED%%

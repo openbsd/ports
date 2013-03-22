@@ -1,19 +1,20 @@
-# $OpenBSD: Makefile,v 1.45 2013/03/11 11:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.46 2013/03/22 22:50:25 bcallah Exp $
 
 COMMENT=	Fast-Light Tool Kit
 
-VER=		1.3.0
+VER=		1.3.2
 DISTNAME=	fltk-${VER}-source
 PKGNAME=	fltk-${VER}
-REVISION=	0
 
 CATEGORIES=	x11
-SHARED_LIBS=	fltk		7.0 \
-		fltk_forms	7.0 \
-		fltk_gl		7.0 \
-		fltk_images	7.0
+SHARED_LIBS=	fltk		7.1 \
+		fltk_forms	7.1 \
+		fltk_gl		7.1 \
+		fltk_images	7.1
 
 HOMEPAGE=	http://www.fltk.org/
+
+MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # LGPLv2 with exceptions (see COPYING)
 PERMIT_PACKAGE_CDROM=	Yes
@@ -30,7 +31,7 @@ LIB_DEPENDS=	graphics/jpeg \
 
 NO_TEST=	Yes
 CONFIGURE_STYLE=autoconf no-autoheader
-AUTOCONF_VERSION=2.59
+AUTOCONF_VERSION=2.68
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-threads
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
