@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 10:50:23 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/22 16:15:30 benoit Exp $
 COMMENT=	LRU cache in memory with expiry
 
 MODULES=	cpan
-DISTNAME=	Tie-Cache-LRU-Expires-0.54
-REVISION=	0
+DISTNAME =	Tie-Cache-LRU-Expires-0.55
 CATEGORIES=	devel
-USE_GROFF =	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/p5-Tie-Cache-LRU \
