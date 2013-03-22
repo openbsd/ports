@@ -1,0 +1,23 @@
+This is Term::ReadLine::TTYtter. It is a modified version of T::RL:Perl
+with several new nonstandard features specific to TTYtter, but may be
+useful for other applications.
+
+It also allows UTF-8 charaters to be entered without crashing, and adds
+a counter so you can see how many characters you've entered (which is a
+big deal for Twitter and other microblogging platforms).
+
+These methods are additionally defined, which are non-standard:
+
+* removereadline method: erases the current prompt from the screen
+* redisplay method: repaints the current prompt from the screen
+* hook_background_control method: connects the interactive readline
+       prompt to a PID specified by $main::child. The PID is then sent
+       signal SIGUSR1 when a character is beginning processing (i.e.,
+       the process needs to NOT write to the screen), and SIGUSR2 when
+       done (i.e., the process can write again).
+* hook_use_ansi: same, but connects to $main::dont_use_counter (1 =
+       disable_counter). Useful for prompts where this is irrelevant.
+* hook_no_tco: this is Twitter specific. See code.
+
+(The use of hooks into $main:: was so that the calling convention of
+&readline would not have to be disturbed to pass additional options.)
