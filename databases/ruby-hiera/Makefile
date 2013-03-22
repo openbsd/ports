@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/20 06:56:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/22 18:18:22 ajacoutot Exp $
 
 COMMENT=		simple pluggable hierarchical database
 
@@ -17,6 +17,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		lang/ruby
+MODRUBY_REV=		1.8
 
 MODRUBY_HANDLE_FLAVORS=	No
 
