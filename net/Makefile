@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.795 2013/03/18 20:24:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.796 2013/03/22 16:50:25 bcallah Exp $
 
      SUBDIR =
      SUBDIR += BitTorrent
@@ -565,6 +565,7 @@
      SUBDIR += tcptrace
      SUBDIR += tcptraceroute
      SUBDIR += telepathy
+     SUBDIR += texapp
      SUBDIR += thcrut
      SUBDIR += tintin++
      SUBDIR += tinyfugue
