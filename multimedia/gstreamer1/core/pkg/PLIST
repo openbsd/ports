@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/01/08 13:47:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/03/22 17:21:43 ajacoutot Exp $
 @bin bin/gst-inspect-${VERSION}
 @bin bin/gst-launch-${VERSION}
 @bin bin/gst-typefind-${VERSION}
@@ -226,12 +226,14 @@ share/gtk-doc/html/gstreamer-libs-${VERSION}/gstreamer-check.html
 share/gtk-doc/html/gstreamer-libs-${VERSION}/gstreamer-control.html
 share/gtk-doc/html/gstreamer-libs-${VERSION}/gstreamer-hierarchy.html
 share/gtk-doc/html/gstreamer-libs-${VERSION}/gstreamer-libs-${VERSION}.devhelp2
+share/gtk-doc/html/gstreamer-libs-${VERSION}/gstreamer-libs-GstARGBControlBinding.html
 share/gtk-doc/html/gstreamer-libs-${VERSION}/gstreamer-libs-GstBaseParse.html
 share/gtk-doc/html/gstreamer-libs-${VERSION}/gstreamer-libs-GstBitReader.html
 share/gtk-doc/html/gstreamer-libs-${VERSION}/gstreamer-libs-GstBufferStraw.html
 share/gtk-doc/html/gstreamer-libs-${VERSION}/gstreamer-libs-GstByteReader.html
 share/gtk-doc/html/gstreamer-libs-${VERSION}/gstreamer-libs-GstByteWriter.html
 share/gtk-doc/html/gstreamer-libs-${VERSION}/gstreamer-libs-GstCheck.html
+share/gtk-doc/html/gstreamer-libs-${VERSION}/gstreamer-libs-GstDirectControlBinding.html
 share/gtk-doc/html/gstreamer-libs-${VERSION}/gstreamer-libs-GstNetTimePacket.html
 share/gtk-doc/html/gstreamer-libs-${VERSION}/gstreamer-libs-GstStreamConsistency.html
 share/gtk-doc/html/gstreamer-libs-${VERSION}/gstreamer-libs-GstTypeFindHelper.html
