@@ -1,17 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/10/20 10:56:59 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/03/22 15:13:07 gonzalo Exp $
 @bin bin/gource
 @man man/man1/gource.1
 share/gource/
 share/gource/beam.png
 share/gource/bloom.tga
 share/gource/bloom_alpha.tga
-share/gource/cursor.png
 share/gource/file.png
 share/gource/fonts/
 share/gource/fonts/FreeSans.ttf
 share/gource/fonts/README
 share/gource/gource.style
-share/gource/no_photo.png
 share/gource/shaders/
 share/gource/shaders/bloom.frag
 share/gource/shaders/bloom.vert
@@ -19,3 +17,4 @@ share/gource/shaders/shadow.frag
 share/gource/shaders/shadow.vert
 share/gource/shaders/text.frag
 share/gource/shaders/text.vert
+share/gource/user.png
