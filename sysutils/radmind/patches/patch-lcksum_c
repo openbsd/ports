@@ -1,7 +1,7 @@
-$OpenBSD: patch-lcksum_c,v 1.4 2008/11/10 09:19:25 jasper Exp $
---- lcksum.c.orig	Fri Nov  7 23:33:01 2008
-+++ lcksum.c	Fri Nov  7 23:33:39 2008
-@@ -431,7 +431,7 @@ do_lcksum( char *tpath )
+$OpenBSD: patch-lcksum_c,v 1.5 2013/03/22 13:46:35 benoit Exp $
+--- lcksum.c.orig	Sun Nov 28 21:37:44 2010
++++ lcksum.c	Sun Mar 17 23:52:25 2013
+@@ -437,7 +437,7 @@ do_lcksum( char *tpath )
  		    fprintf( ufs, "%s %-37s %4s %5s %5s %9ld "
  			    "%7" PRIofft "d %s\n",
  			targv[ 0 ], targv[ 1 ], targv[ 2 ], targv[ 3 ],
