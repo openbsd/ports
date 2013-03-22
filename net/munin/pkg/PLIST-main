@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2013/01/18 12:23:24 gonzalo Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2013/03/22 15:00:29 kirby Exp $
 @newgroup _munin:644
 @newgroup _munin-plugin:645
 @newuser _munin:644:_munin:daemon:munin user:/nonexistent:/sbin/nologin
@@ -121,7 +121,6 @@ libexec/munin/plugins/if_errcoll_
 libexec/munin/plugins/if_pps_
 libexec/munin/plugins/ifx_concurrent_sessions_
 libexec/munin/plugins/intr
-libexec/munin/plugins/iostat
 @comment libexec/munin/plugins/ipac-ng
 libexec/munin/plugins/ipmi_
 libexec/munin/plugins/ipmi_sensor_
@@ -133,6 +132,7 @@ libexec/munin/plugins/mailman
 libexec/munin/plugins/mailscanner
 @comment libexec/munin/plugins/mbmon_
 libexec/munin/plugins/memcached_
+libexec/munin/plugins/memory
 libexec/munin/plugins/mhttping
 libexec/munin/plugins/multiping
 libexec/munin/plugins/multips
@@ -321,6 +321,7 @@ sbin/munin-run
 sbin/munin-sched
 share/doc/munin/
 share/doc/munin/UPGRADING
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/munin/munin-node.conf
 @sample ${SYSCONFDIR}/munin/munin-node.conf
 share/examples/munin/plugin-conf.d/

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.4 2012/10/12 09:46:46 kirby Exp $
+@comment $OpenBSD: PLIST-server,v 1.5 2013/03/22 15:00:29 kirby Exp $
 @extraunexec rm -rf /var/www/htdocs/munin/*
 @extraunexec rm -rf /var/db/munin/*
 @owner www
@@ -31,6 +31,7 @@ share/examples/munin/munin-cgi-graph.log
 share/examples/munin/munin-cgi-html.log
 @sample /var/log/munin/munin-cgi-html.log
 @owner
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/munin/munin-conf.d/
 @sample ${SYSCONFDIR}/munin/munin-conf.d/
 share/examples/munin/munin.conf

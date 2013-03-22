@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2013/03/11 11:35:49 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2013/03/22 15:00:29 kirby Exp $
 
 COMMENT-main =	flexible network host monitoring, client
 COMMENT-server =flexible network host monitoring, server
 
-V =		2.0.10
+V =		2.0.12
 DISTNAME =	munin-$V
 PKGNAME-main =	munin-node-$V
 PKGNAME-server =munin-server-$V
@@ -70,9 +70,10 @@ SUBST_LIST += ${FILESDIR}/$i ${WRKSRC}/plugins/node.d.openbsd/$i.in
 post-extract:
 	cp -Rp ${WRKSRC}/plugins/node.d.freebsd ${WRKSRC}/plugins/node.d.openbsd
 	cp -p ${WRKSRC}/plugins/node.d.netbsd/uptime.in ${WRKSRC}/plugins/node.d.openbsd
+	cp -p ${WRKSRC}/plugins/node.d.netbsd/memory.in ${WRKSRC}/plugins/node.d.openbsd
 	${SUBST_CMD} -c ${SUBST_LIST}
 	chmod -R +x ${WRKSRC}/plugins/node.d.openbsd
-	rm ${WRKSRC}/plugins/node.d.openbsd/memory.in # not yet ported
+	rm ${WRKSRC}/plugins/node.d.openbsd/iostat.in # not yet ported
 
 # Fixup hardcoded paths in plugins to use TRUEPREFIX/LOCALBASE as appropriate,
 # there are far too many to handle this via patches/SUBST_CMD, and this method

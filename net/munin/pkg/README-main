@@ -1,0 +1,34 @@
+$OpenBSD: README-main,v 1.1 2013/03/22 15:00:29 kirby Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+munin-node is the "client" side of Munin; it runs on various hosts and
+accepts requests from a munin-server, and invokes various plugins to
+provide statistics about the host.
+
+Before starting munin-node, you will need to configure access controls
+and choose which plugins to use.
+
+Access controls are configured in ${SYSCONFDIR}/munin/munin-node.conf.
+
+Plugins are enabled by creating symlinks in ${SYSCONFDIR}/munin/plugins.
+Run "munin-node-configure --shell" to output a set of shell commands to
+enable plugins which can be auto-detected. (These commands are not run
+automatically, so you can easily choose which you would like to enable).
+
+Some plugins require access to log files which are normally readable only
+by root (a common example is /var/log/maillog), but by default the
+plugins are run by the "_munin-plugin" user.
+
+You can change permissions and ownership of the log files (and edit
+/etc/newsyslog.conf to match). If necessary you can configure the plugin
+to run as a different user with the "user" option (see
+${SYSCONFDIR}/munin/plugin-conf.d/openbsd-packages).
+
+SNMP-based monitors are also available; to use these, install the
+p5-Net-SNMP package.
+
+For further information, see
+http://munin-monitoring.org/wiki/Documentation
