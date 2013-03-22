@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/22 17:53:09 zhuk Exp $
+@bin bin/cagibid
+share/dbus-1/interfaces/org.kde.Cagibi.Control.xml
+share/dbus-1/interfaces/org.kde.Cagibi.DeviceList.xml
+share/dbus-1/system-services/org.kde.Cagibi.service
+share/examples/cagibi/
+share/examples/cagibi/cagibid.conf
+@sample ${SYSCONFDIR}/cagibid.conf
+share/examples/dbus-1/system.d/
+@sample ${SYSCONFDIR}/dbus-1/system.d/
+share/examples/dbus-1/system.d/org.kde.Cagibi.conf
+@sample ${SYSCONFDIR}/dbus-1/system.d/org.kde.Cagibi.conf
