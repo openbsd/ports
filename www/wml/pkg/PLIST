@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/07/14 16:12:12 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/03/22 21:52:16 sthen Exp $
 bin/wmb
 bin/wmd
 bin/wmk
@@ -60,16 +60,16 @@ libexec/wml/
 libexec/wml/wml_aux_freetable
 libexec/wml/wml_aux_htmlclean
 libexec/wml/wml_aux_htmlinfo
-libexec/wml/wml_aux_iselect
+@bin libexec/wml/wml_aux_iselect
 libexec/wml/wml_aux_linklint
 libexec/wml/wml_aux_map2html
 libexec/wml/wml_aux_tidy
 libexec/wml/wml_aux_txt2html
 libexec/wml/wml_aux_weblint
 libexec/wml/wml_p1_ipp
-libexec/wml/wml_p2_mp4h
-libexec/wml/wml_p3_eperl
-libexec/wml/wml_p4_gm4
+@bin libexec/wml/wml_p2_mp4h
+@bin libexec/wml/wml_p3_eperl
+@bin libexec/wml/wml_p4_gm4
 libexec/wml/wml_p5_divert
 libexec/wml/wml_p6_asubst
 libexec/wml/wml_p7_htmlfix
