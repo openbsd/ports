@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:41:30 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/22 13:20:36 benoit Exp $
 
 COMMENT =	disk auto-mounter
 
-DISTNAME =	hotplug-diskmount-0.7
+DISTNAME =	hotplug-diskmount-0.8
 
 CATEGORIES =	sysutils
 
