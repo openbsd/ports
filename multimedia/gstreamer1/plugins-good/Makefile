@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/01/08 13:48:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/22 17:22:08 ajacoutot Exp $
 
 # XXX ossaudio(3) is only enabled to be used as a mixing device by
 # x11/xfce4/xfce4-mixer
@@ -6,7 +6,7 @@
 COMMENT-main=		good elements for GStreamer
 COMMENT-pulse=		pulseaudio(1) element for GStreamer
 
-V=			1.0.5
+V=			1.0.6
 DISTNAME=		gst-plugins-good-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-good-${V}
 
@@ -18,16 +18,16 @@ WANTLIB += gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
 WANTLIB += gthread-2.0 m orc-0.4 pcre pthread z ICE SM X11 Xext xcb
 
 WANTLIB-main +=	${WANTLIB}
-WANTLIB-main += FLAC Xdamage Xfixes Xv bz2 dbus-1 gcrypt xml2
+WANTLIB-main += FLAC Xdamage Xfixes Xv bz2 dbus-1 gcrypt xml2 pthread-stubs
 WANTLIB-main += gdk_pixbuf-2.0 gio-2.0 gnome-keyring gpg-error gstcontroller-1.0
-WANTLIB-main += gstfft-1.0 gstnet-1.0 gstriff-1.0 gstrtp-1.0 gstrtsp-1.0
+WANTLIB-main += gstfft-1.0 gstnet-1.0 gstriff-1.0 gstrtp-1.0 gstrtsp-1.0 xcb-render
 WANTLIB-main += gstsdp-1.0 jpeg ogg ossaudio png shout soup-2.4 soup-gnome-2.4
 WANTLIB-main += speex sqlite3 stdc++ tag theora vorbis vpx wavpack xcb-shm
-WANTLIB-main += GL Xau Xdmcp Xrender Xxf86vm cairo cairo-gobject drm
-WANTLIB-main += expat fontconfig freetype pixman-1 pthread-stubs xcb-render
+WANTLIB-main += Xrender cairo cairo-gobject expat fontconfig freetype pixman-1
 
 WANTLIB-pulse += ${WANTLIB}
 WANTLIB-pulse += execinfo gdbm json pulse sndfile X11-xcb Xi Xtst
+WANTLIB-pulse += FLAC ogg vorbis vorbisenc
 
 MASTER_SITES=		${MASTER_SITE_GST:=gst-plugins-good/}
 
