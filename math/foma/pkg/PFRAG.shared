@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2012/10/20 04:34:32 bentley Exp $
-@lib lib/libfoma.so.${LIBfoma_VERSION}

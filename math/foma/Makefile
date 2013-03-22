@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:23:54 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/22 18:10:59 naddy Exp $
 
 COMMENT =		finite-state compiler and C library
 
 DISTNAME =		foma-0.9.16alpha
 PKGNAME =		${DISTNAME:S/alpha//}
+REVISION =		0
 
 SHARED_LIBS +=		foma                      0.0 # 0.9.16
 
