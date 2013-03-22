@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.8 2012/11/29 14:07:22 giovanni Exp $
---- Makefile.in.orig	Wed Oct 10 13:54:29 2012
-+++ Makefile.in	Wed Nov 28 17:23:39 2012
-@@ -272,8 +272,8 @@ man8dir = $(mandir)/man8
+$OpenBSD: patch-Makefile_in,v 1.9 2013/03/22 17:55:42 giovanni Exp $
+--- Makefile.in.orig	Sat Mar 16 15:36:24 2013
++++ Makefile.in	Wed Mar 20 14:48:40 2013
+@@ -273,8 +273,8 @@ man8dir = $(mandir)/man8
  NROFF = nroff
  MANS = $(man_MANS)
  DATA = $(attributelog_DATA) $(docs_DATA) $(drivedb_DATA) \
@@ -12,20 +12,39 @@ $OpenBSD: patch-Makefile_in,v 1.8 2012/11/29 14:07:22 giovanni Exp $
  ETAGS = etags
  CTAGS = ctags
  CSCOPE = cscope
-@@ -486,15 +486,7 @@ EXTRA_smartd_SOURCES = os_darwin.cpp os_darwin.h os_li
+@@ -490,17 +490,7 @@ EXTRA_smartd_SOURCES = os_darwin.cpp os_darwin.h os_li
  @OS_SOLARIS_FALSE@                  smartd.8
  
  docsdir = $(docdir)
--docs_DATA = AUTHORS     \
--            CHANGELOG   \
--            COPYING     \
--            INSTALL     \
--            NEWS        \
--            README      \
--            TODO        \
--            WARNINGS    \
--            smartd.conf
+-docs_DATA = \
+-        AUTHORS \
+-        ChangeLog \
+-        ChangeLog-5.0-6.0 \
+-        COPYING \
+-        INSTALL \
+-        NEWS \
+-        README \
+-        TODO \
+-        WARNINGS \
+-        smartd.conf
 +docs_DATA = smartd.conf
  
  examplesdir = $(exampledir)
  examples_DATA = \
+@@ -510,13 +500,14 @@ examples_SCRIPTS = \
+         examplescripts/Example1 \
+         examplescripts/Example2 \
+         examplescripts/Example3 \
+-        examplescripts/Example4
++        examplescripts/Example4 \
++		smartd_warning.sh
+ 
+ sysconf_DATA = smartd.conf
+ 
+ # automake does not allow 'sysconf_SCRIPTS'
+ sysscriptdir = $(sysconfdir)
+-sysscript_SCRIPTS = smartd_warning.sh
++sysscript_SCRIPTS =
+ EXTRA_DIST = \
+         autogen.sh \
+         smartd.initd.in \
