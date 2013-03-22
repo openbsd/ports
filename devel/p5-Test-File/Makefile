@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:22 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/22 16:59:04 benoit Exp $
 
 COMMENT=		test file attributes
 
-DISTNAME=		Test-File-1.25
-REVISION=		0
+DISTNAME=		Test-File-1.34
 CATEGORIES=		devel
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
-USE_GROFF =		Yes
 
 RUN_DEPENDS=		devel/p5-Test-Manifest
 
