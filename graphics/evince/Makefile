@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2013/03/11 11:10:52 espie Exp $
+# $OpenBSD: Makefile,v 1.90 2013/03/22 06:44:39 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -69,16 +69,12 @@ RUN_DEPENDS-main= ${RUN_DEPENDS} \
 
 WANTLIB-djvu=	${WANTLIB} jpeg evdocument3 djvulibre ICE SM \
 		 dbus-1 pthread
-# port-lib-depends-check misses these ones because the depending lib
-# is under lib/evince/3/backends/
 LIB_DEPENDS-djvu= ${LIB_DEPENDS} \
 		${BASE_PKGPATH} \
 		graphics/djvulibre
 
 WANTLIB-dvi=	${WANTLIB} gs evdocument3 kpathsea spectre ICE SM \
 		jpeg
-# port-lib-depends-check misses these ones because the depending lib
-# is under lib/evince/3/backends/
 LIB_DEPENDS-dvi= ${LIB_DEPENDS} \
 		${BASE_PKGPATH} \
 		print/texlive/base \
