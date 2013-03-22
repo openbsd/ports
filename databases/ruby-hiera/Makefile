@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/22 18:18:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/22 19:58:21 jeremy Exp $
 
 COMMENT=		simple pluggable hierarchical database
 
 V=			1.1.2
 DISTNAME=		hiera-${V}
-PKGNAME=		ruby-hiera-${V}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		databases
 
@@ -17,9 +16,8 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		lang/ruby
-MODRUBY_REV=		1.8
 
-MODRUBY_HANDLE_FLAVORS=	No
+FLAVOR=			ruby18
 
 CONFIGURE_STYLE=	ruby gem
 
