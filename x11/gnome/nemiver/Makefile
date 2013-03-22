@@ -1,0 +1,57 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2013/03/22 13:57:48 ajacoutot Exp $
+
+SHARED_ONLY=	Yes
+
+COMMENT=	C/C++ debugger for GNOME
+
+GNOME_PROJECT=	nemiver
+GNOME_VERSION=	0.9.4
+
+CATEGORIES=	devel
+
+HOMEPAGE=	http://projects.gnome.org/nemiver/
+
+# GPLv2
+PERMIT_PACKAGE_CDROM=	Yes
+
+WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atkmm-1.6
+WANTLIB += atspi c cairo cairo-gobject cairomm-1.0 dbus-1 expat
+WANTLIB += ffi fontconfig freetype gailutil-3 gdk-3 gdk_pixbuf-2.0
+WANTLIB += gdkmm-3.0 gdl-3 gdlmm-3.0 gio-2.0 giomm-2.4 glib-2.0
+WANTLIB += glibmm-2.4 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
+WANTLIB += gtk-3 gtkhex-3 gtkmm-3.0 gtksourceview-3.0 gtksourceviewmm-3.0
+WANTLIB += gtop-2.0 harfbuzz icudata icule icuuc kvm m ncurses
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4 pcre
+WANTLIB += pixman-1 png pthread pthread-stubs sigc-2.0 sqlite3
+WANTLIB += stdc++ util vte2_90 xcb xcb-render xcb-shm xml2 z
+
+MODULES=	devel/dconf \
+		devel/gettext \
+		x11/gnome
+
+BUILD_DEPENDS=	devel/gsettings-desktop-schemas
+RUN_DEPENDS=	devel/gsettings-desktop-schemas \
+		devel/gdb
+LIB_DEPENDS=	devel/libgtop2 \
+		devel/vte3 \
+		x11/gnome/gdlmm \
+		x11/gnome/ghex \
+		x11/gtksourceviewmm3
+
+MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_ICON_CACHE=	Yes
+MODGNOME_TOOLS=		yelp
+MODGNOME_LDFLAGS=	-Wl,-rpath,${TRUEPREFIX}/lib/nemiver
+
+# XXX our libtool(1) does not like to link against unversioned SOLIBS
+USE_LIBTOOL=	gnu
+LIBTOOL_FLAGS=	--tag=disable-static
+
+CONFIGURE_ARGS=	--disable-static \
+		--with-default-gdb=${LOCALBASE}/bin/egdb
+
+post-install:
+	rm ${PREFIX}/lib/nemiver/{,modules,plugins/*}/*.la
+
+.include <bsd.port.mk>
