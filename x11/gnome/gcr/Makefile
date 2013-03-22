@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 11:46:10 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/22 11:05:59 ajacoutot Exp $
 
 COMMENT=	library for bits of crypto UI and parsing
 
 GNOME_PROJECT=	gcr
 GNOME_VERSION=	3.6.2
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  gck-1                     1.0 # 0.0
 SHARED_LIBS +=  gcr-3                     2.0 # 1.0
@@ -17,10 +17,10 @@ WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB += c cairo cairo-gobject dbus-1 expat ffi fontconfig freetype
 WANTLIB += gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gpg-error gthread-2.0 gtk-3 harfbuzz icudata
-WANTLIB += icule icuuc m p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs xcb xcb-render
-WANTLIB += xcb-shm z
+WANTLIB += gobject-2.0 gpg-error graphite2 gthread-2.0 gtk-3 harfbuzz
+WANTLIB += icudata icule icuuc m p11-kit pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += xcb xcb-render xcb-shm z
 
 MODULES=	devel/gettext \
 		x11/gnome \
@@ -53,12 +53,6 @@ post-patch:
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		autoreconf -i
-	@find ${WRKSRC} -name Makefile.am | xargs \
-		perl -pi -e 's|sed -i|perl -pi|g'
 ### end remove
-
-pre-configure:
-	find ${WRKSRC} -name Makefile.in | xargs \
-		perl -pi -e 's|sed -i|perl -pi|g'
 
 .include <bsd.port.mk>
