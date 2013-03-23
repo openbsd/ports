@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_css_c,v 1.2 2012/05/03 06:50:09 ajacoutot Exp $
---- src/css.c.orig	Mon Nov 14 05:00:53 2011
-+++ src/css.c	Mon Dec 12 05:39:54 2011
-@@ -218,10 +218,13 @@ int _dvdcss_title ( dvdcss_t dvdcss, int i_block )
+$OpenBSD: patch-src_css_c,v 1.3 2013/03/23 23:28:14 brad Exp $
+--- src/css.c.orig	Tue Feb 26 03:08:35 2013
++++ src/css.c	Sun Mar 10 22:29:29 2013
+@@ -219,10 +219,13 @@ int _dvdcss_title ( dvdcss_t dvdcss, int i_block )
          {
              char psz_key[KEY_SIZE * 3];
              unsigned int k0, k1, k2, k3, k4;
@@ -17,7 +17,7 @@ $OpenBSD: patch-src_css_c,v 1.2 2012/05/03 06:50:09 ajacoutot Exp $
                   && sscanf( psz_key, "%x:%x:%x:%x:%x",
                              &k0, &k1, &k2, &k3, &k4 ) == 5 )
              {
-@@ -235,9 +238,12 @@ int _dvdcss_title ( dvdcss_t dvdcss, int i_block )
+@@ -236,9 +239,12 @@ int _dvdcss_title ( dvdcss_t dvdcss, int i_block )
                  /* Don't try to save it again */
                  b_cache = 0;
                  i_ret = 1;
@@ -32,10 +32,10 @@ $OpenBSD: patch-src_css_c,v 1.2 2012/05/03 06:50:09 ajacoutot Exp $
          }
      }
  
-@@ -249,6 +255,15 @@ int _dvdcss_title ( dvdcss_t dvdcss, int i_block )
+@@ -250,6 +256,15 @@ int _dvdcss_title ( dvdcss_t dvdcss, int i_block )
          if( i_ret < 0 )
          {
-             print_error( dvdcss, "fatal error in vts css key" );
+             print_error( dvdcss, "fatal error in VTS CSS key" );
 +            i_fd = open( dvdcss->psz_cachefile, O_RDWR|O_CREAT, 0644 );
 +            if( i_fd >= 0 )
 +            {

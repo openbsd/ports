@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/21 08:45:13 ajacoutot Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.23 2013/03/23 23:28:14 brad Exp $
 
 COMMENT=	descramble scrambled DVDs
 
-VER=		1.2.12
+VER=		1.2.13
 DISTNAME=	libdvdcss-${VER}
-REVISION=	0
 CATEGORIES=	converters
 MASTER_SITES=	http://download.videolan.org/pub/libdvdcss/${VER}/
 EXTRACT_SUFX=	.tar.bz2
@@ -20,9 +17,7 @@ PERMIT_PACKAGE_CDROM=	Free speech issue
 PERMIT_PACKAGE_FTP=	Yes
 
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.68
-MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/.auto
-CONFIGURE_ENV=	ac_cv_path_DOXYGEN=no \
-		ac_cv_path_LATEX=no
+AUTOCONF_VERSION= 2.69
+CONFIGURE_ARGS=	--disable-doc
 
 .include <bsd.port.mk>
