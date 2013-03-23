@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/10 23:04:44 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/23 21:58:16 sthen Exp $
 
 COMMENT-main =	Wireless Networking in the Developing World, English edition
 COMMENT-es =	Wireless Networking in the Developing World, Spanish edition
@@ -27,7 +27,8 @@ MULTI_PACKAGES =-main -es -fr -ar -pt -id
 
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
-# Higher-quality printable PDFs are also available at the homepage.
+# Higher-quality printable PDFs (109MB) are also available at the homepage.
+# Also available in print.
 HOMEPAGE =	http://wndw.net/
 
 MASTER_SITES =	${HOMEPAGE}pdf/wndw2-en/
@@ -35,7 +36,8 @@ MASTER_SITES0 =	${HOMEPAGE}pdf/wndw3-es/
 MASTER_SITES1 =	${HOMEPAGE}pdf/wndw2-fr/
 MASTER_SITES2 =	${HOMEPAGE}pdf/wndw2-ar/
 MASTER_SITES3 =	${HOMEPAGE}pdf/wndw-pt/
-MASTER_SITES4 =	${HOMEPAGE}pdf/wndw-id/
+MASTER_SITES4 =	${HOMEPAGE}pdf/wndw-id/ \
+		http://opensource.telkomspeedy.com:5432/furusato/files/
 
 DISTFILES =	wndw2-ebook.pdf \
 		wndw3-es-ebook.pdf:0 \
