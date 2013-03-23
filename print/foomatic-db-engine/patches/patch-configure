@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.6 2011/08/25 10:40:29 ajacoutot Exp $
---- configure.orig	Mon Jul 25 11:51:22 2011
-+++ configure	Thu Aug 25 12:24:42 2011
-@@ -4038,15 +4038,15 @@ LIBS="$save_LIBS"
+$OpenBSD: patch-configure,v 1.7 2013/03/23 08:33:58 ajacoutot Exp $
+--- configure.orig	Mon Mar 11 18:57:50 2013
++++ configure	Sat Mar 23 09:07:47 2013
+@@ -3705,15 +3705,15 @@ LIBS="$save_LIBS"
  
  # Checks for programs/directories which are used by Foomtic
  
@@ -16,17 +16,17 @@ $OpenBSD: patch-configure,v 1.6 2011/08/25 10:40:29 ajacoutot Exp $
 -MTINKPIPESSEARCHPATH=/var:/var/run:/usr/var/:/usr/var/run:/usr/local/var:/usr/local/var/run:/dev
 +SPOOLSEARCHPATH=/var/spool
 +LOGSEARCHPATH=/var/log
-+SYSCONFSEARCHPATH=!!SYSCONFDIR!!
-+SBINSEARCHPATH=/usr/sbin:/sbin:!!LOCALBASE!!/sbin:/etc/sbin
-+BINSEARCHPATH=/usr/bin:/bin:!!LOCALBASE!!/bin
-+DATASEARCHPATH=/usr/share:!!LOCALBASE!!/share:/usr/lib:!!LOCALBASE!!/lib
-+LIBSEARCHPATH=/usr/lib:/lib:!!LOCALBASE!!/lib:!!LOCALBASE!!/libexec
++SYSCONFSEARCHPATH=${SYSCONFDIR}
++SBINSEARCHPATH=/usr/sbin:/sbin:${LOCALBASE}/sbin:/etc/sbin
++BINSEARCHPATH=/usr/bin:/bin:${LOCALBASE}/bin
++DATASEARCHPATH=/usr/share:${LOCALBASE}/share:/usr/lib:${LOCALBASE}/lib
++LIBSEARCHPATH=/usr/lib:/lib:${LOCALBASE}/lib:${LOCALBASE}/libexec
 +PTALPIPESSEARCHPATH=/var/run
 +MTINKPIPESSEARCHPATH=/var/run
  
  # There is a bug in some versions of autoconf that causes
  # bad expansion of paths in the AC_PATH_* macros.  This is very annoying
-@@ -4516,8 +4516,7 @@ else
+@@ -4175,8 +4175,7 @@ else
    PREFIX=$prefix
  fi
  echo -n Checking where Perl will find its libraries...
@@ -36,7 +36,7 @@ $OpenBSD: patch-configure,v 1.6 2011/08/25 10:40:29 ajacoutot Exp $
  if test -n "$PERLPREFIX"; then
    echo " $PERLPREFIX"
  else
-@@ -4535,7 +4534,7 @@ fi
+@@ -4194,7 +4193,7 @@ fi
  
  
  # Check for bourne shell
@@ -45,7 +45,7 @@ $OpenBSD: patch-configure,v 1.6 2011/08/25 10:40:29 ajacoutot Exp $
  do
    # Extract the first word of "$ac_prog", so it can be a program name with args.
  set dummy $ac_prog; ac_word=$2
-@@ -5993,8 +5992,8 @@ fi
+@@ -5652,8 +5651,8 @@ fi
  done
  test -n "$CUPS_LPINFO" || CUPS_LPINFO="/usr/sbin/lpinfo"
  
@@ -55,7 +55,7 @@ $OpenBSD: patch-configure,v 1.6 2011/08/25 10:40:29 ajacoutot Exp $
  for ac_dir in pdq
  do
  # Extract the first word of "$ac_dir", so it can be a program name with args.
-@@ -6129,9 +6128,11 @@ fi
+@@ -5788,9 +5787,11 @@ fi
    test -n "$PDQ_PRINT" && break
  done
  test -n "$PDQ_PRINT" || PDQ_PRINT="/usr/bin/pdq"
@@ -67,7 +67,7 @@ $OpenBSD: patch-configure,v 1.6 2011/08/25 10:40:29 ajacoutot Exp $
  for ac_prog in ppr/bin/pprd
  do
    # Extract the first word of "$ac_prog", so it can be a program name with args.
-@@ -6444,7 +6445,7 @@ fi
+@@ -6103,7 +6104,7 @@ fi
    test -n "$PPR_PPOP" && break
  done
  test -n "$PPR_PPOP" || PPR_PPOP="/usr/bin/ppop"
