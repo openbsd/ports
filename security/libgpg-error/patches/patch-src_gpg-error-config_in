@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_gpg-error-config_in,v 1.2 2010/07/27 21:45:06 ajacoutot Exp $
---- src/gpg-error-config.in.orig	Thu Jan 14 10:18:30 2010
-+++ src/gpg-error-config.in	Tue Jul 27 23:32:48 2010
-@@ -72,7 +72,7 @@ while test $# -gt 0; do
- 	    if test "x$libdir" != "x/usr/lib" -a "x$libdir" != "x/lib"; then
- 		output="$output -L$libdir"
- 	    fi
+$OpenBSD: patch-src_gpg-error-config_in,v 1.3 2013/03/23 13:38:06 ajacoutot Exp $
+--- src/gpg-error-config.in.orig	Sat Feb 23 17:38:49 2013
++++ src/gpg-error-config.in	Sat Mar 23 14:35:35 2013
+@@ -75,7 +75,7 @@ while test $# -gt 0; do
+ 		    output="$output -L$libdir"
+ 		    ;;
+ 	    esac
 -	    output="$output @GPG_ERROR_CONFIG_LIBS@"
 +	    output="$output @GPG_ERROR_CONFIG_LIBS@ @LTLIBINTL@"
  	    ;;
- 	*)
-             usage 1 1>&2
+         --host)
+             echo "@GPG_ERROR_CONFIG_HOST@"
