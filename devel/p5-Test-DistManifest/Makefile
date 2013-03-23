@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:22 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/23 13:32:31 benoit Exp $
 
 COMMENT = 	author test that validates a package MANIFEST
 
 MODULES =	cpan
 
-DISTNAME =	Test-DistManifest-1.011
+DISTNAME =	Test-DistManifest-1.012
 CATEGORIES =	devel
 
 # Perl
