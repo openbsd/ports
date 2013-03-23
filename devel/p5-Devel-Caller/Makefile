@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 10:50:16 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/23 14:17:44 benoit Exp $
 
 COMMENT =		meatier versions of caller
 
 SHARED_ONLY =		Yes
 MODULES =		cpan
-DISTNAME =		Devel-Caller-2.05
-REVISION =		0
+DISTNAME =		Devel-Caller-2.06
 CATEGORIES =		devel
 CPAN_AUTHOR =		RCLAMP
 
