@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2013/03/02 14:07:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.24 2013/03/23 13:25:04 ajacoutot Exp $
 @bin bin/certtool
 @bin bin/crywrap
 @bin bin/danetool
@@ -476,6 +476,8 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_privkey_set_pin_function.3
 @man man/man3/gnutls_privkey_sign_data.3
 @man man/man3/gnutls_privkey_sign_hash.3
+@man man/man3/gnutls_privkey_sign_raw_data.3
+@man man/man3/gnutls_privkey_status.3
 @man man/man3/gnutls_protocol_get_id.3
 @man man/man3/gnutls_protocol_get_name.3
 @man man/man3/gnutls_protocol_get_version.3
@@ -573,6 +575,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_session_force_valid.3
 @man man/man3/gnutls_session_get_data.3
 @man man/man3/gnutls_session_get_data2.3
+@man man/man3/gnutls_session_get_desc.3
 @man man/man3/gnutls_session_get_id.3
 @man man/man3/gnutls_session_get_id2.3
 @man man/man3/gnutls_session_get_ptr.3
@@ -664,6 +667,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_x509_crl_get_extension_info.3
 @man man/man3/gnutls_x509_crl_get_extension_oid.3
 @man man/man3/gnutls_x509_crl_get_issuer_dn.3
+@man man/man3/gnutls_x509_crl_get_issuer_dn2.3
 @man man/man3/gnutls_x509_crl_get_issuer_dn_by_oid.3
 @man man/man3/gnutls_x509_crl_get_next_update.3
 @man man/man3/gnutls_x509_crl_get_number.3
@@ -697,6 +701,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_x509_crq_get_basic_constraints.3
 @man man/man3/gnutls_x509_crq_get_challenge_password.3
 @man man/man3/gnutls_x509_crq_get_dn.3
+@man man/man3/gnutls_x509_crq_get_dn2.3
 @man man/man3/gnutls_x509_crq_get_dn_by_oid.3
 @man man/man3/gnutls_x509_crq_get_dn_oid.3
 @man man/man3/gnutls_x509_crq_get_extension_by_oid.3
@@ -746,6 +751,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_x509_crt_get_ca_status.3
 @man man/man3/gnutls_x509_crt_get_crl_dist_points.3
 @man man/man3/gnutls_x509_crt_get_dn.3
+@man man/man3/gnutls_x509_crt_get_dn2.3
 @man man/man3/gnutls_x509_crt_get_dn_by_oid.3
 @man man/man3/gnutls_x509_crt_get_dn_oid.3
 @man man/man3/gnutls_x509_crt_get_expiration_time.3
@@ -759,6 +765,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_x509_crt_get_issuer_alt_name2.3
 @man man/man3/gnutls_x509_crt_get_issuer_alt_othername_oid.3
 @man man/man3/gnutls_x509_crt_get_issuer_dn.3
+@man man/man3/gnutls_x509_crt_get_issuer_dn2.3
 @man man/man3/gnutls_x509_crt_get_issuer_dn_by_oid.3
 @man man/man3/gnutls_x509_crt_get_issuer_dn_oid.3
 @man man/man3/gnutls_x509_crt_get_issuer_unique_id.3
@@ -878,6 +885,9 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_x509_trust_list_deinit.3
 @man man/man3/gnutls_x509_trust_list_get_issuer.3
 @man man/man3/gnutls_x509_trust_list_init.3
+@man man/man3/gnutls_x509_trust_list_remove_cas.3
+@man man/man3/gnutls_x509_trust_list_remove_trust_file.3
+@man man/man3/gnutls_x509_trust_list_remove_trust_mem.3
 @man man/man3/gnutls_x509_trust_list_verify_crt.3
 @man man/man3/gnutls_x509_trust_list_verify_named_crt.3
 share/doc/gnutls/
