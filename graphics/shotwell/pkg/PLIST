@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2013/01/13 15:42:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2013/03/23 15:19:45 ajacoutot Exp $
 %%SHARED%%
 @bin bin/shotwell
 @bin bin/shotwell-video-thumbnailer
@@ -19,6 +19,7 @@ lib/shotwell/plugins/builtin/piwigo.png
 lib/shotwell/plugins/builtin/piwigo_authentication_pane.glade
 lib/shotwell/plugins/builtin/piwigo_publishing_options_pane.glade
 lib/shotwell/plugins/builtin/slideshow-plugin.png
+lib/shotwell/plugins/builtin/tumblr.png
 lib/shotwell/plugins/builtin/yandex_publish_model.glade
 lib/shotwell/plugins/builtin/youtube.png
 lib/shotwell/plugins/builtin/youtube_publishing_options_pane.glade

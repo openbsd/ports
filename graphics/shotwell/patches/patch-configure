@@ -1,18 +1,18 @@
-$OpenBSD: patch-configure,v 1.4 2012/02/27 19:41:55 ajacoutot Exp $
---- configure.orig	Sun Feb 26 15:04:33 2012
-+++ configure	Sun Feb 26 15:07:49 2012
+$OpenBSD: patch-configure,v 1.5 2013/03/23 15:19:45 ajacoutot Exp $
+--- configure.orig	Mon Mar 18 19:48:16 2013
++++ configure	Sat Mar 23 15:57:08 2013
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env bash
 +#!/bin/sh
  #
- # Copyright 2009-2012 Yorba Foundation
+ # Copyright 2009-2013 Yorba Foundation
  #
-@@ -129,7 +129,7 @@ do
-         
-         *)                  if [ ! $value ]
-                             then
--                                abort $1
-+                                echo "$1 is not a valid argument, FAIL"1
-                             fi
-                             
-                             variables="${variables}${option}=${value}\n"
+@@ -47,8 +47,6 @@ configure_help() {
+ 
+ abort() {
+     printf "%s: Invalid argument %s\n" $0 $1
+-    configure_help
+-    exit 1
+ }
+ 
+ while [ $# != 0 ]

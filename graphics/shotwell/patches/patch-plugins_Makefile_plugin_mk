@@ -1,7 +1,7 @@
-$OpenBSD: patch-plugins_Makefile_plugin_mk,v 1.4 2012/09/24 20:32:49 jasper Exp $
---- plugins/Makefile.plugin.mk.orig	Wed Sep 19 21:08:59 2012
-+++ plugins/Makefile.plugin.mk	Mon Sep 24 21:32:25 2012
-@@ -34,16 +34,16 @@ SRC_FILES := ../common/Resources.vala $(SRC_FILES)
+$OpenBSD: patch-plugins_Makefile_plugin_mk,v 1.5 2013/03/23 15:19:45 ajacoutot Exp $
+--- plugins/Makefile.plugin.mk.orig	Mon Mar 18 19:48:16 2013
++++ plugins/Makefile.plugin.mk	Sat Mar 23 16:01:41 2013
+@@ -34,7 +34,7 @@ SRC_FILES := ../common/Resources.vala $(SRC_FILES)
  CFILES := $(notdir $(SRC_FILES:.vala=.c))
  OFILES := $(notdir $(SRC_FILES:.vala=.o))
  
@@ -10,14 +10,3 @@ $OpenBSD: patch-plugins_Makefile_plugin_mk,v 1.4 2012/09/24 20:32:49 jasper Exp 
  LIBS := `pkg-config --print-errors --libs $(EXT_PKGS) $(PLUGIN_PKGS)`
  DEFINES := -D_VERSION='"$(PLUGINS_VERSION)"' -DGETTEXT_PACKAGE='"shotwell"'
  
- all: $(PLUGIN).so
- 
- .stamp: $(SRC_FILES) $(MAKE_FILES) $(HEADER_FILES)
--	$(VALAC) --target-glib=$(MIN_GLIB_VERSION) -g --enable-checking --fatal-warnings --save-temps --enable-deprecated --compile \
-+	$(VALAC) --target-glib=$(MIN_GLIB_VERSION) -g --enable-checking --save-temps --enable-deprecated --compile \
- 		--vapidir=../ $(foreach pkg,$(PKGS),--pkg=$(pkg)) $(foreach pkg,$(CUSTOM_VAPI_PKGS),--pkg=$(pkg)) \
--		-X -I../.. -X -fPIC \
-+		-X -I${LOCALBASE}/include -X -I../.. -X -fPIC \
- 		$(foreach dfn,$(DEFINES),-X $(dfn)) \
- 		$(USER_VALAFLAGS) \
- 		--vapidir=../../vapi \
