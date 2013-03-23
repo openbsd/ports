@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/10/26 10:39:27 landry Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/03/23 13:33:58 ajacoutot Exp $
 @bin bin/dumpsexp
 @bin bin/hmac256
 bin/libgcrypt-config
@@ -7,5 +7,5 @@ include/gcrypt.h
 @info info/gcrypt.info
 lib/libgcrypt.a
 lib/libgcrypt.la
+@lib lib/libgcrypt.so.${LIBgcrypt_VERSION}
 share/aclocal/libgcrypt.m4
-%%SHARED%%

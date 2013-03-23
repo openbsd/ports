@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2005/12/24 22:32:53 sturm Exp $
-@lib lib/libgcrypt.so.${LIBgcrypt_VERSION}
