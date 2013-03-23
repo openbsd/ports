@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:23 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/23 11:33:38 benoit Exp $
 
 COMMENT= 	sends test results to cpan-testers@perl.org
 
 MODULES=	cpan
-DISTNAME=	Test-Reporter-1.5201
-REVISION=	0
+DISTNAME =	Test-Reporter-1.58
 CATEGORIES=	devel
-USE_GROFF =	Yes
+
+EPOCH =		0
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
