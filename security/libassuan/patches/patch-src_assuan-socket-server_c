@@ -1,12 +1,15 @@
-$OpenBSD: patch-src_assuan-socket-server_c,v 1.1 2010/10/18 07:43:08 dcoppa Exp $
---- src/assuan-socket-server.c.orig	Thu Oct 14 11:26:27 2010
-+++ src/assuan-socket-server.c	Thu Oct 14 11:27:15 2010
-@@ -51,7 +51,7 @@ accept_connection_bottom (assuan_context_t ctx)
+$OpenBSD: patch-src_assuan-socket-server_c,v 1.2 2013/03/23 13:44:44 ajacoutot Exp $
+--- src/assuan-socket-server.c.orig	Mon Nov 26 14:35:34 2012
++++ src/assuan-socket-server.c	Sat Mar 23 14:40:40 2013
+@@ -61,7 +61,11 @@ accept_connection_bottom (assuan_context_t ctx)
    ctx->peercred_valid = 0;
  #ifdef HAVE_SO_PEERCRED
    {
--    struct ucred cr; 
-+    struct sockpeercred cr; 
++#ifdef __OpenBSD__
++    struct sockpeercred cr;
++#else
+     struct ucred cr;
++#endif
      socklen_t cl = sizeof cr;
  
      if ( !getsockopt (fd, SOL_SOCKET, SO_PEERCRED, &cr, &cl))
