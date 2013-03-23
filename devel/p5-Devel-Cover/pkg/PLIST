@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/06/01 17:41:49 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/03/23 22:24:36 benoit Exp $
 bin/cover
 bin/cpancover
 bin/gcov2perl
@@ -26,6 +26,8 @@ ${P5ARCH}/Devel/Cover/DB/IO.pm
 ${P5ARCH}/Devel/Cover/DB/IO/JSON.pm
 ${P5ARCH}/Devel/Cover/DB/IO/Storable.pm
 ${P5ARCH}/Devel/Cover/DB/Structure.pm
+${P5ARCH}/Devel/Cover/Dumper.pm
+${P5ARCH}/Devel/Cover/Html_Common.pm
 ${P5ARCH}/Devel/Cover/Inc.pm
 ${P5ARCH}/Devel/Cover/Op.pm
 ${P5ARCH}/Devel/Cover/Pod.pm
@@ -38,12 +40,14 @@ ${P5ARCH}/Devel/Cover/Report/Html_subtle.pm
 ${P5ARCH}/Devel/Cover/Report/Sort.pm
 ${P5ARCH}/Devel/Cover/Report/Text.pm
 ${P5ARCH}/Devel/Cover/Report/Text2.pm
+${P5ARCH}/Devel/Cover/Report/Vim.pm
 ${P5ARCH}/Devel/Cover/Statement.pm
 ${P5ARCH}/Devel/Cover/Subroutine.pm
 ${P5ARCH}/Devel/Cover/Test.pm
 ${P5ARCH}/Devel/Cover/Time.pm
 ${P5ARCH}/Devel/Cover/Truth_Table.pm
 ${P5ARCH}/Devel/Cover/Tutorial.pod
+${P5ARCH}/Devel/Cover/Util.pm
 ${P5ARCH}/Devel/Cover/Web.pm
 ${P5ARCH}/auto/Devel/
 ${P5ARCH}/auto/Devel/Cover/
@@ -71,6 +75,8 @@ ${P5ARCH}/auto/Devel/Cover/Cover.so
 @man man/man3p/Devel::Cover::DB::IO::JSON.3p
 @man man/man3p/Devel::Cover::DB::IO::Storable.3p
 @man man/man3p/Devel::Cover::DB::Structure.3p
+@man man/man3p/Devel::Cover::Dumper.3p
+@man man/man3p/Devel::Cover::Html_Common.3p
 @man man/man3p/Devel::Cover::Op.3p
 @man man/man3p/Devel::Cover::Pod.3p
 @man man/man3p/Devel::Cover::Report::Compilation.3p
@@ -81,9 +87,12 @@ ${P5ARCH}/auto/Devel/Cover/Cover.so
 @man man/man3p/Devel::Cover::Report::Sort.3p
 @man man/man3p/Devel::Cover::Report::Text.3p
 @man man/man3p/Devel::Cover::Report::Text2.3p
+@man man/man3p/Devel::Cover::Report::Vim.3p
 @man man/man3p/Devel::Cover::Statement.3p
 @man man/man3p/Devel::Cover::Subroutine.3p
+@man man/man3p/Devel::Cover::Test.3p
 @man man/man3p/Devel::Cover::Time.3p
 @man man/man3p/Devel::Cover::Truth_Table.3p
 @man man/man3p/Devel::Cover::Tutorial.3p
+@man man/man3p/Devel::Cover::Util.3p
 @man man/man3p/Devel::Cover::Web.3p
