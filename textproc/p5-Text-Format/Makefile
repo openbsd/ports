@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:42:44 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/24 13:16:06 benoit Exp $
 
 COMMENT=		various subroutines to format text
 
-DISTNAME=		Text-Format-0.53
+DISTNAME =		Text-Format-0.58
 CATEGORIES=		textproc
 
 # perl
