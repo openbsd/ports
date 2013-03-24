@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 10:50:24 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/24 14:54:14 benoit Exp $
 
 COMMENT=	use shorter versions of class names
 
-DISTNAME=	aliased-0.30
-REVISION=	0
+DISTNAME =	aliased-0.31
 
 CATEGORIES=	devel
 
@@ -13,7 +12,6 @@ MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	cpan
-USE_GROFF =	Yes
 
 MAKE_ENV=	TEST_POD=Yes
 
