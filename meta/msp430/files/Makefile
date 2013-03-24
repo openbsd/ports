@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2013/01/25 10:06:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/24 08:28:24 jj Exp $
 #
 # Sample Makefile for developing MSP430 projects on OpenBSD.
 
@@ -15,6 +15,7 @@ AS	 = $(MCU)-gcc
 GASP	 = $(MCU)-gasp
 NM	 = $(MCU)-nm
 OBJCOPY  = $(MCU)-objcopy
+OBJDUMP  = $(MCU)-objdump
 RANLIB   = $(MCU)-ranlib
 STRIP	 = $(MCU)-strip
 SIZE	 = $(MCU)-size
@@ -53,7 +54,7 @@ $(TARGET).txt: $(TARGET).hex
 	$(MAKETXT) -O $(TARGET).txt -TITXT $(TARGET).hex -I
 
 program: $(TARGET).elf
-	mspdebug rf2500 prog $(TARGET).elf exit
+	mspdebug rf2500 "prog $(TARGET).elf" exit
 
 clean:
 	rm -fr $(TARGET).elf $(TARGET).hex $(OBJECTS)
