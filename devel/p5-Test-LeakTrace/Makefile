@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:22 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/24 21:39:47 benoit Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	module for tracing memory leaks
 
-DISTNAME=	Test-LeakTrace-0.13
-REVISION=	0
+DISTNAME =	Test-LeakTrace-0.14
 
 CATEGORIES=	devel
 
@@ -17,6 +16,5 @@ PERMIT_PACKAGE_CDROM=   Yes
 WANTLIB += c
 
 MODULES=	cpan
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>
