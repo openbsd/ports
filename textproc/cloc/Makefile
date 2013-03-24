@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:42:41 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/24 21:31:36 benoit Exp $
 
 COMMENT=		count lines of code
 
-DISTNAME=		cloc-1.56
+DISTNAME=		cloc-1.58
 DIST_SUBDIR=		cloc
 
 CATEGORIES=		textproc devel
 
 HOMEPAGE=		http://cloc.sourceforge.net/
 
-MAINTAINER=		Joerg Zinke <zinke@openbsd.org>
+MAINTAINER=		Joerg Jung <jung@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
