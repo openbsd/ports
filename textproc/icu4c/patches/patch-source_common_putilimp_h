@@ -1,12 +1,12 @@
-$OpenBSD: patch-source_common_putilimp_h,v 1.5 2012/12/08 13:18:46 ajacoutot Exp $
+$OpenBSD: patch-source_common_putilimp_h,v 1.6 2013/03/24 10:28:35 ajacoutot Exp $
 
 hppa and sparc don't have atomic builtins:
 __sync_val_compare_and_swap, __sync_add_and_fetch, __sync_sub_and_fetch
 don't assume having GNUC >= 401 implies they're here..
 
---- source/common/putilimp.h.orig	Mon Nov  5 18:14:50 2012
-+++ source/common/putilimp.h	Thu Dec  6 15:39:07 2012
-@@ -123,6 +123,8 @@ typedef size_t uintptr_t;
+--- source/common/putilimp.h.orig	Fri Mar 15 23:11:58 2013
++++ source/common/putilimp.h	Sun Mar 24 11:07:42 2013
+@@ -126,6 +126,8 @@ typedef size_t uintptr_t;
     /* not defined */
  #elif U_PLATFORM == U_PF_OS400
     /* not defined */
@@ -15,7 +15,7 @@ don't assume having GNUC >= 401 implies they're here..
  #else
  #   define U_TIMEZONE timezone
  #endif
-@@ -180,7 +182,7 @@ typedef size_t uintptr_t;
+@@ -183,7 +185,7 @@ typedef size_t uintptr_t;
   */
  #ifdef U_HAVE_GCC_ATOMICS
      /* Use the predefined value. */

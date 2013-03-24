@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2013/01/05 13:16:05 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.12 2013/03/24 10:28:36 ajacoutot Exp $
 @bin bin/derb
 @bin bin/genbrk
 @bin bin/gencfu
@@ -29,8 +28,6 @@ include/unicode/
 include/unicode/alphaindex.h
 include/unicode/appendable.h
 include/unicode/basictz.h
-include/unicode/bms.h
-include/unicode/bmsearch.h
 include/unicode/brkiter.h
 include/unicode/bytestream.h
 include/unicode/bytestrie.h
@@ -41,7 +38,7 @@ include/unicode/chariter.h
 include/unicode/choicfmt.h
 include/unicode/coleitr.h
 include/unicode/coll.h
-include/unicode/colldata.h
+include/unicode/compactdecimalformat.h
 include/unicode/curramt.h
 include/unicode/currpinf.h
 include/unicode/currunit.h
@@ -91,6 +88,7 @@ include/unicode/rbbi.h
 include/unicode/rbnf.h
 include/unicode/rbtz.h
 include/unicode/regex.h
+include/unicode/region.h
 include/unicode/rep.h
 include/unicode/resbund.h
 include/unicode/schriter.h
@@ -196,13 +194,21 @@ lib/icu/Makefile.inc
 lib/icu/current
 lib/icu/pkgdata.inc
 lib/libicudata.a
+@lib lib/libicudata.so.${LIBicudata_VERSION}
 lib/libicui18n.a
+@lib lib/libicui18n.so.${LIBicui18n_VERSION}
 lib/libicuio.a
+@lib lib/libicuio.so.${LIBicuio_VERSION}
 lib/libicule.a
+@lib lib/libicule.so.${LIBicule_VERSION}
 lib/libiculx.a
+@lib lib/libiculx.so.${LIBiculx_VERSION}
 lib/libicutest.a
+@lib lib/libicutest.so.${LIBicutest_VERSION}
 lib/libicutu.a
+@lib lib/libicutu.so.${LIBicutu_VERSION}
 lib/libicuuc.a
+@lib lib/libicuuc.so.${LIBicuuc_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/icu-i18n.pc
 lib/pkgconfig/icu-io.pc
