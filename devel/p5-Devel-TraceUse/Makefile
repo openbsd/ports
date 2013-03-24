@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:16 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/24 07:41:35 benoit Exp $
 
 COMMENT = 	show modules your program loads
-DISTNAME =	Devel-TraceUse-2.06
+DISTNAME =	Devel-TraceUse-2.09
 
 CATEGORIES =	devel
 
