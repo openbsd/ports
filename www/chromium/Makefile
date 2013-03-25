@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.129 2013/03/22 07:46:04 robert Exp $
+# $OpenBSD: Makefile,v 1.130 2013/03/25 08:48:33 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 
@@ -55,6 +55,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		devel/gperf \
 		devel/bison \
 		devel/flex \
+		devel/yasm \
 		shells/bash \
 		sysutils/flock \
 		sysutils/pciutils \
@@ -99,7 +100,7 @@ GYP_DEFS=	-Duse_system_bzip2=1 \
 		-Duse_system_libxml=1 \
 		-Duse_system_speex=1 \
 		-Duse_system_sqlite=0 \
-		-Duse_system_yasm=0 \
+		-Duse_system_yasm=1 \
 		-Duse_system_zlib=0 \
 		-Ddisable_nacl=1 \
 		-Ddisable_sse2=1 \
