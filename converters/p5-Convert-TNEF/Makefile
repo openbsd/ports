@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 01:30:27 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/25 09:04:06 benoit Exp $
 
 COMMENT=	module to read TNEF files
 
-DISTNAME=	Convert-TNEF-0.17
-REVISION=	1
+DISTNAME =	Convert-TNEF-0.18
 CATEGORIES=	converters
 MODULES=	cpan
-USE_GROFF =	Yes
 
 MAINTAINER=	Ibrahim Khalifa <ibo@toontown.org>
 
