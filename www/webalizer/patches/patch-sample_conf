@@ -1,6 +1,6 @@
-$OpenBSD: patch-sample_conf,v 1.4 2011/01/05 08:19:18 giovanni Exp $
---- sample.conf.orig	Mon Jan  3 11:30:14 2011
-+++ sample.conf	Mon Jan  3 11:30:14 2011
+$OpenBSD: patch-sample_conf,v 1.5 2013/03/25 11:36:54 jasper Exp $
+--- sample.conf.orig	Mon Mar 25 11:45:11 2013
++++ sample.conf	Mon Mar 25 11:45:30 2013
 @@ -28,7 +28,7 @@
  # (bzip2 compressed file), it will be decompressed on the fly as it
  # is being read.
@@ -19,3 +19,12 @@ $OpenBSD: patch-sample_conf,v 1.4 2011/01/05 08:19:18 giovanni Exp $
  
  # HistoryName allows you to specify the name of the history file produced
  # by the Webalizer.  The history file keeps the data for previous months,
+@@ -217,7 +217,7 @@ PageType	cgi
+ # to the output directory being used unless an absolute name
+ # (ie: starts with a leading '/') is specified.
+ 
+-#GeoDBDatabase	/usr/share/GeoDB/GeoDB.dat
++#GeoDBDatabase	/var/db/GeoIP/GeoIP.dat
+ 
+ # The GeoIP option enables or disables the use of geolocation
+ # services provided by the GeoIP library (http://www.maxmind.com),
