@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2013/03/25 12:31:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2013/03/25 16:09:41 zhuk Exp $
 
 COMMENT=		ffmpeg element for GStreamer
 
 V=			0.10.13
 DISTNAME=		gst-ffmpeg-${V}
 PKGNAME=		gstreamer-ffmpeg-${V}
-REVISION=		5
+REVISION=		6
 
 # sync with graphics/ffmpeg
 PERMIT_PACKAGE_CDROM=	patents
