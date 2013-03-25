@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.506 2013/01/29 19:24:48 bcallah Exp $
+# $OpenBSD: Makefile,v 1.507 2013/03/25 21:23:17 zhuk Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -32,6 +32,7 @@
      SUBDIR += dbus
      SUBDIR += dbus-glib
      SUBDIR += dbus-intf
+     SUBDIR += dbusmenu-qt
      SUBDIR += dbus-python
      SUBDIR += dbus-tcl
      SUBDIR += dclock
@@ -82,6 +83,7 @@
      SUBDIR += goggles
      SUBDIR += golem
      SUBDIR += gpointing-device-settings
+     SUBDIR += grantlee
      SUBDIR += gromit
      SUBDIR += gtk+
      SUBDIR += gtk+2
