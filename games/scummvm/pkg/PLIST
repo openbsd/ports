@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.9 2010/10/17 19:59:51 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.10 2013/03/25 00:12:57 sthen Exp $
 @bin bin/scummvm
 @man man/man6/scummvm.6
-share/applications/
 share/applications/scummvm.desktop
 share/doc/scummvm/
 share/doc/scummvm/AUTHORS
@@ -13,6 +12,6 @@ share/icons/scummvm.xpm
 share/scummvm/
 share/scummvm/scummclassic.zip
 share/scummvm/scummmodern.zip
+share/scummvm/translations.dat
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
-share/scummvm/translations.dat

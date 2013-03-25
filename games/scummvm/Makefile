@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.56 2013/03/11 11:07:40 espie Exp $
+# $OpenBSD: Makefile,v 1.57 2013/03/25 00:12:57 sthen Exp $
 
 COMMENT=	graphical adventure game interpreter
 DISTNAME=	scummvm-1.5.0
-REVISION=	1
+REVISION=	2
 CATEGORIES=	games x11 emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scummvm/}
 
@@ -13,7 +13,8 @@ MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	FLAC>=5 SDL c faad m mad>=2 pthread sndio stdc++ theoradec z
+WANTLIB += FLAC SDL c faad freetype m mad pthread sndio stdc++
+WANTLIB += theoradec z
 
 .if ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS=	devel/nasm
@@ -27,10 +28,13 @@ LIB_DEPENDS=	audio/libmad \
 		multimedia/libtheora
 
 CONFIGURE_STYLE=simple
-CONFIGURE_ARGS+=--disable-alsa --disable-debug --disable-seq-midi --enable-sndio
+CONFIGURE_ARGS+= --disable-alsa \
+		--disable-debug \
+		--disable-fluidsynth \
+		--disable-seq-midi \
+		--enable-sndio
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-USE_GROFF =	Yes
 
 .if ${MACHINE_ARCH} == "arm"
 CONFIGURE_ARGS +=	--enable-tremor --disable-vorbis
