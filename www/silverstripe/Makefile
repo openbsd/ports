@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:44:49 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/25 10:26:49 jasper Exp $
 
 COMMENT=	innovative open source CMS and framework
 
 V=		3.0.5
 DISTNAME=	SilverStripe-cms-v${V}
 PKGNAME=	silverstripe-${V}
+REVISION=	0
 
 CATEGORIES=	www
 

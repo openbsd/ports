@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2013/03/08 10:43:52 jasper Exp $
+$OpenBSD: README,v 1.2 2013/03/25 10:26:49 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -16,6 +16,16 @@ SilverStripe can work with a PostgreSQL or MySQL database. According
 to which database is used, the corresponding package needs to be
 installed:
     php-pgsql or php-mysqli
+
+Webserver
+=========
+SilverStripe needs to have rewrite support enabled in the webserver.
+For Apache uncomment the following line in /var/www/conf/httpd.conf:
+
+	LoadModule rewrite_module	/usr/lib/apache/modules/mod_rewrite.so
+
+And set "AllowOverride All" for the directory in which SilverStripe has been
+installed.
 
 Finishing the installation
 ==========================
