@@ -1,0 +1,15 @@
+$OpenBSD: patch-templates_tests_pluginpointertest_CMakeLists_txt,v 1.1.1.1 2013/03/25 21:08:47 zhuk Exp $
+--- templates/tests/pluginpointertest/CMakeLists.txt.orig	Fri Nov  2 00:14:18 2012
++++ templates/tests/pluginpointertest/CMakeLists.txt	Fri Jan 25 15:43:01 2013
+@@ -18,9 +18,11 @@ set_target_properties(myplugin
+   PROPERTIES PREFIX ""
+ )
+ target_link_libraries(myplugin
++  c
+   ${QT_QTCORE_LIBRARIES}
+ )
+ 
+ add_executable(main_app main.cpp ${myplugin_sources} ${_plugin_moc_srcs})
+ target_link_libraries(main_app
++  c
+   ${QT_QTCORE_LIBRARIES}
