@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.7 2013/03/20 07:08:05 ajacoutot Exp $
+$OpenBSD: README,v 1.8 2013/03/25 07:55:10 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -31,8 +31,6 @@ Then the server must be restarted by running:
 Once the database has been setup and MySQL is up and running, the
 following command must be run to create the tables:
     # cd ${INSTDIR} && sudo -u _puppet-dashboard rake${MODRUBY_BINREV} RAILS_ENV=production db:migrate
-Note that this command *must* also be run after a Puppet Dashboard
-upgrade.
 
 Puppet Configuration
 ====================
@@ -74,6 +72,12 @@ Over time, old reports will start to accumulate which can slow down the
 Dashboard. Adding the following line to the root's crontab(5) will clean
 up reports older than 1 month and will run every night:
 0	0	*	*	*	cd ${INSTDIR} && sudo -u _puppet-dashboard rake${MODRUBY_BINREV} RAILS_ENV=production reports:prune upto=1 unit=mon
+
+Upgrade
+-------
+After updating the Dashboard to a new release, the following command
+needs to be run to update database schemas:
+    # cd ${INSTDIR} && sudo -u _puppet-dashboard rake${MODRUBY_BINREV} RAILS_ENV=production db:migrate
 
 Phusion Passenger Integration (i.e. mod_rails)
 ==============================================
