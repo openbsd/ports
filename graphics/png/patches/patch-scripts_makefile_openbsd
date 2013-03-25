@@ -1,6 +1,6 @@
-$OpenBSD: patch-scripts_makefile_openbsd,v 1.38 2012/03/30 18:58:03 naddy Exp $
---- scripts/makefile.openbsd.orig	Thu Mar 29 07:06:56 2012
-+++ scripts/makefile.openbsd	Fri Mar 30 20:00:16 2012
+$OpenBSD: patch-scripts_makefile_openbsd,v 1.39 2013/03/25 00:21:37 brad Exp $
+--- scripts/makefile.openbsd.orig	Wed Jan 23 21:59:05 2013
++++ scripts/makefile.openbsd	Sat Mar 23 21:07:49 2013
 @@ -7,8 +7,10 @@
  # and license in png.h
  
@@ -12,8 +12,12 @@ $OpenBSD: patch-scripts_makefile_openbsd,v 1.38 2012/03/30 18:58:03 naddy Exp $
 +INCDIR= ${PREFIX}/include/libpng
  
  SHLIB_MAJOR=	15
- SHLIB_MINOR=	1.5.10
-@@ -25,12 +27,30 @@ CPPFLAGS+= -I${.CURDIR}
+ SHLIB_MINOR=	1.5.14
+@@ -22,15 +24,34 @@ HDRS=	png.h pngconf.h pnglibconf.h
+ 
+ CFLAGS+= -W -Wall
+ CPPFLAGS+= -I${.CURDIR}
++LDADD=	-lz -lm
  
  NOPROFILE= Yes
  
@@ -39,15 +43,15 @@ $OpenBSD: patch-scripts_makefile_openbsd,v 1.38 2012/03/30 18:58:03 naddy Exp $
 +	echo prefix=\"$(PREFIX)\"; \
 +	echo I_opts=\"-I$(INCDIR)\"; \
 +	echo L_opts=\"-L$(LIBDIR)\"; \
-+	echo R_opts=\"-Wl,-rpath,$(LIBDIR)\"; \
-+	echo libs=\"-lpng -lz -lm\"; \
++	echo libs=\"-lpng\"; \
++	echo static_libs=\"-lz -lm\"; \
 +	cat scripts/libpng-config-body.in ) > libpng-config
 +	chmod +x libpng-config
 +
  # see scripts/pnglibconf.mak for more options
  pnglibconf.h: scripts/pnglibconf.h.prebuilt
  	cp scripts/pnglibconf.h.prebuilt $@
-@@ -41,13 +61,20 @@ pngtest.o:	pngtest.c
+@@ -41,13 +62,20 @@ pngtest.o:	pngtest.c
  pngtest:	pngtest.o
  	${CC} ${LDFLAGS} ${.ALLSRC} -o ${.TARGET} -L${.OBJDIR} -lpng -lz -lm
  
@@ -73,7 +77,7 @@ $OpenBSD: patch-scripts_makefile_openbsd,v 1.38 2012/03/30 18:58:03 naddy Exp $
  	fi
  	if [ ! -d ${DESTDIR}${LIBDIR} ]; then \
  	  ${INSTALL} -d -o root -g wheel ${DESTDIR}${LIBDIR}; \
-@@ -61,22 +88,19 @@ beforeinstall:
+@@ -61,22 +89,18 @@ beforeinstall:
  	if [ ! -d ${DESTDIR}${MANDIR}5 ]; then \
  	  ${INSTALL} -d -o root -g wheel ${DESTDIR}${MANDIR}5; \
  	fi
@@ -84,7 +88,7 @@ $OpenBSD: patch-scripts_makefile_openbsd,v 1.38 2012/03/30 18:58:03 naddy Exp $
  	fi
  
  afterinstall:
- 	@rm -f ${DESTDIR}${LIBDIR}/libpng_pic.a
+-	@rm -f ${DESTDIR}${LIBDIR}/libpng_pic.a
  	@rm -f ${DESTDIR}${LIBDIR}/debug/libpng.a
 -	@rm -f ${DESTDIR}${PREFIX}/include/png.h
 -	@rm -f ${DESTDIR}${PREFIX}/include/pngconf.h
