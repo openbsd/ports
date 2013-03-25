@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2012/09/02 20:52:35 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2013/03/25 23:43:40 sthen Exp $
 bin/frozen-bubble
 bin/frozen-bubble-editor
 ${P5ARCH}/FBLE.pm
@@ -12,8 +12,6 @@ ${P5ARCH}/fb_net_discover.pm
 ${P5ARCH}/fb_stuff.pm
 @comment ${P5ARCH}/fb_stuff.pm.orig
 ${P5ARCH}/fbsyms.pm
-libexec/frozen-bubble/frozen-bubble
-libexec/frozen-bubble/frozen-bubble-editor
 @man man/man6/frozen-bubble-editor.6
 @man man/man6/frozen-bubble.6
 share/frozen-bubble/
