@@ -1,0 +1,2 @@
+This library provides a Qt implementation of the DBusMenu specs, whose
+goal is to expose menus on DBus
