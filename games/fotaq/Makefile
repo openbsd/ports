@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 12:17:50 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/25 00:14:57 sthen Exp $
 
 PKG_ARCH=	*
 
 COMMENT=	flight of the amazon queen
-DISTNAME=	fotaq-20040316
-DISTFILES=	FOTAQ_Talkie.zip
-DIST_SUBDIR=	${DISTNAME}
+PKGNAME=	fotaq-1.1
+EPOCH=		0
+DISTNAME=	FOTAQ_Talkie-1.1
+EXTRACT_SUFX=	.zip
 CATEGORIES=	games x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scummvm/}
 
-WRKDIST=	${WRKDIR}/${DISTFILES:S,.zip,,}
+WRKDIST=	${WRKDIR}
 
 # Conditional
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP =	space constraints
 
 NO_BUILD=	Yes
 NO_TEST=	Yes
