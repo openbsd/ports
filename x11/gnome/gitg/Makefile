@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:46:10 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/26 16:33:51 ajacoutot Exp $
 
 BROKEN=			Invalid object type `GitgWindow'
 
@@ -40,9 +40,7 @@ RUN_DEPENDS=		devel/git \
 
 MODGNOME_DESKTOP_FILE=	Yes
 
-# XXX remove --disable-maintainer-mode after updating to a new release
 CONFIGURE_ARGS=		--disable-static \
-			--disable-compile-warnings \
-			--disable-maintainer-mode # -Werror
+			--disable-compile-warnings
 
 .include <bsd.port.mk>
