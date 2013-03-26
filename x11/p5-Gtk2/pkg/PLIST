@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/04/20 17:51:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/03/26 08:29:29 ajacoutot Exp $
 ${P5ARCH}/Gtk2/
 ${P5ARCH}/Gtk2.pm
 ${P5ARCH}/Gtk2/AboutDialog.pod
@@ -8,6 +8,7 @@ ${P5ARCH}/Gtk2/AccelMap.pod
 ${P5ARCH}/Gtk2/Accelerator.pod
 ${P5ARCH}/Gtk2/Action.pod
 ${P5ARCH}/Gtk2/ActionGroup.pod
+${P5ARCH}/Gtk2/Activatable.pod
 ${P5ARCH}/Gtk2/Adjustment.pod
 ${P5ARCH}/Gtk2/Alignment.pod
 ${P5ARCH}/Gtk2/Arrow.pod
@@ -24,15 +25,14 @@ ${P5ARCH}/Gtk2/Button.pod
 ${P5ARCH}/Gtk2/ButtonBox.pod
 ${P5ARCH}/Gtk2/Calendar.pod
 ${P5ARCH}/Gtk2/CellEditable.pod
-${P5ARCH}/Gtk2/CellLayout/
 ${P5ARCH}/Gtk2/CellLayout.pod
-${P5ARCH}/Gtk2/CellLayout/DataFunc.pod
 ${P5ARCH}/Gtk2/CellRenderer.pod
 ${P5ARCH}/Gtk2/CellRendererAccel.pod
 ${P5ARCH}/Gtk2/CellRendererCombo.pod
 ${P5ARCH}/Gtk2/CellRendererPixbuf.pod
 ${P5ARCH}/Gtk2/CellRendererProgress.pod
 ${P5ARCH}/Gtk2/CellRendererSpin.pod
+${P5ARCH}/Gtk2/CellRendererSpinner.pod
 ${P5ARCH}/Gtk2/CellRendererText.pod
 ${P5ARCH}/Gtk2/CellRendererToggle.pod
 ${P5ARCH}/Gtk2/CellView.pod
@@ -53,6 +53,7 @@ ${P5ARCH}/Gtk2/Drag.pod
 ${P5ARCH}/Gtk2/DrawingArea.pod
 ${P5ARCH}/Gtk2/Editable.pod
 ${P5ARCH}/Gtk2/Entry.pod
+${P5ARCH}/Gtk2/EntryBuffer.pod
 ${P5ARCH}/Gtk2/EntryCompletion.pod
 ${P5ARCH}/Gtk2/EventBox.pod
 ${P5ARCH}/Gtk2/Expander.pod
@@ -106,6 +107,7 @@ ${P5ARCH}/Gtk2/Gdk/Event/Visibility.pod
 ${P5ARCH}/Gtk2/Gdk/Event/WindowState.pod
 ${P5ARCH}/Gtk2/Gdk/GC.pod
 ${P5ARCH}/Gtk2/Gdk/Geometry.pod
+${P5ARCH}/Gtk2/Gdk/Image.pod
 ${P5ARCH}/Gtk2/Gdk/Input.pod
 ${P5ARCH}/Gtk2/Gdk/Keymap.pod
 ${P5ARCH}/Gtk2/Gdk/Keysyms.pm
@@ -134,6 +136,7 @@ ${P5ARCH}/Gtk2/HBox.pod
 ${P5ARCH}/Gtk2/HButtonBox.pod
 ${P5ARCH}/Gtk2/HPaned.pod
 ${P5ARCH}/Gtk2/HRuler.pod
+${P5ARCH}/Gtk2/HSV.pod
 ${P5ARCH}/Gtk2/HScale.pod
 ${P5ARCH}/Gtk2/HScrollbar.pod
 ${P5ARCH}/Gtk2/HSeparator.pod
@@ -151,6 +154,7 @@ ${P5ARCH}/Gtk2/IconTheme.pod
 ${P5ARCH}/Gtk2/IconView.pod
 ${P5ARCH}/Gtk2/Image.pod
 ${P5ARCH}/Gtk2/ImageMenuItem.pod
+${P5ARCH}/Gtk2/InfoBar.pod
 ${P5ARCH}/Gtk2/InputDialog.pod
 ${P5ARCH}/Gtk2/Install/
 ${P5ARCH}/Gtk2/Install/Files.pm
@@ -179,6 +183,7 @@ ${P5ARCH}/Gtk2/MessageDialog.pod
 ${P5ARCH}/Gtk2/Misc.pod
 ${P5ARCH}/Gtk2/Notebook.pod
 ${P5ARCH}/Gtk2/Object.pod
+${P5ARCH}/Gtk2/OffscreenWindow.pod
 ${P5ARCH}/Gtk2/OptionMenu.pod
 ${P5ARCH}/Gtk2/Orientable.pod
 ${P5ARCH}/Gtk2/PageSetup.pod
@@ -276,6 +281,7 @@ ${P5ARCH}/Gtk2/SimpleMenu.pm
 ${P5ARCH}/Gtk2/SizeGroup.pod
 ${P5ARCH}/Gtk2/Socket.pod
 ${P5ARCH}/Gtk2/SpinButton.pod
+${P5ARCH}/Gtk2/Spinner.pod
 ${P5ARCH}/Gtk2/StatusIcon.pod
 ${P5ARCH}/Gtk2/Statusbar.pod
 ${P5ARCH}/Gtk2/Stock.pod
@@ -298,6 +304,8 @@ ${P5ARCH}/Gtk2/ToggleButton.pod
 ${P5ARCH}/Gtk2/ToggleToolButton.pod
 ${P5ARCH}/Gtk2/ToolButton.pod
 ${P5ARCH}/Gtk2/ToolItem.pod
+${P5ARCH}/Gtk2/ToolItemGroup.pod
+${P5ARCH}/Gtk2/ToolPalette.pod
 ${P5ARCH}/Gtk2/ToolShell.pod
 ${P5ARCH}/Gtk2/Toolbar.pod
 ${P5ARCH}/Gtk2/Tooltip.pod
@@ -311,9 +319,7 @@ ${P5ARCH}/Gtk2/TreeModelSort.pod
 ${P5ARCH}/Gtk2/TreePath.pod
 ${P5ARCH}/Gtk2/TreeRowReference.pod
 ${P5ARCH}/Gtk2/TreeSelection.pod
-${P5ARCH}/Gtk2/TreeSortable/
 ${P5ARCH}/Gtk2/TreeSortable.pod
-${P5ARCH}/Gtk2/TreeSortable/IterCompareFunc.pod
 ${P5ARCH}/Gtk2/TreeStore.pod
 ${P5ARCH}/Gtk2/TreeView.pod
 ${P5ARCH}/Gtk2/TreeViewColumn.pod
@@ -347,6 +353,7 @@ ${P5ARCH}/auto/Gtk2/Gtk2.so
 @man man/man3p/Gtk2::Accelerator.3p
 @man man/man3p/Gtk2::Action.3p
 @man man/man3p/Gtk2::ActionGroup.3p
+@man man/man3p/Gtk2::Activatable.3p
 @man man/man3p/Gtk2::Adjustment.3p
 @man man/man3p/Gtk2::Alignment.3p
 @man man/man3p/Gtk2::Arrow.3p
@@ -363,13 +370,13 @@ ${P5ARCH}/auto/Gtk2/Gtk2.so
 @man man/man3p/Gtk2::Calendar.3p
 @man man/man3p/Gtk2::CellEditable.3p
 @man man/man3p/Gtk2::CellLayout.3p
-@man man/man3p/Gtk2::CellLayout::DataFunc.3p
 @man man/man3p/Gtk2::CellRenderer.3p
 @man man/man3p/Gtk2::CellRendererAccel.3p
 @man man/man3p/Gtk2::CellRendererCombo.3p
 @man man/man3p/Gtk2::CellRendererPixbuf.3p
 @man man/man3p/Gtk2::CellRendererProgress.3p
 @man man/man3p/Gtk2::CellRendererSpin.3p
+@man man/man3p/Gtk2::CellRendererSpinner.3p
 @man man/man3p/Gtk2::CellRendererText.3p
 @man man/man3p/Gtk2::CellRendererToggle.3p
 @man man/man3p/Gtk2::CellView.3p
@@ -390,6 +397,7 @@ ${P5ARCH}/auto/Gtk2/Gtk2.so
 @man man/man3p/Gtk2::DrawingArea.3p
 @man man/man3p/Gtk2::Editable.3p
 @man man/man3p/Gtk2::Entry.3p
+@man man/man3p/Gtk2::EntryBuffer.3p
 @man man/man3p/Gtk2::EntryCompletion.3p
 @man man/man3p/Gtk2::EventBox.3p
 @man man/man3p/Gtk2::Expander.3p
@@ -440,6 +448,7 @@ ${P5ARCH}/auto/Gtk2/Gtk2.so
 @man man/man3p/Gtk2::Gdk::Event::WindowState.3p
 @man man/man3p/Gtk2::Gdk::GC.3p
 @man man/man3p/Gtk2::Gdk::Geometry.3p
+@man man/man3p/Gtk2::Gdk::Image.3p
 @man man/man3p/Gtk2::Gdk::Input.3p
 @man man/man3p/Gtk2::Gdk::Keymap.3p
 @man man/man3p/Gtk2::Gdk::Keysyms.3p
@@ -467,6 +476,7 @@ ${P5ARCH}/auto/Gtk2/Gtk2.so
 @man man/man3p/Gtk2::HButtonBox.3p
 @man man/man3p/Gtk2::HPaned.3p
 @man man/man3p/Gtk2::HRuler.3p
+@man man/man3p/Gtk2::HSV.3p
 @man man/man3p/Gtk2::HScale.3p
 @man man/man3p/Gtk2::HScrollbar.3p
 @man man/man3p/Gtk2::HSeparator.3p
@@ -484,6 +494,7 @@ ${P5ARCH}/auto/Gtk2/Gtk2.so
 @man man/man3p/Gtk2::IconView.3p
 @man man/man3p/Gtk2::Image.3p
 @man man/man3p/Gtk2::ImageMenuItem.3p
+@man man/man3p/Gtk2::InfoBar.3p
 @man man/man3p/Gtk2::InputDialog.3p
 @man man/man3p/Gtk2::Invisible.3p
 @man man/man3p/Gtk2::Item.3p
@@ -503,6 +514,7 @@ ${P5ARCH}/auto/Gtk2/Gtk2.so
 @man man/man3p/Gtk2::Misc.3p
 @man man/man3p/Gtk2::Notebook.3p
 @man man/man3p/Gtk2::Object.3p
+@man man/man3p/Gtk2::OffscreenWindow.3p
 @man man/man3p/Gtk2::OptionMenu.3p
 @man man/man3p/Gtk2::Orientable.3p
 @man man/man3p/Gtk2::PageSetup.3p
@@ -598,6 +610,7 @@ ${P5ARCH}/auto/Gtk2/Gtk2.so
 @man man/man3p/Gtk2::SizeGroup.3p
 @man man/man3p/Gtk2::Socket.3p
 @man man/man3p/Gtk2::SpinButton.3p
+@man man/man3p/Gtk2::Spinner.3p
 @man man/man3p/Gtk2::StatusIcon.3p
 @man man/man3p/Gtk2::Statusbar.3p
 @man man/man3p/Gtk2::Stock.3p
@@ -619,6 +632,8 @@ ${P5ARCH}/auto/Gtk2/Gtk2.so
 @man man/man3p/Gtk2::ToggleToolButton.3p
 @man man/man3p/Gtk2::ToolButton.3p
 @man man/man3p/Gtk2::ToolItem.3p
+@man man/man3p/Gtk2::ToolItemGroup.3p
+@man man/man3p/Gtk2::ToolPalette.3p
 @man man/man3p/Gtk2::ToolShell.3p
 @man man/man3p/Gtk2::Toolbar.3p
 @man man/man3p/Gtk2::Tooltip.3p
@@ -633,7 +648,6 @@ ${P5ARCH}/auto/Gtk2/Gtk2.so
 @man man/man3p/Gtk2::TreeRowReference.3p
 @man man/man3p/Gtk2::TreeSelection.3p
 @man man/man3p/Gtk2::TreeSortable.3p
-@man man/man3p/Gtk2::TreeSortable::IterCompareFunc.3p
 @man man/man3p/Gtk2::TreeStore.3p
 @man man/man3p/Gtk2::TreeView.3p
 @man man/man3p/Gtk2::TreeViewColumn.3p
