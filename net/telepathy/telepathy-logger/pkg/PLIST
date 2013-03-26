@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.11 2012/10/15 13:35:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2013/03/26 14:30:42 jasper Exp $
 include/telepathy-logger-0.2/
 include/telepathy-logger-0.2/telepathy-logger/
 include/telepathy-logger-0.2/telepathy-logger/call-event.h
 include/telepathy-logger-0.2/telepathy-logger/entity.h
 include/telepathy-logger-0.2/telepathy-logger/event.h
 include/telepathy-logger-0.2/telepathy-logger/log-manager.h
+include/telepathy-logger-0.2/telepathy-logger/log-walker.h
 include/telepathy-logger-0.2/telepathy-logger/telepathy-logger.h
 include/telepathy-logger-0.2/telepathy-logger/text-event.h
 lib/girepository-1.0/TelepathyLogger-0.2.typelib
@@ -18,9 +19,11 @@ share/dbus-1/services/org.freedesktop.Telepathy.Logger.service
 share/gir-1.0/TelepathyLogger-0.2.gir
 share/glib-2.0/schemas/org.freedesktop.Telepathy.Logger.gschema.xml
 share/gtk-doc/html/telepathy-logger/
+share/gtk-doc/html/telepathy-logger/TplCallEvent.html
 share/gtk-doc/html/telepathy-logger/TplEntity.html
 share/gtk-doc/html/telepathy-logger/TplEvent.html
 share/gtk-doc/html/telepathy-logger/TplLogManager.html
+share/gtk-doc/html/telepathy-logger/TplLogWalker.html
 share/gtk-doc/html/telepathy-logger/TplTextEvent.html
 share/gtk-doc/html/telepathy-logger/ch-public.html
 share/gtk-doc/html/telepathy-logger/home.png

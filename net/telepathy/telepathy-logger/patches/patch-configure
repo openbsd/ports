@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure,v 1.9 2012/11/05 07:10:15 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.10 2013/03/26 14:30:42 jasper Exp $
 
 Bug 627126 - gsettings schema files don't get installed on FreeBSD
 glib commit 136e705e8383ff8848e425ac01278102d7badc52
 
---- configure.orig	Tue Oct 30 10:06:10 2012
-+++ configure	Sun Nov  4 10:25:44 2012
-@@ -14121,22 +14121,10 @@ install-data-am: install-gsettings-schemas
+--- configure.orig	Mon Jan 21 16:08:42 2013
++++ configure	Tue Mar 26 15:20:36 2013
+@@ -14142,22 +14142,10 @@ install-data-am: install-gsettings-schemas
  
  .SECONDARY: $(gsettings_SCHEMAS)
  

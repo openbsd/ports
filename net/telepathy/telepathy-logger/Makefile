@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2013/03/11 11:35:57 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2013/03/26 14:30:42 jasper Exp $
 
 COMMENT=	flexible communications framework, logger component
 
-DISTNAME=	telepathy-logger-0.6.0
+DISTNAME=	telepathy-logger-0.8.0
 
-SHARED_LIBS +=  telepathy-logger     4.0      # 5.0
+SHARED_LIBS +=  telepathy-logger     4.1      # 6.0
 
 HOMEPAGE=	${HOMEPAGE_TP:=Logger}
 
