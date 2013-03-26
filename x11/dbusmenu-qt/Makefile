@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/03/25 21:20:58 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/26 14:31:28 sthen Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	D-Bus menu implementation for Qt
@@ -18,7 +18,8 @@ MASTER_SITES =	${HOMEPAGE}trunk/${V}/+download/
 
 MODULES =	devel/cmake x11/qt4
 WANTLIB =	lib/qt4/QtDBus lib/qt4/QtGui m stdc++
-BUILD_DEPENDS =	devel/qjson
+BUILD_DEPENDS =	devel/qjson \
+		devel/doxygen
 TEST_DEPENDS =	devel/qjson
 
 # XXX "!icon.isNull()" failed tests are normal, they do mean that
