@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.237 2013/03/09 06:38:30 fgsch Exp $
+# $OpenBSD: Makefile,v 1.238 2013/03/26 05:28:30 jmatthew Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -175,6 +175,7 @@
      SUBDIR += qdbm
      SUBDIR += qt3-sqlite3-plugin
      SUBDIR += redis
+     SUBDIR += riak
      SUBDIR += ruby-amalgalite
      SUBDIR += ruby-amalgalite,ruby18
      SUBDIR += ruby-bdb
