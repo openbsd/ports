@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.64 2013/03/21 08:48:56 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.65 2013/03/26 16:28:22 ajacoutot Exp $
 #
 # Module for GNOME related ports
 
@@ -14,6 +14,10 @@ CATEGORIES+=		x11/gnome
 MODULES+=		textproc/intltool
 .   if defined(CONFIGURE_STYLE) && ${CONFIGURE_STYLE:Mgnu}
         CONFIGURE_ARGS += ${CONFIGURE_SHARED}
+      # https://mail.gnome.org/archives/desktop-devel-list/2011-September/msg00064.html
+.     if !defined(AUTOCONF_VERSION) && !defined(AUTOMAKE_VERSION)
+          CONFIGURE_ARGS += --disable-maintainer-mode
+.     endif
         # If a port needs extra CPPFLAGS, they can just set MODGNOME_CPPFLAGS
         # to the desired value, like -I${X11BASE}/include
         _MODGNOME_cppflags ?= CPPFLAGS="-I${LOCALBASE}/include ${MODGNOME_CPPFLAGS}"
