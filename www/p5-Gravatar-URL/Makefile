@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:44:45 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/26 17:23:01 jasper Exp $
 
 COMMENT =		make URLs for Gravatars from an email address
 
 DISTNAME =		Gravatar-URL-1.06
+REVISION =		0
 
 CATEGORIES =		www mail
 

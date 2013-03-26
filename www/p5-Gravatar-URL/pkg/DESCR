@@ -1,4 +1,4 @@
-A Gravatar is a Globally Recognized Avatar for a given email address.
+Gravatars are Globally Recognized Avatars for a given email address.
 This allows you to have a global picture associated with your email
 address.  You can look up the Gravatar for any email address by
 constructing a URL to get the image from gravatar.com.  This module
