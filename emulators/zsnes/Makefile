@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 11:06:04 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/03/26 17:00:41 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=		i386
 
@@ -20,15 +20,14 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		GL SDL c m png pthread stdc++ z
 
-BUILD_DEPENDS=		devel/nasm \
-			${MODGNU_AUTOMAKE_DEPENDS}
+BUILD_DEPENDS=		devel/nasm
 LIB_DEPENDS=		sdl-*-!no_x11:devel/sdl \
 			graphics/png
 
 USE_GROFF=		Yes
 
 AUTOCONF_VERSION=	2.59
-CONFIGURE_STYLE=	autoconf
+CONFIGURE_STYLE=	autoconf automake
 CONFIGURE_ARGS=		--with-sdl-prefix=${LOCALBASE} \
 			--with-png \
 			--with-opengl \
