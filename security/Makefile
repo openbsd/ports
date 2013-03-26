@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.308 2013/03/22 20:53:30 rpe Exp $
+# $OpenBSD: Makefile,v 1.309 2013/03/26 21:37:44 sthen Exp $
 
      SUBDIR =
      SUBDIR += ADMfzap
@@ -209,6 +209,7 @@
      SUBDIR += pwsafe
      SUBDIR += py-M2Crypto
      SUBDIR += py-Rijndael
+     SUBDIR += py-bcrypt
      SUBDIR += py-crack
      SUBDIR += py-cryptkit
      SUBDIR += py-crypto
