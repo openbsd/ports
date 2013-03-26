@@ -1,23 +1,21 @@
-# $OpenBSD: Makefile,v 1.87 2013/03/11 11:46:12 espie Exp $
+# $OpenBSD: Makefile,v 1.88 2013/03/26 09:59:33 jasper Exp $
 
 COMMENT=	GNOME terminal
 
 GNOME_PROJECT=	gnome-terminal
-GNOME_VERSION=	3.6.1
-REVISION=	0
+GNOME_VERSION=	3.6.2
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
-WANTLIB += c cairo cairo-gobject dbus-1 dbus-glib-1 drm expat
-WANTLIB += ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 gtk-3
-WANTLIB += m ncurses pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png pthread pthread-stubs stdc++ util vte2_90
-WANTLIB += xcb xcb-render xcb-shm z
-WANTLIB += atk-bridge-2.0 atspi harfbuzz icudata icule icuuc
+WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
+WANTLIB += c cairo cairo-gobject dbus-1 dbus-glib-1 expat ffi
+WANTLIB += fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
+WANTLIB += harfbuzz icudata icule icuuc m ncurses pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += util vte2_90 xcb xcb-render xcb-shm z
 
 MODULES=	devel/gconf2 \
 		devel/gettext \
