@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2012/04/13 15:18:07 ajacoutot Exp $
-@lib lib/libgdlmm-3.0.so.${LIBgdlmm-3.0_VERSION}

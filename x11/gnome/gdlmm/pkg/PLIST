@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/12/07 08:13:52 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.3 2013/03/26 16:32:52 ajacoutot Exp $
 include/gdlmm-3.0/
 include/gdlmm-3.0/gdlmm/
 include/gdlmm-3.0/gdlmm.h
@@ -27,5 +26,6 @@ lib/gdlmm-3.0/include/
 lib/gdlmm-3.0/include/gdlmmconfig.h
 lib/libgdlmm-3.0.a
 lib/libgdlmm-3.0.la
+@lib lib/libgdlmm-3.0.so.${LIBgdlmm-3.0_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/gdlmm-3.0.pc
