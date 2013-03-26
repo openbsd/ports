@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2013/03/11 02:52:06 espie Exp $
+# $OpenBSD: Makefile,v 1.60 2013/03/26 18:24:29 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -16,10 +16,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c
 
-MAKE_ENV=		TEST_POD=1
+MAKE_ENV=	TEST_POD=1
 RUN_DEPENDS=	net/p5-PlRPC>=0.2017 \
-				databases/p5-SQL-Statement>=1.28 \
-				devel/p5-MLDBM
+		databases/p5-SQL-Statement>=1.28 \
+		devel/p5-MLDBM
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>
