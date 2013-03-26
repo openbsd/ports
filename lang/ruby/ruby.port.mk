@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.60 2013/03/20 19:13:50 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.61 2013/03/26 18:51:44 jeremy Exp $
 
 # ruby module
 
@@ -252,7 +252,10 @@ TEST_DEPENDS+=	${MODRUBY_RSPEC_DEPENDS}
 TEST_DEPENDS+=	${MODRUBY_RSPEC2_DEPENDS}
 .endif
 
-MODRUBY_RUBY_ADJ=	perl -pi -e 's,/usr/bin/env ruby,${RUBY},'
+MODRUBY_RUBY_ADJ =	perl -pi \
+		-e '$$. == 1 && s|^.*env ruby.*$$|\#!${RUBY}|;' \
+		-e '$$. == 1 && s|^.*bin/ruby.*$$|\#!${RUBY}|;' \
+		-e 'close ARGV if eof;'
 MODRUBY_ADJ_FILES?=
 .if !empty(MODRUBY_ADJ_FILES)
 MODRUBY_ADJ_REPLACE=	for pat in ${MODRUBY_ADJ_FILES:QL}; do \
