@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.128 2013/03/23 01:42:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.129 2013/03/26 08:12:35 sthen Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
@@ -7,7 +7,7 @@ VERSION=	7.3.850
 DISTNAME=	vim-${VERSION}
 PKGNAME-main=	vim-${VERSION}
 PKGNAME-lang=	vim-lang-${VERSION}
-REVISION-lang=	1
+REVISION-lang=	2
 P=		vim${VERSION:R:S/.//}
 CATEGORIES=	editors
 # Upstream's normal distribution (http://ftp.vim.org/pub/vim/unix/) consists
@@ -114,7 +114,7 @@ WANTLIB += pangoft2-1.0 pthread z
 ERRORS=		"Fatal: You must select one GUI interface: no_x11, gtk2, athena or motif"
 .endif
 
-RUN_DEPENDS-lang=	${BUILD_PKGPATH}
+RUN_DEPENDS-lang=	editors/vim,-main
 PKG_ARCH-lang=		*
 LIB_DEPENDS-lang=
 WANTLIB-lang=
