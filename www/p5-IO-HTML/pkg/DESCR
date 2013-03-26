@@ -1,0 +1,3 @@
+This module opens a file and performs automatic charset detection
+based on the HTML5 algorithm.  You can then pass the filehandle to
+HTML::Parser or a related module (or just read it yourself).
