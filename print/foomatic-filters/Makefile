@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.43 2013/03/11 11:37:53 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2013/03/26 16:59:35 ajacoutot Exp $
 
 COMMENT=		Foomatic PPD print filters
 
 DISTNAME=		foomatic-filters-4.0.17
 CATEGORIES=		print
-REVISION=		2
+REVISION=		3
 
 HOMEPAGE=		http://www.linuxfoundation.org/en/OpenPrinting/Database/Foomatic
 
@@ -13,14 +13,12 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c dbus-1 m pthread
+WANTLIB += c dbus-1 m
 
 MASTER_SITES=		http://www.openprinting.org/download/foomatic/ \
 			http://www.openprinting.org/download/foomatic/oldstuff/
 
 LIB_DEPENDS=		x11/dbus
-
-BUILD_DEPENDS=		${MODGNU_AUTOMAKE_DEPENDS}
 
 RUN_DEPENDS=		print/ghostscript/gnu \
 			print/a2ps
@@ -33,7 +31,7 @@ AUTOCONF_VERSION=2.65
 
 INSTALL_TARGET=		install-main install-cups
 
-CONFIGURE_STYLE=	autoconf
+CONFIGURE_STYLE=	autoconf automake
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
 			CUPS="${LOCALBASE}/libexec/cups" \
