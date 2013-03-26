@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/11/11 15:50:28 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2013/03/26 16:33:25 ajacoutot Exp $
 @bin bin/grilo-ms2
 include/media-server2-client.h
 include/media-server2-common.h
@@ -7,6 +6,7 @@ include/media-server2-observer.h
 include/media-server2-server.h
 lib/libmediaserver2.a
 lib/libmediaserver2.la
+@lib lib/libmediaserver2.so.${LIBmediaserver2_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/mediaserver2.pc
 share/examples/grilo-mediaserver2/

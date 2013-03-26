@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:46:10 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/03/26 16:33:25 ajacoutot Exp $
 
 COMMENT=	expose media content over D-Bus for Rygel to consume
 
 GNOME_PROJECT=	grilo-mediaserver2
 GNOME_VERSION=	0.0.2
 # git clone of 4614b1969dcdea2c254af3178b70966282468c07
+REVISION=	0
 
 SHARED_LIBS +=  mediaserver2              0.0 # 0.0
 
@@ -45,9 +46,7 @@ do-configure:
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		env ${CONFIGURE_ENV} \
-		./autogen.sh ${CONFIGURE_ARGS} \
-			--disable-maintainer-mode \
-			--disable-silent-rules
+		./autogen.sh ${CONFIGURE_ARGS}
 ############################################################
 
 .include <bsd.port.mk>
