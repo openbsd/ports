@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2012/09/29 14:01:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2013/03/26 14:20:44 jasper Exp $
 
 COMMENT=		abstraction layer between apps and connection managers
 
-DISTNAME=		telepathy-mission-control-5.12.3
+DISTNAME=		telepathy-mission-control-5.14.0
 
-SHARED_LIBS +=  mission-control-plugins 1.1      # 3.1
+SHARED_LIBS +=  mission-control-plugins 2.0      # 4.1
 
 HOMEPAGE=		http://mission-control.sourceforge.net/
 
