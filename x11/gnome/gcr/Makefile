@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/22 11:05:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/26 17:08:19 ajacoutot Exp $
 
 COMMENT=	library for bits of crypto UI and parsing
 
@@ -44,8 +44,8 @@ CONFIGURE_ARGS=	--disable-update-mime
 ### XXX remove on next upgrade
 AUTOCONF_VERSION=	2.68
 AUTOMAKE_VERSION=	1.11
-BUILD_DEPENDS +=	devel/autoconf/${AUTOCONF_VERSION} \
-			devel/automake/${AUTOMAKE_VERSION} \
+BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
 			devel/libtool
 
 post-patch:

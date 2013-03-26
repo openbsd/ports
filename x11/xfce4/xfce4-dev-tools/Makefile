@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:46:18 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/03/26 17:08:19 ajacoutot Exp $
 
 COMMENT =	Xfce4 developer tools and macros
 
 XFCE_PROJECT =	xfce4-dev-tools
 HOMEPAGE =	http://foo-projects.org/~benny/projects/xfce4-dev-tools/
-REVISION=	1
+REVISION=	2
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
@@ -14,8 +14,8 @@ MODULES =	x11/xfce4
 RUN_DEPENDS =	devel/libtool \
 		textproc/gtk-doc \
 		textproc/intltool \
-		devel/automake/${AUTOMAKE_VERSION} \
-		devel/autoconf/${AUTOCONF_VERSION} \
+		${MODGNU_AUTOCONF_DEPENDS} \
+		${MODGNU_AUTOMAKE_DEPENDS} \
 		shells/bash \
 		devel/git \
 		devel/subversion

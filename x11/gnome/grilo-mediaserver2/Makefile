@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/26 16:33:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/26 17:08:19 ajacoutot Exp $
 
 COMMENT=	expose media content over D-Bus for Rygel to consume
 
@@ -37,8 +37,8 @@ AUTOCONF_VERSION=	2.68
 AUTOMAKE_VERSION=	1.11
 
 BUILD_DEPENDS +=x11/gnome/common \
-		devel/autoconf/${AUTOCONF_VERSION} \
-		devel/automake/${AUTOMAKE_VERSION} \
+		${MODGNU_AUTOCONF_DEPENDS} \
+		${MODGNU_AUTOMAKE_DEPENDS} \
 		devel/libtool
 
 do-configure:

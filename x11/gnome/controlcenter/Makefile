@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2013/03/11 11:46:10 espie Exp $
+# $OpenBSD: Makefile,v 1.86 2013/03/26 17:08:19 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -91,28 +91,28 @@ MODGNOME_ICON_CACHE=	Yes
 
 # Language code is synced with gdm but gnome-control-center does not
 # provide a --with-incomplete-locales configure switch.
-CFLAGS +=       -DWITH_INCOMPLETE_LOCALES
+CFLAGS += 	      -DWITH_INCOMPLETE_LOCALES
 
-LIBTOOL_FLAGS=	--tag=disable-static
+LIBTOOL_FLAGS=		--tag=disable-static
 
-CONFIGURE_ARGS=	--disable-static \
-		--disable-update-mimedb \
-		--disable-systemd \
-		--without-cheese \
-		--with-x \
-		--enable-cups
+CONFIGURE_ARGS=		--disable-static \
+			--disable-update-mimedb \
+			--disable-systemd \
+			--without-cheese \
+			--with-x \
+			--enable-cups
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
-FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/gnome-control-center
+FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/gnome-control-center
 
 AUTOCONF_VERSION=	2.68
 AUTOMAKE_VERSION=	1.11
-BUILD_DEPENDS +=devel/autoconf/${AUTOCONF_VERSION} \
-		devel/automake/${AUTOMAKE_VERSION} \
-		devel/libtool \
-		x11/gnome/common
+BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool \
+			x11/gnome/common
 
 pre-configure:
 	@cd ${WRKSRC} && \
