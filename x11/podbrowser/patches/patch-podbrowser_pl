@@ -1,7 +1,7 @@
-$OpenBSD: patch-podbrowser_pl,v 1.1.1.1 2009/09/05 08:44:15 landry Exp $
---- podbrowser.pl.orig	Fri Sep  4 04:15:06 2009
-+++ podbrowser.pl	Fri Sep  4 04:15:13 2009
-@@ -56,7 +56,7 @@ textdomain(lc($NAME));
+$OpenBSD: patch-podbrowser_pl,v 1.2 2013/03/26 09:07:28 ajacoutot Exp $
+--- podbrowser.pl.orig	Sun Dec  2 19:28:14 2007
++++ podbrowser.pl	Tue Mar 26 09:51:59 2013
+@@ -56,11 +56,11 @@ textdomain(lc($NAME));
  }
  
  ### bits we'll be reusing:
@@ -10,3 +10,8 @@ $OpenBSD: patch-podbrowser_pl,v 1.1.1.1 2009/09/05 08:44:15 landry Exp $
  my $APP			= Gtk2::GladeXML->new($GLADE_FILE);
  my $THEME		= get_an_icon_theme();
  my $TIPS		= Gtk2::Tooltips->new;
+-my $IDX_PBF		= Gtk2::Gdk::Pixbuf->new_from_file($THEME->lookup_icon('stock_bookmark', 16, 'force-svg')->get_filename)->scale_simple(16, 16, 'bilinear');
++my $IDX_PBF		= Gtk2::Gdk::Pixbuf->new_from_file($THEME->lookup_icon('stock_add-bookmark', 16, 'force-svg')->get_filename)->scale_simple(16, 16, 'bilinear');
+ my $PAGE_PBF		= Gtk2::Gdk::Pixbuf->new_from_file($THEME->lookup_icon('stock_new-text', 16, 'force-svg')->get_filename)->scale_simple(16, 16, 'bilinear');
+ my $FOLDER_PBF		= Gtk2::Gdk::Pixbuf->new_from_file($THEME->lookup_icon('gnome-fs-directory', 16, 'force-svg')->get_filename)->scale_simple(16, 16, 'bilinear');
+ my $NORMAL_CURSOR	= Gtk2::Gdk::Cursor->new('left_ptr');

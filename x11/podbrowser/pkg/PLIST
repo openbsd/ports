@@ -1,12 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/06/15 08:30:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/03/26 09:07:28 ajacoutot Exp $
 bin/html2ps-podbrowser
 bin/podbrowser
 @man man/man1/podbrowser.1
 share/applications/podbrowser.desktop
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/podbrowser.png
 share/podbrowser/
 share/podbrowser/podbrowser.glade

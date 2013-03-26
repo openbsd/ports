@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:46:15 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/26 09:07:28 ajacoutot Exp $
 
 COMMENT =	graphical documentation browser for Perl
 
 DISTNAME =	podbrowser-0.12
-REVISION=	5
+REVISION=	6
 
 CATEGORIES =	devel x11
 
@@ -18,8 +18,9 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/xdg-utils \
 		www/p5-HTML-Parser \
 		www/p5-URI \
+		x11/gnome/icon-theme \
 		x11/p5-Gtk2-Ex-PodViewer \
-		x11/p5-Gtk2-GladeXML \
+		x11/p5-Gtk2-GladeXML>=1.007p7 \
 		x11/gtk+2,-guic
 
 NO_TEST =	Yes
