@@ -1,11 +1,11 @@
-$OpenBSD: patch-erlang-js-spidermonkey_c,v 1.1.1.1 2012/08/24 07:26:29 jmatthew Exp $
+$OpenBSD: patch-erlang-js-spidermonkey_c,v 1.2 2013/03/26 05:26:30 jmatthew Exp $
 
 Cope with API change between bundled spidermonkey 1.8 and external 1.9.
 Use JS_SetOperationCallback instead of JS_SetBranchCallback to perform
 periodic gc, and fix some compiler warnings in the call to JS_DefineFunction.
 
---- deps/erlang_js/c_src/spidermonkey.c.orig	Fri Jul 13 23:29:23 2012
-+++ deps/erlang_js/c_src/spidermonkey.c	Wed Aug  8 11:35:56 2012
+--- deps/erlang_js/c_src/spidermonkey.c.orig	Wed Jan 30 06:13:01 2013
++++ deps/erlang_js/c_src/spidermonkey.c	Sat Feb 23 10:27:33 2013
 @@ -78,19 +78,19 @@ void on_error(JSContext *context, const char *message,
    }
  }
@@ -47,8 +47,8 @@ periodic gc, and fix some compiler warnings in the call to JS_DefineFunction.
 -  JS_SetBranchCallback(vm->context, on_branch);
 +  JS_SetOperationCallback(vm->context, on_operation);
    JS_SetContextPrivate(vm->context, state);
--  JSNative *funptr = (JSNative *) *js_log;
--  JS_DefineFunction(vm->context, JS_GetGlobalObject(vm->context), "ejsLog", *funptr,
+-  JSNative funptr = (JSNative) &js_log;
+-  JS_DefineFunction(vm->context, JS_GetGlobalObject(vm->context), "ejsLog", funptr,
 +  JS_DefineFunction(vm->context, JS_GetGlobalObject(vm->context), "ejsLog", (JSNative)js_log,
                      0, JSFUN_FAST_NATIVE);
    end_request(vm);
