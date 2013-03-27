@@ -1,6 +1,9 @@
-$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.8 2013/03/15 08:30:33 robert Exp $
---- content/browser/browser_main_loop.cc.orig	Thu Feb 21 04:26:28 2013
-+++ content/browser/browser_main_loop.cc	Fri Feb 22 19:40:32 2013
+$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.9 2013/03/27 20:26:42 ajacoutot Exp $
+
+rm g_type_init: fix build with glib2>=2.36.0
+
+--- content/browser/browser_main_loop.cc.orig	Tue Mar 12 20:01:28 2013
++++ content/browser/browser_main_loop.cc	Wed Mar 27 21:24:16 2013
 @@ -81,7 +81,7 @@
  #include "ui/gfx/gtk_util.h"
  #endif
@@ -28,3 +31,11 @@ $OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.8 2013/03/15 08:30:33 r
    SetupSandbox(parsed_command_line_);
  #endif
  
+@@ -710,7 +710,6 @@ void BrowserMainLoop::InitializeToolkit() {
+   // this is superfluous as gtk_init() ought to do this. It's
+   // definitely harmless, so retained as a reminder of this
+   // requirement for gconf.
+-  g_type_init();
+ 
+ #if !defined(USE_AURA)
+   gfx::GtkInitFromCommandLine(parsed_command_line_);
