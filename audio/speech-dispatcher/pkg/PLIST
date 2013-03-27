@@ -1,20 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/10/20 11:28:38 ajacoutot Exp $
-@bin bin/clibrary
-@bin bin/clibrary2
-@bin bin/connection_recovery
-@bin bin/long_message
-@bin bin/run_test
+@comment $OpenBSD: PLIST,v 1.2 2013/03/27 16:07:42 ajacoutot Exp $
 bin/spd-conf
 @bin bin/spd-say
 @bin bin/spdsend
 @bin bin/speech-dispatcher
-include/libspeechd.h
+include/speech-dispatcher/
+include/speech-dispatcher/libspeechd.h
+include/speech-dispatcher/spd_audio_plugin.h
+include/speech-dispatcher/speechd_types.h
 @info info/spd-say.info
 @info info/speech-dispatcher.info
 @info info/ssip.info
 lib/libspeechd.a
 lib/libspeechd.la
 @lib lib/libspeechd.so.${LIBspeechd_VERSION}
+lib/pkgconfig/speech-dispatcher.pc
 lib/python${MODPY_VERSION}/site-packages/speechd/
 lib/python${MODPY_VERSION}/site-packages/speechd/__init__.py
 lib/python${MODPY_VERSION}/site-packages/speechd/__init__.pyc
@@ -45,9 +44,7 @@ lib/speech-dispatcher-modules/
 @bin lib/speech-dispatcher-modules/sd_espeak
 @bin lib/speech-dispatcher-modules/sd_festival
 @bin lib/speech-dispatcher-modules/sd_generic
-lib/speech-dispatcher/libsdaudio.a
-lib/speech-dispatcher/libsdaudio.la
-@lib lib/speech-dispatcher/libsdaudio.so.${LIBsdaudio_VERSION}
+lib/speech-dispatcher/spd_libao.so
 share/examples/speech-dispatcher/
 share/examples/speech-dispatcher/speech-dispatcher/
 @sample ${SYSCONFDIR}/speech-dispatcher/

@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_server_speaking_c,v 1.1 2013/03/27 16:07:42 ajacoutot Exp $
+
+GNU: undefined reference to `TEMP_FAILURE_RETRY'
+revert part of:
+http://git.freebsoft.org/?p=speechd.git;a=commitdiff;h=22ccf08e357fd28231ffd02058d5eb474f3161e4
+
+--- src/server/speaking.c.orig	Wed Jul 11 11:05:06 2012
++++ src/server/speaking.c	Wed Mar 27 16:52:02 2013
+@@ -84,16 +84,10 @@ void *speak(void *data)
+ 		    poll_fds[0].revents, poll_fds[1].revents);
+ 		if ((revents = poll_fds[0].revents)) {
+ 			if (revents & POLLIN) {
+-				char buf[1];
++				char buf[100];
+ 				MSG(5,
+ 				    "wait_for_poll: activity in Speech Dispatcher");
+-				const ssize_t rd_bytes =
+-				    TEMP_FAILURE_RETRY(read
+-						       (poll_fds[0].fd, buf,
+-							1));
+-				if (rd_bytes != 1)
+-					FATAL
+-					    ("read from polled fd: could not read 1 byte");
++				read(poll_fds[0].fd, buf, 1);
+ 			}
+ 		}
+ 		if (poll_count > 1) {

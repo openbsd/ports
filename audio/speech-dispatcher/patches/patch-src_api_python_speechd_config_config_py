@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_python_speechd_config_config_py,v 1.1.1.1 2011/10/20 11:28:38 ajacoutot Exp $
---- src/python/speechd_config/config.py.orig	Thu Oct 20 12:34:18 2011
-+++ src/python/speechd_config/config.py	Thu Oct 20 12:42:28 2011
-@@ -181,6 +181,15 @@ class Options(object):
+$OpenBSD: patch-src_api_python_speechd_config_config_py,v 1.1 2013/03/27 16:07:42 ajacoutot Exp $
+--- src/api/python/speechd_config/config.py.orig	Fri Jul 13 15:52:02 2012
++++ src/api/python/speechd_config/config.py	Wed Mar 27 16:08:30 2013
+@@ -184,6 +184,15 @@ class Options(object):
              'command_line' : ('', '--test-pulse'),
              },
  
@@ -17,7 +17,7 @@ $OpenBSD: patch-src_python_speechd_config_config_py,v 1.1.1.1 2011/10/20 11:28:3
          'use_espeak_synthesis':
              {
              'descr' : "Use espeak to synthesize messages",
-@@ -435,6 +444,11 @@ is not installed.""")
+@@ -431,6 +440,11 @@ is not installed.""")
          report("Testing PULSE sound output")
          return self.audio_try_play(type='pulse')
  
@@ -29,7 +29,7 @@ $OpenBSD: patch-src_python_speechd_config_config_py,v 1.1.1.1 2011/10/20 11:28:3
      def diagnostics(self, speechd_running = True, output_modules=[], audio_output=[]):
  
          """Perform a complete diagnostics"""
-@@ -486,6 +500,10 @@ what is wrong)""", True):
+@@ -482,6 +496,10 @@ what is wrong)""", True):
              if self.test_pulse():
                  working_audio += ["pulse"]
  
@@ -40,18 +40,16 @@ $OpenBSD: patch-src_python_speechd_config_config_py,v 1.1.1.1 2011/10/20 11:28:3
          report("Testing whether Python Speech Dispatcher library is in path and importable")
          python_speechd_working = test.python_speechd_in_path()
          
-@@ -736,8 +754,8 @@ Do you want to keep it?""", False)
+@@ -729,7 +747,7 @@ class Configure:
  
          self.default_audio_method = question_with_suggested_answers(
              "Default audio output method",
 -            "pulse",
--            ["pulse", "alsa", "oss", "pulse,alsa"])
 +            "libao",
-+            ["libao", "pulse", "alsa", "oss", "pulse,alsa"])
+             ["pulse", "libao", "alsa", "oss", "pulse,alsa"])
  
          self.default_speech_rate = question(
-             "Default speech rate (on the scale of -100..100, 0 is default, 50 is faster, -50 is slower)",
-@@ -897,6 +915,9 @@ def main():
+@@ -892,6 +910,9 @@ def main():
  
      elif options.test_pulse:
          test.audio_try_play(type='pulse')

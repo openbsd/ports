@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_modules_espeak_c,v 1.1.1.1 2011/10/20 11:28:38 ajacoutot Exp $
---- src/modules/espeak.c.orig	Thu Oct 20 10:53:31 2011
-+++ src/modules/espeak.c	Thu Oct 20 10:53:42 2011
-@@ -32,7 +32,7 @@
- #include <glib.h>
+$OpenBSD: patch-src_modules_espeak_c,v 1.2 2013/03/27 16:07:42 ajacoutot Exp $
+--- src/modules/espeak.c.orig	Wed Jul 11 11:05:06 2012
++++ src/modules/espeak.c	Wed Mar 27 16:01:32 2013
+@@ -37,7 +37,7 @@
+ #include <semaphore.h>
  
  /* espeak header file */
 -#include <espeak/speak_lib.h>

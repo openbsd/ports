@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_server_sem_functions_c,v 1.1 2013/03/27 16:07:42 ajacoutot Exp $
+
+GNU: undefined reference to `TEMP_FAILURE_RETRY'
+revert part of:
+http://git.freebsoft.org/?p=speechd.git;a=commitdiff;h=22ccf08e357fd28231ffd02058d5eb474f3161e4
+
+--- src/server/sem_functions.c.orig	Wed Mar 27 16:47:23 2013
++++ src/server/sem_functions.c	Wed Mar 27 16:48:41 2013
+@@ -33,8 +33,5 @@ void speaking_semaphore_post(void)
+ {
+ 	char buf[1];
+ 	buf[0] = 42;
+-	const ssize_t wr_bytes =
+-	    TEMP_FAILURE_RETRY(write(speaking_pipe[1], buf, 1));
+-	if (wr_bytes != 1)
+-		FATAL("write to polled fd: could not write 1 byte");
++	write(speaking_pipe[1], buf, 1);
+ }
