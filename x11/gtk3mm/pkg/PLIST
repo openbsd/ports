@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/09/21 13:22:10 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.9 2013/03/27 17:56:24 ajacoutot Exp $
 include/gdkmm-3.0/
 include/gdkmm-3.0/gdkmm/
 include/gdkmm-3.0/gdkmm.h
@@ -476,8 +475,10 @@ lib/gtkmm-3.0/proc/m4/convert_gtk.m4
 lib/gtkmm-3.0/proc/m4/convert_gtkmm.m4
 lib/libgdkmm-3.0.a
 lib/libgdkmm-3.0.la
+@lib lib/libgdkmm-3.0.so.${LIBgdkmm-3.0_VERSION}
 lib/libgtkmm-3.0.a
 lib/libgtkmm-3.0.la
+@lib lib/libgtkmm-3.0.so.${LIBgtkmm-3.0_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/gdkmm-3.0.pc
 lib/pkgconfig/gtkmm-3.0.pc
