@@ -1,6 +1,6 @@
-$OpenBSD: patch-tinyca2,v 1.3 2013/03/27 11:16:32 sthen Exp $
---- tinyca2.orig	Thu Jul 13 11:57:01 2006
-+++ tinyca2	Thu Jul 13 12:03:39 2006
+$OpenBSD: patch-tinyca2,v 1.4 2013/03/27 11:44:24 sthen Exp $
+--- tinyca2.orig	Tue Jul 25 21:12:00 2006
++++ tinyca2	Wed Mar 27 11:36:38 2013
 @@ -18,7 +18,7 @@
  # along with this program; if not, write to the Free Software
  # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111, USA.
@@ -10,6 +10,16 @@ $OpenBSD: patch-tinyca2,v 1.3 2013/03/27 11:16:32 sthen Exp $
  }
  
  use strict;
+@@ -27,8 +27,8 @@ use Gtk2 '-init';
+ 
+ use MIME::Base64;
+ 
++use Locale::gettext qw(gettext textdomain bindtextdomain);
+ use POSIX;
+-use Locale::gettext;
+ 
+ use OpenSSL;
+ use CA;
 @@ -46,7 +46,7 @@ use KEY;
  use TCONFIG;
  
@@ -30,7 +40,7 @@ $OpenBSD: patch-tinyca2,v 1.3 2013/03/27 11:16:32 sthen Exp $
  $init->{'tarbin'} = "/bin/tar";
  
  if(not -x $init->{'opensslbin'}) {
-@@ -76,7 +76,7 @@ if(not -x $init->{'zipbin'}) {
+@@ -76,7 +76,7 @@ if(not -x $init->{'tarbin'}) {
  }
  
  # directory with the templates
