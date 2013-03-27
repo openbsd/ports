@@ -1,6 +1,7 @@
-$OpenBSD: patch-ext_ffmpeg_gstffmpegdec_c,v 1.5 2013/03/25 16:09:41 zhuk Exp $
+$OpenBSD: patch-ext_ffmpeg_gstffmpegdec_c,v 1.6 2013/03/27 11:41:11 brad Exp $
 
 From upstream:
+- Don't flush buffers on DISCONT.
 - Report latency if B-frames are present.
 - Give the (E)AC3/DTS decoders a rank of marginal.
 - Only set get_buffer() function for video.
@@ -13,7 +14,7 @@ Date: Tue, 10 Jul 2012 14:10:14 +0000
 Subject: avdec: ignore AAC errors instead of erroring out
 
 --- ext/ffmpeg/gstffmpegdec.c.orig	Wed Nov  2 09:04:05 2011
-+++ ext/ffmpeg/gstffmpegdec.c	Fri Mar  2 17:23:48 2012
++++ ext/ffmpeg/gstffmpegdec.c	Mon Mar 25 22:17:30 2013
 @@ -477,36 +477,44 @@ static gboolean
  gst_ffmpegdec_query (GstPad * pad, GstQuery * query)
  {
@@ -126,7 +127,7 @@ Subject: avdec: ignore AAC errors instead of erroring out
          GST_DEBUG_OBJECT (ffmpegdec,
              "Buffer interlacing does not match pad, updating");
          buffer = gst_buffer_make_metadata_writable (buffer);
-@@ -2205,15 +2205,6 @@ gst_ffmpegdec_audio_frame (GstFFMpegDec * ffmpegdec,
+@@ -2205,15 +2220,6 @@ gst_ffmpegdec_audio_frame (GstFFMpegDec * ffmpegdec,
      *outbuf = NULL;
    }
  
@@ -142,6 +143,26 @@ Subject: avdec: ignore AAC errors instead of erroring out
  beach:
    GST_DEBUG_OBJECT (ffmpegdec, "return flow %d, out %p, len %d",
        *ret, *outbuf, len);
+@@ -2542,15 +2548,15 @@ gst_ffmpegdec_chain (GstPad * pad, GstBuffer * inbuf)
+   discont = GST_BUFFER_IS_DISCONT (inbuf);
+ 
+   /* The discont flags marks a buffer that is not continuous with the previous
+-   * buffer. This means we need to clear whatever data we currently have. We
+-   * currently also wait for a new keyframe, which might be suboptimal in the
+-   * case of a network error, better show the errors than to drop all data.. */
++   * buffer. This means we need to clear whatever data we currently have. We let
++   * ffmpeg continue with the data that it has. We currently drain the old
++   * frames that might be inside the decoder and we clear any partial data in
++   * the pcache, we might be able to remove the drain and flush too. */
+   if (G_UNLIKELY (discont)) {
+     GST_DEBUG_OBJECT (ffmpegdec, "received DISCONT");
+     /* drain what we have queued */
+     gst_ffmpegdec_drain (ffmpegdec);
+     gst_ffmpegdec_flush_pcache (ffmpegdec);
+-    avcodec_flush_buffers (ffmpegdec->context);
+     ffmpegdec->discont = TRUE;
+     gst_ffmpegdec_reset_ts (ffmpegdec);
+   }
 @@ -3043,14 +3049,6 @@ gst_ffmpegdec_register (GstPlugin * plugin)
          rank = GST_RANK_SECONDARY;
          break;

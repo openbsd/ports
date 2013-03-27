@@ -1,0 +1,89 @@
+$OpenBSD: patch-ext_ffmpeg_gstffmpegutils_c,v 1.1 2013/03/27 11:41:11 brad Exp $
+
+From upstream:
+- Add support for 10-bit YUV color formats.
+
+--- ext/ffmpeg/gstffmpegutils.c.orig	Mon Mar 25 22:42:00 2013
++++ ext/ffmpeg/gstffmpegutils.c	Mon Mar 25 22:52:39 2013
+@@ -250,6 +250,54 @@ gst_ffmpeg_init_pix_fmt_info (void)
+   pix_fmt_info[PIX_FMT_YUVA420P].depth = 8,
+       pix_fmt_info[PIX_FMT_YUVA420P].x_chroma_shift = 1,
+       pix_fmt_info[PIX_FMT_YUVA420P].y_chroma_shift = 1;
++
++  pix_fmt_info[PIX_FMT_YUV420P10BE].name = g_strdup ("yuv420p10be");
++  pix_fmt_info[PIX_FMT_YUV420P10BE].nb_channels = 3;
++  pix_fmt_info[PIX_FMT_YUV420P10BE].color_type = FF_COLOR_YUV;
++  pix_fmt_info[PIX_FMT_YUV420P10BE].pixel_type = FF_PIXEL_PLANAR;
++  pix_fmt_info[PIX_FMT_YUV420P10BE].depth = 10,
++      pix_fmt_info[PIX_FMT_YUV420P10BE].x_chroma_shift = 1,
++      pix_fmt_info[PIX_FMT_YUV420P10BE].y_chroma_shift = 1;
++
++  pix_fmt_info[PIX_FMT_YUV420P10LE].name = g_strdup ("yuv420p10le");
++  pix_fmt_info[PIX_FMT_YUV420P10LE].nb_channels = 3;
++  pix_fmt_info[PIX_FMT_YUV420P10LE].color_type = FF_COLOR_YUV;
++  pix_fmt_info[PIX_FMT_YUV420P10LE].pixel_type = FF_PIXEL_PLANAR;
++  pix_fmt_info[PIX_FMT_YUV420P10LE].depth = 10,
++      pix_fmt_info[PIX_FMT_YUV420P10LE].x_chroma_shift = 1,
++      pix_fmt_info[PIX_FMT_YUV420P10LE].y_chroma_shift = 1;
++
++  pix_fmt_info[PIX_FMT_YUV422P10BE].name = g_strdup ("yuv422p10be");
++  pix_fmt_info[PIX_FMT_YUV422P10BE].nb_channels = 3;
++  pix_fmt_info[PIX_FMT_YUV422P10BE].color_type = FF_COLOR_YUV;
++  pix_fmt_info[PIX_FMT_YUV422P10BE].pixel_type = FF_PIXEL_PLANAR;
++  pix_fmt_info[PIX_FMT_YUV422P10BE].depth = 10;
++  pix_fmt_info[PIX_FMT_YUV422P10BE].x_chroma_shift = 1;
++  pix_fmt_info[PIX_FMT_YUV422P10BE].y_chroma_shift = 0;
++
++  pix_fmt_info[PIX_FMT_YUV422P10LE].name = g_strdup ("yuv422p10le");
++  pix_fmt_info[PIX_FMT_YUV422P10LE].nb_channels = 3;
++  pix_fmt_info[PIX_FMT_YUV422P10LE].color_type = FF_COLOR_YUV;
++  pix_fmt_info[PIX_FMT_YUV422P10LE].pixel_type = FF_PIXEL_PLANAR;
++  pix_fmt_info[PIX_FMT_YUV422P10LE].depth = 10;
++  pix_fmt_info[PIX_FMT_YUV422P10LE].x_chroma_shift = 1;
++  pix_fmt_info[PIX_FMT_YUV422P10LE].y_chroma_shift = 0;
++
++  pix_fmt_info[PIX_FMT_YUV444P10BE].name = g_strdup ("yuv444p10be");
++  pix_fmt_info[PIX_FMT_YUV444P10BE].nb_channels = 3;
++  pix_fmt_info[PIX_FMT_YUV444P10BE].color_type = FF_COLOR_YUV;
++  pix_fmt_info[PIX_FMT_YUV444P10BE].pixel_type = FF_PIXEL_PLANAR;
++  pix_fmt_info[PIX_FMT_YUV444P10BE].depth = 10;
++  pix_fmt_info[PIX_FMT_YUV444P10BE].x_chroma_shift = 0;
++  pix_fmt_info[PIX_FMT_YUV444P10BE].y_chroma_shift = 0;
++
++  pix_fmt_info[PIX_FMT_YUV444P10LE].name = g_strdup ("yuv444p10le");
++  pix_fmt_info[PIX_FMT_YUV444P10LE].nb_channels = 3;
++  pix_fmt_info[PIX_FMT_YUV444P10LE].color_type = FF_COLOR_YUV;
++  pix_fmt_info[PIX_FMT_YUV444P10LE].pixel_type = FF_PIXEL_PLANAR;
++  pix_fmt_info[PIX_FMT_YUV444P10LE].depth = 10;
++  pix_fmt_info[PIX_FMT_YUV444P10LE].x_chroma_shift = 0;
++  pix_fmt_info[PIX_FMT_YUV444P10LE].y_chroma_shift = 0;
+ };
+ 
+ int
+@@ -418,6 +466,26 @@ gst_ffmpeg_avpicture_fill (AVPicture * picture,
+       picture->linesize[2] = 0;
+       picture->linesize[3] = 0;
+       return size + 256 * 4;
++    case PIX_FMT_YUV420P10BE:
++    case PIX_FMT_YUV420P10LE:
++    case PIX_FMT_YUV422P10BE:
++    case PIX_FMT_YUV422P10LE:
++    case PIX_FMT_YUV444P10BE:
++    case PIX_FMT_YUV444P10LE:
++      stride = GST_ROUND_UP_4 (width * 2);
++      h2 = ROUND_UP_X (height, pinfo->y_chroma_shift);
++      size = stride * h2;
++      w2 = DIV_ROUND_UP_X (width, pinfo->x_chroma_shift);
++      stride2 = GST_ROUND_UP_4 (w2 * 2);
++      h2 = DIV_ROUND_UP_X (height, pinfo->y_chroma_shift);
++      size2 = stride2 * h2;
++      picture->data[0] = ptr;
++      picture->data[1] = picture->data[0] + size;
++      picture->data[2] = picture->data[1] + size2;
++      picture->linesize[0] = stride;
++      picture->linesize[1] = stride2;
++      picture->linesize[2] = stride2;
++      return size + 2 * size2;
+     default:
+       picture->data[0] = NULL;
+       picture->data[1] = NULL;
