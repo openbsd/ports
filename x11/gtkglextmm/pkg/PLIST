@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/05/28 09:13:23 bentley Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2013/03/27 18:01:16 ajacoutot Exp $
 include/gtkglextmm-1.2/
 include/gtkglextmm-1.2/gdkglmm.h
 include/gtkglextmm-1.2/gdkmm/
@@ -43,8 +42,10 @@ lib/gtkglextmm-1.2/proc/m4/convert_gdkglext.m4
 lib/gtkglextmm-1.2/proc/m4/convert_gtkglext.m4
 lib/libgdkglextmm-x11-1.2.a
 lib/libgdkglextmm-x11-1.2.la
+@lib lib/libgdkglextmm-x11-1.2.so.${LIBgdkglextmm-x11-1.2_VERSION}
 lib/libgtkglextmm-x11-1.2.a
 lib/libgtkglextmm-x11-1.2.la
+@lib lib/libgtkglextmm-x11-1.2.so.${LIBgtkglextmm-x11-1.2_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/gdkglextmm-1.2.pc
 lib/pkgconfig/gdkglextmm-x11-1.2.pc

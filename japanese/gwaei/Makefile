@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:12:33 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/03/27 18:02:51 ajacoutot Exp $
 
 COMMENT =	japanese-english dictionary program
 
 V =		3.2.0
 DISTNAME =	gwaei-${V}
-REVISION =	3
+REVISION =	4
 
 SHARED_LIBS =	waei	0.0
 
@@ -22,7 +22,7 @@ WANTLIB =	ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi \
 		gmodule-2.0 gobject-2.0 gthread-2.0 gtk-3 harfbuzz \
 		icudata icule icuuc idn m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs \
-		ssl xcb xcb-render xcb-shm z
+		ssl xcb xcb-render xcb-shm z graphite2
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=gwaei/${V}/}
 
@@ -41,7 +41,7 @@ MODGNOME_TOOLS =	yelp
 MODGNOME_DESKTOP_FILE =	Yes
 MODGNOME_ICON_CACHE =	Yes
 
-post-patch:
+pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/gwaei/help/C/*.{in,xml}
 
 .include <bsd.port.mk>

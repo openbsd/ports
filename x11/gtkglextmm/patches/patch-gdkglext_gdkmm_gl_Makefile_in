@@ -1,0 +1,14 @@
+$OpenBSD: patch-gdkglext_gdkmm_gl_Makefile_in,v 1.1 2013/03/27 18:01:16 ajacoutot Exp $
+
+Fix build with glib2>=2.36.0
+
+--- gdkglext/gdkmm/gl/Makefile.in.orig	Wed Mar 27 11:31:45 2013
++++ gdkglext/gdkmm/gl/Makefile.in	Wed Mar 27 11:31:52 2013
+@@ -210,7 +210,6 @@ sublib_topdir = gdkglext
+ sublib_cflags = \
+ 	$(GDKGLEXTMM_DEP_CFLAGS)	\
+ 	-DGDKMM_GL_COMPILATION		\
+-	-DG_DISABLE_DEPRECATED		\
+ 	-DGDK_DISABLE_DEPRECATED	\
+ 	-DGDK_PIXBUF_DISABLE_DEPRECATED
+ 

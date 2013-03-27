@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2012/05/28 09:13:23 bentley Exp $
-@lib lib/libgdkglextmm-x11-1.2.so.${LIBgdkglextmm-x11-1.2_VERSION}
-@lib lib/libgtkglextmm-x11-1.2.so.${LIBgtkglextmm-x11-1.2_VERSION}
