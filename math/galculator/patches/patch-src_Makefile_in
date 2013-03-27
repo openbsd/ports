@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2013/03/27 18:03:33 ajacoutot Exp $
+
+Remove -DGTK_DISABLE_DEPRECATED: fix build with gtk+3>=3.8.0 (XXX check on next update)
+
+--- src/Makefile.in.orig	Wed Mar 27 17:56:49 2013
++++ src/Makefile.in	Wed Mar 27 17:56:53 2013
+@@ -265,7 +265,6 @@ AM_CPPFLAGS = \
+ 	-DPACKAGE_UI_DIR=\""$(datadir)/galculator/ui"\" \
+ 	-DPACKAGE_PIXMAPS_DIR=\""$(datadir)/pixmaps"\" \
+ 	-DGDK_DISABLE_DEPRECATED \
+-	-DGTK_DISABLE_DEPRECATED \
+ 	-DGSEAL_ENABLE
+ 
+ galculator_SOURCES = \

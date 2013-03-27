@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.45 2013/03/21 08:46:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2013/03/27 18:03:33 ajacoutot Exp $
 
 COMMENT=	GTK-based scientific calculator
 
 DISTNAME=	galculator-2.1
 CATEGORIES=	math
 HOMEPAGE=	http://galculator.sourceforge.net/
+REVISION=	0
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -14,15 +15,14 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=galculator/}
 EXTRACT_SUFX=	.tar.bz2
 
-WANTLIB=	GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
-		Xfixes Xi Xinerama Xrandr Xrender Xxf86vm \
-		atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject dbus-1 \
-		drm expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0 \
-		gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 gtk-3 \
-		harfbuzz icudata icule icuuc m \
-		pango-1.0 z pangocairo-1.0 pcre png \
-		pangoft2-1.0 pixman-1 pthread pthread-stubs stdc++ xcb \
-		xcb-render xcb-shm
+WANTLIB=	ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi \
+		Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi c \
+		cairo cairo-gobject dbus-1 expat ffi fontconfig freetype \
+		gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 \
+		gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz icudata \
+		icule icuuc m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
+		pixman-1 png pthread pthread-stubs xcb xcb-render \
+		xcb-shm z
 
 MODULES=	devel/gettext \
 		textproc/intltool
