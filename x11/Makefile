@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.507 2013/03/25 21:23:17 zhuk Exp $
+# $OpenBSD: Makefile,v 1.508 2013/03/27 08:48:38 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -69,7 +69,6 @@
      SUBDIR += gammapage
      SUBDIR += gbdfed
      SUBDIR += gcolor2
-     SUBDIR += gdesklets
      SUBDIR += gdevilspie
      SUBDIR += gentoo
      SUBDIR += gigolo
