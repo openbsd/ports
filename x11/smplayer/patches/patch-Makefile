@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2009/10/18 22:24:45 edd Exp $
---- Makefile.orig	Wed Mar 11 02:21:41 2009
-+++ Makefile	Sat Oct 17 16:46:41 2009
+$OpenBSD: patch-Makefile,v 1.2 2013/03/27 15:19:14 gonzalo Exp $
+--- Makefile.orig	Thu Nov  1 19:42:16 2012
++++ Makefile	Sat Mar 23 14:11:58 2013
 @@ -5,7 +5,7 @@ PREFIX=/usr/local
  CONF_PREFIX=$(PREFIX)
  
@@ -40,7 +40,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2009/10/18 22:24:45 edd Exp $
  
  	-install -d $(DESTDIR)$(SHORTCUTS_PATH)
  	cp src/shortcuts/* $(DESTDIR)$(SHORTCUTS_PATH)
-@@ -75,9 +76,9 @@ install: src/smplayer
+@@ -88,9 +89,9 @@ install: src/smplayer
  	-install -d $(DESTDIR)$(KDE_APPLNK)
  	install -m 644 smplayer.desktop $(DESTDIR)$(KDE_APPLNK)
  	install -m 644 smplayer_enqueue.desktop $(DESTDIR)$(KDE_APPLNK)
