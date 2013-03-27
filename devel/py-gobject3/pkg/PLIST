@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/02/02 10:35:24 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/03/27 17:52:09 ajacoutot Exp $
 @conflict py-gtk2-2.8.6*
 @conflict py-gobject-<2.28.6p2v0
 include/pygobject-3.0/
@@ -48,6 +48,9 @@ lib/python${MODPY_VERSION}/site-packages/gi/overrides/GIMarshallingTests.pyo
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/GLib.py
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/GLib.pyc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/GLib.pyo
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/GObject.py
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/GObject.pyc
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/GObject.pyo
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Gdk.py
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Gdk.pyc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Gdk.pyo
@@ -77,3 +80,13 @@ lib/python${MODPY_VERSION}/site-packages/gi/types.py
 lib/python${MODPY_VERSION}/site-packages/gi/types.pyc
 lib/python${MODPY_VERSION}/site-packages/gi/types.pyo
 lib/python${MODPY_VERSION}/site-packages/pygobject-${MODPY_EGG_VERSION}-py${MODPY_VERSION}-openbsd-${OSREV}-${ARCH}.egg-info
+lib/python${MODPY_VERSION}/site-packages/pygtkcompat/
+lib/python${MODPY_VERSION}/site-packages/pygtkcompat/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pygtkcompat/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pygtkcompat/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/pygtkcompat/generictreemodel.py
+lib/python${MODPY_VERSION}/site-packages/pygtkcompat/generictreemodel.pyc
+lib/python${MODPY_VERSION}/site-packages/pygtkcompat/generictreemodel.pyo
+lib/python${MODPY_VERSION}/site-packages/pygtkcompat/pygtkcompat.py
+lib/python${MODPY_VERSION}/site-packages/pygtkcompat/pygtkcompat.pyc
+lib/python${MODPY_VERSION}/site-packages/pygtkcompat/pygtkcompat.pyo
