@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_openbsd_up-backend_c,v 1.7 2013/03/27 07:23:45 ajacoutot Exp $
+--- src/openbsd/up-backend.c.orig	Wed Mar 27 07:53:00 2013
++++ src/openbsd/up-backend.c	Wed Mar 27 07:54:28 2013
+@@ -556,7 +556,6 @@ up_backend_init (UpBackend *backend)
+ 		device_class->get_low_battery = up_apm_device_get_low_battery;
+ 		device_class->get_online = up_apm_device_get_online;
+ 		device_class->refresh = up_apm_device_refresh;
+-		g_thread_init (NULL);
+ 		/* creates thread */
+ 		if((backend->priv->apm_thread = (GThread*) g_thread_create((GThreadFunc)up_backend_apm_event_thread, (void*) backend, FALSE, &err) == NULL))
+ 		{

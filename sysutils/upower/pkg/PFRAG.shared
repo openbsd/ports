@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/05/23 19:04:57 landry Exp $
-@lib lib/libupower-glib.so.${LIBupower-glib_VERSION}
