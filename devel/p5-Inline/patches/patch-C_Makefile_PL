@@ -1,5 +1,5 @@
---- C/Makefile.PL.orig	Wed Apr  6 17:34:13 2011
-+++ C/Makefile.PL	Wed Apr  6 17:34:33 2011
+--- C/Makefile.PL.orig	Tue Nov 20 10:35:19 2012
++++ C/Makefile.PL	Wed Mar 27 16:23:35 2013
 @@ -68,12 +68,7 @@ END
  # '
  }
@@ -12,5 +12,5 @@
 -}
 +my $answer = 'y';
  
- if ($answer =~ /^(y|yes)$/i) {
-     my %h = (NAME => 'Inline::C', clean => {FILES => '_Inline_test'});
+ my $prereq_pm = install_base_problem() ? {'ExtUtils::MakeMaker' => 6.62}
+                                        : {};
