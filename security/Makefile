@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.309 2013/03/26 21:37:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.310 2013/03/27 11:23:11 sthen Exp $
 
      SUBDIR =
      SUBDIR += ADMfzap
@@ -260,6 +260,7 @@
      SUBDIR += swatch
      SUBDIR += tcltls
      SUBDIR += tempwatch
+     SUBDIR += tinyca
      SUBDIR += towitoko
      SUBDIR += vomit
      SUBDIR += vpnc
