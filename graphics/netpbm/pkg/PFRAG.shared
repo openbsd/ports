@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2006/06/11 18:22:06 naddy Exp $
-@lib lib/libnetpbm.so.${LIBnetpbm_VERSION}

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.61 2013/03/11 11:10:54 espie Exp $
+# $OpenBSD: Makefile,v 1.62 2013/03/27 21:53:59 naddy Exp $
 
 COMMENT=	toolkit for converting images between different formats
 
-DISTNAME=	netpbm-10.35.86
+DISTNAME=	netpbm-10.35.88
 SHARED_LIBS=	netpbm	2.0
 CATEGORIES=	graphics
 HOMEPAGE=	http://netpbm.sourceforge.net/
@@ -13,8 +13,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=netpbm/}
 EXTRACT_SUFX=	.tgz
 
 MODULES=	converters/libiconv
-WANTLIB=	X11 Xau Xdmcp c m pthread-stubs xcb z tiff>=38 jpeg>=64 \
-		png>=10 jbig>=2 jasper>=2 xml2>=11
+WANTLIB=	X11 Xau Xdmcp c jasper jbig jpeg m png pthread-stubs \
+		tiff xcb xml2 z
 LIB_DEPENDS=	graphics/tiff \
 		graphics/jpeg \
 		graphics/png \
@@ -48,7 +48,8 @@ pre-build:
 	    -e 's#%%X11BASE%%#${X11BASE}#g;' \
 	    -e 's#%%PREFIX%%#${PREFIX}#g;' ${WRKSRC}/pm_config.in.h
 	cp ${FILESDIR}/Makefile.config.OpenBSD ${WRKSRC}/Makefile.config
-	cd ${WRKSRC}; buildtools/stamp-date >lib/compile.h
+# Missing in some releases
+#	cd ${WRKSRC}; buildtools/stamp-date >lib/compile.h
 
 NO_TEST=	Yes
 
