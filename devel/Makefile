@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1117 2013/03/22 13:44:31 bcallah Exp $
+# $OpenBSD: Makefile,v 1.1118 2013/03/27 08:52:16 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1125,7 +1125,6 @@
      SUBDIR += py-notify
      SUBDIR += py-openbsd
      SUBDIR += py-optik
-     SUBDIR += py-orbit
      SUBDIR += py-parsing
      SUBDIR += py-peak-rules
      SUBDIR += py-pexpect
