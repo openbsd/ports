@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.93 2013/03/21 08:33:52 landry Exp $
+# $OpenBSD: Makefile,v 1.94 2013/03/27 23:03:11 bcallah Exp $
 
 COMMENT-main=	Civilization clone for X11; multiplayer; game server
 COMMENT-client=	Freeciv client
 COMMENT-share=	shared data files for Freeciv
 
-VERSION=	2.3.3
+VERSION=	2.3.4
 DISTNAME=	freeciv-${VERSION}
 PKGNAME-main=	freeciv-server-${VERSION}
 PKGNAME-client=	freeciv-client-${VERSION}
@@ -25,9 +25,9 @@ USE_GROFF =	Yes
 MULTI_PACKAGES=	-main -share
 
 MODULES=	devel/gettext
-WANTLIB-main +=	GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB-main +=	Xrandr Xrender expat fontconfig freetype pixman-1 pthread
-WANTLIB-main +=	pthread-stubs xcb xcb-render xcb-shm
+WANTLIB-main +=	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB-main +=	Xrandr Xrender expat fontconfig freetype graphite2
+WANTLIB-main +=	pixman-1 pthread pthread-stubs xcb xcb-render xcb-shm
 
 CONFIGURE_ARGS=	--with-ggz-client=no
 
@@ -56,8 +56,8 @@ WANTLIB-main +=		${WANTLIB}
 WANTLIB-main +=		ncurses readline
 
 WANTLIB-client +=	${WANTLIB}
-WANTLIB-client +=	GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB-client +=	Xinerama Xrandr Xrender expat fontconfig freetype
+WANTLIB-client +=	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB-client +=	Xinerama Xrandr Xrender expat fontconfig freetype graphite2
 WANTLIB-client +=	pixman-1 pthread pthread-stubs xcb xcb-render xcb-shm
 
 RUN_DEPENDS-client= devel/desktop-file-utils \
