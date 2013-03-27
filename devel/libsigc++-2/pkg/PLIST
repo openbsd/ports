@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/01/11 13:43:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/03/27 07:44:37 ajacoutot Exp $
 @conflict libsigc++-docs-*
 @pkgpath devel/libsigc++
 @pkgpath devel/libsigc++-2,-main
 @pkgpath devel/libsigc++-2,-docs
-%%SHARED%%
 include/sigc++-${API_V}/
 include/sigc++-${API_V}/sigc++/
 include/sigc++-${API_V}/sigc++/adaptors/
@@ -52,6 +51,7 @@ include/sigc++-${API_V}/sigc++/type_traits.h
 include/sigc++-${API_V}/sigc++/visit_each.h
 lib/libsigc-${API_V}.a
 lib/libsigc-${API_V}.la
+@lib lib/libsigc-${API_V}.so.${LIBsigc-2.0_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/sigc++-${API_V}.pc
 lib/sigc++-${API_V}/

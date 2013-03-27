@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2013/01/11 13:43:59 ajacoutot Exp $
-@lib lib/libsigc-${API_V}.so.${LIBsigc-2.0_VERSION}
