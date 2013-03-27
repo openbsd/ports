@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.78 2013/03/21 17:52:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.79 2013/03/27 17:51:26 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		library for layout and rendering of text
 
-GNOME_VERSION=		1.32.6
+GNOME_VERSION=		1.34.0
 GNOME_PROJECT=		pango
-REVISION=		1
 
-SHARED_LIBS +=  pango-1.0            3200.1   # 3200.6
-SHARED_LIBS +=  pangoft2-1.0         3200.1   # 3200.6
-SHARED_LIBS +=  pangoxft-1.0         3200.1   # 3200.6
-SHARED_LIBS +=  pangocairo-1.0       3200.1   # 3200.6
+SHARED_LIBS +=  pango-1.0            3400.0   # 3400.0
+SHARED_LIBS +=  pangoft2-1.0         3400.0   # 3400.0
+SHARED_LIBS +=  pangoxft-1.0         3400.0   # 3400.0
+SHARED_LIBS +=  pangocairo-1.0       3400.0   # 3400.0
 
 CATEGORIES=		devel x11
 
@@ -32,8 +31,8 @@ MODULES=		devel/gettext \
 
 MODGNOME_TOOLS=		goi
 
-LIB_DEPENDS=		devel/glib2 \
-			devel/harfbuzz>=0.9.13p0
+LIB_DEPENDS=		devel/glib2>=2.36.0 \
+			devel/harfbuzz
 
 LIBTOOL_FLAGS=		--tag=disable-static
 
