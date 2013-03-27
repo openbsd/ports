@@ -1,0 +1,10 @@
+Sakura is a simple but powerful libvte based terminal emulator,
+supporting UTF-8 and input methods as provided by GTK+ and Pango
+libraries.
+
+Sakura is a terminal emulator based on just GTK and VTE. It's a terminal
+emulator with few dependencies, so you don't need a full GNOME desktop
+installed to have a decent terminal emulator. Some of the terminal
+emulators based on VTE are gnome-terminal, XFCE Terminal, Termit, etc.
+Sakura just uses a notebook to provide several terminals in one window
+and adds a contextual menu with some basic options. No more no less.

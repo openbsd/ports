@@ -1,0 +1,12 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2013/03/27 14:07:19 bcallah Exp $
+--- CMakeLists.txt.orig	Wed Mar 27 01:10:05 2013
++++ CMakeLists.txt	Wed Mar 27 01:10:15 2013
+@@ -53,7 +53,7 @@ INSTALL (TARGETS sakura RUNTIME DESTINATION bin)	
+ INSTALL (FILES sakura.desktop DESTINATION share/applications)
+ INSTALL (FILES terminal-tango.svg DESTINATION share/pixmaps)
+ IF (POD2MAN)	
+-	INSTALL (FILES ${sakura_BINARY_DIR}/sakura.1 DESTINATION share/man/man1)	
++	INSTALL (FILES ${sakura_BINARY_DIR}/sakura.1 DESTINATION man/man1)	
+ ENDIF (POD2MAN)
+ INSTALL (FILES INSTALL DESTINATION share/doc/sakura)	
+ 
