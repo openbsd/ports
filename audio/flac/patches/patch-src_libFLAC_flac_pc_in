@@ -1,11 +1,10 @@
-$OpenBSD: patch-src_libFLAC_flac_pc_in,v 1.1 2008/04/07 03:54:39 fgsch Exp $
---- src/libFLAC/flac.pc.in.orig	Tue Apr  1 00:19:43 2008
-+++ src/libFLAC/flac.pc.in	Tue Apr  1 00:20:45 2008
-@@ -6,5 +6,5 @@ includedir=@includedir@
+$OpenBSD: patch-src_libFLAC_flac_pc_in,v 1.2 2013/03/27 16:37:09 naddy Exp $
+--- src/libFLAC/flac.pc.in.orig	Mon Mar 25 18:57:06 2013
++++ src/libFLAC/flac.pc.in	Mon Mar 25 18:57:28 2013
+@@ -6,5 +6,6 @@ includedir=@includedir@
  Name: FLAC
  Description: Free Lossless Audio Codec Library
  Version: @VERSION@
--Libs: -L${libdir} -lFLAC -lm
--Cflags: -I${includedir}/FLAC
-+Libs: -L${libdir} -lFLAC @OGG_LIBS@ -lm
-+Cflags: -I${includedir}/FLAC @OGG_CFLAGS@
++Requires: ogg
+ Libs: -L${libdir} -lFLAC -lm
+ Cflags: -I${includedir}/FLAC

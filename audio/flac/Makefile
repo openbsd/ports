@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2013/03/21 08:45:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2013/03/27 16:37:09 naddy Exp $
 
 COMMENT=	free lossless audio codec
 
 DISTNAME=	flac-1.2.1
-REVISION=	2
+REVISION=	3
 CATEGORIES=	audio archivers
 HOMEPAGE=	https://www.xiph.org/flac/
 SHARED_LIBS +=  FLAC                 9.0      # .10.0
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	http://downloads.xiph.org/releases/flac/
 
-WANTLIB=	c m ogg>=5 stdc++
+WANTLIB=	c m ogg stdc++
 
 MODULES=	converters/libiconv
 LIB_DEPENDS=	audio/libogg

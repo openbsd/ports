@@ -1,7 +1,6 @@
-$OpenBSD: patch-libtiff_Makefile_in,v 1.13 2012/09/24 19:51:04 naddy Exp $
+$OpenBSD: patch-libtiff_Makefile_in,v 1.14 2013/03/27 16:37:09 naddy Exp $
 
 * Avoid picking up an old libtiff in ${LOCALBASE}.
-* Do not record inter-library dependencies.
 
 --- libtiff/Makefile.in.orig	Sat Sep 22 18:08:19 2012
 +++ libtiff/Makefile.in	Mon Sep 24 21:30:29 2012
@@ -14,7 +13,7 @@ $OpenBSD: patch-libtiff_Makefile_in,v 1.13 2012/09/24 19:51:04 naddy Exp $
  LIBDIR = @LIBDIR@
  LIBOBJS = @LIBOBJS@
 -LIBS = @LIBS@
-+LIBS = 
++LIBS = @LDFLAGS@ @LIBS@
  LIBTIFF_ALPHA_VERSION = @LIBTIFF_ALPHA_VERSION@
  LIBTIFF_DOCDIR = @LIBTIFF_DOCDIR@
  LIBTIFF_MAJOR_VERSION = @LIBTIFF_MAJOR_VERSION@

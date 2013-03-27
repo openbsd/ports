@@ -1,15 +1,6 @@
-$OpenBSD: patch-gettext-runtime_intl_Makefile_in,v 1.6 2013/01/21 22:08:52 naddy Exp $
+$OpenBSD: patch-gettext-runtime_intl_Makefile_in,v 1.7 2013/03/27 16:37:09 naddy Exp $
 --- gettext-runtime/intl/Makefile.in.orig	Tue Dec 25 06:16:50 2012
 +++ gettext-runtime/intl/Makefile.in	Fri Jan 18 18:39:38 2013
-@@ -219,7 +219,7 @@ libintl.a libgnuintl.a: $(OBJECTS)
- libintl.la libgnuintl.la: $(OBJECTS) $(OBJECTS_RES_@WOE32@)
- 	$(AM_V_GEN)$(LIBTOOL) $(AM_V_lt) --tag=CC --mode=link \
- 	  $(CC) $(CPPFLAGS) $(CFLAGS) $(XCFLAGS) $(LDFLAGS) -o $@ \
--	  $(OBJECTS) @LTLIBICONV@ @INTL_MACOSX_LIBS@ $(LIBS) @LTLIBTHREAD@ @LTLIBC@ \
-+	  $(OBJECTS) @INTL_MACOSX_LIBS@ $(LIBS) @LTLIBTHREAD@ \
- 	  $(OBJECTS_RES_@WOE32@) \
- 	  -version-info $(LTV_CURRENT):$(LTV_REVISION):$(LTV_AGE) \
- 	  -rpath $(libdir) \
 @@ -456,7 +456,7 @@ install-data: all
  	  $(mkdir_p) $(DESTDIR)$(gettextsrcdir); \
  	  $(INSTALL_DATA) VERSION $(DESTDIR)$(gettextsrcdir)/VERSION; \
