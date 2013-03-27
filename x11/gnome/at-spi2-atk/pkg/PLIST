@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/09/29 10:10:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/03/27 17:53:19 ajacoutot Exp $
 @conflict at-spi-<=1.32.0p3
 include/at-spi2-atk/
 include/at-spi2-atk/2.0/
@@ -13,6 +13,3 @@ lib/libatk-bridge-2.0.a
 lib/libatk-bridge-2.0.la
 @lib lib/libatk-bridge-2.0.so.${LIBatk-bridge-2.0_VERSION}
 lib/pkgconfig/atk-bridge-2.0.pc
-share/glib-2.0/schemas/org.a11y.atspi.gschema.xml
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

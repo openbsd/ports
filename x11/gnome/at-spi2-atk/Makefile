@@ -1,28 +1,27 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 11:46:10 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/27 17:53:19 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	atk-bridge for at-spi2
 
 GNOME_PROJECT=	at-spi2-atk
-GNOME_VERSION=	2.6.2
+GNOME_VERSION=	2.8.0
 
 SHARED_LIBS +=  atk-bridge-2.0            0.0 # 0.0
 
-HOMEPAGE=	http://www.linuxfoundation.org/en/AT-SPI_on_D-Bus
+HOMEPAGE=	https://wiki.linuxfoundation.org/en/AT-SPI_on_D-Bus
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ICE SM X11 atk-1.0 atspi dbus-1 ffi glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gthread-2.0 pcre pthread xcb
+WANTLIB += gobject-2.0 pcre pthread xcb
 
 MODULES=	devel/gettext \
-		x11/gnome \
-		devel/dconf
+		x11/gnome
 
-LIB_DEPENDS=	x11/gnome/at-spi2-core>=2.6.2 \
-		devel/atk
+LIB_DEPENDS=	x11/gnome/at-spi2-core>=2.8.0 \
+		devel/atk>=2.8.0
 
 MODGNOME_CPPFLAGS=-I${X11BASE}/include
 
