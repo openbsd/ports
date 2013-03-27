@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.286 2013/03/18 09:02:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.287 2013/03/27 08:49:46 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -10,7 +10,6 @@
      SUBDIR += apcd
      SUBDIR += augeas
      SUBDIR += autossh
-     SUBDIR += backintime
      SUBDIR += backuppc
      SUBDIR += bacula,mysql
      SUBDIR += bacula,pgsql
