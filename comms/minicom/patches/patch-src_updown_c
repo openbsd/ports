@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_updown_c,v 1.4 2012/03/19 22:17:43 sthen Exp $
---- src/updown.c.orig	Sun May 30 21:34:00 2010
-+++ src/updown.c	Fri Mar 16 22:27:20 2012
-@@ -45,7 +45,7 @@ static int mcd(char *dir)
+$OpenBSD: patch-src_updown_c,v 1.5 2013/03/27 12:14:28 gonzalo Exp $
+--- src/updown.c.orig	Thu Jan 10 18:03:13 2013
++++ src/updown.c	Thu Mar  7 11:33:10 2013
+@@ -47,7 +47,7 @@ static int mcd(char *dir)
  {
    char buf[256];
    char err[50];
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_updown_c,v 1.4 2012/03/19 22:17:43 sthen Exp $
    static int init = 0;
  
    if (!init) {
-@@ -294,7 +294,7 @@ void updown(int what, int nr)
+@@ -298,7 +298,7 @@ void updown(int what, int nr)
      do_log("%s", cmdline);   /* jl 22.06.97 */
  
    if (P_PFULL(g) == 'N') {

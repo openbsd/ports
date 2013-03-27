@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_main_c,v 1.3 2012/03/19 22:17:43 sthen Exp $
---- src/main.c.orig	Fri Jul 16 09:50:18 2010
-+++ src/main.c	Fri Mar 16 22:29:07 2012
+$OpenBSD: patch-src_main_c,v 1.4 2013/03/27 12:14:28 gonzalo Exp $
+--- src/main.c.orig	Sat Feb 11 10:24:25 2012
++++ src/main.c	Wed Dec 12 09:06:00 2012
 @@ -23,6 +23,9 @@
  #include <config.h>
  #endif
@@ -11,10 +11,11 @@ $OpenBSD: patch-src_main_c,v 1.3 2012/03/19 22:17:43 sthen Exp $
  #include "port.h"
  #include "minicom.h"
  #include "intl.h"
-@@ -295,6 +298,17 @@ int open_term(int doinit, int show_win_on_error, int n
+@@ -304,6 +307,17 @@ nolock:
+ 
    /* Set CLOCAL mode */
    m_nohang(portfd);
- 
++
 + /* maybe, just maybe, we're looking at a GPS */
 + do {
 +   int nmeadisc = NMEADISC;
@@ -25,16 +26,6 @@ $OpenBSD: patch-src_main_c,v 1.3 2012/03/19 22:17:43 sthen Exp $
 +   ioctl(portfd, TIOCSETD, &nmeadisc);
 +   ioctl(portfd, TIOCSTSTAMP, &tstamps);
 + } while (0);
-+
+ 
    /* Set Hangup on Close if program crashes. (Hehe) */
    m_hupcl(portfd, 1);
-   if (doinit > 0)
-@@ -444,7 +458,7 @@ void time_status(void)
-   if (online < 0)
-     mc_wprintf(st, " %12.12s ", P_HASDCD[0] == 'Y' ? _("Offline") : _("OFFLINE"));
-   else
--    mc_wprintf(st, " %s %02ld:%02ld", P_HASDCD[0] == 'Y' ? _("Online") : _("ONLINE"),
-+    mc_wprintf(st, " %s %02d:%02d", P_HASDCD[0] == 'Y' ? _("Online") : _("ONLINE"),
-                online / 3600, (online / 60) % 60);
- 
-   ret_csr();

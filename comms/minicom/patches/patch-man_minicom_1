@@ -1,7 +1,7 @@
-$OpenBSD: patch-man_minicom_1,v 1.3 2012/03/19 22:17:43 sthen Exp $
---- man/minicom.1.orig	Mon Aug  9 20:54:03 2010
-+++ man/minicom.1	Fri Mar 16 22:24:59 2012
-@@ -822,7 +822,8 @@ $HOME/minicom.log
+$OpenBSD: patch-man_minicom_1,v 1.4 2013/03/27 12:14:28 gonzalo Exp $
+--- man/minicom.1.orig	Sun Sep  2 14:29:30 2012
++++ man/minicom.1	Thu Mar  7 11:33:10 2013
+@@ -829,7 +829,8 @@ $HOME/minicom.log
  /usr/share/locale/*/LC_MESSAGES/minicom.mo
  .fi
  .SH SEE ALSO
