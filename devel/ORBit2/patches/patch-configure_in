@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.6 2009/03/06 09:52:17 jasper Exp $
---- configure.in.orig	Sat Jan 10 18:36:18 2009
-+++ configure.in	Fri Mar  6 10:46:50 2009
+$OpenBSD: patch-configure_in,v 1.7 2013/03/27 17:58:44 ajacoutot Exp $
+--- configure.in.orig	Thu Jul  1 15:57:01 2010
++++ configure.in	Wed Mar 27 10:46:28 2013
 @@ -280,7 +280,18 @@ AC_HEADER_STDC
  AC_CHECK_HEADERS(fcntl.h unistd.h sys/endian.h endian.h machine/endian.h sys/machine.h sys/isa_defs.h sys/poll.h)
  AC_CHECK_HEADERS(stddef.h wchar.h wcstr.h wctype.h machine/types.h)

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.51 2013/03/11 10:50:00 espie Exp $
+# $OpenBSD: Makefile,v 1.52 2013/03/27 17:58:43 ajacoutot Exp $
 
 COMMENT=		high-performance CORBA Object Request Broker
 
 GNOME_PROJECT=		ORBit2
 GNOME_VERSION=		2.14.19
-REVISION=		3
+EXTRACT_SUFX=		.tar.bz2
+REVISION=		4
 
 SHARED_LIBS +=  ORBit-2              3.0      # .1.0
 SHARED_LIBS +=  ORBitCosNaming-2     3.0      # .1.0
@@ -16,8 +17,6 @@ HOMEPAGE=		http://www.gnome.org/projects/ORBit2/
 
 # LGPLv2/GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-
-EXTRACT_SUFX=		.tar.bz2
 
 WANTLIB += IDL-2 c ffi glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += m pcre pthread
