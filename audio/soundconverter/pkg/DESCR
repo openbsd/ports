@@ -1,5 +1,0 @@
-SoundConverter is a simple GTK+ audio file converter for the GNOME
-environment. It reads anything GStreamer can read and writes to Ogg
-Vorbis, FLAC, AAC, WAV or MP3 formats.
-
-MP3 encoding requires the gstreamer-lame package to be installed.
