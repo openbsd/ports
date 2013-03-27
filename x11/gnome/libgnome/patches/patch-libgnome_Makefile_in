@@ -1,0 +1,14 @@
+$OpenBSD: patch-libgnome_Makefile_in,v 1.1 2013/03/27 18:01:55 ajacoutot Exp $
+
+Fix build with glib2>=2.36.0
+
+--- libgnome/Makefile.in.orig	Wed Mar 27 11:43:22 2013
++++ libgnome/Makefile.in	Wed Mar 27 11:43:29 2013
+@@ -311,7 +311,6 @@ INCLUDES = \
+ 	-I$(srcdir)/..						\
+ 	$(WARN_CFLAGS)						\
+ 	$(LIBGNOME_CFLAGS)					\
+-	-DG_DISABLE_DEPRECATED					\
+ 	-DLIBGNOME_PREFIX=\""$(prefix)"\"			\
+ 	-DLIBGNOME_LIBDIR=\""$(libdir)"\"			\
+ 	-DLIBGNOME_DATADIR=\""$(datadir)"\"			\
