@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/09/28 06:32:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/03/27 15:29:20 ajacoutot Exp $
 @bin bin/lou_allround
 @bin bin/lou_checkhyphens
 @bin bin/lou_checktable
 @bin bin/lou_debug
 bin/lou_harnessGenerator
+@bin bin/lou_trace
 @bin bin/lou_translate
 include/liblouis/
 include/liblouis/liblouis.h
@@ -51,6 +52,7 @@ share/liblouis/tables/bra.ctb
 share/liblouis/tables/braille-patterns.cti
 share/liblouis/tables/ca-chardefs.cti
 share/liblouis/tables/ca-g1.ctb
+share/liblouis/tables/chardefs-ueb.cti
 share/liblouis/tables/chardefs.cti
 share/liblouis/tables/ckb-chardefs.cti
 share/liblouis/tables/ckb-g1.ctb
@@ -95,6 +97,8 @@ share/liblouis/tables/dra.ctb
 share/liblouis/tables/en-GB-g2.ctb
 share/liblouis/tables/en-chess.ctb
 share/liblouis/tables/en-gb-g1.utb
+share/liblouis/tables/en-ueb-g1.ctb
+share/liblouis/tables/en-ueb-g2.ctb
 share/liblouis/tables/en-us-brf.dis
 share/liblouis/tables/en-us-comp6.ctb
 share/liblouis/tables/en-us-comp8.ctb
@@ -127,9 +131,6 @@ share/liblouis/tables/fr-ca-g1.utb
 share/liblouis/tables/fr-fr-g1.utb
 share/liblouis/tables/ga.ctb
 share/liblouis/tables/gd.ctb
-share/liblouis/tables/gez-chardefs.cti
-share/liblouis/tables/gez-g1.ctb
-share/liblouis/tables/gez-translation.ctb
 share/liblouis/tables/gon.ctb
 share/liblouis/tables/gr-bb.ctb
 share/liblouis/tables/gr-gr-g1.utb
@@ -163,9 +164,11 @@ share/liblouis/tables/is-chardefs8.cti
 share/liblouis/tables/is.ctb
 share/liblouis/tables/it-it-comp6.utb
 share/liblouis/tables/it-it-comp8.utb
+share/liblouis/tables/iu-ca-g1.ctb
 share/liblouis/tables/kannada.cti
 share/liblouis/tables/kha.ctb
 share/liblouis/tables/kn.ctb
+share/liblouis/tables/ko.ctb
 share/liblouis/tables/kok.ctb
 share/liblouis/tables/kru.ctb
 share/liblouis/tables/lang2table
@@ -250,6 +253,5 @@ share/liblouis/tables/vi.ctb
 share/liblouis/tables/wiskunde-chardefs.cti
 share/liblouis/tables/wiskunde-translation.ctb
 share/liblouis/tables/wiskunde.ctb
-share/liblouis/tables/wiskunde_edit.cti
 share/liblouis/tables/zh-hk.ctb
 share/liblouis/tables/zh-tw.ctb
