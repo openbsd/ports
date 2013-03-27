@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/12/11 17:11:06 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.8 2013/03/27 17:52:45 ajacoutot Exp $
 include/at-spi-2.0/
 include/at-spi-2.0/atspi/
 include/at-spi-2.0/atspi/atspi-accessible.h
@@ -36,6 +35,7 @@ lib/girepository-1.0/
 lib/girepository-1.0/Atspi-2.0.typelib
 lib/libatspi.a
 lib/libatspi.la
+@lib lib/libatspi.so.${LIBatspi_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/atspi-2.pc
 @bin libexec/at-spi-bus-launcher
@@ -172,8 +172,6 @@ share/locale/nl/LC_MESSAGES/at-spi2-core.mo
 share/locale/or/
 share/locale/or/LC_MESSAGES/
 share/locale/or/LC_MESSAGES/at-spi2-core.mo
-share/locale/pa/
-share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/at-spi2-core.mo
 share/locale/pl/LC_MESSAGES/at-spi2-core.mo
 share/locale/pt/LC_MESSAGES/at-spi2-core.mo
@@ -196,6 +194,9 @@ share/locale/ta/LC_MESSAGES/at-spi2-core.mo
 share/locale/te/
 share/locale/te/LC_MESSAGES/
 share/locale/te/LC_MESSAGES/at-spi2-core.mo
+share/locale/tg/
+share/locale/tg/LC_MESSAGES/
+share/locale/tg/LC_MESSAGES/at-spi2-core.mo
 share/locale/tr/LC_MESSAGES/at-spi2-core.mo
 share/locale/ug/
 share/locale/ug/LC_MESSAGES/
