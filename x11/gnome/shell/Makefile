@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2013/03/11 11:46:12 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2013/03/27 18:02:21 ajacoutot Exp $
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		3.6.3.1
+REVISION=		0
 
 HOMEPAGE=		http://live.gnome.org/GnomeShell
 
@@ -15,7 +16,7 @@ WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
 WANTLIB += asn1 atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
 WANTLIB += camel-1.2 canberra canberra-gtk3 clutter-1.0 cogl cogl-pango
 WANTLIB += com_err croco-0.6 crypto dbus-1 dbus-glib-1 drm
-WANTLIB += ecal-1.2 edataserver-1.2 xkbfile xml2 z
+WANTLIB += ecal-1.2 edataserver-1.2 xkbfile xml2 z graphite2
 WANTLIB += execinfo expat ffi fontconfig freetype gck-1 gcr-3
 WANTLIB += gcr-base-3 gcrypt gdbm gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += girepository-1.0 gjs glib-2.0 gmodule-2.0 gnome-desktop-3
