@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2012/03/26 23:20:59 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.18 2013/03/27 17:50:51 ajacoutot Exp $
 include/atk-1.0/
 include/atk-1.0/atk/
 include/atk-1.0/atk/atk-enum-types.h
@@ -32,11 +31,13 @@ include/atk-1.0/atk/atktable.h
 include/atk-1.0/atk/atktext.h
 include/atk-1.0/atk/atkutil.h
 include/atk-1.0/atk/atkvalue.h
+include/atk-1.0/atk/atkversion.h
 include/atk-1.0/atk/atkwindow.h
 lib/girepository-1.0/
 lib/girepository-1.0/Atk-1.0.typelib
 lib/libatk-1.0.a
 lib/libatk-1.0.la
+@lib lib/libatk-1.0.so.${LIBatk-1.0_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/atk.pc
 share/gir-1.0/
@@ -66,6 +67,7 @@ share/gtk-doc/html/atk/AtkTable.html
 share/gtk-doc/html/atk/AtkText.html
 share/gtk-doc/html/atk/AtkUtil.html
 share/gtk-doc/html/atk/AtkValue.html
+share/gtk-doc/html/atk/AtkWindow.html
 share/gtk-doc/html/atk/api-index-1-12.html
 share/gtk-doc/html/atk/api-index-1-13.html
 share/gtk-doc/html/atk/api-index-1-18.html
@@ -85,6 +87,7 @@ share/gtk-doc/html/atk/atk-AtkHyperlinkImpl.html
 share/gtk-doc/html/atk/atk-AtkPlug.html
 share/gtk-doc/html/atk/atk-AtkSocket.html
 share/gtk-doc/html/atk/atk-AtkState.html
+share/gtk-doc/html/atk/atk-Versioning-Utilities.html
 share/gtk-doc/html/atk/atk.devhelp2
 share/gtk-doc/html/atk/atk.html
 share/gtk-doc/html/atk/home.png
@@ -231,8 +234,6 @@ share/locale/oc/LC_MESSAGES/atk10.mo
 share/locale/or/
 share/locale/or/LC_MESSAGES/
 share/locale/or/LC_MESSAGES/atk10.mo
-share/locale/pa/
-share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/atk10.mo
 share/locale/pl/LC_MESSAGES/atk10.mo
 share/locale/ps/
@@ -267,6 +268,9 @@ share/locale/ta/LC_MESSAGES/atk10.mo
 share/locale/te/
 share/locale/te/LC_MESSAGES/
 share/locale/te/LC_MESSAGES/atk10.mo
+share/locale/tg/
+share/locale/tg/LC_MESSAGES/
+share/locale/tg/LC_MESSAGES/atk10.mo
 share/locale/th/
 share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/atk10.mo
