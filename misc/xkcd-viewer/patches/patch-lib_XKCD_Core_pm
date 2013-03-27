@@ -1,0 +1,49 @@
+$OpenBSD: patch-lib_XKCD_Core_pm,v 1.1 2013/03/27 21:23:38 landry Exp $
+Fix breakage - code assumed xkcd would never reach 1000th comic :)
+--- lib/XKCD/Core.pm.orig	Wed Mar 27 22:21:00 2013
++++ lib/XKCD/Core.pm	Wed Mar 27 22:21:14 2013
+@@ -38,7 +38,7 @@ sub GetTotal {
+     my $self = shift;
+     my $progressbar = shift;
+     my $content = _GetData('http://xkcd.com', $progressbar) || return 0;
+-    $content =~ / http:\/\/xkcd.com\/(\d{1,3})\//;
++    $content =~ / http:\/\/xkcd.com\/(\d{1,5})\//;
+     $self->{total} = $1;
+     $self->{number} = $self->{total};
+     return $self;
+@@ -89,7 +89,7 @@ sub GetRandom {
+     my $self = shift;
+     my $progressbar = shift;
+     my $content = _GetData('http://dynamic.xkcd.com/comic/random/', $progressbar);
+-    $content =~ / http:\/\/xkcd.com\/(\d{1,3})\//;
++    $content =~ / http:\/\/xkcd.com\/(\d{1,5})\//;
+     $self->{number} = $1;
+     return $self;
+ }
+@@ -112,7 +112,7 @@ sub SaveImage {
+     my $file = shift || "/tmp/xkcd" . $self->{number} if ($self->{number});
+     my $progressbar = shift;
+     $self->{file} = $file;
+-    if (($file) && (-e $file) && ($file =~ /xkcd\d{1,3}/)) {
++    if (($file) && (-e $file) && ($file =~ /xkcd\d{1,5}/)) {
+         return $file;
+     }
+     $self->GetDirectLink || return 0;
+@@ -198,7 +198,7 @@ sub _GetResults {
+     my $search = shift || return;
+     my $current_page = shift || 1;
+     my $content = _GetData("http://www.ohnorobot.com/index.pl?e=0;show=advanced;n=0;m=0;d=0;s=" . $search . ";p=" . $current_page  . ";Search=Search;b=0;comic=56;t=0");
+-    my $search_regex = '<p><a class="searchlink" href="http:\/\/xkcd.com\/(\d{1,3})\/">(.+?)<\/a><\/p>';
++    my $search_regex = '<p><a class="searchlink" href="http:\/\/xkcd.com\/(\d{1,5})\/">(.+?)<\/a><\/p>';
+     my %results;
+ 
+     while ($content =~ /$search_regex/) {
+@@ -249,7 +249,7 @@ sub SetNumber {
+     my $self = shift;
+     if (@_) {
+         my $new_num = shift;
+-        $self->{number} = $new_num if (($new_num =~ /\d{1,3}/) && ($new_num <= $self->{total}));
++        $self->{number} = $new_num if (($new_num =~ /\d{1,5}/) && ($new_num <= $self->{total}));
+     }
+     return $self;
+ }
