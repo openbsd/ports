@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.508 2013/03/27 08:48:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.509 2013/03/27 11:16:59 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -270,6 +270,7 @@
      SUBDIR += vlc
      SUBDIR += waimea
      SUBDIR += wampager
+     SUBDIR += wbar
      SUBDIR += windowmaker
      SUBDIR += windowmaker-extra
      SUBDIR += winwrangler
