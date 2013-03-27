@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.509 2013/03/27 11:16:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.510 2013/03/27 14:08:01 bcallah Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -225,6 +225,7 @@
      SUBDIR += ruby-qt4
      SUBDIR += rxvt
      SUBDIR += rxvt-unicode
+     SUBDIR += sakura
      SUBDIR += sawfish
      SUBDIR += sclock
      SUBDIR += sisctrl
