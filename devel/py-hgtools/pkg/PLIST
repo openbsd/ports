@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/22 09:19:19 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/03/27 16:03:04 benoit Exp $
 lib/python${MODPY_VERSION}/site-packages/hgtools/
 lib/python${MODPY_VERSION}/site-packages/hgtools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/hgtools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -17,11 +17,16 @@ lib/python${MODPY_VERSION}/site-packages/hgtools/managers/library.py
 lib/python${MODPY_VERSION}/site-packages/hgtools/managers/library.pyc
 lib/python${MODPY_VERSION}/site-packages/hgtools/managers/subprocess.py
 lib/python${MODPY_VERSION}/site-packages/hgtools/managers/subprocess.pyc
-lib/python${MODPY_VERSION}/site-packages/hgtools/namedtuple_backport.py
-lib/python${MODPY_VERSION}/site-packages/hgtools/namedtuple_backport.pyc
 lib/python${MODPY_VERSION}/site-packages/hgtools/plugins.py
 lib/python${MODPY_VERSION}/site-packages/hgtools/plugins.pyc
 lib/python${MODPY_VERSION}/site-packages/hgtools/py25compat.py
 lib/python${MODPY_VERSION}/site-packages/hgtools/py25compat.pyc
+lib/python${MODPY_VERSION}/site-packages/hgtools/tests/
+lib/python${MODPY_VERSION}/site-packages/hgtools/tests/__init__.py
+lib/python${MODPY_VERSION}/site-packages/hgtools/tests/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/hgtools/tests/test_managers.py
+lib/python${MODPY_VERSION}/site-packages/hgtools/tests/test_managers.pyc
+lib/python${MODPY_VERSION}/site-packages/hgtools/tests/test_versioning.py
+lib/python${MODPY_VERSION}/site-packages/hgtools/tests/test_versioning.pyc
 lib/python${MODPY_VERSION}/site-packages/hgtools/versioning.py
 lib/python${MODPY_VERSION}/site-packages/hgtools/versioning.pyc
