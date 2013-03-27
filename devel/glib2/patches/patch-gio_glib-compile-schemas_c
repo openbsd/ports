@@ -1,10 +1,10 @@
-$OpenBSD: patch-gio_glib-compile-schemas_c,v 1.3 2012/04/23 12:49:47 ajacoutot Exp $
+$OpenBSD: patch-gio_glib-compile-schemas_c,v 1.4 2013/03/27 17:49:34 ajacoutot Exp $
 
 XXX TEMP do not warn about bad dconf paths
 
---- gio/glib-compile-schemas.c.orig	Fri Apr 13 15:39:41 2012
-+++ gio/glib-compile-schemas.c	Mon Apr 23 14:20:42 2012
-@@ -1204,11 +1204,13 @@ parse_state_start_schema (ParseState  *state,
+--- gio/glib-compile-schemas.c.orig	Wed Mar 13 14:39:09 2013
++++ gio/glib-compile-schemas.c	Tue Mar 26 11:02:30 2013
+@@ -1208,11 +1208,13 @@ parse_state_start_schema (ParseState  *state,
        return;
      }
  

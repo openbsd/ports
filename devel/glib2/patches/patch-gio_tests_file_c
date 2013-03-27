@@ -1,11 +1,11 @@
-$OpenBSD: patch-gio_tests_file_c,v 1.3 2012/11/13 16:34:59 ajacoutot Exp $
+$OpenBSD: patch-gio_tests_file_c,v 1.4 2013/03/27 17:49:34 ajacoutot Exp $
 
 XXX why isn't this working with kqueue?
 push upstream when the kqueue patch is committed there
 
---- gio/tests/file.c.orig	Sat Nov 10 04:18:46 2012
-+++ gio/tests/file.c	Tue Nov 13 17:16:38 2012
-@@ -424,13 +424,14 @@ test_create_delete (gconstpointer d)
+--- gio/tests/file.c.orig	Tue Mar 26 11:03:40 2013
++++ gio/tests/file.c	Tue Mar 26 11:04:53 2013
+@@ -427,11 +427,12 @@ test_create_delete (gconstpointer d)
    data->monitor = g_file_monitor_file (data->file, 0, NULL, &error);
    g_assert_no_error (error);
  
@@ -20,8 +20,5 @@ push upstream when the kqueue patch is committed there
 +  if ((!strcmp (G_OBJECT_TYPE_NAME (data->monitor), "GPollFileMonitor")) ||
 +      (!strcmp (G_OBJECT_TYPE_NAME (data->monitor), "GKqueueFileMonitor")))
      {
--      g_print ("skipping test for this GFileMonitor implementation");
-+      g_print ("skipping test for this GFileMonitor implementation ");
+       g_print ("skipping test for this GFileMonitor implementation");
        goto skip;
-     }
- 

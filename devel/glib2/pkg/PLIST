@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2012/11/27 06:49:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2013/03/27 17:49:34 ajacoutot Exp $
 @conflict glib2-docs-*
 @conflict glib2-fam-*
 @pkgpath devel/glib2,-docs
@@ -114,6 +114,7 @@ include/glib-2.0/gio/gmount.h
 include/glib-2.0/gio/gmountoperation.h
 include/glib-2.0/gio/gnativevolumemonitor.h
 include/glib-2.0/gio/gnetworkaddress.h
+include/glib-2.0/gio/gnetworking.h
 include/glib-2.0/gio/gnetworkmonitor.h
 include/glib-2.0/gio/gnetworkservice.h
 include/glib-2.0/gio/goutputstream.h
@@ -136,6 +137,7 @@ include/glib-2.0/gio/gsimpleaction.h
 include/glib-2.0/gio/gsimpleactiongroup.h
 include/glib-2.0/gio/gsimpleasyncresult.h
 include/glib-2.0/gio/gsimplepermission.h
+include/glib-2.0/gio/gsimpleproxyresolver.h
 include/glib-2.0/gio/gsocket.h
 include/glib-2.0/gio/gsocketaddress.h
 include/glib-2.0/gio/gsocketaddressenumerator.h
@@ -146,6 +148,7 @@ include/glib-2.0/gio/gsocketcontrolmessage.h
 include/glib-2.0/gio/gsocketlistener.h
 include/glib-2.0/gio/gsocketservice.h
 include/glib-2.0/gio/gsrvtarget.h
+include/glib-2.0/gio/gtask.h
 include/glib-2.0/gio/gtcpconnection.h
 include/glib-2.0/gio/gtcpwrapperconnection.h
 include/glib-2.0/gio/gtestdbus.h
@@ -270,32 +273,6 @@ include/glib-2.0/gobject/gvaluearray.h
 include/glib-2.0/gobject/gvaluecollector.h
 include/glib-2.0/gobject/gvaluetypes.h
 @comment lib/charset.alias
-lib/gdbus-2.0/
-lib/gdbus-2.0/codegen/
-lib/gdbus-2.0/codegen/__init__.py
-lib/gdbus-2.0/codegen/__init__.pyc
-lib/gdbus-2.0/codegen/__init__.pyo
-lib/gdbus-2.0/codegen/codegen.py
-lib/gdbus-2.0/codegen/codegen.pyc
-lib/gdbus-2.0/codegen/codegen.pyo
-lib/gdbus-2.0/codegen/codegen_docbook.py
-lib/gdbus-2.0/codegen/codegen_docbook.pyc
-lib/gdbus-2.0/codegen/codegen_docbook.pyo
-lib/gdbus-2.0/codegen/codegen_main.py
-lib/gdbus-2.0/codegen/codegen_main.pyc
-lib/gdbus-2.0/codegen/codegen_main.pyo
-lib/gdbus-2.0/codegen/config.py
-lib/gdbus-2.0/codegen/config.pyc
-lib/gdbus-2.0/codegen/config.pyo
-lib/gdbus-2.0/codegen/dbustypes.py
-lib/gdbus-2.0/codegen/dbustypes.pyc
-lib/gdbus-2.0/codegen/dbustypes.pyo
-lib/gdbus-2.0/codegen/parser.py
-lib/gdbus-2.0/codegen/parser.pyc
-lib/gdbus-2.0/codegen/parser.pyo
-lib/gdbus-2.0/codegen/utils.py
-lib/gdbus-2.0/codegen/utils.pyc
-lib/gdbus-2.0/codegen/utils.pyo
 lib/gio/
 lib/gio/modules/
 lib/glib-2.0/
@@ -348,14 +325,38 @@ share/bash-completion/completions/gsettings
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/gdb/
 share/gdb/auto-load/
-share/gdb/auto-load/libglib-2.0.so.0.3400.3-gdb.py
-share/gdb/auto-load/libgobject-2.0.so.0.3400.3-gdb.py
+share/gdb/auto-load/libglib-2.0.so.0.3600.0-gdb.py
+share/gdb/auto-load/libgobject-2.0.so.0.3600.0-gdb.py
 share/glib-2.0/
+share/glib-2.0/codegen/
+share/glib-2.0/codegen/__init__.py
+share/glib-2.0/codegen/__init__.pyc
+share/glib-2.0/codegen/__init__.pyo
+share/glib-2.0/codegen/codegen.py
+share/glib-2.0/codegen/codegen.pyc
+share/glib-2.0/codegen/codegen.pyo
+share/glib-2.0/codegen/codegen_docbook.py
+share/glib-2.0/codegen/codegen_docbook.pyc
+share/glib-2.0/codegen/codegen_docbook.pyo
+share/glib-2.0/codegen/codegen_main.py
+share/glib-2.0/codegen/codegen_main.pyc
+share/glib-2.0/codegen/codegen_main.pyo
+share/glib-2.0/codegen/config.py
+share/glib-2.0/codegen/config.pyc
+share/glib-2.0/codegen/config.pyo
+share/glib-2.0/codegen/dbustypes.py
+share/glib-2.0/codegen/dbustypes.pyc
+share/glib-2.0/codegen/dbustypes.pyo
+share/glib-2.0/codegen/parser.py
+share/glib-2.0/codegen/parser.pyc
+share/glib-2.0/codegen/parser.pyo
+share/glib-2.0/codegen/utils.py
+share/glib-2.0/codegen/utils.pyc
+share/glib-2.0/codegen/utils.pyo
 share/glib-2.0/gdb/
 share/glib-2.0/gdb/glib.py
 share/glib-2.0/gdb/gobject.py
 share/glib-2.0/gettext/
-share/glib-2.0/gettext/mkinstalldirs
 share/glib-2.0/gettext/po/
 share/glib-2.0/gettext/po/Makefile.in.in
 share/glib-2.0/schemas/
@@ -447,6 +448,7 @@ share/gtk-doc/html/gio/GSimpleAction.html
 share/gtk-doc/html/gio/GSimpleActionGroup.html
 share/gtk-doc/html/gio/GSimpleAsyncResult.html
 share/gtk-doc/html/gio/GSimplePermission.html
+share/gtk-doc/html/gio/GSimpleProxyResolver.html
 share/gtk-doc/html/gio/GSocket.html
 share/gtk-doc/html/gio/GSocketAddress.html
 share/gtk-doc/html/gio/GSocketClient.html
@@ -456,6 +458,7 @@ share/gtk-doc/html/gio/GSocketControlMessage.html
 share/gtk-doc/html/gio/GSocketListener.html
 share/gtk-doc/html/gio/GSocketService.html
 share/gtk-doc/html/gio/GSrvTarget.html
+share/gtk-doc/html/gio/GTask.html
 share/gtk-doc/html/gio/GTcpConnection.html
 share/gtk-doc/html/gio/GTcpWrapperConnection.html
 share/gtk-doc/html/gio/GTestDBus.html
@@ -492,6 +495,7 @@ share/gtk-doc/html/gio/api-index-2-28.html
 share/gtk-doc/html/gio/api-index-2-30.html
 share/gtk-doc/html/gio/api-index-2-32.html
 share/gtk-doc/html/gio/api-index-2-34.html
+share/gtk-doc/html/gio/api-index-2-36.html
 share/gtk-doc/html/gio/api-index-deprecated.html
 share/gtk-doc/html/gio/api-index-full.html
 share/gtk-doc/html/gio/application.html
@@ -550,6 +554,7 @@ share/gtk-doc/html/gio/gio-Owning-Bus-Names.html
 share/gtk-doc/html/gio/gio-TLS-Overview.html
 share/gtk-doc/html/gio/gio-Unix-Mounts.html
 share/gtk-doc/html/gio/gio-Watching-Bus-Names.html
+share/gtk-doc/html/gio/gio-gnetworking.h.html
 share/gtk-doc/html/gio/gio-gpollableutils.html
 share/gtk-doc/html/gio/gio-hierarchy.html
 share/gtk-doc/html/gio/gio-querymodules.html
@@ -602,6 +607,7 @@ share/gtk-doc/html/glib/api-index-2-28.html
 share/gtk-doc/html/glib/api-index-2-30.html
 share/gtk-doc/html/glib/api-index-2-32.html
 share/gtk-doc/html/glib/api-index-2-34.html
+share/gtk-doc/html/glib/api-index-2-36.html
 share/gtk-doc/html/glib/api-index-2-4.html
 share/gtk-doc/html/glib/api-index-2-6.html
 share/gtk-doc/html/glib/api-index-2-8.html
@@ -724,6 +730,7 @@ share/gtk-doc/html/gobject/api-index-2-28.html
 share/gtk-doc/html/gobject/api-index-2-30.html
 share/gtk-doc/html/gobject/api-index-2-32.html
 share/gtk-doc/html/gobject/api-index-2-34.html
+share/gtk-doc/html/gobject/api-index-2-36.html
 share/gtk-doc/html/gobject/api-index-2-4.html
 share/gtk-doc/html/gobject/api-index-2-6.html
 share/gtk-doc/html/gobject/api-index-2-8.html
@@ -924,8 +931,6 @@ share/locale/oc/LC_MESSAGES/glib20.mo
 share/locale/or/
 share/locale/or/LC_MESSAGES/
 share/locale/or/LC_MESSAGES/glib20.mo
-share/locale/pa/
-share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/glib20.mo
 share/locale/pl/LC_MESSAGES/glib20.mo
 share/locale/ps/
@@ -960,6 +965,9 @@ share/locale/ta/LC_MESSAGES/glib20.mo
 share/locale/te/
 share/locale/te/LC_MESSAGES/
 share/locale/te/LC_MESSAGES/glib20.mo
+share/locale/tg/
+share/locale/tg/LC_MESSAGES/
+share/locale/tg/LC_MESSAGES/glib20.mo
 share/locale/th/
 share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/glib20.mo

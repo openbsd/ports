@@ -1,9 +1,9 @@
-$OpenBSD: patch-gio_gunixmount_c,v 1.6 2012/09/21 13:16:49 ajacoutot Exp $
+$OpenBSD: patch-gio_gunixmount_c,v 1.7 2013/03/27 17:49:34 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=653555
 
---- gio/gunixmount.c.orig	Wed Sep  5 02:49:08 2012
-+++ gio/gunixmount.c	Thu Sep 20 10:59:23 2012
+--- gio/gunixmount.c.orig	Wed Mar 13 14:39:09 2013
++++ gio/gunixmount.c	Tue Mar 26 11:02:30 2013
 @@ -29,6 +29,12 @@
  #include <sys/wait.h>
  #include <unistd.h>
@@ -17,7 +17,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=653555
  #include <glib.h>
  #include "gunixvolumemonitor.h"
  #include "gunixmount.h"
-@@ -462,10 +468,21 @@ g_unix_mount_eject (GMount             *mount,
+@@ -451,10 +457,21 @@ g_unix_mount_eject (GMount             *mount,
    GUnixMount *unix_mount = G_UNIX_MOUNT (mount);
    char *argv[] = {"eject", NULL, NULL};
  
