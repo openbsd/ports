@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2010/09/30 15:04:28 ajacoutot Exp $
-@lib lib/libgiomm-${V}.so.${LIBgiomm-2.4_VERSION}
-@lib lib/libglibmm-${V}.so.${LIBglibmm-2.4_VERSION}
-@lib lib/libglibmm_generate_extra_defs-${V}.so.${LIBglibmm_generate_extra_defs-2.4_VERSION}
