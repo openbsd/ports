@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_shrip-xchap_c,v 1.1 2013/03/27 18:03:57 ajacoutot Exp $
+
+Fix build with glib2>=2.36.0
+
+--- src/shrip-xchap.c.orig	Wed Mar 27 18:11:46 2013
++++ src/shrip-xchap.c	Wed Mar 27 18:12:06 2013
+@@ -229,8 +229,6 @@ static void
+ init (gint *argc, gchar ***argv)
+ {
+   (*argv)[0] = "shrip xchap";
+-
+-  g_type_init ();
+ }
+ 
+ gint

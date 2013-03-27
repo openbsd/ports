@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_shrip-ccheck_c,v 1.1 2013/03/27 18:03:57 ajacoutot Exp $
+
+Fix build with glib2>=2.36.0
+
+--- src/shrip-ccheck.c.orig	Wed Mar 27 18:11:50 2013
++++ src/shrip-ccheck.c	Wed Mar 27 18:12:03 2013
+@@ -210,8 +210,6 @@ init (gint *argc, gchar ***argv)
+   signal (SIGQUIT, sighandler); // Quit from keyboard
+   signal (SIGPIPE, sighandler); // Some window managers cause this
+ 
+-  g_type_init ();
+-
+   ogmrip_plugin_init ();
+ }
+ 
