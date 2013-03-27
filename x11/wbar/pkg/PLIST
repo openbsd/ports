@@ -1,11 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/27 11:16:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/03/27 17:20:32 ajacoutot Exp $
 @bin bin/wbar
-@bin bin/wbar-config
 man/es/
 man/es/man1/
-@man man/es/man1/wbar-config.1
 @man man/es/man1/wbar.1
-@man man/man1/wbar-config.1
 @man man/man1/wbar.1
 share/applications/wbar.desktop
 share/bash-completion/
