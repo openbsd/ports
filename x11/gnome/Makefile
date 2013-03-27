@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.196 2013/03/11 09:37:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.197 2013/03/27 08:51:10 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -87,7 +87,6 @@
      SUBDIR += planner
      SUBDIR += power-manager
      SUBDIR += py-atspi
-     SUBDIR += py-gnome
      SUBDIR += rygel
      SUBDIR += screensaver
      SUBDIR += screenshot
