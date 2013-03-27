@@ -1,0 +1,18 @@
+$OpenBSD: patch-components_editor_main_c,v 1.1 2013/03/27 17:57:11 ajacoutot Exp $
+
+From 4537a45bd19ae01510a445707aeb357739befa16 Mon Sep 17 00:00:00 2001
+From: Matthew Barnes <mbarnes@redhat.com>
+Date: Wed, 26 Oct 2011 19:25:40 +0000
+Subject: Remove g_thread_init() calls.
+
+--- components/editor/main.c.orig	Mon Sep 13 14:16:10 2010
++++ components/editor/main.c	Wed Mar 27 09:15:35 2013
+@@ -373,8 +373,6 @@ main (gint argc, gchar **argv)
+ 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
+ 	textdomain (GETTEXT_PACKAGE);
+ 
+-	g_thread_init (NULL);
+-
+ 	gtk_init (&argc, &argv);
+ 
+ 	editor = gtkhtml_editor_new ();
