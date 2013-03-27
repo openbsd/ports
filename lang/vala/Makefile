@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.59 2013/03/11 11:20:29 espie Exp $
+# $OpenBSD: Makefile,v 1.60 2013/03/27 18:12:20 jasper Exp $
 
 COMMENT=		compiler for the GObject type system
 
 GNOME_PROJECT=		vala
-GNOME_VERSION=		0.18.1
-API_V=			0.18
-REVISION=		0
-
-SHARED_LIBS +=  vala-0.18            0.0      # 0.0
+GNOME_VERSION=		0.20.0
+API_V=			0.20
+SHARED_LIBS +=  vala-0.20            0.0      # 0.0
 
 CATEGORIES=		lang
 
@@ -26,7 +24,7 @@ MODULES=		devel/gettext \
 
 BUILD_DEPENDS=		textproc/libxslt
 LIB_DEPENDS=		devel/glib2
-TEST_DEPENDS=	shells/bash
+TEST_DEPENDS=		shells/bash
 
 USE_GROFF=		Yes
 
