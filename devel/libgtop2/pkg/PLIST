@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2011/08/30 12:24:53 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.23 2013/03/27 07:57:38 jasper Exp $
 @bin bin/libgtop_daemon2
 @mode 2555
 @group kmem
@@ -56,6 +55,7 @@ lib/girepository-1.0/
 lib/girepository-1.0/GTop-2.0.typelib
 lib/libgtop-2.0.a
 lib/libgtop-2.0.la
+@lib lib/libgtop-2.0.so.${LIBgtop-2.0_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/libgtop-2.0.pc
 share/gir-1.0/
@@ -237,8 +237,6 @@ share/locale/oc/LC_MESSAGES/libgtop-2.0.mo
 share/locale/or/
 share/locale/or/LC_MESSAGES/
 share/locale/or/LC_MESSAGES/libgtop-2.0.mo
-share/locale/pa/
-share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/libgtop-2.0.mo
 share/locale/pl/LC_MESSAGES/libgtop-2.0.mo
 share/locale/pt/LC_MESSAGES/libgtop-2.0.mo

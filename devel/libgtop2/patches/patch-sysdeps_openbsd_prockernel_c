@@ -1,4 +1,4 @@
-$OpenBSD: patch-sysdeps_openbsd_prockernel_c,v 1.4 2012/01/22 11:55:10 ajacoutot Exp $
+$OpenBSD: patch-sysdeps_openbsd_prockernel_c,v 1.5 2013/03/27 07:57:38 jasper Exp $
 
 From b11aa1517e203e36a8901f03ea57c50a25dfbfc7 Mon Sep 17 00:00:00 2001
 From: Antoine Jacoutot <ajacoutot@gnome.org>
@@ -6,7 +6,7 @@ Date: Sun, 22 Jan 2012 11:47:49 +0000
 Subject: OpenBSD: kinfo_proc2 -> kinfo_proc
 
 --- sysdeps/openbsd/prockernel.c.orig	Sun Jul 24 21:13:56 2011
-+++ sysdeps/openbsd/prockernel.c	Mon Jan  9 18:37:24 2012
++++ sysdeps/openbsd/prockernel.c	Wed Mar 27 08:53:04 2013
 @@ -57,7 +57,7 @@ glibtop_get_proc_kernel_p (glibtop *server,
  			   glibtop_proc_kernel *buf,
  			   pid_t pid)
@@ -16,7 +16,7 @@ Subject: OpenBSD: kinfo_proc2 -> kinfo_proc
  	int count;
  
  	glibtop_init_p (server, (1L << GLIBTOP_SYSDEPS_PROC_KERNEL), 0);
-@@ -71,7 +71,7 @@ glibtop_get_proc_kernel_p (glibtop *server,
+@@ -71,22 +71,20 @@ glibtop_get_proc_kernel_p (glibtop *server,
  	if (pid == 0) return;
  
  	/* Get the process information */
@@ -25,3 +25,22 @@ Subject: OpenBSD: kinfo_proc2 -> kinfo_proc
  			      sizeof(*pinfo), &count);
  	if ((pinfo == NULL) || (count != 1)) {
  		glibtop_warn_io_r (server, "kvm_getprocs (%d)", pid);
+ 		return;
+ 	}
+ 
+-	buf->nwchan = pinfo[0].p_wchan;
+-	if (pinfo[0].p_wchan && pinfo[0].p_wmesg)
+-		g_strlcpy(buf->wchan, pinfo[0].p_wmesg,
+-			  sizeof buf->wchan);
+-	
++	if (pinfo->p_wmesg[0])
++		g_strlcpy(buf->wchan, pinfo->p_wmesg[0], sizeof(buf->wchan));
++
+ 	buf->min_flt = pinfo[0].p_uru_minflt;
+ 	buf->maj_flt = pinfo[0].p_uru_majflt;
+ 
+ 	buf->flags |= (_glibtop_sysdeps_proc_kernel_wchan
+-		| _glibtop_sysdeps_proc_kernel_pstats);
++		       | _glibtop_sysdeps_proc_kernel_pstats);
+ 
+ }

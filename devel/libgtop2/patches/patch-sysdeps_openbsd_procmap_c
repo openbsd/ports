@@ -1,4 +1,4 @@
-$OpenBSD: patch-sysdeps_openbsd_procmap_c,v 1.9 2012/07/09 22:47:31 jasper Exp $
+$OpenBSD: patch-sysdeps_openbsd_procmap_c,v 1.10 2013/03/27 07:57:38 jasper Exp $
 
 From b0f4bee85e3ef974ca9fde04abd1769a8b84a544 Mon Sep 17 00:00:00 2001
 From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
@@ -16,10 +16,10 @@ Date:   Sun Sep 18 13:41:20 2011 +0200
 Extend comment a bit regarding processes dying before we get to kvm_getproc2()
 
 --- sysdeps/openbsd/procmap.c.orig	Sun Jul 24 21:13:56 2011
-+++ sysdeps/openbsd/procmap.c	Tue Jul 10 00:46:58 2012
++++ sysdeps/openbsd/procmap.c	Wed Mar 27 08:48:04 2013
 @@ -1,4 +1,4 @@
--/* $OpenBSD: patch-sysdeps_openbsd_procmap_c,v 1.9 2012/07/09 22:47:31 jasper Exp $	*/
-+/* $OpenBSD: patch-sysdeps_openbsd_procmap_c,v 1.9 2012/07/09 22:47:31 jasper Exp $	*/
+-/* $OpenBSD: patch-sysdeps_openbsd_procmap_c,v 1.10 2013/03/27 07:57:38 jasper Exp $	*/
++/* $OpenBSD: patch-sysdeps_openbsd_procmap_c,v 1.10 2013/03/27 07:57:38 jasper Exp $	*/
  
  /* Copyright (C) 1998 Joshua Sled
     This file is part of LibGTop 1.0.
