@@ -1,5 +1,0 @@
-Back In Time is a simple backup tool for Unix inspired from the flyback
-project and TimeVault. The backup is done by taking snapshots of a
-specified set of directories.
-
-This package provides the GNOME UI.
