@@ -1,0 +1,14 @@
+$OpenBSD: patch-activation-server_Makefile_in,v 1.6 2013/03/27 18:00:36 ajacoutot Exp $
+
+Fix build with glib2>=2.36.0
+
+--- activation-server/Makefile.in.orig	Wed Mar 27 11:15:13 2013
++++ activation-server/Makefile.in	Wed Mar 27 11:15:17 2013
+@@ -341,7 +341,6 @@ INCLUDES = \
+ 	$(SERVER_CFLAGS)			\
+ 	$(WARN_CFLAGS)				\
+ 	-DSERVER_CONFDIR=\"$(sysconfdir)\"	\
+-	-DG_DISABLE_DEPRECATED			\
+ 	-DG_LOG_DOMAIN=\"Bonobo-Activation-Server\" \
+ 	$(NULL)
+ 
