@@ -1,4 +1,5 @@
-# $OpenBSD: config.no-gsed,v 1.1 2011/12/10 11:15:16 espie Exp $
+# $OpenBSD: config.no-gsed,v 1.2 2013/03/27 16:20:58 naddy Exp $
 # included unless textproc/gsed
 ac_cv_path_SED=${ac_cv_path_SED=/usr/bin/sed}
 ac_cv_prog_SED=${ac_cv_prog_SED=/usr/bin/sed}
+lt_cv_path_SED=${lt_cv_path_SED=/usr/bin/sed}
