@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2013/03/11 11:46:12 espie Exp $
+# $OpenBSD: Makefile,v 1.75 2013/03/27 17:59:31 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,9 +6,10 @@ COMMENT=		GNOME Virtual File System
 
 GNOME_PROJECT=		gnome-vfs
 GNOME_VERSION=		2.24.4
+EXTRACT_SUFX=		.tar.bz2
 PKGNAME=		gnome-vfs2-${VERSION}
 
-REVISION=		5
+REVISION=		6
 
 SHARED_LIBS +=	gnomevfs-2           2400.0   # .2400.0
 
@@ -18,8 +19,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += asn1 bz2 c crypto dbus-1 dbus-glib-1 fam ffi gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gssapi gthread-2.0
 WANTLIB += krb5 m pcre pthread ssl util xml2 z
-
-EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext \
 			x11/gnome \
@@ -37,7 +36,6 @@ CONFIGURE_ARGS+= 	--disable-cdda \
 			--disable-avahi \
 			--disable-howl \
 			--disable-samba
-MODGNOME_LDFLAGS=	-pthread
 CONFIGURE_ENV=		ac_cv_header_sys_mount_h=yes
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/gnome-vfs2
