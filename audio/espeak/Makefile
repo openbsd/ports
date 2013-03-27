@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/10 22:55:02 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/27 15:33:32 ajacoutot Exp $
 
 COMMENT=		compact speech synthesizer
 
-DISTNAME=		espeak-1.46.02-source
+DISTNAME=		espeak-1.47.03-source
+EXTRACT_SUFX=		.zip
 PKGNAME=		${DISTNAME:S/-source//}
-REVISION=		0
+
 SHARED_LIBS=		espeak 1.0
 
 CATEGORIES=		audio devel
@@ -14,26 +15,20 @@ HOMEPAGE=		http://espeak.sourceforge.net/
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=espeak/}
-EXTRACT_SUFX=		.zip
+WANTLIB += c m portaudio pthread stdc++
 
-WANTLIB=		c m pthread stdc++ portaudio
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=espeak/}
 
 LIB_DEPENDS=		audio/portaudio-svn
 
 USE_GMAKE=		Yes
-
 NO_TEST=		Yes
 
 WRKSRC= 		${WRKDIST}/src
 
-MAKE_FLAGS+=		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
+MAKE_FLAGS +=		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" EXTRA_FLAGS="-fPIC"
 
-.if ${MACHINE_ARCH} == "amd64"
-MAKE_FLAGS +=		EXTRA_FLAGS="-fPIC"
-.endif
-
-SUBST_VARS=		PREFIX LIBespeak_VERSION
+SUBST_VARS=		LIBespeak_VERSION
 
 pre-configure:
 	@cp ${LOCALBASE}/include/portaudio.h ${WRKSRC}/portaudio.h

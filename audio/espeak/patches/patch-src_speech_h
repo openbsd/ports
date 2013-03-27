@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_speech_h,v 1.4 2012/06/23 12:23:31 ajacoutot Exp $
+$OpenBSD: patch-src_speech_h,v 1.5 2013/03/27 15:33:32 ajacoutot Exp $
 
-- Don't define USE_ASYNC, this required sem_timedwait() to be present.
+Don't define USE_ASYNC, this required sem_timedwait() to be present.
 
---- src/speech.h.orig	Fri Jan  6 18:03:00 2012
-+++ src/speech.h	Sat Jun 23 12:36:01 2012
-@@ -57,7 +57,7 @@
+--- src/speech.h.orig	Thu Mar 21 13:38:16 2013
++++ src/speech.h	Wed Mar 27 16:09:29 2013
+@@ -58,7 +58,7 @@
  
  // will look for espeak_data directory here, and also in user's home directory
  #ifndef PATH_ESPEAK_DATA
