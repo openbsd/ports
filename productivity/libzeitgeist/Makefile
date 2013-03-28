@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/28 21:36:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/28 21:39:26 jasper Exp $
 
 COMMENT=		Zeitgeist client library
 
@@ -20,7 +20,7 @@ MASTER_SITES=		https://launchpad.net/libzeitgeist/0.3/0.3.18/+download/
 MODULES=		devel/gettext
 
 USE_GMAKE=		Yes
-REGRESS_IS_INTERACTIVE=	x11
+TEST_IS_INTERACTIVE=	x11
 
 WANTLIB += ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += pcre pthread z

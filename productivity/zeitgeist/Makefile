@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/28 21:37:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2013/03/28 21:39:26 jasper Exp $
 
 COMMENT =		event logging framework
 
@@ -27,26 +27,6 @@ BUILD_DEPENDS =		lang/vala \
 			textproc/py-rdflib \
 			textproc/raptor \
 			x11/dbus
-
-RUN_DEPENDS =		devel/py-gobject \
-			devel/py-xdg \
-			x11/dbus-python
-
-WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += pcre pthread sqlite3 z
-
-LIB_DEPENDS =		devel/glib2
-
-FAKE_FLAGS +=		zeitgeistdocdir="${PREFIX}/share/doc/zeitgeist/"
-
-CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
-# XXX: FTS++ fails to build in controller.cpp; needs fixing.
-CONFIGURE_ARGS +=	--disable-fts
-# XXX: Requires dee-icu which has not been ported yet
-CONFIGURE_ARGS +=	--without-dee-icu
-
-.include <bsd.port.mk>
 
 RUN_DEPENDS =		devel/py-gobject \
 			devel/py-xdg \
