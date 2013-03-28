@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2012/09/29 10:29:11 jasper Exp $
-@lib lib/libzeitgeist-1.0.so.${LIBzeitgeist-1.0_VERSION}
