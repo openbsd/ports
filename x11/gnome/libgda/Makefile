@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2013/03/28 19:34:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.72 2013/03/28 20:03:29 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -35,7 +35,6 @@ SHARED_LIBS +=  gda-5.0                   1.0 # 5.1
 SHARED_LIBS +=  gda-report-5.0            1.0 # 5.1
 SHARED_LIBS +=  gda-ui-5.0                1.0 # 5.1
 SHARED_LIBS +=  gda-xslt-5.0              1.0 # 5.1
-SHARED_LIBS +=  gdadata-5.0               0.0 # 0.0
 
 HOMEPAGE=		http://www.gnome-db.org/
 
