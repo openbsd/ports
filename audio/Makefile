@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.301 2013/03/27 08:47:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.302 2013/03/28 13:30:03 sthen Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -49,6 +49,7 @@
      SUBDIR += fluidsynth
      SUBDIR += fookebox
      SUBDIR += freealut
+     SUBDIR += generaluser-gs-soundfont
      SUBDIR += gimmix
      SUBDIR += gmpc
      SUBDIR += gmpc-libnotify
