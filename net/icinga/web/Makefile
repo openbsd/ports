@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 11:35:47 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/03/28 12:43:14 sthen Exp $
 
 COMMENT =	web UI for icinga
-DISTNAME =	icinga-web-1.8.2
+DISTNAME =	icinga-web-1.8.3
 
 MODULES=	lang/php
 
@@ -48,10 +48,10 @@ INSTALL_TARGET = install install-apache-config
 PREFIX =	/var/www/icinga-web
 
 pre-configure:
-	@ln -s ${MODPHP_BIN} ${WRKDIR}/bin/php
+	ln -s ${MODPHP_BIN} ${WRKDIR}/bin/php
 
 post-configure:
-	@find ${WRKSRC}/bin -name '*.sh' -print0 | xargs -0r \
+	find ${WRKSRC}/bin -name '*.sh' -print0 | xargs -0r \
 		perl -pi -e 's,^#!/bin/bash,#!${LOCALBASE}/bin/bash,g'
 
 pre-install:

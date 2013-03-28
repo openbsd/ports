@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2013/03/02 12:41:55 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.12 2013/03/28 12:43:14 sthen Exp $
 @conflict icinga-api-*
 @pkgpath net/icinga/core,-api
 app/
@@ -1581,6 +1581,7 @@ etc/schema/updates/mysql/mysql_v1-7-0_to_v1-7-1.sql
 etc/schema/updates/mysql/mysql_v1-7-1_to_v1-7-2.sql
 etc/schema/updates/mysql/mysql_v1-7-2_to_v1-8-0.sql
 etc/schema/updates/mysql/mysql_v1-8-0_to_v-1-8-1.sql
+etc/schema/updates/mysql/mysql_v1-8-1_to_v1-8-3.sql
 etc/schema/updates/oracle/
 etc/schema/updates/oracle/oracle_v1-0-3_to_v1-2.sql
 etc/schema/updates/oracle/oracle_v1-2_to_1-3.sql
@@ -1592,6 +1593,7 @@ etc/schema/updates/oracle/oracle_v1-6_to_v1-6-2.sql
 etc/schema/updates/oracle/oracle_v1-7-0_to_v1-7-1.sql
 etc/schema/updates/oracle/oracle_v1-7-1_to_v1-7-2.sql
 etc/schema/updates/oracle/oracle_v1-7-2_to_v1-8-0.sql
+etc/schema/updates/oracle/oracle_v1-8-0_to_v1-8-3.sql
 etc/schema/updates/pgsql/
 etc/schema/updates/pgsql/pgsql_v1-0-3_to_v1-2.sql
 etc/schema/updates/pgsql/pgsql_v1-2_to_v1-3.sql
@@ -1604,6 +1606,7 @@ etc/schema/updates/pgsql/pgsql_v1-7-0_to_v1-7-1.sql
 etc/schema/updates/pgsql/pgsql_v1-7-1_to_v1-7-2.sql
 etc/schema/updates/pgsql/pgsql_v1-7-2_to_v1-8-0.sql
 etc/schema/updates/pgsql/pgsql_v1-8-0_to_v-1-8-1.sql
+etc/schema/updates/pgsql/pgsql_v1-8-1_to_v1-8-3.sql
 lib/
 lib/agavi/
 lib/agavi/src/
