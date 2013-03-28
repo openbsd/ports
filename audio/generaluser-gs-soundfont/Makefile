@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/03/28 13:29:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/28 13:32:21 sthen Exp $
 
 COMMENT=	GM and GS compatible SoundFont bank for MIDI
 
@@ -17,7 +17,8 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM=	probably OK, but disabled on CDs for safety
 PERMIT_PACKAGE_FTP=	Yes
 
-MASTER_SITES=	http://www.schristiancollins.com/soundfonts/
+MASTER_SITES=	http://www.schristiancollins.com/soundfonts/ \
+		http://spacehopper.org/mirrors/
 
 NO_BUILD=	Yes
 NO_TEST=	Yes
