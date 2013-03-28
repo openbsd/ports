@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/27 20:03:02 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/03/28 07:49:32 ajacoutot Exp $
 share/doc/chemical-mime-data/
 share/doc/chemical-mime-data/chemical-mime-data.html
 share/doc/chemical-mime-data/cmd.css
@@ -17,7 +17,6 @@ share/icons/hicolor/96x96/mimetypes/gnome-mime-chemical.png
 share/icons/hicolor/scalable/mimetypes/gnome-mime-chemical.svgz
 share/locale/de/LC_MESSAGES/chemical-mime-data.mo
 share/locale/fr/LC_MESSAGES/chemical-mime-data.mo
-share/mime-info/
 share/mime-info/chemical-mime-data.keys
 share/mime-info/chemical-mime-data.mime
 share/mime/packages/chemical-mime-data.xml
