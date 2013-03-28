@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.178 2013/03/11 11:35:56 espie Exp $
+# $OpenBSD: Makefile,v 1.179 2013/03/28 15:26:47 brad Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT-main=		SMB and CIFS client and server for UNIX
 COMMENT-docs=		additional documentation and examples for Samba
 
-DISTNAME=		samba-3.6.12
+DISTNAME=		samba-3.6.13
 PKGNAME-main=		${DISTNAME}
 FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}
 FULLPKGPATH-docs=	net/samba,-docs
@@ -24,8 +24,8 @@ MAINTAINER=		Ian McWilliam <kaosagnt@tpg.com.au>
 # GPLv3+
 PERMIT_PACKAGE_CDROM=		Yes
 
-WANTLIB += asn1 c crypto cups execinfo gssapi iniparser krb5 m ncurses
-WANTLIB += popt pthread readline ssl talloc tdb z
+WANTLIB += c cups execinfo iniparser ncurses popt pthread readline talloc
+WANTLIB += tdb z
 
 MASTER_SITES=	http://download.samba.org/samba/ftp/ \
 		http://us2.samba.org/samba/ftp/ \
@@ -57,7 +57,7 @@ USE_GMAKE=		Yes
 USE_GROFF=		Yes
 #SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	gnu
-AUTOCONF_VERSION=	2.68
+AUTOCONF_VERSION=	2.69
 
 CONFIGURE_ARGS=		--disable-fam \
 			--without-pam \

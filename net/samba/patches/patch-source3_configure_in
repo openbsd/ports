@@ -1,16 +1,7 @@
-$OpenBSD: patch-source3_configure_in,v 1.7 2012/12/17 00:52:58 brad Exp $
---- source3/configure.in.orig	Thu Dec  6 20:28:00 2012
-+++ source3/configure.in	Sun Dec 16 20:12:54 2012
-@@ -1112,7 +1112,7 @@ AC_CHECK_FUNCS(sigprocmask sigblock sigaction sigset i
- AC_CHECK_FUNCS(initgroups select rdchk getgrnam getgrent pathconf)
- AC_CHECK_FUNCS(getgrset)
- AC_CHECK_FUNCS(setpriv setgidx setuidx setgroups sysconf stat64 fstat64)
--AC_CHECK_FUNCS(lstat64 fopen64 atexit grantpt lseek64 ftruncate64 posix_fallocate posix_fallocate64)
-+AC_CHECK_FUNCS(lstat64 fopen64 atexit grantpt posix_openpt lseek64 ftruncate64 posix_fallocate posix_fallocate64)
- AC_CHECK_FUNCS(fallocate fallocate64)
- AC_CHECK_FUNCS(fseeko fseek64 fseeko64 ftell64 ftello64 setluid getpwanam)
- AC_CHECK_FUNCS(opendir64 readdir64 seekdir64 telldir64 rewinddir64 closedir64)
-@@ -1671,8 +1671,7 @@ DSO_EXPORTS=""
+$OpenBSD: patch-source3_configure_in,v 1.8 2013/03/28 15:26:48 brad Exp $
+--- source3/configure.in.orig	Mon Mar 18 04:59:37 2013
++++ source3/configure.in	Fri Mar 22 04:52:13 2013
+@@ -1675,8 +1675,7 @@ DSO_EXPORTS=""
  			;;
  		*openbsd*)  BLDSHARED="true"
  			LDSHFLAGS="-shared"
@@ -20,7 +11,7 @@ $OpenBSD: patch-source3_configure_in,v 1.7 2012/12/17 00:52:58 brad Exp $
  			PICFLAG="-fPIC"
  			AC_DEFINE(STAT_ST_BLOCKSIZE,512,[The size of a block])
  			AC_DEFINE(BROKEN_GETGRNAM,1,[Does getgrnam work correctly])
-@@ -6806,13 +6805,43 @@ fi
+@@ -6810,13 +6809,43 @@ fi
  
  CFLAGS=$CFLAGS_SAVE
  

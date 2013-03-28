@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.22 2012/08/04 14:45:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.23 2013/03/28 15:26:48 brad Exp $
 @conflict samba-docs-<3.6.0
 @pkgpath ${BASE_PKGPATH}
 @pkgpath ${BASE_PKGPATH},cups
@@ -100,6 +100,7 @@ lib/samba/vfs/xattr_tdb.so
 @bin libexec/smbd
 @bin libexec/swat
 @bin libexec/winbindd
+@man man/man1/dbwrap_tool.1
 @man man/man1/findsmb.1
 @man man/man1/log2pcap.1
 @man man/man1/nmblookup.1
