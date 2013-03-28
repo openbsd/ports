@@ -1,17 +1,16 @@
-$OpenBSD: README,v 1.2 2013/01/16 20:54:40 sthen Exp $
+$OpenBSD: README,v 1.3 2013/03/28 18:24:29 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
-This port is in early stages, and in general for LNS use it is
+This port is in early stages, and in general for LNS ("server") use it is
 recommended to use npppd(8) instead, however it is useful if you wish
 to use OpenBSD as an L2TP client (LAC).
 
-Normally, xl2tpd would be controlled by using xl2tpd-control, a dedicated
-program. This currently requires functions not present in OpenBSD, however
-all this does is write simple commands to a fifo (you may be familiar with
-this style from isakmpd). You can use the following as an alternative:
+xl2tpd can be controlled either by using xl2tpd-control, or by writing
+simple commands to a fifo (you may be familiar with this style from
+isakmpd), e.g.:
 
   echo '[command] [config_name]' > /var/run/xl2tpd/l2tp-control
 

@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/01/15 23:02:19 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/03/28 18:24:29 sthen Exp $
 @newgroup _xl2tpd:711
 @newuser _xl2tpd:711:_xl2tpd:daemon:xl2tpd user:/nonexistent:/sbin/nologin
 @man man/man5/l2tp-secrets.5
 @man man/man5/xl2tpd.conf.5
 @man man/man8/xl2tpd.8
 @bin sbin/xl2tpd
+@bin sbin/xl2tpd-control
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/xl2tpd/
 @sample ${SYSCONFDIR}/xl2tpd/
