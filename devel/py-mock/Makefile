@@ -1,16 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 10:50:26 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/28 23:36:28 rpe Exp $
 
 COMMENT=		python mocking and patching library for testing
 
-MODPY_EGG_VERSION=	0.7.0
+MODPY_EGG_VERSION=	1.0.1
 DISTNAME=		mock-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel
-REVISION =		1
 
 HOMEPAGE=		http://www.voidspace.org.uk/python/mock/
-
-MAINTAINER=		Eric Faurot <eric@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
