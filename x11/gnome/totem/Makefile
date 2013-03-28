@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2013/03/28 21:14:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.95 2013/03/28 21:32:03 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -11,7 +11,7 @@ GNOME_VERSION=		3.6.3
 PKGNAME-main=		${DISTNAME}
 PKGNAME-nautilus=	nautilus-${DISTNAME}
 
-REVISION-main=		1
+REVISION-main=		2
 
 SHARED_LIBS +=  totem                     0.0 # 0.0
 
@@ -45,7 +45,7 @@ WANTLIB += quvi soup-2.4 soup-gnome-2.4 sqlite3 ssl stdc++ totem-plparser
 WANTLIB += xcb xcb-render xcb-shm xml2 z
 
 WANTLIB-main += ${WANTLIB}
-WANTLIB-main += c grilo-0.2 zeitgeist-2.0
+WANTLIB-main += c grilo-0.2 zeitgeist-1.0
 
 WANTLIB-nautilus += ${WANTLIB}
 WANTLIB-nautilus += nautilus-extension
@@ -69,7 +69,7 @@ LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
 			devel/libpeas \
 			graphics/clutter/clutter-gst \
 			graphics/clutter/clutter-gtk \
-			productivity/zeitgeist \
+			productivity/libzeitgeist \
 			x11/gnome/grilo>=0.2.0
 
 RUN_DEPENDS-nautilus=	x11/gnome/totem,-main=${GNOME_VERSION}
