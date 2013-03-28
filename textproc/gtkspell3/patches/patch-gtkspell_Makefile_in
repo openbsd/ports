@@ -1,0 +1,17 @@
+$OpenBSD: patch-gtkspell_Makefile_in,v 1.1 2013/03/28 08:13:39 jasper Exp $
+
+GTK_SPELL_CFLAGS is undefined.
+
+Submitted to upstream gtkspell-devel@lists.sourceforge.net
+
+--- gtkspell/Makefile.in.orig	Thu Mar 28 08:50:03 2013
++++ gtkspell/Makefile.in	Thu Mar 28 08:50:17 2013
+@@ -399,7 +399,7 @@ EXTRA_DIST = $(pkgconfig_DATA)
+ @HAVE_INTROSPECTION_TRUE@INTROSPECTION_GIRS = $(am__append_5) \
+ @HAVE_INTROSPECTION_TRUE@	$(am__append_6)
+ @ENABLE_GTK3_TRUE@@HAVE_INTROSPECTION_TRUE@GtkSpell_3_0_gir_INCLUDES = GObject-2.0 GLib-2.0 Gtk-3.0
+-@ENABLE_GTK3_TRUE@@HAVE_INTROSPECTION_TRUE@GtkSpell_3_0_gir_CFLAGS = --warn-all @GTK_SPELL_CFLAGS@
++@ENABLE_GTK3_TRUE@@HAVE_INTROSPECTION_TRUE@GtkSpell_3_0_gir_CFLAGS = --warn-all @GTK_SPELL3_CFLAGS@
+ @ENABLE_GTK3_TRUE@@HAVE_INTROSPECTION_TRUE@GtkSpell_3_0_gir_LIBS = libgtkspell3-3.la
+ @ENABLE_GTK3_TRUE@@HAVE_INTROSPECTION_TRUE@GtkSpell_3_0_gir_FILES = $(libgtkspell3_3_la_SOURCES)
+ @ENABLE_GTK3_TRUE@@HAVE_INTROSPECTION_TRUE@GtkSpell_3_0_gir_SCANNERFLAGS = --c-include gtkspell/gtkspell.h
