@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/09/27 11:48:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/03/28 19:33:47 jasper Exp $
 @conflict cogl-<1.8.0
 include/clutter-${API_VERSION}/
 include/clutter-${API_VERSION}/cally/
@@ -88,6 +88,7 @@ include/clutter-${API_VERSION}/clutter/clutter-stage-manager.h
 include/clutter-${API_VERSION}/clutter/clutter-stage.h
 include/clutter-${API_VERSION}/clutter/clutter-swipe-action.h
 include/clutter-${API_VERSION}/clutter/clutter-table-layout.h
+include/clutter-${API_VERSION}/clutter/clutter-tap-action.h
 include/clutter-${API_VERSION}/clutter/clutter-text-buffer.h
 include/clutter-${API_VERSION}/clutter/clutter-text.h
 include/clutter-${API_VERSION}/clutter/clutter-texture.h
@@ -262,6 +263,7 @@ share/gtk-doc/html/clutter/ClutterStage.html
 share/gtk-doc/html/clutter/ClutterState.html
 share/gtk-doc/html/clutter/ClutterSwipeAction.html
 share/gtk-doc/html/clutter/ClutterTableLayout.html
+share/gtk-doc/html/clutter/ClutterTapAction.html
 share/gtk-doc/html/clutter/ClutterText.html
 share/gtk-doc/html/clutter/ClutterTextBuffer.html
 share/gtk-doc/html/clutter/ClutterTexture.html
@@ -344,6 +346,7 @@ share/gtk-doc/html/clutter/ix10.html
 share/gtk-doc/html/clutter/ix11.html
 share/gtk-doc/html/clutter/ix12.html
 share/gtk-doc/html/clutter/ix13.html
+share/gtk-doc/html/clutter/ix14.html
 share/gtk-doc/html/clutter/left.png
 share/gtk-doc/html/clutter/license.html
 share/gtk-doc/html/clutter/migrating-ClutterAnimation.html
@@ -400,12 +403,14 @@ share/locale/pt/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/pt_BR/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/ro/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/ru/LC_MESSAGES/clutter-${API_VERSION}.mo
+share/locale/sk/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/sl/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/sr/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/sr@latin/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/sv/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/ta/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/te/LC_MESSAGES/clutter-${API_VERSION}.mo
+share/locale/tg/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/tr/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/ug/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/uk/LC_MESSAGES/clutter-${API_VERSION}.mo
