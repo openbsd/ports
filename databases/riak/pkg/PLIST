@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/03/26 05:26:30 jmatthew Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/03/28 03:56:07 jmatthew Exp $
 @comment riak uses sudo(8): homedir must exist and user must have a valid shell
 @newgroup _riak:702
 @newuser _riak:702:_riak:daemon:Riak daemon:/var/riak:/bin/sh
@@ -303,6 +303,7 @@ lib/riak/lib/eleveldb-${ELEVELDB_V}/
 lib/riak/lib/eleveldb-${ELEVELDB_V}/ebin/
 lib/riak/lib/eleveldb-${ELEVELDB_V}/ebin/eleveldb.app
 lib/riak/lib/eleveldb-${ELEVELDB_V}/ebin/eleveldb.beam
+lib/riak/lib/eleveldb-${ELEVELDB_V}/ebin/eleveldb_bump.beam
 lib/riak/lib/eleveldb-${ELEVELDB_V}/priv/
 lib/riak/lib/eleveldb-${ELEVELDB_V}/priv/vsn.git
 lib/riak/lib/eper-${EPER_V}/
@@ -755,6 +756,7 @@ lib/riak/lib/lager-${LAGER_V}/ebin/lager_util.beam
 lib/riak/lib/lager-${LAGER_V}/include/
 lib/riak/lib/lager-${LAGER_V}/include/lager.hrl
 lib/riak/lib/lager-${LAGER_V}/priv/
+lib/riak/lib/lager-${LAGER_V}/priv/edoc.css
 lib/riak/lib/lager-${LAGER_V}/priv/vsn.git
 lib/riak/lib/lager_syslog-${LAGER_SYSLOG_V}/
 lib/riak/lib/lager_syslog-${LAGER_SYSLOG_V}/ebin/
@@ -977,6 +979,7 @@ lib/riak/lib/riak_api-${RIAK_API_V}/ebin/
 lib/riak/lib/riak_api-${RIAK_API_V}/ebin/riak_api.app
 lib/riak/lib/riak_api-${RIAK_API_V}/ebin/riak_api_app.beam
 lib/riak/lib/riak_api-${RIAK_API_V}/ebin/riak_api_basic_pb_service.beam
+lib/riak/lib/riak_api-${RIAK_API_V}/ebin/riak_api_pb_frame.beam
 lib/riak/lib/riak_api-${RIAK_API_V}/ebin/riak_api_pb_listener.beam
 lib/riak/lib/riak_api-${RIAK_API_V}/ebin/riak_api_pb_registrar.beam
 lib/riak/lib/riak_api-${RIAK_API_V}/ebin/riak_api_pb_registration_helper.beam
@@ -995,6 +998,7 @@ lib/riak/lib/riak_control-${RIAK_CONTROL_V}/ebin/admin_gui.beam
 lib/riak/lib/riak_control-${RIAK_CONTROL_V}/ebin/admin_node.beam
 lib/riak/lib/riak_control-${RIAK_CONTROL_V}/ebin/admin_node_leave.beam
 lib/riak/lib/riak_control-${RIAK_CONTROL_V}/ebin/admin_node_stop.beam
+lib/riak/lib/riak_control-${RIAK_CONTROL_V}/ebin/admin_nodes.beam
 lib/riak/lib/riak_control-${RIAK_CONTROL_V}/ebin/admin_partitions.beam
 lib/riak/lib/riak_control-${RIAK_CONTROL_V}/ebin/admin_routes.beam
 lib/riak/lib/riak_control-${RIAK_CONTROL_V}/ebin/admin_services_resource.beam
@@ -1002,6 +1006,7 @@ lib/riak/lib/riak_control-${RIAK_CONTROL_V}/ebin/admin_ui_resource.beam
 lib/riak/lib/riak_control-${RIAK_CONTROL_V}/ebin/base64url.beam
 lib/riak/lib/riak_control-${RIAK_CONTROL_V}/ebin/index_dtl.beam
 lib/riak/lib/riak_control-${RIAK_CONTROL_V}/ebin/rebar_js_concatenator_plugin.beam
+lib/riak/lib/riak_control-${RIAK_CONTROL_V}/ebin/rebar_js_handlebars_plugin.beam
 lib/riak/lib/riak_control-${RIAK_CONTROL_V}/ebin/rebar_js_stylus_plugin.beam
 lib/riak/lib/riak_control-${RIAK_CONTROL_V}/ebin/riak_control.app
 lib/riak/lib/riak_control-${RIAK_CONTROL_V}/ebin/riak_control.beam
@@ -1106,6 +1111,13 @@ lib/riak/lib/riak_control-${RIAK_CONTROL_V}/priv/admin/js/vendor/minispade.js
 lib/riak/lib/riak_control-${RIAK_CONTROL_V}/priv/admin/js/ring.js
 lib/riak/lib/riak_control-${RIAK_CONTROL_V}/priv/admin/js/router.js
 lib/riak/lib/riak_control-${RIAK_CONTROL_V}/priv/admin/js/snapshot.js
+lib/riak/lib/riak_control-${RIAK_CONTROL_V}/priv/admin/js/templates/
+lib/riak/lib/riak_control-${RIAK_CONTROL_V}/priv/admin/js/templates/application.hbs
+lib/riak/lib/riak_control-${RIAK_CONTROL_V}/priv/admin/js/templates/cluster.hbs
+lib/riak/lib/riak_control-${RIAK_CONTROL_V}/priv/admin/js/templates/pagination_item.hbs
+lib/riak/lib/riak_control-${RIAK_CONTROL_V}/priv/admin/js/templates/partition_filter.hbs
+lib/riak/lib/riak_control-${RIAK_CONTROL_V}/priv/admin/js/templates/ring.hbs
+lib/riak/lib/riak_control-${RIAK_CONTROL_V}/priv/admin/js/templates/snapshot.hbs
 lib/riak/lib/riak_control-${RIAK_CONTROL_V}/priv/vsn.git
 lib/riak/lib/riak_core-${RIAK_CORE_V}/
 lib/riak/lib/riak_core-${RIAK_CORE_V}/ebin/
@@ -1222,6 +1234,7 @@ lib/riak/lib/riak_kv-${RIAK_KV_V}/ebin/riak_kv_fsm_timing.beam
 lib/riak/lib/riak_kv-${RIAK_KV_V}/ebin/riak_kv_get_core.beam
 lib/riak/lib/riak_kv-${RIAK_KV_V}/ebin/riak_kv_get_fsm.beam
 lib/riak/lib/riak_kv-${RIAK_KV_V}/ebin/riak_kv_get_fsm_sup.beam
+lib/riak/lib/riak_kv-${RIAK_KV_V}/ebin/riak_kv_get_put_monitor.beam
 lib/riak/lib/riak_kv-${RIAK_KV_V}/ebin/riak_kv_index_fsm.beam
 lib/riak/lib/riak_kv-${RIAK_KV_V}/ebin/riak_kv_index_fsm_sup.beam
 lib/riak/lib/riak_kv-${RIAK_KV_V}/ebin/riak_kv_index_hashtree.beam
@@ -1412,6 +1425,8 @@ lib/riak/lib/riak_sysmon-${RIAK_SYSMON_V}/ebin/riak_sysmon_sup.beam
 lib/riak/lib/riak_sysmon-${RIAK_SYSMON_V}/ebin/riak_sysmon_testhandler.beam
 lib/riak/lib/riak_sysmon-${RIAK_SYSMON_V}/priv/
 lib/riak/lib/riak_sysmon-${RIAK_SYSMON_V}/priv/vsn.git
+lib/riak/lib/riaknostic/
+lib/riak/lib/riaknostic/riaknostic
 lib/riak/lib/runtime_tools-${RUNTIME_TOOLS_V}/
 lib/riak/lib/runtime_tools-${RUNTIME_TOOLS_V}/ebin/
 lib/riak/lib/runtime_tools-${RUNTIME_TOOLS_V}/ebin/dbg.beam
