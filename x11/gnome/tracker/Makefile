@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.127 2013/03/11 11:46:12 espie Exp $
+# $OpenBSD: Makefile,v 1.128 2013/03/28 13:38:23 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -22,6 +22,7 @@ PKGNAME-nautilus=	nautilus-meta-tracker-${VERSION}
 # net/telepathy/folks
 # x11/gnome/documents
 # x11/gnome/grilo-plugins
+# x11/gnome/photos
 MAJ_V=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 
 EVO_VERSION=	3.4
