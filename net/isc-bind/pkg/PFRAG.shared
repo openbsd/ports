@@ -1,7 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2012/07/19 08:36:45 sthen Exp $
-@lib lib/libbind9.so.${LIBbind9_VERSION}
-@lib lib/libdns.so.${LIBdns_VERSION}
-@lib lib/libisc.so.${LIBisc_VERSION}
-@lib lib/libisccc.so.${LIBisccc_VERSION}
-@lib lib/libisccfg.so.${LIBisccfg_VERSION}
-@lib lib/liblwres.so.${LIBlwres_VERSION}
