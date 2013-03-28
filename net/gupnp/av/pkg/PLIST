@@ -1,11 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/08/20 08:54:00 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.3 2013/03/28 19:43:57 jasper Exp $
 include/gupnp-av-1.0/
 include/gupnp-av-1.0/libgupnp-av/
+include/gupnp-av-1.0/libgupnp-av/gupnp-av-enums.h
 include/gupnp-av-1.0/libgupnp-av/gupnp-av-error.h
 include/gupnp-av-1.0/libgupnp-av/gupnp-av.h
+include/gupnp-av-1.0/libgupnp-av/gupnp-cds-last-change-parser.h
 include/gupnp-av-1.0/libgupnp-av/gupnp-didl-lite-container.h
 include/gupnp-av-1.0/libgupnp-av/gupnp-didl-lite-contributor.h
+include/gupnp-av-1.0/libgupnp-av/gupnp-didl-lite-createclass.h
 include/gupnp-av-1.0/libgupnp-av/gupnp-didl-lite-descriptor.h
 include/gupnp-av-1.0/libgupnp-av/gupnp-didl-lite-item.h
 include/gupnp-av-1.0/libgupnp-av/gupnp-didl-lite-object.h
@@ -13,13 +15,17 @@ include/gupnp-av-1.0/libgupnp-av/gupnp-didl-lite-parser.h
 include/gupnp-av-1.0/libgupnp-av/gupnp-didl-lite-resource.h
 include/gupnp-av-1.0/libgupnp-av/gupnp-didl-lite-writer.h
 include/gupnp-av-1.0/libgupnp-av/gupnp-dlna.h
+include/gupnp-av-1.0/libgupnp-av/gupnp-feature-list-parser.h
+include/gupnp-av-1.0/libgupnp-av/gupnp-feature.h
 include/gupnp-av-1.0/libgupnp-av/gupnp-last-change-parser.h
+include/gupnp-av-1.0/libgupnp-av/gupnp-media-collection.h
 include/gupnp-av-1.0/libgupnp-av/gupnp-protocol-info.h
 include/gupnp-av-1.0/libgupnp-av/gupnp-search-criteria-parser.h
 lib/girepository-1.0/
 lib/girepository-1.0/GUPnPAV-1.0.typelib
 lib/libgupnp-av-1.0.a
 lib/libgupnp-av-1.0.la
+@lib lib/libgupnp-av-1.0.so.${LIBgupnp-av-1.0_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/gupnp-av-1.0.pc
 share/gir-1.0/
@@ -27,6 +33,7 @@ share/gir-1.0/GUPnPAV-1.0.gir
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/gupnp-av/
+share/gtk-doc/html/gupnp-av/GUPnPCDSLastChangeParser.html
 share/gtk-doc/html/gupnp-av/GUPnPDIDLLiteContainer.html
 share/gtk-doc/html/gupnp-av/GUPnPDIDLLiteContributor.html
 share/gtk-doc/html/gupnp-av/GUPnPDIDLLiteDescriptor.html
@@ -35,13 +42,17 @@ share/gtk-doc/html/gupnp-av/GUPnPDIDLLiteObject.html
 share/gtk-doc/html/gupnp-av/GUPnPDIDLLiteParser.html
 share/gtk-doc/html/gupnp-av/GUPnPDIDLLiteResource.html
 share/gtk-doc/html/gupnp-av/GUPnPDIDLLiteWriter.html
+share/gtk-doc/html/gupnp-av/GUPnPFeature.html
+share/gtk-doc/html/gupnp-av/GUPnPFeatureListParser.html
 share/gtk-doc/html/gupnp-av/GUPnPLastChangeParser.html
+share/gtk-doc/html/gupnp-av/GUPnPMediaCollection.html
 share/gtk-doc/html/gupnp-av/GUPnPProtocolInfo.html
 share/gtk-doc/html/gupnp-av/GUPnPSearchCriteriaParser.html
 share/gtk-doc/html/gupnp-av/annotation-glossary.html
 share/gtk-doc/html/gupnp-av/ch01.html
 share/gtk-doc/html/gupnp-av/ch02.html
 share/gtk-doc/html/gupnp-av/gupnp-av-Error-codes.html
+share/gtk-doc/html/gupnp-av/gupnp-av-GUPnPDIDLLiteCreateClass.html
 share/gtk-doc/html/gupnp-av/gupnp-av.devhelp2
 share/gtk-doc/html/gupnp-av/home.png
 share/gtk-doc/html/gupnp-av/index.html
@@ -50,3 +61,13 @@ share/gtk-doc/html/gupnp-av/left.png
 share/gtk-doc/html/gupnp-av/right.png
 share/gtk-doc/html/gupnp-av/style.css
 share/gtk-doc/html/gupnp-av/up.png
+share/gupnp-av/
+share/gupnp-av/av.xsd
+share/gupnp-av/didl-lite-v2.xsd
+share/gupnp-av/simpledc20021212.xsd
+share/gupnp-av/upnp.xsd
+share/gupnp-av/xml.xsd
+share/vala/
+share/vala/vapi/
+share/vala/vapi/gupnp-av-1.0.deps
+share/vala/vapi/gupnp-av-1.0.vapi
