@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 02:52:05 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/28 19:08:02 kili Exp $
 
 COMMENT =		mid-level PostgreSQL client library
 
-DISTNAME =		postgresql-simple-0.2.4.1
-REVISION =		1
+DISTNAME =		postgresql-simple-0.3.0.1
 CATEGORIES =		databases
 
 HOMEPAGE =		https://github.com/lpsmith/postgresql-simple
