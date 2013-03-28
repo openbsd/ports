@@ -1,10 +1,10 @@
-$OpenBSD: patch-giscanner_utils_py,v 1.4 2012/09/21 13:19:40 jasper Exp $
+$OpenBSD: patch-giscanner_utils_py,v 1.5 2013/03/28 19:32:11 jasper Exp $
 
 Make sure try to compile/link with the right libtool,
 this overrides the --libtool option to girscanner.
 
---- giscanner/utils.py.orig	Fri Jul 20 15:37:12 2012
-+++ giscanner/utils.py	Thu Sep 20 13:02:31 2012
+--- giscanner/utils.py.orig	Tue Mar 26 17:10:17 2013
++++ giscanner/utils.py	Tue Mar 26 17:11:12 2013
 @@ -110,22 +110,8 @@ def get_libtool_command(options):
      if not libtool_infection:
          return None
@@ -20,7 +20,7 @@ this overrides the --libtool option to girscanner.
 -    try:
 -        subprocess.check_call(['libtool', '--version'],
 -                              stdout=open(os.devnull))
--    except (subprocess.CalledProcessError, OSError), e:
+-    except (subprocess.CalledProcessError, OSError):
 -        # If libtool's not installed, assume we don't need it
 -        return None
 -

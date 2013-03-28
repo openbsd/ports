@@ -1,0 +1,15 @@
+$OpenBSD: patch-giscanner_shlibs_py,v 1.5 2013/03/28 19:32:11 jasper Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=696765
+
+--- giscanner/shlibs.py.orig	Tue Dec 18 17:27:16 2012
++++ giscanner/shlibs.py	Thu Mar 28 11:45:22 2013
+@@ -68,7 +68,7 @@ def _resolve_non_libtool(options, binary, libraries):
+     if not libraries:
+         return []
+ 
+-    if os.name == 'OpenBSD':
++    if platform.platform().startswith('OpenBSD'):
+         # Hack for OpenBSD when using the ports' libtool which uses slightly
+         # different directories to store the libraries in. So rewite binary.args[0]
+         # by inserting '.libs/'.

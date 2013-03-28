@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.69 2013/03/21 08:45:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2013/03/28 19:32:11 jasper Exp $
 
 COMMENT=		GObject Introspection
 
-GNOME_VERSION=		1.34.2
+GNOME_VERSION=		1.36.0
 GNOME_PROJECT=		gobject-introspection
 
 CATEGORIES=		devel
@@ -22,8 +22,7 @@ MODULES=		devel/gettext \
 			lang/python \
 			x11/gnome
 
-WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += m pcre pthread z
+WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 m pcre pthread z
 
 LIB_DEPENDS=		devel/glib2>=2.34.1
 BUILD_DEPENDS=		devel/bison \

@@ -1,7 +1,7 @@
-$OpenBSD: patch-giscanner_dumper_py,v 1.5 2012/03/29 06:29:08 ajacoutot Exp $
---- giscanner/dumper.py.orig	Tue Nov 29 19:57:22 2011
-+++ giscanner/dumper.py	Mon Mar 26 12:06:27 2012
-@@ -80,7 +80,7 @@ class DumpCompiler(object):
+$OpenBSD: patch-giscanner_dumper_py,v 1.6 2013/03/28 19:32:11 jasper Exp $
+--- giscanner/dumper.py.orig	Sat Feb 23 11:40:08 2013
++++ giscanner/dumper.py	Tue Mar 26 17:12:03 2013
+@@ -82,7 +82,7 @@ class DumpCompiler(object):
          self._get_type_functions = get_type_functions
          self._error_quark_functions = error_quark_functions
  
@@ -9,13 +9,13 @@ $OpenBSD: patch-giscanner_dumper_py,v 1.5 2012/03/29 06:29:08 ajacoutot Exp $
 +        self._compiler_cmd = os.environ.get('CC', '${CC}')
          self._linker_cmd = os.environ.get('CC', self._compiler_cmd)
          self._pkgconfig_cmd = os.environ.get('PKG_CONFIG', 'pkg-config')
- 
-@@ -186,7 +186,7 @@ class DumpCompiler(object):
+         self._pkgconfig_msvc_flags = ''
+@@ -204,7 +204,7 @@ class DumpCompiler(object):
          args = self._compiler_cmd.split()
          # Do not add -Wall when using init code as we do not include any
          # header of the library being introspected
 -        if self._compiler_cmd == 'gcc' and not self._options.init_sections:
 +        if self._compiler_cmd == 'cc' and not self._options.init_sections:
              args.append('-Wall')
-         pkgconfig_flags = self._run_pkgconfig('--cflags')
-         args.extend(pkgconfig_flags)
+         # The Microsoft compiler uses different option flags for
+         # silencing warnings on deprecated function usage
