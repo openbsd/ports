@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.32 2013/03/11 11:23:51 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2013/03/28 14:27:19 ajacoutot Exp $
 
 COMMENT=	mailfilter to identify and mark spam
 
 DISTNAME=	mimedefang-2.73
-REVISION=	8
+REVISION=	9
 CATEGORIES=	mail
 
 HOMEPAGE=	http://www.mimedefang.org/
 MASTER_SITES=	${HOMEPAGE}static/
 
-MAINTAINER=	Okan Demirmen <okan@openbsd.org>
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

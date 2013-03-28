@@ -1,0 +1,20 @@
+$OpenBSD: patch-SpamAssassin_spamassassin_cf,v 1.3 2013/03/28 14:27:19 ajacoutot Exp $
+--- SpamAssassin/spamassassin.cf.orig	Thu Mar 28 12:17:56 2013
++++ SpamAssassin/spamassassin.cf	Thu Mar 28 12:21:08 2013
+@@ -70,6 +70,16 @@ rewrite_subject 0
+ 
+ skip_rbl_checks 1
+ 
++# Place the learning data into the journal for later synchronization.
++# This is typically useful for high-traffic sites to avoid the
++# contention of having each SpamAssassin process attempt to gain write
++# access to the Bayes DB.
++# "sa-learn --force-expire" must be run as the _mdefang user on a
++# regular basis to synchronize the journal data into the Bayes DB.
++#
++bayes_learn_to_journal 1
++bayes_auto_expire 0
++
+ ###########################################################################
+ # Add your own customised scores for some tests below.  The default scores are
+ # read from the installed "spamassassin.cf" file, but you can override them

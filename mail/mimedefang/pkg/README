@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2012/12/05 18:51:56 ajacoutot Exp $
+$OpenBSD: README,v 1.6 2013/03/28 14:27:19 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -19,6 +19,26 @@ When using administrator notifications, it is advised to add the
 "_mdefang" user to the list of users that are allowed to set their
 envelope "from" address to a different user. This is done in:
     /etc/mail/trusted-user
+
+Improving performance
+---------------------
+On a busy mail server, it is advised to have the spool directory in
+virtual memory (i.e. ramdisk). This can be achieve by adding the
+following line to fstab(5):
+swap /var/spool/MIMEDefang mfs rw,nodev,nosuid,noatime,-s=512000 0 0
+
+This will create a 256M mfs(8) filesystem under /var/spool/MIMEDefang.
+
+SpamAssassin
+------------
+SpamAssassin can be used my mimedefang(8) in which case some maintenance
+tasks are required and cron(8) jobs must be setup in root's crontab(5):
+
+- Automating SpamAssassin rule updates:
+0	0	*	*	*	PATH=${PATH}:${LOCALBASE}/bin; ${LOCALBASE}/bin/sa-update && ${RCDIR}/mimedefang_multiplexor reload >/dev/null
+
+- Synchronizing the journal data into the Bayes databases:
+30	0	*	*	*	PATH=${PATH}:${LOCALBASE}/bin; su -s /bin/sh _mdefang -c "${LOCALBASE}/bin/sa-learn --force-expire >/dev/null"
 
 IP validation header
 ====================
