@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure,v 1.3 2013/03/28 07:33:02 jasper Exp $
+
+Recognize vala 0.20
+
+--- configure.orig	Thu Mar 28 08:29:09 2013
++++ configure	Thu Mar 28 08:29:01 2013
+@@ -12408,6 +12408,14 @@ fi
+   test $ac_status = 0; }; then
+    valapkg="libvala-0.18"
+ fi
++		   if test -n "$PKG_CONFIG" && \
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \" libvala-0.20 \""; } >&5
++  ($PKG_CONFIG --exists --print-errors " libvala-0.20 ") 2>&5
++  ac_status=$?
++  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
++  test $ac_status = 0; }; then
++   valapkg="libvala-0.20"
++fi
+ 
+ 
+ 	if test "x$valapkg" != "x"; then
