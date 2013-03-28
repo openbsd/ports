@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2013/03/28 19:57:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.94 2013/03/28 21:14:28 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -11,7 +11,7 @@ GNOME_VERSION=		3.6.3
 PKGNAME-main=		${DISTNAME}
 PKGNAME-nautilus=	nautilus-${DISTNAME}
 
-REVISION-main=		0
+REVISION-main=		1
 
 SHARED_LIBS +=  totem                     0.0 # 0.0
 
@@ -50,14 +50,14 @@ WANTLIB-main += c grilo-0.2 zeitgeist-2.0
 WANTLIB-nautilus += ${WANTLIB}
 WANTLIB-nautilus += nautilus-extension
 
-BUILD_DEPENDS=	 	devel/py-gobject>=3.4.0 \
+BUILD_DEPENDS=	 	devel/py-gobject3 \
 			multimedia/gstreamer1/plugins-good \
 			multimedia/gstreamer1/plugins-bad>=1.0.0p0 # soundtouch
 
 # needed for make check
 BUILD_DEPENDS +=	devel/pylint
 
-RUN_DEPENDS-main=	devel/py-gobject>=3.4.0 \
+RUN_DEPENDS-main=	devel/py-gobject3 \
 			devel/py-xdg \
 			x11/dbus-python \
 			x11/gnome/grilo-plugins \
