@@ -1,7 +1,13 @@
-$OpenBSD: patch-configure_ac,v 1.1 2012/04/10 19:34:52 sthen Exp $
---- configure.ac.orig	Tue Apr 10 15:49:39 2012
-+++ configure.ac	Tue Apr 10 15:49:32 2012
-@@ -22,7 +22,7 @@ PKG_CHECK_MODULES(GLIB, glib-2.0 >= 2.16.0, [
+$OpenBSD: patch-configure_ac,v 1.2 2013/03/28 23:40:56 brad Exp $
+--- configure.ac.orig	Thu Oct 28 17:43:23 2010
++++ configure.ac	Thu Mar 28 18:57:58 2013
+@@ -19,10 +19,13 @@ PKG_CHECK_MODULES(GLIB, glib-2.0 >= 2.16.0, [
+   AC_DEFINE([HAVE_GLIB_H], [1], [glib.h])
+ ],[AC_MSG_ERROR("glib-2.0 >= 2.16.0 not found")])
+ 
++GLIB_LIBS_STATIC=`$PKG_CONFIG --libs --static glib-2.0`
++AC_SUBST(GLIB_LIBS_STATIC)
++
  # lib ev
  AC_CHECK_HEADERS([ev.h], [], [AC_MSG_ERROR("ev.h not found")])
  AC_CHECK_LIB([ev], [ev_time], [

@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_am,v 1.2 2012/08/30 13:47:45 sthen Exp $
---- Makefile.am.orig	Thu Oct 28 22:43:23 2010
-+++ Makefile.am	Tue Apr 10 15:47:59 2012
+$OpenBSD: patch-Makefile_am,v 1.3 2013/03/28 23:40:56 brad Exp $
+--- Makefile.am.orig	Thu Oct 28 17:43:23 2010
++++ Makefile.am	Thu Mar 28 18:27:25 2013
 @@ -4,5 +4,9 @@ man1_MANS=fcgi-cgi.1
  AM_CFLAGS=$(GLIB_CFLAGS)
  fcgi_cgi_LDADD=$(GLIB_LIBS)
@@ -9,6 +9,6 @@ $OpenBSD: patch-Makefile_am,v 1.2 2012/08/30 13:47:45 sthen Exp $
 +bin_PROGRAMS=fcgi-cgi fcgi-cgi-static
  fcgi_cgi_SOURCES=fastcgi.c fcgi-cgi.c
 +
-+fcgi_cgi_static_LDADD=$(fcgi_cgi_LDADD)
-+fcgi_cgi_static_LDFLAGS=-static `pkg-config glib-2.0 --libs --static`
++fcgi_cgi_static_LDADD=$(GLIB_LIBS_STATIC)
++fcgi_cgi_static_LDFLAGS=-static
 +fcgi_cgi_static_SOURCES=$(fcgi_cgi_SOURCES)
