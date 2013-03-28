@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/10 22:55:04 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/28 13:40:24 sthen Exp $
 
-COMMENT =	WYSIWYG music notation software
+COMMENT =	WYSIWYG music notation software (MuseScore)
 DISTNAME =	mscore-1.3
+REVISION =	0
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	audio x11
 SUBST_VARS +=	DISTNAME
