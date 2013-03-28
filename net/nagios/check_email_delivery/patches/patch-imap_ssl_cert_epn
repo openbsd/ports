@@ -1,0 +1,12 @@
+$OpenBSD: patch-imap_ssl_cert_epn,v 1.1 2013/03/28 12:38:56 sthen Exp $
+--- imap_ssl_cert_epn.orig	Thu Mar 28 12:25:45 2013
++++ imap_ssl_cert_epn	Thu Mar 28 12:28:17 2013
+@@ -61,7 +61,7 @@ eval {
+ 	$imap_port = $default_imap_ssl_port unless $imap_port;
+ 	my $socket = IO::Socket::SSL->new(
+ 		PeerAddr => "$imap_server:$imap_port",
+-		SSL_verify_mode => 1,
++		SSL_verify_mode => SSL_VERIFY_PEER,
+ 		SSL_ca_file => undef,
+ 		SSL_verifycn_scheme => 'imap',
+ 		SSL_verifycn_name => $imap_server,

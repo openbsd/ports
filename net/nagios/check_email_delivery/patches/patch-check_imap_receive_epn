@@ -1,0 +1,21 @@
+$OpenBSD: patch-check_imap_receive_epn,v 1.1 2013/03/28 12:38:56 sthen Exp $
+--- check_imap_receive_epn.orig	Thu Mar 28 12:26:36 2013
++++ check_imap_receive_epn	Thu Mar 28 12:35:45 2013
+@@ -47,7 +47,7 @@ my $download_max = "";
+ my $peek = "";
+ my $template = "";
+ my $ssl = 0;
+-my $ssl_ca_file = "";
++my $ssl_ca_file = "/etc/ssl/cert.pem";
+ my $tls = 0;
+ my $time_hires = "";
+ my $ok;
+@@ -129,7 +129,7 @@ eval {
+ 		$imap_port = $default_imap_ssl_port unless $imap_port;
+ 		my %ssl_args = ();
+ 		if( length($ssl_ca_file) > 0 ) {
+-			$ssl_args{SSL_verify_mode} = 1;
++			$ssl_args{SSL_verify_mode} = qw(SSL_VERIFY_PEER);
+ 			$ssl_args{SSL_ca_file} = $ssl_ca_file;
+ 			$ssl_args{SSL_verifycn_scheme} = 'imap';
+ 			$ssl_args{SSL_verifycn_name} = $imap_server;
