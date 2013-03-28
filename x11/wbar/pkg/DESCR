@@ -1,5 +1,4 @@
-Wbar is desktop application launcher that appears similiar to the dock
-on an OS/X desktop.  A wbar-config gui is included although the manual
-configuration is easy with entries for icon path, command and tooltip.
-Wbar commonly used with lightweight, stacking window managers such as
+Wbar is a desktop application launcher that appears similiar to the dock
+on an OS/X desktop.
+It is commonly used with lightweight, stacking window managers such as
 fluxbox and openbox.

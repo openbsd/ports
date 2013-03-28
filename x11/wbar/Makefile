@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/27 17:20:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/28 07:00:44 ajacoutot Exp $
 
 COMMENT =		Mac OS-X style lightweight application launcher
 
 DISTNAME =		wbar-2.3.4
 EXTRACT_SUFX =		.tgz
-REVISION =		0
+REVISION =		1
 
 CATEGORIES=		x11
 
