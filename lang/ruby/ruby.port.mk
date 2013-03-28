@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.61 2013/03/26 18:51:44 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.62 2013/03/28 06:54:49 zhuk Exp $
 
 # ruby module
 
@@ -377,8 +377,8 @@ MODRUBY_BUILD_TARGET = \
 	    cd ${WRKDIST} && gzip .metadata && \
 		    mv -f .metadata.gz ${_GEM_CONTENT}/metadata.gz; \
     fi; \
-    cd ${WRKDIST} && find . -type f \! -name '*.orig'  -print | \
-	    pax -wz -s '/^\.\///' -f ${_GEM_DATAFILE}; \
+    cd ${WRKDIST} && pax -wz -s '/.*${PATCHORIG:S@.@\.@}$$//' \
+	    -x ustar -o write_opt=nodir * .* >${_GEM_DATAFILE}; \
     cd ${_GEM_CONTENT} && tar -cf ${WRKDIR}/${_GEM_PATCHED} *.gz; \
     mkdir -p ${GEM_BASE}; \
     env -i ${MAKE_ENV} HOME=`dirname ${GEM_BASE}` GEM_HOME=${GEM_BASE} \
