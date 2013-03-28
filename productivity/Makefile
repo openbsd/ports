@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2013/03/25 21:23:17 zhuk Exp $
+# $OpenBSD: Makefile,v 1.52 2013/03/28 19:56:28 jasper Exp $
 
      SUBDIR =
      SUBDIR += attica
@@ -19,7 +19,6 @@
      SUBDIR += impressive
      SUBDIR += ledger
      SUBDIR += libqzeitgeist
-     SUBDIR += libzeitgeist
      SUBDIR += osmo
      SUBDIR += palm2ical
      SUBDIR += projectlibre
