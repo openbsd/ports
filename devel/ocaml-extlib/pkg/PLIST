@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/11/06 20:52:49 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/03/28 23:21:02 jturner Exp $
 %%native%%
 lib/ocaml/extlib/
 lib/ocaml/extlib/IO.cmi
@@ -19,6 +19,7 @@ lib/ocaml/extlib/extArray.mli
 lib/ocaml/extlib/extHashtbl.cmi
 lib/ocaml/extlib/extHashtbl.mli
 lib/ocaml/extlib/extLib.cma
+lib/ocaml/extlib/extLib.cmi
 lib/ocaml/extlib/extList.cmi
 lib/ocaml/extlib/extList.mli
 lib/ocaml/extlib/extString.cmi
