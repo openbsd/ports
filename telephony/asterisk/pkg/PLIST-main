@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.46 2012/09/28 00:03:57 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.47 2013/03/28 20:24:53 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-curl-*
 @conflict asterisk-fax-*
@@ -50,12 +50,14 @@ include/asterisk/cdr.h
 include/asterisk/cel.h
 include/asterisk/celt.h
 include/asterisk/channel.h
+include/asterisk/channel_internal.h
 include/asterisk/channelstate.h
 include/asterisk/chanvars.h
 include/asterisk/cli.h
 include/asterisk/compat.h
 include/asterisk/compiler.h
 include/asterisk/config.h
+include/asterisk/config_options.h
 include/asterisk/crypto.h
 include/asterisk/data.h
 include/asterisk/datastore.h
@@ -95,6 +97,7 @@ include/asterisk/global_datastores.h
 include/asterisk/hashtab.h
 include/asterisk/heap.h
 include/asterisk/http.h
+include/asterisk/http_websocket.h
 include/asterisk/image.h
 include/asterisk/indications.h
 include/asterisk/inline_api.h
@@ -122,6 +125,7 @@ include/asterisk/pbx.h
 include/asterisk/pktccops.h
 include/asterisk/plc.h
 include/asterisk/poll-compat.h
+include/asterisk/presencestate.h
 include/asterisk/privacy.h
 include/asterisk/pval.h
 include/asterisk/res_fax.h
@@ -134,6 +138,7 @@ include/asterisk/security_events_defs.h
 include/asterisk/select.h
 include/asterisk/sha1.h
 include/asterisk/silk.h
+include/asterisk/sip_api.h
 include/asterisk/slin.h
 include/asterisk/slinfactory.h
 include/asterisk/smdi.h
@@ -160,6 +165,7 @@ include/asterisk/utils.h
 include/asterisk/version.h
 include/asterisk/xml.h
 include/asterisk/xmldoc.h
+include/asterisk/xmpp.h
 lib/asterisk/
 lib/asterisk/modules/
 lib/asterisk/modules/app_adsiprog.so
@@ -197,6 +203,7 @@ lib/asterisk/modules/app_morsecode.so
 lib/asterisk/modules/app_mp3.so
 lib/asterisk/modules/app_nbscat.so
 lib/asterisk/modules/app_originate.so
+lib/asterisk/modules/app_page.so
 lib/asterisk/modules/app_parkandannounce.so
 lib/asterisk/modules/app_playback.so
 lib/asterisk/modules/app_playtones.so
@@ -239,10 +246,10 @@ lib/asterisk/modules/cel_manager.so
 lib/asterisk/modules/cel_sqlite3_custom.so
 lib/asterisk/modules/chan_agent.so
 lib/asterisk/modules/chan_bridge.so
-lib/asterisk/modules/chan_gtalk.so
 lib/asterisk/modules/chan_iax2.so
 lib/asterisk/modules/chan_local.so
 lib/asterisk/modules/chan_mgcp.so
+lib/asterisk/modules/chan_motif.so
 lib/asterisk/modules/chan_multicast_rtp.so
 lib/asterisk/modules/chan_sip.so
 lib/asterisk/modules/chan_skinny.so
@@ -295,6 +302,7 @@ lib/asterisk/modules/func_extstate.so
 lib/asterisk/modules/func_frame_trace.so
 lib/asterisk/modules/func_global.so
 lib/asterisk/modules/func_groupcount.so
+lib/asterisk/modules/func_hangupcause.so
 lib/asterisk/modules/func_iconv.so
 lib/asterisk/modules/func_jitterbuffer.so
 lib/asterisk/modules/func_lock.so
@@ -303,6 +311,7 @@ lib/asterisk/modules/func_math.so
 lib/asterisk/modules/func_md5.so
 lib/asterisk/modules/func_module.so
 lib/asterisk/modules/func_pitchshift.so
+lib/asterisk/modules/func_presencestate.so
 lib/asterisk/modules/func_rand.so
 lib/asterisk/modules/func_realtime.so
 lib/asterisk/modules/func_sha1.so
@@ -328,14 +337,17 @@ lib/asterisk/modules/res_agi.so
 lib/asterisk/modules/res_clialiases.so
 lib/asterisk/modules/res_clioriginate.so
 lib/asterisk/modules/res_config_curl.so
+lib/asterisk/modules/res_config_sqlite3.so
 lib/asterisk/modules/res_convert.so
 lib/asterisk/modules/res_crypto.so
 lib/asterisk/modules/res_curl.so
 lib/asterisk/modules/res_fax.so
 lib/asterisk/modules/res_fax_spandsp.so
 lib/asterisk/modules/res_format_attr_celt.so
+lib/asterisk/modules/res_format_attr_h263.so
+lib/asterisk/modules/res_format_attr_h264.so
 lib/asterisk/modules/res_format_attr_silk.so
-lib/asterisk/modules/res_jabber.so
+lib/asterisk/modules/res_http_websocket.so
 lib/asterisk/modules/res_limit.so
 lib/asterisk/modules/res_monitor.so
 lib/asterisk/modules/res_musiconhold.so
@@ -350,6 +362,9 @@ lib/asterisk/modules/res_speech.so
 lib/asterisk/modules/res_srtp.so
 lib/asterisk/modules/res_stun_monitor.so
 lib/asterisk/modules/res_timing_pthread.so
+lib/asterisk/modules/res_xmpp.so
+@comment lib/libasteriskssl.so
+@lib lib/libasteriskssl.so.${LIBasteriskssl_VERSION}
 @man man/man8/asterisk.8
 @man man/man8/astgenkey.8
 @man man/man8/autosupport.8
@@ -405,6 +420,7 @@ share/doc/asterisk/UPGRADE-1.2.txt
 share/doc/asterisk/UPGRADE-1.4.txt
 share/doc/asterisk/UPGRADE-1.6.txt
 share/doc/asterisk/UPGRADE-1.8.txt
+share/doc/asterisk/UPGRADE-10.txt
 share/doc/asterisk/UPGRADE.txt
 share/doc/asterisk/api-1.6.0-changes.odt
 share/doc/asterisk/api-1.6.2-changes.txt
@@ -416,13 +432,14 @@ share/examples/asterisk/
 @mode
 @group
 share/examples/asterisk/default/
+share/examples/asterisk/default/acl.conf
 share/examples/asterisk/default/adsi.conf
 share/examples/asterisk/default/agents.conf
-share/examples/asterisk/default/ais.conf
 share/examples/asterisk/default/alarmreceiver.conf
 @comment share/examples/asterisk/default/alsa.conf
 share/examples/asterisk/default/amd.conf
 @comment share/examples/asterisk/default/app_mysql.conf
+share/examples/asterisk/default/app_skel.conf
 share/examples/asterisk/default/asterisk.adsi
 share/examples/asterisk/default/asterisk.conf
 @sample ${SYSCONFDIR}/asterisk/asterisk.conf
@@ -441,12 +458,12 @@ share/examples/asterisk/default/cel_sqlite3_custom.conf
 @comment share/examples/asterisk/default/cel_tds.conf
 @comment share/examples/asterisk/default/chan_dahdi.conf
 @comment share/examples/asterisk/default/chan_mobile.conf
-@comment share/examples/asterisk/default/chan_ooh323.conf
 share/examples/asterisk/default/cli.conf
 share/examples/asterisk/default/cli_aliases.conf
 share/examples/asterisk/default/cli_permissions.conf
 share/examples/asterisk/default/codecs.conf
 share/examples/asterisk/default/confbridge.conf
+share/examples/asterisk/default/config_test.conf
 share/examples/asterisk/default/console.conf
 share/examples/asterisk/default/dbsep.conf
 share/examples/asterisk/default/dnsmgr.conf
@@ -483,8 +500,10 @@ share/examples/asterisk/default/mgcp.conf
 share/examples/asterisk/default/minivm.conf
 @comment share/examples/asterisk/default/misdn.conf
 share/examples/asterisk/default/modules.conf
+share/examples/asterisk/default/motif.conf
 share/examples/asterisk/default/musiconhold.conf
 share/examples/asterisk/default/muted.conf
+@comment share/examples/asterisk/default/ooh323.conf
 share/examples/asterisk/default/osp.conf
 @comment share/examples/asterisk/default/oss.conf
 share/examples/asterisk/default/phone.conf
@@ -493,6 +512,8 @@ share/examples/asterisk/default/queuerules.conf
 share/examples/asterisk/default/queues.conf
 @comment share/examples/asterisk/default/res_config_mysql.conf
 share/examples/asterisk/default/res_config_sqlite.conf
+share/examples/asterisk/default/res_config_sqlite3.conf
+share/examples/asterisk/default/res_corosync.conf
 share/examples/asterisk/default/res_curl.conf
 share/examples/asterisk/default/res_fax.conf
 share/examples/asterisk/default/res_pktccops.conf
@@ -510,6 +531,7 @@ share/examples/asterisk/default/unistim.conf
 share/examples/asterisk/default/users.conf
 share/examples/asterisk/default/voicemail.conf
 @comment share/examples/asterisk/default/vpb.conf
+share/examples/asterisk/default/xmpp.conf
 share/examples/asterisk/openbsd/
 share/examples/asterisk/openbsd/cdr.conf.sample
 @sample ${SYSCONFDIR}/asterisk/cdr.conf

@@ -1,25 +1,28 @@
-$OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.15 2013/01/22 23:26:30 sthen Exp $
+$OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.16 2013/03/28 20:24:53 sthen Exp $
 
 - more useful defaults
 - create /var/run/asterisk with sane ownership/perms
 
---- contrib/scripts/safe_asterisk.orig	Tue Jan 22 18:43:31 2013
-+++ contrib/scripts/safe_asterisk	Tue Jan 22 22:33:33 2013
-@@ -6,9 +6,9 @@ ASTVARRUNDIR=__ASTERISK_VARRUN_DIR__
+--- contrib/scripts/safe_asterisk.orig	Tue Jan 22 18:57:06 2013
++++ contrib/scripts/safe_asterisk	Tue Jan 22 22:36:09 2013
+@@ -6,22 +6,23 @@ ASTVARRUNDIR=__ASTERISK_VARRUN_DIR__
  ASTVARLOGDIR=__ASTERISK_LOG_DIR__
  
  CLIARGS="$*"					# Grab any args passed to safe_asterisk
 -TTY=9						# TTY (if you want one) for Asterisk to run on
 -CONSOLE=yes					# Whether or not you want a console
--#NOTIFY=root@localhost.localdomain		# Who to notify about crashes
-+TTY=							# TTY (if you want one) for Asterisk to run on
-+CONSOLE=no						# Whether or not you want a console
-+NOTIFY=root						# Who to notify about crashes
++TTY=						# TTY (if you want one) for Asterisk to run on
++CONSOLE=no					# Whether or not you want a console
+ #NOTIFY=root@localhost.localdomain		# Who to notify about crashes
+-NOTIFY=${NOTIFY:-}				# Who to notify about crashes
++NOTIFY=${NOTIFY:-root}			# Who to notify about crashes
  #EXEC=/path/to/somescript			# Run this command if Asterisk crashes
  #LOGFILE=${ASTVARLOGDIR}/safe_asterisk.log	# Where to place the normal logfile (disabled if blank)
- #SYSLOG=local0					# Which syslog facility to use (disabled if blank)
-@@ -16,10 +16,11 @@ MACHINE=`hostname`				# To specify which machine has c
- DUMPDROP=/tmp
+-SYSLOG=${SYSLOG:-}				# Which syslog facility to use (disabled if blank)
++SYSLOG=${SYSLOG:-daemon}		# Which syslog facility to use (disabled if blank)
+ MACHINE=`hostname`				# To specify which machine has crashed when getting the mail
+ DUMPDROP=${DUMPDROP:-/tmp}
+ RUNDIR=${RUNDIR:-/tmp}
  SLEEPSECS=4
  ASTPIDFILE=${ASTVARRUNDIR}/asterisk.pid
 +VARRUNOWNER="_asterisk:wheel"  # chown __ASTERISK_VARRUN_DIR__ if it's created.
@@ -32,7 +35,7 @@ $OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.15 2013/01/22 23:26:30 sthen E
  
  # run asterisk with this priority
  PRIORITY=0
-@@ -45,6 +46,19 @@ message() {
+@@ -47,6 +48,19 @@ message() {
  	fi
  }
  
@@ -52,7 +55,7 @@ $OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.15 2013/01/22 23:26:30 sthen E
  # Check if Asterisk is already running.  If it is, then bug out, because
  # starting safe_asterisk when Asterisk is running is very bad.
  VERSION=`${ASTSBINDIR}/asterisk -nrx 'core show version' 2>/dev/null`
-@@ -73,7 +87,7 @@ else
+@@ -75,7 +89,7 @@ else
  			fi
  		fi
  		SYSCTL_MAXFILES="fs.file-max"
@@ -61,7 +64,7 @@ $OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.15 2013/01/22 23:26:30 sthen E
  		SYSCTL_MAXFILES="kern.maxfiles"
  	fi
  
-@@ -84,8 +98,10 @@ else
+@@ -86,8 +100,10 @@ else
  		fi
  	fi
  

@@ -1,0 +1,14 @@
+$OpenBSD: patch-res_pjproject_aconfigure,v 1.1 2013/03/28 20:24:53 sthen Exp $
+--- res/pjproject/aconfigure.orig	Mon Nov  5 23:50:57 2012
++++ res/pjproject/aconfigure	Mon Nov  5 23:52:18 2012
+@@ -3468,10 +3468,6 @@ ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $
+ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+ 
+ 
+-if test -z "$CROSS_COMPILE"; then
+-    CROSS_COMPILE=`echo ${CC} | sed 's/gcc//'`
+-fi
+-
+ if test "$AR" = ""; then AR="${CROSS_COMPILE}ar rv"; fi
+ 
+ if test "$LD" = ""; then LD="$CC"; fi
