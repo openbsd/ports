@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2012/11/25 13:18:46 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.16 2013/03/28 19:33:06 jasper Exp $
 @bin bin/peas-demo
 include/libpeas-1.0/
 include/libpeas-1.0/libpeas/
@@ -33,11 +33,6 @@ lib/peas-demo/plugins/gjshello/gjshello.plugin
 lib/peas-demo/plugins/helloworld/
 lib/peas-demo/plugins/helloworld/helloworld.plugin
 lib/peas-demo/plugins/helloworld/libhelloworld.so
-lib/peas-demo/plugins/pythonhello/
-lib/peas-demo/plugins/pythonhello/pythonhello.plugin
-lib/peas-demo/plugins/pythonhello/pythonhello.py
-lib/peas-demo/plugins/pythonhello/pythonhello.pyc
-lib/peas-demo/plugins/pythonhello/pythonhello.pyo
 lib/peas-demo/plugins/secondtime/
 lib/peas-demo/plugins/secondtime/libsecondtime.so
 lib/peas-demo/plugins/secondtime/secondtime.plugin
@@ -75,6 +70,7 @@ share/icons/hicolor/16x16/actions/libpeas-plugin.png
 share/icons/hicolor/22x22/actions/libpeas-plugin.png
 share/icons/hicolor/32x32/actions/libpeas-plugin.png
 share/icons/hicolor/scalable/actions/libpeas-plugin.svg
+share/locale/an/LC_MESSAGES/libpeas.mo
 share/locale/ar/LC_MESSAGES/libpeas.mo
 share/locale/as/LC_MESSAGES/libpeas.mo
 share/locale/ast/LC_MESSAGES/libpeas.mo
@@ -95,6 +91,9 @@ share/locale/eu/LC_MESSAGES/libpeas.mo
 share/locale/fa/LC_MESSAGES/libpeas.mo
 share/locale/fi/LC_MESSAGES/libpeas.mo
 share/locale/fr/LC_MESSAGES/libpeas.mo
+share/locale/fur/
+share/locale/fur/LC_MESSAGES/
+share/locale/fur/LC_MESSAGES/libpeas.mo
 share/locale/gl/LC_MESSAGES/libpeas.mo
 share/locale/gu/LC_MESSAGES/libpeas.mo
 share/locale/he/LC_MESSAGES/libpeas.mo
@@ -112,6 +111,7 @@ share/locale/mr/LC_MESSAGES/libpeas.mo
 share/locale/nb/LC_MESSAGES/libpeas.mo
 share/locale/nds/LC_MESSAGES/libpeas.mo
 share/locale/nl/LC_MESSAGES/libpeas.mo
+share/locale/or/LC_MESSAGES/libpeas.mo
 share/locale/pa/LC_MESSAGES/libpeas.mo
 share/locale/pl/LC_MESSAGES/libpeas.mo
 share/locale/pt/LC_MESSAGES/libpeas.mo
@@ -125,6 +125,7 @@ share/locale/sr@latin/LC_MESSAGES/libpeas.mo
 share/locale/sv/LC_MESSAGES/libpeas.mo
 share/locale/ta/LC_MESSAGES/libpeas.mo
 share/locale/te/LC_MESSAGES/libpeas.mo
+share/locale/tg/LC_MESSAGES/libpeas.mo
 share/locale/th/LC_MESSAGES/libpeas.mo
 share/locale/tr/LC_MESSAGES/libpeas.mo
 share/locale/ug/LC_MESSAGES/libpeas.mo
