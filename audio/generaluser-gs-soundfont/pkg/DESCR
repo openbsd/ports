@@ -1,0 +1,9 @@
+GeneralUser GS is a GM and GS compatible SoundFont bank for composing
+or playing MIDI files. This version is for use with FluidSynth (or
+Qsynth) (other versions are available for MuseScore, Sound Blaster
+Live!/Audigy/X-fi sound cards, and other SoundFont-compatible hardware
+and software synthesizers).
+
+The name "GeneralUser" was chosen because the bank was designed to sound
+well with all kinds of music rather than specializing in only a few
+styles, thereby benefiting the general user.
