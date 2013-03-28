@@ -1,0 +1,27 @@
+$OpenBSD: patch-gcr_gcr-tree-selector_c,v 1.1 2013/03/28 19:32:28 ajacoutot Exp $
+
+From 0b889388a7f45258fa2291dd577b2ea7ca8d42c0 Mon Sep 17 00:00:00 2001
+From: Stef Walter <stefw@gnome.org>
+Date: Mon, 11 Feb 2013 16:43:54 +0000
+Subject: Use GObject.Object instead of GLib.Object in introspection annotations
+
+--- gcr/gcr-tree-selector.c.orig	Wed Sep 19 11:01:28 2012
++++ gcr/gcr-tree-selector.c	Thu Mar 28 09:40:40 2013
+@@ -337,7 +337,7 @@ gcr_tree_selector_get_columns (GcrTreeSelector *self)
+  *
+  * Get a list of selected objects.
+  *
+- * Returns: (transfer container) (element-type GLib.Object): the list of selected
++ * Returns: (transfer container) (element-type GObject.Object): the list of selected
+  *          objects, to be released with g_list_free()
+  */
+ GList*
+@@ -350,7 +350,7 @@ gcr_tree_selector_get_selected (GcrTreeSelector *self)
+ /**
+  * gcr_tree_selector_set_selected:
+  * @self: The selector
+- * @selected: (element-type GLib.Object): The list of objects to select.
++ * @selected: (element-type GObject.Object): The list of objects to select.
+  *
+  * Select certain objects in the selector.
+  */
