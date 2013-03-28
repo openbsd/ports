@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.93 2013/03/11 11:46:10 espie Exp $
+# $OpenBSD: Makefile,v 1.94 2013/03/28 19:57:46 jasper Exp $
 
 COMMENT=		lightweight GNOME text editor
 
 GNOME_PROJECT=		gedit
 GNOME_VERSION=		3.6.2
-REVISION=			0
+REVISION=		1
 
 CATEGORIES=		editors
 
@@ -22,7 +22,7 @@ WANTLIB += gtksourceview-3.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre peas-1.0 peas-gtk-1.0 pixman-1 png pthread pthread-stubs
 WANTLIB += stdc++ xcb xcb-render xcb-shm xml2 z
 WANTLIB += atk-bridge-2.0 atspi dbus-1 harfbuzz icudata icule
-WANTLIB += icuuc zeitgeist-1.0
+WANTLIB += icuuc zeitgeist-2.0
 
 MODULES=		devel/dconf \
 			devel/gettext \
@@ -33,7 +33,7 @@ BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/iso-codes
 
 LIB_DEPENDS=		devel/libpeas>=1.1.4p1 \
-			productivity/libzeitgeist \
+			productivity/zeitgeist \
 			textproc/enchant \
 			x11/gtksourceview3
 
