@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.13 2013/03/11 11:10:51 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.14 2013/03/28 19:33:34 jasper Exp $
 
 SHARED_ONLY?=		Yes
 
@@ -33,5 +33,5 @@ CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
 		ac_cv_path_GTKDOC_MKPDF=""
 
 API_VERSION?=		1.0
-MAJOR?=			1.12
+MAJOR?=			1.14
 SUBST_VARS?=		MAJOR API_VERSION
