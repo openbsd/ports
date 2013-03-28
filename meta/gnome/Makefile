@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2013/03/16 20:06:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2013/03/28 14:55:56 ajacoutot Exp $
 
 COMMENT-main=	GNOME desktop meta-package (base installation)
 COMMENT-extra=	GNOME desktop meta-package (full installation)
@@ -8,6 +8,8 @@ PKGNAME=	gnome-${V}
 
 PKGNAME-main=	gnome-${V}
 PKGNAME-extra=	gnome-extra-${V}
+
+REVISION-main=	0
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 		Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -64,7 +66,7 @@ RUN_DEPENDS-main += \
 		x11/gnome/eog-plugins \
 		x11/gnome/gedit-plugins \
 		x11/gnome/nautilus-open-terminal \
-		x11/gnome/nettool \
+		x11/gnome/photos \
 		x11/gnome/seahorse \
 		x11/gnome/seahorse-nautilus \
 		x11/gnome/seahorse-sharing \
