@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/28 19:56:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/28 21:09:12 ajacoutot Exp $
 
 COMMENT =		event logging framework
 
 V =			0.9.10
 DISTNAME =		zeitgeist-${V}
+REVISION =		0
 
 SHARED_LIBS +=	zeitgeist-2.0             0.0 # 0.0
 
@@ -13,7 +14,7 @@ HOMEPAGE =		http://zeitgeist-project.com/
 
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
-# LGPLv2.1
+# GPLv2 - LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		http://edge.launchpad.net/zeitgeist/${V:R}/${V}/+download/
@@ -27,9 +28,11 @@ BUILD_DEPENDS =		textproc/py-rdflib \
 			textproc/raptor \
 			x11/dbus
 
-RUN_DEPENDS =		devel/py-gobject \
+RUN_DEPENDS =		devel/py-gobject3 \
 			devel/py-xdg \
 			x11/dbus-python
+
+TEST_DEPENDS =		devel/py-gobject
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
@@ -47,13 +50,14 @@ LIB_DEPENDS =		devel/json-glib \
 			net/telepathy/telepathy-glib \
 			x11/gtk+3
 
-MAKE_FLAGS +=		LIBZEITGEIST_LT_VERSION=${LIBzeitgeist-2.0_VERSION:R}:${LIBzeitgeist-2.0_VERSION:E}:0
+MAKE_FLAGS +=		LIBZEITGEIST_LT_VERSION=${LIBzeitgeist-2.0_VERSION:R}:${LIBzeitgeist-2.0_VERSION:E}
 FAKE_FLAGS +=		zeitgeistdocdir="${PREFIX}/share/doc/zeitgeist/" \
 			sysconfdir="${PREFIX}/share/examples/zeitgeist/"
 
 CONFIGURE_STYLE =	gnu
-# XXX: FTS++ fails to build in controller.cpp; needs fixing.
-CONFIGURE_ARGS +=	--disable-fts
+
+# XXX: Requires zeitgeist-datahub which has not been ported yet
+#CONFIGURE_ARGS +=	--disable-datahub
 # XXX: Requires dee-icu which has not been ported yet
 CONFIGURE_ARGS +=	--without-dee-icu
 

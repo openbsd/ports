@@ -1,15 +1,6 @@
-$OpenBSD: patch-configure,v 1.4 2013/03/28 19:56:09 jasper Exp $
+$OpenBSD: patch-configure,v 1.5 2013/03/28 21:09:12 ajacoutot Exp $
 --- configure.orig	Tue Mar 19 11:47:27 2013
 +++ configure	Thu Mar 28 19:02:44 2013
-@@ -17939,7 +17939,7 @@ LIBZEITGEIST_VERSION="$LIBZEITGEIST_VERSION_MAJOR.$LIB
- # - If the interface is the same as the previous version, change to C:R+1:A
- LIBZEITGEIST_LT_CURRENT=0
- LIBZEITGEIST_LT_REV=0
--LIBZEITGEIST_LG_AGE=0
-+LIBZEITGEIST_LT_AGE=0
- LIBZEITGEIST_LT_VERSION="$LIBZEITGEIST_LT_CURRENT:$LIBZEITGEIST_LT_REV:$LIBZEITGEIST_LT_AGE"
- 
- 
 @@ -18235,7 +18235,7 @@ fi
  # check for python-rdflib
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for python-rdflib" >&5
