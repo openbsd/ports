@@ -1,0 +1,31 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/28 14:54:28 ajacoutot Exp $
+@bin bin/gnome-photos
+share/applications/gnome-photos.desktop
+share/doc/gnome-photos/
+share/doc/gnome-photos/ARTISTS
+share/doc/gnome-photos/AUTHORS
+share/doc/gnome-photos/COPYING
+share/doc/gnome-photos/ChangeLog
+share/doc/gnome-photos/NEWS
+share/doc/gnome-photos/README
+share/glib-2.0/schemas/org.gnome.photos.gschema.xml
+share/gnome-photos/
+share/gnome-photos/icons/
+share/gnome-photos/icons/thumbnail-frame.png
+share/icons/hicolor/16x16/apps/gnome-photos.png
+share/icons/hicolor/22x22/apps/gnome-photos.png
+share/icons/hicolor/24x24/apps/gnome-photos.png
+share/icons/hicolor/256x256/apps/gnome-photos.png
+share/icons/hicolor/32x32/apps/gnome-photos.png
+share/icons/hicolor/48x48/apps/gnome-photos.png
+share/locale/el/LC_MESSAGES/gnome-photos.mo
+share/locale/es/LC_MESSAGES/gnome-photos.mo
+share/locale/gl/LC_MESSAGES/gnome-photos.mo
+share/locale/nb/LC_MESSAGES/gnome-photos.mo
+share/locale/pl/LC_MESSAGES/gnome-photos.mo
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
