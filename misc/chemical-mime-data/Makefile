@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/03/27 20:03:02 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/03/28 06:49:42 zhuk Exp $
 
 PKG_ARCH =		*
 COMMENT =		MIME types and icons for chemical applications
-V =			0.1.94
-DISTNAME =		chemical-mime-data-${V}
+DISTNAME =		chemical-mime-data-0.1.94
 CATEGORIES =		misc
 HOMEPAGE =		http://chemical-mime.sourceforge.net/
 
@@ -16,7 +15,7 @@ BUILD_DEPENDS =		textproc/libxslt \
 			x11/gnome/mime-data
 
 RUN_DEPENDS =		misc/shared-mime-info \
-			x11/gtk+2,-guic \
+			x11/gtk+2,-guic
 
 SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
