@@ -1,0 +1,16 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2013/03/28 21:20:47 sthen Exp $
+--- CMakeLists.txt.orig	Thu Mar 28 21:19:02 2013
++++ CMakeLists.txt	Thu Mar 28 21:19:59 2013
+@@ -55,9 +55,9 @@ elseif(NOT GLM_TEST_ENABLE_SIMD)
+ 	
+ 	add_definitions(-DGLM_FORCE_PURE)
+ 
+-	if(CMAKE_COMPILER_IS_GNUCXX)
+-		add_definitions(-mfpmath=387)
+-	endif()
++#	if(CMAKE_COMPILER_IS_GNUCXX)
++#		add_definitions(-mfpmath=387)
++#	endif()
+ endif()
+ 
+ option(GLM_TEST_ENABLE_FAST_MATH "Enable fast math optimizations" OFF)
