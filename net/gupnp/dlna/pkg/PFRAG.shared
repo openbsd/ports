@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/07/05 16:59:40 jasper Exp $
-@lib lib/libgupnp-dlna-1.0.so.${LIBgupnp-dlna-1.0_VERSION}

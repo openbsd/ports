@@ -1,29 +1,28 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:35:47 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/28 19:44:13 jasper Exp $
 
 COMMENT=		DLNA integration for GUPnP
 
 GNOME_PROJECT=		gupnp-dlna
-GNOME_VERSION=		0.6.6
-REVISION =		1
+GNOME_VERSION=		0.10.0
 
-SHARED_LIBS +=  gupnp-dlna-1.0       0.0      # 2.0
+SHARED_LIBS +=	gupnp-dlna-2.0            0.0 # 3.0
+SHARED_LIBS +=	gupnp-dlna-gst-2.0        0.0 # 3.0
 
 MODULES=		devel/gettext \
 			x11/gnome
 
-WANTLIB += c ffi glib-2.0 gmodule-2.0 gobject-2.0 gstpbutils-0.10
-WANTLIB += gstreamer-0.10 gthread-2.0 m pcre pthread xml2 z
+MODGNOME_TOOLS= 	goi vala
 
-MODGNOME_TOOLS= 	goi
+WANTLIB += c ffi glib-2.0 gmodule-2.0 gobject-2.0 gstaudio-1.0
+WANTLIB += gstbase-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
+WANTLIB += gstvideo-1.0 gthread-2.0 m orc-0.4 pcre pthread xml2
+WANTLIB += z
 
-LIB_DEPENDS=		multimedia/gstreamer-0.10/plugins-base
+LIB_DEPENDS=		multimedia/gstreamer1/plugins-base
 RUN_DEPENDS=		net/gupnp/core
 
-# sndio(7) support (and pulls gstreamer-0.10/plugins-base)
-RUN_DEPENDS+=		multimedia/gstreamer-0.10/plugins-good
-
 # support for various media files
-RUN_DEPENDS+=		multimedia/gstreamer-0.10/plugins-ugly
+RUN_DEPENDS+=		multimedia/gstreamer1/plugins-ugly
 
 # Needs media files which aren't distributed with the tarball.
 NO_TEST=		Yes
