@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.28 2013/03/16 21:56:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.29 2013/03/28 19:34:29 jasper Exp $
 @conflict libgda-db4-*
 @conflict libgda-ldap-<4.2.8p0v0
 @conflict libgda-ui-<5.1.1
@@ -596,5 +596,3 @@ share/locale/vi/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/zh_CN/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/zh_HK/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/zh_TW/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
-share/vala/vapi/gdadata-${GDA_MAJOR}.vapi
-share/vala/vapi/libgda-${GDA_MAJOR}.vapi

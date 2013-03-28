@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2013/03/16 21:56:37 ajacoutot Exp $
-
-# XXX add vala to MODGNOME_TOOLS on update
+# $OpenBSD: Makefile,v 1.71 2013/03/28 19:34:29 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -22,6 +20,9 @@ PKGNAME-ldap=		libgda-ldap-${GNOME_VERSION}
 PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}
 PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
 PKGNAME-ui=		libgda-ui-${GNOME_VERSION}
+
+REVISION-main=		0
+REVISION-ui=		0
 
 EPOCH-main=		2
 EPOCH-ldap=		0
@@ -69,7 +70,7 @@ BUILD_DEPENDS=		databases/db/v4 \
 
 TEST_DEPENDS=	devel/check
 
-MODGNOME_TOOLS= 	goi vala yelp
+MODGNOME_TOOLS= 	goi yelp
 
 LIBTOOL_FLAGS=		--tag=disable-static
 CONFIGURE_ARGS+=	--disable-static \
@@ -83,6 +84,12 @@ CONFIGURE_ARGS+=	--disable-static \
 			--without-oracle \
 			--without-mdb \
 			--without-java
+# XXX: Re-enable when libgda can handle vala 0.20.0
+# and add 'vala' back to MODGNOME_TOOLS
+CONFIGURE_ARGS+=	--disable-vala-extensions \
+			--disable-gdaui-vala \
+			--disable-vala
+
 MODGNOME_CPPFLAGS=	-I${LOCALBASE}/include/db4/
 MODGNOME_LDFLAGS=	-lm
 CONFIGURE_ENV=		LIBCRYPTO_CFLAGS="-I/usr/include/ssl" \
