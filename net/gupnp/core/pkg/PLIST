@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/05/04 07:09:14 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/03/28 19:43:41 jasper Exp $
 bin/gupnp-binding-tool
 include/gupnp-1.0/
 include/gupnp-1.0/libgupnp/
@@ -64,3 +64,5 @@ share/gtk-doc/html/gupnp/server-tutorial.html
 share/gtk-doc/html/gupnp/style.css
 share/gtk-doc/html/gupnp/tutorial.html
 share/gtk-doc/html/gupnp/up.png
+share/vala/vapi/gupnp-1.0.deps
+share/vala/vapi/gupnp-1.0.vapi
