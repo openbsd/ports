@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST-nautilus,v 1.2 2012/09/28 15:57:27 ajacoutot Exp $
-lib/nautilus/extensions-3.0/libnautilus-tracker-tags.so

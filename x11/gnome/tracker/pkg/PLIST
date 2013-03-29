@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2012/11/10 11:10:42 espie Exp $
-@pkgpath ${BASE_PKGPATH}
+@comment $OpenBSD: PLIST,v 1.20 2013/03/29 16:28:27 ajacoutot Exp $
+@conflict evolution-meta-tracker-*
+@conflict nautilus-meta-tracker-*
+@pkgpath x11/gnome/tracker,-evolution
+@pkgpath x11/gnome/tracker,-nautilus
 @bin bin/tracker-control
-@bin bin/tracker-explorer
 @bin bin/tracker-import
 @bin bin/tracker-info
 @bin bin/tracker-needle
@@ -47,11 +49,12 @@ lib/girepository-1.0/Tracker-${MAJ_V}.typelib
 lib/girepository-1.0/TrackerExtract-${MAJ_V}.typelib
 lib/girepository-1.0/TrackerMiner-${MAJ_V}.typelib
 lib/libtracker-extract-${MAJ_V}.la
-@lib lib/libtracker-extract-${MAJ_V}.so.${LIBtracker-extract-0.14_VERSION}
+@lib lib/libtracker-extract-${MAJ_V}.so.${LIBtracker-extract-0.16_VERSION}
 lib/libtracker-miner-${MAJ_V}.la
-@lib lib/libtracker-miner-${MAJ_V}.so.${LIBtracker-miner-0.14_VERSION}
+@lib lib/libtracker-miner-${MAJ_V}.so.${LIBtracker-miner-0.16_VERSION}
 lib/libtracker-sparql-${MAJ_V}.la
-@lib lib/libtracker-sparql-${MAJ_V}.so.${LIBtracker-sparql-0.14_VERSION}
+@lib lib/libtracker-sparql-${MAJ_V}.so.${LIBtracker-sparql-0.16_VERSION}
+lib/nautilus/extensions-3.0/libnautilus-tracker-tags.so
 lib/pkgconfig/tracker-extract-${MAJ_V}.pc
 lib/pkgconfig/tracker-miner-${MAJ_V}.pc
 lib/pkgconfig/tracker-sparql-${MAJ_V}.pc
@@ -84,9 +87,7 @@ lib/tracker-${MAJ_V}/writeback-modules/
 lib/tracker-${MAJ_V}/writeback-modules/libwriteback-taglib.so
 lib/tracker-${MAJ_V}/writeback-modules/libwriteback-xmp.so
 @bin libexec/tracker-extract
-@bin libexec/tracker-miner-flickr
 @bin libexec/tracker-miner-fs
-@bin libexec/tracker-search-bar
 @bin libexec/tracker-store
 @bin libexec/tracker-writeback
 @man man/man1/tracker-control.1
@@ -96,7 +97,6 @@ lib/tracker-${MAJ_V}/writeback-modules/libwriteback-xmp.so
 @man man/man1/tracker-miner-fs.1
 @man man/man1/tracker-needle.1
 @man man/man1/tracker-preferences.1
-@man man/man1/tracker-search-bar.1
 @man man/man1/tracker-search.1
 @man man/man1/tracker-sparql.1
 @man man/man1/tracker-stats.1
@@ -108,17 +108,13 @@ share/applications/tracker-preferences.desktop
 share/dbus-1/services/org.freedesktop.Tracker1.Extract.service
 share/dbus-1/services/org.freedesktop.Tracker1.Miner.Applications.service
 share/dbus-1/services/org.freedesktop.Tracker1.Miner.Files.service
-share/dbus-1/services/org.freedesktop.Tracker1.Miner.Flickr.service
 share/dbus-1/services/org.freedesktop.Tracker1.Writeback.service
 share/dbus-1/services/org.freedesktop.Tracker1.service
-share/dbus-1/services/org.gnome.panel.applet.SearchBarFactory.service
 share/examples/meta-tracker/
 share/examples/meta-tracker/xdg/
 @sample ${SYSCONFDIR}/xdg/
 share/examples/meta-tracker/xdg/autostart/
 @sample ${SYSCONFDIR}/xdg/autostart/
-share/examples/meta-tracker/xdg/autostart/tracker-miner-flickr.desktop
-@sample ${SYSCONFDIR}/xdg/autostart/tracker-miner-flickr.desktop
 share/examples/meta-tracker/xdg/autostart/tracker-miner-fs.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/tracker-miner-fs.desktop
 share/examples/meta-tracker/xdg/autostart/tracker-store.desktop
@@ -134,7 +130,6 @@ share/glib-2.0/schemas/org.freedesktop.Tracker.Store.gschema.xml
 share/glib-2.0/schemas/org.freedesktop.Tracker.Writeback.gschema.xml
 share/glib-2.0/schemas/org.freedesktop.Tracker.enums.xml
 share/glib-2.0/schemas/org.freedesktop.Tracker.gschema.xml
-share/gnome-panel/4.0/applets/org.gnome.panel.SearchBar.panel-applet
 share/gtk-doc/html/libtracker-extract/
 share/gtk-doc/html/libtracker-extract/annotation-glossary.html
 share/gtk-doc/html/libtracker-extract/ch02.html
@@ -281,8 +276,6 @@ share/tracker/extract-rules/15-gstreamer-guess.rule
 share/tracker/extract-rules/15-playlist.rule
 share/tracker/extract-rules/90-gstreamer-generic.rule
 share/tracker/extract-rules/90-text-generic.rule
-share/tracker/icons/
-share/tracker/icons/tracker-miner-flickr.svg
 share/tracker/languages/
 share/tracker/languages/stopwords.da
 share/tracker/languages/stopwords.de
@@ -300,7 +293,6 @@ share/tracker/languages/stopwords.sv
 share/tracker/miners/
 share/tracker/miners/tracker-miner-applications.desktop
 share/tracker/miners/tracker-miner-files.desktop
-share/tracker/miners/tracker-miner-flickr.desktop
 share/tracker/ontologies/
 share/tracker/ontologies/10-xsd.description
 share/tracker/ontologies/10-xsd.ontology
@@ -343,15 +335,12 @@ share/tracker/ontologies/92-slo.ontology
 share/tracker/ontologies/93-libosinfo.description
 share/tracker/ontologies/93-libosinfo.ontology
 share/tracker/tracker-backup.xml
-share/tracker/tracker-explorer.ui
 share/tracker/tracker-extract.xml
 share/tracker/tracker-miner-web.xml
 share/tracker/tracker-miner.xml
 share/tracker/tracker-needle.ui
 share/tracker/tracker-preferences.ui
 share/tracker/tracker-resources.xml
-share/tracker/tracker-search-bar-menu.xml
-share/tracker/tracker-search-bar.ui
 share/tracker/tracker-statistics.xml
 share/tracker/tracker-status.xml
 share/tracker/tracker-writeback.xml
