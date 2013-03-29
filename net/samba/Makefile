@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.179 2013/03/28 15:26:47 brad Exp $
+# $OpenBSD: Makefile,v 1.180 2013/03/29 18:13:31 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,6 +9,7 @@ DISTNAME=		samba-3.6.13
 PKGNAME-main=		${DISTNAME}
 FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}
 FULLPKGPATH-docs=	net/samba,-docs
+REVISION-main=		0
 
 SHARED_LIBS=		smbclient	3.0 \
 			smbsharemodes	1.0 \
@@ -156,6 +157,9 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/samba/pdf
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/samba/htmldocs
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/samba
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/pkgconfig
+	${INSTALL_DATA} ${WRKSRC}/pkgconfig/*.pc \
+		${PREFIX}/lib/pkgconfig
 	@cp -R ${WRKDIST}/examples/* ${PREFIX}/share/examples/samba
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/examples/samba
 	@find ${PREFIX}/share/examples/samba -type f | \

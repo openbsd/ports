@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.23 2013/03/28 15:26:48 brad Exp $
+@comment $OpenBSD: PLIST-main,v 1.24 2013/03/29 18:13:31 ajacoutot Exp $
 @conflict samba-docs-<3.6.0
 @pkgpath ${BASE_PKGPATH}
 @pkgpath ${BASE_PKGPATH},cups
@@ -35,6 +35,10 @@ include/wbclient.h
 @lib lib/libsmbclient.so.${LIBsmbclient_VERSION}
 @lib lib/libsmbsharemodes.so.${LIBsmbsharemodes_VERSION}
 @lib lib/libwbclient.so.${LIBwbclient_VERSION}
+lib/pkgconfig/netapi.pc
+lib/pkgconfig/smbclient.pc
+lib/pkgconfig/smbsharemodes.pc
+lib/pkgconfig/wbclient.pc
 lib/samba/
 lib/samba/auth/
 lib/samba/auth/script.so
