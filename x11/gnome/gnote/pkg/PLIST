@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2012/09/28 21:35:39 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2013/03/29 08:27:50 jasper Exp $
 @pkgpath x11/gnome/tomboy
 @bin bin/gnote
 lib/gnote/
@@ -18,7 +18,7 @@ lib/gnote/addins/${GNOME_VERSION}/stickynoteimport.so
 lib/gnote/addins/${GNOME_VERSION}/tomboyimport.so
 lib/gnote/addins/${GNOME_VERSION}/underline.so
 lib/gnote/addins/${GNOME_VERSION}/webdavsyncservice.so
-@lib lib/libgnote-3.6.so.${LIBgnote-3.6_VERSION}
+@lib lib/libgnote-3.8.so.${LIBgnote-3.8_VERSION}
 lib/libgnote.la
 @lib lib/libgnote.so.${LIBgnote_VERSION}
 @man man/man1/gnote.1
@@ -89,7 +89,6 @@ share/help/C/gnote/figures/gnote-syncprefs-local.png
 share/help/C/gnote/figures/gnote-syncprefs-webdav.png
 share/help/C/gnote/figures/gnote-template-note.png
 share/help/C/gnote/figures/gnote-tools.png
-share/help/C/gnote/figures/new-notebook.png
 share/help/C/gnote/figures/note-template.png
 share/help/C/gnote/figures/notebook-icon.png
 share/help/C/gnote/gnote-addin-bugzillalink.page
@@ -138,7 +137,6 @@ share/help/cs/gnote/figures/gnote-syncprefs-local.png
 share/help/cs/gnote/figures/gnote-syncprefs-webdav.png
 share/help/cs/gnote/figures/gnote-template-note.png
 share/help/cs/gnote/figures/gnote-tools.png
-share/help/cs/gnote/figures/new-notebook.png
 share/help/cs/gnote/figures/note-template.png
 share/help/cs/gnote/figures/notebook-icon.png
 share/help/cs/gnote/gnote-addin-bugzillalink.page
@@ -187,7 +185,6 @@ share/help/da/gnote/figures/gnote-syncprefs-local.png
 share/help/da/gnote/figures/gnote-syncprefs-webdav.png
 share/help/da/gnote/figures/gnote-template-note.png
 share/help/da/gnote/figures/gnote-tools.png
-share/help/da/gnote/figures/new-notebook.png
 share/help/da/gnote/figures/note-template.png
 share/help/da/gnote/figures/notebook-icon.png
 share/help/da/gnote/gnote-addin-bugzillalink.page
@@ -236,7 +233,6 @@ share/help/de/gnote/figures/gnote-syncprefs-local.png
 share/help/de/gnote/figures/gnote-syncprefs-webdav.png
 share/help/de/gnote/figures/gnote-template-note.png
 share/help/de/gnote/figures/gnote-tools.png
-share/help/de/gnote/figures/new-notebook.png
 share/help/de/gnote/figures/note-template.png
 share/help/de/gnote/figures/notebook-icon.png
 share/help/de/gnote/gnote-addin-bugzillalink.page
@@ -285,7 +281,6 @@ share/help/es/gnote/figures/gnote-syncprefs-local.png
 share/help/es/gnote/figures/gnote-syncprefs-webdav.png
 share/help/es/gnote/figures/gnote-template-note.png
 share/help/es/gnote/figures/gnote-tools.png
-share/help/es/gnote/figures/new-notebook.png
 share/help/es/gnote/figures/note-template.png
 share/help/es/gnote/figures/notebook-icon.png
 share/help/es/gnote/gnote-addin-bugzillalink.page
@@ -334,7 +329,6 @@ share/help/fr/gnote/figures/gnote-syncprefs-local.png
 share/help/fr/gnote/figures/gnote-syncprefs-webdav.png
 share/help/fr/gnote/figures/gnote-template-note.png
 share/help/fr/gnote/figures/gnote-tools.png
-share/help/fr/gnote/figures/new-notebook.png
 share/help/fr/gnote/figures/note-template.png
 share/help/fr/gnote/figures/notebook-icon.png
 share/help/fr/gnote/gnote-addin-bugzillalink.page
@@ -383,7 +377,6 @@ share/help/lt/gnote/figures/gnote-syncprefs-local.png
 share/help/lt/gnote/figures/gnote-syncprefs-webdav.png
 share/help/lt/gnote/figures/gnote-template-note.png
 share/help/lt/gnote/figures/gnote-tools.png
-share/help/lt/gnote/figures/new-notebook.png
 share/help/lt/gnote/figures/note-template.png
 share/help/lt/gnote/figures/notebook-icon.png
 share/help/lt/gnote/gnote-addin-bugzillalink.page
@@ -432,7 +425,6 @@ share/help/ru/gnote/figures/gnote-syncprefs-local.png
 share/help/ru/gnote/figures/gnote-syncprefs-webdav.png
 share/help/ru/gnote/figures/gnote-template-note.png
 share/help/ru/gnote/figures/gnote-tools.png
-share/help/ru/gnote/figures/new-notebook.png
 share/help/ru/gnote/figures/note-template.png
 share/help/ru/gnote/figures/notebook-icon.png
 share/help/ru/gnote/gnote-addin-bugzillalink.page
@@ -481,7 +473,6 @@ share/help/sl/gnote/figures/gnote-syncprefs-local.png
 share/help/sl/gnote/figures/gnote-syncprefs-webdav.png
 share/help/sl/gnote/figures/gnote-template-note.png
 share/help/sl/gnote/figures/gnote-tools.png
-share/help/sl/gnote/figures/new-notebook.png
 share/help/sl/gnote/figures/note-template.png
 share/help/sl/gnote/figures/notebook-icon.png
 share/help/sl/gnote/gnote-addin-bugzillalink.page
@@ -530,7 +521,6 @@ share/help/zh_CN/gnote/figures/gnote-syncprefs-local.png
 share/help/zh_CN/gnote/figures/gnote-syncprefs-webdav.png
 share/help/zh_CN/gnote/figures/gnote-template-note.png
 share/help/zh_CN/gnote/figures/gnote-tools.png
-share/help/zh_CN/gnote/figures/new-notebook.png
 share/help/zh_CN/gnote/figures/note-template.png
 share/help/zh_CN/gnote/figures/notebook-icon.png
 share/help/zh_CN/gnote/gnote-addin-bugzillalink.page
