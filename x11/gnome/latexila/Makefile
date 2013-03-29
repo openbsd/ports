@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:46:11 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/29 18:38:12 ajacoutot Exp $
 
 COMMENT=	integrated LaTeX environment for GNOME
 
 GNOME_PROJECT=	latexila
-GNOME_VERSION=	2.6.2
+GNOME_VERSION=	2.8.0
 
 CATEGORIES=	editors print
 
@@ -12,15 +12,14 @@ HOMEPAGE=	http://projects.gnome.org/latexila/
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
-WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject dbus-1 drm
-WANTLIB += enchant expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
-WANTLIB += gee gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += gtk-3 gtksourceview-3.0 harfbuzz icudata icule icuuc
-WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs stdc++ xcb xcb-render xcb-shm
-WANTLIB += xml2 z
+WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
+WANTLIB += c cairo cairo-gobject dbus-1 enchant expat ffi fontconfig
+WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gee gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
+WANTLIB += gtksourceview-3.0 harfbuzz icudata icule icuuc m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
+WANTLIB += pthread-stubs stdc++ xcb xcb-render xcb-shm xml2 z
 
 MODULES=	devel/dconf \
 		devel/gettext \

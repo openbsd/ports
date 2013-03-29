@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/10/08 10:24:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/03/29 18:38:12 ajacoutot Exp $
 @bin bin/latexila
 @man man/man1/latexila.1
 share/applications/latexila.desktop
@@ -58,12 +58,23 @@ share/help/gl/latexila/projects.page
 share/help/gl/latexila/spell_checking.page
 share/help/gl/latexila/structure.page
 share/help/gl/latexila/synctex.page
+share/help/ru/
+share/help/ru/latexila/
+share/help/ru/latexila/build_tools.page
+share/help/ru/latexila/completion.page
+share/help/ru/latexila/index.page
+share/help/ru/latexila/projects.page
+share/help/ru/latexila/spell_checking.page
+share/help/ru/latexila/structure.page
+share/help/ru/latexila/synctex.page
+share/icons/hicolor/128x128/apps/latexila.png
 share/icons/hicolor/16x16/apps/latexila.png
-share/icons/hicolor/192x192/apps/latexila.png
 share/icons/hicolor/22x22/apps/latexila.png
 share/icons/hicolor/24x24/apps/latexila.png
+share/icons/hicolor/256x256/apps/latexila.png
 share/icons/hicolor/32x32/apps/latexila.png
 share/icons/hicolor/48x48/apps/latexila.png
+share/icons/hicolor/scalable/apps/latexila.svg
 share/latexila/
 share/latexila/build_tools.xml
 share/latexila/completion.xml
