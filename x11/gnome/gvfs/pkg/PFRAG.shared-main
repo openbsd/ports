@@ -1,6 +1,5 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.7 2012/09/27 13:03:01 ajacoutot Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.8 2013/03/29 11:09:58 ajacoutot Exp $
 lib/gio/modules/libgioremote-volume-monitor.so
 lib/gio/modules/libgvfsdbus.so
-@lib lib/libgvfscommon.so.${LIBgvfscommon_VERSION}
 @exec %D/bin/gio-querymodules %D/lib/gio/modules/
 @unexec-delete %D/bin/gio-querymodules %D/lib/gio/modules/
