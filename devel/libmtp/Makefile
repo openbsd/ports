@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.25 2013/03/29 13:23:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2013/03/29 23:39:13 brad Exp $
 
 COMMENT=		Media Transfer Protocol (MTP) implementation
 
 DISTNAME=		libmtp-1.1.6
-SHARED_LIBS +=		mtp	5.1	# 9.5
+REVISION=		0
 CATEGORIES=		devel
+
+SHARED_LIBS +=		mtp	6.0	# 10.0
 
 HOMEPAGE=		http://libmtp.sourceforge.net/
 
@@ -24,7 +26,7 @@ LIB_DEPENDS=		devel/libusb1 \
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-doxygen
-CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib -pthread" \
+CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include"
 
 FAKE_FLAGS+=		pkgdocdir="${PREFIX}/share/doc/libmtp/"
