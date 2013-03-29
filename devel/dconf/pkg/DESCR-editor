@@ -1,3 +1,1 @@
-dconf is a low-level configuration system. Its main purpose is to
-provide a backend to GSettings on platforms that don't already have
-configuration storage systems.
+Editor for the dconf configuration storage system.

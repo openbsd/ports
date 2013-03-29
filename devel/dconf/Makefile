@@ -1,27 +1,25 @@
-# $OpenBSD: Makefile,v 1.48 2013/03/11 10:50:02 espie Exp $
+# $OpenBSD: Makefile,v 1.49 2013/03/29 07:31:00 ajacoutot Exp $
 
-SHARED_ONLY=	Yes
+SHARED_ONLY=		Yes
 
-COMMENT-main=	configuration backend system
-COMMENT-editor=	editor for the dconf configuration storage system
+COMMENT-main=		configuration backend system
+COMMENT-editor=		graphical dconf(1) editor
 
-GNOME_PROJECT=	dconf
-GNOME_VERSION=	0.14.1
+GNOME_PROJECT=		dconf
+GNOME_VERSION=		0.16.0
 
-PKGNAME-main=	${DISTNAME}
-PKGNAME-editor=	dconf-editor-${GNOME_VERSION}
+PKGNAME-main=		${DISTNAME}
+PKGNAME-editor=		dconf-editor-${GNOME_VERSION}
 
-REVISION-editor= 1
+SHARED_LIBS +=		dconf        1.0 # 1.0.0
+SHARED_LIBS +=		dconf-dbus-1 1.0 # 1.0.0
 
-SHARED_LIBS+=	dconf        1.0 # 1.0.0
-SHARED_LIBS+=	dconf-dbus-1 1.0 # 1.0.0
+CATEGORIES=		devel
 
-CATEGORIES=	devel
+HOMEPAGE=		http://live.gnome.org/dconf
 
-HOMEPAGE=	http://live.gnome.org/dconf
-
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
-		Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
+			Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
@@ -31,26 +29,25 @@ WANTLIB += c gio-2.0 glib-2.0 gobject-2.0 pthread
 WANTLIB-main += ${WANTLIB} dbus-1
 
 WANTLIB-editor += ${WANTLIB} ${MODGETTEXT_WANTLIB}
-WANTLIB-editor += GL X11 Xrender atk-1.0 cairo cairo-gobject dconf expat
-WANTLIB-editor += fontconfig freetype gdk-3 gdk_pixbuf-2.0 gmodule-2.0
-WANTLIB-editor += gtk-3 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
-WANTLIB-editor += png pthread-stubs xcb xcb-render xcb-shm xml2 z Xext
+WANTLIB-editor += atk-1.0 cairo cairo-gobject dconf fontconfig freetype
+WANTLIB-editor += gdk-3 gdk_pixbuf-2.0 gmodule-2.0 gtk-3 m pango-1.0
+WANTLIB-editor += pangocairo-1.0 pangoft2-1.0 xml2 z
 
-MULTI_PACKAGES=	-main -editor
+MULTI_PACKAGES=		-main -editor
 
-PSEUDO_FLAVORS=	no_editor bootstrap
+PSEUDO_FLAVORS=		no_editor bootstrap
 FLAVOR?=
 
-MODULES=	devel/gettext \
-		x11/gnome \
-		devel/dconf
+MODULES=		devel/dconf \
+			devel/gettext \
+			x11/gnome
 
-MODGNOME_DESKTOP_FILE= Yes
+MODGNOME_DESKTOP_FILE=	Yes
 
-BUILD_DEPENDS=	lang/vala
+BUILD_DEPENDS=		lang/vala
 
-# man pages
-BUILD_DEPENDS += textproc/docbook-xsl # adds textproc/libxslt
+# man pages (adds textproc/libxslt)
+BUILD_DEPENDS +=	textproc/docbook-xsl
 
 RUN_DEPENDS-main=	# empty
 LIB_DEPENDS-main=	devel/glib2 \
@@ -62,8 +59,7 @@ LIB_DEPENDS-editor=	${MODGETTEXT_LIB_DEPENDS} \
 			${BASE_PKGPATH},-main=${GNOME_VERSION} \
 			x11/gtk+3
 
-CONFIGURE_STYLE=gnu
-MODGNOME_LDFLAGS=	-pthread
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.arch.mk>
 

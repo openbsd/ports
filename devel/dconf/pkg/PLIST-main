@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2012/11/01 17:11:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2013/03/29 07:31:01 ajacoutot Exp $
 @conflict vala-<0.10
 @pkgpath devel/dconf
 @extraunexec rm -rf ${SYSCONFDIR}/dconf/db/*
@@ -30,8 +30,8 @@ share/gtk-doc/html/dconf/DConfClient.html
 share/gtk-doc/html/dconf/annotation-glossary.html
 share/gtk-doc/html/dconf/api-index-full.html
 share/gtk-doc/html/dconf/ch01.html
-share/gtk-doc/html/dconf/dconf-DConf-Paths.html
 share/gtk-doc/html/dconf/dconf-DConfChangeset.html
+share/gtk-doc/html/dconf/dconf-dconf-Paths.html
 share/gtk-doc/html/dconf/dconf-editor.html
 share/gtk-doc/html/dconf/dconf-overview.html
 share/gtk-doc/html/dconf/dconf-service.html
@@ -46,6 +46,9 @@ share/gtk-doc/html/dconf/programs.html
 share/gtk-doc/html/dconf/right.png
 share/gtk-doc/html/dconf/style.css
 share/gtk-doc/html/dconf/up.png
+share/locale/an/
+share/locale/an/LC_MESSAGES/
+share/locale/an/LC_MESSAGES/dconf.mo
 share/locale/ar/LC_MESSAGES/dconf.mo
 share/locale/as/LC_MESSAGES/dconf.mo
 share/locale/be/LC_MESSAGES/dconf.mo
@@ -61,6 +64,7 @@ share/locale/en_GB/LC_MESSAGES/dconf.mo
 share/locale/eo/LC_MESSAGES/dconf.mo
 share/locale/es/LC_MESSAGES/dconf.mo
 share/locale/et/LC_MESSAGES/dconf.mo
+share/locale/eu/LC_MESSAGES/dconf.mo
 share/locale/fa/LC_MESSAGES/dconf.mo
 share/locale/fi/LC_MESSAGES/dconf.mo
 share/locale/fr/LC_MESSAGES/dconf.mo
@@ -89,7 +93,10 @@ share/locale/sr@latin/LC_MESSAGES/dconf.mo
 share/locale/sv/LC_MESSAGES/dconf.mo
 share/locale/ta/LC_MESSAGES/dconf.mo
 share/locale/te/LC_MESSAGES/dconf.mo
+share/locale/tg/LC_MESSAGES/dconf.mo
 share/locale/th/LC_MESSAGES/dconf.mo
+share/locale/tr/LC_MESSAGES/dconf.mo
+share/locale/ug/LC_MESSAGES/dconf.mo
 share/locale/uk/LC_MESSAGES/dconf.mo
 share/locale/vi/LC_MESSAGES/dconf.mo
 share/locale/zh_CN/LC_MESSAGES/dconf.mo

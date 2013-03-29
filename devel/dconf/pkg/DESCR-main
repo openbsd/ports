@@ -1,3 +1,4 @@
-dconf is a low-level configuration system. Its main purpose is to
-provide a backend to GSettings on platforms that don't already have
-configuration storage systems.
+dconf is a simple key/value storage system that is heavily optimised for
+reading.  This makes it an ideal system for storing user preferences
+(which are read 1000s of times for each time the user changes one).  It
+was created with this usecase in mind.
