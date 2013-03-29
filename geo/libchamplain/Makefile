@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:07:42 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/03/29 18:15:18 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	library to provide a GTK+ widget to display maps
 
 GNOME_PROJECT=	libchamplain
 GNOME_VERSION=	0.12.3
-REVISION=	4
+REVISION=	5
 API_VERSION=	0.12
 
 SHARED_LIBS +=  champlain-0.12       0.0      # 1.1
@@ -21,15 +21,16 @@ HOMEPAGE=	http://projects.gnome.org/libchamplain/
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo cairo-gobject
-WANTLIB += clutter-1.0 clutter-gtk-1.0 cogl cogl-pango dbus-1
-WANTLIB += drm expat ffi fontconfig freetype gcrypt gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-keyring gobject-2.0
-WANTLIB += gpg-error gthread-2.0 gtk-3 json-glib-1.0 m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs
-WANTLIB += soup-2.4 soup-gnome-2.4 sqlite3 stdc++ xcb xcb-render
-WANTLIB += xcb-shm xml2 z memphis-0.2
+WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
+WANTLIB += c cairo cairo-gobject clutter-1.0 clutter-gtk-1.0 cogl
+WANTLIB += cogl-pango dbus-1 expat ffi fontconfig freetype gdk-3
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz icudata icule
+WANTLIB += icuuc json-glib-1.0 m memphis-0.2 pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += soup-2.4 soup-gnome-2.4 sqlite3 xcb xcb-render xcb-shm
+WANTLIB += xml2 z
 
 MODULES=		devel/gettext \
 			x11/gnome
