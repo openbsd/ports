@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.41 2013/03/11 11:46:11 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2013/03/29 10:45:59 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		weather information access library
 
 GNOME_PROJECT=		libgweather
-GNOME_VERSION=		3.6.2
+GNOME_VERSION=		3.8.0
 
 SHARED_LIBS +=		gweather-3             1.0      # 2.0
 
@@ -14,24 +14,31 @@ CATEGORIES=		net
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
+WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB += cairo cairo-gobject dbus-1 expat ffi fontconfig freetype
-WANTLIB += gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gnome-keyring gobject-2.0 gpg-error gthread-2.0 gtk-3
-WANTLIB += harfbuzz icudata icule icuuc m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += soup-2.4 soup-gnome-2.4 sqlite3 xcb xcb-render xcb-shm
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz icudata icule
+WANTLIB += icuuc m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 png pthread pthread-stubs soup-2.4 sqlite3
+WANTLIB += xcb xcb-render xcb-shm
 WANTLIB += xml2 z
 
 MODULES=		devel/gettext \
 			devel/dconf \
 			x11/gnome
+# XXX:
+# gweather-location.c:919:54: error: invalid suffix "d" on floating constant
+# This needs http://gcc.gnu.org/ml/gcc-patches/2009-04/msg00097.html in our
+# base gcc and remove use of the gcc4 module.
+MODULES+= 	gcc4
+MODGCC4_ARCHS = *
+#MODGCC4_LANGS=	c
 
 MODGNOME_TOOLS= 	goi
 MODGNOME_ICON_CACHE=	Yes
 
-LIB_DEPENDS=		devel/libsoup,-gnome \
+LIB_DEPENDS=		devel/libsoup>=2.42.0 \
 			x11/gtk+3
 
 CONFIGURE_ARGS+=	--with-zoneinfo-dir="/usr/share/zoneinfo"

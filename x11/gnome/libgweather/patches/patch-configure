@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.1 2012/09/27 07:46:28 jasper Exp $
+$OpenBSD: patch-configure,v 1.2 2013/03/29 10:45:59 jasper Exp $
 
 Fix DATADIRNAME: see LOCALBASE/share/aclocal/{glib-gettext.m4,intltool.m4}
 
---- configure.orig	Tue Sep 25 15:26:50 2012
-+++ configure	Tue Sep 25 15:27:43 2012
-@@ -14827,6 +14827,9 @@ else
+--- configure.orig	Mon Mar 25 22:08:55 2013
++++ configure	Fri Mar 29 11:12:07 2013
+@@ -14392,6 +14392,9 @@ else
  fi
  
      ;;

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2012/10/16 08:19:29 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2013/03/29 10:45:59 jasper Exp $
 @conflict gnome-applets2-<=2.22.0
 include/libgweather-3.0/
 include/libgweather-3.0/libgweather/
@@ -7,7 +7,7 @@ include/libgweather-3.0/libgweather/gweather-enums.h
 include/libgweather-3.0/libgweather/gweather-location.h
 include/libgweather-3.0/libgweather/gweather-timezone.h
 include/libgweather-3.0/libgweather/gweather-weather.h
-include/libgweather-3.0/libgweather/gweather-xml.h
+include/libgweather-3.0/libgweather/gweather.h
 include/libgweather-3.0/libgweather/location-entry.h
 include/libgweather-3.0/libgweather/timezone-menu.h
 lib/girepository-1.0/GWeather-3.0.typelib
@@ -33,7 +33,6 @@ share/gtk-doc/html/libgweather-3.0/index.sgml
 share/gtk-doc/html/libgweather-3.0/left.png
 share/gtk-doc/html/libgweather-3.0/libgweather-3.0.devhelp2
 share/gtk-doc/html/libgweather-3.0/libgweather-GWeatherInfo.html
-share/gtk-doc/html/libgweather-3.0/libgweather-gweather-xml.html
 share/gtk-doc/html/libgweather-3.0/object-tree.html
 share/gtk-doc/html/libgweather-3.0/right.png
 share/gtk-doc/html/libgweather-3.0/style.css
