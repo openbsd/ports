@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2011/09/12 07:28:53 jasper Exp $
-@lib lib/libgnome-keyring.so.${LIBgnome-keyring_VERSION}
