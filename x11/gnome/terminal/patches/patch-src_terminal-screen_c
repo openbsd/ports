@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_terminal-screen_c,v 1.5 2013/03/29 18:39:35 jasper Exp $
+--- src/terminal-screen.c.orig	Wed Mar 20 11:09:31 2013
++++ src/terminal-screen.c	Fri Mar 29 18:22:25 2013
+@@ -1347,7 +1347,7 @@ terminal_screen_child_setup (FDSetupData *data)
+       /* Now we know that target_fd can be safely overwritten. */
+       errno = 0;
+       do {
+-        fd = dup3 (fds[idx], target_fd, 0 /* no FD_CLOEXEC */);
++        fd = dup2 (fds[idx], target_fd /* no FD_CLOEXEC */);
+       } while (fd == -1 && errno == EINTR);
+       if (fd != target_fd)
+         _exit (127);
