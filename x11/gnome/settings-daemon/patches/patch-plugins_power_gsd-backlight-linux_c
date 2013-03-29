@@ -1,6 +1,6 @@
-$OpenBSD: patch-plugins_power_gsd-backlight-linux_c,v 1.1 2013/03/29 14:17:25 ajacoutot Exp $
+$OpenBSD: patch-plugins_power_gsd-backlight-linux_c,v 1.2 2013/03/29 14:36:03 ajacoutot Exp $
 
-error: 'NULL' undeclared (first use in this function)
+https://bugzilla.gnome.org/show_bug.cgi?id=696856
 
 --- plugins/power/gsd-backlight-linux.c.orig	Fri Mar 29 15:02:24 2013
 +++ plugins/power/gsd-backlight-linux.c	Fri Mar 29 15:05:35 2013
