@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.203 2013/03/29 15:08:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.204 2013/03/29 16:19:28 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -68,7 +68,6 @@
      SUBDIR += libxklavier
      SUBDIR += libzapojit
      SUBDIR += menus
-     SUBDIR += metacity
      SUBDIR += mime-data
      SUBDIR += mono-gnome
      SUBDIR += moserial
