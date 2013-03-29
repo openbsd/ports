@@ -1,0 +1,21 @@
+$OpenBSD: patch-gnome-session_gsm-manager_c,v 1.11 2013/03/29 15:41:03 ajacoutot Exp $
+
+XXX fix and push upstream
+
+--- gnome-session/gsm-manager.c.orig	Fri Mar 29 16:27:21 2013
++++ gnome-session/gsm-manager.c	Fri Mar 29 16:27:56 2013
+@@ -2907,13 +2907,7 @@ is_valid_category (int category)
+ 		LC_COLLATE,
+ 		LC_MONETARY,
+ 		LC_MESSAGES,
+-		LC_ALL,
+-		LC_PAPER,
+-		LC_NAME,
+-		LC_ADDRESS,
+-		LC_TELEPHONE,
+-		LC_MEASUREMENT,
+-		LC_IDENTIFICATION
++		LC_ALL
+ 	};
+ 	guint i;
+ 
