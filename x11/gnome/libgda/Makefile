@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2013/03/28 20:03:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.73 2013/03/29 17:31:41 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -21,7 +21,7 @@ PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}
 PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
 PKGNAME-ui=		libgda-ui-${GNOME_VERSION}
 
-REVISION-main=		0
+REVISION-main=		1
 REVISION-ui=		0
 
 EPOCH-main=		2
@@ -84,7 +84,7 @@ CONFIGURE_ARGS+=	--disable-static \
 			--without-mdb \
 			--without-java
 # XXX: Re-enable when libgda can handle vala 0.20.0
-# and add 'vala' back to MODGNOME_TOOLS
+# and add 'vala' back to MODGNOME_TOOLS; LIB_DEPENDS on libgee
 CONFIGURE_ARGS+=	--disable-vala-extensions \
 			--disable-gdaui-vala \
 			--disable-vala
@@ -97,14 +97,13 @@ CONFIGURE_ENV=		LIBCRYPTO_CFLAGS="-I/usr/include/ssl" \
 
 FAKE_FLAGS=		configdir="${PREFIX}/share/examples/libgda"
 
-WANTLIB-main += ${WANTLIB} c gcrypt gpg-error ncurses gee-0.8
+WANTLIB-main += ${WANTLIB} c gcrypt gpg-error ncurses sqlite3
 WANTLIB-main += readline soup-2.4 crypto gdk_pixbuf-2.0 png xslt
 
 RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS} \
 			${MODGNOME_RUN_DEPENDS_yelp} \
 			devel/iso-codes
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			devel/libgee \
 			devel/libsoup \
 			textproc/libxslt \
 			graphics/gdk-pixbuf2
