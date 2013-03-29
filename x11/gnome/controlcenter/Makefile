@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.86 2013/03/26 17:08:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.87 2013/03/29 18:18:43 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
-GNOME_VERSION=		3.6.3
-REVISION=		3
+GNOME_VERSION=		3.8.0
 
 CATEGORIES=		x11
 
@@ -14,43 +13,43 @@ CATEGORIES=		x11
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += FLAC GL ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xtst asn1
-WANTLIB += atk-1.0 atk-bridge-2.0 atspi avahi-client avahi-common
-WANTLIB += c cairo cairo-gobject canberra canberra-gtk3 colord
-WANTLIB += colordprivate crypto cups dbus-1 dbus-glib-1 enchant
-WANTLIB += execinfo expat ffi fontconfig freetype gailutil-3 gcrypt
-WANTLIB += gdbm gdk-3 gdk_pixbuf-2.0 geoclue gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gnome-desktop-3 gnome-keyring gnome-menu-3
-WANTLIB += goa-1.0 goa-backend-1.0 gobject-2.0 gpg-error gssapi
-WANTLIB += gstapp-0.10 gstaudio-0.10 gstbase-0.10 gstfft-0.10
-WANTLIB += gstinterfaces-0.10 gstpbutils-0.10 gstreamer-0.10 gstvideo-0.10
-WANTLIB += gthread-2.0 gtk-3 gtop-2.0 harfbuzz ibus-1.0 icudata
-WANTLIB += icui18n icule icuuc javascriptcoregtk-3.0 jpeg json
-WANTLIB += json-glib-1.0 krb5 kvm lcms2 ltdl m notify ogg orc-0.4
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png polkit-gobject-1 pthread pthread-stubs pulse pulse-mainloop-glib
-WANTLIB += rest-0.7 secret-1 sndfile soup-2.4 soup-gnome-2.4 sqlite3
-WANTLIB += ssl stdc++ upower-glib vorbis vorbisenc vorbisfile
-WANTLIB += webkitgtk-3.0 xcb xcb-render xcb-shm xkbfile xml2 xslt
-WANTLIB += z
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xtst accountsservice
+WANTLIB += atk-1.0 atk-bridge-2.0 atspi avahi-common c cairo cairo-gobject
+WANTLIB += canberra canberra-gtk3 colord colord-gtk colordprivate
+WANTLIB += cups dbus-1 dbus-glib-1 enchant execinfo expat ffi
+WANTLIB += fontconfig freetype gailutil-3 gcrypt gdbm gdk-3 gdk_pixbuf-2.0
+WANTLIB += geoclue gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3
+WANTLIB += gnome-keyring gnome-menu-3 goa-1.0 goa-backend-1.0
+WANTLIB += gobject-2.0 gpg-error graphite2 gstapp-0.10 gstaudio-0.10
+WANTLIB += gstbase-0.10 gstfft-0.10 gstinterfaces-0.10 gstpbutils-0.10
+WANTLIB += gstreamer-0.10 gstvideo-0.10 gthread-2.0 gtk-3 gtop-2.0
+WANTLIB += harfbuzz ibus-1.0 icudata icui18n icule icuuc javascriptcoregtk-3.0
+WANTLIB += jpeg json json-glib-1.0 kvm lcms2 ltdl m notify ogg
+WANTLIB += orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 png polkit-gobject-1 pthread pthread-stubs
+WANTLIB += pulse pulse-mainloop-glib rest-0.7 secret-1 sndfile
+WANTLIB += soup-2.4 soup-gnome-2.4 sqlite3 stdc++ upower-glib
+WANTLIB += vorbis vorbisenc vorbisfile webkitgtk-3.0 xcb xcb-render
+WANTLIB += xcb-shm xkbfile xml2 xslt z smbclient
 
 MODULES=		devel/gettext \
 			x11/gnome
 
-LIB_DEPENDS=		x11/gnome/desktop>=3.6.0 \
-			x11/gnome/menus>=3.6.0 \
-			x11/gnome/online-accounts>=3.6.0 \
+LIB_DEPENDS=		x11/gnome/desktop \
+			x11/gnome/menus \
+			x11/gnome/online-accounts \
 			sysutils/upower \
 			devel/libgtop2 \
 			print/cups,-libs \
-			audio/pulseaudio>=2.1 \
+			audio/pulseaudio \
 			audio/libcanberra,-gtk3 \
-			graphics/colord
+			graphics/colord \
+			net/samba>=3.6.13p0
 
-BUILD_DEPENDS=		x11/gnome/settings-daemon>=3.6.4 \
+BUILD_DEPENDS=		x11/gnome/settings-daemon \
 			devel/iso-codes \
 			devel/gsettings-desktop-schemas
-RUN_DEPENDS=		x11/gnome/settings-daemon>=3.6.4 \
+RUN_DEPENDS=		x11/gnome/settings-daemon \
 			devel/iso-codes \
 			devel/gsettings-desktop-schemas
 
@@ -73,34 +72,18 @@ RUN_DEPENDS+=		x11/gnome/power-manager
 # needed for gnome-printers-panel
 RUN_DEPENDS+=		print/cups-pk-helper
 
-# needed for gnome-screen-panel
-RUN_DEPENDS+=		x11/gnome/screensaver
-
-# needed for gnome-sound-applet
-RUN_DEPENDS+=		x11/gnome/icon-theme-symbolic
-
 # needed for gnome-user-accounts-panel
 RUN_DEPENDS+=		sysutils/accountsservice
-
-# share/polkit-1/actions/org.gnome.controlcenter.datetime.policy
-RUN_DEPENDS +=  sysutils/polkit
 
 MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 
-# Language code is synced with gdm but gnome-control-center does not
-# provide a --with-incomplete-locales configure switch.
-CFLAGS += 	      -DWITH_INCOMPLETE_LOCALES
-
 LIBTOOL_FLAGS=		--tag=disable-static
 
 CONFIGURE_ARGS=		--disable-static \
 			--disable-update-mimedb \
-			--disable-systemd \
-			--without-cheese \
-			--with-x \
-			--enable-cups
+			--disable-systemd
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
@@ -114,14 +97,13 @@ BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
 			devel/libtool \
 			x11/gnome/common
 
+post-extract:
+	${INSTALL} -m 555 ${FILESDIR}/krb5-config ${WRKDIR}/bin
+
 pre-configure:
 	@cd ${WRKSRC} && \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		autoreconf -i
-	${SUBST_CMD} ${WRKSRC}/panels/printers/cc-printers-panel.c
-
-post-install:
-	rm ${PREFIX}/lib/control-center-1/panels/*.la
 
 .include <bsd.port.mk>

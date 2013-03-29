@@ -1,9 +1,9 @@
-$OpenBSD: patch-panels_info_hostnames-test_txt,v 1.1 2011/09/27 12:15:23 ajacoutot Exp $
+$OpenBSD: patch-shell_hostnames-test_txt,v 1.1 2013/03/29 18:18:43 ajacoutot Exp $
 
 XXX unbreak build (special chars are not properly processed).
 
---- panels/info/hostnames-test.txt.orig	Tue Sep 27 12:34:57 2011
-+++ panels/info/hostnames-test.txt	Tue Sep 27 11:59:45 2011
+--- shell/hostnames-test.txt.orig	Fri Mar 29 18:15:23 2013
++++ shell/hostnames-test.txt	Fri Mar 29 18:16:06 2013
 @@ -1,11 +1,11 @@
  # Pretty hostname, tab, display hostname, tab, real hostname
  Lennart's PC	Lennarts-PC	lennarts-pc
