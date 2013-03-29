@@ -1,6 +1,6 @@
-$OpenBSD: patch-clamav-unofficial-sigs_conf,v 1.2 2012/08/09 00:34:29 sthen Exp $
+$OpenBSD: patch-clamav-unofficial-sigs_conf,v 1.3 2013/03/29 09:31:00 sthen Exp $
 --- clamav-unofficial-sigs.conf.orig	Sun Jun  6 17:43:07 2010
-+++ clamav-unofficial-sigs.conf	Thu Aug  9 01:30:24 2012
++++ clamav-unofficial-sigs.conf	Fri Mar 29 09:29:57 2013
 @@ -31,18 +31,18 @@
  # and optionally socat.  It's been reported that on Sun systems, the GNU utilities
  # should be used rather than the default Sun OS versions of these utilities.
@@ -32,7 +32,15 @@ $OpenBSD: patch-clamav-unofficial-sigs_conf,v 1.2 2012/08/09 00:34:29 sthen Exp 
     winnow_malware.hdb
     winnow_malware_links.ndb
  "
-@@ -137,6 +138,11 @@ ss_dbs="
+@@ -129,14 +130,14 @@ ss_dbs="
+ # Additional Sanesecruity distributed database that can be used and
+ # their associated potential fales-positive ratings:
+ #
+-# USE 'ONLY' ONE OF THE FOLLOWING TWO SIGNATURE DATABASES:
+-#
+-# INetMsg-SpamDomains-2w.ndb    : MEDIUM false-positive rating
+-# INetMsg-SpamDomains-2m.ndb    : MEDIUM false-positive rating
+-#
  # ONE DATABASE CONTAINS THE LAST TWO WEEKS OF COLLECTED SPAM DOMAINS (2w), AND
  # THE OTHER DATABASE CONTAINS THE LAST TWO MONTHS OF COLLECTED SPAM DOMAINS (2m).
  #
@@ -44,7 +52,7 @@ $OpenBSD: patch-clamav-unofficial-sigs_conf,v 1.2 2012/08/09 00:34:29 sthen Exp 
  # jurlbla.ndb                   : MEDIUM false-positive rating
  # lott.ndb                      : MEDIUM false-positive rating
  # spam.ldb                      : MEDIUM false-positive rating
-@@ -183,11 +189,11 @@ si_update_hours="4"   # Default is 4 hours (6 update c
+@@ -183,11 +184,11 @@ si_update_hours="4"   # Default is 4 hours (6 update c
  # =========================
  # Add or remove database file names between quote marks as needed.  To
  # disable any of the MalwarePatrol database file downloads, remove the
@@ -61,7 +69,7 @@ $OpenBSD: patch-clamav-unofficial-sigs_conf,v 1.2 2012/08/09 00:34:29 sthen Exp 
  
  # Since the MalwarePatrol database file is dynamically created,
  # there is no way to test for changes prior to downloading.  For this
-@@ -219,7 +225,7 @@ mbl_update_hours="6"   # Default is 6 hours (4 downloa
+@@ -219,7 +220,7 @@ mbl_update_hours="6"   # Default is 6 hours (4 downloa
  # Set working directory paths (edit to meet your own needs). If these
  # directories do not exist, the script will attempt to create them.
  # Top level working directory path:

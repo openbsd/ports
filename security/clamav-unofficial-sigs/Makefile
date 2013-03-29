@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:41:24 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/29 09:31:00 sthen Exp $
 
 COMMENT =	fetch and update unofficial signatures for ClamAV
 
 DISTNAME =	clamav-unofficial-sigs-3.7.1
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	security mail
 
@@ -12,8 +12,7 @@ MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM =	 Yes
 
-MASTER_SITES =	http://www.inetmsg.com/pub/ \
-		http://www.inetmsg.com/pub/archive/
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=unofficial-sigs/}
 
 RUN_DEPENDS =	net/curl net/rsync security/gnupg
 
