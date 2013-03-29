@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2013/03/29 19:29:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.67 2013/03/29 19:57:31 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,10 @@ COMMENT=	image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
 GNOME_VERSION=	3.2.0
+REVISION=	0
+
 API_V=		${GNOME_VERSION:R}
+SUBST_VARS=	API_V
 
 CATEGORIES=	graphics
 
@@ -26,7 +29,7 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 gtk-3 harfbuzz icudata icule icuuc jpeg
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs rsvg-2 stdc++ tiff xcb xcb-render
-WANTLIB += xcb-shm z gstreamer-1.0
+WANTLIB += xcb-shm z gstreamer-1.0 webp
 
 MODULES=	devel/dconf \
 		devel/gettext \
@@ -36,25 +39,24 @@ MODULES=	devel/dconf \
 BUILD_DEPENDS +=	devel/bison
 
 LIB_DEPENDS=	graphics/clutter/clutter-gtk  \
-		graphics/exiv2>=0.22 \
-		x11/gnome/librsvg \
-		multimedia/gstreamer1/plugins-base
+		graphics/exiv2 \
+		graphics/libwebp \
+		multimedia/gstreamer1/core \
+		x11/gnome/librsvg
 		
-RUN_DEPENDS=	misc/shared-mime-info
+RUN_DEPENDS=	graphics/dcraw \
+		misc/shared-mime-info
 
 LIBTOOL_FLAGS=		--tag=disable-static
 
 MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
-
-CONFIGURE_STYLE=	gnu
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib -Wl,-rpath,${TRUEPREFIX}/lib/gthumb/extensions
-CONFIGURE_ARGS=		--disable-static \
-			--disable-libbrasero
 
-SUBST_VARS=		API_V
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=		--disable-static
 
 post-install:
 	rm ${PREFIX}/lib/gthumb/extensions/*.la
