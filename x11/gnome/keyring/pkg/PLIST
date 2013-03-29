@@ -1,15 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.33 2012/10/02 15:58:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.34 2013/03/29 09:48:08 ajacoutot Exp $
 bin/gnome-keyring
 @bin bin/gnome-keyring-3
 @bin bin/gnome-keyring-daemon
 lib/gnome-keyring/
 lib/gnome-keyring/devel/
 lib/gnome-keyring/devel/gkm-gnome2-store-standalone.so
-lib/gnome-keyring/devel/gkm-roots-store-standalone.so
 lib/gnome-keyring/devel/gkm-secret-store-standalone.so
 lib/gnome-keyring/devel/gkm-ssh-store-standalone.so
 lib/gnome-keyring/devel/gkm-xdg-store-standalone.so
-lib/pkcs11/
 lib/pkcs11/gnome-keyring-pkcs11.so
 share/GConf/gsettings/org.gnome.crypto.cache.convert
 share/dbus-1/services/org.freedesktop.secrets.service
@@ -107,6 +105,7 @@ share/locale/sr@latin/LC_MESSAGES/gnome-keyring.mo
 share/locale/sv/LC_MESSAGES/gnome-keyring.mo
 share/locale/ta/LC_MESSAGES/gnome-keyring.mo
 share/locale/te/LC_MESSAGES/gnome-keyring.mo
+share/locale/tg/LC_MESSAGES/gnome-keyring.mo
 share/locale/th/LC_MESSAGES/gnome-keyring.mo
 share/locale/tr/LC_MESSAGES/gnome-keyring.mo
 share/locale/ug/LC_MESSAGES/gnome-keyring.mo
