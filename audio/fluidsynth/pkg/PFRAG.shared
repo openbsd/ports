@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/04/06 22:42:11 jakemsr Exp $
-@lib lib/libfluidsynth.so.${LIBfluidsynth_VERSION}

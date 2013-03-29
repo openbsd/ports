@@ -60,7 +60,7 @@ typedef struct {
 
 typedef struct {
   fluid_midi_driver_t driver;
-  struct mio_hdl *hdl; 
+  struct mio_hdl *hdl;
   pthread_t thread;
   int status;
   fluid_midi_parser_t *parser;
@@ -76,7 +76,7 @@ static void* fluid_sndio_audio_run2(void* d);
 void
 fluid_sndio_audio_driver_settings(fluid_settings_t* settings)
 {
-  fluid_settings_register_str(settings, "audio.sndio.device", NULL, 0, NULL, NULL);
+  fluid_settings_register_str(settings, "audio.sndio.device", "default", 0, NULL, NULL);
 }
 
 /*
@@ -372,7 +372,7 @@ fluid_sndio_audio_run2(void* d)
 
 void fluid_sndio_midi_driver_settings(fluid_settings_t* settings)
 {
-  fluid_settings_register_str(settings, "midi.sndio.device", NULL, 0, NULL, NULL);
+  fluid_settings_register_str(settings, "midi.sndio.device", "default", 0, NULL, NULL);
 }
 
 int

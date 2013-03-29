@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_fluid_adriver_c,v 1.3 2009/12/24 10:34:43 jakemsr Exp $
---- src/fluid_adriver.c.orig	Sun Mar 15 18:02:15 2009
-+++ src/fluid_adriver.c	Wed Dec 23 01:31:00 2009
+$OpenBSD: patch-src_drivers_fluid_adriver_c,v 1.1 2013/03/29 12:37:43 sthen Exp $
+--- src/drivers/fluid_adriver.c.orig	Thu Aug 16 05:01:13 2012
++++ src/drivers/fluid_adriver.c	Sun Mar 24 23:55:55 2013
 @@ -64,6 +64,15 @@ int delete_fluid_oss_audio_driver(fluid_audio_driver_t
  void fluid_oss_audio_driver_settings(fluid_settings_t* settings);
  #endif
@@ -17,7 +17,7 @@ $OpenBSD: patch-src_fluid_adriver_c,v 1.3 2009/12/24 10:34:43 jakemsr Exp $
  #if COREAUDIO_SUPPORT
  fluid_audio_driver_t* new_fluid_core_audio_driver(fluid_settings_t* settings,
  						  fluid_synth_t* synth);
-@@ -122,6 +131,13 @@ void fluid_file_audio_driver_settings(fluid_settings_t
+@@ -120,6 +129,13 @@ int delete_fluid_file_audio_driver(fluid_audio_driver_
  
  /* Available audio drivers, listed in order of preference */
  fluid_audriver_definition_t fluid_audio_drivers[] = {
@@ -31,8 +31,8 @@ $OpenBSD: patch-src_fluid_adriver_c,v 1.3 2009/12/24 10:34:43 jakemsr Exp $
  #if JACK_SUPPORT
    { "jack",
      new_fluid_jack_audio_driver,
-@@ -222,7 +238,9 @@ void fluid_audio_driver_settings(fluid_settings_t* set
- #endif
+@@ -223,7 +239,9 @@ void fluid_audio_driver_settings(fluid_settings_t* set
+                                FLUID_DEFAULT_AUDIO_RT_PRIO, 0, 99, 0, NULL, NULL);
  
    /* Set the default driver */
 -#if JACK_SUPPORT
@@ -42,7 +42,7 @@ $OpenBSD: patch-src_fluid_adriver_c,v 1.3 2009/12/24 10:34:43 jakemsr Exp $
    fluid_settings_register_str(settings, "audio.driver", "jack", 0, NULL, NULL);
  #elif ALSA_SUPPORT
    fluid_settings_register_str(settings, "audio.driver", "alsa", 0, NULL, NULL);
-@@ -255,6 +273,9 @@ void fluid_audio_driver_settings(fluid_settings_t* set
+@@ -256,6 +274,9 @@ void fluid_audio_driver_settings(fluid_settings_t* set
  #endif
  #if OSS_SUPPORT
    fluid_settings_add_option(settings, "audio.driver", "oss");

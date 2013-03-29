@@ -1,5 +1,6 @@
---- src/fluid_mdriver.c.orig	Sun Mar  8 21:31:02 2009
-+++ src/fluid_mdriver.c	Wed Dec 23 01:32:21 2009
+$OpenBSD: patch-src_drivers_fluid_mdriver_c,v 1.1 2013/03/29 12:37:43 sthen Exp $
+--- src/drivers/fluid_mdriver.c.orig	Thu Aug 16 05:01:13 2012
++++ src/drivers/fluid_mdriver.c	Sun Mar 24 23:55:55 2013
 @@ -46,6 +46,15 @@ fluid_midi_driver_t *new_fluid_jack_midi_driver (fluid
  int delete_fluid_jack_midi_driver(fluid_midi_driver_t *p);
  #endif
@@ -29,8 +30,8 @@
  #if JACK_SUPPORT
    { "jack",
      new_fluid_jack_midi_driver,
-@@ -146,7 +161,9 @@ void fluid_midi_driver_settings(fluid_settings_t* sett
-   int i;
+@@ -149,7 +164,9 @@ void fluid_midi_driver_settings(fluid_settings_t* sett
+                                FLUID_DEFAULT_MIDI_RT_PRIO, 0, 99, 0, NULL, NULL);
  
    /* Set the default driver */
 -#if ALSA_SUPPORT
@@ -40,7 +41,7 @@
    fluid_settings_register_str(settings, "midi.driver", "alsa_seq", 0, NULL, NULL);
  #elif JACK_SUPPORT
    fluid_settings_register_str(settings, "midi.driver", "jack", 0, NULL, NULL);
-@@ -166,6 +183,9 @@ void fluid_midi_driver_settings(fluid_settings_t* sett
+@@ -169,6 +186,9 @@ void fluid_midi_driver_settings(fluid_settings_t* sett
  #if ALSA_SUPPORT
    fluid_settings_add_option(settings, "midi.driver", "alsa_seq");
    fluid_settings_add_option(settings, "midi.driver", "alsa_raw");

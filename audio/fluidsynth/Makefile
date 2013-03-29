@@ -1,22 +1,22 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/21 08:45:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/29 12:37:43 sthen Exp $
 
 COMMENT =		SoundFont2 software synthesizer
-DISTNAME =		fluidsynth-1.0.9
-REVISION =		2
+DISTNAME =		fluidsynth-1.1.6
 
-SHARED_LIBS =		fluidsynth	0.1
+SHARED_LIBS +=	fluidsynth           1.0      # 6.2
 
 CATEGORIES =		audio
 HOMEPAGE =		http://fluidsynth.resonance.org/trac
 
-# LGPL
+# LGPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c jack m ncurses pthread readline sndio
+WANTLIB += c glib-2.0 gthread-2.0 iconv intl m ncurses pcre pthread
+WANTLIB += readline sndio
 
-MASTER_SITES =		${MASTER_SITE_SAVANNAH:=fluid/}
+MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=fluidsynth/}
 
-LIB_DEPENDS =		audio/jack
+LIB_DEPENDS =		devel/glib2
 
 AUTOCONF_VERSION =	2.61
 AUTOMAKE_VERSION =	1.9
@@ -28,14 +28,18 @@ BUILD_DEPENDS +=        devel/libtool
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
+			--disable-dbus-support \
 			--disable-lash \
 			--disable-ladcca \
 			--disable-oss-support \
 			--disable-portaudio-support \
 			--disable-pulse-support
 
+# broken
+CONFIGURE_ARGS +=	--disable-jack-support
+
 post-patch:
-	cp ${FILESDIR}/fluid_sndio.c ${WRKSRC}/src/
+	cp ${FILESDIR}/fluid_sndio.c ${WRKSRC}/src/drivers/
 
 pre-configure:
 	cd ${WRKSRC} && AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \

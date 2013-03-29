@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_utils_fluid_sys_c,v 1.1 2013/03/29 12:37:43 sthen Exp $
+--- src/utils/fluid_sys.c.orig	Thu Aug 16 05:01:13 2012
++++ src/utils/fluid_sys.c	Mon Mar 25 00:20:40 2013
+@@ -429,8 +429,10 @@ fluid_thread_self_set_prio (int prio_level)
+     memset(&priority, 0, sizeof(priority));
+     priority.sched_priority = prio_level;
+ 
++// #if !defined(__OpenBSD__)
+     if (pthread_setschedparam (pthread_self (), SCHED_FIFO, &priority) == 0) {
+       return;
++// #endif
+     }
+ #ifdef DBUS_SUPPORT
+ /* Try to gain high priority via rtkit */
