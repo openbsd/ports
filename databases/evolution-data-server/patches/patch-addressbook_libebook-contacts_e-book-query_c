@@ -1,0 +1,18 @@
+$OpenBSD: patch-addressbook_libebook-contacts_e-book-query_c,v 1.1 2013/03/29 15:17:01 ajacoutot Exp $
+
+XXX fix and push upstream
+
+--- addressbook/libebook-contacts/e-book-query.c.orig	Fri Mar 29 14:38:02 2013
++++ addressbook/libebook-contacts/e-book-query.c	Fri Mar 29 14:39:13 2013
+@@ -200,8 +200,11 @@ e_book_query_not (EBookQuery *q,
+ static const gchar *
+ address_locale (void)
+ {
++#if 0
+ 	const gchar *locale = setlocale (LC_ADDRESS, NULL);
++#endif
+ 
++	const gchar *locale = NULL;
+ 	if (locale == NULL || strcmp (locale, "C") == 0)
+ 		locale = setlocale (LC_MESSAGES, NULL);
+ 

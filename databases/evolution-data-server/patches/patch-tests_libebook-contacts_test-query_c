@@ -1,0 +1,46 @@
+$OpenBSD: patch-tests_libebook-contacts_test-query_c,v 1.1 2013/03/29 15:17:01 ajacoutot Exp $
+
+XXX fix and push upstream
+
+--- tests/libebook-contacts/test-query.c.orig	Fri Mar 29 15:50:21 2013
++++ tests/libebook-contacts/test-query.c	Fri Mar 29 15:37:22 2013
+@@ -37,7 +37,9 @@ test_query (gconstpointer data)
+ 	EBookQuery *query;
+ 	gchar *sexp;
+ 
++#if 0
+ 	setlocale (LC_ADDRESS, test->locale);
++#endif
+ 	sexp = e_book_query_to_string (test->query);
+ 	normalize_space (sexp);
+ 
+@@ -74,7 +76,9 @@ add_query_test (const gchar *path,
+ {
+ 	TestData *data = g_slice_new (TestData);
+ 
++#if 0
+ 	data->locale = g_strdup (setlocale (LC_ADDRESS, NULL));
++#endif
+ 	data->sexp = g_strdup (sexp);
+ 	data->query = query;
+ 
+@@ -89,7 +93,9 @@ main (gint argc,
+ 
+ 	g_test_init (&argc, &argv, NULL);
+ 
++#if 0
+ 	setlocale (LC_ADDRESS, "en_US.UTF-8");
++#endif
+ 
+ 	add_query_test (
+ 		"/libebook/test-query/sexp/all",
+@@ -186,7 +192,9 @@ main (gint argc,
+ 		" (eqphone_short \"phone\" \"5423789\" \"en_US.UTF-8\")"
+ 		" )");
+ 
++#if 0
+ 	setlocale (LC_ADDRESS, "en_GB.UTF-8");
++#endif
+ 
+ 	add_query_test (
+ 		"/libebook/test-query/sexp/eqphone/gb",

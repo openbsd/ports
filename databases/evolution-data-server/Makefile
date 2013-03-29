@@ -1,27 +1,22 @@
-# $OpenBSD: Makefile,v 1.133 2013/03/11 02:52:05 espie Exp $
+# $OpenBSD: Makefile,v 1.134 2013/03/29 15:17:01 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
-GNOME_VERSION=		3.6.4
-REVISION=		0
-
-# Only get the first x.y which is needed in the PLIST.
-R=			${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
-SUBST_VARS=		R
+GNOME_VERSION=		3.8.0
 
 CATEGORIES=		databases productivity
 
-SHARED_LIBS +=  camel-1.2            34.0     # 40.0
+SHARED_LIBS +=  camel-1.2            35.0     # 43.0
 SHARED_LIBS +=  edataserver-1.2      17.0     # 17.0
-SHARED_LIBS +=  ebackend-1.2         3.0      # 5.0
-SHARED_LIBS +=  ebook-1.2            17.0     # 17.1
-SHARED_LIBS +=  edata-book-1.2       14.0     # 15.0
+SHARED_LIBS +=  ebackend-1.2         4.0      # 6.0
+SHARED_LIBS +=  ebook-contacts-1.2   0.0      # 0.0
+SHARED_LIBS +=  edata-book-1.2       15.0     # 17.0
+SHARED_LIBS +=  ebook-1.2            18.0     # 17.1
 SHARED_LIBS +=  ecal-1.2             14.0     # 15.0
-SHARED_LIBS +=  edata-cal-1.2        16.0     # 18.0
-SHARED_LIBS +=  edataserverui-3.0    2.0      # 4.0
+SHARED_LIBS +=  edata-cal-1.2        17.0     # 20.
 
 HOMEPAGE=	http://www.gnome.org/projects/evolution/
 
@@ -43,7 +38,7 @@ WANTLIB += krb5 lber-2.4 ldap-2.4 m nspr4 nss3 nssutil3 oauth
 WANTLIB += p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 plc4 plds4 png pthread pthread-stubs sasl2
 WANTLIB += smime3 softokn3 soup-2.4 soup-gnome-2.4 sqlite3 ssl
-WANTLIB += ssl3 xcb xcb-render xcb-shm xml2 z
+WANTLIB += ssl3 xcb xcb-render xcb-shm xml2 z graphite2 secret-1
 
 MODULES=		devel/gettext \
 			devel/dconf \
@@ -76,6 +71,9 @@ CONFIGURE_ARGS=		--with-krb5 \
 			--with-krb5-includes=/usr/include/kerberosV \
 			--with-libdb=${LOCALBASE} \
 			--with-openldap=${LOCALBASE}
+
+# XXX needs signond, libsignon-glib
+CONFIGURE_ARGS +=	--disable-uoa
 
 pre-configure:
 	perl -pi -e 's,/usr/sbin/imapd,${LOCALBASE}/libexec/imapd,g' \

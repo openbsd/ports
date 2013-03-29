@@ -1,0 +1,15 @@
+$OpenBSD: patch-tests_test-server-utils_e-test-server-utils_c,v 1.1 2013/03/29 15:17:01 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=696858
+
+--- tests/test-server-utils/e-test-server-utils.c.orig	Fri Mar 29 15:21:12 2013
++++ tests/test-server-utils/e-test-server-utils.c	Fri Mar 29 15:20:51 2013
+@@ -22,6 +22,8 @@
+ 
+ #include "e-test-server-utils.h"
+ 
++#include <sys/wait.h>
++
+ #define ADDRESS_BOOK_SOURCE_UID "test-address-book"
+ #define CALENDAR_SOURCE_UID     "test-calendar"
+ 
