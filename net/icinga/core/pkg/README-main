@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.11 2012/10/18 20:04:58 sthen Exp $
+$OpenBSD: README-main,v 1.12 2013/03/29 16:39:34 rpe Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -86,7 +86,7 @@ Two web-based user interfaces are available for Icinga:
 
    When done, restart the web server:
 
-      $ sudo /rc.d/httpd restart
+      $ sudo /etc/rc.d/httpd restart
 
    You should then be able to access the web interface at
    http://localhost/icinga/
