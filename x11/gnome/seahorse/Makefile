@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.79 2013/03/11 11:46:12 espie Exp $
+# $OpenBSD: Makefile,v 1.80 2013/03/29 19:25:49 ajacoutot Exp $
 
 COMMENT=		GNOME encryption interface
 
 GNOME_PROJECT=		seahorse
-GNOME_VERSION=		3.6.3
+GNOME_VERSION=		3.8.0
 
 CATEGORIES=		security
 
@@ -12,20 +12,20 @@ HOMEPAGE=		http://projects.gnome.org/seahorse/
 # GPLv2/GFDLv1.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm asn1 assuan atk-1.0
-WANTLIB += avahi-client avahi-common avahi-glib c cairo cairo-gobject
-WANTLIB += com_err crypto dbus-1 drm expat ffi fontconfig freetype
-WANTLIB += gck-1 gcr-3 gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gpg-error gpgme icuuc secret-1
-WANTLIB += gssapi gthread-2.0 gtk-3 krb5 lber-2.4 ldap-2.4
+WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender asn1 assuan atk-1.0
+WANTLIB += atk-bridge-2.0 atspi avahi-client avahi-common avahi-glib
+WANTLIB += c cairo cairo-gobject com_err crypto dbus-1 expat ffi
+WANTLIB += fontconfig freetype gck-1 gcr-3 gcr-base-3 gcrypt gdk-3
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gpg-error gpgme graphite2 gssapi gthread-2.0 gtk-3
+WANTLIB += harfbuzz icudata icule icuuc krb5 lber-2.4 ldap-2.4
 WANTLIB += m p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png pthread pthread-stubs sasl2 soup-2.4 ssl
-WANTLIB += xcb xcb-render xcb-shm xml2 z stdc++ gcr-base-3
-WANTLIB += ICE SM atk-bridge-2.0 atspi harfbuzz icudata icule
+WANTLIB += pixman-1 png pthread pthread-stubs sasl2 secret-1 soup-2.4
+WANTLIB += sqlite3 ssl stdc++ xcb xcb-render xcb-shm xml2 z
 
 LIB_DEPENDS=		databases/openldap \
-			x11/gnome/gcr>=3.6.0 \
+			x11/gnome/gcr \
 			x11/gnome/libsecret \
 			devel/libsoup \
 			security/gpgme \

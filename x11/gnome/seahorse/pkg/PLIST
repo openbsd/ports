@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2012/09/28 15:03:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2013/03/29 19:25:49 ajacoutot Exp $
 @bin bin/seahorse
 lib/seahorse/
 @bin lib/seahorse/seahorse-ssh-askpass
@@ -97,6 +97,12 @@ share/help/oc/seahorse/figures/
 share/help/oc/seahorse/figures/seahorse-window.png
 share/help/oc/seahorse/index.docbook
 share/help/oc/seahorse/legal.xml
+share/help/pt_BR/
+share/help/pt_BR/seahorse/
+share/help/pt_BR/seahorse/figures/
+share/help/pt_BR/seahorse/figures/seahorse-window.png
+share/help/pt_BR/seahorse/index.docbook
+share/help/pt_BR/seahorse/legal.xml
 share/help/ru/
 share/help/ru/seahorse/
 share/help/ru/seahorse/figures/
@@ -207,6 +213,7 @@ share/locale/sr@latin/LC_MESSAGES/seahorse.mo
 share/locale/sv/LC_MESSAGES/seahorse.mo
 share/locale/ta/LC_MESSAGES/seahorse.mo
 share/locale/te/LC_MESSAGES/seahorse.mo
+share/locale/tg/LC_MESSAGES/seahorse.mo
 share/locale/th/LC_MESSAGES/seahorse.mo
 share/locale/tr/LC_MESSAGES/seahorse.mo
 share/locale/ug/LC_MESSAGES/seahorse.mo
