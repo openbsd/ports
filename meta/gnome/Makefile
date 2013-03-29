@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2013/03/29 15:39:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.55 2013/03/29 17:43:52 ajacoutot Exp $
 
 COMMENT-main=	GNOME desktop meta-package (base installation)
 COMMENT-extra=	GNOME desktop meta-package (full installation)
@@ -9,8 +9,8 @@ PKGNAME=	gnome-${V}
 PKGNAME-main=	gnome-${V}
 PKGNAME-extra=	gnome-extra-${V}
 
-REVISION-main=	1
-REVISION-extra=	0
+REVISION-main=	2
+REVISION-extra=	1
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 		Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -72,6 +72,10 @@ RUN_DEPENDS-main += \
 		x11/gnome/sushi \
 		x11/gnome/tweak-tool
 
+# gnome-control-center already depends on samba (merge -smb into -main?)
+RUN_DEPENDS-main += \
+		x11/gnome/gvfs,-smb \
+
 RUN_DEPENDS-extra += \
 		STEM-=${V}:${BASE_PKGPATH},-main \
 		audio/rhythmbox \
@@ -82,7 +86,6 @@ RUN_DEPENDS-extra += \
 		x11/gnome/ekiga \
 		x11/gnome/empathy \
 		x11/gnome/gnote \
-		x11/gnome/gvfs,-smb \
 		x11/gnome/icon-theme-extras \
 		x11/gnome/nautilus-sendto \
 		x11/gnome/totem \
