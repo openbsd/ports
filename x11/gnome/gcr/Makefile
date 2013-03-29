@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/28 19:32:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/29 08:46:00 ajacoutot Exp $
 
 COMMENT=	library for bits of crypto UI and parsing
 
 GNOME_PROJECT=	gcr
-GNOME_VERSION=	3.6.2
-REVISION=	2
+GNOME_VERSION=	3.8.0
 
-SHARED_LIBS +=  gck-1                     1.0 # 0.0
-SHARED_LIBS +=  gcr-3                     2.0 # 1.0
-SHARED_LIBS +=  gcr-base-3                1.0 # 1.0
+SHARED_LIBS +=  gck-1                1.0      # 0.0
+SHARED_LIBS +=  gcr-base-3           2.0      # 1.0
+SHARED_LIBS +=  gcr-ui-3             0.0      # 1.0
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -41,18 +40,11 @@ LIB_DEPENDS=	x11/gtk+3 \
 
 CONFIGURE_ARGS=	--disable-update-mime
 
-### XXX remove on next upgrade
-AUTOCONF_VERSION=	2.68
-AUTOMAKE_VERSION=	1.11
-BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/libtool
-
-post-patch:
-	@cd ${WRKSRC} && \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		autoreconf -i
-### end remove
+# XXX push a proper fix upstream
+BUILD_DEPENDS += textproc/gsed
+pre-configure:
+	perl -pi -e 's,sed -i,gsed -i,g' \
+		${WRKSRC}/{,ui,ui/tests,gcr,gcr/tests,gck,gck/tests,egg,egg/tests}/Makefile.in \
+		${WRKSRC}/Makefile.decl
 
 .include <bsd.port.mk>

@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2013/03/08 06:39:05 ajacoutot Exp $
-lib/libmock-test-module.so
