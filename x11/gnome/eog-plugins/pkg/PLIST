@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2012/09/28 08:28:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2013/03/29 18:26:08 jasper Exp $
 lib/eog/plugins/exif-display.plugin
 lib/eog/plugins/export-to-folder.plugin
 lib/eog/plugins/export-to-folder.py
@@ -37,16 +37,10 @@ lib/eog/plugins/slideshowshuffle.py
 lib/eog/plugins/slideshowshuffle.pyc
 lib/eog/plugins/slideshowshuffle.pyo
 share/eog/plugins/
-share/eog/plugins/exif-display/
-share/eog/plugins/exif-display/exif-display-config.ui
-share/eog/plugins/exif-display/exif-display.ui
 share/eog/plugins/export-to-folder/
 share/eog/plugins/export-to-folder/preferences_dialog.ui
 share/eog/plugins/fullscreenbg/
 share/eog/plugins/fullscreenbg/preferences_dialog.ui
-share/eog/plugins/postasa/
-share/eog/plugins/postasa/postasa-config.xml
-share/eog/plugins/postasa/postasa-uploads.xml
 share/eog/plugins/pythonconsole/
 share/eog/plugins/pythonconsole/config.ui
 share/glib-2.0/schemas/org.gnome.eog.plugins.exif-display.gschema.xml
@@ -91,6 +85,7 @@ share/locale/pt/LC_MESSAGES/eog-plugins.mo
 share/locale/pt_BR/LC_MESSAGES/eog-plugins.mo
 share/locale/ro/LC_MESSAGES/eog-plugins.mo
 share/locale/ru/LC_MESSAGES/eog-plugins.mo
+share/locale/sk/LC_MESSAGES/eog-plugins.mo
 share/locale/sl/LC_MESSAGES/eog-plugins.mo
 share/locale/sq/LC_MESSAGES/eog-plugins.mo
 share/locale/sr/LC_MESSAGES/eog-plugins.mo
