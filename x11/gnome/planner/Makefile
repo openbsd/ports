@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.55 2013/03/29 13:19:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.56 2013/03/29 13:20:12 jasper Exp $
 
 COMMENT=		project management application
 
+# git clone of 75d160197d687c0d3b27dd53ba02d98b2a09d582
 GNOME_PROJECT=		planner
 GNOME_VERSION=		0.14.6.1
 
