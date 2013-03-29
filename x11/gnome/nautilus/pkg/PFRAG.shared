@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.9 2011/09/12 07:28:53 jasper Exp $
-@lib lib/libnautilus-extension.so.${LIBnautilus-extension_VERSION}
-lib/nautilus/extensions-3.0/libnautilus-sendto.so

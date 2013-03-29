@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.41 2012/10/15 15:47:38 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.42 2013/03/29 15:13:29 jasper Exp $
 @bin bin/nautilus
 @bin bin/nautilus-autorun-software
 @bin bin/nautilus-connect-server
@@ -19,16 +18,17 @@ include/nautilus/libnautilus-extension/nautilus-property-page.h
 lib/girepository-1.0/Nautilus-3.0.typelib
 lib/libnautilus-extension.a
 lib/libnautilus-extension.la
+@lib lib/libnautilus-extension.so.${LIBnautilus-extension_VERSION}
 lib/nautilus/
 lib/nautilus/extensions-3.0/
 lib/pkgconfig/
 lib/pkgconfig/libnautilus-extension.pc
 @bin libexec/nautilus-convert-metadata
-@bin libexec/nautilus-shell-search-provider
 @man man/man1/nautilus-connect-server.1
 @man man/man1/nautilus.1
 share/GConf/gsettings/nautilus.convert
 share/applications/nautilus-autorun-software.desktop
+share/applications/nautilus-classic.desktop
 share/applications/nautilus-connect-server.desktop
 share/applications/nautilus.desktop
 share/dbus-1/services/org.freedesktop.FileManager1.service
@@ -70,8 +70,6 @@ share/gtk-doc/html/libnautilus-extension/style.css
 share/gtk-doc/html/libnautilus-extension/up.png
 share/locale/af/LC_MESSAGES/nautilus.mo
 share/locale/am/LC_MESSAGES/nautilus.mo
-share/locale/an/
-share/locale/an/LC_MESSAGES/
 share/locale/an/LC_MESSAGES/nautilus.mo
 share/locale/ar/LC_MESSAGES/nautilus.mo
 share/locale/as/LC_MESSAGES/nautilus.mo
@@ -197,6 +195,7 @@ share/locale/sr@latin/LC_MESSAGES/nautilus.mo
 share/locale/sv/LC_MESSAGES/nautilus.mo
 share/locale/ta/LC_MESSAGES/nautilus.mo
 share/locale/te/LC_MESSAGES/nautilus.mo
+share/locale/tg/LC_MESSAGES/nautilus.mo
 share/locale/th/LC_MESSAGES/nautilus.mo
 share/locale/tk/
 share/locale/tk/LC_MESSAGES/

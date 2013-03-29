@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2013/03/11 11:46:11 espie Exp $
+# $OpenBSD: Makefile,v 1.117 2013/03/29 15:13:28 jasper Exp $
 
 COMMENT=		GNOME file manager
 
@@ -15,7 +15,7 @@ COMMENT=		GNOME file manager
 # x11/gnome/tracker
 
 GNOME_PROJECT=		nautilus
-GNOME_VERSION=		3.6.3
+GNOME_VERSION=		3.8.0
 
 SHARED_LIBS +=  nautilus-extension   3.0      # 5.0
 
@@ -26,16 +26,15 @@ HOMEPAGE=		http://www.gnome.org/projects/nautilus/
 # GPLv2 - LGPLv2 - GFPLv1.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
-WANTLIB += c cairo cairo-gobject drm exempi exif expat
+WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
+WANTLIB += c cairo cairo-gobject dbus-1 exempi exif expat ffi
 WANTLIB += fontconfig freetype gailutil-3 gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3 gobject-2.0
-WANTLIB += gthread-2.0 gtk-3 m notify pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += xcb xcb-render xcb-shm xml2 z ffi stdc++
-WANTLIB += ICE SM atk-bridge-2.0 atspi dbus-1 harfbuzz icudata
-WANTLIB += icule icuuc xkbfile
+WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz icudata icule
+WANTLIB += icuuc m notify pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread pthread-stubs xcb xcb-render
+WANTLIB += xcb-shm xkbfile xml2 z
 
 MODULES=		devel/gettext \
 			x11/gnome \
@@ -74,7 +73,7 @@ MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/nautilus
 
 # needs 'org.gnome.nautilus.preferences'
-TEST_DEPENDS=	${BASE_PKGPATH}
+TEST_DEPENDS=		${BASE_PKGPATH}
 TEST_IS_INTERACTIVE=	x11
 
 post-install:
