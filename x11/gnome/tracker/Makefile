@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.128 2013/03/28 13:38:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.129 2013/03/29 09:09:25 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,7 +19,6 @@ PKGNAME-nautilus=	nautilus-meta-tracker-${VERSION}
 
 # Only get the first x.y which is needed in the PLIST.
 # NOTE: when MAJ_V changes, increment TRACKER_VERSION accordingly and bump:
-# net/telepathy/folks
 # x11/gnome/documents
 # x11/gnome/grilo-plugins
 # x11/gnome/photos
