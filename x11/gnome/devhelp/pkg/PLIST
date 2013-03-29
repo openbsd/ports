@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2013/02/06 14:23:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2013/03/29 15:21:04 ajacoutot Exp $
 @bin bin/devhelp
 include/devhelp-3.0/
 include/devhelp-3.0/devhelp/
@@ -13,7 +13,7 @@ include/devhelp-3.0/devhelp/dh-error.h
 include/devhelp-3.0/devhelp/dh-keyword-model.h
 include/devhelp-3.0/devhelp/dh-language.h
 include/devhelp-3.0/devhelp/dh-link.h
-include/devhelp-3.0/devhelp/dh-search.h
+include/devhelp-3.0/devhelp/dh-sidebar.h
 include/devhelp-3.0/devhelp/dh-window.h
 lib/gedit/
 lib/gedit/plugins/
@@ -25,16 +25,15 @@ lib/libdevhelp-3.a
 lib/libdevhelp-3.la
 @lib lib/libdevhelp-3.so.${LIBdevhelp-3_VERSION}
 lib/pkgconfig/libdevhelp-3.0.pc
+share/GConf/gsettings/devhelp.convert
 share/applications/devhelp.desktop
 share/devhelp/
 share/devhelp/assistant/
 share/devhelp/assistant/assistant.css
 share/devhelp/assistant/assistant.js
-share/devhelp/devhelp.defaults
 share/devhelp/dtd/
 share/devhelp/dtd/devhelp-1.dtd
-share/devhelp/ui/
-share/devhelp/ui/devhelp.builder
+share/glib-2.0/schemas/org.gnome.devhelp.gschema.xml
 share/icons/hicolor/16x16/apps/devhelp.png
 share/icons/hicolor/22x22/apps/devhelp.png
 share/icons/hicolor/24x24/apps/devhelp.png
@@ -111,6 +110,7 @@ share/locale/sr@latin/LC_MESSAGES/devhelp.mo
 share/locale/sv/LC_MESSAGES/devhelp.mo
 share/locale/ta/LC_MESSAGES/devhelp.mo
 share/locale/te/LC_MESSAGES/devhelp.mo
+share/locale/tg/LC_MESSAGES/devhelp.mo
 share/locale/th/LC_MESSAGES/devhelp.mo
 share/locale/tr/LC_MESSAGES/devhelp.mo
 share/locale/ug/LC_MESSAGES/devhelp.mo
@@ -119,10 +119,8 @@ share/locale/vi/LC_MESSAGES/devhelp.mo
 share/locale/zh_CN/LC_MESSAGES/devhelp.mo
 share/locale/zh_HK/LC_MESSAGES/devhelp.mo
 share/locale/zh_TW/LC_MESSAGES/devhelp.mo
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1
-${SCHEMAS_INSTDIR}/
-${SCHEMAS_INSTDIR}/devhelp.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
