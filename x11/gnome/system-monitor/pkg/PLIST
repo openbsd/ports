@@ -1,12 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/10/16 08:08:31 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/03/29 18:13:11 jasper Exp $
 @bin bin/gnome-system-monitor
+libexec/gnome-system-monitor/
+@bin libexec/gnome-system-monitor/gsm-kill
+@bin libexec/gnome-system-monitor/gsm-renice
+share/applications/gnome-system-monitor-kde.desktop
 share/applications/gnome-system-monitor.desktop
 share/glib-2.0/schemas/org.gnome.gnome-system-monitor.enums.xml
 share/glib-2.0/schemas/org.gnome.gnome-system-monitor.gschema.xml
 share/gnome-system-monitor/
 share/gnome-system-monitor/interface.ui
 share/gnome-system-monitor/lsof.ui
+share/gnome-system-monitor/menus.ui
 share/gnome-system-monitor/openfiles.ui
+share/gnome-system-monitor/popups.ui
 share/gnome-system-monitor/preferences.ui
 share/gnome-system-monitor/renice.ui
 share/help/
@@ -226,6 +232,24 @@ share/help/gl/gnome-system-monitor/figures/systemMonitor.png
 share/help/gl/gnome-system-monitor/figures/viewMenu.png
 share/help/gl/gnome-system-monitor/index.docbook
 share/help/gl/gnome-system-monitor/legal.xml
+share/help/ja/
+share/help/ja/gnome-system-monitor/
+share/help/ja/gnome-system-monitor/figures/
+share/help/ja/gnome-system-monitor/figures/addColumn.png
+share/help/ja/gnome-system-monitor/figures/changePriority.png
+share/help/ja/gnome-system-monitor/figures/colorPanel.png
+share/help/ja/gnome-system-monitor/figures/columnContextMenu.png
+share/help/ja/gnome-system-monitor/figures/gnome-system-monitor_window.png
+share/help/ja/gnome-system-monitor/figures/memoryMaps.png
+share/help/ja/gnome-system-monitor/figures/moreInfo.png
+share/help/ja/gnome-system-monitor/figures/processListing.png
+share/help/ja/gnome-system-monitor/figures/sortButton.png
+share/help/ja/gnome-system-monitor/figures/sortMenu.png
+share/help/ja/gnome-system-monitor/figures/sortMenu2.png
+share/help/ja/gnome-system-monitor/figures/systemMonitor.png
+share/help/ja/gnome-system-monitor/figures/viewMenu.png
+share/help/ja/gnome-system-monitor/index.docbook
+share/help/ja/gnome-system-monitor/legal.xml
 share/help/oc/
 share/help/oc/gnome-system-monitor/
 share/help/oc/gnome-system-monitor/figures/
@@ -262,6 +286,24 @@ share/help/pa/gnome-system-monitor/figures/systemMonitor.png
 share/help/pa/gnome-system-monitor/figures/viewMenu.png
 share/help/pa/gnome-system-monitor/index.docbook
 share/help/pa/gnome-system-monitor/legal.xml
+share/help/pt_BR/
+share/help/pt_BR/gnome-system-monitor/
+share/help/pt_BR/gnome-system-monitor/figures/
+share/help/pt_BR/gnome-system-monitor/figures/addColumn.png
+share/help/pt_BR/gnome-system-monitor/figures/changePriority.png
+share/help/pt_BR/gnome-system-monitor/figures/colorPanel.png
+share/help/pt_BR/gnome-system-monitor/figures/columnContextMenu.png
+share/help/pt_BR/gnome-system-monitor/figures/gnome-system-monitor_window.png
+share/help/pt_BR/gnome-system-monitor/figures/memoryMaps.png
+share/help/pt_BR/gnome-system-monitor/figures/moreInfo.png
+share/help/pt_BR/gnome-system-monitor/figures/processListing.png
+share/help/pt_BR/gnome-system-monitor/figures/sortButton.png
+share/help/pt_BR/gnome-system-monitor/figures/sortMenu.png
+share/help/pt_BR/gnome-system-monitor/figures/sortMenu2.png
+share/help/pt_BR/gnome-system-monitor/figures/systemMonitor.png
+share/help/pt_BR/gnome-system-monitor/figures/viewMenu.png
+share/help/pt_BR/gnome-system-monitor/index.docbook
+share/help/pt_BR/gnome-system-monitor/legal.xml
 share/help/ru/
 share/help/ru/gnome-system-monitor/
 share/help/ru/gnome-system-monitor/figures/
@@ -412,6 +454,7 @@ share/locale/sr@latin/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/sv/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ta/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/te/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/tg/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/th/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/tr/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ug/LC_MESSAGES/gnome-system-monitor.mo
@@ -425,6 +468,9 @@ share/pixmaps/gnome-system-monitor/
 share/pixmaps/gnome-system-monitor/download.svg
 share/pixmaps/gnome-system-monitor/side.png
 share/pixmaps/gnome-system-monitor/upload.svg
+share/polkit-1/
+share/polkit-1/actions/
+share/polkit-1/actions/org.gnome.gnome-system-monitor.policy
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
