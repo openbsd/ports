@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2012/10/04 09:14:24 jasper Exp $
-@pkgpath ${BASE_PKGPATH}
+@comment $OpenBSD: PLIST,v 1.13 2013/03/29 16:48:27 jasper Exp $
+@conflict net/telepathy/folks,-tracker
+@pkgpath net/telepathy/folks,-main
+@pkgpath net/telepathy/folks,-tracker
 @bin bin/folks-import
 @bin bin/folks-inspect
 include/folks/
