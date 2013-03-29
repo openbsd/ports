@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.202 2013/03/29 08:25:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.203 2013/03/29 15:08:36 jasper Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -10,6 +10,7 @@
      SUBDIR += banshee
      SUBDIR += baker
      SUBDIR += baobab
+     SUBDIR += calculator
      SUBDIR += caribou
      SUBDIR += clocks
      SUBDIR += color-manager
@@ -28,7 +29,6 @@
      SUBDIR += eog-plugins
      SUBDIR += file-roller
      SUBDIR += font-viewer
-     SUBDIR += gcalctool
      SUBDIR += gcr
      SUBDIR += gdl
      SUBDIR += gdlmm
