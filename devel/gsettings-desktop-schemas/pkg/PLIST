@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2013/01/11 10:07:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2013/03/29 07:33:46 ajacoutot Exp $
 include/gsettings-desktop-schemas/
 include/gsettings-desktop-schemas/gdesktop-enums.h
 lib/girepository-1.0/
@@ -23,7 +23,10 @@ share/glib-2.0/schemas/org.gnome.desktop.input-sources.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.interface.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.lockdown.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.media-handling.gschema.xml
+share/glib-2.0/schemas/org.gnome.desktop.notifications.gschema.xml
+share/glib-2.0/schemas/org.gnome.desktop.privacy.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.screensaver.gschema.xml
+share/glib-2.0/schemas/org.gnome.desktop.search-providers.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.session.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.sound.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.thumbnail-cache.gschema.xml
@@ -33,6 +36,7 @@ share/glib-2.0/schemas/org.gnome.desktop.wm.preferences.gschema.xml
 share/glib-2.0/schemas/org.gnome.system.locale.gschema.xml
 share/glib-2.0/schemas/org.gnome.system.proxy.gschema.xml
 share/locale/as/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/bg/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/ca/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/ca@valencia/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/cs/LC_MESSAGES/gsettings-desktop-schemas.mo
@@ -53,6 +57,7 @@ share/locale/it/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/ja/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/lt/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/lv/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/ml/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/nb/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/or/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/pa/LC_MESSAGES/gsettings-desktop-schemas.mo
@@ -60,10 +65,12 @@ share/locale/pl/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/pt/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/pt_BR/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/ru/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/sk/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/sl/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/sr/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/sr@latin/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/sv/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/tg/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/ug/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/uk/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/vi/LC_MESSAGES/gsettings-desktop-schemas.mo

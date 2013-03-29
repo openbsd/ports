@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.36 2013/03/11 10:50:06 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2013/03/29 07:33:46 ajacoutot Exp $
 
 COMMENT=	collection of shared GSettings schemas
 
 GNOME_PROJECT=	gsettings-desktop-schemas
-GNOME_VERSION=	3.6.1
-REVISION=	0
+GNOME_VERSION=	3.8.0
 
 CATEGORIES=	devel
 
@@ -13,8 +12,8 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES=	x11/gnome \
-		devel/dconf
+MODULES=	devel/dconf \
+		x11/gnome
 
 BUILD_DEPENDS=	devel/gettext
 
