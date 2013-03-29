@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.25 2013/03/29 11:09:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.26 2013/03/29 12:19:38 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 %%SHARED%%
 @bin bin/gvfs-cat
@@ -67,7 +67,6 @@ lib/libgvfscommon.la
 share/GConf/
 share/GConf/gsettings/
 share/GConf/gsettings/gvfs-dns-sd.convert
-share/applications/mount-archive.desktop
 share/bash-completion/completions/gvfs
 share/dbus-1/
 share/dbus-1/services/

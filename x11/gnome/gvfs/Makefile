@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2013/03/29 11:09:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.86 2013/03/29 12:19:38 ajacoutot Exp $
 
 COMMENT-main=	GNOME Virtual File System
 COMMENT-smb=	samba module for GVFS
@@ -8,6 +8,8 @@ GNOME_VERSION=	1.16.0
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-smb=	${GNOME_PROJECT}-smb-${GNOME_VERSION}
+
+REVISION-main=	0
 
 SHARED_LIBS +=  gvfscommon           4.0      # .0.0
 
@@ -73,9 +75,6 @@ MULTI_PACKAGES+= -smb
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
-	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} \
-		-c ${FILESDIR}/mount-archive.desktop.in \
-		${PREFIX}/share/applications/mount-archive.desktop
 	rm ${PREFIX}/lib/gio/modules/*.{a,la}
 
 .include <bsd.port.mk>
