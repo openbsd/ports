@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/03/29 13:24:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/03/29 13:42:59 jasper Exp $
 @bin bin/ag-backup
 @bin bin/ag-tool
 include/libaccounts-glib/
@@ -21,6 +21,8 @@ lib/pkgconfig/libaccounts-glib.pc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Accounts.py
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Accounts.pyc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Accounts.pyo
+@man man/man1/ag-backup.1
+@man man/man1/ag-tool.1
 share/backup-framework/
 share/backup-framework/applications/
 share/backup-framework/applications/accounts.conf
@@ -34,16 +36,49 @@ share/gtk-doc/html/libaccounts-glib/AgManager.html
 share/gtk-doc/html/libaccounts-glib/AgProvider.html
 share/gtk-doc/html/libaccounts-glib/AgService.html
 share/gtk-doc/html/libaccounts-glib/AgServiceType.html
+share/gtk-doc/html/libaccounts-glib/account-management.html
+share/gtk-doc/html/libaccounts-glib/ag-backup.html
+share/gtk-doc/html/libaccounts-glib/ag-tool.html
 share/gtk-doc/html/libaccounts-glib/annotation-glossary.html
+share/gtk-doc/html/libaccounts-glib/api-index-1-1.html
+share/gtk-doc/html/libaccounts-glib/api-index-1-2.html
+share/gtk-doc/html/libaccounts-glib/api-index-1-4.html
+share/gtk-doc/html/libaccounts-glib/api-index-1-5.html
 share/gtk-doc/html/libaccounts-glib/api-index-deprecated.html
 share/gtk-doc/html/libaccounts-glib/api-index-full.html
+share/gtk-doc/html/libaccounts-glib/appendices.html
+share/gtk-doc/html/libaccounts-glib/gettext-xml-files.html
+share/gtk-doc/html/libaccounts-glib/glossary.html
 share/gtk-doc/html/libaccounts-glib/home.png
 share/gtk-doc/html/libaccounts-glib/index.html
 share/gtk-doc/html/libaccounts-glib/index.sgml
 share/gtk-doc/html/libaccounts-glib/left.png
+share/gtk-doc/html/libaccounts-glib/libaccounts-compiling.html
+share/gtk-doc/html/libaccounts-glib/libaccounts-glib-objects.html
+share/gtk-doc/html/libaccounts-glib/libaccounts-glib-overview.html
+share/gtk-doc/html/libaccounts-glib/libaccounts-glib-tools.html
 share/gtk-doc/html/libaccounts-glib/libaccounts-glib.devhelp2
-share/gtk-doc/html/libaccounts-glib/libaccounts-glib.html
+share/gtk-doc/html/libaccounts-glib/libaccounts-overview.html
+share/gtk-doc/html/libaccounts-glib/libaccounts-running.html
 share/gtk-doc/html/libaccounts-glib/object-tree.html
+share/gtk-doc/html/libaccounts-glib/provider-file-format.html
 share/gtk-doc/html/libaccounts-glib/right.png
+share/gtk-doc/html/libaccounts-glib/service-file-format.html
+share/gtk-doc/html/libaccounts-glib/service-type-file-format.html
 share/gtk-doc/html/libaccounts-glib/style.css
 share/gtk-doc/html/libaccounts-glib/up.png
+share/gtk-doc/html/libaccounts-glib/validating-xml-files.html
+share/gtk-doc/html/libaccounts-glib/xml-file-formats.html
+share/gtk-doc/html/libaccounts-glib/xml-files.html
+share/vala/
+share/vala/vapi/
+share/vala/vapi/accounts.deps
+share/vala/vapi/accounts.vapi
+share/xml/
+share/xml/accounts/
+share/xml/accounts/schema/
+share/xml/accounts/schema/dtd/
+share/xml/accounts/schema/dtd/accounts-application.dtd
+share/xml/accounts/schema/dtd/accounts-provider.dtd
+share/xml/accounts/schema/dtd/accounts-service-type.dtd
+share/xml/accounts/schema/dtd/accounts-service.dtd
