@@ -1,0 +1,17 @@
+$OpenBSD: patch-tools_gnome-doc-utils_make,v 1.1 2013/03/29 10:45:48 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=682776
+
+--- tools/gnome-doc-utils.make.orig	Mon Mar 26 18:23:09 2012
++++ tools/gnome-doc-utils.make	Fri Mar 29 11:15:24 2013
+@@ -640,8 +640,8 @@ install-doc-figs:
+ 	    fi; \
+ 	    figbase=`echo $$fig | sed -e 's/^.*\///'`; \
+ 	    if $$figsymlink; then \
+-	      echo "cd $$figdir && $(LN_S) -f ../../C/$$fig $$figbase"; \
+-	      ( cd "$$figdir" && $(LN_S) -f "../../C/$$fig" "$$figbase" ); \
++	      echo "cd $$figdir && $(LN_S) -f $(HELP_DIR)/$(_doc_install_dir)/C/$$fig $$figbase"; \
++	      ( cd "$$figdir" && $(LN_S) -f "$(HELP_DIR)/$(_doc_install_dir)/C/$$fig" "$$figbase" ); \
+ 	    else \
+ 	      echo "$(INSTALL_DATA) $$figfile $$figdir$$figbase"; \
+ 	      $(INSTALL_DATA) "$$figfile" "$$figdir$$figbase"; \
