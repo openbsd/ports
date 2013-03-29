@@ -1,7 +1,8 @@
-The package contains an implementation of the draft "Desktop
-Menu Specification" from freedesktop.org for GNOME:
+gnome-menus contains the libgnome-menu library, the layout configuration
+files for the GNOME menu.
 
-  http://www.freedesktop.org/Standards/menu-spec
+The libgnome-menu library implements the "Desktop Menu Specification"
+from freedesktop.org:
 
-Also contained here are the GNOME menu layout configuration
-files, .directory files and assorted menu related utility programs.
+  http://freedesktop.org/wiki/Specifications/menu-spec
+  http://specifications.freedesktop.org/menu-spec/menu-spec-latest.htm
