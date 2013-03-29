@@ -1,6 +1,7 @@
-$OpenBSD: patch-libaccounts-glib_ag-account_h,v 1.1.1.1 2013/03/29 13:16:17 jasper Exp $
+$OpenBSD: patch-libaccounts-glib_ag-account_h,v 1.2 2013/03/29 13:27:15 jasper Exp $
 
 Don't redefine AgAccount which is already declared in ag-types.h.
+https://code.google.com/p/accounts-sso/issues/detail?id=175
 
 --- libaccounts-glib/ag-account.h.orig	Fri Mar 29 13:54:02 2013
 +++ libaccounts-glib/ag-account.h	Fri Mar 29 13:54:06 2013
