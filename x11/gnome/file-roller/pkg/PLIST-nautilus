@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST-nautilus,v 1.2 2012/09/29 10:10:45 ajacoutot Exp $
-lib/nautilus/extensions-3.0/libnautilus-fileroller.so

@@ -1,63 +1,50 @@
-# $OpenBSD: Makefile,v 1.80 2013/03/11 11:46:10 espie Exp $
+# $OpenBSD: Makefile,v 1.81 2013/03/29 15:38:26 jasper Exp $
 
-SHARED_ONLY=		Yes
+SHARED_ONLY=	Yes
 
-COMMENT-main=		archive manager utility for GNOME
-COMMENT-nautilus=	file-roller plugin for nautilus
+COMMENT=	archive manager utility for GNOME
 
-GNOME_PROJECT=		file-roller
-GNOME_VERSION=		3.6.3
+GNOME_PROJECT=	file-roller
+GNOME_VERSION=	3.8.0
 
-PKGNAME-main=		${DISTNAME}
-PKGNAME-nautilus=	nautilus-${DISTNAME}
-
-CATEGORIES=		archivers
+CATEGORIES=	archivers
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo
-WANTLIB += cairo-gobject drm expat fontconfig freetype gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += gtk-3 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png pthread-stubs xcb xcb-render xcb-shm
-WANTLIB += z ffi stdc++ pthread icule icuuc
-WANTLIB += ICE SM atk-bridge-2.0 atspi dbus-1 harfbuzz icudata
+WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender archive atk-1.0 atk-bridge-2.0
+WANTLIB += atspi bz2 c cairo cairo-gobject dbus-1 expat ffi fontconfig
+WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz icudata
+WANTLIB += icule icuuc json-glib-1.0 lzma m magic nautilus-extension
+WANTLIB += notify pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png pthread pthread-stubs xcb xcb-render xcb-shm z
 
-MODULES=		devel/dconf \
-			devel/gettext \
-			x11/gnome
+MODULES=	devel/dconf \
+		devel/gettext \
+		x11/gnome
 
-MULTI_PACKAGES= 	-main -nautilus
-
-WANTLIB-main=		${WANTLIB} bz2 c lzma archive json-glib-1.0 magic notify
-RUN_DEPENDS-main=	archivers/gcpio \
-			archivers/gtar \
-			archivers/p7zip \
-			archivers/unzip \
-			archivers/xz \
-			archivers/zip \
-			sysutils/cdrtools \
-			${RUN_DEPENDS}
+RUN_DEPENDS=	archivers/gcpio \
+		archivers/gtar \
+		archivers/p7zip \
+		archivers/unzip \
+		archivers/xz \
+		archivers/zip \
+		sysutils/cdrtools
 
 # "The Unarchiver" has not been ported to OpenBSD yet
-RUN_DEPENDS-main +=	archivers/unrar
+RUN_DEPENDS +=	archivers/unrar
 
-LIB_DEPENDS-main=	archivers/libarchive \
-			devel/json-glib \
-			devel/libmagic \
-			devel/libnotify \
-			x11/gtk+3
-
-WANTLIB-nautilus=	${WANTLIB} nautilus-extension
-LIB_DEPENDS-nautilus=	x11/gnome/nautilus
-RUN_DEPENDS-nautilus=	x11/gnome/file-roller,-main
+LIB_DEPENDS=	archivers/libarchive \
+		devel/json-glib \
+		devel/libmagic \
+		x11/gnome/nautilus
 
 MODGNOME_TOOLS= 	yelp
-MODGNOME_DESKTOP_FILE=		Yes
+MODGNOME_DESKTOP_FILE=	Yes
 
-CONFIGURE_ARGS=		--disable-packagekit
+CONFIGURE_ARGS=	--disable-packagekit
 
 post-install:
 	rm ${PREFIX}/lib/nautilus/extensions-3.0/*.{a,la}
