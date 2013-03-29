@@ -1,4 +1,7 @@
-$OpenBSD: patch-src_openbsd_up-backend_c,v 1.7 2013/03/27 07:23:45 ajacoutot Exp $
+$OpenBSD: patch-src_openbsd_up-backend_c,v 1.8 2013/03/29 12:41:26 ajacoutot Exp $
+
+https://bugs.freedesktop.org/show_bug.cgi?id=62795
+
 --- src/openbsd/up-backend.c.orig	Wed Mar 27 07:53:00 2013
 +++ src/openbsd/up-backend.c	Wed Mar 27 07:54:28 2013
 @@ -556,7 +556,6 @@ up_backend_init (UpBackend *backend)
