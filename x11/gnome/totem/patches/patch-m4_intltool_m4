@@ -1,10 +1,7 @@
-$OpenBSD: patch-aclocal_m4,v 1.3 2012/10/25 15:26:32 ajacoutot Exp $
-
-Fix DATADIRNAME: see LOCALBASE/share/aclocal/{glib-gettext.m4,intltool.m4}
-
---- aclocal.m4.orig	Thu Oct 25 15:36:16 2012
-+++ aclocal.m4	Thu Oct 25 16:51:52 2012
-@@ -10729,6 +10729,8 @@ fi
+$OpenBSD: patch-m4_intltool_m4,v 1.1 2013/03/29 19:48:10 ajacoutot Exp $
+--- m4/intltool.m4.orig	Tue Mar 26 09:18:27 2013
++++ m4/intltool.m4	Fri Mar 29 20:29:00 2013
+@@ -155,6 +155,8 @@ fi
  # Substitute ALL_LINGUAS so we can use it in po/Makefile
  AC_SUBST(ALL_LINGUAS)
  
@@ -13,7 +10,7 @@ Fix DATADIRNAME: see LOCALBASE/share/aclocal/{glib-gettext.m4,intltool.m4}
  # Set DATADIRNAME correctly if it is not set yet
  # (copied from glib-gettext.m4)
  if test -z "$DATADIRNAME"; then
-@@ -10746,6 +10748,9 @@ if test -z "$DATADIRNAME"; then
+@@ -172,6 +174,9 @@ if test -z "$DATADIRNAME"; then
      dnl in this case.
      AC_CHECK_FUNC(bind_textdomain_codeset,
        [DATADIRNAME=share], [DATADIRNAME=lib])
