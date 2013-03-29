@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2013/03/29 15:13:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.118 2013/03/29 15:59:06 ajacoutot Exp $
 
 COMMENT=		GNOME file manager
 
@@ -58,9 +58,7 @@ MODGNOME_TOOLS= 	goi
 MODGNOME_DESKTOP_FILE=	Yes
 
 CONFIGURE_ARGS+= 	--disable-update-mimedb \
-			--disable-packagekit \
-			--enable-libexif \
-			--enable-xmp
+			--disable-packagekit
 
 # it would introduce a cyclic dependency with x11/gnome/tracker; also it
 # is better to keep the regular search for nautilus so that we can get
