@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:46:11 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/03/29 16:46:14 jasper Exp $
 
 COMMENT=		window and compositing manager
 
 GNOME_PROJECT=		mutter
-GNOME_VERSION=		3.6.3
+GNOME_VERSION=		3.8.0
 
-SHARED_LIBS +=  mutter                    0.0 # 0.0
+SHARED_LIBS +=  mutter                    0.1 # 0.0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -15,9 +15,9 @@ WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0
 WANTLIB += atspi c cairo cairo-gobject canberra canberra-gtk3
 WANTLIB += clutter-1.0 cogl cogl-pango dbus-1 expat ffi fontconfig
 WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 gtk-3
-WANTLIB += harfbuzz icudata icule icuuc json-glib-1.0 ltdl m ogg
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
+WANTLIB += gtk-3 harfbuzz icudata icule icuuc json-glib-1.0 ltdl
+WANTLIB += m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs startup-notification-1 vorbis
 WANTLIB += vorbisfile xcb xcb-aux xcb-render xcb-shm z
 
@@ -30,10 +30,11 @@ MODGNOME_TOOLS=		goi
 
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			devel/startup-notification \
-			graphics/clutter/core>=1.12.0 \
+			graphics/clutter/core>=1.14.0 \
 			devel/gobject-introspection
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		devel/gsettings-desktop-schemas>=3.4.2p0 \
+			x11/gnome/themes-standard \
 			x11/gnome/zenity
 
 DESKTOP_FILES=		Yes

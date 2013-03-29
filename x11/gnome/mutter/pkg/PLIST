@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/07/08 12:51:16 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/03/29 16:46:14 jasper Exp $
 @bin bin/mutter
 @bin bin/mutter-message
 @bin bin/mutter-theme-viewer
@@ -6,6 +6,7 @@
 include/mutter/
 include/mutter/meta/
 include/mutter/meta/atomnames.h
+include/mutter/meta/barrier.h
 include/mutter/meta/boxes.h
 include/mutter/meta/common.h
 include/mutter/meta/compositor-mutter.h
@@ -17,6 +18,8 @@ include/mutter/meta/group.h
 include/mutter/meta/keybindings.h
 include/mutter/meta/main.h
 include/mutter/meta/meta-background-actor.h
+include/mutter/meta/meta-background-group.h
+include/mutter/meta/meta-background.h
 include/mutter/meta/meta-plugin.h
 include/mutter/meta/meta-shadow-factory.h
 include/mutter/meta/meta-shaped-texture.h
@@ -47,9 +50,47 @@ share/applications/mutter.desktop
 share/glib-2.0/schemas/org.gnome.mutter.gschema.xml
 share/gnome-control-center/
 share/gnome-control-center/keybindings/
+share/gnome-control-center/keybindings/50-mutter-navigation.xml
+share/gnome-control-center/keybindings/50-mutter-system.xml
 share/gnome-control-center/keybindings/50-mutter-windows.xml
 share/gnome/wm-properties/
 share/gnome/wm-properties/mutter-wm.desktop
+share/gtk-doc/html/meta/
+share/gtk-doc/html/meta/MetaBackgroundActor.html
+share/gtk-doc/html/meta/MetaBarrier.html
+share/gtk-doc/html/meta/MetaDisplay.html
+share/gtk-doc/html/meta/MetaPlugin.html
+share/gtk-doc/html/meta/MetaRectangle.html
+share/gtk-doc/html/meta/MetaScreen.html
+share/gtk-doc/html/meta/MetaShadowFactory.html
+share/gtk-doc/html/meta/MetaShapedTexture.html
+share/gtk-doc/html/meta/MetaWindow.html
+share/gtk-doc/html/meta/MetaWindowActor.html
+share/gtk-doc/html/meta/MetaWorkspace.html
+share/gtk-doc/html/meta/annotation-glossary.html
+share/gtk-doc/html/meta/api-index-full.html
+share/gtk-doc/html/meta/core-reference.html
+share/gtk-doc/html/meta/deprecated-api-index.html
+share/gtk-doc/html/meta/home.png
+share/gtk-doc/html/meta/index.html
+share/gtk-doc/html/meta/index.sgml
+share/gtk-doc/html/meta/left.png
+share/gtk-doc/html/meta/meta-Common.html
+share/gtk-doc/html/meta/meta-Errors.html
+share/gtk-doc/html/meta/meta-Gradients.html
+share/gtk-doc/html/meta/meta-Main.html
+share/gtk-doc/html/meta/meta-MetaCompositor.html
+share/gtk-doc/html/meta/meta-MetaGroup.html
+share/gtk-doc/html/meta/meta-MetaKeybinding.html
+share/gtk-doc/html/meta/meta-Preferences.html
+share/gtk-doc/html/meta/meta-Utility-functions.html
+share/gtk-doc/html/meta/meta.devhelp2
+share/gtk-doc/html/meta/mutter-overview.html
+share/gtk-doc/html/meta/object-tree.html
+share/gtk-doc/html/meta/right.png
+share/gtk-doc/html/meta/running-mutter.html
+share/gtk-doc/html/meta/style.css
+share/gtk-doc/html/meta/up.png
 share/locale/am/LC_MESSAGES/mutter.mo
 share/locale/ar/LC_MESSAGES/mutter.mo
 share/locale/as/LC_MESSAGES/mutter.mo
@@ -134,6 +175,7 @@ share/locale/sr@latin/LC_MESSAGES/mutter.mo
 share/locale/sv/LC_MESSAGES/mutter.mo
 share/locale/ta/LC_MESSAGES/mutter.mo
 share/locale/te/LC_MESSAGES/mutter.mo
+share/locale/tg/LC_MESSAGES/mutter.mo
 share/locale/th/LC_MESSAGES/mutter.mo
 share/locale/tk/LC_MESSAGES/mutter.mo
 share/locale/tr/LC_MESSAGES/mutter.mo
