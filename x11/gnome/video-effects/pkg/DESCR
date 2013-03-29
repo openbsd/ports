@@ -1,5 +1,0 @@
-gnome-video-effects is a collection of GStreamer effects to be used in
-different GNOME modules.
-
-Effects will be available according to the GStreamer plugins installed
-(no dependency is enforced).
