@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.200 2013/03/29 08:16:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.201 2013/03/29 08:20:26 jasper Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -41,7 +41,6 @@
      SUBDIR += ghex
      SUBDIR += gitg
      SUBDIR += gjs
-     SUBDIR += glom
      SUBDIR += gnote
      SUBDIR += grilo
      SUBDIR += grilo-mediaserver2
@@ -57,7 +56,6 @@
      SUBDIR += libbonoboui
      SUBDIR += libcryptui
      SUBDIR += libgda
-     SUBDIR += libgdamm
      SUBDIR += libgnome
      SUBDIR += libgnome-keyring
      SUBDIR += libgnomecanvas
