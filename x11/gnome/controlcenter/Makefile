@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2013/03/29 18:18:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.88 2013/03/29 19:21:30 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.8.0
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -43,7 +44,7 @@ LIB_DEPENDS=		x11/gnome/desktop \
 			print/cups,-libs \
 			audio/pulseaudio \
 			audio/libcanberra,-gtk3 \
-			graphics/colord \
+			graphics/colord-gtk \
 			net/samba>=3.6.13p0
 
 BUILD_DEPENDS=		x11/gnome/settings-daemon \
