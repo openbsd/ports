@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/19 17:46:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/29 16:37:01 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,8 +7,9 @@ COMMENT=	plugins for Grilo
 GNOME_PROJECT=	grilo-plugins
 GNOME_VERSION=	0.2.6
 API=		0.2
+REVISION=	0
 
-TRACKER_VERSION=0.14
+TRACKER_VERSION=0.16
 SUBST_VARS=	API TRACKER_VERSION
 
 CATEGORIES+=	multimedia
@@ -39,7 +40,7 @@ LIB_DEPENDS=	devel/libgdata \
 		net/quvi/libquvi \
 		security/nss \
 		x11/gnome/grilo>=0.2.5 \
-		x11/gnome/tracker>=0.14.0
+		x11/gnome/tracker>=0.16.0
 
 LIBTOOL_FLAGS=	--tag=disable-static
 
