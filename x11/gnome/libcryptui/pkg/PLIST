@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/09/24 11:42:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/03/29 08:02:03 ajacoutot Exp $
 @conflict seahorse-<=3.1.0
-%%SHARED%%
 @bin bin/seahorse-daemon
 include/libcryptui/
 include/libcryptui/cryptui-key-chooser.h
@@ -13,6 +12,7 @@ lib/girepository-1.0/
 lib/girepository-1.0/CryptUI-0.0.typelib
 lib/libcryptui.a
 lib/libcryptui.la
+@lib lib/libcryptui.so.${LIBcryptui_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/cryptui-0.0.pc
 @man man/man1/seahorse-daemon.1
