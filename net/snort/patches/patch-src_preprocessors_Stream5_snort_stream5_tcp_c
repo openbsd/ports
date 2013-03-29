@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_preprocessors_Stream5_snort_stream5_tcp_c,v 1.6 2013/01/16 04:52:53 lteo Exp $
---- src/preprocessors/Stream5/snort_stream5_tcp.c.orig	Fri Sep 21 02:09:14 2012
-+++ src/preprocessors/Stream5/snort_stream5_tcp.c	Tue Oct  9 22:18:53 2012
-@@ -7465,7 +7465,7 @@ static int ProcessTcp(Stream5LWSession *lwssn, Packet 
+$OpenBSD: patch-src_preprocessors_Stream5_snort_stream5_tcp_c,v 1.7 2013/03/29 04:22:59 lteo Exp $
+--- src/preprocessors/Stream5/snort_stream5_tcp.c.orig	Tue Feb 19 23:14:24 2013
++++ src/preprocessors/Stream5/snort_stream5_tcp.c	Fri Mar  8 18:42:39 2013
+@@ -7534,7 +7534,7 @@ static int ProcessTcp(Stream5LWSession *lwssn, Packet 
                      char src_addr[17];
                      char dst_addr[17];
                      bzero((char *)timestamp, TIMEBUF_SIZE);

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_dynamic-preprocessors_smtp_Makefile_in,v 1.6 2013/01/16 04:52:53 lteo Exp $
---- src/dynamic-preprocessors/smtp/Makefile.in.orig	Thu Nov 15 23:53:03 2012
-+++ src/dynamic-preprocessors/smtp/Makefile.in	Mon Dec  3 22:17:29 2012
-@@ -229,7 +229,7 @@ top_builddir = @top_builddir@
+$OpenBSD: patch-src_dynamic-preprocessors_smtp_Makefile_in,v 1.7 2013/03/29 04:22:59 lteo Exp $
+--- src/dynamic-preprocessors/smtp/Makefile.in.orig	Wed Feb 20 20:31:54 2013
++++ src/dynamic-preprocessors/smtp/Makefile.in	Fri Mar  8 18:42:33 2013
+@@ -262,7 +262,7 @@ top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  AUTOMAKE_OPTIONS = foreign no-dependencies
  lib_LTLIBRARIES = libsf_smtp_preproc.la
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_dynamic-preprocessors_smtp_Makefile_in,v 1.6 2013/01/16 04:5
  @SO_WITH_STATIC_LIB_TRUE@libsf_smtp_preproc_la_LIBADD = ../libsf_dynamic_preproc.la
  @SO_WITH_STATIC_LIB_FALSE@nodist_libsf_smtp_preproc_la_SOURCES = \
  @SO_WITH_STATIC_LIB_FALSE@../include/sf_dynamic_preproc_lib.c \
-@@ -458,7 +458,7 @@ distdir: $(DISTFILES)
+@@ -492,7 +492,7 @@ distdir: $(DISTFILES)
  	done
  check-am: all-am
  check: check-am
