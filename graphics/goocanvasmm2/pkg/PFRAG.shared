@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/09/29 17:05:10 jasper Exp $
-@lib lib/libgoocanvasmm-2.0.so.${LIBgoocanvasmm-2.0_VERSION}
