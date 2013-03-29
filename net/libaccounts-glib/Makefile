@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/29 13:42:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/29 13:59:41 jasper Exp $
 
-COMMENT=	client library for the Accounts & SSO accounts database
+COMMENT=	accounts management library for GLib applications
 
 DISTNAME=	libaccounts-glib-1.8
+REVISION=	0
 
 SHARED_LIBS +=	accounts-glib        0.0      # 1.3
 
@@ -13,7 +14,7 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 
 HOMEPAGE=	https://accounts-sso.googlecode.com/
 
-# GPLv3
+# LGPLv2.1
 PERMIT_PACKAGE_CDROM=Yes
 
 MASTER_SITES=	${HOMEPAGE}/files/
