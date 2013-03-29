@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2012/09/27 07:43:03 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.12 2013/03/29 18:26:39 ajacoutot Exp $
 share/backgrounds/
 share/backgrounds/gnome/
 share/backgrounds/gnome/Blinds.jpg
@@ -12,10 +12,9 @@ share/backgrounds/gnome/Sandstone.jpg
 share/backgrounds/gnome/Spaceflare.jpg
 share/backgrounds/gnome/Stripes.jpg
 share/backgrounds/gnome/Stripes34.jpg
-share/backgrounds/gnome/Sunset.jpg
+share/backgrounds/gnome/Sunset.png
 share/backgrounds/gnome/Terraform-green.jpg
 share/backgrounds/gnome/Tulip.jpg
-share/backgrounds/gnome/UnderLit.jpg
 share/backgrounds/gnome/Waves.jpg
 share/backgrounds/gnome/Wood.jpg
 share/backgrounds/gnome/ZvonecKonec.jpg
@@ -262,6 +261,9 @@ share/locale/ta/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/te/
 share/locale/te/LC_MESSAGES/
 share/locale/te/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/tg/
+share/locale/tg/LC_MESSAGES/
+share/locale/tg/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/th/
 share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/gnome-backgrounds.mo
