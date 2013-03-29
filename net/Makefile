@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.796 2013/03/22 16:50:25 bcallah Exp $
+# $OpenBSD: Makefile,v 1.797 2013/03/29 13:18:30 jasper Exp $
 
      SUBDIR =
      SUBDIR += BitTorrent
@@ -177,6 +177,7 @@
      SUBDIR += ldistfp
      SUBDIR += ldns
      SUBDIR += lftp
+     SUBDIR += libaccounts-glib
      SUBDIR += libbgpdump
      SUBDIR += libcares
      SUBDIR += libdnet
