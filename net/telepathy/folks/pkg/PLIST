@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.13 2013/03/29 16:48:27 jasper Exp $
-@conflict net/telepathy/folks,-tracker
+@comment $OpenBSD: PLIST,v 1.14 2013/03/29 16:53:22 ajacoutot Exp $
+@conflict folks-meta-tracker-*
 @pkgpath net/telepathy/folks,-main
 @pkgpath net/telepathy/folks,-tracker
 @bin bin/folks-import
