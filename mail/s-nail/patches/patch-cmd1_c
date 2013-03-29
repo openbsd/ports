@@ -1,0 +1,53 @@
+$OpenBSD: patch-cmd1_c,v 1.1.1.1 2013/03/29 03:54:34 william Exp $
+
+fix bsdcompat message index, from upstream:
+cmd1.c:hprf(): fix subject length calculation..
+
+
+--- cmd1.c.orig	Fri Mar 15 07:20:17 2013
++++ cmd1.c	Wed Mar 27 14:26:05 2013
+@@ -582,9 +582,8 @@ jputc:
+ 				fromlen = ABS(n);
+ 				if (isto) /* XXX tr()! */
+ 					fromlen -= 3;
+-				fprintf(f, "%s%s", isto ? "To " : "",
++				subjlen -= fprintf(f, "%s%s", isto ? "To " : "",
+ 						colalign(name, fromlen, n));
+-				subjlen -= ABS(n);
+ 				break;
+ 			case 'd':
+ 				if (datefmt != NULL) {
+@@ -613,6 +612,7 @@ jputc:
+ 					subjlen -= fprintf(f, "%*ld", n,
+ 							mp->m_xlines);
+ 				else {
++					n = ABS(n);
+ 					subjlen -= n;
+ 					while (n--)
+ 						putc(' ', f);
+@@ -633,11 +633,12 @@ jputc:
+ 				B = 1;
+ 				/*FALLTHRU*/
+ 			case 's':
+-				n = (n != 0) ? n : subjlen - 2;
++				if (n == 0)
++					n = subjlen - 2;
+ 				if (n > 0 && s < 0)
+ 					n = -n;
+ 				if (B)
+-					n -= 2;
++					n -= (n < 0) ? -2 : 2;
+ 				if (subjline != NULL && n != 0) {
+ 					/* pretty pathetic */
+ 					fprintf(f, B ? "\"%s\"" : "%s",
+@@ -667,9 +668,8 @@ jputc:
+ 						for (i=msgCount; i>999; i/=10)
+ 							n++;
+ 				}
+-				fprintf(f, "%*ld", n, threaded ?
++				subjlen -= fprintf(f, "%*ld", n, threaded ?
+ 						mp->m_threadpos : mesg);
+-				subjlen -= n;
+ 				break;
+ 			case 'c':
+ #ifdef USE_SCORE

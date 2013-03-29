@@ -1,0 +1,5 @@
+S-nail is a fork of Heirloom mailx, formerly known as nail.  It is a mail user
+agent derived from Berkeley Mail 8.1 and is intended to provide the
+functionality of the POSIX.2 mailx command with additional support for MIME
+messages, Maildir, POP3, IMAP, SMTP, threading, spam control, and other
+features.

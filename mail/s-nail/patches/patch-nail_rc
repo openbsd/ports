@@ -1,0 +1,14 @@
+$OpenBSD: patch-nail_rc,v 1.1.1.1 2013/03/29 03:54:34 william Exp $
+
+--- nail.rc.orig	Fri Mar  3 19:01:19 2006
++++ nail.rc	Mon Apr 24 10:44:06 2006
+@@ -17,6 +17,9 @@ set append
+ # Ask for a message subject.
+ set ask
+ 
++# Use the traditional BSD Mail interface style.
++set bsdcompat
++
+ # Assume a CRT-like terminal and invoke a pager.
+ set crt
+ 

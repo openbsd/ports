@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/29 03:54:34 william Exp $
+@conflict nail-*
+@pkgpath mail/nail
+bin/nail
+@bin bin/s-nail
+@man man/man1/s-nail.1
+share/examples/s-nail/
+share/examples/s-nail/s-nail.rc
+@sample ${SYSCONFDIR}/s-nail.rc
