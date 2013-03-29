@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/03/29 06:36:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/03/29 10:04:06 ajacoutot Exp $
 share/pkgconfig/
 share/pkgconfig/yelp-xsl.pc
 share/yelp-xsl/
@@ -18,11 +18,6 @@ share/yelp-xsl/icons/hicolor/48x48/status/yelp-note-important.png
 share/yelp-xsl/icons/hicolor/48x48/status/yelp-note-tip.png
 share/yelp-xsl/icons/hicolor/48x48/status/yelp-note-warning.png
 share/yelp-xsl/icons/hicolor/48x48/status/yelp-note.png
-share/yelp-xsl/icons/hicolor/48x48/status/yelp-quote-00AB.png
-share/yelp-xsl/icons/hicolor/48x48/status/yelp-quote-00BB.png
-share/yelp-xsl/icons/hicolor/48x48/status/yelp-quote-201C.png
-share/yelp-xsl/icons/hicolor/48x48/status/yelp-quote-201D.png
-share/yelp-xsl/icons/hicolor/48x48/status/yelp-quote-201E.png
 share/yelp-xsl/icons/hicolor/scalable/
 share/yelp-xsl/icons/hicolor/scalable/status/
 share/yelp-xsl/icons/hicolor/scalable/status/yelp-note-bug.svg
@@ -106,6 +101,7 @@ share/yelp-xsl/xslt/docbook/html/db2html-inline.xsl
 share/yelp-xsl/xslt/docbook/html/db2html-l10n.xsl
 share/yelp-xsl/xslt/docbook/html/db2html-links.xsl
 share/yelp-xsl/xslt/docbook/html/db2html-list.xsl
+share/yelp-xsl/xslt/docbook/html/db2html-math.xsl
 share/yelp-xsl/xslt/docbook/html/db2html-media.xsl
 share/yelp-xsl/xslt/docbook/html/db2html-refentry.xsl
 share/yelp-xsl/xslt/docbook/html/db2html-suppressed.xsl
@@ -113,14 +109,6 @@ share/yelp-xsl/xslt/docbook/html/db2html-table.xsl
 share/yelp-xsl/xslt/docbook/html/db2html-xref.xsl
 share/yelp-xsl/xslt/docbook/html/db2html.xsl
 share/yelp-xsl/xslt/docbook/html/db2xhtml.xsl
-share/yelp-xsl/xslt/docbook/omf/
-share/yelp-xsl/xslt/docbook/omf/db2omf.xsl
-share/yelp-xsl/xslt/docbook/utils/
-share/yelp-xsl/xslt/docbook/utils/chunks.xsl
-share/yelp-xsl/xslt/docbook/utils/credits.xsl
-share/yelp-xsl/xslt/docbook/utils/figures.xsl
-share/yelp-xsl/xslt/docbook/utils/graphics.xsl
-share/yelp-xsl/xslt/docbook/utils/ids.xsl
 share/yelp-xsl/xslt/mallard/
 share/yelp-xsl/xslt/mallard/cache/
 share/yelp-xsl/xslt/mallard/cache/mal-cache.xsl
@@ -137,6 +125,7 @@ share/yelp-xsl/xslt/mallard/html/mal2html-gloss.xsl
 share/yelp-xsl/xslt/mallard/html/mal2html-inline.xsl
 share/yelp-xsl/xslt/mallard/html/mal2html-links.xsl
 share/yelp-xsl/xslt/mallard/html/mal2html-list.xsl
+share/yelp-xsl/xslt/mallard/html/mal2html-math.xsl
 share/yelp-xsl/xslt/mallard/html/mal2html-media.xsl
 share/yelp-xsl/xslt/mallard/html/mal2html-page.xsl
 share/yelp-xsl/xslt/mallard/html/mal2html-svg.xsl
