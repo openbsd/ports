@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/29 16:46:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2013/03/29 16:49:15 ajacoutot Exp $
 
 COMMENT=		window and compositing manager
 
@@ -32,8 +32,11 @@ LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			devel/startup-notification \
 			graphics/clutter/core>=1.14.0 \
 			devel/gobject-introspection
-BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		devel/gsettings-desktop-schemas>=3.4.2p0 \
+
+BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
+			x11/gnome/zenity
+
+RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			x11/gnome/themes-standard \
 			x11/gnome/zenity
 
