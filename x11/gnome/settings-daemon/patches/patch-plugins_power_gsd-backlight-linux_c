@@ -1,0 +1,15 @@
+$OpenBSD: patch-plugins_power_gsd-backlight-linux_c,v 1.1 2013/03/29 14:17:25 ajacoutot Exp $
+
+error: 'NULL' undeclared (first use in this function)
+
+--- plugins/power/gsd-backlight-linux.c.orig	Fri Mar 29 15:02:24 2013
++++ plugins/power/gsd-backlight-linux.c	Fri Mar 29 15:05:35 2013
+@@ -23,6 +23,8 @@
+ 
+ #include "gsd-backlight-linux.h"
+ 
++#include <stdlib.h>
++
+ #ifdef HAVE_GUDEV
+ #include <gudev/gudev.h>
+ 
