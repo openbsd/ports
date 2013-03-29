@@ -1,0 +1,53 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/29 13:16:17 jasper Exp $
+@bin bin/ag-backup
+@bin bin/ag-tool
+include/libaccounts-glib/
+include/libaccounts-glib/accounts-glib.h
+include/libaccounts-glib/ag-account-service.h
+include/libaccounts-glib/ag-account.h
+include/libaccounts-glib/ag-application.h
+include/libaccounts-glib/ag-auth-data.h
+include/libaccounts-glib/ag-errors.h
+include/libaccounts-glib/ag-manager.h
+include/libaccounts-glib/ag-provider.h
+include/libaccounts-glib/ag-service-type.h
+include/libaccounts-glib/ag-service.h
+include/libaccounts-glib/ag-types.h
+lib/girepository-1.0/
+lib/girepository-1.0/Accounts-1.0.typelib
+lib/libaccounts-glib.a
+lib/libaccounts-glib.la
+@lib lib/libaccounts-glib.so.${LIBaccounts-glib_VERSION}
+lib/pkgconfig/libaccounts-glib.pc
+lib/python${MODPY_VERSION}/site-packages/gi/
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/Accounts.py
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/Accounts.pyc
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/Accounts.pyo
+share/backup-framework/
+share/backup-framework/applications/
+share/backup-framework/applications/accounts.conf
+share/gir-1.0/
+share/gir-1.0/Accounts-1.0.gir
+share/gtk-doc/html/libaccounts-glib/
+share/gtk-doc/html/libaccounts-glib/AgAccount.html
+share/gtk-doc/html/libaccounts-glib/AgAccountService.html
+share/gtk-doc/html/libaccounts-glib/AgApplication.html
+share/gtk-doc/html/libaccounts-glib/AgAuthData.html
+share/gtk-doc/html/libaccounts-glib/AgManager.html
+share/gtk-doc/html/libaccounts-glib/AgProvider.html
+share/gtk-doc/html/libaccounts-glib/AgService.html
+share/gtk-doc/html/libaccounts-glib/AgServiceType.html
+share/gtk-doc/html/libaccounts-glib/annotation-glossary.html
+share/gtk-doc/html/libaccounts-glib/api-index-deprecated.html
+share/gtk-doc/html/libaccounts-glib/api-index-full.html
+share/gtk-doc/html/libaccounts-glib/home.png
+share/gtk-doc/html/libaccounts-glib/index.html
+share/gtk-doc/html/libaccounts-glib/index.sgml
+share/gtk-doc/html/libaccounts-glib/left.png
+share/gtk-doc/html/libaccounts-glib/libaccounts-glib.devhelp2
+share/gtk-doc/html/libaccounts-glib/libaccounts-glib.html
+share/gtk-doc/html/libaccounts-glib/object-tree.html
+share/gtk-doc/html/libaccounts-glib/right.png
+share/gtk-doc/html/libaccounts-glib/style.css
+share/gtk-doc/html/libaccounts-glib/up.png

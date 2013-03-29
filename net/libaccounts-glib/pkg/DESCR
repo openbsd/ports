@@ -1,0 +1,4 @@
+Accounts & SSO is a framework consists of a set of components and
+libraries which implement an account manager for a user's online
+accounts and a single-sign-on daemon which handles the authentication to
+the remote services on behalf of the client applications.
