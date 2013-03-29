@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.20 2013/03/29 15:38:26 jasper Exp $
-@pkgpath ${BASE_PKGPATH}
+@comment $OpenBSD: PLIST,v 1.21 2013/03/29 16:17:31 ajacoutot Exp $
+@conflict nautilus-file-roller-*
 @pkgpath x11/gnome/file-roller,-main
 @pkgpath x11/gnome/file-roller,-nautilus
 @bin bin/file-roller
