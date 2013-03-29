@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/29 13:16:17 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/03/29 13:24:23 ajacoutot Exp $
 @bin bin/ag-backup
 @bin bin/ag-tool
 include/libaccounts-glib/
@@ -13,21 +13,17 @@ include/libaccounts-glib/ag-provider.h
 include/libaccounts-glib/ag-service-type.h
 include/libaccounts-glib/ag-service.h
 include/libaccounts-glib/ag-types.h
-lib/girepository-1.0/
 lib/girepository-1.0/Accounts-1.0.typelib
 lib/libaccounts-glib.a
 lib/libaccounts-glib.la
 @lib lib/libaccounts-glib.so.${LIBaccounts-glib_VERSION}
 lib/pkgconfig/libaccounts-glib.pc
-lib/python${MODPY_VERSION}/site-packages/gi/
-lib/python${MODPY_VERSION}/site-packages/gi/overrides/
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Accounts.py
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Accounts.pyc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Accounts.pyo
 share/backup-framework/
 share/backup-framework/applications/
 share/backup-framework/applications/accounts.conf
-share/gir-1.0/
 share/gir-1.0/Accounts-1.0.gir
 share/gtk-doc/html/libaccounts-glib/
 share/gtk-doc/html/libaccounts-glib/AgAccount.html
