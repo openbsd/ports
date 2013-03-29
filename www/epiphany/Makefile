@@ -1,20 +1,14 @@
-# $OpenBSD: Makefile,v 1.88 2013/03/11 11:44:41 espie Exp $
+# $OpenBSD: Makefile,v 1.89 2013/03/29 15:29:28 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	GNOME web browser based on webkit
 
-# PLIST regen is needed for at least the following ports when
-# the epiphany extensions directory changes:
-# (i.e. ${LOCALBASE}/lib/epiphany/${M}/extensions)
-# www/epiphany-extensions
-
 GNOME_PROJECT=	epiphany
 GNOME_VERSION=	3.4.3
 REVISION=	6
 
-# NOTE: when M changes, increment M accordingly and bump:
-# www/epiphany-extensions
+# NOTE: when M changes, increment M accordingly
 M=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=	M
 
