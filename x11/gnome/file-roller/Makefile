@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2013/03/29 16:17:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.83 2013/03/29 16:58:30 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -44,8 +44,6 @@ LIB_DEPENDS=	archivers/libarchive \
 
 MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=	Yes
-
-CONFIGURE_ARGS=	--disable-packagekit
 
 post-install:
 	rm ${PREFIX}/lib/nautilus/extensions-3.0/*.{a,la}

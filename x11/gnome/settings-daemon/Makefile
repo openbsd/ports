@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2013/03/29 16:04:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.96 2013/03/29 16:58:30 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -65,7 +65,6 @@ MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
 CONFIGURE_ARGS=	--disable-static \
-		--disable-packagekit \
 		--disable-gudev
 
 FAKE_FLAGS=	desktopdir=${PREFIX}/share/examples/gnome-settings-daemon/xdg/autostart \
