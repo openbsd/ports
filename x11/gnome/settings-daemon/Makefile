@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2013/03/29 14:17:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.95 2013/03/29 16:04:14 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	GNOME settings daemon
 
 GNOME_PROJECT=	gnome-settings-daemon
 GNOME_VERSION=	3.8.0
+REVISION=	0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -51,6 +52,10 @@ RUN_DEPENDS += x11/gnome/mousetweaks
 # otherwise we end up without icons on minimal install
 RUN_DEPENDS +=	x11/gnome/icon-theme
 
+# plugins/power/gsd-power-manager.c; optional dependency
+# cyclic dep: gnome-session -> gnome-settings-daemon -> gnome-session
+#RUN_DEPENDS +=	x11/gnome/session
+
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 
@@ -66,6 +71,11 @@ CONFIGURE_ARGS=	--disable-static \
 FAKE_FLAGS=	desktopdir=${PREFIX}/share/examples/gnome-settings-daemon/xdg/autostart \
 		sysconfdir=${PREFIX}/share/examples/gnome-settings-daemon \
 		DBUS_SYS_DIR=${PREFIX}/share/examples/gnome-settings-daemon/dbus-1/system.d
+
+pre-configure:
+	perl -pi -e 's,/etc/xdg,${SYSCONFDIR}/xdg,g;' \
+		-e 's,/usr/share,${LOCALBASE}/share,g' \
+		${WRKSRC}/man/gnome-settings-daemon.xml
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/*.gschema.override \
