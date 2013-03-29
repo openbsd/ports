@@ -1,10 +1,10 @@
-$OpenBSD: patch-libyelp_yelp-view_c,v 1.2 2012/03/29 06:41:05 ajacoutot Exp $
+$OpenBSD: patch-libyelp_yelp-view_c,v 1.3 2013/03/29 14:31:14 ajacoutot Exp $
 
 No PackageKit on OpenBSD.
 
---- libyelp/yelp-view.c.orig	Wed Feb 29 03:30:23 2012
-+++ libyelp/yelp-view.c	Fri Mar 23 22:06:09 2012
-@@ -1731,10 +1731,12 @@ view_show_error_page (YelpView *view,
+--- libyelp/yelp-view.c.orig	Wed Dec 19 16:46:35 2012
++++ libyelp/yelp-view.c	Fri Mar 29 15:18:04 2013
+@@ -1734,10 +1734,12 @@ view_show_error_page (YelpView *view,
              scheme = "ghelp";
              pkg = struri + 6;
          }
