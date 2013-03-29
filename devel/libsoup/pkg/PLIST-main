@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.17 2013/01/15 07:11:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.18 2013/03/29 10:08:49 ajacoutot Exp $
 @pkgpath devel/libsoup
 @pkgpath devel/libsoup,ssl
 include/libsoup-${API_VERSION}/
@@ -7,10 +7,12 @@ include/libsoup-${API_VERSION}/libsoup/soup-address.h
 include/libsoup-${API_VERSION}/libsoup/soup-auth-domain-basic.h
 include/libsoup-${API_VERSION}/libsoup/soup-auth-domain-digest.h
 include/libsoup-${API_VERSION}/libsoup/soup-auth-domain.h
+include/libsoup-${API_VERSION}/libsoup/soup-auth-manager.h
 include/libsoup-${API_VERSION}/libsoup/soup-auth.h
 include/libsoup-${API_VERSION}/libsoup/soup-cache.h
 include/libsoup-${API_VERSION}/libsoup/soup-content-decoder.h
 include/libsoup-${API_VERSION}/libsoup/soup-content-sniffer.h
+include/libsoup-${API_VERSION}/libsoup/soup-cookie-jar-db.h
 include/libsoup-${API_VERSION}/libsoup/soup-cookie-jar-text.h
 include/libsoup-${API_VERSION}/libsoup/soup-cookie-jar.h
 include/libsoup-${API_VERSION}/libsoup/soup-cookie.h
@@ -47,6 +49,7 @@ include/libsoup-${API_VERSION}/libsoup/soup-tld.h
 include/libsoup-${API_VERSION}/libsoup/soup-types.h
 include/libsoup-${API_VERSION}/libsoup/soup-uri.h
 include/libsoup-${API_VERSION}/libsoup/soup-value-utils.h
+include/libsoup-${API_VERSION}/libsoup/soup-version.h
 include/libsoup-${API_VERSION}/libsoup/soup-xmlrpc.h
 include/libsoup-${API_VERSION}/libsoup/soup.h
 lib/girepository-1.0/Soup-${API_VERSION}.typelib
@@ -61,11 +64,13 @@ share/gtk-doc/html/libsoup-${API_VERSION}/SoupAuth.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupAuthDomain.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupAuthDomainBasic.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupAuthDomainDigest.html
+share/gtk-doc/html/libsoup-${API_VERSION}/SoupAuthManager.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupCache.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupContentDecoder.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupContentSniffer.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupCookie.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupCookieJar.html
+share/gtk-doc/html/libsoup-${API_VERSION}/SoupCookieJarDB.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupCookieJarText.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupLogger.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupMessage.html
@@ -92,8 +97,6 @@ share/gtk-doc/html/libsoup-${API_VERSION}/ch02.html
 share/gtk-doc/html/libsoup-${API_VERSION}/ch03.html
 share/gtk-doc/html/libsoup-${API_VERSION}/ch04.html
 share/gtk-doc/html/libsoup-${API_VERSION}/ch05.html
-share/gtk-doc/html/libsoup-${API_VERSION}/ch06.html
-share/gtk-doc/html/libsoup-${API_VERSION}/ch07.html
 share/gtk-doc/html/libsoup-${API_VERSION}/home.png
 share/gtk-doc/html/libsoup-${API_VERSION}/index.html
 share/gtk-doc/html/libsoup-${API_VERSION}/index.sgml
@@ -102,20 +105,20 @@ share/gtk-doc/html/libsoup-${API_VERSION}/left.png
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-GValue-Support.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-HTML-Form-Support.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-Soup-Miscellaneous-Utilities.html
-share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-SoupCookieJarSqlite.html
-share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-SoupRequester.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-Top-Level-Domain-utils.html
+share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-Version-Information.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-XMLRPC-Support.html
-share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-soup-gnome-features.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-soup-method.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-soup-status.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}.devhelp2
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-build-howto.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-client-howto.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-server-howto.html
+share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-session-porting.html
 share/gtk-doc/html/libsoup-${API_VERSION}/right.png
 share/gtk-doc/html/libsoup-${API_VERSION}/style.css
 share/gtk-doc/html/libsoup-${API_VERSION}/up.png
+share/locale/an/LC_MESSAGES/libsoup.mo
 share/locale/as/LC_MESSAGES/libsoup.mo
 share/locale/be/LC_MESSAGES/libsoup.mo
 share/locale/bg/LC_MESSAGES/libsoup.mo
@@ -164,6 +167,7 @@ share/locale/sr@latin/LC_MESSAGES/libsoup.mo
 share/locale/sv/LC_MESSAGES/libsoup.mo
 share/locale/ta/LC_MESSAGES/libsoup.mo
 share/locale/te/LC_MESSAGES/libsoup.mo
+share/locale/tg/LC_MESSAGES/libsoup.mo
 share/locale/th/LC_MESSAGES/libsoup.mo
 share/locale/tr/LC_MESSAGES/libsoup.mo
 share/locale/ug/LC_MESSAGES/libsoup.mo
