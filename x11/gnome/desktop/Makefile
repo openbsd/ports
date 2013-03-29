@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2013/03/29 12:29:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.98 2013/03/29 14:43:31 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,6 +7,7 @@ COMMENT=		components for the GNOME desktop
 GNOME_PROJECT=		gnome-desktop
 # sync with meta/gnome "V" variable
 GNOME_VERSION=		3.8.0.1
+REVISION=		0
 
 SHARED_LIBS +=  gnome-desktop-3      2.0      # 4.0
 
@@ -27,8 +28,10 @@ WANTLIB += xkbfile z
 MODULES=		devel/gettext \
 			x11/gnome
 
-BUILD_DEPENDS=		devel/gsettings-desktop-schemas
-RUN_DEPENDS=		devel/gsettings-desktop-schemas
+BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
+			devel/iso-codes
+RUN_DEPENDS=		devel/gsettings-desktop-schemas \
+			devel/iso-codes
 LIB_DEPENDS=		x11/gtk+3
 
 MODGNOME_TOOLS= 	goi yelp
