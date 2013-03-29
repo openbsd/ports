@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.42 2012/10/17 08:50:40 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.43 2013/03/29 07:49:30 ajacoutot Exp $
 @unexec-delete rm -f %D/share/icons/gnome/icon-theme.cache
 share/examples/gnome-icon-theme/
 share/examples/gnome-icon-theme/gtk-2.0/
@@ -427,6 +427,10 @@ share/icons/gnome/16x16/apps/preferences-desktop-remote-desktop.png
 share/icons/gnome/16x16/apps/preferences-desktop-screensaver.png
 share/icons/gnome/16x16/apps/preferences-desktop-theme.png
 share/icons/gnome/16x16/apps/preferences-desktop-wallpaper.png
+share/icons/gnome/16x16/apps/preferences-system-notifications.png
+share/icons/gnome/16x16/apps/preferences-system-privacy.png
+share/icons/gnome/16x16/apps/preferences-system-search.png
+share/icons/gnome/16x16/apps/preferences-system-sharing.png
 share/icons/gnome/16x16/apps/preferences-system-windows.png
 share/icons/gnome/16x16/apps/redhat-filemanager.png
 share/icons/gnome/16x16/apps/screensaver.png
@@ -534,6 +538,7 @@ share/icons/gnome/16x16/devices/computer.png
 share/icons/gnome/16x16/devices/display.png
 share/icons/gnome/16x16/devices/drive-cdrom.png
 share/icons/gnome/16x16/devices/drive-harddisk.png
+share/icons/gnome/16x16/devices/drive-multidisk.png
 share/icons/gnome/16x16/devices/drive-optical.png
 share/icons/gnome/16x16/devices/drive-removable-media.png
 share/icons/gnome/16x16/devices/dvd_unmount.png
@@ -978,6 +983,7 @@ share/icons/gnome/16x16/status/microphone-sensitivity-high.png
 share/icons/gnome/16x16/status/microphone-sensitivity-low.png
 share/icons/gnome/16x16/status/microphone-sensitivity-medium.png
 share/icons/gnome/16x16/status/microphone-sensitivity-muted.png
+share/icons/gnome/16x16/status/network-cellular-connected.png
 share/icons/gnome/16x16/status/network-error.png
 share/icons/gnome/16x16/status/network-idle.png
 share/icons/gnome/16x16/status/network-offline.png
@@ -1475,6 +1481,10 @@ share/icons/gnome/22x22/apps/preferences-desktop-remote-desktop.png
 share/icons/gnome/22x22/apps/preferences-desktop-screensaver.png
 share/icons/gnome/22x22/apps/preferences-desktop-theme.png
 share/icons/gnome/22x22/apps/preferences-desktop-wallpaper.png
+share/icons/gnome/22x22/apps/preferences-system-notifications.png
+share/icons/gnome/22x22/apps/preferences-system-privacy.png
+share/icons/gnome/22x22/apps/preferences-system-search.png
+share/icons/gnome/22x22/apps/preferences-system-sharing.png
 share/icons/gnome/22x22/apps/preferences-system-windows.png
 share/icons/gnome/22x22/apps/redhat-filemanager.png
 share/icons/gnome/22x22/apps/screensaver.png
@@ -1582,6 +1592,7 @@ share/icons/gnome/22x22/devices/computer.png
 share/icons/gnome/22x22/devices/display.png
 share/icons/gnome/22x22/devices/drive-cdrom.png
 share/icons/gnome/22x22/devices/drive-harddisk.png
+share/icons/gnome/22x22/devices/drive-multidisk.png
 share/icons/gnome/22x22/devices/drive-optical.png
 share/icons/gnome/22x22/devices/drive-removable-media.png
 share/icons/gnome/22x22/devices/dvd_unmount.png
@@ -2026,6 +2037,7 @@ share/icons/gnome/22x22/status/microphone-sensitivity-high.png
 share/icons/gnome/22x22/status/microphone-sensitivity-low.png
 share/icons/gnome/22x22/status/microphone-sensitivity-medium.png
 share/icons/gnome/22x22/status/microphone-sensitivity-muted.png
+share/icons/gnome/22x22/status/network-cellular-connected.png
 share/icons/gnome/22x22/status/network-error.png
 share/icons/gnome/22x22/status/network-idle.png
 share/icons/gnome/22x22/status/network-offline.png
@@ -2520,6 +2532,7 @@ share/icons/gnome/24x24/apps/preferences-desktop-remote-desktop.png
 share/icons/gnome/24x24/apps/preferences-desktop-screensaver.png
 share/icons/gnome/24x24/apps/preferences-desktop-theme.png
 share/icons/gnome/24x24/apps/preferences-desktop-wallpaper.png
+share/icons/gnome/24x24/apps/preferences-system-privacy.png
 share/icons/gnome/24x24/apps/preferences-system-windows.png
 share/icons/gnome/24x24/apps/redhat-filemanager.png
 share/icons/gnome/24x24/apps/screensaver.png
@@ -2627,6 +2640,7 @@ share/icons/gnome/24x24/devices/computer.png
 share/icons/gnome/24x24/devices/display.png
 share/icons/gnome/24x24/devices/drive-cdrom.png
 share/icons/gnome/24x24/devices/drive-harddisk.png
+share/icons/gnome/24x24/devices/drive-multidisk.png
 share/icons/gnome/24x24/devices/drive-optical.png
 share/icons/gnome/24x24/devices/drive-removable-media.png
 share/icons/gnome/24x24/devices/dvd_unmount.png
@@ -2733,6 +2747,7 @@ share/icons/gnome/24x24/emblems/emblem-photos.png
 share/icons/gnome/24x24/emblems/emblem-readonly.png
 share/icons/gnome/24x24/emblems/emblem-shared.png
 share/icons/gnome/24x24/emblems/emblem-symbolic-link.png
+share/icons/gnome/24x24/emblems/emblem-synchronizing.png
 share/icons/gnome/24x24/emblems/emblem-system.png
 share/icons/gnome/24x24/emblems/emblem-unreadable.png
 share/icons/gnome/24x24/emblems/emblem-urgent.png
@@ -3070,6 +3085,7 @@ share/icons/gnome/24x24/status/microphone-sensitivity-high.png
 share/icons/gnome/24x24/status/microphone-sensitivity-low.png
 share/icons/gnome/24x24/status/microphone-sensitivity-medium.png
 share/icons/gnome/24x24/status/microphone-sensitivity-muted.png
+share/icons/gnome/24x24/status/network-cellular-connected.png
 share/icons/gnome/24x24/status/network-error.png
 share/icons/gnome/24x24/status/network-idle.png
 share/icons/gnome/24x24/status/network-offline.png
@@ -3189,6 +3205,7 @@ share/icons/gnome/256x256/actions/gnome-lockscreen.png
 share/icons/gnome/256x256/actions/gnome-logout.png
 share/icons/gnome/256x256/actions/gnome-run.png
 share/icons/gnome/256x256/actions/gnome-searchtool.png
+share/icons/gnome/256x256/actions/gnome-shutdown.png
 share/icons/gnome/256x256/actions/gnome-stock-mail-new.png
 share/icons/gnome/256x256/actions/go-first-rtl.png
 share/icons/gnome/256x256/actions/go-first.png
@@ -3267,6 +3284,7 @@ share/icons/gnome/256x256/actions/system-lock-screen.png
 share/icons/gnome/256x256/actions/system-log-out.png
 share/icons/gnome/256x256/actions/system-run.png
 share/icons/gnome/256x256/actions/system-search.png
+share/icons/gnome/256x256/actions/system-shutdown.png
 share/icons/gnome/256x256/actions/view-refresh.png
 share/icons/gnome/256x256/actions/xfce-system-lock.png
 share/icons/gnome/256x256/apps/
@@ -3324,6 +3342,10 @@ share/icons/gnome/256x256/apps/preferences-desktop-remote-desktop.png
 share/icons/gnome/256x256/apps/preferences-desktop-screensaver.png
 share/icons/gnome/256x256/apps/preferences-desktop-theme.png
 share/icons/gnome/256x256/apps/preferences-desktop-wallpaper.png
+share/icons/gnome/256x256/apps/preferences-system-notifications.png
+share/icons/gnome/256x256/apps/preferences-system-privacy.png
+share/icons/gnome/256x256/apps/preferences-system-search.png
+share/icons/gnome/256x256/apps/preferences-system-sharing.png
 share/icons/gnome/256x256/apps/redhat-filemanager.png
 share/icons/gnome/256x256/apps/screensaver.png
 share/icons/gnome/256x256/apps/style.png
@@ -3379,6 +3401,7 @@ share/icons/gnome/256x256/categories/xfce-internet.png
 share/icons/gnome/256x256/categories/xfce-office.png
 share/icons/gnome/256x256/categories/xfce-system-settings.png
 share/icons/gnome/256x256/devices/
+share/icons/gnome/256x256/devices/3floppy_unmount.png
 share/icons/gnome/256x256/devices/ac-adapter.png
 share/icons/gnome/256x256/devices/audio-input-microphone.png
 share/icons/gnome/256x256/devices/audio-speakers.png
@@ -3394,6 +3417,7 @@ share/icons/gnome/256x256/devices/computer.png
 share/icons/gnome/256x256/devices/display.png
 share/icons/gnome/256x256/devices/drive-cdrom.png
 share/icons/gnome/256x256/devices/drive-harddisk.png
+share/icons/gnome/256x256/devices/drive-multidisk.png
 share/icons/gnome/256x256/devices/drive-optical.png
 share/icons/gnome/256x256/devices/drive-removable-media.png
 share/icons/gnome/256x256/devices/dvd_unmount.png
@@ -3409,6 +3433,7 @@ share/icons/gnome/256x256/devices/gnome-dev-disc-dvdram.png
 share/icons/gnome/256x256/devices/gnome-dev-disc-dvdrom.png
 share/icons/gnome/256x256/devices/gnome-dev-disc-dvdrw.png
 share/icons/gnome/256x256/devices/gnome-dev-dvd.png
+share/icons/gnome/256x256/devices/gnome-dev-floppy.png
 share/icons/gnome/256x256/devices/gnome-dev-harddisk-1394.png
 share/icons/gnome/256x256/devices/gnome-dev-harddisk-usb.png
 share/icons/gnome/256x256/devices/gnome-dev-harddisk.png
@@ -3427,6 +3452,7 @@ share/icons/gnome/256x256/devices/gnome-dev-removable.png
 share/icons/gnome/256x256/devices/gnome-fs-client.png
 share/icons/gnome/256x256/devices/gnome-stock-mic.png
 share/icons/gnome/256x256/devices/gtk-cdrom.png
+share/icons/gnome/256x256/devices/gtk-floppy.png
 share/icons/gnome/256x256/devices/gtk-harddisk.png
 share/icons/gnome/256x256/devices/harddrive.png
 share/icons/gnome/256x256/devices/hdd_unmount.png
@@ -3440,6 +3466,7 @@ share/icons/gnome/256x256/devices/kjobviewer.png
 share/icons/gnome/256x256/devices/kxkb.png
 share/icons/gnome/256x256/devices/media-cdrom.png
 share/icons/gnome/256x256/devices/media-flash.png
+share/icons/gnome/256x256/devices/media-floppy.png
 share/icons/gnome/256x256/devices/media-optical.png
 share/icons/gnome/256x256/devices/media-removable.png
 share/icons/gnome/256x256/devices/mouse.png
@@ -3454,6 +3481,7 @@ share/icons/gnome/256x256/devices/scanner.png
 share/icons/gnome/256x256/devices/stock_cell-phone.png
 share/icons/gnome/256x256/devices/stock_mic.png
 share/icons/gnome/256x256/devices/stock_printers.png
+share/icons/gnome/256x256/devices/system-floppy.png
 share/icons/gnome/256x256/devices/system.png
 share/icons/gnome/256x256/devices/uninterruptible-power-supply.png
 share/icons/gnome/256x256/devices/usbpendrive_unmount.png
@@ -3777,6 +3805,7 @@ share/icons/gnome/256x256/status/mail-read.png
 share/icons/gnome/256x256/status/messagebox_critical.png
 share/icons/gnome/256x256/status/messagebox_info.png
 share/icons/gnome/256x256/status/messagebox_warning.png
+share/icons/gnome/256x256/status/network-cellular-connected.png
 share/icons/gnome/256x256/status/network-error.png
 share/icons/gnome/256x256/status/network-idle.png
 share/icons/gnome/256x256/status/network-offline.png
@@ -4242,6 +4271,10 @@ share/icons/gnome/32x32/apps/preferences-desktop-remote-desktop.png
 share/icons/gnome/32x32/apps/preferences-desktop-screensaver.png
 share/icons/gnome/32x32/apps/preferences-desktop-theme.png
 share/icons/gnome/32x32/apps/preferences-desktop-wallpaper.png
+share/icons/gnome/32x32/apps/preferences-system-notifications.png
+share/icons/gnome/32x32/apps/preferences-system-privacy.png
+share/icons/gnome/32x32/apps/preferences-system-search.png
+share/icons/gnome/32x32/apps/preferences-system-sharing.png
 share/icons/gnome/32x32/apps/preferences-system-windows.png
 share/icons/gnome/32x32/apps/redhat-filemanager.png
 share/icons/gnome/32x32/apps/screensaver.png
@@ -4349,6 +4382,7 @@ share/icons/gnome/32x32/devices/computer.png
 share/icons/gnome/32x32/devices/display.png
 share/icons/gnome/32x32/devices/drive-cdrom.png
 share/icons/gnome/32x32/devices/drive-harddisk.png
+share/icons/gnome/32x32/devices/drive-multidisk.png
 share/icons/gnome/32x32/devices/drive-optical.png
 share/icons/gnome/32x32/devices/drive-removable-media.png
 share/icons/gnome/32x32/devices/dvd_unmount.png
@@ -4790,6 +4824,7 @@ share/icons/gnome/32x32/status/microphone-sensitivity-high.png
 share/icons/gnome/32x32/status/microphone-sensitivity-low.png
 share/icons/gnome/32x32/status/microphone-sensitivity-medium.png
 share/icons/gnome/32x32/status/microphone-sensitivity-muted.png
+share/icons/gnome/32x32/status/network-cellular-connected.png
 share/icons/gnome/32x32/status/network-error.png
 share/icons/gnome/32x32/status/network-idle.png
 share/icons/gnome/32x32/status/network-offline.png
@@ -5283,6 +5318,10 @@ share/icons/gnome/48x48/apps/preferences-desktop-remote-desktop.png
 share/icons/gnome/48x48/apps/preferences-desktop-screensaver.png
 share/icons/gnome/48x48/apps/preferences-desktop-theme.png
 share/icons/gnome/48x48/apps/preferences-desktop-wallpaper.png
+share/icons/gnome/48x48/apps/preferences-system-notifications.png
+share/icons/gnome/48x48/apps/preferences-system-privacy.png
+share/icons/gnome/48x48/apps/preferences-system-search.png
+share/icons/gnome/48x48/apps/preferences-system-sharing.png
 share/icons/gnome/48x48/apps/preferences-system-windows.png
 share/icons/gnome/48x48/apps/redhat-filemanager.png
 share/icons/gnome/48x48/apps/screensaver.png
@@ -5390,6 +5429,7 @@ share/icons/gnome/48x48/devices/computer.png
 share/icons/gnome/48x48/devices/display.png
 share/icons/gnome/48x48/devices/drive-cdrom.png
 share/icons/gnome/48x48/devices/drive-harddisk.png
+share/icons/gnome/48x48/devices/drive-multidisk.png
 share/icons/gnome/48x48/devices/drive-optical.png
 share/icons/gnome/48x48/devices/drive-removable-media.png
 share/icons/gnome/48x48/devices/dvd_unmount.png
@@ -5832,6 +5872,7 @@ share/icons/gnome/48x48/status/microphone-sensitivity-high.png
 share/icons/gnome/48x48/status/microphone-sensitivity-low.png
 share/icons/gnome/48x48/status/microphone-sensitivity-medium.png
 share/icons/gnome/48x48/status/microphone-sensitivity-muted.png
+share/icons/gnome/48x48/status/network-cellular-connected.png
 share/icons/gnome/48x48/status/network-error.png
 share/icons/gnome/48x48/status/network-idle.png
 share/icons/gnome/48x48/status/network-offline.png
