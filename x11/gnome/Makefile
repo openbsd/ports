@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.199 2013/03/28 14:55:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.200 2013/03/29 08:16:26 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -107,7 +107,6 @@
      SUBDIR += tweak-tool
      SUBDIR += user-docs
      SUBDIR += vfs2
-     SUBDIR += video-arcade
      SUBDIR += video-effects
      SUBDIR += vinagre
      SUBDIR += vino
