@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.209 2013/03/30 12:15:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.210 2013/03/30 18:08:30 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -45,7 +45,7 @@
      SUBDIR += grilo-mediaserver2
      SUBDIR += grilo-plugins
      SUBDIR += gucharmap
-     SUBDIR += gvfs
+     SUBDIR += gvfs,
      SUBDIR += icon-theme
      SUBDIR += icon-theme-extras
      SUBDIR += icon-theme-symbolic
