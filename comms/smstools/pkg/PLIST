@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/05/11 06:22:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/03/30 22:18:20 sthen Exp $
 @conflict gnokii-*
 @newgroup _smsd:590
 @newuser _smsd:590:_smsd:daemon:smsd user:/nonexistent:/sbin/nologin
@@ -100,6 +100,7 @@ share/examples/smstools/smsd.conf.openbsd
 @sample /var/spool/sms/incoming/
 @sample /var/spool/sms/checked/
 @sample /var/spool/sms/outgoing/
+@mode
 @owner
 @group
 @rcscript ${RCDIR}/smsd
