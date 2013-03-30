@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 10:50:01 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/03/30 21:30:18 sthen Exp $
 
 VERSION=	1.11
+REVISION=	0
 DISTNAME=	automake-${VERSION}.6
 PKGSPEC=	automake->=${VERSION},<1.12
 
