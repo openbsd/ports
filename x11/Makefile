@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.510 2013/03/27 14:08:01 bcallah Exp $
+# $OpenBSD: Makefile,v 1.511 2013/03/30 00:16:34 bcallah Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -56,7 +56,6 @@
      SUBDIR += fbpanel
      SUBDIR += fleditor
      SUBDIR += fltk
-     SUBDIR += fltk2
      SUBDIR += fluxbox
      SUBDIR += fluxter
      SUBDIR += flvw
