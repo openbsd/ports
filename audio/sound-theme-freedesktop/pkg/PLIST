@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/05/23 14:20:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/03/30 10:54:06 ajacoutot Exp $
 share/sounds/
 share/sounds/freedesktop/
 share/sounds/freedesktop/index.theme
@@ -17,8 +17,6 @@ share/sounds/freedesktop/stereo/audio-volume-change.oga
 share/sounds/freedesktop/stereo/bell.oga
 share/sounds/freedesktop/stereo/camera-shutter.oga
 share/sounds/freedesktop/stereo/complete.oga
-share/sounds/freedesktop/stereo/desktop-login.oga
-share/sounds/freedesktop/stereo/desktop-logout.oga
 share/sounds/freedesktop/stereo/device-added.oga
 share/sounds/freedesktop/stereo/device-removed.oga
 share/sounds/freedesktop/stereo/dialog-error.oga

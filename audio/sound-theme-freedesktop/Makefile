@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/10 22:55:05 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/03/30 10:54:06 ajacoutot Exp $
 
 COMMENT=	XDG sound theme
 
 DISTNAME=	sound-theme-freedesktop-0.8
 CATEGORIES=	audio
+REVISION=	0
 
 EXTRACT_SUFX=	.tar.bz2
 
@@ -23,10 +24,5 @@ USE_GMAKE=	Yes
 NO_TEST=	Yes
 
 CONFIGURE_STYLE=gnu
-
-post-install:
-	cd ${PREFIX}/share/sounds/freedesktop/stereo && \
-		ln -sf service-login.oga desktop-login.oga && \
-		ln -sf service-logout.oga desktop-logout.oga
 
 .include <bsd.port.mk>
