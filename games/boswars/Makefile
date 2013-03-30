@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 11:07:38 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/30 08:31:56 brad Exp $
 
 COMMENT=	real-time strategy game
 
 V=		2.6.1
 DISTNAME=	boswars-${V}-src
 PKGNAME=	boswars-${V}
-REVISION=	3
+REVISION=	4
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.boswars.org/
@@ -15,13 +15,12 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	http://www.boswars.org/dist/releases/
 
-WANTLIB=	GL X11 c m ogg pthread stdc++ z SDL>=7 ${MODLUA_WANTLIB}
-WANTLIB +=	theora>=2 vorbis>=5 png>=5
+WANTLIB +=	GL SDL X11 c m ogg png pthread stdc++ theora vorbis z
+WANTLIB +=	${MODLUA_WANTLIB}
 
 MODULES=	devel/scons \
 		lang/lua
 MODSCONS_FLAGS=	CPPPATH="${CPPPATH} ${LOCALBASE}/include/libpng" \
-		LIBS="-lm" \
 		opengl=1
 BUILD_DEPENDS=	devel/sdl-image
 LIB_DEPENDS=	devel/sdl \
