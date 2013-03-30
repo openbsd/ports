@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/30 07:46:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/30 08:35:26 ajacoutot Exp $
 
 COMMENT=		access, organize and share your photos on GNOME
 
 GNOME_PROJECT=		gnome-photos
 GNOME_VERSION=		3.7.3
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		graphics
 
@@ -25,9 +25,9 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3 goa-1.0
 WANTLIB += gobject-2.0 gpg-error graphite2 gthread-2.0 gtk-3 harfbuzz
 WANTLIB += icudata icui18n icule icuuc json-glib-1.0 kvm lcms2
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs rsvg-2 secret-1 sqlite3 tracker-miner-0.16
-WANTLIB += tracker-sparql-0.16 xcb xcb-render xcb-shm xkbfile
-WANTLIB += xml2 z
+WANTLIB += png pthread pthread-stubs rsvg-2 secret-1 sqlite3
+WANTLIB += tracker-sparql-${TRACKER_VERSION} xcb xcb-render xcb-shm xkbfile
+WANTLIB += xml2 z tracker-miner-${TRACKER_VERSION}
 WANTLIB += lib/tracker-${TRACKER_VERSION}/tracker-data
 WANTLIB += lib/tracker-${TRACKER_VERSION}/tracker-common
 
