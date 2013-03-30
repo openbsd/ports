@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2012/09/29 07:42:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2013/03/30 08:26:18 ajacoutot Exp $
 include/libgdata/
 include/libgdata/gdata/
 include/libgdata/gdata/app/
@@ -75,6 +75,7 @@ include/libgdata/gdata/services/documents/gdata-documents-entry.h
 include/libgdata/gdata/services/documents/gdata-documents-enums.h
 include/libgdata/gdata/services/documents/gdata-documents-feed.h
 include/libgdata/gdata/services/documents/gdata-documents-folder.h
+include/libgdata/gdata/services/documents/gdata-documents-pdf.h
 include/libgdata/gdata/services/documents/gdata-documents-presentation.h
 include/libgdata/gdata/services/documents/gdata-documents-query.h
 include/libgdata/gdata/services/documents/gdata-documents-service.h
@@ -133,6 +134,7 @@ share/gtk-doc/html/gdata/GDataDocumentsDrawing.html
 share/gtk-doc/html/gdata/GDataDocumentsEntry.html
 share/gtk-doc/html/gdata/GDataDocumentsFeed.html
 share/gtk-doc/html/gdata/GDataDocumentsFolder.html
+share/gtk-doc/html/gdata/GDataDocumentsPdf.html
 share/gtk-doc/html/gdata/GDataDocumentsPresentation.html
 share/gtk-doc/html/gdata/GDataDocumentsQuery.html
 share/gtk-doc/html/gdata/GDataDocumentsService.html
@@ -230,6 +232,7 @@ share/gtk-doc/html/gdata/ix13.html
 share/gtk-doc/html/gdata/ix14.html
 share/gtk-doc/html/gdata/ix15.html
 share/gtk-doc/html/gdata/ix16.html
+share/gtk-doc/html/gdata/ix17.html
 share/gtk-doc/html/gdata/left.png
 share/gtk-doc/html/gdata/pt01.html
 share/gtk-doc/html/gdata/pt02.html
@@ -254,6 +257,7 @@ share/locale/el/LC_MESSAGES/gdata.mo
 share/locale/en_GB/LC_MESSAGES/gdata.mo
 share/locale/eo/LC_MESSAGES/gdata.mo
 share/locale/es/LC_MESSAGES/gdata.mo
+share/locale/et/LC_MESSAGES/gdata.mo
 share/locale/eu/LC_MESSAGES/gdata.mo
 share/locale/fi/LC_MESSAGES/gdata.mo
 share/locale/fr/LC_MESSAGES/gdata.mo
@@ -280,6 +284,7 @@ share/locale/pt/LC_MESSAGES/gdata.mo
 share/locale/pt_BR/LC_MESSAGES/gdata.mo
 share/locale/ro/LC_MESSAGES/gdata.mo
 share/locale/ru/LC_MESSAGES/gdata.mo
+share/locale/sk/LC_MESSAGES/gdata.mo
 share/locale/sl/LC_MESSAGES/gdata.mo
 share/locale/sr/LC_MESSAGES/gdata.mo
 share/locale/sr@latin/LC_MESSAGES/gdata.mo
@@ -294,3 +299,5 @@ share/locale/vi/LC_MESSAGES/gdata.mo
 share/locale/zh_CN/LC_MESSAGES/gdata.mo
 share/locale/zh_HK/LC_MESSAGES/gdata.mo
 share/locale/zh_TW/LC_MESSAGES/gdata.mo
+share/vala/vapi/libgdata.deps
+share/vala/vapi/libgdata.vapi

@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.31 2013/03/11 10:50:10 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2013/03/30 08:26:18 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		Google Data API based Glib client library
 
 GNOME_PROJECT=		libgdata
-GNOME_VERSION=		0.13.2
+GNOME_VERSION=		0.13.3
 
-SHARED_LIBS +=  gdata                16.0     # 17.1
+SHARED_LIBS +=  gdata                16.0     # 18.0
 
 CATEGORIES=		devel net
 
@@ -19,11 +19,11 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += crypto curl dbus-1 ffi gck-1 gcr-base-3 gcrypt gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gnome-keyring goa-1.0 gobject-2.0
-WANTLIB += gpg-error gthread-2.0 idn m nspr4 nss3 oauth p11-kit
-WANTLIB += pcre plc4 plds4 pthread smime3 softokn3 soup-2.4 soup-gnome-2.4
-WANTLIB += sqlite3 ssl ssl3 xml2 z
+WANTLIB += crypto curl ffi gck-1 gcr-base-3 gcrypt gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 goa-1.0 gobject-2.0 gpg-error gthread-2.0
+WANTLIB += idn m nspr4 nss3 oauth p11-kit pcre plc4 plds4 pthread
+WANTLIB += smime3 softokn3 soup-2.4 soup-gnome-2.4 sqlite3 ssl
+WANTLIB += ssl3 xml2 z
 
 MODULES=		devel/gettext \
 			x11/gnome
@@ -36,7 +36,7 @@ LIB_DEPENDS=		devel/libsoup,-gnome \
 			x11/gnome/gcr \
 			x11/gnome/online-accounts
 
-MODGNOME_TOOLS= 	goi
+MODGNOME_TOOLS= 	goi vala
 
 LIBTOOL_FLAGS+= 	--tag=disable-static
 
