@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/11 11:42:41 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2013/03/30 23:10:05 schwarze Exp $
 
 COMMENT =		GNU troff typesetter
-DISTNAME =		groff-1.21
-REVISION =		8
+VERSION =		1.22.2
+SUBST_VARS =		VERSION
+DISTNAME =		groff-${VERSION}
 
 CATEGORIES =		textproc
 DPB_PROPERTIES =	parallel
@@ -23,7 +24,9 @@ MAKE_FLAGS +=		docdir=${PREFIX}/share/doc/groff \
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--without-libiconv-prefix --without-gs --without-x \
-			--with-awk=awk
+			--with-awk=awk \
+			pnmcrop=missing pnmcut=missing pnmtopng=missing \
+			pnmtops=missing psselect=missing
 
 MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC} ${WRKSRC}/src/libs/gnulib/build-aux
 

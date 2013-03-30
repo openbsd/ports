@@ -1,25 +1,33 @@
-$OpenBSD: patch-tmac_an-old_tmac,v 1.1 2011/12/04 15:41:26 schwarze Exp $
-In man(7), show default volume headers like in mdoc(7).
-Inspired by IllumOS, suggested by Yuri Pankov.
-Similar patch accepted upstream into groff by Werner Lemberg.
---- tmac/an-old.tmac.orig	Fri Dec 31 08:33:09 2010
-+++ tmac/an-old.tmac	Sun Oct 30 22:37:29 2011
-@@ -145,7 +145,17 @@
- .    ie (\\n[.$] > 3) .ds an-extra2 "\\$4\"
- .    el               .ds an-extra2 \"Sun Release 4.0
- .    ie (\\n[.$] > 4) .ds an-extra3 "\\$5\"
--.    el               .ds an-extra3 \"System Programmer's Manual
-+.    el .ie '\\$2'1'  .ds an-extra3 OpenBSD Reference Manual
-+.    el .ie '\\$2'2'  .ds an-extra3 OpenBSD Programmer's Manual
-+.    el .ie '\\$2'3'  .ds an-extra3 OpenBSD Programmer's Manual
-+.    el .ie '\\$2'3p' .ds an-extra3 Perl Programmers Reference Guide
-+.    el .ie '\\$2'4'  .ds an-extra3 OpenBSD Programmer's Manual
-+.    el .ie '\\$2'5'  .ds an-extra3 OpenBSD Programmer's Manual
-+.    el .ie '\\$2'6'  .ds an-extra3 OpenBSD Reference Manual
-+.    el .ie '\\$2'7'  .ds an-extra3 OpenBSD Reference Manual
-+.    el .ie '\\$2'8'  .ds an-extra3 OpenBSD System Manager's Manual
-+.    el .ie '\\$2'9'  .ds an-extra3 OpenBSD Kernel Manual
-+.    el               .ds an-extra3
+$OpenBSD: patch-tmac_an-old_tmac,v 1.2 2013/03/30 23:10:05 schwarze Exp $
+Keep traditional OpenBSD page headers (local change).
+--- tmac/an-old.tmac.orig	Sun Dec 30 08:40:29 2012
++++ tmac/an-old.tmac	Tue Jan  1 15:29:42 2013
+@@ -145,18 +145,17 @@
+ .    el                  .ds an-extra2 \"Sun Release 4.0
+ .
+ .    ie (\\n[.$] > 4)    .ds an-extra3 "\\$5\"
+-.    el \{ .ie '\\$2'1'  .ds an-extra3 General Commands Manual
+-.    el \{ .ie '\\$2'2'  .ds an-extra3 System Calls Manual
+-.    el \{ .ie '\\$2'3'  .ds an-extra3 Library Functions Manual
+-.    el \{ .ie '\\$2'3p' .ds an-extra3 Perl Programmers Reference Guide
+-.    el \{ .ie '\\$2'4'  .ds an-extra3 Kernel Interfaces Manual
+-.    el \{ .ie '\\$2'5'  .ds an-extra3 File Formats Manual
+-.    el \{ .ie '\\$2'6'  .ds an-extra3 Games Manual
+-.    el \{ .ie '\\$2'7'  .ds an-extra3 Miscellaneous Information Manual
+-.    el \{ .ie '\\$2'8'  .ds an-extra3 System Manager's Manual
+-.    el \{ .ie '\\$2'9'  .ds an-extra3 Kernel Developer's Manual
++.    el .ie '\\$2'1'     .ds an-extra3 OpenBSD Reference Manual
++.    el .ie '\\$2'2'     .ds an-extra3 OpenBSD Programmer's Manual
++.    el .ie '\\$2'3'     .ds an-extra3 OpenBSD Programmer's Manual
++.    el .ie '\\$2'3p'    .ds an-extra3 Perl Programmers Reference Guide
++.    el .ie '\\$2'4'     .ds an-extra3 OpenBSD Programmer's Manual
++.    el .ie '\\$2'5'     .ds an-extra3 OpenBSD Programmer's Manual
++.    el .ie '\\$2'6'     .ds an-extra3 OpenBSD Reference Manual
++.    el .ie '\\$2'7'     .ds an-extra3 OpenBSD Reference Manual
++.    el .ie '\\$2'8'     .ds an-extra3 OpenBSD System Manager's Manual
++.    el .ie '\\$2'9'     .ds an-extra3 OpenBSD Kernel Manual
+ .    el                  .ds an-extra3
+-.    \}\}\}\}\}\}\}\}\}\}
  .    ds an-init
  \\..
  .

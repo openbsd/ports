@@ -1,0 +1,23 @@
+$OpenBSD: patch-font_devpdf_Makefile_sub,v 1.1 2013/03/30 23:10:05 schwarze Exp $
+chunk 1: Avoid installing Makefile.sub.orig (submitted and accepted upstream).
+chunk 2: Add missing subdirectory (submitted and accepted upstream).
+--- font/devpdf/Makefile.sub.orig	Thu Feb  7 13:06:09 2013
++++ font/devpdf/Makefile.sub	Mon Mar  4 09:23:08 2013
+@@ -18,7 +18,7 @@
+ 
+ DEV=pdf
+ GROFF_FONT_FILES=`cd $(top_builddir)/font/devpdf \
+-                  && find * -maxdepth 0 -type f ! -name Makefile.sub \
++                  && find * -maxdepth 0 -type f ! -name 'Makefile.sub*' \
+                             -exec grep -l internalname {} \;`
+ ENC_FILES=`cd $(top_builddir)/font/devpdf; ls enc/*`
+ MAP_FILES=`cd $(top_builddir)/font/devpdf; ls map/*`
+@@ -105,6 +105,8 @@ install_data:
+ 	  || $(mkinstalldirs) $(DESTDIR)$(fontsubdir)/enc
+ 	-test -d $(DESTDIR)$(fontsubdir)/map \
+ 	  || $(mkinstalldirs) $(DESTDIR)$(fontsubdir)/map
++	-test -d $(DESTDIR)$(fontsubdir)/util \
++	  || $(mkinstalldirs) $(DESTDIR)$(fontsubdir)/util
+ 	for f in $(MOSTLYCLEANADD); do \
+ 	  $(RM) $(DESTDIR)$(fontsubdir)/$$f; \
+ 	  if test -f $$f; then \
