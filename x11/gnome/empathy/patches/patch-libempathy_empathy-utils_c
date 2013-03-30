@@ -1,0 +1,15 @@
+$OpenBSD: patch-libempathy_empathy-utils_c,v 1.1 2013/03/30 09:29:16 jasper Exp $
+
+error: too few arguments to function 'gee_hash_set_new'
+
+--- libempathy/empathy-utils.c.orig	Sat Mar 30 09:52:44 2013
++++ libempathy/empathy-utils.c	Sat Mar 30 09:53:16 2013
+@@ -1123,7 +1123,7 @@ create_individual_from_persona (FolksPersona *persona)
+ 
+   personas = GEE_SET (
+       gee_hash_set_new (FOLKS_TYPE_PERSONA, g_object_ref, g_object_unref,
+-      g_direct_hash, g_direct_equal));
++      NULL, NULL, NULL, NULL, NULL, NULL));
+ 
+   gee_collection_add (GEE_COLLECTION (personas), persona);
+ 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.36 2013/03/14 07:51:45 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.37 2013/03/30 09:29:16 jasper Exp $
 @bin bin/empathy
 @bin bin/empathy-accounts
 @bin bin/empathy-debugger
@@ -13,9 +13,6 @@ lib/empathy/libempathy.la
 lib/empathy/libempathy.so
 lib/mission-control-plugins.0/
 lib/mission-control-plugins.0/mcp-account-manager-goa.so
-lib/nautilus-sendto/
-lib/nautilus-sendto/plugins/
-lib/nautilus-sendto/plugins/libnstempathy.so
 @bin libexec/empathy-auth-client
 @bin libexec/empathy-call
 @bin libexec/empathy-chat
