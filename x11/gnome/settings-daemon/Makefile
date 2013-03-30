@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2013/03/29 16:58:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.97 2013/03/30 13:03:45 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	GNOME settings daemon
 
 GNOME_PROJECT=	gnome-settings-daemon
 GNOME_VERSION=	3.8.0
-REVISION=	0
+REVISION=	1
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -45,6 +45,9 @@ BUILD_DEPENDS += textproc/docbook-xsl
 
 # share/polkit-1/actions/org.gnome.settings-daemon.plugins.power.policy
 RUN_DEPENDS +=	sysutils/polkit
+
+# polkit(8) almost always needs to know the "active" session
+RUN_DEPENDS +=	sysutils/consolekit
 
 # plugins/mouse/gsd-mouse-manager.c
 RUN_DEPENDS += x11/gnome/mousetweaks

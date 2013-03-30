@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/21 08:45:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/30 13:03:45 ajacoutot Exp $
 
 COMMENT=	device color profile management daemon
 
 V=		0.1.30
 DISTNAME=	colord-${V}
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 SHARED_LIBS +=  colordprivate        0.0      # 1.18
 SHARED_LIBS +=  colord               0.2      # 1.18
@@ -34,8 +35,11 @@ BUILD_DEPENDS=	devel/gobject-introspection \
 LIB_DEPENDS=	graphics/lcms2 \
 		sysutils/polkit
 
+# polkit(8) almost always needs to know the "active" session
+RUN_DEPENDS +=	sysutils/consolekit
+
 # cd-self-test.c:1528:colord_client_func: assertion failed (version == version_str)
-TEST_DEPENDS=STEM-=${V}:${BUILD_PKGPATH}
+TEST_DEPENDS=	STEM-=${V}:${BUILD_PKGPATH}
 
 USE_GMAKE=	Yes
 

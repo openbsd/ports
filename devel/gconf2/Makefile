@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2013/03/11 10:50:04 espie Exp $
+# $OpenBSD: Makefile,v 1.82 2013/03/30 13:03:45 ajacoutot Exp $
 
 # gconf2-polkit requires spidermonkey
 ONLY_FOR_ARCHS-polkit=	alpha amd64 i386 hppa mips64el mips64 powerpc sparc64
@@ -14,6 +14,7 @@ PKGNAME-main=	gconf2-${GNOME_VERSION}
 PKGNAME-polkit=	gconf2-polkit-${GNOME_VERSION}
 
 REVISION-main=	0
+REVISION-polkit=1
 
 SHARED_LIBS +=	gconf-2              6.2      # 5.5
 
@@ -55,10 +56,13 @@ LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		textproc/libxml \
 		x11/dbus-glib
 
-RUN_DEPENDS-polkit= # empty
+RUN_DEPENDS-polkit=${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-polkit= ${LIB_DEPENDS} \
 		devel/gconf2 \
 		sysutils/polkit
+
+# polkit(8) almost always needs to know the "active" session
+RUN_DEPENDS-polkit +=sysutils/consolekit
 
 MODGNOME_TOOLS=	goi
 

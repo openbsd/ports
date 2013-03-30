@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2013/03/30 10:03:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2013/03/30 13:03:45 ajacoutot Exp $
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		3.8.0.1
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://live.gnome.org/GnomeShell
 
@@ -59,6 +59,9 @@ LIB_DEPENDS=		audio/pulseaudio>=2.1 \
 			x11/gnome/mutter>=3.6.1
 RUN_DEPENDS=		devel/py-gobject3 \
 			x11/gnome/caribou
+
+# polkit(8) almost always needs to know the "active" session
+RUN_DEPENDS +=	sysutils/consolekit
 
 # Don't depend on evolution to lower down the amount of dependencies and
 # because most users want to be able to choose their PIM. Evolution can

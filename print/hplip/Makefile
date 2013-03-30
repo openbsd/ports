@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2013/03/21 08:46:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.73 2013/03/30 13:03:45 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -16,6 +16,8 @@ PKGNAME-hpijs=	hpijs-${V}
 PKGNAME-hpcups=	hpcups-${V}
 PKGNAME-libs=	hplip-libs-${V}
 PKGNAME-gui=	hplip-gui-${V}
+
+REVISION-main=	0
 
 SHARED_LIBS +=  hpmud		2.0 # .0.6
 SHARED_LIBS +=  hpip		2.0 # .0.1
@@ -60,6 +62,9 @@ RUN_DEPENDS-main=${MODPY_RUN_DEPENDS} \
 		graphics/py-Imaging \
 		print/hplip,-hpcups \
 		sysutils/polkit
+
+# polkit(8) almost always needs to know the "active" session
+RUN_DEPENDS-main +=	sysutils/consolekit
 
 # package is only useful if cups is installed
 RUN_DEPENDS-main +=	print/cups

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.223 2013/03/29 15:41:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.224 2013/03/30 13:03:46 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		3.8.0
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -32,7 +33,9 @@ LIB_DEPENDS=	devel/libexecinfo \
 		devel/gconf2 \
 		sysutils/upower \
 		devel/json-glib
-RUN_DEPENDS=	sysutils/consolekit
+
+# polkit(8) almost always needs to know the "active" session
+RUN_DEPENDS +=	sysutils/consolekit
 
 # gnome.session RequiredComponents
 RUN_DEPENDS+=	x11/gnome/settings-daemon \

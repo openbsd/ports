@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2013/03/29 19:21:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.89 2013/03/30 13:03:45 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.8.0
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		x11
 
@@ -56,6 +56,9 @@ RUN_DEPENDS=		x11/gnome/settings-daemon \
 
 # man pages
 BUILD_DEPENDS += textproc/docbook-xsl
+
+# polkit(8) almost always needs to know the "active" session
+RUN_DEPENDS +=	sysutils/consolekit
 
 # XXX when the user account panel is re-enabled
 BUILD_DEPENDS +=	security/libpwquality

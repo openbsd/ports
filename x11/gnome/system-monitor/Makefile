@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2013/03/30 12:52:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2013/03/30 13:03:45 ajacoutot Exp $
 
 COMMENT=	sytem monitor for GNOME
 
 GNOME_PROJECT=	gnome-system-monitor
 GNOME_VERSION=	3.8.0
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	sysutils
 

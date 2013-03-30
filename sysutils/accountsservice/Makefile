@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2013/03/21 08:48:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2013/03/30 13:03:45 ajacoutot Exp $
 
 COMMENT=	D-Bus interface for user account query and manipulation
 
@@ -29,7 +29,8 @@ BUILD_DEPENDS=	devel/gobject-introspection \
 
 LIB_DEPENDS=	sysutils/polkit
 
-RUN_DEPENDS=	sysutils/consolekit
+# polkit(8) almost always needs to know the "active" session
+RUN_DEPENDS +=	sysutils/consolekit
 
 USE_GMAKE=	Yes
 
