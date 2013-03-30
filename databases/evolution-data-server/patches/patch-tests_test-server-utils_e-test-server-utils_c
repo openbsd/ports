@@ -1,6 +1,9 @@
-$OpenBSD: patch-tests_test-server-utils_e-test-server-utils_c,v 1.1 2013/03/29 15:17:01 ajacoutot Exp $
+$OpenBSD: patch-tests_test-server-utils_e-test-server-utils_c,v 1.2 2013/03/30 11:47:32 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=696858
+From 7de39a7e16ab1f71d67a27dcb5bf3e0b29976757 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Fri, 29 Mar 2013 14:54:07 +0000
+Subject: Fix implicit declaration of WIFEXITED.
 
 --- tests/test-server-utils/e-test-server-utils.c.orig	Fri Mar 29 15:21:12 2013
 +++ tests/test-server-utils/e-test-server-utils.c	Fri Mar 29 15:20:51 2013
