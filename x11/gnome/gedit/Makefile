@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.96 2013/03/30 12:07:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.97 2013/03/30 13:04:21 jasper Exp $
 
 COMMENT=		lightweight GNOME text editor
 
 GNOME_PROJECT=		gedit
-GNOME_VERSION=		3.6.2
-REVISION=		3
+GNOME_VERSION=		3.8.0
 
 CATEGORIES=		editors
 
@@ -31,7 +30,7 @@ MODULES=		devel/dconf \
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/iso-codes
 
-LIB_DEPENDS=		devel/libpeas>=1.1.4p1 \
+LIB_DEPENDS=		devel/libpeas>=1.8.0 \
 			productivity/libzeitgeist \
 			textproc/enchant \
 			x11/gtksourceview3
@@ -48,11 +47,14 @@ MODGNOME_DESKTOP_FILE=	Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 
 CONFIGURE_ARGS=		--disable-static \
-			--enable-python \
 			--enable-spell \
 			--enable-zeitgeist \
 			--enable-gvfs-metadata \
 			--disable-updater
+
+# XXX: Re-enable for py-gobject with python 3.
+CONFIGURE_ARGS+=	--disable-python
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 TEST_IS_INTERACTIVE=	X11
 

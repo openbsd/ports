@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2012/10/16 08:34:34 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.30 2013/03/30 13:04:22 jasper Exp $
 @bin bin/gedit
 bin/gnome-text-editor
 include/gedit-3.0/
@@ -29,35 +29,6 @@ lib/gedit/libgedit-private.so
 lib/gedit/plugins/
 lib/gedit/plugins/changecase.plugin
 lib/gedit/plugins/docinfo.plugin
-lib/gedit/plugins/externaltools/
-lib/gedit/plugins/externaltools.plugin
-lib/gedit/plugins/externaltools/__init__.py
-lib/gedit/plugins/externaltools/__init__.pyc
-lib/gedit/plugins/externaltools/__init__.pyo
-lib/gedit/plugins/externaltools/capture.py
-lib/gedit/plugins/externaltools/capture.pyc
-lib/gedit/plugins/externaltools/capture.pyo
-lib/gedit/plugins/externaltools/filelookup.py
-lib/gedit/plugins/externaltools/filelookup.pyc
-lib/gedit/plugins/externaltools/filelookup.pyo
-lib/gedit/plugins/externaltools/functions.py
-lib/gedit/plugins/externaltools/functions.pyc
-lib/gedit/plugins/externaltools/functions.pyo
-lib/gedit/plugins/externaltools/library.py
-lib/gedit/plugins/externaltools/library.pyc
-lib/gedit/plugins/externaltools/library.pyo
-lib/gedit/plugins/externaltools/linkparsing.py
-lib/gedit/plugins/externaltools/linkparsing.pyc
-lib/gedit/plugins/externaltools/linkparsing.pyo
-lib/gedit/plugins/externaltools/manager.py
-lib/gedit/plugins/externaltools/manager.pyc
-lib/gedit/plugins/externaltools/manager.pyo
-lib/gedit/plugins/externaltools/outputpanel.py
-lib/gedit/plugins/externaltools/outputpanel.pyc
-lib/gedit/plugins/externaltools/outputpanel.pyo
-lib/gedit/plugins/externaltools/windowactivatable.py
-lib/gedit/plugins/externaltools/windowactivatable.pyc
-lib/gedit/plugins/externaltools/windowactivatable.pyo
 lib/gedit/plugins/filebrowser.plugin
 lib/gedit/plugins/libchangecase.so
 lib/gedit/plugins/libdocinfo.so
@@ -68,92 +39,11 @@ lib/gedit/plugins/libspell.so
 lib/gedit/plugins/libtime.so
 lib/gedit/plugins/libzeitgeistplugin.so
 lib/gedit/plugins/modelines.plugin
-lib/gedit/plugins/pythonconsole/
-lib/gedit/plugins/pythonconsole.plugin
-lib/gedit/plugins/pythonconsole/__init__.py
-lib/gedit/plugins/pythonconsole/__init__.pyc
-lib/gedit/plugins/pythonconsole/__init__.pyo
-lib/gedit/plugins/pythonconsole/config.py
-lib/gedit/plugins/pythonconsole/config.pyc
-lib/gedit/plugins/pythonconsole/config.pyo
-lib/gedit/plugins/pythonconsole/console.py
-lib/gedit/plugins/pythonconsole/console.pyc
-lib/gedit/plugins/pythonconsole/console.pyo
-lib/gedit/plugins/quickopen/
-lib/gedit/plugins/quickopen.plugin
-lib/gedit/plugins/quickopen/__init__.py
-lib/gedit/plugins/quickopen/__init__.pyc
-lib/gedit/plugins/quickopen/__init__.pyo
-lib/gedit/plugins/quickopen/popup.py
-lib/gedit/plugins/quickopen/popup.pyc
-lib/gedit/plugins/quickopen/popup.pyo
-lib/gedit/plugins/quickopen/virtualdirs.py
-lib/gedit/plugins/quickopen/virtualdirs.pyc
-lib/gedit/plugins/quickopen/virtualdirs.pyo
-lib/gedit/plugins/snippets/
-lib/gedit/plugins/snippets.plugin
-lib/gedit/plugins/snippets/__init__.py
-lib/gedit/plugins/snippets/__init__.pyc
-lib/gedit/plugins/snippets/__init__.pyo
-lib/gedit/plugins/snippets/appactivatable.py
-lib/gedit/plugins/snippets/appactivatable.pyc
-lib/gedit/plugins/snippets/appactivatable.pyo
-lib/gedit/plugins/snippets/completion.py
-lib/gedit/plugins/snippets/completion.pyc
-lib/gedit/plugins/snippets/completion.pyo
-lib/gedit/plugins/snippets/document.py
-lib/gedit/plugins/snippets/document.pyc
-lib/gedit/plugins/snippets/document.pyo
-lib/gedit/plugins/snippets/exporter.py
-lib/gedit/plugins/snippets/exporter.pyc
-lib/gedit/plugins/snippets/exporter.pyo
-lib/gedit/plugins/snippets/helper.py
-lib/gedit/plugins/snippets/helper.pyc
-lib/gedit/plugins/snippets/helper.pyo
-lib/gedit/plugins/snippets/importer.py
-lib/gedit/plugins/snippets/importer.pyc
-lib/gedit/plugins/snippets/importer.pyo
-lib/gedit/plugins/snippets/languagemanager.py
-lib/gedit/plugins/snippets/languagemanager.pyc
-lib/gedit/plugins/snippets/languagemanager.pyo
-lib/gedit/plugins/snippets/library.py
-lib/gedit/plugins/snippets/library.pyc
-lib/gedit/plugins/snippets/library.pyo
-lib/gedit/plugins/snippets/manager.py
-lib/gedit/plugins/snippets/manager.pyc
-lib/gedit/plugins/snippets/manager.pyo
-lib/gedit/plugins/snippets/parser.py
-lib/gedit/plugins/snippets/parser.pyc
-lib/gedit/plugins/snippets/parser.pyo
-lib/gedit/plugins/snippets/placeholder.py
-lib/gedit/plugins/snippets/placeholder.pyc
-lib/gedit/plugins/snippets/placeholder.pyo
-lib/gedit/plugins/snippets/shareddata.py
-lib/gedit/plugins/snippets/shareddata.pyc
-lib/gedit/plugins/snippets/shareddata.pyo
-lib/gedit/plugins/snippets/signals.py
-lib/gedit/plugins/snippets/signals.pyc
-lib/gedit/plugins/snippets/signals.pyo
-lib/gedit/plugins/snippets/singleton.py
-lib/gedit/plugins/snippets/singleton.pyc
-lib/gedit/plugins/snippets/singleton.pyo
-lib/gedit/plugins/snippets/snippet.py
-lib/gedit/plugins/snippets/snippet.pyc
-lib/gedit/plugins/snippets/snippet.pyo
-lib/gedit/plugins/snippets/substitutionparser.py
-lib/gedit/plugins/snippets/substitutionparser.pyc
-lib/gedit/plugins/snippets/substitutionparser.pyo
-lib/gedit/plugins/snippets/windowactivatable.py
-lib/gedit/plugins/snippets/windowactivatable.pyc
-lib/gedit/plugins/snippets/windowactivatable.pyo
 lib/gedit/plugins/sort.plugin
 lib/gedit/plugins/spell.plugin
 lib/gedit/plugins/time.plugin
 lib/gedit/plugins/zeitgeist.plugin
 lib/pkgconfig/gedit.pc
-lib/python${MODPY_VERSION}/site-packages/gi/overrides/Gedit.py
-lib/python${MODPY_VERSION}/site-packages/gi/overrides/Gedit.pyc
-lib/python${MODPY_VERSION}/site-packages/gi/overrides/Gedit.pyo
 libexec/gedit/
 libexec/gedit/gedit-bugreport.sh
 @man man/man1/gedit.1
@@ -166,55 +56,12 @@ share/gedit/gir-1.0/Gedit-3.0.gir
 share/gedit/logo/
 share/gedit/logo/gedit-logo.png
 share/gedit/plugins/
-share/gedit/plugins/externaltools/
-share/gedit/plugins/externaltools/tools/
-share/gedit/plugins/externaltools/tools/build
-share/gedit/plugins/externaltools/tools/open-terminal-here
-share/gedit/plugins/externaltools/tools/remove-trailing-spaces
-share/gedit/plugins/externaltools/tools/run-command
-share/gedit/plugins/externaltools/ui/
-share/gedit/plugins/externaltools/ui/outputpanel.ui
-share/gedit/plugins/externaltools/ui/tools.ui
 share/gedit/plugins/modelines/
 share/gedit/plugins/modelines/language-mappings
-share/gedit/plugins/pythonconsole/
-share/gedit/plugins/pythonconsole/ui/
-share/gedit/plugins/pythonconsole/ui/config.ui
-share/gedit/plugins/snippets/
-share/gedit/plugins/snippets/c.xml
-share/gedit/plugins/snippets/chdr.xml
-share/gedit/plugins/snippets/cpp.xml
-share/gedit/plugins/snippets/css.xml
-share/gedit/plugins/snippets/docbook.xml
-share/gedit/plugins/snippets/fortran.xml
-share/gedit/plugins/snippets/global.xml
-share/gedit/plugins/snippets/haskell.xml
-share/gedit/plugins/snippets/html.xml
-share/gedit/plugins/snippets/idl.xml
-share/gedit/plugins/snippets/java.xml
-share/gedit/plugins/snippets/javascript.xml
-share/gedit/plugins/snippets/lang/
-share/gedit/plugins/snippets/lang/snippets.lang
-share/gedit/plugins/snippets/latex.xml
-share/gedit/plugins/snippets/mallard.xml
-share/gedit/plugins/snippets/markdown.xml
-share/gedit/plugins/snippets/perl.xml
-share/gedit/plugins/snippets/php.xml
-share/gedit/plugins/snippets/python.xml
-share/gedit/plugins/snippets/ruby.xml
-share/gedit/plugins/snippets/sh.xml
-share/gedit/plugins/snippets/snippets.xml
-share/gedit/plugins/snippets/tcl.xml
-share/gedit/plugins/snippets/ui/
-share/gedit/plugins/snippets/ui/snippets.ui
-share/gedit/plugins/snippets/xml.xml
-share/gedit/plugins/snippets/xslt.xml
 share/glib-2.0/schemas/org.gnome.gedit.enums.xml
 share/glib-2.0/schemas/org.gnome.gedit.gschema.xml
-share/glib-2.0/schemas/org.gnome.gedit.plugins.externaltools.gschema.xml
 share/glib-2.0/schemas/org.gnome.gedit.plugins.filebrowser.enums.xml
 share/glib-2.0/schemas/org.gnome.gedit.plugins.filebrowser.gschema.xml
-share/glib-2.0/schemas/org.gnome.gedit.plugins.pythonconsole.gschema.xml
 share/glib-2.0/schemas/org.gnome.gedit.plugins.time.enums.xml
 share/glib-2.0/schemas/org.gnome.gedit.plugins.time.gschema.xml
 share/gtk-doc/html/gedit/
@@ -294,7 +141,6 @@ share/help/C/gedit/gedit-plugins-multi-edit.page
 share/help/C/gedit/gedit-plugins-pyconsole.page
 share/help/C/gedit/gedit-plugins-quick-open.page
 share/help/C/gedit/gedit-plugins-session-saver.page
-share/help/C/gedit/gedit-plugins-snippets-guide.page
 share/help/C/gedit/gedit-plugins-snippets.page
 share/help/C/gedit/gedit-plugins-sort.page
 share/help/C/gedit/gedit-plugins-tag-list.page
@@ -316,6 +162,7 @@ share/help/C/gedit/gedit-tabs.page
 share/help/C/gedit/gedit-undo-recent-action.page
 share/help/C/gedit/gedit-view-open-files-in-sidepane.page
 share/help/C/gedit/index.page
+share/help/C/gedit/legal.xml
 share/help/ar/
 share/help/ar/gedit/
 share/help/ar/gedit/figures/
@@ -360,7 +207,6 @@ share/help/ar/gedit/gedit-plugins-multi-edit.page
 share/help/ar/gedit/gedit-plugins-pyconsole.page
 share/help/ar/gedit/gedit-plugins-quick-open.page
 share/help/ar/gedit/gedit-plugins-session-saver.page
-share/help/ar/gedit/gedit-plugins-snippets-guide.page
 share/help/ar/gedit/gedit-plugins-snippets.page
 share/help/ar/gedit/gedit-plugins-sort.page
 share/help/ar/gedit/gedit-plugins-tag-list.page
@@ -382,6 +228,7 @@ share/help/ar/gedit/gedit-tabs.page
 share/help/ar/gedit/gedit-undo-recent-action.page
 share/help/ar/gedit/gedit-view-open-files-in-sidepane.page
 share/help/ar/gedit/index.page
+share/help/ar/gedit/legal.xml
 share/help/bg/
 share/help/bg/gedit/
 share/help/bg/gedit/figures/
@@ -426,7 +273,6 @@ share/help/bg/gedit/gedit-plugins-multi-edit.page
 share/help/bg/gedit/gedit-plugins-pyconsole.page
 share/help/bg/gedit/gedit-plugins-quick-open.page
 share/help/bg/gedit/gedit-plugins-session-saver.page
-share/help/bg/gedit/gedit-plugins-snippets-guide.page
 share/help/bg/gedit/gedit-plugins-snippets.page
 share/help/bg/gedit/gedit-plugins-sort.page
 share/help/bg/gedit/gedit-plugins-tag-list.page
@@ -448,6 +294,7 @@ share/help/bg/gedit/gedit-tabs.page
 share/help/bg/gedit/gedit-undo-recent-action.page
 share/help/bg/gedit/gedit-view-open-files-in-sidepane.page
 share/help/bg/gedit/index.page
+share/help/bg/gedit/legal.xml
 share/help/ca/
 share/help/ca/gedit/
 share/help/ca/gedit/figures/
@@ -492,7 +339,6 @@ share/help/ca/gedit/gedit-plugins-multi-edit.page
 share/help/ca/gedit/gedit-plugins-pyconsole.page
 share/help/ca/gedit/gedit-plugins-quick-open.page
 share/help/ca/gedit/gedit-plugins-session-saver.page
-share/help/ca/gedit/gedit-plugins-snippets-guide.page
 share/help/ca/gedit/gedit-plugins-snippets.page
 share/help/ca/gedit/gedit-plugins-sort.page
 share/help/ca/gedit/gedit-plugins-tag-list.page
@@ -514,6 +360,7 @@ share/help/ca/gedit/gedit-tabs.page
 share/help/ca/gedit/gedit-undo-recent-action.page
 share/help/ca/gedit/gedit-view-open-files-in-sidepane.page
 share/help/ca/gedit/index.page
+share/help/ca/gedit/legal.xml
 share/help/cs/
 share/help/cs/gedit/
 share/help/cs/gedit/figures/
@@ -558,7 +405,6 @@ share/help/cs/gedit/gedit-plugins-multi-edit.page
 share/help/cs/gedit/gedit-plugins-pyconsole.page
 share/help/cs/gedit/gedit-plugins-quick-open.page
 share/help/cs/gedit/gedit-plugins-session-saver.page
-share/help/cs/gedit/gedit-plugins-snippets-guide.page
 share/help/cs/gedit/gedit-plugins-snippets.page
 share/help/cs/gedit/gedit-plugins-sort.page
 share/help/cs/gedit/gedit-plugins-tag-list.page
@@ -580,6 +426,7 @@ share/help/cs/gedit/gedit-tabs.page
 share/help/cs/gedit/gedit-undo-recent-action.page
 share/help/cs/gedit/gedit-view-open-files-in-sidepane.page
 share/help/cs/gedit/index.page
+share/help/cs/gedit/legal.xml
 share/help/da/
 share/help/da/gedit/
 share/help/da/gedit/figures/
@@ -624,7 +471,6 @@ share/help/da/gedit/gedit-plugins-multi-edit.page
 share/help/da/gedit/gedit-plugins-pyconsole.page
 share/help/da/gedit/gedit-plugins-quick-open.page
 share/help/da/gedit/gedit-plugins-session-saver.page
-share/help/da/gedit/gedit-plugins-snippets-guide.page
 share/help/da/gedit/gedit-plugins-snippets.page
 share/help/da/gedit/gedit-plugins-sort.page
 share/help/da/gedit/gedit-plugins-tag-list.page
@@ -646,6 +492,7 @@ share/help/da/gedit/gedit-tabs.page
 share/help/da/gedit/gedit-undo-recent-action.page
 share/help/da/gedit/gedit-view-open-files-in-sidepane.page
 share/help/da/gedit/index.page
+share/help/da/gedit/legal.xml
 share/help/de/
 share/help/de/gedit/
 share/help/de/gedit/figures/
@@ -690,7 +537,6 @@ share/help/de/gedit/gedit-plugins-multi-edit.page
 share/help/de/gedit/gedit-plugins-pyconsole.page
 share/help/de/gedit/gedit-plugins-quick-open.page
 share/help/de/gedit/gedit-plugins-session-saver.page
-share/help/de/gedit/gedit-plugins-snippets-guide.page
 share/help/de/gedit/gedit-plugins-snippets.page
 share/help/de/gedit/gedit-plugins-sort.page
 share/help/de/gedit/gedit-plugins-tag-list.page
@@ -712,6 +558,7 @@ share/help/de/gedit/gedit-tabs.page
 share/help/de/gedit/gedit-undo-recent-action.page
 share/help/de/gedit/gedit-view-open-files-in-sidepane.page
 share/help/de/gedit/index.page
+share/help/de/gedit/legal.xml
 share/help/el/
 share/help/el/gedit/
 share/help/el/gedit/figures/
@@ -756,7 +603,6 @@ share/help/el/gedit/gedit-plugins-multi-edit.page
 share/help/el/gedit/gedit-plugins-pyconsole.page
 share/help/el/gedit/gedit-plugins-quick-open.page
 share/help/el/gedit/gedit-plugins-session-saver.page
-share/help/el/gedit/gedit-plugins-snippets-guide.page
 share/help/el/gedit/gedit-plugins-snippets.page
 share/help/el/gedit/gedit-plugins-sort.page
 share/help/el/gedit/gedit-plugins-tag-list.page
@@ -778,6 +624,7 @@ share/help/el/gedit/gedit-tabs.page
 share/help/el/gedit/gedit-undo-recent-action.page
 share/help/el/gedit/gedit-view-open-files-in-sidepane.page
 share/help/el/gedit/index.page
+share/help/el/gedit/legal.xml
 share/help/es/
 share/help/es/gedit/
 share/help/es/gedit/figures/
@@ -822,7 +669,6 @@ share/help/es/gedit/gedit-plugins-multi-edit.page
 share/help/es/gedit/gedit-plugins-pyconsole.page
 share/help/es/gedit/gedit-plugins-quick-open.page
 share/help/es/gedit/gedit-plugins-session-saver.page
-share/help/es/gedit/gedit-plugins-snippets-guide.page
 share/help/es/gedit/gedit-plugins-snippets.page
 share/help/es/gedit/gedit-plugins-sort.page
 share/help/es/gedit/gedit-plugins-tag-list.page
@@ -844,6 +690,7 @@ share/help/es/gedit/gedit-tabs.page
 share/help/es/gedit/gedit-undo-recent-action.page
 share/help/es/gedit/gedit-view-open-files-in-sidepane.page
 share/help/es/gedit/index.page
+share/help/es/gedit/legal.xml
 share/help/eu/
 share/help/eu/gedit/
 share/help/eu/gedit/figures/
@@ -888,7 +735,6 @@ share/help/eu/gedit/gedit-plugins-multi-edit.page
 share/help/eu/gedit/gedit-plugins-pyconsole.page
 share/help/eu/gedit/gedit-plugins-quick-open.page
 share/help/eu/gedit/gedit-plugins-session-saver.page
-share/help/eu/gedit/gedit-plugins-snippets-guide.page
 share/help/eu/gedit/gedit-plugins-snippets.page
 share/help/eu/gedit/gedit-plugins-sort.page
 share/help/eu/gedit/gedit-plugins-tag-list.page
@@ -910,6 +756,7 @@ share/help/eu/gedit/gedit-tabs.page
 share/help/eu/gedit/gedit-undo-recent-action.page
 share/help/eu/gedit/gedit-view-open-files-in-sidepane.page
 share/help/eu/gedit/index.page
+share/help/eu/gedit/legal.xml
 share/help/fi/
 share/help/fi/gedit/
 share/help/fi/gedit/figures/
@@ -954,7 +801,6 @@ share/help/fi/gedit/gedit-plugins-multi-edit.page
 share/help/fi/gedit/gedit-plugins-pyconsole.page
 share/help/fi/gedit/gedit-plugins-quick-open.page
 share/help/fi/gedit/gedit-plugins-session-saver.page
-share/help/fi/gedit/gedit-plugins-snippets-guide.page
 share/help/fi/gedit/gedit-plugins-snippets.page
 share/help/fi/gedit/gedit-plugins-sort.page
 share/help/fi/gedit/gedit-plugins-tag-list.page
@@ -976,6 +822,7 @@ share/help/fi/gedit/gedit-tabs.page
 share/help/fi/gedit/gedit-undo-recent-action.page
 share/help/fi/gedit/gedit-view-open-files-in-sidepane.page
 share/help/fi/gedit/index.page
+share/help/fi/gedit/legal.xml
 share/help/fr/
 share/help/fr/gedit/
 share/help/fr/gedit/figures/
@@ -1020,7 +867,6 @@ share/help/fr/gedit/gedit-plugins-multi-edit.page
 share/help/fr/gedit/gedit-plugins-pyconsole.page
 share/help/fr/gedit/gedit-plugins-quick-open.page
 share/help/fr/gedit/gedit-plugins-session-saver.page
-share/help/fr/gedit/gedit-plugins-snippets-guide.page
 share/help/fr/gedit/gedit-plugins-snippets.page
 share/help/fr/gedit/gedit-plugins-sort.page
 share/help/fr/gedit/gedit-plugins-tag-list.page
@@ -1042,6 +888,7 @@ share/help/fr/gedit/gedit-tabs.page
 share/help/fr/gedit/gedit-undo-recent-action.page
 share/help/fr/gedit/gedit-view-open-files-in-sidepane.page
 share/help/fr/gedit/index.page
+share/help/fr/gedit/legal.xml
 share/help/gl/
 share/help/gl/gedit/
 share/help/gl/gedit/figures/
@@ -1086,7 +933,6 @@ share/help/gl/gedit/gedit-plugins-multi-edit.page
 share/help/gl/gedit/gedit-plugins-pyconsole.page
 share/help/gl/gedit/gedit-plugins-quick-open.page
 share/help/gl/gedit/gedit-plugins-session-saver.page
-share/help/gl/gedit/gedit-plugins-snippets-guide.page
 share/help/gl/gedit/gedit-plugins-snippets.page
 share/help/gl/gedit/gedit-plugins-sort.page
 share/help/gl/gedit/gedit-plugins-tag-list.page
@@ -1108,6 +954,7 @@ share/help/gl/gedit/gedit-tabs.page
 share/help/gl/gedit/gedit-undo-recent-action.page
 share/help/gl/gedit/gedit-view-open-files-in-sidepane.page
 share/help/gl/gedit/index.page
+share/help/gl/gedit/legal.xml
 share/help/hu/
 share/help/hu/gedit/
 share/help/hu/gedit/figures/
@@ -1152,7 +999,6 @@ share/help/hu/gedit/gedit-plugins-multi-edit.page
 share/help/hu/gedit/gedit-plugins-pyconsole.page
 share/help/hu/gedit/gedit-plugins-quick-open.page
 share/help/hu/gedit/gedit-plugins-session-saver.page
-share/help/hu/gedit/gedit-plugins-snippets-guide.page
 share/help/hu/gedit/gedit-plugins-snippets.page
 share/help/hu/gedit/gedit-plugins-sort.page
 share/help/hu/gedit/gedit-plugins-tag-list.page
@@ -1174,6 +1020,7 @@ share/help/hu/gedit/gedit-tabs.page
 share/help/hu/gedit/gedit-undo-recent-action.page
 share/help/hu/gedit/gedit-view-open-files-in-sidepane.page
 share/help/hu/gedit/index.page
+share/help/hu/gedit/legal.xml
 share/help/it/
 share/help/it/gedit/
 share/help/it/gedit/figures/
@@ -1218,7 +1065,6 @@ share/help/it/gedit/gedit-plugins-multi-edit.page
 share/help/it/gedit/gedit-plugins-pyconsole.page
 share/help/it/gedit/gedit-plugins-quick-open.page
 share/help/it/gedit/gedit-plugins-session-saver.page
-share/help/it/gedit/gedit-plugins-snippets-guide.page
 share/help/it/gedit/gedit-plugins-snippets.page
 share/help/it/gedit/gedit-plugins-sort.page
 share/help/it/gedit/gedit-plugins-tag-list.page
@@ -1240,6 +1086,7 @@ share/help/it/gedit/gedit-tabs.page
 share/help/it/gedit/gedit-undo-recent-action.page
 share/help/it/gedit/gedit-view-open-files-in-sidepane.page
 share/help/it/gedit/index.page
+share/help/it/gedit/legal.xml
 share/help/ja/
 share/help/ja/gedit/
 share/help/ja/gedit/figures/
@@ -1284,7 +1131,6 @@ share/help/ja/gedit/gedit-plugins-multi-edit.page
 share/help/ja/gedit/gedit-plugins-pyconsole.page
 share/help/ja/gedit/gedit-plugins-quick-open.page
 share/help/ja/gedit/gedit-plugins-session-saver.page
-share/help/ja/gedit/gedit-plugins-snippets-guide.page
 share/help/ja/gedit/gedit-plugins-snippets.page
 share/help/ja/gedit/gedit-plugins-sort.page
 share/help/ja/gedit/gedit-plugins-tag-list.page
@@ -1306,6 +1152,7 @@ share/help/ja/gedit/gedit-tabs.page
 share/help/ja/gedit/gedit-undo-recent-action.page
 share/help/ja/gedit/gedit-view-open-files-in-sidepane.page
 share/help/ja/gedit/index.page
+share/help/ja/gedit/legal.xml
 share/help/ko/
 share/help/ko/gedit/
 share/help/ko/gedit/figures/
@@ -1350,7 +1197,6 @@ share/help/ko/gedit/gedit-plugins-multi-edit.page
 share/help/ko/gedit/gedit-plugins-pyconsole.page
 share/help/ko/gedit/gedit-plugins-quick-open.page
 share/help/ko/gedit/gedit-plugins-session-saver.page
-share/help/ko/gedit/gedit-plugins-snippets-guide.page
 share/help/ko/gedit/gedit-plugins-snippets.page
 share/help/ko/gedit/gedit-plugins-sort.page
 share/help/ko/gedit/gedit-plugins-tag-list.page
@@ -1372,6 +1218,7 @@ share/help/ko/gedit/gedit-tabs.page
 share/help/ko/gedit/gedit-undo-recent-action.page
 share/help/ko/gedit/gedit-view-open-files-in-sidepane.page
 share/help/ko/gedit/index.page
+share/help/ko/gedit/legal.xml
 share/help/lv/
 share/help/lv/gedit/
 share/help/lv/gedit/figures/
@@ -1416,7 +1263,6 @@ share/help/lv/gedit/gedit-plugins-multi-edit.page
 share/help/lv/gedit/gedit-plugins-pyconsole.page
 share/help/lv/gedit/gedit-plugins-quick-open.page
 share/help/lv/gedit/gedit-plugins-session-saver.page
-share/help/lv/gedit/gedit-plugins-snippets-guide.page
 share/help/lv/gedit/gedit-plugins-snippets.page
 share/help/lv/gedit/gedit-plugins-sort.page
 share/help/lv/gedit/gedit-plugins-tag-list.page
@@ -1438,6 +1284,7 @@ share/help/lv/gedit/gedit-tabs.page
 share/help/lv/gedit/gedit-undo-recent-action.page
 share/help/lv/gedit/gedit-view-open-files-in-sidepane.page
 share/help/lv/gedit/index.page
+share/help/lv/gedit/legal.xml
 share/help/oc/
 share/help/oc/gedit/
 share/help/oc/gedit/figures/
@@ -1482,7 +1329,6 @@ share/help/oc/gedit/gedit-plugins-multi-edit.page
 share/help/oc/gedit/gedit-plugins-pyconsole.page
 share/help/oc/gedit/gedit-plugins-quick-open.page
 share/help/oc/gedit/gedit-plugins-session-saver.page
-share/help/oc/gedit/gedit-plugins-snippets-guide.page
 share/help/oc/gedit/gedit-plugins-snippets.page
 share/help/oc/gedit/gedit-plugins-sort.page
 share/help/oc/gedit/gedit-plugins-tag-list.page
@@ -1504,6 +1350,7 @@ share/help/oc/gedit/gedit-tabs.page
 share/help/oc/gedit/gedit-undo-recent-action.page
 share/help/oc/gedit/gedit-view-open-files-in-sidepane.page
 share/help/oc/gedit/index.page
+share/help/oc/gedit/legal.xml
 share/help/pt_BR/
 share/help/pt_BR/gedit/
 share/help/pt_BR/gedit/figures/
@@ -1548,7 +1395,6 @@ share/help/pt_BR/gedit/gedit-plugins-multi-edit.page
 share/help/pt_BR/gedit/gedit-plugins-pyconsole.page
 share/help/pt_BR/gedit/gedit-plugins-quick-open.page
 share/help/pt_BR/gedit/gedit-plugins-session-saver.page
-share/help/pt_BR/gedit/gedit-plugins-snippets-guide.page
 share/help/pt_BR/gedit/gedit-plugins-snippets.page
 share/help/pt_BR/gedit/gedit-plugins-sort.page
 share/help/pt_BR/gedit/gedit-plugins-tag-list.page
@@ -1570,6 +1416,7 @@ share/help/pt_BR/gedit/gedit-tabs.page
 share/help/pt_BR/gedit/gedit-undo-recent-action.page
 share/help/pt_BR/gedit/gedit-view-open-files-in-sidepane.page
 share/help/pt_BR/gedit/index.page
+share/help/pt_BR/gedit/legal.xml
 share/help/ru/
 share/help/ru/gedit/
 share/help/ru/gedit/figures/
@@ -1614,7 +1461,6 @@ share/help/ru/gedit/gedit-plugins-multi-edit.page
 share/help/ru/gedit/gedit-plugins-pyconsole.page
 share/help/ru/gedit/gedit-plugins-quick-open.page
 share/help/ru/gedit/gedit-plugins-session-saver.page
-share/help/ru/gedit/gedit-plugins-snippets-guide.page
 share/help/ru/gedit/gedit-plugins-snippets.page
 share/help/ru/gedit/gedit-plugins-sort.page
 share/help/ru/gedit/gedit-plugins-tag-list.page
@@ -1636,6 +1482,7 @@ share/help/ru/gedit/gedit-tabs.page
 share/help/ru/gedit/gedit-undo-recent-action.page
 share/help/ru/gedit/gedit-view-open-files-in-sidepane.page
 share/help/ru/gedit/index.page
+share/help/ru/gedit/legal.xml
 share/help/sl/
 share/help/sl/gedit/
 share/help/sl/gedit/figures/
@@ -1680,7 +1527,6 @@ share/help/sl/gedit/gedit-plugins-multi-edit.page
 share/help/sl/gedit/gedit-plugins-pyconsole.page
 share/help/sl/gedit/gedit-plugins-quick-open.page
 share/help/sl/gedit/gedit-plugins-session-saver.page
-share/help/sl/gedit/gedit-plugins-snippets-guide.page
 share/help/sl/gedit/gedit-plugins-snippets.page
 share/help/sl/gedit/gedit-plugins-sort.page
 share/help/sl/gedit/gedit-plugins-tag-list.page
@@ -1702,6 +1548,7 @@ share/help/sl/gedit/gedit-tabs.page
 share/help/sl/gedit/gedit-undo-recent-action.page
 share/help/sl/gedit/gedit-view-open-files-in-sidepane.page
 share/help/sl/gedit/index.page
+share/help/sl/gedit/legal.xml
 share/help/sv/
 share/help/sv/gedit/
 share/help/sv/gedit/figures/
@@ -1746,7 +1593,6 @@ share/help/sv/gedit/gedit-plugins-multi-edit.page
 share/help/sv/gedit/gedit-plugins-pyconsole.page
 share/help/sv/gedit/gedit-plugins-quick-open.page
 share/help/sv/gedit/gedit-plugins-session-saver.page
-share/help/sv/gedit/gedit-plugins-snippets-guide.page
 share/help/sv/gedit/gedit-plugins-snippets.page
 share/help/sv/gedit/gedit-plugins-sort.page
 share/help/sv/gedit/gedit-plugins-tag-list.page
@@ -1768,6 +1614,7 @@ share/help/sv/gedit/gedit-tabs.page
 share/help/sv/gedit/gedit-undo-recent-action.page
 share/help/sv/gedit/gedit-view-open-files-in-sidepane.page
 share/help/sv/gedit/index.page
+share/help/sv/gedit/legal.xml
 share/help/te/
 share/help/te/gedit/
 share/help/te/gedit/figures/
@@ -1812,7 +1659,6 @@ share/help/te/gedit/gedit-plugins-multi-edit.page
 share/help/te/gedit/gedit-plugins-pyconsole.page
 share/help/te/gedit/gedit-plugins-quick-open.page
 share/help/te/gedit/gedit-plugins-session-saver.page
-share/help/te/gedit/gedit-plugins-snippets-guide.page
 share/help/te/gedit/gedit-plugins-snippets.page
 share/help/te/gedit/gedit-plugins-sort.page
 share/help/te/gedit/gedit-plugins-tag-list.page
@@ -1834,6 +1680,7 @@ share/help/te/gedit/gedit-tabs.page
 share/help/te/gedit/gedit-undo-recent-action.page
 share/help/te/gedit/gedit-view-open-files-in-sidepane.page
 share/help/te/gedit/index.page
+share/help/te/gedit/legal.xml
 share/help/th/
 share/help/th/gedit/
 share/help/th/gedit/figures/
@@ -1878,7 +1725,6 @@ share/help/th/gedit/gedit-plugins-multi-edit.page
 share/help/th/gedit/gedit-plugins-pyconsole.page
 share/help/th/gedit/gedit-plugins-quick-open.page
 share/help/th/gedit/gedit-plugins-session-saver.page
-share/help/th/gedit/gedit-plugins-snippets-guide.page
 share/help/th/gedit/gedit-plugins-snippets.page
 share/help/th/gedit/gedit-plugins-sort.page
 share/help/th/gedit/gedit-plugins-tag-list.page
@@ -1900,6 +1746,7 @@ share/help/th/gedit/gedit-tabs.page
 share/help/th/gedit/gedit-undo-recent-action.page
 share/help/th/gedit/gedit-view-open-files-in-sidepane.page
 share/help/th/gedit/index.page
+share/help/th/gedit/legal.xml
 share/help/uk/
 share/help/uk/gedit/
 share/help/uk/gedit/figures/
@@ -1944,7 +1791,6 @@ share/help/uk/gedit/gedit-plugins-multi-edit.page
 share/help/uk/gedit/gedit-plugins-pyconsole.page
 share/help/uk/gedit/gedit-plugins-quick-open.page
 share/help/uk/gedit/gedit-plugins-session-saver.page
-share/help/uk/gedit/gedit-plugins-snippets-guide.page
 share/help/uk/gedit/gedit-plugins-snippets.page
 share/help/uk/gedit/gedit-plugins-sort.page
 share/help/uk/gedit/gedit-plugins-tag-list.page
@@ -1966,6 +1812,7 @@ share/help/uk/gedit/gedit-tabs.page
 share/help/uk/gedit/gedit-undo-recent-action.page
 share/help/uk/gedit/gedit-view-open-files-in-sidepane.page
 share/help/uk/gedit/index.page
+share/help/uk/gedit/legal.xml
 share/help/zh_CN/
 share/help/zh_CN/gedit/
 share/help/zh_CN/gedit/figures/
@@ -2010,7 +1857,6 @@ share/help/zh_CN/gedit/gedit-plugins-multi-edit.page
 share/help/zh_CN/gedit/gedit-plugins-pyconsole.page
 share/help/zh_CN/gedit/gedit-plugins-quick-open.page
 share/help/zh_CN/gedit/gedit-plugins-session-saver.page
-share/help/zh_CN/gedit/gedit-plugins-snippets-guide.page
 share/help/zh_CN/gedit/gedit-plugins-snippets.page
 share/help/zh_CN/gedit/gedit-plugins-sort.page
 share/help/zh_CN/gedit/gedit-plugins-tag-list.page
@@ -2032,6 +1878,7 @@ share/help/zh_CN/gedit/gedit-tabs.page
 share/help/zh_CN/gedit/gedit-undo-recent-action.page
 share/help/zh_CN/gedit/gedit-view-open-files-in-sidepane.page
 share/help/zh_CN/gedit/index.page
+share/help/zh_CN/gedit/legal.xml
 share/help/zh_HK/
 share/help/zh_HK/gedit/
 share/help/zh_HK/gedit/figures/
@@ -2076,7 +1923,6 @@ share/help/zh_HK/gedit/gedit-plugins-multi-edit.page
 share/help/zh_HK/gedit/gedit-plugins-pyconsole.page
 share/help/zh_HK/gedit/gedit-plugins-quick-open.page
 share/help/zh_HK/gedit/gedit-plugins-session-saver.page
-share/help/zh_HK/gedit/gedit-plugins-snippets-guide.page
 share/help/zh_HK/gedit/gedit-plugins-snippets.page
 share/help/zh_HK/gedit/gedit-plugins-sort.page
 share/help/zh_HK/gedit/gedit-plugins-tag-list.page
@@ -2098,6 +1944,7 @@ share/help/zh_HK/gedit/gedit-tabs.page
 share/help/zh_HK/gedit/gedit-undo-recent-action.page
 share/help/zh_HK/gedit/gedit-view-open-files-in-sidepane.page
 share/help/zh_HK/gedit/index.page
+share/help/zh_HK/gedit/legal.xml
 share/help/zh_TW/
 share/help/zh_TW/gedit/
 share/help/zh_TW/gedit/figures/
@@ -2142,7 +1989,6 @@ share/help/zh_TW/gedit/gedit-plugins-multi-edit.page
 share/help/zh_TW/gedit/gedit-plugins-pyconsole.page
 share/help/zh_TW/gedit/gedit-plugins-quick-open.page
 share/help/zh_TW/gedit/gedit-plugins-session-saver.page
-share/help/zh_TW/gedit/gedit-plugins-snippets-guide.page
 share/help/zh_TW/gedit/gedit-plugins-snippets.page
 share/help/zh_TW/gedit/gedit-plugins-sort.page
 share/help/zh_TW/gedit/gedit-plugins-tag-list.page
@@ -2164,6 +2010,7 @@ share/help/zh_TW/gedit/gedit-tabs.page
 share/help/zh_TW/gedit/gedit-undo-recent-action.page
 share/help/zh_TW/gedit/gedit-view-open-files-in-sidepane.page
 share/help/zh_TW/gedit/index.page
+share/help/zh_TW/gedit/legal.xml
 share/locale/af/LC_MESSAGES/gedit.mo
 share/locale/am/LC_MESSAGES/gedit.mo
 share/locale/ar/LC_MESSAGES/gedit.mo
@@ -2250,6 +2097,7 @@ share/locale/sr@latin/LC_MESSAGES/gedit.mo
 share/locale/sv/LC_MESSAGES/gedit.mo
 share/locale/ta/LC_MESSAGES/gedit.mo
 share/locale/te/LC_MESSAGES/gedit.mo
+share/locale/tg/LC_MESSAGES/gedit.mo
 share/locale/th/LC_MESSAGES/gedit.mo
 share/locale/tk/LC_MESSAGES/gedit.mo
 share/locale/tr/LC_MESSAGES/gedit.mo
