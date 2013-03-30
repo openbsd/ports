@@ -1,10 +1,11 @@
-$OpenBSD: patch-configure,v 1.8 2012/10/16 17:58:42 jasper Exp $
+$OpenBSD: patch-configure,v 1.9 2013/03/30 13:04:46 jasper Exp $
 
 Fix DATADIRNAME: see LOCALBASE/share/aclocal/{glib-gettext.m4,intltool.m4}
+Fix some sed (mis)usage.
 
---- configure.orig	Tue Oct 16 16:23:55 2012
-+++ configure	Tue Oct 16 19:53:59 2012
-@@ -12384,6 +12384,9 @@ else
+--- configure.orig	Mon Mar 25 20:57:20 2013
++++ configure	Sat Mar 30 13:33:25 2013
+@@ -12456,6 +12456,9 @@ else
  fi
  
      ;;
@@ -14,3 +15,12 @@ Fix DATADIRNAME: see LOCALBASE/share/aclocal/{glib-gettext.m4,intltool.m4}
      *)
      DATADIRNAME=lib
      ;;
+@@ -15036,7 +15039,7 @@ undef_plugin() {
+ 		disabled_plugins="$disabled_plugins, $1 ($2)"
+ 	fi
+ 
+-	PLUGINS=$(echo "$PLUGINS" | sed -e "s/[^a-zA-Z0-9_]$1[ \t\r\n\f]\{1,\}/ /" -e "s/[^a-zA-Z0-9_]$1$//" -e "s/^$1[ \t\r\n\f]\{1,\}//")
++	PLUGINS=$(echo "$PLUGINS" | gsed -e "s/[^a-zA-Z0-9_]$1[ \t\r\n\f]\{1,\}/ /" -e "s/[^a-zA-Z0-9_]$1$//" -e "s/^$1[ \t\r\n\f]\{1,\}//")
+ }
+ 
+ # ================================================================
