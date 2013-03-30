@@ -1,0 +1,8 @@
+The GNOME Shell extension design is designed to give a high degree of
+power to the parts of the GNOME interface managed by the shell, such as
+window management and application launching. It simply loads arbitrary
+JavaScript and CSS. This gives developers a way to make many kinds of
+changes and share those changes with others, without having to patch the
+original source code and recompile it, and somehow distribute the
+patched code. The extension system is a replacement for the "applets" or
+"widgets" system of GNOME 2.
