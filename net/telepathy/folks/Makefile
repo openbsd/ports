@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.53 2013/03/29 16:53:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2013/03/30 09:25:32 jasper Exp $
 
 COMMENT=		people aggregation library
 
 GNOME_PROJECT=		folks
-GNOME_VERSION=		0.8.0
+GNOME_VERSION=		0.9.1
 # MODULE_VERSION in config.h
-API_V=			37
+API_V=			38
 
-REVISION=		5
-
-SHARED_LIBS +=  folks-telepathy           5.0 # 37.0
-SHARED_LIBS +=  folks                     5.1 # 37.0
-SHARED_LIBS +=  folks-eds                 0.1 # 37.0
-SHARED_LIBS +=  folks-libsocialweb        0.0 # 37.0
+SHARED_LIBS +=  folks-telepathy           5.0 # 38.1
+SHARED_LIBS +=  folks                     5.2 # 38.1
+SHARED_LIBS +=  folks-eds                 1.0 # 38.1
+SHARED_LIBS +=  folks-libsocialweb        0.0 # 38.1
 
 SUBST_VARS=		API_V
 
@@ -24,16 +22,16 @@ MODULES=		devel/dconf \
 
 WANTLIB += asn1 c camel-1.2 com_err crypto db dbus-1 dbus-glib-1
 WANTLIB += ebackend-1.2 ebook-1.2 ebook-contacts-1.2 edata-book-1.2
-WANTLIB += edataserver-1.2 ffi gck-1 gcr-base-3 gcrypt gee gio-2.0
+WANTLIB += edataserver-1.2 ffi gck-1 gcr-base-3 gcrypt gee-0.8 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gpg-error gssapi gthread-2.0
 WANTLIB += krb5 m ncurses nspr4 nss3 nssutil3 p11-kit pcre plc4
 WANTLIB += plds4 pthread readline secret-1 smime3 socialweb-client
 WANTLIB += softokn3 soup-2.4 sqlite3 ssl3 telepathy-glib xml2
 WANTLIB += z zeitgeist-1.0
 
-LIB_DEPENDS=	databases/evolution-data-server>=3.6.0p3 \
-		devel/libgee06 \
-		net/telepathy/telepathy-glib>=0.15.5 \
+LIB_DEPENDS=	databases/evolution-data-server>=3.8.0 \
+		devel/libgee \
+		net/telepathy/telepathy-glib>=0.20.1 \
 		net/libsocialweb \
 		productivity/libzeitgeist
 RUN_DEPENDS=	net/telepathy/telepathy-mission-control
@@ -43,9 +41,10 @@ TEST_DEPENDS=	${FULLPKGNAME}:${BASE_PKGPATH}
 MODGNOME_TOOLS= 	goi vala
 
 CONFIGURE_ARGS+=	--enable-import-tool \
-			--enable-inspect-tool \
-			--enable-libsocialweb-backend \
-			--enable-eds-backend
+			--enable-inspect-tool
+# libofono isn't ported yet
+CONFIGURE_ARGS= 	--disable-ofono-backend
+
 post-install:
 	rm ${PREFIX}/lib/folks/${API_V}/backends/*/*.{a,la}
 

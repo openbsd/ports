@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2013/03/29 16:53:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2013/03/30 09:25:32 jasper Exp $
 @conflict folks-meta-tracker-*
 @pkgpath net/telepathy/folks,-main
 @pkgpath net/telepathy/folks,-tracker
@@ -43,6 +43,8 @@ share/glib-2.0/schemas/org.freedesktop.folks.gschema.xml
 share/locale/ar/LC_MESSAGES/folks.mo
 share/locale/as/LC_MESSAGES/folks.mo
 share/locale/be/LC_MESSAGES/folks.mo
+share/locale/bg/LC_MESSAGES/folks.mo
+share/locale/bn_IN/LC_MESSAGES/folks.mo
 share/locale/ca/LC_MESSAGES/folks.mo
 share/locale/ca@valencia/LC_MESSAGES/folks.mo
 share/locale/cs/LC_MESSAGES/folks.mo
@@ -69,16 +71,20 @@ share/locale/lv/LC_MESSAGES/folks.mo
 share/locale/ml/LC_MESSAGES/folks.mo
 share/locale/mr/LC_MESSAGES/folks.mo
 share/locale/nb/LC_MESSAGES/folks.mo
+share/locale/or/LC_MESSAGES/folks.mo
 share/locale/pa/LC_MESSAGES/folks.mo
 share/locale/pl/LC_MESSAGES/folks.mo
 share/locale/pt/LC_MESSAGES/folks.mo
 share/locale/pt_BR/LC_MESSAGES/folks.mo
 share/locale/ru/LC_MESSAGES/folks.mo
+share/locale/sk/LC_MESSAGES/folks.mo
 share/locale/sl/LC_MESSAGES/folks.mo
 share/locale/sr/LC_MESSAGES/folks.mo
 share/locale/sr@latin/LC_MESSAGES/folks.mo
 share/locale/sv/LC_MESSAGES/folks.mo
 share/locale/ta/LC_MESSAGES/folks.mo
+share/locale/te/LC_MESSAGES/folks.mo
+share/locale/ug/LC_MESSAGES/folks.mo
 share/locale/uk/LC_MESSAGES/folks.mo
 share/locale/vi/LC_MESSAGES/folks.mo
 share/locale/zh_CN/LC_MESSAGES/folks.mo
