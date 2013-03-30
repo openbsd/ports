@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2013/03/29 12:19:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.87 2013/03/30 17:06:41 ajacoutot Exp $
 
 COMMENT-main=	GNOME Virtual File System
 COMMENT-smb=	samba module for GVFS
@@ -9,7 +9,7 @@ GNOME_VERSION=	1.16.0
 PKGNAME-main=	${DISTNAME}
 PKGNAME-smb=	${GNOME_PROJECT}-smb-${GNOME_VERSION}
 
-REVISION-main=	0
+REVISION-main=	1
 
 SHARED_LIBS +=  gvfscommon           4.0      # .0.0
 
@@ -24,7 +24,7 @@ WANTLIB += c ffi gcrypt gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpg-error
 WANTLIB += pcre pthread secret-1 util z
 
 WANTLIB-main +=	${WANTLIB}
-WANTLIB-main += ICE SM X11 Xcomposite Xcursor Xdamage xcb-shm goa-1.0
+WANTLIB-main += ICE SM X11 Xcomposite Xcursor Xdamage xcb-shm
 WANTLIB-main += Xext Xfixes Xi Xinerama Xrandr Xrender graphite2 xml2
 WANTLIB-main += atk-1.0 atk-bridge-2.0 atspi avahi-client avahi-common
 WANTLIB-main += avahi-glib bz2 cairo cairo-gobject dbus-1 expat
@@ -47,7 +47,7 @@ LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		archivers/libarchive \
 		devel/libsoup,-gnome \
 		net/avahi \
-		x11/gnome/online-accounts
+		x11/gtk+3
 
 RUN_DEPENDS-smb= ${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-smb= ${LIB_DEPENDS} \
@@ -61,6 +61,9 @@ CONFIGURE_ARGS=	--disable-cdda \
 		--disable-gudev \
 		--disable-udev \
 		--disable-gdu
+
+# XXX subpackage
+CONFIGURE_ARGS += --disable-goa
 
 MULTI_PACKAGES=		-main
 PSEUDO_FLAVORS=		no_smb

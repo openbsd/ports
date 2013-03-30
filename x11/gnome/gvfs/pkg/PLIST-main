@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.26 2013/03/29 12:19:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.27 2013/03/30 17:06:41 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 %%SHARED%%
 @bin bin/gvfs-cat
@@ -26,7 +26,6 @@ include/gvfs-client/gvfs/gvfsuriutils.h
 lib/libgvfscommon.a
 lib/libgvfscommon.la
 @lib lib/libgvfscommon.so.${LIBgvfscommon_VERSION}
-@bin libexec/gvfs-goa-volume-monitor
 @bin libexec/gvfsd
 @bin libexec/gvfsd-afp
 @bin libexec/gvfsd-afp-browse
@@ -72,7 +71,6 @@ share/dbus-1/
 share/dbus-1/services/
 share/dbus-1/services/gvfs-daemon.service
 share/dbus-1/services/gvfs-metadata.service
-share/dbus-1/services/org.gtk.Private.GoaVolumeMonitor.service
 share/glib-2.0/schemas/org.gnome.system.dns_sd.gschema.xml
 share/glib-2.0/schemas/org.gnome.system.gvfs.enums.xml
 share/gvfs/
@@ -93,7 +91,6 @@ share/gvfs/mounts/recent.mount
 share/gvfs/mounts/sftp.mount
 share/gvfs/mounts/trash.mount
 share/gvfs/remote-volume-monitors/
-share/gvfs/remote-volume-monitors/goa.monitor
 share/locale/af/LC_MESSAGES/gvfs.mo
 share/locale/ar/LC_MESSAGES/gvfs.mo
 share/locale/as/LC_MESSAGES/gvfs.mo
