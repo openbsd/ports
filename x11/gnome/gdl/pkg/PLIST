@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/09/28 10:56:53 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.9 2013/03/30 07:14:38 ajacoutot Exp $
 include/libgdl-3.0/
 include/libgdl-3.0/gdl/
 include/libgdl-3.0/gdl/gdl-dock-bar.h
@@ -16,6 +15,7 @@ lib/girepository-1.0/
 lib/girepository-1.0/Gdl-3.typelib
 lib/libgdl-3.a
 lib/libgdl-3.la
+@lib lib/libgdl-3.so.${LIBgdl-3_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/gdl-3.0.pc
 share/gir-1.0/
@@ -146,8 +146,6 @@ share/locale/oc/LC_MESSAGES/gdl-3.mo
 share/locale/or/
 share/locale/or/LC_MESSAGES/
 share/locale/or/LC_MESSAGES/gdl-3.mo
-share/locale/pa/
-share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/gdl-3.mo
 share/locale/pl/LC_MESSAGES/gdl-3.mo
 share/locale/ps/
