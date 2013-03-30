@@ -1,17 +1,18 @@
 #!/bin/sh
 #
-# $OpenBSD: gdm.rc,v 1.17 2012/10/16 16:38:13 ajacoutot Exp $
+# $OpenBSD: gdm.rc,v 1.18 2013/03/30 09:52:17 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/gdm"
 
 . /etc/rc.d/rc.subr
 
-pexp="${TRUEPREFIX}/sbin/gdm-binary"
+rc_bg=YES
 rc_reload=NO
 
 rc_pre() {
 	install -d -g _gdm -m 0711 /var/run/gdm
 	install -d -o _gdm -g _gdm /var/run/gdm/greeter
+	sleep 5
 }
 
 rc_post() {

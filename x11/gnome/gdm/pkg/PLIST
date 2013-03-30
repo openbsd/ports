@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.58 2013/01/11 10:11:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.59 2013/03/30 09:52:17 ajacoutot Exp $
 @comment starts a full gnome-session as _gdm which requires a valid homedir
 @newgroup _gdm:676
 @newuser _gdm:676:_gdm:daemon:GNOME Display Manager:/var/db/gdm:/sbin/nologin
@@ -36,7 +36,6 @@ lib/libgdmsimplegreeter.la
 @lib lib/libgdmsimplegreeter.so.${LIBgdmsimplegreeter_VERSION}
 lib/pkgconfig/gdm.pc
 lib/pkgconfig/gdmsimplegreeter.pc
-@bin libexec/gdm-crash-logger
 @bin libexec/gdm-host-chooser
 @bin libexec/gdm-session-worker
 @bin libexec/gdm-simple-chooser
@@ -44,8 +43,7 @@ lib/pkgconfig/gdmsimplegreeter.pc
 @bin libexec/gdm-simple-slave
 @bin libexec/gdm-smartcard-worker
 @bin libexec/gdm-xdmcp-chooser-slave
-sbin/gdm
-@bin sbin/gdm-binary
+@bin sbin/gdm
 share/examples/gdm/
 share/examples/gdm/etc/
 share/examples/gdm/etc/dbus-1/
@@ -132,9 +130,7 @@ share/gdm/gdm.schemas
 share/gdm/greeter/
 share/gdm/greeter/applications/
 share/gdm/greeter/applications/gdm-simple-greeter.desktop
-share/gdm/greeter/applications/gnome-mag.desktop
 share/gdm/greeter/applications/gnome-shell.desktop
-share/gdm/greeter/applications/gok.desktop
 share/gdm/greeter/applications/mime-dummy-handler.desktop
 share/gdm/greeter/applications/mimeapps.list
 share/gdm/greeter/applications/polkit-gnome-authentication-agent-1.desktop
@@ -323,6 +319,7 @@ share/locale/sr@latin/LC_MESSAGES/gdm.mo
 share/locale/sv/LC_MESSAGES/gdm.mo
 share/locale/ta/LC_MESSAGES/gdm.mo
 share/locale/te/LC_MESSAGES/gdm.mo
+share/locale/tg/LC_MESSAGES/gdm.mo
 share/locale/th/LC_MESSAGES/gdm.mo
 share/locale/tr/LC_MESSAGES/gdm.mo
 share/locale/ug/LC_MESSAGES/gdm.mo
@@ -352,10 +349,10 @@ share/pixmaps/nohost.png
 @sample /var/gdm/
 @mode
 @group
+@rcscript ${RCDIR}/gdm
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/dconf update
 @unexec-delete %D/bin/dconf update
-@rcscript ${RCDIR}/gdm
