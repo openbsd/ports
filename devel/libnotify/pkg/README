@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2012/04/06 07:26:37 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2013/03/30 09:46:10 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -11,5 +11,6 @@ notification daemons needs to be installed:
     * xfce4-notifyd
     * notification-daemon-xfce (deprecated)
 
-Note that gnome-shell also acts as a notification daemon in which case
-it is not necessary to install another one.
+Note that some Desktop Environments (e.g. GNOME with gnome-shell) use
+their own notification daemon in which case it is not necessary to
+install another one.
