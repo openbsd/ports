@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2013/03/30 08:12:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2013/03/30 16:26:54 ajacoutot Exp $
 
 COMMENT-main=	GNOME desktop meta-package (base installation)
 COMMENT-extra=	GNOME desktop meta-package (full installation)
@@ -9,7 +9,7 @@ PKGNAME=	gnome-${V}
 PKGNAME-main=	gnome-${V}
 PKGNAME-extra=	gnome-extra-${V}
 
-REVISION-main=	3
+REVISION-main=	4
 REVISION-extra=	2
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
@@ -57,6 +57,10 @@ RUN_DEPENDS-main += \
 		x11/gnome/screenshot \
 		x11/gnome/search-tool \
 		x11/gnome/system-log
+
+# gnome-initial-setup
+RUN_DEPENDS-main += \
+		x11/gnome/getting-started-docs
 
 # "Make it fancy!"
 RUN_DEPENDS-main += \
