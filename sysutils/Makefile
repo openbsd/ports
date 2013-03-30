@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.287 2013/03/27 08:49:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.288 2013/03/30 14:57:41 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -110,7 +110,6 @@
      SUBDIR += ncdu
      SUBDIR += ndesk-dbus
      SUBDIR += ndesk-dbus-glib
-     SUBDIR += notification-daemon
      SUBDIR += node-always
      SUBDIR += node-daemon
      SUBDIR += node-syslog
