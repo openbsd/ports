@@ -1,0 +1,26 @@
+$OpenBSD: patch-lib_Target_X86_X86SelectionDAGInfo_cpp,v 1.1 2013/03/30 12:10:40 sthen Exp $
+
+r175057 upstream:
+
+X86: Disable generation of rep;movsl when %esi is used as a base pointer.
+This happens when there is both stack realignment and a dynamic alloca in the
+function. If we overwrite %esi (rep;movsl uses fixed registers) we'll lose the
+base pointer and the next register spill will write into oblivion.
+
+--- lib/Target/X86/X86SelectionDAGInfo.cpp.orig	Thu Nov  1 08:07:29 2012
++++ lib/Target/X86/X86SelectionDAGInfo.cpp	Fri Mar 29 14:58:38 2013
+@@ -202,6 +202,14 @@ X86SelectionDAGInfo::EmitTargetCodeForMemcpy(Selection
+       SrcPtrInfo.getAddrSpace() >= 256)
+     return SDValue();
+ 
++  // ESI might be used as a base pointer, in that case we can't simply overwrite
++  // the register.  Fall back to generic code.
++  const X86RegisterInfo *TRI =
++      static_cast<const X86RegisterInfo *>(DAG.getTarget().getRegisterInfo());
++  if (TRI->hasBasePointer(DAG.getMachineFunction()) &&
++      TRI->getBaseRegister() == X86::ESI)
++    return SDValue();
++
+   MVT AVT;
+   if (Align & 1)
+     AVT = MVT::i8;
