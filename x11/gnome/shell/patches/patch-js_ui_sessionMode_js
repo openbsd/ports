@@ -1,10 +1,10 @@
-$OpenBSD: patch-js_ui_sessionMode_js,v 1.1 2012/10/08 11:33:21 ajacoutot Exp $
+$OpenBSD: patch-js_ui_sessionMode_js,v 1.2 2013/03/30 08:04:19 jasper Exp $
 
 XXX fix this the correct way (if HAVE_NETWORK_MANAGER) and push it upstream
 
---- js/ui/sessionMode.js.orig	Mon Oct  8 14:59:38 2012
-+++ js/ui/sessionMode.js	Mon Oct  8 15:00:06 2012
-@@ -91,7 +91,7 @@ const _modes = {
+--- js/ui/sessionMode.js.orig	Tue Mar 26 22:01:00 2013
++++ js/ui/sessionMode.js	Fri Mar 29 20:39:33 2013
+@@ -101,7 +101,7 @@ const _modes = {
          isLocked: false,
          isPrimary: true,
          unlockDialog: imports.ui.unlockDialog.UnlockDialog,

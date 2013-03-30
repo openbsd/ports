@@ -1,35 +1,27 @@
-$OpenBSD: patch-src_Makefile_am,v 1.3 2012/09/30 20:56:42 jasper Exp $
+$OpenBSD: patch-src_Makefile_am,v 1.4 2013/03/30 08:04:19 jasper Exp $
 
 Make Network Manager support optional.
 https://bugzilla.gnome.org/show_bug.cgi?id=679871
 
---- src/Makefile.am.orig	Tue Sep 18 16:44:03 2012
-+++ src/Makefile.am	Sun Sep 30 22:46:10 2012
-@@ -86,6 +86,7 @@ include Makefile-hotplug-sniffer.am
- gnome_shell_cflags =				\
- 	$(GNOME_SHELL_CFLAGS)			\
- 	$(SYSTEMD_CFLAGS)                       \
-+	$(NM_CFLAGS)				\
- 	-I$(srcdir)/tray			\
- 	-DVERSION=\"$(VERSION)\"		\
- 	-DLOCALEDIR=\"$(datadir)/locale\" 	\
-@@ -117,7 +118,6 @@ shell_public_headers_h =		\
+--- src/Makefile.am.orig	Fri Mar 22 20:06:31 2013
++++ src/Makefile.am	Fri Mar 29 21:57:26 2013
+@@ -116,7 +116,6 @@ shell_public_headers_h =		\
  	shell-invert-lightness-effect.h	\
- 	shell-mobile-providers.h	\
+ 	shell-keybinding-modes.h	\
  	shell-mount-operation.h		\
 -	shell-network-agent.h		\
  	shell-perf-log.h		\
  	shell-screenshot.h		\
- 	shell-screen-grabber.h		\
-@@ -164,7 +164,6 @@ libgnome_shell_la_SOURCES =		\
+ 	shell-slicer.h			\
+@@ -159,7 +158,6 @@ libgnome_shell_la_SOURCES =		\
+ 	shell-keyring-prompt.h		\
  	shell-keyring-prompt.c		\
- 	shell-mobile-providers.c	\
  	shell-mount-operation.c		\
 -	shell-network-agent.c		\
  	shell-perf-log.c		\
  	shell-polkit-authentication-agent.h	\
  	shell-polkit-authentication-agent.c	\
-@@ -241,6 +240,16 @@ endif BUILD_RECORDER
+@@ -233,6 +231,16 @@ endif BUILD_RECORDER
  
  ########################################
  
@@ -46,20 +38,12 @@ https://bugzilla.gnome.org/show_bug.cgi?id=679871
  libexec_PROGRAMS += gnome-shell-perf-helper
  
  gnome_shell_perf_helper_SOURCES = shell-perf-helper.c
-@@ -287,6 +296,7 @@ libgnome_shell_la_LIBADD =		\
- 	-lm			\
- 	$(GNOME_SHELL_LIBS)	\
- 	$(SYSTEMD_LIBS)         \
-+	$(NM_LIBS)		\
- 	$(BLUETOOTH_LIBS)	\
- 	libst-1.0.la       	\
- 	libtray.la		\
-@@ -296,7 +306,10 @@ libgnome_shell_la_LIBADD =		\
+@@ -287,7 +295,10 @@ libgnome_shell_la_LIBADD =		\
  libgnome_shell_la_CPPFLAGS = $(gnome_shell_cflags)
  
  Shell-0.1.gir: libgnome-shell.la St-1.0.gir
--Shell_0_1_gir_INCLUDES = Clutter-1.0 ClutterX11-1.0 Meta-3.0 TelepathyGLib-0.12 TelepathyLogger-0.2 Soup-2.4 GMenu-3.0 NetworkManager-1.0 NMClient-1.0
-+Shell_0_1_gir_INCLUDES = Clutter-1.0 ClutterX11-1.0 Meta-3.0 TelepathyGLib-0.12 TelepathyLogger-0.2 Soup-2.4 GMenu-3.0
+-Shell_0_1_gir_INCLUDES = Clutter-1.0 ClutterX11-1.0 Meta-3.0 TelepathyGLib-0.12 Soup-2.4 GMenu-3.0 NetworkManager-1.0 NMClient-1.0
++Shell_0_1_gir_INCLUDES = Clutter-1.0 ClutterX11-1.0 Meta-3.0 TelepathyGLib-0.12 Soup-2.4 GMenu-3.0
 +if NETWORK_MANAGER
 +Shell_0_1_gir_INCLUDES += NetworkManager-1.0 NMClient-1.0
 +endif

@@ -1,11 +1,11 @@
-$OpenBSD: patch-js_ui_panel_js,v 1.4 2012/09/30 14:45:23 jasper Exp $
+$OpenBSD: patch-js_ui_panel_js,v 1.5 2013/03/30 08:04:19 jasper Exp $
 
 Make Network Manager support optional.
 https://bugzilla.gnome.org/show_bug.cgi?id=679871
 
---- js/ui/panel.js.orig	Sun Sep 30 13:24:41 2012
-+++ js/ui/panel.js	Sun Sep 30 13:25:31 2012
-@@ -910,11 +910,13 @@ if (Config.HAVE_BLUETOOTH)
+--- js/ui/panel.js.orig	Mon Mar 18 16:36:03 2013
++++ js/ui/panel.js	Fri Mar 29 20:39:33 2013
+@@ -883,11 +883,13 @@ if (Config.HAVE_BLUETOOTH)
      PANEL_ITEM_IMPLEMENTATIONS['bluetooth'] =
          imports.ui.status.bluetooth.Indicator;
  

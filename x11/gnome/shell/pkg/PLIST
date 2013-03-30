@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/10/16 11:56:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/03/30 08:04:19 jasper Exp $
 @bin bin/gnome-shell
 bin/gnome-shell-extension-prefs
 bin/gnome-shell-extension-tool
@@ -21,7 +21,9 @@ share/GConf/gsettings/gnome-shell-overrides.convert
 share/applications/evolution-calendar.desktop
 share/applications/gnome-shell-extension-prefs.desktop
 share/applications/gnome-shell.desktop
+share/dbus-1/interfaces/org.gnome.Shell.Screenshot.xml
 share/dbus-1/interfaces/org.gnome.ShellSearchProvider.xml
+share/dbus-1/interfaces/org.gnome.ShellSearchProvider2.xml
 share/dbus-1/services/org.gnome.Shell.CalendarServer.service
 share/dbus-1/services/org.gnome.Shell.HotplugSniffer.service
 share/glib-2.0/schemas/org.gnome.shell.gschema.xml
@@ -43,6 +45,7 @@ share/gnome-shell/js/misc/config.js
 share/gnome-shell/js/misc/extensionUtils.js
 share/gnome-shell/js/misc/fileUtils.js
 share/gnome-shell/js/misc/gnomeSession.js
+share/gnome-shell/js/misc/hash.js
 share/gnome-shell/js/misc/history.js
 share/gnome-shell/js/misc/jsParse.js
 share/gnome-shell/js/misc/loginManager.js
@@ -55,6 +58,8 @@ share/gnome-shell/js/ui/
 share/gnome-shell/js/ui/altTab.js
 share/gnome-shell/js/ui/appDisplay.js
 share/gnome-shell/js/ui/appFavorites.js
+share/gnome-shell/js/ui/background.js
+share/gnome-shell/js/ui/backgroundMenu.js
 share/gnome-shell/js/ui/boxpointer.js
 share/gnome-shell/js/ui/calendar.js
 share/gnome-shell/js/ui/checkBox.js
@@ -75,7 +80,6 @@ share/gnome-shell/js/ui/endSessionDialog.js
 share/gnome-shell/js/ui/environment.js
 share/gnome-shell/js/ui/extensionDownloader.js
 share/gnome-shell/js/ui/extensionSystem.js
-share/gnome-shell/js/ui/flashspot.js
 share/gnome-shell/js/ui/grabHelper.js
 share/gnome-shell/js/ui/ibusCandidatePopup.js
 share/gnome-shell/js/ui/iconGrid.js
@@ -89,7 +93,9 @@ share/gnome-shell/js/ui/main.js
 share/gnome-shell/js/ui/messageTray.js
 share/gnome-shell/js/ui/modalDialog.js
 share/gnome-shell/js/ui/notificationDaemon.js
+share/gnome-shell/js/ui/osdWindow.js
 share/gnome-shell/js/ui/overview.js
+share/gnome-shell/js/ui/overviewControls.js
 share/gnome-shell/js/ui/panel.js
 share/gnome-shell/js/ui/panelMenu.js
 share/gnome-shell/js/ui/pointerWatcher.js
@@ -97,9 +103,11 @@ share/gnome-shell/js/ui/popupMenu.js
 share/gnome-shell/js/ui/remoteSearch.js
 share/gnome-shell/js/ui/runDialog.js
 share/gnome-shell/js/ui/screenShield.js
+share/gnome-shell/js/ui/screenshot.js
 share/gnome-shell/js/ui/scripting.js
 share/gnome-shell/js/ui/search.js
 share/gnome-shell/js/ui/searchDisplay.js
+share/gnome-shell/js/ui/separator.js
 share/gnome-shell/js/ui/sessionMode.js
 share/gnome-shell/js/ui/shellDBus.js
 share/gnome-shell/js/ui/shellEntry.js
@@ -112,9 +120,11 @@ share/gnome-shell/js/ui/status/lockScreenMenu.js
 share/gnome-shell/js/ui/status/network.js
 share/gnome-shell/js/ui/status/power.js
 share/gnome-shell/js/ui/status/volume.js
+share/gnome-shell/js/ui/switcherPopup.js
 share/gnome-shell/js/ui/tweener.js
 share/gnome-shell/js/ui/unlockDialog.js
 share/gnome-shell/js/ui/userMenu.js
+share/gnome-shell/js/ui/userWidget.js
 share/gnome-shell/js/ui/viewSelector.js
 share/gnome-shell/js/ui/wanda.js
 share/gnome-shell/js/ui/windowAttentionHandler.js
@@ -142,6 +152,7 @@ share/gnome-shell/theme/filter-selected-rtl.svg
 share/gnome-shell/theme/gnome-shell.css
 share/gnome-shell/theme/logged-in-indicator.svg
 share/gnome-shell/theme/message-tray-background.png
+share/gnome-shell/theme/more-results.svg
 share/gnome-shell/theme/noise-texture.png
 share/gnome-shell/theme/panel-button-border.svg
 share/gnome-shell/theme/panel-button-highlight-narrow.svg
@@ -156,6 +167,7 @@ share/gnome-shell/theme/toggle-on-intl.svg
 share/gnome-shell/theme/toggle-on-us.svg
 share/gnome-shell/theme/ws-switch-arrow-down.png
 share/gnome-shell/theme/ws-switch-arrow-up.png
+share/gnome-shell/wanda.png
 share/gtk-doc/html/shell/
 share/gtk-doc/html/shell/ShellAppSystem.html
 share/gtk-doc/html/shell/ShellEmbeddedWindow.html
@@ -176,6 +188,8 @@ share/gtk-doc/html/shell/ch04.html
 share/gtk-doc/html/shell/ch05.html
 share/gtk-doc/html/shell/ch06.html
 share/gtk-doc/html/shell/deprecated-api-index.html
+share/gtk-doc/html/shell/gdbus-org.gnome.Shell.SearchProvider.html
+share/gtk-doc/html/shell/gdbus-org.gnome.Shell.SearchProvider2.html
 share/gtk-doc/html/shell/home.png
 share/gtk-doc/html/shell/index.html
 share/gtk-doc/html/shell/index.sgml
@@ -188,7 +202,6 @@ share/gtk-doc/html/shell/shell-ShellGlobal.html
 share/gtk-doc/html/shell/shell-ShellTpClient.html
 share/gtk-doc/html/shell/shell-ShellWM.html
 share/gtk-doc/html/shell/shell-ShellWindowTracker.html
-share/gtk-doc/html/shell/shell-shell-mobile-providers.html
 share/gtk-doc/html/shell/shell-shell-polkit-authentication-agent.html
 share/gtk-doc/html/shell/shell-shell-recorder.html
 share/gtk-doc/html/shell/shell-shell-util.html
@@ -254,6 +267,7 @@ share/locale/eu/LC_MESSAGES/gnome-shell.mo
 share/locale/fa/LC_MESSAGES/gnome-shell.mo
 share/locale/fi/LC_MESSAGES/gnome-shell.mo
 share/locale/fr/LC_MESSAGES/gnome-shell.mo
+share/locale/fur/LC_MESSAGES/gnome-shell.mo
 share/locale/ga/LC_MESSAGES/gnome-shell.mo
 share/locale/gl/LC_MESSAGES/gnome-shell.mo
 share/locale/gu/LC_MESSAGES/gnome-shell.mo
@@ -292,6 +306,7 @@ share/locale/sr@latin/LC_MESSAGES/gnome-shell.mo
 share/locale/sv/LC_MESSAGES/gnome-shell.mo
 share/locale/ta/LC_MESSAGES/gnome-shell.mo
 share/locale/te/LC_MESSAGES/gnome-shell.mo
+share/locale/tg/LC_MESSAGES/gnome-shell.mo
 share/locale/th/LC_MESSAGES/gnome-shell.mo
 share/locale/tr/LC_MESSAGES/gnome-shell.mo
 share/locale/ug/LC_MESSAGES/gnome-shell.mo
