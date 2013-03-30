@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2013/03/21 08:45:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2013/03/30 07:50:14 brad Exp $
 
 COMMENT=	free space simulator and planetarium
 
 DISTNAME=	celestia-1.6.1
-REVISION=	6
+REVISION=	7
 
 CATEGORIES=	astro x11
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=celestia/}
 
-WANTLIB += GL GLU ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += GL GLU ICE SM X11 Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xmu Xrandr Xrender Xt atk-1.0
 WANTLIB += c cairo expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gtk-x11-2.0
@@ -38,7 +38,7 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include \
 			-I${LOCALBASE}/include/libpng" \
-		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lm -lGL" \
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lGL" \
 		LUA_CFLAGS="`pkg-config --cflags ${MODLUA_DEP}`" \
 		LUA_LIBS="`pkg-config --libs ${MODLUA_DEP}`"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
@@ -46,9 +46,6 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-lua \
 		--enable-cairo \
 		--enable-theora
-
-# /usr/local/lib/libgthread-2.0.so.X.X: undefined symbol 'pthread_mutex_trylock'
-CFLAGS+=	-pthread
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/celestia/celestiacore.cpp
