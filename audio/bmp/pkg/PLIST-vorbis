@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST-vorbis,v 1.2 2010/06/19 20:21:14 sthen Exp $
-@comment lib/bmp/Input/libvorbis.la
-lib/bmp/Input/libvorbis.so
