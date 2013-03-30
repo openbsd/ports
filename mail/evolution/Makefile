@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.190 2013/03/11 11:23:50 espie Exp $
+# $OpenBSD: Makefile,v 1.191 2013/03/30 11:37:33 ajacoutot Exp $
+
+BROKEN=			needs webkit>=1.10.0
 
 SHARED_ONLY=		Yes
 
