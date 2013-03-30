@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/06/24 09:24:37 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.3 2013/03/30 15:49:43 ajacoutot Exp $
 @bin bin/jpgicc
 @bin bin/linkicc
 @bin bin/psicc
@@ -9,6 +8,7 @@ include/lcms2.h
 include/lcms2_plugin.h
 lib/liblcms2.a
 lib/liblcms2.la
+@lib lib/liblcms2.so.${LIBlcms2_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/lcms2.pc
 @man man/man1/jpgicc.1
