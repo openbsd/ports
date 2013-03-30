@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/03/29 06:25:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/03/30 13:11:09 ajacoutot Exp $
 %%SHARED%%
 @bin bin/notify-send
 include/libnotify/
@@ -12,7 +12,6 @@ lib/libnotify.a
 lib/libnotify.la
 lib/pkgconfig/
 lib/pkgconfig/libnotify.pc
-share/doc/pkg-readmes/${FULLPKGNAME}
 share/gir-1.0/
 share/gir-1.0/Notify-0.7.gir
 share/gtk-doc/
