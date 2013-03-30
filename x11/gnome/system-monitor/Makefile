@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2013/03/30 13:03:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2013/03/30 13:07:36 ajacoutot Exp $
 
 COMMENT=	sytem monitor for GNOME
 
 GNOME_PROJECT=	gnome-system-monitor
 GNOME_VERSION=	3.8.0
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	sysutils
 
@@ -35,6 +35,9 @@ LIB_DEPENDS=	devel/libgtop2 \
 
 # share/polkit-1/actions/org.gnome.gnome-system-monitor.policy
 RUN_DEPENDS +=	sysutils/polkit
+
+# polkit(8) almost always needs to know the "active" session
+RUN_DEPENDS +=	sysutils/consolekit
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_TOOLS= yelp
