@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/03/30 08:04:19 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/03/30 10:03:08 ajacoutot Exp $
+@conflict gnome-panel-*
+@pkgpath x11/gnome/panel
 @bin bin/gnome-shell
 bin/gnome-shell-extension-prefs
 bin/gnome-shell-extension-tool

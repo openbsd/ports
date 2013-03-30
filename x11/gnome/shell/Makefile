@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2013/03/30 08:04:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2013/03/30 10:03:08 ajacoutot Exp $
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		3.8.0.1
+REVISION=		0
 
 HOMEPAGE=		http://live.gnome.org/GnomeShell
 
