@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.47 2013/03/11 11:46:11 espie Exp $
+# $OpenBSD: Makefile,v 1.48 2013/03/30 07:25:26 ajacoutot Exp $
 
 COMMENT=	mouse accessibility enhancements for GNOME
 
 GNOME_PROJECT=	mousetweaks
-GNOME_VERSION=	3.6.0
+GNOME_VERSION=	3.8.0
 
 HOMEPAGE=	http://live.gnome.org/Mousetweaks/Home
 
 # GPLv3 - GFDLv1.3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL X11 Xcursor Xfixes Xrender Xtst atk-1.0 c cairo
-WANTLIB += cairo-gobject expat fontconfig freetype gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pixman-1 png pthread pthread-stubs xcb
-WANTLIB += xcb-render xcb-shm z
+WANTLIB += X11 Xcursor Xfixes Xtst atk-1.0 c cairo cairo-gobject
+WANTLIB += fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gobject-2.0 gtk-3 m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pthread z
 
 MODULES=	devel/dconf \
 		devel/gettext \
