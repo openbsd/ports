@@ -1,17 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.38 2013/03/29 18:39:35 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.39 2013/03/30 09:39:54 ajacoutot Exp $
+@conflict nautilus-open-terminal-*
+@pkgpath x11/gnome/nautilus-open-terminal
 @bin bin/gnome-terminal
-lib/nautilus/
-lib/nautilus/extensions-3.0/
 lib/nautilus/extensions-3.0/libterminal-nautilus.so
 @bin libexec/gnome-terminal-migration
 @bin libexec/gnome-terminal-server
 share/applications/gnome-terminal.desktop
-share/dbus-1/
-share/dbus-1/services/
 share/dbus-1/services/org.gnome.Terminal.service
 share/glib-2.0/schemas/org.gnome.Terminal.gschema.xml
-share/help/
-share/help/C/
 share/help/C/gnome-terminal/
 share/help/C/gnome-terminal/adv-keyboard-shortcuts.page
 share/help/C/gnome-terminal/app-colors.page
@@ -44,7 +40,6 @@ share/help/C/gnome-terminal/txt-copy-paste.page
 share/help/C/gnome-terminal/txt-links.page
 share/help/C/gnome-terminal/txt-search.page
 share/help/C/gnome-terminal/txt-select-text.page
-share/help/de/
 share/help/de/gnome-terminal/
 share/help/de/gnome-terminal/adv-keyboard-shortcuts.page
 share/help/de/gnome-terminal/app-colors.page
@@ -77,7 +72,6 @@ share/help/de/gnome-terminal/txt-copy-paste.page
 share/help/de/gnome-terminal/txt-links.page
 share/help/de/gnome-terminal/txt-search.page
 share/help/de/gnome-terminal/txt-select-text.page
-share/help/el/
 share/help/el/gnome-terminal/
 share/help/el/gnome-terminal/adv-keyboard-shortcuts.page
 share/help/el/gnome-terminal/app-colors.page
@@ -110,7 +104,6 @@ share/help/el/gnome-terminal/txt-copy-paste.page
 share/help/el/gnome-terminal/txt-links.page
 share/help/el/gnome-terminal/txt-search.page
 share/help/el/gnome-terminal/txt-select-text.page
-share/help/es/
 share/help/es/gnome-terminal/
 share/help/es/gnome-terminal/adv-keyboard-shortcuts.page
 share/help/es/gnome-terminal/app-colors.page
@@ -143,7 +136,6 @@ share/help/es/gnome-terminal/txt-copy-paste.page
 share/help/es/gnome-terminal/txt-links.page
 share/help/es/gnome-terminal/txt-search.page
 share/help/es/gnome-terminal/txt-select-text.page
-share/help/gl/
 share/help/gl/gnome-terminal/
 share/help/gl/gnome-terminal/adv-keyboard-shortcuts.page
 share/help/gl/gnome-terminal/app-colors.page
