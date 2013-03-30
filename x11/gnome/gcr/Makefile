@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/29 09:47:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2013/03/30 17:51:12 ajacoutot Exp $
 
 COMMENT=	library for bits of crypto UI and parsing
 
 GNOME_PROJECT=	gcr
 GNOME_VERSION=	3.8.0
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  gck-1                1.0      # 0.0
 SHARED_LIBS +=  gcr-base-3           2.0      # 1.0
@@ -48,10 +48,6 @@ pre-configure:
 	perl -pi -e 's,sed -i,gsed -i,g' \
 		${WRKSRC}/{,ui,ui/tests,gcr,gcr/tests,gck,gck/tests,egg,egg/tests}/Makefile.in \
 		${WRKSRC}/Makefile.decl
-
-# ui/Makefile install-exec-hook
-post-install:
-	cd ${PREFIX}/lib && \
-		ln -s libgcr-ui-3.so.${LIBgcr-ui-3_VERSION} libgcr-3.so.${LIBgcr-ui-3_VERSION}
+	${SUBST_CMD} ${WRKSRC}/ui/Makefile.in
 
 .include <bsd.port.mk>

@@ -1,0 +1,14 @@
+$OpenBSD: patch-ui_Makefile_in,v 1.1 2013/03/30 17:51:12 ajacoutot Exp $
+--- ui/Makefile.in.orig	Sat Mar 30 17:40:28 2013
++++ ui/Makefile.in	Sat Mar 30 17:40:11 2013
+@@ -1707,9 +1707,7 @@ check-symbols: gcr-ui-expected.abi gcr-ui-actual.abi
+ 
+ # libgcr-3.so (and  friends) symlink to libgcr-ui-3.so for compatibility raisons
+ install-exec-hook:
+-	$(LN_S) -f `readlink $(DESTDIR)$(libdir)/libgcr-ui-@GCR_MAJOR@.so` $(DESTDIR)$(libdir)/libgcr-@GCR_MAJOR@.so
+-	$(LN_S) -f `readlink $(DESTDIR)$(libdir)/libgcr-ui-@GCR_MAJOR@.so` $(DESTDIR)$(libdir)/libgcr-@GCR_MAJOR@.so.@GCR_CURRENT@
+-	$(LN_S) -f `readlink $(DESTDIR)$(libdir)/libgcr-ui-@GCR_MAJOR@.so` $(DESTDIR)$(libdir)/libgcr-@GCR_MAJOR@.so.@GCR_CURRENT@.0.0
++	cd $(DESTDIR)$(libdir)/ && $(LN_S) -f libgcr-ui-@GCR_MAJOR@.so.${LIBgcr-ui-3_VERSION} libgcr-@GCR_MAJOR@.so.${LIBgcr-ui-3_VERSION}
+ 
+ gcr-enum-types.h: $(ENUM_TEMPLATE_H) $(HEADER_FILES)
+ 	$(AM_V_GEN) $(GLIB_MKENUMS) --template $^ > $@
