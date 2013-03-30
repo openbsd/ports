@@ -1,10 +1,10 @@
-$OpenBSD: patch-plugins_symbol-db_symbol-db-engine-core_c,v 1.3 2012/08/12 20:43:42 jasper Exp $
+$OpenBSD: patch-plugins_symbol-db_symbol-db-engine-core_c,v 1.4 2013/03/30 10:48:34 jasper Exp $
 
 Do not use shm_open() which OpenBSD lacks (from FreeBSD ports).
 
---- plugins/symbol-db/symbol-db-engine-core.c.orig	Sat Jul 28 11:42:41 2012
-+++ plugins/symbol-db/symbol-db-engine-core.c	Sat Jul 28 16:52:53 2012
-@@ -1069,7 +1069,7 @@ sdb_engine_ctags_output_thread (gpointer data, gpointe
+--- plugins/symbol-db/symbol-db-engine-core.c.orig	Wed Mar 20 03:20:34 2013
++++ plugins/symbol-db/symbol-db-engine-core.c	Sat Mar 30 11:10:27 2013
+@@ -1081,7 +1081,7 @@ sdb_engine_ctags_output_thread (gpointer data, gpointe
  
  			/* found out a new marker */ 
  			marker_ptr = strstr (marker_ptr + len_marker, CTAGS_MARKER);
@@ -13,7 +13,7 @@ Do not use shm_open() which OpenBSD lacks (from FreeBSD ports).
  	}
  	
  	SDB_UNLOCK(priv);
-@@ -1517,8 +1517,8 @@ sdb_engine_scan_files_1 (SymbolDBEngine * dbe, const G
+@@ -1529,8 +1529,8 @@ sdb_engine_scan_files_1 (SymbolDBEngine * dbe, GPtrArr
  		gint i = 0;
  		while (TRUE)
  		{
@@ -24,7 +24,7 @@ Do not use shm_open() which OpenBSD lacks (from FreeBSD ports).
  			gchar *test;
  			test = g_strconcat (SHARED_MEMORY_PREFIX, temp_file, NULL);
  			if (g_file_test (test, G_FILE_TEST_EXISTS) == TRUE)
-@@ -1538,12 +1538,12 @@ sdb_engine_scan_files_1 (SymbolDBEngine * dbe, const G
+@@ -1550,12 +1550,12 @@ sdb_engine_scan_files_1 (SymbolDBEngine * dbe, GPtrArr
  		priv->shared_mem_str = temp_file;
  		
  		if ((priv->shared_mem_fd = 
@@ -39,7 +39,7 @@ Do not use shm_open() which OpenBSD lacks (from FreeBSD ports).
  		priv->shared_mem_file = fdopen (priv->shared_mem_fd, "a+b");
  
  		/* no need to free temp_file (alias shared_mem_str). It will be freed on plugin finalize */
-@@ -2044,7 +2044,7 @@ sdb_engine_init (SymbolDBEngine * object)
+@@ -2057,7 +2057,7 @@ sdb_engine_init (SymbolDBEngine * object)
  static void
  sdb_engine_unlink_shared_files (gpointer key, gpointer value, gpointer user_data)
  {
@@ -48,7 +48,7 @@ Do not use shm_open() which OpenBSD lacks (from FreeBSD ports).
  }
  
  static void 
-@@ -2137,7 +2137,7 @@ sdb_engine_finalize (GObject * object)
+@@ -2146,7 +2146,7 @@ sdb_engine_finalize (GObject * object)
  	
  	if (priv->shared_mem_str)
  	{
@@ -57,7 +57,7 @@ Do not use shm_open() which OpenBSD lacks (from FreeBSD ports).
  		g_free (priv->shared_mem_str);
  		priv->shared_mem_str = NULL;
  	}
-@@ -5769,12 +5769,12 @@ symbol_db_engine_update_buffer_symbols (SymbolDBEngine
+@@ -5770,12 +5770,12 @@ symbol_db_engine_update_buffer_symbols (SymbolDBEngine
  		 * target buffer one */
  		base_filename = g_filename_display_basename (relative_path);
  		

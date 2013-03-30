@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2013/03/28 21:56:31 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.28 2013/03/30 10:48:34 jasper Exp $
 @conflict gnome-build-*
 @pkgpath x11/gnome/build
 @bin bin/anjuta
@@ -132,6 +132,7 @@ lib/anjuta/anjuta-gdb.plugin
 lib/anjuta/anjuta-glade.plugin
 lib/anjuta/anjuta-indentation-c-style.plugin
 lib/anjuta/anjuta-indentation-python-style.plugin
+lib/anjuta/anjuta-jhbuild.plugin
 lib/anjuta/anjuta-language-cpp-java.plugin
 lib/anjuta/anjuta-language-support-python.plugin
 lib/anjuta/anjuta-loader.plugin
@@ -143,6 +144,7 @@ lib/anjuta/anjuta-project-manager.plugin
 lib/anjuta/anjuta-project-wizard.plugin
 lib/anjuta/anjuta-python-autocomplete.py
 lib/anjuta/anjuta-python-loader.plugin
+lib/anjuta/anjuta-quick-open.plugin
 lib/anjuta/anjuta-run-program.plugin
 lib/anjuta/anjuta-snippets-manager.plugin
 lib/anjuta/anjuta-starter.plugin
@@ -168,6 +170,7 @@ lib/anjuta/libanjuta-git.so
 lib/anjuta/libanjuta-glade.so
 lib/anjuta/libanjuta-indentation-c-style.so
 lib/anjuta/libanjuta-indentation-python-style.so
+lib/anjuta/libanjuta-jhbuild.so
 lib/anjuta/libanjuta-language-cpp-java.so
 lib/anjuta/libanjuta-language-support-python.so
 lib/anjuta/libanjuta-loader.so
@@ -178,6 +181,7 @@ lib/anjuta/libanjuta-project-import.so
 lib/anjuta/libanjuta-project-manager.so
 lib/anjuta/libanjuta-project-wizard.so
 lib/anjuta/libanjuta-python-loader.so
+lib/anjuta/libanjuta-quick-open.so
 lib/anjuta/libanjuta-run-program.so
 lib/anjuta/libanjuta-snippets-manager.so
 lib/anjuta/libanjuta-sourceview.so
@@ -197,7 +201,6 @@ lib/anjuta/sourceview.plugin
 lib/anjuta/symbol-db.plugin
 lib/girepository-1.0/Anjuta-3.0.typelib
 lib/girepository-1.0/IAnjuta-3.0.typelib
-lib/glade/modules/libgladeanjuta.so
 lib/libanjuta-3.la
 @lib lib/libanjuta-3.so.${LIBanjuta-3_VERSION}
 lib/pkgconfig/libanjuta-3.0.pc
@@ -227,6 +230,7 @@ share/anjuta/glade/anjuta-editor-sourceview.ui
 share/anjuta/glade/anjuta-file-wizard.ui
 share/anjuta/glade/anjuta-gdb.ui
 share/anjuta/glade/anjuta-git.ui
+share/anjuta/glade/anjuta-glade.ui
 share/anjuta/glade/anjuta-indentation-c-style.ui
 share/anjuta/glade/anjuta-indentation-python-style.ui
 share/anjuta/glade/anjuta-language-cpp-java.ui
@@ -235,6 +239,7 @@ share/anjuta/glade/anjuta-language-support-python.ui
 share/anjuta/glade/anjuta-message-manager-plugin.ui
 share/anjuta/glade/anjuta-parser-cxx.ui
 share/anjuta/glade/anjuta-project-wizard.ui
+share/anjuta/glade/anjuta-quick-open.ui
 share/anjuta/glade/anjuta-run-program.ui
 share/anjuta/glade/anjuta-subversion.ui
 share/anjuta/glade/anjuta-symbol-db.ui
@@ -363,16 +368,7 @@ share/anjuta/project/library/src/Makefile.am.tpl
 share/anjuta/project/library/src/lib.c
 share/anjuta/project/library/src/lib.h
 share/anjuta/project/library/src/library.pc.in
-share/anjuta/project/licenses/
 share/anjuta/project/licenses.tpl
-share/anjuta/project/licenses/bsd.tpl
-share/anjuta/project/licenses/bsd.txt
-share/anjuta/project/licenses/gpl.tpl
-share/anjuta/project/licenses/gpl.txt
-share/anjuta/project/licenses/lgpl.tpl
-share/anjuta/project/licenses/lgpl.txt
-share/anjuta/project/licenses/none.tpl
-share/anjuta/project/licenses/none.txt
 share/anjuta/project/m4/
 share/anjuta/project/m4/ac-define-dir.m4
 share/anjuta/project/m4/as-ac-expand.m4
@@ -482,6 +478,15 @@ share/anjuta/sources.list
 share/anjuta/tables.sql
 share/anjuta/templates/
 share/anjuta/templates/indent.tpl
+share/anjuta/templates/licenses/
+share/anjuta/templates/licenses/bsd.tpl
+share/anjuta/templates/licenses/bsd.txt
+share/anjuta/templates/licenses/gpl.tpl
+share/anjuta/templates/licenses/gpl.txt
+share/anjuta/templates/licenses/lgpl.tpl
+share/anjuta/templates/licenses/lgpl.txt
+share/anjuta/templates/licenses/none.tpl
+share/anjuta/templates/licenses/none.txt
 share/anjuta/tools/
 share/anjuta/tools/find-fixmes.pl
 share/anjuta/tools/prepare-changelog.pl
@@ -504,6 +509,7 @@ share/anjuta/ui/anjuta-loader-plugin.ui
 share/anjuta/ui/anjuta-message-manager.xml
 share/anjuta/ui/anjuta-patch.xml
 share/anjuta/ui/anjuta-project-manager.xml
+share/anjuta/ui/anjuta-quick-open.xml
 share/anjuta/ui/anjuta-run-program.xml
 share/anjuta/ui/anjuta-sourceview.xml
 share/anjuta/ui/anjuta-subversion.xml
@@ -530,7 +536,6 @@ share/doc/anjuta/THANKS
 share/doc/anjuta/TODO
 share/gir-1.0/Anjuta-3.0.gir
 share/gir-1.0/IAnjuta-3.0.gir
-share/glade/catalogs/anjuta-glade.xml
 share/glib-2.0/schemas/org.gnome.anjuta.cvs.gschema.xml
 share/glib-2.0/schemas/org.gnome.anjuta.document-manager.gschema.xml
 share/glib-2.0/schemas/org.gnome.anjuta.file-manager.gschema.xml
@@ -670,6 +675,7 @@ share/gtk-doc/html/libanjuta/writing-plugins.html
 share/help/C/anjuta-build-tutorial/
 share/help/C/anjuta-build-tutorial/index.docbook
 share/help/C/anjuta-faqs/
+share/help/C/anjuta-faqs/editor-goto-error.page
 share/help/C/anjuta-faqs/editor-maximize.page
 share/help/C/anjuta-faqs/editor-scintilla.page
 share/help/C/anjuta-faqs/general-bugs.page
@@ -732,7 +738,6 @@ share/help/C/anjuta-manual/project-manager-library.page
 share/help/C/anjuta-manual/project-manager-module-add.page
 share/help/C/anjuta-manual/project-manager-module-new.page
 share/help/C/anjuta-manual/project-manager-module-remove.page
-share/help/C/anjuta-manual/project-manager-package-add.page
 share/help/C/anjuta-manual/project-manager-package-remove.page
 share/help/C/anjuta-manual/project-manager-root.page
 share/help/C/anjuta-manual/project-manager-source-add.page
@@ -801,7 +806,6 @@ share/help/cs/anjuta-manual/project-manager-library.page
 share/help/cs/anjuta-manual/project-manager-module-add.page
 share/help/cs/anjuta-manual/project-manager-module-new.page
 share/help/cs/anjuta-manual/project-manager-module-remove.page
-share/help/cs/anjuta-manual/project-manager-package-add.page
 share/help/cs/anjuta-manual/project-manager-package-remove.page
 share/help/cs/anjuta-manual/project-manager-root.page
 share/help/cs/anjuta-manual/project-manager-source-add.page
@@ -871,7 +875,6 @@ share/help/da/anjuta-manual/project-manager-library.page
 share/help/da/anjuta-manual/project-manager-module-add.page
 share/help/da/anjuta-manual/project-manager-module-new.page
 share/help/da/anjuta-manual/project-manager-module-remove.page
-share/help/da/anjuta-manual/project-manager-package-add.page
 share/help/da/anjuta-manual/project-manager-package-remove.page
 share/help/da/anjuta-manual/project-manager-root.page
 share/help/da/anjuta-manual/project-manager-source-add.page
@@ -888,6 +891,7 @@ share/help/da/anjuta-manual/run-parameters-dialog.page
 share/help/da/anjuta-manual/run-run.page
 share/help/da/anjuta-manual/widget-index.page
 share/help/de/anjuta-faqs/
+share/help/de/anjuta-faqs/editor-goto-error.page
 share/help/de/anjuta-faqs/editor-maximize.page
 share/help/de/anjuta-faqs/editor-scintilla.page
 share/help/de/anjuta-faqs/general-bugs.page
@@ -950,7 +954,6 @@ share/help/de/anjuta-manual/project-manager-library.page
 share/help/de/anjuta-manual/project-manager-module-add.page
 share/help/de/anjuta-manual/project-manager-module-new.page
 share/help/de/anjuta-manual/project-manager-module-remove.page
-share/help/de/anjuta-manual/project-manager-package-add.page
 share/help/de/anjuta-manual/project-manager-package-remove.page
 share/help/de/anjuta-manual/project-manager-root.page
 share/help/de/anjuta-manual/project-manager-source-add.page
@@ -1019,7 +1022,6 @@ share/help/el/anjuta-manual/project-manager-library.page
 share/help/el/anjuta-manual/project-manager-module-add.page
 share/help/el/anjuta-manual/project-manager-module-new.page
 share/help/el/anjuta-manual/project-manager-module-remove.page
-share/help/el/anjuta-manual/project-manager-package-add.page
 share/help/el/anjuta-manual/project-manager-package-remove.page
 share/help/el/anjuta-manual/project-manager-root.page
 share/help/el/anjuta-manual/project-manager-source-add.page
@@ -1088,7 +1090,6 @@ share/help/es/anjuta-manual/project-manager-library.page
 share/help/es/anjuta-manual/project-manager-module-add.page
 share/help/es/anjuta-manual/project-manager-module-new.page
 share/help/es/anjuta-manual/project-manager-module-remove.page
-share/help/es/anjuta-manual/project-manager-package-add.page
 share/help/es/anjuta-manual/project-manager-package-remove.page
 share/help/es/anjuta-manual/project-manager-root.page
 share/help/es/anjuta-manual/project-manager-source-add.page
@@ -1157,7 +1158,6 @@ share/help/eu/anjuta-manual/project-manager-library.page
 share/help/eu/anjuta-manual/project-manager-module-add.page
 share/help/eu/anjuta-manual/project-manager-module-new.page
 share/help/eu/anjuta-manual/project-manager-module-remove.page
-share/help/eu/anjuta-manual/project-manager-package-add.page
 share/help/eu/anjuta-manual/project-manager-package-remove.page
 share/help/eu/anjuta-manual/project-manager-root.page
 share/help/eu/anjuta-manual/project-manager-source-add.page
@@ -1226,7 +1226,6 @@ share/help/fr/anjuta-manual/project-manager-library.page
 share/help/fr/anjuta-manual/project-manager-module-add.page
 share/help/fr/anjuta-manual/project-manager-module-new.page
 share/help/fr/anjuta-manual/project-manager-module-remove.page
-share/help/fr/anjuta-manual/project-manager-package-add.page
 share/help/fr/anjuta-manual/project-manager-package-remove.page
 share/help/fr/anjuta-manual/project-manager-root.page
 share/help/fr/anjuta-manual/project-manager-source-add.page
@@ -1295,7 +1294,6 @@ share/help/gl/anjuta-manual/project-manager-library.page
 share/help/gl/anjuta-manual/project-manager-module-add.page
 share/help/gl/anjuta-manual/project-manager-module-new.page
 share/help/gl/anjuta-manual/project-manager-module-remove.page
-share/help/gl/anjuta-manual/project-manager-package-add.page
 share/help/gl/anjuta-manual/project-manager-package-remove.page
 share/help/gl/anjuta-manual/project-manager-root.page
 share/help/gl/anjuta-manual/project-manager-source-add.page
@@ -1365,7 +1363,6 @@ share/help/hu/anjuta-manual/project-manager-library.page
 share/help/hu/anjuta-manual/project-manager-module-add.page
 share/help/hu/anjuta-manual/project-manager-module-new.page
 share/help/hu/anjuta-manual/project-manager-module-remove.page
-share/help/hu/anjuta-manual/project-manager-package-add.page
 share/help/hu/anjuta-manual/project-manager-package-remove.page
 share/help/hu/anjuta-manual/project-manager-root.page
 share/help/hu/anjuta-manual/project-manager-source-add.page
@@ -1434,7 +1431,6 @@ share/help/ja/anjuta-manual/project-manager-library.page
 share/help/ja/anjuta-manual/project-manager-module-add.page
 share/help/ja/anjuta-manual/project-manager-module-new.page
 share/help/ja/anjuta-manual/project-manager-module-remove.page
-share/help/ja/anjuta-manual/project-manager-package-add.page
 share/help/ja/anjuta-manual/project-manager-package-remove.page
 share/help/ja/anjuta-manual/project-manager-root.page
 share/help/ja/anjuta-manual/project-manager-source-add.page
@@ -1503,7 +1499,6 @@ share/help/oc/anjuta-manual/project-manager-library.page
 share/help/oc/anjuta-manual/project-manager-module-add.page
 share/help/oc/anjuta-manual/project-manager-module-new.page
 share/help/oc/anjuta-manual/project-manager-module-remove.page
-share/help/oc/anjuta-manual/project-manager-package-add.page
 share/help/oc/anjuta-manual/project-manager-package-remove.page
 share/help/oc/anjuta-manual/project-manager-root.page
 share/help/oc/anjuta-manual/project-manager-source-add.page
@@ -1572,7 +1567,6 @@ share/help/pt_BR/anjuta-manual/project-manager-library.page
 share/help/pt_BR/anjuta-manual/project-manager-module-add.page
 share/help/pt_BR/anjuta-manual/project-manager-module-new.page
 share/help/pt_BR/anjuta-manual/project-manager-module-remove.page
-share/help/pt_BR/anjuta-manual/project-manager-package-add.page
 share/help/pt_BR/anjuta-manual/project-manager-package-remove.page
 share/help/pt_BR/anjuta-manual/project-manager-root.page
 share/help/pt_BR/anjuta-manual/project-manager-source-add.page
@@ -1642,7 +1636,6 @@ share/help/ro/anjuta-manual/project-manager-library.page
 share/help/ro/anjuta-manual/project-manager-module-add.page
 share/help/ro/anjuta-manual/project-manager-module-new.page
 share/help/ro/anjuta-manual/project-manager-module-remove.page
-share/help/ro/anjuta-manual/project-manager-package-add.page
 share/help/ro/anjuta-manual/project-manager-package-remove.page
 share/help/ro/anjuta-manual/project-manager-root.page
 share/help/ro/anjuta-manual/project-manager-source-add.page
@@ -1711,7 +1704,6 @@ share/help/sl/anjuta-manual/project-manager-library.page
 share/help/sl/anjuta-manual/project-manager-module-add.page
 share/help/sl/anjuta-manual/project-manager-module-new.page
 share/help/sl/anjuta-manual/project-manager-module-remove.page
-share/help/sl/anjuta-manual/project-manager-package-add.page
 share/help/sl/anjuta-manual/project-manager-package-remove.page
 share/help/sl/anjuta-manual/project-manager-root.page
 share/help/sl/anjuta-manual/project-manager-source-add.page
@@ -1780,7 +1772,6 @@ share/help/sv/anjuta-manual/project-manager-library.page
 share/help/sv/anjuta-manual/project-manager-module-add.page
 share/help/sv/anjuta-manual/project-manager-module-new.page
 share/help/sv/anjuta-manual/project-manager-module-remove.page
-share/help/sv/anjuta-manual/project-manager-package-add.page
 share/help/sv/anjuta-manual/project-manager-package-remove.page
 share/help/sv/anjuta-manual/project-manager-root.page
 share/help/sv/anjuta-manual/project-manager-source-add.page
@@ -1850,7 +1841,6 @@ share/help/th/anjuta-manual/project-manager-library.page
 share/help/th/anjuta-manual/project-manager-module-add.page
 share/help/th/anjuta-manual/project-manager-module-new.page
 share/help/th/anjuta-manual/project-manager-module-remove.page
-share/help/th/anjuta-manual/project-manager-package-add.page
 share/help/th/anjuta-manual/project-manager-package-remove.page
 share/help/th/anjuta-manual/project-manager-root.page
 share/help/th/anjuta-manual/project-manager-source-add.page
@@ -1919,7 +1909,6 @@ share/help/uk/anjuta-manual/project-manager-library.page
 share/help/uk/anjuta-manual/project-manager-module-add.page
 share/help/uk/anjuta-manual/project-manager-module-new.page
 share/help/uk/anjuta-manual/project-manager-module-remove.page
-share/help/uk/anjuta-manual/project-manager-package-add.page
 share/help/uk/anjuta-manual/project-manager-package-remove.page
 share/help/uk/anjuta-manual/project-manager-root.page
 share/help/uk/anjuta-manual/project-manager-source-add.page
@@ -1988,7 +1977,6 @@ share/help/zh_CN/anjuta-manual/project-manager-library.page
 share/help/zh_CN/anjuta-manual/project-manager-module-add.page
 share/help/zh_CN/anjuta-manual/project-manager-module-new.page
 share/help/zh_CN/anjuta-manual/project-manager-module-remove.page
-share/help/zh_CN/anjuta-manual/project-manager-package-add.page
 share/help/zh_CN/anjuta-manual/project-manager-package-remove.page
 share/help/zh_CN/anjuta-manual/project-manager-root.page
 share/help/zh_CN/anjuta-manual/project-manager-source-add.page
@@ -2090,6 +2078,7 @@ share/locale/sr/LC_MESSAGES/anjuta.mo
 share/locale/sr@latin/LC_MESSAGES/anjuta.mo
 share/locale/sv/LC_MESSAGES/anjuta.mo
 share/locale/te/LC_MESSAGES/anjuta.mo
+share/locale/tg/LC_MESSAGES/anjuta.mo
 share/locale/th/LC_MESSAGES/anjuta.mo
 share/locale/tr/LC_MESSAGES/anjuta.mo
 share/locale/ug/LC_MESSAGES/anjuta.mo
@@ -2207,6 +2196,7 @@ share/pixmaps/anjuta/anjuta-indentation-c-style-auto-16.png
 share/pixmaps/anjuta/anjuta-indentation-c-style-auto-24.png
 share/pixmaps/anjuta/anjuta-indentation-c-style-plugin.png
 share/pixmaps/anjuta/anjuta-indentation-python-style-plugin.png
+share/pixmaps/anjuta/anjuta-jhbuild-plugin-48.png
 share/pixmaps/anjuta/anjuta-language-cpp-java-plugin.png
 share/pixmaps/anjuta/anjuta-language-manager-plugin-48.png
 share/pixmaps/anjuta/anjuta-language-manager-plugin.svg
@@ -2233,6 +2223,7 @@ share/pixmaps/anjuta/anjuta-project-manager-plugin-48.png
 share/pixmaps/anjuta/anjuta-project-manager-plugin.svg
 share/pixmaps/anjuta/anjuta-project-wizard-plugin-48.png
 share/pixmaps/anjuta/anjuta-project-wizard-plugin.svg
+share/pixmaps/anjuta/anjuta-quick-open-48.png
 share/pixmaps/anjuta/anjuta-run-program-48.png
 share/pixmaps/anjuta/anjuta-run-to-cursor-16.png
 share/pixmaps/anjuta/anjuta-run-to-cursor-24.png
