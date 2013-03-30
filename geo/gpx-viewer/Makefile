@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/21 08:45:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/30 23:14:07 landry Exp $
 
 COMMENT =	gpx file viewer
 
 VERSION =	0.3.0
 DISTNAME =	gpx-viewer-${VERSION}
+REVISION =	0
 
 CATEGORIES =	geo x11
 
@@ -32,15 +33,17 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 FAKE_FLAGS=	desktopdir=${PREFIX}/share/applications
 
-WANTLIB += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo champlain-0.12 champlain-gtk-0.12
-WANTLIB += clutter-gtk-1.0 dbus-1 Xau Xdmcp Xxf86vm memphis-0.2 stdc++
-WANTLIB += cairo-gobject clutter-1.0 cogl cogl-pango drm gdk-3 gtk-3
-WANTLIB += expat fontconfig freetype gcrypt gdk_pixbuf-2.0
-WANTLIB += gdl-3 gio-2.0 glib-2.0 gmodule-2.0 gnome-keyring gobject-2.0
-WANTLIB += gpg-error gthread-2.0 json-glib-1.0 m pango-1.0
+WANTLIB += clutter-gtk-1.0 dbus-1 memphis-0.2
+WANTLIB += cairo-gobject clutter-1.0 cogl cogl-pango gdk-3 gtk-3
+WANTLIB += expat fontconfig freetype gdk_pixbuf-2.0
+WANTLIB += gdl-3 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gthread-2.0 json-glib-1.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs soup-2.4 soup-gnome-2.4 sqlite3
 WANTLIB += xcb xcb-render xcb-shm xml2 z ffi
+WANTLIB += ICE SM atk-bridge-2.0 atspi graphite2 harfbuzz icudata
+WANTLIB += icule icuuc 
 
 .include <bsd.port.mk>
