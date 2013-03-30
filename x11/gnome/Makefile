@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.207 2013/03/29 18:18:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.208 2013/03/30 10:59:31 jasper Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -90,6 +90,7 @@
      SUBDIR += session
      SUBDIR += settings-daemon
      SUBDIR += shell
+     SUBDIR += shell-extensions
      SUBDIR += sushi
      SUBDIR += system-log
      SUBDIR += system-monitor
