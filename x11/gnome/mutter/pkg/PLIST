@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/03/29 16:46:14 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/03/30 10:05:17 ajacoutot Exp $
+@conflict metacity-*
+@pkgpath x11/gnome/metacity
 @bin bin/mutter
 @bin bin/mutter-message
 @bin bin/mutter-theme-viewer
