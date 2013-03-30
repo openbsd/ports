@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/12/11 13:33:06 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/03/30 09:28:17 landry Exp $
 @conflict postler-*
 @pkgpath mail/postler
 @bin bin/geary
@@ -30,17 +30,24 @@ share/geary/sql/version-002.sql
 share/geary/sql/version-003.sql
 share/geary/sql/version-004.sql
 share/geary/sql/version-005.sql
+share/geary/sql/version-006.sql
+share/geary/sql/version-007.sql
+share/geary/sql/version-008.sql
 share/geary/theming/
 share/geary/theming/message-viewer.css
 share/geary/theming/message-viewer.html
 share/geary/ui/
 share/geary/ui/accelerators.ui
+share/geary/ui/account_cannot_remove.glade
+share/geary/ui/account_list.glade
+share/geary/ui/account_spinner.glade
 share/geary/ui/composer.glade
 share/geary/ui/composer_accelerators.ui
 share/geary/ui/login.glade
 share/geary/ui/message.glade
 share/geary/ui/password-dialog.glade
 share/geary/ui/preferences.glade
+share/geary/ui/remove_confirm.glade
 share/geary/ui/toolbar.glade
 share/geary/ui/toolbar_mark_menu.ui
 share/geary/ui/toolbar_menu.ui
@@ -66,6 +73,7 @@ share/icons/hicolor/16x16/apps/geary.svg
 share/icons/hicolor/32x32/apps/geary.svg
 share/icons/hicolor/48x48/apps/geary.svg
 share/icons/hicolor/64x64/apps/geary.svg
+share/locale/ar/LC_MESSAGES/geary.mo
 share/locale/ca/LC_MESSAGES/geary.mo
 share/locale/ca_ES/
 share/locale/ca_ES/LC_MESSAGES/
@@ -82,11 +90,23 @@ share/locale/es/LC_MESSAGES/geary.mo
 share/locale/es_ES/
 share/locale/es_ES/LC_MESSAGES/
 share/locale/es_ES/LC_MESSAGES/geary.mo
+share/locale/et/LC_MESSAGES/geary.mo
 share/locale/fi/LC_MESSAGES/geary.mo
 share/locale/fr/LC_MESSAGES/geary.mo
+share/locale/gl/LC_MESSAGES/geary.mo
 share/locale/he/LC_MESSAGES/geary.mo
+share/locale/hi_IN/
+share/locale/hi_IN/LC_MESSAGES/
+share/locale/hi_IN/LC_MESSAGES/geary.mo
+share/locale/hr/LC_MESSAGES/geary.mo
+share/locale/hu_HU/
+share/locale/hu_HU/LC_MESSAGES/
+share/locale/hu_HU/LC_MESSAGES/geary.mo
 share/locale/id/LC_MESSAGES/geary.mo
 share/locale/it/LC_MESSAGES/geary.mo
+share/locale/ja_JP/
+share/locale/ja_JP/LC_MESSAGES/
+share/locale/ja_JP/LC_MESSAGES/geary.mo
 share/locale/km_KH/
 share/locale/km_KH/LC_MESSAGES/
 share/locale/km_KH/LC_MESSAGES/geary.mo
@@ -97,17 +117,17 @@ share/locale/nl_NL/LC_MESSAGES/geary.mo
 share/locale/pl/LC_MESSAGES/geary.mo
 share/locale/pt/LC_MESSAGES/geary.mo
 share/locale/pt_BR/LC_MESSAGES/geary.mo
+share/locale/ro/LC_MESSAGES/geary.mo
 share/locale/ro_RO/
 share/locale/ro_RO/LC_MESSAGES/
 share/locale/ro_RO/LC_MESSAGES/geary.mo
+share/locale/ru/LC_MESSAGES/geary.mo
+share/locale/sk/LC_MESSAGES/geary.mo
 share/locale/sl/LC_MESSAGES/geary.mo
 share/locale/sr/LC_MESSAGES/geary.mo
 share/locale/sv/LC_MESSAGES/geary.mo
 share/locale/te/LC_MESSAGES/geary.mo
 share/locale/tr/LC_MESSAGES/geary.mo
-share/locale/tr_TR/
-share/locale/tr_TR/LC_MESSAGES/
-share/locale/tr_TR/LC_MESSAGES/geary.mo
 share/locale/uk/LC_MESSAGES/geary.mo
 share/locale/vi/LC_MESSAGES/geary.mo
 share/locale/zh_CN/LC_MESSAGES/geary.mo

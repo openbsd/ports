@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:23:51 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/30 09:28:17 landry Exp $
 
 COMMENT =	lightweight mail user agent
 
-DISTNAME =	geary-0.2.2
+DISTNAME =	geary-0.3.0
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 CATEGORIES =	mail
@@ -33,12 +33,12 @@ LIB_DEPENDS =	mail/gmime \
 		devel/libunique3 \
 		devel/libgee06
 
-WANTLIB += GL X11 Xrender atk-1.0 c cairo cairo-gobject expat sqlite3
+WANTLIB += atk-1.0 c cairo cairo-gobject sqlite3
 WANTLIB += fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gnome-keyring gobject-2.0 gthread-2.0 gtk-3 Xext
+WANTLIB += gnome-keyring gobject-2.0 gthread-2.0 gtk-3
 WANTLIB += javascriptcoregtk-3.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pixman-1 png pthread-stubs soup-2.4 webkitgtk-3.0 xcb gee
-WANTLIB += xcb-render xcb-shm z canberra gmime-2.6 notify unique-3.0
+WANTLIB += soup-2.4 webkitgtk-3.0 gee
+WANTLIB += z canberra gmime-2.6 notify unique-3.0
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/client/geary-application.vala
