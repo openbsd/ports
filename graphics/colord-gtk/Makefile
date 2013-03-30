@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/21 08:45:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/30 15:52:45 ajacoutot Exp $
 
 COMMENT=	GTK+ support library for colord
 
-DISTNAME=	colord-gtk-0.1.24
+DISTNAME=	colord-gtk-0.1.25
 EXTRACT_SUFX=	.tar.xz
-REVISION=	0
 
 SHARED_LIBS +=  colord-gtk           0.0      # 1.0
 
@@ -24,7 +23,7 @@ WANTLIB += ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 gtk-3
 WANTLIB += harfbuzz icudata icule icuuc lcms2 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += xcb xcb-render xcb-shm 
+WANTLIB += xcb xcb-render xcb-shm graphite2 z
 
 MASTER_SITES=	http://www.freedesktop.org/software/colord/releases/
 
