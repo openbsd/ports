@@ -1,100 +1,94 @@
-# $OpenBSD: Makefile,v 1.58 2013/03/30 16:26:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2013/03/30 18:09:03 ajacoutot Exp $
 
-COMMENT-main=	GNOME desktop meta-package (base installation)
-COMMENT-extra=	GNOME desktop meta-package (full installation)
+COMMENT-main=		GNOME desktop meta-package (base installation)
+COMMENT-extra=		GNOME desktop meta-package (full installation)
 
-V=		3.8.0.1
-PKGNAME=	gnome-${V}
+V=			3.8.0.1
+PKGNAME=		gnome-${V}
 
-PKGNAME-main=	gnome-${V}
-PKGNAME-extra=	gnome-extra-${V}
+PKGNAME-main=		gnome-${V}
+PKGNAME-extra=		gnome-extra-${V}
 
-REVISION-main=	4
-REVISION-extra=	2
+REVISION-main=		5
+REVISION-extra=		2
 
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
-		Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
+			Antoine Jacoutot <ajacoutot@openbsd.org>
 
-MULTI_PACKAGES=	-main -extra
+MULTI_PACKAGES=		-main -extra
 
 # sync with gnome-desktop version
-RUN_DEPENDS-main += x11/gnome/desktop=${V}
+RUN_DEPENDS-main +=	x11/gnome/desktop=${V}
 
 # minimal dependencies for a working desktop
-RUN_DEPENDS-main += \
-		x11/gnome/controlcenter \
-		x11/gnome/eog \
-		x11/gnome/file-roller \
-		x11/gnome/gedit \
-		x11/gnome/keyring \
-		x11/gnome/nautilus \
-		x11/gnome/session \
-		x11/gnome/system-monitor \
-		x11/gnome/terminal
+RUN_DEPENDS-main +=	x11/gnome/controlcenter \
+			x11/gnome/eog \
+			x11/gnome/file-roller \
+			x11/gnome/gedit \
+			x11/gnome/keyring \
+			x11/gnome/nautilus \
+			x11/gnome/session \
+			x11/gnome/system-monitor \
+			x11/gnome/terminal
 
 # gconf2 and polkit are already dependencies and we want to be able to
 # handle system-wide gconf entries.
-RUN_DEPENDS-main += devel/gconf2,-polkit
+RUN_DEPENDS-main +=	devel/gconf2,-polkit
 
 # colord and gtk+3 are already dependencies
-RUN_DEPENDS-main += graphics/colord-gtk
+RUN_DEPENDS-main +=	graphics/colord-gtk
 
 # GNOME spooler is CUPS (gnome-printers-panel in gnome-control-center),
 # add gtk+3-cups so that gtkprint() can see native CUPS printers.
-RUN_DEPENDS-main += x11/gtk+3,-cups
+RUN_DEPENDS-main +=	x11/gtk+3,-cups
 
 # Add some commonly used utilities.
-RUN_DEPENDS-main += \
-		graphics/evince,-nautilus \
-		x11/gnome/calculator \
-		x11/xdg-user-dirs-gtk
+RUN_DEPENDS-main +=	graphics/evince,-nautilus \
+			x11/gnome/calculator \
+			x11/xdg-user-dirs-gtk
 
 # Former gnome-utils.
-RUN_DEPENDS-main += \
-		x11/gnome/baobab \
-		x11/gnome/dictionary \
-		x11/gnome/font-viewer \
-		x11/gnome/screenshot \
-		x11/gnome/search-tool \
-		x11/gnome/system-log
+RUN_DEPENDS-main +=	x11/gnome/baobab \
+			x11/gnome/dictionary \
+			x11/gnome/font-viewer \
+			x11/gnome/screenshot \
+			x11/gnome/search-tool \
+			x11/gnome/system-log
 
 # gnome-initial-setup
-RUN_DEPENDS-main += \
-		x11/gnome/getting-started-docs
+RUN_DEPENDS-main +=	x11/gnome/getting-started-docs
+
+# gnome-control-center already depends on samba and gnome-online-accounts
+RUN_DEPENDS-main +=	x11/gnome/gvfs,-goa, \
+			x11/gnome/gvfs,-smb,
 
 # "Make it fancy!"
-RUN_DEPENDS-main += \
-		x11/gnome/alacarte \
-		x11/gnome/clocks \
-		x11/gnome/documents \
-		x11/gnome/eog-plugins \
-		x11/gnome/gedit-plugins \
-		x11/gnome/nautilus-sendto \
-		x11/gnome/photos \
-		x11/gnome/seahorse \
-		x11/gnome/seahorse-nautilus \
-		x11/gnome/seahorse-sharing \
-		x11/gnome/sushi \
-		x11/gnome/tweak-tool
+RUN_DEPENDS-main +=	x11/gnome/alacarte \
+			x11/gnome/clocks \
+			x11/gnome/documents \
+			x11/gnome/eog-plugins \
+			x11/gnome/gedit-plugins \
+			x11/gnome/nautilus-sendto \
+			x11/gnome/photos \
+			x11/gnome/seahorse \
+			x11/gnome/seahorse-nautilus \
+			x11/gnome/seahorse-sharing \
+			x11/gnome/sushi \
+			x11/gnome/tweak-tool
 
-# gnome-control-center already depends on samba (merge -smb into -main?)
-RUN_DEPENDS-main += \
-		x11/gnome/gvfs,-smb \
-
-RUN_DEPENDS-extra += \
-		STEM-=${V}:${BASE_PKGPATH},-main \
-		audio/rhythmbox \
-		graphics/simple-scan \
-		mail/evolution,-plugins \
-		mail/evolution-rss \
-		sysutils/deja-dup \
-		x11/gnome/ekiga \
-		x11/gnome/empathy \
-		x11/gnome/gnote \
-		x11/gnome/icon-theme-extras \
-		x11/gnome/nautilus-sendto \
-		x11/gnome/totem \
-		x11/gnome/vinagre \
-		x11/gnome/vino
+RUN_DEPENDS-extra +=	STEM-=${V}:${BASE_PKGPATH},-main \
+			audio/rhythmbox \
+			graphics/simple-scan \
+			mail/evolution,-plugins \
+			mail/evolution-rss \
+			sysutils/deja-dup \
+			x11/gnome/ekiga \
+			x11/gnome/empathy \
+			x11/gnome/gnote \
+			x11/gnome/icon-theme-extras \
+			x11/gnome/nautilus-sendto \
+			x11/gnome/totem \
+			x11/gnome/vinagre \
+			x11/gnome/vino
 
 .include <bsd.port.mk>
