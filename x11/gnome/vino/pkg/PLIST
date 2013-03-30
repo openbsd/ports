@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2012/10/17 07:11:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2013/03/30 07:16:07 ajacoutot Exp $
 @bin bin/vino-passwd
 @bin bin/vino-preferences
 @bin libexec/vino-server
@@ -58,6 +58,8 @@ share/locale/it/LC_MESSAGES/vino.mo
 share/locale/ja/LC_MESSAGES/vino.mo
 share/locale/ka/LC_MESSAGES/vino.mo
 share/locale/kk/LC_MESSAGES/vino.mo
+share/locale/km/
+share/locale/km/LC_MESSAGES/
 share/locale/km/LC_MESSAGES/vino.mo
 share/locale/kn/LC_MESSAGES/vino.mo
 share/locale/ko/LC_MESSAGES/vino.mo
@@ -92,6 +94,7 @@ share/locale/sr@latin/LC_MESSAGES/vino.mo
 share/locale/sv/LC_MESSAGES/vino.mo
 share/locale/ta/LC_MESSAGES/vino.mo
 share/locale/te/LC_MESSAGES/vino.mo
+share/locale/tg/LC_MESSAGES/vino.mo
 share/locale/th/LC_MESSAGES/vino.mo
 share/locale/tr/LC_MESSAGES/vino.mo
 share/locale/ug/LC_MESSAGES/vino.mo
@@ -107,7 +110,6 @@ share/telepathy/clients/
 share/telepathy/clients/Vino.client
 share/vino/
 share/vino/vino-preferences.ui
-share/vino/vino-prompt.ui
 share/vino/webservices
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
