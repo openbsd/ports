@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2013/03/29 18:13:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2013/03/30 12:52:22 ajacoutot Exp $
 
 COMMENT=	sytem monitor for GNOME
 
 GNOME_PROJECT=	gnome-system-monitor
 GNOME_VERSION=	3.8.0
+REVISION=	0
 
 CATEGORIES=	sysutils
 
@@ -26,11 +27,14 @@ MODULES=	devel/dconf \
 		x11/gnome
 
 RUN_DEPENDS=	x11/gnome/icon-theme
-BUILD_DEPENDS=	${RUN_DEPENDS}
-LIB_DEPENDS=	devel/libgtop2>=2.28.3p23 \
+BUILD_DEPENDS=	x11/gnome/icon-theme
+LIB_DEPENDS=	devel/libgtop2 \
 		devel/libwnck3 \
 		x11/gnome/librsvg \
 		x11/gtk3mm
+
+# share/polkit-1/actions/org.gnome.gnome-system-monitor.policy
+RUN_DEPENDS +=	sysutils/polkit
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_TOOLS= yelp
