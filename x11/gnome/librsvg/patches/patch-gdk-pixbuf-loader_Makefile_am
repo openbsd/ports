@@ -1,0 +1,18 @@
+$OpenBSD: patch-gdk-pixbuf-loader_Makefile_am,v 1.1 2013/03/30 20:07:23 ajacoutot Exp $
+
+From 9f4bd58fe6f3afdc94f327d4025425d6bb854087 Mon Sep 17 00:00:00 2001
+From: Hans Nieser <hans@nieser.nl>
+Date: Sun, 16 Dec 2012 17:47:53 +0000
+Subject: build: Fix typo
+
+--- gdk-pixbuf-loader/Makefile.am.orig	Sat Mar 30 21:01:37 2013
++++ gdk-pixbuf-loader/Makefile.am	Sat Mar 30 21:01:53 2013
+@@ -17,7 +17,7 @@ libpixbufloader_svg_la_CPPFLAGS = \
+ libpixbufloader_svg_la_CFLAGS = \
+ 	$(GDK_PIXBUF_CFLAGS)	\
+ 	$(LIBRSVG_CFLAGS)	\
+-	$(AM_CFLASG)
++	$(AM_CFLAGS)
+ 
+ libpixbufloader_svg_la_LDFLAGS = -avoid-version -module $(AM_LDFLAGS)
+ 
