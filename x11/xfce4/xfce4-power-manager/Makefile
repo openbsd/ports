@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:46:18 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/03/30 14:53:53 ajacoutot Exp $
 
 COMMENT =	Xfce4 power manager
 
 XFCE_VERSION =	1.2.0
 XFCE_GOODIE =	xfce4-power-manager
-REVISION =	1
+REVISION =	2
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,6 +20,9 @@ RUN_DEPENDS =	sysutils/upower
 
 # share/polkit-1/actions/org.xfce.power.policy
 RUN_DEPENDS +=	sysutils/polkit
+
+# polkit(8) almost always needs to know the "active" session
+RUN_DEPENDS +=	sysutils/consolekit
 
 CONFIGURE_ENV +=ac_cv_lib_Xext_DPMSQueryExtension=yes
 FAKE_FLAGS =	autostartdir=${PREFIX}/share/examples/xfce4-power-manager

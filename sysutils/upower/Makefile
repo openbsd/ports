@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/03/29 12:41:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2013/03/30 14:53:53 ajacoutot Exp $
 
 ONLY_FOR_ARCHS =${APM_ARCHS}
 
@@ -8,6 +8,7 @@ DISTNAME =	upower-0.9.20
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	sysutils
 SHARED_LIBS +=  upower-glib               0.0 # 1.2
+REVISION =	0
 
 HOMEPAGE =	http://upower.freedesktop.org/
 MASTER_SITES =	${HOMEPAGE}/releases/
@@ -49,5 +50,8 @@ LIB_DEPENDS =	sysutils/polkit>=0.101 \
 		x11/dbus-glib
 BUILD_DEPENDS =	devel/gobject-introspection \
 		textproc/docbook-xsl
+
+# polkit(8) almost always needs to know the "active" session
+RUN_DEPENDS +=	sysutils/consolekit
 
 .include <bsd.port.mk>
