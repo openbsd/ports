@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2013/03/21 08:48:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2013/03/30 15:02:48 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -10,7 +10,7 @@ EPOCH =		0
 CATEGORIES =	www
 DPB_PROPERTIES =parallel
 EXTRACT_SUFX=	.tar.xz
-REVISION=	4
+REVISION=	5
 
 HOMEPAGE =	http://webkitgtk.org/
 MASTER_SITES =	${HOMEPAGE}/releases/
@@ -63,13 +63,13 @@ WANTLIB =	ICE SM X11 Xcomposite Xcursor Xdamage Xext \
 		Xfixes Xi Xinerama Xrandr Xrender Xt atk-1.0 c xcb-render \
 		expat fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0 \
 		gobject-2.0 gthread-2.0 jpeg m gstinterfaces-0.10 \
-		Xau Xdmcp Xxf86vm dbus-1 dbus-glib-1 drm geoclue \
+		Xxf86vm dbus-1 dbus-glib-1 drm geoclue \
 		gstaudio-0.10 gstfft-0.10 gdk_pixbuf-2.0 orc-0.4 \
 		gstreamer-0.10 gstbase-0.10 gstvideo-0.10 gstapp-0.10 gstpbutils-0.10 \
 		icudata icui18n icuuc sqlite3 xslt enchant soup-2.4 \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pthread GL xcb-shm \
 		z cairo pixman-1 png pthread-stubs xcb xml2 stdc++ ffi \
-		harfbuzz icule
+		harfbuzz icule graphite2
 
 LIB_DEPENDS =	multimedia/gstreamer-0.10/core \
 		multimedia/gstreamer-0.10/plugins-base \
