@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.95 2013/03/28 21:32:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.96 2013/03/30 12:07:28 ajacoutot Exp $
 
 COMMENT=		lightweight GNOME text editor
 
 GNOME_PROJECT=		gedit
 GNOME_VERSION=		3.6.2
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		editors
 
@@ -13,16 +13,15 @@ HOMEPAGE=		http://projects.gnome.org/gedit/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
-WANTLIB += c cairo cairo-gobject drm enchant expat ffi fontconfig
+WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
+WANTLIB += c cairo cairo-gobject dbus-1 enchant expat ffi fontconfig
 WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 gtk-3
-WANTLIB += gtksourceview-3.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre peas-1.0 peas-gtk-1.0 pixman-1 png pthread pthread-stubs
-WANTLIB += stdc++ xcb xcb-render xcb-shm xml2 z
-WANTLIB += atk-bridge-2.0 atspi dbus-1 harfbuzz icudata icule
-WANTLIB += icuuc zeitgeist-1.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
+WANTLIB += gtk-3 gtksourceview-3.0 harfbuzz icudata icule icuuc
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre peas-1.0
+WANTLIB += peas-gtk-1.0 pixman-1 png pthread pthread-stubs stdc++
+WANTLIB += xcb xcb-render xcb-shm xml2 z zeitgeist-1.0
 
 MODULES=		devel/dconf \
 			devel/gettext \
@@ -38,7 +37,9 @@ LIB_DEPENDS=		devel/libpeas>=1.1.4p1 \
 			x11/gtksourceview3
 
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
-			x11/gnome/gvfs # --enable-gvfs-metadata
+			devel/iso-codes \
+			x11/gnome/gvfs #--enable-gvfs-metadata
+
 # Icon 'user-bookmarks-symbolic' not present in theme
 RUN_DEPENDS += x11/gnome/icon-theme-symbolic
 

@@ -1,0 +1,18 @@
+$OpenBSD: patch-plugins_modelines_modeline-parser_c,v 1.1 2013/03/30 12:07:28 ajacoutot Exp $
+
+From 922f73a49adff557ddb89ad8857ba55049ad87f4 Mon Sep 17 00:00:00 2001
+From: Seif Lotfy <seif@lotfy.com>
+Date: Sun, 25 Nov 2012 21:06:17 +0000
+Subject: Add missing gtksourcelanguage.h imports
+
+--- plugins/modelines/modeline-parser.c.orig	Sat Nov  3 11:48:20 2012
++++ plugins/modelines/modeline-parser.c	Sat Mar 30 12:49:37 2013
+@@ -22,7 +22,7 @@
+ #include <string.h>
+ #include <stdlib.h>
+ #include <stdio.h>
+-#include <gtksourceview/gtksourcelanguagemanager.h>
++#include <gtksourceview/gtksource.h>
+ #include <gedit/gedit-debug.h>
+ #include <gedit/gedit-document.h>
+ #include <gedit/gedit-settings.h>

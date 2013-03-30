@@ -1,0 +1,18 @@
+$OpenBSD: patch-gedit_gedit-view_h,v 1.1 2013/03/30 12:07:28 ajacoutot Exp $
+
+From 2dd7cf29f92c22f12eccb42626abe3a1522053f4 Mon Sep 17 00:00:00 2001
+From: Sébastien Wilmet <swilmet@gnome.org>
+Date: Sun, 10 Feb 2013 17:05:10 +0000
+Subject: Include the main header of gsv: gtksourceview/gtksource.h
+
+--- gedit/gedit-view.h.orig	Mon Oct 31 23:50:38 2011
++++ gedit/gedit-view.h	Sat Mar 30 12:41:53 2013
+@@ -34,7 +34,7 @@
+ #include <gtk/gtk.h>
+ 
+ #include <gedit/gedit-document.h>
+-#include <gtksourceview/gtksourceview.h>
++#include <gtksourceview/gtksource.h>
+ 
+ G_BEGIN_DECLS
+ 
