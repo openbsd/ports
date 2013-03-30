@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:46:11 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/03/30 08:34:00 ajacoutot Exp $
 
 COMMENT=	GLib/GObject wrapper for SkyDrive and Hotmail REST APIs
 
 GNOME_PROJECT=	libzapojit
-GNOME_VERSION=	0.0.2
+GNOME_VERSION=	0.0.3
 
 API_V=		0.0
 SUBST_VARS=	API_V

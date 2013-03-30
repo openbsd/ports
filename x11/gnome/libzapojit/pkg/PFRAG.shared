@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2012/09/29 12:09:41 ajacoutot Exp $
-@lib lib/libzapojit-${API_V}.so.${LIBzapojit-0.0_VERSION}

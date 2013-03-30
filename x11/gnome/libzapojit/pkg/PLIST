@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/09/29 12:09:41 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2013/03/30 08:34:00 ajacoutot Exp $
 include/libzapojit-${API_V}/
 include/libzapojit-${API_V}/zpj/
 include/libzapojit-${API_V}/zpj/zpj-authorization-domain.h
@@ -15,6 +14,7 @@ lib/girepository-1.0/
 lib/girepository-1.0/Zpj-${API_V}.typelib
 lib/libzapojit-${API_V}.a
 lib/libzapojit-${API_V}.la
+@lib lib/libzapojit-${API_V}.so.${LIBzapojit-0.0_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/zapojit-${API_V}.pc
 share/doc/libzapojit/
