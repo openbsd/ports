@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/21 08:45:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/30 14:55:58 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,7 +8,7 @@ VERSION=		0.20.0
 DISTNAME=		gmpc-libnotify-${VERSION}
 CATEGORIES=		audio
 
-REVISION=		3
+REVISION=		4
 
 HOMEPAGE=		http://gmpc.wikia.com/wiki/Plugins
 
@@ -29,8 +29,7 @@ WANTLIB += xcb-shm z ffi stdc++
 
 MODULES=		devel/gettext \
 			textproc/intltool
-RUN_DEPENDS=		audio/gmpc>=${VERSION} \
-			notification-daemon-*|notification-daemon-xfce-*:sysutils/notification-daemon
+RUN_DEPENDS=		audio/gmpc>=${VERSION}
 BUILD_DEPENDS=		${RUN_DEPENDS}
 LIB_DEPENDS=		devel/libnotify>=0.7.2 \
 			x11/gtk+2 \
