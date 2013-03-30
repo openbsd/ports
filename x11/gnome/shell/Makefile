@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2013/03/30 15:18:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2013/03/30 16:07:50 ajacoutot Exp $
 
 COMMENT=		next generation GNOME shell
 
@@ -57,6 +57,7 @@ LIB_DEPENDS=		audio/pulseaudio>=2.1 \
 			x11/gnome/gjs \
 			x11/gnome/menus \
 			x11/gnome/mutter>=3.6.1
+
 RUN_DEPENDS=		devel/py-gobject3 \
 			x11/gnome/caribou
 
@@ -68,7 +69,8 @@ RUN_DEPENDS +=	sysutils/consolekit
 # be installed separately or as part of the "gnome-extra" meta-package.
 #RUN_DEPENDS +=		mail/evolution
 
-# yelp.desktop menu entry (from yelp: OnlyShowIn=GNOME;)
+# yelp.desktop menu entry (from yelp: OnlyShowIn=GNOME;Unity;)
+# prevents => The URI "help:gnome-help/index" does not point to a valid page.
 RUN_DEPENDS +=		x11/gnome/user-docs
 
 # add required introspection libs that are not in the dependency chain
