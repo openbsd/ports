@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2013/03/30 13:03:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.90 2013/03/31 06:37:50 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.8.0
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		x11
 
@@ -36,16 +36,17 @@ WANTLIB += xcb-shm xkbfile xml2 xslt z smbclient
 MODULES=		devel/gettext \
 			x11/gnome
 
-LIB_DEPENDS=		x11/gnome/desktop \
-			x11/gnome/menus \
-			x11/gnome/online-accounts \
-			sysutils/upower \
-			devel/libgtop2 \
-			print/cups,-libs \
-			audio/pulseaudio \
+LIB_DEPENDS=		audio/pulseaudio \
 			audio/libcanberra,-gtk3 \
+			devel/libgtop2 \
 			graphics/colord-gtk \
-			net/samba>=3.6.13p0
+			net/samba \
+			print/cups,-libs \
+			sysutils/accountsservice \
+			sysutils/upower \
+			x11/gnome/desktop \
+			x11/gnome/menus \
+			x11/gnome/online-accounts
 
 BUILD_DEPENDS=		x11/gnome/settings-daemon \
 			devel/iso-codes \
@@ -75,9 +76,6 @@ RUN_DEPENDS+=		x11/gnome/power-manager
 
 # needed for gnome-printers-panel
 RUN_DEPENDS+=		print/cups-pk-helper
-
-# needed for gnome-user-accounts-panel
-RUN_DEPENDS+=		sysutils/accountsservice
 
 MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=	Yes
