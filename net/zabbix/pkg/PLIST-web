@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-web,v 1.19 2013/01/24 18:48:15 robert Exp $
+@comment $OpenBSD: PLIST-web,v 1.20 2013/03/31 11:59:36 robert Exp $
 @pkgpath net/zabbix,-web,mysql
 @pkgpath net/zabbix,-web,pgsql
 conf/modules.sample/zabbix.conf
@@ -485,6 +485,7 @@ zabbix/include/screens.inc.php
 zabbix/include/services.inc.php
 zabbix/include/setup.inc.php
 zabbix/include/sounds.inc.php
+zabbix/include/translateDefines.inc.php
 zabbix/include/triggers.inc.php
 zabbix/include/users.inc.php
 zabbix/include/validate.inc.php
@@ -642,6 +643,10 @@ zabbix/latest.php
 zabbix/locale/
 zabbix/locale/README
 zabbix/locale/add_new_language.sh
+zabbix/locale/bg/
+zabbix/locale/bg/LC_MESSAGES/
+zabbix/locale/bg/LC_MESSAGES/frontend.mo
+zabbix/locale/bg/LC_MESSAGES/frontend.po
 zabbix/locale/cs/
 zabbix/locale/cs/LC_MESSAGES/
 zabbix/locale/cs/LC_MESSAGES/frontend.mo
@@ -694,6 +699,10 @@ zabbix/locale/ko/
 zabbix/locale/ko/LC_MESSAGES/
 zabbix/locale/ko/LC_MESSAGES/frontend.mo
 zabbix/locale/ko/LC_MESSAGES/frontend.po
+zabbix/locale/lt/
+zabbix/locale/lt/LC_MESSAGES/
+zabbix/locale/lt/LC_MESSAGES/frontend.mo
+zabbix/locale/lt/LC_MESSAGES/frontend.po
 zabbix/locale/lv/
 zabbix/locale/lv/LC_MESSAGES/
 zabbix/locale/lv/LC_MESSAGES/frontend.mo
