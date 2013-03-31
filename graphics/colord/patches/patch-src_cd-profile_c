@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_cd-profile_c,v 1.5 2013/03/08 06:58:38 ajacoutot Exp $
+$OpenBSD: patch-src_cd-profile_c,v 1.6 2013/03/31 19:46:48 ajacoutot Exp $
 
 /var/lib -> /var/db
 
---- src/cd-profile.c.orig	Fri Feb 15 15:07:04 2013
-+++ src/cd-profile.c	Fri Mar  1 09:17:05 2013
+--- src/cd-profile.c.orig	Mon Mar 25 23:41:41 2013
++++ src/cd-profile.c	Sun Mar 31 21:43:51 2013
 @@ -401,7 +401,7 @@ cd_profile_install_system_wide (CdProfile *profile, GE
  		goto out;
  	}
@@ -13,3 +13,21 @@ $OpenBSD: patch-src_cd-profile_c,v 1.5 2013/03/08 06:58:38 ajacoutot Exp $
  	if (g_str_has_prefix (priv->filename,
  			      CD_SYSTEM_PROFILES_DIR)) {
  		ret = FALSE;
+@@ -413,7 +413,7 @@ cd_profile_install_system_wide (CdProfile *profile, GE
+ 		goto out;
+ 	}
+ 
+-	/* is profile already installed in /usr/share/color */
++	/* is profile already installed in ${LOCALBASE}/share/color */
+ 	if (g_str_has_prefix (priv->filename,
+ 			      DATADIR "/color")) {
+ 		ret = FALSE;
+@@ -1415,7 +1415,7 @@ cd_profile_set_filename (CdProfile *profile,
+ 	}
+ 
+ 	/* find out if we have a GResource copy */
+-	if (g_str_has_prefix (filename, "/usr/share/color/icc/colord/")) {
++	if (g_str_has_prefix (filename, "${LOCALBASE}/share/color/icc/colord/")) {
+ 		data = g_build_filename ("/org/freedesktop/colord",
+ 					 "profiles",
+ 					 filename + 28,
