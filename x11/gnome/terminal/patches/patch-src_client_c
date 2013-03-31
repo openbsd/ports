@@ -1,21 +1,15 @@
-$OpenBSD: patch-src_client_c,v 1.1 2013/03/29 18:39:34 jasper Exp $
---- src/client.c.orig	Fri Mar 29 18:07:13 2013
-+++ src/client.c	Fri Mar 29 18:07:20 2013
-@@ -514,6 +514,7 @@ parse_arguments (int *argcp,
-   g_option_context_free (context);
- 
-   if (data->working_directory == NULL) {
+$OpenBSD: patch-src_client_c,v 1.2 2013/03/31 08:13:54 ajacoutot Exp $
+--- src/client.c.orig	Wed Mar 20 11:09:31 2013
++++ src/client.c	Sat Mar 30 19:01:02 2013
+@@ -520,7 +520,11 @@ parse_arguments (int *argcp,
+      * because we want to use the value from PWD (if it is correct).
+      * See bug 502146.
+      */
 +#ifdef get_current_dir_name
-     char *cwd;
- 
-     /* We use get_current_dir_name() here instead of getcwd / g_get_current_dir()
-@@ -523,6 +524,9 @@ parse_arguments (int *argcp,
      cwd = get_current_dir_name ();
++#else
++    cwd = g_get_current_dir ();
++#endif
      data->working_directory = g_strdup (cwd);
      free (cwd);
-+#else
-+    data->working_directory = g_get_current_dir ();
-+#endif
    }
- 
-   /* Do this here so that gdk_display is initialized */

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2013/03/31 08:03:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.92 2013/03/31 08:13:54 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -25,6 +25,9 @@ MODULES=	devel/dconf \
 		devel/gettext \
 		x11/gnome
 
+BUILD_DEPENDS=	devel/gsettings-desktop-schemas
+RUN_DEPENDS=	devel/gsettings-desktop-schemas
+
 LIB_DEPENDS=	devel/gconf2 \
 		devel/vte3 \
 		sysutils/e2fsprogs \
@@ -36,7 +39,7 @@ BUILD_DEPENDS +=devel/desktop-file-utils
 MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=	Yes
 
-CONFIGURE_ARGS+=--with-nautilus-extension
+CONFIGURE_ARGS=	--with-nautilus-extension
 
 post-install:
 	rm ${PREFIX}/lib/nautilus/extensions-3.0/*.{a,la}
