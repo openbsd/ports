@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.56 2013/03/29 13:20:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.57 2013/03/31 06:44:21 ajacoutot Exp $
 
 COMMENT=		project management application
 
 # git clone of 75d160197d687c0d3b27dd53ba02d98b2a09d582
 GNOME_PROJECT=		planner
 GNOME_VERSION=		0.14.6.1
+REVISION=		0
 
 CATEGORIES=		productivity
 
@@ -29,8 +30,8 @@ MODULES=		devel/gettext \
 			x11/gnome \
 			devel/gconf2
 
-BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		misc/shared-mime-info>=0.21
+BUILD_DEPENDS=		misc/shared-mime-info
+RUN_DEPENDS=		misc/shared-mime-info
 
 LIB_DEPENDS=		security/libgcrypt \
 			textproc/libxslt \
@@ -41,7 +42,7 @@ MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 MODGCONF2_SCHEMAS_DIR=	planner
 
-CONFIGURE_ARGS+= 	--disable-update-mimedb \
+CONFIGURE_ARGS= 	--disable-update-mimedb \
 			--disable-python \
 			--enable-eds=no \
 			--enable-eds-backend=no \
@@ -55,7 +56,8 @@ MASTER_SITES=		http://distfiles.nl/
 BUILD_DEPENDS +=	x11/gnome/common \
 			${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/libtool
+			devel/libtool \
+			textproc/gtk-doc
 
 AUTOMAKE_VERSION =	1.9
 AUTOCONF_VERSION =	2.68
