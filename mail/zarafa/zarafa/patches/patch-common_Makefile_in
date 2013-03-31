@@ -1,7 +1,7 @@
-$OpenBSD: patch-common_Makefile_in,v 1.18 2012/10/28 21:51:08 robert Exp $
---- common/Makefile.in.orig	Thu Oct 18 18:15:56 2012
-+++ common/Makefile.in	Sun Oct 28 21:08:55 2012
-@@ -401,7 +401,7 @@ AM_CPPFLAGS = $(DEBUGFLAGS) $(BOOST_CPPFLAGS) -DLINUX 
+$OpenBSD: patch-common_Makefile_in,v 1.19 2013/03/31 13:01:19 robert Exp $
+--- common/Makefile.in.orig	Sun Mar 31 14:30:07 2013
++++ common/Makefile.in	Sun Mar 31 14:31:14 2013
+@@ -402,7 +402,7 @@ AM_CPPFLAGS = $(DEBUGFLAGS) $(BOOST_CPPFLAGS) -DLINUX 
  	-I${top_srcdir}/mapi4linux/include -I${top_srcdir}/provider/common \
  	-I${top_srcdir}/libfreebusy $(MYSQL_INCLUDES)
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-common_Makefile_in,v 1.18 2012/10/28 21:51:08 robert Exp $
  libcommon_mapi_la_SOURCES = CommonUtil.cpp				\
  			rtfutil.cpp									\
  			codepage.cpp								\
-@@ -424,8 +424,9 @@ libcommon_mapi_la_SOURCES = CommonUtil.cpp				\
+@@ -425,8 +425,9 @@ libcommon_mapi_la_SOURCES = CommonUtil.cpp				\
  			IStreamAdapter.cpp							\
  			MAPIConsoleTable.cpp						\
  			ECMAPIDebug.cpp
@@ -21,7 +21,7 @@ $OpenBSD: patch-common_Makefile_in,v 1.18 2012/10/28 21:51:08 robert Exp $
  libcommon_util_la_SOURCES = platform.cpp platform.linux.cpp md5.cpp \
  	base64.cpp ECLogger.cpp ECConfig.cpp ECConfigImpl.cpp \
  	ECFifoBuffer.cpp ECSerializer.cpp ECCache.cpp my_getopt.cpp \
-@@ -436,13 +437,16 @@ libcommon_util_la_SOURCES = platform.cpp platform.linu
+@@ -437,14 +438,17 @@ libcommon_util_la_SOURCES = platform.cpp platform.linu
  	ECGetText.cpp threadutil.cpp ECRestriction.cpp userutil.cpp \
  	ECFeatures.cpp ECACL.cpp fileutil.cpp ECThreadPool.cpp \
  	ConsoleTable.cpp $(am__append_1)
@@ -30,6 +30,7 @@ $OpenBSD: patch-common_Makefile_in,v 1.18 2012/10/28 21:51:08 robert Exp $
 +libcommon_ssl_la_LDFLAGS =
  libcommon_ssl_la_SOURCES = \
  			SSLUtil.cpp								\
+ 			ECChannelClient.cpp						\
  			ECChannel.cpp
 +libcommon_ssl_la_LIBADD = -lpthread ${SSL_LIBS}
  

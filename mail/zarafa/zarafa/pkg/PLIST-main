@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.42 2012/10/28 21:51:09 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.43 2013/03/31 13:01:20 robert Exp $
 @comment chdir(2) to running_path which is set to /var/empty in the cfg files
 @newgroup _zarafa:627
 @newuser _zarafa:627:_zarafa:daemon:Zarafa Account:/var/empty:/sbin/nologin
@@ -93,6 +93,7 @@ include/zarafa/ECABEntryID.h
 include/zarafa/ECACL.h
 include/zarafa/ECCache.h
 include/zarafa/ECChannel.h
+include/zarafa/ECChannelClient.h
 include/zarafa/ECConfig.h
 include/zarafa/ECConfigImpl.h
 include/zarafa/ECDatabaseMySQL.h

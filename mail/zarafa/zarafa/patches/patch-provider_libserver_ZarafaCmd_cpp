@@ -1,10 +1,10 @@
-$OpenBSD: patch-provider_libserver_ZarafaCmd_cpp,v 1.26 2013/01/27 13:06:20 robert Exp $
+$OpenBSD: patch-provider_libserver_ZarafaCmd_cpp,v 1.27 2013/03/31 13:01:19 robert Exp $
 
 OpenBSD does not have CLOCK_THREAD_CPUTIME_ID.
 
---- provider/libserver/ZarafaCmd.cpp.orig	Sun Jan 20 17:29:55 2013
-+++ provider/libserver/ZarafaCmd.cpp	Sun Jan 20 17:34:41 2013
-@@ -542,10 +542,10 @@ int ns__logon(struct soap *soap, char *user, char *pas
+--- provider/libserver/ZarafaCmd.cpp.orig	Thu Feb 28 17:13:17 2013
++++ provider/libserver/ZarafaCmd.cpp	Sun Mar 31 14:29:44 2013
+@@ -546,10 +546,10 @@ int ns__logon(struct soap *soap, char *user, char *pas
      ECLicenseClient *lpLicenseClient = NULL;
      unsigned int ulLicenseResponse;
      unsigned char *lpLicenseResponse = NULL;
@@ -17,7 +17,7 @@ OpenBSD does not have CLOCK_THREAD_CPUTIME_ID.
  
      LOG_SOAP_DEBUG(g_lpSessionManager->GetLogger(), "%020llu: S logon", sessionID);
  
-@@ -642,9 +642,9 @@ exit:
+@@ -646,9 +646,9 @@ exit:
  
  	lpsResponse->er = er;
  
@@ -29,7 +29,7 @@ OpenBSD does not have CLOCK_THREAD_CPUTIME_ID.
  
  	return SOAP_OK;
  }
-@@ -662,10 +662,10 @@ int ns__ssoLogon(struct soap *soap, ULONG64 ulSessionI
+@@ -666,10 +666,10 @@ int ns__ssoLogon(struct soap *soap, ULONG64 ulSessionI
  	xsd__base64Binary *lpOutput = NULL;
  	char*			lpszEnabled = NULL;
  	ECLicenseClient*lpLicenseClient = NULL;
@@ -42,7 +42,7 @@ OpenBSD does not have CLOCK_THREAD_CPUTIME_ID.
  
      LOG_SOAP_DEBUG(g_lpSessionManager->GetLogger(), "%020"PRIu64": S ssoLogon", ulSessionId);
  
-@@ -813,9 +813,9 @@ exit:
+@@ -817,9 +817,9 @@ exit:
  nosso:
  	lpsResponse->er = er;
  
@@ -54,7 +54,7 @@ OpenBSD does not have CLOCK_THREAD_CPUTIME_ID.
  
  	return SOAP_OK;
  }
-@@ -827,10 +827,10 @@ int ns__logoff(struct soap *soap, ULONG64 ulSessionId,
+@@ -831,10 +831,10 @@ int ns__logoff(struct soap *soap, ULONG64 ulSessionId,
  {
  	ECRESULT	er = erSuccess;
  	ECSession 	*lpecSession = NULL;
@@ -67,7 +67,7 @@ OpenBSD does not have CLOCK_THREAD_CPUTIME_ID.
  
      LOG_SOAP_DEBUG(g_lpSessionManager->GetLogger(), "%020"PRIu64": S logoff", ulSessionId);
  
-@@ -852,20 +852,20 @@ int ns__logoff(struct soap *soap, ULONG64 ulSessionId,
+@@ -856,20 +856,20 @@ int ns__logoff(struct soap *soap, ULONG64 ulSessionId,
  exit:
      *result = er;
  
@@ -92,7 +92,7 @@ OpenBSD does not have CLOCK_THREAD_CPUTIME_ID.
  	LOG_SOAP_DEBUG(g_lpSessionManager->GetLogger(), "%020"PRIu64": S %s", ulSessionId, szFname); \
  	er = g_lpSessionManager->ValidateSession(soap, ulSessionId, &lpecSession, true);\
  	const bool bSupportUnicode = (er == erSuccess ? (lpecSession->GetCapabilities() & ZARAFA_CAP_UNICODE) != 0 : false); \
-@@ -879,9 +879,9 @@ exit:
+@@ -883,9 +883,9 @@ exit:
  #define SOAP_ENTRY_FUNCTION_FOOTER \
  __soapentry_exit: \
      *lpResultVar = er; \
