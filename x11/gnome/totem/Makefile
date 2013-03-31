@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2013/03/31 08:23:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.98 2013/03/31 13:28:36 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		official media player for GNOME
 
 GNOME_PROJECT=		totem
 GNOME_VERSION=		3.8.0
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  totem                     0.0 # 0.0
 
@@ -23,7 +23,7 @@ WANTLIB += atspi bz2 c cairo cairo-gobject clutter-1.0 clutter-gst-2.0
 WANTLIB += clutter-gtk-1.0 cogl cogl-pango crypto curl dbus-1
 WANTLIB += expat ffi fontconfig freetype gcrypt gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gmime-2.6 gmodule-2.0
-WANTLIB += gnome-keyring gobject-2.0 gpg-error graphite2 grilo-0.2
+WANTLIB += gobject-2.0 gpg-error graphite2 grilo-0.2
 WANTLIB += gstaudio-1.0 gstbase-1.0 gstpbutils-1.0 gstreamer-1.0
 WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
 WANTLIB += icudata icule icuuc idn json-glib-1.0 lua5.1 lzma m
