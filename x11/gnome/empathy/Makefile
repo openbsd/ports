@@ -1,21 +1,16 @@
-# $OpenBSD: Makefile,v 1.121 2013/03/30 09:29:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.122 2013/03/31 14:46:28 ajacoutot Exp $
 
 COMMENT= 		Telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		3.6.4
-REVISION=		3
+REVISION=		4
 CATEGORIES=		net
 
 HOMEPAGE=		http://live.gnome.org/Empathy
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-
-MODULES=		devel/dconf \
-			devel/gettext \
-			lang/python \
-			x11/gnome
 
 WANTLIB += FLAC GL ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xtst
@@ -38,12 +33,18 @@ WANTLIB += pcre pixman-1 png pthread pthread-stubs pulse pulse-mainloop-glib
 WANTLIB += secret-1 sndfile soup-2.4 soup-gnome-2.4 sqlite3 stdc++
 WANTLIB += tasn1 telepathy-farstream telepathy-glib telepathy-logger
 WANTLIB += vorbis vorbisenc vorbisfile webkitgtk-3.0 xcb xcb-render
-WANTLIB += xcb-shm xml2 xslt z zeitgeist-1.0
+WANTLIB += xcb-shm xml2 xslt z zeitgeist-1.0 gee
+
+MODULES=		devel/dconf \
+			devel/gettext \
+			lang/python \
+			x11/gnome
 
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/iso-codes
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			audio/pulseaudio>=2.1 \
+			devel/libgee06 \
 			geo/geoclue \
 			geo/libchamplain>=0.12.2 \
 			graphics/clutter/clutter-gst>=1.9.92 \
