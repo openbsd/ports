@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2013/03/29 14:31:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.71 2013/03/31 07:47:23 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		Unicode character map for the GNOME project
 
 GNOME_PROJECT=		gucharmap
 GNOME_VERSION=		3.8.0
+REVISION=		0
 
 SHARED_LIBS +=  gucharmap_2_90            7.0 # 7.0
 
@@ -28,8 +29,12 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 MODGNOME_TOOLS= 	goi yelp
+MODGNOME_DESKTOP_FILE=	Yes
 
-LIB_DEPENDS+=		x11/gtk+3,-main
+# configure checks for desktop-file-validate(1)
+BUILD_DEPENDS +=	devel/desktop-file-utils
+
+LIB_DEPENDS=		x11/gtk+3,-main
 
 # error: -Bsymbolic requested but not supported by ld
 CONFIGURE_ARGS +=	--disable-Bsymbolic
