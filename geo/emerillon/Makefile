@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 11:07:42 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/31 20:23:45 sthen Exp $
 
 COMMENT =	map viewer using Openstreetmap data
 
 GNOME_VERSION =	0.1.90
 GNOME_PROJECT =	emerillon
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	geo x11
 
@@ -13,6 +13,18 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
+
+WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
+WANTLIB += c cairo cairo-gobject champlain-0.12 champlain-gtk-0.12
+WANTLIB += clutter-1.0 clutter-gtk-1.0 cogl cogl-pango dbus-1
+WANTLIB += dbus-glib-1 expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
+WANTLIB += geoclue gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz icudata
+WANTLIB += icule icuuc json-glib-1.0 m memphis-0.2 pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0 pixman-1 png
+WANTLIB += pthread pthread-stubs rest-0.7 soup-2.4 soup-gnome-2.4
+WANTLIB += sqlite3 xcb xcb-render xcb-shm xml2 z
 
 EXTRACT_SUFX=		.tar.bz2
 
@@ -29,19 +41,5 @@ LIB_DEPENDS =	geo/libchamplain>=0.12.0 \
 		geo/geoclue \
 		net/librest>=0.7.9 \
 		devel/gobject-introspection
-
-WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo
-WANTLIB += cairo-gobject champlain-0.12 champlain-gtk-0.12 clutter-1.0
-WANTLIB += clutter-gtk-1.0 cogl cogl-pango gdk-3 gtk-3 peas-1.0
-WANTLIB += peas-gtk-1.0 dbus-1 dbus-glib-1 drm expat xml2 z
-WANTLIB += ffi fontconfig freetype gcrypt gdk_pixbuf-2.0
-WANTLIB += geoclue gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0
-WANTLIB += gnome-keyring gobject-2.0 gpg-error gthread-2.0
-WANTLIB += json-glib-1.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs rest-0.7 soup-2.4
-WANTLIB += soup-gnome-2.4 sqlite3 stdc++ xcb xcb-render xcb-shm
-WANTLIB += ICE SM atk-bridge-2.0 atspi harfbuzz icudata icule
-WANTLIB += icuuc memphis-0.2
 
 .include <bsd.port.mk>
