@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_terminal-prefs_c,v 1.1 2013/03/31 09:09:09 ajacoutot Exp $
+
+Only pickup uuid.h from e2fsprogs and don't get confused when ossp-uuid
+is also installed.
+
+--- src/terminal-prefs.c.orig	Sun Mar 31 10:49:42 2013
++++ src/terminal-prefs.c	Sun Mar 31 10:49:57 2013
+@@ -20,7 +20,7 @@
+ 
+ #include <string.h>
+ 
+-#include <uuid.h>
++#include <uuid/uuid.h>
+ #include <dconf.h>
+ 
+ #include <gtk/gtk.h>
