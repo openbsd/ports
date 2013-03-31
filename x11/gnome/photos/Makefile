@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/30 08:35:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2013/03/31 13:09:26 ajacoutot Exp $
 
 COMMENT=		access, organize and share your photos on GNOME
 
 GNOME_PROJECT=		gnome-photos
 GNOME_VERSION=		3.7.3
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		graphics
 
@@ -36,6 +36,7 @@ MODULES=		devel/dconf \
 			x11/gnome
 
 LIB_DEPENDS=		graphics/clutter/clutter-gtk \
+			x11/gnome/online-accounts \
 			x11/gnome/tracker
 
 MODGNOME_ICON_CACHE=	Yes
