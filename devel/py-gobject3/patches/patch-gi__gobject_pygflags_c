@@ -1,0 +1,24 @@
+$OpenBSD: patch-gi__gobject_pygflags_c,v 1.1 2013/03/31 09:08:38 ajacoutot Exp $
+
+From c1fb6516031d3c32abd640f09a4814ae4363f979 Mon Sep 17 00:00:00 2001
+From: Simon Feltman <sfeltman@src.gnome.org>
+Date: Sun, 31 Mar 2013 08:32:34 +0000
+Subject: Fix stack corruption due to incorrect format for argument parser
+
+--- gi/_gobject/pygflags.c.orig	Mon Mar  4 12:44:21 2013
++++ gi/_gobject/pygflags.c	Sun Mar 31 10:56:39 2013
+@@ -129,12 +129,12 @@ static PyObject *
+ pyg_flags_new(PyTypeObject *type, PyObject *args, PyObject *kwargs)
+ {
+     static char *kwlist[] = { "value", NULL };
+-    guint value;
++    gulong value;
+     PyObject *pytc, *values, *ret, *pyint;
+     GType gtype;
+     GFlagsClass *eclass;
+ 
+-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, "l", kwlist, &value))
++    if (!PyArg_ParseTupleAndKeywords(args, kwargs, "k", kwlist, &value))
+ 	return NULL;
+ 
+     pytc = PyObject_GetAttrString((PyObject *)type, "__gtype__");
