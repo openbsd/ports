@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_giggle-view-file_c,v 1.1 2013/03/31 07:00:21 ajacoutot Exp $
+
+Fix build with gtksourceview>=3.8.0
+
+--- src/giggle-view-file.c.orig	Sun Mar 31 08:49:27 2013
++++ src/giggle-view-file.c	Sun Mar 31 08:50:36 2013
+@@ -40,8 +40,7 @@
+ #include <gio/gio.h>
+ #include <glib/gi18n.h>
+ 
+-#include <gtksourceview/gtksourcelanguagemanager.h>
+-#include <gtksourceview/gtksourceview.h>
++#include <gtksourceview/gtksource.h>
+ 
+ #define GIGGLE_TYPE_VIEW_FILE_SNAPSHOT            (giggle_view_file_snapshot_get_type ())
+ #define GIGGLE_VIEW_FILE_SNAPSHOT(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GIGGLE_TYPE_VIEW_FILE_SNAPSHOT, GiggleViewFileSnapshot))

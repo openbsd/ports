@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/09/02 18:03:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/03/31 07:00:21 ajacoutot Exp $
 %%SHARED%%
 @bin bin/giggle
 include/giggle/
@@ -31,13 +31,13 @@ include/giggle/libgiggle/giggle-marshal.h
 lib/giggle/
 lib/giggle/plugins/
 lib/giggle/plugins/${GNOME_VERSION}/
-@comment lib/giggle/plugins/${GNOME_VERSION}/libpersonal-details.a
-@comment lib/giggle/plugins/${GNOME_VERSION}/libpersonal-details.la
 lib/giggle/plugins/${GNOME_VERSION}/personal-details.xml
 lib/libgiggle-git.a
 lib/libgiggle-git.la
+@lib lib/libgiggle-git.so.${LIBgiggle-git_VERSION}
 lib/libgiggle.a
 lib/libgiggle.la
+@lib lib/libgiggle.so.${LIBgiggle_VERSION}
 share/applications/giggle.desktop
 share/giggle/
 share/giggle/glade/
