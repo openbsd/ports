@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2013/03/31 06:37:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.91 2013/03/31 16:00:19 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -76,6 +76,10 @@ RUN_DEPENDS+=		x11/gnome/power-manager
 
 # needed for gnome-printers-panel
 RUN_DEPENDS+=		print/cups-pk-helper
+
+# needed for gnome-region-panel; optionnal and would create a cyclic dep:
+# gnome-session -> gnome-control-center -> gnome-session
+#RUN_DEPENDS+=		x11/gnome/session
 
 MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=	Yes
