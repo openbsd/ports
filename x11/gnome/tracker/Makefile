@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.130 2013/03/29 16:28:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.131 2013/03/31 06:35:31 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		powerful desktop search tool and indexer
 
 GNOME_PROJECT=		tracker
 GNOME_VERSION=		0.16.0
+REVISION=		0
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker.
@@ -37,7 +38,7 @@ WANTLIB += Xinerama Xrandr Xrender archive atk-1.0 atk-bridge-2.0
 WANTLIB += atspi bz2 c cairo cairo-gobject crypto cue curl dbus-1
 WANTLIB += dbus-glib-1 e2fs-uuid enca exempi exif expat ffi fontconfig
 WANTLIB += freetype gcrypt gdk-3 gdk_pixbuf-2.0 gif gio-2.0 glib-2.0
-WANTLIB += gmime-2.6 gmodule-2.0 gnome-keyring gobject-2.0 gpg-error
+WANTLIB += gmime-2.6 gmodule-2.0 gobject-2.0 gpg-error
 WANTLIB += graphite2 gsf-1 gstaudio-1.0 gstbase-1.0 gstpbutils-1.0
 WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
 WANTLIB += harfbuzz icudata icui18n icule icuuc idn jpeg kvm lcms2
