@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2013/03/30 18:09:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2013/03/31 07:44:38 ajacoutot Exp $
 
 COMMENT-main=		GNOME desktop meta-package (base installation)
 COMMENT-extra=		GNOME desktop meta-package (full installation)
@@ -9,7 +9,7 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extra=		gnome-extra-${V}
 
-REVISION-main=		5
+REVISION-main=		6
 REVISION-extra=		2
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
@@ -30,6 +30,9 @@ RUN_DEPENDS-main +=	x11/gnome/controlcenter \
 			x11/gnome/session \
 			x11/gnome/system-monitor \
 			x11/gnome/terminal
+
+# gnome-classic.session
+RUN_DEPENDS-main +=	x11/gnome/shell-extensions
 
 # gconf2 and polkit are already dependencies and we want to be able to
 # handle system-wide gconf entries.
