@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/26 16:32:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/31 13:37:57 ajacoutot Exp $
 
 COMMENT=	C++ binding for gdl
 
 GNOME_PROJECT=	gdlmm
-GNOME_VERSION=	3.3.2
-REVISION=	3
+GNOME_VERSION=	3.7.3
 
-SHARED_LIBS +=  gdlmm-3.0                 0.0 # 1.0
+SHARED_LIBS +=  gdlmm-3.0                 1.0 # 1.0
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
@@ -28,18 +27,7 @@ LIB_DEPENDS=	x11/gnome/gdl \
 		x11/gtk3mm
 
 CONFIGURE_ENV=	ac_cv_path_DOT= \
-		ac_cv_path_DOXYGEN=
-
-### XXX remove at next release ###
-BUILD_DEPENDS+=	devel/m4
-CONFIGURE_ENV+=	ac_cv_path_DOXYGEN=doxygen
-CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.68
-AUTOMAKE_VERSION=	1.11
-CONFIGURE_ARGS+=	--enable-maintainer-mode
-
-pre-configure:
-	ln -s /usr/local/bin/gm4 ${WRKDIR}/bin/m4
-##################################
+		ac_cv_path_DOXYGEN= \
+		ac_cv_path_XSLTPROC=
 
 .include <bsd.port.mk>
