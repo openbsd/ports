@@ -46,8 +46,13 @@ holds all the information retrieved through various variables, e.g.,:
     TARGETS
     USE_*
     WANTLIB 
+    README
+
 This information is mostly unchanged, except for replacing Yes/No variables
 with 1/0. Variables not present in a given port are left undefined.
+
+README corresponds to README files (full text value) and only exists when
+such files are present.
 
 Note that USE_LIBTOOL is 3-valued: 2 is gnu, 1 is yes, undef is no.
 

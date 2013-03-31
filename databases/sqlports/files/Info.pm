@@ -1,4 +1,4 @@
-# $OpenBSD: Info.pm,v 1.7 2013/03/11 11:53:51 espie Exp $
+# $OpenBSD: Info.pm,v 1.8 2013/03/31 09:43:13 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -34,7 +34,7 @@ our $vars = {
     COMMENT => 'AnyVar',
     CONFIGURE_ARGS => 'ConfigureArgsVar',
     CONFIGURE_STYLE => 'ConfigureVar',
-    DESCR => 'FileVar',
+    DESCR => 'DescrVar',
     DISTFILES => 'AnyVar',
     DPB_PROPERTIES => 'DPBPropertiesVar',
     PATCHFILES => 'AnyVar',
@@ -79,6 +79,7 @@ our $vars = {
     TEST_DEPENDS => 'TestDependsVar',
     TEST_IS_INTERACTIVE => 'AnyVar',
     REVISION => 'AnyVar',
+    README => 'ReadmeVar',
     RUN_DEPENDS => 'RunDependsVar',
     SEPARATE_BUILD => 'YesKeyVar',
     SHARED_LIBS => 'SharedLibsVar',

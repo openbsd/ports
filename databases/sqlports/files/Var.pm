@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.18 2013/03/11 11:53:51 espie Exp $
+# $OpenBSD: Var.pm,v 1.19 2013/03/31 09:43:13 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -31,7 +31,7 @@ sub keyword_table() { undef }
 sub new
 {
 	my ($class, $var, $value, $arch) = @_;
-	die "No arch fo $var" if defined $arch;
+	die "No arch for $var" if defined $arch;
 	bless [$var, $value], $class;
 }
 
@@ -546,7 +546,6 @@ sub keyword_table() { 'Arches' }
 
 package FileVar;
 our @ISA = qw(SecondaryVar);
-sub table() { 'Descr' }
 
 sub add
 {
@@ -556,6 +555,36 @@ sub add
 	local $/ = undef;
 	$self->add_value($ins, <$file>);
 }
+
+package ReadmeVar;
+our @ISA = qw(FileVar);
+sub table() { 'ReadMe' }
+sub columntype() { 'OptTextColumn' }
+
+package DescrVar;
+our @ISA = qw(FileVar);
+sub table() { 'Descr' }
+use File::Basename;
+
+# README does not exist as an actual variable, but it's trivial
+# to add it as a subsidiary of DESCR when the file exists.
+
+sub new
+{
+	my ($class, $var, $value, $arch, $path) = @_;
+	my $dir = dirname($value);
+	my $readme = "$dir/README";
+	my $multi = $path->multi;
+	if (defined $multi) {
+		$readme .= $multi;
+	}
+	if (-e $readme) {
+		$path->{info}->create('README', $readme, $arch, $path);
+	}
+
+	return $class->SUPER::new($var, $value, $arch, $path);
+}
+
 
 package SharedLibsVar;
 our @ISA = qw(KeyVar);
