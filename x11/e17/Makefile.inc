@@ -1,15 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.19 2013/03/11 11:46:09 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.20 2013/03/31 18:48:00 rpe Exp $
 
 CATEGORIES ?=		x11
 
 HOMEPAGE ?=		http://www.enlightenment.org/
 
-MASTER_SITES ?=		http://download.enlightenment.org/releases/ \
-			http://download.enlightenment.org/snapshots/LATEST/ \
-			http://download.enlightenment.org/snapshots/2010-11-12/ \
-			http://download.enlightenment.org/snapshots/2009-06-14/ \
-			http://distfiles.nl/ \
-			http://www.itee.uq.edu.au/~dlg/openbsd/
+MASTER_SITES ?=		http://download.enlightenment.org/releases/
 
 DIST_SUBDIR ?=		e17
 

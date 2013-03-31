@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.47 2013/03/21 08:48:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2013/03/31 18:48:02 rpe Exp $
 
 COMMENT =		the enlightened window manager
 
-VERSION = 		0.17.0
+VERSION = 		0.17.1
 DISTNAME =		enlightenment-${VERSION}
 PKGNAME =		enlightenment-${VERSION:S/-//}
 
-REVISION = 		4
 EPOCH =			1
 
 # BSD
@@ -26,7 +25,7 @@ WANTLIB += ecore_imf_evas ecore_input ecore_input_evas ecore_ipc
 WANTLIB += ecore_x edbus edje eet efreet efreet_mime efreet_trash
 WANTLIB += ehal eina eio elementary embryo emotion enotify ethumb
 WANTLIB += ethumb_client eukit evas execinfo exif expat ffi fontconfig
-WANTLIB += freetype fribidi glib-2.0 gobject-2.0 gthread-2.0 harfbuzz
+WANTLIB += freetype graphite2 fribidi glib-2.0 gobject-2.0 harfbuzz
 WANTLIB += icudata icule icuuc idn jpeg m pcre pthread pthread-stubs
 WANTLIB += ssl xcb xcb-keysyms xcb-shape z ${MODLUA_WANTLIB}
 
