@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure,v 1.6 2006/11/20 03:15:36 jolan Exp $
---- configure.orig	Sun Nov 19 11:45:22 2006
-+++ configure	Sun Nov 19 21:12:41 2006
-@@ -1913,9 +1913,9 @@ if test "${with_waddir+set}" = set; then
-   DOOMWADDIR="$withval"
+$OpenBSD: patch-configure,v 1.7 2013/03/31 21:09:32 bentley Exp $
+--- configure.orig	Sun Nov  9 12:22:17 2008
++++ configure	Wed Mar 27 00:14:46 2013
+@@ -2422,9 +2422,9 @@ if test "${with_waddir+set}" = set; then
+   withval=$with_waddir; DOOMWADDIR="$withval"
  else
    if test "x$prefix" != xNONE; then
 -  DOOMWADDIR="$prefix/share/games/doom"
@@ -12,8 +12,8 @@ $OpenBSD: patch-configure,v 1.6 2006/11/20 03:15:36 jolan Exp $
 +  DOOMWADDIR="$ac_default_prefix/share/prboom"
  fi
  
- fi;
-@@ -5999,7 +5999,7 @@ if test "${ac_cv_lib_png_png_create_info
+ fi
+@@ -6814,7 +6814,7 @@ if test "${ac_cv_lib_png_png_create_info_struct+set}" 
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -22,7 +22,7 @@ $OpenBSD: patch-configure,v 1.6 2006/11/20 03:15:36 jolan Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -6061,7 +6061,7 @@ if test $ac_cv_lib_png_png_create_info_s
+@@ -6874,7 +6874,7 @@ if test $ac_cv_lib_png_png_create_info_struct = yes; t
  #define HAVE_LIBPNG 1
  _ACEOF
  
