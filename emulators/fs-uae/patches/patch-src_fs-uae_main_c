@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_fs-uae_main_c,v 1.1 2013/03/31 20:16:10 edd Exp $
+--- src/fs-uae/main.c.orig	Sun Mar 17 20:08:06 2013
++++ src/fs-uae/main.c	Sun Mar 24 23:40:23 2013
+@@ -535,6 +535,7 @@ void list_joysticks() {
+     }
+     printf("# SDL_NumJoysticks(): %d\n", SDL_NumJoysticks());
+     for(int i = 0; i < SDL_NumJoysticks(); i++) {
++	SDL_JoystickOpen(i);
+         if (SDL_JoystickName(i)[0] == '\0') {
+             printf("Unnamed\n");
+         }

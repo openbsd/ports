@@ -1,55 +1,36 @@
-$OpenBSD: README,v 1.1.1.1 2012/11/22 23:45:21 edd Exp $
+$OpenBSD: README,v 1.2 2013/03/31 20:16:10 edd Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
-Getting Started
-===============
+Kickstart ROM
+==============
 
-Upon first run, FS-UAE will make a directory tree under ~/FS-UAE which
-will serve as the place to store floppy images, hard disk images,
-Kickstart images, etc. So first just run the emulator to create this
-directory structure.
-
-Next you will need a Kickstart ROM for the system you want to emulate.
+You will need a Kickstart ROM for the system you wish to emulate.
 Kickstart is the name given to the chip in a real Amiga that contains
-the bootloader code. The Kickstart ROM can either be dumped from a real
-Amiga using a tool like Amiga Explorer for Windows. Alternatively you
-can buy the Kickstart ROM from AmigaForever. More details here:
+the bootloader and other stuff. The Kickstart ROM can either be dumped
+from a real Amiga using a tool like Amiga Explorer for Windows.
+Alternatively you can buy the Kickstart ROM from AmigaForever. More
+details here:
+
 http://www.amigakickstart.com/
 
 The Kickstart ROMs are copyrighted. You should obtain them legally.
 
-Once you have a Kickstart ROM, put it in ~/FS-UAE/Kickstarts/. You can
-now start to build a config file:
+Launcher
+========
 
- $ mkdir -p ~/.config/fs-uae
- $ cp ${TRUEPREFIX}/share/examples/fs-uae/fs-uae.conf ~/.config/fs-uae/
- $ vi ~/.config/fs-uae/fs-uae.conf
+The majority of emulator configuration, including the import of
+Kickstarts, can now be done via the launcher.  To run the launcher:
 
-You will want uncomment and amend this line to point to your Kickstart
-ROM:
-#kickstart_file = ~/FS-UAE/Kickstarts/your_kickstart_file.rom
-
-If you boot FS-UAE now, you should see the Kickstart bootloader screen.
-On a real Amiga system, this is where one would insert one of those
-"floppy disks" (should you remember those). Of course we can emulate the
-floppies too.
-
-For example:
-
- $ cd ~/FS-UAE/Floppies
- $ ftp http://www.factor5.de/downloads/r-type.zip
- $ unzip r-type.zip
-
-Now in your config file uncomment the line:
-#floppy_drive_0 = R-Type.adf
-
-Next time you boot, you can play some R-Type goodness.
+ $ fs-uae-launcher
 
 Joysticks
 =========
+
+The launcher should detect your joystick automagically, but incase it
+does not, here are the instructions for configuring one manually.
 
 Under Linux, SDL joysticks show up as named devices and ideally there
 would be a config file in ${TRUEPREFIX}/share/fs-uae/input for each
@@ -97,16 +78,6 @@ F12 + q:	Quit
 If you have no real joystick configured, you can use the emulated one.
 Cursor keys controls the joystick stick and right ctrl or right alt
 controls the fire button.
-
-Launcher
-========
-
-FS-UAE comes with a launcher which can help to manage floppy
-configurations for different games. To use this run:
-
- $ fs-uae-launcher
-
-Note that you can not change advanced config settings from the launcher.
 
 FS-UAE is Slow?
 ===============

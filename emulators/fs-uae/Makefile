@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:06:04 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/03/31 20:16:10 edd Exp $
 
 BROKEN-powerpc =	error: invalid 'asm': invalid %k value
 BROKEN-sparc64 =	error: invalid 'asm': invalid operand output code
 
 COMMENT =		modern Amiga emulator
-V =			2.0.1
+V =			2.2.0
 DISTNAME =		fs-uae-$V
 CATEGORIES =		emulators
-REVISION = 		2
 
 HOMEPAGE =		http://fengestad.no/fs-uae/
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
@@ -15,7 +14,7 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 # GPLv2, LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL GLU SDL X11 c glib-2.0 gthread-2.0 m openal png
+WANTLIB += GL GLU SDL X11 c freetype glib-2.0 gthread-2.0 m openal png
 WANTLIB += pthread stdc++ z
 
 MASTER_SITES =		${HOMEPAGE}stable/$V/
@@ -29,7 +28,8 @@ LIB_DEPENDS =		devel/sdl \
 			devel/glib2
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+2,-guic \
-			x11/py-wxPython
+			x11/py-wxPython \
+			devel/pygame
 
 USE_GMAKE =		Yes
 
