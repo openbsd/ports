@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2013/03/30 09:39:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.91 2013/03/31 08:03:01 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -29,6 +29,9 @@ LIB_DEPENDS=	devel/gconf2 \
 		devel/vte3 \
 		sysutils/e2fsprogs \
 		x11/gnome/nautilus
+
+# configure checks for desktop-file-validate(1)
+BUILD_DEPENDS +=devel/desktop-file-utils
 
 MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=	Yes
