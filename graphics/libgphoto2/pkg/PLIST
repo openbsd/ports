@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2013/01/19 11:21:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2013/03/31 13:47:43 ajacoutot Exp $
 %%SHARED%%
 bin/gphoto2-config
 bin/gphoto2-port-config
@@ -25,11 +25,13 @@ include/gphoto2/gphoto2.h
 lib/libgphoto2/
 lib/libgphoto2.a
 lib/libgphoto2.la
+@lib lib/libgphoto2.so.${LIBgphoto2_VERSION}
 lib/libgphoto2/${VERSION}/
 @bin lib/libgphoto2/print-camera-list
 lib/libgphoto2_port/
 lib/libgphoto2_port.a
 lib/libgphoto2_port.la
+@lib lib/libgphoto2_port.so.${LIBgphoto2_port_VERSION}
 lib/libgphoto2_port/0.10.0/
 lib/pkgconfig/
 lib/pkgconfig/libgphoto2.pc
@@ -105,6 +107,7 @@ share/locale/es/LC_MESSAGES/libgphoto2-6.mo
 share/locale/es/LC_MESSAGES/libgphoto2_port-10.mo
 share/locale/eu/LC_MESSAGES/libgphoto2-6.mo
 share/locale/eu/LC_MESSAGES/libgphoto2_port-10.mo
+share/locale/fi/LC_MESSAGES/libgphoto2_port-10.mo
 share/locale/fr/LC_MESSAGES/libgphoto2-6.mo
 share/locale/fr/LC_MESSAGES/libgphoto2_port-10.mo
 share/locale/hu/LC_MESSAGES/libgphoto2-6.mo

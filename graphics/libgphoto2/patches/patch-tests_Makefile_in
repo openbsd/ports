@@ -1,7 +1,7 @@
-$OpenBSD: patch-tests_Makefile_in,v 1.6 2013/01/19 11:21:44 ajacoutot Exp $
---- tests/Makefile.in.orig	Tue Jul 10 09:12:54 2012
-+++ tests/Makefile.in	Sat Jan 12 09:35:34 2013
-@@ -445,9 +445,9 @@ test_camera_list_LDADD = \
+$OpenBSD: patch-tests_Makefile_in,v 1.7 2013/03/31 13:47:43 ajacoutot Exp $
+--- tests/Makefile.in.orig	Sun Jan 27 20:58:02 2013
++++ tests/Makefile.in	Thu Mar 28 08:52:28 2013
+@@ -472,9 +472,9 @@ test_camera_list_LDADD = \
  	$(INTLLIBS)
  
  @HAVE_GCC_FALSE@PEDANTIC_CFLAGS = 

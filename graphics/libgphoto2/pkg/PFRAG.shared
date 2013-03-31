@@ -1,5 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.10 2013/01/19 11:21:44 ajacoutot Exp $
-@lib lib/libgphoto2.so.${LIBgphoto2_VERSION}
+@comment $OpenBSD: PFRAG.shared,v 1.11 2013/03/31 13:47:43 ajacoutot Exp $
 lib/libgphoto2/${VERSION}/adc65.so
 lib/libgphoto2/${VERSION}/agfa_cl20.so
 lib/libgphoto2/${VERSION}/aox.so
@@ -64,7 +63,6 @@ lib/libgphoto2/${VERSION}/sx330z.so
 lib/libgphoto2/${VERSION}/topfield.so
 lib/libgphoto2/${VERSION}/toshiba_pdrm11.so
 lib/libgphoto2/${VERSION}/tp6801.so
-@lib lib/libgphoto2_port.so.${LIBgphoto2_port_VERSION}
 lib/libgphoto2_port/0.10.0/disk.so
 lib/libgphoto2_port/0.10.0/ptpip.so
 lib/libgphoto2_port/0.10.0/serial.so
