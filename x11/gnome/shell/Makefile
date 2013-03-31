@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2013/03/31 08:23:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2013/03/31 15:56:00 ajacoutot Exp $
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		3.8.0.1
-REVISION=		3
+REVISION=		4
 
 HOMEPAGE=		http://live.gnome.org/GnomeShell
 
@@ -45,6 +45,7 @@ BUILD_DEPENDS += textproc/docbook-xsl
 
 # gnome-keybindings.pc
 BUILD_DEPENDS += x11/gnome/controlcenter
+RUN_DEPENDS += x11/gnome/controlcenter
 
 # onscreen keyboard
 BUILD_DEPENDS +=	x11/gnome/caribou
