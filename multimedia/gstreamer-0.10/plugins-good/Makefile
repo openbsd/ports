@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2013/02/06 14:23:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.91 2013/03/31 13:23:26 ajacoutot Exp $
 
 # XXX ossaudio(3) is only enabled to be used as a mixing device by
 # audio/pulseaudio and x11/xfce4/xfce4-mixer
@@ -18,7 +18,7 @@ PKGNAME-dv=		gstreamer-dv-${V}
 PKGNAME-caca=		gstreamer-libcaca-${V}
 EPOCH-main=		0
 
-REVISION-main=		6
+REVISION-main=		7
 REVISION-aalib=		3
 REVISION-dv=		3
 REVISION-caca=		3
@@ -35,16 +35,15 @@ WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 pthread
 WANTLIB += pcre xml2 m z gstreamer-0.10 gstbase-0.10 ffi
 
 WANTLIB-main += ${WANTLIB} ${MODGCONF2_WANTLIB}
-WANTLIB-main += FLAC GL ICE SM X11 Xau Xdamage Xdmcp Xext Xfixes Xrender
-WANTLIB-main += Xv Xxf86vm bz2 cairo cairo-gobject dbus-1 dbus-glib-1
-WANTLIB-main += drm expat fontconfig freetype gcrypt gdk_pixbuf-2.0
-WANTLIB-main += gio-2.0 gnome-keyring gpg-error gstaudio-0.10 gstcontroller-0.10
+WANTLIB-main += FLAC ICE SM X11 Xau Xdamage Xext Xfixes Xrender
+WANTLIB-main += Xv bz2 cairo cairo-gobject dbus-1 dbus-glib-1
+WANTLIB-main += expat fontconfig freetype gdk_pixbuf-2.0
+WANTLIB-main += gio-2.0 gstaudio-0.10 gstcontroller-0.10 xcb-shm
 WANTLIB-main += gstfft-0.10 gstinterfaces-0.10 gstnetbuffer-0.10 gstpbutils-0.10
 WANTLIB-main += gstriff-0.10 gstrtp-0.10 gstrtsp-0.10 gstsdp-0.10 gsttag-0.10
 WANTLIB-main += gstvideo-0.10 jpeg ogg orc-0.4 ossaudio pixman-1 png
 WANTLIB-main += pthread-stubs shout sndio soup-2.4 soup-gnome-2.4 speex
 WANTLIB-main += sqlite3 stdc++ tag theora vorbis wavpack xcb xcb-render
-WANTLIB-main += xcb-shm
 
 WANTLIB-aalib += ${WANTLIB}
 WANTLIB-aalib += X11 aa ncurses xcb
