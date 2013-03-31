@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2013/03/08 06:58:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2013/03/31 19:41:23 ajacoutot Exp $
 @conflict shared-color-profiles-*
 @conflict shared-color-profiles-extra-*
 @pkgpath graphics/colord
@@ -12,6 +12,7 @@
 %%SHARED%%
 @bin bin/cd-create-profile
 @bin bin/cd-fix-profile
+@bin bin/cd-iccdump
 @bin bin/colormgr
 include/colord-1/
 include/colord-1/colord/
@@ -26,7 +27,12 @@ include/colord-1/colord/cd-color.h
 include/colord-1/colord/cd-deprecated.h
 include/colord-1/colord/cd-device-sync.h
 include/colord-1/colord/cd-device.h
+include/colord-1/colord/cd-dom.h
 include/colord-1/colord/cd-enum.h
+include/colord-1/colord/cd-icc.h
+include/colord-1/colord/cd-interp-akima.h
+include/colord-1/colord/cd-interp-linear.h
+include/colord-1/colord/cd-interp.h
 include/colord-1/colord/cd-it8-utils.h
 include/colord-1/colord/cd-it8.h
 include/colord-1/colord/cd-math.h
@@ -44,7 +50,6 @@ lib/libcolord.la
 lib/libcolordprivate.a
 lib/libcolordprivate.la
 @lib lib/libcolordprivate.so.${LIBcolordprivate_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/colord.pc
 @bin libexec/colord
 @bin libexec/colord-session
@@ -58,23 +63,23 @@ share/color/icc/colord/AdobeRGB1998.icc
 share/color/icc/colord/AppleRGB.icc
 share/color/icc/colord/BestRGB.icc
 share/color/icc/colord/BetaRGB.icc
+share/color/icc/colord/Bluish.icc
 share/color/icc/colord/BruceRGB.icc
 share/color/icc/colord/CIE-RGB.icc
 share/color/icc/colord/ColorMatchRGB.icc
+share/color/icc/colord/Crayons.icc
 share/color/icc/colord/DonRGB4.icc
 share/color/icc/colord/ECI-RGBv2.icc
 share/color/icc/colord/EktaSpacePS5.icc
+share/color/icc/colord/Gamma5000K.icc
+share/color/icc/colord/Gamma5500K.icc
+share/color/icc/colord/Gamma6500K.icc
 share/color/icc/colord/NTSC-RGB.icc
 share/color/icc/colord/PAL-RGB.icc
 share/color/icc/colord/ProPhotoRGB.icc
 share/color/icc/colord/SMPTE-C-RGB.icc
 share/color/icc/colord/SwappedRedAndGreen.icc
 share/color/icc/colord/WideGamutRGB.icc
-share/color/icc/colord/bluish.icc
-share/color/icc/colord/crayons.icc
-share/color/icc/colord/gamma5000.icc
-share/color/icc/colord/gamma5500.icc
-share/color/icc/colord/gamma6500.icc
 share/color/icc/colord/sRGB.icc
 share/color/icc/colord/x11-colors.icc
 share/colord/
@@ -102,8 +107,6 @@ share/colord/ti1/display-short.ti1
 share/colord/ti1/printer-long.ti1
 share/colord/ti1/printer-normal.ti1
 share/colord/ti1/printer-short.ti1
-share/dbus-1/
-share/dbus-1/interfaces/
 share/dbus-1/interfaces/org.freedesktop.ColorHelper.xml
 share/dbus-1/interfaces/org.freedesktop.ColorManager.Device.xml
 share/dbus-1/interfaces/org.freedesktop.ColorManager.Profile.xml
@@ -111,7 +114,6 @@ share/dbus-1/interfaces/org.freedesktop.ColorManager.Sensor.xml
 share/dbus-1/interfaces/org.freedesktop.ColorManager.xml
 share/dbus-1/services/
 share/dbus-1/services/org.freedesktop.ColorHelper.service
-share/dbus-1/system-services/
 share/dbus-1/system-services/org.freedesktop.ColorManager.service
 share/examples/colord/
 share/examples/colord/bash_completion.d/
@@ -193,8 +195,6 @@ share/locale/uk/LC_MESSAGES/colord.mo
 share/locale/zh_CN/LC_MESSAGES/colord.mo
 share/locale/zh_HK/LC_MESSAGES/colord.mo
 share/locale/zh_TW/LC_MESSAGES/colord.mo
-share/polkit-1/
-share/polkit-1/actions/
 share/polkit-1/actions/org.freedesktop.color.policy
 share/vala/vapi/colord.vapi
 @owner _colord

@@ -1,0 +1,70 @@
+$OpenBSD: patch-client_cd-create-profile_c,v 1.1 2013/03/31 19:41:23 ajacoutot Exp $
+
+FIXED upstream (not committed just yet)
+cd-create-profile.c:326: warning: declaration of 'tgamma' shadows a global declaration
+/usr/include/math.h:201: warning: shadowed declaration is here
+cd-create-profile.c:460: warning: declaration of 'gamma' shadows a global declaration
+/usr/include/math.h:238: warning: shadowed declaration is here
+
+--- client/cd-create-profile.c.orig	Sun Mar 31 12:28:09 2013
++++ client/cd-create-profile.c	Sun Mar 31 12:29:36 2013
+@@ -323,7 +323,7 @@ cd_util_create_standard_space (CdUtilPrivate *priv,
+ 	const GNode *tmp;
+ 	gboolean ret;
+ 	gchar *endptr = NULL;
+-	gdouble tgamma;
++	gdouble cd_tgamma;
+ 
+ 	/* parse gamma */
+ 	tmp = cd_dom_get_node (dom, root, "gamma");
+@@ -346,7 +346,7 @@ cd_util_create_standard_space (CdUtilPrivate *priv,
+ 		transfer[1] = transfer[0];
+ 		transfer[2] = transfer[0];
+ 	} else {
+-		tgamma = g_ascii_strtod (data, &endptr);
++		cd_tgamma = g_ascii_strtod (data, &endptr);
+ 		if (endptr != NULL && endptr[0] != '\0') {
+ 			ret = FALSE;
+ 			g_set_error (error, 1, 0,
+@@ -354,7 +354,7 @@ cd_util_create_standard_space (CdUtilPrivate *priv,
+ 				     data);
+ 			goto out;
+ 		}
+-		transfer[0] = cmsBuildGamma (NULL, tgamma);
++		transfer[0] = cmsBuildGamma (NULL, cd_tgamma);
+ 		transfer[1] = transfer[0];
+ 		transfer[2] = transfer[0];
+ 	}
+@@ -457,7 +457,7 @@ cd_util_create_temperature (CdUtilPrivate *priv,
+ 	const guint size = 256;
+ 	gboolean ret;
+ 	gchar *endptr = NULL;
+-	gdouble gamma;
++	gdouble cd_gamma;
+ 	guint16 data[3][256];
+ 	guint i;
+ 	guint temp;
+@@ -487,7 +487,7 @@ cd_util_create_temperature (CdUtilPrivate *priv,
+ 		g_set_error_literal (error, 1, 0, "XML error, expected gamma");
+ 		goto out;
+ 	}
+-	gamma = g_ascii_strtod (cd_dom_get_node_data (tmp), &endptr);
++	cd_gamma = g_ascii_strtod (cd_dom_get_node_data (tmp), &endptr);
+ 	if (endptr != NULL && endptr[0] != '\0') {
+ 		ret = FALSE;
+ 		g_set_error (error, 1, 0,
+@@ -499,11 +499,11 @@ cd_util_create_temperature (CdUtilPrivate *priv,
+ 	/* generate the VCGT table */
+ 	cd_color_get_blackbody_rgb (temp, &white_point);
+ 	for (i = 0; i < size; i++) {
+-		data[0][i] = pow ((gdouble) i / size, 1.0 / gamma) *
++		data[0][i] = pow ((gdouble) i / size, 1.0 / cd_gamma) *
+ 				  0xffff * white_point.R;
+-		data[1][i] = pow ((gdouble) i / size, 1.0 / gamma) *
++		data[1][i] = pow ((gdouble) i / size, 1.0 / cd_gamma) *
+ 				  0xffff * white_point.G;
+-		data[2][i] = pow ((gdouble) i / size, 1.0 / gamma) *
++		data[2][i] = pow ((gdouble) i / size, 1.0 / cd_gamma) *
+ 				  0xffff * white_point.B;
+ 	}
+ 

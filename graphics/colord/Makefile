@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/30 13:03:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/31 19:41:23 ajacoutot Exp $
 
 COMMENT=	device color profile management daemon
 
-V=		0.1.30
+V=		0.1.32
 DISTNAME=	colord-${V}
 EXTRACT_SUFX=	.tar.xz
-REVISION=	0
 
-SHARED_LIBS +=  colordprivate        0.0      # 1.18
-SHARED_LIBS +=  colord               0.2      # 1.18
+SHARED_LIBS +=  colordprivate        0.1      # 1.19
+SHARED_LIBS +=  colord               0.3      # 1.19
 
 CATEGORIES=	graphics print
 
@@ -32,7 +31,7 @@ BUILD_DEPENDS=	devel/gobject-introspection \
 		lang/vala \
 		textproc/docbook2x
 
-LIB_DEPENDS=	graphics/lcms2 \
+LIB_DEPENDS=	graphics/lcms2>=2.4p0 \
 		sysutils/polkit
 
 # polkit(8) almost always needs to know the "active" session
@@ -67,28 +66,6 @@ CONFIGURE_ARGS += --disable-print-profiles
 #BUILD_DEPENDS += graphics/argyll
 
 FAKE_FLAGS=	sysconfdir="${PREFIX}/share/examples/colord"
-
-### XXX RM FOR NEXT RELEASE
-# rm the following patches
-# patch-configure_ac
-# patch-lib_Makefile_am
-# patch-m4_intltool_m4
-# patch-src_Makefile_am
-# patch-src_cd-sensor_c
-# patch-src_cd-sensor_h
-AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.11
-BUILD_DEPENDS +=	${MODGNU_AUTOMAKE_DEPENDS} \
-			${MODGNU_AUTOCONF_DEPENDS} \
-			devel/libtool
-
-post-patch:
-	cd ${WRKSRC} && env \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		autoreconf -i --force && \
-		intltoolize --force
-### END XXX
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/{cd-profile-store.c,cd-profile.c}

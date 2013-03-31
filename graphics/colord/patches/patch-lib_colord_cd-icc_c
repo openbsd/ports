@@ -1,0 +1,192 @@
+$OpenBSD: patch-lib_colord_cd-icc_c,v 1.1 2013/03/31 19:41:23 ajacoutot Exp $
+
+From e13946311e57981d060225a3ec67a76e825d0248 Mon Sep 17 00:00:00 2001
+From: Richard Hughes <richard@hughsie.com>
+Date: Thu, 28 Mar 2013 14:42:39 +0000
+Subject: [PATCH] trivial: Add a gobject-introspection element-type
+
+From 9f7ef87460b4b40103c59ea8a3839dc8706a7d53 Mon Sep 17 00:00:00 2001
+From: Richard Hughes <richard@hughsie.com>
+Date: Thu, 28 Mar 2013 14:43:45 +0000
+Subject: [PATCH] trivial: Sanity check the written profile size to be less than 16Mb
+
+From 653d0569dd960f607b58ec6b9ee91bf867fdb039 Mon Sep 17 00:00:00 2001
+From: Richard Hughes <richard@hughsie.com>
+Date: Thu, 28 Mar 2013 14:44:38 +0000
+Subject: [PATCH] trivial: Be more paranoid when writing ICC wchar_t values
+
+From 085b32b6ca9802bbfce509fcb5bf8bf231afaa48 Mon Sep 17 00:00:00 2001
+From: Richard Hughes <richard@hughsie.com>
+Date: Thu, 28 Mar 2013 15:24:00 +0000
+Subject: [PATCH] Ensure mbstowcs() has an LC_CTYPE of 'en_US.UTF-8'
+
+--- lib/colord/cd-icc.c.orig	Sun Mar 31 21:33:15 2013
++++ lib/colord/cd-icc.c	Sun Mar 31 21:33:47 2013
+@@ -28,6 +28,7 @@
+ 
+ #include <glib.h>
+ #include <lcms2.h>
++#include <locale.h>
+ #include <string.h>
+ #include <stdlib.h>
+ 
+@@ -813,10 +814,14 @@ out:
+ static wchar_t *
+ utf8_to_wchar_t (const char *src)
+ {
++	const gchar *orig_locale;
+ 	gssize len;
+ 	gssize converted;
+ 	wchar_t *buf = NULL;
+ 
++	/* switch the locale to a known UTF-8 LC_CTYPE */
++	orig_locale = setlocale (LC_CTYPE, NULL);
++	setlocale (LC_CTYPE, "en_US.UTF-8");
+ 	len = mbstowcs (NULL, src, 0);
+ 	if (len < 0) {
+ 		g_warning ("Invalid UTF-8 in string %s", src);
+@@ -828,28 +833,49 @@ utf8_to_wchar_t (const char *src)
+ 	g_assert (converted != -1);
+ 	buf[converted] = '\0';
+ out:
++	setlocale (LC_CTYPE, orig_locale);
+ 	return buf;
+ }
+ 
+ /**
+- * _cmsDictAddEntryAscii:
++ * cd_util_write_dict_entry:
+  **/
+-static cmsBool
+-_cmsDictAddEntryAscii (cmsHANDLE dict,
+-		       const gchar *key,
+-		       const gchar *value)
++static gboolean
++cd_util_write_dict_entry (cmsHANDLE dict,
++			  const gchar *key,
++			  const gchar *value,
++			  GError **error)
+ {
+-	cmsBool ret = FALSE;
++	gboolean ret = FALSE;
+ 	wchar_t *mb_key = NULL;
+ 	wchar_t *mb_value = NULL;
+ 
+ 	mb_key = utf8_to_wchar_t (key);
+-	if (mb_key == NULL)
++	if (mb_key == NULL) {
++		g_set_error (error,
++			     CD_ICC_ERROR,
++			     CD_ICC_ERROR_FAILED_TO_SAVE,
++			     "Failed to write invalid ASCII key: '%s'",
++			     key);
+ 		goto out;
++	}
+ 	mb_value = utf8_to_wchar_t (value);
+-	if (mb_value == NULL)
++	if (mb_value == NULL) {
++		g_set_error (error,
++			     CD_ICC_ERROR,
++			     CD_ICC_ERROR_FAILED_TO_SAVE,
++			     "Failed to write invalid ASCII value: '%s'",
++			     value);
+ 		goto out;
++	}
+ 	ret = cmsDictAddEntry (dict, mb_key, mb_value, NULL, NULL);
++	if (!ret) {
++		g_set_error_literal (error,
++				     CD_ICC_ERROR,
++				     CD_ICC_ERROR_FAILED_TO_SAVE,
++				     "Failed to write dict entry");
++		goto out;
++	}
+ out:
+ 	g_free (mb_key);
+ 	g_free (mb_value);
+@@ -889,8 +915,11 @@ cd_util_mlu_object_parse (const gchar *locale, const g
+ 
+ 	/* untranslated version */
+ 	if (locale == NULL || locale[0] == '\0') {
++		wtext = utf8_to_wchar_t (utf8_text);
++		if (wtext == NULL)
++			goto out;
+ 		obj = g_new0 (CdMluObject, 1);
+-		obj->wtext = utf8_to_wchar_t (utf8_text);
++		obj->wtext = wtext;
+ 		goto out;
+ 	}
+ 
+@@ -946,6 +975,7 @@ cd_util_write_tag_localized (CdIcc *icc,
+ 	CdMluObject *obj;
+ 	cmsMLU *mlu = NULL;
+ 	const gchar *locale;
++	const gchar *value;
+ 	gboolean ret = TRUE;
+ 	GList *keys;
+ 	GList *l;
+@@ -957,10 +987,13 @@ cd_util_write_tag_localized (CdIcc *icc,
+ 	array = g_ptr_array_new_with_free_func (cd_util_mlu_object_free);
+ 	for (l = keys; l != NULL; l = l->next) {
+ 		locale = l->data;
+-		obj = cd_util_mlu_object_parse (locale,
+-						g_hash_table_lookup (hash, locale));
+-		if (obj == NULL)
++		value = g_hash_table_lookup (hash, locale);
++		obj = cd_util_mlu_object_parse (locale, value);
++		if (obj == NULL) {
++			g_warning ("failed to parse localized text: %s[%s]",
++				   value, locale);
+ 			continue;
++		}
+ 		g_ptr_array_add (array, obj);
+ 	}
+ 
+@@ -1053,7 +1086,7 @@ cd_icc_save_file (CdIcc *icc,
+ 	GError *error_local = NULL;
+ 	GList *l;
+ 	GList *md_keys = NULL;
+-	gsize length;
++	gsize length = 0;
+ 	guint i;
+ 
+ 	g_return_val_if_fail (CD_IS_ICC (icc), FALSE);
+@@ -1089,7 +1122,10 @@ cd_icc_save_file (CdIcc *icc,
+ 			for (l = md_keys; l != NULL; l = l->next) {
+ 				key = l->data;
+ 				value = g_hash_table_lookup (priv->metadata, key);
+-				_cmsDictAddEntryAscii (dict, key, value);
++				ret = cd_util_write_dict_entry (dict, key,
++								value, error);
++				if (!ret)
++					goto out;
+ 			}
+ 		}
+ 		ret = cmsWriteTag (priv->lcms_profile, cmsSigMetaTag, dict);
+@@ -1152,6 +1188,18 @@ cd_icc_save_file (CdIcc *icc,
+ 		goto out;
+ 	}
+ 
++	/* sanity check to 16Mb */
++	if (length == 0 || length > 16 * 1024 * 1024) {
++		ret = FALSE;
++		g_set_error (error,
++			     CD_ICC_ERROR,
++			     CD_ICC_ERROR_FAILED_TO_SAVE,
++			     "failed to save ICC file, requested %" G_GSIZE_FORMAT
++			     "bytes and limit is 16Mb",
++			     length);
++		goto out;
++	}
++
+ 	/* allocate and get profile data */
+ 	data = g_new0 (gchar, length);
+ 	ret = cmsSaveProfileToMem (priv->lcms_profile,
+@@ -1648,7 +1696,7 @@ out:
+  * This function will only return results if the profile was loaded with the
+  * %CD_ICC_LOAD_FLAGS_NAMED_COLORS flag.
+  *
+- * Return value: (transfer container): An array of #CdColorSwatch
++ * Return value: (transfer container) (element-type CdColorSwatch): An array of color swatches
+  *
+  * Since: 0.1.32
+  **/
