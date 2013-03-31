@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/21 08:45:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/31 13:48:44 ajacoutot Exp $
 
 COMMENT =	digital camera command-line interface
 CATEGORIES =	graphics
 
-MAINTAINER =	Marc Espie <espie@openbsd.org>
+MAINTAINER =	Antoine Jacoutot <ajacoutot@openbsd.org>
 
-VERSION =	2.5.0
+VERSION =	2.5.1
 DISTNAME =	gphoto2-${VERSION}
 PKGNAME =	gphoto-${VERSION}
 
@@ -32,7 +32,7 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			POPT_LIBS="-I${LOCALBASE}/lib -lpopt"
 
 MODULES =	devel/gettext
-LIB_DEPENDS =	graphics/libgphoto2>=2.5.0 \
+LIB_DEPENDS =	graphics/libgphoto2>=2.5.1 \
 		devel/popt
 
 .include <bsd.port.mk>
