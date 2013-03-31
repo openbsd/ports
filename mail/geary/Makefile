@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/30 09:28:17 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2013/03/31 20:23:14 sthen Exp $
 
 COMMENT =	lightweight mail user agent
 
 DISTNAME =	geary-0.3.0
+REVISION =	0
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 CATEGORIES =	mail
@@ -31,7 +32,8 @@ LIB_DEPENDS =	mail/gmime \
 		audio/libcanberra \
 		devel/libnotify \
 		devel/libunique3 \
-		devel/libgee06
+		devel/libgee06 \
+		x11/gnome/libgnome-keyring
 
 WANTLIB += atk-1.0 c cairo cairo-gobject sqlite3
 WANTLIB += fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
