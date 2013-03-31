@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2013/03/29 15:29:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.90 2013/03/31 21:28:58 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
 GNOME_VERSION=	3.4.3
-REVISION=	6
+REVISION=	7
 
 # NOTE: when M changes, increment M accordingly
 M=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -23,21 +23,20 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm atk-1.0
-WANTLIB += avahi-client avahi-common avahi-glib avahi-gobject
-WANTLIB += c cairo cairo-gobject dbus-1 dbus-glib-1 drm enchant
-WANTLIB += execinfo expat ffi fontconfig freetype gailutil-3 gcrypt
-WANTLIB += gdk-3 gdk_pixbuf-2.0 geoclue gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gnome-keyring gobject-2.0 gpg-error
-WANTLIB += gstapp-0.10 gstaudio-0.10 gstbase-0.10 gstfft-0.10
-WANTLIB += gstinterfaces-0.10 gstpbutils-0.10 gstreamer-0.10 gstvideo-0.10
-WANTLIB += gthread-2.0 gtk-3 icudata icui18n icuuc javascriptcoregtk-3.0
+WANTLIB += GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender Xt atk-1.0 atk-bridge-2.0
+WANTLIB += atspi avahi-client avahi-common avahi-glib avahi-gobject
+WANTLIB += c cairo cairo-gobject dbus-1 dbus-glib-1 enchant execinfo
+WANTLIB += expat ffi fontconfig freetype gailutil-3 gcrypt gdk-3
+WANTLIB += gdk_pixbuf-2.0 geoclue gio-2.0 girepository-1.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 gpg-error graphite2 gstapp-0.10
+WANTLIB += gstaudio-0.10 gstbase-0.10 gstfft-0.10 gstinterfaces-0.10
+WANTLIB += gstpbutils-0.10 gstreamer-0.10 gstvideo-0.10 gthread-2.0
+WANTLIB += gtk-3 harfbuzz icudata icui18n icule icuuc javascriptcoregtk-3.0
 WANTLIB += jpeg m notify orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs soup-2.4
-WANTLIB += soup-gnome-2.4 sqlite3 stdc++ webkitgtk-3.0 xcb xcb-render
-WANTLIB += atk-bridge-2.0 atspi harfbuzz icule
-WANTLIB += xcb-shm xml2 xslt z girepository-1.0
+WANTLIB += pcre pixman-1 png pthread pthread-stubs soup-2.4 soup-gnome-2.4
+WANTLIB += sqlite3 stdc++ webkitgtk-3.0 xcb xcb-render xcb-shm
+WANTLIB += xml2 xslt z gnome-keyring
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/iso-codes \
@@ -47,7 +46,8 @@ LIB_DEPENDS=	textproc/libxslt \
 		devel/libexecinfo \
 		devel/libnotify \
 		devel/libsoup,-gnome \
-		www/webkit,gtk3
+		www/webkit,gtk3 \
+		x11/gnome/libgnome-keyring
 
 # webkit browsing
 RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-ffmpeg \
