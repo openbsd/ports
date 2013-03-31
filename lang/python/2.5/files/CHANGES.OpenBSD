@@ -1,4 +1,4 @@
-$OpenBSD: CHANGES.OpenBSD,v 1.4 2010/02/25 11:02:39 phessler Exp $
+$OpenBSD: CHANGES.OpenBSD,v 1.5 2013/03/31 21:35:26 bcallah Exp $
 
 As required by item 3 of the PSF license, here is a brief summary
 of changes made to this version of Python for the OpenBSD package.
@@ -20,6 +20,8 @@ of changes made to this version of Python for the OpenBSD package.
 
 6.  Support for MIPS64 and MIPS64EL systems has been enabled for the
     _ctypes Module.
+
+7.  INSTSONAME was incorrect, configure.in was patched to fix it.
 
 These changes are available in the OpenBSD CVS repository
 <http://www.openbsd.org/anoncvs.html> in ports/lang/python.

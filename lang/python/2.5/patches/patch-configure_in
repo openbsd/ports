@@ -1,6 +1,8 @@
-$OpenBSD: patch-configure_in,v 1.7 2011/12/10 19:06:03 naddy Exp $
---- configure.in.orig	Sun Dec 14 01:13:52 2008
-+++ configure.in	Mon Dec 15 20:13:14 2008
+Fix wrong value of INSTSONAME. Same as in Python 2.7
+
+$OpenBSD: patch-configure_in,v 1.8 2013/03/31 21:35:26 bcallah Exp $
+--- configure.in.orig	Sat Dec 13 09:13:52 2008
++++ configure.in	Sun Mar 31 16:56:34 2013
 @@ -201,7 +201,7 @@ case $ac_sys_system/$ac_sys_release in
    # On OpenBSD, select(2) is not available if _XOPEN_SOURCE is defined,
    # even though select is a POSIX function. Reported by J. Ribbens.
@@ -10,7 +12,26 @@ $OpenBSD: patch-configure_in,v 1.7 2011/12/10 19:06:03 naddy Exp $
      define_xopen_source=no
      # OpenBSD undoes our definition of __BSD_VISIBLE if _XOPEN_SOURCE is
      # also defined. This can be overridden by defining _BSD_SOURCE
-@@ -1522,19 +1522,7 @@ then
+@@ -637,7 +637,7 @@ if test $enable_shared = "yes"; then
+ 	  RUNSHARED=LD_LIBRARY_PATH=`pwd`:${LD_LIBRARY_PATH}
+ 	  INSTSONAME="$LDLIBRARY".$SOVERSION
+           ;;
+-    Linux*|GNU*|NetBSD*|FreeBSD*|DragonFly*)
++    Linux*|GNU*|NetBSD*|FreeBSD*|DragonFly*|OpenBSD*)
+ 	  LDLIBRARY='libpython$(VERSION).so'
+ 	  BLDLIBRARY='-L. -lpython$(VERSION)'
+ 	  RUNSHARED=LD_LIBRARY_PATH=`pwd`:${LD_LIBRARY_PATH}
+@@ -645,6 +645,9 @@ if test $enable_shared = "yes"; then
+ 	      FreeBSD*)
+ 		SOVERSION=`echo $SOVERSION|cut -d "." -f 1`
+ 		;;
++	      OpenBSD*)
++		SOVERSION=${LIBpython2.5_VERSION}
++		;;
+ 	  esac
+ 	  INSTSONAME="$LDLIBRARY".$SOVERSION
+ 	  ;;
+@@ -1522,19 +1525,7 @@ then
  			LDSHARED="ld -Bshareable ${LDFLAGS}"
  		fi;;
  	OpenBSD*)
@@ -31,7 +52,7 @@ $OpenBSD: patch-configure_in,v 1.7 2011/12/10 19:06:03 naddy Exp $
  	NetBSD*|DragonFly*) LDSHARED="cc -shared ${LDFLAGS}";;
  	OpenUNIX*|UnixWare*)
  		if test "$GCC" = "yes"
-@@ -1678,9 +1666,10 @@ AC_CHECK_LIB(dld, shl_load)	# Dynamic linking for HP-U
+@@ -1678,9 +1669,10 @@ AC_CHECK_LIB(dld, shl_load)	# Dynamic linking for HP-U
  
  # only check for sem_ini if thread support is requested
  if test "$with_threads" = "yes" -o -z "$with_threads"; then

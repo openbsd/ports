@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.95 2013/03/11 12:27:54 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.96 2013/03/31 21:35:26 bcallah Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -135,6 +135,9 @@ ALL_TARGET?=	everything ./Lib/plat-openbsd5
 
 post-extract:
 	rm -r ${WRKDIST}/Modules/expat
+
+post-patch:
+	${SUBST_CMD} ${WRKSRC}/configure.in
 
 post-configure:
 	@cd ${WRKSRC} && ${MAKE_PROGRAM} Makefile
