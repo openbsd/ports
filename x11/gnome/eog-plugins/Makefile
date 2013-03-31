@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.42 2013/03/29 18:26:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.43 2013/03/31 08:23:24 ajacoutot Exp $
 
 COMMENT=		plugins for EOG
 
 GNOME_PROJECT=		eog-plugins
 GNOME_VERSION=		3.8.0
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -35,8 +36,12 @@ LIB_DEPENDS=    	devel/libgdata \
 			devel/libpeas \
 			geo/libchamplain>=0.12.2 \
 			graphics/libexif
-BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		x11/gnome/eog>=${GNOME_VERSION}
+
+BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
+			x11/gnome/eog>=${GNOME_VERSION}
+
+RUN_DEPENDS=		devel/gsettings-desktop-schemas \
+			x11/gnome/eog>=${GNOME_VERSION}
 
 # XXX the "postr" plugin needs postr which hasn't been ported yet
 CONFIGURE_ARGS+=	--enable-python \

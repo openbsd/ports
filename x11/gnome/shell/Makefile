@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2013/03/30 16:07:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2013/03/31 08:23:24 ajacoutot Exp $
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		3.8.0.1
-REVISION=		2
+REVISION=		3
 
 HOMEPAGE=		http://live.gnome.org/GnomeShell
 
@@ -38,6 +38,8 @@ MODULES=		devel/dconf \
 
 MODGNOME_TOOLS=		goi
 
+BUILD_DEPENDS +=	devel/gsettings-desktop-schemas
+
 # man pages
 BUILD_DEPENDS += textproc/docbook-xsl
 
@@ -58,7 +60,8 @@ LIB_DEPENDS=		audio/pulseaudio>=2.1 \
 			x11/gnome/menus \
 			x11/gnome/mutter>=3.6.1
 
-RUN_DEPENDS=		devel/py-gobject3 \
+RUN_DEPENDS=		devel/gsettings-desktop-schemas \
+			devel/py-gobject3 \
 			x11/gnome/caribou
 
 # polkit(8) almost always needs to know the "active" session

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2013/03/29 19:48:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.97 2013/03/31 08:23:24 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		official media player for GNOME
 
 GNOME_PROJECT=		totem
 GNOME_VERSION=		3.8.0
+REVISION=		0
 
 SHARED_LIBS +=  totem                     0.0 # 0.0
 
@@ -37,17 +38,23 @@ MODULES=		devel/dconf \
 			lang/python \
 			x11/gnome
 
-BUILD_DEPENDS=	 	devel/py-gobject3 \
+BUILD_DEPENDS=	 	devel/gsettings-desktop-schemas \
+			devel/py-gobject3 \
 			multimedia/gstreamer1/plugins-good \
 			multimedia/gstreamer1/plugins-bad #soundtouch
 
 # needed for make check
 BUILD_DEPENDS +=	devel/pylint
 
-RUN_DEPENDS=		devel/py-gobject3 \
+RUN_DEPENDS=		devel/gsettings-desktop-schemas \
+			devel/py-gobject3 \
 			devel/py-xdg \
 			x11/dbus-python \
 			x11/gnome/grilo-plugins
+
+# configure checks for this
+BUILD_DEPENDS +=	x11/gnome/icon-theme
+RUN_DEPENDS +=		x11/gnome/icon-theme
 
 LIB_DEPENDS=		x11/gnome/totem-pl-parser \
 			devel/gobject-introspection \
