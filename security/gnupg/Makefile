@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2013/03/11 11:41:24 espie Exp $
+# $OpenBSD: Makefile,v 1.86 2013/03/31 19:12:37 fgsch Exp $
 
 COMMENT=	GNU privacy guard - a free PGP replacement
 
@@ -8,14 +8,11 @@ CATEGORIES=	security
 # restrict, not compatible with gnupg-2.
 PKGSPEC =	gnupg-<2
 
-MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/gnupg/ \
-		ftp://gd.tuwien.ac.at/privacy/gnupg/gnupg/ \
-		ftp://crypto.yashy.com/pub/cryptography/gnupg/ \
-		ftp://ftp.planetmirror.com/pub/gnupg/gnupg/ \
-		ftp://sunsite.dk/pub/security/gcrypt/gnupg/ \
+MASTER_SITES=	ftp://gd.tuwien.ac.at/privacy/gnupg/gnupg/ \
+		ftp://mirrors.dotsrc.org/gcrypt/gnupg/ \
 		ftp://ftp.linux.it/pub/mirrors/gnupg/gnupg/ \
-		ftp://pgp.iijlab.net/pub/pgp/gnupg/ \
-		ftp://ring.aist.go.jp/pub/net/gnupg/gnupg/
+		ftp://ftp.ring.gr.jp/pub/net/gnupg/ \
+		ftp://ftp.gnupg.org/gcrypt/gnupg/
 
 HOMEPAGE=	http://www.gnupg.org/
 
