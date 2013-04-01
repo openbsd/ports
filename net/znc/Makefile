@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:35:58 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/04/01 14:30:32 brad Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	advanced IRC bouncer
 
 DISTNAME=	znc-1.0
+REVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	${HOMEPAGE}releases/
 
@@ -21,7 +22,8 @@ MAKE_FLAGS=	VERBOSE=1
 
 SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoconf
+AUTOCONF_VERSION= 2.68
 CONFIGURE_ARGS= --disable-optimization
 
 NO_TEST=	Yes
