@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/05/21 11:05:38 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/04/01 21:48:34 rpe Exp $
 bin/check_postgres.pl
 libexec/nagios/
 libexec/nagios/check_postgres_archive_ready
@@ -31,6 +31,7 @@ libexec/nagios/check_postgres_new_version_box
 libexec/nagios/check_postgres_new_version_cp
 libexec/nagios/check_postgres_new_version_pg
 libexec/nagios/check_postgres_new_version_tnm
+libexec/nagios/check_postgres_pgagent_jobs
 libexec/nagios/check_postgres_pgb_pool_cl_active
 libexec/nagios/check_postgres_pgb_pool_cl_waiting
 libexec/nagios/check_postgres_pgb_pool_maxwait
