@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/02/06 14:23:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/04/01 07:27:19 ajacoutot Exp $
 @bin bin/gpointing-device-settings
 include/gpointing-device-settings/
 include/gpointing-device-settings/gpds-gconf.h
@@ -10,6 +10,7 @@ include/gpointing-device-settings/gpds-xinput-ui.h
 include/gpointing-device-settings/gpds-xinput-utils.h
 include/gpointing-device-settings/gpds-xinput.h
 include/gpointing-device-settings/gpointing-device-settings.h
+lib/gnome-settings-daemon-2.0/
 @comment lib/gnome-settings-daemon-2.0/libpointing-device.la
 lib/gnome-settings-daemon-2.0/libpointing-device.so
 lib/gnome-settings-daemon-2.0/pointing-device.gnome-settings-plugin

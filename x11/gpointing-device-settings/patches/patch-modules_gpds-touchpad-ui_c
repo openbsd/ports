@@ -1,11 +1,13 @@
-$OpenBSD: patch-modules_gpds-touchpad-ui_c,v 1.1.1.1 2011/08/31 15:15:25 mpi Exp $
+$OpenBSD: patch-modules_gpds-touchpad-ui_c,v 1.2 2013/04/01 07:27:19 ajacoutot Exp $
 
-Bug: https://bugzilla.gnome.org/show_bug.cgi?id=613022
-Fix: http://git.gnome.org/browse/gpointing-device-settings/commit/?id=70add06dec8413965f3e98b6ba9a3c82168ea72c
----
---- modules/gpds-touchpad-ui.c
-+++ modules/gpds-touchpad-ui.c
-@@ -965,8 +965,14 @@
+From 70add06dec8413965f3e98b6ba9a3c82168ea72c Mon Sep 17 00:00:00 2001
+From: Hiroyuki Ikezoe <poincare@ikezoe.net>
+Date: Tue, 16 Mar 2010 10:56:17 +0000
+Subject: Fix crash.
+
+--- modules/gpds-touchpad-ui.c.orig	Tue Jan 26 11:07:29 2010
++++ modules/gpds-touchpad-ui.c	Mon Apr  1 08:43:10 2013
+@@ -965,8 +965,14 @@ set_tapping_time_from_preference (GpdsUI *ui, GtkBuild
          }
      }
  

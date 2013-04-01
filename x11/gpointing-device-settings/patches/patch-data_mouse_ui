@@ -1,0 +1,121 @@
+$OpenBSD: patch-data_mouse_ui,v 1.1 2013/04/01 07:27:19 ajacoutot Exp $
+
+From 3aaeac81980b796f7f3cf30b9fe90ad96ddee3e2 Mon Sep 17 00:00:00 2001
+From: Daniel Mustieles <daniel.mustieles@gmail.com>
+Date: Mon, 29 Oct 2012 13:31:41 +0000
+Subject: Remove markup from UI files. Fixes bug #684754
+
+--- data/mouse.ui.orig	Tue Jan 26 11:03:31 2010
++++ data/mouse.ui	Mon Apr  1 09:09:11 2013
+@@ -8,9 +8,11 @@
+         <property name="shadow_type">GTK_SHADOW_NONE</property>
+         <child type="label">
+           <object class="GtkLabel" id="middle_button_emulation_label">
+-            <property name="label" translatable="yes">&lt;b&gt;Middle Button Emulation&lt;/b&gt;</property>
++            <property name="label" translatable="yes">Middle Button Emulation</property>
+             <property name="use_underline">False</property>
+-            <property name="use_markup">True</property>
++            <attributes>
++             <attribute name="weight" value="bold"/>
++            </attributes>
+             <property name="justify">GTK_JUSTIFY_LEFT</property>
+             <property name="wrap">False</property>
+             <property name="selectable">False</property>
+@@ -72,9 +74,11 @@
+               </child>
+               <child>
+                 <object class="GtkLabel" id="middle_button_timeout_left_label">
+-                  <property name="label" translatable="yes" context="timeout">&lt;i&gt;Short&lt;/i&gt;</property>
++                  <property name="label" translatable="yes" context="timeout">Short</property>
+                   <property name="use_underline">False</property>
+-                  <property name="use_markup">True</property>
++                  <attributes>
++                   <attribute name="style" value="italic"/>
++                  </attributes>
+                   <property name="justify">GTK_JUSTIFY_LEFT</property>
+                   <property name="wrap">False</property>
+                   <property name="selectable">False</property>
+@@ -111,9 +115,11 @@
+               </child>
+               <child>
+                 <object class="GtkLabel" id="middle_button_timeout_right_label">
+-                  <property name="label" translatable="yes" context="timeout">&lt;i&gt;Long&lt;/i&gt;</property>
++                  <property name="label" translatable="yes" context="timeout">Long</property>
+                   <property name="use_underline">False</property>
+-                  <property name="use_markup">True</property>
++                  <attributes>
++                   <attribute name="style" value="italic"/>
++                  </attributes>
+                   <property name="justify">GTK_JUSTIFY_LEFT</property>
+                   <property name="wrap">False</property>
+                   <property name="selectable">False</property>
+@@ -150,9 +156,11 @@
+         <property name="shadow_type">GTK_SHADOW_NONE</property>
+         <child type="label">
+           <object class="GtkLabel" id="wheel_emulation_label">
+-            <property name="label" translatable="yes">&lt;b&gt;Wheel Emulation&lt;/b&gt;</property>
++            <property name="label" translatable="yes">Wheel Emulation</property>
+             <property name="use_underline">False</property>
+-            <property name="use_markup">True</property>
++             <attributes>
++              <attribute name="weight" value="bold"/>
++            </attributes>
+             <property name="justify">GTK_JUSTIFY_LEFT</property>
+             <property name="wrap">False</property>
+             <property name="selectable">False</property>
+@@ -268,9 +276,11 @@
+                 </child>
+                 <child>
+                   <object class="GtkLabel" id="wheel_emulation_timeout_left_label">
+-                    <property name="label" translatable="yes" context="timeout">&lt;i&gt;Short&lt;/i&gt;</property>
++                    <property name="label" translatable="yes" context="timeout">Short</property>
+                     <property name="use_underline">False</property>
+-                    <property name="use_markup">True</property>
++                    <attributes>
++                     <attribute name="style" value="italic"/>
++                    </attributes>
+                     <property name="justify">GTK_JUSTIFY_LEFT</property>
+                     <property name="wrap">False</property>
+                     <property name="selectable">False</property>
+@@ -307,9 +317,11 @@
+                 </child>
+                 <child>
+                   <object class="GtkLabel" id="wheel_emulation_timeout_right_label">
+-                    <property name="label" translatable="yes" context="timeout">&lt;i&gt;Long&lt;/i&gt;</property>
++                    <property name="label" translatable="yes" context="timeout">Long</property>
+                     <property name="use_underline">False</property>
+-                    <property name="use_markup">True</property>
++                    <attributes>
++                     <attribute name="style" value="italic"/>
++                    </attributes>
+                     <property name="justify">GTK_JUSTIFY_LEFT</property>
+                     <property name="wrap">False</property>
+                     <property name="selectable">False</property>
+@@ -371,9 +383,11 @@
+                 </child>
+                 <child>
+                   <object class="GtkLabel" id="wheel_emulation_inertia_left_label">
+-                    <property name="label" translatable="yes" context="inertia">&lt;i&gt;Short&lt;/i&gt;</property>
++                    <property name="label" translatable="yes" context="inertia">Short</property>
+                     <property name="use_underline">False</property>
+-                    <property name="use_markup">True</property>
++                    <attributes>
++                     <attribute name="style" value="italic"/>
++                    </attributes>
+                     <property name="justify">GTK_JUSTIFY_LEFT</property>
+                     <property name="wrap">False</property>
+                     <property name="selectable">False</property>
+@@ -410,9 +424,11 @@
+                 </child>
+                 <child>
+                   <object class="GtkLabel" id="wheel_emulation_inertia_right_label">
+-                    <property name="label" translatable="yes" context="inertia">&lt;i&gt;Long&lt;/i&gt;</property>
++                    <property name="label" translatable="yes" context="inertia">Long</property>
+                     <property name="use_underline">False</property>
+-                    <property name="use_markup">True</property>
++                    <attributes>
++                     <attribute name="style" value="italic"/>
++                    </attributes>
+                     <property name="justify">GTK_JUSTIFY_LEFT</property>
+                     <property name="wrap">False</property>
+                     <property name="selectable">False</property>

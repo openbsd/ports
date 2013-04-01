@@ -1,0 +1,345 @@
+$OpenBSD: patch-data_touchpad_ui,v 1.1 2013/04/01 07:27:19 ajacoutot Exp $
+
+From 3aaeac81980b796f7f3cf30b9fe90ad96ddee3e2 Mon Sep 17 00:00:00 2001
+From: Daniel Mustieles <daniel.mustieles@gmail.com>
+Date: Mon, 29 Oct 2012 13:31:41 +0000
+Subject: Remove markup from UI files. Fixes bug #684754
+
+--- data/touchpad.ui.orig	Tue Jan 26 11:07:29 2010
++++ data/touchpad.ui	Mon Apr  1 09:09:11 2013
+@@ -156,9 +156,11 @@
+                         </child>
+                         <child>
+                           <object class="GtkLabel" id="guest_mouse_label">
+-                            <property name="label" translatable="yes">&lt;b&gt;Guest Mouse&lt;/b&gt;</property>
++                            <property name="label" translatable="yes">Guest Mouse</property>
+                             <property name="use_underline">False</property>
+-                            <property name="use_markup">True</property>
++                            <attributes>
++                             <attribute name="weight" value="bold"/>
++                            </attributes>
+                             <property name="justify">GTK_JUSTIFY_LEFT</property>
+                             <property name="wrap">False</property>
+                             <property name="selectable">False</property>
+@@ -185,9 +187,11 @@
+                         </child>
+                         <child>
+                           <object class="GtkLabel" id="palm_detection_label">
+-                            <property name="label" translatable="yes">&lt;b&gt;Palm Detection&lt;/b&gt;</property>
++                            <property name="label" translatable="yes">Palm Detection</property>
+                             <property name="use_underline">False</property>
+-                            <property name="use_markup">True</property>
++                            <attributes>
++                             <attribute name="weight" value="bold"/>
++                            </attributes>
+                             <property name="justify">GTK_JUSTIFY_LEFT</property>
+                             <property name="wrap">False</property>
+                             <property name="selectable">False</property>
+@@ -244,9 +248,11 @@
+                                 </child>
+                                 <child>
+                                   <object class="GtkLabel" id="palm_detection_width_left_label">
+-                                    <property name="label" translatable="yes">&lt;i&gt;Narrow&lt;/i&gt;</property>
++                                    <property name="label" translatable="yes">Narrow</property>
+                                     <property name="use_underline">False</property>
+-                                    <property name="use_markup">True</property>
++                                    <attributes>
++                                     <attribute name="style" value="italic"/>
++                                    </attributes>
+                                     <property name="justify">GTK_JUSTIFY_LEFT</property>
+                                     <property name="wrap">False</property>
+                                     <property name="selectable">False</property>
+@@ -283,9 +289,11 @@
+                                 </child>
+                                 <child>
+                                   <object class="GtkLabel" id="palm_detection_width_right_label">
+-                                    <property name="label" translatable="yes">&lt;i&gt;Wide&lt;/i&gt;</property>
++                                    <property name="label" translatable="yes">Wide</property>
+                                     <property name="use_underline">False</property>
+-                                    <property name="use_markup">True</property>
++                                    <attributes>
++                                     <attribute name="style" value="italic"/>
++                                    </attributes>
+                                     <property name="justify">GTK_JUSTIFY_LEFT</property>
+                                     <property name="wrap">False</property>
+                                     <property name="selectable">False</property>
+@@ -335,9 +343,11 @@
+                                 </child>
+                                 <child>
+                                   <object class="GtkLabel" id="palm_detection_depth_left_label">
+-                                    <property name="label" translatable="yes">&lt;i&gt;Low&lt;/i&gt;</property>
++                                    <property name="label" translatable="yes">Low</property>
+                                     <property name="use_underline">False</property>
+-                                    <property name="use_markup">True</property>
++                                    <attributes>
++                                     <attribute name="weight" value="bold"/>
++                                    </attributes>
+                                     <property name="justify">GTK_JUSTIFY_LEFT</property>
+                                     <property name="wrap">False</property>
+                                     <property name="selectable">False</property>
+@@ -374,9 +384,11 @@
+                                 </child>
+                                 <child>
+                                   <object class="GtkLabel" id="palm_detection_depth_right_label">
+-                                    <property name="label" translatable="yes">&lt;i&gt;High&lt;/i&gt;</property>
++                                    <property name="label" translatable="yes">High</property>
+                                     <property name="use_underline">False</property>
+-                                    <property name="use_markup">True</property>
++                                    <attributes>
++                                     <attribute name="style" value="italic"/>
++                                    </attributes>
+                                     <property name="justify">GTK_JUSTIFY_LEFT</property>
+                                     <property name="wrap">False</property>
+                                     <property name="selectable">False</property>
+@@ -406,9 +418,11 @@
+                         </child>
+                         <child>
+                           <object class="GtkLabel" id="locked_drags_label">
+-                            <property name="label" translatable="yes">&lt;b&gt;Locked Drags&lt;/b&gt;</property>
++                            <property name="label" translatable="yes">Locked Drags</property>
+                             <property name="use_underline">False</property>
+-                            <property name="use_markup">True</property>
++                            <attributes>
++                             <attribute name="weight" value="bold"/>
++                            </attributes>
+                             <property name="justify">GTK_JUSTIFY_LEFT</property>
+                             <property name="wrap">False</property>
+                             <property name="selectable">False</property>
+@@ -462,9 +476,11 @@
+                             </child>
+                             <child>
+                               <object class="GtkLabel" id="locked_drags_timeout_left_label">
+-                                <property name="label" translatable="yes" context="timeout">&lt;i&gt;Short&lt;/i&gt;</property>
++                                <property name="label" translatable="yes" context="timeout">Short</property>
+                                 <property name="use_underline">False</property>
+-                                <property name="use_markup">True</property>
++                                <attributes>
++                                 <attribute name="weight" value="bold"/>
++                                </attributes>
+                                 <property name="justify">GTK_JUSTIFY_LEFT</property>
+                                 <property name="wrap">False</property>
+                                 <property name="selectable">False</property>
+@@ -501,9 +517,11 @@
+                             </child>
+                             <child>
+                               <object class="GtkLabel" id="locked_drags_timeout_right_label">
+-                                <property name="label" translatable="yes" context="timeout">&lt;i&gt;Long&lt;/i&gt;</property>
++                                <property name="label" translatable="yes" context="timeout">Long</property>
+                                 <property name="use_underline">False</property>
+-                                <property name="use_markup">True</property>
++                                <attributes>
++                                 <attribute name="style" value="italic"/>
++                                </attributes>
+                                 <property name="justify">GTK_JUSTIFY_LEFT</property>
+                                 <property name="wrap">False</property>
+                                 <property name="selectable">False</property>
+@@ -628,9 +646,11 @@
+                             </child>
+                             <child>
+                               <object class="GtkLabel" id="label25">
+-                                <property name="label" translatable="yes" context="time">&lt;i&gt;Short&lt;/i&gt;</property>
++                                <property name="label" translatable="yes" context="time">Short</property>
+                                 <property name="use_underline">False</property>
+-                                <property name="use_markup">True</property>
++                                <attributes>
++                                 <attribute name="style" value="italic"/>
++                                </attributes>
+                                 <property name="justify">GTK_JUSTIFY_LEFT</property>
+                                 <property name="wrap">False</property>
+                                 <property name="selectable">False</property>
+@@ -667,9 +687,11 @@
+                             </child>
+                             <child>
+                               <object class="GtkLabel" id="label26">
+-                                <property name="label" translatable="yes" context="time">&lt;i&gt;Long&lt;/i&gt;</property>
++                                <property name="label" translatable="yes" context="time">Long</property>
+                                 <property name="use_underline">False</property>
+-                                <property name="use_markup">True</property>
++                                <attributes>
++                                 <attribute name="style" value="italic"/>
++                                </attributes>
+                                 <property name="justify">GTK_JUSTIFY_LEFT</property>
+                                 <property name="wrap">False</property>
+                                 <property name="selectable">False</property>
+@@ -724,9 +746,11 @@
+                             </child>
+                             <child>
+                               <object class="GtkLabel" id="tapping_move_scale_short_label">
+-                                <property name="label" translatable="yes" context="distance">&lt;i&gt;Short&lt;/i&gt;</property>
++                                <property name="label" translatable="yes" context="distance">Short</property>
+                                 <property name="use_underline">False</property>
+-                                <property name="use_markup">True</property>
++                                <attributes>
++                                 <attribute name="style" value="italic"/>
++                                </attributes>
+                                 <property name="justify">GTK_JUSTIFY_LEFT</property>
+                                 <property name="wrap">False</property>
+                                 <property name="selectable">False</property>
+@@ -763,9 +787,11 @@
+                             </child>
+                             <child>
+                               <object class="GtkLabel" id="tapping_move_scale_long_labe">
+-                                <property name="label" translatable="yes" context="distance">&lt;i&gt;Long&lt;/i&gt;</property>
++                                <property name="label" translatable="yes" context="distance">Long</property>
+                                 <property name="use_underline">False</property>
+-                                <property name="use_markup">True</property>
++                                <attributes>
++                                 <attribute name="style" value="italic"/>
++                                </attributes>
+                                 <property name="justify">GTK_JUSTIFY_LEFT</property>
+                                 <property name="wrap">False</property>
+                                 <property name="selectable">False</property>
+@@ -890,9 +916,11 @@
+                             <property name="spacing">6</property>
+                             <child>
+                               <object class="GtkLabel" id="slow_label">
+-                                <property name="label" translatable="yes">&lt;i&gt;Slow&lt;/i&gt;</property>
++                                <property name="label" translatable="yes">Slow</property>
+                                 <property name="use_underline">False</property>
+-                                <property name="use_markup">True</property>
++                                <attributes>
++                                 <attribute name="style" value="italic"/>
++                                </attributes>
+                                 <property name="justify">GTK_JUSTIFY_CENTER</property>
+                                 <property name="wrap">False</property>
+                                 <property name="selectable">False</property>
+@@ -929,9 +957,11 @@
+                             </child>
+                             <child>
+                               <object class="GtkLabel" id="fast_label">
+-                                <property name="label" translatable="yes">&lt;i&gt;Fast&lt;/i&gt;</property>
++                                <property name="label" translatable="yes">Fast</property>
+                                 <property name="use_underline">False</property>
+-                                <property name="use_markup">True</property>
++                                <attributes>
++                                 <attribute name="style" value="italic"/>
++                                </attributes>
+                                 <property name="justify">GTK_JUSTIFY_CENTER</property>
+                                 <property name="wrap">False</property>
+                                 <property name="selectable">False</property>
+@@ -980,9 +1010,11 @@
+                             <property name="spacing">6</property>
+                             <child>
+                               <object class="GtkLabel" id="low_label">
+-                                <property name="label" translatable="yes">&lt;i&gt;Slow&lt;/i&gt;</property>
++                                <property name="label" translatable="yes">Slow</property>
+                                 <property name="use_underline">False</property>
+-                                <property name="use_markup">True</property>
++                                <attributes>
++                                 <attribute name="style" value="italic"/>
++                                </attributes>
+                                 <property name="justify">GTK_JUSTIFY_CENTER</property>
+                                 <property name="wrap">False</property>
+                                 <property name="selectable">False</property>
+@@ -1019,9 +1051,11 @@
+                             </child>
+                             <child>
+                               <object class="GtkLabel" id="high_label">
+-                                <property name="label" translatable="yes">&lt;i&gt;Fast&lt;/i&gt;</property>
++                                <property name="label" translatable="yes">Fast</property>
+                                 <property name="use_underline">False</property>
+-                                <property name="use_markup">True</property>
++                                <attributes>
++                                 <attribute name="style" value="italic"/>
++                                </attributes>
+                                 <property name="justify">GTK_JUSTIFY_CENTER</property>
+                                 <property name="wrap">False</property>
+                                 <property name="selectable">False</property>
+@@ -1387,9 +1421,11 @@
+                 </child>
+                 <child type="label">
+                   <object class="GtkLabel" id="label19">
+-                    <property name="label" translatable="yes">&lt;b&gt;Scrolling&lt;/b&gt;</property>
++                    <property name="label" translatable="yes">Scrolling</property>
+                     <property name="use_underline">False</property>
+-                    <property name="use_markup">True</property>
++                    <attributes>
++                     <attribute name="weight" value="bold"/>
++                    </attributes>
+                     <property name="justify">GTK_JUSTIFY_LEFT</property>
+                     <property name="wrap">False</property>
+                     <property name="selectable">False</property>
+@@ -1487,9 +1523,11 @@
+                             <property name="spacing">6</property>
+                             <child>
+                               <object class="GtkLabel" id="minimum_speed_slow_label">
+-                                <property name="label" translatable="yes">&lt;i&gt;Slow&lt;/i&gt;</property>
++                                <property name="label" translatable="yes">Slow</property>
+                                 <property name="use_underline">False</property>
+-                                <property name="use_markup">True</property>
++                                <attributes>
++                                 <attribute name="style" value="italic"/>
++                                </attributes>
+                                 <property name="justify">GTK_JUSTIFY_CENTER</property>
+                                 <property name="wrap">False</property>
+                                 <property name="selectable">False</property>
+@@ -1526,9 +1564,11 @@
+                             </child>
+                             <child>
+                               <object class="GtkLabel" id="minimum_speed_fast_label">
+-                                <property name="label" translatable="yes">&lt;i&gt;Fast&lt;/i&gt;</property>
++                                <property name="label" translatable="yes">Fast</property>
+                                 <property name="use_underline">False</property>
+-                                <property name="use_markup">True</property>
++                                <attributes>
++                                 <attribute name="style" value="italic"/>
++                                </attributes>
+                                 <property name="justify">GTK_JUSTIFY_CENTER</property>
+                                 <property name="wrap">False</property>
+                                 <property name="selectable">False</property>
+@@ -1583,9 +1623,11 @@
+                             <property name="spacing">6</property>
+                             <child>
+                               <object class="GtkLabel" id="maximum_speed_slow_label">
+-                                <property name="label" translatable="yes">&lt;i&gt;Slow&lt;/i&gt;</property>
++                                <property name="label" translatable="yes">Slow</property>
+                                 <property name="use_underline">False</property>
+-                                <property name="use_markup">True</property>
++                                <attributes>
++                                 <attribute name="style" value="italic"/>
++                                </attributes>
+                                 <property name="justify">GTK_JUSTIFY_CENTER</property>
+                                 <property name="wrap">False</property>
+                                 <property name="selectable">False</property>
+@@ -1622,9 +1664,11 @@
+                             </child>
+                             <child>
+                               <object class="GtkLabel" id="maximum_speed_fast_label">
+-                                <property name="label" translatable="yes">&lt;i&gt;Fast&lt;/i&gt;</property>
++                                <property name="label" translatable="yes">Fast</property>
+                                 <property name="use_underline">False</property>
+-                                <property name="use_markup">True</property>
++                                <attributes>
++                                 <attribute name="style" value="italic"/>
++                                </attributes>
+                                 <property name="justify">GTK_JUSTIFY_CENTER</property>
+                                 <property name="wrap">False</property>
+                                 <property name="selectable">False</property>
+@@ -1679,9 +1723,11 @@
+                             <property name="spacing">6</property>
+                             <child>
+                               <object class="GtkLabel" id="accelaration_factor_low_label">
+-                                <property name="label" translatable="yes" context="yes">&lt;i&gt;Low&lt;/i&gt;</property>
++                                <property name="label" translatable="yes" context="yes">Low</property>
+                                 <property name="use_underline">False</property>
+-                                <property name="use_markup">True</property>
++                                <attributes>
++                                 <attribute name="style" value="italic"/>
++                                </attributes>
+                                 <property name="justify">GTK_JUSTIFY_CENTER</property>
+                                 <property name="wrap">False</property>
+                                 <property name="selectable">False</property>
+@@ -1718,9 +1764,11 @@
+                             </child>
+                             <child>
+                               <object class="GtkLabel" id="accelaration_factor_high_label">
+-                                <property name="label" translatable="yes" context="yes">&lt;i&gt;High&lt;/i&gt;</property>
++                                <property name="label" translatable="yes" context="yes">High</property>
+                                 <property name="use_underline">False</property>
+-                                <property name="use_markup">True</property>
++                                <attributes>
++                                 <attribute name="style" value="italic"/>
++                                </attributes>
+                                 <property name="justify">GTK_JUSTIFY_CENTER</property>
+                                 <property name="wrap">False</property>
+                                 <property name="selectable">False</property>

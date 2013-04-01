@@ -1,7 +1,6 @@
-$OpenBSD: patch-test_test-xinput-utils_c,v 1.1.1.1 2011/08/31 15:15:25 mpi Exp $
+$OpenBSD: patch-test_test-xinput-utils_c,v 1.2 2013/04/01 07:27:19 ajacoutot Exp $
 
-Fix build with gtk+-2.22.
-From https://bugzilla.gnome.org/show_bug.cgi?id=631068
+https://bugzilla.gnome.org/show_bug.cgi?id=631068
 
 --- test/test-xinput-utils.c.orig	Sun Oct  4 01:14:47 2009
 +++ test/test-xinput-utils.c	Mon Jan 17 14:42:04 2011

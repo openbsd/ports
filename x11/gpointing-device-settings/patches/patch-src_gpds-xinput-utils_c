@@ -1,11 +1,16 @@
-$OpenBSD: patch-src_gpds-xinput-utils_c,v 1.1.1.1 2011/08/31 15:15:25 mpi Exp $
+$OpenBSD: patch-src_gpds-xinput-utils_c,v 1.2 2013/04/01 07:27:19 ajacoutot Exp $
 
-Fix build with gtk+-2.22.
-From https://bugzilla.gnome.org/show_bug.cgi?id=631068
+https://bugzilla.redhat.com/show_bug.cgi?id=722770
+https://bugzilla.gnome.org/show_bug.cgi?id=631068
 
---- src/gpds-xinput-utils.c.orig	Sat Jul  4 01:25:31 2009
-+++ src/gpds-xinput-utils.c	Mon Jan 17 14:42:04 2011
-@@ -41,7 +41,8 @@ gpds_xinput_utils_get_device_info (const gchar *device
+--- src/gpds-xinput-utils.c.orig	Mon Apr  1 08:52:50 2013
++++ src/gpds-xinput-utils.c	Mon Apr  1 08:52:16 2013
+@@ -38,10 +38,13 @@ gpds_xinput_utils_error_quark (void)
+ XDeviceInfo *
+ gpds_xinput_utils_get_device_info (const gchar *device_name, GError **error)
+ {
++    if (!device_name)
++        goto out_gpds_xinput_utils_get_device_info;
      XDeviceInfo *device_infos;
      gint i, n_device_infos;
  
@@ -15,7 +20,15 @@ From https://bugzilla.gnome.org/show_bug.cgi?id=631068
  
      for (i = 0; i < n_device_infos; i++) {
          if (device_infos[i].use != IsXExtensionPointer)
-@@ -98,7 +99,7 @@ gpds_xinput_utils_open_device (const gchar *device_nam
+@@ -54,6 +57,7 @@ gpds_xinput_utils_get_device_info (const gchar *device
+ 
+     XFreeDeviceList(device_infos);
+ 
++out_gpds_xinput_utils_get_device_info:
+     g_set_error(error,
+                 GPDS_XINPUT_UTILS_ERROR,
+                 GPDS_XINPUT_UTILS_ERROR_NO_DEVICE,
+@@ -98,7 +102,7 @@ gpds_xinput_utils_open_device (const gchar *device_nam
          return NULL;
  
      gdk_error_trap_push();

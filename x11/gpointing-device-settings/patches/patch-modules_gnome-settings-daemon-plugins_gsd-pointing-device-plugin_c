@@ -1,0 +1,29 @@
+$OpenBSD: patch-modules_gnome-settings-daemon-plugins_gsd-pointing-device-plugin_c,v 1.1 2013/04/01 07:27:19 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=637351
+
+--- modules/gnome-settings-daemon-plugins/gsd-pointing-device-plugin.c.orig	Fri Jan 29 11:28:56 2010
++++ modules/gnome-settings-daemon-plugins/gsd-pointing-device-plugin.c	Mon Apr  1 09:25:46 2013
+@@ -53,7 +53,8 @@ struct _GsdMouseExtensionPluginClass
+ GType gsd_mouse_extension_plugin_get_type (void) G_GNUC_CONST;
+ G_MODULE_EXPORT GType register_gnome_settings_plugin (GTypeModule *module);
+ 
+-GNOME_SETTINGS_PLUGIN_REGISTER(GsdMouseExtensionPlugin, gsd_mouse_extension_plugin)
++/* XXX probably breaks runtime ??? */
++/* GNOME_SETTINGS_PLUGIN_REGISTER(GsdMouseExtensionPlugin, gsd_mouse_extension_plugin) */
+ 
+ static void
+ gsd_mouse_extension_plugin_init (GsdMouseExtensionPlugin *plugin)
+@@ -157,6 +158,12 @@ gsd_mouse_extension_plugin_class_init (GsdMouseExtensi
+ 
+     plugin_class->activate = activate;
+     plugin_class->deactivate = deactivate;
++}
++
++
++static void
++gsd_mouse_extension_plugin_class_finalize(GsdMouseExtensionPluginClass *klass)
++{
+ }
+ /*
+ vi:ts=4:nowrap:ai:expandtab:sw=4
