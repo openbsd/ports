@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2013/03/31 13:28:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.99 2013/04/01 08:29:22 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		official media player for GNOME
 
 GNOME_PROJECT=		totem
 GNOME_VERSION=		3.8.0
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  totem                     0.0 # 0.0
 
@@ -62,7 +62,8 @@ LIB_DEPENDS=		x11/gnome/totem-pl-parser \
 			graphics/clutter/clutter-gst \
 			graphics/clutter/clutter-gtk \
 			productivity/libzeitgeist \
-			x11/gnome/grilo
+			x11/gnome/grilo \
+			x11/gnome/nautilus
 
 # while the following are not "required" for totem to run, there's no
 # point in using a media player that can't play most modern media files
