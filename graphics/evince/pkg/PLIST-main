@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.25 2012/10/15 09:48:31 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.26 2013/04/01 10:33:59 jasper Exp $
 @pkgpath graphics/evince
 @bin bin/evince
 @bin bin/evince-previewer
@@ -57,6 +57,8 @@ include/evince/${MAJ_V}/libview/ev-view.h
 lib/evince/
 lib/evince/4/
 lib/evince/4/backends/
+lib/evince/4/backends/comicsdocument.evince-backend
+lib/evince/4/backends/libcomicsdocument.so
 lib/evince/4/backends/libpdfdocument.so
 lib/evince/4/backends/libpsdocument.so
 lib/evince/4/backends/libtiffdocument.so
@@ -74,6 +76,7 @@ lib/pkgconfig/evince-view-${MAJ_V}.pc
 @bin libexec/evinced
 @man man/man1/evince.1
 share/GConf/gsettings/evince.convert
+share/applications/evince-previewer.desktop
 share/applications/evince.desktop
 share/dbus-1/services/org.gnome.evince.Daemon.service
 share/evince/
@@ -144,8 +147,6 @@ share/gtk-doc/html/evince/EggFindBar.html
 share/gtk-doc/html/evince/EvFileMonitor.html
 share/gtk-doc/html/evince/EvHistory.html
 share/gtk-doc/html/evince/EvMessageArea.html
-share/gtk-doc/html/evince/EvNavigationAction.html
-share/gtk-doc/html/evince/EvNavigationActionWidget.html
 share/gtk-doc/html/evince/EvOpenRecentAction.html
 share/gtk-doc/html/evince/EvPageAction.html
 share/gtk-doc/html/evince/EvPageActionWidget.html
@@ -270,6 +271,7 @@ share/help/C/evince/commandline.page
 share/help/C/evince/convertPostScript.page
 share/help/C/evince/convertSVG.page
 share/help/C/evince/convertpdf.page
+share/help/C/evince/default-settings.page
 share/help/C/evince/develop.page
 share/help/C/evince/documentation.page
 share/help/C/evince/duplex-10pages.page
@@ -355,6 +357,7 @@ share/help/bg/evince/commandline.page
 share/help/bg/evince/convertPostScript.page
 share/help/bg/evince/convertSVG.page
 share/help/bg/evince/convertpdf.page
+share/help/bg/evince/default-settings.page
 share/help/bg/evince/develop.page
 share/help/bg/evince/documentation.page
 share/help/bg/evince/duplex-10pages.page
@@ -440,6 +443,7 @@ share/help/ca/evince/commandline.page
 share/help/ca/evince/convertPostScript.page
 share/help/ca/evince/convertSVG.page
 share/help/ca/evince/convertpdf.page
+share/help/ca/evince/default-settings.page
 share/help/ca/evince/develop.page
 share/help/ca/evince/documentation.page
 share/help/ca/evince/duplex-10pages.page
@@ -525,6 +529,7 @@ share/help/cs/evince/commandline.page
 share/help/cs/evince/convertPostScript.page
 share/help/cs/evince/convertSVG.page
 share/help/cs/evince/convertpdf.page
+share/help/cs/evince/default-settings.page
 share/help/cs/evince/develop.page
 share/help/cs/evince/documentation.page
 share/help/cs/evince/duplex-10pages.page
@@ -610,6 +615,7 @@ share/help/da/evince/commandline.page
 share/help/da/evince/convertPostScript.page
 share/help/da/evince/convertSVG.page
 share/help/da/evince/convertpdf.page
+share/help/da/evince/default-settings.page
 share/help/da/evince/develop.page
 share/help/da/evince/documentation.page
 share/help/da/evince/duplex-10pages.page
@@ -695,6 +701,7 @@ share/help/de/evince/commandline.page
 share/help/de/evince/convertPostScript.page
 share/help/de/evince/convertSVG.page
 share/help/de/evince/convertpdf.page
+share/help/de/evince/default-settings.page
 share/help/de/evince/develop.page
 share/help/de/evince/documentation.page
 share/help/de/evince/duplex-10pages.page
@@ -780,6 +787,7 @@ share/help/el/evince/commandline.page
 share/help/el/evince/convertPostScript.page
 share/help/el/evince/convertSVG.page
 share/help/el/evince/convertpdf.page
+share/help/el/evince/default-settings.page
 share/help/el/evince/develop.page
 share/help/el/evince/documentation.page
 share/help/el/evince/duplex-10pages.page
@@ -865,6 +873,7 @@ share/help/en_GB/evince/commandline.page
 share/help/en_GB/evince/convertPostScript.page
 share/help/en_GB/evince/convertSVG.page
 share/help/en_GB/evince/convertpdf.page
+share/help/en_GB/evince/default-settings.page
 share/help/en_GB/evince/develop.page
 share/help/en_GB/evince/documentation.page
 share/help/en_GB/evince/duplex-10pages.page
@@ -950,6 +959,7 @@ share/help/es/evince/commandline.page
 share/help/es/evince/convertPostScript.page
 share/help/es/evince/convertSVG.page
 share/help/es/evince/convertpdf.page
+share/help/es/evince/default-settings.page
 share/help/es/evince/develop.page
 share/help/es/evince/documentation.page
 share/help/es/evince/duplex-10pages.page
@@ -1035,6 +1045,7 @@ share/help/eu/evince/commandline.page
 share/help/eu/evince/convertPostScript.page
 share/help/eu/evince/convertSVG.page
 share/help/eu/evince/convertpdf.page
+share/help/eu/evince/default-settings.page
 share/help/eu/evince/develop.page
 share/help/eu/evince/documentation.page
 share/help/eu/evince/duplex-10pages.page
@@ -1120,6 +1131,7 @@ share/help/fi/evince/commandline.page
 share/help/fi/evince/convertPostScript.page
 share/help/fi/evince/convertSVG.page
 share/help/fi/evince/convertpdf.page
+share/help/fi/evince/default-settings.page
 share/help/fi/evince/develop.page
 share/help/fi/evince/documentation.page
 share/help/fi/evince/duplex-10pages.page
@@ -1205,6 +1217,7 @@ share/help/fr/evince/commandline.page
 share/help/fr/evince/convertPostScript.page
 share/help/fr/evince/convertSVG.page
 share/help/fr/evince/convertpdf.page
+share/help/fr/evince/default-settings.page
 share/help/fr/evince/develop.page
 share/help/fr/evince/documentation.page
 share/help/fr/evince/duplex-10pages.page
@@ -1290,6 +1303,7 @@ share/help/gl/evince/commandline.page
 share/help/gl/evince/convertPostScript.page
 share/help/gl/evince/convertSVG.page
 share/help/gl/evince/convertpdf.page
+share/help/gl/evince/default-settings.page
 share/help/gl/evince/develop.page
 share/help/gl/evince/documentation.page
 share/help/gl/evince/duplex-10pages.page
@@ -1375,6 +1389,7 @@ share/help/hu/evince/commandline.page
 share/help/hu/evince/convertPostScript.page
 share/help/hu/evince/convertSVG.page
 share/help/hu/evince/convertpdf.page
+share/help/hu/evince/default-settings.page
 share/help/hu/evince/develop.page
 share/help/hu/evince/documentation.page
 share/help/hu/evince/duplex-10pages.page
@@ -1460,6 +1475,7 @@ share/help/id/evince/commandline.page
 share/help/id/evince/convertPostScript.page
 share/help/id/evince/convertSVG.page
 share/help/id/evince/convertpdf.page
+share/help/id/evince/default-settings.page
 share/help/id/evince/develop.page
 share/help/id/evince/documentation.page
 share/help/id/evince/duplex-10pages.page
@@ -1545,6 +1561,7 @@ share/help/it/evince/commandline.page
 share/help/it/evince/convertPostScript.page
 share/help/it/evince/convertSVG.page
 share/help/it/evince/convertpdf.page
+share/help/it/evince/default-settings.page
 share/help/it/evince/develop.page
 share/help/it/evince/documentation.page
 share/help/it/evince/duplex-10pages.page
@@ -1630,6 +1647,7 @@ share/help/ja/evince/commandline.page
 share/help/ja/evince/convertPostScript.page
 share/help/ja/evince/convertSVG.page
 share/help/ja/evince/convertpdf.page
+share/help/ja/evince/default-settings.page
 share/help/ja/evince/develop.page
 share/help/ja/evince/documentation.page
 share/help/ja/evince/duplex-10pages.page
@@ -1715,6 +1733,7 @@ share/help/ko/evince/commandline.page
 share/help/ko/evince/convertPostScript.page
 share/help/ko/evince/convertSVG.page
 share/help/ko/evince/convertpdf.page
+share/help/ko/evince/default-settings.page
 share/help/ko/evince/develop.page
 share/help/ko/evince/documentation.page
 share/help/ko/evince/duplex-10pages.page
@@ -1800,6 +1819,7 @@ share/help/lv/evince/commandline.page
 share/help/lv/evince/convertPostScript.page
 share/help/lv/evince/convertSVG.page
 share/help/lv/evince/convertpdf.page
+share/help/lv/evince/default-settings.page
 share/help/lv/evince/develop.page
 share/help/lv/evince/documentation.page
 share/help/lv/evince/duplex-10pages.page
@@ -1885,6 +1905,7 @@ share/help/nl/evince/commandline.page
 share/help/nl/evince/convertPostScript.page
 share/help/nl/evince/convertSVG.page
 share/help/nl/evince/convertpdf.page
+share/help/nl/evince/default-settings.page
 share/help/nl/evince/develop.page
 share/help/nl/evince/documentation.page
 share/help/nl/evince/duplex-10pages.page
@@ -1970,6 +1991,7 @@ share/help/oc/evince/commandline.page
 share/help/oc/evince/convertPostScript.page
 share/help/oc/evince/convertSVG.page
 share/help/oc/evince/convertpdf.page
+share/help/oc/evince/default-settings.page
 share/help/oc/evince/develop.page
 share/help/oc/evince/documentation.page
 share/help/oc/evince/duplex-10pages.page
@@ -2055,6 +2077,7 @@ share/help/pt_BR/evince/commandline.page
 share/help/pt_BR/evince/convertPostScript.page
 share/help/pt_BR/evince/convertSVG.page
 share/help/pt_BR/evince/convertpdf.page
+share/help/pt_BR/evince/default-settings.page
 share/help/pt_BR/evince/develop.page
 share/help/pt_BR/evince/documentation.page
 share/help/pt_BR/evince/duplex-10pages.page
@@ -2140,6 +2163,7 @@ share/help/ru/evince/commandline.page
 share/help/ru/evince/convertPostScript.page
 share/help/ru/evince/convertSVG.page
 share/help/ru/evince/convertpdf.page
+share/help/ru/evince/default-settings.page
 share/help/ru/evince/develop.page
 share/help/ru/evince/documentation.page
 share/help/ru/evince/duplex-10pages.page
@@ -2225,6 +2249,7 @@ share/help/sl/evince/commandline.page
 share/help/sl/evince/convertPostScript.page
 share/help/sl/evince/convertSVG.page
 share/help/sl/evince/convertpdf.page
+share/help/sl/evince/default-settings.page
 share/help/sl/evince/develop.page
 share/help/sl/evince/documentation.page
 share/help/sl/evince/duplex-10pages.page
@@ -2310,6 +2335,7 @@ share/help/sr/evince/commandline.page
 share/help/sr/evince/convertPostScript.page
 share/help/sr/evince/convertSVG.page
 share/help/sr/evince/convertpdf.page
+share/help/sr/evince/default-settings.page
 share/help/sr/evince/develop.page
 share/help/sr/evince/documentation.page
 share/help/sr/evince/duplex-10pages.page
@@ -2395,6 +2421,7 @@ share/help/sv/evince/commandline.page
 share/help/sv/evince/convertPostScript.page
 share/help/sv/evince/convertSVG.page
 share/help/sv/evince/convertpdf.page
+share/help/sv/evince/default-settings.page
 share/help/sv/evince/develop.page
 share/help/sv/evince/documentation.page
 share/help/sv/evince/duplex-10pages.page
@@ -2480,6 +2507,7 @@ share/help/te/evince/commandline.page
 share/help/te/evince/convertPostScript.page
 share/help/te/evince/convertSVG.page
 share/help/te/evince/convertpdf.page
+share/help/te/evince/default-settings.page
 share/help/te/evince/develop.page
 share/help/te/evince/documentation.page
 share/help/te/evince/duplex-10pages.page
@@ -2565,6 +2593,7 @@ share/help/uk/evince/commandline.page
 share/help/uk/evince/convertPostScript.page
 share/help/uk/evince/convertSVG.page
 share/help/uk/evince/convertpdf.page
+share/help/uk/evince/default-settings.page
 share/help/uk/evince/develop.page
 share/help/uk/evince/documentation.page
 share/help/uk/evince/duplex-10pages.page
@@ -2650,6 +2679,7 @@ share/help/vi/evince/commandline.page
 share/help/vi/evince/convertPostScript.page
 share/help/vi/evince/convertSVG.page
 share/help/vi/evince/convertpdf.page
+share/help/vi/evince/default-settings.page
 share/help/vi/evince/develop.page
 share/help/vi/evince/documentation.page
 share/help/vi/evince/duplex-10pages.page
@@ -2735,6 +2765,7 @@ share/help/zh_CN/evince/commandline.page
 share/help/zh_CN/evince/convertPostScript.page
 share/help/zh_CN/evince/convertSVG.page
 share/help/zh_CN/evince/convertpdf.page
+share/help/zh_CN/evince/default-settings.page
 share/help/zh_CN/evince/develop.page
 share/help/zh_CN/evince/documentation.page
 share/help/zh_CN/evince/duplex-10pages.page
@@ -2820,6 +2851,7 @@ share/help/zh_HK/evince/commandline.page
 share/help/zh_HK/evince/convertPostScript.page
 share/help/zh_HK/evince/convertSVG.page
 share/help/zh_HK/evince/convertpdf.page
+share/help/zh_HK/evince/default-settings.page
 share/help/zh_HK/evince/develop.page
 share/help/zh_HK/evince/documentation.page
 share/help/zh_HK/evince/duplex-10pages.page
@@ -2905,6 +2937,7 @@ share/help/zh_TW/evince/commandline.page
 share/help/zh_TW/evince/convertPostScript.page
 share/help/zh_TW/evince/convertSVG.page
 share/help/zh_TW/evince/convertpdf.page
+share/help/zh_TW/evince/default-settings.page
 share/help/zh_TW/evince/develop.page
 share/help/zh_TW/evince/documentation.page
 share/help/zh_TW/evince/duplex-10pages.page
@@ -3060,6 +3093,7 @@ share/locale/sr@latin/LC_MESSAGES/evince.mo
 share/locale/sv/LC_MESSAGES/evince.mo
 share/locale/ta/LC_MESSAGES/evince.mo
 share/locale/te/LC_MESSAGES/evince.mo
+share/locale/tg/LC_MESSAGES/evince.mo
 share/locale/th/LC_MESSAGES/evince.mo
 share/locale/tr/LC_MESSAGES/evince.mo
 share/locale/ug/LC_MESSAGES/evince.mo

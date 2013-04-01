@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2013/03/26 14:04:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.92 2013/04/01 10:33:59 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ COMMENT-dvi=	evince document viewer backend for dvi documents
 COMMENT-nautilus= evince plugin for nautilus
 
 GNOME_PROJECT=	evince
-GNOME_VERSION=	3.6.1
+GNOME_VERSION=	3.8.0
 
 MAJ_V=		3.0
 SUBST_VARS=	MAJ_V
@@ -20,12 +20,7 @@ PKGNAME-djvu=	evince-djvu-${GNOME_VERSION}
 PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}
 PKGNAME-nautilus= nautilus-evince-${GNOME_VERSION}
 
-REVISION-main=	0
-REVISION-djvu=	0
-REVISION-dvi=	0
-REVISION-nautilus=	0
-
-SHARED_LIBS +=  evdocument3               0.0 # 3.0
+SHARED_LIBS +=  evdocument3               0.1 # 4.0
 SHARED_LIBS +=  evview3                   0.0 # 3.0
 
 HOMEPAGE=	http://www.gnome.org/projects/evince/
@@ -58,15 +53,15 @@ MODGNOME_TOOLS= goi yelp
 LIB_DEPENDS=	x11/gtk+3
 
 WANTLIB-main=	${WANTLIB} ICE SM c dbus-1 gailutil-3 \
-		gnome-keyring gs gcrypt gpg-error stdc++ \
+		gs gcrypt gpg-error stdc++ secret-1 \
 		jpeg pthread tiff xml2 lcms2 openjpeg \
-		poppler poppler-glib spectre gnome-keyring \
-		avahi-common
+		poppler poppler-glib spectre avahi-common
 LIB_DEPENDS-main= print/poppler \
 		print/libspectre \
-		x11/gnome/libgnome-keyring \
 		${LIB_DEPENDS}
 RUN_DEPENDS-main= ${RUN_DEPENDS} \
+		archivers/unrar \
+		archivers/unzip \
 		devel/gsettings-desktop-schemas \
 		misc/shared-mime-info \
 		print/ghostscript/gnu \
@@ -74,7 +69,7 @@ RUN_DEPENDS-main= ${RUN_DEPENDS} \
 		${MODGNOME_RUN_DEPENDS_yelp}
 
 WANTLIB-djvu=	${WANTLIB} jpeg evdocument3 djvulibre ICE SM \
-		 dbus-1 pthread
+		dbus-1 pthread
 LIB_DEPENDS-djvu= ${LIB_DEPENDS} \
 		${BASE_PKGPATH} \
 		graphics/djvulibre
@@ -99,8 +94,7 @@ MODGNOME_ICON_CACHE=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+= --disable-static \
-		--disable-comics
+CONFIGURE_ARGS+= --disable-static
 
 MODGNOME_CPPFLAGS=${CFLAGS}
 CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include"
