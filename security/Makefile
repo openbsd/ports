@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.310 2013/03/27 11:23:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.311 2013/04/01 11:56:58 zhuk Exp $
 
      SUBDIR =
      SUBDIR += ADMfzap
@@ -81,6 +81,7 @@
      SUBDIR += keepassx
      SUBDIR += keychain
      SUBDIR += klaxon
+     SUBDIR += kqoauth
      SUBDIR += l0phtcrack
      SUBDIR += libassuan
      SUBDIR += libfprint
@@ -222,6 +223,7 @@
      SUBDIR += qca2
      SUBDIR += qca-ossl
      SUBDIR += qca-tls
+     SUBDIR += qoauth
      SUBDIR += radiusniff
      SUBDIR += rarcrack
      SUBDIR += rdp
