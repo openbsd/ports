@@ -1,10 +1,11 @@
-$OpenBSD: patch-src_merge-evolution_c,v 1.1 2012/10/26 06:49:05 jasper Exp $
+$OpenBSD: patch-src_merge-evolution_c,v 1.2 2013/04/01 08:56:31 jasper Exp $
 
-Fix glabels broken with evolution-data-server 3.6.0
+From 6b7d7e831e5542b6ea3c15802fa882a42399fc15 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Mon, 01 Apr 2013 08:53:59 +0000
+Subject: unbreak with evolution-data-server >= 3.6.0
+
 https://bugzilla.gnome.org/show_bug.cgi?id=685130
-
-Patch from Fedora:
-http://pkgs.fedoraproject.org/cgit/glabels.git/tree/glabels-3.0.0-new-eds.patch
 
 --- src/merge-evolution.c.orig	Tue Sep 18 02:01:02 2012
 +++ src/merge-evolution.c	Fri Oct 26 08:43:05 2012
