@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.211 2013/03/31 13:44:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.212 2013/04/01 08:07:02 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -59,7 +59,6 @@
      SUBDIR += libgnome-keyring
      SUBDIR += libgnomecanvas
      SUBDIR += libgnomecanvasmm
-     SUBDIR += libgnomekbd
      SUBDIR += libgnomeui
      SUBDIR += libgweather
      SUBDIR += librsvg
