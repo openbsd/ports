@@ -1,0 +1,11 @@
+Modified PrBoom port with uncapped framerate, variable gamespeed,
+re-record, walkcam, chasecam, full mouselook, fov and other features
+without loss of compatibility with original DOOM.
+
+Not intended to replace the prboom package, this port has additional
+features particularly interesting to fans of demo recording/playback.
+
+A registered IWAD from one of the original Doom games may be placed in
+${PREFIX}/share/doom/.
+
+Music is available with the timidity package.

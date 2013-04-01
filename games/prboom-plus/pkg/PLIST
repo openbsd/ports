@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/01 22:02:15 rfreeman Exp $
+@bin bin/prboom-plus
+@bin bin/prboom-plus-game-server
+@man man/man5/prboom-plus.cfg.5
+@man man/man6/prboom-plus-game-server.6
+@man man/man6/prboom-plus.6
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/prboom-plus/
+share/doc/prboom-plus/AUTHORS
+share/doc/prboom-plus/COPYING
+share/doc/prboom-plus/MBF.txt
+share/doc/prboom-plus/MBFFAQ.txt
+share/doc/prboom-plus/NEWS
+share/doc/prboom-plus/README
+share/doc/prboom-plus/README.compat
+share/doc/prboom-plus/README.demos
+share/doc/prboom-plus/boom.txt
+share/doc/prboom-plus/prboom-plus-history.html
+share/doc/prboom-plus/prboom-plus-history.txt
+share/doc/prboom-plus/prboom-plus-usage.txt
+share/doom/
+share/doom/prboom-plus.wad

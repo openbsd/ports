@@ -1,0 +1,20 @@
+$OpenBSD: README,v 1.1.1.1 2013/04/01 22:02:15 rfreeman Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+PrBoom-Plus can run in several game modes.
+
+Doom shareware is available in the doomdata package.  One or more
+registered IWADs may be placed in ${PREFIX}/share/doom/.
+
+Doom, Ultimate Doom, Doom II: Hell on Earth, and Final Doom are
+supported.
+
+If multiple IWADs are installed, you may specify the one you want to
+play via the -iwad command-line parameter e.g.
+
+  $ prboom-plus -iwad doom.wad
+
+Music is available with the timidity package.

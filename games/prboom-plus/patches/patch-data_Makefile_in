@@ -1,0 +1,14 @@
+$OpenBSD: patch-data_Makefile_in,v 1.1.1.1 2013/04/01 22:02:15 rfreeman Exp $
+--- data/Makefile.in.orig	Tue Nov  8 17:52:58 2011
++++ data/Makefile.in	Tue Nov  8 17:53:25 2011
+@@ -353,8 +353,8 @@ uninstall-am: uninstall-info-am uninstall-wadDATA
+ 
+ 
+ prboom-plus.wad: prboom.txt $(wildcard graphics/*.ppm sprites/*.ppm lumps/*.lmp sounds/*.wav)
+-	-rm -f $@
+-	deutex -make prboom.txt $@
++	#-rm -f $@
++	#deutex -make prboom.txt $@
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
