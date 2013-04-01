@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2011/06/02 13:41:38 ajacoutot Exp $
+$OpenBSD: README,v 1.4 2013/04/01 20:20:22 tobias Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -20,7 +20,7 @@ $ cd /var/www/usr
 # mkdir -p {bin,lib,libdata/perl5,libexec}
 
 $ cd /var/www/usr/libdata/perl5
-# mkdir -p {File,IPC,Time,warnings,`machine`-openbsd/5.12.2}
+# mkdir -p {File,IPC,Time,warnings,`machine`-openbsd/5.16.3,unicore}
 
 The "annotate" function requires this empty file:
 
@@ -42,7 +42,7 @@ NOTE: Wildcards will, of course, copy any old, unused libraries that are
 lurking around (for example, from an upgrade):
 
 $ cd /var/www/usr/lib
-# cp -p /usr/lib/lib{c,crypto,gssapi,krb5,m,perl,util,z}.so* .
+# cp -p /usr/lib/lib{c,crypto,gssapi,krb5,m,perl,pthread,util,z}.so* .
 
 Now, the run-time link-editor:
 
@@ -53,15 +53,17 @@ And finally, the perl modules:
 
 $ cd /var/www/usr/libdata/perl5
 # cp -p /usr/libdata/perl5/{Carp,Exporter,Symbol,base,integer}.pm .
-# cp -p /usr/libdata/perl5/{strict,warnings,vars,constant}.pm .
+# cp -p /usr/libdata/perl5/{strict,warnings,vars,constant,utf8}.pm .
+# cp -p /usr/libdata/perl5/utf8_heavy.pl .
+# cp -p /usr/libdata/perl5/unicore/Heavy.pl ./unicore/
 # cp -p /usr/libdata/perl5/File/Basename.pm ./File/
 # cp -p /usr/libdata/perl5/IPC/Open{2,3}.pm ./IPC/
 # cp -p /usr/libdata/perl5/Time/Local.pm ./Time/
 # cp -p /usr/libdata/perl5/warnings/register.pm ./warnings/
 
-$ cd /var/www/usr/libdata/perl5/`machine`-openbsd/5.12.2
-# cp -p /usr/libdata/perl5/`machine`-openbsd/5.12.2/{Config,Cwd}.pm .
-# cp -p /usr/libdata/perl5/`machine`-openbsd/5.12.2/Config_{git,heavy}.pl .
+$ cd /var/www/usr/libdata/perl5/`machine`-openbsd/5.16.3
+# cp -p /usr/libdata/perl5/`machine`-openbsd/5.16.3/{Config,Cwd}.pm .
+# cp -p /usr/libdata/perl5/`machine`-openbsd/5.16.3/Config_{git,heavy}.pl .
 
 Editing cvsweb and cvsweb.conf
 ------------------------------
