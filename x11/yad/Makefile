@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:46:19 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/04/01 13:26:53 jasper Exp $
 
 COMMENT=		display graphical dialogs from shell scripts or command line
 
-DISTNAME=		yad-0.19.1
+DISTNAME=		yad-0.20.2
 CATEGORIES=		x11
 
 HOMEPAGE=		http://yad.googlecode.com/
@@ -15,11 +15,9 @@ EXTRACT_SUFX=		.tar.xz
 
 USE_GMAKE=		Yes
 
-WANTLIB += X11 Xext Xrender atk-1.0 c cairo cairo-gobject expat
-WANTLIB += fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gobject-2.0 gtk-3 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pixman-1 png pthread pthread-stubs xcb xcb-render xcb-shm
-WANTLIB += z
+WANTLIB += atk-1.0 c cairo cairo-gobject fontconfig freetype gdk-3
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-3 m
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pthread z
 
 MODULES=		devel/gettext \
 			textproc/intltool
