@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_x86_freebsd_S,v 1.1 2013/04/01 11:53:52 kettenis Exp $
+--- src/x86/freebsd.S.orig	Tue Dec 29 16:22:26 2009
++++ src/x86/freebsd.S	Mon Apr  1 11:39:44 2013
+@@ -49,6 +49,9 @@ ffi_call_SYSV:
+ 	movl  16(%ebp),%ecx
+ 	subl  %ecx,%esp
+ 
++	/* Align the stack pointer to 16-bytes */
++	andl  $0xfffffff0, %esp
++
+ 	movl  %esp,%eax
+ 
+ 	/* Place all of the ffi_prep_args in position  */
