@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/01 12:02:36 zhuk Exp $
+include/libpgf/
+include/libpgf/PGFimage.h
+include/libpgf/PGFplatform.h
+include/libpgf/PGFstream.h
+include/libpgf/PGFtypes.h
+lib/libpgf.a
+@comment lib/libpgf.la
+@lib lib/libpgf.so.${LIBpgf_VERSION}
+lib/pkgconfig/libpgf.pc

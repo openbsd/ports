@@ -1,0 +1,4 @@
+PGF is an image file format based on discrete, fast wavelet transform
+with progressive coding features, lossless and lossy compression.
+It works best for natural and aerial images with a better compression
+efficiency than JPEG.
