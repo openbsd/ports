@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_emu_fileio_h,v 1.1 2013/04/01 01:23:51 bcallah Exp $
+--- src/emu/fileio.h.orig	Sun Jan 20 20:15:29 2013
++++ src/emu/fileio.h	Sun Jan 20 20:15:29 2013
+@@ -153,6 +153,7 @@ class emu_file (public)
+ 
+ 	// reading
+ 	UINT32 read(void *buffer, UINT32 length);
++#undef getc
+ 	int getc();
+ 	int ungetc(int c);
+ 	char *gets(char *s, int n);

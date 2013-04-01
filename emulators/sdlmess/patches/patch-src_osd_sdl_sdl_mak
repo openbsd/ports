@@ -1,16 +1,15 @@
-$OpenBSD: patch-src_osd_sdl_sdl_mak,v 1.3 2010/09/30 07:26:05 ajacoutot Exp $
-
-XXX make it compile with gtk+2 2.22 (*_DISABLE_DEPRECATED)
-src/osd/sdl/dview.c:138: warning: implicit declaration of function 'GTK_OBJECT_FLAGS'
-src/osd/sdl/dview.c:138: error: lvalue required as left operand of assignment
-
---- src/osd/sdl/sdl.mak.orig	Wed Sep 29 17:27:36 2010
-+++ src/osd/sdl/sdl.mak	Wed Sep 29 17:27:43 2010
-@@ -272,7 +272,6 @@ ifndef NO_X11
- OSDCOREOBJS += $(SDLOBJ)/debugwin.o $(SDLOBJ)/dview.o $(SDLOBJ)/debug-sup.o $(SDLOBJ)/debug-intf.o
- CFLAGS += `pkg-config --cflags gtk+-2.0` `pkg-config --cflags gconf-2.0` 
- LIBS += `pkg-config --libs gtk+-2.0` `pkg-config --libs gconf-2.0`
--CFLAGS += -DGTK_DISABLE_DEPRECATED
- else
- OSDCOREOBJS += $(SDLOBJ)/debugwin.o
+$OpenBSD: patch-src_osd_sdl_sdl_mak,v 1.4 2013/04/01 01:23:51 bcallah Exp $
+--- src/osd/sdl/sdl.mak.orig	Tue Mar  5 19:13:20 2013
++++ src/osd/sdl/sdl.mak	Tue Mar  5 19:13:20 2013
+@@ -702,9 +702,9 @@ LIBS += `pkg-config QtGui --libs`
+ endif
+ 
+ # some systems still put important things in a different prefix
+-LIBS += -L/usr/X11/lib -L/usr/X11R6/lib -L/usr/openwin/lib
++LIBS += -L${X11BASE}/lib
+ # make sure we can find X headers
+-INCPATH += -I/usr/X11/include -I/usr/X11R6/include -I/usr/openwin/include
++INCPATH += -I${X11BASE}/include
  endif # NO_X11
+ 
+ #-------------------------------------------------

@@ -1,76 +1,100 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/11 11:06:04 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2013/04/01 01:23:51 bcallah Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		emulates game consoles and old home computers
 
-V =			0.132
-DISTNAME =		sdlmess${V:S/.//}
-PKGNAME =		sdlmess-${V}
-REVISION=		8
+V =			0148
+DISTNAME =		mame${V}s
+PKGNAME =		sdlmess-${V:S/0/0./}pl1
 
 CATEGORIES =		emulators games
 
-HOMEPAGE =		http://rbelmont.mameworld.info/?page_id=163
+HOMEPAGE =		http://messdev.org/
+
+MAINTAINER =		Brian Callahan <bcallah@openbsd.org>
 
 # MAME Distribution License, see http://mamedev.org/license.html
+# history.dat : Creative Commons Attribution 3.0
 PERMIT_PACKAGE_CDROM =		may not sell
 PERMIT_PACKAGE_FTP =		Yes
 
-WANTLIB +=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
-WANTLIB +=	Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1
-WANTLIB +=	expat fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB +=	gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0
-WANTLIB +=	pangoft2-1.0 pixman-1 png pthread pthread-stubs xcb z
-WANTLIB +=	xcb-render xcb-render-util gdk_pixbuf-2.0 SDL
-WANTLIB +=	gdk-x11-2.0 gtk-x11-2.0 gconf-2>=5
+WANTLIB =	SDL SDL_ttf X11 Xcomposite Xcursor Xdamage Xext \
+		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \
+		fontconfig freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 \
+		gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0 \
+		pangocairo-1.0 pangoft2-1.0 pthread stdc++ util z
 
-MASTER_SITES =		http://rbelmont.mameworld.info/
+MASTER_SITES =		http://mamedev.org/downloader.php?file=releases/ \
+			http://whiper.com/mame/${V:S/0//}/
+MASTER_SITES0 =		http://mamedev.org/updates/
+MASTER_SITES1 = 	http://www.arcade-history.com/dats/
+
 EXTRACT_SUFX =		.zip
+DIST_SUBDIR =		mame
 
-MODULES =		devel/gettext
+# PATCHFILES doesn't work for .zip
+DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
+			${V}u1_diff.zip:0 \
+			history${V:S/0//}g.zip:1
 
-LIB_DEPENDS =		devel/sdl devel/gconf2 x11/gtk+2
+MODULES =		devel/gettext \
+			lang/python
 
-USE_GMAKE =		Yes
-
-NO_TEST =		Yes
+RUN_DEPENDS-main =	fonts/liberation-fonts
+LIB_DEPENDS =		devel/gconf2 \
+			devel/sdl-ttf \
+			x11/gtk+2
 
 MAKE_FLAGS =		OPT_FLAGS='-DINI_PATH="\"${SYSCONFDIR}/mess;\""'
-MAKE_ENV =		ARCH=$(ARCH) CC=$(CC) CFLAGS="$(CFLAGS)" LD=$(CC) \
+MAKE_ENV =		ARCH=$(ARCH) CC=$(CC) CFLAGS="$(CFLAGS)" \
 			TARGETOS=openbsd
 .if ${MACHINE_ARCH} == "amd64"
-MAKE_ENV+=		PTR64=1
+MAKE_ENV +=		PTR64=1
 .endif
-MAKE_FILE =		makefile.sdl
+USE_GMAKE =		Yes
 
-MESS_EXTBIN=		dat2html imgtool
-MESS_DOC=		config.txt credits.htm faq.htm imgtool.txt \
-				license.txt mame.txt messnew.txt newvideo.txt
-MESS_DATA_DIR =		roms hash samples artwork ctrlr cheat keymaps
+CONFIGURE_STYLE =	none
+
+MAKE_FILE =		makefile
+
+NO_TEST =		Yes
+VMEM_WARNING =		Yes
+
+post-extract:
+	@${UNZIP} -oq ${WRKDIR}/mame.zip -d ${WRKSRC}
+
+pre-patch:
+.for v in 1
+	${PATCH} ${PATCH_DIST_ARGS} < ${WRKDIR}/${V}u${v}.diff
+.endfor
+	@perl -pi -e 's|\r\n|\n|g' ${WRKDIST}/makefile \
+	    ${WRKDIST}/src/emu/fileio.h \
+	    ${WRKDIST}/src/emu/machine/netlist.h \
+	    ${WRKDIST}/src/osd/sdl/sdl.mak
+	@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
+
+pre-build:
+	${SUBST_CMD} ${WRKDIST}/src/osd/sdl/sdl.mak
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mess ${PREFIX}/bin/sdlmess
-.for i in ${MESS_EXTBIN}
-	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/bin/
+.for f in castool floptool imgtool
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
 .endfor
-.for i in ${MESS_DATA_DIR}
-	${INSTALL_DATA_DIR} ${PREFIX}/share/sdlmess/${i}
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/keymaps/km[-_]??.txt \
-		${PREFIX}/share/sdlmess/keymaps/
-	${INSTALL_DATA} ${WRKSRC}/ui.bdf ${PREFIX}/share/sdlmess
+	${INSTALL_DATA_DIR} ${PREFIX}/share/sdlmess/keymaps
+	${INSTALL_DATA} ${WRKSRC}/src/osd/sdl/keymaps/km[-_]??.txt \
+	    ${PREFIX}/share/sdlmess/keymaps/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/sdlmess
-.for i in ${MESS_DOC}
-	${INSTALL_DATA} ${WRKSRC}/docs/${i} ${PREFIX}/share/doc/sdlmess/
+.for f in config.txt hlsl.txt license.txt newvideo.txt
+	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${PREFIX}/share/doc/sdlmess
 .endfor
-	${INSTALL_DATA} $(WRKSRC)/SDLMESS.txt ${PREFIX}/share/doc/sdlmess/
-	${INSTALL_DATA} $(WRKSRC)/sysinfo.dat ${PREFIX}/share/doc/sdlmess/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/sdlmess
 	${SUBST_CMD} -c ${FILESDIR}/mess.ini \
-		${PREFIX}/share/examples/sdlmess/mess.ini
+	    ${PREFIX}/share/examples/sdlmess/mess.ini
 	chown ${SHAREOWN}:${SHAREGRP} \
-		${PREFIX}/share/examples/sdlmess/mess.ini
- 
+	    ${PREFIX}/share/examples/sdlmess/mess.ini
+	${INSTALL_DATA} ${WRKDIR}/history.dat ${PREFIX}/share/sdlmess
+
 .include <bsd.port.mk>

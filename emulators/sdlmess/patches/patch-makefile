@@ -1,0 +1,61 @@
+$OpenBSD: patch-makefile,v 1.1 2013/04/01 01:23:51 bcallah Exp $
+--- makefile.orig	Tue Mar 26 23:40:25 2013
++++ makefile	Tue Mar 26 23:43:17 2013
+@@ -24,7 +24,7 @@
+ #-------------------------------------------------
+ 
+ ifndef TARGET
+-TARGET = mame
++TARGET = mess
+ endif
+ 
+ ifndef SUBTARGET
+@@ -214,10 +214,10 @@ endif
+ # BIGENDIAN = 1
+ 
+ # uncomment next line to build expat as part of MAME build
+-BUILD_EXPAT = 1
++# BUILD_EXPAT = 1
+ 
+ # uncomment next line to build zlib as part of MAME build
+-BUILD_ZLIB = 1
++# BUILD_ZLIB = 1
+ 
+ # uncomment next line to build libflac as part of MAME build
+ BUILD_FLAC = 1
+@@ -315,7 +315,7 @@ endif
+ 
+ # compiler, linker and utilities
+ AR = @ar
+-CC = @gcc
++CC ?= @gcc
+ LD = @g++
+ MD = -mkdir$(EXE)
+ RM = @rm -f
+@@ -364,7 +364,7 @@ NAME = $(TARGET)$(SUBTARGET)
+ endif
+ 
+ # fullname is prefix+name+suffix+suffix64+suffixdebug
+-FULLNAME = $(PREFIX)$(PREFIXSDL)$(NAME)$(SUFFIX)$(SUFFIX64)$(SUFFIXDEBUG)$(SUFFIXPROFILE)
++FULLNAME = $(PREFIXSDL)$(NAME)$(SUFFIX)$(SUFFIXDEBUG)$(SUFFIXPROFILE)
+ 
+ # add an EXE suffix to get the final emulator name
+ EMULATOR = $(FULLNAME)$(EXE)
+@@ -455,7 +455,7 @@ CPPONLYFLAGS =
+ 
+ # CFLAGS is defined based on C or C++ targets
+ # (remember, expansion only happens when used, so doing it here is ok)
+-CFLAGS = $(CCOMFLAGS) $(CPPONLYFLAGS)
++CFLAGS += $(CCOMFLAGS) $(CPPONLYFLAGS)
+ 
+ # we compile C-only to C89 standard with GNU extensions
+ # we compile C++ code to C++98 standard with GNU extensions
+@@ -482,7 +482,7 @@ CCOMFLAGS += -pg
+ endif
+ 
+ # add the optimization flag
+-CCOMFLAGS += -O$(OPTIMIZE)
++#CCOMFLAGS += -O$(OPTIMIZE)
+ 
+ # add the error warning flag
+ ifndef NOWERROR

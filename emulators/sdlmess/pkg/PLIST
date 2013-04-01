@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/05/09 17:45:12 jakemsr Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/04/01 01:23:51 bcallah Exp $
 @conflict xmame+xmess-*
 @conflict xmess-*
 @pkgpath emulators/xmame,-main
@@ -13,35 +13,29 @@
 @pkgpath emulators/xmame,-mess,x11
 @pkgpath emulators/xmame,-mess,esd,sdl
 @pkgpath emulators/xmame,-mess,esd,x11
-@bin bin/dat2html
+@bin bin/castool
+@bin bin/floptool
 @bin bin/imgtool
 @bin bin/sdlmess
 share/doc/sdlmess/
-share/doc/sdlmess/SDLMESS.txt
 share/doc/sdlmess/config.txt
-share/doc/sdlmess/credits.htm
-share/doc/sdlmess/faq.htm
-share/doc/sdlmess/imgtool.txt
+share/doc/sdlmess/hlsl.txt
 share/doc/sdlmess/license.txt
-share/doc/sdlmess/mame.txt
-share/doc/sdlmess/messnew.txt
 share/doc/sdlmess/newvideo.txt
-share/doc/sdlmess/sysinfo.dat
 share/examples/sdlmess/
 @sample ${SYSCONFDIR}/mess/
 share/examples/sdlmess/mess.ini
 @sample ${SYSCONFDIR}/mess/mess.ini
 share/sdlmess/
-share/sdlmess/artwork/
-share/sdlmess/cheat/
-share/sdlmess/ctrlr/
-share/sdlmess/hash/
+share/sdlmess/history.dat
 share/sdlmess/keymaps/
 share/sdlmess/keymaps/km-be.txt
 share/sdlmess/keymaps/km-ch.txt
 share/sdlmess/keymaps/km-de.txt
 share/sdlmess/keymaps/km-fr.txt
 share/sdlmess/keymaps/km_it.txt
-share/sdlmess/roms/
-share/sdlmess/samples/
-share/sdlmess/ui.bdf
+@sample share/sdlmess/artwork/
+@sample share/sdlmess/cheat/
+@sample share/sdlmess/ctrlr/
+@sample share/sdlmess/roms/
+@sample share/sdlmess/samples/
