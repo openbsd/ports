@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.59 2013/03/11 11:20:28 espie Exp $
+# $OpenBSD: python.port.mk,v 1.60 2013/04/01 16:49:53 fgsch Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -155,7 +155,7 @@ _MODPY_CMD =	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 SUBST_VARS :=	MODPY_PYCACHE MODPY_COMMENT MODPY_PYC_MAGIC_TAG MODPY_BIN MODPY_EGG_VERSION MODPY_VERSION MODPY_BIN_SUFFIX MODPY_PY_PREFIX ${SUBST_VARS}
 
 # set MODPY_BIN for executable scripts
-_MODPY_BIN_ADJ =	perl -pi \
+MODPY_BIN_ADJ =	perl -pi \
 		-e '$$. == 1 && s|^.*env python.*$$|\#!${MODPY_BIN}|;' \
 		-e '$$. == 1 && s|^.*bin/python.*$$|\#!${MODPY_BIN}|;' \
 		-e 'close ARGV if eof;'
@@ -163,7 +163,7 @@ _MODPY_BIN_ADJ =	perl -pi \
 MODPY_ADJ_FILES ?=
 .if !empty(MODPY_ADJ_FILES)
 MODPYTHON_pre-configure += for f in ${MODPY_ADJ_FILES}; do \
-	${_MODPY_BIN_ADJ} ${WRKSRC}/$${f}; done
+	${MODPY_BIN_ADJ} ${WRKSRC}/$${f}; done
 .endif
 
 # dirty way to do it with no modifications in bsd.port.mk
