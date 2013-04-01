@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.52 2013/03/30 07:16:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2013/04/01 13:50:42 ajacoutot Exp $
 
-COMMENT=	GNOME desktop sharing server
+COMMENT=		GNOME desktop sharing server
 
-GNOME_PROJECT=	vino
-GNOME_VERSION=	3.8.0
+GNOME_PROJECT=		vino
+GNOME_VERSION=		3.8.0
+REVISION=		0
 
-CATEGORIES=	net
+CATEGORIES=		net
 
-HOMEPAGE=	https://live.gnome.org/Vino
+HOMEPAGE=		https://live.gnome.org/Vino
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -24,21 +25,21 @@ WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += secret-1 soup-2.4 sqlite3 tasn1 telepathy-glib xcb
 WANTLIB += xcb-render xcb-shm xml2 z
 
-MODULES=	devel/dconf \
-		devel/gettext \
-		x11/gnome
+MODULES=		devel/dconf \
+			devel/gettext \
+			x11/gnome
 
-LIB_DEPENDS=	devel/libnotify \
-		devel/libsoup \
-		net/avahi \
-		net/telepathy/telepathy-glib \
-		security/gnutls \
-		x11/gnome/libsecret \
-		x11/gtk+3
+LIB_DEPENDS=		devel/libnotify \
+			devel/libsoup \
+			net/avahi \
+			net/telepathy/telepathy-glib \
+			security/gnutls \
+			x11/gnome/libsecret \
+			x11/gtk+3
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 
-FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/vino
+FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/vino
 
 .include <bsd.port.mk>
