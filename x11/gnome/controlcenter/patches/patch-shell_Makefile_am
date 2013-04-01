@@ -1,6 +1,6 @@
-$OpenBSD: patch-shell_Makefile_am,v 1.1 2013/03/29 18:18:43 ajacoutot Exp $
+$OpenBSD: patch-shell_Makefile_am,v 1.2 2013/04/01 08:34:21 jasper Exp $
 
-XXX our krb5 is tool old, so disable the user account panel for the time beeing
+XXX our krb5 is too old, so disable the user account panel for the time being
 
 --- shell/Makefile.am.orig	Fri Mar 29 19:04:17 2013
 +++ shell/Makefile.am	Fri Mar 29 19:04:27 2013
