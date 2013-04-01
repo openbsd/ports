@@ -1,0 +1,13 @@
+$OpenBSD: patch-include_qemu_timer_h,v 1.1 2013/04/01 13:40:32 brad Exp $
+--- include/qemu/timer.h.orig	Sun Mar 31 14:23:42 2013
++++ include/qemu/timer.h	Sun Mar 31 14:24:08 2013
+@@ -118,7 +118,8 @@ extern int use_rt_clock;
+ static inline int64_t get_clock(void)
+ {
+ #if defined(__linux__) || (defined(__FreeBSD__) && __FreeBSD_version >= 500000) \
+-    || defined(__DragonFly__) || defined(__FreeBSD_kernel__)
++    || defined(__DragonFly__) || defined(__FreeBSD_kernel__) \
++    || defined(__OpenBSD__)
+     if (use_rt_clock) {
+         struct timespec ts;
+         clock_gettime(CLOCK_MONOTONIC, &ts);
