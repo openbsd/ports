@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/29 12:37:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2013/04/01 19:56:41 sthen Exp $
 
 COMMENT =		SoundFont2 software synthesizer
 DISTNAME =		fluidsynth-1.1.6
+REVISION =		0
 
 SHARED_LIBS +=	fluidsynth           1.0      # 6.2
 
@@ -11,12 +12,13 @@ HOMEPAGE =		http://fluidsynth.resonance.org/trac
 # LGPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c glib-2.0 gthread-2.0 iconv intl m ncurses pcre pthread
-WANTLIB += readline sndio
+WANTLIB += FLAC c glib-2.0 gthread-2.0 iconv intl m ncurses ogg
+WANTLIB += pcre pthread readline sndfile sndio vorbis vorbisenc
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=fluidsynth/}
 
-LIB_DEPENDS =		devel/glib2
+LIB_DEPENDS =		audio/libsndfile \
+			devel/glib2
 
 AUTOCONF_VERSION =	2.61
 AUTOMAKE_VERSION =	1.9
@@ -28,9 +30,13 @@ BUILD_DEPENDS +=        devel/libtool
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
+			--disable-coreaudio \
+			--disable-coremidi \
+			--disable-dart \
 			--disable-dbus-support \
 			--disable-lash \
 			--disable-ladcca \
+			--disable-midishare \
 			--disable-oss-support \
 			--disable-portaudio-support \
 			--disable-pulse-support
