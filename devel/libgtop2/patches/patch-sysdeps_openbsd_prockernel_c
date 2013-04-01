@@ -1,9 +1,14 @@
-$OpenBSD: patch-sysdeps_openbsd_prockernel_c,v 1.5 2013/03/27 07:57:38 jasper Exp $
+$OpenBSD: patch-sysdeps_openbsd_prockernel_c,v 1.6 2013/04/01 11:42:18 jasper Exp $
 
 From b11aa1517e203e36a8901f03ea57c50a25dfbfc7 Mon Sep 17 00:00:00 2001
 From: Antoine Jacoutot <ajacoutot@gnome.org>
 Date: Sun, 22 Jan 2012 11:47:49 +0000
 Subject: OpenBSD: kinfo_proc2 -> kinfo_proc
+
+From dc7eab432973e659a7d7054193da42260e148988 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Mon, 01 Apr 2013 11:40:11 +0000
+Subject: Adjust for the fact that regular users cannot read wchan anymore in OpenBSD 5.4.
 
 --- sysdeps/openbsd/prockernel.c.orig	Sun Jul 24 21:13:56 2011
 +++ sysdeps/openbsd/prockernel.c	Wed Mar 27 08:53:04 2013
