@@ -1,5 +1,6 @@
-Transmission is a free, lightweight BitTorrent client.  It features
-a simple, intuitive interface on top on an efficient, cross-platform
-back-end.
+Transmission is a BitTorrent client that features encryption, a web 
+interface, peer exchange, magnet links, DHT, UPnP and NAT-PMP port
+forwarding, webseed support, watch directories, tracker editing,
+global and per-torrent speed limits, and more.
 
 This is the Qt graphical interface client.
