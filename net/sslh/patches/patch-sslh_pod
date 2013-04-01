@@ -1,15 +1,11 @@
---- sslh.pod.orig	Sat Apr 21 18:34:14 2012
-+++ sslh.pod	Sun Apr 22 09:45:36 2012
-@@ -16,12 +16,19 @@
- inside a corporate firewall, which almost never block port
- 443) while still serving HTTPS on that port. 
+$OpenBSD: patch-sslh_pod,v 1.3 2013/04/01 21:37:28 sthen Exp $
+--- sslh.pod.orig	Sat Dec 15 16:29:38 2012
++++ sslh.pod	Tue Mar  5 19:15:23 2013
+@@ -26,17 +26,14 @@ Hence B<sslh> acts as a protocol demultiplexer, or a
+ switchboard. Its name comes from its original function to
+ serve SSH and HTTPS on the same port.
  
--
- The idea is to have B<sslh> listen to the external 443 port,
- accept the incoming connections, work out what type of
- connection it is, and then fordward to the appropriate
- server.
- 
+-=head2 Libwrap support
 +B<sslh> comes in two versions: B<sslh-fork> forks a new process 
 +for each incoming connection. It is well-tested and very
 +reliable, but incurs the overhead of many processes. B<sslh-select>
@@ -17,32 +13,23 @@
 +It is more recent and less tested, but only incurs a 16 byte
 +overhead per connection. Also, if it stops, you'll lose all
 +connections, which means you can't upgrade it remotely.
-+
- =head2 Protocol detection
  
- The protocol detection is made based on the first bytes sent
-@@ -45,17 +52,6 @@
- provides, and connects it to the SSH server if it starts
- with "SSH-", or connects it to the SSL server otherwise.
- 
--=head2 Libwrap support
+-One drawback of B<sslh> is that the servers do not see the
+-original IP address of the client anymore, as the connection
+-is forwarded through B<sslh>.
 -
--One drawback of B<sslh> is that the B<ssh> and B<httpd>
--servers do not see the original IP address of the client
--anymore, as the connection is forwarded through B<sslh>.
--B<sslh> provides enough logging to circumvent that problem.
--However it is common to limit access to B<ssh> using
--B<libwrap> or B<tcpd>. For this reason, B<sslh> can be
--compiled to check SSH accesses against SSH access lists as
--defined in F</etc/hosts.allow> and F</etc/hosts.deny>.
+-For this reason, B<sslh> can be compiled with B<libwrap> to
+-check accesses defined in F</etc/hosts.allow> and
+-F</etc/hosts.deny>.  Libwrap services can be defined using
+-the configuration file.
 -
- =head1 OPTIONS
+ =head2 Configuration file
  
- =over 4
-@@ -140,24 +136,6 @@
- Runs in foreground. The server will not fork and will remain connected
- to the terminal. Messages normally sent to B<syslog> will also be sent
- to I<stderr>.
+ A configuration file can be supplied to B<sslh>. Command
+@@ -187,24 +184,6 @@ Runs in background. This overrides B<foreground> if se
+ the configuration file (or on the command line, but there is
+ no point setting both on the command line unless you have a
+ personality disorder).
 -
 -=back
 -

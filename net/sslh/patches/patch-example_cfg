@@ -1,0 +1,12 @@
+$OpenBSD: patch-example_cfg,v 1.1 2013/04/01 21:37:28 sthen Exp $
+--- example.cfg.orig	Tue Mar  5 19:01:28 2013
++++ example.cfg	Tue Mar  5 19:01:28 2013
+@@ -8,7 +8,7 @@ foreground: true;
+ inetd: false;
+ numeric: false;
+ timeout: 2;
+-user: "nobody";
++user: "_sslh";
+ pidfile: "/var/run/sslh.pid";
+ 
+ 

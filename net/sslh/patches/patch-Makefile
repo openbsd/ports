@@ -1,6 +1,6 @@
---- Makefile.orig	Sat Nov 26 19:06:58 2011
-+++ Makefile	Fri Mar 23 19:53:40 2012
-@@ -5,26 +5,19 @@
+--- Makefile.orig	Sat Dec 15 16:29:38 2012
++++ Makefile	Tue Mar  5 19:29:11 2013
+@@ -6,31 +6,17 @@ USELIBWRAP=	# Use libwrap?
  COV_TEST= 	# Perform test coverage?
  PREFIX=/usr/local
  
@@ -14,33 +14,31 @@
 -    CFLAGS_COV=-fprofile-arcs -ftest-coverage
 -endif
 -
- CC = gcc
--CFLAGS=-Wall -g $(CFLAGS_COV)
+ CC ?= gcc
+ CFLAGS ?=-Wall -g $(CFLAGS_COV)
  
- #LIBS=-lnet
- LIBS=
- OBJS=common.o sslh-main.o
+ LIBS=$(LDFLAGS)
+ OBJS=common.o sslh-main.o probe.o
  
 -ifneq ($(strip $(USELIBWRAP)),)
 -	LIBS:=$(LIBS) -lwrap
 -	CFLAGS:=$(CFLAGS) -DLIBWRAP
 -endif
-+LIBS:=$(LIBS) -lwrap
-+CFLAGS:=$(CFLAGS) -Wall -DLIBWRAP
- 
+-
+-ifneq ($(strip $(USELIBCONFIG)),)
+-	LIBS:=$(LIBS) -lconfig
+-	CFLAGS:=$(CFLAGS) -DLIBCONFIG
+-endif
+-
  all: sslh $(MAN) echosrv
  
-@@ -46,7 +39,7 @@
- 	$(CC) $(CFLAGS) -o echosrv echosrv.o common.o $(LIBS)
+ .c.o: *.h
+@@ -51,7 +37,7 @@ echosrv: $(OBJS) echosrv.o
+ 	$(CC) $(CFLAGS) -o echosrv echosrv.o probe.o common.o $(LIBS)
  
  $(MAN): sslh.pod Makefile
 -	pod2man --section=8 --release=$(VERSION) --center=" " sslh.pod | gzip -9 - > $(MAN)
 +	pod2man --section=8 --release=$(VERSION) --center=" " sslh.pod > $(MAN)
  
- # generic install: install binary and man page
- install: sslh $(MAN)
-@@ -72,4 +65,3 @@
- 
- test:
- 	./t
--
+ # Create release: export clean tree and tag current
+ # configuration
