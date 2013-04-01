@@ -1,6 +1,12 @@
-$OpenBSD: patch-configure_ac,v 1.3 2013/03/28 19:44:51 jasper Exp $
+$OpenBSD: patch-configure_ac,v 1.4 2013/04/01 09:29:12 jasper Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=696645
+From 42da25a17292f925046efd630d39fb7127c268d9 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Tue, 26 Mar 2013 15:05:49 +0000
+Subject: Unbreak configure
+
+- set a proper version for the required libxml
+- make sure the variable gets expanded.
 
 --- configure.ac.orig	Tue Mar 26 15:58:28 2013
 +++ configure.ac	Tue Mar 26 16:04:46 2013
