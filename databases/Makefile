@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.239 2013/03/27 11:35:51 brad Exp $
+# $OpenBSD: Makefile,v 1.240 2013/04/01 17:03:05 espie Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -147,6 +147,7 @@
      SUBDIR += pkglocatedb
      SUBDIR += pkglocatedb,src
      SUBDIR += ports-readmes
+     SUBDIR += ports-readmes-dancer
      SUBDIR += postgresql
      SUBDIR += postgresql-jdbc
      SUBDIR += postgresql-odbc
