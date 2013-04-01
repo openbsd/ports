@@ -1,0 +1,2 @@
+#! /bin/sh
+cd ${TRUEPREFIX}/libdata/ports-readmes-dancer && exec bin/ports-readmes "$@"

@@ -1,0 +1,8 @@
+show ports information as web pages, create them dynamically
+using a small web application framework called dancer.
+
+as user: run ports-readmes
+
+for a web-server: go read Dancer::Deployment(3p)
+edit ${PREFIX}/libdata/ports-readmes-dancer/config.yml
+as appropriate.

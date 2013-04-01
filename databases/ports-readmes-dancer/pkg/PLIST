@@ -1,0 +1,33 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/01 17:02:26 espie Exp $
+bin/ports-readmes
+libdata/ports-readmes-dancer/
+libdata/ports-readmes-dancer/bin/
+libdata/ports-readmes-dancer/bin/ports-readmes
+libdata/ports-readmes-dancer/config.yml.sample
+@sample libdata/ports-readmes-dancer/config.yml
+libdata/ports-readmes-dancer/environments/
+libdata/ports-readmes-dancer/environments/development.yml
+libdata/ports-readmes-dancer/environments/production.yml
+libdata/ports-readmes-dancer/environments/user.yml
+libdata/ports-readmes-dancer/lib/
+libdata/ports-readmes-dancer/lib/PortsReadmes.pm
+libdata/ports-readmes-dancer/lib/SqlPorts.pm
+libdata/ports-readmes-dancer/public/
+libdata/ports-readmes-dancer/public/404.html
+libdata/ports-readmes-dancer/public/500.html
+libdata/ports-readmes-dancer/public/css/
+libdata/ports-readmes-dancer/public/css/style.css
+libdata/ports-readmes-dancer/public/dispatch.cgi
+libdata/ports-readmes-dancer/public/dispatch.fcgi
+libdata/ports-readmes-dancer/public/favicon.ico
+libdata/ports-readmes-dancer/public/images/
+libdata/ports-readmes-dancer/public/images/openbsd-logo.gif
+libdata/ports-readmes-dancer/public/javascripts/
+libdata/ports-readmes-dancer/public/javascripts/jquery.js
+libdata/ports-readmes-dancer/views/
+libdata/ports-readmes-dancer/views/category.tt
+libdata/ports-readmes-dancer/views/index.tt
+libdata/ports-readmes-dancer/views/layouts/
+libdata/ports-readmes-dancer/views/layouts/main.tt
+libdata/ports-readmes-dancer/views/port.tt
+libdata/ports-readmes-dancer/views/searchresult.tt
