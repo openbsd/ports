@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.345 2013/03/29 08:20:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.346 2013/04/01 12:03:30 zhuk Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -131,6 +131,7 @@
      SUBDIR += libmng
      SUBDIR += libmpeg2
      SUBDIR += libpano13
+     SUBDIR += libpgf
      SUBDIR += libqrencode
      SUBDIR += libraw
      SUBDIR += libungif
