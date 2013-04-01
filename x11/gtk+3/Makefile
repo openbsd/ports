@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2013/03/27 17:55:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2013/04/01 11:35:02 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -78,6 +78,11 @@ LIB_DEPENDS-cups +=	graphics/colord
 WANTLIB-cups +=	colord lcms2
 .else
 CONFIGURE_ARGS +=	--disable-colord
+.endif
+
+# XXX
+.if ${MACHINE_ARCH} == "powerpc"
+CFLAGS +=	-O0
 .endif
 
 # do not build gtk-update-icon-cache and other shared tools
