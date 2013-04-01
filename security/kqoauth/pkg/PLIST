@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/01 11:55:32 zhuk Exp $
+include/QtKOAuth/
+include/QtKOAuth/QtKOAuth
+include/QtKOAuth/kqoauthglobals.h
+include/QtKOAuth/kqoauthmanager.h
+include/QtKOAuth/kqoauthrequest.h
+include/QtKOAuth/kqoauthrequest_1.h
+include/QtKOAuth/kqoauthrequest_xauth.h
+lib/libkqoauth.prl
+@lib lib/libkqoauth.so.${LIBkqoauth_VERSION}
+lib/pkgconfig/kqoauth.pc
+lib/qt4/mkspecs/features/kqoauth.prf
