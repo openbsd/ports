@@ -1,4 +1,12 @@
-$OpenBSD: patch-src_terminal-screen_c,v 1.5 2013/03/29 18:39:35 jasper Exp $
+$OpenBSD: patch-src_terminal-screen_c,v 1.6 2013/04/01 09:18:52 jasper Exp $
+
+From 628162f198ffb60dd5c8c30c152af9761f9568b2 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Mon, 1 Apr 2013 11:13:05 +0200
+Subject: Use dup2() (POSIX) instead of dup3() (GLIBC) as the former suffices.
+
+https://bugzilla.gnome.org/show_bug.cgi?id=697024
+
 --- src/terminal-screen.c.orig	Wed Mar 20 11:09:31 2013
 +++ src/terminal-screen.c	Fri Mar 29 18:22:25 2013
 @@ -1347,7 +1347,7 @@ terminal_screen_child_setup (FDSetupData *data)
