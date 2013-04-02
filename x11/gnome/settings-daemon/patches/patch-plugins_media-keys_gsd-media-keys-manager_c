@@ -1,0 +1,14 @@
+$OpenBSD: patch-plugins_media-keys_gsd-media-keys-manager_c,v 1.6 2013/04/02 07:22:31 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=697083
+
+--- plugins/media-keys/gsd-media-keys-manager.c.orig	Tue Apr  2 08:23:46 2013
++++ plugins/media-keys/gsd-media-keys-manager.c	Tue Apr  2 08:23:23 2013
+@@ -1808,6 +1808,7 @@ do_config_power_action (GsdMediaKeysManager *manager,
+                 power_action_hibernate (manager);
+                 break;
+         case GSD_POWER_ACTION_BLANK:
++        case GSD_POWER_ACTION_LOGOUT:
+         case GSD_POWER_ACTION_NOTHING:
+                 /* these actions cannot be handled by media-keys and
+                  * are not used in this context */
