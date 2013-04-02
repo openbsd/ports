@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.29 2012/12/06 08:13:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.30 2013/04/02 10:06:37 ajacoutot Exp $
 @conflict gail-*
 @conflict gtk+2-cups-*
 @conflict gtk+2-docs-*
@@ -353,6 +353,7 @@ lib/pkgconfig/gtk+-2.0.pc
 lib/pkgconfig/gtk+-unix-print-2.0.pc
 lib/pkgconfig/gtk+-x11-2.0.pc
 share/aclocal/gtk-2.0.m4
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/gtk+2/
 share/examples/gtk+2/gtk-2.0/
 share/examples/gtk+2/gtk-2.0/im-multipress.conf

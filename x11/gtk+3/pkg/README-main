@@ -1,0 +1,16 @@
+$OpenBSD: README-main,v 1.1 2013/04/02 10:06:37 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Print Preview
+=============
+
+By default, GTK+ uses the "evince" command from the evince package to
+display a "Print Preview". This can be modified by editing:
+    ~/.config/gtk-3.0/settings.ini
+and appending the following line:
+gtk-print-preview-command = epdfview %f
+
+(epdfview can be replaced by any other PDF viewer command like xpdf...)
