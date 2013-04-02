@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# $OpenBSD: vsftpd.rc,v 1.1 2013/04/02 11:38:12 sthen Exp $
+
+daemon="${TRUEPREFIX}/sbin/vsftpd"
+daemon_flags="${SYSCONFDIR}/vsftpd.conf -obackground=yes"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1
