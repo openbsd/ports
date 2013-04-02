@@ -1,7 +1,7 @@
-$OpenBSD: patch-send_c,v 1.1 2005/04/24 22:59:08 alek Exp $
---- send.c.orig	Sun Apr 24 20:29:06 2005
-+++ send.c	Sun Apr 24 20:30:24 2005
-@@ -41,7 +41,7 @@ static void select_next_random_dest(void
+$OpenBSD: patch-send_c,v 1.2 2013/04/02 15:15:53 sthen Exp $
+--- send.c.orig	Fri Aug  1 15:53:08 2003
++++ send.c	Tue Apr  2 15:44:57 2013
+@@ -41,7 +41,7 @@ static void select_next_random_dest(void)
  	unsigned char ra[4];
  	char a[4], b[4], c[4], d[4];
  

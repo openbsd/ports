@@ -1,0 +1,11 @@
+$OpenBSD: patch-getlhs_c,v 1.1 2013/04/02 15:15:53 sthen Exp $
+--- getlhs.c.orig	Tue Apr  2 16:09:52 2013
++++ getlhs.c	Tue Apr  2 16:10:57 2013
+@@ -62,6 +62,7 @@ int get_linkhdr_size(char *ifname)
+ #ifdef DLT_ATM_CLIP
+ 	case DLT_ATM_CLIP:
+ #endif
++	case DLT_PPP_ETHER:
+ 		linkhdr_size = 8;
+ 		break;
+ #ifdef DLT_C_HDLC

@@ -14,3 +14,6 @@ stuff you can do using hping:
 - Remote OS fingerprinting 
 - Remote uptime guessing 
 - TCP/IP stacks auditing
+
+N.B. the message "[send_ip] sendto: No route to host" often indicates
+that sending a packet has been blocked by PF on the local machine.
