@@ -1,12 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2013/04/01 21:37:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2013/04/02 15:50:58 sthen Exp $
 
 COMMENT =	SSL/SSH multiplexer
 
 VERSION =	1.14
+REVISION =	0
 DISTNAME =	sslh-${VERSION}
 CATEGORIES =	security net
 
 HOMEPAGE =	http://www.rutschle.net/tech/sslh.shtml
+
+MAINTAINER =	Bjorn Ketelaars <bjorn.ketelaars@hydroxide.nl>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =		Yes
