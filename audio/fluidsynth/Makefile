@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.19 2013/04/01 19:56:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2013/04/02 10:10:15 sthen Exp $
 
 COMMENT =		SoundFont2 software synthesizer
 DISTNAME =		fluidsynth-1.1.6
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=	fluidsynth           1.0      # 6.2
 
 CATEGORIES =		audio
-HOMEPAGE =		http://fluidsynth.resonance.org/trac
+HOMEPAGE =		http://www.fluidsynth.org/
 
 # LGPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
