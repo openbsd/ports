@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 11:07:39 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2013/04/02 16:41:21 ajacoutot Exp $
 
 COMMENT =	Mastermind clone reflexion game
 
 GNOME_PROJECT =	gnome-mastermind
 GNOME_VERSION =	0.3.1
-REVISION=	7
+REVISION=	8
 
 CATEGORIES =	games
 
@@ -21,7 +21,6 @@ MODULES =	devel/gettext \
 
 LIB_DEPENDS =	x11/gtk+2 \
 		devel/gconf2
-RUN_DEPENDS +=	x11/gnome/librsvg
 
 MODGNOME_TOOLS= 	yelp
 MODGNOME_ICON_CACHE=	Yes

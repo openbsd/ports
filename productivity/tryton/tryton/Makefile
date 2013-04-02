@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/02 14:10:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2013/04/02 16:41:21 ajacoutot Exp $
 
 COMMENT=		client of the Tryton application platform
 
 DISTNAME=		tryton-${MODPY_EGG_VERSION}
 MODPY_EGG_VERSION=	2.6.2
+REVISION=		0
 
 CATEGORIES=		x11
 
 RUN_DEPENDS=		devel/gettext \
 			x11/py-gtk2 \
-			x11/gnome/librsvg \
 			devel/py-dateutil \
 			devel/py-simplejson \
 			devel/py-tz \

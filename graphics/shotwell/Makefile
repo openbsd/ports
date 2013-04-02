@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2013/03/23 15:19:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2013/04/02 16:41:21 ajacoutot Exp $
 
 # needs to allocate 512M
 VMEM_WARNING =	Yes
@@ -11,6 +11,7 @@ EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	graphics
 MASTER_SITES =	http://yorba.org/download/shotwell/${V:C/^([0-9]+\.[0-9]+).*/\1/}/
 HOMEPAGE =	http://yorba.org/shotwell/
+REVISION =	0
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -33,8 +34,6 @@ MODULES =	devel/dconf \
 MODGNOME_TOOLS = 	yelp
 MODGNOME_DESKTOP_FILE =	Yes
 MODGNOME_ICON_CACHE =	Yes
-
-RUN_DEPENDS =	x11/gnome/librsvg
 
 BUILD_DEPENDS =	lang/vala
 

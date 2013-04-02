@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2013/03/11 11:07:39 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2013/04/02 16:41:21 ajacoutot Exp $
 
 COMMENT=	brain teaser game
 
 DISTNAME=	gbrainy-2.1.1
-REVISION=	0
+REVISION=	1
 EPOCH=		0
 
 CATEGORIES=	games
@@ -22,10 +22,10 @@ MODULES=	textproc/intltool \
 		lang/mono \
 		x11/gnome
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		x11/gnome/librsvg
 RUN_DEPENDS=	devel/mono-addins \
 		shells/bash \
-		x11/gnome/librsvg \
 		x11/gnome/mono-gnome
 
 MODGNOME_DESKTOP_FILE=	Yes

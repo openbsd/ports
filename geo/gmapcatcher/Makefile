@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/13 11:27:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2013/04/02 16:41:21 ajacoutot Exp $
 
 BROKEN=		triggers unlocking a mutex which is not locked (bug probably in py-gtk2, but some other py-gtk2 ports do still work)
 
@@ -7,7 +7,7 @@ COMMENT=	offline maps viewer
 MODPY_EGG_VERSION=	0.7.6.1
 DISTNAME=	GMapCatcher-${MODPY_EGG_VERSION}
 PKGNAME=	gmapcatcher-${MODPY_EGG_VERSION}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	geo x11
 
@@ -25,8 +25,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/py-gtk2>=1.10 \
 		databases/py-sqlite2 \
-		graphics/py-Imaging  \
-		x11/gnome/librsvg
+		graphics/py-Imaging
 
 USE_GROFF =	Yes
 

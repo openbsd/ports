@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:46:14 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/04/02 16:41:21 ajacoutot Exp $
 
 COMMENT=	nagios status monitor for the Desktop
 
 MODPY_EGG_VERSION= 0.9.9
 DISTNAME=	nagstamon_${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:S/_/-/}
+REVISION=	0
 
 CATEGORIES=	x11 net/nagios
 
@@ -23,8 +24,7 @@ MODULES=	lang/python
 
 RUN_DEPENDS=	textproc/py-lxml \
 		x11/py-gtk2 \
-		audio/sox \
-		x11/gnome/librsvg
+		audio/sox
 
 NO_TEST=	Yes
 

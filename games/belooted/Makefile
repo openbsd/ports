@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 11:07:38 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2013/04/02 16:41:21 ajacoutot Exp $
 
 COMMENT=	32-card trick-taking game
 
 DISTNAME=	belooted-0.1.4.1
-REVISION=	6
+REVISION=	7
 
 CATEGORIES=	games
 
@@ -25,8 +25,7 @@ MODULES=	devel/gettext \
 		textproc/intltool
 
 LIB_DEPENDS=	x11/gtk+2
-RUN_DEPENDS=	devel/desktop-file-utils \
-		x11/gnome/librsvg
+RUN_DEPENDS=	devel/desktop-file-utils
 
 
 CONFIGURE_STYLE=gnu
