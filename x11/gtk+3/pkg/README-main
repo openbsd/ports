@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.1 2013/04/02 10:06:37 ajacoutot Exp $
+$OpenBSD: README-main,v 1.2 2013/04/02 10:14:20 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -14,3 +14,7 @@ and appending the following line:
 gtk-print-preview-command = epdfview %f
 
 (epdfview can be replaced by any other PDF viewer command like xpdf...)
+
+Note that by default, "evince" will remove the temporary PDF preview
+file (/tmp/previewXXXXX.pdf) which might not be the case with other PDF
+viewers.
