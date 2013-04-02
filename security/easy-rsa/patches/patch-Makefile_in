@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2013/04/02 11:40:36 sthen Exp $
+--- Makefile.in.orig	Tue Apr  2 07:35:09 2013
++++ Makefile.in	Tue Apr  2 07:36:41 2013
+@@ -186,9 +186,7 @@ MAINTAINERCLEANFILES = \
+ 
+ EXTRA_DIST = easy-rsa
+ SUBDIRS = doc distro
+-dist_doc_DATA = \
+-	COPYRIGHT.GPL \
+-	COPYING
++dist_doc_DATA =
+ 
+ dist_easyrsa_DATA = 
+ all: all-recursive
