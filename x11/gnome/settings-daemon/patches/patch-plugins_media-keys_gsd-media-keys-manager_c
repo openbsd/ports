@@ -1,6 +1,9 @@
-$OpenBSD: patch-plugins_media-keys_gsd-media-keys-manager_c,v 1.6 2013/04/02 07:22:31 ajacoutot Exp $
+$OpenBSD: patch-plugins_media-keys_gsd-media-keys-manager_c,v 1.7 2013/04/02 08:30:32 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=697083
+From 6bb589a5d87c2407c4d5a00dfc543b93906f0fa3 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Tue, 02 Apr 2013 06:37:40 +0000
+Subject: media-keys: handle GSD_POWER_ACTION_LOGOUT
 
 --- plugins/media-keys/gsd-media-keys-manager.c.orig	Tue Apr  2 08:23:46 2013
 +++ plugins/media-keys/gsd-media-keys-manager.c	Tue Apr  2 08:23:23 2013
