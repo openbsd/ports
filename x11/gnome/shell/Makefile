@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2013/03/31 15:56:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2013/04/02 14:08:43 ajacoutot Exp $
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		3.8.0.1
-REVISION=		4
+REVISION=		5
 
 HOMEPAGE=		http://live.gnome.org/GnomeShell
 
@@ -39,19 +39,21 @@ MODULES=		devel/dconf \
 MODGNOME_TOOLS=		goi
 
 BUILD_DEPENDS +=	devel/gsettings-desktop-schemas
+RUN_DEPENDS +=		devel/gsettings-desktop-schemas
 
 # man pages
-BUILD_DEPENDS += textproc/docbook-xsl
+BUILD_DEPENDS +=	textproc/docbook-xsl
 
 # gnome-keybindings.pc
-BUILD_DEPENDS += x11/gnome/controlcenter
-RUN_DEPENDS += x11/gnome/controlcenter
+BUILD_DEPENDS +=	x11/gnome/controlcenter
+RUN_DEPENDS +=		x11/gnome/controlcenter
 
 # onscreen keyboard
 BUILD_DEPENDS +=	x11/gnome/caribou
+RUN_DEPENDS +=		x11/gnome/caribou
 
-LIB_DEPENDS=		audio/pulseaudio>=2.1 \
-			databases/evolution-data-server>=3.6.0p3 \
+LIB_DEPENDS=		audio/pulseaudio \
+			databases/evolution-data-server \
 			multimedia/gstreamer1/core \
 			net/telepathy/telepathy-glib \
 			sysutils/polkit \
@@ -59,14 +61,13 @@ LIB_DEPENDS=		audio/pulseaudio>=2.1 \
 			x11/gnome/gcr \
 			x11/gnome/gjs \
 			x11/gnome/menus \
-			x11/gnome/mutter>=3.6.1
-
-RUN_DEPENDS=		devel/gsettings-desktop-schemas \
-			devel/py-gobject3 \
-			x11/gnome/caribou
+			x11/gnome/mutter
 
 # polkit(8) almost always needs to know the "active" session
-RUN_DEPENDS +=	sysutils/consolekit
+RUN_DEPENDS +=		sysutils/consolekit
+
+# gnome-shell-extension-tool
+RUN_DEPENDS +=		devel/py-gobject3
 
 # Don't depend on evolution to lower down the amount of dependencies and
 # because most users want to be able to choose their PIM. Evolution can
@@ -76,6 +77,9 @@ RUN_DEPENDS +=	sysutils/consolekit
 # yelp.desktop menu entry (from yelp: OnlyShowIn=GNOME;Unity;)
 # prevents => The URI "help:gnome-help/index" does not point to a valid page.
 RUN_DEPENDS +=		x11/gnome/user-docs
+
+# panel icons (power, sound...)
+RUN_DEPENDS +=		x11/gnome/icon-theme-symbolic
 
 # add required introspection libs that are not in the dependency chain
 RUN_DEPENDS +=		inputmethods/ibus \

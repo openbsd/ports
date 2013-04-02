@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.150 2013/03/31 12:44:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.151 2013/04/02 14:08:43 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		3.8.0
-REVISION=		1
+REVISION=		2
 
 HOMEPAGE=		http://projects.gnome.org/gdm/
 
@@ -35,9 +35,6 @@ MODULES=		devel/gettext \
 # cyclic dependency, see pkg/DESCR
 # bring _all_ runtime dependencies (including sysutils/consolekit and zenity)
 #RUN_DEPENDS +=		x11/gnome/session
-
-# power icon
-RUN_DEPENDS +=		x11/gnome/icon-theme-symbolic
 
 # orca-autostart.desktop
 RUN_DEPENDS +=		x11/gnome/orca
