@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2013/04/02 16:41:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2013/04/02 17:26:34 ajacoutot Exp $
 
 COMMENT=	brain teaser game
 
@@ -22,8 +22,11 @@ MODULES=	textproc/intltool \
 		lang/mono \
 		x11/gnome
 
-BUILD_DEPENDS=	${RUN_DEPENDS} \
+BUILD_DEPENDS=	devel/mono-addins \
+		shells/bash \
+		x11/gnome/mono-gnome \
 		x11/gnome/librsvg
+
 RUN_DEPENDS=	devel/mono-addins \
 		shells/bash \
 		x11/gnome/mono-gnome

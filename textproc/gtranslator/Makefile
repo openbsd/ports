@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2013/03/11 11:42:41 espie Exp $
+# $OpenBSD: Makefile,v 1.47 2013/04/02 17:26:34 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	gettext(1) files editor for GNOME
 
 GNOME_PROJECT=	gtranslator
 GNOME_VERSION=	2.91.6
+REVISION=	0
 
 CATEGORIES=	textproc devel
 
@@ -31,8 +32,8 @@ MODULES=	devel/gettext \
 		lang/python
 
 RUN_DEPENDS=	devel/gsettings-desktop-schemas \
-		devel/iso-codes # src/gtr-language.c
-BUILD_DEPENDS=	${RUN_DEPENDS} \
+		devel/iso-codes
+BUILD_DEPENDS=	devel/gsettings-desktop-schemas \
 		devel/iso-codes
 
 LIB_DEPENDS=	devel/gobject-introspection \

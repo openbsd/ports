@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/03/10 23:04:45 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2013/04/02 17:26:34 ajacoutot Exp $
 
 COMMENT=	printed circuit board layout tool
 DISTNAME=	pcb-20110918
@@ -28,8 +28,12 @@ RUN_DEPENDS=	devel/m4 \
 		misc/shared-mime-info \
 		x11/gtk+2,-guic \
 		${MODTK_RUN_DEPENDS}
-BUILD_DEPENDS=	${RUN_DEPENDS} \
+
+BUILD_DEPENDS=	${MODTK_BUILD_DEPENDS} \
+		devel/m4 \
+		graphics/ImageMagick \
 		shells/bash
+
 LIB_DEPENDS=	graphics/gd \
 		x11/dbus \
 		x11/gtkglext

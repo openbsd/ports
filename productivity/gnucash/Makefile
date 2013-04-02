@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2013/03/11 11:37:55 espie Exp $
+# $OpenBSD: Makefile,v 1.54 2013/04/02 17:26:34 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -55,7 +55,7 @@ MODGNOME_ICON_CACHE =	Yes
 MODGCONF2_SCHEMAS_DIR = gnucash
 MODGNOME_TOOLS = 	yelp
 
-BUILD_DEPENDS =	${RUN_DEPENDS}
+BUILD_DEPENDS =	devel/slib-guile
 RUN_DEPENDS =	devel/slib-guile
 LIB_DEPENDS =	databases/libdbi \
 		devel/goffice08 \

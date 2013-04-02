@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2013/03/11 23:01:31 fgsch Exp $
+# $OpenBSD: Makefile,v 1.31 2013/04/02 17:26:34 ajacoutot Exp $
 
 COMMENT=	gtk2 comic book viewer
 
 DISTNAME=	comix-4.0.3
-REVISION=	12
+REVISION=	13
 
 CATEGORIES=	graphics
 
@@ -18,12 +18,14 @@ MODULES=	lang/python \
 MODGCONF2_LIBDEP= No
 MODGCONF2_SCHEMAS_DIR= comix
 
-BUILD_DEPENDS=	${RUN_DEPENDS} \
-		x11/gtk+2,-guic
+BUILD_DEPENDS=	graphics/py-Imaging \
+		x11/py-gtk2
+		
 RUN_DEPENDS=	graphics/py-Imaging \
 		x11/py-gtk2 \
 		misc/shared-mime-info \
-		devel/desktop-file-utils
+		devel/desktop-file-utils \
+		x11/gtk+2,-guic
 
 USE_GROFF =	Yes
 NO_TEST=	Yes
