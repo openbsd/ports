@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.72 2013/03/21 08:48:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.73 2013/04/02 16:16:47 ajacoutot Exp $
 
 COMMENT =		GTK+/GNOME frontend for MPlayer
 V =			1.0.7
 DISTNAME =		gnome-mplayer-${V}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		x11 multimedia
 
@@ -36,8 +36,6 @@ LIB_DEPENDS =		devel/libnotify>=0.7.2 \
 			x11/dbus-glib \
 			x11/gmtk>=${V}
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gnome/icon-theme>=3.6.2 \
-			x11/gnome/icon-theme-symbolic>=3.6.2 \
 			x11/gtk+2,-guic
 
 

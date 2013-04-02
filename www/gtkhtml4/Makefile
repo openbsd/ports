@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/03/11 11:44:42 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2013/04/02 16:16:47 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		lightweight HTML rendering/printing/editing engine
 
 GNOME_PROJECT=		gtkhtml
 GNOME_VERSION=		4.6.4
+REVISION=		0
 
 API_VERSION=		4.0
 SUBST_VARS=		API_VERSION
@@ -47,8 +48,7 @@ BUILD_DEPENDS=		${RUN_DEPENDS}
 # register it as a dependency instead of axing the Makefiles..
 BUILD_DEPENDS+=		devel/libsoup
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
-			devel/iso-codes \
-			x11/gnome/icon-theme
+			devel/iso-codes
 
 CONFIGURE_STYLE=	gnu
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include

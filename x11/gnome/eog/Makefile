@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.93 2013/03/29 18:26:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.94 2013/04/02 16:16:47 ajacoutot Exp $
 
 COMMENT=		Eye of GNOME, image viewing and cataloging program
 
 GNOME_PROJECT=		eog
 GNOME_VERSION=		3.8.0
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -34,8 +35,7 @@ LIB_DEPENDS=		devel/libpeas \
 			x11/gnome/desktop \
 			graphics/lcms2
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
-			misc/shared-mime-info \
-			x11/gnome/icon-theme
+			misc/shared-mime-info
 
 MODGNOME_TOOLS= 	goi yelp
 MODGNOME_DESKTOP_FILE=	Yes

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/04/02 16:16:47 ajacoutot Exp $
 
 COMMENT=		Tangerine icon theme from Ubuntu
 
 DISTNAME=		tangerine-icon-theme_0.26
 PKGNAME=		${DISTNAME:S/_/-/}
-REVISION=		6
+REVISION=		7
 CATEGORIES=		x11
 
 MASTER_SITES=		http://archive.ubuntu.com/ubuntu/pool/main/t/tangerine-icon-theme/
@@ -23,9 +23,6 @@ BUILD_DEPENDS=	x11/icon-naming-utils \
 		graphics/ImageMagick \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
-
-# Add the corresponding "Inherits" theme.
-RUN_DEPENDS +=		x11/gnome/icon-theme
 
 NO_TEST=		Yes
 USE_GMAKE=		Yes

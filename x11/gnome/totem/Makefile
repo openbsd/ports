@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2013/04/01 08:29:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.100 2013/04/02 16:16:47 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		official media player for GNOME
 
 GNOME_PROJECT=		totem
 GNOME_VERSION=		3.8.0
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS +=  totem                     0.0 # 0.0
 
@@ -51,10 +51,6 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/py-xdg \
 			x11/dbus-python \
 			x11/gnome/grilo-plugins
-
-# configure checks for this
-BUILD_DEPENDS +=	x11/gnome/icon-theme
-RUN_DEPENDS +=		x11/gnome/icon-theme
 
 LIB_DEPENDS=		x11/gnome/totem-pl-parser \
 			devel/gobject-introspection \

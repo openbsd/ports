@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2013/03/27 17:57:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2013/04/02 16:16:47 ajacoutot Exp $
 
 # XXX fix building with glib2 >= 2.29 (G_CONST_RETURN is deprecated)
 CFLAGS +=	"-DG_CONST_RETURN=const"
@@ -14,7 +14,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 PKGNAME=		gtkhtml3-${VERSION}
 
-REVISION=		4
+REVISION=		5
 
 HOMEPAGE=		http://www.gnome.org/
 
@@ -45,13 +45,14 @@ LIB_DEPENDS=		devel/gconf2 \
 			textproc/enchant \
 			x11/gtk+2
 
-BUILD_DEPENDS=		${RUN_DEPENDS}
+BUILD_DEPENDS=		devel/iso-codes
+
 # libsoup is only used by testgtkhtml, but since libsoup may be around during
 # configure, and can have disappeared afterwards, the build can fail. so
 # register it as a dependency instead of axing the Makefiles..
 BUILD_DEPENDS+=		devel/libsoup
-RUN_DEPENDS=		devel/iso-codes \
-			x11/gnome/icon-theme
+
+RUN_DEPENDS=		devel/iso-codes
 
 CONFIGURE_STYLE=	gnu
 

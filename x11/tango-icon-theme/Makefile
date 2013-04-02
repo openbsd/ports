@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/11 11:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2013/04/02 16:16:47 ajacoutot Exp $
 
 COMMENT=		Tango icon theme
 
 DISTNAME=		tango-icon-theme-0.8.90
-REVISION=		7
+REVISION=		8
 CATEGORIES=		x11
 
 HOMEPAGE=		http://tango.freedesktop.org/
@@ -18,9 +18,6 @@ RUN_DEPENDS=		x11/gtk+2,-guic
 BUILD_DEPENDS=          x11/icon-naming-utils>=0.8.7 \
 			graphics/ImageMagick \
 			x11/gtk+2,-guic
-
-# Add the corresponding "Inherits" theme.
-RUN_DEPENDS +=		x11/gnome/icon-theme
 
 CONFIGURE_STYLE= 	gnu
 USE_GMAKE=		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.121 2013/03/29 17:41:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.122 2013/04/02 16:16:47 ajacoutot Exp $
 
 COMMENT=		GNOME file manager
 
@@ -16,6 +16,7 @@ COMMENT=		GNOME file manager
 
 GNOME_PROJECT=		nautilus
 GNOME_VERSION=		3.8.0
+REVISION=		0
 
 SHARED_LIBS +=  nautilus-extension   3.0      # 5.0
 
@@ -45,7 +46,6 @@ BUILD_DEPENDS=		misc/shared-mime-info \
 			devel/gsettings-desktop-schemas
 
 RUN_DEPENDS=		misc/shared-mime-info \
-			x11/gnome/icon-theme \
 			x11/gnome/gvfs \
 			devel/gsettings-desktop-schemas
 

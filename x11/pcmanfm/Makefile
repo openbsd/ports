@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2013/03/21 08:48:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2013/04/02 16:16:47 ajacoutot Exp $
 
 COMMENT=	fast and lightweight file manager
 
 DISTNAME=	pcmanfm-0.3.5.10
-REVISION=	10
+REVISION=	11
 
 CATEGORIES=	x11
 
@@ -25,8 +25,7 @@ WANTLIB += xcb-render xcb-render-util startup-notification-1
 LIB_DEPENDS=	x11/gtk+2 \
 		sysutils/gamin \
 		devel/startup-notification
-RUN_DEPENDS=	x11/gnome/icon-theme \
-		devel/desktop-file-utils \
+RUN_DEPENDS=	devel/desktop-file-utils \
 		misc/shared-mime-info>=0.21
 
 MODULES=	devel/gettext

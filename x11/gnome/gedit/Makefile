@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.97 2013/03/30 13:04:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.98 2013/04/02 16:16:47 ajacoutot Exp $
 
 COMMENT=		lightweight GNOME text editor
 
 GNOME_PROJECT=		gedit
 GNOME_VERSION=		3.8.0
+REVISION=		0
 
 CATEGORIES=		editors
 
@@ -38,9 +39,6 @@ LIB_DEPENDS=		devel/libpeas>=1.8.0 \
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/iso-codes \
 			x11/gnome/gvfs #--enable-gvfs-metadata
-
-# Icon 'user-bookmarks-symbolic' not present in theme
-RUN_DEPENDS += x11/gnome/icon-theme-symbolic
 
 MODGNOME_TOOLS= 	goi yelp
 MODGNOME_DESKTOP_FILE=	Yes

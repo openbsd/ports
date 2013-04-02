@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2013/04/01 10:33:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.93 2013/04/02 16:16:47 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,6 +20,8 @@ PKGNAME-djvu=	evince-djvu-${GNOME_VERSION}
 PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}
 PKGNAME-nautilus= nautilus-evince-${GNOME_VERSION}
 
+REVISION-main=	0
+
 SHARED_LIBS +=  evdocument3               0.1 # 4.0
 SHARED_LIBS +=  evview3                   0.0 # 3.0
 
@@ -37,8 +39,7 @@ MODULES=	devel/gettext \
 
 USE_GROFF =	Yes
 
-BUILD_DEPENDS=	x11/gnome/icon-theme \
-		devel/gsettings-desktop-schemas
+BUILD_DEPENDS=	devel/gsettings-desktop-schemas
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes gtk-3 pango-1.0
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
@@ -65,7 +66,6 @@ RUN_DEPENDS-main= ${RUN_DEPENDS} \
 		devel/gsettings-desktop-schemas \
 		misc/shared-mime-info \
 		print/ghostscript/gnu \
-		x11/gnome/icon-theme \
 		${MODGNOME_RUN_DEPENDS_yelp}
 
 WANTLIB-djvu=	${WANTLIB} jpeg evdocument3 djvulibre ICE SM \

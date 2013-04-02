@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/21 08:48:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2013/04/02 16:16:47 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	addressbook manager
 
 DISTNAME=	rubrica2-2.0.7
-REVISION=	6
+REVISION=	7
 EPOCH=		0
 
 CATEGORIES=	productivity x11
@@ -51,8 +51,7 @@ CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
 		ac_cv_path_GTKDOC_MKPDF=""
 
 RUN_DEPENDS=	devel/desktop-file-utils \
-		misc/shared-mime-info \
-		x11/gnome/icon-theme
+		misc/shared-mime-info
 
 LIB_DEPENDS=	devel/libnotify>=0.7.2 \
 		devel/libglade2

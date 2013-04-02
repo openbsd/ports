@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2013/03/30 13:07:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2013/04/02 16:16:47 ajacoutot Exp $
 
 COMMENT=	sytem monitor for GNOME
 
 GNOME_PROJECT=	gnome-system-monitor
 GNOME_VERSION=	3.8.0
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	sysutils
 
@@ -26,8 +26,6 @@ MODULES=	devel/dconf \
 		devel/gettext \
 		x11/gnome
 
-RUN_DEPENDS=	x11/gnome/icon-theme
-BUILD_DEPENDS=	x11/gnome/icon-theme
 LIB_DEPENDS=	devel/libgtop2 \
 		devel/libwnck3 \
 		x11/gnome/librsvg \

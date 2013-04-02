@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2013/03/11 11:44:43 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2013/04/02 16:16:47 ajacoutot Exp $
 
 COMMENT =	standalone YouTube.com video browser/player
 
 DISTNAME =	minitube-1.9
-REVISION =	0
+REVISION =	1
 CATEGORIES =	www multimedia
 
 HOMEPAGE =	http://flavio.tordini.org/minitube
@@ -23,7 +23,6 @@ WANTLIB +=	freetype m phonon pthread stdc++
 
 RUN_DEPENDS =	multimedia/gstreamer-0.10/plugins-good \
 		multimedia/gstreamer-0.10/plugins-ffmpeg \
-		x11/gnome/icon-theme \
 		devel/desktop-file-utils \
 		x11/gtk+2,-guic
 

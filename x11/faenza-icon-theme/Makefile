@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/04/02 16:16:47 ajacoutot Exp $
 
 COMMENT =		complete, colourful suite of squared icons
 
 V =			1.3
 DISTNAME =		faenza-icon-theme_${V}
 PKGNAME =		faenza-icon-theme-${V}
+REVISION =		0
 CATEGORIES =		x11
 
 HOMEPAGE =		http://tiheum.deviantart.com/
@@ -21,9 +22,6 @@ NO_BUILD =		Yes
 NO_TEST =		Yes
 
 RUN_DEPENDS =		x11/gtk+2,-guic
-
-# Add the corresponding "Inherits" theme
-RUN_DEPENDS +=		x11/gnome/icon-theme
 
 WRKDIST =		${WRKDIR}
 ICONSDIR =		${PREFIX}/share/icons/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.191 2013/03/30 11:37:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.192 2013/04/02 16:16:47 ajacoutot Exp $
 
 BROKEN=			needs webkit>=1.10.0
 
@@ -12,6 +12,8 @@ GNOME_VERSION=		3.6.4
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}
+
+REVISION-main=		0
 
 # NOTE: when R changes, increment EVO_VERSION accordingly and bump:
 # mail/evolution-ews
@@ -53,8 +55,7 @@ MODULES=		devel/dconf \
 
 BUILD_DEPENDS=		devel/bison \
 			devel/gsettings-desktop-schemas \
-			devel/iso-codes \
-			x11/gnome/icon-theme
+			devel/iso-codes
 
 LIB_DEPENDS=		databases/evolution-data-server>=${GNOME_VERSION} \
 			devel/libnotify \
@@ -68,8 +69,7 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			x11/gnome/desktop
 
 RUN_DEPENDS-main=	${RUN_DEPENDS} \
-			devel/gsettings-desktop-schemas \
-			x11/gnome/icon-theme
+			devel/gsettings-desktop-schemas
 
 # gstreamer1(-plugins-base) is needed for the audio-inline plugin
 BUILD_DEPENDS +=	multimedia/gstreamer1/core

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2013/04/02 07:22:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.100 2013/04/02 16:16:47 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	GNOME settings daemon
 
 GNOME_PROJECT=	gnome-settings-daemon
 GNOME_VERSION=	3.8.0
-REVISION=	3
+REVISION=	4
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -51,9 +51,6 @@ RUN_DEPENDS +=	sysutils/consolekit
 
 # plugins/mouse/gsd-mouse-manager.c
 RUN_DEPENDS += x11/gnome/mousetweaks
-
-# otherwise we end up without icons on minimal install
-RUN_DEPENDS +=	x11/gnome/icon-theme
 
 # plugins/power/gsd-power-manager.c; optional dependency
 # cyclic dep: gnome-session -> gnome-settings-daemon -> gnome-session
