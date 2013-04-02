@@ -1,4 +1,4 @@
-# $OpenBSD: sparc64,v 1.43 2013/02/20 20:22:30 naddy Exp $
+# $OpenBSD: sparc64,v 1.44 2013/04/02 14:27:59 naddy Exp $
 # This is the master list of subdirs used to choose sparc64 packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
@@ -32,13 +32,13 @@ mail/mutt/stable
 #audio/vorbis-tools
 audio/mpg123
 net/curl
-#net/wget
+net/wget
 #print/ghostscript/gnu
 #print/gv
 #audio/cdparanoia
 net/ircII
 #!www/mozilla-firefox
-textproc/xpdf
+#textproc/xpdf
 #x11/kde/base3
 #x11/kde/office3
 #x11/kde/edu3
@@ -122,8 +122,7 @@ net/ldns/libldns
 #print/cups
 #x11/tk/8.5
 #lang/ruby/1.8
-#lang/g77
-#devel/libf2c
+#lang/gfortran
 #devel/git
 #devel/subversion
 #net/openvpn

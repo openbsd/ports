@@ -1,4 +1,4 @@
-# $OpenBSD: amd64,v 1.45 2013/02/20 20:22:30 naddy Exp $
+# $OpenBSD: amd64,v 1.46 2013/04/02 14:27:59 naddy Exp $
 # This is the master list of subdirs used to choose amd64 packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
@@ -16,7 +16,7 @@ sysutils/cdrtools
 sysutils/dvd+rw-tools
 mail/procmail
 mail/fetchmail
-net/samba
+#net/samba
 shells/zsh
 shells/bash
 shells/tcsh
@@ -38,7 +38,7 @@ print/gv
 audio/cdparanoia
 net/ircII
 www/mozilla-firefox
-textproc/xpdf
+#textproc/xpdf
 #x11/kde/base3
 #x11/kde/office3
 #x11/kde/edu3
@@ -47,7 +47,7 @@ textproc/xpdf
 x11/windowmaker
 x11/windowmaker-extra
 www/tidyp
-editors/nedit
+#editors/nedit
 databases/openldap,-server
 x11/xpostit
 x11/xdaliclock
@@ -55,7 +55,7 @@ x11/xkeycaps
 audio/mp3cddb
 editors/nano
 textproc/antiword
-editors/ted
+#editors/ted
 lang/python/2.7
 lang/python/2.7,-tools
 www/mod_perl
@@ -73,7 +73,7 @@ archivers/zip
 net/ettercap
 security/stunnel
 net/silc-client
-graphics/xfig
+#graphics/xfig
 x11/xautolock
 #mail/sylpheed
 net/pidgin
@@ -100,9 +100,9 @@ audio/xmms,-mp3
 audio/xmms,-vorbis
 graphics/jhead
 #graphics/gphoto2
-x11/blackbox
-x11/icewm
-x11/rdesktop
+#x11/blackbox
+#x11/icewm
+#x11/rdesktop
 #textproc/ispell
 #textproc/ispell,-french
 #textproc/ispell,-spanish
@@ -122,10 +122,9 @@ databases/sqlitebrowser
 #print/cups
 #x11/tk/8.5
 #lang/ruby/1.8
-#lang/g77
-#devel/libf2c
+#lang/gfortran
 #devel/git
-#devel/subversion
+devel/subversion
 net/openvpn
 #net/rtorrent
 #www/lighttpd
