@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2013/04/02 16:16:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.95 2013/04/02 17:45:46 ajacoutot Exp $
 
 COMMENT=		Eye of GNOME, image viewing and cataloging program
 
@@ -28,12 +28,14 @@ MODULES=		devel/dconf \
 			lang/python \
 			x11/gnome
 
-BUILD_DEPENDS=		${RUN_DEPENDS}
+BUILD_DEPENDS=		devel/gsettings-desktop-schemas
+
 LIB_DEPENDS=		devel/libpeas \
 			graphics/libexif \
 			textproc/exempi \
 			x11/gnome/desktop \
 			graphics/lcms2
+
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			misc/shared-mime-info
 

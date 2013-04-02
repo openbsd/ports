@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2013/03/21 08:48:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2013/04/02 17:45:46 ajacoutot Exp $
 
 COMMENT=		fd.o menu editor for GNOME
 
@@ -13,7 +13,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES=		lang/python \
 			x11/gnome
 
-BUILD_DEPENDS=		${RUN_DEPENDS}
+BUILD_DEPENDS=		devel/py-gobject3 \
+			x11/gnome/menus
+
 RUN_DEPENDS=		devel/py-gobject3 \
 			x11/gnome/menus
 
