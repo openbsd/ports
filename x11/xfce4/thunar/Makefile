@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2013/03/11 11:46:17 espie Exp $
+# $OpenBSD: Makefile,v 1.51 2013/04/02 16:21:19 ajacoutot Exp $
 
 COMMENT=	Xfce4 file manager
 
@@ -6,6 +6,7 @@ XFCE_VERSION=	1.6.2
 XFCE_PROJECT=	Thunar
 # :L is here for a reason
 PKGNAME=	${DISTNAME:L}
+REVISION=	0
 
 SHARED_LIBS=	thunarx-2	0.0
 
@@ -34,8 +35,7 @@ LIB_DEPENDS=	x11/xfce4/exo>=0.10.0 \
 		x11/dbus-glib \
 		x11/dbus
 
-RUN_DEPENDS=	xfce4-icon-theme-*|tango-icon-theme-*|gnome-icon-theme-*:x11/tango-icon-theme \
-		x11/gnome/gvfs
+RUN_DEPENDS=	x11/gnome/gvfs
 
 WANTLIB += GL ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
