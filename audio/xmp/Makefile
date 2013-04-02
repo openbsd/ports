@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2013/04/01 17:16:32 rpe Exp $
+# $OpenBSD: Makefile,v 1.51 2013/04/02 14:09:23 naddy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -42,7 +42,6 @@ CONFIGURE_ARGS+=	--disable-alsa \
 			--disable-esd \
 			--disable-oss \
 			--disable-pulseaudio \
-			--enable-bmp-plugin \
 			--enable-xmms-plugin
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
