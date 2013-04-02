@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 11:46:11 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2013/04/02 16:19:00 ajacoutot Exp $
 
 COMMENT=	extra icons for GNOME
 
 GNOME_PROJECT=	gnome-icon-theme-extras
 GNOME_VERSION=	3.6.2
+REVISION=	0
 
 CATEGORIES=	x11
 
@@ -13,9 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES=	x11/gnome
 
 BUILD_DEPENDS=	x11/icon-naming-utils \
-		x11/icontool \
-		${RUN_DEPENDS}
-RUN_DEPENDS=	x11/gnome/icon-theme
+		x11/icontool
 
 PKG_ARCH=	*
 
