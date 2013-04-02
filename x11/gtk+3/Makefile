@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2013/04/02 10:14:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.72 2013/04/02 16:11:44 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -11,7 +11,7 @@ GNOME_PROJECT=		gtk+
 PKGNAME-main=		gtk+3-${GNOME_VERSION}
 PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
 
-REVISION-main=		1
+REVISION-main=		2
 
 CATEGORIES=		x11 devel
 
@@ -49,6 +49,14 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			devel/pango>=1.34.0 \
 			graphics/gdk-pixbuf2>=2.28.0 \
 			x11/gnome/at-spi2-atk>=2.8.0
+
+RUN_DEPENDS-main=	${RUN_DEPENDS}
+
+# convenient dependency to prevent hunting what needs what:
+# some apps need more icons than the stock ones
+# some apps require symbolic icons with no fallback
+# some apps needs the svg version of the icon
+RUN_DEPENDS-main +=	x11/gnome/icon-theme-symbolic #pulls in gnome-icon-theme+librsvg
 
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += c

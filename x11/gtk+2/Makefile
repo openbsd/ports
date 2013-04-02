@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.164 2013/04/02 10:14:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.165 2013/04/02 16:11:44 ajacoutot Exp $
 
 COMMENT-main=		multi-platform graphical toolkit
 COMMENT-guic=		gtk+ icon theme caching utility
@@ -9,7 +9,7 @@ GNOME_PROJECT=		gtk+
 PKGNAME-main=		gtk+2-${GNOME_VERSION}
 PKGNAME-guic=		gtk-update-icon-cache-${GNOME_VERSION}
 
-REVISION-main=		2
+REVISION-main=		3
 REVISION-guic=		0
 
 CATEGORIES=		x11 devel
@@ -46,6 +46,12 @@ LIB_DEPENDS-main= 	${LIB_DEPENDS} \
 			devel/pango \
 			devel/atk \
 			print/cups,-libs
+
+# convenient dependency to prevent hunting what needs what:
+# some apps need more icons than the stock ones
+# some apps require symbolic icons with no fallback
+# some apps needs the svg version of the icon
+RUN_DEPENDS-main +=	x11/gnome/icon-theme-symbolic #pulls in gnome-icon-theme+librsvg
 
 WANTLIB-main += ${WANTLIB} c pthread glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB-main += gio-2.0 pango-1.0 pangocairo-1.0 pangoft2-1.0 atk-1.0
