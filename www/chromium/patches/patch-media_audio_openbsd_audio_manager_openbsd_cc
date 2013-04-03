@@ -1,6 +1,6 @@
-$OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_cc,v 1.13 2013/01/18 21:38:02 robert Exp $
---- media/audio/openbsd/audio_manager_openbsd.cc.orig	Tue Jan  8 03:40:10 2013
-+++ media/audio/openbsd/audio_manager_openbsd.cc	Mon Jan 14 19:47:35 2013
+$OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_cc,v 1.14 2013/04/03 08:19:10 robert Exp $
+--- media/audio/openbsd/audio_manager_openbsd.cc.orig.port	Fri Mar 22 02:12:58 2013
++++ media/audio/openbsd/audio_manager_openbsd.cc	Tue Apr  2 21:05:17 2013
 @@ -4,43 +4,23 @@
  
  #include "media/audio/openbsd/audio_manager_openbsd.h"

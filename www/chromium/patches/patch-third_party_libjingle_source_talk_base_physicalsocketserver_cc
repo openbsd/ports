@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_libjingle_source_talk_base_physicalsocketserver_cc,v 1.1 2013/04/03 08:19:10 robert Exp $
+--- third_party/libjingle/source/talk/base/physicalsocketserver.cc.orig.port	Fri Mar 22 02:15:28 2013
++++ third_party/libjingle/source/talk/base/physicalsocketserver.cc	Tue Apr  2 21:05:18 2013
+@@ -440,7 +440,7 @@ class PhysicalSocket : public AsyncSocket, public sigs
+ 
+     ASSERT(false);
+     return -1;
+-#elif defined(IOS) || defined(OSX)
++#elif defined(IOS) || defined(OSX) || defined(OPENBSD)
+     // No simple way to do this on Mac OS X.
+     // SIOCGIFMTU would work if we knew which interface would be used, but
+     // figuring that out is pretty complicated. For now we'll return an error

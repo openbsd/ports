@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.131 2013/04/02 16:16:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.132 2013/04/03 08:19:10 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 
 COMMENT=		Chromium browser
 
-V=			25.0.1364.173
+V=			26.0.1410.43
 DISTNAME=		chromium-${V}
-REVISION=		2
 
 CATEGORIES=		www
 
@@ -14,7 +13,7 @@ HOMEPAGE=		http://code.google.com/chromium/
 
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
-EXTRACT_SUFX=		.tar.bz2
+EXTRACT_SUFX=		.tar.xz
 
 # The proprietary flavor compiles and enables patented codecs like H.264
 FLAVORS=	proprietary
@@ -30,21 +29,24 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/
 
-MODULES=	gcc4 lang/python
+MODULES=	lang/clang lang/python
 
-MODGCC4_ARCHS=	*
-MODGCC4_LANGS=	c++
+MODCLANG_ARCHS=	*
+MODCLANG_LANGS=	c++
 
 MODPY_RUNDEP=	No
+
+PATCHORIG=	.orig.port
 
 WANTLIB += X11 Xext Xfixes Xrender Xss bz2 c cairo cups dbus-1 event
 WANTLIB += execinfo expat fontconfig freetype gconf-2 gcrypt gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += jpeg m nspr4 nss3 nssutil3 pango-1.0 pangocairo-1.0
-WANTLIB += plc4 png pthread smime3 speex estdc++
-WANTLIB += xml2 xslt vpx
+WANTLIB += plc4 png pthread smime3 speex
+WANTLIB += xml2 xslt
 WANTLIB += atk-1.0 usb-1.0 Xrandr sndio
 WANTLIB += Xcomposite
+WANTLIB += stdc++
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
@@ -69,8 +71,7 @@ LIB_DEPENDS=	devel/libexecinfo \
 		textproc/libxslt \
 		x11/gtk+2 \
 		audio/speex \
-		print/cups,-libs \
-		multimedia/libvpx
+		print/cups,-libs
 
 .include <bsd.own.mk>
 
@@ -95,20 +96,22 @@ GYP_DEFS=	-Duse_system_bzip2=1 \
 		-Duse_system_libjpeg=1 \
 		-Duse_system_libpng=1 \
 		-Duse_system_libusb=1 \
-		-Duse_system_libvpx=1 \
+		-Duse_system_libvpx=0 \
 		-Duse_system_libxml=1 \
 		-Duse_system_speex=1 \
 		-Duse_system_sqlite=0 \
 		-Duse_system_yasm=1 \
 		-Duse_system_zlib=0 \
 		-Ddisable_nacl=1 \
-		-Ddisable_sse2=1 \
+		-Dlinux_breakpad=0 \
 		-Dlinux_use_tcmalloc=0 \
 		-Dlinux_strip_binary=1 \
 		-Denable_webrtc=0 \
 		-Denable_one_click_signin=1 \
 		-Duse_kerberos=0 \
 		-Duse_sndio=1 \
+		-Dclang=1 \
+		-Dclang_use_chrome_plugins=0 \
 		-DOS=openbsd
 
 # Note: these keys are for OpenBSD use ONLY. For your own distribution,

@@ -1,10 +1,10 @@
-$OpenBSD: patch-chrome_chrome_browser_extensions_gypi,v 1.1 2013/03/15 08:30:33 robert Exp $
---- chrome/chrome_browser_extensions.gypi.orig	Sat Mar  9 14:42:01 2013
-+++ chrome/chrome_browser_extensions.gypi	Sat Mar  9 14:42:18 2013
-@@ -357,7 +357,6 @@
-         'browser/extensions/api/system_info_memory/system_info_memory_api.h',
+$OpenBSD: patch-chrome_chrome_browser_extensions_gypi,v 1.2 2013/04/03 08:19:10 robert Exp $
+--- chrome/chrome_browser_extensions.gypi.orig.port	Fri Mar 22 02:14:33 2013
++++ chrome/chrome_browser_extensions.gypi	Tue Apr  2 21:05:17 2013
+@@ -392,7 +392,6 @@
          'browser/extensions/api/system_info_storage/storage_info_provider.cc',
          'browser/extensions/api/system_info_storage/storage_info_provider.h',
+         'browser/extensions/api/system_info_storage/storage_info_provider_android.cc',
 -        'browser/extensions/api/system_info_storage/storage_info_provider_linux.cc',
          'browser/extensions/api/system_info_storage/storage_info_provider_mac.cc',
          'browser/extensions/api/system_info_storage/storage_info_provider_win.cc',

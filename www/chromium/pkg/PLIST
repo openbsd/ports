@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2013/03/15 08:30:33 robert Exp $
+@comment $OpenBSD: PLIST,v 1.24 2013/04/03 08:19:10 robert Exp $
 bin/chrome
 chrome/
 @bin chrome/chrome
@@ -75,6 +75,7 @@ chrome/resources/inspector/DevTools.js
 chrome/resources/inspector/ElementsPanel.js
 chrome/resources/inspector/HeapSnapshotWorker.js
 chrome/resources/inspector/Images/
+chrome/resources/inspector/Images/addIcon.png
 chrome/resources/inspector/Images/applicationCache.png
 chrome/resources/inspector/Images/back.png
 chrome/resources/inspector/Images/breakpointBorder.png

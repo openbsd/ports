@@ -1,6 +1,6 @@
-$OpenBSD: patch-third_party_libvpx_unpack_lib_posix_sh,v 1.1 2012/10/12 16:46:10 robert Exp $
---- third_party/libvpx/unpack_lib_posix.sh.orig	Wed Oct 10 23:00:29 2012
-+++ third_party/libvpx/unpack_lib_posix.sh	Wed Oct 10 23:00:42 2012
+$OpenBSD: patch-third_party_libvpx_unpack_lib_posix_sh,v 1.2 2013/04/03 08:19:10 robert Exp $
+--- third_party/libvpx/unpack_lib_posix.sh.orig.port	Fri Mar 22 02:16:03 2013
++++ third_party/libvpx/unpack_lib_posix.sh	Tue Apr  2 21:05:18 2013
 @@ -1,4 +1,4 @@
 -#!/bin/bash -e
 +#!/usr/bin/env bash

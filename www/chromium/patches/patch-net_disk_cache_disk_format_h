@@ -1,6 +1,6 @@
-$OpenBSD: patch-net_disk_cache_disk_format_h,v 1.5 2012/10/12 16:46:10 robert Exp $
---- net/disk_cache/disk_format.h.orig	Tue Sep 25 15:01:37 2012
-+++ net/disk_cache/disk_format.h	Wed Oct 10 17:19:28 2012
+$OpenBSD: patch-net_disk_cache_disk_format_h,v 1.6 2013/04/03 08:19:10 robert Exp $
+--- net/disk_cache/disk_format.h.orig.port	Fri Mar 22 02:13:23 2013
++++ net/disk_cache/disk_format.h	Tue Apr  2 21:05:17 2013
 @@ -157,7 +157,7 @@ struct RankingsNode {
  };
  #pragma pack(pop)

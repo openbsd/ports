@@ -1,6 +1,6 @@
-$OpenBSD: patch-third_party_ffmpeg_libavcodec_x86_h264_i386_h,v 1.1 2012/11/26 07:32:30 robert Exp $
---- third_party/ffmpeg/libavcodec/x86/h264_i386.h.orig	Sun Nov 25 17:11:57 2012
-+++ third_party/ffmpeg/libavcodec/x86/h264_i386.h	Sun Nov 25 17:32:39 2012
+$OpenBSD: patch-third_party_ffmpeg_libavcodec_x86_h264_i386_h,v 1.2 2013/04/03 08:19:10 robert Exp $
+--- third_party/ffmpeg/libavcodec/x86/h264_i386.h.orig.port	Fri Mar 22 02:15:00 2013
++++ third_party/ffmpeg/libavcodec/x86/h264_i386.h	Tue Apr  2 21:05:17 2013
 @@ -38,7 +38,7 @@
  
  //FIXME use some macros to avoid duplicating get_cabac (cannot be done yet

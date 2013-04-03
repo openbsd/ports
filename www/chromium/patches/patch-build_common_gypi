@@ -1,0 +1,14 @@
+$OpenBSD: patch-build_common_gypi,v 1.14 2013/04/03 08:19:10 robert Exp $
+--- build/common.gypi.orig.port	Fri Mar 22 02:13:42 2013
++++ build/common.gypi	Tue Apr  2 21:05:17 2013
+@@ -3956,8 +3956,8 @@
+           ],
+         }, {
+           'make_global_settings': [
+-            ['CC', '<(make_clang_dir)/bin/clang'],
+-            ['CXX', '<(make_clang_dir)/bin/clang++'],
++            ['CC', '/usr/local/bin/clang'],
++            ['CXX', '/usr/local/bin/clang++'],
+             ['LINK', '$(CXX)'],
+             ['CC.host', '$(CC)'],
+             ['CXX.host', '$(CXX)'],

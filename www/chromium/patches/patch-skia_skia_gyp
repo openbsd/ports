@@ -1,16 +1,7 @@
-$OpenBSD: patch-skia_skia_gyp,v 1.8 2013/03/15 08:30:33 robert Exp $
---- skia/skia.gyp.orig	Thu Mar  7 21:01:39 2013
-+++ skia/skia.gyp	Fri Mar  8 21:55:02 2013
-@@ -342,7 +342,7 @@
-             '__ARM_HAVE_NEON',
-           ],
-         }],
--        [ 'target_arch == "arm" or target_arch == "mipsel"', {
-+        [ 'target_arch == "arm" or target_arch == "mipsel" or disable_sse2 == 1', {
-           'sources!': [
-             '../third_party/skia/src/opts/opts_check_SSE2.cpp'
-           ],
-@@ -654,7 +654,7 @@
+$OpenBSD: patch-skia_skia_gyp,v 1.9 2013/04/03 08:19:10 robert Exp $
+--- skia/skia.gyp.orig.port	Fri Mar 22 02:13:24 2013
++++ skia/skia.gyp	Tue Apr  2 21:05:17 2013
+@@ -664,7 +664,7 @@
              'SK_BUILD_FOR_ANDROID_NDK',
            ],
          }],
@@ -19,16 +10,7 @@ $OpenBSD: patch-skia_skia_gyp,v 1.8 2013/03/15 08:30:33 robert Exp $
            'sources': [
              '../third_party/skia/src/opts/SkBitmapProcState_opts_SSE2.cpp',
              '../third_party/skia/src/opts/SkBlitRect_opts_SSE2.cpp',
-@@ -663,7 +663,7 @@
-           ],
-           'conditions': [
-             # x86 Android doesn't support SSSE3 instructions.
--            [ 'OS != "android"', {
-+            [ 'OS != "android" and os_bsd != 1', {
-               'dependencies': [
-                 'skia_opts_ssse3',
-               ],
-@@ -735,7 +735,7 @@
+@@ -745,7 +745,7 @@
              '../third_party/skia/src/opts/opts_check_arm.cpp',
            ],
          }],

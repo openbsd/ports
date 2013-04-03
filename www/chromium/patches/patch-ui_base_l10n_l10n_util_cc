@@ -1,6 +1,6 @@
-$OpenBSD: patch-ui_base_l10n_l10n_util_cc,v 1.7 2013/01/18 21:38:02 robert Exp $
---- ui/base/l10n/l10n_util.cc.orig	Tue Jan  8 03:46:08 2013
-+++ ui/base/l10n/l10n_util.cc	Mon Jan 14 19:47:35 2013
+$OpenBSD: patch-ui_base_l10n_l10n_util_cc,v 1.8 2013/04/03 08:19:10 robert Exp $
+--- ui/base/l10n/l10n_util.cc.orig.port	Fri Mar 22 02:14:36 2013
++++ ui/base/l10n/l10n_util.cc	Tue Apr  2 21:05:18 2013
 @@ -33,7 +33,7 @@
  #include "base/android/locale_utils.h"
  #endif
@@ -10,7 +10,7 @@ $OpenBSD: patch-ui_base_l10n_l10n_util_cc,v 1.7 2013/01/18 21:38:02 robert Exp $
  #include <glib.h>
  #endif
  
-@@ -418,7 +418,7 @@ std::string GetApplicationLocale(const std::string& pr
+@@ -415,7 +415,7 @@ std::string GetApplicationLocale(const std::string& pr
    // On Android, query java.util.Locale for the default locale.
    candidates.push_back(base::android::GetDefaultLocale());
  

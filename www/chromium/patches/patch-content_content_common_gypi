@@ -1,6 +1,6 @@
-$OpenBSD: patch-content_content_common_gypi,v 1.4 2013/03/15 08:30:33 robert Exp $
---- content/content_common.gypi.orig	Thu Feb 21 04:26:58 2013
-+++ content/content_common.gypi	Fri Feb 22 19:40:32 2013
+$OpenBSD: patch-content_content_common_gypi,v 1.5 2013/04/03 08:19:10 robert Exp $
+--- content/content_common.gypi.orig.port	Fri Mar 22 02:13:17 2013
++++ content/content_common.gypi	Tue Apr  2 21:05:17 2013
 @@ -345,11 +345,8 @@
      'common/sandbox_mac.h',
      'common/sandbox_mac.mm',

@@ -1,12 +1,12 @@
-$OpenBSD: patch-third_party_libusb_libusb_gyp,v 1.1 2012/08/26 18:47:01 robert Exp $
---- third_party/libusb/libusb.gyp.orig	Mon Aug 20 11:49:15 2012
-+++ third_party/libusb/libusb.gyp	Mon Aug 20 11:49:29 2012
+$OpenBSD: patch-third_party_libusb_libusb_gyp,v 1.2 2013/04/03 08:19:10 robert Exp $
+--- third_party/libusb/libusb.gyp.orig.port	Fri Mar 22 02:13:39 2013
++++ third_party/libusb/libusb.gyp	Tue Apr  2 21:05:18 2013
 @@ -10,7 +10,7 @@
      {
        'target_name': 'libusb',
        'conditions': [
--        ['OS == "linux" and use_system_libusb', {
-+        ['(OS == "linux" or os_bsd==1) and use_system_libusb', {
+-        ['OS == "linux" and use_system_libusb==1', {
++        ['(OS == "linux" or os_bsd==1) and use_system_libusb==1', {
            'type': 'none',
-           'direct_dependent_settings': {
-             'defines': [
+           'variables': {
+             'headers_root_path': 'src/libusb',

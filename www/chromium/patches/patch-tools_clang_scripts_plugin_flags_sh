@@ -1,6 +1,6 @@
-$OpenBSD: patch-tools_clang_scripts_plugin_flags_sh,v 1.1 2012/07/10 09:22:34 robert Exp $
---- tools/clang/scripts/plugin_flags.sh.orig	Sat Jul  7 09:51:07 2012
-+++ tools/clang/scripts/plugin_flags.sh	Sat Jul  7 09:51:22 2012
+$OpenBSD: patch-tools_clang_scripts_plugin_flags_sh,v 1.2 2013/04/03 08:19:10 robert Exp $
+--- tools/clang/scripts/plugin_flags.sh.orig.port	Fri Mar 22 02:13:06 2013
++++ tools/clang/scripts/plugin_flags.sh	Tue Apr  2 21:05:18 2013
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/usr/bin/env bash

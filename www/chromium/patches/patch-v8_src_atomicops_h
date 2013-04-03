@@ -1,0 +1,16 @@
+$OpenBSD: patch-v8_src_atomicops_h,v 1.3 2013/04/03 08:19:10 robert Exp $
+--- v8/src/atomicops.h.orig.port	Fri Mar 22 02:16:35 2013
++++ v8/src/atomicops.h	Tue Apr  2 21:05:18 2013
+@@ -54,7 +54,12 @@
+ namespace v8 {
+ namespace internal {
+ 
++#if defined(__OpenBSD__) && defined(__i386__)
++typedef long int Atomic32;
++#else
+ typedef int32_t Atomic32;
++#endif
++
+ #ifdef V8_HOST_ARCH_64_BIT
+ // We need to be able to go between Atomic64 and AtomicWord implicitly.  This
+ // means Atomic64 and AtomicWord should be the same type on 64-bit.

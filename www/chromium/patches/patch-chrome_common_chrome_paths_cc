@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_common_chrome_paths_cc,v 1.13 2013/03/15 08:30:33 robert Exp $
---- chrome/common/chrome_paths.cc.orig	Thu Feb 21 04:37:05 2013
-+++ chrome/common/chrome_paths.cc	Fri Feb 22 19:40:32 2013
-@@ -425,7 +425,7 @@ bool PathProvider(int key, FilePath* result) {
+$OpenBSD: patch-chrome_common_chrome_paths_cc,v 1.14 2013/04/03 08:19:10 robert Exp $
+--- chrome/common/chrome_paths.cc.orig.port	Fri Mar 22 02:14:32 2013
++++ chrome/common/chrome_paths.cc	Tue Apr  2 21:05:17 2013
+@@ -441,7 +441,7 @@ bool PathProvider(int key, base::FilePath* result) {
        if (!file_util::PathExists(cur))  // We don't want to create this
          return false;
        break;
@@ -9,4 +9,4 @@ $OpenBSD: patch-chrome_common_chrome_paths_cc,v 1.13 2013/03/15 08:30:33 robert 
 +#if defined(OS_POSIX) && !defined(OS_MACOSX)
      case chrome::DIR_POLICY_FILES: {
  #if defined(GOOGLE_CHROME_BUILD)
-       cur = FilePath(FILE_PATH_LITERAL("/etc/opt/chrome/policies"));
+       cur = base::FilePath(FILE_PATH_LITERAL("/etc/opt/chrome/policies"));

@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_chrome_browser_main_posix_cc,v 1.5 2013/03/15 08:30:33 robert Exp $
---- chrome/browser/chrome_browser_main_posix.cc.orig	Thu Mar  7 21:02:17 2013
-+++ chrome/browser/chrome_browser_main_posix.cc	Fri Mar  8 18:09:13 2013
-@@ -220,7 +220,7 @@ void ChromeBrowserMainPartsPosix::PreEarlyInitializati
+$OpenBSD: patch-chrome_browser_chrome_browser_main_posix_cc,v 1.6 2013/04/03 08:19:10 robert Exp $
+--- chrome/browser/chrome_browser_main_posix.cc.orig.port	Fri Mar 22 02:14:04 2013
++++ chrome/browser/chrome_browser_main_posix.cc	Tue Apr  2 21:05:17 2013
+@@ -288,7 +288,7 @@ void ChromeBrowserMainPartsPosix::PreEarlyInitializati
    if (!fd_limit_string.empty()) {
      base::StringToInt(fd_limit_string, &fd_limit);
    }

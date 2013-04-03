@@ -1,6 +1,15 @@
-$OpenBSD: patch-content_app_content_main_runner_cc,v 1.6 2013/03/15 08:30:33 robert Exp $
---- content/app/content_main_runner.cc.orig	Thu Feb 21 04:26:21 2013
-+++ content/app/content_main_runner.cc	Fri Feb 22 19:40:32 2013
+$OpenBSD: patch-content_app_content_main_runner_cc,v 1.7 2013/04/03 08:19:10 robert Exp $
+--- content/app/content_main_runner.cc.orig.port	Fri Mar 22 02:13:13 2013
++++ content/app/content_main_runner.cc	Tue Apr  2 21:05:17 2013
+@@ -79,7 +79,7 @@
+ #include "base/posix/global_descriptors.h"
+ #include "content/public/common/content_descriptors.h"
+ 
+-#if !defined(OS_MACOSX)
++#if !defined(OS_MACOSX) && !defined(OS_BSD)
+ #include "content/public/common/zygote_fork_delegate_linux.h"
+ #endif
+ 
 @@ -99,7 +99,7 @@ extern int PpapiBrokerMain(const MainFunctionParams&);
  extern int RendererMain(const content::MainFunctionParams&);
  extern int UtilityMain(const MainFunctionParams&);
@@ -37,7 +46,7 @@ $OpenBSD: patch-content_app_content_main_runner_cc,v 1.6 2013/03/15 08:30:33 rob
    // Zygote startup is special -- see RunZygote comments above
    // for why we don't use ZygoteMain directly.
    if (process_type == switches::kZygoteProcess)
-@@ -580,7 +580,7 @@ static void ReleaseFreeMemoryThunk() {
+@@ -579,7 +579,7 @@ class ContentMainRunnerImpl : public ContentMainRunner
                 kPrimaryIPCChannel + base::GlobalDescriptors::kBaseDescriptor);
  #endif  // !OS_ANDROID && !OS_IOS
  

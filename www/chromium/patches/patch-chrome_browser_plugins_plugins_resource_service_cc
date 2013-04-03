@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_plugins_plugins_resource_service_cc,v 1.1 2013/04/03 08:19:10 robert Exp $
+--- chrome/browser/plugins/plugins_resource_service.cc.orig.port	Fri Mar 22 02:14:03 2013
++++ chrome/browser/plugins/plugins_resource_service.cc	Tue Apr  2 21:05:17 2013
+@@ -33,7 +33,7 @@ GURL GetPluginsServerURL() {
+   std::string filename;
+ #if defined(OS_WIN)
+   filename = "plugins_win.json";
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_BSD)
+   filename = "plugins_linux.json";
+ #elif defined(OS_MACOSX)
+   filename = "plugins_mac.json";

@@ -1,26 +1,11 @@
-$OpenBSD: patch-third_party_libvpx_libvpx_gyp,v 1.8 2013/03/15 08:30:33 robert Exp $
---- third_party/libvpx/libvpx.gyp.orig	Sat Mar  9 10:46:18 2013
-+++ third_party/libvpx/libvpx.gyp	Sat Mar  9 10:52:50 2013
-@@ -40,7 +40,7 @@
-       'conditions': [
-         # TODO(jimbankoski): Hack to ensure we pass -msse2 for files containing
-         # SSE intrinsics. See http://crbug/162675
--        ['target_arch=="ia32" or target_arch=="x64"', {
-+        ['(target_arch=="ia32" or target_arch=="x64") and disable_sse2!=1', {
-           'targets' : [
-             {
-               'target_name': 'libvpx_intrinsics',
-@@ -120,13 +120,11 @@
-                   'includes': [
-                     'libvpx_srcs_x86.gypi',
-                   ],
--                  'dependencies': [ 'libvpx_intrinsics', ],
-                 }],
-                 [ 'target_arch=="x64"', {
-                   'includes': [
-                     'libvpx_srcs_x86_64.gypi',
-                   ],
--                  'dependencies': [ 'libvpx_intrinsics', ],
-                 }],
-                 ['clang == 1', {
-                   'xcode_settings': {
+$OpenBSD: patch-third_party_libvpx_libvpx_gyp,v 1.9 2013/04/03 08:19:10 robert Exp $
+--- third_party/libvpx/libvpx.gyp.orig.port	Fri Mar 22 02:16:03 2013
++++ third_party/libvpx/libvpx.gyp	Tue Apr  2 21:05:18 2013
+@@ -72,7 +72,6 @@
+                 '<(libvpx_source)/vp9/common/x86/vp9_filter_sse2.c',
+                 '<(libvpx_source)/vp9/common/x86/vp9_loopfilter_x86.c',
+                 '<(libvpx_source)/vp9/common/x86/vp9_sadmxn_x86.c',
+-                '<(libvpx_source)/vp9/common/x86/vp9_filter_sse4.c',
+               ],
+               'conditions': [
+                 ['os_posix==1 and OS!="mac"', {

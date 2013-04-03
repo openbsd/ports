@@ -1,6 +1,6 @@
-$OpenBSD: patch-third_party_libXNVCtrl_libXNVCtrl_gyp,v 1.1 2012/10/12 16:46:10 robert Exp $
---- third_party/libXNVCtrl/libXNVCtrl.gyp.orig	Thu Oct 11 23:35:59 2012
-+++ third_party/libXNVCtrl/libXNVCtrl.gyp	Thu Oct 11 23:41:14 2012
+$OpenBSD: patch-third_party_libXNVCtrl_libXNVCtrl_gyp,v 1.2 2013/04/03 08:19:10 robert Exp $
+--- third_party/libXNVCtrl/libXNVCtrl.gyp.orig.port	Fri Mar 22 02:13:35 2013
++++ third_party/libXNVCtrl/libXNVCtrl.gyp	Tue Apr  2 21:05:17 2013
 @@ -13,6 +13,9 @@
          'NVCtrlLib.h',
          'nv_control.h',

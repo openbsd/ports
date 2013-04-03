@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_chrome_browser_gypi,v 1.17 2013/03/15 08:30:33 robert Exp $
---- chrome/chrome_browser.gypi.orig	Thu Mar  7 21:02:41 2013
-+++ chrome/chrome_browser.gypi	Fri Mar  8 18:09:13 2013
-@@ -410,8 +410,6 @@
+$OpenBSD: patch-chrome_chrome_browser_gypi,v 1.18 2013/04/03 08:19:10 robert Exp $
+--- chrome/chrome_browser.gypi.orig.port	Fri Mar 22 02:14:33 2013
++++ chrome/chrome_browser.gypi	Tue Apr  2 21:05:17 2013
+@@ -436,8 +436,6 @@
          'browser/chrome_browser_main_android.cc',
          'browser/chrome_browser_main_android.h',
          'browser/chrome_browser_main_extra_parts.h',
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_chrome_browser_gypi,v 1.17 2013/03/15 08:30:33 robert Exp
          'browser/chrome_browser_main_mac.h',
          'browser/chrome_browser_main_mac.mm',
          'browser/chrome_browser_main_posix.cc',
-@@ -1012,22 +1010,6 @@
+@@ -1019,22 +1017,6 @@
          'browser/media/media_stream_capture_indicator.h',
          'browser/media/media_stream_devices_controller.cc',
          'browser/media/media_stream_devices_controller.h',
@@ -30,10 +30,18 @@ $OpenBSD: patch-chrome_chrome_browser_gypi,v 1.17 2013/03/15 08:30:33 robert Exp
 -        'browser/media_gallery/linux/mtp_read_file_worker.h',
 -        'browser/media_gallery/linux/mtp_recursive_device_object_enumerator.cc',
 -        'browser/media_gallery/linux/mtp_recursive_device_object_enumerator.h',
+         'browser/media_gallery/mac/mtp_device_delegate_impl_mac.h',
+         'browser/media_gallery/mac/mtp_device_delegate_impl_mac.mm',
          'browser/media_gallery/media_file_system_registry.cc',
-         'browser/media_gallery/media_file_system_registry.h',
-         'browser/media_gallery/media_galleries_dialog_controller.cc',
-@@ -2024,22 +2006,16 @@
+@@ -1856,7 +1838,6 @@
+         'browser/speech/tts_controller.h',
+         'browser/speech/tts_extension_loader_chromeos.cc',
+         'browser/speech/tts_extension_loader_chromeos.h',
+-        'browser/speech/tts_linux.cc',
+         'browser/speech/tts_mac.mm',
+         'browser/speech/tts_platform.cc',
+         'browser/speech/tts_platform.h',
+@@ -2062,16 +2043,12 @@
          'browser/system_monitor/media_device_notifications_utils.h',
          'browser/system_monitor/media_storage_util.cc',
          'browser/system_monitor/media_storage_util.h',
@@ -50,7 +58,10 @@ $OpenBSD: patch-chrome_chrome_browser_gypi,v 1.17 2013/03/15 08:30:33 robert Exp
          'browser/system_monitor/removable_device_notifications_mac.h',
          'browser/system_monitor/removable_device_notifications_mac.mm',
          'browser/system_monitor/removable_device_notifications_window_win.cc',
-         'browser/system_monitor/removable_device_notifications_window_win.h',
+@@ -2079,8 +2056,6 @@
+         'browser/system_monitor/removable_storage_notifications.cc',
+         'browser/system_monitor/removable_storage_notifications.h',
+         'browser/system_monitor/removable_storage_observer.h',
 -        'browser/system_monitor/udev_util_linux.cc',
 -        'browser/system_monitor/udev_util_linux.h',
          'browser/system_monitor/volume_mount_watcher_win.cc',

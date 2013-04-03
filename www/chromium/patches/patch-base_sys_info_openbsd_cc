@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_sys_info_openbsd_cc,v 1.4 2012/11/07 06:59:45 robert Exp $
---- base/sys_info_openbsd.cc.orig	Wed Nov  7 07:48:17 2012
-+++ base/sys_info_openbsd.cc	Wed Nov  7 07:52:57 2012
+$OpenBSD: patch-base_sys_info_openbsd_cc,v 1.5 2013/04/03 08:19:10 robert Exp $
+--- base/sys_info_openbsd.cc.orig.port	Fri Mar 22 02:13:44 2013
++++ base/sys_info_openbsd.cc	Tue Apr  2 21:05:17 2013
 @@ -1,4 +1,4 @@
 -// Copyright (c) 2011 The Chromium Authors. All rights reserved.
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.

@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_component_updater_component_updater_configurator_cc,v 1.4 2012/11/07 06:59:45 robert Exp $
---- chrome/browser/component_updater/component_updater_configurator.cc.orig	Wed Oct 31 20:02:17 2012
-+++ chrome/browser/component_updater/component_updater_configurator.cc	Tue Nov  6 22:45:22 2012
-@@ -90,6 +90,12 @@ const char kExtraInfo[] =
+$OpenBSD: patch-chrome_browser_component_updater_component_updater_configurator_cc,v 1.5 2013/04/03 08:19:10 robert Exp $
+--- chrome/browser/component_updater/component_updater_configurator.cc.orig.port	Fri Mar 22 02:13:56 2013
++++ chrome/browser/component_updater/component_updater_configurator.cc	Tue Apr  2 21:05:17 2013
+@@ -97,6 +97,12 @@ const char kExtraInfo[] =
    #else
      "os=openbsd&arch=unknown";
    #endif

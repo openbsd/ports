@@ -1,6 +1,6 @@
-$OpenBSD: patch-content_renderer_renderer_main_platform_delegate_linux_cc,v 1.6 2013/01/18 21:38:02 robert Exp $
---- content/renderer/renderer_main_platform_delegate_linux.cc.orig	Mon Jan 14 19:51:40 2013
-+++ content/renderer/renderer_main_platform_delegate_linux.cc	Thu Jan 17 21:35:36 2013
+$OpenBSD: patch-content_renderer_renderer_main_platform_delegate_linux_cc,v 1.7 2013/04/03 08:19:10 robert Exp $
+--- content/renderer/renderer_main_platform_delegate_linux.cc.orig.port	Fri Mar 22 02:13:14 2013
++++ content/renderer/renderer_main_platform_delegate_linux.cc	Tue Apr  2 21:05:17 2013
 @@ -42,7 +42,9 @@ bool RendererMainPlatformDelegate::EnableSandbox() {
    //
    // The seccomp sandbox mode 1 (sandbox/linux/seccomp-legacy) and mode 2

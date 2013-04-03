@@ -1,6 +1,6 @@
-$OpenBSD: patch-media_media_gyp,v 1.18 2013/03/15 08:30:33 robert Exp $
---- media/media.gyp.orig	Thu Feb 21 04:24:13 2013
-+++ media/media.gyp	Fri Feb 22 19:40:32 2013
+$OpenBSD: patch-media_media_gyp,v 1.19 2013/04/03 08:19:10 robert Exp $
+--- media/media.gyp.orig.port	Fri Mar 22 02:12:58 2013
++++ media/media.gyp	Tue Apr  2 21:05:17 2013
 @@ -7,6 +7,8 @@
      'chromium_code': 1,
      # Override to dynamically link the PulseAudio library.
@@ -10,7 +10,7 @@ $OpenBSD: patch-media_media_gyp,v 1.18 2013/03/15 08:30:33 robert Exp $
      # Override to dynamically link the cras (ChromeOS audio) library.
      'use_cras%': 0,
      'conditions': [
-@@ -129,6 +131,8 @@
+@@ -139,6 +141,8 @@
          'audio/openbsd/audio_manager_openbsd.h',
          'audio/pulse/pulse_output.cc',
          'audio/pulse/pulse_output.h',
@@ -19,7 +19,20 @@ $OpenBSD: patch-media_media_gyp,v 1.18 2013/03/15 08:30:33 robert Exp $
          'audio/sample_rates.cc',
          'audio/sample_rates.h',
          'audio/scoped_loop_observer.cc',
-@@ -481,6 +485,7 @@
+@@ -474,6 +478,12 @@
+             'filters/vpx_video_decoder.h',
+           ],
+         }],
++        ['use_system_libvpx == 1', {
++          'sources!': [
++            'filters/vpx_video_decoder.cc',
++            'filters/vpx_video_decoder.h',
++          ],
++        }],
+         ['OS == "ios"', {
+           'includes': [
+             # For shared_memory_support_sources variable.
+@@ -550,6 +560,7 @@
          }],
          ['OS=="openbsd"', {
            'sources/': [ ['exclude', '/alsa_' ],
@@ -27,7 +40,7 @@ $OpenBSD: patch-media_media_gyp,v 1.18 2013/03/15 08:30:33 robert Exp $
                          ['exclude', '/audio_manager_linux' ] ],
            'link_settings': {
              'libraries': [
-@@ -544,6 +549,21 @@
+@@ -621,6 +632,21 @@
                'sources!': [
                  'audio/pulse/pulse_output.cc',
                  'audio/pulse/pulse_output.h',

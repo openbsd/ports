@@ -1,13 +1,14 @@
-$OpenBSD: patch-printing_printing_gyp,v 1.16 2013/03/15 08:30:33 robert Exp $
---- printing/printing.gyp.orig	Thu Feb 21 04:24:53 2013
-+++ printing/printing.gyp	Fri Feb 22 19:40:32 2013
-@@ -292,6 +292,11 @@
+$OpenBSD: patch-printing_printing_gyp,v 1.17 2013/04/03 08:19:10 robert Exp $
+--- printing/printing.gyp.orig.port	Fri Mar 22 02:13:05 2013
++++ printing/printing.gyp	Tue Apr  2 21:05:17 2013
+@@ -294,6 +294,12 @@
                    '<!@(python cups_config_helper.py --cflags)',
                  ],
                }],
 +              [ 'OS == "openbsd"', {
 +                'cflags': [
 +                  '<!@(python cups_config_helper.py --cflags)',
++                  '-Wno-deprecated-declarations',
 +                ],
 +              }],
              ],

@@ -1,6 +1,6 @@
-$OpenBSD: patch-net_socket_socks5_client_socket_cc,v 1.1 2012/08/26 18:47:01 robert Exp $
---- net/socket/socks5_client_socket.cc.orig	Thu Aug 16 11:38:12 2012
-+++ net/socket/socks5_client_socket.cc	Fri Aug 17 10:53:54 2012
+$OpenBSD: patch-net_socket_socks5_client_socket_cc,v 1.2 2013/04/03 08:19:10 robert Exp $
+--- net/socket/socks5_client_socket.cc.orig.port	Fri Mar 22 02:13:21 2013
++++ net/socket/socks5_client_socket.cc	Tue Apr  2 21:05:17 2013
 @@ -15,6 +15,9 @@
  #include "net/base/net_util.h"
  #include "net/socket/client_socket_handle.h"
