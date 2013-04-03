@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:35:45 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/04/03 08:20:44 ajacoutot Exp $
 
 COMMENT =		terminal status monitor for Tor
 
 V =			1.4.5.0
 DISTNAME =		arm-${V}
-REVISION =		0
+REVISION =		1
 
 SUBST_VARS +=		V
 
@@ -23,8 +23,7 @@ EXTRACT_SUFX =		.tar.bz2
 MODULES =		lang/python
 RUN_DEPENDS =		net/tor \
 			sysutils/lsof \
-			devel/desktop-file-utils \
-			x11/gnome/librsvg
+			devel/desktop-file-utils
 
 NO_TEST =		Yes
 
