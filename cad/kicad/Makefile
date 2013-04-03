@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/10 23:04:45 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/04/03 07:13:33 ajacoutot Exp $
 
 COMMENT-main=	schematic and PCB editing software
 COMMENT-docs=	documentation for the kicad library of components
@@ -32,7 +32,6 @@ MULTI_PACKAGES=	-main -docs
 MODULES=	devel/cmake \
 		devel/gettext
 
-BUILD_DEPENDS=		misc/shared-mime-info
 RUN_DEPENDS-main=	cad/kicad-library \
 			devel/desktop-file-utils \
 			misc/shared-mime-info \
