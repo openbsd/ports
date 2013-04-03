@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.132 2013/04/03 13:37:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.133 2013/04/03 14:30:40 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -84,10 +84,10 @@ MODGNOME_ICON_CACHE=	Yes
 MODPY_BUILDDEP=		No
 MODPY_RUNDEP=		No
 
-MODPY_ADJ_FILES=	tests/tracker-writeback/01-writeback.py
+MODPY_ADJ_FILES=	tests/tracker-writeback/01-writeback.py \
+			utils/data-generators/cc/generate
 
 CONFIGURE_ARGS=		--disable-static \
-			--disable-functional-tests \
 			--disable-miner-thunderbird \
 			--disable-miner-firefox \
 			--disable-network-manager \
@@ -126,5 +126,8 @@ post-install:
 	rm ${PREFIX}/lib/tracker-${MAJ_V}/writeback-modules/*.la
 #	rm ${PREFIX}/lib/evolution/${EVO_VERSION}/plugins/*.la
 	rm ${PREFIX}/lib/nautilus/extensions-3.0/*.la
+
+do-test:
+	cd ${WRKBUILD}/tests/functional-tests && ${MAKE_PROGRAM}
 
 .include <bsd.port.mk>
