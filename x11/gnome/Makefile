@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.212 2013/04/01 08:07:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.213 2013/04/03 13:41:47 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -103,6 +103,7 @@
      SUBDIR += vfs2
      SUBDIR += vinagre
      SUBDIR += vino
+     SUBDIR += weather
      SUBDIR += yelp
      SUBDIR += yelp-tools
      SUBDIR += yelp-xsl
