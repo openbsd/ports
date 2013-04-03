@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 10:50:02 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/04/03 03:00:31 gsoares Exp $
 
 COMMENT =		C/C++ static checker
 
-DISTNAME =		cppcheck-1.57
+DISTNAME =		cppcheck-1.59
 
 CATEGORIES =		devel
 
@@ -22,13 +22,22 @@ LIB_DEPENDS =		devel/pcre
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=cppcheck/}
 
 ALL_TARGET =		cppcheck
-TEST_TARGET = 	test
-MAKE_FLAGS =		BIN=${PREFIX}/bin \
+TEST_TARGET =		test
+
+# -Ilib before PREFIX/include to avoid picking up header from devel/check
+MAKE_FLAGS =		BIN=${PREFIX}/bin SRCDIR=build \
 			CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
-			CPPFLAGS="-DHAVE_RULES -DTIXML_USE_STL -I${PREFIX}/include" \
+			CPPFLAGS="-DHAVE_RULES -DTIXML_USE_STL -Ilib -I${PREFIX}/include" \
 			LDFLAGS="-L${PREFIX}/lib -lpcre"
 
+MODULES =		lang/python
+MODPY_RUNDEP =		No
+CONFIGURE_STYLE =	none
+
 USE_GMAKE =		Yes
+
+pre-configure:
+	ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
 
 post-build:
 	cd ${WRKSRC} && \
