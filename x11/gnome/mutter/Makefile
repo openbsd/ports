@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/30 10:05:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2013/04/03 13:00:14 ajacoutot Exp $
 
 COMMENT=		window and compositing manager
 
 GNOME_PROJECT=		mutter
 GNOME_VERSION=		3.8.0
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  mutter                    0.1 # 0.0
 
@@ -24,7 +24,6 @@ WANTLIB += vorbisfile xcb xcb-aux xcb-render xcb-shm z
 
 MODULES=		devel/dconf \
 			devel/gettext \
-			lang/python \
 			x11/gnome
 
 MODGNOME_TOOLS=		goi
