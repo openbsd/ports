@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2013/03/31 07:44:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2013/04/03 13:42:27 ajacoutot Exp $
 
 COMMENT-main=		GNOME desktop meta-package (base installation)
 COMMENT-extra=		GNOME desktop meta-package (full installation)
@@ -9,7 +9,7 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extra=		gnome-extra-${V}
 
-REVISION-main=		6
+REVISION-main=		7
 REVISION-extra=		2
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
@@ -67,7 +67,6 @@ RUN_DEPENDS-main +=	x11/gnome/gvfs,-goa, \
 
 # "Make it fancy!"
 RUN_DEPENDS-main +=	x11/gnome/alacarte \
-			x11/gnome/clocks \
 			x11/gnome/documents \
 			x11/gnome/eog-plugins \
 			x11/gnome/gedit-plugins \
@@ -77,7 +76,8 @@ RUN_DEPENDS-main +=	x11/gnome/alacarte \
 			x11/gnome/seahorse-nautilus \
 			x11/gnome/seahorse-sharing \
 			x11/gnome/sushi \
-			x11/gnome/tweak-tool
+			x11/gnome/tweak-tool \
+			x11/gnome/weather
 
 RUN_DEPENDS-extra +=	STEM-=${V}:${BASE_PKGPATH},-main \
 			audio/rhythmbox \
