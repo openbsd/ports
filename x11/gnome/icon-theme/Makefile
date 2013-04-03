@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2013/04/03 07:13:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2013/04/03 07:41:15 ajacoutot Exp $
 
 PKG_ARCH=	*
 
@@ -16,8 +16,6 @@ MODULES=	x11/gnome
 
 BUILD_DEPENDS=	x11/icon-naming-utils>=0.8.90
 
-# If we have svg icons without their png counterpart and librsvg is not
-# part of the dependency chain then we explicitely add it.
 # gnome-icon-theme is the inherited theme for most icon themes so we
 # make sure we have gtk-update-icon-cache and can display svg icons.
 MODGNOME_ICON_CACHE=	Yes
