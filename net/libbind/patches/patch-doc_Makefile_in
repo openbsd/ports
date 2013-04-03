@@ -1,0 +1,30 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1 2013/04/03 20:04:20 sthen Exp $
+--- doc/Makefile.in.orig	Wed Apr  3 20:00:24 2013
++++ doc/Makefile.in	Wed Apr  3 20:00:42 2013
+@@ -74,7 +74,7 @@ LIB_NETWORK_CAT =	gethostbyname.${LIB_NETWORK_CAT_EXT}
+ 			getaddrinfo.${LIB_NETWORK_CAT_EXT} \
+ 			getnameinfo.${LIB_NETWORK_CAT_EXT} \
+ 			getipnodebyname.${LIB_NETWORK_CAT_EXT}
+-LIB_NETWORK_OUT =	${LIB_NETWORK_MAN} ${LIB_NETWORK_CAT}
++LIB_NETWORK_OUT =	${LIB_NETWORK_MAN}
+ 
+ #
+ # File format manual entries
+@@ -86,7 +86,7 @@ FORMAT_MAN = 	resolver.${FORMAT_MAN_EXT} \
+ 		irs.conf.${FORMAT_MAN_EXT}
+ FORMAT_CAT = 	resolver.${FORMAT_CAT_EXT} \
+ 		irs.conf.${FORMAT_CAT_EXT}
+-FORMAT_OUT =	${FORMAT_MAN} ${FORMAT_CAT}
++FORMAT_OUT =	${FORMAT_MAN}
+ 
+ #
+ # Feature Description manual entries
+@@ -96,7 +96,7 @@ DESC_EXT = 	7
+ DESC_SRC = 	hostname.${DESC_EXT}
+ DESC_MAN = 	hostname.${DESC_MAN_EXT}
+ DESC_CAT = 	hostname.${DESC_CAT_EXT}
+-DESC_OUT =	${DESC_MAN} ${DESC_CAT}
++DESC_OUT =	${DESC_MAN}
+ 
+ #
+ # This sed command is used to update the manual entries so they refer to 
