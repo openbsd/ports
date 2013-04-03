@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.13 2013/03/07 17:41:38 stsp Exp $
+$OpenBSD: README,v 1.14 2013/04/03 17:40:48 robert Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -73,7 +73,7 @@ WebDAV access
 The personnal WebDAV share can be accessed using the following URL (e.g.
 with Nautilus, Thunar or Doplhin) and the corresponding user and
 password for the share:
-    http://<hostname>/files/webdav.php
+    http://<hostname>/owncloud/remote.php/webdav/
 
 NOTE that it is highly recommended to use SSL on the webserver so that
 access is done over https instead of http.

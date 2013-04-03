@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.38 2013/03/14 07:48:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2013/04/03 17:40:48 robert Exp $
 
 COMMENT=	easy and universal access to shared and/or personnal files
 
-V=		4.5.8
+V=		5.0.3
 DISTNAME=	owncloud-${V}
 EXTRACT_SUFX=	.tar.bz2
 
@@ -25,7 +25,7 @@ MASTER_SITES=	http://download.owncloud.org/community/
 
 # Yubikey support
 MASTER_SITES0=		http://nerd.hu/
-PATCHFILES=		owncloud-4.5.1-yubikey.patch:0
+PATCHFILES=		owncloud-5.0.3-yubikey.patch:0
 PATCH_DIST_STRIP=	-p1
 
 MODULES=	lang/php
@@ -48,6 +48,7 @@ RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-curl \
 
 do-install:
 	cp -Rp ${WRKSRC} ${INSTDIR}
+	find ${INSTDIR} -name '*.orig' -print0 | xargs -r0 rm
 	${SUBST_CMD} -c ${FILESDIR}/owncloud.conf \
 		${INSTDIR}/owncloud.conf.dist
 	mv ${INSTDIR}/.htaccess ${INSTDIR}/.htaccess.dist
