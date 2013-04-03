@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/10 22:55:01 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/04/03 07:23:51 ajacoutot Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 SHARED_ONLY =		Yes
@@ -50,7 +50,11 @@ MODSCONS_ENV=	CC="${CC}" \
 		FREEDESKTOP=1 \
 		SYSLIBS=1
 
-BUILD_DEPENDS =		${RUN_DEPENDS}
+# the fd.or utilities are needed at build time (FREEDESKTOP=1)
+BUILD_DEPENDS =		devel/desktop-file-utils \
+			x11/gtk+2,-guic \
+			misc/shared-mime-info
+
 RUN_DEPENDS = 		devel/desktop-file-utils \
 			x11/gtk+2,-guic \
 			misc/shared-mime-info
