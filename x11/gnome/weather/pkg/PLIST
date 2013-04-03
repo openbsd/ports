@@ -1,0 +1,40 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/03 13:41:17 ajacoutot Exp $
+bin/gnome-weather
+lib/gnome-weather/
+lib/gnome-weather/girepository-1.0/
+lib/gnome-weather/girepository-1.0/Gd-1.0.typelib
+lib/gnome-weather/libgd.so
+share/applications/gnome-weather.desktop
+share/glib-2.0/schemas/org.gnome.Weather.Application.gschema.xml
+share/gnome-weather/
+share/gnome-weather/city.js
+share/gnome-weather/forecast.js
+share/gnome-weather/gir-1.0/
+share/gnome-weather/gir-1.0/Gd-1.0.gir
+share/gnome-weather/gnome-weather.gresource
+share/gnome-weather/main.js
+share/gnome-weather/package.js
+share/gnome-weather/params.js
+share/gnome-weather/strings.js
+share/gnome-weather/util.js
+share/gnome-weather/window.js
+share/gnome-weather/world.js
+share/locale/cs/LC_MESSAGES/gnome-weather.mo
+share/locale/de/LC_MESSAGES/gnome-weather.mo
+share/locale/es/LC_MESSAGES/gnome-weather.mo
+share/locale/gl/LC_MESSAGES/gnome-weather.mo
+share/locale/he/LC_MESSAGES/gnome-weather.mo
+share/locale/it/LC_MESSAGES/gnome-weather.mo
+share/locale/ja/LC_MESSAGES/gnome-weather.mo
+share/locale/pa/LC_MESSAGES/gnome-weather.mo
+share/locale/pl/LC_MESSAGES/gnome-weather.mo
+share/locale/pt_BR/LC_MESSAGES/gnome-weather.mo
+share/locale/ru/LC_MESSAGES/gnome-weather.mo
+share/locale/sk/LC_MESSAGES/gnome-weather.mo
+share/locale/sl/LC_MESSAGES/gnome-weather.mo
+share/locale/sr/LC_MESSAGES/gnome-weather.mo
+share/locale/sr@latin/LC_MESSAGES/gnome-weather.mo
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
