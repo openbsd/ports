@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/28 19:32:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2013/04/03 13:25:57 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		Javascript bindings for GNOME
 
 GNOME_PROJECT=		gjs
 GNOME_VERSION=		1.36.0
+REVISION=		0
 
 SHARED_LIBS +=  gjs                  3.0      # 0.0
 
@@ -25,22 +26,19 @@ WANTLIB += nspr4 pcre pixman-1 plc4 plds4 png pthread pthread-stubs
 WANTLIB += readline stdc++ xcb xcb-render xcb-shm z
 
 MODULES=		devel/gettext \
-			lang/python \
 			x11/gnome
 
 MODPY_RUNDEP=		No
 MODPY_BUILDDEP= 	No
-MODPY_ADJ_FILES=	scripts/make-tests
 
 LIBTOOL_FLAGS=		--tag=disable-static
 
-LIB_DEPENDS=		devel/gobject-introspection>=1.36.0 \
+LIB_DEPENDS=		devel/gobject-introspection \
 			devel/spidermonkey
 
-CONFIGURE_ARGS +=	--disable-static
+CONFIGURE_ARGS=		--disable-static
 
-TEST_DEPENDS +=	sysutils/e2fsprogs # uuidgen(1)
-TEST_DEPENDS +=	${MODPY_RUN_DEPENDS} # scripts/make-tests needs python to run
+TEST_DEPENDS=		sysutils/e2fsprogs #uuidgen(1)
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gjs/
