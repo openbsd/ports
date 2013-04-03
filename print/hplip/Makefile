@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2013/03/30 13:03:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.74 2013/04/03 09:41:31 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,6 +18,7 @@ PKGNAME-libs=	hplip-libs-${V}
 PKGNAME-gui=	hplip-gui-${V}
 
 REVISION-main=	0
+REVISION-gui=	0
 
 SHARED_LIBS +=  hpmud		2.0 # .0.6
 SHARED_LIBS +=  hpip		2.0 # .0.1
@@ -95,7 +96,8 @@ WANTLIB-gui +=	# empty
 RUN_DEPENDS-gui= x11/py-qt4 \
 		print/hplip,-main \
 		devel/xdg-utils \
-		devel/desktop-file-utils
+		devel/desktop-file-utils \
+		sysutils/usbutils
 LIB_DEPENDS-gui= # empty
 
 LIBTOOL_FLAGS=	--tag=disable-static
