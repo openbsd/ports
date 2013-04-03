@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/06/15 08:32:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/04/03 07:51:31 ajacoutot Exp $
 bin/calibre
 bin/calibre-complete
 bin/calibre-customize
@@ -4086,7 +4086,5 @@ share/pixmaps/calibre-lrf.png
 share/pixmaps/calibre-viewer.png
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

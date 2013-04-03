@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 23:06:12 fgsch Exp $
+# $OpenBSD: Makefile,v 1.19 2013/04/03 07:51:31 ajacoutot Exp $
 
 COMMENT =		ebook management application
 
 DISTNAME =		calibre-0.8.20
 CATEGORIES =		textproc
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=calibre/}
-REVISION =		5
+REVISION =		6
 
 HOMEPAGE =		http://calibre-ebook.com/
 
@@ -26,7 +26,8 @@ LIB_DEPENDS=		devel/chmlib \
 			graphics/png \
 			print/poppler, \
 			textproc/icu4c
-RUN_DEPENDS =		devel/py-dateutil \
+
+COMMON_DEPENDS =	devel/py-dateutil \
 			devel/xdg-utils \
 			graphics/ImageMagick \
 			graphics/libwmf \
@@ -40,9 +41,13 @@ RUN_DEPENDS =		devel/py-dateutil \
 			www/py-CherryPy \
 			www/py-mechanize \
 			x11/py-qt4>=4.8.2p1 \
-			www/py-mechanize \
-			x11/gtk+2,-guic
-BUILD_DEPENDS =		${RUN_DEPENDS}
+			www/py-mechanize
+
+BUILD_DEPENDS =		${COMMON_DEPENDS}
+
+RUN_DEPENDS =		${COMMON_DEPENDS} \
+			devel/desktop-file-utils \
+			misc/shared-mime-info
 
 CFLAGS +=		"-I${LOCALBASE}/include"
 LDFLAGS +=		"-L${LOCALBASE}/lib"
