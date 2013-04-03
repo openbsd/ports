@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 10:50:11 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/04/03 06:20:50 ajacoutot Exp $
 
 COMMENT=	IDE for the .NET platform
 DISTNAME=	monodevelop-2.4.2
@@ -6,7 +6,7 @@ CATEGORIES=	devel lang
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/monodevelop/
 EXTRACT_SUFX=	.tar.bz2
 
-REVISION=	2
+REVISION=	3
 
 HOMEPAGE=	http://monodevelop.com/
 
@@ -22,14 +22,19 @@ USE_GROFF=	Yes
 NO_SYSTRACE=	Yes
 
 MODULES=	lang/mono
-BUILD_DEPENDS=	${RUN_DEPENDS} \
-		x11/gtk+2,-guic
-RUN_DEPENDS=	devel/desktop-file-utils \
-		misc/shared-mime-info>=0.21 \
-		devel/mono-addins \
+
+BUILD_DEPENDS=	devel/mono-addins \
 		shells/bash \
 		x11/gnome/mono-gnome \
 		devel/ectags
+
+RUN_DEPENDS=	devel/mono-addins \
+		shells/bash \
+		x11/gnome/mono-gnome \
+		devel/ectags \
+		devel/desktop-file-utils \
+		misc/shared-mime-info \
+		x11/gtk+2,-guic
 
 # see patches/patch-src_addins_MonoDevelop_Autotools_SolutionDeployer_cs
 RUN_DEPENDS+=	devel/gmake

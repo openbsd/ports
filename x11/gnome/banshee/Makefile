@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:46:10 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/04/03 06:20:50 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	music management and playback application for GNOME
 
 GNOME_VERSION=	2.6.0
 GNOME_PROJECT=	banshee
+REVISION=	0
 
 CATEGORIES=	audio multimedia
 
@@ -33,9 +34,7 @@ MODULES=	x11/gnome \
 		lang/mono \
 		devel/gettext
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-
-RUN_DEPENDS=	devel/mono-notify \
+COMMON_DEPENDS=	devel/mono-notify \
 		audio/mono-taglib \
 		devel/dbus-sharp-glib \
 		devel/libmtp \
@@ -43,7 +42,10 @@ RUN_DEPENDS=	devel/mono-notify \
 		devel/mono-gdata \
 		net/mono-zeroconf \
 		shells/bash \
-		multimedia/gstreamer-0.10/plugins-good # libgstgconfelements
+		multimedia/gstreamer-0.10/plugins-good #libgstgconfelements
+
+BUILD_DEPENDS=	${COMMON_DEPENDS}
+RUN_DEPENDS=	${COMMON_DEPENDS}
 
 # MP3 support
 RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-ugly
