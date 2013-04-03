@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2013/03/11 11:37:54 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2013/04/03 06:57:56 ajacoutot Exp $
 
 COMMENT=		printer (CUPS) administration tool
 
 DISTNAME=		system-config-printer-1.3.12
+REVISION=		0
 
 CATEGORIES=		print sysutils
 
@@ -19,9 +20,7 @@ EXTRACT_SUFX=		.tar.xz
 MODULES=		lang/python \
 			textproc/intltool
 
-BUILD_DEPENDS=		${RUN_DEPENDS} \
-			textproc/xmlto
-RUN_DEPENDS=		devel/desktop-file-utils \
+COMMON_DEPENDS= 	devel/desktop-file-utils \
 			devel/gettext \
 			devel/py-notify \
 			net/py-curl \
@@ -32,8 +31,12 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 			x11/py-gtk2 \
 			print/cups-pk-helper
 
+BUILD_DEPENDS=		${COMMON_DEPENDS} \
+			textproc/xmlto
+RUN_DEPENDS=		${COMMON_DEPENDS}
+
 # package is only useful if cups is installed
-RUN_DEPENDS +=	print/cups
+RUN_DEPENDS +=		print/cups
 
 USE_GMAKE=		Yes
 USE_GROFF =		Yes

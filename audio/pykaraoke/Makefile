@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/10 22:55:05 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/04/03 06:57:56 ajacoutot Exp $
 
 COMMENT =		free karaoke player
 
@@ -19,7 +19,11 @@ EXTRACT_SUFX =		.zip
 MODULES =		lang/python
 
 WANTLIB +=		SDL ${MODPY_WANTLIB}
-BUILD_DEPENDS =		${RUN_DEPENDS}
+
+BUILD_DEPENDS =		x11/py-wxPython	\
+			audio/py-mutagen>=1.9 \
+			devel/pygame
+
 RUN_DEPENDS =		x11/py-wxPython	\
 			audio/py-mutagen>=1.9 \
 			devel/pygame \

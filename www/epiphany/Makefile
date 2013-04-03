@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2013/03/31 21:28:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.91 2013/04/03 06:57:56 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -38,9 +38,12 @@ WANTLIB += pcre pixman-1 png pthread pthread-stubs soup-2.4 soup-gnome-2.4
 WANTLIB += sqlite3 stdc++ webkitgtk-3.0 xcb xcb-render xcb-shm
 WANTLIB += xml2 xslt z gnome-keyring
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	devel/iso-codes \
+		devel/gsettings-desktop-schemas
+
 RUN_DEPENDS=	devel/iso-codes \
 		devel/gsettings-desktop-schemas
+
 LIB_DEPENDS=	textproc/libxslt \
 		devel/gobject-introspection \
 		devel/libexecinfo \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/10 22:55:05 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/04/03 06:57:56 ajacoutot Exp $
 
 COMMENT=		frontend to mpd written in Python
 
@@ -15,7 +15,8 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pympd/}
 
 MODULES=		lang/python
 
-BUILD_DEPENDS=		${RUN_DEPENDS}
+BUILD_DEPENDS=		x11/py-gtk2
+
 RUN_DEPENDS=		x11/py-gtk2 \
 			devel/desktop-file-utils
 
