@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.95 2013/04/02 17:45:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.96 2013/04/03 13:34:30 ajacoutot Exp $
 
 COMMENT=		Eye of GNOME, image viewing and cataloging program
 
 GNOME_PROJECT=		eog
 GNOME_VERSION=		3.8.0
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		graphics
 
@@ -25,7 +25,6 @@ WANTLIB += rsvg-2 xcb xcb-render xcb-shm xkbfile xml2 z
 
 MODULES=		devel/dconf \
 			devel/gettext \
-			lang/python \
 			x11/gnome
 
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas
