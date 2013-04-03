@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2013/04/02 14:08:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2013/04/03 12:32:42 ajacoutot Exp $
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		3.8.0.1
-REVISION=		5
+REVISION=		6
 
 HOMEPAGE=		http://live.gnome.org/GnomeShell
 
@@ -73,6 +73,9 @@ RUN_DEPENDS +=		devel/py-gobject3
 # because most users want to be able to choose their PIM. Evolution can
 # be installed separately or as part of the "gnome-extra" meta-package.
 #RUN_DEPENDS +=		mail/evolution
+
+# dateMenu.js
+RUN_DEPENDS +=		x11/gnome/clocks
 
 # yelp.desktop menu entry (from yelp: OnlyShowIn=GNOME;Unity;)
 # prevents => The URI "help:gnome-help/index" does not point to a valid page.
