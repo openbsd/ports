@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2013/01/11 10:17:19 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.11 2013/04/03 06:49:47 ajacoutot Exp $
 bin/exaile
 lib/python${MODPY_VERSION}/site-packages/exaile/
 lib/python${MODPY_VERSION}/site-packages/exaile/exaile.py
@@ -1189,3 +1189,5 @@ share/locale/zh_CN/LC_MESSAGES/exaile.mo
 share/locale/zh_TW/LC_MESSAGES/exaile.mo
 share/pixmaps/
 share/pixmaps/exaile.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

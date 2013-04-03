@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2013/03/10 22:55:02 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2013/04/03 06:49:47 ajacoutot Exp $
 
 COMMENT =	music manager and player for GTK+ written in Python
 
 V =		3.3
 P =		1
 DISTNAME =	exaile-${V}.${P}
+REVISION =	0
 
 CATEGORIES =	audio x11
 
@@ -17,19 +18,21 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	lang/python
 
-BUILD_DEPENDS =	${RUN_DEPENDS}
-RUN_DEPENDS =	x11/dbus-python>=0.82.1 \
+COMMON_DEPENDS =x11/dbus-python>=0.82.1 \
 		devel/py-notify>=0.1.1 \
 		audio/py-mutagen>=1.11 \
 		audio/py-cddb>=1.4 \
 		x11/py-gtk2>=2.17 \
 		devel/libglade2 \
-		devel/desktop-file-utils \
 		multimedia/gstreamer-0.10/core \
 		multimedia/gstreamer-0.10/plugins-base \
 		multimedia/gstreamer-0.10/plugins-good \
 		multimedia/gstreamer-0.10/plugins-ugly \
 		multimedia/gstreamer-0.10/py-gstreamer
+
+BUILD_DEPENDS =	${COMMON_DEPENDS}
+RUN_DEPENDS =	${COMMON_DEPENDS} \
+		devel/desktop-file-utils
 
 USE_GMAKE =	Yes
 
