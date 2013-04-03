@@ -1,0 +1,24 @@
+$OpenBSD: patch-backend_usb-libusb_c,v 1.6 2013/04/03 15:19:01 ajacoutot Exp $
+
+http://www.cups.org/str.php?L4088
+
+--- backend/usb-libusb.c.orig	Thu Mar 14 15:31:07 2013
++++ backend/usb-libusb.c	Wed Apr  3 17:12:52 2013
+@@ -1397,9 +1397,14 @@ open_device(usb_printer_t *printer,	/* I - Printer */
+   else
+   {
+     printer->usblp_attached = 0;
+-    fprintf(stderr, "DEBUG: Failed to check whether %04x:%04x has the \"usblp\" kernel module attached\n",
+-	      devdesc.idVendor, devdesc.idProduct);
+-    goto error;
++
++    if (errcode != LIBUSB_ERROR_NOT_SUPPORTED)
++    {
++      fprintf(stderr,
++              "DEBUG: Failed to check whether %04x:%04x has the \"usblp\" "
++              "kernel module attached\n", devdesc.idVendor, devdesc.idProduct);
++      goto error;
++    }
+   }
+ 
+  /*
