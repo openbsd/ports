@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2013/03/11 11:23:55 espie Exp $
+# $OpenBSD: Makefile,v 1.63 2013/04/03 07:01:32 ajacoutot Exp $
 
 # vax:   no IEEE arithmetic
 # sparc: fPIC version of libgcc.a needed but not available
@@ -30,10 +30,14 @@ MASTER_SITES =	${MASTER_SITE_GNU:=octave/}
 MODULES =	fortran
 MODFORTRAN_COMPILER = g77
 
-BUILD_DEPENDS =	${MODFORTRAN_BUILD_DEPENDS} \
-		devel/desktop-file-utils
+BUILD_DEPENDS =	${MODFORTRAN_BUILD_DEPENDS}
+
+# configure checks for desktop-file-install(1)
+BUILD_DEPENDS +=devel/desktop-file-utils
+
 RUN_DEPENDS =	devel/gmake \
 		devel/desktop-file-utils
+
 LIB_DEPENDS =	${MODFORTRAN_LIB_DEPENDS} \
 		math/fftw3 \
 		math/lapack \
