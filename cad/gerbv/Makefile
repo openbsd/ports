@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/21 08:45:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2013/04/03 06:53:07 ajacoutot Exp $
 
 COMMENT=		viewer for Gerber (RS-274X) files
 DISTNAME=		gerbv-2.5.0
@@ -29,14 +29,12 @@ MODULES=		devel/gettext
 BUILD_DEPENDS=		shells/bash
 LIB_DEPENDS=		x11/gtk+2
 
-# configure complains otherwise
-BUILD_DEPENDS +=	devel/desktop-file-utils
-
 RUN_DEPENDS=		devel/desktop-file-utils \
 			x11/gtk+2,-guic
 
 USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=		--disable-update-desktop-database
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/icon-theme-installer
