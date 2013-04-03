@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2013/03/29 07:49:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2013/04/03 07:13:19 ajacoutot Exp $
 
 PKG_ARCH=	*
 
@@ -16,9 +16,6 @@ MODULES=	x11/gnome
 
 BUILD_DEPENDS=	x11/icon-naming-utils>=0.8.90
 
-# gtk-update-icon-cache is used at build time
-BUILD_DEPENDS +=x11/gtk+2,-guic
-
 # If we have svg icons without their png counterpart and librsvg is not
 # part of the dependency chain then we explicitely add it.
 # gnome-icon-theme is the inherited theme for most icon themes so we
@@ -33,6 +30,11 @@ CONFIGURE_ARGS=	--enable-icon-mapping \
 CONFIGURE_ENV += ac_cv_path_GTK_UPDATE_ICON_CACHE=/usr/bin/true
 
 EXAMPLEDIR=	${PREFIX}/share/examples/${GNOME_PROJECT}
+
+# gtk-update-icon-cache is checked by configure but do not enforce the
+# dependency: we don't need to run it, the package takes care of that
+pre-configure:
+	ln -s /usr/bin/true ${WRKDIR}/bin/gtk-update-icon-cache
 
 # Unbreak GTK+ applications that use gnome-icon-theme, when executed outside
 # of a Desktop Environment
