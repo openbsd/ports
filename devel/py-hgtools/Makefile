@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/27 16:03:01 benoit Exp $
+# $OpenBSD: Makefile,v 1.3 2013/04/03 06:41:52 benoit Exp $
 
 COMMENT =		classes and setuptools plugin for Mercurial repositories
 
-MODPY_EGG_VERSION = 	2.1
+MODPY_EGG_VERSION = 	3.0.1
 DISTNAME =		hgtools-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/03/27 16:03:04 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/04/03 06:41:54 benoit Exp $
 lib/python${MODPY_VERSION}/site-packages/hgtools/
 lib/python${MODPY_VERSION}/site-packages/hgtools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/hgtools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -13,19 +13,23 @@ lib/python${MODPY_VERSION}/site-packages/hgtools/managers/__init__.py
 lib/python${MODPY_VERSION}/site-packages/hgtools/managers/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/hgtools/managers/base.py
 lib/python${MODPY_VERSION}/site-packages/hgtools/managers/base.pyc
+lib/python${MODPY_VERSION}/site-packages/hgtools/managers/cmd.py
+lib/python${MODPY_VERSION}/site-packages/hgtools/managers/cmd.pyc
 lib/python${MODPY_VERSION}/site-packages/hgtools/managers/library.py
 lib/python${MODPY_VERSION}/site-packages/hgtools/managers/library.pyc
+lib/python${MODPY_VERSION}/site-packages/hgtools/managers/reentry.py
+lib/python${MODPY_VERSION}/site-packages/hgtools/managers/reentry.pyc
 lib/python${MODPY_VERSION}/site-packages/hgtools/managers/subprocess.py
 lib/python${MODPY_VERSION}/site-packages/hgtools/managers/subprocess.pyc
 lib/python${MODPY_VERSION}/site-packages/hgtools/plugins.py
 lib/python${MODPY_VERSION}/site-packages/hgtools/plugins.pyc
-lib/python${MODPY_VERSION}/site-packages/hgtools/py25compat.py
-lib/python${MODPY_VERSION}/site-packages/hgtools/py25compat.pyc
 lib/python${MODPY_VERSION}/site-packages/hgtools/tests/
 lib/python${MODPY_VERSION}/site-packages/hgtools/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/hgtools/tests/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/hgtools/tests/test_managers.py
 lib/python${MODPY_VERSION}/site-packages/hgtools/tests/test_managers.pyc
+lib/python${MODPY_VERSION}/site-packages/hgtools/tests/test_reentry.py
+lib/python${MODPY_VERSION}/site-packages/hgtools/tests/test_reentry.pyc
 lib/python${MODPY_VERSION}/site-packages/hgtools/tests/test_versioning.py
 lib/python${MODPY_VERSION}/site-packages/hgtools/tests/test_versioning.pyc
 lib/python${MODPY_VERSION}/site-packages/hgtools/versioning.py
