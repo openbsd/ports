@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.122 2013/04/02 16:16:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.123 2013/04/03 06:42:28 ajacoutot Exp $
 
 COMMENT=		GNOME file manager
 
@@ -40,10 +40,6 @@ WANTLIB += xcb-shm xkbfile xml2 z
 MODULES=		devel/gettext \
 			x11/gnome \
 			devel/dconf
-
-BUILD_DEPENDS=		misc/shared-mime-info \
-			devel/gobject-introspection \
-			devel/gsettings-desktop-schemas
 
 RUN_DEPENDS=		misc/shared-mime-info \
 			x11/gnome/gvfs \

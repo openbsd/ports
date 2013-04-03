@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2013/03/31 06:44:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2013/04/03 06:42:28 ajacoutot Exp $
 
 COMMENT=		project management application
 
@@ -30,7 +30,6 @@ MODULES=		devel/gettext \
 			x11/gnome \
 			devel/gconf2
 
-BUILD_DEPENDS=		misc/shared-mime-info
 RUN_DEPENDS=		misc/shared-mime-info
 
 LIB_DEPENDS=		security/libgcrypt \
