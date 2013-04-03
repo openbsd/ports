@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/21 08:45:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2013/04/03 06:26:57 ajacoutot Exp $
 
 COMMENT =		suite of tools for electronic design automation
 DISTNAME =		geda-gaf-1.6.0
@@ -33,7 +33,10 @@ LIB_DEPENDS =		devel/glib2 \
 			lang/guile \
 			devel/gmp
 
-BUILD_DEPENDS = 	${RUN_DEPENDS}
+# these are checked by configure
+BUILD_DEPENDS =		misc/shared-mime-info \
+			devel/desktop-file-utils
+
 RUN_DEPENDS = 		misc/shared-mime-info \
 			devel/desktop-file-utils
 
