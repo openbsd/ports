@@ -1,9 +1,9 @@
 #!/bin/sh
 #
-# $OpenBSD: isc_named.rc,v 1.1.1.1 2012/07/19 08:36:45 sthen Exp $
+# $OpenBSD: isc_named.rc,v 1.2 2013/04/03 20:17:23 sthen Exp $
 
 daemon="${TRUEPREFIX}/sbin/named"
-daemon_flags="-t ${LOCALSTATEDIR}/named -u named"
+daemon_flags="-t ${LOCALSTATEDIR}/named -u named -U 4"
 
 . /etc/rc.d/rc.subr
 

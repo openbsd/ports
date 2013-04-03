@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/28 09:18:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2013/04/03 20:17:23 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon
 
 V=		9.9.2-P2
 RV=		9.9.2
+REVISION=	0
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
 
