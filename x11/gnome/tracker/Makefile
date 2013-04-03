@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.131 2013/03/31 06:35:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.132 2013/04/03 13:37:41 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -73,6 +73,8 @@ LIB_DEPENDS=		x11/gnome/totem-pl-parser \
 # work with unversioned solibs (LOCALBASE/lib/evolution/*/*.so).
 #BUILD_DEPENDS +=	mail/evolution,-main
 #RUN_DEPENDS +=		mail/evolution,-main
+
+TEST_DEPENDS=		${MODPY_RUN_DEPENDS}
 
 LIBTOOL_FLAGS=	--tag=disable-static
 
