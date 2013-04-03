@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/12/30 00:17:52 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/04/03 15:35:54 naddy Exp $
 @conflict wol-*
 @conflict analog-*
-bin/analog
+@bin bin/analog
 bin/cview
-bin/diglog
+@bin bin/diglog
 bin/fixfet7
-bin/loged
-bin/until
-bin/wol
+@bin bin/loged
+@bin bin/until
+@bin bin/wol
 share/chipmunk/
 share/chipmunk/Makefile
 share/chipmunk/actel.gate
