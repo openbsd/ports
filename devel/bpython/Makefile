@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 10:50:01 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/04/03 17:07:15 ajacoutot Exp $
 
 COMMENT=	fancy interface to the Python interpreter
 
 MODPY_EGG_VERSION=0.12
 DISTNAME=	bpython-${MODPY_EGG_VERSION}
 CATEGORIES=	devel
+REVISION=	0
 
 HOMEPAGE=	http://bpython-interpreter.org/
 
@@ -18,7 +19,6 @@ MODULES=	lang/python
 MODPY_SETUPTOOLS=Yes
 
 RUN_DEPENDS=	devel/desktop-file-utils \
-		devel/py-gobject3 \
 		devel/py-urwid \
 		textproc/py-pygments
 TEST_DEPENDS=devel/py-mock \
