@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.124 2013/04/02 16:16:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.125 2013/04/03 13:16:31 ajacoutot Exp $
 
 COMMENT= 		Telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		3.6.4
-REVISION=		6
+REVISION=		7
 
 CATEGORIES=		net
 
@@ -40,6 +40,8 @@ MODULES=		devel/dconf \
 			devel/gettext \
 			lang/python \
 			x11/gnome
+
+MODPY_RUNDEP=		No
 
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/iso-codes
