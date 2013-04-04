@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.172 2013/03/11 02:52:07 espie Exp $
+# $OpenBSD: Makefile,v 1.173 2013/04/04 14:45:46 sthen Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
 COMMENT-docs=	PostgreSQL RDBMS documentation
 COMMENT-contrib=PostgreSQL RDBMS contributions
 
-VERSION=	9.2.3
+VERSION=	9.2.4
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-main=	postgresql-client-${VERSION}
 PKGNAME-server=	postgresql-server-${VERSION}
@@ -26,9 +26,10 @@ MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c com_err crypto m readline ssl termcap z
 
-MASTER_SITES= 	ftp://ftp5.us.postgresql.org/pub/PostgreSQL/source/v${VERSION}/ \
-	ftp://ftp5.es.postgresql.org/mirror/postgresql/source/v${VERSION}/ \
-	ftp://ftp.postgresql.org/pub/source/v${VERSION}/
+MASTER_SITES=	http://ftp.postgresql.org/pub/source/v${VERSION}/ \
+	http://ftp5.es.postgresql.org/mirror/postgresql/source/v${VERSION}/ \
+	ftp://ftp.postgresql.org/pub/source/v${VERSION}/ \
+	ftp://ftp5.us.postgresql.org/pub/PostgreSQL/source/v${VERSION}/
 
 MULTI_PACKAGES=	-docs -main -server -contrib
 
