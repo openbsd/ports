@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.133 2013/04/03 14:30:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.134 2013/04/04 12:18:34 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -74,7 +74,8 @@ LIB_DEPENDS=		x11/gnome/totem-pl-parser \
 #BUILD_DEPENDS +=	mail/evolution,-main
 #RUN_DEPENDS +=		mail/evolution,-main
 
-TEST_DEPENDS=		${MODPY_RUN_DEPENDS}
+TEST_DEPENDS=		${MODPY_RUN_DEPENDS} \
+			x11/dbus-python
 
 LIBTOOL_FLAGS=	--tag=disable-static
 
