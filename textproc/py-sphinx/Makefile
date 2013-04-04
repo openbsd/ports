@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/28 23:44:14 rpe Exp $
+# $OpenBSD: Makefile,v 1.11 2013/04/04 22:36:51 martynas Exp $
 
 COMMENT =		python documentation generator
 
@@ -24,7 +24,8 @@ RUN_DEPENDS =		devel/py-babel \
 			www/py-jinja2 \
 			${MODPY_JSON}
 BUILD_DEPENDS =		${RUN_DEPENDS}
-TEST_DEPENDS =		devel/py-nose
+TEST_DEPENDS =		devel/py-nose \
+			print/texlive/texmf,-full
 
 MODPY_SETUPTOOLS =	Yes
 
