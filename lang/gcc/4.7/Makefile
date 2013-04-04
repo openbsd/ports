@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/03/21 08:46:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2013/04/04 04:21:14 tobiasu Exp $
 
 ONLY_FOR_ARCHS = amd64 i386 powerpc sparc64
 BROKEN-sparc64 = ICE in libgcc
@@ -7,10 +7,12 @@ V = 4.7.2
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
 
-ADASTRAP_LIBC-i386 = 63.0
-ADASTRAP-i386 = adastrap-i386-$V-0.tar.xz
-ADASTRAP_LIBC-amd64 = 66.0
-ADASTRAP-amd64 = adastrap-amd64-$V-0.tar.xz
+ADASTRAP_LIBC-i386 = 67.0
+ADASTRAP_LIBM-i386 = 8.0
+ADASTRAP-i386 = adastrap-i386-$V-1.tar.xz
+ADASTRAP_LIBC-amd64 = 67.0
+ADASTRAP_LIBM-amd64 = 8.0
+ADASTRAP-amd64 = adastrap-amd64-$V-1.tar.xz
 
 PKGNAME-main =  gcc-${FULL_PKGVERSION}
 PKGNAME-c++ =   g++-${FULL_PKGVERSION}
@@ -243,19 +245,27 @@ ADA_PACKAGE = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${FULLPKGNAME-ada}.tgz
 GCC_PACKAGE = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${FULLPKGNAME-main}.tgz
 
 adastrap: ${ADA_PACKAGE} ${GCC_PACKAGE}
-.if !defined(ADASTRAP_LIBC-${MACHINE_ARCH})
-	@echo 1>&2 "Error: you must specify a libc to bundle"
+.if !defined(ADASTRAP_LIBC-${MACHINE_ARCH}) || \
+	!defined(ADASTRAP_LIBM-${MACHINE_ARCH})
+	@echo 1>&2 "Error: you must specify libc and libm to bundle"
 	@exit 1
 .else
 	mkdir -p ${WRKDIR}/prepare/bootstrap/system-libs
 	cp /usr/lib/libc.so.${ADASTRAP_LIBC-${MACHINE_ARCH}} \
+		${WRKDIR}/prepare/bootstrap/system-libs
+	cp /usr/lib/libm.so.${ADASTRAP_LIBM-${MACHINE_ARCH}} \
 		${WRKDIR}/prepare/bootstrap/system-libs
 	cd ${WRKDIR}/prepare/bootstrap && tar zxf ${ADA_PACKAGE}
 	cd ${WRKDIR}/prepare/bootstrap && tar zxf ${GCC_PACKAGE}
 	rm -rf ${WRKDIR}/prepare/bootstrap/{+*,info,man}
 	if ! ldd ${WRKDIR}/prepare/bootstrap/bin/egcc | \
 		fgrep libc.so.${ADASTRAP_LIBC-${MACHINE_ARCH}} >/dev/null; then \
-		echo 1>&2 "Error: adastrap egcc linked against wrong libc"; \
+		echo 1>&2 "Error: adastrap egcc linked against unbundled libc"; \
+		exit 1; \
+	fi
+	if ! ldd ${WRKDIR}/prepare/bootstrap/bin/egcc | \
+		fgrep libm.so.${ADASTRAP_LIBM-${MACHINE_ARCH}} >/dev/null; then \
+		echo 1>&2 "Error: adastrap egcc linked against unbundled libm"; \
 		exit 1; \
 	fi
 	cd ${WRKDIR}/prepare && tar cf - bootstrap | \
