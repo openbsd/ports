@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2013/03/29 10:45:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2013/04/04 19:18:14 ajacoutot Exp $
 
 # This port does set MODGNOME_TOOLS=yelp on purpose: it would create a
 # dependency on itself. We do not enforce dependency on x11/gnome/yelp
@@ -22,11 +22,14 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 		textproc/docbook \
 		sysutils/ggrep \
 		textproc/rarian
+
 RUN_DEPENDS=	devel/gettext \
 		misc/gnugetopt \
 		textproc/libxml,-python \
-		textproc/libxslt \
-		textproc/rarian
+		textproc/libxslt
+
+# convenient dependency: provides the scrollkeeper-* tools
+RUN_DEPENDS +=	textproc/rarian
 
 AUTOCONF_VERSION=2.67
 CONFIGURE_STYLE=autoconf no-autoheader
