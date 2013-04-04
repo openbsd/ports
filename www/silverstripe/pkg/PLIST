@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/08 10:43:52 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/04/04 16:28:20 jasper Exp $
 silverstripe/
 @owner www
 silverstripe/.htaccess
@@ -4531,8 +4531,10 @@ silverstripe/install-frameworkmissing.html
 silverstripe/install.php
 @owner www
 silverstripe/mysite/
-silverstripe/mysite/.htaccess
-silverstripe/mysite/_config.php
+silverstripe/mysite/.htaccess.dist
+@sample silverstripe/mysite/.htaccess
+silverstripe/mysite/_config.php.dist
+@sample silverstripe/mysite/_config.php
 @owner
 silverstripe/mysite/code/
 silverstripe/mysite/code/Page.php

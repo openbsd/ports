@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/25 10:26:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2013/04/04 16:28:20 jasper Exp $
 
 COMMENT=	innovative open source CMS and framework
 
 V=		3.0.5
 DISTNAME=	SilverStripe-cms-v${V}
 PKGNAME=	silverstripe-${V}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	www
 
@@ -36,5 +36,8 @@ SUBST_VARS+=	INSTDIR
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}
 	cd ${WRKSRC} && tar cf - . | (cd ${INSTDIR}; tar xf -)
+.for f in .htaccess _config.php
+	mv ${PREFIX}/silverstripe/mysite/${f} ${PREFIX}/silverstripe/mysite/${f}.dist
+.endfor
 
 .include <bsd.port.mk>
