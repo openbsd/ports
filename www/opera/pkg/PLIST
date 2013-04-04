@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.40 2013/02/05 07:43:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.41 2013/04/04 12:57:25 ajacoutot Exp $
 bin/opera
 lib/opera/
 lib/opera/gstreamer/
@@ -309,6 +309,10 @@ share/opera/region/in/standard_speeddial.ini
 share/opera/region/ke/
 share/opera/region/ke/bookmarks.adr
 share/opera/region/ke/standard_speeddial.ini
+share/opera/region/kz/
+share/opera/region/kz/bookmarks.adr
+share/opera/region/kz/search.ini
+share/opera/region/kz/standard_speeddial.ini
 share/opera/region/latin_america/
 share/opera/region/latin_america/bookmarks.adr
 share/opera/region/latin_america/search.ini
