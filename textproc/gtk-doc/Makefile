@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2013/03/11 11:42:41 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2013/04/04 15:42:00 ajacoutot Exp $
 
 COMMENT=	GTK C code documentation system
 
 GNOME_VERSION=	1.18
 GNOME_PROJECT=	gtk-doc
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=    	textproc devel
 
@@ -17,7 +17,7 @@ MODULES=		x11/gnome \
 			lang/python
 
 MODPY_RUNDEP=		No
-MODGNOME_TOOLS= 	yelp
+#MODGNOME_TOOLS= 	yelp
 
 CONFIGURE_STYLE=	gnu
 
