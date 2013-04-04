@@ -1,6 +1,9 @@
-$OpenBSD: patch-tools_gnome-doc-utils_make,v 1.1 2013/03/29 10:45:48 ajacoutot Exp $
+$OpenBSD: patch-tools_gnome-doc-utils_make,v 1.2 2013/04/04 14:36:01 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=682776
+From 88d853965880995f62dc781d90e5b70dcd4dace5 Mon Sep 17 00:00:00 2001
+From: Dominique Leuenberger <dimstar@opensuse.org>
+Date: Wed, 29 Aug 2012 20:55:32 +0000
+Subject: figures: link to absolute path
 
 --- tools/gnome-doc-utils.make.orig	Mon Mar 26 18:23:09 2012
 +++ tools/gnome-doc-utils.make	Fri Mar 29 11:15:24 2013
