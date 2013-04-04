@@ -1,0 +1,65 @@
+$OpenBSD: patch-scripts_mysql_install_db_sh,v 1.1.1.1 2013/04/04 18:58:44 brad Exp $
+--- scripts/mysql_install_db.sh.orig	Tue Jan 29 09:12:48 2013
++++ scripts/mysql_install_db.sh	Thu Feb 14 22:21:13 2013
+@@ -28,7 +28,8 @@ srcdir=""
+ args=""
+ defaults=""
+ mysqld_opt=""
+-user=""
++user=_mysql
++group=_mysql
+ 
+ force=0
+ in_rpm=0
+@@ -123,6 +124,8 @@ parse_arguments()
+         # as 'user' (crucial e.g. if log-bin=/some_other_path/
+         # where a chown of datadir won't help)
+         user=`parse_arg "$arg"` ;;
++      --group=*)
++        group=`parse_arg "$arg"` ;;
+       --skip-name-resolve) ip_only=1 ;;
+       --verbose) verbose=1 ;; # Obsolete
+       --rpm) in_rpm=1 ;;
+@@ -386,11 +389,11 @@ do
+   fi
+   if test -n "$user"
+   then
+-    chown $user "$dir"
++    chown -f $user:$group "$dir"
+     if test $? -ne 0
+     then
+-      echo "Cannot change ownership of the database directories to the '$user'"
+-      echo "user.  Check that you have the necessary permissions and try again."
++      echo "Cannot change ownership of the database directories to '$user:$group'"
++      echo "user/group.  Check that you have the necessary permissions and try again."
+       exit 1
+     fi
+   fi
+@@ -474,10 +477,6 @@ fi
+ # the screen.
+ if test "$cross_bootstrap" -eq 0 && test -z "$srcdir"
+ then
+-  s_echo
+-  s_echo "To start mysqld at boot time you have to copy"
+-  s_echo "support-files/mysql.server to the right place for your system"
+-
+   echo
+   echo "PLEASE REMEMBER TO SET A PASSWORD FOR THE MariaDB root USER !"
+   echo "To do so, start the server, then issue the following commands:"
+@@ -494,16 +493,6 @@ then
+   echo
+   echo "See the MariaDB Knowledgebase at http://kb.askmonty.org or the"
+   echo "MySQL manual for more instructions."
+-
+-  if test "$in_rpm" -eq 0
+-  then
+-    echo
+-    echo "You can start the MariaDB daemon with:"
+-    echo "cd '$basedir' ; $bindir/mysqld_safe --datadir='$ldata'"
+-    echo
+-    echo "You can test the MariaDB daemon with mysql-test-run.pl"
+-    echo "cd '$basedir/mysql-test' ; perl mysql-test-run.pl"
+-  fi
+ 
+   echo
+   echo "Please report any problems with the '$scriptdir/mysqlbug' script!"

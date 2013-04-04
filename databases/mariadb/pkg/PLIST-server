@@ -1,0 +1,192 @@
+@comment $OpenBSD: PLIST-server,v 1.1.1.1 2013/04/04 18:58:45 brad Exp $
+@conflict mysql-server-*
+@pkgpath databases/mysql,-server
+@newgroup _mysql:502
+@newuser _mysql:502:_mysql:daemon:MySQL Account:/nonexistent:/sbin/nologin
+@bin bin/aria_chk
+@bin bin/aria_dump_log
+@bin bin/aria_ftdump
+@bin bin/aria_pack
+@bin bin/aria_read_log
+@bin bin/innochecksum
+@bin bin/my_print_defaults
+@bin bin/myisam_ftdump
+@bin bin/myisamchk
+@bin bin/myisamlog
+@bin bin/myisampack
+bin/mysql_convert_table_format
+bin/mysql_fix_extensions
+bin/mysql_install_db
+@bin bin/mysql_plugin
+bin/mysql_secure_installation
+bin/mysql_setpermission
+@bin bin/mysql_tzinfo_to_sql
+@bin bin/mysql_upgrade
+bin/mysql_zap
+bin/mysqld_multi
+bin/mysqld_safe
+bin/mysqlhotcopy
+@bin bin/perror
+@bin bin/replace
+@bin bin/resolve_stack_dump
+@bin bin/resolveip
+lib/mysql/plugin/adt_null.so
+lib/mysql/plugin/auth_socket.so
+lib/mysql/plugin/auth_test_plugin.so
+lib/mysql/plugin/daemon_example.ini
+lib/mysql/plugin/dialog.so
+lib/mysql/plugin/dialog_examples.so
+lib/mysql/plugin/feedback.so
+lib/mysql/plugin/ha_archive.so
+lib/mysql/plugin/ha_blackhole.so
+lib/mysql/plugin/ha_example.so
+lib/mysql/plugin/ha_federated.so
+lib/mysql/plugin/ha_federatedx.so
+lib/mysql/plugin/ha_innodb.so
+lib/mysql/plugin/ha_sphinx.so
+lib/mysql/plugin/handlersocket.so
+lib/mysql/plugin/libdaemon_example.so
+lib/mysql/plugin/mypluglib.so
+lib/mysql/plugin/mysql_clear_password.so
+lib/mysql/plugin/qa_auth_client.so
+lib/mysql/plugin/qa_auth_interface.so
+lib/mysql/plugin/qa_auth_server.so
+lib/mysql/plugin/semisync_master.so
+lib/mysql/plugin/semisync_slave.so
+lib/mysql/plugin/sql_errlog.so
+@bin libexec/mysqld
+@man man/man1/innochecksum.1
+@man man/man1/my_print_defaults.1
+@man man/man1/myisam_ftdump.1
+@man man/man1/myisamchk.1
+@man man/man1/myisamlog.1
+@man man/man1/myisampack.1
+@man man/man1/mysql.server.1
+@man man/man1/mysql_convert_table_format.1
+@man man/man1/mysql_fix_extensions.1
+@man man/man1/mysql_fix_privilege_tables.1
+@man man/man1/mysql_install_db.1
+@man man/man1/mysql_secure_installation.1
+@man man/man1/mysql_setpermission.1
+@man man/man1/mysql_tzinfo_to_sql.1
+@man man/man1/mysql_upgrade.1
+@man man/man1/mysql_zap.1
+@man man/man1/mysqld_multi.1
+@man man/man1/mysqld_safe.1
+@man man/man1/mysqlhotcopy.1
+@man man/man1/perror.1
+@man man/man1/replace.1
+@man man/man1/resolve_stack_dump.1
+@man man/man1/resolveip.1
+@man man/man8/mysqld.8
+@man man/man8/mysqlmanager.8
+share/doc/mysql/
+share/doc/mysql/COPYING
+share/doc/mysql/COPYING.LESSER
+share/doc/mysql/INFO_BIN
+share/doc/mysql/INFO_SRC
+share/doc/mysql/INSTALL-BINARY
+share/doc/mysql/README
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/examples/mysql/
+share/examples/mysql/SELinux/
+share/examples/mysql/SELinux/RHEL4/
+share/examples/mysql/SELinux/RHEL4/mysql.fc
+share/examples/mysql/SELinux/RHEL4/mysql.te
+share/examples/mysql/binary-configure
+share/examples/mysql/config.huge.ini
+share/examples/mysql/config.medium.ini
+share/examples/mysql/config.small.ini
+share/examples/mysql/magic
+share/examples/mysql/my-huge.cnf
+share/examples/mysql/my-innodb-heavy-4G.cnf
+share/examples/mysql/my-large.cnf
+share/examples/mysql/my-medium.cnf
+@sample ${SYSCONFDIR}/my.cnf
+share/examples/mysql/my-small.cnf
+share/examples/mysql/mysql-log-rotate
+share/examples/mysql/mysql.server
+share/examples/mysql/mysqld_multi.server
+share/examples/mysql/ndb-config-2-node.ini
+share/mysql/
+share/mysql/charsets/
+share/mysql/charsets/Index.xml
+share/mysql/charsets/README
+share/mysql/charsets/armscii8.xml
+share/mysql/charsets/ascii.xml
+share/mysql/charsets/cp1250.xml
+share/mysql/charsets/cp1251.xml
+share/mysql/charsets/cp1256.xml
+share/mysql/charsets/cp1257.xml
+share/mysql/charsets/cp850.xml
+share/mysql/charsets/cp852.xml
+share/mysql/charsets/cp866.xml
+share/mysql/charsets/dec8.xml
+share/mysql/charsets/geostd8.xml
+share/mysql/charsets/greek.xml
+share/mysql/charsets/hebrew.xml
+share/mysql/charsets/hp8.xml
+share/mysql/charsets/keybcs2.xml
+share/mysql/charsets/koi8r.xml
+share/mysql/charsets/koi8u.xml
+share/mysql/charsets/latin1.xml
+share/mysql/charsets/latin2.xml
+share/mysql/charsets/latin5.xml
+share/mysql/charsets/latin7.xml
+share/mysql/charsets/macce.xml
+share/mysql/charsets/macroman.xml
+share/mysql/charsets/swe7.xml
+share/mysql/czech/
+share/mysql/czech/errmsg.sys
+share/mysql/danish/
+share/mysql/danish/errmsg.sys
+share/mysql/dutch/
+share/mysql/dutch/errmsg.sys
+share/mysql/english/
+share/mysql/english/errmsg.sys
+share/mysql/errmsg-utf8.txt
+share/mysql/estonian/
+share/mysql/estonian/errmsg.sys
+share/mysql/fill_help_tables.sql
+share/mysql/french/
+share/mysql/french/errmsg.sys
+share/mysql/german/
+share/mysql/german/errmsg.sys
+share/mysql/greek/
+share/mysql/greek/errmsg.sys
+share/mysql/hungarian/
+share/mysql/hungarian/errmsg.sys
+share/mysql/italian/
+share/mysql/italian/errmsg.sys
+share/mysql/japanese/
+share/mysql/japanese/errmsg.sys
+share/mysql/korean/
+share/mysql/korean/errmsg.sys
+share/mysql/mysql_performance_tables.sql
+share/mysql/mysql_system_tables.sql
+share/mysql/mysql_system_tables_data.sql
+share/mysql/mysql_test_data_timezone.sql
+share/mysql/norwegian/
+share/mysql/norwegian-ny/
+share/mysql/norwegian-ny/errmsg.sys
+share/mysql/norwegian/errmsg.sys
+share/mysql/polish/
+share/mysql/polish/errmsg.sys
+share/mysql/portuguese/
+share/mysql/portuguese/errmsg.sys
+share/mysql/romanian/
+share/mysql/romanian/errmsg.sys
+share/mysql/russian/
+share/mysql/russian/errmsg.sys
+share/mysql/serbian/
+share/mysql/serbian/errmsg.sys
+share/mysql/slovak/
+share/mysql/slovak/errmsg.sys
+share/mysql/spanish/
+share/mysql/spanish/errmsg.sys
+share/mysql/swedish/
+share/mysql/swedish/errmsg.sys
+share/mysql/ukrainian/
+share/mysql/ukrainian/errmsg.sys
+@extraunexec rm -rf ${SOCKET_DIR}
+@rcscript ${RCDIR}/mysqld

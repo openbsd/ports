@@ -1,0 +1,58 @@
+$OpenBSD: README-server,v 1.1.1.1 2013/04/04 18:58:52 brad Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Initial setup
+=============
+
+If you are installing MySQL for the first time, you have to create
+a default database first. In order to create the database, please run
+${TRUEPREFIX}/bin/mysql_install_db
+
+You will need to tune the values in the my.cnf file (examples
+available in ${TRUEPREFIX}/share/mysql).
+
+By default, the _mysql user, and so the MySQL processes run in the
+login(1) class of "daemon". On a busy server, it may be advisable
+to put the _mysql user and processes in their own login(1) class
+with tuned resources, such as more open file descriptors etc.
+
+For example, add this to the login.conf(5) file:
+
+        mysqld:\
+                :openfiles-cur=1024:\
+                :openfiles-max=2048:\
+                :tc=daemon:
+
+Rebuild the login.conf.db file if necessary:
+
+	# [ -f /etc/login.conf.db ] && cap_mkdb /etc/login.conf
+
+For larger servers and dedicated database servers, these numbers
+and memory limits (e.g. datasize and stacksize) may also need to be
+increased. Please report any changes and experiences to the package
+maintainers so that we can update this file for future versions.
+
+chrooted daemons and MySQL socket
+=================================
+
+For external program running under a chroot(8) to be able to access the
+MySQL server without using a network connection, the socket must be
+placed inside the chroot.
+
+e.g. httpd(8) or nginx(8): connecting to MySQL from PHP
+-------------------------------------------------------
+Create a directory for the MySQL socket:
+
+    # install -d -m 0711 -o _mysql -g _mysql /var/www/var/run/mysql
+
+Adjust ${SYSCONFDIR}/my.cnf to put and connect to the MySQL socket
+within the chroot:
+
+    [client]
+    socket = /var/www/var/run/mysql/mysql.sock
+
+    [mysqld]
+    socket = /var/www/var/run/mysql/mysql.sock

@@ -1,0 +1,57 @@
+$OpenBSD: patch-libmysql_CMakeLists_txt,v 1.1.1.1 2013/04/04 18:58:44 brad Exp $
+--- libmysql/CMakeLists.txt.orig	Mon Mar 11 06:29:13 2013
++++ libmysql/CMakeLists.txt	Sun Mar 17 01:30:25 2013
+@@ -226,6 +226,8 @@ dynamic_column_get
+ dynamic_column_prepare_decimal
+ )
+ 
++SET(LIBVER_OVERRIDE $ENV{LIBmysqlclient_VERSION})
++
+ SET(CLIENT_API_FUNCTIONS
+   ${CLIENT_API_FUNCTIONS_5_1}
+   ${CLIENT_API_FUNCTIONS_5_5}
+@@ -357,8 +359,12 @@ IF(NOT DISABLE_SHARED)
+     # libtool compatability
+     IF(CMAKE_SYSTEM_NAME MATCHES "FreeBSD" OR APPLE)
+       SET(OS_SHARED_LIB_VERSION "${SHARED_LIB_MAJOR_VERSION}")
+-    ELSEIF(CMAKE_SYSTEM_NAME MATCHES "HP-UX")
+-      SET(OS_SHARED_LIB_VERSION "${SHARED_LIB_MAJOR_VERSION}.0")
++    ELSEIF(CMAKE_SYSTEM_NAME MATCHES "HP-UX" OR CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
++      IF(LIBVER_OVERRIDE)
++        SET(OS_SHARED_LIB_VERSION "${LIBVER_OVERRIDE}")
++      ELSE()
++        SET(OS_SHARED_LIB_VERSION "${SHARED_LIB_MAJOR_VERSION}.0")
++      ENDIF(LIBVER_OVERRIDE)
+     ELSE()
+       SET(OS_SHARED_LIB_VERSION "${SHARED_LIB_MAJOR_VERSION}.0.0")
+     ENDIF()
+@@ -366,7 +372,7 @@ IF(NOT DISABLE_SHARED)
+     SET_TARGET_PROPERTIES(libmysql PROPERTIES 
+       OUTPUT_NAME mysqlclient 
+       VERSION "${OS_SHARED_LIB_VERSION}" 
+-      SOVERSION "${SHARED_LIB_MAJOR_VERSION}")
++      SOVERSION "${OS_SHARED_LIB_VERSION}")
+     IF(LINK_FLAG_NO_UNDEFINED OR VERSION_SCRIPT_LINK_FLAGS)
+       GET_TARGET_PROPERTY(libmysql_link_flags libmysql LINK_FLAGS)
+       IF(NOT libmysql_link_flag)
+@@ -384,18 +390,8 @@ IF(NOT DISABLE_SHARED)
+     GET_VERSIONED_LIBNAME(
+       "${CMAKE_SHARED_LIBRARY_PREFIX}mysqlclient_r"
+       "${CMAKE_SHARED_LIBRARY_SUFFIX}"
+-      ""
++      "${OS_SHARED_LIB_VERSION}"
+       linkname)
+-    INSTALL_SYMLINK(${linkname} libmysql ${INSTALL_LIBDIR} SharedLibraries)
+-    SET(OS_SHARED_LIB_SYMLINKS "${SHARED_LIB_MAJOR_VERSION}" "${OS_SHARED_LIB_VERSION}")
+-    LIST(REMOVE_DUPLICATES OS_SHARED_LIB_SYMLINKS)
+-    FOREACH(ver ${OS_SHARED_LIB_SYMLINKS})
+-      GET_VERSIONED_LIBNAME(
+-        "${CMAKE_SHARED_LIBRARY_PREFIX}mysqlclient_r"
+-        "${CMAKE_SHARED_LIBRARY_SUFFIX}"
+-        "${ver}"
+-        linkname)
+-      INSTALL_SYMLINK(${linkname} libmysql ${INSTALL_LIBDIR} SharedLibraries)
+-    ENDFOREACH()
++    INSTALL_VERSIONED_SYMLINK(${linkname} libmysql ${INSTALL_LIBDIR} SharedLibraries)
+   ENDIF()
+ ENDIF()

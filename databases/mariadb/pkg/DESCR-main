@@ -1,0 +1,5 @@
+MariaDB is a multi-threaded SQL database with a command syntax very similar
+to mSQL.
+
+This is the client portion of MariaDB, it provides the client binaries,
+mysqlclient library and headers for the MariaDB client API.

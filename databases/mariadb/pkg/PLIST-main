@@ -1,0 +1,322 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2013/04/04 18:58:45 brad Exp $
+@conflict mysql-client-*
+@pkgpath databases/mysql,-main
+bin/msql2mysql
+@bin bin/mysql
+bin/mysql_config
+bin/mysql_find_rows
+@bin bin/mysql_waitpid
+bin/mysqlaccess
+@bin bin/mysqladmin
+@bin bin/mysqlbinlog
+bin/mysqlbug
+@bin bin/mysqlcheck
+@bin bin/mysqldump
+bin/mysqldumpslow
+@bin bin/mysqlimport
+@bin bin/mysqlshow
+@bin bin/mysqlslap
+bin/mytop
+include/mysql/
+include/mysql/auth_dialog_client.h
+include/mysql/client_plugin.h
+include/mysql/decimal.h
+include/mysql/errmsg.h
+include/mysql/handler_state.h
+include/mysql/keycache.h
+include/mysql/m_ctype.h
+include/mysql/m_string.h
+include/mysql/ma_dyncol.h
+include/mysql/my_alloc.h
+include/mysql/my_attribute.h
+include/mysql/my_compiler.h
+include/mysql/my_config.h
+include/mysql/my_dbug.h
+include/mysql/my_decimal_limits.h
+include/mysql/my_dir.h
+include/mysql/my_getopt.h
+include/mysql/my_global.h
+include/mysql/my_list.h
+include/mysql/my_net.h
+include/mysql/my_pthread.h
+include/mysql/my_sys.h
+include/mysql/my_valgrind.h
+include/mysql/my_xml.h
+include/mysql/mysql.h
+include/mysql/mysql_com.h
+include/mysql/mysql_embed.h
+include/mysql/mysql_time.h
+include/mysql/mysql_version.h
+include/mysql/mysqld_ername.h
+include/mysql/mysqld_error.h
+include/mysql/plugin.h
+include/mysql/plugin_audit.h
+include/mysql/plugin_auth.h
+include/mysql/plugin_auth_common.h
+include/mysql/plugin_ftparser.h
+include/mysql/private/
+include/mysql/private/atomic/
+include/mysql/private/atomic/gcc_builtins.h
+include/mysql/private/atomic/generic-msvc.h
+include/mysql/private/atomic/nolock.h
+include/mysql/private/atomic/rwlock.h
+include/mysql/private/atomic/solaris.h
+include/mysql/private/atomic/x86-gcc.h
+include/mysql/private/authors.h
+include/mysql/private/base64.h
+include/mysql/private/client_settings.h
+include/mysql/private/contributors.h
+include/mysql/private/create_options.h
+include/mysql/private/custom_conf.h
+include/mysql/private/datadict.h
+include/mysql/private/debug_sync.h
+include/mysql/private/derror.h
+include/mysql/private/des_key_file.h
+include/mysql/private/discover.h
+include/mysql/private/event_data_objects.h
+include/mysql/private/event_db_repository.h
+include/mysql/private/event_parse_data.h
+include/mysql/private/event_queue.h
+include/mysql/private/event_scheduler.h
+include/mysql/private/events.h
+include/mysql/private/field.h
+include/mysql/private/filesort.h
+include/mysql/private/frm_crypt.h
+include/mysql/private/ft_global.h
+include/mysql/private/gcalc_slicescan.h
+include/mysql/private/gcalc_tools.h
+include/mysql/private/gstream.h
+include/mysql/private/ha_ndbcluster.h
+include/mysql/private/ha_ndbcluster_binlog.h
+include/mysql/private/ha_ndbcluster_cond.h
+include/mysql/private/ha_ndbcluster_tables.h
+include/mysql/private/ha_partition.h
+include/mysql/private/handler.h
+include/mysql/private/hash.h
+include/mysql/private/hash_filo.h
+include/mysql/private/heap.h
+include/mysql/private/hostname.h
+include/mysql/private/init.h
+include/mysql/private/innodb_priv.h
+include/mysql/private/item.h
+include/mysql/private/item_cmpfunc.h
+include/mysql/private/item_create.h
+include/mysql/private/item_func.h
+include/mysql/private/item_geofunc.h
+include/mysql/private/item_row.h
+include/mysql/private/item_strfunc.h
+include/mysql/private/item_subselect.h
+include/mysql/private/item_sum.h
+include/mysql/private/item_timefunc.h
+include/mysql/private/item_xmlfunc.h
+include/mysql/private/key.h
+include/mysql/private/keycaches.h
+include/mysql/private/lex.h
+include/mysql/private/lex_symbol.h
+include/mysql/private/lf.h
+include/mysql/private/lock.h
+include/mysql/private/log.h
+include/mysql/private/log_event.h
+include/mysql/private/log_event_old.h
+include/mysql/private/log_slow.h
+include/mysql/private/maria.h
+include/mysql/private/mdl.h
+include/mysql/private/mem_root_array.h
+include/mysql/private/message.h
+include/mysql/private/multi_range_read.h
+include/mysql/private/my_aes.h
+include/mysql/private/my_alarm.h
+include/mysql/private/my_atomic.h
+include/mysql/private/my_base.h
+include/mysql/private/my_bit.h
+include/mysql/private/my_bitmap.h
+include/mysql/private/my_compare.h
+include/mysql/private/my_context.h
+include/mysql/private/my_decimal.h
+include/mysql/private/my_libwrap.h
+include/mysql/private/my_md5.h
+include/mysql/private/my_nosys.h
+include/mysql/private/my_rdtsc.h
+include/mysql/private/my_regex.h
+include/mysql/private/my_stacktrace.h
+include/mysql/private/my_time.h
+include/mysql/private/my_tree.h
+include/mysql/private/my_uctype.h
+include/mysql/private/my_user.h
+include/mysql/private/myisam.h
+include/mysql/private/myisamchk.h
+include/mysql/private/myisammrg.h
+include/mysql/private/myisampack.h
+include/mysql/private/mysql_async.h
+include/mysql/private/mysqld.h
+include/mysql/private/mysqld_default_groups.h
+include/mysql/private/mysqld_suffix.h
+include/mysql/private/mysys_err.h
+include/mysql/private/nt_servc.h
+include/mysql/private/opt_range.h
+include/mysql/private/opt_subselect.h
+include/mysql/private/parse_file.h
+include/mysql/private/partition_element.h
+include/mysql/private/partition_info.h
+include/mysql/private/password.h
+include/mysql/private/probes_mysql.h
+include/mysql/private/probes_mysql_nodtrace.h
+include/mysql/private/procedure.h
+include/mysql/private/protocol.h
+include/mysql/private/queues.h
+include/mysql/private/records.h
+include/mysql/private/repl_failsafe.h
+include/mysql/private/replication.h
+include/mysql/private/rijndael.h
+include/mysql/private/rpl_constants.h
+include/mysql/private/rpl_filter.h
+include/mysql/private/rpl_handler.h
+include/mysql/private/rpl_injector.h
+include/mysql/private/rpl_mi.h
+include/mysql/private/rpl_record.h
+include/mysql/private/rpl_record_old.h
+include/mysql/private/rpl_reporting.h
+include/mysql/private/rpl_rli.h
+include/mysql/private/rpl_tblmap.h
+include/mysql/private/rpl_utility.h
+include/mysql/private/scheduler.h
+include/mysql/private/service_versions.h
+include/mysql/private/set_var.h
+include/mysql/private/sha1.h
+include/mysql/private/sha2.h
+include/mysql/private/slave.h
+include/mysql/private/sp.h
+include/mysql/private/sp_cache.h
+include/mysql/private/sp_head.h
+include/mysql/private/sp_pcontext.h
+include/mysql/private/sp_rcontext.h
+include/mysql/private/spatial.h
+include/mysql/private/sql_acl.h
+include/mysql/private/sql_admin.h
+include/mysql/private/sql_alter.h
+include/mysql/private/sql_analyse.h
+include/mysql/private/sql_array.h
+include/mysql/private/sql_audit.h
+include/mysql/private/sql_base.h
+include/mysql/private/sql_binlog.h
+include/mysql/private/sql_bitmap.h
+include/mysql/private/sql_cache.h
+include/mysql/private/sql_callback.h
+include/mysql/private/sql_class.h
+include/mysql/private/sql_connect.h
+include/mysql/private/sql_const.h
+include/mysql/private/sql_crypt.h
+include/mysql/private/sql_cursor.h
+include/mysql/private/sql_db.h
+include/mysql/private/sql_delete.h
+include/mysql/private/sql_derived.h
+include/mysql/private/sql_do.h
+include/mysql/private/sql_error.h
+include/mysql/private/sql_expression_cache.h
+include/mysql/private/sql_handler.h
+include/mysql/private/sql_help.h
+include/mysql/private/sql_hset.h
+include/mysql/private/sql_insert.h
+include/mysql/private/sql_join_cache.h
+include/mysql/private/sql_lex.h
+include/mysql/private/sql_lifo_buffer.h
+include/mysql/private/sql_list.h
+include/mysql/private/sql_load.h
+include/mysql/private/sql_locale.h
+include/mysql/private/sql_manager.h
+include/mysql/private/sql_parse.h
+include/mysql/private/sql_partition.h
+include/mysql/private/sql_partition_admin.h
+include/mysql/private/sql_plist.h
+include/mysql/private/sql_plugin.h
+include/mysql/private/sql_plugin_services.h
+include/mysql/private/sql_prepare.h
+include/mysql/private/sql_priv.h
+include/mysql/private/sql_profile.h
+include/mysql/private/sql_reload.h
+include/mysql/private/sql_rename.h
+include/mysql/private/sql_repl.h
+include/mysql/private/sql_select.h
+include/mysql/private/sql_servers.h
+include/mysql/private/sql_show.h
+include/mysql/private/sql_signal.h
+include/mysql/private/sql_sort.h
+include/mysql/private/sql_string.h
+include/mysql/private/sql_table.h
+include/mysql/private/sql_tablespace.h
+include/mysql/private/sql_test.h
+include/mysql/private/sql_time.h
+include/mysql/private/sql_trigger.h
+include/mysql/private/sql_truncate.h
+include/mysql/private/sql_udf.h
+include/mysql/private/sql_union.h
+include/mysql/private/sql_update.h
+include/mysql/private/sql_view.h
+include/mysql/private/sql_yacc.h
+include/mysql/private/strfunc.h
+include/mysql/private/structs.h
+include/mysql/private/sys_vars.h
+include/mysql/private/sys_vars_shared.h
+include/mysql/private/t_ctype.h
+include/mysql/private/table.h
+include/mysql/private/thr_alarm.h
+include/mysql/private/thr_lock.h
+include/mysql/private/thr_malloc.h
+include/mysql/private/thread_pool_priv.h
+include/mysql/private/threadpool.h
+include/mysql/private/transaction.h
+include/mysql/private/tzfile.h
+include/mysql/private/tztime.h
+include/mysql/private/unireg.h
+include/mysql/private/violite.h
+include/mysql/private/waiting_threads.h
+include/mysql/private/welcome_copyright_notice.h
+include/mysql/private/winservice.h
+include/mysql/private/wqueue.h
+include/mysql/psi/
+include/mysql/psi/mysql_file.h
+include/mysql/psi/mysql_thread.h
+include/mysql/psi/psi.h
+include/mysql/psi/psi_abi_v1.h
+include/mysql/psi/psi_abi_v2.h
+include/mysql/service_debug_sync.h
+include/mysql/service_kill_statement.h
+include/mysql/service_my_snprintf.h
+include/mysql/service_progress_report.h
+include/mysql/service_thd_alloc.h
+include/mysql/service_thd_wait.h
+include/mysql/service_thread_scheduler.h
+include/mysql/services.h
+include/mysql/sql_common.h
+include/mysql/sql_state.h
+include/mysql/sslopt-case.h
+include/mysql/sslopt-longopts.h
+include/mysql/sslopt-vars.h
+include/mysql/typelib.h
+@lib lib/libmysqlclient.so.${LIBmysqlclient_VERSION}
+@lib lib/libmysqlclient_r.so.${LIBmysqlclient_r_VERSION}
+lib/mysql/
+lib/mysql/libmysqlclient.a
+@lib lib/mysql/libmysqlclient.so.${LIBmysqlclient_VERSION}
+lib/mysql/libmysqlclient_r.a
+@lib lib/mysql/libmysqlclient_r.so.${LIBmysqlclient_r_VERSION}
+lib/mysql/libmysqlservices.a
+lib/mysql/plugin/
+@man man/man1/msql2mysql.1
+@man man/man1/mysql.1
+@man man/man1/mysql_config.1
+@man man/man1/mysql_find_rows.1
+@man man/man1/mysql_waitpid.1
+@man man/man1/mysqlaccess.1
+@man man/man1/mysqladmin.1
+@man man/man1/mysqlbinlog.1
+@man man/man1/mysqlbug.1
+@man man/man1/mysqlcheck.1
+@man man/man1/mysqldump.1
+@man man/man1/mysqldumpslow.1
+@man man/man1/mysqlimport.1
+@man man/man1/mysqlman.1
+@man man/man1/mysqlshow.1
+@man man/man1/mysqlslap.1
+share/aclocal/
+share/aclocal/mysql.m4

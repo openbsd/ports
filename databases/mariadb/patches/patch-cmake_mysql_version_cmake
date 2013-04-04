@@ -1,0 +1,12 @@
+$OpenBSD: patch-cmake_mysql_version_cmake,v 1.1.1.1 2013/04/04 18:58:44 brad Exp $
+--- cmake/mysql_version.cmake.orig	Fri Sep  9 17:56:39 2011
++++ cmake/mysql_version.cmake	Thu Oct 13 12:14:37 2011
+@@ -17,7 +17,7 @@
+ # Global constants, only to be changed between major releases.
+ #
+ 
+-SET(SHARED_LIB_MAJOR_VERSION "18")
++SET(SHARED_LIB_MAJOR_VERSION "${LIB_VERSION}")
+ SET(PROTOCOL_VERSION "10")
+ SET(DOT_FRM_VERSION "6")
+ 

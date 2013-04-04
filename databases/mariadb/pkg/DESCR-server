@@ -1,0 +1,5 @@
+MariaDB is a multi-threaded SQL database with a command syntax very similar
+to mSQL.
+
+This is the server portion of MariaDB, it provides the MariaDB server as
+well as various administrative binaries.

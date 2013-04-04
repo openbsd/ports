@@ -1,0 +1,21 @@
+$OpenBSD: patch-sql_CMakeLists_txt,v 1.1.1.1 2013/04/04 18:58:44 brad Exp $
+--- sql/CMakeLists.txt.orig	Mon Mar 11 11:29:11 2013
++++ sql/CMakeLists.txt	Tue Mar 26 09:37:58 2013
+@@ -266,7 +266,7 @@ ADD_CUSTOM_TARGET(distclean
+   VERBATIM
+   )
+ 
+-IF(INSTALL_LAYOUT STREQUAL "STANDALONE")
++IF(FALSE)
+ 
+ # We need to create empty directories (data/test) the installation.  
+ # This does not work with current CPack due to http://www.cmake.org/Bug/view.php?id=8767
+@@ -311,7 +311,7 @@ ELSE()
+   # Not windows or cross compiling, just install an empty directory
+   INSTALL(FILES ${DUMMY_FILE} DESTINATION data/mysql COMPONENT DataFiles)
+ ENDIF(WIN32 AND MYSQLD_EXECUTABLE)
+-ENDIF(INSTALL_LAYOUT STREQUAL "STANDALONE")
++ENDIF(FALSE)
+ 
+ IF(WIN32)
+   SET(my_bootstrap_sql ${CMAKE_CURRENT_BINARY_DIR}/my_bootstrap.sql)
