@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Golly
+GenericName=Game of Life Simulator
+Comment=A Conway's Game of Life simulator
+Icon=golly
+Exec=golly %f
+Terminal=false
+Categories=Game;LogicGame;

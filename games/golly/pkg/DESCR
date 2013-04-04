@@ -1,0 +1,11 @@
+Game of Life simulator using hashlife algorithm
+
+Golly simulates Conway's Game of Life with an arbitrarily large grid of
+cells.  It can optionally use a hashlife algorithm, which allows it to
+rapidly compute generations for huge patterns, and to compute many
+generations into the future at a time.
+
+Golly provides a graphical interface for viewing and editing cellular
+automata.  It supports copy and paste, zoom, auto-fit, multiple layers,
+and viewing different areas of a pattern simultaneously in different
+areas of a window.
