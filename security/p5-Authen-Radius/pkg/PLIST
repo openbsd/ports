@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/07/01 09:18:54 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/04/04 17:05:16 sthen Exp $
 ${P5SITE}/Authen/
 ${P5SITE}/Authen/Radius.pm
 @man man/man3p/Authen::Radius.3p
@@ -9,6 +9,7 @@ share/examples/p5-Authen-Radius/dictionary.cisco
 share/examples/p5-Authen-Radius/dictionary.compat
 share/examples/p5-Authen-Radius/dictionary.livingston
 share/examples/p5-Authen-Radius/dictionary.quintum
+share/examples/p5-Authen-Radius/dictionary.rfc2869
 share/examples/p5-Authen-Radius/dictionary.shiva
 share/examples/p5-Authen-Radius/dictionary.tunnel
 share/examples/p5-Authen-Radius/dictionary.usr
