@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2013/03/30 10:48:34 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.29 2013/04/04 15:12:21 ajacoutot Exp $
 @conflict gnome-build-*
 @pkgpath x11/gnome/build
 @bin bin/anjuta
@@ -217,7 +217,7 @@ share/anjuta/class-templates/cc-source.tpl
 share/anjuta/class-templates/go-header.tpl
 share/anjuta/class-templates/go-source.tpl
 share/anjuta/class-templates/js-source.tpl
-share/anjuta/class-templates/${MODPY_PY_PREFIX}source.tpl
+share/anjuta/class-templates/py-source.tpl
 share/anjuta/class-templates/vala-source.tpl
 share/anjuta/gdb.init
 share/anjuta/glade/
@@ -1992,24 +1992,11 @@ share/help/zh_CN/anjuta-manual/project-wizard-template.page
 share/help/zh_CN/anjuta-manual/run-parameters-dialog.page
 share/help/zh_CN/anjuta-manual/run-run.page
 share/help/zh_CN/anjuta-manual/widget-index.page
-share/icons/gnome/
-share/icons/gnome/16x16/
-share/icons/gnome/16x16/mimetypes/
 share/icons/gnome/16x16/mimetypes/gnome-mime-application-x-anjuta.png
-share/icons/gnome/22x22/
-share/icons/gnome/22x22/mimetypes/
 share/icons/gnome/22x22/mimetypes/gnome-mime-application-x-anjuta.png
-share/icons/gnome/24x24/
-share/icons/gnome/24x24/mimetypes/
 share/icons/gnome/24x24/mimetypes/gnome-mime-application-x-anjuta.png
-share/icons/gnome/32x32/
-share/icons/gnome/32x32/mimetypes/
 share/icons/gnome/32x32/mimetypes/gnome-mime-application-x-anjuta.png
-share/icons/gnome/48x48/
-share/icons/gnome/48x48/mimetypes/
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-anjuta.png
-share/icons/gnome/scalable/
-share/icons/gnome/scalable/mimetypes/
 share/icons/gnome/scalable/mimetypes/gnome-mime-application-x-anjuta.svg
 share/icons/hicolor/16x16/apps/anjuta.png
 share/icons/hicolor/22x22/apps/anjuta.png
