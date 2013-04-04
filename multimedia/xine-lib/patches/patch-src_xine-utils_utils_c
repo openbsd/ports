@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_xine-utils_utils_c,v 1.6 2013/04/04 16:48:22 brad Exp $
+
+Make use of clock_gettime() on OpenBSD. Until we have per-process
+timers and can enable _POSIX_TIMERS in unistd.h.
+
+--- src/xine-utils/utils.c.orig	Wed Apr  3 18:51:41 2013
++++ src/xine-utils/utils.c	Wed Apr  3 19:04:04 2013
+@@ -671,7 +671,8 @@ void xine_xprintf(xine_t *xine, int verbose, const cha
+ 
+ int xine_monotonic_clock(struct timeval *tv, struct timezone *tz)
+ {
+-#if _POSIX_TIMERS > 0 && defined(_POSIX_MONOTONIC_CLOCK) && defined(HAVE_POSIX_TIMERS)
++#if _POSIX_TIMERS > 0 && defined(_POSIX_MONOTONIC_CLOCK) && defined(HAVE_POSIX_TIMERS) || \
++    defined(__OpenBSD__)
+   static int initialized = 0;
+   static int use_clock_monotonic = 0;
+ 

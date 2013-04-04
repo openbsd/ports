@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_xine-engine_demux_c,v 1.3 2013/04/04 16:48:22 brad Exp $
+
+Make use of clock_gettime() on OpenBSD. Until we have per-process
+timers and can enable _POSIX_TIMERS in unistd.h.
+
+--- src/xine-engine/demux.c.orig	Wed Apr  3 18:45:50 2013
++++ src/xine-engine/demux.c	Wed Apr  3 19:01:24 2013
+@@ -132,7 +132,7 @@ static struct timespec _x_compute_interval(unsigned in
+   ui.QuadPart  += millisecs * 10000;
+   ts.tv_sec = ui.QuadPart / 10000000;
+   ts.tv_sec = (ui.QuadPart % 10000000)*100;
+-#elif _POSIX_TIMERS > 0
++#elif _POSIX_TIMERS > 0 || defined(__OpenBSD__)
+   clock_gettime(CLOCK_REALTIME, &ts);
+   uint64_t ttimer = (uint64_t)ts.tv_sec*1000 + ts.tv_nsec/1000000 + millisecs;
+   ts.tv_sec = ttimer/1000;
