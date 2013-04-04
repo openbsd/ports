@@ -1,54 +1,35 @@
-$OpenBSD: patch-plugins_cursor_gsd-cursor-manager_c,v 1.1 2013/04/01 19:29:16 ajacoutot Exp $
+$OpenBSD: patch-plugins_cursor_gsd-cursor-manager_c,v 1.2 2013/04/04 13:51:30 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=696707
 
---- plugins/cursor/gsd-cursor-manager.c.orig	Tue Mar 26 07:59:38 2013
-+++ plugins/cursor/gsd-cursor-manager.c	Mon Apr  1 21:19:29 2013
-@@ -70,6 +70,15 @@ static gboolean add_all_devices (GsdCursorManager *man
- 
- typedef void (*ForeachScreenFunc) (GdkDisplay *display, GdkScreen *screen, GsdCursorManager *manager, gpointer user_data);
- 
-+GQuark
-+gsd_cursor_manager_error_quark (void)
-+{
-+        static GQuark quark = 0;
-+        if (!quark)
-+                quark = g_quark_from_static_string ("gsd_cursor_manager_error");
-+        return quark;
-+}
-+
- static void
- foreach_screen (GsdCursorManager  *manager,
-                 ForeachScreenFunc  func,
-@@ -168,8 +177,12 @@ add_device (GdkDeviceManager *device_manager,
+--- plugins/cursor/gsd-cursor-manager.c.orig	Thu Apr  4 15:38:46 2013
++++ plugins/cursor/gsd-cursor-manager.c	Thu Apr  4 15:38:50 2013
+@@ -168,8 +168,11 @@ add_device (GdkDeviceManager *device_manager,
  
          /* Create IdleMonitors for each pointer device */
          monitor = gnome_idle_monitor_new_for_device (device);
 -        if (!monitor)
 +        if (!monitor) {
-+                g_set_error (error, GSD_CURSOR_MANAGER_ERROR,
-+                             GSD_CURSOR_MANAGER_ERROR_FAILED,
++                g_set_error (error, G_IO_ERROR, G_IO_ERROR_NOT_SUPPORTED,
 +                             "Per-device idletime monitor not available");
                  return FALSE;
 +        }
          g_hash_table_insert (manager->priv->monitors,
                               device,
                               monitor);
-@@ -281,12 +294,16 @@ gsd_cursor_manager_start (GsdCursorManager  *manager,
+@@ -281,12 +284,14 @@ gsd_cursor_manager_start (GsdCursorManager  *manager,
          gnome_settings_profile_start (NULL);
  
          if (supports_cursor_xfixes () == FALSE) {
 -                g_debug ("XFixes cursor extension not available, will not hide the cursor");
-+                g_set_error (error, GSD_CURSOR_MANAGER_ERROR,
-+                             GSD_CURSOR_MANAGER_ERROR_FAILED,
++                g_set_error (error, G_IO_ERROR, G_IO_ERROR_NOT_SUPPORTED,
 +                             "XFixes cursor extension not available");
                  return FALSE;
          }
  
          if (supports_xinput_devices () == FALSE) {
 -                g_debug ("XInput support not available, will not hide the cursor");
-+                g_set_error (error, GSD_CURSOR_MANAGER_ERROR,
-+                             GSD_CURSOR_MANAGER_ERROR_FAILED,
++                g_set_error (error, G_IO_ERROR, G_IO_ERROR_NOT_SUPPORTED,
 +                             "XInput support not available");
                  return FALSE;
          }
