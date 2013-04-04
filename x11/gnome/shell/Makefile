@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2013/04/03 12:32:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2013/04/04 12:17:22 ajacoutot Exp $
 
 COMMENT=		next generation GNOME shell
 
@@ -66,7 +66,7 @@ LIB_DEPENDS=		audio/pulseaudio \
 # polkit(8) almost always needs to know the "active" session
 RUN_DEPENDS +=		sysutils/consolekit
 
-# gnome-shell-extension-tool
+# gnome-shell-extension-tool, gnome-shell-perf-tool
 RUN_DEPENDS +=		devel/py-gobject3
 
 # Don't depend on evolution to lower down the amount of dependencies and

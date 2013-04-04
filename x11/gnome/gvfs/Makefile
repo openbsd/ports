@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2013/03/30 18:08:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.89 2013/04/04 12:17:22 ajacoutot Exp $
 
 COMMENT-main=	GNOME Virtual File System
 COMMENT-smb=	GVFS mount module for samba
@@ -88,6 +88,9 @@ CONFIGURE_ARGS +=	--disable-samba
 .if !${BUILD_PACKAGES:M-goa}
 CONFIGURE_ARGS +=	--disable-goa
 .endif
+
+# test_polkitd.py, gvfs-test
+TEST_DEPENDS=	devel/py-gobject3
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/

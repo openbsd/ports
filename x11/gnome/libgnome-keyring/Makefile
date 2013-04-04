@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/03/29 07:55:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2013/04/04 12:17:22 ajacoutot Exp $
 
 COMMENT=	library for gnome keyring integration
 
@@ -21,5 +21,8 @@ MODULES=	devel/gettext \
 LIB_DEPENDS=	security/libgcrypt \
 		x11/dbus \
 		devel/glib2
+
+# test-gi.py
+TEST_DEPENDS=	devel/py-gobject3
 
 .include <bsd.port.mk>

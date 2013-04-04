@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/11 11:46:11 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2013/04/04 12:17:22 ajacoutot Exp $
 
 COMMENT=	library for storing and retrieving passwords and secrets
 
 GNOME_PROJECT=	libsecret
 GNOME_VERSION=	0.14
+REVISION=	0
 
 SHARED_LIBS +=  secret-1             0.0      # unknown
 
@@ -16,12 +17,9 @@ WANTLIB += c ffi gcrypt gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gpg-error gthread-2.0 pcre pthread z
 
 MODULES=	devel/gettext \
-		lang/python \
 		x11/gnome
 
 MODGNOME_TOOLS=	goi vala
-MODPY_BUILDDEP=	No
-MODPY_RUNDEP=	No
 
 # man pages
 BUILD_DEPENDS += textproc/docbook-xsl
@@ -31,8 +29,8 @@ LIB_DEPENDS=	devel/glib2 \
 
 # unable to autolaunch a dbus-daemon without a $DISPLAY for X11
 TEST_IS_INTERACTIVE=	X11
-TEST_DEPENDS=	${MODPY_RUN_DEPENDS} \
-			x11/dbus-python
+TEST_DEPENDS=	devel/py-gobject3 \
+		x11/dbus-python
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/libsecret/tests/Makefile.in \
