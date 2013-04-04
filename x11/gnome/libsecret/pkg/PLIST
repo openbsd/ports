@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/03/04 18:53:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/04/04 14:38:28 ajacoutot Exp $
 @bin bin/secret-tool
 include/libsecret-1/
 include/libsecret-1/libsecret/
@@ -69,10 +69,10 @@ share/gtk-doc/html/libsecret-1/migrating-schemas.html
 share/gtk-doc/html/libsecret-1/migrating-searching.html
 share/gtk-doc/html/libsecret-1/migrating-storing.html
 share/gtk-doc/html/libsecret-1/migrating.html
-share/gtk-doc/html/libsecret-1/${MODPY_PY_PREFIX}examples.html
-share/gtk-doc/html/libsecret-1/${MODPY_PY_PREFIX}lookup-example.html
-share/gtk-doc/html/libsecret-1/${MODPY_PY_PREFIX}remove-example.html
-share/gtk-doc/html/libsecret-1/${MODPY_PY_PREFIX}store-example.html
+share/gtk-doc/html/libsecret-1/py-examples.html
+share/gtk-doc/html/libsecret-1/py-lookup-example.html
+share/gtk-doc/html/libsecret-1/py-remove-example.html
+share/gtk-doc/html/libsecret-1/py-store-example.html
 share/gtk-doc/html/libsecret-1/right.png
 share/gtk-doc/html/libsecret-1/simple.html
 share/gtk-doc/html/libsecret-1/style.css
