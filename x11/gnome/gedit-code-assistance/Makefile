@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/30 13:05:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2013/04/04 13:07:36 ajacoutot Exp $
 
 BROKEN-powerpc=	clang dumps core
 
@@ -8,6 +8,7 @@ COMMENT=	code assistance for Gedit
 
 GNOME_PROJECT=	gedit-code-assistance
 GNOME_VERSION=	0.2.0
+REVISION=	0
 
 CATEGORIES=	editors devel
 
@@ -36,13 +37,9 @@ LIB_DEPENDS=	devel/libgee06 \
 
 MODGNOME_TOOLS=	goi vala
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	x11/gnome/gedit>=3.8.0
-
-# XXX: The name org.gnome.SessionManager was not provided by any .service files
-RUN_DEPENDS+=	x11/gnome/session
-# XXX: Re-enable for py-gobject with python 3.
-CONFIGURE_ARGS+=	--disable-python
+BUILD_DEPENDS=	x11/gnome/gedit>=3.8.0
+RUN_DEPENDS=	x11/gnome/gedit>=3.8.0 \
+		devel/py-gobject3
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/backends/c/gcp-c-compile-args.c

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.55 2013/03/30 13:04:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.56 2013/04/04 13:07:37 ajacoutot Exp $
 
 COMMENT=		plugins for Gedit
 
 GNOME_PROJECT=		gedit-plugins
 GNOME_VERSION=		3.8.0
+REVISION=		0
 
 CATEGORIES=		editors
 
@@ -26,27 +27,24 @@ MODULES=		devel/gettext \
 			lang/python \
 			x11/gnome
 
-BUILD_DEPENDS=		${RUN_DEPENDS} \
-			devel/gsettings-desktop-schemas \
-			textproc/gsed
+BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
+			devel/vte3 \
+			textproc/gsed \
+			x11/gnome/gedit>=3.8.0 \
+			x11/gnome/gucharmap
+
 LIB_DEPENDS=		devel/libpeas>=1.8.0 \
 			x11/gtksourceview3
+
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
+			devel/py-gobject3 \
 			devel/vte3 \
 			x11/gnome/gedit>=3.8.0 \
 			x11/gnome/gucharmap
 
 LIBTOOL_FLAGS=		--tag=disable-static
 
-CONFIGURE_ARGS+=	--disable-static \
-			--with-plugins=all
-
-# XXX: Re-enable for py-gobject with python 3
-CONFIGURE_ARGS+=	--disable-python
-
-# needed for the Vte plugin (-lvte2_90)
-MODGNOME_CPPFLAGS=	-I${X11BASE}/include -pthread
-MODGNOME_LDFLAGS=	-L${X11BASE}/lib -pthread
+CONFIGURE_ARGS+=	--disable-static
 
 post-install:
 	rm ${PREFIX}/lib/gedit/plugins/*.la

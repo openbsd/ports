@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:46:10 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/04/04 13:07:36 ajacoutot Exp $
 
 COMMENT=	LaTeX plugin for Gedit
 
 GNOME_PROJECT=	gedit-latex
 GNOME_VERSION=	3.4.1
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	editors print
 
@@ -18,10 +18,12 @@ MODULES=	x11/gnome \
 		devel/dconf
 
 BUILD_DEPENDS=	devel/gettext \
-		x11/gnome/gedit>=3.2.0
-RUN_DEPENDS=	devel/gettext \
+		x11/gnome/gedit
+
+RUN_DEPENDS=	devel/py-gobject3 \
+		devel/gettext \
 		textproc/rubber \
-		x11/gnome/gedit>=3.2.0
+		x11/gnome/gedit
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/latex/latex/environment.py

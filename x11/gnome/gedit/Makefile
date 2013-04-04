@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.98 2013/04/02 16:16:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.99 2013/04/04 13:07:36 ajacoutot Exp $
 
 COMMENT=		lightweight GNOME text editor
 
 GNOME_PROJECT=		gedit
 GNOME_VERSION=		3.8.0
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		editors
 
@@ -38,21 +38,16 @@ LIB_DEPENDS=		devel/libpeas>=1.8.0 \
 
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/iso-codes \
+			devel/py-gobject3 \
 			x11/gnome/gvfs #--enable-gvfs-metadata
 
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODGNOME_TOOLS= 	goi yelp
 MODGNOME_DESKTOP_FILE=	Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 
 CONFIGURE_ARGS=		--disable-static \
-			--enable-spell \
-			--enable-zeitgeist \
-			--enable-gvfs-metadata \
 			--disable-updater
-
-# XXX: Re-enable for py-gobject with python 3.
-CONFIGURE_ARGS+=	--disable-python
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 TEST_IS_INTERACTIVE=	X11
 
