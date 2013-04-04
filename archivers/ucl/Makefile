@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/21 08:45:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2013/04/04 16:03:56 brad Exp $
 
 COMMENT=	portable lossless data compression library
 
 DISTNAME=	ucl-1.03
+REVISION=	1
 CATEGORIES=	archivers devel
 SHARED_LIBS +=	ucl                  1.0      # .1.0
 
@@ -13,7 +14,6 @@ MAINTAINER=	Wilbern Cobb <wcobb@openbsd.org>
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-REVISION = 	0
 MASTER_SITES=	${HOMEPAGE}/download/
 
 .if ${MACHINE_ARCH} == "i386"

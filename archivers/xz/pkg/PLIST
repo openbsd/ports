@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/06/25 11:07:22 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/04/04 16:03:56 brad Exp $
 @conflict lzma-*
 @pkgpath archivers/lzma
-%%SHARED%%
 bin/lzcat
 bin/lzcmp
 bin/lzdiff
@@ -43,6 +42,7 @@ include/lzma/version.h
 include/lzma/vli.h
 lib/liblzma.a
 lib/liblzma.la
+@lib lib/liblzma.so.${LIBlzma_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/liblzma.pc
 @man man/man1/lzcat.1

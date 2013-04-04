@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/21 08:45:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2013/04/04 16:03:56 brad Exp $
 
 COMMENT=		extract files from InstallShield CAB archives
 
 DISTNAME=		unshield-0.6
+REVISION=		0
 SHARED_LIBS+=		unshield	2.0	# .0.0
 CATEGORIES=		archivers
 
@@ -12,6 +13,7 @@ MAINTAINER=		Jonathan Gray <jsg@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=		Yes
+
 WANTLIB=		c z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=synce/}

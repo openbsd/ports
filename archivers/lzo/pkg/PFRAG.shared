@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2005/12/23 13:57:21 espie Exp $
-@lib lib/liblzo.so.${LIBlzo_VERSION}

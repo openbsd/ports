@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/02/19 12:31:30 espie Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2013/04/04 16:03:56 brad Exp $
 include/zipios++/
 include/zipios++/basicentry.h
 include/zipios++/collcoll.h
@@ -28,3 +27,4 @@ include/zipios++/zipoutputstream.h
 include/zipios++/zipoutputstreambuf.h
 lib/libzipios.a
 lib/libzipios.la
+@lib lib/libzipios.so.${LIBzipios_VERSION}

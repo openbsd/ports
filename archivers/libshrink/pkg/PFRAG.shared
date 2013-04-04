@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/03/11 21:24:03 dhill Exp $
-@lib lib/libshrink.so.${LIBshrink_VERSION}

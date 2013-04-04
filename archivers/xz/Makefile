@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/21 08:45:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2013/04/04 16:03:56 brad Exp $
 
 NOT_FOR_ARCHS=	${GCC2_ARCHS}
 
 COMMENT=	LZMA compression and decompression tools
 
 DISTNAME=	xz-5.0.4
+REVISION=	0
 SHARED_LIBS=	lzma                 1.0      # .5.4
 CATEGORIES=	archivers
 DPB_PROPERTIES=	parallel

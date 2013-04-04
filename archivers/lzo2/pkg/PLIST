@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/11/14 12:41:51 rpointel Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.3 2013/04/04 16:03:56 brad Exp $
 include/lzo/
 include/lzo/lzo1.h
 include/lzo/lzo1a.h
@@ -16,6 +15,7 @@ include/lzo/lzodefs.h
 include/lzo/lzoutil.h
 lib/liblzo2.a
 lib/liblzo2.la
+@lib lib/liblzo2.so.${LIBlzo2_VERSION}
 share/doc/lzo2/
 share/doc/lzo2/AUTHORS
 share/doc/lzo2/COPYING

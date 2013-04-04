@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/16 13:10:47 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2013/04/04 16:03:55 brad Exp $
 @bin bin/libtar
 include/libtar.h
 include/libtar_listhash.h
 lib/libtar.a
 lib/libtar.la
+@lib lib/libtar.so.${LIBtar_VERSION}
 @man man/man3/TH_ISBLK.3
 @man man/man3/TH_ISCHR.3
 @man man/man3/TH_ISDIR.3

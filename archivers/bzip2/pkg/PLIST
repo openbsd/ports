@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2010/09/20 18:21:10 naddy Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.21 2013/04/04 16:03:55 brad Exp $
 bin/bunzip2
 bin/bzcat
 bin/bzcmp
@@ -13,6 +12,7 @@ bin/bzless
 bin/bzmore
 include/bzlib.h
 lib/libbz2.a
+@lib lib/libbz2.so.${LIBbz2_VERSION}
 @man man/man1/bunzip2.1
 @man man/man1/bzcat.1
 @man man/man1/bzcmp.1

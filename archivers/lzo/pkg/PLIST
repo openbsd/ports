@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2005/04/17 19:26:20 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/04/04 16:03:55 brad Exp $
 include/lzo1.h
 include/lzo16bit.h
 include/lzo1a.h
@@ -13,7 +13,7 @@ include/lzoconf.h
 include/lzoutil.h
 lib/liblzo.a
 lib/liblzo.la
-%%SHARED%%
+@lib lib/liblzo.so.${LIBlzo_VERSION}
 @endfake
 share/doc/lzo/
 share/doc/lzo/LTEST.TXT

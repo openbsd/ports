@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/08/04 17:36:26 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.3 2013/04/04 16:03:55 brad Exp $
 include/mspack.h
 lib/libmspack.a
 lib/libmspack.la
+@lib lib/libmspack.so.${LIBmspack_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/libmspack.pc

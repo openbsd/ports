@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/05/31 02:33:21 shadchin Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.4 2013/04/04 16:03:55 brad Exp $
 @bin bin/zipcmp
 @bin bin/zipmerge
 @bin bin/ziptorrent
@@ -7,6 +6,7 @@ include/zip.h
 lib/libzip/
 lib/libzip.a
 lib/libzip.la
+@lib lib/libzip.so.${LIBzip_VERSION}
 lib/libzip/include/
 lib/libzip/include/zipconf.h
 lib/pkgconfig/
