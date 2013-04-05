@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.123 2013/04/03 06:42:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.124 2013/04/05 17:45:52 ajacoutot Exp $
 
 COMMENT=		GNOME file manager
 
@@ -8,9 +8,7 @@ COMMENT=		GNOME file manager
 # graphics/evince
 # sysutils/deja-dup
 # x11/gnome/file-roller
-# x11/gnome/main-menu
 # x11/gnome/seahorse-nautilus
-# x11/gnome/terminal
 # x11/gnome/totem
 # x11/gnome/tracker
 
