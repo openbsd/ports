@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2013/03/11 01:30:26 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2013/04/05 07:52:27 ajacoutot Exp $
 
 COMMENT=	GNOME multimode HF terminal
 
@@ -33,7 +33,6 @@ MODGNOME_TOOLS= 	yelp
 USE_GMAKE=		No
 MODGCONF2_SCHEMAS_DIR=	gmfsk
 
-BUILD_DEPENDS=		textproc/rarian
 LIB_DEPENDS=		comms/hamlib \
 			math/fftw \
 			x11/gtk+2 \
