@@ -1,21 +1,35 @@
-$OpenBSD: patch-source_main_c,v 1.1.1.1 2001/07/04 16:57:50 lebel Exp $
---- source/main.c.orig	Thu Jul 21 21:47:08 1994
-+++ source/main.c	Tue Jul  3 13:02:35 2001
-@@ -92,7 +92,7 @@
+$OpenBSD: patch-source_main_c,v 1.2 2013/04/05 20:36:27 naddy Exp $
+--- source/main.c.orig	Fri Jul 22 03:47:27 1994
++++ source/main.c	Fri Apr  5 22:20:46 2013
+@@ -88,19 +88,8 @@
+ #include <time.h>
+ #endif
+ 
+-#ifndef VMS
  #ifndef MAC
- #ifndef GEMDOS
+-#ifndef GEMDOS
  #ifndef AMIGA
 -long time();
-+//long time();
- #endif
- #endif
- char *getenv();
-@@ -363,7 +363,7 @@ char *argv[];
- #ifdef MAC
+-#endif
+-#endif
+-char *getenv();
+-#endif
+-#endif
+-
+-#ifndef MAC
+-#ifndef AMIGA
+ #ifdef USG
+ #if !defined(MSDOS) && !defined(ATARIST_TC)
+ unsigned short getuid(), getgid();
+@@ -360,11 +349,7 @@ char *argv[];
+   else
+     {	  /* Create character	   */
+       create_character();
+-#ifdef MAC
        birth_date = time ((time_t *)0);
- #else
+-#else
 -      birth_date = time ((long *)0);
-+      birth_date = time ((time_t *)0);
- #endif
+-#endif
        char_inven_init();
        py.flags.food = 7500;
+       py.flags.food_digested = 2;

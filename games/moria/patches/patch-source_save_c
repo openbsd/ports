@@ -1,38 +1,52 @@
-$OpenBSD: patch-source_save_c,v 1.1.1.1 2001/07/04 16:57:50 lebel Exp $
---- source/save.c.orig	Wed Jul  4 11:31:30 2001
-+++ source/save.c	Wed Jul  4 11:32:25 2001
-@@ -105,7 +105,6 @@ static void rd_monster();
- #ifdef MAC
+$OpenBSD: patch-source_save_c,v 1.2 2013/04/05 20:36:27 naddy Exp $
+--- source/save.c.orig	Fri Jul 22 03:47:40 1994
++++ source/save.c	Fri Apr  5 22:25:03 2013
+@@ -102,12 +102,8 @@ static void rd_monster();
+ #endif
+ 
+ #if !defined(ATARIST_MWC)
+-#ifdef MAC
  #include <time.h>
  #else
 -long time();
- #endif
- #else
+-#endif
+-#else
  char *malloc();
-@@ -334,7 +333,7 @@ static int sv_write()
- #ifdef MAC
-   l = time((time_t *)0);
- #else
--  l = time((long *)0);
-+  l = time((time_t *)0);
  #endif
+ 
+@@ -331,11 +327,7 @@ static int sv_write()
+     }
+ 
+   /* save the current time in the savefile */
+-#ifdef MAC
+   l = time((time_t *)0);
+-#else
+-  l = time((long *)0);
+-#endif
    if (l < start_time)
      {
-@@ -1032,7 +1031,7 @@ int *generate;
- #ifdef MAC
+       /* someone is messing with the clock!, assume that we have been
+@@ -1029,11 +1021,7 @@ int *generate;
+ 	      || (version_min == 2 && patch_level >= 2))
+ 	    rd_long ((int32u *)&birth_date);
+ 	  else
+-#ifdef MAC
  	    birth_date = time((time_t *)0);
- #else
+-#else
 -	    birth_date = time((long *)0);
-+	    birth_date = time((time_t *)0);
- #endif
+-#endif
  	}
        if ((c = getc(fileptr)) == EOF || (l & 0x80000000L))
-@@ -1256,7 +1255,7 @@ scoreboard; it will not be scored again.
- #ifdef MAC
+ 	{
+@@ -1253,11 +1241,7 @@ scoreboard; it will not be scored again.");
+ 	      /* rotate store inventory, depending on how old the save file */
+ 	      /* is foreach day old (rounded up), call store_maint */
+ 	      /* calculate age in seconds */
+-#ifdef MAC
  	      start_time = time((time_t *)0);
- #else
+-#else
 -	      start_time = time((long *)0);
-+	      start_time = time((time_t *)0);
- #endif
+-#endif
  	      /* check for reasonable values of time here ... */
  	      if (start_time < time_saved)
+ 		age = 0;

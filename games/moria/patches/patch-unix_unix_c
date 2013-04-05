@@ -1,6 +1,6 @@
-$OpenBSD: patch-unix_unix_c,v 1.1.1.1 2001/07/04 16:57:50 lebel Exp $
---- unix/unix.c.orig	Thu Jul 21 18:36:49 1994
-+++ unix/unix.c	Tue Jul  3 13:02:35 2001
+$OpenBSD: patch-unix_unix_c,v 1.2 2013/04/05 20:36:27 naddy Exp $
+--- unix/unix.c.orig	Fri Jul 22 00:37:08 1994
++++ unix/unix.c	Fri Apr  5 22:26:10 2013
 @@ -18,7 +18,7 @@
  #include "constant.h"
  #include "types.h"
@@ -19,7 +19,7 @@ $OpenBSD: patch-unix_unix_c,v 1.1.1.1 2001/07/04 16:57:50 lebel Exp $
  #include <sys/time.h>
  #include <sys/types.h>
  #include <unistd.h>
-@@ -121,12 +121,12 @@ static Ioctl(i, l, p) char *p; { return 
+@@ -121,12 +121,12 @@ static Ioctl(i, l, p) char *p; { return 0; }
  int check_input(microsec)
  int microsec;
  {

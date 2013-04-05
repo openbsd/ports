@@ -1,32 +1,43 @@
-$OpenBSD: patch-source_misc1_c,v 1.1.1.1 2001/07/04 16:57:50 lebel Exp $
---- source/misc1.c.orig	Wed Jul  4 11:39:07 2001
-+++ source/misc1.c	Wed Jul  4 11:40:17 2001
-@@ -29,7 +29,6 @@
+$OpenBSD: patch-source_misc1_c,v 1.2 2013/04/05 20:36:27 naddy Exp $
+--- source/misc1.c.orig	Fri Jul 22 03:47:28 1994
++++ source/misc1.c	Fri Apr  5 22:23:01 2013
+@@ -28,11 +28,6 @@
+ #endif
  #endif
  
- #if !defined(ATARIST_MWC) && !defined(MAC) && !defined(VMS) && !defined(AMIGA)
+-#if !defined(ATARIST_MWC) && !defined(MAC) && !defined(VMS) && !defined(AMIGA)
 -long time();
+-#endif
+-struct tm *localtime();
+-
+ #if defined(LINT_ARGS)
+ static void compact_objects(void);
  #endif
- struct tm *localtime();
+@@ -45,11 +40,7 @@ int32u seed;
+   register int32u clock_var;
  
-@@ -48,7 +47,7 @@ int32u seed;
- #ifdef MAC
+   if (seed == 0)
+-#ifdef MAC
      clock_var = time((time_t *)0);
- #else
+-#else
 -    clock_var = time((long *)0);
-+    clock_var = time((time_t *)0);
- #endif
+-#endif
    else
      clock_var = seed;
-@@ -95,9 +94,9 @@ int check_time()
- #ifdef MAC
+   randes_seed = (int32) clock_var;
+@@ -89,14 +80,10 @@ void reset_seed()
+ int check_time()
+ {
+ #ifdef MORIA_HOU
+-  long clock_var;
++  time_t clock_var;
+   register struct tm *tp;
+ 
+-#ifdef MAC
    clock_var = time((time_t *)0);
- #else
+-#else
 -  clock_var = time((long *)0);
-+  clock_var = time((time_t *)0);
- #endif
--  tp = localtime(&clock_var);
-+  tp = localtime((time_t *)&clock_var);
+-#endif
+   tp = localtime(&clock_var);
    if (days[tp->tm_wday][tp->tm_hour+4] == 'X')
      return TRUE;
-   else
