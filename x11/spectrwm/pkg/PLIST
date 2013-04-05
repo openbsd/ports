@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/02/28 05:56:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/04/05 16:32:02 gonzalo Exp $
 @conflict scrotwm-*
 @pkgpath x11/scrotwm
-%%SHARED%%
 bin/scrotwm
 @bin bin/spectrwm
+@lib lib/libswmhack.so.${LIBswmhack_VERSION}
 @man man/man1/spectrwm.1
 share/examples/spectrwm/
 @sample share/spectrwm/

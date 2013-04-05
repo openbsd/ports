@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2012/02/28 05:56:11 ajacoutot Exp $
-@lib lib/libswmhack.so.${LIBswmhack_VERSION}
