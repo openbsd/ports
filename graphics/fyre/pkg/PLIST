@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/07/17 10:05:34 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/04/05 08:02:36 ajacoutot Exp $
 @bin bin/fyre
-share/applications/
 share/applications/fyre.desktop
 share/fyre/
 share/fyre/about-box.fa

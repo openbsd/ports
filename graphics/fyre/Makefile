@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 11:10:52 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/04/05 08:02:36 ajacoutot Exp $
 
 COMMENT=		tool for producing computational artwork
 DISTNAME=		fyre-1.0.1
-REVISION=		13
+REVISION=		14
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://fyre.navi.cx/
@@ -10,12 +10,11 @@ HOMEPAGE=		http://fyre.navi.cx/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL Half Iex IlmImf IlmThread Imath X11 Xcomposite Xcursor
+WANTLIB += Half Iex IlmImf IlmThread Imath X11 Xcomposite Xcursor
 WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0
-WANTLIB += c cairo expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += c cairo fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glade-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0
-WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB += pthread pthread-stubs stdc++ xcb xcb-render xcb-shm
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pthread stdc++
 WANTLIB += xml2 z
 
 MASTER_SITES=		http://releases.navi.cx/fyre/ \
@@ -23,7 +22,6 @@ MASTER_SITES=		http://releases.navi.cx/fyre/ \
 
 MODULES=		devel/gettext
 
-BUILD_DEPENDS=		textproc/rarian
 LIB_DEPENDS=		devel/libglade2 \
 			graphics/openexr
 RUN_DEPENDS=		devel/desktop-file-utils \
@@ -33,8 +31,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS= 	--enable-openexr \
-			--disable-gnet
+CONFIGURE_ARGS= 	--disable-gnet
 
 # quirky, but prevents a patch
 post-patch:
