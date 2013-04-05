@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2010/09/30 15:06:08 ajacoutot Exp $
-@lib lib/libgdkmm-2.4.so.${LIBgdkmm-2.4_VERSION}
-@lib lib/libgtkmm-2.4.so.${LIBgtkmm-2.4_VERSION}
