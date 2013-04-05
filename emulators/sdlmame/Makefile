@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/03/11 11:06:04 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2013/04/05 09:10:25 fgsch Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -10,8 +10,8 @@ COMMENT-tools =		tools to manipulate MAME/MESS roms and disk images
 
 V =			0148
 DISTNAME =		mame${V}s
-PKGNAME-main =		sdlmame-${V:S/0/0./}pl1
-PKGNAME-tools =		sdlmame-tools-${V:S/0/0./}pl1
+PKGNAME-main =		sdlmame-${V:S/0/0./}pl2
+PKGNAME-tools =		sdlmame-tools-${V:S/0/0./}pl2
 
 CATEGORIES =		emulators games
 
@@ -24,12 +24,11 @@ MAINTAINER =		Federico G. Schwindt <fgsch@openbsd.org>
 PERMIT_PACKAGE_CDROM =		may not sell
 PERMIT_PACKAGE_FTP =		Yes
 
-WANTLIB =	SDL SDL_ttf X11 Xcomposite Xcursor Xdamage Xext \
-		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \
-		fontconfig freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 \
-		gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread \
-		pthread-stubs stdc++ util xcb xcb-render xcb-shm z
+WANTLIB =	SDL SDL_ttf X11 Xcomposite Xcursor Xdamage Xext Xfixes \
+		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \
+		freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 \
+		glib-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 pthread stdc++ util z
 
 MASTER_SITES =		http://mamedev.org/downloader.php?file=releases/ \
 			http://whiper.com/mame/${V:S/0//}/
@@ -42,7 +41,8 @@ DIST_SUBDIR =		mame
 # PATCHFILES doesn't work for .zip
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			${V}u1_diff.zip:0 \
-			history${V:S/0//}e.zip:1
+			${V}u2_diff.zip:0 \
+			history${V:S/0//}g.zip:1
 
 MODULES =		devel/gettext \
 			lang/python
