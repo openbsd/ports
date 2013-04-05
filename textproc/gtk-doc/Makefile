@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2013/04/04 18:16:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2013/04/05 07:41:08 ajacoutot Exp $
 
 COMMENT=	GTK C code documentation system
 
 GNOME_VERSION=	1.18
 GNOME_PROJECT=	gtk-doc
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=    	textproc devel
 
@@ -17,23 +17,23 @@ MODULES=		x11/gnome \
 			lang/python
 
 MODPY_RUNDEP=		No
-# XXX
-#MODGNOME_TOOLS= 	yelp
-BUILD_DEPENDS +=	x11/gnome/yelp-tools \
-			x11/gnome/doc-utils
+MODGNOME_TOOLS= 	yelp
 
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=		--with-highlight=source-highlight
+CONFIGURE_ENV=		ac_cv_path_DBLATEX= \
+			ac_cv_path_FOP=
 
 # only files under tests/ are compiled but not installed
 PKG_ARCH=		*
 
-BUILD_DEPENDS +=	textproc/openjade \
-			textproc/docbook-xsl \
-			editors/vim,no_x11
+BUILD_DEPENDS=		textproc/docbook-xsl \
+			textproc/openjade \
+			textproc/source-highlight
 
-RUN_DEPENDS=		textproc/openjade \
-			textproc/docbook-xsl \
-			editors/vim,no_x11
+RUN_DEPENDS=		textproc/docbook-xsl \
+			textproc/openjade \
+			textproc/source-highlight
 
 TEST_DEPENDS=		shells/bash
 
