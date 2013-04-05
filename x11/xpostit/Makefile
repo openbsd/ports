@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/03/11 11:46:19 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2013/04/05 17:29:50 naddy Exp $
 
 COMMENT=	PostIt (R) messages onto your X11 screen
 
@@ -7,10 +7,6 @@ PKGNAME=	xpostit-3.3.1
 REVISION=	1
 CATEGORIES=	x11
 
-# Not all servers archie could find actually still have it.  Alas, some
-# servers only have the comp.sources.x version, with its distfile named
-# `part01.gz'.
-#
 MASTER_SITES=	${MASTER_SITE_R5CONTRIB}
 EXTRACT_SUFX=	.tar.Z
 

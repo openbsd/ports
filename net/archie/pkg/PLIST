@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:17:38 espie Exp $
-bin/archie
-@man man/man1/archie.1

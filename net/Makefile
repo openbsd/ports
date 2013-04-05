@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.798 2013/04/01 10:43:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.799 2013/04/05 17:29:50 naddy Exp $
 
      SUBDIR =
      SUBDIR += BitTorrent
@@ -16,7 +16,6 @@
      SUBDIR += angst
      SUBDIR += apache-activemq
      SUBDIR += ap-utils
-     SUBDIR += archie
      SUBDIR += argus
      SUBDIR += argus-clients
      SUBDIR += arp-scan
@@ -610,7 +609,6 @@
      SUBDIR += wmnetload
      SUBDIR += wmwave
      SUBDIR += wol
-     SUBDIR += xarchie
      SUBDIR += xchat
      SUBDIR += xl2tpd
      SUBDIR += xmlrpc-c
