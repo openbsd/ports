@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.39 2013/03/30 09:39:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.40 2013/04/05 13:57:16 ajacoutot Exp $
 @conflict nautilus-open-terminal-*
 @pkgpath x11/gnome/nautilus-open-terminal
 @bin bin/gnome-terminal
-lib/nautilus/extensions-3.0/libterminal-nautilus.so
 @bin libexec/gnome-terminal-migration
 @bin libexec/gnome-terminal-server
 share/applications/gnome-terminal.desktop
