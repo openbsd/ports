@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2013/03/29 11:00:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2013/04/05 07:34:05 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		weather information access library
 
 GNOME_PROJECT=		libgweather
 GNOME_VERSION=		3.8.0
+REVISION=		0
 
 SHARED_LIBS +=		gweather-3             1.0      # 2.0
 
@@ -27,12 +28,6 @@ WANTLIB += xml2 z
 MODULES=		devel/gettext \
 			devel/dconf \
 			x11/gnome
-# XXX:
-# gweather-location.c:919:54: error: invalid suffix "d" on floating constant
-# This needs http://gcc.gnu.org/ml/gcc-patches/2009-04/msg00097.html in our
-# base gcc and remove use of the gcc4 module.
-MODULES+= 	gcc4
-MODGCC4_ARCHS = *
 
 MODGNOME_TOOLS= 	goi
 MODGNOME_ICON_CACHE=	Yes
