@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/21 08:45:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2013/04/05 07:02:08 ajacoutot Exp $
 
 COMMENT=	ICC compatible color management system
 
 V=		1.1.0-20100201
 DISTNAME=	hargyllcms-${V}
 PKGNAME=	argyll-${V:S/-/./}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	graphics sysutils
 
@@ -41,8 +41,10 @@ AUTOMAKE_VERSION=1.11
 MAKE_ENV=	AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
 
+BUILD_DEPENDS+=	textproc/gsed
+
 pre-configure:
-	perl -pi -e 's,sed -i,perl -pi -e,' ${WRKSRC}/legal.sh
+	perl -pi -e 's,sed -i,gsed -i,' ${WRKSRC}/legal.sh
 	cd ${WRKSRC} && /bin/sh ./legal.sh
 	perl -pi -e 's,-lpthread,-pthread,g' ${WRKSRC}/configure
 	perl -pi -e 's,/var/lib,/var/db,g;' \
