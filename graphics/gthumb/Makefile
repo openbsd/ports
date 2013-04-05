@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2013/03/29 19:57:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2013/04/05 15:53:55 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
 GNOME_VERSION=	3.2.0
-REVISION=	0
+REVISION=	1
 
 API_V=		${GNOME_VERSION:R}
 SUBST_VARS=	API_V
@@ -38,14 +38,17 @@ MODULES=	devel/dconf \
 # web albums
 BUILD_DEPENDS +=	devel/bison
 
+BUILD_DEPENDS +=	multimedia/gstreamer1/plugins-base
+
 LIB_DEPENDS=	graphics/clutter/clutter-gtk  \
 		graphics/exiv2 \
 		graphics/libwebp \
 		multimedia/gstreamer1/core \
 		x11/gnome/librsvg
-		
+
 RUN_DEPENDS=	graphics/dcraw \
-		misc/shared-mime-info
+		misc/shared-mime-info \
+		multimedia/gstreamer1/plugins-base
 
 LIBTOOL_FLAGS=		--tag=disable-static
 
