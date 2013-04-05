@@ -1,0 +1,25 @@
+$OpenBSD: patch-subversion_mod_dav_svn_liveprops_c,v 1.1 2013/04/05 14:51:35 stsp Exp $
+CVE-2013-1849
+--- subversion/mod_dav_svn/liveprops.c.orig	Fri Feb  3 21:04:00 2012
++++ subversion/mod_dav_svn/liveprops.c	Wed Apr  3 20:56:32 2013
+@@ -429,7 +429,8 @@ insert_prop_internal(const dav_resource *resource,
+         svn_filesize_t len = 0;
+ 
+         /* our property, but not defined on collection resources */
+-        if (resource->collection || resource->baselined)
++        if (resource->type == DAV_RESOURCE_TYPE_ACTIVITY
++            || resource->collection || resource->baselined)
+           return DAV_PROP_INSERT_NOTSUPP;
+ 
+         serr = svn_fs_file_length(&len, resource->info->root.root,
+@@ -453,7 +454,9 @@ insert_prop_internal(const dav_resource *resource,
+         svn_string_t *pval;
+         const char *mime_type = NULL;
+ 
+-        if (resource->baselined && resource->type == DAV_RESOURCE_TYPE_VERSION)
++        if (resource->type == DAV_RESOURCE_TYPE_ACTIVITY
++            || (resource->baselined
++                && resource->type == DAV_RESOURCE_TYPE_VERSION))
+           return DAV_PROP_INSERT_NOTSUPP;
+ 
+         if (resource->type == DAV_RESOURCE_TYPE_PRIVATE

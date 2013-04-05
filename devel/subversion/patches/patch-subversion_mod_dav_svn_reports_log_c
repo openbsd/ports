@@ -1,0 +1,16 @@
+$OpenBSD: patch-subversion_mod_dav_svn_reports_log_c,v 1.1 2013/04/05 14:51:35 stsp Exp $
+CVE-2013-1884
+--- subversion/mod_dav_svn/reports/log.c.orig	Wed Jan 11 16:57:13 2012
++++ subversion/mod_dav_svn/reports/log.c	Wed Apr  3 20:56:32 2013
+@@ -341,10 +341,9 @@ dav_svn__log_report(const dav_resource *resource,
+                                   dav_xml_get_cdata(child, resource->pool, 1));
+           if (serr)
+             {
+-              derr = dav_svn__convert_err(serr, HTTP_BAD_REQUEST,
++              return dav_svn__convert_err(serr, HTTP_BAD_REQUEST,
+                                           "Malformed CDATA in element "
+                                           "\"limit\"", resource->pool);
+-              goto cleanup;
+             }
+         }
+       else if (strcmp(child->name, "discover-changed-paths") == 0)
