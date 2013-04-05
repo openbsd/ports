@@ -1,0 +1,24 @@
+$OpenBSD: patch-glib_gatomic_c,v 1.3 2013/04/05 19:20:26 jturner Exp $
+--- glib/gatomic.c.orig	Thu Apr  4 21:57:27 2013
++++ glib/gatomic.c	Thu Apr  4 21:34:39 2013
+@@ -682,7 +682,7 @@ gsize
+ static pthread_mutex_t g_atomic_lock = PTHREAD_MUTEX_INITIALIZER;
+ 
+ gint
+-(g_atomic_int_get) (volatile gint *atomic)
++(g_atomic_int_get) (const volatile gint *atomic)
+ {
+   gint value;
+ 
+@@ -797,9 +797,9 @@ guint
+ 
+ 
+ gpointer
+-(g_atomic_pointer_get) (volatile void *atomic)
++(g_atomic_pointer_get) (const volatile void *atomic)
+ {
+-  volatile gpointer *ptr = atomic;
++  const volatile gpointer *ptr = atomic;
+   gpointer value;
+ 
+   pthread_mutex_lock (&g_atomic_lock);

@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure,v 1.26 2013/04/05 19:20:26 jturner Exp $
+--- configure.orig	Thu Apr  4 21:05:23 2013
++++ configure	Thu Apr  4 21:13:54 2013
+@@ -26719,6 +26719,9 @@ else
+     *-*-mingw*)
+       glib_cv_g_atomic_lock_free=yes
+       ;;
++    mips64*)
++      glib_cv_g_atomic_lock_free=no
++      ;;
+     *)
+       cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
