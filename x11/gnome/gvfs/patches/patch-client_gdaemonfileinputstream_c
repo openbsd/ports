@@ -1,0 +1,97 @@
+$OpenBSD: patch-client_gdaemonfileinputstream_c,v 1.5 2013/04/05 14:07:31 ajacoutot Exp $
+
+From 6141549ed4660e888fb6438434c789db47b6f665 Mon Sep 17 00:00:00 2001
+From: Alexander Larsson <alexl@redhat.com>
+Date: Thu, 04 Apr 2013 17:08:02 +0000
+Subject: channel: Unqueue cancelled requests
+
+From e1be69f4bcec01c007016ae33dbb48514b09ba75 Mon Sep 17 00:00:00 2001
+From: Alexander Larsson <alexl@redhat.com>
+Date: Thu, 04 Apr 2013 17:13:05 +0000
+Subject: GVfsChannels: Verify that replies are for the right serial
+
+--- client/gdaemonfileinputstream.c.orig	Fri Apr  5 15:52:50 2013
++++ client/gdaemonfileinputstream.c	Fri Apr  5 15:51:31 2013
+@@ -394,6 +394,16 @@ error_is_cancel (GError *error)
+ }
+ 
+ static void
++unappend_request (GDaemonFileInputStream *stream)
++{
++  g_assert (stream->output_buffer->len >= G_VFS_DAEMON_SOCKET_PROTOCOL_REQUEST_SIZE);
++
++  stream->seq_nr--;
++  g_string_truncate (stream->output_buffer,
++		     stream->output_buffer->len - G_VFS_DAEMON_SOCKET_PROTOCOL_REQUEST_SIZE);
++}
++
++static void
+ append_request (GDaemonFileInputStream *stream, guint32 command,
+ 		guint32 arg1, guint32 arg2, guint32 data_len,
+ 		guint32 *seq_nr)
+@@ -623,6 +633,8 @@ iterate_read_state_machine (GDaemonFileInputStream *fi
+ 	case READ_STATE_WROTE_COMMAND:
+ 	  if (io_op->io_cancelled)
+ 	    {
++	      if (!op->sent_cancel)
++		unappend_request (file);
+ 	      op->ret_val = -1;
+ 	      g_set_error_literal (&op->ret_error,
+ 				   G_IO_ERROR,
+@@ -894,6 +906,8 @@ iterate_close_state_machine (GDaemonFileInputStream *f
+ 	case CLOSE_STATE_WROTE_REQUEST:
+ 	  if (io_op->io_cancelled)
+ 	    {
++	      if (!op->sent_cancel)
++		unappend_request (file);
+ 	      op->ret_val = FALSE;
+ 	      g_set_error_literal (&op->ret_error,
+ 				   G_IO_ERROR,
+@@ -1021,7 +1035,8 @@ iterate_close_state_machine (GDaemonFileInputStream *f
+ 		op->state = CLOSE_STATE_HANDLE_INPUT_BLOCK;
+ 		break;
+ 	      }
+-	    else if (reply.type == G_VFS_DAEMON_SOCKET_PROTOCOL_REPLY_CLOSED)
++	    else if (reply.type == G_VFS_DAEMON_SOCKET_PROTOCOL_REPLY_CLOSED &&
++		     reply.seq_nr == op->seq_nr)
+ 	      {
+ 		op->ret_val = TRUE;
+ 		g_string_truncate (file->input_buffer, 0);
+@@ -1142,6 +1157,8 @@ iterate_seek_state_machine (GDaemonFileInputStream *fi
+ 	case SEEK_STATE_WROTE_REQUEST:
+ 	  if (io_op->io_cancelled)
+ 	    {
++	      if (!op->sent_cancel)
++		unappend_request (file);
+ 	      op->ret_val = -1;
+ 	      g_set_error_literal (&op->ret_error,
+ 				   G_IO_ERROR,
+@@ -1285,7 +1302,8 @@ iterate_seek_state_machine (GDaemonFileInputStream *fi
+ 		op->state = SEEK_STATE_HANDLE_INPUT_BLOCK;
+ 		break;
+ 	      }
+-	    else if (reply.type == G_VFS_DAEMON_SOCKET_PROTOCOL_REPLY_SEEK_POS)
++	    else if (reply.type == G_VFS_DAEMON_SOCKET_PROTOCOL_REPLY_SEEK_POS &&
++		     reply.seq_nr == op->seq_nr)
+ 	      {
+ 		op->ret_val = TRUE;
+ 		op->ret_offset = ((goffset)reply.arg2) << 32 | (goffset)reply.arg1;
+@@ -1384,6 +1402,8 @@ iterate_query_state_machine (GDaemonFileInputStream *f
+ 	case QUERY_STATE_WROTE_REQUEST:
+ 	  if (io_op->io_cancelled)
+ 	    {
++	      if (!op->sent_cancel)
++		unappend_request (file);
+ 	      op->info = NULL;
+ 	      g_set_error_literal (&op->ret_error,
+ 				   G_IO_ERROR,
+@@ -1562,7 +1582,8 @@ iterate_query_state_machine (GDaemonFileInputStream *f
+ 		op->state = QUERY_STATE_HANDLE_INPUT_BLOCK;
+ 		break;
+ 	      }
+-	    else if (reply.type == G_VFS_DAEMON_SOCKET_PROTOCOL_REPLY_INFO)
++	    else if (reply.type == G_VFS_DAEMON_SOCKET_PROTOCOL_REPLY_INFO &&
++		reply.seq_nr == op->seq_nr)
+ 	      {
+ 		op->info = gvfs_file_info_demarshal (data, reply.arg2);
+ 		g_string_truncate (file->input_buffer, 0);

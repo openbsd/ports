@@ -1,0 +1,106 @@
+$OpenBSD: patch-client_gdaemonfileoutputstream_c,v 1.5 2013/04/05 14:07:31 ajacoutot Exp $
+
+From 6141549ed4660e888fb6438434c789db47b6f665 Mon Sep 17 00:00:00 2001
+From: Alexander Larsson <alexl@redhat.com>
+Date: Thu, 04 Apr 2013 17:08:02 +0000
+Subject: channel: Unqueue cancelled requests
+
+From e1be69f4bcec01c007016ae33dbb48514b09ba75 Mon Sep 17 00:00:00 2001
+From: Alexander Larsson <alexl@redhat.com>
+Date: Thu, 04 Apr 2013 17:13:05 +0000
+Subject: GVfsChannels: Verify that replies are for the right serial
+
+--- client/gdaemonfileoutputstream.c.orig	Fri Apr  5 15:52:55 2013
++++ client/gdaemonfileoutputstream.c	Fri Apr  5 15:51:31 2013
+@@ -316,6 +316,15 @@ error_is_cancel (GError *error)
+ }
+ 
+ static void
++unappend_request (GDaemonFileOutputStream *stream)
++{
++  g_assert (stream->output_buffer->len >= G_VFS_DAEMON_SOCKET_PROTOCOL_REQUEST_SIZE);
++  stream->seq_nr--;
++  g_string_truncate (stream->output_buffer,
++		     stream->output_buffer->len - G_VFS_DAEMON_SOCKET_PROTOCOL_REQUEST_SIZE);
++}
++
++static void
+ append_request (GDaemonFileOutputStream *stream, guint32 command,
+ 		guint32 arg1, guint32 arg2, guint32 data_len, guint32 *seq_nr)
+ {
+@@ -499,6 +508,8 @@ iterate_write_state_machine (GDaemonFileOutputStream *
+ 	case WRITE_STATE_WROTE_COMMAND:
+ 	  if (io_op->io_cancelled)
+ 	    {
++	      if (!op->sent_cancel)
++		unappend_request (file);
+ 	      op->ret_val = -1;
+ 	      g_set_error_literal (&op->ret_error,
+ 				   G_IO_ERROR,
+@@ -588,7 +599,8 @@ iterate_write_state_machine (GDaemonFileOutputStream *
+ 		g_string_truncate (file->input_buffer, 0);
+ 		return STATE_OP_DONE;
+ 	      }
+-	    else if (reply.type == G_VFS_DAEMON_SOCKET_PROTOCOL_REPLY_WRITTEN)
++	    else if (reply.type == G_VFS_DAEMON_SOCKET_PROTOCOL_REPLY_WRITTEN &&
++		     reply.seq_nr == op->seq_nr)
+ 	      {
+ 		op->ret_val = reply.arg1;
+ 		g_string_truncate (file->input_buffer, 0);
+@@ -674,6 +686,8 @@ iterate_close_state_machine (GDaemonFileOutputStream *
+ 	case CLOSE_STATE_WROTE_REQUEST:
+ 	  if (io_op->io_cancelled)
+ 	    {
++	      if (!op->sent_cancel)
++		unappend_request (file);
+ 	      op->ret_val = FALSE;
+ 	      g_set_error_literal (&op->ret_error,
+ 				   G_IO_ERROR,
+@@ -744,7 +758,8 @@ iterate_close_state_machine (GDaemonFileOutputStream *
+ 		g_string_truncate (file->input_buffer, 0);
+ 		return STATE_OP_DONE;
+ 	      }
+-	    else if (reply.type == G_VFS_DAEMON_SOCKET_PROTOCOL_REPLY_CLOSED)
++	    else if (reply.type == G_VFS_DAEMON_SOCKET_PROTOCOL_REPLY_CLOSED &&
++		     reply.seq_nr == op->seq_nr)
+ 	      {
+ 		op->ret_val = TRUE;
+ 		if (reply.arg2 > 0)
+@@ -866,6 +881,8 @@ iterate_seek_state_machine (GDaemonFileOutputStream *f
+ 	case SEEK_STATE_WROTE_REQUEST:
+ 	  if (io_op->io_cancelled)
+ 	    {
++	      if (!op->sent_cancel)
++		unappend_request (file);
+ 	      op->ret_val = -1;
+ 	      g_set_error_literal (&op->ret_error,
+ 				   G_IO_ERROR,
+@@ -936,7 +953,8 @@ iterate_seek_state_machine (GDaemonFileOutputStream *f
+ 		g_string_truncate (file->input_buffer, 0);
+ 		return STATE_OP_DONE;
+ 	      }
+-	    else if (reply.type == G_VFS_DAEMON_SOCKET_PROTOCOL_REPLY_SEEK_POS)
++	    else if (reply.type == G_VFS_DAEMON_SOCKET_PROTOCOL_REPLY_SEEK_POS &&
++		     reply.seq_nr == op->seq_nr)
+ 	      {
+ 		op->ret_val = TRUE;
+ 		op->ret_offset = ((goffset)reply.arg2) << 32 | (goffset)reply.arg1;
+@@ -1045,6 +1063,8 @@ iterate_query_state_machine (GDaemonFileOutputStream *
+ 	case QUERY_STATE_WROTE_REQUEST:
+ 	  if (io_op->io_cancelled)
+ 	    {
++	      if (!op->sent_cancel)
++		unappend_request (file);
+ 	      op->info = NULL;
+ 	      g_set_error_literal (&op->ret_error,
+ 				   G_IO_ERROR,
+@@ -1116,7 +1136,8 @@ iterate_query_state_machine (GDaemonFileOutputStream *
+ 		g_string_truncate (file->input_buffer, 0);
+ 		return STATE_OP_DONE;
+ 	      }
+-	    else if (reply.type == G_VFS_DAEMON_SOCKET_PROTOCOL_REPLY_INFO)
++	    else if (reply.type == G_VFS_DAEMON_SOCKET_PROTOCOL_REPLY_INFO &&
++		     reply.seq_nr == op->seq_nr)
+ 	      {
+ 		op->info = gvfs_file_info_demarshal (data, reply.arg2);
+ 		g_string_truncate (file->input_buffer, 0);
