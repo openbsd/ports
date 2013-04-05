@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2013/03/30 20:07:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.87 2013/04/05 07:32:15 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,9 +6,9 @@ COMMENT=	SAX-based render library for SVG files
 
 GNOME_PROJECT=	librsvg
 GNOME_VERSION=	2.36.4
-REVISION=	1
+REVISION=	2
 
-SHARED_LIBS +=	rsvg-2         38.0           # .38.0
+SHARED_LIBS +=  rsvg-2               38.0     # 38.4
 
 CATEGORIES=	devel
 
@@ -29,10 +29,10 @@ MODULES=	devel/gettext \
 
 MODGNOME_TOOLS=	goi vala
 
-LIB_DEPENDS=	graphics/gdk-pixbuf2 \
-		devel/pango \
-		www/libcroco \
-		textproc/libxml
+LIB_DEPENDS=	devel/pango \
+		graphics/gdk-pixbuf2 \
+		textproc/libxml \
+		www/libcroco
 
 CONFIGURE_ARGS=	--disable-gtk-theme \
 		--disable-tools \
@@ -40,21 +40,6 @@ CONFIGURE_ARGS=	--disable-gtk-theme \
 
 # error: -Bsymbolic requested but not supported by ld
 CONFIGURE_ARGS +=	--disable-Bsymbolic
-
-### https://bugzilla.gnome.org/show_bug.cgi?id=653323
-AUTOCONF_VERSION=2.69
-AUTOMAKE_VERSION=1.12
-BUILD_DEPENDS +=${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS} \
-		devel/libtool \
-		textproc/gtk-doc
-
-pre-configure:
-	cd ${WRKSRC} && env \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		autoreconf -i
-###
 
 post-install:
 	rm ${PREFIX}/lib/gdk-pixbuf-2.0/2.10.0/loaders/*.{a,la}
