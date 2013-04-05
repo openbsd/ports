@@ -1,0 +1,28 @@
+$OpenBSD: patch-gobject_gtype_c,v 1.1 2013/04/05 06:33:21 ajacoutot Exp $
+
+From 9982e183725efd798eb4374f4ae0dce2935adf2a Mon Sep 17 00:00:00 2001
+From: Ryan Lortie <desrt@desrt.ca>
+Date: Thu, 04 Apr 2013 13:31:11 +0000
+Subject: gtype: interface-after-init exception for glibmm
+
+From cf1285a4a473ec0f9b51b298b4ea9c4717cb1243 Mon Sep 17 00:00:00 2001
+From: Ryan Lortie <desrt@desrt.ca>
+Date: Thu, 04 Apr 2013 15:12:42 +0000
+Subject: gtype: interface-after-init exception for gtk#
+
+--- gobject/gtype.c.orig	Mon Mar 25 18:02:43 2013
++++ gobject/gtype.c	Fri Apr  5 08:21:01 2013
+@@ -1006,7 +1006,12 @@ check_add_interface_L (GType instance_type,
+     {
+       g_warning ("attempting to add an interface (%s) to class (%s) after class_init",
+                  NODE_NAME (iface), NODE_NAME (node));
+-      return FALSE;
++
++      /* See https://bugzilla.gnome.org/show_bug.cgi?id=697229,
++       * https://bugzilla.gnome.org/show_bug.cgi?id=687659
++       */
++      if (!g_str_has_prefix (NODE_NAME (node), "gtkmm__CustomObject_") && !strstr (NODE_NAME (node), "_gtksharp_"))
++        return FALSE;
+     }
+   tnode = lookup_type_node_I (NODE_PARENT_TYPE (iface));
+   if (NODE_PARENT_TYPE (tnode) && !type_lookup_iface_entry_L (node, tnode))

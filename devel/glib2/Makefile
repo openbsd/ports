@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.201 2013/03/27 17:49:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.202 2013/04/05 06:33:21 ajacoutot Exp $
 
 COMMENT=		general-purpose utility library
 
 GNOME_PROJECT=		glib
 GNOME_VERSION=		2.36.0
 PKGNAME=		${DISTNAME:S/glib/glib2/}
+REVISION=		0
 
 CATEGORIES=		devel
 
