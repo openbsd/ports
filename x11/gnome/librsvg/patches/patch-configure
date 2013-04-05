@@ -1,9 +1,6 @@
-$OpenBSD: patch-configure,v 1.14 2013/04/05 07:32:15 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.15 2013/04/05 08:21:45 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=653323
-(disable all gtk+ support; uneeded and would add a dep loop:
-gnome-icon-theme-symbolic -> gnome-icon-theme -> librsvg -> gtk-doc
--> yelp -> webkit -> gtk+3 -> gnome-icon-theme-symbolic)
 
 --- configure.orig	Fri Apr  5 09:23:01 2013
 +++ configure	Fri Apr  5 09:24:04 2013
