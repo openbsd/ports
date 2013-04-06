@@ -1,0 +1,69 @@
+$OpenBSD: patch-lib_Video_DVDRip_Project_pm,v 1.1 2013/04/06 18:36:21 stsp Exp $
+Fix DVD mounting so that IFO file copying works.
+--- lib/Video/DVDRip/Project.pm.orig	Sat Feb 28 19:28:00 2009
++++ lib/Video/DVDRip/Project.pm	Sat Apr  6 14:03:47 2013
+@@ -21,6 +21,7 @@ use Data::Dumper;
+ use File::Basename;
+ use File::Path;
+ use File::Copy;
++use File::Temp;
+ 
+ use Video::DVDRip::Content;
+ 
+@@ -108,6 +109,7 @@ sub new {
+         selected_title_nr => undef,
+         version           => $Video::DVDRip::VERSION,
+         created           => 0,
++        tmp_mount_point   => "",
+     }, $class;
+ 
+     my $content = Video::DVDRip::Content->new( project => $self );
+@@ -367,14 +369,25 @@ sub get_mount_dir_from_mtab {
+     return $mount_dir;
+ }
+ 
++sub get_tmp_mount_dir {
++    my $self = shift;
++
++    if ( not $self->{tmp_mount_point} ) {
++        # mount at temporary directory; assumes sysctl.usermount=1
++        $self->{tmp_mount_point} = File::Temp->newdir("/tmp/dvdrip-XXXXXXXX");
++    }
++
++    return $self->{tmp_mount_point};
++}
++
+ sub dvd_mount_point {
+     my $self = shift;
+ 
+     my $dvd_device = $self->dvd_device;
+ 
+     my $dvd_mount_point
+-        = $self->get_mount_dir_from_mtab( $dvd_device,  "/etc/mtab" )
+-        || $self->get_mount_dir_from_mtab( $dvd_device, "/etc/fstab" );
++        = $self->get_mount_dir_from_mtab( $dvd_device,  "/etc/fstab" )
++        || $self->get_tmp_mount_dir;
+ 
+     return $dvd_mount_point;
+ }
+@@ -446,13 +459,18 @@ sub mount_dvd {
+         )
+     );
+ 
+-    my $mount = qx[ mount $dvd_mount_point 2>&1 && echo EXECFLOW_OK ];
++    my $dvd_device = "";
++    if ( $self->{tmp_mount_point} ) {
++        $dvd_device = $self->dvd_device;
++    }
+ 
++    my $mount = qx[ mount $dvd_device $dvd_mount_point 2>&1 && echo EXECFLOW_OK ];
++
+     $mount =~ s/\s$//;
+ 
+     croak "msg:"
+         . __x(
+-        "Failed to mount DVD at {mount_point} ({mount_error})",
++        "Failed to mount DVD at {mount_point} ({mount_error}) (perhaps try again with sysctl kern.usermount=1)",
+         mount_point => $dvd_mount_point,
+         mount_error => $mount
+         )
