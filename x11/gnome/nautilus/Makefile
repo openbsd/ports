@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.124 2013/04/05 17:45:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.125 2013/04/06 07:59:43 ajacoutot Exp $
 
 COMMENT=		GNOME file manager
 
@@ -11,6 +11,7 @@ COMMENT=		GNOME file manager
 # x11/gnome/seahorse-nautilus
 # x11/gnome/totem
 # x11/gnome/tracker
+# x11/gnome/user-share
 
 GNOME_PROJECT=		nautilus
 GNOME_VERSION=		3.8.0
