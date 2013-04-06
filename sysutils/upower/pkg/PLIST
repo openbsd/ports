@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/03/27 07:23:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/04/06 08:48:50 ajacoutot Exp $
+@extraunexec rm -f /var/db/upower/history-*
 @bin bin/upower
 include/libupower-glib/
 include/libupower-glib/up-client.h
