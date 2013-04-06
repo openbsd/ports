@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2013/04/05 11:54:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2013/04/06 08:21:20 ajacoutot Exp $
 
 COMMENT-main=		GNOME desktop meta-package (base installation)
 COMMENT-extra=		GNOME desktop meta-package (full installation)
@@ -9,8 +9,8 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extra=		gnome-extra-${V}
 
-REVISION-main=		7
-REVISION-extra=		3
+REVISION-main=		8
+REVISION-extra=		4
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -77,6 +77,7 @@ RUN_DEPENDS-main +=	x11/gnome/alacarte \
 			x11/gnome/seahorse-sharing \
 			x11/gnome/sushi \
 			x11/gnome/tweak-tool \
+			x11/gnome/vino \
 			x11/gnome/weather
 
 RUN_DEPENDS-extra +=	STEM-=${V}:${BASE_PKGPATH},-main \
@@ -89,8 +90,9 @@ RUN_DEPENDS-extra +=	STEM-=${V}:${BASE_PKGPATH},-main \
 			x11/gnome/empathy \
 			x11/gnome/gnote \
 			x11/gnome/icon-theme-extras \
+			x11/gnome/rygel \
 			x11/gnome/totem \
-			x11/gnome/vinagre \
-			x11/gnome/vino
+			x11/gnome/user-share \
+			x11/gnome/vinagre
 
 .include <bsd.port.mk>
