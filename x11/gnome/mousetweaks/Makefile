@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2013/03/30 07:25:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2013/04/06 10:41:58 ajacoutot Exp $
 
 COMMENT=	mouse accessibility enhancements for GNOME
 
@@ -18,8 +18,6 @@ WANTLIB += pthread z
 MODULES=	devel/dconf \
 		devel/gettext \
 		x11/gnome
-
-USE_GROFF=	Yes
 
 BUILD_DEPENDS=	devel/gsettings-desktop-schemas>=3.6.0
 RUN_DEPENDS=	devel/gsettings-desktop-schemas>=3.6.0
