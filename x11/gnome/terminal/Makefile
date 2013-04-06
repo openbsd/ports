@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2013/04/05 13:57:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.96 2013/04/06 09:45:12 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	GNOME terminal
 
 GNOME_PROJECT=	gnome-terminal
 GNOME_VERSION=	3.8.0
-REVISION=	4
+REVISION=	5
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -30,8 +30,7 @@ RUN_DEPENDS=	devel/gsettings-desktop-schemas
 
 LIB_DEPENDS=	devel/gconf2 \
 		devel/vte3 \
-		sysutils/e2fsprogs \
-		x11/gnome/nautilus
+		sysutils/e2fsprogs
 
 # configure checks for desktop-file-validate(1)
 BUILD_DEPENDS +=devel/desktop-file-utils
