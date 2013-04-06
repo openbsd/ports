@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.51 2013/02/09 14:49:53 sthen Exp $
+# $OpenBSD: mozilla.port.mk,v 1.52 2013/04/06 14:39:58 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -36,8 +36,8 @@ MODMOZ_LIB_DEPENDS =	x11/gtk+2
 .if ${MOZILLA_PROJECT} == "firefox" || \
 	${MOZILLA_PROJECT} == "thunderbird" || \
 	${MOZILLA_PROJECT} == "seamonkey"
-MODMOZ_LIB_DEPENDS +=	devel/nspr>=4.9.4 \
-			security/nss>=3.14.1p0
+MODMOZ_LIB_DEPENDS +=	devel/nspr>=4.9.5 \
+			security/nss>=3.14.3
 # needed during install
 MODMOZ_BUILD_DEPENDS +=	archivers/unzip
 
@@ -68,12 +68,11 @@ MODMOZ_WANTLIB +=	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi \
 		fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
 		gobject-2.0 gthread-2.0 gtk-x11-2.0 krb5 m \
 		nspr4 nss3 pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pixman-1 plc4 plds4 png pthread pthread-stubs \
-		smime3 sndio nssutil3 ssl3 stdc++ xcb \
-		xcb-render GL xcb-shm z
+		pixman-1 plc4 plds4 pthread pthread-stubs \
+		smime3 sndio nssutil3 ssl3 stdc++ z
 
 # for all mozilla ports, build against systemwide sqlite3
-MODMOZ_WANTLIB +=	sqlite3>=21
+MODMOZ_WANTLIB +=	sqlite3>=22
 CONFIGURE_ARGS +=	--enable-system-sqlite
 CONFIGURE_ENV +=	ac_cv_sqlite_secure_delete=yes
 
