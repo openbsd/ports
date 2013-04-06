@@ -1,4 +1,4 @@
-$OpenBSD: patch-daemon_gvfsjoberror_c,v 1.1 2013/04/05 14:07:31 ajacoutot Exp $
+$OpenBSD: patch-daemon_gvfsjoberror_c,v 1.2 2013/04/06 09:02:33 ajacoutot Exp $
 
 From d667f6fe956d8661710f9fe5ad3e54d9b24aa04a Mon Sep 17 00:00:00 2001
 From: Alexander Larsson <alexl@redhat.com>
@@ -10,9 +10,14 @@ From: Alexander Larsson <alexl@redhat.com>
 Date: Thu, 04 Apr 2013 17:50:56 +0000
 Subject: remove debug spew
 
---- daemon/gvfsjoberror.c.orig	Fri Apr  5 15:52:42 2013
-+++ daemon/gvfsjoberror.c	Fri Apr  5 15:52:00 2013
-@@ -0,0 +1,106 @@
+From 210dab51a9db47795b03d3090c3ffdfd3bf3a1df Mon Sep 17 00:00:00 2001
+From: Alexander Larsson <alexl@redhat.com>
+Date: Fri, 05 Apr 2013 12:00:59 +0000
+Subject: GVfsJobError: Return TRUE in try
+
+--- daemon/gvfsjoberror.c.orig	Sat Apr  6 10:56:03 2013
++++ daemon/gvfsjoberror.c	Sat Apr  6 10:56:41 2013
+@@ -0,0 +1,107 @@
 +/* GIO - GLib Input, Output and Streaming Library
 + *
 + * Copyright (C) 2006-2007 Red Hat, Inc.
@@ -118,4 +123,5 @@ Subject: remove debug spew
 +try (GVfsJob *job)
 +{
 +  g_vfs_job_failed_from_error (job, G_VFS_JOB_ERROR (job)->error);
++  return TRUE;
 +}

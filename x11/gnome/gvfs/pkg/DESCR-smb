@@ -1,2 +1,2 @@
-This package provides the smb module for GVFS, which allows it to browse
-networks using the SMB/CIFS protocols (a.k.a. Microsoft Networks).
+This package provides the samba module for GVFS, which allows it to
+browse networks using the SMB/CIFS protocols (i.e. Microsoft Networks).

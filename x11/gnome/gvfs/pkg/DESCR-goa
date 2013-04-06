@@ -1,1 +1,2 @@
-This package provides the goa volume monitor for GVFS.
+This package provides the gnome-online-accounts volume monitor for GVFS
+which allows integration with e.g. ownCloud.
