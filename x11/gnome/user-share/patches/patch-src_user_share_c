@@ -1,0 +1,98 @@
+$OpenBSD: patch-src_user_share_c,v 1.1.1.1 2013/04/06 08:18:31 ajacoutot Exp $
+--- src/user_share.c.orig	Thu Feb 21 09:18:06 2013
++++ src/user_share.c	Fri Apr  5 18:06:06 2013
+@@ -27,7 +27,9 @@
+ #include <gtk/gtk.h>
+ #include <glib/gi18n.h>
+ #include <glib/gstdio.h>
++#ifndef __OpenBSD__
+ #include <bluetooth-client.h>
++#endif
+ #include <gio/gio.h>
+ #include <X11/Xlib.h>
+ 
+@@ -59,7 +61,9 @@ static guint disabled_timeout_tag = 0;
+ static GDBusProxy *session_proxy = NULL;
+ static gboolean has_console = TRUE;
+ 
++#ifndef __OpenBSD__
+ static BluetoothClient *client = NULL;
++#endif
+ static gboolean bluetoothd_enabled = FALSE;
+ 
+ #define OBEX_ENABLED (bluetoothd_enabled && has_console)
+@@ -67,6 +71,7 @@ static gboolean bluetoothd_enabled = FALSE;
+ static void
+ obex_services_start (void)
+ {
++#ifndef __OpenBSD__
+ 	if (bluetoothd_enabled == FALSE ||
+ 	    has_console == FALSE)
+ 	    	return;
+@@ -77,6 +82,7 @@ obex_services_start (void)
+ 	if (g_settings_get_boolean (settings, FILE_SHARING_BLUETOOTH_ENABLED) == TRUE) {
+ 	    obexftp_up ();
+ 	}
++#endif
+ }
+ 
+ static void
+@@ -153,6 +159,7 @@ default_adapter_changed (GObject    *gobject,
+ 			 GParamSpec *pspec,
+ 			 gpointer    user_data)
+ {
++#ifndef __OpenBSD__
+ 	char *adapter;
+ 	gboolean adapter_powered;
+ 
+@@ -173,17 +180,20 @@ default_adapter_changed (GObject    *gobject,
+ 		else
+ 			obex_services_shutdown ();
+ 	}
++#endif
+ }
+ 
+ static void
+ bluez_init (void)
+ {
++#ifndef __OpenBSD__
+ 	client = bluetooth_client_new ();
+ 	default_adapter_changed (NULL, NULL, NULL);
+ 	g_signal_connect (G_OBJECT (client), "notify::default-adapter",
+ 			  G_CALLBACK (default_adapter_changed), NULL);
+ 	g_signal_connect (G_OBJECT (client), "notify::default-adapter-powered",
+ 			  G_CALLBACK (default_adapter_changed), NULL);
++#endif
+ }
+ 
+ static void
+@@ -267,6 +277,7 @@ file_sharing_bluetooth_require_pairing_changed (void)
+ static void
+ file_sharing_bluetooth_enabled_changed (void)
+ {
++#ifndef __OpenBSD__
+ 	if (g_settings_get_boolean (settings,
+ 				   FILE_SHARING_BLUETOOTH_ENABLED) == FALSE) {
+ 		obexftp_down ();
+@@ -277,11 +288,13 @@ file_sharing_bluetooth_enabled_changed (void)
+ 	} else if (OBEX_ENABLED) {
+ 		obexftp_up ();
+ 	}
++#endif
+ }
+ 
+ static void
+ file_sharing_bluetooth_obexpush_enabled_changed (void)
+ {
++#ifndef __OpenBSD__
+ 	if (g_settings_get_boolean (settings,
+ 				   FILE_SHARING_BLUETOOTH_OBEXPUSH_ENABLED) == FALSE) {
+ 		obexpush_down ();
+@@ -292,6 +305,7 @@ file_sharing_bluetooth_obexpush_enabled_changed (void)
+ 	} else if (OBEX_ENABLED) {
+ 		obexpush_up ();
+ 	}
++#endif
+ }
+ 
+ static void

@@ -1,0 +1,45 @@
+$OpenBSD: patch-src_share-extension_c,v 1.1.1.1 2013/04/06 08:18:31 ajacoutot Exp $
+--- src/share-extension.c.orig	Fri Apr  5 17:44:02 2013
++++ src/share-extension.c	Fri Apr  5 17:45:17 2013
+@@ -28,7 +28,9 @@
+ #include <glib/gi18n-lib.h>
+ #include <gio/gdesktopappinfo.h>
+ #include <gtk/gtk.h>
++#ifndef __OpenBSD__
+ #include <bluetooth-client.h>
++#endif
+ #include <libnautilus-extension/nautilus-menu-provider.h>
+ #include <libnautilus-extension/nautilus-location-widget-provider.h>
+ 
+@@ -92,6 +94,7 @@ bar_response_cb (NautilusShareBar *bar,
+ static void
+ downloads_bar_set_from_bluetooth_status (GtkWidget *bar)
+ {
++#ifndef __OpenBSD__
+ 	BluetoothClient *client;
+ 	gboolean bt_powered;
+ 
+@@ -100,6 +103,7 @@ downloads_bar_set_from_bluetooth_status (GtkWidget *ba
+ 		      "default-adapter-powered", &bt_powered,
+ 		      NULL);
+ 	gtk_widget_set_visible (bar, bt_powered);
++#endif
+ }
+ 
+ static void
+@@ -152,6 +156,7 @@ nautilus_user_share_get_location_widget (NautilusLocat
+ 		bar = nautilus_share_bar_new (_("May be used to share or receive files"));
+ 	} else if (is_dir[0] != FALSE) {
+ 		bar = nautilus_share_bar_new (_("May be shared over the network or Bluetooth"));
++#ifndef __OpenBSD__
+ 	} else {
+ 		BluetoothClient *client;
+ 
+@@ -162,6 +167,7 @@ nautilus_user_share_get_location_widget (NautilusLocat
+ 		g_signal_connect (G_OBJECT (client), "notify::default-adapter-powered",
+ 				  G_CALLBACK (default_adapter_powered_cb), bar);
+ 		downloads_bar_set_from_bluetooth_status (bar);
++#endif
+ 	}
+ 
+ 	g_signal_connect (bar, "response",
