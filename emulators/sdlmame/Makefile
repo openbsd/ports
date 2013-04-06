@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/04/05 09:10:25 fgsch Exp $
+# $OpenBSD: Makefile,v 1.28 2013/04/06 02:19:13 bcallah Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -12,6 +12,7 @@ V =			0148
 DISTNAME =		mame${V}s
 PKGNAME-main =		sdlmame-${V:S/0/0./}pl2
 PKGNAME-tools =		sdlmame-tools-${V:S/0/0./}pl2
+REVISION =		0
 
 CATEGORIES =		emulators games
 
@@ -54,7 +55,9 @@ LIB_DEPENDS =		devel/gconf2 \
 
 MAKE_FLAGS =		OPT_FLAGS='-DINI_PATH="\"${SYSCONFDIR}/mame;\""'
 MAKE_ENV =		ARCH=$(ARCH) CC=$(CC) CFLAGS="$(CFLAGS)" \
-			TARGETOS=openbsd
+			TARGETOS=openbsd \
+			NO_USE_QTDEBUG=1 \
+			NOWERROR=1
 .if ${MACHINE_ARCH} == "amd64"
 MAKE_ENV +=		PTR64=1
 .endif
@@ -71,7 +74,7 @@ post-extract:
 	@${UNZIP} -oq ${WRKDIR}/mame.zip -d ${WRKSRC}
 
 pre-patch:
-.for v in 1
+.for v in 1 2
 	${PATCH} ${PATCH_DIST_ARGS} < ${WRKDIR}/${V}u${v}.diff
 .endfor
 	@perl -pi -e 's|\r\n|\n|g' ${WRKDIST}/makefile \
