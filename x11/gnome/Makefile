@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.213 2013/04/03 13:41:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.214 2013/04/06 08:19:08 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -100,6 +100,7 @@
      SUBDIR += tracker
      SUBDIR += tweak-tool
      SUBDIR += user-docs
+     SUBDIR += user-share
      SUBDIR += vfs2
      SUBDIR += vinagre
      SUBDIR += vino
