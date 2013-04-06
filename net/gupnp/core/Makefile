@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/28 19:43:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2013/04/06 08:21:34 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		framework for creating UPnP devices and control points
 
 GNOME_PROJECT=		gupnp
-GNOME_VERSION=		0.20.1
+GNOME_VERSION=		0.20.2
 
 SHARED_LIBS +=  gupnp-1.0            2.0      # 4.0
 
@@ -14,7 +14,7 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 WANTLIB += e2fs-uuid gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gssdp-1.0 gthread-2.0 m pcre soup-2.4 xml2 z ffi pthread
+WANTLIB += gssdp-1.0 m pcre soup-2.4 xml2 z ffi pthread sqlite3
 
 LIBTOOL_FLAGS+= 	--tag=disable-static
 
