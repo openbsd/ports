@@ -1,8 +1,8 @@
-$OpenBSD: patch-gfx_thebes_gfxPlatform_cpp,v 1.8 2013/03/03 17:34:15 landry Exp $
+$OpenBSD: patch-gfx_thebes_gfxPlatform_cpp,v 1.9 2013/04/06 14:44:52 landry Exp $
 https://bugzilla.mozilla.org/show_bug.cgi?id=715658
---- gfx/thebes/gfxPlatform.cpp.orig	Wed Jan  9 20:19:49 2013
-+++ gfx/thebes/gfxPlatform.cpp	Sat Jan 12 14:39:37 2013
-@@ -532,6 +532,7 @@ void SourceBufferDestroy(void *srcSurfUD)
+--- gfx/thebes/gfxPlatform.cpp.orig	Wed Feb 20 14:27:55 2013
++++ gfx/thebes/gfxPlatform.cpp	Sun Feb 24 17:33:10 2013
+@@ -535,6 +535,7 @@ void SourceBufferDestroy(void *srcSurfUD)
    delete static_cast<SourceSurfaceUserData*>(srcSurfUD);
  }
  
@@ -10,7 +10,7 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=715658
  void SourceSnapshotDetached(cairo_surface_t *nullSurf)
  {
    gfxImageSurface* origSurf =
-@@ -539,6 +540,7 @@ void SourceSnapshotDetached(cairo_surface_t *nullSurf)
+@@ -542,6 +543,7 @@ void SourceSnapshotDetached(cairo_surface_t *nullSurf)
  
    origSurf->SetData(&kSourceSurface, NULL, NULL);
  }
@@ -18,7 +18,7 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=715658
  
  RefPtr<SourceSurface>
  gfxPlatform::GetSourceSurfaceForSurface(DrawTarget *aTarget, gfxASurface *aSurface)
-@@ -651,6 +653,7 @@ gfxPlatform::GetSourceSurfaceForSurface(DrawTarget *aT
+@@ -654,6 +656,7 @@ gfxPlatform::GetSourceSurfaceForSurface(DrawTarget *aT
  
      }
  
@@ -26,7 +26,7 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=715658
      cairo_surface_t *nullSurf =
  	cairo_null_surface_create(CAIRO_CONTENT_COLOR_ALPHA);
      cairo_surface_set_user_data(nullSurf,
-@@ -659,6 +662,7 @@ gfxPlatform::GetSourceSurfaceForSurface(DrawTarget *aT
+@@ -662,6 +665,7 @@ gfxPlatform::GetSourceSurfaceForSurface(DrawTarget *aT
                                  NULL);
      cairo_surface_attach_snapshot(imgSurface->CairoSurface(), nullSurf, SourceSnapshotDetached);
      cairo_surface_destroy(nullSurf);
