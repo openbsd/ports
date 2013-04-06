@@ -1,0 +1,19 @@
+$OpenBSD: patch-panels_sharing_cc-sharing-panel_c,v 1.1 2013/04/06 08:16:53 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=697413
+
+--- panels/sharing/cc-sharing-panel.c.orig	Sat Apr  6 10:02:08 2013
++++ panels/sharing/cc-sharing-panel.c	Sat Apr  6 10:01:54 2013
+@@ -859,10 +859,12 @@ cc_sharing_panel_init (CcSharingPanel *self)
+                     G_CALLBACK (cc_sharing_panel_master_switch_notify), self);
+ 
+ 
++#ifdef HAVE_BLUETOOTH
+   /* bluetooth */
+   if (cc_sharing_panel_check_schema_available (self, FILE_SHARING_SCHEMA_ID))
+     cc_sharing_panel_setup_bluetooth_sharing_dialog (self);
+   else
++#endif
+     gtk_widget_hide (WID ("bluetooth-sharing-button"));
+ 
+   /* media sharing */
