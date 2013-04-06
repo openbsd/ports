@@ -1,32 +1,32 @@
-# $OpenBSD: Makefile,v 1.132 2013/03/13 21:45:11 landry Exp $
+# $OpenBSD: Makefile,v 1.133 2013/04/06 14:48:09 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
 COMMENT-enigmail =	Mozilla Seamonkey GnuPG extension
 BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
 
-MOZILLA_VERSION=	2.16.2
+MOZILLA_VERSION=	2.17
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	suite
 
 MULTI_PACKAGES =	-main -lightning -enigmail
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-seamonkey-2.1beta1
+PKGNAME-lightning =	lightning-seamonkey-2.2beta1
 ENIG_V =		1.5.1
 PKGNAME-enigmail =	enigmail-seamonkey-${ENIG_V}
 EPOCH-lightning =	0
 EPOCH-enigmail =	0
-REVISION-lightning =	1
-REVISION-enigmail =	1
+REVISION-enigmail =	2
 
+HOMEPAGE =	http://www.seamonkey-project.org/
 #MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_PROJECT}/nightly/${MOZILLA_VERSION}-candidates/build1/source/
 MASTER_SITES0 =	http://www.mozilla-enigmail.org/download/source/
 DISTFILES +=	${MOZILLA_PROJECT}-${MOZILLA_VERSION}.source.tar.bz2 \
 		enigmail-${ENIG_V}.tar.gz:0
 EXTRACT_CASES =	enigmail-*.tar.gz) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | tar -C comm-${MOZILLA_BRANCH}/mailnews/extensions/ -xf -;;
 
-SO_VERSION =	29.0
+SO_VERSION =	30.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 
@@ -43,9 +43,9 @@ MODPY_RUNDEP =	No
 
 # necessary glue to build with the correct compiler after fx 17
 MODULES +=		gcc4 lang/clang
-MODGCC4_ARCHS =		i386 powerpc
+MODGCC4_ARCHS =		powerpc
 MODGCC4_LANGS =		c c++
-MODCLANG_ARCHS =	amd64
+MODCLANG_ARCHS =	amd64 i386
 MODCLANG_LANGS =	c c++
 
 NO_TEST=	Yes
@@ -118,6 +118,6 @@ post-install:
 		${PREFIX}/share/pixmaps/${MOZILLA_PROJECT}.png
 
 	# cleanup useless dirs from #798450 (fx 18?)
-	rmdir ${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/modules{/services-{aitc,common,crypto,notifications,sync{/engines,/stages,}},/identity,/commonjs{/promise,},/accessibility,}
+	rmdir ${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/modules{/services-{aitc,common,crypto,sync{/engines,/stages,}},/identity,/accessibility,/commonjs{/promise,},}
 
 .include <bsd.port.mk>
