@@ -1,0 +1,4 @@
+The following lines need to be removed from ${SYSCONFDIR}/apache2/httpd2.conf
+then httpd2(8) must be restarted:
+    DNSSDEnable on
+    LoadModule dnssd_module ${PREFIX}/lib/apache2/dnssd_module.so

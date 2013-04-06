@@ -1,0 +1,12 @@
+$OpenBSD: README,v 1.1.1.1 2013/04/06 07:57:42 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+To enable the ap2-mod_dnssd module, the following lines need to be added
+to ${SYSCONFDIR}/apache2/httpd2.conf:
+    DNSSDEnable on
+    LoadModule dnssd_module ${PREFIX}/lib/apache2/dnssd_module.so
+
+Then httpd2(8) must be restarted.

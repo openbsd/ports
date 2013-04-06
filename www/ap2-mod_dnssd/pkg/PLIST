@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/06 07:57:42 ajacoutot Exp $
+lib/apache2/
+lib/apache2/mod_dnssd.so
+share/doc/ap2-mod_dnssd/
+share/doc/ap2-mod_dnssd/README
+share/doc/pkg-readmes/${FULLPKGNAME}
