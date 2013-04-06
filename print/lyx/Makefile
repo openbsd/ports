@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.66 2013/03/21 08:46:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2013/04/06 12:29:45 sthen Exp $
 
 COMMENT=	graphical frontend for LaTeX (nearly WYSIWYG)
 
 DISTNAME=	lyx-2.0.4
+REVISION=	0
 CATEGORIES=	print editors
 
 HOMEPAGE=	http://www.lyx.org/
@@ -10,7 +11,7 @@ HOMEPAGE=	http://www.lyx.org/
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/2.0.x/ \
 		ftp://ftp.lip6.fr/pub/lyx/stable/2.0.x/
 
-# GPLv2
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	devel/gettext lang/python x11/qt4
@@ -36,6 +37,7 @@ CONFIGURE_STYLE=		gnu
 CONFIGURE_ARGS=	--with-extra-lib="${X11BASE}/lib ${LOCALBASE}/lib" \
 		--with-extra-inc="${X11BASE}/include ${LOCALBASE}/include" \
 		--without-aiksaurus \
+		--without-hunspell \
 		--without-included-boost \
 		--enable-threads=posix
 CONFIGURE_ENV+=	PYTHON=${MODPY_BIN} MOC4=${MODQT4_MOC} UIC4=${MODQT4_UIC} \
