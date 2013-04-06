@@ -1,15 +1,7 @@
-$OpenBSD: patch-data_tracker-sparql_pc_in,v 1.5 2012/10/15 13:26:05 ajacoutot Exp $
---- data/tracker-sparql.pc.in.orig	Wed Dec  7 12:29:56 2011
-+++ data/tracker-sparql.pc.in	Mon Oct 15 14:34:37 2012
-@@ -1,6 +1,7 @@
- prefix=@prefix@
- exec_prefix=@exec_prefix@
- libdir=@libdir@
-+pkglibdir=@pkglibdir@
- includedir=@includedir@
- 
- Name: tracker-sparql
-@@ -8,6 +9,6 @@ Description: Tracker : A library to perform SPARQL que
+$OpenBSD: patch-data_tracker-sparql_pc_in,v 1.6 2013/04/06 11:30:12 ajacoutot Exp $
+--- data/tracker-sparql.pc.in.orig	Thu May  3 17:22:57 2012
++++ data/tracker-sparql.pc.in	Sat Apr  6 13:15:25 2013
+@@ -8,6 +8,6 @@ Description: Tracker : A library to perform SPARQL que
               Tracker Store
  Version: @VERSION@
  Requires: glib-2.0 gobject-2.0 gio-2.0 gmodule-2.0
