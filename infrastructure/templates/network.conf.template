@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.181 2013/03/08 11:09:13 sthen Exp $
+# $OpenBSD: network.conf.template,v 1.182 2013/04/06 19:57:48 rpe Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -160,7 +160,7 @@ MASTER_SITE_KDE+=	\
 	http://ftp.SURFnet.nl/windowing/kde/ \
 	http://ftp.tuniv.szczecin.pl/pub/kde/ \
 	http://ftp.kddilabs.jp/X11/kde/ \
-	http://ftp.uvsq.fr/pub/X11/kde/ \
+	ftp://ftp.uvsq.fr/pub/X11/kde/ \
 	http://ftp.funet.fi/pub/mirrors/ftp.kde.org/pub/kde/ \
 	http://ftp.sunet.se/pub/X11/kde/ \
 	ftp://ftp.kde.org/pub/kde/ \
@@ -187,27 +187,17 @@ MASTER_SITE_WINDOWMAKER+=	\
 
 MASTER_SITE_FREEBSD_LOCAL+=	\
 	http://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/ \
+	http://ftp.se.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/ \
+	http://ftp.uk.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/ \
 	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/ \
-	ftp://ftp.se.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/ \
 	ftp://ftp.jp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/ \
-	ftp://ftp.uk.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/ \
-	http://ftp.ru.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/
+	ftp://ftp.ru.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/
 
 MASTER_SITE_PACKETSTORM+=	\
-	http://packetstorm.linuxsecurity.com/ \
-	http://packetstorm.orion-hosting.co.uk/ \
-	http://packetstormsecurity.nl/ \
-	http://packetstorm.setnine.com/ \
-	http://packetstorm.wowhacker.com/ \
-	http://packetstorm.offensive-security.com/ \
-	http://packetstorm.austin2600.net/ \
-	http://packetstorm.sub7.be/ \
-	http://packetstorm.foofus.com/ \
-	http://packetstorm.ussrback.com/ \
-	http://packetstorm.unixteacher.org/ \
-	http://packetstormsecurity.org/ \
-	http://packetstorm.codar.com.br/ \
-	http://packetstorm.rlz.cl/
+	http://dl.packetstormsecurity.net/ \
+	http://packetstorm.igor.onlinedirect.bg/ \
+	http://packetstorm.interhost.co.il/ \
+	http://packetstorm.wowhacker.com/
 
 MASTER_SITE_APACHE+= \
 	http://www.reverse.net/pub/apache/ \
@@ -224,22 +214,20 @@ MASTER_SITE_BERLIOS+=	\
 	http://download.berlios.de/
 
 MASTER_SITE_MYSQL+= \
+	http://mirror.switch.ch/mirror/mysql/ \
 	http://mirrors.ukfast.co.uk/sites/ftp.mysql.com/ \
-	ftp://ftp.easynet.be/mysql/ \
-	ftp://ftp.gwdg.de/pub/misc/mysql/ \
-	ftp://ftp.fh-wolfenbuettel.de/pub/database/mysql/ \
-	ftp://ftp.fi.muni.cz/pub/mysql/ \
-	http://mysql.mirrors.cybercity.dk/ \
+	http://ftp.easynet.be/mysql/ \
+	http://ftp.gwdg.de/pub/misc/mysql/ \
+	http://ftp.fh-wolfenbuettel.de/pub/database/mysql/ \
+	http://ftp.fi.muni.cz/pub/mysql/ \
 	http://mirrors.ntua.gr/MySQL/ \
-	ftp://ftp.ntua.gr/pub/databases/mysql/ \
+	http://ftp.ntua.gr/pub/databases/mysql/ \
 	http://mysql.sote.hu/ \
-	ftp://ftp.rhnet.is/pub/mysql/ \
-	ftp://mirror.switch.ch/mirror/mysql/ \
-	ftp://mirror.services.wisc.edu/mirrors/mysql/ \
 	http://mysql.mirrors.pair.com/ \
-	ftp://ftp.linorg.usp.br/mysql/ \
-	ftp://ftp.cbn.net.id/mirror/mysql/ \
-	http://download.softagency.net/MySQL/
+	http://linorg.usp.br/mysql/ \
+	http://download.softagency.net/MySQL/ \
+	ftp://mirror.switch.ch/mirror/mysql/ \
+	ftp://ftp.cbn.net.id/mirror/mysql/
 
 MASTER_SITE_PYPI +=	\
 	http://b.pypi.python.org/packages/source/ \
@@ -258,12 +246,11 @@ MASTER_SITE_NPM += \
 MASTER_SITE_ISC +=	\
 	http://ftp.isc.org/isc/ \
 	http://www.mirrorservice.org/sites/ftp.isc.org/isc/ \
-	http://ftp.arcane-networks.net/pub/mirrors/ftp.isc.org/isc/ \
 	http://ftp.sunet.se/pub/network/isc/ \
 	http://ftp.funet.fi/pub/mirrors/ftp.isc.org/isc/ \
 	http://ftp.iij.ad.jp/pub/network/isc/ \
 	ftp://ftp.isc.org/isc/ \
-	ftp://ftp.epix.net/pub/isc/ \
+	ftp://ftp.arcane-networks.net/pub/mirrors/ftp.isc.org/isc/ \
 	ftp://ftp.nominum.com/pub/isc/
 
 MASTER_SITE_DEBIAN += \
