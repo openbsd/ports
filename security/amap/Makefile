@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 11:41:24 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2013/04/07 01:07:23 rpe Exp $
 
 COMMENT=	application protocol detection tool
 
@@ -12,8 +12,7 @@ HOMEPAGE=	http://thc.org/thc-amap/
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
 
-MASTER_SITES=	http://freeworld.thc.org/releases/ \
-		${MASTER_SITE_PACKETSTORM:=groups/thc/}
+MASTER_SITES=	http://freeworld.thc.org/releases/
 
 WANTLIB=	c crypto ssl pcre
 

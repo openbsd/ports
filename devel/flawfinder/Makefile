@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2013/03/11 10:50:03 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2013/04/07 01:10:19 rpe Exp $
 
 COMMENT=		C/C++ source code auditing tool
 
@@ -13,8 +13,7 @@ MAINTAINER=		Jason Peel <jsyn@openbsd.org>
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		${HOMEPAGE} \
-			${MASTER_SITE_PACKETSTORM:=UNIX/security/}
+MASTER_SITES=		${HOMEPAGE}
 
 MODULES=		lang/python
 
