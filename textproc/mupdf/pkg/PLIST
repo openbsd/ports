@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/03/21 01:26:03 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/04/07 09:54:31 espie Exp $
 @bin bin/mudraw
 @bin bin/mupdf
+@bin bin/mutool
 include/fitz.h
 include/memento.h
 include/mucbz.h
