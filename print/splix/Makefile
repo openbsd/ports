@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:37:54 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/04/07 08:47:33 ajacoutot Exp $
 
 COMMENT=	CUPS drivers for SPL printers
 
 DISTNAME=	splix-2.0.0
-REVISION =	7
-CATEGORIES=	print
-
 EXTRACT_SUFX=	.tar.bz2
+REVISION =	8
+
+CATEGORIES=	print
 
 HOMEPAGE=	http://splix.ap2c.org/
 
@@ -15,8 +15,7 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += asn1 c crypto cups cupsimage gssapi jbig krb5 m pthread
-WANTLIB += ssl stdc++ z
+WANTLIB += c cups cupsimage jbig m pthread stdc++
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=splix/}
 
