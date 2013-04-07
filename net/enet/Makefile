@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/21 08:46:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2013/04/07 19:14:11 jsg Exp $
 
 COMMENT =		network library for games
-DISTNAME =		enet-1.3.3
+DISTNAME =		enet-1.3.7
 
-SHARED_LIBS +=  	enet 0.0 # 1.3
+SHARED_LIBS +=  	enet 0.1 # 1.3
 
 CATEGORIES =		net
 
