@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.31 2013/03/21 08:45:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2013/04/07 10:37:14 ajacoutot Exp $
 
 COMMENT=	SVG vector drawing application
 
 DISTNAME=	inkscape-0.48.2
-REVISION=	5
+REVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=inkscape/}
 
 # error: #error "Only <glib.h> can be included directly."
 # (patch from Fedora)
-PATCHFILES=	inkscape-glib-2.32.patch:0
+# Fix build with gtk2mm>=2.24.3
+PATCHFILES=	inkscape-glib-2.32.patch:0 \
+		inkscape-gtkmm-2.24.3.patch:0
 PATCH_DIST_STRIP=-p1
 MASTER_SITES0=	http://distfiles.bsdfrog.org/
 
@@ -18,15 +20,14 @@ HOMEPAGE=	http://www.inkscape.org/
 # GPLv2 and LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	GL Magick++ MagickCore X11 Xcomposite Xcursor Xdamage \
-		Xext Xfixes Xi Xinerama Xrandr Xrender \
-		aspell atk-1.0 atkmm-1.6 c cairo cairomm-1.0 expat \
-		fontconfig freetype gc gdk-x11-2.0 gdk_pixbuf-2.0 gdkmm-2.4 \
-		gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gobject-2.0 \
-		gsl gslcblas gthread-2.0 gtk-x11-2.0 gtkmm-2.4 gtkspell \
-		lcms m pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4 \
-		pixman-1 png poppler poppler-glib popt pthread pthread-stubs \
-		sigc-2.0 stdc++ xcb xcb-render xcb-shm xml2 xslt z
+WANTLIB += Magick++ MagickCore X11 Xcomposite Xcursor Xdamage
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender aspell atk-1.0
+WANTLIB += atkmm-1.6 c cairo cairomm-1.0 fontconfig freetype gc
+WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gdkmm-2.4 gio-2.0 giomm-2.4
+WANTLIB += glib-2.0 glibmm-2.4 gobject-2.0 gsl gslcblas gthread-2.0
+WANTLIB += gtk-x11-2.0 gtkmm-2.4 gtkspell lcms m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pangomm-1.4 png poppler poppler-glib popt
+WANTLIB += pthread sigc-2.0 stdc++ xml2 xslt z
 
 MODULES=	devel/gettext \
 		textproc/intltool

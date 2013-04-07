@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/05/16 19:39:18 kili Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/04/07 10:37:14 ajacoutot Exp $
 @bin bin/inkscape
 @bin bin/inkview
 man/fr/
@@ -889,8 +889,6 @@ share/locale/ne/LC_MESSAGES/
 share/locale/ne/LC_MESSAGES/inkscape.mo
 share/locale/nl/LC_MESSAGES/inkscape.mo
 share/locale/nn/LC_MESSAGES/inkscape.mo
-share/locale/pa/
-share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/inkscape.mo
 share/locale/pl/LC_MESSAGES/inkscape.mo
 share/locale/pt/LC_MESSAGES/inkscape.mo
