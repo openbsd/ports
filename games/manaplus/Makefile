@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/21 08:45:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2013/04/07 22:48:29 bcallah Exp $
 
 COMMENT =	extended client for The Mana World
 
-V =		1.3.3.17
+V =		1.3.3.31
 DISTNAME =	manaplus-${V}
 EXTRACT_SUFX =	.tar.xz
 
@@ -20,7 +20,6 @@ WANTLIB += X11 c crypto curl guichan guichan_sdl idn m physfs
 WANTLIB += png pthread ssl stdc++ xml2 z
 
 MASTER_SITES =	http://download.evolonline.org/manaplus/download/${V}/
-EXTRACT_SUFX =	.tar.xz
 
 MODULES =	devel/gettext
 RUN_DEPENDS=	devel/desktop-file-utils
