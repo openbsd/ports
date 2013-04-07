@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:41:28 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/04/07 15:33:02 jturner Exp $
 
 COMMENT =		utility for creating secure pipes between socket addresses
 
-DISTNAME =		spiped-1.2.2
+DISTNAME =		spiped-1.3.0
 CATEGORIES =		security sysutils
 
 MAINTAINER =		James Turner <james@calminferno.net>
@@ -17,7 +17,8 @@ WANTLIB =		c crypto pthread
 
 EXTRACT_SUFX =		.tgz
 NO_TEST =		Yes
-FAKE_FLAGS =		BINDIR="${WRKINST}${PREFIX}/bin"
+FAKE_FLAGS =		BINDIR="${WRKINST}${PREFIX}/bin" \
+			MAN1DIR="${WRKINST}${PREFIX}/man/man1"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/spiped
