@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/27 16:07:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2013/04/07 09:08:18 zhuk Exp $
 
 COMMENT=	common interface to speech synthesis
 
 DISTNAME=	speech-dispatcher-0.8
+REVISION=	0
 
 SHARED_LIBS +=  speechd              1.0      # .6.0
 
@@ -24,6 +25,9 @@ MODULES=	devel/gettext \
 MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 MODPY_ADJ_FILES=src/api/python/speechd_config/spd-conf \
 		src/api/python/speechd/_test.py
+
+# used by spd-conf
+RUN_DEPENDS=	devel/py-xdg${MODPY_FLAVOR}
 
 LIB_DEPENDS=	audio/espeak \
 		audio/libao \
