@@ -1,7 +1,7 @@
-$OpenBSD: patch-cvsweb_conf-netbsd,v 1.1 2006/02/04 17:01:36 naddy Exp $
---- cvsweb.conf-netbsd.orig	Sat Feb  4 17:41:58 2006
-+++ cvsweb.conf-netbsd	Sat Feb  4 17:42:17 2006
-@@ -65,7 +65,7 @@ $prcgi = "http://www.NetBSD.org/cgi-bin/
+$OpenBSD: patch-cvsweb_conf-netbsd,v 1.2 2013/04/07 20:07:24 naddy Exp $
+--- cvsweb.conf-netbsd.orig	Tue May  7 10:51:22 2002
++++ cvsweb.conf-netbsd	Sun Apr  7 14:09:30 2013
+@@ -65,7 +65,7 @@ $prcgi = "http://www.NetBSD.org/cgi-bin/query-pr-singl
  
  $prkeyword = "PR";
  
