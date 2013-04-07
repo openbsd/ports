@@ -1,6 +1,9 @@
-$OpenBSD: patch-glib_Makefile_in,v 1.24 2013/03/27 17:49:34 ajacoutot Exp $
+$OpenBSD: patch-glib_Makefile_in,v 1.25 2013/04/07 07:12:53 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=696629
+From aba02c5248ef1a8911588e38f56d011f81e21345 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Tue, 26 Mar 2013 11:34:51 +0000
+Subject: simpler regex match on the shebang
 
 --- glib/Makefile.in.orig	Tue Mar 26 12:26:35 2013
 +++ glib/Makefile.in	Tue Mar 26 12:26:54 2013
