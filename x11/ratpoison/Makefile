@@ -1,28 +1,31 @@
-# $OpenBSD: Makefile,v 1.26 2013/03/11 11:46:15 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2013/04/07 20:09:23 sthen Exp $
 
 COMMENT=	minimal wm based on GNU screen
 
-DISTNAME=	ratpoison-1.4.5
+DISTNAME=	ratpoison-1.4.6
 
 CATEGORIES=	x11
 HOMEPAGE=	http://www.nongnu.org/ratpoison/
 
-MAINTAINER=	William Yodlowsky <bsd@openbsd.rutgers.edu>
+MAINTAINER=	William Yodlowsky <william@openbsd.org>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 Xext Xft Xinerama Xtst c
+WANTLIB+=		X11 Xext Xft Xinerama Xtst c
 
 MASTER_SITES=		${MASTER_SITE_SAVANNAH:=ratpoison/}
 
-USE_GROFF =		Yes
-
-AUTOCONF_VERSION =	2.61
-
-CONFIGURE_STYLE=	autoconf
-
+SEPARATE_BUILD=		Yes
+USE_GROFF=		Yes
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-xterm=${X11BASE}/bin/xterm \
 			--disable-history
+
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mno_shared}
+CONFIGURE_ARGS+=	--without-xft
+CONFIGURE_ENV+=		X_EXTRA_LIBS="-lxcb -lXau -lXdmcp"
+.endif
 
 .include <bsd.port.mk>
