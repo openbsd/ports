@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2012/09/05 15:06:14 jasper Exp $
-${P5ARCH}/auto/Sys/Virt/Virt.so
