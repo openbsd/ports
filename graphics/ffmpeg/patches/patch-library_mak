@@ -1,7 +1,7 @@
-$OpenBSD: patch-library_mak,v 1.2 2013/03/13 02:26:45 brad Exp $
---- library.mak.orig	Sun Jan 13 21:30:15 2013
-+++ library.mak	Tue Jan 15 02:04:32 2013
-@@ -53,7 +53,7 @@ $(SUBDIR)$(SLIBNAME): $(SUBDIR)$(SLIBNAME_WITH_MAJOR)
+$OpenBSD: patch-library_mak,v 1.3 2013/04/08 17:06:56 brad Exp $
+--- library.mak.orig	Tue Mar 12 22:35:44 2013
++++ library.mak	Tue Mar 12 23:30:11 2013
+@@ -54,7 +54,7 @@ $(SUBDIR)$(SLIBNAME): $(SUBDIR)$(SLIBNAME_WITH_MAJOR)
  
  $(SUBDIR)$(SLIBNAME_WITH_MAJOR): $(OBJS) $(SUBDIR)lib$(NAME).ver
  	$(SLIB_CREATE_DEF_CMD)
@@ -10,12 +10,12 @@ $OpenBSD: patch-library_mak,v 1.2 2013/03/13 02:26:45 brad Exp $
  	$(SLIB_EXTRA_CMD)
  
  ifdef SUBDIR
-@@ -70,8 +70,6 @@ distclean:: clean
+@@ -71,8 +71,6 @@ distclean:: clean
  install-lib$(NAME)-shared: $(SUBDIR)$(SLIBNAME)
  	$(Q)mkdir -p "$(SHLIBDIR)"
  	$$(INSTALL) -m 755 $$< "$(SHLIBDIR)/$(SLIB_INSTALL_NAME)"
 -	$$(STRIP) "$(SHLIBDIR)/$(SLIB_INSTALL_NAME)"
--	$(Q)$(foreach F,$(SLIB_INSTALL_LINKS),cd "$(SHLIBDIR)" && $(LN_S) $(SLIB_INSTALL_NAME) $(F);)
+-	$(Q)$(foreach F,$(SLIB_INSTALL_LINKS),(cd "$(SHLIBDIR)" && $(LN_S) $(SLIB_INSTALL_NAME) $(F));)
  	$(if $(SLIB_INSTALL_EXTRA_SHLIB),$$(INSTALL) -m 644 $(SLIB_INSTALL_EXTRA_SHLIB:%=$(SUBDIR)%) "$(SHLIBDIR)")
  	$(if $(SLIB_INSTALL_EXTRA_LIB),$(Q)mkdir -p "$(LIBDIR)")
  	$(if $(SLIB_INSTALL_EXTRA_LIB),$$(INSTALL) -m 644 $(SLIB_INSTALL_EXTRA_LIB:%=$(SUBDIR)%) "$(LIBDIR)")

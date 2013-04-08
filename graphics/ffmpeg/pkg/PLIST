@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2013/03/13 02:26:45 brad Exp $
+@comment $OpenBSD: PLIST,v 1.25 2013/04/08 17:06:56 brad Exp $
 @bin bin/ffmpeg
 @bin bin/ffplay
 @bin bin/ffprobe
@@ -52,6 +52,7 @@ include/libavutil/error.h
 include/libavutil/eval.h
 include/libavutil/fifo.h
 include/libavutil/file.h
+include/libavutil/hmac.h
 include/libavutil/imgutils.h
 include/libavutil/intfloat.h
 include/libavutil/intfloat_readwrite.h
