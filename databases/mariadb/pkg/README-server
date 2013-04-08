@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.2 2013/04/07 22:21:26 brad Exp $
+$OpenBSD: README-server,v 1.3 2013/04/08 02:49:53 brad Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -43,7 +43,7 @@ MariaDB server without using a network connection, the socket must be
 placed inside the chroot.
 
 e.g. httpd(8) or nginx(8): connecting to MariaDB from PHP
--------------------------------------------------------
+---------------------------------------------------------
 Create a directory for the MariaDB socket:
 
     # install -d -m 0711 -o _mysql -g _mysql /var/www/var/run/mysql
