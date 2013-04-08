@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.217 2013/04/08 17:08:36 brad Exp $
+# $OpenBSD: Makefile,v 1.218 2013/04/08 23:43:32 brad Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,14 +8,14 @@ ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 COMMENT =		movie player supporting many formats
 
 V =			20130214
-FFMPEG_V =		20130214
+FFMPEG_V =		20130319
 
 SUBST_VARS += 		PREFIX CONFDIR
 
 # Distfiles must be hand-rolled, see README
 N =			mplayer
 DISTNAME =		mplayer-${V}
-REVISION =		0
+REVISION =		1
 EXTRACT_SUFX =		.tar.xz
 
 CATEGORIES =		x11 multimedia
@@ -148,13 +148,14 @@ WANTLIB +=	vorbisenc vorbis
 
 CONFIGURE_ENV += LOCALBASE="${LOCALBASE}" TMPDIR="${WRKBUILD}"
 
-# binutils 2.17 does not support SSE4
+# binutils 2.15 does not do SSSE3 for amd64/i386
 .if ${MACHINE_ARCH:Mamd64} || ${MACHINE_ARCH:Mi386}
 CONFIGURE_ARGS += --enable-runtime-cpudetection
+CONFIGURE_ARGS += --disable-ssse3
 CONFIGURE_ARGS += --disable-sse4
 .endif
 
-# binutils 2.15 limits what we can do here too
+# again binutils 2.15 limits what we can do here too
 .if ${MACHINE_ARCH:Mpowerpc}
 CONFIGURE_ARGS += --disable-altivec
 CONFIGURE_ARGS += --enable-runtime-cpudetection
