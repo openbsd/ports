@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2013/03/21 08:45:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2013/04/08 22:28:04 fgsch Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	small and lightweight IDE
 
-DISTNAME=	geany-0.20
-REVISION =	5
+DISTNAME =	geany-1.23
 
 CATEGORIES=	devel
 
@@ -25,27 +24,26 @@ MODULES=	devel/gettext \
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
 
-WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo
-WANTLIB += drm expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs stdc++ xcb
-WANTLIB += xcb-render xcb-shm z ffi
+WANTLIB =	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama \
+		Xrandr Xrender atk-1.0 c cairo expat ffi fontconfig \
+		freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
+		gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0 \
+		harfbuzz icudata icule icuuc m pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs \
+		stdc++ xcb xcb-render xcb-shm z
 
 LIB_DEPENDS=	x11/gtk+2
 RUN_DEPENDS=	devel/desktop-file-utils \
 		devel/vte \
 		x11/gtk+2,-guic
 
+LIBTOOL_FLAGS =	--tag=disable-static
+
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
-		--enable-static
 
-pre-configure:
-	@perl -pi -e 's:\@GMSGFMT\@:${LOCALBASE}/bin/msgfmt:' \
-		${WRKSRC}/po/Makefile.in.in
+post-install:
+	rm -f ${PREFIX}/lib/geany/*.la
 
 .include <bsd.port.mk>

@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.18 2012/06/15 08:32:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2013/04/08 22:28:04 fgsch Exp $
 @pkgpath devel/geany,vte
 @bin bin/geany
 include/geany/
+include/geany/build.h
 include/geany/document.h
 include/geany/editor.h
 include/geany/encodings.h
@@ -37,23 +38,11 @@ include/geany/toolbar.h
 include/geany/ui_utils.h
 include/geany/utils.h
 lib/geany/
-@comment lib/geany/classbuilder.a
-@comment lib/geany/classbuilder.la
 lib/geany/classbuilder.so
-@comment lib/geany/export.a
-@comment lib/geany/export.la
 lib/geany/export.so
-@comment lib/geany/filebrowser.a
-@comment lib/geany/filebrowser.la
 lib/geany/filebrowser.so
-@comment lib/geany/htmlchars.a
-@comment lib/geany/htmlchars.la
 lib/geany/htmlchars.so
-@comment lib/geany/saveactions.a
-@comment lib/geany/saveactions.la
 lib/geany/saveactions.so
-@comment lib/geany/splitwindow.a
-@comment lib/geany/splitwindow.la
 lib/geany/splitwindow.so
 lib/pkgconfig/geany.pc
 @man man/man1/geany.1
@@ -74,12 +63,14 @@ share/doc/geany/html/images/pref_dialog_edit_indentation.png
 share/doc/geany/html/images/pref_dialog_files.png
 share/doc/geany/html/images/pref_dialog_gen_misc.png
 share/doc/geany/html/images/pref_dialog_gen_startup.png
-share/doc/geany/html/images/pref_dialog_interface.png
+share/doc/geany/html/images/pref_dialog_interface_interface.png
+share/doc/geany/html/images/pref_dialog_interface_notebook.png
+share/doc/geany/html/images/pref_dialog_interface_toolbar.png
 share/doc/geany/html/images/pref_dialog_keys.png
 share/doc/geany/html/images/pref_dialog_printing.png
 share/doc/geany/html/images/pref_dialog_templ.png
-share/doc/geany/html/images/pref_dialog_toolbar.png
 share/doc/geany/html/images/pref_dialog_tools.png
+share/doc/geany/html/images/pref_dialog_various.png
 share/doc/geany/html/images/pref_dialog_vte.png
 share/doc/geany/html/images/replace_dialog.png
 share/doc/geany/html/index.html
@@ -90,14 +81,20 @@ share/geany/c99.tags
 share/geany/colorschemes/
 share/geany/colorschemes/alt.conf
 share/geany/filetype_extensions.conf
+share/geany/filetypes.Cython.conf
 share/geany/filetypes.Genie.conf
+share/geany/filetypes.Go.conf
+share/geany/filetypes.Scala.conf
+share/geany/filetypes.abaqus
 share/geany/filetypes.abc
 share/geany/filetypes.actionscript
 share/geany/filetypes.ada
+share/geany/filetypes.asciidoc
 share/geany/filetypes.asm
 share/geany/filetypes.c
 share/geany/filetypes.caml
 share/geany/filetypes.cmake
+share/geany/filetypes.cobol
 share/geany/filetypes.common
 share/geany/filetypes.conf
 share/geany/filetypes.cpp
@@ -125,6 +122,7 @@ share/geany/filetypes.makefile
 share/geany/filetypes.markdown
 share/geany/filetypes.matlab
 share/geany/filetypes.nsis
+share/geany/filetypes.objectivec
 share/geany/filetypes.pascal
 share/geany/filetypes.perl
 share/geany/filetypes.php
@@ -142,6 +140,8 @@ share/geany/filetypes.verilog
 share/geany/filetypes.vhdl
 share/geany/filetypes.xml
 share/geany/filetypes.yaml
+share/geany/geany.glade
+share/geany/geany.gtkrc
 share/geany/html_entities.tags
 share/geany/pascal.tags
 share/geany/php.tags
@@ -161,10 +161,30 @@ share/geany/templates/files/main.cxx
 share/geany/templates/files/main.d
 share/geany/templates/files/main.java
 share/geany/templates/files/main.py
+share/geany/templates/files/main.vala
 share/geany/templates/files/program.pas
 share/geany/templates/function
 share/geany/templates/gpl
 share/geany/ui_toolbar.xml
+share/icons/Tango/
+share/icons/Tango/16x16/
+share/icons/Tango/16x16/actions/
+share/icons/Tango/16x16/actions/geany-save-all.png
+share/icons/Tango/24x24/
+share/icons/Tango/24x24/actions/
+share/icons/Tango/24x24/actions/geany-save-all.png
+share/icons/Tango/32x32/
+share/icons/Tango/32x32/actions/
+share/icons/Tango/32x32/actions/geany-save-all.png
+share/icons/Tango/48x48/
+share/icons/Tango/48x48/actions/
+share/icons/Tango/48x48/actions/geany-save-all.png
+share/icons/Tango/scalable/
+share/icons/Tango/scalable/actions/
+share/icons/Tango/scalable/actions/geany-save-all.svg
+share/icons/hicolor/16x16/actions/geany-build.png
+share/icons/hicolor/16x16/actions/geany-close-all.png
+share/icons/hicolor/16x16/actions/geany-save-all.png
 share/icons/hicolor/16x16/apps/classviewer-class.png
 share/icons/hicolor/16x16/apps/classviewer-macro.png
 share/icons/hicolor/16x16/apps/classviewer-member.png
@@ -174,8 +194,21 @@ share/icons/hicolor/16x16/apps/classviewer-other.png
 share/icons/hicolor/16x16/apps/classviewer-struct.png
 share/icons/hicolor/16x16/apps/classviewer-var.png
 share/icons/hicolor/16x16/apps/geany.png
+share/icons/hicolor/24x24/actions/geany-build.png
+share/icons/hicolor/24x24/actions/geany-close-all.png
+share/icons/hicolor/24x24/actions/geany-save-all.png
+share/icons/hicolor/32x32/actions/geany-build.png
+share/icons/hicolor/32x32/actions/geany-close-all.png
+share/icons/hicolor/32x32/actions/geany-save-all.png
+share/icons/hicolor/48x48/actions/geany-build.png
+share/icons/hicolor/48x48/actions/geany-close-all.png
+share/icons/hicolor/48x48/actions/geany-save-all.png
 share/icons/hicolor/48x48/apps/geany.png
+share/icons/hicolor/scalable/actions/geany-build.svg
+share/icons/hicolor/scalable/actions/geany-close-all.svg
+share/icons/hicolor/scalable/actions/geany-save-all.svg
 share/icons/hicolor/scalable/apps/geany.svg
+share/locale/ar/LC_MESSAGES/geany.mo
 share/locale/ast/LC_MESSAGES/geany.mo
 share/locale/be/LC_MESSAGES/geany.mo
 share/locale/bg/LC_MESSAGES/geany.mo
@@ -185,10 +218,16 @@ share/locale/de/LC_MESSAGES/geany.mo
 share/locale/el/LC_MESSAGES/geany.mo
 share/locale/en_GB/LC_MESSAGES/geany.mo
 share/locale/es/LC_MESSAGES/geany.mo
+share/locale/et/LC_MESSAGES/geany.mo
+share/locale/eu/LC_MESSAGES/geany.mo
+share/locale/fa/LC_MESSAGES/geany.mo
 share/locale/fi/LC_MESSAGES/geany.mo
 share/locale/fr/LC_MESSAGES/geany.mo
 share/locale/gl/LC_MESSAGES/geany.mo
+share/locale/he/LC_MESSAGES/geany.mo
+share/locale/hi/LC_MESSAGES/geany.mo
 share/locale/hu/LC_MESSAGES/geany.mo
+share/locale/id/LC_MESSAGES/geany.mo
 share/locale/it/LC_MESSAGES/geany.mo
 share/locale/ja/LC_MESSAGES/geany.mo
 share/locale/kk/LC_MESSAGES/geany.mo
@@ -196,13 +235,18 @@ share/locale/ko/LC_MESSAGES/geany.mo
 share/locale/lb/
 share/locale/lb/LC_MESSAGES/
 share/locale/lb/LC_MESSAGES/geany.mo
+share/locale/lt/LC_MESSAGES/geany.mo
+share/locale/mn/LC_MESSAGES/geany.mo
 share/locale/nl/LC_MESSAGES/geany.mo
+share/locale/nn/LC_MESSAGES/geany.mo
 share/locale/pl/LC_MESSAGES/geany.mo
 share/locale/pt/LC_MESSAGES/geany.mo
 share/locale/pt_BR/LC_MESSAGES/geany.mo
 share/locale/ro/LC_MESSAGES/geany.mo
 share/locale/ru/LC_MESSAGES/geany.mo
+share/locale/sk/LC_MESSAGES/geany.mo
 share/locale/sl/LC_MESSAGES/geany.mo
+share/locale/sr/LC_MESSAGES/geany.mo
 share/locale/sv/LC_MESSAGES/geany.mo
 share/locale/tr/LC_MESSAGES/geany.mo
 share/locale/uk/LC_MESSAGES/geany.mo
