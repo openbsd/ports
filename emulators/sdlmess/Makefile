@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/04/01 01:23:51 bcallah Exp $
+# $OpenBSD: Makefile,v 1.22 2013/04/08 04:27:42 bcallah Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -7,7 +7,7 @@ COMMENT =		emulates game consoles and old home computers
 
 V =			0148
 DISTNAME =		mame${V}s
-PKGNAME =		sdlmess-${V:S/0/0./}pl1
+PKGNAME =		sdlmess-${V:S/0/0./}pl2
 
 CATEGORIES =		emulators games
 
@@ -37,6 +37,7 @@ DIST_SUBDIR =		mame
 # PATCHFILES doesn't work for .zip
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			${V}u1_diff.zip:0 \
+			${V}u2_diff.zip:0 \
 			history${V:S/0//}g.zip:1
 
 MODULES =		devel/gettext \
@@ -49,7 +50,9 @@ LIB_DEPENDS =		devel/gconf2 \
 
 MAKE_FLAGS =		OPT_FLAGS='-DINI_PATH="\"${SYSCONFDIR}/mess;\""'
 MAKE_ENV =		ARCH=$(ARCH) CC=$(CC) CFLAGS="$(CFLAGS)" \
-			TARGETOS=openbsd
+			TARGETOS=openbsd \
+			NO_USE_QTDEBUG=1 \
+			NOWERROR=1
 .if ${MACHINE_ARCH} == "amd64"
 MAKE_ENV +=		PTR64=1
 .endif
@@ -66,7 +69,7 @@ post-extract:
 	@${UNZIP} -oq ${WRKDIR}/mame.zip -d ${WRKSRC}
 
 pre-patch:
-.for v in 1
+.for v in 1 2
 	${PATCH} ${PATCH_DIST_ARGS} < ${WRKDIR}/${V}u${v}.diff
 .endfor
 	@perl -pi -e 's|\r\n|\n|g' ${WRKDIST}/makefile \
