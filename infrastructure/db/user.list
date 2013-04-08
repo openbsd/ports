@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.207 2013/03/20 14:17:21 giovanni Exp $
+$OpenBSD: user.list,v 1.208 2013/04/08 20:58:21 sthen Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -223,4 +223,5 @@ id  user		group		port options
 712 			_cvechecker	security/cvechecker
 713 _puppet-dashboard	_puppet-dashboard	www/puppet-dashboard
 714 _activemq		_activemq	net/apache-activemq
-715 _postfwd	_postfwd	mail/postfwd
+715 _postfwd		_postfwd	mail/postfwd
+716 _c-icap		_c-icap		www/c-icap/c-icap
