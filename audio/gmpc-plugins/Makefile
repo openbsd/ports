@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/03/21 08:45:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2013/04/08 07:19:33 jasper Exp $
 
 SHARED_ONLY =	Yes
 
@@ -67,7 +67,6 @@ USE_GMAKE =	Yes
 CONFIGURE_STYLE =gnu
 CONFIGURE_ARGS+=--disable-mserver \
 		--disable-mmkeys \
-		--disable-libnotify \
 		--disable-lirc
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
