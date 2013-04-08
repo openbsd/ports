@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.38 2013/02/01 07:59:03 brad Exp $
+@comment $OpenBSD: PLIST-server,v 1.39 2013/04/08 18:53:54 brad Exp $
 @conflict dovecot-sqlite-*
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
@@ -322,6 +322,10 @@ include/dovecot/primes.h
 include/dovecot/printf-format-fix.h
 include/dovecot/priorityq.h
 include/dovecot/process-title.h
+include/dovecot/quota-fs.h
+include/dovecot/quota-plugin.h
+include/dovecot/quota-private.h
+include/dovecot/quota.h
 include/dovecot/quoted-printable.h
 include/dovecot/randgen.h
 include/dovecot/raw-storage.h
@@ -440,6 +444,7 @@ libexec/dovecot/deliver
 @bin libexec/dovecot/maildirlock
 @bin libexec/dovecot/pop3
 @bin libexec/dovecot/pop3-login
+@bin libexec/dovecot/quota-status
 @bin libexec/dovecot/rawlog
 @bin libexec/dovecot/replicator
 @bin libexec/dovecot/script
@@ -495,6 +500,7 @@ share/doc/dovecot/wiki/
 share/doc/dovecot/wiki/ACL.txt
 share/doc/dovecot/wiki/AixPluginsSupport.txt
 share/doc/dovecot/wiki/AuthDatabase.CheckPassword.txt
+share/doc/dovecot/wiki/AuthDatabase.Dict.txt
 share/doc/dovecot/wiki/AuthDatabase.LDAP.AuthBinds.txt
 share/doc/dovecot/wiki/AuthDatabase.LDAP.PasswordLookups.txt
 share/doc/dovecot/wiki/AuthDatabase.LDAP.Userdb.txt
@@ -528,6 +534,7 @@ share/doc/dovecot/wiki/Design.Arrays.txt
 share/doc/dovecot/wiki/Design.AuthProcess.txt
 share/doc/dovecot/wiki/Design.AuthProtocol.txt
 share/doc/dovecot/wiki/Design.Buffers.txt
+share/doc/dovecot/wiki/Design.Code.txt
 share/doc/dovecot/wiki/Design.Dsync.txt
 share/doc/dovecot/wiki/Design.Indexes.Cache.txt
 share/doc/dovecot/wiki/Design.Indexes.MailIndexApi.txt
@@ -622,6 +629,7 @@ share/doc/dovecot/wiki/PasswordDatabase.ExtraFields.NoLogin.txt
 share/doc/dovecot/wiki/PasswordDatabase.ExtraFields.Proxy.txt
 share/doc/dovecot/wiki/PasswordDatabase.ExtraFields.User.txt
 share/doc/dovecot/wiki/PasswordDatabase.ExtraFields.txt
+share/doc/dovecot/wiki/PasswordDatabase.IMAP.txt
 share/doc/dovecot/wiki/PasswordDatabase.PAM.txt
 share/doc/dovecot/wiki/PasswordDatabase.Shadow.txt
 share/doc/dovecot/wiki/PasswordDatabase.Static.txt
@@ -656,6 +664,7 @@ share/doc/dovecot/wiki/Plugins.FTS.txt
 share/doc/dovecot/wiki/Plugins.Lazyexpunge.txt
 share/doc/dovecot/wiki/Plugins.Listescape.txt
 share/doc/dovecot/wiki/Plugins.MailLog.txt
+share/doc/dovecot/wiki/Plugins.MailboxAlias.txt
 share/doc/dovecot/wiki/Plugins.Notify.txt
 share/doc/dovecot/wiki/Plugins.Snarf.txt
 share/doc/dovecot/wiki/Plugins.Trash.txt
@@ -671,6 +680,7 @@ share/doc/dovecot/wiki/Quota.Dirsize.txt
 share/doc/dovecot/wiki/Quota.FS.txt
 share/doc/dovecot/wiki/Quota.Maildir.txt
 share/doc/dovecot/wiki/Quota.txt
+share/doc/dovecot/wiki/Replication.txt
 share/doc/dovecot/wiki/RunningDovecot.txt
 share/doc/dovecot/wiki/SSL.CertificateClientImporting.txt
 share/doc/dovecot/wiki/SSL.CertificateCreation.txt
@@ -694,6 +704,7 @@ share/doc/dovecot/wiki/Upgrading.1.1.txt
 share/doc/dovecot/wiki/Upgrading.1.2.txt
 share/doc/dovecot/wiki/Upgrading.2.0.txt
 share/doc/dovecot/wiki/Upgrading.2.1.txt
+share/doc/dovecot/wiki/Upgrading.2.2.txt
 share/doc/dovecot/wiki/Upgrading.txt
 share/doc/dovecot/wiki/UserDatabase.ExtraFields.txt
 share/doc/dovecot/wiki/UserDatabase.NSS.txt
