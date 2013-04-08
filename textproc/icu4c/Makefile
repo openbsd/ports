@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.31 2013/03/24 10:28:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2013/04/08 15:54:11 sthen Exp $
+
+BROKEN-arm=		icupkg tool built and used as part of the build fails
 
 COMMENT=		International Components for Unicode
 
