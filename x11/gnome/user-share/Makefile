@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/06 08:18:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2013/04/08 09:05:42 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		personal file-sharing service for GNOME
 
 GNOME_PROJECT=		gnome-user-share
 GNOME_VERSION=		3.8.0
+REVISION=		0
 
 CATEGORIES=		www sysutils
 
@@ -42,6 +43,9 @@ FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/gnome-user-share
 CONFIGURE_ARGS=		--disable-static \
 			--with-httpd=${LOCALBASE}/sbin/httpd2 \
 			--with-modules-path=${LOCALBASE}/lib/apache2
+
+AUTOCONF_VERSION=	2.69
+CONFIGURE_STYLE=	autoconf
 
 pre-configure:
 	perl -pi -e 's,/usr/share,${TRUEPREFIX}/share,g' \

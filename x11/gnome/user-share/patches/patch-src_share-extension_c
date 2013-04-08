@@ -1,11 +1,14 @@
-$OpenBSD: patch-src_share-extension_c,v 1.1.1.1 2013/04/06 08:18:31 ajacoutot Exp $
---- src/share-extension.c.orig	Fri Apr  5 17:44:02 2013
-+++ src/share-extension.c	Fri Apr  5 17:45:17 2013
+$OpenBSD: patch-src_share-extension_c,v 1.2 2013/04/08 09:05:42 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=697537
+
+--- src/share-extension.c.orig	Tue Jan 15 17:43:03 2013
++++ src/share-extension.c	Mon Apr  8 10:21:30 2013
 @@ -28,7 +28,9 @@
  #include <glib/gi18n-lib.h>
  #include <gio/gdesktopappinfo.h>
  #include <gtk/gtk.h>
-+#ifndef __OpenBSD__
++#ifdef HAVE_BLUETOOTH
  #include <bluetooth-client.h>
 +#endif
  #include <libnautilus-extension/nautilus-menu-provider.h>
@@ -15,7 +18,7 @@ $OpenBSD: patch-src_share-extension_c,v 1.1.1.1 2013/04/06 08:18:31 ajacoutot Ex
  static void
  downloads_bar_set_from_bluetooth_status (GtkWidget *bar)
  {
-+#ifndef __OpenBSD__
++#ifdef HAVE_BLUETOOTH
  	BluetoothClient *client;
  	gboolean bt_powered;
  
@@ -31,7 +34,7 @@ $OpenBSD: patch-src_share-extension_c,v 1.1.1.1 2013/04/06 08:18:31 ajacoutot Ex
  		bar = nautilus_share_bar_new (_("May be used to share or receive files"));
  	} else if (is_dir[0] != FALSE) {
  		bar = nautilus_share_bar_new (_("May be shared over the network or Bluetooth"));
-+#ifndef __OpenBSD__
++#ifdef HAVE_BLUETOOTH
  	} else {
  		BluetoothClient *client;
  

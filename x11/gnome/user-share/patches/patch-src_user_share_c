@@ -1,11 +1,14 @@
-$OpenBSD: patch-src_user_share_c,v 1.1.1.1 2013/04/06 08:18:31 ajacoutot Exp $
+$OpenBSD: patch-src_user_share_c,v 1.2 2013/04/08 09:05:42 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=697537
+
 --- src/user_share.c.orig	Thu Feb 21 09:18:06 2013
-+++ src/user_share.c	Fri Apr  5 18:06:06 2013
++++ src/user_share.c	Mon Apr  8 10:21:15 2013
 @@ -27,7 +27,9 @@
  #include <gtk/gtk.h>
  #include <glib/gi18n.h>
  #include <glib/gstdio.h>
-+#ifndef __OpenBSD__
++#ifdef HAVE_BLUETOOTH
  #include <bluetooth-client.h>
 +#endif
  #include <gio/gio.h>
@@ -15,7 +18,7 @@ $OpenBSD: patch-src_user_share_c,v 1.1.1.1 2013/04/06 08:18:31 ajacoutot Exp $
  static GDBusProxy *session_proxy = NULL;
  static gboolean has_console = TRUE;
  
-+#ifndef __OpenBSD__
++#ifdef HAVE_BLUETOOTH
  static BluetoothClient *client = NULL;
 +#endif
  static gboolean bluetoothd_enabled = FALSE;
@@ -25,7 +28,7 @@ $OpenBSD: patch-src_user_share_c,v 1.1.1.1 2013/04/06 08:18:31 ajacoutot Exp $
  static void
  obex_services_start (void)
  {
-+#ifndef __OpenBSD__
++#ifdef HAVE_BLUETOOTH
  	if (bluetoothd_enabled == FALSE ||
  	    has_console == FALSE)
  	    	return;
@@ -41,7 +44,7 @@ $OpenBSD: patch-src_user_share_c,v 1.1.1.1 2013/04/06 08:18:31 ajacoutot Exp $
  			 GParamSpec *pspec,
  			 gpointer    user_data)
  {
-+#ifndef __OpenBSD__
++#ifdef HAVE_BLUETOOTH
  	char *adapter;
  	gboolean adapter_powered;
  
@@ -55,7 +58,7 @@ $OpenBSD: patch-src_user_share_c,v 1.1.1.1 2013/04/06 08:18:31 ajacoutot Exp $
  static void
  bluez_init (void)
  {
-+#ifndef __OpenBSD__
++#ifdef HAVE_BLUETOOTH
  	client = bluetooth_client_new ();
  	default_adapter_changed (NULL, NULL, NULL);
  	g_signal_connect (G_OBJECT (client), "notify::default-adapter",
@@ -70,7 +73,7 @@ $OpenBSD: patch-src_user_share_c,v 1.1.1.1 2013/04/06 08:18:31 ajacoutot Exp $
  static void
  file_sharing_bluetooth_enabled_changed (void)
  {
-+#ifndef __OpenBSD__
++#ifdef HAVE_BLUETOOTH
  	if (g_settings_get_boolean (settings,
  				   FILE_SHARING_BLUETOOTH_ENABLED) == FALSE) {
  		obexftp_down ();
@@ -84,7 +87,7 @@ $OpenBSD: patch-src_user_share_c,v 1.1.1.1 2013/04/06 08:18:31 ajacoutot Exp $
  static void
  file_sharing_bluetooth_obexpush_enabled_changed (void)
  {
-+#ifndef __OpenBSD__
++#ifdef HAVE_BLUETOOTH
  	if (g_settings_get_boolean (settings,
  				   FILE_SHARING_BLUETOOTH_OBEXPUSH_ENABLED) == FALSE) {
  		obexpush_down ();
