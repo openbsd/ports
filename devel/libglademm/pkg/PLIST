@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/09/30 15:04:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/04/08 13:50:23 ajacoutot Exp $
 @conflict libglademm-docs-*
 @pkgpath devel/libglademm,-main
 @pkgpath devel/libglademm,-docs
-%%SHARED%%
 include/libglademm-2.4/
 include/libglademm-2.4/libglademm/
 include/libglademm-2.4/libglademm.h
@@ -15,6 +14,7 @@ include/libglademm-2.4/libglademm/xml.h
 lib/libglademm-2.4/
 lib/libglademm-2.4.a
 lib/libglademm-2.4.la
+@lib lib/libglademm-2.4.so.${LIBglademm-2.4_VERSION}
 lib/libglademm-2.4/include/
 lib/libglademm-2.4/include/libglademmconfig.h
 lib/libglademm-2.4/proc/
