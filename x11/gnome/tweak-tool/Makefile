@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2013/03/11 11:46:12 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2013/04/08 15:13:05 ajacoutot Exp $
 
 PKG_ARCH=	*
 
 COMMENT=	tweak hidden GTK/GNOME settings
 
 GNOME_PROJECT=	gnome-tweak-tool
-GNOME_VERSION=	3.6.1
+GNOME_VERSION=	3.8.0
 
 CATEGORIES=	sysutils
 
@@ -31,5 +31,8 @@ MODPY_ADJ_FILES=gnome-tweak-tool
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
+
+CONFIGURE_STYLE=	autoconf no-autoheader
+AUTOCONF_VERSION=	2.69
 
 .include <bsd.port.mk>
