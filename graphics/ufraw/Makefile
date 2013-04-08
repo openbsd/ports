@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2013/03/25 14:52:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2013/04/08 15:25:43 sthen Exp $
 
 COMMENT=	read and manipulate raw images from digital cameras
 
 DISTNAME=	ufraw-0.19.2
+# rerolled tarball, we can zap DIST_SUBDIR when it's time for 0.19.3
+DIST_SUBDIR=	ufraw-0.19.2a
+REVISION=	0
 
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ufraw/}
