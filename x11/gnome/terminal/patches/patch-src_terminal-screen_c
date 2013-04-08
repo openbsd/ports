@@ -1,25 +1,43 @@
-$OpenBSD: patch-src_terminal-screen_c,v 1.7 2013/04/08 07:57:03 jasper Exp $
+$OpenBSD: patch-src_terminal-screen_c,v 1.8 2013/04/08 12:11:52 jasper Exp $
 
-From a8c7f7928f0415d9efc79074d52b534bd253360d Mon Sep 17 00:00:00 2001
-From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
-Date: Mon, 8 Apr 2013 09:50:38 +0200
-Subject: [PATCH] Only use dup3 on linux as it's a GLIBC extension.
+From b7df4813c7b85377309f8b9aecd6cae37af3cb0a Mon Sep 17 00:00:00 2001
+From: Christian Persch <chpe@gnome.org>
+Date: Mon, 08 Apr 2013 12:04:16 +0000
+Subject: screen: Portability fix
 
 https://bugzilla.gnome.org/show_bug.cgi?id=697024
 
 --- src/terminal-screen.c.orig	Wed Mar 20 11:09:31 2013
-+++ src/terminal-screen.c	Mon Apr  8 09:44:32 2013
-@@ -1347,7 +1347,13 @@ terminal_screen_child_setup (FDSetupData *data)
-       /* Now we know that target_fd can be safely overwritten. */
-       errno = 0;
-       do {
-+#ifdef __linux
-         fd = dup3 (fds[idx], target_fd, 0 /* no FD_CLOEXEC */);
-+#else
-+	fd = fcntl(fds[idx], F_DUPFD, target_fd);
-+	if (fd & FD_CLOEXEC)
-+	  _exit (127);
-+#endif
-       } while (fd == -1 && errno == EINTR);
-       if (fd != target_fd)
-         _exit (127);
++++ src/terminal-screen.c	Mon Apr  8 14:09:17 2013
+@@ -16,7 +16,7 @@
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+-#include <config.h>
++#include "config.h"
+ #define _GNU_SOURCE /* for dup3 */
+ 
+ #include "terminal-screen.h"
+@@ -188,6 +188,22 @@ static const TerminalRegexPattern url_regex_patterns[]
+ static GRegex **url_regexes;
+ static TerminalURLFlavour *url_regex_flavors;
+ static guint n_url_regexes;
++
++/* See bug #697024 */
++#ifndef __linux__
++
++#undef dup3
++#define dup3 fake_dup3
++
++static int
++fake_dup3 (int fd, int fd2, int flags)
++{
++  if (dup2 (fd, fd2) == -1)
++    return -1;
++
++  return fcntl (fd2, F_SETFD, flags);
++}
++#endif /* !__linux__ */
+ 
+ G_DEFINE_TYPE (TerminalScreen, terminal_screen, VTE_TYPE_TERMINAL)
+ 
