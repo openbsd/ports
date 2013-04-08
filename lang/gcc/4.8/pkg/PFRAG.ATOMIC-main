@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.ATOMIC-main,v 1.1.1.1 2013/04/08 08:20:24 pascal Exp $
+@lib lib/libatomic.so.${LIBatomic_VERSION}
+lib/libatomic.a
+lib/libatomic.la

@@ -1,0 +1,62 @@
+$OpenBSD: patch-gcc_ada_gcc-interface_Makefile_in,v 1.1.1.1 2013/04/08 08:20:24 pascal Exp $
+--- gcc/ada/gcc-interface/Makefile.in.orig	Wed Feb  6 12:19:08 2013
++++ gcc/ada/gcc-interface/Makefile.in	Sun Apr  7 17:02:16 2013
+@@ -1333,6 +1333,58 @@ ifeq ($(strip $(filter-out %86_64 freebsd%,$(arch) $(o
+   MISCLIB = -lutil
+ endif
+ 
++ifeq ($(strip $(filter-out %86 openbsd%,$(arch) $(osys))),)
++  LIBGNAT_TARGET_PAIRS = \
++  a-intnam.ads<a-intnam-freebsd.ads \
++  s-inmaop.adb<s-inmaop-posix.adb \
++  s-intman.adb<s-intman-posix.adb \
++  s-osinte.ads<s-osinte-freebsd.ads \
++  s-osinte.adb<s-osinte-freebsd.adb \
++  s-osprim.adb<s-osprim-posix.adb \
++  s-taprop.adb<s-taprop-posix.adb \
++  s-taspri.ads<s-taspri-posix.ads \
++  s-tpopsp.adb<s-tpopsp-posix.adb \
++  $(ATOMICS_TARGET_PAIRS) \
++  $(X86_TARGET_PAIRS) \
++  system.ads<system-freebsd-x86.ads
++
++  TOOLS_TARGET_PAIRS = \
++  mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb
++  GNATLIB_SHARED = gnatlib-shared-dual
++
++  EH_MECHANISM=-gcc
++  THREADSLIB= -lpthread
++  GMEM_LIB = gmemlib
++  LIBRARY_VERSION := $(LIB_VERSION)
++  MISCLIB = -lutil
++endif
++
++ifeq ($(strip $(filter-out %86_64 openbsd%,$(arch) $(osys))),)
++  LIBGNAT_TARGET_PAIRS = \
++  a-intnam.ads<a-intnam-freebsd.ads \
++  s-inmaop.adb<s-inmaop-posix.adb \
++  s-intman.adb<s-intman-posix.adb \
++  s-osinte.ads<s-osinte-freebsd.ads \
++  s-osinte.adb<s-osinte-freebsd.adb \
++  s-osprim.adb<s-osprim-posix.adb \
++  s-taprop.adb<s-taprop-posix.adb \
++  s-taspri.ads<s-taspri-posix.ads \
++  s-tpopsp.adb<s-tpopsp-posix.adb \
++  $(ATOMICS_TARGET_PAIRS) \
++  $(X86_64_TARGET_PAIRS) \
++  system.ads<system-freebsd-x86_64.ads
++
++  TOOLS_TARGET_PAIRS = \
++  mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb
++  GNATLIB_SHARED = gnatlib-shared-dual
++
++  EH_MECHANISM=-gcc
++  THREADSLIB= -lpthread
++  GMEM_LIB = gmemlib
++  LIBRARY_VERSION := $(LIB_VERSION)
++  MISCLIB = -lutil
++endif
++
+ # S390 Linux
+ ifeq ($(strip $(filter-out s390% linux%,$(arch) $(osys))),)
+   LIBGNAT_TARGET_PAIRS_COMMON = \

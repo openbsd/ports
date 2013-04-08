@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_c_c-decl_c,v 1.1.1.1 2013/04/08 08:20:26 pascal Exp $
+--- gcc/c/c-decl.c.orig	Thu Jan 10 21:38:27 2013
++++ gcc/c/c-decl.c	Wed Jan 23 22:48:28 2013
+@@ -4857,6 +4857,8 @@ warn_variable_length_array (tree name, tree size)
+ 		     "variable length array is used");
+ 	}
+     }
++    if (warn_variable_decl)
++      warning (OPT_Wvariable_decl, "variable-sized array %qE", name);
+ }
+ 
+ /* Given declspecs and a declarator,

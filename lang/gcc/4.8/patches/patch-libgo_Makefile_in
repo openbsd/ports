@@ -1,0 +1,19 @@
+$OpenBSD: patch-libgo_Makefile_in,v 1.1.1.1 2013/04/08 08:20:26 pascal Exp $
+--- libgo/Makefile.in.orig	Wed Feb 20 21:04:36 2013
++++ libgo/Makefile.in	Tue Mar  5 19:45:42 2013
+@@ -2090,13 +2090,14 @@ libgo_la_LIBADD = \
+ libgobegin_a_SOURCES = \
+ 	runtime/go-main.c
+ 
++include $(top_srcdir)/../libversions
+ LTLDFLAGS = $(shell $(SHELL) $(top_srcdir)/../libtool-ldflags $(LDFLAGS))
+ AM_GOCFLAGS = $(STRINGOPS_FLAG)
+ GOCOMPILE = $(GOC) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_GOCFLAGS) $(GOCFLAGS)
+ LTGOCOMPILE = $(LIBTOOL) --tag GO --mode=compile $(GOC) $(INCLUDES) \
+ 	$(AM_GOCFLAGS) $(GOCFLAGS)
+ 
+-GOLINK = $(LIBTOOL) --tag GO --mode-link $(GOC) \
++GOLINK = $(LIBTOOL) --tag GO --mode-link $(GOC) $(LIBgo_LTVERSION) \
+ 	$(OPT_LDFLAGS) $(SECTION_LDFLAGS) $(AM_GOCFLAGS) $(LTLDFLAGS) -o $@
+ 
+ 
