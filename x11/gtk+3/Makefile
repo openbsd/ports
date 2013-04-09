@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2013/04/02 16:11:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.73 2013/04/09 21:58:57 miod Exp $
 
 SHARED_ONLY=		Yes
 
@@ -11,7 +11,7 @@ GNOME_PROJECT=		gtk+
 PKGNAME-main=		gtk+3-${GNOME_VERSION}
 PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
 
-REVISION-main=		2
+REVISION-main=		3
 
 CATEGORIES=		x11 devel
 
@@ -90,9 +90,10 @@ WANTLIB-cups +=	colord lcms2
 CONFIGURE_ARGS +=	--disable-colord
 .endif
 
-# XXX
+# XXX gtkcssselector.c exposes a life analysis bug otherwise
 .if ${MACHINE_ARCH} == "powerpc"
-CFLAGS +=	-O0
+CFLAGS +=	-fno-tree-store-copy-prop -fno-tree-copy-prop \
+		-fno-tree-dominator-opts
 .endif
 
 # do not build gtk-update-icon-cache and other shared tools
