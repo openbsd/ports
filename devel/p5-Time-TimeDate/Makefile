@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 10:50:23 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/04/09 20:54:33 sthen Exp $
 
 COMMENT=	library for parsing and formatting dates and times
 
 MODULES=	cpan
-VERSION=	1.20
-DISTNAME=	TimeDate-${VERSION}
+DISTNAME=	TimeDate-2.30
 PKGNAME=	p5-Time-${DISTNAME}
-REVISION=	0
 CATEGORIES=	devel
-USE_GROFF =	Yes
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes

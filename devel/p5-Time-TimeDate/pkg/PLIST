@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2010/05/17 08:18:25 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2013/04/09 20:54:33 sthen Exp $
 ${P5SITE}/Date/
 ${P5SITE}/Date/Format.pm
 ${P5SITE}/Date/Language/
@@ -7,6 +7,7 @@ ${P5SITE}/Date/Language/Afar.pm
 ${P5SITE}/Date/Language/Amharic.pm
 ${P5SITE}/Date/Language/Austrian.pm
 ${P5SITE}/Date/Language/Brazilian.pm
+${P5SITE}/Date/Language/Bulgarian.pm
 ${P5SITE}/Date/Language/Chinese.pm
 ${P5SITE}/Date/Language/Chinese_GB.pm
 ${P5SITE}/Date/Language/Czech.pm
@@ -40,6 +41,7 @@ ${P5SITE}/Time/
 ${P5SITE}/Time/Zone.pm
 @man man/man3p/Date::Format.3p
 @man man/man3p/Date::Language.3p
+@man man/man3p/Date::Language::Bulgarian.3p
 @man man/man3p/Date::Language::Hungarian.3p
 @man man/man3p/Date::Parse.3p
 @man man/man3p/Time::Zone.3p
