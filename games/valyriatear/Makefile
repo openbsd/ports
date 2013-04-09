@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/13 22:44:45 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2013/04/09 14:03:05 bcallah Exp $
 
-V =		0.5.0
+V =		0.5.1
 COMMENT =	free J-RPG game
 DISTNAME =	valyriatear-${V}
 CATEGORIES =	games x11
