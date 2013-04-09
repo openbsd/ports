@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/03/28 19:44:13 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/04/09 13:33:24 jasper Exp $
 @bin bin/gupnp-dlna-info-2.0
 @bin bin/gupnp-dlna-ls-profiles-2.0
 include/gupnp-dlna-2.0/
@@ -23,6 +23,7 @@ lib/girepository-1.0/GUPnPDLNAGst-2.0.typelib
 lib/gupnp-dlna/
 lib/gupnp-dlna/libgstreamer.a
 lib/gupnp-dlna/libgstreamer.la
+lib/gupnp-dlna/libgstreamer.so
 lib/libgupnp-dlna-2.0.a
 lib/libgupnp-dlna-2.0.la
 @lib lib/libgupnp-dlna-2.0.so.${LIBgupnp-dlna-2.0_VERSION}
