@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:24 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/04/09 09:21:36 espie Exp $
 
 COMMENT=	perl common defaults with lower memory usage
 
 MODULES=	cpan
-DISTNAME=	common-sense-3.4
+DISTNAME=	common-sense-3.6
 CATEGORIES=	devel
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
