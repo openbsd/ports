@@ -1,0 +1,60 @@
+#!/bin/ksh
+#
+# $OpenBSD: portimport,v 1.1 2013/04/09 19:51:37 rpe Exp $
+# Copyright (c) 2013 Robert Peichaer
+# 
+# Permission to use, copy, modify, and distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+# 
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+#
+# Based on Marc Espie's portimport.
+# sthen: Modified to handle imports from mystuff/ and do a dry run first.
+# rpe:   rewrite based on sthen@'s version
+
+set -e
+
+# XXX
+# XXX CHANGE if you login to cvs.openbsd.org with different user
+# XXX
+user=$(id -un)
+
+cvsroot=$user@cvs.openbsd.org:/cvs
+error=false
+fulldir=$(pwd)
+importname="ports/${fulldir##*/ports/*(mystuff/|openbsd-wip/|p5-ports-wip/)}"
+timestamp=$(date '+%Y%m%d')
+
+err() { echo "$*"; error=true; }
+
+[[ -f Makefile && -f distinfo && -f pkg/DESCR  && -f pkg/PLIST ]] || err "No ports files?"
+find . -name .git          -print|read i && err "You git!"
+find . -name .\*.swp       -print|read i && err "Found vim swap file"
+find . -name \*.orig       -print|read i && err "Found .orig file, ouch"
+find . -name typescript    -print|read i && err "Found typescript file, ouch"
+find . -path ./w-\*        -print|read i && err "Please wipe out work directory before importing"
+find . -type d -name core  -print|read i && err "directory named core found, cvs will ignore it"
+find . -type f -name .todo -print|read i && err "devtodo file found"
+find . -type d -name CVS   -print|read i && err "Some CVS stuff already in there, very funky"
+$error && exit 1
+
+echo -n "Import would go into: "
+cvs -n -d$cvsroot import $importname $user ${user}_$timestamp 2>/dev/null | \
+	grep Makefile | head -1 | awk '{print $2}' | xargs dirname
+
+read ans?'Correct path? [y/n] '
+if [[ $ans == +(y|Y) ]]; then
+	cvs -d$cvsroot import $importname $user ${user}_$timestamp
+	cd /usr/$importname/../
+	cvs -d$cvsroot update -AdP ${fulldir##*/}
+	echo "Don't forget to commit the category Makefile when you're done!"
+	cd /usr/$importname/../
+	pwd
+fi
