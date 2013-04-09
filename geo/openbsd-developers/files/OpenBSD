@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.91 2013/01/08 10:49:21 zhuk Exp $
+# $OpenBSD: OpenBSD,v 1.92 2013/04/09 20:21:46 rpe Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -73,7 +73,7 @@
 48.1248		11.5972		"mickey"	# Michael Shalayeff
 48.13254	11.76704	"bluhm"		# Alexander Bluhm
 48.137970	11.542279	"markus"	# Markus Friedl
-48.191418	16.340723i	"rpe"		# Robert Peichaer
+48.191418	16.340723	"rpe"		# Robert Peichaer
 48.2		16.367		"martin"	# Martin Reindl
 48.35		7.46		"couderc"	# Damien Couderc
 48.750		2.317		"saad"		# Saad Kadhi
