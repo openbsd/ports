@@ -1,0 +1,12 @@
+$OpenBSD: patch-jdk_make_common_Defs-bsd_gmk,v 1.9 2013/04/10 02:49:05 kurt Exp $
+--- jdk/make/common/Defs-bsd.gmk.orig	Tue Apr  9 20:29:15 2013
++++ jdk/make/common/Defs-bsd.gmk	Tue Apr  9 20:29:40 2013
+@@ -399,7 +399,7 @@ endif
+ # the library itself should not.
+ #
+ VM_NAME         = server
+-JVMLIB          = -Xlinker -rpath -Xlinker $(LIBDIR)/$(LIBARCH)/$(VM_NAME) -L$(LIBDIR)/$(LIBARCH)/$(VM_NAME) -ljvm
++JVMLIB          = -L$(LIBDIR)/$(LIBARCH)/$(VM_NAME) -ljvm
+ JAVALIB         = -ljava $(JVMLIB)
+ 
+ #

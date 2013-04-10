@@ -1,7 +1,7 @@
-$OpenBSD: patch-jdk_src_share_classes_sun_applet_AppletPanel_java,v 1.1 2011/09/22 20:26:48 kurt Exp $
---- jdk/src/share/classes/sun/applet/AppletPanel.java.orig	Mon Jun 27 13:36:16 2011
-+++ jdk/src/share/classes/sun/applet/AppletPanel.java	Wed Sep  7 09:44:08 2011
-@@ -67,7 +67,7 @@ abstract class AppletPanel extends Panel implements Ap
+$OpenBSD: patch-jdk_src_share_classes_sun_applet_AppletPanel_java,v 1.2 2013/04/10 02:49:05 kurt Exp $
+--- jdk/src/share/classes/sun/applet/AppletPanel.java.orig	Tue Apr  9 16:09:50 2013
++++ jdk/src/share/classes/sun/applet/AppletPanel.java	Tue Apr  9 16:09:51 2013
+@@ -68,7 +68,7 @@ abstract class AppletPanel extends Panel implements Ap
      /**
       * The applet (if loaded).
       */
@@ -10,7 +10,7 @@ $OpenBSD: patch-jdk_src_share_classes_sun_applet_AppletPanel_java,v 1.1 2011/09/
  
      /**
       * Applet will allow initialization.  Should be
-@@ -161,7 +161,8 @@ abstract class AppletPanel extends Panel implements Ap
+@@ -162,7 +162,8 @@ abstract class AppletPanel extends Panel implements Ap
       * Creates a thread to run the applet. This method is called
       * each time an applet is loaded and reloaded.
       */
@@ -20,7 +20,7 @@ $OpenBSD: patch-jdk_src_share_classes_sun_applet_AppletPanel_java,v 1.1 2011/09/
          // Create a thread group for the applet, and start a new
          // thread to load the applet.
          String nm = "applet-" + getCode();
-@@ -305,7 +306,7 @@ abstract class AppletPanel extends Panel implements Ap
+@@ -306,7 +307,7 @@ abstract class AppletPanel extends Panel implements Ap
      /**
       * Get an event from the queue.
       */
@@ -29,7 +29,7 @@ $OpenBSD: patch-jdk_src_share_classes_sun_applet_AppletPanel_java,v 1.1 2011/09/
          while (queue == null || queue.isEmpty()) {
              wait();
          }
-@@ -694,7 +695,8 @@ abstract class AppletPanel extends Panel implements Ap
+@@ -692,7 +693,8 @@ abstract class AppletPanel extends Panel implements Ap
       * applet event processing so that it can be gracefully interrupted from
       * things like HotJava.
       */
