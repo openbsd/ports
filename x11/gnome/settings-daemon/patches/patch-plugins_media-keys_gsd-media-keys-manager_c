@@ -1,13 +1,38 @@
-$OpenBSD: patch-plugins_media-keys_gsd-media-keys-manager_c,v 1.7 2013/04/02 08:30:32 ajacoutot Exp $
+$OpenBSD: patch-plugins_media-keys_gsd-media-keys-manager_c,v 1.8 2013/04/10 14:29:53 ajacoutot Exp $
 
 From 6bb589a5d87c2407c4d5a00dfc543b93906f0fa3 Mon Sep 17 00:00:00 2001
 From: Antoine Jacoutot <ajacoutot@gnome.org>
 Date: Tue, 02 Apr 2013 06:37:40 +0000
 Subject: media-keys: handle GSD_POWER_ACTION_LOGOUT
 
---- plugins/media-keys/gsd-media-keys-manager.c.orig	Tue Apr  2 08:23:46 2013
-+++ plugins/media-keys/gsd-media-keys-manager.c	Tue Apr  2 08:23:23 2013
-@@ -1808,6 +1808,7 @@ do_config_power_action (GsdMediaKeysManager *manager,
+From 307f421196c39502e7a4c7d20931a1d310c877bf Mon Sep 17 00:00:00 2001
+From: Lionel Landwerlin <llandwerlin@gmail.com>
+Date: Wed, 10 Apr 2013 11:31:40 +0000
+Subject: media-keys: fix race condition
+
+--- plugins/media-keys/gsd-media-keys-manager.c.orig	Wed Apr 10 16:24:57 2013
++++ plugins/media-keys/gsd-media-keys-manager.c	Wed Apr 10 16:24:47 2013
+@@ -596,6 +596,10 @@ gsettings_changed_cb (GSettings           *settings,
+ {
+         int      i;
+ 
++        /* Give up if we don't have proxy to the shell */
++        if (!manager->priv->key_grabber)
++                return;
++
+ 	/* handled in gsettings_custom_changed_cb() */
+         if (g_str_equal (settings_key, "custom-keybindings"))
+ 		return;
+@@ -765,8 +769,6 @@ init_kbd (GsdMediaKeysManager *manager)
+ 
+         gnome_settings_profile_start (NULL);
+ 
+-        manager->priv->keys = g_ptr_array_new_with_free_func ((GDestroyNotify) media_key_free);
+-
+         /* Media keys
+          * Add hard-coded shortcuts first so that they can't be preempted */
+         for (i = 0; i < G_N_ELEMENTS (media_keys); i++) {
+@@ -1808,6 +1810,7 @@ do_config_power_action (GsdMediaKeysManager *manager,
                  power_action_hibernate (manager);
                  break;
          case GSD_POWER_ACTION_BLANK:
@@ -15,3 +40,22 @@ Subject: media-keys: handle GSD_POWER_ACTION_LOGOUT
          case GSD_POWER_ACTION_NOTHING:
                  /* these actions cannot be handled by media-keys and
                   * are not used in this context */
+@@ -2250,6 +2253,9 @@ on_shell_vanished (GDBusConnection  *connection,
+                    gpointer          user_data)
+ {
+         GsdMediaKeysManager *manager = user_data;
++
++        g_ptr_array_set_size (manager->priv->keys, 0);
++
+         g_clear_object (&manager->priv->key_grabber);
+         g_clear_object (&manager->priv->osd_proxy);
+ }
+@@ -2261,6 +2267,8 @@ start_media_keys_idle_cb (GsdMediaKeysManager *manager
+ 
+         g_debug ("Starting media_keys manager");
+         gnome_settings_profile_start (NULL);
++
++        manager->priv->keys = g_ptr_array_new_with_free_func ((GDestroyNotify) media_key_free);
+ 
+         initialize_volume_handler (manager);
+ 
