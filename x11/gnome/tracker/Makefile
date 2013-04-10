@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.135 2013/04/06 11:30:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.136 2013/04/10 14:13:53 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		powerful desktop search tool and indexer
 
 GNOME_PROJECT=		tracker
 GNOME_VERSION=		0.16.0
-REVISION=		1
+REVISION=		2
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker.
@@ -54,8 +54,6 @@ MODULES=		devel/gettext \
 			devel/dconf \
 			lang/python
 
-BUILD_DEPENDS=		lang/vala
-
 LIB_DEPENDS=		x11/gnome/totem-pl-parser \
 			print/poppler \
 			devel/libgsf \
@@ -78,9 +76,9 @@ LIB_DEPENDS=		x11/gnome/totem-pl-parser \
 TEST_DEPENDS=		${MODPY_RUN_DEPENDS} \
 			x11/dbus-python
 
-LIBTOOL_FLAGS=	--tag=disable-static
+LIBTOOL_FLAGS=		--tag=disable-static
 
-MODGNOME_TOOLS= 	goi
+MODGNOME_TOOLS= 	goi vala
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 MODPY_BUILDDEP=		No
@@ -88,6 +86,9 @@ MODPY_RUNDEP=		No
 
 MODPY_ADJ_FILES=	tests/tracker-writeback/01-writeback.py \
 			utils/data-generators/cc/generate
+
+AUTOCONF_VERSION=	2.69
+CONFIGURE_STYLE=	autoconf
 
 CONFIGURE_ARGS=		--disable-static \
 			--disable-miner-thunderbird \
@@ -121,7 +122,7 @@ MODGNOME_LDFLAGS=	-Wl,-rpath,${TRUEPREFIX}/lib/tracker-${MAJ_V}
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/meta-tracker/
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/src/tracker-needle/tracker-utils.vala
+	${SUBST_CMD} ${WRKSRC}/src/tracker-needle/tracker-utils.c
 
 post-install:
 	rm ${PREFIX}/lib/tracker-${MAJ_V}/extract-modules/*.la

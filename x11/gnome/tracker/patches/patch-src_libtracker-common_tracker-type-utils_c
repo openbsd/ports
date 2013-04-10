@@ -1,14 +1,17 @@
-$OpenBSD: patch-src_libtracker-common_tracker-type-utils_c,v 1.3 2011/09/18 08:36:56 ajacoutot Exp $
+$OpenBSD: patch-src_libtracker-common_tracker-type-utils_c,v 1.4 2013/04/10 14:13:53 ajacoutot Exp $
 
-tracker-type-utils.c:107: warning: implicit declaration of function 'strcasecmp'
+From 3443706bbe0c1c2e465336c59f87cec90929ff1e Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Wed, 10 Apr 2013 07:16:54 +0000
+Subject: OpenBSD needs _XOPEN_SOURCE_EXTENDED for strptime/strcasecmp
 
---- src/libtracker-common/tracker-type-utils.c.orig	Sat Sep 17 17:43:51 2011
-+++ src/libtracker-common/tracker-type-utils.c	Sat Sep 17 17:43:58 2011
-@@ -20,7 +20,6 @@
- 
+--- src/libtracker-common/tracker-type-utils.c.orig	Wed Apr 10 08:40:12 2013
++++ src/libtracker-common/tracker-type-utils.c	Wed Apr 10 08:40:47 2013
+@@ -21,6 +21,7 @@
  #include "config.h"
  
--#define _XOPEN_SOURCE
+ #define _XOPEN_SOURCE
++#define _XOPEN_SOURCE_EXTENDED 1	/* strcasecmp is XPG4v2 */
  #include <time.h>
  
  #include <strings.h>

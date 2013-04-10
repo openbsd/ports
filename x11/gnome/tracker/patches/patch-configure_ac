@@ -1,0 +1,19 @@
+$OpenBSD: patch-configure_ac,v 1.1 2013/04/10 14:13:53 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=697719
+
+--- configure.ac.orig	Wed Apr 10 14:51:37 2013
++++ configure.ac	Wed Apr 10 14:51:18 2013
+@@ -231,6 +231,12 @@ LIBTRACKER_COMMON_REQUIRED="glib-2.0     >= $GLIB_REQU
+ 
+ PKG_CHECK_MODULES(LIBTRACKER_COMMON, [$LIBTRACKER_COMMON_REQUIRED])
+ 
++case $host in
++  *-*-openbsd*)
++    LIBTRACKER_COMMON_LIBS="$LIBTRACKER_COMMON_LIBS -lkvm"
++    ;;
++esac
++
+ # Check requirements for libtracker-data
+ LIBTRACKER_DATA_REQUIRED="glib-2.0     >= $GLIB_REQUIRED
+                           gio-unix-2.0 >= $GLIB_REQUIRED
