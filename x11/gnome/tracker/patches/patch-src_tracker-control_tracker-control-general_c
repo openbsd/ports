@@ -1,0 +1,89 @@
+$OpenBSD: patch-src_tracker-control_tracker-control-general_c,v 1.8 2013/04/10 14:30:43 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=697719
+
+--- src/tracker-control/tracker-control-general.c.orig	Sun Mar 17 12:35:11 2013
++++ src/tracker-control/tracker-control-general.c	Wed Apr 10 16:17:26 2013
+@@ -21,6 +21,15 @@
+ 
+ #include <errno.h>
+ 
++#ifdef __OpenBSD__
++#include <sys/param.h>
++#include <sys/proc.h>
++#include <sys/sysctl.h>
++#include <fcntl.h>
++#include <limits.h>
++#include <kvm.h>
++#endif
++
+ #include <glib.h>
+ #include <glib/gi18n.h>
+ 
+@@ -645,6 +654,7 @@ tracker_control_general_run (void)
+ 	if (kill_option != TERM_NONE ||
+ 	    terminate_option != TERM_NONE ||
+ 	    list_processes) {
++#ifndef __OpenBSD__
+ 		guint32 own_pid;
+ 		guint32 own_uid;
+ 		gchar *own_pid_str;
+@@ -695,7 +705,30 @@ tracker_control_general_run (void)
+ 			strv = g_strsplit (contents, "^@", 2);
+ 			if (strv && strv[0]) {
+ 				gchar *basename;
++#else /* __OpenBSD__ */
++		gchar *basename, **strv;
++		int i, nproc;
++		struct kinfo_proc *plist, *kp;
++		char buf[_POSIX2_LINE_MAX];
++		kvm_t *kd;
++ 
++		if ((kd = kvm_openfiles (NULL, NULL, NULL, KVM_NO_FILES, buf)) == NULL) {
++			printf ("%s\n", buf);
++			return EXIT_FAILURE;
++		}
++ 
++		plist = kvm_getprocs (kd, KERN_PROC_ALL, 0, sizeof (*plist), &nproc);
++		if (plist == NULL)
++			return EXIT_FAILURE;
++ 
++		for (i = 0, kp = plist; i < nproc; i++, kp++) {
++			if ((kp->p_flag & P_SYSTEM) != 0)
++ 				continue;
+ 
++			if ((strv = kvm_getargv (kd, kp, 0)) == NULL)
++					continue;
++#endif
++
+ 				basename = g_path_get_basename (strv[0]);
+ 
+ 				if ((g_str_has_prefix (basename, "tracker") == TRUE ||
+@@ -704,7 +737,11 @@ tracker_control_general_run (void)
+ 				    g_str_has_suffix (basename, "-status-icon") == FALSE) {
+ 					pid_t pid;
+ 
++#ifndef __OpenBSD__
+ 					pid = atoi (l->data);
++#else
++					pid = kp->p_pid;
++#endif
+ 					str = g_strdup_printf (_("Found process ID %d for '%s'"), pid, basename);
+ 					g_print ("%s\n", str);
+ 					g_free (str);
+@@ -757,6 +794,7 @@ tracker_control_general_run (void)
+ 				g_free (basename);
+ 			}
+ 
++#ifndef __OpenBSD__
+ 			g_strfreev (strv);
+ 			g_free (contents);
+ 			g_free (filename);
+@@ -764,6 +802,7 @@ tracker_control_general_run (void)
+ 
+ 		g_slist_foreach (pids, (GFunc) g_free, NULL);
+ 		g_slist_free (pids);
++#endif
+ 
+ 		/* If we just wanted to list processes, all done */
+ 		if (list_processes &&

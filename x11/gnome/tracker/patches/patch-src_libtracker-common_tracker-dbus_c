@@ -1,0 +1,59 @@
+$OpenBSD: patch-src_libtracker-common_tracker-dbus_c,v 1.8 2013/04/10 14:30:43 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=697719
+
+--- src/libtracker-common/tracker-dbus.c.orig	Thu May  3 17:22:57 2012
++++ src/libtracker-common/tracker-dbus.c	Wed Apr 10 15:12:01 2013
+@@ -23,6 +23,14 @@
+ #include <gio/gunixinputstream.h>
+ #include <gio/gunixoutputstream.h>
+ 
++#ifdef __OpenBSD__
++#include <sys/param.h>
++#include <sys/proc.h>
++#include <sys/sysctl.h>
++#include <fcntl.h>
++#include <kvm.h>
++#endif
++
+ #include "tracker-dbus.h"
+ #include "tracker-log.h"
+ 
+@@ -139,6 +147,7 @@ client_data_new (gchar *sender)
+ 	}
+ 
+ 	if (get_binary) {
++#ifndef __OpenBSD__
+ 		gchar *filename;
+ 		gchar *pid_str;
+ 		gchar *contents = NULL;
+@@ -171,6 +180,29 @@ client_data_new (gchar *sender)
+ 
+ 		g_strfreev (strv);
+ 		g_free (contents);
++#else
++		gint nproc;
++		struct kinfo_proc *kp;
++		kvm_t *kd;
++		gchar **strv;
++
++		if ((kd = kvm_openfiles (NULL, NULL, NULL, KVM_NO_FILES, NULL)) == NULL)
++			return cd;
++
++		if ((kp = kvm_getprocs (kd, KERN_PROC_PID, cd->pid, sizeof (*kp), &nproc)) == NULL)
++			goto out;
++
++		if ((kp->p_flag & P_SYSTEM) != 0) 
++			goto out;
++
++		if ((strv = kvm_getargv (kd, kp, 0)) == NULL)
++			goto out;
++
++		cd->binary = g_path_get_basename (strv[0]);
++
++out:
++		kvm_close(kd);
++#endif
+ 	}
+ 
+ 	return cd;
