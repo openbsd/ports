@@ -1,0 +1,19 @@
+$OpenBSD: patch-jdk_make_sun_awt_mawt_gmk,v 1.1 2013/04/10 02:47:10 kurt Exp $
+--- jdk/make/sun/awt/mawt.gmk.orig	Tue Apr  9 15:31:27 2013
++++ jdk/make/sun/awt/mawt.gmk	Tue Apr  9 15:34:43 2013
+@@ -202,15 +202,6 @@ endif
+ #
+ # Other extra flags needed for compiling.
+ #
+-CPPFLAGS += -I$(CUPS_HEADERS_PATH)
+-
+-ifndef HEADLESS
+-CPPFLAGS += -I$(MOTIF_DIR)/include \
+-            -I$(OPENWIN_HOME)/include 
+-LDFLAGS  += -L$(MOTIF_LIB) -L$(OPENWIN_LIB)
+-
+-endif # !HEADLESS
+-
+ CPPFLAGS += -I$(SHARE_SRC)/native/$(PKGDIR)/debug \
+             -I$(SHARE_SRC)/native/$(PKGDIR)/../font \
+             -I$(PLATFORM_SRC)/native/$(PKGDIR)/../font \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2013/03/19 19:26:45 kurt Exp $
+# $OpenBSD: Makefile,v 1.46 2013/04/10 02:47:10 kurt Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	amd64 i386
@@ -10,9 +10,9 @@ UPDATE=		32
 BUILD=		b27
 PKGNAME=	jdk-${VERSION}
 PKGNAME-main=	jdk-${VERSION}
-REVISION-main=	2
+REVISION-main=	3
 PKGNAME-jre=	jre-${VERSION}
-REVISION-jre=	2
+REVISION-jre=	3
 
 # see jaxp/jaxp.properties & jaxws/jaxws.properties 
 # in ${WRKDIR} for names and download locations of extra distfiles
@@ -74,6 +74,11 @@ BUILD_DEPENDS=	archivers/zip \
 MODULES=	converters/libiconv
 WANTLIB=	X11 Xext Xi Xtst c freetype m pthread sndio stdc++ z
 
+APACHE_ANT=	apache-ant-1.8.4-bin.tar.gz
+SUPDISTFILES+=	openjdk6-bootjdk-amd64-20130409.tar.gz:1 \
+		openjdk6-bootjdk-i386-20130409.tar.gz:1 \
+		${APACHE_ANT}:5
+
 .if ${FLAVOR:Mnative_bootstrap}
 INSTALLED!= (pkg_info -e "jdk->=1.6,<1.7" -q && echo yes) || echo no
 .if ${INSTALLED:L} != "yes"
@@ -83,14 +88,12 @@ BUILD_DEPENDS+=	jdk->=1.6,<1.7:devel/jdk/1.6 \
 		devel/apache-ant>=1.8.2
 ALT_BOOTDIR=	${LOCALBASE}/${JDKHOME}
 .else
-BOOT_JDK=	openjdk6-bootjdk-${ARCH}-20130128.tar.gz
-APACHE_ANT=	apache-ant-1.8.4-bin.tar.gz
+BOOT_JDK=	openjdk6-bootjdk-${ARCH}-20130409.tar.gz
 .include <bsd.port.arch.mk>
 .if (${ARCH}==amd64) || (${ARCH}==i386)
 DISTFILES+=	${BOOT_JDK}:1
 .endif
 DISTFILES+=	${APACHE_ANT}:5
-SUPDISTFILES+=	openjdk6-bootjdk-amd64-20130128.tar.gz:1 openjdk6-bootjdk-i386-20130128.tar.gz:1
 EXTRACT_ONLY+=	${BOOT_JDK} ${APACHE_ANT}
 MAKE_ENV+=	ANT_HOME=${WRKDIST}/apache-ant-1.8.4 \
 		LD_LIBRARY_PATH=${WRKDIST}/bootjdk-libs
@@ -230,9 +233,12 @@ build-bootjdk: ${_BUILD_COOKIE}
 	@mkdir -p ${WRKDIR}/tmp/bootjdk-libs
 	@cd ${JDKIMAGEDIR} && tar -cf - * | tar -C ${WRKDIR}/tmp/bootjdk -xf - 
 	@cd ${WRKDIR}/tmp/bootjdk/bin && rm appletviewer policytool
-	@cd ${WRKDIR}/tmp/bootjdk/jre/lib/${ARCH} && rm libnpt.so libinstrument.so libsplashscreen.so xawt/libmawt.so libfontmanager.so
+	@cd ${WRKDIR}/tmp/bootjdk/jre/lib/${ARCH} && rm libnpt.so libinstrument.so libsplashscreen.so xawt/libmawt.so
 	@ldd ${WRKDIR}/tmp/bootjdk/bin/unpack200 | \
 		grep rlib | cut -d"/" -f 2-20 | \
 		xargs -I % cp /% ${WRKDIR}/tmp/bootjdk-libs
+	@objdump -p ${WRKDIR}/tmp/bootjdk/jre/lib/${ARCH}/libfontmanager.so | \
+		grep NEEDED | grep libfreetype | sed  -e 's/[[:blank:]]*NEEDED[[:blank:]]*//' | \
+		xargs -I % cp ${X11BASE}/lib/% ${WRKDIR}/tmp/bootjdk-libs
 	@cd ${WRKDIR}/tmp && tar czf openjdk6-bootjdk-${ARCH}-$$(date +%Y%m%d).tar.gz bootjdk*
 	@echo "New bootjdk is located at ${WRKDIR}/tmp/openjdk6-bootjdk-${ARCH}-$$(date +%Y%m%d).tar.gz"
