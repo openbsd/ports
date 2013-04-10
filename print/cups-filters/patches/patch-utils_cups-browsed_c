@@ -1,6 +1,6 @@
-$OpenBSD: patch-utils_cups-browsed_c,v 1.1 2013/03/10 08:17:53 ajacoutot Exp $
+$OpenBSD: patch-utils_cups-browsed_c,v 1.2 2013/04/10 17:07:39 ajacoutot Exp $
 
-https://bugs.linuxfoundation.org/show_bug.cgi?id=1103
+http://bzr.linuxfoundation.org/loggerhead/openprinting/cups-filters/revision/7062
 
 --- utils/cups-browsed.c.orig	Sun Mar 10 08:54:33 2013
 +++ utils/cups-browsed.c	Sun Mar 10 08:54:56 2013
