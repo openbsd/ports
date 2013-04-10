@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/10/26 15:23:05 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/04/10 13:15:14 sthen Exp $
+bin/dm_date
+bin/dm_zdump
 ${P5SITE}/Date/
 ${P5SITE}/Date/Manip/
 ${P5SITE}/Date/Manip.pm
@@ -10,6 +12,7 @@ ${P5SITE}/Date/Manip/Changes5.pod
 ${P5SITE}/Date/Manip/Changes5to6.pod
 ${P5SITE}/Date/Manip/Changes6.pod
 ${P5SITE}/Date/Manip/Config.pod
+${P5SITE}/Date/Manip/ConfigFile.pod
 ${P5SITE}/Date/Manip/DM5.pm
 ${P5SITE}/Date/Manip/DM5.pod
 ${P5SITE}/Date/Manip/DM5abbrevs.pm
@@ -24,20 +27,38 @@ ${P5SITE}/Date/Manip/Holidays.pod
 ${P5SITE}/Date/Manip/Lang/
 ${P5SITE}/Date/Manip/Lang.pod
 ${P5SITE}/Date/Manip/Lang/catalan.pm
+${P5SITE}/Date/Manip/Lang/catalan.pod
 ${P5SITE}/Date/Manip/Lang/danish.pm
+${P5SITE}/Date/Manip/Lang/danish.pod
 ${P5SITE}/Date/Manip/Lang/dutch.pm
+${P5SITE}/Date/Manip/Lang/dutch.pod
 ${P5SITE}/Date/Manip/Lang/english.pm
+${P5SITE}/Date/Manip/Lang/english.pod
+${P5SITE}/Date/Manip/Lang/finnish.pm
+${P5SITE}/Date/Manip/Lang/finnish.pod
 ${P5SITE}/Date/Manip/Lang/french.pm
+${P5SITE}/Date/Manip/Lang/french.pod
 ${P5SITE}/Date/Manip/Lang/german.pm
+${P5SITE}/Date/Manip/Lang/german.pod
 ${P5SITE}/Date/Manip/Lang/index.pm
 ${P5SITE}/Date/Manip/Lang/italian.pm
+${P5SITE}/Date/Manip/Lang/italian.pod
+${P5SITE}/Date/Manip/Lang/norwegian.pm
+${P5SITE}/Date/Manip/Lang/norwegian.pod
 ${P5SITE}/Date/Manip/Lang/polish.pm
+${P5SITE}/Date/Manip/Lang/polish.pod
 ${P5SITE}/Date/Manip/Lang/portugue.pm
+${P5SITE}/Date/Manip/Lang/portugue.pod
 ${P5SITE}/Date/Manip/Lang/romanian.pm
+${P5SITE}/Date/Manip/Lang/romanian.pod
 ${P5SITE}/Date/Manip/Lang/russian.pm
+${P5SITE}/Date/Manip/Lang/russian.pod
 ${P5SITE}/Date/Manip/Lang/spanish.pm
+${P5SITE}/Date/Manip/Lang/spanish.pod
 ${P5SITE}/Date/Manip/Lang/swedish.pm
+${P5SITE}/Date/Manip/Lang/swedish.pod
 ${P5SITE}/Date/Manip/Lang/turkish.pm
+${P5SITE}/Date/Manip/Lang/turkish.pod
 ${P5SITE}/Date/Manip/Migration5to6.pod
 ${P5SITE}/Date/Manip/Misc.pod
 ${P5SITE}/Date/Manip/Obj.pm
@@ -525,6 +546,14 @@ ${P5SITE}/Date/Manip/Offset/off477.pm
 ${P5SITE}/Date/Manip/Offset/off478.pm
 ${P5SITE}/Date/Manip/Offset/off479.pm
 ${P5SITE}/Date/Manip/Offset/off480.pm
+${P5SITE}/Date/Manip/Offset/off481.pm
+${P5SITE}/Date/Manip/Offset/off482.pm
+${P5SITE}/Date/Manip/Offset/off483.pm
+${P5SITE}/Date/Manip/Offset/off484.pm
+${P5SITE}/Date/Manip/Offset/off485.pm
+${P5SITE}/Date/Manip/Offset/off486.pm
+${P5SITE}/Date/Manip/Offset/off487.pm
+${P5SITE}/Date/Manip/Offset/off488.pm
 ${P5SITE}/Date/Manip/Problems.pod
 ${P5SITE}/Date/Manip/Recur.pm
 ${P5SITE}/Date/Manip/Recur.pod
@@ -557,6 +586,7 @@ ${P5SITE}/Date/Manip/TZ/affree00.pm
 ${P5SITE}/Date/Manip/TZ/afgabo00.pm
 ${P5SITE}/Date/Manip/TZ/afhara00.pm
 ${P5SITE}/Date/Manip/TZ/afjoha00.pm
+${P5SITE}/Date/Manip/TZ/afjuba00.pm
 ${P5SITE}/Date/Manip/TZ/afkamp00.pm
 ${P5SITE}/Date/Manip/TZ/afkhar00.pm
 ${P5SITE}/Date/Manip/TZ/afkiga00.pm
@@ -596,6 +626,7 @@ ${P5SITE}/Date/Manip/TZ/ambahi01.pm
 ${P5SITE}/Date/Manip/TZ/ambarb00.pm
 ${P5SITE}/Date/Manip/TZ/ambele00.pm
 ${P5SITE}/Date/Manip/TZ/ambeli00.pm
+${P5SITE}/Date/Manip/TZ/ambeul00.pm
 ${P5SITE}/Date/Manip/TZ/amblan00.pm
 ${P5SITE}/Date/Manip/TZ/amboa_00.pm
 ${P5SITE}/Date/Manip/TZ/ambogo00.pm
@@ -613,6 +644,7 @@ ${P5SITE}/Date/Manip/TZ/amchic00.pm
 ${P5SITE}/Date/Manip/TZ/amchih00.pm
 ${P5SITE}/Date/Manip/TZ/amcord00.pm
 ${P5SITE}/Date/Manip/TZ/amcost00.pm
+${P5SITE}/Date/Manip/TZ/amcres00.pm
 ${P5SITE}/Date/Manip/TZ/amcuia00.pm
 ${P5SITE}/Date/Manip/TZ/amcura00.pm
 ${P5SITE}/Date/Manip/TZ/amdanm00.pm
@@ -659,6 +691,7 @@ ${P5SITE}/Date/Manip/TZ/ammaza00.pm
 ${P5SITE}/Date/Manip/TZ/ammend00.pm
 ${P5SITE}/Date/Manip/TZ/ammeno00.pm
 ${P5SITE}/Date/Manip/TZ/ammeri00.pm
+${P5SITE}/Date/Manip/TZ/ammetl00.pm
 ${P5SITE}/Date/Manip/TZ/ammexi00.pm
 ${P5SITE}/Date/Manip/TZ/ammiqu00.pm
 ${P5SITE}/Date/Manip/TZ/ammonc00.pm
@@ -699,6 +732,7 @@ ${P5SITE}/Date/Manip/TZ/amsant02.pm
 ${P5SITE}/Date/Manip/TZ/amsant03.pm
 ${P5SITE}/Date/Manip/TZ/amsao_00.pm
 ${P5SITE}/Date/Manip/TZ/amscor00.pm
+${P5SITE}/Date/Manip/TZ/amsitk00.pm
 ${P5SITE}/Date/Manip/TZ/amst_j00.pm
 ${P5SITE}/Date/Manip/TZ/amst_k00.pm
 ${P5SITE}/Date/Manip/TZ/amst_l00.pm
@@ -756,6 +790,7 @@ ${P5SITE}/Date/Manip/TZ/asduba00.pm
 ${P5SITE}/Date/Manip/TZ/asdush00.pm
 ${P5SITE}/Date/Manip/TZ/asgaza00.pm
 ${P5SITE}/Date/Manip/TZ/asharb00.pm
+${P5SITE}/Date/Manip/TZ/ashebr00.pm
 ${P5SITE}/Date/Manip/TZ/asho_c00.pm
 ${P5SITE}/Date/Manip/TZ/ashong00.pm
 ${P5SITE}/Date/Manip/TZ/ashovd00.pm
@@ -971,6 +1006,7 @@ ${P5SITE}/Date/Manip/TZ/s00.pm
 ${P5SITE}/Date/Manip/TZ/t00.pm
 ${P5SITE}/Date/Manip/TZ/u00.pm
 ${P5SITE}/Date/Manip/TZ/ut00.pm
+${P5SITE}/Date/Manip/TZ/utc00.pm
 ${P5SITE}/Date/Manip/TZ/v00.pm
 ${P5SITE}/Date/Manip/TZ/w00.pm
 ${P5SITE}/Date/Manip/TZ/wet00.pm
@@ -983,6 +1019,8 @@ ${P5SITE}/Date/Manip/TZdata.pm
 ${P5SITE}/Date/Manip/TZdata.pod
 ${P5SITE}/Date/Manip/Zones.pm
 ${P5SITE}/Date/Manip/Zones.pod
+@man man/man1/dm_date.1
+@man man/man1/dm_zdump.1
 @man man/man3p/Date::Manip.3p
 @man man/man3p/Date::Manip::Base.3p
 @man man/man3p/Date::Manip::Calc.3p
@@ -990,6 +1028,7 @@ ${P5SITE}/Date/Manip/Zones.pod
 @man man/man3p/Date::Manip::Changes5to6.3p
 @man man/man3p/Date::Manip::Changes6.3p
 @man man/man3p/Date::Manip::Config.3p
+@man man/man3p/Date::Manip::ConfigFile.3p
 @man man/man3p/Date::Manip::DM5.3p
 @man man/man3p/Date::Manip::DM5abbrevs.3p
 @man man/man3p/Date::Manip::DM6.3p
@@ -1002,10 +1041,12 @@ ${P5SITE}/Date/Manip/Zones.pod
 @man man/man3p/Date::Manip::Lang::danish.3p
 @man man/man3p/Date::Manip::Lang::dutch.3p
 @man man/man3p/Date::Manip::Lang::english.3p
+@man man/man3p/Date::Manip::Lang::finnish.3p
 @man man/man3p/Date::Manip::Lang::french.3p
 @man man/man3p/Date::Manip::Lang::german.3p
 @man man/man3p/Date::Manip::Lang::index.3p
 @man man/man3p/Date::Manip::Lang::italian.3p
+@man man/man3p/Date::Manip::Lang::norwegian.3p
 @man man/man3p/Date::Manip::Lang::polish.3p
 @man man/man3p/Date::Manip::Lang::portugue.3p
 @man man/man3p/Date::Manip::Lang::romanian.3p
@@ -1498,6 +1539,14 @@ ${P5SITE}/Date/Manip/Zones.pod
 @man man/man3p/Date::Manip::Offset::off478.3p
 @man man/man3p/Date::Manip::Offset::off479.3p
 @man man/man3p/Date::Manip::Offset::off480.3p
+@man man/man3p/Date::Manip::Offset::off481.3p
+@man man/man3p/Date::Manip::Offset::off482.3p
+@man man/man3p/Date::Manip::Offset::off483.3p
+@man man/man3p/Date::Manip::Offset::off484.3p
+@man man/man3p/Date::Manip::Offset::off485.3p
+@man man/man3p/Date::Manip::Offset::off486.3p
+@man man/man3p/Date::Manip::Offset::off487.3p
+@man man/man3p/Date::Manip::Offset::off488.3p
 @man man/man3p/Date::Manip::Problems.3p
 @man man/man3p/Date::Manip::Recur.3p
 @man man/man3p/Date::Manip::TZ.3p
@@ -1527,6 +1576,7 @@ ${P5SITE}/Date/Manip/Zones.pod
 @man man/man3p/Date::Manip::TZ::afgabo00.3p
 @man man/man3p/Date::Manip::TZ::afhara00.3p
 @man man/man3p/Date::Manip::TZ::afjoha00.3p
+@man man/man3p/Date::Manip::TZ::afjuba00.3p
 @man man/man3p/Date::Manip::TZ::afkamp00.3p
 @man man/man3p/Date::Manip::TZ::afkhar00.3p
 @man man/man3p/Date::Manip::TZ::afkiga00.3p
@@ -1566,6 +1616,7 @@ ${P5SITE}/Date/Manip/Zones.pod
 @man man/man3p/Date::Manip::TZ::ambarb00.3p
 @man man/man3p/Date::Manip::TZ::ambele00.3p
 @man man/man3p/Date::Manip::TZ::ambeli00.3p
+@man man/man3p/Date::Manip::TZ::ambeul00.3p
 @man man/man3p/Date::Manip::TZ::amblan00.3p
 @man man/man3p/Date::Manip::TZ::amboa_00.3p
 @man man/man3p/Date::Manip::TZ::ambogo00.3p
@@ -1583,6 +1634,7 @@ ${P5SITE}/Date/Manip/Zones.pod
 @man man/man3p/Date::Manip::TZ::amchih00.3p
 @man man/man3p/Date::Manip::TZ::amcord00.3p
 @man man/man3p/Date::Manip::TZ::amcost00.3p
+@man man/man3p/Date::Manip::TZ::amcres00.3p
 @man man/man3p/Date::Manip::TZ::amcuia00.3p
 @man man/man3p/Date::Manip::TZ::amcura00.3p
 @man man/man3p/Date::Manip::TZ::amdanm00.3p
@@ -1629,6 +1681,7 @@ ${P5SITE}/Date/Manip/Zones.pod
 @man man/man3p/Date::Manip::TZ::ammend00.3p
 @man man/man3p/Date::Manip::TZ::ammeno00.3p
 @man man/man3p/Date::Manip::TZ::ammeri00.3p
+@man man/man3p/Date::Manip::TZ::ammetl00.3p
 @man man/man3p/Date::Manip::TZ::ammexi00.3p
 @man man/man3p/Date::Manip::TZ::ammiqu00.3p
 @man man/man3p/Date::Manip::TZ::ammonc00.3p
@@ -1669,6 +1722,7 @@ ${P5SITE}/Date/Manip/Zones.pod
 @man man/man3p/Date::Manip::TZ::amsant03.3p
 @man man/man3p/Date::Manip::TZ::amsao_00.3p
 @man man/man3p/Date::Manip::TZ::amscor00.3p
+@man man/man3p/Date::Manip::TZ::amsitk00.3p
 @man man/man3p/Date::Manip::TZ::amst_j00.3p
 @man man/man3p/Date::Manip::TZ::amst_k00.3p
 @man man/man3p/Date::Manip::TZ::amst_l00.3p
@@ -1726,6 +1780,7 @@ ${P5SITE}/Date/Manip/Zones.pod
 @man man/man3p/Date::Manip::TZ::asdush00.3p
 @man man/man3p/Date::Manip::TZ::asgaza00.3p
 @man man/man3p/Date::Manip::TZ::asharb00.3p
+@man man/man3p/Date::Manip::TZ::ashebr00.3p
 @man man/man3p/Date::Manip::TZ::asho_c00.3p
 @man man/man3p/Date::Manip::TZ::ashong00.3p
 @man man/man3p/Date::Manip::TZ::ashovd00.3p
@@ -1941,6 +1996,7 @@ ${P5SITE}/Date/Manip/Zones.pod
 @man man/man3p/Date::Manip::TZ::t00.3p
 @man man/man3p/Date::Manip::TZ::u00.3p
 @man man/man3p/Date::Manip::TZ::ut00.3p
+@man man/man3p/Date::Manip::TZ::utc00.3p
 @man man/man3p/Date::Manip::TZ::v00.3p
 @man man/man3p/Date::Manip::TZ::w00.3p
 @man man/man3p/Date::Manip::TZ::wet00.3p
@@ -1950,7 +2006,3 @@ ${P5SITE}/Date/Manip/Zones.pod
 @man man/man3p/Date::Manip::TZ_Base.3p
 @man man/man3p/Date::Manip::TZdata.3p
 @man man/man3p/Date::Manip::Zones.3p
-share/examples/p5-Date-Manip/
-share/examples/p5-Date-Manip/README.examples
-share/examples/p5-Date-Manip/dm_date
-share/examples/p5-Date-Manip/dm_zdump

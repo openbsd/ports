@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/11 01:30:27 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2013/04/10 13:15:14 sthen Exp $
 
 COMMENT =	manipulate dates in perl
-DISTNAME =	Date-Manip-6.14
-PKGNAME =	p5-DateManip-6.14
-REVISION =	0
+V =		6.39
+DISTNAME =	Date-Manip-$V
+PKGNAME =	p5-DateManip-$V
 CATEGORIES =	converters
 MODULES =	cpan
-USE_GROFF =	Yes
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
@@ -15,14 +14,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 CONFIGURE_STYLE =	modbuild
 
-# CPAN has issues and hasn't been hosting the distfile for a while now.
-MASTER_SITES = 		http://distfiles.nl/
-
-MAKE_ENV +=      	TEST_POD=Yes
+MAKE_ENV +=		TEST_POD=Yes
 
 BUILD_DEPENDS =		devel/p5-Test-Inter
-RUN_DEPENDS =		devel/p5-YAML-Syck
-
-MODCPAN_EXAMPLES =	Yes
 
 .include <bsd.port.mk>
