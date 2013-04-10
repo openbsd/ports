@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2013/04/03 07:53:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2013/04/10 12:34:27 ajacoutot Exp $
 
 COMMENT=		printer (CUPS) administration tool
 
@@ -32,6 +32,10 @@ COMMON_DEPENDS= 	devel/gettext \
 
 BUILD_DEPENDS=		${COMMON_DEPENDS} \
 			textproc/xmlto
+
+# desktop-file-install(1)
+BUILD_DEPENDS +=	devel/desktop-file-utils
+
 RUN_DEPENDS=		${COMMON_DEPENDS} \
 			devel/desktop-file-utils
 
