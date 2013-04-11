@@ -1,0 +1,18 @@
+$OpenBSD: patch-po_POTFILES_in,v 1.1.1.1 2013/04/11 13:38:31 zhuk Exp $
+Fix tests.
+--- po/POTFILES.in.orig	Thu Sep 22 03:25:10 2011
++++ po/POTFILES.in	Thu Sep 22 03:25:52 2011
+@@ -1,5 +1,13 @@
+ # List of source files containing translatable strings.
+ [encoding: UTF-8]
++data/currencies.xml.in
++data/datasets.xml.in
++data/elements.xml.in
++data/functions.xml.in
++data/planets.xml.in
++data/units.xml.in
++data/variables.xml.in
++src/defs2doc.cc
+ src/qalc.cc
+ libqalculate/BuiltinFunctions.cc
+ libqalculate/Calculator.cc

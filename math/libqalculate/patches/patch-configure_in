@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2013/04/11 13:38:31 zhuk Exp $
+OpenBSD doesn't need -lhistory for -lreadline.
+--- configure.in.orig	Tue Jan  5 18:15:27 2010
++++ configure.in	Thu Sep 22 03:00:45 2011
+@@ -188,7 +194,7 @@ if test "x$enable_textport" = "xyes" ; then
+       fi
+     fi
+     if test x${HAVE_LIBREADLINE} = xtrue; then
+-      READLINE_LIBS="-lreadline -lhistory ${EXTRA_LIBREADLINE_DEPS}"
++      READLINE_LIBS="-lreadline ${EXTRA_LIBREADLINE_DEPS}"
+     else
+       AC_MSG_WARN([Could not find libreadline.])
+     fi

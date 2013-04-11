@@ -1,0 +1,8 @@
+Qalculate! is small and simple to use but with much power and
+versatility underneath. Features include customizable functions,
+units, arbitrary precision, plotting, and a graphical interface
+that uses a one-line fault-tolerant expression entry (although it
+supports optional traditional buttons).
+
+This package contains the shared library used by all Qalculate!
+frontends.

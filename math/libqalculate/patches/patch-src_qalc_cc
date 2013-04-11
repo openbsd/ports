@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_qalc_cc,v 1.1.1.1 2013/04/11 13:38:31 zhuk Exp $
+Unbreak build (wrong header path, triggered by SEPARATE_BUILD).
+--- src/qalc.cc.orig	Tue Sep 13 22:24:17 2011
++++ src/qalc.cc	Tue Sep 13 22:27:36 2011
+@@ -9,7 +9,7 @@
+     (at your option) any later version.
+ */
+ 
+-#include "support.h"
++#include <libqalculate/support.h>
+ #include <libqalculate/qalculate.h>
+ #include <sys/stat.h>
+ #include <unistd.h>

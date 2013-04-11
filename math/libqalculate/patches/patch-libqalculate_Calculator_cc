@@ -1,0 +1,18 @@
+$OpenBSD: patch-libqalculate_Calculator_cc,v 1.1.1.1 2013/04/11 13:38:31 zhuk Exp $
+Unbreak build (different locale structure layout).
+--- libqalculate/Calculator.cc.orig	Tue Sep 13 21:59:52 2011
++++ libqalculate/Calculator.cc	Tue Sep 13 22:03:06 2011
+@@ -295,8 +295,13 @@ Calculator::Calculator() {
+ 
+ 	saved_locale = strdup(setlocale(LC_NUMERIC, NULL));
+ 	struct lconv *lc = localeconv();
++#ifdef __OpenBSD__
++	place_currency_code_before = lc->p_cs_precedes;
++	place_currency_code_before_negative = lc->n_cs_precedes;
++#else
+ 	place_currency_code_before = lc->int_p_cs_precedes;
+ 	place_currency_code_before_negative = lc->int_n_cs_precedes;
++#endif // __OpenBSD__
+ 	place_currency_sign_before = lc->p_cs_precedes;
+ 	place_currency_sign_before_negative = lc->n_cs_precedes;
+ 	default_dot_as_separator = strcmp(lc->thousands_sep, ".") == 0;
