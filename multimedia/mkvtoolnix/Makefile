@@ -1,67 +1,58 @@
-# $OpenBSD: Makefile,v 1.31 2013/03/11 11:35:44 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2013/04/11 20:26:10 brad Exp $
 
-COMMENT =	create, alter and inspect Matroska files
+COMMENT=	create, alter and inspect Matroska files
 
-DISTNAME =	mkvtoolnix-4.0.0
-CATEGORIES =	multimedia x11
-REVISION =	2
+DISTNAME=	mkvtoolnix-4.0.0
+REVISION=	3
+CATEGORIES=	multimedia x11
+MASTER_SITES=	${HOMEPAGE}/sources/
+EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE =	http://www.bunkus.org/videotools/mkvtoolnix/
 
+MAINTAINER=	Brad Smith <brad@comstyle.com>
+
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB =	boost_system-mt>=1.1 boost_regex-mt>=1.1 \
-		boost_filesystem-mt>=1.1 \
-		bz2>=10 c ebml expat FLAC>=9 lzo2 m magic>=2 matroska>=1.0 \
-		ogg stdc++ vorbis>=8 z pthread
+WANTLIB=	FLAC boost_filesystem-mt boost_regex-mt boost_system-mt \
+		bz2 c ebml expat lzo2 m magic matroska ogg pthread \
+		stdc++ vorbis z
 
-MASTER_SITES =	${HOMEPAGE}/sources/
+MODULES=	devel/gettext
 
-EXTRACT_SUFX =	.tar.bz2
-
-MODULES =	devel/gettext
-
-LIB_DEPENDS =	audio/flac \
-		archivers/bzip2 \
+LIB_DEPENDS=	archivers/bzip2 \
 		archivers/lzo2 \
-		multimedia/libmatroska \
+		audio/flac \
 		audio/libvorbis \
+		devel/boost \
 		devel/libmagic \
-		devel/boost
+		multimedia/libmatroska
 
-MAKE_FLAGS +=	V=1
+MAKE_FLAGS+=	V=1
 
-USE_GMAKE =	Yes
-
-CONFIGURE_STYLE = gnu
-CONFIGURE_ARGS += --enable-lzo \
-		--enable-bz2 \
-		--disable-qt \
-		--with-flac \
+USE_GROFF=	Yes
+USE_GMAKE=	Yes
+CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS=	--with-boost-filesystem=boost_filesystem-mt \
 		--with-boost-libdir=${LOCALBASE}/lib \
-		--with-boost-regex=boost_regex-mt \
-		--with-boost-filesystem=boost_filesystem-mt
-CONFIGURE_ENV =	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib \
-		-lm -lstdc++ -pthread -liconv" \
-		ac_cv_has_nl_langinfo=no
-USE_GROFF =	Yes
+		--with-boost-regex=boost_regex-mt
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
-FLAVORS =	no_x11
-FLAVOR ?=
+FLAVORS=	no_x11
+FLAVOR?=
 
 .if ${FLAVOR:Mno_x11}
-CONFIGURE_ARGS += --disable-gui --disable-wxwidgets
+CONFIGURE_ARGS+= --disable-gui --disable-wxwidgets
 .else
-LIB_DEPENDS +=	x11/wxWidgets>=2.8.10
-WANTLIB +=	wx_base wx_base_net wx_base_odbc wx_base_xml wx_gtk2_adv \
+LIB_DEPENDS+=	x11/wxWidgets>=2.8.10
+WANTLIB+=	wx_base wx_base_net wx_base_odbc wx_base_xml wx_gtk2_adv \
 		wx_gtk2_aui wx_gtk2_core wx_gtk2_dbgrid wx_gtk2_html \
 		wx_gtk2_qa wx_gtk2_xrc wx_gtk2_richtext
-CONFIGURE_ARGS += --enable-gui --enable-wxwidgets
 .endif
 
-NO_TEST =    Yes
+NO_TEST=    Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/man/ja.po

@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.11 2010/07/17 22:52:53 benoit Exp $
+$OpenBSD: patch-configure,v 1.12 2013/04/11 20:26:10 brad Exp $
 --- configure.orig	Sat Jun  5 08:26:22 2010
-+++ configure	Sat Jun 26 20:44:09 2010
++++ configure	Mon Apr  8 20:20:19 2013
 @@ -5043,7 +5043,7 @@ fi
  
  
@@ -10,12 +10,3 @@ $OpenBSD: patch-configure,v 1.11 2010/07/17 22:52:53 benoit Exp $
  PROFILING_CFLAGS=""
  PROFILING_LIBS=""
  
-@@ -9139,7 +9139,7 @@ fi
- { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_intl_gettext" >&5
- $as_echo "$ac_cv_lib_intl_gettext" >&6; }
- if test "x$ac_cv_lib_intl_gettext" = x""yes; then :
--   LIBINTL_LIBS="-lintl";
-+   LIBINTL_LIBS="-lintl -liconv";
-                  gettext_found=yes
- else
-   gettext_found=no
