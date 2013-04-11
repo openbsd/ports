@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/11 14:05:18 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/04/11 14:08:07 zhuk Exp $
 
 COMMENT =	implementation of the FITS WCS standard
 CATEGORIES =	astro devel
@@ -16,6 +16,7 @@ MASTER_SITES =	ftp://ftp.atnf.csiro.au/pub/software/wcslib/
 EXTRACT_SUFX =	.tar.bz2
 
 BUILD_DEPENDS =	lang/gfortran
+TEST_DEPENDS =	lang/gfortran
 LIB_DEPENDS =	lang/gfortran,-lib \
 		math/cfitsio
 
