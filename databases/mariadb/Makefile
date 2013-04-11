@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/04 18:58:44 brad Exp $
+# $OpenBSD: Makefile,v 1.2 2013/04/11 21:02:19 brad Exp $
 
 SHARED_ONLY=	Yes
 
@@ -39,7 +39,8 @@ MODULES=	devel/cmake
 BUILD_DEPENDS=	devel/bison
 
 RUN_DEPENDS-server=	${BASE_PKGPATH}>=5.5,<5.6 \
-			databases/p5-DBD-mysql
+			databases/p5-DBD-mysql \
+			devel/p5-Term-ReadKey
 LIB_DEPENDS-server=	${BASE_PKGPATH}>=5.5,<5.6
 LIB_DEPENDS-tests=	${BASE_PKGPATH}>=5.5,<5.6
 

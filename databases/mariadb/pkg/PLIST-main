@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2013/04/04 18:58:45 brad Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2013/04/11 21:02:19 brad Exp $
 @conflict mysql-client-*
 @pkgpath databases/mysql,-main
 bin/msql2mysql
@@ -16,7 +16,6 @@ bin/mysqldumpslow
 @bin bin/mysqlimport
 @bin bin/mysqlshow
 @bin bin/mysqlslap
-bin/mytop
 include/mysql/
 include/mysql/auth_dialog_client.h
 include/mysql/client_plugin.h

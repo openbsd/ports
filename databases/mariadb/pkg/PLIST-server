@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.1.1.1 2013/04/04 18:58:45 brad Exp $
+@comment $OpenBSD: PLIST-server,v 1.2 2013/04/11 21:02:19 brad Exp $
 @conflict mysql-server-*
 @pkgpath databases/mysql,-server
 @newgroup _mysql:502
@@ -26,6 +26,7 @@ bin/mysql_zap
 bin/mysqld_multi
 bin/mysqld_safe
 bin/mysqlhotcopy
+bin/mytop
 @bin bin/perror
 @bin bin/replace
 @bin bin/resolve_stack_dump
