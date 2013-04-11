@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2012/08/18 07:25:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2013/04/11 14:06:40 zhuk Exp $
 
      SUBDIR =
      SUBDIR += celestia
@@ -12,6 +12,7 @@
      SUBDIR += sattrack
      SUBDIR += stellarium
      SUBDIR += sunclock
+     SUBDIR += wcslib
      SUBDIR += wmglobe
      SUBDIR += wmmoonclock
      SUBDIR += wmspaceweather
