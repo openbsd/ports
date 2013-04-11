@@ -1,18 +1,6 @@
-$OpenBSD: patch-m4_decoders_m4,v 1.1 2012/11/29 20:18:21 brad Exp $
---- m4/decoders.m4.orig	Fri Feb  3 19:41:43 2012
-+++ m4/decoders.m4	Tue Nov 27 03:23:25 2012
-@@ -218,9 +218,9 @@ AC_DEFUN([XINE_DECODER_PLUGINS], [
-         ac_save_CPPFLAGS="$CPPFLAGS" CPPFLAGS="$CPPFLAGS $LIBFLAC_CFLAGS"
-         AC_CHECK_LIB([FLAC], [FLAC__stream_decoder_new],
-                      [AC_CHECK_HEADERS([FLAC/stream_decoder.h],
--                                       [have_libflac=yes LIBFLAC_LIBS="$LIBFLAC_LIBS -lFLAC -lm"],
-+                                       [have_libflac=yes LIBFLAC_LIBS="$LIBFLAC_LIBS -lFLAC -logg -lm"],
-                                        [have_libflac=no])],
--                     [have_libflac=no], [-lm])
-+                     [have_libflac=no], [-logg -lm])
-         CPPFLAGS="$ac_save_CPPFLAGS"
- 
-         if test x"$with_libflac" = x"yes" && test x"$have_libflac" != x"yes"; then
+$OpenBSD: patch-m4_decoders_m4,v 1.2 2013/04/11 17:34:00 brad Exp $
+--- m4/decoders.m4.orig	Sun Feb  5 14:17:01 2012
++++ m4/decoders.m4	Tue Apr  9 18:38:26 2013
 @@ -322,7 +322,7 @@ AC_DEFUN([XINE_DECODER_PLUGINS], [
  			 [AC_CHECK_HEADERS([mpc/mpcdec.h], [have_external_libmpcdec=yes], [have_external_libmpcdec=no])],
  			 [AC_CHECK_LIB([mpcdec], [mpc_decoder_decode],
