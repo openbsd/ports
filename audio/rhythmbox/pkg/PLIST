@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.38 2013/04/07 14:20:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.39 2013/04/11 11:08:03 ajacoutot Exp $
 @bin bin/rhythmbox
 @bin bin/rhythmbox-client
 include/rhythmbox/
@@ -116,29 +116,6 @@ lib/rhythmbox/plugins/artsearch/oldcache.pyo
 lib/rhythmbox/plugins/audioscrobbler/
 lib/rhythmbox/plugins/audioscrobbler/audioscrobbler.plugin
 lib/rhythmbox/plugins/audioscrobbler/libaudioscrobbler.so
-lib/rhythmbox/plugins/context/
-lib/rhythmbox/plugins/context/AlbumTab.py
-lib/rhythmbox/plugins/context/AlbumTab.pyc
-lib/rhythmbox/plugins/context/AlbumTab.pyo
-lib/rhythmbox/plugins/context/ArtistTab.py
-lib/rhythmbox/plugins/context/ArtistTab.pyc
-lib/rhythmbox/plugins/context/ArtistTab.pyo
-lib/rhythmbox/plugins/context/ContextView.py
-lib/rhythmbox/plugins/context/ContextView.pyc
-lib/rhythmbox/plugins/context/ContextView.pyo
-lib/rhythmbox/plugins/context/LastFM.py
-lib/rhythmbox/plugins/context/LastFM.pyc
-lib/rhythmbox/plugins/context/LastFM.pyo
-lib/rhythmbox/plugins/context/LinksTab.py
-lib/rhythmbox/plugins/context/LinksTab.pyc
-lib/rhythmbox/plugins/context/LinksTab.pyo
-lib/rhythmbox/plugins/context/LyricsTab.py
-lib/rhythmbox/plugins/context/LyricsTab.pyc
-lib/rhythmbox/plugins/context/LyricsTab.pyo
-lib/rhythmbox/plugins/context/context.plugin
-lib/rhythmbox/plugins/context/context.py
-lib/rhythmbox/plugins/context/context.pyc
-lib/rhythmbox/plugins/context/context.pyo
 lib/rhythmbox/plugins/dbus-media-server/
 lib/rhythmbox/plugins/dbus-media-server/dbus-media-server.plugin
 lib/rhythmbox/plugins/dbus-media-server/libdbus-media-server.so
@@ -885,20 +862,6 @@ share/rhythmbox/plugins/audioscrobbler/Last.fm-icon.png
 share/rhythmbox/plugins/audioscrobbler/Libre.fm-icon.png
 share/rhythmbox/plugins/audioscrobbler/audioscrobbler-preferences.ui
 share/rhythmbox/plugins/audioscrobbler/audioscrobbler-profile.ui
-share/rhythmbox/plugins/context/
-share/rhythmbox/plugins/context/img/
-share/rhythmbox/plugins/context/img/Allmusic16x16.png
-share/rhythmbox/plugins/context/img/Discogs16x16.png
-share/rhythmbox/plugins/context/img/Wikipedia16x16.png
-share/rhythmbox/plugins/context/img/lastfm.png
-share/rhythmbox/plugins/context/img/spinner.gif
-share/rhythmbox/plugins/context/tmpl/
-share/rhythmbox/plugins/context/tmpl/album-tmpl.html
-share/rhythmbox/plugins/context/tmpl/artist-tmpl.html
-share/rhythmbox/plugins/context/tmpl/links-tmpl.html
-share/rhythmbox/plugins/context/tmpl/loading.html
-share/rhythmbox/plugins/context/tmpl/lyrics-tmpl.html
-share/rhythmbox/plugins/context/tmpl/main.css
 share/rhythmbox/plugins/generic-player/
 share/rhythmbox/plugins/generic-player/generic-player-info.ui
 share/rhythmbox/plugins/generic-player/generic-player-toolbar.ui
