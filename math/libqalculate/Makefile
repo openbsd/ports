@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/11 13:38:31 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/04/11 13:46:51 ajacoutot Exp $
 
 VMEM_WARNING =	Yes
 COMMENT =	applied math library
@@ -16,9 +16,8 @@ WANTLIB +=	stdc++ xml2 z
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=qalculate/}
 
-MODULES =	devel/gettext
-
-BUILD_DEPENDS =	textproc/p5-XML-Parser
+MODULES =	devel/gettext \
+		textproc/intltool
 
 LIB_DEPENDS =	devel/cln \
 		devel/glib2 \
