@@ -1,5 +1,5 @@
-# $OpenBSD: Makefile,v 1.288 2013/03/29 03:58:41 william Exp $
- 
+# $OpenBSD: Makefile,v 1.289 2013/04/11 16:12:13 sthen Exp $
+
      SUBDIR =
      SUBDIR += abook
      SUBDIR += adcomplain
@@ -168,7 +168,7 @@
      SUBDIR += poppassd
      SUBDIR += poppy
      SUBDIR += postfix
-     SUBDIR += postfwd	
+     SUBDIR += postfwd
      SUBDIR += postgrey
      SUBDIR += prepop
      SUBDIR += procmail
@@ -178,6 +178,7 @@
      SUBDIR += py-spf
      SUBDIR += pyzor
      SUBDIR += razor-agents
+     SUBDIR += rcube-contextmenu
      SUBDIR += rcube-sieverules
      SUBDIR += re-alpine
      SUBDIR += relaydb
