@@ -1,0 +1,3 @@
+This plugin adds context menus to Roundcube's message list, folder list
+and address book. The menus include the abilities to mark messages as
+read/unread, delete, reply and forward.
