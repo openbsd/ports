@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_tracker-extract_tracker-extract-mp3_c,v 1.13 2012/02/16 22:20:02 ajacoutot Exp $
+$OpenBSD: patch-src_tracker-extract_tracker-extract-mp3_c,v 1.14 2013/04/11 18:37:53 ajacoutot Exp $
 
-OpenBSD does not have memmem().
+From cdae3a22e7a0001df7877e4ee3531e26158a6d56 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Thu, 11 Apr 2013 11:16:05 +0000
+Subject: Use g_strstr_len() instead of GNU extension memmem.
 
 --- src/tracker-extract/tracker-extract-mp3.c.orig	Wed Feb 15 11:41:48 2012
 +++ src/tracker-extract/tracker-extract-mp3.c	Wed Feb 15 16:52:26 2012
