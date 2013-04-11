@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.30 2013/01/03 03:18:21 brad Exp $
+@comment $OpenBSD: PLIST-main,v 1.31 2013/04/11 17:58:42 brad Exp $
 @pkgpath x11/vlc
 %%amd64%%
 %%i386%%
@@ -58,6 +58,7 @@ include/vlc/plugins/vlc_image.h
 include/vlc/plugins/vlc_inhibit.h
 include/vlc/plugins/vlc_input.h
 include/vlc/plugins/vlc_input_item.h
+include/vlc/plugins/vlc_keys.h
 include/vlc/plugins/vlc_main.h
 include/vlc/plugins/vlc_md5.h
 include/vlc/plugins/vlc_media_library.h
@@ -438,6 +439,7 @@ share/locale/ach/LC_MESSAGES/
 share/locale/ach/LC_MESSAGES/vlc.mo
 share/locale/af/LC_MESSAGES/vlc.mo
 share/locale/am/LC_MESSAGES/vlc.mo
+share/locale/an/LC_MESSAGES/vlc.mo
 share/locale/ar/LC_MESSAGES/vlc.mo
 share/locale/ast/LC_MESSAGES/vlc.mo
 share/locale/be/LC_MESSAGES/vlc.mo
@@ -470,8 +472,6 @@ share/locale/ff/LC_MESSAGES/
 share/locale/ff/LC_MESSAGES/vlc.mo
 share/locale/fi/LC_MESSAGES/vlc.mo
 share/locale/fr/LC_MESSAGES/vlc.mo
-share/locale/fur/
-share/locale/fur/LC_MESSAGES/
 share/locale/fur/LC_MESSAGES/vlc.mo
 share/locale/ga/LC_MESSAGES/vlc.mo
 share/locale/gd/
@@ -496,7 +496,6 @@ share/locale/kmr/
 share/locale/kmr/LC_MESSAGES/
 share/locale/kmr/LC_MESSAGES/vlc.mo
 share/locale/ko/LC_MESSAGES/vlc.mo
-share/locale/ku/LC_MESSAGES/vlc.mo
 share/locale/lg/LC_MESSAGES/vlc.mo
 share/locale/lt/LC_MESSAGES/vlc.mo
 share/locale/lv/LC_MESSAGES/vlc.mo

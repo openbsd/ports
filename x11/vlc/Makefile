@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.169 2013/04/04 16:49:56 brad Exp $
+# $OpenBSD: Makefile,v 1.170 2013/04/11 17:58:42 brad Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	VideoLAN client; multimedia player
 COMMENT-jack=	JACK audio output module for VLC
 
-V=		2.0.5
+V=		2.0.6
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	6
 PKGNAME-jack=	vlc-jack-${V}
-REVISION-jack=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
@@ -32,13 +30,13 @@ WANTLIB-main=	GL ICE lib/qt4/QtGui QtCore SM SDL SDL_image X11 Xcomposite \
 		ass atk-1.0 avcodec avformat avutil bluray c cairo cddb dvbpsi \
 		dvdnav dvdread ebml stdc++ expat ffi fontconfig freetype \
 		fribidi gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
-		gmodule-2.0 gmp gnutls gobject-2.0 gpg-error gthread-2.0 \
-		gtk-x11-2.0 harfbuzz hogweed icudata icule icuuc jpeg matroska \
-		nettle notify opus orc-0.4 ogg p11-kit pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pcre pixman-1 png postproc pthread-stubs \
-		samplerate schroedinger-1.0>=2.0 sndio speex speexdsp \
-		swscale tag tar tasn1 tiff usbhid vorbis vorbisenc webp \
-		x264 xcb-composite xcb-keysyms xcb-randr xcb-render \
+		gmodule-2.0 gmp gnutls gobject-2.0 gpg-error graphite2 \
+		gthread-2.0 gtk-x11-2.0 harfbuzz hogweed icudata icule icuuc \
+		jpeg matroska nettle notify opus orc-0.4 ogg p11-kit pango-1.0 \
+		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png postproc \
+		pthread-stubs samplerate schroedinger-1.0>=2.0 sndio speex \
+		speexdsp swscale tag tar tasn1 tiff usbhid vorbis vorbisenc \
+		webp x264 xcb-composite xcb-keysyms xcb-randr xcb-render \
 		xcb-shape xcb-shm xcb-xfixes xcb-xv xcb xml2 z ${WANTLIB-common}
 WANTLIB-jack=	jack vlccore ${WANTLIB-common}
 
