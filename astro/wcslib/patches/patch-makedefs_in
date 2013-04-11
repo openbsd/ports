@@ -1,0 +1,12 @@
+$OpenBSD: patch-makedefs_in,v 1.1.1.1 2013/04/11 14:05:18 zhuk Exp $
+--- makedefs.in.orig	Tue Jan 29 09:29:22 2013
++++ makedefs.in	Wed Feb 13 17:22:13 2013
+@@ -131,7 +131,7 @@
+ 
+   LIBDIR   := $(DESTDIR)@libdir@
+   BINDIR   := $(DESTDIR)@bindir@
+-  INCDIR   := $(DESTDIR)@includedir@/wcslib-$(LIBVER)
++  INCDIR   := $(DESTDIR)@includedir@/wcslib-@PACKAGE_VERSION@
+   INCLINK  := $(DESTDIR)@includedir@/wcslib
+   DOCDIR   := $(DESTDIR)@docdir@
+   DOCLINK  := $(dir $(DESTDIR)@docdir@)wcslib

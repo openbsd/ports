@@ -1,0 +1,3 @@
+WCSLIB is a C library, supplied with a full set of Fortran wrappers,
+that implements the "World Coordinate System" (WCS) standard in
+FITS (Flexible Image Transport System).

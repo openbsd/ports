@@ -1,0 +1,32 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2013/04/11 14:05:18 zhuk Exp $
+--- configure.ac.orig	Tue Jan 29 09:29:22 2013
++++ configure.ac	Wed Feb 13 17:18:09 2013
+@@ -17,8 +17,13 @@ AC_REVISION([$Revision: 1.1.1.1 $])
+ AC_SUBST([PACKAGE_VERSION])
+ AC_DEFINE_UNQUOTED([WCSLIB_VERSION], [$PACKAGE_VERSION], [Define wcslib version])
+ 
+-# Library version number, same as package version.
+-LIBVER="$PACKAGE_VERSION"
++# Library version number. Usually same as package version,
++# but could be different on some OSes, e.g., OpenBSD.
++if test "x${LIBwcs_VERSION}" = x ; then
++  LIBVER="$PACKAGE_VERSION"
++else
++  LIBVER="$LIBwcs_VERSION"
++fi
+ AC_SUBST([LIBVER])
+ 
+ AC_CONFIG_SRCDIR([C/wcs.h])
+@@ -256,6 +261,12 @@ if test "x$ac_cv_c_compiler_gnu" = xyes ; then
+       CFLAGS="$CFLAGS -mdynamic-no-pic"
+       ;;
+     esac
++    ;;
++  openbsd*)
++    SHRLIB="libwcs.so.$LIBVER"
++    SONAME="$SHRLIB"
++    SHRLD="$SHRLD -shared -Wl,-h\$(SONAME)"
++    SHRLN=
+     ;;
+   *)
+     # Covers Linux and Solaris at least.
