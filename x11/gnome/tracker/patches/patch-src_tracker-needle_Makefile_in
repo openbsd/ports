@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_tracker-needle_Makefile_in,v 1.1 2013/04/10 15:41:47 ajacoutot Exp $
+$OpenBSD: patch-src_tracker-needle_Makefile_in,v 1.2 2013/04/11 10:03:32 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=697688
+From 626c04163154bb2044d0d329778f14bf7b746e45 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Wed, 10 Apr 2013 15:51:12 +0000
+Subject: Another need for XOPEN_SOURCE_EXTENDED missed in previous commit.
 
 --- src/tracker-needle/Makefile.in.orig	Wed Apr 10 17:31:36 2013
 +++ src/tracker-needle/Makefile.in	Wed Apr 10 17:31:58 2013
