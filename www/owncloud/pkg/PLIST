@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2013/04/03 17:40:48 robert Exp $
+@comment $OpenBSD: PLIST,v 1.19 2013/04/11 16:45:31 ajacoutot Exp $
 @extra owncloud/config/config.php
 owncloud/
 owncloud/.htaccess.dist
@@ -324,6 +324,7 @@ owncloud/3rdparty/Sabre/DAV/Exception/PaymentRequired.php
 owncloud/3rdparty/Sabre/DAV/Exception/PreconditionFailed.php
 owncloud/3rdparty/Sabre/DAV/Exception/ReportNotSupported.php
 owncloud/3rdparty/Sabre/DAV/Exception/RequestedRangeNotSatisfiable.php
+owncloud/3rdparty/Sabre/DAV/Exception/ServiceUnavailable.php
 owncloud/3rdparty/Sabre/DAV/Exception/UnsupportedMediaType.php
 owncloud/3rdparty/Sabre/DAV/FS/
 owncloud/3rdparty/Sabre/DAV/FS/Directory.php
