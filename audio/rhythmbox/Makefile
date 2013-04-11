@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2013/04/07 14:20:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.115 2013/04/11 09:45:03 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -42,8 +42,7 @@ MODULES=		devel/dconf \
 			lang/python \
 			x11/gnome
 
-BUILD_DEPENDS=		audio/libmusicbrainz \
-			devel/py-gobject3
+BUILD_DEPENDS=		devel/py-gobject3
 
 # needed for the tests
 BUILD_DEPENDS +=	devel/check
