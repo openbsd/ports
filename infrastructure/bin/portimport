@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portimport,v 1.1 2013/04/09 19:51:37 rpe Exp $
+# $OpenBSD: portimport,v 1.2 2013/04/11 15:18:00 zhuk Exp $
 # Copyright (c) 2013 Robert Peichaer
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -21,10 +21,19 @@
 
 set -e
 
-# XXX
-# XXX CHANGE if you login to cvs.openbsd.org with different user
-# XXX
+usage() {
+	echo "usage: $(basename $0) [-u username]" >&2
+	exit 1
+}
+
 user=$(id -un)
+
+while getopts "u:" OPT; do
+	case $OPT in
+	u)	user="$OPTARG";;
+	*)	usage;;
+	esac
+done
 
 cvsroot=$user@cvs.openbsd.org:/cvs
 error=false
