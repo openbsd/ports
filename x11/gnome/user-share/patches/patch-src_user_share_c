@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_user_share_c,v 1.3 2013/04/10 09:40:02 ajacoutot Exp $
+$OpenBSD: patch-src_user_share_c,v 1.4 2013/04/11 10:14:37 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=697537
 
 --- src/user_share.c.orig	Thu Feb 21 09:18:06 2013
-+++ src/user_share.c	Mon Apr  8 11:57:10 2013
++++ src/user_share.c	Thu Apr 11 11:55:12 2013
 @@ -27,7 +27,9 @@
  #include <gtk/gtk.h>
  #include <glib/gi18n.h>
@@ -53,3 +53,52 @@ https://bugzilla.gnome.org/show_bug.cgi?id=697537
  }
  
  static void
+@@ -367,6 +375,7 @@ main (int argc, char **argv)
+ 	G_GNUC_UNUSED int x_fd;
+ 	Window selection_owner;
+ 	Atom xatom;
++	int ret = 0;
+ 
+ 	bindtextdomain (GETTEXT_PACKAGE, GNOMELOCALEDIR);
+ 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
+@@ -412,11 +421,23 @@ main (int argc, char **argv)
+ 	migrate_old_configuration ();
+ 
+ 	settings = g_settings_new (GNOME_USER_SHARE_SCHEMAS);
+-	if (g_settings_get_boolean (settings, FILE_SHARING_ENABLED) == FALSE &&
+-	    g_settings_get_boolean (settings, FILE_SHARING_BLUETOOTH_ENABLED) == FALSE &&
+-	    g_settings_get_boolean (settings, FILE_SHARING_BLUETOOTH_OBEXPUSH_ENABLED) == FALSE)
+-		return 1;
++	if (g_settings_get_boolean (settings, FILE_SHARING_ENABLED) == FALSE)
++		ret = 1;
+ 
++#ifdef HAVE_BLUETOOTH
++	if (ret) {
++		settings = g_settings_new (GNOME_USER_SHARE_BLUETOOTH_SCHEMAS);
++		if (g_settings_get_boolean (settings, FILE_SHARING_BLUETOOTH_ENABLED) == FALSE &&
++		    g_settings_get_boolean (settings, FILE_SHARING_BLUETOOTH_OBEXPUSH_ENABLED) == FALSE)
++			ret = 1;
++	} else {
++		ret = 0;
++	}
++#endif
++
++	if (ret)
++		return ret;
++
+ 	x_fd = ConnectionNumber (xdisplay);
+ 	XSetIOErrorHandler (x_io_error_handler);
+ 
+@@ -434,10 +455,12 @@ main (int argc, char **argv)
+ 
+ 	/* Initial setting */
+ 	file_sharing_enabled_changed ();
++#ifdef HAVE_BLUETOOTH
+ 	file_sharing_bluetooth_enabled_changed ();
+ 	file_sharing_bluetooth_obexpush_accept_files_changed ();
+ 	file_sharing_bluetooth_obexpush_notify_changed ();
+ 	file_sharing_bluetooth_obexpush_enabled_changed ();
++#endif
+ 
+ 	gtk_main ();
+ 	g_object_unref (settings);

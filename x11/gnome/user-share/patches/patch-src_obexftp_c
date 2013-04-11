@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_obexftp_c,v 1.1 2013/04/11 10:14:37 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=697537
+
+--- src/obexftp.c.orig	Thu Apr 11 10:36:45 2013
++++ src/obexftp.c	Thu Apr 11 10:37:26 2013
+@@ -44,7 +44,7 @@ obexftp_up (void)
+ 	char *public_dir, *server;
+ 	gboolean allow_write, require_pairing;
+ 
+-	settings = g_settings_new (GNOME_USER_SHARE_SCHEMAS);
++	settings = g_settings_new (GNOME_USER_SHARE_BLUETOOTH_SCHEMAS);
+ 	require_pairing = g_settings_get_boolean (settings, FILE_SHARING_BLUETOOTH_REQUIRE_PAIRING);
+ 
+ 	server = NULL;

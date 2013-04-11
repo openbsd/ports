@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_user_share-private_h,v 1.1 2013/04/11 10:14:37 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=697537
+
+--- src/user_share-private.h.orig	Thu Apr 11 10:36:54 2013
++++ src/user_share-private.h	Thu Apr 11 10:37:48 2013
+@@ -26,6 +26,7 @@
+ #define _USER_SHARE_PRIVATE_H_
+ 
+ #define GNOME_USER_SHARE_SCHEMAS "org.gnome.desktop.file-sharing"
++#define GNOME_USER_SHARE_BLUETOOTH_SCHEMAS "org.gnome.desktop.file-sharing-bluetooth"
+ 
+ #define FILE_SHARING_ENABLED "enabled"
+ #define FILE_SHARING_BLUETOOTH_ENABLED "bluetooth-enabled"
