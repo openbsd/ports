@@ -1,6 +1,6 @@
-$OpenBSD: patch-etc_nsca-ng_cfg,v 1.1.1.1 2013/03/11 19:27:31 sthen Exp $
---- etc/nsca-ng.cfg.orig	Mon Mar 11 14:39:05 2013
-+++ etc/nsca-ng.cfg	Mon Mar 11 16:20:48 2013
+$OpenBSD: patch-etc_nsca-ng_cfg,v 1.2 2013/04/12 21:44:53 sthen Exp $
+--- etc/nsca-ng.cfg.orig	Fri Apr 12 21:42:30 2013
++++ etc/nsca-ng.cfg	Fri Apr 12 22:27:17 2013
 @@ -8,7 +8,8 @@
  #
  # Most probably, you'll have to specify the path to the Nagios command file.
@@ -11,13 +11,3 @@ $OpenBSD: patch-etc_nsca-ng_cfg,v 1.1.1.1 2013/03/11 19:27:31 sthen Exp $
  
  #
  # These configuration settings are optional.
-@@ -17,7 +18,8 @@ command_file = "/usr/local/nagios/var/rw/nagios.cmd"
- # 	pid_file = "/var/run/nsca-ng.pid"       # Default: create no PID file.
- # 	temp_directory = "/dev/shm"             # Default: "/tmp".
- # 	tls_ciphers = "PSK-AES256-CBC-SHA"      # Default: see nsca-ng.cfg(5).
--# 	user = "nagios"                         # Default: don't switch user.
-+# 	user = "_nagios"                        # Default: don't switch user.
-+# 	user = "_icinga"                        # Alternative for Icinga.
- # 	log_level = 2                           # Default: 3.
- # 	max_command_size = 65536                # Default: 16384.
- # 	max_queue_size = 128                    # Default: 1024.
