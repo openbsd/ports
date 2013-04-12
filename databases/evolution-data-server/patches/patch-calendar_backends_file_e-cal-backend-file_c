@@ -1,0 +1,210 @@
+$OpenBSD: patch-calendar_backends_file_e-cal-backend-file_c,v 1.1 2013/04/12 05:46:16 ajacoutot Exp $
+
+From cdf339bc1eb71d9f66bee521766da4fe47841775 Mon Sep 17 00:00:00 2001
+From: Matthew Barnes <mbarnes@redhat.com>
+Date: Thu, 11 Apr 2013 13:45:24 +0000
+Subject: ECalBackendFile: Indentation cleanups.
+
+From daf4b3e7f6d284ed7548fbd390b4b1eba88d21ec Mon Sep 17 00:00:00 2001
+From: Matthew Barnes <mbarnes@redhat.com>
+Date: Mon, 08 Apr 2013 18:09:13 +0000
+Subject: CamelIMAPXServer: Rewrite duplicate message fetching
+
+--- calendar/backends/file/e-cal-backend-file.c.orig	Fri Apr 12 07:17:45 2013
++++ calendar/backends/file/e-cal-backend-file.c	Fri Apr 12 07:17:47 2013
+@@ -381,77 +381,81 @@ uid_in_use (ECalBackendFile *cbfile,
+ static icalproperty *
+ get_revision_property (ECalBackendFile *cbfile)
+ {
+-       ECalBackendFilePrivate *priv;
+-       icalproperty           *prop;
++	icalproperty *prop = NULL;
+ 
+-       priv = cbfile->priv;
+-       prop = icalcomponent_get_first_property (priv->icalcomp, ICAL_X_PROPERTY);
++	if (cbfile->priv->icalcomp != NULL)
++		prop = icalcomponent_get_first_property (
++			cbfile->priv->icalcomp, ICAL_X_PROPERTY);
+ 
+-       while (prop != NULL) {
+-	      const gchar *name = icalproperty_get_x_name (prop);
++	while (prop != NULL) {
++		const gchar *name = icalproperty_get_x_name (prop);
+ 
+-	      if (name && strcmp (name, ECAL_REVISION_X_PROP) == 0)
+-		     return prop;
++		if (name && strcmp (name, ECAL_REVISION_X_PROP) == 0)
++			return prop;
+ 
+-	      prop = icalcomponent_get_next_property (priv->icalcomp, ICAL_X_PROPERTY);
+-       }
++		prop = icalcomponent_get_next_property (
++			cbfile->priv->icalcomp, ICAL_X_PROPERTY);
++	}
+ 
+-       return NULL;
++	return NULL;
+ }
+ 
+ static gchar *
+ make_revision_string (ECalBackendFile *cbfile)
+ {
+-       GTimeVal timeval;
+-       gchar   *datestr;
+-       gchar   *revision;
++	GTimeVal timeval;
++	gchar   *datestr;
++	gchar   *revision;
+ 
+-       g_get_current_time (&timeval);
++	g_get_current_time (&timeval);
+ 
+-       datestr = g_time_val_to_iso8601 (&timeval);
+-       revision = g_strdup_printf ("%s(%d)", datestr, cbfile->priv->revision_counter++);
++	datestr = g_time_val_to_iso8601 (&timeval);
++	revision = g_strdup_printf ("%s(%d)", datestr, cbfile->priv->revision_counter++);
+ 
+-       g_free (datestr);
+-       return revision;
++	g_free (datestr);
++	return revision;
+ }
+ 
+ static icalproperty *
+ ensure_revision (ECalBackendFile *cbfile)
+ {
+-       icalproperty * prop;
++	icalproperty *prop;
+ 
+-       prop = get_revision_property (cbfile);
++	if (cbfile->priv->icalcomp == NULL)
++		return NULL;
+ 
+-       if (!prop) {
+-	      gchar *revision = make_revision_string (cbfile);
++	prop = get_revision_property (cbfile);
+ 
+-	      prop = icalproperty_new (ICAL_X_PROPERTY);
++	if (prop == NULL) {
++		gchar *revision = make_revision_string (cbfile);
+ 
+-	      icalproperty_set_x_name (prop, ECAL_REVISION_X_PROP);
+-	      icalproperty_set_x (prop, revision);
++		prop = icalproperty_new (ICAL_X_PROPERTY);
+ 
+-	      icalcomponent_add_property (cbfile->priv->icalcomp, prop);
++		icalproperty_set_x_name (prop, ECAL_REVISION_X_PROP);
++		icalproperty_set_x (prop, revision);
+ 
+-	      g_free (revision);
+-       }
++		icalcomponent_add_property (cbfile->priv->icalcomp, prop);
+ 
+-       return prop;
++		g_free (revision);
++	}
++
++	return prop;
+ }
+ 
+ static void
+ bump_revision (ECalBackendFile *cbfile)
+ {
+-       /* Update the revision string */
+-       icalproperty *prop     = ensure_revision (cbfile);
+-       gchar        *revision = make_revision_string (cbfile);
++	/* Update the revision string */
++	icalproperty *prop     = ensure_revision (cbfile);
++	gchar        *revision = make_revision_string (cbfile);
+ 
+-       icalproperty_set_x (prop, revision);
++	icalproperty_set_x (prop, revision);
+ 
+-       e_cal_backend_notify_property_changed (E_CAL_BACKEND (cbfile),
++	e_cal_backend_notify_property_changed (E_CAL_BACKEND (cbfile),
+ 					      CAL_BACKEND_PROPERTY_REVISION,
+ 					      revision);
+ 
+-       g_free (revision);
++	g_free (revision);
+ }
+ 
+ /* Calendar backend methods */
+@@ -509,13 +513,11 @@ e_cal_backend_file_get_backend_property (ECalBackendSy
+ 		*prop_value = e_cal_component_get_as_string (comp);
+ 		g_object_unref (comp);
+ 	} else if (g_str_equal (prop_name, CAL_BACKEND_PROPERTY_REVISION)) {
+-	       icalproperty *prop;
+-	       const gchar  *revision;
++		icalproperty *prop;
+ 
+-	       prop     = ensure_revision (E_CAL_BACKEND_FILE (backend));
+-	       revision = icalproperty_get_x (prop);
+-
+-	       *prop_value = g_strdup (revision);
++		/* This returns NULL if backend lacks an icalcomp. */
++		prop = ensure_revision (E_CAL_BACKEND_FILE (backend));
++		*prop_value = g_strdup (icalproperty_get_x (prop));
+ 	} else {
+ 		processed = FALSE;
+ 	}
+@@ -1066,6 +1068,23 @@ free_refresh_data (ECalBackendFile *cbfile)
+ 	g_mutex_unlock (&priv->refresh_lock);
+ }
+ 
++static void
++cal_backend_file_take_icalcomp (ECalBackendFile *cbfile,
++                                icalcomponent *icalcomp)
++{
++	icalproperty *prop;
++
++	g_warn_if_fail (cbfile->priv->icalcomp == NULL);
++	cbfile->priv->icalcomp = icalcomp;
++
++	prop = ensure_revision (cbfile);
++
++	e_cal_backend_notify_property_changed (
++		E_CAL_BACKEND (cbfile),
++		CAL_BACKEND_PROPERTY_REVISION,
++		icalproperty_get_x (prop));
++}
++
+ /* Parses an open iCalendar file and loads it into the backend */
+ static void
+ open_cal (ECalBackendFile *cbfile,
+@@ -1096,7 +1115,7 @@ open_cal (ECalBackendFile *cbfile,
+ 		return;
+ 	}
+ 
+-	priv->icalcomp = icalcomp;
++	cal_backend_file_take_icalcomp (cbfile, icalcomp);
+ 	priv->path = uri_to_path (E_CAL_BACKEND (cbfile));
+ 
+ 	priv->comp_uid_hash = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, free_object_data);
+@@ -1233,7 +1252,7 @@ reload_cal (ECalBackendFile *cbfile,
+ 
+ 	free_calendar_data (cbfile);
+ 
+-	priv->icalcomp = icalcomp;
++	cal_backend_file_take_icalcomp (cbfile, icalcomp);
+ 
+ 	priv->comp_uid_hash = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, free_object_data);
+ 	priv->interval_tree = e_intervaltree_new ();
+@@ -1257,6 +1276,7 @@ create_cal (ECalBackendFile *cbfile,
+ {
+ 	gchar *dirname;
+ 	ECalBackendFilePrivate *priv;
++	icalcomponent *icalcomp;
+ 
+ 	free_refresh_data (cbfile);
+ 
+@@ -1273,7 +1293,8 @@ create_cal (ECalBackendFile *cbfile,
+ 	g_free (dirname);
+ 
+ 	/* Create the new calendar information */
+-	priv->icalcomp = e_cal_util_new_top_level ();
++	icalcomp = e_cal_util_new_top_level ();
++	cal_backend_file_take_icalcomp (cbfile, icalcomp);
+ 
+ 	/* Create our internal data */
+ 	priv->comp_uid_hash = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, free_object_data);

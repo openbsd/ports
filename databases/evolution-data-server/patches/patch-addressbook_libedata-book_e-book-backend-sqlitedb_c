@@ -1,0 +1,18 @@
+$OpenBSD: patch-addressbook_libedata-book_e-book-backend-sqlitedb_c,v 1.1 2013/04/12 05:46:16 ajacoutot Exp $
+
+From b7d2bd5c42ecad7b2c07ceaa95b863d539a47893 Mon Sep 17 00:00:00 2001
+From: Patrick Ohly <patrick.ohly@intel.com>
+Date: Wed, 03 Apr 2013 14:45:28 +0000
+Subject: sqlite addressbook: fix memory corruption in get_revision
+
+--- addressbook/libedata-book/e-book-backend-sqlitedb.c.orig	Sun Mar 17 13:46:02 2013
++++ addressbook/libedata-book/e-book-backend-sqlitedb.c	Fri Apr 12 07:13:31 2013
+@@ -4068,7 +4068,7 @@ e_book_backend_sqlitedb_get_revision (EBookBackendSqli
+ 	stmt = sqlite3_mprintf (
+ 		"SELECT revision FROM folders WHERE folder_id = %Q", folderid);
+ 	success = book_backend_sql_exec (
+-		ebsdb->priv->db, stmt, get_string_cb, &revision_out, error);
++		ebsdb->priv->db, stmt, get_string_cb, revision_out, error);
+ 	sqlite3_free (stmt);
+ 
+ 	UNLOCK_MUTEX (&ebsdb->priv->lock);

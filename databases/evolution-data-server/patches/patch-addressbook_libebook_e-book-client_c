@@ -1,0 +1,48 @@
+$OpenBSD: patch-addressbook_libebook_e-book-client_c,v 1.1 2013/04/12 05:46:16 ajacoutot Exp $
+
+From b4bec35511b7fe811eb544be9c8b05e92f230e69 Mon Sep 17 00:00:00 2001
+From: Matthew Barnes <mbarnes@redhat.com>
+Date: Tue, 02 Apr 2013 13:53:08 +0000
+Subject: EBookClient: Use G_DBUS_MESSAGE_FLAGS_NO_REPLY_EXPECTED for close().
+
+--- addressbook/libebook/e-book-client.c.orig	Sun Mar 17 13:46:02 2013
++++ addressbook/libebook/e-book-client.c	Fri Apr 12 07:12:54 2013
+@@ -494,22 +494,6 @@ book_client_name_vanished_cb (GDBusConnection *connect
+ }
+ 
+ static void
+-book_client_close_cb (GObject *source_object,
+-                      GAsyncResult *result,
+-                      gpointer user_data)
+-{
+-	GError *error = NULL;
+-
+-	e_dbus_address_book_call_close_finish (
+-		E_DBUS_ADDRESS_BOOK (source_object), result, &error);
+-
+-	if (error != NULL) {
+-		g_warning ("%s: %s", G_STRFUNC, error->message);
+-		g_error_free (error);
+-	}
+-}
+-
+-static void
+ book_client_dispose (GObject *object)
+ {
+ 	EBookClientPrivate *priv;
+@@ -531,11 +515,11 @@ book_client_dispose (GObject *object)
+ 	}
+ 
+ 	if (priv->dbus_proxy != NULL) {
+-		/* Call close() asynchronously
+-		 * so we don't block dispose(). */
++		/* Call close() asynchronously so we don't block dispose().
++		 * Also omit a callback function, so the GDBusMessage uses
++		 * G_DBUS_MESSAGE_FLAGS_NO_REPLY_EXPECTED. */
+ 		e_dbus_address_book_call_close (
+-			priv->dbus_proxy, NULL,
+-			book_client_close_cb, NULL);
++			priv->dbus_proxy, NULL, NULL, NULL);
+ 		g_object_unref (priv->dbus_proxy);
+ 		priv->dbus_proxy = NULL;
+ 	}

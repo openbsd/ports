@@ -1,0 +1,53 @@
+$OpenBSD: patch-modules_owncloud-backend_owncloud-utils_c,v 1.1 2013/04/12 05:46:16 ajacoutot Exp $
+
+From 7cee41f44e58730e37ce79807502b1523fbc89ae Mon Sep 17 00:00:00 2001
+From: Vadim Rutkovsky <vrutkovs@redhat.com>
+Date: Mon, 25 Mar 2013 13:05:44 +0000
+Subject: Bug 696285 - ownCloud: Check addressbook even if calendar fails
+
+--- modules/owncloud-backend/owncloud-utils.c.orig	Sun Mar 17 13:46:02 2013
++++ modules/owncloud-backend/owncloud-utils.c	Fri Apr 12 07:11:07 2013
+@@ -634,7 +634,8 @@ owncloud_utils_search_server (ECollectionBackend *coll
+ 	ESource *source;
+ 	EOwncloudAuthenticator *authenticator;
+ 	gchar *url;
+-	gboolean res = TRUE;
++	gboolean res_calendars = FALSE;
++	gboolean res_contacts = FALSE;
+ 
+ 	g_return_val_if_fail (collection != NULL, FALSE);
+ 	g_return_val_if_fail (found_cb != NULL, FALSE);
+@@ -647,22 +648,22 @@ owncloud_utils_search_server (ECollectionBackend *coll
+ 	authenticator->collection = collection;
+ 	authenticator->username = e_source_collection_dup_identity (collection_extension);
+ 
+-	if (res && e_source_collection_get_calendar_enabled (collection_extension)) {
++	if (e_source_collection_get_calendar_enabled (collection_extension)) {
+ 		url = e_source_goa_dup_calendar_url (goa_extension);
+ 
+ 		if (url && *url)
+-			res = find_sources (
++			res_calendars = find_sources (
+ 				collection, found_cb, user_data,
+ 				url, "calendars", authenticator);
+ 
+ 		g_free (url);
+ 	}
+ 
+-	if (res && e_source_collection_get_contacts_enabled (collection_extension)) {
++	if (e_source_collection_get_contacts_enabled (collection_extension)) {
+ 		url = e_source_goa_dup_contacts_url (goa_extension);
+ 
+ 		if (url && *url)
+-			res = find_sources (
++			res_contacts = find_sources (
+ 				collection, found_cb, user_data,
+ 				url, "addressbooks", authenticator);
+ 
+@@ -671,5 +672,5 @@ owncloud_utils_search_server (ECollectionBackend *coll
+ 
+ 	g_object_unref (authenticator);
+ 
+-	return res;
++	return res_calendars || res_contacts;
+ }

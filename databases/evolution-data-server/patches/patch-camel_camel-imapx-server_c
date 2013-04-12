@@ -1,0 +1,159 @@
+$OpenBSD: patch-camel_camel-imapx-server_c,v 1.1 2013/04/12 05:46:16 ajacoutot Exp $
+
+From d3e1fe4060015aa1aac4bfe730a49f0de05b3c38 Mon Sep 17 00:00:00 2001
+From: Milan Crha <mcrha@redhat.com>
+Date: Mon, 25 Mar 2013 13:42:20 +0000
+Subject: Bug #656488 - imapx: Memory leak of mi->server_user_flags
+
+From 165ac075653ee1302f4d7811fd532fff351423dd Mon Sep 17 00:00:00 2001
+From: Milan Crha <mcrha@redhat.com>
+Date: Mon, 25 Mar 2013 13:33:04 +0000
+Subject: Bug #695915 - IMAP alert is not displayed
+
+--- camel/camel-imapx-server.c.orig	Fri Apr 12 07:12:18 2013
++++ camel/camel-imapx-server.c	Fri Apr 12 07:14:01 2013
+@@ -339,6 +339,9 @@ struct _CamelIMAPXServerPrivate {
+ 	 * when finished and reset the pointer to NULL. */
+ 	GArray *search_results;
+ 	GMutex search_results_lock;
++
++	GHashTable *known_alerts;
++	GMutex known_alerts_lock;
+ };
+ 
+ enum {
+@@ -2324,6 +2327,9 @@ imapx_untagged_bye (CamelIMAPXServer *is,
+ 			error, CAMEL_IMAPX_ERROR, 1,
+ 			"IMAP server said BYE: %s", token);
+ 	}
++
++	g_free (token);
++
+ 	is->state = IMAPX_SHUTDOWN;
+ 
+ 	return FALSE;
+@@ -2415,6 +2421,37 @@ imapx_untagged_ok_no_bad (CamelIMAPXServer *is,
+ 		break;
+ 	case IMAPX_ALERT:
+ 		c (is->tagprefix, "ALERT!: %s\n", is->priv->context->sinfo->text);
++		g_mutex_lock (&is->priv->known_alerts_lock);
++
++		if (is->priv->context->sinfo->text &&
++		    !g_hash_table_lookup (is->priv->known_alerts, is->priv->context->sinfo->text)) {
++			CamelIMAPXStore *store;
++
++			store = camel_imapx_server_ref_store (is);
++			if (store) {
++				const gchar *alert = is->priv->context->sinfo->text;
++				gchar *msg;
++				CamelService *service;
++				CamelSession *session;
++
++				g_hash_table_insert (is->priv->known_alerts, g_strdup (alert), GINT_TO_POINTER (1));
++
++				service = CAMEL_SERVICE (store);
++				session = camel_service_get_session (service);
++
++				msg = g_strdup_printf (
++					_("Alert from IMAP server %s:\n%s"),
++					camel_service_get_display_name (service), alert);
++				camel_session_alert_user (
++					session, CAMEL_SESSION_ALERT_WARNING,
++					msg, NULL, cancellable);
++				g_free (msg);
++
++				g_object_unref (store);
++			}
++		}
++
++		g_mutex_unlock (&is->priv->known_alerts_lock);
+ 		break;
+ 	case IMAPX_PARSE:
+ 		c (is->tagprefix, "PARSE: %s\n", is->priv->context->sinfo->text);
+@@ -7129,8 +7166,6 @@ imapx_server_finalize (GObject *object)
+ 
+ 	g_rec_mutex_clear (&is->queue_lock);
+ 	g_mutex_clear (&is->select_lock);
+-	g_mutex_clear (&is->fetch_mutex);
+-	g_cond_clear (&is->fetch_cond);
+ 
+ 	camel_folder_change_info_free (is->changes);
+ 
+@@ -7141,6 +7176,9 @@ imapx_server_finalize (GObject *object)
+ 		g_array_unref (is->priv->search_results);
+ 	g_mutex_clear (&is->priv->search_results_lock);
+ 
++	g_hash_table_destroy (is->priv->known_alerts);
++	g_mutex_clear (&is->priv->known_alerts_lock);
++
+ 	/* Chain up to parent's finalize() method. */
+ 	G_OBJECT_CLASS (camel_imapx_server_parent_class)->finalize (object);
+ }
+@@ -7238,6 +7276,7 @@ camel_imapx_server_init (CamelIMAPXServer *is)
+ 
+ 	g_mutex_init (&is->priv->stream_lock);
+ 	g_mutex_init (&is->priv->search_results_lock);
++	g_mutex_init (&is->priv->known_alerts_lock);
+ 
+ 	is->queue = camel_imapx_command_queue_new ();
+ 	is->active = camel_imapx_command_queue_new ();
+@@ -7258,8 +7297,7 @@ camel_imapx_server_init (CamelIMAPXServer *is)
+ 	is->changes = camel_folder_change_info_new ();
+ 	is->parser_quit = FALSE;
+ 
+-	g_mutex_init (&is->fetch_mutex);
+-	g_cond_init (&is->fetch_cond);
++	is->priv->known_alerts = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, NULL);
+ }
+ 
+ CamelIMAPXServer *
+@@ -7389,32 +7427,16 @@ imapx_server_get_message (CamelIMAPXServer *is,
+ 	QUEUE_LOCK (is);
+ 
+ 	if ((job = imapx_is_job_in_queue (is, folder, IMAPX_JOB_GET_MESSAGE, uid))) {
++		/* Promote the existing GET_MESSAGE
++		 * job's priority if ours is higher. */
+ 		if (pri > job->pri)
+ 			job->pri = pri;
+ 
+-		/* Wait for the job to finish. This would be so much nicer if
+-		 * we could just use the queue lock with a GCond, but instead
+-		 * we have to use a GMutex. I miss the kernel waitqueues. */
+-		do {
+-			gint this;
+-
+-			g_mutex_lock (&is->fetch_mutex);
+-			this = is->fetch_count;
+-
+-			QUEUE_UNLOCK (is);
+-
+-			while (is->fetch_count == this)
+-				g_cond_wait (&is->fetch_cond, &is->fetch_mutex);
+-
+-			g_mutex_unlock (&is->fetch_mutex);
+-
+-			QUEUE_LOCK (is);
+-
+-		} while (imapx_is_job_in_queue (is, folder,
+-						IMAPX_JOB_GET_MESSAGE, uid));
+-
+ 		QUEUE_UNLOCK (is);
+ 
++		/* Wait for the job to finish. */
++		camel_imapx_job_wait (job);
++
+ 		stream = camel_data_cache_get (
+ 			ifolder->cache, "cur", uid, error);
+ 		if (stream == NULL)
+@@ -7463,11 +7485,6 @@ imapx_server_get_message (CamelIMAPXServer *is,
+ 		stream = g_object_ref (data->stream);
+ 
+ 	camel_imapx_job_unref (job);
+-
+-	g_mutex_lock (&is->fetch_mutex);
+-	is->fetch_count++;
+-	g_cond_broadcast (&is->fetch_cond);
+-	g_mutex_unlock (&is->fetch_mutex);
+ 
+ 	return stream;
+ }
