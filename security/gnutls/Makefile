@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2013/03/23 13:25:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.76 2013/04/12 05:16:03 brad Exp $
 
 # XXX check why our getopt_long(3) fails the configure test
 # + rm patch-gl_unistd_in_h
@@ -20,7 +20,7 @@ HOMEPAGE=	http://www.gnutls.org/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# LGPLv3 - GPLv3
+# LGPLv2.1+ - GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c gmp hogweed idn m nettle p11-kit pthread stdc++ tasn1
