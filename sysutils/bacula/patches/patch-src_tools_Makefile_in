@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_tools_Makefile_in,v 1.3 2012/09/14 08:14:31 ajacoutot Exp $
+$OpenBSD: patch-src_tools_Makefile_in,v 1.4 2013/04/12 10:39:04 ajacoutot Exp $
 
 Reorder LDFLAGS (prefer -L.libs over /usr/local/lib) so that bacula can
 be rebuilt while already installed.
 
---- src/tools/Makefile.in.orig	Tue Sep 11 11:26:24 2012
-+++ src/tools/Makefile.in	Thu Sep 13 08:19:35 2012
-@@ -58,22 +58,22 @@ all: Makefile $(TOOLS) gigaslam grow
+--- src/tools/Makefile.in.orig	Tue Feb 19 20:21:35 2013
++++ src/tools/Makefile.in	Fri Apr 12 07:02:31 2013
+@@ -56,22 +56,22 @@ all: Makefile $(TOOLS) gigaslam grow
  	@echo " "
  
  bsmtp: Makefile bsmtp.o ../lib/libbac$(DEFAULT_ARCHIVE_TYPE)	    
@@ -33,7 +33,7 @@ be rebuilt while already installed.
  	  $(DLIB) $(LIBS) $(GETTEXT_LIBS) $(OPENSSL_LIBS)
  
  dird_conf.o: ../dird/dird_conf.c
-@@ -90,34 +90,34 @@ inc_conf.o: ../dird/inc_conf.c
+@@ -92,34 +92,34 @@ timelimit: timelimit.o
  
  testfind: Makefile ../lib/libbac$(DEFAULT_ARCHIVE_TYPE) ../lib/libbaccfg$(DEFAULT_ARCHIVE_TYPE) \
  	  ../findlib/libbacfind$(DEFAULT_ARCHIVE_TYPE) $(FINDOBJS)
@@ -75,7 +75,7 @@ be rebuilt while already installed.
  	  -lbaccats -lbacsql -lbacfind -lbac -lm $(DB_LIBS) $(LIBS) $(GETTEXT_LIBS) $(OPENSSL_LIBS)
  
  cats_test.o: cats_test.c
-@@ -125,7 +125,7 @@ cats_test.o: cats_test.c
+@@ -127,7 +127,7 @@ cats_test.o: cats_test.c
  	$(NO_ECHO)$(CXX) $(DEFS) $(DEBUG) -c $(CPPFLAGS) $(PYTHON_INC) -I$(srcdir) -I$(basedir) $(DINCLUDE) $(CFLAGS) $<
  
  cats_test: Makefile ../findlib/libbacfind$(DEFAULT_ARCHIVE_TYPE) ../lib/libbac$(DEFAULT_ARCHIVE_TYPE) ../cats/libbacsql$(DEFAULT_ARCHIVE_TYPE) cats_test.o
@@ -84,7 +84,7 @@ be rebuilt while already installed.
  	  -lbaccats -lbacsql -lbacfind -lbac -lm $(DB_LIBS) $(LIBS) $(GETTEXT_LIBS) $(OPENSSL_LIBS)
  
  gigaslam.o: gigaslam.c
-@@ -135,7 +135,7 @@ gigaslam: gigaslam.o
+@@ -137,7 +137,7 @@ gigaslam: gigaslam.o
  	$(LIBTOOL_LINK) $(CXX) $(LDFLAGS) -o $@ gigaslam.o
  
  grow: Makefile grow.o ../lib/libbac$(DEFAULT_ARCHIVE_TYPE)
