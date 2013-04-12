@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.799 2013/04/05 17:29:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.800 2013/04/12 14:23:57 giovanni Exp $
 
      SUBDIR =
      SUBDIR += BitTorrent
@@ -288,6 +288,7 @@
      SUBDIR += p5-Geo-IP
      SUBDIR += p5-IO-Interface
      SUBDIR += p5-IO-Socket-INET6
+     SUBDIR += p5-IO-Socket-IP
      SUBDIR += p5-IO-Socket-Multicast
      SUBDIR += p5-IO-Socket-Socks
      SUBDIR += p5-IP-Country
