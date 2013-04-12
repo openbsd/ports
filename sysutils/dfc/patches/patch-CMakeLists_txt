@@ -1,6 +1,6 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2012/06/01 13:01:45 landry Exp $
---- CMakeLists.txt.orig	Thu May 31 00:25:46 2012
-+++ CMakeLists.txt	Fri Jun  1 09:58:51 2012
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2013/04/12 10:22:34 benoit Exp $
+--- CMakeLists.txt.orig	Mon Apr  8 15:14:28 2013
++++ CMakeLists.txt	Fri Apr 12 11:39:15 2013
 @@ -70,6 +70,7 @@ endif()
  
  # Check for libintl
@@ -9,7 +9,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2012/06/01 13:01:45 landry Exp $
  if (LIBINTL_FOUND)
  	option(NLS_ENABLED "Translation support with gettext" on)
  else()
-@@ -129,7 +130,7 @@ if(NLS_ENABLED)
+@@ -134,7 +135,7 @@ if(NLS_ENABLED)
  	add_subdirectory(po)
  
  	include_directories(${LIBINTL_INCLUDE_DIR})
