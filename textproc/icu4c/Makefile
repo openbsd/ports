@@ -1,6 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2013/04/08 15:54:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2013/04/12 17:39:57 sthen Exp $
 
-BROKEN-arm=		icupkg tool built and used as part of the build fails
+# avoid segfaults from icupkg compiled and then used during the build
+.if ${MACHINE_ARCH} == "arm"
+CFLAGS+=		-O1 -fno-stack-protector
+.endif
 
 COMMENT=		International Components for Unicode
 

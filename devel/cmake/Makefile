@@ -1,8 +1,12 @@
-# $OpenBSD: Makefile,v 1.77 2013/03/21 10:21:49 zhuk Exp $
+# $OpenBSD: Makefile,v 1.78 2013/04/12 17:39:57 sthen Exp $
 
 VMEM_WARNING =	Yes
-BROKEN-arm =	build fails since move to gcc4
 DPB_PROPERTIES =parallel
+
+# avoid segfaults from binaries compiled and then used during the build
+.if ${MACHINE_ARCH} == "arm"
+CFLAGS +=	-O1 -fno-stack-protector
+.endif
 
 HOMEPAGE =	http://www.cmake.org/
 CATEGORIES =	devel
