@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.67 2013/03/11 01:30:26 espie Exp $
+# $OpenBSD: Makefile,v 1.68 2013/04/12 14:06:38 giovanni Exp $
 
 COMMENT=		send/receive faxes and share modems
 DISTNAME=		hylafax-6.0.6
+REVISION=0
 CATEGORIES=		comms
 
 HOMEPAGE=		http://www.HylaFAX.org/
@@ -23,7 +24,8 @@ WANTLIB=		c jbig m stdc++ tiff util z
 MODULES=		devel/gettext
 
 BUILD_DEPENDS=		print/ghostscript/gnu
-RUN_DEPENDS=		mail/metamail
+RUN_DEPENDS=		${BUILD_DEPENDS} \
+			mail/metamail
 LIB_DEPENDS=		graphics/jbigkit \
 			graphics/tiff
 
