@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 10:50:11 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/04/12 07:21:59 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	lua bindings to libraries using GObject-Introspection
 
-DISTNAME=	lgi-0.7.0
+DISTNAME=	lgi-0.7.1
 PKGNAME=	lua-${DISTNAME}
 CATEGORIES=	devel
 
@@ -27,7 +27,7 @@ USE_GMAKE=	Yes
 MAKE_ENV=	MAKE=${MAKE_PROGRAM} LUA_CFLAGS="-I${MODLUA_INCL_DIR}" \
 		LUA_LIBDIR="${MODLUA_LIBDIR}" LUA_SHAREDIR="${MODLUA_DATADIR}"
 
-TEST_TARGET= check
+TEST_TARGET=	check
 TEST_IS_INTERACTIVE=x11
 
 pre-configure:
