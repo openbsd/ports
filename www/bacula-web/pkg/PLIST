@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/01/25 09:45:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/04/12 10:47:38 ajacoutot Exp $
 @extraunexec rm -rf %D/bacula-web/application/view/cache/*
 @unexec-delete rm -f /var/www/conf/modules/bacula-web.conf
 bacula-web/
@@ -89,9 +89,11 @@ bacula-web/client-report.php
 bacula-web/core/
 bacula-web/core/app/
 bacula-web/core/app/cerrorhandler.class.php
+bacula-web/core/app/classautoloader.class.php
 bacula-web/core/app/cmodel.class.php
 bacula-web/core/app/cview.class.php
-bacula-web/core/bweb.inc.php
+bacula-web/core/bweb.class.php
+bacula-web/core/const.inc.php
 bacula-web/core/db/
 bacula-web/core/db/cdb.class.php
 bacula-web/core/db/cdbquery.class.php

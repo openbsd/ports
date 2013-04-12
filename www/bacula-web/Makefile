@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:44:41 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/04/12 10:47:38 ajacoutot Exp $
 
 COMMENT=	monitoring and reporting tool for bacula(8)
 
-DISTNAME=	bacula-web-5.2.12
+DISTNAME=	bacula-web-5.2.13
 
 CATEGORIES=	www sysutils
 
@@ -36,7 +36,8 @@ do-extract:
 
 do-install:
 	cp -Rp ${WRKSRC} ${INSTDIR}
-	rm ${PREFIX}/bacula-web/application/config/config.php.sample.orig
+	rm ${PREFIX}/bacula-web/application/config/config.php.sample.orig \
+		${PREFIX}/bacula-web/.gitignore
 	${SUBST_CMD} -c ${FILESDIR}/bacula-web.conf \
 		${INSTDIR}/bacula-web.conf.dist
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
