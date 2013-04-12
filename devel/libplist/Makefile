@@ -1,20 +1,18 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:10 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/04/12 17:12:55 mglocker Exp $
 
 COMMENT-main =		library to handle Apple Property List format
 COMMENT-python =	python bindings for libplist
 
 SHARED_ONLY =		Yes
 
-VERSION =		1.4
+VERSION =		1.10
+SUBST_VARS +=		VERSION
 DISTNAME =		libplist-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-python =	py-plist-${VERSION}
 
-REVISION-main =		1
-REVISION-python =	1
-
-SHARED_LIBS +=		plist		0.0 # 1.1
-SHARED_LIBS +=		plist++		0.0 # 1.1
+SHARED_LIBS +=		plist		1.0 # 1.1
+SHARED_LIBS +=		plist++		1.0 # 1.1
 
 CATEGORIES =		devel audio
 
