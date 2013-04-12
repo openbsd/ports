@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.43 2013/04/04 12:17:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2013/04/12 16:41:06 ajacoutot Exp $
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		3.8.0.1
-REVISION=		6
+REVISION=		7
 
 HOMEPAGE=		http://live.gnome.org/GnomeShell
 
@@ -76,6 +76,9 @@ RUN_DEPENDS +=		devel/py-gobject3
 
 # dateMenu.js
 RUN_DEPENDS +=		x11/gnome/clocks
+
+# telepathyClient.js
+RUN_DEPENDS +=		net/telepathy/telepathy-logger
 
 # yelp.desktop menu entry (from yelp: OnlyShowIn=GNOME;Unity;)
 # prevents => The URI "help:gnome-help/index" does not point to a valid page.
