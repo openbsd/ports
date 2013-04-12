@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/08 08:20:19 pascal Exp $
+# $OpenBSD: Makefile,v 1.2 2013/04/12 10:01:47 tobiasu Exp $
 
 ONLY_FOR_ARCHS = amd64 i386 powerpc sparc64
 
@@ -12,6 +12,9 @@ ADASTRAP-i386 = adastrap-i386-$V-1.tar.xz
 ADASTRAP_LIBC-amd64 = 67.0
 ADASTRAP_LIBM-amd64 = 8.0
 ADASTRAP-amd64 = adastrap-amd64-$V-1.tar.xz
+ADASTRAP_LIBC-sparc64 = 67.0
+ADASTRAP_LIBM-sparc64 = 8.0
+ADASTRAP-sparc64 = adastrap-sparc64-$V-0.tar.xz
 
 PKGNAME-main =  gcc-${FULL_PKGVERSION}
 PKGNAME-c++ =   g++-${FULL_PKGVERSION}
@@ -23,6 +26,8 @@ PKGNAME-ada =   gnat-${FULL_PKGVERSION}
 # needs [gs]etcontext
 #PKGNAME-go =	gccgo-${FULL_PKGVERSION}
 PKGSPEC-main = gcc->=4.8,<4.9
+
+REVISION-ada = 0
 
 SHARED_LIBS =	estdc++		16.0 \
 		gfortran	5.0 \
@@ -41,7 +46,7 @@ SHARED_LIBS =	estdc++		16.0 \
 PSEUDO_FLAVORS = no_c++ no_f95 no_objc no_java no_ada no_go full
 FLAVOR ?= 
 
-ONLY_FOR_ARCHS-ada = amd64 i386
+ONLY_FOR_ARCHS-ada = amd64 i386 sparc64
 ONLY_FOR_ARCHS-java = amd64 i386 powerpc sparc64
 
 MULTI_PACKAGES = -main -f95 -objc -c++ -estdc -java -ada
@@ -59,7 +64,8 @@ DISTNAME =   	gcc-${FULL_VERSION}
 DISTFILES =	${DISTNAME}.tar.bz2
 # there's no ecj-4.8.jar
 ECJ =		ecj-4.5.jar
-SUPDISTFILES =	${ADASTRAP-amd64}:0 ${ADASTRAP-i386}:0 ${ECJ}:1
+SUPDISTFILES =	${ADASTRAP-amd64}:0 ${ADASTRAP-i386}:0 ${ECJ}:1 \
+		${ADASTRAP-sparc64}:0
 EXTRACT_ONLY =	${DISTNAME}.tar.bz2
 
 BUILD_DEPENDS +=	devel/bison \
@@ -136,7 +142,8 @@ CONFIGURE_ARGS += \
 	--enable-threads=posix \
 	--enable-wchar_t \
 	--with-gmp="${LOCALBASE}" \
-	--enable-languages=${LANGS}
+	--enable-languages=${LANGS} \
+	--disable-libstdcxx-pch
 
 # This is needed, as internal cpp is no longer compatible with the
 # visible beast

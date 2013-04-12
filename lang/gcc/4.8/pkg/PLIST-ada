@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ada,v 1.1.1.1 2013/04/08 08:20:20 pascal Exp $
+@comment $OpenBSD: PLIST-ada,v 1.2 2013/04/12 10:01:47 tobiasu Exp $
 @bin bin/egnat
 @bin bin/egnatbind
 @bin bin/egnatchop
@@ -246,7 +246,6 @@ lib/gcc/${CONFIG}/${V}/adainclude/a-nudira.ads
 lib/gcc/${CONFIG}/${V}/adainclude/a-nuelfu.ads
 lib/gcc/${CONFIG}/${V}/adainclude/a-nuflra.adb
 lib/gcc/${CONFIG}/${V}/adainclude/a-nuflra.ads
-lib/gcc/${CONFIG}/${V}/adainclude/a-numaux.adb
 lib/gcc/${CONFIG}/${V}/adainclude/a-numaux.ads
 lib/gcc/${CONFIG}/${V}/adainclude/a-numeri.ads
 lib/gcc/${CONFIG}/${V}/adainclude/a-nurear.ads
@@ -1940,4 +1939,5 @@ lib/gcc/${CONFIG}/${V}/adalib/system.ali
 lib/gcc/${CONFIG}/${V}/adalib/text_io.ali
 lib/gcc/${CONFIG}/${V}/adalib/unchconv.ali
 lib/gcc/${CONFIG}/${V}/adalib/unchdeal.ali
+%%I386%%
 @bin libexec/gcc/${CONFIG}/${V}/gnat1
