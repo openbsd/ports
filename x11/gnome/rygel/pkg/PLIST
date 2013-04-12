@@ -1,26 +1,33 @@
-@comment $OpenBSD: PLIST,v 1.13 2012/10/12 14:40:04 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2013/04/12 11:37:46 ajacoutot Exp $
 @bin bin/rygel
 @bin bin/rygel-preferences
-include/rygel-1.0/
-include/rygel-1.0/rygel-core.h
-include/rygel-1.0/rygel-renderer.h
-include/rygel-1.0/rygel-server.h
-lib/librygel-core-1.0.la
-@lib lib/librygel-core-1.0.so.${LIBrygel-core-1.0_VERSION}
-lib/librygel-renderer-1.0.la
-@lib lib/librygel-renderer-1.0.so.${LIBrygel-renderer-1.0_VERSION}
-lib/librygel-server-1.0.la
-@lib lib/librygel-server-1.0.so.${LIBrygel-server-1.0_VERSION}
-lib/pkgconfig/rygel-core-1.0.pc
-lib/pkgconfig/rygel-renderer-1.0.pc
-lib/pkgconfig/rygel-server-1.0.pc
-lib/rygel-1.0/
-lib/rygel-1.0/librygel-external.so
-lib/rygel-1.0/librygel-gst-launch.so
-lib/rygel-1.0/librygel-media-export.so
-lib/rygel-1.0/librygel-mpris.so
-lib/rygel-1.0/librygel-playbin.so
-lib/rygel-1.0/librygel-tracker.so
+include/rygel-2.0/
+include/rygel-2.0/rygel-core.h
+include/rygel-2.0/rygel-renderer-gst.h
+include/rygel-2.0/rygel-renderer.h
+include/rygel-2.0/rygel-server.h
+lib/librygel-core-2.0.la
+@lib lib/librygel-core-2.0.so.${LIBrygel-core-2.0_VERSION}
+lib/librygel-renderer-2.0.la
+@lib lib/librygel-renderer-2.0.so.${LIBrygel-renderer-2.0_VERSION}
+lib/librygel-renderer-gst-2.0.la
+@lib lib/librygel-renderer-gst-2.0.so.${LIBrygel-renderer-gst-2.0_VERSION}
+lib/librygel-server-2.0.la
+@lib lib/librygel-server-2.0.so.${LIBrygel-server-2.0_VERSION}
+lib/pkgconfig/rygel-core-2.0.pc
+lib/pkgconfig/rygel-renderer-2.0.pc
+lib/pkgconfig/rygel-renderer-gst-2.0.pc
+lib/pkgconfig/rygel-server-2.0.pc
+lib/rygel-2.0/
+lib/rygel-2.0/engines/
+lib/rygel-2.0/engines/librygel-media-engine-gst.so
+lib/rygel-2.0/engines/librygel-media-engine-simple.so
+lib/rygel-2.0/plugins/
+lib/rygel-2.0/plugins/librygel-external.so
+lib/rygel-2.0/plugins/librygel-media-export.so
+lib/rygel-2.0/plugins/librygel-mpris.so
+lib/rygel-2.0/plugins/librygel-playbin.so
+lib/rygel-2.0/plugins/librygel-tracker.so
 @man man/man1/rygel.1
 @man man/man5/rygel.conf.5
 share/applications/rygel-preferences.desktop
@@ -29,6 +36,10 @@ share/dbus-1/services/org.gnome.Rygel1.service
 share/examples/rygel/
 share/examples/rygel/rygel.conf
 @sample ${SYSCONFDIR}/rygel.conf
+share/gtk-doc/html/librygel-core/
+share/gtk-doc/html/librygel-renderer/
+share/gtk-doc/html/librygel-renderer-gst/
+share/gtk-doc/html/librygel-server/
 share/icons/hicolor/128x128/apps/rygel.png
 share/icons/hicolor/32x32/apps/rygel.png
 share/icons/hicolor/48x48/apps/rygel.png
@@ -63,6 +74,7 @@ share/locale/kn/LC_MESSAGES/rygel.mo
 share/locale/ko/LC_MESSAGES/rygel.mo
 share/locale/lt/LC_MESSAGES/rygel.mo
 share/locale/lv/LC_MESSAGES/rygel.mo
+share/locale/ml/LC_MESSAGES/rygel.mo
 share/locale/nb/LC_MESSAGES/rygel.mo
 share/locale/nl/LC_MESSAGES/rygel.mo
 share/locale/pa/LC_MESSAGES/rygel.mo
@@ -71,6 +83,7 @@ share/locale/pt/LC_MESSAGES/rygel.mo
 share/locale/pt_BR/LC_MESSAGES/rygel.mo
 share/locale/ro/LC_MESSAGES/rygel.mo
 share/locale/ru/LC_MESSAGES/rygel.mo
+share/locale/sk/LC_MESSAGES/rygel.mo
 share/locale/sl/LC_MESSAGES/rygel.mo
 share/locale/sr/LC_MESSAGES/rygel.mo
 share/locale/sr@latin/LC_MESSAGES/rygel.mo
@@ -99,26 +112,29 @@ share/rygel/presets/GstLameMP3Enc.prs
 share/rygel/presets/GstMP4Mux.prs
 share/rygel/presets/GstTwoLame.prs
 share/rygel/presets/GstX264Enc.prs
-share/rygel/presets/ffenc_aac.prs
-share/rygel/presets/ffenc_mp2.prs
-share/rygel/presets/ffenc_mpeg2video.prs
-share/rygel/presets/ffenc_wmav1.prs
-share/rygel/presets/ffenc_wmv1.prs
+share/rygel/presets/avenc_aac.prs
+share/rygel/presets/avenc_mp2.prs
+share/rygel/presets/avenc_mpeg2video.prs
+share/rygel/presets/avenc_wmav1.prs
+share/rygel/presets/avenc_wmv1.prs
 share/rygel/rygel-preferences.ui
 share/rygel/xml/
 share/rygel/xml/AVTransport2.xml
 share/rygel/xml/ConnectionManager.xml
+share/rygel/xml/ContentDirectory-NoTrack.xml
 share/rygel/xml/ContentDirectory.xml
 share/rygel/xml/MediaRenderer2.xml
-share/rygel/xml/MediaServer2.xml
+share/rygel/xml/MediaServer3.xml
 share/rygel/xml/RenderingControl2.xml
 share/rygel/xml/X_MS_MediaReceiverRegistrar1.xml
-share/vala/vapi/rygel-core-1.0.deps
-share/vala/vapi/rygel-core-1.0.vapi
-share/vala/vapi/rygel-renderer-1.0.deps
-share/vala/vapi/rygel-renderer-1.0.vapi
-share/vala/vapi/rygel-server-1.0.deps
-share/vala/vapi/rygel-server-1.0.vapi
+share/vala/vapi/rygel-core-2.0.deps
+share/vala/vapi/rygel-core-2.0.vapi
+share/vala/vapi/rygel-renderer-2.0.deps
+share/vala/vapi/rygel-renderer-2.0.vapi
+share/vala/vapi/rygel-renderer-gst-2.0.deps
+share/vala/vapi/rygel-renderer-gst-2.0.vapi
+share/vala/vapi/rygel-server-2.0.deps
+share/vala/vapi/rygel-server-2.0.vapi
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

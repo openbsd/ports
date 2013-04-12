@@ -1,20 +1,18 @@
-# $OpenBSD: Makefile,v 1.32 2013/03/29 16:24:00 ajacoutot Exp $
-
-BROKEN=			needs an update
+# $OpenBSD: Makefile,v 1.33 2013/04/12 11:37:46 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		home media solution that allows easy media sharing
 
 GNOME_PROJECT=		rygel
-GNOME_VERSION=		0.16.4
-REVISION=		0
+GNOME_VERSION=		0.18.0
 
-SHARED_LIBS +=	rygel-core-1.0            0.0 # 0.0
-SHARED_LIBS +=	rygel-renderer-1.0        0.0 # 0.0
-SHARED_LIBS +=	rygel-server-1.0          0.0 # 0.0
+SHARED_LIBS +=  rygel-core-2.0         0.0      # .1.0
+SHARED_LIBS +=  rygel-renderer-2.0     0.0      # .1.0
+SHARED_LIBS +=  rygel-server-2.0       0.0      # .1.0
+SHARED_LIBS +=  rygel-renderer-gst-2.0 0.0      # .1.0
 
-TRACKER_VERSION=	0.14
+TRACKER_VERSION=	0.16
 
 CATEGORIES=		multimedia
 
@@ -23,18 +21,18 @@ HOMEPAGE=		http://live.gnome.org/Rygel
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM= 	Yes
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo
-WANTLIB += cairo-gobject e2fs-uuid expat ffi fontconfig freetype
-WANTLIB += gdk-3 gdk_pixbuf-2.0 gee gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gssdp-1.0 gstapp-0.10 gstbase-0.10 gstpbutils-0.10
-WANTLIB += gstreamer-0.10 gsttag-0.10 gstvideo-0.10 gthread-2.0
-WANTLIB += gtk-3 gupnp-1.0 gupnp-av-1.0 gupnp-dlna-1.0 m orc-0.4
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs soup-2.4 sqlite3
-WANTLIB += xcb xcb-render xcb-shm xml2 z unistring icui18n
-WANTLIB += ICE SM atk-bridge-2.0 atspi dbus-1 harfbuzz icudata
-WANTLIB += icule icuuc kvm tracker-sparql-${TRACKER_VERSION}
+WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
+WANTLIB += c cairo cairo-gobject dbus-1 e2fs-uuid expat ffi fontconfig
+WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gee-0.8 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gssdp-1.0 gstapp-1.0
+WANTLIB += gstaudio-1.0 gstbase-1.0 gstpbutils-1.0 gstreamer-1.0
+WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 gupnp-1.0
+WANTLIB += gupnp-av-1.0 gupnp-dlna-2.0 gupnp-dlna-gst-2.0 harfbuzz
+WANTLIB += icudata icui18n icule icuuc kvm m orc-0.4 pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
+WANTLIB += pthread-stubs soup-2.4 sqlite3 tracker-sparql-${TRACKER_VERSION}
+WANTLIB += unistring xcb xcb-render xcb-shm xml2 z
 WANTLIB += lib/tracker-${TRACKER_VERSION}/tracker-common
 WANTLIB += lib/tracker-${TRACKER_VERSION}/tracker-data
 
@@ -42,29 +40,25 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 LIB_DEPENDS=		converters/libunistring \
-			devel/libgee06 \
+			devel/libgee \
 			net/gupnp/av \
 			net/gupnp/dlna \
-			x11/gtk+3 \
 			x11/gnome/tracker>=${TRACKER_VERSION}
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
-#MODGNOME_TOOLS=	vala
+MODGNOME_TOOLS=		vala
+
+# XXX undefined reference to `memset'
+USE_LIBTOOL=		gnu
 
 LIBTOOL_FLAGS=		--tag=disable-static
 
-CONFIGURE_ARGS+=	--disable-static \
-			--enable-mpris-plugin \
-			--enable-media-export-plugin \
-			--enable-gst-launch-plugin \
-			--enable-external-plugin \
-			--enable-tracker-plugin \
-			--disable-mediathek-plugin
+CONFIGURE_ARGS+=	--disable-static
 
-FAKE_FLAGS+=		sysconfdir=${PREFIX}/share/examples/rygel/
+FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/rygel/
 
 post-install:
-	rm ${PREFIX}/lib/rygel-1.0/*.la
+	rm ${PREFIX}/lib/rygel-2.0/{engines,plugins}/*.la
 
 .include <bsd.port.mk>
