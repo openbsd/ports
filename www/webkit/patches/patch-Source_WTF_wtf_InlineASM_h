@@ -1,0 +1,12 @@
+$OpenBSD: patch-Source_WTF_wtf_InlineASM_h,v 1.1 2013/04/13 09:11:02 landry Exp $
+--- Source/WTF/wtf/InlineASM.h.orig	Sat Mar  9 21:30:13 2013
++++ Source/WTF/wtf/InlineASM.h	Sat Mar  9 21:30:27 2013
+@@ -42,7 +42,7 @@
+ #define THUMB_FUNC_PARAM(name)
+ #endif
+ 
+-#if (OS(LINUX) || OS(FREEBSD)) && CPU(X86_64)
++#if (OS(LINUX) || OS(FREEBSD) || OS(OPENBSD)) && CPU(X86_64)
+ #define GLOBAL_REFERENCE(name) #name "@plt"
+ #elif CPU(X86) && COMPILER(MINGW)
+ #define GLOBAL_REFERENCE(name) "@" #name "@4"

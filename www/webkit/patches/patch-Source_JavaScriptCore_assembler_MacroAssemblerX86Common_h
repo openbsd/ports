@@ -1,0 +1,18 @@
+$OpenBSD: patch-Source_JavaScriptCore_assembler_MacroAssemblerX86Common_h,v 1.1 2013/04/13 09:11:02 landry Exp $
+./Source/JavaScriptCore/assembler/MacroAssembler.h:909: error: call of overloaded 'shouldBlindForSpecificArch(uintptr_t&)' is ambiguous
+./Source/JavaScriptCore/assembler/MacroAssemblerX86Common.h:98: note: candidates are:
+     static bool JSC::MacroAssemblerX86Common::shouldBlindForSpecificArch(uint32_t)
+./Source/JavaScriptCore/assembler/MacroAssemblerX86Common.h:100: note: 
+     static bool JSC::MacroAssemblerX86Common::shouldBlindForSpecificArch(uint64_t)
+
+--- Source/JavaScriptCore/assembler/MacroAssemblerX86Common.h.orig	Fri Mar  8 09:58:35 2013
++++ Source/JavaScriptCore/assembler/MacroAssemblerX86Common.h	Fri Mar  8 10:44:29 2013
+@@ -98,7 +98,7 @@ class MacroAssemblerX86Common : public AbstractMacroAs
+     static bool shouldBlindForSpecificArch(uint32_t value) { return value >= 0x00ffffff; }
+ #if CPU(X86_64)
+     static bool shouldBlindForSpecificArch(uint64_t value) { return value >= 0x00ffffff; }
+-#if OS(DARWIN) // On 64-bit systems other than DARWIN uint64_t and uintptr_t are the same type so overload is prohibited.
++#if OS(DARWIN) || OS(OPENBSD) // On 64-bit systems other than DARWIN uint64_t and uintptr_t are the same type so overload is prohibited.
+     static bool shouldBlindForSpecificArch(uintptr_t value) { return value >= 0x00ffffff; }
+ #endif
+ #endif

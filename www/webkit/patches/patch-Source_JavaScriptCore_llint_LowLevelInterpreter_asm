@@ -1,0 +1,42 @@
+$OpenBSD: patch-Source_JavaScriptCore_llint_LowLevelInterpreter_asm,v 1.1 2013/04/13 09:11:02 landry Exp $
+https://bugs.webkit.org/show_bug.cgi?id=103128
+--- Source/JavaScriptCore/llint/LowLevelInterpreter.asm.orig	Sun Mar 31 11:48:40 2013
++++ Source/JavaScriptCore/llint/LowLevelInterpreter.asm	Sun Mar 31 19:00:09 2013
+@@ -87,6 +87,12 @@ else
+     const PayloadOffset = 0
+ end
+ 
++if JSVALUE64
++    const CellOffset = 0
++else
++    const CellOffset = PayloadOffset
++end
++
+ # Constant for reasoning about butterflies.
+ const IsArray                  = 1
+ const IndexingShapeMask        = 30
+@@ -263,13 +269,13 @@ macro assertNotConstant(index)
+ end
+ 
+ macro functionForCallCodeBlockGetter(targetRegister)
+-    loadp Callee[cfr], targetRegister
++    loadp Callee + CellOffset[cfr], targetRegister
+     loadp JSFunction::m_executable[targetRegister], targetRegister
+     loadp FunctionExecutable::m_codeBlockForCall[targetRegister], targetRegister
+ end
+ 
+ macro functionForConstructCodeBlockGetter(targetRegister)
+-    loadp Callee[cfr], targetRegister
++    loadp Callee + CellOffset[cfr], targetRegister
+     loadp JSFunction::m_executable[targetRegister], targetRegister
+     loadp FunctionExecutable::m_codeBlockForConstruct[targetRegister], targetRegister
+ end
+@@ -824,7 +830,7 @@ macro interpretResolveWithBase(opcodeLength, slowPath)
+     getResolveOperation(4, t0)
+     btpz t0, .slowPath
+ 
+-    loadp ScopeChain[cfr], t3
++    loadp ScopeChain + CellOffset[cfr], t3
+     # Get the base
+     loadis ResolveOperation::m_operation[t0], t2
+ 

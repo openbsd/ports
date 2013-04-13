@@ -1,0 +1,31 @@
+$OpenBSD: patch-Source_WTF_wtf_RAMSize_cpp,v 1.1 2013/04/13 09:11:02 landry Exp $
+--- Source/WTF/wtf/RAMSize.cpp.orig	Thu Jul 19 12:02:14 2012
++++ Source/WTF/wtf/RAMSize.cpp	Sat Mar  9 21:26:30 2013
+@@ -27,7 +27,7 @@
+ #include "RAMSize.h"
+ 
+ #include "StdLibExtras.h"
+-#if OS(DARWIN)
++#if OS(DARWIN) || OS(OPENBSD)
+ #include <sys/param.h>
+ #include <sys/types.h>
+ #include <sys/sysctl.h>
+@@ -45,13 +45,17 @@ static const size_t ramSizeGuess = 128 * MB;
+ 
+ static size_t computeRAMSize()
+ {
+-#if OS(DARWIN)
++#if OS(DARWIN) || OS(OPENBSD)
+     int mib[2];
+     uint64_t ramSize;
+     size_t length;
+ 
+     mib[0] = CTL_HW;
++#if OS(DARWIN)
+     mib[1] = HW_MEMSIZE;
++#else
++    mib[1] = HW_PHYSMEM64;
++#endif
+     length = sizeof(int64_t);
+     int sysctlResult = sysctl(mib, 2, &ramSize, &length, 0, 0);
+     if (sysctlResult == -1)

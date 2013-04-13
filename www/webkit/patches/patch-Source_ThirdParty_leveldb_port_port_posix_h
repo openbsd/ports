@@ -1,0 +1,35 @@
+$OpenBSD: patch-Source_ThirdParty_leveldb_port_port_posix_h,v 1.1 2013/04/13 09:11:02 landry Exp $
+http://code.google.com/p/leveldb/issues/detail?id=98
+--- Source/ThirdParty/leveldb/port/port_posix.h.orig	Fri Mar  8 23:47:55 2013
++++ Source/ThirdParty/leveldb/port/port_posix.h	Sat Mar  9 00:19:53 2013
+@@ -25,10 +25,11 @@
+   #include <sys/types.h>
+   #include <sys/endian.h>
+   #define PLATFORM_IS_LITTLE_ENDIAN (_BYTE_ORDER == _LITTLE_ENDIAN)
+-#elif defined(OS_OPENBSD) || defined(OS_NETBSD) ||\
++#elif defined(__OpenBSD__) || defined(OS_NETBSD) ||\
+       defined(OS_DRAGONFLYBSD)
+   #include <sys/types.h>
+   #include <sys/endian.h>
++  #define PLATFORM_IS_LITTLE_ENDIAN (BYTE_ORDER == LITTLE_ENDIAN)
+ #elif defined(OS_HPUX)
+   #define PLATFORM_IS_LITTLE_ENDIAN false
+ #elif defined(OS_ANDROID)
+@@ -54,7 +55,7 @@
+ #endif
+ 
+ #if defined(OS_MACOSX) || defined(OS_SOLARIS) || defined(OS_FREEBSD) ||\
+-    defined(OS_NETBSD) || defined(OS_OPENBSD) || defined(OS_DRAGONFLYBSD) ||\
++    defined(OS_NETBSD) || defined(__OpenBSD__) || defined(OS_DRAGONFLYBSD) ||\
+     defined(OS_ANDROID) || defined(OS_HPUX)
+ // Use fread/fwrite/fflush on platforms without _unlocked variants
+ #define fread_unlocked fread
+@@ -63,7 +64,7 @@
+ #endif
+ 
+ #if defined(OS_MACOSX) || defined(OS_FREEBSD) ||\
+-    defined(OS_OPENBSD) || defined(OS_DRAGONFLYBSD)
++    defined(__OpenBSD__) || defined(OS_DRAGONFLYBSD)
+ // Use fsync() on platforms without fdatasync()
+ #define fdatasync fsync
+ #endif
