@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Job.pm,v 1.5 2013/01/05 21:48:18 espie Exp $
+# $OpenBSD: Job.pm,v 1.6 2013/04/13 10:04:43 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -109,6 +109,12 @@ sub next_task
 }
 
 sub name
+{
+	my $self = shift;
+	return $self->{name};
+}
+
+sub debug_dump
 {
 	my $self = shift;
 	return $self->{name};

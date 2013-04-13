@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.36 2012/12/24 17:24:46 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.37 2013/04/13 10:04:43 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -54,7 +54,7 @@ sub fullpkgname
 		if (defined $self->{info}) {
 			say STDERR "But info is defined"; 
 			require Data::Dumper;
-			say STDERR Dumper($self->{info});
+			say STDERR Data::Dumper::Dumper($self->{info});
 		}
 		die;
 	}

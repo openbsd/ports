@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.100 2013/03/03 00:42:40 espie Exp $
+# $OpenBSD: Port.pm,v 1.101 2013/04/13 10:04:43 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -125,6 +125,13 @@ sub make_sure_we_have_packages
 			 " may be missing\n", 
 			 ">>> but it can't be installed, so we don't care\n";
 			next;
+		}
+		if (!$w->has_fullpkgname) {
+			require Data::Dumper;
+			
+			say STDERR "Path ", $w->fullpkgpath, " has no fullpkgname\n";
+			say STDERR "Basic path: ", Data::Dumper::Dumper($job->{v}), "\n";
+			say STDERR "Extra paths: ", Data::Dumper::Dumper($w), "\n";
 		}
 		my $f = $job->{builder}->pkgfile($w);
 		if (-f $f) {
@@ -734,6 +741,12 @@ sub new
 		    $core);
 	}
 	return $job;
+}
+
+sub debug_dump
+{
+	my $self = shift;	
+	return $self->{v};
 }
 
 # a small wrapper that allows us to initialize things
