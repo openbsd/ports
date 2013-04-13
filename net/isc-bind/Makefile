@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2013/04/03 20:17:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2013/04/13 12:41:01 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon
 
 V=		9.9.2-P2
-RV=		9.9.2
-REVISION=	0
+RV=		9.9.2-P2
+REVISION=	1
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
 
@@ -25,7 +25,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c crypto m pthread xml2 z
 
 MASTER_SITES=	${MASTER_SITE_ISC:=bind9/$V/}
-MASTER_SITES0=	http://ss.vix.com/~vixie/
+MASTER_SITES0=	http://ss.vix.su/~vjs/
 
 FLAVORS=	ratelimit
 FLAVOR?=
