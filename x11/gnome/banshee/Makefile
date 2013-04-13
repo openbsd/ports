@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/04/03 06:20:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2013/04/13 10:44:15 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	music management and playback application for GNOME
 
 GNOME_VERSION=	2.6.0
 GNOME_PROJECT=	banshee
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	audio multimedia
 
@@ -15,20 +15,21 @@ HOMEPAGE=	http://banshee.fm/
 # MIT/X11
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm atk-1.0
-WANTLIB += cairo dbus-1 dbus-glib-1 drm enchant expat ffi fontconfig
-WANTLIB += freetype gailutil gcrypt gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += geoclue gio-2.0 glib-2.0 gmodule-2.0 gnome-keyring
-WANTLIB += gobject-2.0 gpg-error gstapp-0.10 gstaudio-0.10 gstbase-0.10
+WANTLIB += GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender Xt Xxf86vm atk-1.0 cairo
+WANTLIB += dbus-1 dbus-glib-1 enchant expat ffi fontconfig freetype
+WANTLIB += gailutil gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 geoclue
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpg-error
+WANTLIB += graphite2 gstapp-1.0 gstaudio-1.0 gstbase-0.10 gstbase-1.0
 WANTLIB += gstcdda-0.10 gstcontroller-0.10 gstdataprotocol-0.10
-WANTLIB += gstfft-0.10 gstinterfaces-0.10 gstpbutils-0.10 gstreamer-0.10
-WANTLIB += gsttag-0.10 gstvideo-0.10 gthread-2.0 gtk-x11-2.0 harfbuzz
-WANTLIB += icudata icui18n icule icuuc javascriptcoregtk-1.0 jpeg
-WANTLIB += m orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png pthread pthread-stubs soup-2.4 soup-gnome-2.4
-WANTLIB += sqlite3 stdc++ webkitgtk-1.0 xcb xcb-render xcb-shm
-WANTLIB += xml2 xslt z
+WANTLIB += gstfft-0.10 gstfft-1.0 gstinterfaces-0.10 gstpbutils-0.10
+WANTLIB += gstpbutils-1.0 gstreamer-0.10 gstreamer-1.0 gsttag-0.10
+WANTLIB += gsttag-1.0 gstvideo-0.10 gstvideo-1.0 gthread-2.0 gtk-x11-2.0
+WANTLIB += harfbuzz icudata icui18n icule icuuc javascriptcoregtk-1.0
+WANTLIB += jpeg m orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread pthread-stubs secret-1 soup-2.4
+WANTLIB += soup-gnome-2.4 sqlite3 stdc++ webkitgtk-1.0 webp xcb
+WANTLIB += xcb-render xcb-shm xml2 xslt z
 
 MODULES=	x11/gnome \
 		lang/mono \
