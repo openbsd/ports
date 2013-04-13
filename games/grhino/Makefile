@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:07:39 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/04/13 08:28:36 ajacoutot Exp $
 
 COMMENT =		Othello/Reversi-like game
 DISTNAME =		grhino-${V}
 V =			0.16.1
-REVISION=		0
+REVISION=		1
 CATEGORIES =		games
 HOMEPAGE =		http://rhino.sourceforge.net/
 
@@ -12,28 +12,31 @@ MAINTAINER = 		Remi Pointel <remi.pointel@xiri.fr>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
+WANTLIB += ICE ORBit-2 SM X11 Xcomposite Xcursor Xdamage Xext
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0
+WANTLIB += bonobo-2 bonobo-activation bonoboui-2 c cairo fontconfig
+WANTLIB += freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gnome-2 gnomecanvas-2 gnomeui-2
+WANTLIB += gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 popt pthread stdc++ z
+
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=rhino/GRhino/${V}/}
 
-MODULES =		devel/gettext
+MODULES =		devel/gettext \
+			x11/gnome
 
-BUILD_DEPENDS =		textproc/rarian
-RUN_DEPENDS =		x11/gnome/yelp
+MODGNOME_TOOLS =	yelp
+MODGNOME_DESKTOP_FILE =	yes
+
 LIB_DEPENDS =		x11/gnome/libgnomeui
 
-WANTLIB += art_lgpl_2 bonobo-2 bonobo-activation bonoboui-2 gnome-2
-WANTLIB += gnome-keyring gnomecanvas-2 gnomeui-2 gnomevfs-2 popt
-WANTLIB += ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo
-WANTLIB += dbus-1 expat fontconfig freetype gailutil gconf-2 gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pixman-1 png pthread pthread-stubs stdc++
-WANTLIB += xcb xcb-render xcb-render-util xml2 z
-
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 NO_TEST =		Yes
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/desktop/grhino.desktop \
+		${PREFIX}/share/applications/
 
 .include <bsd.port.mk>

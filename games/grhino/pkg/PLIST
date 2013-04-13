@@ -1,6 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/09/06 18:55:42 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/04/13 08:28:36 ajacoutot Exp $
 @bin bin/grhino
 @bin bin/gtp-rhino
+share/applications/grhino.desktop
+share/gnome/
+share/gnome/help/
 share/gnome/help/grhino/
 share/gnome/help/grhino/C/
 share/gnome/help/grhino/C/figures/
@@ -45,7 +48,10 @@ share/grhino-0.16.1/theme/small/top.xpm
 share/grhino-0.16.1/theme/small/white.xpm
 share/grhino-0.16.1/theme/small/white_last.xpm
 share/locale/en_GB/LC_MESSAGES/grhino.mo
+share/omf/
 share/omf/grhino/
 share/omf/grhino/grhino-C.omf
 share/pixmaps/
 share/pixmaps/grhino.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
