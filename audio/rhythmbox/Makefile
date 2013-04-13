@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.116 2013/04/11 11:08:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.117 2013/04/13 08:40:22 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
-GNOME_VERSION=		2.99
-REVISION=		0
+GNOME_VERSION=		2.99.1
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # 7.0
 
@@ -101,5 +100,7 @@ post-install:
 	rm ${PREFIX}/lib/mozilla/plugins/*.la
 	# XXX hangs: check at next upgrade of rhythmbox
 	rm -rf ${PREFIX}/{lib,share}/rhythmbox/plugins/replaygain
+	# requires cdda support in gvfs -> HAL/gudev
+	rm -rf ${PREFIX}/{lib,share}/rhythmbox/plugins/audiocd
 
 .include <bsd.port.mk>
