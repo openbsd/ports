@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.127 2013/04/13 10:09:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.128 2013/04/13 12:55:23 ajacoutot Exp $
 
 COMMENT= 		Telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		3.8.0
+REVISION=		0
+
 CATEGORIES=		net
 
 HOMEPAGE=		http://live.gnome.org/Empathy
@@ -20,18 +22,18 @@ WANTLIB += dbus-1 dbus-glib-1 enchant execinfo expat farstream-0.2
 WANTLIB += ffi folks folks-telepathy fontconfig freetype gailutil-3
 WANTLIB += gck-1 gcr-3 gcr-base-3 gcrypt gdbm gdk-3 gdk_pixbuf-2.0
 WANTLIB += gee-0.8 geoclue gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls
-WANTLIB += goa-1.0 gobject-2.0 gpg-error graphite2
-WANTLIB += gstaudio-1.0 gstbase-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
-WANTLIB += gthread-2.0 gtk-3 harfbuzz hogweed icudata icui18n
-WANTLIB += icule icuuc javascriptcoregtk-3.0 jpeg json json-glib-1.0
-WANTLIB += ltdl m memphis-0.2 mission-control-plugins nettle notify
-WANTLIB += ogg orc-0.4 p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs pulse pulse-mainloop-glib
-WANTLIB += secret-1 sndfile soup-2.4 soup-gnome-2.4 sqlite3 stdc++
-WANTLIB += tasn1 telepathy-farstream telepathy-glib telepathy-logger
-WANTLIB += vorbis vorbisenc vorbisfile webkitgtk-3.0 xcb xcb-render
-WANTLIB += xcb-shm xml2 xslt z zeitgeist-1.0 gee
-WANTLIB += gstapp-1.0 gstfft-1.0 gstpbutils-1.0 webp
+WANTLIB += goa-1.0 gobject-2.0 gpg-error graphite2 gstapp-1.0
+WANTLIB += gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
+WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
+WANTLIB += harfbuzz hogweed icudata icui18n icule icuuc javascriptcoregtk-3.0
+WANTLIB += jpeg json json-glib-1.0 ltdl m memphis-0.2 mission-control-plugins
+WANTLIB += nettle notify ogg orc-0.4 p11-kit pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += pulse pulse-mainloop-glib secret-1 sndfile soup-2.4
+WANTLIB += soup-gnome-2.4 sqlite3 stdc++ tasn1 telepathy-farstream
+WANTLIB += telepathy-glib telepathy-logger vorbis vorbisenc vorbisfile
+WANTLIB += webkitgtk-3.0 webp xcb xcb-render xcb-shm xml2 xslt
+WANTLIB += z zeitgeist-1.0
 
 MODULES=		devel/dconf \
 			devel/gettext \
@@ -42,19 +44,20 @@ MODPY_RUNDEP=		No
 
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/iso-codes
+
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			audio/pulseaudio>=2.1 \
-			devel/libgee06 \
 			devel/libnotify \
 			geo/geoclue \
 			geo/libchamplain>=0.12.2 \
-			graphics/clutter/clutter-gst>=1.9.92 \
+			graphics/clutter/clutter-gst \
 			net/telepathy/folks \
-			net/telepathy/telepathy-farstream>=0.6.0 \
+			net/telepathy/telepathy-farstream \
 			net/telepathy/telepathy-logger \
 			textproc/enchant \
 			x11/gnome/gcr \
 			x11/gnome/online-accounts
+
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/iso-codes \
 			net/telepathy/telepathy-mission-control \
@@ -79,6 +82,9 @@ CONFIGURE_ARGS +=	--disable-nautilus-sendto
 
 # XXX needs geocode-glib
 CONFIGURE_ARGS +=	--disable-geocode
+
+# XXX needs signond, libsignon-glib
+CONFIGURE_ARGS +=	--disable-ubuntu-online-accounts
 
 # needs connman or network-manager
 CONFIGURE_ARGS+=	--without-connectivity
