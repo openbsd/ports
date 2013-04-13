@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/04/13 09:14:06 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2013/04/13 10:46:36 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	quick previewer for Nautilus
 
 GNOME_PROJECT=	sushi
 GNOME_VERSION=	3.8.0
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE=	https://live.gnome.org/ThreePointOne/Features/FilePreviewing
 
@@ -18,17 +18,17 @@ WANTLIB += Xi Xinerama Xrandr Xrender Xt asn1 atk-1.0 atk-bridge-2.0
 WANTLIB += atspi c cairo cairo-gobject clutter-1.0 clutter-gst-2.0
 WANTLIB += clutter-gtk-1.0 cogl cogl-pango crypto dbus-1 dbus-glib-1
 WANTLIB += enchant evdocument3 evview3 expat ffi fontconfig freetype
-WANTLIB += gailutil-3 gdk-3 gdk_pixbuf-2.0 geoclue gio-2.0 girepository-1.0
-WANTLIB += gjs glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gssapi
-WANTLIB += gstapp-1.0 gstaudio-1.0 gstbase-1.0
-WANTLIB += gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
-WANTLIB += gstvideo-1.0 gthread-2.0 gtk-3 gtksourceview-3.0
+WANTLIB += gailutil-3 gcrypt gdk-3 gdk_pixbuf-2.0 geoclue gio-2.0
+WANTLIB += girepository-1.0 gjs glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gpg-error graphite2 gssapi gstapp-1.0 gstaudio-1.0
+WANTLIB += gstbase-1.0 gstfft-1.0 gstpbutils-1.0 gstreamer-1.0
+WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 gtksourceview-3.0
 WANTLIB += harfbuzz icudata icui18n icule icuuc javascriptcoregtk-3.0
 WANTLIB += jpeg json-glib-1.0 krb5 m mozjs185 musicbrainz5 ncursesw
 WANTLIB += neon nspr4 orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png proxy pthread pthread-stubs
-WANTLIB += readline soup-2.4 sqlite3 ssl stdc++ webkitgtk-3.0
-WANTLIB += xcb xcb-render xcb-shm xml2 xslt z
+WANTLIB += readline secret-1 soup-2.4 sqlite3 ssl stdc++ webkitgtk-3.0
+WANTLIB += webp xcb xcb-render xcb-shm xml2 xslt z
 
 MODULES=	devel/gettext \
 		x11/gnome
@@ -37,9 +37,8 @@ LIB_DEPENDS=	audio/libmusicbrainz5 \
 		graphics/clutter/clutter-gst \
 		graphics/clutter/clutter-gtk \
 		graphics/evince \
-		multimedia/gstreamer1/plugins-base \
 		www/webkit,gtk3 \
-		x11/gnome/gjs>=1.36.0 \
+		x11/gnome/gjs \
 		x11/gtksourceview3
 
 LIBTOOL_FLAGS=	--tag=disable-static
