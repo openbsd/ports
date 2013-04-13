@@ -1,6 +1,6 @@
-$OpenBSD: patch-etc_tinyproxy_conf_in,v 1.1 2012/06/22 13:26:59 ajacoutot Exp $
---- etc/tinyproxy.conf.in.orig	Tue Oct 18 00:40:52 2011
-+++ etc/tinyproxy.conf.in	Tue Oct 18 00:41:09 2011
+$OpenBSD: patch-etc_tinyproxy_conf_in,v 1.2 2013/04/13 13:08:17 sthen Exp $
+--- etc/tinyproxy.conf.in.orig	Wed Mar  3 09:37:24 2010
++++ etc/tinyproxy.conf.in	Tue Apr  9 05:48:57 2013
 @@ -12,8 +12,8 @@
  # as the root user. Either the user or group name or the UID or GID
  # number may be used.
@@ -12,3 +12,14 @@ $OpenBSD: patch-etc_tinyproxy_conf_in,v 1.1 2012/06/22 13:26:59 ajacoutot Exp $
  
  #
  # Port: Specify the port which tinyproxy will listen on.  Please note
+@@ -24,8 +24,8 @@ Port 8888
+ 
+ #
+ # Listen: If you have multiple interfaces this allows you to bind to
+-# only one. If this is commented out, tinyproxy will bind to all
+-# interfaces present.
++# only one. If this is commented out, tinyproxy will bind to all IPv6
++# interfaces present. Use 0.0.0.0 to bind to all IPv4 interfaces.
+ #
+ #Listen 192.168.0.1
+ 
