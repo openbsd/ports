@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile,v 1.3 2005/12/26 18:00:16 brad Exp $
---- Makefile.orig	Fri Jun 11 14:05:26 2004
-+++ Makefile	Mon Dec 26 12:53:54 2005
+$OpenBSD: patch-Makefile,v 1.4 2013/04/13 08:53:10 ajacoutot Exp $
+--- Makefile.orig	Sat Aug 30 21:40:22 2008
++++ Makefile	Fri Apr 12 15:07:03 2013
 @@ -13,22 +13,22 @@ CFLAGS = $(CCFLAGS) -I../libjbig
- VERSION=1.6
+ VERSION=2.0
  
  all: lib pbm
 -	@echo "Enter 'make test' in order to start some automatic tests."
-+	@echo "Enter '$(MAKE) test' in order to start some automatic tests."
++#	@echo "Enter '$(MAKE) test' in order to start some automatic tests."
  
  lib:
 -	(cd libjbig;  make "CC=$(CC)" "CFLAGS=$(CFLAGS)")
@@ -31,4 +31,4 @@ $OpenBSD: patch-Makefile,v 1.3 2005/12/26 18:00:16 brad Exp $
 +	(cd pbmtools; $(MAKE) clean)
  
  distribution: clean
- 	rm -f libjbig/libjbig.a
+ 	rm -f libjbig/libjbig*.a

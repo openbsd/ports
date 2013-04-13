@@ -1,37 +1,38 @@
-# $OpenBSD: Makefile,v 1.37 2013/03/11 11:10:53 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2013/04/13 08:53:10 ajacoutot Exp $
 
-COMMENT=	lossless image compression library
+COMMENT =		lossless image compression library, with lightweight version
 
-DISTNAME=	jbigkit-1.6
-REVISION =	2
-SHARED_LIBS=	jbig	2.0
-CATEGORIES=	graphics
-MASTER_SITES=	http://www.cl.cam.ac.uk/~mgk25/download/
+DISTNAME =		jbigkit-2.0
 
-# GPL
-PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c
+SHARED_LIBS +=		jbig   3.0 # 2.0
+SHARED_LIBS +=		jbig85 3.0 # 2.0
 
-MAKE_ENV=	LD_LIBRARY_PATH="${WRKSRC}/libjbig"
-MAKE_FLAGS=	CC="${CC}" CCFLAGS="${CFLAGS} -Wall" \
-		VERSION="${LIBjbig_VERSION}"
+CATEGORIES =		graphics
 
-WRKDIST=	${WRKDIR}/jbigkit
+HOMEPAGE =		http://www.cl.cam.ac.uk/~mgk25/jbigkit/
+
+# GPLv2
+PERMIT_PACKAGE_CDROM =	Yes
+
+WANTLIB += c
+
+MASTER_SITES =		http://www.cl.cam.ac.uk/~mgk25/download/
+
+MAKE_FLAGS =		CC="${CC}" CCFLAGS="${CFLAGS} -Wall" VERSION="${LIBjbig_VERSION}"
+MAKE_ENV =		LD_LIBRARY_PATH="${WRKSRC}/libjbig"
+
+WRKDIST =		${WRKDIR}/jbigkit
 
 do-install:
-	${INSTALL_PROGRAM_DIR} ${PREFIX}/bin
-	${INSTALL_DATA_DIR} ${PREFIX}/include
-	${INSTALL_DATA_DIR} ${PREFIX}/lib
 	${INSTALL_MAN_DIR} ${PREFIX}/man/man1
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/jbig
-	cd ${WRKSRC}/pbmtools && ${INSTALL_PROGRAM} jbgtopbm pbmtojbg ${PREFIX}/bin && \
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/jbigkit
+	cd ${WRKSRC}/pbmtools && \
+		${INSTALL_PROGRAM} jbgtopbm pbmtojbg ${PREFIX}/bin && \
 		${INSTALL_MAN} jbgtopbm.1 pbmtojbg.1 ${PREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/libjbig/jbig.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/libjbig/libjbig.a ${PREFIX}/lib
-	@if [ -f ${WRKSRC}/libjbig/libjbig.so.${LIBjbig_VERSION} ]; then \
-	   ${INSTALL_DATA} ${WRKSRC}/libjbig/libjbig.so.${LIBjbig_VERSION} ${PREFIX}/lib; \
-	fi
-	${INSTALL_DATA} ${WRKSRC}/libjbig/jbig.doc ${PREFIX}/share/doc/jbig
+	${INSTALL_DATA} ${WRKSRC}/libjbig/jbig{,_ar,85}.h ${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/libjbig/libjbig{,85}.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/libjbig/libjbig{,85}.so.${LIBjbig_VERSION} ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/libjbig/jbig{,85}.txt ${PREFIX}/share/doc/jbigkit
 
 .include <bsd.port.mk>
 

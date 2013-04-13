@@ -9,6 +9,12 @@ provides ready-to-use compression and decompression programs with a
 simple command line interface (similar to the converters found in Jef
 Poskanzer's PBM graphics file conversion package).
 
+New in version 2.0 is an additional 'lightweight' version of the jbig
+library, named jbig85. This implements only the T.85 profile of the
+the full standard in the ITU-T recommendation, but is far smaller 
+and uses much less memory while encoding. See the homepage for more
+details: http://www.cl.cam.ac.uk/~mgk25/jbigkit/
+
 JBIG-KIT implements the specification
 
   International Standard ISO/IEC 11544:1993 and ITU-T Recommendation
