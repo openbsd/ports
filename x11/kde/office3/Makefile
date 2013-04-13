@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.80 2013/03/20 19:13:50 jeremy Exp $
+# $OpenBSD: Makefile,v 1.81 2013/04/13 08:54:19 ajacoutot Exp $
 
 COMMENT=		office suite for KDE
 
 VERSION=		1.6.3
-REVISION =		27
+REVISION =		28
 CATEGORIES=		x11 x11/kde productivity
 VMEM_WARNING=		Yes
 MASTER_SITES?=		${MASTER_SITE_KDE:S@$@stable/koffice-${VERSION}/src/@}
@@ -97,7 +97,7 @@ LIB_DEPENDS=	x11/kde/libs3 \
 		${MODRUBY_LIB_DEPENDS}
 
 WANTLIB= GL GLU GraphicsMagick>=1 Half ICE Iex IlmImf IlmThread Imath \
-	MagickCore>=1 SM X11 Xcursor Xdamage Xext \
+	MagickCore>=1 SM X11 Xcursor Xdamage Xext FLAC fam pthread-stubs \
 	Xfixes Xft Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2>=5 \
 	artsflow artsflow_idl audiofile bz2 c crypto drm exif>=12 expat \
 	fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gsf-1 \
