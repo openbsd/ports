@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/04/13 09:27:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2013/04/13 09:33:29 ajacoutot Exp $
 
 BROKEN-powerpc=	help2man: can't get `--help' info from ./luakit
 
@@ -6,7 +6,7 @@ COMMENT=	fast, small, webkit based browser written in lua
 
 VERSION=	2012.09.13.rc1
 
-REVISION=	4
+REVISION=	5
 
 DISTNAME=	luakit-${VERSION}
 
@@ -43,8 +43,7 @@ LIB_DEPENDS=	lang/luajit \
 		www/webkit
 
 # webkit browsing
-RUN_DEPENDS +=	multimedia/gstreamer1/plugins-libav \
-		multimedia/gstreamer1/plugins-good
+RUN_DEPENDS +=	multimedia/gstreamer1/plugins-libav
 
 MAKE_ENV+= USE_LUAJIT=1 USE_UNIQUE=1 INSTALLDIR=${PREFIX} \
 	MANDIR=${PREFIX}
