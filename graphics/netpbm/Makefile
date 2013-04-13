@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2013/03/27 21:53:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.63 2013/04/13 08:53:47 ajacoutot Exp $
 
 COMMENT=	toolkit for converting images between different formats
 
@@ -6,6 +6,7 @@ DISTNAME=	netpbm-10.35.88
 SHARED_LIBS=	netpbm	2.0
 CATEGORIES=	graphics
 HOMEPAGE=	http://netpbm.sourceforge.net/
+REVISION=	0
 
 PERMIT_PACKAGE_CDROM=	Yes
 
@@ -18,7 +19,7 @@ WANTLIB=	X11 Xau Xdmcp c jasper jbig jpeg m png pthread-stubs \
 LIB_DEPENDS=	graphics/tiff \
 		graphics/jpeg \
 		graphics/png \
-		graphics/jbigkit \
+		graphics/jbigkit>=2.0 \
 		graphics/jasper \
 		textproc/libxml
 

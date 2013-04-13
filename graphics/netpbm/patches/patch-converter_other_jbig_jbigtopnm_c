@@ -1,0 +1,17 @@
+$OpenBSD: patch-converter_other_jbig_jbigtopnm_c,v 1.1 2013/04/13 08:53:47 ajacoutot Exp $
+
+Fix with jbigkit>=2.0:
+jbg_strerror() no longer has a language attribute and the JBG_EN,
+JBG_DE_8859_1, JBG_DE_UTF_8 constants no longer exist.
+
+--- converter/other/jbig/jbigtopnm.c.orig	Sat Apr 13 10:01:50 2013
++++ converter/other/jbig/jbigtopnm.c	Sat Apr 13 10:01:32 2013
+@@ -231,7 +231,7 @@ int main (int argc, char **argv)
+         pm_error("Problem while reading input file '%s", fnin);
+     if (result != JBG_EOK && result != JBG_EOK_INTR) 
+         pm_error("Problem with input file '%s': %s\n", 
+-                 fnin, jbg_strerror(result, JBG_EN));
++                 fnin, jbg_strerror(result));
+     if (plane >= 0 && jbg_dec_getplanes(&s) <= plane) 
+         pm_error("Image has only %d planes!\n", jbg_dec_getplanes(&s));
+ 
