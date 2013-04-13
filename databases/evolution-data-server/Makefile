@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.136 2013/04/12 05:46:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.137 2013/04/13 16:01:37 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
 GNOME_VERSION=		3.8.0
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		databases productivity
 
@@ -57,7 +57,6 @@ LIB_DEPENDS= 		databases/db/v4 \
 			x11/gnome/online-accounts
 
 MODPY_RUNDEP=		No
-MODPY_ADJ_FILES=	addressbook/libebook/gen-western-table.py
 MODGNOME_TOOLS= 	goi vala
 MODGNOME_CPPFLAGS=	-I${LOCALBASE}/include/db4
 
@@ -76,7 +75,6 @@ CONFIGURE_ARGS +=	--disable-uoa
 pre-configure:
 	perl -pi -e 's,/usr/sbin/imapd,${LOCALBASE}/libexec/imapd,g' \
 		${WRKSRC}/camel/camel-imapx-settings.c \
-		${WRKSRC}/camel/providers/imap/camel-imap-settings.c \
 		${WRKSRC}/docs/reference/camel/html/CamelIMAPXSettings.html
 
 post-install:
