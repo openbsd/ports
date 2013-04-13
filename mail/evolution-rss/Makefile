@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/11 11:23:50 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2013/04/13 09:14:06 landry Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		RSS reader plugin for evolution
 
 GNOME_PROJECT=		evolution-rss
 GNOME_VERSION=		0.3.92
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		mail
 
@@ -28,9 +28,9 @@ WANTLIB += db dbus-1 dbus-glib-1 ebackend-1.2 ebook-1.2 ecal-1.2
 WANTLIB += edataserver-1.2 edataserverui-3.0 enchant expat ffi
 WANTLIB += fontconfig freetype gailutil-3 gcrypt gdk-3 gdk_pixbuf-2.0
 WANTLIB += geoclue gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3
-WANTLIB += gnome-keyring gobject-2.0 gpg-error gssapi gstapp-0.10
-WANTLIB += gstaudio-0.10 gstbase-0.10 gstfft-0.10 gstinterfaces-0.10
-WANTLIB += gstpbutils-0.10 gstreamer-0.10 gstvideo-0.10 gthread-2.0
+WANTLIB += gnome-keyring gobject-2.0 gpg-error gssapi gstapp-1.0
+WANTLIB += gstaudio-1.0 gstbase-1.0 gstfft-1.0
+WANTLIB += gstpbutils-1.0 gstreamer-1.0 gstvideo-1.0 gthread-2.0
 WANTLIB += gtk-3 gtkhtml-4.0 gtkhtml-editor-4.0 ical icalss icalvcal
 WANTLIB += icudata icui18n icuuc javascriptcoregtk-3.0 jpeg krb5
 WANTLIB += m nspr4 nss3 nssutil3 orc-0.4 pango-1.0 pangocairo-1.0

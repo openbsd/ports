@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2013/04/10 09:40:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.94 2013/04/13 09:14:06 landry Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.8.0
-REVISION=		4
+REVISION=		5
 
 CATEGORIES=		x11
 
@@ -21,9 +21,9 @@ WANTLIB += cups dbus-1 dbus-glib-1 enchant execinfo expat ffi
 WANTLIB += fontconfig freetype gailutil-3 gcrypt gdbm gdk-3 gdk_pixbuf-2.0
 WANTLIB += geoclue gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3
 WANTLIB += gnome-keyring gnome-menu-3 goa-1.0 goa-backend-1.0
-WANTLIB += gobject-2.0 gpg-error graphite2 gstapp-0.10 gstaudio-0.10
-WANTLIB += gstbase-0.10 gstfft-0.10 gstinterfaces-0.10 gstpbutils-0.10
-WANTLIB += gstreamer-0.10 gstvideo-0.10 gthread-2.0 gtk-3 gtop-2.0
+WANTLIB += gobject-2.0 gpg-error graphite2 gstapp-1.0 gstaudio-1.0
+WANTLIB += gstbase-1.0 gstfft-1.0 gstpbutils-1.0
+WANTLIB += gstreamer-1.0 gstvideo-1.0 gthread-2.0 gtk-3 gtop-2.0
 WANTLIB += harfbuzz ibus-1.0 icudata icui18n icule icuuc javascriptcoregtk-3.0
 WANTLIB += jpeg json json-glib-1.0 kvm lcms2 ltdl m notify ogg
 WANTLIB += orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre

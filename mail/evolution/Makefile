@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.192 2013/04/02 16:16:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.193 2013/04/13 09:14:06 landry Exp $
 
 BROKEN=			needs webkit>=1.10.0
 
@@ -13,7 +13,7 @@ GNOME_VERSION=		3.6.4
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}
 
-REVISION-main=		0
+REVISION-main=		1
 
 # NOTE: when R changes, increment EVO_VERSION accordingly and bump:
 # mail/evolution-ews
@@ -42,7 +42,7 @@ WANTLIB-main += atk-1.0 c cairo pango-1.0 pangocairo-1.0
 WANTLIB-main += ICE SM cairo-gobject canberra-gtk3 ebackend-1.2
 WANTLIB-main += gailutil-3 gdata gmodule-2.0 gnome-desktop-3 goa-1.0
 WANTLIB-main += gweather-3 icalvcal ldap-2.4 m nspr4 nss3 plc4 smime3
-WANTLIB-main += soup-2.4 gstreamer-0.10 soup-gnome-2.4 webkitgtk-3.0
+WANTLIB-main += soup-2.4 gstreamer-1.0 soup-gnome-2.4 webkitgtk-3.0
 
 WANTLIB-plugins += ${WANTLIB}
 WANTLIB-plugins += pst

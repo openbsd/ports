@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/04/08 07:19:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2013/04/13 09:14:06 landry Exp $
 
 SHARED_ONLY =	Yes
 
@@ -10,7 +10,7 @@ DISTNAME =	gmpc-plugins-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-wikipedia =	gmpc-wikipedia-${VERSION}
 REVISION-main =		2
-REVISION-wikipedia =	1
+REVISION-wikipedia =	2
 
 CATEGORIES =	audio
 
@@ -43,10 +43,10 @@ WANTLIB-main += avahi-client avahi-common avahi-glib
 LIB_DEPENDS-wikipedia =	${LIB_DEPENDS} \
 			www/webkit>=1.6.1v0
 WANTLIB-wikipedia =	${WANTLIB} \
-			ICE SM Xt enchant gailutil gstapp-0.10 gstbase-0.10 icui18n \
-			gstinterfaces-0.10 gstpbutils-0.10 gstreamer-0.10 gstvideo-0.10 \
+			ICE SM Xt enchant gailutil gstapp-1.0 gstbase-1.0 icui18n \
+			gstpbutils-1.0 gstreamer-1.0 gstvideo-1.0 \
 			jpeg soup-2.4 webkitgtk-1.0 xslt javascriptcoregtk-1.0 dbus-1 \
-			dbus-glib-1 geoclue gstaudio-0.10 gstfft-0.10 orc-0.4 pthread
+			dbus-glib-1 geoclue gstaudio-1.0 gstfft-1.0 orc-0.4 pthread
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo drm
