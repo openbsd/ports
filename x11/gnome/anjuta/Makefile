@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2013/04/05 15:26:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.84 2013/04/13 10:53:33 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
 GNOME_VERSION=		3.8.0
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 
@@ -17,10 +17,6 @@ HOMEPAGE=		http://www.anjuta.org/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES=		devel/dconf \
-			devel/gettext \
-			lang/python \
-			x11/gnome
 WANTLIB += GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xt apr-1 aprutil-1 asn1
 WANTLIB += atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
@@ -28,23 +24,30 @@ WANTLIB += crypto db dbus-1 dbus-glib-1 devhelp-3 enchant expat
 WANTLIB += ffi fontconfig freetype gailutil-3 gcrypt gda-5.0 gdk-3
 WANTLIB += gdk_pixbuf-2.0 gdl-3 geoclue gio-2.0 gladeui-2 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gpg-error graphite2 gssapi
-WANTLIB += gstapp-0.10 gstaudio-0.10 gstbase-0.10 gstfft-0.10
-WANTLIB += gstinterfaces-0.10 gstpbutils-0.10 gstreamer-0.10 gstvideo-0.10
-WANTLIB += gthread-2.0 gtk-3 gtksourceview-3.0 harfbuzz icudata
-WANTLIB += icui18n icule icuuc javascriptcoregtk-3.0 jpeg krb5
-WANTLIB += m magic ncurses neon orc-0.4 pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png proxy pthread pthread-stubs
-WANTLIB += sasl2 secret-1 soup-2.4 sqlite3 ssl stdc++ svn_client-1
-WANTLIB += svn_delta-1 svn_diff-1 svn_fs-1 svn_fs_base-1 svn_fs_fs-1
-WANTLIB += svn_fs_util-1 svn_ra-1 svn_ra_local-1 svn_ra_neon-1
-WANTLIB += svn_ra_svn-1 svn_repos-1 svn_subr-1 svn_wc-1 util vte2_90
-WANTLIB += webkitgtk-3.0 xcb xcb-render xcb-shm xml2 xslt z
+WANTLIB += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
+WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
+WANTLIB += gtksourceview-3.0 harfbuzz icudata icui18n icule icuuc
+WANTLIB += javascriptcoregtk-3.0 jpeg krb5 m magic ncurses neon
+WANTLIB += orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 png proxy pthread pthread-stubs sasl2 secret-1
+WANTLIB += soup-2.4 sqlite3 ssl stdc++ svn_client-1 svn_delta-1
+WANTLIB += svn_diff-1 svn_fs-1 svn_fs_base-1 svn_fs_fs-1 svn_fs_util-1
+WANTLIB += svn_ra-1 svn_ra_local-1 svn_ra_neon-1 svn_ra_svn-1
+WANTLIB += svn_repos-1 svn_subr-1 svn_wc-1 util vte2_90 webkitgtk-3.0
+WANTLIB += webp xcb xcb-render xcb-shm xml2 xslt z
 WANTLIB += ${MODPY_WANTLIB}
 
-BUILD_DEPENDS=		devel/autogen>=5.6.5 \
+MODULES=		devel/dconf \
+			devel/gettext \
+			lang/python \
+			x11/gnome
+
+BUILD_DEPENDS=		devel/autogen \
 			devel/bison
+
 RUN_DEPENDS=		misc/shared-mime-info \
 			devel/subversion,-gnome-keyring
+
 LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			devel/glade \
 			devel/subversion \
