@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/09/28 14:46:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/04/13 12:36:26 ajacoutot Exp $
 @pkgpath mail/evolution-plugin-rss
 @bin bin/evolution-import-rss
 lib/evolution/${EVO_VERSION}/modules/evolution-module-rss.so
@@ -50,7 +50,10 @@ share/locale/pt/LC_MESSAGES/evolution-rss.mo
 share/locale/pt_BR/LC_MESSAGES/evolution-rss.mo
 share/locale/ro/LC_MESSAGES/evolution-rss.mo
 share/locale/ru/LC_MESSAGES/evolution-rss.mo
+share/locale/sk/LC_MESSAGES/evolution-rss.mo
 share/locale/sl/LC_MESSAGES/evolution-rss.mo
+share/locale/sr/LC_MESSAGES/evolution-rss.mo
+share/locale/sr@latin/LC_MESSAGES/evolution-rss.mo
 share/locale/sv/LC_MESSAGES/evolution-rss.mo
 share/locale/ta/LC_MESSAGES/evolution-rss.mo
 share/locale/te/LC_MESSAGES/evolution-rss.mo
