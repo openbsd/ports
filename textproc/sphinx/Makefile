@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/04/13 08:46:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2013/04/13 10:58:41 sthen Exp $
 
 COMMENT =	free open-source SQL full-text search engine
 BROKEN-hppa =	internal compiler error: internal consistency failure
@@ -30,7 +30,10 @@ SUBST_VARS =		LOCALSTATEDIR
 CONFIGURE_ARGS =	--with-unixodbc=no
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			ac_cv_header_execinfo_h=no
+# checks for execinfo header but not libexecinfo for backtrace* functions,
+# so it's not used anyway
 
 FLAVORS =		pgsql
 FLAVOR ?=
