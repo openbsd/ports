@@ -1,23 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/01/22 07:21:47 ajacoutot Exp $
-include/evolution-data-server-${EVO_VERSION}/ews/
-include/evolution-data-server-${EVO_VERSION}/ews/e-ews-connection.h
-include/evolution-data-server-${EVO_VERSION}/ews/e-ews-enums.h
-include/evolution-data-server-${EVO_VERSION}/ews/e-ews-enumtypes.h
-include/evolution-data-server-${EVO_VERSION}/ews/e-ews-folder.h
-include/evolution-data-server-${EVO_VERSION}/ews/e-ews-item-change.h
-include/evolution-data-server-${EVO_VERSION}/ews/e-ews-item.h
-include/evolution-data-server-${EVO_VERSION}/ews/e-ews-message.h
-include/evolution-data-server-${EVO_VERSION}/ews/e-ews-oof-settings.h
-include/evolution-data-server-${EVO_VERSION}/ews/ews-errors.h
-lib/evolution-data-server-${EVO_VERSION}/
-lib/evolution-data-server-${EVO_VERSION}/libeews-1.2.la
-@lib lib/evolution-data-server-${EVO_VERSION}/libeews-1.2.so.${LIBeews-1.2_VERSION}
-lib/evolution-data-server-${EVO_VERSION}/libewsutils.la
-@lib lib/evolution-data-server-${EVO_VERSION}/libewsutils.so.${LIBewsutils_VERSION}
+@comment $OpenBSD: PLIST,v 1.6 2013/04/13 12:37:27 ajacoutot Exp $
+include/evolution-data-server/ews/
+include/evolution-data-server/ews/e-ews-connection.h
+include/evolution-data-server/ews/e-ews-enums.h
+include/evolution-data-server/ews/e-ews-enumtypes.h
+include/evolution-data-server/ews/e-ews-folder.h
+include/evolution-data-server/ews/e-ews-item-change.h
+include/evolution-data-server/ews/e-ews-item.h
+include/evolution-data-server/ews/e-ews-message.h
+include/evolution-data-server/ews/e-ews-oof-settings.h
+include/evolution-data-server/ews/ews-errors.h
 lib/evolution-data-server/addressbook-backends/libebookbackendews.so
 lib/evolution-data-server/calendar-backends/libecalbackendews.so
 lib/evolution-data-server/camel-providers/libcamelews.so
 lib/evolution-data-server/camel-providers/libcamelews.urls
+lib/evolution-data-server/libeews-1.2.la
+@lib lib/evolution-data-server/libeews-1.2.so.${LIBeews-1.2_VERSION}
+lib/evolution-data-server/libewsutils.la
+@lib lib/evolution-data-server/libewsutils.so.${LIBewsutils_VERSION}
 lib/evolution-data-server/registry-modules/module-ews-backend.so
 lib/evolution/${EVO_VERSION}/modules/module-ews-configuration.so
 lib/liblzx.la
