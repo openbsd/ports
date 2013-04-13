@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.3 2012/04/27 08:18:59 rpointel Exp $
+@comment $OpenBSD: PLIST-tests,v 1.4 2013/04/13 22:31:42 fgsch Exp $
 @option no-default-conflict
 @conflict python-tests->=2.7,<2.8
 lib/python2.7/test/
@@ -248,6 +248,9 @@ lib/python2.7/test/mapping_tests.py
 lib/python2.7/test/mapping_tests.pyc
 lib/python2.7/test/mapping_tests.pyo
 lib/python2.7/test/math_testcases.txt
+lib/python2.7/test/mp_fork_bomb.py
+lib/python2.7/test/mp_fork_bomb.pyc
+lib/python2.7/test/mp_fork_bomb.pyo
 lib/python2.7/test/nokia.pem
 lib/python2.7/test/nullcert.pem
 lib/python2.7/test/outstanding_bugs.py
@@ -289,6 +292,12 @@ lib/python2.7/test/reperf.pyo
 lib/python2.7/test/sample_doctest.py
 lib/python2.7/test/sample_doctest.pyc
 lib/python2.7/test/sample_doctest.pyo
+lib/python2.7/test/sample_doctest_no_docstrings.py
+lib/python2.7/test/sample_doctest_no_docstrings.pyc
+lib/python2.7/test/sample_doctest_no_docstrings.pyo
+lib/python2.7/test/sample_doctest_no_doctests.py
+lib/python2.7/test/sample_doctest_no_doctests.pyc
+lib/python2.7/test/sample_doctest_no_doctests.pyo
 lib/python2.7/test/script_helper.py
 lib/python2.7/test/script_helper.pyc
 lib/python2.7/test/script_helper.pyo
@@ -300,8 +309,6 @@ lib/python2.7/test/sha256.pem
 lib/python2.7/test/sortperf.py
 lib/python2.7/test/sortperf.pyc
 lib/python2.7/test/sortperf.pyo
-lib/python2.7/test/ssl_cert.pem
-lib/python2.7/test/ssl_key.pem
 lib/python2.7/test/string_tests.py
 lib/python2.7/test/string_tests.pyc
 lib/python2.7/test/string_tests.pyo
@@ -309,6 +316,9 @@ lib/python2.7/test/subprocessdata/
 lib/python2.7/test/subprocessdata/sigchild_ignore.py
 lib/python2.7/test/subprocessdata/sigchild_ignore.pyc
 lib/python2.7/test/subprocessdata/sigchild_ignore.pyo
+lib/python2.7/test/symlink_support.py
+lib/python2.7/test/symlink_support.pyc
+lib/python2.7/test/symlink_support.pyo
 lib/python2.7/test/test_MimeWriter.py
 lib/python2.7/test/test_MimeWriter.pyc
 lib/python2.7/test/test_MimeWriter.pyo
@@ -327,6 +337,9 @@ lib/python2.7/test/test___future__.pyo
 lib/python2.7/test/test__locale.py
 lib/python2.7/test/test__locale.pyc
 lib/python2.7/test/test__locale.pyo
+lib/python2.7/test/test__osx_support.py
+lib/python2.7/test/test__osx_support.pyc
+lib/python2.7/test/test__osx_support.pyo
 lib/python2.7/test/test_abc.py
 lib/python2.7/test/test_abc.pyc
 lib/python2.7/test/test_abc.pyo
@@ -689,6 +702,9 @@ lib/python2.7/test/test_file.pyo
 lib/python2.7/test/test_file2k.py
 lib/python2.7/test/test_file2k.pyc
 lib/python2.7/test/test_file2k.pyo
+lib/python2.7/test/test_file_eintr.py
+lib/python2.7/test/test_file_eintr.pyc
+lib/python2.7/test/test_file_eintr.pyo
 lib/python2.7/test/test_filecmp.py
 lib/python2.7/test/test_filecmp.pyc
 lib/python2.7/test/test_filecmp.pyo
@@ -1334,6 +1350,9 @@ lib/python2.7/test/test_tk.pyo
 lib/python2.7/test/test_tokenize.py
 lib/python2.7/test/test_tokenize.pyc
 lib/python2.7/test/test_tokenize.pyo
+lib/python2.7/test/test_tools.py
+lib/python2.7/test/test_tools.pyc
+lib/python2.7/test/test_tools.pyo
 lib/python2.7/test/test_trace.py
 lib/python2.7/test/test_trace.pyc
 lib/python2.7/test/test_trace.pyo
@@ -1493,6 +1512,7 @@ lib/python2.7/test/test_zlib.pyo
 lib/python2.7/test/testall.py
 lib/python2.7/test/testall.pyc
 lib/python2.7/test/testall.pyo
+lib/python2.7/test/testbz2_bigmem.bz2
 lib/python2.7/test/testcodec.py
 lib/python2.7/test/testcodec.pyc
 lib/python2.7/test/testcodec.pyo

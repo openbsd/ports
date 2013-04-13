@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.96 2013/03/31 21:35:26 bcallah Exp $
+# $OpenBSD: Makefile.inc,v 1.97 2013/04/13 22:31:42 fgsch Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -94,7 +94,6 @@ WANTLIB-tkinter +=	c pthread
 
 .if ${VERSION} < 3.2
 .if ${PROPERTIES:Mlp64}
-PATCH_LIST =		patch-* sup64-*
 PKG_ARGS+=	-Dmm=0
 .else
 PKG_ARGS+=	-Dmm=1
@@ -123,15 +122,11 @@ CONFIGURE_ENV+= OPT='${CFLAGS} -fPIC' \
 		LDFLAGS='-L${LOCALBASE}/lib/' SVNVERSION=no \
 		LOCALBASE=${LOCALBASE} X11BASE=${X11BASE}
 MAKE_ENV+=	LOCALBASE=${LOCALBASE} X11BASE=${X11BASE}
-.if ${VERSION} < 3.2
-MAKE_FLAGS+=	LDLIBRARY=libpython${VERSION}.so.${LIBpython${VERSION}_VERSION}
-MAKE_FLAGS+=	INSTSONAME=libpython${VERSION}.so.${LIBpython${VERSION}_VERSION}
-.endif
 MAKE_FLAGS+=	LD_LIBRARY_PATH=${WRKSRC} PATH="${WRKDIST}:${PORTPATH}"
 MAKE_FLAGS+=	LDFLAGS='-L${WRKSRC}'
 FAKE_FLAGS+=	RANLIB=:
 
-ALL_TARGET?=	everything ./Lib/plat-openbsd5
+ALL_TARGET =	all ./Lib/plat-openbsd5
 
 post-extract:
 	rm -r ${WRKDIST}/Modules/expat

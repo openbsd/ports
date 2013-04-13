@@ -1,0 +1,19 @@
+$OpenBSD: patch-configure_ac,v 1.1 2013/04/13 22:31:42 fgsch Exp $
+
+Fix wrong value of INSTSONAME. SOVERSION defaults to 1.0 which leads to
+INSTSONAME being libpython2.7.so.1.0, which is incorrect.
+This breaks linking for ports that look for INSTSONAME in their configure
+stage. 
+
+--- configure.ac.orig	Sat Apr  6 15:02:41 2013
++++ configure.ac	Sun Apr  7 11:52:14 2013
+@@ -890,6 +890,9 @@ if test $enable_shared = "yes"; then
+ 	      FreeBSD*)
+ 		SOVERSION=`echo $SOVERSION|cut -d "." -f 1`
+ 		;;
++	      OpenBSD*)
++		SOVERSION=${LIBpython2.7_VERSION}
++		;;
+ 	  esac
+ 	  INSTSONAME="$LDLIBRARY".$SOVERSION
+ 	  ;;

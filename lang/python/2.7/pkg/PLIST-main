@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2012/04/27 08:18:59 rpointel Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2013/04/13 22:31:42 fgsch Exp $
 @option no-default-conflict
 @conflict python->=2.7,<2.8
 @conflict python-bz2->=2.7,<2.8
@@ -9,7 +9,9 @@
 @comment bin/2to3
 @comment bin/pydoc
 bin/pydoc2.7
+@comment bin/python
 @comment bin/python-config
+@comment bin/python2
 @comment bin/python2-config
 @bin bin/python2.7
 bin/python2.7-2to3
@@ -107,6 +109,7 @@ include/python2.7/ucnhash.h
 include/python2.7/unicodeobject.h
 include/python2.7/warnings.h
 include/python2.7/weakrefobject.h
+@comment lib/libpython2.7.so
 @lib lib/libpython2.7.so.${LIBpython2.7_VERSION}
 lib/pkgconfig/python-2.7.pc
 lib/pkgconfig/python.pc
@@ -176,6 +179,9 @@ lib/python2.7/__phello__.foo.pyo
 lib/python2.7/_abcoll.py
 lib/python2.7/_abcoll.pyc
 lib/python2.7/_abcoll.pyo
+lib/python2.7/_osx_support.py
+lib/python2.7/_osx_support.pyc
+lib/python2.7/_osx_support.pyo
 lib/python2.7/_pyio.py
 lib/python2.7/_pyio.pyc
 lib/python2.7/_pyio.pyo
@@ -312,7 +318,6 @@ lib/python2.7/config/config.c
 lib/python2.7/config/config.c.in
 lib/python2.7/config/install-sh
 lib/python2.7/config/libpython2.7.a
-@lib lib/python2.7/config/libpython2.7.so.${LIBpython2.7_VERSION}
 lib/python2.7/config/makesetup
 lib/python2.7/config/python.o
 lib/python2.7/contextlib.py
@@ -452,11 +457,10 @@ lib/python2.7/distutils/command/sdist.pyo
 lib/python2.7/distutils/command/upload.py
 lib/python2.7/distutils/command/upload.pyc
 lib/python2.7/distutils/command/upload.pyo
-@comment lib/python2.7/distutils/command/wininst-9.0-${MACHINE_ARCH}.exe
 @comment lib/python2.7/distutils/command/wininst-6.0.exe
 @comment lib/python2.7/distutils/command/wininst-7.1.exe
 @comment lib/python2.7/distutils/command/wininst-8.0.exe
-@comment lib/python2.7/distutils/command/wininst-9.0-${MACHINE_ARCH}.exe
+@comment lib/python2.7/distutils/command/wininst-9.0-amd64.exe
 @comment lib/python2.7/distutils/command/wininst-9.0.exe
 lib/python2.7/distutils/config.py
 lib/python2.7/distutils/config.pyc
@@ -1329,6 +1333,9 @@ lib/python2.7/json/tests/test_separators.pyo
 lib/python2.7/json/tests/test_speedups.py
 lib/python2.7/json/tests/test_speedups.pyc
 lib/python2.7/json/tests/test_speedups.pyo
+lib/python2.7/json/tests/test_tool.py
+lib/python2.7/json/tests/test_tool.pyc
+lib/python2.7/json/tests/test_tool.pyo
 lib/python2.7/json/tests/test_unicode.py
 lib/python2.7/json/tests/test_unicode.pyc
 lib/python2.7/json/tests/test_unicode.pyo
@@ -1339,7 +1346,7 @@ lib/python2.7/keyword.py
 lib/python2.7/keyword.pyc
 lib/python2.7/keyword.pyo
 lib/python2.7/lib-dynload/
-lib/python2.7/lib-dynload/Python-2.7.3-py2.7.egg-info
+lib/python2.7/lib-dynload/Python-2.7.4-py2.7.egg-info
 lib/python2.7/lib-dynload/_bisect.so
 lib/python2.7/lib-dynload/_codecs_cn.so
 lib/python2.7/lib-dynload/_codecs_hk.so
@@ -1401,9 +1408,9 @@ lib/python2.7/lib-dynload/unicodedata.so
 lib/python2.7/lib-dynload/zlib.so
 lib/python2.7/lib2to3/
 lib/python2.7/lib2to3/Grammar.txt
-lib/python2.7/lib2to3/Grammar2.7.3.final.0.pickle
+lib/python2.7/lib2to3/Grammar2.7.4.final.0.pickle
 lib/python2.7/lib2to3/PatternGrammar.txt
-lib/python2.7/lib2to3/PatternGrammar2.7.3.final.0.pickle
+lib/python2.7/lib2to3/PatternGrammar2.7.4.final.0.pickle
 lib/python2.7/lib2to3/__init__.py
 lib/python2.7/lib2to3/__init__.pyc
 lib/python2.7/lib2to3/__init__.pyo
@@ -2283,6 +2290,8 @@ lib/python2.7/xmlrpclib.pyo
 lib/python2.7/zipfile.py
 lib/python2.7/zipfile.pyc
 lib/python2.7/zipfile.pyo
+@comment man/man1/python.1
+@comment man/man1/python2.1
 @man man/man1/python2.7.1
 share/doc/python2.7/
 share/doc/python2.7/CHANGES.OpenBSD
