@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.87 2013/03/03 11:11:08 espie Exp $
+# $OpenBSD: dpb,v 1.88 2013/04/13 10:02:11 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -58,33 +58,37 @@ BEGIN {
 		return $msg;
 	}
 
-	$SIG{__WARN__} = sub {
-		my $_ = pop @_;
-		s/(.*)( at .*? line .*?\n$)/$1/s;
-		push @_, $_;
-		$SIG{__WARN__} = $oldwarn;
-		if (defined $reporter) {
-			$reporter->myprint(&trace_message);
-		} else {
-			warn &trace_message;
-		}
-	};
+	my $trace = 1;
+	if ($trace) {
+		$SIG{__WARN__} = sub {
+			my $_ = pop @_;
+			s/(.*)( at .*? line .*?\n$)/$1/s;
+			push @_, $_;
+			$SIG{__WARN__} = $oldwarn;
+			if (defined $reporter) {
+				$reporter->myprint(&trace_message);
+			} else {
+				warn &trace_message;
+			}
+		};
 
-	$SIG{__DIE__} = sub {
-		my $_ = pop @_;
-		s/(.*)( at .*? line .*?\n$)/$1/s;
-		push @_, $_;
-		if (defined $reporter) {
-			$reporter->reset_cursor;
-		}
-		$SIG{__DIE__} = $olddie;
-		die &trace_message;
-	};
+		$SIG{__DIE__} = sub {
+	 		die @_ if $^S;
+			my $_ = pop @_;
+			s/(.*)( at .*? line .*?\n$)/$1/s;
+			push @_, $_;
+			if (defined $reporter) {
+				$reporter->reset_cursor;
+			}
+			$SIG{__DIE__} = $olddie;
+			die join("\n", @_, &trace_message);
+		};
 
-	$SIG{INFO} = sub {
-		print "Trace:\n", &trace_message;
-		sleep 1;
-	};
+		$SIG{INFO} = sub {
+			print "Trace:\n", &trace_message;
+			sleep 1;
+		};
+	}
 
 }
 
