@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2013/04/13 10:06:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.95 2013/04/13 12:08:32 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
 GNOME_VERSION=	3.8.0
+REVISION=	0
 
 # NOTE: when M changes, increment M accordingly
 M=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -61,7 +62,7 @@ MODULES=	devel/dconf \
 		devel/gettext \
 		x11/gnome
 
-LIBTOOL_FLAGS=		--tag=disable-static
+LIBTOOL_FLAGS=	--tag=disable-static
 
 MODGNOME_DESKTOP_FILE=	Yes
 

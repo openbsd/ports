@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2013/04/13 10:06:08 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.27 2013/04/13 12:08:32 ajacoutot Exp $
 @bin bin/ephy-profile-migrator
 @bin bin/epiphany
 @man man/man1/epiphany.1
@@ -65,8 +65,6 @@ share/locale/hr/LC_MESSAGES/epiphany.mo
 share/locale/hu/LC_MESSAGES/epiphany.mo
 share/locale/hy/LC_MESSAGES/epiphany.mo
 share/locale/id/LC_MESSAGES/epiphany.mo
-share/locale/ig/
-share/locale/ig/LC_MESSAGES/
 share/locale/ig/LC_MESSAGES/epiphany.mo
 share/locale/is/LC_MESSAGES/epiphany.mo
 share/locale/it/LC_MESSAGES/epiphany.mo
@@ -121,8 +119,6 @@ share/locale/uz/LC_MESSAGES/epiphany.mo
 share/locale/uz@cyrillic/LC_MESSAGES/epiphany.mo
 share/locale/vi/LC_MESSAGES/epiphany.mo
 share/locale/wa/LC_MESSAGES/epiphany.mo
-share/locale/yo/
-share/locale/yo/LC_MESSAGES/
 share/locale/yo/LC_MESSAGES/epiphany.mo
 share/locale/zh_CN/LC_MESSAGES/epiphany.mo
 share/locale/zh_HK/LC_MESSAGES/epiphany.mo
