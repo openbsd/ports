@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.58 2013/04/02 16:21:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2013/04/13 09:27:34 ajacoutot Exp $
 
 COMMENT =	lightweight web browser
 
 XFCE_VERSION =	0.4.8
 XFCE_GOODIE =	midori
-REVISION =	0
+REVISION =	1
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 CATEGORIES =	www
@@ -42,8 +42,8 @@ LIB_DEPENDS +=	devel/libnotify \
 		devel/libsoup>=2.28.0
 
 # webkit browsing
-RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-ffmpeg \
-		multimedia/gstreamer-0.10/plugins-good
+RUN_DEPENDS +=	multimedia/gstreamer1/plugins-libav \
+		multimedia/gstreamer1/plugins-good
 
 BUILD_DEPENDS =	textproc/py-docutils \
 		lang/vala \

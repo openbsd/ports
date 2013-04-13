@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2013/04/03 06:57:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.92 2013/04/13 09:27:34 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
 GNOME_VERSION=	3.4.3
-REVISION=	7
+REVISION=	8
 
 # NOTE: when M changes, increment M accordingly
 M=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -53,8 +53,8 @@ LIB_DEPENDS=	textproc/libxslt \
 		x11/gnome/libgnome-keyring
 
 # webkit browsing
-RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-ffmpeg \
-		multimedia/gstreamer-0.10/plugins-good
+RUN_DEPENDS +=	multimedia/gstreamer1/plugins-libav \
+		multimedia/gstreamer1/plugins-good
 
 MODULES=	devel/dconf \
 		devel/gettext \

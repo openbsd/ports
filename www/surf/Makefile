@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 17:08:51 bcallah Exp $
+# $OpenBSD: Makefile,v 1.18 2013/04/13 09:27:34 ajacoutot Exp $
 
 COMMENT =	simple webbrowser based on webkit/gtk+
 
 DISTNAME =	surf-0.6
 CATEGORIES =	www
 HOMEPAGE =	http://surf.suckless.org/
+REVISION =	0
 
 MAINTAINER=	Joerg Jung <jung@openbsd.org>
 
@@ -27,8 +28,8 @@ LIB_DEPENDS =	www/webkit>=1.6.1v0
 RUN_DEPENDS =	x11/dmenu
 
 # webkit browsing
-RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-ffmpeg \
-		multimedia/gstreamer-0.10/plugins-good
+RUN_DEPENDS +=	multimedia/gstreamer1/plugins-libav \
+		multimedia/gstreamer1/plugins-good
 
 NO_TEST =	Yes
 
