@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/04/13 10:26:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2013/04/13 12:15:10 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -40,7 +40,7 @@ MODULES=	devel/gettext \
 		devel/dconf \
 		x11/gnome
 
-# desktop-file-validate(1)
+# desktop-file-validate(1), needed for 'make test'
 BUILD_DEPENDS +=devel/desktop-file-utils
 
 LIB_DEPENDS=	devel/libgdata \
