@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/04/02 16:41:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2013/04/13 10:14:58 ajacoutot Exp $
 
 # needs to allocate 512M
 VMEM_WARNING =	Yes
@@ -11,7 +11,7 @@ EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	graphics
 MASTER_SITES =	http://yorba.org/download/shotwell/${V:C/^([0-9]+\.[0-9]+).*/\1/}/
 HOMEPAGE =	http://yorba.org/shotwell/
-REVISION =	0
+REVISION =	2
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -42,9 +42,8 @@ LIB_DEPENDS =	devel/json-glib \
 		graphics/libgexiv2>=0.6.1 \
 		graphics/libgphoto2 \
 		graphics/libraw \
-		multimedia/gstreamer1/plugins-base \
 		net/librest \
-		www/webkit,gtk3
+		www/webkit,gtk3>=2.0.0
 
 # beware: configure is an horrible homemade shell script
 CONFIGURE_STYLE =	simple
