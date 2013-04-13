@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.101 2013/04/13 10:04:43 espie Exp $
+# $OpenBSD: Port.pm,v 1.102 2013/04/13 16:13:34 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -746,7 +746,7 @@ sub new
 sub debug_dump
 {
 	my $self = shift;	
-	return $self->{v};
+	return $self->{v}->fullpkgpath;
 }
 
 # a small wrapper that allows us to initialize things
