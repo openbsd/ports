@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/21 08:48:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2013/04/14 15:19:47 ajacoutot Exp $
 
 COMMENT=	GTK client and libraries for SPICE remote desktop servers
 
 DISTNAME=	spice-gtk-0.18
 CATEGORIES=	x11 net
+REVISION=	0
 
 SHARED_LIBS +=  spice-client-glib-2.0     0.0 # 8.0
 SHARED_LIBS +=  spice-client-gtk-3.0      0.0 # 4.0
@@ -23,12 +24,12 @@ WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB += c cairo cairo-gobject celt051 crypto dbus-1 dbus-glib-1
 WANTLIB += expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gstapp-0.10
-WANTLIB += gstaudio-0.10 gstbase-0.10 gstinterfaces-0.10 gstpbutils-0.10
-WANTLIB += gstreamer-0.10 gthread-2.0 gtk-3 harfbuzz icudata icule
-WANTLIB += icuuc jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs sasl2 ssl xcb
-WANTLIB += xcb-render xcb-shm xml2 z
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += gstapp-0.10 gstaudio-0.10 gstbase-0.10 gstinterfaces-0.10
+WANTLIB += gstpbutils-0.10 gstreamer-0.10 gthread-2.0 gtk-3 harfbuzz
+WANTLIB += icudata icule icuuc jpeg m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += sasl2 ssl xcb xcb-render xcb-shm xml2 z
 
 MODULES=	devel/gettext \
 		lang/python \
@@ -39,8 +40,12 @@ MODPY_RUNDEP=	No
 BUILD_DEPENDS=	lang/vala \
 		devel/gobject-introspection \
 		devel/py-parsing \
-		devel/spice-protocol
-RUN_DEPENDS=	devel/spice-protocol
+		devel/spice-protocol \
+		sysutils/usbutils
+
+RUN_DEPENDS=	devel/spice-protocol \
+		sysutils/usbutils
+
 LIB_DEPENDS=	audio/celt051 \
 		multimedia/gstreamer-0.10/plugins-base \
 		security/cyrus-sasl2 \
