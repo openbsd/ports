@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.35 2013/04/13 12:32:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.36 2013/04/14 16:53:54 ajacoutot Exp $
 @conflict evolution-plugins-<=3.2.2p0
 @pkgpath mail/evolution
 @bin bin/evolution
@@ -1386,7 +1386,6 @@ share/help/C/evolution/mail-displaying-character-encodings.page
 share/help/C/evolution/mail-displaying-collapsible-headers.page
 share/help/C/evolution/mail-displaying-images-in-html.page
 share/help/C/evolution/mail-displaying-message.page
-share/help/C/evolution/mail-displaying-no-css.page
 share/help/C/evolution/mail-displaying-sender-photograph.page
 share/help/C/evolution/mail-duplicates.page
 share/help/C/evolution/mail-encryption-gpg-create-key.page
@@ -1617,7 +1616,6 @@ share/help/cs/evolution/mail-displaying-character-encodings.page
 share/help/cs/evolution/mail-displaying-collapsible-headers.page
 share/help/cs/evolution/mail-displaying-images-in-html.page
 share/help/cs/evolution/mail-displaying-message.page
-share/help/cs/evolution/mail-displaying-no-css.page
 share/help/cs/evolution/mail-displaying-sender-photograph.page
 share/help/cs/evolution/mail-duplicates.page
 share/help/cs/evolution/mail-encryption-gpg-create-key.page
@@ -1848,7 +1846,6 @@ share/help/de/evolution/mail-displaying-character-encodings.page
 share/help/de/evolution/mail-displaying-collapsible-headers.page
 share/help/de/evolution/mail-displaying-images-in-html.page
 share/help/de/evolution/mail-displaying-message.page
-share/help/de/evolution/mail-displaying-no-css.page
 share/help/de/evolution/mail-displaying-sender-photograph.page
 share/help/de/evolution/mail-duplicates.page
 share/help/de/evolution/mail-encryption-gpg-create-key.page
@@ -2079,7 +2076,6 @@ share/help/el/evolution/mail-displaying-character-encodings.page
 share/help/el/evolution/mail-displaying-collapsible-headers.page
 share/help/el/evolution/mail-displaying-images-in-html.page
 share/help/el/evolution/mail-displaying-message.page
-share/help/el/evolution/mail-displaying-no-css.page
 share/help/el/evolution/mail-displaying-sender-photograph.page
 share/help/el/evolution/mail-duplicates.page
 share/help/el/evolution/mail-encryption-gpg-create-key.page
@@ -2311,7 +2307,6 @@ share/help/en_GB/evolution/mail-displaying-character-encodings.page
 share/help/en_GB/evolution/mail-displaying-collapsible-headers.page
 share/help/en_GB/evolution/mail-displaying-images-in-html.page
 share/help/en_GB/evolution/mail-displaying-message.page
-share/help/en_GB/evolution/mail-displaying-no-css.page
 share/help/en_GB/evolution/mail-displaying-sender-photograph.page
 share/help/en_GB/evolution/mail-duplicates.page
 share/help/en_GB/evolution/mail-encryption-gpg-create-key.page
@@ -2542,7 +2537,6 @@ share/help/es/evolution/mail-displaying-character-encodings.page
 share/help/es/evolution/mail-displaying-collapsible-headers.page
 share/help/es/evolution/mail-displaying-images-in-html.page
 share/help/es/evolution/mail-displaying-message.page
-share/help/es/evolution/mail-displaying-no-css.page
 share/help/es/evolution/mail-displaying-sender-photograph.page
 share/help/es/evolution/mail-duplicates.page
 share/help/es/evolution/mail-encryption-gpg-create-key.page
@@ -2773,7 +2767,6 @@ share/help/eu/evolution/mail-displaying-character-encodings.page
 share/help/eu/evolution/mail-displaying-collapsible-headers.page
 share/help/eu/evolution/mail-displaying-images-in-html.page
 share/help/eu/evolution/mail-displaying-message.page
-share/help/eu/evolution/mail-displaying-no-css.page
 share/help/eu/evolution/mail-displaying-sender-photograph.page
 share/help/eu/evolution/mail-duplicates.page
 share/help/eu/evolution/mail-encryption-gpg-create-key.page
@@ -3004,7 +2997,6 @@ share/help/fr/evolution/mail-displaying-character-encodings.page
 share/help/fr/evolution/mail-displaying-collapsible-headers.page
 share/help/fr/evolution/mail-displaying-images-in-html.page
 share/help/fr/evolution/mail-displaying-message.page
-share/help/fr/evolution/mail-displaying-no-css.page
 share/help/fr/evolution/mail-displaying-sender-photograph.page
 share/help/fr/evolution/mail-duplicates.page
 share/help/fr/evolution/mail-encryption-gpg-create-key.page
@@ -3235,7 +3227,6 @@ share/help/gl/evolution/mail-displaying-character-encodings.page
 share/help/gl/evolution/mail-displaying-collapsible-headers.page
 share/help/gl/evolution/mail-displaying-images-in-html.page
 share/help/gl/evolution/mail-displaying-message.page
-share/help/gl/evolution/mail-displaying-no-css.page
 share/help/gl/evolution/mail-displaying-sender-photograph.page
 share/help/gl/evolution/mail-duplicates.page
 share/help/gl/evolution/mail-encryption-gpg-create-key.page
@@ -3466,7 +3457,6 @@ share/help/hu/evolution/mail-displaying-character-encodings.page
 share/help/hu/evolution/mail-displaying-collapsible-headers.page
 share/help/hu/evolution/mail-displaying-images-in-html.page
 share/help/hu/evolution/mail-displaying-message.page
-share/help/hu/evolution/mail-displaying-no-css.page
 share/help/hu/evolution/mail-displaying-sender-photograph.page
 share/help/hu/evolution/mail-duplicates.page
 share/help/hu/evolution/mail-encryption-gpg-create-key.page
@@ -3698,7 +3688,6 @@ share/help/mk/evolution/mail-displaying-character-encodings.page
 share/help/mk/evolution/mail-displaying-collapsible-headers.page
 share/help/mk/evolution/mail-displaying-images-in-html.page
 share/help/mk/evolution/mail-displaying-message.page
-share/help/mk/evolution/mail-displaying-no-css.page
 share/help/mk/evolution/mail-displaying-sender-photograph.page
 share/help/mk/evolution/mail-duplicates.page
 share/help/mk/evolution/mail-encryption-gpg-create-key.page
@@ -3929,7 +3918,6 @@ share/help/oc/evolution/mail-displaying-character-encodings.page
 share/help/oc/evolution/mail-displaying-collapsible-headers.page
 share/help/oc/evolution/mail-displaying-images-in-html.page
 share/help/oc/evolution/mail-displaying-message.page
-share/help/oc/evolution/mail-displaying-no-css.page
 share/help/oc/evolution/mail-displaying-sender-photograph.page
 share/help/oc/evolution/mail-duplicates.page
 share/help/oc/evolution/mail-encryption-gpg-create-key.page
@@ -4161,7 +4149,6 @@ share/help/ru/evolution/mail-displaying-character-encodings.page
 share/help/ru/evolution/mail-displaying-collapsible-headers.page
 share/help/ru/evolution/mail-displaying-images-in-html.page
 share/help/ru/evolution/mail-displaying-message.page
-share/help/ru/evolution/mail-displaying-no-css.page
 share/help/ru/evolution/mail-displaying-sender-photograph.page
 share/help/ru/evolution/mail-duplicates.page
 share/help/ru/evolution/mail-encryption-gpg-create-key.page
@@ -4392,7 +4379,6 @@ share/help/sl/evolution/mail-displaying-character-encodings.page
 share/help/sl/evolution/mail-displaying-collapsible-headers.page
 share/help/sl/evolution/mail-displaying-images-in-html.page
 share/help/sl/evolution/mail-displaying-message.page
-share/help/sl/evolution/mail-displaying-no-css.page
 share/help/sl/evolution/mail-displaying-sender-photograph.page
 share/help/sl/evolution/mail-duplicates.page
 share/help/sl/evolution/mail-encryption-gpg-create-key.page
@@ -4623,7 +4609,6 @@ share/help/sv/evolution/mail-displaying-character-encodings.page
 share/help/sv/evolution/mail-displaying-collapsible-headers.page
 share/help/sv/evolution/mail-displaying-images-in-html.page
 share/help/sv/evolution/mail-displaying-message.page
-share/help/sv/evolution/mail-displaying-no-css.page
 share/help/sv/evolution/mail-displaying-sender-photograph.page
 share/help/sv/evolution/mail-duplicates.page
 share/help/sv/evolution/mail-encryption-gpg-create-key.page
@@ -4855,7 +4840,6 @@ share/help/te/evolution/mail-displaying-character-encodings.page
 share/help/te/evolution/mail-displaying-collapsible-headers.page
 share/help/te/evolution/mail-displaying-images-in-html.page
 share/help/te/evolution/mail-displaying-message.page
-share/help/te/evolution/mail-displaying-no-css.page
 share/help/te/evolution/mail-displaying-sender-photograph.page
 share/help/te/evolution/mail-duplicates.page
 share/help/te/evolution/mail-encryption-gpg-create-key.page
@@ -5086,7 +5070,6 @@ share/help/zh_CN/evolution/mail-displaying-character-encodings.page
 share/help/zh_CN/evolution/mail-displaying-collapsible-headers.page
 share/help/zh_CN/evolution/mail-displaying-images-in-html.page
 share/help/zh_CN/evolution/mail-displaying-message.page
-share/help/zh_CN/evolution/mail-displaying-no-css.page
 share/help/zh_CN/evolution/mail-displaying-sender-photograph.page
 share/help/zh_CN/evolution/mail-duplicates.page
 share/help/zh_CN/evolution/mail-encryption-gpg-create-key.page
