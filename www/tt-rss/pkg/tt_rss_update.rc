@@ -1,8 +1,8 @@
 #!/bin/sh
 #
-# $OpenBSD: tt_rss_update.rc,v 1.4 2012/08/25 11:41:46 ajacoutot Exp $
+# $OpenBSD: tt_rss_update.rc,v 1.5 2013/04/14 20:28:09 rpe Exp $
 
-daemon="${INSTDIR}/update.php -daemon"
+daemon="${INSTDIR}/update.php --daemon"
 daemon_user="www"
 
 . /etc/rc.d/rc.subr
