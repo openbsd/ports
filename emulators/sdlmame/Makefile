@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/04/06 02:19:13 bcallah Exp $
+# $OpenBSD: Makefile,v 1.29 2013/04/14 17:30:56 fgsch Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -10,15 +10,14 @@ COMMENT-tools =		tools to manipulate MAME/MESS roms and disk images
 
 V =			0148
 DISTNAME =		mame${V}s
-PKGNAME-main =		sdlmame-${V:S/0/0./}pl2
-PKGNAME-tools =		sdlmame-tools-${V:S/0/0./}pl2
-REVISION =		0
+PKGNAME-main =		sdlmame-${V:S/0/0./}pl3
+PKGNAME-tools =		sdlmame-tools-${V:S/0/0./}pl3
 
 CATEGORIES =		emulators games
 
 HOMEPAGE =		http://mamedev.org/
 
-MAINTAINER =		Federico G. Schwindt <fgsch@openbsd.org>
+MAINTAINER =		Brian Callahan <bcallah@openbsd.org>
 
 # MAME Distribution License, see http://mamedev.org/license.html
 # history.dat : Creative Commons Attribution 3.0
@@ -43,7 +42,8 @@ DIST_SUBDIR =		mame
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			${V}u1_diff.zip:0 \
 			${V}u2_diff.zip:0 \
-			history${V:S/0//}g.zip:1
+			${V}u3_diff.zip:0 \
+			history${V:S/0//}h.zip:1
 
 MODULES =		devel/gettext \
 			lang/python
@@ -74,7 +74,7 @@ post-extract:
 	@${UNZIP} -oq ${WRKDIR}/mame.zip -d ${WRKSRC}
 
 pre-patch:
-.for v in 1 2
+.for v in 1 2 3
 	${PATCH} ${PATCH_DIST_ARGS} < ${WRKDIR}/${V}u${v}.diff
 .endfor
 	@perl -pi -e 's|\r\n|\n|g' ${WRKDIST}/makefile \
