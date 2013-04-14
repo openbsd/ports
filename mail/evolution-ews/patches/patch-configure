@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2013/04/13 12:37:27 ajacoutot Exp $
---- configure.orig	Sun Mar 24 02:05:14 2013
-+++ configure	Sat Apr 13 14:24:40 2013
-@@ -15404,7 +15404,7 @@ $as_echo_n "checking for Kerberos 5... " >&6; }
+$OpenBSD: patch-configure,v 1.5 2013/04/14 17:00:12 ajacoutot Exp $
+--- configure.orig	Sun Apr 14 17:32:23 2013
++++ configure	Sun Apr 14 18:54:13 2013
+@@ -15422,7 +15422,7 @@ $as_echo_n "checking for Kerberos 5... " >&6; }
  		esac
  
  		mitlibs="-lkrb5 -lk5crypto -lcom_err -lgssapi_krb5"
