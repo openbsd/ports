@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/14 14:55:47 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2013/04/14 15:16:01 ajacoutot Exp $
 
 COMMENT =	action RPG mod based upon the FLARE engine
 DISTNAME =	polymorphable-20130410
@@ -24,6 +24,5 @@ do-install:
 		"${PREFIX}/share/flare/mods/polymorphable/{}" \;
 	cd ${WRKSRC} && find * -type f -exec ${INSTALL_DATA} \
 		"{}" "${PREFIX}/share/flare/mods/polymorphable/{}" \;
-	
 
 .include <bsd.port.mk>
