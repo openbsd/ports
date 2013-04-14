@@ -1,10 +1,10 @@
-$OpenBSD: patch-tests_libebook_client_test-client-custom-summary_c,v 1.1 2013/03/29 15:17:01 ajacoutot Exp $
+$OpenBSD: patch-tests_libebook_client_test-client-custom-summary_c,v 1.2 2013/04/14 16:21:20 ajacoutot Exp $
 
 XXX fix and push upstream
 
---- tests/libebook/client/test-client-custom-summary.c.orig	Fri Mar 29 14:38:08 2013
-+++ tests/libebook/client/test-client-custom-summary.c	Fri Mar 29 14:39:26 2013
-@@ -342,7 +342,9 @@ main (gint argc,
+--- tests/libebook/client/test-client-custom-summary.c.orig	Sun Apr 14 16:32:35 2013
++++ tests/libebook/client/test-client-custom-summary.c	Sun Apr 14 18:05:44 2013
+@@ -343,7 +343,9 @@ main (gint argc,
  	g_setenv ("LC_ALL", "en_US.UTF-8", TRUE);
  	setlocale (LC_ALL, "");
  
