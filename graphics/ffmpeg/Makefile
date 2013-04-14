@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2013/04/08 17:06:55 brad Exp $
+# $OpenBSD: Makefile,v 1.99 2013/04/14 21:10:49 brad Exp $
 
 COMMENT=	audio/video converter and streamer
 
@@ -165,9 +165,7 @@ CONFIGURE_ARGS+=--disable-stripping
 .endif
 
 ALL_TARGET=	all tools/qt-faststart
-
-# regression tests incompatible with libswscale
-NO_TEST=	Yes
+TEST_TARGET=	check
 
 HTML_DOCS=	developer faq ffmpeg ffplay ffprobe ffserver general libavfilter
 
