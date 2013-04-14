@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.800 2013/04/12 14:23:57 giovanni Exp $
+# $OpenBSD: Makefile,v 1.801 2013/04/14 08:31:29 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += BitTorrent
@@ -189,7 +189,7 @@
      SUBDIR += libnids
      SUBDIR += liboauth
      SUBDIR += libpcapnav
-     SUBDIR += libproxy,webkit
+     SUBDIR += libproxy,
      SUBDIR += librest
      SUBDIR += librsync
      SUBDIR += libshout
