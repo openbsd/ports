@@ -1,0 +1,15 @@
+$OpenBSD: patch-theoraenc_pc_in,v 1.1 2013/04/14 00:41:46 brad Exp $
+
+Correct pkg-config file for overlinking.
+
+--- theoraenc.pc.in.orig	Sat Mar 30 00:47:20 2013
++++ theoraenc.pc.in	Sat Mar 30 00:47:51 2013
+@@ -8,7 +8,7 @@ includedir=@includedir@
+ Name: theora
+ Description: Theora video codec (encoder)
+ Version: @VERSION@
+-Requires: theoradec, ogg >= 1.1
++Requires.private: theoradec, ogg >= 1.1
+ Conflicts:
+ Libs: -L${libdir} -ltheoraenc
+ Cflags: -I${includedir}

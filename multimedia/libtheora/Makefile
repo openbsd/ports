@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/21 08:46:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2013/04/14 00:41:46 brad Exp $
 
 COMMENT=	open video codec
 
 DISTNAME=	libtheora-1.1.1
-REVISION=	1
+REVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.xiph.org/releases/theora/
 EXTRACT_SUFX=	.tar.bz2

@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_Makefile_in,v 1.1 2013/04/14 00:41:46 brad Exp $
+--- lib/Makefile.in.orig	Sat Mar 30 00:32:33 2013
++++ lib/Makefile.in	Sat Mar 30 00:36:04 2013
+@@ -357,7 +357,7 @@ libtheora_la_OBJECTS = $(am_libtheora_la_OBJECTS)
+ libtheoradec_la_LIBADD =
+ am_libtheoradec_la_OBJECTS = $(am__objects_3)
+ libtheoradec_la_OBJECTS = $(am_libtheoradec_la_OBJECTS)
+-libtheoraenc_la_LIBADD =
++libtheoraenc_la_LIBADD = libtheoradec.la
+ @THEORA_DISABLE_ENCODE_FALSE@am__objects_8 = mmxfrag.lo mmxidct.lo \
+ @THEORA_DISABLE_ENCODE_FALSE@	mmxstate.lo x86state.lo
+ @THEORA_DISABLE_ENCODE_FALSE@am__objects_9 =
