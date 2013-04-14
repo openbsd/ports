@@ -1,0 +1,17 @@
+$OpenBSD: patch-kxsldbg_xsldbgmain_cpp,v 1.1 2013/04/14 23:22:18 sthen Exp $
+
+kdewebdev-3.5.10-docbParseFile.patch from fedora, fix with libxml 2.9.0
+
+--- kxsldbg/xsldbgmain.cpp.orig	Sun Apr 14 12:52:21 2013
++++ kxsldbg/xsldbgmain.cpp	Sun Apr 14 12:52:36 2013
+@@ -73,10 +73,6 @@ static const KCmdLineOptions options[] =
+     { "html", 		I18N_NOOP("The input document is(are) an HTML file(s)"), 0},
+ #endif
+ 
+-#ifdef LIBXML_DOCB_ENABLED
+-    { "docbook", 	I18N_NOOP("The input document is SGML docbook"), 0},
+-#endif
+-
+     { "nonet", 		I18N_NOOP("Disable the fetching DTDs or entities over network"), 0},
+ 
+ #ifdef LIBXML_CATALOG_ENABLED

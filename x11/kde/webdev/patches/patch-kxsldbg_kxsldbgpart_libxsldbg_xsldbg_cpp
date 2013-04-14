@@ -1,0 +1,42 @@
+$OpenBSD: patch-kxsldbg_kxsldbgpart_libxsldbg_xsldbg_cpp,v 1.1 2013/04/14 23:22:18 sthen Exp $
+
+kdewebdev-3.5.10-docbParseFile.patch from fedora, fix with libxml 2.9.0
+
+--- kxsldbg/kxsldbgpart/libxsldbg/xsldbg.cpp.orig	Sun Apr 14 12:53:10 2013
++++ kxsldbg/kxsldbgpart/libxsldbg/xsldbg.cpp	Sun Apr 14 12:53:33 2013
+@@ -82,9 +82,6 @@
+ #include <libxml/xmlerror.h>
+ #include <libxml/HTMLtree.h>
+ #include <libxml/xmlIO.h>
+-#ifdef LIBXML_DOCB_ENABLED
+-#include <libxml/DOCBparser.h>
+-#endif
+ #ifdef LIBXML_XINCLUDE_ENABLED
+ #include <libxml/xinclude.h>
+ #endif
+@@ -973,13 +970,6 @@ xsldbgLoadXmlData(void)
+                             NULL);
+     else
+ #endif
+-#ifdef LIBXML_DOCB_ENABLED
+-    if (optionsGetIntOption(OPTIONS_DOCBOOK))
+-        doc = docbParseFile((char *)
+-                            optionsGetStringOption(OPTIONS_DATA_FILE_NAME),
+-                            NULL);
+-    else
+-#endif
+ 
+ #if LIBXML_VERSION >= 20600
+         doc = xmlSAXParseFile(&mySAXHandler,
+@@ -1023,11 +1013,6 @@ xsldbgLoadXmlTemporary(const xmlChar * path)
+ #ifdef LIBXML_HTML_ENABLED
+     if (optionsGetIntOption(OPTIONS_HTML))
+         doc = htmlParseFile((char *) path, NULL);
+-    else
+-#endif
+-#ifdef LIBXML_DOCB_ENABLED
+-    if (optionsGetIntOption(OPTIONS_DOCBOOK))
+-        doc = docbParseFile((char *) path, NULL);
+     else
+ #endif
+         doc = xmlSAXParseFile(&mySAXhdlr, (char *) path, 0);
