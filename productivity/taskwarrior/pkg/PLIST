@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/09/15 22:53:42 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/04/14 18:12:36 abieber Exp $
 @bin bin/task
 @man man/man1/task.1
 @man man/man5/task-color.5
@@ -16,6 +16,8 @@ share/taskwarrior/AUTHORS
 share/taskwarrior/i18n/
 share/taskwarrior/i18n/tips.de-DE
 share/taskwarrior/i18n/tips.en-US
+share/taskwarrior/i18n/tips.es-ES
+share/taskwarrior/i18n/tips.fr-FR
 share/taskwarrior/i18n/tips.it-IT
 share/taskwarrior/i18n/tips.ja-JP
 share/taskwarrior/i18n/tips.sv-SE
@@ -55,6 +57,7 @@ share/taskwarrior/scripts/add-ons/export-csv.pl
 share/taskwarrior/scripts/add-ons/export-html.pl
 share/taskwarrior/scripts/add-ons/export-ical.pl
 share/taskwarrior/scripts/add-ons/export-sql.py
+share/taskwarrior/scripts/add-ons/export-tsv.pl
 share/taskwarrior/scripts/add-ons/export-xml.pl
 share/taskwarrior/scripts/add-ons/export-xml.py
 share/taskwarrior/scripts/add-ons/export-xml.rb
@@ -65,13 +68,6 @@ share/taskwarrior/scripts/add-ons/import-yaml.pl
 share/taskwarrior/scripts/add-ons/update-holidays.pl
 share/taskwarrior/scripts/bash/
 share/taskwarrior/scripts/bash/task.sh
-share/taskwarrior/scripts/extensions/
-share/taskwarrior/scripts/extensions/command.lua
-share/taskwarrior/scripts/extensions/dom.lua
-share/taskwarrior/scripts/extensions/format.lua
-share/taskwarrior/scripts/extensions/program_hook.lua
-share/taskwarrior/scripts/extensions/task_hook.lua
-share/taskwarrior/scripts/extensions/uda.lua
 share/taskwarrior/scripts/fish/
 share/taskwarrior/scripts/fish/task.fish
 share/taskwarrior/scripts/vim/
