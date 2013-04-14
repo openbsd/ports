@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.260 2013/04/04 14:16:10 bcallah Exp $
+# $OpenBSD: Makefile,v 1.261 2013/04/14 14:56:33 bcallah Exp $
 
      SUBDIR =
      SUBDIR += abuse
@@ -148,6 +148,7 @@
      SUBDIR += pingus
      SUBDIR += pioneers
      SUBDIR += pokerth
+     SUBDIR += polymorphable
      SUBDIR += prboom
      SUBDIR += prboom-plus
      SUBDIR += puzzles
