@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.134 2013/04/10 18:46:43 robert Exp $
+# $OpenBSD: Makefile,v 1.135 2013/04/14 16:39:04 ajacoutot Exp $
+
+BROKEN-i386=		"sad face" at runtime
 
 ONLY_FOR_ARCHS=		i386 amd64
 
