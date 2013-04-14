@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/14 14:55:47 bcallah Exp $
-share/doc/pkg-readmes/${FULLPKGNAME}
+@comment $OpenBSD: PLIST,v 1.2 2013/04/14 15:37:20 bcallah Exp $
 share/flare/mods/polymorphable/
 share/flare/mods/polymorphable/animations/
 share/flare/mods/polymorphable/animations/avatar/
@@ -378,7 +377,6 @@ share/flare/mods/polymorphable/maps/castlepath.txt
 share/flare/mods/polymorphable/maps/cavern.txt
 share/flare/mods/polymorphable/maps/church.txt
 share/flare/mods/polymorphable/maps/daphneshouse.txt
-share/flare/mods/polymorphable/maps/demo.txt~
 share/flare/mods/polymorphable/maps/eldershouse.txt
 share/flare/mods/polymorphable/maps/glade.txt
 share/flare/mods/polymorphable/maps/granary.txt
@@ -405,7 +403,6 @@ share/flare/mods/polymorphable/maps/snowb.txt
 share/flare/mods/polymorphable/maps/snowc.txt
 share/flare/mods/polymorphable/maps/spawn.txt
 share/flare/mods/polymorphable/maps/tavern.txt
-share/flare/mods/polymorphable/maps/test.txt~
 share/flare/mods/polymorphable/maps/volcano1.txt
 share/flare/mods/polymorphable/maps/volcano2.txt
 share/flare/mods/polymorphable/maps/volcano3.txt
@@ -505,10 +502,8 @@ share/flare/mods/polymorphable/soundfx/steps/step_cloth4.ogg
 share/flare/mods/polymorphable/soundfx/wood_open.ogg
 share/flare/mods/polymorphable/tilesetdefs/
 share/flare/mods/polymorphable/tilesetdefs/interior.txt
-share/flare/mods/polymorphable/tilesetdefs/lpc_ortho.txt~
 share/flare/mods/polymorphable/tilesetdefs/outside.txt
 share/flare/mods/polymorphable/tilesetdefs/sewer.txt
 share/flare/mods/polymorphable/tilesetdefs/snowmt.txt
-share/flare/mods/polymorphable/tilesetdefs/tileset_lpc.txt~
 share/flare/mods/polymorphable/tilesetdefs/town.txt
 share/flare/mods/polymorphable/tilesetdefs/volcano.txt

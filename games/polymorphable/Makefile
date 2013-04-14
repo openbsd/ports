@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/04/14 15:16:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2013/04/14 15:37:20 bcallah Exp $
 
 COMMENT =	action RPG mod based upon the FLARE engine
 DISTNAME =	polymorphable-20130410
+REVISION =	0
 CATEGORIES =	games x11
 
 HOMEPAGE =	https://github.com/makrohn/polymorphable
@@ -17,6 +18,10 @@ RUN_DEPENDS =	games/flare
 
 NO_BUILD =	Yes
 NO_TEST =	Yes
+
+post-extract:
+	rm ${WRKSRC}/maps/{demo,test}.txt~
+	rm ${WRKSRC}/tilesetdefs/{lpc_ortho,tileset_lpc}.txt~
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/flare/mods/polymorphable
