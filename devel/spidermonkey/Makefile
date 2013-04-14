@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.14 2013/04/01 11:54:39 kettenis Exp $
+# $OpenBSD: Makefile,v 1.15 2013/04/14 08:15:59 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
+
 # 1.8.5 is based on ffx 10 engine, broken at runtime on sparc64
 # jsapi-tests crashes in js::MarkRangeConservatively() on hppa
 # some tests crash on mips64 
 # but let's keep them to build more packages
-# XXX: sync with x11/gtk+3 and devel/gconf2
+# XXX: sync with devel/gconf2, net/libproxy and x11/gtk+3
 ONLY_FOR_ARCHS =	alpha amd64 i386 hppa mips64el mips64 powerpc sparc64
 
 COMMENT =	Mozilla C implementation of JavaScript
