@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/04/13 12:15:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2013/04/14 19:04:28 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -56,6 +56,10 @@ MODGNOME_DESKTOP_FILE=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 
 CONFIGURE_ARGS=	--disable-static
+
+# XXX --disable-getting-started is the default but configure checks for
+# itstool(1) anyway
+BUILD_DEPENDS +=	textproc/itstool
 
 post-install:
 	rm ${PREFIX}/lib/gnome-documents/*.la
