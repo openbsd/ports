@@ -1,18 +1,18 @@
-$OpenBSD: patch-config_hiawatha_conf_in,v 1.1 2012/12/12 09:39:53 jasper Exp $
---- config/hiawatha.conf.in.orig	Wed Dec 12 09:12:05 2012
-+++ config/hiawatha.conf.in	Wed Dec 12 09:13:06 2012
+$OpenBSD: patch-config_hiawatha_conf_in,v 1.2 2013/04/14 20:21:15 sthen Exp $
+--- config/hiawatha.conf.in.orig	Sat Mar 30 22:41:13 2013
++++ config/hiawatha.conf.in	Sun Apr 14 21:06:01 2013
 @@ -4,7 +4,7 @@
  
  # GENERAL SETTINGS
  #
 -#ServerId = www-data
 +ServerId = _hiawatha:_hiawatha
- ConnectionsTotal = 150
- ConnectionsPerIP = 10
+ ConnectionsTotal = 250
+ ConnectionsPerIP = 25
  SystemLogfile = @LOG_DIR@/system.log
-@@ -44,12 +44,13 @@ Binding {
- # These settings can be used to run CGI applications. Use the 'php-fcgi'
- # tool to start PHP as a FastCGI daemon.
+@@ -43,12 +43,13 @@ Binding {
+ # COMMON GATEWAY INTERFACE (CGI) SETTINGS
+ # These settings can be used to run CGI applications.
  #
 -#CGIhandler = /usr/bin/perl:pl
 -#CGIhandler = /usr/bin/php-cgi:php

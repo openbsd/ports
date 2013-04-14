@@ -1,7 +1,7 @@
-$OpenBSD: patch-man_hiawatha_1_in,v 1.1 2012/12/12 09:39:53 jasper Exp $
---- man/hiawatha.1.in.orig	Wed Dec 12 09:16:46 2012
-+++ man/hiawatha.1.in	Wed Dec 12 09:19:41 2012
-@@ -150,12 +150,12 @@ Example: CGIextension = cgi
+$OpenBSD: patch-man_hiawatha_1_in,v 1.2 2013/04/14 20:21:15 sthen Exp $
+--- man/hiawatha.1.in.orig	Sat Mar 30 22:41:13 2013
++++ man/hiawatha.1.in	Sun Apr 14 21:05:40 2013
+@@ -147,12 +147,12 @@ Example: CGIextension = cgi
  .B CGIhandler = <CGI handler>:<extension>[, <extension>, ...]
  Specify the handler for a CGI extension. A handler is an executable which will 'run' the CGI script.
  .br
@@ -16,7 +16,7 @@ $OpenBSD: patch-man_hiawatha_1_in,v 1.1 2012/12/12 09:39:53 jasper Exp $
  .TP
  .B ConnectionsPerIP = <number>
  Maximum number of simultaneous connections per IP address.
-@@ -185,7 +185,7 @@ Example: HideProxy = 192.168.10.20
+@@ -187,7 +187,7 @@ Example: HideProxy = 192.168.10.20
  .B Include <filename>|<directory>
  Include another configurationfile or configurationfiles in a directory.
  .br
@@ -25,7 +25,7 @@ $OpenBSD: patch-man_hiawatha_1_in,v 1.1 2012/12/12 09:39:53 jasper Exp $
  .TP
  .B KickOnBan = yes|no
  Close all other connections that originate from the same IP in case of a ban.
-@@ -267,7 +267,7 @@ Example: RequestLimitMask = deny 192.168.0.1
+@@ -272,7 +272,7 @@ Example: RequestLimitMask = deny 192.168.0.1
  .B ServerId = <userid>|<userid>:<groupid>[,<groupid>, ...]
  The userid and groupid(s) the server will change to. If only a userid is specified, the groupid(s) will be looked up in /etc/passwd and /etc/group. The userid en groupid of user root are not allowed here. The userid or groupid can also be a name.
  .br
@@ -34,7 +34,7 @@ $OpenBSD: patch-man_hiawatha_1_in,v 1.1 2012/12/12 09:39:53 jasper Exp $
  .TP
  .B ServerString = <text>
  The text behind 'Server:' in the HTTP header of a response. Use 'none' to completely remove the Server string from the HTTP header.
-@@ -558,7 +558,7 @@ Example: Setenv PHPRC = /var/www/conf
+@@ -557,7 +557,7 @@ Example: Setenv PHPRC = /var/www/conf
  .B ShowIndex = yes|no|<XSLT file with full path>|xml
  Return a directory listing in HTML format for a directory request when the startfile does not exist. If you want to change the index layout completely, specify the path of a XSLT file. If the XSLT file is not found or 'xml' is used, Hiawatha will output the XML of the directory index. The content of a .hiawatha_index in that directory will be included in the XML.
  .br
@@ -43,7 +43,7 @@ $OpenBSD: patch-man_hiawatha_1_in,v 1.1 2012/12/12 09:39:53 jasper Exp $
  .br
  
  (requires that Hiawatha was not compiled with -DENABLE_XSLT=off)
-@@ -928,7 +928,7 @@ and
+@@ -922,7 +922,7 @@ and
  .B UseGZfile
  
  .SH MIMETYPES
@@ -52,7 +52,7 @@ $OpenBSD: patch-man_hiawatha_1_in,v 1.1 2012/12/12 09:39:53 jasper Exp $
  .TP
  .B <mimetype> <extension> [<extension> ...]
  Example: image/jpeg jpg jpeg jpe
-@@ -955,15 +955,15 @@ Unban all IP addresses.
+@@ -949,13 +949,13 @@ Unban all IP addresses.
  Clear the internal cache (requires that Hiawatha was not compiled with -DENABLE_CACHE=off).
  
  .SH FILES
@@ -67,9 +67,6 @@ $OpenBSD: patch-man_hiawatha_1_in,v 1.1 2012/12/12 09:39:53 jasper Exp $
  .br
 -.B /etc/hiawatha/cgi-wrapper.conf
 +.B ${SYSCONFDIR}/hiawatha/cgi-wrapper.conf
- .br
--.B /etc/hiawatha/php-fcgi.conf
-+.B ${SYSCONFDIR}/hiawatha/php-fcgi.conf
  
  
  .SH SEE ALSO

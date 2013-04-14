@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_serverconfig_c,v 1.1 2012/12/12 09:39:53 jasper Exp $
---- src/serverconfig.c.orig	Wed Oct 31 19:16:45 2012
-+++ src/serverconfig.c	Wed Dec 12 09:05:41 2012
+$OpenBSD: patch-src_serverconfig_c,v 1.2 2013/04/14 20:21:15 sthen Exp $
+--- src/serverconfig.c.orig	Sat Mar 30 22:41:13 2013
++++ src/serverconfig.c	Sun Apr 14 21:04:44 2013
 @@ -29,7 +29,7 @@
  #include "libstr.h"
  #include "libfs.h"
@@ -8,9 +8,9 @@ $OpenBSD: patch-src_serverconfig_c,v 1.1 2012/12/12 09:39:53 jasper Exp $
 -#define ID_NOBODY             65534
 +#define ID_HIAWATHA             579
  #define MAX_LENGTH_CONFIGLINE   512
- #define MAX_CACHE_SIZE           50
+ #define MAX_CACHE_SIZE          100
  #define MAX_UPLOAD_SIZE         100
-@@ -261,8 +261,8 @@ t_config *default_config(void) {
+@@ -263,8 +263,8 @@ t_config *default_config(void) {
  	config->tomahawk_port      = NULL;
  #endif
  

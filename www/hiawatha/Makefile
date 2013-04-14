@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.34 2013/03/11 11:44:42 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2013/04/14 20:21:15 sthen Exp $
 
 COMMENT=	secure webserver
-DISTNAME=	hiawatha-8.6
+DISTNAME=	hiawatha-9.0
 CATEGORIES=	www net
 
 HOMEPAGE=	http://www.hiawatha-webserver.org/
@@ -29,7 +29,6 @@ NO_TEST=	Yes
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/config/hiawatha.conf.in \
 		${WRKSRC}/config/cgi-wrapper.conf \
-		${WRKSRC}/config/php-fcgi.conf.in \
 		${WRKSRC}/man/hiawatha.1.in
 
 post-install:
