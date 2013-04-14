@@ -1,0 +1,14 @@
+$OpenBSD: README,v 1.1.1.1 2013/04/14 14:55:47 bcallah Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Playing Polymorphable
+=====================
+
+After installing the polymorphable package:
+
+Launch FLARE. Go to the Mods tab in the Configuration menu and make
+sure polymorphable is the ONLY Active Mod listed (only entry in the
+right hand menu).
