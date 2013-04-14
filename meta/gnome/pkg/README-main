@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.16 2013/01/06 10:41:14 ajacoutot Exp $
+$OpenBSD: README-main,v 1.17 2013/04/14 08:35:45 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -72,7 +72,8 @@ _after_ "dbus_daemon".
 
 Cheat sheet
 ===========
-# chmod 0666 /dev/drm0
+# echo 'chmod 0666 /dev/drm0' >> /etc/rc.local
 # echo 'kern.shminfo.shmall=32768' >> /etc/sysctl.conf
 # echo 'multicast_host=YES' >> /etc/rc.conf.local
 # echo 'pkg_scripts="${pkg_scripts} dbus_daemon avahi_daemon gdm"' >> /etc/rc.conf.local
+# reboot
