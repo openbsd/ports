@@ -1,7 +1,7 @@
-$OpenBSD: patch-xstc_Makefile_in,v 1.5 2012/09/30 12:22:05 jasper Exp $
---- xstc/Makefile.in.orig	Wed May 23 10:56:32 2012
-+++ xstc/Makefile.in	Thu Sep 27 10:04:34 2012
-@@ -512,7 +512,7 @@ $(TESTDIRS) Tests/Metadata/$(NISTTESTDEF_2) Tests/Meta
+$OpenBSD: patch-xstc_Makefile_in,v 1.6 2013/04/14 23:22:05 sthen Exp $
+--- xstc/Makefile.in.orig	Tue Sep 11 07:55:37 2012
++++ xstc/Makefile.in	Sat Apr 13 22:06:09 2013
+@@ -516,7 +516,7 @@ $(TESTDIRS) Tests/Metadata/$(NISTTESTDEF_2) Tests/Meta
  	   else echo "Dont' know how to fetch $(TARBALLURL_2)" ; fi ; fi ; fi)
  	-@(if [ -f $(TARBALL_2) ] ; then \
  	   echo -n "extracting test data (NIST)..." ; \
@@ -10,7 +10,7 @@ $OpenBSD: patch-xstc_Makefile_in,v 1.5 2012/09/30 12:22:05 jasper Exp $
  	   echo "done" ; \
  	   fi)
  	-@(if [ ! -f $(TARBALL) ] ; then \
-@@ -524,7 +524,7 @@ $(TESTDIRS) Tests/Metadata/$(NISTTESTDEF_2) Tests/Meta
+@@ -528,7 +528,7 @@ $(TESTDIRS) Tests/Metadata/$(NISTTESTDEF_2) Tests/Meta
  	   else echo "Dont' know how to fetch $(TARBALLURL)" ; fi ; fi ; fi)
  	-@(if [ -f $(TARBALL) ] ; then \
  	   echo -n "extracting test data (Sun, Microsoft)..." ; \

@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2012/09/30 12:22:05 jasper Exp $
---- Makefile.in.orig	Wed May 23 10:56:32 2012
-+++ Makefile.in	Thu Sep 27 10:04:34 2012
-@@ -735,7 +735,7 @@ pkgconfig_DATA = libxml-2.0.pc
+$OpenBSD: patch-Makefile_in,v 1.3 2013/04/14 23:22:05 sthen Exp $
+--- Makefile.in.orig	Tue Sep 11 07:55:37 2012
++++ Makefile.in	Sun Apr 14 00:32:11 2013
+@@ -742,7 +742,7 @@ pkgconfig_DATA = libxml-2.0.pc
  # Install the tests program sources as examples 
  #
  BASE_DIR = $(datadir)/doc
@@ -10,16 +10,16 @@ $OpenBSD: patch-Makefile_in,v 1.2 2012/09/30 12:22:05 jasper Exp $
  EXAMPLES_DIR = $(BASE_DIR)/$(DOC_MODULE)/examples
  
  #
-@@ -1738,7 +1738,7 @@ testapi.c: $(srcdir)/gentest.py
- #testOOM_LDADD= $(LDADDS)
- 
+@@ -1761,7 +1761,7 @@ testapi.c: $(srcdir)/gentest.py
  runtests:
+ 	[ -d test   ] || $(LN_S) $(srcdir)/test   .
+ 	[ -d result ] || $(LN_S) $(srcdir)/result .
 -	$(CHECKER) ./runtest$(EXEEXT) && $(CHECKER) ./testrecurse$(EXEEXT) &&$(CHECKER) ./testapi$(EXEEXT) && $(CHECKER) ./testchar$(EXEEXT)&& $(CHECKER) ./testdict$(EXEEXT) && $(CHECKER) ./runxmlconf$(EXEEXT)
 +	$(CHECKER) ./runtest$(EXEEXT) ; $(CHECKER) ./testrecurse$(EXEEXT) &&$(CHECKER) ./testapi$(EXEEXT) && $(CHECKER) ./testchar$(EXEEXT)&& $(CHECKER) ./testdict$(EXEEXT) && $(CHECKER) ./runxmlconf$(EXEEXT)
- 	@(if [ "@PYTHON_SUBDIR@" != "" ] ; then cd python ; \
- 	    $(MAKE) MAKEFLAGS+=--silent tests ; fi)
+ 	@(if [ "$(PYTHON_SUBDIR)" != "" ] ; then cd python ; \
+ 	    $(MAKE) tests ; fi)
  
-@@ -2243,6 +2243,7 @@ SVGtests : xmllint$(EXEEXT)
+@@ -2261,6 +2261,7 @@ SVGtests : xmllint$(EXEEXT)
  	      grep "MORY ALLO" .memdump  | grep -v "MEMORY ALLOCATED : 0";\
  	  else \
  	      echo Testing $$name ; \
