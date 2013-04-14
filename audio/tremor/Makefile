@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/21 08:45:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2013/04/14 00:43:44 brad Exp $
 
 COMMENT=	integer-only, fully Ogg Vorbis compliant decoder library
 
 DISTNAME=	tremor-20120410
+REVISION=	0
 CATEGORIES=	audio
 MASTER_SITES=	http://comstyle.com/source/
 EXTRACT_SUFX=	.tar.bz2

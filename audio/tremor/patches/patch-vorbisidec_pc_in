@@ -1,0 +1,16 @@
+$OpenBSD: patch-vorbisidec_pc_in,v 1.1 2013/04/14 00:43:44 brad Exp $
+
+Correct pkg-config file for overlinking.
+
+--- vorbisidec.pc.in.orig	Wed Oct  5 01:12:59 2011
++++ vorbisidec.pc.in	Sat Mar 30 00:14:33 2013
+@@ -8,7 +8,7 @@ includedir=@includedir@
+ Name: vorbisidec
+ Description: vorbisidec is the integer Ogg Vorbis library
+ Version: @VERSION@
+-Requires: ogg
++Requires.private: ogg
+ Conflicts:
+-Libs: -L${libdir} -lvorbisidec -lm
++Libs: -L${libdir} -lvorbisidec
+ Cflags: -I${includedir}
