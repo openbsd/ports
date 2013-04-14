@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.40 2013/04/05 13:57:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.41 2013/04/14 16:27:44 ajacoutot Exp $
 @conflict nautilus-open-terminal-*
 @pkgpath x11/gnome/nautilus-open-terminal
 @bin bin/gnome-terminal
@@ -7,6 +7,8 @@
 share/applications/gnome-terminal.desktop
 share/dbus-1/services/org.gnome.Terminal.service
 share/glib-2.0/schemas/org.gnome.Terminal.gschema.xml
+share/help/
+share/help/C/
 share/help/C/gnome-terminal/
 share/help/C/gnome-terminal/adv-keyboard-shortcuts.page
 share/help/C/gnome-terminal/app-colors.page
@@ -39,6 +41,7 @@ share/help/C/gnome-terminal/txt-copy-paste.page
 share/help/C/gnome-terminal/txt-links.page
 share/help/C/gnome-terminal/txt-search.page
 share/help/C/gnome-terminal/txt-select-text.page
+share/help/de/
 share/help/de/gnome-terminal/
 share/help/de/gnome-terminal/adv-keyboard-shortcuts.page
 share/help/de/gnome-terminal/app-colors.page
@@ -71,6 +74,7 @@ share/help/de/gnome-terminal/txt-copy-paste.page
 share/help/de/gnome-terminal/txt-links.page
 share/help/de/gnome-terminal/txt-search.page
 share/help/de/gnome-terminal/txt-select-text.page
+share/help/el/
 share/help/el/gnome-terminal/
 share/help/el/gnome-terminal/adv-keyboard-shortcuts.page
 share/help/el/gnome-terminal/app-colors.page
@@ -103,6 +107,7 @@ share/help/el/gnome-terminal/txt-copy-paste.page
 share/help/el/gnome-terminal/txt-links.page
 share/help/el/gnome-terminal/txt-search.page
 share/help/el/gnome-terminal/txt-select-text.page
+share/help/es/
 share/help/es/gnome-terminal/
 share/help/es/gnome-terminal/adv-keyboard-shortcuts.page
 share/help/es/gnome-terminal/app-colors.page
@@ -135,6 +140,7 @@ share/help/es/gnome-terminal/txt-copy-paste.page
 share/help/es/gnome-terminal/txt-links.page
 share/help/es/gnome-terminal/txt-search.page
 share/help/es/gnome-terminal/txt-select-text.page
+share/help/gl/
 share/help/gl/gnome-terminal/
 share/help/gl/gnome-terminal/adv-keyboard-shortcuts.page
 share/help/gl/gnome-terminal/app-colors.page
