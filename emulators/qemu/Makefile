@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2013/04/01 13:40:32 brad Exp $
+# $OpenBSD: Makefile,v 1.103 2013/04/14 20:28:56 brad Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc sparc64
 
@@ -77,7 +77,7 @@ INSTALL_STRIP=
 CONFIGURE_ARGS+=--disable-debug-info
 .endif
 
-NO_TEST=	Yes
+TEST_TARGET=	check
 
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifup \
