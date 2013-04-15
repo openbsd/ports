@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/04/13 12:36:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2013/04/15 17:23:33 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -57,8 +57,6 @@ MODGNOME_DESKTOP_FILE=	Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=		--disable-gecko \
-			--with-primary-render=webkit
 
 post-install:
 	rm ${PREFIX}/lib/evolution/${EVO_VERSION}/{plugins,modules}/*.{a,la}
