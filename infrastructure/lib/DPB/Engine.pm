@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.73 2013/02/02 13:35:17 espie Exp $
+# $OpenBSD: Engine.pm,v 1.74 2013/04/15 13:44:06 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -617,6 +617,18 @@ sub missing_dep
 	return undef;
 }
 
+sub stub_out
+{
+	my ($self, $v) = @_;
+	my $i = $v->{info};
+	for my $w ($v->build_path_list) {
+		if ($w->{info} eq $i) {
+			$w->{info} = DPB::PortInfo->stub;
+		}
+	}
+	push(@{$self->{ignored}}, $v);
+}
+
 # need to ignore $v because of some missing $kind dependency:
 # wipe out its info and put it in the right list
 sub should_ignore
@@ -624,8 +636,7 @@ sub should_ignore
 	my ($self, $v, $kind) = @_;
 	if (my $d = $self->missing_dep($v, $kind)) {
 		$self->log_no_ts('!', $v, " because of ".$d->fullpkgpath);
-		$v->{info} = DPB::PortInfo->stub;
-		push(@{$self->{ignored}}, $v);
+		$self->stub_out($v);
 		return 1;
 	} else {
 		return 0;
@@ -753,8 +764,7 @@ sub new_path
 	if (defined $v->{info}{IGNORE} && 
 	    !$self->{state}->{fetch_only}) {
 		$self->log('!', $v, " ".$v->{info}{IGNORE}->string);
-		$v->{info} = DPB::PortInfo->stub;
-		push(@{$self->{ignored}}, $v);
+		$self->stub_out($v);
 		return;
 	}
 	if (defined $v->{info}{MISSING_FILES}) {
