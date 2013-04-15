@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2013/04/07 08:47:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2013/04/15 07:33:11 ajacoutot Exp $
 
 COMMENT=	CUPS drivers for SPL printers
 
-DISTNAME=	splix-2.0.0
-EXTRACT_SUFX=	.tar.bz2
-REVISION =	8
+V=		2.0.0
+SNV_REV=	308
+DISTNAME=	splix-${V}r${SNV_REV}
+PKGNAME=	splix-${V}.${SNV_REV}
 
 CATEGORIES=	print
 
@@ -15,12 +16,14 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c cups cupsimage jbig m pthread stdc++
+WANTLIB += c cups cupsimage jbig85 m pthread stdc++
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=splix/}
+# snapshot of SVN at revision 308 pending new release
+MASTER_SITES=	http://www.zen103022.zen.co.uk/download/
+#MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=splix/}
 
 LIB_DEPENDS=	print/cups,-libs \
-		graphics/jbigkit
+		graphics/jbigkit>=2.0
 
 # gstoraster
 RUN_DEPENDS=	print/ghostscript/gnu

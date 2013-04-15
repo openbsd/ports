@@ -1,17 +1,40 @@
-$OpenBSD: README,v 1.3 2012/08/04 14:57:28 ajacoutot Exp $
+$OpenBSD: README,v 1.4 2013/04/15 07:33:12 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
+Updating from previous versions
+===============================
+If you are updating from ANY previous version you are strongly advised
+to delete and re-install your printer under CUPS. This is because the 
+ppd files are often updated between releases. See also the note below.
+
 Enhancing printing output
 =========================
-Color printers needs color profile files to get better results.  These
+Color printers need color profile files to get better results.  These
 files are provided by your printer manufacturer and you have to install
-them manually.  To do that, download the linux official drivers and
-copy the "cms" directory under:
-    ${TRUEPREFIX}/share/cups/model/<manufacturer>/
-where <manufacturer> is either samsung, xerox or dell.
+them manually in the correct location.
+
+----------------------------------------------------------------
+ NOTE THAT THE LOCATION FOR THE COLOR PROFILE FILES HAS CHANGED
+ COMPARED TO SOME EARLIER RELEASES
+----------------------------------------------------------------
+
+Early versions of the driver look for color profile files in:
+	${TRUEPREFIX}/share/cups/model/<manufacturer>/cms/
+
+This version expects them to be in:
+	${TRUEPREFIX}/share/cups/profiles/<manufacturer>/
+
+Where <manufacturer> is samsung, xerox, dell, etc.
+
+If you are updating from a previous release that has profile files in
+the old location you must manually relocate them and delete the old
+"cms" directory.
+
+To obtain the color profile files download the official Linux drivers 
+for your printer and look in the "cms" directory.
 
 Samsung color profile files are available at
     http://splix.ap2c.org/samsung_cms.tar.bz2
