@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.135 2013/04/14 16:39:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.136 2013/04/15 17:03:49 ajacoutot Exp $
 
 BROKEN-i386=		"sad face" at runtime
 
@@ -9,7 +9,7 @@ COMMENT=		Chromium browser
 V=			26.0.1410.63
 DISTNAME=		chromium-${V}
 
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		www
 
