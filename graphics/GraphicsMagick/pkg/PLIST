@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2012/12/22 19:37:35 brad Exp $
+@comment $OpenBSD: PLIST,v 1.11 2013/04/15 01:58:32 brad Exp $
 @pkgpath graphics/GraphicsMagick,no_x11
 bin/GraphicsMagick++-config
 bin/GraphicsMagick-config
@@ -89,6 +89,7 @@ include/GraphicsMagick/wand/drawing_wand.h
 include/GraphicsMagick/wand/magick_wand.h
 include/GraphicsMagick/wand/pixel_wand.h
 include/GraphicsMagick/wand/wand_api.h
+include/GraphicsMagick/wand/wand_symbols.h
 lib/GraphicsMagick/
 lib/GraphicsMagick/config/
 lib/GraphicsMagick/config/delegates.mgk
@@ -339,6 +340,7 @@ share/doc/GraphicsMagick/ChangeLog.2008
 share/doc/GraphicsMagick/ChangeLog.2009
 share/doc/GraphicsMagick/ChangeLog.2010
 share/doc/GraphicsMagick/ChangeLog.2011
+share/doc/GraphicsMagick/ChangeLog.2012
 share/doc/GraphicsMagick/Copyright.txt
 share/doc/GraphicsMagick/NEWS.txt
 share/doc/GraphicsMagick/www/
@@ -353,6 +355,7 @@ share/doc/GraphicsMagick/www/ChangeLog-2008.html
 share/doc/GraphicsMagick/www/ChangeLog-2009.html
 share/doc/GraphicsMagick/www/ChangeLog-2010.html
 share/doc/GraphicsMagick/www/ChangeLog-2011.html
+share/doc/GraphicsMagick/www/ChangeLog-2012.html
 share/doc/GraphicsMagick/www/Changelog.html
 share/doc/GraphicsMagick/www/Changes.html
 share/doc/GraphicsMagick/www/Copyright.html
@@ -368,7 +371,6 @@ share/doc/GraphicsMagick/www/Magick++/Cache.png
 share/doc/GraphicsMagick/www/Magick++/ChangeLog.html
 share/doc/GraphicsMagick/www/Magick++/CoderInfo.html
 share/doc/GraphicsMagick/www/Magick++/Color.html
-share/doc/GraphicsMagick/www/Magick++/Documentation.html
 share/doc/GraphicsMagick/www/Magick++/Drawable.html
 share/doc/GraphicsMagick/www/Magick++/Drawable_example_1.png
 share/doc/GraphicsMagick/www/Magick++/Enumerations.html
@@ -448,6 +450,8 @@ share/doc/GraphicsMagick/www/api/transform.html
 share/doc/GraphicsMagick/www/api/types.html
 share/doc/GraphicsMagick/www/api/widget.html
 share/doc/GraphicsMagick/www/authors.html
+share/doc/GraphicsMagick/www/batch.html
+share/doc/GraphicsMagick/www/benchmark.html
 share/doc/GraphicsMagick/www/benchmarks.html
 share/doc/GraphicsMagick/www/bugs.html
 share/doc/GraphicsMagick/www/color.html
@@ -488,8 +492,10 @@ share/doc/GraphicsMagick/www/project.html
 share/doc/GraphicsMagick/www/quantize.html
 share/doc/GraphicsMagick/www/reference.html
 share/doc/GraphicsMagick/www/smile.c
+share/doc/GraphicsMagick/www/time.html
 share/doc/GraphicsMagick/www/tools.html
 share/doc/GraphicsMagick/www/utilities.html
+share/doc/GraphicsMagick/www/version.html
 share/doc/GraphicsMagick/www/wand/
 share/doc/GraphicsMagick/www/wand/drawing_wand.html
 share/doc/GraphicsMagick/www/wand/magick_wand.html
