@@ -1,0 +1,13 @@
+$OpenBSD: patch-lenses_simplelines_aug,v 1.1 2013/04/15 20:31:23 jasper Exp $
+
+Parse hostname.if(5) files.
+
+--- lenses/simplelines.aug.orig	Mon Apr 15 22:27:24 2013
++++ lenses/simplelines.aug	Mon Apr 15 22:27:27 2013
+@@ -43,5 +43,6 @@ let filter = incl "/etc/at.allow"
+            . incl "/etc/cron.d/cron.deny"
+            . incl "/etc/default/grub_installdevice"
+            . incl "/etc/pam.d/allow.pamlist"
++           . incl "/etc/hostname.*"
+ 
+ let xfm = transform lns filter
