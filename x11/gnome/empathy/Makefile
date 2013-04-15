@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.128 2013/04/13 12:55:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.129 2013/04/15 19:11:36 jasper Exp $
 
 COMMENT= 		Telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
-GNOME_VERSION=		3.8.0
-REVISION=		0
-
+GNOME_VERSION=		3.8.1
 CATEGORIES=		net
 
 HOMEPAGE=		http://live.gnome.org/Empathy
