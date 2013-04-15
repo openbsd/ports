@@ -1,0 +1,15 @@
+$OpenBSD: patch-aalib-config_in,v 1.1 2013/04/15 02:06:16 brad Exp $
+
+Fix overlinking for shared libs.
+
+--- aalib-config.in.orig	Thu Apr 11 17:20:16 2013
++++ aalib-config.in	Thu Apr 11 17:22:14 2013
+@@ -49,7 +49,7 @@ while test $# -gt 0; do
+       ;;
+ @ENABLE_SHARED_TRUE@    --libs)
+ @ENABLE_SHARED_TRUE@      libdirs="-L@libdir@ @AALIB_RLD_FLAGS@"
+-@ENABLE_SHARED_TRUE@      echo $libdirs @AALIB_LIBS@
++@ENABLE_SHARED_TRUE@      echo $libdirs -laa
+ @ENABLE_SHARED_TRUE@      ;;
+ @ENABLE_STATIC_TRUE@@ENABLE_SHARED_TRUE@    --static-libs)
+ @ENABLE_STATIC_TRUE@@ENABLE_SHARED_FALSE@    --libs|--static-libs)
