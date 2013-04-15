@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_src_solaris_native_java_lang_UNIXProcess_md_c,v 1.1 2013/02/01 15:34:35 kurt Exp $
---- jdk/src/solaris/native/java/lang/UNIXProcess_md.c.orig	Tue Jan 29 12:52:27 2013
-+++ jdk/src/solaris/native/java/lang/UNIXProcess_md.c	Tue Jan 29 14:28:22 2013
+$OpenBSD: patch-jdk_src_solaris_native_java_lang_UNIXProcess_md_c,v 1.2 2013/04/15 03:01:06 kurt Exp $
+--- jdk/src/solaris/native/java/lang/UNIXProcess_md.c.orig	Sun Apr 14 20:25:35 2013
++++ jdk/src/solaris/native/java/lang/UNIXProcess_md.c	Sun Apr 14 20:29:34 2013
 @@ -86,6 +86,12 @@
  
  #define FAIL_FILENO (STDERR_FILENO + 1)
@@ -37,3 +37,34 @@ $OpenBSD: patch-jdk_src_solaris_native_java_lang_UNIXProcess_md_c,v 1.1 2013/02/
  }
  
  #else
+@@ -678,30 +677,6 @@ Java_java_lang_UNIXProcess_forkAndExec(JNIEnv *env,
+ 
+     if (resultPid == 0) {
+         /* Child process */
+-
+-
+-#ifdef __OpenBSD__
+-// XXXBSD: Work-around userland pthread implementation issue.
+-// Closing file descriptors will reset them to be blocking.
+-// This is problematic for the parent when it attemts to use
+-// the blocking fd and deadlocks. Setting them to non-blocking
+-// in the child prevents the close/dup2 from resetting them.
+-    {
+- int flags;
+- flags = fcntl(STDIN_FILENO, F_GETFL, NULL);
+- if (flags != -1)
+-     fcntl(STDIN_FILENO, F_SETFL, flags | O_NONBLOCK);
+-
+- flags = fcntl(STDOUT_FILENO, F_GETFL, NULL);
+- if (flags != -1)
+-     fcntl(STDOUT_FILENO, F_SETFL, flags | O_NONBLOCK);
+-
+- flags = fcntl(STDERR_FILENO, F_GETFL, NULL);
+- if (flags != -1)
+-     fcntl(STDOUT_FILENO, F_SETFL, flags | O_NONBLOCK);
+-    }
+-#endif
+-
+ 
+         /* Close the parent sides of the pipe.
+            Give the child sides of the pipes the right fileno's.

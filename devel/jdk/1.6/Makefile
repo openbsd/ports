@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2013/04/10 02:47:10 kurt Exp $
+# $OpenBSD: Makefile,v 1.47 2013/04/15 03:01:06 kurt Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	amd64 i386
@@ -10,9 +10,9 @@ UPDATE=		32
 BUILD=		b27
 PKGNAME=	jdk-${VERSION}
 PKGNAME-main=	jdk-${VERSION}
-REVISION-main=	3
+REVISION-main=	4
 PKGNAME-jre=	jre-${VERSION}
-REVISION-jre=	3
+REVISION-jre=	4
 
 # see jaxp/jaxp.properties & jaxws/jaxws.properties 
 # in ${WRKDIR} for names and download locations of extra distfiles
@@ -75,8 +75,8 @@ MODULES=	converters/libiconv
 WANTLIB=	X11 Xext Xi Xtst c freetype m pthread sndio stdc++ z
 
 APACHE_ANT=	apache-ant-1.8.4-bin.tar.gz
-SUPDISTFILES+=	openjdk6-bootjdk-amd64-20130409.tar.gz:1 \
-		openjdk6-bootjdk-i386-20130409.tar.gz:1 \
+SUPDISTFILES+=	openjdk6-bootjdk-amd64-20130414.tar.gz:1 \
+		openjdk6-bootjdk-i386-20130414.tar.gz:1 \
 		${APACHE_ANT}:5
 
 .if ${FLAVOR:Mnative_bootstrap}
@@ -88,7 +88,7 @@ BUILD_DEPENDS+=	jdk->=1.6,<1.7:devel/jdk/1.6 \
 		devel/apache-ant>=1.8.2
 ALT_BOOTDIR=	${LOCALBASE}/${JDKHOME}
 .else
-BOOT_JDK=	openjdk6-bootjdk-${ARCH}-20130409.tar.gz
+BOOT_JDK=	openjdk6-bootjdk-${ARCH}-20130414.tar.gz
 .include <bsd.port.arch.mk>
 .if (${ARCH}==amd64) || (${ARCH}==i386)
 DISTFILES+=	${BOOT_JDK}:1
