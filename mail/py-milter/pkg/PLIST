@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/01/25 15:18:39 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/04/15 07:44:03 benoit Exp $
 @conflict py-pymilter-*
 lib/python${MODPY_VERSION}/site-packages/Milter/
 lib/python${MODPY_VERSION}/site-packages/Milter/__init__.py
@@ -15,10 +15,14 @@ lib/python${MODPY_VERSION}/site-packages/Milter/dynip.py
 lib/python${MODPY_VERSION}/site-packages/Milter/dynip.pyc
 lib/python${MODPY_VERSION}/site-packages/Milter/greylist.py
 lib/python${MODPY_VERSION}/site-packages/Milter/greylist.pyc
+lib/python${MODPY_VERSION}/site-packages/Milter/greysql.py
+lib/python${MODPY_VERSION}/site-packages/Milter/greysql.pyc
 lib/python${MODPY_VERSION}/site-packages/Milter/plock.py
 lib/python${MODPY_VERSION}/site-packages/Milter/plock.pyc
 lib/python${MODPY_VERSION}/site-packages/Milter/pyip6.py
 lib/python${MODPY_VERSION}/site-packages/Milter/pyip6.pyc
+lib/python${MODPY_VERSION}/site-packages/Milter/test.py
+lib/python${MODPY_VERSION}/site-packages/Milter/test.pyc
 lib/python${MODPY_VERSION}/site-packages/Milter/unsign.py
 lib/python${MODPY_VERSION}/site-packages/Milter/unsign.pyc
 lib/python${MODPY_VERSION}/site-packages/Milter/utils.py
@@ -27,7 +31,7 @@ lib/python${MODPY_VERSION}/site-packages/milter.so
 lib/python${MODPY_VERSION}/site-packages/mime.py
 lib/python${MODPY_VERSION}/site-packages/mime.pyc
 lib/python${MODPY_VERSION}/site-packages/pymilter-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
-share/doc/${MODPY_PY_PREFIX}milter/
-share/doc/${MODPY_PY_PREFIX}milter/README
-share/examples/${MODPY_PY_PREFIX}milter/
-share/examples/${MODPY_PY_PREFIX}milter/sample.py
+share/doc/py-milter/
+share/doc/py-milter/README
+share/examples/py-milter/
+share/examples/py-milter/sample.py

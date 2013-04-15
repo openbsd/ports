@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 11:23:53 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2013/04/15 07:44:01 benoit Exp $
 
 COMMENT =	Python interface to sendmail milter API
 
-MODPY_EGG_VERSION = 0.9.7
+MODPY_EGG_VERSION = 0.9.8
 DISTNAME =	pymilter-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:S/py/py-/}
 CATEGORIES =	mail
