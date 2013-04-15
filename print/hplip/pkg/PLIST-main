@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.19 2013/03/08 06:51:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.20 2013/04/15 10:11:01 ajacoutot Exp $
 @conflict hplip-docs-*
 @conflict hplip-gui-<3.11.3p0
 @extraunexec rm -rf /var/log/hp/tmp/*
-@extraunexec rm -f /var/log/hp/*
+@extraunexec rm -f /var/log/hp/* 2>/dev/null || true
 bin/hp-check
 bin/hp-clean
 bin/hp-config_usb_printer
