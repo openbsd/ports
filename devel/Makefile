@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1119 2013/04/07 09:07:12 zhuk Exp $
+# $OpenBSD: Makefile,v 1.1120 2013/04/15 16:37:26 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1194,6 +1194,7 @@
      SUBDIR += ruby-arrayfields
      SUBDIR += ruby-bacon
      SUBDIR += ruby-bundler
+     SUBDIR += ruby-bundler,ruby18
      SUBDIR += ruby-cicphash
      SUBDIR += ruby-clio
      SUBDIR += ruby-color-tools
