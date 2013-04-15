@@ -1,6 +1,6 @@
 (*
 Module: BootConf
-    Parses (Open)BSD-stype /etc/boot.conf
+    Parses (Open)BSD-type /etc/boot.conf
 
 Author: Jasper Lievisse Adriaanse <jasper@jasper.la>
 
