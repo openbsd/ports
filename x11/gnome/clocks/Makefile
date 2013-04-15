@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/29 19:02:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2013/04/15 12:12:59 ajacoutot Exp $
 
 COMMENT=		clock application for GNOME
 
 GNOME_PROJECT=		gnome-clocks
-GNOME_VERSION=		3.8.0
+GNOME_VERSION=		3.8.1
 
 HOMEPAGE=		https://live.gnome.org/GnomeClocks
 
@@ -33,8 +33,6 @@ LIB_DEPENDS=		audio/libcanberra \
 MODGNOME_TOOLS=		goi vala
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
-
-NO_TEST=		Yes
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.11
