@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.288 2013/03/30 14:57:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.289 2013/04/15 08:04:46 jasper Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -162,6 +162,7 @@
      SUBDIR += rsyslog
      SUBDIR += rtty
      SUBDIR += ruby-augeas
+     SUBDIR += ruby-augeas,ruby18
      SUBDIR += ruby-capistrano
      SUBDIR += ruby-directory_watcher
      SUBDIR += ruby-facter
