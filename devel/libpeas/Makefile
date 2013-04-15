@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2013/03/28 19:33:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2013/04/15 07:39:29 ajacoutot Exp $
 
 COMMENT=	gobject-based plugins engine
 
 GNOME_PROJECT=	libpeas
 GNOME_VERSION=	1.8.0
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -37,18 +38,26 @@ RUN_DEPENDS=	devel/py-gobject3
 BUILD_DEPENDS=	devel/py-gobject3
 
 LIB_DEPENDS=	devel/gobject-introspection \
-		x11/gnome/gjs>=1.32.0 \
+		x11/gnome/gjs \
 		x11/gtk+3
 
 MODGNOME_ICON_CACHE=	Yes
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 LIBTOOL_FLAGS=	--tag=disable-static
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-static \
 		--disable-glade-catalog \
-		--disable-seed \
-		--disable-python3
+		--disable-seed
+
+# we need support for both python2 and python3
+BUILD_DEPENDS +=lang/python/${MODPY_DEFAULT_VERSION_2}
+RUN_DEPENDS +=	lang/python/${MODPY_DEFAULT_VERSION_2}
+WANTLIB +=	python${MODPY_DEFAULT_VERSION_2}
+CONFIGURE_ENV=	PYTHON2="${LOCALBASE}/bin/python${MODPY_DEFAULT_VERSION_2}" \
+		PYTHON3="${MODPY_BIN}" \
+		PYTHON3_CONFIG="${LOCALBASE}/bin/python${MODPY_DEFAULT_VERSION_3}-config"
 
 post-install:
 	rm ${PREFIX}/lib/libpeas-1.0/loaders/*.la
