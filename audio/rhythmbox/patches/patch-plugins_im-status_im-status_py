@@ -1,6 +1,9 @@
-$OpenBSD: patch-plugins_im-status_im-status_py,v 1.1 2013/04/15 08:42:54 ajacoutot Exp $
+$OpenBSD: patch-plugins_im-status_im-status_py,v 1.2 2013/04/15 10:04:26 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=698043
+From 85795ac2342762bc8eed666e027b7f06a3b5b932 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Mon, 15 Apr 2013 08:34:26 +0000
+Subject: im-status: fix plugin load by using GLib.GError
 
 --- plugins/im-status/im-status.py.orig	Mon Apr 15 10:29:32 2013
 +++ plugins/im-status/im-status.py	Mon Apr 15 10:30:03 2013
