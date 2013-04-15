@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_terminal_c,v 1.4 2013/03/31 08:13:54 ajacoutot Exp $
---- src/terminal.c.orig	Wed Mar 20 11:09:32 2013
-+++ src/terminal.c	Sat Mar 30 19:00:38 2013
-@@ -231,7 +231,11 @@ main (int argc, char **argv)
+$OpenBSD: patch-src_terminal_c,v 1.5 2013/04/15 18:57:55 jasper Exp $
+--- src/terminal.c.orig	Mon Apr 15 15:51:46 2013
++++ src/terminal.c	Mon Apr 15 20:55:57 2013
+@@ -230,7 +230,11 @@ main (int argc, char **argv)
     * because we want to use the value from PWD (if it is correct).
     * See bug 502146.
     */
