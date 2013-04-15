@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.56 2013/04/04 13:07:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2013/04/15 12:43:38 ajacoutot Exp $
 
 COMMENT=		plugins for Gedit
 
 GNOME_PROJECT=		gedit-plugins
 GNOME_VERSION=		3.8.0
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		editors
 
@@ -30,17 +30,20 @@ MODULES=		devel/gettext \
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/vte3 \
 			textproc/gsed \
-			x11/gnome/gedit>=3.8.0 \
+			x11/gnome/gedit \
 			x11/gnome/gucharmap
 
-LIB_DEPENDS=		devel/libpeas>=1.8.0 \
+LIB_DEPENDS=		devel/libpeas \
 			x11/gtksourceview3
 
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/py-gobject3 \
 			devel/vte3 \
-			x11/gnome/gedit>=3.8.0 \
+			x11/gnome/gedit \
 			x11/gnome/gucharmap
+
+# synctex
+RUN_DEPENDS +=		x11/dbus-python
 
 LIBTOOL_FLAGS=		--tag=disable-static
 
