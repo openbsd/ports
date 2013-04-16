@@ -1,0 +1,2 @@
+ClamAV-based virus scanner for c-icap. This uses clamd to scan;
+for an alternative using libclamav, see the c-icap-clamav package.
