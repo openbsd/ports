@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2013/03/29 16:17:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2013/04/16 06:35:54 jasper Exp $
 @conflict nautilus-file-roller-*
 @pkgpath x11/gnome/file-roller,-main
 @pkgpath x11/gnome/file-roller,-nautilus
@@ -33,6 +33,7 @@ share/help/C/file-roller/archive-extract.page
 share/help/C/file-roller/archive-open.page
 share/help/C/file-roller/archive-view.page
 share/help/C/file-roller/figures/
+share/help/C/file-roller/figures/file-roller-icon.png
 share/help/C/file-roller/figures/file-roller-main-window.png
 share/help/C/file-roller/figures/file-roller-open-recent.png
 share/help/C/file-roller/index.page
@@ -52,6 +53,7 @@ share/help/bg/file-roller/archive-extract.page
 share/help/bg/file-roller/archive-open.page
 share/help/bg/file-roller/archive-view.page
 share/help/bg/file-roller/figures/
+share/help/bg/file-roller/figures/file-roller-icon.png
 share/help/bg/file-roller/figures/file-roller-main-window.png
 share/help/bg/file-roller/figures/file-roller-open-recent.png
 share/help/bg/file-roller/index.page
@@ -70,6 +72,7 @@ share/help/ca/file-roller/archive-extract.page
 share/help/ca/file-roller/archive-open.page
 share/help/ca/file-roller/archive-view.page
 share/help/ca/file-roller/figures/
+share/help/ca/file-roller/figures/file-roller-icon.png
 share/help/ca/file-roller/figures/file-roller-main-window.png
 share/help/ca/file-roller/figures/file-roller-open-recent.png
 share/help/ca/file-roller/index.page
@@ -88,6 +91,7 @@ share/help/cs/file-roller/archive-extract.page
 share/help/cs/file-roller/archive-open.page
 share/help/cs/file-roller/archive-view.page
 share/help/cs/file-roller/figures/
+share/help/cs/file-roller/figures/file-roller-icon.png
 share/help/cs/file-roller/figures/file-roller-main-window.png
 share/help/cs/file-roller/figures/file-roller-open-recent.png
 share/help/cs/file-roller/index.page
@@ -107,6 +111,7 @@ share/help/da/file-roller/archive-extract.page
 share/help/da/file-roller/archive-open.page
 share/help/da/file-roller/archive-view.page
 share/help/da/file-roller/figures/
+share/help/da/file-roller/figures/file-roller-icon.png
 share/help/da/file-roller/figures/file-roller-main-window.png
 share/help/da/file-roller/figures/file-roller-open-recent.png
 share/help/da/file-roller/index.page
@@ -125,6 +130,7 @@ share/help/de/file-roller/archive-extract.page
 share/help/de/file-roller/archive-open.page
 share/help/de/file-roller/archive-view.page
 share/help/de/file-roller/figures/
+share/help/de/file-roller/figures/file-roller-icon.png
 share/help/de/file-roller/figures/file-roller-main-window.png
 share/help/de/file-roller/figures/file-roller-open-recent.png
 share/help/de/file-roller/index.page
@@ -143,6 +149,7 @@ share/help/el/file-roller/archive-extract.page
 share/help/el/file-roller/archive-open.page
 share/help/el/file-roller/archive-view.page
 share/help/el/file-roller/figures/
+share/help/el/file-roller/figures/file-roller-icon.png
 share/help/el/file-roller/figures/file-roller-main-window.png
 share/help/el/file-roller/figures/file-roller-open-recent.png
 share/help/el/file-roller/index.page
@@ -162,6 +169,7 @@ share/help/en_GB/file-roller/archive-extract.page
 share/help/en_GB/file-roller/archive-open.page
 share/help/en_GB/file-roller/archive-view.page
 share/help/en_GB/file-roller/figures/
+share/help/en_GB/file-roller/figures/file-roller-icon.png
 share/help/en_GB/file-roller/figures/file-roller-main-window.png
 share/help/en_GB/file-roller/figures/file-roller-open-recent.png
 share/help/en_GB/file-roller/index.page
@@ -180,6 +188,7 @@ share/help/es/file-roller/archive-extract.page
 share/help/es/file-roller/archive-open.page
 share/help/es/file-roller/archive-view.page
 share/help/es/file-roller/figures/
+share/help/es/file-roller/figures/file-roller-icon.png
 share/help/es/file-roller/figures/file-roller-main-window.png
 share/help/es/file-roller/figures/file-roller-open-recent.png
 share/help/es/file-roller/index.page
@@ -198,6 +207,7 @@ share/help/eu/file-roller/archive-extract.page
 share/help/eu/file-roller/archive-open.page
 share/help/eu/file-roller/archive-view.page
 share/help/eu/file-roller/figures/
+share/help/eu/file-roller/figures/file-roller-icon.png
 share/help/eu/file-roller/figures/file-roller-main-window.png
 share/help/eu/file-roller/figures/file-roller-open-recent.png
 share/help/eu/file-roller/index.page
@@ -216,6 +226,7 @@ share/help/fi/file-roller/archive-extract.page
 share/help/fi/file-roller/archive-open.page
 share/help/fi/file-roller/archive-view.page
 share/help/fi/file-roller/figures/
+share/help/fi/file-roller/figures/file-roller-icon.png
 share/help/fi/file-roller/figures/file-roller-main-window.png
 share/help/fi/file-roller/figures/file-roller-open-recent.png
 share/help/fi/file-roller/index.page
@@ -234,6 +245,7 @@ share/help/fr/file-roller/archive-extract.page
 share/help/fr/file-roller/archive-open.page
 share/help/fr/file-roller/archive-view.page
 share/help/fr/file-roller/figures/
+share/help/fr/file-roller/figures/file-roller-icon.png
 share/help/fr/file-roller/figures/file-roller-main-window.png
 share/help/fr/file-roller/figures/file-roller-open-recent.png
 share/help/fr/file-roller/index.page
@@ -252,6 +264,7 @@ share/help/gl/file-roller/archive-extract.page
 share/help/gl/file-roller/archive-open.page
 share/help/gl/file-roller/archive-view.page
 share/help/gl/file-roller/figures/
+share/help/gl/file-roller/figures/file-roller-icon.png
 share/help/gl/file-roller/figures/file-roller-main-window.png
 share/help/gl/file-roller/figures/file-roller-open-recent.png
 share/help/gl/file-roller/index.page
@@ -270,6 +283,7 @@ share/help/hu/file-roller/archive-extract.page
 share/help/hu/file-roller/archive-open.page
 share/help/hu/file-roller/archive-view.page
 share/help/hu/file-roller/figures/
+share/help/hu/file-roller/figures/file-roller-icon.png
 share/help/hu/file-roller/figures/file-roller-main-window.png
 share/help/hu/file-roller/figures/file-roller-open-recent.png
 share/help/hu/file-roller/index.page
@@ -289,6 +303,7 @@ share/help/it/file-roller/archive-extract.page
 share/help/it/file-roller/archive-open.page
 share/help/it/file-roller/archive-view.page
 share/help/it/file-roller/figures/
+share/help/it/file-roller/figures/file-roller-icon.png
 share/help/it/file-roller/figures/file-roller-main-window.png
 share/help/it/file-roller/figures/file-roller-open-recent.png
 share/help/it/file-roller/index.page
@@ -308,6 +323,7 @@ share/help/ja/file-roller/archive-extract.page
 share/help/ja/file-roller/archive-open.page
 share/help/ja/file-roller/archive-view.page
 share/help/ja/file-roller/figures/
+share/help/ja/file-roller/figures/file-roller-icon.png
 share/help/ja/file-roller/figures/file-roller-main-window.png
 share/help/ja/file-roller/figures/file-roller-open-recent.png
 share/help/ja/file-roller/index.page
@@ -327,6 +343,7 @@ share/help/nl/file-roller/archive-extract.page
 share/help/nl/file-roller/archive-open.page
 share/help/nl/file-roller/archive-view.page
 share/help/nl/file-roller/figures/
+share/help/nl/file-roller/figures/file-roller-icon.png
 share/help/nl/file-roller/figures/file-roller-main-window.png
 share/help/nl/file-roller/figures/file-roller-open-recent.png
 share/help/nl/file-roller/index.page
@@ -345,6 +362,7 @@ share/help/oc/file-roller/archive-extract.page
 share/help/oc/file-roller/archive-open.page
 share/help/oc/file-roller/archive-view.page
 share/help/oc/file-roller/figures/
+share/help/oc/file-roller/figures/file-roller-icon.png
 share/help/oc/file-roller/figures/file-roller-main-window.png
 share/help/oc/file-roller/figures/file-roller-open-recent.png
 share/help/oc/file-roller/index.page
@@ -363,6 +381,7 @@ share/help/pt_BR/file-roller/archive-extract.page
 share/help/pt_BR/file-roller/archive-open.page
 share/help/pt_BR/file-roller/archive-view.page
 share/help/pt_BR/file-roller/figures/
+share/help/pt_BR/file-roller/figures/file-roller-icon.png
 share/help/pt_BR/file-roller/figures/file-roller-main-window.png
 share/help/pt_BR/file-roller/figures/file-roller-open-recent.png
 share/help/pt_BR/file-roller/index.page
@@ -382,6 +401,7 @@ share/help/ru/file-roller/archive-extract.page
 share/help/ru/file-roller/archive-open.page
 share/help/ru/file-roller/archive-view.page
 share/help/ru/file-roller/figures/
+share/help/ru/file-roller/figures/file-roller-icon.png
 share/help/ru/file-roller/figures/file-roller-main-window.png
 share/help/ru/file-roller/figures/file-roller-open-recent.png
 share/help/ru/file-roller/index.page
@@ -400,6 +420,7 @@ share/help/sl/file-roller/archive-extract.page
 share/help/sl/file-roller/archive-open.page
 share/help/sl/file-roller/archive-view.page
 share/help/sl/file-roller/figures/
+share/help/sl/file-roller/figures/file-roller-icon.png
 share/help/sl/file-roller/figures/file-roller-main-window.png
 share/help/sl/file-roller/figures/file-roller-open-recent.png
 share/help/sl/file-roller/index.page
@@ -418,6 +439,7 @@ share/help/sv/file-roller/archive-extract.page
 share/help/sv/file-roller/archive-open.page
 share/help/sv/file-roller/archive-view.page
 share/help/sv/file-roller/figures/
+share/help/sv/file-roller/figures/file-roller-icon.png
 share/help/sv/file-roller/figures/file-roller-main-window.png
 share/help/sv/file-roller/figures/file-roller-open-recent.png
 share/help/sv/file-roller/index.page
@@ -437,6 +459,7 @@ share/help/te/file-roller/archive-extract.page
 share/help/te/file-roller/archive-open.page
 share/help/te/file-roller/archive-view.page
 share/help/te/file-roller/figures/
+share/help/te/file-roller/figures/file-roller-icon.png
 share/help/te/file-roller/figures/file-roller-main-window.png
 share/help/te/file-roller/figures/file-roller-open-recent.png
 share/help/te/file-roller/index.page
@@ -455,6 +478,7 @@ share/help/uk/file-roller/archive-extract.page
 share/help/uk/file-roller/archive-open.page
 share/help/uk/file-roller/archive-view.page
 share/help/uk/file-roller/figures/
+share/help/uk/file-roller/figures/file-roller-icon.png
 share/help/uk/file-roller/figures/file-roller-main-window.png
 share/help/uk/file-roller/figures/file-roller-open-recent.png
 share/help/uk/file-roller/index.page
@@ -473,6 +497,7 @@ share/help/vi/file-roller/archive-extract.page
 share/help/vi/file-roller/archive-open.page
 share/help/vi/file-roller/archive-view.page
 share/help/vi/file-roller/figures/
+share/help/vi/file-roller/figures/file-roller-icon.png
 share/help/vi/file-roller/figures/file-roller-main-window.png
 share/help/vi/file-roller/figures/file-roller-open-recent.png
 share/help/vi/file-roller/index.page
@@ -491,6 +516,7 @@ share/help/zh_CN/file-roller/archive-extract.page
 share/help/zh_CN/file-roller/archive-open.page
 share/help/zh_CN/file-roller/archive-view.page
 share/help/zh_CN/file-roller/figures/
+share/help/zh_CN/file-roller/figures/file-roller-icon.png
 share/help/zh_CN/file-roller/figures/file-roller-main-window.png
 share/help/zh_CN/file-roller/figures/file-roller-open-recent.png
 share/help/zh_CN/file-roller/index.page
@@ -510,6 +536,7 @@ share/help/zh_HK/file-roller/archive-extract.page
 share/help/zh_HK/file-roller/archive-open.page
 share/help/zh_HK/file-roller/archive-view.page
 share/help/zh_HK/file-roller/figures/
+share/help/zh_HK/file-roller/figures/file-roller-icon.png
 share/help/zh_HK/file-roller/figures/file-roller-main-window.png
 share/help/zh_HK/file-roller/figures/file-roller-open-recent.png
 share/help/zh_HK/file-roller/index.page
@@ -529,6 +556,7 @@ share/help/zh_TW/file-roller/archive-extract.page
 share/help/zh_TW/file-roller/archive-open.page
 share/help/zh_TW/file-roller/archive-view.page
 share/help/zh_TW/file-roller/figures/
+share/help/zh_TW/file-roller/figures/file-roller-icon.png
 share/help/zh_TW/file-roller/figures/file-roller-main-window.png
 share/help/zh_TW/file-roller/figures/file-roller-open-recent.png
 share/help/zh_TW/file-roller/index.page
