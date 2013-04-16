@@ -1,10 +1,10 @@
-$OpenBSD: patch-sieve-connect_pl,v 1.1 2011/04/02 14:31:42 sthen Exp $
---- sieve-connect.pl.orig	Sat Apr  2 07:13:57 2011
-+++ sieve-connect.pl	Sat Apr  2 08:57:18 2011
-@@ -44,7 +44,7 @@
- 	SSL_version	=> 'TLSv1',
+$OpenBSD: patch-sieve-connect_pl,v 1.2 2013/04/16 10:22:11 sthen Exp $
+--- sieve-connect.pl.orig	Tue Apr 16 10:07:35 2013
++++ sieve-connect.pl	Tue Apr 16 10:07:38 2013
+@@ -47,7 +47,7 @@ my %ssl_options = (
+ 	SSL_version	=> 'SSLv23:!SSLv2:!SSLv3',
  	SSL_cipher_list	=> 'ALL:!aNULL:!NULL:!LOW:!EXP:!ADH:@STRENGTH',
- 	SSL_verify_mode	=> 0x01,
+ 	SSL_verify_mode	=> 0x03,
 -	SSL_ca_path	=> '/etc/ssl/certs',
 +	SSL_ca_file	=> '/etc/ssl/cert.pem',
  );
