@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.152 2013/04/03 15:45:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.153 2013/04/16 06:17:13 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
-GNOME_VERSION=		3.8.0
-REVISION=		3
+GNOME_VERSION=		3.8.1
 
 HOMEPAGE=		http://projects.gnome.org/gdm/
 
