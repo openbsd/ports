@@ -1,13 +1,13 @@
-$OpenBSD: patch-plugins_power_gsd-backlight-linux_c,v 1.3 2013/03/31 07:03:31 ajacoutot Exp $
+$OpenBSD: patch-plugins_power_gsd-backlight-linux_c,v 1.4 2013/04/16 11:40:58 ajacoutot Exp $
 
 From 7936ac8d2d6724c472a81f84e3aa6fcf49aec7f5 Mon Sep 17 00:00:00 2001
 From: Antoine Jacoutot <ajacoutot@gnome.org>
 Date: Fri, 29 Mar 2013 14:32:49 +0000
 Subject: Add missing include for NULL.
 
---- plugins/power/gsd-backlight-linux.c.orig	Fri Mar 29 15:02:24 2013
-+++ plugins/power/gsd-backlight-linux.c	Fri Mar 29 15:05:35 2013
-@@ -23,6 +23,8 @@
+--- plugins/power/gsd-backlight-linux.c.orig	Tue Apr 16 11:47:58 2013
++++ plugins/power/gsd-backlight-linux.c	Tue Apr 16 13:33:17 2013
+@@ -25,6 +25,8 @@
  
  #include "gsd-backlight-linux.h"
  
