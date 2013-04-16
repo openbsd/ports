@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/04/07 09:06:36 zhuk Exp $
+# $OpenBSD: Makefile,v 1.18 2013/04/16 08:54:09 ajacoutot Exp $
 
 COMMENT=	python library to access freedesktop.org standards
 
@@ -19,6 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	http://people.freedesktop.org/~takluyver/
 
 FLAVORS =	python3
+FLAVOR?=
 
 MODULES=	lang/python
 
