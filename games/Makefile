@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.261 2013/04/14 14:56:33 bcallah Exp $
+# $OpenBSD: Makefile,v 1.262 2013/04/16 02:12:02 bcallah Exp $
 
      SUBDIR =
      SUBDIR += abuse
@@ -56,6 +56,7 @@
      SUBDIR += duke3ddata
      SUBDIR += dungeon
      SUBDIR += dungeon-crawl
+     SUBDIR += easyrpg
      SUBDIR += eboard
      SUBDIR += eboard-extras
      SUBDIR += eduke32
