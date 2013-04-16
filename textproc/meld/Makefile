@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2013/03/11 11:42:42 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2013/04/16 06:21:44 ajacoutot Exp $
 
 COMMENT=	graphical diff and merge tool
 
 GNOME_VERSION=	1.6.1
 GNOME_PROJECT=	meld
+REVISION=	0
 
 CATEGORIES=	textproc x11
 
@@ -13,7 +14,6 @@ HOMEPAGE=	http://meld.sourceforge.net/
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	lang/python \
-		textproc/intltool \
 		x11/gnome
 
 RUN_DEPENDS=	x11/py-gtk2
