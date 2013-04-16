@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2013/04/04 13:07:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.32 2013/04/16 06:15:38 jasper Exp $
 @bin bin/gedit
 bin/gnome-text-editor
 include/gedit-3.0/
@@ -66,7 +66,6 @@ lib/gedit/plugins/libmodelines.so
 lib/gedit/plugins/libsort.so
 lib/gedit/plugins/libspell.so
 lib/gedit/plugins/libtime.so
-lib/gedit/plugins/libzeitgeistplugin.so
 lib/gedit/plugins/modelines.plugin
 lib/gedit/plugins/pythonconsole/
 lib/gedit/plugins/pythonconsole.plugin
@@ -149,7 +148,6 @@ lib/gedit/plugins/snippets/windowactivatable.pyo
 lib/gedit/plugins/sort.plugin
 lib/gedit/plugins/spell.plugin
 lib/gedit/plugins/time.plugin
-lib/gedit/plugins/zeitgeist.plugin
 lib/pkgconfig/gedit.pc
 libexec/gedit/
 libexec/gedit/gedit-bugreport.sh
@@ -2163,6 +2161,7 @@ share/help/zh_TW/gedit/index.page
 share/help/zh_TW/gedit/legal.xml
 share/locale/af/LC_MESSAGES/gedit.mo
 share/locale/am/LC_MESSAGES/gedit.mo
+share/locale/an/LC_MESSAGES/gedit.mo
 share/locale/ar/LC_MESSAGES/gedit.mo
 share/locale/as/LC_MESSAGES/gedit.mo
 share/locale/ast/LC_MESSAGES/gedit.mo
