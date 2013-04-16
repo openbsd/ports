@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/16 09:59:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2013/04/16 12:08:07 sthen Exp $
 
      SUBDIR =
      SUBDIR += c-icap
      SUBDIR += modules
-     SUBDIR += squidclamav
 
 .include <bsd.port.subdir.mk>
