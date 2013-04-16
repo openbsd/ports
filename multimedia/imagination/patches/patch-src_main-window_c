@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_main-window_c,v 1.1.1.1 2013/04/16 16:18:03 giovanni Exp $
+--- src/main-window.c.orig	Mon Apr 15 16:01:14 2013
++++ src/main-window.c	Mon Apr 15 16:01:30 2013
+@@ -23,6 +23,7 @@
+ #  include <config.h>
+ #endif
+ #include <assert.h>
++#include <libintl.h>
+ 
+ #include "main-window.h"
+ #include "callbacks.h"

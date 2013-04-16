@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_audio_c,v 1.1.1.1 2013/04/16 16:18:03 giovanni Exp $
+--- src/audio.c.orig	Mon Apr 15 16:00:27 2013
++++ src/audio.c	Mon Apr 15 16:00:43 2013
+@@ -17,6 +17,7 @@
+  *
+  */
+ 
++#include <libintl.h>
+ #include "audio.h"
+ 
+ static gchar *img_get_audio_filetype(gchar *);

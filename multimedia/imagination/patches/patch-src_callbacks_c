@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_callbacks_c,v 1.1.1.1 2013/04/16 16:18:03 giovanni Exp $
+--- src/callbacks.c.orig	Mon Apr 15 16:00:51 2013
++++ src/callbacks.c	Mon Apr 15 16:01:08 2013
+@@ -19,6 +19,7 @@
+  *
+  */
+ 
++#include <libintl.h>
+ #include "callbacks.h"
+ #include "export.h"
+ #include <math.h>
+@@ -2780,4 +2781,4 @@ img_notebook_switch_page (GtkNotebook       *notebook,
+         gtk_label_set_attributes(GTK_LABEL(img->message_label), pango_list);
+         pango_attr_list_unref (pango_list);
+     }
+-}
+\ No newline at end of file
++}
