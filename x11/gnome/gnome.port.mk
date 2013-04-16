@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.66 2013/03/29 16:35:44 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.67 2013/04/16 13:16:30 ajacoutot Exp $
 #
 # Module for GNOME related ports
 
@@ -50,7 +50,7 @@ USE_GMAKE?=		Yes
 # or for ensuring documentation is available. If an option is not set, it's
 # explicitly disabled.
 # Currently supported tools are:
-# * goi:  Build and enable GObject Introspection data.
+# * gi: Build and enable GObject Introspection data.
 # * gtk-doc: Enable to build the included docs.
 # * vala: Enable vala bindings.
 # * yelp: Use this if there are any files under share/gnome/help/
@@ -63,12 +63,12 @@ USE_GMAKE?=		Yes
 # MODGNOME_RUN_DEPENDS_${tool} in your multi package RUN_DEPENDS.
 
 MODGNOME_CONFIGURE_ARGS_gtkdoc=--disable-gtk-doc
-MODGNOME_CONFIGURE_ARGS_goi=--disable-introspection
+MODGNOME_CONFIGURE_ARGS_gi=--disable-introspection
 MODGNOME_CONFIGURE_ARGS_vala=--disable-vala --disable-vala-bindings
 
 .if defined(MODGNOME_TOOLS)
-.   if ${MODGNOME_TOOLS:Mgoi}
-        MODGNOME_CONFIGURE_ARGS_goi=--enable-introspection
+.   if ${MODGNOME_TOOLS:Mgi}
+        MODGNOME_CONFIGURE_ARGS_gi=--enable-introspection
         MODGNOME_BUILD_DEPENDS+=devel/gobject-introspection>=1.36.0
 .   endif
 
@@ -91,7 +91,7 @@ MODGNOME_CONFIGURE_ARGS_vala=--disable-vala --disable-vala-bindings
 .   endif
 .endif
 
-CONFIGURE_ARGS+=${MODGNOME_CONFIGURE_ARGS_goi} \
+CONFIGURE_ARGS+=${MODGNOME_CONFIGURE_ARGS_gi} \
 		${MODGNOME_CONFIGURE_ARGS_gtkdoc} \
 		${MODGNOME_CONFIGURE_ARGS_vala}
 
