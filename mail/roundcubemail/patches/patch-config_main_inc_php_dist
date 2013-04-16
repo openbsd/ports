@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_main_inc_php_dist,v 1.19 2013/01/26 14:36:16 sthen Exp $
---- config/main.inc.php.dist.orig	Fri Jan 25 17:00:48 2013
-+++ config/main.inc.php.dist	Sat Jan 26 14:27:03 2013
-@@ -458,7 +458,7 @@ $rcmail_config['spellcheck_dictionary'] = false;
+$OpenBSD: patch-config_main_inc_php_dist,v 1.20 2013/04/16 13:37:23 sthen Exp $
+--- config/main.inc.php.dist.orig	Wed Mar 27 20:31:58 2013
++++ config/main.inc.php.dist	Thu Apr 11 16:25:49 2013
+@@ -489,7 +489,7 @@ $rcmail_config['spellcheck_dictionary'] = false;
  
  // Set the spell checking engine. 'googie' is the default. 'pspell' is also available,
  // but requires the Pspell extensions. When using Nox Spell Server, also set 'googie' here.

@@ -1,8 +1,27 @@
-$OpenBSD: README,v 1.1 2012/01/19 13:53:48 sthen Exp $
+$OpenBSD: README,v 1.2 2013/04/16 13:37:23 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
+
+Standard Roundcube installation/upgrade
+=======================================
+See ${INSTDIR}/INSTALL and ${INSTDIR}/UPGRADING
+for more information.
+
+If upgrading from a version before 0.9, note that database access is now
+done via PDO.
+
+If you are using MySQL or PostgreSQL you will need to ensure that the
+relevant package (php-pdo_mysql or php-pdo_pgsql) is installed and
+enabled. If you are using SQLite, you will need to convert the
+database from sqlite2 to sqlite3, for example (adjusting filenames
+if necessary):
+
+# cd /var/www/roundcubemail/db
+# mv sqlite.db old_sqlite.db
+# sqlite old_sqlite.db .dump | sqlite3 sqlite.db
+
 
 Setup with httpd from OpenBSD base system
 =========================================
@@ -12,6 +31,7 @@ directory. You can configure this as follows:
 # ln -s ../modules.sample/roundcubemail.conf \
         ${PREFIX}/conf/modules
 # /etc/rc.d/httpd restart
+
 
 Setup with other web servers
 ============================
@@ -28,8 +48,3 @@ call if you want to check.
 If this is not present it will need adding as a FastCGI parameter.
 For nginx, you can do this by setting 'fastcgi_param HTTPS on' in the
 appropriate location{} block for HTTPS.
-
-Standard Roundcube installation/upgrade
-=======================================
-See ${INSTDIR}/INSTALL and ${INSTDIR}/UPGRADING
-for more information.
