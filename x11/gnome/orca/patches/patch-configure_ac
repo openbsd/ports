@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_ac,v 1.1 2013/04/16 12:48:41 ajacoutot Exp $
+--- configure.ac.orig	Tue Apr 16 14:39:54 2013
++++ configure.ac	Tue Apr 16 14:40:03 2013
+@@ -45,7 +45,7 @@ AC_PROG_INSTALL
+ dnl Check for python and python modules needed by Orca
+ dnl TODO: check for incompatibilities between Orca and liblouis
+ dnl per http://live.gnome.org/Orca/Braille
+-AM_PATH_PYTHON(3.3)
++AM_PATH_PYTHON(3.2.3)
+ 
+ # Don't require the DISPLAY to be set - the gtk checking will fail 
+ # if DISPLAY is not set, and we don't like that.

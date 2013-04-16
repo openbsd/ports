@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2013/04/16 10:28:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2013/04/16 12:48:41 ajacoutot Exp $
 
 # XXX could use brltty and brlapi (with python bindinds) -- not ported yet
 
@@ -7,8 +7,7 @@ PKG_ARCH=		*
 COMMENT=		assistive screen reader
 
 GNOME_PROJECT=		orca
-GNOME_VERSION=		3.6.3
-REVISION=		2
+GNOME_VERSION=		3.8.0
 
 HOMEPAGE=		http://live.gnome.org/Orca
 
@@ -21,19 +20,19 @@ MODULES=		lang/python \
 COMMON_DEPENDS= 	audio/speech-dispatcher \
 			devel/liblouis \
 			devel/py-gobject3${MODPY_FLAVOR} \
-			devel/py-xdg${MODPY_FLAVOR} \
-			x11/dbus-python \
 			x11/gnome/py-atspi
 
 BUILD_DEPENDS=		${COMMON_DEPENDS}
-RUN_DEPENDS=		${COMMON_DEPENDS}
+RUN_DEPENDS=		${COMMON_DEPENDS} \
+			devel/py-setproctitle${MODPY_FLAVOR}
 
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 MODGNOME_TOOLS= 	yelp
 
-CONFIGURE_ENV=		DATADIRNAME=share
+CONFIGURE_STYLE=	autoconf no-autoheader
+AUTOCONF_VERSION=	2.69
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/orca/
 
