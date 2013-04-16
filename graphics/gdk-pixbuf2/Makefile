@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2013/04/15 14:48:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2013/04/16 13:17:01 ajacoutot Exp $
 
 COMMENT=		graphic library for gtk+2
 
@@ -32,7 +32,7 @@ LIB_DEPENDS=		devel/glib2 \
 BUILD_DEPENDS +=	misc/shared-mime-info
 RUN_DEPENDS +=		misc/shared-mime-info
 
-MODGNOME_TOOLS=		goi
+MODGNOME_TOOLS=		gi
 MODGNOME_CPPFLAGS=	-I${LOCALBASE}/include/libpng
 
 CONFIGURE_STYLE=	gnu

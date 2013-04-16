@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.121 2013/04/16 10:21:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.122 2013/04/16 13:17:00 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -70,7 +70,7 @@ RUN_DEPENDS +=		multimedia/gstreamer1/plugins-ugly
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
-MODGNOME_TOOLS= 	goi vala yelp
+MODGNOME_TOOLS= 	gi vala yelp
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 

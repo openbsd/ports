@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/09/27 13:00:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2013/04/16 13:17:01 ajacoutot Exp $
 
 COMMENT=	library for using real 3D models within a Clutter scene
 
@@ -19,7 +19,7 @@ WANTLIB += gobject-2.0 gthread-2.0 json-glib-1.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread-stubs stdc++
 WANTLIB += xcb xcb-render xcb-shm z
 
-MODGNOME_TOOLS=		goi
+MODGNOME_TOOLS=		gi
 
 LIB_DEPENDS= 		graphics/clutter/core
 

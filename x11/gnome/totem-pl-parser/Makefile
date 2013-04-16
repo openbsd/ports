@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2013/03/30 09:17:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2013/04/16 13:17:02 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -33,7 +33,7 @@ LIB_DEPENDS=	mail/gmime \
 		net/quvi/libquvi \
 		security/libgcrypt
 
-MODGNOME_TOOLS= goi
+MODGNOME_TOOLS= gi
 
 CONFIGURE_ARGS=	--enable-quvi \
 		--enable-libarchive \

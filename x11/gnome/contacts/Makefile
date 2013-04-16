@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/04/15 13:18:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2013/04/16 13:17:02 ajacoutot Exp $
 
 COMMENT=		contacts manager for GNOME
 
@@ -34,7 +34,7 @@ LIB_DEPENDS=		devel/libnotify \
 			x11/gnome/desktop
 
 MODGNOME_DESKTOP_FILE=	Yes
-MODGNOME_TOOLS= 	goi vala
+MODGNOME_TOOLS= 	gi vala
 
 # Re-generate C files from vala sources to ensure HAVE_CHEESE is honoured.
 post-configure:

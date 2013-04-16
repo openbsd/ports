@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2013/04/13 10:53:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.85 2013/04/16 13:17:01 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -66,7 +66,7 @@ MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 
 # XXX: Re-enable on update if/when vala 0.20 is supported
-MODGNOME_TOOLS= 	goi yelp #vala
+MODGNOME_TOOLS= 	gi yelp #vala
 
 YACC=			bison -y
 

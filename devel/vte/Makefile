@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2013/03/11 10:50:31 espie Exp $
+# $OpenBSD: Makefile,v 1.106 2013/04/16 13:17:00 ajacoutot Exp $
 
 # Don't pull in x11/py-gtk2 on these archs; build fails with binutils 2.15
 NOT_FOR_ARCHS-python=	mips64 mips64el
@@ -60,7 +60,7 @@ post-install:
 	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/gtk-2.0/*.{a,la}
 . endif
 
-MODGNOME_TOOLS= 	goi
+MODGNOME_TOOLS= 	gi
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-gnome-pty-helper \

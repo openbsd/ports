@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2013/03/30 08:26:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2013/04/16 13:17:00 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -36,7 +36,7 @@ LIB_DEPENDS=		devel/libsoup,-gnome \
 			x11/gnome/gcr \
 			x11/gnome/online-accounts
 
-MODGNOME_TOOLS= 	goi vala
+MODGNOME_TOOLS= 	gi vala
 
 LIBTOOL_FLAGS+= 	--tag=disable-static
 

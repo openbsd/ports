@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2013/04/02 16:16:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.94 2013/04/16 13:17:01 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -49,7 +49,7 @@ WANTLIB += xcb-shm xcb xcb-render z gthread-2.0 cairo-gobject m ffi
 WANTLIB += atk-bridge-2.0 atspi harfbuzz icudata icule icuuc
 WANTLIB += gmodule-2.0 graphite2
 
-MODGNOME_TOOLS= goi yelp
+MODGNOME_TOOLS= gi yelp
 
 LIB_DEPENDS=	x11/gtk+3
 

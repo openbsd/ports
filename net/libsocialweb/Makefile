@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/30 09:26:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2013/04/16 13:17:01 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -29,7 +29,7 @@ WANTLIB += soup-2.4 soup-gnome-2.4 sqlite3 xml2 z
 MODULES=		devel/gettext \
 			x11/gnome
 
-MODGNOME_TOOLS= 	goi vala
+MODGNOME_TOOLS= 	gi vala
 BUILD_DEPENDS=		textproc/libxslt
 LIB_DEPENDS=		devel/json-glib \
 			net/librest \

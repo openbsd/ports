@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.101 2013/04/16 10:23:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.102 2013/04/16 13:17:01 ajacoutot Exp $
 
 COMMENT=		lightweight GNOME text editor
 
@@ -42,7 +42,7 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			x11/gnome/gvfs #--enable-gvfs-metadata
 
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
-MODGNOME_TOOLS= 	goi yelp
+MODGNOME_TOOLS= 	gi yelp
 MODGNOME_DESKTOP_FILE=	Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 

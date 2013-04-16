@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2013/04/15 19:00:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.73 2013/04/16 13:17:01 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -27,7 +27,7 @@ MODULES=		devel/gettext \
 			devel/dconf \
 			x11/gnome
 
-MODGNOME_TOOLS= 	goi yelp
+MODGNOME_TOOLS= 	gi yelp
 MODGNOME_DESKTOP_FILE=	Yes
 
 # configure checks for desktop-file-validate(1)

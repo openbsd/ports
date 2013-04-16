@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.138 2013/04/10 15:41:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.139 2013/04/16 13:17:02 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -78,7 +78,7 @@ TEST_DEPENDS=		${MODPY_RUN_DEPENDS} \
 
 LIBTOOL_FLAGS=		--tag=disable-static
 
-MODGNOME_TOOLS= 	goi vala
+MODGNOME_TOOLS= 	gi vala
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 MODPY_BUILDDEP=		No

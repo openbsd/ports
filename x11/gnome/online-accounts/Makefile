@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2013/04/15 09:38:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2013/04/16 13:17:01 ajacoutot Exp $
 
 # XXX Kerberos support is disabled because our Heimdal is too old
 
@@ -41,7 +41,7 @@ LIB_DEPENDS=		devel/json-glib \
 			x11/gnome/libsecret \
 			www/webkit,gtk3
 
-MODGNOME_TOOLS= 	goi
+MODGNOME_TOOLS= 	gi
 MODGNOME_ICON_CACHE=	Yes
 
 .include <bsd.port.mk>

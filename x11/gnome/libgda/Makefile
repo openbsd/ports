@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2013/03/29 17:31:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.74 2013/04/16 13:17:01 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -69,7 +69,7 @@ BUILD_DEPENDS=		databases/db/v4 \
 
 TEST_DEPENDS=	devel/check
 
-MODGNOME_TOOLS= 	goi yelp
+MODGNOME_TOOLS= 	gi yelp
 
 LIBTOOL_FLAGS=		--tag=disable-static
 CONFIGURE_ARGS+=	--disable-static \

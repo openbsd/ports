@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/03 13:41:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2013/04/16 13:17:02 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -29,7 +29,7 @@ RUN_DEPENDS=		x11/gnome/gjs
 
 LIB_DEPENDS=		x11/gtk+3
 
-MODGNOME_TOOLS=		goi
+MODGNOME_TOOLS=		gi
 MODGNOME_DESKTOP_FILE=	Yes
 
 LIBTOOL_FLAGS=		--tag=disable-static

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/04/15 12:12:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2013/04/16 13:17:02 ajacoutot Exp $
 
 COMMENT=		clock application for GNOME
 
@@ -30,7 +30,7 @@ LIB_DEPENDS=		audio/libcanberra \
 			x11/gnome/desktop \
 			x11/gnome/libgweather
 
-MODGNOME_TOOLS=		goi vala
+MODGNOME_TOOLS=		gi vala
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 

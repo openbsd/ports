@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/29 08:02:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2013/04/16 13:17:02 ajacoutot Exp $
 
 COMMENT=	interface components for OpenPGP
 
@@ -34,7 +34,7 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/dconf
 
-MODGNOME_TOOLS=	goi
+MODGNOME_TOOLS=	gi
 
 CONFIGURE_ARGS=	--disable-update-mime-database
 

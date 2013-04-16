@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/27 17:52:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2013/04/16 13:17:01 ajacoutot Exp $
 
 COMMENT=	service interface for assistive technologies
 
@@ -21,7 +21,7 @@ MODULES=	devel/gettext \
 LIB_DEPENDS=	x11/dbus \
 		devel/glib2>=2.36.0
 
-MODGNOME_TOOLS= goi
+MODGNOME_TOOLS= gi
 
 # connects to DBus
 TEST_IS_INTERACTIVE=	x11

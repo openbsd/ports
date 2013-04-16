@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 10:50:10 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/04/16 13:17:01 ajacoutot Exp $
 
 COMMENT=	GObject based collection library
 
@@ -27,7 +27,7 @@ LIB_DEPENDS=	devel/glib2
 MODULES=	devel/gettext \
 		x11/gnome
 
-MODGNOME_TOOLS= goi
+MODGNOME_TOOLS= gi
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-doc

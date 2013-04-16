@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2013/03/30 09:25:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.55 2013/04/16 13:17:01 ajacoutot Exp $
 
 COMMENT=		people aggregation library
 
@@ -38,7 +38,7 @@ RUN_DEPENDS=	net/telepathy/telepathy-mission-control
 
 TEST_DEPENDS=	${FULLPKGNAME}:${BASE_PKGPATH}
 
-MODGNOME_TOOLS= 	goi vala
+MODGNOME_TOOLS= 	gi vala
 
 CONFIGURE_ARGS+=	--enable-import-tool \
 			--enable-inspect-tool

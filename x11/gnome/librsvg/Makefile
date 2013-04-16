@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2013/04/05 07:32:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.88 2013/04/16 13:17:02 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -27,7 +27,7 @@ WANTLIB += xcb-shm xml2 z
 MODULES=	devel/gettext \
 		x11/gnome
 
-MODGNOME_TOOLS=	goi vala
+MODGNOME_TOOLS=	gi vala
 
 LIB_DEPENDS=	devel/pango \
 		graphics/gdk-pixbuf2 \

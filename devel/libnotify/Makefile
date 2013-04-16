@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/03/30 13:11:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2013/04/16 13:17:00 ajacoutot Exp $
 
 COMMENT=		send desktop notifications to a notification daemon
 
@@ -26,7 +26,7 @@ BUILD_DEPENDS=		x11/gtk+3
 
 LIB_DEPENDS=		graphics/gdk-pixbuf2
 
-MODGNOME_TOOLS= 	goi
+MODGNOME_TOOLS= 	gi
 
 CONFIGURE_STYLE=	gnu
 

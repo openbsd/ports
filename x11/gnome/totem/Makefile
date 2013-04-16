@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.101 2013/04/16 10:21:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.102 2013/04/16 13:17:02 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -69,7 +69,7 @@ RUN_DEPENDS +=		multimedia/gstreamer1/plugins-good \
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
-MODGNOME_TOOLS=		goi vala yelp
+MODGNOME_TOOLS=		gi vala yelp
 
 LIBTOOL_FLAGS=		--tag=disable-static
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2013/04/15 18:56:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2013/04/16 13:17:01 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -35,7 +35,7 @@ WANTLIB += xcb-shm z
 
 LIB_DEPENDS=		x11/gtk+3>=3.3.18
 
-MODGNOME_TOOLS= 	goi
+MODGNOME_TOOLS= 	gi
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-gnome-pty-helper

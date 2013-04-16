@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/28 19:33:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2013/04/16 13:17:01 ajacoutot Exp $
 
 COMMENT=		OpenGL-based interactive canvas library
 
@@ -15,7 +15,7 @@ WANTLIB += gthread-2.0 harfbuzz icudata icule icuuc json-glib-1.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs xcb xcb-render xcb-shm z
 
-MODGNOME_TOOLS=		goi
+MODGNOME_TOOLS=		gi
 
 LIB_DEPENDS=		devel/json-glib \
 			graphics/clutter/cogl>=${MAJOR} \

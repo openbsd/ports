@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2013/04/15 18:54:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2013/04/16 13:17:01 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -68,7 +68,7 @@ WANTLIB-cups += ${WANTLIB}
 WANTLIB-cups += asn1 crypto cups gdk-3 gssapi gtk-3 krb5 ssl
 WANTLIB-cups += avahi-client avahi-common colordprivate
 
-MODGNOME_TOOLS=		goi
+MODGNOME_TOOLS=		gi
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include/freetype2 -I${LOCALBASE}/include/libpng
 MODGNOME_ICON_CACHE=	Yes
 

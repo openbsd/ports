@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/04/03 13:00:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2013/04/16 13:17:02 ajacoutot Exp $
 
 COMMENT=		window and compositing manager
 
@@ -26,7 +26,7 @@ MODULES=		devel/dconf \
 			devel/gettext \
 			x11/gnome
 
-MODGNOME_TOOLS=		goi
+MODGNOME_TOOLS=		gi
 
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			devel/startup-notification \

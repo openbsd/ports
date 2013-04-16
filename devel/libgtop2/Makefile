@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2013/03/27 07:57:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.98 2013/04/16 13:17:00 ajacoutot Exp $
 
 COMMENT=		portable library for obtaining system information
 
@@ -24,7 +24,7 @@ MODULES=		devel/gettext \
 LIB_DEPENDS=		devel/glib2
 RUN_DEPENDS=		sysutils/lsof
 
-MODGNOME_TOOLS= 	goi
+MODGNOME_TOOLS= 	gi
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+= 	--without-libgtop-smp

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2013/03/30 13:03:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.83 2013/04/16 13:17:00 ajacoutot Exp $
 
 # gconf2-polkit requires spidermonkey
 ONLY_FOR_ARCHS-polkit=	alpha amd64 i386 hppa mips64el mips64 powerpc sparc64
@@ -64,7 +64,7 @@ LIB_DEPENDS-polkit= ${LIB_DEPENDS} \
 # polkit(8) almost always needs to know the "active" session
 RUN_DEPENDS-polkit +=sysutils/consolekit
 
-MODGNOME_TOOLS=	goi
+MODGNOME_TOOLS=	gi
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--without-openldap \

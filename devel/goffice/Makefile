@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2013/03/14 09:00:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2013/04/16 13:17:00 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -41,7 +41,7 @@ LIB_DEPENDS=		devel/libgsf \
 			x11/gnome/librsvg \
 			x11/gtk+3
 
-MODGNOME_TOOLS=		goi
+MODGNOME_TOOLS=		gi
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
 LIBTOOL_FLAGS=		--tag=disable-static

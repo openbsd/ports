@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/11 10:50:10 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2013/04/16 13:17:00 ajacoutot Exp $
 
 # XXX fix building with glib2 >= 2.29 (G_CONST_RETURN is deprecated)
 CFLAGS +=	"-DG_CONST_RETURN=const"
@@ -27,7 +27,7 @@ WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread-stubs stdc++
 WANTLIB += xcb xcb-render xcb-shm z ffi
 
-MODGNOME_TOOLS= 	goi
+MODGNOME_TOOLS= 	gi
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-x

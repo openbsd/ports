@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/04/06 08:21:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2013/04/16 13:17:01 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -18,7 +18,7 @@ WANTLIB += gssdp-1.0 m pcre soup-2.4 xml2 z ffi pthread sqlite3
 
 LIBTOOL_FLAGS+= 	--tag=disable-static
 
-MODGNOME_TOOLS= 	goi vala
+MODGNOME_TOOLS= 	gi vala
 LIB_DEPENDS=		net/gssdp>=0.12.2 \
 			sysutils/e2fsprogs>=1.41.4p5
 

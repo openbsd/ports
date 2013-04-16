@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2013/04/16 06:34:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.46 2013/04/16 13:17:02 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -27,7 +27,7 @@ MODULES=		devel/gettext \
 			devel/dconf \
 			x11/gnome
 
-MODGNOME_TOOLS= 	goi
+MODGNOME_TOOLS= 	gi
 MODGNOME_ICON_CACHE=	Yes
 
 LIB_DEPENDS=		devel/libsoup>=2.42.0 \

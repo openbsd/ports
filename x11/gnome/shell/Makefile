@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2013/04/16 10:21:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2013/04/16 13:17:02 ajacoutot Exp $
 
 COMMENT=		next generation GNOME shell
 
@@ -36,7 +36,7 @@ MODULES=		devel/dconf \
 			lang/python \
 			x11/gnome
 
-MODGNOME_TOOLS=		goi
+MODGNOME_TOOLS=		gi
 
 BUILD_DEPENDS +=	devel/gsettings-desktop-schemas
 RUN_DEPENDS +=		devel/gsettings-desktop-schemas

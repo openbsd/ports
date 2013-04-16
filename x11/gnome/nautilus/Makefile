@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.126 2013/04/16 06:34:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.127 2013/04/16 13:17:02 ajacoutot Exp $
 
 COMMENT=		GNOME file manager
 
@@ -48,7 +48,7 @@ LIB_DEPENDS=		x11/gnome/desktop \
 			graphics/libexif \
 			textproc/exempi
 
-MODGNOME_TOOLS= 	goi
+MODGNOME_TOOLS= 	gi
 MODGNOME_DESKTOP_FILE=	Yes
 
 CONFIGURE_ARGS+= 	--disable-update-mimedb

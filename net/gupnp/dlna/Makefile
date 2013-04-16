@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/04/09 13:33:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2013/04/16 13:17:01 ajacoutot Exp $
 
 COMMENT=		DLNA integration for GUPnP
 
@@ -11,7 +11,7 @@ SHARED_LIBS +=	gupnp-dlna-gst-2.0        0.0 # 3.0
 MODULES=		devel/gettext \
 			x11/gnome
 
-MODGNOME_TOOLS= 	goi vala
+MODGNOME_TOOLS= 	gi vala
 
 WANTLIB += c ffi glib-2.0 gmodule-2.0 gobject-2.0 gstaudio-1.0
 WANTLIB += gstbase-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0

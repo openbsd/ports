@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/04/08 06:27:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2013/04/16 13:17:01 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -44,7 +44,7 @@ LIB_DEPENDS=		devel/libsoup,-gnome \
 			geo/memphis \
 			graphics/clutter/clutter-gtk>=1.2.0
 
-MODGNOME_TOOLS=		goi
+MODGNOME_TOOLS=		gi
 
 CONFIGURE_STYLE=	gnu
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/28 07:33:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2013/04/16 13:17:01 ajacoutot Exp $
 
 COMMENT=	framework for making media discovery and browsing easy
 
@@ -32,7 +32,7 @@ WANTLIB += xcb-shm xml2 z
 LIB_DEPENDS=	devel/libsoup \
 		x11/gtk+3
 
-MODGNOME_TOOLS= goi vala
+MODGNOME_TOOLS= gi vala
 
 SUBST_VARS+=	API
 

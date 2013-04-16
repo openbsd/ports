@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:10:53 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/04/16 13:17:01 ajacoutot Exp $
 
 COMMENT=	MathML and SVG rendering library
 
@@ -31,7 +31,7 @@ LIB_DEPENDS=	devel/pango \
 		graphics/gdk-pixbuf2 \
 		textproc/libxml
 
-MODGNOME_TOOLS=	goi
+MODGNOME_TOOLS=	gi
 
 CONFIGURE_STYLE=gnu
 

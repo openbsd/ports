@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/04/16 10:23:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2013/04/16 13:17:02 ajacoutot Exp $
 
 BROKEN-powerpc=	clang dumps core
 
@@ -36,7 +36,7 @@ LIB_DEPENDS=	devel/libgee06 \
 		x11/gtksourceview3
 
 MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
-MODGNOME_TOOLS=	goi vala
+MODGNOME_TOOLS=	gi vala
 
 BUILD_DEPENDS=	x11/gnome/gedit \
 		devel/py-gobject3${MODPY_FLAVOR}

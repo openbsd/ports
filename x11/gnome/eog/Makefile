@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2013/04/03 13:34:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.97 2013/04/16 13:17:01 ajacoutot Exp $
 
 COMMENT=		Eye of GNOME, image viewing and cataloging program
 
@@ -38,7 +38,7 @@ LIB_DEPENDS=		devel/libpeas \
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			misc/shared-mime-info
 
-MODGNOME_TOOLS= 	goi yelp
+MODGNOME_TOOLS= 	gi yelp
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 

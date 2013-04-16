@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2013/04/06 21:52:38 rpe Exp $
+# $OpenBSD: Makefile,v 1.52 2013/04/16 13:17:02 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,7 +18,7 @@ WANTLIB += pthread z
 MODULES=	devel/gettext \
 		x11/gnome
 
-MODGNOME_TOOLS=	goi
+MODGNOME_TOOLS=	gi
 
 LIB_DEPENDS=	devel/glib2
 

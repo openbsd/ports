@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2013/03/27 17:51:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2013/04/16 13:17:00 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -29,7 +29,7 @@ WANTLIB += pthread-stubs xcb xcb-render xcb-shm z
 MODULES=		devel/gettext \
 			x11/gnome
 
-MODGNOME_TOOLS=		goi
+MODGNOME_TOOLS=		gi
 
 LIB_DEPENDS=		devel/glib2>=2.36.0 \
 			devel/harfbuzz

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2013/03/29 10:08:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2013/04/16 13:17:00 ajacoutot Exp $
 
 COMMENT-main =		SOAP implementation in C
 COMMENT-gnome =		GNOME specific libsoup parts
@@ -29,7 +29,7 @@ WANTLIB += xml2 z ffi pthread sqlite3
 
 MULTI_PACKAGES =	-main -gnome
 
-MODGNOME_TOOLS= 	goi
+MODGNOME_TOOLS= 	gi
 
 BUILD_DEPENDS =		net/glib2-networking \
 			net/curl # needed to build tests

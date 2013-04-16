@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2013/03/14 09:01:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.82 2013/04/16 13:17:01 ajacoutot Exp $
 
 COMMENT=		spreadsheet application for GNOME
 
@@ -40,7 +40,7 @@ LIB_DEPENDS=		devel/goffice=${GOFFICE_VERSION}p1
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
-MODGNOME_TOOLS= 	goi yelp
+MODGNOME_TOOLS= 	gi yelp
 
 USE_GROFF=		Yes
 

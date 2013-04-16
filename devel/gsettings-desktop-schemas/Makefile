@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2013/03/29 07:33:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2013/04/16 13:17:01 ajacoutot Exp $
 
 COMMENT=	collection of shared GSettings schemas
 
@@ -17,7 +17,7 @@ MODULES=	devel/dconf \
 
 BUILD_DEPENDS=	devel/gettext
 
-MODGNOME_TOOLS=	goi
+MODGNOME_TOOLS=	gi
 
 CONFIGURE_STYLE=gnu
 

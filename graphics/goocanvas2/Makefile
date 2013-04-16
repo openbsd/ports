@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/04/16 10:21:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2013/04/16 13:17:01 ajacoutot Exp $
 
 COMMENT=		canvas widget for GTK+ based on Cairo
 
@@ -34,6 +34,6 @@ LIB_DEPENDS=	x11/gtk+3
 AUTOCONF_VERSION=2.68
 CONFIGURE_STYLE=autoconf
 
-MODGNOME_TOOLS= goi
+MODGNOME_TOOLS= gi
 
 .include <bsd.port.mk>

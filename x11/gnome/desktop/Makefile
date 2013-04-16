@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2013/04/15 17:55:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.100 2013/04/16 13:17:01 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -33,7 +33,7 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/iso-codes
 LIB_DEPENDS=		x11/gtk+3
 
-MODGNOME_TOOLS= 	goi yelp
+MODGNOME_TOOLS= 	gi yelp
 
 CONFIGURE_ARGS=		--with-gnome-distributor="OpenBSD Ports"
 

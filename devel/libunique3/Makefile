@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 10:50:10 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/04/16 13:17:01 ajacoutot Exp $
 
 COMMENT =	library for writing single instance GTK+3 applications
 
@@ -27,7 +27,7 @@ WANTLIB += gthread-2.0 gtk-3 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread-stubs xcb xcb-render xcb-shm
 WANTLIB += z
 
-MODGNOME_TOOLS= 	goi
+MODGNOME_TOOLS= 	gi
 
 LIB_DEPENDS =		x11/dbus-glib \
 			x11/gtk+3

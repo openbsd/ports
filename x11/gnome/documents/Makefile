@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/04/16 06:28:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2013/04/16 13:17:02 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -49,7 +49,7 @@ LIB_DEPENDS=	devel/libgdata \
 		x11/gnome/libzapojit \
 		x11/gnome/tracker
 
-MODGNOME_TOOLS=		goi vala
+MODGNOME_TOOLS=		gi vala
 MODGNOME_ICON_CACHE=	Yes
 MODGNOME_DESKTOP_FILE=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.138 2013/04/14 16:21:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.139 2013/04/16 13:17:00 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -56,7 +56,7 @@ LIB_DEPENDS= 		databases/db/v4 \
 			x11/gnome/online-accounts
 
 MODPY_RUNDEP=		No
-MODGNOME_TOOLS= 	goi vala
+MODGNOME_TOOLS= 	gi vala
 MODGNOME_CPPFLAGS=	-I${LOCALBASE}/include/db4
 
 AUTOCONF_VERSION=	2.69
