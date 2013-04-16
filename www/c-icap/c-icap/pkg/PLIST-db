@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-db,v 1.1.1.1 2013/04/16 09:59:35 sthen Exp $
+@bin bin/c-icap-mkbdb
+lib/c_icap/bdb_tables.so
+@man man/man8/c-icap-mkbdb.8

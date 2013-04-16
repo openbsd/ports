@@ -1,0 +1,30 @@
+$OpenBSD: patch-docs_man_c-icap_8_in,v 1.1.1.1 2013/04/16 09:59:35 sthen Exp $
+--- docs/man/c-icap.8.in.orig	Wed Apr 10 14:44:52 2013
++++ docs/man/c-icap.8.in	Wed Apr 10 14:45:44 2013
+@@ -36,11 +36,11 @@ The main configuration file
+ .RS
+  In this file defined the types of files and the groups of file types.
+ .RE
+-.I /var/run/c-icap.pid
++.I /var/run/c-icap/c-icap.pid
+ .RS
+ By default c-icap writes its pid in this file. The path of this file can changed using the PidFile configuration parameter in the c-icap.conf file
+ .RE
+-.I /var/run/c-icap.ctl
++.I /var/run/c-icap/c-icap.ctl
+ .RS
+ The commands socket. This file used to send commands to the icap server from command line. For informations about implemented commands look below in the "Implemented commands" sub-section
+ .SH NOTES
+@@ -65,10 +65,10 @@ Services and modules can define their own commands.
+ .PP
+ \fBExamples:\fR
+ .IP "To reconfigure c-icap:"
+-      echo -n "reconfigure" > /var/run/c-icap.ctl
++      echo -n "reconfigure" > /var/run/c-icap/c-icap.ctl
+ .IP "To rotate access log:"
+       mv /var/log/c-icap/access.log /var/log/c-icap/access.log.1
+-      echo -n "relog" > /var/run/c-icap.ctl
++      echo -n "relog" > /var/run/c-icap/c-icap.ctl
+ .RE
+ .SS Lookup tables
+ Lookup tables are simple read-only databases. 

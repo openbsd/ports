@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2013/04/16 09:59:35 sthen Exp $
+lib/c_icap/virus_scan.so
+share/c_icap/
+share/c_icap/templates/
+share/c_icap/templates/virus_scan/
+share/c_icap/templates/virus_scan/en/
+share/c_icap/templates/virus_scan/en/VIRUS_FOUND
+share/c_icap/templates/virus_scan/en/VIR_MODE_HEAD
+share/c_icap/templates/virus_scan/en/VIR_MODE_PROGRESS
+share/c_icap/templates/virus_scan/en/VIR_MODE_TAIL
+share/c_icap/templates/virus_scan/en/VIR_MODE_VIRUS_FOUND
+share/examples/c-icap/virus_scan.conf
+@sample ${SYSCONFDIR}/virus_scan.conf
+@comment share/examples/c-icap/virus_scan.conf.default

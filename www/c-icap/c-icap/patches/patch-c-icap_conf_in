@@ -1,0 +1,57 @@
+$OpenBSD: patch-c-icap_conf_in,v 1.1.1.1 2013/04/16 09:59:35 sthen Exp $
+--- c-icap.conf.in.orig	Tue Oct  9 12:35:38 2012
++++ c-icap.conf.in	Tue Mar 26 23:30:13 2013
+@@ -222,7 +222,7 @@ TemplateDefaultLanguage en
+ #	It can be used more than once to use multiple magic files.
+ # Default:
+ #	LoadMagicFile @prefix@/etc/c-icap.magic
+-LoadMagicFile @prefix@/etc/c-icap.magic
++LoadMagicFile @sysconfdir@/c-icap.magic
+ 
+ # TAG: RemoteProxyUsers
+ # Format: RemoteProxyUsers onoff
+@@ -289,7 +289,7 @@ RemoteProxyUserHeaderEncoded on
+ # Default:
+ #	No value
+ # Example:
+-#	basic_simple_db.UsersDB hash:/usr/local/c-icap/etc/c-icap-users.txt
++#	basic_simple_db.UsersDB hash:@sysconfdir@/c-icap-users.txt
+ 
+ # TAG: GroupSourceByGroup
+ # Format: GroupSourceByGroup LookupTable
+@@ -301,7 +301,7 @@ RemoteProxyUserHeaderEncoded on
+ # Default:
+ #	No set
+ # Example:
+-#	GroupSourceByGroup hash:/usr/local/c-icap/etc/c-icap-groups.txt
++#	GroupSourceByGroup hash:@sysconfdir@/c-icap-groups.txt
+ 
+ # TAG: GroupSourceByUser
+ # Format: GroupSourceByUser LookupTable
+@@ -313,7 +313,7 @@ RemoteProxyUserHeaderEncoded on
+ # Default:
+ #	No set
+ # Example:
+-#	GroupSourceByUser hash:/usr/local/c-icap/etc/c-icap-user-groups.txt
++#	GroupSourceByUser hash:@sysconfdir@/c-icap-user-groups.txt
+ 
+ # TAG: acl
+ # Format: acl name type[{param}] value1 [value2] [...]
+@@ -447,7 +447,7 @@ RemoteProxyUserHeaderEncoded on
+ #	information about the c-icap server.
+ # Default:
+ #	ServerLog @prefix@/var/log/server.log
+-ServerLog @prefix@/var/log/server.log
++ServerLog /var/log/c-icap/server.log
+ 
+ # TAG: AccessLog
+ # Format: AccessLog LogFile [LogFormat] [[!]acl1] [[!]acl2] [...]
+@@ -462,7 +462,7 @@ ServerLog @prefix@/var/log/server.log
+ #	AccessLog @prefix@/var/log/access.log
+ # Example:
+ #	AccessLog @prefix@/var/log/access.log MyFormat all
+-AccessLog @prefix@/var/log/access.log
++AccessLog /var/log/c-icap/access.log
+ 
+ # TAG: Logger
+ # Format: Logger LoggerName

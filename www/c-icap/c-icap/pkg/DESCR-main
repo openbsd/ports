@@ -1,0 +1,13 @@
+c-icap is an implementation of an ICAP server. It can be used with HTTP
+proxies that support the ICAP protocol to implement content adaptation
+and filtering services. Squid 3.x and most commercial HTTP proxies
+support the ICAP protocol.
+
+Major features:
+
+    basic C API for developing custom content adaptation and filtering services
+    plugin interface
+    LDAP integration (in the c-icap-ldap package)
+    simple ICAP client API
+
+See the c-icap-modules package for additional services using this.

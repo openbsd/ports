@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST-urlcheck,v 1.1.1.1 2013/04/16 09:59:35 sthen Exp $
+@bin bin/c-icap-mods-sguardDB
+lib/c_icap/srv_url_check.so
+@man man/man8/c-icap-mods-sguardDB.8
+share/c_icap/
+share/c_icap/templates/
+share/c_icap/templates/srv_url_check/
+share/c_icap/templates/srv_url_check/en/
+share/c_icap/templates/srv_url_check/en/DENY
+share/examples/c-icap/srv_url_check.conf
+@sample ${SYSCONFDIR}/srv_url_check.conf
+@comment share/examples/c-icap/srv_url_check.conf.default

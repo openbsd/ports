@@ -1,0 +1,69 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2013/04/16 09:59:35 sthen Exp $
+@newgroup _c-icap:716
+@newuser _c-icap:716:_c-icap:daemon:c-icap user:/nonexistent:/sbin/nologin
+@extraunexec rm -rf /var/log/c-icap/*
+@extraunexec rm -rf /var/run/c-icap/*
+@bin bin/c-icap
+@bin bin/c-icap-client
+bin/c-icap-config
+bin/c-icap-libicapapi-config
+@bin bin/c-icap-stretch
+include/c_icap/
+include/c_icap/access.h
+include/c_icap/acl.h
+include/c_icap/array.h
+include/c_icap/body.h
+include/c_icap/c-icap-conf.h
+include/c_icap/c-icap.h
+include/c_icap/cache.h
+include/c_icap/cfg_param.h
+include/c_icap/ci_threads.h
+include/c_icap/commands.h
+include/c_icap/debug.h
+include/c_icap/dlib.h
+include/c_icap/filetype.h
+include/c_icap/hash.h
+include/c_icap/header.h
+include/c_icap/log.h
+include/c_icap/lookup_table.h
+include/c_icap/mem.h
+include/c_icap/module.h
+include/c_icap/net_io.h
+include/c_icap/proc_mutex.h
+include/c_icap/proc_threads_queues.h
+include/c_icap/request.h
+include/c_icap/service.h
+include/c_icap/shared_mem.h
+include/c_icap/simple_api.h
+include/c_icap/stats.h
+include/c_icap/txtTemplate.h
+include/c_icap/txt_format.h
+include/c_icap/types_ops.h
+include/c_icap/util.h
+lib/c_icap/
+lib/c_icap/dnsbl_tables.so
+lib/c_icap/srv_echo.so
+lib/c_icap/srv_ex206.so
+lib/c_icap/sys_logger.so
+lib/libicapapi.la
+@lib lib/libicapapi.so.${LIBicapapi_VERSION}
+@man man/man8/c-icap-client.8
+@man man/man8/c-icap-config.8
+@man man/man8/c-icap-libicapapi-config.8
+@man man/man8/c-icap-stretch.8
+@man man/man8/c-icap.8
+share/doc/c-icap/
+share/doc/c-icap/README
+share/examples/c-icap/
+@sample ${SYSCONFDIR}/
+share/examples/c-icap/c-icap.conf
+@sample ${SYSCONFDIR}/c-icap.conf
+@comment share/examples/c-icap/c-icap.conf.default
+share/examples/c-icap/c-icap.magic
+@sample ${SYSCONFDIR}/c-icap.magic
+@owner _c-icap
+@sample /var/log/c-icap/
+@sample /var/run/c-icap/
+@comment share/examples/c-icap/c-icap.magic.default
+@owner
+@rcscript ${RCDIR}/c_icap
