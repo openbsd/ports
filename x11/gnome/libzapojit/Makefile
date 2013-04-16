@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/30 08:34:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2013/04/16 12:49:42 ajacoutot Exp $
 
 COMMENT=	GLib/GObject wrapper for SkyDrive and Hotmail REST APIs
 
 GNOME_PROJECT=	libzapojit
 GNOME_VERSION=	0.0.3
+REVISION=	0
 
 API_V=		0.0
 SUBST_VARS=	API_V
@@ -15,10 +16,9 @@ HOMEPAGE=	https://live.gnome.org/Zapojit
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += dbus-1 ffi gcrypt gio-2.0 glib-2.0 gmodule-2.0 gnome-keyring
-WANTLIB += goa-1.0 gobject-2.0 gpg-error gthread-2.0 json-glib-1.0
-WANTLIB += m pcre pthread rest-0.7 soup-2.4 soup-gnome-2.4 sqlite3
-WANTLIB += xml2 z
+WANTLIB += ffi gio-2.0 glib-2.0 gmodule-2.0 goa-1.0 gobject-2.0
+WANTLIB += gthread-2.0 json-glib-1.0 m pcre pthread rest-0.7 soup-2.4
+WANTLIB += soup-gnome-2.4 sqlite3 xml2 z
 
 MODULES=	devel/gettext \
 		x11/gnome
