@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.58 2013/04/15 19:11:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.59 2013/04/16 10:25:04 ajacoutot Exp $
 
 COMMENT=		plugins for Gedit
 
 GNOME_PROJECT=		gedit-plugins
 GNOME_VERSION=		3.8.1
+REVISION=		0
 
 CATEGORIES=		editors
 
@@ -26,6 +27,8 @@ MODULES=		devel/gettext \
 			lang/python \
 			x11/gnome
 
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
+
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/vte3 \
 			textproc/gsed \
@@ -36,7 +39,7 @@ LIB_DEPENDS=		devel/libpeas \
 			x11/gtksourceview3
 
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
-			devel/py-gobject3 \
+			devel/py-gobject3${MODPY_FLAVOR} \
 			devel/vte3 \
 			x11/gnome/gedit \
 			x11/gnome/gucharmap
