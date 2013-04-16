@@ -1,11 +1,17 @@
-# $OpenBSD: Makefile,v 1.20 2013/04/15 14:38:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2013/04/16 10:19:07 ajacoutot Exp $
 
-COMMENT=		Python bindings for glib2 gobject
+COMMENT-main=		Python bindings for GLib and GObject
+COMMENT-common=		common files for py-gobject3
 
 GNOME_PROJECT=		pygobject
 GNOME_VERSION=		3.8.1
-PKGNAME=		py-gobject3-${GNOME_VERSION}
 MODPY_EGG_VERSION=	${GNOME_VERSION}
+
+PKGNAME-main=		py-gobject3-${GNOME_VERSION}
+FULLPKGNAME-common=	py-gobject3-common-${GNOME_VERSION}
+FULLPKGPATH-common=	devel/py-gobject3,-common
+
+REVISION-main=		0
 
 CATEGORIES=		devel
 
@@ -18,24 +24,43 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 Xext Xrender cairo expat ffi fontconfig freetype
-WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 m pcre pixman-1 png pthread pthread-stubs
-WANTLIB += xcb xcb-render xcb-shm z
+WANTLIB-main += ${WANTLIB}
+WANTLIB-main += X11 Xext Xrender cairo expat ffi fontconfig freetype
+WANTLIB-main += gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB-main += gthread-2.0 m pcre pixman-1 png pthread pthread-stubs
+WANTLIB-main += xcb xcb-render xcb-shm z
+
+WANTLIB-common += #empty
+
+MULTI_PACKAGES=		-main -common
+
+FLAVORS=		python3
+FLAVOR?=
 
 MODULES=		devel/gettext \
 			lang/python \
 			x11/gnome
 
-BUILD_DEPENDS=		graphics/py-cairo
-RUN_DEPENDS=		graphics/py-cairo
 LIB_DEPENDS=		devel/gobject-introspection
+
+RUN_DEPENDS-main=	${RUN_DEPENDS} \
+			devel/py-gobject3,-common
+
+.if ${FLAVOR:Mpython3}
+FULLPKGNAME-main=	${PKGNAME-main:S/^py-/py3-/}
+FULLPKGPATH-main=	devel/py-gobject3,python
+BUILD_DEPENDS +=	graphics/py3-cairo
+RUN_DEPENDS-main +=	graphics/py3-cairo
+.else
+BUILD_DEPENDS +=	graphics/py-cairo
+RUN_DEPENDS-main +=	graphics/py-cairo
+.endif
 
 SUBST_VARS=		OSREV
 
 CONFIGURE_STYLE=	gnu
 
-TEST_DEPENDS=		${FULLPKGNAME}:${BUILD_PKGPATH}
+TEST_DEPENDS=		${BUILD_PKGPATH}
 TEST_IS_INTERACTIVE=	x11
 
 post-install:

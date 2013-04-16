@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-common,v 1.1 2013/04/16 10:19:08 ajacoutot Exp $
+@conflict py-gobject3-<3.8.1p0
+include/pygobject-3.0/
+include/pygobject-3.0/pygobject.h
+lib/pkgconfig/pygobject-3.0.pc

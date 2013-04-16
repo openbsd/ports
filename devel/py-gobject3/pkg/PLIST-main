@@ -1,12 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/03/27 17:52:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2013/04/16 10:19:08 ajacoutot Exp $
 @conflict py-gtk2-2.8.6*
 @conflict py-gobject-<2.28.6p2v0
-include/pygobject-3.0/
-include/pygobject-3.0/pygobject.h
+!%%python3%%
 lib/libpyglib-gi-2.0-python${MODPY_VERSION}.a
 lib/libpyglib-gi-2.0-python${MODPY_VERSION}.la
-@lib lib/libpyglib-gi-2.0-python${MODPY_VERSION}.so.${LIBpyglib-gi-2.0-python2.7_VERSION}
-lib/pkgconfig/pygobject-3.0.pc
+@lib lib/libpyglib-gi-2.0-python${MODPY_VERSION}.so.${LIBpyglib-gi-2.0-python${MODPY_VERSION}_VERSION}
 lib/python${MODPY_VERSION}/site-packages/gi/
 lib/python${MODPY_VERSION}/site-packages/gi/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gi/__init__.pyc
