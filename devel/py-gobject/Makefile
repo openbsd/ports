@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2013/03/11 10:50:25 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2013/04/16 13:24:42 ajacoutot Exp $
 
 COMMENT=	Python bindings for glib2 gobject (deprecated)
 
@@ -32,11 +32,6 @@ MODULES=	devel/gettext \
 LIB_DEPENDS=	devel/glib2
 
 CONFIGURE_STYLE=gnu
-
-# not really needed because we don't add "goi" to MODGNOME_TOOLS,
-# however it is clearer to explicitely note that it is disabled --
-# introspection support for py-gobject is now in devel/py-gobject3
-CONFIGURE_ARGS=	--disable-introspection
 
 TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH}
 TEST_IS_INTERACTIVE= x11
