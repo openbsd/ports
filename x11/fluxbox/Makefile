@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.73 2013/03/21 08:48:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.74 2013/04/16 15:27:03 bcallah Exp $
 
 COMMENT=		window manager based on the original Blackbox code
 
-DISTNAME=		fluxbox-1.3.3
-
-REVISION=		3
+DISTNAME=		fluxbox-1.3.5
 
 CATEGORIES=		x11
 
@@ -20,7 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES=		converters/libiconv
 
 WANTLIB=		ICE Imlib2 SM X11 Xext Xft Xinerama \
-			Xpm Xrandr Xrender c expat fontconfig \
+			Xpm Xrandr Xrender c fontconfig \
 			freetype fribidi m stdc++ z
 
 CONFIGURE_STYLE=	gnu

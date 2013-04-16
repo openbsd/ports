@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2013/01/11 08:11:26 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.18 2013/04/16 15:27:03 bcallah Exp $
 @bin bin/fbrun
 bin/fbsetbg
 @bin bin/fbsetroot
@@ -87,6 +87,8 @@ share/fluxbox/nls/fr_FR.ISO-8859-15/
 share/fluxbox/nls/fr_FR.ISO-8859-15/fluxbox.cat
 share/fluxbox/nls/fr_FR.UTF-8/
 share/fluxbox/nls/fr_FR.UTF-8/fluxbox.cat
+share/fluxbox/nls/he_IL.UTF-8/
+share/fluxbox/nls/he_IL.UTF-8/fluxbox.cat
 share/fluxbox/nls/it_IT.ISO-8859-1/
 share/fluxbox/nls/it_IT.ISO-8859-1/fluxbox.cat
 share/fluxbox/nls/it_IT.UTF-8/

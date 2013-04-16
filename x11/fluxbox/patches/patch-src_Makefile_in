@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_Makefile_in,v 1.3 2013/01/11 08:11:26 dcoppa Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.4 2013/04/16 15:27:03 bcallah Exp $
 
 Don't check for git revision, this is a stable release
 
---- src/Makefile.in.orig	Thu Jan 10 10:43:17 2013
-+++ src/Makefile.in	Thu Jan 10 10:45:51 2013
-@@ -932,7 +932,6 @@ defaults.hh: Makefile
+--- src/Makefile.in.orig	Sun Apr  7 18:10:55 2013
++++ src/Makefile.in	Sun Apr  7 18:12:55 2013
+@@ -933,7 +933,6 @@ defaults.hh: Makefile
  
  defaults.cc: force
  	@( \
@@ -12,16 +12,16 @@ Don't check for git revision, this is a stable release
  		echo '// This file is generated from Makefile. Do not edit!'; \
  		echo '#include "defaults.hh"'; \
  		echo ''; \
-@@ -941,10 +940,8 @@ defaults.cc: force
+@@ -942,11 +941,7 @@ defaults.cc: force
  		echo '}'; \
  		echo ''; \
  		echo 'const char* gitrevision() {'; \
--		echo '  return "'`cat $$GITDIR/$$(cat $$GITDIR/HEAD | cut -f 2 -d ' ')`'";';\
--		echo '}' ) > defaults_tmp.cc
--	@if ! cmp defaults_tmp.cc defaults.cc ; then cp defaults_tmp.cc defaults.cc; fi
--	@rm defaults_tmp.cc
-+		echo ' return "this_is_tar_ball_build";'; \
-+		echo '}' ) > defaults.cc
- 
- force: ;
- 
+-		if test -r $$GITDIR/HEAD; then \
+-			echo '  return "'`cat $$GITDIR/$$(cat $$GITDIR/HEAD | cut -f 2 -d ' ')`'";'; \
+-		else \
+-			echo '  return "this_is_tar_ball_build";'; \
+-		fi; \
++		echo '  return "this_is_tar_ball_build";'; \
+ 		echo '}' ) > defaults_tmp.cc
+ 	@if ! cmp defaults_tmp.cc defaults.cc ; then cp defaults_tmp.cc defaults.cc; fi
+ 	@rm defaults_tmp.cc
