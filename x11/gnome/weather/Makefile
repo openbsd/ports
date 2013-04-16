@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2013/04/16 13:17:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2013/04/16 21:53:59 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		weather application for GNOME
 
 GNOME_PROJECT=		gnome-weather
-GNOME_VERSION=		3.8.0
+GNOME_VERSION=		3.8.1
 
 HOMEPAGE=		https://live.gnome.org/Design/Apps/Weather
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/03 13:41:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/04/16 21:53:59 ajacoutot Exp $
 bin/gnome-weather
 lib/gnome-weather/
 lib/gnome-weather/girepository-1.0/
@@ -21,9 +21,12 @@ share/gnome-weather/window.js
 share/gnome-weather/world.js
 share/locale/cs/LC_MESSAGES/gnome-weather.mo
 share/locale/de/LC_MESSAGES/gnome-weather.mo
+share/locale/el/LC_MESSAGES/gnome-weather.mo
 share/locale/es/LC_MESSAGES/gnome-weather.mo
+share/locale/fi/LC_MESSAGES/gnome-weather.mo
 share/locale/gl/LC_MESSAGES/gnome-weather.mo
 share/locale/he/LC_MESSAGES/gnome-weather.mo
+share/locale/hu/LC_MESSAGES/gnome-weather.mo
 share/locale/it/LC_MESSAGES/gnome-weather.mo
 share/locale/ja/LC_MESSAGES/gnome-weather.mo
 share/locale/pa/LC_MESSAGES/gnome-weather.mo

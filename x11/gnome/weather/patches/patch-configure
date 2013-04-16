@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2013/04/03 13:41:17 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.2 2013/04/16 21:53:59 ajacoutot Exp $
 
 Fix DATADIRNAME: see LOCALBASE/share/aclocal/{glib-gettext.m4,intltool.m4}
 
---- configure.orig	Mon Mar 25 23:03:56 2013
-+++ configure	Wed Apr  3 14:16:20 2013
-@@ -4399,48 +4399,12 @@ fi
+--- configure.orig	Tue Apr 16 22:18:52 2013
++++ configure	Tue Apr 16 23:45:40 2013
+@@ -4438,48 +4438,12 @@ fi
  # Substitute ALL_LINGUAS so we can use it in po/Makefile
  
  
@@ -53,7 +53,7 @@ Fix DATADIRNAME: see LOCALBASE/share/aclocal/{glib-gettext.m4,intltool.m4}
  ac_ext=c
  ac_cpp='$CPP $CPPFLAGS'
  ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
-@@ -5329,6 +5293,46 @@ host_os=$*
+@@ -5368,6 +5332,46 @@ host_os=$*
  IFS=$ac_save_IFS
  case $host_os in *\ *) host_os=`echo "$host_os" | sed 's/ /-/g'`;; esac
  
