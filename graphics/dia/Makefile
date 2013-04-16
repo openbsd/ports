@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2013/04/01 18:04:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.94 2013/04/16 13:53:40 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	technical diagrams drawing tool
 
 GNOME_PROJECT=	dia
 GNOME_VERSION=	0.97.2
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	graphics
 
