@@ -1,0 +1,34 @@
+$OpenBSD: patch-lib_puppet_type_resources_rb,v 1.1 2013/04/16 13:25:52 jasper Exp $
+
+User ID's below 1000 are considered "system users" on OpenBSD,
+eventhough we lack the concept of "system users". Puppet uses
+this to determine if a user can be purged.
+
+--- lib/puppet/type/resources.rb.orig	Sat Mar  9 00:03:46 2013
++++ lib/puppet/type/resources.rb	Tue Apr 16 14:30:08 2013
+@@ -46,7 +46,11 @@ Puppet::Type.newtype(:resources) do
+       when /^\d+/
+         Integer(value)
+       when :true, true
+-        500
++        if Facter.value('operatingsystem') != 'OpenBSD'
++          500
++        else
++          1000
++        end
+       when :false, false
+         false
+       when Integer; value
+@@ -57,7 +61,11 @@ Puppet::Type.newtype(:resources) do
+ 
+     defaultto {
+       if @resource[:name] == "user"
+-        500
++        if Facter.value('operatingsystem') != 'OpenBSD'
++          500
++        else
++          1000
++        end
+       else
+         nil
+       end
