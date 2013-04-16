@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2013/04/16 10:21:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2013/04/16 10:34:23 ajacoutot Exp $
 
 COMMENT=	gobject-based plugins engine
 
 GNOME_PROJECT=	libpeas
 GNOME_VERSION=	1.8.0
-REVISION=	1
+REVISION=	3
 
 CATEGORIES=	devel
 
@@ -34,8 +34,10 @@ WANTLIB += plc4 plds4 png pthread pthread-stubs readline stdc++
 WANTLIB += util xcb xcb-render xcb-shm z
 WANTLIB += ${MODPY_WANTLIB}
 
-RUN_DEPENDS=	devel/py-gobject3
-BUILD_DEPENDS=	devel/py-gobject3
+BUILD_DEPENDS=	devel/py-gobject3${MODPY_FLAVOR}
+
+RUN_DEPENDS=	devel/py-gobject3 \
+		devel/py-gobject3${MODPY_FLAVOR}
 
 LIB_DEPENDS=	devel/gobject-introspection \
 		x11/gnome/gjs \
@@ -48,8 +50,7 @@ LIBTOOL_FLAGS=	--tag=disable-static
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-static \
-		--disable-glade-catalog \
-		--disable-seed
+		--disable-glade-catalog
 
 # we need support for both python2 and python3
 BUILD_DEPENDS +=lang/python/${MODPY_DEFAULT_VERSION_2}
