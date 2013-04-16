@@ -1,0 +1,9 @@
+EasyRPG_Player is a program that allows you to play games created with
+RPG Maker 2000 and 2003. It aims to be a free (as in freedom)
+cross-platform RPG Maker 2000/2003 interpreter. The main goal is to play
+all games created with them as the original game interpreter (RPG_RT)
+does.
+
+To play, you will need to download an RPG Maker game. Extract the game
+to the directory of your choice and run EasyRPG_Player inside the
+directory containing the RPG_RT.* files.
