@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2013/03/27 17:55:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2013/04/16 12:54:27 ajacoutot Exp $
 @conflict glib2mm-docs-*
 @pkgpath devel/glib2mm,-main
 @pkgpath devel/glib2mm,-docs
@@ -187,14 +187,6 @@ include/giomm-${V}/giomm/private/srvtarget_p.h
 include/giomm-${V}/giomm/private/tcpconnection_p.h
 include/giomm-${V}/giomm/private/themedicon_p.h
 include/giomm-${V}/giomm/private/threadedsocketservice_p.h
-include/giomm-${V}/giomm/private/tlscertificate_p.h
-include/giomm-${V}/giomm/private/tlsclientconnection_p.h
-include/giomm-${V}/giomm/private/tlsconnection_p.h
-include/giomm-${V}/giomm/private/tlsdatabase_p.h
-include/giomm-${V}/giomm/private/tlsfiledatabase_p.h
-include/giomm-${V}/giomm/private/tlsinteraction_p.h
-include/giomm-${V}/giomm/private/tlspassword_p.h
-include/giomm-${V}/giomm/private/tlsserverconnection_p.h
 include/giomm-${V}/giomm/private/unixconnection_p.h
 include/giomm-${V}/giomm/private/unixcredentialsmessage_p.h
 include/giomm-${V}/giomm/private/unixfdlist_p.h
@@ -229,14 +221,6 @@ include/giomm-${V}/giomm/srvtarget.h
 include/giomm-${V}/giomm/tcpconnection.h
 include/giomm-${V}/giomm/themedicon.h
 include/giomm-${V}/giomm/threadedsocketservice.h
-include/giomm-${V}/giomm/tlscertificate.h
-include/giomm-${V}/giomm/tlsclientconnection.h
-include/giomm-${V}/giomm/tlsconnection.h
-include/giomm-${V}/giomm/tlsdatabase.h
-include/giomm-${V}/giomm/tlsfiledatabase.h
-include/giomm-${V}/giomm/tlsinteraction.h
-include/giomm-${V}/giomm/tlspassword.h
-include/giomm-${V}/giomm/tlsserverconnection.h
 include/giomm-${V}/giomm/unixconnection.h
 include/giomm-${V}/giomm/unixcredentialsmessage.h
 include/giomm-${V}/giomm/unixfdlist.h
@@ -642,22 +626,6 @@ share/doc/glibmm-${V}/reference/html/classGio_1_1ThemedIcon-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1ThemedIcon.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1ThreadedSocketService-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1ThreadedSocketService.html
-share/doc/glibmm-${V}/reference/html/classGio_1_1TlsCertificate-members.html
-share/doc/glibmm-${V}/reference/html/classGio_1_1TlsCertificate.html
-share/doc/glibmm-${V}/reference/html/classGio_1_1TlsClientConnection-members.html
-share/doc/glibmm-${V}/reference/html/classGio_1_1TlsClientConnection.html
-share/doc/glibmm-${V}/reference/html/classGio_1_1TlsConnection-members.html
-share/doc/glibmm-${V}/reference/html/classGio_1_1TlsConnection.html
-share/doc/glibmm-${V}/reference/html/classGio_1_1TlsDatabase-members.html
-share/doc/glibmm-${V}/reference/html/classGio_1_1TlsDatabase.html
-share/doc/glibmm-${V}/reference/html/classGio_1_1TlsFileDatabase-members.html
-share/doc/glibmm-${V}/reference/html/classGio_1_1TlsFileDatabase.html
-share/doc/glibmm-${V}/reference/html/classGio_1_1TlsInteraction-members.html
-share/doc/glibmm-${V}/reference/html/classGio_1_1TlsInteraction.html
-share/doc/glibmm-${V}/reference/html/classGio_1_1TlsPassword-members.html
-share/doc/glibmm-${V}/reference/html/classGio_1_1TlsPassword.html
-share/doc/glibmm-${V}/reference/html/classGio_1_1TlsServerConnection-members.html
-share/doc/glibmm-${V}/reference/html/classGio_1_1TlsServerConnection.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1UnixConnection-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1UnixConnection.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1UnixCredentialsMessage-members.html
