@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/04/16 10:27:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2013/04/16 10:40:20 ajacoutot Exp $
 
 COMMENT=	python bindings for at-spi2
 
@@ -24,8 +24,6 @@ PKG_ARCH=	*
 BUILD_DEPENDS=	devel/py-gobject3${MODPY_FLAVOR}
 RUN_DEPENDS=	devel/py-gobject3${MODPY_FLAVOR} \
 		x11/gnome/at-spi2-core
-
-CONFIGURE_ARGS=	--with-python=${MODPY_BIN}
 
 # connects to DBus
 TEST_IS_INTERACTIVE=	x11
