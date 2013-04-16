@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/11 11:41:33 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2013/04/16 11:13:04 sthen Exp $
 
 COMMENT-main =		mature and flexible open source SIP server
 
 SHARED_ONLY =		Yes
 
-VERSION =		3.3.1
+VERSION =		4.0.0
 DISTNAME =		kamailio-${VERSION}_src
 PKGNAME-main =		kamailio-${VERSION}
 PKGNAME-mysql =		kamailio-mysql-${VERSION}
@@ -24,33 +24,35 @@ HOMEPAGE =		http://www.kamailio.org/
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-SHARED_LIBS =		kcore	1.0	# 1.0
-SHARED_LIBS +=		kmi	1.0	# 1.0
-SHARED_LIBS +=		ser_cds	1.0	# 0.1
-SHARED_LIBS +=		srdb1	1.0	# 1.0
-SHARED_LIBS +=		srdb2	1.0	# 1.0
-SHARED_LIBS +=		trie	1.0	# 1.0
-SHARED_LIBS +=		binrpc	0.0	# 0.1
-SHARED_LIBS +=		srutils	0.0	# 1.0
+SHARED_LIBS =		kcore	2.0	# 1.0
+SHARED_LIBS +=		kmi	2.0	# 1.0
+SHARED_LIBS +=		srdb1	2.0	# 1.0
+SHARED_LIBS +=		srdb2	2.0	# 1.0
+SHARED_LIBS +=		trie	2.0	# 1.0
+SHARED_LIBS +=		binrpc	1.0	# 0.1
+SHARED_LIBS +=		srutils	1.0	# 1.0
+SHARED_LIBS +=		print	0.0	# 1.2
 
-MAKE_ENV =		CC="${CC}" LDFLAGS="${LDFLAGS} -pthread" QUIET=verbose
+MAKE_ENV =		CC="${CC}" CC_EXTRA_OPTS="${CFLAGS}" LD_EXTRA_OPTS="${LDFLAGS} -pthread" QUIET=verbose
 
 MASTER_SITES =		http://www.kamailio.org/pub/kamailio/${VERSION}/src/
 WRKDIST =		${WRKDIR}/kamailio-${VERSION}
 
 MODULES =		devel/gettext
-WANTLIB-main =		c crypto curl db expat pcre pthread ssl xml2 \
-			idn ncurses readline z m ${MODGETTEXT_WANTLIB}
+WANTLIB-main =		c crypto curl db expat m pcre pthread ssl xml2 \
+			idn ncurses readline unistring z ${MODGETTEXT_WANTLIB}
 LIB_DEPENDS-main =	net/curl \
 			databases/db/v4,-main,no_java \
 			devel/pcre \
 			textproc/libxml,-main,no_python \
+			converters/libunistring \
 			${MODGETTEXT_LIB_DEPENDS}
 
-KAMAILIO_MODULES =	cpl-c db_berkeley dialplan jabber lcr \
-			presence presence_dialoginfo presence_mwi presence_xml \
-			pua pua_bla pua_dialoginfo pua_mi pua_usrloc pua_xmpp \
-			regex rls seas utils xcap_client xmpp tls
+KAMAILIO_MODULES =	cpl-c db_berkeley dialplan dialog_ng jabber lcr \
+			presence presence_dialoginfo presence_mwi presence_reginfo \
+			presence_xml pua pua_bla pua_dialoginfo pua_mi pua_reginfo \
+			pua_usrloc pua_xmpp regex rls seas utils xcap_client xmpp \
+			tls xhttp_pi websocket
 
 FLAVOR ?=
 MULTI_PACKAGES =	-main
@@ -59,8 +61,7 @@ USE_GMAKE =		Yes
 USE_GROFF =		Yes
 NO_TEST =		Yes
 
-MAKE_FLAGS =	FLAVOUR=kamailio \
-		LIBDIR=lib \
+MAKE_FLAGS =	LIBDIR=lib \
 		PREFIX=${TRUEPREFIX} \
 		BASEDIR=${WRKINST} \
 		cfg-prefix=${WRKINST} \
@@ -69,19 +70,19 @@ MAKE_FLAGS =	FLAVOUR=kamailio \
 		include_modules="${KAMAILIO_MODULES}" \
 		LIBkcore_VERSION=${LIBkcore_VERSION} \
 		LIBkmi_VERSION=${LIBkmi_VERSION} \
-		LIBser_cds_VERSION=${LIBser_cds_VERSION} \
 		LIBsrdb1_VERSION=${LIBsrdb1_VERSION} \
 		LIBsrdb2_VERSION=${LIBsrdb2_VERSION} \
 		LIBtrie_VERSION=${LIBtrie_VERSION} \
 		LIBbinrpc_VERSION=${LIBbinrpc_VERSION} \
-		LIBsrutils_VERSION=${LIBsrutils_VERSION}
+		LIBsrutils_VERSION=${LIBsrutils_VERSION} \
+		LIBprint_VERSION=${LIBprint_VERSION}
 
 PSEUDO_FLAVORS +=	no_postgresql
 .if !${FLAVOR:Mno_postgresql}
 MULTI_PACKAGES +=	-postgresql
 COMMENT-postgresql =	kamailio postgresql module
 KAMAILIO_MODULES +=	db_postgres
-WANTLIB-postgresql =	c pq lib/kamailio/srdb1 lib/kamailio/srdb2
+WANTLIB-postgresql =	c pq pthread lib/kamailio/srdb1 lib/kamailio/srdb2
 LIB_DEPENDS-postgresql =databases/postgresql,-main telephony/kamailio,-main
 .endif
 
@@ -90,7 +91,7 @@ PSEUDO_FLAVORS +=	no_mysql
 MULTI_PACKAGES +=	-mysql
 COMMENT-mysql =		kamailio mysql module
 KAMAILIO_MODULES +=	db_mysql
-WANTLIB-mysql =		c crypto m ssl z mysqlclient \
+WANTLIB-mysql =		c crypto m pthread ssl z mysqlclient \
 			lib/kamailio/srdb1 lib/kamailio/srdb2
 LIB_DEPENDS-mysql =	databases/mysql,-main telephony/kamailio,-main
 .endif
@@ -100,7 +101,7 @@ PSEUDO_FLAVORS +=	no_ldap
 MULTI_PACKAGES +=	-ldap
 COMMENT-ldap =		kamailio LDAP modules
 KAMAILIO_MODULES +=	ldap h350
-WANTLIB-ldap =		c ldap lib/kamailio/srdb2
+WANTLIB-ldap =		c ldap pthread lib/kamailio/srdb2
 LIB_DEPENDS-ldap =	databases/openldap,-main telephony/kamailio,-main
 .endif
 
@@ -120,7 +121,7 @@ PSEUDO_FLAVORS +=	no_snmpstats
 MULTI_PACKAGES +=	-snmpstats
 COMMENT-snmpstats =	kamailio snmpstats module
 KAMAILIO_MODULES +=	snmpstats
-WANTLIB-snmpstats =	c netsnmp netsnmpagent netsnmpmibs lib/kamailio/kcore
+WANTLIB-snmpstats =	c netsnmp netsnmpagent netsnmpmibs pthread lib/kamailio/kcore
 LIB_DEPENDS-snmpstats =	net/net-snmp telephony/kamailio,-main
 .endif
 
@@ -129,7 +130,7 @@ PSEUDO_FLAVORS +=	no_carrierroute
 MULTI_PACKAGES +=	-carrierroute
 COMMENT-carrierroute =	kamailio carrierroute module
 KAMAILIO_MODULES +=	carrierroute
-WANTLIB-carrierroute =	c confuse ${MODGETTEXT_WANTLIB} \
+WANTLIB-carrierroute =	c confuse pthread ${MODGETTEXT_WANTLIB} \
 			lib/kamailio/kcore lib/kamailio/kmi \
 			lib/kamailio/srdb1 lib/kamailio/trie
 LIB_DEPENDS-carrierroute = devel/libconfuse \
@@ -140,8 +141,8 @@ PSEUDO_FLAVORS +=	no_perl
 .if !${FLAVOR:Mno_perl}
 MULTI_PACKAGES +=	-perl
 COMMENT-perl =		kamailio perl modules
-KAMAILIO_MODULES +=	perl perlvdb
-WANTLIB-perl =		c m perl util lib/kamailio/kmi lib/kamailio/srdb1
+KAMAILIO_MODULES +=	app_perl db_perlvdb
+WANTLIB-perl =		c m perl pthread util lib/kamailio/kmi lib/kamailio/srdb1
 LIB_DEPENDS-perl =	telephony/kamailio,-main
 RUN_DEPENDS-perl =	databases/p5-ldap
 .endif

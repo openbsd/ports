@@ -1,7 +1,7 @@
-$OpenBSD: patch-utils_kamctl_kamctlrc,v 1.1 2012/04/22 21:44:24 sthen Exp $
---- utils/kamctl/kamctlrc.orig	Fri Feb  3 16:46:23 2012
-+++ utils/kamctl/kamctlrc	Fri Feb  3 16:47:08 2012
-@@ -61,7 +61,7 @@
+$OpenBSD: patch-utils_kamctl_kamctlrc,v 1.2 2013/04/16 11:13:04 sthen Exp $
+--- utils/kamctl/kamctlrc.orig	Mon Mar 11 17:27:18 2013
++++ utils/kamctl/kamctlrc	Thu Mar 14 16:15:00 2013
+@@ -64,7 +64,7 @@
  
  
  # Program to calculate a message-digest fingerprint 
@@ -10,9 +10,9 @@ $OpenBSD: patch-utils_kamctl_kamctlrc,v 1.1 2012/04/22 21:44:24 sthen Exp $
  
  # awk tool
  # AWK="awk"
-@@ -137,8 +137,11 @@
+@@ -140,8 +140,11 @@
  
- ## OPENSER START Options
+ ## Kamailio START Options
  ## PID file path - default is: /var/run/kamailio.pid
 -# PID_FILE=/var/run/kamailio.pid
 +PID_FILE=/var/run/kamailio/kamailio.pid

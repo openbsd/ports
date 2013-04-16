@@ -1,6 +1,6 @@
-$OpenBSD: patch-modules_k_mi_xmlrpc_abyss_xmlrpc_int_h,v 1.1 2012/05/09 21:27:47 sthen Exp $
---- modules_k/mi_xmlrpc/abyss_xmlrpc_int.h.orig	Wed May  9 08:26:54 2012
-+++ modules_k/mi_xmlrpc/abyss_xmlrpc_int.h	Wed May  9 08:27:26 2012
+$OpenBSD: patch-modules_mi_xmlrpc_abyss_xmlrpc_int_h,v 1.1 2013/04/16 11:13:04 sthen Exp $
+--- modules/mi_xmlrpc/abyss_xmlrpc_int.h.orig	Sun Mar 31 13:37:28 2013
++++ modules/mi_xmlrpc/abyss_xmlrpc_int.h	Sun Mar 31 13:37:52 2013
 @@ -48,8 +48,10 @@ typedef enum {
  	true = 1
  } bool;

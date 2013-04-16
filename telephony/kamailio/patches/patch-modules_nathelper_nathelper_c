@@ -1,0 +1,12 @@
+$OpenBSD: patch-modules_nathelper_nathelper_c,v 1.1 2013/04/16 11:13:04 sthen Exp $
+--- modules/nathelper/nathelper.c.orig	Sun Mar 31 14:42:56 2013
++++ modules/nathelper/nathelper.c	Sun Mar 31 14:44:27 2013
+@@ -1575,7 +1575,7 @@ replace_sdp_ip(struct sip_msg* msg, str *org_body, cha
+ 	str body1, oldip, newip;
+ 	str body = *org_body;
+ 	unsigned hasreplaced = 0;
+-	int pf, pf1 = 0;
++	int pf = 0, pf1 = 0;
+ 	str body2;
+ 	char *bodylimit = body.s + body.len;
+ 	int ret;

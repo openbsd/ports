@@ -1,0 +1,12 @@
+$OpenBSD: patch-modules_websocket_Makefile,v 1.1 2013/04/16 11:13:04 sthen Exp $
+--- modules/websocket/Makefile.orig	Sun Mar 31 17:48:54 2013
++++ modules/websocket/Makefile	Sun Mar 31 17:50:37 2013
+@@ -27,7 +27,7 @@ else
+ 	#       E.g.: make TLS_HOOKS=1 TLS_EXTRA_LIBS="-lz -lkrb5"
+ endif
+ 
+-LIBS+= $(TLS_EXTRA_LIBS) -lunistring
++LIBS+= $(TLS_EXTRA_LIBS) -L$(LOCALBASE)/lib -lunistring
+ 
+ # Static linking, if you'd like to use TLS and WEBSOCKET at the same time
+ #

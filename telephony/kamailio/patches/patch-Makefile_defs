@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_defs,v 1.4 2012/12/02 22:18:21 jasper Exp $
---- Makefile.defs.orig	Thu Aug  2 07:54:15 2012
-+++ Makefile.defs	Sun Dec  2 14:41:06 2012
-@@ -349,9 +349,9 @@ ppc_macros= __powerpc __powerpc__ __POWERPC__ __ppc__ 
+$OpenBSD: patch-Makefile_defs,v 1.5 2013/04/16 11:13:04 sthen Exp $
+--- Makefile.defs.orig	Mon Mar 11 17:27:19 2013
++++ Makefile.defs	Thu Mar 14 15:52:28 2013
+@@ -362,9 +362,9 @@ ppc_macros= __powerpc __powerpc__ __POWERPC__ __ppc__ 
  ppc64_macros= __ppc64__ _ARCH_PPC64
  
  mips_macros= __mips__ __mips _MIPS_ARCH_MIPS1
@@ -13,7 +13,7 @@ $OpenBSD: patch-Makefile_defs,v 1.4 2012/12/02 22:18:21 jasper Exp $
  
  alpha_macros= __alpha__ __alpha _M_ALPHA_
  
-@@ -422,7 +422,7 @@ endif
+@@ -435,7 +435,7 @@ endif
  endif
  
  # dirs
@@ -22,7 +22,7 @@ $OpenBSD: patch-Makefile_defs,v 1.4 2012/12/02 22:18:21 jasper Exp $
  bin_dir = sbin/
  share_dir = share/$(MAIN_NAME)/
  # lib/$(MAIN_NAME)/modules , lib/$(MAIN_NAME)/modules-s, lib/$(MAIN_NAME)/modules-k
-@@ -504,7 +504,7 @@ data_prefix = $(basedir)$(prefix)
+@@ -517,7 +517,7 @@ data_prefix = $(basedir)$(prefix)
  
  
  # target dirs for various stuff
@@ -31,7 +31,7 @@ $OpenBSD: patch-Makefile_defs,v 1.4 2012/12/02 22:18:21 jasper Exp $
  bin_target = $(prefix)/$(bin_dir)
  #modules_target = $(prefix)/$(modules_dir)
  lib_target = $(prefix)/$(lib_dir)
-@@ -944,7 +944,7 @@ ifeq	($(ARCH), x86_64)
+@@ -976,7 +976,7 @@ ifeq	($(ARCH), x86_64)
  ifeq		($(CC_NAME), gcc)
  				C_DEFS+=-DCC_GCC_LIKE_ASM
  				#common stuff
@@ -40,7 +40,7 @@ $OpenBSD: patch-Makefile_defs,v 1.4 2012/12/02 22:18:21 jasper Exp $
  			#if gcc 4.5+
  			# don't add '-mtune=$(CPU)' - gcc failure
  ifeq			($(CC_SHORTVER), 4.5+)
-@@ -958,12 +958,8 @@ else
+@@ -990,12 +990,8 @@ else
  			#if gcc 4.2+
  ifeq			($(CC_SHORTVER), 4.2+)
  $(call				set_if_empty,CPU,opteron)
@@ -55,7 +55,7 @@ $OpenBSD: patch-Makefile_defs,v 1.4 2012/12/02 22:18:21 jasper Exp $
  else
  			#if gcc 4.0+
  ifeq			($(CC_SHORTVER), 4.x)
-@@ -1376,7 +1372,7 @@ ifeq		($(CC_NAME), gcc)
+@@ -1416,7 +1412,7 @@ ifeq		($(CC_NAME), gcc)
  				CFLAGS= -mips64 -O9 -funroll-loops $(PROFILE)
  			#if gcc 4.5+ or 4.2+
  ifeq (,$(strip $(filter-out 4.2+ 4.5+,$(CC_SHORTVER))))
@@ -64,7 +64,7 @@ $OpenBSD: patch-Makefile_defs,v 1.4 2012/12/02 22:18:21 jasper Exp $
  							-fno-strict-overflow
  else
  			#if gcc 4.0+
-@@ -1904,9 +1900,10 @@ endif
+@@ -1962,9 +1958,10 @@ endif
  
  ifeq ($(OS), openbsd)
  	C_DEFS+=-DHAVE_SOCKADDR_SA_LEN  -DHAVE_GETHOSTBYNAME2 \

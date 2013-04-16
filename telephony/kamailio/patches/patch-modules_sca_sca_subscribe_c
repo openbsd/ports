@@ -1,0 +1,39 @@
+$OpenBSD: patch-modules_sca_sca_subscribe_c,v 1.1 2013/04/16 11:13:04 sthen Exp $
+--- modules/sca/sca_subscribe.c.orig	Mon Mar 11 17:27:19 2013
++++ modules/sca/sca_subscribe.c	Sun Mar 31 16:03:23 2013
+@@ -82,7 +82,7 @@ sca_subscription_purge_expired( unsigned int ticks, vo
+     sca_hash_table	*ht;
+     sca_hash_entry	*ent, *ent_tmp;
+     sca_subscription	*sub;
+-    time_t		now = time( NULL );
++    long		now = (long)time( NULL );
+     int			state;
+     int			i;
+ 
+@@ -250,7 +250,7 @@ sca_subscriptions_restore_from_db( sca_mod *scam )
+     int			i;
+     int			idx;
+     int			rc = -1;
+-    time_t		now = time( NULL );
++    long		now = (long)time( NULL );
+ 
+     db_con = scam->db_api->init( scam->cfg->db_url );
+     if ( db_con == NULL ) {
+@@ -445,7 +445,7 @@ sca_subscription_db_delete_expired( db1_con_t *db_con 
+     db_key_t		delete_columns[ 1 ];
+     db_val_t		delete_values[ 1 ];
+     db_op_t		delete_ops[ 1 ];
+-    time_t		now = time( NULL );
++    long		now = (long)time(NULL);
+     int			kv_count = 0;
+ 
+     delete_columns[ 0 ] = (str *)&SCA_DB_EXPIRES_COL_NAME;
+@@ -473,7 +473,7 @@ sca_subscription_db_update( void )
+     sca_subscription	*sub;
+     int			i;
+     int			rc = -1;
+-    time_t		now = time( NULL );
++    long		now = (long)time( NULL );
+ 
+     db_con = sca_db_get_connection();
+     if ( db_con == NULL ){

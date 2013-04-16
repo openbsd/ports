@@ -1,6 +1,6 @@
-$OpenBSD: patch-modules_k_pv_pv_time_c,v 1.1 2012/09/15 12:16:18 sthen Exp $
---- modules_k/pv/pv_time.c.orig	Sat Jul 28 16:09:49 2012
-+++ modules_k/pv/pv_time.c	Sat Jul 28 16:15:51 2012
+$OpenBSD: patch-modules_pv_pv_time_c,v 1.1 2013/04/16 11:13:04 sthen Exp $
+--- modules/pv/pv_time.c.orig	Sun Mar 31 14:53:52 2013
++++ modules/pv/pv_time.c	Sun Mar 31 14:55:46 2013
 @@ -117,7 +117,7 @@ int pv_get_time(struct sip_msg *msg, pv_param_t *param
  	{
  		msg_set_time(msg);

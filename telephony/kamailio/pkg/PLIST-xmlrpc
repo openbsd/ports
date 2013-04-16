@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST-xmlrpc,v 1.2 2012/04/22 21:44:24 sthen Exp $
-lib/kamailio/modules_k/mi_xmlrpc.so
-share/doc/kamailio/modules_k/README.mi_xmlrpc
+@comment $OpenBSD: PLIST-xmlrpc,v 1.3 2013/04/16 11:13:04 sthen Exp $
+lib/kamailio/modules/mi_xmlrpc.so
+share/doc/kamailio/modules/README.mi_xmlrpc

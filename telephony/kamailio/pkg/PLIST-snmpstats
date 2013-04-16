@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST-snmpstats,v 1.2 2012/04/22 21:44:24 sthen Exp $
-lib/kamailio/modules_k/snmpstats.so
-share/doc/kamailio/modules_k/README.snmpstats
-share/snmp/mibs/OPENSER-MIB
-share/snmp/mibs/OPENSER-REG-MIB
-share/snmp/mibs/OPENSER-SIP-COMMON-MIB
-share/snmp/mibs/OPENSER-SIP-SERVER-MIB
-share/snmp/mibs/OPENSER-TC
+@comment $OpenBSD: PLIST-snmpstats,v 1.3 2013/04/16 11:13:04 sthen Exp $
+lib/kamailio/modules/snmpstats.so
+share/doc/kamailio/modules/README.snmpstats
+share/snmp/mibs/KAMAILIO-MIB
+share/snmp/mibs/KAMAILIO-REG-MIB
+share/snmp/mibs/KAMAILIO-SIP-COMMON-MIB
+share/snmp/mibs/KAMAILIO-SIP-SERVER-MIB
+share/snmp/mibs/KAMAILIO-TC

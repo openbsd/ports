@@ -1,6 +1,6 @@
-$OpenBSD: patch-modules_k_perl_perl_c,v 1.1 2012/09/15 12:16:18 sthen Exp $
---- modules_k/perl/perl.c.orig	Sat Jul 28 14:50:20 2012
-+++ modules_k/perl/perl.c	Sat Jul 28 14:52:07 2012
+$OpenBSD: patch-modules_app_perl_app_perl_mod_c,v 1.1 2013/04/16 11:13:04 sthen Exp $
+--- modules/app_perl/app_perl_mod.c.orig	Sun Mar 31 17:21:32 2013
++++ modules/app_perl/app_perl_mod.c	Sun Mar 31 17:22:09 2013
 @@ -319,6 +319,8 @@ struct mi_root* perl_mi_reload(struct mi_root *cmd_tre
  static int mod_init(void) {
  

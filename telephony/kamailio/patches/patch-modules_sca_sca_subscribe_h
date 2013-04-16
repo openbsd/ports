@@ -1,0 +1,12 @@
+$OpenBSD: patch-modules_sca_sca_subscribe_h,v 1.1 2013/04/16 11:13:04 sthen Exp $
+--- modules/sca/sca_subscribe.h.orig	Sun Mar 31 15:51:58 2013
++++ modules/sca/sca_subscribe.h	Sun Mar 31 15:52:17 2013
+@@ -43,7 +43,7 @@ struct _sca_subscription {
+     str		subscriber;	/* contact: user@ip */
+     str		target_aor;	/* account of record to watch: user@domain */
+     int		event;		/* "call-info", "line-seize" */
+-    time_t	expires;	/* expiration date of subscription */
++    long	expires;	/* expiration date of subscription */
+     int		state;		/* active, pending, terminated */
+     int		index;		/* seized appearance-index, line-seize only */
+ 

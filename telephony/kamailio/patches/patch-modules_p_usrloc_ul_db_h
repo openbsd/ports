@@ -1,6 +1,6 @@
-$OpenBSD: patch-modules_k_p_usrloc_ul_db_h,v 1.1 2012/09/15 12:16:18 sthen Exp $
---- modules_k/p_usrloc/ul_db.h.orig	Sat Jul 28 15:44:55 2012
-+++ modules_k/p_usrloc/ul_db.h	Sat Jul 28 15:46:57 2012
+$OpenBSD: patch-modules_p_usrloc_ul_db_h,v 1.1 2013/04/16 11:13:04 sthen Exp $
+--- modules/p_usrloc/ul_db.h.orig	Sun Mar 31 13:56:42 2013
++++ modules/p_usrloc/ul_db.h	Sun Mar 31 13:57:04 2013
 @@ -38,7 +38,7 @@
  #define DB_POL_QUERY 1
  #define DB_POL_MOD 2
