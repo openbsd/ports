@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.129 2013/04/15 19:11:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.130 2013/04/16 06:41:44 ajacoutot Exp $
 
 COMMENT= 		Telepathy based messenger for GNOME
 
@@ -74,9 +74,6 @@ MODGNOME_TOOLS= 	yelp
 CONFIGURE_ARGS+=	--disable-gudev \
 			--disable-Werror \
 			--without-cheese
-
-# XXX NST currently only works with mail clients
-CONFIGURE_ARGS +=	--disable-nautilus-sendto
 
 # XXX needs geocode-glib
 CONFIGURE_ARGS +=	--disable-geocode
