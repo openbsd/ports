@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/29 15:21:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2013/04/16 06:40:23 jasper Exp $
 
 COMMENT=		system log viewer for GNOME
 
 GNOME_PROJECT=		gnome-system-log
-GNOME_VERSION=		3.8.0
+GNOME_VERSION=		3.8.1
 
 # GPLv2+ - GFDLv1.1
 PERMIT_PACKAGE_CDROM=	Yes
