@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_rules_latex___init___py,v 1.1 2013/04/16 13:03:48 ajacoutot Exp $
+
+https://live.gnome.org/Gedit/LaTeXPlugin/FAQ
+
+--- src/rules/latex/__init__.py.orig	Fri Mar 17 14:52:45 2006
++++ src/rules/latex/__init__.py	Tue Apr 16 15:01:40 2013
+@@ -1106,8 +1106,9 @@ class LaTeXDep (Depend):
+ 		msg.progress(_("compiling %s") % msg.simplify(self.source()))
+ 		
+ 		file = self.source()
++                fakefile = self.src_base  
+ 		cmd = [self.vars["program"]]
+-		cmd += map(lambda x: x.replace("%s",file), self.cmdline)
++		cmd += map(lambda x: x.replace("%s",fakefile), self.cmdline)
+ 		inputs = string.join(self.env.path, ":")
+ 		if inputs == "":
+ 			env = {}
+@@ -1120,6 +1121,13 @@ class LaTeXDep (Depend):
+ 
+ 		if self.log.read(self.src_base + ".log"):
+ 			msg.error(_("Could not run %s.") % cmd[0])
++			msg.error(_("path %s") % file)
++			msg.error(_("cmd %s") % self.cmdline)
++			msg.error(_("env %s") % env)
++			msg.error(_("inputs %s") % inputs)
++			msg.error(_("other %s") % self.src_base)
++			msg.error(_("cmd1 %s") % cmd[1])
++			msg.error(_("cmd2 %s") % cmd[2])
+ 			return 1
+ 		if self.log.errors():
+ 			return 1

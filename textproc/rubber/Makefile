@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:42:46 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/04/16 13:03:48 ajacoutot Exp $
 
 COMMENT=	wrapper for LaTeX and friends
 
 MODPY_EGG_VERSION=	1.1
 DISTNAME=	rubber-${MODPY_EGG_VERSION}
+REVISION=	0
 
 CATEGORIES=	textproc print
 
