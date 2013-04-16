@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/01/03 22:41:56 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/04/16 13:37:33 sthen Exp $
 roundcubemail/plugins/sieverules/
 roundcubemail/plugins/sieverules/CHANGELOG
-roundcubemail/plugins/sieverules/README
+roundcubemail/plugins/sieverules/README.md
 roundcubemail/plugins/sieverules/composer.json
 roundcubemail/plugins/sieverules/config.inc.php.dist
 @sample roundcubemail/plugins/sieverules/config.inc.php
@@ -44,6 +44,7 @@ roundcubemail/plugins/sieverules/sieverules.js
 roundcubemail/plugins/sieverules/sieverules.php
 roundcubemail/plugins/sieverules/skins/
 roundcubemail/plugins/sieverules/skins/classic/
+roundcubemail/plugins/sieverules/skins/classic/cross.gif
 roundcubemail/plugins/sieverules/skins/classic/help.gif
 roundcubemail/plugins/sieverules/skins/classic/icons.gif
 roundcubemail/plugins/sieverules/skins/classic/icons.png
@@ -57,7 +58,9 @@ roundcubemail/plugins/sieverules/skins/classic/templates/advancededitor.html
 roundcubemail/plugins/sieverules/skins/classic/templates/editsieverule.html
 roundcubemail/plugins/sieverules/skins/classic/templates/setupsieverules.html
 roundcubemail/plugins/sieverules/skins/classic/templates/sieverules.html
+roundcubemail/plugins/sieverules/skins/classic/tick.gif
 roundcubemail/plugins/sieverules/skins/larry/
+roundcubemail/plugins/sieverules/skins/larry/cross.png
 roundcubemail/plugins/sieverules/skins/larry/help.png
 roundcubemail/plugins/sieverules/skins/larry/icons.png
 roundcubemail/plugins/sieverules/skins/larry/iehacks.css
@@ -70,3 +73,4 @@ roundcubemail/plugins/sieverules/skins/larry/templates/advancededitor.html
 roundcubemail/plugins/sieverules/skins/larry/templates/editsieverule.html
 roundcubemail/plugins/sieverules/skins/larry/templates/setupsieverules.html
 roundcubemail/plugins/sieverules/skins/larry/templates/sieverules.html
+roundcubemail/plugins/sieverules/skins/larry/tick.png

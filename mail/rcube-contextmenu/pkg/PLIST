@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/11 16:11:23 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/04/16 13:37:42 sthen Exp $
 roundcubemail/plugins/contextmenu/
 roundcubemail/plugins/contextmenu/CHANGELOG
-roundcubemail/plugins/contextmenu/README
+roundcubemail/plugins/contextmenu/README.md
 roundcubemail/plugins/contextmenu/composer.json
 roundcubemail/plugins/contextmenu/contextmenu.js
 roundcubemail/plugins/contextmenu/contextmenu.php
