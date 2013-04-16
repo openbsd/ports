@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/04/16 10:19:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2013/04/16 10:21:31 ajacoutot Exp $
 
 COMMENT-main=		Python bindings for GLib and GObject
 COMMENT-common=		common files for py-gobject3
@@ -41,7 +41,10 @@ MODULES=		devel/gettext \
 			lang/python \
 			x11/gnome
 
-LIB_DEPENDS=		devel/gobject-introspection
+LIB_DEPENDS-common=	#empty
+
+LIB_DEPENDS-main=	${LIB_DEPENDS} \
+			devel/gobject-introspection
 
 RUN_DEPENDS-main=	${RUN_DEPENDS} \
 			devel/py-gobject3,-common
