@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/04/04 13:07:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2013/04/16 10:23:31 ajacoutot Exp $
 
 BROKEN-powerpc=	clang dumps core
 
@@ -8,7 +8,7 @@ COMMENT=	code assistance for Gedit
 
 GNOME_PROJECT=	gedit-code-assistance
 GNOME_VERSION=	0.2.0
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	editors devel
 
@@ -35,11 +35,14 @@ LIB_DEPENDS=	devel/libgee06 \
 		devel/llvm>=${MODCLANG_VERSION} \
 		x11/gtksourceview3
 
+MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 MODGNOME_TOOLS=	goi vala
 
-BUILD_DEPENDS=	x11/gnome/gedit>=3.8.0
-RUN_DEPENDS=	x11/gnome/gedit>=3.8.0 \
-		devel/py-gobject3
+BUILD_DEPENDS=	x11/gnome/gedit \
+		devel/py-gobject3${MODPY_FLAVOR}
+
+RUN_DEPENDS=	x11/gnome/gedit \
+		devel/py-gobject3${MODPY_FLAVOR}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/backends/c/gcp-c-compile-args.c

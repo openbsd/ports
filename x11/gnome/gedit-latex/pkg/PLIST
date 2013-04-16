@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/06/11 21:14:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/04/16 10:24:11 ajacoutot Exp $
 lib/gedit/plugins/latex/
 lib/gedit/plugins/latex.plugin
 lib/gedit/plugins/latex/__init__.py
@@ -42,8 +42,6 @@ lib/gedit/plugins/latex/bibtex/views.py
 lib/gedit/plugins/latex/bibtex/views.pyc
 lib/gedit/plugins/latex/bibtex/views.pyo
 lib/gedit/plugins/latex/completion.py
-lib/gedit/plugins/latex/completion.pyc
-lib/gedit/plugins/latex/completion.pyo
 lib/gedit/plugins/latex/config.py
 lib/gedit/plugins/latex/config.pyc
 lib/gedit/plugins/latex/config.pyo
@@ -51,8 +49,6 @@ lib/gedit/plugins/latex/editor.py
 lib/gedit/plugins/latex/editor.pyc
 lib/gedit/plugins/latex/editor.pyo
 lib/gedit/plugins/latex/file.py
-lib/gedit/plugins/latex/file.pyc
-lib/gedit/plugins/latex/file.pyo
 lib/gedit/plugins/latex/gldefs.py
 lib/gedit/plugins/latex/gldefs.pyc
 lib/gedit/plugins/latex/gldefs.pyo
@@ -60,8 +56,6 @@ lib/gedit/plugins/latex/issues.py
 lib/gedit/plugins/latex/issues.pyc
 lib/gedit/plugins/latex/issues.pyo
 lib/gedit/plugins/latex/job.py
-lib/gedit/plugins/latex/job.pyc
-lib/gedit/plugins/latex/job.pyo
 lib/gedit/plugins/latex/latex/
 lib/gedit/plugins/latex/latex/__init__.py
 lib/gedit/plugins/latex/latex/__init__.pyc
@@ -73,14 +67,8 @@ lib/gedit/plugins/latex/latex/cache.py
 lib/gedit/plugins/latex/latex/cache.pyc
 lib/gedit/plugins/latex/latex/cache.pyo
 lib/gedit/plugins/latex/latex/completion.py
-lib/gedit/plugins/latex/latex/completion.pyc
-lib/gedit/plugins/latex/latex/completion.pyo
 lib/gedit/plugins/latex/latex/dialogs.py
-lib/gedit/plugins/latex/latex/dialogs.pyc
-lib/gedit/plugins/latex/latex/dialogs.pyo
 lib/gedit/plugins/latex/latex/editor.py
-lib/gedit/plugins/latex/latex/editor.pyc
-lib/gedit/plugins/latex/latex/editor.pyo
 lib/gedit/plugins/latex/latex/environment.py
 lib/gedit/plugins/latex/latex/environment.pyc
 lib/gedit/plugins/latex/latex/environment.pyo
@@ -100,8 +88,6 @@ lib/gedit/plugins/latex/latex/outline.py
 lib/gedit/plugins/latex/latex/outline.pyc
 lib/gedit/plugins/latex/latex/outline.pyo
 lib/gedit/plugins/latex/latex/parser.py
-lib/gedit/plugins/latex/latex/parser.pyc
-lib/gedit/plugins/latex/latex/parser.pyo
 lib/gedit/plugins/latex/latex/preview.py
 lib/gedit/plugins/latex/latex/preview.pyc
 lib/gedit/plugins/latex/latex/preview.pyo
@@ -125,11 +111,7 @@ lib/gedit/plugins/latex/preferences/dialog.py
 lib/gedit/plugins/latex/preferences/dialog.pyc
 lib/gedit/plugins/latex/preferences/dialog.pyo
 lib/gedit/plugins/latex/preferences/tools.py
-lib/gedit/plugins/latex/preferences/tools.pyc
-lib/gedit/plugins/latex/preferences/tools.pyo
 lib/gedit/plugins/latex/resources.py
-lib/gedit/plugins/latex/resources.pyc
-lib/gedit/plugins/latex/resources.pyo
 lib/gedit/plugins/latex/singleton.py
 lib/gedit/plugins/latex/singleton.pyc
 lib/gedit/plugins/latex/singleton.pyo
@@ -147,15 +129,11 @@ lib/gedit/plugins/latex/tools/postprocess.py
 lib/gedit/plugins/latex/tools/postprocess.pyc
 lib/gedit/plugins/latex/tools/postprocess.pyo
 lib/gedit/plugins/latex/tools/util.py
-lib/gedit/plugins/latex/tools/util.pyc
-lib/gedit/plugins/latex/tools/util.pyo
 lib/gedit/plugins/latex/tools/views.py
 lib/gedit/plugins/latex/tools/views.pyc
 lib/gedit/plugins/latex/tools/views.pyo
 lib/gedit/plugins/latex/util/
 lib/gedit/plugins/latex/util.py
-lib/gedit/plugins/latex/util.pyc
-lib/gedit/plugins/latex/util.pyo
 lib/gedit/plugins/latex/util/eps2png.pl
 lib/gedit/plugins/latex/views.py
 lib/gedit/plugins/latex/views.pyc

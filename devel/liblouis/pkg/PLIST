@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/03/27 15:29:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/04/16 10:25:48 ajacoutot Exp $
 @bin bin/lou_allround
 @bin bin/lou_checkhyphens
 @bin bin/lou_checktable
@@ -16,7 +16,8 @@ lib/liblouis.la
 lib/pkgconfig/liblouis.pc
 lib/python${MODPY_VERSION}/site-packages/louis/
 lib/python${MODPY_VERSION}/site-packages/louis/__init__.py
-lib/python${MODPY_VERSION}/site-packages/louis/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/louis/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/louis/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 @man man/man1/lou_allround.1
 @man man/man1/lou_checkhyphens.1
 @man man/man1/lou_checktable.1

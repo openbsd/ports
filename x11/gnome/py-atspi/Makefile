@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/27 17:53:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2013/04/16 10:27:10 ajacoutot Exp $
 
 COMMENT=	python bindings for at-spi2
 
 GNOME_PROJECT=	pyatspi
 GNOME_VERSION=	2.8.0
+REVISION=	0
 
 PKGNAME=	py-atspi-${GNOME_VERSION}
 
@@ -15,13 +16,14 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES=	x11/gnome \
 		lang/python
 
+MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 MODPY_ADJ_FILES=examples/magFocusTracker.py
 
 PKG_ARCH=	*
 
-BUILD_DEPENDS=	devel/py-gobject3>=3.8.0
-RUN_DEPENDS=	devel/py-gobject3>=3.8.0 \
-		x11/gnome/at-spi2-core>=2.8.0
+BUILD_DEPENDS=	devel/py-gobject3${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-gobject3${MODPY_FLAVOR} \
+		x11/gnome/at-spi2-core
 
 CONFIGURE_ARGS=	--with-python=${MODPY_BIN}
 

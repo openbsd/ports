@@ -1,29 +1,29 @@
-@comment $OpenBSD: PLIST,v 1.32 2013/04/16 06:15:38 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.33 2013/04/16 10:23:01 ajacoutot Exp $
 @bin bin/gedit
 bin/gnome-text-editor
-include/gedit-3.0/
-include/gedit-3.0/gedit/
-include/gedit-3.0/gedit/gedit-app-activatable.h
-include/gedit-3.0/gedit/gedit-app.h
-include/gedit-3.0/gedit/gedit-commands.h
-include/gedit-3.0/gedit/gedit-debug.h
-include/gedit-3.0/gedit/gedit-document.h
-include/gedit-3.0/gedit/gedit-encodings-combo-box.h
-include/gedit-3.0/gedit/gedit-encodings.h
-include/gedit-3.0/gedit/gedit-message-bus.h
-include/gedit-3.0/gedit/gedit-message.h
-include/gedit-3.0/gedit/gedit-panel.h
-include/gedit-3.0/gedit/gedit-progress-info-bar.h
-include/gedit-3.0/gedit/gedit-statusbar.h
-include/gedit-3.0/gedit/gedit-tab.h
-include/gedit-3.0/gedit/gedit-utils.h
-include/gedit-3.0/gedit/gedit-view-activatable.h
-include/gedit-3.0/gedit/gedit-view.h
-include/gedit-3.0/gedit/gedit-window-activatable.h
-include/gedit-3.0/gedit/gedit-window.h
+include/gedit${MODPY_BIN_SUFFIX}.0/
+include/gedit${MODPY_BIN_SUFFIX}.0/gedit/
+include/gedit${MODPY_BIN_SUFFIX}.0/gedit/gedit-app-activatable.h
+include/gedit${MODPY_BIN_SUFFIX}.0/gedit/gedit-app.h
+include/gedit${MODPY_BIN_SUFFIX}.0/gedit/gedit-commands.h
+include/gedit${MODPY_BIN_SUFFIX}.0/gedit/gedit-debug.h
+include/gedit${MODPY_BIN_SUFFIX}.0/gedit/gedit-document.h
+include/gedit${MODPY_BIN_SUFFIX}.0/gedit/gedit-encodings-combo-box.h
+include/gedit${MODPY_BIN_SUFFIX}.0/gedit/gedit-encodings.h
+include/gedit${MODPY_BIN_SUFFIX}.0/gedit/gedit-message-bus.h
+include/gedit${MODPY_BIN_SUFFIX}.0/gedit/gedit-message.h
+include/gedit${MODPY_BIN_SUFFIX}.0/gedit/gedit-panel.h
+include/gedit${MODPY_BIN_SUFFIX}.0/gedit/gedit-progress-info-bar.h
+include/gedit${MODPY_BIN_SUFFIX}.0/gedit/gedit-statusbar.h
+include/gedit${MODPY_BIN_SUFFIX}.0/gedit/gedit-tab.h
+include/gedit${MODPY_BIN_SUFFIX}.0/gedit/gedit-utils.h
+include/gedit${MODPY_BIN_SUFFIX}.0/gedit/gedit-view-activatable.h
+include/gedit${MODPY_BIN_SUFFIX}.0/gedit/gedit-view.h
+include/gedit${MODPY_BIN_SUFFIX}.0/gedit/gedit-window-activatable.h
+include/gedit${MODPY_BIN_SUFFIX}.0/gedit/gedit-window.h
 lib/gedit/
 lib/gedit/girepository-1.0/
-lib/gedit/girepository-1.0/Gedit-3.0.typelib
+lib/gedit/girepository-1.0/Gedit${MODPY_BIN_SUFFIX}.0.typelib
 lib/gedit/libgedit-private.la
 lib/gedit/libgedit-private.so
 lib/gedit/plugins/
@@ -149,6 +149,9 @@ lib/gedit/plugins/sort.plugin
 lib/gedit/plugins/spell.plugin
 lib/gedit/plugins/time.plugin
 lib/pkgconfig/gedit.pc
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/Gedit.py
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/Gedit.pyc
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/Gedit.pyo
 libexec/gedit/
 libexec/gedit/gedit-bugreport.sh
 @man man/man1/gedit.1
@@ -157,7 +160,7 @@ share/applications/gedit.desktop
 share/dbus-1/services/org.gnome.gedit.service
 share/gedit/
 share/gedit/gir-1.0/
-share/gedit/gir-1.0/Gedit-3.0.gir
+share/gedit/gir-1.0/Gedit${MODPY_BIN_SUFFIX}.0.gir
 share/gedit/logo/
 share/gedit/logo/gedit-logo.png
 share/gedit/plugins/

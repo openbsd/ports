@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/27 15:29:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2013/04/16 10:25:48 ajacoutot Exp $
 
 COMMENT=	braille translator and back-translator
 
 DISTNAME=	liblouis-2.5.2
+REVISION=	0
 
 SHARED_LIBS +=  louis                1.0      # 5.2
 
@@ -19,6 +20,7 @@ MASTER_SITES=	http://liblouis.googlecode.com/files/
 
 MODULES=	lang/python
 
+MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 MODPY_ADJ_FILES=tools/lou_harnessGenerator
 
 BUILD_DEPENDS=	devel/help2man

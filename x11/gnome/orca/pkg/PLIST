@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2012/09/28 06:45:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2013/04/16 10:28:00 ajacoutot Exp $
 bin/orca
 lib/python${MODPY_VERSION}/site-packages/orca/
 lib/python${MODPY_VERSION}/site-packages/orca/__init__.py
@@ -24,8 +24,6 @@ lib/python${MODPY_VERSION}/site-packages/orca/bookmarks.py
 lib/python${MODPY_VERSION}/site-packages/orca/bookmarks.pyc
 lib/python${MODPY_VERSION}/site-packages/orca/bookmarks.pyo
 lib/python${MODPY_VERSION}/site-packages/orca/braille.py
-lib/python${MODPY_VERSION}/site-packages/orca/braille.pyc
-lib/python${MODPY_VERSION}/site-packages/orca/braille.pyo
 lib/python${MODPY_VERSION}/site-packages/orca/braille_generator.py
 lib/python${MODPY_VERSION}/site-packages/orca/braille_generator.pyc
 lib/python${MODPY_VERSION}/site-packages/orca/braille_generator.pyo
@@ -33,14 +31,10 @@ lib/python${MODPY_VERSION}/site-packages/orca/braille_rolenames.py
 lib/python${MODPY_VERSION}/site-packages/orca/braille_rolenames.pyc
 lib/python${MODPY_VERSION}/site-packages/orca/braille_rolenames.pyo
 lib/python${MODPY_VERSION}/site-packages/orca/brlmon.py
-lib/python${MODPY_VERSION}/site-packages/orca/brlmon.pyc
-lib/python${MODPY_VERSION}/site-packages/orca/brlmon.pyo
 lib/python${MODPY_VERSION}/site-packages/orca/chat.py
 lib/python${MODPY_VERSION}/site-packages/orca/chat.pyc
 lib/python${MODPY_VERSION}/site-packages/orca/chat.pyo
 lib/python${MODPY_VERSION}/site-packages/orca/chnames.py
-lib/python${MODPY_VERSION}/site-packages/orca/chnames.pyc
-lib/python${MODPY_VERSION}/site-packages/orca/chnames.pyo
 lib/python${MODPY_VERSION}/site-packages/orca/common_keyboardmap.py
 lib/python${MODPY_VERSION}/site-packages/orca/common_keyboardmap.pyc
 lib/python${MODPY_VERSION}/site-packages/orca/common_keyboardmap.pyo
@@ -60,8 +54,6 @@ lib/python${MODPY_VERSION}/site-packages/orca/find.py
 lib/python${MODPY_VERSION}/site-packages/orca/find.pyc
 lib/python${MODPY_VERSION}/site-packages/orca/find.pyo
 lib/python${MODPY_VERSION}/site-packages/orca/flat_review.py
-lib/python${MODPY_VERSION}/site-packages/orca/flat_review.pyc
-lib/python${MODPY_VERSION}/site-packages/orca/flat_review.pyo
 lib/python${MODPY_VERSION}/site-packages/orca/formatting.py
 lib/python${MODPY_VERSION}/site-packages/orca/formatting.pyc
 lib/python${MODPY_VERSION}/site-packages/orca/formatting.pyo
@@ -141,8 +133,6 @@ lib/python${MODPY_VERSION}/site-packages/orca/pronunciation_dict.py
 lib/python${MODPY_VERSION}/site-packages/orca/pronunciation_dict.pyc
 lib/python${MODPY_VERSION}/site-packages/orca/pronunciation_dict.pyo
 lib/python${MODPY_VERSION}/site-packages/orca/punctuation_settings.py
-lib/python${MODPY_VERSION}/site-packages/orca/punctuation_settings.pyc
-lib/python${MODPY_VERSION}/site-packages/orca/punctuation_settings.pyo
 lib/python${MODPY_VERSION}/site-packages/orca/script.py
 lib/python${MODPY_VERSION}/site-packages/orca/script.pyc
 lib/python${MODPY_VERSION}/site-packages/orca/script.pyo
@@ -150,8 +140,6 @@ lib/python${MODPY_VERSION}/site-packages/orca/script_manager.py
 lib/python${MODPY_VERSION}/site-packages/orca/script_manager.pyc
 lib/python${MODPY_VERSION}/site-packages/orca/script_manager.pyo
 lib/python${MODPY_VERSION}/site-packages/orca/script_utilities.py
-lib/python${MODPY_VERSION}/site-packages/orca/script_utilities.pyc
-lib/python${MODPY_VERSION}/site-packages/orca/script_utilities.pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/__init__.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/__init__.pyc
@@ -524,8 +512,6 @@ lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/xfwm4/script.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/xfwm4/script.pyc
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/xfwm4/script.pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/default.py
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/default.pyc
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/default.pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/self_voicing.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/self_voicing.pyc
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/self_voicing.pyo
@@ -557,8 +543,6 @@ lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/keymaps.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/keymaps.pyc
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/keymaps.pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/script.py
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/script.pyc
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/script.pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/script_settings.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/script_settings.pyc
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/script_settings.pyo
@@ -631,8 +615,6 @@ lib/python${MODPY_VERSION}/site-packages/orca/speech_generator.py
 lib/python${MODPY_VERSION}/site-packages/orca/speech_generator.pyc
 lib/python${MODPY_VERSION}/site-packages/orca/speech_generator.pyo
 lib/python${MODPY_VERSION}/site-packages/orca/speechdispatcherfactory.py
-lib/python${MODPY_VERSION}/site-packages/orca/speechdispatcherfactory.pyc
-lib/python${MODPY_VERSION}/site-packages/orca/speechdispatcherfactory.pyo
 lib/python${MODPY_VERSION}/site-packages/orca/speechserver.py
 lib/python${MODPY_VERSION}/site-packages/orca/speechserver.pyc
 lib/python${MODPY_VERSION}/site-packages/orca/speechserver.pyo
