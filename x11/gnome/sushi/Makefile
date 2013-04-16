@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2013/04/13 10:46:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2013/04/16 06:28:24 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	quick previewer for Nautilus
 
 GNOME_PROJECT=	sushi
-GNOME_VERSION=	3.8.0
-REVISION =	1
+GNOME_VERSION=	3.8.1
 
 HOMEPAGE=	https://live.gnome.org/ThreePointOne/Features/FilePreviewing
 
