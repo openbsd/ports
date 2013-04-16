@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2013/04/16 10:25:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2013/04/16 10:43:46 ajacoutot Exp $
 lib/gedit/plugins/${MODPY_PYCACHE}/
 lib/gedit/plugins/${MODPY_PYCACHE}bracketcompletion.${MODPY_PYC_MAGIC_TAG}pyc
 lib/gedit/plugins/${MODPY_PYCACHE}bracketcompletion.${MODPY_PYC_MAGIC_TAG}pyo
@@ -96,18 +96,6 @@ lib/gedit/plugins/commander/modules.py
 lib/gedit/plugins/commander/transparentwindow.py
 lib/gedit/plugins/commander/utils.py
 lib/gedit/plugins/commander/windowactivatable.py
-lib/gedit/plugins/dashboard/
-lib/gedit/plugins/dashboard.plugin
-lib/gedit/plugins/dashboard/__init__.py
-lib/gedit/plugins/dashboard/${MODPY_PYCACHE}/
-lib/gedit/plugins/dashboard/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/gedit/plugins/dashboard/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyo
-lib/gedit/plugins/dashboard/${MODPY_PYCACHE}dashboard.${MODPY_PYC_MAGIC_TAG}pyc
-lib/gedit/plugins/dashboard/${MODPY_PYCACHE}dashboard.${MODPY_PYC_MAGIC_TAG}pyo
-lib/gedit/plugins/dashboard/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
-lib/gedit/plugins/dashboard/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyo
-lib/gedit/plugins/dashboard/dashboard.py
-lib/gedit/plugins/dashboard/utils.py
 lib/gedit/plugins/drawspaces.plugin
 lib/gedit/plugins/gpdefs.py
 lib/gedit/plugins/joinlines.plugin
@@ -129,18 +117,6 @@ lib/gedit/plugins/multiedit/documenthelper.py
 lib/gedit/plugins/multiedit/signals.py
 lib/gedit/plugins/smartspaces.plugin
 lib/gedit/plugins/smartspaces.py
-lib/gedit/plugins/synctex/
-lib/gedit/plugins/synctex.plugin
-lib/gedit/plugins/synctex/__init__.py
-lib/gedit/plugins/synctex/${MODPY_PYCACHE}/
-lib/gedit/plugins/synctex/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/gedit/plugins/synctex/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyo
-lib/gedit/plugins/synctex/${MODPY_PYCACHE}evince_dbus.${MODPY_PYC_MAGIC_TAG}pyc
-lib/gedit/plugins/synctex/${MODPY_PYCACHE}evince_dbus.${MODPY_PYC_MAGIC_TAG}pyo
-lib/gedit/plugins/synctex/${MODPY_PYCACHE}synctex.${MODPY_PYC_MAGIC_TAG}pyc
-lib/gedit/plugins/synctex/${MODPY_PYCACHE}synctex.${MODPY_PYC_MAGIC_TAG}pyo
-lib/gedit/plugins/synctex/evince_dbus.py
-lib/gedit/plugins/synctex/synctex.py
 lib/gedit/plugins/textsize/
 lib/gedit/plugins/textsize.plugin
 lib/gedit/plugins/textsize/__init__.py

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.59 2013/04/16 10:25:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2013/04/16 10:43:46 ajacoutot Exp $
 
 COMMENT=		plugins for Gedit
 
 GNOME_PROJECT=		gedit-plugins
 GNOME_VERSION=		3.8.1
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		editors
 
@@ -44,14 +44,13 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			x11/gnome/gedit \
 			x11/gnome/gucharmap
 
-# synctex
-RUN_DEPENDS +=		x11/dbus-python
-
 LIBTOOL_FLAGS=		--tag=disable-static
 
 CONFIGURE_ARGS+=	--disable-static
 
 post-install:
 	rm ${PREFIX}/lib/gedit/plugins/*.la
+	# XXX dbus-python does not work with py3; must be ported to gi/GDBus
+	rm -rf ${PREFIX}/lib/gedit/plugins/{dashboard,synctex}{.plugin,/}
 
 .include <bsd.port.mk>
