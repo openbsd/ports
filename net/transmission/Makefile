@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2013/04/01 16:01:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.86 2013/04/17 10:52:46 naddy Exp $
 
 COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
@@ -65,9 +65,6 @@ RUN_DEPENDS-gtk=${PKGNAME-main}:net/transmission,-main \
 		x11/gtk+2,-guic
 RUN_DEPENDS-qt=	${PKGNAME-main}:net/transmission,-main \
 		devel/desktop-file-utils
-
-BUILD_DEPENDS=	archivers/gtar
-TAR=		${LOCALBASE}/bin/gtar
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
