@@ -1,12 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 11:35:49 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2013/04/17 15:15:16 sthen Exp $
 
 COMMENT=	Nagios Remote Plugin Executor
 
-# packaged from Icinga git repo.
-DISTNAME=	icinga-nrpe-2.12.20100914
-REVISION=	4
-PKGNAME=	${DISTNAME:S/icinga-//}
-WRKDIST=	${WRKDIR}/icinga-nrpe
+DISTNAME=	nrpe-2.14
 CATEGORIES=	net
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
@@ -17,12 +13,12 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c crypto ssl wrap
 
-MASTER_SITES=	http://spacehopper.org/mirrors/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nagios/}
 
 RUN_DEPENDS=	net/nagios/plugins
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+=--enable-command-args \
+CONFIGURE_ARGS+= --enable-command-args \
 		--libexecdir=${LOCALBASE}/libexec/nagios \
 		--with-nrpe-user=_nrpe \
 		--with-nrpe-group=_nrpe \

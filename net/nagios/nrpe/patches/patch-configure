@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.4 2013/04/17 15:15:16 sthen Exp $
+--- configure.orig	Wed Apr 17 15:50:17 2013
++++ configure	Wed Apr 17 15:50:54 2013
+@@ -7519,7 +7519,7 @@ $as_echo_n "checking for SSL libraries... " >&6; }
+ 			else
+ 				soext="so"
+ 			fi
+-			if test -f "$dir/libssl.$soext"; then
++			if test -f "$dir/libssl.$soext" -o -f "$dir/libssl.a"; then
+ 				found_ssl=yes
+ 			        break
+ 			fi

@@ -1,14 +1,11 @@
-$OpenBSD: patch-sample-config_nrpe_cfg_in,v 1.1 2012/09/05 19:57:42 sthen Exp $
-
-- better default loads to warn at (these machines are meant to be doing
-actual work, right?!)
+$OpenBSD: patch-sample-config_nrpe_cfg_in,v 1.2 2013/04/17 15:15:16 sthen Exp $
 
 - provide a standard check_disk that checks all volumes, apart from hda1
 not existing, it's stupid to check individual FS when they're split up
 as usual with OpenBSD.
 
---- sample-config/nrpe.cfg.in.orig	Tue Sep 14 16:51:48 2010
-+++ sample-config/nrpe.cfg.in	Wed Sep  5 20:49:28 2012
+--- sample-config/nrpe.cfg.in.orig	Mon Dec 17 13:44:46 2012
++++ sample-config/nrpe.cfg.in	Wed Apr 17 15:35:57 2013
 @@ -23,7 +23,7 @@ log_facility=@log_facility@
  # number.  The file is only written if the NRPE daemon is started by the root
  # user and is running in standalone mode.
@@ -18,14 +15,12 @@ as usual with OpenBSD.
  
  
  
-@@ -197,8 +197,8 @@ connection_timeout=300
- # The following examples use hardcoded command arguments...
+@@ -218,7 +218,7 @@ connection_timeout=300
  
  command[check_users]=@libexecdir@/check_users -w 5 -c 10
--command[check_load]=@libexecdir@/check_load -w 1.5,1.1,0.9 -c 3.0,2.2,1.9
+ command[check_load]=@libexecdir@/check_load -w 15,10,5 -c 30,25,20
 -command[check_hda1]=@libexecdir@/check_disk -w 20% -c 10% -p /dev/hda1
-+command[check_load]=@libexecdir@/check_load -w 12,8,5 -c 16,12,10
-+command[check_disk]=@libexecdir@/check_disk -w 18% -c 10%
++command[check_disk]=@libexecdir@/check_disk -w 20% -c 10%
  command[check_zombie_procs]=@libexecdir@/check_procs -w 5 -c 10 -s Z
  command[check_total_procs]=@libexecdir@/check_procs -w 150 -c 200 
  
