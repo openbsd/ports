@@ -1,7 +1,4 @@
-$OpenBSD: patch-src_speech_h,v 1.5 2013/03/27 15:33:32 ajacoutot Exp $
-
-Don't define USE_ASYNC, this required sem_timedwait() to be present.
-
+$OpenBSD: patch-src_speech_h,v 1.6 2013/04/17 15:51:53 ajacoutot Exp $
 --- src/speech.h.orig	Thu Mar 21 13:38:16 2013
 +++ src/speech.h	Wed Mar 27 16:09:29 2013
 @@ -58,7 +58,7 @@
