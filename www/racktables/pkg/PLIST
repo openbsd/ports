@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/03/02 12:48:39 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/04/17 14:25:51 sthen Exp $
 @extra /var/www/racktables/inc/secret.php
 @extraunexec rm -rf /var/www/racktables/plugins/*
 htdocs/racktables/
@@ -11,6 +11,7 @@ racktables/README
 racktables/gateways/
 racktables/gateways/netcat
 racktables/gateways/ssh
+racktables/gateways/sshnokey
 racktables/gateways/telnet
 racktables/gateways/ucssdk
 racktables/plugins/
@@ -200,6 +201,7 @@ racktables/wwwroot/pix/tango-go-next.png
 racktables/wwwroot/pix/tango-go-prev-next-32x32.png
 racktables/wwwroot/pix/tango-go-prev-next-gray-32x32.png
 racktables/wwwroot/pix/tango-go-previous.png
+racktables/wwwroot/pix/tango-internet-32x32.png
 racktables/wwwroot/pix/tango-list-add-big.png
 racktables/wwwroot/pix/tango-list-add.png
 racktables/wwwroot/pix/tango-list-remove-32x32.png
