@@ -39,6 +39,7 @@ static ao_info_t info = {
 LIBAO_EXTERN(sndio)
 
 static struct sio_hdl *hdl = NULL;
+struct pollfd *pfds;
 static struct sio_par par;
 static int delay, vol, havevol;
 #define SILENCE_NMAX 0x1000
@@ -143,11 +144,11 @@ static int init(int rate, int channels, int format, int flags)
 	par.round = par.rate * 10 / 1000;	/*  10ms block size */
 	if (!sio_setpar(hdl, &par)) {
 		mp_msg(MSGT_AO, MSGL_ERR, "ao2: couldn't set params\n");
-		return 0;
+		goto bad_close;
 	}
 	if (!sio_getpar(hdl, &par)) {
 		mp_msg(MSGT_AO, MSGL_ERR, "ao2: couldn't get params\n");
-		return 0;
+		goto bad_close;
 	}
 	if (par.bits == 8 && par.bps == 1) {
 		format = par.sig ? AF_FORMAT_S8 : AF_FORMAT_U8;	
@@ -165,9 +166,13 @@ static int init(int rate, int channels, int format, int flags)
 		    (par.le ? AF_FORMAT_U32_LE : AF_FORMAT_U32_BE);
 	} else {
 		mp_msg(MSGT_AO, MSGL_ERR, "ao2: couldn't set format\n");
-		return 0;
+		goto bad_close;
 	}
-
+	pfds = malloc(sizeof(struct pollfd) * sio_nfds(hdl));
+	if (pfds == NULL) {
+		mp_msg(MSGT_AO, MSGL_ERR, "ao2: couldn't allocate poll fds\n");
+		goto bad_close;
+	}
 	bpf = par.bps * par.pchan;
 	ao_data.channels = par.pchan;
 	ao_data.format = ac3 ? AF_FORMAT_AC3_NE : format;
@@ -180,8 +185,15 @@ static int init(int rate, int channels, int format, int flags)
 	delay = 0;
 	if (!sio_start(hdl)) {
 		mp_msg(MSGT_AO, MSGL_ERR, "ao2: init: couldn't start\n");
+		goto bad_free;
 	}
 	return 1;
+bad_free:
+	free(pfds);
+bad_close:
+	sio_close(hdl);
+	hdl = 0;
+	return 0;
 }
 
 /*
@@ -212,17 +224,16 @@ static void reset(void)
  */
 static int get_space(void)
 {
-	struct pollfd pfd;
 	int bufused, revents, n;
 
 	/*
 	 * call poll() and sio_revents(), so the
 	 * delay counter is updated
 	 */
-	n = sio_pollfd(hdl, &pfd, POLLOUT);
-	while (poll(&pfd, n, 0) < 0 && errno == EINTR)
+	n = sio_pollfd(hdl, pfds, POLLOUT);
+	while (poll(pfds, n, 0) < 0 && errno == EINTR)
 		; /* nothing */
-	revents = sio_revents(hdl, &pfd);
+	revents = sio_revents(hdl, pfds);
 	return par.bufsz * par.pchan * par.bps - delay;
 }
 
