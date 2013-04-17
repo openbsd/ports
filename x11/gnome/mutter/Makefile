@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2013/04/16 13:17:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2013/04/17 09:55:40 jasper Exp $
 
 COMMENT=		window and compositing manager
 
 GNOME_PROJECT=		mutter
-GNOME_VERSION=		3.8.0
-REVISION=		1
+GNOME_VERSION=		3.8.1
 
 SHARED_LIBS +=  mutter                    0.1 # 0.0
 
