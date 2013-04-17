@@ -1,46 +1,152 @@
-$OpenBSD: patch-tests_libebook-contacts_test-query_c,v 1.2 2013/04/14 16:21:20 ajacoutot Exp $
+$OpenBSD: patch-tests_libebook-contacts_test-query_c,v 1.3 2013/04/17 17:31:06 ajacoutot Exp $
 
-XXX fix and push upstream
+From 0076314596c1c0315884a181b9ae9daa21d38840 Mon Sep 17 00:00:00 2001
+From: Matthew Barnes <mbarnes@redhat.com>
+Date: Wed, 17 Apr 2013 14:37:13 +0000
+Subject: LC_ADDRESS is a GNU extension. Treat it as such.
 
 --- tests/libebook-contacts/test-query.c.orig	Sun Apr 14 16:32:35 2013
-+++ tests/libebook-contacts/test-query.c	Sun Apr 14 18:05:44 2013
-@@ -37,7 +37,9 @@ test_query (gconstpointer data)
++++ tests/libebook-contacts/test-query.c	Wed Apr 17 19:12:31 2013
+@@ -6,6 +6,15 @@
+ #define QUERY_STRING1
+ #define QUERY_STRING2
+ 
++/* Pick a locale category to set and test. */
++#ifdef LC_ADDRESS
++/* LC_ADDRESS is a GNU extension. */
++#define CATEGORY LC_ADDRESS
++#else
++/* Mimic the fallback branch in EBookQuery. */
++#define CATEGORY LC_MESSAGES
++#endif /* LC_ADDRESS */
++
+ typedef struct {
+ 	EBookQuery *query;
+ 	gchar *locale;
+@@ -37,7 +46,7 @@ test_query (gconstpointer data)
  	EBookQuery *query;
  	gchar *sexp;
  
-+#if 0
- 	setlocale (LC_ADDRESS, test->locale);
-+#endif
+-	setlocale (LC_ADDRESS, test->locale);
++	g_assert (setlocale (CATEGORY, test->locale) != NULL);
  	sexp = e_book_query_to_string (test->query);
  	normalize_space (sexp);
  
-@@ -74,7 +76,9 @@ add_query_test (const gchar *path,
+@@ -74,7 +83,7 @@ add_query_test (const gchar *path,
  {
  	TestData *data = g_slice_new (TestData);
  
-+#if 0
- 	data->locale = g_strdup (setlocale (LC_ADDRESS, NULL));
-+#endif
+-	data->locale = g_strdup (setlocale (LC_ADDRESS, NULL));
++	data->locale = g_strdup (setlocale (CATEGORY, NULL));
  	data->sexp = g_strdup (sexp);
  	data->query = query;
  
-@@ -90,7 +94,9 @@ main (gint argc,
+@@ -90,8 +99,6 @@ main (gint argc,
  	g_test_init (&argc, &argv, NULL);
  	g_test_bug_base ("http://bugzilla.gnome.org/");
  
-+#if 0
- 	setlocale (LC_ADDRESS, "en_US.UTF-8");
-+#endif
- 
+-	setlocale (LC_ADDRESS, "en_US.UTF-8");
+-
  	add_query_test (
  		"/libebook/test-query/sexp/all",
-@@ -187,7 +193,9 @@ main (gint argc,
- 		" (eqphone_short \"phone\" \"5423789\" \"en_US.UTF-8\")"
- 		" )");
+ 		e_book_query_any_field_contains (NULL),
+@@ -166,49 +173,57 @@ main (gint argc,
+ 			"5423789"),
+ 		"(endswith \"phone\" \"5423789\")");
  
-+#if 0
- 	setlocale (LC_ADDRESS, "en_GB.UTF-8");
-+#endif
+-	add_query_test (
+-		"/libebook/test-query/sexp/eqphone/us",
+-		e_book_query_orv (
+-			e_book_query_field_test (
+-				E_CONTACT_TEL,
+-				E_BOOK_QUERY_EQUALS_PHONE_NUMBER,
+-				"+1-2215423789"),
+-			e_book_query_field_test (
+-				E_CONTACT_TEL,
+-				E_BOOK_QUERY_EQUALS_NATIONAL_PHONE_NUMBER,
+-				"2215423789"),
+-			e_book_query_field_test (
+-				E_CONTACT_TEL,
+-				E_BOOK_QUERY_EQUALS_SHORT_PHONE_NUMBER,
+-				"5423789"),
+-				NULL),
+-		"(or (eqphone \"phone\" \"+1-2215423789\" \"en_US.UTF-8\")"
+-		" (eqphone_national \"phone\" \"2215423789\" \"en_US.UTF-8\")"
+-		" (eqphone_short \"phone\" \"5423789\" \"en_US.UTF-8\")"
+-		" )");
++	if (setlocale (CATEGORY, "en_US.UTF-8") != NULL) {
++		add_query_test (
++			"/libebook/test-query/sexp/eqphone/us",
++			e_book_query_orv (
++				e_book_query_field_test (
++					E_CONTACT_TEL,
++					E_BOOK_QUERY_EQUALS_PHONE_NUMBER,
++					"+1-2215423789"),
++				e_book_query_field_test (
++					E_CONTACT_TEL,
++					E_BOOK_QUERY_EQUALS_NATIONAL_PHONE_NUMBER,
++					"2215423789"),
++				e_book_query_field_test (
++					E_CONTACT_TEL,
++					E_BOOK_QUERY_EQUALS_SHORT_PHONE_NUMBER,
++					"5423789"),
++					NULL),
++			"(or (eqphone \"phone\" \"+1-2215423789\" \"en_US.UTF-8\")"
++			" (eqphone_national \"phone\" \"2215423789\" \"en_US.UTF-8\")"
++			" (eqphone_short \"phone\" \"5423789\" \"en_US.UTF-8\")"
++			" )");
++	} else {
++		g_message ("Failed to set locale to en_US.UTF-8");
++		g_message ("Skipping /libebook/test-query/sexp/eqphone/us");
++	}
  
- 	add_query_test (
- 		"/libebook/test-query/sexp/eqphone/gb",
+-	setlocale (LC_ADDRESS, "en_GB.UTF-8");
+-
+-	add_query_test (
+-		"/libebook/test-query/sexp/eqphone/gb",
+-		e_book_query_orv (
+-			e_book_query_field_test (
+-				E_CONTACT_TEL,
+-				E_BOOK_QUERY_EQUALS_PHONE_NUMBER,
+-				"+1-2215423789"),
+-			e_book_query_field_test (
+-				E_CONTACT_TEL,
+-				E_BOOK_QUERY_EQUALS_NATIONAL_PHONE_NUMBER,
+-				"2215423789"),
+-			e_book_query_field_test (
+-				E_CONTACT_TEL,
+-				E_BOOK_QUERY_EQUALS_SHORT_PHONE_NUMBER,
+-				"5423789"),
+-			NULL),
+-		"(or (eqphone \"phone\" \"+1-2215423789\" \"en_GB.UTF-8\")"
+-		" (eqphone_national \"phone\" \"2215423789\" \"en_GB.UTF-8\")"
+-		" (eqphone_short \"phone\" \"5423789\" \"en_GB.UTF-8\")"
+-		" )");
++	if (setlocale (CATEGORY, "en_GB.UTF-8") != NULL) {
++		add_query_test (
++			"/libebook/test-query/sexp/eqphone/gb",
++			e_book_query_orv (
++				e_book_query_field_test (
++					E_CONTACT_TEL,
++					E_BOOK_QUERY_EQUALS_PHONE_NUMBER,
++					"+1-2215423789"),
++				e_book_query_field_test (
++					E_CONTACT_TEL,
++					E_BOOK_QUERY_EQUALS_NATIONAL_PHONE_NUMBER,
++					"2215423789"),
++				e_book_query_field_test (
++					E_CONTACT_TEL,
++					E_BOOK_QUERY_EQUALS_SHORT_PHONE_NUMBER,
++					"5423789"),
++				NULL),
++			"(or (eqphone \"phone\" \"+1-2215423789\" \"en_GB.UTF-8\")"
++			" (eqphone_national \"phone\" \"2215423789\" \"en_GB.UTF-8\")"
++			" (eqphone_short \"phone\" \"5423789\" \"en_GB.UTF-8\")"
++			" )");
++	} else {
++		g_message ("Failed to set locale to en_GB.UTF-8");
++		g_message ("Skipping /libebook/test-query/sexp/eqphone/gb");
++	}
+ 
+ 	return g_test_run ();
+ }

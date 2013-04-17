@@ -1,18 +1,25 @@
-$OpenBSD: patch-addressbook_libebook-contacts_e-book-query_c,v 1.1 2013/03/29 15:17:01 ajacoutot Exp $
+$OpenBSD: patch-addressbook_libebook-contacts_e-book-query_c,v 1.2 2013/04/17 17:31:06 ajacoutot Exp $
 
-XXX fix and push upstream
+From 0076314596c1c0315884a181b9ae9daa21d38840 Mon Sep 17 00:00:00 2001
+From: Matthew Barnes <mbarnes@redhat.com>
+Date: Wed, 17 Apr 2013 14:37:13 +0000
+Subject: LC_ADDRESS is a GNU extension. Treat it as such.
 
---- addressbook/libebook-contacts/e-book-query.c.orig	Fri Mar 29 14:38:02 2013
-+++ addressbook/libebook-contacts/e-book-query.c	Fri Mar 29 14:39:13 2013
-@@ -200,8 +200,11 @@ e_book_query_not (EBookQuery *q,
+--- addressbook/libebook-contacts/e-book-query.c.orig	Sun Mar 17 13:46:02 2013
++++ addressbook/libebook-contacts/e-book-query.c	Wed Apr 17 19:12:31 2013
+@@ -200,7 +200,14 @@ e_book_query_not (EBookQuery *q,
  static const gchar *
  address_locale (void)
  {
-+#if 0
- 	const gchar *locale = setlocale (LC_ADDRESS, NULL);
+-	const gchar *locale = setlocale (LC_ADDRESS, NULL);
++	const gchar *locale;
++
++#if defined (LC_ADDRESS)
++	/* LC_ADDRESS is a GNU extension. */
++	locale = setlocale (LC_ADDRESS, NULL);
++#else
++	locale = NULL;
 +#endif
  
-+	const gchar *locale = NULL;
  	if (locale == NULL || strcmp (locale, "C") == 0)
  		locale = setlocale (LC_MESSAGES, NULL);
- 
