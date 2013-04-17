@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/03/27 15:33:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/04/17 15:55:17 ajacoutot Exp $
 @bin bin/espeak
-include/speak_lib.h
+include/espeak/
+include/espeak/speak_lib.h
 lib/libespeak.a
 @lib lib/libespeak.so.${LIBespeak_VERSION}
 share/doc/espeak/

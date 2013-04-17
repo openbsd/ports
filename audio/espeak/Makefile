@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/27 15:33:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2013/04/17 15:55:17 ajacoutot Exp $
 
 COMMENT=		compact speech synthesizer
 
 DISTNAME=		espeak-1.47.03-source
 EXTRACT_SUFX=		.zip
 PKGNAME=		${DISTNAME:S/-source//}
+REVISION=		0
 
 SHARED_LIBS=		espeak 1.0
 
@@ -35,13 +36,14 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/speech.h ${WRKSRC}/Makefile
 
 do-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/include/espeak
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/espeak
+	${INSTALL_DATA_DIR} ${PREFIX}/share/espeak-data
 	${INSTALL_PROGRAM} ${WRKSRC}/espeak ${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/libespeak* ${PREFIX}/lib/
-	${INSTALL_DATA} ${WRKSRC}/speak_lib.h ${PREFIX}/include/
-	${INSTALL_DATA_DIR} ${PREFIX}/share/espeak-data
+	${INSTALL_DATA} ${WRKSRC}/speak_lib.h ${PREFIX}/include/espeak/
 	cd ${WRKDIST}/espeak-data; tar cf - * | tar xf - -C \
 		${PREFIX}/share/espeak-data
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/espeak
 	${INSTALL_DATA} ${WRKDIST}/docs/*.html ${PREFIX}/share/doc/espeak
 
 .include <bsd.port.mk>
