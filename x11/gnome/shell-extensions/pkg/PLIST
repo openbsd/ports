@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/30 10:58:52 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/04/17 11:04:49 jasper Exp $
 share/applications/gnome-shell-classic.desktop
 share/glib-2.0/schemas/org.gnome.shell.extensions.alternative-status-menu.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.auto-move-windows.gschema.xml
@@ -6,6 +6,8 @@ share/glib-2.0/schemas/org.gnome.shell.extensions.example.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.native-window-placement.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.user-theme.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.window-list.gschema.xml
+share/gnome-session/
+share/gnome-session/sessions/
 share/gnome-session/sessions/gnome-classic.session
 share/gnome-shell/extensions/
 share/gnome-shell/extensions/alternate-tab@gnome-shell-extensions.gcampax.github.com/
@@ -102,6 +104,7 @@ share/gnome-shell/extensions/xrandr-indicator@gnome-shell-extensions.gcampax.git
 share/gnome-shell/extensions/xrandr-indicator@gnome-shell-extensions.gcampax.github.com/stylesheet.css
 share/gnome-shell/modes/
 share/gnome-shell/modes/classic.json
+share/gnome-shell/theme/classic-process-working.svg
 share/gnome-shell/theme/classic-toggle-off-intl.svg
 share/gnome-shell/theme/classic-toggle-off-us.svg
 share/gnome-shell/theme/classic-toggle-on-intl.svg
