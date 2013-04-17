@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2013/04/17 08:00:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2013/04/17 13:52:07 ajacoutot Exp $
+
+BROKEN =	hangs every 2 builds
 
 COMMENT = 	Python-like language for the .NET/Mono platform
 
