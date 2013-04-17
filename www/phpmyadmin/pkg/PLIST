@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.43 2013/03/11 09:46:13 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.44 2013/04/17 13:05:10 sthen Exp $
 @group daemon
 phpMyAdmin/
-@comment phpMyAdmin/.travis.yml
 phpMyAdmin/ChangeLog
 phpMyAdmin/Documentation.html
 phpMyAdmin/Documentation.txt
