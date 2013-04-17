@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/09/30 07:01:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/04/17 14:59:43 ajacoutot Exp $
 bin/bamz
 bin/banshee
 bin/muinshee
@@ -25,6 +25,7 @@ lib/banshee/Banshee.Services.dll
 lib/banshee/Banshee.Services.dll.config
 lib/banshee/Banshee.Services.dll.mdb
 lib/banshee/Banshee.ThickClient.dll
+lib/banshee/Banshee.ThickClient.dll.config
 lib/banshee/Banshee.ThickClient.dll.mdb
 lib/banshee/Banshee.WebBrowser.dll
 lib/banshee/Banshee.WebBrowser.dll.mdb
@@ -587,6 +588,30 @@ share/gnome/help/banshee/ja/search.page
 share/gnome/help/banshee/ja/sort.page
 share/gnome/help/banshee/ja/sync.page
 share/gnome/help/banshee/ja/ui.page
+share/gnome/help/banshee/pt_BR/
+share/gnome/help/banshee/pt_BR/add-podcast.page
+share/gnome/help/banshee/pt_BR/add-radio.page
+share/gnome/help/banshee/pt_BR/advanced.page
+share/gnome/help/banshee/pt_BR/amazon.page
+share/gnome/help/banshee/pt_BR/emusic.page
+share/gnome/help/banshee/pt_BR/extensions.page
+share/gnome/help/banshee/pt_BR/import.page
+share/gnome/help/banshee/pt_BR/index.page
+share/gnome/help/banshee/pt_BR/introduction.page
+share/gnome/help/banshee/pt_BR/itunes-import.page
+share/gnome/help/banshee/pt_BR/keyboardshortcuts.page
+share/gnome/help/banshee/pt_BR/lastfm.page
+share/gnome/help/banshee/pt_BR/legal.xml
+share/gnome/help/banshee/pt_BR/manage-coverart.page
+share/gnome/help/banshee/pt_BR/manage-playlists.page
+share/gnome/help/banshee/pt_BR/manage-tags.page
+share/gnome/help/banshee/pt_BR/play-queue.page
+share/gnome/help/banshee/pt_BR/play.page
+share/gnome/help/banshee/pt_BR/rb-import.page
+share/gnome/help/banshee/pt_BR/search.page
+share/gnome/help/banshee/pt_BR/sort.page
+share/gnome/help/banshee/pt_BR/sync.page
+share/gnome/help/banshee/pt_BR/ui.page
 share/gnome/help/banshee/sl/
 share/gnome/help/banshee/sl/add-podcast.page
 share/gnome/help/banshee/sl/add-radio.page

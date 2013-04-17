@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2013/04/13 10:44:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2013/04/17 14:59:43 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	music management and playback application for GNOME
 
-GNOME_VERSION=	2.6.0
+GNOME_VERSION=	2.6.1
 GNOME_PROJECT=	banshee
-REVISION=	1
 
 CATEGORIES=	audio multimedia
 
@@ -38,18 +37,19 @@ MODULES=	x11/gnome \
 COMMON_DEPENDS=	devel/mono-notify \
 		audio/mono-taglib \
 		devel/dbus-sharp-glib \
-		devel/libmtp \
 		devel/mono-addins \
 		devel/mono-gdata \
 		net/mono-zeroconf \
 		shells/bash \
-		multimedia/gstreamer-0.10/plugins-good #libgstgconfelements
 
-BUILD_DEPENDS=	${COMMON_DEPENDS}
+BUILD_DEPENDS=	${COMMON_DEPENDS} \
+		devel/libmtp
+
 RUN_DEPENDS=	${COMMON_DEPENDS}
 
-# MP3 support
-RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-ugly
+RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-good #libgstgconfelements
+RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-bad #bpmdetect (soundtouch)
+RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-ugly #mp3 support
 
 LIB_DEPENDS=	www/webkit \
 		multimedia/gstreamer-0.10/plugins-base
@@ -62,15 +62,9 @@ LIBTOOL_FLAGS=	--tag=disable-static
 
 CONFIGURE_ARGS=	--disable-static \
 		--with-vendor-build-id="OpenBSD Ports" \
-		--disable-upnp \
-		--disable-gst-sharp \
 		--disable-gio-hardware \
-		--disable-moonlight \
 		--disable-appledevice \
 		--disable-karma \
-		--disable-torrent \
-		--disable-meego \
-		--disable-ubuntuone \
 		--disable-shave
 
 # XXX lang/boo is marked as BROKEN
@@ -85,6 +79,7 @@ DLLMAP_FILES=	src/Hyena/Hyena/Hyena.dll.config \
 		src/Libraries/Mtp/Mtp.dll.config \
 		src/Core/Banshee.Core/Banshee.Core.dll.config \
 		src/Core/Banshee.Services/Banshee.Services.dll.config \
+		src/Core/Banshee.ThickClient/Banshee.ThickClient.dll.config \
 		src/Core/Banshee.Widgets/Banshee.Widgets.dll.config \
 		src/Extensions/Banshee.NotificationArea/Banshee.NotificationArea.dll.config \
 		src/Extensions/Banshee.MeeGo/Banshee.MeeGo.dll.config \
