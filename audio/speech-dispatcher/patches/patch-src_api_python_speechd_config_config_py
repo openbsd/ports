@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_api_python_speechd_config_config_py,v 1.1 2013/03/27 16:07:42 ajacoutot Exp $
+$OpenBSD: patch-src_api_python_speechd_config_config_py,v 1.2 2013/04/17 16:26:35 ajacoutot Exp $
 --- src/api/python/speechd_config/config.py.orig	Fri Jul 13 15:52:02 2012
 +++ src/api/python/speechd_config/config.py	Wed Mar 27 16:08:30 2013
 @@ -184,6 +184,15 @@ class Options(object):
@@ -21,7 +21,7 @@ $OpenBSD: patch-src_api_python_speechd_config_config_py,v 1.1 2013/03/27 16:07:4
          report("Testing PULSE sound output")
          return self.audio_try_play(type='pulse')
  
-+    def test_alsa(self):
++    def test_libao(self):
 +        """Test libao sound output"""
 +        report("Testing libao sound output")
 +        return self.audio_try_play(type='libao')
@@ -34,7 +34,7 @@ $OpenBSD: patch-src_api_python_speechd_config_config_py,v 1.1 2013/03/27 16:07:4
                  working_audio += ["pulse"]
  
 +        if decide_to_test('libao', "libao sound system", audio_output): 
-+            if self.test_pulse():
++            if self.test_libao():
 +                working_audio += ["libao"]
 +
          report("Testing whether Python Speech Dispatcher library is in path and importable")

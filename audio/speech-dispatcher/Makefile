@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2013/04/07 09:08:18 zhuk Exp $
+# $OpenBSD: Makefile,v 1.9 2013/04/17 16:26:34 ajacoutot Exp $
 
 COMMENT=	common interface to speech synthesis
 
 DISTNAME=	speech-dispatcher-0.8
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  speechd              1.0      # .6.0
 
@@ -29,7 +29,7 @@ MODPY_ADJ_FILES=src/api/python/speechd_config/spd-conf \
 # used by spd-conf
 RUN_DEPENDS=	devel/py-xdg${MODPY_FLAVOR}
 
-LIB_DEPENDS=	audio/espeak \
+LIB_DEPENDS=	audio/espeak>=1.47.03p0 \
 		audio/libao \
 		audio/libsndfile \
 		devel/dotconf>=1.3 \
@@ -43,15 +43,6 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-libao \
-		--with-espeak \
-		--with-default-audio-method=libao \
-		--without-flite \
-		--without-ibmtts \
-		--without-ivona \
-		--without-nas \
-		--without-oss \
-		--without-alsa \
 		--without-pulse
 
 
