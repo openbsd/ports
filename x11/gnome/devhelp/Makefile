@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.69 2013/04/13 10:14:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2013/04/17 07:59:36 ajacoutot Exp $
 
 COMMENT=	API documentation browser for GNOME
 
 GNOME_PROJECT=	devhelp
-GNOME_VERSION=	3.8.0
-REVISION=	0
+GNOME_VERSION=	3.8.1
 
 SHARED_LIBS +=  devhelp-3                 0.0 # 0.0
 
@@ -43,7 +42,6 @@ RUN_DEPENDS +=	x11/gnome/devel-docs
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 
-# XXX
-CONFIGURE_ARGS += --without-webkit2
+CONFIGURE_ARGS +=	--without-webkit2
 
 .include <bsd.port.mk>
