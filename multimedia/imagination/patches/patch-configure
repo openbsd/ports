@@ -1,0 +1,110 @@
+$OpenBSD: patch-configure,v 1.1 2013/04/17 13:00:26 giovanni Exp $
+--- configure.orig	Sun Mar  6 21:06:44 2011
++++ configure	Wed Apr 17 09:43:28 2013
+@@ -6222,48 +6222,10 @@ fi
+ # Substitute ALL_LINGUAS so we can use it in po/Makefile
+ 
+ 
+-# Set DATADIRNAME correctly if it is not set yet
+-# (copied from glib-gettext.m4)
+-if test -z "$DATADIRNAME"; then
+-  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+-/* end confdefs.h.  */
+ 
+-int
+-main ()
+-{
+-extern int _nl_msg_cat_cntr;
+-                       return _nl_msg_cat_cntr
+-  ;
+-  return 0;
+-}
+-_ACEOF
+-if ac_fn_c_try_link "$LINENO"; then :
+-  DATADIRNAME=share
+-else
+-  case $host in
+-    *-*-solaris*)
+-                        ac_fn_c_check_func "$LINENO" "bind_textdomain_codeset" "ac_cv_func_bind_textdomain_codeset"
+-if test "x$ac_cv_func_bind_textdomain_codeset" = x""yes; then :
+-  DATADIRNAME=share
+-else
+-  DATADIRNAME=lib
+-fi
+ 
+-    ;;
+-    *)
+-    DATADIRNAME=lib
+-    ;;
+-    esac
+-fi
+-rm -f core conftest.err conftest.$ac_objext \
+-    conftest$ac_exeext conftest.$ac_ext
+-fi
+ 
+ 
+-
+-
+-
+-
+ # for plugins
+ # Check whether --enable-static was given.
+ if test "${enable_static+set}" = set; then :
+@@ -6391,7 +6353,46 @@ host_os=$*
+ IFS=$ac_save_IFS
+ case $host_os in *\ *) host_os=`echo "$host_os" | sed 's/ /-/g'`;; esac
+ 
++# Set DATADIRNAME correctly if it is not set yet
++# (copied from glib-gettext.m4)
++if test -z "$DATADIRNAME"; then
++  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
+ 
++int
++main ()
++{
++extern int _nl_msg_cat_cntr;
++                       return _nl_msg_cat_cntr
++  ;
++  return 0;
++}
++_ACEOF
++if ac_fn_c_try_link "$LINENO"; then :
++  DATADIRNAME=share
++else
++  case $host in
++    *-*-solaris*)
++                        ac_fn_c_check_func "$LINENO" "bind_textdomain_codeset" "ac_cv_func_bind_textdomain_codeset"
++if test "x$ac_cv_func_bind_textdomain_codeset" = x""yes; then :
++  DATADIRNAME=share
++else
++  DATADIRNAME=lib
++fi
++
++    ;;
++    *-*-openbsd*)
++    DATADIRNAME=share
++    ;;
++    *)
++    DATADIRNAME=lib
++    ;;
++    esac
++fi
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext conftest.$ac_ext
++fi
++
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for a sed that does not truncate output" >&5
+ $as_echo_n "checking for a sed that does not truncate output... " >&6; }
+ if test "${ac_cv_path_SED+set}" = set; then :
+@@ -13567,6 +13568,10 @@ else
+                DATADIRNAME=lib
+ fi
+ 
++        ;;
++        *-*-openbsd*)
++	    CATOBJEXT=.mo
++        DATADIRNAME=share
+ 	    ;;
+ 	    *)
+ 	    CATOBJEXT=.mo

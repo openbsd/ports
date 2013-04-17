@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/16 16:18:03 giovanni Exp $
+# $OpenBSD: Makefile,v 1.2 2013/04/17 13:00:26 giovanni Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =		lightweight and simple DVD slide show maker
 DISTNAME =		imagination-3.0
+REVISION =		0
 
 CATEGORIES =	multimedia
 
@@ -28,7 +29,8 @@ WANTLIB += cairo graphite2 icudata icule pango-1.0 pangoft2-1.0
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=imagination/}
 
 CONFIGURE_STYLE =	gnu
-MODULES =		converters/libiconv
+CONFIGURE_ARGS =	--localedir=${PREFIX}/share/locale
+MODULES =		devel/gettext
 USE_LIBTOOL =	Yes
 LIBTOOL_FLAGS =	--tag=disable-static
 USE_GMAKE =		Yes
@@ -39,7 +41,7 @@ LIB_DEPENDS =	devel/pango \
 				textproc/icu4c \
 				x11/gtk+2
 BUILD_DEPENDS =	audio/sox
-RUN_DEPENDS =	${BUILD_DEPENDS} \
+RUN_DEPENDS =	audio/sox \
 				devel/desktop-file-utils \
 				x11/gtk+2,-guic
 

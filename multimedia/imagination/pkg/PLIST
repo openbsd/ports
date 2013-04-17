@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/16 16:18:03 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/04/17 13:00:26 giovanni Exp $
 @bin bin/imagination
 lib/imagination/
 lib/imagination/bar_wipe.so
@@ -16,34 +16,6 @@ lib/imagination/misc_shape_wipe.so
 lib/imagination/push_wipe.so
 lib/imagination/rochade.so
 lib/imagination/wave.so
-lib/locale/
-lib/locale/cs/
-lib/locale/cs/LC_MESSAGES/
-lib/locale/cs/LC_MESSAGES/imagination.mo
-lib/locale/de/
-lib/locale/de/LC_MESSAGES/
-lib/locale/de/LC_MESSAGES/imagination.mo
-lib/locale/en_GB/
-lib/locale/en_GB/LC_MESSAGES/
-lib/locale/en_GB/LC_MESSAGES/imagination.mo
-lib/locale/fr/
-lib/locale/fr/LC_MESSAGES/
-lib/locale/fr/LC_MESSAGES/imagination.mo
-lib/locale/it/
-lib/locale/it/LC_MESSAGES/
-lib/locale/it/LC_MESSAGES/imagination.mo
-lib/locale/pt_BR/
-lib/locale/pt_BR/LC_MESSAGES/
-lib/locale/pt_BR/LC_MESSAGES/imagination.mo
-lib/locale/sv/
-lib/locale/sv/LC_MESSAGES/
-lib/locale/sv/LC_MESSAGES/imagination.mo
-lib/locale/zh_CN/
-lib/locale/zh_CN/LC_MESSAGES/
-lib/locale/zh_CN/LC_MESSAGES/imagination.mo
-lib/locale/zh_TW/
-lib/locale/zh_TW/LC_MESSAGES/
-lib/locale/zh_TW/LC_MESSAGES/imagination.mo
 share/applications/imagination.desktop
 share/icons/hicolor/16x16/apps/imagination.png
 share/icons/hicolor/24x24/apps/imagination.png
@@ -202,6 +174,15 @@ share/imagination/pixmaps/imagination-pos-6.png
 share/imagination/pixmaps/imagination-pos-7.png
 share/imagination/pixmaps/imagination-pos-8.png
 share/imagination/pixmaps/imagination-text.png
+share/locale/cs/LC_MESSAGES/imagination.mo
+share/locale/de/LC_MESSAGES/imagination.mo
+share/locale/en_GB/LC_MESSAGES/imagination.mo
+share/locale/fr/LC_MESSAGES/imagination.mo
+share/locale/it/LC_MESSAGES/imagination.mo
+share/locale/pt_BR/LC_MESSAGES/imagination.mo
+share/locale/sv/LC_MESSAGES/imagination.mo
+share/locale/zh_CN/LC_MESSAGES/imagination.mo
+share/locale/zh_TW/LC_MESSAGES/imagination.mo
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
