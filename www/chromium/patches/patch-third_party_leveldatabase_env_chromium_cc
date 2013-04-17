@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_leveldatabase_env_chromium_cc,v 1.4 2013/04/17 14:47:54 robert Exp $
+--- third_party/leveldatabase/env_chromium.cc.orig.port	Wed Apr 17 14:03:34 2013
++++ third_party/leveldatabase/env_chromium.cc	Wed Apr 17 14:03:39 2013
+@@ -53,7 +53,7 @@ int fflush_unlocked(FILE *file) {
+   return fflush(file);
+ }
+ 
+-#if !defined(OS_ANDROID)
++#if !defined(OS_ANDROID) && !defined(OS_OPENBSD)
+ int fdatasync(int fildes) {
+ #if defined(OS_WIN)
+   return _commit(fildes);
