@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2013/04/16 12:16:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.96 2013/04/17 10:13:19 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -87,9 +87,7 @@ MODGNOME_ICON_CACHE=	Yes
 
 LIBTOOL_FLAGS=		--tag=disable-static
 
-CONFIGURE_ARGS=		--disable-static \
-			--disable-update-mimedb \
-			--disable-systemd
+CONFIGURE_ARGS=		--disable-static
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
