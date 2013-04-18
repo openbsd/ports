@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/18 15:08:17 sthen Exp $
+@bin bin/cgdb
+@info info/cgdb.info
+@man man/man1/cgdb.1
+share/cgdb/
+share/cgdb/cgdb.txt

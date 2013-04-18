@@ -1,0 +1,11 @@
+cgdb is a lightweight curses (terminal-based) interface to the GNU
+Debugger (GDB). In addition to the standard gdb console, cgdb provides
+a split screen view that displays the source code as it executes.
+
+    Syntax-highlighted source window
+    Visual breakpoint setting
+    Keyboard shortcuts for common functions
+    Searching source window (using regexp)
+    Scrollable gdb history of entire session
+    Tab completion
+    Key mappings (macros)

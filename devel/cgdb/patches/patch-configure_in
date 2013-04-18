@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2013/04/18 15:08:17 sthen Exp $
+--- configure.in.orig	Thu Apr 18 11:10:50 2013
++++ configure.in	Thu Apr 18 11:14:09 2013
+@@ -181,7 +181,7 @@ dnl This will DEFINE the readline headers.
+ RL_LIB_READLINE_INCLUDES
+ 
+ dnl Made it this far, add the readline and termcap LIBS
+-LIBS="-lreadline $TERMCAP_LIB $LIBS"
++LIBS="-lereadline $TERMCAP_LIB $LIBS"
+ dnl Add the ncurses/curses lib, if it's not the same as the termcap lib
+ if test "$TERMCAP_LIB" != "-l$curses_lib_name"; then
+   LIBS="-l$curses_lib_name $LIBS"
