@@ -1,0 +1,15 @@
+$OpenBSD: patch-doc_netperf_texi,v 1.1 2013/04/18 18:29:20 sthen Exp $
+--- doc/netperf.texi.orig	Thu Apr 18 19:26:14 2013
++++ doc/netperf.texi	Thu Apr 18 19:27:51 2013
+@@ -16,6 +16,11 @@ found in the file @file{COPYING} of the basic netperf 
+ @end quotation
+ @end copying
+ 
++@dircategory Networking tools
++@direntry
++* netperf: (netperf).           Network benchmark tool
++@end direntry
++
+ @titlepage
+ @title Care and Feeding of Netperf
+ @subtitle Versions 2.6.0 and Later

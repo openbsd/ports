@@ -1,13 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/08/06 14:37:29 espie Exp $
-bin/netperf
-bin/netserver
+@comment $OpenBSD: PLIST,v 1.6 2013/04/18 18:29:20 sthen Exp $
+@bin bin/netperf
+@bin bin/netserver
+@info info/netperf.info
 @man man/man1/netperf.1
 @man man/man1/netserver.1
-share/netperf/
-share/netperf/arr_script
-share/netperf/snapshot_script
-share/netperf/tcp_range_script
-share/netperf/tcp_rr_script
-share/netperf/tcp_stream_script
-share/netperf/udp_rr_script
-share/netperf/udp_stream_script
+share/examples/netperf/
+share/examples/netperf/arr_script
+share/examples/netperf/packet_byte_script
+share/examples/netperf/sctp_stream_script
+share/examples/netperf/snapshot_script
+share/examples/netperf/tcp_range_script
+share/examples/netperf/tcp_rr_script
+share/examples/netperf/tcp_stream_script
+share/examples/netperf/udp_rr_script
+share/examples/netperf/udp_stream_script

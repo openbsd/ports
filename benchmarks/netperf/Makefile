@@ -1,42 +1,33 @@
-# $OpenBSD: Makefile,v 1.30 2013/03/10 23:04:44 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2013/04/18 18:29:20 sthen Exp $
 
-COMMENT=	Network performance benchmark
+COMMENT=	network performance benchmark
 
-DISTNAME=	netperf-2.3
-REVISION=	3
+DISTNAME=	netperf-2.6.0
+
 CATEGORIES=	benchmarks net
 
-#MASTER_SITES=	ftp://ftp.cup.hp.com/dist/networking/benchmarks/netperf/ \
-#		ftp://ftp.cup.hp.com/dist/networking/benchmarks/netperf/archive/ \
-MASTER_SITES=	ftp://ftp.netperf.org/netperf/archive/ \
-		http://ftp.sunet.se/pub/network/monitoring/netperf/ \
-		http://ftp.sunet.se/pub/network/monitoring/netperf/archive/
+HOMEPAGE=	http://www.netperf.org/netperf/
 
-HOMEPAGE=	http://www.netperf.org/netperf/NetperfPage.html
-
+# "for non-commercial purposes only"; see COPYING
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
-WANTLIB=		c m
 
-MAKE_FILE=	makefile
-MAKE_FLAGS+=	CC="${CC}" CFLAGS='${CFLAGS} -DDEBUG_LOG_FILE="\"/tmp/netperf.debug\"" -DUSE_LOOPER -DDO_DNS'
+WANTLIB += c m
 
-USE_GROFF =	Yes
-NO_TEST=	Yes
+MASTER_SITES=	ftp://ftp.netperf.org/netperf/ \
+		ftp://ftp.netperf.org/netperf/archive/
 
-SHAREDIR=	${PREFIX}/share/netperf
-SCRIPTS=	arr_script snapshot_script \
-		tcp_range_script tcp_rr_script tcp_stream_script \
-		udp_rr_script udp_stream_script
+AUTOCONF_VERSION= 2.67
+CONFIGURE_STYLE=  autoconf
+CONFIGURE_ARGS=   --enable-demo
+SEPARATE_BUILD=	  Yes
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/netperf ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/netserver ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/netperf.man ${PREFIX}/man/man1/netperf.1
-	${INSTALL_MAN} ${WRKSRC}/netserver.man ${PREFIX}/man/man1/netserver.1
-	${INSTALL_SCRIPT_DIR} ${SHAREDIR}
-	@for i in ${SCRIPTS}; do \
-		${INSTALL_SCRIPT} ${WRKSRC}/$$i ${SHAREDIR}; \
-	done
+E=	${PREFIX}/share/examples/netperf
+
+post-install:
+	${INSTALL_DATA_DIR} $E
+	${INSTALL_SCRIPT} ${WRKSRC}/doc/examples/*script $E
+	perl -pi -e 's,(/opt/netperf2/bin|/usr/local/bin|/opt/netperf/netperf),${TRUEPREFIX}/bin,;' \
+	    -e 's,^NETHOME=.*,NETHOME=${TRUEPREFIX}/bin,;' $E/*
 
 .include <bsd.port.mk>

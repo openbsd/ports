@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure_ac,v 1.1 2013/04/18 18:29:20 sthen Exp $
+--- configure.ac.orig	Tue Jun 19 21:29:49 2012
++++ configure.ac	Thu Apr 18 17:50:09 2013
+@@ -699,7 +699,7 @@ case "$enable_cpuutil" in
+ 			enable_cpuutil="kstat - auto"
+ 			NETCPU_SOURCE="kstat"
+ 			;;
+-                     *-*-freebsd[[4-8]].* | *-*-netbsd[[1-9]].* )
++                     *-*-freebsd[[4-8]].* | *-*-netbsd[[1-9]].* | *-*-openbsd* )
+ 			use_cpuutil=true
+ 			AC_DEFINE([USE_SYSCTL],,[Use MumbleBSD's sysctl interface to measure CPU util.])
+ 			enable_cpuutil="sysctl - auto"
+@@ -759,7 +759,7 @@ case "$enable_rtlookup" in
+ 			enable_rtlookup="rtmget - auto"
+ 			NETRTLKUP_SOURCE="rtmget"
+ 			;;
+-                     *-*-freebsd[[4-8]].* | *-*-darwin*)
++                     *-*-freebsd[[4-8]].* | *-*-darwin* | *-*-openbsd*)
+ 			use_rtlookup=true
+ 			enable_rtlookup="rtmget - auto"
+ 			NETRTLKUP_SOURCE="rtmget"

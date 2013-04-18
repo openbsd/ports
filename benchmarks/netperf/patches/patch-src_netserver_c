@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_netserver_c,v 1.1 2013/04/18 18:29:20 sthen Exp $
+--- src/netserver.c.orig	Thu Apr 18 17:11:28 2013
++++ src/netserver.c	Thu Apr 18 17:12:01 2013
+@@ -67,6 +67,8 @@ char	netserver_id[]="\
+ # include <limits.h>
+ #endif
+ 
++#include <sys/types.h>
++
+ #if HAVE_SYS_IPC_H
+ #include <sys/ipc.h>
+ #endif
+@@ -137,7 +139,6 @@ char	netserver_id[]="\
+ 
+ /* unconditional system includes */
+ 
+-#include <sys/types.h>
+ #include <stdio.h>
+ #include <fcntl.h>
+ 

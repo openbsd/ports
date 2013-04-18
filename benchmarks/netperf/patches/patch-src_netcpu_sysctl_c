@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_netcpu_sysctl_c,v 1.1 2013/04/18 18:29:20 sthen Exp $
+--- src/netcpu_sysctl.c.orig	Thu Apr 18 17:35:34 2013
++++ src/netcpu_sysctl.c	Thu Apr 18 17:41:12 2013
+@@ -85,8 +85,12 @@ static void
+ get_cpu_time(CP_TIME_TYPE *cpu_time)
+ {
+   size_t cpu_time_len = CPUSTATES * sizeof (cpu_time[0]);
++  int mib[2];
+ 
+-  if (sysctlbyname("kern.cp_time", cpu_time, &cpu_time_len, NULL, 0) == -1) {
++  mib[0] = CTL_KERN;
++  mib[1] = KERN_CPTIME;
++
++  if (sysctl(mib, 2, cpu_time, &cpu_time_len, NULL, 0) == -1) {
+       fprintf (stderr, "Cannot get CPU time!\n");
+       exit (1);
+   }
