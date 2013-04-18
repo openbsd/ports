@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.38 2013/03/11 12:27:54 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.39 2013/04/18 08:38:54 sthen Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -10,7 +10,7 @@ COMMENT-fastcgi=	stand-alone FastCGI version of PHP
 PKGNAME-main?=		php-${V}
 PKGNAME-fastcgi?=	php-fastcgi-${V}
 
-DISTFILES=		php-${V}.tar.gz
+DISTFILES?=		php-${V}.tar.bz2
 
 DISTNAME?=		php-${V}
 CATEGORIES=		lang www
