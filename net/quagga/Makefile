@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.35 2013/03/21 08:46:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2013/04/18 20:29:08 sthen Exp $
 
 COMMENT=	multi-threaded routing daemon
 
-DISTNAME=	quagga-0.99.21
-REVISION=	1
+DISTNAME=	quagga-0.99.22
+CATEGORIES=	net
+MASTER_SITES=	http://download.savannah.gnu.org/releases/quagga/
+EXTRACT_SUFX=	.tar.xz
+
 SHARED_LIBS=	ospf		0.0 \
 		ospfapiclient	0.0 \
 		zebra		0.0
-CATEGORIES=	net
-MASTER_SITES=	http://www.quagga.net/download/
 
 HOMEPAGE=	http://www.quagga.net/
 
@@ -31,7 +32,7 @@ CONFIGURE_ARGS+= --includedir=${LOCALBASE}/include/quagga \
 		--enable-group=_quagga \
 		--enable-vty-group=_quagga \
 		--enable-vtysh
-.if ${MACHINE_ARCH:Mhppa} || ${MACHINE_ARCH:Marm}
+.if ${MACHINE_ARCH:Marm}
 CONFIGURE_ARGS+= --disable-pie
 .endif
 CONFIGURE_ENV=	LIBS=-lcurses
@@ -46,7 +47,7 @@ FLAVOR?=
 .if ${FLAVOR:Msnmp}
 LIB_DEPENDS=	net/net-snmp
 WANTLIB+=	crypto netsnmp
-CONFIGURE_ARGS+= --enable-snmp
+CONFIGURE_ARGS+= --enable-snmp=agentx
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 .else
@@ -58,5 +59,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/quagga
 	${INSTALL_DATA} ${WRKSRC}/SERVICES ${PREFIX}/share/doc/quagga
 	${INSTALL_DATA} ${WRKSRC}/doc/quagga.info* ${PREFIX}/info
+	perl -pi -e 's,^(! *)?log file (/.*/)?,$$1log file /var/log/quagga/,' \
+	    ${PREFIX}/share/examples/quagga/*conf*
 
 .include <bsd.port.mk>

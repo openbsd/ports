@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.15 2012/09/19 16:35:06 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.16 2013/04/18 20:29:08 sthen Exp $
 @conflict zebra-*
 @newgroup _quagga:525
 @newuser _quagga:525:_quagga:daemon:Quagga Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${LOCALSTATEDIR}/*
-%%SHARED%%
+@extraunexec rm -rf /var/log/quagga/*
 @bin bin/vtysh
 include/quagga/
 include/quagga/quagga/
@@ -60,10 +60,13 @@ include/quagga/quagga/zebra.h
 @info info/quagga.info
 lib/libospf.a
 lib/libospf.la
+@lib lib/libospf.so.${LIBospf_VERSION}
 lib/libospfapiclient.a
 lib/libospfapiclient.la
+@lib lib/libospfapiclient.so.${LIBospfapiclient_VERSION}
 lib/libzebra.a
 lib/libzebra.la
+@lib lib/libzebra.so.${LIBzebra_VERSION}
 @man man/man1/vtysh.1
 @man man/man8/bgpd.8
 @man man/man8/ospf6d.8
@@ -87,15 +90,63 @@ share/doc/quagga/README
 share/doc/quagga/SERVICES
 share/examples/quagga/
 share/examples/quagga/babeld.conf.sample
+@owner _quagga
+@group _quagga
+@mode 750
+@sample ${SYSCONFDIR}/
+@mode
+@sample ${SYSCONFDIR}/babeld.conf
+@group
+@owner
 share/examples/quagga/bgpd.conf.sample
+@owner _quagga
+@group _quagga
+@sample ${SYSCONFDIR}/bgpd.conf
+@group
+@owner
 share/examples/quagga/bgpd.conf.sample2
 share/examples/quagga/ospf6d.conf.sample
+@owner _quagga
+@group _quagga
+@sample ${SYSCONFDIR}/ospf6d.conf
+@group
+@owner
 share/examples/quagga/ospfd.conf.sample
+@owner _quagga
+@group _quagga
+@sample ${SYSCONFDIR}/ospfd.conf
+@group
+@owner
 share/examples/quagga/ripd.conf.sample
+@owner _quagga
+@group _quagga
+@sample ${SYSCONFDIR}/ripd.conf
+@group
+@owner
 share/examples/quagga/ripngd.conf.sample
+@owner _quagga
+@group _quagga
+@sample ${SYSCONFDIR}/ripngd.conf
+@group
+@owner
 share/examples/quagga/vtysh.conf.sample
+@owner _quagga
+@group _quagga
+@sample ${SYSCONFDIR}/vtysh.conf
+@group
+@owner
 share/examples/quagga/zebra.conf.sample
 @owner _quagga
 @group _quagga
-@sample ${SYSCONFDIR}/
+@sample ${SYSCONFDIR}/zebra.conf
 @sample ${LOCALSTATEDIR}/
+@sample /var/log/quagga/
+@group
+@owner
+@rcscript ${RCDIR}/quagga_babeld
+@rcscript ${RCDIR}/quagga_bgpd
+@rcscript ${RCDIR}/quagga_ospf6d
+@rcscript ${RCDIR}/quagga_ospfd
+@rcscript ${RCDIR}/quagga_ripd
+@rcscript ${RCDIR}/quagga_ripngd
+@rcscript ${RCDIR}/quagga_zebra

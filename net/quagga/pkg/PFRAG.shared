@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2011/09/27 09:45:53 sthen Exp $
-@lib lib/libospf.so.${LIBospf_VERSION}
-@lib lib/libospfapiclient.so.${LIBospfapiclient_VERSION}
-@lib lib/libzebra.so.${LIBzebra_VERSION}

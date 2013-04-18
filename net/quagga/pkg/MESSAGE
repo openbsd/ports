@@ -1,3 +1,0 @@
-Sample Quagga configuration files have been installed in
-${PREFIX}/share/examples/quagga. You will need to install your
-configuration files in the ${SYSCONFDIR} directory.

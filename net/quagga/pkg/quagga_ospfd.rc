@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# $OpenBSD: quagga_ospfd.rc,v 1.1 2013/04/18 20:29:08 sthen Exp $
+
+daemon="${TRUEPREFIX}/sbin/ospfd -d"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1
