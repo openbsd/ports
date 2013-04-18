@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/07/08 11:20:50 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/04/18 18:10:30 bentley Exp $
 @bin bin/evcd2vcd
 @bin bin/fst2vcd
+@bin bin/fstminer
 @bin bin/ghwdump
 @bin bin/gtkwave
 @bin bin/lxt2miner
@@ -17,6 +18,7 @@
 @bin bin/vztminer
 @man man/man1/evcd2vcd.1
 @man man/man1/fst2vcd.1
+@man man/man1/fstminer.1
 @man man/man1/ghwdump.1
 @man man/man1/gtkwave.1
 @man man/man1/lxt2miner.1
@@ -32,13 +34,101 @@
 @man man/man1/vzt2vcd.1
 @man man/man1/vztminer.1
 @man man/man5/gtkwaverc.5
+share/applications/gtkwave.desktop
 share/doc/gtkwave/
 share/doc/gtkwave/gtkwave.odt
 share/examples/gtkwave/
-share/examples/gtkwave/des.sav
+share/examples/gtkwave/des.gtkw
 share/examples/gtkwave/des.tcl
 share/examples/gtkwave/des.v
 share/examples/gtkwave/des.vzt
+share/examples/gtkwave/gtkwaverc
 share/examples/gtkwave/transaction.c
 share/examples/gtkwave/transaction.fst
-share/examples/gtkwave/transaction.sav
+share/examples/gtkwave/transaction.gtkw
+share/icons/gnome/
+share/icons/gnome/16x16/
+share/icons/gnome/16x16/mimetypes/
+share/icons/gnome/16x16/mimetypes/gnome-mime-application-vnd.gtkwave-ae2.png
+share/icons/gnome/16x16/mimetypes/gnome-mime-application-vnd.gtkwave-aet.png
+share/icons/gnome/16x16/mimetypes/gnome-mime-application-vnd.gtkwave-evcd.png
+share/icons/gnome/16x16/mimetypes/gnome-mime-application-vnd.gtkwave-fst.png
+share/icons/gnome/16x16/mimetypes/gnome-mime-application-vnd.gtkwave-ghw.png
+share/icons/gnome/16x16/mimetypes/gnome-mime-application-vnd.gtkwave-gtkw.png
+share/icons/gnome/16x16/mimetypes/gnome-mime-application-vnd.gtkwave-lx2.png
+share/icons/gnome/16x16/mimetypes/gnome-mime-application-vnd.gtkwave-lxt.png
+share/icons/gnome/16x16/mimetypes/gnome-mime-application-vnd.gtkwave-lxt2.png
+share/icons/gnome/16x16/mimetypes/gnome-mime-application-vnd.gtkwave-vcd.png
+share/icons/gnome/16x16/mimetypes/gnome-mime-application-vnd.gtkwave-vzt.png
+share/icons/gnome/16x16/mimetypes/gtkwave.png
+share/icons/gnome/32x32/
+share/icons/gnome/32x32/mimetypes/
+share/icons/gnome/32x32/mimetypes/gnome-mime-application-vnd.gtkwave-ae2.png
+share/icons/gnome/32x32/mimetypes/gnome-mime-application-vnd.gtkwave-aet.png
+share/icons/gnome/32x32/mimetypes/gnome-mime-application-vnd.gtkwave-evcd.png
+share/icons/gnome/32x32/mimetypes/gnome-mime-application-vnd.gtkwave-fst.png
+share/icons/gnome/32x32/mimetypes/gnome-mime-application-vnd.gtkwave-ghw.png
+share/icons/gnome/32x32/mimetypes/gnome-mime-application-vnd.gtkwave-gtkw.png
+share/icons/gnome/32x32/mimetypes/gnome-mime-application-vnd.gtkwave-lx2.png
+share/icons/gnome/32x32/mimetypes/gnome-mime-application-vnd.gtkwave-lxt.png
+share/icons/gnome/32x32/mimetypes/gnome-mime-application-vnd.gtkwave-lxt2.png
+share/icons/gnome/32x32/mimetypes/gnome-mime-application-vnd.gtkwave-vcd.png
+share/icons/gnome/32x32/mimetypes/gnome-mime-application-vnd.gtkwave-vzt.png
+share/icons/gnome/32x32/mimetypes/gtkwave.png
+share/icons/gnome/48x48/
+share/icons/gnome/48x48/mimetypes/
+share/icons/gnome/48x48/mimetypes/gnome-mime-application-vnd.gtkwave-ae2.png
+share/icons/gnome/48x48/mimetypes/gnome-mime-application-vnd.gtkwave-aet.png
+share/icons/gnome/48x48/mimetypes/gnome-mime-application-vnd.gtkwave-evcd.png
+share/icons/gnome/48x48/mimetypes/gnome-mime-application-vnd.gtkwave-fst.png
+share/icons/gnome/48x48/mimetypes/gnome-mime-application-vnd.gtkwave-ghw.png
+share/icons/gnome/48x48/mimetypes/gnome-mime-application-vnd.gtkwave-gtkw.png
+share/icons/gnome/48x48/mimetypes/gnome-mime-application-vnd.gtkwave-lx2.png
+share/icons/gnome/48x48/mimetypes/gnome-mime-application-vnd.gtkwave-lxt.png
+share/icons/gnome/48x48/mimetypes/gnome-mime-application-vnd.gtkwave-lxt2.png
+share/icons/gnome/48x48/mimetypes/gnome-mime-application-vnd.gtkwave-vcd.png
+share/icons/gnome/48x48/mimetypes/gnome-mime-application-vnd.gtkwave-vzt.png
+share/icons/gnome/48x48/mimetypes/gtkwave.png
+share/icons/gtkwave_256x256x32.png
+share/icons/gtkwave_files_256x256x32.png
+share/icons/gtkwave_savefiles_256x256x32.png
+@comment share/mime/XMLnamespaces
+@comment share/mime/aliases
+share/mime/application/vnd.gtkwave-ae2.xml
+share/mime/application/vnd.gtkwave-aet.xml
+share/mime/application/vnd.gtkwave-evcd.xml
+share/mime/application/vnd.gtkwave-fst.xml
+share/mime/application/vnd.gtkwave-ghw.xml
+share/mime/application/vnd.gtkwave-gtkw.xml
+share/mime/application/vnd.gtkwave-lx2.xml
+share/mime/application/vnd.gtkwave-lxt.xml
+share/mime/application/vnd.gtkwave-lxt2.xml
+share/mime/application/vnd.gtkwave-vcd.xml
+share/mime/application/vnd.gtkwave-vzt.xml
+@comment share/mime/generic-icons
+@comment share/mime/globs
+@comment share/mime/globs2
+@comment share/mime/icons
+@comment share/mime/magic
+@comment share/mime/mime.cache
+share/mime/packages/x-gtkwave-extension-ae2.xml
+share/mime/packages/x-gtkwave-extension-aet.xml
+share/mime/packages/x-gtkwave-extension-evcd.xml
+share/mime/packages/x-gtkwave-extension-fst.xml
+share/mime/packages/x-gtkwave-extension-ghw.xml
+share/mime/packages/x-gtkwave-extension-gtkw.xml
+share/mime/packages/x-gtkwave-extension-lx2.xml
+share/mime/packages/x-gtkwave-extension-lxt.xml
+share/mime/packages/x-gtkwave-extension-lxt2.xml
+share/mime/packages/x-gtkwave-extension-vcd.xml
+share/mime/packages/x-gtkwave-extension-vzt.xml
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/gnome
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/gnome
+@comment share/mime/subclasses
+@comment share/mime/treemagic
+@comment share/mime/types
+@comment share/mime/version
