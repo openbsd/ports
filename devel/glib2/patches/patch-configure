@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure,v 1.26 2013/04/05 19:20:26 jturner Exp $
---- configure.orig	Thu Apr  4 21:05:23 2013
-+++ configure	Thu Apr  4 21:13:54 2013
+$OpenBSD: patch-configure,v 1.27 2013/04/18 10:42:32 jasper Exp $
+--- configure.orig	Mon Apr 15 23:32:43 2013
++++ configure	Thu Apr 18 11:40:39 2013
 @@ -26719,6 +26719,9 @@ else
      *-*-mingw*)
        glib_cv_g_atomic_lock_free=yes
        ;;
-+    mips64*)
++    hppa*-*-openbsd*|mips64*-*-openbsd*)
 +      glib_cv_g_atomic_lock_free=no
 +      ;;
      *)
