@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2013/03/31 19:41:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2013/04/18 13:57:14 ajacoutot Exp $
 @conflict shared-color-profiles-*
 @conflict shared-color-profiles-extra-*
 @pkgpath graphics/colord
@@ -69,6 +69,7 @@ share/color/icc/colord/CIE-RGB.icc
 share/color/icc/colord/ColorMatchRGB.icc
 share/color/icc/colord/Crayons.icc
 share/color/icc/colord/DonRGB4.icc
+share/color/icc/colord/ECI-RGBv1.icc
 share/color/icc/colord/ECI-RGBv2.icc
 share/color/icc/colord/EktaSpacePS5.icc
 share/color/icc/colord/Gamma5000K.icc
