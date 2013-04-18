@@ -1,7 +1,9 @@
-# $OpenBSD: cmake.port.mk,v 1.16 2013/03/11 10:50:02 espie Exp $
+# $OpenBSD: cmake.port.mk,v 1.17 2013/04/18 22:54:50 sthen Exp $
 
 BUILD_DEPENDS+=	devel/cmake>=2.8.0
 
+# XXX if a library is not listed in SHARED_LIBS, it will be created
+# with *no* version suffix.
 .for _n _v in ${SHARED_LIBS}
 CONFIGURE_ENV+=LIB${_n}_VERSION=${_v}
 MAKE_ENV+=LIB${_n}_VERSION=${_v}
