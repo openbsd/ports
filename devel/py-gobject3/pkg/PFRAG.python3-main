@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.python3-main,v 1.1 2013/04/18 09:00:28 ajacoutot Exp $
+@pkgpath devel/py-gobject3,python
+@pkgpath devel/py-gobject3,python3

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/04/16 10:21:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2013/04/18 09:00:28 ajacoutot Exp $
 
 COMMENT-main=		Python bindings for GLib and GObject
 COMMENT-common=		common files for py-gobject3
@@ -11,7 +11,8 @@ PKGNAME-main=		py-gobject3-${GNOME_VERSION}
 FULLPKGNAME-common=	py-gobject3-common-${GNOME_VERSION}
 FULLPKGPATH-common=	devel/py-gobject3,-common
 
-REVISION-main=		0
+REVISION-main=		2
+REVISION-common=	0
 
 CATEGORIES=		devel
 
@@ -42,6 +43,7 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 LIB_DEPENDS-common=	#empty
+RUN_DEPENDS-common=	#empty
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			devel/gobject-introspection
@@ -51,7 +53,7 @@ RUN_DEPENDS-main=	${RUN_DEPENDS} \
 
 .if ${FLAVOR:Mpython3}
 FULLPKGNAME-main=	${PKGNAME-main:S/^py-/py3-/}
-FULLPKGPATH-main=	devel/py-gobject3,python
+FULLPKGPATH-main=	devel/py-gobject3,-main${MODPY_FLAVOR}
 BUILD_DEPENDS +=	graphics/py3-cairo
 RUN_DEPENDS-main +=	graphics/py3-cairo
 .else
