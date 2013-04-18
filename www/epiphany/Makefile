@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2013/04/17 09:56:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.98 2013/04/18 14:30:22 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
 GNOME_VERSION=	3.8.1
+REVISION=	0
 
 # NOTE: when M changes, increment M accordingly
 M=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -50,6 +51,7 @@ LIB_DEPENDS=	textproc/libxslt \
 		devel/libnotify \
 		devel/libwnck3 \
 		devel/startup-notification \
+		net/avahi \
 		www/webkit,gtk3>=2.0.0 \
 		x11/gnome/desktop \
 		x11/gnome/gcr
