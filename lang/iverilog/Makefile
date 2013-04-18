@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:20:27 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/04/18 17:57:07 bentley Exp $
 
 COMMENT=		Verilog simulation and synthesis tool
 
-V=			0.9.4
+V=			0.9.6
 DISTNAME=		verilog-$V
 PKGNAME=		iverilog-$V
 CATEGORIES=		lang devel

@@ -1,34 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/07/08 18:58:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/04/18 17:57:07 bentley Exp $
 @bin bin/iverilog
 bin/iverilog-vpi
 @bin bin/vvp
 include/iverilog/
 include/iverilog/_pli_types.h
-include/iverilog/acc_user.h
-include/iverilog/ivl_target.h
-include/iverilog/veriuser.h
-include/iverilog/vpi_user.h
 lib/ivl/
 @bin lib/ivl/cadpli.vpl
 lib/ivl/include/
-lib/ivl/include/constants.vams
-lib/ivl/include/disciplines.vams
 @bin lib/ivl/ivl
 @bin lib/ivl/ivlpp
-lib/ivl/null-s.conf
-lib/ivl/null.conf
 @bin lib/ivl/null.tgt
-lib/ivl/stub-s.conf
-lib/ivl/stub.conf
 @bin lib/ivl/stub.tgt
-lib/ivl/system.sft
 @bin lib/ivl/system.vpi
-lib/ivl/v2005_math.sft
 @bin lib/ivl/v2005_math.vpi
-lib/ivl/va_math.sft
 @bin lib/ivl/va_math.vpi
-lib/ivl/vhdl-s.conf
-lib/ivl/vhdl.conf
 @bin lib/ivl/vhdl.tgt
 lib/ivl/vvp-s.conf
 lib/ivl/vvp.conf
