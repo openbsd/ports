@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1121 2013/04/17 06:30:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1122 2013/04/18 15:08:40 sthen Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -45,6 +45,7 @@
      SUBDIR += ccrtp
      SUBDIR += cdk
      SUBDIR += cflow
+     SUBDIR += cgdb
      SUBDIR += check
      SUBDIR += chmlib
      SUBDIR += cil
