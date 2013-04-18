@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.32 2013/04/02 17:26:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2013/04/18 06:21:21 ajacoutot Exp $
 
 COMMENT=	brain teaser game
 
-DISTNAME=	gbrainy-2.1.1
-REVISION=	1
+DISTNAME=	gbrainy-2.2.0
 EPOCH=		0
 
 CATEGORIES=	games
 
-HOMEPAGE=	http://live.gnome.org/gbrainy
+HOMEPAGE=	https://live.gnome.org/gbrainy
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
@@ -18,8 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	http://gent.softcatala.org/jmas/gbrainy/
 EXTRACT_SUFX=	.tar.gz
 
-MODULES=	textproc/intltool \
-		lang/mono \
+MODULES=	lang/mono \
 		x11/gnome
 
 BUILD_DEPENDS=	devel/mono-addins \
