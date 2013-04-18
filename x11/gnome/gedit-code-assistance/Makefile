@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/04/16 13:17:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2013/04/18 09:00:54 ajacoutot Exp $
 
 BROKEN-powerpc=	clang dumps core
 
@@ -8,7 +8,7 @@ COMMENT=	code assistance for Gedit
 
 GNOME_PROJECT=	gedit-code-assistance
 GNOME_VERSION=	0.2.0
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	editors devel
 
