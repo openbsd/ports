@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2010/07/23 14:51:11 laurent Exp $
---- Makefile.in.orig	Sun Apr 19 18:14:24 2009
-+++ Makefile.in	Tue Jul 13 13:34:53 2010
+$OpenBSD: patch-Makefile_in,v 1.2 2013/04/18 15:08:01 sthen Exp $
+--- Makefile.in.orig	Mon Oct 11 16:53:52 2010
++++ Makefile.in	Thu Apr 18 11:55:26 2013
 @@ -97,8 +97,8 @@ GCC_LINT_CFLAGS = $(XCCFLAGS) $(GCC_LINT_FLAGS) @CFLAG
  	$(CC) -c $(CCFLAGS) $<
  
@@ -12,7 +12,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2010/07/23 14:51:11 laurent Exp $
  
  # The C code source files for this library.
  CSOURCES = $(srcdir)/readline.c $(srcdir)/funmap.c $(srcdir)/keymaps.c \
-@@ -151,12 +151,12 @@ everything: all examples
+@@ -154,12 +154,12 @@ everything: all examples
  
  static: $(STATIC_LIBS)
  
@@ -22,12 +22,12 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2010/07/23 14:51:11 laurent Exp $
  	$(AR) $(ARFLAGS) $@ $(OBJECTS)
  	-test -n "$(RANLIB)" && $(RANLIB) $@
  
--libhistory.a: $(HISTOBJ) xmalloc.o
-+libehistory.a: $(HISTOBJ) xmalloc.o
+-libhistory.a: $(HISTOBJ) xmalloc.o xfree.o
++libehistory.a: $(HISTOBJ) xmalloc.o xfree.o
  	$(RM) $@
- 	$(AR) $(ARFLAGS) $@ $(HISTOBJ) xmalloc.o
+ 	$(AR) $(ARFLAGS) $@ $(HISTOBJ) xmalloc.o xfree.o
  	-test -n "$(RANLIB)" && $(RANLIB) $@
-@@ -222,12 +222,12 @@ uninstall-headers:
+@@ -225,12 +225,12 @@ uninstall-headers:
  maybe-uninstall-headers: uninstall-headers
  
  install-static: installdirs $(STATIC_LIBS) install-headers install-doc install-examples

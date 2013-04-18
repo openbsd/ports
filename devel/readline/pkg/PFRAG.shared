@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2010/07/23 14:51:11 laurent Exp $
-@lib lib/libehistory.so.${LIBehistory_VERSION}
-@lib lib/libereadline.so.${LIBereadline_VERSION}
