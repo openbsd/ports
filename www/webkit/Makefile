@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.81 2013/04/13 09:11:02 landry Exp $
+# $OpenBSD: Makefile,v 1.82 2013/04/18 11:31:37 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
 COMMENT =	open source web browser engine for Gtk+
 
-V =		2.0.0
+V =		2.0.1
 DISTNAME =	webkitgtk-${V}
 PKGNAME =	webkit-${V}
 EPOCH =		0
@@ -27,11 +27,11 @@ USE_GMAKE =	Yes
 MODULES =	devel/gettext \
 		textproc/intltool  \
 		lang/python \
-		lang/ruby \
-		devel/dconf
+		lang/ruby
 
 MODPY_RUNDEP =	No
 MODRUBY_RUNDEP =	No
+MODPY_ADJ_FILES =	Tools/gtk/generate-feature-defines-files
 
 CONFIGURE_STYLE =	gnu
 
@@ -96,7 +96,8 @@ LIB_DEPENDS =	multimedia/gstreamer1/core \
 		geo/geoclue \
 		graphics/libwebp \
 		devel/glib2>=2.36.0 \
-		devel/libsoup>=2.42.0
+		devel/libsoup>=2.42.0 \
+		x11/gnome/libsecret
 
 BUILD_DEPENDS =	devel/bison \
 		devel/flex \

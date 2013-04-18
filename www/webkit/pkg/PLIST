@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2013/04/13 09:11:02 landry Exp $
+@comment $OpenBSD: PLIST,v 1.19 2013/04/18 11:31:37 ajacoutot Exp $
 %%gtk3%%
 !%%gtk3%%
 include/webkitgtk-${WEBKIT_API_VERSION}/
@@ -437,6 +437,7 @@ share/locale/kn/LC_MESSAGES/WebKitGTK-${GTK_API_VERSION}.mo
 share/locale/ko/LC_MESSAGES/WebKitGTK-${GTK_API_VERSION}.mo
 share/locale/lt/LC_MESSAGES/WebKitGTK-${GTK_API_VERSION}.mo
 share/locale/lv/LC_MESSAGES/WebKitGTK-${GTK_API_VERSION}.mo
+share/locale/ml/LC_MESSAGES/WebKitGTK-${GTK_API_VERSION}.mo
 share/locale/mr/LC_MESSAGES/WebKitGTK-${GTK_API_VERSION}.mo
 share/locale/nb/LC_MESSAGES/WebKitGTK-${GTK_API_VERSION}.mo
 share/locale/nl/LC_MESSAGES/WebKitGTK-${GTK_API_VERSION}.mo
@@ -451,6 +452,7 @@ share/locale/sl/LC_MESSAGES/WebKitGTK-${GTK_API_VERSION}.mo
 share/locale/sr/LC_MESSAGES/WebKitGTK-${GTK_API_VERSION}.mo
 share/locale/sr@latin/LC_MESSAGES/WebKitGTK-${GTK_API_VERSION}.mo
 share/locale/sv/LC_MESSAGES/WebKitGTK-${GTK_API_VERSION}.mo
+share/locale/ta/LC_MESSAGES/WebKitGTK-${GTK_API_VERSION}.mo
 share/locale/te/LC_MESSAGES/WebKitGTK-${GTK_API_VERSION}.mo
 share/locale/uk/LC_MESSAGES/WebKitGTK-${GTK_API_VERSION}.mo
 share/locale/vi/LC_MESSAGES/WebKitGTK-${GTK_API_VERSION}.mo
