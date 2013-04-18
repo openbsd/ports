@@ -1,0 +1,15 @@
+$OpenBSD: patch-config_settings_yml_example,v 1.1 2013/04/18 07:41:44 jasper Exp $
+
+Make the refresh rates of the application and radiator views configurable.
+
+--- config/settings.yml.example.orig	Thu Apr 18 08:57:52 2013
++++ config/settings.yml.example	Thu Apr 18 08:57:56 2013
+@@ -86,4 +86,8 @@ classes_per_page: 50
+ groups_per_page: 50
+ reports_per_page: 20
+ 
++# Refresh rate in seconds for the radiator and application views
++radiator_refresh_rate: 60
++application_refresh_rate: 5
++
+ #===[ fin ]=============================================================

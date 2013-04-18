@@ -1,0 +1,15 @@
+$OpenBSD: patch-app_views_layouts_application_html_haml,v 1.1 2013/04/18 07:41:44 jasper Exp $
+
+Make the refresh rates of the application and radiator views configurable.
+
+--- app/views/layouts/application.html.haml.orig	Thu Mar 21 19:24:05 2013
++++ app/views/layouts/application.html.haml	Thu Apr 18 09:26:44 2013
+@@ -6,7 +6,7 @@
+     %link{ :href => image_path("favicon.ico"), :rel => "shortcut icon" }
+     %meta{ :content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type" }
+     - if session[:autorefresh]
+-      %meta{ :content => "5; URL=#{request.url}", "http-equiv" => "refresh" }
++      %meta{ :content => "#{SETTINGS.application_refresh_rate}; URL=#{request.url}", "http-equiv" => "refresh" }
+ 
+     = javascript_include_tag 'jquery.min'
+     :javascript

@@ -1,0 +1,15 @@
+$OpenBSD: patch-app_views_layouts_radiator_html_haml,v 1.1 2013/04/18 07:41:44 jasper Exp $
+
+Make the refresh rates of the application and radiator views configurable.
+
+--- app/views/layouts/radiator.html.haml.orig	Thu Apr 18 08:58:13 2013
++++ app/views/layouts/radiator.html.haml	Thu Apr 18 08:58:16 2013
+@@ -3,7 +3,7 @@
+   %head
+     - page_title = yield(:page_title)
+     %title= [ page_title, 'Puppet Node Manager'].compact.join(' - ')
+-    %meta{"http-equiv" => "refresh", :content => "60"}
++    %meta{"http-equiv" => "refresh", :content => "#{SETTINGS.radiator_refresh_rate}"}
+     = stylesheet_link_tag 'reset', 'mixins', 'radiator'
+     = javascript_include_tag 'jquery-1.7.2', 'radiator'
+ 
