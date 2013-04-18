@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/01/04 18:20:00 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.10 2013/04/18 18:47:18 benoit Exp $
 include/assl.h
 include/assl_socket.h
 lib/libassl.a
-%%SHARED%%
+@lib lib/libassl.so.${LIBassl_VERSION}
 lib/libassl_p.a
 @man man/man3/assl.3
 @man man/man3/assl_accept.3
