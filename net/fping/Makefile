@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2013/03/11 11:35:46 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2013/04/18 18:52:49 sthen Exp $
 
 COMMENT =		quickly ping N hosts w/o flooding the network
 
 DISTNAME =		fping-2.4b2_to4-ipv6
 PKGNAME =		${DISTNAME:S/_to4-ipv6//}
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =		net
 
@@ -23,7 +23,6 @@ CONFIGURE_STYLE =	gnu
 SEPARATE_BUILD =	Yes
 CONFIGURE_ARGS =	--bindir=${PREFIX}/sbin
 COPTS +=		-DHAVE_PROGNAME
-USE_GROFF =		Yes
 
 pre-configure:
 	perl -pi -e 's,/usr/local/bin/fping,${LOCALBASE}/sbin/fping,g' \
