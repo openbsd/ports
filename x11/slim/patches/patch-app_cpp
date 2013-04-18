@@ -1,10 +1,10 @@
-$OpenBSD: patch-app_cpp,v 1.4 2012/09/02 09:22:59 landry Exp $
+$OpenBSD: patch-app_cpp,v 1.5 2013/04/18 12:00:45 gonzalo Exp $
 add support for bsd_auth/auth_userokay on OpenBSD
 only call the consolekit stuff if the ck session is okay
 don't exit if the ck session fails to start
---- app.cpp.orig	Tue Jun 26 10:20:14 2012
-+++ app.cpp	Sat Sep  1 23:04:49 2012
-@@ -32,6 +32,11 @@
+--- app.cpp.orig	Mon Dec 31 10:03:42 2012
++++ app.cpp	Wed Apr 17 13:09:39 2013
+@@ -30,6 +30,11 @@
  #include <shadow.h>
  #endif
  
@@ -16,9 +16,9 @@ don't exit if the ck session fails to start
  using namespace std;
  
  #ifdef USE_PAM
-@@ -468,6 +473,12 @@ bool App::AuthenticateUser(bool focuspass){
-     if(pw == 0)
-         return false;
+@@ -462,6 +467,12 @@ bool App::AuthenticateUser(bool focuspass){
+ 	if(pw == 0)
+ 		return false;
  
 +#ifdef __OpenBSD__
 +    char * pass = strdup(LoginPanel->GetPasswd().c_str());
@@ -27,45 +27,45 @@ don't exit if the ck session fails to start
 +    return ret;
 +#endif
  #ifdef HAVE_SHADOW
-     struct spwd *sp = getspnam(pw->pw_name);    
-     endspent();
-@@ -572,7 +583,6 @@ void App::Login() {
-     }
-     catch(Ck::Exception &e) {
-         logStream << APPNAME << ": " << e << endl;
--        exit(ERR_EXIT);
-     }
+ 	struct spwd *sp = getspnam(pw->pw_name);
+ 	endspent();
+@@ -565,7 +576,6 @@ void App::Login() {
+ 	}
+ 	catch(Ck::Exception &e) {
+ 		logStream << APPNAME << ": " << e << endl;
+-		exit(ERR_EXIT);
+ 	}
  #endif
  
-@@ -585,6 +595,7 @@ void App::Login() {
-         char** child_env = pam.getenvlist();
+@@ -578,6 +588,7 @@ void App::Login() {
+ 		char** child_env = pam.getenvlist();
  
  # ifdef USE_CONSOLEKIT
-+      if(ck.has_session()) {
-         char** old_env = child_env;
++	if(ck.has_session()) {
+ 		char** old_env = child_env;
  
-         // Grow the copy of the environment for the session cookie
-@@ -597,6 +608,7 @@ void App::Login() {
-         memcpy(child_env, old_env, sizeof(char*)*n);
-         child_env[n - 1] = StrConcat("XDG_SESSION_COOKIE=", ck.get_xdg_session_cookie());
-         child_env[n] = NULL;
-+      }
+ 		/* Grow the copy of the environment for the session cookie */
+@@ -590,6 +601,7 @@ void App::Login() {
+ 		memcpy(child_env, old_env, sizeof(char*)*n+1);
+ 		child_env[n - 1] = StrConcat("XDG_SESSION_COOKIE=", ck.get_xdg_session_cookie());
+ 		child_env[n] = NULL;
++	}
  # endif /* USE_CONSOLEKIT */
+ #else
  
-         pam.end();
-@@ -620,6 +632,7 @@ void App::Login() {
-         child_env[n++]=StrConcat("MAIL=", maildir.c_str());
-         child_env[n++]=StrConcat("XAUTHORITY=", xauthority.c_str());
+@@ -611,6 +623,7 @@ void App::Login() {
+ 		child_env[n++]=StrConcat("MAIL=", maildir.c_str());
+ 		child_env[n++]=StrConcat("XAUTHORITY=", xauthority.c_str());
  # ifdef USE_CONSOLEKIT
-+      if (ck.has_session())
-         child_env[n++]=StrConcat("XDG_SESSION_COOKIE=", ck.get_xdg_session_cookie());
++	if (ck.has_session())
+ 		child_env[n++]=StrConcat("XDG_SESSION_COOKIE=", ck.get_xdg_session_cookie());
  # endif /* USE_CONSOLEKIT */
-         child_env[n++]=0;
-@@ -666,6 +679,7 @@ void App::Login() {
+ 		child_env[n++]=0;
+@@ -657,6 +670,7 @@ void App::Login() {
  
  #ifdef USE_CONSOLEKIT
-     try {
-+      if (ck.has_session())
-         ck.close_session();
-     }
-     catch(Ck::Exception &e) {
+ 	try {
++		if (ck.has_session())
+ 		ck.close_session();
+ 	}
+ 	catch(Ck::Exception &e) {

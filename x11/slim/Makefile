@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 11:46:15 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2013/04/18 12:00:45 gonzalo Exp $
 
 COMMENT=	simple login manager
 
-DISTNAME=	slim-1.3.4
+DISTNAME=	slim-1.3.5
 
 CATEGORIES=	x11
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
@@ -19,8 +19,8 @@ LIB_DEPENDS=	graphics/jpeg \
 		x11/dbus \
 		graphics/png
 
-WANTLIB=	X11 Xft Xmu Xrender fontconfig c m stdc++ z freetype jpeg png
-WANTLIB +=	pthread dbus-1 ck-connector
+WANTLIB += X11 Xft Xmu Xrender c ck-connector dbus-1 fontconfig
+WANTLIB += freetype jpeg m png pthread stdc++ z
 
 CONFIGURE_ARGS= -DUSE_CONSOLEKIT="yes"
 

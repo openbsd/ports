@@ -1,6 +1,6 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2012/09/02 09:22:59 landry Exp $
---- CMakeLists.txt.orig	Tue Jun 26 10:20:14 2012
-+++ CMakeLists.txt	Sat Sep  1 20:39:34 2012
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2013/04/18 12:00:45 gonzalo Exp $
+--- CMakeLists.txt.orig	Mon Dec 31 10:03:42 2012
++++ CMakeLists.txt	Wed Apr 17 11:38:56 2013
 @@ -24,7 +24,7 @@ set(SLIM_VERSION "${SLIM_VERSION_MAJOR}.${SLIM_VERSION
  set(CMAKE_INSTALL_PREFIX "/usr/local" CACHE PATH "Installation Directory")
  set(PKGDATADIR "${CMAKE_INSTALL_PREFIX}/share/slim")
@@ -28,11 +28,14 @@ $OpenBSD: patch-CMakeLists_txt,v 1.1 2012/09/02 09:22:59 landry Exp $
  	${X11_X11_LIB}
  	${X11_Xft_LIB}
  	${X11_Xrender_LIB}
-@@ -169,6 +165,6 @@ install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bi
+@@ -169,8 +165,8 @@ install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bi
  # man file
  install(FILES slim.1 DESTINATION ${MANDIR}/man1/)
  # configure
 -install(FILES slim.conf DESTINATION ${SYSCONFDIR})
 +install(FILES slim.conf DESTINATION ${CMAKE_INSTALL_PREFIX}/share/examples/slim/)
+ # systemd service file
+-install(FILES slim.service DESTINATION usr/lib/systemd/system)
++#install(FILES slim.service DESTINATION usr/lib/systemd/system)
  # themes directory
  subdirs(themes)
