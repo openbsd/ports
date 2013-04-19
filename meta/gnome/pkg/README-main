@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.17 2013/04/14 08:35:45 ajacoutot Exp $
+$OpenBSD: README-main,v 1.18 2013/04/19 18:26:33 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -48,7 +48,7 @@ in rc.conf.local(8)).
 GDM
 ---
 It is _strongly_ advised to use GDM as the login manager otherwise some
-features like screen locking will not work properly. To do so, "gdm"
+key features like screen locking will not work properly. To do so, "gdm"
 must be added at the end of "pkg_scripts" in rc.conf.local(8) (and
 "xdm_flags" commented or removed).
 
