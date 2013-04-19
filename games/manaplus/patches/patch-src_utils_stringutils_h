@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_utils_stringutils_h,v 1.1 2013/02/04 15:03:12 bcallah Exp $
---- src/utils/stringutils.h.orig	Thu Jan 31 23:36:37 2013
-+++ src/utils/stringutils.h	Thu Jan 31 23:36:58 2013
-@@ -97,7 +97,7 @@ std::string strprintf(const char *const format, ...) A
+$OpenBSD: patch-src_utils_stringutils_h,v 1.2 2013/04/19 16:50:02 bcallah Exp $
+--- src/utils/stringutils.h.orig	Mon Apr  8 16:08:43 2013
++++ src/utils/stringutils.h	Tue Apr 16 11:36:31 2013
+@@ -99,7 +99,7 @@ std::string strprintf(const char *const format, ...) A
  #ifdef __GNUC__
      /* This attribute is nice: it even works through gettext invokation. For
         example, gcc will complain that strprintf(_("%s"), 42) is ill-formed. */
