@@ -1,6 +1,6 @@
---- dillorc.orig	Fri Jan  4 19:53:22 2013
-+++ dillorc	Fri Jan  4 19:53:37 2013
-@@ -53,7 +53,7 @@
+--- dillorc.orig	Thu Apr  4 13:20:10 2013
++++ dillorc	Thu Apr 18 12:25:04 2013
+@@ -46,7 +46,7 @@
  # "fc-list : family | cut -d ',' -f 2 | sort").
  #font_serif="DejaVu Serif"
  #font_sans_serif="DejaVu Sans"

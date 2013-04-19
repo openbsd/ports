@@ -1,6 +1,6 @@
---- dpi/https.c.orig	Sun Jun  7 05:40:49 2009
-+++ dpi/https.c	Tue Sep 22 16:03:34 2009
-@@ -159,7 +159,7 @@
+--- dpi/https.c.orig	Sun Jan 27 12:26:38 2013
++++ dpi/https.c	Thu Apr 18 12:25:04 2013
+@@ -165,7 +165,7 @@ static void yes_ssl_support(void)
     /*FIXME - provide for sysconfdir variables and such*/
     if (exit_error == 0){
        if (SSL_CTX_load_verify_locations(

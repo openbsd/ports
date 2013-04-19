@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.42 2013/03/11 11:44:41 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2013/04/19 14:33:51 bcallah Exp $
 
 COMMENT =		fast and light graphical web browser
 
-DISTNAME =		dillo-3.0.2
+DISTNAME =		dillo-3.0.3
 CATEGORIES =		www
 
 MAINTAINER =		Brian Callahan <bcallah@openbsd.org>
 HOMEPAGE =		http://www.dillo.org/
-REVISION =		1
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
@@ -18,7 +17,7 @@ WANTLIB += stdc++ z jpeg>=62 png>=2
 
 MODULES =	converters/libiconv
 
-MASTER_SITES =	${HOMEPAGE}download/
+MASTER_SITES =	http://www.dillo.org/download/
 
 EXTRACT_SUFX =	.tar.bz2
 
@@ -37,6 +36,8 @@ CONFIGURE_ARGS =	--enable-ipv6 \
 			--enable-ssl
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+FAKE_FLAGS =		sysconfdir=${PREFIX}/share/examples/dillo/
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/dillo

@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.12 2013/01/05 22:42:58 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.13 2013/04/19 14:33:51 bcallah Exp $
 @bin bin/dillo
+bin/dillo-install-hyphenation
 @bin bin/dpid
 @bin bin/dpidc
 lib/dillo/
@@ -37,8 +38,12 @@ share/doc/dillo/NC_design.txt
 share/doc/dillo/Selection.txt
 share/doc/dillo/user_help.html
 share/examples/dillo/
+@sample ${SYSCONFDIR}/dillo/
 share/examples/dillo/dillorc
-@sample ${SYSCONFDIR}/dillorc
+@sample ${SYSCONFDIR}/dillo/dillorc
+share/examples/dillo/domainrc
+@sample ${SYSCONFDIR}/dillo/domainrc
 share/examples/dillo/dpidrc
-@sample ${SYSCONFDIR}/dpidrc
+@sample ${SYSCONFDIR}/dillo/dpidrc
 share/examples/dillo/keysrc
+@sample ${SYSCONFDIR}/dillo/keysrc

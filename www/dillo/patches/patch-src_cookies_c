@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_cookies_c,v 1.6 2008/10/19 08:42:55 ajacoutot Exp $
---- src/cookies.c.orig	Sat Oct 18 11:12:23 2008
-+++ src/cookies.c	Sat Oct 18 11:12:44 2008
-@@ -92,6 +92,9 @@ static FILE *Cookies_fopen(const char *filename, char 
+$OpenBSD: patch-src_cookies_c,v 1.7 2013/04/19 14:33:51 bcallah Exp $
+--- src/cookies.c.orig	Sun Jan 27 12:26:38 2013
++++ src/cookies.c	Thu Apr 18 12:25:04 2013
+@@ -94,6 +94,9 @@ static FILE *Cookies_fopen(const char *filename, char 
  
           MSG("Cookies: Created file: %s\n", filename);
           F_in = fopen(filename, "r");
