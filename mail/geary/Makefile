@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/31 20:23:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2013/04/19 09:42:34 jasper Exp $
 
 COMMENT =	lightweight mail user agent
 
@@ -16,7 +16,7 @@ MASTER_SITES =	http://yorba.org/download/geary/stable/
 EXTRACT_SUFX =	.tar.xz
 MODULES =	devel/cmake devel/dconf x11/gnome devel/gettext
 
-MODGNOME_TOOLS =	yelp vala
+MODGNOME_TOOLS =	gi yelp vala
 MODGNOME_DESKTOP_FILE =	Yes
 MODGNOME_ICON_CACHE =	Yes
 
