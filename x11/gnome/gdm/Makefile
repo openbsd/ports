@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.155 2013/04/17 13:41:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.156 2013/04/19 15:00:27 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -63,7 +63,6 @@ CONFIGURE_ARGS=		--disable-static \
 			--with-pid-file=/var/run/gdm.pid \
 			--with-dmconfdir="${LOCALBASE}/share/xsessions" \
 			--with-screenshot-dir=/var/run/gdm/greeter \
-			--with-incomplete-locales \
 			--with-user=_gdm \
 			--with-group=_gdm \
 			--with-console-kit \
