@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.103 2013/04/14 20:28:56 brad Exp $
+# $OpenBSD: Makefile,v 1.104 2013/04/19 02:47:43 brad Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc sparc64
 
 COMMENT=	multi system emulator
 
-DISTNAME=	qemu-1.4.0
-REVISION=	0
+DISTNAME=	qemu-1.4.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/
 EXTRACT_SUFX=	.tar.bz2
@@ -63,8 +62,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--disable-spice \
 		--disable-uuid \
 		--disable-usb-redir \
-		--disable-vnc-sasl \
-		--with-coroutine=sigaltstack
+		--disable-vnc-sasl
 
 FLAVORS=	debug
 FLAVOR?=
