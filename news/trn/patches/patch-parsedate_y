@@ -1,6 +1,6 @@
-$OpenBSD: patch-parsedate_y,v 1.1 2005/05/29 14:19:08 espie Exp $
---- parsedate.y.orig	Sun May 29 16:05:29 2005
-+++ parsedate.y	Sun May 29 16:05:40 2005
+$OpenBSD: patch-parsedate_y,v 1.2 2013/04/19 21:32:37 sthen Exp $
+--- parsedate.y.orig	Thu May 25 06:11:42 2000
++++ parsedate.y	Fri Apr 19 21:58:57 2013
 @@ -18,6 +18,7 @@
  /* SUPPRESS 593 on yynewstate *//* Label was not used */
  /* SUPPRESS 595 on yypvt *//* Automatic variable may be used before set */
@@ -9,3 +9,22 @@ $OpenBSD: patch-parsedate_y,v 1.1 2005/05/29 14:19:08 espie Exp $
  #include <sys/types.h>
  #include <ctype.h>
  #include "config.h"
+@@ -487,6 +488,7 @@ Convert(Month, Day, Year, Hours, Minutes, Seconds, Mer
+     static int	DaysLeap[13] = {
+ 	0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
+     };
++/* XXX 2038 */
+     static int	LeapYears[] = {
+ 	1972, 1976, 1980, 1984, 1988, 1992, 1996,
+ 	2000, 2004, 2008, 2012, 2016, 2020, 2024, 2028, 2032, 2036
+@@ -508,7 +510,9 @@ Convert(Month, Day, Year, Hours, Minutes, Seconds, Mer
+ 	    mp = DaysLeap;
+ 	    break;
+ 	}
+-    if (Year < EPOCH || Year > END_OF_TIME
++    /* XXX Sloppily check for 2038 if time_t is 32 bits */
++    if (Year < EPOCH
++     || (sizeof(time_t) == sizeof(int) && Year > 2038)
+      || Month < 1 || Month > 12
+      /* NOSTRICT *//* conversion from long may lose accuracy */
+      || Day < 1 || Day > mp[(int)Month])

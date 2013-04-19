@@ -1,20 +1,22 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 11:35:59 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2013/04/19 21:32:37 sthen Exp $
 
 COMMENT=	threaded newsreader
 
 CATEGORIES=	news
-MAINTAINER= 	Marc Espie <espie@openbsd.org>
+MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 MASTER_SITES=${MASTER_SITE_SOURCEFORGE:=trn/}
 V=77
 DISTNAME=	trn-4.0-test$V
 PKGNAME=	trn-4.0.$V
+REVISION=	0
 
 PERMIT_PACKAGE_FTP=Yes
 # Technically, we could put trn on CD-Rom, provided we include the distfile
 # as well...
 PERMIT_PACKAGE_CDROM=No
-WANTLIB=c curses m 
+
+WANTLIB=c curses m
 
 
 CONFIGURE_STYLE=simple

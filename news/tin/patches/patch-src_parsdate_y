@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_parsdate_y,v 1.1 2013/04/19 21:32:37 sthen Exp $
+--- src/parsdate.y.orig	Fri Apr 19 21:23:02 2013
++++ src/parsdate.y	Fri Apr 19 21:59:31 2013
+@@ -519,6 +519,7 @@ Convert(
+     static const int	DaysLeap[13] = {
+ 	0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
+     };
++/* XXX 2038 */
+     static const int	LeapYears[] = {
+ 	1972, 1976, 1980, 1984, 1988, 1992, 1996,
+ 	2000, 2004, 2008, 2012, 2016, 2020, 2024, 2028, 2032, 2036
+@@ -542,7 +543,9 @@ Convert(
+ 	    mp = DaysLeap;
+ 	    break;
+ 	}
+-    if (Year < EPOCH || Year > END_OF_TIME
++    /* XXX Sloppily check for 2038 if time_t is 32 bits */
++    if (Year < EPOCH
++     || (sizeof(time_t) == sizeof(int) && Year > 2038)
+      || Month < 1 || Month > 12
+      /* NOSTRICT */ /* conversion from long may lose accuracy */
+      || Day < 1 || Day > mp[(int)Month])

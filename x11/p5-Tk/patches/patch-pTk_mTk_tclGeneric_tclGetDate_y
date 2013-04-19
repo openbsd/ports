@@ -1,0 +1,16 @@
+$OpenBSD: patch-pTk_mTk_tclGeneric_tclGetDate_y,v 1.1 2013/04/19 21:32:37 sthen Exp $
+--- pTk/mTk/tclGeneric/tclGetDate.y.orig	Fri Apr 19 21:24:37 2013
++++ pTk/mTk/tclGeneric/tclGetDate.y	Fri Apr 19 22:28:19 2013
+@@ -680,8 +680,10 @@ Convert(Month, Day, Year, Hours, Minutes, Seconds, Mer
+     DaysInMonth[1] = IsLeapYear(Year) ? 29 : 28;
+ 
+     /* Check the inputs for validity */
+-    if (Month < 1 || Month > 12
+-	    || Year < START_OF_TIME || Year > END_OF_TIME
++    /* XXX Sloppily check for 2038 if time_t is 32 bits */
++    if (Year < START_OF_TIME
++	    || (sizeof(time_t) == sizeof(int) && Year > 2038)
++	    || Month < 1 || Month > 12
+ 	    || Day < 1 || Day > DaysInMonth[(int)--Month])
+         return -1;
+ 

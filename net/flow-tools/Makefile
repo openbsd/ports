@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/03/21 08:46:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2013/04/19 21:32:37 sthen Exp $
 
 SHARED_LIBS +=  ft                   0.0      # .0.0
 
@@ -6,7 +6,7 @@ COMMENT=	cisco NetFlow utilities
 
 DISTNAME=	flow-tools-0.68.5.1
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	2
+REVISION=	3
 CATEGORIES=	net
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
