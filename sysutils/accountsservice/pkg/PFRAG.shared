@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/05/22 10:57:32 ajacoutot Exp $
-@lib lib/libaccountsservice.so.${LIBaccountsservice_VERSION}

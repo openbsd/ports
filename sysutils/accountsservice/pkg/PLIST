@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/12/06 14:35:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/04/19 17:05:32 ajacoutot Exp $
 @unexec-delete rm -rf /var/db/AccountsService/icons/*
 @unexec-delete rm -rf /var/db/AccountsService/users/*
-%%SHARED%%
 include/accountsservice-1.0/
 include/accountsservice-1.0/act/
 include/accountsservice-1.0/act/act-user-enum-types.h
@@ -12,6 +11,7 @@ lib/girepository-1.0/
 lib/girepository-1.0/AccountsService-1.0.typelib
 lib/libaccountsservice.a
 lib/libaccountsservice.la
+@lib lib/libaccountsservice.so.${LIBaccountsservice_VERSION}
 lib/pkgconfig/accountsservice.pc
 @bin libexec/accounts-daemon
 share/dbus-1/interfaces/org.freedesktop.Accounts.User.xml
@@ -93,8 +93,6 @@ share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/accounts-service.mo
 share/locale/lv/LC_MESSAGES/accounts-service.mo
 share/locale/nl/LC_MESSAGES/accounts-service.mo
-share/locale/pa/
-share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/accounts-service.mo
 share/locale/pl/LC_MESSAGES/accounts-service.mo
 share/locale/pt_BR/LC_MESSAGES/accounts-service.mo

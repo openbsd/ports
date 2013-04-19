@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_daemon_c,v 1.22 2012/11/16 08:50:19 ajacoutot Exp $
+$OpenBSD: patch-src_daemon_c,v 1.23 2013/04/19 17:05:32 ajacoutot Exp $
 
 In default_excludes[], add any ports and system users that has a login
 shell.
@@ -11,8 +11,8 @@ The commit is wrong, since we're only interested in local users.
 http://bugs.freedesktop.org/show_bug.cgi?id=41747
 (XXX we need a way to only get local users)
 
---- src/daemon.c.orig	Mon Nov 12 22:10:33 2012
-+++ src/daemon.c	Fri Nov 16 09:37:40 2012
+--- src/daemon.c.orig	Tue Mar 12 23:42:05 2013
++++ src/daemon.c	Fri Apr 19 18:44:15 2013
 @@ -35,6 +35,10 @@
  #include <utmpx.h>
  #endif
@@ -43,7 +43,7 @@ http://bugs.freedesktop.org/show_bug.cgi?id=41747
          NULL
  };
  
-@@ -371,8 +387,11 @@ entry_generator_fgetpwent (GHashTable *users,
+@@ -396,8 +412,11 @@ entry_generator_fgetpwent (GHashTable *users,
                             gpointer   *state)
  {
          struct passwd *pwent;
@@ -55,7 +55,7 @@ http://bugs.freedesktop.org/show_bug.cgi?id=41747
          /* First iteration */
          if (*state == NULL) {
                  *state = fp = fopen (PATH_PASSWD, "r");
-@@ -385,13 +404,18 @@ entry_generator_fgetpwent (GHashTable *users,
+@@ -410,13 +429,18 @@ entry_generator_fgetpwent (GHashTable *users,
          /* Every iteration */
          fp = *state;
          pwent = fgetpwent (fp);
@@ -74,7 +74,7 @@ http://bugs.freedesktop.org/show_bug.cgi?id=41747
          return NULL;
  }
  
-@@ -1100,7 +1124,11 @@ daemon_create_user_authorized_cb (Daemon              
+@@ -1125,7 +1149,11 @@ daemon_create_user_authorized_cb (Daemon              
          CreateUserData *cd = data;
          User *user;
          GError *error;
@@ -86,10 +86,10 @@ http://bugs.freedesktop.org/show_bug.cgi?id=41747
  
          if (getpwnam (cd->user_name) != NULL) {
                  throw_error (context, ERROR_USER_EXISTS, "A user with name '%s' already exists", cd->user_name);
-@@ -1117,9 +1145,17 @@ daemon_create_user_authorized_cb (Daemon              
+@@ -1142,9 +1170,17 @@ daemon_create_user_authorized_cb (Daemon              
          if (cd->account_type == ACCOUNT_TYPE_ADMINISTRATOR) {
                  argv[4] = "-G";
-                 argv[5] = "wheel";
+                 argv[5] = ADMIN_GROUP;
 +#ifdef __OpenBSD__
 +                argv[6] = "-L";
 +                argv[7] = "staff";
@@ -104,7 +104,7 @@ http://bugs.freedesktop.org/show_bug.cgi?id=41747
          }
          else if (cd->account_type == ACCOUNT_TYPE_STANDARD) {
                  argv[4] = "--";
-@@ -1320,6 +1356,34 @@ daemon_delete_user_authorized_cb (Daemon              
+@@ -1345,6 +1381,34 @@ daemon_delete_user_authorized_cb (Daemon              
                  return;
          }
  
@@ -139,7 +139,7 @@ http://bugs.freedesktop.org/show_bug.cgi?id=41747
          sys_log (context, "delete user '%s' (%d)", pwent->pw_name, ud->uid);
  
          filename = g_build_filename (USERDIR, pwent->pw_name, NULL);
-@@ -1332,11 +1396,18 @@ daemon_delete_user_authorized_cb (Daemon              
+@@ -1357,11 +1421,18 @@ daemon_delete_user_authorized_cb (Daemon              
  
          argv[0] = "/usr/sbin/userdel";
          if (ud->remove_files) {

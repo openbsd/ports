@@ -1,12 +1,6 @@
-$OpenBSD: patch-src_user_c,v 1.18 2013/01/05 15:02:05 ajacoutot Exp $
-
-From 5b2b8e554d19a37ea5b5e0a1ba2d1b67328863f5 Mon Sep 17 00:00:00 2001
-From: Colin Walters <walters@verbum.org>
-Date: Wed, 19 Dec 2012 00:09:15 +0000
-Subject: user: Fix x-session -> xsession property notification
-
---- src/user.c.orig	Mon Dec 10 16:23:55 2012
-+++ src/user.c	Sat Jan  5 15:40:44 2013
+$OpenBSD: patch-src_user_c,v 1.19 2013/04/19 17:05:32 ajacoutot Exp $
+--- src/user.c.orig	Tue Mar 12 23:42:05 2013
++++ src/user.c	Fri Apr 19 18:42:06 2013
 @@ -116,7 +116,12 @@ account_type_from_pwent (struct passwd *pwent)
  {
          struct group *grp;
@@ -61,16 +55,7 @@ Subject: user: Fix x-session -> xsession property notification
                  locked = TRUE;
          }
          else {
-@@ -315,7 +336,7 @@ user_update_from_keyfile (User     *user,
-         if (s != NULL) {
-                 g_free (user->x_session);
-                 user->x_session = s;
--                g_object_notify (G_OBJECT (user), "x-session");
-+                g_object_notify (G_OBJECT (user), "xsession");
-         }
- 
-         s = g_key_file_get_string (keyfile, "User", "Email", NULL);
-@@ -1235,7 +1256,11 @@ user_change_locked_authorized_cb (Daemon              
+@@ -1236,7 +1257,11 @@ user_change_locked_authorized_cb (Daemon              
                           "%s account of user '%s' (%d)",
                           locked ? "locking" : "unlocking", user->user_name, user->uid);
                  argv[0] = "/usr/sbin/usermod";
@@ -82,7 +67,7 @@ Subject: user: Fix x-session -> xsession property notification
                  argv[2] = "--";
                  argv[3] = user->user_name;
                  argv[4] = NULL;
-@@ -1284,13 +1309,23 @@ user_change_account_type_authorized_cb (Daemon        
+@@ -1285,13 +1310,23 @@ user_change_account_type_authorized_cb (Daemon        
  {
          AccountType account_type = GPOINTER_TO_INT (data);
          GError *error;
@@ -106,7 +91,7 @@ Subject: user: Fix x-session -> xsession property notification
  
          if (user->account_type != account_type) {
                  sys_log (context,
-@@ -1304,17 +1339,35 @@ user_change_account_type_authorized_cb (Daemon        
+@@ -1305,17 +1340,35 @@ user_change_account_type_authorized_cb (Daemon        
                  }
                  wheel = grp->gr_gid;
  
@@ -142,7 +127,7 @@ Subject: user: Fix x-session -> xsession property notification
                          break;
                  case ACCOUNT_TYPE_STANDARD:
                  default:
-@@ -1323,14 +1376,26 @@ user_change_account_type_authorized_cb (Daemon        
+@@ -1324,14 +1377,26 @@ user_change_account_type_authorized_cb (Daemon        
                          break;
                  }
  
