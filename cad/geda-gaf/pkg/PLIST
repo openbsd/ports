@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/11 22:22:40 edd Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2013/04/20 02:50:16 bentley Exp $
 @bin bin/convert_sym
 bin/garchive
 @bin bin/gattrib
@@ -40,6 +39,8 @@ include/libgeda/prototype.h
 include/libgeda/struct.h
 lib/libgeda.a
 lib/libgeda.la
+@lib lib/libgeda.so.${LIBgeda_VERSION}
+lib/pkgconfig/
 lib/pkgconfig/libgeda.pc
 @man man/man1/gnetlist.1
 @man man/man1/grenum.1
@@ -47,7 +48,6 @@ lib/pkgconfig/libgeda.pc
 @man man/man1/gsymcheck.1
 share/applications/geda-gattrib.desktop
 share/applications/geda-gschem.desktop
-@comment share/applications/mimeinfo.cache
 share/doc/geda-gaf/
 share/doc/geda-gaf/examples/
 share/doc/geda-gaf/examples/README
@@ -2103,41 +2103,25 @@ share/gEDA/system-gnetlistrc
 share/gEDA/system-gschemrc
 share/gEDA/system-gschlasrc
 share/gEDA/system-gsymcheckrc
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/mimetypes/
 share/icons/hicolor/16x16/mimetypes/application-x-geda-gsch2pcb-project-16.png
 share/icons/hicolor/16x16/mimetypes/application-x-geda-schematic-16.png
 share/icons/hicolor/16x16/mimetypes/application-x-geda-symbol-16.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/mimetypes/
 share/icons/hicolor/22x22/mimetypes/application-x-geda-gsch2pcb-project-22.png
 share/icons/hicolor/22x22/mimetypes/application-x-geda-schematic-22.png
 share/icons/hicolor/22x22/mimetypes/application-x-geda-symbol-22.png
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/mimetypes/
 share/icons/hicolor/24x24/mimetypes/application-x-geda-gsch2pcb-project-24.png
 share/icons/hicolor/24x24/mimetypes/application-x-geda-schematic-24.png
 share/icons/hicolor/24x24/mimetypes/application-x-geda-symbol-24.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/mimetypes/
 share/icons/hicolor/32x32/mimetypes/application-x-geda-gsch2pcb-project-32.png
 share/icons/hicolor/32x32/mimetypes/application-x-geda-schematic-32.png
 share/icons/hicolor/32x32/mimetypes/application-x-geda-symbol-32.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/geda-gattrib-48.png
 share/icons/hicolor/48x48/apps/geda-gschem-48.png
-share/icons/hicolor/48x48/mimetypes/
 share/icons/hicolor/48x48/mimetypes/application-x-geda-gsch2pcb-project-48.png
 share/icons/hicolor/48x48/mimetypes/application-x-geda-schematic-48.png
 share/icons/hicolor/48x48/mimetypes/application-x-geda-symbol-48.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/geda-gattrib.svg
 share/icons/hicolor/scalable/apps/geda-gschem.svg
-share/icons/hicolor/scalable/mimetypes/
 share/icons/hicolor/scalable/mimetypes/application-x-geda-gsch2pcb-project.svg
 share/icons/hicolor/scalable/mimetypes/application-x-geda-schematic.svg
 share/icons/hicolor/scalable/mimetypes/application-x-geda-symbol.svg
@@ -2160,22 +2144,10 @@ share/locale/nl/LC_MESSAGES/geda-gschem.mo
 share/locale/nl/LC_MESSAGES/libgeda38.mo
 share/locale/pt_BR/LC_MESSAGES/geda-gschem.mo
 share/locale/ru/LC_MESSAGES/geda-gschem.mo
-@comment share/mime/XMLnamespaces
-@comment share/mime/aliases
-share/mime/application/x-geda-gsch2pcb-project.xml
-share/mime/application/x-geda-schematic.xml
-share/mime/application/x-geda-symbol.xml
-@comment share/mime/generic-icons
-@comment share/mime/globs
-@comment share/mime/globs2
-@comment share/mime/icons
-@comment share/mime/magic
-@comment share/mime/mime.cache
 share/mime/packages/libgeda.xml
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
-@comment share/mime/subclasses
-@comment share/mime/treemagic
-@comment share/mime/types
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

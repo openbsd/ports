@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/04/03 06:26:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2013/04/20 02:50:16 bentley Exp $
 
 COMMENT =		suite of tools for electronic design automation
 DISTNAME =		geda-gaf-1.6.0
@@ -6,7 +6,7 @@ CATEGORIES =		cad
 HOMEPAGE =		http://geda.seul.org
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
-REVISION =		5
+REVISION =		6
 
 SHARED_LIBS = 		geda	0.0	# 38.0
 USE_GROFF =	Yes
@@ -38,11 +38,13 @@ BUILD_DEPENDS =		misc/shared-mime-info \
 			devel/desktop-file-utils
 
 RUN_DEPENDS = 		misc/shared-mime-info \
-			devel/desktop-file-utils
+			devel/desktop-file-utils \
+			x11/gtk+2,-guic
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	${CONFIGURE_SHARED}
+CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
+			--disable-update-xdg-database
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build-tools
 
 # This confuses update-patches.
