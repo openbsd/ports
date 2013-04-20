@@ -1,13 +1,13 @@
-$OpenBSD: patch-gcc_config_alpha_openbsd_h,v 1.1.1.1 2013/04/08 08:20:24 pascal Exp $
---- gcc/config/alpha/openbsd.h.orig	Sun Sep 27 15:20:23 2009
-+++ gcc/config/alpha/openbsd.h	Sun Mar 11 19:52:18 2012
+$OpenBSD: patch-gcc_config_alpha_openbsd_h,v 1.2 2013/04/20 20:54:04 pascal Exp $
+--- gcc/config/alpha/openbsd.h.orig	Thu Jan 10 21:38:27 2013
++++ gcc/config/alpha/openbsd.h	Thu Apr 18 20:58:27 2013
 @@ -19,6 +19,28 @@ along with GCC; see the file COPYING3.  If not see
  
  /* Controlling the compilation driver.  */
  
 +#undef TARGET_DEFAULT
 +#define TARGET_DEFAULT \
-+	(MASK_FPREGS | MASK_IEEE | MASK_IEEE_CONFORMANT | MASK_GAS)
++	(MASK_FPREGS | MASK_IEEE | MASK_IEEE_CONFORMANT)
 +
 + #define LINK_SPEC \
 +  "%{!shared:%{!nostdlib:%{!r*:%{!e*:-e __start}}}} \
