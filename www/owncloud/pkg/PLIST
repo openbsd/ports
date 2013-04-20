@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2013/04/11 16:45:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2013/04/20 06:38:56 ajacoutot Exp $
 @extra owncloud/config/config.php
 owncloud/
 owncloud/.htaccess.dist
@@ -2563,12 +2563,15 @@ owncloud/apps/files_videoviewer/mediaelement/src/js/jeesh.js
 owncloud/apps/files_videoviewer/mediaelement/src/js/me-featuredetection.js
 owncloud/apps/files_videoviewer/mediaelement/src/js/me-header.js
 owncloud/apps/files_videoviewer/mediaelement/src/js/me-i18n-locale-de.js
+owncloud/apps/files_videoviewer/mediaelement/src/js/me-i18n-locale-zh.js
 owncloud/apps/files_videoviewer/mediaelement/src/js/me-i18n.js
 owncloud/apps/files_videoviewer/mediaelement/src/js/me-mediaelements.js
 owncloud/apps/files_videoviewer/mediaelement/src/js/me-namespace.js
 owncloud/apps/files_videoviewer/mediaelement/src/js/me-plugindetector.js
 owncloud/apps/files_videoviewer/mediaelement/src/js/me-shim.js
 owncloud/apps/files_videoviewer/mediaelement/src/js/me-utility.js
+owncloud/apps/files_videoviewer/mediaelement/src/js/mep-feature-ads-vast.js
+owncloud/apps/files_videoviewer/mediaelement/src/js/mep-feature-ads.js
 owncloud/apps/files_videoviewer/mediaelement/src/js/mep-feature-backlight.js
 owncloud/apps/files_videoviewer/mediaelement/src/js/mep-feature-contextmenu.js
 owncloud/apps/files_videoviewer/mediaelement/src/js/mep-feature-endedhtml.js
