@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/03/11 11:35:57 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2013/04/20 16:26:25 sthen Exp $
 
 COMMENT-gui =		enhanced TightVNC client GUI and wrappers
 COMMENT-main =		enhanced TightVNC client
@@ -10,7 +10,8 @@ PKGNAME =		ssvnc-$V
 EPOCH =			0
 FULLPKGNAME-gui =	ssvnc-$V
 FULLPKGNAME-main =	ssvnc-viewer-$V
-REVISION-gui =		0
+REVISION-gui =		1
+REVISION-main =		0
 
 CATEGORIES =		net x11
 
@@ -52,7 +53,7 @@ VNCSRC =		${WRKSRC}/vnc_unixsrc/
 VNCLIB =		${PREFIX}/lib/ssvnc/
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/scripts/ssvnc
+	cd ${WRKSRC}/scripts; ${SUBST_CMD} ssvnc util/ss_vncviewer
 
 do-configure:
 	cd ${VNCSRC}/libvncauth; ${XMKMF}
@@ -71,7 +72,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/ssvnc.desktop ${PREFIX}/share/applications
 	${INSTALL_PROGRAM} ${VNCSRC}/vncviewer/vncviewer ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/vncstorepw/vncstorepw ${VNCLIB}
+	${INSTALL_PROGRAM} ${WRKSRC}/vncstorepw/vncstorepw ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/vncstorepw/ultravnc_dsm_helper ${VNCLIB}
 .for i in vncstorepw/lim_accept.so vncstorepw/unwrap.so
 	if test -r ${WRKSRC}/$i; then ${INSTALL_DATA} ${WRKSRC}/$i ${VNCLIB}; fi

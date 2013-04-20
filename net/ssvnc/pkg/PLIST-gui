@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-gui,v 1.5 2011/09/15 20:24:16 sthen Exp $
+@comment $OpenBSD: PLIST-gui,v 1.6 2013/04/20 16:26:25 sthen Exp $
 bin/sshvnc
 bin/ssvnc
 bin/tsvnc
@@ -15,7 +15,6 @@ lib/ssvnc/util/ss_vncviewer
 lib/ssvnc/util/ssvnc.tcl
 @comment lib/ssvnc/util/ssvnc.tcl.orig
 lib/ssvnc/util/stunnel-server.conf
-@bin lib/ssvnc/vncstorepw
 @man man/man1/ssvnc.1
 %%SHARED%%
 share/applications/ssvnc.desktop
