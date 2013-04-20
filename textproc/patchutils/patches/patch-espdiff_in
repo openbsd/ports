@@ -1,0 +1,18 @@
+$OpenBSD: patch-espdiff_in,v 1.1.1.1 2013/04/20 17:06:31 sthen Exp $
+--- espdiff.in.orig	Wed Jun 11 11:01:28 2008
++++ espdiff.in	Fri Apr 19 00:41:46 2013
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ #
+ # espdiff - do whatever it was you wanted
+ # Copyright (C) 2003 Tim Waugh <twaugh@redhat.com>
+@@ -78,6 +78,7 @@ then
+   delay=$(($delay * 2))
+ fi
+ 
+-read -t $delay -p 'Please concentrate... ' || echo
++echo -n 'Please concentrate... '
++sleep $delay
+ echo 'No brainwave activity detected.  Aborting.'
+ exit 1

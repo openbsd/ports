@@ -1,0 +1,9 @@
+$OpenBSD: patch-editdiff_in,v 1.1.1.1 2013/04/20 17:06:31 sthen Exp $
+--- editdiff.in.orig	Fri Apr 19 00:32:57 2013
++++ editdiff.in	Fri Apr 19 00:33:09 2013
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ #
+ # editdiff - simple wrapper around rediff
+ # Copyright (C) 2001-2002, 2011 Tim Waugh <twaugh@redhat.com>

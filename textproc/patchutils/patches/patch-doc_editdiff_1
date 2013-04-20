@@ -1,0 +1,6 @@
+$OpenBSD: patch-doc_editdiff_1,v 1.1.1.1 2013/04/20 17:06:31 sthen Exp $
+--- doc/editdiff.1.orig	Fri Apr 19 00:45:29 2013
++++ doc/editdiff.1	Fri Apr 19 00:45:53 2013
+@@ -1 +1 @@
+-.so rediff.1
++.so man1/rediff.1

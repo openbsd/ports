@@ -1,0 +1,13 @@
+Patchutils is a small collection of programs that operate on patch files.
+
+Interdiff: generate incremental patch from two patches against common source
+Combinediff: generate single patch from two incremental patches
+Filterdiff: separate patches applying to files matching a wildcard
+Fixcvsdiff: corrects output of 'cvs diff'
+Rediff/Editdiff: corrects hand-edited patches
+Lsdiff: identify files affected by a patch file
+Splitdiff: separates patches from a patch file
+Grepdiff: displays a list of the files modified by a patch where the
+patch contains a given regular expression
+Recountdiff: fixes up counts and offsets in a unified diff
+Unwrapdiff: fixes word-wrapped unified diffs

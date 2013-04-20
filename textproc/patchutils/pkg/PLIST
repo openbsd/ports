@@ -1,0 +1,29 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/20 17:06:31 sthen Exp $
+bin/combinediff
+bin/dehtmldiff
+bin/editdiff
+bin/espdiff
+@bin bin/filterdiff
+bin/fixcvsdiff
+bin/flipdiff
+bin/grepdiff
+@bin bin/interdiff
+bin/lsdiff
+bin/recountdiff
+@bin bin/rediff
+bin/splitdiff
+bin/unwrapdiff
+@man man/man1/combinediff.1
+@man man/man1/dehtmldiff.1
+@man man/man1/editdiff.1
+@man man/man1/espdiff.1
+@man man/man1/filterdiff.1
+@man man/man1/fixcvsdiff.1
+@man man/man1/flipdiff.1
+@man man/man1/grepdiff.1
+@man man/man1/interdiff.1
+@man man/man1/lsdiff.1
+@man man/man1/recountdiff.1
+@man man/man1/rediff.1
+@man man/man1/splitdiff.1
+@man man/man1/unwrapdiff.1

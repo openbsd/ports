@@ -1,0 +1,9 @@
+$OpenBSD: patch-tests_combine3_run-test,v 1.1.1.1 2013/04/20 17:06:31 sthen Exp $
+--- tests/combine3/run-test.orig	Fri Apr 19 00:38:48 2013
++++ tests/combine3/run-test	Fri Apr 19 00:38:51 2013
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ # This is a combinediff(1) testcase.
+ 

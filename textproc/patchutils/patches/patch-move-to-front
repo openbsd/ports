@@ -1,0 +1,9 @@
+$OpenBSD: patch-move-to-front,v 1.1.1.1 2013/04/20 17:06:31 sthen Exp $
+--- move-to-front.orig	Fri Apr 19 00:35:57 2013
++++ move-to-front	Fri Apr 19 00:36:50 2013
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ if [ "$#" -eq 0 ] || [ "x$1" == "x--help" ]
+ then
+   echo "usage: move-to-front [PATCHES..] PATCH"
