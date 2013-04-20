@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_openvpn_init_c,v 1.1 2013/04/20 16:22:55 sthen Exp $
+--- src/openvpn/init.c.orig	Wed Mar 20 09:28:14 2013
++++ src/openvpn/init.c	Mon Apr  1 17:55:36 2013
+@@ -2639,6 +2639,7 @@ do_init_socket_1 (struct context *c, const int mode)
+ 			   c->options.rcvbuf,
+ 			   c->options.sndbuf,
+ 			   c->options.mark,
++			   c->options.rtable,
+ 			   sockflags);
+ }
+ 

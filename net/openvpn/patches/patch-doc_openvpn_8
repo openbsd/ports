@@ -1,7 +1,7 @@
-$OpenBSD: patch-openvpn_8,v 1.4 2012/01/12 08:15:30 sthen Exp $
---- openvpn.8.orig	Fri Jun 24 07:13:39 2011
-+++ openvpn.8	Fri Jul  8 14:30:59 2011
-@@ -1357,6 +1357,11 @@ on both client and server for maximum effect.
+$OpenBSD: patch-doc_openvpn_8,v 1.1 2013/04/20 16:22:55 sthen Exp $
+--- doc/openvpn.8.orig	Wed Mar 20 09:28:14 2013
++++ doc/openvpn.8	Mon Apr  1 17:55:36 2013
+@@ -1411,6 +1411,11 @@ on both client and server for maximum effect.
  Currently defaults to 100.
  .\"*********************************************************
  .TP

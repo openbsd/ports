@@ -1,6 +1,6 @@
-$OpenBSD: patch-sample-config-files_xinetd-server-config,v 1.1 2006/12/15 09:56:14 robert Exp $
---- sample-config-files/xinetd-server-config.orig	Tue Nov  1 12:06:10 2005
-+++ sample-config-files/xinetd-server-config	Fri Dec 15 09:22:42 2006
+$OpenBSD: patch-sample_sample-config-files_xinetd-server-config,v 1.1 2013/04/20 16:22:55 sthen Exp $
+--- sample/sample-config-files/xinetd-server-config.orig	Mon Sep 10 17:01:08 2012
++++ sample/sample-config-files/xinetd-server-config	Thu Mar  7 14:02:35 2013
 @@ -21,5 +21,5 @@ service openvpn_1
          wait            = yes
          user            = root

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_openvpn_syshead_h,v 1.1 2013/04/20 16:22:55 sthen Exp $
+--- src/openvpn/syshead.h.orig	Thu Nov 22 13:07:51 2012
++++ src/openvpn/syshead.h	Thu Mar  7 14:02:35 2013
+@@ -29,7 +29,7 @@
+ #include "compat-stdbool.h"
+ 
+ /* branch prediction hints */
+-#if defined(__GNUC__)
++#if defined(__GNUC__) && __GNUC__ >= 3
+ # define likely(x)       __builtin_expect((x),1)
+ # define unlikely(x)     __builtin_expect((x),0)
+ #else

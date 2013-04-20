@@ -1,6 +1,6 @@
-$OpenBSD: patch-sample-config-files_client_conf,v 1.2 2010/08/30 18:32:20 fkr Exp $
---- sample-config-files/client.conf.orig	Wed Mar 31 08:47:07 2010
-+++ sample-config-files/client.conf	Fri Aug 27 09:03:50 2010
+$OpenBSD: patch-sample_sample-config-files_client_conf,v 1.1 2013/04/20 16:22:55 sthen Exp $
+--- sample/sample-config-files/client.conf.orig	Mon Sep 10 17:01:08 2012
++++ sample/sample-config-files/client.conf	Thu Mar  7 14:02:35 2013
 @@ -58,8 +58,8 @@ resolv-retry infinite
  nobind
  

@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.5 2013/04/20 16:22:55 sthen Exp $
+--- configure.orig	Thu Mar 28 12:59:53 2013
++++ configure	Mon Apr  1 17:55:36 2013
+@@ -16308,7 +16308,7 @@ fi
+ 
+ 
+ plugindir="${with_plugindir}"
+-sampledir="\$(docdir)/sample"
++sampledir="\$(docdir)"
+ 
+ 
+ 

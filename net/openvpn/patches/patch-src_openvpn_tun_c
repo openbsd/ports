@@ -1,9 +1,9 @@
-$OpenBSD: patch-tun_c,v 1.1 2012/01/23 18:07:21 sthen Exp $
---- tun.c.orig	Tue Dec 13 16:58:56 2011
-+++ tun.c	Thu Jan 12 09:04:48 2012
-@@ -776,7 +776,19 @@ do_ifconfig (struct tuntap *tt,
- 			  tun_mtu
+$OpenBSD: patch-src_openvpn_tun_c,v 1.1 2013/04/20 16:22:55 sthen Exp $
+--- src/openvpn/tun.c.orig	Wed Mar 20 09:28:14 2013
++++ src/openvpn/tun.c	Mon Apr  1 17:55:36 2013
+@@ -911,7 +911,19 @@ do_ifconfig (struct tuntap *tt,
  			  );
+ 	}
        else
 -	argv_printf (&argv,
 +      {
@@ -22,13 +22,17 @@ $OpenBSD: patch-tun_c,v 1.1 2012/01/23 18:07:21 sthen Exp $
  			  "%s %s %s netmask %s mtu %d broadcast %s link0",
  			  IFCONFIG_PATH,
  			  actual,
-@@ -785,9 +797,22 @@ do_ifconfig (struct tuntap *tt,
+@@ -920,6 +932,7 @@ do_ifconfig (struct tuntap *tt,
  			  tun_mtu,
  			  ifconfig_broadcast
  			  );
 +      }
        argv_msg (M_INFO, &argv);
        openvpn_execve_check (&argv, es, S_FATAL, "OpenBSD ifconfig failed");
+       if ( do_ipv6 )
+@@ -938,6 +951,18 @@ do_ifconfig (struct tuntap *tt,
+ 	  add_route_connected_v6_net(tt, es);
+ 	}
        tt->did_ifconfig = true;
 +
 +      /* Add a network route for the local tun interface */
@@ -36,11 +40,11 @@ $OpenBSD: patch-tun_c,v 1.1 2012/01/23 18:07:21 sthen Exp $
 +        {
 +          struct route r;
 +          CLEAR (r);
-+          r.defined = true;
++          r.flags = RT_DEFINED;
 +          r.network = tt->local & tt->remote_netmask;
 +          r.netmask = tt->remote_netmask;
 +          r.gateway = tt->local;
-+          add_route (&r, tt, 0, es);
++          add_route (&r, tt, 0, NULL, es);
 +        }
  
  #elif defined(TARGET_NETBSD)

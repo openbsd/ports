@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_openvpn_socket_h,v 1.1 2013/04/20 16:22:55 sthen Exp $
+--- src/openvpn/socket.h.orig	Thu Dec 20 09:56:00 2012
++++ src/openvpn/socket.h	Thu Mar  7 14:02:35 2013
+@@ -327,6 +327,7 @@ link_socket_init_phase1 (struct link_socket *sock,
+ 			 int mtu_discover_type,
+ 			 int rcvbuf,
+ 			 int sndbuf,
++			 int rtable,
+ 			 int mark,
+ 			 unsigned int sockflags);
+ 

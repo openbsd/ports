@@ -1,7 +1,7 @@
-$OpenBSD: patch-socket_c,v 1.4 2012/01/12 08:15:30 sthen Exp $
---- socket.c.orig	Mon Feb 21 16:38:10 2011
-+++ socket.c	Tue Mar 22 23:00:56 2011
-@@ -532,6 +532,20 @@ socket_set_tcp_nodelay (int sd, int state)
+$OpenBSD: patch-src_openvpn_socket_c,v 1.1 2013/04/20 16:22:55 sthen Exp $
+--- src/openvpn/socket.c.orig	Thu Dec 13 16:46:01 2012
++++ src/openvpn/socket.c	Thu Mar  7 14:25:07 2013
+@@ -586,6 +586,20 @@ socket_set_mark (int sd, int mark)
  #endif
  }
  
@@ -12,7 +12,7 @@ $OpenBSD: patch-socket_c,v 1.4 2012/01/12 08:15:30 sthen Exp $
 +  if (rtable > 0)
 +  {
 +    if (setsockopt (sd, IPPROTO_IP, SO_RTABLE, &rtable, sizeof(rtable)) == -1)
-+      msg (M_SOCKERR, "Socket flags: SO_RTABLE=%d failed, cannot bind on specified routing domain", rtable);
++      msg (M_WARN, "Socket flags: SO_RTABLE=%d failed, cannot bind on specified routing domain", rtable);
 +    else
 +      dmsg (D_SOCKET_DEBUG, "Socket flags: SO_RTABLE=%d succeeded", rtable);
 +  }
@@ -22,15 +22,15 @@ $OpenBSD: patch-socket_c,v 1.4 2012/01/12 08:15:30 sthen Exp $
  static bool
  socket_set_flags (int sd, unsigned int sockflags)
  {
-@@ -1210,6 +1224,7 @@ link_socket_init_phase1 (struct link_socket *sock,
+@@ -1367,6 +1381,7 @@ link_socket_init_phase1 (struct link_socket *sock,
  			 int mtu_discover_type,
  			 int rcvbuf,
  			 int sndbuf,
 +			 int rtable,
+ 			 int mark,
  			 unsigned int sockflags)
  {
-   ASSERT (sock);
-@@ -1320,6 +1335,9 @@ link_socket_init_phase1 (struct link_socket *sock,
+@@ -1481,6 +1496,9 @@ link_socket_init_phase1 (struct link_socket *sock,
    else if (mode != LS_MODE_TCP_ACCEPT_FROM)
      {
        create_socket (sock);

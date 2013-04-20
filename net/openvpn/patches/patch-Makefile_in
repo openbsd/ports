@@ -1,0 +1,13 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2013/04/20 16:22:55 sthen Exp $
+--- Makefile.in.orig	Thu Mar 28 12:59:54 2013
++++ Makefile.in	Mon Apr  1 17:55:36 2013
+@@ -383,8 +383,7 @@ EXTRA_DIST = \
+ @GIT_CHECKOUT_TRUE@	config-version.h
+ 
+ SUBDIRS = build distro include src sample doc tests
+-dist_doc_DATA = README README.IPv6 README.polarssl COPYRIGHT.GPL \
+-	COPYING $(am__append_1)
++dist_doc_DATA = $(am__append_1)
+ dist_noinst_DATA = .gitignore .gitattributes config-version.h.in PORTS \
+ 	README.IPv6 TODO.IPv6 README.polarssl openvpn.sln msvc-env.bat \
+ 	msvc-dev.bat msvc-build.bat $(am__append_2)
