@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2011/09/17 10:29:44 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.24 2013/04/20 13:55:48 sthen Exp $
 lib/${MODAPACHE_MODULE}
 @exec-update test ! -f ${MODAPACHE_FINAL} || cp -fp %D/%F ${MODAPACHE_FINAL}
 ${P5ARCH}/Apache/
@@ -29,7 +29,7 @@ ${P5ARCH}/Apache/RegistryNG.pm
 ${P5ARCH}/Apache/Resource.pm
 ${P5ARCH}/Apache/SIG.pm
 ${P5ARCH}/Apache/Server.pm
-${P5ARCH}/Apache/SizeLimit.pm
+@comment ${P5ARCH}/Apache/SizeLimit.pm
 ${P5ARCH}/Apache/StatINC.pm
 ${P5ARCH}/Apache/Status.pm
 ${P5ARCH}/Apache/Symbol.pm
@@ -89,7 +89,7 @@ ${P5ARCH}/mod_perl_tuning.pod
 @man man/man3p/Apache::RegistryLoader.3p
 @man man/man3p/Apache::Resource.3p
 @man man/man3p/Apache::SIG.3p
-@man man/man3p/Apache::SizeLimit.3p
+@comment @man man/man3p/Apache::SizeLimit.3p
 @man man/man3p/Apache::StatINC.3p
 @man man/man3p/Apache::Status.3p
 @man man/man3p/Apache::Symbol.3p
