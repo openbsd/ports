@@ -1,0 +1,25 @@
+$OpenBSD: patch-jmorecfg_h,v 1.1 2013/04/20 21:25:29 naddy Exp $
+
+Restore assumptions about boolean/TRUE/FALSE to those of jpeg 8.
+
+--- jmorecfg.h.orig	Wed Aug  8 16:23:20 2012
++++ jmorecfg.h	Sat Apr 20 23:16:23 2013
+@@ -252,15 +252,14 @@ typedef void noreturn_t;
+  * Defining HAVE_BOOLEAN before including jpeglib.h should make it work.
+  */
+ 
+-#ifdef HAVE_BOOLEAN
++#ifndef HAVE_BOOLEAN
++typedef int boolean;
++#endif
+ #ifndef FALSE			/* in case these macros already exist */
+ #define FALSE	0		/* values of boolean */
+ #endif
+ #ifndef TRUE
+ #define TRUE	1
+-#endif
+-#else
+-typedef enum { FALSE = 0, TRUE = 1 } boolean;
+ #endif
+ 
+ 
