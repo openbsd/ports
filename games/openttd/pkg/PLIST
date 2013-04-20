@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2013/01/18 11:34:37 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.16 2013/04/20 02:52:31 bentley Exp $
 @bin bin/openttd
 @man man/man6/openttd.6
 share/applications/openttd.desktop
@@ -50,6 +50,7 @@ share/openttd/ai/compat_0.7.nut
 share/openttd/ai/compat_1.0.nut
 share/openttd/ai/compat_1.1.nut
 share/openttd/ai/compat_1.2.nut
+share/openttd/ai/compat_1.3.nut
 share/openttd/baseset/
 share/openttd/baseset/no_music.obm
 share/openttd/baseset/no_sound.obs
@@ -107,6 +108,7 @@ share/openttd/gm/wood_whistles.mid
 share/openttd/lang/
 share/openttd/lang/afrikaans.lng
 share/openttd/lang/arabic_egypt.lng
+share/openttd/lang/basque.lng
 share/openttd/lang/belarusian.lng
 share/openttd/lang/brazilian_portuguese.lng
 share/openttd/lang/bulgarian.lng
@@ -149,6 +151,7 @@ share/openttd/lang/slovak.lng
 share/openttd/lang/slovenian.lng
 share/openttd/lang/spanish.lng
 share/openttd/lang/swedish.lng
+share/openttd/lang/tamil.lng
 share/openttd/lang/traditional_chinese.lng
 share/openttd/lang/turkish.lng
 share/openttd/lang/ukrainian.lng
