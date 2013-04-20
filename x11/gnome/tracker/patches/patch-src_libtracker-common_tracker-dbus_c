@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_libtracker-common_tracker-dbus_c,v 1.8 2013/04/10 14:30:43 ajacoutot Exp $
+$OpenBSD: patch-src_libtracker-common_tracker-dbus_c,v 1.9 2013/04/20 13:55:34 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=697719
 
 --- src/libtracker-common/tracker-dbus.c.orig	Thu May  3 17:22:57 2012
-+++ src/libtracker-common/tracker-dbus.c	Wed Apr 10 15:12:01 2013
++++ src/libtracker-common/tracker-dbus.c	Thu Apr 18 14:12:43 2013
 @@ -23,6 +23,14 @@
  #include <gio/gunixinputstream.h>
  #include <gio/gunixoutputstream.h>
@@ -27,7 +27,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=697719
  		gchar *filename;
  		gchar *pid_str;
  		gchar *contents = NULL;
-@@ -171,6 +180,29 @@ client_data_new (gchar *sender)
+@@ -171,6 +180,36 @@ client_data_new (gchar *sender)
  
  		g_strfreev (strv);
  		g_free (contents);
@@ -40,19 +40,26 @@ https://bugzilla.gnome.org/show_bug.cgi?id=697719
 +		if ((kd = kvm_openfiles (NULL, NULL, NULL, KVM_NO_FILES, NULL)) == NULL)
 +			return cd;
 +
-+		if ((kp = kvm_getprocs (kd, KERN_PROC_PID, cd->pid, sizeof (*kp), &nproc)) == NULL)
-+			goto out;
++		if ((kp = kvm_getprocs (kd, KERN_PROC_PID, cd->pid, sizeof (*kp), &nproc)) == NULL) {
++			g_warning ("Could not get process name: %s", kvm_geterr (kd));
++			kvm_close(kd);
++			return cd;
++		}
 +
-+		if ((kp->p_flag & P_SYSTEM) != 0) 
-+			goto out;
++		if ((kp->p_flag & P_SYSTEM) != 0) {
++			kvm_close(kd);
++			return cd;
++		}
 +
-+		if ((strv = kvm_getargv (kd, kp, 0)) == NULL)
-+			goto out;
++		strv = kvm_getargv (kd, kp, 0);
 +
-+		cd->binary = g_path_get_basename (strv[0]);
-+
-+out:
-+		kvm_close(kd);
++		if (strv == NULL) {
++			kvm_close(kd);
++			return cd;
++		} else {
++			cd->binary = g_path_get_basename (strv[0]);
++			kvm_close(kd);
++		}
 +#endif
  	}
  
