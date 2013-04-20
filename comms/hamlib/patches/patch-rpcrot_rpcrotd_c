@@ -1,7 +1,7 @@
-$OpenBSD: patch-rpcrot_rpcrotd_c,v 1.1.1.1 2007/05/28 17:07:27 jason Exp $
---- rpcrot/rpcrotd.c.orig	Tue Nov  1 10:09:40 2005
-+++ rpcrot/rpcrotd.c	Tue Nov  1 10:10:30 2005
-@@ -45,6 +45,9 @@
+$OpenBSD: patch-rpcrot_rpcrotd_c,v 1.2 2013/04/20 14:58:01 sthen Exp $
+--- rpcrot/rpcrotd.c.orig	Thu Nov  1 21:27:27 2012
++++ rpcrot/rpcrotd.c	Sun Apr 14 22:00:44 2013
+@@ -43,6 +43,9 @@
  
  #include <hamlib/rotator.h>
  
@@ -9,5 +9,5 @@ $OpenBSD: patch-rpcrot_rpcrotd_c,v 1.1.1.1 2007/05/28 17:07:27 jason Exp $
 +int _rpcsvcdirty;
 +#endif
  
- /* 
+ /*
   * Prototypes

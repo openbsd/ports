@@ -1,23 +1,22 @@
-# $OpenBSD: Makefile,v 1.28 2013/03/21 08:45:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2013/04/20 14:58:01 sthen Exp $
+
+SHARED_ONLY=	Yes
 
 COMMENT-main=	radio/rotator control library
 COMMENT-python=	python bindings for hamlib
 COMMENT-tcl=	tcl bindings for hamlib
 
-VERSION=	1.2.6
+VERSION=	1.2.15.3
 DISTNAME=	hamlib-${VERSION}
 PKGNAME-main=	hamlib-${VERSION}
-REVISION-main =	9
 PKGNAME-python=	hamlib-python-${VERSION}
-REVISION-python = 10
 PKGNAME-tcl=	hamlib-tcl-${VERSION}
-REVISION-tcl =	9
-CATEGORIES=    	comms hamradio
+CATEGORIES=	comms hamradio
 
 MULTI_PACKAGES=	-main -python -tcl
 
-SHARED_LIBS=	hamlib 2.5 \
-		hamlib++ 2.5
+SHARED_LIBS +=	hamlib               3.0      # 2.16
+SHARED_LIBS +=	hamlib++             3.0      # 2.16
 
 HOMEPAGE=	http://hamlib.sourceforge.net/
 
@@ -28,10 +27,12 @@ MODULES=	lang/python \
 # GPLv2/LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-cWANTLIB =		ltdl m usb usb-1.0
-WANTLIB-main =		${cWANTLIB} c stdc++ z xml2 pthread ${MODLIBICONV_WANTLIB}
-WANTLIB-python =	${cWANTLIB} hamlib ${MODPY_WANTLIB}
-WANTLIB-tcl =		${cWANTLIB} hamlib ${MODTCL_WANTLIB}
+LIBTOOL_FLAGS=		--tag=disable-static
+
+cWANTLIB=		ltdl m pthread usb usb-1.0
+WANTLIB-main=		${cWANTLIB} c stdc++ z xml2 ${MODLIBICONV_WANTLIB}
+WANTLIB-python=		${cWANTLIB} hamlib ${MODPY_WANTLIB}
+WANTLIB-tcl=		${cWANTLIB} hamlib ${MODTCL_WANTLIB}
 
 LIB_DEPENDS-main=	textproc/libxml \
 			devel/libusb-compat \
@@ -49,15 +50,17 @@ RUN_DEPENDS-tcl=	${MODTCL_RUN_DEPENDS}
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=hamlib/}
 
-USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS= 	--with-cxx-binding \
+CONFIGURE_ARGS=		--with-cxx-binding \
 			--with-perl-binding \
 			--with-rpc-backends \
-			--with-tcl-binding \
+			--enable-tcl-binding \
 			--with-python-binding \
 			--without-rigmatrix \
 			--with-tcl=${MODTCL_LIBDIR}
-CONFIGURE_ENV=		CPPFLAGS+="-I${LOCALBASE}/include"
+CONFIGURE_ENV=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
+
+post-install:
+	rm -f ${PREFIX}/lib/hamlib/*.la
 
 .include <bsd.port.mk>

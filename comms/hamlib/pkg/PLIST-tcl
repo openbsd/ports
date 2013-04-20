@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-tcl,v 1.1.1.1 2007/05/28 17:07:27 jason Exp $
-%%SHARED%%
-lib/hamlibtcl.a
+@comment $OpenBSD: PLIST-tcl,v 1.2 2013/04/20 14:58:01 sthen Exp $
+lib/hamlibtcl-1.0.so
 lib/hamlibtcl.la
+lib/hamlibtcl.so
 lib/tcl/
 lib/tcl/pkgIndex.tcl
