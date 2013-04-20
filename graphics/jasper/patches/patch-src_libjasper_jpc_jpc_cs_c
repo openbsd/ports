@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_libjasper_jpc_jpc_cs_c,v 1.3 2008/05/17 09:32:16 espie Exp $
---- src/libjasper/jpc/jpc_cs.c.orig	Fri May 16 21:00:25 2008
-+++ src/libjasper/jpc/jpc_cs.c	Fri May 16 21:05:18 2008
+$OpenBSD: patch-src_libjasper_jpc_jpc_cs_c,v 1.4 2013/04/20 15:25:35 naddy Exp $
+--- src/libjasper/jpc/jpc_cs.c.orig	Fri Jan 19 22:43:07 2007
++++ src/libjasper/jpc/jpc_cs.c	Fri Apr 19 18:32:09 2013
 @@ -502,7 +502,7 @@ static int jpc_siz_getparms(jpc_ms_t *ms, jpc_cstate_t
  	  !siz->tileheight || !siz->numcomps) {
  		return -1;
@@ -10,16 +10,32 @@ $OpenBSD: patch-src_libjasper_jpc_jpc_cs_c,v 1.3 2008/05/17 09:32:16 espie Exp $
  		return -1;
  	}
  	for (i = 0; i < siz->numcomps; ++i) {
-@@ -983,7 +983,7 @@ static int jpc_qcx_getcompparms(jpc_qcxcp_t *compparms
+@@ -744,6 +744,10 @@ static int jpc_cox_getcompparms(jpc_ms_t *ms, jpc_csta
+ 		return -1;
+ 	}
+ 	compparms->numrlvls = compparms->numdlvls + 1;
++	if (compparms->numrlvls > JPC_MAXRLVLS) {
++		jpc_cox_destroycompparms(compparms);
++		return -1;
++	}
+ 	if (prtflag) {
+ 		for (i = 0; i < compparms->numrlvls; ++i) {
+ 			if (jpc_getuint8(in, &tmp)) {
+@@ -982,8 +986,12 @@ static int jpc_qcx_getcompparms(jpc_qcxcp_t *compparms
+ 		compparms->numstepsizes = (len - n) / 2;
  		break;
  	}
++	if (compparms->numstepsizes > 3 * JPC_MAXRLVLS + 1) {
++		jpc_qcx_destroycompparms(compparms);
++		return -1;
++	}
  	if (compparms->numstepsizes > 0) {
 -		compparms->stepsizes = jas_malloc(compparms->numstepsizes *
 +		compparms->stepsizes = jas_alloc2(compparms->numstepsizes,
  		  sizeof(uint_fast16_t));
  		assert(compparms->stepsizes);
  		for (i = 0; i < compparms->numstepsizes; ++i) {
-@@ -1091,7 +1091,7 @@ static int jpc_ppm_getparms(jpc_ms_t *ms, jpc_cstate_t
+@@ -1091,7 +1099,7 @@ static int jpc_ppm_getparms(jpc_ms_t *ms, jpc_cstate_t
  
  	ppm->len = ms->len - 1;
  	if (ppm->len > 0) {
@@ -28,7 +44,7 @@ $OpenBSD: patch-src_libjasper_jpc_jpc_cs_c,v 1.3 2008/05/17 09:32:16 espie Exp $
  			goto error;
  		}
  		if (JAS_CAST(uint, jas_stream_read(in, ppm->data, ppm->len)) != ppm->len) {
-@@ -1160,7 +1160,7 @@ static int jpc_ppt_getparms(jpc_ms_t *ms, jpc_cstate_t
+@@ -1160,7 +1168,7 @@ static int jpc_ppt_getparms(jpc_ms_t *ms, jpc_cstate_t
  	}
  	ppt->len = ms->len - 1;
  	if (ppt->len > 0) {
@@ -37,7 +53,7 @@ $OpenBSD: patch-src_libjasper_jpc_jpc_cs_c,v 1.3 2008/05/17 09:32:16 espie Exp $
  			goto error;
  		}
  		if (jas_stream_read(in, (char *) ppt->data, ppt->len) != JAS_CAST(int, ppt->len)) {
-@@ -1223,7 +1223,7 @@ static int jpc_poc_getparms(jpc_ms_t *ms, jpc_cstate_t
+@@ -1223,7 +1231,7 @@ static int jpc_poc_getparms(jpc_ms_t *ms, jpc_cstate_t
  	uint_fast8_t tmp;
  	poc->numpchgs = (cstate->numcomps > 256) ? (ms->len / 9) :
  	  (ms->len / 7);
@@ -46,16 +62,16 @@ $OpenBSD: patch-src_libjasper_jpc_jpc_cs_c,v 1.3 2008/05/17 09:32:16 espie Exp $
  		goto error;
  	}
  	for (pchgno = 0, pchg = poc->pchgs; pchgno < poc->numpchgs; ++pchgno,
-@@ -1328,7 +1328,7 @@ static int jpc_crg_getparms(jpc_ms_t *ms, jpc_cstate_t
+@@ -1328,7 +1336,7 @@ static int jpc_crg_getparms(jpc_ms_t *ms, jpc_cstate_t
  	jpc_crgcomp_t *comp;
  	uint_fast16_t compno;
  	crg->numcomps = cstate->numcomps;
 -	if (!(crg->comps = jas_malloc(cstate->numcomps * sizeof(uint_fast16_t)))) {
-+	if (!(crg->comps = jas_alloc2(cstate->numcomps, sizeof(uint_fast16_t)))) {
++	if (!(crg->comps = jas_alloc2(cstate->numcomps, sizeof(jpc_crgcomp_t)))) {
  		return -1;
  	}
  	for (compno = 0, comp = crg->comps; compno < cstate->numcomps;
-@@ -1467,7 +1467,7 @@ static int jpc_unk_getparms(jpc_ms_t *ms, jpc_cstate_t
+@@ -1467,7 +1475,7 @@ static int jpc_unk_getparms(jpc_ms_t *ms, jpc_cstate_t
  	cstate = 0;
  
  	if (ms->len > 0) {

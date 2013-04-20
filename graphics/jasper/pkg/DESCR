@@ -1,7 +1,2 @@
-The JasPer Project is a collaborative effort between Image Power,
-Inc.  and the University of British Columbia. The objective of this
-project is to develop a software-based reference implementation of
-the codec specified in the JPEG-2000 Part-1 standard (i.e., ISO/IEC
-15444-1). This software has also been submitted to the ISO for
-inclusion in the JPEG-2000 Part-5 standard (as an official reference
-implementation).
+JasPer provides a reference implementation of the codec specified
+in the JPEG-2000 Part-1 standard (i.e., ISO/IEC 15444-1).

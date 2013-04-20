@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/03/29 13:43:53 jasper Exp $
-bin/imgcmp
-bin/imginfo
-bin/jasper
-bin/tmrdemo
+@comment $OpenBSD: PLIST,v 1.4 2013/04/20 15:25:35 naddy Exp $
+@bin bin/imgcmp
+@bin bin/imginfo
+@bin bin/jasper
+@bin bin/tmrdemo
 include/jasper/
 include/jasper/jas_cm.h
 include/jasper/jas_config.h
@@ -25,7 +25,7 @@ include/jasper/jas_version.h
 include/jasper/jasper.h
 lib/libjasper.a
 lib/libjasper.la
-%%SHARED%%
+@lib lib/libjasper.so.${LIBjasper_VERSION}
 @man man/man1/imgcmp.1
 @man man/man1/imginfo.1
 @man man/man1/jasper.1
