@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_librtlsdr_c,v 1.1.1.1 2013/04/21 11:45:08 sthen Exp $
+--- src/librtlsdr.c.orig	Sat Apr 13 15:00:44 2013
++++ src/librtlsdr.c	Sat Apr 13 15:00:50 2013
+@@ -1340,10 +1340,12 @@ int rtlsdr_open(rtlsdr_dev_t **out_dev, uint32_t index
+ 	r = libusb_open(device, &dev->devh);
+ 	if (r < 0) {
+ 		libusb_free_device_list(list, 1);
+-		fprintf(stderr, "usb_open error %d\n", r);
++		fprintf(stderr, "libusb_open error %s (%d)\n", libusb_error_name(r), r);
+ 		if(r == LIBUSB_ERROR_ACCESS)
+-			fprintf(stderr, "Please fix the device permissions, e.g. "
+-			"by installing the udev rules file rtl-sdr.rules\n");
++			fprintf(stderr, "No permission to access the relevant /dev/ugen devices.\n");
++		else if(r == LIBUSB_ERROR_NO_DEVICE)
++			fprintf(stderr, "Check that you have sufficient /dev/ugen nodes for your device.\n"
++			    "You may need to run sh MAKEDEV ugen[number].\n");
+ 		goto err;
+ 	}
+ 

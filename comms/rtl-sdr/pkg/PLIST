@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/21 11:45:08 sthen Exp $
+@bin bin/rtl_eeprom
+@bin bin/rtl_sdr
+@bin bin/rtl_test
+include/rtl-sdr.h
+include/rtl-sdr_export.h
+lib/librtlsdr.a
+@lib lib/librtlsdr.so.${LIBrtlsdr_VERSION}
+lib/pkgconfig/
+lib/pkgconfig/librtlsdr.pc
