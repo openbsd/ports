@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/21 08:45:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2013/04/21 11:17:29 naddy Exp $
 
 COMMENT=	French and Italian conjugation system
 
-DISTNAME=	verbiste-0.1.34
-REVISION=	0
-SHARED_LIBS=	verbiste-0.1	4.0	# .0.0
+DISTNAME=	verbiste-0.1.35
+SHARED_LIBS=	verbiste-0.1	5.0	# .0.0
 CATEGORIES=	education
 HOMEPAGE=	http://sarrazip.com/dev/verbiste.html
 
@@ -21,12 +20,13 @@ BUILD_DEPENDS=	textproc/p5-XML-Parser
 LIB_DEPENDS=	x11/gtk+2 \
 		textproc/libxml
 
-WANTLIB += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 c cairo expat ffi fontconfig
-WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs stdc++ xcb xcb-render xcb-shm xml2 z
+WANTLIB=	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama \
+		Xrandr Xrender atk-1.0 c cairo expat ffi fontconfig \
+		freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
+		gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0 \
+		harfbuzz icudata icule icuuc m pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs \
+		stdc++ xcb xcb-render xcb-shm xml2 z
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
