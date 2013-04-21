@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.312 2013/04/02 11:41:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.313 2013/04/21 13:54:30 shadchin Exp $
 
      SUBDIR =
      SUBDIR += ADMfzap
@@ -222,6 +222,7 @@
      SUBDIR += py-sslwrapper
      SUBDIR += qca
      SUBDIR += qca2
+     SUBDIR += qca-gnupg
      SUBDIR += qca-ossl
      SUBDIR += qca-tls
      SUBDIR += qoauth
