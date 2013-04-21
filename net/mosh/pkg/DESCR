@@ -1,0 +1,6 @@
+Remote terminal application that allows roaming, supports intermittent
+connectivity, and provides intelligent local echo and line editing of
+user keystrokes.
+
+Mosh is designed to be more robust and responsive than SSH, especially
+over Wi-Fi, cellular, and long-distance links.
