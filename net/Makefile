@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.801 2013/04/14 08:31:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.802 2013/04/21 19:46:56 sthen Exp $
 
      SUBDIR =
      SUBDIR += BitTorrent
@@ -216,6 +216,7 @@
      SUBDIR += mldonkey
      SUBDIR += mon
      SUBDIR += mono-zeroconf
+     SUBDIR += mosh
      SUBDIR += mrtd
      SUBDIR += mrtg
      SUBDIR += mtr
