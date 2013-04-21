@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2012/09/02 15:54:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2013/04/21 11:45:32 sthen Exp $
 
      SUBDIR =
      SUBDIR += amtterm
@@ -32,6 +32,7 @@
      SUBDIR += picocom
      SUBDIR += pilot-link
      SUBDIR += qpage
+     SUBDIR += rtl-sdr
      SUBDIR += scmxx
      SUBDIR += seyon
      SUBDIR += smstools
