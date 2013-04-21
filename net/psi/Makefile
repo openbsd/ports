@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:35:55 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/04/21 13:56:27 shadchin Exp $
 
 COMMENT=	multiplatform Jabber client
 
-DISTNAME=	psi-0.10
-REVISION=	1
+DISTNAME=	psi-0.15
 CATEGORIES=	net
 
 HOMEPAGE=	http://psi-im.org/
@@ -11,73 +10,66 @@ HOMEPAGE=	http://psi-im.org/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=psi/}
 EXTRACT_SUFX=	.tar.bz2
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		X11 Xext Xss m c pthread pthread-stubs stdc++ xcb z \
-			qca>=1
+WANTLIB += ICE QtDBus QtGui QtNetwork QtXml SM X11 Xext Xi Xinerama
+WANTLIB += Xrender Xss c enchant fontconfig freetype glib-2.0
+WANTLIB += gmodule-2.0 intl m pthread qca2 stdc++ z
 
-MODULES=		x11/qt3
-
-MODQT_OVERRIDE_UIC=	No
+MODULES=		x11/qt4
 
 USE_GMAKE=		Yes
 
-LIB_DEPENDS=		security/qca
-RUN_DEPENDS=		security/qca-tls
+LIB_DEPENDS=		security/qca2 \
+			textproc/enchant
+RUN_DEPENDS=		devel/desktop-file-utils \
+			security/qca-gnupg \
+			security/qca-ossl \
+			x11/gtk+2,-guic
 
 CONFIGURE_STYLE=	simple
 
-CONFIGURE_ARGS+=	--qtdir=${MODQT_QTDIR} \
-			--with-qca-inc=${LOCALBASE}/include \
-			--with-qca-lib=${LOCALBASE}/lib \
-			--disable-growl \
-			--disable-dnotify \
-			--disable-ghbnr
-
-CONFIGURE_ENV+=		LOCALBASE=${LOCALBASE} \
-			KDEDIR=${LOCALBASE}
+CONFIGURE_ARGS+=	--prefix=${LOCALBASE} \
+			--qtdir=${MODQT4_QTDIR} \
+			--with-qca-inc=${LOCALBASE}/include/QtCrypto \
+			--disable-growl
 
 # For QSettings to write its setup
-PORTHOME=              ${WRKDIST}
+PORTHOME=		${WRKDIST}
 
 NO_TEST=		Yes
 
-pre-configure:
-	@perl -pi -e "s@%%X11BASE%%@${X11BASE}@" ${WRKSRC}/configure
-
-# compilation breaks if /usr/local/include/socks.h (from security/dante) is
-# found before psi's own socks.h, so add a workaround.
-pre-build:
-	@perl -pi -e 's,INCLUDEPATH.*,,' ${WRKSRC}/conf.pri
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/psi ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/psi ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/psi
 	${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/psi
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/psi
 	cp -R ${WRKSRC}/iconsets ${PREFIX}/share/psi
 	cp -R ${WRKSRC}/sound ${PREFIX}/share/psi
 	cp -R ${WRKSRC}/certs ${PREFIX}/share/psi
-	cp -R ${WRKSRC}/certs ${PREFIX}/share/psi
-	${INSTALL_DATA} ${WRKSRC}/libpsi/psiwidgets/libpsiwidgets.so \
-		${PREFIX}/share/psi
 
-	# Icons for KDE
-	${INSTALL_DATA_DIR} ${PREFIX}/share/applnk/Internet
-	${INSTALL_DATA} ${WRKSRC}/psi.desktop \
-		${PREFIX}/share/applnk/Internet/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/psi.desktop ${PREFIX}/share/applications/
 
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/16x16/apps
-	${INSTALL_DATA} ${WRKSRC}/iconsets/system/default/icon_16.png \
+	${INSTALL_DATA} ${WRKSRC}/iconsets/system/default/logo_16.png \
 		${PREFIX}/share/icons/hicolor/16x16/apps/psi.png
 
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/32x32/apps
-	${INSTALL_DATA} ${WRKSRC}/iconsets/system/default/icon_32.png \
+	${INSTALL_DATA} ${WRKSRC}/iconsets/system/default/logo_32.png \
 		${PREFIX}/share/icons/hicolor/32x32/apps/psi.png
 
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/48x48/apps
-	${INSTALL_DATA} ${WRKSRC}/iconsets/system/default/icon_48.png \
+	${INSTALL_DATA} ${WRKSRC}/iconsets/system/default/logo_48.png \
 		${PREFIX}/share/icons/hicolor/48x48/apps/psi.png
+
+	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/64x64/apps
+	${INSTALL_DATA} ${WRKSRC}/iconsets/system/default/logo_64.png \
+		${PREFIX}/share/icons/hicolor/64x64/apps/psi.png
+
+	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/128x128/apps
+	${INSTALL_DATA} ${WRKSRC}/iconsets/system/default/logo_128.png \
+		${PREFIX}/share/icons/hicolor/128x128/apps/psi.png
 
 .include <bsd.port.mk>
