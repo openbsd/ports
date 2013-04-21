@@ -1,0 +1,76 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/21 03:30:08 bentley Exp $
+@bin bin/garden
+share/applications/garden.desktop
+share/garden/
+share/garden/beat/
+share/garden/beat/arp.wav
+share/garden/beat/beam.wav
+share/garden/beat/blip.wav
+share/garden/beat/cymbal1.wav
+share/garden/beat/dline.wav
+share/garden/beat/drum1.wav
+share/garden/beat/drum2.wav
+share/garden/beat/drum3.wav
+share/garden/beat/drum4.wav
+share/garden/beat/flute.wav
+share/garden/beat/flute2_l.wav
+share/garden/beat/flute2_s.wav
+share/garden/beat/flute_l.wav
+share/garden/beat/food.wav
+share/garden/beat/funny.wav
+share/garden/beat/light.wav
+share/garden/beat/line1.wav
+share/garden/beat/line2.wav
+share/garden/beat/line3.wav
+share/garden/beat/long.wav
+share/garden/beat/long2.wav
+share/garden/beat/multi.wav
+share/garden/beat/multi2.wav
+share/garden/beat/nice.wav
+share/garden/beat/nice2.wav
+share/garden/beat/pan.wav
+share/garden/beat/piano.wav
+share/garden/beat/saw.wav
+share/garden/beat/spinner.wav
+share/garden/beat/square.wav
+share/garden/beat/stage4.wav
+share/garden/beat/string.wav
+share/garden/beat/sweet.wav
+share/garden/beat/sweet2.wav
+share/garden/beat/synth.wav
+share/garden/beat/thing4.wav
+share/garden/beat/voice.wav
+share/garden/beat/walker.wav
+share/garden/beat/xline.wav
+share/garden/gfx/
+share/garden/gfx/garden.dat
+share/garden/gfx/large.bmp
+share/garden/gfx/multi.bmp
+share/garden/gfx/platform.bmp
+share/garden/gfx/small.bmp
+share/garden/gfx/splash.bmp
+share/garden/gfx/trans.bmp
+share/garden/init.txt
+share/garden/wavs/
+share/garden/wavs/bang.wav
+share/garden/wavs/bang2.wav
+share/garden/wavs/blop.wav
+share/garden/wavs/cannon.wav
+share/garden/wavs/extra.wav
+share/garden/wavs/fire.wav
+share/garden/wavs/level.wav
+share/garden/wavs/lwbeam.wav
+share/garden/wavs/mgun.wav
+share/garden/wavs/mouth.wav
+share/garden/wavs/p_bang.wav
+share/garden/wavs/rect.wav
+share/garden/wavs/rect2.wav
+share/garden/wavs/scatter.wav
+share/garden/wavs/swbeam.wav
+share/garden/wavs/whoosh.wav
+share/garden/wavs/worms.wav
+share/icons/hicolor/scalable/apps/garden.svg
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
