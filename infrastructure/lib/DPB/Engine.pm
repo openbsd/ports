@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.74 2013/04/15 13:44:06 espie Exp $
+# $OpenBSD: Engine.pm,v 1.75 2013/04/22 19:34:10 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -735,7 +735,9 @@ sub adjust_tobuild
 			$v->{has} = 2 * ($has != 0) + ($has2 > 1);
 			if ($has + $has2 == 0) {
 				delete $self->{tobuild}{$v};
-				if (!$self->should_ignore($v, 'RDEPENDS')) {
+				if ($self->should_ignore($v, 'RDEPENDS')) {
+					$self->{buildable}->remove($v);
+				} else {
 					$self->{buildable}->add($v);
 					$self->log_no_ts('Q', $v);
 				}
