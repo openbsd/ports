@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2012/11/10 10:37:27 landry Exp $
---- Makefile.in.orig	Thu Nov  1 17:51:47 2012
-+++ Makefile.in	Sat Nov 10 11:25:37 2012
-@@ -779,12 +779,12 @@ install-data-local:
+$OpenBSD: patch-Makefile_in,v 1.5 2013/04/22 14:17:10 landry Exp $
+--- Makefile.in.orig	Thu Apr 11 18:15:37 2013
++++ Makefile.in	Mon Apr 22 16:14:41 2013
+@@ -776,12 +776,12 @@ install-data-local:
  @ENABLE_DOCS_TRUE@	(cd ${abs_top_builddir}/docs/netx; \
  @ENABLE_DOCS_TRUE@	 for files in $$(find . -type f); \
  @ENABLE_DOCS_TRUE@	 do \
@@ -16,7 +16,7 @@ $OpenBSD: patch-Makefile_in,v 1.4 2012/11/10 10:37:27 landry Exp $
  @ENABLE_DOCS_TRUE@@ENABLE_PLUGIN_TRUE@	 done)
  
  uninstall-local:
-@@ -884,8 +884,8 @@ clean-liveconnect:
+@@ -879,8 +879,8 @@ clean-liveconnect:
  
  netx-source-files.txt:
  	find $(NETX_SRCDIR) -name '*.java' | sort > $@
@@ -27,7 +27,7 @@ $OpenBSD: patch-Makefile_in,v 1.4 2012/11/10 10:37:27 landry Exp $
  
  stamps/netx.stamp: netx-source-files.txt stamps/bootstrap-directory.stamp
  	mkdir -p $(NETX_DIR)
-@@ -895,14 +895,15 @@ stamps/netx.stamp: netx-source-files.txt stamps/bootst
+@@ -890,14 +890,15 @@ stamps/netx.stamp: netx-source-files.txt stamps/bootst
  	    -bootclasspath $(RUNTIME) \
  	    @netx-source-files.txt
  	(cd $(NETX_RESOURCE_DIR); \
@@ -46,7 +46,7 @@ $OpenBSD: patch-Makefile_in,v 1.4 2012/11/10 10:37:27 landry Exp $
  	mkdir -p stamps
  	touch $@
  
-@@ -938,9 +939,10 @@ stamps/extra-class-files.stamp: extra-source-files.txt
+@@ -933,9 +934,10 @@ stamps/extra-class-files.stamp: extra-source-files.txt
            -sourcepath $(abs_top_srcdir)/extra -cp netx.build \
            -bootclasspath $(RUNTIME) @extra-source-files.txt
  	(cd $(NETX_EXTRA_DIR); \

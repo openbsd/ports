@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/04/21 19:29:43 landry Exp $
+# $OpenBSD: Makefile,v 1.11 2013/04/22 14:17:10 landry Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	Java web browser plugin
@@ -26,11 +26,8 @@ MODULES =	java \
 MODJAVA_VER=	1.7+
 
 BUILD_DEPENDS =	archivers/zip \
-		archivers/gtar \
 		devel/xulrunner/1.9,-devel
 
-# otherwise PaxHeaders file get in the way
-TAR =		${LOCALBASE}/bin/gtar
 USE_GMAKE =	Yes
 LIB_DEPENDS =	devel/glib2
 WANTLIB += glib-2.0 m stdc++
