@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_winwidget_c,v 1.13 2013/04/22 20:38:43 dcoppa Exp $
+
+Fix -F --zoom 100 not working when compiling feh with gcc and enabled
+optimizations (git commit cc7cb9f381e2687933b960da3599097beb727554)
+
+--- src/winwidget.c.orig	Mon Apr 22 21:51:47 2013
++++ src/winwidget.c	Mon Apr 22 22:08:58 2013
+@@ -477,7 +477,7 @@ void winwidget_render_image(winwidget winwid, int resi
+ 				double old_zoom = winwid->zoom;
+ 
+ 				winwid->zoom = 0.01 * opt.default_zoom;
+-				if (winwid->zoom != 1.0) {
++				if (opt.default_zoom != 100) {
+ 					if ((winwid->im_h * winwid->zoom) > max_h)
+ 						winwid->zoom = old_zoom;
+ 					else if ((winwid->im_w * winwid->zoom) > max_w)
