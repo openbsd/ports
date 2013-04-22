@@ -1,9 +1,9 @@
-$OpenBSD: patch-libusb_os_openbsd_usb_c,v 1.4 2013/04/17 14:28:17 mpi Exp $
+$OpenBSD: patch-libusb_os_openbsd_usb_c,v 1.5 2013/04/22 08:37:20 mpi Exp $
 
 Add support for non ugen(4) attached devices through usb(4) buses.
 
 --- libusb/os/openbsd_usb.c.orig	Fri Apr 20 08:44:27 2012
-+++ libusb/os/openbsd_usb.c	Wed Apr 17 09:55:52 2013
++++ libusb/os/openbsd_usb.c	Sun Apr 21 12:39:40 2013
 @@ -1,5 +1,5 @@
  /*
 - * Copyright (c) 2011 Martin Pieuchot <mpi@openbsd.org>
@@ -22,18 +22,23 @@ Add support for non ugen(4) attached devices through usb(4) buses.
  
  	unsigned char *cdesc;			/* active config descriptor */
  	usb_device_descriptor_t ddesc;		/* usb device descriptor */
-@@ -87,6 +87,10 @@ static int _sync_control_transfer(struct usbi_transfer
+@@ -82,11 +82,14 @@ static int obsd_clock_gettime(int, struct timespec *);
+  * Private functions
+  */
+ static int _errno_to_libusb(int);
+-static int _cache_active_config_descriptor(struct libusb_device *, int);
++static int _cache_active_config_descriptor(struct libusb_device *);
+ static int _sync_control_transfer(struct usbi_transfer *);
  static int _sync_gen_transfer(struct usbi_transfer *);
  static int _access_endpoint(struct libusb_transfer *);
  
 +static int _bus_open(int);
-+static int _bus_get_config(int, int, int *);
 +
 +
  const struct usbi_os_backend openbsd_backend = {
  	"Synchronous OpenBSD backend",
  	NULL,				/* init() */
-@@ -128,75 +132,106 @@ const struct usbi_os_backend openbsd_backend = {
+@@ -128,75 +131,105 @@ const struct usbi_os_backend openbsd_backend = {
  	0,				/* add_iso_packet_size */
  };
  
@@ -138,8 +143,7 @@ Add support for non ugen(4) attached devices through usb(4) buses.
 +				}
 +				dpriv->ddesc = dd.udd_desc;
 +
-+				/* XXX Assume the active config is at index 0 */
-+				if (_cache_active_config_descriptor(dev, 0)) {
++				if (_cache_active_config_descriptor(dev)) {
 +					libusb_unref_device(dev);
 +					continue;
 +				}
@@ -179,7 +183,7 @@ Add support for non ugen(4) attached devices through usb(4) buses.
  }
  
  int
-@@ -204,16 +239,22 @@ obsd_open(struct libusb_device_handle *handle)
+@@ -204,16 +237,22 @@ obsd_open(struct libusb_device_handle *handle)
  {
  	struct handle_priv *hpriv = (struct handle_priv *)handle->os_priv;
  	struct device_priv *dpriv = (struct device_priv *)handle->dev->os_priv;
@@ -207,7 +211,7 @@ Add support for non ugen(4) attached devices through usb(4) buses.
  	if (pipe(hpriv->pipe) < 0)
  		return _errno_to_libusb(errno);
  
-@@ -226,10 +267,12 @@ obsd_close(struct libusb_device_handle *handle)
+@@ -226,10 +265,12 @@ obsd_close(struct libusb_device_handle *handle)
  	struct handle_priv *hpriv = (struct handle_priv *)handle->os_priv;
  	struct device_priv *dpriv = (struct device_priv *)handle->dev->os_priv;
  
@@ -223,7 +227,18 @@ Add support for non ugen(4) attached devices through usb(4) buses.
  
  	usbi_remove_pollfd(HANDLE_CTX(handle), hpriv->pipe[0]);
  
-@@ -275,35 +318,27 @@ int
+@@ -257,9 +298,8 @@ obsd_get_active_config_descriptor(struct libusb_device
+     unsigned char *buf, size_t len, int *host_endian)
+ {
+ 	struct device_priv *dpriv = (struct device_priv *)dev->os_priv;
+-	usb_config_descriptor_t *ucd;
++	usb_config_descriptor_t *ucd = (usb_config_descriptor_t *)dpriv->cdesc;
+ 
+-	ucd = (usb_config_descriptor_t *) dpriv->cdesc;
+ 	len = MIN(len, UGETW(ucd->wTotalLength));
+ 
+ 	usbi_dbg("len %d", len);
+@@ -275,35 +315,27 @@ int
  obsd_get_config_descriptor(struct libusb_device *dev, uint8_t idx,
      unsigned char *buf, size_t len, int *host_endian)
  {
@@ -271,37 +286,27 @@ Add support for non ugen(4) attached devices through usb(4) buses.
  	*host_endian = 0;
  
  	return (LIBUSB_SUCCESS);
-@@ -312,15 +347,20 @@ obsd_get_config_descriptor(struct libusb_device *dev, 
- int
+@@ -313,14 +345,12 @@ int
  obsd_get_configuration(struct libusb_device_handle *handle, int *config)
  {
--	struct device_priv *dpriv = (struct device_priv *)handle->dev->os_priv;
-+	int fd, err;
+ 	struct device_priv *dpriv = (struct device_priv *)handle->dev->os_priv;
++	usb_config_descriptor_t *ucd = (usb_config_descriptor_t *)dpriv->cdesc;
  
 -	usbi_dbg("");
--
++	*config = ucd->bConfigurationValue;
+ 
 -	if (ioctl(dpriv->fd, USB_GET_CONFIG, config) < 0)
-+	if ((fd = _bus_open(handle->dev->bus_number)) < 0)
- 		return _errno_to_libusb(errno);
+-		return _errno_to_libusb(errno);
++	usbi_dbg("bConfigurationValue %d", *config);
  
 -	usbi_dbg("configuration %d", *config);
-+	if (_bus_get_config(fd, handle->dev->device_address, config)) {
-+		err = errno;
-+		close(fd);
-+		return _errno_to_libusb(err);
-+	}
-+	close(fd);
- 
-+	usbi_dbg("bConfigurationValue %d", *config);
-+
+-
  	return (LIBUSB_SUCCESS);
  }
  
-@@ -328,13 +368,23 @@ int
- obsd_set_configuration(struct libusb_device_handle *handle, int config)
+@@ -329,12 +359,15 @@ obsd_set_configuration(struct libusb_device_handle *ha
  {
  	struct device_priv *dpriv = (struct device_priv *)handle->dev->os_priv;
-+	int idx;
  
 -	usbi_dbg("configuration %d", config);
 +	if (dpriv->devname == NULL)
@@ -313,17 +318,11 @@ Add support for non ugen(4) attached devices through usb(4) buses.
  		return _errno_to_libusb(errno);
  
 -	return _cache_active_config_descriptor(handle->dev, dpriv->fd);
-+	/*
-+	 * XXX Instead of assuming that the index is at bConfigurationValue
-+	 * minus one, we should iterate against the possible configurations.
-+	 */
-+	idx = config - 1;
-+
-+	return _cache_active_config_descriptor(handle->dev, idx);
++	return _cache_active_config_descriptor(handle->dev);
  }
  
  int
-@@ -369,6 +419,9 @@ obsd_set_interface_altsetting(struct libusb_device_han
+@@ -369,6 +402,9 @@ obsd_set_interface_altsetting(struct libusb_device_han
  	struct device_priv *dpriv = (struct device_priv *)handle->dev->os_priv;
  	struct usb_alt_interface intf;
  
@@ -333,7 +332,7 @@ Add support for non ugen(4) attached devices through usb(4) buses.
  	usbi_dbg("iface %d, setting %d", iface, altsetting);
  
  	memset(&intf, 0, sizeof(intf));
-@@ -385,19 +438,27 @@ obsd_set_interface_altsetting(struct libusb_device_han
+@@ -385,19 +421,27 @@ obsd_set_interface_altsetting(struct libusb_device_han
  int
  obsd_clear_halt(struct libusb_device_handle *handle, unsigned char endpoint)
  {
@@ -364,7 +363,7 @@ Add support for non ugen(4) attached devices through usb(4) buses.
  
  	return (LIBUSB_SUCCESS);
  }
-@@ -418,6 +479,7 @@ obsd_destroy_device(struct libusb_device *dev)
+@@ -418,6 +462,7 @@ obsd_destroy_device(struct libusb_device *dev)
  	usbi_dbg("");
  
  	free(dpriv->cdesc);
@@ -372,7 +371,7 @@ Add support for non ugen(4) attached devices through usb(4) buses.
  }
  
  int
-@@ -557,6 +619,8 @@ obsd_clock_gettime(int clkid, struct timespec *tp)
+@@ -557,6 +602,8 @@ obsd_clock_gettime(int clkid, struct timespec *tp)
  int
  _errno_to_libusb(int err)
  {
@@ -381,7 +380,7 @@ Add support for non ugen(4) attached devices through usb(4) buses.
  	switch (err) {
  	case EIO:
  		return (LIBUSB_ERROR_IO);
-@@ -566,52 +630,64 @@ _errno_to_libusb(int err)
+@@ -566,52 +613,64 @@ _errno_to_libusb(int err)
  		return (LIBUSB_ERROR_NO_DEVICE);
  	case ENOMEM:
  		return (LIBUSB_ERROR_NO_MEM);
@@ -396,7 +395,7 @@ Add support for non ugen(4) attached devices through usb(4) buses.
  
  int
 -_cache_active_config_descriptor(struct libusb_device *dev, int fd)
-+_cache_active_config_descriptor(struct libusb_device *dev, int idx)
++_cache_active_config_descriptor(struct libusb_device *dev)
  {
  	struct device_priv *dpriv = (struct device_priv *)dev->os_priv;
 -	struct usb_config_desc ucd;
@@ -464,7 +463,7 @@ Add support for non ugen(4) attached devices through usb(4) buses.
  }
  
  int
-@@ -626,12 +702,13 @@ _sync_control_transfer(struct usbi_transfer *itransfer
+@@ -626,12 +685,13 @@ _sync_control_transfer(struct usbi_transfer *itransfer
  	dpriv = (struct device_priv *)transfer->dev_handle->dev->os_priv;
  	setup = (struct libusb_control_setup *)transfer->buffer;
  
@@ -479,7 +478,7 @@ Add support for non ugen(4) attached devices through usb(4) buses.
  	req.ucr_request.bmRequestType = setup->bmRequestType;
  	req.ucr_request.bRequest = setup->bRequest;
  	/* Don't use USETW, libusb already deals with the endianness */
-@@ -643,12 +720,31 @@ _sync_control_transfer(struct usbi_transfer *itransfer
+@@ -643,12 +703,31 @@ _sync_control_transfer(struct usbi_transfer *itransfer
  	if ((transfer->flags & LIBUSB_TRANSFER_SHORT_NOT_OK) == 0)
  		req.ucr_flags = USBD_SHORT_XFER_OK;
  
@@ -515,7 +514,7 @@ Add support for non ugen(4) attached devices through usb(4) buses.
  	itransfer->transferred = req.ucr_actlen;
  
  	usbi_dbg("transferred %d", itransfer->transferred);
-@@ -661,7 +757,7 @@ _access_endpoint(struct libusb_transfer *transfer)
+@@ -661,7 +740,7 @@ _access_endpoint(struct libusb_transfer *transfer)
  {
  	struct handle_priv *hpriv;
  	struct device_priv *dpriv;
@@ -524,7 +523,7 @@ Add support for non ugen(4) attached devices through usb(4) buses.
  	int fd, endpt;
  	mode_t mode;
  
-@@ -674,10 +770,9 @@ _access_endpoint(struct libusb_transfer *transfer)
+@@ -674,10 +753,9 @@ _access_endpoint(struct libusb_transfer *transfer)
  	usbi_dbg("endpoint %d mode %d", endpt, mode);
  
  	if (hpriv->endpoints[endpt] < 0) {
@@ -538,7 +537,7 @@ Add support for non ugen(4) attached devices through usb(4) buses.
  
  		/* We may need to read/write to the same endpoint later. */
  		if (((fd = open(devnode, O_RDWR)) < 0) && (errno == ENXIO))
-@@ -694,10 +789,15 @@ int
+@@ -694,10 +772,15 @@ int
  _sync_gen_transfer(struct usbi_transfer *itransfer)
  {
  	struct libusb_transfer *transfer;
@@ -554,7 +553,7 @@ Add support for non ugen(4) attached devices through usb(4) buses.
  	/*
  	 * Bulk, Interrupt or Isochronous transfer depends on the
  	 * endpoint and thus the node to open.
-@@ -724,4 +824,39 @@ _sync_gen_transfer(struct usbi_transfer *itransfer)
+@@ -724,4 +807,14 @@ _sync_gen_transfer(struct usbi_transfer *itransfer)
  	itransfer->transferred = nr;
  
  	return (0);
@@ -568,29 +567,4 @@ Add support for non ugen(4) attached devices through usb(4) buses.
 +	snprintf(busnode, sizeof(busnode), USBDEV "%d", number);
 +
 +	return open(busnode, O_RDWR);
-+}
-+
-+int
-+_bus_get_config(int fd, int addr, int *config)
-+{
-+	struct usb_ctl_request req;
-+	uint8_t conf;
-+	int err;
-+
-+	usbi_dbg("");
-+
-+	req.ucr_addr = addr;
-+	req.ucr_request.bmRequestType = UT_READ_DEVICE;
-+	req.ucr_request.bRequest = UR_GET_CONFIG;
-+	USETW(req.ucr_request.wValue, 0);
-+	USETW(req.ucr_request.wIndex, 0);
-+	USETW(req.ucr_request.wLength, 1);
-+	req.ucr_data = &conf;
-+	req.ucr_flags = 0;
-+
-+	err = ioctl(fd, USB_REQUEST, &req);
-+
-+	*config = conf;
-+
-+	return (err);
  }
