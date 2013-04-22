@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.289 2013/04/15 08:04:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.290 2013/04/22 06:48:58 jasper Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -67,6 +67,7 @@
      SUBDIR += fsstress
      SUBDIR += gamin
      SUBDIR += ggrep
+     SUBDIR += gitolite
      SUBDIR += gkrellm
      SUBDIR += glastree
      SUBDIR += god
