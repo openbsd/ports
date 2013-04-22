@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/21 08:46:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2013/04/22 19:13:40 landry Exp $
 
 SHARED_ONLY=	Yes
 
 BROKEN-sparc64 = vm segfaults when building openssl extension
 BROKEN-mips64 = no atomics for this arch
+BROKEN-hppa = no atomics for this arch
 BROKEN-mips64el = no atomics for this arch
 
 COMMENT =	Ruby virtual machine and core library
