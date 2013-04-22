@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:35:54 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/04/22 14:05:07 sthen Exp $
 
 COMMENT=	graphical network traffic map
 
-DISTNAME=	php-weathermap-0.97a
-REVISION=	6
+DISTNAME=	php-weathermap-0.97c
 EXTRACT_SUFX=	.zip
 
 CATEGORIES=	net www
@@ -37,7 +36,6 @@ do-configure:
 	    ${WRKSRC}/weathermap
 
 do-build:
-	chmod 644 ${WRKSRC}/editor.*
 .for i in weathermap.conf configs/simple.conf
 	mv ${WRKSRC}/$i ${WRKSRC}/$i-dist
 .endfor
@@ -45,6 +43,9 @@ do-build:
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}
 	cd ${WRKSRC}; pax -rw * ${INSTDIR}
+	${INSTALL_DATA} ${FILESDIR}/editor-config.php-dist ${INSTDIR}
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
+	chmod -R u=rwX,og=rX ${INSTDIR}
+	find ${INSTDIR} -name '*.orig' -print0 | xargs -0r rm
 
 .include <bsd.port.mk>

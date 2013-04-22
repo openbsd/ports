@@ -1,13 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/03/27 00:00:49 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/04/22 14:05:07 sthen Exp $
 weathermap/
 weathermap/CHANGES
 weathermap/COPYING
-weathermap/HTML_ImageMap.class.php
 weathermap/README
-weathermap/WeatherMap.functions.php
-weathermap/WeatherMapLink.class.php
-weathermap/WeatherMapNode.class.php
-weathermap/Weathermap.class.php
 weathermap/cacti-pick.php
 weathermap/check-gdbug.php
 weathermap/check.php
@@ -24,7 +19,6 @@ weathermap/configs/simple.conf-dist
 @sample weathermap/configs/simple.conf
 @mode
 @group
-weathermap/convert-to-dsstats.php
 weathermap/docs/
 weathermap/docs/example/
 weathermap/docs/example/Gradient_BK_800.png
@@ -46,6 +40,13 @@ weathermap/docs/example/graph_image.png
 weathermap/docs/example/graph_page.html
 weathermap/docs/example/my_router.png
 weathermap/docs/example/overlib.js
+weathermap/docs/fonts/
+weathermap/docs/fonts/PTC55F-webfont.ttf
+weathermap/docs/fonts/PTC75F-webfont.ttf
+weathermap/docs/fonts/PTN57F-webfont.ttf
+weathermap/docs/fonts/PTN77F-webfont.ttf
+weathermap/docs/fonts/PTS55F-webfont.ttf
+weathermap/docs/fonts/PTS75F-webfont.ttf
 weathermap/docs/howto.pdf
 weathermap/docs/howto.png
 weathermap/docs/images/
@@ -82,6 +83,10 @@ weathermap/docs/images/viastyle-curved.png
 weathermap/docs/images/weathermap-example.png
 weathermap/docs/images/weathermap-mini.png
 weathermap/docs/index.html
+weathermap/docs/kube101/
+weathermap/docs/kube101/css/
+weathermap/docs/kube101/css/kube.min.css
+weathermap/docs/manual.css
 weathermap/docs/pages/
 weathermap/docs/pages/advanced.html
 weathermap/docs/pages/cacti-plugin.html
@@ -98,14 +103,15 @@ weathermap/docs/pages/install-cli.html
 weathermap/docs/pages/main.html
 weathermap/docs/pages/targets.html
 weathermap/docs/pages/upgrading.html
-weathermap/docs/pages/weathermap.css
 weathermap/editor-config.php-dist
 @sample weathermap/editor-config.php
 weathermap/editor-resources/
+weathermap/editor-resources/editor.css
+weathermap/editor-resources/editor.js
+weathermap/editor-resources/exclamation.png
+weathermap/editor-resources/index.php
 weathermap/editor-resources/jquery-latest.min.js
-weathermap/editor.css
-weathermap/editor.inc.php
-weathermap/editor.js
+weathermap/editor-resources/oldeditor.css
 weathermap/editor.php
 weathermap/images/
 weathermap/images/Cloud-Filled.png
@@ -163,13 +169,19 @@ weathermap/images/yellow-ball-64.png
 weathermap/index.php
 weathermap/lib/
 weathermap/lib/.htaccess
+weathermap/lib/HTML_ImageMap.class.php
+weathermap/lib/WeatherMap.functions.php
+weathermap/lib/WeatherMap.keywords.inc.php
+weathermap/lib/WeatherMapLink.class.php
+weathermap/lib/WeatherMapNode.class.php
+weathermap/lib/Weathermap.class.php
 weathermap/lib/datasources/
 weathermap/lib/datasources/README.txt
 weathermap/lib/datasources/WeatherMapDataSource_cactihost.php
 weathermap/lib/datasources/WeatherMapDataSource_cactithold.php
 weathermap/lib/datasources/WeatherMapDataSource_dbsample.php
 weathermap/lib/datasources/WeatherMapDataSource_dsstats.php
-weathermap/lib/datasources/WeatherMapDataSource_external.php
+weathermap/lib/datasources/WeatherMapDataSource_external.php.disabled
 weathermap/lib/datasources/WeatherMapDataSource_fping.php
 weathermap/lib/datasources/WeatherMapDataSource_mrtg.php
 weathermap/lib/datasources/WeatherMapDataSource_rrd.php
@@ -178,13 +190,15 @@ weathermap/lib/datasources/WeatherMapDataSource_snmp.php
 weathermap/lib/datasources/WeatherMapDataSource_static.php
 weathermap/lib/datasources/WeatherMapDataSource_tabfile.php
 weathermap/lib/datasources/WeatherMapDataSource_time.php
+weathermap/lib/datasources/WeatherMapDataSource_wmdata.php
 weathermap/lib/ds-common.php
+weathermap/lib/editor.inc.php
 weathermap/lib/index.php
 weathermap/lib/poller-common.php
 weathermap/lib/post/
-weathermap/lib/post/WeatherMapPostProcessorTest.php
+weathermap/lib/post/WeatherMapPostProcessorExample.php
 weathermap/lib/pre/
-weathermap/lib/pre/WeatherMapPreProcessorTest.php
+weathermap/lib/pre/WeatherMapPreProcessorExample.php
 weathermap/logout.php
 @comment weathermap/net-data.txt
 @mode 775
@@ -197,12 +211,16 @@ weathermap/output/.htaccess
 weathermap/output/index.php
 weathermap/overlib.js
 weathermap/random-bits/
+weathermap/random-bits/.htaccess
 weathermap/random-bits/README
 weathermap/random-bits/auto-overlib.pl
 weathermap/random-bits/bristle.php
 weathermap/random-bits/cacti-integrate.php
 weathermap/random-bits/cacti-mapper.php
+weathermap/random-bits/convert-to-dsstats.php
+weathermap/random-bits/index.php
 weathermap/random-bits/map-split.php
+weathermap/random-bits/query_weathermap_runtime.php
 weathermap/random-bits/suite-1.conf
 weathermap/random-bits/suite-1.png
 weathermap/random-bits/suite-2.conf

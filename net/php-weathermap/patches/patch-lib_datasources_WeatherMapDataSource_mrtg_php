@@ -1,15 +1,15 @@
-$OpenBSD: patch-lib_datasources_WeatherMapDataSource_mrtg_php,v 1.1 2011/09/27 11:15:00 sthen Exp $
+$OpenBSD: patch-lib_datasources_WeatherMapDataSource_mrtg_php,v 1.2 2013/04/22 14:05:07 sthen Exp $
 
 Allow larger headers when scraping bandwidth data from mrtg pages
 
---- lib/datasources/WeatherMapDataSource_mrtg.php.orig	Fri Feb 18 22:28:25 2011
-+++ lib/datasources/WeatherMapDataSource_mrtg.php	Fri Feb 18 22:28:28 2011
+--- lib/datasources/WeatherMapDataSource_mrtg.php.orig	Fri Mar 22 09:26:41 2013
++++ lib/datasources/WeatherMapDataSource_mrtg.php	Mon Apr 22 14:32:24 2013
 @@ -38,7 +38,7 @@ class WeatherMapDataSource_mrtg extends WeatherMapData
  		{
  			while (!feof($fd))
  			{
 -				$buffer=fgets($fd, 4096);
 +				$buffer=fgets($fd, 16384);
- 				debug("MRTG ReadData: Matching on '${matchvalue}in $matchperiod' and '${matchvalue}out $matchperiod'\n");
+ 				wm_debug("MRTG ReadData: Matching on '${matchvalue}in $matchperiod' and '${matchvalue}out $matchperiod'\n");
  
  				if (preg_match("/<\!-- ${matchvalue}in $matchperiod ([-+]?\d+\.?\d*) -->/", $buffer, $matches)) { $data[IN] = $matches[1] * 8; }
