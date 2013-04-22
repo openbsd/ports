@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.240 2013/04/01 17:03:05 espie Exp $
+# $OpenBSD: Makefile,v 1.241 2013/04/22 17:46:55 zhuk Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -246,6 +246,7 @@
      SUBDIR += tdbc
      SUBDIR += tdbc-sqlite3
      SUBDIR += tinycdb
+     SUBDIR += virtuoso
      SUBDIR += xapian-core
 
 .include <bsd.port.subdir.mk>
