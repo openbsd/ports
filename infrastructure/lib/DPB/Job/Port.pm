@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.102 2013/04/13 16:13:34 espie Exp $
+# $OpenBSD: Port.pm,v 1.103 2013/04/22 10:02:22 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -120,6 +120,12 @@ sub make_sure_we_have_packages
 	my $check = 1;
 	# check ALL BUILD_PACKAGES
 	for my $w ($job->{v}->build_path_list) {
+		if (!defined $w->{info}) {
+			print {$job->{logfh}} ">>> ", $w->fullpkgpath,
+			 " may be missing\n", 
+			 ">>> but it has no associated info so we don't care\n";
+			next;
+		}
 		if ($w->{info}->is_stub) {
 			print {$job->{logfh}} ">>> ", $w->fullpkgpath,
 			 " may be missing\n", 
@@ -127,11 +133,10 @@ sub make_sure_we_have_packages
 			next;
 		}
 		if (!$w->has_fullpkgname) {
-			require Data::Dumper;
-			
-			say STDERR "Path ", $w->fullpkgpath, " has no fullpkgname\n";
-			say STDERR "Basic path: ", Data::Dumper::Dumper($job->{v}), "\n";
-			say STDERR "Extra paths: ", Data::Dumper::Dumper($w), "\n";
+			print {$job->{logfh}} ">>> ", $w->fullpkgpath,
+			 " may be missing\n", 
+			 ">>> but it has no fullpkgname, so we don't care\n";
+			next;
 		}
 		my $f = $job->{builder}->pkgfile($w);
 		if (-f $f) {
