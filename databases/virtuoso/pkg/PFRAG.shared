@@ -1,0 +1,6 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2013/04/22 17:32:31 zhuk Exp $
+lib/virtuoso/hosting/im.so
+lib/virtuoso/plugins/virtodbc.so
+lib/virtuoso/plugins/virtodbc_r.so
+lib/virtuoso/plugins/virtodbcu.so
+lib/virtuoso/plugins/virtodbcu_r.so
