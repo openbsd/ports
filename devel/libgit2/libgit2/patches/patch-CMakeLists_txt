@@ -1,16 +1,16 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.4 2012/08/12 17:19:47 jasper Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.5 2013/04/22 06:22:21 jasper Exp $
 
 Don't clobber CFLAGS.
 -Wextra is not available with gcc < 4.
 
---- CMakeLists.txt.orig	Mon Jul 23 09:41:36 2012
-+++ CMakeLists.txt	Mon Jul 23 09:42:22 2012
-@@ -70,7 +70,7 @@ IF (MSVC)
- 
+--- CMakeLists.txt.orig	Sun Apr 21 23:44:50 2013
++++ CMakeLists.txt	Sun Apr 21 23:44:54 2013
+@@ -211,7 +211,7 @@ IF (MSVC)
     # Precompiled headers
+ 
  ELSE ()
--	SET(CMAKE_C_FLAGS "-O2 -g -D_GNU_SOURCE -fvisibility=hidden -Wall -Wextra -Wno-missing-field-initializers -Wstrict-aliasing=2 -Wstrict-prototypes -Wmissing-prototypes ${CMAKE_C_FLAGS}")
-+	SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O2 -g -D_GNU_SOURCE -fvisibility=hidden -Wall -Wno-missing-field-initializers -Wstrict-aliasing=2 -Wstrict-prototypes -Wmissing-prototypes ${CMAKE_C_FLAGS}")
- 	SET(CMAKE_C_FLAGS_DEBUG "-O0 -g")
- 	IF (NOT MINGW) # MinGW always does PIC and complains if we tell it to
- 		SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")
+-	SET(CMAKE_C_FLAGS "-D_GNU_SOURCE -Wall -Wextra -Wno-missing-field-initializers -Wstrict-aliasing=2 -Wstrict-prototypes ${CMAKE_C_FLAGS}")
++	SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -D_GNU_SOURCE -Wall -Wno-missing-field-initializers -Wstrict-aliasing=2 -Wstrict-prototypes ${CMAKE_C_FLAGS}")
+ 
+ 	IF (WIN32 AND NOT CYGWIN)
+ 		SET(CMAKE_C_FLAGS_DEBUG "-D_DEBUG")
