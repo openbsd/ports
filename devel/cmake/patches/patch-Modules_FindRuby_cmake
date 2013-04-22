@@ -1,0 +1,56 @@
+$OpenBSD: patch-Modules_FindRuby_cmake,v 1.6 2013/04/22 13:13:56 zhuk Exp $
+Add support for rubyarchhdrdir and rubyarchlibdir, with fallback to "defaults"
+on systems that have such directories but RbConfig doesn't have such options.
+--- Modules/FindRuby.cmake.orig	Sun Feb 10 13:39:18 2013
++++ Modules/FindRuby.cmake	Sun Feb 10 14:15:07 2013
+@@ -92,6 +92,16 @@ if(RUBY_EXECUTABLE  AND NOT  RUBY_VERSION_MAJOR)
+    _RUBY_CONFIG_VAR("sitearchdir" RUBY_SITEARCH_DIR)
+    _RUBY_CONFIG_VAR("sitelibdir" RUBY_SITELIB_DIR)
+ 
++   # not implemented in <2.0 but sometimes used
++   _RUBY_CONFIG_VAR("rubyarchhdrdir" RUBY_ARCHHDR_DIR)
++   if(NOT RUBY_ARCHHDR_DIR)
++      set(RUBY_ARCHHDR_DIR ${RUBY_HDR_DIR}/${RUBY_ARCH})
++   endif(NOT RUBY_ARCHHDR_DIR)
++   _RUBY_CONFIG_VAR("rubyarchlibdir" RUBY_ARCHLIB_DIR)
++   if(NOT RUBY_ARCHLIB_DIR)
++      set(RUBY_ARCHLIB_DIR ${RUBY_LIB_DIR}/${RUBY_ARCH})
++   endif(NOT RUBY_ARCHLIB_DIR)
++
+    # vendor_ruby available ?
+    execute_process(COMMAND ${RUBY_EXECUTABLE} -r vendor-specific -e "print 'true'"
+       OUTPUT_VARIABLE RUBY_HAS_VENDOR_RUBY  ERROR_QUIET)
+@@ -112,6 +122,8 @@ if(RUBY_EXECUTABLE  AND NOT  RUBY_VERSION_MAJOR)
+    set(RUBY_SITEARCH_DIR     ${RUBY_SITEARCH_DIR}     CACHE PATH "The Ruby site arch dir" FORCE)
+    set(RUBY_SITELIB_DIR      ${RUBY_SITELIB_DIR}      CACHE PATH "The Ruby site lib dir" FORCE)
+    set(RUBY_HAS_VENDOR_RUBY  ${RUBY_HAS_VENDOR_RUBY}  CACHE BOOL "Vendor Ruby is available" FORCE)
++   set(RUBY_ARCHHDR_DIR      ${RUBY_ARCHHDR_DIR}      CACHE PATH "The Ruby arch-specific header dir (1.9+)" FORCE)
++   set(RUBY_ARCHLIB_DIR      ${RUBY_ARCHLIBDIR}       CACHE PATH "The Ruby arch-specific lib dir (1.9+)" FORCE)
+    set(RUBY_VENDORARCH_DIR   ${RUBY_VENDORARCH_DIR}   CACHE PATH "The Ruby vendor arch dir" FORCE)
+    set(RUBY_VENDORLIB_DIR    ${RUBY_VENDORLIB_DIR}    CACHE PATH "The Ruby vendor lib dir" FORCE)
+ 
+@@ -124,6 +136,8 @@ if(RUBY_EXECUTABLE  AND NOT  RUBY_VERSION_MAJOR)
+      RUBY_SITEARCH_DIR
+      RUBY_SITELIB_DIR
+      RUBY_HAS_VENDOR_RUBY
++     RUBY_ARCHHDR_DIR
++     RUBY_ARCHLIB_DIR
+      RUBY_VENDORARCH_DIR
+      RUBY_VENDORLIB_DIR
+      RUBY_VERSION_MAJOR
+@@ -157,6 +171,7 @@ find_path(RUBY_INCLUDE_DIR
+    NAMES ruby.h
+    HINTS
+    ${RUBY_HDR_DIR}
++   ${RUBY_ARCHHDR_DIR}
+    ${RUBY_ARCH_DIR}
+    /usr/lib/ruby/${_RUBY_VERSION_SHORT}/i586-linux-gnu/ )
+ 
+@@ -167,6 +182,7 @@ if( "${Ruby_FIND_VERSION_SHORT_NODOT}" GREATER 18  OR 
+    find_path(RUBY_CONFIG_INCLUDE_DIR
+      NAMES ruby/config.h  config.h
+      HINTS
++     ${RUBY_ARCHHDR_DIR}
+      ${RUBY_HDR_DIR}/${RUBY_ARCH}
+      ${RUBY_ARCH_DIR}
+      )
