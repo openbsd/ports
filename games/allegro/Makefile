@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:07:37 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/04/22 21:14:34 ratchov Exp $
 
 BROKEN-hppa =	./src/x/xdga2s.s:25: Error: symbol .text is already defined
 
@@ -8,7 +8,7 @@ SHARED_ONLY =	Yes
 
 V =		4.2.3
 DISTNAME =	allegro-$V
-REVISION =	1
+REVISION =	2
 CATEGORIES =	games devel multimedia
 SHARED_LIBS =	alleg	1.0	# 4.2
 

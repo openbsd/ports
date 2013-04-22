@@ -144,7 +144,7 @@ open_sndio_device(int input)
 
 	sio_initpar(&par);
 	par.bits = (_sound_bits == 8) ? 8 : 16;
-	par.sig = 0;
+	par.sig = (_sound_bits == 8) ? 0 : 1;
 	if (input)
 		par.rchan = (_sound_stereo) ? 2 : 1;
 	else
@@ -157,6 +157,9 @@ open_sndio_device(int input)
 
 	if (!sio_setpar(hdl, &par) || !sio_getpar(hdl, &par) ||
 	    (par.bits != 8 && par.bits != 16) ||
+	    (par.bits == 8 && par.sig) ||
+	    (par.bits == 16 && !par.sig) ||
+	    (par.bits == 16 && par.le != SIO_LE_NATIVE) ||
 	    (input && (par.rchan != 1 && par.rchan != 2)) ||
 	    (!input && (par.pchan != 1 && par.pchan != 2))) {
 		ustrzcpy(allegro_error, ALLEGRO_ERROR_SIZE,
