@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_redis_c,v 1.17 2013/03/14 09:00:39 dcoppa Exp $
---- src/redis.c.orig	Mon Mar 11 19:51:10 2013
-+++ src/redis.c	Thu Mar 14 09:28:12 2013
-@@ -1179,7 +1179,7 @@ void initServerConfig() {
+$OpenBSD: patch-src_redis_c,v 1.18 2013/04/22 14:55:10 dcoppa Exp $
+--- src/redis.c.orig	Fri Mar 29 17:42:39 2013
++++ src/redis.c	Mon Apr 22 16:51:23 2013
+@@ -1181,7 +1181,7 @@ void initServerConfig() {
      server.aof_fd = -1;
      server.aof_selected_db = -1; /* Make sure the first time will not match */
      server.aof_flush_postponed_start = 0;
