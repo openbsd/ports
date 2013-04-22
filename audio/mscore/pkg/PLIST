@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/03/06 20:37:56 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/04/22 14:42:45 sthen Exp $
 @bin bin/mscore
 lib/qt4/plugins/designer/libawlplugin.so
 lib/qt4/plugins/script/libqtscript_core.so
@@ -211,4 +211,4 @@ share/pixmaps/
 share/pixmaps/mscore.png
 share/pixmaps/mscore.xpm
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
