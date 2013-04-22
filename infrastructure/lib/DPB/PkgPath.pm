@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.38 2013/04/22 10:06:12 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.39 2013/04/22 11:14:17 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -49,6 +49,7 @@ sub sanity_check
 	open my $quicklog, '>>', $state->logger->logfile('equiv');
 	for my $p ($class->seen) {
 		next if defined $p->{category};
+		next unless defined $p->{info};
 		for my $w ($p->build_path_list) {
 			if (!defined $w->{info}) {
 				print $quicklog $w->fullpkgpath, 
