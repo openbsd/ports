@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.37 2013/04/13 10:04:43 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.38 2013/04/22 10:06:12 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -40,6 +40,28 @@ sub clone_properties
 	my ($n, $o) = @_;
 	$n->{has} //= $o->{has};
 	$n->{info} //= $o->{info};
+}
+
+sub sanity_check
+{
+	my ($class, $state) = @_;
+
+	open my $quicklog, '>>', $state->logger->logfile('equiv');
+	for my $p ($class->seen) {
+		next if defined $p->{category};
+		for my $w ($p->build_path_list) {
+			if (!defined $w->{info}) {
+				print $quicklog $w->fullpkgpath, 
+				    " has no info(", $p->fullpkgpath, ")\n";
+				$w->{info} = DPB::PortInfo->stub;
+			} elsif (!defined $w->{info}{FULLPKGNAME}) {
+				print $quicklog $w->fullpkgpath,
+				    " has no fullpkgname(", 
+				    $p->fullpkgpath, ")\n";
+				$w->{info} = DPB::PortInfo->stub;
+			}
+		}
+	}
 }
 
 # XXX All this code knows too much about PortInfo for proper OO
