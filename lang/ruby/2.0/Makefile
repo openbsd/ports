@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/20 07:27:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2013/04/22 19:18:16 landry Exp $
+
+BROKEN-sparc64	=	segfaults during build
 
 COMMENT-main =		object oriented script language with threads
 COMMENT-gdbm =		gdbm interface for ruby
