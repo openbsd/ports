@@ -1,0 +1,6 @@
+Gitolite is an access control layer on top of git.
+Here are the features that most people see:
+
+* Use a single unix user ("real" user) on the server.
+* Provide access to many gitolite users.
+* Control access to many git repositories.

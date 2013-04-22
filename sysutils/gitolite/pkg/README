@@ -1,0 +1,28 @@
+$OpenBSD: README,v 1.1.1.1 2013/04/22 06:48:25 jasper Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Setting up a Git server
+=======================
+It is advised to use a dedicated 'git' user for use with Gitolite. Now
+add this user with adduser(8) and log in as this user.
+
+Access control and repository creation is managed with the
+gitolite-admin.git repository. The public SSH key passed to Gitolite
+during the initial setup will be the primary access to this
+repository. Copy a new or existing key to "key.pub" and run the setup:
+
+  gitolite setup -pk /path/to/key.pub
+
+Now test if everything is setup correctly by running the following
+command as the user to whom key.pub belongs:
+
+ git clone git@host:gitolite-admin.git
+
+Further reading
+===============
+For further configuration options and learning how to finalize your
+setup, please refer to the online Gitolite documentation which is
+located at http://gitolite.com/gitolite/master-toc.html
