@@ -1,7 +1,7 @@
-$OpenBSD: patch-SConstruct,v 1.1.1.1 2012/12/25 00:07:01 bentley Exp $
---- SConstruct.orig	Mon Dec 24 02:05:25 2012
-+++ SConstruct	Mon Dec 24 02:06:15 2012
-@@ -113,8 +113,8 @@ else:
+$OpenBSD: patch-SConstruct,v 1.2 2013/04/22 23:28:07 bentley Exp $
+--- SConstruct.orig	Sun Mar 10 15:21:52 2013
++++ SConstruct	Fri Apr 19 14:34:56 2013
+@@ -125,8 +125,8 @@ else:
        # Should work on any *nix
        env.Append(CCFLAGS = ["-DLUA_USE_LINUX"])
      lua_available = False
@@ -12,7 +12,7 @@ $OpenBSD: patch-SConstruct,v 1.1.1.1 2012/12/25 00:07:01 bentley Exp $
        lua_available = True
      elif conf.CheckLib('lua'):
        env.Append(LINKFLAGS = ["-ldl", "-llua"])
-@@ -152,8 +152,6 @@ print "base CCFLAGS:",env['CCFLAGS']
+@@ -164,8 +164,6 @@ print "base CCFLAGS:",env['CCFLAGS']
  
  if env['DEBUG']:
    env.Append(CPPDEFINES=["_DEBUG"], CCFLAGS = ['-g'])
@@ -21,7 +21,7 @@ $OpenBSD: patch-SConstruct,v 1.1.1.1 2012/12/25 00:07:01 bentley Exp $
  
  if env['PLATFORM'] != 'win32' and env['PLATFORM'] != 'cygwin' and env['CREATE_AVI']:
    env.Append(CPPDEFINES=["CREATE_AVI"])
-@@ -191,8 +189,8 @@ env.Command(auxlib_dst, auxlib_src, [Copy(auxlib_dst, 
+@@ -203,8 +201,8 @@ env.Command(auxlib_dst, auxlib_src, [Copy(auxlib_dst, 
  
  man_src = 'documentation/fceux.6'
  man_net_src = 'documentation/fceux-net-server.6'

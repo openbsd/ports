@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:06:04 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/04/22 23:28:07 bentley Exp $
 
 COMMENT =		emulator for Nintendo Entertainment System
 
-DISTNAME =		fceux-2.2.0.src
-PKGNAME =		${DISTNAME:S/.src//}
-REVISION =		0
+V =			2.2.1
+DISTNAME =		fceux-${V}.src
+PKGNAME =		fceux-${V}
 CATEGORIES =		emulators games
 
 HOMEPAGE =		http://fceux.com/
@@ -12,12 +12,12 @@ HOMEPAGE =		http://fceux.com/
 MAINTAINER =		Anthony J. Bentley <anthony@cathet.us>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=fceultra/}
 
 WANTLIB += 		GL SDL X11 c gd gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0
-WANTLIB += 		gobject-2.0 gtk-x11-2.0 lua5.1 m pixman-1 pthread
+WANTLIB += 		gobject-2.0 gtk-x11-2.0 lua5.1 m pthread
 WANTLIB += 		stdc++ z ${MODLUA_WANTLIB}
 
 LIB_DEPENDS =		devel/sdl \
@@ -29,11 +29,12 @@ MODULES =		devel/scons \
 
 MAKE_ENV =		CC="${CC}" \
 			CXX="${CXX}" \
+			CXXFLAGS="${CXXFLAGS} -DIOAPI_NO_64" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 CONFIGURE_STYLE =	scons
 
-WRKDIST =		${WRKDIR}/fceux
+WRKDIST =		${WRKDIR}/fceux-${V}
 
 NO_TEST =		Yes
 
