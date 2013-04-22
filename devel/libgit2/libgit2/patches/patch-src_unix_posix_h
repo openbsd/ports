@@ -1,8 +1,7 @@
-$OpenBSD: patch-src_unix_posix_h,v 1.1 2013/04/22 06:22:22 jasper Exp $
+$OpenBSD: patch-src_unix_posix_h,v 1.2 2013/04/22 06:39:53 jasper Exp $
 
 Add missing prototype for p_realpath().
-https://github.com/libgit2/libgit2/issues/1495
-
+https://github.com/libgit2/libgit2/commit/bfb4facb3a5e0b650811560fc49d27247fd9d85d
 
 --- src/unix/posix.h.orig	Tue Apr 16 17:46:41 2013
 +++ src/unix/posix.h	Sun Apr 21 23:59:46 2013

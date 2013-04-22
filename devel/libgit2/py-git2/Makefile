@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/04/22 06:33:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2013/04/22 06:39:53 jasper Exp $
 
 COMMENT=		libgit2 bindings in Python
 
@@ -12,6 +12,7 @@ WANTLIB += 		git2 pthread ${MODPY_WANTLIB}
 
 LIB_DEPENDS=		devel/libgit2/libgit2>=0.18.0
 
-NO_TEST=		Yes
+do-test:
+	cd ${WRKSRC} && ${MODPY_BIN} setup.py test
 
 .include <bsd.port.mk>
