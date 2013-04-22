@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 10:50:17 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/04/22 19:37:48 landry Exp $
 
 COMMENT=		File-finding iterator
 
 MODULES=		cpan
-DISTNAME=		File-Next-1.02
-REVISION=		0
+DISTNAME=		File-Next-1.12
 CATEGORIES=		devel
 USE_GROFF =		Yes
 
