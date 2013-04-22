@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.4 2013/03/11 10:50:10 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2013/04/22 06:33:28 jasper Exp $
 
 SHARED_ONLY?=		Yes
 
@@ -11,8 +11,6 @@ PERMIT_PACKAGE_CDROM?=	Yes
 PERMIT_PACKAGE_FTP?=	Yes
 PERMIT_DISTFILES_FTP?=	Yes
 
-MASTER_SITES?=		http://distfiles.nl/
+MASTER_SITES=		http://github.com/libgit2/${PROJECT}/archive/v${V}.tar.gz?dummy=/
 DIST_SUBDIR=		libgit
-
-TAR?=			${LOCALBASE}/bin/gtar
-BUILD_DEPENDS+= 	archivers/gtar
+DISTNAME?=		${PROJECT}-${V}

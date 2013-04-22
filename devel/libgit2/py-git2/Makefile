@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2013/04/22 06:23:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2013/04/22 06:33:28 jasper Exp $
 
 COMMENT=		libgit2 bindings in Python
 
 V=			0.18.1
-DISTNAME=		pygit2-$V
+PROJECT=		pygit2
 PKGNAME=		py-git2-$V
-
-MASTER_SITES=		http://github.com/libgit2/pygit2/archive/v${V}.tar.gz?dummy=/
 
 MODULES=		lang/python
 
