@@ -1,11 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/05/22 10:34:38 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/04/22 19:38:40 landry Exp $
 bin/ack
 ${P5SITE}/App/
 ${P5SITE}/App/Ack/
 ${P5SITE}/App/Ack.pm
-${P5SITE}/App/Ack/Plugin/
-${P5SITE}/App/Ack/Plugin.pm
-${P5SITE}/App/Ack/Plugin/Basic.pm
-${P5SITE}/App/Ack/Repository.pm
+${P5SITE}/App/Ack/ConfigDefault.pm
+${P5SITE}/App/Ack/ConfigFinder.pm
+${P5SITE}/App/Ack/ConfigLoader.pm
+${P5SITE}/App/Ack/Filter/
+${P5SITE}/App/Ack/Filter.pm
+${P5SITE}/App/Ack/Filter/Default.pm
+${P5SITE}/App/Ack/Filter/Extension.pm
+${P5SITE}/App/Ack/Filter/FirstLineMatch.pm
+${P5SITE}/App/Ack/Filter/Inverse.pm
+${P5SITE}/App/Ack/Filter/Is.pm
+${P5SITE}/App/Ack/Filter/Match.pm
+${P5SITE}/App/Ack/Resource/
 ${P5SITE}/App/Ack/Resource.pm
+${P5SITE}/App/Ack/Resource/Basic.pm
+${P5SITE}/App/Ack/Resources.pm
 @man man/man1/ack.1
