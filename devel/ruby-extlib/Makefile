@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/04/23 07:31:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2013/04/23 07:38:16 jasper Exp $
 
 COMMENT =		Ruby extensions serving DataMapper and DataObjects
 
@@ -13,7 +13,7 @@ MODULES =		lang/ruby
 CONFIGURE_STYLE =	ruby gem
 
 MODRUBY_TEST =		rake rspec
-TEST_DEPENDS =		converters/ruby-json,${MODRUBY_FLAVOR} \
+TEST_DEPENDS =		devel/ruby-json_pure,${MODRUBY_FLAVOR} \
 			devel/ruby-jeweler,${MODRUBY_FLAVOR}>=1.8.4
 
 .include <bsd.port.mk>
