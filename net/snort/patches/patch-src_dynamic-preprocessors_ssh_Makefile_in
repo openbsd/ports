@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_dynamic-preprocessors_ssh_Makefile_in,v 1.6 2013/03/29 04:22:59 lteo Exp $
---- src/dynamic-preprocessors/ssh/Makefile.in.orig	Wed Feb 20 20:31:54 2013
-+++ src/dynamic-preprocessors/ssh/Makefile.in	Fri Mar  8 18:42:34 2013
-@@ -257,7 +257,7 @@ top_builddir = @top_builddir@
+$OpenBSD: patch-src_dynamic-preprocessors_ssh_Makefile_in,v 1.7 2013/04/23 02:04:13 lteo Exp $
+--- src/dynamic-preprocessors/ssh/Makefile.in.orig	Thu Mar 21 14:07:28 2013
++++ src/dynamic-preprocessors/ssh/Makefile.in	Thu Apr  4 22:28:16 2013
+@@ -224,7 +224,7 @@ top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  AUTOMAKE_OPTIONS = foreign no-dependencies
  lib_LTLIBRARIES = libsf_ssh_preproc.la
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_dynamic-preprocessors_ssh_Makefile_in,v 1.6 2013/03/29 04:22
  @SO_WITH_STATIC_LIB_TRUE@libsf_ssh_preproc_la_LIBADD = ../libsf_dynamic_preproc.la
  @SO_WITH_STATIC_LIB_FALSE@nodist_libsf_ssh_preproc_la_SOURCES = \
  @SO_WITH_STATIC_LIB_FALSE@../include/sf_dynamic_preproc_lib.c \
-@@ -450,7 +450,7 @@ distdir: $(DISTFILES)
+@@ -416,7 +416,7 @@ distdir: $(DISTFILES)
  	done
  check-am: all-am
  check: check-am
