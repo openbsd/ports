@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1122 2013/04/18 15:08:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.1123 2013/04/23 18:58:57 landry Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1032,6 +1032,7 @@
      SUBDIR += p5-YAML-XS
      SUBDIR += p5-accessors
      SUBDIR += p5-aliased
+     SUBDIR += p5-autobox
      SUBDIR += p5-boolean
      SUBDIR += p5-capitalization
      SUBDIR += p5-common-sense
