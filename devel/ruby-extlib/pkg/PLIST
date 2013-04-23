@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/12/08 22:40:02 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/04/23 07:31:17 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.autotest
 ${GEM_LIB}/gems/${DISTNAME}/.document
-${GEM_LIB}/gems/${DISTNAME}/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/README.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
