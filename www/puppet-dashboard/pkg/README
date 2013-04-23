@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.8 2013/03/25 07:55:10 ajacoutot Exp $
+$OpenBSD: README,v 1.9 2013/04/23 16:41:27 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -66,12 +66,12 @@ Cron Jobs
 ---------
 The MySQL database should be optimized on a montly basis. This can be
 done by adding the following entry to the root's crontab(5):
-0	0	1	*	*	cd ${INSTDIR} && sudo -u _puppet-dashboard rake${MODRUBY_BINREV} RAILS_ENV=production db:raw:optimize
+0	0	1	*	*	cd ${INSTDIR} && sudo -u _puppet-dashboard ${LOCALBASE}/bin/rake${MODRUBY_BINREV} RAILS_ENV=production db:raw:optimize
 
 Over time, old reports will start to accumulate which can slow down the
 Dashboard. Adding the following line to the root's crontab(5) will clean
 up reports older than 1 month and will run every night:
-0	0	*	*	*	cd ${INSTDIR} && sudo -u _puppet-dashboard rake${MODRUBY_BINREV} RAILS_ENV=production reports:prune upto=1 unit=mon
+0	0	*	*	*	cd ${INSTDIR} && sudo -u _puppet-dashboard ${LOCALBASE}/bin/rake${MODRUBY_BINREV} RAILS_ENV=production reports:prune upto=1 unit=mon
 
 Upgrade
 -------
