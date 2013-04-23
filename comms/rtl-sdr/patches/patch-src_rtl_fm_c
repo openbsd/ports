@@ -1,0 +1,75 @@
+$OpenBSD: patch-src_rtl_fm_c,v 1.1 2013/04/23 14:50:19 sthen Exp $
+--- src/rtl_fm.c.orig	Fri Apr 12 21:51:14 2013
++++ src/rtl_fm.c	Tue Apr 23 15:42:34 2013
+@@ -128,6 +128,7 @@ void usage(void)
+ 		"\t[-E sets lower edge tuning (default: center)]\n"
+ 		"\t[-N enables NBFM mode (default: on)]\n"
+ 		"\t[-W enables WBFM mode (default: off)]\n"
++		"\t[-S force sync output (default: async)]\n"
+ 		"\t (-N -s 170k -o 4 -A fast -r 32k -l 0 -D)\n"
+ 		"\tfilename (a '-' dumps samples to stdout)\n"
+ 		"\t (omitting the filename also uses stdout)\n\n"
+@@ -723,12 +724,22 @@ int main(int argc, char **argv)
+ 	uint32_t dev_index = 0;
+ 	int device_count;
+ 	int ppm_error = 0;
++#ifdef __OpenBSD__
++	int sync_mode = 1;
++#else
++	int sync_mode = 0;
++#endif
+ 	char vendor[256], product[256], serial[256];
++	pthread_mutexattr_t attr;
++
+ 	fm_init(&fm);
+-	pthread_mutex_init(&data_ready, NULL);
+-	pthread_mutex_init(&data_write, NULL);
++	pthread_mutexattr_init(&attr);
++	pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_NORMAL);
++	pthread_mutex_init(&data_ready, &attr);
++	pthread_mutex_init(&data_write, &attr);
++	pthread_mutexattr_destroy(&attr);
+ 
+-	while ((opt = getopt(argc, argv, "d:f:g:s:b:l:o:t:r:p:EFA:NWMULRDC")) != -1) {
++	while ((opt = getopt(argc, argv, "d:f:g:s:b:l:o:t:r:p:EFA:NWMULRDSC")) != -1) {
+ 		switch (opt) {
+ 		case 'd':
+ 			dev_index = atoi(optarg);
+@@ -815,6 +826,9 @@ int main(int argc, char **argv)
+ 		case 'R':
+ 			fm.mode_demod = &raw_demod;
+ 			break;
++		case 'S':
++			sync_mode = 1;
++			break;
+ 		default:
+ 			usage();
+ 			break;
+@@ -921,9 +935,24 @@ int main(int argc, char **argv)
+ 		fprintf(stderr, "WARNING: Failed to reset buffers.\n");}
+ 
+ 	pthread_create(&demod_thread, NULL, demod_thread_fn, (void *)(&fm));
+-	rtlsdr_read_async(dev, rtlsdr_callback, (void *)(&fm),
+-			      DEFAULT_ASYNC_BUF_NUMBER,
+-			      lcm_post[fm.post_downsample] * DEFAULT_BUF_LENGTH);
++	if (sync_mode) {
++		fprintf(stderr, "Reading samples in sync mode...\n");
++		while (!do_exit) {
++			r = rtlsdr_read_sync(dev, &fm.buf,
++					     lcm_post[fm.post_downsample] * DEFAULT_BUF_LENGTH,
++					     &fm.buf_len);
++			if (r < 0) {
++				fprintf(stderr, "WARNING: sync read failed.\n");
++				break;
++			}
++			full_demod(&fm);
++		}
++	} else {
++		fprintf(stderr, "Reading samples in async mode...\n");
++		rtlsdr_read_async(dev, rtlsdr_callback, (void *)(&fm),
++				  DEFAULT_ASYNC_BUF_NUMBER,
++				  lcm_post[fm.post_downsample] * DEFAULT_BUF_LENGTH);
++	}
+ 
+ 	if (do_exit) {
+ 		fprintf(stderr, "\nUser cancel, exiting...\n");}

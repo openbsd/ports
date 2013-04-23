@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/21 11:45:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2013/04/23 14:50:19 sthen Exp $
 
 COMMENT=	software to turn RTL2832U into an SDR
 
 DISTNAME=	rtl-sdr-0.20130412
+REVISION=	0
 
 SHARED_LIBS=	rtlsdr 0.0
 
@@ -32,6 +33,6 @@ NO_TEST=	Yes
 # issues (unlocking already-unlocked mutex). other programs have been
 # patched to force synchronous mode.   update DESCR if fixing these.
 post-install:
-	cd ${PREFIX}/bin && rm rtl_adsb rtl_fm rtl_tcp
+	cd ${PREFIX}/bin && rm rtl_adsb rtl_tcp
 
 .include <bsd.port.mk>

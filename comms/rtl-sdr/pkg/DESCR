@@ -5,14 +5,14 @@ samples to the host, which is officially used for DAB/DAB+/FM demodulation.
 RTL-SDR provides some tools to work with these devices:
 
 rtl_eeprom:	EEPROM programming tool
+rtl_fm:		general purpose analogue demodulator
+		(narrow band FM, wide band FM, AM and SSB)
 rtl_sdr:	tunes the device and captures raw data to a file
 rtl_test:	check the possible tuning range
 
-Asynchronous mode is NOT currently supported on OpenBSD. rtl_sdr and rtl_test
-have been modified to force synchronous mode, and the following are not yet
+Asynchronous mode is NOT currently supported on OpenBSD; some programs
+have been modified to force synchronous mode, the following are not yet
 available:
 
 rtl_adsb:	simple ADS-B decoder (aircraft tracking)
-rtl_fm:		general purpose analogue demodulator
-		(narrow band FM, wide band FM, AM and SSB)
 rtl_tcp:	provides a network server for remote access to an SDR

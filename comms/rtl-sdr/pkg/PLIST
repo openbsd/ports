@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/21 11:45:08 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/04/23 14:50:19 sthen Exp $
 @bin bin/rtl_eeprom
+@bin bin/rtl_fm
 @bin bin/rtl_sdr
 @bin bin/rtl_test
 include/rtl-sdr.h
