@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 10:50:29 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/04/23 07:17:08 jasper Exp $
 
 COMMENT =		port of Algorithm::Diff that uses the LCS algorithm
 
-DISTNAME =		diff-lcs-1.1.2
-REVISION =		5
+DISTNAME =		diff-lcs-1.2.4
 CATEGORIES =		devel lang/ruby
 
 # Perl Artistic
