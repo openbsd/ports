@@ -1,0 +1,6 @@
+The autobox pragma allows methods to be called on integers, floats,
+strings, arrays, hashes, and code references in exactly the same manner
+as blessed references.
+The autoboxing is transparent: boxed values are not blessed into their
+(user-defined) implementation class (unless the method elects to bestow
+such a blessing) - they simply use its methods as though they are.

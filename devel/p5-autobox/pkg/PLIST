@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/23 18:58:20 landry Exp $
+${P5ARCH}/
+${P5ARCH}/auto/
+${P5ARCH}/auto/autobox/
+${P5ARCH}/auto/autobox/autobox.bs
+${P5ARCH}/auto/autobox/autobox.so
+${P5ARCH}/autobox/
+${P5ARCH}/autobox.pm
+${P5ARCH}/autobox.pod
+${P5ARCH}/autobox/universal.pm
+@man man/man3p/autobox.3p
