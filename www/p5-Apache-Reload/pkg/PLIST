@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/07/23 18:39:19 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/04/23 16:47:01 sthen Exp $
 ${P5SITE}/Apache/
 ${P5SITE}/Apache/Reload.pm
-${P5SITE}/Apache2/
-${P5SITE}/Apache2/Reload.pm
-@man man/man3p/Apache2::Reload.3p
+@comment ${P5SITE}/Apache2/
+@comment ${P5SITE}/Apache2/Reload.pm
+@comment @man man/man3p/Apache2::Reload.3p
 @man man/man3p/Apache::Reload.3p
