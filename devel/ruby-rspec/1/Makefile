@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 10:50:30 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/04/23 06:52:59 jasper Exp $
 
 COMMENT =		ruby framework for Behaviour Driven Development
 DISTNAME =		rspec-1.3.2
-REVISION =		0
+REVISION =		1
 SUBST_VARS =            MODRUBY_FLAVOR MODRUBY_PREFIX
 
 # When you have two different versions of a ruby gem installed, the

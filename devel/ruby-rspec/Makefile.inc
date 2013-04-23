@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile.inc,v 1.2 2013/03/11 10:50:30 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2013/04/23 06:52:59 jasper Exp $
 
 CATEGORIES ?=		devel
 
-HOMEPAGE ?=		http://rspec.rubyforge.net/
+HOMEPAGE ?=		http://rspec.info/
 
 # MIT
 PERMIT_PACKAGE_CDROM ?=	Yes
-PERMIT_PACKAGE_FTP ?=	Yes
-PERMIT_DISTFILES_FTP ?=	Yes
 
 MODULES ?=		lang/ruby
 
