@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2013/04/02 14:09:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.52 2013/04/23 13:10:46 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT-xmms=		extended module player plugin for XMMS
 
 DISTNAME=		xmp-3.5.0
 PKGNAME-main=		${DISTNAME}
-REVISION-main=		0
+REVISION-main=		1
 PKGNAME-xmms=		xmms-${DISTNAME}
 CATEGORIES=		audio
 
