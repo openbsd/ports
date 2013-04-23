@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.13 2013/03/14 08:23:31 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.14 2013/04/23 07:59:31 dcoppa Exp $
 @conflict jakarta-tomcat-examples-*
 @pkgpath www/jakarta-tomcat/v7,-examples
 @owner _tomcat
@@ -818,7 +818,6 @@ webapps/docs/api/org/apache/catalina/websocket/
 webapps/docs/api/org/apache/catalina/websocket/Constants.html
 webapps/docs/api/org/apache/catalina/websocket/MessageInbound.html
 webapps/docs/api/org/apache/catalina/websocket/StreamInbound.html
-webapps/docs/api/org/apache/catalina/websocket/Utf8Decoder.html
 webapps/docs/api/org/apache/catalina/websocket/WebSocketServlet.html
 webapps/docs/api/org/apache/catalina/websocket/WsFrame.html
 webapps/docs/api/org/apache/catalina/websocket/WsHttpServletRequestWrapper.html
@@ -1495,9 +1494,27 @@ webapps/docs/api/org/apache/tomcat/util/buf/StringCache.CharEntry.html
 webapps/docs/api/org/apache/tomcat/util/buf/StringCache.html
 webapps/docs/api/org/apache/tomcat/util/buf/UDecoder.html
 webapps/docs/api/org/apache/tomcat/util/buf/UEncoder.html
+webapps/docs/api/org/apache/tomcat/util/buf/Utf8Decoder.html
 webapps/docs/api/org/apache/tomcat/util/buf/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/buf/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/buf/package-tree.html
+webapps/docs/api/org/apache/tomcat/util/codec/
+webapps/docs/api/org/apache/tomcat/util/codec/BinaryDecoder.html
+webapps/docs/api/org/apache/tomcat/util/codec/BinaryEncoder.html
+webapps/docs/api/org/apache/tomcat/util/codec/Decoder.html
+webapps/docs/api/org/apache/tomcat/util/codec/DecoderException.html
+webapps/docs/api/org/apache/tomcat/util/codec/Encoder.html
+webapps/docs/api/org/apache/tomcat/util/codec/EncoderException.html
+webapps/docs/api/org/apache/tomcat/util/codec/binary/
+webapps/docs/api/org/apache/tomcat/util/codec/binary/Base64.html
+webapps/docs/api/org/apache/tomcat/util/codec/binary/BaseNCodec.html
+webapps/docs/api/org/apache/tomcat/util/codec/binary/StringUtils.html
+webapps/docs/api/org/apache/tomcat/util/codec/binary/package-frame.html
+webapps/docs/api/org/apache/tomcat/util/codec/binary/package-summary.html
+webapps/docs/api/org/apache/tomcat/util/codec/binary/package-tree.html
+webapps/docs/api/org/apache/tomcat/util/codec/package-frame.html
+webapps/docs/api/org/apache/tomcat/util/codec/package-summary.html
+webapps/docs/api/org/apache/tomcat/util/codec/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/collections/
 webapps/docs/api/org/apache/tomcat/util/collections/ConcurrentCache.html
 webapps/docs/api/org/apache/tomcat/util/collections/package-frame.html
@@ -1581,6 +1598,7 @@ webapps/docs/api/org/apache/tomcat/util/http/fileupload/ParameterParser.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/ProgressListener.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/RequestContext.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/ThresholdingOutputStream.html
+webapps/docs/api/org/apache/tomcat/util/http/fileupload/UploadContext.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/disk/
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/disk/DiskFileItem.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/disk/DiskFileItemFactory.html
@@ -1601,6 +1619,11 @@ webapps/docs/api/org/apache/tomcat/util/http/fileupload/util/Closeable.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/util/FileItemHeadersImpl.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/util/LimitedInputStream.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/util/Streams.html
+webapps/docs/api/org/apache/tomcat/util/http/fileupload/util/mime/
+webapps/docs/api/org/apache/tomcat/util/http/fileupload/util/mime/MimeUtility.html
+webapps/docs/api/org/apache/tomcat/util/http/fileupload/util/mime/package-frame.html
+webapps/docs/api/org/apache/tomcat/util/http/fileupload/util/mime/package-summary.html
+webapps/docs/api/org/apache/tomcat/util/http/fileupload/util/mime/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/util/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/util/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/util/package-tree.html
