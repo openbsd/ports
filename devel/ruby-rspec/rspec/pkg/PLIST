@@ -1,17 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1 2011/11/17 15:15:27 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/04/23 07:41:17 jasper Exp $
 @option no-default-conflict
 @conflict ${MODRUBY_PREFIX}-rspec->=2.0
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
-${GEM_LIB}/gems/${DISTNAME}/.document
-${GEM_LIB}/gems/${DISTNAME}/.gitignore
-${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/License.txt
-${GEM_LIB}/gems/${DISTNAME}/README.markdown
-${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/version.rb
-${GEM_LIB}/gems/${DISTNAME}/rspec.gemspec
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
