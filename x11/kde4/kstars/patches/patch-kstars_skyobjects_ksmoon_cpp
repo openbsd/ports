@@ -1,0 +1,21 @@
+$OpenBSD: patch-kstars_skyobjects_ksmoon_cpp,v 1.1.1.1 2013/04/24 12:46:13 zhuk Exp $
+--- kstars/skyobjects/ksmoon.cpp.orig	Tue Mar 26 17:36:06 2013
++++ kstars/skyobjects/ksmoon.cpp	Tue Mar 26 17:36:33 2013
+@@ -18,7 +18,7 @@
+ #include "ksmoon.h"
+ 
+ #include <stdlib.h>
+-#include <math.h>
++#include <cmath>
+ 
+ #include <QFile>
+ #include <QTextStream>
+@@ -222,7 +222,7 @@ void KSMoon::findMagnitude(const KSNumbers*)
+     // relevant data put into ksplanetbase.h) was taken from
+     // SkyChart v3 Beta
+     double phd = phase().Degrees();
+-    if( isnan( phd ) ) // Avoid nanny phases.
++    if( std::isnan( phd ) ) // Avoid nanny phases.
+         return;
+     int p = floor( phd );
+     if( p > 180 )
