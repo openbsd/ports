@@ -1,0 +1,11 @@
+$OpenBSD: patch-kgpg_kcfg,v 1.1.1.1 2013/04/24 12:03:38 zhuk Exp $
+--- kgpg.kcfg.orig	Sun Jan 22 09:23:21 2012
++++ kgpg.kcfg	Tue Jan 24 21:21:52 2012
+@@ -58,6 +58,7 @@
+     <group name="GPG Settings">
+         <entry name="GpgConfigPath" type="Path" key="gpg_config_path">
+             <label>The path of the gpg configuration file.</label>
++            <default>$HOME/.gnupg/gpg.conf</default>
+         </entry>
+         <entry name="GpgBinaryPath" type="Path" key="gpg_bin_path">
+             <label>The path of the gpg binary used by KGpg.</label>
