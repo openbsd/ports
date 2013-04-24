@@ -1,0 +1,5 @@
+Nepomuk is about classification, organisation and presentation of data.
+It is not an application, but a component which can be used by
+developers within applications.
+
+This package includes actual Nepomuk functionality.
