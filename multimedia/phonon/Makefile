@@ -1,28 +1,40 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:35:44 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/04/24 08:53:37 zhuk Exp $
 
-COMMENT =	multimedia layer from qt4/kde4
+COMMENT =	multimedia layer for Qt4/KDE4
 CATEGORIES =	multimedia devel
-VERSION =	4.4.2
+VERSION =	4.6.0
 DISTNAME =	phonon-${VERSION}
-EXTRACT_SUFX =	.tar.bz2
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/phonon/4.4.2/}
+HOMEPAGE =	http://phonon.kde.org/
 
-# LGPL 2.1
-PERMIT_PACKAGE_CDROM =   Yes
+# Renamed to avoid clashing with Qt4's one
+SHARED_LIBS =	phonon_s		0.0 \
+		phononexperimental	2.0
 
-# higher than base kde4 to avoid issues
+# LGPL v2.1
+PERMIT_PACKAGE_CDROM =	Yes
 
-SHARED_LIBS +=		phonon 5.0
-SHARED_LIBS +=		phononexperimental 0.0
-BUILD_DEPENDS +=	devel/automoc
+MASTER_SITES =		${MASTER_SITE_KDE:=stable/phonon/${VERSION}/src/}
 
-MODULES =		x11/qt4 devel/cmake
+MODULES =		x11/kde4
+MODKDE4_USE =
+MODKDE4_LIB_LINKS =	Yes
 
-LIB_DEPENDS +=	multimedia/xine-lib
+WANTLIB =	m pthread stdc++
+WANTLIB +=	lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui
+WANTLIB +=	lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSql lib/qt4/QtSvg
+WANTLIB +=	lib/qt4/QtTest lib/qt4/QtXml lib/qt4/QtXmlPatterns
+WANTLIB +=	pulse pulse-mainloop-glib qzeitgeist
 
-WANTLIB +=  GL glib-2.0 gmodule-2.0 gobject-2.0 gstaudio-0.10 gstbase-0.10 \
-	gstinterfaces-0.10 gstpbutils-0.10 gstreamer-0.10 gstvideo-0.10 \
-	gthread-2.0 lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtOpenGL m stdc++ \
-	xine
+LIB_DEPENDS =	productivity/libqzeitgeist>=0.8.0 \
+		audio/pulseaudio
+
+# Not sure if it's needed at all but doesn't hurt either for now.
+CONFIGURE_ARGS =	-DPHONON_INSTALL_QT_EXTENSIONS_INTO_SYSTEM_QT:Bool=Yes
+
+# Clashes with the one provided by Qt itself.
+CONFIGURE_ARGS +=	-DPHONON_BUILD_DESIGNER_PLUGIN:Bool=No
+
+# Upstream says, tests need to be redone.
+NO_TEST =		Yes
 
 .include <bsd.port.mk>

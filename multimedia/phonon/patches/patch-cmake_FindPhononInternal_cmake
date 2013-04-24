@@ -1,0 +1,19 @@
+$OpenBSD: patch-cmake_FindPhononInternal_cmake,v 1.1 2013/04/24 08:53:37 zhuk Exp $
+Allow paths to be overriden.
+--- cmake/FindPhononInternal.cmake.orig	Thu Nov 15 15:47:01 2012
++++ cmake/FindPhononInternal.cmake	Thu Nov 15 15:46:55 2012
+@@ -90,10 +90,10 @@ set(CMAKE_MODULE_PATH ${_phonon_cmake_module_path_back
+ 
+ set(LIB_SUFFIX "" CACHE STRING "Define suffix of directory name (32/64)" )
+ 
+-set(SHARE_INSTALL_PREFIX        "share")  #              CACHE PATH "Base directory for files which go to share/")
+-set(INCLUDE_INSTALL_DIR         "include" ) #           CACHE PATH "The subdirectory to the header prefix")
+-set(BIN_INSTALL_DIR             "bin"     ) #         CACHE PATH "The install dir for executables (default ${EXEC_INSTALL_PREFIX}/bin)")
+-set(LIB_INSTALL_DIR             "lib${LIB_SUFFIX}" ) #  CACHE PATH "The subdirectory relative to the install prefix where libraries will be installed (default is ${EXEC_INSTALL_PREFIX}/lib${LIB_SUFFIX})")
++set(SHARE_INSTALL_PREFIX        "share"              CACHE PATH "Base directory for files which go to share/")
++set(INCLUDE_INSTALL_DIR         "include"            CACHE PATH "The subdirectory to the header prefix")
++set(BIN_INSTALL_DIR             "bin"              CACHE PATH "The install dir for executables (default ${EXEC_INSTALL_PREFIX}/bin)")
++set(LIB_INSTALL_DIR             "lib${LIB_SUFFIX}"   CACHE PATH "The subdirectory relative to the install prefix where libraries will be installed (default is ${EXEC_INSTALL_PREFIX}/lib${LIB_SUFFIX})")
+ set(PLUGIN_INSTALL_DIR          "${LIB_INSTALL_DIR}/kde4"                   CACHE PATH "The subdirectory relative to the install prefix where plugins will be installed (default is ${LIB_INSTALL_DIR}/kde4)")
+ set(ICON_INSTALL_DIR            "${SHARE_INSTALL_PREFIX}/icons"             CACHE PATH "The icon install dir (default ${SHARE_INSTALL_PREFIX}/share/icons/)")
+ set(SERVICES_INSTALL_DIR        "${SHARE_INSTALL_PREFIX}/kde4/services"     CACHE PATH "The install dir for service (desktop, protocol, ...) files")
