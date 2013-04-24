@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2013/02/03 13:21:42 zhuk Exp $
+# $OpenBSD: Makefile,v 1.14 2013/04/24 20:03:39 zhuk Exp $
 
-COMMENT =		K Desktop Environment, pimlibs
-DISTNAME =		kdepimlibs-${VERSION}
-REVISION =		0
+COMMENT =	libraries for KDE PIM services
+DISTNAME =	kdepimlibs-${MODKDE4_VERSION}
 
-SHARED_LIBS +=	kabc                 5.0      # .4.0
+SHARED_LIBS =	kabc                 5.0      # .4.0
 SHARED_LIBS +=	kabc_file_core       0.0      # .4.0
+SHARED_LIBS +=	kalarmcal	     0.0      # 2.7
 SHARED_LIBS +=	kcal                 5.0      # .4.0
 SHARED_LIBS +=	kldap                0.0      # .4.0
 SHARED_LIBS +=	kmime                6.0      # .4.0
@@ -26,36 +26,48 @@ SHARED_LIBS +=	akonadi-kabc	     0.0      # .4.4
 SHARED_LIBS +=	akonadi-kcal	     0.0      # .4.4
 SHARED_LIBS +=	akonadi-kde	     0.0      # .4.4
 SHARED_LIBS +=	akonadi-kmime	     0.0      # .4.4
+SHARED_LIBS +=	akonadi-notes	     0.0      # 4.7
 SHARED_LIBS +=	kholidays	     0.0      # .4.4
 SHARED_LIBS +=	kontactinterface     0.0      # .4.4
 SHARED_LIBS +=	kpimtextedit	     0.0      # .4.4
-SHARED_LIBS += 	gpgme++-pthread	     0.0      # .2.4
-SHARED_LIBS += 	gpgme++		     0.0      # .2.4
 SHARED_LIBS +=	microblog	     0.0      # .4.4
 
-# XXX bug in cmake, remove after cmake 2.8.2
-SHARED_LIBS += 	gpgmepp-pthread	     0.0      # .2.4
-SHARED_LIBS += 	gpgmepp		     0.0      # .2.4
+SHARED_LIBS +=  akonadi-calendar	0.0 # 4.7
+SHARED_LIBS +=  kcalcore		0.0 # 4.7
+SHARED_LIBS +=  kcalutils		0.0 # 4.7
+SHARED_LIBS +=  kmbox			0.0 # 4.7
 
-MODULES =	devel/gettext
+SHARED_LIBS +=  akonadi-socialutils	0.0 # 4.10
 
-BUILD_DEPENDS += devel/boost \
-		devel/automoc
-LIB_DEPENDS +=	x11/kde4/libs \
-		security/cyrus-sasl2 \
+WANTLIB =  c m pthread stdc++
+WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSql
+WANTLIB += lib/qt4/QtSvg lib/qt4/QtTest lib/qt4/QtXml
+WANTLIB += ${KDE4LIB}/kcmutils ${KDE4LIB}/kdeui ${KDE4LIB}/kemoticons
+WANTLIB += ${KDE4LIB}/kio ${KDE4LIB}/kparts ${KDE4LIB}/nepomuk
+WANTLIB += ${KDE4LIB}/nepomukcore ${KDE4LIB}/nepomukutils ${KDE4LIB}/solid
+WANTLIB += akonadiprotocolinternals assuan e2fs-uuid gpg-error gpgme
+WANTLIB += gpgme-pthread ical icalss lber ldap prison qjson sasl2 soprano
+
+MODULES =	devel/gettext multimedia/phonon
+
+MODKDE4_USE =	libs
+
+BUILD_DEPENDS =	devel/boost \
+		misc/shared-mime-info \
+		misc/shared-desktop-ontologies>=0.10
+
+RUN_DEPENDS =	misc/shared-mime-info \
+		misc/shared-desktop-ontologies>=0.10
+
+LIB_DEPENDS =	${MODKDE4_DEP_DIR}/nepomuk-core>=${MODKDE4_DEP_VERSION} \
 		databases/openldap \
+		databases/soprano>=${MIN_SOPRANO_VERSION} \
+		devel/qjson \
+		graphics/prison \
+		productivity/akonadi>=${MIN_AKONADI_VERSION} \
+		security/cyrus-sasl2 \
 		security/gpgme>=0.4.5 \
-		x11/kde4/akonadi \
+		sysutils/e2fsprogs \
 		textproc/libical
-
-# these come from libs in real case
-pre-install:
-	mkdir -p ${PREFIX}/share/doc/HTML/en/common
-
-WANTLIB += akonadiprotocolinternals c gpg-error gpgme gpgme-pthread ical \
-	icalss kdecore.>=8 kdeui kio kparts kutils lber ldap \
-	lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSql \
-	lib/qt4/QtSvg lib/qt4/QtXml m phonon pthread sasl2 solid stdc++
-
 
 .include <bsd.port.mk>

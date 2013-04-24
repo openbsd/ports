@@ -1,0 +1,12 @@
+$OpenBSD: patch-kcalcore_CMakeLists_txt,v 1.1 2013/04/24 20:03:39 zhuk Exp $
+--- kcalcore/CMakeLists.txt.orig	Thu Aug  9 12:27:08 2012
++++ kcalcore/CMakeLists.txt	Thu Aug  9 12:37:22 2012
+@@ -85,7 +85,7 @@ kde4_add_library(kcalcore ${LIBRARY_TYPE} ${kcalcore_L
+ 
+ target_link_libraries(kcalcore ${KDE4_KDECORE_LIBRARY} ${QT_QTGUI_LIBRARY} ${LIBICAL_LIBRARIES})
+ if(HAVE_UUID_LIBRARY)
+-  target_link_libraries(kcalcore uuid)
++  target_link_libraries(kcalcore "${UUID_LIBRARY}")
+ endif()
+ 
+ set_target_properties(kcalcore PROPERTIES

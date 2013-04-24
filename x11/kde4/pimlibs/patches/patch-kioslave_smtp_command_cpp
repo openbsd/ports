@@ -1,0 +1,12 @@
+$OpenBSD: patch-kioslave_smtp_command_cpp,v 1.1 2013/04/24 20:03:39 zhuk Exp $
+--- kioslave/smtp/command.cpp.orig	Mon Dec 17 23:51:57 2012
++++ kioslave/smtp/command.cpp	Mon Dec 17 23:52:14 2012
+@@ -29,6 +29,8 @@
+     your version.
+ */
+ 
++#include <sys/types.h>
++
+ #include "command.h"
+ 
+ #include "smtpsessioninterface.h"
