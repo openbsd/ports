@@ -1,0 +1,6 @@
+KSnapshot is a simple and powerful shapshot utility for KDE.
+Main features:
+  - Include or exclude mouse pointer from screen.
+  - Taking a picture from the whole screen, particular window
+    or any other part of screen.
+  - Snapshots can be non-polygonal.
