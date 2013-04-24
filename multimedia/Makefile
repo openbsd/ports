@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2013/04/16 16:20:49 giovanni Exp $
+# $OpenBSD: Makefile,v 1.69 2013/04/24 09:16:23 zhuk Exp $
 
      SUBDIR =
      SUBDIR += atomicparsley
@@ -51,6 +51,8 @@
      SUBDIR += p5-AMF-Connection
      SUBDIR += p5-Data-AMF
      SUBDIR += p5-Storable-AMF
+     SUBDIR += phonon
+     SUBDIR += phonon-backend
      SUBDIR += recordmydesktop
      SUBDIR += regionset
      SUBDIR += schroedinger
