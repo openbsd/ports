@@ -1,6 +1,9 @@
-$OpenBSD: patch-configure_ac,v 1.1 2013/04/10 14:13:53 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2013/04/24 07:07:58 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=697719
+From 67ccf1dbda724991d1bf1e30be38b388798f3e6a Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Thu, 18 Apr 2013 12:21:49 +0000
+Subject: tracker-dbus: add support for OpenBSD
 
 --- configure.ac.orig	Wed Apr 10 14:51:37 2013
 +++ configure.ac	Wed Apr 10 14:51:18 2013

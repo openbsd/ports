@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_libtracker-common_tracker-dbus_c,v 1.9 2013/04/20 13:55:34 ajacoutot Exp $
+$OpenBSD: patch-src_libtracker-common_tracker-dbus_c,v 1.10 2013/04/24 07:07:58 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=697719
+From 67ccf1dbda724991d1bf1e30be38b388798f3e6a Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Thu, 18 Apr 2013 12:21:49 +0000
+Subject: tracker-dbus: add support for OpenBSD
 
 --- src/libtracker-common/tracker-dbus.c.orig	Thu May  3 17:22:57 2012
 +++ src/libtracker-common/tracker-dbus.c	Thu Apr 18 14:12:43 2013
