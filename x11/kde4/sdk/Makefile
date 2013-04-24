@@ -1,33 +1,78 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/22 08:37:02 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/04/24 19:12:58 zhuk Exp $
 
-COMMENT = 		K Desktop Environment, developer extensions
-DISTNAME =		kdesdk-${VERSION}
-USE_GROFF =	Yes
+COMMENT =	KDE software development kit
+DISTNAME =	kdesdk-${MODKDE4_VERSION}
 
-SHARED_LIBS += antlr                 0.0 # .4.0(version: 4.0)
-SHARED_LIBS += kateinterfaces        0.0 # .4.0
-SHARED_LIBS += kompareinterface      0.0 # .4.0
-SHARED_LIBS += komparedialogpages	0.0 # .4.4
-SHARED_LIBS +=	komparediff2		0.0 # .4.4
-SHARED_LIBS +=	ktexteditor_codesnippets_core	0.0	# .4.4
+SHARED_LIBS =	komparedialogpages	0.0 # 4.7
+SHARED_LIBS +=	komparediff2		0.0 # 4.7
+SHARED_LIBS +=	kompareinterface	0.0 # 4.7
+SHARED_LIBS +=  kasten2controllers        0.0 # 0.2
+SHARED_LIBS +=  kasten2core               0.0 # 0.2
+SHARED_LIBS +=  kasten2gui                0.0 # 0.2
+SHARED_LIBS +=  kasten2okteta1controllers 0.0 # 0.2
+SHARED_LIBS +=  kasten2okteta1core        0.0 # 0.2
+SHARED_LIBS +=  kasten2okteta1gui         0.0 # 0.2
+SHARED_LIBS +=  okteta1core               0.0 # 0.8
+SHARED_LIBS +=  okteta1gui                0.0 # 0.8
+SHARED_LIBS +=  kdeinit4_cervisia         0.0
+SHARED_LIBS +=  kdeinit4_cvsaskpass       0.0
+SHARED_LIBS +=  kdeinit4_cvsservice       0.0
 
-LIB_DEPENDS +=	x11/kde4/libs \
-		x11/kde4/pimlibs \
-		devel/subversion \
-		textproc/hunspell
+WANTLIB =  c m pthread stdc++
+WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtDesigner
+WANTLIB += lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtScript
+WANTLIB += lib/qt4/QtScriptTools lib/qt4/QtSql lib/qt4/QtSvg
+WANTLIB += lib/qt4/QtXml
+WANTLIB += ${KDE4LIB}/kcmutils ${KDE4LIB}/kde3support ${KDE4LIB}/kdesu
+WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kfile ${KDE4LIB}/kio
+WANTLIB += ${KDE4LIB}/knewstuff3 ${KDE4LIB}/konq ${KDE4LIB}/kparts
+WANTLIB += ${KDE4LIB}/krosscore ${KDE4LIB}/krossui ${KDE4LIB}/ktexteditor
+WANTLIB += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils
+WANTLIB += ${KDE4LIB}/solid ${KDE4LIB}/threadweaver
+WANTLIB += apr-1 hunspell-1.2 svn_client-1 svn_delta-1 svn_fs-1
+WANTLIB += svn_ra-1 svn_subr-1 xml2 xslt
+WANTLIB += gettextpo qca2 soprano streamanalyzer streams
 
-WANTLIB += apr-1 c hunspell-1.2 kabc>=5 kcal kde3support kdecore>=8 kdesu \
-	kdeui kfile khtml kio kjs knewstuff2 knewstuff3 kparts kresources \
-	krosscore krossui ktexteditor kutils lib/qt4/Qt3Support lib/qt4/QtDBus \
-	lib/qt4/QtDesigner lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtScript \
-	lib/qt4/QtSql lib/qt4/QtSvg lib/qt4/QtXml m plasma pthread stdc++ \
-	streamanalyzer streams svn_client-1 svn_delta-1 svn_fs-1 svn_ra-1 \
-	svn_subr-1 threadweaver xml2 xslt
+MODULES =		lang/python lang/ruby
+MODKDE4_USE =		pim
+MODPY_BUILDDEP =	No
+MODRUBY_BUILDDEP =	No
+MODRUBY_REV =		1.8
 
-# these come from libs in real case
-pre-install:
-	mkdir -p ${PREFIX}/share/doc/HTML/en/common
+# For building KAppTemplate with weird file names
+USE_GMAKE =	Yes
 
+BUILD_DEPENDS =	devel/boost
 
-CONFIGURE_ARGS += -DBUILD_kmtrace:BOOL=false
+RUN_DEPENDS =	archivers/bzip2 \
+		devel/desktop-file-utils \
+		misc/findutils \
+		misc/shared-mime-info \
+		sysutils/ggrep \
+		x11/gtk+2,-guic
+
+# for vimdiff script
+RUN_DEPENDS +=	editors/vim
+
+# uses --label option
+RUN_DEPENDS +=	archivers/gtar
+
+LIB_DEPENDS =	databases/strigi \
+	 	devel/subversion \
+		security/qca2 \
+		textproc/libxslt \
+		textproc/libxml \
+		textproc/hunspell \
+		${MODKDE4_DEP_DIR}/baseapps>=${MODKDE4_DEP_VERSION}
+
+# We have only pre-compiled Antlr3, and poxml wants
+# C runtime from Antlr2, which is not easy to port
+CONFIGURE_ARGS =	-DWITH_Antlr2:Bool=FALSE
+
+SUBST_FILES =	kde-dev-scripts/colorsvn \
+		kde-dev-scripts/svn2log.sh
+
+pre-configure:
+	cd ${WRKSRC} && ${SUBST_CMD} ${SUBST_FILES}
+
 .include <bsd.port.mk>
