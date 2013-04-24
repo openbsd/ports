@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 11:29:41 zhuk Exp $
+@bin bin/bomber
+share/applications/kde4/bomber.desktop
+share/apps/bomber/
+share/apps/bomber/bomberui.rc
+share/apps/bomber/themes/
+share/apps/bomber/themes/Lava-Island.desktop
+share/apps/bomber/themes/Lava-Island.svgz
+share/apps/bomber/themes/kbomber.desktop
+share/apps/bomber/themes/kbomber.png
+share/apps/bomber/themes/kbomber.svgz
+share/apps/bomber/themes/lava-Island.png
+share/config.kcfg/bomber.kcfg
+share/doc/HTML/en/bomber/
+share/doc/HTML/en/bomber/common
+share/doc/HTML/en/bomber/index.cache.bz2
+share/doc/HTML/en/bomber/index.docbook
+share/icons/hicolor/128x128/apps/bomber.png
+share/icons/hicolor/32x32/apps/bomber.png
+share/icons/hicolor/48x48/apps/bomber.png
+share/icons/hicolor/64x64/apps/bomber.png
+share/icons/hicolor/scalable/apps/bomber.svgz
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
