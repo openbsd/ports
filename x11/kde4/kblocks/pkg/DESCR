@@ -1,0 +1,5 @@
+KBlocks is the classic falling blocks game. The idea is stack the
+falling blocks in a way that lines are completely filled. When a
+line is completed it is removed, and more space is available in the
+play area. When there is not enough space for blocks to fall, the
+game is over.
