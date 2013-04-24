@@ -1,0 +1,11 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2013/04/24 11:39:30 zhuk Exp $
+--- CMakeLists.txt.orig	Thu Feb  7 22:38:03 2013
++++ CMakeLists.txt	Thu Feb  7 22:38:35 2013
+@@ -66,6 +66,7 @@ macro_display_feature_log()
+ 
+ if(SPEECHD_FOUND)
+   set(SPEECH_LIB ${SPEECHD_LIBRARIES})
++  include_directories(${SPEECHD_INCLUDE_DIR})
+   add_definitions(-DSPEECHD_FOUND)
+ endif(SPEECHD_FOUND)
+ 
