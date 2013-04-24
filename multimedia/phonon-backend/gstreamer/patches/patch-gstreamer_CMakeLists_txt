@@ -1,0 +1,12 @@
+$OpenBSD: patch-gstreamer_CMakeLists_txt,v 1.1.1.1 2013/04/24 08:42:12 zhuk Exp $
+--- gstreamer/CMakeLists.txt.orig	Mon Nov 19 03:02:15 2012
++++ gstreamer/CMakeLists.txt	Mon Nov 19 03:02:33 2012
+@@ -19,7 +19,7 @@ include(ConfigureChecks.cmake)
+ if (BUILD_PHONON_GSTREAMER)
+    include_directories(
+           ${CMAKE_CURRENT_BINARY_DIR}
+-          ${GSTREAMER_INCLUDE_DIR}
++          ${GSTREAMER_INCLUDE_DIRS}
+           ${GSTREAMER_PLUGIN_VIDEO_INCLUDE_DIR}
+           ${GSTREAMER_PLUGIN_AUDIO_INCLUDE_DIR}
+           ${GSTREAMER_PLUGIN_PBUTILS_INCLUDE_DIR}
