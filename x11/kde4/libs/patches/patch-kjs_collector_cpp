@@ -1,24 +1,22 @@
-$OpenBSD: patch-kjs_collector_cpp,v 1.4 2010/06/18 11:14:42 espie Exp $
---- kjs/collector.cpp.orig	Tue Jul 28 21:44:08 2009
-+++ kjs/collector.cpp	Sat May 29 13:55:42 2010
-@@ -507,6 +507,12 @@ static inline void* currentThreadStackBase()
-     static pthread_t stackThread;
+$OpenBSD: patch-kjs_collector_cpp,v 1.5 2013/04/24 19:45:29 zhuk Exp $
+XXX KJS doesn't work anyway, save this patch as a mark where to dig.
+--- kjs/collector.cpp.orig	Sat May 21 00:24:54 2011
++++ kjs/collector.cpp	Thu Oct 13 17:55:51 2011
+@@ -500,13 +500,15 @@ static inline void* currentThreadStackBase()
      pthread_t thread = pthread_self();
      if (stackBase == 0 || thread != stackThread) {
-+#if defined(__OpenBSD__)
-+	stack_t sinfo;
-+	pthread_stackseg_np(thread, &sinfo);
-+	stackBase = (char *)sinfo.ss_sp - sinfo.ss_size;
-+        stackThread = thread;
-+#else
          pthread_attr_t sattr;
- #if HAVE(PTHREAD_NP_H) || defined(__NetBSD__)
+-#if HAVE(PTHREAD_NP_H) || defined(__NetBSD__)
++#if HAVE(PTHREAD_NP_H) || defined(__NetBSD__) || defined(__OpenBSD__)
++        pthread_attr_init(&sattr);
++#if !defined(__OpenBSD__)
          // e.g. on FreeBSD 5.4, neundorf@kde.org
-@@ -525,6 +531,7 @@ static inline void* currentThreadStackBase()
-         stackBase = (char *)stackBase + stackSize;      // a matter of interpretation, apparently...
-         assert(stackBase);
-         stackThread = thread;
+         // also on NetBSD 3 and 4, raphael.langerhorst@kdemail.net
+         // HIGHLY RECCOMENDED by manpage to allocate storage, avoids
+         // crashing in JS immediately in FreeBSD. 
+-        pthread_attr_init(&sattr);
+         pthread_attr_get_np(thread, &sattr);
 +#endif
-     }
  #else
- #error Need a way to get the stack base on this platform
+         // FIXME: this function is non-portable; other POSIX systems may have different np alternatives
+         pthread_getattr_np(thread, &sattr);

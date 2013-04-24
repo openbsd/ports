@@ -1,0 +1,15 @@
+$OpenBSD: patch-kdecore_CMakeLists_txt,v 1.1 2013/04/24 19:45:29 zhuk Exp $
+--- kdecore/CMakeLists.txt.orig	Fri Aug 17 11:37:02 2012
++++ kdecore/CMakeLists.txt	Fri Aug 17 11:49:29 2012
+@@ -38,6 +38,11 @@ include_directories( ${CMAKE_CURRENT_BINARY_DIR}/compr
+ include(auth/ConfigureChecks.cmake)
+ include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/auth/ )
+ 
++# Some defines used by KSharedDataCache locks
++configure_file(util/config-util.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/util/config-util.h )
++include(util/ConfigureChecks.cmake)
++include_directories( ${CMAKE_CURRENT_BINARY_DIR}/util/ )
++
+ # Configure a small file to tell BackendsManager what to use
+ configure_file(auth/BackendsConfig.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/BackendsConfig.h)
+ 

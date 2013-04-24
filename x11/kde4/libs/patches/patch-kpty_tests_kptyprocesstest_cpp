@@ -1,0 +1,13 @@
+$OpenBSD: patch-kpty_tests_kptyprocesstest_cpp,v 1.1 2013/04/24 19:45:29 zhuk Exp $
+Fix test by using standard shell.
+--- kpty/tests/kptyprocesstest.cpp.orig	Mon Dec 31 16:23:57 2012
++++ kpty/tests/kptyprocesstest.cpp	Mon Dec 31 16:24:17 2012
+@@ -102,7 +102,7 @@ void KPtyProcessTest::test_shared_pty()
+ void KPtyProcessTest::test_pty_basic()
+ {
+     KPtyProcess p;
+-    p.setProgram("/bin/bash", QStringList() << "-c" << "read -s VAL; echo \"1: $VAL\"; echo \"2: $VAL\" >&2");
++    p.setProgram("/bin/sh", QStringList() << "-c" << "read -s VAL; echo \"1: $VAL\"; echo \"2: $VAL\" >&2");
+     p.setPtyChannels(KPtyProcess::AllChannels);
+     p.pty()->setEcho(false);
+     p.start();

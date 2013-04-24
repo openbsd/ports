@@ -1,0 +1,11 @@
+$OpenBSD: patch-kdecore_network_ConfigureChecks_cmake,v 1.3 2013/04/24 19:45:29 zhuk Exp $
+--- kdecore/network/ConfigureChecks.cmake.orig	Tue Sep  6 18:48:46 2011
++++ kdecore/network/ConfigureChecks.cmake	Tue Sep  6 18:49:15 2011
+@@ -57,6 +57,6 @@ check_prototype_exists(gai_strerror netdb.h HAVE_GAI_S
+ # check for existing datatypes
+ set(CMAKE_EXTRA_INCLUDE_FILES "sys/socket.h;netdb.h")
+ check_type_size("struct addrinfo" HAVE_STRUCT_ADDRINFO)
+-set(CMAKE_EXTRA_INCLUDE_FILES "sys/socket.h;netdb.h")
++set(CMAKE_EXTRA_INCLUDE_FILES "sys/socket.h;netinet/in.h")
+ check_type_size("struct sockaddr_in6" HAVE_STRUCT_SOCKADDR_IN6)
+ set(CMAKE_EXTRA_INCLUDE_FILES)  #reset CMAKE_EXTRA_INCLUDE_FILES

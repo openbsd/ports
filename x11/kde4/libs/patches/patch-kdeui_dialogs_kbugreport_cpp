@@ -1,0 +1,13 @@
+$OpenBSD: patch-kdeui_dialogs_kbugreport_cpp,v 1.1 2013/04/24 19:45:29 zhuk Exp $
+Allow libexec item to be found.
+--- kdeui/dialogs/kbugreport.cpp.orig	Sun Aug 12 16:20:26 2012
++++ kdeui/dialogs/kbugreport.cpp	Sun Aug 12 16:20:49 2012
+@@ -528,7 +528,7 @@ bool KBugReport::sendBugReport()
+     QString::fromLatin1("submit@bugs.kde.org") );
+ 
+   QString command;
+-  command = KStandardDirs::locate("exe", "ksendbugmail");
++  command = KStandardDirs::findExe("ksendbugmail");
+   if (command.isEmpty())
+       command = KStandardDirs::findExe( QString::fromLatin1("ksendbugmail") );
+ 

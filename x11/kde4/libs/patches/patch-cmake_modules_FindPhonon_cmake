@@ -1,0 +1,12 @@
+$OpenBSD: patch-cmake_modules_FindPhonon_cmake,v 1.1 2013/04/24 19:45:29 zhuk Exp $
+--- cmake/modules/FindPhonon.cmake.orig	Tue Nov  6 01:22:10 2012
++++ cmake/modules/FindPhonon.cmake	Tue Nov  6 01:22:33 2012
+@@ -22,7 +22,7 @@ macro(_phonon_find_version)
+ endmacro(_phonon_find_version)
+ 
+ # the dirs listed with HINTS are searched before the default sets of dirs
+-find_library(PHONON_LIBRARY NAMES phonon HINTS ${KDE4_LIB_INSTALL_DIR} ${QT_LIBRARY_DIR})
++find_library(PHONON_LIBRARY NAMES phonon_s phonon HINTS ${KDE4_LIB_INSTALL_DIR} ${QT_LIBRARY_DIR})
+ find_path(PHONON_INCLUDE_DIR NAMES phonon/phonon_export.h HINTS ${KDE4_INCLUDE_INSTALL_DIR} ${QT_INCLUDE_DIR} ${INCLUDE_INSTALL_DIR} ${QT_LIBRARY_DIR})
+ 
+ if(PHONON_INCLUDE_DIR AND PHONON_LIBRARY)

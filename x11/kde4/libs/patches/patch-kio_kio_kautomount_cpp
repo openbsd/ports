@@ -1,0 +1,11 @@
+$OpenBSD: patch-kio_kio_kautomount_cpp,v 1.1 2013/04/24 19:45:29 zhuk Exp $
+--- kio/kio/kautomount.cpp.orig	Mon Oct  8 21:08:29 2012
++++ kio/kio/kautomount.cpp	Mon Oct  8 21:09:03 2012
+@@ -24,6 +24,7 @@
+ #include <kdirnotify.h>
+ #include <kdebug.h>
+ #include <kmountpoint.h>
++#include <sys/param.h>
+ #include <sys/mount.h>
+ 
+ /***********************************************************************

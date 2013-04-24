@@ -1,0 +1,12 @@
+$OpenBSD: patch-kdecore_kernel_kstandarddirs_unix_cpp,v 1.1 2013/04/24 19:45:29 zhuk Exp $
+--- kdecore/kernel/kstandarddirs_unix.cpp.orig	Sun Aug 12 05:36:47 2012
++++ kdecore/kernel/kstandarddirs_unix.cpp	Sun Aug 12 16:07:11 2012
+@@ -63,7 +63,7 @@ QString KStandardDirs::installPath(const char *type)
+             if (strcmp("lib", type) == 0)
+                 return QFile::decodeName(LIB_INSTALL_DIR "/");
+             if (strcmp("libexec", type) == 0)
+-                return QFile::decodeName(KDEDIR "/lib" KDELIBSUFF "/kde4/libexec/");
++                return QFile::decodeName(LIBEXEC_INSTALL_DIR "/");
+             if (strcmp("locale", type) == 0)
+                 return QFile::decodeName(LOCALE_INSTALL_DIR "/");
+             break;
