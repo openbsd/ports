@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 12:12:43 zhuk Exp $
+@bin bin/kmousetool
+@man man/man1/kmousetool.1
+share/applications/kde4/kmousetool.desktop
+share/apps/kmousetool/
+share/apps/kmousetool/sounds/
+share/apps/kmousetool/sounds/mousetool_tap.wav
+share/doc/HTML/en/kmousetool/
+share/doc/HTML/en/kmousetool/common
+share/doc/HTML/en/kmousetool/index.cache.bz2
+share/doc/HTML/en/kmousetool/index.docbook
+share/doc/HTML/en/kmousetool/man-kmousetool.1.docbook
+share/icons/hicolor/16x16/actions/kmousetool_off.png
+share/icons/hicolor/16x16/actions/kmousetool_on.png
+share/icons/hicolor/16x16/apps/kmousetool.png
+share/icons/hicolor/32x32/actions/kmousetool_off.png
+share/icons/hicolor/32x32/actions/kmousetool_on.png
+share/icons/hicolor/32x32/apps/kmousetool.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
