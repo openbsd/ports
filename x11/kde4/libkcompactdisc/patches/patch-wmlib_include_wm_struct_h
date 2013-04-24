@@ -1,0 +1,11 @@
+$OpenBSD: patch-wmlib_include_wm_struct_h,v 1.1.1.1 2013/04/24 18:24:40 zhuk Exp $
+--- wmlib/include/wm_struct.h.orig	Mon Oct 15 23:20:41 2012
++++ wmlib/include/wm_struct.h	Mon Oct 15 23:21:19 2012
+@@ -102,6 +102,7 @@ int gen_set_volume(struct wm_drive *d, int left, int r
+ int gen_get_volume(struct wm_drive *d, int *left, int *right);
+ int gen_scale_volume(int *left, int *right);
+ int gen_unscale_volume(int *left, int *right);
++const char *find_cdrom();
+ 
+ /*
+  * Information about a particular block of CDDA data.

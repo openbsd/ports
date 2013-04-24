@@ -1,0 +1,16 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2013/04/24 18:24:40 zhuk Exp $
+--- CMakeLists.txt.orig	Fri Sep 28 04:44:43 2012
++++ CMakeLists.txt	Mon Oct 15 23:25:36 2012
+@@ -7,7 +7,11 @@ include(MacroLibrary)
+ add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
+ 
+ find_package(Alsa)
+-alsa_configure_file(${CMAKE_CURRENT_BINARY_DIR}/config-alsa.h)
++if(ALSA_FOUND)
++	alsa_configure_file(${CMAKE_CURRENT_BINARY_DIR}/config-alsa.h)
++else(ALSA_FOUND)
++	file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/config-alsa.h "/* stub */")
++endif(ALSA_FOUND)
+ 
+ include_directories(${KDE4_INCLUDES})
+ include_directories(${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR})
