@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 12:45:08 zhuk Exp $
+@bin bin/ksquares
+share/applications/kde4/ksquares.desktop
+share/apps/ksquares/
+share/apps/ksquares/ksquaresui.rc
+share/config.kcfg/ksquares.kcfg
+share/doc/HTML/en/ksquares/
+share/doc/HTML/en/ksquares/common
+share/doc/HTML/en/ksquares/index.cache.bz2
+share/doc/HTML/en/ksquares/index.docbook
+share/icons/hicolor/128x128/apps/ksquares.png
+share/icons/hicolor/16x16/apps/ksquares.png
+share/icons/hicolor/22x22/apps/ksquares.png
+share/icons/hicolor/32x32/apps/ksquares.png
+share/icons/hicolor/48x48/apps/ksquares.png
+share/icons/hicolor/64x64/apps/ksquares.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
