@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 12:10:11 zhuk Exp $
+@bin bin/kmag
+@man man/man1/kmag.1
+share/applications/kde4/kmag.desktop
+share/apps/kmag/
+share/apps/kmag/kmagui.rc
+share/doc/HTML/en/kmag/
+share/doc/HTML/en/kmag/common
+share/doc/HTML/en/kmag/index.cache.bz2
+share/doc/HTML/en/kmag/index.docbook
+share/doc/HTML/en/kmag/man-kmag.1.docbook
+share/doc/HTML/en/kmag/screenshot.png
+share/icons/hicolor/16x16/actions/followmouse.png
+share/icons/hicolor/16x16/actions/hidemouse.png
+share/icons/hicolor/16x16/actions/window.png
+share/icons/hicolor/16x16/apps/kmag.png
+share/icons/hicolor/32x32/apps/kmag.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
