@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 12:00:46 zhuk Exp $
+@bin bin/kfloppy
+share/applications/kde4/KFloppy.desktop
+share/doc/HTML/en/kfloppy/
+share/doc/HTML/en/kfloppy/common
+share/doc/HTML/en/kfloppy/index.cache.bz2
+share/doc/HTML/en/kfloppy/index.docbook
+share/icons/hicolor/128x128/apps/kfloppy.png
+share/icons/hicolor/16x16/apps/kfloppy.png
+share/icons/hicolor/22x22/apps/kfloppy.png
+share/icons/hicolor/32x32/apps/kfloppy.png
+share/icons/hicolor/48x48/apps/kfloppy.png
+share/icons/hicolor/64x64/apps/kfloppy.png
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

@@ -1,0 +1,29 @@
+$OpenBSD: patch-floppy_cpp,v 1.1.1.1 2013/04/24 12:00:46 zhuk Exp $
+--- floppy.cpp.orig	Fri Jan 20 14:09:20 2012
++++ floppy.cpp	Fri Jan 20 14:11:56 2012
+@@ -151,10 +151,10 @@ FloppyData::FloppyData(QWidget * parent)
+         if (Ext2Filesystem::runtimeCheck()) {
+             filesystemComboBox->addItem(i18n("ext2"));
+             ++numFileSystems;
+-            userFeedBack += i18n( "Program mke2fs found." );
++            userFeedBack += i18n( "Program for ext2 found." ) + " (" + Ext2Filesystem::getNewfs() + ")";
+         }
+         else {
+-            userFeedBack += i18n( "Program mke2fs <b>not found</b>. Ext2 formatting <b>not available</b>" );
++            userFeedBack += i18n( "Program for ext2 <b>not found</b>. Ext2 formatting <b>not available</b>" );
+         }
+         userFeedBack += QLatin1String( "<br>" );
+         if (MinixFilesystem::runtimeCheck()) {
+@@ -189,10 +189,10 @@ FloppyData::FloppyData(QWidget * parent)
+         if (Ext2Filesystem::runtimeCheck()) {
+             filesystemComboBox->addItem(i18n("ext2"));
+             ++numFileSystems;
+-            userFeedBack += i18n( "Program mke2fs found." );
++            userFeedBack += i18n( "Program for ext2 found." ) + " (" + Ext2Filesystem::getNewfs() + ")";
+         }
+         else {
+-            userFeedBack += i18n( "Program mke2fs <b>not found</b>. Ext2 formatting <b>not available</b>" );
++            userFeedBack += i18n( "Program for ext2 <b>not found</b>. Ext2 formatting <b>not available</b>" );
+         }
+ #endif
+ 

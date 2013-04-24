@@ -1,0 +1,18 @@
+$OpenBSD: patch-format_h,v 1.1.1.1 2013/04/24 12:00:46 zhuk Exp $
+--- format.h.orig	Fri Jan 20 13:58:28 2012
++++ format.h	Fri Jan 20 14:28:40 2012
+@@ -357,9 +357,13 @@ class Ext2Filesystem : public FloppyAction (public)
+ 
+         /// Parse output
+         virtual void processStdOut(K3Process*, char* b, int l);
+-	
++
++	/// Get found program's name
++	static const QString& getNewfs() { return newfs; } 
++
+ protected:
+ 	static QString newfs;
++	static bool native_mke2fs;
+ 	
+ 	bool doVerify,doLabel;
+ 	QString label;
