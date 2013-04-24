@@ -1,71 +1,96 @@
-# $OpenBSD: Makefile,v 1.9 2013/02/03 13:21:42 zhuk Exp $
+# $OpenBSD: Makefile,v 1.10 2013/04/24 20:01:23 zhuk Exp $
 
-COMMENT=		K Desktop Environment, pim
-DISTNAME=		kdepim-${VERSION}
-HOMEPAGE=		http://pim.kde.org/
-USE_GROFF =		Yes
-REVISION =		0
+COMMENT =	KDE personal information management
+DISTNAME =	kdepim-${MODKDE4_VERSION}
 
-SHARED_LIBS +=	akonadi-kcal_next 0.0
-SHARED_LIBS +=	akonadi_next 0.0
-SHARED_LIBS +=	akregatorinterfaces 0.0
-SHARED_LIBS +=	gwsoap 0.0
-SHARED_LIBS +=	kabc_groupdav 0.0
-SHARED_LIBS +=	kabcgroupwise 0.0
-SHARED_LIBS +=	kabckolab 0.0
-SHARED_LIBS +=	kaddressbookprivate 0.0
-SHARED_LIBS +=	kalarm_calendar 0.0
-SHARED_LIBS +=	kcal_groupdav 0.0
-SHARED_LIBS +=	kcal_resourceblog 0.0
-SHARED_LIBS +=	kcalgroupwise 0.0
-SHARED_LIBS +=	kcalkolab 0.0
-SHARED_LIBS +=	kleo 0.0
-SHARED_LIBS +=	knoteskolab 0.0
-SHARED_LIBS +=	kontactprivate 0.0
-SHARED_LIBS +=	korganizer_core 0.0
-SHARED_LIBS +=	korganizerprivate 0.0
-SHARED_LIBS +=	messagecore 0.0
-SHARED_LIBS +=	messagelist 0.0
-SHARED_LIBS +=	messageviewer 0.0
-SHARED_LIBS +=	akregatorprivate     0.0      # .1.0
-SHARED_LIBS +=	kabc_slox            2.0      # .1.0
-SHARED_LIBS +=	kalarm_resources     0.0      # .1.0
-SHARED_LIBS +=	kcal_resourceremote  3.0      # .1.0
-SHARED_LIBS +=	kcal_slox            2.0      # .1.0
-SHARED_LIBS +=	kdepim               3.0      # .1.0
-SHARED_LIBS +=	kgroupwarebase       2.0      # .1.0
-SHARED_LIBS +=	kgroupwaredav        2.0      # .1.0
-SHARED_LIBS +=	kmailprivate         0.0      # .1.0
-SHARED_LIBS +=	knodecommon          0.0      # .1.0
-SHARED_LIBS +=	korg_stdprinting     3.0      # .1.0
-SHARED_LIBS +=	korganizer_calendar  3.0      # .1.0
-SHARED_LIBS +=	korganizer_eventviewer 3.0    # .1.0
-SHARED_LIBS +=	korganizer_interfaces  0.0    # .1.0
-SHARED_LIBS +=	kpgp                 6.0      # .2.2
-SHARED_LIBS +=	ksieve               2.0      # .0.0
-SHARED_LIBS +=	kslox                2.0      # .1.0
-SHARED_LIBS +=	mimelib              0.0      # .1.1
+SHARED_LIBS =	akonadi_next			0.0
+SHARED_LIBS +=	akregatorinterfaces		0.0
+SHARED_LIBS +=	kaddressbookprivate		0.0
+SHARED_LIBS +=	kcal_resourceblog		0.0
+SHARED_LIBS +=	kleo				0.0
+SHARED_LIBS +=	kontactprivate			0.0
+SHARED_LIBS +=	korganizer_core			0.0
+SHARED_LIBS +=	korganizerprivate		0.0
+SHARED_LIBS +=	messagecore			0.0
+SHARED_LIBS +=	messagelist			0.0
+SHARED_LIBS +=	messageviewer			0.0
+SHARED_LIBS +=	akregatorprivate		0.0
+SHARED_LIBS +=	kcal_resourceremote		3.0
+SHARED_LIBS +=	kdepim				3.0
+SHARED_LIBS +=	kmailprivate			0.0
+SHARED_LIBS +=	knodecommon			0.0
+SHARED_LIBS +=	korganizer_interfaces		0.0
+SHARED_LIBS +=	kpgp				6.0
+SHARED_LIBS +=	ksieve				2.0
 
-MODULES =		devel/gettext
+SHARED_LIBS +=  calendarsupport           0.0 # 4.7
+SHARED_LIBS +=  eventviews                0.0 # 4.7
+SHARED_LIBS +=  incidenceeditorsng        0.0 # 4.7
+SHARED_LIBS +=  incidenceeditorsngmobile  0.0 # 4.7
+SHARED_LIBS +=  kdepimdbusinterfaces      0.0 # 4.7
+SHARED_LIBS +=  kdepimmobileui            0.0 # 4.7
+SHARED_LIBS +=  kdgantt2                  0.0 # 0.1
+SHARED_LIBS +=  kleopatraclientcore       0.0 # 0.3
+SHARED_LIBS +=  kleopatraclientgui        0.0 # 0.3
+SHARED_LIBS +=  kmanagesieve              0.0 # 4.7
+SHARED_LIBS +=  ksieveui                  0.0 # 4.7
+SHARED_LIBS +=  mailcommon                0.0 # 4.7
+SHARED_LIBS +=  mailimporter              0.0 # 4.9
+SHARED_LIBS +=  messagecomposer           0.0 # 4.7
+SHARED_LIBS +=  templateparser            0.0 # 4.7
 
-BUILD_DEPENDS +=	devel/automoc
-LIB_DEPENDS+=		x11/kde4/libs \
-			x11/kde4/pimlibs
+SHARED_LIBS +=	pimcommon                 0.0 # 4.10
 
-WANTLIB += X11 Xss akonadi-contact akonadi-kcal akonadi-kde akonadi-kmime \
-	akonadiprotocolinternals c gpg-error gpgme++ gpgme++-pthread \
-	gpgme-pthread kabc>=5 kblog kcal kde3support kdecore>=8 \
-	kdeui kdnssd kfile kholidays khtml kimap kimproxy kio kjs kldap kmime \
-	knewstuff2 knotifyconfig kontactinterface kparts kpimidentities \
-	kpimtextedit kpimutils kresources ktexteditor ktnef kutils \
-	lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtDesigner lib/qt4/QtGui \
-	lib/qt4/QtNetwork lib/qt4/QtSql lib/qt4/QtSvg lib/qt4/QtXml m \
-	mailtransport nepomuk phonon pthread qgpgme solid stdc++ \
-	streamanalyzer streams syndication threadweaver z
+MODULES =	devel/gettext
 
-# these come from libs in real case
-pre-install:
-	mkdir -p ${PREFIX}/share/doc/HTML/en/common
+MODKDE4_USE =	pim
 
+WANTLIB =  c m pthread stdc++ z
+WANTLIB += ICE SM X11 Xss Xext
+WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtDeclarative
+WANTLIB += lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtOpenGL
+WANTLIB += lib/qt4/QtScript lib/qt4/QtSql lib/qt4/QtSvg
+WANTLIB += lib/qt4/QtWebKit lib/qt4/QtXml
+WANTLIB += ${KDE4LIB}/akonadi-calendar ${KDE4LIB}/akonadi-contact
+WANTLIB += ${KDE4LIB}/akonadi-kde ${KDE4LIB}/akonadi-kmime ${KDE4LIB}/kabc
+WANTLIB += ${KDE4LIB}/kalarmcal ${KDE4LIB}/kblog ${KDE4LIB}/kcal
+WANTLIB += ${KDE4LIB}/kcalcore ${KDE4LIB}/kcalutils ${KDE4LIB}/kcmutils
+WANTLIB += ${KDE4LIB}/kde3support ${KDE4LIB}/kdeui ${KDE4LIB}/kdewebkit
+WANTLIB += ${KDE4LIB}/kdnssd ${KDE4LIB}/kfile ${KDE4LIB}/kholidays
+WANTLIB += ${KDE4LIB}/khtml ${KDE4LIB}/kimap ${KDE4LIB}/kio ${KDE4LIB}/kjs
+WANTLIB += ${KDE4LIB}/kldap ${KDE4LIB}/kmbox ${KDE4LIB}/kmime
+WANTLIB += ${KDE4LIB}/knewstuff3 ${KDE4LIB}/knotifyconfig
+WANTLIB += ${KDE4LIB}/kontactinterface ${KDE4LIB}/kparts
+WANTLIB += ${KDE4LIB}/kpimidentities ${KDE4LIB}/kpimtextedit
+WANTLIB += ${KDE4LIB}/kpimutils ${KDE4LIB}/kprintutils
+WANTLIB += ${KDE4LIB}/kresources ${KDE4LIB}/ktexteditor ${KDE4LIB}/ktnef
+WANTLIB += ${KDE4LIB}/mailtransport ${KDE4LIB}/nepomuk
+WANTLIB += ${KDE4LIB}/nepomukcore ${KDE4LIB}/nepomukutils
+WANTLIB += ${KDE4LIB}/nepomukwidgets ${KDE4LIB}/plasma ${KDE4LIB}/solid
+WANTLIB += ${KDE4LIB}/syndication
+WANTLIB += akonadiprotocolinternals prison soprano streamanalyzer streams
+WANTLIB += assuan gpg-error gpgme++ gpgme++-pthread gpgme-pthread
+WANTLIB += grantlee_core grantlee_gui qgpgme sasl2
+
+MODULES =	devel/gettext multimedia/phonon
+
+# textproc/dblatex could be detected but will not be used
+BUILD_DEPENDS =	devel/boost \
+		misc/shared-desktop-ontologies \
+		textproc/libxslt
+
+RUN_DEPENDS =	misc/shared-desktop-ontologies
+
+LIB_DEPENDS =	databases/soprano \
+		databases/strigi \
+		productivity/akonadi>=${MIN_AKONADI_VERSION} \
+		security/cyrus-sasl2 \
+		security/gpgme \
+		security/libassuan \
+		x11/grantlee \
+		${MODKDE4_DEP_DIR}/nepomuk-core>=${MODKDE4_DEP_VERSION} \
+		${MODKDE4_DEP_DIR}/nepomuk-widgets>=${MODKDE4_DEP_VERSION}
+
+MODKDE4_SYSCONF_FILES =	dbus-1	share/examples
 
 .include <bsd.port.mk>

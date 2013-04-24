@@ -1,0 +1,15 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2013/04/24 20:01:23 zhuk Exp $
+
+Insert this text just after cmake searches for KDE packages
+
+--- CMakeLists.txt.orig	Thu Oct 18 18:39:40 2012
++++ CMakeLists.txt	Thu Oct 18 18:44:26 2012
+@@ -133,6 +133,8 @@ include(CheckIncludeFiles)
+ include(MacroBoolTo01)
+ find_package(KdepimLibs 4.9.2 REQUIRED)
+ 
++set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${KDE4_ENABLE_EXCEPTIONS}")
++
+ ############### Load the CTest options ###############
+ 
+ # CMake is irritating and doesn't allow setting the tests timeout globally.
