@@ -1,0 +1,19 @@
+$OpenBSD: patch-server_src_storage_dbconfigpostgresql_cpp,v 1.1.1.1 2013/04/24 09:05:59 zhuk Exp $
+--- server/src/storage/dbconfigpostgresql.cpp.orig	Sat Mar  2 15:51:18 2013
++++ server/src/storage/dbconfigpostgresql.cpp	Sat Mar 23 14:48:12 2013
+@@ -146,8 +146,13 @@ void DbConfigPostgresql::startInternalServer()
+     // call 'initdb -D/home/user/.local/share/akonadi/data_db'
+     const QString command = QString::fromLatin1( "%1" ).arg( mInitDbPath );
+     QStringList arguments;
+-    arguments << QString::fromLatin1( "-D%2" ).arg( dataDir )
+-              << QString::fromLatin1( "--locale=en_US.UTF-8" );
++    arguments << QString::fromLatin1( "-D%2" ).arg( dataDir );
++#if defined(__OpenBSD__)
++    // Not full locale support, PostgreSQL bails out with non-C locale
++    arguments << QString::fromLatin1( "--locale=C" );
++#else
++    arguments << QString::fromLatin1( "--locale=en_US.UTF-8" );
++#endif
+     QProcess::execute( command, arguments );
+ 
+     const QString configFileName = dataDir + QDir::separator() + QLatin1String( "postgresql.conf" );
