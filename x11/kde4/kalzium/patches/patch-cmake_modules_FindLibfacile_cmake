@@ -1,0 +1,12 @@
+$OpenBSD: patch-cmake_modules_FindLibfacile_cmake,v 1.1.1.1 2013/04/24 11:46:42 zhuk Exp $
+--- cmake/modules/FindLibfacile.cmake.orig	Tue Oct 23 13:37:57 2012
++++ cmake/modules/FindLibfacile.cmake	Tue Oct 23 13:38:19 2012
+@@ -20,7 +20,7 @@ if( OCAML_FOUND )
+    )
+    find_path(LIBFACILE_INCLUDE_DIR NAMES facile.cmi
+        HINTS ${OCAMLC_DIR}
+-       PATH_SUFFIXES facile lib/ocaml/facile
++       PATH_SUFFIXES lib/facile lib/ocaml/facile
+    )
+ endif(OCAML_FOUND)
+ 
