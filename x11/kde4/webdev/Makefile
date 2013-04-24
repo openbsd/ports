@@ -1,23 +1,37 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/22 08:37:02 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/04/24 20:07:20 zhuk Exp $
 
-COMMENT =		K Desktop Environment, web development
-DISTNAME =		kdewebdev-${VERSION}
+COMMENT =	web development tools for KDE
+DISTNAME =	kdewebdev-${MODKDE4_VERSION}
+REVISION =	0
 
-SHARED_LIBS +=	klinkstatuscommon	0.0
+SHARED_LIBS =	klinkstatuscommon	0.0
 SHARED_LIBS +=	kommandercore		0.0
 SHARED_LIBS +=	kommanderwidgets	0.0
 
-LIB_DEPENDS +=	x11/kde4/libs \
-		x11/kde4/pimlibs \
-		www/tidy
+WANTLIB =  c m pthread stdc++ z
+WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
+WANTLIB += lib/qt4/QtNetwork lib/qt4/QtSvg lib/qt4/QtXml
+WANTLIB += ${KDE4LIB}/kcmutils ${KDE4LIB}/kde3support ${KDE4LIB}/kdeui
+WANTLIB += ${KDE4LIB}/kemoticons ${KDE4LIB}/khtml ${KDE4LIB}/kidletime
+WANTLIB += ${KDE4LIB}/kio ${KDE4LIB}/kjs ${KDE4LIB}/kmime
+WANTLIB += ${KDE4LIB}/knewstuff2 ${KDE4LIB}/kparts ${KDE4LIB}/kpimidentities
+WANTLIB += ${KDE4LIB}/kprintutils ${KDE4LIB}/krossui ${KDE4LIB}/kutils
+WANTLIB += ${KDE4LIB}/mailtransport ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils
+WANTLIB += ${KDE4LIB}/threadweaver
+WANTLIB += soprano tidyp
 
-WANTLIB += c kde3support kdecore>=8 kdeui khtml kio kjs kmime knewstuff2 \
-	kparts kpimidentities krossui kutils lib/qt4/Qt3Support lib/qt4/QtDBus \
-	lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg lib/qt4/QtXml m \
-	mailtransport pthread stdc++ threadweaver tidy>=1 xml2 xslt z
+MODULES =	multimedia/phonon lang/ruby
+MODRUBY_REV =	1.8
+MODKDE4_USE =	pim
+CONFIGURE_ARGS =	-DRUBY_EXECUTABLE=${RUBY}
 
-# these come from libs in real case
-pre-install:
-	mkdir -p ${PREFIX}/share/doc/HTML/en/common
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/gtk+2,-guic \
+		${MODKDE4_DEP_DIR}/korundum>=${MODKDE4_DEP_VERSION}
+
+LIB_DEPENDS =	www/tidyp
+
+post-patch:
+	${SUBST_CMD} ${WRKSRC}/klinkstatus/src/plugins/scripting/scripts/examples/statistics/statistics.rb
 
 .include <bsd.port.mk>

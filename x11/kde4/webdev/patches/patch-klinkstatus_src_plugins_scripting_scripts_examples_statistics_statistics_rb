@@ -1,0 +1,9 @@
+$OpenBSD: patch-klinkstatus_src_plugins_scripting_scripts_examples_statistics_statistics_rb,v 1.1 2013/04/24 20:07:20 zhuk Exp $
+--- klinkstatus/src/plugins/scripting/scripts/examples/statistics/statistics.rb.orig	Wed May  7 13:05:29 2008
++++ klinkstatus/src/plugins/scripting/scripts/examples/statistics/statistics.rb	Fri Oct 14 01:03:37 2011
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env kross
++#!/usr/local/bin/kross
+ 
+ CurrentPath = self.action().currentPath()
+ 

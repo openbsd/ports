@@ -1,22 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/06/24 07:45:06 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/04/24 20:07:20 zhuk Exp $
 @bin bin/kfilereplace
 @bin bin/kimagemapeditor
 @bin bin/klinkstatus
 @bin bin/kommander
-include/kommandercore_export.h
-include/kommanderplugin.h
-include/kommanderwidget.h
-include/specials.h
+include/kde4/kommandercore_export.h
+include/kde4/kommanderplugin.h
+include/kde4/kommanderwidget.h
+include/kde4/specials.h
 lib/kde4/automationklinkstatus.so
 lib/kde4/klinkstatuspart.so
 lib/kde4/krossmoduleklinkstatus.so
 lib/kde4/libkfilereplacepart.so
 lib/kde4/libkimagemapeditor.so
+@lib ${KDE4LIB}/libklinkstatuscommon.so.${LIBklinkstatuscommon_VERSION}
+@lib ${KDE4LIB}/libkommandercore.so.${LIBkommandercore_VERSION}
+@lib ${KDE4LIB}/libkommanderwidgets.so.${LIBkommanderwidgets_VERSION}
 @lib lib/libklinkstatuscommon.so.${LIBklinkstatuscommon_VERSION}
 @lib lib/libkommandercore.so.${LIBkommandercore_VERSION}
 @lib lib/libkommanderwidgets.so.${LIBkommanderwidgets_VERSION}
-share/applications/
-share/applications/kde4/
 share/applications/kde4/kfilereplace.desktop
 share/applications/kde4/kimagemapeditor.desktop
 share/applications/kde4/klinkstatus.desktop
@@ -95,21 +96,23 @@ share/doc/HTML/en/kfilereplace/toolbar.png
 share/doc/HTML/en/kfilereplace/unsortedList.png
 share/doc/HTML/en/kimagemapeditor/
 share/doc/HTML/en/kimagemapeditor/common
+share/doc/HTML/en/kimagemapeditor/configure.png
 share/doc/HTML/en/kimagemapeditor/index.cache.bz2
 share/doc/HTML/en/kimagemapeditor/index.docbook
+share/doc/HTML/en/kimagemapeditor/mainwindow.png
 share/doc/HTML/en/klinkstatus/
+share/doc/HTML/en/klinkstatus/check-settings.png
 share/doc/HTML/en/klinkstatus/common
+share/doc/HTML/en/klinkstatus/identification-settings.png
 share/doc/HTML/en/klinkstatus/index.cache.bz2
 share/doc/HTML/en/klinkstatus/index.docbook
+share/doc/HTML/en/klinkstatus/login-dialog.png
+share/doc/HTML/en/klinkstatus/mail-transport-settings.png
+share/doc/HTML/en/klinkstatus/results-settings.png
 share/doc/HTML/en/klinkstatus/screenshot.png
-share/icons/hicolor/128x128/
-share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/klinkstatus.png
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/kimagemapeditor.png
 share/icons/hicolor/16x16/apps/klinkstatus.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/actions/
 share/icons/hicolor/22x22/actions/addpoint.png
 share/icons/hicolor/22x22/actions/arrow.png
 share/icons/hicolor/22x22/actions/circle.png
@@ -120,22 +123,21 @@ share/icons/hicolor/22x22/actions/polygon.png
 share/icons/hicolor/22x22/actions/raise.png
 share/icons/hicolor/22x22/actions/rectangle.png
 share/icons/hicolor/22x22/actions/removepoint.png
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/kfilereplace.png
 share/icons/hicolor/22x22/apps/klinkstatus.png
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/kfilereplace.png
 share/icons/hicolor/32x32/apps/kimagemapeditor.png
 share/icons/hicolor/32x32/apps/klinkstatus.png
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/kfilereplace.png
 share/icons/hicolor/48x48/apps/kimagemapeditor.png
 share/icons/hicolor/48x48/apps/klinkstatus.png
-share/icons/hicolor/64x64/
-share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/klinkstatus.png
 share/kde4/services/kfilereplacepart.desktop
 share/kde4/services/kimagemapeditorpart.desktop
 share/kde4/services/klinkstatus_automation.desktop
 share/kde4/services/klinkstatus_part.desktop
 share/kde4/services/krossmoduleklinkstatus.desktop
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
