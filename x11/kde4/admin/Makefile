@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/22 08:37:02 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/04/24 19:30:57 zhuk Exp $
 
-COMMENT =		K Desktop Environment, admin tools
-DISTNAME =		kdeadmin-${VERSION}
+COMMENT =	KDE local system administration tools
+DISTNAME =	kdeadmin-${MODKDE4_VERSION}
 
-LIB_DEPENDS += 	x11/kde4/libs \
-		x11/kde4/pimlibs
-		
-# these come from libs in real case
-pre-install:
-	mkdir -p ${PREFIX}/share/doc/HTML/en/common
+# From configure:
+# -- rpm and deb file plugins necessary in system != UNIX ?
+# -- PORT kfile plugins!!!
+# 
+# TODO: ksystemlog: adapt "kernel" mode to OpenBSD.
 
+WANTLIB =  c m pthread stdc++
+WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
+WANTLIB += lib/qt4/QtXml
+WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kio ${KDE4LIB}/kldap ${KDE4LIB}/kntlm
 
-WANTLIB += c kde3support kdecore>=8 kdeui kio kldap kntlm lib/qt4/Qt3Support \
-	lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg \
-	lib/qt4/QtXml m pthread stdc++
-
+MODKDE4_USE =	pim
 
 .include <bsd.port.mk>
