@@ -1,20 +1,21 @@
-# $OpenBSD: Makefile,v 1.10 2013/02/03 13:21:42 zhuk Exp $
+# $OpenBSD: Makefile,v 1.11 2013/04/24 19:32:57 zhuk Exp $
 
-COMMENT =		K Desktop Environment, artwork
-DISTNAME =		kdeartwork-${VERSION}
+COMMENT =	KDE graphics, styles and icon themes
+DISTNAME =	kdeartwork-${MODKDE4_VERSION}
 
-LIB_DEPENDS += 	x11/kde4/libs \
-		x11/kde4/base-workspace
-BUILD_DEPENDS+=	x11/xscreensaver \
-		devel/automoc \
-		math/eigen2
+MODKDE4_USE =	workspace
 
-WANTLIB += GL GLU ICE SM X11 Xau Xdmcp Xext Xft Xpm Xt c kdecore>=8 kdeui \
-	kio kparts kscreensaver lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork \
-	lib/qt4/QtOpenGL lib/qt4/QtSvg lib/qt4/QtXml m pthread stdc++
+WANTLIB =  c m pthread stdc++
+WANTLIB += GL GLU ICE SM X11 Xext Xt
+WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
+WANTLIB += lib/qt4/QtOpenGL lib/qt4/QtSvg lib/qt4/QtXml
+WANTLIB += ${KDE4LIB}/kdecorations ${KDE4LIB}/kdeui ${KDE4LIB}/kexiv2
+WANTLIB += ${KDE4LIB}/kio ${KDE4LIB}/kparts ${KDE4LIB}/kscreensaver
+WANTLIB += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils
+WANTLIB += soprano
 
-CONFIGURE_ARGS +=	-DXSCREENSAVER_FOUND:BOOL=TRUE
-CONFIGURE_ARGS +=	-DXSCREENSAVER_DIR:STRING=${LOCALBASE}/libexec/xscreensaver
-CONFIGURE_ARGS +=	-DXSCREENSAVER_CONFIG_DIR:STRING=${LOCALBASE}/share/xscreensaver/config
+BUILD_DEPENDS =	math/eigen2
+
+LIB_DEPENDS =	${MODKDE4_DEP_DIR}/libkexiv2>=${MODKDE4_DEP_VERSION}
 
 .include <bsd.port.mk>
