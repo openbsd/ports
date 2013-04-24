@@ -1,0 +1,28 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 18:20:35 zhuk Exp $
+@bin bin/kturtle
+share/applications/kde4/kturtle.desktop
+share/apps/kturtle/
+share/apps/kturtle/kturtleui.rc
+share/config/kturtle.knsrc
+share/doc/HTML/en/kturtle/
+share/doc/HTML/en/kturtle/common
+share/doc/HTML/en/kturtle/getting-started.docbook
+share/doc/HTML/en/kturtle/glossary.docbook
+share/doc/HTML/en/kturtle/index.cache.bz2
+share/doc/HTML/en/kturtle/index.docbook
+share/doc/HTML/en/kturtle/mainwindow.png
+share/doc/HTML/en/kturtle/mainwindow_flower_nrs.png
+share/doc/HTML/en/kturtle/programming-reference.docbook
+share/doc/HTML/en/kturtle/translator-guide.docbook
+share/doc/HTML/en/kturtle/using-kturtle.docbook
+share/icons/hicolor/128x128/apps/kturtle.png
+share/icons/hicolor/16x16/apps/kturtle.png
+share/icons/hicolor/22x22/apps/kturtle.png
+share/icons/hicolor/32x32/apps/kturtle.png
+share/icons/hicolor/48x48/apps/kturtle.png
+share/icons/hicolor/64x64/apps/kturtle.png
+share/icons/hicolor/scalable/apps/kturtle.svgz
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
