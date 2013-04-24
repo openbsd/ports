@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 18:26:44 zhuk Exp $
+include/kde4/libkexiv2/
+include/kde4/libkexiv2/altlangstredit.h
+include/kde4/libkexiv2/countryselector.h
+include/kde4/libkexiv2/kexiv2.h
+include/kde4/libkexiv2/kexiv2data.h
+include/kde4/libkexiv2/kexiv2previews.h
+include/kde4/libkexiv2/libkexiv2_export.h
+include/kde4/libkexiv2/msgtextedit.h
+include/kde4/libkexiv2/rotationmatrix.h
+include/kde4/libkexiv2/subjectwidget.h
+include/kde4/libkexiv2/version.h
+@lib ${KDE4LIB}/libkexiv2.so.${LIBkexiv2_VERSION}
+@lib lib/libkexiv2.so.${LIBkexiv2_VERSION}
+lib/pkgconfig/libkexiv2.pc
+share/apps/libkexiv2/
+share/apps/libkexiv2/data/
+share/apps/libkexiv2/data/topicset.iptc-subjectcode.xml
