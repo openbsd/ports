@@ -1,0 +1,10 @@
+$OpenBSD: patch-kde-dev-scripts_qt4_convert-qstringlatin1_pl,v 1.1.1.1 2013/04/24 19:04:15 zhuk Exp $
+--- kde-dev-scripts/qt4/convert-qstringlatin1.pl.orig	Sun Apr  7 13:27:40 2013
++++ kde-dev-scripts/qt4/convert-qstringlatin1.pl	Sun Apr  7 14:55:01 2013
+@@ -16,5 +16,5 @@ foreach my $file (@ARGV) {
+ 			}
+     } $file;
+ }
+-functionUtilkde::diffFile( "@ARGV" );
++functionUtilkde::diffFile( @ARGV );
+ 

@@ -1,0 +1,22 @@
+$OpenBSD: patch-kde-dev-scripts_build-progress_sh,v 1.1.1.1 2013/04/24 19:04:15 zhuk Exp $
+--- kde-dev-scripts/build-progress.sh.orig	Sun Apr  7 13:27:40 2013
++++ kde-dev-scripts/build-progress.sh	Sun Apr  7 14:05:30 2013
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ # This method gives some kind of status message in the title bar of Konsole,
+ # xterm, etc.. Thanks have to go to Malte Starostik
+@@ -13,10 +13,10 @@ set_title "Progress of kde-build script..."
+ 
+ cd $KDELOGDIR
+ while true; do 
+-    dir=`ls -t | head -n 1 | xargs grep "Entering directory" | tail -n 1 | awk "{print \\$4}" | sed "s'$KDESRCDIR/''g"`
++    dir=`ls -t | head -n 1 | xargs grep -r "Entering directory" | tail -n 1 | awk "{print \\$4}" | sed "s'^$KDESRCDIR/''g"`
+     set_title "Building $dir"
+     clear
+-    grep --no-filename -i "time needed" *build* | \
++    grep -hi "time needed" *build* | \
+ 	sed "s/\:T/ T/g"
+     sleep 5
+ done;

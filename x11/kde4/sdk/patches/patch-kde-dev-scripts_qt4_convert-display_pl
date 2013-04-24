@@ -1,0 +1,9 @@
+$OpenBSD: patch-kde-dev-scripts_qt4_convert-display_pl,v 1.1.1.1 2013/04/24 19:04:15 zhuk Exp $
+--- kde-dev-scripts/qt4/convert-display.pl.orig	Sun Apr  7 13:27:40 2013
++++ kde-dev-scripts/qt4/convert-display.pl	Sun Apr  7 14:28:35 2013
+@@ -16,4 +16,4 @@ foreach my $file (@ARGV) {
+     } $file;
+ 	functionUtilkde::addIncludeInFile( $file, "QX11Info");
+ }
+-functionUtilkde::diffFile( "@ARGV" );
++functionUtilkde::diffFile( @ARGV );

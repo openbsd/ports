@@ -1,0 +1,30 @@
+$OpenBSD: patch-kde-dev-scripts_unsercmake,v 1.1.1.1 2013/04/24 19:04:15 zhuk Exp $
+--- kde-dev-scripts/unsercmake.orig	Sun Apr  7 13:27:40 2013
++++ kde-dev-scripts/unsercmake	Wed Apr 10 17:21:48 2013
+@@ -268,7 +268,7 @@ sub readCmakeFile {
+     }
+ 
+     my @subdirs;
+-    open FILE, "$dir/$file";
++    open FILE, "<", "$dir/$file";
+     my $inLink=0;
+     my $lib = "";
+     foreach $line (<FILE>) {
+@@ -316,7 +316,7 @@ sub readCmakeFile {
+     close FILE;
+ 
+     # only go into subdir when the DartTestfile lists the subdir.
+-    open FILE, "$builddir/$dir/DartTestfile.txt";
++    open FILE, "<", "$builddir/$dir/DartTestfile.txt";
+     foreach $line (<FILE>) {
+         if($line=~/^SUBDIRS\s*\((.*)\)/) {
+             my $subdir;
+@@ -448,7 +448,7 @@ sub parseArguments() {
+ 
+ sub checkTargetAvail() {
+     my $target=shift(@_);
+-    open FILE, "Makefile";
++    open FILE, "<", "Makefile";
+     foreach $line (<FILE>) {
+         if($line=~/^$target:/) {
+             close FILE;

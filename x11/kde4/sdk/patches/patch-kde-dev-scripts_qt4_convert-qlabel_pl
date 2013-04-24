@@ -1,0 +1,31 @@
+$OpenBSD: patch-kde-dev-scripts_qt4_convert-qlabel_pl,v 1.1.1.1 2013/04/24 19:04:15 zhuk Exp $
+--- kde-dev-scripts/qt4/convert-qlabel.pl.orig	Sun Apr  7 13:27:40 2013
++++ kde-dev-scripts/qt4/convert-qlabel.pl	Sun Apr  7 15:12:21 2013
+@@ -11,15 +11,16 @@ use lib dirname( $0 );
+ use functionUtilkde;
+ use strict;
+ 
+-open(my $F, q(find [ac-z]* -name "*" | grep -v '\.svn/' |));
++open(my $F, "-|", qw(find [ac-z]* -type f));
+ my $file;
+ while ($file = <$F>) {
++    next if $file =~ /\.svn/;
+     chomp $file;
+     next if functionUtilkde::excludeFile( $file);
+ 
+     my $modified;
+     my @necessaryIncludes = ();
+-    open(my $FILE, $file) or warn "We can't open file $file:$!\n";
++    open(my $FILE, "<", $file) or warn "We can't open file $file:$!\n";
+     my @l = map {
+       my $orig = $_;
+       my ($spaces, $trailer, $object, $call, $ws, $params );
+@@ -115,7 +116,7 @@ print "Buddy: $buddy, Text: $text, Parent: $parent, Na
+ 
+     if ($modified) {
+       print "Modified: $file\n";
+-      open (my $OUT, ">$file");
++      open (my $OUT, ">", $file);
+       print $OUT @l;
+       close $OUT;
+     }

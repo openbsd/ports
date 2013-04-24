@@ -1,0 +1,21 @@
+$OpenBSD: patch-kde-dev-scripts_qt4_fix-link_pl,v 1.1.1.1 2013/04/24 19:04:15 zhuk Exp $
+--- kde-dev-scripts/qt4/fix-link.pl.orig	Sun Apr  7 13:27:40 2013
++++ kde-dev-scripts/qt4/fix-link.pl	Sun Apr  7 14:45:06 2013
+@@ -9,7 +9,7 @@ use lib dirname( $0 );
+ use functionUtilkde;
+ use strict;
+ 
+-open(my $F, q(find -name "CMakeLists.txt" |));
++open(my $F, "-|", qw(find . -name CMakeLists.txt));
+ my $file;
+ my $warning;
+ while ($file = <$F>) {
+@@ -175,7 +175,7 @@ while ($file = <$F>) {
+     } <$FILE>;
+ 
+     if ($modified) {
+-	open (my $OUT, ">$file");
++	open (my $OUT, ">", $file);
+ 	print $OUT @l;
+     }
+ 

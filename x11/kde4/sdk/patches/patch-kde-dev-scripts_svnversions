@@ -1,0 +1,20 @@
+$OpenBSD: patch-kde-dev-scripts_svnversions,v 1.1.1.1 2013/04/24 19:04:15 zhuk Exp $
+--- kde-dev-scripts/svnversions.orig	Sun Apr  7 13:27:40 2013
++++ kde-dev-scripts/svnversions	Sun Apr  7 13:39:35 2013
+@@ -1,13 +1,13 @@
+-#! /usr/bin/env bash
++#! /bin/sh
+ unset LANG LC_ALL
+ LC_ALL=C
+ export LC_ALL
+ 
+ if [ $# -eq 1 ]; then
+-    svn info $1 | awk '/^Last Changed Rev/ { print $4 }'
++    svn info "$1" | awk '/^Last Changed Rev/ { print $4 }'
+ else
+     for f; do
+-	svn info $f | awk "/^Last Changed Rev/ { print \"$f\", \$4 }"
++	svn info "$f" | awk "/^Last Changed Rev/ { print \"$f\", \$4 }"
+     done
+ fi
+ 

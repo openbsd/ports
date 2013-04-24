@@ -1,0 +1,12 @@
+$OpenBSD: patch-kde-dev-scripts_svn-clean,v 1.1.1.1 2013/04/24 19:04:15 zhuk Exp $
+--- kde-dev-scripts/svn-clean.orig	Sun Apr  7 13:27:40 2013
++++ kde-dev-scripts/svn-clean	Sun Apr  7 16:01:58 2013
+@@ -95,7 +95,7 @@ delete $ENV{'TERM'};
+ #print($heading."\n") unless $quiet;
+ 
+ foreach my $dir (@files) {
+-  open SVN, "svn status --no-ignore \"".$dir."\"|";
++  open SVN, "-|", qw(svn status --no-ignore), $dir;
+   while (<SVN>) {
+     /^[I?] +(.*)$/ or next;
+     my $file = $1;

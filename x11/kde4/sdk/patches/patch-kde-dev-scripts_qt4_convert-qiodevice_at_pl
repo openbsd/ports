@@ -1,0 +1,21 @@
+$OpenBSD: patch-kde-dev-scripts_qt4_convert-qiodevice_at_pl,v 1.1.1.1 2013/04/24 19:04:15 zhuk Exp $
+--- kde-dev-scripts/qt4/convert-qiodevice_at.pl.orig	Sun Apr  7 13:27:40 2013
++++ kde-dev-scripts/qt4/convert-qiodevice_at.pl	Sun Apr  7 14:56:40 2013
+@@ -26,7 +26,7 @@ foreach my $file (@ARGV) {
+ 
+     my $modified;
+     my @necessaryIncludes = ();
+-    open(my $FILE, $file) or warn "We can't open file $file:$!\n";
++    open(my $FILE, "<", $file) or warn "We can't open file $file:$!\n";
+     my @l = map {
+       my $orig = $_;
+       if ( m![\.>]at\s*\(! ) {
+@@ -42,7 +42,7 @@ foreach my $file (@ARGV) {
+ 
+     if ($modified) {
+       print "Modified: $file\n";
+-      open (my $OUT, ">$file");
++      open (my $OUT, ">", $file);
+       print $OUT @l;
+       close $OUT;
+     }

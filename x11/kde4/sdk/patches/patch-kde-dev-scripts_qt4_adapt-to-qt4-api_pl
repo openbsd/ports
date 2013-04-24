@@ -1,0 +1,12 @@
+$OpenBSD: patch-kde-dev-scripts_qt4_adapt-to-qt4-api_pl,v 1.1.1.1 2013/04/24 19:04:15 zhuk Exp $
+--- kde-dev-scripts/qt4/adapt-to-qt4-api.pl.orig	Sun Apr  7 13:27:40 2013
++++ kde-dev-scripts/qt4/adapt-to-qt4-api.pl	Sun Apr  7 15:06:34 2013
+@@ -22,7 +22,7 @@ sub addQStringElement
+     return $result;
+ }
+ 
+-open(my $F, q(find -name "*" |));
++open(my $F, "-|", qw(find . -type f));
+ my $file;
+ my $warning;
+ my @files = ();

@@ -1,0 +1,48 @@
+$OpenBSD: patch-kde-dev-scripts_package_crystalsvg,v 1.1.1.1 2013/04/24 19:04:15 zhuk Exp $
+--- kde-dev-scripts/package_crystalsvg.orig	Sun Apr  7 13:27:40 2013
++++ kde-dev-scripts/package_crystalsvg	Sun Apr  7 14:19:44 2013
+@@ -66,8 +66,8 @@ if [ ! -r $LICENSE ]; then
+ 	exit 1;
+ fi
+ 
+-TMPDIR=$(mktemp -d "/tmp/kde_crystalsvg_packageXXXXXX")
+-PKGDIR="$TMPDIR/$PKGNAME"
++TDIR=$(mktemp -d "${TMPDIR:-/tmp}/kde_crystalsvg_packageXXXXXX")
++PKGDIR="$TDIR/$PKGNAME"
+ mkdir "$PKGDIR"
+ 
+ echo "done" # Startup
+@@ -96,7 +96,7 @@ echo "$SVGFILES" | sed -e s,"$SEARCH_DIR",,g | sort >>
+ cp "$LICENSE" "$PKGDIR/LICENSE"
+ 
+ # Copy the SVG files
+-echo "$SVGFILES" | xargs cp --target-directory "$PKGDIR"
++echo "$SVGFILES" | xargs -J % cp -- % "$PKGDIR"
+ 
+ # Fill the README file
+ README="$PKGDIR/README"
+@@ -156,12 +156,12 @@ echo "done" # Generating
+ # Package it
+ echo -n "Packaging the files..."
+ 
+-nice -n$NICE tar --create --label 'Contains the SVG files used in KDE, extracted from the sources' \
+-	--directory "$TMPDIR" --bzip2 --file "$PKGPATH/$PKGNAME".tar.bz2 "$PKGNAME" 2> /dev/null
++nice -n$NICE gtar --create --label 'Contains the SVG files used in KDE, extracted from the sources' \
++	--directory "$TDIR" --bzip2 --file "$PKGPATH/$PKGNAME".tar.bz2 "$PKGNAME" 2> /dev/null
+ 
+ 
+ 
+-#nice -n$NICE tar --create --label 'Contains the SVG files used in KDE, extracted from the sources' \
++#nice -n$NICE gtar --create --label 'Contains the SVG files used in KDE, extracted from the sources' \
+ 	#--bzip2 --file "$PKGPATH"/$(eval echo "$PKGNAME").tar.bz2 --files-from "$FILESTMP" \
+ 	#$LICENSE $README 2> /dev/null
+ if [ $? -ne 0 ]; then
+@@ -173,7 +173,7 @@ echo "done" # Packaging
+ 
+ 
+ # Clean up
+-rm -rf "$TMPDIR"
++rm -rf "$TDIR"
+ 
+ 
+ 

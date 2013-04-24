@@ -1,0 +1,37 @@
+$OpenBSD: patch-kde-dev-scripts_wcgrep,v 1.1.1.1 2013/04/24 19:04:15 zhuk Exp $
+--- kde-dev-scripts/wcgrep.orig	Sun Apr  7 13:27:40 2013
++++ kde-dev-scripts/wcgrep	Sun Apr  7 13:37:08 2013
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ # Copyright 2004 Ben Reser <ben@reser.org>
+ # Licensed under the terms subversion ships under or GPLv2.
+@@ -34,8 +34,7 @@
+ #                  ignore vim backup files and subversion admin dirs.
+ 
+ 
+-arg_count=$#
+-for (( i=1; i <= $arg_count; i++ )); do
++while [ $# -gt 0 ]; do
+     arg="$1"
+     shift 1
+     if [ -z "$pattern" ]; then
+@@ -44,7 +43,7 @@ for (( i=1; i <= $arg_count; i++ )); do
+             pattern="$1"
+             shift 1
+             ((i++))
+-        elif [ "${arg:0:1}" != "-" ]; then
++        elif [ "${arg#-}" != "$arg" ]; then
+             pattern="$arg"
+         else
+             grepargs="$grepargs $arg"
+@@ -54,6 +53,6 @@ for (( i=1; i <= $arg_count; i++ )); do
+     fi
+ done
+ 
+-find $pathargs -regex ${WCGREP_IGNORE:-'.*~$\|\./\.git/.*|.*/\.svn\(/\|$\)'} -prune -o \
+-    -type f -print0 | xargs -r0 ${WCGREP_GREP:-grep} ${WCGREP_GREPARGS:--HnI} \
++gfind $pathargs -regex ${WCGREP_IGNORE:-'.*~$\|\./\.git/.*|.*/\.svn\(/\|$\)'} -prune -o \
++    -type f -print0 | xargs -r0 ${WCGREP_GREP:-ggrep} ${WCGREP_GREPARGS:--HnI} \
+     $grepargs "$pattern"

@@ -1,0 +1,31 @@
+$OpenBSD: patch-kde-dev-scripts_qt4_convert-qgridlayout_pl,v 1.1.1.1 2013/04/24 19:04:15 zhuk Exp $
+--- kde-dev-scripts/qt4/convert-qgridlayout.pl.orig	Sun Apr  7 13:27:40 2013
++++ kde-dev-scripts/qt4/convert-qgridlayout.pl	Sun Apr  7 15:05:51 2013
+@@ -19,15 +19,16 @@ use lib dirname( $0 );
+ use functionUtilkde;
+ use strict;
+ 
+-open(my $F, q(find -name "*" | grep -v '\.svn/' |));
++open(my $F, "-|", qw(find . -type f));
+ my $file;
+ while ($file = <$F>) {
++    next if $file =~ /\.svn/;
+     chomp $file;
+     next if functionUtilkde::excludeFile( $file);
+ 
+     my $modified;
+     my @necessaryIncludes = ();
+-    open(my $FILE, $file) or warn "We can't open file $file:$!\n";
++    open(my $FILE, "<", $file) or warn "We can't open file $file:$!\n";
+     my @l = map {
+       my $orig = $_;
+       my ($spaces, $trailer, $object, $call, $ws,$parent, $params);
+@@ -94,7 +95,7 @@ while ($file = <$F>) {
+ 
+     if ($modified) {
+       print "Modified: $file\n";
+-      open (my $OUT, ">$file");
++      open (my $OUT, ">", $file);
+       print $OUT @l;
+       close $OUT;
+     }

@@ -1,0 +1,25 @@
+$OpenBSD: patch-kde-dev-scripts_qt4_remove-qt3-support_pl,v 1.1.1.1 2013/04/24 19:04:15 zhuk Exp $
+--- kde-dev-scripts/qt4/remove-qt3-support.pl.orig	Sun Apr  7 13:27:40 2013
++++ kde-dev-scripts/qt4/remove-qt3-support.pl	Sun Apr  7 15:16:20 2013
+@@ -8,7 +8,7 @@ use lib dirname( $0 );
+ use functionUtilkde;
+ use strict;
+ 
+-open(my $F, q(find -name "*" |));
++open(my $F, "-|", qw(find . -type f));
+ my $file;
+ while ($file = <$F>) {
+  	chomp $file;
+@@ -169,10 +169,10 @@ while ($file = <$F>) {
+ 	    $_;
+ 	} <$FILE>;
+ 	if ($modified) {
+-	    open (my $OUT, ">$file");
++	    open (my $OUT, ">", $file);
+ 	    print $OUT @l;
+ 	}
+ 
+     }
+-functionUtilkde::diffFile( "@ARGV" );
++functionUtilkde::diffFile( @ARGV );
+ 

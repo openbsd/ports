@@ -1,0 +1,12 @@
+$OpenBSD: patch-kde-dev-scripts_cvsblame,v 1.1.1.1 2013/04/24 19:04:15 zhuk Exp $
+--- kde-dev-scripts/cvsblame.orig	Sun Apr  7 13:27:40 2013
++++ kde-dev-scripts/cvsblame	Sun Apr  7 14:07:20 2013
+@@ -45,7 +45,7 @@ Bernd Gehrmann <bernd@physik.hu-berlin.de>
+ =cut
+ 
+ $file = $ARGV[0];
+-$outputfile = `kde-config --path tmp` || './#'; # if we put the file in the cwd, then we keep a '#' at the beggining to help CVS ignore it
++$outputfile = `kde4-config --path tmp` || './#'; # if we put the file in the cwd, then we keep a '#' at the beggining to help CVS ignore it
+ ($outputfile) = split(/:/,$outputfile);
+ chomp $outputfile;
+ $outputfile .= "cvsblame.$$.html";

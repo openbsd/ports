@@ -1,0 +1,10 @@
+$OpenBSD: patch-kde-dev-scripts_qt4_convert-bad-qdatastream_pl,v 1.1.1.1 2013/04/24 19:04:15 zhuk Exp $
+--- kde-dev-scripts/qt4/convert-bad-qdatastream.pl.orig	Sun Apr  7 13:27:40 2013
++++ kde-dev-scripts/qt4/convert-bad-qdatastream.pl	Sun Apr  7 15:15:41 2013
+@@ -19,5 +19,5 @@ foreach my $file (@ARGV) {
+     close F;
+ }
+ 
+-functionUtilkde::diffFile( "@ARGV" );
++functionUtilkde::diffFile( @ARGV );
+ 

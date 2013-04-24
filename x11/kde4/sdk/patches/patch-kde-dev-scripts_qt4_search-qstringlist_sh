@@ -1,0 +1,7 @@
+$OpenBSD: patch-kde-dev-scripts_qt4_search-qstringlist_sh,v 1.1.1.1 2013/04/24 19:04:15 zhuk Exp $
+--- kde-dev-scripts/qt4/search-qstringlist.sh.orig	Wed Apr 10 15:07:00 2013
++++ kde-dev-scripts/qt4/search-qstringlist.sh	Wed Apr 10 15:06:52 2013
+@@ -1,2 +1,2 @@
+ #!/bin/sh
+-egrep -rl 'QStringList::split' * |grep -v "\.svn" |grep -v "\.libs" | grep -v "\.o" | grep -v Makefile | grep -v Makefile.in  | grep -v "\.moc" | grep -v "\.lo" | grep -v "\.la" |grep -v "\.Ulo" |grep -v "\.kidl"
++egrep -rl 'QStringList::split' * |grep -v '^\.svn$' |grep -v '^\.libs$' | grep -v '\.o$' | fgrep -v Makefile | fgrep -v Makefile.in  | grep -v '\.moc$' | grep -v '\.lo$' | grep -v '\.la$' |grep -v '\.Ulo$' |grep -v '\.kidl$'

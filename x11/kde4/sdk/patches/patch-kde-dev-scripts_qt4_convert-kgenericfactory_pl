@@ -1,0 +1,9 @@
+$OpenBSD: patch-kde-dev-scripts_qt4_convert-kgenericfactory_pl,v 1.1.1.1 2013/04/24 19:04:15 zhuk Exp $
+--- kde-dev-scripts/qt4/convert-kgenericfactory.pl.orig	Sun Apr  7 13:27:40 2013
++++ kde-dev-scripts/qt4/convert-kgenericfactory.pl	Sun Apr  7 14:29:53 2013
+@@ -101,4 +101,4 @@ foreach my $file (@ARGV) {
+         }
+     }
+ }
+-functionUtilkde::diffFile( "@ARGV" );
++functionUtilkde::diffFile( @ARGV );

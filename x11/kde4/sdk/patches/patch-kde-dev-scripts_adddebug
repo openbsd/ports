@@ -1,0 +1,21 @@
+$OpenBSD: patch-kde-dev-scripts_adddebug,v 1.1.1.1 2013/04/24 19:04:15 zhuk Exp $
+--- kde-dev-scripts/adddebug.orig	Sun Apr  7 13:27:40 2013
++++ kde-dev-scripts/adddebug	Sun Apr  7 13:46:19 2013
+@@ -5,8 +5,10 @@
+ # - optionally remove -DNDEBUG and -DNO_DEBUG
+ 
+ # depth is 3 because flags.make is within CMakeFiles/foo.dir/
++keep=
+ mxdp="-maxdepth 3"
+-for i in $*; do
++ndebug=
++for i in "$@"; do
+   case $i in
+     -k) keep=1;;
+     -r) mxdp=;;
+@@ -24,4 +26,4 @@ if test -z $ndebug; then
+   xpr="$xpr;"'s/[\t ]-DNDEBUG\b//g'
+   xpr="$xpr;"'s/[\t ]-DNO_DEBUG\b//g'
+ fi
+-find . $mxdp -name flags.make -print0 | xargs -0 sed -rie "$xpr"
++find . $mxdp -name flags.make -print0 | xargs -0 perl -i "$xpr"

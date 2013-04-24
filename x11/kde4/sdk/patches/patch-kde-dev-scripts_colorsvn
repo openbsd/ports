@@ -1,0 +1,12 @@
+$OpenBSD: patch-kde-dev-scripts_colorsvn,v 1.1.1.1 2013/04/24 19:04:15 zhuk Exp $
+--- kde-dev-scripts/colorsvn.orig	Sun Apr  7 13:27:40 2013
++++ kde-dev-scripts/colorsvn	Sun Apr  7 14:02:43 2013
+@@ -54,7 +54,7 @@ use IPC::Open3;
+ 
+ sub initDefaults
+ {
+-	$svnPath = "/usr/bin/svn";
++	$svnPath = "${LOCALBASE}/bin/svn";
+ 
+ 	$nocolor{"dumb"} = "true";
+ 

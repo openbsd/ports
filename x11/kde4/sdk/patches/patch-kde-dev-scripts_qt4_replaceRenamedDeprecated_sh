@@ -1,0 +1,18 @@
+$OpenBSD: patch-kde-dev-scripts_qt4_replaceRenamedDeprecated_sh,v 1.1.1.1 2013/04/24 19:04:15 zhuk Exp $
+--- kde-dev-scripts/qt4/replaceRenamedDeprecated.sh.orig	Sun Apr  7 13:27:40 2013
++++ kde-dev-scripts/qt4/replaceRenamedDeprecated.sh	Sun Apr  7 14:57:28 2013
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ # I do not assert any rights on these few trivial lines of code, Reinhold Kainhofer
+ 
+ # replace old function names with new function names, when all parameters stay the same
+@@ -8,7 +8,7 @@
+ old=$1
+ new=$2
+ 
+-for i in `grep -le $1 -r [ac-z]* | grep -v '\.svn'`; do
++for i in `grep -rle "$1" [ac-z]* | grep -v '\.svn'`; do
+   sed "s/$1/$2/g" $i > $i.new;
+ 	echo $i;
+ 	diff $i $i.new;

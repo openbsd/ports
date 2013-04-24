@@ -1,0 +1,24 @@
+$OpenBSD: patch-kde-dev-scripts_svn2log_sh,v 1.1.1.1 2013/04/24 19:04:15 zhuk Exp $
+--- kde-dev-scripts/svn2log.sh.orig	Sun Apr  7 13:27:40 2013
++++ kde-dev-scripts/svn2log.sh	Wed Apr 10 16:56:43 2013
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ #
+ # Shell script for creating a ChangeLog file from SVN
+ #
+@@ -11,12 +11,12 @@ if test -z "$PARAM"; then
+     PARAM=".";
+ fi;
+ 
+-CURRENT=`dirname $0`;
++CURRENT=`dirname "$0"`;
+ 
+ echo "Fetching committers...";
+ svn cat svn://anonsvn.kde.org/home/kde/trunk/kde-common/accounts > /tmp/accounts.$PPID
+ 
+ echo "Creating changelog...";
+-svn log -v --xml $1 | python $CURRENT/svn2log.py --users=/tmp/accounts.$PPID --users-charset=UTF8
++svn log -v --xml $1 | ${MODPY_BIN} $CURRENT/svn2log.py --users=/tmp/accounts.$PPID --users-charset=UTF8
+ 
+ rm /tmp/accounts.$PPID

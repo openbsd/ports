@@ -1,0 +1,12 @@
+$OpenBSD: patch-kde-dev-scripts_svnaddcurrentdir,v 1.1.1.1 2013/04/24 19:04:15 zhuk Exp $
+--- kde-dev-scripts/svnaddcurrentdir.orig	Sun Apr  7 13:27:40 2013
++++ kde-dev-scripts/svnaddcurrentdir	Wed Apr 10 17:03:43 2013
+@@ -15,7 +15,7 @@ FOUND=`find |grep -v "^\.$"| grep -v CVS| grep -v "\.[
+ 
+ ask_for_adding() {
+ echo
+-read -p "Add file $file to SVN ? (y/n) " answer rest
++read "answer?Add file $file to SVN ? (y/n) " rest
+ #if [ "$answer" != "y" ]; then echo $file; fi
+ if [ "$answer" = "y" ]; then svn add $file; fi
+ }

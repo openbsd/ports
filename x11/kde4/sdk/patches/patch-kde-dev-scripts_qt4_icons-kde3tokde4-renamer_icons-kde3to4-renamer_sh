@@ -1,0 +1,82 @@
+$OpenBSD: patch-kde-dev-scripts_qt4_icons-kde3tokde4-renamer_icons-kde3to4-renamer_sh,v 1.1.1.1 2013/04/24 19:04:15 zhuk Exp $
+--- kde-dev-scripts/qt4/icons-kde3tokde4-renamer/icons-kde3to4-renamer.sh.orig	Sun Apr  7 13:27:40 2013
++++ kde-dev-scripts/qt4/icons-kde3tokde4-renamer/icons-kde3to4-renamer.sh	Sun Apr  7 15:03:09 2013
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/ksh
+ # icons-kde3to4-renamer.sh
+ #
+ # By Danny Allen (dannya@kde.org)
+@@ -34,22 +34,22 @@ removed="0"
+ 
+ 
+ # change to icon location
+-cd $icon_base
++cd -- "$icon_base"
+ 
+ 
+ function make_changes {
+     area="$1"
+ 
+     # check if directory exists for type (otherwise make it)
+-    if [ ! -d $area ]; then
+-        mkdir $area
+-        svn add $area
++    if [ ! -d "$area" ]; then
++        mkdir -- "$area"
++        svn add -- "$area"
+ 
+         echo "created $area directory"
+     fi
+ 
+     # change to the type directory
+-    cd $area
++    cd -- "$area"
+ 
+     # report area
+     echo "--------------------------------"
+@@ -63,7 +63,7 @@ function make_changes {
+ 
+     # remove old logs
+     if [ -f "$missing_log" ]; then
+-        rm $missing_log
++        rm -- "$missing_log"
+     fi
+ 
+     ########################
+@@ -75,8 +75,8 @@ function make_changes {
+     echo ""
+     number="0"
+     while [ "$number" -le "$list_entries" ]; do
+-        original_name=`head --lines=$(($number + 1)) $rename_list | tail --lines=1`
+-        new_name=`head --lines=$(($number + 2)) $rename_list | tail --lines=1`
++        original_name=`head -n $(($number + 1)) $rename_list | tail -n 1`
++        new_name=`head -n $(($number + 2)) $rename_list | tail -n 1`
+ 
+         # look for icon, if present, svn mv
+         if [ -f "$original_name.$old_extension" ]; then
+@@ -93,7 +93,7 @@ function make_changes {
+             correct=$(($correct + 1))
+         else
+             # add to missing_icons log
+-            echo "$new_name" >> $missing_log
++            echo "$new_name" >> "$missing_log"
+ 
+             # increment not implemented counter
+             not_implemented=$(($not_implemented + 1))
+@@ -157,7 +157,7 @@ function make_changes {
+ # do all the changes, or only on a specific area?
+ if [ "$1" != "" ]; then
+     # perform changes on one area
+-    make_changes $1
++    make_changes "$1"
+ else
+     # rename filesystems to places if neccessary
+     if [ -d "filesystems" ]; then
+@@ -176,4 +176,4 @@ fi
+ echo ""
+ echo ""
+ echo "Don't forget to 'svn commit' your changes!"
+-echo ""
+\ No newline at end of file
++echo ""

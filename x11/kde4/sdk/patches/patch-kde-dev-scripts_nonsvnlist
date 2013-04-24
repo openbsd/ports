@@ -1,0 +1,9 @@
+$OpenBSD: patch-kde-dev-scripts_nonsvnlist,v 1.1.1.1 2013/04/24 19:04:15 zhuk Exp $
+--- kde-dev-scripts/nonsvnlist.orig	Sun Apr  7 13:27:40 2013
++++ kde-dev-scripts/nonsvnlist	Sun Apr  7 14:20:24 2013
+@@ -1,4 +1,4 @@
+ #!/bin/sh
+ # This script lists files not in the Subversion repository
+ 
+-svn status --no-ignore $1 | sed '/^[\?I]/{s/^.......//;p};d'
++svn status --no-ignore "$1" | sed '/^[\?I]/{s/^.......//;p};d'
