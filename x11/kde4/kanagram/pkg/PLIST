@@ -1,0 +1,46 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 11:49:43 zhuk Exp $
+@bin bin/kanagram
+include/kanagram/
+include/kanagram/kanagram_engine_export.h
+include/kanagram/kanagramgame.h
+include/kanagram/kanagramsettings.h
+@lib ${KDE4LIB}/libkanagramengine.so.${LIBkanagramengine_VERSION}
+@lib lib/libkanagramengine.so.${LIBkanagramengine_VERSION}
+share/applications/kde4/kanagram.desktop
+share/apps/kanagram/
+share/apps/kanagram/images/
+share/apps/kanagram/images/kanagram.svg
+share/apps/kanagram/sounds/
+share/apps/kanagram/sounds/chalk.ogg
+share/apps/kanagram/sounds/right.ogg
+share/apps/kanagram/sounds/wrong.ogg
+share/config.kcfg/kanagram.kcfg
+share/config/kanagram.knsrc
+share/doc/HTML/en/kanagram/
+share/doc/HTML/en/kanagram/answer-highlight.png
+share/doc/HTML/en/kanagram/common
+share/doc/HTML/en/kanagram/general-settings.png
+share/doc/HTML/en/kanagram/helpstates.png
+share/doc/HTML/en/kanagram/index.cache.bz2
+share/doc/HTML/en/kanagram/index.docbook
+share/doc/HTML/en/kanagram/kanagram-hint.png
+share/doc/HTML/en/kanagram/kanagram.png
+share/doc/HTML/en/kanagram/newstuff-dialog.png
+share/doc/HTML/en/kanagram/newstuff-settings.png
+share/doc/HTML/en/kanagram/shortcuts-settings.png
+share/doc/HTML/en/kanagram/vocab-editor.png
+share/doc/HTML/en/kanagram/vocab-settings.png
+share/icons/hicolor/128x128/apps/kanagram.png
+share/icons/hicolor/16x16/apps/kanagram.png
+share/icons/hicolor/24x24/apps/kanagram.png
+share/icons/hicolor/32x32/apps/kanagram.png
+share/icons/hicolor/48x48/apps/kanagram.png
+share/icons/hicolor/64x64/apps/kanagram.png
+share/icons/hicolor/80x80/
+share/icons/hicolor/80x80/apps/
+share/icons/hicolor/80x80/apps/kanagram-harmattan.png
+share/icons/hicolor/scalable/apps/kanagram.svgz
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
