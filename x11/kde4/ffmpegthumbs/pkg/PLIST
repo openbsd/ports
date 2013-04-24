@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 11:32:49 zhuk Exp $
+lib/kde4/ffmpegthumbs.so
+share/kde4/services/ffmpegthumbs.desktop
