@@ -1,9 +1,9 @@
-$OpenBSD: patch-ini_jk_init_ini,v 1.1.1.1 2010/09/20 07:15:30 sebastia Exp $
+$OpenBSD: patch-ini_jk_init_ini,v 1.2 2013/04/24 12:47:39 gonzalo Exp $
 
 fix some default paths in the jail creation configuration file
 
---- ini/jk_init.ini.orig	Sat Sep 11 15:58:41 2010
-+++ ini/jk_init.ini	Sat Sep 18 11:40:01 2010
+--- ini/jk_init.ini.orig	Fri Aug 10 14:16:47 2012
++++ ini/jk_init.ini	Tue Apr 23 06:35:22 2013
 @@ -21,7 +21,7 @@ need_logsocket = 1
  
  [jk_lsh]
@@ -49,7 +49,7 @@ fix some default paths in the jail creation configuration file
  
  [xclients]
  comment = minimal files for X clients
-@@ -145,5 +145,5 @@ includesections = xclients
+@@ -149,5 +149,5 @@ paths_w_setuid = /bin/ping
  
  #[xterm]
  #comment = xterm
