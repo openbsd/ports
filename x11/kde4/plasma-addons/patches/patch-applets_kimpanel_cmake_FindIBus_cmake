@@ -1,0 +1,12 @@
+$OpenBSD: patch-applets_kimpanel_cmake_FindIBus_cmake,v 1.1.1.1 2013/04/24 18:40:19 zhuk Exp $
+--- applets/kimpanel/cmake/FindIBus.cmake.orig	Tue Feb  7 02:25:11 2012
++++ applets/kimpanel/cmake/FindIBus.cmake	Tue Feb  7 05:09:13 2012
+@@ -26,7 +26,7 @@ else (IBUS_LIBRARIES AND IBUS_INCLUDE_DIR)
+       find_package(PkgConfig)
+       pkg_check_modules(PC_IBUS ibus-1.0)
+ 
+-      set(IBUS_DEFINITIONS ${PC_IBUS_CFLAGS_OTHER})
++      set(IBUS_DEFINITIONS "${PC_IBUS_CFLAGS_OTHER}" CACHE INTERNAL "Additional paramaters for linking with IBus")
+    endif (NOT WIN32)
+ 
+    find_path(IBUS_INCLUDE_DIR ibus.h

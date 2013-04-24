@@ -1,0 +1,12 @@
+$OpenBSD: patch-applets_kimpanel_backend_ibus_CMakeLists_txt,v 1.1.1.1 2013/04/24 18:40:19 zhuk Exp $
+--- applets/kimpanel/backend/ibus/CMakeLists.txt.orig	Tue Feb  7 05:40:00 2012
++++ applets/kimpanel/backend/ibus/CMakeLists.txt	Tue Feb  7 05:42:57 2012
+@@ -7,7 +7,7 @@ if(IBUS_FOUND AND GLIB2_FOUND AND GIO_FOUND AND GOBJEC
+     include_directories(${GLIB2_INCLUDE_DIR})
+     include_directories(${GIO_INCLUDE_DIR})
+     include_directories(${GOBJECT_INCLUDE_DIR})
+-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c99")
++    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${IBUS_DEFINITIONS} -std=c99")
+     set(kimpanel_ibus_panel_SRCS panel.c main.c)
+     add_executable(kimpanel-ibus-panel ${kimpanel_ibus_panel_SRCS})
+     target_link_libraries(kimpanel-ibus-panel ${IBUS_LIBRARIES} ${GLIB2_LIBRARIES} ${GIO_LIBRARIES} ${GOBJECT_LIBRARIES})

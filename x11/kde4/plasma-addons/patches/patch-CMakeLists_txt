@@ -1,0 +1,11 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2013/04/24 18:40:19 zhuk Exp $
+--- CMakeLists.txt.orig	Sun Oct 21 22:04:46 2012
++++ CMakeLists.txt	Sun Oct 21 22:05:48 2012
+@@ -52,6 +52,7 @@ endif (NEPOMUK_FOUND)
+ 
+ add_definitions (${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
+ add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
++set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${KDE4_ENABLE_EXCEPTIONS}")
+ include_directories (${KDE4_INCLUDES}
+                      ${KDE4WORKSPACE_INCLUDE_DIR}
+                      ${KDEPIMLIBS_INCLUDE_DIR}
