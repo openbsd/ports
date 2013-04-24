@@ -1,0 +1,36 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 19:21:09 zhuk Exp $
+include/kde4/libkgapi/
+include/kde4/libkgapi/accessmanager.h
+include/kde4/libkgapi/account.h
+include/kde4/libkgapi/auth.h
+include/kde4/libkgapi/common.h
+include/kde4/libkgapi/fetchlistjob.h
+include/kde4/libkgapi/libkgapi_export.h
+include/kde4/libkgapi/object.h
+include/kde4/libkgapi/objects/
+include/kde4/libkgapi/objects/accountinfo.h
+include/kde4/libkgapi/objects/calendar.h
+include/kde4/libkgapi/objects/contact.h
+include/kde4/libkgapi/objects/contactsgroup.h
+include/kde4/libkgapi/objects/event.h
+include/kde4/libkgapi/objects/task.h
+include/kde4/libkgapi/objects/tasklist.h
+include/kde4/libkgapi/reply.h
+include/kde4/libkgapi/request.h
+include/kde4/libkgapi/service.h
+include/kde4/libkgapi/services/
+include/kde4/libkgapi/services/accountinfo.h
+include/kde4/libkgapi/services/calendar.h
+include/kde4/libkgapi/services/contacts.h
+include/kde4/libkgapi/services/tasks.h
+include/kde4/libkgapi/ui/
+include/kde4/libkgapi/ui/accountscombo.h
+include/kde4/libkgapi/ui/authwidget.h
+lib/cmake/LibKGAPI/
+lib/cmake/LibKGAPI/LibKGAPIConfig.cmake
+lib/cmake/LibKGAPI/LibKGAPIConfigVersion.cmake
+lib/cmake/LibKGAPI/LibKGAPITargetsWithPrefix${MODKDE4_CMAKE_PREFIX}.cmake
+lib/cmake/LibKGAPI/LibKGAPITargetsWithPrefix.cmake
+@lib ${KDE4LIB}/libkgapi.so.${LIBkgapi_VERSION}
+@lib lib/libkgapi.so.${LIBkgapi_VERSION}
+lib/pkgconfig/libkgapi.pc
