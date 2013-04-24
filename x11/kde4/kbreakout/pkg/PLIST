@@ -1,0 +1,40 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 11:57:42 zhuk Exp $
+@bin bin/kbreakout
+share/applications/kde4/kbreakout.desktop
+share/apps/kbreakout/
+share/apps/kbreakout/kbreakoutui.rc
+share/apps/kbreakout/levelsets/
+share/apps/kbreakout/levelsets/default.levelset
+share/apps/kbreakout/themes/
+share/apps/kbreakout/themes/IceWorld.desktop
+share/apps/kbreakout/themes/IceWorld.svgz
+share/apps/kbreakout/themes/IceWorld_preview.png
+share/apps/kbreakout/themes/alien_preview.png
+share/apps/kbreakout/themes/alienbreakout.desktop
+share/apps/kbreakout/themes/alienbreakout.svgz
+share/apps/kbreakout/themes/crystal.desktop
+share/apps/kbreakout/themes/crystal.svgz
+share/apps/kbreakout/themes/crystal_preview.png
+share/apps/kbreakout/themes/default.desktop
+share/apps/kbreakout/themes/egyptian_breakout_preview.png
+share/apps/kbreakout/themes/egyptianbreakout.svgz
+share/apps/kbreakout/themes/simple.desktop
+share/apps/kbreakout/themes/simple.svgz
+share/apps/kbreakout/themes/simple_preview.png
+share/apps/kbreakout/themes/web20.desktop
+share/apps/kbreakout/themes/web20.svgz
+share/apps/kbreakout/themes/web20_preview.png
+share/doc/HTML/en/kbreakout/
+share/doc/HTML/en/kbreakout/common
+share/doc/HTML/en/kbreakout/index.cache.bz2
+share/doc/HTML/en/kbreakout/index.docbook
+share/icons/hicolor/128x128/apps/kbreakout.png
+share/icons/hicolor/16x16/apps/kbreakout.png
+share/icons/hicolor/22x22/apps/kbreakout.png
+share/icons/hicolor/32x32/apps/kbreakout.png
+share/icons/hicolor/48x48/apps/kbreakout.png
+share/icons/hicolor/64x64/apps/kbreakout.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
