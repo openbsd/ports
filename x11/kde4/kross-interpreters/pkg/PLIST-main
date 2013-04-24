@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2013/04/24 12:20:42 zhuk Exp $
+lib/kde4/krosspython.so
+lib/kde4/krossruby.so
