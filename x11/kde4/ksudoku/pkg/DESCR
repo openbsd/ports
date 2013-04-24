@@ -1,0 +1,6 @@
+KSudoku is a logic-based symbol placement puzzle. The player has
+to fill a grid with symbols so that each column, row and block on
+the game board contains only one instance of each symbol. In KSudoku
+the symbols are usually the numbers 1 to 9, but may be the letters
+A to P or A to Y in larger puzzles. Puzzles start with the board
+partially filled and it is your job to fill in the rest.
