@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 11:56:30 zhuk Exp $
+@bin bin/kblackbox
+share/applications/kde4/kblackbox.desktop
+share/apps/kblackbox/
+share/apps/kblackbox/kblackboxui.rc
+share/apps/kblackbox/pics/
+share/apps/kblackbox/pics/kblackbox.svgz
+share/doc/HTML/en/kblackbox/
+share/doc/HTML/en/kblackbox/common
+share/doc/HTML/en/kblackbox/index.cache.bz2
+share/doc/HTML/en/kblackbox/index.docbook
+share/icons/hicolor/128x128/apps/kblackbox.png
+share/icons/hicolor/16x16/apps/kblackbox.png
+share/icons/hicolor/22x22/apps/kblackbox.png
+share/icons/hicolor/32x32/apps/kblackbox.png
+share/icons/hicolor/48x48/apps/kblackbox.png
+share/icons/hicolor/64x64/apps/kblackbox.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
