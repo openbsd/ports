@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/07/07 21:29:58 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.3 2013/04/24 07:50:36 sthen Exp $
 @bin bin/pwqcheck
 @bin bin/pwqgen
 include/passwdqc.h
 @comment lib/libpasswdqc.so
+@lib lib/libpasswdqc.so.${LIBpasswdqc_VERSION}
 @man man/man1/pwqcheck.1
 @man man/man1/pwqgen.1
 @man man/man5/passwdqc.conf.5
@@ -12,3 +12,4 @@ share/doc/passwdqc/README
 share/examples/passwdqc/
 share/examples/passwdqc/passwdqc.conf
 @sample ${SYSCONFDIR}/passwdqc.conf
+share/examples/passwdqc/pwqcheck.php
