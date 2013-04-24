@@ -1,0 +1,11 @@
+$OpenBSD: patch-akonadi_CMakeLists_txt,v 1.1.1.1 2013/04/24 12:06:18 zhuk Exp $
+--- akonadi/CMakeLists.txt.orig	Wed Nov  7 17:03:40 2012
++++ akonadi/CMakeLists.txt	Wed Nov  7 17:14:25 2012
+@@ -1,5 +1,7 @@
+ PROJECT(akonadi-sharp)
+ 
++set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${KDE4_ENABLE_EXCEPTIONS}")
++
+ IF (NOT AKONADI_FOUND)
+ 	FIND_PACKAGE(Akonadi REQUIRED)
+ ENDIF (NOT AKONADI_FOUND)
