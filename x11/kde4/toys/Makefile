@@ -1,19 +1,22 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/22 08:37:02 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/04/24 20:04:28 zhuk Exp $
 
-COMMENT =		K Desktop Environment, toys
-DISTNAME =		kdetoys-${VERSION}
-USE_GROFF =	Yes
+COMMENT =	small and funny applications for KDE
+DISTNAME =	kdetoys-${MODKDE4_VERSION}
 
-LIB_DEPENDS+= 	x11/kde4/libs \
-		x11/kde4/base-workspace
+# Amor misses OpenBSD mascot. Who'd like to fix this major issue?
 
-WANTLIB += ICE SM X11 Xau Xdmcp Xext Xft Xpm c kde3support kdecore>=8 kdeui \
-	khtml kio kjs knotifyconfig kparts kscreensaver>=8 lib/qt4/Qt3Support \
-	lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg \
-	lib/qt4/QtXml m pthread stdc++
+WANTLIB =  c m pthread stdc++ ${MODPY_WANTLIB}
+WANTLIB += ICE SM X11 Xext
+WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
+WANTLIB += lib/qt4/QtSvg
+WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/knotifyconfig ${KDE4LIB}/kscreensaver
 
-# these come from libs in real case
-pre-install:
-	mkdir -p ${PREFIX}/share/doc/HTML/en/common
+MODKDE4_USE =	workspace
+
+# last one should be:
+#WANTLIB += kparts kscreensaver>=8
+
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/gtk+2,-guic
 
 .include <bsd.port.mk>
