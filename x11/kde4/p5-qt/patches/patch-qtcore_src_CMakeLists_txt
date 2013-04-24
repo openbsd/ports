@@ -1,0 +1,11 @@
+$OpenBSD: patch-qtcore_src_CMakeLists_txt,v 1.1.1.1 2013/04/24 18:35:42 zhuk Exp $
+--- qtcore/src/CMakeLists.txt.orig	Sun Oct 21 21:42:01 2012
++++ qtcore/src/CMakeLists.txt	Sun Oct 21 21:52:28 2012
+@@ -52,7 +52,6 @@ target_link_libraries(perlqtcore4
+ 
+ set_target_properties(perlqtcore4 PROPERTIES
+     OUTPUT_NAME ${libraryName}
+-    PREFIX ""
+     INSTALL_NAME_DIR ${CUSTOM_PERL_SITE_ARCH_DIR}/auto/${libraryName}/
+ )
+ 
