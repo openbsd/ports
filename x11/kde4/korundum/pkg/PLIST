@@ -1,0 +1,52 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 12:18:23 zhuk Exp $
+@bin bin/krubyapplication
+@bin bin/rbkconfig_compiler4
+lib/kde4/krubypluginfactory.so
+${MODRUBY_SITEDIR}/KDE/
+${MODRUBY_SITEDIR}/KDE/kate.rb
+${MODRUBY_SITEDIR}/KDE/korundum4.rb
+${MODRUBY_SITEDIR}/KDE/plasma.rb
+${MODRUBY_SITEDIR}/akonadi/
+${MODRUBY_SITEDIR}/akonadi/akonadi.rb
+${MODRUBY_SITEDIR}/khtml/
+${MODRUBY_SITEDIR}/khtml/khtml.rb
+${MODRUBY_SITEDIR}/kio/
+${MODRUBY_SITEDIR}/kio/kio.rb
+${MODRUBY_SITEDIR}/ktexteditor/
+${MODRUBY_SITEDIR}/ktexteditor/ktexteditor.rb
+${MODRUBY_SITEDIR}/nepomuk/
+${MODRUBY_SITEDIR}/nepomuk/nepomuk.rb
+${MODRUBY_SITEDIR}/okular/
+${MODRUBY_SITEDIR}/okular/okular.rb
+${MODRUBY_SITEDIR}/solid/
+${MODRUBY_SITEDIR}/solid/solid.rb
+${MODRUBY_SITEDIR}/soprano/
+${MODRUBY_SITEDIR}/soprano/soprano.rb
+${MODRUBY_SITEARCHDIR}/akonadi.so
+${MODRUBY_SITEARCHDIR}/kate.so
+${MODRUBY_SITEARCHDIR}/khtml.so
+${MODRUBY_SITEARCHDIR}/kio.so
+${MODRUBY_SITEARCHDIR}/korundum4.so
+${MODRUBY_SITEARCHDIR}/ktexteditor.so
+${MODRUBY_SITEARCHDIR}/nepomuk.so
+${MODRUBY_SITEARCHDIR}/okular.so
+${MODRUBY_SITEARCHDIR}/plasma_applet.so
+${MODRUBY_SITEARCHDIR}/solid.so
+${MODRUBY_SITEARCHDIR}/soprano.so
+share/applications/kde4/dbpedia_references.desktop
+share/apps/dbpedia_references/
+share/apps/dbpedia_references/dbpedia_references.rb
+share/apps/plasma_applet_ruby_clock/
+share/apps/plasma_applet_ruby_clock/analog_clock_config.rb
+share/apps/plasma_applet_ruby_clock/calendar.rb
+share/apps/plasma_applet_ruby_clock/clock.rb
+share/apps/plasma_applet_ruby_clock/clockapplet.rb
+share/apps/plasma_applet_ruby_clock/timezones_config.rb
+share/apps/plasma_ruby_digital_clock/
+share/apps/plasma_ruby_digital_clock/calendar.rb
+share/apps/plasma_ruby_digital_clock/clock.rb
+share/apps/plasma_ruby_digital_clock/digital_clock_config.rb
+share/kde4/services/plasma-applet-ruby-analogclock.desktop
+share/kde4/services/plasma-ruby-digital-clock-default.desktop
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

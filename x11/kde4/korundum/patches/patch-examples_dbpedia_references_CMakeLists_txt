@@ -1,0 +1,9 @@
+$OpenBSD: patch-examples_dbpedia_references_CMakeLists_txt,v 1.1.1.1 2013/04/24 12:18:23 zhuk Exp $
+--- examples/dbpedia_references/CMakeLists.txt.orig	Wed Jan 23 20:30:01 2013
++++ examples/dbpedia_references/CMakeLists.txt	Wed Jan 23 20:30:07 2013
+@@ -1,4 +1,4 @@
+-FIND_PACKAGE (RUBY REQUIRED)
++FIND_PACKAGE (Ruby REQUIRED)
+ 
+ include_directories( ${RUBY_INCLUDE_DIRS} )
+ install(PROGRAMS dbpedia_references.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})

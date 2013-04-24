@@ -1,0 +1,16 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2013/04/24 12:18:23 zhuk Exp $
+
+insert after searching for kde + qtruby
+
+--- CMakeLists.txt.orig	Thu Oct 25 10:24:34 2012
++++ CMakeLists.txt	Thu Oct 25 10:25:23 2012
+@@ -5,6 +5,9 @@ set(COMPILE_RUBY FALSE CACHE INTERNAL "")
+ find_package(Ruby REQUIRED)
+ find_package(KDE4 REQUIRED)
+ find_package(QtRuby4 REQUIRED)
++
++set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${KDE4_ENABLE_EXCEPTIONS}")
++
+ find_package(Smoke REQUIRED 
+     COMPONENTS KdeCore 
+         KdeUi 
