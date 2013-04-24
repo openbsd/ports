@@ -1,0 +1,33 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 11:30:16 zhuk Exp $
+@bin bin/bovo
+share/applications/kde4/bovo.desktop
+share/apps/bovo/
+share/apps/bovo/bovoui.rc
+share/apps/bovo/themes/
+share/apps/bovo/themes/gomoku/
+share/apps/bovo/themes/gomoku/theme.svg
+share/apps/bovo/themes/gomoku/themerc
+share/apps/bovo/themes/highcontrast/
+share/apps/bovo/themes/highcontrast/theme.svg
+share/apps/bovo/themes/highcontrast/themerc
+share/apps/bovo/themes/scribble/
+share/apps/bovo/themes/scribble/theme.svg
+share/apps/bovo/themes/scribble/themerc
+share/apps/bovo/themes/spacy/
+share/apps/bovo/themes/spacy/theme.svg
+share/apps/bovo/themes/spacy/themerc
+share/doc/HTML/en/bovo/
+share/doc/HTML/en/bovo/common
+share/doc/HTML/en/bovo/index.cache.bz2
+share/doc/HTML/en/bovo/index.docbook
+share/icons/hicolor/128x128/apps/bovo.png
+share/icons/hicolor/16x16/apps/bovo.png
+share/icons/hicolor/22x22/apps/bovo.png
+share/icons/hicolor/32x32/apps/bovo.png
+share/icons/hicolor/48x48/apps/bovo.png
+share/icons/hicolor/64x64/apps/bovo.png
+share/icons/hicolor/scalable/apps/bovo.svgz
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
