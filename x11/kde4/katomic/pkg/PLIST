@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 11:53:55 zhuk Exp $
+@bin bin/katomic
+share/applications/kde4/katomic.desktop
+share/apps/katomic/
+share/apps/katomic/katomicui.rc
+share/apps/katomic/levels/
+share/apps/katomic/levels/default_levels.dat
+share/apps/katomic/pics/
+share/apps/katomic/pics/default_theme.svgz
+share/apps/kconf_update/katomic-levelset-upd.pl
+share/apps/kconf_update/katomic-levelset.upd
+share/config/katomic.knsrc
+share/doc/HTML/en/katomic/
+share/doc/HTML/en/katomic/common
+share/doc/HTML/en/katomic/index.cache.bz2
+share/doc/HTML/en/katomic/index.docbook
+share/icons/hicolor/128x128/apps/katomic.png
+share/icons/hicolor/16x16/apps/katomic.png
+share/icons/hicolor/22x22/apps/katomic.png
+share/icons/hicolor/32x32/apps/katomic.png
+share/icons/hicolor/48x48/apps/katomic.png
+share/icons/hicolor/64x64/apps/katomic.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
