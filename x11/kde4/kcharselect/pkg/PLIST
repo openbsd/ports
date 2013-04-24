@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 11:58:39 zhuk Exp $
+@bin bin/kcharselect
+share/applications/kde4/KCharSelect.desktop
+share/apps/kcharselect/kcharselectui.rc
+share/doc/HTML/en/kcharselect/
+share/doc/HTML/en/kcharselect/common
+share/doc/HTML/en/kcharselect/index.cache.bz2
+share/doc/HTML/en/kcharselect/index.docbook
+share/doc/HTML/en/kcharselect/kcharselect.png
