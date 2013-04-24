@@ -1,0 +1,18 @@
+KHangMan is the classical hangman game. The child should guess a
+word letter by letter. At each miss, the picture of a hangman
+appears. After 10 tries, if the word is not guessed, the game is
+over and the answer is displayed.  A hint can be shown to help you
+guess the word.
+
+The words are nouns and available in several languages at the moment
+including English US, Bulgarian, Catalan, Czech, Danish, German,
+Greek, British English, Spanish, Estonian, Finnish, French, Irish
+(Gaelic), Hungarian, Italian, Norwegian (Bokml), Dutch, Norwegian
+(Nynorsk), Occitan, Punjabi, Polish, Portuguese, Brazilian Portuguese,
+Russian, Slovenian, Serbian, Slovak, Swedish, Tajik, Turkish and
+Ukrainian. The program will detect which languages are present and
+enable them. You will also be able to easily download other languages
+via the Get New Stuff dialog.
+
+There are at least 4 categories per language: easy, medium, hard
+and animals which contains only animals nouns.
