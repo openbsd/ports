@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 19:08:00 zhuk Exp $
+@bin bin/sweeper
+share/applications/kde4/sweeper.desktop
+share/apps/sweeper/
+share/apps/sweeper/sweeperui.rc
+share/dbus-1/interfaces/org.kde.sweeper.xml
+share/doc/HTML/en/sweeper/
+share/doc/HTML/en/sweeper/common
+share/doc/HTML/en/sweeper/index.cache.bz2
+share/doc/HTML/en/sweeper/index.docbook
+share/doc/HTML/en/sweeper/sweeper.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
