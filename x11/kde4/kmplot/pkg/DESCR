@@ -1,0 +1,7 @@
+KmPlot is a mathematical function plotter for the KDE.
+
+It has built in a powerfull parser. You can plot different functions
+simultaneously and combine their function terms to build new
+functions. KmPlot supports functions with parameters and functions
+in polar coordinates. Several grid modes are possible. Plots may
+be printed with high precision in correct scale.

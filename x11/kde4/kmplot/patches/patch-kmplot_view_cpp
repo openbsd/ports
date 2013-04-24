@@ -1,0 +1,12 @@
+$OpenBSD: patch-kmplot_view_cpp,v 1.1.1.1 2013/04/24 12:13:38 zhuk Exp $
+--- kmplot/view.cpp.orig	Mon Oct 10 03:43:48 2011
++++ kmplot/view.cpp	Mon Oct 10 03:48:44 2011
+@@ -73,7 +73,7 @@
+ #include <ieeefp.h>
+ #endif
+ 
+-#if defined(Q_CC_MINGW)
++#if defined(Q_CC_MINGW) || defined(__OpenBSD__)
+ using namespace std;
+ #endif
+ 
