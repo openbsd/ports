@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_backends_R_rserver_rcallbacks_cpp,v 1.1.1.1 2013/04/24 11:31:00 zhuk Exp $
+--- src/backends/R/rserver/rcallbacks.cpp.orig	Sun Oct 23 07:57:47 2011
++++ src/backends/R/rserver/rcallbacks.cpp	Sun Oct 23 07:58:31 2011
+@@ -18,14 +18,13 @@
+     Copyright (C) 2009 Alexander Rieder <alexanderrieder@gmail.com>
+  */
+ 
+-#include "rcallbacks.h"
++#include <stdio.h>
+ 
+-#include "rserver.h"
+-
+-#include <kdebug.h>
+ #include <QStringList>
++#include <kdebug.h>
+ 
+-#include <stdio.h>
++#include "rcallbacks.h"
++#include "rserver.h"
+ 
+ RServer* server;
+ Expression* currentExpression;
