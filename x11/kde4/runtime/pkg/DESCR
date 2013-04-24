@@ -1,0 +1,9 @@
+Basic KDE run-time components, including:
+
+* kcmshell and kcm modules: basic configuration
+* basic kio slaves
+* ktrash
+* drkonqi (debugger)
+* khelpcenter
+
+and some other stuff.

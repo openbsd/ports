@@ -1,0 +1,11 @@
+$OpenBSD: patch-attica_kdeplugin_CMakeLists_txt,v 1.1.1.1 2013/04/24 19:03:25 zhuk Exp $
+Install attica_kde.so to plugins directory (experimental!).
+--- attica/kdeplugin/CMakeLists.txt.orig	Thu Apr  4 12:57:37 2013
++++ attica/kdeplugin/CMakeLists.txt	Thu Apr  4 12:58:49 2013
+@@ -6,5 +6,5 @@ set(attica_kde_SRCS
+ 
+ kde4_add_plugin(attica_kde ${attica_kde_SRCS})
+ target_link_libraries(attica_kde ${KDE4_KIO_LIBS} ${QT_QTMAIN_LIBRARY} ${QT_QTCORE_LIBRARY} ${KDE4_KCMUTILS_LIBS} )
+-install(TARGETS attica_kde EXPORT kdelibsLibraryTargets ${INSTALL_TARGETS_DEFAULT_ARGS})
++install(TARGETS attica_kde EXPORT kdelibsLibraryTargets DESTINATION ${PLUGIN_INSTALL_DIR})
+ 
