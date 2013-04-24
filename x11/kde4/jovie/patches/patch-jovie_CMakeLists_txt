@@ -1,0 +1,13 @@
+$OpenBSD: patch-jovie_CMakeLists_txt,v 1.1.1.1 2013/04/24 11:38:19 zhuk Exp $
+--- jovie/CMakeLists.txt.orig	Sat Apr  6 22:18:19 2013
++++ jovie/CMakeLists.txt	Sat Apr  6 22:19:12 2013
+@@ -1,5 +1,8 @@
+ 
+-include_directories( /usr/local/include ${CMAKE_SOURCE_DIR}/jovie/libkttsd  )
++include_directories( /usr/local/include
++                     ${CMAKE_SOURCE_DIR}/jovie/libkttsd
++                     ${SPEECHD_INCLUDE_DIR}
++                     )
+ 
+ add_definitions(-DKDE_DEFAULT_DEBUG_AREA=2400)
+ 
