@@ -1,0 +1,62 @@
+$OpenBSD: patch-libs_ksysguard_processcore_processes_openbsd_p_cpp,v 1.1.1.1 2013/04/24 19:17:42 zhuk Exp $
+--- libs/ksysguard/processcore/processes_openbsd_p.cpp.orig	Sat May 21 00:32:07 2011
++++ libs/ksysguard/processcore/processes_openbsd_p.cpp	Mon Sep  5 05:57:19 2011
+@@ -86,6 +86,10 @@ void ProcessesLocal::Private::readProcStatus(struct ki
+     process->setUid(p->kp_uid);
+     process->setGid(p->kp_pgid);
+     process->setName(QString(p->kp_comm ? p->kp_comm : "????"));
++#elif defined(__OpenBSD__)
++    process->setUid(p->p_uid);
++    process->setUid(p->p_gid);
++    process->setName(QString(p->p_comm ? p->p_comm : "????"));
+ #else
+     process->setUid(p->kp_eproc.e_ucred.cr_uid);
+     process->setGid(p->kp_eproc.e_pgid);
+@@ -111,6 +115,12 @@ void ProcessesLocal::Private::readProcStat(struct kinf
+         ps->setVmSize(p->kp_vm_map_size);
+         ps->setVmRSS(p->kp_vm_rssize * getpagesize());
+         status = p->kp_stat;
++#elif defined(__OpenBSD__)
++	ps->setUserTime(p->p_rtime_sec*100+p->p_rtime_usec/100);
++	ps->setNiceLevel(p->p_nice);
++	ps->setVmSize(p->p_vm_map_size);
++	ps->setVmRSS(p->p_vm_rssize);
++	status = p->p_stat;
+ #else
+         ps->setUserTime(p->kp_proc.p_rtime.tv_sec*100+p->kp_proc.p_rtime.tv_usec/100);
+         ps->setNiceLevel(p->kp_proc.p_nice);
+@@ -189,6 +199,8 @@ long ProcessesLocal::getParentPid(long pid) {
+         ppid = p.ki_ppid;
+ #elif defined(__DragonFly__) && __DragonFly_version >= 190000
+         ppid = p.kp_ppid;
++#elif defined(__OpenBSD__)
++	ppid = p.p_ppid;
+ #else
+         ppid = p.kp_eproc.e_ppid;
+ #endif
+@@ -228,6 +240,8 @@ QSet<long> ProcessesLocal::getAllPids( )
+         pids.insert(p[num].ki_pid);
+ #elif defined(__DragonFly__) && __DragonFly_version >= 190000
+         pids.insert(p[num].kp_pid);
++#elif defined(__OpenBSD__)
++	pids.insert(p[num].p_pid);
+ #else
+         pids.insert(p[num].kp_proc.p_pid);
+ #endif
+@@ -284,6 +298,7 @@ long long ProcessesLocal::totalPhysicalMemory() {
+     return Total /= 1024;
+ }
+ 
++#ifndef _SC_NPROCESSORS_ONLN
+ long int KSysGuard::ProcessesLocal::numberProcessorCores()
+ {
+     int mib[2];
+@@ -298,6 +313,8 @@ long int KSysGuard::ProcessesLocal::numberProcessorCor
+         return 1;
+     return len;
+ }
++#endif
++
+ ProcessesLocal::~ProcessesLocal()
+ {
+    delete d;

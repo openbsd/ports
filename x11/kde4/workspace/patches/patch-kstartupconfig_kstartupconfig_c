@@ -1,0 +1,93 @@
+$OpenBSD: patch-kstartupconfig_kstartupconfig_c,v 1.1.1.1 2013/04/24 19:17:42 zhuk Exp $
+Play safe and unbreak run-time.
+--- kstartupconfig/kstartupconfig.c.orig	Fri Mar  1 10:32:24 2013
++++ kstartupconfig/kstartupconfig.c	Sat Apr  6 23:11:29 2013
+@@ -70,6 +70,8 @@ Otherwise kdostartupconfig is launched to create or up
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <sys/wait.h>
++#include <errno.h>
++#include <limits.h>
+ #include <unistd.h>
+ #include <stdio.h>
+ #include <string.h>
+@@ -81,46 +83,46 @@ int main()
+     FILE* config;
+     FILE* keys;
+     struct stat st;
+-    char kdehome[ 1024 ];
+-    char filename[ 1024 ];
++    char kdehome[ PATH_MAX ];
++    char filename[ PATH_MAX ];
+ 
+     if( getenv( "KDEHOME" ))
+-        strlcpy( kdehome, getenv( "KDEHOME" ), 1024 );
++        strlcpy( kdehome, getenv( "KDEHOME" ), PATH_MAX );
+     else if( getenv( "HOME" ))
+         {
+-        strlcpy( kdehome, getenv( "HOME" ), 1024 );
+-        strlcat( kdehome, "/" KDE_DEFAULT_HOME, 1024  );
++        strlcpy( kdehome, getenv( "HOME" ), PATH_MAX );
++        strlcat( kdehome, "/" KDE_DEFAULT_HOME, PATH_MAX  );
+         }
+     else
+         return 1;
+-    strlcpy( filename, kdehome, 1024 );
+-    strlcat( filename, "/share/config/startupconfig", 1024 );
++    strlcpy( filename, kdehome, PATH_MAX );
++    strlcat( filename, "/share/config/startupconfig", PATH_MAX );
+     if( access( filename, R_OK ) != 0 )
+         goto doit;
+-    strlcpy( filename, kdehome, 1024 );
+-    strlcat( filename, "/share/config/startupconfigfiles", 1024 );
++    strlcpy( filename, kdehome, PATH_MAX );
++    strlcat( filename, "/share/config/startupconfigfiles", PATH_MAX );
+     if( stat( filename, &st ) != 0 )
+         goto doit;
+     config_time = st.st_mtime;
+     config = fopen( filename, "r" );
+     if( config == NULL )
+         goto doit;
+-    strlcpy( filename, kdehome, 1024 );
+-    strlcat( filename, "/share/config/startupconfigkeys", 1024 );
++    strlcpy( filename, kdehome, PATH_MAX );
++    strlcat( filename, "/share/config/startupconfigkeys", PATH_MAX );
+     keys = fopen( filename, "r" );
+     if( keys == NULL )
+         return 2;
+     for(;;)
+         {
+         char* nl;
+-        char keyline[ 1024 ];
+-        char line[ 1024 ];
++        char keyline[ PATH_MAX + 1 ];
++        char line[ PATH_MAX + 1];
+ 
+-        if( fgets( keyline, 1023, keys ) == NULL )
++        if( fgets( keyline, PATH_MAX, keys ) == NULL )
+             return 0;
+         if( (nl = strchr( keyline, '\n' )) )
+             *nl = '\0';
+-        if( fgets( line, 1023, config ) == NULL )
++        if( fgets( line, PATH_MAX, config ) == NULL )
+             break;
+         if( (nl = strchr( line, '\n' )) )
+             *nl = '\0';
+@@ -128,7 +130,7 @@ int main()
+             break;
+         for(;;)
+             {
+-            if( fgets( line, 1023, config ) == NULL )
++            if( fgets( line, PATH_MAX, config ) == NULL )
+                 goto doit2;
+             if( (nl = strchr( line, '\n' )) )
+                 *nl = '\0';
+@@ -154,5 +156,7 @@ int main()
+     fclose( keys );
+     fclose( config );
+   doit:
+-    return system( "kdostartupconfig4" );
++    errno = 0;
++    execlp( "kdostartupconfig4", "kdostartupconfig4", NULL );
++    return( errno );
+     }

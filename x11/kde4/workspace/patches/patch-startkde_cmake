@@ -1,0 +1,29 @@
+$OpenBSD: patch-startkde_cmake,v 1.1.1.1 2013/04/24 19:17:42 zhuk Exp $
+Fix lnusertemp locate and make startkde work even without X started.
+--- startkde.cmake.orig	Fri Sep 28 04:14:50 2012
++++ startkde.cmake	Fri Oct 26 14:07:20 2012
+@@ -3,6 +3,11 @@
+ #  DEFAULT KDE STARTUP SCRIPT ( @KDE_VERSION_STRING@ )
+ #
+ 
++case X"$DISPLAY" in
++X)
++	exec /usr/X11R6/bin/startx $0;;
++esac
++
+ if test "x$1" = x--failsafe; then
+     KDE_FAILSAFE=1 # General failsafe flag
+     KWIN_COMPOSE=N # Disable KWin's compositing
+@@ -231,10 +236,10 @@ else
+     export GS_LIB
+ fi
+ 
+-lnusertemp=`kde4-config --path exe --locate lnusertemp`
++lnusertemp="`kde4-config --path libexec --locate lnusertemp`"
+ if test -z "$lnusertemp"; then
+   # Startup error
+-  echo 'startkde: ERROR: Could not locate lnusertemp in '`kde4-config --path exe` 1>&2
++  echo 'startkde: ERROR: Could not locate lnusertemp in '`kde4-config --path libexec` 1>&2
+ fi
+ 
+ # Link "tmp" "socket" and "cache" resources to directory in /tmp

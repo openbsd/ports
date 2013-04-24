@@ -1,0 +1,11 @@
+$OpenBSD: patch-kinfocenter_Modules_pci_CMakeLists_txt,v 1.1.1.1 2013/04/24 19:17:42 zhuk Exp $
+--- kinfocenter/Modules/pci/CMakeLists.txt.orig	Sat May 21 00:32:07 2011
++++ kinfocenter/Modules/pci/CMakeLists.txt	Sun Oct 23 06:47:02 2011
+@@ -21,6 +21,7 @@ endif (UNIX AND NOT APPLE)
+     kde4_add_plugin(kcm_pci ${KCM_PCI_PART_SRCS})
+ 
+     target_link_libraries(kcm_pci ${KDE4_KDEUI_LIBS} ${QT_QTGUI_LIBRARY} ${PCIUTILS_LIBRARIES} ${X11_LIBRARIES} ${ZLIB_LIBRARIES})
++    set_target_properties(kcm_pci PROPERTIES LINK_FLAGS -fPIC)
+ 
+     
+ else(PCIUTILS_FOUND)
