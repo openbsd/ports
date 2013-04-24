@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 18:31:34 zhuk Exp $
+@bin bin/mplayerthumbsconfig
+lib/kde4/videopreview.so
+share/apps/videothumbnail/
+share/apps/videothumbnail/sprocket-large.png
+share/apps/videothumbnail/sprocket-medium.png
+share/apps/videothumbnail/sprocket-small.png
+share/config.kcfg/mplayerthumbs.kcfg
+share/kde4/services/videopreview.desktop
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
