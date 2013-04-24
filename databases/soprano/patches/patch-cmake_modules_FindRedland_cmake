@@ -1,4 +1,5 @@
-$OpenBSD: patch-cmake_modules_FindRedland_cmake,v 1.1 2012/11/12 13:37:52 sthen Exp $
+$OpenBSD: patch-cmake_modules_FindRedland_cmake,v 1.2 2013/04/24 08:34:45 zhuk Exp $
+Remove Linux-specific linker option, and add missing pthread lib.
 --- cmake/modules/FindRedland.cmake.orig	Mon Oct 15 16:40:54 2012
 +++ cmake/modules/FindRedland.cmake	Mon Oct 15 17:23:56 2012
 @@ -108,7 +108,7 @@ if(NOT WIN32)

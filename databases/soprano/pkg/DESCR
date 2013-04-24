@@ -1,14 +1,3 @@
 Soprano (formally known as QRDF) is a library which provides a nice Qt
 interface to RDF storage solutions. It has a modular structure which 
 allows to  replace the actual RDF storage implementation used. 
-
-* Full context (i.e. named graph) support
-* Plugin structure for extensibility
-* Server and client lib which allows a simple remote Soprano server
-* Simple sopranod server application
-* Simple sopranocmd tool to perform commands on models in a Soprano server
-* Rule-based Forward inference engine
-* Full-text index based on CLucene which indexes all literal 
-  statements (i.e. those statements with a literal object node)
-* Hierarchical architecture which allows to stack multiple filter models
-  on top of an RDF storage

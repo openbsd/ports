@@ -1,44 +1,47 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 02:52:08 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/04/24 08:34:45 zhuk Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	RDF framework
 CATEGORIES =	databases devel textproc sysutils
-
-SHARED_LIBS =	soprano                   1.0 # 1.0
-SHARED_LIBS +=	sopranoclient             1.0 # 1.0
-SHARED_LIBS +=	sopranoindex              1.0 # 1.0
-SHARED_LIBS +=	sopranoserver             1.0 # 1.0
-
 HOMEPAGE =	http://soprano.sourceforge.net/
-DISTNAME =	soprano-2.8.0
+DISTNAME =	soprano-2.9.0
+
+SHARED_LIBS =	soprano                   2.0
+SHARED_LIBS +=	sopranoclient             2.0
+SHARED_LIBS +=	sopranoindex              2.0
+SHARED_LIBS +=	sopranoserver             2.0
+
 EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=soprano/}
 
 # GPL/LGPL
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =  c m stdc++
-WANTLIB += lib/qt4/QtCore lib/qt4/QtDBus lib/qt4/QtNetwork lib/qt4/QtXml
-WANTLIB += clucene-core iodbc raptor2 rdf
+MODULES =	x11/kde4
+MODKDE4_USE =
 
-MODULES =	  devel/cmake x11/qt4
-CONFIGURE_STYLE = cmake
-SEPARATE_BUILD =  Yes
+BUILD_DEPENDS =	devel/doxygen
 
-LIB_DEPENDS +=	textproc/clucene \
-		databases/iodbc,-main \
+RUN_DEPENDS =	devel/desktop-file-utils
+
+LIB_DEPENDS = 	textproc/clucene \
+	    	databases/iodbc \
 		textproc/raptor \
 		textproc/redland
 
-RUN_DEPENDS =	devel/desktop-file-utils
+WANTLIB =  c m stdc++
+WANTLIB += lib/qt4/QtCore lib/qt4/QtDBus lib/qt4/QtNetwork lib/qt4/QtXml
+WANTLIB += clucene-core iodbc raptor2 rdf
 
 # No Java, thanks
 CONFIGURE_ARGS =	-DSOPRANO_DISABLE_SESAME2_BACKEND:Bool=Yes \
 			-DSOPRANO_BUILD_TESTS:Bool=Yes
 
-TEST_DEPENDS =	x11/dbus
-TEST_IS_INTERACTIVE = X11
+TEST_DEPENDS =		databases/virtuoso \
+			x11/dbus
+TEST_IS_INTERACTIVE =	X11
 
+# Remove stuff provided with CMake
 post-extract:
 	cd ${WRKDIST}/cmake/modules && \
 		rm FindQt4.cmake MacroPushRequiredVars.cmake
