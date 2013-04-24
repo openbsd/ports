@@ -1,0 +1,4 @@
+KIO slave that allows treating audio CDs like a "real" filesystem,
+where tracks are represented as files and, when copied from the
+folder, are digitally extracted from the CD. This ensures a perfect
+copy of the audio data.
