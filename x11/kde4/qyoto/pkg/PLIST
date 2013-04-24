@@ -1,0 +1,78 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 18:43:55 zhuk Exp $
+@bin bin/csrcc
+@bin bin/uics
+include/qyoto/
+include/qyoto/callbacks.h
+include/qyoto/emitsignal.h
+include/qyoto/invokeslot.h
+include/qyoto/marshall.h
+include/qyoto/marshall_macros.h
+include/qyoto/methodcall.h
+include/qyoto/methodreturnvalue.h
+include/qyoto/qyoto.h
+include/qyoto/qyotosmokebinding.h
+include/qyoto/signalreturnvalue.h
+include/qyoto/slotreturnvalue.h
+include/qyoto/smokeqyoto.h
+include/qyoto/virtualmethodcall.h
+include/qyoto/virtualmethodreturnvalue.h
+@lib ${KDE4LIB}/libphonon-sharp.so.${LIBphonon-sharp_VERSION}
+@lib ${KDE4LIB}/libqscintilla-sharp.so.${LIBqscintilla-sharp_VERSION}
+@lib ${KDE4LIB}/libqtscript-sharp.so.${LIBqtscript-sharp_VERSION}
+@lib ${KDE4LIB}/libqttest-sharp.so.${LIBqttest-sharp_VERSION}
+@lib ${KDE4LIB}/libqtuitools-sharp.so.${LIBqtuitools-sharp_VERSION}
+@lib ${KDE4LIB}/libqtwebkit-sharp.so.${LIBqtwebkit-sharp_VERSION}
+@lib ${KDE4LIB}/libqyoto.so.${LIBqyoto_VERSION}
+@lib lib/libphonon-sharp.so.${LIBphonon-sharp_VERSION}
+@lib lib/libqscintilla-sharp.so.${LIBqscintilla-sharp_VERSION}
+@lib lib/libqtscript-sharp.so.${LIBqtscript-sharp_VERSION}
+@lib lib/libqttest-sharp.so.${LIBqttest-sharp_VERSION}
+@lib lib/libqtuitools-sharp.so.${LIBqtuitools-sharp_VERSION}
+@lib lib/libqtwebkit-sharp.so.${LIBqtwebkit-sharp_VERSION}
+@lib lib/libqyoto.so.${LIBqyoto_VERSION}
+lib/mono/gac/phonon/
+lib/mono/gac/phonon/4.4.0.0__194a23ba31c08164/
+lib/mono/gac/phonon/4.4.0.0__194a23ba31c08164/phonon.dll
+lib/mono/gac/qscintilla/
+lib/mono/gac/qscintilla/2.2.0.0__194a23ba31c08164/
+lib/mono/gac/qscintilla/2.2.0.0__194a23ba31c08164/qscintilla.dll
+lib/mono/gac/qt-dotnet/
+lib/mono/gac/qt-dotnet/4.5.0.0__194a23ba31c08164/
+lib/mono/gac/qt-dotnet/4.5.0.0__194a23ba31c08164/qt-dotnet.dll
+lib/mono/gac/qt-dotnet/4.5.0.0__194a23ba31c08164/qt-dotnet.dll.config
+lib/mono/gac/qtscript/
+lib/mono/gac/qtscript/2.2.0.0__194a23ba31c08164/
+lib/mono/gac/qtscript/2.2.0.0__194a23ba31c08164/qtscript.dll
+lib/mono/gac/qttest/
+lib/mono/gac/qttest/2.2.0.0__194a23ba31c08164/
+lib/mono/gac/qttest/2.2.0.0__194a23ba31c08164/qttest.dll
+lib/mono/gac/qtuitools/
+lib/mono/gac/qtuitools/2.2.0.0__194a23ba31c08164/
+lib/mono/gac/qtuitools/2.2.0.0__194a23ba31c08164/qtuitools.dll
+lib/mono/gac/qtwebkit/
+lib/mono/gac/qtwebkit/2.2.0.0__194a23ba31c08164/
+lib/mono/gac/qtwebkit/2.2.0.0__194a23ba31c08164/qtwebkit.dll
+lib/mono/qyoto/
+lib/mono/qyoto/phonon.dll
+lib/mono/qyoto/qscintilla.dll
+lib/mono/qyoto/qt-dotnet.dll
+lib/mono/qyoto/qtscript.dll
+lib/mono/qyoto/qttest.dll
+lib/mono/qyoto/qtuitools.dll
+lib/mono/qyoto/qtwebkit.dll
+lib/pkgconfig/qtscript-sharp.pc
+lib/pkgconfig/qttest-sharp.pc
+lib/pkgconfig/qtuitools-sharp.pc
+lib/pkgconfig/qtwebkit-sharp.pc
+lib/pkgconfig/qyoto.pc
+share/qyoto/
+share/qyoto/cmake/
+share/qyoto/cmake/CMakeCSharpCompiler.cmake.in
+share/qyoto/cmake/CMakeCSharpInformation.cmake
+share/qyoto/cmake/CMakeDetermineCSharpCompiler.cmake
+share/qyoto/cmake/CMakeTestCSharpCompiler.cmake
+share/qyoto/cmake/FindMono.cmake
+share/qyoto/cmake/QyotoConfig.cmake
+share/qyoto/cmake/QyotoExport${MODKDE4_CMAKE_PREFIX}.cmake
+share/qyoto/cmake/QyotoExport.cmake
+share/qyoto/key.snk
