@@ -1,12 +1,12 @@
-$OpenBSD: patch-kopete_protocols_jabber_libiris_iris_jdns_jdns_sys_c,v 1.1 2010/06/23 13:11:34 espie Exp $
+$OpenBSD: patch-kopete_protocols_jabber_libiris_iris_jdns_jdns_sys_c,v 1.2 2013/04/24 19:48:51 zhuk Exp $
 --- kopete/protocols/jabber/libiris/iris/jdns/jdns_sys.c.orig	Wed Feb 18 17:29:30 2009
 +++ kopete/protocols/jabber/libiris/iris/jdns/jdns_sys.c	Wed Jun 23 13:54:12 2010
 @@ -705,7 +705,7 @@ static int my_res_init()
  /*    a define, so the #ifdef doesn't work.  as a workaround, we'll explicitly */
  /*    specify the platforms that have __res_state_ext */
  /* #ifdef __res_state_ext */
--#if defined(JDNS_OS_MAC) || defined(JDNS_OS_FREEBSD)
-+#if defined(JDNS_OS_MAC) || defined(JDNS_OS_FREEBSD) || defined(JDNS_OS_OPENBSD)
+-#if defined(JDNS_OS_MAC) || defined(JDNS_OS_FREEBSD) || defined(JDNS_OS_SOLARIS)
++#if defined(JDNS_OS_MAC) || defined(JDNS_OS_FREEBSD) || defined(JDNS_OS_SOLARIS) || defined(JDNS_OS_OPENBSD)
  # define USE_EXTEXT
  #endif
  
