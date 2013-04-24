@@ -1,0 +1,9 @@
+$OpenBSD: patch-konq-plugins_validators_config-konq-validator_h_cmake,v 1.1.1.1 2013/04/24 11:28:32 zhuk Exp $
+--- konq-plugins/validators/config-konq-validator.h.cmake.orig	Mon Dec 10 09:47:04 2012
++++ konq-plugins/validators/config-konq-validator.h.cmake	Mon Dec 10 09:47:15 2012
+@@ -1,2 +1,3 @@
+-#cmakedefine HAVE_TIDY 1
+-#cmakedefine HAVE_TIDY_ULONG_VERSION 1
++#cmakedefine01 HAVE_TIDY
++#cmakedefine01 HAVE_TIDY_ULONG_VERSION
++#cmakedefine01 HAVE_TIDYP
