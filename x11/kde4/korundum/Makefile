@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/24 12:18:23 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/04/24 20:47:35 zhuk Exp $
 
 COMMENT =	KDE bindings for Ruby
 DISTNAME =	korundum-${MODKDE4_VERSION}
@@ -37,7 +37,7 @@ CONFIGURE_ARGS =	-DRUBY_EXECUTABLE=${RUBY}
 RUN_DEPENDS =	${MODKDE4_DEP_DIR}/kross-interpreters>=${MODKDE4_DEP_VERSION},>=4.10.2p0
 
 LIB_DEPENDS = 	${MODKDE4_DEP_DIR}/kate>=${MODKDE4_DEP_VERSION} \
-		${MODKDE4_DEP_DIR}/ruby-qt=${MODKDE4_VERSION} \
+		${MODKDE4_DEP_DIR}/ruby-qt,${MODRUBY_FLAVOR}=${MODKDE4_VERSION} \
 		${MODKDE4_DEP_DIR}/smokekde>=${MODKDE4_DEP_VERSION}
 
 .include <bsd.port.mk>
