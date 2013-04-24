@@ -1,0 +1,17 @@
+$OpenBSD: patch-calgebra_CMakeLists_txt,v 1.1.1.1 2013/04/24 11:21:42 zhuk Exp $
+--- calgebra/CMakeLists.txt.orig	Wed Oct 17 14:35:23 2012
++++ calgebra/CMakeLists.txt	Wed Oct 17 14:35:54 2012
+@@ -1,11 +1,11 @@
+-include_directories(${READLINE_INCLUDE_DIR})
++include_directories(${READLINE_INCLUDE_DIR} ${NCURSES_INCLUDE_DIRS})
+ 
+ set(calgebra_SRCS
+ 	main.cpp
+ )
+ 
+ kde4_add_executable(calgebra ${calgebra_SRCS})
+-target_link_libraries(calgebra ${QT_QTCORE_LIBRARY} ${READLINE_LIBRARY} analitza)
++target_link_libraries(calgebra ${QT_QTCORE_LIBRARY} ${READLINE_LIBRARY} ${NCURSES_LIBRARY} analitza)
+ 
+ install(TARGETS calgebra ${INSTALL_TARGETS_DEFAULT_ARGS})
+ 
