@@ -1,21 +1,54 @@
-# $OpenBSD: kde4.port.mk,v 1.2 2013/03/11 11:46:13 espie Exp $
+# $OpenBSD: kde4.port.mk,v 1.3 2013/04/24 10:37:15 zhuk Exp $
 
 # The version of KDE SC in x11/kde4
-_MODKDE4_STABLE =	4.4.5
+_MODKDE4_STABLE =	4.10.2
 
-# Should be changed only by Makefile.inc in test directories
+# List of currently supported KDE SC versions, except "stable"
+_MODKDE4_OTHERS =
+
+# Handle kde4* FLAVORs: detect what version is requested, and
+# set MODKDE4_VERSION, MODKDE4_DEP_VERSION and MODKDE4_DEP_DIR
+# accordingly. There is also a shortcut for the latter.
+#
+# MODKDE4_FLAVOR is read-only for ports, except KDE SC itself.
+
+.for _v in ${_MODKDE4_OTHERS}
+MODKDE4_FLAVORS +=	kde${_v:S/.//g}
+.endfor
+FLAVORS +=		${MODKDE4_FLAVORS}
+MODKDE4_FLAVOR ?=	${FLAVOR:Mkde4*}
+
+.if ${MODKDE4_FLAVOR}
+.   for _f in ${MODKDE4_FLAVOR}
+.      for _f2 in ${MODKDE4_FLAVOR}
+.         if "${_f2}" != "${_f}"
+ERRORS += "Fatal: cannot use more than one kde4* FLAVOR\n"
+.         endif
+.      endfor
+
+.      for _v in ${_MODKDE4_OTHERS}
+.         if "kde${_v:S/.//g}" == "${_f}"
+MODKDE4_VERSION =	${_v}
+MODKDE4_DEP_VERSION ?=	${_v}
+.         endif
+.      endfor
+
+.   endfor
+MODKDE4_DEP_DIR =	x11/${MODKDE4_FLAVOR}
+.else
+MODKDE4_DEP_DIR =	x11/kde4
+.endif
+
+CATEGORIES +=		${MODKDE4_DEP_DIR}
+
+# Can be set by port to force dependency on particular KDE SC version.
 MODKDE4_VERSION ?=	${_MODKDE4_STABLE}
-MODKDE_VERSION =	${MODKDE4_VERSION}
-
-# Version to be used for SC dependencies by default
-MODKDE4_DEP_VERSION =	${MODKDE4_VERSION:R}
+MODKDE4_DEP_VERSION ?=	${MODKDE4_VERSION:R}
 
 # General options set by module
 SHARED_ONLY ?=		Yes
 ONLY_FOR_ARCHS ?=	${GCC4_ARCHS}
 EXTRACT_SUFX ?=		.tar.xz
-
-CATEGORIES +=		x11/kde4
 
 .if "${NO_BUILD:L}" != "yes"
 MODULES +=		devel/cmake
@@ -23,9 +56,9 @@ SEPARATE_BUILD ?=	flavored
 
 # CONFIGURE_STYLE needs separate handling because it is set to empty
 # string in bsd.port.mk initially.
-.  if "${CONFIGURE_STYLE}" == ""
+.   if "${CONFIGURE_STYLE}" == ""
 CONFIGURE_STYLE =	cmake
-.  endif
+.   endif
 .endif
 
 # MODKDE4_RESOURCES: Yes/No
@@ -68,7 +101,7 @@ MODKDE4_RESOURCES ?=	No
 MODKDE4_USE ?=		runtime
 .else
 MODKDE4_USE ?=		libs
-MODKDE_NO_QT ?=		Yes
+MODKDE4_NO_QT ?=	Yes
 .endif
 
 _MODKDE4_USE_ALL =	libs runtime workspace pim games
@@ -86,11 +119,9 @@ MODKDE4_USE +=		runtime
 MODKDE4_USE +=		runtime
 .endif
 
-# 1. Force CMake which has merged KDE modules
-# 2. Various distfiles contain long paths, necessitating an archiver
-# compliant with POSIX.1-2001 extended headers.
-MODKDE4_BUILD_DEPENDS =	archivers/gtar \
-			STEM->=2.8.9:devel/cmake \
+# Force CMake which has merged KDE modules.
+# Almost all KDE ports use docbook.
+MODKDE4_BUILD_DEPENDS =	STEM->=2.8.9:devel/cmake \
 			textproc/docbook \
 			textproc/docbook-xsl
 MODKDE4_LIB_DEPENDS =
@@ -98,13 +129,7 @@ MODKDE4_RUN_DEPENDS =
 MODKDE4_WANTLIB =
 MODKDE4_CONF_ARGS =
 
-TAR =			${LOCALBASE}/bin/gtar
-
 FLAVOR ?=
-
-.ifdef MODKDE_NO_QT
-MODKDE4_NO_QT ?=	${MODKDE_NO_QT}
-.endif
 
 .if ${MODKDE4_USE:L:Mruntime} || ${MODKDE4_USE:L:Mpim}
 MODKDE4_USE +=		libs
@@ -114,10 +139,10 @@ MODKDE4_USE +=		libs
 PKG_ARCH ?=		*
 MODKDE4_NO_QT ?=	Yes	# resources usually don't need Qt
 .   if ${MODKDE4_USE:L:Mworkspace}
-MODKDE4_BUILD_DEPENDS +=	STEM->=${MODKDE4_DEP_VERSION}:x11/kde4/workspace
+MODKDE4_BUILD_DEPENDS +=	${MODKDE4_DEP_DIR}/workspace>=${MODKDE4_DEP_VERSION}
 .   endif
 .   if ${MODKDE4_USE:L:Mlibs}
-MODKDE4_BUILD_DEPENDS +=	STEM->=${MODKDE4_DEP_VERSION}:x11/kde4/libs
+MODKDE4_BUILD_DEPENDS +=	${MODKDE4_DEP_DIR}/libs>=${MODKDE4_DEP_VERSION}
 .   endif
 .else
 # Small hack, until automoc4 will be gone
@@ -132,26 +157,26 @@ MODKDE4_NO_QT ?=	No
 ERRORS +=	"Fatal: KDE libraries require Qt."
 .       endif
 
-MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_DEP_VERSION}:x11/kde4/libs
-MODKDE4_WANTLIB +=		kdecore>=8
+MODKDE4_LIB_DEPENDS +=		${MODKDE4_DEP_DIR}/libs>=${MODKDE4_DEP_VERSION}
+MODKDE4_WANTLIB +=		${MODKDE4_LIB_DIR}/kdecore>=8
 .       if ${MODKDE4_USE:L:Mpim}
-MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_DEP_VERSION}:x11/kde4/pimlibs
+MODKDE4_LIB_DEPENDS +=		${MODKDE4_DEP_DIR}/pimlibs>=${MODKDE4_DEP_VERSION}
 MODKDE4_BUILD_DEPENDS +=	devel/boost
 .       endif
 
 .       if ${MODKDE4_USE:L:Mgames}
-MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_DEP_VERSION}:x11/kde4/libkdegames
-MODKDE4_WANTLIB +=		kdegames
+MODKDE4_LIB_DEPENDS +=		${MODKDE4_DEP_DIR}/libkdegames>=${MODKDE4_DEP_VERSION}
+MODKDE4_WANTLIB +=		${MODKDE4_LIB_DIR}/kdegames
 .       endif
 
 .       if ${MODKDE4_USE:L:Mruntime}
-MODKDE4_RUN_DEPENDS +=		STEM->=${MODKDE4_DEP_VERSION}:x11/kde4/runtime
+MODKDE4_RUN_DEPENDS +=		${MODKDE4_DEP_DIR}/runtime>=${MODKDE4_DEP_VERSION}
 .           if ${MODKDE4_USE:L:Mpim}
-MODKDE4_RUN_DEPENDS +=		STEM->=${MODKDE4_DEP_VERSION}:x11/kde4/pim-runtime
+MODKDE4_RUN_DEPENDS +=		${MODKDE4_DEP_DIR}/pim-runtime>=${MODKDE4_DEP_VERSION}
 .           endif
 
 .           if ${MODKDE4_USE:L:Mworkspace}
-MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_DEP_VERSION}:x11/kde4/workspace
+MODKDE4_LIB_DEPENDS +=		${MODKDE4_DEP_DIR}/workspace>=${MODKDE4_DEP_VERSION}
 .           endif
 .       endif
 .   endif    # ${MODKDE4_USE:L:Mlibs}
@@ -170,29 +195,6 @@ MODKDE4_CONF_ARGS +=	-DCMAKE_BUILD_TYPE:String=Release
 MODKDE4_CMAKE_PREFIX =	-release
 .   endif
 
-MODKDE4_INCLUDE_DIR =	include/kde4
-MODKDE4_LIB_DIR =	lib/kde4/private
-MODKDE_INCLUDE_DIR =	${MODKDE4_INCLUDE_DIR}
-MODKDE_LIB_DIR =	${MODKDE4_LIB_DIR}
-
-# Use right directories
-MODKDE4_CONF_ARGS +=	-DMAN_INSTALL_DIR:Path=${PREFIX}/man \
-			-DINFO_INSTALL_DIR:Path=${PREFIX}/info \
-			-DLIBEXEC_INSTALL_DIR:Path=${PREFIX}/libexec \
-			-DSYSCONF_INSTALL_DIR:Path=${SYSCONFDIR}
-
-# Avoid conflicts with KDE3.
-# Libraries are handled in kde4-post-install target, see below.
-MODKDE4_CONF_ARGS +=	-DINCLUDE_INSTALL_DIR:Path=${MODKDE4_INCLUDE_DIR} \
-			-DKDE4_LIB_INSTALL_DIR:Path=${PREFIX}/${MODKDE4_LIB_DIR}
-
-# Enable PIE if supported by platform
-. if !empty(PIE_ARCH:M${ARCH})
-MODKDE4_CONF_ARGS +=	-DKDE4_ENABLE_FPIE:Bool=Yes
-. else
-MODKDE4_CONF_ARGS +=	-DKDE4_ENABLE_FPIE:Bool=No
-. endif
-
 # NOTE: due to bugs in make-plist, plist may contain
 # ${FLAVORS} instead of ${MODKDE4_CMAKE_PREFIX}.
 # You've been warned.
@@ -204,20 +206,30 @@ FLAVORS +=	debug
 # ${MODKDE4_RESOURCES:L} != "no"
 .endif
 
+# Set up directories, avoiding conflicts with KDE3.
+# Libraries are handled in kde4-post-install target, see below.
+MODKDE4_INCLUDE_DIR =	include/kde4
+MODKDE4_LIB_DIR =	lib/kde4/libs
+
+# shortcut to make WANTLIBs and PLISTs more readable
+KDE4LIB =		${MODKDE4_LIB_DIR}
+SUBST_VARS +=		KDE4LIB
+
 .if ${CONFIGURE_STYLE:Mcmake}
 . if "${NO_TEST:L}" != "yes"
 # Enable regression tests if any
 MODKDE4_CONF_ARGS +=	-DKDE4_BUILD_TESTS:Bool=Yes
 . endif
 
-# Set up directories
-MODKDE4_CONF_ARGS +=	-DKDE4_INCLUDE_INSTALL_DIR:String=${PREFIX}/${MODKDE4_INCLUDE_DIR} \
-			-DKDE4_INSTALL_DIR:String=${PREFIX} \
-			-DKDE4_LIB_INSTALL_DIR:String=${PREFIX}/lib \
-			-DKDE4_LIBEXEC_INSTALL_DIR:String=${PREFIX}/libexec \
-			-DKDE4_INFO_INSTALL_DIR:String=${PREFIX}/info \
-			-DKDE4_MAN_INSTALL_DIR:String=${PREFIX}/man \
-			-DKDE4_SYSCONF_INSTALL_DIR:String=${SYSCONFDIR}
+MODKDE4_CONF_ARGS +=	-DINCLUDE_INSTALL_DIR:Path=${MODKDE4_INCLUDE_DIR} \
+			-DKDE4_INCLUDE_INSTALL_DIR:Path=${PREFIX}/${MODKDE4_INCLUDE_DIR} \
+			-DKDE4_INSTALL_DIR:Path=${PREFIX} \
+			-DKDE4_LIB_DIR:Path=${PREFIX}/${MODKDE4_LIB_DIR} \
+			-DKDE4_LIB_INSTALL_DIR:Path=${PREFIX}/lib \
+			-DKDE4_LIBEXEC_INSTALL_DIR:Path=${PREFIX}/libexec \
+			-DKDE4_INFO_INSTALL_DIR:Path=${PREFIX}/info \
+			-DKDE4_MAN_INSTALL_DIR:Path=${PREFIX}/man \
+			-DKDE4_SYSCONF_INSTALL_DIR:Path=${SYSCONFDIR}
 .endif
 
 # FIXME
@@ -225,47 +237,22 @@ MODKDE4_CONFIGURE_ENV =	HOME=${WRKDIR}
 PORTHOME ?=		${WRKDIR}
 
 MODKDE4_NO_QT ?=	No
-MODKDE_NO_QT ?=		${MODKDE4_NO_QT}
 .if ${MODKDE4_NO_QT:L} == "no"
 MODULES +=			x11/qt4
 MODQT4_OVERRIDE_UIC ?=		No
 MODKDE4_CONFIGURE_ENV +=	QTDIR=${MODQT_LIBDIR}
 .endif
 
-MODKDE_BUILD_DEPENDS =	${MODKDE4_BUILD_DEPENDS}
-MODKDE_LIB_DEPENDS =	${MODKDE4_LIB_DEPENDS}
-MODKDE_RUN_DEPENDS =	${MODKDE4_RUN_DEPENDS}
-MODKDE_WANTLIB =	${MODKDE4_WANTLIB}
-MODKDE_CONFIGURE_ENV =	${MODKDE4_CONFIGURE_ENV}
 
-BUILD_DEPENDS +=	${MODKDE_BUILD_DEPENDS}
+BUILD_DEPENDS +=	${MODKDE4_BUILD_DEPENDS}
 
-LIB_DEPENDS +=		${MODKDE_LIB_DEPENDS}
+LIB_DEPENDS +=		${MODKDE4_LIB_DEPENDS}
 
-RUN_DEPENDS +=		${MODKDE_RUN_DEPENDS}
-WANTLIB +=		${MODKDE_WANTLIB}
-CONFIGURE_ENV +=	${MODKDE_CONFIGURE_ENV}
+RUN_DEPENDS +=		${MODKDE4_RUN_DEPENDS}
+WANTLIB +=		${MODKDE4_WANTLIB}
+CONFIGURE_ENV +=	${MODKDE4_CONFIGURE_ENV}
 CONFIGURE_ARGS +=	${MODKDE4_CONF_ARGS}
 # MAKE_FLAGS +=		${MODKDE4_CONF_ARGS}
-
-# Tweak dependency path for testing directories
-.if "${MODKDE4_VERSION}" != "${_MODKDE4_STABLE}"
-_MODKDE4_REAL_DIR =	x11/kde${MODKDE4_VERSION:S/.//g}
-CATEGORIES +=		${_MODKDE4_REAL_DIR}
-BUILD_DEPENDS :=	${BUILD_DEPENDS:C@x11/kde4/@${_MODKDE4_REAL_DIR}/@}
-RUN_DEPENDS :=		${RUN_DEPENDS:C@x11/kde4/@${_MODKDE4_REAL_DIR}/@}
-LIB_DEPENDS :=		${LIB_DEPENDS:C@x11/kde4/@${_MODKDE4_REAL_DIR}/@}
-. if "${MULTI_PACKAGES}" != ""
-.  for _s in ${MULTI_PACKAGES}
-.   if defined(RUN_DEPENDS${_s})
-RUN_DEPENDS${_s} :=	${RUN_DEPENDS${_s}:C@x11/kde4/@${_MODKDE4_REAL_DIR}/@}
-.   endif
-.   if defined(LIB_DEPENDS${_s})
-LIB_DEPENDS${_s} :=	${LIB_DEPENDS${_s}:C@x11/kde4/@${_MODKDE4_REAL_DIR}/@}
-.   endif
-.  endfor
-. endif
-.endif
 
 MODKDE4_FIX_GETTEXT ?=	Yes
 .if ${MODKDE4_FIX_GETTEXT:L} == "yes"
@@ -304,8 +291,8 @@ MODKDE4_LIB_LINKS ?=	No
 MODKDE4_pre-fake =	${SUDO} ${INSTALL_DATA_DIR} ${PREFIX}/include/kde4;
 
 # 1. Remove includes directory created above, if empty.
-# 2. Create links for shared libraries in ${PREFIX}/lib/kde4/private/ ,
-#    to allow using -DKDE4_LIB_INSTALL_DIR=${PREFIX}/lib/kde4/private.
+# 2. Create links for shared libraries in ${PREFIX}/${KDE4LIB},
+#    to allow using -DDKDE4_LIB_DIR=${PREFIX}/${KDE4LIB}.
 # 3. Fixup files in ${SYSCONFDIR}, see notes for MODKDE4_SYSCONF_FILES above.
 MODKDE4_post-install =	rmdir ${PREFIX}/${MODKDE4_INCLUDE_DIR} 2>/dev/null || :;
 
@@ -318,7 +305,7 @@ MODKDE4_post-install +=	\
 # actual ${MODKDE4_LIB_DIR} value relative to ${PREFIX}/lib.
 . for _l _v in ${SHARED_LIBS}
 MODKDE4_post-install +=	\
-	test -e ../../lib${_l}.so.${_v} && ln -sf ../../lib${_l}.so.${_v};
+	! test -e ../../lib${_l}.so.${_v} || ln -sf ../../lib${_l}.so.${_v};
 . endfor
 .endif
 

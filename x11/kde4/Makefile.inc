@@ -1,37 +1,32 @@
-# $OpenBSD: Makefile.inc,v 1.14 2013/03/11 11:46:13 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.15 2013/04/24 10:37:15 zhuk Exp $
 
-FLAVOR ?=
-FLAVORS ?=		debug
-SEPARATE_BUILD =	flavored
-CATEGORIES ?=		x11 x11/kde
-VERSION ?=		4.4.5
-DIST_SUBDIR ?=		kde
-PKGNAME?=		${DISTNAME}
-MODULES +=		x11/qt4
-MODQT_MT ?=		Yes
-MODQT_OVERRIDE_UIC ?=	No
-SHARED_ONLY ?=		Yes
-ONLY_FOR_ARCHS ?=	${GCC4_ARCHS}
+CATEGORIES ?=		x11
+MODULES +=		x11/kde4
 
-MODULES +=		devel/cmake
-CONFIGURE_STYLE ?=	cmake
+MASTER_SITES ?=		${MASTER_SITE_KDE:=stable/${MODKDE4_VERSION}/src/}
+DIST_SUBDIR =		kde
+MAINTAINER ?=		KDE porting team <openbsd-kde@googlegroups.com>
 
-EXTRACT_SUFX?=		.tar.bz2
-MASTER_SITES?=		${MASTER_SITE_KDE:=stable/${VERSION}/src/}
-
-PORTHOME ?=		${WRKDIR}
-
-# GPL (LGPL for the central libraries)
-PERMIT_DISTFILES_FTP ?=		Yes
-PERMIT_PACKAGE_CDROM ?=		Yes
-PERMIT_PACKAGE_FTP ?=		Yes
-CONFIGURE_ENV +=		QTDIR=${MODQT_LIBDIR} HOME=${WRKDIR}
-SEPARATE_BUILD =		simple
-
-#CONFIGURE_ARGS +=	--debug-output --debug-trycompile
-.if ${FLAVOR:Mdebug}
-CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE:String=Debug
+.if defined(MODKDE4_USE) && ${MODKDE4_USE:Mgames}
+HOMEPAGE ?=		http://games.kde.org/game.php?game=${DISTNAME:C/-[0-9].*//}
 .else
-CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE:String=Release
+HOMEPAGE ?=		https://projects.kde.org/projects
 .endif
 
+# KDE SC is mostly GPL, or LGPL/BSDL for the central libraries
+PERMIT_PACKAGE_CDROM =		Yes
+
+# Do not rely on devel/cmake here: additional modules that are
+# set up in ports may have, say, lang/python before devel/cmake,
+# thus making lang/python evaluating first. And when lang/python
+# sees empty CONFIGURE_STYLE, it forces that this is Python
+# module port, and breaks build.
+CONFIGURE_STYLE =	cmake
+
+MODKDE4_LIB_LINKS =	Yes
+
+MIN_AKONADI_VERSION =	1.8.53
+MIN_SOPRANO_VERSION =	2.9.0
+
+# Only needed for l10n
+MODKDE4_FIX_GETTEXT ?=  No
