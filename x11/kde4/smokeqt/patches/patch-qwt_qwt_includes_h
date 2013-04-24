@@ -1,0 +1,13 @@
+$OpenBSD: patch-qwt_qwt_includes_h,v 1.1.1.1 2013/04/24 19:06:07 zhuk Exp $
+--- qwt/qwt_includes.h.orig	Sun Oct  9 20:54:42 2011
++++ qwt/qwt_includes.h	Sun Oct  9 20:58:17 2011
+@@ -50,7 +50,8 @@
+ #include <qwt_plot_scaleitem.h>
+ #include <qwt_plot_spectrogram.h>
+ 
+-#ifndef Q_WS_MAC    // this doesn't seem to exist on OS X
++// this doesn't seem to exist on OS X and OpenBSD
++#if !defined(Q_WS_MAC) && !defined(__OpenBSD__)
+ #include <qwt_plot_svgitem.h>
+ #endif
+ 
