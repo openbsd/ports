@@ -1,0 +1,10 @@
+Konsole is an X terminal emulator for the KDE platform, allowing
+users to have a convenient way to use the command line. Aside from
+providing a way to use a powerful shell, Konsole also offers features
+that make it easier or more pleasurable to work in the command line,
+such as profile management, scrollback, and color schemes, including
+translucency for effects.
+
+Konsole also provides an embedded KPart terminal which is used by
+apps such as Yakuake, Dolphin, and Kate, giving users a consistent
+and familiar interface when working in the command line.
