@@ -1,0 +1,12 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2013/04/24 18:42:20 zhuk Exp $
+--- CMakeLists.txt.orig	Wed Dec 19 18:37:32 2012
++++ CMakeLists.txt	Wed Dec 19 18:39:07 2012
+@@ -8,6 +8,8 @@ include(KDE4Defaults)
+ include(MacroLibrary)
+ include(PythonMacros)
+ 
++set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${KDE4_ENABLE_EXCEPTIONS}")
++
+ set(CMAKE_MODULE_PATH ${pykde4_SOURCE_DIR}/cmake/modules ${CMAKE_MODULE_PATH})
+ 
+ macro_log_feature(KDE4_FOUND "KDE libraries" "The KDE Development Platform" "kdelibs"
