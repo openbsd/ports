@@ -1,0 +1,9 @@
+$OpenBSD: patch-libkcups_CMakeLists_txt,v 1.1.1.1 2013/04/24 18:41:57 zhuk Exp $
+--- libkcups/CMakeLists.txt.orig	Sat Feb  9 23:24:52 2013
++++ libkcups/CMakeLists.txt	Sat Feb  9 23:25:09 2013
+@@ -1,3 +1,5 @@
++include_directories(${CUPS_INCLUDE_DIR})
++
+ set(libkcups_SRCS
+     KCupsPasswordDialog.cpp
+     KCupsConnection.cpp
