@@ -1,0 +1,33 @@
+$OpenBSD: patch-RocsCore_LoadSave_Plugins_CMakeLists_txt,v 1.1.1.1 2013/04/24 18:44:28 zhuk Exp $
+--- RocsCore/LoadSave/Plugins/CMakeLists.txt.orig	Wed Feb 13 21:23:01 2013
++++ RocsCore/LoadSave/Plugins/CMakeLists.txt	Wed Feb 13 21:29:56 2013
+@@ -21,13 +21,26 @@ add_subdirectory(tikzFileFormat)
+ 
+ # require Boost >= 1.49 for DOT file format
+ if(${Boost_VERSION} VERSION_LESS 104900)
++    set(CAN_BUILD_DotFileFormat No)
++else(${Boost_VERSION} VERSION_LESS 104900)
++    set(CAN_BUILD_DotFileFormat Yes)
++endif(${Boost_VERSION} VERSION_LESS 104900)
++
++option(BUILD_DotFileFormat
++          "Build DOT file format support (needs Boost >= 1.49)"
++          ${CAN_BUILD_DotFileFormat}
++      )
++
++if(BUILD_DotFileFormat)
++    # Allow build ever with Boost < 1.49 if user explicitly
++    # says that he wants to shoot his foot.
++    add_subdirectory(dotFileFormat)
++elseif(NOT CAN_BUILD_DotFileFormat)
+     add_feature_info(DotFileFormat
+         OFF
+         "Building of DOT file format support needs Boost >= 1.49."
+     )
+-else(${Boost_VERSION} VERSION_LESS 104900)
+-    add_subdirectory(dotFileFormat)
+-endif(${Boost_VERSION} VERSION_LESS 104900)
++endif(BUILD_DotFileFormat)
+ 
+ # these plugins are in an unstable state and are not suited for end users
+ if (ROCS_BUILD_LOADSAVE)
