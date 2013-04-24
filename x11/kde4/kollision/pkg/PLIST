@@ -1,0 +1,37 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 12:16:35 zhuk Exp $
+@bin bin/kollision
+share/applications/kde4/kollision.desktop
+share/apps/kollision/
+share/apps/kollision/kollisionui.rc
+share/apps/kollision/pictures/
+share/apps/kollision/pictures/theme.svgz
+share/apps/kollision/sounds/
+share/apps/kollision/sounds/ball_leaving.ogg
+share/apps/kollision/sounds/hit_wall.ogg
+share/apps/kollision/sounds/start.ogg
+share/apps/kollision/sounds/you_lose.ogg
+share/doc/HTML/en/kollision/
+share/doc/HTML/en/kollision/common
+share/doc/HTML/en/kollision/index.cache.bz2
+share/doc/HTML/en/kollision/index.docbook
+share/icons/hicolor/128x128/apps/kollision.png
+share/icons/hicolor/16x16/apps/kollision.png
+share/icons/hicolor/22x22/apps/kollision.png
+share/icons/hicolor/32x32/apps/kollision.png
+share/icons/hicolor/48x48/apps/kollision.png
+share/icons/hicolor/64x64/apps/kollision.png
+share/icons/oxygen/128x128/apps/kollision.png
+share/icons/oxygen/16x16/apps/kollision.png
+share/icons/oxygen/22x22/apps/kollision.png
+share/icons/oxygen/32x32/apps/kollision.png
+share/icons/oxygen/48x48/apps/kollision.png
+share/icons/oxygen/64x64/apps/kollision.png
+share/icons/oxygen/scalable/
+share/icons/oxygen/scalable/apps/
+share/icons/oxygen/scalable/apps/kollision.svgz
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen
