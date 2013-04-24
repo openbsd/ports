@@ -1,6 +1,6 @@
-$OpenBSD: patch-librtmp_Makefile,v 1.1 2011/07/17 09:56:04 sthen Exp $
---- librtmp/Makefile.orig	Tue Jul 12 01:24:33 2011
-+++ librtmp/Makefile	Thu Jul 14 13:13:52 2011
+$OpenBSD: patch-librtmp_Makefile,v 1.2 2013/04/24 09:33:41 sthen Exp $
+--- librtmp/Makefile.orig	Fri Jan  4 10:01:01 2013
++++ librtmp/Makefile	Fri Jan  4 10:04:43 2013
 @@ -36,7 +36,7 @@ CRYPTO_LIB=$(LIB_$(CRYPTO)) $(PRIVATE_LIBS)
  CRYPTO_REQ=$(REQ_$(CRYPTO))
  CRYPTO_DEF=$(DEF_$(CRYPTO))
@@ -9,4 +9,4 @@ $OpenBSD: patch-librtmp_Makefile,v 1.1 2011/07/17 09:56:04 sthen Exp $
 +SO_VERSION?=0
  SOX_posix=so
  SOX_darwin=dylib
- SOX_mingw=so	# useless
+ SOX_mingw=dll
