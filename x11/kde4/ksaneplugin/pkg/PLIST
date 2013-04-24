@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 12:21:40 zhuk Exp $
+lib/kde4/ksaneplugin.so
+share/kde4/services/ksane_scan_service.desktop
