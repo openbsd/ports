@@ -1,0 +1,43 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 11:41:12 zhuk Exp $
+include/kde4/KDE/KActivities/
+include/kde4/KDE/KActivities/Consumer
+include/kde4/KDE/KActivities/Controller
+include/kde4/KDE/KActivities/Info
+include/kde4/KDE/KActivities/Models/
+include/kde4/KDE/KActivities/Models/ActivityModel
+include/kde4/KDE/KActivities/Models/ResourceModel
+include/kde4/KDE/KActivities/ResourceInstance
+include/kde4/kactivities/
+include/kde4/kactivities-models/
+include/kde4/kactivities-models/activitymodel.h
+include/kde4/kactivities-models/kactivities_models_export.h
+include/kde4/kactivities-models/resourcemodel.h
+include/kde4/kactivities/consumer.h
+include/kde4/kactivities/controller.h
+include/kde4/kactivities/info.h
+include/kde4/kactivities/kactivities_export.h
+include/kde4/kactivities/resourceinstance.h
+lib/cmake/KActivities/
+lib/cmake/KActivities-Models/
+lib/cmake/KActivities-Models/KActivities-ModelsConfig.cmake
+lib/cmake/KActivities-Models/KActivities-ModelsConfigVersion.cmake
+lib/cmake/KActivities-Models/KActivitiesModelsLibraryTargets${MODKDE4_CMAKE_PREFIX}.cmake
+lib/cmake/KActivities-Models/KActivitiesModelsLibraryTargets.cmake
+lib/cmake/KActivities/KActivitiesConfig.cmake
+lib/cmake/KActivities/KActivitiesConfigVersion.cmake
+lib/cmake/KActivities/KActivitiesLibraryTargets${MODKDE4_CMAKE_PREFIX}.cmake
+lib/cmake/KActivities/KActivitiesLibraryTargets.cmake
+lib/kde4/imports/
+lib/kde4/imports/org/
+lib/kde4/imports/org/kde/
+lib/kde4/imports/org/kde/activities/
+lib/kde4/imports/org/kde/activities/models/
+lib/kde4/imports/org/kde/activities/models/libkactivities-models-component-plugin.so
+lib/kde4/imports/org/kde/activities/models/qmldir
+@lib ${KDE4LIB}/libkactivities.so.${LIBkactivities_VERSION}
+lib/libkactivities-models.so
+@lib lib/libkactivities.so.${LIBkactivities_VERSION}
+lib/pkgconfig/libkactivities-models.pc
+lib/pkgconfig/libkactivities.pc
+share/ontology/kde/kao.ontology
+share/ontology/kde/kao.trig
