@@ -1,4 +1,4 @@
-# $OpenBSD: gnustep.port.mk,v 1.17 2012/08/22 07:15:51 sebastia Exp $
+# $OpenBSD: gnustep.port.mk,v 1.18 2013/04/25 16:14:27 sebastia Exp $
 
 # until tested on others
 ONLY_FOR_ARCHS =	i386 amd64 macppc
@@ -18,7 +18,7 @@ MAKE_FLAGS +=	CC="${CC}" CPP="${CC} -E" OPTFLAG="${CFLAGS}"
 MAKE_ENV +=	GNUSTEP_MAKEFILES=`gnustep-config --variable=GNUSTEP_MAKEFILES`
 MAKE_ENV +=	INSTALL_AS_USER=${BINOWN}
 MAKE_ENV +=	INSTALL_AS_GROUP=${BINGRP}
-MAKE_ENV +=	GS_DEFAULTS_LOCKDIR=${WRKDIR}
+MAKE_ENV +=     GNUSTEP_CONFIG_FILE=${PORTSDIR}/x11/gnustep/GNUstep.conf
 
 MODGNUSTEP_NEEDS_BASE ?=	Yes
 MODGNUSTEP_NEEDS_GUI ?=		Yes

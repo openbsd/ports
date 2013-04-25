@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2012/08/22 07:15:51 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.16 2013/04/25 16:14:27 sebastia Exp $
 @conflict swi-prolog-<=5.6.27p5
 @bin bin/HTMLLinker
 @bin bin/autogsdoc
@@ -74,6 +74,7 @@ include/Foundation/NSKeyedArchiver.h
 include/Foundation/NSLocale.h
 include/Foundation/NSLock.h
 include/Foundation/NSMapTable.h
+include/Foundation/NSMetadata.h
 include/Foundation/NSMethodSignature.h
 include/Foundation/NSNetServices.h
 include/Foundation/NSNotification.h
@@ -99,6 +100,7 @@ include/Foundation/NSRange.h
 include/Foundation/NSRegularExpression.h
 include/Foundation/NSRunLoop.h
 include/Foundation/NSScanner.h
+include/Foundation/NSScriptWhoseTests.h
 include/Foundation/NSSerialization.h
 include/Foundation/NSSet.h
 include/Foundation/NSSortDescriptor.h
@@ -202,6 +204,8 @@ ${LIBDIR}/Resources/Esperanto.lproj/
 ${LIBDIR}/Resources/Esperanto.lproj/Localizable.strings
 ${LIBDIR}/Resources/French.lproj/
 ${LIBDIR}/Resources/French.lproj/Localizable.strings
+${LIBDIR}/Resources/GSTLS/
+${LIBDIR}/Resources/GSTLS/ca-certificates.crt
 ${LIBDIR}/Resources/German.lproj/
 ${LIBDIR}/Resources/German.lproj/Localizable.strings
 ${LIBDIR}/Resources/Info-gnustep.plist
@@ -338,6 +342,7 @@ ${LIBDIR}/Resources/NSTimeZones/zones/America/Chihuahua
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Coral_Harbour
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Cordoba
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Costa_Rica
+${LIBDIR}/Resources/NSTimeZones/zones/America/Creston
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Cuiaba
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Curacao
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Danmarkshavn
@@ -518,6 +523,7 @@ ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Karachi
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Kashgar
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Kathmandu
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Katmandu
+${LIBDIR}/Resources/NSTimeZones/zones/Asia/Khandyga
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Kolkata
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Krasnoyarsk
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Kuala_Lumpur
@@ -562,6 +568,7 @@ ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Ujung_Pandang
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Ulaanbaatar
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Ulan_Bator
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Urumqi
+${LIBDIR}/Resources/NSTimeZones/zones/Asia/Ust-Nera
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Vientiane
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Vladivostok
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Yakutsk
@@ -677,6 +684,7 @@ ${LIBDIR}/Resources/NSTimeZones/zones/Europe/Bratislava
 ${LIBDIR}/Resources/NSTimeZones/zones/Europe/Brussels
 ${LIBDIR}/Resources/NSTimeZones/zones/Europe/Bucharest
 ${LIBDIR}/Resources/NSTimeZones/zones/Europe/Budapest
+${LIBDIR}/Resources/NSTimeZones/zones/Europe/Busingen
 ${LIBDIR}/Resources/NSTimeZones/zones/Europe/Chisinau
 ${LIBDIR}/Resources/NSTimeZones/zones/Europe/Copenhagen
 ${LIBDIR}/Resources/NSTimeZones/zones/Europe/Dublin
@@ -866,11 +874,6 @@ ${LIBDIR}/Resources/NSTimeZones/zones/Universal
 ${LIBDIR}/Resources/NSTimeZones/zones/W-SU
 ${LIBDIR}/Resources/NSTimeZones/zones/WET
 ${LIBDIR}/Resources/NSTimeZones/zones/Zulu
-${LIBDIR}/Resources/SSL.bundle/
-${LIBDIR}/Resources/SSL.bundle/Resources/
-${LIBDIR}/Resources/SSL.bundle/Resources/Info-gnustep.plist
-@bin ${LIBDIR}/Resources/SSL.bundle/SSL
-${LIBDIR}/Resources/SSL.bundle/stamp.make
 ${LIBDIR}/Resources/Spanish.lproj/
 ${LIBDIR}/Resources/Spanish.lproj/Localizable.strings
 ${LIBDIR}/Resources/TraditionalChinese.lproj/
