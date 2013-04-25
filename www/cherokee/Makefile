@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2013/03/21 08:48:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2013/04/25 15:57:18 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,7 +10,7 @@ COMMENT-streaming = Streaming module for Cherokee web server
 
 DIR =		1.2
 VERSION =	${DIR}.101
-REVISION =	0
+REVISION =	1
 DISTNAME =	cherokee-${VERSION}
 
 PKGNAME-main =	${DISTNAME}
@@ -79,7 +79,8 @@ FAKE_FLAGS =	cherokeeconfdir="${PREFIX}/share/examples/cherokee/etc" \
 		cherokeewwwdir="${PREFIX}/share/examples/cherokee/www" \
 		cherokeewwwimagesdir="${PREFIX}/share/examples/cherokee/www/images"
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoconf
+AUTOCONF_VERSION =	2.68
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			ac_cv_header_execinfo_h=no

@@ -1,0 +1,12 @@
+$OpenBSD: patch-cherokee_common-internal_h,v 1.1 2013/04/25 15:57:18 sthen Exp $
+--- cherokee/common-internal.h.orig	Thu Apr 25 09:35:31 2013
++++ cherokee/common-internal.h	Thu Apr 25 09:46:45 2013
+@@ -239,6 +239,8 @@ char *strcasestr(char *s, char *find);
+ #  define TIME_MAX ((time_t)INT_MAX)
+ # elif (SIZEOF_TIME_T == SIZEOF_LONG)
+ #  define TIME_MAX ((time_t)LONG_MAX)
++# elif (SIZEOF_TIME_T == SIZEOF_LONG_LONG)
++#  define TIME_MAX ((time_t)LLONG_MAX)
+ # else
+ #  error "Can't define TIME_MAX"
+ # endif

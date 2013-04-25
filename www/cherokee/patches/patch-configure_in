@@ -1,0 +1,11 @@
+$OpenBSD: patch-configure_in,v 1.1 2013/04/25 15:57:18 sthen Exp $
+--- configure.in.orig	Thu Apr 25 16:49:19 2013
++++ configure.in	Thu Apr 25 16:49:31 2013
+@@ -274,6 +274,7 @@ AC_CHECK_TYPE(wchar_t, unsigned short)
+ 
+ AC_CHECK_SIZEOF(int)
+ AC_CHECK_SIZEOF(long)
++AC_CHECK_SIZEOF(long long)
+ AC_CHECK_SIZEOF(unsigned int)
+ AC_CHECK_SIZEOF(unsigned long)
+ AC_CHECK_SIZEOF(unsigned long long)
