@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/28 15:51:18 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/04/25 16:34:06 sebastia Exp $
 include/WebServices/
 include/WebServices/GWSBinding.h
 include/WebServices/GWSCoder.h
@@ -43,6 +43,8 @@ share/doc/GNUstep/WebServices/MainIndex.html
 share/doc/GNUstep/WebServices/OrderedSymbolDeclarations.plist
 share/doc/GNUstep/WebServices/TypesAndConstants.gsdoc
 share/doc/GNUstep/WebServices/TypesAndConstants.html
+share/doc/GNUstep/WebServices/TypesTOC.gsdoc
+share/doc/GNUstep/WebServices/TypesTOC.html
 share/doc/GNUstep/WebServices/WSSUsernameToken.gsdoc
 share/doc/GNUstep/WebServices/WSSUsernameToken.html
 share/doc/GNUstep/WebServices/WebServices.html
