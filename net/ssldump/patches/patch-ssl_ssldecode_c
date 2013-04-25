@@ -1,6 +1,6 @@
-$OpenBSD: patch-ssl_ssldecode_c,v 1.1 2002/06/16 19:43:39 pvalchev Exp $
---- ssl/ssldecode.c.orig	Sun Jun 16 13:41:46 2002
-+++ ssl/ssldecode.c	Sun Jun 16 13:42:10 2002
+$OpenBSD: patch-ssl_ssldecode_c,v 1.2 2013/04/25 14:02:02 sthen Exp $
+--- ssl/ssldecode.c.orig	Sat Aug 17 02:33:17 2002
++++ ssl/ssldecode.c	Thu Apr 25 14:59:17 2013
 @@ -51,6 +51,7 @@
  #include <openssl/ssl.h>
  #include <openssl/hmac.h>
