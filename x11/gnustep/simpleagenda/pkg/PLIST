@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/05/14 08:35:30 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/04/25 16:33:00 sebastia Exp $
 bin/SimpleAgenda
 libexec/GNUstep/SimpleAgenda.app/
 libexec/GNUstep/SimpleAgenda.app/Resources/
@@ -28,6 +28,8 @@ libexec/GNUstep/SimpleAgenda.app/Resources/GroupDAV.gorm/data.classes
 libexec/GNUstep/SimpleAgenda.app/Resources/GroupDAV.gorm/data.info
 libexec/GNUstep/SimpleAgenda.app/Resources/GroupDAV.gorm/objects.gorm
 libexec/GNUstep/SimpleAgenda.app/Resources/Info-gnustep.plist
+libexec/GNUstep/SimpleAgenda.app/Resources/Italian.lproj/
+libexec/GNUstep/SimpleAgenda.app/Resources/Italian.lproj/Localizable.strings
 libexec/GNUstep/SimpleAgenda.app/Resources/Preferences.gorm/
 libexec/GNUstep/SimpleAgenda.app/Resources/Preferences.gorm/data.classes
 libexec/GNUstep/SimpleAgenda.app/Resources/Preferences.gorm/data.info
