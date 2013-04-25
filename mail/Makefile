@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.289 2013/04/11 16:12:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.290 2013/04/25 23:01:34 jturner Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -206,6 +206,7 @@
      SUBDIR += tkrat
      SUBDIR += tmda
      SUBDIR += tnef
+     SUBDIR += trojita
      SUBDIR += vrfy
      SUBDIR += wmbiff
      SUBDIR += wmmail
