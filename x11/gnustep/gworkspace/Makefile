@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/21 08:48:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2013/04/25 16:31:57 sebastia Exp $
 
 COMMENT=	GNUstep workspace manager
 
-DISTNAME =	gworkspace-0.9.1
-REVISION =	0
+DISTNAME =	gworkspace-0.9.2
 
 CATEGORIES=	x11
 
@@ -39,9 +38,6 @@ MAKE_ENV+=	FSNode_VERSION=${LIBFSNode_VERSION} \
 		Operation_INTERFACE_VERSION=${LIBOperation_VERSION}
 
 pre-configure:
-	cp ${FILESDIR}/MDFinder_GNUmakefile ${WRKSRC}/GWMetadata/MDFinder/GNUmakefile
-	cp ${FILESDIR}/Preferences_GNUmakefile ${WRKSRC}/GWMetadata/Preferences/GNUmakefile
-	cd ${WRKSRC}/GWMetadata/gmds/mdextractor/Extractors/JpegExtractor && \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} autoconf
+	cd ${WRKSRC} && rm GWorkspace/Resources/Spanish.lproj/Localizable.strings~
 
 .include <bsd.port.mk>

@@ -1,0 +1,15 @@
+$OpenBSD: patch-Operation_FileOpInfo_m,v 1.1 2013/04/25 16:31:57 sebastia Exp $
+
+from upstream, svn rev 36453 fix Finder
+
+--- Operation/FileOpInfo.m.orig	Fri Mar 29 14:35:09 2013
++++ Operation/FileOpInfo.m	Fri Mar 29 14:42:51 2013
+@@ -1249,7 +1249,7 @@ filename = [fileinfo objectForKey: @"name"]; 
+     return YES;
+   }
+ 
+-  path = [NSString stringWithString: [errorDict objectForKey: @"Path"]];
++  path = [NSString stringWithString: [errorDict objectForKey: @"NSFilePath"]];
+   
+   msg = [NSString stringWithFormat: @"%@ %@\n%@ %@\n",
+ 							NSLocalizedString(@"File operation error:", @""),
