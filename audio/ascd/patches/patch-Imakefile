@@ -1,6 +1,6 @@
-$OpenBSD: patch-Imakefile,v 1.2 2005/09/05 11:20:53 espie Exp $
---- Imakefile.orig	Sun Sep  5 01:24:23 1999
-+++ Imakefile	Mon Sep  5 13:19:15 2005
+$OpenBSD: patch-Imakefile,v 1.3 2013/04/25 16:26:52 sthen Exp $
+--- Imakefile.orig	Sun Sep  5 00:24:23 1999
++++ Imakefile	Thu Apr 25 17:26:18 2013
 @@ -3,13 +3,10 @@
  
  NAME 		= ascd
@@ -16,7 +16,7 @@ $OpenBSD: patch-Imakefile,v 1.2 2005/09/05 11:20:53 espie Exp $
  
  SRCS_OPT1 =
  SRCS_OPT2 =
-@@ -51,13 +48,3 @@ NormalProgramTarget($(NAME),$(OBJS),Null
+@@ -51,13 +48,3 @@ NormalProgramTarget($(NAME),$(OBJS),NullParameter,$(SY
  InstallProgram($(NAME),$(BINDIR))
  InstallManPage($(NAME),$(MANDIR))
  InstallMultiple(themes/themes-manual.ps.gz,$(THEMESDIR))
