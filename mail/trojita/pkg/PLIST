@@ -1,0 +1,32 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/25 22:58:42 jturner Exp $
+@bin bin/trojita
+share/applications/trojita.desktop
+share/icons/hicolor/32x32/apps/trojita.png
+share/icons/hicolor/scalable/apps/trojita.svg
+share/trojita/
+share/trojita/locale/
+share/trojita/locale/trojita_common_bs.qm
+share/trojita/locale/trojita_common_cs.qm
+share/trojita/locale/trojita_common_de.qm
+share/trojita/locale/trojita_common_es.qm
+share/trojita/locale/trojita_common_et.qm
+share/trojita/locale/trojita_common_ga.qm
+share/trojita/locale/trojita_common_gl.qm
+share/trojita/locale/trojita_common_hu.qm
+share/trojita/locale/trojita_common_ia.qm
+share/trojita/locale/trojita_common_lt.qm
+share/trojita/locale/trojita_common_nl.qm
+share/trojita/locale/trojita_common_pl.qm
+share/trojita/locale/trojita_common_pt.qm
+share/trojita/locale/trojita_common_pt_BR.qm
+share/trojita/locale/trojita_common_sk.qm
+share/trojita/locale/trojita_common_sv.qm
+share/trojita/locale/trojita_common_tr.qm
+share/trojita/locale/trojita_common_uk.qm
+share/trojita/locale/trojita_common_x-test.qm
+share/trojita/locale/trojita_common_zh_CN.qm
+share/trojita/locale/trojita_common_zh_TW.qm
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

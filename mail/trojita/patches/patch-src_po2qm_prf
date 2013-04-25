@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_po2qm_prf,v 1.1.1.1 2013/04/25 22:58:42 jturner Exp $
+
+commit 5a8c487a8ae3bdde44c580d6c1e22354009b0984
+Author: James Turner <james@calminferno.net>
+Date:   Fri Apr 19 10:36:20 2013 +0200
+
+--- src/po2qm.prf.orig	Wed Feb 27 17:29:55 2013
++++ src/po2qm.prf	Fri Apr 19 18:58:50 2013
+@@ -10,8 +10,18 @@ isEmpty(QMAKE_LRELEASE) {
+     }
+ }
+ 
++isEmpty(QMAKE_LCONVERT) {
++    win32|os2:QMAKE_LCONVERT = $$[QT_INSTALL_BINS]\lconvert.exe
++    else:QMAKE_LCONVERT = $$[QT_INSTALL_BINS]/lconvert
++    unix {
++        !exists($$QMAKE_LCONVERT) { QMAKE_LCONVERT = lconvert-qt4 }
++    } else {
++        !exists($$QMAKE_LCONVERT) { QMAKE_LCONVERT = lconvert }
++    }
++}
++
+ po2qm.input = PO_FILES
+ po2qm.output = locale/${QMAKE_FILE_BASE}.qm
+-po2qm.commands = lconvert ${QMAKE_FILE_IN} -o ${QMAKE_FILE_BASE}.ts && $$QMAKE_LRELEASE -nounfinished ${QMAKE_FILE_BASE}.ts -qm locale/${QMAKE_FILE_BASE}.qm && rm ${QMAKE_FILE_BASE}.ts
++po2qm.commands = $$QMAKE_LCONVERT ${QMAKE_FILE_IN} -o ${QMAKE_FILE_BASE}.ts && $$QMAKE_LRELEASE -nounfinished ${QMAKE_FILE_BASE}.ts -qm locale/${QMAKE_FILE_BASE}.qm && rm ${QMAKE_FILE_BASE}.ts
+ po2qm.CONFIG += no_link target_predeps
+ QMAKE_EXTRA_COMPILERS += po2qm

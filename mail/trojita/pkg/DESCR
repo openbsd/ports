@@ -1,0 +1,4 @@
+Trojita is a fast Qt IMAP e-mail client. It offers on-demand message
+list and body part loading, offline IMAP support, IMAP over SSH (in
+addition to the usual SSL/TLS connections) and deals with HTML mail in a
+safe and robust way.
