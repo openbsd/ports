@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/05/14 08:32:30 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/04/25 16:28:52 sebastia Exp $
 @bin bin/dk_make_protocol
 include/DBusKit
 @info info/DBusKit.info
@@ -28,17 +28,8 @@ share/doc/GNUstep/Developer/
 share/doc/GNUstep/Developer/DBusKit/
 share/doc/GNUstep/Developer/DBusKit/ProgrammingManual/
 share/doc/GNUstep/Developer/DBusKit/ProgrammingManual/DBusKit/
-share/doc/GNUstep/Developer/DBusKit/ProgrammingManual/DBusKit.html
 share/doc/GNUstep/Developer/DBusKit/ProgrammingManual/DBusKit.pdf
 share/doc/GNUstep/Developer/DBusKit/ProgrammingManual/DBusKit/dependencies
-share/doc/GNUstep/Developer/DBusKit/ProgrammingManual/DBusKit_1.html
-share/doc/GNUstep/Developer/DBusKit/ProgrammingManual/DBusKit_2.html
-share/doc/GNUstep/Developer/DBusKit/ProgrammingManual/DBusKit_3.html
-share/doc/GNUstep/Developer/DBusKit/ProgrammingManual/DBusKit_4.html
-share/doc/GNUstep/Developer/DBusKit/ProgrammingManual/DBusKit_5.html
-share/doc/GNUstep/Developer/DBusKit/ProgrammingManual/DBusKit_abt.html
-share/doc/GNUstep/Developer/DBusKit/ProgrammingManual/DBusKit_fot.html
-share/doc/GNUstep/Developer/DBusKit/ProgrammingManual/DBusKit_toc.html
 share/doc/GNUstep/Developer/DBusKit/Reference/
 share/doc/GNUstep/Developer/DBusKit/Reference/ClassesTOC.gsdoc
 share/doc/GNUstep/Developer/DBusKit/Reference/ClassesTOC.html
@@ -60,7 +51,7 @@ share/doc/GNUstep/Developer/DBusKit/Reference/VariablesTOC.gsdoc
 share/doc/GNUstep/Developer/DBusKit/Reference/VariablesTOC.html
 share/doc/GNUstep/Developer/DBusKit/Reference/index.html
 share/doc/GNUstep/Developer/DBusKit/ReleaseNotes/
-share/doc/GNUstep/Developer/DBusKit/ReleaseNotes/0.1/
-share/doc/GNUstep/Developer/DBusKit/ReleaseNotes/0.1/ANNOUNCE
-share/doc/GNUstep/Developer/DBusKit/ReleaseNotes/0.1/INSTALL
-share/doc/GNUstep/Developer/DBusKit/ReleaseNotes/0.1/README
+share/doc/GNUstep/Developer/DBusKit/ReleaseNotes/0.1.1/
+share/doc/GNUstep/Developer/DBusKit/ReleaseNotes/0.1.1/ANNOUNCE
+share/doc/GNUstep/Developer/DBusKit/ReleaseNotes/0.1.1/INSTALL
+share/doc/GNUstep/Developer/DBusKit/ReleaseNotes/0.1.1/README

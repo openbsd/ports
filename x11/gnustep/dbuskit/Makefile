@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2012/08/22 07:15:51 sebastia Exp $
+# $OpenBSD: Makefile,v 1.4 2013/04/25 16:28:52 sebastia Exp $
 
 COMMENT =	GNUstep dbus interface
 
 CATEGORIES +=   x11/gnustep devel
-VERSION =	0.1
+VERSION =	0.1.1
 DISTNAME =	dbuskit-${VERSION}
-REVISION =	1
 PKGNAME =	gnustep-dbuskit-${VERSION}
-EXTRACT_SUFX =	.tar.bz2
 
 SHARED_LIBS =	DBusKit	0.0
 
@@ -23,6 +21,7 @@ BUILD_DEPENDS +=	print/texlive/base \
 # Setting porthome is needed to successfully build the 
 # documenation
 PORTHOME =	${WRKDIST}
-MAKE_FLAGS =	DBusKit_INTERFACE_VERSION=${LIBDBusKit_VERSION}
+CONFIGURE_STYLE = gnu
+MAKE_FLAGS +=	DBusKit_INTERFACE_VERSION=${LIBDBusKit_VERSION} nonstrict=yes
 
 .include <bsd.port.mk>
