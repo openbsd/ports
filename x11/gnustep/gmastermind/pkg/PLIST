@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/16 15:17:57 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/04/25 16:40:11 sebastia Exp $
 bin/GMastermind
-libexec/GNUstep/
 libexec/GNUstep/GMastermind.app/
 @bin libexec/GNUstep/GMastermind.app/GMastermind
 libexec/GNUstep/GMastermind.app/Resources/

@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/05/15 13:05:54 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/04/25 16:40:10 sebastia Exp $
 bin/Affiche
-libexec/GNUstep/
 libexec/GNUstep/Affiche.app/
 @bin libexec/GNUstep/Affiche.app/Affiche
 libexec/GNUstep/Affiche.app/Resources/

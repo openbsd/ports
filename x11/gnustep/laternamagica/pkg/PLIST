@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/26 15:57:14 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/04/25 16:40:11 sebastia Exp $
 bin/LaternaMagica
-libexec/GNUstep/
 libexec/GNUstep/LaternaMagica.app/
 @bin libexec/GNUstep/LaternaMagica.app/LaternaMagica
 libexec/GNUstep/LaternaMagica.app/Resources/

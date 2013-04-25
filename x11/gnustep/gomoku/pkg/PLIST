@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/11/17 23:28:59 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/04/25 16:40:11 sebastia Exp $
 bin/Gomoku
-libexec/GNUstep/
 libexec/GNUstep/Gomoku.app/
 @bin libexec/GNUstep/Gomoku.app/Gomoku
 libexec/GNUstep/Gomoku.app/Resources/

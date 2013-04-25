@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/26 17:38:22 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/04/25 16:40:11 sebastia Exp $
 bin/RemoteDesk
-libexec/GNUstep/
 libexec/GNUstep/RemoteDesk.app/
 @bin libexec/GNUstep/RemoteDesk.app/RemoteDesk
 libexec/GNUstep/RemoteDesk.app/Resources/

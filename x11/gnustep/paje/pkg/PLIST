@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/08/06 11:14:20 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/04/25 16:40:11 sebastia Exp $
 bin/Paje
 include/AggregatingFilter/
 include/AggregatingFilter/AggregateEvent.h
@@ -256,7 +256,6 @@ ${GENERALLIBDIR}/Resources/SourceTextViewer.nib/keyedobjects.nib
 lib/GNUstep/Frameworks/General.framework/Versions/Current
 @lib lib/GNUstep/Frameworks/General.framework/libGeneral.so.${LIBGeneral_VERSION}
 @lib lib/libGeneral.so.${LIBGeneral_VERSION}
-libexec/GNUstep/
 libexec/GNUstep/Paje.app/
 @bin libexec/GNUstep/Paje.app/Paje
 libexec/GNUstep/Paje.app/Resources/

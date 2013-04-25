@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/26 17:41:55 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/04/25 16:40:12 sebastia Exp $
 bin/TimeMon
-libexec/GNUstep/
 libexec/GNUstep/TimeMon.app/
 libexec/GNUstep/TimeMon.app/Resources/
 libexec/GNUstep/TimeMon.app/Resources/Info-gnustep.plist

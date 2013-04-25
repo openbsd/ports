@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/04/18 12:44:14 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/04/25 16:40:11 sebastia Exp $
 bin/SystemPreferences
 include/PreferencePanes
 lib/GNUstep/Bundles/Defaults.prefPane/
@@ -101,7 +101,6 @@ lib/GNUstep/Frameworks/PreferencePanes.framework/Versions/0.0/Resources/Info-gnu
 lib/GNUstep/Frameworks/PreferencePanes.framework/Versions/Current
 @lib lib/GNUstep/Frameworks/PreferencePanes.framework/libPreferencePanes.so.${LIBPreferencePanes_VERSION}
 @lib lib/libPreferencePanes.so.${LIBPreferencePanes_VERSION}
-libexec/GNUstep/
 libexec/GNUstep/SystemPreferences.app/
 libexec/GNUstep/SystemPreferences.app/Resources/
 libexec/GNUstep/SystemPreferences.app/Resources/English.lproj/

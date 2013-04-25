@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/08/06 11:07:09 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/04/25 16:40:10 sebastia Exp $
 bin/AddressManager
 @bin bin/adgnumailconverter
 @bin bin/adserver
@@ -14,7 +14,6 @@ lib/GNUstep/Bundles/VCFViewer.inspector/Resources/InspectorInfo.plist
 lib/GNUstep/Bundles/VCFViewer.inspector/Resources/VCFImage.tiff
 @bin lib/GNUstep/Bundles/VCFViewer.inspector/VCFViewer
 lib/GNUstep/Bundles/VCFViewer.inspector/stamp.make
-lib/GNUstep/Frameworks/
 lib/GNUstep/Frameworks/AddressView.framework/
 lib/GNUstep/Frameworks/AddressView.framework/AddressView
 lib/GNUstep/Frameworks/AddressView.framework/Headers
@@ -98,7 +97,6 @@ lib/GNUstep/Frameworks/Addresses.framework/Versions/Current
 @lib lib/GNUstep/Frameworks/Addresses.framework/libAddresses.so.${LIBAddresses_VERSION}
 @lib lib/libAddressView.so.${LIBAddressView_VERSION}
 @lib lib/libAddresses.so.${LIBAddresses_VERSION}
-libexec/GNUstep/
 libexec/GNUstep/AddressManager.app/
 @bin libexec/GNUstep/AddressManager.app/AddressManager
 libexec/GNUstep/AddressManager.app/Resources/

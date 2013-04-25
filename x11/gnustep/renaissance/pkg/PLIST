@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/19 13:52:40 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/04/25 16:40:11 sebastia Exp $
 bin/GSMarkupBrowser
 bin/GSMarkupLocalizableStrings
 include/Renaissance/
@@ -66,7 +66,6 @@ include/Renaissance/Markup.h
 include/Renaissance/NSViewSize.h
 include/Renaissance/Renaissance.h
 @lib lib/libRenaissance.so.${LIBRenaissance_VERSION}
-libexec/GNUstep/
 libexec/GNUstep/GSMarkupBrowser.app/
 @bin libexec/GNUstep/GSMarkupBrowser.app/GSMarkupBrowser
 libexec/GNUstep/GSMarkupBrowser.app/Resources/

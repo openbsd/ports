@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/12/22 09:20:00 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/04/25 16:40:11 sebastia Exp $
 bin/Calculator
 bin/CurrencyConverter
 bin/Finger
@@ -129,7 +129,6 @@ lib/GNUstep/Services/example.service/
 lib/GNUstep/Services/example.service/Resources/
 lib/GNUstep/Services/example.service/Resources/Info-gnustep.plist
 @bin lib/GNUstep/Services/example.service/example
-libexec/GNUstep/
 libexec/GNUstep/Calculator.app/
 @bin libexec/GNUstep/Calculator.app/Calculator
 libexec/GNUstep/Calculator.app/Resources/

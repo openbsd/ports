@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/16 15:21:43 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/04/25 16:40:11 sebastia Exp $
 bin/Sudoku
-libexec/GNUstep/
 libexec/GNUstep/Sudoku.app/
 libexec/GNUstep/Sudoku.app/Resources/
 libexec/GNUstep/Sudoku.app/Resources/Info-gnustep.plist

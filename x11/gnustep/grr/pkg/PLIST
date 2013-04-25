@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/24 14:05:55 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/04/25 16:40:11 sebastia Exp $
 bin/Grr
-libexec/GNUstep/
 libexec/GNUstep/Grr.app/
 @bin libexec/GNUstep/Grr.app/Grr
 libexec/GNUstep/Grr.app/Resources/

@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/12 07:11:47 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/04/25 16:40:11 sebastia Exp $
 bin/GMines
-libexec/GNUstep/
 libexec/GNUstep/GMines.app/
 @bin libexec/GNUstep/GMines.app/GMines
 libexec/GNUstep/GMines.app/Resources/

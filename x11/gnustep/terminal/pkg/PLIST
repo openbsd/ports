@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/24 22:16:38 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/04/25 16:40:12 sebastia Exp $
 @conflict terminal-<=0.4.5p1
 bin/Terminal
-libexec/GNUstep/
 libexec/GNUstep/Terminal.app/
 libexec/GNUstep/Terminal.app/Resources/
 libexec/GNUstep/Terminal.app/Resources/DefaultTerminalServices.svcs

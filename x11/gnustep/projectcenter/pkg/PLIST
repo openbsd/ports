@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/07/08 13:57:38 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/04/25 16:40:11 sebastia Exp $
 bin/ProjectCenter
 include/ProjectCenter
 lib/GNUstep/Frameworks/
@@ -113,7 +113,6 @@ ${LIBDIR}/Resources/protocol.template
 lib/GNUstep/Frameworks/ProjectCenter.framework/Versions/Current
 @lib lib/GNUstep/Frameworks/ProjectCenter.framework/libProjectCenter.so.${LIBProjectCenter_VERSION}
 @lib lib/libProjectCenter.so.${LIBProjectCenter_VERSION}
-libexec/GNUstep/
 libexec/GNUstep/ProjectCenter.app/
 @bin libexec/GNUstep/ProjectCenter.app/ProjectCenter
 libexec/GNUstep/ProjectCenter.app/Resources/
