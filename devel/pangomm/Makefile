@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 10:50:24 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2013/04/25 05:53:19 ajacoutot Exp $
 
 COMMENT =		C++ interface for pango
 
 GNOME_PROJECT =		pangomm
-GNOME_VERSION =		2.28.4
-REVISION=		1
+GNOME_VERSION =		2.34.0
 
 CATEGORIES =		devel x11
 
@@ -15,12 +14,12 @@ HOMEPAGE =		http://www.gtkmm.org/
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL X11 Xau Xdamage Xdmcp Xext Xfixes Xrender Xxf86vm
-WANTLIB += cairo cairomm-1.0 drm expat ffi fontconfig freetype
-WANTLIB += glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB += X11 Xext Xrender cairo cairomm-1.0 expat ffi fontconfig
+WANTLIB += freetype glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0
+WANTLIB += graphite2 gthread-2.0 harfbuzz icudata icule icuuc
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread-stubs sigc-2.0 stdc++ xcb xcb-render xcb-shm
-WANTLIB += z
+WANTLIB += png pthread pthread-stubs sigc-2.0 stdc++ xcb xcb-render
+WANTLIB += xcb-shm z
 
 MODULES =		devel/gettext \
 			x11/gnome
