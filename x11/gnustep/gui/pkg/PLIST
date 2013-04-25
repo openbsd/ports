@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.9 2012/07/08 13:35:08 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.10 2013/04/25 16:16:28 sebastia Exp $
+bin/GSSpeechServer
 @bin bin/gclose
 @bin bin/gcloseall
 @bin bin/gopen
 @bin bin/make_services
+@bin bin/say
 @bin bin/set_show_service
 include/AppKit/
 include/AppKit/AppKit.h
@@ -186,6 +188,7 @@ include/AppKit/NSTokenFieldCell.h
 include/AppKit/NSToolbar.h
 include/AppKit/NSToolbarItem.h
 include/AppKit/NSToolbarItemGroup.h
+include/AppKit/NSTreeController.h
 include/AppKit/NSUserDefaultsController.h
 include/AppKit/NSUserInterfaceValidation.h
 include/AppKit/NSView.h
@@ -352,6 +355,7 @@ lib/GNUstep/Images/GSSearch.tiff
 lib/GNUstep/Images/GSStop.tiff
 lib/GNUstep/Images/LogoGNUstep.tiff
 lib/GNUstep/Images/MagnifyGlass.tiff
+lib/GNUstep/Images/NSAddTemplate.tiff
 lib/GNUstep/Images/NSComboArrow.tiff
 lib/GNUstep/Images/NSRatingLevelIndicator.tiff
 lib/GNUstep/Images/common_2DCheckMark.tiff
@@ -392,6 +396,7 @@ lib/GNUstep/Images/common_HelpLink.tiff
 lib/GNUstep/Images/common_Home.tiff
 lib/GNUstep/Images/common_HomeDirectory.tiff
 lib/GNUstep/Images/common_ImageFolder.tiff
+lib/GNUstep/Images/common_Info.tiff
 lib/GNUstep/Images/common_LeftTabStop.tiff
 lib/GNUstep/Images/common_LibraryFolder.tiff
 lib/GNUstep/Images/common_MiniWindowTile.tiff
@@ -559,6 +564,13 @@ lib/GNUstep/Sounds/Submarine.wav
 lib/GNUstep/Sounds/Tink.wav
 lib/GNUstep/Themes/
 @lib lib/libgnustep-gui.so.${LIBgnustep-gui_VERSION}
+libexec/GNUstep/
+libexec/GNUstep/GSSpeechServer.app/
+@bin libexec/GNUstep/GSSpeechServer.app/GSSpeechServer
+libexec/GNUstep/GSSpeechServer.app/Resources/
+libexec/GNUstep/GSSpeechServer.app/Resources/GSSpeechServer.desktop
+libexec/GNUstep/GSSpeechServer.app/Resources/Info-gnustep.plist
+libexec/GNUstep/GSSpeechServer.app/stamp.make
 @man man/man1/gopen.1
 @man man/man1/make_services.1
 share/GNUstep/Makefiles/Additional/gui.make

@@ -1,0 +1,12 @@
+$OpenBSD: patch-Tools_speech_GNUmakefile,v 1.1 2013/04/25 16:16:28 sebastia Exp $
+--- Tools/speech/GNUmakefile.orig	Mon Feb 18 20:27:13 2013
++++ Tools/speech/GNUmakefile	Mon Feb 18 20:27:22 2013
+@@ -25,7 +25,7 @@ GSSpeechServer_INCLUDE_DIRS += -I/usr/local/include/fl
+ 	-I../../Headers/Additions
+ GSSpeechServer_LIB_DIRS += -L../../Source/$(GNUSTEP_OBJ_DIR) \
+ 	-L/usr/local/lib -lgnustep-gui -lflite_cmu_us_kal \
+-	-lflite_usenglish -lflite_cmulex -lflite
++	-lflite_usenglish -lflite_cmulex -lflite -lsndio
+ endif
+ 
+ GSSpeechServer_OBJCFLAGS = -std=c99 -g -Werror
