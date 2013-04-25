@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.30 2013/03/11 11:44:49 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2013/04/25 16:41:50 sebastia Exp $
 
 COMMENT-main=		Skyrix Object Publishing Environment
 COMMENT-mysql=		SOPE MySQL adaptor
 COMMENT-postgres=	SOPE PostgreSQL adaptor
 
-VERSION =		2.0.4
-DISTNAME =		SOPE-${VERSION}b
-PKGNAME-main =		sope-${VERSION}.1
-PKGNAME-mysql =		sope-mysql-${VERSION}.1
-PKGNAME-postgres =	sope-postgres-${VERSION}.1
+VERSION =		2.0.5
+DISTNAME =		SOPE-${VERSION}a
+PKGNAME-main =		sope-${VERSION}.0
+PKGNAME-mysql =		sope-mysql-${VERSION}.0
+PKGNAME-postgres =	sope-postgres-${VERSION}.0
 
 SO_MAJOR=	2
 SO_MINOR=	0
@@ -42,9 +42,9 @@ LIB_DEPENDS-main=	x11/gnustep/base \
 			databases/openldap \
 			x11/gnustep/libobjc2 \
 			${MODLIBICONV_LIB_DEPENDS}
-LIB_DEPENDS-mysql =	${BASE_PKGPATH}=${VERSION}.1 \
+LIB_DEPENDS-mysql =	${BASE_PKGPATH}=${VERSION}.0 \
 			databases/mysql,-main
-LIB_DEPENDS-postgres =	${BASE_PKGPATH}=${VERSION}.1 \
+LIB_DEPENDS-postgres =	${BASE_PKGPATH}=${VERSION}.0 \
 			databases/postgresql,-main
 
 CONFIGURE_STYLE=simple dest
