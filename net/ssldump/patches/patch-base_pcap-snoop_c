@@ -1,0 +1,17 @@
+$OpenBSD: patch-base_pcap-snoop_c,v 1.1 2013/04/25 15:21:40 sthen Exp $
+
+http://sourceforge.net/p/ssldump/patches/1/
+
+Fixes "ERROR: Couldn't create network handler"
+
+--- base/pcap-snoop.c.orig	Thu Apr 25 16:13:14 2013
++++ base/pcap-snoop.c	Thu Apr 25 16:13:33 2013
+@@ -204,6 +204,8 @@ int main(argc,argv)
+     
+     char errbuf[PCAP_ERRBUF_SIZE];
+ 
++    SSL_library_init();
++
+     signal(SIGINT,sig_handler);
+     
+     while((c=getopt(argc,argv,"vr:f:S:Ttai:k:p:nsAxXhHVNdqem:P"))!=EOF){
