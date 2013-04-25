@@ -1,6 +1,6 @@
-# $OpenBSD: phonon.port.mk,v 1.1 2013/04/24 08:53:37 zhuk Exp $
+# $OpenBSD: phonon.port.mk,v 1.2 2013/04/25 11:54:01 zhuk Exp $
 MODPHONON_WANTLIB =	${MODKDE4_LIB_DIR}/phonon_s
-MODPHONON_LIB_DEPENDS =	phonon->=4.6.0p2:multimedia/phonon
+MODPHONON_LIB_DEPENDS =	phonon->=4.6.0:multimedia/phonon
 
 # If enabled (default), make sure at least one Phonon backend is
 # installed prior installing affected port.
