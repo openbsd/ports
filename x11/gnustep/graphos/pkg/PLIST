@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/27 12:04:35 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/04/25 16:31:23 sebastia Exp $
 bin/Graphos
-libexec/GNUstep/
 libexec/GNUstep/Graphos.app/
 @bin libexec/GNUstep/Graphos.app/Graphos
 libexec/GNUstep/Graphos.app/Resources/
