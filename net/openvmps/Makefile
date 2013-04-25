@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:35:50 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/04/25 15:31:29 gonzalo Exp $
 
 COMMENT=	free implementation of Cisco VMPS
 
-V=		1.4.03
+V=		1.4.04
 DISTNAME=	vmpsd-${V}
 PKGNAME=	openvmps-${V}
 CATEGORIES=	net
@@ -19,7 +19,6 @@ WANTLIB += c
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=vmps/}
 
 CONFIGURE_STYLE=gnu
-USE_GROFF=	Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/vmpsd.1
