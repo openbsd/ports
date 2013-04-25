@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/19 16:25:42 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/04/25 16:27:40 sebastia Exp $
 bin/batmon
-libexec/GNUstep/
 libexec/GNUstep/batmon.app/
 libexec/GNUstep/batmon.app/Resources/
 libexec/GNUstep/batmon.app/Resources/BatMon_icon.tif
