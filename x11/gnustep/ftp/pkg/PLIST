@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/26 14:19:29 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/04/25 16:30:18 sebastia Exp $
 bin/FTP
-libexec/GNUstep/
 libexec/GNUstep/FTP.app/
 @bin libexec/GNUstep/FTP.app/FTP
 libexec/GNUstep/FTP.app/Resources/
