@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/08/22 08:03:26 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/04/25 16:28:16 sebastia Exp $
 bin/DataBasin
-libexec/GNUstep/
 libexec/GNUstep/DataBasin.app/
 @bin libexec/GNUstep/DataBasin.app/DataBasin
 libexec/GNUstep/DataBasin.app/Resources/
@@ -10,6 +9,10 @@ libexec/GNUstep/DataBasin.app/Resources/DataBasin.gorm/data.classes
 libexec/GNUstep/DataBasin.app/Resources/DataBasin.gorm/data.info
 libexec/GNUstep/DataBasin.app/Resources/DataBasin.gorm/objects.gorm
 libexec/GNUstep/DataBasin.app/Resources/Info-gnustep.plist
+libexec/GNUstep/DataBasin.app/Resources/Log.gorm/
+libexec/GNUstep/DataBasin.app/Resources/Log.gorm/data.classes
+libexec/GNUstep/DataBasin.app/Resources/Log.gorm/data.info
+libexec/GNUstep/DataBasin.app/Resources/Log.gorm/objects.gorm
 libexec/GNUstep/DataBasin.app/Resources/ObjectInspector.gorm/
 libexec/GNUstep/DataBasin.app/Resources/ObjectInspector.gorm/data.classes
 libexec/GNUstep/DataBasin.app/Resources/ObjectInspector.gorm/data.info
