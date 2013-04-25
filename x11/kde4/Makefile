@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/04/24 10:37:15 zhuk Exp $
+# $OpenBSD: Makefile,v 1.28 2013/04/25 21:18:41 zhuk Exp $
 
 # Build dependency tree of main building blocks:
 # OUTSIDE: akonadi, attica, automoc, cagibi, qimageblitz
@@ -136,7 +136,7 @@ SUBDIR += blinken
 SUBDIR += cantor
 SUBDIR += analitza
 SUBDIR += kalgebra
-SUBDIR += kalzium
+#SUBDIR += kalzium	XXX hard dependencies problems
 SUBDIR += kanagram
 SUBDIR += kbruch
 SUBDIR += kgeography
