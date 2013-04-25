@@ -1,4 +1,7 @@
-$OpenBSD: patch-ssl_ssl_rec_c,v 1.1 2013/04/25 14:02:02 sthen Exp $
+$OpenBSD: patch-ssl_ssl_rec_c,v 1.2 2013/04/25 15:18:19 sthen Exp $
+
+Add AES encryption support.
+
 --- ssl/ssl_rec.c.orig	Fri Nov  3 06:38:06 2000
 +++ ssl/ssl_rec.c	Thu Apr 25 14:59:17 2013
 @@ -78,7 +78,9 @@ static char *ciphers[]={

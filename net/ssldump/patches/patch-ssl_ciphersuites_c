@@ -1,4 +1,7 @@
-$OpenBSD: patch-ssl_ciphersuites_c,v 1.1 2013/04/25 14:02:02 sthen Exp $
+$OpenBSD: patch-ssl_ciphersuites_c,v 1.2 2013/04/25 15:18:19 sthen Exp $
+
+Add AES encryption support.
+
 --- ssl/ciphersuites.c.orig	Sat Aug 17 02:33:17 2002
 +++ ssl/ciphersuites.c	Thu Apr 25 14:59:17 2013
 @@ -78,10 +78,25 @@ static SSL_CipherSuite CipherSuites[]={

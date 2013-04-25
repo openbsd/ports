@@ -1,4 +1,7 @@
-$OpenBSD: patch-ssl_ssl_enums,v 1.1 2013/04/25 14:02:02 sthen Exp $
+$OpenBSD: patch-ssl_ssl_enums,v 1.2 2013/04/25 15:18:19 sthen Exp $
+
+Add AES encryption support.
+
 --- ssl/ssl.enums.orig	Fri Jul 20 17:44:32 2001
 +++ ssl/ssl.enums	Thu Apr 25 14:59:17 2013
 @@ -356,6 +356,18 @@ ClientKeyExchange(16)

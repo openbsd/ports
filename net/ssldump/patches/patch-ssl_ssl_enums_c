@@ -1,4 +1,7 @@
-$OpenBSD: patch-ssl_ssl_enums_c,v 1.1 2013/04/25 14:02:02 sthen Exp $
+$OpenBSD: patch-ssl_ssl_enums_c,v 1.2 2013/04/25 15:18:19 sthen Exp $
+
+Add AES encryption support.
+
 --- ssl/ssl.enums.c.orig	Fri Jul 20 17:44:36 2001
 +++ ssl/ssl.enums.c	Thu Apr 25 14:59:17 2013
 @@ -611,6 +611,54 @@ decoder cipher_suite_decoder[]={
