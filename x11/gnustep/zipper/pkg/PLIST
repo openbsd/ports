@@ -1,13 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/07/08 14:03:55 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/04/25 16:35:36 sebastia Exp $
 bin/Zipper
-libexec/GNUstep/
 libexec/GNUstep/Zipper.app/
 libexec/GNUstep/Zipper.app/Resources/
 libexec/GNUstep/Zipper.app/Resources/FileIcon.tiff
 libexec/GNUstep/Zipper.app/Resources/Info-gnustep.plist
 libexec/GNUstep/Zipper.app/Resources/MainMenu.gorm/
-libexec/GNUstep/Zipper.app/Resources/MainMenu.gorm/.#data.info.1.1
-libexec/GNUstep/Zipper.app/Resources/MainMenu.gorm/.#objects.gorm.1.1
 libexec/GNUstep/Zipper.app/Resources/MainMenu.gorm/data.classes
 libexec/GNUstep/Zipper.app/Resources/MainMenu.gorm/data.info
 libexec/GNUstep/Zipper.app/Resources/MainMenu.gorm/objects.gorm
