@@ -1,7 +1,16 @@
-$OpenBSD: patch-ascd_c,v 1.1.1.1 2001/02/06 11:52:44 wilfried Exp $
---- ascd.c.orig	Mon Jul  5 18:58:51 1999
-+++ ascd.c	Mon Feb  5 15:07:49 2001
-@@ -572,7 +572,8 @@ void main_loop() 
+$OpenBSD: patch-ascd_c,v 1.2 2013/04/25 16:38:40 sthen Exp $
+--- ascd.c.orig	Mon Jul  5 17:58:51 1999
++++ ascd.c	Thu Apr 25 17:27:22 2013
+@@ -63,8 +63,6 @@ XpmIcon iconXPM;
+ 
+ /* External functions */
+ 
+-extern time();
+-extern open();
+ extern cd_control(int);
+ extern cd_control_version();
+ 
+@@ -572,7 +570,8 @@ void main_loop() 
  
  		if (autoplay || autoprobe) {
  		    dodo = RDTIME2;
@@ -11,7 +20,7 @@ $OpenBSD: patch-ascd_c,v 1.1.1.1 2001/02/06 11:52:44 wilfried Exp $
  		}
  
  		if (cur_cdmode != WM_CDM_EJECTED) no_disk = 0;
-@@ -606,7 +607,7 @@ void main_loop() 
+@@ -606,7 +605,7 @@ void main_loop() 
  	if ((slow_down == 1) || (slow_down == 6)) {
  	    if ((show_db) && (cur_cdmode == WM_CDM_PLAYING)) show_db_f();
  	}
@@ -20,7 +29,7 @@ $OpenBSD: patch-ascd_c,v 1.1.1.1 2001/02/06 11:52:44 wilfried Exp $
  	/* Check events */
  	
  	while (XPending(Disp))
-@@ -635,8 +636,8 @@ void main_loop() 
+@@ -635,8 +634,8 @@ void main_loop() 
  		    
  		case ButtonPress:
  		    
