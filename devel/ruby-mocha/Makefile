@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 10:50:30 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/04/26 12:18:20 jasper Exp $
 
 COMMENT =	Ruby library for mocking and stubbing
 
-DISTNAME =	mocha-0.9.12
-REVISION =	0
+DISTNAME =	mocha-0.13.3
 CATEGORIES =	devel
 
 HOMEPAGE =	http://mocha.rubyforge.org/
@@ -14,7 +13,8 @@ PERMIT_PACKAGE_CDROM =   Yes
 MODULES =	lang/ruby
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
-RUN_DEPENDS =	${MODRUBY_RAKE_DEPENDS}
+RUN_DEPENDS =	${MODRUBY_RAKE_DEPENDS} \
+		devel/ruby-metaclass,${MODRUBY_FLAVOR}
 
 CONFIGURE_STYLE = ruby gem
 
