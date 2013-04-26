@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/18 14:46:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2013/04/26 12:46:06 ajacoutot Exp $
 
 PKG_ARCH=	*
 
@@ -6,11 +6,11 @@ COMMENT=	open source message broker implementing JMS 1.1
 
 V=		5.8.0
 DISTNAME=	apache-activemq-$V
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	net
 
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Apache2
 PERMIT_PACKAGE_CDROM=	Yes

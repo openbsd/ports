@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.8 2013/04/24 08:44:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2013/04/26 12:46:06 ajacoutot Exp $
 
 COMMENT=		simple pluggable hierarchical database
 
 V=			1.2.1
 DISTNAME=		hiera-${V}
+REVISION=		0
 
 CATEGORIES=		databases
 
 HOMEPAGE=		http://projects.puppetlabs.com/projects/hiera
 
-MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Apachev2
 PERMIT_PACKAGE_CDROM=	Yes

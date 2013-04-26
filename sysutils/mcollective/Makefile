@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/20 19:13:50 jeremy Exp $
+# $OpenBSD: Makefile,v 1.11 2013/04/26 12:46:06 ajacoutot Exp $
 
 COMMENT=	framework for server orchestration/parallel job execution
 
 DISTNAME=	mcollective-2.3.0
 EXTRACT_SUFX=	.tgz
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.puppetlabs.com/mcollective
 
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM=	Yes
