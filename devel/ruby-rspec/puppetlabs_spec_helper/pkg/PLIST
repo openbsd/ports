@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/26 13:28:00 jasper Exp $
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/CHANGELOG
+${GEM_LIB}/gems/${DISTNAME}/LICENSE
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/puppetlabs_spec_helper/
+${GEM_LIB}/gems/${DISTNAME}/lib/puppetlabs_spec_helper/module_spec_helper.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/puppetlabs_spec_helper/puppet_spec_helper.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/puppetlabs_spec_helper/puppetlabs_spec/
+${GEM_LIB}/gems/${DISTNAME}/lib/puppetlabs_spec_helper/puppetlabs_spec/files.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/puppetlabs_spec_helper/puppetlabs_spec/fixtures.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/puppetlabs_spec_helper/puppetlabs_spec/matchers.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/puppetlabs_spec_helper/puppetlabs_spec/puppet_internals.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/puppetlabs_spec_helper/puppetlabs_spec_helper.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/puppetlabs_spec_helper/rake_tasks.rb
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
