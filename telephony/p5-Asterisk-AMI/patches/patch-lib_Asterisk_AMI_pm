@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_Asterisk_AMI_pm,v 1.1.1.1 2013/04/26 16:09:30 sthen Exp $
+
+from 0.2.9 (on github, not on CPAN yet)
+
+--- lib/Asterisk/AMI.pm.orig	Fri Apr 26 10:41:51 2013
++++ lib/Asterisk/AMI.pm	Fri Apr 26 10:43:00 2013
+@@ -1163,7 +1163,8 @@ sub _build_action {
+                         $timeout = $actionhash->{$key} unless (defined $timeout);
+                         next;
+                 #Exception of Orignate Async
+-                } elsif ($lkey eq 'async' && $value == 1) {
++                } elsif ($lkey eq 'async' && ($value == 1 || $value eq 'true')) {
++                        $value = 'true';
+                         $async = 1;
+                 #Clean out user ActionIDs
+                 } elsif ($lkey eq 'actionid') {

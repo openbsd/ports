@@ -1,0 +1,6 @@
+This module provides an interface to the Asterisk Manager Interface.
+Its goal is to provide a flexible, powerful, and reliable way to
+interact with Asterisk upon which other applications may be built.
+It utilizes AnyEvent and therefore can integrate very easily into
+event-based applications, but still provides blocking functions for use
+with standard scripting.
