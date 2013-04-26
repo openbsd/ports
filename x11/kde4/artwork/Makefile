@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2013/04/24 19:32:57 zhuk Exp $
+# $OpenBSD: Makefile,v 1.12 2013/04/26 09:35:05 zhuk Exp $
 
 COMMENT =	KDE graphics, styles and icon themes
 DISTNAME =	kdeartwork-${MODKDE4_VERSION}
+REVISION =	0
 
 MODKDE4_USE =	workspace
 
@@ -14,7 +15,10 @@ WANTLIB += ${KDE4LIB}/kio ${KDE4LIB}/kparts ${KDE4LIB}/kscreensaver
 WANTLIB += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils
 WANTLIB += soprano
 
-BUILD_DEPENDS =	math/eigen2
+BUILD_DEPENDS =	math/eigen2 \
+		x11/xscreensaver
+
+RUN_DEPENDS =	x11/xscreensaver
 
 LIB_DEPENDS =	${MODKDE4_DEP_DIR}/libkexiv2>=${MODKDE4_DEP_VERSION}
 
