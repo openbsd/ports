@@ -1,9 +1,9 @@
-$OpenBSD: patch-lib_facter_kernelrelease_rb,v 1.1 2013/03/08 06:38:08 ajacoutot Exp $
+$OpenBSD: patch-lib_facter_kernelrelease_rb,v 1.2 2013/04/26 12:15:55 robert Exp $
 
 http://projects.puppetlabs.com/issues/19293
 
---- lib/facter/kernelrelease.rb.orig	Fri Feb 15 10:06:57 2013
-+++ lib/facter/kernelrelease.rb	Fri Feb 15 10:07:09 2013
+--- lib/facter/kernelrelease.rb.orig	Mon Apr 15 20:13:14 2013
++++ lib/facter/kernelrelease.rb	Fri Apr 26 14:04:32 2013
 @@ -20,6 +20,13 @@ Facter.add(:kernelrelease) do
    setcode 'oslevel -s'
  end
@@ -16,5 +16,5 @@ http://projects.puppetlabs.com/issues/19293
 +end
 +
  Facter.add(:kernelrelease) do
-   confine :kernel => %{windows}
+   confine :kernel => "hp-ux"
    setcode do

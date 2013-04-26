@@ -1,15 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/03/08 06:38:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2013/04/26 12:15:55 robert Exp $
 bin/facter
 ${MODRUBY_SITEDIR}/facter/
 ${MODRUBY_SITEDIR}/facter.rb
 ${MODRUBY_SITEDIR}/facter/Cfkey.rb
 ${MODRUBY_SITEDIR}/facter/application.rb
 ${MODRUBY_SITEDIR}/facter/architecture.rb
-${MODRUBY_SITEDIR}/facter/arp.rb
 ${MODRUBY_SITEDIR}/facter/augeasversion.rb
+${MODRUBY_SITEDIR}/facter/blockdevices.rb
 ${MODRUBY_SITEDIR}/facter/domain.rb
 ${MODRUBY_SITEDIR}/facter/ec2.rb
 ${MODRUBY_SITEDIR}/facter/facterversion.rb
+${MODRUBY_SITEDIR}/facter/filesystems.rb
 ${MODRUBY_SITEDIR}/facter/fqdn.rb
 ${MODRUBY_SITEDIR}/facter/hardwareisa.rb
 ${MODRUBY_SITEDIR}/facter/hardwaremodel.rb
@@ -23,6 +24,7 @@ ${MODRUBY_SITEDIR}/facter/kernel.rb
 ${MODRUBY_SITEDIR}/facter/kernelmajversion.rb
 ${MODRUBY_SITEDIR}/facter/kernelrelease.rb
 ${MODRUBY_SITEDIR}/facter/kernelversion.rb
+${MODRUBY_SITEDIR}/facter/ldom.rb
 ${MODRUBY_SITEDIR}/facter/lsbdistcodename.rb
 ${MODRUBY_SITEDIR}/facter/lsbdistdescription.rb
 ${MODRUBY_SITEDIR}/facter/lsbdistid.rb
@@ -36,6 +38,7 @@ ${MODRUBY_SITEDIR}/facter/memory.rb
 ${MODRUBY_SITEDIR}/facter/netmask.rb
 ${MODRUBY_SITEDIR}/facter/network.rb
 ${MODRUBY_SITEDIR}/facter/operatingsystem.rb
+${MODRUBY_SITEDIR}/facter/operatingsystemmajrelease.rb
 ${MODRUBY_SITEDIR}/facter/operatingsystemrelease.rb
 ${MODRUBY_SITEDIR}/facter/osfamily.rb
 ${MODRUBY_SITEDIR}/facter/path.rb
@@ -54,11 +57,26 @@ ${MODRUBY_SITEDIR}/facter/uptime_days.rb
 ${MODRUBY_SITEDIR}/facter/uptime_hours.rb
 ${MODRUBY_SITEDIR}/facter/uptime_seconds.rb
 ${MODRUBY_SITEDIR}/facter/util/
+${MODRUBY_SITEDIR}/facter/util/cfpropertylist/
+${MODRUBY_SITEDIR}/facter/util/cfpropertylist.rb
+${MODRUBY_SITEDIR}/facter/util/cfpropertylist/LICENSE
+${MODRUBY_SITEDIR}/facter/util/cfpropertylist/lib/
+${MODRUBY_SITEDIR}/facter/util/cfpropertylist/lib/cfpropertylist.rb
+${MODRUBY_SITEDIR}/facter/util/cfpropertylist/lib/rbBinaryCFPropertyList.rb
+${MODRUBY_SITEDIR}/facter/util/cfpropertylist/lib/rbCFPlistError.rb
+${MODRUBY_SITEDIR}/facter/util/cfpropertylist/lib/rbCFPropertyList.rb
+${MODRUBY_SITEDIR}/facter/util/cfpropertylist/lib/rbCFTypes.rb
+${MODRUBY_SITEDIR}/facter/util/cfpropertylist/lib/rbLibXMLParser.rb
+${MODRUBY_SITEDIR}/facter/util/cfpropertylist/lib/rbNokogiriParser.rb
+${MODRUBY_SITEDIR}/facter/util/cfpropertylist/lib/rbREXMLParser.rb
 ${MODRUBY_SITEDIR}/facter/util/collection.rb
+${MODRUBY_SITEDIR}/facter/util/composite_loader.rb
 ${MODRUBY_SITEDIR}/facter/util/config.rb
 ${MODRUBY_SITEDIR}/facter/util/confine.rb
+${MODRUBY_SITEDIR}/facter/util/directory_loader.rb
 ${MODRUBY_SITEDIR}/facter/util/ec2.rb
 ${MODRUBY_SITEDIR}/facter/util/fact.rb
+${MODRUBY_SITEDIR}/facter/util/file_read.rb
 ${MODRUBY_SITEDIR}/facter/util/ip.rb
 ${MODRUBY_SITEDIR}/facter/util/loader.rb
 ${MODRUBY_SITEDIR}/facter/util/macaddress.rb
@@ -67,6 +85,8 @@ ${MODRUBY_SITEDIR}/facter/util/manufacturer.rb
 ${MODRUBY_SITEDIR}/facter/util/memory.rb
 ${MODRUBY_SITEDIR}/facter/util/monkey_patches.rb
 ${MODRUBY_SITEDIR}/facter/util/netmask.rb
+${MODRUBY_SITEDIR}/facter/util/nothing_loader.rb
+${MODRUBY_SITEDIR}/facter/util/parser.rb
 ${MODRUBY_SITEDIR}/facter/util/plist/
 ${MODRUBY_SITEDIR}/facter/util/plist.rb
 ${MODRUBY_SITEDIR}/facter/util/plist/generator.rb
@@ -74,6 +94,7 @@ ${MODRUBY_SITEDIR}/facter/util/plist/parser.rb
 ${MODRUBY_SITEDIR}/facter/util/processor.rb
 ${MODRUBY_SITEDIR}/facter/util/registry.rb
 ${MODRUBY_SITEDIR}/facter/util/resolution.rb
+${MODRUBY_SITEDIR}/facter/util/solaris_zones.rb
 ${MODRUBY_SITEDIR}/facter/util/uptime.rb
 ${MODRUBY_SITEDIR}/facter/util/values.rb
 ${MODRUBY_SITEDIR}/facter/util/virtual.rb
@@ -84,6 +105,10 @@ ${MODRUBY_SITEDIR}/facter/version.rb
 ${MODRUBY_SITEDIR}/facter/virtual.rb
 ${MODRUBY_SITEDIR}/facter/vlans.rb
 ${MODRUBY_SITEDIR}/facter/xendomains.rb
+${MODRUBY_SITEDIR}/facter/zfs_version.rb
+${MODRUBY_SITEDIR}/facter/zonename.rb
+${MODRUBY_SITEDIR}/facter/zones.rb
+${MODRUBY_SITEDIR}/facter/zpool_version.rb
 @man man/man8/facter.8
 ${MODRUBY_RELEXAMPLEDIR}-facter/
 ${MODRUBY_RELEXAMPLEDIR}-facter/facter.conf
