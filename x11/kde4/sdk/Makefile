@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/04/26 09:24:30 zhuk Exp $
+# $OpenBSD: Makefile,v 1.9 2013/04/26 18:31:51 zhuk Exp $
 
 COMMENT =	KDE software development kit
 DISTNAME =	kdesdk-${MODKDE4_VERSION}
@@ -55,7 +55,8 @@ RUN_DEPENDS =	archivers/bzip2 \
 # for vimdiff script
 RUN_DEPENDS +=	editors/vim
 
-# uses --label option
+# need --label, -C and --exclude options, cannot be replaced by pax(1)
+BUILD_DEPENDS +=archivers/gtar
 RUN_DEPENDS +=	archivers/gtar
 
 LIB_DEPENDS =	databases/strigi \
