@@ -1,0 +1,12 @@
+$OpenBSD: patch-spec_unit_util_config_spec_rb,v 1.1 2013/04/26 14:13:12 jasper Exp $
+--- spec/unit/util/config_spec.rb.orig	Fri Apr 26 15:42:04 2013
++++ spec/unit/util/config_spec.rb	Fri Apr 26 15:43:10 2013
+@@ -37,7 +37,7 @@ describe Facter::Util::Config do
+     it "should return the default value for linux" do
+       Facter::Util::Config.stubs(:is_windows?).returns(false)
+       Facter::Util::Config.stubs(:windows_data_dir).returns(nil)
+-      Facter::Util::Config.external_facts_dirs.should == ["/etc/facter/facts.d", "/etc/puppetlabs/facter/facts.d"]
++      Facter::Util::Config.external_facts_dirs.should == ["${SYSCONFDIR}/facter/facts.d", "/etc/puppetlabs/facter/facts.d"]
+     end
+ 
+     it "should return the default value for windows 2008" do
