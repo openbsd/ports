@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/11/24 08:08:18 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.6 2013/04/26 16:16:50 brad Exp $
 @bin bin/svgview
 include/wxSVG/
 include/wxSVG/Animated.h
@@ -192,5 +191,6 @@ include/wxSVGXML/svgxml.h
 include/wxSVGXML/svgxmlhelpr.h
 lib/libwxsvg.a
 lib/libwxsvg.la
+@lib lib/libwxsvg.so.${LIBwxsvg_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/libwxsvg.pc
