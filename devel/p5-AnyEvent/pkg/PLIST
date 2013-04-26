@@ -1,40 +1,53 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/03/09 07:52:27 sthen Exp $
-${P5SITE}/AE.pm
-${P5SITE}/AnyEvent/
-${P5SITE}/AnyEvent.pm
-${P5SITE}/AnyEvent/DNS.pm
-${P5SITE}/AnyEvent/Debug.pm
-${P5SITE}/AnyEvent/FAQ.pod
-${P5SITE}/AnyEvent/Handle.pm
-${P5SITE}/AnyEvent/Impl/
-${P5SITE}/AnyEvent/Impl/EV.pm
-${P5SITE}/AnyEvent/Impl/Event.pm
-${P5SITE}/AnyEvent/Impl/EventLib.pm
-${P5SITE}/AnyEvent/Impl/Glib.pm
-${P5SITE}/AnyEvent/Impl/IOAsync.pm
-${P5SITE}/AnyEvent/Impl/Irssi.pm
-${P5SITE}/AnyEvent/Impl/POE.pm
-${P5SITE}/AnyEvent/Impl/Perl.pm
-${P5SITE}/AnyEvent/Impl/Qt.pm
-${P5SITE}/AnyEvent/Impl/Tk.pm
-${P5SITE}/AnyEvent/Intro.pod
-${P5SITE}/AnyEvent/Socket.pm
-${P5SITE}/AnyEvent/Strict.pm
-${P5SITE}/AnyEvent/TLS.pm
-${P5SITE}/AnyEvent/Util/
-${P5SITE}/AnyEvent/Util.pm
-${P5SITE}/AnyEvent/Util/idna.pl
-${P5SITE}/AnyEvent/Util/uts46data.pl
-${P5SITE}/AnyEvent/constants.pl
+@comment $OpenBSD: PLIST,v 1.7 2013/04/26 10:10:45 sthen Exp $
+${P5ARCH}/AE.pm
+${P5ARCH}/AnyEvent/
+${P5ARCH}/AnyEvent.pm
+${P5ARCH}/AnyEvent/DNS.pm
+${P5ARCH}/AnyEvent/Debug.pm
+${P5ARCH}/AnyEvent/FAQ.pod
+${P5ARCH}/AnyEvent/Handle.pm
+${P5ARCH}/AnyEvent/IO/
+${P5ARCH}/AnyEvent/IO.pm
+${P5ARCH}/AnyEvent/IO/IOAIO.pm
+${P5ARCH}/AnyEvent/IO/Perl.pm
+${P5ARCH}/AnyEvent/Impl/
+${P5ARCH}/AnyEvent/Impl/Cocoa.pm
+${P5ARCH}/AnyEvent/Impl/EV.pm
+${P5ARCH}/AnyEvent/Impl/Event.pm
+${P5ARCH}/AnyEvent/Impl/EventLib.pm
+${P5ARCH}/AnyEvent/Impl/FLTK.pm
+${P5ARCH}/AnyEvent/Impl/Glib.pm
+${P5ARCH}/AnyEvent/Impl/IOAsync.pm
+${P5ARCH}/AnyEvent/Impl/Irssi.pm
+${P5ARCH}/AnyEvent/Impl/POE.pm
+${P5ARCH}/AnyEvent/Impl/Perl.pm
+${P5ARCH}/AnyEvent/Impl/Qt.pm
+${P5ARCH}/AnyEvent/Impl/Tk.pm
+${P5ARCH}/AnyEvent/Intro.pod
+${P5ARCH}/AnyEvent/Log.pm
+${P5ARCH}/AnyEvent/Loop.pm
+${P5ARCH}/AnyEvent/Socket.pm
+${P5ARCH}/AnyEvent/Strict.pm
+${P5ARCH}/AnyEvent/TLS.pm
+${P5ARCH}/AnyEvent/Util/
+${P5ARCH}/AnyEvent/Util.pm
+${P5ARCH}/AnyEvent/Util/idna.pl
+${P5ARCH}/AnyEvent/Util/uts46data.pl
+${P5ARCH}/AnyEvent/constants.pl
 @man man/man3p/AE.3p
 @man man/man3p/AnyEvent.3p
 @man man/man3p/AnyEvent::DNS.3p
 @man man/man3p/AnyEvent::Debug.3p
 @man man/man3p/AnyEvent::FAQ.3p
 @man man/man3p/AnyEvent::Handle.3p
+@man man/man3p/AnyEvent::IO.3p
+@man man/man3p/AnyEvent::IO::IOAIO.3p
+@man man/man3p/AnyEvent::IO::Perl.3p
+@man man/man3p/AnyEvent::Impl::Cocoa.3p
 @man man/man3p/AnyEvent::Impl::EV.3p
 @man man/man3p/AnyEvent::Impl::Event.3p
 @man man/man3p/AnyEvent::Impl::EventLib.3p
+@man man/man3p/AnyEvent::Impl::FLTK.3p
 @man man/man3p/AnyEvent::Impl::Glib.3p
 @man man/man3p/AnyEvent::Impl::IOAsync.3p
 @man man/man3p/AnyEvent::Impl::Irssi.3p
@@ -43,6 +56,8 @@ ${P5SITE}/AnyEvent/constants.pl
 @man man/man3p/AnyEvent::Impl::Qt.3p
 @man man/man3p/AnyEvent::Impl::Tk.3p
 @man man/man3p/AnyEvent::Intro.3p
+@man man/man3p/AnyEvent::Log.3p
+@man man/man3p/AnyEvent::Loop.3p
 @man man/man3p/AnyEvent::Socket.3p
 @man man/man3p/AnyEvent::Strict.3p
 @man man/man3p/AnyEvent::TLS.3p
