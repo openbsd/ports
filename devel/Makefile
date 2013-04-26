@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1123 2013/04/23 18:58:57 landry Exp $
+# $OpenBSD: Makefile,v 1.1124 2013/04/26 12:16:05 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1233,6 +1233,7 @@
      SUBDIR += ruby-kgio,ruby18
      SUBDIR += ruby-linecache
      SUBDIR += ruby-locale
+     SUBDIR += ruby-metaclass
      SUBDIR += ruby-minitest
      SUBDIR += ruby-mocha
      SUBDIR += ruby-mspec
