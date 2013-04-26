@@ -1,0 +1,1 @@
+Adds a __metaclass__ method to all Ruby objects.

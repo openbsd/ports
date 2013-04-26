@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/26 12:12:37 jasper Exp $
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/.gitignore
+${GEM_LIB}/gems/${DISTNAME}/Gemfile
+${GEM_LIB}/gems/${DISTNAME}/README.md
+${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/metaclass/
+${GEM_LIB}/gems/${DISTNAME}/lib/metaclass.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/metaclass/object_methods.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/metaclass/version.rb
+${GEM_LIB}/gems/${DISTNAME}/metaclass.gemspec
+${GEM_LIB}/gems/${DISTNAME}/test/
+${GEM_LIB}/gems/${DISTNAME}/test/object_methods_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_helper.rb
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
