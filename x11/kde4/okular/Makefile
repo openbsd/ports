@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/24 18:34:39 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/04/26 07:11:53 zhuk Exp $
 
 COMMENT =	KDE document viewer
 DISTNAME =	okular-${MODKDE4_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	okularcore		0.0	# 1.7
 
@@ -19,12 +20,13 @@ MODULES =	multimedia/phonon
 
 LIB_DEPENDS = 	devel/chmlib \
 		graphics/djvulibre \
+		graphics/qimageblitz \
 		graphics/tiff \
 		print/libspectre \
 		print/poppler,,-qt4 \
 		security/qca2 \
 		textproc/ebook-tools \
-		graphics/qimageblitz
+		${MODKDE4_DEP_DIR}/kactivities>=${MODKDE4_DEP_VERSION}
 
 # Not ported yet, extragear stuff
 CONFIGURE_ARGS =	-DWITH_ActiveApp:Bool=No
