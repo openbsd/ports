@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.6 2012/09/25 23:21:47 brad Exp $
---- Makefile.in.orig	Sun Sep  2 07:30:15 2012
-+++ Makefile.in	Tue Sep  4 20:19:08 2012
-@@ -436,8 +436,8 @@ clean_docbook::
+$OpenBSD: patch-Makefile_in,v 1.7 2013/04/26 17:32:26 brad Exp $
+--- Makefile.in.orig	Wed Sep 12 17:08:40 2012
++++ Makefile.in	Tue Apr  9 19:54:24 2013
+@@ -441,8 +441,8 @@ clean_docbook::
  install_man::
  	-mkdir -p $(DESTDIR)$(man1dir)
  	-mkdir -p $(DESTDIR)$(man5dir)

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.58 2013/03/21 08:45:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2013/04/26 17:32:26 brad Exp $
 
 COMMENT=	x86 machine simulator
 
-DISTNAME=	bochs-2.6
+DISTNAME=	bochs-2.6.1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bochs/}
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://bochs.sourceforge.net/
 # LGPLv2.1+ and MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c m stdc++ termlib
+WANTLIB=	c m pthread stdc++ termlib
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--enable-all-optimizations \
@@ -20,7 +20,6 @@ CONFIGURE_ARGS=	--enable-all-optimizations \
 		--enable-es1370 \
 		--enable-large-ramfile \
 		--enable-ne2000 \
-		--enable-pci \
 		--enable-pnic \
 		--enable-smp \
 		--enable-svm \
@@ -48,8 +47,7 @@ MODULES=	converters/libiconv
 LIB_DEPENDS+=	devel/sdl
 CONFIGURE_ARGS+=--with-sdl \
 		--with-x11
-WANTLIB+=	SDL X11 Xext Xpm Xrandr Xrender pthread sndio usbhid \
-		xcb
+WANTLIB+=	SDL X11 Xext Xpm Xrandr Xrender sndio usbhid xcb
 .endif
 
 NO_TEST=	Yes
