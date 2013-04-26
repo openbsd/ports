@@ -1,3 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/03/29 14:05:56 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/04/26 10:11:11 sthen Exp $
+${P5SITE}/AnyEvent/
 ${P5SITE}/AnyEvent/HTTP.pm
 @man man/man3p/AnyEvent::HTTP.3p
