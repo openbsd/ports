@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/03/09 11:18:14 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/04/26 23:10:26 sthen Exp $
 @bin bin/darktable
 @bin bin/darktable-cli
 @bin bin/darktable-cltest
@@ -10,6 +10,7 @@ lib/darktable/plugins/imageio/
 lib/darktable/plugins/imageio/format/
 lib/darktable/plugins/imageio/format/libcopy.so
 lib/darktable/plugins/imageio/format/libexr.so
+lib/darktable/plugins/imageio/format/libj2k.so
 lib/darktable/plugins/imageio/format/libjpeg.so
 lib/darktable/plugins/imageio/format/libpfm.so
 lib/darktable/plugins/imageio/format/libpng.so
@@ -41,6 +42,8 @@ lib/darktable/plugins/libcolorout.so
 lib/darktable/plugins/libcolortransfer.so
 lib/darktable/plugins/libcolorzones.so
 lib/darktable/plugins/libdemosaic.so
+lib/darktable/plugins/libdenoiseprofile.so
+lib/darktable/plugins/libdither.so
 lib/darktable/plugins/libequalizer.so
 lib/darktable/plugins/libexposure.so
 lib/darktable/plugins/libflip.so
@@ -108,7 +111,6 @@ lib/darktable/plugins/lighttable/libnavigation.so
 lib/darktable/plugins/lighttable/libratings.so
 lib/darktable/plugins/lighttable/librecentcollect.so
 lib/darktable/plugins/lighttable/libselect.so
-lib/darktable/plugins/lighttable/libsimilarity.so
 lib/darktable/plugins/lighttable/libsnapshots.so
 lib/darktable/plugins/lighttable/libstyles.so
 lib/darktable/plugins/lighttable/libtagging.so
@@ -138,7 +140,10 @@ share/darktable/kernels/atrous.cl
 share/darktable/kernels/basic.cl
 share/darktable/kernels/bilateral.cl
 share/darktable/kernels/blendop.cl
+share/darktable/kernels/colorspace.cl
+share/darktable/kernels/common.h
 share/darktable/kernels/demosaic_ppg.cl
+share/darktable/kernels/denoiseprofile.cl
 share/darktable/kernels/extended.cl
 share/darktable/kernels/gaussian.cl
 share/darktable/kernels/highpass.cl
@@ -170,6 +175,7 @@ share/darktable/pixmaps/plugins/darkroom/colorout.png
 share/darktable/pixmaps/plugins/darkroom/colortransfer.png
 share/darktable/pixmaps/plugins/darkroom/colorzones.png
 share/darktable/pixmaps/plugins/darkroom/demosaic.png
+share/darktable/pixmaps/plugins/darkroom/dither.png
 share/darktable/pixmaps/plugins/darkroom/exposure.png
 share/darktable/pixmaps/plugins/darkroom/flip.png
 share/darktable/pixmaps/plugins/darkroom/graduatednd.png
@@ -256,6 +262,7 @@ share/locale/ru/LC_MESSAGES/darktable.mo
 share/locale/sq/LC_MESSAGES/darktable.mo
 share/locale/sv/LC_MESSAGES/darktable.mo
 share/locale/th/LC_MESSAGES/darktable.mo
+share/locale/uk/LC_MESSAGES/darktable.mo
 share/locale/zh_CN/LC_MESSAGES/darktable.mo
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

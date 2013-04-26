@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2013/03/21 08:45:18 ajacoutot Exp $
-
-BROKEN= unlocks an unlocked mutex (rthread_sync.c 1.34)
+# $OpenBSD: Makefile,v 1.31 2013/04/26 23:10:26 sthen Exp $
 
 # requires SSE
 ONLY_FOR_ARCHS=	i386 amd64
 
 COMMENT=	virtual lighttable and darkroom for photographers
-DISTNAME=	darktable-1.1.3
+DISTNAME=	darktable-1.2
+EXTRACT_SUFX=	.tar.xz
 
 SHARED_ONLY=	Yes
 
@@ -19,12 +18,13 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB += GraphicsMagick
 WANTLIB += GL GLU ICE Iex IlmImf IlmThread Imath SDL SM X11 Xext
 WANTLIB += atk-1.0 c cairo curl exiv2 flickcurl freetype gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnome-keyring
 WANTLIB += gobject-2.0 gphoto2 gthread-2.0 gtk-x11-2.0 jpeg lcms2
-WANTLIB += m pango-1.0 pangocairo-1.0 png pthread rsvg-2 sqlite3
-WANTLIB += stdc++ tiff xml2 z gphoto2_port soup-2.4 json-glib-1.0
+WANTLIB += m openjpeg pango-1.0 pangocairo-1.0 png pthread rsvg-2
+WANTLIB += sqlite3 stdc++ tiff xml2 z gphoto2_port soup-2.4 json-glib-1.0
 
 WANTLIB += lensfun # dlopen'd. this is "Extra" in check-lib-depends; that's ok,
 
@@ -41,11 +41,13 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 LIB_DEPENDS=	devel/json-glib \
 		devel/libsoup \
 		devel/sdl \
+		graphics/GraphicsMagick \
 		graphics/exiv2>=0.22 \
 		graphics/lcms2 \
 		graphics/libgphoto2>=2.5.0 \
 		graphics/lensfun \
 		graphics/openexr \
+		graphics/openjpeg \
 		net/curl \
 		net/flickcurl \
 		x11/gnome/libgnome-keyring \
@@ -57,9 +59,7 @@ USE_GROFF=	Yes
 
 CONFIGURE_STYLE= cmake
 CONFIGURE_ARGS=	-DCMAKE_BUILD_TYPE=Release \
-		-DBINARY_PACKAGE_BUILD=Yes \
-		-DCUSTOM_CFLAGS=Yes \
-		-DMAN_INSTALL_DIR="./man/man1"
+		-DBINARY_PACKAGE_BUILD=1
 CFLAGS+= -D_DEBUG
 
 CPPFLAGS+=	-I${LOCALBASE}/include/libpng
