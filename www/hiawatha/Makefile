@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.35 2013/04/14 20:21:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2013/04/26 09:15:24 sthen Exp $
 
 COMMENT=	secure webserver
-DISTNAME=	hiawatha-9.0
+DISTNAME=	hiawatha-9.1
 CATEGORIES=	www net
 
 HOMEPAGE=	http://www.hiawatha-webserver.org/
 
-# GPLv2
+# GPLv2 only
 PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${HOMEPAGE}files/
@@ -18,10 +18,10 @@ WANTLIB += c pthread xml2 z xslt
 LIB_DEPENDS=	textproc/libxslt
 
 CONFIGURE_ARGS=	-DWEBROOT_DIR="/var/hiawatha" \
-		-DWORK_DIR="/var/db/hiawatha/" \
-		-DCONFIG_DIR="${SYSCONFDIR}/hiawatha/" \
-		-DLOG_DIR="/var/log/hiawatha/" \
-		-DCMAKE_INSTALL_MANDIR="${PREFIX}/man/" \
+		-DWORK_DIR="/var/db/hiawatha" \
+		-DCONFIG_DIR="${SYSCONFDIR}/hiawatha" \
+		-DLOG_DIR="/var/log/hiawatha" \
+		-DCMAKE_INSTALL_MANDIR="${PREFIX}/man" \
 		-DENABLE_XSLT=ON
 
 NO_TEST=	Yes
