@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2013/01/22 23:26:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2013/04/26 16:09:53 sthen Exp $
 
      SUBDIR =
      SUBDIR += asterisk
@@ -14,6 +14,7 @@
      SUBDIR += kamailio
      SUBDIR += libosip2
      SUBDIR += p5-Net-SIP
+     SUBDIR += p5-Asterisk-AMI
      SUBDIR += p5-asterisk
      SUBDIR += pjsua
      SUBDIR += siproxd
