@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2013/04/24 19:12:58 zhuk Exp $
+# $OpenBSD: Makefile,v 1.8 2013/04/26 09:24:30 zhuk Exp $
 
 COMMENT =	KDE software development kit
 DISTNAME =	kdesdk-${MODKDE4_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	komparedialogpages	0.0 # 4.7
 SHARED_LIBS +=	komparediff2		0.0 # 4.7
@@ -29,7 +30,7 @@ WANTLIB += ${KDE4LIB}/knewstuff3 ${KDE4LIB}/konq ${KDE4LIB}/kparts
 WANTLIB += ${KDE4LIB}/krosscore ${KDE4LIB}/krossui ${KDE4LIB}/ktexteditor
 WANTLIB += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils
 WANTLIB += ${KDE4LIB}/solid ${KDE4LIB}/threadweaver
-WANTLIB += apr-1 hunspell-1.2 svn_client-1 svn_delta-1 svn_fs-1
+WANTLIB += apr-1 hunspell-1.3 svn_client-1 svn_delta-1 svn_fs-1
 WANTLIB += svn_ra-1 svn_subr-1 xml2 xslt
 WANTLIB += gettextpo qca2 soprano streamanalyzer streams
 
