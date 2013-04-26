@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:07:38 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/04/26 13:04:14 bcallah Exp $
 
+V =		2.1
 COMMENT =	scrabble game
-DISTNAME =	eliot-1.14
+DISTNAME =	eliot-${V}
 CATEGORIES =	games
 
 HOMEPAGE =	http://nongnu.org/eliot/
-MASTER_SITES =	${MASTER_SITE_SAVANNAH:=eliot/releases/}
+MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+
+MASTER_SITES =	${MASTER_SITE_SAVANNAH:=eliot/releases/${V}/}
 
 EXTRACT_ONLY =	${DISTNAME}${EXTRACT_SUFX}
 DISTFILES +=	${DISTNAME}${EXTRACT_SUFX}
@@ -30,7 +33,7 @@ BUILD_DEPENDS =	devel/boost \
 		devel/libexecinfo
 RUN_DEPENDS =	devel/desktop-file-utils
 LIB_DEPENDS =	textproc/arabica devel/libconfig
-WANTLIB +=	QtGui c m pthread stdc++
+WANTLIB +=	lib/qt4/QtGui lib/qt4/QtNetwork c m pthread stdc++
 WANTLIB +=	arabica config++ expat ncursesw
 
 post-configure:
