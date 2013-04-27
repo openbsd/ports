@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_ip_Intercept_cc,v 1.1 2013/04/27 15:19:48 sthen Exp $
+--- src/ip/Intercept.cc.orig	Sat Apr 27 15:00:14 2013
++++ src/ip/Intercept.cc	Sat Apr 27 15:05:50 2013
+@@ -34,7 +34,6 @@
+ #include "comm/Connection.h"
+ #include "ip/Intercept.h"
+ #include "fde.h"
+-#include "src/tools.h"
+ 
+ #if IPF_TRANSPARENT
+ 
