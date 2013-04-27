@@ -1,16 +1,83 @@
-$OpenBSD: patch-poppler_defs,v 1.1 2011/06/04 19:07:59 kili Exp $
+$OpenBSD: patch-poppler_defs,v 1.2 2013/04/27 16:02:59 kili Exp $
+
+Let this work with poppler >= 0.18.
+
+https://bugs.launchpad.net/poppler-python/+bug/776234
+
+And follow API changes from poppler-0.16.
+
+
 --- poppler.defs.orig	Sun Sep 27 11:07:59 2009
-+++ poppler.defs	Mon May 23 21:42:00 2011
-@@ -1796,6 +1796,12 @@
++++ poppler.defs	Fri Apr 26 22:49:32 2013
+@@ -1646,58 +1646,6 @@
+   (return-type "GType")
+ )
+ 
+-(define-method render_to_pixbuf
+-  (of-object "PopplerPage")
+-  (c-name "poppler_page_render_to_pixbuf")
+-  (return-type "none")
+-  (parameters
+-    '("int" "src_x")
+-    '("int" "src_y")
+-    '("int" "src_width")
+-    '("int" "src_height")
+-    '("double" "scale")
+-    '("int" "rotation")
+-    '("GdkPixbuf*" "pixbuf")
+-  )
+-)
+-
+-(define-method render_to_pixbuf_for_printing
+-  (of-object "PopplerPage")
+-  (c-name "poppler_page_render_to_pixbuf_for_printing")
+-  (return-type "none")
+-  (parameters
+-    '("int" "src_x")
+-    '("int" "src_y")
+-    '("int" "src_width")
+-    '("int" "src_height")
+-    '("double" "scale")
+-    '("int" "rotation")
+-    '("GdkPixbuf*" "pixbuf")
+-  )
+-)
+-
+-(define-method get_thumbnail_pixbuf
+-  (of-object "PopplerPage")
+-  (c-name "poppler_page_get_thumbnail_pixbuf")
+-  (return-type "GdkPixbuf*")
+-)
+-
+-(define-method render_selection_to_pixbuf
+-  (of-object "PopplerPage")
+-  (c-name "poppler_page_render_selection_to_pixbuf")
+-  (return-type "none")
+-  (parameters
+-    '("gdouble" "scale")
+-    '("int" "rotation")
+-    '("GdkPixbuf*" "pixbuf")
+-    '("PopplerRectangle*" "selection")
+-    '("PopplerRectangle*" "old_selection")
+-    '("PopplerSelectionStyle" "style")
+-    '("GdkColor*" "glyph_color")
+-    '("GdkColor*" "background_color")
+-  )
+-)
+-
+ (define-method render
+   (of-object "PopplerPage")
+   (c-name "poppler_page_render")
+@@ -1795,6 +1743,12 @@
+ (define-method get_text
    (of-object "PopplerPage")
    (c-name "poppler_page_get_text")
-   (return-type "char*")
++  (return-type "char*")
 +)
 +
 +(define-method get_selected_text
 +  (of-object "PopplerPage")
 +  (c-name "poppler_page_get_selected_text")
-+  (return-type "char*")
+   (return-type "char*")
    (parameters
      '("PopplerSelectionStyle" "style")
-     '("PopplerRectangle*" "rect")
