@@ -1,4 +1,4 @@
-# $OpenBSD: kde4.port.mk,v 1.3 2013/04/24 10:37:15 zhuk Exp $
+# $OpenBSD: kde4.port.mk,v 1.4 2013/04/27 20:22:36 zhuk Exp $
 
 # The version of KDE SC in x11/kde4
 _MODKDE4_STABLE =	4.10.2
@@ -288,7 +288,7 @@ MODKDE4_LIB_LINKS ?=	No
 # thing for MODULES rather than for ports. So play another game...
 
 # Always create directory for headers, remove later if left empty
-MODKDE4_pre-fake =	${SUDO} ${INSTALL_DATA_DIR} ${PREFIX}/include/kde4;
+MODKDE4_pre-fake =	${SUDO} ${INSTALL_DATA_DIR} ${WRKINST}/${PREFIX}/include/kde4;
 
 # 1. Remove includes directory created above, if empty.
 # 2. Create links for shared libraries in ${PREFIX}/${KDE4LIB},
