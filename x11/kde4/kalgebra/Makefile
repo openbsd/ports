@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/24 11:42:15 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/04/27 20:45:17 zhuk Exp $
 
 COMMENT =	scientific calculator for KDE
 DISTNAME =	kalgebra-${MODKDE4_VERSION}
+REVISION =	0
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += GL GLU
@@ -18,9 +19,12 @@ WANTLIB += soprano
 
 MODULES =	multimedia/phonon
 
-RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+2,-guic
+BUILD_DEPENDS =	${MODKDE4_DEP_DIR}/libkdeedu>=${MODKDE4_DEP_VERSION}
 
-LIB_DEPENDS = 	${MODKDE4_DEP_DIR}/analitza>=${MODKDE4_DEP_VERSION}
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/gtk+2,-guic	\
+		${MODKDE4_DEP_DIR}/libkdeedu>=${MODKDE4_DEP_VERSION}
+
+LIB_DEPENDS =	${MODKDE4_DEP_DIR}/analitza>=${MODKDE4_DEP_VERSION}
 
 .include <bsd.port.mk>
