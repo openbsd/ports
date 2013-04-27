@@ -1,0 +1,14 @@
+$OpenBSD: patch-pdfshuffler_pdfshuffler_py,v 1.1 2013/04/27 21:52:32 sthen Exp $
+--- pdfshuffler/pdfshuffler.py.orig	Sat Apr 28 16:15:17 2012
++++ pdfshuffler/pdfshuffler.py	Sat Apr 27 15:51:15 2013
+@@ -1081,8 +1081,10 @@ def main():
+     """This function starts PdfShuffler"""
+     gtk.gdk.threads_init()
+     gobject.threads_init()
++    gtk.gdk.threads_enter()
+     PdfShuffler()
+     gtk.main()
++    gtk.gdk.threads_leave()
+ 
+ if __name__ == '__main__':
+     main()
