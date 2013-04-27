@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_std_c_file_c,v 1.1.1.1 2012/10/16 09:41:44 ajacoutot Exp $
---- src/std/c_file.c.orig	Mon Jun 18 17:29:20 2012
-+++ src/std/c_file.c	Sun Jun 24 09:49:58 2012
-@@ -31,6 +31,10 @@
- #include <fcntl.h>
+$OpenBSD: patch-src_std_c_file_c,v 1.2 2013/04/27 16:27:19 ajacoutot Exp $
+--- src/std/c_file.c.orig	Mon Apr 22 15:34:09 2013
++++ src/std/c_file.c	Sat Apr 27 18:20:25 2013
+@@ -32,6 +32,10 @@
  #include <unistd.h>
+ #include <string.h>
  
 +#ifndef ENODATA
 +#define ENODATA ENOENT
