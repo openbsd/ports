@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: pkg_subst,v 1.1 2010/08/20 14:38:31 espie Exp $
+# $OpenBSD: pkg_subst,v 1.2 2013/04/27 15:43:42 sthen Exp $
 #
 # Copyright (c) 2008 Marc Espie <espie@openbsd.org>
 #
@@ -28,16 +28,16 @@ use OpenBSD::IdCache;
 my $subst = OpenBSD::Subst->new;
 
 our $opt_c;
-my ($fuid, $fgid);
+my ($fuid, $fgid, $fmode);
 my ($uidc, $gidc);
 
 my $ui = OpenBSD::State->new('pkg_subst');
 $ui->usage_is( '[-c] [-Dvar=value ...] [-g group] [-o owner] [file ...]');
 $ui->do_options(
     sub {
-	getopts('D:g:o:ch',
+	getopts('D:g:m:o:ch',
 	    {'D' =>
-		    sub { 
+		    sub {
 			    $subst->parse_option(shift);
 		    },
 	     'o' => sub {
@@ -53,6 +53,12 @@ $ui->do_options(
 			    $gidc //= OpenBSD::GidCache->new;
 			    $fgid = $gidc->lookup($group, -1);
 			    die "$group is not a valid group" if $fgid == -1;
+		    },
+	     'm' => sub {
+			    my $mode = shift;
+
+			    $fmode = oct($mode);
+			    die "$mode is not a valid mode" if $fmode == 0;
 		    },
 	     'h' => sub {	$ui->usage; },
 	    });
@@ -80,6 +86,9 @@ while (my $src = shift) {
 	# copy rights, owner, group as well
 	my ($uid, $gid, $mode) = (stat $src)[4, 5, 2];
 	my $r1 = chown $fuid // $uid, $fgid // $gid, $fh;
+	if (defined $fmode) {
+		$mode = $fmode;
+	}
 	my $r2 = chmod $mode & 07777, $fh;
 	if (defined $fuid || defined $fgid || $< == 0) {
 		if ($r1 == 0) {
