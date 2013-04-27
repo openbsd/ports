@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_WWW_YouTube_Download_pm,v 1.5 2013/04/27 14:29:09 sthen Exp $
+
+- support one more url type
+
+--- lib/WWW/YouTube/Download.pm.orig	Fri Apr 19 18:50:43 2013
++++ lib/WWW/YouTube/Download.pm	Sat Apr 27 12:33:16 2013
+@@ -271,7 +271,7 @@ sub _suffix {
+ 
+ sub _video_id {
+     my $stuff = shift;
+-    if ($stuff =~ m{/.*?[?&;!]v=([^&#?=/;]+)}) {
++    if ($stuff =~ m{/.*?[?&;!](?:v|video_id)=([^&#?=/;]+)}) {
+         return $1;
+     }
+     elsif ($stuff =~ m{/(?:e|v|embed)/([^&#?=/;]+)}) {
