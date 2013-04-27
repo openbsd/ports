@@ -1,7 +1,7 @@
-$OpenBSD: patch-gst-libs_ext_libav_configure,v 1.3 2013/03/22 17:22:50 ajacoutot Exp $
---- gst-libs/ext/libav/configure.orig	Fri Mar 22 15:34:41 2013
-+++ gst-libs/ext/libav/configure	Fri Mar 22 18:04:35 2013
-@@ -2623,7 +2623,7 @@ die_license_disabled version3 libvo_amrwbenc
+$OpenBSD: patch-gst-libs_ext_libav_configure,v 1.4 2013/04/27 14:49:21 ajacoutot Exp $
+--- gst-libs/ext/libav/configure.orig	Fri Apr 26 13:29:24 2013
++++ gst-libs/ext/libav/configure	Sat Apr 27 16:33:50 2013
+@@ -2624,7 +2624,7 @@ die_license_disabled version3 libvo_amrwbenc
  
  enabled version3 && { enabled gpl && enable gplv3 || enable lgplv3; }
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-gst-libs_ext_libav_configure,v 1.3 2013/03/22 17:22:50 ajacoutot
  
  enable_pic() {
      enable pic
-@@ -3066,7 +3066,6 @@ enabled extra_warnings && check_cflags -Winline
+@@ -3065,7 +3065,6 @@ enabled extra_warnings && check_cflags -Winline
  # add some linker flags
  check_ldflags -Wl,--warn-common
  check_ldflags -Wl,-rpath-link=libpostproc:libswscale:libavfilter:libavdevice:libavformat:libavcodec:libavutil
@@ -18,7 +18,7 @@ $OpenBSD: patch-gst-libs_ext_libav_configure,v 1.3 2013/03/22 17:22:50 ajacoutot
  
  echo "X{};" > $TMPV
  if test_ldflags -Wl,--version-script,$TMPV; then
-@@ -3085,10 +3084,6 @@ if [ -n "$optflags" ]; then
+@@ -3084,10 +3083,6 @@ if [ -n "$optflags" ]; then
      add_cflags $optflags
  elif enabled small; then
      add_cflags $size_cflags
