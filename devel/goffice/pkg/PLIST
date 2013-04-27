@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2013/03/14 09:00:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2013/04/27 11:31:52 ajacoutot Exp $
 include/libgoffice-${API_VERSION}/
 include/libgoffice-${API_VERSION}/goffice/
 include/libgoffice-${API_VERSION}/goffice/app/
@@ -109,6 +109,7 @@ include/libgoffice-${API_VERSION}/goffice/gtk/go-color-selector.h
 include/libgoffice-${API_VERSION}/goffice/gtk/go-combo-box.h
 include/libgoffice-${API_VERSION}/goffice/gtk/go-combo-color.h
 include/libgoffice-${API_VERSION}/goffice/gtk/go-combo-pixmaps.h
+include/libgoffice-${API_VERSION}/goffice/gtk/go-font-sel-dialog.h
 include/libgoffice-${API_VERSION}/goffice/gtk/go-font-sel.h
 include/libgoffice-${API_VERSION}/goffice/gtk/go-format-sel.h
 include/libgoffice-${API_VERSION}/goffice/gtk/go-gradient-selector.h
