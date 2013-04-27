@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/04/17 16:26:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2013/04/27 08:04:02 landry Exp $
 
 COMMENT=	common interface to speech synthesis
 
@@ -20,6 +20,7 @@ WANTLIB += ltdl m ogg pcre pthread sndfile vorbis vorbisenc
 MASTER_SITES=	http://devel.freebsoft.org/pub/projects/speechd/
 
 MODULES=	devel/gettext \
+		textproc/intltool \
 		lang/python
 
 MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
