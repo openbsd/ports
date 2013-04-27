@@ -1,17 +1,22 @@
 We don't need Git because we're using releases.
 
-$OpenBSD: patch-builds_cmake_CMakeLists_txt,v 1.1.1.1 2013/04/16 02:11:25 bcallah Exp $
---- builds/cmake/CMakeLists.txt.orig	Fri Apr 12 23:56:05 2013
-+++ builds/cmake/CMakeLists.txt	Fri Apr 12 23:56:18 2013
-@@ -9,7 +9,6 @@ set(DEFAULT_EASYRPG_READERS_PATH "${CMAKE_CURRENT_SOUR
+$OpenBSD: patch-builds_cmake_CMakeLists_txt,v 1.2 2013/04/27 23:52:25 bcallah Exp $
+--- builds/cmake/CMakeLists.txt.orig	Sat Apr 20 13:12:11 2013
++++ builds/cmake/CMakeLists.txt	Sat Apr 27 14:22:08 2013
+@@ -9,12 +9,6 @@ set(DEFAULT_EASYRPG_READERS_PATH "${CMAKE_CURRENT_SOUR
  if(NOT EASYRPG_READERS_PATH)
    set(EASYRPG_READERS_PATH "${DEFAULT_EASYRPG_READERS_PATH}")
  endif()
 -find_package(Git REQUIRED)
- if(NOT EXISTS ${EASYRPG_READERS_PATH})
-   execute_process(COMMAND ${GIT_EXECUTABLE} clone
-     "https://github.com/EasyRPG/Readers.git"
-@@ -32,7 +31,7 @@ add_definitions(
+-if(NOT EXISTS ${EASYRPG_READERS_PATH})
+-  execute_process(COMMAND ${GIT_EXECUTABLE} clone
+-    "https://github.com/EasyRPG/Readers.git"
+-    "${EASYRPG_READERS_PATH}")
+-endif()
+ add_subdirectory(
+   ${EASYRPG_READERS_PATH}/builds/cmake
+   ${CMAKE_CURRENT_BINARY_DIR}/CMakeFiles/${EASYRPG_READERS_PATH}/builds/cmake)
+@@ -32,7 +26,7 @@ add_definitions(
    -D USE_SDL=1)
  
  if(CMAKE_GENERATOR MATCHES "Makefile")
@@ -19,4 +24,4 @@ $OpenBSD: patch-builds_cmake_CMakeLists_txt,v 1.1.1.1 2013/04/16 02:11:25 bcalla
 +  add_definitions(-pthread)
  endif()
  
- # shinonome font
+ # wine checking

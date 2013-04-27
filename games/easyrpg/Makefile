@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2013/04/27 17:02:38 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2013/04/27 23:52:25 bcallah Exp $
 
 V =		0.1.1
 COMMENT =	free interpreter for RPG Maker 2000/2003 and EasyRPG games
 DISTFILES =	EasyRPG_Player-${V}-src.zip \
 		EasyRPG_Readers-${V}-src.zip
 PKGNAME =	easyrpg-${V}
+REVISION =	0
 CATEGORIES =	games x11
 
 HOMEPAGE =	https://easy-rpg.org/
@@ -38,11 +39,9 @@ RUN_DEPENDS =	audio/timidity
 NO_TEST =	Yes
 
 WRKDIST =	${WRKDIR}/Player-${V}
+WRKSRC =	${WRKDIST}/builds/cmake
 
 post-extract:
-	mv ${WRKDIR}/Readers-${V} ${WRKSRC}/lib/readers
-
-do-configure:
-	cd ${WRKBUILD} && cmake ${WRKSRC}/builds/cmake
+	mv ${WRKDIR}/Readers-${V} ${WRKDIST}/lib/readers
 
 .include <bsd.port.mk>
