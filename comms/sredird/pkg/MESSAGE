@@ -5,3 +5,7 @@ You may wish to add the following line to /etc/inetd.conf:
 
 which will start sredird on port 2001 and attach it to serial
 port cua00.
+
+inetd(8) must be reloaded (or started). To enable it at boot, the
+following line needs to be added to rc.conf.local(5):
+inetd_flags=

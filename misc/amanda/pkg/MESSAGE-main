@@ -3,9 +3,10 @@ In order to update /etc/services and /etc/inetd.conf, run
    ${PREFIX}/libexec/amanda/patch-system --enable-index --enable-tape
 
 You should check both of these files, verifying proper installation.
-Once verified issue the command:
 
-   kill -HUP `cat /var/run/inetd.pid`
+inetd(8) must be reloaded (or started). To enable it at boot, the
+following line needs to be added to rc.conf.local(5):
+inetd_flags=
 
 You also need to create /operator/.amandahosts, which will contain the
 FQDN of the tape server and the user allowed to access this machine.

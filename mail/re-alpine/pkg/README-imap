@@ -1,4 +1,4 @@
-$OpenBSD: README-imap,v 1.1.1.1 2012/09/27 15:09:53 ajacoutot Exp $
+$OpenBSD: README-imap,v 1.2 2013/04/27 15:44:21 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -14,7 +14,6 @@ The ipop2d, ipop3d, and imapd daemons should be invoked by your
   imap    stream  tcp     nowait  root    ${TRUEPREFIX}/libexec/imapd    imapd
   imap    stream  tcp6    nowait  root    ${TRUEPREFIX}/libexec/imapd    imapd
 
-
 To use SSL as default transport you need to add the lines below to
 /etc/inetd.conf.
 
@@ -22,6 +21,10 @@ To use SSL as default transport you need to add the lines below to
   pop3s   stream  tcp6    nowait  root    ${TRUEPREFIX}/libexec/ipop3d   ipop3d
   imaps   stream  tcp     nowait  root    ${TRUEPREFIX}/libexec/imapd    imapd
   imaps   stream  tcp6    nowait  root    ${TRUEPREFIX}/libexec/imapd    imapd
+
+inetd(8) must be reloaded (or started). To enable it at boot, the
+following line needs to be added to rc.conf.local(5):
+inetd_flags=
 
 You also need to install your certificates to
 /etc/ssl/{imapd,ipop3d}.pem and files containing the corresponding private

@@ -12,3 +12,7 @@ fi
 For inetd, modify /etc/inetd.conf to use oidentd for ident:
 
 ident	stream	tcp	nowait	root	${PREFIX}/sbin/oidentd oidentd -Im
+
+inetd(8) must be reloaded (or started). To enable it at boot, the
+following line needs to be added to rc.conf.local(5):
+inetd_flags=

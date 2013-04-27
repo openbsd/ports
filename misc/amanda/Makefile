@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2013/03/21 08:46:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2013/04/27 15:44:21 ajacoutot Exp $
 
 COMMENT-main=	network-capable tape backup (client and tape server)
 COMMENT-client=	network-capable tape backup (client only)
@@ -16,8 +16,8 @@ DISTNAME=	amanda-${DISTVERSION}
 PKGNAME-main=	amanda-${PKGVERSION}
 PKGNAME-client=	amanda-client-${PKGVERSION}
 PKGNAME-doc=	amanda-doc-${PKGVERSION}
-REVISION-main=	2
-REVISION-client=1
+REVISION-main=	3
+REVISION-client=2
 
 CATEGORIES=	misc
 

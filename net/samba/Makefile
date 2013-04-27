@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.180 2013/03/29 18:13:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.181 2013/04/27 15:44:21 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,7 +9,7 @@ DISTNAME=		samba-3.6.13
 PKGNAME-main=		${DISTNAME}
 FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}
 FULLPKGPATH-docs=	net/samba,-docs
-REVISION-main=		0
+REVISION-main=		1
 
 SHARED_LIBS=		smbclient	3.0 \
 			smbsharemodes	1.0 \

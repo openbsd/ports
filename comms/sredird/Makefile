@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 01:30:27 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/04/27 15:44:20 ajacoutot Exp $
 
 COMMENT=	RFC 2217 compliant serial port redirector
 
 DISTNAME=	sredird-2.2.2
-REVISION=	0
+REVISION=	1
 CATEGORIES=	comms
 
 MAINTAINER=	Alexey E. Suslikov <alexey.suslikov@gmail.com>

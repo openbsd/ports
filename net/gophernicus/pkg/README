@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2012/09/22 07:58:28 landry Exp $
+$OpenBSD: README,v 1.2 2013/04/27 15:44:21 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -14,6 +14,10 @@ gopher stream tcp nowait _gophernicus ${TRUEPREFIX}/sbin/in.gophernicus	in.gophe
 
 Replace "hostname" with the system's hostname, this should be valid
 and resolvable as it is used to construct links.
+
+inetd(8) must be reloaded (or started). To enable it at boot, the
+following line needs to be added to rc.conf.local(5):
+inetd_flags=
 
 By default Gophernicus serves documents from /var/gopher and will
 only serve files which are world-readable; being readable by the
