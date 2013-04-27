@@ -1,7 +1,16 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2009/01/03 14:50:24 ajacoutot Exp $
-@conflict pacpl-konqueror-<4.0.3p0
+@comment $OpenBSD: PLIST,v 1.1 2013/04/27 11:39:47 sthen Exp $
+@conflict pacpl-amarok-*
+@conflict pacpl-konqueror-*
+@pkgpath audio/pacpl,-amarok
+@pkgpath audio/pacpl,-konqueror
+@pkgpath audio/pacpl,-main
 bin/pacpl
 @man man/man1/pacpl.1
+share/apps/
+share/apps/amarok/
+share/apps/amarok/scripts/
+share/apps/amarok/scripts/pacx/
+share/apps/amarok/scripts/pacx/pacx
 share/doc/pacpl/
 share/doc/pacpl/AUTHORS
 share/doc/pacpl/README
@@ -21,6 +30,9 @@ share/examples/pacpl/modules/sample.m
 @sample ${SYSCONFDIR}/pacpl/modules/sample.m
 share/examples/pacpl/pacpl.conf
 @sample ${SYSCONFDIR}/pacpl/pacpl.conf
+share/kde4/
+share/kde4/services/
+share/kde4/services/pacpl.desktop
 share/pacpl/
 share/pacpl/locale/
 share/pacpl/locale/ca.po
@@ -29,8 +41,11 @@ share/pacpl/locale/en_US.po
 share/pacpl/locale/es.po
 share/pacpl/locale/et.po
 share/pacpl/locale/fr_FR.po
+share/pacpl/locale/it_IT.po
+share/pacpl/locale/nl_NL.po
 share/pacpl/locale/pl.po
 share/pacpl/locale/pt.po
+share/pacpl/locale/ro.po
 share/pacpl/locale/ru_RU.po
 share/pacpl/locale/tr.po
 share/pacpl/locale/zh_CN.po

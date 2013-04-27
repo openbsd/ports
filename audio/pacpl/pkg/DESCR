@@ -11,3 +11,6 @@ A CD ripping function with CDDB support, batch and playlist conversion,
 daemon mode for converting files on the fly, tag preservation for most
 supported formats, independent tag reading/writing, and extensions for
 konqueror and amarok are also provided.
+
+To enable the PAC plugin in Amarok:
+Tools -> Script Manager: General -> pacx -> Run

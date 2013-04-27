@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST-amarok,v 1.2 2008/12/23 15:52:42 ajacoutot Exp $
-share/apps/
-share/apps/amarok/
-share/apps/amarok/scripts/
-share/apps/amarok/scripts/pacx/
-share/apps/amarok/scripts/pacx/pacx

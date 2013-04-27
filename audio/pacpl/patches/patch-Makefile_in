@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2008/12/23 15:52:42 ajacoutot Exp $
---- Makefile.in.orig	Sat Aug 23 17:13:47 2008
-+++ Makefile.in	Thu Nov 13 14:52:56 2008
-@@ -70,7 +70,7 @@ MIMELNK	= $(MIMEDIR)/x-ape.desktop \
+$OpenBSD: patch-Makefile_in,v 1.2 2013/04/27 11:39:47 sthen Exp $
+--- Makefile.in.orig	Fri Mar 20 03:24:18 2009
++++ Makefile.in	Sat Apr 27 11:40:26 2013
+@@ -64,7 +64,7 @@ KONQDIR   = plugins/konqueror
  #
  
  DESTDIR = 
@@ -10,7 +10,7 @@ $OpenBSD: patch-Makefile_in,v 1.1 2008/12/23 15:52:42 ajacoutot Exp $
  
  #
  # Target KDE directories
-@@ -112,8 +112,8 @@ docdir      =  @docdir@
+@@ -105,8 +105,8 @@ docdir      =  @docdir@
  #
  # Configuration files directories and other
  #
@@ -21,7 +21,7 @@ $OpenBSD: patch-Makefile_in,v 1.1 2008/12/23 15:52:42 ajacoutot Exp $
  MOD_DIR  = $(CONF_DIR)/modules
  DOC_DIR  = $(DESTDIR)$(docdir)$(PACKAGE_NAME)
  MAN_DIR  = $(DESTDIR)$(mandir)/man1
-@@ -122,10 +122,10 @@ DOC_EXTRA_DIR = $(DOC_DIR)/extra
+@@ -115,10 +115,10 @@ DOC_EXTRA_DIR = $(DOC_DIR)/extra
  # Explicit rules
  .PHONY: all install uninstall clean distclean
  
@@ -35,7 +35,7 @@ $OpenBSD: patch-Makefile_in,v 1.1 2008/12/23 15:52:42 ajacoutot Exp $
  	touch $@
  
  install: all main install-pacpl-plugins
-@@ -139,40 +139,40 @@ main:
+@@ -132,33 +132,33 @@ main:
  	$(INSTALL) -d $(DOC_DIR)
  	$(INSTALL) -d $(DOC_EXTRA_DIR)
  
@@ -57,12 +57,8 @@ $OpenBSD: patch-Makefile_in,v 1.1 2008/12/23 15:52:42 ajacoutot Exp $
  install-pacpl-plugins:
  ifeq '$(INSTALL_KONQ)' 'yes'
  	$(INSTALL) -d $(KONQ_PLUGDIR)
- 	$(INSTALL) -d $(KONQ_MIMEDIR)
- 
 -	$(INSTALL_DATA) $(KONQDIR)/pacpl.desktop -t $(KONQ_PLUGDIR)
--	$(INSTALL_DATA) $(MIMELNK) -t $(KONQ_MIMEDIR)
 +	$(INSTALL_DATA) $(KONQDIR)/pacpl.desktop $(KONQ_PLUGDIR)
-+	$(INSTALL_DATA) $(MIMELNK) $(KONQ_MIMEDIR)
  endif
  
  ifeq '$(INSTALL_DOLP)' 'yes'
@@ -84,12 +80,7 @@ $OpenBSD: patch-Makefile_in,v 1.1 2008/12/23 15:52:42 ajacoutot Exp $
  endif
  
  clean:
--	$(RM) pacpl.1.gz
-+	$(RM) pacpl.1
- 
- distclean: clean
- 	$(RM) config.log
-@@ -182,7 +182,7 @@ distclean: clean
+@@ -172,7 +172,7 @@ distclean: clean
  
  uninstall: uninstall-pacpl-plugins
  	$(RM) $(DESTDIR)$(bindir)/pacpl

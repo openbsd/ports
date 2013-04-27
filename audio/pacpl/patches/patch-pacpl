@@ -1,6 +1,6 @@
-$OpenBSD: patch-pacpl,v 1.5 2012/06/13 11:43:12 jasper Exp $
---- pacpl.orig	Sat Feb 14 12:04:50 2009
-+++ pacpl	Fri May 25 05:43:14 2012
+$OpenBSD: patch-pacpl,v 1.6 2013/04/27 11:39:47 sthen Exp $
+--- pacpl.orig	Fri Mar 20 02:19:03 2009
++++ pacpl	Sat Apr 27 12:34:15 2013
 @@ -130,8 +130,8 @@ my %config = (
               );
  
@@ -12,6 +12,24 @@ $OpenBSD: patch-pacpl,v 1.5 2012/06/13 11:43:12 jasper Exp $
  my $mod_dir   = "$conf_path/modules";
  
  my $conf_file;
+@@ -143,7 +143,6 @@ load_lang();
+ my @conf_locations = ( 
+                        "$ENV{HOME}/.pacplrc",   # Local
+                        "$conf_path/pacpl.conf", # Global
+-                       "$ENV{PWD}/pacpl.conf",  # Current Directory
+                      );
+ 
+ # try to load conf file from one of the above locations
+@@ -203,7 +202,8 @@ sub load_codecs {
+ # load po file and store in %lang hash
+ sub load_lang {
+ 
+-    my $po = "$po_dir/$ENV{LANG}.po";
++    my $po = "";
++       $po = "$po_dir/$ENV{LANG}.po" if ($ENV{'LANG'});
+        $po =~ s/\.UTF-8//i      if $po =~ /UTF-8/i; 
+        $po =~ s/\.utf8//i       if $po =~ /utf8/i;  
+        $po =~ s/_\w+//          if not -e $po;      
 @@ -708,8 +708,8 @@ my $opts;
  
         flac => {
@@ -168,7 +186,7 @@ $OpenBSD: patch-pacpl,v 1.5 2012/06/13 11:43:12 jasper Exp $
                  
                  ENCODER => {
                                wavpack => {
-@@ -2050,11 +2050,11 @@ sub format_tags {
+@@ -2050,7 +2050,7 @@ sub format_tags {
       
                  $tag_name{track} = 0 if not $tag_name{track};
                  $tag_name{year}  = 0 if not $tag_name{year};
@@ -177,11 +195,15 @@ $OpenBSD: patch-pacpl,v 1.5 2012/06/13 11:43:12 jasper Exp $
  
              } else {
                  
--              return "--title \"$tag_name{title}\" --track \"$tag_name{track}\" --artist \"$tag_name{artist}\" --ablum \"$tag_name{album}\" --comment \"$tag_name{comment}\" --year \"$tag_name{year}\" --genre \"$tag_name{genre}\"";
-+              return "--title \"$tag_name{title}\" --track \"$tag_name{track}\" --artist \"$tag_name{artist}\" --album \"$tag_name{album}\" --comment \"$tag_name{comment}\" --year \"$tag_name{year}\" --genre \"$tag_name{genre}\"";
+@@ -2878,7 +2878,7 @@ to turn off default encoder options use --defopts 0. t
+ more control when using the --eopts command.
  
-               }
-         } 
+ defopts is set to 1 by default.  you can also toggle this option in
+-/etc/pacpl/pacpl.conf.
++${SYSCONFDIR}/pacpl/pacpl.conf.
+ 
+ B<--eopts> I<options>
+ 
 @@ -3217,9 +3217,9 @@ show cddb information for current disc.
  
  =item B<sox>(1) B<ffmpeg>(1) B<lame>(1) B<oggenc>(1) B<oggdec>(1)

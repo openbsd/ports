@@ -1,6 +1,6 @@
-$OpenBSD: patch-codecs_conf,v 1.1 2012/06/13 11:43:12 jasper Exp $
---- codecs.conf.orig	Fri May 25 05:45:56 2012
-+++ codecs.conf	Fri May 25 05:48:04 2012
+$OpenBSD: patch-codecs_conf,v 1.2 2013/04/27 11:39:47 sthen Exp $
+--- codecs.conf.orig	Sat Mar  7 18:39:37 2009
++++ codecs.conf	Sat Apr 27 11:35:23 2013
 @@ -5,12 +5,12 @@
  # encoders: faac, ffmpeg
  # decoders: faad, ffmpeg, mplayer
@@ -14,7 +14,7 @@ $OpenBSD: patch-codecs_conf,v 1.1 2012/06/13 11:43:12 jasper Exp $
 -FLAC = flac,flac
 +FLAC = ffmpeg,ffmpeg
  
- # encoders: flac
+ # encoders: flac, flake
  # decoders: flac, mplayer
 @@ -21,8 +21,8 @@ FLA = flac,flac
  # encoders: faac, ffmpeg
