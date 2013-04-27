@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.82 2013/04/16 13:17:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.83 2013/04/27 11:32:47 ajacoutot Exp $
 
 COMMENT=		spreadsheet application for GNOME
 
 GNOME_PROJECT=		gnumeric
-GNOME_VERSION=		1.12.1
-REVISION=		0
+GNOME_VERSION=		1.12.2
 
 CATEGORIES=    		math
 
@@ -15,7 +14,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # sync GOFFICE_API_VERSION with devel/goffice API_VERSION
 # sync GOFFICE_VERSION with devel/goffice GNOME_VERSION
 GOFFICE_API_VERSION=	0.10
-GOFFICE_VERSION=	0.10.1
+GOFFICE_VERSION=	0.10.2
 API_VERSION=		${GNOME_VERSION:R}
 SUBST_VARS=		GNOME_VERSION GOFFICE_GNOME_VERSION GOFFICE_API_VERSION API_VERSION
 
@@ -36,7 +35,7 @@ MODULES=		devel/dconf \
 			devel/gettext \
 			x11/gnome
 
-LIB_DEPENDS=		devel/goffice=${GOFFICE_VERSION}p1
+LIB_DEPENDS=		devel/goffice=${GOFFICE_VERSION}
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
