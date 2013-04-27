@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/18 15:08:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2013/04/27 15:11:57 jasper Exp $
 
 COMMENT=	curses GDB interface
 DISTNAME=	cgdb-0.6.7
+REVISION=	0
 CATEGORIES=	devel
 HOMEPAGE=	http://cgdb.me/
 
