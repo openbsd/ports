@@ -1,6 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/05/22 19:37:04 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/04/27 17:58:26 sthen Exp $
 bin/pdfshuffler
-lib/python${MODPY_VERSION}/site-packages/pdfshuffler-0.5-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/pdfshuffler/
+lib/python${MODPY_VERSION}/site-packages/pdfshuffler-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/pdfshuffler/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pdfshuffler/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pdfshuffler/pdfshuffler.py
+lib/python${MODPY_VERSION}/site-packages/pdfshuffler/pdfshuffler.pyc
+lib/python${MODPY_VERSION}/site-packages/pdfshuffler/pdfshuffler_iconview.py
+lib/python${MODPY_VERSION}/site-packages/pdfshuffler/pdfshuffler_iconview.pyc
 @man man/man1/pdfshuffler.1
 share/applications/pdfshuffler.desktop
 share/locale/cs/LC_MESSAGES/pdfshuffler.mo
@@ -8,9 +15,17 @@ share/locale/de/LC_MESSAGES/pdfshuffler.mo
 share/locale/el/LC_MESSAGES/pdfshuffler.mo
 share/locale/es/LC_MESSAGES/pdfshuffler.mo
 share/locale/fr/LC_MESSAGES/pdfshuffler.mo
+share/locale/hu/LC_MESSAGES/pdfshuffler.mo
 share/locale/it/LC_MESSAGES/pdfshuffler.mo
+share/locale/ja/LC_MESSAGES/pdfshuffler.mo
+share/locale/zh_CN/LC_MESSAGES/pdfshuffler.mo
+share/pdfshuffler/
+share/pdfshuffler/icons/
+share/pdfshuffler/icons/hicolor/
+share/pdfshuffler/icons/hicolor/scalable/
+share/pdfshuffler/icons/hicolor/scalable/pdfshuffler.svg
+share/pdfshuffler/pdfshuffler.ui
 share/pixmaps/
 share/pixmaps/pdfshuffler.png
-share/pixmaps/pdfshuffler.svg
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

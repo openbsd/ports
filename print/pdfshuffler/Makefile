@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2013/04/26 21:27:30 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2013/04/27 17:58:26 sthen Exp $
 
 COMMENT =		merge, split, rotate and crop PDF documents
-DISTNAME =		pdfshuffler-0.5.1
-REVISION =		3
+MODPY_EGG_VERSION =	0.6.0
+DISTNAME =		pdfshuffler-${MODPY_EGG_VERSION}
 CATEGORIES =		print
 
 HOMEPAGE =		http://sourceforge.net/projects/pdfshuffler/
