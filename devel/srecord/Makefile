@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/04/23 13:17:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2013/04/27 15:22:00 jasper Exp $
 
 BROKEN-sparc64= 	needs pthread for reasons yet unknown
 
@@ -20,7 +20,8 @@ MODULES=		devel/gettext
 
 WANTLIB += c gcrypt gpg-error m stdc++
 
-BUILD_DEPENDS=		devel/boost
+BUILD_DEPENDS=		devel/boost \
+			print/ghostscript/gnu
 LIB_DEPENDS=		security/libgcrypt
 
 USE_GROFF=		Yes
