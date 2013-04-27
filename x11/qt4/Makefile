@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2013/03/15 17:01:31 landry Exp $
+# $OpenBSD: Makefile,v 1.111 2013/04/27 15:42:15 sthen Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 SHARED_ONLY =		Yes
@@ -24,12 +24,12 @@ PKGNAME-debug =		qt4-debug-${PKGVERSION}
 FULLPKGNAME-html =	qt4-html-${PKGVERSION}
 FULLPKGPATH-html =	${BASE_PKGPATH},-html
 
-REVISION-main=		6
-REVISION-mysql=		0
-REVISION-postgresql=	0
+REVISION-main=		7
+REVISION-mysql=		1
+REVISION-postgresql=	1
 REVISION-examples=	0
-REVISION-sqlite2=	0
-REVISION-tds=		0
+REVISION-sqlite2=	1
+REVISION-tds=		1
 REVISION-debug=		0
 
 # XXX qmake include parser is bogus
@@ -55,7 +55,7 @@ SHARED_LIBS =	Qt3Support 8.0 \
 		QtScriptTools 0.0 \
 		QtWebKit 2.0 \
 		phonon 4.1 \
-		QtDeclarative 0.0 
+		QtDeclarative 0.0
 
 
 VERSION =	4.8.2
@@ -68,7 +68,7 @@ MASTER_SITES =  http://releases.qt-project.org/qt4/source/
 HOMEPAGE =	http://qt.nokia.com/
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
- 
+
 FLAVORS =	debug
 PSEUDO_FLAVORS =no_examples
 FLAVOR ?=
@@ -85,7 +85,7 @@ MAKE_ENV =	QTDIR="${WRKDIST}" EXTRA_SAMPLES="${EXTRA_SAMPLES}" \
 PORTHOME =	${WRKDIST}
 
 CONFIGURE_STYLE =	simple
-SEPARATE_BUILD = 	simple
+SEPARATE_BUILD =	Yes
 CONFIGURE_ARGS =	-system-libpng -system-libjpeg -system-zlib \
 			-sm -system-sqlite \
 			-v -stl -xrender -fast \
@@ -114,16 +114,16 @@ CONFIGURE_ARGS +=	-examplesdir ${QT_BASEDIR}/examples
 CONFIGURE_ARGS +=	-demosdir ${QT_BASEDIR}/demos
 CONFIGURE_ARGS +=	-no-separate-debug-info
 
-CONFIGURE_ARGS += 	-I${LOCALBASE}/include/mysql -L${LOCALBASE}/lib/mysql \
+CONFIGURE_ARGS +=	-I${LOCALBASE}/include/mysql -L${LOCALBASE}/lib/mysql \
 			-plugin-sql-mysql
-CONFIGURE_ARGS += 	-I${LOCALBASE}/include/postgresql \
-	    		-I${LOCALBASE}/include/postgresql/server \
+CONFIGURE_ARGS +=	-I${LOCALBASE}/include/postgresql \
+			-I${LOCALBASE}/include/postgresql/server \
 			-plugin-sql-psql
 CONFIGURE_ARGS +=	-platform openbsd-g++4
 
 # XXX make sure those libraries gets written to libQtGui.la
 QMAKE_LIBS_GUI =	freetype SM ICE Xi Xrender Xinerama fontconfig Xext X11
-#QMAKE_LIBS_GUI =	
+#QMAKE_LIBS_GUI =
 
 CONFIGURE_ENV =		LOCALBASE=${LOCALBASE} QTDIR="${WRKSRC}" \
 			X11BASE=${X11BASE} QMAKE_LIBS_GUI="${QMAKE_LIBS_GUI:C/^/-l/}"
@@ -132,6 +132,7 @@ CONFIGURE_ENV +=	BOOTSTRAP_MAKE_FLAGS='-j${MAKE_JOBS}'
 .endif
 
 BUILD_DEPENDS +=	x11/dbus
+BUILD_DEPENDS +=	x11/gtk+2
 BUILD_DEPENDS +=	databases/postgresql,-server
 
 # configure checks for cups support; no LIB/RUN_DEPENDS because libcups
@@ -151,7 +152,7 @@ CONFIGURE_ARGS +=-release
 .include <bsd.port.arch.mk>
 
 .if !${BUILD_PACKAGES:M-examples}
-SUBTARGETS = 		sub-tools-bootstrap \
+SUBTARGETS =		sub-tools-bootstrap \
 			sub-moc \
 			sub-rcc \
 			sub-uic \
@@ -196,7 +197,7 @@ RUN_DEPENDS =
 
 commonWANTLIB =		c pthread GL m stdc++
 
-sqlWANTLIB =		m lib/qt4/QtCore>=4 QtSql stdc++
+sqlWANTLIB =		m lib/qt4/QtCore>=4 QtSql stdc++ pthread
 
 RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
@@ -211,20 +212,20 @@ WANTLIB-main =		${commonWANTLIB} jpeg mng \
 			gobject-2.0 gmodule-2.0 gstinterfaces-0.10 \
 			${MODGETTEXT_WANTLIB} glib-2.0 gthread-2.0 \
 			gstaudio-0.10 ICE SM X11>=10 Xext Xi Xinerama \
-			Xrender expat fontconfig freetype png>=2 z \
+			Xrender fontconfig freetype png>=2 z \
 			sqlite3
 
 
 LIB_DEPENDS-mysql =	${BUILD_PKGPATH} \
 			databases/mysql
 WANTLIB-mysql =		${sqlWANTLIB} \
-			crypto ssl pthread z mysqlclient_r
+			crypto ssl z mysqlclient_r
 
 
 LIB_DEPENDS-postgresql =${BUILD_PKGPATH} \
 			databases/postgresql
 WANTLIB-postgresql =	${sqlWANTLIB}  pq
-			
+
 
 LIB_DEPENDS-sqlite2 =	${BUILD_PKGPATH} \
 			databases/sqlite
@@ -268,7 +269,7 @@ NO_TEST =	Yes
 
 PROGRAMS4 =	assistant designer findtr linguist lrelease lupdate moc qmake \
 		qtconfig uic uic3
-PROGRAMS += 	rcc qt3to4 syncqt qdbus
+PROGRAMS +=	rcc qt3to4 syncqt qdbus
 
 
 QMAKE =		${WRKBUILD}/bin/qmake
@@ -293,10 +294,10 @@ post-install:
 	# extra doc
 	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${QT_DOC}
 	# programs
-	${INSTALL_PROGRAM_DIR} ${QT_BINDIR} 
+	${INSTALL_PROGRAM_DIR} ${QT_BINDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/{findtr,syncqt} ${QT_BINDIR}
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/qdoc3 ${QT_BINDIR}
-.for p in ${PROGRAMS4} 
+.for p in ${PROGRAMS4}
 	@ln -sf ${TRUEPREFIX}/lib/qt4/bin/$p ${PREFIX}/bin/$p4
 .endfor
 	@ln -sf assistant ${PREFIX}/lib/qt4/bin/assistant4
