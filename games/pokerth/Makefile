@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 11:07:40 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2013/04/28 08:18:55 ajacoutot Exp $
 
 COMMENT=	texas hold'em poker game with online capabilities
 
@@ -26,8 +26,6 @@ EXTRACT_SUFX=	.tar.bz2
 MODULES=	devel/gettext \
 		x11/qt4
 
-BUILD_DEPENDS=	archivers/gtar
-
 RUN_DEPENDS=	devel/desktop-file-utils
 LIB_DEPENDS=	devel/sdl-mixer \
 		devel/boost \
@@ -45,7 +43,6 @@ MAKE_FLAGS=	QMAKE_CXX=${CXX} \
 		PREFIX=${PREFIX}
 
 FAKE_FLAGS=	INSTALL_ROOT=${DESTDIR}
-TAR=		${LOCALBASE}/bin/gtar
 
 SEPARATE_BUILD=	Yes
 

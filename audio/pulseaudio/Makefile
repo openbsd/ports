@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2013/03/10 22:55:05 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2013/04/28 08:18:55 ajacoutot Exp $
 
 # XXX
 # fix autospawn lock (patch-src_daemon_main_c)
@@ -42,7 +42,6 @@ WANTLIB += glib-2.0 json ltdl m pcre pthread sndfile sndio speexdsp
 WANTLIB += ssl xcb FLAC ogg vorbis vorbisenc
 
 MASTER_SITES=		http://freedesktop.org/software/pulseaudio/releases/
-TAR=			${LOCALBASE}/bin/gtar
 
 MODULES=		devel/gettext \
 			textproc/intltool
@@ -51,8 +50,6 @@ USE_GMAKE=		Yes
 # undefined reference to `lt__PROGRAM__LTX_preloaded_symbols'
 USE_LIBTOOL=		gnu
 LIBTOOL_FLAGS=		--tag=disable-static
-
-BUILD_DEPENDS=		archivers/gtar
 
 # needed for tests
 BUILD_DEPENDS +=	devel/check

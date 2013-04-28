@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/04/01 07:27:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2013/04/28 08:18:55 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -32,12 +32,10 @@ MODULES =		devel/gconf2 \
 
 MODGNOME_DESKTOP_FILE =	Yes
 MODGCONF2_SCHEMAS_DIR =	gpointing-device-settings
-TAR =			${LOCALBASE}/bin/gtar
 
 LIB_DEPENDS =		x11/gtk+2
 RUN_DEPENDS =		x11/gnome/settings-daemon
-BUILD_DEPENDS =		archivers/gtar \
-			x11/gnome/settings-daemon
+BUILD_DEPENDS =		x11/gnome/settings-daemon
 
 LIBTOOL_FLAGS =		--tag=disable-static
 CONFIGURE_STYLE =	gnu

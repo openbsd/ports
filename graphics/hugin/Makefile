@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2013/03/11 11:10:53 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2013/04/28 08:18:55 ajacoutot Exp $
 
 BROKEN-hppa =	run dep on enblend-enfuse which will not build on hppa
 
@@ -10,9 +10,6 @@ COMMENT =		panorama image stitcher
 DISTNAME =		hugin-2011.4.0
 EXTRACT_SUFX =		.tar.bz2
 REVISION =		1
-
-TAR =			${LOCALBASE}/bin/gtar
-BUILD_DEPENDS +=	archivers/gtar
 
 # not needed for releases, but makes RCs/betas easier to work with
 PKGNAME =		${DISTNAME:S/_//:L}

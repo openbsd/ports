@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:46:15 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/04/28 08:18:55 ajacoutot Exp $
 
 # from upstream, removed at next update
 MASTER_SITES0=		https://github.com/FreeRDP/Remmina/commit/
@@ -49,10 +49,6 @@ LIB_DEPENDS=		devel/vte3 \
 
 RUN_DEPENDS=		devel/desktop-file-utils \
 			x11/gtk+2,-guic
-
-# pax_global_header
-TAR=			${LOCALBASE}/bin/gtar
-BUILD_DEPENDS	+=	archivers/gtar
 
 CFLAGS +=		-I${X11BASE}/include -I${LOCALBASE}/include
 

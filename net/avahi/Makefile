@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2013/03/21 08:46:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.90 2013/04/28 08:18:55 ajacoutot Exp $
 
 ONLY_FOR_ARCHS-mono=	${MONO_ARCHS}
 
@@ -24,14 +24,14 @@ PKGNAME-qt3=	avahi-qt3-${V}
 PKGNAME-qt4=	avahi-qt4-${V}
 PKGNAME-ui=	avahi-ui-${V}
 
-REVISION-main=	6
-REVISION-gtk=	3
-REVISION-gtk3=	3
-REVISION-gui=	3
-REVISION-mono=	1
-REVISION-qt3=	1
-REVISION-qt4=	2
-REVISION-ui=	1
+REVISION-main=	7
+REVISION-gtk=	4
+REVISION-gtk3=	4
+REVISION-gui=	4
+REVISION-mono=	2
+REVISION-qt3=	2
+REVISION-qt4=	3
+REVISION-ui=	2
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -61,12 +61,8 @@ MODULES=	devel/gettext \
 BUILD_DEPENDS=	converters/xmltoman \
 		devel/gobject-introspection \
 
-# PaxHeaders
-TAR=		${LOCALBASE}/bin/gtar
-BUILD_DEPENDS += archivers/gtar
-
 WANTLIB-main=	c expat glib-2.0 gobject-2.0 pcre pthread \
-		gthread-2.0 gdbm daemon dbus-1 ffi \
+		gdbm daemon dbus-1 ffi \
 		${MODGETTEXT_WANTLIB}
 LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 		devel/glib2 \
@@ -109,14 +105,14 @@ LIB_DEPENDS-gtk= ${MODGETTEXT_LIB_DEPENDS} \
 		${BUILD_PKGPATH}
 RUN_DEPENDS-gtk= ${MODGETTEXT_RUN_DEPENDS} \
 		${BUILD_PKGPATH},-ui
-WANTLIB-gtk=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
+WANTLIB-gtk=	X11 Xcomposite Xcursor Xdamage Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 cairo dbus-1 \
 		expat fontconfig freetype gdbm gdk-x11-2.0 gthread-2.0 \
 		gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 \
 		gobject-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs xcb z \
 		xcb-render avahi-client avahi-common xcb-shm \
-		avahi-glib ffi harfbuzz icudata icule icuuc \
+		avahi-glib ffi harfbuzz icudata icule icuuc graphite2 \
 		${MODGETTEXT_WANTLIB}
 
 ### -gtk3
@@ -126,7 +122,7 @@ LIB_DEPENDS-gtk3= ${MODGETTEXT_LIB_DEPENDS} \
 		${BUILD_PKGPATH}
 RUN_DEPENDS-gtk3= ${MODGETTEXT_RUN_DEPENDS} \
 		${BUILD_PKGPATH},-ui
-WANTLIB-gtk3 += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB-gtk3 += X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB-gtk3 += Xi Xinerama Xrandr Xrender atk-1.0 avahi-client
 WANTLIB-gtk3 += avahi-common avahi-glib cairo cairo-gobject
 WANTLIB-gtk3 += dbus-1 expat fontconfig freetype gdbm gdk-3 gdk_pixbuf-2.0
@@ -135,7 +131,7 @@ WANTLIB-gtk3 += gtk-3 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-gtk3 += pcre pixman-1 png pthread pthread-stubs xcb xcb-render
 WANTLIB-gtk3 += xcb-shm z ffi ${MODGETTEXT_WANTLIB}
 WANTLIB-gtk3 += ICE SM atk-bridge-2.0 atspi harfbuzz icudata icule
-WANTLIB-gtk3 += icuuc
+WANTLIB-gtk3 += icuuc graphite2
 
 ### -gui
 LIB_DEPENDS-gui= ${MODGETTEXT_LIB_DEPENDS} \
@@ -147,7 +143,7 @@ RUN_DEPENDS-gui= ${MODGETTEXT_RUN_DEPENDS} \
 		x11/dbus-python \
 		devel/py-twisted/web \
 		devel/desktop-file-utils
-WANTLIB-gui += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB-gui += X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB-gui += Xi Xinerama Xrandr Xrender atk-1.0 avahi-client
 WANTLIB-gui += avahi-common avahi-core avahi-glib avahi-ui-gtk3 c
 WANTLIB-gui += cairo cairo-gobject dbus-1 expat fontconfig freetype
@@ -156,7 +152,7 @@ WANTLIB-gui += gobject-2.0 gthread-2.0 gtk-3 m pango-1.0
 WANTLIB-gui += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB-gui += pthread-stubs xcb xcb-render xcb-shm z ffi
 WANTLIB-gui += ICE SM atk-bridge-2.0 atspi harfbuzz icudata icule
-WANTLIB-gui += icuuc
+WANTLIB-gui += icuuc graphite2
 WANTLIB-gui += ${MODGETTEXT_WANTLIB}
 
 ### -ui
@@ -182,7 +178,7 @@ WANTLIB-qt3=	GL ICE SM X11 Xcursor Xext Xfixes Xft Xi \
 		Xinerama Xmu Xrandr Xrender Xt expat fontconfig \
 		freetype jpeg lcms m mng png pthread xcb z \
 		avahi-common stdc++ ${MODQT3_WANTLIB} ${MODGETTEXT_WANTLIB} \
-		Xdamage Xxf86vm drm
+		Xdamage Xxf86vm drm pthread-stubs
 .else
 CONFIGURE_ARGS+= --disable-qt3
 .endif
