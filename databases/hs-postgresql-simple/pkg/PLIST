@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/03/28 19:08:02 kili Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/04/28 22:47:20 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Database/
 lib/ghc/${DISTNAME}/Database/PostgreSQL/
@@ -17,6 +17,13 @@ lib/ghc/${DISTNAME}/Database/PostgreSQL/Simple/FromField.hi
 lib/ghc/${DISTNAME}/Database/PostgreSQL/Simple/FromField.p_hi
 lib/ghc/${DISTNAME}/Database/PostgreSQL/Simple/FromRow.hi
 lib/ghc/${DISTNAME}/Database/PostgreSQL/Simple/FromRow.p_hi
+lib/ghc/${DISTNAME}/Database/PostgreSQL/Simple/HStore/
+lib/ghc/${DISTNAME}/Database/PostgreSQL/Simple/HStore.hi
+lib/ghc/${DISTNAME}/Database/PostgreSQL/Simple/HStore.p_hi
+lib/ghc/${DISTNAME}/Database/PostgreSQL/Simple/HStore/Implementation.hi
+lib/ghc/${DISTNAME}/Database/PostgreSQL/Simple/HStore/Implementation.p_hi
+lib/ghc/${DISTNAME}/Database/PostgreSQL/Simple/HStore/Internal.hi
+lib/ghc/${DISTNAME}/Database/PostgreSQL/Simple/HStore/Internal.p_hi
 lib/ghc/${DISTNAME}/Database/PostgreSQL/Simple/Internal.hi
 lib/ghc/${DISTNAME}/Database/PostgreSQL/Simple/Internal.p_hi
 lib/ghc/${DISTNAME}/Database/PostgreSQL/Simple/LargeObjects.hi
@@ -61,6 +68,7 @@ share/doc/hs-${DISTNAME}/html/Database-PostgreSQL-Simple-BuiltinTypes.html
 share/doc/hs-${DISTNAME}/html/Database-PostgreSQL-Simple-Errors.html
 share/doc/hs-${DISTNAME}/html/Database-PostgreSQL-Simple-FromField.html
 share/doc/hs-${DISTNAME}/html/Database-PostgreSQL-Simple-FromRow.html
+share/doc/hs-${DISTNAME}/html/Database-PostgreSQL-Simple-HStore.html
 share/doc/hs-${DISTNAME}/html/Database-PostgreSQL-Simple-Internal.html
 share/doc/hs-${DISTNAME}/html/Database-PostgreSQL-Simple-LargeObjects.html
 share/doc/hs-${DISTNAME}/html/Database-PostgreSQL-Simple-Notification.html
@@ -84,6 +92,7 @@ share/doc/hs-${DISTNAME}/html/doc-index-D.html
 share/doc/hs-${DISTNAME}/html/doc-index-E.html
 share/doc/hs-${DISTNAME}/html/doc-index-F.html
 share/doc/hs-${DISTNAME}/html/doc-index-G.html
+share/doc/hs-${DISTNAME}/html/doc-index-H.html
 share/doc/hs-${DISTNAME}/html/doc-index-I.html
 share/doc/hs-${DISTNAME}/html/doc-index-L.html
 share/doc/hs-${DISTNAME}/html/doc-index-M.html
@@ -110,6 +119,7 @@ share/doc/hs-${DISTNAME}/html/mini_Database-PostgreSQL-Simple-BuiltinTypes.html
 share/doc/hs-${DISTNAME}/html/mini_Database-PostgreSQL-Simple-Errors.html
 share/doc/hs-${DISTNAME}/html/mini_Database-PostgreSQL-Simple-FromField.html
 share/doc/hs-${DISTNAME}/html/mini_Database-PostgreSQL-Simple-FromRow.html
+share/doc/hs-${DISTNAME}/html/mini_Database-PostgreSQL-Simple-HStore.html
 share/doc/hs-${DISTNAME}/html/mini_Database-PostgreSQL-Simple-Internal.html
 share/doc/hs-${DISTNAME}/html/mini_Database-PostgreSQL-Simple-LargeObjects.html
 share/doc/hs-${DISTNAME}/html/mini_Database-PostgreSQL-Simple-Notification.html
