@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2012/06/27 18:58:25 rpointel Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2013/04/28 00:55:26 fgsch Exp $
 @option no-default-conflict
 @conflict python->=3.2,<3.3
 @pkgpath lang/python3/3.2,-main
@@ -106,12 +106,12 @@ include/python3.2m/ucnhash.h
 include/python3.2m/unicodeobject.h
 include/python3.2m/warnings.h
 include/python3.2m/weakrefobject.h
-lib/libpython3.2m.so
+@comment lib/libpython3.2m.so
 @lib lib/libpython3.2m.so.${LIBpython3.2m_VERSION}
-lib/libpython3.so
+@comment lib/libpython3.so
 lib/pkgconfig/python-3.2.pc
 lib/pkgconfig/python-3.2m.pc
-lib/pkgconfig/python3.pc
+@comment lib/pkgconfig/python3.pc
 lib/python3.2/
 lib/python3.2/LICENSE.txt
 lib/python3.2/__future__.py
@@ -129,6 +129,8 @@ lib/python3.2/__pycache__/_dummy_thread.cpython-32.pyc
 lib/python3.2/__pycache__/_dummy_thread.cpython-32.pyo
 lib/python3.2/__pycache__/_markupbase.cpython-32.pyc
 lib/python3.2/__pycache__/_markupbase.cpython-32.pyo
+lib/python3.2/__pycache__/_osx_support.cpython-32.pyc
+lib/python3.2/__pycache__/_osx_support.cpython-32.pyo
 lib/python3.2/__pycache__/_pyio.cpython-32.pyc
 lib/python3.2/__pycache__/_pyio.cpython-32.pyo
 lib/python3.2/__pycache__/_strptime.cpython-32.pyc
@@ -423,6 +425,7 @@ lib/python3.2/_abcoll.py
 lib/python3.2/_compat_pickle.py
 lib/python3.2/_dummy_thread.py
 lib/python3.2/_markupbase.py
+lib/python3.2/_osx_support.py
 lib/python3.2/_pyio.py
 lib/python3.2/_strptime.py
 lib/python3.2/_threading_local.py
@@ -854,11 +857,10 @@ lib/python3.2/distutils/command/install_scripts.py
 lib/python3.2/distutils/command/register.py
 lib/python3.2/distutils/command/sdist.py
 lib/python3.2/distutils/command/upload.py
-@comment lib/python3.2/distutils/command/wininst-9.0-${MACHINE_ARCH}.exe
 @comment lib/python3.2/distutils/command/wininst-6.0.exe
 @comment lib/python3.2/distutils/command/wininst-7.1.exe
 @comment lib/python3.2/distutils/command/wininst-8.0.exe
-@comment lib/python3.2/distutils/command/wininst-9.0-${MACHINE_ARCH}.exe
+@comment lib/python3.2/distutils/command/wininst-9.0-amd64.exe
 @comment lib/python3.2/distutils/command/wininst-9.0.exe
 lib/python3.2/distutils/config.py
 lib/python3.2/distutils/core.py
@@ -1730,7 +1732,7 @@ lib/python3.2/json/scanner.py
 lib/python3.2/json/tool.py
 lib/python3.2/keyword.py
 lib/python3.2/lib-dynload/
-lib/python3.2/lib-dynload/Python-3.2.3-py3.2.egg-info
+lib/python3.2/lib-dynload/Python-3.2.4-py3.2.egg-info
 lib/python3.2/lib-dynload/_bisect.so
 lib/python3.2/lib-dynload/_codecs_cn.so
 lib/python3.2/lib-dynload/_codecs_hk.so
@@ -1785,9 +1787,9 @@ lib/python3.2/lib-dynload/xxlimited.so
 lib/python3.2/lib-dynload/zlib.so
 lib/python3.2/lib2to3/
 lib/python3.2/lib2to3/Grammar.txt
-lib/python3.2/lib2to3/Grammar3.2.3.final.0.pickle
+lib/python3.2/lib2to3/Grammar3.2.4.final.0.pickle
 lib/python3.2/lib2to3/PatternGrammar.txt
-lib/python3.2/lib2to3/PatternGrammar3.2.3.final.0.pickle
+lib/python3.2/lib2to3/PatternGrammar3.2.4.final.0.pickle
 lib/python3.2/lib2to3/__init__.py
 lib/python3.2/lib2to3/__pycache__/
 lib/python3.2/lib2to3/__pycache__/__init__.cpython-32.pyc
@@ -2533,6 +2535,7 @@ lib/python3.2/xmlrpc/__pycache__/server.cpython-32.pyo
 lib/python3.2/xmlrpc/client.py
 lib/python3.2/xmlrpc/server.py
 lib/python3.2/zipfile.py
+@comment @man man/man1/python3.1
 @man man/man1/python3.2.1
 share/doc/python3.2/
 share/doc/python3.2/CHANGES.OpenBSD

@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST-idle,v 1.3 2011/09/26 19:06:58 nigel Exp $
+@comment $OpenBSD: PLIST-idle,v 1.4 2013/04/28 00:55:26 fgsch Exp $
 @option no-default-conflict
 @conflict python-idle->=3.2,<3.3
 @pkgpath lang/python3/3.2,-idle
-bin/idle3
+@comment bin/idle3
 bin/idle3.2
 lib/python3.2/idlelib/
 lib/python3.2/idlelib/AutoComplete.py

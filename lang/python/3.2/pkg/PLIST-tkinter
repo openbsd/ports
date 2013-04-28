@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tkinter,v 1.3 2011/09/26 19:06:58 nigel Exp $
+@comment $OpenBSD: PLIST-tkinter,v 1.4 2013/04/28 00:55:26 fgsch Exp $
 @option no-default-conflict
 @conflict python-tkinter->=3.2,<3.3
 @pkgpath lang/python3/3.2,-tkinter
@@ -69,10 +69,13 @@ lib/python3.2/tkinter/test/test_tkinter/__pycache__/test_font.cpython-32.pyc
 lib/python3.2/tkinter/test/test_tkinter/__pycache__/test_font.cpython-32.pyo
 lib/python3.2/tkinter/test/test_tkinter/__pycache__/test_loadtk.cpython-32.pyc
 lib/python3.2/tkinter/test/test_tkinter/__pycache__/test_loadtk.cpython-32.pyo
+lib/python3.2/tkinter/test/test_tkinter/__pycache__/test_misc.cpython-32.pyc
+lib/python3.2/tkinter/test/test_tkinter/__pycache__/test_misc.cpython-32.pyo
 lib/python3.2/tkinter/test/test_tkinter/__pycache__/test_text.cpython-32.pyc
 lib/python3.2/tkinter/test/test_tkinter/__pycache__/test_text.cpython-32.pyo
 lib/python3.2/tkinter/test/test_tkinter/test_font.py
 lib/python3.2/tkinter/test/test_tkinter/test_loadtk.py
+lib/python3.2/tkinter/test/test_tkinter/test_misc.py
 lib/python3.2/tkinter/test/test_tkinter/test_text.py
 lib/python3.2/tkinter/test/test_ttk/
 lib/python3.2/tkinter/test/test_ttk/__init__.py

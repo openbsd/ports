@@ -1,7 +1,7 @@
-$OpenBSD: patch-Lib_test_regrtest_py,v 1.1.1.1 2011/09/20 10:51:26 fgsch Exp $
---- Lib/test/regrtest.py.orig	Wed Jun 22 14:13:21 2011
-+++ Lib/test/regrtest.py	Wed Jun 22 14:13:52 2011
-@@ -1433,6 +1433,8 @@ _expectations['freebsd5'] = _expectations['freebsd4']
+$OpenBSD: patch-Lib_test_regrtest_py,v 1.2 2013/04/28 00:55:26 fgsch Exp $
+--- Lib/test/regrtest.py.orig	Sat Apr  6 08:38:37 2013
++++ Lib/test/regrtest.py	Mon Apr 22 17:50:09 2013
+@@ -1587,6 +1587,8 @@ _expectations['freebsd5'] = _expectations['freebsd4']
  _expectations['freebsd6'] = _expectations['freebsd4']
  _expectations['freebsd7'] = _expectations['freebsd4']
  _expectations['freebsd8'] = _expectations['freebsd4']

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.4 2012/06/27 18:58:25 rpointel Exp $
+@comment $OpenBSD: PLIST-tests,v 1.5 2013/04/28 00:55:26 fgsch Exp $
 @option no-default-conflict
 @conflict python-tests->=3.2,<3.3
 @pkgpath lang/python3/3.2,-tests
@@ -44,6 +44,8 @@ lib/python3.2/test/__pycache__/mapping_tests.cpython-32.pyc
 lib/python3.2/test/__pycache__/mapping_tests.cpython-32.pyo
 lib/python3.2/test/__pycache__/mock_socket.cpython-32.pyc
 lib/python3.2/test/__pycache__/mock_socket.cpython-32.pyo
+lib/python3.2/test/__pycache__/mp_fork_bomb.cpython-32.pyc
+lib/python3.2/test/__pycache__/mp_fork_bomb.cpython-32.pyo
 lib/python3.2/test/__pycache__/outstanding_bugs.cpython-32.pyc
 lib/python3.2/test/__pycache__/outstanding_bugs.cpython-32.pyo
 lib/python3.2/test/__pycache__/pickletester.cpython-32.pyc
@@ -68,6 +70,10 @@ lib/python3.2/test/__pycache__/reperf.cpython-32.pyc
 lib/python3.2/test/__pycache__/reperf.cpython-32.pyo
 lib/python3.2/test/__pycache__/sample_doctest.cpython-32.pyc
 lib/python3.2/test/__pycache__/sample_doctest.cpython-32.pyo
+lib/python3.2/test/__pycache__/sample_doctest_no_docstrings.cpython-32.pyc
+lib/python3.2/test/__pycache__/sample_doctest_no_docstrings.cpython-32.pyo
+lib/python3.2/test/__pycache__/sample_doctest_no_doctests.cpython-32.pyc
+lib/python3.2/test/__pycache__/sample_doctest_no_doctests.cpython-32.pyo
 lib/python3.2/test/__pycache__/script_helper.cpython-32.pyc
 lib/python3.2/test/__pycache__/script_helper.cpython-32.pyo
 lib/python3.2/test/__pycache__/seq_tests.cpython-32.pyc
@@ -86,6 +92,8 @@ lib/python3.2/test/__pycache__/test___future__.cpython-32.pyc
 lib/python3.2/test/__pycache__/test___future__.cpython-32.pyo
 lib/python3.2/test/__pycache__/test__locale.cpython-32.pyc
 lib/python3.2/test/__pycache__/test__locale.cpython-32.pyo
+lib/python3.2/test/__pycache__/test__osx_support.cpython-32.pyc
+lib/python3.2/test/__pycache__/test__osx_support.cpython-32.pyo
 lib/python3.2/test/__pycache__/test_abc.cpython-32.pyc
 lib/python3.2/test/__pycache__/test_abc.cpython-32.pyo
 lib/python3.2/test/__pycache__/test_abstract_numbers.cpython-32.pyc
@@ -284,6 +292,8 @@ lib/python3.2/test/__pycache__/test_fcntl.cpython-32.pyc
 lib/python3.2/test/__pycache__/test_fcntl.cpython-32.pyo
 lib/python3.2/test/__pycache__/test_file.cpython-32.pyc
 lib/python3.2/test/__pycache__/test_file.cpython-32.pyo
+lib/python3.2/test/__pycache__/test_file_eintr.cpython-32.pyc
+lib/python3.2/test/__pycache__/test_file_eintr.cpython-32.pyo
 lib/python3.2/test/__pycache__/test_filecmp.cpython-32.pyc
 lib/python3.2/test/__pycache__/test_filecmp.cpython-32.pyo
 lib/python3.2/test/__pycache__/test_fileinput.cpython-32.pyc
@@ -694,6 +704,8 @@ lib/python3.2/test/__pycache__/test_tk.cpython-32.pyc
 lib/python3.2/test/__pycache__/test_tk.cpython-32.pyo
 lib/python3.2/test/__pycache__/test_tokenize.cpython-32.pyc
 lib/python3.2/test/__pycache__/test_tokenize.cpython-32.pyo
+lib/python3.2/test/__pycache__/test_tools.cpython-32.pyc
+lib/python3.2/test/__pycache__/test_tools.cpython-32.pyo
 lib/python3.2/test/__pycache__/test_trace.cpython-32.pyc
 lib/python3.2/test/__pycache__/test_trace.cpython-32.pyo
 lib/python3.2/test/__pycache__/test_traceback.cpython-32.pyc
@@ -1066,6 +1078,8 @@ lib/python3.2/test/json_tests/__pycache__/test_separators.cpython-32.pyc
 lib/python3.2/test/json_tests/__pycache__/test_separators.cpython-32.pyo
 lib/python3.2/test/json_tests/__pycache__/test_speedups.cpython-32.pyc
 lib/python3.2/test/json_tests/__pycache__/test_speedups.cpython-32.pyo
+lib/python3.2/test/json_tests/__pycache__/test_tool.cpython-32.pyc
+lib/python3.2/test/json_tests/__pycache__/test_tool.cpython-32.pyo
 lib/python3.2/test/json_tests/__pycache__/test_unicode.cpython-32.pyc
 lib/python3.2/test/json_tests/__pycache__/test_unicode.cpython-32.pyo
 lib/python3.2/test/json_tests/test_decode.py
@@ -1082,6 +1096,7 @@ lib/python3.2/test/json_tests/test_recursion.py
 lib/python3.2/test/json_tests/test_scanstring.py
 lib/python3.2/test/json_tests/test_separators.py
 lib/python3.2/test/json_tests/test_speedups.py
+lib/python3.2/test/json_tests/test_tool.py
 lib/python3.2/test/json_tests/test_unicode.py
 lib/python3.2/test/keycert.pem
 lib/python3.2/test/keycert2.pem
@@ -1092,6 +1107,7 @@ lib/python3.2/test/mapping_tests.py
 lib/python3.2/test/math_testcases.txt
 lib/python3.2/test/mime.types
 lib/python3.2/test/mock_socket.py
+lib/python3.2/test/mp_fork_bomb.py
 lib/python3.2/test/nokia.pem
 lib/python3.2/test/nullcert.pem
 lib/python3.2/test/outstanding_bugs.py
@@ -1110,10 +1126,22 @@ lib/python3.2/test/regrtest.py
 lib/python3.2/test/relimport.py
 lib/python3.2/test/reperf.py
 lib/python3.2/test/sample_doctest.py
+lib/python3.2/test/sample_doctest_no_docstrings.py
+lib/python3.2/test/sample_doctest_no_doctests.py
 lib/python3.2/test/script_helper.py
 lib/python3.2/test/seq_tests.py
 lib/python3.2/test/sgml_input.html
 lib/python3.2/test/sha256.pem
+lib/python3.2/test/sndhdrdata/
+lib/python3.2/test/sndhdrdata/README
+lib/python3.2/test/sndhdrdata/sndhdr.8svx
+lib/python3.2/test/sndhdrdata/sndhdr.aifc
+lib/python3.2/test/sndhdrdata/sndhdr.aiff
+lib/python3.2/test/sndhdrdata/sndhdr.au
+lib/python3.2/test/sndhdrdata/sndhdr.hcom
+lib/python3.2/test/sndhdrdata/sndhdr.sndt
+lib/python3.2/test/sndhdrdata/sndhdr.voc
+lib/python3.2/test/sndhdrdata/sndhdr.wav
 lib/python3.2/test/sortperf.py
 lib/python3.2/test/ssl_cert.pem
 lib/python3.2/test/ssl_key.pem
@@ -1140,6 +1168,7 @@ lib/python3.2/test/support.py
 lib/python3.2/test/test___all__.py
 lib/python3.2/test/test___future__.py
 lib/python3.2/test/test__locale.py
+lib/python3.2/test/test__osx_support.py
 lib/python3.2/test/test_abc.py
 lib/python3.2/test/test_abstract_numbers.py
 lib/python3.2/test/test_aifc.py
@@ -1244,6 +1273,7 @@ lib/python3.2/test/test_exceptions.py
 lib/python3.2/test/test_extcall.py
 lib/python3.2/test/test_fcntl.py
 lib/python3.2/test/test_file.py
+lib/python3.2/test/test_file_eintr.py
 lib/python3.2/test/test_filecmp.py
 lib/python3.2/test/test_fileinput.py
 lib/python3.2/test/test_fileio.py
@@ -1449,6 +1479,7 @@ lib/python3.2/test/test_timeit.py
 lib/python3.2/test/test_timeout.py
 lib/python3.2/test/test_tk.py
 lib/python3.2/test/test_tokenize.py
+lib/python3.2/test/test_tools.py
 lib/python3.2/test/test_trace.py
 lib/python3.2/test/test_traceback.py
 lib/python3.2/test/test_ttk_guionly.py
@@ -1497,6 +1528,7 @@ lib/python3.2/test/test_zipfile64.py
 lib/python3.2/test/test_zipimport.py
 lib/python3.2/test/test_zipimport_support.py
 lib/python3.2/test/test_zlib.py
+lib/python3.2/test/testbz2_bigmem.bz2
 lib/python3.2/test/testcodec.py
 lib/python3.2/test/testtar.tar
 lib/python3.2/test/tf_inherit_check.py
