@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2013/04/19 18:26:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2013/04/28 07:40:40 ajacoutot Exp $
 
 COMMENT-main=		GNOME desktop meta-package (base installation)
 COMMENT-extra=		GNOME desktop meta-package (full installation)
@@ -9,7 +9,7 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extra=		gnome-extra-${V}
 
-REVISION-main=		0
+REVISION-main=		1
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -21,35 +21,34 @@ RUN_DEPENDS-main +=	x11/gnome/desktop=${V}
 
 # minimal dependencies for a working desktop
 RUN_DEPENDS-main +=	x11/gnome/controlcenter \
-			x11/gnome/eog \
-			x11/gnome/file-roller \
-			x11/gnome/gedit \
 			x11/gnome/keyring \
 			x11/gnome/nautilus \
 			x11/gnome/session \
-			x11/gnome/system-monitor \
 			x11/gnome/terminal
 
 # gnome-classic.session
 RUN_DEPENDS-main +=	x11/gnome/shell-extensions
 
 # gconf2 and polkit are already dependencies and we want to be able to
-# handle system-wide gconf entries.
+# handle system-wide gconf entries
 RUN_DEPENDS-main +=	devel/gconf2,-polkit
 
 # colord and gtk+3 are already dependencies
 RUN_DEPENDS-main +=	graphics/colord-gtk
 
-# GNOME spooler is CUPS (gnome-printers-panel in gnome-control-center),
-# add gtk+3-cups so that gtkprint() can see native CUPS printers.
+# GNOME spooler is CUPS (gnome-printers-panel in gnome-control-center)
+# add gtk+3-cups so that gtkprint() can see native CUPS printers
 RUN_DEPENDS-main +=	x11/gtk+3,-cups
 
-# Add some commonly used utilities.
+# add commonly used utilities
 RUN_DEPENDS-main +=	graphics/evince,-nautilus \
 			x11/gnome/calculator \
+			x11/gnome/eog \
+			x11/gnome/file-roller \
+			x11/gnome/gedit \
 			x11/xdg-user-dirs-gtk
 
-# Former gnome-utils.
+# former gnome-utils
 RUN_DEPENDS-main +=	x11/gnome/baobab \
 			x11/gnome/dictionary \
 			x11/gnome/font-viewer \
@@ -75,6 +74,7 @@ RUN_DEPENDS-main +=	x11/gnome/alacarte \
 			x11/gnome/seahorse-nautilus \
 			x11/gnome/seahorse-sharing \
 			x11/gnome/sushi \
+			x11/gnome/system-monitor \
 			x11/gnome/tweak-tool \
 			x11/gnome/vino \
 			x11/gnome/weather
