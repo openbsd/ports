@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.2 2013/04/10 09:40:02 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.3 2013/04/28 07:07:56 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=697537
 
@@ -47,11 +47,3 @@ https://bugzilla.gnome.org/show_bug.cgi?id=697537
  if test "${ac_with_nautilusdir}" = ""; then
  	ac_with_nautilusdir=`pkg-config --variable=extensiondir libnautilus-extension`
  fi
-@@ -186,6 +204,7 @@ data/icons/32x32/Makefile
- data/icons/48x48/Makefile
- data/gnome-user-share.desktop.in
- data/org.gnome.desktop.file-sharing.gschema.xml.in
-+data/org.gnome.desktop.file-sharing-bluetooth.gschema.xml.in
- po/Makefile.in
- src/Makefile
- help/Makefile
