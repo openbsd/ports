@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/03/11 10:50:00 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2013/04/28 16:34:53 jasper Exp $
 
 COMMENT=        build tool for java applications
 
@@ -20,12 +20,9 @@ MODULES=	java
 MODJAVA_VER=	1.6+
 
 RUN_DEPENDS=	java/javaPathHelper
-BUILD_DEPENDS=	archivers/gtar
 
 NO_BUILD=	Yes
 NO_TEST=	Yes
-
-TAR=		${LOCALBASE}/bin/gtar
 
 ANTHOME=	${PREFIX}/ant
 ANTDOCS=	${PREFIX}/share/doc/java/ant

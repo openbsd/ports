@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 10:50:12 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/04/28 16:34:53 jasper Exp $
 
 COMMENT=		debugger for use with MSP 430 MCUs
 
@@ -16,10 +16,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mspdebug/}
 
 WANTLIB += c pthread readline termcap usb
 
-BUILD_DEPENDS=		archivers/gtar
 LIB_DEPENDS=		devel/libusb-compat
-
-TAR=			${LOCALBASE}/bin/gtar
 
 USE_GMAKE=		Yes
 MAKE_FLAGS=		CC="${CC}" GCC_CFLAGS="" LDFLAGS=""

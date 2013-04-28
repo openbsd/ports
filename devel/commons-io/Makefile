@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 10:50:02 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/04/28 16:34:53 jasper Exp $
 
 COMMENT=	Java library to assist with developing IO functionality
 
@@ -14,13 +14,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${MASTER_SITE_APACHE:=commons/io/source/}
 
-TAR=		${LOCALBASE}/bin/gtar
-
 MODULES=	java
 MODJAVA_VER=	1.6+
 MODJAVA_BUILD=	ant
-
-BUILD_DEPENDS=	archivers/gtar
 
 NO_TEST=	Yes
 
