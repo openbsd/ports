@@ -1,4 +1,4 @@
-# $OpenBSD: erlang.port.mk,v 1.6 2013/03/11 13:01:39 jasper Exp $
+# $OpenBSD: erlang.port.mk,v 1.7 2013/04/28 16:40:42 jasper Exp $
 #
 # Module for Erlang-based ports or modules
 
@@ -34,11 +34,6 @@ ERL_LIBROOT ?=	${PREFIX}/lib/erlang/lib/
 
 # Standard directory into which a module/library gets installed.
 ERL_LIBDIR ?=	${ERL_LIBROOT}${DISTNAME}
-
-# A lot (if not all) of the Erlang modules comes from GitHub, so to ensure the
-# tarballs are extracted correctly, use GNU tar.
-MODERL_BUILD_DEPENDS += archivers/gtar
-TAR ?=			${LOCALBASE}/bin/gtar
 
 MODERL_RUN_DEPENDS +=	lang/erlang
 
