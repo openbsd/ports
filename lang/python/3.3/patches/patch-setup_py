@@ -1,7 +1,16 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2013/04/28 01:29:57 fgsch Exp $
+$OpenBSD: patch-setup_py,v 1.2 2013/04/28 22:42:41 fgsch Exp $
 --- setup.py.orig	Sat Apr  6 08:41:59 2013
-+++ setup.py	Mon Apr 22 18:35:58 2013
-@@ -1631,8 +1631,7 @@ class PyBuildExt(build_ext):
++++ setup.py	Sun Apr 28 17:53:00 2013
+@@ -716,6 +716,8 @@ class PyBuildExt(build_ext):
+                                                      'termcap'):
+                 readline_libs.append('termcap')
+             exts.append( Extension('readline', ['readline.c'],
++                                   extra_compile_args=['-nostdinc'],
++                                   include_dirs=['/usr/include'],
+                                    library_dirs=['/usr/lib/termcap'],
+                                    extra_link_args=readline_extra_link_args,
+                                    libraries=readline_libs) )
+@@ -1631,8 +1633,7 @@ class PyBuildExt(build_ext):
          # The versions with dots are used on Unix, and the versions without
          # dots on Windows, for detection by cygwin.
          tcllib = tklib = tcl_includes = tk_includes = None
