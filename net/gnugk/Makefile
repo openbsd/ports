@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/03/11 11:35:47 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2013/04/28 08:04:27 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -28,10 +28,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=openh323gk/}
 
 BUILD_DEPENDS=	databases/mysql \
 		databases/postgresql
-
-# XXX PaxHeaders
-TAR=		${LOCALBASE}/bin/gtar
-BUILD_DEPENDS +=archivers/gtar
 
 LIB_DEPENDS=	net/h323plus>=1.24.99 \
 		net/net-snmp \

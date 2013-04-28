@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/21 08:45:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2013/04/28 08:06:19 ajacoutot Exp $
 
 COMMENT=	parametrical modeling of 3D humanoid characters
 
@@ -17,12 +17,8 @@ WANTLIB += animorph c drm glut m mhgui png stdc++ xcb z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=makehuman/}
 
-# gtar(1), PaxHeaders
 # gcp(1), see pre-configure
-TAR=		${LOCALBASE}/bin/gtar
-BUILD_DEPENDS=	sysutils/coreutils \
-		archivers/gtar
-
+BUILD_DEPENDS=	sysutils/coreutils
 
 RUN_DEPENDS=	graphics/aqsis
 LIB_DEPENDS=	graphics/mhgui>=0.2
