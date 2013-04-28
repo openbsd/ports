@@ -1,6 +1,6 @@
-$OpenBSD: patch-setup_py,v 1.4 2013/04/13 22:31:42 fgsch Exp $
+$OpenBSD: patch-setup_py,v 1.5 2013/04/28 00:51:34 fgsch Exp $
 --- setup.py.orig	Sat Apr  6 15:02:41 2013
-+++ setup.py	Mon Apr  8 00:01:29 2013
++++ setup.py	Sat Apr 20 18:57:10 2013
 @@ -35,6 +35,11 @@ COMPILED_WITH_PYDEBUG = ('--with-pydebug' in sysconfig
  # This global variable is used to hold the list of modules to be disabled.
  disabled_module_list = []
@@ -66,18 +66,7 @@ $OpenBSD: patch-setup_py,v 1.4 2013/04/13 22:31:42 fgsch Exp $
              data = open(f).read()
              m = re.search(r"#s*define\s+HASHVERSION\s+2\s*", data)
              if m is not None:
-@@ -1547,7 +1555,9 @@ class PyBuildExt(build_ext):
-             libraries = []
- 
-         elif host_platform.startswith('openbsd'):
--            macros = dict()
-+            macros = dict(
-+                HAVE_SEM_OPEN=0
-+            )
-             libraries = []
- 
-         elif host_platform.startswith('netbsd'):
-@@ -1595,6 +1605,9 @@ class PyBuildExt(build_ext):
+@@ -1595,6 +1603,9 @@ class PyBuildExt(build_ext):
                          'freebsd7', 'freebsd8')
              or host_platform.startswith("gnukfreebsd")):
              exts.append( Extension('ossaudiodev', ['ossaudiodev.c']) )
@@ -87,7 +76,7 @@ $OpenBSD: patch-setup_py,v 1.4 2013/04/13 22:31:42 fgsch Exp $
          else:
              missing.append('ossaudiodev')
  
-@@ -1768,7 +1781,7 @@ class PyBuildExt(build_ext):
+@@ -1768,7 +1779,7 @@ class PyBuildExt(build_ext):
          # For 8.4a2, the X11 headers are not included. Rather than include a
          # complicated search, this is a hard-coded path. It could bail out
          # if X11 libs are not found...
@@ -96,7 +85,7 @@ $OpenBSD: patch-setup_py,v 1.4 2013/04/13 22:31:42 fgsch Exp $
          frameworks = ['-framework', 'Tcl', '-framework', 'Tk']
  
          # All existing framework builds of Tcl/Tk don't support 64-bit
-@@ -1817,8 +1830,7 @@ class PyBuildExt(build_ext):
+@@ -1817,8 +1828,7 @@ class PyBuildExt(build_ext):
          # The versions with dots are used on Unix, and the versions without
          # dots on Windows, for detection by cygwin.
          tcllib = tklib = tcl_includes = tk_includes = None
@@ -106,7 +95,7 @@ $OpenBSD: patch-setup_py,v 1.4 2013/04/13 22:31:42 fgsch Exp $
              tklib = self.compiler.find_library_file(lib_dirs,
                                                          'tk' + version)
              tcllib = self.compiler.find_library_file(lib_dirs,
-@@ -1861,17 +1873,9 @@ class PyBuildExt(build_ext):
+@@ -1861,17 +1871,9 @@ class PyBuildExt(build_ext):
          if host_platform == 'sunos5':
              include_dirs.append('/usr/openwin/include')
              added_lib_dirs.append('/usr/openwin/lib')
@@ -127,7 +116,7 @@ $OpenBSD: patch-setup_py,v 1.4 2013/04/13 22:31:42 fgsch Exp $
  
          # If Cygwin, then verify that X is installed before proceeding
          if host_platform == 'cygwin':
-@@ -2178,7 +2182,7 @@ def main():
+@@ -2178,7 +2180,7 @@ def main():
            # Scripts to install
            scripts = ['Tools/scripts/pydoc', 'Tools/scripts/idle',
                       'Tools/scripts/2to3',
