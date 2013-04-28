@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.97 2013/04/13 22:31:42 fgsch Exp $
+# $OpenBSD: Makefile.inc,v 1.98 2013/04/28 00:49:11 fgsch Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -85,8 +85,9 @@ LIB_DEPENDS-gdbm =	databases/gdbm \
 WANTLIB-gdbm =		gdbm>=3 python${VERSION}${LIB_SUFX} c pthread
 RUN_DEPENDS-idle =	${RUN_DEPENDS} \
 			lang/python/${VERSION},-tkinter
-# XXX Tcl/Tk version number handled in patch-setup_py
 MODULES +=		x11/tk
+# Tcl/Tk version needs to be in sync with patch-setup_py's one
+MODTK_VERSION =		8.5
 LIB_DEPENDS-tkinter =	${MODTK_LIB_DEPENDS} \
 			lang/python/${VERSION},-main
 WANTLIB-tkinter =	X11 ${MODTK_WANTLIB} python${VERSION}${LIB_SUFX}
@@ -112,6 +113,8 @@ WANTLIB-main +=	ffi
 
 USE_GROFF =	Yes
 
+AUTOCONF_VERSION ?=	2.69
+
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 # --srcdir is needed for systrace to work correctly
@@ -132,7 +135,7 @@ post-extract:
 	rm -r ${WRKDIST}/Modules/expat
 
 post-patch:
-	${SUBST_CMD} ${WRKSRC}/configure.in
+	${SUBST_CMD} ${WRKSRC}/configure.ac
 
 post-configure:
 	@cd ${WRKSRC} && ${MAKE_PROGRAM} Makefile
