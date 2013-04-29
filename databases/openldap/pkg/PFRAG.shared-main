@@ -1,7 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.2 2011/01/07 10:24:30 pea Exp $
-@lib lib/liblber-2.4.so.${LIBlber-2.4_VERSION}
-@lib lib/liblber.so.${LIBlber_VERSION}
-@lib lib/libldap-2.4.so.${LIBldap-2.4_VERSION}
-@lib lib/libldap.so.${LIBldap_VERSION}
-@lib lib/libldap_r-2.4.so.${LIBldap_r-2.4_VERSION}
-@lib lib/libldap_r.so.${LIBldap_r_VERSION}

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.122 2013/03/21 08:45:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.123 2013/04/29 14:29:56 sthen Exp $
 
 COMMENT-main =		open-source LDAP software (client)
 COMMENT-server =	open-source LDAP software (server)
 
-DISTNAME =		openldap-2.4.33
+DISTNAME =		openldap-2.4.35
 PKGNAME-main =		${DISTNAME:S/-/-client-/}
 PKGNAME-server =	${DISTNAME:S/-/-server-/}
 
@@ -65,11 +65,21 @@ CONFIGURE_ARGS +=	--enable-bdb \
 			--enable-meta \
 			--enable-monitor \
 			--enable-null \
+			--enable-overlays \
 			--enable-passwd \
 			--enable-perl \
-			--enable-shell \
-			--enable-overlays \
-			--disable-mdb
+			--enable-shell
+
+# MDB assumes UBC; see http://www.openldap.org/pub/hyc/mdm-paper.pdf
+# section 3.1, references 17, 18, and 19.
+#
+CONFIGURE_ARGS +=	--disable-mdb
+#
+# however, note (from Howard Chu): "This requirement can be relaxed in
+# the current version of the library. If you create the environment
+# with the MDB_WRITEMAP option then all reads and writes are performed
+# using mmap, so the file buffer cache is irrelevant. Of course then
+# you lose the protection that the read-only map offers."
 
 .if ${FLAVOR:Maci}
 CONFIGURE_ARGS +=	--enable-aci
