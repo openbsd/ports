@@ -1,0 +1,29 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2013/04/29 01:56:43 jsg Exp $
+bin/sauerbraten
+@bin libexec/sauer_client
+@bin libexec/sauer_server
+share/doc/sauerbraten/
+share/doc/sauerbraten/README.html
+share/doc/sauerbraten/config.html
+share/doc/sauerbraten/cube2logo.png
+share/doc/sauerbraten/dev/
+share/doc/sauerbraten/dev/edgespans.gif
+share/doc/sauerbraten/dev/editing1.jpg
+share/doc/sauerbraten/dev/editing2.jpg
+share/doc/sauerbraten/dev/editing3.jpg
+share/doc/sauerbraten/dev/editing4.jpg
+share/doc/sauerbraten/dev/lightmap.png
+share/doc/sauerbraten/dev/readme_developer.txt
+share/doc/sauerbraten/dev/sauerchild.png
+share/doc/sauerbraten/dev/saueredge.png
+share/doc/sauerbraten/dev/saueredge2.png
+share/doc/sauerbraten/dev/sauerlink1b.png
+share/doc/sauerbraten/dev/wikistuff.html
+share/doc/sauerbraten/editing.html
+share/doc/sauerbraten/editref.html
+share/doc/sauerbraten/favicon.ico
+share/doc/sauerbraten/game.html
+share/doc/sauerbraten/history.html
+share/doc/sauerbraten/models.html
+share/doc/sauerbraten/rpg.html
+share/doc/sauerbraten/style.css
