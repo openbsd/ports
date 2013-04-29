@@ -1,0 +1,149 @@
+$OpenBSD: patch-system-install_mk,v 1.1.1.1 2013/04/29 01:50:57 jsg Exp $
+--- system-install.mk.orig	Thu Mar 21 09:21:57 2013
++++ system-install.mk	Fri Apr 12 15:56:44 2013
+@@ -6,7 +6,7 @@ appclient=$(APPCLIENT)
+ appserver=$(APPSERVER)
+ appgamedir=game/$(APPSHORTNAME)
+ 
+-prefix=/usr/local
++prefix=$(TRUEPREFIX)
+ games=
+ gamesbin=/bin
+ bindir=$(DESTDIR)$(prefix)/bin
+@@ -14,7 +14,8 @@ gamesbindir=$(DESTDIR)$(prefix)$(gamesbin)
+ libexecdir=$(DESTDIR)$(prefix)/lib$(games)
+ datadir=$(DESTDIR)$(prefix)/share$(games)
+ docdir=$(DESTDIR)$(prefix)/share/doc
+-mandir=$(DESTDIR)$(prefix)/share/man
++examplesdir=$(DESTDIR)$(prefix)/share/examples
++mandir=$(DESTDIR)$(prefix)/man
+ menudir=$(DESTDIR)$(prefix)/share/applications
+ icondir=$(DESTDIR)$(prefix)/share/icons/hicolor
+ pixmapdir=$(DESTDIR)$(prefix)/share/pixmaps
+@@ -59,7 +60,7 @@ system-install-client: client
+ 	install -m755 $(appclient) $(libexecdir)/$(appname)/$(appname)
+ 	install -m755 install/nix/$(appsrcname).am \
+ 		$(gamesbindir)/$(appname)
+-	sed -e 's,@LIBEXECDIR@,$(patsubst $(DESTDIR)%,%,$(libexecdir)),g' \
++	gsed -e 's,@LIBEXECDIR@,$(patsubst $(DESTDIR)%,%,$(libexecdir)),g' \
+ 		-e 's,@DATADIR@,$(patsubst $(DESTDIR)%,%,$(datadir)),g' \
+ 		-e 's,@DOCDIR@,$(patsubst $(DESTDIR)%,%,$(docdir)),g' \
+ 		-e 's,@APPNAME@,$(appname),g' \
+@@ -77,7 +78,7 @@ system-install-server: server
+ 		$(libexecdir)/$(appname)/$(appname)-server
+ 	install -m755 install/nix/$(appsrcname)-server.am \
+ 		$(gamesbindir)/$(appname)-server
+-	sed -e 's,@LIBEXECDIR@,$(patsubst $(DESTDIR)%,%,$(libexecdir)),g' \
++	gsed -e 's,@LIBEXECDIR@,$(patsubst $(DESTDIR)%,%,$(libexecdir)),g' \
+ 		-e 's,@DATADIR@,$(patsubst $(DESTDIR)%,%,$(datadir)),g' \
+ 		-e 's,@DOCDIR@,$(patsubst $(DESTDIR)%,%,$(docdir)),g' \
+ 		-e 's,@APPNAME@,$(appname),g' \
+@@ -94,21 +95,21 @@ system-install-data:
+ system-install-docs: $(MANPAGES)
+ 	install	-d $(mandir)/man6
+ 	install -d $(docdir)/$(appname)
+-	sed -e 's,@LIBEXECDIR@,$(patsubst $(DESTDIR)%,%,$(libexecdir)),g' \
++	gsed -e 's,@LIBEXECDIR@,$(patsubst $(DESTDIR)%,%,$(libexecdir)),g' \
+ 		-e 's,@DATADIR@,$(patsubst $(DESTDIR)%,%,$(datadir)),g' \
+ 		-e 's,@DOCDIR@,$(patsubst $(DESTDIR)%,%,$(docdir)),g' \
+ 		-e 's,@APPNAME@,$(appname),g' \
+ 		-e 's,@CAPPNAME@,$(cappname),g' \
+-		../doc/man/$(appsrcname).6.am | \
+-		gzip -9 -n -c > $(mandir)/man6/$(appname).6.gz
+-	sed -e 's,@LIBEXECDIR@,$(patsubst $(DESTDIR)%,%,$(libexecdir)),g' \
++		../doc/man/$(appsrcname).6.am \
++		> $(mandir)/man6/$(appname).6
++	gsed -e 's,@LIBEXECDIR@,$(patsubst $(DESTDIR)%,%,$(libexecdir)),g' \
+ 		-e 's,@DATADIR@,$(patsubst $(DESTDIR)%,%,$(datadir)),g' \
+ 		-e 's,@DOCDIR@,$(patsubst $(DESTDIR)%,%,$(docdir)),g' \
+ 		-e 's,@APPNAME@,$(appname),g' \
+ 		-e 's,@CAPPNAME@,$(cappname),g' \
+-		../doc/man/$(appsrcname)-server.6.am | \
+-		gzip -9 -n -c > $(mandir)/man6/$(appname)-server.6.gz
+-	cp -r ../doc/examples $(docdir)/$(appname)/examples
++		../doc/man/$(appsrcname)-server.6.am \
++		> $(mandir)/man6/$(appname)-server.6
++	cp -R ../doc/examples $(examplesdir)/$(appname)
+ 	cp ../doc/guidelines.txt $(docdir)/$(appname)/guidelines.txt
+ 
+ system-install-menus: icons
+@@ -119,7 +120,7 @@ system-install-menus: icons
+ 	install -d $(icondir)/64x64/apps
+ 	install -d $(icondir)/128x128/apps
+ 	install -d $(pixmapdir)
+-	sed -e 's,@LIBEXECDIR@,$(patsubst $(DESTDIR)%,%,$(libexecdir)),g' \
++	gsed -e 's,@LIBEXECDIR@,$(patsubst $(DESTDIR)%,%,$(libexecdir)),g' \
+ 		-e 's,@DATADIR@,$(patsubst $(DESTDIR)%,%,$(datadir)),g' \
+ 		-e 's,@DOCDIR@,$(patsubst $(DESTDIR)%,%,$(docdir)),g' \
+ 		-e 's,@APPNAME@,$(appname),g' \
+@@ -144,47 +145,46 @@ system-install-cube2font: cube2font system-install-cub
+ 
+ system-install-cube2font-docs: ../doc/man/cube2font.1
+ 	install -d $(mandir)/man1
+-	gzip -9 -n -c < ../doc/man/cube2font.1 \
+-		> $(mandir)/man1/cube2font.1.gz
++	install -m644 ../doc/man/cube2font.1 $(mandir)/man1/cube2font.1
+ 
+ system-install: system-install-client system-install-server system-install-data system-install-docs system-install-menus
+ 
+ system-uninstall-client:
+-	@rm -fv $(libexecdir)/$(appname)/$(appname)
+-	@rm -fv $(libexecdir)/$(appname)/data
+-	@rm -fv $(libexecdir)/$(appname)/game
+-	@rm -fv $(gamesbindir)/$(appname)
++	@rm -f $(libexecdir)/$(appname)/$(appname)
++	@rm -f $(libexecdir)/$(appname)/data
++	@rm -f $(libexecdir)/$(appname)/game
++	@rm -f $(gamesbindir)/$(appname)
+ 
+ system-uninstall-server:
+-	@rm -fv $(libexecdir)/$(appname)/$(appname)-server
+-	@rm -fv $(gamesbindir)/$(appname)-server
++	@rm -f $(libexecdir)/$(appname)/$(appname)-server
++	@rm -f $(gamesbindir)/$(appname)-server
+ 
+ system-uninstall-data:
+ 	rm -rf $(datadir)/$(appname)/data
+ 	rm -rf $(datadir)/$(appname)/game
+ 
+ system-uninstall-docs:
+-	@rm -rfv $(docdir)/$(appname)/examples
+-	@rm -fv $(docdir)/$(appname)/guidelines.txt
+-	@rm -fv $(mandir)/man6/$(appname).6.gz
+-	@rm -fv $(mandir)/man6/$(appname)-server.6.gz
++	@rm -rf $(docdir)/$(appname)/examples
++	@rm -f $(docdir)/$(appname)/guidelines.txt
++	@rm -f $(mandir)/man6/$(appname).6
++	@rm -f $(mandir)/man6/$(appname)-server.6
+ 
+ system-uninstall-menus:
+-	@rm -fv $(menudir)/$(appname).desktop
+-	@rm -fv $(icondir)/16x16/apps/$(appname).png
+-	@rm -fv $(icondir)/32x32/apps/$(appname).png
+-	@rm -fv $(icondir)/48x48/apps/$(appname).png
+-	@rm -fv $(icondir)/64x64/apps/$(appname).png
+-	@rm -fv $(icondir)/128x128/apps/$(appname).png
+-	@rm -fv $(pixmapdir)/$(appname).xpm
++	@rm -f $(menudir)/$(appname).desktop
++	@rm -f $(icondir)/16x16/apps/$(appname).png
++	@rm -f $(icondir)/32x32/apps/$(appname).png
++	@rm -f $(icondir)/48x48/apps/$(appname).png
++	@rm -f $(icondir)/64x64/apps/$(appname).png
++	@rm -f $(icondir)/128x128/apps/$(appname).png
++	@rm -f $(pixmapdir)/$(appname).xpm
+ 
+ system-uninstall: system-uninstall-client system-uninstall-server system-uninstall-data system-uninstall-docs system-uninstall-menus
+-	-@rmdir -v $(libexecdir)/$(appname)
+-	-@rmdir -v $(datadir)/$(appname)
+-	-@rmdir -v $(docdir)/$(appname)
++	-@rmdir $(libexecdir)/$(appname)
++	-@rmdir $(datadir)/$(appname)
++	-@rmdir $(docdir)/$(appname)
+ 
+ system-uninstall-cube2font-docs:
+-	@rm -fv $(mandir)/man1/cube2font.1.gz
++	@rm -f $(mandir)/man1/cube2font.1
+ 
+ system-uninstall-cube2font: system-uninstall-cube2font-docs
+-	@rm -fv $(bindir)/bin/cube2font
++	@rm -f $(bindir)/bin/cube2font
