@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2013/03/11 11:46:15 espie Exp $
+# $OpenBSD: Makefile,v 1.106 2013/04/29 10:44:43 espie Exp $
 
 COMMENT-main=		C++ X11 GUI toolkit
 COMMENT-examples=	examples and tutorial for qt3
@@ -18,7 +18,7 @@ PKGNAME-sqlite2=	qt3-sqlite2-${VERSION}
 
 REVISION-mysql= 	4
 REVISION-postgresql= 	4
-REVISION-main= 		6
+REVISION-main= 		7
 REVISION-html= 		1
 REVISION-examples=	1
 REVISION-sqlite2= 	4

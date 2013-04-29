@@ -1,0 +1,70 @@
+$OpenBSD: patch-src_tools_qtextstream_cpp,v 1.1 2013/04/29 10:44:43 espie Exp $
+--- src/tools/qtextstream.cpp.orig	Sat Apr 27 11:30:52 2013
++++ src/tools/qtextstream.cpp	Sat Apr 27 11:35:44 2013
+@@ -192,6 +192,7 @@
+ #define I_SHORT		0x0010
+ #define I_INT		0x0020
+ #define I_LONG		0x0030
++#define I_LONGLONG	0x0040
+ #define I_TYPE_MASK	0x00f0
+ 
+ #define I_BASE_2	QTS::bin
+@@ -1859,7 +1860,8 @@ QTextStream &QTextStream::operator<<( char c )
+     return *this;
+ }
+ 
+-QTextStream &QTextStream::output_int( int format, ulong n, bool neg )
++QTextStream &QTextStream::output_int( int format, unsigned long long n, 
++    bool neg )
+ {
+     static const char hexdigits_lower[] = "0123456789abcdef";
+     static const char hexdigits_upper[] = "0123456789ABCDEF";
+@@ -1876,6 +1878,7 @@ QTextStream &QTextStream::output_int( int format, ulon
+ 		case I_SHORT: len=16; break;
+ 		case I_INT:   len=sizeof(int)*8; break;
+ 		case I_LONG:  len=32; break;
++		case I_LONGLONG: len=64; break;
+ 		default:      len = 0;
+ 	    }
+ 	    p = &buf[74];			// go reverse order
+@@ -1922,7 +1925,7 @@ QTextStream &QTextStream::output_int( int format, ulon
+ 	    p = &buf[74];
+ 	    *p = '\0';
+ 	    if ( neg )
+-		n = (ulong)(-(long)n);
++		n = (unsigned long long)(-(long long)n);
+ 	    do {
+ 		*--p = ((int)(n%10)) + '0';
+ 		n /= 10;
+@@ -2036,6 +2039,31 @@ QTextStream &QTextStream::operator<<( signed long i )
+ QTextStream &QTextStream::operator<<( unsigned long i )
+ {
+     return output_int( I_LONG | I_UNSIGNED, i, FALSE );
++}
++
++/*!
++    \overload
++
++    Writes a \c long long \c int \a i to the stream and returns a reference
++    to the stream.
++*/
++
++QTextStream &QTextStream::operator<<( signed long long i )
++{
++    return output_int( I_LONGLONG | I_SIGNED, i, i < 0 );
++}
++
++
++/*!
++    \overload
++
++    Writes an \c unsigned \c long \c int \a i to the stream and
++    returns a reference to the stream.
++*/
++
++QTextStream &QTextStream::operator<<( unsigned long long i )
++{
++    return output_int( I_LONGLONG | I_UNSIGNED, i, FALSE );
+ }
+ 
+ 

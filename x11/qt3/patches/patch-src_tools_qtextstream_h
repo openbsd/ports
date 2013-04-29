@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_tools_qtextstream_h,v 1.1 2013/04/29 10:44:44 espie Exp $
+--- src/tools/qtextstream.h.orig	Sat Apr 27 11:28:31 2013
++++ src/tools/qtextstream.h	Sat Apr 27 11:30:45 2013
+@@ -99,6 +99,8 @@ class Q_EXPORT QTextStream				// text stream class (pu
+     QTextStream &operator<<( unsigned int );
+     QTextStream &operator<<( signed long );
+     QTextStream &operator<<( unsigned long );
++    QTextStream &operator<<( signed long long );
++    QTextStream &operator<<( unsigned long long );
+     QTextStream &operator<<( float );
+     QTextStream &operator<<( double );
+     QTextStream &operator<<( const char* );
+@@ -152,7 +154,7 @@ class Q_EXPORT QTextStream				// text stream class (pu
+ private:
+     long	input_int();
+     void	init();
+-    QTextStream &output_int( int, ulong, bool );
++    QTextStream &output_int( int, unsigned long long, bool );
+     QIODevice	*dev;
+ 
+     int		fflags;
