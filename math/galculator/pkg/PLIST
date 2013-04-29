@@ -1,21 +1,27 @@
-@comment $OpenBSD: PLIST,v 1.16 2013/03/08 18:33:21 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.17 2013/04/29 14:00:45 naddy Exp $
 @bin bin/galculator
 @man man/man1/galculator.1
 share/applications/galculator.desktop
 share/galculator/
 share/galculator/ui/
 share/galculator/ui/about.ui
-share/galculator/ui/basic_buttons.ui
+share/galculator/ui/basic_buttons_gtk2.ui
+share/galculator/ui/basic_buttons_gtk3.ui
 share/galculator/ui/classic_view.ui
-share/galculator/ui/dispctrl_bottom.ui
-share/galculator/ui/dispctrl_right.ui
-share/galculator/ui/dispctrl_right_vertical.ui
+share/galculator/ui/dispctrl_bottom_gtk2.ui
+share/galculator/ui/dispctrl_bottom_gtk3.ui
+share/galculator/ui/dispctrl_right_gtk2.ui
+share/galculator/ui/dispctrl_right_gtk3.ui
+share/galculator/ui/dispctrl_right_vertical_gtk2.ui
+share/galculator/ui/dispctrl_right_vertical_gtk3.ui
 share/galculator/ui/main_frame.ui
 share/galculator/ui/main_frame_hildon.ui
 share/galculator/ui/paper_view.ui
 share/galculator/ui/prefs-ume.ui
-share/galculator/ui/prefs.ui
-share/galculator/ui/scientific_buttons.ui
+share/galculator/ui/prefs_gtk2.ui
+share/galculator/ui/prefs_gtk3.ui
+share/galculator/ui/scientific_buttons_gtk2.ui
+share/galculator/ui/scientific_buttons_gtk3.ui
 share/icons/
 share/icons/hicolor/
 share/icons/hicolor/48x48/
@@ -36,6 +42,9 @@ share/locale/ja/LC_MESSAGES/galculator.mo
 share/locale/kk_KZ/
 share/locale/kk_KZ/LC_MESSAGES/
 share/locale/kk_KZ/LC_MESSAGES/galculator.mo
+share/locale/lt/
+share/locale/lt/LC_MESSAGES/
+share/locale/lt/LC_MESSAGES/galculator.mo
 share/locale/pl/LC_MESSAGES/galculator.mo
 share/locale/pt/LC_MESSAGES/galculator.mo
 share/locale/pt_BR/LC_MESSAGES/galculator.mo
