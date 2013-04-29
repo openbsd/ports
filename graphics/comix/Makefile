@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.31 2013/04/02 17:26:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2013/04/29 12:57:58 gonzalo Exp $
 
 COMMENT=	gtk2 comic book viewer
 
-DISTNAME=	comix-4.0.3
-REVISION=	13
+DISTNAME=	comix-4.0.4
 
 CATEGORIES=	graphics
+
+HOMEPAGE=	http://comix.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

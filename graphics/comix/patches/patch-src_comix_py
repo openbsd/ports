@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_comix_py,v 1.2 2009/04/15 08:26:28 landry Exp $
+$OpenBSD: patch-src_comix_py,v 1.3 2013/04/29 12:57:58 gonzalo Exp $
 
 point python to where comix modules are installed
 
---- src/comix.py.orig	Sun Feb 22 16:50:40 2009
-+++ src/comix.py	Tue Apr  7 20:35:05 2009
+--- src/comix.py.orig	Fri Mar  6 14:54:01 2009
++++ src/comix.py	Mon Apr 15 16:27:28 2013
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env python
 +#!${MODPY_BIN}
@@ -18,5 +18,5 @@ point python to where comix modules are installed
 +# add path for comix python modules
 +sys.path.insert(0, '${PREFIX}/share/comix/src')
  
- import constants
- import deprecated
+ #Check for PyGTK and PIL dependencies.
+ try:
