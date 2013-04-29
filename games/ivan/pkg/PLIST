@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/02/04 18:56:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/04/29 11:35:29 sthen Exp $
 @mode g+s
 @group games
-bin/ivan
+@bin bin/ivan
 @mode
 @group
 share/ivan/

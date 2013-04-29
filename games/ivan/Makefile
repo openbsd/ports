@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:07:39 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/04/29 11:35:29 sthen Exp $
 
 BROKEN-sparc64=	SIGBUS on sparc64 when starting
 
 COMMENT=	graphical roguelike game
 
 DISTNAME=	ivan-0.50
-REVISION =	1
+REVISION =	2
 CATEGORIES=	games
 
 HOMEPAGE=	http://ivan.sourceforge.net/
