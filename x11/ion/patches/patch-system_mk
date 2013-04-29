@@ -1,16 +1,16 @@
-$OpenBSD: patch-system_mk,v 1.9 2012/07/10 15:22:45 jasper Exp $
---- system.mk.orig	Sun Mar 18 21:32:12 2007
-+++ system.mk	Mon Jul  9 11:22:36 2012
-@@ -7,7 +7,7 @@
- ## Installation paths
- ##
+$OpenBSD: patch-system_mk,v 1.10 2013/04/29 12:40:49 gonzalo Exp $
+--- system.mk.orig	Fri Jan  9 20:20:27 2009
++++ system.mk	Mon Apr  8 11:47:30 2013
+@@ -8,7 +8,7 @@
  
+ # Installation path prefix. Unless you know what you're doing, the default
+ # of /usr/local is likely the correct choice.
 -PREFIX=/usr/local
 +#PREFIX=/usr/local
  
  # Unless you are creating a package conforming to some OS's standards, you
  # probably do not want to modify the following directories:
-@@ -15,15 +15,16 @@ PREFIX=/usr/local
+@@ -16,15 +16,16 @@ PREFIX=/usr/local
  # Main binaries
  BINDIR=$(PREFIX)/bin
  # Configuration .lua files
@@ -30,16 +30,16 @@ $OpenBSD: patch-system_mk,v 1.9 2012/07/10 15:22:45 jasper Exp $
  # Nothing at the moment
  LIBDIR=$(PREFIX)/lib
  # Modules
-@@ -47,7 +48,7 @@ LOCALEDIR=$(PREFIX)/share/locale
- #PRELOAD_MODULES=1
+@@ -53,7 +54,7 @@ LOCALEDIR=$(PREFIX)/share/locale
  
- # Flags to link with libdl.
+ # Flags to link with libdl. Even if PRELOAD_MODULES=1, you may need this
+ # setting (for e.g. Lua, when not instructed by pkg-config).
 -DL_LIBS=-ldl
 +#DL_LIBS=-ldl
  
  
  ##
-@@ -57,24 +58,24 @@ DL_LIBS=-ldl
+@@ -63,17 +64,17 @@ DL_LIBS=-ldl
  # If you have installed Lua 5.1 from the official tarball without changing
  # paths, this should do it.
  LUA_DIR=/usr/local
@@ -56,8 +56,8 @@ $OpenBSD: patch-system_mk,v 1.9 2012/07/10 15:22:45 jasper Exp $
  # what you want.
 -#LUA_LIBS=`pkg-config --libs lua5.1`
 -#LUA_INCLUDES=`pkg-config --cflags lua5.1`
--#LUA=`which lua5.1`
--#LUAC=`which luac5.1`
+-#LUA=/usr/bin/lua5.1
+-#LUAC=/usr/bin/luac5.1
 +LUA_LIBS=`pkg-config --libs lua51`
 +LUA_INCLUDES=`pkg-config --cflags lua51`
 +LUA=`which lua51`
@@ -65,35 +65,42 @@ $OpenBSD: patch-system_mk,v 1.9 2012/07/10 15:22:45 jasper Exp $
  
  
  ##
- ## X libraries, includes and options
+@@ -81,7 +82,7 @@ LUAC=$(LUA_DIR)/bin/luac
  ##
  
+ # Paths
 -X11_PREFIX=/usr/X11R6
 +X11_PREFIX=$(X11BASE)
  # SunOS/Solaris
  #X11_PREFIX=/usr/openwin
  
-@@ -104,7 +105,7 @@ DEFINES += -DCF_XFREE86_TEXTPROP_BUG_WORKAROUND
- # asprintf and vasprintf in the c library. (gnu libc has.)
- # If HAS_SYSTEM_ASPRINTF is not defined, an implementation
- # in sprintf_2.2/ is used.
+@@ -114,6 +115,9 @@ DEFINES += -DCF_XFREE86_TEXTPROP_BUG_WORKAROUND
+ 
+ # On some other systems you may need to explicitly link against libintl.
+ #EXTRA_LIBS += -lintl
++EXTRA_LIBS += -L$(LOCALBASE)/lib -lintl -liconv
++EXTRA_INCLUDES += -I$(LOCALBASE)/include -I/usr/local/include/lua-5.1
++
+ # You may also need to give the location of its headers. The following
+ # should work on Mac OS X (which needs the above option as well) with
+ # macports.
+@@ -127,12 +131,12 @@ DEFINES += -DCF_XFREE86_TEXTPROP_BUG_WORKAROUND
+ # You may uncomment this if you know that your system C libary provides
+ # asprintf and  vasprintf. (GNU libc does.) If HAS_SYSTEM_ASPRINTF is not
+ # defined, an implementation provided in libtu/sprintf_2.2/ is used. 
 -#HAS_SYSTEM_ASPRINTF=1
 +HAS_SYSTEM_ASPRINTF=1
  
- # If you're on an archaic system (such as relatively recent *BSD releases)
- # without even dummy multibyte/widechar and localisation support, you may 
-@@ -112,24 +113,24 @@ DEFINES += -DCF_XFREE86_TEXTPROP_BUG_WORKAROUND
- #DEFINES += -DCF_NO_LOCALE
+ # The following setting is needed with GNU libc for clock_gettime and the
+ # monotonic clock. Other systems may not need it, or may not provide a
+ # monotonic clock at all (which Ion can live with, and usually detect).
+-EXTRA_LIBS += -lrt
++#EXTRA_LIBS += -lrt
  
- # On some other systems you may something like this:
--#EXTRA_LIBS += -lintl
--#EXTRA_INCLUDES +=
-+EXTRA_LIBS += -L$(LOCALBASE)/lib -lintl -liconv
-+EXTRA_INCLUDES += -I$(LOCALBASE)/include -I/usr/local/include/lua-5.1
- 
- 
- ##
- ## C compiler
+ # Cygwin needs this.
+ #DEFINES += -DCF_NO_GETLOADAVG
+@@ -149,16 +153,16 @@ EXTRA_LIBS += -lrt
+ ## C compiler. 
  ##
  
 -CC=gcc
@@ -108,8 +115,8 @@ $OpenBSD: patch-system_mk,v 1.9 2012/07/10 15:22:45 jasper Exp $
 +#	-Wtrigraphs -Wformat -Wchar-subscripts \
 +#	-Wparentheses -pedantic -Wuninitialized
  
--CFLAGS=-g -Os $(WARN) $(DEFINES) $(EXTRA_INCLUDES) $(INCLUDES)
--LDFLAGS=-g -Os $(EXTRA_LIBS) $(LIBS)
+-CFLAGS=-Os $(WARN) $(DEFINES) $(INCLUDES) $(EXTRA_INCLUDES)
+-LDFLAGS=$(LIBS) $(EXTRA_LIBS)
 +CFLAGS+= $(WARN) $(DEFINES) $(EXTRA_INCLUDES) $(INCLUDES)
 +LDFLAGS+= $(EXTRA_LIBS) $(LIBS)
  EXPORT_DYNAMIC=-Xlinker --export-dynamic

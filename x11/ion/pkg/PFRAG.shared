@@ -1,8 +1,7 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2006/10/20 17:36:13 pedro Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.4 2013/04/29 12:40:49 gonzalo Exp $
 lib/ion3/mod/de.so
 lib/ion3/mod/mod_dock.so
 lib/ion3/mod/mod_menu.so
-lib/ion3/mod/mod_mgmtmode.so
 lib/ion3/mod/mod_query.so
 lib/ion3/mod/mod_sm.so
 lib/ion3/mod/mod_sp.so
