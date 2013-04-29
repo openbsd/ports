@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_main_cpp,v 1.1 2013/04/29 11:27:44 landry Exp $
+Fix non-ascii locales
+--- src/main.cpp.orig	Sun Apr 28 10:53:36 2013
++++ src/main.cpp	Sun Apr 28 10:56:42 2013
+@@ -112,7 +112,7 @@ int main(int argc, char *argv[])
+ 	replayData.reset();
+ 
+ 	bindtextdomain("blobwars", LOCALEDIR);
+-	setlocale(LC_ALL, "");
++	bind_textdomain_codeset("blobwars", "UTF-8");
+ 	textdomain("blobwars");
+ 
+ 	atexit(cleanup);
