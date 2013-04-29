@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.6 2013/03/18 21:39:31 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2013/04/29 03:10:24 william Exp $
 
 COMMENT=	robust and small HTTP server and mail proxy server
 
@@ -67,7 +67,7 @@ NAXSIDISTFILES +=	naxsi-core-0.49.tgz:1
 
 .if ${FLAVOR:Mpassenger}
 CONFIGURE_ARGS+=	--add-module=${LOCALBASE}/lib/phusion-passenger19/ext/nginx
-BUILD_DEPENDS+=		www/ruby-passenger,-main,ruby19
+BUILD_DEPENDS+=		ruby-passenger-*|ruby19-passenger-*:www/ruby-passenger,-main
 RUN_DEPENDS+=		ruby-passenger-*|ruby19-passenger-*:www/ruby-passenger,-main
 WANTLIB+=		m pthread stdc++
 .endif
