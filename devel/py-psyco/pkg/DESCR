@@ -1,6 +1,0 @@
-Psyco is a Python extension module which can massively speed up the
-execution of any Python code.
-
-Think of Psyco as a kind of just-in-time (JIT) compiler, a little
-bit like Java's, that emit machine code on the fly instead of
-interpreting your Python program step by step.
