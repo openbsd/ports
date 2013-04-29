@@ -1,0 +1,52 @@
+$OpenBSD: README,v 1.1 2013/04/29 12:10:24 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Due to limitations in OpenBSD, ogle(1) cannot use any audio 5.1 output
+system and will always output stereo sound.
+
+As shipped, ogle has a text-based interface. 
+The ogle_gui, okle, and goggles yield alternative GUI interfaces.
+
+Video acceleration
+==================
+
+To run ogle, you need a graphics card well supported  by Xorg, including
+the Xvideo extension in YUV mode, and a sound card with 48KHz output.
+You can check your display Xvideo capabilities with "xdpyinfo" (presence
+of the Xvideo extension) and "xvinfo" (presence of an adapter with
+correct YUV capabilities).
+
+A positive test will usually look like:
+xvinfo
+    Number of image formats: 4
+	...
+      id: 0x32315659 (YV12)
+        guid: 59563132-0000-0010-8000-00aa00389b71
+	...
+which is the encoding that ogle(1) is looking for.
+
+Alternately, at the expense of more cpu power, ogle can also use SystemV
+shared memory, but the shared memory requirements exceed default GENERIC
+parameters. You will need to crank them up. 
+
+Starting with OpenBSD 3.3, sysctl(8) can modify the shared memory 
+parameters.  A reasonable choice would be:
+
+kern.shminfo.shmall=32768
+
+(to add to /etc/sysctl.conf, or to tweak manually with sysctl).
+
+Overall, ogle needs about 50% cpu for full-framerate decoding on a
+PIII700 with an ATI Mach64 Mobility and an ESS  Maestro 2.
+
+If Xvideo YV12 is not available, ogle roughly needs 120% cpu on the same
+machine in 24 bits mode, and full screen rescale  is not available.
+
+On i386, it's highly recommended to go  to a 16 bits mode, where MMX
+acceleration code exists (requirements go down to 70% cpu). 
+
+If you can, you may also wish to add several `non-standard' modes to
+your xorg.conf. The most useful being 720x576.

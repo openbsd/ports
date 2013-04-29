@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2012/05/03 06:51:25 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.17 2013/04/29 12:10:24 ajacoutot Exp $
 bin/ogle
 include/ogle/
 include/ogle/dvd.h
@@ -7,11 +6,15 @@ include/ogle/dvdbookmarks.h
 include/ogle/dvdcontrol.h
 include/ogle/dvdevents.h
 include/ogle/msgevents.h
+@lib lib/libdvdcontrol.so.${LIBdvdcontrol_VERSION}
+@lib lib/libmsgevents.so.${LIBmsgevents_VERSION}
 lib/ogle/
 lib/ogle/libdvdcontrol.a
 lib/ogle/libdvdcontrol.la
+@lib lib/ogle/libdvdcontrol.so.${LIBdvdcontrol_VERSION}
 lib/ogle/libmsgevents.a
 lib/ogle/libmsgevents.la
+@lib lib/ogle/libmsgevents.so.${LIBmsgevents_VERSION}
 @bin lib/ogle/ogle_ac3_p
 @bin lib/ogle/ogle_audio
 lib/ogle/ogle_audio_debug
@@ -30,6 +33,7 @@ lib/ogle/ogle_nav_debug
 lib/ogle/ogle_vout_debug
 @man man/man1/ogle.1
 @man man/man5/oglerc.5
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/ogle/
 share/ogle/ogle_conf.dtd
 share/ogle/oglerc
