@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2013/03/11 11:35:44 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2013/04/29 06:51:59 brad Exp $
 
 COMMENT=	video player for KDE
 
 VERSION=	0.8.8
 DISTNAME=	kaffeine-${VERSION}
-REVISION=	9
+REVISION=	10
 CATEGORIES=	multimedia x11 x11/kde
 MASTER_SITES=	http://hftom.free.fr/ \
 		${MASTER_SITE_SOURCEFORGE:=kaffeine/}
@@ -17,12 +17,12 @@ HOMEPAGE=	http://kaffeine.sourceforge.net/
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xau Xdmcp Xext Xinerama Xrender Xtst art_lgpl_2
-WANTLIB += c expat fam fontconfig freetype idn jpeg m ogg
-WANTLIB += pcre pcreposix png pthread pthread-stubs rpcsvc stdc++
-WANTLIB += util xcb z kdecore DCOP kdesu kio kdefx kparts kutils
-WANTLIB += kdeprint kdeui kwalletclient khtml kjs vorbis vorbisenc
-WANTLIB += cdio cdio_cdda cdio_paranoia xine
+WANTLIB += DCOP ICE SM X11 Xau Xdmcp Xext Xfixes Xi Xinerama Xrender
+WANTLIB += Xt Xtst art_lgpl_2 avutil c cdio cdio_cdda cdio_paranoia
+WANTLIB += expat fam fontconfig freetype idn kdecore kdefx kdeprint
+WANTLIB += kdesu kdeui khtml kio kjs kparts kutils kwalletclient
+WANTLIB += m ogg pcre pcreposix pthread pthread-stubs stdc++ util
+WANTLIB += vorbis vorbisenc xcb xine z
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+2,-guic
