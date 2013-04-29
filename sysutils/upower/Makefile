@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/04/06 08:48:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2013/04/29 13:34:51 giovanni Exp $
 
 ONLY_FOR_ARCHS =${APM_ARCHS}
 
@@ -8,7 +8,7 @@ DISTNAME =	upower-0.9.20
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	sysutils
 SHARED_LIBS +=  upower-glib               0.0 # 1.2
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	http://upower.freedesktop.org/
 MASTER_SITES =	${HOMEPAGE}/releases/
@@ -31,7 +31,7 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--with-backend=openbsd \
 			--without-idevice
 
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -DENABLE_DEPRECATED" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 # If one of these tools is found at configure stage, it might be used,
