@@ -1,6 +1,6 @@
-$OpenBSD: patch-imported_neon_ne_xml_c,v 1.1 2013/03/27 17:59:31 ajacoutot Exp $
+$OpenBSD: patch-imported_neon_ne_xml_c,v 1.2 2013/04/30 19:56:40 jasper Exp $
 
-CVE-2009-2473
+Security fix for CVE-2009-2473 neon: billion laughs DoS attack
 
 --- imported/neon/ne_xml.c.orig	Tue Feb  9 13:16:14 2010
 +++ imported/neon/ne_xml.c	Wed Mar 27 11:03:38 2013
