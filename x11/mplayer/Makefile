@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.219 2013/04/17 23:03:23 ratchov Exp $
+# $OpenBSD: Makefile,v 1.220 2013/04/30 00:46:56 brad Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,7 +9,7 @@ COMMENT =		movie player supporting many formats
 
 V =			20130214
 FFMPEG_V =		20130319
-REVISION =		2
+REVISION =		3
 
 SUBST_VARS += 		PREFIX CONFDIR
 
@@ -148,14 +148,14 @@ WANTLIB +=	vorbisenc vorbis
 
 CONFIGURE_ENV += LOCALBASE="${LOCALBASE}" TMPDIR="${WRKBUILD}"
 
-# binutils 2.15 does not do SSSE3 for amd64/i386
+# binutils 2.15 does not support SSSE3 / SSE4 for amd64 / i386
 .if ${MACHINE_ARCH:Mamd64} || ${MACHINE_ARCH:Mi386}
 CONFIGURE_ARGS += --enable-runtime-cpudetection
 CONFIGURE_ARGS += --disable-ssse3
 CONFIGURE_ARGS += --disable-sse4
 .endif
 
-# again binutils 2.15 limits what we can do here too
+# binutils 2.15 assembler missing opcode support
 .if ${MACHINE_ARCH:Mpowerpc}
 CONFIGURE_ARGS += --disable-altivec
 CONFIGURE_ARGS += --enable-runtime-cpudetection
@@ -168,7 +168,7 @@ CONFIGURE_ARGS += --disable-decoder=mp3on4float \
 		--disable-decoder=mp3float \
 		--disable-decoder=mp2float \
 		--disable-decoder=vorbis
-# again old binutils...
+# ARM native target code wants eABI ABI
 CONFIGURE_ARGS += --target=generic-openbsd
 .endif
 
