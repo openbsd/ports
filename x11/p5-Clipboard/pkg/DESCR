@@ -1,0 +1,9 @@
+Clipboard allows access to the x11 clipboard from Perl via the
+"Clipboard->copy('string');" and "print Clipboard->paste();" subs
+
+Clipboard also adds a few CLI utilities: 
+clipaccumulate: combine many copies into one big paste.
+clipbrowse: loads a url from the clipboard into a browser.
+clipedit: edits current clipboard
+clipfilter: allows for arbitrary filtering of clipboard.
+clipjoin: removes extra whitespaces from clipboard.

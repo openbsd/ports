@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/30 14:54:46 abieber Exp $
+bin/clipaccumulate
+bin/clipbrowse
+bin/clipedit
+bin/clipfilter
+bin/clipjoin
+${P5SITE}/Clipboard/
+${P5SITE}/Clipboard.pm
+${P5SITE}/Clipboard/MacPasteboard.pm
+${P5SITE}/Clipboard/Win32.pm
+${P5SITE}/Clipboard/Xclip.pm
+@man man/man1/clipaccumulate.1
+@man man/man1/clipbrowse.1
+@man man/man1/clipedit.1
+@man man/man1/clipfilter.1
+@man man/man1/clipjoin.1
+@man man/man3p/Clipboard.3p
