@@ -1,13 +1,18 @@
-$OpenBSD: patch-conf_main_cf,v 1.4 2012/02/20 09:55:49 sthen Exp $
---- conf/main.cf.orig	Tue Dec 18 13:50:25 2007
-+++ conf/main.cf	Wed Mar  9 10:45:45 2011
+$OpenBSD: patch-conf_main_cf,v 1.5 2013/04/30 11:28:02 sthen Exp $
+--- conf/main.cf.orig	Thu Nov 17 18:23:48 2011
++++ conf/main.cf	Mon Apr 29 16:09:56 2013
 @@ -114,6 +114,9 @@ mail_owner = postfix
  #inet_interfaces = $myhostname
  #inet_interfaces = $myhostname, localhost
  
-+# OpenBSD is IPv6-capable - use all available address families.            
-+inet_protocols = all                                                       
++# OpenBSD is IPv6-capable - use all available address families.
++inet_protocols = all
 +
  # The proxy_interfaces parameter specifies the network interface
  # addresses that this mail system receives mail on by way of a
  # proxy or network address translation unit. This setting extends
+@@ -654,4 +657,3 @@ sample_directory =
+ # readme_directory: The location of the Postfix README files.
+ #
+ readme_directory =
+-inet_protocols = ipv4
