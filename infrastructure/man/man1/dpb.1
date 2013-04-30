@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.78 2013/02/04 11:35:27 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.79 2013/04/30 10:22:36 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: February 4 2013 $
+.Dd $Mdocdate: April 30 2013 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -54,7 +54,6 @@ as soon as it can.
 will run with sensible defaults if used without options.
 Note, however, that it will produce logs, lock files, packages, and package
 installations.
-.Pp
 .Nm
 can be restricted to a subset of the tree by giving it
 .Ar pathlist ...
@@ -89,6 +88,12 @@ will pick it up without needing to be stopped and restarted.
 In order to build on a cluster, the ports tree itself should be shared
 through NFS, including distfiles and built packages, but the WRKOBJDIR
 should be local to each machine.
+.Pp
+Also note that logs and locks are managed by the main
+.Nm
+process, which runs locally, and hence those directories do not need to
+be shared on the cluster.
+.Pp
 Option
 .Fl h Ar file
 is used to specify hosts to use, where
@@ -99,10 +104,7 @@ but can be as simple as a list of hosts to use, one host per line
 .Ar STARTUP
 script).
 .Pp
-As
-.Nm
-tends to be run on shared clusters, most filenames will go through some
-control sequence expansions.
+Most filenames will go through some control sequence expansions.
 For instance, the default logdir location can be specified as
 .Pa %p/logs/%a .
 The following sequences are recognized:
@@ -305,12 +307,13 @@ See
 .Fl J
 option.
 .It memory=thr
-Build everything below that wrkdir threshold in
-.Pa /tmp/ports ,
-assuming it is a memory filesystem.
+Build everything below that wrkdir threshold with
+.Ev USE_MFS Ns = Ns Sq Yes ,
+assuming the ports tree has been configured so that
+.Ev WRKOBJDIR_MFS
+points to a memory filesystem.
 .Ar thr
-is the sum, in KBytes, of ports that will be allowed under
-.Pa /tmp .
+is the sum, in KBytes, of ports that will be allowed to build in memory.
 .Nm
 understands suffixes, such as
 .Fl M Ar 2G
@@ -416,6 +419,15 @@ while a port with the
 property is building,
 .Ar junk
 will be postponed.
+.Pp
+Those ports will be marked with a
+.Sq \&!
+in the display, to make it more obvious why junk seems to be ineffective.
+.Pp
+Note that the
+.Sq nojunk
+property is still active for ports in error, in the belief that trivial fixes
+can be made that will allow the port build to finish.
 .It Fl j Ar n
 Number of jobs to run on a single host (defaults to hw.ncpu).
 .It Fl L Ar logdir
@@ -432,8 +444,7 @@ Defaults to
 .Pc .
 Override to keep local, as locks don't really like NFS.
 .It Fl M Ar threshold
-Build ports below the memory threshold under a
-.Xr mfs 8
+Build ports below the memory threshold under a memory
 filesystem, as configured through
 .Ev WRKOBJDIR_MFS
 .Po
@@ -544,6 +555,12 @@ the pkgpath being built,
 .It
 the step currently being run,
 .It
+an optional
+.Sq \&!
+for ports with the
+.Sq unjunk
+property.
+.It
 the pid running that task (note that this is always a pid on the host
 running dpb: for distributed builds, it will be an
 .Xr ssh 1
@@ -605,6 +622,10 @@ list of packages in error, that cannot currently be built.
 .El
 .Pp
 If those two lists are empty, they won't even show up.
+Packages in errors may be followed by a
+.Sq \&!
+if they prevent junk from happening.
+.Pp
 Note that those numbers refer to pkgpaths known to
 .Nm .
 In general, those numbers will be slightly higher than the actual number

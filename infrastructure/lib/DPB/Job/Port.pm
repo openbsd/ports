@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.103 2013/04/22 10:02:22 espie Exp $
+# $OpenBSD: Port.pm,v 1.104 2013/04/30 10:22:37 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -898,7 +898,12 @@ sub pkgpath
 sub name
 {
 	my $self = shift;
-	return $self->{path}."(".$self->{task}{phase}.")";
+	my $n = $self->{path}."(".$self->{task}{phase}.")";
+	if ($self->{nojunk}) {
+		return $n.'!';
+	} else {
+		return $n;
+	}
 }
 
 sub finished_task

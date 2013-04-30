@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.75 2013/04/22 19:34:10 espie Exp $
+# $OpenBSD: Engine.pm,v 1.76 2013/04/30 10:22:36 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -494,6 +494,9 @@ sub errors_string
 		my $s = $e->logname;
 		if (defined $e->{host} && !$e->{host}->is_localhost) {
 			$s .= "(".$e->{host}->name.")";
+		}
+		if ($e->{info}->has_property('nojunk')) {
+			$s .= '!';
 		}
 		push(@l, $s);
 	}
