@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_libtracker-common_tracker-os-dependant-unix_c,v 1.6 2013/04/10 14:30:43 ajacoutot Exp $
+$OpenBSD: patch-src_libtracker-common_tracker-os-dependant-unix_c,v 1.7 2013/04/30 08:35:44 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=697719
+From a5dcf74772ad7800100905d93a11debf67644a38 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Mon, 29 Apr 2013 15:03:36 +0000
+Subject: Implement get_memory_total() on OpenBSD.
 
 --- src/libtracker-common/tracker-os-dependant-unix.c.orig	Thu Mar 14 18:25:30 2013
 +++ src/libtracker-common/tracker-os-dependant-unix.c	Wed Apr 10 15:16:43 2013
@@ -28,15 +31,15 @@ https://bugzilla.gnome.org/show_bug.cgi?id=697719
  		}
  		g_free (contents);
  	}
-+#else
++#else /* OpenBSD */
 +	glong total = 0;
 +	int64_t physmem;
 +	size_t len;
-+	static gint mib[2] = { CTL_HW, HW_PHYSMEM64 };
++	static gint mib[] = { CTL_HW, HW_PHYSMEM64 };
 +
 +	len = sizeof (physmem);
 +
-+	if (sysctl (mib, 2, &physmem, &len, NULL, 0) == -1) {
++	if (sysctl (mib, G_N_ELEMENTS (mib), &physmem, &len, NULL, 0) == -1) {
 +		g_critical ("Couldn't get memory information: %d", errno);
 +	} else {
 +		total = physmem;
