@@ -1,9 +1,11 @@
-$OpenBSD: README-main,v 1.1 2012/11/28 17:45:29 sthen Exp $
+$OpenBSD: README-main,v 1.2 2013/04/30 18:41:50 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
+General configuration
+=====================
 The sample configuration in ${SYSCONFDIR}/squid.conf is a simple version
 with only the most essential options. By default, only RAM-based cache is
 used, un-comment the cache_dir line to enable a persistent disk cache
@@ -22,9 +24,31 @@ of Squid, however in many cases the defaults will suffice.
 The HTML error pages can be easily themed by editing the style-sheet in
 ${SYSCONFDIR}/errorpage.css.
 
+System resource limits
+======================
+The default system resource limits for file-descriptors are insufficient
+for a moderately busy proxy. It may also be necessary to increase the
+memory limits. You can add a service-specific class to /etc/login.conf:
+
+squid:\
+	:datasize=1500M:\
+	:openfiles=4096:\
+	:tc=daemon:
+
+When started by rc.d(8) (i.e. via pkg_scripts in rc.conf.local or from
+"/etc/rc.d/squid start") the appropriately-named login class is used
+automatically.
+
+If you are using /etc/login.conf.db (not usually recommended) then be
+sure to rebuild it.
+
+There is also a kernel limit on the number of open file descriptors,
+sysctl kern.maxfiles. In some circumstances you may also need to raise
+this; if this is required, pay particular attention to testing and
+monitoring your system.
+
 Transparent Proxying with PF
 ============================
-
 To configure a transparent proxy, bind to a specific address in
 ${SYSCONFDIR}/squid/squid.conf, for example:
 
@@ -48,6 +72,5 @@ If the proxy server is running on the same subnet as the clients, the
 return traffic from the proxy will go directly back to them without
 ever hitting the firewall, which means the states will never get updated
 and may fill-up your pflog(4) with blocked attempts. To circumvent this
-the "no state" option needs to be specified for the route-to rule.
-e.g.
+the "no state" option needs to be specified for the route-to rule, e.g.
 pass in quick inet proto tcp to port 80 route-to (vr2 10.77.3.5) no state

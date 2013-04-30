@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2012/11/28 17:45:29 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2013/04/30 18:41:50 sthen Exp $
 @pkgpath www/squid[,ldap][,ntlm][,snmp][,transparent]
 @newgroup _squid:515
 @newuser _squid:515:_squid:daemon:Squid Account:/nonexistent:/sbin/nologin
@@ -8,14 +8,22 @@
 @bin bin/purge
 @bin bin/squidclient
 libexec/squid/
+libexec/squid/basic_db_auth
 @bin libexec/squid/basic_ncsa_auth
 @bin libexec/squid/basic_nis_auth
+libexec/squid/basic_pop3_auth
+@bin libexec/squid/basic_radius_auth
 @bin libexec/squid/cachemgr.cgi
+@bin libexec/squid/digest_edirectory_auth
 @bin libexec/squid/digest_file_auth
 @bin libexec/squid/diskd
+@bin libexec/squid/ext_edirectory_userip_acl
 @bin libexec/squid/ext_file_userip_acl
+libexec/squid/ext_sql_session_acl
+@bin libexec/squid/ext_time_quota_acl
 @bin libexec/squid/ext_unix_group_acl
 libexec/squid/helper-mux.pl
+libexec/squid/log_db_daemon
 @bin libexec/squid/log_file_daemon
 @bin libexec/squid/negotiate_kerberos_auth
 @bin libexec/squid/negotiate_kerberos_auth_test
@@ -23,11 +31,17 @@ libexec/squid/helper-mux.pl
 @bin libexec/squid/url_fake_rewrite
 libexec/squid/url_fake_rewrite.sh
 @man man/man1/squidclient.1
+@man man/man8/basic_db_auth.8
 @man man/man8/basic_ncsa_auth.8
+@man man/man8/basic_radius_auth.8
 @man man/man8/cachemgr.cgi.8
 @man man/man8/digest_file_auth.8
+@man man/man8/ext_edirectory_userip_acl.8
 @man man/man8/ext_file_userip_acl.8
+@man man/man8/ext_sql_session_acl.8
+@man man/man8/ext_time_quota_acl.8
 @man man/man8/ext_unix_group_acl.8
+@man man/man8/log_db_daemon.8
 @man man/man8/negotiate_kerberos_auth.8
 @man man/man8/squid.8
 @bin sbin/squid

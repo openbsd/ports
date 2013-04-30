@@ -1,24 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.5 2013/01/22 14:30:46 sthen Exp $
---- configure.ac.orig	Wed Jan  9 01:42:47 2013
-+++ configure.ac	Tue Jan 22 12:58:39 2013
-@@ -566,6 +566,16 @@ for module in $squid_disk_module_candidates none; do
-               fi
-             fi
-             ;;
-+          openbsd)
-+            if test `echo "$squid_host_os_version" | tr -d .` -lt 52 ; then
-+                AC_MSG_NOTICE(pthread library requires OpenBSD 5.2 or later)
-+                squid_opt_use_diskthreads="no"
-+            else
-+              SQUID_CFLAGS="$SQUID_CFLAGS -D_REENTRANT"
-+              SQUID_CXXFLAGS="$SQUID_CXXFLAGS -D_REENTRANT"
-+              LDFLAGS="$LDFLAGS -lpthread"
-+            fi
-+            ;;
-           solaris)
-             if test "x$GCC" = "xyes" ; then
-               SQUID_CFLAGS="$SQUID_CFLAGS -D_REENTRANT -pthreads"
-@@ -3112,9 +3122,16 @@ if test "x$squid_host_os" = "xmingw" ; then
+$OpenBSD: patch-configure_ac,v 1.6 2013/04/30 18:41:50 sthen Exp $
+--- configure.ac.orig	Sat Apr 27 04:35:47 2013
++++ configure.ac	Sat Apr 27 16:25:56 2013
+@@ -3162,6 +3162,14 @@ if test "x$squid_host_os" = "xmingw" ; then
    ac_cv_func_statfs='yes'
  fi
  
@@ -32,7 +15,4 @@ $OpenBSD: patch-configure_ac,v 1.5 2013/01/22 14:30:46 sthen Exp $
 +
  dnl Check for library functions
  AC_CHECK_FUNCS(\
--	backtrace_symbols_fd \
- 	bcopy \
- 	bswap_16 \
- 	bswap_32 \
+ 	backtrace_symbols_fd \

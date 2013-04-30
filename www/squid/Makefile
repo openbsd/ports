@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.153 2013/04/30 14:05:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.154 2013/04/30 18:41:50 sthen Exp $
 
 MULTI_PACKAGES=	-main -ntlm
 
@@ -9,9 +9,10 @@ COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
 COMMENT-ntlm=	NTLM authentication/ACL support for Squid
 
-V=		3.2.11
+V=		3.3.4
 
 DISTNAME=	squid-$V
+EXTRACT_SUFX=	.tar.bz2
 PKGNAME-main=	squid-$V
 PKGNAME-ldap=	squid-ldap-$V
 PKGNAME-ntlm=	squid-ntlm-$V
@@ -40,10 +41,11 @@ SUBST_VARS=	LOCALSTATEDIR
 PSEUDO_FLAVORS=	no_ldap
 FLAVOR?=
 
-BASIC_AUTH=	NCSA SMB NIS radius
+BASIC_AUTH=	DB NCSA POP3 SMB NIS RADIUS # SASL
 DIGEST_AUTH=	file
-EXTERNAL_ACL=	file_userip session unix_group wbinfo_group
-STOREIO=	aufs ufs diskd #coss rock
+EXTERNAL_ACL=	SQL_session file_userip time_quota session unix_group \
+		wbinfo_group # kerberos_ldap_group (requires sasl)
+STOREIO=	aufs ufs diskd # coss rock
 
 SEPARATE_BUILD=	Yes
 AUTOCONF_VERSION= 2.68
@@ -72,7 +74,7 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--enable-auth-basic="${BASIC_AUTH}" \
 		--enable-auth-digest="${DIGEST_AUTH}" \
 		--enable-auth-negotiate="kerberos" \
-		--enable-auth-ntlm="fake smb_lm" \
+		--enable-auth-ntlm="fake negotiate_wrapper smb_lm" \
 		--enable-delay-pools \
 		--enable-external-acl-helpers="${EXTERNAL_ACL}" \
 		--enable-follow-x-forwarded-for \
@@ -107,8 +109,8 @@ TEST_DEPENDS= devel/cppunit
 .if !${FLAVOR:Mno_ldap}
 MULTI_PACKAGES+= -ldap
 BASIC_AUTH+=	LDAP
-DIGEST_AUTH+=	LDAP
-EXTERNAL_ACL+=	LDAP_group
+DIGEST_AUTH+=	LDAP eDirectory
+EXTERNAL_ACL+=	LDAP_group eDirectory_userip
 RUN_DEPENDS-ldap= ${BASE_PKGPATH}
 LIB_DEPENDS-ldap= ${LIB_DEPENDS} databases/openldap
 WANTLIB-ldap +=	${WANTLIB} asn1 com_err crypto gssapi krb5
