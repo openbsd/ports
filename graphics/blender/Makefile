@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2013/03/11 11:10:51 espie Exp $
+# $OpenBSD: Makefile,v 1.50 2013/04/30 10:18:42 nigel Exp $
 
 COMMENT =	3D creation software
 BROKEN-sparc64 = error: cast from 'ccl::uchar*' to 'CUdeviceptr' loses precision
@@ -24,8 +24,7 @@ MODULES =	devel/cmake \
 		devel/gettext
 MODPY_VERSION = ${MODPY_DEFAULT_VERSION_3}
 
-CONFIGURE_ARGS =	-DPYTHON_LIBRARY="${LOCALBASE}/lib/libpython${MODPY_VERSION}m.so" \
-			-DPYTHON_INCLUDE_DIR="${MODPY_INCDIR}" \
+CONFIGURE_ARGS =	-DPYTHON_INCLUDE_DIR="${MODPY_INCDIR}" \
 			-DPYTHON_VERSION=${MODPY_VERSION} \
 			-DWITH_CODEC_FFMPEG=ON
 
