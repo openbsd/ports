@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/29 14:22:32 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2013/04/30 17:27:34 bcallah Exp $
 
 COMMENT =	simple, fast GTK-based text editor
 DISTNAME =	tpad-4.7.6
+REVISION =	0
 CATEGORIES =	editors x11
 
 HOMEPAGE =	https://launchpad.net/tpad-project/

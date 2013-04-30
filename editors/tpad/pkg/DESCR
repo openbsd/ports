@@ -1,17 +1,5 @@
-Tpad was designed to be simple, fast, and easy to use.
+Tpad is a simple, fast, and easy to use GTK-based text editor that is
+intuitive for new users.
 
-We have lots of great text editors in the world. On one end of the
-spectrum we have programs like gvim that are fast, feature loaded,
-versatile and for users who are experienced with them they are easy to
-use. Not so much for the rest of us. The problem: the number of features
-can be overwhelming, making documentation difficult for newer/less
-sophisticated users. They also tend to behave in ways that these users
-do not expect. They are not intuitive for such users.
-
-Then we have programs like the current gedit. Lots of features, plug-ins
-and they behave in an intuitive manner. The problem: they are slow,
-buggy, bloated and unstable.
-
-The goal of Tpad: use GTK to create a text editor that is intuitive for
-new users (easy to use) that is also fast and stable. We want all the
-core features without the bloat.
+Features include automatic spell checking and parentheses and braces
+highlighting.
