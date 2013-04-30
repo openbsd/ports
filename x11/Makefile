@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.512 2013/03/30 12:22:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.513 2013/04/30 14:57:27 abieber Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -167,6 +167,7 @@
      SUBDIR += openmotif
      SUBDIR += oroborus
      SUBDIR += osd_clock
+     SUBDIR += p5-Clipboard
      SUBDIR += p5-Gtk2
      SUBDIR += p5-Gtk2-Ex-FormFactory
      SUBDIR += p5-Gtk2-Ex-PodViewer
