@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/21 03:30:08 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2013/05/01 19:31:25 naddy Exp $
 
 COMMENT =		vertical shoot-em-up with nontraditional elements
 
 DISTNAME =		garden-1.0.8
+REVISION =		0
 
 CATEGORIES =		games
 
@@ -16,6 +17,7 @@ WANTLIB += alleg c m pthread sndio xcb
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=garden/}
 
+BUILD_DEPENDS =		devel/desktop-file-utils
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+2,-guic
 LIB_DEPENDS =		games/allegro
