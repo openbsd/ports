@@ -1,6 +1,10 @@
-$OpenBSD: patch-src_libtracker-sparql-backend_tracker-backend_vala,v 1.1 2013/05/01 06:57:50 ajacoutot Exp $
+$OpenBSD: patch-src_libtracker-sparql-backend_tracker-backend_vala,v 1.2 2013/05/01 08:48:36 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=697316
+From b52dd1f97180575497a576b289bd5a1af7573b12 Mon Sep 17 00:00:00 2001
+From: Martyn Russell <martyn@lanedo.com>
+Date: Tue, 30 Apr 2013 19:38:39 +0000
+Subject: libtracker-sparql-backend: Fix connection singleton mutex issue
+
 XXX rm post-patch when this patch is removed
 
 --- src/libtracker-sparql-backend/tracker-backend.vala.orig	Thu Mar 14 18:25:30 2013
