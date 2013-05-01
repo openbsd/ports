@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.15 2013/04/27 15:50:39 stsp Exp $
+$OpenBSD: README,v 1.16 2013/05/01 07:16:15 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -11,7 +11,7 @@ Post-installation instructions
 ==============================
 With Apache, AllowOverride settings are required on the ${INSTDIR}
 directory. You can configure this as follows:
-    # ln -sf ${PREFIX}/conf/modules.sample/owncloud.conf ${PREFIX}/conf/modules
+    # ln -sf /var/www/conf/modules.sample/owncloud.conf /var/www/conf/modules
 
 "allow_url_fopen" needs to be enabled in PHP using _one_ of the
 following methods:
