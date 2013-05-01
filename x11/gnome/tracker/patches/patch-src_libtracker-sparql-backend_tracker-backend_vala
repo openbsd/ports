@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_libtracker-sparql-backend_tracker-backend_vala,v 1.1 2013/05/01 06:57:50 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=697316
+XXX rm post-patch when this patch is removed
+
+--- src/libtracker-sparql-backend/tracker-backend.vala.orig	Thu Mar 14 18:25:30 2013
++++ src/libtracker-sparql-backend/tracker-backend.vala	Wed May  1 08:48:30 2013
+@@ -209,7 +209,7 @@ class Tracker.Sparql.Backend : Connection {
+ 
+ 	static weak Connection? singleton;
+ 	static bool log_initialized;
+-	static Mutex door = Mutex ();
++	static Mutex door;
+ 
+ 	static new Connection get (Cancellable? cancellable = null) throws Sparql.Error, IOError, DBusError, SpawnError {
+ 		door.lock ();

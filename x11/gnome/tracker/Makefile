@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.141 2013/04/30 08:35:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.142 2013/05/01 06:57:50 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		powerful desktop search tool and indexer
 
 GNOME_PROJECT=		tracker
 GNOME_VERSION=		0.16.0
-REVISION=		6
+REVISION=		7
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker.
@@ -120,6 +120,10 @@ CONFIGURE_ARGS +=	--disable-unit-tests
 MODGNOME_LDFLAGS=	-Wl,-rpath,${TRUEPREFIX}/lib/tracker-${MAJ_V}
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/meta-tracker/
+
+# XXX rm when patch-src_libtracker-sparql-backend_tracker-backend_vala is removed
+post-patch:
+	find ${WRKSRC} -name '*_vala.stamp' -exec rm {} \;
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/tracker-needle/tracker-utils.vala
