@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+# $OpenBSD: cfengine.rc,v 1.1 2013/05/01 21:09:23 sthen Exp $
+
+# "meta" script running the following rc.d(8) scripts with the given argument
+
+_pkg_scripts="cf_execd cf_monitord"
+
+if [ "$1" = stop ]; then
+        for _i in ${_pkg_scripts}; do _l="${_i} ${_l}"; done
+        _pkg_scripts=${_l% }
+fi
+
+for _i in ${_pkg_scripts}; do ${RCDIR}/${_i} $1; done

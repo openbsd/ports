@@ -1,0 +1,73 @@
+$OpenBSD: README,v 1.1 2013/05/01 21:09:23 sthen Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+This is a brief quick-start guide. For more information, see the
+documentation:
+
+	https://cfengine.com/manuals/cf3-tutorial
+	https://cfengine.com/manuals/cf3-reference
+	https://cfengine.com/manuals/cf3-quickstart
+
+Configuring a policy hub
+========================
+To setup a policy hub (cfengine "server"), or to setup a stand-alone
+machine fetching policy from itself, perform the following steps as root.
+
+Create a key-pair, necessary directories, and copy the sample configuration:
+
+    # cf-key
+    # cp -pR ${LOCALBASE}/share/examples/cfengine/CoreBase/* \
+        /var/cfengine/masterfiles/
+
+Edit the files you have just copied as appropriate. You will certainly
+need to change the domain and probably acl here:
+
+    # $EDITOR /var/cfengine/masterfiles/def.cf
+
+Bootstrap the server, using its own IP address:
+
+    # cf-agent --bootstrap --policy-server <own IP>
+
+To start the services at boot, add the following to /etc/rc.conf.local:
+
+    pkg_scripts="${pkg_scripts} cf_serverd cfengine"
+
+Configuring client machines
+===========================
+To setup a client, fetching policy from a hub configured as above,
+perform the following steps as root.
+
+Create a key-pair and necessary directories:
+
+    # cf-key
+
+Bootstrap the client:
+
+    # cf-agent --bootstrap --policy-server <hub IP>
+
+For normal operation, cf-execd(8) and cf-monitord(8) should be running -
+to configure this at boot, add the following line to /etc/rc.conf.local:
+
+    pkg_scripts="${pkg_scripts} cfengine"
+
+Resource limits
+===============
+If cf-report(8) fails with a "Too many open files" message, raise your
+resource limits. This can be done temporarily in your shell (in ksh(1)
+you might use "ulimit -n 256"). For a more permanent change, increase
+the openfiles limits for your user's class in /etc/login.conf; this
+takes effect at login.
+
+Notable changes from cfengine community packages
+================================================
+The standard packages from cfengine.com have their programs
+dynamically-linked to libraries in /var/cfengine/lib, but the OpenBSD
+packages are dynamically-linked to libraries in ${LOCALBASE}. As a
+result, some of the self-repair functionality is not available.
+
+As per package(5) standards, the program files are installed under
+${LOCALBASE}/sbin; courtesy symlinks are provided in /var/cfengine/bin
+for compatibility with standard documentation.

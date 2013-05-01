@@ -1,59 +1,330 @@
-@comment $OpenBSD: PLIST,v 1.12 2009/09/01 14:25:15 okan Exp $
-@info info/cfengine-Reference.info
-@info info/cfengine-Tutorial.info
-lib/libcfengine.a
-lib/libcfengine.la
-@man man/man8/cfagent.8
-@man man/man8/cfengine.8
-@man man/man8/cfenvd.8
-@man man/man8/cfenvgraph.8
-@man man/man8/cfetoolcheck.8
-@man man/man8/cfetoolcreate.8
-@man man/man8/cfetooldump.8
-@man man/man8/cfetoolgraph.8
-@man man/man8/cfetoolimport.8
-@man man/man8/cfetoolinfo.8
-@man man/man8/cfetoolupdate.8
-@man man/man8/cfexecd.8
-@man man/man8/cfkey.8
-@man man/man8/cfrun.8
-@man man/man8/cfservd.8
-@man man/man8/cfshow.8
-@bin sbin/cfagent
-sbin/cfdoc
-@bin sbin/cfenvd
-@bin sbin/cfenvgraph
-@bin sbin/cfetool
-@bin sbin/cfetoolgraph
-@bin sbin/cfexecd
-@bin sbin/cfkey
-@bin sbin/cfrun
-@bin sbin/cfservd
-@bin sbin/cfshow
-share/cfengine/
-share/cfengine/ChangeLog
-share/cfengine/INSTALL
-share/cfengine/NEWS
-share/cfengine/README
-share/cfengine/cfengine.el
+@comment $OpenBSD: PLIST,v 1.13 2013/05/01 21:09:23 sthen Exp $
+lib/cfengine/
+lib/cfengine/libpromises.la
+@lib lib/cfengine/libpromises.so.${LIBpromises_VERSION}
+@man man/man8/cf-agent.8
+@man man/man8/cf-execd.8
+@man man/man8/cf-key.8
+@man man/man8/cf-monitord.8
+@man man/man8/cf-promises.8
+@man man/man8/cf-report.8
+@man man/man8/cf-runagent.8
+@man man/man8/cf-serverd.8
+@bin sbin/cf-agent
+@bin sbin/cf-execd
+@bin sbin/cf-key
+@bin sbin/cf-monitord
+@bin sbin/cf-promises
+@bin sbin/cf-report
+@bin sbin/cf-runagent
+@bin sbin/cf-serverd
+share/doc/cfengine/
+share/doc/cfengine/ChangeLog
+share/doc/cfengine/README
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/cfengine/
-share/examples/cfengine/cf.chflags.example
-share/examples/cfengine/cf.freebsd.example
-share/examples/cfengine/cf.ftp.example
-share/examples/cfengine/cf.groups.example
-share/examples/cfengine/cf.linux.example
-share/examples/cfengine/cf.main.example
-share/examples/cfengine/cf.motd.example
-share/examples/cfengine/cf.preconf.example
-share/examples/cfengine/cf.services.example
-share/examples/cfengine/cf.site.example
-share/examples/cfengine/cf.solaris.example
-share/examples/cfengine/cf.sun4.example
-share/examples/cfengine/cf.users.example
-share/examples/cfengine/cfagent.conf-advanced.example
-share/examples/cfengine/cfagent.conf.example
-share/examples/cfengine/cfrc.example
-share/examples/cfengine/cfrun.hosts.example
-share/examples/cfengine/cfservd.conf.example
-share/examples/cfengine/update.conf.example
-@extraunexec rm -fr /var/cfengine
+share/examples/cfengine/CoreBase/
+share/examples/cfengine/CoreBase/cf-sketch-runfile.cf
+share/examples/cfengine/CoreBase/controls/
+share/examples/cfengine/CoreBase/controls/cf_agent.cf
+share/examples/cfengine/CoreBase/controls/cf_execd.cf
+share/examples/cfengine/CoreBase/controls/cf_monitord.cf
+share/examples/cfengine/CoreBase/controls/cf_report.cf
+share/examples/cfengine/CoreBase/controls/cf_runagent.cf
+share/examples/cfengine/CoreBase/controls/cf_serverd.cf
+share/examples/cfengine/CoreBase/def.cf
+share/examples/cfengine/CoreBase/libraries/
+share/examples/cfengine/CoreBase/libraries/cfengine_stdlib.cf
+share/examples/cfengine/CoreBase/promises.cf
+share/examples/cfengine/CoreBase/services/
+share/examples/cfengine/CoreBase/services/init_msg.cf
+share/examples/cfengine/CoreBase/update.cf
+share/examples/cfengine/active_directory.cf
+share/examples/cfengine/app_baseline.cf
+share/examples/cfengine/guest_environment_kvm.cf
+share/examples/cfengine/hostswithclass.cf
+share/examples/cfengine/motd.cf
+share/examples/cfengine/package_windows_feature.cf
+share/examples/cfengine/promise_knowledge.cf
+share/examples/cfengine/service_catalogue.cf
+share/examples/cfengine/service_catalogue_separate.cf
+share/examples/cfengine/sql_table_structure.cf
+share/examples/cfengine/unit_abort.cf
+share/examples/cfengine/unit_accessed_before.cf
+share/examples/cfengine/unit_accumulated_time.cf
+share/examples/cfengine/unit_acl.cf
+share/examples/cfengine/unit_acl_generic.cf
+share/examples/cfengine/unit_acl_ntfs.cf
+share/examples/cfengine/unit_acl_secret.cf
+share/examples/cfengine/unit_activedirectory_listusers.cf
+share/examples/cfengine/unit_activedirectory_showuser.cf
+share/examples/cfengine/unit_ago.cf
+share/examples/cfengine/unit_arrays.cf
+share/examples/cfengine/unit_backreferences_files.cf
+share/examples/cfengine/unit_badpromise.cf
+share/examples/cfengine/unit_badtype.cf
+share/examples/cfengine/unit_bsdflags.cf
+share/examples/cfengine/unit_bundle_return_values.cf
+share/examples/cfengine/unit_cf2_integration.cf
+share/examples/cfengine/unit_change_detect.cf
+share/examples/cfengine/unit_changedbefore.cf
+share/examples/cfengine/unit_chdir.cf
+share/examples/cfengine/unit_classes_global.cf
+share/examples/cfengine/unit_classmatch.cf
+share/examples/cfengine/unit_classvar_convergence.cf
+share/examples/cfengine/unit_commands.cf
+share/examples/cfengine/unit_compare.cf
+share/examples/cfengine/unit_control_expand.cf
+share/examples/cfengine/unit_controlclasses.cf
+share/examples/cfengine/unit_copy.cf
+share/examples/cfengine/unit_copy_classes.cf
+share/examples/cfengine/unit_copy_copbl.cf
+share/examples/cfengine/unit_copy_edit.cf
+share/examples/cfengine/unit_copydir_copbl.cf
+share/examples/cfengine/unit_copylinks.cf
+share/examples/cfengine/unit_countclassesmatching.cf
+share/examples/cfengine/unit_countlinesmatching.cf
+share/examples/cfengine/unit_create_filedir.cf
+share/examples/cfengine/unit_createdb.cf
+share/examples/cfengine/unit_customize_by_named_list.cf
+share/examples/cfengine/unit_defaults.cf
+share/examples/cfengine/unit_defaults2.cf
+share/examples/cfengine/unit_defaults3.cf
+share/examples/cfengine/unit_definitions.cf
+share/examples/cfengine/unit_deletelines.cf
+share/examples/cfengine/unit_depends_on.cf
+share/examples/cfengine/unit_depends_on2.cf
+share/examples/cfengine/unit_disable.cf
+share/examples/cfengine/unit_disable_and_rotate_files.cf
+share/examples/cfengine/unit_diskfree.cf
+share/examples/cfengine/unit_dollar.cf
+share/examples/cfengine/unit_edit_column_files.cf
+share/examples/cfengine/unit_edit_comment_lines.cf
+share/examples/cfengine/unit_edit_deletenotmatch.cf
+share/examples/cfengine/unit_edit_insert_fuzzylines.cf
+share/examples/cfengine/unit_edit_insert_lines.cf
+share/examples/cfengine/unit_edit_insert_lines_silly.cf
+share/examples/cfengine/unit_edit_passwd_file.cf
+share/examples/cfengine/unit_edit_passwd_file_basic.cf
+share/examples/cfengine/unit_edit_replace_string.cf
+share/examples/cfengine/unit_edit_sectioned_file.cf
+share/examples/cfengine/unit_edit_setvar.cf
+share/examples/cfengine/unit_edit_template.cf
+share/examples/cfengine/unit_edit_triggerclass.cf
+share/examples/cfengine/unit_env.cf
+share/examples/cfengine/unit_epimenides.cf
+share/examples/cfengine/unit_escape.cf
+share/examples/cfengine/unit_exec_args.cf
+share/examples/cfengine/unit_exec_in_sequence.cf
+share/examples/cfengine/unit_execd.cf
+share/examples/cfengine/unit_execresult.cf
+share/examples/cfengine/unit_expand.cf
+share/examples/cfengine/unit_failedcommand.cf
+share/examples/cfengine/unit_failsafe.cf
+share/examples/cfengine/unit_file_change_detection.cf
+share/examples/cfengine/unit_file_owner_list_template.cf
+share/examples/cfengine/unit_fileexists.cf
+share/examples/cfengine/unit_filenames.cf
+share/examples/cfengine/unit_fileperms.cf
+share/examples/cfengine/unit_filesexist.cf
+share/examples/cfengine/unit_filesexist2.cf
+share/examples/cfengine/unit_filesize.cf
+share/examples/cfengine/unit_fix_names.cf
+share/examples/cfengine/unit_getenv.cf
+share/examples/cfengine/unit_getfields.cf
+share/examples/cfengine/unit_getgid.cf
+share/examples/cfengine/unit_getindices.cf
+share/examples/cfengine/unit_getindices_and_values.cf
+share/examples/cfengine/unit_getmacaddress.cf
+share/examples/cfengine/unit_getregistry.cf
+share/examples/cfengine/unit_getuid.cf
+share/examples/cfengine/unit_getusers.cf
+share/examples/cfengine/unit_global_list_expansion.cf
+share/examples/cfengine/unit_global_list_expansion_2.cf
+share/examples/cfengine/unit_grep.cf
+share/examples/cfengine/unit_groupexists.cf
+share/examples/cfengine/unit_hash.cf
+share/examples/cfengine/unit_hashcomment.cf
+share/examples/cfengine/unit_hashmatch.cf
+share/examples/cfengine/unit_hashuncomment.cf
+share/examples/cfengine/unit_helloworld.cf
+share/examples/cfengine/unit_host2ip.cf
+share/examples/cfengine/unit_hostrange.cf
+share/examples/cfengine/unit_hostsseen.cf
+share/examples/cfengine/unit_hub.cf
+share/examples/cfengine/unit_id.cf
+share/examples/cfengine/unit_inherit.cf
+share/examples/cfengine/unit_insert_users.cf
+share/examples/cfengine/unit_intarray.cf
+share/examples/cfengine/unit_inventory_cpu.cf
+share/examples/cfengine/unit_iprange.cf
+share/examples/cfengine/unit_irange.cf
+share/examples/cfengine/unit_isdir.cf
+share/examples/cfengine/unit_islink.cf
+share/examples/cfengine/unit_isnewerthan.cf
+share/examples/cfengine/unit_isplain.cf
+share/examples/cfengine/unit_isvariable.cf
+share/examples/cfengine/unit_iteration.cf
+share/examples/cfengine/unit_join.cf
+share/examples/cfengine/unit_knowledge_driver.cf
+share/examples/cfengine/unit_knowledge_txt.cf
+share/examples/cfengine/unit_lastnode.cf
+share/examples/cfengine/unit_ldap.cf
+share/examples/cfengine/unit_linking.cf
+share/examples/cfengine/unit_literal_server.cf
+share/examples/cfengine/unit_locate_files_and_compress.cf
+share/examples/cfengine/unit_log_private.cf
+share/examples/cfengine/unit_loops.cf
+share/examples/cfengine/unit_lsdir.cf
+share/examples/cfengine/unit_maplist.cf
+share/examples/cfengine/unit_measure_log.cf
+share/examples/cfengine/unit_measurements.cf
+share/examples/cfengine/unit_menu.cf
+share/examples/cfengine/unit_meta.cf
+share/examples/cfengine/unit_method.cf
+share/examples/cfengine/unit_method_polymorph.cf
+share/examples/cfengine/unit_method_validate.cf
+share/examples/cfengine/unit_method_var.cf
+share/examples/cfengine/unit_method_var2.cf
+share/examples/cfengine/unit_module_exec.cf
+share/examples/cfengine/unit_module_exec_2.cf
+share/examples/cfengine/unit_monitord.cf
+share/examples/cfengine/unit_mount_fs.cf
+share/examples/cfengine/unit_multipassvars.cf
+share/examples/cfengine/unit_namespace.cf
+share/examples/cfengine/unit_namespace1.cf
+share/examples/cfengine/unit_namespace2.cf
+share/examples/cfengine/unit_namespace3.cf
+share/examples/cfengine/unit_namespace_class1.cf
+share/examples/cfengine/unit_namespace_classes.cf
+share/examples/cfengine/unit_namespace_var_meta.cf
+share/examples/cfengine/unit_namespace_var_meta2.cf
+share/examples/cfengine/unit_neighbourhood_watch.cf
+share/examples/cfengine/unit_null_config.cf
+share/examples/cfengine/unit_occurrences.cf
+share/examples/cfengine/unit_orchestrate_chain1.cf
+share/examples/cfengine/unit_orchestrate_chain2.cf
+share/examples/cfengine/unit_orchestrate_dominoes1.cf
+share/examples/cfengine/unit_orchestrate_dominoes2.cf
+share/examples/cfengine/unit_orchestrate_dragon.cf
+share/examples/cfengine/unit_orchestrate_dragon_load_balancer.cf
+share/examples/cfengine/unit_orchestrate_n_of_m.cf
+share/examples/cfengine/unit_orchestration_hostlist.cf
+share/examples/cfengine/unit_ordering.cf
+share/examples/cfengine/unit_package_apt.cf
+share/examples/cfengine/unit_package_freebsd.cf
+share/examples/cfengine/unit_package_latest.cf
+share/examples/cfengine/unit_package_msi_file.cf
+share/examples/cfengine/unit_package_msi_version.cf
+share/examples/cfengine/unit_package_rpm.cf
+share/examples/cfengine/unit_package_solaris.cf
+share/examples/cfengine/unit_package_yum.cf
+share/examples/cfengine/unit_package_zypper.cf
+share/examples/cfengine/unit_parallel_exec.cf
+share/examples/cfengine/unit_parsestringarray.cf
+share/examples/cfengine/unit_pathtype.cf
+share/examples/cfengine/unit_pattern_and_edit.cf
+share/examples/cfengine/unit_peers.cf
+share/examples/cfengine/unit_postfix.cf
+share/examples/cfengine/unit_process_kill.cf
+share/examples/cfengine/unit_process_matching.cf
+share/examples/cfengine/unit_process_matching2.cf
+share/examples/cfengine/unit_process_matching3.cf
+share/examples/cfengine/unit_process_restart.cf
+share/examples/cfengine/unit_process_restart_basic.cf
+share/examples/cfengine/unit_process_signalling.cf
+share/examples/cfengine/unit_product.cf
+share/examples/cfengine/unit_promises.cf
+share/examples/cfengine/unit_readlist.cf
+share/examples/cfengine/unit_readtcp.cf
+share/examples/cfengine/unit_reg_multiline.cf
+share/examples/cfengine/unit_regarray.cf
+share/examples/cfengine/unit_regex_win.cf
+share/examples/cfengine/unit_regextract.cf
+share/examples/cfengine/unit_registry.cf
+share/examples/cfengine/unit_registry_cache.cf
+share/examples/cfengine/unit_regline.cf
+share/examples/cfengine/unit_reglist.cf
+share/examples/cfengine/unit_remoteclasses.cf
+share/examples/cfengine/unit_remoteclasses2.cf
+share/examples/cfengine/unit_remotescalar.cf
+share/examples/cfengine/unit_remove_deadlinks.cf
+share/examples/cfengine/unit_rename.cf
+share/examples/cfengine/unit_repairedcommand.cf
+share/examples/cfengine/unit_report_custom.cf
+share/examples/cfengine/unit_report_diffs.cf
+share/examples/cfengine/unit_report_state.cf
+share/examples/cfengine/unit_reporting.cf
+share/examples/cfengine/unit_reporttofile.cf
+share/examples/cfengine/unit_resolveconf.cf
+share/examples/cfengine/unit_returnszero.cf
+share/examples/cfengine/unit_root_passwd.cf
+share/examples/cfengine/unit_select_class.cf
+share/examples/cfengine/unit_select_mode.cf
+share/examples/cfengine/unit_select_region.cf
+share/examples/cfengine/unit_select_size.cf
+share/examples/cfengine/unit_selectservers.cf
+share/examples/cfengine/unit_server_callback.cf
+share/examples/cfengine/unit_server_copy_localhost.cf
+share/examples/cfengine/unit_server_copy_purge.cf
+share/examples/cfengine/unit_server_copy_remote.cf
+share/examples/cfengine/unit_server_flatcopy_localhost.cf
+share/examples/cfengine/unit_service_disable.cf
+share/examples/cfengine/unit_service_start.cf
+share/examples/cfengine/unit_services_concept.cf
+share/examples/cfengine/unit_services_win.cf
+share/examples/cfengine/unit_setuidlog.cf
+share/examples/cfengine/unit_setvar.cf
+share/examples/cfengine/unit_software_dist.cf
+share/examples/cfengine/unit_software_update_version_yum.cf
+share/examples/cfengine/unit_splitstring.cf
+share/examples/cfengine/unit_storage.cf
+share/examples/cfengine/unit_strcmp.cf
+share/examples/cfengine/unit_stringarray.cf
+share/examples/cfengine/unit_switchcase.cf
+share/examples/cfengine/unit_syslog.cf
+share/examples/cfengine/unit_syslog2.cf
+share/examples/cfengine/unit_template.cf
+share/examples/cfengine/unit_template2.cf
+share/examples/cfengine/unit_test_environment.cf
+share/examples/cfengine/unit_tidy_all_files.cf
+share/examples/cfengine/unit_translatepath.cf
+share/examples/cfengine/unit_update.cf
+share/examples/cfengine/unit_user_edit.cf
+share/examples/cfengine/unit_user_edit_method.cf
+share/examples/cfengine/unit_userexists.cf
+share/examples/cfengine/unit_varclass.cf
+share/examples/cfengine/unit_varexpansion.cf
+share/examples/cfengine/unit_varnet.cf
+share/examples/cfengine/unit_vars.cf
+share/examples/cfengine/unit_warnifline.cf
+share/examples/cfengine/unit_webserver.cf
+share/examples/cfengine/unit_zenoss.cf
+share/examples/cfengine/win_dns_client.cf
+share/examples/cfengine/win_emergency.cf
+share/examples/cfengine/win_registry.cf
+share/examples/cfengine/win_schedule.cf
+@rcscript ${RCDIR}/cf_execd
+@rcscript ${RCDIR}/cf_monitord
+@rcscript ${RCDIR}/cf_serverd
+@rcscript ${RCDIR}/cfengine
+@cwd ${CFENGINE_BASE}
+bin/
+bin/cf-agent
+bin/cf-execd
+bin/cf-key
+bin/cf-monitord
+bin/cf-promises
+bin/cf-report
+bin/cf-runagent
+bin/cf-serverd
+@mode 0750
+@sample ${CFENGINE_BASE}/
+@mode 0700
+@sample ${CFENGINE_BASE}/inputs/
+@sample ${CFENGINE_BASE}/masterfiles/
+@sample ${CFENGINE_BASE}/modules/
+@sample ${CFENGINE_BASE}/outputs/
+@sample ${CFENGINE_BASE}/ppkeys/
+@mode
+@extraunexec rm -rf ${CFENGINE_BASE}/*

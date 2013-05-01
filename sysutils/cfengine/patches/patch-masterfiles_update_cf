@@ -1,0 +1,21 @@
+$OpenBSD: patch-masterfiles_update_cf,v 1.1 2013/05/01 21:09:23 sthen Exp $
+--- masterfiles/update.cf.orig	Sat Mar 23 15:52:15 2013
++++ masterfiles/update.cf	Sat Mar 23 15:52:30 2013
+@@ -165,17 +165,6 @@ bundle agent cfe_internal_update
+       depth_search => u_recurse_basedir("inf"),
+             action => u_immediate;
+ 
+-   "/usr/local/sbin/$(agents)"
+-                comment => "Create symlinks of CFE binaries in /usr/local/sbin",
+-                 handle => "update_files_sbin_$(agents)",
+-      move_obstructions => "true",
+-              link_from => u_ln_s("$(sys.workdir)/bin/$(agents)");
+-
+-   "/usr/local/sbin/$(agents).cfsaved"
+-      comment => "Remove all .cfsaved file extension",
+-       handle => "update_files_remove_$(agent)_cfsaved",
+-       delete => u_tidy;
+-
+   am_policy_hub::
+ 
+    "$(master_location)/."

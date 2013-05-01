@@ -1,11 +1,12 @@
-$OpenBSD: patch-pub_getopt_c,v 1.1 2004/06/17 11:21:42 sturm Exp $
---- pub/getopt.c.orig	2004-06-12 23:37:42.000000000 -0400
-+++ pub/getopt.c	2004-06-12 23:38:17.000000000 -0400
-@@ -60,6 +60,10 @@ Cambridge, MA 02139, USA.  */
- #include <stdlib.h>
- #endif	/* GNU C library.  */
+$OpenBSD: patch-pub_getopt_c,v 1.2 2013/05/01 21:09:23 sthen Exp $
+--- pub/getopt.c.orig	Tue Apr 10 04:20:40 2012
++++ pub/getopt.c	Fri Apr 13 17:58:20 2012
+@@ -62,6 +62,11 @@ Cambridge, MA 02139, USA.  */
+ 
+ char *getenv(const char *name);
  
 +#ifdef __OpenBSD__
++#include <string.h>
 +#include <unistd.h>
 +#endif
 +

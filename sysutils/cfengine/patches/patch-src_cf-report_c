@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_cf-report_c,v 1.1 2013/05/01 21:09:23 sthen Exp $
+
+XXX Force raising RLIMIT_NOFILE to the maximum allowed. Even in the
+default configuration it requires ~230 which is more than a common
+default of 128, and cf-report does not handle ENFILE/EMFILE properly.
+
+--- src/cf-report.c.orig	Fri Mar 15 12:49:36 2013
++++ src/cf-report.c	Wed May  1 21:56:04 2013
+@@ -45,6 +45,7 @@
+ #endif
+ 
+ #include <assert.h>
++#include <sys/resource.h>
+ 
+ static void ThisAgentInit(void);
+ static GenericAgentConfig CheckOpts(int argc, char **argv);
+@@ -291,6 +292,13 @@ char *CFRH[][2] =
+ 
+ int main(int argc, char *argv[])
+ {
++    struct rlimit	rl;
++
++    if (getrlimit(RLIMIT_NOFILE, &rl) != -1) {
++        rl.rlim_cur = rl.rlim_max;
++        setrlimit(RLIMIT_NOFILE, &rl);
++    }
++
+     GenericAgentConfig config = CheckOpts(argc, argv);
+ 
+     ReportContext *report_context = OpenReports("reporter");
