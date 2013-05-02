@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.53 2013/01/25 08:14:59 dcoppa Exp $
+@comment $OpenBSD: PLIST-main,v 1.54 2013/05/02 10:01:34 dcoppa Exp $
 @pkgpath devel/git
 @bin bin/git
 bin/git-cvsserver
@@ -28,6 +28,7 @@ libexec/git/git-bisect
 @bin libexec/git/git-bundle
 @bin libexec/git/git-cat-file
 @bin libexec/git/git-check-attr
+@bin libexec/git/git-check-ignore
 @bin libexec/git/git-check-ref-format
 @bin libexec/git/git-checkout
 @bin libexec/git/git-checkout-index
@@ -130,7 +131,7 @@ libexec/git/git-relink
 @bin libexec/git/git-remote-ftps
 @bin libexec/git/git-remote-http
 @bin libexec/git/git-remote-https
-libexec/git/git-remote-testgit
+libexec/git/git-remote-testpy
 @bin libexec/git/git-remote-testsvn
 libexec/git/git-repack
 @bin libexec/git/git-replace
@@ -178,11 +179,12 @@ libexec/git/mergetools/
 libexec/git/mergetools/araxis
 libexec/git/mergetools/bc3
 libexec/git/mergetools/codecompare
-libexec/git/mergetools/defaults
 libexec/git/mergetools/deltawalker
 libexec/git/mergetools/diffuse
 libexec/git/mergetools/ecmerge
 libexec/git/mergetools/emerge
+libexec/git/mergetools/gvimdiff
+libexec/git/mergetools/gvimdiff2
 libexec/git/mergetools/kdiff3
 libexec/git/mergetools/kompare
 libexec/git/mergetools/meld
@@ -190,7 +192,8 @@ libexec/git/mergetools/opendiff
 libexec/git/mergetools/p4merge
 libexec/git/mergetools/tkdiff
 libexec/git/mergetools/tortoisemerge
-libexec/git/mergetools/vim
+libexec/git/mergetools/vimdiff
+libexec/git/mergetools/vimdiff2
 libexec/git/mergetools/xxdiff
 @man man/man1/git-add.1
 @man man/man1/git-am.1
@@ -204,6 +207,7 @@ libexec/git/mergetools/xxdiff
 @man man/man1/git-bundle.1
 @man man/man1/git-cat-file.1
 @man man/man1/git-check-attr.1
+@man man/man1/git-check-ignore.1
 @man man/man1/git-check-ref-format.1
 @man man/man1/git-checkout-index.1
 @man man/man1/git-checkout.1
@@ -292,7 +296,6 @@ libexec/git/mergetools/xxdiff
 @man man/man1/git-relink.1
 @man man/man1/git-remote-ext.1
 @man man/man1/git-remote-fd.1
-@man man/man1/git-remote-helpers.1
 @man man/man1/git-remote-testgit.1
 @man man/man1/git-remote.1
 @man man/man1/git-repack.1
@@ -338,6 +341,7 @@ libexec/git/mergetools/xxdiff
 @man man/man1/git-whatchanged.1
 @man man/man1/git-write-tree.1
 @man man/man1/git.1
+@man man/man1/gitremote-helpers.1
 @man man/man1/gitweb.1
 @man man/man3p/Git.3p
 @man man/man3p/Git::I18N.3p
@@ -372,6 +376,7 @@ share/git-core/templates/hooks/post-receive-email.sample
 share/git-core/templates/hooks/post-update.sample
 share/git-core/templates/hooks/pre-applypatch.sample
 share/git-core/templates/hooks/pre-commit.sample
+share/git-core/templates/hooks/pre-push.sample
 share/git-core/templates/hooks/pre-rebase.sample
 share/git-core/templates/hooks/prepare-commit-msg.sample
 share/git-core/templates/hooks/update.sample

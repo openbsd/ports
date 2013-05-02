@@ -1,0 +1,18 @@
+$OpenBSD: patch-t_test-lib_sh,v 1.1 2013/05/02 10:01:34 dcoppa Exp $
+
+Force usage of GNU tar in the test suite: 't5004-archive-corner-cases.sh'
+wants it badly.
+
+--- t/test-lib.sh.orig	Sat Apr 27 01:54:17 2013
++++ t/test-lib.sh	Tue Apr 30 19:14:52 2013
+@@ -47,6 +47,10 @@ fi
+ . "$GIT_BUILD_DIR"/GIT-BUILD-OPTIONS
+ export PERL_PATH SHELL_PATH
+ 
++if [ -n "${TEST_TAR}" ]; then
++	export TAR=${TEST_TAR}
++fi
++
+ # if --tee was passed, write the output not only to the terminal, but
+ # additionally to the file test-results/$BASENAME.out, too.
+ case "$GIT_TEST_TEE_STARTED, $* " in

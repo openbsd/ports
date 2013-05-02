@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.93 2013/03/13 11:58:14 benoit Exp $
+# $OpenBSD: Makefile,v 1.94 2013/05/02 10:01:34 dcoppa Exp $
 
 COMMENT-main =	GIT - Tree History Storage Tool
 COMMENT-svn =	GIT - subversion interoperability tools
 COMMENT-x11 =	GIT - graphical tools
 
-V =		1.8.1.3
+V =		1.8.2.2
 DISTNAME =	git-${V}
 PKGNAME-main =	${DISTNAME}
 PKGNAME-svn =	git-svn-${V}
@@ -53,26 +53,42 @@ LIB_DEPENDS-x11 =
 WANTLIB-x11 =
 PKG_ARCH-x11 =		*
 
-MAKE_FLAGS =		prefix=${PREFIX} CC="${CC}" CFLAGS="${CFLAGS}" V=1 \
-			sysconfdir=${SYSCONFDIR} mandir=man \
+MAKE_FLAGS =		V=1 \
 			gitexecdir=libexec/git \
 			TCLTK_PATH=${MODTK_BIN} \
 			TCL_PATH=${MODTCL_BIN}
-MAKE_ENV =		REGRESS_SHELL=${LOCALBASE}/bin/bash
+MAKE_ENV =		TEST_TAR=${LOCALBASE}/bin/gtar
+
+CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS =	--sysconfdir=${SYSCONFDIR} \
+			--mandir=${PREFIX}/man \
+			--with-curl=${LOCALBASE} \
+			--with-iconv=${LOCALBASE} \
+			--with-tcltk=${MODTK_BIN} \
+			--with-python=no
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			DIFF=diff TAR=tar
+
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mno_shared}
+CONFIGURE_ENV +=	ac_cv_lib_curl_curl_global_init=yes
+MAKE_FLAGS +=		NEEDS_CRYPTO_WITH_SSL=YesPlease \
+			NEEDS_SSL_WITH_CURL=YesPlease \
+			NEEDS_LIBINTL_BEFORE_LIBICONV=YesPlease
+.endif
 
 USE_GMAKE =		Yes
 USE_GROFF =		Yes
 
-TEST_DEPENDS =	archivers/zip \
+TEST_DEPENDS =		archivers/gtar \
+			archivers/unzip \
+			archivers/zip \
 			devel/cvsps \
-			devel/subversion,-perl \
-			shells/bash
+			devel/subversion,-perl
 
 GITWEB =		README INSTALL git-favicon.png git-logo.png \
 			gitweb.cgi gitweb.css
-
-# Skip tests I have to fix.
-SKIP_TESTS =		t9502-gitweb-standalone-parse-output.sh
 
 post-extract:
 	@mkdir -p ${WRKSRC}/doc
@@ -96,8 +112,7 @@ post-install:
 	${INSTALL_DATA} ${WRKBUILD}/gitweb/README ${PREFIX}/share/gitweb
 
 do-test:
-	cd ${WRKSRC}/t && rm -f ${SKIP_TESTS}
 	cd ${WRKSRC} && ${MAKE_ENV} ${MAKE_PROGRAM} \
-		HOME=${WRKDIST}/t/trash test
+		HOME=${WRKDIST}/t test
 
 .include <bsd.port.mk>
