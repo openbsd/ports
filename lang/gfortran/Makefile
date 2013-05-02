@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/21 08:46:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2013/05/02 07:36:01 ajacoutot Exp $
 
 ONLY_FOR_ARCHS = ${GCC4_ARCHS}
+BROKEN-powerpc = Segmentation fault during build
 SYSV =		4.2.1
 
 BROKEN-hppa =	port not contributed
