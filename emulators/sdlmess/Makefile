@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.23 2013/04/14 13:45:41 bcallah Exp $
+# $OpenBSD: Makefile,v 1.24 2013/05/02 21:05:31 bcallah Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		emulates game consoles and old home computers
 
-V =			0148
-DISTNAME =		mame${V}s
-PKGNAME =		sdlmess-${V:S/0/0./}pl3
+V =			148
+DISTNAME =		mame0${V}s
+PKGNAME =		sdlmess-0.${V}pl4
 
 CATEGORIES =		emulators games
 
@@ -27,7 +27,7 @@ WANTLIB =	SDL SDL_ttf X11 Xcomposite Xcursor Xdamage Xext \
 		pangocairo-1.0 pangoft2-1.0 pthread stdc++ util z
 
 MASTER_SITES =		http://mamedev.org/downloader.php?file=releases/ \
-			http://whiper.com/mame/${V:S/0//}/
+			http://whiper.com/mame/${V}/
 MASTER_SITES0 =		http://mamedev.org/updates/
 MASTER_SITES1 = 	http://www.arcade-history.com/dats/
 
@@ -36,10 +36,11 @@ DIST_SUBDIR =		mame
 
 # PATCHFILES doesn't work for .zip
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
-			${V}u1_diff.zip:0 \
-			${V}u2_diff.zip:0 \
-			${V}u3_diff.zip:0 \
-			history${V:S/0//}h.zip:1
+			0${V}u1_diff.zip:0 \
+			0${V}u2_diff.zip:0 \
+			0${V}u3_diff.zip:0 \
+			0${V}u4_diff.zip:0 \
+			history${V}i.zip:1
 
 MODULES =		devel/gettext \
 			lang/python
@@ -70,8 +71,8 @@ post-extract:
 	@${UNZIP} -oq ${WRKDIR}/mame.zip -d ${WRKSRC}
 
 pre-patch:
-.for v in 1 2 3
-	${PATCH} ${PATCH_DIST_ARGS} < ${WRKDIR}/${V}u${v}.diff
+.for v in 1 2 3 4
+	${PATCH} ${PATCH_DIST_ARGS} < ${WRKDIR}/0${V}u${v}.diff
 .endfor
 	@perl -pi -e 's|\r\n|\n|g' ${WRKDIST}/makefile \
 	    ${WRKDIST}/src/emu/fileio.h \
