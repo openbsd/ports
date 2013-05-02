@@ -1,28 +1,35 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 11:42:41 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/05/02 13:21:16 sthen Exp $
 
 COMMENT=	GNU versions of the diff utilities
 
-VERSION=	2.8.1
+VERSION=	3.3
+EXTRACT_SUFX=	.tar.xz
 DISTNAME=	diffutils-${VERSION}
 PKGNAME=	gdiff-${VERSION}
-REVISION =	0
 CATEGORIES=	textproc
 HOMEPAGE=	http://www.gnu.org/software/diffutils/
 
-# GPL
+# GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c 
+
+WANTLIB=	c sigsegv
 
 MASTER_SITES=	${MASTER_SITE_GNU:=diffutils/}
 
 MODULES=	devel/gettext
+LIB_DEPENDS=	devel/libsigsegv
 
-SEPARATE_BUILD=	Yes
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--program-prefix=g
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
-USE_GROFF =	Yes
+MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/build-aux
+
+# handle --program-prefix: the help-version test runs sdiff which calls
+# out to gdiff, but it doesn't have that name until installed.
+pre-test:
+	cd ${WRKBUILD}/src; ln -fs diff gdiff
+
+TEST_FLAGS=	HOME=/tmp
 
 .include <bsd.port.mk>
