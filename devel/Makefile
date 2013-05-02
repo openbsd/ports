@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1125 2013/04/29 08:35:23 fgsch Exp $
+# $OpenBSD: Makefile,v 1.1126 2013/05/02 19:11:10 matthew Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -435,6 +435,7 @@
      SUBDIR += nant
      SUBDIR += nasm
      SUBDIR += netbeans
+     SUBDIR += ninja
      SUBDIR += node-expresso
      SUBDIR += newt
      SUBDIR += node-fibers
