@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/03/10 10:57:51 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/05/02 20:09:35 fgsch Exp $
 lib/python${MODPY_VERSION}/site-packages/Flask-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Flask-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Flask-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -191,10 +191,16 @@ share/docs/${MODPY_PY_PREFIX}flask/_images/logo-full.png
 share/docs/${MODPY_PY_PREFIX}flask/_images/no.png
 share/docs/${MODPY_PY_PREFIX}flask/_images/yes.png
 share/docs/${MODPY_PY_PREFIX}flask/_static/
+share/docs/${MODPY_PY_PREFIX}flask/_static/ajax-loader.gif
 share/docs/${MODPY_PY_PREFIX}flask/_static/basic.css
+share/docs/${MODPY_PY_PREFIX}flask/_static/comment-bright.png
+share/docs/${MODPY_PY_PREFIX}flask/_static/comment-close.png
+share/docs/${MODPY_PY_PREFIX}flask/_static/comment.png
 share/docs/${MODPY_PY_PREFIX}flask/_static/debugger.png
 share/docs/${MODPY_PY_PREFIX}flask/_static/default.css
 share/docs/${MODPY_PY_PREFIX}flask/_static/doctools.js
+share/docs/${MODPY_PY_PREFIX}flask/_static/down-pressed.png
+share/docs/${MODPY_PY_PREFIX}flask/_static/down.png
 share/docs/${MODPY_PY_PREFIX}flask/_static/file.png
 share/docs/${MODPY_PY_PREFIX}flask/_static/flask.png
 share/docs/${MODPY_PY_PREFIX}flask/_static/flaskr.png
@@ -208,6 +214,9 @@ share/docs/${MODPY_PY_PREFIX}flask/_static/searchtools.js
 share/docs/${MODPY_PY_PREFIX}flask/_static/sidebar.js
 share/docs/${MODPY_PY_PREFIX}flask/_static/touch-icon.png
 share/docs/${MODPY_PY_PREFIX}flask/_static/underscore.js
+share/docs/${MODPY_PY_PREFIX}flask/_static/up-pressed.png
+share/docs/${MODPY_PY_PREFIX}flask/_static/up.png
+share/docs/${MODPY_PY_PREFIX}flask/_static/websupport.js
 share/docs/${MODPY_PY_PREFIX}flask/_static/yes.png
 share/docs/${MODPY_PY_PREFIX}flask/advanced_foreword.html
 share/docs/${MODPY_PY_PREFIX}flask/api.html

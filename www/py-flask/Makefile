@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:44:48 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/05/02 20:09:35 fgsch Exp $
 
 COMMENT = 	microframework based on Werkzeug and Jinja 2
 
 MODPY_EGG_VERSION =	0.9
 DISTNAME =	Flask-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	www devel
 
@@ -28,15 +28,17 @@ BUILD_DEPENDS =	textproc/py-sphinx \
 		www/py-werkzeug>=0.7
 TEST_DEPENDS = ${RUN_DEPENDS}
 
+MAKE_ENV =	PYTHONPATH="${WRKSRC}"
+
 post-build:
-	cd ${WRKSRC}/docs && PYTHONPATH=.. $(MAKE_PROGRAM) html
+	@cd ${WRKSRC}/docs && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} html
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/docs/${MODPY_PY_PREFIX}flask
+	cd ${WRKSRC}/docs/_build/html && \
+	    pax -rw * ${PREFIX}/share/docs/${MODPY_PY_PREFIX}flask
+	rm -rf ${PREFIX}/share/docs/${MODPY_PY_PREFIX}flask/_sources
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${MODPY_PY_PREFIX}flask
-	cd ${WRKSRC}/docs/_build/html && pax -rw \
-	    _images _static deploying patterns tutorial *.{inv,js,html} \
-	    ${PREFIX}/share/docs/${MODPY_PY_PREFIX}flask
 	cd ${WRKSRC}/examples && pax -rw * \
 	    ${PREFIX}/share/examples/${MODPY_PY_PREFIX}flask
 

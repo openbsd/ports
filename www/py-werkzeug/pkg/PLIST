@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/03/10 10:59:42 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/05/02 20:08:15 fgsch Exp $
 lib/python${MODPY_VERSION}/site-packages/Werkzeug-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Werkzeug-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Werkzeug-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -180,12 +180,18 @@ share/doc/${MODPY_PY_PREFIX}werkzeug/_images/
 share/doc/${MODPY_PY_PREFIX}werkzeug/_images/debug-screenshot.png
 share/doc/${MODPY_PY_PREFIX}werkzeug/_images/shortly.png
 share/doc/${MODPY_PY_PREFIX}werkzeug/_static/
+share/doc/${MODPY_PY_PREFIX}werkzeug/_static/ajax-loader.gif
 share/doc/${MODPY_PY_PREFIX}werkzeug/_static/background.png
 share/doc/${MODPY_PY_PREFIX}werkzeug/_static/basic.css
 share/doc/${MODPY_PY_PREFIX}werkzeug/_static/codebackground.png
+share/doc/${MODPY_PY_PREFIX}werkzeug/_static/comment-bright.png
+share/doc/${MODPY_PY_PREFIX}werkzeug/_static/comment-close.png
+share/doc/${MODPY_PY_PREFIX}werkzeug/_static/comment.png
 share/doc/${MODPY_PY_PREFIX}werkzeug/_static/contents.png
 share/doc/${MODPY_PY_PREFIX}werkzeug/_static/debug-screenshot.png
 share/doc/${MODPY_PY_PREFIX}werkzeug/_static/doctools.js
+share/doc/${MODPY_PY_PREFIX}werkzeug/_static/down-pressed.png
+share/doc/${MODPY_PY_PREFIX}werkzeug/_static/down.png
 share/doc/${MODPY_PY_PREFIX}werkzeug/_static/favicon.ico
 share/doc/${MODPY_PY_PREFIX}werkzeug/_static/file.png
 share/doc/${MODPY_PY_PREFIX}werkzeug/_static/header.png
@@ -200,6 +206,9 @@ share/doc/${MODPY_PY_PREFIX}werkzeug/_static/shortly.png
 share/doc/${MODPY_PY_PREFIX}werkzeug/_static/shorty-screenshot.png
 share/doc/${MODPY_PY_PREFIX}werkzeug/_static/style.css
 share/doc/${MODPY_PY_PREFIX}werkzeug/_static/underscore.js
+share/doc/${MODPY_PY_PREFIX}werkzeug/_static/up-pressed.png
+share/doc/${MODPY_PY_PREFIX}werkzeug/_static/up.png
+share/doc/${MODPY_PY_PREFIX}werkzeug/_static/websupport.js
 share/doc/${MODPY_PY_PREFIX}werkzeug/_static/werkzeug.css
 share/doc/${MODPY_PY_PREFIX}werkzeug/_static/werkzeug.js
 share/doc/${MODPY_PY_PREFIX}werkzeug/_static/werkzeug.png
