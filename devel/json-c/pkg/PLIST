@@ -1,17 +1,26 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/09/15 18:15:41 jasper Exp $
-%%SHARED%%
-include/json/
-include/json/arraylist.h
-include/json/bits.h
-include/json/debug.h
-include/json/json.h
-include/json/json_object.h
-include/json/json_object_private.h
-include/json/json_tokener.h
-include/json/json_util.h
-include/json/linkhash.h
-include/json/printbuf.h
+@comment $OpenBSD: PLIST,v 1.3 2013/05/02 20:29:05 bentley Exp $
+include/json
+include/json-c/
+include/json-c/arraylist.h
+include/json-c/bits.h
+include/json-c/debug.h
+include/json-c/json.h
+include/json-c/json_c_version.h
+include/json-c/json_config.h
+include/json-c/json_inttypes.h
+include/json-c/json_object.h
+include/json-c/json_object_iterator.h
+include/json-c/json_object_private.h
+include/json-c/json_tokener.h
+include/json-c/json_util.h
+include/json-c/linkhash.h
+include/json-c/printbuf.h
+lib/libjson-c.a
+lib/libjson-c.la
+@lib lib/libjson-c.so.${LIBjson-c_VERSION}
 lib/libjson.a
 lib/libjson.la
+@lib lib/libjson.so.${LIBjson_VERSION}
 lib/pkgconfig/
+lib/pkgconfig/json-c.pc
 lib/pkgconfig/json.pc
