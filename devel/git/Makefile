@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2013/05/02 10:01:34 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.95 2013/05/02 11:06:06 dcoppa Exp $
 
 COMMENT-main =	GIT - Tree History Storage Tool
 COMMENT-svn =	GIT - subversion interoperability tools
@@ -86,9 +86,6 @@ TEST_DEPENDS =		archivers/gtar \
 			archivers/zip \
 			devel/cvsps \
 			devel/subversion,-perl
-
-GITWEB =		README INSTALL git-favicon.png git-logo.png \
-			gitweb.cgi gitweb.css
 
 post-extract:
 	@mkdir -p ${WRKSRC}/doc
