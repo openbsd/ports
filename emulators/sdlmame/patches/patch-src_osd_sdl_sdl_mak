@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_osd_sdl_sdl_mak,v 1.6 2013/03/10 10:56:50 fgsch Exp $
---- src/osd/sdl/sdl.mak.orig	Tue Mar  5 19:13:20 2013
-+++ src/osd/sdl/sdl.mak	Tue Mar  5 19:13:20 2013
-@@ -702,9 +702,9 @@ LIBS += `pkg-config QtGui --libs`
+$OpenBSD: patch-src_osd_sdl_sdl_mak,v 1.7 2013/05/02 21:04:01 bcallah Exp $
+--- src/osd/sdl/sdl.mak.orig	Wed May  1 12:09:06 2013
++++ src/osd/sdl/sdl.mak	Wed May  1 12:09:07 2013
+@@ -708,9 +708,9 @@ LIBS += `pkg-config --libs gtk+-2.0` `pkg-config --lib
  endif
  
  # some systems still put important things in a different prefix
