@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2012/05/10 08:47:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2013/05/03 10:12:10 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/pytz/
 lib/python${MODPY_VERSION}/site-packages/pytz-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pytz-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -299,6 +299,7 @@ lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Karachi
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Kashgar
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Kathmandu
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Katmandu
+lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Khandyga
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Kolkata
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Krasnoyarsk
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Kuala_Lumpur
@@ -343,6 +344,7 @@ lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Ujung_Pandang
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Ulaanbaatar
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Ulan_Bator
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Urumqi
+lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Ust-Nera
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Vientiane
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Vladivostok
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Yakutsk
@@ -458,6 +460,7 @@ lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Bratislava
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Brussels
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Bucharest
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Budapest
+lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Busingen
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Chisinau
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Copenhagen
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Dublin
