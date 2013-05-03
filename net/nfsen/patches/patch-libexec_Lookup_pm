@@ -1,0 +1,12 @@
+$OpenBSD: patch-libexec_Lookup_pm,v 1.1 2013/05/03 09:31:23 sthen Exp $
+--- libexec/Lookup.pm.orig	Fri May  3 09:20:49 2013
++++ libexec/Lookup.pm	Fri May  3 09:31:53 2013
+@@ -39,8 +39,6 @@ use strict;
+ use warnings;
+ use Socket;
+ use IO::Socket::INET;
+-use Socket;
+-use Socket6;
+ use AbuseWhois;
+ use Log;
+ 
