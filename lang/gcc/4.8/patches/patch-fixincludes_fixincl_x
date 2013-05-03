@@ -1,0 +1,17 @@
+$OpenBSD: patch-fixincludes_fixincl_x,v 1.1 2013/05/03 07:44:55 pascal Exp $
+--- fixincludes/fixincl.x.orig	Thu May  2 13:32:57 2013
++++ fixincludes/fixincl.x	Thu May  2 13:33:23 2013
+@@ -6154,11 +6154,11 @@ static const char* apzSolaris_Complex_CxxPatch[] = { s
+     "-e", "/#if[ \t]*!defined(__cplusplus)/c\\\n\
+ #ifdef\t__cplusplus\\\n\
+ extern \"C\" {\\\n\
+-#endif",
++#endif\\\n",
+     "-e", "/#endif[ \t]*\\/\\* !defined(__cplusplus) \\*\\//c\\\n\
+ #ifdef\t__cplusplus\\\n\
+ }\\\n\
+-#endif",
++#endif\\\n",
+     (char*)NULL };
+ 
+ /* * * * * * * * * * * * * * * * * * * * * * * * * *
