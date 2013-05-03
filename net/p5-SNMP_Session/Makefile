@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2013/05/03 11:38:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2013/05/03 12:17:08 sthen Exp $
 
 COMMENT=	provides rudimentary access to remote SNMP agents
 
 MODULES=	cpan
 DISTNAME=	SNMP_Session-1.13
-REVISION=	3
+REVISION=	4
 CATEGORIES=	net
 
 HOMEPAGE=	http://code.google.com/p/snmp-session/

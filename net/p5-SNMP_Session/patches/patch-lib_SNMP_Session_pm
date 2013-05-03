@@ -1,23 +1,45 @@
-$OpenBSD: patch-lib_SNMP_Session_pm,v 1.4 2013/05/03 11:38:32 sthen Exp $
+$OpenBSD: patch-lib_SNMP_Session_pm,v 1.5 2013/05/03 12:17:08 sthen Exp $
 --- lib/SNMP_Session.pm.orig	Fri Nov 21 05:25:17 2008
-+++ lib/SNMP_Session.pm	Fri May  3 12:18:55 2013
-@@ -146,7 +146,8 @@ BEGIN {
++++ lib/SNMP_Session.pm	Fri May  3 13:11:57 2013
+@@ -144,9 +144,8 @@ BEGIN {
+     $SNMP_Session::ipv6available = 0;
+     $dont_wait_flags = 0;
  
-     if (eval {local $SIG{__DIE__};require Socket6;} &&
-        eval {local $SIG{__DIE__};require IO::Socket::INET6; IO::Socket::INET6->VERSION("1.26");}) {
+-    if (eval {local $SIG{__DIE__};require Socket6;} &&
+-       eval {local $SIG{__DIE__};require IO::Socket::INET6; IO::Socket::INET6->VERSION("1.26");}) {
 -	import Socket6;
-+	Socket6->import(qw(getaddrinfo));
-+	Socket->import(qw(inet_pton inet_ntop));
++    if (eval {local $SIG{__DIE__};require IO::Socket::INET6; IO::Socket::INET6->VERSION("1.26");}) {
++	Socket->import(qw(getaddrinfo inet_pton inet_ntop));
  	$ipv6_addr_len = length(pack_sockaddr_in6(161, inet_pton(AF_INET6(), "::1")));
  	$SNMP_Session::ipv6available = 1;
      }
-@@ -605,7 +606,8 @@ use Carp;
+@@ -605,7 +604,7 @@ use Carp;
  BEGIN {
      if($SNMP_Session::ipv6available) {
  	import IO::Socket::INET6;
 -	import Socket6;
-+	Socket6->import(qw(getaddrinfo));
-+	Socket->import(qw(inet_pton inet_ntop));
++	Socket->import(qw(getaddrinfo inet_pton inet_ntop));
      }
  }
  
+@@ -659,13 +658,13 @@ sub open {
+ 	    $remote_hostname = $1;
+ 	}
+ 
+-	my (@res, $socktype_tmp, $proto_tmp, $canonname_tmp);
+-	@res = getaddrinfo($remote_hostname, $port, AF_UNSPEC, SOCK_DGRAM);
+-	($sockfamily, $socktype_tmp, $proto_tmp, $remote_addr, $canonname_tmp) = @res;
+-	if (scalar(@res) < 5) {
+-	    return $this->error_return ("can't resolve \"$remote_hostname\" to IPv6 address");
+-	}
+-
++	my ($err, @res) = getaddrinfo($remote_hostname, $port, {socktype => SOCK_DGRAM});
++	return $this->error_return ("can't resolve \"$remote_hostname\" to IPv6 address - $err") if ($err);
++	# XXX only looks at first address returned
++	# XXX this should actually cycle through them
++	my $ai = shift @res;
++	$sockfamily = $ai->{family};
++	$remote_addr = $ai->{addr};
+ 	if ($SNMP_Session::recycle_socket && exists $the_socket{$sockfamily}) {
+ 	    $socket = $the_socket{$sockfamily};
+ 	} elsif ($sockfamily == AF_INET) {
