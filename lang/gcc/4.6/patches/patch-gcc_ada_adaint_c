@@ -1,7 +1,17 @@
-$OpenBSD: patch-gcc_ada_adaint_c,v 1.1 2012/02/21 08:09:30 pascal Exp $
---- gcc/ada/adaint.c.orig	Mon Feb 20 20:25:53 2012
-+++ gcc/ada/adaint.c	Mon Feb 20 20:27:23 2012
-@@ -3686,3 +3686,9 @@ void *__gnat_lwp_self (void)
+$OpenBSD: patch-gcc_ada_adaint_c,v 1.2 2013/05/03 23:13:49 tobiasu Exp $
+--- gcc/ada/adaint.c.orig	Mon Oct 25 17:26:02 2010
++++ gcc/ada/adaint.c	Sun Apr 14 03:41:35 2013
+@@ -2384,7 +2384,8 @@ __gnat_number_of_cpus (void)
+   int cores = 1;
+ 
+ #if defined (linux) || defined (sun) || defined (AIX) \
+-    || (defined (__alpha__)  && defined (_osf_)) || defined (__APPLE__)
++    || (defined (__alpha__)  && defined (_osf_)) || defined (__APPLE__) \
++    || defined(__OpenBSD__)
+   cores = (int) sysconf (_SC_NPROCESSORS_ONLN);
+ 
+ #elif (defined (__mips) && defined (__sgi))
+@@ -3686,3 +3687,9 @@ void *__gnat_lwp_self (void)
     return (void *) syscall (__NR_gettid);
  }
  #endif

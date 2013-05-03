@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/04/04 04:21:14 tobiasu Exp $
+# $OpenBSD: Makefile,v 1.27 2013/05/03 23:13:49 tobiasu Exp $
 
 ONLY_FOR_ARCHS = amd64 i386 powerpc sparc64
 BROKEN-sparc64 = ICE in libgcc
@@ -31,7 +31,7 @@ REVISION-c++ = 2
 REVISION-estdc = 0
 REVISION-f95 = 1
 REVISION-objc = 1
-REVISION-ada = 2
+REVISION-ada = 3
 
 SHARED_LIBS =	estdc++		15.0 \
 		gfortran	4.0 \
@@ -117,6 +117,7 @@ EXTRA_ENV += am_cv_func_iconv=no JAR=no
 EXTRA_ENV += ac_cv_prog_M4=/usr/bin/m4
 EXTRA_ENV += ac_cv_header_magic_h=no
 EXTRA_ENV += lt_cv_path_SED=/usr/bin/sed
+EXTRA_ENV += STRIP=/usr/bin/strip
 MAKE_FLAGS +=	 ac_cv_path_mkdir=/bin/mkdir
 
 CONFIGURE_ENV += ${EXTRA_ENV}

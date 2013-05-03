@@ -1,7 +1,17 @@
-$OpenBSD: patch-gcc_ada_adaint_c,v 1.1.1.1 2012/04/23 15:56:41 pascal Exp $
+$OpenBSD: patch-gcc_ada_adaint_c,v 1.2 2013/05/03 23:13:49 tobiasu Exp $
 --- gcc/ada/adaint.c.orig	Wed Dec 21 14:34:12 2011
-+++ gcc/ada/adaint.c	Sat Apr 14 18:09:40 2012
-@@ -3869,3 +3869,9 @@ void __gnat_cpu_set (int cpu, size_t count ATTRIBUTE_U
++++ gcc/ada/adaint.c	Sun Apr 14 03:43:03 2013
+@@ -2468,7 +2468,8 @@ __gnat_number_of_cpus (void)
+   int cores = 1;
+ 
+ #if defined (linux) || defined (sun) || defined (AIX) \
+-    || (defined (__alpha__)  && defined (_osf_)) || defined (__APPLE__)
++    || (defined (__alpha__)  && defined (_osf_)) || defined (__APPLE__) \
++    || defined(__OpenBSD__)
+   cores = (int) sysconf (_SC_NPROCESSORS_ONLN);
+ 
+ #elif (defined (__mips) && defined (__sgi))
+@@ -3869,3 +3870,9 @@ void __gnat_cpu_set (int cpu, size_t count ATTRIBUTE_U
  #ifdef __cplusplus
  }
  #endif

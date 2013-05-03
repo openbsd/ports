@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2013/03/21 08:46:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2013/05/03 23:13:49 tobiasu Exp $
 
 ONLY_FOR_ARCHS = alpha amd64 hppa i386 powerpc sparc64
 DPB_PROPERTIES = parallel
@@ -30,7 +30,7 @@ REVISION-estdc = 10
 REVISION-f95 = 14
 REVISION-java = 15
 REVISION-objc = 14
-REVISION-ada = 15
+REVISION-ada = 16
 REVISION-go = 14
 
 SHARED_LIBS =	estdc++		14.0 \
@@ -116,6 +116,7 @@ EXTRA_ENV += am_cv_func_iconv=no JAR=no
 EXTRA_ENV += ac_cv_prog_M4=/usr/bin/m4
 EXTRA_ENV += ac_cv_header_magic_h=no
 EXTRA_ENV += lt_cv_path_SED=/usr/bin/sed
+EXTRA_ENV += STRIP=/usr/bin/strip
 MAKE_FLAGS +=	 ac_cv_path_mkdir=/bin/mkdir
 
 CONFIGURE_ENV += ${EXTRA_ENV}

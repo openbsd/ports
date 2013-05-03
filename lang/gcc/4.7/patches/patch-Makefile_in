@@ -1,6 +1,15 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2012/07/01 18:56:45 pascal Exp $
---- Makefile.in.orig	Wed May 16 17:54:24 2012
-+++ Makefile.in	Wed Jun 20 14:37:41 2012
+$OpenBSD: patch-Makefile_in,v 1.3 2013/05/03 23:13:49 tobiasu Exp $
+--- Makefile.in.orig	Mon Aug  6 16:34:27 2012
++++ Makefile.in	Sun Apr 14 22:54:05 2013
+@@ -2295,7 +2295,7 @@ install:
+ 	@: $(MAKE); $(unstage)
+ 	@r=`${PWD_COMMAND}`; export r; \
+ 	s=`cd $(srcdir); ${PWD_COMMAND}`; export s; \
+-	$(MAKE) $(RECURSE_FLAGS_TO_PASS) installdirs install-host install-target
++	$(MAKE) $(RECURSE_FLAGS_TO_PASS) -j1 installdirs install-host install-target
+ 
+ .PHONY: install-host-nogcc
+ install-host-nogcc:  \
 @@ -2577,7 +2577,7 @@ configure-build-libiberty: 
  	srcdiroption="--srcdir=$${topdir}/libiberty"; \
  	libsrcdir="$$s/libiberty"; \
