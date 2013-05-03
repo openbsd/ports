@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: samba.rc,v 1.6 2012/08/25 10:14:37 ajacoutot Exp $
+# $OpenBSD: samba.rc,v 1.7 2013/05/03 18:43:28 sthen Exp $
 
 # "meta" script running the following rc.d(8) scripts with the given argument;
 # note that daemon_flags, daemon_user and daemon_class are not passed to
@@ -12,4 +12,4 @@ if [ "$1" = stop ]; then
 	_pkg_scripts=${_l% }
 fi
 
-for _i in ${_pkg_scripts}; do ${RCDIR}/${_i} $1; done
+for _i in ${_pkg_scripts}; do [[ -x ${RCDIR}/${_i} ]] && ${RCDIR}/${_i} $1; done
