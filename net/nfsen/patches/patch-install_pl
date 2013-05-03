@@ -1,6 +1,6 @@
-$OpenBSD: patch-install_pl,v 1.4 2013/05/03 01:17:10 sthen Exp $
+$OpenBSD: patch-install_pl,v 1.5 2013/05/03 09:49:01 sthen Exp $
 --- install.pl.orig	Mon Jan 23 16:36:02 2012
-+++ install.pl	Fri May  3 01:34:14 2013
++++ install.pl	Fri May  3 10:43:46 2013
 @@ -165,14 +165,14 @@ sub VerifyUser {
  	if ( !defined $gid_name ) {
  		die "Group '$user_gid' not found on this system\n";
@@ -60,7 +60,15 @@ $OpenBSD: patch-install_pl,v 1.4 2013/05/03 01:17:10 sthen Exp $
  # Load the required NfSen modules 
  unshift @INC, "libexec";
  print "Check for required Perl modules: ";
-@@ -701,7 +706,8 @@ print "Version: $nfsen_version: $VERSION\n\n";
+@@ -639,7 +644,6 @@ eval {
+ 	require RRDs; 			import RRDs;
+ 	require Mail::Header;	import Mail::Header;
+ 	require Mail::Internet;	import Mail::Internet;
+-	require Socket6;		import Socket6;
+ };
+ if ( $@ ) {
+ 	print "Failed\nRequired nfsen modules not found\n";
+@@ -701,7 +705,8 @@ print "Version: $nfsen_version: $VERSION\n\n";
  
  # Get Perl
  # Put this into a NfConf variable, so we can use the standard Patch Procedure
@@ -70,7 +78,7 @@ $OpenBSD: patch-install_pl,v 1.4 2013/05/03 01:17:10 sthen Exp $
  $NfConf::INSTPREFIX = $ENV{'INSTPREFIX'};
  if ( defined $NfConf::INSTPREFIX ) {
  	if ( ! $NfConf::INSTPREFIX =~ /\/$/ ) {
-@@ -715,7 +721,10 @@ if ( defined $NfConf::INSTPREFIX ) {
+@@ -715,7 +720,10 @@ if ( defined $NfConf::INSTPREFIX ) {
  
  my ($nfsen_uid, $www_gid ) = VerifyConfig();
  my $nfsen_run = 0;
@@ -81,7 +89,7 @@ $OpenBSD: patch-install_pl,v 1.4 2013/05/03 01:17:10 sthen Exp $
  # test for two files of old layout
  my $need_rrdlayout_upgrade = -f "$NfConf::PROFILESTATDIR/live/flows.rrd" && -f "$NfConf::PROFILESTATDIR/live/packets_other.rrd";
  
-@@ -765,10 +774,14 @@ if ( -f "$NfConf::PIDDIR/$pid_name" ) {
+@@ -765,10 +773,14 @@ if ( -f "$NfConf::PIDDIR/$pid_name" ) {
  		}
  	}
  }
@@ -96,7 +104,7 @@ $OpenBSD: patch-install_pl,v 1.4 2013/05/03 01:17:10 sthen Exp $
  Cleanup();
  SetupEnv($nfsen_uid, $www_gid);
  
-@@ -809,14 +822,17 @@ $$$hints{'version'} 		= $nfsen_version;
+@@ -809,14 +821,17 @@ $$$hints{'version'} 		= $nfsen_version;
  $$$hints{'installed'} 		= time();
  NfSen::StoreHints();
  chown $nfsen_uid, $www_gid, "$NfConf::INSTPREFIX$NfConf::PROFILESTATDIR/hints" || die "Can't chown hints db: $!\n";

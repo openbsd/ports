@@ -1,12 +1,13 @@
-$OpenBSD: patch-libexec_AbuseWhois_pm,v 1.1 2013/05/03 09:31:23 sthen Exp $
---- libexec/AbuseWhois.pm.orig	Fri May  3 09:20:49 2013
-+++ libexec/AbuseWhois.pm	Fri May  3 09:32:30 2013
-@@ -39,7 +39,7 @@ package AbuseWhois;
+$OpenBSD: patch-libexec_AbuseWhois_pm,v 1.2 2013/05/03 09:49:01 sthen Exp $
+--- libexec/AbuseWhois.pm.orig	Fri Jan 13 17:15:10 2012
++++ libexec/AbuseWhois.pm	Fri May  3 10:36:31 2013
+@@ -38,8 +38,7 @@ package AbuseWhois;
+ 
  use strict;
  use warnings;
- use Socket;
+-use Socket;
 -use Socket6;
-+use Socket6 qw(inet_pton);
++use Socket qw(inet_pton);
  use Sys::Syslog; 
  use IO::Socket::INET;
  use Log;
