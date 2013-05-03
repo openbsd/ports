@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2013/03/11 11:20:27 espie Exp $
+# $OpenBSD: Makefile,v 1.91 2013/05/03 09:41:29 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -124,6 +124,7 @@ TEST_DEPENDS =	print/ghostscript/gnu
 post-extract:
 # - Install a precompiled binary.
 	cd ${WRKDIR}/ghc-${BIN_VER} && \
+	cp -p /bin/pwd utils/ghc-pwd/dist-install/build/tmp/ghc-pwd && \
 	./configure --prefix=${WRKDIR} && \
 	${MAKE_PROGRAM} install
 	rm -rf ${WRKDIR}/ghc-${BIN_VER}
