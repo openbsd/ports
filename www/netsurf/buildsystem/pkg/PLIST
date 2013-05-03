@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/05/03 07:29:04 bentley Exp $
+share/netsurf-buildsystem/
+share/netsurf-buildsystem/makefiles/
+share/netsurf-buildsystem/makefiles/Makefile.clang
+share/netsurf-buildsystem/makefiles/Makefile.gcc
+share/netsurf-buildsystem/makefiles/Makefile.norcroft
+share/netsurf-buildsystem/makefiles/Makefile.open64
+share/netsurf-buildsystem/makefiles/Makefile.pkgconfig
+share/netsurf-buildsystem/makefiles/Makefile.subdir
+share/netsurf-buildsystem/makefiles/Makefile.tools
+share/netsurf-buildsystem/makefiles/Makefile.top
+share/netsurf-buildsystem/testtools/
+share/netsurf-buildsystem/testtools/testrunner.pl

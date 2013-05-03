@@ -1,0 +1,47 @@
+$OpenBSD: patch-makefiles_Makefile_top,v 1.1.1.1 2013/05/03 07:29:04 bentley Exp $
+--- makefiles/Makefile.top.orig	Fri Apr 19 07:27:32 2013
++++ makefiles/Makefile.top	Tue Apr 23 16:57:19 2013
+@@ -186,8 +186,8 @@ endif
+ ifeq ($(findstring lib,$(COMPONENT_TYPE)),lib)
+   ifeq ($(findstring lib-shared,$(COMPONENT_TYPE)),lib-shared)
+     SHAREDLIBNAME := lib$(COMPONENT)$(LIBEXT)
+-    SONAME := $(SHAREDLIBNAME).$(major-version)
+-    OUTPUT := $(BUILDDIR)/$(SHAREDLIBNAME).$(COMPONENT_VERSION)
++    SONAME := $(SHAREDLIBNAME).$(NS_LIB_VERSION)
++    OUTPUT := $(BUILDDIR)/$(SHAREDLIBNAME).$(NS_LIB_VERSION)
+   else
+     OUTPUT := $(BUILDDIR)/lib$(COMPONENT)$(LIBEXT)
+   endif
+@@ -202,14 +202,6 @@ endif
+ .PHONY: all test coverage profile docs clean distclean install uninstall \
+ 	__default __precov __partial_clean __postshared
+ 
+-ifeq ($(COMPONENT_TYPE),lib-shared)
+-  POST_TARGETS := __postshared $(POST_TARGETS)
+-
+-__postshared:
+-	$(Q)$(LN) $(LNFLAGS) -f -s $(notdir $(OUTPUT)) $(BUILDDIR)/$(SONAME)
+-	$(Q)$(LN) $(LNFLAGS) -f -s $(notdir $(OUTPUT)) $(BUILDDIR)/$(SHAREDLIBNAME)
+-endif
+-
+ # Default target
+ all: $(PRE_TARGETS) $(OUTPUT) $(POST_TARGETS)
+ 
+@@ -286,7 +278,7 @@ __required = $(if $(REQUIRED_PKGS),Requires: $(subst $
+ define install_pkgconfig
+ 	$(Q)$(ECHO) $(ECHOFLAGS) "sed -e... $1 >$(BUILDDIR)/$(1:.in=)"
+ 	$(Q)$(SED) \
+-		-e 's#PREFIX#$(PREFIX)#' \
++		-e 's#PREFIX#$(TRUEPREFIX)#' \
+ 		-e 's#MAJOR#$(major-version)#' \
+ 		-e 's#MINOR#$(minor-version)#' \
+ 		-e 's#PATCH#$(patch-version)#' \
+@@ -301,8 +293,6 @@ endef
+ # TODO: Is this scheme portable?
+ define install_shared_lib
+   $(INSTALL) $(INSTALLFLAGS) -m 755 $1 $2/$(notdir $1)
+-  $(LN) $(LNFLAGS) -f -s $(notdir $1) $2/$(SONAME)
+-  $(LN) $(LNFLAGS) -f -s $(notdir $1) $2/$(SHAREDLIBNAME)
+ 
+ endef
+ 
