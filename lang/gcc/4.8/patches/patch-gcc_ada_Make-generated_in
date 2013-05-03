@@ -1,12 +1,12 @@
-$OpenBSD: patch-gcc_ada_Make-generated_in,v 1.2 2013/04/11 08:34:13 pascal Exp $
+$OpenBSD: patch-gcc_ada_Make-generated_in,v 1.3 2013/05/03 23:23:26 tobiasu Exp $
 --- gcc/ada/Make-generated.in.orig	Wed Dec  5 12:02:24 2012
-+++ gcc/ada/Make-generated.in	Mon Apr  8 23:20:57 2013
++++ gcc/ada/Make-generated.in	Sun Apr 14 21:59:15 2013
 @@ -28,21 +28,21 @@ $(ADA_GEN_SUBDIR)/treeprs.ads : $(ADA_GEN_SUBDIR)/tree
  	-$(MKDIR) $(ADA_GEN_SUBDIR)/bldtools/treeprs
  	$(RM) $(addprefix $(ADA_GEN_SUBDIR)/bldtools/treeprs/,$(notdir $^))
  	$(CP) $^ $(ADA_GEN_SUBDIR)/bldtools/treeprs
 -	(cd $(ADA_GEN_SUBDIR)/bldtools/treeprs; gnatmake -q xtreeprs ; ./xtreeprs treeprs.ads )
-+	(cd $(ADA_GEN_SUBDIR)/bldtools/treeprs; gnatmake -j1 xtreeprs ; ./xtreeprs treeprs.ads )
++	(cd $(ADA_GEN_SUBDIR)/bldtools/treeprs; ls -la; gnatmake -c xtreeprs; ls -la; gnatmake xtreeprs; ls -la; ./xtreeprs treeprs.ads )
  	$(MOVE_IF_CHANGE) $(ADA_GEN_SUBDIR)/bldtools/treeprs/treeprs.ads $(ADA_GEN_SUBDIR)/treeprs.ads
  
  $(ADA_GEN_SUBDIR)/einfo.h : $(ADA_GEN_SUBDIR)/einfo.ads $(ADA_GEN_SUBDIR)/einfo.adb $(ADA_GEN_SUBDIR)/xeinfo.adb $(ADA_GEN_SUBDIR)/ceinfo.adb
@@ -14,7 +14,7 @@ $OpenBSD: patch-gcc_ada_Make-generated_in,v 1.2 2013/04/11 08:34:13 pascal Exp $
  	$(RM) $(addprefix $(ADA_GEN_SUBDIR)/bldtools/einfo/,$(notdir $^))
  	$(CP) $^ $(ADA_GEN_SUBDIR)/bldtools/einfo
 -	(cd $(ADA_GEN_SUBDIR)/bldtools/einfo; gnatmake -q xeinfo ; ./xeinfo einfo.h )
-+	(cd $(ADA_GEN_SUBDIR)/bldtools/einfo; gnatmake -j1 xeinfo ; ./xeinfo einfo.h )
++	(cd $(ADA_GEN_SUBDIR)/bldtools/einfo; ls -la; gnatmake -c xeinfo; ls -la; gnatmake xeinfo; ls -la; ./xeinfo einfo.h )
  	$(MOVE_IF_CHANGE) $(ADA_GEN_SUBDIR)/bldtools/einfo/einfo.h $(ADA_GEN_SUBDIR)/einfo.h
  
  $(ADA_GEN_SUBDIR)/sinfo.h : $(ADA_GEN_SUBDIR)/sinfo.ads $(ADA_GEN_SUBDIR)/sinfo.adb $(ADA_GEN_SUBDIR)/xsinfo.adb $(ADA_GEN_SUBDIR)/csinfo.adb
@@ -22,7 +22,7 @@ $OpenBSD: patch-gcc_ada_Make-generated_in,v 1.2 2013/04/11 08:34:13 pascal Exp $
  	$(RM) $(addprefix $(ADA_GEN_SUBDIR)/bldtools/sinfo/,$(notdir $^))
  	$(CP) $^ $(ADA_GEN_SUBDIR)/bldtools/sinfo
 -	(cd $(ADA_GEN_SUBDIR)/bldtools/sinfo; gnatmake -q xsinfo ; ./xsinfo sinfo.h )
-+	(cd $(ADA_GEN_SUBDIR)/bldtools/sinfo; gnatmake -j1 xsinfo ; ./xsinfo sinfo.h )
++	(cd $(ADA_GEN_SUBDIR)/bldtools/sinfo; ls -la; gnatmake -c xsinfo; ls -la; gnatmake xsinfo; ls -la; ./xsinfo sinfo.h )
  	$(MOVE_IF_CHANGE) $(ADA_GEN_SUBDIR)/bldtools/sinfo/sinfo.h $(ADA_GEN_SUBDIR)/sinfo.h
  
  $(ADA_GEN_SUBDIR)/snames.h $(ADA_GEN_SUBDIR)/snames.ads $(ADA_GEN_SUBDIR)/snames.adb : $(ADA_GEN_SUBDIR)/stamp-snames ; @true
@@ -31,7 +31,7 @@ $OpenBSD: patch-gcc_ada_Make-generated_in,v 1.2 2013/04/11 08:34:13 pascal Exp $
  	$(RM) $(addprefix $(ADA_GEN_SUBDIR)/bldtools/snamest/,$(notdir $^))
  	$(CP) $^ $(ADA_GEN_SUBDIR)/bldtools/snamest
 -	(cd $(ADA_GEN_SUBDIR)/bldtools/snamest; gnatmake -q xsnamest ; ./xsnamest )
-+	(cd $(ADA_GEN_SUBDIR)/bldtools/snamest; gnatmake -j1 xsnamest ; ./xsnamest )
++	(cd $(ADA_GEN_SUBDIR)/bldtools/snamest; ls -la; gnatmake -c xsnamest; ls -la; gnatmake xsnamest; ls -la; ./xsnamest )
  	$(MOVE_IF_CHANGE) $(ADA_GEN_SUBDIR)/bldtools/snamest/snames.ns $(ADA_GEN_SUBDIR)/snames.ads
  	$(MOVE_IF_CHANGE) $(ADA_GEN_SUBDIR)/bldtools/snamest/snames.nb $(ADA_GEN_SUBDIR)/snames.adb
  	$(MOVE_IF_CHANGE) $(ADA_GEN_SUBDIR)/bldtools/snamest/snames.nh $(ADA_GEN_SUBDIR)/snames.h
@@ -40,7 +40,7 @@ $OpenBSD: patch-gcc_ada_Make-generated_in,v 1.2 2013/04/11 08:34:13 pascal Exp $
  	$(RM) $(addprefix $(ADA_GEN_SUBDIR)/bldtools/nmake/,$(notdir $^))
  	$(CP) $^ $(ADA_GEN_SUBDIR)/bldtools/nmake
 -	(cd $(ADA_GEN_SUBDIR)/bldtools/nmake; gnatmake -q xnmake ; ./xnmake -b nmake.adb ; ./xnmake -s nmake.ads)
-+	(cd $(ADA_GEN_SUBDIR)/bldtools/nmake; gnatmake -j1 xnmake ; ./xnmake -b nmake.adb ; ./xnmake -s nmake.ads)
++	(cd $(ADA_GEN_SUBDIR)/bldtools/nmake; ls -la; gnatmake -c xnmake; ls -la; gnatmake xnmake; ls -la; ./xnmake -b nmake.adb ; ./xnmake -s nmake.ads)
  	$(MOVE_IF_CHANGE) $(ADA_GEN_SUBDIR)/bldtools/nmake/nmake.ads $(ADA_GEN_SUBDIR)/nmake.ads
  	$(MOVE_IF_CHANGE) $(ADA_GEN_SUBDIR)/bldtools/nmake/nmake.adb $(ADA_GEN_SUBDIR)/nmake.adb
  	touch $(ADA_GEN_SUBDIR)/stamp-nmake
@@ -49,7 +49,7 @@ $OpenBSD: patch-gcc_ada_Make-generated_in,v 1.2 2013/04/11 08:34:13 pascal Exp $
  	$(RM) $(addprefix $(ADA_GEN_SUBDIR)/bldtools/oscons/,$(notdir $^))
  	$(CP) $^ $(ADA_GEN_SUBDIR)/bldtools/oscons
 -	(cd $(ADA_GEN_SUBDIR)/bldtools/oscons ; gnatmake -q xoscons ; \
-+	(cd $(ADA_GEN_SUBDIR)/bldtools/oscons ; gnatmake -j1 xoscons ; \
++	(cd $(ADA_GEN_SUBDIR)/bldtools/oscons ; ls -la; gnatmake -c xoscons; ls -la; gnatmake xoscons; ls -la; \
  		$(RM) s-oscons-tmplt.i s-oscons-tmplt.s ; \
  		$(OSCONS_CPP) ; \
  		$(OSCONS_EXTRACT) ; \
@@ -58,5 +58,5 @@ $OpenBSD: patch-gcc_ada_Make-generated_in,v 1.2 2013/04/11 08:34:13 pascal Exp $
  	$(CP) $^ $(ADA_GEN_SUBDIR)/bldtools/gnat_hlp
  	(cd $(ADA_GEN_SUBDIR)/bldtools/gnat_hlp; \
 -	  gnatmake -q vms_help; \
-+	  gnatmake -j1 vms_help; \
++	   ls -la; gnatmake -c vms_help; ls -la; gnatmake vms_help; ls -la; \
  	  ./vms_help$(build_exeext) gnat.help_in vms_data.ads ../../gnat.hlp)
