@@ -1,9 +1,57 @@
-@comment $OpenBSD: PLIST-web,v 1.2 2011/03/24 23:04:00 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.1 2013/05/03 01:17:10 sthen Exp $
+@pkgpath net/nfsen,-main
+@pkgpath net/nfsen,-web
+@conflict nfsen-web-*
+@extraunexec rm -rf /var/db/nfsen/ports-db/*
+bin/RebuildHierarchy.pl
+bin/install-nfsen.pl
+bin/nfsen
+bin/nfsend
+bin/testPlugin
+lib/nfsen/
+lib/nfsen/plugins/
+lib/nfsen/plugins/PortTracker.pm
+lib/nfsen/plugins/demoplugin.pm
+lib/nfsen/plugins/smily.jpg
+${P5SITE}/NfSen/
+${P5SITE}/NfSen/AbuseWhois.pm
+${P5SITE}/NfSen/Log.pm
+${P5SITE}/NfSen/Lookup.pm
+${P5SITE}/NfSen/NfAlert.pm
+${P5SITE}/NfSen/NfConf.pm
+${P5SITE}/NfSen/NfProfile.pm
+${P5SITE}/NfSen/NfSen.pm
+${P5SITE}/NfSen/NfSenRC.pm
+${P5SITE}/NfSen/NfSenRRD.pm
+${P5SITE}/NfSen/NfSenSim.pm
+${P5SITE}/NfSen/Nfcomm.pm
+${P5SITE}/NfSen/Nfsources.pm
+${P5SITE}/NfSen/Nfsync.pm
+${P5SITE}/NfSen/Notification.pm
+${P5SITE}/NfSen/installer-items/
+${P5SITE}/NfSen/installer-items/CopyRecursive.pm
+${P5SITE}/NfSen/installer-items/RRDconvertv1.pm
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/examples/nfsen/
+share/examples/nfsen/nfsen.conf
+@sample ${SYSCONFDIR}/nfsen.conf
+@mode 775
+@owner _nfcapd
+@group www
+@sample /var/db/nfsen/
+@sample /var/db/nfsen/ports-db/
+@group
+@owner
+@mode
+@exec-add usermod -v -G www _nfcapd
+@rcscript ${RCDIR}/nfsen
+@cwd /var/www
 htdocs/nfsen/
 htdocs/nfsen/alerting.php
 htdocs/nfsen/colour_palette.html
 htdocs/nfsen/colour_picker.html
-htdocs/nfsen/conf.php
+htdocs/nfsen/conf.php.dist
+@sample htdocs/nfsen/conf.php
 htdocs/nfsen/css/
 htdocs/nfsen/css/alerting.css
 htdocs/nfsen/css/detail.css

@@ -1,15 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/11 11:35:50 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2013/05/03 01:17:10 sthen Exp $
 
-MULTI_PACKAGES=		-main -web
-COMMENT-main=		web-based front end for the nfdump netflow tools
-COMMENT-web=		html/php parts for nfsen
+COMMENT=		web-based front end for the nfdump netflow tools
 
-V=			1.3.5
-REVISION-main=		8
-REVISION-web=		2
+V=			1.3.6p1
 DISTNAME=		nfsen-$V
-PKGNAME-main=		${DISTNAME}
-PKGNAME-web=		nfsen-web-$V
+PKGNAME=		${DISTNAME:S/p/pl/}
 CATEGORIES=		net www
 HOMEPAGE=		http://nfsen.sourceforge.net/
 
@@ -21,18 +16,15 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=nfsen/}
 
 MODULES=		perl lang/php
-COMMON_DEPENDS=		net/rrdtool,-perl \
+RUN_DEPENDS=		net/rrdtool,-perl \
 			mail/p5-Mail-Tools \
 			net/nfdump,-nfprofile \
-			net/nfdump>=1.6.3
-BUILD_DEPENDS=		${COMMON_DEPENDS}
-RUN_DEPENDS-main=	${COMMON_DEPENDS} \
-			nfsen-web-$V:net/nfsen,-web
+			net/nfdump>=1.6.9
+BUILD_DEPENDS=		${RUN_DEPENDS}
 
 NO_BUILD=		Yes
 NO_TEST=		Yes
-PREFIX-web=		/var/www
-WWWDIR=			${WRKINST}${PREFIX-web}/htdocs
+WWWDIR=			${WRKINST}/var/www/htdocs
 PKG_ARCH=		*
 
 pre-configure:
@@ -57,6 +49,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/installer-items/* ${PREFIX}/${P5SITE}/NfSen/installer-items
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/PortTracker/PortTracker.pm ${PREFIX}/lib/nfsen/plugins/
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/PortTracker/PortTracker.php ${WWWDIR}/nfsen/plugins/
+	-mv ${WWWDIR}/nfsen/conf.php ${WWWDIR}/nfsen/conf.php.dist
 	find ${WRKINST} -name '*.orig' -print0 | xargs -0r rm
 	chown -R ${SHAREOWN}:${SHAREGRP} ${WRKINST}/var/www/htdocs/nfsen
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/bin ${PREFIX}/lib ${PREFIX}/libdata

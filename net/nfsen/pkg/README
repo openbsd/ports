@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.3 2012/04/22 11:41:55 ajacoutot Exp $
+$OpenBSD: README,v 1.1 2013/05/03 01:17:10 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -22,7 +22,7 @@ Note, you may export netflow-compatible data from PF via pflow(4).
 Chroot considerations
 =====================
 NfSen is written with chroot in mind and is capable of communicating
-with the main nfcap daemon running outside the jail.  Adapting to this
+with the main nfcap daemon running outside the jail. Adapting to this
 configuration is a simple matter of moving a few files around (while
 the daemon is stopped).
 
@@ -32,18 +32,19 @@ the daemon is stopped).
 
 PortTracker
 ===========
-This optional module splits up traffic by port number.  It can be useful
-but is somewhat experimental.  You can attempt to use it like this:
+This optional module splits up traffic by port number. It can be useful
+but is somewhat experimental. You can attempt to use it like this:
 
 - uncomment the sample PortTracker entry from the plugin
 section in the sample ${SYSCONFDIR}/nfsen.conf
 
-- start nftrack:
+- start nftrack: note that this will require at least 10GB of space in
+the database directory. 
 # sudo -u _nfcapd nftrack -I -d /var/db/nfsen/ports-db/
 
 - restart nfsen
-# ${RCDIR}/nfsen reload
+# ${RCDIR}/nfsen restart
 
 After the next processing interval, PortTracker should generate
-data and graphs.  If you have problems then examine system logs (you
+data and graphs. If you have problems then examine system logs (you
 may need to increase logging levels).

@@ -1,6 +1,6 @@
-$OpenBSD: patch-etc_nfsen-dist_conf,v 1.2 2011/03/24 23:04:00 sthen Exp $
---- etc/nfsen-dist.conf.orig	Thu Sep  9 06:46:23 2010
-+++ etc/nfsen-dist.conf	Thu Mar 17 01:56:44 2011
+$OpenBSD: patch-etc_nfsen-dist_conf,v 1.3 2013/05/03 01:17:10 sthen Exp $
+--- etc/nfsen-dist.conf.orig	Sat Jan 14 10:13:53 2012
++++ etc/nfsen-dist.conf	Fri May  3 01:34:14 2013
 @@ -8,6 +8,10 @@
  # Set all the values to fit your NfSen setup and run the 'install.pl'
  # script from the nfsen distribution directory.
@@ -89,7 +89,7 @@ $OpenBSD: patch-etc_nfsen-dist_conf,v 1.2 2011/03/24 23:04:00 sthen Exp $
  
  # user and group of the web server process
  # All netflow processing will be done with this user
-@@ -210,6 +214,7 @@ $syslog_facility = 'local3';
+@@ -213,6 +217,7 @@ $syslog_facility = 'local3';
  @plugins = (
      # profile    # module
      # [ '*',     'demoplugin' ],
