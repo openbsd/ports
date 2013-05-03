@@ -1,0 +1,17 @@
+selfoss is a multipurpose rss reader, live stream, mashup, aggregation
+web application.
+
+Features
+- web based rss reader
+- universal aggregator
+- open source and free
+- easy extendable with an open plugin system (write your own data
+  connectors)
+- mobile support (Android, iOS, iPad)
+- use selfoss to live stream and collect all your posts, tweets,
+  feeds in one place
+- lightweight PHP application with less than 2 MB
+- supports MySQL, PostgreSQL and Sqlite Databases
+- OPML Import
+- easy installation: upload and run
+- with restful json api
