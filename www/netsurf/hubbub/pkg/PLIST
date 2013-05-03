@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/06/29 20:11:13 landry Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2013/05/03 07:32:34 bentley Exp $
 include/hubbub/
 include/hubbub/errors.h
 include/hubbub/functypes.h
@@ -7,5 +6,6 @@ include/hubbub/hubbub.h
 include/hubbub/parser.h
 include/hubbub/tree.h
 include/hubbub/types.h
+@lib lib/libhubbub.so.${LIBhubbub_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/libhubbub.pc

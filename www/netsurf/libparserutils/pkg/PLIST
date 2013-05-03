@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/06/29 20:11:13 landry Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2013/05/03 07:32:34 bentley Exp $
 include/parserutils/
 include/parserutils/charset/
 include/parserutils/charset/codec.h
@@ -16,5 +15,6 @@ include/parserutils/utils/
 include/parserutils/utils/buffer.h
 include/parserutils/utils/stack.h
 include/parserutils/utils/vector.h
+@lib lib/libparserutils.so.${LIBparserutils_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/libparserutils.pc

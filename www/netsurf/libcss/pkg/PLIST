@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/04/30 07:11:58 bentley Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.3 2013/05/03 07:32:34 bentley Exp $
 include/libcss/
 include/libcss/computed.h
 include/libcss/errors.h
@@ -12,5 +11,6 @@ include/libcss/properties.h
 include/libcss/select.h
 include/libcss/stylesheet.h
 include/libcss/types.h
+@lib lib/libcss.so.${LIBcss_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/libcss.pc

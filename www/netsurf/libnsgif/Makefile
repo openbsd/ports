@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/05 08:02:35 bentley Exp $
+# $OpenBSD: Makefile,v 1.5 2013/05/03 07:32:34 bentley Exp $
 
 COMMENT =		GIF decoding library
 
 NETSURF_PROJECT =	libnsgif
-NETSURF_VERSION =	0.0.3
-REVISION =		0
-
-WRKDIST =		${WRKDIR}/${DISTNAME}
+NETSURF_VERSION =	0.1.0
 
 CATEGORIES =		graphics
-SHARED_LIBS =		nsgif 0.0 #0.0.3
+SHARED_LIBS =		nsgif 0.0 #0.1.0
 
 .include <bsd.port.mk>
