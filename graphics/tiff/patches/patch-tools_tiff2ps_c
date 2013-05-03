@@ -1,0 +1,38 @@
+$OpenBSD: patch-tools_tiff2ps_c,v 1.1 2013/05/03 11:00:39 jasper Exp $
+
+Security fix for CVE-2013-1961 libtiff (tiff2pdf): Stack-based buffer overflow
+with malformed image-length and resolution
+
+Patch from https://bugzilla.redhat.com/show_bug.cgi?id=952131
+
+--- tools/tiff2ps.c.orig	Tue May 31 19:10:18 2011
++++ tools/tiff2ps.c	Fri May  3 12:05:14 2013
+@@ -1781,8 +1781,8 @@ PS_Lvl2ImageDict(FILE* fd, TIFF* tif, uint32 w, uint32
+ 		imageOp = "imagemask";
+ 
+ 	(void)strcpy(im_x, "0");
+-	(void)sprintf(im_y, "%lu", (long) h);
+-	(void)sprintf(im_h, "%lu", (long) h);
++	(void)snprintf(im_y, sizeof(im_y), "%lu", (long) h);
++	(void)snprintf(im_h, sizeof(im_h), "%lu", (long) h);
+ 	tile_width = w;
+ 	tile_height = h;
+ 	if (TIFFIsTiled(tif)) {
+@@ -1803,7 +1803,7 @@ PS_Lvl2ImageDict(FILE* fd, TIFF* tif, uint32 w, uint32
+ 		}
+ 		if (tile_height < h) {
+ 			fputs("/im_y 0 def\n", fd);
+-			(void)sprintf(im_y, "%lu im_y sub", (unsigned long) h);
++			(void)snprintf(im_y, sizeof(im_y), "%lu im_y sub", (unsigned long) h);
+ 		}
+ 	} else {
+ 		repeat_count = tf_numberstrips;
+@@ -1815,7 +1815,7 @@ PS_Lvl2ImageDict(FILE* fd, TIFF* tif, uint32 w, uint32
+ 			fprintf(fd, "/im_h %lu def\n",
+ 			    (unsigned long) tile_height);
+ 			(void)strcpy(im_h, "im_h");
+-			(void)sprintf(im_y, "%lu im_y sub", (unsigned long) h);
++			(void)snprintf(im_y, sizeof(im_y), "%lu im_y sub", (unsigned long) h);
+ 		}
+ 	}
+ 

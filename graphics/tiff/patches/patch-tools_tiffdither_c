@@ -1,0 +1,18 @@
+$OpenBSD: patch-tools_tiffdither_c,v 1.1 2013/05/03 11:00:39 jasper Exp $
+
+Security fix for CVE-2013-1961 libtiff (tiff2pdf): Stack-based buffer overflow
+with malformed image-length and resolution
+
+Patch from https://bugzilla.redhat.com/show_bug.cgi?id=952131
+
+--- tools/tiffdither.c.orig	Wed Mar 10 19:56:50 2010
++++ tools/tiffdither.c	Fri May  3 12:05:14 2013
+@@ -260,7 +260,7 @@ main(int argc, char* argv[])
+ 		TIFFSetField(out, TIFFTAG_FILLORDER, fillorder);
+ 	else
+ 		CopyField(TIFFTAG_FILLORDER, shortv);
+-	sprintf(thing, "Dithered B&W version of %s", argv[optind]);
++	snprintf(thing, sizeof(thing), "Dithered B&W version of %s", argv[optind]);
+ 	TIFFSetField(out, TIFFTAG_IMAGEDESCRIPTION, thing);
+ 	CopyField(TIFFTAG_PHOTOMETRIC, shortv);
+ 	CopyField(TIFFTAG_ORIENTATION, shortv);

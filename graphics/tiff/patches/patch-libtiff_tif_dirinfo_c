@@ -1,4 +1,10 @@
-$OpenBSD: patch-libtiff_tif_dirinfo_c,v 1.7 2012/09/24 19:51:04 naddy Exp $
+$OpenBSD: patch-libtiff_tif_dirinfo_c,v 1.8 2013/05/03 11:00:39 jasper Exp $
+
+Security fix for CVE-2013-1961 libtiff (tiff2pdf): Stack-based buffer overflow
+with malformed image-length and resolution
+
+Patch from https://bugzilla.redhat.com/show_bug.cgi?id=952131
+
 --- libtiff/tif_dirinfo.c.orig	Sun Aug 19 18:56:34 2012
 +++ libtiff/tif_dirinfo.c	Mon Sep 24 21:30:29 2012
 @@ -711,7 +711,7 @@ _TIFFCreateAnonField(TIFF *tif, uint32 tag, TIFFDataTy

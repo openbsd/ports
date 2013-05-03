@@ -1,4 +1,10 @@
-$OpenBSD: patch-libtiff_tif_codec_c,v 1.2 2012/04/14 15:09:55 naddy Exp $
+$OpenBSD: patch-libtiff_tif_codec_c,v 1.3 2013/05/03 11:00:39 jasper Exp $
+
+Security fix for CVE-2013-1961 libtiff (tiff2pdf): Stack-based buffer overflow
+with malformed image-length and resolution
+
+Patch from https://bugzilla.redhat.com/show_bug.cgi?id=952131
+
 --- libtiff/tif_codec.c.orig	Tue Dec 14 15:18:28 2010
 +++ libtiff/tif_codec.c	Wed Apr 11 18:22:55 2012
 @@ -108,7 +108,7 @@ _notConfigured(TIFF* tif)

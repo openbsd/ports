@@ -1,0 +1,40 @@
+$OpenBSD: patch-tools_tiffcrop_c,v 1.1 2013/05/03 11:00:39 jasper Exp $
+
+Security fix for CVE-2013-1961 libtiff (tiff2pdf): Stack-based buffer overflow
+with malformed image-length and resolution
+
+Patch from https://bugzilla.redhat.com/show_bug.cgi?id=952131
+
+--- tools/tiffcrop.c.orig	Tue Dec 14 15:18:28 2010
++++ tools/tiffcrop.c	Fri May  3 12:05:14 2013
+@@ -2077,7 +2077,7 @@ update_output_file (TIFF **tiffout, char *mode, int au
+         return 1;
+         }
+ 
+-      sprintf (filenum, "-%03d%s", findex, export_ext);
++      snprintf(filenum, sizeof(filenum), "-%03d%s", findex, export_ext);
+       filenum[14] = '\0';
+       strncat (exportname, filenum, 15);
+       }
+@@ -2230,8 +2230,8 @@ main(int argc, char* argv[])
+ 
+           /* dump.infilename is guaranteed to be NUL termimated and have 20 bytes 
+              fewer than PATH_MAX */ 
+-          memset (temp_filename, '\0', PATH_MAX + 1);              
+-          sprintf (temp_filename, "%s-read-%03d.%s", dump.infilename, dump_images,
++          snprintf(temp_filename, sizeof(temp_filename), "%s-read-%03d.%s",
++		   dump.infilename, dump_images,
+                   (dump.format == DUMP_TEXT) ? "txt" : "raw");
+           if ((dump.infile = fopen(temp_filename, dump.mode)) == NULL)
+             {
+@@ -2249,8 +2249,8 @@ main(int argc, char* argv[])
+ 
+           /* dump.outfilename is guaranteed to be NUL termimated and have 20 bytes 
+              fewer than PATH_MAX */ 
+-          memset (temp_filename, '\0', PATH_MAX + 1);              
+-          sprintf (temp_filename, "%s-write-%03d.%s", dump.outfilename, dump_images,
++          snprintf(temp_filename, sizeof(temp_filename), "%s-write-%03d.%s",
++		   dump.outfilename, dump_images,
+                   (dump.format == DUMP_TEXT) ? "txt" : "raw");
+           if ((dump.outfile = fopen(temp_filename, dump.mode)) == NULL)
+             {

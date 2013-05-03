@@ -1,0 +1,21 @@
+$OpenBSD: patch-contrib_dbs_xtiff_xtiff_c,v 1.1 2013/05/03 11:00:39 jasper Exp $
+
+Security fix for CVE-2013-1961 libtiff (tiff2pdf): Stack-based buffer overflow
+with malformed image-length and resolution
+
+Patch from https://bugzilla.redhat.com/show_bug.cgi?id=952131
+
+--- contrib/dbs/xtiff/xtiff.c.orig	Tue Jun  8 20:55:15 2010
++++ contrib/dbs/xtiff/xtiff.c	Fri May  3 12:05:07 2013
+@@ -512,9 +512,9 @@ SetNameLabel()
+     Arg args[1];
+ 
+     if (tfMultiPage)
+-        sprintf(buffer, "%s - page %d", fileName, tfDirectory);
++        snprintf(buffer, sizeof(buffer), "%s - page %d", fileName, tfDirectory);
+     else
+-        strcpy(buffer, fileName);
++        snprintf(buffer, sizeof(buffer), "%s", fileName);
+     XtSetArg(args[0], XtNlabel, buffer);
+     XtSetValues(labelWidget, args, 1);
+ }
