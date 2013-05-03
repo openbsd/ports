@@ -1,14 +1,15 @@
---- doc/terminator.1.orig	Thu May 19 15:37:28 2011
-+++ doc/terminator.1	Thu May 19 15:38:03 2011
-@@ -73,7 +73,6 @@
- only be printed from the specified functions. If this is specified in
- addition to \-\-debug-classes, only the intersection of the two lists
- will be displayed
+$OpenBSD: patch-doc_terminator_1,v 1.2 2013/05/03 23:21:17 bcallah Exp $
+--- doc/terminator.1.orig	Fri May  3 18:13:12 2013
++++ doc/terminator.1	Fri May  3 18:15:11 2013
+@@ -89,7 +89,6 @@ will be displayed
+ .B \-\-new-tab
+ If this is specified and Terminator is already running, DBus will be
+ used to spawn a new tab in the first Terminator window.
 -.TP
  .SH "KEYBINDINGS"
  The following keybindings can be used to control Terminator:
  .TP 
-@@ -190,7 +189,6 @@
+@@ -212,7 +211,6 @@ part of the same Terminator process)
  .TP
  .B Super+i
  Spawn a new Terminator process

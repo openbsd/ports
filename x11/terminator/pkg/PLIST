@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/01/30 16:12:36 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/05/03 23:21:17 bcallah Exp $
+bin/remotinator
 bin/terminator
 lib/python${MODPY_VERSION}/site-packages/Terminator-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/terminatorlib/
@@ -46,6 +47,8 @@ lib/python${MODPY_VERSION}/site-packages/terminatorlib/plugins/activitywatch.py
 lib/python${MODPY_VERSION}/site-packages/terminatorlib/plugins/activitywatch.pyc
 lib/python${MODPY_VERSION}/site-packages/terminatorlib/plugins/custom_commands.py
 lib/python${MODPY_VERSION}/site-packages/terminatorlib/plugins/custom_commands.pyc
+lib/python${MODPY_VERSION}/site-packages/terminatorlib/plugins/logger.py
+lib/python${MODPY_VERSION}/site-packages/terminatorlib/plugins/logger.pyc
 lib/python${MODPY_VERSION}/site-packages/terminatorlib/plugins/maven.py
 lib/python${MODPY_VERSION}/site-packages/terminatorlib/plugins/maven.pyc
 lib/python${MODPY_VERSION}/site-packages/terminatorlib/plugins/terminalshot.py
@@ -97,10 +100,15 @@ share/icons/hicolor/scalable/apps/terminator.svg
 share/locale/af/LC_MESSAGES/terminator.mo
 share/locale/ar/LC_MESSAGES/terminator.mo
 share/locale/ast/LC_MESSAGES/terminator.mo
+share/locale/az/LC_MESSAGES/terminator.mo
 share/locale/bg/LC_MESSAGES/terminator.mo
 share/locale/bn/LC_MESSAGES/terminator.mo
+share/locale/bs/LC_MESSAGES/terminator.mo
 share/locale/ca/LC_MESSAGES/terminator.mo
 share/locale/ca@valencia/LC_MESSAGES/terminator.mo
+share/locale/ckb/
+share/locale/ckb/LC_MESSAGES/
+share/locale/ckb/LC_MESSAGES/terminator.mo
 share/locale/cs/LC_MESSAGES/terminator.mo
 share/locale/da/LC_MESSAGES/terminator.mo
 share/locale/de/LC_MESSAGES/terminator.mo
@@ -114,6 +122,7 @@ share/locale/et/LC_MESSAGES/terminator.mo
 share/locale/eu/LC_MESSAGES/terminator.mo
 share/locale/fa/LC_MESSAGES/terminator.mo
 share/locale/fi/LC_MESSAGES/terminator.mo
+share/locale/fo/LC_MESSAGES/terminator.mo
 share/locale/fr/LC_MESSAGES/terminator.mo
 share/locale/fy/
 share/locale/fy/LC_MESSAGES/
@@ -125,6 +134,7 @@ share/locale/hi/LC_MESSAGES/terminator.mo
 share/locale/hr/LC_MESSAGES/terminator.mo
 share/locale/hu/LC_MESSAGES/terminator.mo
 share/locale/id/LC_MESSAGES/terminator.mo
+share/locale/is/LC_MESSAGES/terminator.mo
 share/locale/it/LC_MESSAGES/terminator.mo
 share/locale/ja/LC_MESSAGES/terminator.mo
 share/locale/jv/
@@ -133,6 +143,9 @@ share/locale/jv/LC_MESSAGES/terminator.mo
 share/locale/ka/LC_MESSAGES/terminator.mo
 share/locale/kk/LC_MESSAGES/terminator.mo
 share/locale/ko/LC_MESSAGES/terminator.mo
+share/locale/la/
+share/locale/la/LC_MESSAGES/
+share/locale/la/LC_MESSAGES/terminator.mo
 share/locale/lt/LC_MESSAGES/terminator.mo
 share/locale/lv/LC_MESSAGES/terminator.mo
 share/locale/mk/LC_MESSAGES/terminator.mo
