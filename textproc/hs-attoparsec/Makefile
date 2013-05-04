@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:42:41 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/05/04 21:14:20 kili Exp $
 
 COMMENT =		fast combinator parsing for bytestrings
 
-DISTNAME =		attoparsec-0.10.1.0
-REVISION =		4
+DISTNAME =		attoparsec-0.10.4.0
 CATEGORIES =		textproc
 
 MAINTAINER =		Jim Razmus II <jim@openbsd.org>, \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/01/20 18:06:14 kili Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/05/04 21:14:20 kili Exp $
 @conflict hs-attoparsec-text-*
 @pkgpath textproc/hs-attoparsec-text
 lib/ghc/${DISTNAME}/
@@ -22,6 +22,8 @@ lib/ghc/${DISTNAME}/Data/Attoparsec/Char8.p_hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/Combinator.hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/Combinator.p_hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/Internal/
+lib/ghc/${DISTNAME}/Data/Attoparsec/Internal.hi
+lib/ghc/${DISTNAME}/Data/Attoparsec/Internal.p_hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/Internal/Types.hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/Internal/Types.p_hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/Lazy.hi
