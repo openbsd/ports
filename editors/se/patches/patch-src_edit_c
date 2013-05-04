@@ -1,0 +1,75 @@
+$OpenBSD: patch-src_edit_c,v 1.1.1.1 2013/05/04 15:13:47 jturner Exp $
+
+commit 7677b8ad51c5bbcae9dd08afb08d32e242d497ce
+Author: James Turner <james@calminferno.net>
+Date:   Fri May 3 17:19:38 2013 -0400
+
+--- src/edit.c.orig	Fri May  3 22:19:53 2013
++++ src/edit.c	Fri May  3 22:23:49 2013
+@@ -1222,23 +1222,30 @@ int settab (char str[])
+ }
+ 
+ 
+-/* serc_safe --- check if the file permissions and ownership are safe */
++/* serc_safe_open --- open and check if the file permissions and ownership are safe */
+ 
+ /*
+  * err on the side of caution and only exec ~/.serc and ./serc files
+  * that we own and cannot be written by others.
+  */
+ 
+-int serc_safe (char *path)
++FILE *serc_safe_open (char *path)
+ {
++	FILE *fp;
+ 	int rc;
+ 	uid_t our_euid;
+ 	struct stat sbuf;
+ 
+-	rc = stat (path, &sbuf);
++	if ((fp = fopen (path, "r")) == NULL)
++	{
++		return NULL;
++	}
++
++	rc = fstat (fileno(fp), &sbuf);
+ 	if (rc != 0)
+ 	{
+-		return NO;
++		fclose(fp);
++		return NULL;
+ 	}
+ 
+ 	our_euid = geteuid ();
+@@ -1246,16 +1253,18 @@ int serc_safe (char *path)
+ 	/* don't exec .serc files that aren't ours */
+ 	if (sbuf.st_uid != our_euid)
+ 	{
+-		return NO;
++		fclose(fp);
++		return NULL;
+ 	}
+ 
+ 	/* don't .serc files that others can write to */
+ 	if ((sbuf.st_mode & S_IWGRP) || (sbuf.st_mode & S_IWOTH))
+ 	{
+-		return NO;
++		fclose(fp);
++		return NULL;
+ 	}
+ 
+-	return YES;
++	return fp;
+ }
+ 
+ 
+@@ -1285,8 +1294,7 @@ void serc (void)
+ 
+ 	for (i = 0; serc_files[i]; i++)
+ 	{
+-		if ((serc_safe (serc_files[i]) == YES) &&
+-			 ((fp = fopen (serc_files[i], "r")) != NULL))
++		if ((fp = serc_safe_open (serc_files[i])) != NULL)
+ 		{
+ 			break;
+ 		}

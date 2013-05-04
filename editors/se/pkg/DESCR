@@ -1,0 +1,8 @@
+se is a screen oriented version of the classic UNIX text editor ed. It
+has a full visual interface allowing you to see the text you're editing.
+It's command syntax will be very familiar to users who already know ed.
+
+Some of se's additional features are, a built-in help system,
+configurable options that can be loaded from a startup file, the ability
+to be ran interactively or via the included scriptse utility, and
+optional usage logging.
