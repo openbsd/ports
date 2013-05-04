@@ -1,6 +1,6 @@
-$OpenBSD: patch-get_iplayer,v 1.53 2013/01/27 22:22:25 sthen Exp $
---- get_iplayer.orig	Wed Nov 14 19:24:55 2012
-+++ get_iplayer	Sun Jan 27 22:08:50 2013
+$OpenBSD: patch-get_iplayer,v 1.54 2013/05/04 09:24:34 sthen Exp $
+--- get_iplayer.orig	Wed Apr 24 10:14:08 2013
++++ get_iplayer	Wed Apr 24 10:16:11 2013
 @@ -316,6 +316,7 @@ $opt->{verbose} = 1 if $opt_pre->{verbose};
  $opt->{quiet} = 1 if $opt_pre->{quiet};
  $opt->{pvr} = 1 if $opt_pre->{pvr};
@@ -27,7 +27,7 @@ $OpenBSD: patch-get_iplayer,v 1.53 2013/01/27 22:22:25 sthen Exp $
  	$bin->{atomicparsley}	= $opt->{atomicparsley} || 'AtomicParsley';
  
  	$bin->{tee}		= 'tee';
-@@ -1416,14 +1417,16 @@ sub user_agent {
+@@ -1417,14 +1418,16 @@ sub user_agent {
  		update		=> [ "get_iplayer updater (v${version} - $^O - $^V)" ],
  		get_iplayer	=> [ "get_iplayer/$version $^O/$^V" ],
  		desktop		=> [
@@ -52,7 +52,7 @@ $OpenBSD: patch-get_iplayer,v 1.53 2013/01/27 22:22:25 sthen Exp $
  				],
  		safari		=> [
  				'Mozilla/5.0 (iPhone; U; CPU iPhone OS 2_0 like Mac OS X; en-us) AppleWebKit/525.18.1 (KHTML, like Gecko) Version/3.1.1 Mobile/5A345 Safari/525.20',
-@@ -9736,7 +9739,7 @@ sub tag_file_id3 {
+@@ -9715,7 +9718,7 @@ sub tag_file_id3 {
  # add basic ID3 tag with id3v2
  sub tag_file_id3_basic {
  	my ($self, $meta, $tags) = @_;
