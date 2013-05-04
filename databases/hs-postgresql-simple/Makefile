@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2013/04/28 22:47:20 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2013/05/04 21:19:04 kili Exp $
 
 COMMENT =		mid-level PostgreSQL client library
 
-DISTNAME =		postgresql-simple-0.3.1.0
+DISTNAME =		postgresql-simple-0.3.1.2
 CATEGORIES =		databases
 
 HOMEPAGE =		https://github.com/lpsmith/postgresql-simple
@@ -23,6 +23,6 @@ RUN_DEPENDS =		databases/hs-postgresql-libpq>=0.6.2 \
 			devel/hs-text>=0.11.1 \
 			devel/hs-transformers \
 			devel/hs-vector \
-			textproc/hs-attoparsec>=0.8.5.3
+			textproc/hs-attoparsec>=0.10.3
 
 .include <bsd.port.mk>
