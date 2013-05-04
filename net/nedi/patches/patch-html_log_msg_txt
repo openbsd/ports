@@ -1,11 +1,19 @@
---- html/log/msg.txt.orig	Sat Feb 11 13:14:40 2012
-+++ html/log/msg.txt	Sun Feb 12 09:50:19 2012
-@@ -25,7 +25,7 @@ Getting started:
- <form method="post" action="System-Files.php">
- <input type="hidden" name="file" value="<?=$nedipath?>/inc/crontab">
+--- html/log/msg.txt.orig	Sat Apr 27 16:46:21 2013
++++ html/log/msg.txt	Sat Apr 27 16:46:42 2013
+@@ -52,7 +52,8 @@ Getting started:
+ 
  <input type="image" src="img/32/clock.png" value="Submit" title="Edit Crontab" hspace="4">
+ 
 - Schedule discoveries based on duration of previous step. If you choose anything else than 1h, adjust rrdstep in nedi.conf and delete all files in /var/nedi/rrd now.
-+ Schedule discoveries based on duration of previous step. If you choose anything else than 1h, adjust rrdstep in nedi.conf and delete all files in ${TRUEPREFIX}/nedi/rrd now.
++ Schedule discoveries based on duration of previous step. If you choose anything
++else than 1h, adjust rrdstep in nedi.conf and delete all files in ${TRUEPREFIX}/rrd now.
+ 
  </form>
  
- <a href="Devices-List.php?ina=snmpversion&opa=>&sta=0&mon=1">
+@@ -90,4 +91,4 @@ Further steps:
+ 
+ </ul>
+ 
+-<center>Then edit this message to fit your needs (by clicking the notepad above)</center><br>
+\ No newline at end of file
++<center>Then edit this message to fit your needs (by clicking the notepad above)</center><br>

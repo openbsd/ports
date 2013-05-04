@@ -1,20 +1,26 @@
-$OpenBSD: patch-inc_crontab,v 1.1 2012/02/17 21:41:08 mglocker Exp $
---- inc/crontab.orig	Wed Jan 18 21:04:01 2012
-+++ inc/crontab	Wed Jan 18 21:04:30 2012
-@@ -1,11 +1,11 @@
+--- inc/crontab.orig	Fri Apr 26 18:12:21 2013
++++ inc/crontab	Sat Apr 27 16:43:20 2013
+@@ -1,16 +1,16 @@
  # example for hourly discovery with a config backup at midnight
--#0 0 * * *      /var/nedi/nedi.pl -vpB > /tmp/nedi-00.bup 2>&1
--#0 1-23 * * *   /var/nedi/nedi.pl -p > /tmp/nedi-`date +\%H`.run 2>&1
-+#0 0 * * *      ${TRUEPREFIX}/nedi/nedi.pl -vpB > /tmp/nedi-00.bup 2>&1
-+#0 1-23 * * *   ${TRUEPREFIX}/nedi/nedi.pl -p > /tmp/nedi-`date +\%H`.run 2>&1
+-#0 0    * * *	/var/nedi/nedi.pl -vpB5 > /tmp/nedi-00.bup 2>&1
+-#0 1-23 * * *	/var/nedi/nedi.pl -vp > /tmp/nedi-`date +\%H`.run 2>&1
++#0 0    * * *	${TRUEPREFIX}/nedi.pl -vpB5 > /tmp/nedi-00.bup 2>&1
++#0 1-23 * * *	${TRUEPREFIX}/nedi.pl -vp > /tmp/nedi-`date +\%H`.run 2>&1
  
  # or 5 min interval (for very small networks)
--*/5 * * * *   /var/nedi/nedi.pl -vp > /tmp/nedi-`date +\%H\%M`.run 2>&1
--#3   0 * * *   /var/nedi/nedi.pl -vBA 'login !=""'  -SsmgrfpitedobwaOA > /tmp/nedi-0003.bup 2>&1
-+*/5 * * * *   ${TRUEPREFIX}/nedi/nedi.pl -vp > /tmp/nedi-`date +\%H\%M`.run 2>&1
-+#3   0 * * *   ${TRUEPREFIX}/nedi/nedi.pl -vBA 'login !=""'  -SsmgrfpitedobwaOA > /tmp/nedi-0003.bup 2>&1
+-*/5 * * * *	/var/nedi/nedi.pl -vp > /tmp/nedi-`date +\%H\%M`.run 2>&1
+-3   0 * * *	/var/nedi/nedi.pl -vB5 -A 'login !=""'  -SsmgafpijtedobwOA > /tmp/nedi-0003.bup 2>&1
++*/5 * * * *	${TRUEPREFIX}/nedi.pl -vp > /tmp/nedi-`date +\%H\%M`.run 2>&1
++3   0 * * *	${TRUEPREFIX}/nedi.pl -vB5 -A 'login !=""'  -SsmgafpijtedobwOA > /tmp/nedi-0003.bup 2>&1
  
+ # weekly statistic Mondays 6:00 as a chat message
+-#0 6 * * 1      /var/nedi/stati.pl
++#0 6 * * 1      ${TRUEPREFIX}/stati.pl
+ 
+ # monthly DB cleanup on the 1st at 1:00 with output in /tmp
+-#0 1 1 * *	/var/nedi/contrib/nedio_db_maintenance.sh /var/nedi/nedi.conf /tmp/nedi-dbcleanup
++#0 1 1 * *	${TRUEPREFIX}/contrib/nedio_db_maintenance.sh ${TRUEPREFIX}/nedi.conf /tmp/nedi-dbcleanup
  
  # scan nodes for open ports during working hours
--#0 11 * * 1-5 /var/nedi/nedi.pl -vs TUFupdate > /tmp/nedi-1100.scan 2>&1
-+#0 11 * * 1-5 ${TRUEPREFIX}/nedi/nedi.pl -vs TUFupdate > /tmp/nedi-1100.scan 2>&1
+-#0 11 * * 1-5	/var/nedi/nedi.pl -vs TUFupdate > /tmp/nedi-1100.scan 2>&1
++#0 11 * * 1-5	${TRUEPREFIX}/nedi.pl -vs TUFupdate > /tmp/nedi-1100.scan 2>&1

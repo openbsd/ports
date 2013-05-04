@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:35:49 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/05/04 20:34:33 mglocker Exp $
 
 COMMENT =			network discovery tool
 
-DISTNAME =			nedi-bsd-1.0.7
-PKGNAME =			nedi-1.0.7
-REVISION =			1
+DISTNAME =			nedi-bsd-1.0.8
+PKGNAME =			nedi-1.0.8
 EXTRACT_SUFX =			.tgz
 CATEGORIES =			net
 
