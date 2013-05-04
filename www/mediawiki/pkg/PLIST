@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2012/09/01 11:10:45 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.20 2013/05/04 08:45:41 jasper Exp $
 @pkgpath www/mediawiki
 mediawiki/
 mediawiki/COPYING
@@ -65,7 +65,6 @@ mediawiki/docs/uidesign/table-layout.html
 mediawiki/docs/upload.txt
 mediawiki/extensions/
 mediawiki/extensions/ConfirmEdit/
-mediawiki/extensions/ConfirmEdit/.gitreview
 mediawiki/extensions/ConfirmEdit/Asirra.class.php
 mediawiki/extensions/ConfirmEdit/Asirra.i18n.php
 mediawiki/extensions/ConfirmEdit/Asirra.php
@@ -104,19 +103,13 @@ mediawiki/extensions/Gadgets/README
 mediawiki/extensions/Gadgets/SpecialGadgets.php
 mediawiki/extensions/Gadgets/install.settings
 mediawiki/extensions/Nuke/
-mediawiki/extensions/Nuke/.gitreview
-mediawiki/extensions/Nuke/COPYING
-mediawiki/extensions/Nuke/INSTALL
 mediawiki/extensions/Nuke/Nuke.alias.php
 mediawiki/extensions/Nuke/Nuke.i18n.php
 mediawiki/extensions/Nuke/Nuke.php
 mediawiki/extensions/Nuke/Nuke_body.php
-mediawiki/extensions/Nuke/README
-mediawiki/extensions/Nuke/RELEASE-NOTES
 mediawiki/extensions/Nuke/SpecialNuke.php
 mediawiki/extensions/Nuke/ext.nuke.js
 mediawiki/extensions/ParserFunctions/
-mediawiki/extensions/ParserFunctions/.gitreview
 mediawiki/extensions/ParserFunctions/COPYING
 mediawiki/extensions/ParserFunctions/Convert.php
 mediawiki/extensions/ParserFunctions/Expr.php
@@ -132,7 +125,6 @@ mediawiki/extensions/ParserFunctions/stringFunctionTests.txt
 mediawiki/extensions/ParserFunctions/testExpr.php
 mediawiki/extensions/README
 mediawiki/extensions/Renameuser/
-mediawiki/extensions/Renameuser/.gitreview
 mediawiki/extensions/Renameuser/RenameUserJob.php
 mediawiki/extensions/Renameuser/Renameuser.alias.php
 mediawiki/extensions/Renameuser/Renameuser.i18n.php
@@ -141,7 +133,6 @@ mediawiki/extensions/Renameuser/Renameuser_body.php
 mediawiki/extensions/Renameuser/SpecialRenameuser.php
 mediawiki/extensions/Renameuser/renameUserCleanup.php
 mediawiki/extensions/Vector/
-mediawiki/extensions/Vector/.gitreview
 mediawiki/extensions/Vector/README
 mediawiki/extensions/Vector/Vector.hooks.php
 mediawiki/extensions/Vector/Vector.i18n.php
@@ -167,7 +158,6 @@ mediawiki/extensions/Vector/modules/images/open.png
 mediawiki/extensions/Vector/modules/images/portal-break.png
 mediawiki/extensions/Vector/switchExperimentPrefs.php
 mediawiki/extensions/WikiEditor/
-mediawiki/extensions/WikiEditor/.gitreview
 mediawiki/extensions/WikiEditor/README
 mediawiki/extensions/WikiEditor/WikiEditor.hooks.php
 mediawiki/extensions/WikiEditor/WikiEditor.i18n.php
