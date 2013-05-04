@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/31 20:16:10 edd Exp $
+# $OpenBSD: Makefile,v 1.10 2013/05/04 17:17:05 edd Exp $
 
 BROKEN-powerpc =	error: invalid 'asm': invalid %k value
 BROKEN-sparc64 =	error: invalid 'asm': invalid operand output code
 
 COMMENT =		modern Amiga emulator
-V =			2.2.0
+V =			2.2.2
+MODPY_EGG_VERSION =	${V}
 DISTNAME =		fs-uae-$V
 CATEGORIES =		emulators
 
