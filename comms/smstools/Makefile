@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2013/03/30 22:18:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2013/05/04 11:31:57 sthen Exp $
 
 COMMENT =	gateway to send and receive SMS through GSM mobile phones
 
@@ -43,10 +43,9 @@ do-install:
 	${INSTALL_DATA} ${WRKDIST}/scripts/* \
 		${PREFIX}/share/examples/smstools/scripts
 	rm ${PREFIX}/share/examples/smstools/scripts/*.orig
-	${SUBST_CMD} -c ${FILESDIR}/smsd.conf.openbsd \
-	       ${WRKDIR}/smsd.conf.openbsd
-	${INSTALL_DATA} ${WRKDIR}/smsd.conf.openbsd \
-	       ${PREFIX}/share/examples/smstools/smsd.conf.openbsd
+	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} \
+		-c ${FILESDIR}/smsd.conf.openbsd \
+		${PREFIX}/share/examples/smstools/smsd.conf.openbsd
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/smstools
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/smstools/slideshow
 	${INSTALL_DATA} ${WRKDIST}/doc/*html ${PREFIX}/share/doc/smstools
