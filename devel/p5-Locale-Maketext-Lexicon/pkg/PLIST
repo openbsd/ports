@@ -1,9 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/08 18:36:18 msf Exp $
-bin/xgettext.pl
+@comment $OpenBSD: PLIST,v 1.2 2013/05/04 10:18:55 sthen Exp $
 ${P5SITE}/Locale/
 ${P5SITE}/Locale/Maketext/
 ${P5SITE}/Locale/Maketext/Extract/
 ${P5SITE}/Locale/Maketext/Extract.pm
+${P5SITE}/Locale/Maketext/Extract/Plugin/
+${P5SITE}/Locale/Maketext/Extract/Plugin/Base.pm
+${P5SITE}/Locale/Maketext/Extract/Plugin/FormFu.pm
+${P5SITE}/Locale/Maketext/Extract/Plugin/Generic.pm
+${P5SITE}/Locale/Maketext/Extract/Plugin/Haml.pm
+${P5SITE}/Locale/Maketext/Extract/Plugin/Mason.pm
+${P5SITE}/Locale/Maketext/Extract/Plugin/PPI.pm
+${P5SITE}/Locale/Maketext/Extract/Plugin/Perl.pm
+${P5SITE}/Locale/Maketext/Extract/Plugin/TT2.pm
+${P5SITE}/Locale/Maketext/Extract/Plugin/TextTemplate.pm
+${P5SITE}/Locale/Maketext/Extract/Plugin/YAML.pm
 ${P5SITE}/Locale/Maketext/Extract/Run.pm
 ${P5SITE}/Locale/Maketext/Lexicon/
 ${P5SITE}/Locale/Maketext/Lexicon.pm
@@ -11,8 +21,18 @@ ${P5SITE}/Locale/Maketext/Lexicon/Auto.pm
 ${P5SITE}/Locale/Maketext/Lexicon/Gettext.pm
 ${P5SITE}/Locale/Maketext/Lexicon/Msgcat.pm
 ${P5SITE}/Locale/Maketext/Lexicon/Tie.pm
-@man man/man1/xgettext.pl.1
 @man man/man3p/Locale::Maketext::Extract.3p
+@man man/man3p/Locale::Maketext::Extract::Plugin::Base.3p
+@man man/man3p/Locale::Maketext::Extract::Plugin::FormFu.3p
+@man man/man3p/Locale::Maketext::Extract::Plugin::Generic.3p
+@man man/man3p/Locale::Maketext::Extract::Plugin::Haml.3p
+@man man/man3p/Locale::Maketext::Extract::Plugin::Mason.3p
+@man man/man3p/Locale::Maketext::Extract::Plugin::PPI.3p
+@man man/man3p/Locale::Maketext::Extract::Plugin::Perl.3p
+@man man/man3p/Locale::Maketext::Extract::Plugin::TT2.3p
+@man man/man3p/Locale::Maketext::Extract::Plugin::TextTemplate.3p
+@man man/man3p/Locale::Maketext::Extract::Plugin::YAML.3p
+@man man/man3p/Locale::Maketext::Extract::Run.3p
 @man man/man3p/Locale::Maketext::Lexicon.3p
 @man man/man3p/Locale::Maketext::Lexicon::Auto.3p
 @man man/man3p/Locale::Maketext::Lexicon::Gettext.3p
