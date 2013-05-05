@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:46:12 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/05/05 13:03:59 bcallah Exp $
 
 COMMENT=	gui for ogle
 CATEGORIES=	x11
@@ -7,7 +7,7 @@ DISTNAME=	goggles-0.9.1
 REVISION=	2
 
 EXTRACT_SUFX=	.tar.bz2
-MASTER_SITES=	http://www.fifthplanet.net/files/
+MASTER_SITES=	http://gogglesmm.googlecode.com/files/
 HOMEPAGE=	http://www.fifthplanet.net/goggles.html
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
