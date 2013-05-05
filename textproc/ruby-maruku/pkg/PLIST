@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/20 18:18:12 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/05/05 18:58:35 jasper Exp $
 ${GEM_BIN}/maruku${GEM_BIN_SUFFIX}
 ${GEM_BIN}/marutex${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
@@ -75,7 +75,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/maruku/toc.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/maruku/usage/
 ${GEM_LIB}/gems/${DISTNAME}/lib/maruku/usage/example1.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/maruku/version.rb
-${GEM_LIB}/gems/${DISTNAME}/maruku_gem.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/
 ${GEM_LIB}/gems/${DISTNAME}/tests/bugs/
 ${GEM_LIB}/gems/${DISTNAME}/tests/bugs/code_in_links.md
@@ -147,7 +146,6 @@ ${GEM_LIB}/gems/${DISTNAME}/tests/unittest/extra_dl.md
 ${GEM_LIB}/gems/${DISTNAME}/tests/unittest/extra_header_id.md
 ${GEM_LIB}/gems/${DISTNAME}/tests/unittest/extra_table1.md
 ${GEM_LIB}/gems/${DISTNAME}/tests/unittest/footnotes.md
-${GEM_LIB}/gems/${DISTNAME}/tests/unittest/hang.md
 ${GEM_LIB}/gems/${DISTNAME}/tests/unittest/headers.md
 ${GEM_LIB}/gems/${DISTNAME}/tests/unittest/hex_entities.md
 ${GEM_LIB}/gems/${DISTNAME}/tests/unittest/hrule.md
