@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui_Makefile_in,v 1.1 2013/03/30 17:51:12 ajacoutot Exp $
---- ui/Makefile.in.orig	Sat Mar 30 17:40:28 2013
-+++ ui/Makefile.in	Sat Mar 30 17:40:11 2013
-@@ -1707,9 +1707,7 @@ check-symbols: gcr-ui-expected.abi gcr-ui-actual.abi
+$OpenBSD: patch-ui_Makefile_in,v 1.2 2013/05/05 05:50:18 ajacoutot Exp $
+--- ui/Makefile.in.orig	Sat May  4 21:33:29 2013
++++ ui/Makefile.in	Sun May  5 07:36:24 2013
+@@ -1688,9 +1688,7 @@ check-symbols: gcr-ui-expected.abi gcr-ui-actual.abi
  
  # libgcr-3.so (and  friends) symlink to libgcr-ui-3.so for compatibility raisons
  install-exec-hook:
