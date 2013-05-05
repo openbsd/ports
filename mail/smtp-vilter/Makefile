@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.51 2013/03/11 11:23:53 espie Exp $
+# $OpenBSD: Makefile,v 1.52 2013/05/05 17:37:00 jasper Exp $
 
 COMMENT=	sendmail milter to scan messages for viruses and spam
 
-DISTNAME=	smtp-vilter-1.3.6
-REVISION=	14
+DISTNAME=	smtp-vilter-1.3.8
 
 CATEGORIES=    	mail
 
