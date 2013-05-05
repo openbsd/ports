@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2013/04/01 13:26:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2013/05/05 19:07:44 jasper Exp $
 
 COMMENT=		display graphical dialogs from shell scripts or command line
 
-DISTNAME=		yad-0.20.2
+DISTNAME=		yad-0.20.3
 CATEGORIES=		x11
 
 HOMEPAGE=		http://yad.googlecode.com/
