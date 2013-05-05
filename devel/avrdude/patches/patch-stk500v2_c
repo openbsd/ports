@@ -1,15 +1,15 @@
-$OpenBSD: patch-stk500v2_c,v 1.4 2010/06/27 20:39:33 ckuethe Exp $
---- stk500v2.c.orig	Tue Jan 19 03:39:11 2010
-+++ stk500v2.c	Sat Jun 26 15:41:53 2010
-@@ -353,6 +353,7 @@ static void stk500v2_jtagmkII_setup(PROGRAMMER * pgm)
- static void stk500v2_teardown(PROGRAMMER * pgm)
+$OpenBSD: patch-stk500v2_c,v 1.5 2013/05/05 16:48:08 edd Exp $
+--- stk500v2.c.orig	Fri Aug 26 21:22:10 2011
++++ stk500v2.c	Sat May  4 10:30:28 2013
+@@ -319,6 +319,7 @@ static void stk500v2_jtagmkII_setup(PROGRAMMER * pgm)
+ void stk500v2_teardown(PROGRAMMER * pgm)
  {
    free(pgm->cookie);
 +  pgm->cookie = NULL;
  }
  
  static void stk500v2_jtagmkII_teardown(PROGRAMMER * pgm)
-@@ -364,6 +365,7 @@ static void stk500v2_jtagmkII_teardown(PROGRAMMER * pg
+@@ -330,6 +331,7 @@ static void stk500v2_jtagmkII_teardown(PROGRAMMER * pg
    jtagmkII_teardown(pgm);
  
    free(mycookie);
@@ -17,7 +17,7 @@ $OpenBSD: patch-stk500v2_c,v 1.4 2010/06/27 20:39:33 ckuethe Exp $
  }
  
  
-@@ -1169,12 +1171,14 @@ static int stk500hv_initialize(PROGRAMMER * pgm, AVRPA
+@@ -1158,12 +1160,14 @@ static int stk500hv_initialize(PROGRAMMER * pgm, AVRPA
    if ((PDATA(pgm)->flash_pagecache = malloc(PDATA(pgm)->flash_pagesize)) == NULL) {
      fprintf(stderr, "%s: stk500pp_initialize(): Out of memory\n",
  	    progname);

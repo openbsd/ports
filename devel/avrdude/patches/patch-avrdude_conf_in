@@ -1,11 +1,11 @@
-$OpenBSD: patch-avrdude_conf_in,v 1.1 2011/03/02 07:20:53 jasper Exp $
+$OpenBSD: patch-avrdude_conf_in,v 1.2 2013/05/05 16:48:08 edd Exp $
 
 Add support for attiny4313:
 http://savannah.nongnu.org/patch/?7393
 
---- avrdude.conf.in.orig	Fri Feb 25 20:19:05 2011
-+++ avrdude.conf.in	Fri Feb 25 20:19:26 2011
-@@ -8918,6 +8918,193 @@ part
+--- avrdude.conf.in.orig	Fri Aug 26 21:50:33 2011
++++ avrdude.conf.in	Sat May  4 10:30:28 2013
+@@ -9788,6 +9788,193 @@ part
    ;
  
  #------------------------------------------------------------

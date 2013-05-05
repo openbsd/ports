@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 10:50:01 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2013/05/05 16:48:08 edd Exp $
 
 COMMENT=	AVR microcontroller hardware in-system programmer
 
-V=		5.10
+V=		5.11
 DISTNAME=	avrdude-${V}
-REVISION=	3
 DISTFILES+=	avrdude-${V}.tar.gz avrdude-doc-${V}.pdf
 CATEGORIES=	devel
 
@@ -15,7 +14,7 @@ MAINTAINER=	Chris Kuethe <ckuethe@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c m ncurses readline termcap usb pthread
+WANTLIB += c m ncurses pthread readline termcap usb usb-1.0
 
 MASTER_SITES=	${MASTER_SITE_SAVANNAH:=avrdude/}
 EXTRACT_ONLY=	avrdude-${V}${EXTRACT_SUFX}
@@ -23,7 +22,6 @@ EXTRACT_ONLY=	avrdude-${V}${EXTRACT_SUFX}
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -pthread"
-USE_GROFF =		Yes
 
 LIB_DEPENDS=		devel/libusb-compat
 
