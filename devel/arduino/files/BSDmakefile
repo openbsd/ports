@@ -1,4 +1,4 @@
-# $OpenBSD: BSDmakefile,v 1.5 2012/10/13 12:13:37 jasper Exp $
+# $OpenBSD: BSDmakefile,v 1.6 2013/05/05 20:51:40 edd Exp $
 # Arduino Makefile
 # Arduino adaptation by mellis, eighthave, oli.keller
 #
@@ -32,7 +32,7 @@
 #  6. Type "make upload", reset your Arduino board, and press enter to
 #     upload your program to the Arduino board.
 #
-# $Id: BSDmakefile,v 1.5 2012/10/13 12:13:37 jasper Exp $
+# $Id: BSDmakefile,v 1.6 2013/05/05 20:51:40 edd Exp $
 
 TARGET = ${.CURDIR:C/.*\///g}
 
@@ -41,11 +41,15 @@ UPLOAD_RATE = 115200
 PORT = /dev/cuaU0
 AVRDUDE_PROGRAMMER = arduino
 
+## for an arduino mega
+#UPLOAD_RATE = 57600
+#MCU = atmega1280
+#AVRDUDE_PROGRAMMER = arduino
+
 ## or this for an older arduino
 #UPLOAD_RATE = 19200
 #PORT = /dev/cuaU0
 #AVRDUDE_PROGRAMMER = stk500
-
 
 ## or this, if you have a usbtiny ISP
 #PORT = usb
@@ -54,12 +58,15 @@ AVRDUDE_PROGRAMMER = arduino
 MCU = atmega328p
 F_CPU = 16000000
 
-#If your sketch uses any libraries, list them here, eg.
-#LIBRARIES=EEPROM LiquidCrystal Wire
-# Or if you want to use the Ethernet library, use:
+# If your sketch uses any libraries, list them here, eg.
+# LIBRARIES=EEPROM LiquidCrystal Wire
+#
+# If you want to use the Ethernet library, use:
 # LIBRARIES=SPI Ethernet IPAddress Dhcp Dns EthernetClient EthernetServer \
 #		EthernetUdp utility/w5100 utility/socket new
-# and run 'mkdir utilities'
+#
+# To use the SD library:
+# LIBRARIES=SD File utility/SdFile utility/SdVolume utility/Sd2Card
 LIBRARIES=
 
 # Arduino variant, one of: "eightanaloginputs", "leonardo", "mega",
@@ -94,7 +101,9 @@ CDEFS = -DF_CPU=$(F_CPU)
 CXXDEFS = -DF_CPU=$(F_CPU)
 
 # Place -I options here
-LIBINC=${LIBRARIES:S|^|-I$(ARDUINO)/libraries/|g} -I$(ARDUINO)/variants/$(VARIANT)
+ROOTLIBINCS=${LIBRARIES:S|^|-I$(ARDUINO)/libraries/|g}
+UTILITYLIBINCS=${ROOTLIBINCS:S|$|/utility/|g}
+LIBINC=${ROOTLIBINCS} ${UTILITYLIBINCS} -I$(ARDUINO)/variants/$(VARIANT)
 CINCS = -I$(ARDUINO)/cores/arduino $(LIBINC) -I$(ARDUINO)/variants/$(VARIANT)
 CXXINCS = -I$(ARDUINO)/cores/arduino $(LIBINC) -I$(ARDUINO)/variants/$(VARIANT)
 
@@ -106,13 +115,15 @@ CXXINCS = -I$(ARDUINO)/cores/arduino $(LIBINC) -I$(ARDUINO)/variants/$(VARIANT)
 CSTANDARD = -std=gnu99
 CDEBUG = -g$(DEBUG)
 CWARN = -Wall -Wstrict-prototypes
-CTUNING = -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums
+CTUNING = -ffunction-sections -fdata-sections
+#CTUNING = -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums
 #CEXTRA = -Wa,-adhlns=$(<:.c=.lst)
 
-CFLAGS = $(CDEBUG) $(CDEFS) $(CINCS) -O$(OPT) $(CWARN) $(CSTANDARD) $(CEXTRA)
+CFLAGS = $(CDEBUG) $(CDEFS) $(CINCS) -O$(OPT) $(CWARN) \
+	 $(CSTANDARD) $(CEXTRA) $(CTUNING)
 CXXFLAGS = $(CDEFS) $(CINCS) -O$(OPT)
 #ASFLAGS = -Wa,-adhlns=$(<:.S=.lst),-gstabs
-LDFLAGS = -lm
+LDFLAGS = -lm -Wl,--gc-sections
 
 
 # Programming support using avrdude. Settings and variables.
@@ -132,6 +143,8 @@ SIZE = $(AVR_TOOLS_PATH)/avr-size
 NM = $(AVR_TOOLS_PATH)/avr-nm
 AVRDUDE = $(AVR_TOOLS_PATH)/avrdude
 REMOVE = rm -f
+REMOVEDIR = rmdir
+MKDIR = mkdir -p
 MV = mv -f
 
 # Define all object files.
@@ -150,11 +163,16 @@ ALL_ASFLAGS = -mmcu=$(MCU) -I. -x assembler-with-cpp $(ASFLAGS)
 # Default target.
 all: applet_files build sizeafter
 
-build: elf hex
+build: mkdirs elf hex
+
+mkdirs:
+	$(MKDIR) utility
 
 # Here is the "preprocessing".
 # It creates a .cpp file based with the same name as the .ino file.
 # On top of the new .cpp file comes the Arduino.h header.
+# Then comes a stdc++ workaround, see:                                          
+# http://stackoverflow.com/questions/920500/what-is-the-purpose-of-cxa-pure-virtual
 # At the end there is a generic main() function attached.
 # Then the .cpp file will be compiled. Errors during compile will
 # refer to this new, automatically generated, file.
@@ -162,6 +180,10 @@ build: elf hex
 applet_files: $(TARGET).ino
 	test -d applet || mkdir applet
 	echo '#include "Arduino.h"' > applet/$(TARGET).cpp
+	echo '#ifdef __cplusplus' >> applet/$(TARGET).cpp
+	echo 'extern "C" void __cxa_pure_virtual(void) { while(1); }' \
+		>> applet/$(TARGET).cpp
+	echo '#endif\n' >> applet/$(TARGET).cpp
 	cat $(TARGET).ino >> applet/$(TARGET).cpp
 	cat $(ARDUINO)/cores/arduino/main.cpp >> applet/$(TARGET).cpp
 
@@ -258,7 +280,8 @@ applet/core.a: $(OBJ)
 clean:
 	$(REMOVE) applet/$(TARGET).hex applet/$(TARGET).eep applet/$(TARGET).cof applet/$(TARGET).elf \
 	applet/$(TARGET).map applet/$(TARGET).sym applet/$(TARGET).lss applet/core.a \
-	$(OBJ) $(LST) $(SRC:.c=.s) $(SRC:.c=.d) $(CXXSRC:.cpp=.s) $(CXXSRC:.cpp=.d)
+	$(OBJ) $(LST) $(SRC:.c=.s) $(SRC:.c=.d) $(CXXSRC:.cpp=.s) $(CXXSRC:.cpp=.d) utility/*
+	if [ -d utility ]; then $(REMOVEDIR) utility; fi
 
 .PHONY:	all build elf hex eep lss sym program coff extcoff clean applet_files sizebefore sizeafter
 
