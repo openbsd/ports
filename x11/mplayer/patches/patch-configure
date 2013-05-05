@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.69 2013/04/30 00:46:56 brad Exp $
+$OpenBSD: patch-configure,v 1.70 2013/05/05 21:11:32 brad Exp $
 --- configure.orig	Thu Feb 14 14:46:19 2013
-+++ configure	Sun Apr 14 17:14:18 2013
++++ configure	Sun May  5 00:59:13 2013
 @@ -35,34 +35,37 @@
  #
  #############################################################################
@@ -118,18 +118,14 @@ $OpenBSD: patch-configure,v 1.69 2013/04/30 00:46:56 brad Exp $
  extern_prefix=${sym%%ff_extern*}
  def_extern_asm="#define EXTERN_ASM $extern_prefix"
  def_extern_prefix="#define EXTERN_PREFIX \"$extern_prefix\""
-@@ -5767,6 +5774,26 @@ fi
+@@ -5767,6 +5774,22 @@ fi
  echores "$_sunaudio"
  
  
 +echocheck "sndio audio"
 +if test "$_sndio" = auto ; then
-+  cat > $TMPC << EOF
-+#include <sndio.h>
-+int main(void) { struct sio_par par; sio_initpar(&par); return 0; }
-+EOF
 +  _sndio=no
-+  cc_check -lsndio && _sndio=yes
++  statement_check sndio.h 'sio_initpar(NULL)' -lsndio && _sndio=yes
 +fi
 +if test "$_sndio" = yes ; then
 +  def_sndio='#define CONFIG_SNDIO_AUDIO 1'
@@ -145,7 +141,7 @@ $OpenBSD: patch-configure,v 1.69 2013/04/30 00:46:56 brad Exp $
  def_mlib='#define CONFIG_MLIB 0'
  if sunos; then
  echocheck "Sun mediaLib"
-@@ -5883,7 +5910,15 @@ else
+@@ -5883,7 +5906,15 @@ else
    default_dvd_device="/dev/dvd"
  fi
  
@@ -161,7 +157,7 @@ $OpenBSD: patch-configure,v 1.69 2013/04/30 00:46:56 brad Exp $
  echocheck "VCD support"
  if test "$_vcd" = auto; then
    _vcd=no
-@@ -6033,7 +6068,7 @@ echocheck "cdparanoia"
+@@ -6033,7 +6064,7 @@ echocheck "cdparanoia"
  if test "$_cdparanoia" = auto ; then
      _cdparanoia=no
      for inc_tmp in "" "-I/usr/include/cdda" "-I/usr/local/include/cdda" ; do
@@ -170,7 +166,7 @@ $OpenBSD: patch-configure,v 1.69 2013/04/30 00:46:56 brad Exp $
          _cdparanoia=yes && extra_cflags="$extra_cflags $inc_tmp" && break
      done
  fi
-@@ -7978,6 +8013,7 @@ extra_ldflags="$extra_ldflags -lm"
+@@ -7978,6 +8009,7 @@ extra_ldflags="$extra_ldflags -lm"
  # XML documentation tests
  echocheck "XML catalogs"
  for try_catalog in \
@@ -178,7 +174,7 @@ $OpenBSD: patch-configure,v 1.69 2013/04/30 00:46:56 brad Exp $
    /etc/sgml/catalog \
    /usr/share/xml/docbook/*/catalog.xml \
    /opt/local/share/xml/docbook-xml/*/catalog.xml \
-@@ -8005,6 +8041,7 @@ fi
+@@ -8005,6 +8037,7 @@ fi
  
  echocheck "XML chunked stylesheet"
  for try_chunk_xsl in \
@@ -186,7 +182,7 @@ $OpenBSD: patch-configure,v 1.69 2013/04/30 00:46:56 brad Exp $
    /usr/share/xml/docbook/*/html/chunk.xsl \
    /usr/share/sgml/docbook/stylesheet/xsl/nwalsh/html/chunk.xsl \
    /usr/share/sgml/docbook/yelp/docbook/html/chunk.xsl \
-@@ -8030,6 +8067,7 @@ fi
+@@ -8030,6 +8063,7 @@ fi
  
  echocheck "XML monolithic stylesheet"
  for try_docbook_xsl in \
@@ -194,7 +190,7 @@ $OpenBSD: patch-configure,v 1.69 2013/04/30 00:46:56 brad Exp $
    /usr/share/xml/docbook/*/html/docbook.xsl \
    /usr/share/sgml/docbook/stylesheet/xsl/nwalsh/html/docbook.xsl \
    /usr/share/sgml/docbook/yelp/docbook/html/docbook.xsl \
-@@ -8083,6 +8121,7 @@ EOF
+@@ -8083,6 +8117,7 @@ EOF
  echocheck "XML DTD"
  #FIXME: This should prefer higher version numbers, not the other way around ..
  for try_dtd in \
@@ -202,7 +198,7 @@ $OpenBSD: patch-configure,v 1.69 2013/04/30 00:46:56 brad Exp $
    /usr/share/xml/docbook/*/dtd/4*/docbookx.dtd \
    /usr/share/xml/docbook/*/docbookx.dtd \
    /usr/share/sgml/docbook/*/docbookx.dtd \
-@@ -8354,6 +8393,7 @@ SPEEX = $_speex
+@@ -8354,6 +8389,7 @@ SPEEX = $_speex
  STREAM_CACHE = $_stream_cache
  SGIAUDIO = $_sgiaudio
  SUNAUDIO = $_sunaudio
@@ -210,7 +206,7 @@ $OpenBSD: patch-configure,v 1.69 2013/04/30 00:46:56 brad Exp $
  SVGA = $_svga
  TDFXFB = $_tdfxfb
  TDFXVID = $_tdfxvid
-@@ -8687,6 +8727,7 @@ $(ff_config_enable "$cpuexts_all" "$cpuexts" "#" "HAVE
+@@ -8687,6 +8723,7 @@ $(ff_config_enable "$cpuexts_all" "$cpuexts" "#" "HAVE
  /* Blu-ray/DVD/VCD/CD */
  #define DEFAULT_CDROM_DEVICE "$default_cdrom_device"
  #define DEFAULT_DVD_DEVICE   "$default_dvd_device"
@@ -218,7 +214,7 @@ $OpenBSD: patch-configure,v 1.69 2013/04/30 00:46:56 brad Exp $
  $def_bluray
  $def_bsdi_dvd
  $def_cddb
-@@ -8773,6 +8814,7 @@ $def_ossaudio_devmixer
+@@ -8773,6 +8810,7 @@ $def_ossaudio_devmixer
  $def_pulse
  $def_sgiaudio
  $def_sunaudio

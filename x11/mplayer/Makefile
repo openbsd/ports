@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.220 2013/04/30 00:46:56 brad Exp $
+# $OpenBSD: Makefile,v 1.221 2013/05/05 21:11:32 brad Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,7 +9,7 @@ COMMENT =		movie player supporting many formats
 
 V =			20130214
 FFMPEG_V =		20130319
-REVISION =		3
+REVISION =		4
 
 SUBST_VARS += 		PREFIX CONFDIR
 
