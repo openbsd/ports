@@ -1,15 +1,15 @@
-$OpenBSD: README,v 1.4 2013/03/17 07:21:17 ajacoutot Exp $
+$OpenBSD: README,v 1.5 2013/05/05 19:24:13 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
 To enable a decent configuration of drupal, please create a symbolic
-link from ${TRUEPREFIX}/conf/modules.sample/drupal6.conf
-to ${TRUEPREFIX}/conf/modules/drupal6.conf
+link from /var/www/conf/modules.sample/drupal6.conf
+to /var/www/conf/modules/drupal6.conf
 
-ln -s ${TRUEPREFIX}/conf/modules.sample/drupal6.conf \
-	${TRUEPREFIX}/conf/modules
+ln -s /var/www/conf/modules.sample/drupal6.conf \
+	/var/www/conf/modules
 
 If you intend to install lots of modules, you may need to have the
 max_allowed_packet value larger than 1M to be able to check for updates.

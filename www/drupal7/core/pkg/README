@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2013/03/17 07:21:17 ajacoutot Exp $
+$OpenBSD: README,v 1.5 2013/05/05 19:24:13 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -8,7 +8,7 @@ To enable a decent configuration of drupal, please create a symbolic
 link:
 
 ln -sf ../modules.sample/${DRUPAL}.conf \
-	${TRUEPREFIX}/conf/modules
+	/var/www/conf/modules
 
 Drupal can work with a PostgreSQL, MySQL or SQLite3 database.
 Support for SQLite3 is included with the main php package; to use

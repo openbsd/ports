@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:44:41 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/05/05 19:24:13 jasper Exp $
 
 COMMENT =		simple weblog
 
 DISTNAME =		blogsum-1.1
-REVISION =		2
+REVISION =		3
 CATEGORIES =		www
 HOMEPAGE =		http://blogsum.obfuscurity.com/
 

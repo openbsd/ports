@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2012/11/07 07:53:02 jasper Exp $
+$OpenBSD: README,v 1.2 2013/05/05 19:24:13 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -11,7 +11,7 @@ PHP settings
 ============
 Some specific PHP settings are required for GitList. With Apache, you can
 automatically configure them as follows. As root:
-    ln -s ../modules.sample/gitlist.conf ${PREFIX}/conf/modules
+    ln -s ../modules.sample/gitlist.conf /var/www/conf/modules
     /etc/rc.d/httpd restart
 
 With other web servers, review

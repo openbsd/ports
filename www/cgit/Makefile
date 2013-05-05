@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:44:41 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/05/05 19:24:13 jasper Exp $
 
 COMMENT =	web frontend for git repositories
 
 DISTNAME =	cgit-0.9.1
+REVISION =	0
 CATEGORIES =	www devel
 
 DISTFILES =	cgit-0.9.1.tar.gz:0 \

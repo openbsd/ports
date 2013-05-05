@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2013/04/22 06:02:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2013/05/05 19:24:13 jasper Exp $
 
 COMMENT=	monitoring and reporting tool for bacula(8)
 
 DISTNAME=	bacula-web-5.2.13-1
 PKGNAME=	bacula-web-5.2.13.1
+REVISION=	0
 
 CATEGORIES=	www sysutils
 

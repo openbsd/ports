@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2012/09/09 20:56:38 jasper Exp $
+$OpenBSD: README,v 1.4 2013/05/05 19:24:13 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -33,7 +33,7 @@ Installing Blogsum
 
 5)  Edit the example httpd-blogsum.conf and enable it for your site:
 
-	$ sudo cp ${EXAMPLESDIR}/httpd-blogsum.conf ${PREFIX}/conf/modules/
+	$ sudo cp ${EXAMPLESDIR}/httpd-blogsum.conf /var/www/conf/modules/
 
 6)  Create your AuthUserFile file as defined in httpd-blogsum.conf:
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:44:47 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/05/05 19:24:13 jasper Exp $
 
 COMMENT=	easy to use web gallery
 
 DISTNAME=	photoshow-0.0.20111228
 CATEGORIES=	www graphics
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	http://www.photoshow-gallery.com/
 

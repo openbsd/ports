@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2013/02/03 11:01:09 ajacoutot Exp $
+$OpenBSD: README,v 1.2 2013/05/05 19:24:13 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -13,7 +13,7 @@ Default username/password is: admin/admin
 
 When using Apache, running the following command and restarting httpd(8)
 will make phpvirtualbox available from "http://<hostname>/phpvirtualbox".
-    # ln -s ../modules.sample/phpvirtualbox.conf ${PREFIX}/conf/modules
+    # ln -s ../modules.sample/phpvirtualbox.conf /var/www/conf/modules
 
 VirtualBox configuration on Linux Red Hat(-like) systems
 ========================================================
