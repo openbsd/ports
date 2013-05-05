@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2013/04/05 16:32:01 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.9 2013/05/05 16:09:38 gonzalo Exp $
 
 COMMENT=		small tiling window manager
 
 SHARED_LIBS=		swmhack 1.0
 
-DISTNAME=		spectrwm-2.2.0
+DISTNAME=		spectrwm-2.3.0
 EXTRACT_SUFX=		.tgz
 CATEGORIES=		x11
 
