@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2011/05/11 12:03:19 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2013/05/05 22:13:48 rpe Exp $
 @pkgpath ${BASE_PKGPATH}
 @newgroup _nagios:550
 @newuser _nagios:550:_nagios:daemon:Nagios user:/var/www/nagios:/sbin/nologin
@@ -6,11 +6,11 @@
 @extraunexec rm -f ${CHROOT}/var/log/nagios/archives/*
 @bin bin/nagiostats
 @bin sbin/nagios
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/nagios/
 @sample ${CHROOT}${SYSCONFDIR}/nagios/
 share/examples/nagios/cgi.cfg
 @sample ${CHROOT}${SYSCONFDIR}/nagios/cgi.cfg
-share/examples/nagios/httpd.conf
 share/examples/nagios/mrtg.cfg
 share/examples/nagios/nagios.cfg
 @sample ${CHROOT}${SYSCONFDIR}/nagios/nagios.cfg

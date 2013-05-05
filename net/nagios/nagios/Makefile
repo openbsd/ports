@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.57 2013/03/11 11:35:49 espie Exp $
+# $OpenBSD: Makefile,v 1.58 2013/05/05 22:13:48 rpe Exp $
 
 COMMENT-main=	host and service monitor
 COMMENT-web=	cgis and webpages for nagios
 
-V=		3.4.4
+V=		3.5.0
 DISTNAME=	nagios-$V
 PKGNAME-main=	nagios-$V
-REVISION-main=	0
 PKGNAME-web=	nagios-web-$V
 WRKDIST=	${WRKDIR}/nagios
 CATEGORIES=	net
@@ -29,15 +28,18 @@ RUN_DEPENDS=	net/nagios/plugins
 LOCALSTATEDIR=	${BASELOCALSTATEDIR}/nagios
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=--datadir=/var/www/nagios \
+CONFIGURE_ARGS+=--datadir=${PREFIX-web}/nagios \
 		--libexecdir=${PREFIX}/libexec/nagios \
-		--sbindir=/var/www/cgi-bin/nagios \
+		--sbindir=${PREFIX-web}/cgi-bin/nagios \
 		--with-cgiurl=/cgi-bin/nagios \
 		--with-checkresult-dir=/var/spool/nagios \
 		--with-command-group=www \
 		--with-gd-inc=${LOCALBASE}/include \
 		--with-gd-lib=${LOCALBASE}/lib \
+		--with-htmurl=/nagios \
+		--with-httpd-conf=${PREFIX-web}/conf/modules.sample \
 		--with-lockfile=/var/run/nagios/nagios.pid \
+		--with-log-dir=/var/log/nagios \
 		--with-nagios-group=_nagios \
 		--with-nagios-user=_nagios
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -74,24 +76,18 @@ NO_TEST=	Yes
 
 CFLAGS+=	-D_DIRENT_HAVE_D_TYPE
 
-CONFIG_FILES0=	cgi.cfg httpd.conf mrtg.cfg nagios.cfg resource.cfg
-CONFIG_FILES1=	commands.cfg contacts.cfg localhost.cfg printer.cfg switch.cfg \
-		templates.cfg timeperiods.cfg windows.cfg
 EXDIR=		${PREFIX}/share/examples/nagios
+SAMPLEDIR=	${WRKSRC}/sample-config
+MODSAMPLE=	${WRKINST}${PREFIX-web}/conf/modules.sample
 
 INSTALL_TARGET=	install-unstripped
 SUBST_VARS=	CHROOT
 
 post-install:
-	${INSTALL_DATA_DIR} ${EXDIR}/objects
-	@perl -i -pe "s,%%SYSCONFDIR%%,${SYSCONFDIR}," \
-		${WRKSRC}/sample-config/httpd.conf
-.for f in ${CONFIG_FILES0}
-	${INSTALL_DATA} ${WRKSRC}/sample-config/${f} ${EXDIR}
-.endfor
-.for f in ${CONFIG_FILES1}
-	${INSTALL_DATA} ${WRKSRC}/sample-config/template-object/${f} \
-		${EXDIR}/objects
-.endfor
+	${INSTALL_DATA_DIR} ${EXDIR}/objects ${MODSAMPLE}
+	@perl -i -pe "s,%%SYSCONFDIR%%,${SYSCONFDIR}," ${SAMPLEDIR}/httpd.conf
+	${INSTALL_DATA} ${SAMPLEDIR}/httpd.conf ${MODSAMPLE}/nagios.conf.dist
+	${INSTALL_DATA} ${SAMPLEDIR}/{cgi,mrtg,nagios,resource}.cfg ${EXDIR}
+	${INSTALL_DATA} ${SAMPLEDIR}/template-object/*.cfg ${EXDIR}/objects
 
 .include <bsd.port.mk>
