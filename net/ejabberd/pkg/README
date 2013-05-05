@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2011/11/22 17:11:07 gsoares Exp $
+$OpenBSD: README,v 1.6 2013/05/05 16:17:19 gonzalo Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -73,3 +73,15 @@ $OpenBSD: README,v 1.5 2011/11/22 17:11:07 gsoares Exp $
   /etc/hosts suffices (make sure my_hostname matches the output of
   `hostname -s`):
   	127.0.0.1       my_hostname
+
+* Epmd
+  Epmd is a small name server used by Erlang programs when establishing
+  distributed Erlang communications.  ejabberd needs epmd to use
+  ejabberdctl and also when clustering ejabberd nodes.  If ejabberd is
+  stopped, and there aren't any other Erlang programs running in the
+  system, you can safely stop epmd if you want, using this command:
+        epmd -kill
+
+  It is strongly recommended to block the port 4369 in the firewall for
+  external connections. epmd listens in this port, and usually epmd is
+  not needed from outside the machine.

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2012/06/26 20:23:29 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.13 2013/05/05 16:17:19 gonzalo Exp $
 @newgroup _ejabberd:594
 @newuser _ejabberd:594:_ejabberd:daemon:ejabberd account:/var/db/ejabberd:/bin/sh
 %%SHARED%%
@@ -82,9 +82,7 @@ lib/ejabberd/ebin/jd2ejd.beam
 lib/ejabberd/ebin/jlib.beam
 lib/ejabberd/ebin/mod_adhoc.beam
 lib/ejabberd/ebin/mod_announce.beam
-lib/ejabberd/ebin/mod_announce_odbc.beam
 lib/ejabberd/ebin/mod_blocking.beam
-lib/ejabberd/ebin/mod_blocking_odbc.beam
 lib/ejabberd/ebin/mod_caps.beam
 lib/ejabberd/ebin/mod_configure.beam
 lib/ejabberd/ebin/mod_configure2.beam
@@ -95,21 +93,15 @@ lib/ejabberd/ebin/mod_http_fileserver.beam
 lib/ejabberd/ebin/mod_ip_blacklist.beam
 lib/ejabberd/ebin/mod_irc.beam
 lib/ejabberd/ebin/mod_irc_connection.beam
-lib/ejabberd/ebin/mod_irc_odbc.beam
 lib/ejabberd/ebin/mod_last.beam
-lib/ejabberd/ebin/mod_last_odbc.beam
 lib/ejabberd/ebin/mod_muc.beam
 lib/ejabberd/ebin/mod_muc_log.beam
-lib/ejabberd/ebin/mod_muc_odbc.beam
 lib/ejabberd/ebin/mod_muc_room.beam
 lib/ejabberd/ebin/mod_offline.beam
-lib/ejabberd/ebin/mod_offline_odbc.beam
 lib/ejabberd/ebin/mod_ping.beam
 lib/ejabberd/ebin/mod_pres_counter.beam
 lib/ejabberd/ebin/mod_privacy.beam
-lib/ejabberd/ebin/mod_privacy_odbc.beam
 lib/ejabberd/ebin/mod_private.beam
-lib/ejabberd/ebin/mod_private_odbc.beam
 lib/ejabberd/ebin/mod_proxy65.beam
 lib/ejabberd/ebin/mod_proxy65_lib.beam
 lib/ejabberd/ebin/mod_proxy65_service.beam
@@ -120,19 +112,15 @@ lib/ejabberd/ebin/mod_pubsub_odbc.beam
 lib/ejabberd/ebin/mod_register.beam
 lib/ejabberd/ebin/mod_register_web.beam
 lib/ejabberd/ebin/mod_roster.beam
-lib/ejabberd/ebin/mod_roster_odbc.beam
 lib/ejabberd/ebin/mod_service_log.beam
 lib/ejabberd/ebin/mod_shared_roster.beam
 lib/ejabberd/ebin/mod_shared_roster_ldap.beam
-lib/ejabberd/ebin/mod_shared_roster_odbc.beam
 lib/ejabberd/ebin/mod_sic.beam
 lib/ejabberd/ebin/mod_stats.beam
 lib/ejabberd/ebin/mod_time.beam
 lib/ejabberd/ebin/mod_vcard.beam
 lib/ejabberd/ebin/mod_vcard_ldap.beam
-lib/ejabberd/ebin/mod_vcard_odbc.beam
 lib/ejabberd/ebin/mod_vcard_xupdate.beam
-lib/ejabberd/ebin/mod_vcard_xupdate_odbc.beam
 lib/ejabberd/ebin/mod_version.beam
 lib/ejabberd/ebin/node_buddy.beam
 lib/ejabberd/ebin/node_club.beam
@@ -209,6 +197,7 @@ lib/ejabberd/priv/msgs/eo.msg
 lib/ejabberd/priv/msgs/es.msg
 lib/ejabberd/priv/msgs/fr.msg
 lib/ejabberd/priv/msgs/gl.msg
+lib/ejabberd/priv/msgs/he.msg
 lib/ejabberd/priv/msgs/id.msg
 lib/ejabberd/priv/msgs/it.msg
 lib/ejabberd/priv/msgs/ja.msg
@@ -279,3 +268,4 @@ share/examples/ejabberd/transport-configs/init-scripts/yahoo-transport-2
 @sample /var/log/ejabberd/
 @mode 0750
 @sample /var/db/ejabberd/
+@sample /var/db/ejabberd/ejabberd/

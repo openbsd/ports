@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2013/03/11 11:35:46 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2013/05/05 16:17:19 gonzalo Exp $
 
 COMMENT=		jabber server written in Erlang
 
-V=			2.1.11
+V=			2.1.12
 DISTNAME=		ejabberd-$V
 
 CATEGORIES=		net
@@ -79,4 +79,3 @@ post-install:
 	@find ${WRKINST} -type f -name '*.beforesubst' -exec rm {} \;
 
 .include <bsd.port.mk>
-

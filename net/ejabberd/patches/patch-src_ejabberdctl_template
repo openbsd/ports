@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_ejabberdctl_template,v 1.5 2012/01/23 10:54:47 ajacoutot Exp $
---- src/ejabberdctl.template.orig	Fri Dec 23 12:27:30 2011
-+++ src/ejabberdctl.template	Sun Jan 22 20:11:03 2012
+$OpenBSD: patch-src_ejabberdctl_template,v 1.6 2013/05/05 16:17:19 gonzalo Exp $
+--- src/ejabberdctl.template.orig	Tue Feb  5 09:22:34 2013
++++ src/ejabberdctl.template	Mon Apr 22 12:03:23 2013
 @@ -1,7 +1,7 @@
  #!/bin/sh
  
@@ -72,7 +72,7 @@ $OpenBSD: patch-src_ejabberdctl_template,v 1.5 2012/01/23 10:54:47 ajacoutot Exp
  
  # Change to a directory readable by INSTALLUSER to
  # prevent "File operation error: eacces." messages
-@@ -244,7 +244,7 @@ ctl ()
+@@ -250,7 +250,7 @@ ctl ()
      # using flock if available. Expects a linux-style
      # flock that can lock a file descriptor.
      MAXCONNID=100
