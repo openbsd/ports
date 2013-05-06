@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/01/22 16:46:41 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/05/06 06:33:13 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/AUTHORS
@@ -6,18 +6,20 @@ ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG
 ${GEM_LIB}/gems/${DISTNAME}/COPYING
 ${GEM_LIB}/gems/${DISTNAME}/INSTALL
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
-${GEM_LIB}/gems/${DISTNAME}/README
+${GEM_LIB}/gems/${DISTNAME}/README.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/TODO
 ${GEM_LIB}/gems/${DISTNAME}/examples/
 ${GEM_LIB}/gems/${DISTNAME}/examples/ansi_colors.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/asking_for_arrays.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/basic_usage.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/color_scheme.rb
+${GEM_LIB}/gems/${DISTNAME}/examples/get_character.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/limit.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/menus.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/overwrite.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/page_and_wrap.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/password.rb
+${GEM_LIB}/gems/${DISTNAME}/examples/repeat_entry.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/trapping_eof.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/using_readline.rb
 ${GEM_LIB}/gems/${DISTNAME}/highline.gemspec
@@ -29,6 +31,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/highline/compatibility.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/highline/import.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/highline/menu.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/highline/question.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/highline/simulate.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/highline/string_extensions.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/highline/style.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/highline/system_extensions.rb
