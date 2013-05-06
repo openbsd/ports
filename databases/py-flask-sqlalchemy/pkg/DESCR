@@ -1,0 +1,2 @@
+Flask-SQLAlchemy is an extension for Flask that adds support for
+SQLAlchemy to your application.
