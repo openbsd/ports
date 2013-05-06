@@ -1,7 +1,7 @@
-$OpenBSD: patch-nsgmls_RastEventHandler_h,v 1.1 2002/10/16 00:49:04 naddy Exp $
---- nsgmls/RastEventHandler.h.orig	Wed Oct 16 02:35:47 2002
-+++ nsgmls/RastEventHandler.h	Wed Oct 16 02:36:04 2002
-@@ -102,7 +102,7 @@ private:
+$OpenBSD: patch-nsgmls_RastEventHandler_h,v 1.2 2013/05/06 13:53:40 espie Exp $
+--- nsgmls/RastEventHandler.h.orig	Fri Jan 17 07:08:26 1997
++++ nsgmls/RastEventHandler.h	Mon May  6 15:50:18 2013
+@@ -102,7 +102,7 @@ class RastSubdocState { (private)
  
  class RastEventHandler : public ErrorCountEventHandler,
                           private RastSubdocState,
