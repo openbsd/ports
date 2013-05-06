@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/01/19 05:11:27 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/05/06 06:30:05 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
+${GEM_LIB}/gems/${DISTNAME}/CHANGELOG
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
@@ -15,6 +16,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/pygments/
 ${GEM_LIB}/gems/${DISTNAME}/lib/pygments.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pygments/lexer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pygments/mentos.py
+${GEM_LIB}/gems/${DISTNAME}/lib/pygments/mentos.py.beforesubst
 ${GEM_LIB}/gems/${DISTNAME}/lib/pygments/popen.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pygments/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/pygments.rb.gemspec
@@ -32,6 +34,7 @@ ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/CHANGES
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/MANIFEST.in
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/Makefile
+${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/REVISION
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/TODO
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/docs/
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/docs/generate.py
@@ -48,6 +51,7 @@ ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/docs/src/formatters.txt
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/docs/src/index.txt
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/docs/src/installation.txt
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/docs/src/integrate.txt
+${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/docs/src/java.txt
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/docs/src/lexerdevelopment.txt
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/docs/src/lexers.txt
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/docs/src/moinmoin.txt
@@ -58,6 +62,7 @@ ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/docs/src/styles.txt
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/docs/src/tokens.txt
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/docs/src/unicode.txt
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/external/
+${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/external/autopygmentize
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/external/lasso-builtins-generator-9.lasso
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/external/markdown-processor.py
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/external/moin-parser.py
@@ -107,6 +112,7 @@ ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/pygments/lexers/asm.py
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/pygments/lexers/compiled.py
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/pygments/lexers/dalvik.py
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/pygments/lexers/dotnet.py
+${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/pygments/lexers/foxpro.py
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/pygments/lexers/functional.py
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/pygments/lexers/github.py
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/pygments/lexers/hdl.py
@@ -173,6 +179,7 @@ ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/ANTLRv3.g
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/AcidStateAdvanced.hs
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/AlternatingGroup.mu
+${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/BOM.js
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/CPDictionary.j
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/Config.in.cache
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/Constants.mo
@@ -193,9 +200,13 @@ ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/as3_test.as
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/as3_test2.as
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/as3_test3.as
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/aspx-cs_example
+${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/autoit_submit.au3
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/badcase.java
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/batchfile.bat
+${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/bigtest.nsi
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/boot-9.scm
+${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/ca65_example
+${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/cbmbas_example
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/cells.ps
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/ceval.c
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/cheetah_example.html
@@ -216,6 +227,7 @@ ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/example.bug
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/example.c
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/example.ceylon
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/example.cls
+${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/example.cob
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/example.cpp
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/example.gs
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/example.gst
@@ -230,16 +242,19 @@ ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/example.nim
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/example.ns2
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/example.p
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/example.pas
+${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/example.prg
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/example.rb
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/example.reg
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/example.rhtml
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/example.rkt
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/example.rpf
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/example.sh-session
+${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/example.shell-session
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/example.sml
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/example.snobol
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/example.stan
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/example.tea
+${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/example.ts
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/example.u
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/example.weechatlog
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/example.xhtml
@@ -284,6 +299,7 @@ ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/json.lasso9
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/lighttpd_config.conf
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/linecontinuation.py
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/livescript-demo.ls
+${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/logos_example.xm
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/ltmain.sh
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/main.cmake
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/markdown.lsp
@@ -291,9 +307,12 @@ ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/matlab_noret
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/matlab_sample
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/matlabsession_sample.txt
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/metagrammar.treetop
+${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/mg_sample.pro
+${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/minehunt.qml
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/minimal.ns2
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/moin_SyntaxReference.txt
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/multiline_regexes.rb
+${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/nanomsg.intr
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/nasm_aoutso.asm
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/nasm_objexe.asm
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/nemerle_sample.n
@@ -305,6 +324,7 @@ ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/perl_misc
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/perl_perl5db
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/perl_regex-delims
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/perlfunc.1
+${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/phpMyAdmin.spec
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/phpcomplete.vim
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/pleac.in.rb
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/postgresql_test.txt
@@ -325,6 +345,7 @@ ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/robotframewo
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/ruby_func_def.rb
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/rust_example.rs
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/scilab.sci
+${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/session.dylan-console
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/sibling.prolog
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/simple.md
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/smarty_example.html
@@ -368,6 +389,7 @@ ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/test.mod
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/test.moo
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/test.myt
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/test.nim
+${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/test.opa
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/test.pas
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/test.php
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/test.plot
@@ -383,11 +405,13 @@ ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/test.vb
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/test.vhdl
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/test.xqy
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/test.xsl
+${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/test2.pypylog
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/truncated.pytb
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/type.lisp
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/underscore.coffee
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/unicode.applescript
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/unicodedoc.py
+${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/unix-io.lid
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/webkit-transition.css
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/while.pov
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/wiki.factor
@@ -395,7 +419,9 @@ ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/xml_example
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/examplefiles/zmlrpc.f90
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/old_run.py
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/run.py
+${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/support/
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/support.py
+${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/support/tags
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/test_basic_api.py
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/test_clexer.py
 ${GEM_LIB}/gems/${DISTNAME}/vendor/pygments-main/tests/test_cmdline.py
