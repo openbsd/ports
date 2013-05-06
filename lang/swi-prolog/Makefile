@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2013/03/11 11:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.48 2013/05/06 17:49:37 naddy Exp $
 
 BROKEN-mips64 = 	undefined reference to `__sync_fetch_and_add_8'
 BROKEN-hppa =		undefined reference to `__sync_fetch_and_add_4'
@@ -41,6 +41,9 @@ CONFIGURE_ARGS =	--enable-mt \
 
 USE_GMAKE =		Yes
 USE_GROFF =		Yes
+
+# Don't pick up bash
+MAKE_ENV =		MAKESHELL=/bin/sh
 
 MAKE_FLAGS =		SONAMEOPT= \
 			SHAREDV=libpl.so.${LIBpl_VERSION}
