@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2013/05/06 06:30:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2013/05/06 07:02:45 jasper Exp $
 
 COMMENT=	syntax highlighter based on pygments
 
-DISTNAME=	pygments.rb-0.5.0
+DISTNAME=	pygments.rb-0.4.2
+EPOCH=		0
 
 CATEGORIES=	textproc
 
