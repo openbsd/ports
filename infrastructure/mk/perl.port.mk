@@ -1,12 +1,24 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: perl.port.mk,v 1.21 2013/03/11 11:50:17 espie Exp $
+# $OpenBSD: perl.port.mk,v 1.22 2013/05/06 21:16:18 zhuk Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
 TEST_TARGET ?=	test
 MODPERL_BUILD ?= Build
 SHARED_ONLY ?= No
+
+# set /usr/bin/perl for executable scripts
+MODPERL_BIN_ADJ =	perl -pi \
+	-e '$$. == 1 && s|^.*env perl([\s].*)?$$|\#!/usr/bin/perl$$1|;' \
+	-e '$$. == 1 && s|^.*bin/perl([\s].*)?$$|\#!/usr/bin/perl$$1|;' \
+	-e 'close ARGV if eof;'
+
+MODPERL_ADJ_FILES ?=
+.if !empty(MODPERL_ADJ_FILES)
+MODPERL_pre-configure = for f in ${MODPERL_ADJ_FILES}; do \
+	${MODPERL_BIN_ADJ} ${WRKSRC}/$${f}; done
+.endif
 
 .if ${CONFIGURE_STYLE:L:Mmodbuild}
 MODPERL_configure = \
