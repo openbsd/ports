@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 11:23:51 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2013/05/06 11:57:09 jasper Exp $
 
 COMMENT=	client for anonymous remailing
 
@@ -13,7 +13,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c crypto curses z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mixmaster/}
-MASTER_SITES0=	${MASTER_SITES_BACKUP}
+MASTER_SITES0=	http://distfiles.nl/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		mixmaster-update.pl.gz:0 allpingers.txt.gz:0
 
