@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2013/03/21 08:46:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2013/05/06 18:50:47 zhuk Exp $
 
 COMMENT-main=	graph drawing software
 
@@ -118,9 +118,6 @@ FAKE_FLAGS=	htmldir="${DOCBASE}/html" \
 		pathplanexampledir="${EXBASE}/demo/pathplan_data" \
 		undirecteddir="${EXBASE}/graphs/undirected" \
 		pkgtcldir="${MODTCL_TCLDIR}/graphviz"
-
-pre-configure:
-	${MODTCL_TCLSH_ADJ} ${WRKDIST}/tclpkg/gv/gv_doc_writer.tcl
 
 post-build:
 .for CMD in dotty lneato
