@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 11:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2013/05/06 12:00:54 jasper Exp $
 
 COMMENT=		wm-dockapp; resembling a miniature pin board
 
@@ -9,8 +9,6 @@ CATEGORIES=		x11 x11/windowmaker
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		X11 Xext Xpm c
-
-MASTER_SITES=		${HOMEPAGE}
 
 SEPARATE_BUILD=		Yes
 USE_GROFF =		Yes
