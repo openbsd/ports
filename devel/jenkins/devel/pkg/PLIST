@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1 2013/05/07 15:13:39 ian Exp $
+@pkgpath devel/jenkins
+@conflict hudson-*
+@newgroup _jenkins:668
+@newuser _jenkins:668:_jenkins:daemon:Jenkins Account:${HOMEDIR}:/sbin/nologin
+@extraunexec rm -rf ${HOMEDIR}/*
+@owner _jenkins
+@group _jenkins
+@sample ${HOMEDIR}/
+@owner
+@group
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/jenkins/
+share/jenkins/jenkins.war
+@rcscript ${RCDIR}/jenkins
