@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile.inc,v 1.1 2013/05/07 15:13:39 ian Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2013/05/07 16:09:44 ian Exp $
 
 COMMENT =		continuous integration server
 
 DISTNAME =		jenkins
 EXTRACT_SUFX =		.war
 PKGNAME =		jenkins-${VERSION}
+DIST_SUBDIR =		${PKGNAME}
 FILESDIR ?=		${.CURDIR}/../files
 PKGDIR ?=		${.CURDIR}/../pkg
 PLIST ?=		${.CURDIR}/pkg/PLIST
