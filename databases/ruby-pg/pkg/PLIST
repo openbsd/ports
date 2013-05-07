@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2012/06/29 16:39:01 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.10 2013/05/07 23:40:34 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gemtest
@@ -19,6 +19,9 @@ ${GEM_LIB}/gems/${DISTNAME}/ext/
 ${GEM_LIB}/gems/${DISTNAME}/ext/Makefile
 ${GEM_LIB}/gems/${DISTNAME}/ext/extconf.h
 ${GEM_LIB}/gems/${DISTNAME}/ext/extconf.rb
+${GEM_LIB}/gems/${DISTNAME}/ext/gvl_wrappers.c
+${GEM_LIB}/gems/${DISTNAME}/ext/gvl_wrappers.h
+${GEM_LIB}/gems/${DISTNAME}/ext/gvl_wrappers.o
 ${GEM_LIB}/gems/${DISTNAME}/ext/mkmf.log
 ${GEM_LIB}/gems/${DISTNAME}/ext/pg.c
 ${GEM_LIB}/gems/${DISTNAME}/ext/pg.h
@@ -43,6 +46,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/pg/exceptions.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg/result.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg_ext.so
 ${GEM_LIB}/gems/${DISTNAME}/sample/
+${GEM_LIB}/gems/${DISTNAME}/sample/array_insert.rb
 ${GEM_LIB}/gems/${DISTNAME}/sample/async_api.rb
 ${GEM_LIB}/gems/${DISTNAME}/sample/async_copyto.rb
 ${GEM_LIB}/gems/${DISTNAME}/sample/async_mixed.rb
