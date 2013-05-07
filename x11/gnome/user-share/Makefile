@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/04/28 07:18:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2013/05/07 10:48:24 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		personal file-sharing service for GNOME
 
 GNOME_PROJECT=		gnome-user-share
 GNOME_VERSION=		3.8.0
-REVISION=		4
+REVISION=		5
 
 CATEGORIES=		www sysutils
 
@@ -44,10 +44,21 @@ CONFIGURE_ARGS=		--disable-static \
 			--with-httpd=${LOCALBASE}/sbin/httpd2 \
 			--with-modules-path=${LOCALBASE}/lib/apache2
 
+### https://bugzilla.gnome.org/show_bug.cgi?id=697537
+CONFIGURE_ARGS +=	--disable-bluetooth
 AUTOCONF_VERSION=	2.69
-CONFIGURE_STYLE=	autoconf
+AUTOMAKE_VERSION=	1.13
+BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool
 
 pre-configure:
+	cd ${WRKSRC} && \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		autoreconf -i
+###
+
 	perl -pi -e 's,/usr/share,${TRUEPREFIX}/share,g' \
 		${WRKSRC}/data/dav_user_2.*.conf
 
