@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2013/03/21 08:46:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2013/05/07 08:07:34 giovanni Exp $
 
 COMMENT-main=		authentication library for courier
 COMMENT-ldap=		ldap authentication module for courier-authLib
@@ -6,9 +6,7 @@ COMMENT-mysql=		mysql authentication module for courier-authLib
 COMMENT-pgsql=		pgsql authentication module for courier-authLib
 COMMENT-userdb=		userdb authentication module for courier-authLib
 
-DISTNAME=			courier-authlib-0.64.0
-REVISION-ldap=		0
-REVISION-pgsql=		0
+DISTNAME=			courier-authlib-0.65.0
 PKGNAME-main=		${DISTNAME}
 PKGNAME-ldap=		${DISTNAME:S/lib-/lib-ldap-/}
 PKGNAME-mysql=		${DISTNAME:S/lib-/lib-mysql-/}
@@ -25,6 +23,7 @@ SHARED_LIBS +=  authpgsql            0.0      # .0.0
 SHARED_LIBS +=  authldap             1.0      # .0.0
 SHARED_LIBS +=  authmysql            0.0      # .0.0
 SHARED_LIBS +=  authpipe             0.0      # .0.0
+SHARED_LIBS +=  authsqlite           0.0      # .0.0
 
 CATEGORIES=		mail security
 HOMEPAGE=		http://www.courier-mta.org/authlib/
@@ -75,7 +74,7 @@ MULTI_PACKAGES=		-main -ldap -mysql -pgsql -userdb
 PSEUDO_FLAVORS=		no_ldap no_mysql no_pgsql no_userdb
 FLAVOR?=
 
-WANTLIB-main=		c ltdl
+WANTLIB-main=		c ltdl sqlite3
 
 LIB_DEPENDS-main=	devel/libtool,-ltdl
 
@@ -93,7 +92,8 @@ WANTLIB-pgsql=		m courierauthcommon courierauth pq com_err crypto ssl
 LIB_DEPENDS-pgsql=	${BUILD_PKGPATH} \
 			databases/postgresql
 
-WANTLIB-userdb=		c courierauthcommon courierauth gdbm>=3
+WANTLIB-userdb=		c courierauthcommon courierauth gdbm>=3 iconv intl
+MODULES-userdb=		textproc/intltool
 LIB_DEPENDS-userdb=	${BUILD_PKGPATH} \
 			databases/gdbm
 

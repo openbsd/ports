@@ -1,7 +1,8 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.1 2006/11/25 20:51:02 steven Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.2 2013/05/07 08:07:34 giovanni Exp $
 @lib lib/libauthpipe.so.${LIBauthpipe_VERSION}
 @lib lib/libauthpwd.so.${LIBauthpwd_VERSION}
 @lib lib/libcourierauth.so.${LIBcourierauth_VERSION}
 @lib lib/libcourierauthcommon.so.${LIBcourierauthcommon_VERSION}
 @lib lib/libcourierauthsasl.so.${LIBcourierauthsasl_VERSION}
 @lib lib/libcourierauthsaslclient.so.${LIBcourierauthsaslclient_VERSION}
+@lib lib/libauthsqlite.so.${LIBauthsqlite_VERSION}
