@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/04/15 16:08:01 ajacoutot Exp $
-@lib lib/libhogweed.so.${LIBhogweed_VERSION}
-@lib lib/libnettle.so.${LIBnettle_VERSION}

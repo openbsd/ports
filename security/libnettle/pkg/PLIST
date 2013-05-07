@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/01/18 10:41:00 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.6 2013/05/07 06:39:41 ajacoutot Exp $
 @bin bin/nettle-hash
 @bin bin/nettle-lfib-stream
 @bin bin/pkcs1-conv
@@ -21,6 +20,9 @@ include/nettle/ctr.h
 include/nettle/des-compat.h
 include/nettle/des.h
 include/nettle/dsa.h
+include/nettle/ecc-curve.h
+include/nettle/ecc.h
+include/nettle/ecdsa.h
 include/nettle/gcm.h
 include/nettle/gosthash94.h
 include/nettle/hmac.h
@@ -49,10 +51,13 @@ include/nettle/sha1.h
 include/nettle/sha2.h
 include/nettle/sha3.h
 include/nettle/twofish.h
+include/nettle/umac.h
 include/nettle/yarrow.h
 @info info/nettle.info
 lib/libhogweed.a
+@lib lib/libhogweed.so.${LIBhogweed_VERSION}
 lib/libnettle.a
+@lib lib/libnettle.so.${LIBnettle_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/hogweed.pc
 lib/pkgconfig/nettle.pc
