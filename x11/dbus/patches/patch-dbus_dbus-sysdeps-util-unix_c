@@ -1,14 +1,9 @@
-$OpenBSD: patch-dbus_dbus-sysdeps-util-unix_c,v 1.7 2013/01/08 09:30:27 ajacoutot Exp $
+$OpenBSD: patch-dbus_dbus-sysdeps-util-unix_c,v 1.8 2013/05/07 07:00:01 ajacoutot Exp $
 
 XXX push upstream
 
-From 9a9b0e2736378d1a8961fb264d7314e921231e8e Mon Sep 17 00:00:00 2001
-From: Michel HERMIER <hermier@frugalware.org>
-Date: Fri, 09 Nov 2012 15:44:43 +0000
-Subject: Don't leak temporary fds pointing to /dev/null
-
---- dbus/dbus-sysdeps-util-unix.c.orig	Fri Sep 28 21:17:25 2012
-+++ dbus/dbus-sysdeps-util-unix.c	Tue Jan  8 09:59:46 2013
+--- dbus/dbus-sysdeps-util-unix.c.orig	Fri Nov  9 17:01:44 2012
++++ dbus/dbus-sysdeps-util-unix.c	Tue May  7 08:47:04 2013
 @@ -55,6 +55,13 @@
  #include <sys/syslimits.h>
  #endif
@@ -23,15 +18,7 @@ Subject: Don't leak temporary fds pointing to /dev/null
  #ifndef O_BINARY
  #define O_BINARY 0
  #endif
-@@ -123,6 +130,7 @@ _dbus_become_daemon (const DBusString *pidfile,
-             dup2 (dev_null_fd, 2);
-           else
-             _dbus_verbose ("keeping stderr open due to DBUS_DEBUG_OUTPUT\n");
-+          close (dev_null_fd);
-         }
- 
-       if (!keep_umask)
-@@ -1107,7 +1115,14 @@ _dbus_command_for_pid (unsigned long  pid,
+@@ -1108,7 +1115,14 @@ _dbus_command_for_pid (unsigned long  pid,
    /* This is all Linux-specific for now */
    DBusString path;
    DBusString cmdline;
@@ -46,7 +33,7 @@ Subject: Don't leak temporary fds pointing to /dev/null
    
    if (!_dbus_string_init (&path)) 
      {
-@@ -1122,6 +1137,7 @@ _dbus_command_for_pid (unsigned long  pid,
+@@ -1123,6 +1137,7 @@ _dbus_command_for_pid (unsigned long  pid,
        return FALSE;
      }
    
@@ -54,7 +41,7 @@ Subject: Don't leak temporary fds pointing to /dev/null
    if (!_dbus_string_append_printf (&path, "/proc/%ld/cmdline", pid))
      goto oom;
    
-@@ -1148,6 +1164,24 @@ _dbus_command_for_pid (unsigned long  pid,
+@@ -1149,6 +1164,24 @@ _dbus_command_for_pid (unsigned long  pid,
    
    if (!_dbus_close (fd, error))
      goto fail;
@@ -79,7 +66,7 @@ Subject: Don't leak temporary fds pointing to /dev/null
    
    string_squash_nonprintable (&cmdline);  
  
-@@ -1162,5 +1196,8 @@ oom:
+@@ -1163,5 +1196,8 @@ oom:
  fail:
    _dbus_string_free (&cmdline);
    _dbus_string_free (&path);
