@@ -1,23 +1,20 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/14 10:28:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2013/05/07 20:14:45 rpe Exp $
 
 COMMENT-main=	nagios service check acceptor
 COMMENT-client=	nagios service check acceptor - client
 
-# packaged from Icinga git repo.
-VERSION=	2.8pre20100831
-DISTNAME=	icinga-nsca-${VERSION}
-WRKDIST=	${WRKDIR}/icinga-nsca
+VERSION=	2.9.1
+DISTNAME=	nsca-${VERSION}
 PKGNAME-main=	nsca-${VERSION}
 PKGNAME-client=	nsca-client-${VERSION}
 CATEGORIES=	net
-REVISION=	4
 
 HOMEPAGE=	http://www.nagios.org/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		http://spacehopper.org/mirrors/
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=nagios/}
 
 WANTLIB=		c mcrypt>=8
 LIB_DEPENDS=		security/libmcrypt

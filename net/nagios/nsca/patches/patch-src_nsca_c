@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_nsca_c,v 1.4 2011/11/12 00:49:49 sthen Exp $
---- src/nsca.c.orig	Tue Aug 31 13:47:57 2010
-+++ src/nsca.c	Sat Nov 12 00:45:12 2011
-@@ -28,7 +28,7 @@ char    *server_address=NULL;
+$OpenBSD: patch-src_nsca_c,v 1.5 2013/05/07 20:14:45 rpe Exp $
+--- src/nsca.c.orig	Sat May  4 17:40:24 2013
++++ src/nsca.c	Sat May  4 17:40:41 2013
+@@ -28,7 +28,7 @@ static char server_address[16]="0.0.0.0";
  static int socket_timeout=DEFAULT_SOCKET_TIMEOUT;
  static int log_facility=LOG_DAEMON;
  
@@ -10,23 +10,3 @@ $OpenBSD: patch-src_nsca_c,v 1.4 2011/11/12 00:49:49 sthen Exp $
  static char alternate_dump_file[MAX_INPUT_BUFFER]="/dev/null";
  static char command_file[MAX_INPUT_BUFFER]="";
  static char password[MAX_INPUT_BUFFER]="";
-@@ -381,8 +381,7 @@ static int read_config_file(char *filename){
- 			server_port=strdup(varvalue);
- 
- 		else if(!strcmp(varname,"server_address")){
--                        strncpy(server_address,varvalue,sizeof(server_address) - 1);
--                        server_address[sizeof(server_address)-1]='\0';
-+                        server_address=strdup(varvalue);
-                         }
- 		else if(strstr(input_buffer,"command_file")){
-                         if(strlen(varvalue)>sizeof(command_file)-1){
-@@ -778,8 +777,7 @@ static void wait_for_connections(void) {
- 	addrinfo.ai_protocol=IPPROTO_TCP;
- 
- 	if(!server_address || !strlen(server_address)) {
--		server_address = NULL;
--		addrinfo.ai_flags=AI_PASSIVE;
-+		server_address = strdup("0.0.0.0");
- 		}
- 	if (rval = getaddrinfo(server_address, server_port, &addrinfo, &res) != 0) {
- 		syslog(LOG_ERR,"Invalid server_address (%d: %s)",errno,strerror(errno));
