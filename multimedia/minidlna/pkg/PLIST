@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/10 10:45:05 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/05/07 20:37:24 sthen Exp $
 @newgroup _minidlna:705
 @newuser _minidlna:705:_minidlna:daemon:minidlna user:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/db/minidlna/*
 @extraunexec rm -rf /var/log/minidlna/*
-@bin sbin/minidlna
+@bin sbin/minidlnad
 share/examples/minidlna/
 share/examples/minidlna/minidlna.conf
 @sample ${SYSCONFDIR}/minidlna.conf
@@ -11,4 +11,16 @@ share/examples/minidlna/minidlna.conf
 @sample /var/db/minidlna/
 @sample /var/log/minidlna/
 @owner
+share/locale/da/LC_MESSAGES/minidlna.mo
+share/locale/de/LC_MESSAGES/minidlna.mo
+share/locale/es/LC_MESSAGES/minidlna.mo
+share/locale/fr/LC_MESSAGES/minidlna.mo
+share/locale/it/LC_MESSAGES/minidlna.mo
+share/locale/ja/LC_MESSAGES/minidlna.mo
+share/locale/nb/LC_MESSAGES/minidlna.mo
+share/locale/nl/LC_MESSAGES/minidlna.mo
+share/locale/pl/LC_MESSAGES/minidlna.mo
+share/locale/ru/LC_MESSAGES/minidlna.mo
+share/locale/sl/LC_MESSAGES/minidlna.mo
+share/locale/sv/LC_MESSAGES/minidlna.mo
 @rcscript ${RCDIR}/minidlna

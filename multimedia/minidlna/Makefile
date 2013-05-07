@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/15 17:15:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2013/05/07 20:37:23 sthen Exp $
 
 COMMENT=	lightweight DLNA/UPnP-AV media server
 
-V=		1.0.25
-REVISION=	2
-DISTNAME=	minidlna_$V_src
-WRKDIST=	${WRKDIR}/minidlna-$V
+V=		1.1.0
+DISTNAME=	minidlna-$V
 PKGNAME=	minidlna-$V
 
 CATEGORIES=	multimedia
@@ -17,10 +15,17 @@ HOMEPAGE=	http://sourceforge.net/projects/minidlna/
 # GPLv2 only
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += FLAC avcodec avformat avutil c exif id3tag jpeg ogg
+WANTLIB += FLAC avformat avutil c exif id3tag jpeg ogg
 WANTLIB += pthread sqlite3 vorbis
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=minidlna/}
+
+CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS= --with-log-path=/var/log/minidlna \
+		--with-db-path=/var/db/minidlna \
+		--with-os-url=http://www.openbsd.org/
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	audio/flac \
@@ -29,17 +34,8 @@ LIB_DEPENDS=	audio/flac \
 		graphics/jpeg \
 		graphics/libexif
 
-MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" \
-		INSTALLPREFIX="${WRKINST}${TRUEPREFIX}"
-CFLAGS+=	-Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 \
-		-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
-
 NO_TEST=	Yes
 E=		${PREFIX}/share/examples/minidlna
-
-do-configure:
-	@cd ${WRKSRC} && perl -pi -e 's,/usr/local,${LOCALBASE},g' genconfig.sh
 
 post-install:
 	${INSTALL_DATA_DIR} $E

@@ -1,8 +1,8 @@
 #!/bin/sh
 #
-# $OpenBSD: minidlna.rc,v 1.1.1.1 2012/10/10 10:45:05 sthen Exp $
+# $OpenBSD: minidlna.rc,v 1.2 2013/05/07 20:37:24 sthen Exp $
 
-daemon="${TRUEPREFIX}/sbin/minidlna"
+daemon="${TRUEPREFIX}/sbin/minidlnad"
 daemon_user="_minidlna"
 
 . /etc/rc.d/rc.subr

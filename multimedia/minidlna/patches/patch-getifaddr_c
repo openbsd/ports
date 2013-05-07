@@ -1,88 +1,13 @@
-$OpenBSD: patch-getifaddr_c,v 1.1.1.1 2012/10/10 10:45:05 sthen Exp $
---- getifaddr.c.orig	Sat Jul 14 00:31:17 2012
-+++ getifaddr.c	Tue Oct  9 19:55:34 2012
-@@ -34,8 +34,10 @@
- #include <sys/types.h>
- #include <sys/socket.h>
- #include <net/if.h>
-+#include <net/if_dl.h>
- #include <arpa/inet.h>
- #include <netinet/in.h>
-+#include <ifaddrs.h>
- #include <netdb.h>
- #include <errno.h>
- #if defined(sun)
-@@ -80,7 +82,7 @@ getifaddr(const char * ifname, char * buf, int len)
- 	}
- 	if(ioctl(s, SIOCGIFNETMASK, &ifr, &ifrlen) == 0)
- 	{
--		addr = (struct sockaddr_in *)&ifr.ifr_netmask;
-+		addr = (struct sockaddr_in *)&ifr.ifr_addr;
- 		mask = ntohl(addr->sin_addr.s_addr);
- 		for (i = 0; i < 32; i++)
+$OpenBSD: patch-getifaddr_c,v 1.2 2013/05/07 20:37:23 sthen Exp $
+--- getifaddr.c.orig	Tue May  7 20:59:26 2013
++++ getifaddr.c	Tue May  7 21:01:27 2013
+@@ -175,6 +175,9 @@ getsysaddrs(void)
+ 		if (p->ifa_addr && p->ifa_addr->sa_family == AF_INET)
  		{
-@@ -154,53 +156,42 @@ getsysaddrs(void)
- int
- getsyshwaddr(char * buf, int len)
- {
--	struct if_nameindex *ifaces, *if_idx;
- 	unsigned char mac[6];
--	struct ifreq ifr;
--	int fd;
-+	struct ifaddrs *ifa, *ifap;
- 	int ret = -1;
- 
- 	memset(&mac, '\0', sizeof(mac));
--	/* Get the spatially unique node identifier */
--	fd = socket(AF_INET, SOCK_DGRAM, 0);
--	if( fd < 0 )
--		return(ret);
- 
--	ifaces = if_nameindex();
--	if(!ifaces)
-+	if (getifaddrs(&ifa) == -1)
- 		return(ret);
- 
--	for(if_idx = ifaces; if_idx->if_index; if_idx++)
--	{
--		strncpy(ifr.ifr_name, if_idx->if_name, IFNAMSIZ);
--		if(ioctl(fd, SIOCGIFFLAGS, &ifr) < 0)
-+	for (ifap = ifa; ifap != NULL; ifap = ifap->ifa_next){
-+
-+		if (ifap->ifa_flags & IFF_LOOPBACK)
- 			continue;
--		if(ifr.ifr_ifru.ifru_flags & IFF_LOOPBACK)
-+
-+#define IFA_LL_ADDR LLADDR((struct sockaddr_dl *)ifap->ifa_addr)
-+		if( MACADDR_IS_ZERO(IFA_LL_ADDR) )
- 			continue;
--		if( ioctl(fd, SIOCGIFHWADDR, &ifr) < 0 )
--			continue;
--		if( MACADDR_IS_ZERO(ifr.ifr_hwaddr.sa_data) )
--			continue;
- 		ret = 0;
- 		break;
- 	}
--	if_freenameindex(ifaces);
--	close(fd);
- 
- 	if(ret == 0)
- 	{
- 		if(len > 12)
- 		{
--			memmove(mac, ifr.ifr_hwaddr.sa_data, 6);
-+			memmove(mac, IFA_LL_ADDR, 6);
- 			sprintf(buf, "%02x%02x%02x%02x%02x%02x",
- 			        mac[0]&0xFF, mac[1]&0xFF, mac[2]&0xFF,
- 			        mac[3]&0xFF, mac[4]&0xFF, mac[5]&0xFF);
- 		}
- 		else if(len == 6)
- 		{
--			memmove(buf, ifr.ifr_hwaddr.sa_data, 6);
-+			memmove(buf, IFA_LL_ADDR, 6);
- 		}
- 	}
-+	freeifaddrs(ifa);
- 	return ret;
- }
- 
+ 			addr_in = (struct sockaddr_in *)p->ifa_addr;
++#ifndef IFF_SLAVE
++#define IFF_SLAVE 0
++#endif
+ 			if (p->ifa_flags & (IFF_LOOPBACK | IFF_SLAVE))
+ 				continue;
+ 			memcpy(&lan_addr[n_lan_addr].addr, &addr_in->sin_addr, sizeof(lan_addr[n_lan_addr].addr));
