@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:41:32 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/05/07 06:44:22 jasper Exp $
 
 COMMENT =	apply actions to directory changes
 
-DISTNAME =	directory_watcher-1.3.2
-REVISION=	1
+DISTNAME =	directory_watcher-1.4.1
 CATEGORIES =	sysutils
 
 # MIT
