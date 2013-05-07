@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/04/17 13:20:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2013/05/07 07:09:53 giovanni Exp $
 
 SHARED_ONLY =		Yes
 
@@ -30,7 +30,8 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=imagination/}
 AUTOCONF_VERSION =	2.67
 CONFIGURE_STYLE =	autoconf no-autoheader
 CONFIGURE_ARGS =	--localedir=${PREFIX}/share/locale
-MODULES =		devel/gettext
+MODULES =		devel/gettext \
+			textproc/intltool
 USE_LIBTOOL =		Yes
 LIBTOOL_FLAGS =		--tag=disable-static
 USE_GMAKE =		Yes
