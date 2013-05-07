@@ -1,15 +1,15 @@
-$OpenBSD: patch-src_arm_ffi_c,v 1.1 2013/03/21 16:22:51 jasper Exp $
+$OpenBSD: patch-src_arm_ffi_c,v 1.2 2013/05/07 20:04:18 jasper Exp $
 
 warning: implicit declaration of function '__clear_cache'
 
---- src/arm/ffi.c.orig	Thu Mar 21 17:15:53 2013
-+++ src/arm/ffi.c	Thu Mar 21 17:16:12 2013
-@@ -37,6 +37,8 @@
- static int vfp_type_p (ffi_type *);
- static void layout_vfp_args (ffi_cif *);
+--- src/arm/ffi.c.orig	Tue Dec 29 16:22:26 2009
++++ src/arm/ffi.c	Tue May  7 22:01:23 2013
+@@ -29,6 +29,8 @@
+ 
+ #include <stdlib.h>
  
 +extern void __clear_cache(char *beg, char *end);
 +
  /* ffi_prep_args is called by the assembly routine once stack space
-    has been allocated for the function's arguments
-    
+    has been allocated for the function's arguments */
+ 
