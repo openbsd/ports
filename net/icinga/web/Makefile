@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/28 12:43:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2013/05/07 15:34:47 sthen Exp $
 
 COMMENT =	web UI for icinga
-DISTNAME =	icinga-web-1.8.3
+DISTNAME =	icinga-web-1.9.0
 
 MODULES=	lang/php
 

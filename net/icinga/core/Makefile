@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.44 2013/03/29 16:39:34 rpe Exp $
+# $OpenBSD: Makefile,v 1.45 2013/05/07 15:34:47 sthen Exp $
 
-V =			1.8.4
+V =			1.9.0
 
 COMMENT-main =		network monitoring system (improved fork of Nagios)
 COMMENT-cgi =		cgi scripts for Icinga (classic Nagios-style UI)
@@ -8,9 +8,7 @@ COMMENT-ido =		store Icinga configuration and events in a database
 
 DISTNAME =		icinga-$V
 PKGNAME-main =		icinga-$V
-REVISION-main =		1
 PKGNAME-cgi =		icinga-cgi-$V
-REVISION-cgi =		0
 PKGNAME-ido =		icinga-idoutils-$V
 
 WANTLIB =		c crypto m pthread ssl
@@ -54,21 +52,21 @@ CONFIGURE_ARGS += \
 	--with-checkresult-dir=/var/spool/icinga \
 	--with-htmurl=/icinga \
 	--with-httpd-conf=${PREFIX-cgi}/conf/modules.sample \
+	--with-httpd-conf-file=${PREFIX-cgi}/conf/modules.sample/icinga-cgi.conf.dist \
 	--with-icinga-group=_icinga \
 	--with-icinga-user=_icinga \
 	--with-lockfile=/var/run/icinga/icinga.pid \
 	--with-log-dir=/var/log/icinga \
 	--with-p1-file-dir=${PREFIX}/bin \
 	--enable-embedded-perl \
-	--enable-idoutils \
 	--enable-ssl
 
 CFLAGS +=	-fPIC \
 		-I${LOCALBASE}/include \
 		-L${X11BASE}/lib -L${LOCALBASE}/lib
 
-INSTALL_TARGET = install-unstripped install-idoutils \
-		install-config install-webconf
+INSTALL_TARGET = install-unstripped install-idoutils install-config \
+		 install-webconf
 
 # perl tests work; C tests require --enable-libtap in configure and
 # fixing up WRKSRC/tap/configure
@@ -87,9 +85,7 @@ post-install:
 	    ${WRKSRC}/module/idoutils/config/updates/* \
 	    ${PREFIX}/share/examples/icinga/updates/
 	cd ${WRKINST}${PREFIX-cgi}; \
-	mv conf/modules.sample/icinga.conf \
-	    conf/modules.sample/icinga-cgi.conf.dist; \
-	chown -R ${SHAREOWN}:${SHAREGRP} icinga-cgi conf
+	    chown -R ${SHAREOWN}:${SHAREGRP} icinga-cgi conf
 	cd ${WRKSRC}/module/idoutils; \
 	    pax -rw db ${PREFIX}/share/examples/icinga/
 

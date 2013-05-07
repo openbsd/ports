@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2012/10/18 20:04:58 sthen Exp $
---- Makefile.in.orig	Thu Oct 18 10:43:14 2012
-+++ Makefile.in	Thu Oct 18 13:34:42 2012
-@@ -287,7 +287,7 @@ db-purge-userprefs:
+$OpenBSD: patch-Makefile_in,v 1.5 2013/05/07 15:34:47 sthen Exp $
+--- Makefile.in.orig	Mon Apr 29 18:54:16 2013
++++ Makefile.in	Fri May  3 13:31:02 2013
+@@ -288,7 +288,7 @@ db-purge-userprefs:
  	$(PHING_CALL) db-purge-userprefs
  
  make-create-files:

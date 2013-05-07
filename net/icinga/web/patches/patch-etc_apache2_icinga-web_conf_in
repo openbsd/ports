@@ -1,18 +1,18 @@
-$OpenBSD: patch-etc_apache2_icinga-web_conf_in,v 1.3 2012/05/17 11:06:33 sthen Exp $
---- etc/apache2/icinga-web.conf.in.orig	Tue Dec 20 07:22:32 2011
-+++ etc/apache2/icinga-web.conf.in	Wed Feb  8 16:17:25 2012
-@@ -1,10 +1,13 @@
+$OpenBSD: patch-etc_apache2_icinga-web_conf_in,v 1.4 2013/05/07 15:34:47 sthen Exp $
+--- etc/apache2/icinga-web.conf.in.orig	Mon Apr 29 18:54:16 2013
++++ etc/apache2/icinga-web.conf.in	Fri May  3 13:38:52 2013
+@@ -10,9 +10,13 @@
+ # Markus Frosch <markus@lazyfrosch.de>
+ ###
+ 
 +<IfModule !mod_rewrite.c>
-+LoadModule rewrite_module	/usr/lib/apache/modules/mod_rewrite.so
++LoadModule rewrite_module      /usr/lib/apache/modules/mod_rewrite.so
 +</IfModule>
- #
- # icinga-web apache configuration
- # - Enable all options .htaccess
- # - Add extjs library to alias
- #
- AliasMatch @web_path@/modules/([A-Za-z0-9]*)/resources/styles/([A-Za-z0-9]*\.css)$ @prefix@/app/modules/$1/pub/styles/$2
--AliasMatch @web_path@/modules/([A-Za-z0-9]*)/resources/images/([A-Za-z_\-0-9]*\.(png|gif|jpg))$ @prefix@/app/modules/$1/pub/images/$2
-+AliasMatch @web_path@/modules/([A-Za-z0-9]*)/resources/images/([-_A-Za-z0-9]*\.(png|gif|jpg))$ @prefix@/app/modules/$1/pub/images/$2
++
+ # Matching for module stylesheet and images
+ AliasMatch "^@web_path@/modules/([A-Za-z0-9]+)/resources/styles/([A-Za-z0-9]+\.css)$" "@prefix@/app/modules/$1/pub/styles/$2"
+-AliasMatch "^@web_path@/modules/([A-Za-z0-9]+)/resources/images/([A-Za-z_\-0-9]+\.(?:png|gif|jpg))$" "@prefix@/app/modules/$1/pub/images/$2"
++AliasMatch "^@web_path@/modules/([A-Za-z0-9]+)/resources/images/([-_A-Za-z0-9]+\.(png|gif|jpg))$" "@prefix@/app/modules/$1/pub/images/$2"
  
- 
- Alias @web_path@/js/ext3 @prefix@/lib/ext3
+ # Matching for Icinga Web and the ext3 framework
+ Alias @web_path@/js/ext3/ @prefix@/lib/ext3/

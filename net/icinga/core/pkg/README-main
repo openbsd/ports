@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.12 2013/03/29 16:39:34 rpe Exp $
+$OpenBSD: README-main,v 1.13 2013/05/07 15:34:47 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -106,8 +106,8 @@ Two web-based user interfaces are available for Icinga:
 
       $ sudo /etc/rc.d/ido2db start
 
-   2.3) Enable the broker_module idomod.so in /etc/icinga/icinga.cfg
-   and restart icinga:
+   2.3) Enable the "broker_module=${TRUEPREFIX}/lib/idomod.so ..." line in
+   ${SYSCONFDIR}/icinga.cfg and restart icinga:
 
       $ sudo /etc/rc.d/icinga restart
 

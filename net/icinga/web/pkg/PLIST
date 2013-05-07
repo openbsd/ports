@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2013/03/28 12:43:14 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.13 2013/05/07 15:34:47 sthen Exp $
 @conflict icinga-api-*
 @pkgpath net/icinga/core,-api
 app/
@@ -120,8 +120,6 @@ app/modules/Api/actions/ApiSearchAction.class.php
 app/modules/Api/actions/IcingaInstanceControllerAction.class.php
 app/modules/Api/actions/RelationProviderAction.class.php
 app/modules/Api/actions/SLAProviderAction.class.php
-app/modules/Api/actions/Test/
-app/modules/Api/actions/Test/RequestTestAction.class.php
 app/modules/Api/config/
 app/modules/Api/config/access.xml
 app/modules/Api/config/action_filters.xml
@@ -147,6 +145,7 @@ app/modules/Api/config/views/host.xml
 app/modules/Api/config/views/hostgroups.xml
 app/modules/Api/config/views/misc.xml
 app/modules/Api/config/views/notifications.xml
+app/modules/Api/config/views/overview.xml
 app/modules/Api/config/views/service.xml
 app/modules/Api/config/views/servicegroups.xml
 app/modules/Api/lib/
@@ -176,6 +175,7 @@ app/modules/Api/lib/database/IcingaDoctrineDatabase.class.php
 app/modules/Api/lib/database/IcingaDoctrineTable.class.php
 app/modules/Api/lib/database/IcingaDoctrine_Query.class.php
 app/modules/Api/lib/database/filter/
+app/modules/Api/lib/database/filter/IcingaDQLViewFilter.class.php
 app/modules/Api/lib/database/filter/IcingaDoctrineFilterMap.class.php
 app/modules/Api/lib/database/filter/IcingaDoctrineQueryFilterChain.class.php
 app/modules/Api/lib/database/filter/IcingaIDoctrineQueryFilter.interface.php
@@ -370,6 +370,7 @@ app/modules/Api/lib/datastore/AbstractDataStoreModel.class.php
 app/modules/Api/lib/datastore/DataStoreFilterModifier.class.php
 app/modules/Api/lib/datastore/IcingaApiDataStoreModel.class.php
 app/modules/Api/lib/datastore/IcingaStoreTargetModifierModel.class.php
+app/modules/Api/lib/datastore/StoreFilterField.class.php
 app/modules/Api/lib/datastore/filter/
 app/modules/Api/lib/datastore/filter/ApiStoreFilter.class.php
 app/modules/Api/lib/datastore/filter/ApiStoreFilterGroup.class.php
@@ -428,8 +429,6 @@ app/modules/Api/models/Console/ConsoleCommandModel.class.php
 app/modules/Api/models/Console/ConsoleInterfaceModel.class.php
 app/modules/Api/models/DBALMetaManagerModel.class.php
 app/modules/Api/models/DeprecatedApiContainerModel.class.php
-app/modules/Api/models/Filter/
-app/modules/Api/models/Filter/UserObjectIdModel.class.php
 app/modules/Api/models/IcingaControlTaskModel.class.php
 app/modules/Api/models/LegacyApiContainerModel.class.php
 app/modules/Api/models/Relation/
@@ -442,7 +441,6 @@ app/modules/Api/models/SLA/SLAFilterModel.class.php
 app/modules/Api/models/SLA/SLAQueryBuilderModel.class.php
 app/modules/Api/models/Store/
 app/modules/Api/models/Store/DataStoreResultModel.class.php
-app/modules/Api/models/Store/HostStoreModel.class.php
 app/modules/Api/models/Store/LegacyLayer/
 app/modules/Api/models/Store/LegacyLayer/IcingaApiModel.class.php
 app/modules/Api/models/Store/LegacyLayer/LegacyApiResultModel.class.php
@@ -456,8 +454,7 @@ app/modules/Api/models/Views/
 app/modules/Api/models/Views/ApiDQLViewModel.class.php
 app/modules/Api/models/Views/Extender/
 app/modules/Api/models/Views/Extender/CustomVariableExtenderModel.class.php
-app/modules/Api/models/Views/Extender/NotificationCustomVariableExtenderModel.class.php
-app/modules/Api/models/Views/Extender/UserObjectIdExtenderModel.class.php
+app/modules/Api/models/Views/Extender/MultiLikeExtenderModel.class.php
 app/modules/Api/models/Views/Merger/
 app/modules/Api/models/Views/Merger/ForeignKeyMergerModel.class.php
 app/modules/Api/templates/
@@ -471,8 +468,6 @@ app/modules/Api/validate/ApiSearch.xml
 app/modules/Api/validate/IcingaInstanceController.xml
 app/modules/Api/validate/RelationProvider.xml
 app/modules/Api/validate/SLAProvider.xml
-app/modules/Api/validate/Test/
-app/modules/Api/validate/Test/RequestTest.xml
 app/modules/Api/validate/test.php
 app/modules/Api/views/
 app/modules/Api/views/ApiCommandErrorView.class.php
@@ -486,8 +481,6 @@ app/modules/Api/views/GenericErrorView.class.php
 app/modules/Api/views/IcingaInstanceControllerSuccessView.class.php
 app/modules/Api/views/RelationProviderSuccessView.class.php
 app/modules/Api/views/SLAProviderSuccessView.class.php
-app/modules/Api/views/Test/
-app/modules/Api/views/Test/RequestTestSuccessView.class.php
 app/modules/AppKit/
 app/modules/AppKit/actions/
 app/modules/AppKit/actions/Admin/
@@ -648,6 +641,9 @@ app/modules/AppKit/lib/js/admin/components/RoleInheritanceView.js
 app/modules/AppKit/lib/js/admin/components/RoleListingGrid.js
 app/modules/AppKit/lib/js/admin/components/UserListingGrid.js
 app/modules/AppKit/lib/js/admin/components/UserSelectionGrid.js
+app/modules/AppKit/lib/js/compatibility/
+app/modules/AppKit/lib/js/compatibility/Object.js
+app/modules/AppKit/lib/js/compatibility/README
 app/modules/AppKit/lib/js/form/
 app/modules/AppKit/lib/js/form/action/
 app/modules/AppKit/lib/js/form/action/JSONSubmit.js
@@ -738,8 +734,6 @@ app/modules/AppKit/models/Auth/Provider/DatabaseModel.class.php
 app/modules/AppKit/models/Auth/Provider/HTTPBasicAuthenticationModel.class.php
 app/modules/AppKit/models/Auth/Provider/LDAPModel.class.php
 app/modules/AppKit/models/BulkLoaderModel.class.php
-app/modules/AppKit/models/Credential/
-app/modules/AppKit/models/Credential/AggregatorModel.class.php
 app/modules/AppKit/models/Ext/
 app/modules/AppKit/models/Ext/ApplicationStateModel.class.php
 app/modules/AppKit/models/HeaderDataModel.class.php
@@ -1113,6 +1107,14 @@ app/modules/Cronks/lib/js/Icinga/Cronks/util/CategoryEditorForm.js
 app/modules/Cronks/lib/js/Icinga/Cronks/util/CategoryPermissionWindow.js
 app/modules/Cronks/lib/js/Icinga/Cronks/util/CronkPermissionWindow.js
 app/modules/Cronks/lib/js/Icinga/Cronks/util/CronkUrlWindow.js
+app/modules/Cronks/lib/js/Icinga/Cronks/util/FilterEditor.js
+app/modules/Cronks/lib/js/Icinga/Cronks/util/FilterEditorWindow.js
+app/modules/Cronks/lib/js/Icinga/Cronks/util/FilterState.js
+app/modules/Cronks/lib/js/Icinga/Cronks/util/FilterTypes/
+app/modules/Cronks/lib/js/Icinga/Cronks/util/FilterTypes/Api.js
+app/modules/Cronks/lib/js/Icinga/Cronks/util/FilterTypes/Base.js
+app/modules/Cronks/lib/js/Icinga/Cronks/util/FilterTypes/FieldProvider.js
+app/modules/Cronks/lib/js/Icinga/Cronks/util/FilterTypes/Status.js
 app/modules/Cronks/lib/js/rmd160.js
 app/modules/Cronks/lib/js/search/
 app/modules/Cronks/lib/js/search/SearchHandler.js
@@ -1504,6 +1506,7 @@ doc/AUTHORS
 doc/CHANGELOG-1.6
 doc/CHANGELOG-1.7
 doc/CHANGELOG-1.8
+doc/CHANGELOG-1.9
 doc/CHANGELOG-1.x
 doc/GPL
 doc/INSTALL
@@ -1550,9 +1553,15 @@ etc/conf.d/sla.xml.dist
 @sample etc/conf.d/sla.xml
 etc/conf.d/translation.xml.dist
 @sample etc/conf.d/translation.xml
+etc/conf.d/userpreferences.xml.dist
+@sample etc/conf.d/userpreferences.xml
 etc/icinga-web.conf
 @sample /var/www/conf/modules.sample/icinga-web.conf
 etc/lib/
+etc/lib/CronkDropLayoutTask.php
+etc/lib/CronkStruct.php
+etc/lib/CronkUpgradeAbstract.php
+etc/lib/CronkUpgradeFilterTask.php
 etc/lib/agaviClearCache.php
 etc/lib/agaviConsoleTask.php
 etc/lib/agaviDBExtractorTask.php
@@ -1582,6 +1591,7 @@ etc/schema/updates/mysql/mysql_v1-7-1_to_v1-7-2.sql
 etc/schema/updates/mysql/mysql_v1-7-2_to_v1-8-0.sql
 etc/schema/updates/mysql/mysql_v1-8-0_to_v-1-8-1.sql
 etc/schema/updates/mysql/mysql_v1-8-1_to_v1-8-3.sql
+etc/schema/updates/mysql/mysql_v1-8-3_to_v1-9.sql
 etc/schema/updates/oracle/
 etc/schema/updates/oracle/oracle_v1-0-3_to_v1-2.sql
 etc/schema/updates/oracle/oracle_v1-2_to_1-3.sql
@@ -1594,6 +1604,7 @@ etc/schema/updates/oracle/oracle_v1-7-0_to_v1-7-1.sql
 etc/schema/updates/oracle/oracle_v1-7-1_to_v1-7-2.sql
 etc/schema/updates/oracle/oracle_v1-7-2_to_v1-8-0.sql
 etc/schema/updates/oracle/oracle_v1-8-0_to_v1-8-3.sql
+etc/schema/updates/oracle/oracle_v1-8-3_to_v1-9.sql
 etc/schema/updates/pgsql/
 etc/schema/updates/pgsql/pgsql_v1-0-3_to_v1-2.sql
 etc/schema/updates/pgsql/pgsql_v1-2_to_v1-3.sql
@@ -1607,6 +1618,7 @@ etc/schema/updates/pgsql/pgsql_v1-7-1_to_v1-7-2.sql
 etc/schema/updates/pgsql/pgsql_v1-7-2_to_v1-8-0.sql
 etc/schema/updates/pgsql/pgsql_v1-8-0_to_v-1-8-1.sql
 etc/schema/updates/pgsql/pgsql_v1-8-1_to_v1-8-3.sql
+etc/schema/updates/pgsql/pgsql_v1-8-3_to_v1-9.sql
 lib/
 lib/agavi/
 lib/agavi/src/
@@ -4869,6 +4881,7 @@ pub/images/ext3-ux/tab-scroller-menu.gif
 pub/images/icinga/
 pub/images/icinga/bug_big.png
 pub/images/icinga/bugreport.png
+pub/images/icinga/docs.png
 pub/images/icinga/favicon.ico
 pub/images/icinga/icinga-logo-big.png
 pub/images/icinga/icinga-logo-small.png
@@ -7936,8 +7949,6 @@ pub/images/icons/zone.png
 pub/images/icons/zones-stack.png
 pub/images/icons/zones.png
 pub/index.php
-pub/soap/
-pub/soap/.htaccess
 pub/styles/
 pub/styles/exception.css
 pub/styles/icinga-cronk-icons.css
