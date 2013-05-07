@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2005/12/25 11:15:34 sturm Exp $
-@lib lib/libtasn1.so.${LIBtasn1_VERSION}
