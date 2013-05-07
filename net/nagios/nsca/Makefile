@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/05/07 20:14:45 rpe Exp $
+# $OpenBSD: Makefile,v 1.16 2013/05/07 20:17:43 sthen Exp $
 
 COMMENT-main=	nagios service check acceptor
 COMMENT-client=	nagios service check acceptor - client
@@ -31,9 +31,11 @@ TEST_DEPENDS=	devel/p5-Clone \
 			devel/p5-Parallel-Forker
 RUN_DEPENDS-main=	net/nagios/nagios
 
+post-extract:
+	@cd ${WRKSRC} && perl -i -pe 's/\r$$//' src/nsca.c src/send_nsca.c
+
 pre-build:
-	@perl -pi -e "s,%%SYSCONFDIR%%,${SYSCONFDIR}," ${WRKSRC}/src/nsca.c \
-		${WRKSRC}/src/send_nsca.c
+	@${SUBST_CMD} ${WRKSRC}/src/nsca.c ${WRKSRC}/src/send_nsca.c
 
 do-test:
 	@cd ${WRKSRC}/nsca_tests && ./runtests

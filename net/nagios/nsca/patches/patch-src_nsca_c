@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_nsca_c,v 1.5 2013/05/07 20:14:45 rpe Exp $
+$OpenBSD: patch-src_nsca_c,v 1.6 2013/05/07 20:17:43 sthen Exp $
 --- src/nsca.c.orig	Sat May  4 17:40:24 2013
 +++ src/nsca.c	Sat May  4 17:40:41 2013
 @@ -28,7 +28,7 @@ static char server_address[16]="0.0.0.0";
@@ -6,7 +6,7 @@ $OpenBSD: patch-src_nsca_c,v 1.5 2013/05/07 20:14:45 rpe Exp $
  static int log_facility=LOG_DAEMON;
  
 -static char config_file[MAX_INPUT_BUFFER]="nsca.cfg";
-+static char config_file[MAX_INPUT_BUFFER]="%%SYSCONFDIR%%/nsca.cfg";
++static char config_file[MAX_INPUT_BUFFER]="${SYSCONFDIR}/nsca.cfg";
  static char alternate_dump_file[MAX_INPUT_BUFFER]="/dev/null";
  static char command_file[MAX_INPUT_BUFFER]="";
  static char password[MAX_INPUT_BUFFER]="";
