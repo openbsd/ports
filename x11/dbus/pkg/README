@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2012/11/09 16:05:13 ajacoutot Exp $
+$OpenBSD: README,v 1.6 2013/05/07 06:44:47 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -12,6 +12,6 @@ xinitrc and Xsession in OpenBSD (as well as some session/login managers,
 e.g. gnome-session(1)) already do this for you in which case these lines
 are not needed.
 
-if [ -z "${DBUS_SESSION_BUS_ADDRESS}" ]; then
+if [ -x ${PREFIX}/bin/dbus-launch -a -z "${DBUS_SESSION_BUS_ADDRESS}" ]; then
 	eval `dbus-launch --sh-syntax --exit-with-session`
 fi
