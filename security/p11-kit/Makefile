@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/21 08:48:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2013/05/07 06:38:59 ajacoutot Exp $
 
 COMMENT=	library for loading and enumurating of PKCS\#11 modules
 
-DISTNAME=	p11-kit-0.16.4
-REVISION=	0
+DISTNAME=	p11-kit-0.18.1
 
 CATEGORIES=	security
 
-SHARED_LIBS +=  p11-kit              0.0      # 0.0
+SHARED_LIBS +=  p11-kit              0.1      # 0.0
 
 HOMEPAGE=	http://p11-glue.freedesktop.org/
 
@@ -20,13 +19,16 @@ WANTLIB += c pthread tasn1
 
 MASTER_SITES=	${HOMEPAGE}releases/
 
+MODULES=	devel/gettext
+
 LIB_DEPENDS=	security/libtasn1
 
-
 CONFIGURE_STYLE=gnu
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-module-path=${PREFIX}/lib/pkcs11 \
-		--with-system-anchors=/etc/ssl/cert.pem
+		--with-trust-paths=/etc/ssl/cert.pem
 
 # no translation yet
 CONFIGURE_ARGS += --disable-nls
