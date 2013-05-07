@@ -1,27 +1,29 @@
-# $OpenBSD: Makefile,v 1.36 2013/03/11 11:02:49 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2013/05/07 07:06:42 jasper Exp $
 
-COMMENT=		GNU editor: extensible, customizable, self-documenting
 BROKEN-hppa =		Invalid function: "DEAD"
 
-VERSION=		24.2
+COMMENT=		GNU editor: extensible, customizable, self-documenting
+
+VERSION=		24.3
 DISTNAME=		emacs-${VERSION}
-REVISION=		0
 
 CATEGORIES=		editors
 
 HOMEPAGE=		http://www.gnu.org/software/emacs/
 
-MAINTAINER=		Jeremie Courreges-Anglas <jca+open@wxcvbn.org>
+MAINTAINER=		Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
+
+WANTLIB=		c m ncurses ossaudio pthread execinfo gnutls xml2
 
 MASTER_SITES=		${MASTER_SITE_GNU:=emacs/}
 
 USE_GMAKE=		Yes
 
-FLAVORS=		gtk3 athena no_x11
-FLAVOR?=
+FLAVORS=		athena gtk2 gtk3 no_x11
+FLAVOR?=		gtk3
 
 GCCARCH=		${MACHINE_ARCH}-unknown-openbsd
 
@@ -41,79 +43,51 @@ MAKE_ENV=		INSTALL_EMACS="${INSTALL_SCRIPT}" \
 
 SUBST_VARS=		GCCARCH VERSION
 
-WANTLIB=		c m ncurses ossaudio pthread gnutls xml2
-LIB_DEPENDS=		security/gnutls textproc/libxml
+MODULES=		devel/gettext
+LIB_DEPENDS=		devel/libexecinfo security/gnutls textproc/libxml
 
-.if ${FLAVOR:Mno_x11}
-.  if ${FLAVOR:Mathena}
-ERRORS=			"Fatal: athena and no_x11 flavors are mutually exclusive"
-.  elif ${FLAVOR:Mgtk3}
-ERRORS=			"Fatal: gtk3 and no_x11 flavors are mutually exclusive"
-.  endif
+.if ${FLAVOR} == "no_x11"
 CONFIGURE_ARGS+=	--without-x \
 			--without-dbus \
 			--without-gconf \
 			--without-gsettings
-
-.elif ${FLAVOR:Mathena}
-CONFIGURE_ARGS+=	--with-x-toolkit=athena
-LIB_DEPENDS+=		x11/Xaw3d \
-			x11/dbus \
-			x11/gnome/librsvg \
-			devel/gconf2 \
-			graphics/png \
-			graphics/tiff \
-			graphics/libungif \
-			graphics/ImageMagick
-WANTLIB+=		GL ICE SM X11 Xaw3d Xext Xft Xmu Xpm Xrender Xt expat \
-			fontconfig freetype iconv intl pixman-1 pthread-stubs \
-			xcb xcb-render xcb-shm z MagickCore MagickWand cairo \
-			dbus-1 gconf-2 gdk_pixbuf-2.0 gif gio-2.0 glib-2.0 \
-			gobject-2.0 jpeg png rsvg-2 tiff
-RUN_DEPENDS=		devel/xdg-utils
-.elif ${FLAVOR:Mgtk3}
-MODULES+=		devel/gettext
-CONFIGURE_ARGS+=	--with-x-toolkit=gtk3
-LIB_DEPENDS+=		x11/gtk+3 \
-			x11/dbus \
-			x11/gnome/librsvg \
-			devel/gconf2 \
-			graphics/png \
-			graphics/tiff \
-			graphics/libungif \
-			graphics/ImageMagick
-WANTLIB+=		GL ICE SM X11 Xft Xpm Xrender expat fontconfig \
-			freetype iconv intl pixman-1 pthread-stubs xcb \
-			xcb-render xcb-shm z MagickCore MagickWand atk-1.0 \
-			cairo cairo-gobject dbus-1 gconf-2 gdk-3 \
-			gdk_pixbuf-2.0 gif gio-2.0 glib-2.0 gobject-2.0 gtk-3 \
-			jpeg pango-1.0 pangocairo-1.0 pangoft2-1.0 png rsvg-2 \
-			tiff \
-			${MODGETTEXT_WANTLIB}
-RUN_DEPENDS=		devel/xdg-utils
 .else
-MODULES+=		devel/gettext
-CONFIGURE_ARGS+=	--with-x-toolkit=gtk
-LIB_DEPENDS+=		x11/gtk+2 \
-			x11/dbus \
+LIB_DEPENDS+=		x11/dbus \
 			x11/gnome/librsvg \
 			devel/gconf2 \
+			graphics/jpeg \
 			graphics/png \
 			graphics/tiff \
 			graphics/libungif \
 			graphics/ImageMagick
-WANTLIB+=		GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes \
-			Xft Xi Xinerama Xpm Xrandr Xrender expat fontconfig \
-			freetype iconv intl pixman-1 pthread-stubs xcb \
-			xcb-render xcb-shm z MagickCore MagickWand atk-1.0 \
-			dbus-1 cairo gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gif \
-			gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0 jpeg \
-			pango-1.0 pangocairo-1.0 pangoft2-1.0 png rsvg-2 tiff \
-			${MODGETTEXT_WANTLIB}
-RUN_DEPENDS=		devel/xdg-utils
+RUN_DEPENDS+=		devel/xdg-utils
+WANTLIB+=		dbus-1 rsvg-2 gio-2.0 gdk_pixbuf-2.0 gobject-2.0 \
+			glib-2.0 gconf-2 cairo png jpeg tiff gif z \
+			MagickWand MagickCore
+. if ${FLAVOR} == "athena"
+CONFIGURE_ARGS+=	--with-x-toolkit=athena
+LIB_DEPENDS+=		x11/Xaw3d
+WANTLIB+=		ICE SM X11 Xaw3d Xext Xft Xmu Xpm Xrender Xt \
+			expat fontconfig freetype
+. elif ${FLAVOR} == "gtk2"
+CONFIGURE_ARGS+=	--with-x-toolkit=gtk2
+LIB_DEPENDS+=		x11/gtk+2
+WANTLIB+=		ICE SM X11 Xcomposite Xcursor Xdamage Xext \
+			Xfixes Xft Xi Xinerama Xpm Xrandr Xrender \
+			atk-1.0 expat fontconfig freetype gdk-x11-2.0 \
+			gtk-x11-2.0 pango-1.0 pangocairo-1.0 pangoft2-1.0
+. elif ${FLAVOR} == "gtk3"
+CONFIGURE_ARGS+=	--with-x-toolkit=gtk3
+LIB_DEPENDS+=		x11/gtk+3
+WANTLIB+=		ICE SM X11 Xft Xpm Xrender atk-1.0 cairo-gobject \
+			expat fontconfig freetype gdk-3 gtk-3 pango-1.0 \
+			pangocairo-1.0 pangoft2-1.0
+. else
+ERRORS+=		"Fatal: Conflicting flavor: ${FLAVOR}"
+. endif
 .endif
 
 post-install:
-	chmod -t ${PREFIX}/bin/emacs
+	chmod -t ${PREFIX}/bin/emacs-${VERSION}
 
 .include <bsd.port.mk>

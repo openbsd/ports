@@ -1,4 +1,4 @@
-GNU Emacs is an extensible, customizable text editor—and more. At its
+GNU Emacs is an extensible, customizable text editor - and more. At its
 core is an interpreter for Emacs Lisp, a dialect of the Lisp
 programming language with extensions to support text editing. The
 features of GNU Emacs include:
@@ -21,5 +21,6 @@ the emacs-el package.
 
 Flavors:
 	no_x11     - build without X11 support
-	athena     - build with athena toolkit instead of gtk2
-	gtk3       - build with gtk3 instead of gtk2
+	athena     - build with athena toolkit instead of gtk3
+	gtk2	   - build with gtk2 instead of gtk3
+	gtk3       - build with gtk3 (default)
