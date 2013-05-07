@@ -1,0 +1,12 @@
+$OpenBSD: patch-build_common_library_rb,v 1.1 2013/05/07 23:20:11 jeremy Exp $
+--- build/common_library.rb.orig	Fri May  3 17:28:47 2013
++++ build/common_library.rb	Fri May  3 17:29:05 2013
+@@ -265,7 +265,7 @@ if USE_VENDORED_LIBEV
+ 		end
+ 	end
+ else
+-	LIBEV_CFLAGS = string_option('LIBEV_CFLAGS', '-I/usr/include/libev')
++	LIBEV_CFLAGS = string_option('LIBEV_CFLAGS', '-I${LOCALBASE}/include/libev')
+ 	LIBEV_LIBS   = string_option('LIBEV_LIBS', '-lev')
+ 	task :libev  # do nothing
+ end

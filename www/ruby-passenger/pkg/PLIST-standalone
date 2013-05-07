@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-standalone,v 1.1 2011/12/13 18:38:18 jeremy Exp $
+@comment $OpenBSD: PLIST-standalone,v 1.2 2013/05/07 23:20:11 jeremy Exp $
 ${GEM_LIB}/gems/${DISTNAME}/standalone/
 @bin ${GEM_LIB}/gems/${DISTNAME}/standalone/nginx
 ${GEM_LIB}/gems/${DISTNAME}/standalone/support/
@@ -954,31 +954,21 @@ ${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/google/sparsehash/sparsehasht
 ${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/google/sparsetable
 ${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/google/type_traits.h
 ${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/
-${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/.libs/
-${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/.libs/libev.a
-${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/.libs/libev.la
-${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/.libs/libev.lai
 ${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/Changes
 ${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/LICENSE
-${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/Makefile
 ${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/Makefile.am
 ${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/Makefile.in
 ${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/README
 ${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/aclocal.m4
 ${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/autogen.sh
 ${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/config.guess
-${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/config.h
 ${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/config.h.in
-${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/config.log
-${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/config.status
 ${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/config.sub
 ${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/configure
 ${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/configure.ac
 ${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/ev++.h
 ${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/ev.c
 ${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/ev.h
-${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/ev.lo
-${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/ev.o
 ${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/ev_epoll.c
 ${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/ev_kqueue.c
 ${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/ev_poll.c
@@ -989,16 +979,11 @@ ${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/ev_win32.c
 ${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/ev_wrap.h
 ${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/event.c
 ${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/event.h
-${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/event.lo
-${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/event.o
 ${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/install-sh
-${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/libev.la
 ${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/libev.m4
-${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/libtool
 ${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/ltmain.sh
 ${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/missing
 ${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/mkinstalldirs
-${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/libev/stamp-h1
 ${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/nginx/
 ${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/nginx/Configuration.c
 ${GEM_LIB}/gems/${DISTNAME}/standalone/support/ext/nginx/Configuration.h

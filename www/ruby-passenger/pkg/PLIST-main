@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2013/03/19 15:06:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2013/05/07 23:20:11 jeremy Exp $
 @pkgpath www/ruby-passenger,${MODRUBY_FLAVOR}
 lib/phusion-passenger${GEM_MAN_SUFFIX}
 ${GEM_BIN}/passenger${GEM_BIN_SUFFIX}
@@ -970,31 +970,21 @@ ${GEM_LIB}/gems/${DISTNAME}/ext/google/sparsehash/sparsehashtable.h
 ${GEM_LIB}/gems/${DISTNAME}/ext/google/sparsetable
 ${GEM_LIB}/gems/${DISTNAME}/ext/google/type_traits.h
 ${GEM_LIB}/gems/${DISTNAME}/ext/libev/
-${GEM_LIB}/gems/${DISTNAME}/ext/libev/.libs/
-${GEM_LIB}/gems/${DISTNAME}/ext/libev/.libs/libev.a
-${GEM_LIB}/gems/${DISTNAME}/ext/libev/.libs/libev.la
-${GEM_LIB}/gems/${DISTNAME}/ext/libev/.libs/libev.lai
 ${GEM_LIB}/gems/${DISTNAME}/ext/libev/Changes
 ${GEM_LIB}/gems/${DISTNAME}/ext/libev/LICENSE
-${GEM_LIB}/gems/${DISTNAME}/ext/libev/Makefile
 ${GEM_LIB}/gems/${DISTNAME}/ext/libev/Makefile.am
 ${GEM_LIB}/gems/${DISTNAME}/ext/libev/Makefile.in
 ${GEM_LIB}/gems/${DISTNAME}/ext/libev/README
 ${GEM_LIB}/gems/${DISTNAME}/ext/libev/aclocal.m4
 ${GEM_LIB}/gems/${DISTNAME}/ext/libev/autogen.sh
 ${GEM_LIB}/gems/${DISTNAME}/ext/libev/config.guess
-${GEM_LIB}/gems/${DISTNAME}/ext/libev/config.h
 ${GEM_LIB}/gems/${DISTNAME}/ext/libev/config.h.in
-${GEM_LIB}/gems/${DISTNAME}/ext/libev/config.log
-${GEM_LIB}/gems/${DISTNAME}/ext/libev/config.status
 ${GEM_LIB}/gems/${DISTNAME}/ext/libev/config.sub
 ${GEM_LIB}/gems/${DISTNAME}/ext/libev/configure
 ${GEM_LIB}/gems/${DISTNAME}/ext/libev/configure.ac
 ${GEM_LIB}/gems/${DISTNAME}/ext/libev/ev++.h
 ${GEM_LIB}/gems/${DISTNAME}/ext/libev/ev.c
 ${GEM_LIB}/gems/${DISTNAME}/ext/libev/ev.h
-${GEM_LIB}/gems/${DISTNAME}/ext/libev/ev.lo
-${GEM_LIB}/gems/${DISTNAME}/ext/libev/ev.o
 ${GEM_LIB}/gems/${DISTNAME}/ext/libev/ev_epoll.c
 ${GEM_LIB}/gems/${DISTNAME}/ext/libev/ev_kqueue.c
 ${GEM_LIB}/gems/${DISTNAME}/ext/libev/ev_poll.c
@@ -1005,16 +995,11 @@ ${GEM_LIB}/gems/${DISTNAME}/ext/libev/ev_win32.c
 ${GEM_LIB}/gems/${DISTNAME}/ext/libev/ev_wrap.h
 ${GEM_LIB}/gems/${DISTNAME}/ext/libev/event.c
 ${GEM_LIB}/gems/${DISTNAME}/ext/libev/event.h
-${GEM_LIB}/gems/${DISTNAME}/ext/libev/event.lo
-${GEM_LIB}/gems/${DISTNAME}/ext/libev/event.o
 ${GEM_LIB}/gems/${DISTNAME}/ext/libev/install-sh
-${GEM_LIB}/gems/${DISTNAME}/ext/libev/libev.la
 ${GEM_LIB}/gems/${DISTNAME}/ext/libev/libev.m4
-${GEM_LIB}/gems/${DISTNAME}/ext/libev/libtool
 ${GEM_LIB}/gems/${DISTNAME}/ext/libev/ltmain.sh
 ${GEM_LIB}/gems/${DISTNAME}/ext/libev/missing
 ${GEM_LIB}/gems/${DISTNAME}/ext/libev/mkinstalldirs
-${GEM_LIB}/gems/${DISTNAME}/ext/libev/stamp-h1
 ${GEM_LIB}/gems/${DISTNAME}/ext/nginx/
 ${GEM_LIB}/gems/${DISTNAME}/ext/nginx/Configuration.c
 ${GEM_LIB}/gems/${DISTNAME}/ext/nginx/Configuration.h
