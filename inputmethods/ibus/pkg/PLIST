@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2013/01/23 18:05:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2013/05/07 07:59:25 fgsch Exp $
 @bin bin/ibus
 @bin bin/ibus-daemon
 bin/ibus-setup
@@ -208,8 +208,6 @@ share/locale/sr/LC_MESSAGES/ibus10.mo
 share/locale/sr@latin/LC_MESSAGES/ibus10.mo
 share/locale/ta/LC_MESSAGES/ibus10.mo
 share/locale/te/LC_MESSAGES/ibus10.mo
-share/locale/tg/
-share/locale/tg/LC_MESSAGES/
 share/locale/tg/LC_MESSAGES/ibus10.mo
 share/locale/uk/LC_MESSAGES/ibus10.mo
 share/locale/vi/LC_MESSAGES/ibus10.mo

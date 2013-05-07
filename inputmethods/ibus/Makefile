@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.35 2013/04/16 10:21:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2013/05/07 07:59:25 fgsch Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	intelligent input bus framework
 
-DISTNAME =	ibus-1.5.1
-REVISION =	3
+DISTNAME =	ibus-1.5.2
 
-SHARED_LIBS =	ibus-1.0	2.0
+SHARED_LIBS =	ibus-1.0	3.0
 
 CATEGORIES =	inputmethods chinese japanese korean
 
@@ -18,15 +17,14 @@ MAINTAINER =	Federico G. Schwindt <fgsch@openbsd.org>
 # LGPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
-		Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 \
-		atk-bridge-2.0 atspi c cairo cairo-gobject dbus-1 dconf \
-		expat ffi fontconfig freetype gdk-3 gdk-x11-2.0 \
-		gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 \
-		gthread-2.0 gtk-3 gtk-x11-2.0 harfbuzz icudata icule \
-		icuuc m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
-		pixman-1 png pthread pthread-stubs xcb xcb-render \
-		xcb-shm z
+WANTLIB =	ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi \
+		Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi \
+		c cairo cairo-gobject dbus-1 dconf expat ffi fontconfig \
+		freetype gdk-3 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
+		gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3 \
+		gtk-x11-2.0 harfbuzz icudata icule icuuc m pango-1.0 \
+		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread \
+		pthread-stubs xcb xcb-render xcb-shm z
 
 MASTER_SITES =	http://ibus.googlecode.com/files/
 
@@ -54,8 +52,7 @@ LIBTOOL_FLAGS =	--tag=disable-static
 CONFIGURE_STYLE = gnu
 CONFIGURE_ARGS = --disable-gtk-doc-html \
 		 --enable-introspection \
-		 --enable-vala \
-		 --enable-dconf
+		 --enable-vala
 CONFIGURE_ENV =	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
