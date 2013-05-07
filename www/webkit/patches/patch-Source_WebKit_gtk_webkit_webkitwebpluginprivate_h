@@ -1,0 +1,23 @@
+$OpenBSD: patch-Source_WebKit_gtk_webkit_webkitwebpluginprivate_h,v 1.1 2013/05/07 14:16:52 ajacoutot Exp $
+
+http://trac.webkit.org/changeset/149666
+
+--- Source/WebKit/gtk/webkit/webkitwebpluginprivate.h.orig	Thu Oct 27 22:51:16 2011
++++ Source/WebKit/gtk/webkit/webkitwebpluginprivate.h	Tue May  7 09:49:21 2013
+@@ -21,6 +21,7 @@
+ 
+ #include "webkitwebplugin.h"
+ #include <glib-object.h>
++#include <wtf/gobject/GOwnPtr.h>
+ #include <wtf/text/CString.h>
+ 
+ namespace WebCore {
+@@ -38,7 +39,7 @@ struct _WebKitWebPluginPrivate {
+     RefPtr<WebCore::PluginPackage> corePlugin;
+     CString name;
+     CString description;
+-    char* path;
++    GOwnPtr<char> path;
+     GSList* mimeTypes;
+ };
+ 

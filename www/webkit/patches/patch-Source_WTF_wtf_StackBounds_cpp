@@ -1,8 +1,8 @@
-$OpenBSD: patch-Source_WTF_wtf_StackBounds_cpp,v 1.1 2013/04/23 09:40:58 landry Exp $
+$OpenBSD: patch-Source_WTF_wtf_StackBounds_cpp,v 1.2 2013/05/07 14:16:52 ajacoutot Exp $
 https://bugs.webkit.org/show_bug.cgi?id=114978
---- Source/WTF/wtf/StackBounds.cpp.orig	Thu Jun 14 06:23:17 2012
-+++ Source/WTF/wtf/StackBounds.cpp	Mon Apr 22 11:13:12 2013
-@@ -60,10 +60,10 @@
+--- Source/WTF/wtf/StackBounds.cpp.orig	Thu Jun 14 12:23:17 2012
++++ Source/WTF/wtf/StackBounds.cpp	Tue May  7 09:48:59 2013
+@@ -60,10 +60,10 @@ namespace WTF {
  // These platforms should now be working correctly:
  //     DARWIN, QNX, UNIX
  // These platforms are not:
@@ -15,7 +15,7 @@ https://bugs.webkit.org/show_bug.cgi?id=114978
  // Based on the current limit used by the JSC parser, guess the stack size.
  static const ptrdiff_t estimatedStackSize = 128 * sizeof(void*) * 1024;
  // This method assumes the stack is growing downwards.
-@@ -125,7 +125,12 @@
+@@ -125,7 +125,12 @@ void StackBounds::initialize()
      stack_t stack;
      pthread_stackseg_np(thread, &stack);
      m_origin = stack.ss_sp;
