@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 02:52:08 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2013/05/08 17:12:27 jeremy Exp $
 
 COMMENT =	DataObjects driver for SQLite3
 
-VERSION =	0.10.8
+VERSION =	0.10.12
 DISTNAME =	do_sqlite3-${VERSION}
 CATEGORIES =	databases
-REVISION =	2
 
 # MIT
 PERMIT_PACKAGE_CDROM = Yes
@@ -15,13 +14,12 @@ MODULES =		lang/ruby
 CONFIGURE_STYLE =	ruby gem ext
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		databases/ruby-data_objects,${MODRUBY_FLAVOR}>=${VERSION}
+RUN_DEPENDS =		databases/ruby-data_objects,${MODRUBY_FLAVOR}=${VERSION}
 
 WANTLIB =		sqlite3
 
-TEST_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH} \
-			devel/ruby-bacon,${MODRUBY_FLAVOR}
-do-test:
-	cd ${WRKSRC} && bacon${GEM_BIN_SUFFIX} spec/*_spec.rb
+MODRUBY_TEST =	rspec2
+MODRUBY_TEST_TARGET = spec/*_spec.rb
+TEST_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH}
 
 .include <bsd.port.mk>
