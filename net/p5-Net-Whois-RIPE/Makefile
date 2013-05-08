@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:35:53 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/05/08 06:09:49 benoit Exp $
 
 COMMENT =	perl implementation of RIPE whois
 
-DISTNAME =	Net-Whois-RIPE-2.002
+DISTNAME =	Net-Whois-RIPE-2.003
 CATEGORIES =	net
 
 EPOCH =		0
