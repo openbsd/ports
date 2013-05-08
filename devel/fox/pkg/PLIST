@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/01/24 15:34:10 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.6 2013/05/08 13:05:33 bcallah Exp $
 bin/Adie.stx
 @bin bin/PathFinder
 @bin bin/adie
@@ -297,8 +296,10 @@ include/${FOX}/fxver.h
 include/${FOX}/xincs.h
 lib/libCHART-1.6.a
 lib/libCHART-1.6.la
+@lib lib/libCHART-1.6.so.${LIBCHART-1.6_VERSION}
 lib/libFOX-1.6.a
 lib/libFOX-1.6.la
+@lib lib/libFOX-1.6.so.${LIBFOX-1.6_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/fox.pc
 @man man/man1/PathFinder.1
