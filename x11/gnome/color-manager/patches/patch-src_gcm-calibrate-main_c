@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_gcm-calibrate-main_c,v 1.1 2013/05/08 09:03:07 ajacoutot Exp $
+$OpenBSD: patch-src_gcm-calibrate-main_c,v 1.2 2013/05/08 09:07:03 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=699907
+From bcc6edc63f53d1332fd5b75ec4eedbe1841492ac Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Wed, 08 May 2013 08:56:23 +0000
+Subject: gcm_calibrate_is_livecd() should be linux-only
 
 --- src/gcm-calibrate-main.c.orig	Fri Feb 15 11:08:12 2013
 +++ src/gcm-calibrate-main.c	Wed May  8 10:43:45 2013
