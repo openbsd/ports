@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 02:52:08 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/05/08 17:11:55 jeremy Exp $
 
 COMMENT=		DataObjects driver for PostgreSQL
 
-DISTNAME=		do_postgres-0.10.8
-REVISION =		1
+V=			0.10.12
+DISTNAME=		do_postgres-${V}
 CATEGORIES=		databases
 
 # MIT
@@ -16,16 +16,15 @@ CONFIGURE_STYLE=	ruby gem ext
 # databases/postgresql,-server needed for include files
 BUILD_DEPENDS=		${RUN_DEPENDS} \
 			databases/postgresql,-server
-RUN_DEPENDS=		databases/ruby-data_objects,${MODRUBY_FLAVOR}
+RUN_DEPENDS=		databases/ruby-data_objects,${MODRUBY_FLAVOR}=${V}
 
 WANTLIB=		pq
 LIB_DEPENDS=		databases/postgresql,-main
 
 # Requires running PostgreSQL database
 TEST_IS_INTERACTIVE = Yes
-TEST_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH} \
-			devel/ruby-bacon,${MODRUBY_FLAVOR}
-do-test:
-	cd ${WRKSRC} && bacon${GEM_BIN_SUFFIX} spec/*_spec.rb
+MODRUBY_TEST = rspec2
+MODRUBY_TEST_TARGET = spec/*_spec.rb
+TEST_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH}
 
 .include <bsd.port.mk>
