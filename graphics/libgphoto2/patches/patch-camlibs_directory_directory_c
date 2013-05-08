@@ -1,7 +1,7 @@
-$OpenBSD: patch-camlibs_directory_directory_c,v 1.1 2007/10/19 12:57:52 ajacoutot Exp $
---- camlibs/directory/directory.c.orig	Thu Oct 11 12:42:30 2007
-+++ camlibs/directory/directory.c	Thu Oct 11 12:41:53 2007
-@@ -38,6 +38,7 @@
+$OpenBSD: patch-camlibs_directory_directory_c,v 1.2 2013/05/08 09:10:39 ajacoutot Exp $
+--- camlibs/directory/directory.c.orig	Wed May  1 14:10:24 2013
++++ camlibs/directory/directory.c	Wed May  8 11:04:47 2013
+@@ -41,6 +41,7 @@
  # include <sys/vfs.h>
  #endif
  #ifdef HAVE_SYS_MOUNT_H

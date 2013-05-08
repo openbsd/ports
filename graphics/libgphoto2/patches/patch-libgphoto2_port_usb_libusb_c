@@ -1,7 +1,7 @@
-$OpenBSD: patch-libgphoto2_port_usb_libusb_c,v 1.1 2011/11/13 13:54:04 ajacoutot Exp $
---- libgphoto2_port/usb/libusb.c.orig	Sun Nov 13 10:12:30 2011
-+++ libgphoto2_port/usb/libusb.c	Sun Nov 13 10:12:53 2011
-@@ -38,6 +38,10 @@
+$OpenBSD: patch-libgphoto2_port_usb_libusb_c,v 1.2 2013/05/08 09:10:39 ajacoutot Exp $
+--- libgphoto2_port/usb/libusb.c.orig	Sun May  5 21:23:04 2013
++++ libgphoto2_port/usb/libusb.c	Wed May  8 11:04:47 2013
+@@ -41,6 +41,10 @@
  #include <gphoto2/gphoto2-port-result.h>
  #include <gphoto2/gphoto2-port-log.h>
  
