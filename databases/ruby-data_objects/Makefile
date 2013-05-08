@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 02:52:08 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/05/08 17:10:23 jeremy Exp $
 
 COMMENT =	unified Ruby API for popular databases
 
-DISTNAME =	data_objects-0.10.8
-REVISION =	0
+DISTNAME =	data_objects-0.10.12
 CATEGORIES =	databases
 
 # MIT
@@ -12,14 +11,11 @@ PERMIT_PACKAGE_CDROM = Yes
 MODULES =		lang/ruby
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		www/ruby-addressable,${MODRUBY_FLAVOR} \
-			devel/ruby-extlib,${MODRUBY_FLAVOR}
+RUN_DEPENDS =		www/ruby-addressable,${MODRUBY_FLAVOR}
 
 CONFIGURE_STYLE =	ruby gem
 
-MODRUBY_TEST =	rake rspec2
-TEST_DEPENDS =	devel/ruby-mocha,${MODRUBY_FLAVOR} \
-			devel/ruby-bacon,${MODRUBY_FLAVOR} \
-			devel/ruby-bundler,${MODRUBY_FLAVOR}
+MODRUBY_TEST =	rspec2
+MODRUBY_TEST_TARGET = spec/*_spec.rb
 
 .include <bsd.port.mk>
