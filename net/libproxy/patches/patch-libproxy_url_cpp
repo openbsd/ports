@@ -1,0 +1,22 @@
+$OpenBSD: patch-libproxy_url_cpp,v 1.2 2013/05/08 16:14:34 ajacoutot Exp $
+
+https://code.google.com/p/libproxy/source/detail?r=870
+
+--- libproxy/url.cpp.orig	Wed May  8 18:02:23 2013
++++ libproxy/url.cpp	Wed May  8 18:02:51 2013
+@@ -403,6 +403,7 @@ char* url::get_pac() {
+ 				buffer = NULL;
+ 			}
+ 		}
++		close(sock);
+ 		return buffer;
+ 	}
+ 
+@@ -496,6 +497,7 @@ char* url::get_pac() {
+ 
+ 	// Clean up
+ 	shutdown(sock, SHUT_RDWR);
++	close(sock);
+ 	return buffer;
+ }
+ 

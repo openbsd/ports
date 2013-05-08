@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2013/04/14 08:31:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2013/05/08 16:14:34 ajacoutot Exp $
 
 # sync with ONLY_FOR_ARCHS in devel/spidermonkey
 ONLY_FOR_ARCHS-mozilla=	alpha amd64 i386 hppa mips64el mips64 powerpc sparc64
@@ -15,6 +15,8 @@ DISTNAME=		libproxy-${VERSION}
 PKGNAME-main=		libproxy-${VERSION}
 PKGNAME-mozilla=	libproxy-mozilla-${VERSION}
 PKGNAME-webkit=		libproxy-webkit-${VERSION}
+
+REVISION-main=		0
 
 CATEGORIES=		net
 
