@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/07/06 14:42:46 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/05/08 13:46:53 giovanni Exp $
 @pkgpath databases/maatkit
 bin/pt-align
 bin/pt-archiver
@@ -15,12 +15,10 @@ bin/pt-heartbeat
 bin/pt-index-usage
 @comment bin/pt-ioprofile
 bin/pt-kill
-bin/pt-log-player
 bin/pt-mext
 bin/pt-mysql-summary
 bin/pt-online-schema-change
 @comment bin/pt-pmp
-bin/pt-query-advisor
 bin/pt-query-digest
 bin/pt-show-grants
 bin/pt-sift
@@ -32,8 +30,6 @@ bin/pt-summary
 bin/pt-table-checksum
 bin/pt-table-sync
 bin/pt-table-usage
-bin/pt-tcp-model
-bin/pt-trend
 bin/pt-upgrade
 bin/pt-variable-advisor
 bin/pt-visual-explain
@@ -53,12 +49,10 @@ bin/pt-visual-explain
 @man man/man1/pt-index-usage.1
 @comment @man man/man1/pt-ioprofile.1
 @man man/man1/pt-kill.1
-@man man/man1/pt-log-player.1
 @man man/man1/pt-mext.1
 @man man/man1/pt-mysql-summary.1
 @man man/man1/pt-online-schema-change.1
 @comment @man man/man1/pt-pmp.1
-@man man/man1/pt-query-advisor.1
 @man man/man1/pt-query-digest.1
 @man man/man1/pt-show-grants.1
 @man man/man1/pt-sift.1
@@ -70,8 +64,6 @@ bin/pt-visual-explain
 @man man/man1/pt-table-checksum.1
 @man man/man1/pt-table-sync.1
 @man man/man1/pt-table-usage.1
-@man man/man1/pt-tcp-model.1
-@man man/man1/pt-trend.1
 @man man/man1/pt-upgrade.1
 @man man/man1/pt-variable-advisor.1
 @man man/man1/pt-visual-explain.1
