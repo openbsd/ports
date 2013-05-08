@@ -1,0 +1,24 @@
+$OpenBSD: patch-panels_color_cc-color-panel_c,v 1.1 2013/05/08 09:03:41 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=699905
+
+--- panels/color/cc-color-panel.c.orig	Wed May  8 10:48:23 2013
++++ panels/color/cc-color-panel.c	Wed May  8 10:50:23 2013
+@@ -1935,6 +1935,7 @@ gcm_prefs_connect_cb (GObject *object,
+ static gboolean
+ gcm_prefs_is_livecd (void)
+ {
++#ifdef __linux__
+   gboolean ret = TRUE;
+   gchar *data = NULL;
+   GError *error = NULL;
+@@ -1957,6 +1958,9 @@ gcm_prefs_is_livecd (void)
+ out:
+   g_free (data);
+   return ret;
++#else
++  return FALSE;
++#endif
+ }
+ 
+ static void
