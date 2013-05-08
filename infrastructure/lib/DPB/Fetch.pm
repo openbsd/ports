@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.50 2013/03/08 10:42:01 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.51 2013/05/08 08:38:37 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -73,9 +73,12 @@ sub cached
 
 sub new
 {
-	my ($class, $file, $dir, @r) = @_;
+	my ($class, $file, $url, $dir, @r) = @_;
 	my $full = (defined $dir) ? join('/', $dir->string, $file) : $file;
-	$cache->{$full} //= $class->create($full, $file, @r);
+	if (!defined $url) {
+		$url = $file;
+	}
+	$cache->{$full} //= $class->create($full, $url, @r);
 }
 
 sub logname
@@ -580,15 +583,20 @@ sub build_distinfo
 		my $build = sub {
 			my $arg = shift;
 			my $site = 'MASTER_SITES';
+			my $url;
 			if ($arg =~ m/^(.*)\:(\d)$/) {
 				$arg = $1;
 				$site.= $2;
+			}
+			if ($arg =~ m/^(.*)\{(.*)\}$/) {
+				$arg = $1;
+				$url = $2;
 			}
 			if (!defined $info->{$site}) {
 				$v->break("Can't find $site for $arg");
 				return;
 			}
-			return DPB::Distfile->new($arg, $dir,
+			return DPB::Distfile->new($arg, $url, $dir,
 			    $info->{$site}, $checksums, $v, $self);
 		};
 

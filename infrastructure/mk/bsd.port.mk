@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1222 2013/04/08 16:45:06 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1223 2013/05/08 08:38:36 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1116,10 +1116,6 @@ MASTER_SITES := ${MASTER_SITES} ${MASTER_SITE_BACKUP}
 MASTER_SITES := ${MASTER_SITE_OVERRIDE} ${MASTER_SITES}
 .endif
 
-# _SITE_SELECTOR chooses the value of sites based on select.
-_SITE_SELECTOR = case $$select in
-
-
 .for _I in 0 1 2 3 4 5 6 7 8 9
 .  if defined(MASTER_SITES${_I})
 .    if ${MASTER_SITE_OVERRIDE:L} == "no"
@@ -1127,12 +1123,8 @@ MASTER_SITES${_I} := ${MASTER_SITES${_I}} ${MASTER_SITE_BACKUP}
 .    else
 MASTER_SITES${_I} := ${MASTER_SITE_OVERRIDE} ${MASTER_SITES${_I}}
 .    endif
-_SITE_SELECTOR += *:${_I}) sites="${MASTER_SITES${_I}}";;
-.  else
-_SITE_SELECTOR += *:${_I}) echo >&2 "Error: MASTER_SITES${_I} not defined";;
 .  endif
 .endfor
-_SITE_SELECTOR += *) sites="${MASTER_SITES}";; esac
 
 
 # OpenBSD code to handle ports distfiles on a CDROM.
@@ -1154,57 +1146,37 @@ EXTRACT_SUFX ?= .tar.gz
 
 DISTFILES ?= ${DISTNAME}${EXTRACT_SUFX}
 
-_EVERYTHING = ${DISTFILES}
-_DISTFILES = ${DISTFILES:C/:[0-9]$//}
-
-.if defined(PATCHFILES)
-_PATCHFILES = ${PATCHFILES:C/:[0-9]$//}
-_EVERYTHING += ${PATCHFILES}
-.endif
-
-.if defined(SUPDISTFILES)
-_EVERYTHING += ${SUPDISTFILES}
-.endif
-
-__CKSUMFILES =
-# First, remove duplicates
-.for _file in ${_DISTFILES} ${_PATCHFILES}
-.  if empty(__CKSUMFILES:M${_file})
-__CKSUMFILES += ${_file}
+_FILES=
+.for v in DISTFILES PATCHFILES SUPDISTFILES
+.  if defined($v)
+.    for e in ${$v}
+.      for f m u in ${e:C/:[0-9]$//:C/\{.*\}$//} MASTER_SITES${e:M*\:[0-9]:C/.*:([0-9])/\1/} ${e:C/:[0-9]$//:C/.*\{(.*)\}$/\1/}
+.        if empty(_FILES:M$f)
+_FILES += $f
+.          if empty(DIST_SUBDIR)
+_FULL_$v += $f $f $m $u
+_PATH_$v += $f
+.          else
+_FULL_$v += ${DIST_SUBDIR}/$f $f $m $u
+_PATH_$v += ${DIST_SUBDIR}/$f
+.          endif
+_LIST_$v += $f
+.        endif
+.      endfor
+.    endfor
 .  endif
 .endfor
 
-# List of all files, with ${DIST_SUBDIR} in front.  Used for checksum.
-.if !empty(DIST_SUBDIR)
-CHECKSUMFILES = ${__CKSUMFILES:S/^/${DIST_SUBDIR}\//}
-.else
-CHECKSUMFILES = ${__CKSUMFILES}
-.endif
-
-__MKSUMFILES = ${__CKSUMFILES}
-.if defined(SUPDISTFILES)
-# First, remove duplicates
-.  for _file in ${SUPDISTFILES:C/:[0-9]$//}
-.    if empty(__MKSUMFILES:M${_file})
-__MKSUMFILES += ${_file}
-.    endif
-.  endfor
-.endif
-
-# List of all files, with ${DIST_SUBDIR} in front.  Used for makesum.
-.if !empty(DIST_SUBDIR)
-MAKESUMFILES = ${__MKSUMFILES:S/^/${DIST_SUBDIR}\//}
-.else
-MAKESUMFILES = ${__MKSUMFILES}
-.endif
+CHECKSUMFILES = ${_PATH_DISTFILES} ${_PATH_PATCHFILES}
+MAKESUMFILES = ${CHECKSUMFILES} ${_PATH_SUPDISTFILES}
 
 .if defined(IGNOREFILES)
 ERRORS += "Fatal: don't use IGNOREFILES"
 .endif
 
 # This is what is actually going to be extracted, and is overridable
-#  by user.
-EXTRACT_ONLY ?= ${_DISTFILES}
+# by the user.
+EXTRACT_ONLY ?= ${_LIST_DISTFILES}
 
 # okay, time for some guess work
 .if !empty(EXTRACT_ONLY:M*.zip)
@@ -1214,7 +1186,7 @@ _USE_ZIP ?= Yes
 _USE_XZ ?= Yes
 .endif
 .if !empty(EXTRACT_ONLY:M*.tar.bz2) || !empty(EXTRACT_ONLY:M*.tbz2) || !empty(EXTRACT_ONLY:M*.tbz) || \
-	(defined(PATCHFILES) && !empty(_PATCHFILES:M*.bz2))
+	(defined(PATCHFILES) && !empty(_LIST_PATCHFILES:M*.bz2))
 _USE_BZIP2 ?= Yes
 .endif
 _USE_XZ ?= No
@@ -1661,8 +1633,7 @@ _checksum_package = \
 _checksum_package = :
 .endif
 
-_size_fragment = wc -c $$file 2>/dev/null| \
-	awk '{print "SIZE (" $$2 ") = " $$1}'
+_size_fragment = perl -e '$$s = (stat $$ARGV[0])[7]; print "SIZE ($$ARGV[1]) = $$s\n";'
 
 # commands used all the time
 _lines2list = tr '\012' '\040' | sed -e 's, $$,,'
@@ -1979,7 +1950,7 @@ makesum: fetch-all
 	@cd ${DISTDIR} && cksum -b -a "${_CIPHERS}" ${MAKESUMFILES} >> ${CHECKSUM_FILE}
 	@cd ${DISTDIR} && \
 		for file in ${MAKESUMFILES}; do \
-			${_size_fragment} >> ${CHECKSUM_FILE}; \
+			${_size_fragment} $$file $$file >> ${CHECKSUM_FILE}; \
 		done
 	@sort -u -o ${CHECKSUM_FILE} ${CHECKSUM_FILE}
 .endif
@@ -2515,10 +2486,10 @@ ${_DISTPATCH_COOKIE}: ${_EXTRACT_COOKIE}
 .if !target(do-distpatch)
 do-distpatch:
 # What DISTPATCH normally does
-.  if defined(_PATCHFILES)
+.  if defined(_LIST_PATCHFILES)
 	@${ECHO_MSG} "===>  Applying distribution patches for ${FULLPKGNAME}${_MASTER}"
 	@cd ${FULLDISTDIR}; \
-	  for patchfile in ${_PATCHFILES}; do \
+	  for patchfile in ${_LIST_PATCHFILES}; do \
 	  	case "${PATCH_DEBUG:L}" in \
 			no) ;; \
 			*) ${ECHO_MSG} "===>   Applying distribution patch $$patchfile" ;; \
@@ -2835,8 +2806,8 @@ _internal-subpackage: ${_PACKAGE_COOKIES${SUBPACKAGE}}
 
 # Separate target for each file fetch-all will retrieve
 
-.for _F in ${MAKESUMFILES:S@^@${DISTDIR}/@}
-${_F}:
+.for p f m u in ${_FULL_DISTFILES} ${_FULL_PATCHFILES} ${_FULL_SUPDISTFILES}
+${DISTDIR}/$p:
 .  if ${FETCH_MANUALLY:L} != "no"
 .    if !empty(MISSING_FILES)
 	@echo "*** You're missing files: ${MISSING_FILES}"
@@ -2846,29 +2817,30 @@ ${_F}:
 .    endfor
 	@exit 1
 .  else
-	@lock=${_F:T}.dist; ${_SIMPLE_LOCK}; mkdir -p ${_F:H}; \
-	cd ${_F:H}; \
-	test -f ${_F:T} && exit 0; \
-	select='${_EVERYTHING:M*${_F:S@^${FULLDISTDIR}/@@}\:[0-9]}'; \
-	f=${_F:S@^${FULLDISTDIR}/@@}; \
+	@lock=${@:T}.dist; ${_SIMPLE_LOCK}; mkdir -p ${@:H}; \
+	cd ${@:H}; \
+	test -f ${@:T} && exit 0; \
+	f=$f; \
 	${_CDROM_OVERRIDE}; \
-	${_SITE_SELECTOR}; \
-	for site in $$sites; do \
-		${ECHO_MSG} ">> Fetch $${site}$$f"; \
-		if ${FETCH_CMD} $${site}$$f; then \
-				file=${_F:S@^${DISTDIR}/@@}; \
-				ck=`cd ${DISTDIR} && ${_size_fragment}`; \
+	for site in ${$m}; do \
+		file=$@.part; \
+		${ECHO_MSG} ">> Fetch $${site}$u"; \
+		if ${FETCH_CMD} -C -o $$file $${site}$u; then \
+				ck=`${_size_fragment} $$file $f`; \
 				if [ ! -f ${CHECKSUM_FILE} ]; then \
 					${ECHO_MSG} ">> Checksum file does not exist"; \
+					mv $$file $@; \
 					exit 0; \
 				elif grep -q "^$$ck\$$" ${CHECKSUM_FILE}; then \
+					mv $$file $@; \
 					exit 0; \
 				else \
-					if grep -q "SIZE ($$file)" ${CHECKSUM_FILE}; then \
-						${ECHO_MSG} ">> Size does not match for ${_F}"; \
+					if grep -q "SIZE ($f)" ${CHECKSUM_FILE}; then \
+						${ECHO_MSG} ">> Size does not match for $$file"; \
 						test `{ wc -c "$$file" 2>/dev/null || echo 0 ; }| awk '{print $$1}'` -lt 30000 && rm -f $$file; \
 					else \
-						${ECHO_MSG} ">> No size recorded for ${_F}"; \
+						${ECHO_MSG} ">> No size recorded for $$file"; \
+						mv $$file $@; \
 						exit 0; \
 					fi; \
 				fi; \
