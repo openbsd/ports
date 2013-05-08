@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 02:52:08 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/05/08 17:11:23 jeremy Exp $
 
 COMMENT=		ruby-data_objects driver for MySQL
 
-DISTNAME=		do_mysql-0.10.8
-REVISION =		1
+V=			0.10.12
+DISTNAME=		do_mysql-${V}
 CATEGORIES=		databases
 
 # MIT
@@ -14,16 +14,15 @@ MODULES=		lang/ruby
 CONFIGURE_STYLE=	ruby gem ext
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		databases/ruby-data_objects,${MODRUBY_FLAVOR}
+RUN_DEPENDS=		databases/ruby-data_objects,${MODRUBY_FLAVOR}=${V}
 
 WANTLIB=		mysqlclient crypto ssl z
 LIB_DEPENDS=		databases/mysql
 
 # Requires running MySQL database
 TEST_IS_INTERACTIVE = Yes
-TEST_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH} \
-			devel/ruby-bacon,${MODRUBY_FLAVOR}
-do-test:
-	cd ${WRKSRC} && bacon${GEM_BIN_SUFFIX} spec/*_spec.rb
+MODRUBY_TEST =	rspec2
+MODRUBY_TEST_TARGET = spec/*_spec.rb
+TEST_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH}
 
 .include <bsd.port.mk>
