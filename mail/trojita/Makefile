@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/25 22:58:42 jturner Exp $
+# $OpenBSD: Makefile,v 1.2 2013/05/08 02:03:11 jturner Exp $
 
 COMMENT =		fast Qt IMAP e-mail client
 
-DISTNAME =		trojita-0.3.92
+DISTNAME =		trojita-0.3.93
 CATEGORIES =		mail x11
+
+MAINTAINER =		James Turner <james@calminferno.net>
 
 HOMEPAGE =		http://trojita.flaska.net/
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=trojita/}

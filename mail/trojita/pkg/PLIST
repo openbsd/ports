@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/25 22:58:42 jturner Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/05/08 02:03:11 jturner Exp $
 @bin bin/trojita
 share/applications/trojita.desktop
 share/icons/hicolor/32x32/apps/trojita.png
@@ -7,14 +7,18 @@ share/trojita/
 share/trojita/locale/
 share/trojita/locale/trojita_common_bs.qm
 share/trojita/locale/trojita_common_cs.qm
+share/trojita/locale/trojita_common_da.qm
 share/trojita/locale/trojita_common_de.qm
+share/trojita/locale/trojita_common_el.qm
 share/trojita/locale/trojita_common_es.qm
 share/trojita/locale/trojita_common_et.qm
+share/trojita/locale/trojita_common_fr.qm
 share/trojita/locale/trojita_common_ga.qm
 share/trojita/locale/trojita_common_gl.qm
 share/trojita/locale/trojita_common_hu.qm
 share/trojita/locale/trojita_common_ia.qm
 share/trojita/locale/trojita_common_lt.qm
+share/trojita/locale/trojita_common_mr.qm
 share/trojita/locale/trojita_common_nl.qm
 share/trojita/locale/trojita_common_pl.qm
 share/trojita/locale/trojita_common_pt.qm
