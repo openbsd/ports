@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/01/23 10:17:50 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/05/08 08:31:31 benoit Exp $
 @bin bin/etherape
 @man man/man1/etherape.1
 share/applications/etherape.desktop
@@ -7,6 +7,7 @@ share/etherape/glade/
 share/etherape/glade/etherape.glade
 share/etherape/glade/etherape.png
 share/etherape/glade/nodes.xpm
+share/locale/de/LC_MESSAGES/etherape.mo
 share/locale/es/LC_MESSAGES/etherape.mo
 share/locale/fr/LC_MESSAGES/etherape.mo
 share/locale/it/LC_MESSAGES/etherape.mo

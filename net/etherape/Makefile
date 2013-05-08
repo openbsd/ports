@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2013/03/21 08:46:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2013/05/08 08:31:29 benoit Exp $
 
 COMMENT =		graphical network monitor
 
-DISTNAME =		etherape-0.9.12
+DISTNAME =		etherape-0.9.13
 CATEGORIES =		net
 
 HOMEPAGE =		http://etherape.sourceforge.net/
@@ -12,9 +12,9 @@ MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite
-WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender art_lgpl_2 atk-1.0 GL Xxf86vm canberra drm
+WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 Xcomposite
+WANTLIB += Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
+WANTLIB += Xrender art_lgpl_2 atk-1.0 canberra
 WANTLIB += bonobo-2 bonobo-activation bonoboui-2 c
 WANTLIB += cairo crypto dbus-1 dbus-glib-1 expat fontconfig freetype
 WANTLIB += gconf-2 gio-2.0 glib-2.0 gmodule-2.0 gnome-2
@@ -24,7 +24,7 @@ WANTLIB += pcap pcre pixman-1 png popt pthread pthread-stubs ssl
 WANTLIB += util xcb xml2 z gnomeui-2 glade-2.0 gtk-x11-2.0
 WANTLIB += gailutil gdk-x11-2.0 gdk_pixbuf-2.0 xcb-shm
 WANTLIB += gcrypt gpg-error xcb-render ltdl ogg vorbis vorbisfile
-WANTLIB += ffi harfbuzz icudata icule icuuc stdc++
+WANTLIB += ffi harfbuzz icudata icule icuuc graphite2
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=etherape/}
 
