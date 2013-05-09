@@ -322,7 +322,7 @@ prepare() {
 	fi
 	CLEANUP_ITEMS="$OCLEANUP_ITEMS"
 
-	echo "==> creating STATUS >&2
+	echo "==> creating STATUS" >&2
 	for P in $LOCAL_PORTS `list_l10n_ports_dirs`; do
 		print_status_line $P WAITING \
 		    >>${NEW_KDE_PORT_DIR}/STATUS
