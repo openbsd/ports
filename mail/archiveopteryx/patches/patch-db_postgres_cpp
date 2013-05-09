@@ -1,0 +1,29 @@
+$OpenBSD: patch-db_postgres_cpp,v 1.1 2013/05/09 01:50:12 landry Exp $
+Fix with psql 9.2
+--- db/postgres.cpp.orig	Wed Mar 10 13:17:56 2010
++++ db/postgres.cpp	Thu May  9 03:38:52 2013
+@@ -77,12 +77,12 @@ class PgData (public)
+             Scope x( log() );
+             q = new Query(
+                 "select h.pid::int, a.xact_start::text,"
+-                " a.client_addr::text, a.current_query::text,"
++                " a.client_addr::text, a.query::text,"
+                 " a.usename::text, a.client_addr,"
+-                " a.current_query,"
++                " a.query,"
+                 " w.locktype::text "
+                 "from pg_locks h join pg_locks w using (locktype) "
+-                "join pg_stat_activity a on (h.pid=a.procpid) "
++                "join pg_stat_activity a on (h.pid=a.pid) "
+                 "where h.granted and not w.granted and w.pid=$1 and "
+                 "coalesce(h.relation, h.page, h.tuple, h.transactionid, h.virtualxid)="
+                 "coalesce(w.relation, w.page, w.tuple, w.transactionid, w.virtualxid)",
+@@ -100,7 +100,7 @@ class PgData (public)
+                      "Transaction start time: " + r->getEString( "xact_start" ) + " "
+                      "Username: " + r->getEString( "usename" ) + " "
+                      "Client address: " + r->getEString( "client_addr" ) + " "
+-                     "Current query: " + r->getEString( "current_query" ).quoted(),
++                     "Current query: " + r->getEString( "query" ).quoted(),
+                      Log::Significant );
+             }
+         }

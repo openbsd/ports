@@ -1,0 +1,29 @@
+$OpenBSD: patch-db_schema_cpp,v 1.1 2013/05/09 01:50:12 landry Exp $
+Fix with psql 9.2
+--- db/schema.cpp.orig	Wed Mar 10 13:17:56 2010
++++ db/schema.cpp	Thu May  9 03:38:52 2013
+@@ -142,13 +142,13 @@ void Schema::execute()
+ {
+     if ( d->state == 0 ) {
+         d->lockSanity = new Query(
+-            "select relname::text,pid::int,mode,granted,current_query,"
++            "select relname::text,l.pid::int,mode,granted,query,"
+             "extract(epoch from current_timestamp-a.query_start)::int "
+             "as lock_age "
+             "from pg_locks l "
+             "join pg_database d on (d.oid=l.database) "
+             "join pg_class c on (l.relation=c.oid) "
+-            "join pg_stat_activity a on (l.pid=a.procpid) "
++            "join pg_stat_activity a on (l.pid=a.pid) "
+             "where d.datname=$1 and not relname like 'pg_%'", this );
+         d->lockSanity->bind( 1, Configuration::text( Configuration::DbName ) );
+         d->lockSanity->execute();
+@@ -183,7 +183,7 @@ void Schema::execute()
+                  " PID: " + fn( r->getInt( "pid" ) ) +
+                  " Mode: " + r->getEString( "mode" ).quoted() +
+                  " Granted: " + ( r->getBoolean( "granted" ) ? "yes" : "no" ) +
+-                 " Query: " + r->getEString( "current_query" ).quoted() +
++                 " Query: " + r->getEString( "query" ).quoted() +
+                  " Lock age: " + age,
+                  Log::Significant );
+         }
