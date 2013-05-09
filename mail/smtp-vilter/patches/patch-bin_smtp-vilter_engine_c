@@ -1,0 +1,44 @@
+$OpenBSD: patch-bin_smtp-vilter_engine_c,v 1.7 2013/05/09 18:47:53 jasper Exp $
+
+Implement missing print_entries_with_values(), taken from smtp-vilter 1.3.6.
+
+--- bin/smtp-vilter/engine.c.orig	Thu May  9 20:46:11 2013
++++ bin/smtp-vilter/engine.c	Thu May  9 20:46:35 2013
+@@ -1371,6 +1371,37 @@ vilter_unwanted(struct backend *backend, SMFICTX *ctx,
+ 	return retval;
+ }
+ 
++#ifdef ENABLE_LDAP
++static void
++print_entries_with_values(LDAP *ld, LDAPMessage *result)
++{
++	LDAPMessage	*e;
++	BerElement	*ber;
++	char		*dn, *attr;
++	char		**vals;
++	int		 i;
++
++	for (e = ldap_first_entry(ld, result); e != NULL;
++	    e = ldap_next_entry(ld, e)) {
++		if ((dn = ldap_get_dn(ld, e)) != NULL) {
++			if (verbose)
++				warnx("dn: %s", dn);
++			ldap_memfree(dn);
++		}
++		for (attr = ldap_first_attribute(ld, e, &ber); attr != NULL;
++		    attr = ldap_next_attribute(ld, e, ber)) {
++			if ((vals = ldap_get_values(ld, e, attr)) != NULL) {
++				for (i = 0; vals[i] != NULL; i++)
++					printf("%s: %s\n", attr, vals[i]);
++				ldap_value_free(vals);
++			}
++			ldap_memfree(attr);
++		}
++		ber_free(ber, 0);
++	}
++}
++#endif
++
+ static sfsistat
+ vilter_eom(SMFICTX *ctx)
+ {
