@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.7 2010/10/24 19:55:46 stephan Exp $
---- configure.orig	Wed Sep 15 16:42:49 2010
-+++ configure	Thu Oct  7 14:50:32 2010
-@@ -5464,7 +5464,7 @@ elif test $ac_cv_prog_cxx_g = yes; then
+$OpenBSD: patch-configure,v 1.8 2013/05/09 00:44:06 bcallah Exp $
+--- configure.orig	Sat May  4 17:27:41 2013
++++ configure	Sat May  4 17:30:56 2013
+@@ -5637,7 +5637,7 @@ elif test $ac_cv_prog_cxx_g = yes; then
    fi
  else
    if test "$GXX" = yes; then
@@ -10,51 +10,3 @@ $OpenBSD: patch-configure,v 1.7 2010/10/24 19:55:46 stephan Exp $
    else
      CXXFLAGS=
    fi
-@@ -8865,13 +8865,13 @@ fi
- 
-         else
-           # Some library is needed. Try libpthread and libc_r.
--          { echo "$as_me:$LINENO: checking for pthread_kill in -lpthread" >&5
--echo $ECHO_N "checking for pthread_kill in -lpthread... $ECHO_C" >&6; }
-+          { echo "$as_me:$LINENO: checking for pthread_kill in -pthread" >&5
-+echo $ECHO_N "checking for pthread_kill in -pthread... $ECHO_C" >&6; }
- if test "${ac_cv_lib_pthread_pthread_kill+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lpthread  $LIBS"
-+LIBS="-pthread  $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -8928,8 +8928,8 @@ fi
- echo "${ECHO_T}$ac_cv_lib_pthread_pthread_kill" >&6; }
- if test $ac_cv_lib_pthread_pthread_kill = yes; then
-   gl_have_pthread=yes
--             LIBTHREAD=-lpthread LTLIBTHREAD=-lpthread
--             LIBMULTITHREAD=-lpthread LTLIBMULTITHREAD=-lpthread
-+             LIBTHREAD=-pthread LTLIBTHREAD=-pthread
-+             LIBMULTITHREAD=-pthread LTLIBMULTITHREAD=-pthread
- fi
- 
-           if test -z "$gl_have_pthread"; then
-@@ -22145,7 +22145,7 @@ LIBTHREAD!$LIBTHREAD$ac_delim
- LTLIBTHREAD!$LTLIBTHREAD$ac_delim
- LIBMULTITHREAD!$LIBMULTITHREAD$ac_delim
- LTLIBMULTITHREAD!$LTLIBMULTITHREAD$ac_delim
--LIBICONV!$LIBICONV$ac_delim
-+LIBICONV!$LTLIBICONV$ac_delim
- LTLIBICONV!$LTLIBICONV$ac_delim
- INTLBISON!$INTLBISON$ac_delim
- GLIBC21!$GLIBC21$ac_delim
-@@ -22165,8 +22165,8 @@ INSTOBJEXT!$INSTOBJEXT$ac_delim
- GENCAT!$GENCAT$ac_delim
- INTLOBJS!$INTLOBJS$ac_delim
- INTL_LIBTOOL_SUFFIX_PREFIX!$INTL_LIBTOOL_SUFFIX_PREFIX$ac_delim
--INTLLIBS!$INTLLIBS$ac_delim
--LIBINTL!$LIBINTL$ac_delim
-+INTLLIBS!$LTLIBINTL$ac_delim
-+LIBINTL!$LTLIBINTL$ac_delim
- LTLIBINTL!$LTLIBINTL$ac_delim
- POSUB!$POSUB$ac_delim
- XMKMF!$XMKMF$ac_delim

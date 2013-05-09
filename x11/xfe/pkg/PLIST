@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/04/08 09:50:06 stephan Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/05/09 00:44:06 bcallah Exp $
 @bin bin/xfe
 @bin bin/xfi
 @bin bin/xfp
@@ -9,12 +9,14 @@
 @man man/man1/xfp.1
 @man man/man1/xfv.1
 @man man/man1/xfw.1
-share/applications/
 share/applications/xfe.desktop
 share/applications/xfi.desktop
 share/applications/xfp.desktop
 share/applications/xfv.desktop
 share/applications/xfw.desktop
+share/locale/bs/
+share/locale/bs/LC_MESSAGES/
+share/locale/bs/LC_MESSAGES/xfe.mo
 share/locale/ca/LC_MESSAGES/xfe.mo
 share/locale/cs/LC_MESSAGES/xfe.mo
 share/locale/da/LC_MESSAGES/xfe.mo
@@ -28,6 +30,7 @@ share/locale/fr/LC_MESSAGES/xfe.mo
 share/locale/hu/LC_MESSAGES/xfe.mo
 share/locale/it/LC_MESSAGES/xfe.mo
 share/locale/ja/LC_MESSAGES/xfe.mo
+share/locale/nl/LC_MESSAGES/xfe.mo
 share/locale/no/LC_MESSAGES/xfe.mo
 share/locale/pl/LC_MESSAGES/xfe.mo
 share/locale/pt_BR/LC_MESSAGES/xfe.mo
@@ -38,6 +41,7 @@ share/locale/ru/LC_MESSAGES/xfe.mo
 share/locale/sv/LC_MESSAGES/xfe.mo
 share/locale/tr/LC_MESSAGES/xfe.mo
 share/locale/zh_CN/LC_MESSAGES/xfe.mo
+share/locale/zh_TW/LC_MESSAGES/xfe.mo
 share/pixmaps/
 share/pixmaps/xfe.png
 share/pixmaps/xfe.xpm
@@ -145,6 +149,8 @@ share/xfe/icons/blue-theme/find_again.png
 share/xfe/icons/blue-theme/fliplr.png
 share/xfe/icons/blue-theme/flipud.png
 share/xfe/icons/blue-theme/floppy.png
+share/xfe/icons/blue-theme/font_16x16.png
+share/xfe/icons/blue-theme/font_32x32.png
 share/xfe/icons/blue-theme/fonts.png
 share/xfe/icons/blue-theme/gif_16x16.png
 share/xfe/icons/blue-theme/gif_32x32.png
@@ -261,6 +267,8 @@ share/xfe/icons/blue-theme/rpm_32x32.png
 share/xfe/icons/blue-theme/run.png
 share/xfe/icons/blue-theme/saveas.png
 share/xfe/icons/blue-theme/savefile.png
+share/xfe/icons/blue-theme/sci_16x16.png
+share/xfe/icons/blue-theme/sci_32x32.png
 share/xfe/icons/blue-theme/search.png
 share/xfe/icons/blue-theme/searchnext.png
 share/xfe/icons/blue-theme/searchprev.png
@@ -274,6 +282,8 @@ share/xfe/icons/blue-theme/shell_32x32.png
 share/xfe/icons/blue-theme/showhidden.png
 share/xfe/icons/blue-theme/shownumbers.png
 share/xfe/icons/blue-theme/showthumb.png
+share/xfe/icons/blue-theme/sla_16x16.png
+share/xfe/icons/blue-theme/sla_32x32.png
 share/xfe/icons/blue-theme/smallicons.png
 share/xfe/icons/blue-theme/so_16x16.png
 share/xfe/icons/blue-theme/so_32x32.png
@@ -448,6 +458,8 @@ share/xfe/icons/brown-theme/find_again.png
 share/xfe/icons/brown-theme/fliplr.png
 share/xfe/icons/brown-theme/flipud.png
 share/xfe/icons/brown-theme/floppy.png
+share/xfe/icons/brown-theme/font_16x16.png
+share/xfe/icons/brown-theme/font_32x32.png
 share/xfe/icons/brown-theme/fonts.png
 share/xfe/icons/brown-theme/gif_16x16.png
 share/xfe/icons/brown-theme/gif_32x32.png
@@ -564,6 +576,8 @@ share/xfe/icons/brown-theme/rpm_32x32.png
 share/xfe/icons/brown-theme/run.png
 share/xfe/icons/brown-theme/saveas.png
 share/xfe/icons/brown-theme/savefile.png
+share/xfe/icons/brown-theme/sci_16x16.png
+share/xfe/icons/brown-theme/sci_32x32.png
 share/xfe/icons/brown-theme/search.png
 share/xfe/icons/brown-theme/searchnext.png
 share/xfe/icons/brown-theme/searchprev.png
@@ -577,6 +591,8 @@ share/xfe/icons/brown-theme/shell_32x32.png
 share/xfe/icons/brown-theme/showhidden.png
 share/xfe/icons/brown-theme/shownumbers.png
 share/xfe/icons/brown-theme/showthumb.png
+share/xfe/icons/brown-theme/sla_16x16.png
+share/xfe/icons/brown-theme/sla_32x32.png
 share/xfe/icons/brown-theme/smallicons.png
 share/xfe/icons/brown-theme/so_16x16.png
 share/xfe/icons/brown-theme/so_32x32.png
@@ -751,6 +767,8 @@ share/xfe/icons/gnome-theme/find_again.png
 share/xfe/icons/gnome-theme/fliplr.png
 share/xfe/icons/gnome-theme/flipud.png
 share/xfe/icons/gnome-theme/floppy.png
+share/xfe/icons/gnome-theme/font_16x16.png
+share/xfe/icons/gnome-theme/font_32x32.png
 share/xfe/icons/gnome-theme/fonts.png
 share/xfe/icons/gnome-theme/gif_16x16.png
 share/xfe/icons/gnome-theme/gif_32x32.png
@@ -867,6 +885,8 @@ share/xfe/icons/gnome-theme/rpm_32x32.png
 share/xfe/icons/gnome-theme/run.png
 share/xfe/icons/gnome-theme/saveas.png
 share/xfe/icons/gnome-theme/savefile.png
+share/xfe/icons/gnome-theme/sci_16x16.png
+share/xfe/icons/gnome-theme/sci_32x32.png
 share/xfe/icons/gnome-theme/search.png
 share/xfe/icons/gnome-theme/searchnext.png
 share/xfe/icons/gnome-theme/searchprev.png
@@ -880,6 +900,8 @@ share/xfe/icons/gnome-theme/shell_32x32.png
 share/xfe/icons/gnome-theme/showhidden.png
 share/xfe/icons/gnome-theme/shownumbers.png
 share/xfe/icons/gnome-theme/showthumb.png
+share/xfe/icons/gnome-theme/sla_16x16.png
+share/xfe/icons/gnome-theme/sla_32x32.png
 share/xfe/icons/gnome-theme/smallicons.png
 share/xfe/icons/gnome-theme/so_16x16.png
 share/xfe/icons/gnome-theme/so_32x32.png
@@ -1054,6 +1076,8 @@ share/xfe/icons/gnomeblue-theme/find_again.png
 share/xfe/icons/gnomeblue-theme/fliplr.png
 share/xfe/icons/gnomeblue-theme/flipud.png
 share/xfe/icons/gnomeblue-theme/floppy.png
+share/xfe/icons/gnomeblue-theme/font_16x16.png
+share/xfe/icons/gnomeblue-theme/font_32x32.png
 share/xfe/icons/gnomeblue-theme/fonts.png
 share/xfe/icons/gnomeblue-theme/gif_16x16.png
 share/xfe/icons/gnomeblue-theme/gif_32x32.png
@@ -1170,6 +1194,8 @@ share/xfe/icons/gnomeblue-theme/rpm_32x32.png
 share/xfe/icons/gnomeblue-theme/run.png
 share/xfe/icons/gnomeblue-theme/saveas.png
 share/xfe/icons/gnomeblue-theme/savefile.png
+share/xfe/icons/gnomeblue-theme/sci_16x16.png
+share/xfe/icons/gnomeblue-theme/sci_32x32.png
 share/xfe/icons/gnomeblue-theme/search.png
 share/xfe/icons/gnomeblue-theme/searchnext.png
 share/xfe/icons/gnomeblue-theme/searchprev.png
@@ -1183,6 +1209,8 @@ share/xfe/icons/gnomeblue-theme/shell_32x32.png
 share/xfe/icons/gnomeblue-theme/showhidden.png
 share/xfe/icons/gnomeblue-theme/shownumbers.png
 share/xfe/icons/gnomeblue-theme/showthumb.png
+share/xfe/icons/gnomeblue-theme/sla_16x16.png
+share/xfe/icons/gnomeblue-theme/sla_32x32.png
 share/xfe/icons/gnomeblue-theme/smallicons.png
 share/xfe/icons/gnomeblue-theme/so_16x16.png
 share/xfe/icons/gnomeblue-theme/so_32x32.png
@@ -1357,6 +1385,8 @@ share/xfe/icons/kde-theme/find_again.png
 share/xfe/icons/kde-theme/fliplr.png
 share/xfe/icons/kde-theme/flipud.png
 share/xfe/icons/kde-theme/floppy.png
+share/xfe/icons/kde-theme/font_16x16.png
+share/xfe/icons/kde-theme/font_32x32.png
 share/xfe/icons/kde-theme/fonts.png
 share/xfe/icons/kde-theme/gif_16x16.png
 share/xfe/icons/kde-theme/gif_32x32.png
@@ -1473,6 +1503,8 @@ share/xfe/icons/kde-theme/rpm_32x32.png
 share/xfe/icons/kde-theme/run.png
 share/xfe/icons/kde-theme/saveas.png
 share/xfe/icons/kde-theme/savefile.png
+share/xfe/icons/kde-theme/sci_16x16.png
+share/xfe/icons/kde-theme/sci_32x32.png
 share/xfe/icons/kde-theme/search.png
 share/xfe/icons/kde-theme/searchnext.png
 share/xfe/icons/kde-theme/searchprev.png
@@ -1486,6 +1518,8 @@ share/xfe/icons/kde-theme/shell_32x32.png
 share/xfe/icons/kde-theme/showhidden.png
 share/xfe/icons/kde-theme/shownumbers.png
 share/xfe/icons/kde-theme/showthumb.png
+share/xfe/icons/kde-theme/sla_16x16.png
+share/xfe/icons/kde-theme/sla_32x32.png
 share/xfe/icons/kde-theme/smallicons.png
 share/xfe/icons/kde-theme/so_16x16.png
 share/xfe/icons/kde-theme/so_32x32.png
@@ -1660,6 +1694,8 @@ share/xfe/icons/tango-theme/find_again.png
 share/xfe/icons/tango-theme/fliplr.png
 share/xfe/icons/tango-theme/flipud.png
 share/xfe/icons/tango-theme/floppy.png
+share/xfe/icons/tango-theme/font_16x16.png
+share/xfe/icons/tango-theme/font_32x32.png
 share/xfe/icons/tango-theme/fonts.png
 share/xfe/icons/tango-theme/gif_16x16.png
 share/xfe/icons/tango-theme/gif_32x32.png
@@ -1776,6 +1812,8 @@ share/xfe/icons/tango-theme/rpm_32x32.png
 share/xfe/icons/tango-theme/run.png
 share/xfe/icons/tango-theme/saveas.png
 share/xfe/icons/tango-theme/savefile.png
+share/xfe/icons/tango-theme/sci_16x16.png
+share/xfe/icons/tango-theme/sci_32x32.png
 share/xfe/icons/tango-theme/search.png
 share/xfe/icons/tango-theme/searchnext.png
 share/xfe/icons/tango-theme/searchprev.png
@@ -1789,6 +1827,8 @@ share/xfe/icons/tango-theme/shell_32x32.png
 share/xfe/icons/tango-theme/showhidden.png
 share/xfe/icons/tango-theme/shownumbers.png
 share/xfe/icons/tango-theme/showthumb.png
+share/xfe/icons/tango-theme/sla_16x16.png
+share/xfe/icons/tango-theme/sla_32x32.png
 share/xfe/icons/tango-theme/smallicons.png
 share/xfe/icons/tango-theme/so_16x16.png
 share/xfe/icons/tango-theme/so_32x32.png
@@ -1963,6 +2003,8 @@ share/xfe/icons/windows-theme/find_again.png
 share/xfe/icons/windows-theme/fliplr.png
 share/xfe/icons/windows-theme/flipud.png
 share/xfe/icons/windows-theme/floppy.png
+share/xfe/icons/windows-theme/font_16x16.png
+share/xfe/icons/windows-theme/font_32x32.png
 share/xfe/icons/windows-theme/fonts.png
 share/xfe/icons/windows-theme/gif_16x16.png
 share/xfe/icons/windows-theme/gif_32x32.png
@@ -2079,6 +2121,8 @@ share/xfe/icons/windows-theme/rpm_32x32.png
 share/xfe/icons/windows-theme/run.png
 share/xfe/icons/windows-theme/saveas.png
 share/xfe/icons/windows-theme/savefile.png
+share/xfe/icons/windows-theme/sci_16x16.png
+share/xfe/icons/windows-theme/sci_32x32.png
 share/xfe/icons/windows-theme/search.png
 share/xfe/icons/windows-theme/searchnext.png
 share/xfe/icons/windows-theme/searchprev.png
@@ -2092,6 +2136,8 @@ share/xfe/icons/windows-theme/shell_32x32.png
 share/xfe/icons/windows-theme/showhidden.png
 share/xfe/icons/windows-theme/shownumbers.png
 share/xfe/icons/windows-theme/showthumb.png
+share/xfe/icons/windows-theme/sla_16x16.png
+share/xfe/icons/windows-theme/sla_32x32.png
 share/xfe/icons/windows-theme/smallicons.png
 share/xfe/icons/windows-theme/so_16x16.png
 share/xfe/icons/windows-theme/so_32x32.png
@@ -2266,6 +2312,8 @@ share/xfe/icons/xfce-theme/find_again.png
 share/xfe/icons/xfce-theme/fliplr.png
 share/xfe/icons/xfce-theme/flipud.png
 share/xfe/icons/xfce-theme/floppy.png
+share/xfe/icons/xfce-theme/font_16x16.png
+share/xfe/icons/xfce-theme/font_32x32.png
 share/xfe/icons/xfce-theme/fonts.png
 share/xfe/icons/xfce-theme/gif_16x16.png
 share/xfe/icons/xfce-theme/gif_32x32.png
@@ -2382,6 +2430,8 @@ share/xfe/icons/xfce-theme/rpm_32x32.png
 share/xfe/icons/xfce-theme/run.png
 share/xfe/icons/xfce-theme/saveas.png
 share/xfe/icons/xfce-theme/savefile.png
+share/xfe/icons/xfce-theme/sci_16x16.png
+share/xfe/icons/xfce-theme/sci_32x32.png
 share/xfe/icons/xfce-theme/search.png
 share/xfe/icons/xfce-theme/searchnext.png
 share/xfe/icons/xfce-theme/searchprev.png
@@ -2395,6 +2445,8 @@ share/xfe/icons/xfce-theme/shell_32x32.png
 share/xfe/icons/xfce-theme/showhidden.png
 share/xfe/icons/xfce-theme/shownumbers.png
 share/xfe/icons/xfce-theme/showthumb.png
+share/xfe/icons/xfce-theme/sla_16x16.png
+share/xfe/icons/xfce-theme/sla_32x32.png
 share/xfe/icons/xfce-theme/smallicons.png
 share/xfe/icons/xfce-theme/so_16x16.png
 share/xfe/icons/xfce-theme/so_32x32.png
@@ -2569,6 +2621,8 @@ share/xfe/icons/xfe-theme/find_again.png
 share/xfe/icons/xfe-theme/fliplr.png
 share/xfe/icons/xfe-theme/flipud.png
 share/xfe/icons/xfe-theme/floppy.png
+share/xfe/icons/xfe-theme/font_16x16.png
+share/xfe/icons/xfe-theme/font_32x32.png
 share/xfe/icons/xfe-theme/fonts.png
 share/xfe/icons/xfe-theme/gif_16x16.png
 share/xfe/icons/xfe-theme/gif_32x32.png
@@ -2685,6 +2739,8 @@ share/xfe/icons/xfe-theme/rpm_32x32.png
 share/xfe/icons/xfe-theme/run.png
 share/xfe/icons/xfe-theme/saveas.png
 share/xfe/icons/xfe-theme/savefile.png
+share/xfe/icons/xfe-theme/sci_16x16.png
+share/xfe/icons/xfe-theme/sci_32x32.png
 share/xfe/icons/xfe-theme/search.png
 share/xfe/icons/xfe-theme/searchnext.png
 share/xfe/icons/xfe-theme/searchprev.png
@@ -2698,6 +2754,8 @@ share/xfe/icons/xfe-theme/shell_32x32.png
 share/xfe/icons/xfe-theme/showhidden.png
 share/xfe/icons/xfe-theme/shownumbers.png
 share/xfe/icons/xfe-theme/showthumb.png
+share/xfe/icons/xfe-theme/sla_16x16.png
+share/xfe/icons/xfe-theme/sla_32x32.png
 share/xfe/icons/xfe-theme/smallicons.png
 share/xfe/icons/xfe-theme/so_16x16.png
 share/xfe/icons/xfe-theme/so_32x32.png

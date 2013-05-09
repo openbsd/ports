@@ -1,18 +1,21 @@
-$OpenBSD: patch-Makefile_in,v 1.9 2010/10/24 19:55:46 stephan Exp $
---- Makefile.in.orig	Wed Sep 15 16:42:55 2010
-+++ Makefile.in	Thu Oct  7 14:50:32 2010
-@@ -443,12 +443,11 @@ uninstall-iconDATA:
- 	done
+$OpenBSD: patch-Makefile_in,v 1.10 2013/05/09 00:44:06 bcallah Exp $
+--- Makefile.in.orig	Sat May  4 17:25:03 2013
++++ Makefile.in	Sat May  4 17:26:50 2013
+@@ -462,15 +462,14 @@ uninstall-iconDATA:
+ 	cd "$(DESTDIR)$(icondir)" && rm -f $$files
  install-rcDATA: $(rc_DATA)
  	@$(NORMAL_INSTALL)
--	test -z "$(rcdir)" || $(mkdir_p) "$(DESTDIR)$(rcdir)"
- 	@list='$(rc_DATA)'; for p in $$list; do \
+-	test -z "$(rcdir)" || $(MKDIR_P) "$(DESTDIR)$(rcdir)"
+ 	@list='$(rc_DATA)'; test -n "$(rcdir)" || list=; \
+ 	for p in $$list; do \
  	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
- 	  f=$(am__strip_dir) \
--	  echo " $(rcDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(rcdir)/$$f'"; \
--	  $(rcDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(rcdir)/$$f"; \
-+	  echo " $(rcDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(prefix)/share/xfe/$$f'"; \
-+	  $(rcDATA_INSTALL) "$$d$$p" "$(DESTDIR)/$(prefix)/share/xfe/$$f"; \
+ 	  echo "$$d$$p"; \
+ 	done | $(am__base_list) | \
+ 	while read files; do \
+-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(rcdir)'"; \
+-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(rcdir)" || exit $$?; \
++	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(prefix)/share/xfe'"; \
++	  $(INSTALL_DATA) $$files "$(DESTDIR)$(prefix)/share/xfe" || exit $$?; \
  	done
  
  uninstall-rcDATA:
