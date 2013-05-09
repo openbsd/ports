@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/01/27 15:57:29 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/05/09 13:00:13 rpe Exp $
 include/ecore-1/
 include/ecore-1/Ecore.h
 include/ecore-1/Ecore_Con.h
@@ -54,6 +54,7 @@ lib/pkgconfig/ecore.pc
 share/locale/cs/LC_MESSAGES/ecore.mo
 share/locale/de/LC_MESSAGES/ecore.mo
 share/locale/el/LC_MESSAGES/ecore.mo
+share/locale/eo/LC_MESSAGES/ecore.mo
 share/locale/fr/LC_MESSAGES/ecore.mo
 share/locale/it/LC_MESSAGES/ecore.mo
 share/locale/nl/LC_MESSAGES/ecore.mo

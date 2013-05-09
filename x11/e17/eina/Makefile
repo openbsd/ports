@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/21 08:48:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2013/05/09 13:00:13 rpe Exp $
 
 COMMENT =		EFL API for data types
-VERSION = 		1.7.5
+VERSION = 		1.7.6
 DISTNAME =		eina-${VERSION}
 EPOCH=			1
 
-SHARED_LIBS +=  eina                 3.0      # 8.5
+SHARED_LIBS +=  eina                 3.0      # 8.6
 
 # LGPL v2.1
 PERMIT_PACKAGE_CDROM =	Yes

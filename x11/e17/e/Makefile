@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.48 2013/03/31 18:48:02 rpe Exp $
+# $OpenBSD: Makefile,v 1.49 2013/05/09 13:00:13 rpe Exp $
 
 COMMENT =		the enlightened window manager
 
-VERSION = 		0.17.1
+VERSION = 		0.17.2.1
 DISTNAME =		enlightenment-${VERSION}
 PKGNAME =		enlightenment-${VERSION:S/-//}
 
@@ -29,7 +29,7 @@ WANTLIB += freetype graphite2 fribidi glib-2.0 gobject-2.0 harfbuzz
 WANTLIB += icudata icule icuuc idn jpeg m pcre pthread pthread-stubs
 WANTLIB += ssl xcb xcb-keysyms xcb-shape z ${MODLUA_WANTLIB}
 
-LIB_DEPENDS =		x11/e17/elementary>=1.7.5 \
+LIB_DEPENDS =		x11/e17/elementary>=1.7.6 \
 			devel/libexecinfo
 
 CONFIGURE_ARGS +=	--disable-doc \

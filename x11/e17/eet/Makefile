@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2013/03/21 08:48:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2013/05/09 13:00:13 rpe Exp $
 
 COMMENT =		library to write an arbitary set of chunks of data to a file
-DISTNAME =		eet-1.7.5
+DISTNAME =		eet-1.7.6
 EPOCH =			2
 
-SHARED_LIBS +=  eet                  3.0      # 8.5
+SHARED_LIBS +=  eet                  3.0      # 8.6
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -13,7 +13,7 @@ WANTLIB += c crypto eina jpeg m pthread ssl z
 
 MODULES =		converters/libiconv
 
-LIB_DEPENDS =		x11/e17/eina>=1.7.5v1 \
+LIB_DEPENDS =		x11/e17/eina>=1.7.6v1 \
 			graphics/jpeg
 
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/01/27 15:57:29 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.10 2013/05/09 13:00:13 rpe Exp $
 include/efreet-1/
 include/efreet-1/Efreet.h
 include/efreet-1/Efreet_Mime.h
@@ -25,6 +25,7 @@ lib/pkgconfig/efreet.pc
 share/locale/cs/LC_MESSAGES/efreet.mo
 share/locale/de/LC_MESSAGES/efreet.mo
 share/locale/el/LC_MESSAGES/efreet.mo
+share/locale/eo/LC_MESSAGES/efreet.mo
 share/locale/es/LC_MESSAGES/efreet.mo
 share/locale/fr/LC_MESSAGES/efreet.mo
 share/locale/it/LC_MESSAGES/efreet.mo

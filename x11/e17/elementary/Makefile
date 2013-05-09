@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/21 08:48:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2013/05/09 13:00:13 rpe Exp $
 
 COMMENT =		basic widget set, based on EFL
 
-VERSION =		1.7.5
+VERSION =		1.7.6
 DISTNAME =		elementary-${VERSION}
-REVISION =		1
 
-SHARED_LIBS +=  elementary                0.0 # 8.5
+SHARED_LIBS +=  elementary                0.0 # 8.6
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
@@ -17,9 +16,9 @@ WANTLIB += ecore ecore_con ecore_evas ecore_file ecore_imf ecore_imf_evas
 WANTLIB += ecore_input ecore_input_evas ecore_ipc ecore_x edbus
 WANTLIB += edje eet efreet efreet_mime efreet_trash eina eio embryo
 WANTLIB += emotion ethumb ethumb_client evas exif expat ffi fontconfig
-WANTLIB += freetype fribidi glib-2.0 gobject-2.0 gthread-2.0 harfbuzz
-WANTLIB += icudata icule icuuc idn jpeg m pcre pthread ssl xcb z
-WANTLIB += ${MODLUA_WANTLIB}
+WANTLIB += freetype fribidi glib-2.0 gobject-2.0 graphite2 harfbuzz
+WANTLIB += icudata icule icuuc idn jpeg m pcre pthread pthread-stubs
+WANTLIB += ssl xcb z ${MODLUA_WANTLIB}
 
 MODULES =		devel/gettext \
 			lang/lua \
@@ -31,13 +30,13 @@ MODE17_PURGE_LA =	lib/edje/modules lib/elementary/modules
 
 USE_GMAKE =		Yes
 
-LIB_DEPENDS +=		x11/e17/e_dbus>=1.7.5v1 \
-			x11/e17/edje>=1.7.5v2 \
-			x11/e17/eet>=1.7.5v2 \
-			x11/e17/efreet>=1.7.5v2 \
-			x11/e17/eio>=1.7.5 \
-			x11/e17/emotion>=1.7.5 \
-			x11/e17/ethumb>=1.7.5 \
+LIB_DEPENDS +=		x11/e17/e_dbus>=1.7.6v1 \
+			x11/e17/edje>=1.7.6v2 \
+			x11/e17/eet>=1.7.6v2 \
+			x11/e17/efreet>=1.7.6v2 \
+			x11/e17/eio>=1.7.6 \
+			x11/e17/emotion>=1.7.6 \
+			x11/e17/ethumb>=1.7.6 \
 			${MODLUA_LIB_DEPENDS}
 
 CONFIGURE_ARGS +=	--disable-doc
