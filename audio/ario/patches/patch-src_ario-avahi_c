@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_ario-avahi_c,v 1.1.1.1 2013/05/09 14:24:55 bcallah Exp $
+--- src/ario-avahi.c.orig	Fri May  3 13:47:26 2013
++++ src/ario-avahi.c	Fri May  3 13:49:09 2013
+@@ -34,6 +34,11 @@
+ #include <avahi-common/simple-watch.h>
+ #include "ario-debug.h"
+ 
++#ifdef __OpenBSD__
++#include <sys/socket.h>
++#include <netinet/in.h>
++#endif
++
+ #define SERVICE_TYPE "_mpd._tcp"
+ #define DOMAIN "local"
+ 

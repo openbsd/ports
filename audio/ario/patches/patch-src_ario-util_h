@@ -1,0 +1,14 @@
+XXX: Only needed on powerpc, seems not to affect amd64 or loongson.
+
+$OpenBSD: patch-src_ario-util_h,v 1.1.1.1 2013/05/09 14:24:55 bcallah Exp $
+--- src/ario-util.h.orig	Fri May  3 22:23:22 2013
++++ src/ario-util.h	Fri May  3 22:23:52 2013
+@@ -18,7 +18,7 @@
+  */
+ 
+ #include "servers/ario-server.h"
+-#include "glib/gslist.h"
++#include "glib.h"
+ #include "gdk/gdkpixbuf.h"
+ 
+ /* Number of covers used to generate the drag & drop image */
