@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:10:55 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/05/09 12:30:29 ajacoutot Exp $
 
 COMMENT=	cairo bindings for Python
 
@@ -30,7 +30,7 @@ MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
 		graphics/cairo
 
-TEST_DEPENDS=devel/py-test,python3
+TEST_DEPENDS=devel/py-test${MODPY_FLAVOR}
 
 do-configure:
 	cd ${WRKSRC} && env PYTHON=${MODPY_BIN} \
