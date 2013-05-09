@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.304 2013/04/08 07:59:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.305 2013/05/09 14:25:35 bcallah Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -8,6 +8,7 @@
      SUBDIR += amarok
      SUBDIR += aqualung
      SUBDIR += ardour
+     SUBDIR += ario
      SUBDIR += ascd
      SUBDIR += aubio
      SUBDIR += aucatctl
