@@ -1,0 +1,12 @@
+$OpenBSD: patch-TelepathyQt_Farstream_CMakeLists_txt,v 1.1.1.1 2013/05/09 19:25:59 zhuk Exp $
+Unbreak build.
+--- TelepathyQt/Farstream/CMakeLists.txt.orig	Wed May  8 22:12:54 2013
++++ TelepathyQt/Farstream/CMakeLists.txt	Wed May  8 22:13:25 2013
+@@ -4,6 +4,7 @@ if(FARSTREAM_COMPONENTS_FOUND)
+                         ${FARSTREAM_INCLUDE_DIR}
+                         ${GSTREAMER_INCLUDE_DIR}
+                         ${GLIB2_INCLUDE_DIR}
++                        ${ICONV_INCLUDE_DIR}
+                         ${LIBXML2_INCLUDE_DIR}
+                         ${DBUS_INCLUDE_DIR})
+ 

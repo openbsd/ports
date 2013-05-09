@@ -1,0 +1,51 @@
+$OpenBSD: patch-cmake_modules_FindGObject_cmake,v 1.1.1.1 2013/05/09 19:25:59 zhuk Exp $
+Make it see actual libraries. No reason to limit correct behavior
+for Win32 only.
+--- cmake/modules/FindGObject.cmake.orig	Wed May  8 22:33:28 2013
++++ cmake/modules/FindGObject.cmake	Wed May  8 22:55:18 2013
+@@ -26,34 +26,35 @@ IF (NOT WIN32)
+ ENDIF (NOT WIN32)
+ 
+ FIND_PATH(GOBJECT_INCLUDE_DIR gobject/gobject.h
+-   PATHS
++   HINTS
+    ${PKG_GOBJECT2_INCLUDE_DIRS}
+    /usr/include/glib-2.0/
+    PATH_SUFFIXES glib-2.0
+    )
+ 
+ FIND_LIBRARY(_GObjectLibs NAMES gobject-2.0
+-   PATHS
++   HINTS
+    ${PKG_GOBJECT2_LIBRARY_DIRS}
+    )
+ FIND_LIBRARY(_GModuleLibs NAMES gmodule-2.0
+-   PATHS
++   HINTS
+    ${PKG_GOBJECT2_LIBRARY_DIRS}
+    )
+ FIND_LIBRARY(_GThreadLibs NAMES gthread-2.0
+-   PATHS
++   HINTS
+    ${PKG_GOBJECT2_LIBRARY_DIRS}
+    )
+ FIND_LIBRARY(_GLibs NAMES glib-2.0
+-   PATHS
++   HINTS
+    ${PKG_GOBJECT2_LIBRARY_DIRS}
+    )
+ 
+-IF (WIN32)
+-SET (GOBJECT_LIBRARIES ${_GObjectLibs} ${_GModuleLibs} ${_GThreadLibs} ${_GLibs})
+-ELSE (WIN32)
+-SET (GOBJECT_LIBRARIES ${PKG_GOBJECT2_LIBRARIES})
+-ENDIF (WIN32)
++SET (GOBJECT_LIBRARIES
++        ${_GObjectLibs}
++        ${_GModuleLibs}
++        ${_GThreadLibs}
++        ${_GLibs}
++     CACHE FILEPATH "GObject libraries")
+ 
+ IF (GOBJECT_INCLUDE_DIR AND GOBJECT_LIBRARIES)
+    SET(GOBJECT_FOUND TRUE)

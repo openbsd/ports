@@ -1,0 +1,17 @@
+$OpenBSD: patch-cmake_modules_FindFarstream_cmake,v 1.1.1.1 2013/05/09 19:25:59 zhuk Exp $
+Allow to find modern farstream library.
+--- cmake/modules/FindFarstream.cmake.orig	Wed May  8 20:13:33 2013
++++ cmake/modules/FindFarstream.cmake	Wed May  8 20:14:02 2013
+@@ -34,10 +34,10 @@ find_path(FARSTREAM_INCLUDE_DIR farstream/fs-conferenc
+    PATHS
+    ${PC_FARSTREAM_INCLUDEDIR}
+    ${PC_FARSTREAM_INCLUDE_DIRS}
+-   PATH_SUFFIXES farstream-0.1
++   PATH_SUFFIXES farstream-0.2 farstream-0.1
+    )
+ 
+-find_library(FARSTREAM_LIBRARIES NAMES farstream-0.1
++find_library(FARSTREAM_LIBRARIES NAMES farstream-0.2 farstream-0.1
+    PATHS
+    ${PC_FARSTREAM_LIBDIR}
+    ${PC_FARSTREAM_LIBRARY_DIRS}
