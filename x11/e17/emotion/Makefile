@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2013/05/09 13:00:13 rpe Exp $
+# $OpenBSD: Makefile,v 1.8 2013/05/09 17:03:55 rpe Exp $
 
 COMMENT =		video (and audio) codec playback library
+
 DISTNAME =		emotion-1.7.6
 
-SHARED_LIBS +=  emotion                   1.0 # 8.6
+SHARED_LIBS +=	emotion                   1.0 # 8.6
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -29,7 +30,6 @@ LIB_DEPENDS =		devel/orc \
 			x11/e17/ecore>=1.7.6v2 \
 			x11/e17/edje>=1.7.6v2 \
 			x11/e17/embryo>=1.7.6v2
-
 
 CONFIGURE_ARGS +=	--disable-doc
 

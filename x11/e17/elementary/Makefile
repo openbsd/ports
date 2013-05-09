@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2013/05/09 13:00:13 rpe Exp $
+# $OpenBSD: Makefile,v 1.10 2013/05/09 17:03:55 rpe Exp $
 
 COMMENT =		basic widget set, based on EFL
 
 VERSION =		1.7.6
 DISTNAME =		elementary-${VERSION}
 
-SHARED_LIBS +=  elementary                0.0 # 8.6
+SHARED_LIBS +=	elementary                0.0 # 8.6
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes

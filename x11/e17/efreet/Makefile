@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.25 2013/05/09 13:00:13 rpe Exp $
+# $OpenBSD: Makefile,v 1.26 2013/05/09 17:03:55 rpe Exp $
 
 COMMENT =		implementations of freedesktop.org specifications
+
 DISTNAME =		efreet-1.7.6
 EPOCH =			2
 
@@ -21,11 +22,6 @@ MODULES =		devel/gettext
 
 LIB_DEPENDS =		x11/e17/ecore>=1.7.6v2
 
-
 CONFIGURE_ARGS =	--disable-doc
-# enable strict specification compliance
-#			--enable-strict-spec
-# disable sloppy specification compliance
-#			--disable-sloppy-spec
 
 .include <bsd.port.mk>

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2013/05/09 13:00:13 rpe Exp $
+# $OpenBSD: Makefile,v 1.35 2013/05/09 17:03:55 rpe Exp $
 
 COMMENT =		complex graphical design & layout library
+
 DISTNAME =		edje-1.7.6
 EPOCH =			2
 
-SHARED_LIBS +=		edje 3.0	# 8.6
+SHARED_LIBS +=	edje                 3.0      # 8.6
 
 # BSD (epp binary GPLv2)
 PERMIT_PACKAGE_CDROM =	Yes
@@ -23,17 +24,11 @@ MODULES =		devel/gettext \
 
 MODE17_MIME_DB =	Yes
 
-
 LIB_DEPENDS +=		devel/fribidi \
 			x11/e17/eio>=1.7.6 \
 			x11/e17/embryo>=1.7.6v2 \
 			${MODLUA_LIB_DEPENDS}
 
 CONFIGURE_ARGS +=	--disable-doc
-# perf ?
-#	--enable-amalgamation
-#	--enable-edje-program-cache
-#    don't use floating point, for architectures without FPU
-#	--enable-fixed-point
 
 .include <bsd.port.mk>
