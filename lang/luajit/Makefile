@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/05/09 17:57:56 abieber Exp $
 
 ONLY_FOR_ARCHS = powerpc arm i386 amd64
 # for mips64* gcc 4.6 is needed, but that doesn't build on this arch (yet)
@@ -7,7 +7,7 @@ SHARED_ONLY =	Yes
 SHARED_LIBS +=	luajit-${MODLUA_VERSION} 0.0 # 2.0.0
 
 COMMENT =	just-in-time compiler for Lua
-V =		2.0.0
+V =		2.0.1
 DISTNAME =	LuaJIT-${V}
 PKGNAME =	${DISTNAME:L}
 
