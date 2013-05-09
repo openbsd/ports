@@ -1,4 +1,4 @@
-# $OpenBSD: asterisk-sounds.port.mk,v 1.3 2013/03/11 11:41:33 espie Exp $
+# $OpenBSD: asterisk-sounds.port.mk,v 1.4 2013/05/09 07:33:17 sthen Exp $
 
 # strictly speaking not, as they are just sound files, but packaging
 # these on !shared arch is just a total waste of cycles as asterisk itself
@@ -7,7 +7,7 @@ SHARED_ONLY =	Yes
 
 MODAS_CODECS ?=	gsm alaw ulaw g722 sln16 wav # g729 siren7 siren14
 
-CATEGORIES +=	telephony telephony/asterisk-sounds
+CATEGORIES +=	telephony
 _N =		${MODAS_NAME}-${MODAS_LANG}-${MODAS_CODEC}-${MODAS_VER}
 DISTNAME =	${_N:S/--/-/g:S/-$//}
 FULLPKGNAME ?=  ${DISTNAME}
