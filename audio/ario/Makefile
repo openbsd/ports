@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/05/09 14:46:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2013/05/09 14:53:36 ajacoutot Exp $
 
 COMMENT =	GTK2-based MPD client inspired by Rhythmbox
 DISTNAME =	ario-1.5.1
 CATEGORIES =	audio x11
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=	audioscrobbler		0.0 # 0.0
 SHARED_LIBS +=	filesystem		0.0 # 0.0
@@ -33,7 +33,8 @@ WANTLIB += tag_c tasn1 unique-1.0 xcb xcb-render xcb-shm xml2 z
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=ario-player/}
 
-MODULES =	devel/gettext
+MODULES =	devel/gettext \
+		textproc/intltool
 
 LIB_DEPENDS =	audio/libmpdclient \
 		audio/taglib \
@@ -44,9 +45,7 @@ LIB_DEPENDS =	audio/libmpdclient \
 		security/libgcrypt \
 		security/libgpg-error
 
-RUN_DEPENDS =	audio/mpd \
-		audio/p5-Music-Audioscrobbler-MPD \
-		devel/desktop-file-utils \
+RUN_DEPENDS =	devel/desktop-file-utils \
 		net/curl \
 		x11/gtk+2,-guic
 
