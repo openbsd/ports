@@ -1,108 +1,11 @@
-*** README.orig	Thu Apr 24 05:38:41 1997
---- README	Wed Apr 29 15:32:20 1998
-***************
-*** 53,58 ****
---- 53,59 ----
-  	BSD/OS 2.0.1;		make OSTYPE=bsdos
-  	SunOS 4.1.4;		make OSTYPE=sunos4
-  	FreeBSD;		make OSTYPE=FreeBSD
-+ 	OpenBSD;		make OSTYPE=OpenBSD
-  
-  <Inquiry>
-  
-*** client/README.orig	Mon Aug 17 17:31:12 1998
---- client/README	Mon Aug 17 17:35:47 1998
-***************
-*** 45,56 ****
-  	dhcpc           68/udp                          # dhcp client
-  
-  The client prints out error messages to syslog with LOG_LOCAL0
-! facility.  Please add following description to syslog.conf if you
-! want. (This is optional configuration and isn't required to operate).
-  Actual description for each OS may have subtle differences.
-  
-  	local0.*			/var/log/dhcplog
-- 
-  
-  2. How to use the client
-  
---- 45,59 ----
-  	dhcpc           68/udp                          # dhcp client
-  
-  The client prints out error messages to syslog with LOG_LOCAL0
-! facility (OpenBSD version uses LOG_LOCAL1 to avoid ipmon log conflict).
-! Please add following description to syslog.conf if you want.
-! (This is optional configuration and isn't required to operate).
-  Actual description for each OS may have subtle differences.
-  
-+ OpenBSD:
-+ 	local1.*			/var/log/dhcplog
-+ other system:
-  	local0.*			/var/log/dhcplog
-  
-  2. How to use the client
-  
-*** server/README.orig	Tue Oct 17 13:53:39 1995
---- server/README	Mon Aug 17 17:48:08 1998
-***************
-*** 55,66 ****
-  	dhcpc           68/udp                          # dhcp client
-  
-  The dhcps prints out error messages to syslog with LOG_LOCAL0
-! facility.  Please add following description to syslog.conf if you
-! want. (This is optional configuration and isn't required to operate).
-  Actual description for each OS may have subtle differences.
-  
-  	local0.*			/var/log/dhcplog
-- 
-  
-  2. Usage
-  
---- 55,69 ----
-  	dhcpc           68/udp                          # dhcp client
-  
-  The dhcps prints out error messages to syslog with LOG_LOCAL0
-! facility (OpenBSD version uses LOG_LOCAL1 to avoid ipmon log conflict).
-! Please add following description to syslog.conf if you want.
-! (This is optional configuration and isn't required to operate).
-  Actual description for each OS may have subtle differences.
-  
-+ OpenBSD:
-+ 	local1.*			/var/log/dhcplog
-+ other system:
-  	local0.*			/var/log/dhcplog
-  
-  2. Usage
-  
-*** relay/README.orig	Mon Aug 17 17:45:24 1998
---- relay/README	Mon Aug 17 17:46:30 1998
-***************
-*** 43,54 ****
-  	dhcpc           68/udp                          # dhcp client
-  
-  The relay agent prints out error messages to syslog with LOG_LOCAL0
-! facility.  Please add following description to syslog.conf if you
-! want. (This is optional configuration and isn't required to operate).
-  Actual description for each OS may have subtle differences.
-  
-  	local0.*			/var/log/dhcplog
-- 
-  
-  2. Usage
-  
---- 43,57 ----
-  	dhcpc           68/udp                          # dhcp client
-  
-  The relay agent prints out error messages to syslog with LOG_LOCAL0
-! facility (OpenBSD version uses LOG_LOCAL1 to avoid ipmon log conflict).
-! Please add following description to syslog.conf if you want.
-! (This is optional configuration and isn't required to operate).
-  Actual description for each OS may have subtle differences.
-  
-+ OpenBSD:
-+ 	local1.*			/var/log/dhcplog
-+ other system:
-  	local0.*			/var/log/dhcplog
-  
-  2. Usage
-  
+$OpenBSD: patch-README,v 1.2 2013/05/10 09:56:45 sthen Exp $
+--- README.orig	Wed Dec 24 09:58:00 1997
++++ README	Fri May 10 10:49:49 2013
+@@ -52,6 +52,7 @@
+ 	BSD/OS 3.1;		make OSTYPE=bsdi
+ 	SunOS 4.1.4;		make OSTYPE=sunos4
+ 	FreeBSD;		make OSTYPE=FreeBSD
++	OpenBSD;		make OSTYPE=OpenBSD
+ 
+ <Inquiry>
+ 

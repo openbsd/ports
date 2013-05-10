@@ -1,5 +1,6 @@
---- relay/Makefile.OpenBSD.orig	Mon Nov  6 22:43:51 2000
-+++ relay/Makefile.OpenBSD	Mon Nov  6 22:50:10 2000
+$OpenBSD: patch-relay_Makefile_OpenBSD,v 1.1 2013/05/10 09:56:45 sthen Exp $
+--- relay/Makefile.OpenBSD.orig	Fri May 10 10:49:49 2013
++++ relay/Makefile.OpenBSD	Fri May 10 10:49:49 2013
 @@ -0,0 +1,23 @@
 +OBJ = relay.o getmac.o common_subr.o interface.o
 +LDFLAGS = -lkvm

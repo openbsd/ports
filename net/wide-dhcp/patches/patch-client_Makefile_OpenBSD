@@ -1,5 +1,6 @@
---- client/Makefile.OpenBSD.orig	Mon Nov  6 22:43:51 2000
-+++ client/Makefile.OpenBSD	Mon Nov  6 22:45:50 2000
+$OpenBSD: patch-client_Makefile_OpenBSD,v 1.1 2013/05/10 09:56:45 sthen Exp $
+--- client/Makefile.OpenBSD.orig	Fri May 10 10:49:49 2013
++++ client/Makefile.OpenBSD	Fri May 10 10:49:49 2013
 @@ -0,0 +1,22 @@
 +INCLUDE = ../server/dhcp.h dhcpc.h common.h ../server/common_subr.h dhcpc_subr.h
 +OBJ = dhcpc_subr.o flushroute.o getmac.o common_subr.o dhcpc.o

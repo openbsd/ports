@@ -1,5 +1,6 @@
---- server/Makefile.OpenBSD.orig	Mon Nov  6 22:43:51 2000
-+++ server/Makefile.OpenBSD	Mon Nov  6 22:49:48 2000
+$OpenBSD: patch-server_Makefile_OpenBSD,v 1.1 2013/05/10 09:56:45 sthen Exp $
+--- server/Makefile.OpenBSD.orig	Fri May 10 10:49:50 2013
++++ server/Makefile.OpenBSD	Fri May 10 10:49:50 2013
 @@ -0,0 +1,23 @@
 +OBJ = dhcps.o database.o hash.o getmac.o common_subr.o \
 +      interface.o delarp.o
