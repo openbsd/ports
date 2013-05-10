@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2013/05/10 10:26:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2013/05/10 10:45:46 sthen Exp $
 
 COMMENT=	client and servers for the WIDE DHCP protocol
+NOT_FOR_ARCHS=	${LP64_ARCHS}
 
 DISTNAME=	dhcp-1.4.0p3
 PKGNAME=	wide-dhcp-1.4.0.3
-REVISION=	3
+REVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/dhcp/
 

@@ -1,6 +1,6 @@
-$OpenBSD: patch-client_dhcpc_subr_c,v 1.1 2013/05/10 09:56:45 sthen Exp $
+$OpenBSD: patch-client_dhcpc_subr_c,v 1.2 2013/05/10 10:45:46 sthen Exp $
 --- client/dhcpc_subr.c.orig	Thu Sep 10 01:06:39 1998
-+++ client/dhcpc_subr.c	Fri May 10 10:49:49 2013
++++ client/dhcpc_subr.c	Fri May 10 11:27:24 2013
 @@ -1110,7 +1110,12 @@ initialize(ifp)
  #ifndef LOG_PERROR
  #define LOG_PERROR   0
@@ -64,6 +64,35 @@ $OpenBSD: patch-client_dhcpc_subr_c,v 1.1 2013/05/10 09:56:45 sthen Exp $
  
  int
  config_if(ifp, addr, mask, brdcst)
+@@ -1745,22 +1756,22 @@ config_if(ifp, addr, mask, brdcst)
+   }
+ 
+   flushroutes(ifp->name);
+-  if (mask != NULL) {
++  if (addr != NULL) {
+     bzero(&ifr, sizeof(struct ifreq));
+     strcpy(ifr.ifr_name, ifp->name);
+     ((struct sockaddr_in *) &ifr.ifr_addr)->sin_family = AF_INET;
+-    ((struct sockaddr_in *) &ifr.ifr_addr)->sin_addr.s_addr = mask->s_addr;
+-    if (ioctl(sockfd, SIOCSIFNETMASK, &ifr) < 0) {
++    ((struct sockaddr_in *) &ifr.ifr_addr)->sin_addr.s_addr = addr->s_addr;
++    if (ioctl(sockfd, SIOCSIFADDR, &ifr) < 0) {
+       close(sockfd);
+       return(-1);
+     }
+   }
+-  if (addr != NULL) {
++  if (mask != NULL) {
+     bzero(&ifr, sizeof(struct ifreq));
+     strcpy(ifr.ifr_name, ifp->name);
+     ((struct sockaddr_in *) &ifr.ifr_addr)->sin_family = AF_INET;
+-    ((struct sockaddr_in *) &ifr.ifr_addr)->sin_addr.s_addr = addr->s_addr;
+-    if (ioctl(sockfd, SIOCSIFADDR, &ifr) < 0) {
++    ((struct sockaddr_in *) &ifr.ifr_addr)->sin_addr.s_addr = mask->s_addr;
++    if (ioctl(sockfd, SIOCSIFNETMASK, &ifr) < 0) {
+       close(sockfd);
+       return(-1);
+     }
 @@ -1780,19 +1791,19 @@ config_if(ifp, addr, mask, brdcst)
    return(0);
  }
