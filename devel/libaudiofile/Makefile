@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2013/03/21 08:45:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2013/05/10 20:30:31 rpe Exp $
 
 COMMENT=	SGI audiofile library clone
 
@@ -32,8 +32,8 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 # audiofile-config is still needed by audio/normalize and devel/libspectrum
 post-install:
-	${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -c ${FILESDIR}/audiofile-config \
+	${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} -c \
+		${FILESDIR}/audiofile-config \
 		${PREFIX}/bin/audiofile-config
-	chmod ${BINMODE} ${PREFIX}/bin/audiofile-config
 
 .include <bsd.port.mk>

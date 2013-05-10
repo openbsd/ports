@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/10 23:04:44 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/05/10 20:30:30 rpe Exp $
 
 COMMENT=	interactive electronics designing software
 
@@ -40,9 +40,8 @@ do-configure:
 		${LOCALBASE}/bin/qmake4 -o Makefile phoenix.pro
 
 do-install:
-	${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -c ${FILESDIR}/fritzing.sh \
-		${PREFIX}/bin/fritzing
-	chmod ${BINMODE} ${PREFIX}/bin/fritzing
+	${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} -c \
+		${FILESDIR}/fritzing.sh ${PREFIX}/bin/fritzing
 	${INSTALL_PROGRAM} ${WRKSRC}/Fritzing ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/fritzing/
 	cd ${WRKSRC}; tar cf - bins parts resources sketches tools translations | \
