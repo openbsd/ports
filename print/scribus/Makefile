@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2013/04/24 22:40:05 landry Exp $
+# $OpenBSD: Makefile,v 1.50 2013/05/10 06:03:30 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -23,7 +23,6 @@ MODULES=	x11/qt4 \
 		devel/cmake \
 		lang/python
 
-MODPY_VERSION=	2.7
 MODPY_RUNDEP=	No
 
 BUILD_DEPENDS=	devel/boost
