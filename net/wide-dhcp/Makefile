@@ -1,22 +1,26 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 11:35:58 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/05/10 09:58:02 sthen Exp $
 
 COMMENT=	client and servers for the WIDE DHCP protocol
 
-DISTNAME=       dhcp-1.4.0p3
-PKGNAME=        wide-dhcp-1.4.0.3
-REVISION=	1
-CATEGORIES=     net
-MASTER_SITES=   ftp://sh.wide.ad.jp/WIDE/free-ware/dhcp/
+DISTNAME=	dhcp-1.4.0p3
+PKGNAME=	wide-dhcp-1.4.0.3
+REVISION=	2
+CATEGORIES=	net
+MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/dhcp/
 
 HOMEPAGE=	http://www.sfc.wide.ad.jp/~tomy/dhcp/index-e.html
 
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c kvm 
 
-MAKE_FLAGS=	OSTYPE=OpenBSD CC=${CC} CFLAGS="${CFLAGS} -g -Wall -I. -I${WRKBUILD}/server" 
-FAKE_FLAGS= 	SBIN=${WRKINST}${PREFIX}/sbin MAN=${WRKINST}${PREFIX}/man LIBEXEC=${WRKINST}${PREFIX}/libexec
+WANTLIB += c kvm
 
-USE_GROFF =	Yes
+MAKE_FLAGS=	OSTYPE=OpenBSD \
+		CC="${CC}" \
+		CFLAGS="${CFLAGS} -g -Wall -I. -I${WRKBUILD}/server"
+FAKE_FLAGS=	SBIN=${WRKINST}${PREFIX}/sbin \
+		MAN=${WRKINST}${PREFIX}/man \
+		LIBEXEC=${WRKINST}${PREFIX}/libexec
+
 NO_TEST=	Yes
 
 DOCS=		README README.jis db_sample/intro.dhcp db_sample/intro.dhcp.jis
@@ -26,7 +30,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/wide-dhcp
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/wide-dhcp
 
-.for a in ${DOCS}	
+.for a in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/$a ${PREFIX}/share/doc/wide-dhcp
 .endfor
 .for i in ${EXAMPLES}

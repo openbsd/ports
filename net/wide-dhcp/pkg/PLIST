@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:17:47 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/05/10 09:58:02 sthen Exp $
 @man man/man5/dhcpdb.pool.5
 @man man/man5/dhcpdb.relay.5
 @man man/man5/dhcpdb.server.5
@@ -6,10 +6,10 @@
 @man man/man8/dhcpm.8
 @man man/man8/dhcps.8
 @man man/man8/relay.8
-sbin/dhcpc
-sbin/dhcpm
-sbin/dhcps
-sbin/relay
+@bin sbin/dhcpc
+@bin sbin/dhcpm
+@bin sbin/dhcps
+@bin sbin/relay
 share/doc/wide-dhcp/
 share/doc/wide-dhcp/README
 share/doc/wide-dhcp/README.jis
