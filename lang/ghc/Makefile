@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2013/05/09 05:54:31 kili Exp $
+# $OpenBSD: Makefile,v 1.95 2013/05/11 22:13:30 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -179,6 +179,14 @@ BOOTSTRAP_DATE =	20120917
 # can be used for bootstrapping.
 # Note: this needs autoconf-2.61 as an additional dependency.
 bootstrap: patch
+	@if [ ! -x ${LOCALBASE}/bin/autoconf-2.61 ]; then \
+		echo Please install autoconf-2.61.; \
+		false; \
+	fi
+	@if [ ! -x ${LOCALBASE}/bin/automake-1.4 ]; then \
+		echo Please install automake-1.4.; \
+		false; \
+	fi
 	echo HSCOLOUR_SRCS=NO > ${WRKSRC}/mk/build.mk
 	echo GhcLibHcOpts=-O -fasm >> ${WRKSRC}/mk/build.mk
 	echo GhcStage1HcOpts=-O -fasm >> ${WRKSRC}/mk/build.mk
