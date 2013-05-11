@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2013/05/09 17:03:55 rpe Exp $
+# $OpenBSD: Makefile,v 1.34 2013/05/11 12:10:56 jasper Exp $
 
 COMMENT =		canvas API for X
 
@@ -39,8 +39,6 @@ CONFIGURE_ARGS +=	--disable-doc \
 			--enable-no-dither-mask \
 			--enable-small-dither-mask \
 			--enable-line-dither-mask \
-			--enable-word-cache \
-			--enable-metric-cache \
 			--disable-wayland-shm \
 			--disable-wayland-egl
 
