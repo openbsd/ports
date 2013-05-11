@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2013/04/19 12:17:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2013/05/11 11:58:53 jasper Exp $
 
 COMMENT=		GTK+-based electronic waveform viewer
 
-DISTNAME=		gtkwave-3.3.45
+DISTNAME=		gtkwave-3.3.46
 CATEGORIES=		cad
-REVISION=		0
 
 HOMEPAGE=		http://gtkwave.sourceforge.net/
 
@@ -39,7 +38,5 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 
 FAKE_FLAGS=		pkgdatadir="${PREFIX}/share/doc/gtkwave/" \
 			examplesdir="${PREFIX}/share/examples/gtkwave/"
-
-USE_GROFF =		Yes
 
 .include <bsd.port.mk>

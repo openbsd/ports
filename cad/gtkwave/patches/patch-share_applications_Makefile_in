@@ -1,7 +1,7 @@
-$OpenBSD: patch-share_applications_Makefile_in,v 1.1 2013/04/18 18:10:30 bentley Exp $
---- share/applications/Makefile.in.orig	Fri Apr 12 17:26:53 2013
-+++ share/applications/Makefile.in	Fri Apr 12 17:26:54 2013
-@@ -417,7 +417,7 @@ uninstall-am: uninstall-desktopDATA
+$OpenBSD: patch-share_applications_Makefile_in,v 1.2 2013/05/11 11:58:53 jasper Exp $
+--- share/applications/Makefile.in.orig	Tue Mar 26 18:49:34 2013
++++ share/applications/Makefile.in	Sat May 11 13:53:58 2013
+@@ -465,7 +465,7 @@ uninstall-am: uninstall-desktopDATA
  
  
  @FDO_MIME_TRUE@install-data-hook:
