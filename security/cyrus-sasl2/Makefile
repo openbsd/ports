@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.71 2013/03/21 08:48:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.72 2013/05/11 06:21:15 ajacoutot Exp $
 
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
 
 DISTNAME=	cyrus-sasl-2.1.26
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS += sasl2           3.0 # 3.0
 
@@ -27,6 +27,7 @@ CFLAGS +=	-fPIC
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-static \
+		--without-pam \
 		--with-saslauthd="/var/sasl2" \
 		--enable-gssapi="/usr" \
 		--with-gss_impl="heimdal" \

@@ -1,5 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.16 2012/11/22 16:01:38 ajacoutot Exp $
-@lib lib/libsasl2.so.${LIBsasl2_VERSION}
+@comment $OpenBSD: PFRAG.shared,v 1.17 2013/05/11 06:21:15 ajacoutot Exp $
 lib/sasl2/
 lib/sasl2/libanonymous.la
 lib/sasl2/libanonymous.so
