@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/05/03 23:16:22 rpe Exp $
+# $OpenBSD: Makefile,v 1.2 2013/05/11 10:54:36 rpe Exp $
 
 COMMENT=		rss reader, live stream, mashup, aggregation webapp
 
-DISTNAME=		selfoss-2.6
+DISTNAME=		selfoss-2.7
 CATEGORIES=		www
 
 HOMEPAGE=		http://selfoss.aditu.de/
@@ -32,11 +32,11 @@ do-extract:
 	mkdir -p ${WRKDIST}
 	unzip -oq -d ${WRKDIST} ${FULLDISTDIR}/${EXTRACT_ONLY}
 	find ${WRKDIST} -type f | \
-		egrep '\.(phtml|php|ini|md|js|svg|css|txt|htaccess)$$' | \
+		egrep '\.(css|htaccess|ini|js|md|php|phtml|txt)' | \
 		xargs perl -i -pe 's/\r$$//'
 
 do-install:
-	perl -pi -e 's,^#RewriteBase /selfoss,RewriteBase /selfoss,' ${WRKDIST}/.htaccess
+	perl -i -pe 's,^#(RewriteBase /selfoss.*),\1,' ${WRKDIST}/.htaccess
 	cp -Rp ${WRKDIST} ${INSTDIR}
 	${SUBST_CMD} -c ${FILESDIR}/selfoss.conf ${INSTDIR}/selfoss.conf.dist
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}

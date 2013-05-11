@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/05/03 23:16:22 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/05/11 10:54:36 rpe Exp $
 @extraunexec rm -rf %D/selfoss/data/*/*
 selfoss/
 @comment selfoss/.gitignore
@@ -170,8 +170,6 @@ selfoss/libs/twitteroauth/twitteroauth.php
 selfoss/public/
 @mode
 @group
-selfoss/public/all.css
-selfoss/public/all.js
 selfoss/public/apple-touch-icon.png
 selfoss/public/css/
 selfoss/public/css/fonts.css
@@ -256,9 +254,12 @@ selfoss/public/lang/cs.ini
 selfoss/public/lang/de.ini
 selfoss/public/lang/en.ini
 selfoss/public/lang/fr.ini
+selfoss/public/lang/hu.ini
 selfoss/public/lang/it.ini
+selfoss/public/lang/ja.ini
 selfoss/public/lang/lv.ini
 selfoss/public/lang/nl.ini
+selfoss/public/lang/no.ini
 selfoss/public/lang/ru.ini
 selfoss/public/lang/se.ini
 selfoss/public/lang/tr.ini
@@ -270,11 +271,14 @@ selfoss/spouts/deviantart/
 selfoss/spouts/deviantart/dailydeviations.php
 selfoss/spouts/deviantart/user.php
 selfoss/spouts/deviantart/usersfavs.php
+selfoss/spouts/facebook/
+selfoss/spouts/facebook/page.php
 selfoss/spouts/rss/
 selfoss/spouts/rss/feed.php
 selfoss/spouts/rss/golem.php
 selfoss/spouts/rss/heise.php
 selfoss/spouts/rss/images.php
+selfoss/spouts/rss/instapaper.php
 selfoss/spouts/rss/mmospy.php
 selfoss/spouts/rss/readability.php
 selfoss/spouts/spout.php
@@ -283,6 +287,8 @@ selfoss/spouts/tumblr/user.php
 selfoss/spouts/twitter/
 selfoss/spouts/twitter/hometimeline.php
 selfoss/spouts/twitter/usertimeline.php
+selfoss/spouts/youtube/
+selfoss/spouts/youtube/youtube.php
 selfoss/templates/
 selfoss/templates/home.phtml
 selfoss/templates/item.phtml
