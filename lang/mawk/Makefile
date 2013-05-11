@@ -1,26 +1,20 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 11:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/05/11 21:00:23 sthen Exp $
 
 COMMENT=	fast POSIX-compliant awk
 
-DISTNAME=	mawk-1.3.3
-REVISION=	0
-DISTFILES=	${DISTNAME:S,-,,}.tar.gz
+DISTNAME=	mawk-1.3.4-20130219
+PKGNAME=	mawk-1.3.4.20130219
 CATEGORIES=	lang
-MASTER_SITES=	${MASTER_SITE_BACKUP}
+MASTER_SITES=	ftp://invisible-island.net/mawk/
+EXTRACT_SUFX=	.tgz
 
-# GPL V2
+HOMEPAGE=	http://invisible-island.net/mawk/
+
+# GPLv2 only
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c m
 
-CONFIGURE_STYLE= gnu old
-
-ALL_TARGET=	mawk
-TEST_TARGET=	mawk_test
-USE_GROFF =	Yes
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/mawk ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/mawk.1 ${PREFIX}/man/man1
+CONFIGURE_STYLE= gnu
 
 .include <bsd.port.mk>
