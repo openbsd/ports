@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:07:40 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/05/12 07:29:04 rpe Exp $
 
 COMMENT=	simulation of a true AI
 
@@ -43,9 +43,8 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/endgame-singularity-music-${MUSIC_V}/music/*.ogg \
 		${PREFIX}/share/singularity/music
 	${INSTALL_DATA} ${WRKSRC}/singularity.py ${PREFIX}/share/singularity/
-	${SUBST_CMD} -c ${FILESDIR}/singularity ${PREFIX}/bin/singularity
+	${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} -c \
+		${FILESDIR}/singularity ${PREFIX}/bin/singularity
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/singularity
-	chown -R ${BINOWN}:${BINGRP} ${PREFIX}/bin/singularity
-	chmod a+x ${PREFIX}/bin/singularity
 
 .include <bsd.port.mk>
