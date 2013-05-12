@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2013/04/03 07:51:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2013/05/12 23:00:57 sthen Exp $
 
 COMMENT =		ebook management application
 
 DISTNAME =		calibre-0.8.20
 CATEGORIES =		textproc
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=calibre/}
-REVISION =		6
+REVISION =		7
 
 HOMEPAGE =		http://calibre-ebook.com/
 
@@ -47,7 +47,8 @@ BUILD_DEPENDS =		${COMMON_DEPENDS}
 
 RUN_DEPENDS =		${COMMON_DEPENDS} \
 			devel/desktop-file-utils \
-			misc/shared-mime-info
+			misc/shared-mime-info \
+			print/poppler,-utils
 
 CFLAGS +=		"-I${LOCALBASE}/include"
 LDFLAGS +=		"-L${LOCALBASE}/lib"
@@ -63,11 +64,11 @@ MAKE_ENV +=		WITH_USB=no
 
 WRKDIST =		${WRKDIR}/calibre
 PORTHOME =		${WRKDIR}
-NO_TEST = 		Yes
+NO_TEST =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 ## setup.py doesn't like the options in our python module
-MODPY_DISTUTILS_BUILD = 	build
+MODPY_DISTUTILS_BUILD =		build
 MODPY_DISTUTILS_INSTALL =	install --prefix=${LOCALBASE} \
 				--root=${PREFIX}
 
