@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.36 2013/04/14 16:53:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.37 2013/05/12 15:31:45 ajacoutot Exp $
 @conflict evolution-plugins-<=3.2.2p0
 @pkgpath mail/evolution
 @bin bin/evolution
@@ -1415,7 +1415,6 @@ share/help/C/evolution/mail-received-notification.page
 share/help/C/evolution/mail-receiving-options-exchange-ews.page
 share/help/C/evolution/mail-receiving-options-exchange-mapi.page
 share/help/C/evolution/mail-receiving-options-imap-plus.page
-share/help/C/evolution/mail-receiving-options-imap.page
 share/help/C/evolution/mail-receiving-options-local-delivery.page
 share/help/C/evolution/mail-receiving-options-maildir-format-directories.page
 share/help/C/evolution/mail-receiving-options-mh-format-directories.page
@@ -1645,7 +1644,6 @@ share/help/cs/evolution/mail-received-notification.page
 share/help/cs/evolution/mail-receiving-options-exchange-ews.page
 share/help/cs/evolution/mail-receiving-options-exchange-mapi.page
 share/help/cs/evolution/mail-receiving-options-imap-plus.page
-share/help/cs/evolution/mail-receiving-options-imap.page
 share/help/cs/evolution/mail-receiving-options-local-delivery.page
 share/help/cs/evolution/mail-receiving-options-maildir-format-directories.page
 share/help/cs/evolution/mail-receiving-options-mh-format-directories.page
@@ -1875,7 +1873,6 @@ share/help/de/evolution/mail-received-notification.page
 share/help/de/evolution/mail-receiving-options-exchange-ews.page
 share/help/de/evolution/mail-receiving-options-exchange-mapi.page
 share/help/de/evolution/mail-receiving-options-imap-plus.page
-share/help/de/evolution/mail-receiving-options-imap.page
 share/help/de/evolution/mail-receiving-options-local-delivery.page
 share/help/de/evolution/mail-receiving-options-maildir-format-directories.page
 share/help/de/evolution/mail-receiving-options-mh-format-directories.page
@@ -2105,7 +2102,6 @@ share/help/el/evolution/mail-received-notification.page
 share/help/el/evolution/mail-receiving-options-exchange-ews.page
 share/help/el/evolution/mail-receiving-options-exchange-mapi.page
 share/help/el/evolution/mail-receiving-options-imap-plus.page
-share/help/el/evolution/mail-receiving-options-imap.page
 share/help/el/evolution/mail-receiving-options-local-delivery.page
 share/help/el/evolution/mail-receiving-options-maildir-format-directories.page
 share/help/el/evolution/mail-receiving-options-mh-format-directories.page
@@ -2336,7 +2332,6 @@ share/help/en_GB/evolution/mail-received-notification.page
 share/help/en_GB/evolution/mail-receiving-options-exchange-ews.page
 share/help/en_GB/evolution/mail-receiving-options-exchange-mapi.page
 share/help/en_GB/evolution/mail-receiving-options-imap-plus.page
-share/help/en_GB/evolution/mail-receiving-options-imap.page
 share/help/en_GB/evolution/mail-receiving-options-local-delivery.page
 share/help/en_GB/evolution/mail-receiving-options-maildir-format-directories.page
 share/help/en_GB/evolution/mail-receiving-options-mh-format-directories.page
@@ -2566,7 +2561,6 @@ share/help/es/evolution/mail-received-notification.page
 share/help/es/evolution/mail-receiving-options-exchange-ews.page
 share/help/es/evolution/mail-receiving-options-exchange-mapi.page
 share/help/es/evolution/mail-receiving-options-imap-plus.page
-share/help/es/evolution/mail-receiving-options-imap.page
 share/help/es/evolution/mail-receiving-options-local-delivery.page
 share/help/es/evolution/mail-receiving-options-maildir-format-directories.page
 share/help/es/evolution/mail-receiving-options-mh-format-directories.page
@@ -2796,7 +2790,6 @@ share/help/eu/evolution/mail-received-notification.page
 share/help/eu/evolution/mail-receiving-options-exchange-ews.page
 share/help/eu/evolution/mail-receiving-options-exchange-mapi.page
 share/help/eu/evolution/mail-receiving-options-imap-plus.page
-share/help/eu/evolution/mail-receiving-options-imap.page
 share/help/eu/evolution/mail-receiving-options-local-delivery.page
 share/help/eu/evolution/mail-receiving-options-maildir-format-directories.page
 share/help/eu/evolution/mail-receiving-options-mh-format-directories.page
@@ -3026,7 +3019,6 @@ share/help/fr/evolution/mail-received-notification.page
 share/help/fr/evolution/mail-receiving-options-exchange-ews.page
 share/help/fr/evolution/mail-receiving-options-exchange-mapi.page
 share/help/fr/evolution/mail-receiving-options-imap-plus.page
-share/help/fr/evolution/mail-receiving-options-imap.page
 share/help/fr/evolution/mail-receiving-options-local-delivery.page
 share/help/fr/evolution/mail-receiving-options-maildir-format-directories.page
 share/help/fr/evolution/mail-receiving-options-mh-format-directories.page
@@ -3256,7 +3248,6 @@ share/help/gl/evolution/mail-received-notification.page
 share/help/gl/evolution/mail-receiving-options-exchange-ews.page
 share/help/gl/evolution/mail-receiving-options-exchange-mapi.page
 share/help/gl/evolution/mail-receiving-options-imap-plus.page
-share/help/gl/evolution/mail-receiving-options-imap.page
 share/help/gl/evolution/mail-receiving-options-local-delivery.page
 share/help/gl/evolution/mail-receiving-options-maildir-format-directories.page
 share/help/gl/evolution/mail-receiving-options-mh-format-directories.page
@@ -3486,7 +3477,6 @@ share/help/hu/evolution/mail-received-notification.page
 share/help/hu/evolution/mail-receiving-options-exchange-ews.page
 share/help/hu/evolution/mail-receiving-options-exchange-mapi.page
 share/help/hu/evolution/mail-receiving-options-imap-plus.page
-share/help/hu/evolution/mail-receiving-options-imap.page
 share/help/hu/evolution/mail-receiving-options-local-delivery.page
 share/help/hu/evolution/mail-receiving-options-maildir-format-directories.page
 share/help/hu/evolution/mail-receiving-options-mh-format-directories.page
@@ -3717,7 +3707,6 @@ share/help/mk/evolution/mail-received-notification.page
 share/help/mk/evolution/mail-receiving-options-exchange-ews.page
 share/help/mk/evolution/mail-receiving-options-exchange-mapi.page
 share/help/mk/evolution/mail-receiving-options-imap-plus.page
-share/help/mk/evolution/mail-receiving-options-imap.page
 share/help/mk/evolution/mail-receiving-options-local-delivery.page
 share/help/mk/evolution/mail-receiving-options-maildir-format-directories.page
 share/help/mk/evolution/mail-receiving-options-mh-format-directories.page
@@ -3947,7 +3936,6 @@ share/help/oc/evolution/mail-received-notification.page
 share/help/oc/evolution/mail-receiving-options-exchange-ews.page
 share/help/oc/evolution/mail-receiving-options-exchange-mapi.page
 share/help/oc/evolution/mail-receiving-options-imap-plus.page
-share/help/oc/evolution/mail-receiving-options-imap.page
 share/help/oc/evolution/mail-receiving-options-local-delivery.page
 share/help/oc/evolution/mail-receiving-options-maildir-format-directories.page
 share/help/oc/evolution/mail-receiving-options-mh-format-directories.page
@@ -4178,7 +4166,6 @@ share/help/ru/evolution/mail-received-notification.page
 share/help/ru/evolution/mail-receiving-options-exchange-ews.page
 share/help/ru/evolution/mail-receiving-options-exchange-mapi.page
 share/help/ru/evolution/mail-receiving-options-imap-plus.page
-share/help/ru/evolution/mail-receiving-options-imap.page
 share/help/ru/evolution/mail-receiving-options-local-delivery.page
 share/help/ru/evolution/mail-receiving-options-maildir-format-directories.page
 share/help/ru/evolution/mail-receiving-options-mh-format-directories.page
@@ -4408,7 +4395,6 @@ share/help/sl/evolution/mail-received-notification.page
 share/help/sl/evolution/mail-receiving-options-exchange-ews.page
 share/help/sl/evolution/mail-receiving-options-exchange-mapi.page
 share/help/sl/evolution/mail-receiving-options-imap-plus.page
-share/help/sl/evolution/mail-receiving-options-imap.page
 share/help/sl/evolution/mail-receiving-options-local-delivery.page
 share/help/sl/evolution/mail-receiving-options-maildir-format-directories.page
 share/help/sl/evolution/mail-receiving-options-mh-format-directories.page
@@ -4638,7 +4624,6 @@ share/help/sv/evolution/mail-received-notification.page
 share/help/sv/evolution/mail-receiving-options-exchange-ews.page
 share/help/sv/evolution/mail-receiving-options-exchange-mapi.page
 share/help/sv/evolution/mail-receiving-options-imap-plus.page
-share/help/sv/evolution/mail-receiving-options-imap.page
 share/help/sv/evolution/mail-receiving-options-local-delivery.page
 share/help/sv/evolution/mail-receiving-options-maildir-format-directories.page
 share/help/sv/evolution/mail-receiving-options-mh-format-directories.page
@@ -4869,7 +4854,6 @@ share/help/te/evolution/mail-received-notification.page
 share/help/te/evolution/mail-receiving-options-exchange-ews.page
 share/help/te/evolution/mail-receiving-options-exchange-mapi.page
 share/help/te/evolution/mail-receiving-options-imap-plus.page
-share/help/te/evolution/mail-receiving-options-imap.page
 share/help/te/evolution/mail-receiving-options-local-delivery.page
 share/help/te/evolution/mail-receiving-options-maildir-format-directories.page
 share/help/te/evolution/mail-receiving-options-mh-format-directories.page
@@ -5099,7 +5083,6 @@ share/help/zh_CN/evolution/mail-received-notification.page
 share/help/zh_CN/evolution/mail-receiving-options-exchange-ews.page
 share/help/zh_CN/evolution/mail-receiving-options-exchange-mapi.page
 share/help/zh_CN/evolution/mail-receiving-options-imap-plus.page
-share/help/zh_CN/evolution/mail-receiving-options-imap.page
 share/help/zh_CN/evolution/mail-receiving-options-local-delivery.page
 share/help/zh_CN/evolution/mail-receiving-options-maildir-format-directories.page
 share/help/zh_CN/evolution/mail-receiving-options-mh-format-directories.page
