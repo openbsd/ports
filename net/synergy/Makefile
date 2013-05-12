@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:35:57 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/05/12 16:09:04 bcallah Exp $
 
 COMMENT=		mouse and keyboard sharing utility
 
-DISTNAME=		synergy-1.4.10-Source
-PKGNAME=		${DISTNAME:S/-Source//}
+V=			1.4.12
+DISTNAME=		synergy-${V}-Source
+PKGNAME=		synergy-${V}
 CATEGORIES=		net x11
 
 MAINTAINER=		Brian Callahan <bcallah@openbsd.org>
@@ -17,16 +18,18 @@ WANTLIB += ICE SM X11 Xext Xi Xinerama Xrandr Xtst c m pthread stdc++
 
 MASTER_SITES=		http://synergy.googlecode.com/files/
 
-BUILD_DEPENDS=		archivers/gtar
+BUILD_DEPENDS=		archivers/gtar \
+			archivers/unzip
 
-# The synergy devs decided to release a fucked tarball.
-# Our tar complains, then errors out.
 # tar: Invalid header, starting valid header search.
 TAR=			${LOCALBASE}/bin/gtar
 
 MODULES=		devel/cmake
 
 NO_TEST=		Yes
+
+post-extract:
+	@cd ${WRKSRC}/tools ; ${LOCALBASE}/bin/unzip cryptopp562.zip -d cryptopp562
 
 pre-patch:
 	@cd ${WRKSRC} ; perl -pi -e 's/\r$$//' CMakeLists.txt

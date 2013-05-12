@@ -1,7 +1,7 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2013/01/08 20:35:36 bcallah Exp $
---- CMakeLists.txt.orig	Tue Jan  8 13:23:44 2013
-+++ CMakeLists.txt	Tue Jan  8 13:24:40 2013
-@@ -86,7 +86,7 @@ if (UNIX)
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2013/05/12 16:09:04 bcallah Exp $
+--- CMakeLists.txt.orig	Thu Apr 18 10:50:31 2013
++++ CMakeLists.txt	Thu Apr 18 10:50:31 2013
+@@ -87,7 +87,7 @@ if (UNIX)
  	check_include_files(strings.h HAVE_STRINGS_H)
  	check_include_files(string.h HAVE_STRING_H)
  	check_include_files(sys/select.h HAVE_SYS_SELECT_H)
@@ -10,7 +10,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.1 2013/01/08 20:35:36 bcallah Exp $
  	check_include_files(sys/stat.h HAVE_SYS_STAT_H)
  	check_include_files(sys/time.h HAVE_SYS_TIME_H)
  	check_include_files(sys/utsname.h HAVE_SYS_UTSNAME_H)
-@@ -97,7 +97,6 @@ if (UNIX)
+@@ -98,7 +98,6 @@ if (UNIX)
  	check_function_exists(gmtime_r HAVE_GMTIME_R)
  	check_function_exists(nanosleep HAVE_NANOSLEEP)
  	check_function_exists(poll HAVE_POLL)
@@ -18,7 +18,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.1 2013/01/08 20:35:36 bcallah Exp $
  	check_function_exists(strftime HAVE_STRFTIME)
  	check_function_exists(vsnprintf HAVE_VSNPRINTF)
  	check_function_exists(inet_aton HAVE_INET_ATON)
-@@ -139,6 +138,8 @@ if (UNIX)
+@@ -140,6 +139,8 @@ if (UNIX)
  	else (HAVE_PTHREAD)
  		message(FATAL_ERROR "Missing library: pthread")
  	endif()
@@ -27,7 +27,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.1 2013/01/08 20:35:36 bcallah Exp $
  	
  	if (APPLE)
  		exec_program(uname ARGS -v OUTPUT_VARIABLE DARWIN_VERSION)
-@@ -173,78 +174,53 @@ if (UNIX)
+@@ -174,78 +175,53 @@ if (UNIX)
  
  	else()
  
