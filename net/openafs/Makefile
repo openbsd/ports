@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2013/03/11 11:35:50 espie Exp $
+# $OpenBSD: Makefile,v 1.47 2013/05/12 17:32:10 rpe Exp $
 
 ONLY_FOR_ARCHS=		i386
 
@@ -56,14 +56,10 @@ pre-build:
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/openafs
-	${SUBST_CMD} -c ${FILESDIR}/krb5.conf \
+	${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -c ${FILESDIR}/krb5.conf \
 		${PREFIX}/share/examples/openafs/krb5.conf
-	${SUBST_CMD} -c ${FILESDIR}/openafs-setup \
-		${PREFIX}/sbin/openafs-setup
-	chown ${BINOWN}:${BINGRP} \
-		${PREFIX}/share/examples/openafs/krb5.conf \
-		${PREFIX}/sbin/openafs-setup
-	chmod u+x ${PREFIX}/sbin/openafs-setup
+	${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} -c \
+		${FILESDIR}/openafs-setup ${PREFIX}/sbin/openafs-setup
 
 .if ${FLAVOR:Mdebug}
 CONFIGURE_ARGS+=	--enable-debug
