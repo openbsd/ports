@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/05/05 20:18:10 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/05/12 18:49:49 rpe Exp $
 
 COMMENT =		ports-readmes dancer web app
 PKG_ARCH = *
@@ -20,8 +20,8 @@ do-install:
 	${SUBST_CMD} -c ${FILESDIR}/config.yml.sample ${INSTALL_DIR}/config.yml.sample
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTALL_DIR}
 	chmod ${BINMODE} ${INSTALL_DIR}/bin/ports-readmes
-	${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -c ${FILESDIR}/ports-readmes ${PREFIX}/bin/ports-readmes
-	chmod ${BINMODE} ${INSTALL_DIR}/bin/ports-readmes ${PREFIX}/bin/ports-readmes
+	${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} -c \
+		${FILESDIR}/ports-readmes ${PREFIX}/bin/ports-readmes
 
 RUN_DEPENDS = 	www/p5-Dancer \
 		databases/p5-DBI \
