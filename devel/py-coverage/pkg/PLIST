@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/09/20 00:06:27 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/05/12 07:16:44 benoit Exp $
 bin/coverage
+bin/coverage-${MODPY_VERSION}
+bin/coverage2
 lib/python${MODPY_VERSION}/site-packages/coverage/
 lib/python${MODPY_VERSION}/site-packages/coverage-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/coverage-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -62,5 +64,7 @@ lib/python${MODPY_VERSION}/site-packages/coverage/summary.pyc
 lib/python${MODPY_VERSION}/site-packages/coverage/templite.py
 lib/python${MODPY_VERSION}/site-packages/coverage/templite.pyc
 lib/python${MODPY_VERSION}/site-packages/coverage/tracer.so
+lib/python${MODPY_VERSION}/site-packages/coverage/version.py
+lib/python${MODPY_VERSION}/site-packages/coverage/version.pyc
 lib/python${MODPY_VERSION}/site-packages/coverage/xmlreport.py
 lib/python${MODPY_VERSION}/site-packages/coverage/xmlreport.pyc
