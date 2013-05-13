@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.75 2013/04/16 13:17:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.76 2013/05/13 13:48:57 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT-main=		multi-platform graphical toolkit
 COMMENT-cups=		gtk+3 CUPS print backend
 
-GNOME_VERSION=		3.8.1
+GNOME_VERSION=		3.8.2
 GNOME_PROJECT=		gtk+
 
 PKGNAME-main=		gtk+3-${GNOME_VERSION}
