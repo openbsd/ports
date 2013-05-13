@@ -1,5 +1,5 @@
-# $OpenBSD: Makefile,v 1.37 2013/03/20 21:56:34 landry Exp $
- 
+# $OpenBSD: Makefile,v 1.38 2013/05/13 06:57:51 jasper Exp $
+
      SUBDIR =
      SUBDIR += emerillon
      SUBDIR += foxtrotgps
@@ -7,6 +7,7 @@
      SUBDIR += gdal
      SUBDIR += geoclue
      SUBDIR += geos
+     SUBDIR += gimgtools
      SUBDIR += globe
      SUBDIR += gmapcatcher
      SUBDIR += gpsbabel
