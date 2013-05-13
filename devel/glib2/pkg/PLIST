@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2013/04/16 06:01:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.28 2013/05/13 15:16:01 ajacoutot Exp $
 @conflict glib2-docs-*
 @conflict glib2-fam-*
 @pkgpath devel/glib2,-docs
@@ -325,8 +325,8 @@ share/bash-completion/completions/gsettings
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/gdb/
 share/gdb/auto-load/
-share/gdb/auto-load/libglib-2.0.so.0.3600.1-gdb.py
-share/gdb/auto-load/libgobject-2.0.so.0.3600.1-gdb.py
+share/gdb/auto-load/libglib-2.0.so.0.3600.2-gdb.py
+share/gdb/auto-load/libgobject-2.0.so.0.3600.2-gdb.py
 share/glib-2.0/
 share/glib-2.0/codegen/
 share/glib-2.0/codegen/__init__.py
