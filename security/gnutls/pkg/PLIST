@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2013/03/23 13:25:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2013/05/13 09:08:38 ajacoutot Exp $
 @bin bin/certtool
 @bin bin/crywrap
 @bin bin/danetool
@@ -115,7 +115,9 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_certificate_set_x509_crl_mem.3
 @man man/man3/gnutls_certificate_set_x509_key.3
 @man man/man3/gnutls_certificate_set_x509_key_file.3
+@man man/man3/gnutls_certificate_set_x509_key_file2.3
 @man man/man3/gnutls_certificate_set_x509_key_mem.3
+@man man/man3/gnutls_certificate_set_x509_key_mem2.3
 @man man/man3/gnutls_certificate_set_x509_simple_pkcs12_file.3
 @man man/man3/gnutls_certificate_set_x509_simple_pkcs12_mem.3
 @man man/man3/gnutls_certificate_set_x509_system_trust.3
@@ -591,6 +593,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_set_default_export_priority.3
 @man man/man3/gnutls_set_default_priority.3
 @man man/man3/gnutls_sign_algorithm_get.3
+@man man/man3/gnutls_sign_algorithm_get_client.3
 @man man/man3/gnutls_sign_algorithm_get_requested.3
 @man man/man3/gnutls_sign_callback_get.3
 @man man/man3/gnutls_sign_callback_set.3
