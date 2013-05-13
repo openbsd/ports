@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 10:50:17 espie Exp $ $
+# $OpenBSD: Makefile,v 1.4 2013/05/13 07:52:06 benoit Exp $ $
 
 COMMENT =		flatten/unflatten complex data hashes
 
 MODULES =		cpan
-DISTNAME =		Hash-Flatten-1.16
+DISTNAME =		Hash-Flatten-1.19
 CATEGORIES =		devel
 
 MAINTAINER =		Cesare Gargano <gar@plusiagamma.org>
