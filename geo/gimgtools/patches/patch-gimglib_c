@@ -1,0 +1,15 @@
+$OpenBSD: patch-gimglib_c,v 1.1.1.1 2013/05/13 06:57:01 jasper Exp $
+
+prev_block may be used unitialized.
+
+--- gimglib.c.orig	Sun Mar 10 22:19:00 2013
++++ gimglib.c	Sun Mar 10 22:19:09 2013
+@@ -104,7 +104,7 @@ static int parse_img (struct gimg_struct *img)
+ 	struct garmin_img *img_header = (struct garmin_img *)(img->base);
+ 	struct subfile_struct *subfile, *subfiles, *subfiles_tail, *orphans, *orphans_tail;
+ 	struct submap_struct *submap, *submaps, *submaps_tail;
+-	unsigned int block_size, fatstart, fatend, i, prev_block;
++	unsigned int block_size, fatstart, fatend, i, prev_block = 0;
+ 
+ 	if (img_header->xor_byte != 0) {
+ 		fprintf(stderr, "XOR is not 0. Fix it first.\n");

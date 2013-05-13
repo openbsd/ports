@@ -1,0 +1,15 @@
+$OpenBSD: patch-gimgextract_c,v 1.1.1.1 2013/05/13 06:57:01 jasper Exp $
+
+Fix format strings for off_t and int.
+
+--- gimgextract.c.orig	Sun Mar 10 22:25:18 2013
++++ gimgextract.c	Sun Mar 10 22:26:21 2013
+@@ -70,7 +70,7 @@ int main (int argc, char *argv[])
+ 		sf_offset = read_2byte_at(infp, offset + 0x20) * block_size;
+ 		sf_size = read_4byte_at(infp, offset + 0xc);
+ 		if (sf_offset == 0 || sf_size == 0)
+-			errexit("subfile %s has 0 offset or size: 0x%lx 0x%lx\n",
++			errexit("subfile %s has 0 offset or size: 0x%llx 0x%d\n",
+ 					sf_name, sf_offset, sf_size);
+ 
+ 		outfp = fopen(sf_name, "wb");

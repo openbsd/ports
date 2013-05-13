@@ -1,0 +1,8 @@
+gimgtools is a set of command-line tools to examine and manipulate
+Garmin IMG (the map format) files. The included tools are:
+
+* gimgunlock: Unlock a locked map so that it can be used on ALL devices.
+* gimgxor: Unscramble XOR'd map files.
+* gimginfo: Print information of the map.
+* gimgextract: Extract the IMG sections.
+* gimgch: Hexdump and compare section header of two or more IMGs.

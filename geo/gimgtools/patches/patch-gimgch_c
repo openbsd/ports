@@ -1,0 +1,15 @@
+$OpenBSD: patch-gimgch_c,v 1.1.1.1 2013/05/13 06:57:01 jasper Exp $
+
+Fix format string for off_t.
+
+--- gimgch.c.orig	Sun Mar 10 22:24:39 2013
++++ gimgch.c	Sun Mar 10 22:24:46 2013
+@@ -47,7 +47,7 @@ static void display_headers (int line_columns)
+ 	emptyid[strlen(headers[0]->id)] = '\0';
+ 
+ 	for (i = 0; i < header_num; i ++) {
+-		printf("%s %8x=foff %8x=flen %4x=hoff %4x=hlen %s %s\n",
++		printf("%s %8llx=foff %8x=flen %4x=hoff %4x=hlen %s %s\n",
+ 				headers[i]->id,
+ 				headers[i]->subfile_offset,
+ 				headers[i]->subfile_size,

@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/05/13 06:57:01 jasper Exp $
+@bin bin/cmdc
+@bin bin/gimgch
+@bin bin/gimgextract
+@bin bin/gimgfixcmd
+@bin bin/gimginfo
+@bin bin/gimgunlock
+@bin bin/gimgxor

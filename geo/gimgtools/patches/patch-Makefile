@@ -1,0 +1,11 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2013/05/13 06:57:01 jasper Exp $
+--- Makefile.orig	Sun Mar 10 22:07:34 2013
++++ Makefile	Sun Mar 10 22:14:58 2013
+@@ -1,5 +1,5 @@
+-CC = gcc
+-CFLAGS = -Wall -D_FILE_OFFSET_BITS=64
++CC ?= gcc
++CFLAGS = -Wall -D_FILE_OFFSET_BITS=64 ${ECFLAGS}
+ GIMGLIB_SOURCES = gimglib.c util.c sf_typ.c sf_mps.c sf_tre.c sf_rgn.c sf_lbl.c sf_net.c sf_nod.c sf_gmp.c
+ GIMGLIB_OBJS = $(GIMGLIB_SOURCES:.c=.o)
+ 
