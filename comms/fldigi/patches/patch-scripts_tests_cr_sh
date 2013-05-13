@@ -1,0 +1,12 @@
+$OpenBSD: patch-scripts_tests_cr_sh,v 1.1.1.1 2013/05/13 18:23:51 sthen Exp $
+--- scripts/tests/cr.sh.orig	Wed Feb  6 18:14:44 2013
++++ scripts/tests/cr.sh	Wed Feb  6 18:14:55 2013
+@@ -4,7 +4,7 @@
+ 
+ r=0
+ for f in $fldigi_SOURCES $flarq_SOURCES $EXTRA_fldigi_SOURCES $EXTRA_DIST; do
+-    base=$(echo $f | sed -n '/\.[cC][cCpPxX]\{1,\}/ { s!.*/\(.*\)\.[^.]*$!\1!; p }')
++    base=$(echo $f | gsed -n '/\.[cC][cCpPxX]\{1,\}/ { s!.*/\(.*\)\.[^.]*$!\1!; p }')
+     if test "x$base" != "x" && grep "" "${srcdir}/${f}" >/dev/null; then
+         echo "E: $f has CRLF line terminators" >&2
+         r=1

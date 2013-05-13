@@ -1,0 +1,12 @@
+$OpenBSD: patch-scripts_tests_config-h_sh,v 1.1.1.1 2013/05/13 18:23:51 sthen Exp $
+--- scripts/tests/config-h.sh.orig	Wed Feb  6 18:14:44 2013
++++ scripts/tests/config-h.sh	Wed Feb  6 18:14:50 2013
+@@ -4,7 +4,7 @@
+ 
+ r=0
+ for f in $fldigi_SOURCES $flarq_SOURCES; do
+-    base=$(echo $f | sed -n '/\.[cC][cCpPxX]\{1,\}/ { s!.*/\(.*\)\.[^.]*$!\1!; p }')
++    base=$(echo $f | gsed -n '/\.[cC][cCpPxX]\{1,\}/ { s!.*/\(.*\)\.[^.]*$!\1!; p }')
+     test "x$base" = "x" && continue
+     test -f "fldigi-${base}.${OBJEXT}" || test -f "flarq-${base}.${OBJEXT}" || continue
+     if ! grep "include.*config\.h" "${srcdir}/${f}" >/dev/null; then
