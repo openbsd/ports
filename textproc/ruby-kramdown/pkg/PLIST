@@ -1,12 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/01/21 14:53:04 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/05/13 06:33:06 jasper Exp $
 ${GEM_BIN}/kramdown${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/AUTHORS
 ${GEM_LIB}/gems/${DISTNAME}/CONTRIBUTERS
 ${GEM_LIB}/gems/${DISTNAME}/COPYING
-${GEM_LIB}/gems/${DISTNAME}/ChangeLog
-${GEM_LIB}/gems/${DISTNAME}/GPL
 ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/VERSION
@@ -95,6 +93,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/kramdown/utils.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/kramdown/utils/entities.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/kramdown/utils/html.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/kramdown/utils/ordered_hash.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/kramdown/utils/unidecoder.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/kramdown/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/man/
 ${GEM_LIB}/gems/${DISTNAME}/man/man1/
@@ -168,6 +167,8 @@ ${GEM_LIB}/gems/${DISTNAME}/test/testcases/block/06_codeblock/error.text
 ${GEM_LIB}/gems/${DISTNAME}/test/testcases/block/06_codeblock/highlighting.html
 ${GEM_LIB}/gems/${DISTNAME}/test/testcases/block/06_codeblock/highlighting.options
 ${GEM_LIB}/gems/${DISTNAME}/test/testcases/block/06_codeblock/highlighting.text
+${GEM_LIB}/gems/${DISTNAME}/test/testcases/block/06_codeblock/issue_gh45.html
+${GEM_LIB}/gems/${DISTNAME}/test/testcases/block/06_codeblock/issue_gh45.test
 ${GEM_LIB}/gems/${DISTNAME}/test/testcases/block/06_codeblock/lazy.html
 ${GEM_LIB}/gems/${DISTNAME}/test/testcases/block/06_codeblock/lazy.text
 ${GEM_LIB}/gems/${DISTNAME}/test/testcases/block/06_codeblock/no_newline_at_end.html
