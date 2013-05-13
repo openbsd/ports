@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.65 2013/05/10 06:07:53 ajacoutot Exp $
+# $OpenBSD: python.port.mk,v 1.66 2013/05/13 19:06:45 fgsch Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -150,7 +150,7 @@ MAKE_ENV +=	CC=${CC} PYTHONUSERBASE=${_MODPY_USERBASE}
 CONFIGURE_ENV += PYTHON="${MODPY_BIN}" \
 		ac_cv_prog_PYTHON="${MODPY_BIN}"
 
-_MODPY_CMD =	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+MODPY_CMD =	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 			${MODPY_BIN} ./${MODPY_SETUP}
 
 SUBST_VARS :=	MODPY_PYCACHE MODPY_COMMENT MODPY_PYC_MAGIC_TAG MODPY_BIN MODPY_EGG_VERSION MODPY_VERSION MODPY_BIN_SUFFIX MODPY_PY_PREFIX ${SUBST_VARS}
@@ -172,20 +172,20 @@ MODPYTHON_pre-configure += for f in ${MODPY_ADJ_FILES}; do \
 .  if !target(do-build)
 do-build:
 	${_MODPY_PRE_BUILD_STEPS}
-	${_MODPY_CMD} ${MODPY_DISTUTILS_BUILD} ${MODPY_DISTUTILS_BUILDARGS}
+	${MODPY_CMD} ${MODPY_DISTUTILS_BUILD} ${MODPY_DISTUTILS_BUILDARGS}
 .  endif
 
 # extra documentation or scripts should be installed via post-install
 .  if !target(do-install)
 do-install:
-	${_MODPY_CMD} ${MODPY_DISTUTILS_BUILD} ${MODPY_DISTUTILS_BUILDARGS} \
+	${MODPY_CMD} ${MODPY_DISTUTILS_BUILD} ${MODPY_DISTUTILS_BUILDARGS} \
 		${MODPY_DISTUTILS_INSTALL} ${MODPY_DISTUTILS_INSTALLARGS}
 .  endif
 
 # setuptools supports regress testing from setup.py using a standard target
 .  if !target(do-test) && ${MODPY_SETUPUTILS:L} == "yes"
 do-test:
-	${_MODPY_CMD} ${TEST_TARGET}
+	${MODPY_CMD} ${TEST_TARGET}
 .  endif
 
 .endif
