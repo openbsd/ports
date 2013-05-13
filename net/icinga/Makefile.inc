@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.16 2013/03/28 12:05:52 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.17 2013/05/13 20:57:38 sthen Exp $
 
-CATEGORIES+=	net net/icinga
+CATEGORIES+=	net
 
 HOMEPAGE?=	http://www.icinga.org/
 
