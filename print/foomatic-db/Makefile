@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.28 2013/03/11 11:37:53 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2013/05/13 09:26:33 ajacoutot Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		Foomatic PPD data
 
-V=			20130202
+V=			20130513
 DISTNAME=		foomatic-db-4.0-${V}
 PKGNAME=		foomatic-db-4.0.${V}
-REVISION=		0
 
 CATEGORIES=		print
 
@@ -36,16 +35,17 @@ NO_TEST=		Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure
+	rm ${WRKSRC}/db/source/printer/KONICA_MINOLTA-magicolor_2430_DL.xml
 
 # From Fedora ; these files are already shipped by the foo2zjs package
 # RH #208851 #438319 #518267
-.for x in zjs oak-z1 oak hp qpdl lava kyo xqx slx hiperc
-	find ${WRKSRC}/db/source/printer -name '*.xml' | xargs grep -l "<driver>foo2${x}" | xargs rm
+.for x in zjs oak-z1 oak hp qpdl lava kyo xqx slx hiperc hbpl2 zjs-z1 zjs-z2 zjs-z3
+	find ${WRKSRC}/db/source/printer -name '*.xml' | xargs grep -l "<driver>foo2${x}" | xargs -r rm
 	rm -f ${WRKSRC}/db/source/driver/foo2${x}.xml \
 		${WRKSRC}/db/source/opt/foo2${x}-*
 .endfor
-	rm ${WRKSRC}/db/source/printer/KONICA_MINOLTA-magicolor_2430_DL.xml
-.for i in Xerox-Phaser_6110 Samsung-CLP-300 Samsung-CLP-310 Samsung-CLP-315
+.for i in Xerox-Phaser_6110 Samsung-CLP-300 Samsung-CLP-310 Samsung-CLP-315 \
+	Samsung-CLP-610 Samsung-CLP-620
 	mv ${WRKSRC}/db/source/printer/${i}.xml \
 		${WRKSRC}/db/source/printer/${i}-splix.xml
 .endfor
