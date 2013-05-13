@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.149 2013/03/18 20:01:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.150 2013/05/13 09:27:10 jasper Exp $
 
      SUBDIR =
      SUBDIR += STk
+     SUBDIR += abcl
      SUBDIR += antlr3
      SUBDIR += arena
      SUBDIR += boo
