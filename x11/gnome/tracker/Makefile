@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.143 2013/05/01 12:40:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.144 2013/05/13 10:38:36 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		powerful desktop search tool and indexer
 
 GNOME_PROJECT=		tracker
 GNOME_VERSION=		0.16.1
+REVISION=		0
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker.
