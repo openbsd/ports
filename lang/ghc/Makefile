@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2013/05/11 22:13:30 kili Exp $
+# $OpenBSD: Makefile,v 1.96 2013/05/13 21:01:37 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -210,6 +210,6 @@ bootstrap: patch
 	env CONFIGURE_ENV=RELEASE=NO ${MAKE} configure
 
 	env MAKE_ENV="AUTOCONF_VERSION=2.61 AUTOMAKE_VERSION=1.4" \
-	${MAKE} build ALL_TARGET="all binary-dist" \
+	${MAKE} build ALL_TARGET="all binary-dist"
 
 .include <bsd.port.mk>
