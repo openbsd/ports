@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/05/12 23:00:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2013/05/13 19:12:36 fgsch Exp $
 
 COMMENT =		ebook management application
 
@@ -80,7 +80,7 @@ pre-configure:
 		's,#!/usr/bin/env python(2)?,#!${MODPY_BIN},' )
 
 do-install:
-	${_MODPY_CMD} ${MODPY_DISTUTILS_INSTALL} ${MODPY_DISTUTILS_INSTALLARGS}
+	${MODPY_CMD} ${MODPY_DISTUTILS_INSTALL} ${MODPY_DISTUTILS_INSTALLARGS}
 	chmod 755 ${PREFIX}/bin/calibre-mount-helper
 	${INSTALL_DATA_DIR} ${PREFIX}/share/calibre/recipes
 	cd ${WRKSRC}/recipes && find . -type f -exec \

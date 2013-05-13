@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:35:55 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/05/13 19:10:45 fgsch Exp $
 
 SHARED_ONLY=		Yes
 
@@ -26,6 +26,6 @@ NO_TEST=		Yes
 MODULES=		lang/python
 
 post-configure:
-	${_MODPY_CMD} config
+	${MODPY_CMD} config
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/10 22:55:05 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/05/13 19:10:45 fgsch Exp $
 
 COMMENT =	Python module to handle audio metadata
 
@@ -30,12 +30,11 @@ TEST_DEPENDS =		audio/faad \
 			audio/py-vorbis \
 			audio/vorbis-tools \
 			multimedia/oggz
-TEST_TARGET =		test
 
 pre-build:
 	@rm ${WRKDIST}/tools/*.orig
 
 do-test:
-	${_MODPY_CMD} ${TEST_TARGET}
+	${MODPY_CMD} test
 
 .include <bsd.port.mk>
