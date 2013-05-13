@@ -1,6 +1,6 @@
-$OpenBSD: patch-check_py,v 1.11 2013/03/08 06:51:46 ajacoutot Exp $
---- check.py.orig	Wed Feb 13 17:38:51 2013
-+++ check.py	Fri Feb 22 17:02:30 2013
+$OpenBSD: patch-check_py,v 1.12 2013/05/13 08:34:09 ajacoutot Exp $
+--- check.py.orig	Mon Apr  8 11:58:46 2013
++++ check.py	Mon May 13 10:23:18 2013
 @@ -142,9 +142,9 @@ def get_comment(package, Inst_status, installed_ver):
                  comment = "Python Programming is not supported if version is lessthan 2.2" 
      elif package == 'hpaio':
@@ -42,7 +42,7 @@ $OpenBSD: patch-check_py,v 1.11 2013/03/08 06:51:46 ajacoutot Exp $
 +        Sts, Proc_info =utils.run("uname -r -v -s")
          log.info(" Kernel: %s Host: %s Proc: %s Distribution: %s %s"\
               %(Kernel_info,Host_info,Proc_info,self.distro_name, self.distro_version))
- 
+         log.info(" Bitness: %s bit\n"%utils.getBitness())
 @@ -328,9 +328,9 @@ class DependenciesCheck(CoreInstall):
                  log.warn("HPLIP-Installation: Auto installation is not supported for %s distro  %s version " %(self.distro_name, self.distro_version))
  

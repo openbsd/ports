@@ -1,12 +1,12 @@
-$OpenBSD: patch-scan_py,v 1.8 2013/03/08 06:51:46 ajacoutot Exp $
---- scan.py.orig	Wed Feb 13 17:38:51 2013
-+++ scan.py	Fri Feb 22 15:05:18 2013
-@@ -1088,7 +1088,7 @@ try:
-                 if hp_print:
-                     cmd = 'hp-print %s &' % output
-                 else:
--                    cmd = "python ./print.py %s &" % output
-+                    cmd = "${MODPY_BIN} ./print.py %s &" % output
- 
-                 os_utils.execute(cmd)
- 
+$OpenBSD: patch-scan_py,v 1.9 2013/05/13 08:34:09 ajacoutot Exp $
+--- scan.py.orig	Mon Apr  8 11:58:45 2013
++++ scan.py	Mon May 13 10:23:46 2013
+@@ -1096,7 +1096,7 @@ try:
+             elif d == 'print':
+                 hp_print = utils.which("hp-print", True)
+                 if not hp_print:
+-                    hp_print = 'python ./print.py'
++                    hp_print = '${MODPY_BIN} ./print.py'
+                  
+                 if dest_printer is not None:
+                    cmd = '%s -p %s %s &' % (hp_print, dest_printer, output)

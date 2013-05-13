@@ -1,7 +1,7 @@
-$OpenBSD: patch-prnt_hpcups_HPCupsFilter_cpp,v 1.9 2013/03/08 06:51:46 ajacoutot Exp $
---- prnt/hpcups/HPCupsFilter.cpp.orig	Wed Feb 13 17:32:39 2013
-+++ prnt/hpcups/HPCupsFilter.cpp	Fri Feb 22 15:05:18 2013
-@@ -868,7 +868,7 @@ void HPCupsFilter::getLogLevel ()
+$OpenBSD: patch-prnt_hpcups_HPCupsFilter_cpp,v 1.10 2013/05/13 08:34:09 ajacoutot Exp $
+--- prnt/hpcups/HPCupsFilter.cpp.orig	Mon Apr  8 11:52:06 2013
++++ prnt/hpcups/HPCupsFilter.cpp	Mon May 13 10:23:18 2013
+@@ -871,7 +871,7 @@ void HPCupsFilter::getLogLevel ()
      FILE    *fp;
      char    str[258];
      char    *p;
