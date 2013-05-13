@@ -1,4 +1,4 @@
-# $OpenBSD: config.site,v 1.22 2012/12/08 14:32:29 naddy Exp $
+# $OpenBSD: config.site,v 1.23 2013/05/13 17:53:54 naddy Exp $
 # Quick start macros for autoconf.
 # XXX kludge for a function we don't actually have.
 #ac_cv_func_getservbyname_r=${ac_cv_func_getservbyname_r=no}
@@ -374,6 +374,7 @@ ac_cv_func_memcmp=${ac_cv_func_memcmp=yes}
 ac_cv_func_memcmp_clean=${ac_cv_func_memcmp_clean=yes}
 ac_cv_func_memcmp_working=${ac_cv_func_memcmp_working=yes}	
 ac_cv_func_memcpy=${ac_cv_func_memcpy=yes}
+ac_cv_func_memmem=${ac_cv_func_memmem=yes}
 ac_cv_func_memmove=${ac_cv_func_memmove=yes}
 ac_cv_func_memset=${ac_cv_func_memset=yes}
 ac_cv_func_mergesort=${ac_cv_func_mergesort=yes}	
