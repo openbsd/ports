@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2011/06/02 13:41:41 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2013/05/13 08:59:26 benoit Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -38,3 +38,10 @@ process:
     $ env LC_CTYPE=en_US.UTF-8 ./manage.py runserver
 
 or configure your application server to pass this setting.
+
+Python 3
+========
+Django 1.5 is the first Django release with support for 
+Python 3 (specifically, Python 3.2 and newer). Python 3 
+support is still considered experimental so please use at 
+your own risk. 

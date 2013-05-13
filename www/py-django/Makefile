@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.27 2013/03/11 11:44:48 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2013/05/13 08:59:22 benoit Exp $
 
 COMMENT =	high-level Python web framework
 
-MODPY_EGG_VERSION =	1.4.5
+MODPY_EGG_VERSION =	1.5.1
 LNAME =			django
 DISTNAME =		Django-${MODPY_EGG_VERSION}
 PKGNAME =		py-${LNAME}-${MODPY_EGG_VERSION}
 CATEGORIES =		www
 
-HOMEPAGE =	http://www.djangoproject.com/
+HOMEPAGE =	https://www.djangoproject.com/
 
 MAINTAINER =	Ryan Boggs <rmboggs@gmail.com>
 
 # BSD License
 PERMIT_PACKAGE_CDROM =		Yes
 
-MASTER_SITES =	${HOMEPAGE}/m/releases/${MODPY_EGG_VERSION:R}/
+MASTER_SITES =	${MASTER_SITE_PYPI:=D/Django/}
 
 MODULES =	lang/python
 
