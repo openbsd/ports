@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.290 2013/04/25 23:01:34 jturner Exp $
+# $OpenBSD: Makefile,v 1.291 2013/05/13 23:17:15 jturner Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -92,6 +92,7 @@
      SUBDIR += milter-regex
      SUBDIR += milter-spamd
      SUBDIR += mimedefang
+     SUBDIR += mimetic
      SUBDIR += mini_sendmail
      SUBDIR += mixmaster
      SUBDIR += mlmmj
