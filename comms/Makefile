@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2013/04/21 11:45:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2013/05/13 18:24:06 sthen Exp $
 
      SUBDIR =
      SUBDIR += amtterm
@@ -9,6 +9,7 @@
      SUBDIR += conserver
      SUBDIR += dfu-util
      SUBDIR += efax
+     SUBDIR += fldigi
      SUBDIR += flipit
      SUBDIR += gmfsk
      SUBDIR += gnokii
