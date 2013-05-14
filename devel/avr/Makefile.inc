@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.8 2011/09/16 10:24:46 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2013/05/14 07:15:18 jasper Exp $
 
-CATEGORIES=	devel devel/avr
+CATEGORIES=	devel
 
 MAINTAINER=	Chris Kuethe <ckuethe@openbsd.org>
 

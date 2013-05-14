@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.23 2013/03/21 08:45:16 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.24 2013/05/14 07:15:18 jasper Exp $
 
 #
 # XXX: Don't forget to adjust meta/msp430 when updating to new LTS
@@ -19,7 +19,7 @@ COMMENT?=		${TOOL} for ${TARGET}
 
 LTS_V?=			20120406
 
-CATEGORIES+=		devel devel/msp430
+CATEGORIES+=		devel
 
 MAINTAINER?=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 

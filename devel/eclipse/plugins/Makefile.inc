@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.6 2013/03/11 10:50:03 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2013/05/14 07:14:20 jasper Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-CATEGORIES+=	devel/eclipse/plugins
+CATEGORIES=	devel
 
 EXTRACT_SUFX?=	.zip
 
