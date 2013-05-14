@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2012/04/06 17:56:03 jasper Exp $
-@lib lib/libyubikey.so.${LIByubikey_VERSION}
