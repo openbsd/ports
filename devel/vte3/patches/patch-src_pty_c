@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_pty_c,v 1.6 2013/03/26 09:43:06 jasper Exp $
---- src/pty.c.orig	Sat Feb 23 22:57:13 2013
-+++ src/pty.c	Tue Mar 26 10:28:39 2013
-@@ -843,11 +843,7 @@ _vte_pty_getpt(GError **error)
+$OpenBSD: patch-src_pty_c,v 1.7 2013/05/14 06:30:54 jasper Exp $
+--- src/pty.c.orig	Mon May 13 19:40:01 2013
++++ src/pty.c	Mon May 13 23:05:08 2013
+@@ -852,11 +852,7 @@ _vte_pty_getpt(GError **error)
  	/* Call the system's function for allocating a pty. */
  	fd = getpt();
  #else
