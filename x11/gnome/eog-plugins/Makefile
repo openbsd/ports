@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.43 2013/03/31 08:23:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2013/05/14 16:57:02 jasper Exp $
 
 COMMENT=		plugins for EOG
 
 GNOME_PROJECT=		eog-plugins
-GNOME_VERSION=		3.8.0
-REVISION=		0
-
+GNOME_VERSION=		3.8.1
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://live.gnome.org/EyeOfGnome/Plugins
