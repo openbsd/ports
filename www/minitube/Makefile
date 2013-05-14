@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/05/14 10:28:17 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.29 2013/05/14 10:36:19 dcoppa Exp $
 
 COMMENT =	standalone YouTube.com video browser/player
 
@@ -33,8 +33,5 @@ NO_TEST =	Yes
 
 do-configure:
 	cd ${WRKDIST} && env -i ${CONFIGURE_ENV} qmake4 PREFIX=${PREFIX}
-
-post-configure:
-	${SUBST_CMD} ${WRKSRC}/src/iconloader/qticonloader.cpp
 
 .include <bsd.port.mk>
