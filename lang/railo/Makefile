@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/19 22:32:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2013/05/14 09:37:17 sthen Exp $
 
 COMMENT=		open-source CFML engine
 
@@ -17,7 +17,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES =		http://www.getrailo.org/down.cfm?item=/railo/remote/download/$V/custom/all/
 
-BUILD_DEPENDS=		archivers/unzip
+# doesn't actually need tomcat to build, but listing it here avoids
+# wasting time on !java arch
+BUILD_DEPENDS=		archivers/unzip \
+			${RUN_DEPENDS}
 RUN_DEPENDS=		tomcat->=7,<8:www/tomcat/v7
 SUBST_VARS=		CATALINA_BASE
 
