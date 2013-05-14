@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2013/03/30 15:18:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2013/05/14 08:59:45 jasper Exp $
 @conflict gnome-panel-*
 @conflict gnome-screensaver-*
 @conflict notification-daemon-*
@@ -27,6 +27,7 @@ share/GConf/gsettings/gnome-shell-overrides.convert
 share/applications/evolution-calendar.desktop
 share/applications/gnome-shell-extension-prefs.desktop
 share/applications/gnome-shell.desktop
+share/dbus-1/interfaces/org.gnome.Shell.Screencast.xml
 share/dbus-1/interfaces/org.gnome.Shell.Screenshot.xml
 share/dbus-1/interfaces/org.gnome.ShellSearchProvider.xml
 share/dbus-1/interfaces/org.gnome.ShellSearchProvider2.xml
@@ -35,7 +36,6 @@ share/dbus-1/services/org.gnome.Shell.HotplugSniffer.service
 share/glib-2.0/schemas/org.gnome.shell.gschema.xml
 share/gnome-control-center/keybindings/50-gnome-shell-screenshot.xml
 share/gnome-control-center/keybindings/50-gnome-shell-system.xml
-share/gnome-shell/
 share/gnome-shell/js/
 share/gnome-shell/js/extensionPrefs/
 share/gnome-shell/js/extensionPrefs/main.js
@@ -109,6 +109,7 @@ share/gnome-shell/js/ui/popupMenu.js
 share/gnome-shell/js/ui/remoteSearch.js
 share/gnome-shell/js/ui/runDialog.js
 share/gnome-shell/js/ui/screenShield.js
+share/gnome-shell/js/ui/screencast.js
 share/gnome-shell/js/ui/screenshot.js
 share/gnome-shell/js/ui/scripting.js
 share/gnome-shell/js/ui/search.js
@@ -280,6 +281,7 @@ share/locale/gu/LC_MESSAGES/gnome-shell.mo
 share/locale/he/LC_MESSAGES/gnome-shell.mo
 share/locale/hi/LC_MESSAGES/gnome-shell.mo
 share/locale/hu/LC_MESSAGES/gnome-shell.mo
+share/locale/ia/LC_MESSAGES/gnome-shell.mo
 share/locale/id/LC_MESSAGES/gnome-shell.mo
 share/locale/it/LC_MESSAGES/gnome-shell.mo
 share/locale/ja/LC_MESSAGES/gnome-shell.mo
