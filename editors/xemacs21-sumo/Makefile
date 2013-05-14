@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/11 11:02:50 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2013/05/14 09:52:43 sthen Exp $
 
 VERSION=		2010-07-27
 PKGNAME=		xemacs-sumo-21.${VERSION:S/-//g}
+REVISION=		0
 DISTFILES=		xemacs-sumo-${VERSION}.tar.gz
 SUP_mule=		xemacs-mule-sumo-${VERSION}.tar.gz
 SUPDISTFILES=		${SUP_mule}
 
-CATEGORIES=     	editors
+CATEGORIES=		editors
 
 HOMEPAGE=		http://www.xemacs.org/
 
@@ -15,12 +16,14 @@ COMMENT=		complete set of supported XEmacs packages
 # GNU GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES= 	http://ftp.xemacs.org/pub/xemacs/packages/ \
+MASTER_SITES=	http://ftp.xemacs.org/pub/xemacs/packages/ \
 		ftp://ftp.oleane.net/pub/xemacs/packages/ \
 		ftp://ftp.pasteur.fr/pub/computing/xemacs/packages/ \
 		ftp://ftp.lab.kdd.co.jp/xemacs/packages/
 
 SEPARATE_BUILD=	Yes
+RUN_DEPENDS=	editors/xemacs21/stable
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MULE=		mule
 SUBST_VARS=	MULE
