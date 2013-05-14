@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/04/25 21:18:41 zhuk Exp $
+# $OpenBSD: Makefile,v 1.29 2013/05/14 09:34:28 zhuk Exp $
 
 # Build dependency tree of main building blocks:
 # OUTSIDE: akonadi, attica, automoc, cagibi, qimageblitz
@@ -232,6 +232,7 @@ SUBDIR += mplayerthumbs
 # additional resources
 SUBDIR += artwork
 SUBDIR += base-artwork
+SUBDIR += l10n
 SUBDIR += nepomuk-widgets
 SUBDIR += plasma-addons
 SUBDIR += wallpapers
