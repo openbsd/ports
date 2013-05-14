@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2013/04/16 13:17:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2013/05/14 07:40:12 jasper Exp $
 
 # XXX Kerberos support is disabled because our Heimdal is too old
 
 COMMENT=	interfaces for interacting with online accounts
 
 GNOME_PROJECT=	gnome-online-accounts
-GNOME_VERSION=	3.8.1
+GNOME_VERSION=	3.8.2
 
 SHARED_LIBS +=  goa-1.0              2.0      # .0.0
 SHARED_LIBS +=  goa-backend-1.0      2.0      # .0.0
@@ -34,7 +34,7 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 # man pages
-BUILD_DEPENDS += textproc/docbook-xsl
+BUILD_DEPENDS += 	textproc/docbook-xsl
 
 LIB_DEPENDS=		devel/json-glib \
 			net/librest \
