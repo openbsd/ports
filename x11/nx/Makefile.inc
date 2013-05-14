@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.10 2013/03/11 11:46:14 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.11 2013/05/14 07:17:54 jasper Exp $
 
 SHARED_ONLY=	Yes
 
-CATEGORIES+=	x11/nx
+CATEGORIES+=	x11
 
 HOMEPAGE?=	http://www.nomachine.com/
 
