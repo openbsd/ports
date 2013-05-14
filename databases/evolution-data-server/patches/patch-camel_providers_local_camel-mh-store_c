@@ -1,0 +1,28 @@
+$OpenBSD: patch-camel_providers_local_camel-mh-store_c,v 1.1 2013/05/14 11:01:43 ajacoutot Exp $
+
+From 25e799bf87244f73d7830f661b40867981a7aac2 Mon Sep 17 00:00:00 2001
+From: Milan Crha <mcrha@redhat.com>
+Date: Mon, 13 May 2013 17:11:46 +0000
+Subject: Camel MH provider can deadlock on folder creation
+
+--- camel/providers/local/camel-mh-store.c.orig	Wed May  8 14:14:45 2013
++++ camel/providers/local/camel-mh-store.c	Tue May 14 12:13:46 2013
+@@ -188,18 +188,10 @@ fill_fi (CamelStore *store,
+ 	local_store = CAMEL_LOCAL_STORE (store);
+ 	folder = camel_object_bag_peek (store->folders, fi->full_name);
+ 
+-	if (folder == NULL
+-	    && (flags & CAMEL_STORE_FOLDER_INFO_FAST) == 0)
+-		folder = camel_store_get_folder_sync (
+-			store, fi->full_name, 0, cancellable, NULL);
+-
+ 	if (folder != NULL) {
+-		if ((flags & CAMEL_STORE_FOLDER_INFO_FAST) == 0)
+-			camel_folder_refresh_info_sync (folder, cancellable, NULL);
+ 		fi->unread = camel_folder_get_unread_message_count (folder);
+ 		fi->total = camel_folder_get_message_count (folder);
+ 		g_object_unref (folder);
+-
+ 	} else {
+ 		CamelLocalSettings *local_settings;
+ 		CamelSettings *settings;
