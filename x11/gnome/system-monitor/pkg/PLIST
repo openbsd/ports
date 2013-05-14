@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/03/29 18:13:11 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2013/05/14 06:46:08 jasper Exp $
 @bin bin/gnome-system-monitor
 libexec/gnome-system-monitor/
 @bin libexec/gnome-system-monitor/gsm-kill
@@ -468,8 +468,6 @@ share/pixmaps/gnome-system-monitor/
 share/pixmaps/gnome-system-monitor/download.svg
 share/pixmaps/gnome-system-monitor/side.png
 share/pixmaps/gnome-system-monitor/upload.svg
-share/polkit-1/
-share/polkit-1/actions/
 share/polkit-1/actions/org.gnome.gnome-system-monitor.policy
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
