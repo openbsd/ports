@@ -1,0 +1,5 @@
+This module is a Perl Email Project rewrite of SpamAssassin's
+email header parser.  We did this so that the great work they
+did in analysing pretty much every possible Received header
+format could be used in applications other than SpamAssassin
+itself.

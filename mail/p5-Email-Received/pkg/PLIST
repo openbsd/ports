@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/05/14 04:14:47 mglocker Exp $
+${P5SITE}/Email/
+${P5SITE}/Email/Received/
+${P5SITE}/Email/Received.pm
+${P5SITE}/Email/Received/Constants.pm
+@man man/man3p/Email::Received.3p
