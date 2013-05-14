@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/03/30 10:05:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/05/14 07:36:13 jasper Exp $
 @conflict metacity-*
 @pkgpath x11/gnome/metacity
 @bin bin/mutter
@@ -41,6 +41,7 @@ lib/mutter/Meta-3.0.gir
 lib/mutter/Meta-3.0.typelib
 lib/mutter/plugins/
 lib/mutter/plugins/default.so
+lib/pkgconfig/
 lib/pkgconfig/libmutter.pc
 lib/pkgconfig/mutter-plugins.pc
 @man man/man1/mutter-message.1
@@ -50,6 +51,7 @@ lib/pkgconfig/mutter-plugins.pc
 share/GConf/gsettings/mutter-schemas.convert
 share/applications/mutter.desktop
 share/glib-2.0/schemas/org.gnome.mutter.gschema.xml
+share/gnome/
 share/gnome-control-center/
 share/gnome-control-center/keybindings/
 share/gnome-control-center/keybindings/50-mutter-navigation.xml
@@ -179,6 +181,8 @@ share/locale/ta/LC_MESSAGES/mutter.mo
 share/locale/te/LC_MESSAGES/mutter.mo
 share/locale/tg/LC_MESSAGES/mutter.mo
 share/locale/th/LC_MESSAGES/mutter.mo
+share/locale/tk/
+share/locale/tk/LC_MESSAGES/
 share/locale/tk/LC_MESSAGES/mutter.mo
 share/locale/tr/LC_MESSAGES/mutter.mo
 share/locale/ug/LC_MESSAGES/mutter.mo
