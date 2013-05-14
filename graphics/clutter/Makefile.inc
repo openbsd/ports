@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.14 2013/03/28 19:33:34 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.15 2013/05/14 07:15:58 jasper Exp $
 
 SHARED_ONLY?=		Yes
 
 DIST_SUBDIR=		clutter
 
-CATEGORIES+=		graphics/clutter x11
+CATEGORIES+=		graphics x11
 
 HOMEPAGE?=		http://www.clutter-project.org/
 
