@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/24 19:21:09 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/05/14 12:04:55 zhuk Exp $
 
 CATEGORIES =	productivity
 COMMENT =	link Akonadi to Google services
 V =		0.4.0
 DISTNAME =	libkgapi-$V
+REVISION =	0
 
 EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/libkgapi/$V/src/}
