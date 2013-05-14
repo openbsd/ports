@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.291 2013/05/13 23:11:52 jturner Exp $
+# $OpenBSD: Makefile,v 1.292 2013/05/14 13:51:12 jturner Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -10,7 +10,6 @@
      SUBDIR += apcd
      SUBDIR += augeas
      SUBDIR += autossh
-     SUBDIR += backdir
      SUBDIR += backuppc
      SUBDIR += bacula,mysql
      SUBDIR += bacula,pgsql
