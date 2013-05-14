@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/11/08 21:46:21 sthen Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.3 2013/05/14 23:50:22 sthen Exp $
 @bin bin/ykchalresp
 @bin bin/ykinfo
 @bin bin/ykpersonalize
@@ -7,10 +6,12 @@ include/ykpers-1/
 include/ykpers-1/ykcore.h
 include/ykpers-1/ykdef.h
 include/ykpers-1/ykpbkdf2.h
+include/ykpers-1/ykpers-version.h
 include/ykpers-1/ykpers.h
 include/ykpers-1/ykstatus.h
 lib/libykpers-1.a
 lib/libykpers-1.la
+@lib lib/libykpers-1.so.${LIBykpers-1_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/ykpers-1.pc
 @man man/man1/ykchalresp.1

@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/21 08:48:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2013/05/14 23:50:22 sthen Exp $
 
 COMMENT=	library and tools to program YubiKeys
 
-DISTNAME=	ykpers-1.9.0
-REVISION=	0
+DISTNAME=	ykpers-1.13.0
 
-SHARED_LIBS +=	ykpers-1                  0.0 # 7.3
+SHARED_LIBS +=	ykpers-1                  0.1 # 14.0
 
 CATEGORIES=	sysutils security
 
-HOMEPAGE=	http://code.google.com/p/yubikey-personalization/
+HOMEPAGE=	http://yubico.github.io/yubikey-personalization/
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
@@ -18,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c pthread usb-1.0 yubikey
 
-MASTER_SITES=	http://yubikey-personalization.googlecode.com/files/
+MASTER_SITES=	http://yubico.github.io/yubikey-personalization/releases/
 
 LIB_DEPENDS=	devel/libyubikey \
 		devel/libusb1>=1.0.9p1

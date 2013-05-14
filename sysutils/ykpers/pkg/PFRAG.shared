@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2012/06/20 15:34:47 sthen Exp $
-@lib lib/libykpers-1.so.${LIBykpers-1_VERSION}
