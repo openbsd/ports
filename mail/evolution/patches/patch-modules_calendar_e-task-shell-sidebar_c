@@ -1,0 +1,20 @@
+$OpenBSD: patch-modules_calendar_e-task-shell-sidebar_c,v 1.1 2013/05/14 12:36:36 ajacoutot Exp $
+
+From f0ee8d9c24fc1725408ddcddb68a6938562749cc Mon Sep 17 00:00:00 2001
+From: Milan Crha <mcrha@redhat.com>
+Date: Tue, 14 May 2013 10:02:32 +0000
+Subject: Bug #699980 - Calendar delete does not remove events from view
+
+--- modules/calendar/e-task-shell-sidebar.c.orig	Wed May  8 14:02:53 2013
++++ modules/calendar/e-task-shell-sidebar.c	Tue May 14 13:58:48 2013
+@@ -386,6 +386,10 @@ task_shell_sidebar_restore_state_cb (EShellWindow *she
+ 	model = gtk_tree_view_get_model (GTK_TREE_VIEW (selector));
+ 
+ 	g_signal_connect_swapped (
++		registry, "source-removed",
++		G_CALLBACK (e_task_shell_sidebar_remove_source), shell_sidebar);
++
++	g_signal_connect_swapped (
+ 		model, "row-changed",
+ 		G_CALLBACK (task_shell_sidebar_row_changed_cb),
+ 		shell_sidebar);

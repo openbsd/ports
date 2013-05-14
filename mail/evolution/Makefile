@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.196 2013/05/12 15:31:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.197 2013/05/14 12:36:36 ajacoutot Exp $
 
 # XXX textproc/highlight
 
@@ -12,6 +12,8 @@ GNOME_VERSION=		3.8.2
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}
+
+REVISION-main=		0
 
 # NOTE: when R changes, increment EVO_VERSION accordingly and bump:
 # mail/evolution-ews
@@ -38,7 +40,7 @@ WANTLIB-main += gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3 goa-1.0
 WANTLIB-main += gobject-2.0 gstreamer-1.0 gtk-3 gtkhtml-4.0 gtkhtml-editor-4.0
 WANTLIB-main += gweather-3 ical icalvcal ldap-2.4 m notify nspr4 nss3
 WANTLIB-main += pango-1.0 pangocairo-1.0 plc4 pthread secret-1 smime3
-WANTLIB-main += soup-2.4 soup-gnome-2.4 webkitgtk-3.0 xml2
+WANTLIB-main += soup-2.4 soup-gnome-2.4 webkitgtk-3.0 xml2 krb5
 
 WANTLIB-plugins += ${WANTLIB}
 WANTLIB-plugins += camel-1.2 canberra ebook-1.2 ebook-contacts-1.2 ecal-1.2
