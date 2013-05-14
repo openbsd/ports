@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile.inc,v 1.1 2011/11/12 16:38:08 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2013/05/14 08:10:15 jasper Exp $
 
 CATEGORIES=	meta
 DISTFILES=	# empty
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 PKG_ARCH=	*
 
 # MIT
