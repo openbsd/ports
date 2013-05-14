@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.1 2013/03/12 07:33:14 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2013/05/14 07:17:28 jasper Exp $
 
 PKGNAME ?=	erl-${DISTNAME}
 
-CATEGORIES +=	sysutils/erchef
+CATEGORIES +=	sysutils
 
 MASTER_SITES ?=	http://distfiles.nl/
 
