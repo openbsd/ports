@@ -1,4 +1,4 @@
-# $OpenBSD: BSDmakefile,v 1.6 2013/05/05 20:51:40 edd Exp $
+# $OpenBSD: BSDmakefile,v 1.7 2013/05/14 14:31:30 edd Exp $
 # Arduino Makefile
 # Arduino adaptation by mellis, eighthave, oli.keller
 #
@@ -32,7 +32,7 @@
 #  6. Type "make upload", reset your Arduino board, and press enter to
 #     upload your program to the Arduino board.
 #
-# $Id: BSDmakefile,v 1.6 2013/05/05 20:51:40 edd Exp $
+# $Id: BSDmakefile,v 1.7 2013/05/14 14:31:30 edd Exp $
 
 TARGET = ${.CURDIR:C/.*\///g}
 
@@ -204,7 +204,7 @@ ELFSIZE = $(SIZE)  applet/$(TARGET).elf
 sizebefore:
 	@if [ -f applet/$(TARGET).elf ]; then echo; echo $(MSG_SIZE_BEFORE); $(HEXSIZE); echo; fi
 
-sizeafter:
+sizeafter: applet/$(TARGET).hex
 	@if [ -f applet/$(TARGET).elf ]; then echo; echo $(MSG_SIZE_AFTER); $(HEXSIZE); echo; fi
 
 
