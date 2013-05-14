@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/25 00:14:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2013/05/14 09:57:27 sthen Exp $
 
 PKG_ARCH=	*
 
@@ -19,6 +19,8 @@ NO_BUILD=	Yes
 NO_TEST=	Yes
 
 RUN_DEPENDS=	games/scummvm>=0.5.1
+# don't waste time building on arch where scummvm doesn't build
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/bass

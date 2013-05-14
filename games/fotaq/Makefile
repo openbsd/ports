@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/25 00:14:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2013/05/14 09:57:27 sthen Exp $
 
 PKG_ARCH=	*
 
@@ -19,6 +19,8 @@ NO_BUILD=	Yes
 NO_TEST=	Yes
 
 RUN_DEPENDS=	games/scummvm>=0.6.0
+# don't waste time building on arch where scummvm doesn't build
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/fotaq
