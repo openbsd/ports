@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2013/04/18 20:29:08 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.17 2013/05/14 18:41:14 brad Exp $
 @conflict zebra-*
 @newgroup _quagga:525
 @newuser _quagga:525:_quagga:daemon:Quagga Account:/nonexistent:/sbin/nologin
@@ -90,59 +90,59 @@ share/doc/quagga/README
 share/doc/quagga/SERVICES
 share/examples/quagga/
 share/examples/quagga/babeld.conf.sample
+@mode 750
 @owner _quagga
 @group _quagga
-@mode 750
 @sample ${SYSCONFDIR}/
 @mode
 @sample ${SYSCONFDIR}/babeld.conf
-@group
 @owner
+@group
 share/examples/quagga/bgpd.conf.sample
 @owner _quagga
 @group _quagga
 @sample ${SYSCONFDIR}/bgpd.conf
-@group
 @owner
+@group
 share/examples/quagga/bgpd.conf.sample2
 share/examples/quagga/ospf6d.conf.sample
 @owner _quagga
 @group _quagga
 @sample ${SYSCONFDIR}/ospf6d.conf
-@group
 @owner
+@group
 share/examples/quagga/ospfd.conf.sample
 @owner _quagga
 @group _quagga
 @sample ${SYSCONFDIR}/ospfd.conf
-@group
 @owner
+@group
 share/examples/quagga/ripd.conf.sample
 @owner _quagga
 @group _quagga
 @sample ${SYSCONFDIR}/ripd.conf
-@group
 @owner
+@group
 share/examples/quagga/ripngd.conf.sample
 @owner _quagga
 @group _quagga
 @sample ${SYSCONFDIR}/ripngd.conf
-@group
 @owner
+@group
 share/examples/quagga/vtysh.conf.sample
 @owner _quagga
 @group _quagga
 @sample ${SYSCONFDIR}/vtysh.conf
-@group
 @owner
+@group
 share/examples/quagga/zebra.conf.sample
 @owner _quagga
 @group _quagga
 @sample ${SYSCONFDIR}/zebra.conf
 @sample ${LOCALSTATEDIR}/
 @sample /var/log/quagga/
-@group
 @owner
+@group
 @rcscript ${RCDIR}/quagga_babeld
 @rcscript ${RCDIR}/quagga_bgpd
 @rcscript ${RCDIR}/quagga_ospf6d
