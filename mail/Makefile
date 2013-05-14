@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.291 2013/05/13 23:17:15 jturner Exp $
+# $OpenBSD: Makefile,v 1.292 2013/05/14 04:55:17 mglocker Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -121,6 +121,7 @@
      SUBDIR += p5-Email-MIME-ContentType
      SUBDIR += p5-Email-MIME-Encodings
      SUBDIR += p5-Email-MessageID
+     SUBDIR += p5-Email-Received
      SUBDIR += p5-Email-Reply
      SUBDIR += p5-Email-Send
      SUBDIR += p5-Email-Sender
