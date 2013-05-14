@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.69 2013/04/16 06:42:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.70 2013/05/14 07:28:35 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
-GNOME_VERSION=	3.2.1
+GNOME_VERSION=	3.2.2
 
 API_V=		${GNOME_VERSION:R}
 SUBST_VARS=	API_V
