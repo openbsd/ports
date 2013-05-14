@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/24 11:41:12 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:26 zhuk Exp $
 
 COMMENT =	KDE Activity rooms management
 DISTNAME =	kactivities-${MODKDE4_VERSION}
 
-SHARED_LIBS =	kactivities	0.0 # 6.0
+SHARED_LIBS =	kactivities	50.0 # 6.0
 
 WANTLIB =  c m pthread
 WANTLIB += ICE SM X11 Xext

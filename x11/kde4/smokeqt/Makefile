@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/24 19:06:07 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:29 zhuk Exp $
 
 CATEGORIES =	devel
 COMMENT =	introspective wrappers around Qt
@@ -13,27 +13,27 @@ WANTLIB += lib/qt4/QtXml lib/qt4/QtXmlPatterns lib/qt4/phonon
 WANTLIB += qimageblitz smokebase
 WANTLIB += qscintilla2 qwt
 
-SHARED_LIBS =	smokephonon		0.0 # 3.0
-SHARED_LIBS +=	smokeqimageblitz	0.0 # 3.0
-SHARED_LIBS +=	smokeqsci		0.0 # 3.0
-SHARED_LIBS +=	smokeqt3support		0.0 # 3.0
-SHARED_LIBS +=	smokeqtcore		0.0 # 3.0
-SHARED_LIBS +=	smokeqtdbus		0.0 # 3.0
-SHARED_LIBS +=	smokeqtdeclarative	0.0 # 3.0
-SHARED_LIBS +=	smokeqtgui		0.0 # 3.0
-SHARED_LIBS +=	smokeqthelp		0.0 # 3.0
-SHARED_LIBS +=	smokeqtmultimedia	0.0 # 3.0
-SHARED_LIBS +=	smokeqtnetwork		0.0 # 3.0
-SHARED_LIBS +=	smokeqtopengl		0.0 # 3.0
-SHARED_LIBS +=	smokeqtscript		0.0 # 3.0
-SHARED_LIBS +=	smokeqtsql		0.0 # 3.0
-SHARED_LIBS +=	smokeqtsvg		0.0 # 3.0
-SHARED_LIBS +=	smokeqttest		0.0 # 3.0
-SHARED_LIBS +=	smokeqtuitools		0.0 # 3.0
-SHARED_LIBS +=	smokeqtwebkit		0.0 # 3.0
-SHARED_LIBS +=	smokeqtxml		0.0 # 3.0
-SHARED_LIBS +=	smokeqtxmlpatterns	0.0 # 3.0
-SHARED_LIBS +=	smokeqwt		0.0 # 3.0
+SHARED_LIBS =	smokephonon		50.0 # 3.0
+SHARED_LIBS +=	smokeqimageblitz	50.0 # 3.0
+SHARED_LIBS +=	smokeqsci		50.0 # 3.0
+SHARED_LIBS +=	smokeqt3support		50.0 # 3.0
+SHARED_LIBS +=	smokeqtcore		50.0 # 3.0
+SHARED_LIBS +=	smokeqtdbus		50.0 # 3.0
+SHARED_LIBS +=	smokeqtdeclarative	50.0 # 3.0
+SHARED_LIBS +=	smokeqtgui		50.0 # 3.0
+SHARED_LIBS +=	smokeqthelp		50.0 # 3.0
+SHARED_LIBS +=	smokeqtmultimedia	50.0 # 3.0
+SHARED_LIBS +=	smokeqtnetwork		50.0 # 3.0
+SHARED_LIBS +=	smokeqtopengl		50.0 # 3.0
+SHARED_LIBS +=	smokeqtscript		50.0 # 3.0
+SHARED_LIBS +=	smokeqtsql		50.0 # 3.0
+SHARED_LIBS +=	smokeqtsvg		50.0 # 3.0
+SHARED_LIBS +=	smokeqttest		50.0 # 3.0
+SHARED_LIBS +=	smokeqtuitools		50.0 # 3.0
+SHARED_LIBS +=	smokeqtwebkit		50.0 # 3.0
+SHARED_LIBS +=	smokeqtxml		50.0 # 3.0
+SHARED_LIBS +=	smokeqtxmlpatterns	50.0 # 3.0
+SHARED_LIBS +=	smokeqwt		50.0 # 3.0
 
 MODKDE4_USE =
 

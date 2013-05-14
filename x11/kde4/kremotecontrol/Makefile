@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/24 12:19:13 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:27 zhuk Exp $
 
 COMMENT =	KDE frontend for remote controls
 DISTNAME =	kremotecontrol-${MODKDE4_VERSION}
 
-SHARED_LIBS =	libkremotecontrol	0.0 # 1.0
+SHARED_LIBS =	libkremotecontrol	50.0 # 1.0
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += X11 Xtst

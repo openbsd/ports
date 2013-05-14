@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/24 12:16:10 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:27 zhuk Exp $
 
 COMMENT =	mini-golf simulator game for KDE
 DISTNAME =	kolf-${MODKDE4_VERSION}
 
-SHARED_LIBS =	kolfprivate		0.0  # 4.10
+SHARED_LIBS =	kolfprivate		50.0  # 4.10
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg

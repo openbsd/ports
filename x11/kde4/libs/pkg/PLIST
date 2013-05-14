@@ -1,4 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/04/24 19:45:29 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.10 2013/05/14 09:16:28 zhuk Exp $
+@option no-default-conflict
+@conflict kdelibs->=4
+@conflict kdebase-<4
+@conflict kdebindings-<4
 bin/checkXML
 @bin bin/kbuildsycoca4
 @bin bin/kconfig_compiler

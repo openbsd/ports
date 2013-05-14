@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/24 18:25:31 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:28 zhuk Exp $
 
 COMMENT =	KDE libraries for education apps
 DISTNAME =	libkdeedu-${MODKDE4_VERSION}
 
-SHARED_LIBS =	keduvocdocument		0.0 # 4.7
+SHARED_LIBS =	keduvocdocument		50.0 # 4.7
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg

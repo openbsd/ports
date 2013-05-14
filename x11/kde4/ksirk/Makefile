@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/24 12:30:36 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:27 zhuk Exp $
 
 COMMENT =	strategy game for KDE
 DISTNAME =	ksirk-${MODKDE4_VERSION}
 
-SHARED_LIBS =	iris_ksirk		0.0  # 4.10
+SHARED_LIBS =	iris_ksirk		50.0  # 4.10
 
 WANTLIB =  c m pthread stdc++ z
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui

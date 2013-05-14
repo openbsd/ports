@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/24 12:16:58 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:27 zhuk Exp $
 
 COMMENT =	KDE raster image editor
 DISTNAME =	kolourpaint-${MODKDE4_VERSION}
 
-SHARED_LIBS =	kolourpaint_lgpl	0.0	# 4.7
+SHARED_LIBS =	kolourpaint_lgpl	50.0	# 4.7
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork

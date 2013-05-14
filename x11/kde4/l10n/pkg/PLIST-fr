@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-fr,v 1.1.1.1 2013/04/24 18:23:43 zhuk Exp $
+@comment $OpenBSD: PLIST-fr,v 1.2 2013/05/14 09:16:27 zhuk Exp $
 share/apps/
 share/apps/autocorrect/
 share/apps/autocorrect/fr.xml
@@ -1632,6 +1632,10 @@ share/doc/HTML/fr/marble/routing-5.png
 share/doc/HTML/fr/marble/routing-6.png
 share/doc/HTML/fr/marble/search-1.png
 share/doc/HTML/fr/marble/search-2.png
+share/doc/HTML/fr/okteta/
+share/doc/HTML/fr/okteta/common
+share/doc/HTML/fr/okteta/index.cache.bz2
+share/doc/HTML/fr/okteta/index.docbook
 share/doc/HTML/fr/okular/
 share/doc/HTML/fr/okular/annotation-properties.png
 share/doc/HTML/fr/okular/annotations.png
@@ -1737,6 +1741,10 @@ share/doc/HTML/fr/plasma-desktop/
 share/doc/HTML/fr/plasma-desktop/common
 share/doc/HTML/fr/plasma-desktop/index.cache.bz2
 share/doc/HTML/fr/plasma-desktop/index.docbook
+share/doc/HTML/fr/rocs/
+share/doc/HTML/fr/rocs/common
+share/doc/HTML/fr/rocs/index.cache.bz2
+share/doc/HTML/fr/rocs/index.docbook
 share/doc/HTML/fr/sonnet/
 share/doc/HTML/fr/sonnet/common
 share/doc/HTML/fr/sonnet/index.cache.bz2
@@ -1917,7 +1925,6 @@ share/locale/fr/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/fr/LC_MESSAGES/kcm_emoticons.mo
 share/locale/fr/LC_MESSAGES/kcm_infobase.mo
 share/locale/fr/LC_MESSAGES/kcm_infosummary.mo
-share/locale/fr/LC_MESSAGES/kcm_krfb.mo
 share/locale/fr/LC_MESSAGES/kcm_kwindesktop.mo
 share/locale/fr/LC_MESSAGES/kcm_kwintabbox.mo
 share/locale/fr/LC_MESSAGES/kcm_memory.mo
@@ -2038,7 +2045,6 @@ share/locale/fr/LC_MESSAGES/kig.mo
 share/locale/fr/LC_MESSAGES/kigo.mo
 share/locale/fr/LC_MESSAGES/killbots.mo
 share/locale/fr/LC_MESSAGES/kimagemapeditor.mo
-share/locale/fr/LC_MESSAGES/kinetd.mo
 share/locale/fr/LC_MESSAGES/kinfocenter.mo
 share/locale/fr/LC_MESSAGES/kio4.mo
 share/locale/fr/LC_MESSAGES/kio_activities.mo

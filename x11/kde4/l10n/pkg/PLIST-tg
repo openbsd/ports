@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tg,v 1.1.1.1 2013/04/24 18:23:58 zhuk Exp $
+@comment $OpenBSD: PLIST-tg,v 1.2 2013/05/14 09:16:28 zhuk Exp $
 share/apps/
 share/apps/khangman/
 share/apps/khangman/tg.txt
@@ -8,8 +8,6 @@ share/apps/kvtml/tg/animals.kvtml
 share/apps/kvtml/tg/easy.kvtml
 share/apps/kvtml/tg/hard.kvtml
 share/apps/kvtml/tg/medium.kvtml
-share/locale/tg/
-share/locale/tg/LC_MESSAGES/
 share/locale/tg/LC_MESSAGES/adblock.mo
 share/locale/tg/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/tg/LC_MESSAGES/amor.mo
@@ -73,7 +71,6 @@ share/locale/tg/LC_MESSAGES/kcm_autostart.mo
 share/locale/tg/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/tg/LC_MESSAGES/kcm_desktopthemedetails.mo
 share/locale/tg/LC_MESSAGES/kcm_emoticons.mo
-share/locale/tg/LC_MESSAGES/kcm_krfb.mo
 share/locale/tg/LC_MESSAGES/kcm_kwindesktop.mo
 share/locale/tg/LC_MESSAGES/kcm_memory.mo
 share/locale/tg/LC_MESSAGES/kcm_nepomuk.mo
@@ -178,7 +175,6 @@ share/locale/tg/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/tg/LC_MESSAGES/kiconfinder.mo
 share/locale/tg/LC_MESSAGES/kig.mo
 share/locale/tg/LC_MESSAGES/kimagemapeditor.mo
-share/locale/tg/LC_MESSAGES/kinetd.mo
 share/locale/tg/LC_MESSAGES/kinfocenter.mo
 share/locale/tg/LC_MESSAGES/kio4.mo
 share/locale/tg/LC_MESSAGES/kio_applications.mo

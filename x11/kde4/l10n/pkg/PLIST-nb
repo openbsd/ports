@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-nb,v 1.1.1.1 2013/04/24 18:23:50 zhuk Exp $
+@comment $OpenBSD: PLIST-nb,v 1.2 2013/05/14 09:16:28 zhuk Exp $
 share/apps/
 share/apps/katepart/
 share/apps/katepart/syntax/
@@ -340,7 +340,6 @@ share/locale/nb/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/nb/LC_MESSAGES/kcm_emoticons.mo
 share/locale/nb/LC_MESSAGES/kcm_infobase.mo
 share/locale/nb/LC_MESSAGES/kcm_infosummary.mo
-share/locale/nb/LC_MESSAGES/kcm_krfb.mo
 share/locale/nb/LC_MESSAGES/kcm_kwindesktop.mo
 share/locale/nb/LC_MESSAGES/kcm_kwintabbox.mo
 share/locale/nb/LC_MESSAGES/kcm_memory.mo
@@ -461,7 +460,6 @@ share/locale/nb/LC_MESSAGES/kig.mo
 share/locale/nb/LC_MESSAGES/kigo.mo
 share/locale/nb/LC_MESSAGES/killbots.mo
 share/locale/nb/LC_MESSAGES/kimagemapeditor.mo
-share/locale/nb/LC_MESSAGES/kinetd.mo
 share/locale/nb/LC_MESSAGES/kinfocenter.mo
 share/locale/nb/LC_MESSAGES/kio4.mo
 share/locale/nb/LC_MESSAGES/kio_activities.mo
@@ -708,6 +706,7 @@ share/locale/nb/LC_MESSAGES/nepomukbackup.mo
 share/locale/nb/LC_MESSAGES/nepomukcleaner.mo
 share/locale/nb/LC_MESSAGES/nepomukcontroller.mo
 share/locale/nb/LC_MESSAGES/nepomukfileindexer.mo
+share/locale/nb/LC_MESSAGES/nepomukpimindexerutility.mo
 share/locale/nb/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/nb/LC_MESSAGES/nepomukserver.mo
 share/locale/nb/LC_MESSAGES/nepomukservicestub.mo

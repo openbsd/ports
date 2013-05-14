@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 18:44:28 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/05/14 09:16:29 zhuk Exp $
 @bin bin/rocs
 include/kde4/rocs/
 include/kde4/rocs/CoreTypes.h
@@ -55,8 +55,6 @@ share/apps/rocs/icons/hicolor/16x16/actions/rocsaligntree.png
 share/apps/rocs/icons/hicolor/16x16/actions/rocsalignvmiddle.png
 share/apps/rocs/icons/hicolor/16x16/actions/rocsselect.png
 share/apps/rocs/icons/hicolor/16x16/actions/rocsselectmove.png
-share/apps/rocs/icons/hicolor/16x16/apps/
-share/apps/rocs/icons/hicolor/16x16/apps/rocs.png
 share/apps/rocs/icons/hicolor/22x22/
 share/apps/rocs/icons/hicolor/22x22/actions/
 share/apps/rocs/icons/hicolor/22x22/actions/rocsaddedge.png
@@ -83,8 +81,6 @@ share/apps/rocs/icons/hicolor/32x32/actions/rocsaligntree.png
 share/apps/rocs/icons/hicolor/32x32/actions/rocsalignvmiddle.png
 share/apps/rocs/icons/hicolor/32x32/actions/rocsselect.png
 share/apps/rocs/icons/hicolor/32x32/actions/rocsselectmove.png
-share/apps/rocs/icons/hicolor/32x32/apps/
-share/apps/rocs/icons/hicolor/32x32/apps/rocs.png
 share/apps/rocs/icons/hicolor/48x48/
 share/apps/rocs/icons/hicolor/48x48/actions/
 share/apps/rocs/icons/hicolor/48x48/actions/rocsaddedge.png
@@ -97,8 +93,6 @@ share/apps/rocs/icons/hicolor/48x48/actions/rocsaligntop.png
 share/apps/rocs/icons/hicolor/48x48/actions/rocsaligntree.png
 share/apps/rocs/icons/hicolor/48x48/actions/rocsalignvmiddle.png
 share/apps/rocs/icons/hicolor/48x48/actions/rocsselectmove.png
-share/apps/rocs/icons/hicolor/48x48/apps/
-share/apps/rocs/icons/hicolor/48x48/apps/rocs.png
 share/apps/rocs/icons/hicolor/64x64/
 share/apps/rocs/icons/hicolor/64x64/actions/
 share/apps/rocs/icons/hicolor/64x64/actions/rocsaddedge.png
@@ -156,6 +150,9 @@ share/doc/HTML/en/rocs/rocs-interfaces.png
 share/doc/HTML/en/rocs/rocs-screenshot.png
 share/doc/HTML/en/rocs/rocs-toolbar-alignment.png
 share/doc/HTML/en/rocs/rocs-toolbar-main.png
+share/icons/hicolor/16x16/apps/rocs.png
+share/icons/hicolor/32x32/apps/rocs.png
+share/icons/hicolor/48x48/apps/rocs.png
 share/kde4/services/rocs_GraphStructure.desktop
 share/kde4/services/rocs_ListStructure.desktop
 share/kde4/services/rocs_RootedTreeStructure.desktop

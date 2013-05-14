@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/24 11:31:00 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:25 zhuk Exp $
 
 COMMENT =	KDE mathematical applications
 DISTNAME =	cantor-${MODKDE4_VERSION}
@@ -6,8 +6,8 @@ DISTNAME =	cantor-${MODKDE4_VERSION}
 # Bogus message about "backend /usr/local/bin/latex" at startup when no
 # backend is choosen on the command line.
 
-SHARED_LIBS =  cantorlibs                0.0 # 0.0
-SHARED_LIBS += cantor_config             0.0 # 0.0
+SHARED_LIBS =  cantorlibs                50.0 # 0.0
+SHARED_LIBS += cantor_config             50.0 # 0.0
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg

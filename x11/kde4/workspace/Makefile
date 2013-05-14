@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/24 19:17:42 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:29 zhuk Exp $
 
 COMMENT =	KDE workspace
 DISTNAME =	kde-workspace-${MODKDE4_VERSION}
@@ -13,36 +13,36 @@ DISTNAME =	kde-workspace-${MODKDE4_VERSION}
 # env, filters: 233, syscall: native-setlogin(50), args: 4
 # -- Performing Test HAVE_SETLOGIN - Success
 
-SHARED_LIBS =	kdecorations			0.0 # 4.7
-SHARED_LIBS +=	kephal				0.0 # 4.7
-SHARED_LIBS +=	kfontinst			0.0 # 4.7
-SHARED_LIBS +=	kfontinstui			0.0 # 4.7
-SHARED_LIBS +=	khotkeysprivate			0.0 # 4.7
-SHARED_LIBS +=	kickoff				0.0
-SHARED_LIBS +=	kscreensaver			0.0 # 5.0
-SHARED_LIBS +=	ksgrd				0.0 # 4.7
-SHARED_LIBS +=	ksignalplotter			0.0 # 4.7
-SHARED_LIBS +=	kwineffects			0.0 # 1.0
-SHARED_LIBS +=	kwinnvidiahack			0.0 # 4.7
-SHARED_LIBS +=  kwinglutils			0.0 # 1.0
-SHARED_LIBS +=	kworkspace			0.0 # 4.7
-SHARED_LIBS +=	lsofui				0.0 # 4.7
-SHARED_LIBS +=	oxygenstyle			0.0 # 4.7
-SHARED_LIBS +=	oxygenstyleconfig		0.0 # 4.7
-SHARED_LIBS +=	plasma-geolocation-interface	0.0 # 4.7
-SHARED_LIBS +=	plasma_applet-system-monitor	0.0 # 4.7
-SHARED_LIBS +=	plasmaclock			0.0 # 4.7
-SHARED_LIBS +=	plasmagenericshell		0.0 # 4.7
-SHARED_LIBS +=	powerdevilconfigcommonprivate	0.0 # 0.1
-SHARED_LIBS +=	powerdevilcore			0.0 # 0.1
-SHARED_LIBS +=	powerdevilui			0.0
-SHARED_LIBS +=	processcore			0.0 # 4.7
-SHARED_LIBS +=	processui			0.0 # 4.7
-SHARED_LIBS +=	solidcontrol			0.0 # 4.7
-SHARED_LIBS +=	solidcontrolifaces		0.0 # 4.7
-SHARED_LIBS +=	systemsettingsview		0.0
-SHARED_LIBS +=	taskmanager			0.0 # 4.7
-SHARED_LIBS +=	weather_ion			0.0 # 6.0
+SHARED_LIBS =	kdecorations			50.0 # 4.7
+SHARED_LIBS +=	kephal				50.0 # 4.7
+SHARED_LIBS +=	kfontinst			50.0 # 4.7
+SHARED_LIBS +=	kfontinstui			50.0 # 4.7
+SHARED_LIBS +=	khotkeysprivate			50.0 # 4.7
+SHARED_LIBS +=	kickoff				50.0
+SHARED_LIBS +=	kscreensaver			50.0 # 5.0
+SHARED_LIBS +=	ksgrd				50.0 # 4.7
+SHARED_LIBS +=	ksignalplotter			50.0 # 4.7
+SHARED_LIBS +=	kwineffects			50.0 # 1.0
+SHARED_LIBS +=	kwinnvidiahack			50.0 # 4.7
+SHARED_LIBS +=  kwinglutils			50.0 # 1.0
+SHARED_LIBS +=	kworkspace			50.0 # 4.7
+SHARED_LIBS +=	lsofui				50.0 # 4.7
+SHARED_LIBS +=	oxygenstyle			50.0 # 4.7
+SHARED_LIBS +=	oxygenstyleconfig		50.0 # 4.7
+SHARED_LIBS +=	plasma-geolocation-interface	50.0 # 4.7
+SHARED_LIBS +=	plasma_applet-system-monitor	50.0 # 4.7
+SHARED_LIBS +=	plasmaclock			50.0 # 4.7
+SHARED_LIBS +=	plasmagenericshell		50.0 # 4.7
+SHARED_LIBS +=	powerdevilconfigcommonprivate	50.0 # 0.1
+SHARED_LIBS +=	powerdevilcore			50.0 # 0.1
+SHARED_LIBS +=	powerdevilui			50.0
+SHARED_LIBS +=	processcore			50.0 # 4.7
+SHARED_LIBS +=	processui			50.0 # 4.7
+SHARED_LIBS +=	solidcontrol			50.0 # 4.7
+SHARED_LIBS +=	solidcontrolifaces		50.0 # 4.7
+SHARED_LIBS +=	systemsettingsview		50.0
+SHARED_LIBS +=	taskmanager			50.0 # 4.7
+SHARED_LIBS +=	weather_ion			50.0 # 6.0
 
 WANTLIB =  c m pthread stdc++ util z
 WANTLIB += GL GLU ICE SM X11 X11-xcb XRes Xau Xcomposite Xcursor Xdamage Xdmcp

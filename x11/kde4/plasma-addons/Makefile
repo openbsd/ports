@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/24 18:40:19 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:29 zhuk Exp $
 
 COMMENT =	extra KDE plasmoids
 DISTNAME =	kdeplasma-addons-${MODKDE4_VERSION}
 
-SHARED_LIBS =	lancelot-datamodels		0.0 # 1.7
-SHARED_LIBS +=	lancelot			0.0 # 1.9
-SHARED_LIBS +=	plasma_groupingcontainment	0.0 # 4.7
-SHARED_LIBS +=	plasmacomicprovidercore		0.0 # 1.0
-SHARED_LIBS +=	plasmapotdprovidercore		0.0 # 1.0
-SHARED_LIBS +=	plasmaweather			0.0 # 4.7
-SHARED_LIBS +=	rtm				0.0 # 4.7
+SHARED_LIBS =	lancelot-datamodels		50.0 # 1.7
+SHARED_LIBS +=	lancelot			50.0 # 1.9
+SHARED_LIBS +=	plasma_groupingcontainment	50.0 # 4.7
+SHARED_LIBS +=	plasmacomicprovidercore		50.0 # 1.0
+SHARED_LIBS +=	plasmapotdprovidercore		50.0 # 1.0
+SHARED_LIBS +=	plasmaweather			50.0 # 4.7
+SHARED_LIBS +=	rtm				50.0 # 4.7
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += ICE SM X11 Xext Xrender Xtst

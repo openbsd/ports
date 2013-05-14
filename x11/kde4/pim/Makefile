@@ -1,45 +1,45 @@
-# $OpenBSD: Makefile,v 1.10 2013/04/24 20:01:23 zhuk Exp $
+# $OpenBSD: Makefile,v 1.11 2013/05/14 09:16:28 zhuk Exp $
 
 COMMENT =	KDE personal information management
 DISTNAME =	kdepim-${MODKDE4_VERSION}
 
-SHARED_LIBS =	akonadi_next			0.0
-SHARED_LIBS +=	akregatorinterfaces		0.0
-SHARED_LIBS +=	kaddressbookprivate		0.0
-SHARED_LIBS +=	kcal_resourceblog		0.0
-SHARED_LIBS +=	kleo				0.0
-SHARED_LIBS +=	kontactprivate			0.0
-SHARED_LIBS +=	korganizer_core			0.0
-SHARED_LIBS +=	korganizerprivate		0.0
-SHARED_LIBS +=	messagecore			0.0
-SHARED_LIBS +=	messagelist			0.0
-SHARED_LIBS +=	messageviewer			0.0
-SHARED_LIBS +=	akregatorprivate		0.0
-SHARED_LIBS +=	kcal_resourceremote		3.0
-SHARED_LIBS +=	kdepim				3.0
-SHARED_LIBS +=	kmailprivate			0.0
-SHARED_LIBS +=	knodecommon			0.0
-SHARED_LIBS +=	korganizer_interfaces		0.0
-SHARED_LIBS +=	kpgp				6.0
-SHARED_LIBS +=	ksieve				2.0
+SHARED_LIBS =	akonadi_next			50.0
+SHARED_LIBS +=	akregatorinterfaces		50.0
+SHARED_LIBS +=	kaddressbookprivate		50.0
+SHARED_LIBS +=	kcal_resourceblog		50.0
+SHARED_LIBS +=	kleo				50.0
+SHARED_LIBS +=	kontactprivate			50.0
+SHARED_LIBS +=	korganizer_core			50.0
+SHARED_LIBS +=	korganizerprivate		50.0
+SHARED_LIBS +=	messagecore			50.0
+SHARED_LIBS +=	messagelist			50.0
+SHARED_LIBS +=	messageviewer			50.0
+SHARED_LIBS +=	akregatorprivate		50.0
+SHARED_LIBS +=	kcal_resourceremote		50.0
+SHARED_LIBS +=	kdepim				50.0
+SHARED_LIBS +=	kmailprivate			50.0
+SHARED_LIBS +=	knodecommon			50.0
+SHARED_LIBS +=	korganizer_interfaces		50.0
+SHARED_LIBS +=	kpgp				50.0
+SHARED_LIBS +=	ksieve				50.0
 
-SHARED_LIBS +=  calendarsupport           0.0 # 4.7
-SHARED_LIBS +=  eventviews                0.0 # 4.7
-SHARED_LIBS +=  incidenceeditorsng        0.0 # 4.7
-SHARED_LIBS +=  incidenceeditorsngmobile  0.0 # 4.7
-SHARED_LIBS +=  kdepimdbusinterfaces      0.0 # 4.7
-SHARED_LIBS +=  kdepimmobileui            0.0 # 4.7
-SHARED_LIBS +=  kdgantt2                  0.0 # 0.1
-SHARED_LIBS +=  kleopatraclientcore       0.0 # 0.3
-SHARED_LIBS +=  kleopatraclientgui        0.0 # 0.3
-SHARED_LIBS +=  kmanagesieve              0.0 # 4.7
-SHARED_LIBS +=  ksieveui                  0.0 # 4.7
-SHARED_LIBS +=  mailcommon                0.0 # 4.7
-SHARED_LIBS +=  mailimporter              0.0 # 4.9
-SHARED_LIBS +=  messagecomposer           0.0 # 4.7
-SHARED_LIBS +=  templateparser            0.0 # 4.7
+SHARED_LIBS +=  calendarsupport           50.0 # 4.7
+SHARED_LIBS +=  eventviews                50.0 # 4.7
+SHARED_LIBS +=  incidenceeditorsng        50.0 # 4.7
+SHARED_LIBS +=  incidenceeditorsngmobile  50.0 # 4.7
+SHARED_LIBS +=  kdepimdbusinterfaces      50.0 # 4.7
+SHARED_LIBS +=  kdepimmobileui            50.0 # 4.7
+SHARED_LIBS +=  kdgantt2                  50.0 # 0.1
+SHARED_LIBS +=  kleopatraclientcore       50.0 # 0.3
+SHARED_LIBS +=  kleopatraclientgui        50.0 # 0.3
+SHARED_LIBS +=  kmanagesieve              50.0 # 4.7
+SHARED_LIBS +=  ksieveui                  50.0 # 4.7
+SHARED_LIBS +=  mailcommon                50.0 # 4.7
+SHARED_LIBS +=  mailimporter              50.0 # 4.9
+SHARED_LIBS +=  messagecomposer           50.0 # 4.7
+SHARED_LIBS +=  templateparser            50.0 # 4.7
 
-SHARED_LIBS +=	pimcommon                 0.0 # 4.10
+SHARED_LIBS +=	pimcommon                 50.0 # 4.10
 
 MODULES =	devel/gettext
 

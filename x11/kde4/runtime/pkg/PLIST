@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 19:03:25 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/05/14 09:16:29 zhuk Exp $
 @conflict kdebase-<4
+@conflict kdesamba-<4
 @group wheel
 @bin bin/kcmshell4
 @bin bin/kde-cp

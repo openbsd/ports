@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/24 18:24:40 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:28 zhuk Exp $
 
 COMMENT =	KDE compact discs interface library
 DISTNAME =	libkcompactdisc-${MODKDE4_VERSION}
 
-SHARED_LIBS =	kcompactdisc		0.0
+SHARED_LIBS =	kcompactdisc		50.0
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus

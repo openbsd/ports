@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/24 18:28:13 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:28 zhuk Exp $
 
 COMMENT =	KDE image plugins infrastructure
 DISTNAME =	libkipi-${MODKDE4_VERSION}
 
-SHARED_LIBS =	kipi		2.0
+SHARED_LIBS =	kipi		50.0
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork

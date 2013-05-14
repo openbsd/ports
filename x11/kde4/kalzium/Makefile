@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/24 11:46:42 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:26 zhuk Exp $
 
 BROKEN =	requires key dependencies update
 COMMENT =	periodic system of elements for KDE
@@ -6,8 +6,8 @@ DISTNAME =	kalzium-${MODKDE4_VERSION}
 
 # TODO Works, but loops forever on exit. Previously there was double free.
 
-SHARED_LIBS =	science			0.0 # 4.7
-SHARED_LIBS +=	compoundviewer		0.0 # 4.7
+SHARED_LIBS =	science			50.0 # 4.7
+SHARED_LIBS +=	compoundviewer		50.0 # 4.7
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus

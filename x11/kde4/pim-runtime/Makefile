@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/24 18:39:01 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:28 zhuk Exp $
 
 COMMENT =	KDE PIM runtime support
 DISTNAME =	kdepim-runtime-${MODKDE4_VERSION}
 
-SHARED_LIBS =	akonadi-filestore	0.0 # 4.7
-SHARED_LIBS +=	akonadi-xml		0.0 # 4.7
-SHARED_LIBS +=	kdepim-copy		0.0 # 4.7
-SHARED_LIBS +=	kmindexreader		0.0 # 4.7
-SHARED_LIBS +=	maildir			0.0 # 4.7
+SHARED_LIBS =	akonadi-filestore	50.0 # 4.7
+SHARED_LIBS +=	akonadi-xml		50.0 # 4.7
+SHARED_LIBS +=	kdepim-copy		50.0 # 4.7
+SHARED_LIBS +=	kmindexreader		50.0 # 4.7
+SHARED_LIBS +=	maildir			50.0 # 4.7
 
 WANTLIB =  c m pthread stdc++ xml2
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui
@@ -40,7 +40,7 @@ LIB_DEPENDS =	databases/soprano \
 		devel/qjson \
 		productivity/akonadi>=${MIN_AKONADI_VERSION} \
 		productivity/libkgapi>=0.4.0 \
-		${MODKDE4_DEP_DIR}/pimlibs>=${MODKDE4_DEP_VERSION}
+		${MODKDE4_DEP_DIR}/pimlibs>=${MODKDE4_VERSION}
 
 # Long dependency chain, not ported yet.
 CONFIGURE_ARGS=	-DCMAKE_DISABLE_FIND_PACKAGE_Libkolab:Bool=Yes \

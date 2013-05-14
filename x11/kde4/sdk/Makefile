@@ -1,23 +1,23 @@
-# $OpenBSD: Makefile,v 1.9 2013/04/26 18:31:51 zhuk Exp $
+# $OpenBSD: Makefile,v 1.10 2013/05/14 09:16:29 zhuk Exp $
 
 COMMENT =	KDE software development kit
 DISTNAME =	kdesdk-${MODKDE4_VERSION}
 REVISION =	0
 
-SHARED_LIBS =	komparedialogpages	0.0 # 4.7
-SHARED_LIBS +=	komparediff2		0.0 # 4.7
-SHARED_LIBS +=	kompareinterface	0.0 # 4.7
-SHARED_LIBS +=  kasten2controllers        0.0 # 0.2
-SHARED_LIBS +=  kasten2core               0.0 # 0.2
-SHARED_LIBS +=  kasten2gui                0.0 # 0.2
-SHARED_LIBS +=  kasten2okteta1controllers 0.0 # 0.2
-SHARED_LIBS +=  kasten2okteta1core        0.0 # 0.2
-SHARED_LIBS +=  kasten2okteta1gui         0.0 # 0.2
-SHARED_LIBS +=  okteta1core               0.0 # 0.8
-SHARED_LIBS +=  okteta1gui                0.0 # 0.8
-SHARED_LIBS +=  kdeinit4_cervisia         0.0
-SHARED_LIBS +=  kdeinit4_cvsaskpass       0.0
-SHARED_LIBS +=  kdeinit4_cvsservice       0.0
+SHARED_LIBS =	komparedialogpages	50.0 # 4.7
+SHARED_LIBS +=	komparediff2		50.0 # 4.7
+SHARED_LIBS +=	kompareinterface	50.0 # 4.7
+SHARED_LIBS +=  kasten2controllers        50.0 # 0.2
+SHARED_LIBS +=  kasten2core               50.0 # 0.2
+SHARED_LIBS +=  kasten2gui                50.0 # 0.2
+SHARED_LIBS +=  kasten2okteta1controllers 50.0 # 0.2
+SHARED_LIBS +=  kasten2okteta1core        50.0 # 0.2
+SHARED_LIBS +=  kasten2okteta1gui         50.0 # 0.2
+SHARED_LIBS +=  okteta1core               50.0 # 0.8
+SHARED_LIBS +=  okteta1gui                50.0 # 0.8
+SHARED_LIBS +=  kdeinit4_cervisia         50.0
+SHARED_LIBS +=  kdeinit4_cvsaskpass       50.0
+SHARED_LIBS +=  kdeinit4_cvsservice       50.0
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtDesigner

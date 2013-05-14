@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/24 11:51:46 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:26 zhuk Exp $
 
 COMMENT =	KDE advanced text editor
 DISTNAME =	kate-${MODKDE4_VERSION}
 
-SHARED_LIBS =	kateinterfaces			0.0 # 4.7
-SHARED_LIBS +=	katepartinterfaces		0.0 # 4.7
+SHARED_LIBS =	kateinterfaces			50.0 # 4.7
+SHARED_LIBS +=	katepartinterfaces		50.0 # 4.7
 #SHARED_LIBS +=	ktexteditor_codesnippets_core	0.0 # 0.0
 
 WANTLIB =  c m pthread stdc++ ${MODPY_WANTLIB}

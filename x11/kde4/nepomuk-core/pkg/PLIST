@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 18:33:45 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/05/14 09:16:28 zhuk Exp $
 @conflict kde-runtime-<4.8.80
 bin/nepomuk-simpleresource-rcgen
 @bin bin/nepomuk2-rcgen
@@ -120,6 +120,7 @@ lib/cmake/NepomukCore/NepomukCoreTargetsWithPrefix.cmake
 @lib ${KDE4LIB}/libkdeinit4_nepomukserver.so.${LIBkdeinit4_nepomukserver_VERSION}
 @lib ${KDE4LIB}/libnepomukcommon.so.${LIBnepomukcommon_VERSION}
 @lib ${KDE4LIB}/libnepomukcore.so.${LIBnepomukcore_VERSION}
+@lib ${KDE4LIB}/libnepomukextractor.so.${LIBnepomukextractor_VERSION}
 lib/kde4/nepomukexiv2extractor.so
 lib/kde4/nepomukffmpegextractor.so
 lib/kde4/nepomukfileindexer.so
@@ -131,6 +132,7 @@ lib/kde4/nepomuktaglibextractor.so
 @lib lib/libkdeinit4_nepomukserver.so.${LIBkdeinit4_nepomukserver_VERSION}
 @lib lib/libnepomukcommon.so.${LIBnepomukcommon_VERSION}
 @lib lib/libnepomukcore.so.${LIBnepomukcore_VERSION}
+@lib lib/libnepomukextractor.so.${LIBnepomukextractor_VERSION}
 share/applications/kde4/nepomukbackup.desktop
 share/applications/kde4/nepomukcleaner.desktop
 share/apps/fileindexerservice/

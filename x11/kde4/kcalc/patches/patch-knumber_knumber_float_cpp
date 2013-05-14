@@ -1,4 +1,4 @@
-$OpenBSD: patch-knumber_knumber_float_cpp,v 1.1.1.1 2013/04/25 16:58:24 zhuk Exp $
+$OpenBSD: patch-knumber_knumber_float_cpp,v 1.2 2013/05/14 09:16:26 zhuk Exp $
 --- knumber/knumber_float.cpp.orig	Fri Mar  1 11:05:02 2013
 +++ knumber/knumber_float.cpp	Mon Mar 25 23:11:46 2013
 @@ -44,11 +44,11 @@ const mpfr_prec_t knumber_float::precision     = 1024;
@@ -72,7 +72,7 @@ $OpenBSD: patch-knumber_knumber_float_cpp,v 1.1.1.1 2013/04/25 16:58:24 zhuk Exp
 @@ -464,7 +464,7 @@ knumber_base *knumber_float::cos() {
  	return this;
  #else
- 	const double x = mpf_get_d(mpf_);	
+ 	const double x = mpf_get_d(mpf_);
 -	if(isinf(x)) {
 +	if(std::isinf(x)) {
  		delete this;

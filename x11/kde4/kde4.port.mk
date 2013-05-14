@@ -1,7 +1,7 @@
-# $OpenBSD: kde4.port.mk,v 1.4 2013/04/27 20:22:36 zhuk Exp $
+# $OpenBSD: kde4.port.mk,v 1.5 2013/05/14 09:16:25 zhuk Exp $
 
 # The version of KDE SC in x11/kde4
-_MODKDE4_STABLE =	4.10.2
+_MODKDE4_STABLE =	4.10.3
 
 # List of currently supported KDE SC versions, except "stable"
 _MODKDE4_OTHERS =

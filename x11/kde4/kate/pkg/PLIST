@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 11:51:46 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/05/14 09:16:26 zhuk Exp $
 @newgroup _kdesud:583
 @bin bin/kate
 @bin bin/kwrite
@@ -425,6 +425,7 @@ share/config/katemoderc
 share/config/katerc
 share/config/kateschemarc
 share/config/katesyntaxhighlightingrc
+share/config/ktexteditor_codesnippets_core.knsrc
 share/doc/HTML/en/kate/
 share/doc/HTML/en/kate/advanced.docbook
 share/doc/HTML/en/kate/comma-to.png

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/24 11:21:42 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:25 zhuk Exp $
 
 COMMENT =	KDE math features
 DISTNAME =	analitza-${MODKDE4_VERSION}
 
-SHARED_LIBS =	analitza		0.0	# 4.7
-SHARED_LIBS +=	analitzagui		0.0	# 4.7
-SHARED_LIBS +=	analitzaplot		0.0	# 4.10
+SHARED_LIBS =	analitza		50.0	# 4.7
+SHARED_LIBS +=	analitzagui		50.0	# 4.7
+SHARED_LIBS +=	analitzaplot		50.0	# 4.10
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += GL GLU

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-it,v 1.1.1.1 2013/04/24 18:23:44 zhuk Exp $
+@comment $OpenBSD: PLIST-it,v 1.2 2013/05/14 09:16:27 zhuk Exp $
 share/apps/
 share/apps/autocorrect/
 share/apps/autocorrect/it_IT.xml
@@ -1574,7 +1574,6 @@ share/locale/it/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/it/LC_MESSAGES/kcm_emoticons.mo
 share/locale/it/LC_MESSAGES/kcm_infobase.mo
 share/locale/it/LC_MESSAGES/kcm_infosummary.mo
-share/locale/it/LC_MESSAGES/kcm_krfb.mo
 share/locale/it/LC_MESSAGES/kcm_kwindesktop.mo
 share/locale/it/LC_MESSAGES/kcm_kwintabbox.mo
 share/locale/it/LC_MESSAGES/kcm_memory.mo
@@ -1695,7 +1694,6 @@ share/locale/it/LC_MESSAGES/kig.mo
 share/locale/it/LC_MESSAGES/kigo.mo
 share/locale/it/LC_MESSAGES/killbots.mo
 share/locale/it/LC_MESSAGES/kimagemapeditor.mo
-share/locale/it/LC_MESSAGES/kinetd.mo
 share/locale/it/LC_MESSAGES/kinfocenter.mo
 share/locale/it/LC_MESSAGES/kio4.mo
 share/locale/it/LC_MESSAGES/kio_activities.mo

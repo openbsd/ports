@@ -1,24 +1,24 @@
-# $OpenBSD: Makefile,v 1.12 2013/04/24 19:48:51 zhuk Exp $
+# $OpenBSD: Makefile,v 1.13 2013/05/14 09:16:28 zhuk Exp $
 
 COMMENT =	KDE network applications collection
 DISTNAME =	kdenetwork-${MODKDE4_VERSION}
 
-SHARED_LIBS =	kgetcore		0.0 # 4.0
-SHARED_LIBS +=	kopete			3.0 # 4.0
-SHARED_LIBS +=	kopete_videodevice	2.0 # 4.0
-SHARED_LIBS +=	kopeteaddaccountwizard	0.0 # 1.0
-SHARED_LIBS +=	kopetechatwindow_shared	0.0 # 1.0
-SHARED_LIBS +=	kopeteidentity		0.0 # 1.0
-SHARED_LIBS +=	kopeteprivacy		0.0 # 1.0
-SHARED_LIBS +=	kyahoo			0.0 # 1.0
-SHARED_LIBS +=	oscar			0.0 # 1.0
-SHARED_LIBS +=	kopete_oscar		0.0 # 4.4
-SHARED_LIBS +=	kopete_otr_shared	0.0 # 1.0
-SHARED_LIBS +=	kopetecontactlist	0.0 # 1.0
-SHARED_LIBS +=	kopetestatusmenu	0.0 # 1.0
-SHARED_LIBS +=	krdccore		0.0 # 4.4
-SHARED_LIBS +=	krfbprivate		0.0 # 4.7
-SHARED_LIBS +=	qgroupwise		0.0 # 4.10
+SHARED_LIBS =	kgetcore		50.0 # 4.0
+SHARED_LIBS +=	kopete			50.0 # 4.0
+SHARED_LIBS +=	kopete_videodevice	50.0 # 4.0
+SHARED_LIBS +=	kopeteaddaccountwizard	50.0 # 1.0
+SHARED_LIBS +=	kopetechatwindow_shared	50.0 # 1.0
+SHARED_LIBS +=	kopeteidentity		50.0 # 1.0
+SHARED_LIBS +=	kopeteprivacy		50.0 # 1.0
+SHARED_LIBS +=	kyahoo			50.0 # 1.0
+SHARED_LIBS +=	oscar			50.0 # 1.0
+SHARED_LIBS +=	kopete_oscar		50.0 # 4.4
+SHARED_LIBS +=	kopete_otr_shared	50.0 # 1.0
+SHARED_LIBS +=	kopetecontactlist	50.0 # 1.0
+SHARED_LIBS +=	kopetestatusmenu	50.0 # 1.0
+SHARED_LIBS +=	krdccore		50.0 # 4.4
+SHARED_LIBS +=	krfbprivate		50.0 # 4.7
+SHARED_LIBS +=	qgroupwise		50.0 # 4.10
 
 WANTLIB =  c m pthread stdc++ z
 WANTLIB += ICE SM X11 Xext Xdamage Xtst
@@ -37,7 +37,7 @@ WANTLIB += ${KDE4LIB}/nepomukquery ${KDE4LIB}/nepomukutils ${KDE4LIB}/plasma
 WANTLIB += ${KDE4LIB}/qgpgme ${KDE4LIB}/solid
 WANTLIB += gadu glib-2.0 gpg-error gpgme++-pthread gpgme-pthread idn
 WANTLIB += assuan jasper jpeg meanwhile mms otr qca2 qimageblitz soprano
-WANTLIB += xml2 xmms xslt
+WANTLIB += telepathy-qt4 xml2 xmms xslt
 
 MODULES =	devel/gettext multimedia/phonon
 
@@ -51,6 +51,7 @@ LIB_DEPENDS =	audio/xmms \
 		net/libgadu \
 		net/libktorrent \
 		net/meanwhile \
+		net/telepathy/telepathy-qt \
 		security/libotr \
 		security/qca2 \
 		${MODKDE4_DEP_DIR}/baseapps>=${MODKDE4_DEP_VERSION}
@@ -59,7 +60,6 @@ CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_LibV4L2:Bool=Yes \
 			-DWITH_LibVNCServer:Bool=No \
 			-DWITH_Libmsn:Bool=No \
 			-DWITH_LiboRTP:Bool=No \
-			-DWITH_Mediastreamer:Bool=No \
-			-DWITH_TelepathyQt4:Bool=No
+			-DWITH_Mediastreamer:Bool=No
 
 .include <bsd.port.mk>

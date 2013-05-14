@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ia,v 1.1.1.1 2013/04/24 18:23:44 zhuk Exp $
+@comment $OpenBSD: PLIST-ia,v 1.2 2013/05/14 09:16:27 zhuk Exp $
 share/locale/ia/LC_MESSAGES/accountwizard.mo
 share/locale/ia/LC_MESSAGES/accountwizard_ical.mo
 share/locale/ia/LC_MESSAGES/accountwizard_imap.mo
@@ -134,7 +134,6 @@ share/locale/ia/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/ia/LC_MESSAGES/kcm_emoticons.mo
 share/locale/ia/LC_MESSAGES/kcm_infobase.mo
 share/locale/ia/LC_MESSAGES/kcm_infosummary.mo
-share/locale/ia/LC_MESSAGES/kcm_krfb.mo
 share/locale/ia/LC_MESSAGES/kcm_kwindesktop.mo
 share/locale/ia/LC_MESSAGES/kcm_kwintabbox.mo
 share/locale/ia/LC_MESSAGES/kcm_memory.mo
@@ -241,7 +240,6 @@ share/locale/ia/LC_MESSAGES/khotnewstuff.mo
 share/locale/ia/LC_MESSAGES/khtmlkttsd.mo
 share/locale/ia/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/ia/LC_MESSAGES/kiconfinder.mo
-share/locale/ia/LC_MESSAGES/kinetd.mo
 share/locale/ia/LC_MESSAGES/kinfocenter.mo
 share/locale/ia/LC_MESSAGES/kio4.mo
 share/locale/ia/LC_MESSAGES/kio_activities.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-vi,v 1.1.1.1 2013/04/24 18:23:59 zhuk Exp $
+@comment $OpenBSD: PLIST-vi,v 1.2 2013/05/14 09:16:28 zhuk Exp $
 share/locale/vi/LC_MESSAGES/akregator.mo
 share/locale/vi/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/vi/LC_MESSAGES/attica_kde.mo
@@ -36,7 +36,6 @@ share/locale/vi/LC_MESSAGES/kbounce.mo
 share/locale/vi/LC_MESSAGES/kcm_attica.mo
 share/locale/vi/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/vi/LC_MESSAGES/kcm_emoticons.mo
-share/locale/vi/LC_MESSAGES/kcm_krfb.mo
 share/locale/vi/LC_MESSAGES/kcm_nepomuk.mo
 share/locale/vi/LC_MESSAGES/kcm_phonon.mo
 share/locale/vi/LC_MESSAGES/kcm_platform.mo
@@ -110,7 +109,6 @@ share/locale/vi/LC_MESSAGES/khotnewstuff.mo
 share/locale/vi/LC_MESSAGES/khtmlkttsd.mo
 share/locale/vi/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/vi/LC_MESSAGES/kiconfinder.mo
-share/locale/vi/LC_MESSAGES/kinetd.mo
 share/locale/vi/LC_MESSAGES/kinfocenter.mo
 share/locale/vi/LC_MESSAGES/kio4.mo
 share/locale/vi/LC_MESSAGES/kio_applications.mo

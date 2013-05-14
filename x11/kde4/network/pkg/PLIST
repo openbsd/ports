@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/04/24 19:48:51 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/05/14 09:16:28 zhuk Exp $
 @bin bin/kget
 @bin bin/kopete
 bin/kopete_latexconvert.sh
@@ -9,6 +9,7 @@ bin/kopete_latexconvert.sh
 @owner
 @bin bin/kppplogview
 @bin bin/krdc
+@bin bin/krdc_rfb_approver
 @bin bin/krfb
 bin/winpopup-install
 bin/winpopup-send
@@ -1359,6 +1360,8 @@ share/apps/krdc/krdcui.rc
 share/apps/krdc/pics/
 share/apps/krdc/pics/pointcursor.png
 share/apps/krdc/pics/pointcursormask.png
+share/apps/krdc_rfb_approver/
+share/apps/krdc_rfb_approver/krdc_rfb_approver.notifyrc
 share/apps/krfb/
 share/apps/krfb/krfb.notifyrc
 share/apps/kwebkitpart/kpartplugins/kget_plug_in.desktop
@@ -1386,6 +1389,9 @@ share/dbus-1/interfaces/org.kde.kdnssd.xml
 share/dbus-1/interfaces/org.kde.kopete.Client.xml
 share/dbus-1/interfaces/org.kde.kopete.Statistics.xml
 share/dbus-1/interfaces/org.kde.kppp.xml
+share/dbus-1/services/org.freedesktop.Telepathy.Client.krdc_rfb_approver.service
+share/dbus-1/services/org.freedesktop.Telepathy.Client.krdc_rfb_handler.service
+share/dbus-1/services/org.freedesktop.Telepathy.Client.krfb_rfb_handler.service
 share/dbus-1/services/org.kde.kget.service
 share/doc/HTML/en/kget/
 share/doc/HTML/en/kget/common
@@ -1694,3 +1700,8 @@ share/sounds/Kopete_User_is_Online.ogg
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen
+share/telepathy/
+share/telepathy/clients/
+share/telepathy/clients/krdc_rfb_approver.client
+share/telepathy/clients/krdc_rfb_handler.client
+share/telepathy/clients/krfb_rfb_handler.client

@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/24 11:28:32 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:25 zhuk Exp $
 
 COMMENT =	KDE base applications
 DISTNAME =	kde-baseapps-${MODKDE4_VERSION}
 
-SHARED_LIBS =	konq			8.0	# 6.0
-SHARED_LIBS +=	konqsidebarplugin	5.0	# 4.0
-SHARED_LIBS +=	dolphinprivate		0.0	# 1.0
-SHARED_LIBS +=	konquerorprivate	0.0	# 4.0
-SHARED_LIBS +=	kbookmarkmodel_private	0.0	# 4.7
+SHARED_LIBS =	konq			50.0	# 6.0
+SHARED_LIBS +=	konqsidebarplugin	50.0	# 4.0
+SHARED_LIBS +=	dolphinprivate		50.0	# 1.0
+SHARED_LIBS +=	konquerorprivate	50.0	# 4.0
+SHARED_LIBS +=	kbookmarkmodel_private	50.0	# 4.7
 
 WANTLIB =  c m pthread stdc++ z
 WANTLIB += ICE SM X11 Xext Xt Xrender

@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/24 12:06:18 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:26 zhuk Exp $
 
 CATEGORIES =	devel
 COMMENT =	KDE bindings for .NET
 DISTNAME =	kimono-${MODKDE4_VERSION}
 
-SHARED_LIBS =	kimono			1.1 # 2.0
-SHARED_LIBS +=	akonadi-sharp		2.0
-SHARED_LIBS +=	khtml-sharp		1.1
-SHARED_LIBS +=	ktexteditor-sharp	1.1
-SHARED_LIBS +=	nepomuk-sharp		1.1
-SHARED_LIBS +=	plasma-sharp		1.1
-SHARED_LIBS +=	soprano-sharp		1.1
+SHARED_LIBS =	kimono			50.0 # 2.0
+SHARED_LIBS +=	akonadi-sharp		50.0
+SHARED_LIBS +=	khtml-sharp		50.0
+SHARED_LIBS +=	ktexteditor-sharp	50.0
+SHARED_LIBS +=	nepomuk-sharp		50.0
+SHARED_LIBS +=	plasma-sharp		50.0
+SHARED_LIBS +=	soprano-sharp		50.0
 
 WANTLIB =  m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork

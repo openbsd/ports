@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ca@valencia,v 1.1.1.1 2013/04/24 18:24:01 zhuk Exp $
+@comment $OpenBSD: PLIST-ca@valencia,v 1.2 2013/05/14 09:16:27 zhuk Exp $
 share/locale/ca@valencia/LC_MESSAGES/accountwizard.mo
 share/locale/ca@valencia/LC_MESSAGES/accountwizard_ical.mo
 share/locale/ca@valencia/LC_MESSAGES/accountwizard_imap.mo
@@ -145,7 +145,6 @@ share/locale/ca@valencia/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_emoticons.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_infobase.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_infosummary.mo
-share/locale/ca@valencia/LC_MESSAGES/kcm_krfb.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_kwindesktop.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_kwintabbox.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_memory.mo
@@ -266,7 +265,6 @@ share/locale/ca@valencia/LC_MESSAGES/kig.mo
 share/locale/ca@valencia/LC_MESSAGES/kigo.mo
 share/locale/ca@valencia/LC_MESSAGES/killbots.mo
 share/locale/ca@valencia/LC_MESSAGES/kimagemapeditor.mo
-share/locale/ca@valencia/LC_MESSAGES/kinetd.mo
 share/locale/ca@valencia/LC_MESSAGES/kinfocenter.mo
 share/locale/ca@valencia/LC_MESSAGES/kio4.mo
 share/locale/ca@valencia/LC_MESSAGES/kio_akonadi.mo

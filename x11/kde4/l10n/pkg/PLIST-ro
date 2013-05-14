@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ro,v 1.1.1.1 2013/04/24 18:23:53 zhuk Exp $
+@comment $OpenBSD: PLIST-ro,v 1.2 2013/05/14 09:16:28 zhuk Exp $
 share/apps/
 share/apps/ktuberling/
 share/apps/ktuberling/sounds/
@@ -241,7 +241,6 @@ share/locale/ro/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/ro/LC_MESSAGES/kcm_emoticons.mo
 share/locale/ro/LC_MESSAGES/kcm_infobase.mo
 share/locale/ro/LC_MESSAGES/kcm_infosummary.mo
-share/locale/ro/LC_MESSAGES/kcm_krfb.mo
 share/locale/ro/LC_MESSAGES/kcm_kwindesktop.mo
 share/locale/ro/LC_MESSAGES/kcm_kwintabbox.mo
 share/locale/ro/LC_MESSAGES/kcm_memory.mo
@@ -361,7 +360,6 @@ share/locale/ro/LC_MESSAGES/kig.mo
 share/locale/ro/LC_MESSAGES/kigo.mo
 share/locale/ro/LC_MESSAGES/killbots.mo
 share/locale/ro/LC_MESSAGES/kimagemapeditor.mo
-share/locale/ro/LC_MESSAGES/kinetd.mo
 share/locale/ro/LC_MESSAGES/kinfocenter.mo
 share/locale/ro/LC_MESSAGES/kio4.mo
 share/locale/ro/LC_MESSAGES/kio_activities.mo

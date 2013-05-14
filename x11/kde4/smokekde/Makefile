@@ -1,30 +1,30 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/24 19:05:11 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:29 zhuk Exp $
 
 CATEGORIES =	devel
 COMMENT =	introspective wrappers around KDE
 DISTNAME =	smokekde-${MODKDE4_VERSION}
 
-SHARED_LIBS =	smokeakonadi		0.0 # 3.0
-SHARED_LIBS +=	smokeattica		0.0 # 3.0
-SHARED_LIBS +=	smokekate		0.0 # 3.0
-SHARED_LIBS +=	smokekdecore		0.0 # 3.0
-SHARED_LIBS +=	smokekdeui		0.0 # 3.0
-SHARED_LIBS +=	smokekfile		0.0 # 3.0
-SHARED_LIBS +=	smokekhtml		0.0 # 3.0
-SHARED_LIBS +=	smokekio		0.0 # 3.0
-SHARED_LIBS +=	smokeknewstuff2		0.0 # 3.0
-SHARED_LIBS +=	smokeknewstuff3		0.0 # 3.0
-SHARED_LIBS +=	smokekparts		0.0 # 3.0
-SHARED_LIBS +=	smokektexteditor	0.0 # 3.0
-SHARED_LIBS +=	smokekutils		0.0 # 3.0
-SHARED_LIBS +=	smokenepomuk		0.0 # 3.0
-SHARED_LIBS +=	smokenepomukquery	0.0 # 3.0
-SHARED_LIBS +=	smokeokular		0.0 # 3.0
-SHARED_LIBS +=	smokeplasma		0.0 # 3.0
-SHARED_LIBS +=	smokesolid		0.0 # 3.0
-SHARED_LIBS +=	smokesoprano		0.0 # 3.0
-SHARED_LIBS +=	smokesopranoclient	0.0 # 3.0
-SHARED_LIBS +=	smokesopranoserver	0.0 # 3.0
+SHARED_LIBS =	smokeakonadi		50.0 # 3.0
+SHARED_LIBS +=	smokeattica		50.0 # 3.0
+SHARED_LIBS +=	smokekate		50.0 # 3.0
+SHARED_LIBS +=	smokekdecore		50.0 # 3.0
+SHARED_LIBS +=	smokekdeui		50.0 # 3.0
+SHARED_LIBS +=	smokekfile		50.0 # 3.0
+SHARED_LIBS +=	smokekhtml		50.0 # 3.0
+SHARED_LIBS +=	smokekio		50.0 # 3.0
+SHARED_LIBS +=	smokeknewstuff2		50.0 # 3.0
+SHARED_LIBS +=	smokeknewstuff3		50.0 # 3.0
+SHARED_LIBS +=	smokekparts		50.0 # 3.0
+SHARED_LIBS +=	smokektexteditor	50.0 # 3.0
+SHARED_LIBS +=	smokekutils		50.0 # 3.0
+SHARED_LIBS +=	smokenepomuk		50.0 # 3.0
+SHARED_LIBS +=	smokenepomukquery	50.0 # 3.0
+SHARED_LIBS +=	smokeokular		50.0 # 3.0
+SHARED_LIBS +=	smokeplasma		50.0 # 3.0
+SHARED_LIBS +=	smokesolid		50.0 # 3.0
+SHARED_LIBS +=	smokesoprano		50.0 # 3.0
+SHARED_LIBS +=	smokesopranoclient	50.0 # 3.0
+SHARED_LIBS +=	smokesopranoserver	50.0 # 3.0
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui

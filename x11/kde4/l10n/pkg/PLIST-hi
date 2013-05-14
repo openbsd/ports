@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-hi,v 1.1.1.1 2013/04/24 18:23:43 zhuk Exp $
+@comment $OpenBSD: PLIST-hi,v 1.2 2013/05/14 09:16:27 zhuk Exp $
 share/locale/hi/LC_MESSAGES/akregator.mo
 share/locale/hi/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/hi/LC_MESSAGES/amor.mo
@@ -72,7 +72,6 @@ share/locale/hi/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/hi/LC_MESSAGES/kcm_emoticons.mo
 share/locale/hi/LC_MESSAGES/kcm_infobase.mo
 share/locale/hi/LC_MESSAGES/kcm_infosummary.mo
-share/locale/hi/LC_MESSAGES/kcm_krfb.mo
 share/locale/hi/LC_MESSAGES/kcm_kwindesktop.mo
 share/locale/hi/LC_MESSAGES/kcm_kwintabbox.mo
 share/locale/hi/LC_MESSAGES/kcm_memory.mo
@@ -182,7 +181,6 @@ share/locale/hi/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/hi/LC_MESSAGES/kiconfinder.mo
 share/locale/hi/LC_MESSAGES/kig.mo
 share/locale/hi/LC_MESSAGES/kimagemapeditor.mo
-share/locale/hi/LC_MESSAGES/kinetd.mo
 share/locale/hi/LC_MESSAGES/kinfocenter.mo
 share/locale/hi/LC_MESSAGES/kio4.mo
 share/locale/hi/LC_MESSAGES/kio_applications.mo

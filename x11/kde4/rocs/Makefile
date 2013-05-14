@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/24 18:44:28 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:29 zhuk Exp $
 
 COMMENT =	graph theory IDE for KDE
 DISTNAME =	rocs-${MODKDE4_VERSION}
@@ -6,8 +6,8 @@ DISTNAME =	rocs-${MODKDE4_VERSION}
 # XXX Crashes sometimes.
 
 #SHARED_LIBS =	rocslib			0.0 # 4.7
-SHARED_LIBS =	rocscore		0.0 # 4.10
-SHARED_LIBS +=	rocsvisualeditor	0.0 # 4.10
+SHARED_LIBS =	rocscore		50.0 # 4.10
+SHARED_LIBS +=	rocsvisualeditor	50.0 # 4.10
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork

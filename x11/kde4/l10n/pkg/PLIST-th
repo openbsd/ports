@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-th,v 1.1.1.1 2013/04/24 18:23:58 zhuk Exp $
+@comment $OpenBSD: PLIST-th,v 1.2 2013/05/14 09:16:28 zhuk Exp $
 share/locale/th/LC_MESSAGES/accountwizard.mo
 share/locale/th/LC_MESSAGES/accountwizard_imap.mo
 share/locale/th/LC_MESSAGES/accountwizard_kolab.mo
@@ -78,7 +78,6 @@ share/locale/th/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/th/LC_MESSAGES/kcm_emoticons.mo
 share/locale/th/LC_MESSAGES/kcm_infobase.mo
 share/locale/th/LC_MESSAGES/kcm_infosummary.mo
-share/locale/th/LC_MESSAGES/kcm_krfb.mo
 share/locale/th/LC_MESSAGES/kcm_kwindesktop.mo
 share/locale/th/LC_MESSAGES/kcm_kwintabbox.mo
 share/locale/th/LC_MESSAGES/kcm_memory.mo
@@ -188,7 +187,6 @@ share/locale/th/LC_MESSAGES/khtmlkttsd.mo
 share/locale/th/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/th/LC_MESSAGES/kiconfinder.mo
 share/locale/th/LC_MESSAGES/kigo.mo
-share/locale/th/LC_MESSAGES/kinetd.mo
 share/locale/th/LC_MESSAGES/kinfocenter.mo
 share/locale/th/LC_MESSAGES/kio4.mo
 share/locale/th/LC_MESSAGES/kio_applications.mo

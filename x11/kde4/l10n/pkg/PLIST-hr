@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-hr,v 1.1.1.1 2013/04/24 18:23:43 zhuk Exp $
+@comment $OpenBSD: PLIST-hr,v 1.2 2013/05/14 09:16:27 zhuk Exp $
 share/locale/hr/LC_MESSAGES/adblock.mo
 share/locale/hr/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/hr/LC_MESSAGES/akonadi_contacts_resource.mo
@@ -83,7 +83,6 @@ share/locale/hr/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/hr/LC_MESSAGES/kcm_emoticons.mo
 share/locale/hr/LC_MESSAGES/kcm_infobase.mo
 share/locale/hr/LC_MESSAGES/kcm_infosummary.mo
-share/locale/hr/LC_MESSAGES/kcm_krfb.mo
 share/locale/hr/LC_MESSAGES/kcm_kwindesktop.mo
 share/locale/hr/LC_MESSAGES/kcm_kwintabbox.mo
 share/locale/hr/LC_MESSAGES/kcm_memory.mo
@@ -200,7 +199,6 @@ share/locale/hr/LC_MESSAGES/kig.mo
 share/locale/hr/LC_MESSAGES/kigo.mo
 share/locale/hr/LC_MESSAGES/killbots.mo
 share/locale/hr/LC_MESSAGES/kimagemapeditor.mo
-share/locale/hr/LC_MESSAGES/kinetd.mo
 share/locale/hr/LC_MESSAGES/kinfocenter.mo
 share/locale/hr/LC_MESSAGES/kio4.mo
 share/locale/hr/LC_MESSAGES/kio_applications.mo
