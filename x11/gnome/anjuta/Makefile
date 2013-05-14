@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.86 2013/04/17 13:37:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.87 2013/05/14 07:23:43 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
-GNOME_VERSION=		3.8.1
+GNOME_VERSION=		3.8.2
 
 SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 
@@ -33,7 +33,7 @@ WANTLIB += soup-2.4 sqlite3 ssl stdc++ svn_client-1 svn_delta-1
 WANTLIB += svn_diff-1 svn_fs-1 svn_fs_base-1 svn_fs_fs-1 svn_fs_util-1
 WANTLIB += svn_ra-1 svn_ra_local-1 svn_ra_neon-1 svn_ra_svn-1
 WANTLIB += svn_repos-1 svn_subr-1 svn_wc-1 util vte2_90 webkitgtk-3.0
-WANTLIB += webp xcb xcb-render xcb-shm xml2 xslt z
+WANTLIB += webp xcb xcb-render xcb-shm xml2 xslt z vala-0.20
 WANTLIB += ${MODPY_WANTLIB}
 
 MODULES=		devel/dconf \
@@ -51,6 +51,7 @@ LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			devel/glade \
 			devel/subversion \
 			devel/vte3 \
+			lang/vala>=0.20.0 \
 			textproc/icu4c \
 			x11/gnome/devhelp \
 			x11/gnome/gdl \
@@ -64,8 +65,7 @@ LIBTOOL_FLAGS=		--tag=disable-static
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 
-# XXX: Re-enable on update if/when vala 0.20 is supported
-MODGNOME_TOOLS= 	gi yelp #vala
+MODGNOME_TOOLS= 	gi yelp vala
 
 YACC=			bison -y
 

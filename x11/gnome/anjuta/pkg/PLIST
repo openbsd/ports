@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2013/04/17 13:37:27 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.31 2013/05/14 07:23:43 jasper Exp $
 @conflict gnome-build-*
 @pkgpath x11/gnome/build
 @bin bin/anjuta
@@ -151,6 +151,7 @@ lib/anjuta/anjuta-starter.plugin
 lib/anjuta/anjuta-subversion.plugin
 lib/anjuta/anjuta-terminal.plugin
 lib/anjuta/anjuta-tools.plugin
+lib/anjuta/anjuta-vala.plugin
 lib/anjuta/dir-project.plugin
 lib/anjuta/file-manager.plugin
 lib/anjuta/git.plugin
@@ -173,6 +174,7 @@ lib/anjuta/libanjuta-indentation-python-style.so
 lib/anjuta/libanjuta-jhbuild.so
 lib/anjuta/libanjuta-language-cpp-java.so
 lib/anjuta/libanjuta-language-support-python.so
+lib/anjuta/libanjuta-language-vala.so
 lib/anjuta/libanjuta-loader.so
 lib/anjuta/libanjuta-message-view.so
 lib/anjuta/libanjuta-parser-cxx.so
@@ -245,6 +247,7 @@ share/anjuta/glade/anjuta-subversion.ui
 share/anjuta/glade/anjuta-symbol-db.ui
 share/anjuta/glade/anjuta-terminal-plugin.ui
 share/anjuta/glade/anjuta-tools.ui
+share/anjuta/glade/anjuta-vala.ui
 share/anjuta/glade/applogo.png
 share/anjuta/glade/appwizard.png
 share/anjuta/glade/file-manager.ui
@@ -2300,6 +2303,7 @@ share/pixmaps/anjuta/anjuta-terminal-plugin-48.png
 share/pixmaps/anjuta/anjuta-terminal-plugin.svg
 share/pixmaps/anjuta/anjuta-tools-plugin-48.png
 share/pixmaps/anjuta/anjuta-tools-plugin.svg
+share/pixmaps/anjuta/anjuta-vala.png
 share/pixmaps/anjuta/anjuta-watch-16.png
 share/pixmaps/anjuta/anjuta-watch-24.png
 share/pixmaps/anjuta/anjuta-watch.svg

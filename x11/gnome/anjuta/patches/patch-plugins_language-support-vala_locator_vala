@@ -1,0 +1,37 @@
+$OpenBSD: patch-plugins_language-support-vala_locator_vala,v 1.3 2013/05/14 07:23:43 jasper Exp $
+
+From 8d179e29235fba369b41552043d60292e540f432 Mon Sep 17 00:00:00 2001
+From: Sébastien Granjoux <seb.sfo@free.fr>
+Date: Sun, 12 May 2013 08:46:23 +0000
+Subject: bgo #698158: anjuta-3.8.1 fails to build with vala-0.20
+
+--- plugins/language-support-vala/locator.vala.orig	Wed Sep 26 22:53:47 2012
++++ plugins/language-support-vala/locator.vala	Tue May 14 09:10:11 2013
+@@ -25,13 +25,8 @@ public class BlockLocator : Vala.CodeVisitor {
+ 			this.column = column;
+ 		}
+ 		public bool inside (Vala.SourceReference src) {
+-#if VALA_0_18
+ 			var begin = Location (src.begin.line, src.begin.column);
+ 			var end = Location (src.end.line, src.end.column);
+-#else
+-			var begin = Location (src.first_line, src.first_column);
+-			var end = Location (src.last_line, src.last_column);
+-#endif
+ 
+ 			return begin.before (this) && this.before(end);
+ 		}
+@@ -60,13 +55,8 @@ public class BlockLocator : Vala.CodeVisitor {
+ 		if (!location.inside (s.source_reference))
+ 			return false;
+ 
+-#if VALA_0_18
+ 		var begin = Location (s.source_reference.begin.line, s.source_reference.begin.column);
+ 		var end = Location (s.source_reference.end.line, s.source_reference.end.column);
+-#else
+-		var begin = Location (s.source_reference.first_line, s.source_reference.first_column);
+-		var end = Location (s.source_reference.last_line, s.source_reference.last_column);
+-#endif
+ 
+ 		if (innermost == null || (innermost_begin.before(begin) && end.before(innermost_end))) {
+ 				innermost = s;

@@ -1,0 +1,33 @@
+$OpenBSD: patch-configure_ac,v 1.10 2013/05/14 07:23:43 jasper Exp $
+
+From 8d179e29235fba369b41552043d60292e540f432 Mon Sep 17 00:00:00 2001
+From: Sébastien Granjoux <seb.sfo@free.fr>
+Date: Sun, 12 May 2013 08:46:23 +0000
+Subject: bgo #698158: anjuta-3.8.1 fails to build with vala-0.20
+
+--- configure.ac.orig	Tue May 14 09:09:42 2013
++++ configure.ac	Tue May 14 09:10:11 2013
+@@ -285,10 +285,10 @@ if test "$user_disabled_vala" = 1; then
+ else
+         AC_MSG_RESULT(no)
+ 	AC_MSG_CHECKING(if libvala is available)
+-	PKG_CHECK_EXISTS([ libvala-0.18 ],
+-			 [ valaver="-0.18" ],
+-			 [ PKG_CHECK_EXISTS([ libvala-0.16 ],
+-					    [ valaver="-0.16" ],
++	PKG_CHECK_EXISTS([ libvala-0.20 ],
++			 [ valaver="-0.20" ],
++			 [ PKG_CHECK_EXISTS([ libvala-0.18 ],
++					    [ valaver="-0.18" ],
+ 					    [ valaver="" ])
+ 			 ])
+ 	if test "x$valaver" != "x"; then
+@@ -299,7 +299,7 @@ else
+ 	else
+ 		AC_MSG_RESULT(no)
+ 		enable_vala="no"
+-		VALA_REQUIRED=0.16.0
++		VALA_REQUIRED=0.18.0
+ 	fi
+ 	AC_SUBST(LIBVALA)
+ fi
