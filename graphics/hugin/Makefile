@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2013/04/28 08:18:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2013/05/14 22:55:11 sthen Exp $
 
 BROKEN-hppa =	run dep on enblend-enfuse which will not build on hppa
 
@@ -9,15 +9,17 @@ COMMENT =		panorama image stitcher
 
 DISTNAME =		hugin-2011.4.0
 EXTRACT_SUFX =		.tar.bz2
-REVISION =		1
+REVISION =		2
 
 # not needed for releases, but makes RCs/betas easier to work with
 PKGNAME =		${DISTNAME:S/_//:L}
 WRKDIST =		${WRKDIR}/${DISTNAME:C/_.*//}
 
-SHARED_LIBS +=  huginbasewx               0.0
 SHARED_LIBS +=  celeste                   0.0
+SHARED_LIBS +=  flann_cpp                 0.0
 SHARED_LIBS +=  huginbase                 1.0
+SHARED_LIBS +=  huginbasewx               0.0
+SHARED_LIBS +=  huginlines                0.0
 SHARED_LIBS +=  huginvigraimpex           0.0
 SHARED_LIBS +=  icpfindlib                0.0
 SHARED_LIBS +=  localfeatures             0.0

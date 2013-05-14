@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2012/10/12 21:44:51 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2013/05/14 22:55:11 sthen Exp $
 @bin bin/PTBatcher
 @bin bin/PTBatcherGUI
 @bin bin/align_image_stack
@@ -27,10 +27,10 @@ bin/autopano-noop.sh
 @bin bin/vig_optimize
 lib/hugin/
 @lib lib/hugin/libceleste.so.${LIBceleste_VERSION}
-lib/hugin/libflann_cpp.so
+@lib lib/hugin/libflann_cpp.so.${LIBflann_cpp_VERSION}
 @lib lib/hugin/libhuginbase.so.${LIBhuginbase_VERSION}
 @lib lib/hugin/libhuginbasewx.so.${LIBhuginbasewx_VERSION}
-lib/hugin/libhuginlines.so
+@lib lib/hugin/libhuginlines.so.${LIBhuginlines_VERSION}
 @lib lib/hugin/libhuginvigraimpex.so.${LIBhuginvigraimpex_VERSION}
 @lib lib/hugin/libicpfindlib.so.${LIBicpfindlib_VERSION}
 @lib lib/hugin/liblocalfeatures.so.${LIBlocalfeatures_VERSION}
@@ -652,9 +652,6 @@ share/hugin/xrc/pano_panel.xrc
 share/hugin/xrc/pref_dialog.xrc
 share/hugin/xrc/preview_frame.xrc
 share/hugin/xrc/reset_dialog.xrc
-share/icons/gnome/
-share/icons/gnome/48x48/
-share/icons/gnome/48x48/mimetypes/
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-ptoptimizer-script.png
 share/locale/bg/LC_MESSAGES/hugin.mo
 share/locale/ca_ES/
