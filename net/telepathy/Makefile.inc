@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.14 2013/03/21 08:46:35 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.15 2013/05/14 07:17:06 jasper Exp $
 
 SHARED_ONLY?=	Yes
 
-CATEGORIES +=	net/telepathy
+CATEGORIES +=	net
 
 HOMEPAGE_TP=	http://telepathy.freedesktop.org/wiki/
 
