@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2013/04/20 06:38:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2013/05/14 13:44:31 ajacoutot Exp $
 @extra owncloud/config/config.php
 owncloud/
 owncloud/.htaccess.dist
@@ -1307,6 +1307,7 @@ owncloud/apps/calendar/templates/settings.php
 owncloud/apps/calendar/tests/
 owncloud/apps/calendar/tests/calendar.php
 owncloud/apps/contacts/
+owncloud/apps/contacts/Changelog
 owncloud/apps/contacts/ajax/
 owncloud/apps/contacts/ajax/addressbook/
 owncloud/apps/contacts/ajax/addressbook/activate.php
@@ -1620,6 +1621,7 @@ owncloud/apps/files/l10n/bg_BG.php
 owncloud/apps/files/l10n/bn_BD.php
 owncloud/apps/files/l10n/ca.php
 owncloud/apps/files/l10n/cs_CZ.php
+owncloud/apps/files/l10n/cy_GB.php
 owncloud/apps/files/l10n/da.php
 owncloud/apps/files/l10n/de.php
 owncloud/apps/files/l10n/de_DE.php
@@ -1666,6 +1668,7 @@ owncloud/apps/files/l10n/ru_RU.php
 owncloud/apps/files/l10n/si_LK.php
 owncloud/apps/files/l10n/sk_SK.php
 owncloud/apps/files/l10n/sl.php
+owncloud/apps/files/l10n/sq.php
 owncloud/apps/files/l10n/sr.php
 owncloud/apps/files/l10n/sr@latin.php
 owncloud/apps/files/l10n/sv.php
@@ -1677,6 +1680,7 @@ owncloud/apps/files/l10n/vi.php
 owncloud/apps/files/l10n/xgettextfiles
 owncloud/apps/files/l10n/zh_CN.GB2312.php
 owncloud/apps/files/l10n/zh_CN.php
+owncloud/apps/files/l10n/zh_HK.php
 owncloud/apps/files/l10n/zh_TW.php
 owncloud/apps/files/lib/
 owncloud/apps/files/lib/capabilities.php
@@ -3746,19 +3750,6 @@ owncloud/apps/user_webdavauth/settings.php
 owncloud/apps/user_webdavauth/templates/
 owncloud/apps/user_webdavauth/templates/settings.php
 owncloud/apps/user_webdavauth/user_webdavauth.php
-owncloud/apps/user_yubikey/
-owncloud/apps/user_yubikey/Yubikey.php
-owncloud/apps/user_yubikey/admin_settings.php
-owncloud/apps/user_yubikey/ajax/
-owncloud/apps/user_yubikey/ajax/changeprefix.php
-owncloud/apps/user_yubikey/appinfo/
-owncloud/apps/user_yubikey/appinfo/app.php
-owncloud/apps/user_yubikey/appinfo/info.xml
-owncloud/apps/user_yubikey/settings.php
-owncloud/apps/user_yubikey/templates/
-owncloud/apps/user_yubikey/templates/admin_settings.php
-owncloud/apps/user_yubikey/templates/settings.php
-owncloud/apps/user_yubikey/user_yubikey.php
 @mode 0700
 @owner www
 owncloud/config/
