@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.43 2013/03/29 07:49:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.44 2013/05/14 06:20:28 ajacoutot Exp $
 @unexec-delete rm -f %D/share/icons/gnome/icon-theme.cache
 share/examples/gnome-icon-theme/
 share/examples/gnome-icon-theme/gtk-2.0/
@@ -523,6 +523,8 @@ share/icons/gnome/16x16/devices/
 share/icons/gnome/16x16/devices/3floppy_unmount.png
 share/icons/gnome/16x16/devices/ac-adapter.png
 share/icons/gnome/16x16/devices/audio-card.png
+share/icons/gnome/16x16/devices/audio-headphones.png
+share/icons/gnome/16x16/devices/audio-headset.png
 share/icons/gnome/16x16/devices/audio-input-microphone.png
 share/icons/gnome/16x16/devices/audio-speakers.png
 share/icons/gnome/16x16/devices/battery.png
@@ -1577,6 +1579,8 @@ share/icons/gnome/22x22/devices/
 share/icons/gnome/22x22/devices/3floppy_unmount.png
 share/icons/gnome/22x22/devices/ac-adapter.png
 share/icons/gnome/22x22/devices/audio-card.png
+share/icons/gnome/22x22/devices/audio-headphones.png
+share/icons/gnome/22x22/devices/audio-headset.png
 share/icons/gnome/22x22/devices/audio-input-microphone.png
 share/icons/gnome/22x22/devices/audio-speakers.png
 share/icons/gnome/22x22/devices/battery.png
@@ -2625,6 +2629,8 @@ share/icons/gnome/24x24/devices/
 share/icons/gnome/24x24/devices/3floppy_unmount.png
 share/icons/gnome/24x24/devices/ac-adapter.png
 share/icons/gnome/24x24/devices/audio-card.png
+share/icons/gnome/24x24/devices/audio-headphones.png
+share/icons/gnome/24x24/devices/audio-headset.png
 share/icons/gnome/24x24/devices/audio-input-microphone.png
 share/icons/gnome/24x24/devices/audio-speakers.png
 share/icons/gnome/24x24/devices/battery.png
@@ -3403,6 +3409,8 @@ share/icons/gnome/256x256/categories/xfce-system-settings.png
 share/icons/gnome/256x256/devices/
 share/icons/gnome/256x256/devices/3floppy_unmount.png
 share/icons/gnome/256x256/devices/ac-adapter.png
+share/icons/gnome/256x256/devices/audio-headphones.png
+share/icons/gnome/256x256/devices/audio-headset.png
 share/icons/gnome/256x256/devices/audio-input-microphone.png
 share/icons/gnome/256x256/devices/audio-speakers.png
 share/icons/gnome/256x256/devices/battery.png
@@ -4367,6 +4375,8 @@ share/icons/gnome/32x32/devices/
 share/icons/gnome/32x32/devices/3floppy_unmount.png
 share/icons/gnome/32x32/devices/ac-adapter.png
 share/icons/gnome/32x32/devices/audio-card.png
+share/icons/gnome/32x32/devices/audio-headphones.png
+share/icons/gnome/32x32/devices/audio-headset.png
 share/icons/gnome/32x32/devices/audio-input-microphone.png
 share/icons/gnome/32x32/devices/audio-speakers.png
 share/icons/gnome/32x32/devices/battery.png
@@ -5414,6 +5424,8 @@ share/icons/gnome/48x48/devices/
 share/icons/gnome/48x48/devices/3floppy_unmount.png
 share/icons/gnome/48x48/devices/ac-adapter.png
 share/icons/gnome/48x48/devices/audio-card.png
+share/icons/gnome/48x48/devices/audio-headphones.png
+share/icons/gnome/48x48/devices/audio-headset.png
 share/icons/gnome/48x48/devices/audio-input-microphone.png
 share/icons/gnome/48x48/devices/audio-speakers.png
 share/icons/gnome/48x48/devices/battery.png
