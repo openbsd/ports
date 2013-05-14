@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_utils_cpp,v 1.1 2013/05/14 10:28:17 dcoppa Exp $
+
+Use the gnome icon theme unconditionally: fixes a problem with
+minitube GUI not having icons when executed outside of a Desktop
+Environment
+
+--- src/utils.cpp.orig	Tue Feb  5 10:00:26 2013
++++ src/utils.cpp	Tue Feb  5 10:00:51 2013
+@@ -5,6 +5,7 @@
+ 
+ QIcon getIcon(const QString &name) {
+ #ifdef Q_WS_X11
++    QIcon::setThemeName("gnome");
+     return QIcon::fromTheme(name);
+ #else
+     return Extra::getIcon(name);
