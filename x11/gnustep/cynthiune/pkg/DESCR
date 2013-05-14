@@ -1,0 +1,3 @@
+Cynthiune is a versatile music player based on GNUstep, able to play a
+lot of different audio formats.
+Install audio/timidity port to allow Cynthiune to play Midi files.
