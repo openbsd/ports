@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2013/03/29 10:46:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2013/05/14 08:13:55 ajacoutot Exp $
 @conflict gnome2-user-docs-*
 @pkgpath x11/gnome/users-guide
 share/help/
@@ -93,7 +93,6 @@ share/help/C/gnome-help/documents-tracker.page
 share/help/C/gnome-help/documents-view.page
 share/help/C/gnome-help/documents-viewgrid.page
 share/help/C/gnome-help/documents.page
-share/help/C/gnome-help/fallback-mode.page
 share/help/C/gnome-help/figures/
 share/help/C/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/C/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -203,6 +202,7 @@ share/help/C/gnome-help/files-templates.page
 share/help/C/gnome-help/files-tilde.page
 share/help/C/gnome-help/files.page
 share/help/C/gnome-help/get-involved.page
+share/help/C/gnome-help/gnome-classic.page
 share/help/C/gnome-help/hardware-auth.page
 share/help/C/gnome-help/hardware-cardreader.page
 share/help/C/gnome-help/hardware-driver.page
@@ -326,6 +326,7 @@ share/help/C/gnome-help/printing-select.page
 share/help/C/gnome-help/printing-setup-default-printer.page
 share/help/C/gnome-help/printing-setup.page
 share/help/C/gnome-help/printing-streaks.page
+share/help/C/gnome-help/printing-to-file.page
 share/help/C/gnome-help/printing.page
 share/help/C/gnome-help/privacy-hide-notifications.page
 share/help/C/gnome-help/privacy-history-recent-off.page
@@ -337,7 +338,9 @@ share/help/C/gnome-help/session-fingerprint.page
 share/help/C/gnome-help/session-formats.page
 share/help/C/gnome-help/session-language.page
 share/help/C/gnome-help/session-screenlocks.page
+share/help/C/gnome-help/settings-sharing.page
 share/help/C/gnome-help/sharing-desktop.page
+share/help/C/gnome-help/sharing-media.page
 share/help/C/gnome-help/sharing.page
 share/help/C/gnome-help/shell-apps-favorites.page
 share/help/C/gnome-help/shell-apps-open.page
@@ -374,6 +377,7 @@ share/help/C/gnome-help/user-addguest.page
 share/help/C/gnome-help/user-admin-change.page
 share/help/C/gnome-help/user-admin-explain.page
 share/help/C/gnome-help/user-admin-problems.page
+share/help/C/gnome-help/user-autologin.page
 share/help/C/gnome-help/user-changepassword.page
 share/help/C/gnome-help/user-changepicture.page
 share/help/C/gnome-help/user-delete.page
@@ -386,27 +390,29 @@ share/help/C/gnome-help/wacom-multi-monitor.page
 share/help/C/gnome-help/wacom-stylus.page
 share/help/C/gnome-help/wacom.page
 share/help/C/system-admin-guide/
-share/help/C/system-admin-guide/autologin.page
 share/help/C/system-admin-guide/background.page
 share/help/C/system-admin-guide/backgrounds-extra.page
 share/help/C/system-admin-guide/custom-session.page
+share/help/C/system-admin-guide/dconf-custom-defaults.page
+share/help/C/system-admin-guide/dconf-lockdown.page
+share/help/C/system-admin-guide/dconf-nfs-home.page
 share/help/C/system-admin-guide/dconf-profiles-edit.page
 share/help/C/system-admin-guide/dconf-profiles.page
 share/help/C/system-admin-guide/fonts.page
 share/help/C/system-admin-guide/gsettings-browse.page
 share/help/C/system-admin-guide/index.page
 share/help/C/system-admin-guide/keyboard-layout.page
-share/help/C/system-admin-guide/lockdown.page
-share/help/C/system-admin-guide/lockscreenbackground.page
 share/help/C/system-admin-guide/login-background.page
-share/help/C/system-admin-guide/login-disclaimer.page
-share/help/C/system-admin-guide/logo.page
+share/help/C/system-admin-guide/login-banner.page
+share/help/C/system-admin-guide/login-logo.page
 share/help/C/system-admin-guide/overrides.page
 share/help/C/system-admin-guide/power-settings.page
+share/help/C/system-admin-guide/printer-configuration.page
 share/help/C/system-admin-guide/processes.page
 share/help/C/system-admin-guide/screen-locking.page
 share/help/C/system-admin-guide/servers-list.page
 share/help/C/system-admin-guide/session-debug.page
+share/help/C/system-admin-guide/user-autologin.page
 share/help/C/system-admin-guide/user-session.page
 share/help/C/system-admin-guide/vpn-list.page
 share/help/ca/
@@ -500,7 +506,6 @@ share/help/ca/gnome-help/documents-tracker.page
 share/help/ca/gnome-help/documents-view.page
 share/help/ca/gnome-help/documents-viewgrid.page
 share/help/ca/gnome-help/documents.page
-share/help/ca/gnome-help/fallback-mode.page
 share/help/ca/gnome-help/figures/
 share/help/ca/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/ca/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -610,6 +615,7 @@ share/help/ca/gnome-help/files-templates.page
 share/help/ca/gnome-help/files-tilde.page
 share/help/ca/gnome-help/files.page
 share/help/ca/gnome-help/get-involved.page
+share/help/ca/gnome-help/gnome-classic.page
 share/help/ca/gnome-help/hardware-auth.page
 share/help/ca/gnome-help/hardware-cardreader.page
 share/help/ca/gnome-help/hardware-driver.page
@@ -733,6 +739,7 @@ share/help/ca/gnome-help/printing-select.page
 share/help/ca/gnome-help/printing-setup-default-printer.page
 share/help/ca/gnome-help/printing-setup.page
 share/help/ca/gnome-help/printing-streaks.page
+share/help/ca/gnome-help/printing-to-file.page
 share/help/ca/gnome-help/printing.page
 share/help/ca/gnome-help/privacy-hide-notifications.page
 share/help/ca/gnome-help/privacy-history-recent-off.page
@@ -744,7 +751,9 @@ share/help/ca/gnome-help/session-fingerprint.page
 share/help/ca/gnome-help/session-formats.page
 share/help/ca/gnome-help/session-language.page
 share/help/ca/gnome-help/session-screenlocks.page
+share/help/ca/gnome-help/settings-sharing.page
 share/help/ca/gnome-help/sharing-desktop.page
+share/help/ca/gnome-help/sharing-media.page
 share/help/ca/gnome-help/sharing.page
 share/help/ca/gnome-help/shell-apps-favorites.page
 share/help/ca/gnome-help/shell-apps-open.page
@@ -781,6 +790,7 @@ share/help/ca/gnome-help/user-addguest.page
 share/help/ca/gnome-help/user-admin-change.page
 share/help/ca/gnome-help/user-admin-explain.page
 share/help/ca/gnome-help/user-admin-problems.page
+share/help/ca/gnome-help/user-autologin.page
 share/help/ca/gnome-help/user-changepassword.page
 share/help/ca/gnome-help/user-changepicture.page
 share/help/ca/gnome-help/user-delete.page
@@ -883,7 +893,6 @@ share/help/cs/gnome-help/documents-tracker.page
 share/help/cs/gnome-help/documents-view.page
 share/help/cs/gnome-help/documents-viewgrid.page
 share/help/cs/gnome-help/documents.page
-share/help/cs/gnome-help/fallback-mode.page
 share/help/cs/gnome-help/figures/
 share/help/cs/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/cs/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -993,6 +1002,7 @@ share/help/cs/gnome-help/files-templates.page
 share/help/cs/gnome-help/files-tilde.page
 share/help/cs/gnome-help/files.page
 share/help/cs/gnome-help/get-involved.page
+share/help/cs/gnome-help/gnome-classic.page
 share/help/cs/gnome-help/hardware-auth.page
 share/help/cs/gnome-help/hardware-cardreader.page
 share/help/cs/gnome-help/hardware-driver.page
@@ -1116,6 +1126,7 @@ share/help/cs/gnome-help/printing-select.page
 share/help/cs/gnome-help/printing-setup-default-printer.page
 share/help/cs/gnome-help/printing-setup.page
 share/help/cs/gnome-help/printing-streaks.page
+share/help/cs/gnome-help/printing-to-file.page
 share/help/cs/gnome-help/printing.page
 share/help/cs/gnome-help/privacy-hide-notifications.page
 share/help/cs/gnome-help/privacy-history-recent-off.page
@@ -1127,7 +1138,9 @@ share/help/cs/gnome-help/session-fingerprint.page
 share/help/cs/gnome-help/session-formats.page
 share/help/cs/gnome-help/session-language.page
 share/help/cs/gnome-help/session-screenlocks.page
+share/help/cs/gnome-help/settings-sharing.page
 share/help/cs/gnome-help/sharing-desktop.page
+share/help/cs/gnome-help/sharing-media.page
 share/help/cs/gnome-help/sharing.page
 share/help/cs/gnome-help/shell-apps-favorites.page
 share/help/cs/gnome-help/shell-apps-open.page
@@ -1164,6 +1177,7 @@ share/help/cs/gnome-help/user-addguest.page
 share/help/cs/gnome-help/user-admin-change.page
 share/help/cs/gnome-help/user-admin-explain.page
 share/help/cs/gnome-help/user-admin-problems.page
+share/help/cs/gnome-help/user-autologin.page
 share/help/cs/gnome-help/user-changepassword.page
 share/help/cs/gnome-help/user-changepicture.page
 share/help/cs/gnome-help/user-delete.page
@@ -1266,7 +1280,6 @@ share/help/de/gnome-help/documents-tracker.page
 share/help/de/gnome-help/documents-view.page
 share/help/de/gnome-help/documents-viewgrid.page
 share/help/de/gnome-help/documents.page
-share/help/de/gnome-help/fallback-mode.page
 share/help/de/gnome-help/figures/
 share/help/de/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/de/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -1376,6 +1389,7 @@ share/help/de/gnome-help/files-templates.page
 share/help/de/gnome-help/files-tilde.page
 share/help/de/gnome-help/files.page
 share/help/de/gnome-help/get-involved.page
+share/help/de/gnome-help/gnome-classic.page
 share/help/de/gnome-help/hardware-auth.page
 share/help/de/gnome-help/hardware-cardreader.page
 share/help/de/gnome-help/hardware-driver.page
@@ -1499,6 +1513,7 @@ share/help/de/gnome-help/printing-select.page
 share/help/de/gnome-help/printing-setup-default-printer.page
 share/help/de/gnome-help/printing-setup.page
 share/help/de/gnome-help/printing-streaks.page
+share/help/de/gnome-help/printing-to-file.page
 share/help/de/gnome-help/printing.page
 share/help/de/gnome-help/privacy-hide-notifications.page
 share/help/de/gnome-help/privacy-history-recent-off.page
@@ -1510,7 +1525,9 @@ share/help/de/gnome-help/session-fingerprint.page
 share/help/de/gnome-help/session-formats.page
 share/help/de/gnome-help/session-language.page
 share/help/de/gnome-help/session-screenlocks.page
+share/help/de/gnome-help/settings-sharing.page
 share/help/de/gnome-help/sharing-desktop.page
+share/help/de/gnome-help/sharing-media.page
 share/help/de/gnome-help/sharing.page
 share/help/de/gnome-help/shell-apps-favorites.page
 share/help/de/gnome-help/shell-apps-open.page
@@ -1547,6 +1564,7 @@ share/help/de/gnome-help/user-addguest.page
 share/help/de/gnome-help/user-admin-change.page
 share/help/de/gnome-help/user-admin-explain.page
 share/help/de/gnome-help/user-admin-problems.page
+share/help/de/gnome-help/user-autologin.page
 share/help/de/gnome-help/user-changepassword.page
 share/help/de/gnome-help/user-changepicture.page
 share/help/de/gnome-help/user-delete.page
@@ -1649,7 +1667,6 @@ share/help/el/gnome-help/documents-tracker.page
 share/help/el/gnome-help/documents-view.page
 share/help/el/gnome-help/documents-viewgrid.page
 share/help/el/gnome-help/documents.page
-share/help/el/gnome-help/fallback-mode.page
 share/help/el/gnome-help/figures/
 share/help/el/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/el/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -1759,6 +1776,7 @@ share/help/el/gnome-help/files-templates.page
 share/help/el/gnome-help/files-tilde.page
 share/help/el/gnome-help/files.page
 share/help/el/gnome-help/get-involved.page
+share/help/el/gnome-help/gnome-classic.page
 share/help/el/gnome-help/hardware-auth.page
 share/help/el/gnome-help/hardware-cardreader.page
 share/help/el/gnome-help/hardware-driver.page
@@ -1882,6 +1900,7 @@ share/help/el/gnome-help/printing-select.page
 share/help/el/gnome-help/printing-setup-default-printer.page
 share/help/el/gnome-help/printing-setup.page
 share/help/el/gnome-help/printing-streaks.page
+share/help/el/gnome-help/printing-to-file.page
 share/help/el/gnome-help/printing.page
 share/help/el/gnome-help/privacy-hide-notifications.page
 share/help/el/gnome-help/privacy-history-recent-off.page
@@ -1893,7 +1912,9 @@ share/help/el/gnome-help/session-fingerprint.page
 share/help/el/gnome-help/session-formats.page
 share/help/el/gnome-help/session-language.page
 share/help/el/gnome-help/session-screenlocks.page
+share/help/el/gnome-help/settings-sharing.page
 share/help/el/gnome-help/sharing-desktop.page
+share/help/el/gnome-help/sharing-media.page
 share/help/el/gnome-help/sharing.page
 share/help/el/gnome-help/shell-apps-favorites.page
 share/help/el/gnome-help/shell-apps-open.page
@@ -1930,6 +1951,7 @@ share/help/el/gnome-help/user-addguest.page
 share/help/el/gnome-help/user-admin-change.page
 share/help/el/gnome-help/user-admin-explain.page
 share/help/el/gnome-help/user-admin-problems.page
+share/help/el/gnome-help/user-autologin.page
 share/help/el/gnome-help/user-changepassword.page
 share/help/el/gnome-help/user-changepicture.page
 share/help/el/gnome-help/user-delete.page
@@ -2032,7 +2054,6 @@ share/help/es/gnome-help/documents-tracker.page
 share/help/es/gnome-help/documents-view.page
 share/help/es/gnome-help/documents-viewgrid.page
 share/help/es/gnome-help/documents.page
-share/help/es/gnome-help/fallback-mode.page
 share/help/es/gnome-help/figures/
 share/help/es/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/es/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -2142,6 +2163,7 @@ share/help/es/gnome-help/files-templates.page
 share/help/es/gnome-help/files-tilde.page
 share/help/es/gnome-help/files.page
 share/help/es/gnome-help/get-involved.page
+share/help/es/gnome-help/gnome-classic.page
 share/help/es/gnome-help/hardware-auth.page
 share/help/es/gnome-help/hardware-cardreader.page
 share/help/es/gnome-help/hardware-driver.page
@@ -2265,6 +2287,7 @@ share/help/es/gnome-help/printing-select.page
 share/help/es/gnome-help/printing-setup-default-printer.page
 share/help/es/gnome-help/printing-setup.page
 share/help/es/gnome-help/printing-streaks.page
+share/help/es/gnome-help/printing-to-file.page
 share/help/es/gnome-help/printing.page
 share/help/es/gnome-help/privacy-hide-notifications.page
 share/help/es/gnome-help/privacy-history-recent-off.page
@@ -2276,7 +2299,9 @@ share/help/es/gnome-help/session-fingerprint.page
 share/help/es/gnome-help/session-formats.page
 share/help/es/gnome-help/session-language.page
 share/help/es/gnome-help/session-screenlocks.page
+share/help/es/gnome-help/settings-sharing.page
 share/help/es/gnome-help/sharing-desktop.page
+share/help/es/gnome-help/sharing-media.page
 share/help/es/gnome-help/sharing.page
 share/help/es/gnome-help/shell-apps-favorites.page
 share/help/es/gnome-help/shell-apps-open.page
@@ -2313,6 +2338,7 @@ share/help/es/gnome-help/user-addguest.page
 share/help/es/gnome-help/user-admin-change.page
 share/help/es/gnome-help/user-admin-explain.page
 share/help/es/gnome-help/user-admin-problems.page
+share/help/es/gnome-help/user-autologin.page
 share/help/es/gnome-help/user-changepassword.page
 share/help/es/gnome-help/user-changepicture.page
 share/help/es/gnome-help/user-delete.page
@@ -2415,7 +2441,6 @@ share/help/fi/gnome-help/documents-tracker.page
 share/help/fi/gnome-help/documents-view.page
 share/help/fi/gnome-help/documents-viewgrid.page
 share/help/fi/gnome-help/documents.page
-share/help/fi/gnome-help/fallback-mode.page
 share/help/fi/gnome-help/figures/
 share/help/fi/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/fi/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -2525,6 +2550,7 @@ share/help/fi/gnome-help/files-templates.page
 share/help/fi/gnome-help/files-tilde.page
 share/help/fi/gnome-help/files.page
 share/help/fi/gnome-help/get-involved.page
+share/help/fi/gnome-help/gnome-classic.page
 share/help/fi/gnome-help/hardware-auth.page
 share/help/fi/gnome-help/hardware-cardreader.page
 share/help/fi/gnome-help/hardware-driver.page
@@ -2648,6 +2674,7 @@ share/help/fi/gnome-help/printing-select.page
 share/help/fi/gnome-help/printing-setup-default-printer.page
 share/help/fi/gnome-help/printing-setup.page
 share/help/fi/gnome-help/printing-streaks.page
+share/help/fi/gnome-help/printing-to-file.page
 share/help/fi/gnome-help/printing.page
 share/help/fi/gnome-help/privacy-hide-notifications.page
 share/help/fi/gnome-help/privacy-history-recent-off.page
@@ -2659,7 +2686,9 @@ share/help/fi/gnome-help/session-fingerprint.page
 share/help/fi/gnome-help/session-formats.page
 share/help/fi/gnome-help/session-language.page
 share/help/fi/gnome-help/session-screenlocks.page
+share/help/fi/gnome-help/settings-sharing.page
 share/help/fi/gnome-help/sharing-desktop.page
+share/help/fi/gnome-help/sharing-media.page
 share/help/fi/gnome-help/sharing.page
 share/help/fi/gnome-help/shell-apps-favorites.page
 share/help/fi/gnome-help/shell-apps-open.page
@@ -2696,6 +2725,7 @@ share/help/fi/gnome-help/user-addguest.page
 share/help/fi/gnome-help/user-admin-change.page
 share/help/fi/gnome-help/user-admin-explain.page
 share/help/fi/gnome-help/user-admin-problems.page
+share/help/fi/gnome-help/user-autologin.page
 share/help/fi/gnome-help/user-changepassword.page
 share/help/fi/gnome-help/user-changepicture.page
 share/help/fi/gnome-help/user-delete.page
@@ -2798,7 +2828,6 @@ share/help/fr/gnome-help/documents-tracker.page
 share/help/fr/gnome-help/documents-view.page
 share/help/fr/gnome-help/documents-viewgrid.page
 share/help/fr/gnome-help/documents.page
-share/help/fr/gnome-help/fallback-mode.page
 share/help/fr/gnome-help/figures/
 share/help/fr/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/fr/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -2908,6 +2937,7 @@ share/help/fr/gnome-help/files-templates.page
 share/help/fr/gnome-help/files-tilde.page
 share/help/fr/gnome-help/files.page
 share/help/fr/gnome-help/get-involved.page
+share/help/fr/gnome-help/gnome-classic.page
 share/help/fr/gnome-help/hardware-auth.page
 share/help/fr/gnome-help/hardware-cardreader.page
 share/help/fr/gnome-help/hardware-driver.page
@@ -3031,6 +3061,7 @@ share/help/fr/gnome-help/printing-select.page
 share/help/fr/gnome-help/printing-setup-default-printer.page
 share/help/fr/gnome-help/printing-setup.page
 share/help/fr/gnome-help/printing-streaks.page
+share/help/fr/gnome-help/printing-to-file.page
 share/help/fr/gnome-help/printing.page
 share/help/fr/gnome-help/privacy-hide-notifications.page
 share/help/fr/gnome-help/privacy-history-recent-off.page
@@ -3042,7 +3073,9 @@ share/help/fr/gnome-help/session-fingerprint.page
 share/help/fr/gnome-help/session-formats.page
 share/help/fr/gnome-help/session-language.page
 share/help/fr/gnome-help/session-screenlocks.page
+share/help/fr/gnome-help/settings-sharing.page
 share/help/fr/gnome-help/sharing-desktop.page
+share/help/fr/gnome-help/sharing-media.page
 share/help/fr/gnome-help/sharing.page
 share/help/fr/gnome-help/shell-apps-favorites.page
 share/help/fr/gnome-help/shell-apps-open.page
@@ -3079,6 +3112,7 @@ share/help/fr/gnome-help/user-addguest.page
 share/help/fr/gnome-help/user-admin-change.page
 share/help/fr/gnome-help/user-admin-explain.page
 share/help/fr/gnome-help/user-admin-problems.page
+share/help/fr/gnome-help/user-autologin.page
 share/help/fr/gnome-help/user-changepassword.page
 share/help/fr/gnome-help/user-changepicture.page
 share/help/fr/gnome-help/user-delete.page
@@ -3181,7 +3215,6 @@ share/help/gl/gnome-help/documents-tracker.page
 share/help/gl/gnome-help/documents-view.page
 share/help/gl/gnome-help/documents-viewgrid.page
 share/help/gl/gnome-help/documents.page
-share/help/gl/gnome-help/fallback-mode.page
 share/help/gl/gnome-help/figures/
 share/help/gl/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/gl/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -3291,6 +3324,7 @@ share/help/gl/gnome-help/files-templates.page
 share/help/gl/gnome-help/files-tilde.page
 share/help/gl/gnome-help/files.page
 share/help/gl/gnome-help/get-involved.page
+share/help/gl/gnome-help/gnome-classic.page
 share/help/gl/gnome-help/hardware-auth.page
 share/help/gl/gnome-help/hardware-cardreader.page
 share/help/gl/gnome-help/hardware-driver.page
@@ -3414,6 +3448,7 @@ share/help/gl/gnome-help/printing-select.page
 share/help/gl/gnome-help/printing-setup-default-printer.page
 share/help/gl/gnome-help/printing-setup.page
 share/help/gl/gnome-help/printing-streaks.page
+share/help/gl/gnome-help/printing-to-file.page
 share/help/gl/gnome-help/printing.page
 share/help/gl/gnome-help/privacy-hide-notifications.page
 share/help/gl/gnome-help/privacy-history-recent-off.page
@@ -3425,7 +3460,9 @@ share/help/gl/gnome-help/session-fingerprint.page
 share/help/gl/gnome-help/session-formats.page
 share/help/gl/gnome-help/session-language.page
 share/help/gl/gnome-help/session-screenlocks.page
+share/help/gl/gnome-help/settings-sharing.page
 share/help/gl/gnome-help/sharing-desktop.page
+share/help/gl/gnome-help/sharing-media.page
 share/help/gl/gnome-help/sharing.page
 share/help/gl/gnome-help/shell-apps-favorites.page
 share/help/gl/gnome-help/shell-apps-open.page
@@ -3462,6 +3499,7 @@ share/help/gl/gnome-help/user-addguest.page
 share/help/gl/gnome-help/user-admin-change.page
 share/help/gl/gnome-help/user-admin-explain.page
 share/help/gl/gnome-help/user-admin-problems.page
+share/help/gl/gnome-help/user-autologin.page
 share/help/gl/gnome-help/user-changepassword.page
 share/help/gl/gnome-help/user-changepicture.page
 share/help/gl/gnome-help/user-delete.page
@@ -3564,7 +3602,6 @@ share/help/hi/gnome-help/documents-tracker.page
 share/help/hi/gnome-help/documents-view.page
 share/help/hi/gnome-help/documents-viewgrid.page
 share/help/hi/gnome-help/documents.page
-share/help/hi/gnome-help/fallback-mode.page
 share/help/hi/gnome-help/figures/
 share/help/hi/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/hi/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -3674,6 +3711,7 @@ share/help/hi/gnome-help/files-templates.page
 share/help/hi/gnome-help/files-tilde.page
 share/help/hi/gnome-help/files.page
 share/help/hi/gnome-help/get-involved.page
+share/help/hi/gnome-help/gnome-classic.page
 share/help/hi/gnome-help/hardware-auth.page
 share/help/hi/gnome-help/hardware-cardreader.page
 share/help/hi/gnome-help/hardware-driver.page
@@ -3797,6 +3835,7 @@ share/help/hi/gnome-help/printing-select.page
 share/help/hi/gnome-help/printing-setup-default-printer.page
 share/help/hi/gnome-help/printing-setup.page
 share/help/hi/gnome-help/printing-streaks.page
+share/help/hi/gnome-help/printing-to-file.page
 share/help/hi/gnome-help/printing.page
 share/help/hi/gnome-help/privacy-hide-notifications.page
 share/help/hi/gnome-help/privacy-history-recent-off.page
@@ -3808,7 +3847,9 @@ share/help/hi/gnome-help/session-fingerprint.page
 share/help/hi/gnome-help/session-formats.page
 share/help/hi/gnome-help/session-language.page
 share/help/hi/gnome-help/session-screenlocks.page
+share/help/hi/gnome-help/settings-sharing.page
 share/help/hi/gnome-help/sharing-desktop.page
+share/help/hi/gnome-help/sharing-media.page
 share/help/hi/gnome-help/sharing.page
 share/help/hi/gnome-help/shell-apps-favorites.page
 share/help/hi/gnome-help/shell-apps-open.page
@@ -3845,6 +3886,7 @@ share/help/hi/gnome-help/user-addguest.page
 share/help/hi/gnome-help/user-admin-change.page
 share/help/hi/gnome-help/user-admin-explain.page
 share/help/hi/gnome-help/user-admin-problems.page
+share/help/hi/gnome-help/user-autologin.page
 share/help/hi/gnome-help/user-changepassword.page
 share/help/hi/gnome-help/user-changepicture.page
 share/help/hi/gnome-help/user-delete.page
@@ -3947,7 +3989,6 @@ share/help/hu/gnome-help/documents-tracker.page
 share/help/hu/gnome-help/documents-view.page
 share/help/hu/gnome-help/documents-viewgrid.page
 share/help/hu/gnome-help/documents.page
-share/help/hu/gnome-help/fallback-mode.page
 share/help/hu/gnome-help/figures/
 share/help/hu/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/hu/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -4057,6 +4098,7 @@ share/help/hu/gnome-help/files-templates.page
 share/help/hu/gnome-help/files-tilde.page
 share/help/hu/gnome-help/files.page
 share/help/hu/gnome-help/get-involved.page
+share/help/hu/gnome-help/gnome-classic.page
 share/help/hu/gnome-help/hardware-auth.page
 share/help/hu/gnome-help/hardware-cardreader.page
 share/help/hu/gnome-help/hardware-driver.page
@@ -4180,6 +4222,7 @@ share/help/hu/gnome-help/printing-select.page
 share/help/hu/gnome-help/printing-setup-default-printer.page
 share/help/hu/gnome-help/printing-setup.page
 share/help/hu/gnome-help/printing-streaks.page
+share/help/hu/gnome-help/printing-to-file.page
 share/help/hu/gnome-help/printing.page
 share/help/hu/gnome-help/privacy-hide-notifications.page
 share/help/hu/gnome-help/privacy-history-recent-off.page
@@ -4191,7 +4234,9 @@ share/help/hu/gnome-help/session-fingerprint.page
 share/help/hu/gnome-help/session-formats.page
 share/help/hu/gnome-help/session-language.page
 share/help/hu/gnome-help/session-screenlocks.page
+share/help/hu/gnome-help/settings-sharing.page
 share/help/hu/gnome-help/sharing-desktop.page
+share/help/hu/gnome-help/sharing-media.page
 share/help/hu/gnome-help/sharing.page
 share/help/hu/gnome-help/shell-apps-favorites.page
 share/help/hu/gnome-help/shell-apps-open.page
@@ -4228,6 +4273,7 @@ share/help/hu/gnome-help/user-addguest.page
 share/help/hu/gnome-help/user-admin-change.page
 share/help/hu/gnome-help/user-admin-explain.page
 share/help/hu/gnome-help/user-admin-problems.page
+share/help/hu/gnome-help/user-autologin.page
 share/help/hu/gnome-help/user-changepassword.page
 share/help/hu/gnome-help/user-changepicture.page
 share/help/hu/gnome-help/user-delete.page
@@ -4330,7 +4376,6 @@ share/help/id/gnome-help/documents-tracker.page
 share/help/id/gnome-help/documents-view.page
 share/help/id/gnome-help/documents-viewgrid.page
 share/help/id/gnome-help/documents.page
-share/help/id/gnome-help/fallback-mode.page
 share/help/id/gnome-help/figures/
 share/help/id/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/id/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -4440,6 +4485,7 @@ share/help/id/gnome-help/files-templates.page
 share/help/id/gnome-help/files-tilde.page
 share/help/id/gnome-help/files.page
 share/help/id/gnome-help/get-involved.page
+share/help/id/gnome-help/gnome-classic.page
 share/help/id/gnome-help/hardware-auth.page
 share/help/id/gnome-help/hardware-cardreader.page
 share/help/id/gnome-help/hardware-driver.page
@@ -4563,6 +4609,7 @@ share/help/id/gnome-help/printing-select.page
 share/help/id/gnome-help/printing-setup-default-printer.page
 share/help/id/gnome-help/printing-setup.page
 share/help/id/gnome-help/printing-streaks.page
+share/help/id/gnome-help/printing-to-file.page
 share/help/id/gnome-help/printing.page
 share/help/id/gnome-help/privacy-hide-notifications.page
 share/help/id/gnome-help/privacy-history-recent-off.page
@@ -4574,7 +4621,9 @@ share/help/id/gnome-help/session-fingerprint.page
 share/help/id/gnome-help/session-formats.page
 share/help/id/gnome-help/session-language.page
 share/help/id/gnome-help/session-screenlocks.page
+share/help/id/gnome-help/settings-sharing.page
 share/help/id/gnome-help/sharing-desktop.page
+share/help/id/gnome-help/sharing-media.page
 share/help/id/gnome-help/sharing.page
 share/help/id/gnome-help/shell-apps-favorites.page
 share/help/id/gnome-help/shell-apps-open.page
@@ -4611,6 +4660,7 @@ share/help/id/gnome-help/user-addguest.page
 share/help/id/gnome-help/user-admin-change.page
 share/help/id/gnome-help/user-admin-explain.page
 share/help/id/gnome-help/user-admin-problems.page
+share/help/id/gnome-help/user-autologin.page
 share/help/id/gnome-help/user-changepassword.page
 share/help/id/gnome-help/user-changepicture.page
 share/help/id/gnome-help/user-delete.page
@@ -4713,7 +4763,6 @@ share/help/it/gnome-help/documents-tracker.page
 share/help/it/gnome-help/documents-view.page
 share/help/it/gnome-help/documents-viewgrid.page
 share/help/it/gnome-help/documents.page
-share/help/it/gnome-help/fallback-mode.page
 share/help/it/gnome-help/figures/
 share/help/it/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/it/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -4823,6 +4872,7 @@ share/help/it/gnome-help/files-templates.page
 share/help/it/gnome-help/files-tilde.page
 share/help/it/gnome-help/files.page
 share/help/it/gnome-help/get-involved.page
+share/help/it/gnome-help/gnome-classic.page
 share/help/it/gnome-help/hardware-auth.page
 share/help/it/gnome-help/hardware-cardreader.page
 share/help/it/gnome-help/hardware-driver.page
@@ -4946,6 +4996,7 @@ share/help/it/gnome-help/printing-select.page
 share/help/it/gnome-help/printing-setup-default-printer.page
 share/help/it/gnome-help/printing-setup.page
 share/help/it/gnome-help/printing-streaks.page
+share/help/it/gnome-help/printing-to-file.page
 share/help/it/gnome-help/printing.page
 share/help/it/gnome-help/privacy-hide-notifications.page
 share/help/it/gnome-help/privacy-history-recent-off.page
@@ -4957,7 +5008,9 @@ share/help/it/gnome-help/session-fingerprint.page
 share/help/it/gnome-help/session-formats.page
 share/help/it/gnome-help/session-language.page
 share/help/it/gnome-help/session-screenlocks.page
+share/help/it/gnome-help/settings-sharing.page
 share/help/it/gnome-help/sharing-desktop.page
+share/help/it/gnome-help/sharing-media.page
 share/help/it/gnome-help/sharing.page
 share/help/it/gnome-help/shell-apps-favorites.page
 share/help/it/gnome-help/shell-apps-open.page
@@ -4994,6 +5047,7 @@ share/help/it/gnome-help/user-addguest.page
 share/help/it/gnome-help/user-admin-change.page
 share/help/it/gnome-help/user-admin-explain.page
 share/help/it/gnome-help/user-admin-problems.page
+share/help/it/gnome-help/user-autologin.page
 share/help/it/gnome-help/user-changepassword.page
 share/help/it/gnome-help/user-changepicture.page
 share/help/it/gnome-help/user-delete.page
@@ -5096,7 +5150,6 @@ share/help/ja/gnome-help/documents-tracker.page
 share/help/ja/gnome-help/documents-view.page
 share/help/ja/gnome-help/documents-viewgrid.page
 share/help/ja/gnome-help/documents.page
-share/help/ja/gnome-help/fallback-mode.page
 share/help/ja/gnome-help/figures/
 share/help/ja/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/ja/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -5206,6 +5259,7 @@ share/help/ja/gnome-help/files-templates.page
 share/help/ja/gnome-help/files-tilde.page
 share/help/ja/gnome-help/files.page
 share/help/ja/gnome-help/get-involved.page
+share/help/ja/gnome-help/gnome-classic.page
 share/help/ja/gnome-help/hardware-auth.page
 share/help/ja/gnome-help/hardware-cardreader.page
 share/help/ja/gnome-help/hardware-driver.page
@@ -5329,6 +5383,7 @@ share/help/ja/gnome-help/printing-select.page
 share/help/ja/gnome-help/printing-setup-default-printer.page
 share/help/ja/gnome-help/printing-setup.page
 share/help/ja/gnome-help/printing-streaks.page
+share/help/ja/gnome-help/printing-to-file.page
 share/help/ja/gnome-help/printing.page
 share/help/ja/gnome-help/privacy-hide-notifications.page
 share/help/ja/gnome-help/privacy-history-recent-off.page
@@ -5340,7 +5395,9 @@ share/help/ja/gnome-help/session-fingerprint.page
 share/help/ja/gnome-help/session-formats.page
 share/help/ja/gnome-help/session-language.page
 share/help/ja/gnome-help/session-screenlocks.page
+share/help/ja/gnome-help/settings-sharing.page
 share/help/ja/gnome-help/sharing-desktop.page
+share/help/ja/gnome-help/sharing-media.page
 share/help/ja/gnome-help/sharing.page
 share/help/ja/gnome-help/shell-apps-favorites.page
 share/help/ja/gnome-help/shell-apps-open.page
@@ -5377,6 +5434,7 @@ share/help/ja/gnome-help/user-addguest.page
 share/help/ja/gnome-help/user-admin-change.page
 share/help/ja/gnome-help/user-admin-explain.page
 share/help/ja/gnome-help/user-admin-problems.page
+share/help/ja/gnome-help/user-autologin.page
 share/help/ja/gnome-help/user-changepassword.page
 share/help/ja/gnome-help/user-changepicture.page
 share/help/ja/gnome-help/user-delete.page
@@ -5479,7 +5537,6 @@ share/help/lv/gnome-help/documents-tracker.page
 share/help/lv/gnome-help/documents-view.page
 share/help/lv/gnome-help/documents-viewgrid.page
 share/help/lv/gnome-help/documents.page
-share/help/lv/gnome-help/fallback-mode.page
 share/help/lv/gnome-help/figures/
 share/help/lv/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/lv/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -5589,6 +5646,7 @@ share/help/lv/gnome-help/files-templates.page
 share/help/lv/gnome-help/files-tilde.page
 share/help/lv/gnome-help/files.page
 share/help/lv/gnome-help/get-involved.page
+share/help/lv/gnome-help/gnome-classic.page
 share/help/lv/gnome-help/hardware-auth.page
 share/help/lv/gnome-help/hardware-cardreader.page
 share/help/lv/gnome-help/hardware-driver.page
@@ -5712,6 +5770,7 @@ share/help/lv/gnome-help/printing-select.page
 share/help/lv/gnome-help/printing-setup-default-printer.page
 share/help/lv/gnome-help/printing-setup.page
 share/help/lv/gnome-help/printing-streaks.page
+share/help/lv/gnome-help/printing-to-file.page
 share/help/lv/gnome-help/printing.page
 share/help/lv/gnome-help/privacy-hide-notifications.page
 share/help/lv/gnome-help/privacy-history-recent-off.page
@@ -5723,7 +5782,9 @@ share/help/lv/gnome-help/session-fingerprint.page
 share/help/lv/gnome-help/session-formats.page
 share/help/lv/gnome-help/session-language.page
 share/help/lv/gnome-help/session-screenlocks.page
+share/help/lv/gnome-help/settings-sharing.page
 share/help/lv/gnome-help/sharing-desktop.page
+share/help/lv/gnome-help/sharing-media.page
 share/help/lv/gnome-help/sharing.page
 share/help/lv/gnome-help/shell-apps-favorites.page
 share/help/lv/gnome-help/shell-apps-open.page
@@ -5760,6 +5821,7 @@ share/help/lv/gnome-help/user-addguest.page
 share/help/lv/gnome-help/user-admin-change.page
 share/help/lv/gnome-help/user-admin-explain.page
 share/help/lv/gnome-help/user-admin-problems.page
+share/help/lv/gnome-help/user-autologin.page
 share/help/lv/gnome-help/user-changepassword.page
 share/help/lv/gnome-help/user-changepicture.page
 share/help/lv/gnome-help/user-delete.page
@@ -5862,7 +5924,6 @@ share/help/nl/gnome-help/documents-tracker.page
 share/help/nl/gnome-help/documents-view.page
 share/help/nl/gnome-help/documents-viewgrid.page
 share/help/nl/gnome-help/documents.page
-share/help/nl/gnome-help/fallback-mode.page
 share/help/nl/gnome-help/figures/
 share/help/nl/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/nl/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -5972,6 +6033,7 @@ share/help/nl/gnome-help/files-templates.page
 share/help/nl/gnome-help/files-tilde.page
 share/help/nl/gnome-help/files.page
 share/help/nl/gnome-help/get-involved.page
+share/help/nl/gnome-help/gnome-classic.page
 share/help/nl/gnome-help/hardware-auth.page
 share/help/nl/gnome-help/hardware-cardreader.page
 share/help/nl/gnome-help/hardware-driver.page
@@ -6095,6 +6157,7 @@ share/help/nl/gnome-help/printing-select.page
 share/help/nl/gnome-help/printing-setup-default-printer.page
 share/help/nl/gnome-help/printing-setup.page
 share/help/nl/gnome-help/printing-streaks.page
+share/help/nl/gnome-help/printing-to-file.page
 share/help/nl/gnome-help/printing.page
 share/help/nl/gnome-help/privacy-hide-notifications.page
 share/help/nl/gnome-help/privacy-history-recent-off.page
@@ -6106,7 +6169,9 @@ share/help/nl/gnome-help/session-fingerprint.page
 share/help/nl/gnome-help/session-formats.page
 share/help/nl/gnome-help/session-language.page
 share/help/nl/gnome-help/session-screenlocks.page
+share/help/nl/gnome-help/settings-sharing.page
 share/help/nl/gnome-help/sharing-desktop.page
+share/help/nl/gnome-help/sharing-media.page
 share/help/nl/gnome-help/sharing.page
 share/help/nl/gnome-help/shell-apps-favorites.page
 share/help/nl/gnome-help/shell-apps-open.page
@@ -6143,6 +6208,7 @@ share/help/nl/gnome-help/user-addguest.page
 share/help/nl/gnome-help/user-admin-change.page
 share/help/nl/gnome-help/user-admin-explain.page
 share/help/nl/gnome-help/user-admin-problems.page
+share/help/nl/gnome-help/user-autologin.page
 share/help/nl/gnome-help/user-changepassword.page
 share/help/nl/gnome-help/user-changepicture.page
 share/help/nl/gnome-help/user-delete.page
@@ -6245,7 +6311,6 @@ share/help/pa/gnome-help/documents-tracker.page
 share/help/pa/gnome-help/documents-view.page
 share/help/pa/gnome-help/documents-viewgrid.page
 share/help/pa/gnome-help/documents.page
-share/help/pa/gnome-help/fallback-mode.page
 share/help/pa/gnome-help/figures/
 share/help/pa/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/pa/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -6355,6 +6420,7 @@ share/help/pa/gnome-help/files-templates.page
 share/help/pa/gnome-help/files-tilde.page
 share/help/pa/gnome-help/files.page
 share/help/pa/gnome-help/get-involved.page
+share/help/pa/gnome-help/gnome-classic.page
 share/help/pa/gnome-help/hardware-auth.page
 share/help/pa/gnome-help/hardware-cardreader.page
 share/help/pa/gnome-help/hardware-driver.page
@@ -6478,6 +6544,7 @@ share/help/pa/gnome-help/printing-select.page
 share/help/pa/gnome-help/printing-setup-default-printer.page
 share/help/pa/gnome-help/printing-setup.page
 share/help/pa/gnome-help/printing-streaks.page
+share/help/pa/gnome-help/printing-to-file.page
 share/help/pa/gnome-help/printing.page
 share/help/pa/gnome-help/privacy-hide-notifications.page
 share/help/pa/gnome-help/privacy-history-recent-off.page
@@ -6489,7 +6556,9 @@ share/help/pa/gnome-help/session-fingerprint.page
 share/help/pa/gnome-help/session-formats.page
 share/help/pa/gnome-help/session-language.page
 share/help/pa/gnome-help/session-screenlocks.page
+share/help/pa/gnome-help/settings-sharing.page
 share/help/pa/gnome-help/sharing-desktop.page
+share/help/pa/gnome-help/sharing-media.page
 share/help/pa/gnome-help/sharing.page
 share/help/pa/gnome-help/shell-apps-favorites.page
 share/help/pa/gnome-help/shell-apps-open.page
@@ -6526,6 +6595,7 @@ share/help/pa/gnome-help/user-addguest.page
 share/help/pa/gnome-help/user-admin-change.page
 share/help/pa/gnome-help/user-admin-explain.page
 share/help/pa/gnome-help/user-admin-problems.page
+share/help/pa/gnome-help/user-autologin.page
 share/help/pa/gnome-help/user-changepassword.page
 share/help/pa/gnome-help/user-changepicture.page
 share/help/pa/gnome-help/user-delete.page
@@ -6628,7 +6698,6 @@ share/help/pt_BR/gnome-help/documents-tracker.page
 share/help/pt_BR/gnome-help/documents-view.page
 share/help/pt_BR/gnome-help/documents-viewgrid.page
 share/help/pt_BR/gnome-help/documents.page
-share/help/pt_BR/gnome-help/fallback-mode.page
 share/help/pt_BR/gnome-help/figures/
 share/help/pt_BR/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/pt_BR/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -6738,6 +6807,7 @@ share/help/pt_BR/gnome-help/files-templates.page
 share/help/pt_BR/gnome-help/files-tilde.page
 share/help/pt_BR/gnome-help/files.page
 share/help/pt_BR/gnome-help/get-involved.page
+share/help/pt_BR/gnome-help/gnome-classic.page
 share/help/pt_BR/gnome-help/hardware-auth.page
 share/help/pt_BR/gnome-help/hardware-cardreader.page
 share/help/pt_BR/gnome-help/hardware-driver.page
@@ -6861,6 +6931,7 @@ share/help/pt_BR/gnome-help/printing-select.page
 share/help/pt_BR/gnome-help/printing-setup-default-printer.page
 share/help/pt_BR/gnome-help/printing-setup.page
 share/help/pt_BR/gnome-help/printing-streaks.page
+share/help/pt_BR/gnome-help/printing-to-file.page
 share/help/pt_BR/gnome-help/printing.page
 share/help/pt_BR/gnome-help/privacy-hide-notifications.page
 share/help/pt_BR/gnome-help/privacy-history-recent-off.page
@@ -6872,7 +6943,9 @@ share/help/pt_BR/gnome-help/session-fingerprint.page
 share/help/pt_BR/gnome-help/session-formats.page
 share/help/pt_BR/gnome-help/session-language.page
 share/help/pt_BR/gnome-help/session-screenlocks.page
+share/help/pt_BR/gnome-help/settings-sharing.page
 share/help/pt_BR/gnome-help/sharing-desktop.page
+share/help/pt_BR/gnome-help/sharing-media.page
 share/help/pt_BR/gnome-help/sharing.page
 share/help/pt_BR/gnome-help/shell-apps-favorites.page
 share/help/pt_BR/gnome-help/shell-apps-open.page
@@ -6909,6 +6982,7 @@ share/help/pt_BR/gnome-help/user-addguest.page
 share/help/pt_BR/gnome-help/user-admin-change.page
 share/help/pt_BR/gnome-help/user-admin-explain.page
 share/help/pt_BR/gnome-help/user-admin-problems.page
+share/help/pt_BR/gnome-help/user-autologin.page
 share/help/pt_BR/gnome-help/user-changepassword.page
 share/help/pt_BR/gnome-help/user-changepicture.page
 share/help/pt_BR/gnome-help/user-delete.page
@@ -7011,7 +7085,6 @@ share/help/ru/gnome-help/documents-tracker.page
 share/help/ru/gnome-help/documents-view.page
 share/help/ru/gnome-help/documents-viewgrid.page
 share/help/ru/gnome-help/documents.page
-share/help/ru/gnome-help/fallback-mode.page
 share/help/ru/gnome-help/figures/
 share/help/ru/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/ru/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -7121,6 +7194,7 @@ share/help/ru/gnome-help/files-templates.page
 share/help/ru/gnome-help/files-tilde.page
 share/help/ru/gnome-help/files.page
 share/help/ru/gnome-help/get-involved.page
+share/help/ru/gnome-help/gnome-classic.page
 share/help/ru/gnome-help/hardware-auth.page
 share/help/ru/gnome-help/hardware-cardreader.page
 share/help/ru/gnome-help/hardware-driver.page
@@ -7244,6 +7318,7 @@ share/help/ru/gnome-help/printing-select.page
 share/help/ru/gnome-help/printing-setup-default-printer.page
 share/help/ru/gnome-help/printing-setup.page
 share/help/ru/gnome-help/printing-streaks.page
+share/help/ru/gnome-help/printing-to-file.page
 share/help/ru/gnome-help/printing.page
 share/help/ru/gnome-help/privacy-hide-notifications.page
 share/help/ru/gnome-help/privacy-history-recent-off.page
@@ -7255,7 +7330,9 @@ share/help/ru/gnome-help/session-fingerprint.page
 share/help/ru/gnome-help/session-formats.page
 share/help/ru/gnome-help/session-language.page
 share/help/ru/gnome-help/session-screenlocks.page
+share/help/ru/gnome-help/settings-sharing.page
 share/help/ru/gnome-help/sharing-desktop.page
+share/help/ru/gnome-help/sharing-media.page
 share/help/ru/gnome-help/sharing.page
 share/help/ru/gnome-help/shell-apps-favorites.page
 share/help/ru/gnome-help/shell-apps-open.page
@@ -7292,6 +7369,7 @@ share/help/ru/gnome-help/user-addguest.page
 share/help/ru/gnome-help/user-admin-change.page
 share/help/ru/gnome-help/user-admin-explain.page
 share/help/ru/gnome-help/user-admin-problems.page
+share/help/ru/gnome-help/user-autologin.page
 share/help/ru/gnome-help/user-changepassword.page
 share/help/ru/gnome-help/user-changepicture.page
 share/help/ru/gnome-help/user-delete.page
@@ -7394,7 +7472,6 @@ share/help/sl/gnome-help/documents-tracker.page
 share/help/sl/gnome-help/documents-view.page
 share/help/sl/gnome-help/documents-viewgrid.page
 share/help/sl/gnome-help/documents.page
-share/help/sl/gnome-help/fallback-mode.page
 share/help/sl/gnome-help/figures/
 share/help/sl/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/sl/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -7504,6 +7581,7 @@ share/help/sl/gnome-help/files-templates.page
 share/help/sl/gnome-help/files-tilde.page
 share/help/sl/gnome-help/files.page
 share/help/sl/gnome-help/get-involved.page
+share/help/sl/gnome-help/gnome-classic.page
 share/help/sl/gnome-help/hardware-auth.page
 share/help/sl/gnome-help/hardware-cardreader.page
 share/help/sl/gnome-help/hardware-driver.page
@@ -7627,6 +7705,7 @@ share/help/sl/gnome-help/printing-select.page
 share/help/sl/gnome-help/printing-setup-default-printer.page
 share/help/sl/gnome-help/printing-setup.page
 share/help/sl/gnome-help/printing-streaks.page
+share/help/sl/gnome-help/printing-to-file.page
 share/help/sl/gnome-help/printing.page
 share/help/sl/gnome-help/privacy-hide-notifications.page
 share/help/sl/gnome-help/privacy-history-recent-off.page
@@ -7638,7 +7717,9 @@ share/help/sl/gnome-help/session-fingerprint.page
 share/help/sl/gnome-help/session-formats.page
 share/help/sl/gnome-help/session-language.page
 share/help/sl/gnome-help/session-screenlocks.page
+share/help/sl/gnome-help/settings-sharing.page
 share/help/sl/gnome-help/sharing-desktop.page
+share/help/sl/gnome-help/sharing-media.page
 share/help/sl/gnome-help/sharing.page
 share/help/sl/gnome-help/shell-apps-favorites.page
 share/help/sl/gnome-help/shell-apps-open.page
@@ -7675,6 +7756,7 @@ share/help/sl/gnome-help/user-addguest.page
 share/help/sl/gnome-help/user-admin-change.page
 share/help/sl/gnome-help/user-admin-explain.page
 share/help/sl/gnome-help/user-admin-problems.page
+share/help/sl/gnome-help/user-autologin.page
 share/help/sl/gnome-help/user-changepassword.page
 share/help/sl/gnome-help/user-changepicture.page
 share/help/sl/gnome-help/user-delete.page
@@ -7777,7 +7859,6 @@ share/help/sr/gnome-help/documents-tracker.page
 share/help/sr/gnome-help/documents-view.page
 share/help/sr/gnome-help/documents-viewgrid.page
 share/help/sr/gnome-help/documents.page
-share/help/sr/gnome-help/fallback-mode.page
 share/help/sr/gnome-help/figures/
 share/help/sr/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/sr/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -7887,6 +7968,7 @@ share/help/sr/gnome-help/files-templates.page
 share/help/sr/gnome-help/files-tilde.page
 share/help/sr/gnome-help/files.page
 share/help/sr/gnome-help/get-involved.page
+share/help/sr/gnome-help/gnome-classic.page
 share/help/sr/gnome-help/hardware-auth.page
 share/help/sr/gnome-help/hardware-cardreader.page
 share/help/sr/gnome-help/hardware-driver.page
@@ -8010,6 +8092,7 @@ share/help/sr/gnome-help/printing-select.page
 share/help/sr/gnome-help/printing-setup-default-printer.page
 share/help/sr/gnome-help/printing-setup.page
 share/help/sr/gnome-help/printing-streaks.page
+share/help/sr/gnome-help/printing-to-file.page
 share/help/sr/gnome-help/printing.page
 share/help/sr/gnome-help/privacy-hide-notifications.page
 share/help/sr/gnome-help/privacy-history-recent-off.page
@@ -8021,7 +8104,9 @@ share/help/sr/gnome-help/session-fingerprint.page
 share/help/sr/gnome-help/session-formats.page
 share/help/sr/gnome-help/session-language.page
 share/help/sr/gnome-help/session-screenlocks.page
+share/help/sr/gnome-help/settings-sharing.page
 share/help/sr/gnome-help/sharing-desktop.page
+share/help/sr/gnome-help/sharing-media.page
 share/help/sr/gnome-help/sharing.page
 share/help/sr/gnome-help/shell-apps-favorites.page
 share/help/sr/gnome-help/shell-apps-open.page
@@ -8058,6 +8143,7 @@ share/help/sr/gnome-help/user-addguest.page
 share/help/sr/gnome-help/user-admin-change.page
 share/help/sr/gnome-help/user-admin-explain.page
 share/help/sr/gnome-help/user-admin-problems.page
+share/help/sr/gnome-help/user-autologin.page
 share/help/sr/gnome-help/user-changepassword.page
 share/help/sr/gnome-help/user-changepicture.page
 share/help/sr/gnome-help/user-delete.page
@@ -8160,7 +8246,6 @@ share/help/sr@latin/gnome-help/documents-tracker.page
 share/help/sr@latin/gnome-help/documents-view.page
 share/help/sr@latin/gnome-help/documents-viewgrid.page
 share/help/sr@latin/gnome-help/documents.page
-share/help/sr@latin/gnome-help/fallback-mode.page
 share/help/sr@latin/gnome-help/figures/
 share/help/sr@latin/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/sr@latin/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -8270,6 +8355,7 @@ share/help/sr@latin/gnome-help/files-templates.page
 share/help/sr@latin/gnome-help/files-tilde.page
 share/help/sr@latin/gnome-help/files.page
 share/help/sr@latin/gnome-help/get-involved.page
+share/help/sr@latin/gnome-help/gnome-classic.page
 share/help/sr@latin/gnome-help/hardware-auth.page
 share/help/sr@latin/gnome-help/hardware-cardreader.page
 share/help/sr@latin/gnome-help/hardware-driver.page
@@ -8393,6 +8479,7 @@ share/help/sr@latin/gnome-help/printing-select.page
 share/help/sr@latin/gnome-help/printing-setup-default-printer.page
 share/help/sr@latin/gnome-help/printing-setup.page
 share/help/sr@latin/gnome-help/printing-streaks.page
+share/help/sr@latin/gnome-help/printing-to-file.page
 share/help/sr@latin/gnome-help/printing.page
 share/help/sr@latin/gnome-help/privacy-hide-notifications.page
 share/help/sr@latin/gnome-help/privacy-history-recent-off.page
@@ -8404,7 +8491,9 @@ share/help/sr@latin/gnome-help/session-fingerprint.page
 share/help/sr@latin/gnome-help/session-formats.page
 share/help/sr@latin/gnome-help/session-language.page
 share/help/sr@latin/gnome-help/session-screenlocks.page
+share/help/sr@latin/gnome-help/settings-sharing.page
 share/help/sr@latin/gnome-help/sharing-desktop.page
+share/help/sr@latin/gnome-help/sharing-media.page
 share/help/sr@latin/gnome-help/sharing.page
 share/help/sr@latin/gnome-help/shell-apps-favorites.page
 share/help/sr@latin/gnome-help/shell-apps-open.page
@@ -8441,6 +8530,7 @@ share/help/sr@latin/gnome-help/user-addguest.page
 share/help/sr@latin/gnome-help/user-admin-change.page
 share/help/sr@latin/gnome-help/user-admin-explain.page
 share/help/sr@latin/gnome-help/user-admin-problems.page
+share/help/sr@latin/gnome-help/user-autologin.page
 share/help/sr@latin/gnome-help/user-changepassword.page
 share/help/sr@latin/gnome-help/user-changepicture.page
 share/help/sr@latin/gnome-help/user-delete.page
@@ -8543,7 +8633,6 @@ share/help/sv/gnome-help/documents-tracker.page
 share/help/sv/gnome-help/documents-view.page
 share/help/sv/gnome-help/documents-viewgrid.page
 share/help/sv/gnome-help/documents.page
-share/help/sv/gnome-help/fallback-mode.page
 share/help/sv/gnome-help/figures/
 share/help/sv/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/sv/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -8653,6 +8742,7 @@ share/help/sv/gnome-help/files-templates.page
 share/help/sv/gnome-help/files-tilde.page
 share/help/sv/gnome-help/files.page
 share/help/sv/gnome-help/get-involved.page
+share/help/sv/gnome-help/gnome-classic.page
 share/help/sv/gnome-help/hardware-auth.page
 share/help/sv/gnome-help/hardware-cardreader.page
 share/help/sv/gnome-help/hardware-driver.page
@@ -8776,6 +8866,7 @@ share/help/sv/gnome-help/printing-select.page
 share/help/sv/gnome-help/printing-setup-default-printer.page
 share/help/sv/gnome-help/printing-setup.page
 share/help/sv/gnome-help/printing-streaks.page
+share/help/sv/gnome-help/printing-to-file.page
 share/help/sv/gnome-help/printing.page
 share/help/sv/gnome-help/privacy-hide-notifications.page
 share/help/sv/gnome-help/privacy-history-recent-off.page
@@ -8787,7 +8878,9 @@ share/help/sv/gnome-help/session-fingerprint.page
 share/help/sv/gnome-help/session-formats.page
 share/help/sv/gnome-help/session-language.page
 share/help/sv/gnome-help/session-screenlocks.page
+share/help/sv/gnome-help/settings-sharing.page
 share/help/sv/gnome-help/sharing-desktop.page
+share/help/sv/gnome-help/sharing-media.page
 share/help/sv/gnome-help/sharing.page
 share/help/sv/gnome-help/shell-apps-favorites.page
 share/help/sv/gnome-help/shell-apps-open.page
@@ -8824,6 +8917,7 @@ share/help/sv/gnome-help/user-addguest.page
 share/help/sv/gnome-help/user-admin-change.page
 share/help/sv/gnome-help/user-admin-explain.page
 share/help/sv/gnome-help/user-admin-problems.page
+share/help/sv/gnome-help/user-autologin.page
 share/help/sv/gnome-help/user-changepassword.page
 share/help/sv/gnome-help/user-changepicture.page
 share/help/sv/gnome-help/user-delete.page
@@ -8926,7 +9020,6 @@ share/help/te/gnome-help/documents-tracker.page
 share/help/te/gnome-help/documents-view.page
 share/help/te/gnome-help/documents-viewgrid.page
 share/help/te/gnome-help/documents.page
-share/help/te/gnome-help/fallback-mode.page
 share/help/te/gnome-help/figures/
 share/help/te/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/te/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -9036,6 +9129,7 @@ share/help/te/gnome-help/files-templates.page
 share/help/te/gnome-help/files-tilde.page
 share/help/te/gnome-help/files.page
 share/help/te/gnome-help/get-involved.page
+share/help/te/gnome-help/gnome-classic.page
 share/help/te/gnome-help/hardware-auth.page
 share/help/te/gnome-help/hardware-cardreader.page
 share/help/te/gnome-help/hardware-driver.page
@@ -9159,6 +9253,7 @@ share/help/te/gnome-help/printing-select.page
 share/help/te/gnome-help/printing-setup-default-printer.page
 share/help/te/gnome-help/printing-setup.page
 share/help/te/gnome-help/printing-streaks.page
+share/help/te/gnome-help/printing-to-file.page
 share/help/te/gnome-help/printing.page
 share/help/te/gnome-help/privacy-hide-notifications.page
 share/help/te/gnome-help/privacy-history-recent-off.page
@@ -9170,7 +9265,9 @@ share/help/te/gnome-help/session-fingerprint.page
 share/help/te/gnome-help/session-formats.page
 share/help/te/gnome-help/session-language.page
 share/help/te/gnome-help/session-screenlocks.page
+share/help/te/gnome-help/settings-sharing.page
 share/help/te/gnome-help/sharing-desktop.page
+share/help/te/gnome-help/sharing-media.page
 share/help/te/gnome-help/sharing.page
 share/help/te/gnome-help/shell-apps-favorites.page
 share/help/te/gnome-help/shell-apps-open.page
@@ -9207,6 +9304,7 @@ share/help/te/gnome-help/user-addguest.page
 share/help/te/gnome-help/user-admin-change.page
 share/help/te/gnome-help/user-admin-explain.page
 share/help/te/gnome-help/user-admin-problems.page
+share/help/te/gnome-help/user-autologin.page
 share/help/te/gnome-help/user-changepassword.page
 share/help/te/gnome-help/user-changepicture.page
 share/help/te/gnome-help/user-delete.page
@@ -9309,7 +9407,6 @@ share/help/vi/gnome-help/documents-tracker.page
 share/help/vi/gnome-help/documents-view.page
 share/help/vi/gnome-help/documents-viewgrid.page
 share/help/vi/gnome-help/documents.page
-share/help/vi/gnome-help/fallback-mode.page
 share/help/vi/gnome-help/figures/
 share/help/vi/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/vi/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -9419,6 +9516,7 @@ share/help/vi/gnome-help/files-templates.page
 share/help/vi/gnome-help/files-tilde.page
 share/help/vi/gnome-help/files.page
 share/help/vi/gnome-help/get-involved.page
+share/help/vi/gnome-help/gnome-classic.page
 share/help/vi/gnome-help/hardware-auth.page
 share/help/vi/gnome-help/hardware-cardreader.page
 share/help/vi/gnome-help/hardware-driver.page
@@ -9542,6 +9640,7 @@ share/help/vi/gnome-help/printing-select.page
 share/help/vi/gnome-help/printing-setup-default-printer.page
 share/help/vi/gnome-help/printing-setup.page
 share/help/vi/gnome-help/printing-streaks.page
+share/help/vi/gnome-help/printing-to-file.page
 share/help/vi/gnome-help/printing.page
 share/help/vi/gnome-help/privacy-hide-notifications.page
 share/help/vi/gnome-help/privacy-history-recent-off.page
@@ -9553,7 +9652,9 @@ share/help/vi/gnome-help/session-fingerprint.page
 share/help/vi/gnome-help/session-formats.page
 share/help/vi/gnome-help/session-language.page
 share/help/vi/gnome-help/session-screenlocks.page
+share/help/vi/gnome-help/settings-sharing.page
 share/help/vi/gnome-help/sharing-desktop.page
+share/help/vi/gnome-help/sharing-media.page
 share/help/vi/gnome-help/sharing.page
 share/help/vi/gnome-help/shell-apps-favorites.page
 share/help/vi/gnome-help/shell-apps-open.page
@@ -9590,6 +9691,7 @@ share/help/vi/gnome-help/user-addguest.page
 share/help/vi/gnome-help/user-admin-change.page
 share/help/vi/gnome-help/user-admin-explain.page
 share/help/vi/gnome-help/user-admin-problems.page
+share/help/vi/gnome-help/user-autologin.page
 share/help/vi/gnome-help/user-changepassword.page
 share/help/vi/gnome-help/user-changepicture.page
 share/help/vi/gnome-help/user-delete.page

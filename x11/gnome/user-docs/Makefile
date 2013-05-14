@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2013/03/29 10:46:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2013/05/14 08:13:55 ajacoutot Exp $
 
 COMMENT=		general user documentation for GNOME
 
 GNOME_PROJECT=		gnome-user-docs
-GNOME_VERSION=		3.8.0
+GNOME_VERSION=		3.8.1
 
 # CC Attribution 3.0
 PERMIT_PACKAGE_CDROM=	Yes
