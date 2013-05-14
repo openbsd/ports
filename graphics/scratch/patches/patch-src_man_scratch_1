@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_man_scratch_1,v 1.1 2013/05/14 09:42:47 sthen Exp $
+--- src/man/scratch.1.orig	Mon Dec  5 12:49:24 2011
++++ src/man/scratch.1	Mon Apr 30 17:03:05 2012
+@@ -1,6 +1,6 @@
+-.TH scratch 1
++.TH SCRATCH 1
+ 
+-.SH NAME 
++.SH NAME
+ Scratch \- An easy to use interactive programming environment for ages 8 and up.
+ 
+ .SH Description
+@@ -10,13 +10,13 @@ This man page contains basic information about Scratch
+ Options are set through the .scratch.ini file in the user's home directory. For instructions on how to edit this file, see http://info.scratch.mit.edu/Network_Installation.
+ .SH BUGS
+ Please report bugs to the package maintainer.
+-For the most recent version of this package, see http://info.scratch.mit.edu/Linux_installer 
++For the most recent version of this package, see http://info.scratch.mit.edu/Linux_installer.
+ .SH FILES
+ .TP
+-/usr/bin/scratch - scratch startup script 
++${LOCALBASE}/bin/scratch - scratch startup script.
+ .TP
+-/usr/lib/scratch/ - Contains Scratch.image (Squeak image containing Scratch code), and scratch.ini file
++${SC_DIR} - Contains Scratch.image (Squeak image containing Scratch code), and scratch.ini file.
+ .TP
+-/usr/share/scratch/- Contains subdirectories with Scratch media library, sample projects, and language files.
+-.SH COPYRIGHT 
+-Scratch is Copyright © 2011 Massachusetts Institute of Technology and released under the GPL v2. See the LICENSE file included with the source code. The Scratch logo, the Scratch cat, and Gobo are trademarks of MIT and may not be used in substantially modified programs based on the Scratch source code. Scratch is developed by the Lifelong Kindergarten group at the MIT Media Lab. See http://scratch.mit.edu
++${SC_DIR} - Contains subdirectories with Scratch media library, sample projects, and language files.
++.SH COPYRIGHT
++Scratch is Copyright \(co 2011 Massachusetts Institute of Technology and released under the GPL v2. See the LICENSE file included with the source code. The Scratch logo, the Scratch cat, and Gobo are trademarks of MIT and may not be used in substantially modified programs based on the Scratch source code. Scratch is developed by the Lifelong Kindergarten group at the MIT Media Lab. See http://scratch.mit.edu.

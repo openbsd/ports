@@ -1,0 +1,16 @@
+$OpenBSD: README,v 1.1 2013/05/14 09:42:47 sthen Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+If upgrading from Scratch 1.3:
+
+  * The "iniscratch" program is not needed or provided with Scratch 1.4.
+
+  * Running "scratch" is sufficient; no preparation is necessary.
+
+  * Some Scratch files that reside in ~/Scratch are
+    not needed by Scratch 1.4 and may be removed.
+
+    $ cd ~/Scratch && rm -rf Scratch.image Help Media Projects locale

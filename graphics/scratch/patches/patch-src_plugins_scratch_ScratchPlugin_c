@@ -1,0 +1,44 @@
+$OpenBSD: patch-src_plugins_scratch_ScratchPlugin_c,v 1.1 2013/05/14 09:42:47 sthen Exp $
+
+Quash compiler warnings
+
+--- src/plugins/scratch/ScratchPlugin.c.orig	Sun Apr 29 02:35:43 2012
++++ src/plugins/scratch/ScratchPlugin.c	Sun Apr 29 02:40:28 2012
+@@ -25,10 +25,12 @@ const char *moduleName = "ScratchPlugin 2 January 2009
+ 
+ /*** Functions ***/
+ static int bitmapatputHsv(unsigned int *bitmap, int i, int hue, int saturation, int brightness);
++#if 0
+ static double * checkedFloatPtrOf(int oop);
+ static unsigned int * checkedUnsignedIntPtrOf(int oop);
+ static int hueFromRGBminmax(int r, int g, int b, int min, int max);
+ static int interpolateandfrac(int pix1, int pix2, int frac2);
++#endif
+ static int interpolatedFromxywidthheight(unsigned int *bitmap, int xFixed, int yFixed, int w, int h);
+ EXPORT int primClose(void);
+ EXPORT int primGetOption(void);
+@@ -62,7 +64,7 @@ EXPORT int primitiveWhirl(void);
+ EXPORT int setInterpreter(struct VirtualMachine* anInterpreter);
+ 
+ static int bitmapatputHsv(unsigned int *bitmap, int i, int hue, int saturation, int brightness) {
+-	int outPix;
++	int outPix = 0;
+ 	int v;
+ 	int t;
+ 	int hF;
+@@ -104,6 +106,7 @@ static int bitmapatputHsv(unsigned int *bitmap, int i,
+ 	return 0;
+ }
+ 
++#if 0
+ static double * checkedFloatPtrOf(int oop) {
+ 	interpreterProxy->success(interpreterProxy->isWordsOrBytes(oop));
+ 	if (interpreterProxy->failed()) {
+@@ -166,6 +169,7 @@ static int interpolateandfrac(int pix1, int pix2, int 
+ 	}
+ 	return result;
+ }
++#endif
+ 
+ static int interpolatedFromxywidthheight(unsigned int *bitmap, int xFixed, int yFixed, int w, int h) {
+ 	int yFrac;

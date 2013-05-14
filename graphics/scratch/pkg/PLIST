@@ -1,186 +1,164 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/03 14:56:56 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/05/14 09:42:47 sthen Exp $
 bin/scratch
-lib/scratch/
-lib/scratch/Help/
-lib/scratch/Help/en/
-lib/scratch/Help/en/ScratchGettingStarted.pdf
-lib/scratch/Help/en/ScratchReference.pdf
-lib/scratch/Help/en/addList.gif
-lib/scratch/Help/en/addVariable.gif
-lib/scratch/Help/en/allscreens.html
-lib/scratch/Help/en/and.gif
-lib/scratch/Help/en/append_toList_.gif
-lib/scratch/Help/en/backgroundIndex.gif
-lib/scratch/Help/en/bounceOffEdge.gif
-lib/scratch/Help/en/broadcastHat.gif
-lib/scratch/Help/en/broadcast_.gif
-lib/scratch/Help/en/changeGraphicEffect_by_.gif
-lib/scratch/Help/en/changePenHueBy_.gif
-lib/scratch/Help/en/changePenShadeBy_.gif
-lib/scratch/Help/en/changePenSizeBy_.gif
-lib/scratch/Help/en/changeSizeBy_.gif
-lib/scratch/Help/en/changeTempoBy_.gif
-lib/scratch/Help/en/changeVolumeBy_.gif
-lib/scratch/Help/en/changeXposBy_.gif
-lib/scratch/Help/en/changeYposBy_.gif
-lib/scratch/Help/en/clearPenTrails.gif
-lib/scratch/Help/en/color_sees_.gif
-lib/scratch/Help/en/comeToFront.gif
-lib/scratch/Help/en/computeFunction_of_.gif
-lib/scratch/Help/en/contentsOfList_.gif
-lib/scratch/Help/en/costumeIndex.gif
-lib/scratch/Help/en/deleteLine_ofList_.gif
-lib/scratch/Help/en/deleteList.gif
-lib/scratch/Help/en/deleteVariable.gif
-lib/scratch/Help/en/distanceTo_.gif
-lib/scratch/Help/en/doBroadcastAndWait.gif
-lib/scratch/Help/en/doForever.gif
-lib/scratch/Help/en/doForeverIf.gif
-lib/scratch/Help/en/doIf.gif
-lib/scratch/Help/en/doIfElse.gif
-lib/scratch/Help/en/doPlaySoundAndWait.gif
-lib/scratch/Help/en/doRepeat.gif
-lib/scratch/Help/en/doReturn.gif
-lib/scratch/Help/en/doUntil.gif
-lib/scratch/Help/en/doWaitUntil.gif
-lib/scratch/Help/en/drum_duration_elapsed_from_.gif
-lib/scratch/Help/en/equals.gif
-lib/scratch/Help/en/filterReset.gif
-lib/scratch/Help/en/forward_.gif
-lib/scratch/Help/en/getAttribute_of_.gif
-lib/scratch/Help/en/getLine_ofList_.gif
-lib/scratch/Help/en/glideSecs_toX_y_elapsed_from_.gif
-lib/scratch/Help/en/goBackByLayers_.gif
-lib/scratch/Help/en/gotoSpriteOrMouse_.gif
-lib/scratch/Help/en/gotoX_y_.gif
-lib/scratch/Help/en/greaterThan.gif
-lib/scratch/Help/en/heading.gif
-lib/scratch/Help/en/heading_.gif
-lib/scratch/Help/en/hide.gif
-lib/scratch/Help/en/hideVariable_.gif
-lib/scratch/Help/en/images/
-lib/scratch/Help/en/images/arrow.png
-lib/scratch/Help/en/images/getting-started-thumb.gif
-lib/scratch/Help/en/images/help-menu.gif
-lib/scratch/Help/en/images/helpscreens-thumb.gif
-lib/scratch/Help/en/images/scratch-interface-1.gif
-lib/scratch/Help/en/images/scratch-logo-wanthelp.gif
-lib/scratch/Help/en/images/scratch-logo.gif
-lib/scratch/Help/en/images/support-site.gif
-lib/scratch/Help/en/index.html
-lib/scratch/Help/en/insert_at_ofList_.gif
-lib/scratch/Help/en/isLoud.gif
-lib/scratch/Help/en/keyHat.gif
-lib/scratch/Help/en/keyPressed_.gif
-lib/scratch/Help/en/lessThan.gif
-lib/scratch/Help/en/lineCountOfList_.gif
-lib/scratch/Help/en/lookLike_.gif
-lib/scratch/Help/en/midiInstrument_.gif
-lib/scratch/Help/en/minus.gif
-lib/scratch/Help/en/mod.gif
-lib/scratch/Help/en/mousePressed.gif
-lib/scratch/Help/en/mouseX.gif
-lib/scratch/Help/en/mouseY.gif
-lib/scratch/Help/en/mouseclickHat.gif
-lib/scratch/Help/en/nextBackground.gif
-lib/scratch/Help/en/nextCostume.gif
-lib/scratch/Help/en/not.gif
-lib/scratch/Help/en/noteOn_duration_elapsed_from_.gif
-lib/scratch/Help/en/or.gif
-lib/scratch/Help/en/penColor_.gif
-lib/scratch/Help/en/penSize_.gif
-lib/scratch/Help/en/playSound_.gif
-lib/scratch/Help/en/pointTowards_.gif
-lib/scratch/Help/en/putPenDown.gif
-lib/scratch/Help/en/putPenUp.gif
-lib/scratch/Help/en/randomFrom_to_.gif
-lib/scratch/Help/en/rest_elapsed_from_.gif
-lib/scratch/Help/en/rounded.gif
-lib/scratch/Help/en/say_.gif
-lib/scratch/Help/en/say_duration_elapsed_from_.gif
-lib/scratch/Help/en/scale.gif
-lib/scratch/Help/en/sensorPressed_.gif
-lib/scratch/Help/en/sensor_.gif
-lib/scratch/Help/en/setGraphicEffect_to_.gif
-lib/scratch/Help/en/setLine_ofList_to_.gif
-lib/scratch/Help/en/setPenHueTo_.gif
-lib/scratch/Help/en/setPenShadeTo_.gif
-lib/scratch/Help/en/setSizeTo_.gif
-lib/scratch/Help/en/setTempoTo_.gif
-lib/scratch/Help/en/setVolumeTo_.gif
-lib/scratch/Help/en/show.gif
-lib/scratch/Help/en/showBackground_.gif
-lib/scratch/Help/en/showVariable_.gif
-lib/scratch/Help/en/soundLevel.gif
-lib/scratch/Help/en/stampCostume.gif
-lib/scratch/Help/en/startHat.gif
-lib/scratch/Help/en/stopAll.gif
-lib/scratch/Help/en/stopAllSounds.gif
-lib/scratch/Help/en/tempo.gif
-lib/scratch/Help/en/think_.gif
-lib/scratch/Help/en/think_duration_elapsed_from_.gif
-lib/scratch/Help/en/timer.gif
-lib/scratch/Help/en/timerReset.gif
-lib/scratch/Help/en/touchingColor_.gif
-lib/scratch/Help/en/touching_.gif
-lib/scratch/Help/en/turnLeft_.gif
-lib/scratch/Help/en/turnRight_.gif
-lib/scratch/Help/en/variable.gif
-lib/scratch/Help/en/variableChangeBy.gif
-lib/scratch/Help/en/variableSet.gif
-lib/scratch/Help/en/volume.gif
-lib/scratch/Help/en/wait_elapsed_from_.gif
-lib/scratch/Help/en/xpos.gif
-lib/scratch/Help/en/xpos_.gif
-lib/scratch/Help/en/ypos.gif
-lib/scratch/Help/en/ypos_.gif
-lib/scratch/Scratch.image.gz
-lib/scratch/Scratch.ini
-lib/scratch/license.txt
-lib/scratch/locale/
-lib/scratch/locale/Scratch.pot
-lib/scratch/locale/ar.po
-lib/scratch/locale/ca.po
-lib/scratch/locale/cs.po
-lib/scratch/locale/da.po
-lib/scratch/locale/de.po
-lib/scratch/locale/el.po
-lib/scratch/locale/es.po
-lib/scratch/locale/eu.po
-lib/scratch/locale/fa.po
-lib/scratch/locale/fi.po
-lib/scratch/locale/fr.po
-lib/scratch/locale/fr_CA.po
-lib/scratch/locale/gl.po
-lib/scratch/locale/he.po
-lib/scratch/locale/hr.po
-lib/scratch/locale/ht.po
-lib/scratch/locale/hu.po
-lib/scratch/locale/it.po
-lib/scratch/locale/ja.po
-lib/scratch/locale/ja_HIRA.po
-lib/scratch/locale/kn.po
-lib/scratch/locale/ko.po
-lib/scratch/locale/mk.po
-lib/scratch/locale/mn.po
-lib/scratch/locale/ne.po
-lib/scratch/locale/nl.po
-lib/scratch/locale/no.po
-lib/scratch/locale/pl.po
-lib/scratch/locale/pt.po
-lib/scratch/locale/pt_BR.po
-lib/scratch/locale/ro.po
-lib/scratch/locale/ru.po
-lib/scratch/locale/rw.po
-lib/scratch/locale/sl.po
-lib/scratch/locale/sv.po
-lib/scratch/locale/th.po
-lib/scratch/locale/tr.po
-lib/scratch/locale/uk.po
-lib/scratch/locale/vi.po
-lib/scratch/locale/zh_CN.po
-lib/scratch/locale/zh_TW.po
+@man man/man1/scratch.1
+share/applications/scratch.desktop
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/icons/hicolor/128x128/apps/scratch.png
+share/icons/hicolor/128x128/apps/scratch2.png
+share/icons/hicolor/128x128/mimetypes/gnome-mime-application-x-scratch-project.png
+share/icons/hicolor/32x32/apps/scratch.png
+share/icons/hicolor/32x32/apps/scratch.xpm
+share/icons/hicolor/48x48/apps/scratch.png
+share/icons/hicolor/48x48/apps/scratch2.png
+share/icons/hicolor/48x48/mimetypes/gnome-mime-application-x-scratch-project.png
+share/mime/packages/scratch.xml
 share/scratch/
+share/scratch/Help/
+share/scratch/Help/en/
+share/scratch/Help/en/ScratchGettingStartedv14.pdf
+share/scratch/Help/en/ScratchReferenceGuide14.pdf
+share/scratch/Help/en/addList.gif
+share/scratch/Help/en/addVariable.gif
+share/scratch/Help/en/allMotorsOff.gif
+share/scratch/Help/en/allMotorsOn.gif
+share/scratch/Help/en/allscreens.html
+share/scratch/Help/en/and.gif
+share/scratch/Help/en/answer.gif
+share/scratch/Help/en/append_toList_.gif
+share/scratch/Help/en/backgroundIndex.gif
+share/scratch/Help/en/bounceOffEdge.gif
+share/scratch/Help/en/broadcastHat.gif
+share/scratch/Help/en/broadcast_.gif
+share/scratch/Help/en/changeGraphicEffect_by_.gif
+share/scratch/Help/en/changePenHueBy_.gif
+share/scratch/Help/en/changePenShadeBy_.gif
+share/scratch/Help/en/changePenSizeBy_.gif
+share/scratch/Help/en/changeSizeBy_.gif
+share/scratch/Help/en/changeTempoBy_.gif
+share/scratch/Help/en/changeVolumeBy_.gif
+share/scratch/Help/en/changeXposBy_.gif
+share/scratch/Help/en/changeYposBy_.gif
+share/scratch/Help/en/clearPenTrails.gif
+share/scratch/Help/en/color_sees_.gif
+share/scratch/Help/en/comeToFront.gif
+share/scratch/Help/en/computeFunction_of_.gif
+share/scratch/Help/en/concatenate_with_.gif
+share/scratch/Help/en/contentsOfList_.gif
+share/scratch/Help/en/costumeIndex.gif
+share/scratch/Help/en/deleteLine_ofList_.gif
+share/scratch/Help/en/deleteList.gif
+share/scratch/Help/en/deleteVariable.gif
+share/scratch/Help/en/distanceTo_.gif
+share/scratch/Help/en/divide.gif
+share/scratch/Help/en/doAsk.gif
+share/scratch/Help/en/doBroadcastAndWait.gif
+share/scratch/Help/en/doForever.gif
+share/scratch/Help/en/doForeverIf.gif
+share/scratch/Help/en/doIf.gif
+share/scratch/Help/en/doIfElse.gif
+share/scratch/Help/en/doPlaySoundAndWait.gif
+share/scratch/Help/en/doRepeat.gif
+share/scratch/Help/en/doReturn.gif
+share/scratch/Help/en/doUntil.gif
+share/scratch/Help/en/doWaitUntil.gif
+share/scratch/Help/en/drum_duration_elapsed_from_.gif
+share/scratch/Help/en/equals.gif
+share/scratch/Help/en/filterReset.gif
+share/scratch/Help/en/forward_.gif
+share/scratch/Help/en/getAttribute_of_.gif
+share/scratch/Help/en/getLine_ofList_.gif
+share/scratch/Help/en/glideSecs_toX_y_elapsed_from_.gif
+share/scratch/Help/en/goBackByLayers_.gif
+share/scratch/Help/en/gotoSpriteOrMouse_.gif
+share/scratch/Help/en/gotoX_y_.gif
+share/scratch/Help/en/greaterThan.gif
+share/scratch/Help/en/heading.gif
+share/scratch/Help/en/heading_.gif
+share/scratch/Help/en/hide.gif
+share/scratch/Help/en/hideVariable_.gif
+share/scratch/Help/en/images/
+share/scratch/Help/en/images/getting-started-thumb.gif
+share/scratch/Help/en/images/help-menu.gif
+share/scratch/Help/en/images/helpscreens-thumb.gif
+share/scratch/Help/en/images/scratch-interface-1.gif
+share/scratch/Help/en/images/scratch-logo.gif
+share/scratch/Help/en/images/support-site.gif
+share/scratch/Help/en/index.html
+share/scratch/Help/en/insert_at_ofList_.gif
+share/scratch/Help/en/isLoud.gif
+share/scratch/Help/en/keyHat.gif
+share/scratch/Help/en/keyPressed_.gif
+share/scratch/Help/en/lessThan.gif
+share/scratch/Help/en/letter_of_.gif
+share/scratch/Help/en/lineCountOfList_.gif
+share/scratch/Help/en/list_contains_.gif
+share/scratch/Help/en/lookLike_.gif
+share/scratch/Help/en/midiInstrument_.gif
+share/scratch/Help/en/minus.gif
+share/scratch/Help/en/mod.gif
+share/scratch/Help/en/motorOnFor_elapsed_from_.gif
+share/scratch/Help/en/mousePressed.gif
+share/scratch/Help/en/mouseX.gif
+share/scratch/Help/en/mouseY.gif
+share/scratch/Help/en/mouseclickHat.gif
+share/scratch/Help/en/nextBackground.gif
+share/scratch/Help/en/nextCostume.gif
+share/scratch/Help/en/not.gif
+share/scratch/Help/en/noteOn_duration_elapsed_from_.gif
+share/scratch/Help/en/or.gif
+share/scratch/Help/en/penColor_.gif
+share/scratch/Help/en/penSize_.gif
+share/scratch/Help/en/playSound_.gif
+share/scratch/Help/en/plus.gif
+share/scratch/Help/en/pointTowards_.gif
+share/scratch/Help/en/putPenDown.gif
+share/scratch/Help/en/putPenUp.gif
+share/scratch/Help/en/randomFrom_to_.gif
+share/scratch/Help/en/rest_elapsed_from_.gif
+share/scratch/Help/en/rounded.gif
+share/scratch/Help/en/say_.gif
+share/scratch/Help/en/say_duration_elapsed_from_.gif
+share/scratch/Help/en/scale.gif
+share/scratch/Help/en/sensorPressed_.gif
+share/scratch/Help/en/sensor_.gif
+share/scratch/Help/en/setGraphicEffect_to_.gif
+share/scratch/Help/en/setLine_ofList_to_.gif
+share/scratch/Help/en/setMotorDirection_.gif
+share/scratch/Help/en/setPenHueTo_.gif
+share/scratch/Help/en/setPenShadeTo_.gif
+share/scratch/Help/en/setSizeTo_.gif
+share/scratch/Help/en/setTempoTo_.gif
+share/scratch/Help/en/setVolumeTo_.gif
+share/scratch/Help/en/show.gif
+share/scratch/Help/en/showBackground_.gif
+share/scratch/Help/en/showVariable_.gif
+share/scratch/Help/en/soundLevel.gif
+share/scratch/Help/en/stampCostume.gif
+share/scratch/Help/en/startHat.gif
+share/scratch/Help/en/startMotorPower_.gif
+share/scratch/Help/en/stopAll.gif
+share/scratch/Help/en/stopAllSounds.gif
+share/scratch/Help/en/stringLength_.gif
+share/scratch/Help/en/tempo.gif
+share/scratch/Help/en/think_.gif
+share/scratch/Help/en/think_duration_elapsed_from_.gif
+share/scratch/Help/en/timer.gif
+share/scratch/Help/en/timerReset.gif
+share/scratch/Help/en/times.gif
+share/scratch/Help/en/touchingColor_.gif
+share/scratch/Help/en/touching_.gif
+share/scratch/Help/en/turnLeft_.gif
+share/scratch/Help/en/turnRight_.gif
+share/scratch/Help/en/variable.gif
+share/scratch/Help/en/variableChangeBy.gif
+share/scratch/Help/en/variableSet.gif
+share/scratch/Help/en/volume.gif
+share/scratch/Help/en/wait_elapsed_from_.gif
+share/scratch/Help/en/xpos.gif
+share/scratch/Help/en/xpos_.gif
+share/scratch/Help/en/ypos.gif
+share/scratch/Help/en/ypos_.gif
+share/scratch/LICENSE
 share/scratch/Media/
 share/scratch/Media/Backgrounds/
 share/scratch/Media/Backgrounds/Indoors/
@@ -203,7 +181,7 @@ share/scratch/Media/Backgrounds/Nature/canyon.jpg
 share/scratch/Media/Backgrounds/Nature/desert.gif
 share/scratch/Media/Backgrounds/Nature/flower-bed.jpg
 share/scratch/Media/Backgrounds/Nature/flowers.gif
-share/scratch/Media/Backgrounds/Nature/forrest.jpg
+share/scratch/Media/Backgrounds/Nature/forest.jpg
 share/scratch/Media/Backgrounds/Nature/garden-rock.jpg
 share/scratch/Media/Backgrounds/Nature/grand-canyon.jpg
 share/scratch/Media/Backgrounds/Nature/gravel-desert.jpg
@@ -350,13 +328,6 @@ share/scratch/Media/Costumes/Fantasy/JetPack Girl.sprite
 share/scratch/Media/Costumes/Fantasy/Jump-flip Monster.sprite
 share/scratch/Media/Costumes/Fantasy/Jumping Jack.sprite
 share/scratch/Media/Costumes/Fantasy/Painting Unicorn.sprite
-share/scratch/Media/Costumes/Fantasy/cloak1-a.png
-share/scratch/Media/Costumes/Fantasy/cloak1-b.png
-share/scratch/Media/Costumes/Fantasy/demon1-a.png
-share/scratch/Media/Costumes/Fantasy/demon1-b.png
-share/scratch/Media/Costumes/Fantasy/demon2-a.png
-share/scratch/Media/Costumes/Fantasy/demon2-b.png
-share/scratch/Media/Costumes/Fantasy/devilguy.png
 share/scratch/Media/Costumes/Fantasy/dragon1-a.png
 share/scratch/Media/Costumes/Fantasy/dragon1-b.png
 share/scratch/Media/Costumes/Fantasy/dragon2.gif
@@ -379,11 +350,15 @@ share/scratch/Media/Costumes/Fantasy/fantasy9.png
 share/scratch/Media/Costumes/Fantasy/ghost1.png
 share/scratch/Media/Costumes/Fantasy/ghost2-a.png
 share/scratch/Media/Costumes/Fantasy/ghost2-b.png
+share/scratch/Media/Costumes/Fantasy/ghoul1-a.png
+share/scratch/Media/Costumes/Fantasy/ghoul1-b.png
 share/scratch/Media/Costumes/Fantasy/gobo1.gif
 share/scratch/Media/Costumes/Fantasy/gobo2.gif
 share/scratch/Media/Costumes/Fantasy/gobo3.gif
 share/scratch/Media/Costumes/Fantasy/knight1.png
 share/scratch/Media/Costumes/Fantasy/monkeyking.png
+share/scratch/Media/Costumes/Fantasy/monster1-a.png
+share/scratch/Media/Costumes/Fantasy/monster1-b.png
 share/scratch/Media/Costumes/Fantasy/robot1.png
 share/scratch/Media/Costumes/Fantasy/robot2.png
 share/scratch/Media/Costumes/Fantasy/robot3.gif
@@ -885,7 +860,6 @@ share/scratch/Media/Costumes/Things/Drawing Pencil.sprite
 share/scratch/Media/Costumes/Things/Following Arrow.sprite
 share/scratch/Media/Costumes/Things/Friction Marble.sprite
 share/scratch/Media/Costumes/Things/Gravity Marble.sprite
-share/scratch/Media/Costumes/Things/LEGO-brick.gif
 share/scratch/Media/Costumes/Things/Touch-me Trampoline.sprite
 share/scratch/Media/Costumes/Things/bananas1.png
 share/scratch/Media/Costumes/Things/baseball1.png
@@ -905,6 +879,7 @@ share/scratch/Media/Costumes/Things/hair2.gif
 share/scratch/Media/Costumes/Things/key1.png
 share/scratch/Media/Costumes/Things/lamp.gif
 share/scratch/Media/Costumes/Things/laptop.png
+share/scratch/Media/Costumes/Things/lego.gif
 share/scratch/Media/Costumes/Things/manhole.png
 share/scratch/Media/Costumes/Things/marble-building.gif
 share/scratch/Media/Costumes/Things/mic.png
@@ -952,7 +927,7 @@ share/scratch/Media/Costumes/Transportation/yacht.gif
 share/scratch/Media/Sounds/
 share/scratch/Media/Sounds/Animal/
 share/scratch/Media/Sounds/Animal/Bird.wav
-share/scratch/Media/Sounds/Animal/Cat.mp3
+share/scratch/Media/Sounds/Animal/Cat.wav
 share/scratch/Media/Sounds/Animal/Cricket.wav
 share/scratch/Media/Sounds/Animal/Crickets.wav
 share/scratch/Media/Sounds/Animal/Dog1.wav
@@ -965,24 +940,24 @@ share/scratch/Media/Sounds/Animal/Kitten.wav
 share/scratch/Media/Sounds/Animal/Meow.wav
 share/scratch/Media/Sounds/Animal/Owl.wav
 share/scratch/Media/Sounds/Animal/Rooster.wav
-share/scratch/Media/Sounds/Animal/SeaLion.mp3
+share/scratch/Media/Sounds/Animal/SeaLion.wav
 share/scratch/Media/Sounds/Animal/WolfHowl.wav
 share/scratch/Media/Sounds/Effects/
-share/scratch/Media/Sounds/Effects/BalloonScratch.mp3
+share/scratch/Media/Sounds/Effects/BalloonScratch.wav
 share/scratch/Media/Sounds/Effects/BellToll.wav
 share/scratch/Media/Sounds/Effects/Bubbles.wav
 share/scratch/Media/Sounds/Effects/CarPassing.wav
-share/scratch/Media/Sounds/Effects/DoorClose.mp3
+share/scratch/Media/Sounds/Effects/DoorClose.wav
 share/scratch/Media/Sounds/Effects/DoorCreak.wav
 share/scratch/Media/Sounds/Effects/MotorcyclePassing.wav
 share/scratch/Media/Sounds/Effects/Plunge.wav
 share/scratch/Media/Sounds/Effects/Pop.wav
 share/scratch/Media/Sounds/Effects/Rattle.wav
 share/scratch/Media/Sounds/Effects/Ripples.wav
-share/scratch/Media/Sounds/Effects/SewingMachine.mp3
-share/scratch/Media/Sounds/Effects/Typing.mp3
-share/scratch/Media/Sounds/Effects/WaterDrop.mp3
-share/scratch/Media/Sounds/Effects/WaterRunning.mp3
+share/scratch/Media/Sounds/Effects/SewingMachine.wav
+share/scratch/Media/Sounds/Effects/Typing.wav
+share/scratch/Media/Sounds/Effects/WaterDrop.wav
+share/scratch/Media/Sounds/Effects/WaterRunning.wav
 share/scratch/Media/Sounds/Electronic/
 share/scratch/Media/Sounds/Electronic/AlienCreak1.wav
 share/scratch/Media/Sounds/Electronic/AlienCreak2.wav
@@ -992,34 +967,34 @@ share/scratch/Media/Sounds/Electronic/DirtyWhir.wav
 share/scratch/Media/Sounds/Electronic/Fairydust.wav
 share/scratch/Media/Sounds/Electronic/Laser1.wav
 share/scratch/Media/Sounds/Electronic/Laser2.wav
-share/scratch/Media/Sounds/Electronic/Peculiar.mp3
+share/scratch/Media/Sounds/Electronic/Peculiar.wav
 share/scratch/Media/Sounds/Electronic/Screech.wav
 share/scratch/Media/Sounds/Electronic/SpaceRipple.wav
 share/scratch/Media/Sounds/Electronic/Spiral.wav
 share/scratch/Media/Sounds/Electronic/Whoop.wav
 share/scratch/Media/Sounds/Electronic/Zoop.wav
 share/scratch/Media/Sounds/Human/
-share/scratch/Media/Sounds/Human/BabyCry.mp3
+share/scratch/Media/Sounds/Human/BabyCry.wav
 share/scratch/Media/Sounds/Human/Cough-female.wav
 share/scratch/Media/Sounds/Human/Cough-male.wav
 share/scratch/Media/Sounds/Human/FingerSnap.wav
 share/scratch/Media/Sounds/Human/Footsteps-1.wav
-share/scratch/Media/Sounds/Human/Footsteps-2.mp3
+share/scratch/Media/Sounds/Human/Footsteps-2.wav
 share/scratch/Media/Sounds/Human/Laugh-female.wav
 share/scratch/Media/Sounds/Human/Laugh-male1.wav
 share/scratch/Media/Sounds/Human/Laugh-male2.wav
-share/scratch/Media/Sounds/Human/Laugh-male3.mp3
+share/scratch/Media/Sounds/Human/Laugh-male3.wav
 share/scratch/Media/Sounds/Human/PartyNoise.wav
 share/scratch/Media/Sounds/Human/Scream-female.wav
 share/scratch/Media/Sounds/Human/Scream-male1.wav
-share/scratch/Media/Sounds/Human/Scream-male2.mp3
-share/scratch/Media/Sounds/Human/Slurp.mp3
+share/scratch/Media/Sounds/Human/Scream-male2.wav
+share/scratch/Media/Sounds/Human/Slurp.wav
 share/scratch/Media/Sounds/Human/Sneeze-female.wav
 share/scratch/Media/Sounds/Human/Sneeze-male.wav
 share/scratch/Media/Sounds/Instruments/
 share/scratch/Media/Sounds/Instruments/AfroString.wav
 share/scratch/Media/Sounds/Instruments/Chord.wav
-share/scratch/Media/Sounds/Instruments/Dijjeridoo.mp3
+share/scratch/Media/Sounds/Instruments/Dijjeridoo.wav
 share/scratch/Media/Sounds/Instruments/GuitarStrum.wav
 share/scratch/Media/Sounds/Instruments/SpookyString.wav
 share/scratch/Media/Sounds/Instruments/StringAccent.wav
@@ -1029,29 +1004,29 @@ share/scratch/Media/Sounds/Instruments/Tambura.wav
 share/scratch/Media/Sounds/Instruments/Trumpet1.wav
 share/scratch/Media/Sounds/Instruments/Trumpet2.wav
 share/scratch/Media/Sounds/Music Loops/
-share/scratch/Media/Sounds/Music Loops/Cave.mp3
-share/scratch/Media/Sounds/Music Loops/DripDrop.mp3
-share/scratch/Media/Sounds/Music Loops/Drum.mp3
-share/scratch/Media/Sounds/Music Loops/DrumMachine.mp3
-share/scratch/Media/Sounds/Music Loops/DrumSet1.mp3
-share/scratch/Media/Sounds/Music Loops/DrumSet2.mp3
-share/scratch/Media/Sounds/Music Loops/Eggs.mp3
-share/scratch/Media/Sounds/Music Loops/Garden.mp3
-share/scratch/Media/Sounds/Music Loops/GuitarChords1.mp3
-share/scratch/Media/Sounds/Music Loops/GuitarChords2.mp3
-share/scratch/Media/Sounds/Music Loops/HipHop.mp3
-share/scratch/Media/Sounds/Music Loops/HumanBeatbox1.mp3
-share/scratch/Media/Sounds/Music Loops/HumanBeatbox2.mp3
-share/scratch/Media/Sounds/Music Loops/Jungle.mp3
-share/scratch/Media/Sounds/Music Loops/Medieval1.mp3
-share/scratch/Media/Sounds/Music Loops/Medieval2.mp3
-share/scratch/Media/Sounds/Music Loops/Techno.mp3
-share/scratch/Media/Sounds/Music Loops/Techno2.mp3
-share/scratch/Media/Sounds/Music Loops/Triumph.mp3
-share/scratch/Media/Sounds/Music Loops/Xylo1.mp3
-share/scratch/Media/Sounds/Music Loops/Xylo2.mp3
-share/scratch/Media/Sounds/Music Loops/Xylo3.mp3
-share/scratch/Media/Sounds/Music Loops/xylo4.mp3
+share/scratch/Media/Sounds/Music Loops/Cave.wav
+share/scratch/Media/Sounds/Music Loops/DripDrop.wav
+share/scratch/Media/Sounds/Music Loops/Drum.wav
+share/scratch/Media/Sounds/Music Loops/DrumMachine.wav
+share/scratch/Media/Sounds/Music Loops/DrumSet1.wav
+share/scratch/Media/Sounds/Music Loops/DrumSet2.wav
+share/scratch/Media/Sounds/Music Loops/Eggs.wav
+share/scratch/Media/Sounds/Music Loops/Garden.wav
+share/scratch/Media/Sounds/Music Loops/GuitarChords1.wav
+share/scratch/Media/Sounds/Music Loops/GuitarChords2.wav
+share/scratch/Media/Sounds/Music Loops/HipHop.wav
+share/scratch/Media/Sounds/Music Loops/HumanBeatbox1.wav
+share/scratch/Media/Sounds/Music Loops/HumanBeatbox2.wav
+share/scratch/Media/Sounds/Music Loops/Jungle.wav
+share/scratch/Media/Sounds/Music Loops/Medieval1.wav
+share/scratch/Media/Sounds/Music Loops/Medieval2.wav
+share/scratch/Media/Sounds/Music Loops/Techno.wav
+share/scratch/Media/Sounds/Music Loops/Techno2.wav
+share/scratch/Media/Sounds/Music Loops/Triumph.wav
+share/scratch/Media/Sounds/Music Loops/Xylo1.wav
+share/scratch/Media/Sounds/Music Loops/Xylo2.wav
+share/scratch/Media/Sounds/Music Loops/Xylo3.wav
+share/scratch/Media/Sounds/Music Loops/xylo4.wav
 share/scratch/Media/Sounds/Percussion/
 share/scratch/Media/Sounds/Percussion/CymbalCrash.wav
 share/scratch/Media/Sounds/Percussion/DrumBuzz.wav
@@ -1062,34 +1037,39 @@ share/scratch/Media/Sounds/Percussion/Shaker.wav
 share/scratch/Media/Sounds/Vocals/
 share/scratch/Media/Sounds/Vocals/BeatBox1.wav
 share/scratch/Media/Sounds/Vocals/BeatBox2.wav
-share/scratch/Media/Sounds/Vocals/Come-and-play.mp3
-share/scratch/Media/Sounds/Vocals/Doy-doy-doy.mp3
-share/scratch/Media/Sounds/Vocals/Got-inspiration.mp3
-share/scratch/Media/Sounds/Vocals/Hey-yay-hey.mp3
-share/scratch/Media/Sounds/Vocals/Join-us.mp3
-share/scratch/Media/Sounds/Vocals/Oooo-badada.mp3
-share/scratch/Media/Sounds/Vocals/Sing-me-a-song.mp3
+share/scratch/Media/Sounds/Vocals/Come-and-play.wav
+share/scratch/Media/Sounds/Vocals/Doy-doy-doy.wav
+share/scratch/Media/Sounds/Vocals/Got-inspiration.wav
+share/scratch/Media/Sounds/Vocals/Hey-yay-hey.wav
+share/scratch/Media/Sounds/Vocals/Join-us.wav
+share/scratch/Media/Sounds/Vocals/Oooo-badada.wav
+share/scratch/Media/Sounds/Vocals/Sing-me-a-song.wav
 share/scratch/Media/Sounds/Vocals/Singer1.wav
 share/scratch/Media/Sounds/Vocals/Singer2.wav
 share/scratch/Media/Sounds/Vocals/Ya.wav
+share/scratch/Plugins/
+share/scratch/Plugins/CameraPlugin
+share/scratch/Plugins/ScratchPlugin
+share/scratch/Plugins/UnicodePlugin
 share/scratch/Projects/
 share/scratch/Projects/Animation/
 share/scratch/Projects/Animation/1 Playground.sb
-share/scratch/Projects/Animation/2 FunWithAnimation.sb
-share/scratch/Projects/Animation/3 Jellyfish.sb
-share/scratch/Projects/Animation/4 EweAndMe.sb
-share/scratch/Projects/Animation/5 Aquarium.sb
-share/scratch/Projects/Animation/6 DayDream.sb
+share/scratch/Projects/Animation/2 Ideas.sb
+share/scratch/Projects/Animation/3 Trampoline.sb
+share/scratch/Projects/Animation/4 FunWithAnimation.sb
+share/scratch/Projects/Animation/5 EweAndMe.sb
+share/scratch/Projects/Animation/6 Aquarium.sb
+share/scratch/Projects/Animation/7 Jellyfish.sb
+share/scratch/Projects/Animation/8 DayDream.sb
 share/scratch/Projects/Games/
-share/scratch/Projects/Games/1 PacMan.sb
-share/scratch/Projects/Games/2 Pong.sb
-share/scratch/Projects/Games/3 Trampoline.sb
-share/scratch/Projects/Games/4 ScrollingDemo.sb
-share/scratch/Projects/Games/5 FishChomp.sb
-share/scratch/Projects/Games/6 BugOnAPlate.sb
-share/scratch/Projects/Games/7 Doodle.sb
-share/scratch/Projects/Games/8 MarbleRacer.sb
-share/scratch/Projects/Games/9 Tetris.sb
+share/scratch/Projects/Games/1 GuessingGame.sb
+share/scratch/Projects/Games/2 PacMan.sb
+share/scratch/Projects/Games/3 FishChomp.sb
+share/scratch/Projects/Games/4 Pong.sb
+share/scratch/Projects/Games/5 MarbleRacer.sb
+share/scratch/Projects/Games/6 FruitcraftRPG.sb
+share/scratch/Projects/Games/7 BugOnAPlate.sb
+share/scratch/Projects/Games/8 ScrollingDemo.sb
 share/scratch/Projects/Greetings/
 share/scratch/Projects/Greetings/1 HelloInManyLanguages.sb
 share/scratch/Projects/Greetings/2 SaySorryToYourFriend.sb
@@ -1104,24 +1084,20 @@ share/scratch/Projects/Interactive Art/1 MonkeyDressUp.sb
 share/scratch/Projects/Interactive Art/2 ExpressionCreator.sb
 share/scratch/Projects/Interactive Art/3 PlayWithYourFace.sb
 share/scratch/Projects/Interactive Art/4 Kaleidoscope.sb
-share/scratch/Projects/Interactive Art/5 WHEEE.sb
-share/scratch/Projects/Interactive Art/6 GardenSecret.sb
-share/scratch/Projects/Interactive Art/7 ZenRockGarden.sb
-share/scratch/Projects/Lists/
-share/scratch/Projects/Lists/1 Ideas.sb
-share/scratch/Projects/Lists/2 MelodyList.sb
-share/scratch/Projects/Lists/3 MouseRecorder.sb
-share/scratch/Projects/Lists/4 FruitcraftRPG.sb
-share/scratch/Projects/Lists/5 RepeatAfterMe.sb
+share/scratch/Projects/Interactive Art/5 MouseRecorder.sb
+share/scratch/Projects/Interactive Art/6 WHEEE.sb
+share/scratch/Projects/Interactive Art/7 GardenSecret.sb
+share/scratch/Projects/Interactive Art/8 ZenRockGarden.sb
 share/scratch/Projects/Music and Dance/
 share/scratch/Projects/Music and Dance/1 RobotDance.sb
 share/scratch/Projects/Music and Dance/2 ChickenNoodleSoup.sb
-share/scratch/Projects/Music and Dance/3 TwinkleTwinkle.sb
-share/scratch/Projects/Music and Dance/4 DanceDressUp.sb
-share/scratch/Projects/Music and Dance/5 BreakDance.sb
-share/scratch/Projects/Music and Dance/6 CanYouDance.sb
-share/scratch/Projects/Music and Dance/7 OceanMusicBox.sb
-share/scratch/Projects/Music and Dance/8 PianoMachine.sb
+share/scratch/Projects/Music and Dance/3 MelodyList.sb
+share/scratch/Projects/Music and Dance/4 TwinkleTwinkle.sb
+share/scratch/Projects/Music and Dance/5 DanceDressUp.sb
+share/scratch/Projects/Music and Dance/6 BreakDance.sb
+share/scratch/Projects/Music and Dance/7 CanYouDance.sb
+share/scratch/Projects/Music and Dance/8 OceanMusicBox.sb
+share/scratch/Projects/Music and Dance/9 PianoMachine.sb
 share/scratch/Projects/Names/
 share/scratch/Projects/Names/1 BouncingInitials.sb
 share/scratch/Projects/Names/2 Tamika.sb
@@ -1130,6 +1106,17 @@ share/scratch/Projects/Names/4 NatalieDucks.sb
 share/scratch/Projects/Names/5 WORDO.sb
 share/scratch/Projects/Names/6 ForMyLittleBrother.sb
 share/scratch/Projects/Names/7 Tamara.sb
+share/scratch/Projects/Sensors and Motors/
+share/scratch/Projects/Sensors and Motors/Sensorboard 1 Sunrise.sb
+share/scratch/Projects/Sensors and Motors/Sensorboard 2 Everything.sb
+share/scratch/Projects/Sensors and Motors/Sensorboard 3 Trombone.sb
+share/scratch/Projects/Sensors and Motors/Sensorboard 4 FruitOPhone.sb
+share/scratch/Projects/Sensors and Motors/Sensorboard 5 Squish.sb
+share/scratch/Projects/Sensors and Motors/WeDo 1 MagicWand.sb
+share/scratch/Projects/Sensors and Motors/WeDo 2 Puppet.sb
+share/scratch/Projects/Sensors and Motors/WeDo 3 Castle.sb
+share/scratch/Projects/Sensors and Motors/WeDo 4 Labyrinth.sb
+share/scratch/Projects/Sensors and Motors/WeDo 5 FriendlyGator.sb
 share/scratch/Projects/Simulations/
 share/scratch/Projects/Simulations/1 Spinner.sb
 share/scratch/Projects/Simulations/2 GravityBlocks.sb
@@ -1137,9 +1124,8 @@ share/scratch/Projects/Simulations/3 SoundGraph.sb
 share/scratch/Projects/Simulations/4 MyLittleTown.sb
 share/scratch/Projects/Simulations/5 SimpleCircuit.sb
 share/scratch/Projects/Simulations/6 WeatherSimulation.sb
-share/scratch/Projects/Simulations/7 Pastor.sb
-share/scratch/Projects/Simulations/8 VirtualDog.sb
-share/scratch/Projects/Simulations/9 BouncingMusicBalls.sb
+share/scratch/Projects/Simulations/7 VirtualDog.sb
+share/scratch/Projects/Simulations/8 BouncingMusicBalls.sb
 share/scratch/Projects/Speak Up/
 share/scratch/Projects/Speak Up/1 SmokingKills.sb
 share/scratch/Projects/Speak Up/2 SaveTheBats.sb
@@ -1149,10 +1135,69 @@ share/scratch/Projects/Speak Up/5 E-Cocat'sEarthTips.sb
 share/scratch/Projects/Speak Up/6 GlobalWarming.sb
 share/scratch/Projects/Stories/
 share/scratch/Projects/Stories/1 Joke.sb
-share/scratch/Projects/Stories/2 BowlOfMemories.sb
-share/scratch/Projects/Stories/3 Stargate.sb
+share/scratch/Projects/Stories/2 MadLibs.sb
+share/scratch/Projects/Stories/3 BowlOfMemories.sb
 share/scratch/Projects/Stories/4 CreationStory.sb
 share/scratch/Projects/Stories/5 SNN#1.sb
 share/scratch/Projects/Stories/6 WodunnesWorld.sb
 share/scratch/Projects/Stories/7 BeeStory.sb
-share/scratch/iniscratch
+share/scratch/Scratch.image
+share/scratch/Scratch.ini
+share/scratch/gpl-2.0.txt
+share/scratch/locale/
+share/scratch/locale/Scratch.pot
+share/scratch/locale/ar.po
+share/scratch/locale/bg.po
+share/scratch/locale/ca.po
+share/scratch/locale/cs.po
+share/scratch/locale/da.po
+share/scratch/locale/de.po
+share/scratch/locale/el.po
+share/scratch/locale/es.po
+share/scratch/locale/et.po
+share/scratch/locale/eu.po
+share/scratch/locale/fa.po
+share/scratch/locale/fi.po
+share/scratch/locale/fr.po
+share/scratch/locale/fr_CA.po
+share/scratch/locale/gl.po
+share/scratch/locale/he.po
+share/scratch/locale/hr.po
+share/scratch/locale/ht.po
+share/scratch/locale/hu.po
+share/scratch/locale/id.po
+share/scratch/locale/is.po
+share/scratch/locale/it.po
+share/scratch/locale/ja.po
+share/scratch/locale/ja_HIRA.po
+share/scratch/locale/kn.po
+share/scratch/locale/ko.po
+share/scratch/locale/lt.po
+share/scratch/locale/mk.po
+share/scratch/locale/mn.po
+share/scratch/locale/mr.po
+share/scratch/locale/ms.po
+share/scratch/locale/ne.po
+share/scratch/locale/nl.po
+share/scratch/locale/no.po
+share/scratch/locale/pl.po
+share/scratch/locale/pt.po
+share/scratch/locale/pt_BR.po
+share/scratch/locale/ro.po
+share/scratch/locale/ru.po
+share/scratch/locale/rw.po
+share/scratch/locale/sk.po
+share/scratch/locale/sl.po
+share/scratch/locale/sv.po
+share/scratch/locale/th.po
+share/scratch/locale/tr.po
+share/scratch/locale/uk.po
+share/scratch/locale/vi.po
+share/scratch/locale/zh_CN.po
+share/scratch/locale/zh_TW.po
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

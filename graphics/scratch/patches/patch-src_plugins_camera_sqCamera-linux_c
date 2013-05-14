@@ -1,0 +1,88 @@
+$OpenBSD: patch-src_plugins_camera_sqCamera-linux_c,v 1.1 2013/05/14 09:42:47 sthen Exp $
+
+Use libc instead of libv4l
+Fix bpp calc bug
+Quash compiler warnings
+
+--- src/plugins/camera/sqCamera-linux.c.orig	Tue Oct 18 17:24:46 2011
++++ src/plugins/camera/sqCamera-linux.c	Sun Sep 30 01:44:40 2012
+@@ -45,10 +45,20 @@
+ #include <sys/ioctl.h>
+ #include <dlfcn.h>
+ 
++#ifdef __linux__
+ #include <asm/types.h>	  /* for videodev2.h */
+ 
+ #include <linux/videodev2.h>
++#endif
+ 
++#ifdef __OpenBSD__
++#include <sys/videoio.h>
++#define vd_open   open
++#define vd_close  close
++#define vd_ioctl  ioctl
++#define vd_mmap   mmap
++#define vd_munmap munmap
++#endif
+ 
+ #define sqInt int
+ #define true 1
+@@ -71,6 +81,7 @@
+ #endif
+ 
+ 
++#ifdef __linux__
+ /* >>>>> LIBV4L2 USAGE >>>>> 
+ / 
+ / Attempting to get best-of-all-worlds so
+@@ -88,6 +99,7 @@ int (*vd_ioctl)(int, unsigned long int, ...);
+ ssize_t (*vd_read)(int, void *, size_t);
+ void * (*vd_mmap)(void *, size_t, int, int, int, int64_t);
+ int (*vd_munmap)(void *, size_t);
++#endif
+ 
+ 
+ /* >>>>>>> MULTI-CAMERA SUPPORT >>>>> */
+@@ -176,6 +188,7 @@ libCon(void)
+ 	int devNum;
+ 	camPtr cam;
+ 
++#ifdef __linux__
+ 	vd_open = open;
+ 	vd_close = close;
+ 	vd_dup = dup;
+@@ -196,6 +209,7 @@ libCon(void)
+ 		vd_mmap = dlsym(hLibv4l2, "v4l2_mmap");
+ 		vd_munmap = dlsym(hLibv4l2, "v4l2_munmap");
+ 	} 
++#endif
+ 
+ 	/* Init camInfo array... */
+ 	
+@@ -634,7 +648,7 @@ init_device (camPtr cam, int w, int h) 
+ 	struct v4l2_cropcap cropcap;
+ 	struct v4l2_crop crop;
+ 	struct v4l2_format fmt;
+-	int bpp;
++	int bpp = 0;
+ 	unsigned int min;
+ 
+ 	if (!xioctl (cam, VIDIOC_QUERYCAP, &cap)) return false;
+@@ -696,7 +710,7 @@ init_device (camPtr cam, int w, int h) 
+ 		bpp = 2;
+ 		break;
+ 	  case V4L2_PIX_FMT_YUYV: /* printf("V4L2_PIX_FMT_YUYV\n"); */
+-		bpp = 4; 
++		bpp = 2;
+ 		break;
+ 	}
+ 	
+@@ -776,7 +790,7 @@ initCamera(camPtr cam, int w, int h) 
+ sqInt 
+ CameraGetParam(int camNum, int paramNum) 
+ {
+-	camPtr cam = &camInfo[camNum-1];
++/*	camPtr cam = &camInfo[camNum-1]; */
+ 	return false;
+ }
+ 
