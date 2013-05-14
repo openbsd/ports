@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2013/03/29 10:45:59 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.15 2013/05/14 06:34:23 jasper Exp $
 @conflict gnome-applets2-<=2.22.0
 include/libgweather-3.0/
 include/libgweather-3.0/libgweather/
@@ -37,9 +37,6 @@ share/gtk-doc/html/libgweather-3.0/object-tree.html
 share/gtk-doc/html/libgweather-3.0/right.png
 share/gtk-doc/html/libgweather-3.0/style.css
 share/gtk-doc/html/libgweather-3.0/up.png
-share/icons/gnome/
-share/icons/gnome/16x16/
-share/icons/gnome/16x16/status/
 share/icons/gnome/16x16/status/weather-clear-night-000.png
 share/icons/gnome/16x16/status/weather-clear-night-010.png
 share/icons/gnome/16x16/status/weather-clear-night-020.png
@@ -110,8 +107,6 @@ share/icons/gnome/16x16/status/weather-few-clouds-night-320.png
 share/icons/gnome/16x16/status/weather-few-clouds-night-330.png
 share/icons/gnome/16x16/status/weather-few-clouds-night-340.png
 share/icons/gnome/16x16/status/weather-few-clouds-night-350.png
-share/icons/gnome/22x22/
-share/icons/gnome/22x22/status/
 share/icons/gnome/22x22/status/weather-clear-night-000.png
 share/icons/gnome/22x22/status/weather-clear-night-010.png
 share/icons/gnome/22x22/status/weather-clear-night-020.png
@@ -182,8 +177,6 @@ share/icons/gnome/22x22/status/weather-few-clouds-night-320.png
 share/icons/gnome/22x22/status/weather-few-clouds-night-330.png
 share/icons/gnome/22x22/status/weather-few-clouds-night-340.png
 share/icons/gnome/22x22/status/weather-few-clouds-night-350.png
-share/icons/gnome/24x24/
-share/icons/gnome/24x24/status/
 share/icons/gnome/24x24/status/weather-clear-night-000.png
 share/icons/gnome/24x24/status/weather-clear-night-010.png
 share/icons/gnome/24x24/status/weather-clear-night-020.png
@@ -254,8 +247,6 @@ share/icons/gnome/24x24/status/weather-few-clouds-night-320.png
 share/icons/gnome/24x24/status/weather-few-clouds-night-330.png
 share/icons/gnome/24x24/status/weather-few-clouds-night-340.png
 share/icons/gnome/24x24/status/weather-few-clouds-night-350.png
-share/icons/gnome/32x32/
-share/icons/gnome/32x32/status/
 share/icons/gnome/32x32/status/weather-clear-night-000.png
 share/icons/gnome/32x32/status/weather-clear-night-010.png
 share/icons/gnome/32x32/status/weather-clear-night-020.png
@@ -326,8 +317,6 @@ share/icons/gnome/32x32/status/weather-few-clouds-night-320.png
 share/icons/gnome/32x32/status/weather-few-clouds-night-330.png
 share/icons/gnome/32x32/status/weather-few-clouds-night-340.png
 share/icons/gnome/32x32/status/weather-few-clouds-night-350.png
-share/icons/gnome/scalable/
-share/icons/gnome/scalable/status/
 share/icons/gnome/scalable/status/weather-clear-night-000.svg
 share/icons/gnome/scalable/status/weather-clear-night-010.svg
 share/icons/gnome/scalable/status/weather-clear-night-020.svg
