@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2013/05/13 17:51:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2013/05/14 11:49:13 ajacoutot Exp $
 share/icons/gnome/scalable/
 share/icons/gnome/scalable/actions/
 share/icons/gnome/scalable/actions/action-unavailable-symbolic.svg
@@ -171,6 +171,7 @@ share/icons/gnome/scalable/devices/drive-harddisk-usb-symbolic.svg
 share/icons/gnome/scalable/devices/drive-multidisk-symbolic.svg
 share/icons/gnome/scalable/devices/drive-optical-symbolic.svg
 share/icons/gnome/scalable/devices/drive-removable-media-symbolic.svg
+share/icons/gnome/scalable/devices/headphones-symbolic.svg
 share/icons/gnome/scalable/devices/input-dialpad-symbolic.svg
 share/icons/gnome/scalable/devices/input-gaming-symbolic.svg
 share/icons/gnome/scalable/devices/input-keyboard-symbolic.svg
