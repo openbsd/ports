@@ -1,0 +1,16 @@
+$OpenBSD: patch-Printing_GSCUPS_GSCUPSPrintInfo_m,v 1.1 2013/05/15 15:36:11 sebastia Exp $
+
+Fixing bad assumption in cups
+
+--- Printing/GSCUPS/GSCUPSPrintInfo.m.orig	Thu May  2 17:18:50 2013
++++ Printing/GSCUPS/GSCUPSPrintInfo.m	Thu May  2 17:19:16 2013
+@@ -32,7 +32,9 @@
+ #import "AppKit/NSPrinter.h"
+ #import "GSCUPSPrintInfo.h"
+ #import "GSCUPSPrinter.h"
++#undef __BLOCKS__
+ #include <cups/cups.h>
++#define __BLOCKS__
+ 
+ 
+ @implementation GSCUPSPrintInfo

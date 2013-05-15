@@ -1,0 +1,16 @@
+$OpenBSD: patch-Printing_GSCUPS_GSCUPSPrintOperation_m,v 1.1 2013/05/15 15:36:11 sebastia Exp $
+
+fix against wrong assumption in cups
+
+--- Printing/GSCUPS/GSCUPSPrintOperation.m.orig	Thu May  2 17:21:04 2013
++++ Printing/GSCUPS/GSCUPSPrintOperation.m	Thu May  2 17:21:23 2013
+@@ -41,7 +41,9 @@
+ #import <AppKit/NSPrintOperation.h>
+ #import "GSGuiPrivate.h"
+ #import "GSCUPSPrintOperation.h"
++#undef __BLOCKS__
+ #include <cups/cups.h>
++#define __BLOCKS__
+ 
+ 
+ //A subclass of GSPrintOperation, NOT NSPrintOperation.
