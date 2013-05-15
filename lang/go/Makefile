@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/12 09:57:10 jsing Exp $
+# $OpenBSD: Makefile,v 1.10 2013/05/15 12:10:15 jsing Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		Go programming language
 
-VERSION =		1.0.3
-REVISION =		0
+VERSION =		1.1
 EXTRACT_SUFX =		.src.tar.gz
 DISTNAME = 		go${VERSION}
 PKGNAME = 		go-${VERSION}
@@ -16,7 +15,7 @@ HOMEPAGE =		http://www.golang.org/
 MAINTAINER = 		Joel Sing <jsing@openbsd.org>
 
 # software: BSD, documentation: CC-BY-3.0
-PERMIT_PACKAGE_CDROM =	 Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c m
 
@@ -71,13 +70,13 @@ do-test:
 		PATH=${WRKDIST}/bin:${PATH} GOROOT=${WRKDIST} ./run.bash
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIST}/bin/go{,doc,fmt} ${PREFIX}/bin
+	${INSTALL_PROGRAM} -p ${WRKDIST}/bin/go{,doc,fmt} ${PREFIX}/bin
 
 	${INSTALL_PROGRAM_DIR} ${GOROOT}
 
 	@cd ${WRKDIST} && \
 		find . ! -name .hg\* -type f -maxdepth 1 \
-			-exec ${INSTALL_DATA} {} \
+			-exec ${INSTALL_DATA} -p {} \
 			${GOROOT} \;
 
 .	for dir in doc include lib misc src pkg
@@ -87,13 +86,13 @@ do-install:
 				${GOROOT}/{} \;
 		@cd ${WRKDIST} && \
 			find ${dir} ! -name \*.orig -type f \
-				-exec ${INSTALL_DATA} {} \
+				-exec ${INSTALL_DATA} -p {} \
 				${GOROOT}/{} \;
 .	endfor
 
 	# These get installed via `find' however we need them to be executable
 	${INSTALL_PROGRAM_DIR} ${GOROOT}/pkg/tool/${GOOS}_${GOARCH}
-	${INSTALL_PROGRAM} ${WRKDIST}/pkg/tool/${GOOS}_${GOARCH}/* \
+	${INSTALL_PROGRAM} -p ${WRKDIST}/pkg/tool/${GOOS}_${GOARCH}/* \
 		${GOROOT}/pkg/tool/${GOOS}_${GOARCH}
 
 .include <bsd.port.mk>

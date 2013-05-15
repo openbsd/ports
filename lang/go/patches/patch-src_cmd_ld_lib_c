@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_cmd_ld_lib_c,v 1.1 2013/05/15 12:10:15 jsing Exp $
+--- src/cmd/ld/lib.c.orig	Tue Apr  9 21:41:19 2013
++++ src/cmd/ld/lib.c	Tue Apr  9 21:41:49 2013
+@@ -645,6 +645,8 @@ hostlink(void)
+ 		argv[argc++] = "-gdwarf-2"; 
+ 	if(HEADTYPE == Hdarwin)
+ 		argv[argc++] = "-Wl,-no_pie,-pagezero_size,4000000";
++	if(HEADTYPE == Hopenbsd)
++		argv[argc++] = "-Wl,-nopie";
+ 	argv[argc++] = "-o";
+ 	argv[argc++] = outfile;
+ 	
