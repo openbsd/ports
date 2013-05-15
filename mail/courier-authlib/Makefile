@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2013/05/07 08:07:34 giovanni Exp $
+# $OpenBSD: Makefile,v 1.35 2013/05/15 09:48:43 sebastia Exp $
 
 COMMENT-main=		authentication library for courier
 COMMENT-ldap=		ldap authentication module for courier-authLib
@@ -7,6 +7,7 @@ COMMENT-pgsql=		pgsql authentication module for courier-authLib
 COMMENT-userdb=		userdb authentication module for courier-authLib
 
 DISTNAME=			courier-authlib-0.65.0
+REVISION-main=		0
 PKGNAME-main=		${DISTNAME}
 PKGNAME-ldap=		${DISTNAME:S/lib-/lib-ldap-/}
 PKGNAME-mysql=		${DISTNAME:S/lib-/lib-mysql-/}
@@ -65,7 +66,7 @@ CONFIGURE_ARGS+=	--enable-static \
 			--with-ltdl-include=${LOCALBASE}/include \
 			--cache-file=${WRKDIR}/courier-authlib.cache
 
-RUN_DEPENDS-main=	lang/expect,no_tk
+RUN_DEPENDS-main=	lang/expect
 BUILD_DEPENDS=		${RUN_DEPENDS-main}
 
 DOCS=			COPYING COPYING.GPL INSTALL NEWS README
