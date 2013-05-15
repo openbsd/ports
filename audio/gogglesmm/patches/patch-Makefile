@@ -1,0 +1,46 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2013/05/15 06:24:53 bcallah Exp $
+--- Makefile.orig	Wed Feb  8 21:50:01 2012
++++ Makefile	Sat May  4 02:56:19 2013
+@@ -153,24 +153,32 @@ LINGUAS?=$(TRANSLATIONS)
+ #----------------------------------------------------------
+ install: $(BINNAME)
+ 	@echo "    Installing $(INSTALL_DIR)/bin/gogglesmm ..."
+-	@$(INSTALL) -m 755 -D src/gogglesmm $(INSTALL_DIR)/bin/gogglesmm
++	@$(INSTALL) -m 755 src/gogglesmm $(INSTALL_DIR)/bin/gogglesmm
+ 	@echo "    Installing $(INSTALL_DIR)/share/applications/gogglesmm.desktop"
+-	@$(INSTALL) -m 644 -D extra/gogglesmm.desktop $(INSTALL_DIR)/share/applications/gogglesmm.desktop
++	mkdir -p $(INSTALL_DIR)/share/applications
++	@$(INSTALL) -m 644 extra/gogglesmm.desktop $(INSTALL_DIR)/share/applications/gogglesmm.desktop
+ 	@echo "    Installing Icons"
+-	$(INSTALL) -m 644 -D icons/gogglesmm_16.png $(INSTALL_DIR)/share/icons/hicolor/16x16/apps/gogglesmm.png
+-	$(INSTALL) -m 644 -D extra/gogglesmm_22.png $(INSTALL_DIR)/share/icons/hicolor/22x22/apps/gogglesmm.png
+-	$(INSTALL) -m 644 -D extra/gogglesmm_24.png $(INSTALL_DIR)/share/icons/hicolor/24x24/apps/gogglesmm.png
+-	$(INSTALL) -m 644 -D icons/gogglesmm_32.png $(INSTALL_DIR)/share/icons/hicolor/32x32/apps/gogglesmm.png
+-	$(INSTALL) -m 644 -D extra/gogglesmm_48.png $(INSTALL_DIR)/share/icons/hicolor/48x48/apps/gogglesmm.png
+-	$(INSTALL) -m 644 -D extra/gogglesmm.svg $(INSTALL_DIR)/share/icons/hicolor/scalable/apps/gogglesmm.svg
++	mkdir -p $(INSTALL_DIR)/share/icons/hicolor/16x16/apps/
++	$(INSTALL) -m 644 icons/gogglesmm_16.png $(INSTALL_DIR)/share/icons/hicolor/16x16/apps/gogglesmm.png
++	mkdir -p $(INSTALL_DIR)/share/icons/hicolor/22x22/apps/
++	$(INSTALL) -m 644 extra/gogglesmm_22.png $(INSTALL_DIR)/share/icons/hicolor/22x22/apps/gogglesmm.png
++	mkdir -p $(INSTALL_DIR)/share/icons/hicolor/24x24/apps/
++	$(INSTALL) -m 644 extra/gogglesmm_24.png $(INSTALL_DIR)/share/icons/hicolor/24x24/apps/gogglesmm.png
++	mkdir -p $(INSTALL_DIR)/share/icons/hicolor/32x32/apps/
++	$(INSTALL) -m 644 icons/gogglesmm_32.png $(INSTALL_DIR)/share/icons/hicolor/32x32/apps/gogglesmm.png
++	mkdir -p $(INSTALL_DIR)/share/icons/hicolor/48x48/apps/
++	$(INSTALL) -m 644 extra/gogglesmm_48.png $(INSTALL_DIR)/share/icons/hicolor/48x48/apps/gogglesmm.png
++	mkdir -p $(INSTALL_DIR)/share/icons/hicolor/scalable/apps/
++	$(INSTALL) -m 644 extra/gogglesmm.svg $(INSTALL_DIR)/share/icons/hicolor/scalable/apps/gogglesmm.svg
+ 	@echo "    Installing $(INSTALL_MANDIR)/man1/gogglesmm.1"
+-	@$(INSTALL) -m 644 -D extra/gogglesmm.1 $(INSTALL_MANDIR)/man1/gogglesmm.1
++	@$(INSTALL) -m 644 extra/gogglesmm.1 $(INSTALL_MANDIR)/man1/gogglesmm.1
+ ifneq (,$(findstring nls,$(OPTIONS)))
+ 	@echo "    Installing Translations"
+ 	@linguas='$(filter $(TRANSLATIONS),$(LINGUAS))'; \
+ 	for tr in $$linguas ; do \
+     echo "    Installing $(INSTALL_LOCALEDIR)/$$tr/LC_MESSAGES/gogglesmm.mo" ;\
+-  	$(INSTALL) -m 644 -D po/$$tr.mo -T $(INSTALL_LOCALEDIR)/$$tr/LC_MESSAGES/gogglesmm.mo ; \
++	mkdir -p $(INSTALL_LOCALEDIR)/$$tr/LC_MESSAGES/ ; \
++	$(INSTALL) -m 644 po/$$tr.mo $(INSTALL_LOCALEDIR)/$$tr/LC_MESSAGES/gogglesmm.mo ; \
+ 	done;
+ endif
+ 

@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/05/15 06:24:53 bcallah Exp $
+@bin bin/gogglesmm
+@man man/man1/gogglesmm.1
+share/applications/gogglesmm.desktop
+share/icons/hicolor/16x16/apps/gogglesmm.png
+share/icons/hicolor/22x22/apps/gogglesmm.png
+share/icons/hicolor/24x24/apps/gogglesmm.png
+share/icons/hicolor/32x32/apps/gogglesmm.png
+share/icons/hicolor/48x48/apps/gogglesmm.png
+share/icons/hicolor/scalable/apps/gogglesmm.svg
+share/locale/cs/LC_MESSAGES/gogglesmm.mo
+share/locale/de/LC_MESSAGES/gogglesmm.mo
+share/locale/es/LC_MESSAGES/gogglesmm.mo
+share/locale/fr/LC_MESSAGES/gogglesmm.mo
+share/locale/hu/LC_MESSAGES/gogglesmm.mo
+share/locale/pt/LC_MESSAGES/gogglesmm.mo
+share/locale/ru/LC_MESSAGES/gogglesmm.mo
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
