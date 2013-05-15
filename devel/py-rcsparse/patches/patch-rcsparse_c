@@ -1,0 +1,62 @@
+$OpenBSD: patch-rcsparse_c,v 1.1 2013/05/15 20:17:54 dcoppa Exp $
+
+Free the fulltext of unmatched revisions while searching for the
+requested revision to avoid exhausting all available memory during
+the search.
+See: https://github.com/ustuehler/git-cvs/commit/b9fb06697901177ffff554ce692bf829ed6b6b79
+
+--- rcsparse.c.orig	Fri Aug  7 00:21:50 2009
++++ rcsparse.c	Wed May 15 15:22:45 2013
+@@ -937,7 +937,7 @@ rcscheckout(struct rcsfile *rcs, const char *revstr, s
+ {
+ 	struct rcsrev searchrev;
+ 	struct rcstoken searchtok;
+-	struct rcsrev *currcsrev;
++	struct rcsrev *currcsrev, *curtextrev;
+ 	struct stringinfo *curtext;
+ 	struct rcstoken *nextrev;
+ 	char *branchrev, *tmpstr;
+@@ -946,6 +946,7 @@ rcscheckout(struct rcsfile *rcs, const char *revstr, s
+ 	if (rcsparsetree(rcs) < 0)
+ 		return NULL;
+ 
++	curtextrev = NULL;
+ 	curtext = NULL;
+ 	nextrev = NULL;
+ 	branchrev = NULL;
+@@ -986,6 +987,7 @@ rcscheckout(struct rcsfile *rcs, const char *revstr, s
+ 
+ 		if (curtext == NULL) {
+ 			curtext = currcsrev->rawtext;
++			curtextrev = currcsrev;
+ 		} else {
+ 			if (nextrev == NULL)
+ 				goto fail;
+@@ -995,7 +997,12 @@ rcscheckout(struct rcsfile *rcs, const char *revstr, s
+ 
+ 			if (currcsrev->text) {
+ 				/* Was expanded before */
++				if (curtextrev != NULL) {
++					free(curtextrev->text);
++					curtextrev->text = NULL;
++				}
+ 				curtext = currcsrev->text;
++				curtextrev = currcsrev;
+ 			} else {
+ 				if (currcsrev->rawtext == NULL)
+ 					goto fail;
+@@ -1004,9 +1011,12 @@ rcscheckout(struct rcsfile *rcs, const char *revstr, s
+ 					goto fail;
+ 				if (applydelta(&currcsrev->text, currcsrev->rawtext) < 0)
+ 					goto fail;
+-				free(currcsrev->rawtext);
+-				currcsrev->rawtext = NULL;
++				if (curtextrev != NULL) {
++					free(curtextrev->text);
++					curtextrev->text = NULL;
++				}
+ 				curtext = currcsrev->text;
++				curtextrev = currcsrev;
+ 			}
+ 		}
+ 
