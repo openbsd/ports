@@ -1,24 +1,26 @@
-$OpenBSD: patch-pty_termios_c,v 1.1 2010/09/24 14:16:50 sebastia Exp $
+$OpenBSD: patch-pty_termios_c,v 1.2 2013/05/15 09:46:28 sebastia Exp $
 
-Get rid of implicit declaration of function warnings
+fix explicit declaration of function openpty
 
---- pty_termios.c.orig	Thu Mar 11 20:06:30 2010
-+++ pty_termios.c	Thu Sep  9 19:27:17 2010
-@@ -9,12 +9,17 @@ would appreciate credit if you use this file or parts 
- 
- #include <stdio.h>
- #include <signal.h>
-+#include <termios.h>
-+#include <util.h>
-+#include <string.h>
- 
- #if defined(SIGCLD) && !defined(SIGCHLD)
- #define SIGCHLD SIGCLD
- #endif
+--- pty_termios.c.orig	Fri Aug 27 23:51:53 2010
++++ pty_termios.c	Sun Apr 28 17:04:37 2013
+@@ -16,6 +16,8 @@ would appreciate credit if you use this file or parts 
  
  #include "expect_cf.h"
-+
-+extern char * expErrnoMsg(int);
  
++extern char * expErrnoMsg(int);
++
  /*
     The following functions are linked from the Tcl library.  They
+    don't cause anything else in the library to be dragged in, so it
+@@ -43,6 +45,10 @@ According to Ashley Pittman <ashley@ilo.dec.com>, Digi
+ with openpty which supports 4000 while ptmx supports 60. */
+ #if defined(HAVE_OPENPTY) && defined(HAVE_PTMX)
+ #undef HAVE_PTMX
++#endif
++#if defined(HAVE_OPENPTY) && defined(__OpenBSD__)
++#include <termios.h>
++#include <util.h>
+ #endif
+ 
+ #if defined(HAVE_PTYM) && defined(HAVE_PTMX)

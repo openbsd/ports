@@ -1,12 +1,21 @@
-$OpenBSD: patch-configure_in,v 1.1 2010/09/24 14:16:50 sebastia Exp $
---- configure.in.orig	Wed Sep 15 13:23:31 2010
-+++ configure.in	Wed Sep 15 13:24:45 2010
-@@ -1112,7 +1112,7 @@ EXP_UNSHARED_LIB_FILE=libexpect${EXP_LIB_VERSION}.a
- AC_MSG_CHECKING([for type of library to build])
- if test "$enable_shared" = "yes" && test "x${TCL_SHLIB_SUFFIX}" != "x" ; then
-   EXP_SHLIB_CFLAGS=$TCL_SHLIB_CFLAGS
--  eval "EXP_SHARED_LIB_FILE=libexpect${TCL_SHARED_LIB_SUFFIX}"
-+  eval "EXP_SHARED_LIB_FILE=libexpect${TCL_SHARED_LIB_SUFFIX}.${LIBexpect544115_VERSION}"
-   EXP_LIB_FILE=$EXP_SHARED_LIB_FILE
-   EXP_LIB_FILES="$EXP_SHARED_LIB_FILE $EXP_UNSHARED_LIB_FILE"
-   AC_MSG_RESULT(both shared and unshared)
+$OpenBSD: patch-configure_in,v 1.2 2013/05/15 09:46:28 sebastia Exp $
+--- configure.in.orig	Fri Aug 27 15:51:53 2010
++++ configure.in	Sun Apr 28 07:51:37 2013
+@@ -216,7 +216,8 @@ if test $openpty -eq 0 ; then
+ 	# the default behavior, we must also handle augment LIBS too.
+ 	# This needn't be done in the 2nd and 3rd tests.
+ 	AC_DEFINE(HAVE_OPENPTY)
+-	LIBS="$LIBS -lutil"
++	PTYLIB="-lutil"
++	LIBS="$LIBS $PTYLIB"
+   ])
+ fi
+ 
+@@ -980,6 +981,7 @@ AC_SUBST(DEFAULT_STTY_ARGS)
+ # Expect uses these from tclConfig.sh to make the main executable
+ AC_SUBST(TCL_DL_LIBS)
+ AC_SUBST(TCL_CC_SEARCH_FLAGS)
++AC_SUBST(PTYLIB)
+ 
+ #--------------------------------------------------------------------
+ # More TEA code based on data we got from the original expect

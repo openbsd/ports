@@ -1,67 +1,28 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2011/01/05 18:45:45 sebastia Exp $
-
-allow to build with --with-tk=no to please the no_tk flavor
-propagate the -lutil via @LIBS@, otherwise it will break 
-at least on vax
-
---- Makefile.in.orig	Thu Mar 11 20:06:30 2010
-+++ Makefile.in	Thu Dec 23 10:17:52 2010
-@@ -103,7 +103,11 @@ PKG_LIB_FILE	= @PKG_LIB_FILE@
- PKG_STUB_LIB_FILE = @PKG_STUB_LIB_FILE@
- 
- lib_BINARIES	= $(PKG_LIB_FILE)
--bin_BINARIES	= expect expectk
-+bin_BINARIES	= expect
-+.ifdef TK
-+  bin_BINARIES	+= expectk
-+.endif
-+
- BINARIES	= $(lib_BINARIES) $(bin_BINARIES)
- 
- SHELL		= @SHELL@
-@@ -120,7 +124,7 @@ includedir	= @includedir@
- 
- DESTDIR		=
- 
--PKG_DIR		= $(PACKAGE_NAME)$(PACKAGE_VERSION)
-+PKG_DIR		= $(PACKAGE_NAME)
- pkgdatadir	= $(datadir)/$(PKG_DIR)
- pkglibdir	= $(libdir)/$(PKG_DIR)
- pkgincludedir	= $(includedir)/$(PKG_DIR)
-@@ -413,7 +417,8 @@ expect:	exp_main_exp.o $(PKG_LIB_FILE)
+$OpenBSD: patch-Makefile_in,v 1.5 2013/05/15 09:46:28 sebastia Exp $
+--- Makefile.in.orig	Thu Sep 30 19:14:07 2010
++++ Makefile.in	Tue May 14 14:46:31 2013
+@@ -239,7 +239,7 @@ install-libraries: libraries $(SCRIPTS)
+ 	@mkdir -p $(DESTDIR)$(prefix)/bin
+ 	-for i in $(SCRIPT_LIST) ; do \
+ 	  if [ -f $$i ] ; then \
+-	    $(INSTALL_PROGRAM) $$i $(DESTDIR)$(prefix)/bin/$$i ; \
++	    $(INSTALL_SCRIPT) $$i $(DESTDIR)$(prefix)/bin/$$i ; \
+ 	    rm -f $$i ; \
+ 	  else true; fi ; \
+ 	done
+@@ -395,6 +395,7 @@ expect:	exp_main_exp.o $(PKG_LIB_FILE)
+ 		@EXP_BUILD_LIB_SPEC@ \
  		@TCL_LIB_SPEC@ \
- 		@DL_LIBS@ @PKG_LIBS@ @MATH_LIBS@ \
+ 		@TCL_DL_LIBS@ @PKG_LIBS@ @MATH_LIBS@ \
++		@PTYLIB@ \
  		@TCL_CC_SEARCH_FLAGS@ \
--		@EXP_CC_SEARCH_FLAGS@
-+		@EXP_CC_SEARCH_FLAGS@ \
-+		@LIBS@
+ 		@EXP_CC_SEARCH_FLAGS@
  	$(SETUID) expect
- 
- expectk: exp_main_tk.o $(PKG_LIB_FILE)
-@@ -428,7 +433,8 @@ expectk: exp_main_tk.o $(PKG_LIB_FILE)
- 		@TCL_LIB_SPEC@ \
- 		@TK_LIBS@ \
- 		@TCL_CC_SEARCH_FLAGS@ \
--		@EXP_CC_SEARCH_FLAGS@
-+		@EXP_CC_SEARCH_FLAGS@ \
-+		@LIBS@
- 	$(SETUID) expectk
- 
- #========================================================================
-@@ -555,12 +561,12 @@ install-lib-binaries:
- 	@mkdir -p $(DESTDIR)$(pkglibdir)
- 	@list='$(lib_BINARIES)'; for p in $$list; do \
- 	  if test -f $$p; then \
--	    echo " $(INSTALL_PROGRAM) $$p $(DESTDIR)$(pkglibdir)/$$p"; \
--	    $(INSTALL_PROGRAM) $$p $(DESTDIR)$(pkglibdir)/$$p; \
-+	    echo " $(INSTALL_PROGRAM) $$p $(DESTDIR)$(pkglibdir)/../../$$p"; \
-+	    $(INSTALL_PROGRAM) $$p $(DESTDIR)$(pkglibdir)/../../$$p; \
+@@ -530,6 +531,7 @@ install-lib-binaries:
+ 	    echo " $(INSTALL_PROGRAM) $$p $(DESTDIR)$(pkglibdir)/$$p"; \
+ 	    $(INSTALL_PROGRAM) $$p $(DESTDIR)$(pkglibdir)/$$p; \
  	    stub=`echo $$p|sed -e "s/.*\(stub\).*/\1/"`; \
++	    cd $(DESTDIR)$(pkglibdir)/../../; ln -s $(pkglibdir)/$$p $$p; \
  	    if test "x$$stub" = "xstub"; then \
--		echo " $(RANLIB_STUB) $(DESTDIR)$(pkglibdir)/$$p"; \
--		$(RANLIB_STUB) $(DESTDIR)$(pkglibdir)/$$p; \
-+		echo " $(RANLIB_STUB) $(DESTDIR)$(pkglibdir)/../../$$p"; \
-+		$(RANLIB_STUB) $(DESTDIR)$(pkglibdir)/../../$$p; \
- 	    else \
- 		echo " $(RANLIB) $(DESTDIR)$(pkglibdir)/$$p"; \
- 		$(RANLIB) $(DESTDIR)$(pkglibdir)/$$p; \
+ 		echo " $(RANLIB_STUB) $(DESTDIR)$(pkglibdir)/$$p"; \
+ 		$(RANLIB_STUB) $(DESTDIR)$(pkglibdir)/$$p; \

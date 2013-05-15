@@ -1,9 +1,0 @@
-$OpenBSD: patch-pkgIndex_in,v 1.1 2011/01/05 18:45:45 sebastia Exp $
---- pkgIndex.in.orig	Thu Dec 23 10:12:51 2010
-+++ pkgIndex.in	Thu Dec 23 10:13:04 2010
-@@ -7,4 +7,4 @@
- # script is sourced, the variable $dir must contain the
- # full path name of this file's directory.
- 
--package ifneeded Expect @EXP_VERSION_FULL@ [list load [file join $dir .. @EXP_SHARED_LIB_FILE@]]
-+package ifneeded Expect @EXP_VERSION_FULL@ [list load [file join $dir ../.. @EXP_SHARED_LIB_FILE@]]

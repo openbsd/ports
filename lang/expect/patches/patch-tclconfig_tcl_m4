@@ -1,85 +1,21 @@
-$OpenBSD: patch-tclconfig_tcl_m4,v 1.1 2010/09/24 14:16:50 sebastia Exp $
+$OpenBSD: patch-tclconfig_tcl_m4,v 1.2 2013/05/15 09:46:28 sebastia Exp $
 
-allow --with-tk=no to build the no_tk flavor
+without patch below, it would be needed to have
+LD_PRELOAD=libpthread.so set when running tcl/tk 
+non-threaded FLAVOR
 
---- tclconfig/tcl.m4.orig	Thu Mar 11 20:06:30 2010
-+++ tclconfig/tcl.m4	Wed Sep 15 14:38:02 2010
-@@ -181,10 +181,12 @@ AC_DEFUN(TEA_PATH_TCLCONFIG, [
- #
- #	Adds the following arguments to configure:
- #		--with-tk=...
-+#		--with-tk=no disable Tk usage
- #
- #	Defines the following vars:
- #		TK_BIN_DIR	Full path to the directory containing
- #				the tkConfig.sh file
-+#				Empty if Tk is disabled
- #------------------------------------------------------------------------
- 
- AC_DEFUN(TEA_PATH_TKCONFIG, [
-@@ -201,6 +203,12 @@ AC_DEFUN(TEA_PATH_TKCONFIG, [
- 	    AC_HELP_STRING([--with-tk],
- 		[directory containing tk configuration (tkConfig.sh)]),
- 	    with_tkconfig=${withval})
-+
-+	if test x"${with_tkconfig}" = x"no" ; then
-+	    AC_MSG_RESULT([Tk is disabled by --with-tk=no])
-+	    unset TK_BIN_DIR
-+	else
-+
- 	AC_MSG_CHECKING([for Tk configuration])
- 	AC_CACHE_VAL(ac_cv_c_tkconfig,[
- 
-@@ -309,6 +317,7 @@ AC_DEFUN(TEA_PATH_TKCONFIG, [
- 	    TK_BIN_DIR=${ac_cv_c_tkconfig}
- 	    AC_MSG_RESULT([found ${TK_BIN_DIR}/tkConfig.sh])
- 	fi
-+	fi
-     fi
- ])
- 
-@@ -420,6 +429,7 @@ AC_DEFUN(TEA_LOAD_TCLCONFIG, [
- #------------------------------------------------------------------------
- 
- AC_DEFUN(TEA_LOAD_TKCONFIG, [
-+    if test x"${with_tkconfig}" != x"no" ; then
-     AC_MSG_CHECKING([for existence of ${TK_BIN_DIR}/tkConfig.sh])
- 
-     if test -f "${TK_BIN_DIR}/tkConfig.sh" ; then
-@@ -501,6 +511,7 @@ AC_DEFUN(TEA_LOAD_TKCONFIG, [
- 
-     AC_SUBST(TK_LIBS)
-     AC_SUBST(TK_XINCLUDES)
-+    fi
- ])
- 
- #------------------------------------------------------------------------
-@@ -1559,7 +1570,7 @@ dnl AC_CHECK_TOOL(AR, ar)
- 	    DL_LIBS=""
- 	    CC_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
- 	    LD_SEARCH_FLAGS=${CC_SEARCH_FLAGS}
--	    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.1.0'
-+	    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.${LIBexpect544115_VERSION}'
- 	    AC_CACHE_CHECK([for ELF], tcl_cv_ld_elf, [
- 		AC_EGREP_CPP(yes, [
- #ifdef __ELF__
-@@ -3528,6 +3539,11 @@ AC_DEFUN(TEA_PRIVATE_TK_HEADERS, [
- #------------------------------------------------------------------------
- 
- AC_DEFUN(TEA_PUBLIC_TK_HEADERS, [
-+    if test x"${with_tkconfig}" = x"no" ; then
-+	TK_INCLUDES=""
-+	AC_SUBST(TK_INCLUDES)
-+    else
-+
-     AC_MSG_CHECKING([for Tk public headers])
- 
-     AC_ARG_WITH(tkinclude, [  --with-tkinclude      directory containing the public Tk header files.], with_tkinclude=${withval})
-@@ -3607,6 +3623,7 @@ AC_DEFUN(TEA_PUBLIC_TK_HEADERS, [
- 	    AC_SUBST(TK_XINCLUDES)
- 	fi
- 	AC_MSG_RESULT([${INCLUDE_DIR_NATIVE}])
-+    fi
-     fi
- ])
- 
+--- tclconfig/tcl.m4.orig	Tue May 14 11:12:51 2013
++++ tclconfig/tcl.m4	Tue May 14 11:14:03 2013
+@@ -1593,12 +1593,6 @@ dnl AC_CHECK_TOOL(AR, ar)
+ 	    AS_IF([test $tcl_cv_ld_elf = yes], [
+ 		LDFLAGS=-Wl,-export-dynamic
+ 	    ], [LDFLAGS=""])
+-	    AS_IF([test "${TCL_THREADS}" = "1"], [
+-		# OpenBSD builds and links with -pthread, never -lpthread.
+-		LIBS=`echo $LIBS | sed s/-lpthread//`
+-		CFLAGS="$CFLAGS -pthread"
+-		SHLIB_CFLAGS="$SHLIB_CFLAGS -pthread"
+-	    ])
+ 	    # OpenBSD doesn't do version numbers with dots.
+ 	    UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.a'
+ 	    TCL_LIB_VERSIONS_OK=nodots
