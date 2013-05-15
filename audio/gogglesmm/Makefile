@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/05/15 06:24:53 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2013/05/15 12:41:30 ajacoutot Exp $
 
 COMMENT =	music collection manager and player
 DISTNAME =	gogglesmm-0.12.7
@@ -25,10 +25,10 @@ LIB_DEPENDS =	audio/taglib \
 		x11/dbus
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+2,-guic \
-		x11/tango-icon-theme
+		x11/gtk+2,-guic
 
-CONFIGURE_ARGS =	--with-md5=internal
+CONFIGURE_ARGS =	--prefix=${PREFIX} \
+			--with-md5=internal
 CONFIGURE_STYLE =	simple
 USE_GMAKE =		Yes
 
