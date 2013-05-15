@@ -1,0 +1,13 @@
+$OpenBSD: patch-SpaceTimeViewer_DrawView+Drawing_m,v 1.1 2013/05/15 15:18:10 sebastia Exp $
+--- SpaceTimeViewer/DrawView+Drawing.m.orig	Wed May 15 16:19:16 2013
++++ SpaceTimeViewer/DrawView+Drawing.m	Wed May 15 16:19:24 2013
+@@ -22,9 +22,6 @@
+ // methods for drawing entities in DrawView.
+ 
+ #include "DrawView.h"
+-#ifdef GNUSTEP
+-#include <values.h>
+-#endif
+ #ifndef MAXFLOAT
+ #define MAXFLOAT 3.402823466e+38F
+ #endif
