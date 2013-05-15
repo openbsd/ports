@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.26 2013/04/01 10:33:59 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.27 2013/05/15 07:57:57 jasper Exp $
 @pkgpath graphics/evince
 @bin bin/evince
 @bin bin/evince-previewer
@@ -216,6 +216,7 @@ share/gtk-doc/html/libevdocument-${MAJ_V}/index.sgml
 share/gtk-doc/html/libevdocument-${MAJ_V}/left.png
 share/gtk-doc/html/libevdocument-${MAJ_V}/libevdocument-${MAJ_V}.devhelp2
 share/gtk-doc/html/libevdocument-${MAJ_V}/libevdocument-EvDocumentMisc.html
+share/gtk-doc/html/libevdocument-${MAJ_V}/libevdocument-EvDocumentText.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/libevdocument-Version-checks.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/libevdocument-ev-backends-manager.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/libevdocument-ev-document-factory.html
