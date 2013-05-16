@@ -1,9 +1,9 @@
-$OpenBSD: patch-mozilla_nsprpub_pr_src_pthreads_ptthread_c,v 1.8 2012/11/12 20:39:09 landry Exp $
+$OpenBSD: patch-mozilla_nsprpub_pr_src_pthreads_ptthread_c,v 1.9 2013/05/16 19:55:32 landry Exp $
 Don't only check for _POSIX_THREAD_PRIORITY_SCHEDULING being defined, but check that it's > 0
 on openbsd/rthreads it's -1 atm.
 https://bugzilla.mozilla.org/show_bug.cgi?id=756047
---- mozilla/nsprpub/pr/src/pthreads/ptthread.c.orig	Tue Oct 23 03:27:10 2012
-+++ mozilla/nsprpub/pr/src/pthreads/ptthread.c	Thu Nov  8 21:01:53 2012
+--- mozilla/nsprpub/pr/src/pthreads/ptthread.c.orig	Thu Mar 14 18:34:33 2013
++++ mozilla/nsprpub/pr/src/pthreads/ptthread.c	Thu Apr 11 18:02:23 2013
 @@ -16,6 +16,7 @@
  #include "prpdce.h"
  
@@ -12,8 +12,8 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=756047
  #include <unistd.h>
  #include <string.h>
  #include <signal.h>
-@@ -28,6 +29,10 @@
- #undef _POSIX_THREAD_PRIORITY_SCHEDULING
+@@ -36,6 +37,10 @@
+ #endif
  #endif
  
 +#if defined(_POSIX_THREAD_PRIORITY_SCHEDULING) && !(_POSIX_THREAD_PRIORITY_SCHEDULING > 0)
@@ -23,7 +23,7 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=756047
  /*
   * Record whether or not we have the privilege to set the scheduling
   * policy and priority of threads.  0 means that privilege is available.
-@@ -1640,7 +1645,8 @@ PR_IMPLEMENT(PRStatus) PR_SetCurrentThreadName(const c
+@@ -1696,7 +1701,8 @@ PR_IMPLEMENT(PRStatus) PR_SetCurrentThreadName(const c
      memcpy(thread->name, name, nameLen + 1);
  
  #if defined(OPENBSD) || defined(FREEBSD)
