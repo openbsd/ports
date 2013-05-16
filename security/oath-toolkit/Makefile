@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/05/16 12:11:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2013/05/16 12:14:03 sthen Exp $
 
 COMMENT-main=	toolkit for OATH/HOTP and TOTP
 COMMENT-pskc=	toolkit for RFC 6030 Portable Symmetric Key Container
@@ -38,5 +38,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 post-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/xml
+
+TEST_FLAGS=	HOME=/tmp
 
 .include <bsd.port.mk>
