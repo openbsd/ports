@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 10:50:06 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/05/16 09:09:50 sthen Exp $
 
 COMMENT =		annotation framework
 
 DISTNAME =		QuickAnnotate-0.6
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 # BSD3
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c iconv m pthread util
+WANTLIB =		c m pthread util
 
-MODULES =		lang/ghc
+MODULES =		lang/ghc converters/libiconv
 
 MODGHC_BUILD =		cabal hackage haddock register
 

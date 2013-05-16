@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/22 17:32:31 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/05/16 09:09:50 sthen Exp $
 
 COMMENT =	object-relational SQL database
 DISTNAME =	virtuoso-opensource-6.1.6
+REVISION =	0
 PKGNAME =	${DISTNAME:C/-opensource//}
 
 CATEGORIES =	databases
@@ -11,12 +12,13 @@ HOMEPAGE =	http://www.openlinksw.com/
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =  ICE MagickCore MagickWand SM X11 Xext Xt bz2 c crypto
-WANTLIB += djvulibre expat fftw3 fontconfig freetype iconv
+WANTLIB += djvulibre expat fftw3 fontconfig freetype
 WANTLIB += jasper jbig jpeg lcms2 ltdl lzma m png pthread
 WANTLIB += pthread-stubs ssl tiff wmf wmflite xcb xml2 z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=virtuoso/}
 
+MODULES =		converters/libiconv
 BUILD_DEPENDS =		devel/bison \
 			devel/flex \
 			devel/gperf \

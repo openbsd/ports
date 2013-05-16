@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2013/04/27 23:52:25 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2013/05/16 09:09:50 sthen Exp $
 
 V =		0.1.1
 COMMENT =	free interpreter for RPG Maker 2000/2003 and EasyRPG games
 DISTFILES =	EasyRPG_Player-${V}-src.zip \
 		EasyRPG_Readers-${V}-src.zip
 PKGNAME =	easyrpg-${V}
-REVISION =	0
+REVISION =	1
 CATEGORIES =	games x11
 
 HOMEPAGE =	https://easy-rpg.org/
@@ -16,12 +16,13 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 PERMIT_PACKAGE_CDROM =		Yes
 
 WANTLIB += FLAC SDL SDL_mixer boost_chrono-mt boost_system-mt boost_thread-mt
-WANTLIB += c expat freetype iconv jpeg m ogg openal pixman-1 png pthread
+WANTLIB += c expat freetype jpeg m ogg openal pixman-1 png pthread
 WANTLIB += sndfile stdc++ vorbis vorbisenc z ${MODLUA_WANTLIB}
 
 MASTER_SITES =	https://easy-rpg.org/downloads/player/
 
-MODULES +=	devel/cmake \
+MODULES +=	converters/libiconv \
+		devel/cmake \
 		lang/lua \
 		lang/ruby
 
