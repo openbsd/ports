@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.3 2013/03/11 12:27:53 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2013/05/16 20:45:30 rpe Exp $
 
-CATEGORIES =	games/gottcode games
+CATEGORIES =	games
 PKGNAME ?=	${DISTNAME:S/-src//}
 EXTRACT_SUFX ?=	.tar.bz2
 
