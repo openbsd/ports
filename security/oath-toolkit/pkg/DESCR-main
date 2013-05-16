@@ -6,3 +6,8 @@ Supported technologies include the event-based HOTP algorithm (RFC 4226)
 and the time-based TOTP algorithm (draft-mraihi-totp-timebased-07).
 OATH stands for Open AuTHentication, which is the organization that
 specify the algorithms.
+
+The OATH Toolkit also includes a library and tool for the Portable Symmetric
+Key Container (PSKC) data format specified in RFC 6030 for dealing with
+key provisioning; these are packaged separately to reduce dependencies
+for users only requiring OTP.

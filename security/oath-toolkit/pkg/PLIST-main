@@ -1,0 +1,29 @@
+@comment $OpenBSD: PLIST-main,v 1.1 2013/05/16 12:11:18 sthen Exp $
+@pkgpath security/oath-toolkit
+@bin bin/oathtool
+include/liboath/
+include/liboath/oath.h
+lib/liboath.a
+lib/liboath.la
+@lib lib/liboath.so.${LIBoath_VERSION}
+lib/pkgconfig/
+lib/pkgconfig/liboath.pc
+@man man/man1/oathtool.1
+@man man/man3/oath_authenticate_usersfile.3
+@man man/man3/oath_base32_decode.3
+@man man/man3/oath_base32_encode.3
+@man man/man3/oath_bin2hex.3
+@man man/man3/oath_check_version.3
+@man man/man3/oath_done.3
+@man man/man3/oath_hex2bin.3
+@man man/man3/oath_hotp_generate.3
+@man man/man3/oath_hotp_validate.3
+@man man/man3/oath_hotp_validate_callback.3
+@man man/man3/oath_init.3
+@man man/man3/oath_strerror.3
+@man man/man3/oath_strerror_name.3
+@man man/man3/oath_totp_generate.3
+@man man/man3/oath_totp_validate.3
+@man man/man3/oath_totp_validate2.3
+@man man/man3/oath_totp_validate2_callback.3
+@man man/man3/oath_totp_validate_callback.3

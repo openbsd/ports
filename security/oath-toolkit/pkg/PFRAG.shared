@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/03/16 10:10:49 sthen Exp $
-@lib lib/liboath.so.${LIBoath_VERSION}
