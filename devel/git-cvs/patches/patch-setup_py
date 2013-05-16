@@ -1,0 +1,13 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2013/05/16 12:45:12 dcoppa Exp $
+for option --single-version-externally-managed
+--- setup.py.orig	Wed Jan 16 16:18:51 2013
++++ setup.py	Wed Jan 16 16:19:13 2013
+@@ -2,7 +2,7 @@
+ 
+ """Python Distutils setup script for 'git-cvs'."""
+ 
+-from distutils.core import setup
++from setuptools import setup
+ 
+ setup(name='git-cvs',
+       version='0.0.1',

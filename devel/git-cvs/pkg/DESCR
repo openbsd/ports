@@ -1,0 +1,2 @@
+git-cvs is a tool to incrementally import changesets from CVS into a
+Git repository with stable commit hashes.
