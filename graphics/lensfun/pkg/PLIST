@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/12/16 11:39:51 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/05/16 09:04:03 sthen Exp $
 @bin bin/tmod
 include/lensfun.h
 @lib lib/liblensfun.so.${LIBlensfun_VERSION}
@@ -87,8 +87,12 @@ share/doc/lensfun/manual/structlfDatabase-members.html
 share/doc/lensfun/manual/structlfDatabase.html
 share/doc/lensfun/manual/structlfLens-members.html
 share/doc/lensfun/manual/structlfLens.html
+share/doc/lensfun/manual/structlfLensCalibCrop-members.html
+share/doc/lensfun/manual/structlfLensCalibCrop.html
 share/doc/lensfun/manual/structlfLensCalibDistortion-members.html
 share/doc/lensfun/manual/structlfLensCalibDistortion.html
+share/doc/lensfun/manual/structlfLensCalibFov-members.html
+share/doc/lensfun/manual/structlfLensCalibFov.html
 share/doc/lensfun/manual/structlfLensCalibTCA-members.html
 share/doc/lensfun/manual/structlfLensCalibTCA.html
 share/doc/lensfun/manual/structlfLensCalibVignetting-members.html
@@ -124,11 +128,18 @@ share/lensfun/compact-ricoh.xml
 share/lensfun/compact-sigma.xml
 share/lensfun/compact-sony.xml
 share/lensfun/generic.xml
+share/lensfun/mil-canon.xml
+share/lensfun/mil-nikon.xml
+share/lensfun/mil-olympus.xml
+share/lensfun/mil-panasonic.xml
+share/lensfun/mil-samsung.xml
+share/lensfun/mil-sony.xml
 share/lensfun/rf-leica.xml
 share/lensfun/slr-canon.xml
 share/lensfun/slr-contax.xml
 share/lensfun/slr-hasselblad.xml
 share/lensfun/slr-konica-minolta.xml
+share/lensfun/slr-leica.xml
 share/lensfun/slr-nikon.xml
 share/lensfun/slr-olympus.xml
 share/lensfun/slr-panasonic.xml
