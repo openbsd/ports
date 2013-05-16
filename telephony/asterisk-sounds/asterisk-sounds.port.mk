@@ -1,11 +1,7 @@
-# $OpenBSD: asterisk-sounds.port.mk,v 1.5 2013/05/10 16:56:39 sthen Exp $
+# $OpenBSD: asterisk-sounds.port.mk,v 1.6 2013/05/16 21:53:31 sthen Exp $
 
-# strictly speaking not, as they are just sound files, but packaging
-# these on !shared arch is just a total waste of cycles as asterisk itself
-# is SHARED_ONLY.
-SHARED_ONLY =	Yes
-
-MODAS_CODECS ?=	gsm alaw ulaw g722 sln16 wav # g729 siren7 siren14
+# sync with asterisk-sounds/Makefile and asterisk-sounds/*sounds/Makefile
+MODAS_CODECS ?=	gsm alaw ulaw g722 g729 wav # sln16 siren7 siren14
 
 CATEGORIES +=	telephony
 DISTNAME =	${MODAS_NAME}-${MODAS_LANG:C/(.+)/\1-/}${MODAS_CODEC}-${MODAS_VER}
@@ -18,10 +14,16 @@ NO_BUILD=	Yes
 NO_TEST=	Yes
 PKG_ARCH=	*
 
+# strictly speaking not, as they are just sound files, but packaging
+# these on !shared arch is just a total waste of cycles as asterisk itself
+# is SHARED_ONLY.
+SHARED_ONLY =	Yes
+
 _LN-en_AU =	Australian English
 _LN-en =	English
 _LN-es =	Spanish
 _LN-fr =	French
+_LN-it =	Italian
 _LN-ru =	Russian
 
 MODAS_LANGNAME = ${_LN-${MODAS_LANG}}

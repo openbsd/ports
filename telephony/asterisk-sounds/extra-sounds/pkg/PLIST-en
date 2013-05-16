@@ -1,14 +1,20 @@
-@comment $OpenBSD: PLIST-en,v 1.1 2012/09/25 21:58:47 sthen Exp $
+@comment $OpenBSD: PLIST-en,v 1.2 2013/05/16 21:53:32 sthen Exp $
 @option no-default-conflict
 @conflict asterisk-extra-en-*-${MODAS_CODEC}
-@pkgpath telephony/asterisk-sounds
 @conflict asterisk-sounds-*
+@pkgpath telephony/asterisk-sounds
 share/asterisk/
 share/asterisk/sounds/
 ${MODAS_INST}/
 ${MODAS_INST}/1-for-am-2-for-pm.${MODAS_CODEC}
 ${MODAS_INST}/1-yes-2-no.${MODAS_CODEC}
-@comment ${MODAS_INST}/CHANGES-asterisk-extra-en-${MODAS_VER}
+${MODAS_INST}/CHANGES-asterisk-extra-en-${MODAS_VER}${FLAVORS}
+${MODAS_INST}/CREDITS-asterisk-extra-en-${MODAS_VER}${FLAVORS}
+${MODAS_INST}/LICENSE-asterisk-extra-en-${MODAS_VER}${FLAVORS}
+${MODAS_INST}/OfficeSpace.${MODAS_CODEC}
+${MODAS_INST}/Randulo-allison.${MODAS_CODEC}
+${MODAS_INST}/SIP_Test_Failure.${MODAS_CODEC}
+${MODAS_INST}/SIP_Test_Success.${MODAS_CODEC}
 ${MODAS_INST}/T-changed-to.${MODAS_CODEC}
 ${MODAS_INST}/T-is-not-available.${MODAS_CODEC}
 ${MODAS_INST}/T-to-disable-ancmnt.${MODAS_CODEC}
@@ -31,6 +37,7 @@ ${MODAS_INST}/access-denied.${MODAS_CODEC}
 ${MODAS_INST}/access-granted.${MODAS_CODEC}
 ${MODAS_INST}/accessible-through-system.${MODAS_CODEC}
 ${MODAS_INST}/account-balance-is.${MODAS_CODEC}
+${MODAS_INST}/account_number.${MODAS_CODEC}
 ${MODAS_INST}/accounting.${MODAS_CODEC}
 ${MODAS_INST}/accounts-payable.${MODAS_CODEC}
 ${MODAS_INST}/accounts-receivable.${MODAS_CODEC}
@@ -41,6 +48,7 @@ ${MODAS_INST}/address.${MODAS_CODEC}
 ${MODAS_INST}/administration.${MODAS_CODEC}
 ${MODAS_INST}/advised-to-seek-shelter.${MODAS_CODEC}
 ${MODAS_INST}/after-the-tone.${MODAS_CODEC}
+${MODAS_INST}/after_tone.${MODAS_CODEC}
 ${MODAS_INST}/afternoon.${MODAS_CODEC}
 ${MODAS_INST}/airport.${MODAS_CODEC}
 ${MODAS_INST}/alabama.${MODAS_CODEC}
@@ -59,6 +67,7 @@ ${MODAS_INST}/and-area-code.${MODAS_CODEC}
 ${MODAS_INST}/and-or.${MODAS_CODEC}
 ${MODAS_INST}/and-prs-pound-whn-finished.${MODAS_CODEC}
 ${MODAS_INST}/and.${MODAS_CODEC}
+${MODAS_INST}/andnowstandby.${MODAS_CODEC}
 ${MODAS_INST}/another-time.${MODAS_CODEC}
 ${MODAS_INST}/approaching.${MODAS_CODEC}
 ${MODAS_INST}/approximately.${MODAS_CODEC}
@@ -84,6 +93,7 @@ ${MODAS_INST}/at-customers-request.${MODAS_CODEC}
 ${MODAS_INST}/at-following-number.${MODAS_CODEC}
 ${MODAS_INST}/at-sign.${MODAS_CODEC}
 ${MODAS_INST}/at-tone-time-exactly.${MODAS_CODEC}
+${MODAS_INST}/at_tone.${MODAS_CODEC}
 ${MODAS_INST}/athletics.${MODAS_CODEC}
 ${MODAS_INST}/atlanta.${MODAS_CODEC}
 ${MODAS_INST}/atlantic.${MODAS_CODEC}
@@ -95,6 +105,7 @@ ${MODAS_INST}/available.${MODAS_CODEC}
 ${MODAS_INST}/avg-speed-answer.${MODAS_CODEC}
 ${MODAS_INST}/away-naughty-boy.${MODAS_CODEC}
 ${MODAS_INST}/away-naughty-girl.${MODAS_CODEC}
+${MODAS_INST}/awkward.${MODAS_CODEC}
 ${MODAS_INST}/backslash.${MODAS_CODEC}
 ${MODAS_INST}/bad.${MODAS_CODEC}
 ${MODAS_INST}/baltimore.${MODAS_CODEC}
@@ -110,8 +121,10 @@ ${MODAS_INST}/believe-its-free.${MODAS_CODEC}
 ${MODAS_INST}/billing-and-collections.${MODAS_CODEC}
 ${MODAS_INST}/billing.${MODAS_CODEC}
 ${MODAS_INST}/billionth.${MODAS_CODEC}
+${MODAS_INST}/binary.${MODAS_CODEC}
 ${MODAS_INST}/bits.${MODAS_CODEC}
 ${MODAS_INST}/blue-eyed-polar-bear.${MODAS_CODEC}
+${MODAS_INST}/bombsquad.${MODAS_CODEC}
 ${MODAS_INST}/bookstore.${MODAS_CODEC}
 ${MODAS_INST}/boston.${MODAS_CODEC}
 ${MODAS_INST}/box.${MODAS_CODEC}
@@ -162,6 +175,7 @@ ${MODAS_INST}/central.${MODAS_CODEC}
 ${MODAS_INST}/cents-per-minute.${MODAS_CODEC}
 ${MODAS_INST}/cents.${MODAS_CODEC}
 ${MODAS_INST}/ceo-office.${MODAS_CODEC}
+${MODAS_INST}/challenge_try_again.${MODAS_CODEC}
 ${MODAS_INST}/chance-of.${MODAS_CODEC}
 ${MODAS_INST}/changing.${MODAS_CODEC}
 ${MODAS_INST}/channel-insecure-warn.${MODAS_CODEC}
@@ -179,12 +193,14 @@ ${MODAS_INST}/clearing.${MODAS_CODEC}
 ${MODAS_INST}/cleveland.${MODAS_CODEC}
 ${MODAS_INST}/clli.${MODAS_CODEC}
 ${MODAS_INST}/close-parenthesis.${MODAS_CODEC}
+${MODAS_INST}/closed.${MODAS_CODEC}
 ${MODAS_INST}/clouds.${MODAS_CODEC}
 ${MODAS_INST}/cloudy.${MODAS_CODEC}
 ${MODAS_INST}/collections.${MODAS_CODEC}
 ${MODAS_INST}/colorado-springs.${MODAS_CODEC}
 ${MODAS_INST}/colorado.${MODAS_CODEC}
 ${MODAS_INST}/columbus.${MODAS_CODEC}
+${MODAS_INST}/comedyclub.${MODAS_CODEC}
 ${MODAS_INST}/comma.${MODAS_CODEC}
 ${MODAS_INST}/communications.${MODAS_CODEC}
 ${MODAS_INST}/company-dir-411.${MODAS_CODEC}
@@ -193,6 +209,12 @@ ${MODAS_INST}/compliance.${MODAS_CODEC}
 ${MODAS_INST}/computer-friend1.${MODAS_CODEC}
 ${MODAS_INST}/computer-friend2.${MODAS_CODEC}
 ${MODAS_INST}/conditions.${MODAS_CODEC}
+${MODAS_INST}/conf-1-to-list-users.${MODAS_CODEC}
+${MODAS_INST}/conf-2-to-kick-nonadmin.${MODAS_CODEC}
+${MODAS_INST}/conf-3-mute-or-unmute-nonadmin.${MODAS_CODEC}
+${MODAS_INST}/conf-4-to-record-conf.${MODAS_CODEC}
+${MODAS_INST}/conf-8-for-more-options.${MODAS_CODEC}
+${MODAS_INST}/conf-8-to-exit-return-to-conf.${MODAS_CODEC}
 ${MODAS_INST}/conf-banned.${MODAS_CODEC}
 ${MODAS_INST}/conf-full.${MODAS_CODEC}
 ${MODAS_INST}/conf-hasentered.${MODAS_CODEC}
@@ -217,8 +239,11 @@ ${MODAS_INST}/copy-center.${MODAS_CODEC}
 ${MODAS_INST}/could-lose-a-few-pounds.${MODAS_CODEC}
 ${MODAS_INST}/counseling-services.${MODAS_CODEC}
 ${MODAS_INST}/count.${MODAS_CODEC}
+${MODAS_INST}/countdown.${MODAS_CODEC}
 ${MODAS_INST}/crash.${MODAS_CODEC}
+${MODAS_INST}/crashing_conf.${MODAS_CODEC}
 ${MODAS_INST}/current-time-is.${MODAS_CODEC}
+${MODAS_INST}/current_account_balance.${MODAS_CODEC}
 ${MODAS_INST}/currently.${MODAS_CODEC}
 ${MODAS_INST}/customer-accounts.${MODAS_CODEC}
 ${MODAS_INST}/customer-relations.${MODAS_CODEC}
@@ -257,6 +282,8 @@ ${MODAS_INST}/divided-by.${MODAS_CODEC}
 ${MODAS_INST}/dns.${MODAS_CODEC}
 ${MODAS_INST}/do-not-disturb.${MODAS_CODEC}
 ${MODAS_INST}/doing-enum-lookup.${MODAS_CODEC}
+${MODAS_INST}/donotcall1.${MODAS_CODEC}
+${MODAS_INST}/donotcall2.${MODAS_CODEC}
 ${MODAS_INST}/dont-know-who-sent.${MODAS_CODEC}
 ${MODAS_INST}/doppler-radar.${MODAS_CODEC}
 ${MODAS_INST}/down.${MODAS_CODEC}
@@ -273,6 +300,7 @@ ${MODAS_INST}/eighteenth.${MODAS_CODEC}
 ${MODAS_INST}/eighth.${MODAS_CODEC}
 ${MODAS_INST}/eightieth.${MODAS_CODEC}
 ${MODAS_INST}/el-paso.${MODAS_CODEC}
+${MODAS_INST}/eletelephony.${MODAS_CODEC}
 ${MODAS_INST}/eleventh.${MODAS_CODEC}
 ${MODAS_INST}/email.${MODAS_CODEC}
 ${MODAS_INST}/emergency.${MODAS_CODEC}
@@ -287,11 +315,13 @@ ${MODAS_INST}/enter-ext-of-person.${MODAS_CODEC}
 ${MODAS_INST}/enter-num-blacklist.${MODAS_CODEC}
 ${MODAS_INST}/enter-password.${MODAS_CODEC}
 ${MODAS_INST}/enter-phone-number10.${MODAS_CODEC}
+${MODAS_INST}/enter_account.${MODAS_CODEC}
 ${MODAS_INST}/entering-conf-number.${MODAS_CODEC}
 ${MODAS_INST}/entr-num-rmv-blklist.${MODAS_CODEC}
 ${MODAS_INST}/enum-lookup-failed.${MODAS_CODEC}
 ${MODAS_INST}/enum-lookup-successful.${MODAS_CODEC}
 ${MODAS_INST}/error-number.${MODAS_CODEC}
+${MODAS_INST}/error.${MODAS_CODEC}
 ${MODAS_INST}/est-hold-time-is.${MODAS_CODEC}
 ${MODAS_INST}/euro.${MODAS_CODEC}
 ${MODAS_INST}/european.${MODAS_CODEC}
@@ -301,12 +331,13 @@ ${MODAS_INST}/explanation.${MODAS_CODEC}
 ${MODAS_INST}/ext-or-zero.${MODAS_CODEC}
 ${MODAS_INST}/extension.${MODAS_CODEC}
 ${MODAS_INST}/extensions.${MODAS_CODEC}
-@comment ${MODAS_INST}/extra-sounds-en.txt
+${MODAS_INST}/extra-sounds-en.txt${FLAVORS}
 ${MODAS_INST}/facilities.${MODAS_CODEC}
 ${MODAS_INST}/fahrenheit.${MODAS_CODEC}
 ${MODAS_INST}/falling.${MODAS_CODEC}
 ${MODAS_INST}/fast.${MODAS_CODEC}
 ${MODAS_INST}/feature-not-avail-line.${MODAS_CODEC}
+${MODAS_INST}/feeling_lucky_punk.${MODAS_CODEC}
 ${MODAS_INST}/feet.${MODAS_CODEC}
 ${MODAS_INST}/female.${MODAS_CODEC}
 ${MODAS_INST}/fifteenth.${MODAS_CODEC}
@@ -322,6 +353,8 @@ ${MODAS_INST}/florida.${MODAS_CODEC}
 ${MODAS_INST}/fog.${MODAS_CODEC}
 ${MODAS_INST}/foggy.${MODAS_CODEC}
 ${MODAS_INST}/followed-by.${MODAS_CODEC}
+${MODAS_INST}/followed_hash.${MODAS_CODEC}
+${MODAS_INST}/followed_pound.${MODAS_CODEC}
 ${MODAS_INST}/food-service.${MODAS_CODEC}
 ${MODAS_INST}/food-services.${MODAS_CODEC}
 ${MODAS_INST}/for-a-daily-wakeup-call.${MODAS_CODEC}
@@ -342,6 +375,7 @@ ${MODAS_INST}/for-the-weather.${MODAS_CODEC}
 ${MODAS_INST}/for-wakeup-call.${MODAS_CODEC}
 ${MODAS_INST}/for-yes-press.${MODAS_CODEC}
 ${MODAS_INST}/for.${MODAS_CODEC}
+${MODAS_INST}/forget_about_it.${MODAS_CODEC}
 ${MODAS_INST}/fort-worth.${MODAS_CODEC}
 ${MODAS_INST}/fortieth.${MODAS_CODEC}
 ${MODAS_INST}/fourteenth.${MODAS_CODEC}
@@ -356,6 +390,10 @@ ${MODAS_INST}/ftp.${MODAS_CODEC}
 ${MODAS_INST}/gale.${MODAS_CODEC}
 ${MODAS_INST}/gambling-drunk.${MODAS_CODEC}
 ${MODAS_INST}/georgia.${MODAS_CODEC}
+${MODAS_INST}/get-in-line-sales-guy.${MODAS_CODEC}
+${MODAS_INST}/get_bleep_outta.${MODAS_CODEC}
+${MODAS_INST}/get_information.${MODAS_CODEC}
+${MODAS_INST}/get_information_first.${MODAS_CODEC}
 ${MODAS_INST}/gigabits.${MODAS_CODEC}
 ${MODAS_INST}/gigabytes.${MODAS_CODEC}
 ${MODAS_INST}/gigahertz.${MODAS_CODEC}
@@ -368,6 +406,10 @@ ${MODAS_INST}/good-evening.${MODAS_CODEC}
 ${MODAS_INST}/good-morning.${MODAS_CODEC}
 ${MODAS_INST}/good.${MODAS_CODEC}
 ${MODAS_INST}/goodbye.${MODAS_CODEC}
+${MODAS_INST}/goodbye_for_the_best.${MODAS_CODEC}
+${MODAS_INST}/goodbye_love.${MODAS_CODEC}
+${MODAS_INST}/got_kidding.${MODAS_CODEC}
+${MODAS_INST}/grammar.${MODAS_CODEC}
 ${MODAS_INST}/greater-than.${MODAS_CODEC}
 ${MODAS_INST}/groovy.${MODAS_CODEC}
 ${MODAS_INST}/ha/
@@ -496,10 +538,12 @@ ${MODAS_INST}/ha/xmas-lights.${MODAS_CODEC}
 ${MODAS_INST}/ha/xmas-tree.${MODAS_CODEC}
 ${MODAS_INST}/ha/yard.${MODAS_CODEC}
 ${MODAS_INST}/hail.${MODAS_CODEC}
+${MODAS_INST}/hal_goodbye.${MODAS_CODEC}
 ${MODAS_INST}/half.${MODAS_CODEC}
 ${MODAS_INST}/hang-on-a-second-angry.${MODAS_CODEC}
 ${MODAS_INST}/hang-on-a-second.${MODAS_CODEC}
 ${MODAS_INST}/hangup-try-again.${MODAS_CODEC}
+${MODAS_INST}/happy_saved.${MODAS_CODEC}
 ${MODAS_INST}/has-arrived-at.${MODAS_CODEC}
 ${MODAS_INST}/has-been-changed-to.${MODAS_CODEC}
 ${MODAS_INST}/has-been-cleared.${MODAS_CODEC}
@@ -608,6 +652,7 @@ ${MODAS_INST}/just-kidding-not-upset2.${MODAS_CODEC}
 ${MODAS_INST}/kansas-city.${MODAS_CODEC}
 ${MODAS_INST}/kansas.${MODAS_CODEC}
 ${MODAS_INST}/kentucky.${MODAS_CODEC}
+${MODAS_INST}/keywords_cross_fingers.${MODAS_CODEC}
 ${MODAS_INST}/kilobits.${MODAS_CODEC}
 ${MODAS_INST}/kilobytes.${MODAS_CODEC}
 ${MODAS_INST}/kilohertz.${MODAS_CODEC}
@@ -628,6 +673,7 @@ ${MODAS_INST}/len.${MODAS_CODEC}
 ${MODAS_INST}/less-than.${MODAS_CODEC}
 ${MODAS_INST}/library.${MODAS_CODEC}
 ${MODAS_INST}/lightning.${MODAS_CODEC}
+${MODAS_INST}/like_to_tell_valid_ext.${MODAS_CODEC}
 ${MODAS_INST}/limit-simul-calls.${MODAS_CODEC}
 ${MODAS_INST}/lines-complaining-customers.${MODAS_CODEC}
 ${MODAS_INST}/linux.${MODAS_CODEC}
@@ -657,6 +703,7 @@ ${MODAS_INST}/management.${MODAS_CODEC}
 ${MODAS_INST}/manufacturing.${MODAS_CODEC}
 ${MODAS_INST}/marketing.${MODAS_CODEC}
 ${MODAS_INST}/marryme.${MODAS_CODEC}
+${MODAS_INST}/martini.${MODAS_CODEC}
 ${MODAS_INST}/maryland.${MODAS_CODEC}
 ${MODAS_INST}/massachusetts.${MODAS_CODEC}
 ${MODAS_INST}/mathematics.${MODAS_CODEC}
@@ -670,6 +717,7 @@ ${MODAS_INST}/menu.${MODAS_CODEC}
 ${MODAS_INST}/mesa.${MODAS_CODEC}
 ${MODAS_INST}/message-from.${MODAS_CODEC}
 ${MODAS_INST}/message-number.${MODAS_CODEC}
+${MODAS_INST}/messages_curious.${MODAS_CODEC}
 ${MODAS_INST}/meter.${MODAS_CODEC}
 ${MODAS_INST}/meters.${MODAS_CODEC}
 ${MODAS_INST}/miami.${MODAS_CODEC}
@@ -682,7 +730,9 @@ ${MODAS_INST}/miles-per-hour.${MODAS_CODEC}
 ${MODAS_INST}/miles.${MODAS_CODEC}
 ${MODAS_INST}/millionth.${MODAS_CODEC}
 ${MODAS_INST}/milwaukee.${MODAS_CODEC}
+${MODAS_INST}/mind_repeating.${MODAS_CODEC}
 ${MODAS_INST}/minimum.${MODAS_CODEC}
+${MODAS_INST}/minions-not-answering-leave-message.${MODAS_CODEC}
 ${MODAS_INST}/minneapolis.${MODAS_CODEC}
 ${MODAS_INST}/minnesota.${MODAS_CODEC}
 ${MODAS_INST}/minute.${MODAS_CODEC}
@@ -690,6 +740,7 @@ ${MODAS_INST}/missed.${MODAS_CODEC}
 ${MODAS_INST}/mississippi.${MODAS_CODEC}
 ${MODAS_INST}/missouri.${MODAS_CODEC}
 ${MODAS_INST}/misty.${MODAS_CODEC}
+${MODAS_INST}/mode.${MODAS_CODEC}
 ${MODAS_INST}/monitored.${MODAS_CODEC}
 ${MODAS_INST}/montana.${MODAS_CODEC}
 ${MODAS_INST}/month.${MODAS_CODEC}
@@ -719,6 +770,7 @@ ${MODAS_INST}/new-jersey.${MODAS_CODEC}
 ${MODAS_INST}/new-mexico.${MODAS_CODEC}
 ${MODAS_INST}/new-orleans.${MODAS_CODEC}
 ${MODAS_INST}/new-york.${MODAS_CODEC}
+${MODAS_INST}/night.${MODAS_CODEC}
 ${MODAS_INST}/nineteenth.${MODAS_CODEC}
 ${MODAS_INST}/ninetieth.${MODAS_CODEC}
 ${MODAS_INST}/ninth.${MODAS_CODEC}
@@ -731,8 +783,14 @@ ${MODAS_INST}/no-info-about-number.${MODAS_CODEC}
 ${MODAS_INST}/no-longer-in-service.${MODAS_CODEC}
 ${MODAS_INST}/no-reply-no-mailbox.${MODAS_CODEC}
 ${MODAS_INST}/no-route-exists-to-dest.${MODAS_CODEC}
+${MODAS_INST}/no_invite_to_conf.${MODAS_CODEC}
+${MODAS_INST}/no_longer_conf.${MODAS_CODEC}
+${MODAS_INST}/no_problem_help.${MODAS_CODEC}
+${MODAS_INST}/no_worries_try_again.${MODAS_CODEC}
 ${MODAS_INST}/nobody-but-chickens.${MODAS_CODEC}
 ${MODAS_INST}/node.${MODAS_CODEC}
+${MODAS_INST}/none_of_my_business1.${MODAS_CODEC}
+${MODAS_INST}/none_of_my_business2.${MODAS_CODEC}
 ${MODAS_INST}/north-carolina.${MODAS_CODEC}
 ${MODAS_INST}/north-dakota.${MODAS_CODEC}
 ${MODAS_INST}/north.${MODAS_CODEC}
@@ -746,6 +804,10 @@ ${MODAS_INST}/not-rqsted-wakeup.${MODAS_CODEC}
 ${MODAS_INST}/not-taking-your-call.${MODAS_CODEC}
 ${MODAS_INST}/not-yet-assigned.${MODAS_CODEC}
 ${MODAS_INST}/not-yet-connected.${MODAS_CODEC}
+${MODAS_INST}/not_me.${MODAS_CODEC}
+${MODAS_INST}/not_pass.${MODAS_CODEC}
+${MODAS_INST}/not_siri.${MODAS_CODEC}
+${MODAS_INST}/not_you.${MODAS_CODEC}
 ${MODAS_INST}/nothing-recorded.${MODAS_CODEC}
 ${MODAS_INST}/now.${MODAS_CODEC}
 ${MODAS_INST}/num-not-in-db.${MODAS_CODEC}
@@ -756,9 +818,11 @@ ${MODAS_INST}/number.${MODAS_CODEC}
 ${MODAS_INST}/oakland.${MODAS_CODEC}
 ${MODAS_INST}/octothorpe.${MODAS_CODEC}
 ${MODAS_INST}/off-duty.${MODAS_CODEC}
+${MODAS_INST}/off.${MODAS_CODEC}
 ${MODAS_INST}/office-code.${MODAS_CODEC}
 ${MODAS_INST}/office-iguanas.${MODAS_CODEC}
 ${MODAS_INST}/office.${MODAS_CODEC}
+${MODAS_INST}/ogm_home.${MODAS_CODEC}
 ${MODAS_INST}/ohio.${MODAS_CODEC}
 ${MODAS_INST}/oklahoma-city.${MODAS_CODEC}
 ${MODAS_INST}/oklahoma.${MODAS_CODEC}
@@ -774,6 +838,7 @@ ${MODAS_INST}/oops1.${MODAS_CODEC}
 ${MODAS_INST}/oops2.${MODAS_CODEC}
 ${MODAS_INST}/oops3.${MODAS_CODEC}
 ${MODAS_INST}/open-parenthesis.${MODAS_CODEC}
+${MODAS_INST}/open.${MODAS_CODEC}
 ${MODAS_INST}/operations.${MODAS_CODEC}
 ${MODAS_INST}/option-is-invalid.${MODAS_CODEC}
 ${MODAS_INST}/option-not-implemented.${MODAS_CODEC}
@@ -796,6 +861,7 @@ ${MODAS_INST}/partially.${MODAS_CODEC}
 ${MODAS_INST}/partly.${MODAS_CODEC}
 ${MODAS_INST}/pascal.${MODAS_CODEC}
 ${MODAS_INST}/pascal2.${MODAS_CODEC}
+${MODAS_INST}/passwords_not_match.${MODAS_CODEC}
 ${MODAS_INST}/patchy.${MODAS_CODEC}
 ${MODAS_INST}/pence.${MODAS_CODEC}
 ${MODAS_INST}/pennies.${MODAS_CODEC}
@@ -812,6 +878,7 @@ ${MODAS_INST}/phoenix.${MODAS_CODEC}
 ${MODAS_INST}/physics.${MODAS_CODEC}
 ${MODAS_INST}/pin-invalid.${MODAS_CODEC}
 ${MODAS_INST}/pin-number-accepted.${MODAS_CODEC}
+${MODAS_INST}/pin_number.${MODAS_CODEC}
 ${MODAS_INST}/ping.${MODAS_CODEC}
 ${MODAS_INST}/pipe.${MODAS_CODEC}
 ${MODAS_INST}/planning.${MODAS_CODEC}
@@ -822,6 +889,8 @@ ${MODAS_INST}/please-enter-the.${MODAS_CODEC}
 ${MODAS_INST}/please-enter-your.${MODAS_CODEC}
 ${MODAS_INST}/please-hang-up-and-dial-operator.${MODAS_CODEC}
 ${MODAS_INST}/please-hang-up-and-try-again.${MODAS_CODEC}
+${MODAS_INST}/please-hold-minion-connect.${MODAS_CODEC}
+${MODAS_INST}/please-hold-while-minion.${MODAS_CODEC}
 ${MODAS_INST}/please-try-again-later.${MODAS_CODEC}
 ${MODAS_INST}/please-try-again.${MODAS_CODEC}
 ${MODAS_INST}/please-try.${MODAS_CODEC}
@@ -834,6 +903,7 @@ ${MODAS_INST}/pls-entr-num-uwish2-call.${MODAS_CODEC}
 ${MODAS_INST}/pls-hold-process-tx.${MODAS_CODEC}
 ${MODAS_INST}/pls-hold-silent30.${MODAS_CODEC}
 ${MODAS_INST}/pls-hold-while-try.${MODAS_CODEC}
+${MODAS_INST}/pls-listen-options-changed.${MODAS_CODEC}
 ${MODAS_INST}/pls-lv-msg-will-contact.${MODAS_CODEC}
 ${MODAS_INST}/pls-rcrd-name-at-tone.${MODAS_CODEC}
 ${MODAS_INST}/pls-stay-on-line.${MODAS_CODEC}
@@ -874,6 +944,16 @@ ${MODAS_INST}/press-button-again.${MODAS_CODEC}
 ${MODAS_INST}/press-enter.${MODAS_CODEC}
 ${MODAS_INST}/press-escape.${MODAS_CODEC}
 ${MODAS_INST}/press-hash.${MODAS_CODEC}
+${MODAS_INST}/press-or-say-0.${MODAS_CODEC}
+${MODAS_INST}/press-or-say-1.${MODAS_CODEC}
+${MODAS_INST}/press-or-say-2.${MODAS_CODEC}
+${MODAS_INST}/press-or-say-3.${MODAS_CODEC}
+${MODAS_INST}/press-or-say-4.${MODAS_CODEC}
+${MODAS_INST}/press-or-say-5.${MODAS_CODEC}
+${MODAS_INST}/press-or-say-6.${MODAS_CODEC}
+${MODAS_INST}/press-or-say-7.${MODAS_CODEC}
+${MODAS_INST}/press-or-say-8.${MODAS_CODEC}
+${MODAS_INST}/press-or-say-9.${MODAS_CODEC}
 ${MODAS_INST}/press-pound-save-changes.${MODAS_CODEC}
 ${MODAS_INST}/press-pound-to-login-star-to-hangup.${MODAS_CODEC}
 ${MODAS_INST}/press-pound.${MODAS_CODEC}
@@ -883,7 +963,10 @@ ${MODAS_INST}/press-star.${MODAS_CODEC}
 ${MODAS_INST}/press-the-space-bar.${MODAS_CODEC}
 ${MODAS_INST}/press-tilde.${MODAS_CODEC}
 ${MODAS_INST}/press.${MODAS_CODEC}
+${MODAS_INST}/press_pound_hash.${MODAS_CODEC}
+${MODAS_INST}/press_pound_hash_key.${MODAS_CODEC}
 ${MODAS_INST}/pressure.${MODAS_CODEC}
+${MODAS_INST}/prime_number.${MODAS_CODEC}
 ${MODAS_INST}/printing.${MODAS_CODEC}
 ${MODAS_INST}/privacy-blacklisted.${MODAS_CODEC}
 ${MODAS_INST}/privacy-blocked.${MODAS_CODEC}
@@ -911,6 +994,7 @@ ${MODAS_INST}/privacy-your-callerid-is.${MODAS_CODEC}
 ${MODAS_INST}/product.${MODAS_CODEC}
 ${MODAS_INST}/production.${MODAS_CODEC}
 ${MODAS_INST}/projects.${MODAS_CODEC}
+${MODAS_INST}/prompt-not-found.${MODAS_CODEC}
 ${MODAS_INST}/protocol.${MODAS_CODEC}
 ${MODAS_INST}/public-relations.${MODAS_CODEC}
 ${MODAS_INST}/purchasing.${MODAS_CODEC}
@@ -919,6 +1003,7 @@ ${MODAS_INST}/q-dot-931.${MODAS_CODEC}
 ${MODAS_INST}/q-dot-9thirty1.${MODAS_CODEC}
 ${MODAS_INST}/quality-assurance.${MODAS_CODEC}
 ${MODAS_INST}/quality-control.${MODAS_CODEC}
+${MODAS_INST}/quality_control.${MODAS_CODEC}
 ${MODAS_INST}/quarter.${MODAS_CODEC}
 ${MODAS_INST}/quickly.${MODAS_CODEC}
 ${MODAS_INST}/quote.${MODAS_CODEC}
@@ -934,12 +1019,14 @@ ${MODAS_INST}/receiving.${MODAS_CODEC}
 ${MODAS_INST}/reception.${MODAS_CODEC}
 ${MODAS_INST}/recorded.${MODAS_CODEC}
 ${MODAS_INST}/registrar.${MODAS_CODEC}
+${MODAS_INST}/regret_not_saved.${MODAS_CODEC}
 ${MODAS_INST}/remote-already-in-this-mode-2.${MODAS_CODEC}
 ${MODAS_INST}/remote-already-in-this-mode.${MODAS_CODEC}
 ${MODAS_INST}/remote-base.${MODAS_CODEC}
 ${MODAS_INST}/removed.${MODAS_CODEC}
 ${MODAS_INST}/repair.${MODAS_CODEC}
 ${MODAS_INST}/repeat-only.${MODAS_CODEC}
+${MODAS_INST}/repeat_pin.${MODAS_CODEC}
 ${MODAS_INST}/repeater.${MODAS_CODEC}
 ${MODAS_INST}/research-and-development.${MODAS_CODEC}
 ${MODAS_INST}/research.${MODAS_CODEC}
@@ -954,9 +1041,11 @@ ${MODAS_INST}/room-service.${MODAS_CODEC}
 ${MODAS_INST}/route-sip.${MODAS_CODEC}
 ${MODAS_INST}/rqsted-wakeup-for.${MODAS_CODEC}
 ${MODAS_INST}/sacramento.${MODAS_CODEC}
+${MODAS_INST}/said_hold_on.${MODAS_CODEC}
 ${MODAS_INST}/saint-louis.${MODAS_CODEC}
 ${MODAS_INST}/sales-floor.${MODAS_CODEC}
 ${MODAS_INST}/sales.${MODAS_CODEC}
+${MODAS_INST}/saleshell.${MODAS_CODEC}
 ${MODAS_INST}/san-antonio.${MODAS_CODEC}
 ${MODAS_INST}/san-diego.${MODAS_CODEC}
 ${MODAS_INST}/san-francisco.${MODAS_CODEC}
@@ -972,6 +1061,7 @@ ${MODAS_INST}/secretary.${MODAS_CODEC}
 ${MODAS_INST}/security.${MODAS_CODEC}
 ${MODAS_INST}/self-destruct-in.${MODAS_CODEC}
 ${MODAS_INST}/self-destruct.${MODAS_CODEC}
+${MODAS_INST}/sendhelp.${MODAS_CODEC}
 ${MODAS_INST}/server.${MODAS_CODEC}
 ${MODAS_INST}/service-not-implemented.${MODAS_CODEC}
 ${MODAS_INST}/service.${MODAS_CODEC}
@@ -1009,6 +1099,13 @@ ${MODAS_INST}/sorry-mailbox-full.${MODAS_CODEC}
 ${MODAS_INST}/sorry-youre-having-problems.${MODAS_CODEC}
 ${MODAS_INST}/sorry.${MODAS_CODEC}
 ${MODAS_INST}/sorry2.${MODAS_CODEC}
+${MODAS_INST}/sorry_caller_number.${MODAS_CODEC}
+${MODAS_INST}/sorry_didnt_get.${MODAS_CODEC}
+${MODAS_INST}/sorry_didnt_quite_get.${MODAS_CODEC}
+${MODAS_INST}/sorry_login_incorrect.${MODAS_CODEC}
+${MODAS_INST}/sorry_missed.${MODAS_CODEC}
+${MODAS_INST}/sorry_no_messages.${MODAS_CODEC}
+${MODAS_INST}/sorrydave.${MODAS_CODEC}
 ${MODAS_INST}/south-carolina.${MODAS_CODEC}
 ${MODAS_INST}/south-dakota.${MODAS_CODEC}
 ${MODAS_INST}/south.${MODAS_CODEC}
@@ -1032,20 +1129,24 @@ ${MODAS_INST}/station.${MODAS_CODEC}
 ${MODAS_INST}/status.${MODAS_CODEC}
 ${MODAS_INST}/step-in-stream.${MODAS_CODEC}
 ${MODAS_INST}/sterling.${MODAS_CODEC}
+${MODAS_INST}/still_on_phone.${MODAS_CODEC}
 ${MODAS_INST}/store-accounting.${MODAS_CODEC}
 ${MODAS_INST}/storm.${MODAS_CODEC}
 ${MODAS_INST}/sun.${MODAS_CODEC}
 ${MODAS_INST}/sunny.${MODAS_CODEC}
 ${MODAS_INST}/support.${MODAS_CODEC}
+${MODAS_INST}/sure_help.${MODAS_CODEC}
 ${MODAS_INST}/swap.${MODAS_CODEC}
 ${MODAS_INST}/system-crashed.${MODAS_CODEC}
 ${MODAS_INST}/system-status-msg.${MODAS_CODEC}
 ${MODAS_INST}/system.${MODAS_CODEC}
 ${MODAS_INST}/systems.${MODAS_CODEC}
+${MODAS_INST}/talkin_me.${MODAS_CODEC}
 ${MODAS_INST}/talking-to-myself.${MODAS_CODEC}
 ${MODAS_INST}/target-attendant.${MODAS_CODEC}
 ${MODAS_INST}/tcp.${MODAS_CODEC}
 ${MODAS_INST}/technical-support.${MODAS_CODEC}
+${MODAS_INST}/telemarketercalling.${MODAS_CODEC}
 ${MODAS_INST}/telephone-in-your-pocket.${MODAS_CODEC}
 ${MODAS_INST}/telephone-in-your-pocket2.${MODAS_CODEC}
 ${MODAS_INST}/telephone-number.${MODAS_CODEC}
@@ -1064,6 +1165,8 @@ ${MODAS_INST}/test-tones-follow.${MODAS_CODEC}
 ${MODAS_INST}/texas.${MODAS_CODEC}
 ${MODAS_INST}/thank-you-cooperation.${MODAS_CODEC}
 ${MODAS_INST}/thank-you-for-calling.${MODAS_CODEC}
+${MODAS_INST}/thank_you_calling.${MODAS_CODEC}
+${MODAS_INST}/thanks-annoyance.${MODAS_CODEC}
 ${MODAS_INST}/thanks-for-calling-today.${MODAS_CODEC}
 ${MODAS_INST}/thanks-for-using.${MODAS_CODEC}
 ${MODAS_INST}/that-is-not-rec-phn-num.${MODAS_CODEC}
@@ -1099,6 +1202,7 @@ ${MODAS_INST}/thunderstorm.${MODAS_CODEC}
 ${MODAS_INST}/tide.${MODAS_CODEC}
 ${MODAS_INST}/time.${MODAS_CODEC}
 ${MODAS_INST}/times.${MODAS_CODEC}
+${MODAS_INST}/timewarp.${MODAS_CODEC}
 ${MODAS_INST}/to-accept-recording.${MODAS_CODEC}
 ${MODAS_INST}/to-be-called-back.${MODAS_CODEC}
 ${MODAS_INST}/to-blklist-last-caller.${MODAS_CODEC}
@@ -1149,6 +1253,7 @@ ${MODAS_INST}/to-send-a-reply.${MODAS_CODEC}
 ${MODAS_INST}/to-snooze-for.${MODAS_CODEC}
 ${MODAS_INST}/to-use-def-attendant.${MODAS_CODEC}
 ${MODAS_INST}/tomorrow-night.${MODAS_CODEC}
+${MODAS_INST}/tone_time.${MODAS_CODEC}
 ${MODAS_INST}/tones-that-follow-are-for-the-deaf.${MODAS_CODEC}
 ${MODAS_INST}/tonight.${MODAS_CODEC}
 ${MODAS_INST}/too-low.${MODAS_CODEC}
@@ -1160,6 +1265,7 @@ ${MODAS_INST}/towards.${MODAS_CODEC}
 ${MODAS_INST}/trading-desk.${MODAS_CODEC}
 ${MODAS_INST}/traffic.${MODAS_CODEC}
 ${MODAS_INST}/training.${MODAS_CODEC}
+${MODAS_INST}/transfer_to_agent.${MODAS_CODEC}
 ${MODAS_INST}/transportation.${MODAS_CODEC}
 ${MODAS_INST}/travel.${MODAS_CODEC}
 ${MODAS_INST}/treasury.${MODAS_CODEC}
@@ -1182,9 +1288,12 @@ ${MODAS_INST}/uh-oh2.${MODAS_CODEC}
 ${MODAS_INST}/uk.${MODAS_CODEC}
 ${MODAS_INST}/unavailable.${MODAS_CODEC}
 ${MODAS_INST}/unconditional.${MODAS_CODEC}
+${MODAS_INST}/unicorn_blood.${MODAS_CODEC}
+${MODAS_INST}/unicorn_blood_MIXDOWN.${MODAS_CODEC}
 ${MODAS_INST}/unidentified-no-callback.${MODAS_CODEC}
 ${MODAS_INST}/units.${MODAS_CODEC}
 ${MODAS_INST}/unix.${MODAS_CODEC}
+${MODAS_INST}/unwelcomecall.${MODAS_CODEC}
 ${MODAS_INST}/up.${MODAS_CODEC}
 ${MODAS_INST}/uptime.${MODAS_CODEC}
 ${MODAS_INST}/user.${MODAS_CODEC}
@@ -1212,6 +1321,7 @@ ${MODAS_INST}/was.${MODAS_CODEC}
 ${MODAS_INST}/washington-dc.${MODAS_CODEC}
 ${MODAS_INST}/washington.${MODAS_CODEC}
 ${MODAS_INST}/watch.${MODAS_CODEC}
+${MODAS_INST}/watson.${MODAS_CODEC}
 ${MODAS_INST}/we-apologize.${MODAS_CODEC}
 ${MODAS_INST}/we-dont-have-tech-support.${MODAS_CODEC}
 ${MODAS_INST}/weasels-eaten-phonesys.${MODAS_CODEC}
@@ -1229,6 +1339,7 @@ ${MODAS_INST}/what-time-it-is.${MODAS_CODEC}
 ${MODAS_INST}/what-time-it-is2.${MODAS_CODEC}
 ${MODAS_INST}/when-dialing-this-number.${MODAS_CODEC}
 ${MODAS_INST}/who-would-you-like-to-call.${MODAS_CODEC}
+${MODAS_INST}/whoareyou.${MODAS_CODEC}
 ${MODAS_INST}/why-no-answer-mystery.${MODAS_CODEC}
 ${MODAS_INST}/wichita.${MODAS_CODEC}
 ${MODAS_INST}/will-apply.${MODAS_CODEC}
@@ -1240,8 +1351,10 @@ ${MODAS_INST}/windows.${MODAS_CODEC}
 ${MODAS_INST}/windy.${MODAS_CODEC}
 ${MODAS_INST}/wisconsin.${MODAS_CODEC}
 ${MODAS_INST}/wish-to-continue.${MODAS_CODEC}
+${MODAS_INST}/wish_command_totally.${MODAS_CODEC}
 ${MODAS_INST}/with.${MODAS_CODEC}
 ${MODAS_INST}/within.${MODAS_CODEC}
+${MODAS_INST}/woo_hoo_call_first.${MODAS_CODEC}
 ${MODAS_INST}/work.${MODAS_CODEC}
 ${MODAS_INST}/wrong-try-again-smarty.${MODAS_CODEC}
 ${MODAS_INST}/wtng-to-spk-w-rep.${MODAS_CODEC}
@@ -1295,6 +1408,7 @@ ${MODAS_INST}/you-must-first-dial.${MODAS_CODEC}
 ${MODAS_INST}/you-seem-impatient.${MODAS_CODEC}
 ${MODAS_INST}/you-sound-cute.${MODAS_CODEC}
 ${MODAS_INST}/you-wish-to-join.${MODAS_CODEC}
+${MODAS_INST}/you_say_yes.${MODAS_CODEC}
 ${MODAS_INST}/your-account.${MODAS_CODEC}
 ${MODAS_INST}/your-msg-has-been-saved.${MODAS_CODEC}
 ${MODAS_INST}/your-msg-is-too-short.${MODAS_CODEC}
@@ -1302,4 +1416,7 @@ ${MODAS_INST}/your-notifications.${MODAS_CODEC}
 ${MODAS_INST}/your-req-notification.${MODAS_CODEC}
 ${MODAS_INST}/your-temp-greeting.${MODAS_CODEC}
 ${MODAS_INST}/your.${MODAS_CODEC}
+${MODAS_INST}/yourcallisimportant.${MODAS_CODEC}
+${MODAS_INST}/yourcallisimpotent.${MODAS_CODEC}
 ${MODAS_INST}/zip-code.${MODAS_CODEC}
+${MODAS_INST}/zombies.${MODAS_CODEC}

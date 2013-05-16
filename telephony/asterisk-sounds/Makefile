@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2012/09/25 21:58:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2013/05/16 21:53:31 sthen Exp $
 
     SUBDIR =
     SUBDIR += core-sounds
     SUBDIR += extra-sounds
-.for i in gsm alaw ulaw g722 sln16 wav # g729 siren7 siren14
+.for i in gsm alaw ulaw g722 g729 wav # sln16 siren7 siren14
     SUBDIR += moh-opsound,$i
 .endfor
 

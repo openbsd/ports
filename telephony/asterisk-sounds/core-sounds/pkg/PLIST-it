@@ -1,15 +1,10 @@
-@comment $OpenBSD: PLIST-en,v 1.2 2013/05/16 21:53:32 sthen Exp $
-@option no-default-conflict
-@conflict asterisk-core-sounds-en-*-${MODAS_CODEC}
-@conflict asterisk-native-sounds-*
-@conflict asterisk-<1.8.16.0p0
-@pkgpath telephony/asterisk-native-sounds
+@comment $OpenBSD: PLIST-it,v 1.1 2013/05/16 21:53:32 sthen Exp $
 share/asterisk/
 share/asterisk/sounds/
 ${MODAS_INST}/
-${MODAS_INST}/CHANGES-asterisk-core-en-${MODAS_VER}-${MODAS_CODEC}
-${MODAS_INST}/CREDITS-asterisk-core-en-${MODAS_VER}-${MODAS_CODEC}
-${MODAS_INST}/LICENSE-asterisk-core-en-${MODAS_VER}-${MODAS_CODEC}
+${MODAS_INST}/CHANGES-asterisk-core-it-${MODAS_VER}-${MODAS_CODEC}
+${MODAS_INST}/CREDITS-asterisk-core-it-${MODAS_VER}-${MODAS_CODEC}
+${MODAS_INST}/LICENSE-asterisk-core-it-${MODAS_VER}-${MODAS_CODEC}
 ${MODAS_INST}/agent-alreadyon.${MODAS_CODEC}
 ${MODAS_INST}/agent-incorrect.${MODAS_CODEC}
 ${MODAS_INST}/agent-loggedoff.${MODAS_CODEC}
@@ -63,6 +58,7 @@ ${MODAS_INST}/confbridge-begin-glorious-a.${MODAS_CODEC}
 ${MODAS_INST}/confbridge-begin-glorious-b.${MODAS_CODEC}
 ${MODAS_INST}/confbridge-begin-glorious-c.${MODAS_CODEC}
 ${MODAS_INST}/confbridge-begin-leader.${MODAS_CODEC}
+${MODAS_INST}/confbridge-begin-leader_PRESIDENTE.${MODAS_CODEC}
 ${MODAS_INST}/confbridge-conf-begin.${MODAS_CODEC}
 ${MODAS_INST}/confbridge-conf-end.${MODAS_CODEC}
 ${MODAS_INST}/confbridge-dec-list-vol-in.${MODAS_CODEC}
@@ -106,7 +102,7 @@ ${MODAS_INST}/confbridge-rest-talk-vol-out.${MODAS_CODEC}
 ${MODAS_INST}/confbridge-there-are.${MODAS_CODEC}
 ${MODAS_INST}/confbridge-unlocked.${MODAS_CODEC}
 ${MODAS_INST}/confbridge-unmuted.${MODAS_CODEC}
-${MODAS_INST}/core-sounds-en.txt-${MODAS_CODEC}
+${MODAS_INST}/core-sounds-it.txt-${MODAS_CODEC}
 ${MODAS_INST}/demo-abouttotry.${MODAS_CODEC}
 ${MODAS_INST}/demo-congrats.${MODAS_CODEC}
 ${MODAS_INST}/demo-echodone.${MODAS_CODEC}
@@ -146,21 +142,38 @@ ${MODAS_INST}/digits/18.${MODAS_CODEC}
 ${MODAS_INST}/digits/19.${MODAS_CODEC}
 ${MODAS_INST}/digits/2.${MODAS_CODEC}
 ${MODAS_INST}/digits/20.${MODAS_CODEC}
+${MODAS_INST}/digits/21.${MODAS_CODEC}
+${MODAS_INST}/digits/28.${MODAS_CODEC}
 ${MODAS_INST}/digits/3.${MODAS_CODEC}
 ${MODAS_INST}/digits/30.${MODAS_CODEC}
+${MODAS_INST}/digits/31.${MODAS_CODEC}
+${MODAS_INST}/digits/38.${MODAS_CODEC}
 ${MODAS_INST}/digits/4.${MODAS_CODEC}
 ${MODAS_INST}/digits/40.${MODAS_CODEC}
+${MODAS_INST}/digits/41.${MODAS_CODEC}
+${MODAS_INST}/digits/48.${MODAS_CODEC}
 ${MODAS_INST}/digits/5.${MODAS_CODEC}
 ${MODAS_INST}/digits/50.${MODAS_CODEC}
+${MODAS_INST}/digits/51.${MODAS_CODEC}
+${MODAS_INST}/digits/58.${MODAS_CODEC}
 ${MODAS_INST}/digits/6.${MODAS_CODEC}
 ${MODAS_INST}/digits/60.${MODAS_CODEC}
+${MODAS_INST}/digits/61.${MODAS_CODEC}
+${MODAS_INST}/digits/68.${MODAS_CODEC}
 ${MODAS_INST}/digits/7.${MODAS_CODEC}
 ${MODAS_INST}/digits/70.${MODAS_CODEC}
+${MODAS_INST}/digits/71.${MODAS_CODEC}
+${MODAS_INST}/digits/78.${MODAS_CODEC}
 ${MODAS_INST}/digits/8.${MODAS_CODEC}
 ${MODAS_INST}/digits/80.${MODAS_CODEC}
+${MODAS_INST}/digits/81.${MODAS_CODEC}
+${MODAS_INST}/digits/88.${MODAS_CODEC}
 ${MODAS_INST}/digits/9.${MODAS_CODEC}
 ${MODAS_INST}/digits/90.${MODAS_CODEC}
+${MODAS_INST}/digits/91.${MODAS_CODEC}
+${MODAS_INST}/digits/98.${MODAS_CODEC}
 ${MODAS_INST}/digits/a-m.${MODAS_CODEC}
+${MODAS_INST}/digits/a.${MODAS_CODEC}
 ${MODAS_INST}/digits/at.${MODAS_CODEC}
 ${MODAS_INST}/digits/billion.${MODAS_CODEC}
 ${MODAS_INST}/digits/day-0.${MODAS_CODEC}
@@ -171,6 +184,8 @@ ${MODAS_INST}/digits/day-4.${MODAS_CODEC}
 ${MODAS_INST}/digits/day-5.${MODAS_CODEC}
 ${MODAS_INST}/digits/day-6.${MODAS_CODEC}
 ${MODAS_INST}/digits/dollars.${MODAS_CODEC}
+${MODAS_INST}/digits/e.${MODAS_CODEC}
+${MODAS_INST}/digits/euros.${MODAS_CODEC}
 ${MODAS_INST}/digits/h-1.${MODAS_CODEC}
 ${MODAS_INST}/digits/h-10.${MODAS_CODEC}
 ${MODAS_INST}/digits/h-11.${MODAS_CODEC}
@@ -202,9 +217,12 @@ ${MODAS_INST}/digits/h-billion.${MODAS_CODEC}
 ${MODAS_INST}/digits/h-hundred.${MODAS_CODEC}
 ${MODAS_INST}/digits/h-million.${MODAS_CODEC}
 ${MODAS_INST}/digits/h-thousand.${MODAS_CODEC}
+${MODAS_INST}/digits/hours.${MODAS_CODEC}
 ${MODAS_INST}/digits/hundred.${MODAS_CODEC}
 ${MODAS_INST}/digits/million.${MODAS_CODEC}
+${MODAS_INST}/digits/millions.${MODAS_CODEC}
 ${MODAS_INST}/digits/minus.${MODAS_CODEC}
+${MODAS_INST}/digits/minutes.${MODAS_CODEC}
 ${MODAS_INST}/digits/mon-0.${MODAS_CODEC}
 ${MODAS_INST}/digits/mon-1.${MODAS_CODEC}
 ${MODAS_INST}/digits/mon-10.${MODAS_CODEC}
@@ -219,12 +237,18 @@ ${MODAS_INST}/digits/mon-8.${MODAS_CODEC}
 ${MODAS_INST}/digits/mon-9.${MODAS_CODEC}
 ${MODAS_INST}/digits/oclock.${MODAS_CODEC}
 ${MODAS_INST}/digits/oh.${MODAS_CODEC}
+${MODAS_INST}/digits/ore-1900.${MODAS_CODEC}
+${MODAS_INST}/digits/ore-2000.${MODAS_CODEC}
+${MODAS_INST}/digits/ore-mezzanotte.${MODAS_CODEC}
+${MODAS_INST}/digits/ore-una.${MODAS_CODEC}
 ${MODAS_INST}/digits/p-m.${MODAS_CODEC}
 ${MODAS_INST}/digits/pound.${MODAS_CODEC}
 ${MODAS_INST}/digits/star.${MODAS_CODEC}
 ${MODAS_INST}/digits/thousand.${MODAS_CODEC}
+${MODAS_INST}/digits/thousands.${MODAS_CODEC}
 ${MODAS_INST}/digits/today.${MODAS_CODEC}
 ${MODAS_INST}/digits/tomorrow.${MODAS_CODEC}
+${MODAS_INST}/digits/un.${MODAS_CODEC}
 ${MODAS_INST}/digits/yesterday.${MODAS_CODEC}
 ${MODAS_INST}/dir-first.${MODAS_CODEC}
 ${MODAS_INST}/dir-firstlast.${MODAS_CODEC}
@@ -241,6 +265,7 @@ ${MODAS_INST}/dir-nomore.${MODAS_CODEC}
 ${MODAS_INST}/dir-pls-enter.${MODAS_CODEC}
 ${MODAS_INST}/dir-usingkeypad.${MODAS_CODEC}
 ${MODAS_INST}/dir-welcome.${MODAS_CODEC}
+${MODAS_INST}/dollars.${MODAS_CODEC}
 ${MODAS_INST}/followme/
 ${MODAS_INST}/followme/call-from.${MODAS_CODEC}
 ${MODAS_INST}/followme/no-recording.${MODAS_CODEC}
@@ -313,6 +338,7 @@ ${MODAS_INST}/letters/x.${MODAS_CODEC}
 ${MODAS_INST}/letters/y.${MODAS_CODEC}
 ${MODAS_INST}/letters/z.${MODAS_CODEC}
 ${MODAS_INST}/letters/zed.${MODAS_CODEC}
+${MODAS_INST}/millions.${MODAS_CODEC}
 ${MODAS_INST}/minutes.${MODAS_CODEC}
 ${MODAS_INST}/pbx-invalid.${MODAS_CODEC}
 ${MODAS_INST}/pbx-invalidpark.${MODAS_CODEC}
@@ -388,6 +414,7 @@ ${MODAS_INST}/spy-iax.${MODAS_CODEC}
 ${MODAS_INST}/spy-iax2.${MODAS_CODEC}
 ${MODAS_INST}/spy-jingle.${MODAS_CODEC}
 ${MODAS_INST}/spy-local.${MODAS_CODEC}
+${MODAS_INST}/spy-local_LOCAL.${MODAS_CODEC}
 ${MODAS_INST}/spy-mgcp.${MODAS_CODEC}
 ${MODAS_INST}/spy-misdn.${MODAS_CODEC}
 ${MODAS_INST}/spy-mobile.${MODAS_CODEC}
@@ -464,6 +491,8 @@ ${MODAS_INST}/vm-nobox.${MODAS_CODEC}
 ${MODAS_INST}/vm-nomore.${MODAS_CODEC}
 ${MODAS_INST}/vm-nonumber.${MODAS_CODEC}
 ${MODAS_INST}/vm-num-i-have.${MODAS_CODEC}
+${MODAS_INST}/vm-nuovi.${MODAS_CODEC}
+${MODAS_INST}/vm-nuovo.${MODAS_CODEC}
 ${MODAS_INST}/vm-onefor-full.${MODAS_CODEC}
 ${MODAS_INST}/vm-onefor.${MODAS_CODEC}
 ${MODAS_INST}/vm-options.${MODAS_CODEC}
@@ -515,5 +544,7 @@ ${MODAS_INST}/vm-torerecord.${MODAS_CODEC}
 ${MODAS_INST}/vm-undelete.${MODAS_CODEC}
 ${MODAS_INST}/vm-undeleted.${MODAS_CODEC}
 ${MODAS_INST}/vm-unknown-caller.${MODAS_CODEC}
+${MODAS_INST}/vm-vecchi.${MODAS_CODEC}
+${MODAS_INST}/vm-vecchio.${MODAS_CODEC}
 ${MODAS_INST}/vm-whichbox.${MODAS_CODEC}
 ${MODAS_INST}/vm-youhave.${MODAS_CODEC}
