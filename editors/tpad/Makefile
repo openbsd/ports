@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/04/30 17:27:34 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2013/05/16 00:01:52 bcallah Exp $
 
 COMMENT =	simple, fast GTK-based text editor
 DISTNAME =	tpad-4.7.6
-REVISION =	0
+REVISION =	1
 CATEGORIES =	editors x11
 
 HOMEPAGE =	https://launchpad.net/tpad-project/
@@ -24,7 +24,8 @@ WANTLIB += icudata icule icuuc m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs stdc++ xcb
 WANTLIB += xcb-render xcb-shm xml2 z
 
-MODULES =	devel/gettext
+MODULES =	devel/gettext \
+		textproc/intltool
 
 LIB_DEPENDS =	devel/libconfig \
 		textproc/gtkspell3 \
