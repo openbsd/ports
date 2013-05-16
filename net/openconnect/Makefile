@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/21 08:46:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2013/05/16 12:35:35 sthen Exp $
 
 COMMENT=	client for Cisco AnyConnect SSL VPN
 
-DISTNAME=	openconnect-4.08
+DISTNAME=	openconnect-5.00
 DIST_SUBDIR=	openconnect
 VPNC_SCRIPT=	vpnc-script
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${VPNC_SCRIPT}:0
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-SHARED_LIBS +=  openconnect               1.0 # 2.0
+SHARED_LIBS +=  openconnect               1.1 # 2.2
 
 CATEGORIES=	net
 
@@ -19,7 +19,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # LGPLv2.1 only
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c gmp gnutls hogweed m nettle p11-kit proxy pthread
+WANTLIB += c gmp gnutls hogweed m nettle oath p11-kit proxy pthread
 WANTLIB += stdc++ tasn1 xml2 z
 
 MASTER_SITES=	ftp://ftp.infradead.org/pub/openconnect/
@@ -34,14 +34,17 @@ MODPY_RUNDEP=		No
 
 LIB_DEPENDS=		security/gnutls \
 			textproc/libxml \
-			net/libproxy>=0.4.6p7
+			net/libproxy>=0.4.6p7 \
+			security/oath-toolkit>=2.0.2
 FAKE_FLAGS=		pkgdatadir=${PREFIX}/share/doc/openconnect
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -liconv"
-CONFIGURE_ARGS=		--with-vpnc-script=${SYSCONFDIR}/openconnect/vpnc-script \
-			--with-gnutls
+
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -liconv"
+CONFIGURE_ARGS=	--with-vpnc-script=${SYSCONFDIR}/openconnect/vpnc-script \
+		--without-stoken
+# make sure libstoken isn't picked up automatically if we import it.
 
 post-extract:
 	cp ${FULLDISTDIR}/${VPNC_SCRIPT} ${WRKSRC}/vpnc-script
