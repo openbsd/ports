@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/12/12 06:07:53 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/05/16 09:10:05 rpointel Exp $
 bin/thg
 lib/nautilus/
 lib/nautilus/extensions-3.0/
@@ -114,6 +114,8 @@ lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/mqutil.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/mqutil.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/p4pending.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/p4pending.pyc
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/partialcommit.py
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/partialcommit.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/pathedit.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/pathedit.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/pbranch.py
@@ -227,6 +229,8 @@ lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/config.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/config.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/debugthg.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/debugthg.pyc
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/editor.py
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/editor.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/hglib.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/hglib.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/hgversion.py
@@ -239,10 +243,10 @@ lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/patchctx.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/patchctx.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/paths.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/paths.pyc
-lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/settings.py
-lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/settings.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/shlib.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/shlib.pyc
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/terminal.py
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/terminal.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/thgstatus.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/thgstatus.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/thread2.py
@@ -334,7 +338,6 @@ share/pixmaps/tortoisehg/icons/menuimport.ico
 share/pixmaps/tortoisehg/icons/menulog.ico
 share/pixmaps/tortoisehg/icons/menumerge.ico
 share/pixmaps/tortoisehg/icons/menupatch.ico
-share/pixmaps/tortoisehg/icons/menurelocate.ico
 share/pixmaps/tortoisehg/icons/menurepobrowse.ico
 share/pixmaps/tortoisehg/icons/menurevert.ico
 share/pixmaps/tortoisehg/icons/menurevisiongraph.ico
@@ -367,6 +370,7 @@ share/pixmaps/tortoisehg/icons/scalable/actions/hg-archive.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-bisect-bad-good.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-bisect-good-bad.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-bisect.svg
+share/pixmaps/tortoisehg/icons/scalable/actions/hg-bundle.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-clone.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-commit.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-compress.svg
@@ -436,6 +440,7 @@ share/pixmaps/tortoisehg/icons/scalable/actions/view-at-revision.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/view-diff.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/view-file.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/view-filter.svg
+share/pixmaps/tortoisehg/icons/scalable/actions/view-hidden.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/view-refresh.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/visualdiff.svg
 share/pixmaps/tortoisehg/icons/scalable/apps/
