@@ -1,5 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.2 2011/04/03 10:59:50 jasper Exp $
-@lib lib/libxmlsec1-gcrypt.so.${LIBxmlsec1-gcrypt_VERSION}
-@lib lib/libxmlsec1-gnutls.so.${LIBxmlsec1-gnutls_VERSION}
-@lib lib/libxmlsec1-openssl.so.${LIBxmlsec1-openssl_VERSION}
-@lib lib/libxmlsec1.so.${LIBxmlsec1_VERSION}

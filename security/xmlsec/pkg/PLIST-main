@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2011/04/03 10:59:50 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2013/05/16 11:28:28 sthen Exp $
 @pkgpath security/xmlsec
 @bin bin/xmlsec1
 bin/xmlsec1-config
@@ -54,12 +54,16 @@ include/xmlsec1/xmlsec/xmlsec.h
 include/xmlsec1/xmlsec/xmltree.h
 lib/libxmlsec1-gcrypt.a
 lib/libxmlsec1-gcrypt.la
+@lib lib/libxmlsec1-gcrypt.so.${LIBxmlsec1-gcrypt_VERSION}
 lib/libxmlsec1-gnutls.a
 lib/libxmlsec1-gnutls.la
+@lib lib/libxmlsec1-gnutls.so.${LIBxmlsec1-gnutls_VERSION}
 lib/libxmlsec1-openssl.a
 lib/libxmlsec1-openssl.la
+@lib lib/libxmlsec1-openssl.so.${LIBxmlsec1-openssl_VERSION}
 lib/libxmlsec1.a
 lib/libxmlsec1.la
+@lib lib/libxmlsec1.so.${LIBxmlsec1_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/xmlsec1-gcrypt.pc
 lib/pkgconfig/xmlsec1-gnutls.pc
@@ -68,6 +72,5 @@ lib/pkgconfig/xmlsec1.pc
 lib/xmlsec1Conf.sh
 @man man/man1/xmlsec1-config.1
 @man man/man1/xmlsec1.1
-%%SHARED%%
 share/aclocal/
 share/aclocal/xmlsec1.m4

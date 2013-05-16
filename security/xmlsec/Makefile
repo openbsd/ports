@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.34 2013/03/21 08:48:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2013/05/16 11:28:28 sthen Exp $
 
 COMMENT-main=	XML security library
 COMMENT-docs=	XML security library documentation
 
-VERSION=	1.2.18
+VERSION=	1.2.19
 DISTNAME=	xmlsec1-${VERSION}
 PKGNAME-main=	xmlsec-${VERSION}
 PKGNAME-docs=	xmlsec-docs-${VERSION}
-REVISION-main =	2
 CATEGORIES=	security
 SHARED_LIBS=	xmlsec1-gnutls	5.0 \
 		xmlsec1-openssl	4.0 \
@@ -20,7 +19,7 @@ HOMEPAGE=	http://www.aleksey.com/xmlsec/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c crypto gcrypt gmp gnutls gpg-error hogweed ltdl m
-WANTLIB += nettle ssl tasn1 xml2 xslt z p11-kit
+WANTLIB += nettle pthread ssl tasn1 xml2 xslt z p11-kit
 
 MASTER_SITES=	${HOMEPAGE}/download/ \
 		ftp://ftp.aleksey.com/pub/xmlsec/releases/ \
@@ -39,7 +38,7 @@ LIB_DEPENDS=		devel/libtool,-ltdl \
 			textproc/libxslt \
 			security/gnutls
 
-USE_GROFF =		Yes
+# USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
@@ -48,7 +47,7 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-TEST_DEPENDS=	security/xmlsec
+TEST_DEPENDS=		security/xmlsec
 TEST_FLAGS=		ABS_BUILDDIR="${WRKSRC}"
 
 .include <bsd.port.mk>
