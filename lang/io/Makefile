@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/21 22:21:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2013/05/16 09:16:43 sthen Exp $
 
-SHARED_ONLY = 	Yes
+SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS =i386 amd64
 
-COMMENT = 	embeddable prototype-based language
+COMMENT =	embeddable prototype-based language
 
-DISTNAME = 	stevedekorte-io-2011.09.12-106-g02f9800
-PKGNAME = 	io-20110905
-REVISION =	1
+DISTNAME =	stevedekorte-io-2011.09.12-106-g02f9800
+PKGNAME =	io-20110905
+REVISION =	2
 
 CATEGORIES =	lang
 
@@ -27,7 +27,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += X11 Xext Xrender atk-1.0 c cairo clutter-1.0 curses e2fs-uuid
 WANTLIB += edit event_core event_extra expat fontconfig freetype
-WANTLIB += glib-2.0 gmp gobject-2.0 iconv intl jpeg lzo2 m memcached
+WANTLIB += glib-2.0 gmp gobject-2.0 jpeg lzo2 m memcached
 WANTLIB += mysqlclient ogg pango-1.0 pcre pcreposix pixman-1 png
 WANTLIB += pthread pthread-stubs python2.7 qdbm readline sndfile
 WANTLIB += sqlite3 theora tiff vorbis xcb xcb-render xcb-shm xml2
@@ -54,7 +54,8 @@ LIB_DEPENDS =	archivers/lzo2 \
 		sysutils/e2fsprogs \
 		textproc/libxml,no_python
 
-MODULES = devel/cmake
+MODULES =	devel/cmake \
+		devel/gettext
 
 WRKDIST = ${WRKDIR}/stevedekorte-io-02f9800
 WRKBUILD = ${WRKSRC}/build
@@ -79,7 +80,7 @@ pre-configure:
 pre-install:
 	cp -R ${WRKBUILD}/_build/headers ${PREFIX}/include/io
 	find ${WRKDIST} -name '*.orig' -or -name '*.beforesubst' -print0 | \
-		xargs -r0 rm 
+		xargs -r0 rm
 
 do-test:
 	cd ${WRKBUILD} && _build/binaries/io \

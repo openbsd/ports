@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/05/14 06:58:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2013/05/16 09:16:43 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -16,12 +16,13 @@ WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB += cairo cairo-gobject dbus-1 expat ffi fontconfig freetype
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz iconv icudata
-WANTLIB += icule icuuc intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz icudata
+WANTLIB += icule icuuc m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs xcb xcb-render
 WANTLIB += xcb-shm z
 
 MODULES=		devel/dconf \
+			devel/gettext \
 			x11/gnome
 
 BUILD_DEPENDS=		x11/gnome/gjs

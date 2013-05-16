@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 11:23:54 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2013/05/16 09:16:43 sthen Exp $
 
 COMMENT=		proof assistant based on a typed lambda calculus
 
 V=			8.4pl1
 DISTNAME=		coq-$V
+REVISION=		0
 CATEGORIES=		math
 HOMEPAGE=		http://coq.inria.fr/
 
@@ -15,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo expat fontconfig freetype
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += gtk-x11-2.0 iconv intl m pango-1.0 pangocairo-1.0
+WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pixman-1 png pthread pthread-stubs
 WANTLIB += xcb xcb-render xcb-shm z
 
@@ -30,7 +31,8 @@ DESTDIRNAME=	COQINSTALLPREFIX
 USE_GMAKE=	Yes
 USE_GROFF=	Yes
 
-MODULES=	lang/ocaml
+MODULES=	devel/gettext \
+		lang/ocaml
 
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS=	-emacslib ${PREFIX}/share/emacs/site-lisp \

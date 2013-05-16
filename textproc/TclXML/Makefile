@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 11:42:40 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2013/05/16 09:16:43 sthen Exp $
 
 COMMENT =	XML parser for Tcl
 
 DISTNAME =	tclxml-3.2
+REVISION =	0
 CATEGORIES =	textproc
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=tclxml/}
@@ -14,8 +15,9 @@ SHARED_LIBS +=	Tclxml32	0.0
 # custom
 PERMIT_PACKAGE_CDROM =		Yes
 
-MODULES =		lang/tcl
-WANTLIB +=		m z exslt xslt iconv xml2
+MODULES =		converters/libiconv \
+			lang/tcl
+WANTLIB +=		m z exslt xslt xml2
 BUILD_DEPENDS +=	${MODTCL_BUILD_DEPENDS}
 LIB_DEPENDS +=		textproc/libxml \
 			textproc/libxslt

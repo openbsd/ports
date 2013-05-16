@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:10:55 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/05/16 09:16:43 sthen Exp $
 
 COMMENT =		RAW image processing application
 
 DISTNAME =		rawtherapee-4.0.9
+REVISION =		0
 
 CATEGORIES =		graphics
 
 HOMEPAGE =		http://www.rawtherapee.com/
 
-MAINTAINER = 		Kirill Bychkov <kirby@openbsd.org>
+MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
@@ -17,15 +18,16 @@ WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 atkmm-1.6 bz2 c cairo cairomm-1.0
 WANTLIB += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gdkmm-2.4 gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4
-WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 gtkmm-2.4 iconv
-WANTLIB += intl iptcdata jpeg lcms2 m pango-1.0 pangocairo-1.0
+WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 gtkmm-2.4
+WANTLIB += iptcdata jpeg lcms2 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pangomm-1.4 pixman-1 png pthread pthread-stubs
 WANTLIB += sigc-2.0 stdc++ tiff xcb xcb-render xcb-shm z
 
 MASTER_SITES =		http://rawtherapee.googlecode.com/files/
 EXTRACT_SUFX = 		.tar.xz
 
-MODULES =		devel/cmake
+MODULES =		devel/cmake \
+			devel/gettext
 RUN_DEPENDS =		devel/desktop-file-utils
 
 LIB_DEPENDS =		devel/libsigc++-2 \

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/15 07:45:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2013/05/16 09:16:43 sthen Exp $
 
 COMMENT =	library for dealing with unicode text
 CATEGORIES =	devel textproc
 
 NAME =		ocaml-text
 DISTNAME =	${NAME}-0.6
-REVISION =	0
+REVISION =	1
 MASTER_SITES =	https://forge.ocamlcore.org/frs/download.php/937/
 
 HOMEPAGE =	http://ocaml-text.forge.ocamlcore.org/
@@ -14,12 +14,11 @@ HOMEPAGE =	http://ocaml-text.forge.ocamlcore.org/
 # BSD3
 PERMIT_PACKAGE_CDROM =		Yes
 
-MODULES =	lang/ocaml
+MODULES =	converters/libiconv \
+		lang/ocaml
 
 RUN_DEPENDS =	lang/ocaml devel/ocaml-pcre
 BUILD_DEPENDS =	sysutils/findlib devel/ocaml-pcre
-LIB_DEPENDS =	converters/libiconv
-WANTLIB =	iconv
 
 # patch-setup_ml
 BUILD_DEPENDS +=devel/gmake
