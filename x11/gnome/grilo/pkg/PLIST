@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/03/19 17:42:08 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/05/16 18:56:16 jasper Exp $
 @bin bin/grilo-simple-playlist
 @bin bin/grilo-test-ui-${API}
 @bin bin/grl-inspect-${API}
@@ -45,6 +45,20 @@ lib/pkgconfig/grilo-net-${API}.pc
 share/gir-1.0/
 share/gir-1.0/Grl-${API}.gir
 share/gir-1.0/GrlNet-${API}.gir
+share/locale/cs/LC_MESSAGES/grilo.mo
+share/locale/el/LC_MESSAGES/grilo.mo
+share/locale/es/LC_MESSAGES/grilo.mo
+share/locale/gl/LC_MESSAGES/grilo.mo
+share/locale/pl/LC_MESSAGES/grilo.mo
+share/locale/pt_BR/LC_MESSAGES/grilo.mo
+share/locale/sl/LC_MESSAGES/grilo.mo
+share/locale/sr/LC_MESSAGES/grilo.mo
+share/locale/sr@latin/
+share/locale/sr@latin/LC_MESSAGES/
+share/locale/sr@latin/LC_MESSAGES/grilo.mo
+share/locale/tg/
+share/locale/tg/LC_MESSAGES/
+share/locale/tg/LC_MESSAGES/grilo.mo
 share/vala/
 share/vala/vapi/
 share/vala/vapi/grilo-${API}.deps
