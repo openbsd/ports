@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2013/05/03 07:32:34 bentley Exp $
+# $OpenBSD: Makefile,v 1.14 2013/05/16 20:48:53 rpe Exp $
 
 COMMENT =		lightweight web browser
 
 NETSURF_PROJECT =	netsurf
 NETSURF_VERSION =	3.0
-
-CATEGORIES=		www
 
 HOMEPAGE=		http://www.netsurf-browser.org/
 MASTER_SITES =		http://download.netsurf-browser.org/netsurf/releases/source/

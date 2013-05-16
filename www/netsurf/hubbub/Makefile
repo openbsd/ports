@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/05/03 07:38:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2013/05/16 20:48:53 rpe Exp $
 
 COMMENT =		HTML parser
 
@@ -8,7 +8,6 @@ PKGNAME =		hubbub-${NETSURF_VERSION}
 HOMEPAGE =		http://www.netsurf-browser.org/projects/hubbub/
 REVISION =		0
 
-CATEGORIES =		www
 SHARED_LIBS =		hubbub 1.1 #0.2.0
 
 MODULES =		converters/libiconv

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.7 2013/05/03 07:32:34 bentley Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2013/05/16 20:48:53 rpe Exp $
 
-CATEGORIES +=	www/netsurf
+CATEGORIES +=	www
 
 # child ports MUST define NETSURF_{PROJECT,VERSION}
 
