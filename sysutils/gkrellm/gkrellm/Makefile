@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2013/03/17 09:47:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2013/05/16 20:47:49 rpe Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,7 +11,7 @@ PKGNAME-main=	gkrellm-server-${V}
 PKGNAME-client=	gkrellm-${V}
 REVISION-main=	6
 REVISION-client=4
-CATEGORIES=	sysutils sysutils/gkrellm
+CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.gkrellm.net/
 

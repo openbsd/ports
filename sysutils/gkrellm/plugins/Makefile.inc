@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.29 2013/03/11 11:41:30 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.30 2013/05/16 20:47:49 rpe Exp $
 
 SHARED_ONLY=	Yes
 
-CATEGORIES+=	sysutils/gkrellm
+CATEGORIES+=	sysutils
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM?=	Yes
