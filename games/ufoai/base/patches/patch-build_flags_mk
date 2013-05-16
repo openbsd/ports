@@ -1,0 +1,12 @@
+$OpenBSD: patch-build_flags_mk,v 1.1 2013/05/16 10:10:35 kirby Exp $
+--- build/flags.mk.orig	Wed Feb  6 12:58:38 2013
++++ build/flags.mk	Wed Feb  6 12:58:58 2013
+@@ -21,7 +21,7 @@ CFLAGS += -ggdb
+ CFLAGS += -Winline
+ CFLAGS += -Wcast-qual
+ CFLAGS += -Wcast-align
+-CFLAGS += -Wmissing-declarations
++#CFLAGS += -Wmissing-declarations
+ CFLAGS += -Wpointer-arith
+ CFLAGS += -Wno-long-long
+ CFLAGS += -pedantic

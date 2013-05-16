@@ -1,12 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:07:41 espie Exp $
-
-# useless without ufoai, which can only be built on shared lib arches.
-# saves a useless 530MB package on !shared arch.
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.4 2013/05/16 10:10:35 kirby Exp $
 
 COMMENT =		UFO:AI data
 
-V = 			2.3.1
 DISTNAME =		ufoai-${V}-data
 PKGNAME = 		ufoai-data-${V}
 
@@ -19,7 +14,6 @@ WRKDIST = 		${WRKDIR}/base
 BUILD_DEPENDS = 	archivers/unzip
 
 NO_BUILD =		Yes
-NO_TEST =		Yes
 
 post-extract:
 	cd ${WRKSRC} && ${LOCALBASE}/bin/unzip \*.pk3 -d ${WRKSRC}

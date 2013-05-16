@@ -1,25 +1,25 @@
-$OpenBSD: patch-src_common_common_h,v 1.1.1.1 2011/05/27 07:20:11 ajacoutot Exp $
---- src/common/common.h.orig	Fri Jun 18 11:07:59 2010
-+++ src/common/common.h	Fri Jun 18 11:10:44 2010
-@@ -48,8 +48,20 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston,
- #    define SHARED_EXT "so"
+$OpenBSD: patch-src_common_common_h,v 1.2 2013/05/16 10:10:35 kirby Exp $
+--- src/common/common.h.orig	Tue Apr 24 09:04:43 2012
++++ src/common/common.h	Sat Mar 23 21:37:28 2013
+@@ -51,8 +51,20 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+ #    define SO_EXT "so"
  #  endif
  
 -#elif defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
 +#elif defined(__FreeBSD__)
  #  define BUILDSTRING_OS "FreeBSD"
-+#  ifndef SHARED_EXT
-+#    define SHARED_EXT "so"
-+#  endif
-+
-+#elif defined(__NetBSD__)
-+#  define BUILDSTRING_OS "NetBSD"
-+#  ifndef SHARED_EXT
-+#    define SHARED_EXT "so"
++#  ifndef SO_EXT
++#    define SO_EXT "so"
 +#  endif
 +
 +#elif defined(__OpenBSD__)
 +#  define BUILDSTRING_OS "OpenBSD"
- #  ifndef SHARED_EXT
- #    define SHARED_EXT "so"
++#  ifndef SO_EXT
++#    define SO_EXT "so"
++#  endif
++
++#elif defined(__NetBSD__)
++#  define BUILDSTRING_OS "NetBSD"
+ #  ifndef SO_EXT
+ #    define SO_EXT "so"
  #  endif

@@ -1,0 +1,12 @@
+$OpenBSD: patch-build_modules_ufoded_mk,v 1.1 2013/05/16 10:10:35 kirby Exp $
+--- build/modules/ufoded.mk.orig	Mon Feb  4 16:30:53 2013
++++ build/modules/ufoded.mk	Mon Feb  4 16:31:39 2013
+@@ -61,7 +61,7 @@ $(TARGET)_SRCS      = \
+ 	game/inv_shared.c \
+ 	game/chr_shared.c
+ 
+-ifneq ($(findstring $(TARGET_OS), netbsd freebsd linux),)
++ifneq ($(findstring $(TARGET_OS), netbsd freebsd openbsd linux),)
+ 	$(TARGET)_SRCS += \
+ 		ports/linux/linux_main.c \
+ 		ports/unix/unix_console.c \

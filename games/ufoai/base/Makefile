@@ -1,50 +1,41 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:07:41 espie Exp $
-
-SHARED_ONLY = 		Yes
+# $OpenBSD: Makefile,v 1.8 2013/05/16 10:10:35 kirby Exp $
 
 COMMENT-main =		squad-based tactical strategy game
 COMMENT-editor = 	UFO:AI map editor
 
-V = 			2.3.1
 DISTNAME =		ufoai-${V}-source
 PKGNAME-main =		${DISTNAME:S/-source//}
-REVISION-main = 	3
 PKGNAME-editor = 	uforadiant-${V}
-REVISION-editor = 	4
 
 EXTRACT_SUFX =		.tar.bz2
 
 MULTI_PACKAGES = 	-main -editor
 
-cWANTLIB += GL SDL SDL_image c jpeg m ogg png pthread tiff 
-cWANTLIB += vorbis vorbisfile z execinfo ${MODGETTEXT_WANTLIB}
+cWANTLIB += GL SDL c jpeg m ogg png pthread vorbis
+cWANTLIB += vorbisfile z execinfo ${MODGETTEXT_WANTLIB}
 
-WANTLIB-main += FLAC SDL_mixer SDL_ttf crypto curl curses 
-WANTLIB-main += idn mikmod smpeg ssl theora
-WANTLIB-main += xvidcore ${cWANTLIB}
+WANTLIB-main += FLAC SDL_mixer SDL_ttf crypto curl idn
+WANTLIB-main += mikmod smpeg ssl theora xvidcore ${cWANTLIB}
 
 WANTLIB-editor += GLU ICE SM X11 Xcomposite Xcursor Xdamage
 WANTLIB-editor += Xext Xfixes Xi Xinerama Xmu Xrandr Xrender
-WANTLIB-editor += Xt atk-1.0 cairo expat fontconfig
-WANTLIB-editor += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gdkglext-x11-1.0
+WANTLIB-editor += Xt atk-1.0 cairo fontconfig freetype
+WANTLIB-editor += gdk-x11-2.0 gdk_pixbuf-2.0 gdkglext-x11-1.0
 WANTLIB-editor += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB-editor += gtk-x11-2.0 gtkglext-x11-1.0 gtksourceview-2.0
 WANTLIB-editor += openal pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB-editor += pangox-1.0 pixman-1 pthread-stubs stdc++ xcb
-WANTLIB-editor += xcb-render xcb-shm xml2 ${cWANTLIB}
+WANTLIB-editor += pangox-1.0 stdc++ xml2 ${cWANTLIB}
 
 MODULES = 		devel/gettext
 
-BUILD_DEPENDS = 	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
-
-RUN_DEPENDS = 		games/ufoai/data>=${V} \
+RUN_DEPENDS = 		games/ufoai/data \
 			devel/desktop-file-utils
 
-LIB_DEPENDS-main =	devel/sdl-image \
+LIB_DEPENDS-main =	devel/libexecinfo \
 			devel/sdl-mixer \
 			devel/sdl-ttf \
-			devel/libexecinfo \
+			graphics/jpeg \
+			graphics/png \
 			multimedia/libtheora \
 			multimedia/xvidcore \
 			net/curl \
@@ -53,45 +44,37 @@ LIB_DEPENDS-main =	devel/sdl-image \
 LIB_DEPENDS-editor = 	audio/libvorbis \
 			audio/openal \
 			devel/libexecinfo \
-			devel/sdl-image \
+			devel/sdl \
 			x11/gtkglext \
 			x11/gtksourceview \
 			${MODGETTEXT_LIB_DEPENDS}
 
 USE_GMAKE =		Yes
-MAKE_FLAGS += 		${CONFIGURE_ENV}
+MAKE_ENV += 		${CONFIGURE_ENV}
 
 CFLAGS += 		-pthread
 
-AUTOCONF_VERSION = 	2.67
-AUTOMAKE_VERSION = 	1.9
-CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	--enable-release=yes \
+CONFIGURE_STYLE =	simple
+CONFIGURE_ARGS =	--enable-release \
 			--enable-ufo2map \
 			--enable-uforadiant \
-			--disable-tests
+			--disable-testall \
+			--datadir=${PREFIX}/share/ufoai
 
 CONFIGURE_ENV +=	CFLAGS="${CFLAGS}" \
-			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
+			CCFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
 				-I${LOCALBASE}/include/libpng" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -liconv -lexecinfo"
-
-NO_TEST = 		Yes
-
-ALL_TARGET = 		all uforadiant lang
-INSTALL_TARGET = 	install_exec
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -liconv -lexecinfo" \
+			Q=
 
 post-extract:
 	mkdir -p ${WRKSRC}/base/{maps,models}
 	mv ${WRKSRC}/debian/ufo.6 ${WRKSRC}/debian/ufoai.6
+	cp ${WRKSRC}/build/platforms/freebsd.mk ${WRKSRC}/build/platforms/openbsd.mk
 
 pre-configure:
 	perl -pi -e 's,/usr/share/games/,${PREFIX}/share/,g' ${WRKSRC}/debian/*.6
 	perl -pi -e 's,/usr/games/,${PREFIX}/bin/,g' ${WRKSRC}/debian/*.desktop
-	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} aclocal
-	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoconf
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/ufoai
@@ -101,12 +84,11 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/debian/*.desktop ${PREFIX}/share/applications
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/debian/*.xpm ${PREFIX}/share/pixmaps
-	${INSTALL_DATA_DIR} ${PREFIX}/share/ufoai/radiant/
 	cd ${WRKSRC}/radiant && find * -type d -exec ${INSTALL_DATA_DIR} \
 		"${PREFIX}/share/ufoai/radiant/{}" \;
 	cd ${WRKSRC}/radiant && find * -type f -mindepth 1 -exec ${INSTALL_DATA} \
 		"{}" "${PREFIX}/share/ufoai/radiant/{}" \;
-	${INSTALL_PROGRAM} ${WRKSRC}/radiant/uforadiant \
+	${INSTALL_DATA} ${WRKSRC}/radiant/*.xml \
 		${PREFIX}/share/ufoai/radiant/
 
 .include <bsd.port.mk>

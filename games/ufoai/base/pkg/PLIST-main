@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2011/12/18 11:36:51 stsp Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2013/05/16 10:10:35 kirby Exp $
 bin/ufoai
 bin/ufoded
 @man man/man6/ufoai.6
@@ -85,13 +85,21 @@ share/ufoai/base/i18n/sv/LC_MESSAGES/ufoai.mo
 share/ufoai/base/i18n/th/
 share/ufoai/base/i18n/th/LC_MESSAGES/
 share/ufoai/base/i18n/th/LC_MESSAGES/ufoai.mo
+share/ufoai/base/i18n/tr/
+share/ufoai/base/i18n/tr/LC_MESSAGES/
+share/ufoai/base/i18n/tr/LC_MESSAGES/ufoai.mo
 share/ufoai/base/i18n/uk/
 share/ufoai/base/i18n/uk/LC_MESSAGES/
 share/ufoai/base/i18n/uk/LC_MESSAGES/ufoai.mo
 share/ufoai/base/i18n/zh_CN/
 share/ufoai/base/i18n/zh_CN/LC_MESSAGES/
 share/ufoai/base/i18n/zh_CN/LC_MESSAGES/ufoai.mo
+share/ufoai/base/i18n/zh_TW/
+share/ufoai/base/i18n/zh_TW/LC_MESSAGES/
+share/ufoai/base/i18n/zh_TW/LC_MESSAGES/ufoai.mo
+@bin share/ufoai/memory
 @bin share/ufoai/ufo
 @bin share/ufoai/ufoded
+@bin share/ufoai/ufoslicer
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

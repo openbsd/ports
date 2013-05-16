@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_client_cl_language_c,v 1.1.1.1 2011/05/27 07:20:11 ajacoutot Exp $
+$OpenBSD: patch-src_client_cl_language_c,v 1.2 2013/05/16 10:10:35 kirby Exp $
 
 XXX: OpenBSD's locale support is very limited. This can probably
 be removed when support for LC_MESSAGES is added.
 
---- src/client/cl_language.c.orig	Tue May 17 12:19:18 2011
-+++ src/client/cl_language.c	Tue May 17 13:31:55 2011
-@@ -194,6 +194,8 @@ static qboolean CL_LanguageTest (const char *localeID)
+--- src/client/cl_language.c.orig	Tue Apr 24 09:04:43 2012
++++ src/client/cl_language.c	Mon Feb  4 16:30:38 2013
+@@ -207,6 +207,8 @@ static qboolean CL_LanguageTest (const char *localeID)
  		Com_DPrintf(DEBUG_CLIENT, "No locale mappings for locale with id '%s'\n", localeID);
  		return qfalse;
  	}

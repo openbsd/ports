@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure,v 1.1 2013/05/16 10:10:35 kirby Exp $
+--- configure.orig	Fri Feb  8 19:52:16 2013
++++ configure	Fri Feb  8 19:52:44 2013
+@@ -143,9 +143,9 @@ makefile_local() {
+ 
+ check_header_cc() {
+ 	if [ -n "${2}" ]; then
+-		( echo "#include <${1}>" | ${CROSS}${CC} ${CFLAGS} $(pkg-config --cflags ${2}) -o /dev/null -xc -c - 2> /dev/null ) && echo "1" || echo ""
++		( echo "#include <${1}>" | ${CROSS}${CC} ${CCFLAGS} $(pkg-config --cflags ${2}) -o /dev/null -xc -c - 2> /dev/null ) && echo "1" || echo ""
+ 	else
+-		( echo "#include <${1}>" | ${CROSS}${CC} ${CFLAGS} -o /dev/null -xc -c - 2> /dev/null ) && echo "1" || echo ""
++		( echo "#include <${1}>" | ${CROSS}${CC} ${CCFLAGS} -o /dev/null -xc -c - 2> /dev/null ) && echo "1" || echo ""
+ 	fi
+ }
+ 

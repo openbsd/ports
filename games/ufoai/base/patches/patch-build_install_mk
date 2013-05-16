@@ -1,0 +1,41 @@
+$OpenBSD: patch-build_install_mk,v 1.1 2013/05/16 10:10:35 kirby Exp $
+--- build/install.mk.orig	Tue Apr 24 09:04:43 2012
++++ build/install.mk	Fri Feb  8 19:24:12 2013
+@@ -57,28 +57,28 @@ sourcearchive:
+ 	$(Q)git archive --format=tar --prefix=ufoai-$(UFOAI_VERSION)-source/ HEAD | bzip2 -9 > ufoai-$(UFOAI_VERSION)-source.tar.bz2
+ 
+ .PHONY: install-pre
+-install-pre: pk3 lang
++install-pre: lang
+ 	@echo "Binaries:  $(PKGBINDIR)"
+ 	@echo "Data:      $(PKGDATADIR)"
+ 	@echo "Libraries: $(PKGLIBDIR)"
+ 	@echo "Locales:   $(LOCALEDIR)"
+-	$(Q)$(INSTALL_DIR) $(PKGDATADIR)/base
++	$(Q)$(INSTALL_DIR) ${DESTDIR}$(PKGDATADIR)/base
+ 	@echo "Install locales"
+ 	$(Q)LCDIR=$(LOCALEDIR); \
+-	LCDIR=$${LCDIR:-$(PKGDATADIR)/base/i18n}; \
++	LCDIR=$${LCDIR:-${DESTDIR}$(PKGDATADIR)/base/i18n}; \
+ 	cd base/i18n/; for dir in *; do \
+ 		$(INSTALL_DIR) $$LCDIR/$$dir/LC_MESSAGES && \
+ 		$(INSTALL_DATA) $$dir/LC_MESSAGES/ufoai.mo $$LCDIR/$$dir/LC_MESSAGES/ufoai.mo; \
+ 	done
+ 	@echo "#!/bin/sh" > ufo.sh
+ 	@echo "cd $(PKGDATADIR); ./ufo \$$*; exit \$$?" >> ufo.sh
+-	$(Q)$(INSTALL_DIR) $(PKGBINDIR)
+-	$(Q)$(INSTALL_SCRIPT) ufo.sh $(PKGBINDIR)/ufo
++	$(Q)$(INSTALL_DIR) ${DESTDIR}$(PKGBINDIR)
++	$(Q)$(INSTALL_SCRIPT) ufo.sh ${DESTDIR}$(PKGBINDIR)/ufoai
+ 	@echo "#!/bin/sh" > ufoded.sh
+ 	@echo "cd $(PKGDATADIR); ./ufoded \$$*; exit \$$?" >> ufoded.sh
+-	$(Q)$(INSTALL_SCRIPT) ufoded.sh $(PKGBINDIR)/ufoded
++	$(Q)$(INSTALL_SCRIPT) ufoded.sh ${DESTDIR}$(PKGBINDIR)/ufoded
+ 	@echo "cd $(PKGDATADIR)/radiant; ./uforadiant \$$*; exit \$$?" >> uforadiant.sh
+-	$(Q)$(INSTALL_SCRIPT) uforadiant.sh $(PKGBINDIR)/uforadiant
++	$(Q)$(INSTALL_SCRIPT) uforadiant.sh ${DESTDIR}$(PKGBINDIR)/uforadiant
+ 	$(Q)rm ufoded.sh ufo.sh uforadiant.sh
+-	@echo "Install pk3s"
+-	$(Q)$(INSTALL_DATA) base/*.pk3 $(PKGDATADIR)/base
++#	@echo "Install pk3s"
++#	$(Q)$(INSTALL_DATA) base/*.pk3 $(PKGDATADIR)/base
