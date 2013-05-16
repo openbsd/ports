@@ -1,6 +1,6 @@
-$OpenBSD: patch-sredird_c,v 1.1.1.1 2006/06/29 10:53:08 alek Exp $
---- sredird.c.orig	Fri Aug 12 16:10:46 2005
-+++ sredird.c	Sun Jun 18 02:10:10 2006
+$OpenBSD: patch-sredird_c,v 1.2 2013/05/16 11:01:09 sthen Exp $
+--- sredird.c.orig	Fri Aug 12 15:10:46 2005
++++ sredird.c	Thu May 16 11:58:39 2013
 @@ -110,9 +110,9 @@
  #include <fcntl.h>
  #include <syslog.h>
@@ -12,7 +12,7 @@ $OpenBSD: patch-sredird_c,v 1.1.1.1 2006/06/29 10:53:08 alek Exp $
  #include <netinet/ip.h>
  #include <netinet/tcp.h>
  
-@@ -714,8 +714,6 @@ unsigned long int GetPortSpeed(int PortF
+@@ -714,8 +714,6 @@ unsigned long int GetPortSpeed(int PortFd)
  					return(115200UL);
  				case B230400:
  					return(230400UL);
@@ -21,7 +21,7 @@ $OpenBSD: patch-sredird_c,v 1.1.1.1 2006/06/29 10:53:08 alek Exp $
  				default:
  					return(0UL);
  			}
-@@ -1094,9 +1092,6 @@ void SetPortSpeed(int PortFd, unsigned l
+@@ -1094,9 +1092,6 @@ void SetPortSpeed(int PortFd, unsigned long BaudRate)
  				case 230400UL:
  					Speed = B230400;
  				break;
