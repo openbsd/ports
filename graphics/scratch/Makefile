@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2013/05/14 09:42:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2013/05/16 17:20:12 sthen Exp $
 
 COMMENT =		visual programming environment and toolkit
 
 DISTNAME =		${PKGNAME}.src
 PKGNAME =		scratch-1.4.0.7
+REVISION =		0
 CATEGORIES =		graphics
 HOMEPAGE =		http://scratch.mit.edu/
 
@@ -13,12 +14,13 @@ MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =	X11 Xau Xdmcp Xext Xrender cairo expat fontconfig freetype \
-		glib-2.0 gmodule-2.0 gobject-2.0 harfbuzz iconv intl \
+		glib-2.0 gmodule-2.0 gobject-2.0 harfbuzz \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
 		png pthread pthread-stubs xcb xcb-render xcb-shm z
 
 MASTER_SITES =		http://download.scratch.mit.edu/
 
+MODULES =		devel/gettext
 LIB_DEPENDS=		devel/pango
 
 # not actually needed to build, but avoid wasting time on !squeak arches.

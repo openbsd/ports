@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:10:54 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/05/16 17:20:12 sthen Exp $
 
 COMMENT =	toolkit for developing mapping applications
 
@@ -17,7 +17,9 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =	https://github.com/downloads/mapnik/mapnik/
-MODULES =	devel/scons lang/python
+MODULES =	devel/gettext \
+		devel/scons \
+		lang/python
 
 VMEM_WARNING =	Yes
 TEST_DEPENDS =	devel/py-nose
@@ -38,7 +40,7 @@ WANTLIB =	cairomm-1.0 cairo icuuc ltdl png pq proj jpeg \
 		c freetype m stdc++ xml2 z curl gdal agg
 
 WANTLIB += GL X11 Xau Xdamage Xdmcp Xext Xfixes Xrender Xxf86vm
-WANTLIB += drm expat fontconfig glib-2.0 gobject-2.0 intl pcre
+WANTLIB += drm expat fontconfig glib-2.0 gobject-2.0 pcre
 WANTLIB += pixman-1 pthread-stubs sigc-2.0 xcb xcb-render xcb-shm
 
 
