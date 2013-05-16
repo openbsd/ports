@@ -1,16 +1,12 @@
-$OpenBSD: patch-libi3_libi3_mk,v 1.1 2012/12/27 19:58:05 dcoppa Exp $
-
-Repect AR environment variable
-(upstream git commit ef81bd183b579688b9f1a46a41c817b577d0b39e)
-
+$OpenBSD: patch-libi3_libi3_mk,v 1.2 2013/05/16 18:42:30 dcoppa Exp $
 --- libi3/libi3.mk.orig	Thu Dec 27 15:01:05 2012
 +++ libi3/libi3.mk	Thu Dec 27 15:01:40 2012
-@@ -14,7 +14,7 @@ libi3/%.o: libi3/%.c $(libi3_HEADERS)
+@@ -10,7 +10,7 @@ libi3_OBJECTS := $(libi3_SOURCES:.c=.o)
+ 
+ libi3/%.o: libi3/%.c $(libi3_HEADERS)
+ 	echo "[libi3] CC $<"
+-	$(CC) $(I3_CPPFLAGS) $(XCB_CPPFLAGS) $(CPPFLAGS) $(libi3_CFLAGS) $(I3_CFLAGS) $(CFLAGS) -c -o $@ $<
++	$(CC) $(I3_CPPFLAGS) $(XCB_CPPFLAGS) $(CPPFLAGS) $(I3_CFLAGS) $(libi3_CFLAGS) $(CFLAGS) -c -o $@ $<
  
  libi3.a: $(libi3_OBJECTS)
  	echo "[libi3] AR libi3.a"
--	ar rcs $@ $^ $(libi3_LIBS)
-+	$(AR) rcs $@ $^ $(libi3_LIBS)
- 
- clean-libi3:
- 	echo "[libi3] Clean"

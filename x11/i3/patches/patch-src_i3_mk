@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_i3_mk,v 1.2 2012/12/13 12:10:13 dcoppa Exp $
---- src/i3.mk.orig	Thu Dec 13 10:15:15 2012
-+++ src/i3.mk	Thu Dec 13 10:19:39 2012
-@@ -82,17 +82,14 @@ install-i3: i3
+$OpenBSD: patch-src_i3_mk,v 1.3 2013/05/16 18:42:30 dcoppa Exp $
+--- src/i3.mk.orig	Mon Mar 18 22:43:36 2013
++++ src/i3.mk	Mon May 13 08:27:23 2013
+@@ -73,17 +73,14 @@ install-i3: i3
  	$(INSTALL) -d -m 0755 $(DESTDIR)$(PREFIX)/include/i3
  	$(INSTALL) -d -m 0755 $(DESTDIR)$(PREFIX)/share/xsessions
  	$(INSTALL) -d -m 0755 $(DESTDIR)$(PREFIX)/share/applications

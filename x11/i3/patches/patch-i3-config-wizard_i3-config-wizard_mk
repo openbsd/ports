@@ -1,7 +1,7 @@
-$OpenBSD: patch-i3-config-wizard_i3-config-wizard_mk,v 1.1 2012/09/21 17:16:14 dcoppa Exp $
+$OpenBSD: patch-i3-config-wizard_i3-config-wizard_mk,v 1.2 2013/05/16 18:42:30 dcoppa Exp $
 --- i3-config-wizard/i3-config-wizard.mk.orig	Fri Sep 21 11:40:58 2012
 +++ i3-config-wizard/i3-config-wizard.mk	Fri Sep 21 11:42:00 2012
-@@ -30,7 +30,7 @@ i3-config-wizard/i3-config-wizard: libi3.a $(i3_config
+@@ -21,7 +21,7 @@ i3-config-wizard/i3-config-wizard: libi3.a $(i3_config
  install-i3-config-wizard: i3-config-wizard/i3-config-wizard
  	echo "[i3-config-wizard] Install"
  	$(INSTALL) -d -m 0755 $(DESTDIR)$(PREFIX)/bin
