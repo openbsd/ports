@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.802 2013/04/21 19:46:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.803 2013/05/17 12:49:49 stsp Exp $
 
      SUBDIR =
      SUBDIR += BitTorrent
@@ -527,6 +527,7 @@
      SUBDIR += scamper
      SUBDIR += scapy
      SUBDIR += sendxmpp
+     SUBDIR += serf
      SUBDIR += sharity-light
      SUBDIR += si
      SUBDIR += sic
