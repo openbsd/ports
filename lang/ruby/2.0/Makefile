@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/04/22 19:18:16 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2013/05/17 20:11:43 jeremy Exp $
 
 BROKEN-sparc64	=	segfaults during build
 
@@ -8,7 +8,7 @@ COMMENT-tk =		tk interface for ruby
 COMMENT-ri_docs =	ri documentation files for ruby
 
 VERSION =		2.0.0
-PATCHLEVEL =		0
+PATCHLEVEL =		195
 RUBYLIBREV =		2.0
 DISTNAME =		ruby-${VERSION}-p${PATCHLEVEL}
 

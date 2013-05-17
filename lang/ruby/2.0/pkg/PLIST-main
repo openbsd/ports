@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2013/03/19 23:38:24 jeremy Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2013/05/17 20:11:43 jeremy Exp $
 @option no-default-conflict
 @conflict ruby->=2.0,<2.1
 bin/erb20
@@ -856,6 +856,7 @@ lib/ruby/${RUBYLIBREV}/rubygems/specification.rb
 lib/ruby/${RUBYLIBREV}/rubygems/ssl_certs/
 lib/ruby/${RUBYLIBREV}/rubygems/ssl_certs/AddTrustExternalCARoot.pem
 lib/ruby/${RUBYLIBREV}/rubygems/ssl_certs/Entrust_net-Secure-Server-Certification-Authority.pem
+lib/ruby/${RUBYLIBREV}/rubygems/ssl_certs/GeoTrust_Global_CA.pem
 lib/ruby/${RUBYLIBREV}/rubygems/ssl_certs/VerisignClass3PublicPrimaryCertificationAuthority-G2.pem
 lib/ruby/${RUBYLIBREV}/rubygems/ssl_certs/ca-bundle.pem
 lib/ruby/${RUBYLIBREV}/rubygems/syck_hack.rb

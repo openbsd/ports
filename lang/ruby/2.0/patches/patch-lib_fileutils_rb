@@ -1,12 +1,12 @@
-$OpenBSD: patch-lib_fileutils_rb,v 1.1.1.1 2013/03/19 23:38:23 jeremy Exp $
+$OpenBSD: patch-lib_fileutils_rb,v 1.2 2013/05/17 20:11:43 jeremy Exp $
 
 Make FileUtils.mkdir_p act more like mkdir(1) -p, by not attempting
 to create directories that already exist.  This fixes systrace
 warnings when building ports.
 
---- lib/fileutils.rb.orig	Tue Nov 13 20:26:20 2012
-+++ lib/fileutils.rb	Mon Dec  3 10:03:49 2012
-@@ -282,7 +282,7 @@ public
+--- lib/fileutils.rb.orig	Thu Apr 11 10:00:49 2013
++++ lib/fileutils.rb	Tue May 14 08:45:49 2013
+@@ -203,7 +203,7 @@ module FileUtils
      list.map {|path| path.chomp(?/) }.each do |path|
        # optimize for the most common case
        begin
@@ -15,7 +15,7 @@ warnings when building ports.
          next
        rescue SystemCallError
          next if File.directory?(path)
-@@ -295,7 +295,7 @@ public
+@@ -216,7 +216,7 @@ module FileUtils
        end
        stack.reverse_each do |dir|
          begin
