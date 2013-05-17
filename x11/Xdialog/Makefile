@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 11:46:08 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/05/17 09:12:26 kirby Exp $
 
 COMMENT=	X11 counterpart of curses-based misc/dialog
 
 DISTNAME=	Xdialog-2.3.1
-REVISION=	4
+REVISION=	5
 CATEGORIES=	x11 misc
 
-HOMEPAGE=	http://xdialog.dyns.net/
+HOMEPAGE=	http://xdialog.free.fr/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,7 +18,7 @@ WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread
 WANTLIB += pthread-stubs xcb z gdk_pixbuf-2.0 gdk-x11-2.0 gtk-x11-2.0
 WANTLIB += xcb-render xcb-shm
 
-MASTER_SITES=	http://thgodef.nerim.net/xdialog/
+MASTER_SITES=	http://xdialog.free.fr/
 EXTRACT_SUFX=	.tar.bz2
 
 LIB_DEPENDS=	x11/gtk+2

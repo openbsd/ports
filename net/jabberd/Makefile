@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.46 2013/03/21 08:46:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2013/05/17 09:12:26 kirby Exp $
 
 COMMENT=		jabber server
 DISTNAME=		jabberd-2.0s11
+REVISION= 		0
 EPOCH=			1
 CATEGORIES=		net
-HOMEPAGE=		http://codex.xiaoka.com/wiki/jabberd2:start
+HOMEPAGE=		http://jabberd2.org/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c crypto ssl
 
-MASTER_SITES=		http://files.jabberstudio.org/jabberd2/ \
-			http://jabberstudio.rediris.es/jabberd2/ \
-			http://jabberstudio.2nw.net/jabberd2/
+MASTER_SITES=		http://www.linklevel.net/distfiles/
 
 JABBERDUSER=		_jabberd
 JABBERDGROUP=		_jabberd
