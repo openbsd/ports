@@ -1,5 +1,5 @@
 Postfix can be set up to replace sendmail entirely. Please read the
-documentation at file:${PREFIX}/share/doc/postfix/html/index.html or
+documentation at file://${PREFIX}/share/doc/postfix/html/index.html or
 ${HOMEPAGE} carefully before you decide to do this!
 
 To replace sendmail with Postfix you have to install a new mailer.conf
