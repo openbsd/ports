@@ -1,0 +1,12 @@
+$OpenBSD: patch-test_publish_subscribe_test_rb,v 1.1 2013/05/17 07:52:48 dcoppa Exp $
+--- test/publish_subscribe_test.rb.orig	Fri May 17 08:30:47 2013
++++ test/publish_subscribe_test.rb	Fri May 17 08:31:18 2013
+@@ -132,7 +132,7 @@ class TestPublishSubscribe < Test::Unit::TestCase
+   def test_subscribe_past_a_timeout
+     # For some reason, a thread here doesn't reproduce the issue.
+     sleep = %{sleep #{OPTIONS[:timeout] * 2}}
+-    publish = %{echo "publish foo bar\r\n" | nc localhost #{OPTIONS[:port]}}
++    publish = %{echo "publish foo bar\r\n" | nc -N localhost #{OPTIONS[:port]}}
+     cmd = [sleep, publish].join("; ")
+ 
+     IO.popen(cmd, "r+") do |pipe|

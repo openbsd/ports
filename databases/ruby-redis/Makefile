@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 02:52:08 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/05/17 07:52:48 dcoppa Exp $
 
 COMMENT =	client library for the Redis key-value store
 
-VERSION =	3.0.2
+VERSION =	3.0.4
 DISTNAME =	redis-${VERSION}
 CATEGORIES =	databases
 
@@ -17,13 +17,15 @@ MODULES =		lang/ruby
 
 CONFIGURE_STYLE =	ruby gem
 
-MODRUBY_TEST =	rake
+MODRUBY_TEST =		rake
 
-TEST_DEPENDS =	databases/redis
+MODRUBY_TEST_BIN =	LC_CTYPE="en_US.UTF-8" ${RAKE} --trace
+
+TEST_DEPENDS =		databases/redis
 
 # Be sure to have a redis server running with the command:
-# cd $(make show=WRKBUILD) && sudo redis-server ./test/test.conf
-TEST_IS_INTERACTIVE =Yes
+# cd $(make show=WRKBUILD) && redis-server ./test/test.conf
+TEST_IS_INTERACTIVE =	Yes
 
 post-install:
 	@find ${PREFIX}/${GEM_LIB}/ -name '.git*' -print0 | xargs -0 rm
