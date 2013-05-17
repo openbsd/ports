@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2013/03/20 06:26:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2013/05/17 12:42:35 dcoppa Exp $
 @conflict jakarta-tomcat-*
 @pkgpath www/tomcat/v6
 @newgroup _tomcat:526
@@ -78,6 +78,7 @@ tomcat/bin/catalina-tasks.xml
 tomcat/bin/catalina.sh
 tomcat/bin/commons-daemon-native.tar.gz
 tomcat/bin/commons-daemon.jar
+tomcat/bin/daemon.sh
 tomcat/bin/digest.sh
 tomcat/bin/setclasspath.sh
 tomcat/bin/shutdown.sh
@@ -92,7 +93,7 @@ tomcat/lib/catalina-ant.jar
 tomcat/lib/catalina-ha.jar
 tomcat/lib/catalina-tribes.jar
 tomcat/lib/catalina.jar
-tomcat/lib/ecj-3.7.2.jar
+tomcat/lib/ecj-4.2.2.jar
 tomcat/lib/el-api.jar
 tomcat/lib/jasper-el.jar
 tomcat/lib/jasper.jar

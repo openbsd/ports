@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.7 2012/10/26 10:24:30 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.8 2013/05/17 12:42:34 dcoppa Exp $
 @conflict jakarta-tomcat-examples-*
 @pkgpath www/jakarta-tomcat/v6,-examples
 @owner _tomcat
@@ -1384,6 +1384,8 @@ webapps/docs/api/org/apache/tomcat/util/http/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/http/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/log/
 webapps/docs/api/org/apache/tomcat/util/log/SystemLogHandler.html
+webapps/docs/api/org/apache/tomcat/util/log/UserDataHelper.Mode.html
+webapps/docs/api/org/apache/tomcat/util/log/UserDataHelper.html
 webapps/docs/api/org/apache/tomcat/util/log/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/log/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/log/package-tree.html
