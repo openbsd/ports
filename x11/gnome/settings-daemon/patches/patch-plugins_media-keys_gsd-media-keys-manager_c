@@ -1,0 +1,18 @@
+$OpenBSD: patch-plugins_media-keys_gsd-media-keys-manager_c,v 1.10 2013/05/17 15:08:04 ajacoutot Exp $
+
+From 95f242c15222b0821c03676d52c82c4dba6ec07a Mon Sep 17 00:00:00 2001
+From: Giovanni Campagna <gcampagna@src.gnome.org>
+Date: Fri, 10 May 2013 15:53:29 +0000
+Subject: media-keys: don't crash when calling GrabAccelerators with an empty list
+
+--- plugins/media-keys/gsd-media-keys-manager.c.orig	Tue May 14 12:04:02 2013
++++ plugins/media-keys/gsd-media-keys-manager.c	Fri May 17 16:56:57 2013
+@@ -491,7 +491,7 @@ grab_media_keys (GsdMediaKeysManager *manager)
+         GVariantBuilder builder;
+         int i;
+ 
+-        g_variant_builder_init (&builder, G_VARIANT_TYPE_ARRAY);
++        g_variant_builder_init (&builder, G_VARIANT_TYPE ("a(su)"));
+ 
+         for (i = 0; i < manager->priv->keys->len; i++) {
+                 MediaKey *key;
