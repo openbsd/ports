@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.155 2013/04/03 15:19:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.156 2013/05/17 13:47:44 ajacoutot Exp $
 
 COMMENT-main=		Common Unix Printing System
 COMMENT-libs=		CUPS libraries and headers
@@ -10,7 +10,7 @@ EXTRACT_SUFX=		.tar.bz2
 PKGNAME-main=		cups-${VERSION}
 PKGNAME-libs=		cups-libs-${VERSION}
 
-REVISION-main=		0
+REVISION-main=		1
 
 CATEGORIES=		print sysutils
 
@@ -33,12 +33,7 @@ WANTLIB += ssl stdc++ z
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += c cups cupscgi cupsimage cupsmime cupsppdc dbus-1 usb-1.0
 
-MASTER_SITES=		http://ftp.easysw.com/pub/cups/${VERSION}/ \
-			http://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/cups/${VERSION}/ \
-			ftp://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/cups/${VERSION}/ \
-			ftp://ftp.easysw.com/pub/cups/${VERSION}/ \
-			ftp://ftp2.easysw.com/pub/cups/${VERSION}/ \
-			ftp://ftp3.easysw.com/pub/cups/${VERSION}/
+MASTER_SITES=		${HOMEPAGE}software/${VERSION}/
 
 WRKDIST=		${WRKDIR}/${DISTNAME:S/-source//}
 
