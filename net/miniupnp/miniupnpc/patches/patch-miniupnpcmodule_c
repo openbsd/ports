@@ -1,10 +1,10 @@
-$OpenBSD: patch-miniupnpcmodule_c,v 1.1 2012/10/18 14:56:55 dcoppa Exp $
+$OpenBSD: patch-miniupnpcmodule_c,v 1.2 2013/05/17 10:59:31 dcoppa Exp $
 
 Fix error: expected expression before '/' token
 
---- miniupnpcmodule.c.orig	Thu Oct 18 10:29:03 2012
-+++ miniupnpcmodule.c	Thu Oct 18 10:29:46 2012
-@@ -246,9 +246,9 @@ Py_END_ALLOW_THREADS
+--- miniupnpcmodule.c.orig	Thu Aug 30 10:15:18 2012
++++ miniupnpcmodule.c	Thu May 16 13:09:01 2013
+@@ -256,9 +256,9 @@ Py_END_ALLOW_THREADS
  	}
  	else
  	{

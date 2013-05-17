@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/01/13 09:22:50 ajacoutot Exp $
-@man man/man1/miniupnpd.1
+@comment $OpenBSD: PLIST,v 1.2 2013/05/17 10:59:31 dcoppa Exp $
+@man man/man8/miniupnpd.8
 @bin sbin/miniupnpd
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/miniupnpd/
