@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2013/03/11 11:41:33 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2013/05/17 10:43:53 dcoppa Exp $
 
 COMMENT=		lightweight sip client
 
-VERSION=		2.0.1
+VERSION=		2.1
 DISTNAME=		pjproject-${VERSION}
 PKGNAME=		pjsua-${VERSION}
-REVISION=		0
+WRKDIST=		${WRKDIR}/${DISTNAME}.0
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		telephony
 
@@ -16,8 +16,8 @@ MAINTAINER=		Christopher Zimmermann <madroach@zakweb.de>
 # GPLv2
 PERMIT_PACKAGE_CDROM=   Yes
 
-WANTLIB =		c crypto gsm>=1.0 m opencore-amrnb portaudio \
-			pthread speex speexdsp ssl
+WANTLIB =		c crypto gsm>=1.0 m opencore-amrnb opencore-amrwb \
+			portaudio pthread speex speexdsp ssl
 
 LIB_DEPENDS=		audio/gsm \
 			audio/opencore-amr \

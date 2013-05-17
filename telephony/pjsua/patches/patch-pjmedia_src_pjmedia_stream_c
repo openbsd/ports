@@ -1,7 +1,7 @@
-$OpenBSD: patch-pjmedia_src_pjmedia_stream_c,v 1.1 2012/06/05 23:15:23 fgsch Exp $
---- pjmedia/src/pjmedia/stream.c.orig	Sat May 12 08:18:09 2012
-+++ pjmedia/src/pjmedia/stream.c	Sun Jun  3 04:09:23 2012
-@@ -2442,6 +2442,7 @@ PJ_DEF(pj_status_t) pjmedia_stream_destroy( pjmedia_st
+$OpenBSD: patch-pjmedia_src_pjmedia_stream_c,v 1.2 2013/05/17 10:43:53 dcoppa Exp $
+--- pjmedia/src/pjmedia/stream.c.orig	Tue Jan 29 09:15:02 2013
++++ pjmedia/src/pjmedia/stream.c	Fri May 17 12:37:46 2013
+@@ -2509,6 +2509,7 @@ PJ_DEF(pj_status_t) pjmedia_stream_destroy( pjmedia_st
      /* Free mutex */
      
      if (stream->jb_mutex) {
