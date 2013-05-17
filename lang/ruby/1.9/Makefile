@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2013/03/11 11:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2013/05/17 20:08:35 jeremy Exp $
 
 BROKEN-sparc64 =	doesnt reliably build, and depending ports randomly fail to build
 
@@ -9,7 +9,7 @@ COMMENT-tk =		tk interface for ruby
 COMMENT-ri_docs =	ri documentation files for ruby
 
 VERSION =		1.9.3
-PATCHLEVEL =		392
+PATCHLEVEL =		429
 RUBYLIBREV =		1.9.1
 
 SHARED_LIBS =		ruby19 1.0

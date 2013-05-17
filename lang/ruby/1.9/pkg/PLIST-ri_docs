@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ri_docs,v 1.7 2013/02/23 01:22:26 jeremy Exp $
+@comment $OpenBSD: PLIST-ri_docs,v 1.8 2013/05/17 20:08:35 jeremy Exp $
 @option no-default-conflict
 @conflict ruby-ri_docs->=1.9,<1.10
 share/ri/${RUBYLIBREV}/system/ACL/
@@ -9756,6 +9756,8 @@ share/ri/${RUBYLIBREV}/system/REXML/XPathParser/predicate-i.ri
 share/ri/${RUBYLIBREV}/system/REXML/XPathParser/recurse-i.ri
 share/ri/${RUBYLIBREV}/system/REXML/XPathParser/variables%3d-i.ri
 share/ri/${RUBYLIBREV}/system/REXML/cdesc-REXML.ri
+share/ri/${RUBYLIBREV}/system/REXML/entity_expansion_text_limit%3d-c.ri
+share/ri/${RUBYLIBREV}/system/REXML/entity_expansion_text_limit-c.ri
 share/ri/${RUBYLIBREV}/system/RSS/
 share/ri/${RUBYLIBREV}/system/RSS/Atom/
 share/ri/${RUBYLIBREV}/system/RSS/Atom/CommonModel/
