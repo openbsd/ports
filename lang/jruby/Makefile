@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2013/03/19 23:43:06 jeremy Exp $
+# $OpenBSD: Makefile,v 1.37 2013/05/17 20:14:49 jeremy Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	pure-Java implementation of the Ruby language
 
-V =		1.7.3
+V =		1.7.4
 DISTNAME =	jruby-src-${V}
 PKGNAME =	jruby-${V}
 CATEGORIES =	lang lang/ruby
@@ -86,7 +86,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${JRUBY_HOME}/lib
 	cd ${WRKBUILD}/lib && tar -cf - * | \
 		tar -C ${JRUBY_HOME}/lib -xf -
-	mkdir -p ${JRUBY_HOME}/lib/ruby/site_ruby/{1.8/java,1.9}
+	mkdir -p ${JRUBY_HOME}/lib/ruby/{1.8,1.9,2.0}/site_ruby
 	${SET_ENV} ${MAKE_ENV} PATH=${JRUBY_HOME}/bin:$$PATH HOME=${WRKBUILD} \
 		make=${LOCALBASE}/bin/gmake ${PREFIX}/jruby/bin/jruby \
 		${PREFIX}/jruby/bin/gem install --local --no-rdoc --no-ri \
@@ -108,8 +108,8 @@ ANT_TEST_CMD =	${SETENV} ${MAKE_ENV} HOME=${WRKBUILD} \
 #   1 Failure in MRITestSuite
 # spec task disabled by default as it needs network access to download
 # the latest specs.
-do-regress:
-	-cd ${WRKSRC} && ${ANT_REGRESS_CMD} test
-	#cd ${WRKSRC} && ${ANT_REGRESS_CMD} spec
+do-test:
+	-cd ${WRKSRC} && ${ANT_TEST_CMD} test
+	#cd ${WRKSRC} && ${ANT_TEST_CMD} spec
 
 .include <bsd.port.mk>

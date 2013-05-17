@@ -1,15 +1,15 @@
-$OpenBSD: patch-lib_ruby_shared_ffi_library_rb,v 1.1 2013/03/19 23:43:06 jeremy Exp $
---- lib/ruby/shared/ffi/library.rb.orig	Thu Jul  7 11:19:34 2011
-+++ lib/ruby/shared/ffi/library.rb	Mon Jul 11 21:32:16 2011
-@@ -61,6 +61,7 @@ module FFI
- 
+$OpenBSD: patch-lib_ruby_shared_ffi_library_rb,v 1.2 2013/05/17 20:14:49 jeremy Exp $
+--- lib/ruby/shared/ffi/library.rb.orig	Thu May 16 11:53:23 2013
++++ lib/ruby/shared/ffi/library.rb	Thu May 16 13:21:38 2013
+@@ -62,6 +62,7 @@ module FFI
      def ffi_lib(*names)
+       raise LoadError.new("library names list must not be empty") if names.empty?
        lib_flags = defined?(@ffi_lib_flags) ? @ffi_lib_flags : FFI::DynamicLibrary::RTLD_LAZY | FFI::DynamicLibrary::RTLD_LOCAL
 +      libc = FFI::DynamicLibrary.open('libc.so', FFI::DynamicLibrary::RTLD_LAZY | FFI::DynamicLibrary::RTLD_GLOBAL)
        ffi_libs = names.map do |name|
          if name == FFI::CURRENT_PROCESS
            FFI::DynamicLibrary.open(nil, FFI::DynamicLibrary::RTLD_LAZY | FFI::DynamicLibrary::RTLD_LOCAL)
-@@ -86,7 +87,7 @@ module FFI
+@@ -99,7 +100,7 @@ module FFI
            lib
          end
        end
