@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2013/03/11 10:50:03 espie Exp $
+# $OpenBSD: Makefile,v 1.71 2013/05/17 09:40:35 sthen Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS=		amd64 i386
@@ -28,7 +28,7 @@ SHARED_LIBS=		swt-atk-gtk-3236	4.0 \
 			swt-mozilla-gtk-3236	4.0 \
 			swt-glx-gtk-3236	4.0
 
-CATEGORIES=		devel/eclipse 
+CATEGORIES=		devel
 
 HOMEPAGE=		http://www.eclipse.org/
 

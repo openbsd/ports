@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.7 2013/03/11 10:50:00 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2013/05/17 09:40:35 sthen Exp $
 
 CONFIG=		arm-elf
 PKGNAME?=	${CONFIG}-${DISTNAME}
-CATEGORIES+=	devel devel/arm-elf
+CATEGORIES+=	devel
 
 # GPLv3
 # For newlib: multiple copyrights, but basically BSD.
