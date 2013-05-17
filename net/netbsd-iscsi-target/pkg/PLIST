@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/02/21 22:41:30 sthen Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.3 2013/05/17 11:13:08 sthen Exp $
 @bin bin/iscsi-target
 lib/libiscsi.a
 lib/libiscsi.la
+@lib lib/libiscsi.so.${LIBiscsi_VERSION}
 @man man/man3/libiscsi.3
 @man man/man5/targets.5
 @man man/man8/iscsi-target.8
@@ -21,8 +21,8 @@ share/examples/netbsd-iscsi-target/2.conf
 share/examples/netbsd-iscsi-target/3.conf
 share/examples/netbsd-iscsi-target/4.conf
 share/examples/netbsd-iscsi-target/auths
+share/examples/netbsd-iscsi-target/targets
 @sample ${SYSCONFDIR}/iscsi/
 @sample ${SYSCONFDIR}/iscsi/auths
-share/examples/netbsd-iscsi-target/targets
 @sample ${SYSCONFDIR}/iscsi/targets
 @rcscript ${RCDIR}/iscsi_target
