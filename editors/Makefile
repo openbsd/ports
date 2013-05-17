@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2013/05/17 08:25:38 bentley Exp $
+# $OpenBSD: Makefile,v 1.99 2013/05/17 19:11:41 jasper Exp $
 
      SUBDIR =
      SUBDIR += abiword
@@ -14,7 +14,7 @@
      SUBDIR += elvis,no_x11
      SUBDIR += emacs
      SUBDIR += emacs,no_x11
-     SUBDIR += emacs,gtk3
+     SUBDIR += emacs,gtk2
      SUBDIR += emacs21
      SUBDIR += emacs21,no_x11
      SUBDIR += focuswriter
