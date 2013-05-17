@@ -1,6 +1,6 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.2 2013/05/12 16:09:04 bcallah Exp $
---- CMakeLists.txt.orig	Thu Apr 18 10:50:31 2013
-+++ CMakeLists.txt	Thu Apr 18 10:50:31 2013
+$OpenBSD: patch-CMakeLists_txt,v 1.3 2013/05/17 18:53:24 dcoppa Exp $
+--- CMakeLists.txt.orig	Fri May 17 20:20:00 2013
++++ CMakeLists.txt	Fri May 17 20:38:46 2013
 @@ -87,7 +87,7 @@ if (UNIX)
  	check_include_files(strings.h HAVE_STRINGS_H)
  	check_include_files(string.h HAVE_STRING_H)
@@ -27,7 +27,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.2 2013/05/12 16:09:04 bcallah Exp $
  	
  	if (APPLE)
  		exec_program(uname ARGS -v OUTPUT_VARIABLE DARWIN_VERSION)
-@@ -174,78 +175,53 @@ if (UNIX)
+@@ -174,78 +175,58 @@ if (UNIX)
  
  	else()
  
@@ -129,10 +129,22 @@ $OpenBSD: patch-CMakeLists_txt,v 1.2 2013/05/12 16:09:04 bcallah Exp $
  		endif()
  
  	endif()
--
+ 
 -        IF(HAVE_Xi)
 -                LIST(APPEND libs Xi)
 -        ENDIF()
++	if (CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
++		include_directories(${OPENBSD_LOCALBASE}/include)
++		link_directories(${OPENBSD_LOCALBASE}/lib)
++	endif()
  
  	# For config.h, set some static values; it may be a good idea to make
  	# these values dynamic for non-standard UNIX compilers.
+@@ -303,7 +284,6 @@ if (VNC_SUPPORT)
+ endif()
+ 
+ add_subdirectory(src)
+-add_subdirectory(tools)
+ 
+ if (WIN32)
+ 	# add /analyze in order to unconver potential bugs in the source code

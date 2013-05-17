@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_lib_synergy_CCryptoMode_h,v 1.1 2013/05/17 18:53:24 dcoppa Exp $
+--- src/lib/synergy/CCryptoMode.h.orig	Fri May 17 14:10:03 2013
++++ src/lib/synergy/CCryptoMode.h	Fri May 17 14:10:34 2013
+@@ -17,9 +17,9 @@
+ 
+ #pragma once
+ 
+-#include <cryptopp562/gcm.h>
+-#include <cryptopp562/modes.h>
+-#include <cryptopp562/aes.h>
++#include <cryptopp/gcm.h>
++#include <cryptopp/modes.h>
++#include <cryptopp/aes.h>
+ #include "ECryptoMode.h"
+ #include "CString.h"
+ 
