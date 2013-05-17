@@ -1,0 +1,9 @@
+The serf library is a high performance C-based HTTP client library built
+upon the Apache Portable Runtime (APR) library. It is permissively
+licensed under the Apache License, v2.
+Key features:
+- multiplexed, asynchronous connections
+- SSL/TLS support
+- full HTTP pipelining
+- multiple authentication modes (Basic, Digest, Kerberos/NTLM)
+- zero-copy support for increased throughput
