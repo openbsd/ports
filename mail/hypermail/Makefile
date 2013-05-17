@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.33 2013/03/11 11:23:51 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2013/05/17 12:55:58 kirby Exp $
 
 COMMENT=		generate a cross-referenced HTML mail archive
 
 VERSION=		2.1.8
 DISTNAME=		hypermail-${VERSION}
-REVISION =		0
+REVISION =		1
 CATEGORIES=		mail www
 
-HOMEPAGE=		http://www.hypermail.org/
+HOMEPAGE=		http://www.hypermail-project.org/
 
-MASTER_SITES=		${HOMEPAGE}dist/
+MASTER_SITES=		http://www.linklevel.net/distfiles/
 
 LIB_DEPENDS+=		devel/pcre
 
