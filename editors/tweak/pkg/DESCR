@@ -1,0 +1,5 @@
+Tweak is an ncurses-based hex editor. Tweak uses a complex data 
+structure based on B-trees, designed to make almost all editing
+operations extremely fast, even when they are working on huge amounts of
+data. Unlike most hex editors, it also has a fully functional insert
+mode, along with full cut, copy, and paste support.
