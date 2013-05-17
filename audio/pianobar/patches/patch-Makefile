@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.20 2012/09/18 12:35:03 dcoppa Exp $
---- Makefile.orig	Fri Sep  7 16:44:39 2012
-+++ Makefile	Tue Sep 18 14:16:04 2012
-@@ -6,15 +6,8 @@ LIBDIR:=${PREFIX}/lib
+$OpenBSD: patch-Makefile,v 1.21 2013/05/17 08:21:48 dcoppa Exp $
+--- Makefile.orig	Thu May 16 09:41:57 2013
++++ Makefile	Thu May 16 11:41:12 2013
+@@ -6,20 +6,8 @@ LIBDIR:=${PREFIX}/lib
  INCDIR:=${PREFIX}/include
  MANDIR:=${PREFIX}/share/man
  DYNLINK:=0
@@ -12,13 +12,18 @@ $OpenBSD: patch-Makefile,v 1.20 2012/09/18 12:35:03 dcoppa Exp $
 -	CFLAGS=-O2 -DNDEBUG
 -endif
 -ifeq (${CC},cc)
--	CC=c99
+-	OS := $(shell uname)
+-	ifeq (${OS},Darwin)
+-		CC=gcc -std=c99
+-	else
+-		CC=c99
+-	endif
 -endif
 -
- PIANOBAR_DIR=src
- PIANOBAR_SRC=\
+ PIANOBAR_DIR:=src
+ PIANOBAR_SRC:=\
  		${PIANOBAR_DIR}/main.c \
-@@ -88,37 +81,31 @@ LIBJSONC_LDFLAGS=$(shell pkg-config --libs json)
+@@ -93,38 +81,32 @@ LIBJSONC_LDFLAGS:=$(shell pkg-config --libs json-c 2>/
  
  # build pianobar
  ifeq (${DYNLINK},1)
@@ -27,7 +32,8 @@ $OpenBSD: patch-Makefile,v 1.20 2012/09/18 12:35:03 dcoppa Exp $
 -	@${CC} -o $@ ${PIANOBAR_OBJ} ${LDFLAGS} -lao -lpthread -lm -L. -lpiano \
 +pianobar: ${PIANOBAR_OBJ} ${PIANOBAR_HDR} libpiano.so.${LIBpiano_VERSION}
 +	${CC} -o $@ ${PIANOBAR_OBJ} ${LDFLAGS} -lao -lpthread -lm -L. -lpiano \
- 			${LIBFAAD_LDFLAGS} ${LIBMAD_LDFLAGS} ${LIBGNUTLS_LDFLAGS}
+ 			${LIBFAAD_LDFLAGS} ${LIBMAD_LDFLAGS} ${LIBGNUTLS_LDFLAGS} \
+ 			${LIBGCRYPT_LDFLAGS}
  else
  pianobar: ${PIANOBAR_OBJ} ${PIANOBAR_HDR} ${LIBPIANO_OBJ} ${LIBWAITRESS_OBJ} \
  		${LIBWAITRESS_HDR}
@@ -64,7 +70,7 @@ $OpenBSD: patch-Makefile,v 1.20 2012/09/18 12:35:03 dcoppa Exp $
  			$(CC) -M ${CFLAGS} -I ${LIBPIANO_INCLUDE} -I ${LIBWAITRESS_INCLUDE} \
  			${LIBFAAD_CFLAGS} ${LIBMAD_CFLAGS} ${LIBGNUTLS_CFLAGS} \
  			${LIBGCRYPT_CFLAGS} ${LIBJSONC_CFLAGS} $< > $@.$$$$; \
-@@ -131,21 +118,18 @@ libpiano.so.0: ${LIBPIANO_RELOBJ} ${LIBPIANO_HDR} ${LI
+@@ -137,21 +119,18 @@ libpiano.so.0: ${LIBPIANO_RELOBJ} ${LIBPIANO_HDR} ${LI
  
  # build standard object files
  %.o: %.c
@@ -90,7 +96,7 @@ $OpenBSD: patch-Makefile,v 1.20 2012/09/18 12:35:03 dcoppa Exp $
  			${LIBPIANO_RELOBJ} ${LIBWAITRESS_RELOBJ} pianobar libpiano.so* \
  			libpiano.a waitress-test $(PIANOBAR_SRC:.c=.d) $(LIBPIANO_SRC:.c=.d) \
  			$(LIBWAITRESS_SRC:.c=.d)
-@@ -193,17 +177,15 @@ else
+@@ -199,17 +178,15 @@ else
  install: pianobar
  endif
  	install -d ${DESTDIR}/${BINDIR}/
