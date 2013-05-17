@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.175 2013/03/28 21:25:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.176 2013/05/17 22:57:50 sthen Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 
-VER=			11.3.0
-REVISION-main=		0
+VER=			11.4.0
 DISTNAME=		asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 PKGNAME-main=		asterisk-${VER}
 
@@ -85,7 +84,6 @@ MAKE_FLAGS+=		ASTCFLAGS="${CFLAGS}" \
 CONFIGURE_ARGS+=	--localstatedir=/var
 
 CONFIGURE_ARGS+=	--with-asound=no \
-			--with-avcodec=no \
 			--with-cap=no \
 			--with-dahdi=no \
 			--with-gtk2=no \

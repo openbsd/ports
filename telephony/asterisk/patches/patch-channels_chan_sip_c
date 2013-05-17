@@ -1,9 +1,9 @@
-$OpenBSD: patch-channels_chan_sip_c,v 1.8 2013/03/28 21:25:17 sthen Exp $
+$OpenBSD: patch-channels_chan_sip_c,v 1.9 2013/05/17 22:57:50 sthen Exp $
 
 https://issues.asterisk.org/jira/secure/attachment/46850/fax-deadlock-v2.patch-11.3.0
 
---- channels/chan_sip.c.orig	Wed Mar 27 17:34:40 2013
-+++ channels/chan_sip.c	Thu Mar 28 21:05:05 2013
+--- channels/chan_sip.c.orig	Wed Mar 27 19:51:29 2013
++++ channels/chan_sip.c	Tue Apr  9 15:46:38 2013
 @@ -8402,8 +8402,6 @@ static struct ast_frame *sip_read(struct ast_channel *
  			ast_channel_unlock(ast);
  			if (ast_exists_extension(ast, target_context, "fax", 1,
@@ -26,7 +26,7 @@ https://issues.asterisk.org/jira/secure/attachment/46850/fax-deadlock-v2.patch-1
  		}
  	}
  
-@@ -10656,6 +10654,7 @@ static int process_sdp(struct sip_pvt *p, struct sip_r
+@@ -10655,6 +10653,7 @@ static int process_sdp(struct sip_pvt *p, struct sip_r
  						ast_channel_unlock(p->owner);
  						if (ast_exists_extension(p->owner, target_context, "fax", 1,
  							S_COR(ast_channel_caller(p->owner)->id.number.valid, ast_channel_caller(p->owner)->id.number.str, NULL))) {
