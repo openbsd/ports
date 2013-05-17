@@ -1,0 +1,30 @@
+$OpenBSD: patch-agent_mibgroup_hardware_cpu_cpu_sysctl_c,v 1.5 2013/05/17 22:42:24 sthen Exp $
+
+swapins/swapouts were removed from struct uvmexp in uvm_extern.h 1.105
+
+--- agent/mibgroup/hardware/cpu/cpu_sysctl.c.orig	Tue Oct  9 16:28:58 2012
++++ agent/mibgroup/hardware/cpu/cpu_sysctl.c	Fri May 17 09:06:10 2013
+@@ -115,6 +115,10 @@ void init_cpu_sysctl( void ) {
+ #else /* VM_UVMEXP */                     /* OpenBSD 3+, NetBSD 1.6+ */
+ #define NETSNMP_VM_STATS       VM_UVMEXP
+ #define NETSNMP_VM_STATS_TYPE  struct uvmexp
++#if defined(openbsd5)
++    #undef NS_VM_SWAPIN
++    #undef NS_VM_SWAPOUT
++#endif  /* openbsd5 */
+ #endif  /* VM_UVMEXP2 || VM_UVMEXP */
+ 
+ #elif defined(__FreeBSD__)                /* FreeBSD */
+@@ -193,8 +197,12 @@ int netsnmp_cpu_arch_load( netsnmp_cache *cache, void 
+     sysctl(mem_mib, 2, &mem_stats, &mem_size, NULL, 0);
+     cpu->nInterrupts  = (unsigned long long)mem_stats.NS_VM_INTR;
+     cpu->nCtxSwitches = (unsigned long long)mem_stats.NS_VM_SWTCH;
++#ifdef NS_VM_SWAPIN
+     cpu->swapIn       = (unsigned long long)mem_stats.NS_VM_SWAPIN;
++#endif
++#ifdef NS_VM_SWAPOUT
+     cpu->swapOut      = (unsigned long long)mem_stats.NS_VM_SWAPOUT;
++#endif
+ #ifdef NS_VM_PAGEIN
+     cpu->pageIn       = (unsigned long long)mem_stats.NS_VM_PAGEIN;
+ #endif
