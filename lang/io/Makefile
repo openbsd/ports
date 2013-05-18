@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/05/16 09:16:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2013/05/18 16:11:39 kirby Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS =i386 amd64
@@ -7,7 +7,7 @@ COMMENT =	embeddable prototype-based language
 
 DISTNAME =	stevedekorte-io-2011.09.12-106-g02f9800
 PKGNAME =	io-20110905
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	lang
 
@@ -18,7 +18,7 @@ SHARED_LIBS =	iovmall			0.0 \
 
 MASTER_SITES =  http://spacehopper.org/mirrors/
 
-HOMEPAGE =	http://www.iolanguage.org/
+HOMEPAGE =	http://iolanguage.org/
 
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 

@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:37:54 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/05/18 16:11:39 kirby Exp $
 
 COMMENT=		Python-based presentation tool
 
 DISTNAME=		bruce-1.2.1
-REVISION =		3
+REVISION =		4
 
 CATEGORIES=		productivity
 
-HOMEPAGE=		http://bruce.python-hosting.com/
+HOMEPAGE=		https://sites.google.com/site/r1chardj0n3s/bruce
 
 MAINTAINER=		Will Maier <willmaier@ml1.net>
 

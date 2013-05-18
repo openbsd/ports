@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.33 2013/03/21 08:45:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2013/05/18 16:11:39 kirby Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	graphical debugger for KDE
 
 DISTNAME=	kdbg-1.2.5
-REVISION =	5
+REVISION =	6
 CATEGORIES=	devel
-HOMEPAGE=	http://members.nextra.at/johsixt/kdbg.html
+HOMEPAGE=	http://www.kdbg.org/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
