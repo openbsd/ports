@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/03/11 11:44:43 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2013/05/18 05:54:52 ajacoutot Exp $
 
 COMMENT =	wiki engine written in python
 
@@ -17,8 +17,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =	http://static.moinmo.in/files/
 
 MODULES =	lang/python
-
-MODPY_VERSION =	2.7
 
 NO_TEST =	Yes
 

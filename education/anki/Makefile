@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:06:03 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/05/18 05:54:52 ajacoutot Exp $
 
 COMMENT	=	spaced learning system
 
@@ -18,8 +18,6 @@ MASTER_SITES =	http://ankisrs.net/download/mirror/
 EXTRACT_SUFX =	.tgz
 
 MODULES =	lang/python
-
-MODPY_VERSION =	2.7
 
 MODPY_ADJ_FILES = anki/anki
 
