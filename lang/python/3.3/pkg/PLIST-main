@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2013/04/28 01:29:58 fgsch Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2013/05/18 04:13:16 fgsch Exp $
 @option no-default-conflict
 @conflict python->=3.3,<3.4
 @pkgpath lang/python3/3.3,-main
@@ -1601,6 +1601,7 @@ lib/python3.3/lib-dynload/_hashlib.so
 lib/python3.3/lib-dynload/_heapq.so
 lib/python3.3/lib-dynload/_json.so
 lib/python3.3/lib-dynload/_lsprof.so
+lib/python3.3/lib-dynload/_lzma.so
 lib/python3.3/lib-dynload/_md5.so
 lib/python3.3/lib-dynload/_multibytecodec.so
 lib/python3.3/lib-dynload/_multiprocessing.so

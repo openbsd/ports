@@ -1,10 +1,25 @@
-$OpenBSD: patch-Modules_selectmodule_c,v 1.1.1.1 2013/04/28 01:29:57 fgsch Exp $
+$OpenBSD: patch-Modules_selectmodule_c,v 1.2 2013/05/18 04:13:16 fgsch Exp $
 
 See http://bugs.python.org/issue12181 for details.
 
 --- Modules/selectmodule.c.orig	Sat Apr  6 08:41:54 2013
-+++ Modules/selectmodule.c	Mon Apr 22 18:35:57 2013
-@@ -1571,6 +1571,23 @@ static PyTypeObject kqueue_queue_Type;
++++ Modules/selectmodule.c	Mon May 13 04:45:07 2013
+@@ -235,11 +235,13 @@ select_select(PyObject *self, PyObject *args)
+ #endif
+         tv.tv_sec = (long)sec;
+ #else
++        time_t sec;
+         /* 64-bit OS X has struct timeval.tv_usec as an int (and thus still 4
+            bytes as required), but no longer defined by a long. */
+         long tv_usec;
+-        if (_PyTime_ObjectToTimeval(tout, &tv.tv_sec, &tv_usec) == -1)
++        if (_PyTime_ObjectToTimeval(tout, &sec, &tv_usec) == -1)
+             return NULL;
++        tv.tv_sec = sec;
+         tv.tv_usec = tv_usec;
+ #endif
+         if (tv.tv_sec < 0) {
+@@ -1571,6 +1573,23 @@ static PyTypeObject kqueue_queue_Type;
  #   error uintptr_t does not match int, long, or long long!
  #endif
  
@@ -28,7 +43,7 @@ See http://bugs.python.org/issue12181 for details.
  /* Unfortunately, we can't store python objects in udata, because
   * kevents in the kernel can be removed without warning, which would
   * forever lose the refcount on the object stored with it.
-@@ -1578,11 +1595,11 @@ static PyTypeObject kqueue_queue_Type;
+@@ -1578,11 +1597,11 @@ static PyTypeObject kqueue_queue_Type;
  
  #define KQ_OFF(x) offsetof(kqueue_event_Object, x)
  static struct PyMemberDef kqueue_event_members[] = {
@@ -42,7 +57,7 @@ See http://bugs.python.org/issue12181 for details.
      {"udata",           T_UINTPTRT,     KQ_OFF(e.udata)},
      {NULL} /* Sentinel */
  };
-@@ -1608,7 +1625,7 @@ kqueue_event_init(kqueue_event_Object *self, PyObject 
+@@ -1608,7 +1627,7 @@ kqueue_event_init(kqueue_event_Object *self, PyObject 
      PyObject *pfd;
      static char *kwlist[] = {"ident", "filter", "flags", "fflags",
                               "data", "udata", NULL};
@@ -51,7 +66,7 @@ See http://bugs.python.org/issue12181 for details.
  
      EV_SET(&(self->e), 0, EVFILT_READ, EV_ADD, 0, 0, 0); /* defaults */
  
-@@ -1618,8 +1635,12 @@ kqueue_event_init(kqueue_event_Object *self, PyObject 
+@@ -1618,8 +1637,12 @@ kqueue_event_init(kqueue_event_Object *self, PyObject 
          return -1;
      }
  
@@ -66,7 +81,7 @@ See http://bugs.python.org/issue12181 for details.
      }
      else {
          self->e.ident = PyObject_AsFileDescriptor(pfd);
-@@ -1647,10 +1668,10 @@ kqueue_event_richcompare(kqueue_event_Object *s, kqueu
+@@ -1647,10 +1670,10 @@ kqueue_event_richcompare(kqueue_event_Object *s, kqueu
              Py_TYPE(s)->tp_name, Py_TYPE(o)->tp_name);
          return NULL;
      }

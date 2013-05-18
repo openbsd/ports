@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2013/05/09 18:28:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2013/05/18 04:13:16 fgsch Exp $
 
 VERSION =		3.3
-REVISION =		0
+REVISION =		1
 PATCHLEVEL =		.1
 SHARED_LIBS =		python3.3m 0.0
 VERSION_SPEC =		>=3.3,<3.4

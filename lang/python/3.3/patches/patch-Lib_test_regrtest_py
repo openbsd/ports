@@ -1,0 +1,27 @@
+$OpenBSD: patch-Lib_test_regrtest_py,v 1.1 2013/05/18 04:13:16 fgsch Exp $
+--- Lib/test/regrtest.py.orig	Sat Apr  6 08:41:41 2013
++++ Lib/test/regrtest.py	Tue May 14 21:59:58 2013
+@@ -1670,19 +1670,16 @@ _expectations = (
+         """),
+     ('openbsd',
+         """
++        test_concurrent_futures
+         test_ctypes
++        test_curses
+         test_devpoll
+         test_epoll
+-        test_dbm_gnu
+-        test_locale
+-        test_normalization
++        test_gdb
++        test_multiprocessing
+         test_ossaudiodev
+-        test_pep277
+-        test_tcl
+         test_tk
+         test_ttk_guionly
+-        test_ttk_textonly
+-        test_multiprocessing
+         """),
+     ('netbsd',
+         """
