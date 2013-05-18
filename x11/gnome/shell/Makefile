@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.48 2013/05/14 08:59:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.49 2013/05/18 17:27:42 ajacoutot Exp $
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		3.8.2
+REVISION=		0
 
 HOMEPAGE=		http://live.gnome.org/GnomeShell
 
@@ -20,7 +21,7 @@ WANTLIB += gck-1 gcr-3 gcr-base-3 gcrypt gdbm gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 girepository-1.0 gjs glib-2.0 gmodule-2.0 gnome-menu-3
 WANTLIB += gobject-2.0 gpg-error graphite2 gssapi gstbase-1.0
 WANTLIB += gstreamer-1.0 gthread-2.0 gtk-3 harfbuzz ical icalss
-WANTLIB += icalvcal icudata icule icuuc json json-glib-1.0 krb5
+WANTLIB += icalvcal icudata icule icuuc json-c json-glib-1.0 krb5
 WANTLIB += ltdl m mozjs185 mutter ncurses ncursesw nspr4 nss3
 WANTLIB += nssutil3 ogg p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png polkit-agent-1 polkit-gobject-1
@@ -76,8 +77,9 @@ RUN_DEPENDS +=		devel/py-gobject3
 # dateMenu.js
 RUN_DEPENDS +=		x11/gnome/clocks
 
-# telepathyClient.js
-RUN_DEPENDS +=		net/telepathy/telepathy-logger
+# telepathyClient.js, userMenu.js (AccountManager)
+RUN_DEPENDS +=		net/telepathy/telepathy-logger \
+			net/telepathy/telepathy-mission-control
 
 # yelp.desktop menu entry (from yelp: OnlyShowIn=GNOME;Unity;)
 # prevents => The URI "help:gnome-help/index" does not point to a valid page.
