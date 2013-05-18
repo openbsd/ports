@@ -1,6 +1,6 @@
-$OpenBSD: patch-extern_libmv_libmv_tracking_brute_region_tracker_cc,v 1.2 2012/05/07 15:45:42 pascal Exp $
---- extern/libmv/libmv/tracking/brute_region_tracker.cc.orig	Thu Apr 26 22:57:04 2012
-+++ extern/libmv/libmv/tracking/brute_region_tracker.cc	Mon Apr 30 23:03:52 2012
+$OpenBSD: patch-extern_libmv_libmv_tracking_brute_region_tracker_cc,v 1.3 2013/05/18 22:01:28 pascal Exp $
+--- extern/libmv/libmv/tracking/brute_region_tracker.cc.orig	Fri Apr  5 11:23:20 2013
++++ extern/libmv/libmv/tracking/brute_region_tracker.cc	Wed May  8 19:55:49 2013
 @@ -24,7 +24,7 @@
  #include <emmintrin.h>
  #endif
@@ -18,4 +18,4 @@ $OpenBSD: patch-extern_libmv_libmv_tracking_brute_region_tracker_cc,v 1.2 2012/0
 +#elif defined(__FreeBSD__) || defined(__OpenBSD__)
    void *result;
  
-   if(posix_memalign(&result, alignment, size)) {
+   if (posix_memalign(&result, alignment, size)) {

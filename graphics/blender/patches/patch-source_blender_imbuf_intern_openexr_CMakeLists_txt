@@ -1,7 +1,7 @@
-$OpenBSD: patch-source_blender_imbuf_intern_openexr_CMakeLists_txt,v 1.2 2012/10/31 17:45:55 pascal Exp $
---- source/blender/imbuf/intern/openexr/CMakeLists.txt.orig	Tue Oct  9 20:40:03 2012
-+++ source/blender/imbuf/intern/openexr/CMakeLists.txt	Fri Oct 12 18:01:14 2012
-@@ -43,7 +43,7 @@ set(SRC
+$OpenBSD: patch-source_blender_imbuf_intern_openexr_CMakeLists_txt,v 1.3 2013/05/18 22:01:28 pascal Exp $
+--- source/blender/imbuf/intern/openexr/CMakeLists.txt.orig	Mon Dec 10 20:25:10 2012
++++ source/blender/imbuf/intern/openexr/CMakeLists.txt	Wed Dec 12 15:13:01 2012
+@@ -46,7 +46,7 @@ set(SRC
  )
  
  if(WITH_IMAGE_OPENEXR)

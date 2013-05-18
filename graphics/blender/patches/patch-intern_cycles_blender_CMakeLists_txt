@@ -1,7 +1,7 @@
-$OpenBSD: patch-intern_cycles_blender_CMakeLists_txt,v 1.2 2012/10/31 17:45:55 pascal Exp $
---- intern/cycles/blender/CMakeLists.txt.orig	Fri Oct 12 21:41:09 2012
-+++ intern/cycles/blender/CMakeLists.txt	Fri Oct 12 21:41:16 2012
-@@ -11,11 +11,11 @@ set(INC
+$OpenBSD: patch-intern_cycles_blender_CMakeLists_txt,v 1.3 2013/05/18 22:01:28 pascal Exp $
+--- intern/cycles/blender/CMakeLists.txt.orig	Mon Dec 10 20:16:29 2012
++++ intern/cycles/blender/CMakeLists.txt	Wed Dec 12 15:13:01 2012
+@@ -12,11 +12,11 @@ set(INC
  	../../../source/blender/makesrna
  	../../../source/blender/blenloader
  	${CMAKE_BINARY_DIR}/source/blender/makesrna/intern

@@ -1,7 +1,7 @@
-$OpenBSD: patch-intern_bsp_CMakeLists_txt,v 1.1 2012/10/31 17:45:55 pascal Exp $
---- intern/bsp/CMakeLists.txt.orig	Fri Oct 12 21:13:18 2012
-+++ intern/bsp/CMakeLists.txt	Fri Oct 12 21:13:29 2012
-@@ -62,7 +62,7 @@ if(WITH_BOOST)
+$OpenBSD: patch-intern_bsp_CMakeLists_txt,v 1.2 2013/05/18 22:01:28 pascal Exp $
+--- intern/bsp/CMakeLists.txt.orig	Mon Dec 10 20:16:34 2012
++++ intern/bsp/CMakeLists.txt	Wed Dec 12 15:13:01 2012
+@@ -61,7 +61,7 @@ if(WITH_BOOST)
  		-DCARVE_SYSTEM_BOOST
  	)
  

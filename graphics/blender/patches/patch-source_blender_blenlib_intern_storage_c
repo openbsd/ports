@@ -1,23 +1,23 @@
-$OpenBSD: patch-source_blender_blenlib_intern_storage_c,v 1.7 2012/10/31 17:45:55 pascal Exp $
---- source/blender/blenlib/intern/storage.c.orig	Tue Oct  9 20:40:29 2012
-+++ source/blender/blenlib/intern/storage.c	Fri Oct 12 18:04:45 2012
-@@ -43,13 +43,13 @@
+$OpenBSD: patch-source_blender_blenlib_intern_storage_c,v 1.8 2013/05/18 22:01:28 pascal Exp $
+--- source/blender/blenlib/intern/storage.c.orig	Thu Apr 25 18:35:57 2013
++++ source/blender/blenlib/intern/storage.c	Wed May  8 19:59:16 2013
+@@ -42,13 +42,13 @@
  #include <time.h>
  #include <sys/stat.h>
  
 -#if defined(__sun__) || defined(__sun) || defined(__NetBSD__)
 +#if defined(__sun__) || defined(__sun) || defined(__NetBSD__) || defined(__OpenBSD__)
- #include <sys/statvfs.h> /* Other modern unix os's should probably use this also */
+ #  include <sys/statvfs.h> /* Other modern unix os's should probably use this also */
  #elif !defined(__FreeBSD__) && !defined(linux) && (defined(__sparc) || defined(__sparc__))
- #include <sys/statfs.h>
+ #  include <sys/statfs.h>
  #endif
  
--#if defined(__FreeBSD__) || defined(__OpenBSD__)
-+#if defined(__FreeBSD__)
- #include <sys/param.h>
- #include <sys/mount.h>
+-#if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
++#if defined(__FreeBSD__) || defined(__NetBSD__)
+ #  include <sys/param.h>
+ #  include <sys/mount.h>
  #endif
-@@ -163,7 +163,7 @@ double BLI_dir_free_space(const char *dir)
+@@ -173,7 +173,7 @@ double BLI_dir_free_space(const char *dir)
  	return (double) (freec * bytesps * sectorspc);
  #else
  
@@ -26,9 +26,9 @@ $OpenBSD: patch-source_blender_blenlib_intern_storage_c,v 1.7 2012/10/31 17:45:5
  	struct statvfs disk;
  #else
  	struct statfs disk;
-@@ -182,11 +182,11 @@ double BLI_dir_free_space(const char *dir)
+@@ -194,11 +194,11 @@ double BLI_dir_free_space(const char *dir)
+ 		strcpy(name, "/");
  	}
- 	else strcpy(name, "/");
  
 -#if defined(__FreeBSD__) || defined(linux) || defined(__OpenBSD__) || defined(__APPLE__) || defined(__GNU__) || defined(__GLIBC__)
 +#if defined(__FreeBSD__) || defined(linux) || defined(__APPLE__) || defined(__GNU__) || defined(__GLIBC__)
@@ -37,6 +37,6 @@ $OpenBSD: patch-source_blender_blenlib_intern_storage_c,v 1.7 2012/10/31 17:45:5
  
 -#if defined(__sun__) || defined(__sun) || defined(__NetBSD__)
 +#if defined(__sun__) || defined(__sun) || defined(__NetBSD__) || defined(__OpenBSD__)
- 	if (statvfs(name, &disk)) return(-1);	
+ 	if (statvfs(name, &disk)) return(-1);
  #elif !defined(__FreeBSD__) && !defined(linux) && (defined(__sparc) || defined(__sparc__))
  	/* WARNING - This may not be supported by geeneric unix os's - Campbell */

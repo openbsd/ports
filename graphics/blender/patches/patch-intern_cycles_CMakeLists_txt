@@ -1,7 +1,7 @@
-$OpenBSD: patch-intern_cycles_CMakeLists_txt,v 1.1 2012/10/31 17:45:55 pascal Exp $
---- intern/cycles/CMakeLists.txt.orig	Tue Oct  9 20:33:06 2012
-+++ intern/cycles/CMakeLists.txt	Fri Oct 12 21:33:02 2012
-@@ -56,7 +56,6 @@ add_definitions(-DWITH_CUDA)
+$OpenBSD: patch-intern_cycles_CMakeLists_txt,v 1.2 2013/05/18 22:01:28 pascal Exp $
+--- intern/cycles/CMakeLists.txt.orig	Mon Feb  4 17:12:37 2013
++++ intern/cycles/CMakeLists.txt	Fri May  3 22:39:46 2013
+@@ -55,7 +55,6 @@ add_definitions(-DWITH_CUDA)
  add_definitions(-DWITH_MULTI)
  
  include_directories(

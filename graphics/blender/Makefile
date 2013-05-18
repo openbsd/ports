@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.50 2013/04/30 10:18:42 nigel Exp $
+# $OpenBSD: Makefile,v 1.51 2013/05/18 22:01:28 pascal Exp $
 
 COMMENT =	3D creation software
 BROKEN-sparc64 = error: cast from 'ccl::uchar*' to 'CUdeviceptr' loses precision
 
-DISTNAME =	blender-2.64a
+DISTNAME =	blender-2.67
 
 CATEGORIES =	graphics
 
@@ -20,13 +20,13 @@ MASTER_SITES =	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/
 
 MODULES =	devel/cmake \
-		lang/python \
-		devel/gettext
-MODPY_VERSION = ${MODPY_DEFAULT_VERSION_3}
+		lang/python
+MODPY_VERSION = 3.3
 
 CONFIGURE_ARGS =	-DPYTHON_INCLUDE_DIR="${MODPY_INCDIR}" \
 			-DPYTHON_VERSION=${MODPY_VERSION} \
-			-DWITH_CODEC_FFMPEG=ON
+			-DWITH_CODEC_FFMPEG=ON \
+			-DWITH_INTERNATIONAL=OFF
 
 BUILD_DEPENDS =	devel/gflags
 LIB_DEPENDS =	graphics/png \
@@ -40,6 +40,7 @@ LIB_DEPENDS =	graphics/png \
 		graphics/openjpeg \
 		graphics/ffmpeg>=20111126 \
 		graphics/openimageio \
+		math/fftw3 \
 		${MODPY_LIB_DEPENDS}
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gnome/librsvg
@@ -49,6 +50,7 @@ WANTLIB += SDL X11 Xi Xxf86vm avcodec avdevice avformat avutil
 WANTLIB += boost_filesystem-mt boost_regex-mt boost_system-mt
 WANTLIB += boost_thread-mt c freetype jpeg m openal openjpeg png
 WANTLIB += pthread ${MODPY_WANTLIB} stdc++ swscale tiff util z
+WANTLIB += boost_date_time-mt fftw3
 
 NO_TEST =	Yes
 
