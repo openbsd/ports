@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_libutil_sysutil_cpp,v 1.1.1.1 2012/05/09 12:42:06 pascal Exp $
---- src/libutil/sysutil.cpp.orig	Thu Apr 19 18:51:13 2012
-+++ src/libutil/sysutil.cpp	Fri Apr 20 14:51:41 2012
-@@ -118,7 +118,6 @@ Sysutil::memory_used (bool resident)
+$OpenBSD: patch-src_libutil_sysutil_cpp,v 1.2 2013/05/18 22:00:52 pascal Exp $
+--- src/libutil/sysutil.cpp.orig	Sat Apr 13 04:30:27 2013
++++ src/libutil/sysutil.cpp	Fri May  3 21:44:29 2013
+@@ -124,7 +124,6 @@ Sysutil::memory_used (bool resident)
  
  #else
      // No idea what platform this is
@@ -9,8 +9,8 @@ $OpenBSD: patch-src_libutil_sysutil_cpp,v 1.1.1.1 2012/05/09 12:42:06 pascal Exp
      return 0;   // Punt
  #endif
  }
-@@ -166,7 +165,7 @@ Sysutil::this_program_path ()
-     sysctl(mib, 4, filename, &cb, NULL, 0);
+@@ -176,7 +175,7 @@ Sysutil::this_program_path ()
+     int r = 0;
  #else
      // No idea what platform this is
 -    ASSERT (0);

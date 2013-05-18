@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:10:54 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/05/18 22:00:52 pascal Exp $
 
 SHARED_ONLY =		Yes
 
@@ -6,14 +6,11 @@ COMMENT =		library for reading and writing images
 BROKEN-hppa =		missing atomic ops
 BROKEN-mips64 =		missing atomic ops
 
-MAJ =			1.0
-V =			${MAJ}.4
-REV =			513d0dd
-DISTNAME =		OpenImageIO-oiio-Release-${V}-0-g${REV}
+V =			1.1.10
+DISTNAME =		Release-${V}
 PKGNAME =		openimageio-${V}
-REVISION =		0
 
-SHARED_LIBS +=		OpenImageIO	0.0 # 1.0
+SHARED_LIBS +=		OpenImageIO	1.0 # 1.0
 
 CATEGORIES =		graphics devel
 
@@ -28,8 +25,10 @@ WANTLIB += GL GLEW GLU Half ICE Iex IlmImf IlmThread Imath QtGui
 WANTLIB += QtOpenGL SM X11 Xext boost_filesystem-mt boost_python-mt
 WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt c jpeg
 WANTLIB += m openjpeg png pthread ${MODPY_WANTLIB} stdc++ tiff webp z
+WANTLIB += freetype
 
-MASTER_SITES =		https://github.com/OpenImageIO/oiio/tarball/RB-${MAJ}/
+MASTER_SITES =		https://github.com/OpenImageIO/oiio/archive/
+DIST_SUBDIR =		openimageio
 
 MODULES =		devel/cmake \
 			lang/python \
@@ -45,7 +44,10 @@ LIB_DEPENDS =		devel/boost \
 CONFIGURE_ARGS +=	-DPYLIB_INSTALL_DIR="lib/python${MODPY_VERSION}/site-packages"
 
 CFLAGS +=		-pthread
-WRKDIST =		${WRKDIR}/OpenImageIO-oiio-${REV}
+WRKDIST =		${WRKDIR}/oiio-Release-$V
 WRKSRC =		${WRKDIST}/src
+
+post-install:
+	find ${PREFIX} -name '*.orig' -exec rm -f {} \;
 
 .include <bsd.port.mk>
