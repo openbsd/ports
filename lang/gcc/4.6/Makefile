@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2013/05/03 23:13:49 tobiasu Exp $
+# $OpenBSD: Makefile,v 1.53 2013/05/18 19:45:11 pascal Exp $
 
 ONLY_FOR_ARCHS = alpha amd64 hppa i386 powerpc sparc64
 DPB_PROPERTIES = parallel
@@ -124,7 +124,7 @@ MAKE_ENV += ${EXTRA_ENV}
 
 # Note: the configure target passes CFLAGS to the configure script anyways.
 
-CFLAGS = -O2 -g
+CFLAGS = -O2
 
 CONFIGURE_ARGS += \
 	--verbose \
