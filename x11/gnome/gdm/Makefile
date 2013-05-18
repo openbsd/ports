@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.157 2013/05/17 14:55:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.158 2013/05/18 17:28:55 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		3.8.1.1
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://projects.gnome.org/gdm/
 
@@ -31,6 +31,8 @@ WANTLIB += z
 MODULES=		devel/gettext \
 			x11/gnome \
 			devel/dconf
+
+BUILD_DEPENDS=		devel/check
 
 # cyclic dependency, see pkg/DESCR
 # bring _all_ runtime dependencies (including sysutils/consolekit and zenity)

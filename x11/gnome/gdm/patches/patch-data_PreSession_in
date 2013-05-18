@@ -1,9 +1,0 @@
-$OpenBSD: patch-data_PreSession_in,v 1.1 2011/09/12 07:39:21 ajacoutot Exp $
---- data/PreSession.in.orig	Sun Jul  4 17:47:54 2010
-+++ data/PreSession.in	Sun Jul  4 17:48:16 2010
-@@ -6,4 +6,4 @@
- #
- # Note that output goes into the .xsession-errors file for easy debugging
- #
--PATH="@X_PATH@:$PATH"
-+PATH="@X_PATH@:$PATH:/bin:/usr/bin:${LOCALBASE}/bin"
