@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.44 2013/02/03 21:17:21 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.45 2013/05/18 17:24:46 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -192,6 +192,7 @@ sub build
 
 	open my $fh, ">>", $log;
 	if ($special) {
+		print $lock "mfs\n";
 		print $fh ">>> Building in memory under ";
 	} else {
 		print $fh ">>> Building under ";
