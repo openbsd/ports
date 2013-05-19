@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 02:52:05 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/05/19 15:22:51 abieber Exp $
 
 COMMENT =	postgresql client for Node.js
 
-NPM_VERSION =	0.7.1
+NPM_VERSION =	1.1.0
 NPM_NAME =	pg
-REVISION =	1
 CATEGORIES =	databases
 
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
@@ -22,8 +21,11 @@ WANTLIB =	pq
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
 LIB_DEPENDS =	databases/postgresql
-RUN_DEPENDS =	devel/node-generic-pool
-MODNODE_DEPENDS = generic-pool
+RUN_DEPENDS =	devel/node-generic-pool \
+		devel/node-buffer-writer
+
+MODNODE_DEPENDS = generic-pool \
+		  buffer-writer
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/binding.gyp
