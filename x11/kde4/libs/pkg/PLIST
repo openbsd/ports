@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2013/05/14 09:16:28 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.11 2013/05/19 11:21:54 zhuk Exp $
 @option no-default-conflict
 @conflict kdelibs->=4
 @conflict kdebase-<4
@@ -2094,7 +2094,7 @@ lib/kde4/plugins/kauth/backend/kauth_backend_plugin.so
 lib/kde4/plugins/kauth/helper/
 lib/kde4/plugins/kauth/helper/kauth_helper_plugin.so
 lib/kde4/plugins/script/
-lib/kde4/plugins/script/libkrossqtsplugin.so
+lib/kde4/plugins/script/krossqtsplugin.so
 lib/kde4/spellcheckplugin.so
 @lib lib/libkcmutils.so.${LIBkcmutils_VERSION}
 @lib lib/libkde3support.so.${LIBkde3support_VERSION}

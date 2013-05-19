@@ -1,8 +1,8 @@
-$OpenBSD: patch-kdecore_io_ksavefile_cpp,v 1.1 2013/04/24 19:45:29 zhuk Exp $
+$OpenBSD: patch-kdecore_io_ksavefile_cpp,v 1.2 2013/05/19 11:21:54 zhuk Exp $
 Avoid co(1) go blocking (probably, OpenBSD bug).
---- kdecore/io/ksavefile.cpp.orig	Thu Dec 27 01:03:15 2012
-+++ kdecore/io/ksavefile.cpp	Thu Dec 27 01:03:40 2012
-@@ -341,6 +341,7 @@ bool KSaveFile::rcsBackupFile( const QString& qFilenam
+--- kdecore/io/ksavefile.cpp.orig	Fri May  3 08:41:04 2013
++++ kdecore/io/ksavefile.cpp	Sun May 19 12:23:01 2013
+@@ -375,6 +375,7 @@ bool KSaveFile::rcsBackupFile( const QString& qFilenam
      if ( !backupDir.isEmpty() )
          co.setWorkingDirectory( backupDir );
      co.start( copath, QStringList() << qBackupFilename );

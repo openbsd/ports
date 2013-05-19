@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2013/05/14 09:16:28 zhuk Exp $
+# $OpenBSD: Makefile,v 1.22 2013/05/19 11:21:54 zhuk Exp $
 
 COMMENT =	KDE core libraries
 DISTNAME =	kdelibs-${MODKDE4_VERSION}
 PKGSPEC =	kdelibs->=4
+REVISION =	0
 
 SHARED_LIBS =	kde3support          50.0      # .4.0
 SHARED_LIBS +=	kdecore              50.0      # .5.0

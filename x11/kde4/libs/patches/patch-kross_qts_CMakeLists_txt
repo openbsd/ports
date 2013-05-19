@@ -1,0 +1,29 @@
+$OpenBSD: patch-kross_qts_CMakeLists_txt,v 1.1 2013/05/19 11:21:54 zhuk Exp $
+This is actually a plugin, do not make it a versioned library.
+FWIW, the only user is kdepim-runtime.
+--- kross/qts/CMakeLists.txt.orig	Sun May 19 13:10:50 2013
++++ kross/qts/CMakeLists.txt	Sun May 19 15:03:15 2013
+@@ -2,11 +2,8 @@ include_directories(${CMAKE_SOURCE_DIR} ${KDE4_KDECORE
+ 
+ ########### next target ###############
+ set(krossqtsplugin_LIB_SRCS plugin.cpp)
+-kde4_add_library(krossqtsplugin ${LIBRARY_TYPE} ${krossqtsplugin_LIB_SRCS})
++kde4_add_plugin(krossqtsplugin ${LIBRARY_TYPE} ${krossqtsplugin_LIB_SRCS})
+ target_link_libraries(krossqtsplugin ${QT_QTUITOOLS_LIBRARY} ${KDE4_KDECORE_LIBS} ${KDE4_KDEUI_LIBS} krosscore ${QT_QTSCRIPT_LIBRARY})
+-if (NOT CYGWIN)
+-    set_target_properties(krossqtsplugin PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION})
+-endif (NOT CYGWIN)
+ 
+ install(TARGETS krossqtsplugin DESTINATION ${PLUGIN_INSTALL_DIR}/plugins/script)
+ 
+@@ -15,8 +12,8 @@ install(TARGETS krossqtsplugin DESTINATION ${PLUGIN_IN
+ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR})
+ include_directories(${CMAKE_SOURCE_DIR}/kross ${KDE4_KDECORE_INCLUDES} ${KDE4_KDEUI_INCLUDES} ${KDE4_KIO_INCLUDES})
+ set(krossqtstest_SRCS main.cpp)
+-kde4_add_executable(krossqtstest TEST ${krossqtstest_SRCS})
+-target_link_libraries(krossqtstest ${KDE4_KDEUI_LIBS} krossqtsplugin ${QT_QTSCRIPT_LIBRARY})
++kde4_add_executable(krossqtstest TEST ${krossqtstest_SRCS} ${krossqtsplugin_LIB_SRCS})
++target_link_libraries(krossqtstest ${QT_QTUITOOLS_LIBRARY} ${KDE4_KDEUI_LIBS} krosscore ${QT_QTSCRIPT_LIBRARY})
+ # set(krossqtsplugintest_SRCS main.cpp)
+ # target_link_libraries(krossqtsplugintest ${KDE4_KDECORE_LIBS} )
+ # kde4_add_executable(krossqtsplugintest ${krossqtsplugintest_SRCS})

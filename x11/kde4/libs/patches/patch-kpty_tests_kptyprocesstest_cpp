@@ -1,8 +1,8 @@
-$OpenBSD: patch-kpty_tests_kptyprocesstest_cpp,v 1.1 2013/04/24 19:45:29 zhuk Exp $
+$OpenBSD: patch-kpty_tests_kptyprocesstest_cpp,v 1.2 2013/05/19 11:21:54 zhuk Exp $
 Fix test by using standard shell.
---- kpty/tests/kptyprocesstest.cpp.orig	Mon Dec 31 16:23:57 2012
-+++ kpty/tests/kptyprocesstest.cpp	Mon Dec 31 16:24:17 2012
-@@ -102,7 +102,7 @@ void KPtyProcessTest::test_shared_pty()
+--- kpty/tests/kptyprocesstest.cpp.orig	Fri May  3 08:41:05 2013
++++ kpty/tests/kptyprocesstest.cpp	Sun May 19 12:23:01 2013
+@@ -124,7 +124,7 @@ void KPtyProcessTest::test_shared_pty()
  void KPtyProcessTest::test_pty_basic()
  {
      KPtyProcess p;

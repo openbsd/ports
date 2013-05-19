@@ -1,6 +1,6 @@
-$OpenBSD: patch-kdecore_tests_kstandarddirstest_cpp,v 1.1 2013/04/24 19:45:29 zhuk Exp $
---- kdecore/tests/kstandarddirstest.cpp.orig	Sun Aug 12 14:04:36 2012
-+++ kdecore/tests/kstandarddirstest.cpp	Sun Aug 12 16:10:04 2012
+$OpenBSD: patch-kdecore_tests_kstandarddirstest_cpp,v 1.2 2013/05/19 11:21:54 zhuk Exp $
+--- kdecore/tests/kstandarddirstest.cpp.orig	Fri May  3 08:41:04 2013
++++ kdecore/tests/kstandarddirstest.cpp	Sun May 19 12:23:01 2013
 @@ -96,7 +96,7 @@ void KStandarddirsTest::testFindResource()
  #define KIOSLAVE "bin/kioslave.exe"
  #else
@@ -10,7 +10,7 @@ $OpenBSD: patch-kdecore_tests_kstandarddirstest_cpp,v 1.1 2013/04/24 19:45:29 zh
  #endif
      const QString bin = KGlobal::dirs()->findResource( "exe", "kioslave" EXT );
      QVERIFY( !bin.isEmpty() );
-@@ -231,7 +231,7 @@ void KStandarddirsTest::testFindExe()
+@@ -240,7 +240,7 @@ void KStandarddirsTest::testFindExe()
      // findExe with a result in libexec
      const QString lnusertemp = KGlobal::dirs()->findExe( "lnusertemp" );
      QVERIFY( !lnusertemp.isEmpty() );
@@ -19,7 +19,7 @@ $OpenBSD: patch-kdecore_tests_kstandarddirstest_cpp,v 1.1 2013/04/24 19:45:29 zh
  #endif
  
  #ifndef Q_OS_MAC // kdeinit4 is a bundle on Mac, so the below doesn't work
-@@ -243,7 +243,7 @@ void KStandarddirsTest::testFindExe()
+@@ -252,7 +252,7 @@ void KStandarddirsTest::testFindExe()
  
  #ifdef Q_OS_UNIX
      QCOMPARE_PATHS( KGlobal::dirs()->realFilePath(lnusertemp),
