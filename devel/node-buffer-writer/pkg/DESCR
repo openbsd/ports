@@ -1,0 +1,4 @@
+Fast & efficient buffer writer used to keep memory usage low by
+internally recycling a single large buffer.
+
+Used as the binary protocol writer in node-postgres.

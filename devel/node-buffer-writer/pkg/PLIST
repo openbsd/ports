@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/05/19 14:26:39 abieber Exp $
+lib/node_modules/buffer-writer/
+lib/node_modules/buffer-writer/.npmignore
+lib/node_modules/buffer-writer/.travis.yml
+lib/node_modules/buffer-writer/README.md
+lib/node_modules/buffer-writer/benchmark/
+lib/node_modules/buffer-writer/benchmark/index.js
+lib/node_modules/buffer-writer/benchmark/int-16-benchmark.js
+lib/node_modules/buffer-writer/benchmark/int-32-benchmark.js
+lib/node_modules/buffer-writer/benchmark/join-benchmark.js
+lib/node_modules/buffer-writer/benchmark/resize-benchmark.js
+lib/node_modules/buffer-writer/benchmark/small-benchmark.js
+lib/node_modules/buffer-writer/index.js
+lib/node_modules/buffer-writer/package.json
+lib/node_modules/buffer-writer/test/
+lib/node_modules/buffer-writer/test/mocha.opts
+lib/node_modules/buffer-writer/test/writer-tests.js
