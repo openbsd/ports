@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/05/19 14:11:35 abieber Exp $
+lib/node_modules/rmdir/
+lib/node_modules/rmdir/.npmignore
+lib/node_modules/rmdir/History.md
+lib/node_modules/rmdir/Readme.md
+lib/node_modules/rmdir/index.js
+lib/node_modules/rmdir/lib/
+lib/node_modules/rmdir/lib/rmdir.js
+lib/node_modules/rmdir/package.json
