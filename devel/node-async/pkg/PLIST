@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/05/19 14:22:03 abieber Exp $
+lib/node_modules/async/
+lib/node_modules/async/LICENSE
+lib/node_modules/async/README.md
+lib/node_modules/async/lib/
+lib/node_modules/async/lib/async.js
+lib/node_modules/async/package.json

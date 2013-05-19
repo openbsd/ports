@@ -1,0 +1,5 @@
+Async is a utility module which provides straight-forward, powerful
+functions for working with asynchronous JavaScript. Although originally
+designed for use with node.js, it can also be used directly in the
+browser. Also supports component (a package manager for building a better
+web).
