@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/09/12 06:59:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/05/19 10:48:45 ajacoutot Exp $
 bin/tryton
 lib/python${MODPY_VERSION}/site-packages/tryton/
 lib/python${MODPY_VERSION}/site-packages/tryton-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -25,6 +25,8 @@ lib/python${MODPY_VERSION}/site-packages/tryton/common/cellrendererbinary.py
 lib/python${MODPY_VERSION}/site-packages/tryton/common/cellrendererbinary.pyc
 lib/python${MODPY_VERSION}/site-packages/tryton/common/cellrendererbutton.py
 lib/python${MODPY_VERSION}/site-packages/tryton/common/cellrendererbutton.pyc
+lib/python${MODPY_VERSION}/site-packages/tryton/common/cellrendererclickablepixbuf.py
+lib/python${MODPY_VERSION}/site-packages/tryton/common/cellrendererclickablepixbuf.pyc
 lib/python${MODPY_VERSION}/site-packages/tryton/common/cellrenderercombo.py
 lib/python${MODPY_VERSION}/site-packages/tryton/common/cellrenderercombo.pyc
 lib/python${MODPY_VERSION}/site-packages/tryton/common/cellrendererdate.py
@@ -39,6 +41,8 @@ lib/python${MODPY_VERSION}/site-packages/tryton/common/cellrenderertoggle.py
 lib/python${MODPY_VERSION}/site-packages/tryton/common/cellrenderertoggle.pyc
 lib/python${MODPY_VERSION}/site-packages/tryton/common/common.py
 lib/python${MODPY_VERSION}/site-packages/tryton/common/common.pyc
+lib/python${MODPY_VERSION}/site-packages/tryton/common/completion.py
+lib/python${MODPY_VERSION}/site-packages/tryton/common/completion.pyc
 lib/python${MODPY_VERSION}/site-packages/tryton/common/date_widget.py
 lib/python${MODPY_VERSION}/site-packages/tryton/common/date_widget.pyc
 lib/python${MODPY_VERSION}/site-packages/tryton/common/datetime_strftime.py
@@ -49,8 +53,12 @@ lib/python${MODPY_VERSION}/site-packages/tryton/common/domain_parser.py
 lib/python${MODPY_VERSION}/site-packages/tryton/common/domain_parser.pyc
 lib/python${MODPY_VERSION}/site-packages/tryton/common/environment.py
 lib/python${MODPY_VERSION}/site-packages/tryton/common/environment.pyc
+lib/python${MODPY_VERSION}/site-packages/tryton/common/placeholder_entry.py
+lib/python${MODPY_VERSION}/site-packages/tryton/common/placeholder_entry.pyc
 lib/python${MODPY_VERSION}/site-packages/tryton/common/popup_menu.py
 lib/python${MODPY_VERSION}/site-packages/tryton/common/popup_menu.pyc
+lib/python${MODPY_VERSION}/site-packages/tryton/common/selection.py
+lib/python${MODPY_VERSION}/site-packages/tryton/common/selection.pyc
 lib/python${MODPY_VERSION}/site-packages/tryton/config.py
 lib/python${MODPY_VERSION}/site-packages/tryton/config.pyc
 lib/python${MODPY_VERSION}/site-packages/tryton/exceptions.py
@@ -137,6 +145,8 @@ lib/python${MODPY_VERSION}/site-packages/tryton/gui/window/view_form/view/form_g
 lib/python${MODPY_VERSION}/site-packages/tryton/gui/window/view_form/view/form_gtk/char.pyc
 lib/python${MODPY_VERSION}/site-packages/tryton/gui/window/view_form/view/form_gtk/checkbox.py
 lib/python${MODPY_VERSION}/site-packages/tryton/gui/window/view_form/view/form_gtk/checkbox.pyc
+lib/python${MODPY_VERSION}/site-packages/tryton/gui/window/view_form/view/form_gtk/dictionary.py
+lib/python${MODPY_VERSION}/site-packages/tryton/gui/window/view_form/view/form_gtk/dictionary.pyc
 lib/python${MODPY_VERSION}/site-packages/tryton/gui/window/view_form/view/form_gtk/float.py
 lib/python${MODPY_VERSION}/site-packages/tryton/gui/window/view_form/view/form_gtk/float.pyc
 lib/python${MODPY_VERSION}/site-packages/tryton/gui/window/view_form/view/form_gtk/float_time.py
@@ -274,6 +284,7 @@ share/pixmaps/tryton/
 share/pixmaps/tryton-icon.svg
 share/pixmaps/tryton/tryton-attachment-hi.svg
 share/pixmaps/tryton/tryton-attachment.svg
+share/pixmaps/tryton/tryton-bookmark.svg
 share/pixmaps/tryton/tryton-clear.svg
 share/pixmaps/tryton/tryton-close.svg
 share/pixmaps/tryton/tryton-connect.svg
@@ -314,6 +325,7 @@ share/pixmaps/tryton/tryton-print.svg
 share/pixmaps/tryton/tryton-refresh.svg
 share/pixmaps/tryton/tryton-save-as.svg
 share/pixmaps/tryton/tryton-save.svg
+share/pixmaps/tryton/tryton-star.svg
 share/pixmaps/tryton/tryton-start-here.svg
 share/pixmaps/tryton/tryton-system-file-manager.svg
 share/pixmaps/tryton/tryton-system.svg
@@ -321,6 +333,7 @@ share/pixmaps/tryton/tryton-text-background.svg
 share/pixmaps/tryton/tryton-text-foreground.svg
 share/pixmaps/tryton/tryton-text-markup.svg
 share/pixmaps/tryton/tryton-undo.svg
+share/pixmaps/tryton/tryton-unstar.svg
 share/pixmaps/tryton/tryton-web-browser.svg
 share/pixmaps/tryton/tryton.png
 @exec %D/bin/update-desktop-database
