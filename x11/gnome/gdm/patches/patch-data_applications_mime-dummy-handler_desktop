@@ -1,0 +1,14 @@
+$OpenBSD: patch-data_applications_mime-dummy-handler_desktop,v 1.1 2013/05/19 09:46:02 ajacoutot Exp $
+
+XXX push upstream
+
+--- data/applications/mime-dummy-handler.desktop.orig	Sun May 19 11:25:46 2013
++++ data/applications/mime-dummy-handler.desktop	Sun May 19 11:26:36 2013
+@@ -1,6 +1,6 @@
+ [Desktop Entry]
+ Type=Application
+ Name=Dummy URI Handler
+-Exec=/bin/true %U
++Exec=true %U
+ Terminal=false
+ StartupNotify=false

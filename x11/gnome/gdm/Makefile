@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.158 2013/05/18 17:28:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.159 2013/05/19 09:46:02 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		3.8.1.1
-REVISION=		1
+REVISION=		2
 
 HOMEPAGE=		http://projects.gnome.org/gdm/
 
@@ -74,21 +74,11 @@ CONFIGURE_ARGS=		--disable-static \
 			--without-tcp-wrappers
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/Makefile.in \
-		${WRKSRC}/data/{Init.in,PreSession.in,Xsession.in,gdm.schemas}
 	perl -pi -e 's,root:root,root:wheel,g;' \
 		-e 's,root:gdm,root:676,g;' \
 		-e 's,gdm:gdm,676:676,g' ${WRKSRC}/data/Makefile.in
 	perl -pi -e 's,/usr/local,${LOCALBASE},g' \
 		${WRKSRC}/daemon/gdm-session-worker.c
-	perl -pi -e 's,/bin/true,/usr/bin/true,g' \
-		${WRKSRC}/data/applications/mime-dummy-handler.desktop \
-		${WRKSRC}/configure \
-		${WRKSRC}/data/00-upstream-settings
-.for i in gdm-simple-greeter gnome-session-check-accelerated gnome-settings-daemon
-	perl -pi -e 's,/usr/libexec,${PREFIX},g' \
-		${WRKSRC}/data/applications/gdm-simple-greeter.desktop.in
-.endfor
 
 post-install:
 	rm ${PREFIX}/lib/gdm/simple-greeter/extensions/*.la
