@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/10/28 10:42:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/05/19 10:49:10 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/__init__.pyc
@@ -22,6 +22,11 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/tests/__init__.
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/tests/test_country.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/tests/test_country.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/tryton.cfg
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/view/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/view/country_form.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/view/country_tree.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/view/subdivision_form.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/view/subdivision_tree.xml
 lib/python${MODPY_VERSION}/site-packages/trytond_country-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/trytond_country-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/trytond_country-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt

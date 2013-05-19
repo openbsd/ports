@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/10/28 10:42:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/05/19 10:49:12 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_forecast/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_forecast/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_forecast/__init__.pyc
@@ -22,6 +22,13 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_forecast/tests/__
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_forecast/tests/test_stock_forecast.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_forecast/tests/test_stock_forecast.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_forecast/tryton.cfg
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_forecast/view/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_forecast/view/forecast_complete_ask_form.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_forecast/view/forecast_complete_choose_form.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_forecast/view/forecast_form.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_forecast/view/forecast_line_form.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_forecast/view/forecast_line_tree.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_forecast/view/forecast_tree.xml
 lib/python${MODPY_VERSION}/site-packages/trytond_stock_forecast-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/trytond_stock_forecast-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/trytond_stock_forecast-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt

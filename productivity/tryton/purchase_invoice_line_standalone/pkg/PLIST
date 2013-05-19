@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/10/28 10:42:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/05/19 10:49:11 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_invoice_line_standalone/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_invoice_line_standalone/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_invoice_line_standalone/__init__.pyc
@@ -24,6 +24,9 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_invoice_line_s
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_invoice_line_standalone/tests/test_purchase_invoice_line_standalone.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_invoice_line_standalone/tests/test_purchase_invoice_line_standalone.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_invoice_line_standalone/tryton.cfg
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_invoice_line_standalone/view/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_invoice_line_standalone/view/invoice_line_tree_invoice_type.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_invoice_line_standalone/view/purchase_form.xml
 lib/python${MODPY_VERSION}/site-packages/trytond_purchase_invoice_line_standalone-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/trytond_purchase_invoice_line_standalone-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/trytond_purchase_invoice_line_standalone-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt

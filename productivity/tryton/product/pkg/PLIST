@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/10/28 10:42:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/05/19 10:49:11 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/__init__.pyc
@@ -30,6 +30,18 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/tryton.cfg
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/uom.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/uom.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/uom.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/view/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/view/category_form.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/view/category_list.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/view/category_tree.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/view/product_form.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/view/product_tree.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/view/template_form.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/view/template_tree.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/view/uom_category_form.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/view/uom_category_tree.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/view/uom_form.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/view/uom_tree.xml
 lib/python${MODPY_VERSION}/site-packages/trytond_product-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/trytond_product-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/trytond_product-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt

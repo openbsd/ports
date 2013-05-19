@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/10/28 10:42:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/05/19 10:49:10 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_authentication/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_authentication/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_authentication/__init__.pyc
@@ -24,6 +24,8 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_authentication/tes
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_authentication/tests/test_ldap_authentication.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_authentication/tests/test_ldap_authentication.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_authentication/tryton.cfg
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_authentication/view/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_authentication/view/connection_form.xml
 lib/python${MODPY_VERSION}/site-packages/trytond_ldap_authentication-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/trytond_ldap_authentication-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/trytond_ldap_authentication-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/10/28 10:42:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/05/19 10:49:11 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party_siret/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party_siret/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party_siret/__init__.pyc
@@ -27,6 +27,11 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/party_siret/tests/__ini
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party_siret/tests/test_party_siret.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party_siret/tests/test_party_siret.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party_siret/tryton.cfg
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/party_siret/view/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/party_siret/view/address_form.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/party_siret/view/address_tree.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/party_siret/view/party_form.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/party_siret/view/party_tree.xml
 lib/python${MODPY_VERSION}/site-packages/trytond_party_siret-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/trytond_party_siret-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/trytond_party_siret-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt

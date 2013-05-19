@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/10/28 10:42:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/05/19 10:49:11 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/__init__.pyc
@@ -37,6 +37,21 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/tests/test_party.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/tests/test_party.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/tryton.cfg
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/view/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/view/address_form.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/view/address_tree.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/view/address_tree_sequence.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/view/category_form.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/view/category_list.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/view/category_tree.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/view/check_vies_no_result.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/view/check_vies_result.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/view/configuration_form.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/view/contact_mechanism_form.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/view/contact_mechanism_tree.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/view/contact_mechanism_tree_sequence.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/view/party_form.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/view/party_tree.xml
 lib/python${MODPY_VERSION}/site-packages/trytond_party-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/trytond_party-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/trytond_party-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt

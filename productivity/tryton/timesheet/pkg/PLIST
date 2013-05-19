@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/10/28 10:42:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/05/19 10:49:12 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/timesheet/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/timesheet/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/timesheet/__init__.pyc
@@ -23,6 +23,22 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/timesheet/tests/test_ti
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/timesheet/tests/test_timesheet.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/timesheet/timesheet.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/timesheet/tryton.cfg
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/timesheet/view/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/timesheet/view/hours_employee_graph.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/timesheet/view/hours_employee_monthly_tree.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/timesheet/view/hours_employee_open_start_form.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/timesheet/view/hours_employee_tree.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/timesheet/view/hours_employee_weekly_tree.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/timesheet/view/line_enter_start_form.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/timesheet/view/line_form.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/timesheet/view/line_tree.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/timesheet/view/work_form.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/timesheet/view/work_graph.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/timesheet/view/work_hours_board.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/timesheet/view/work_list.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/timesheet/view/work_open_start_form.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/timesheet/view/work_tree.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/timesheet/view/work_tree2.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/timesheet/work.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/timesheet/work.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/timesheet/work.xml
