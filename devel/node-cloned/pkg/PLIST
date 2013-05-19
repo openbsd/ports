@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/05/19 14:27:47 abieber Exp $
+lib/node_modules/cloned/
+lib/node_modules/cloned/.npmignore
+lib/node_modules/cloned/README.md
+lib/node_modules/cloned/index.js
+lib/node_modules/cloned/package.json
+lib/node_modules/cloned/test/
+lib/node_modules/cloned/test/index.js
+lib/node_modules/cloned/test/mocha.opts
