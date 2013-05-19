@@ -1,0 +1,16 @@
+$OpenBSD: patch-leim_Makefile_in,v 1.1 2013/05/19 00:05:51 espie Exp $
+--- leim/Makefile.in.orig	Sun May 19 01:55:25 2013
++++ leim/Makefile.in	Sun May 19 01:55:46 2013
+@@ -185,10 +185,10 @@ ${MISC-DIC}:
+ 
+ leim-list.el: ${SUBDIRS} ${WORLD}
+ 	if [ x`(cd ${srcdir} && /bin/pwd)` = x`(/bin/pwd)` ] ; then \
+-	  ${RUN-EMACS} -l ${buildlisppath}/international/quail \
++	  echo | ${RUN-EMACS} -l ${buildlisppath}/international/quail \
+ 	    --eval "(update-leim-list-file \".\")" ; \
+ 	else \
+-	  ${RUN-EMACS} -l ${buildlisppath}/international/quail \
++	  echo | ${RUN-EMACS} -l ${buildlisppath}/international/quail \
+ 	    --eval "(update-leim-list-file \".\" \"${srcdir}\")" ; \
+ 	fi
+ 
