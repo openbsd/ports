@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 11:41:12 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/05/19 15:04:06 zhuk Exp $
 include/kde4/KDE/KActivities/
 include/kde4/KDE/KActivities/Consumer
 include/kde4/KDE/KActivities/Controller
@@ -34,8 +34,9 @@ lib/kde4/imports/org/kde/activities/
 lib/kde4/imports/org/kde/activities/models/
 lib/kde4/imports/org/kde/activities/models/libkactivities-models-component-plugin.so
 lib/kde4/imports/org/kde/activities/models/qmldir
+@lib ${KDE4LIB}/libkactivities-models.so.${LIBkactivities-models_VERSION}
 @lib ${KDE4LIB}/libkactivities.so.${LIBkactivities_VERSION}
-lib/libkactivities-models.so
+@lib lib/libkactivities-models.so.${LIBkactivities-models_VERSION}
 @lib lib/libkactivities.so.${LIBkactivities_VERSION}
 lib/pkgconfig/libkactivities-models.pc
 lib/pkgconfig/libkactivities.pc
