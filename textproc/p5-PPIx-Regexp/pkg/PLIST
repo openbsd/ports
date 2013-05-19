@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/07/10 12:17:42 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/05/19 20:04:59 sthen Exp $
 ${P5SITE}/PPIx/
 ${P5SITE}/PPIx/Regexp/
 ${P5SITE}/PPIx/Regexp.pm
@@ -20,6 +20,7 @@ ${P5SITE}/PPIx/Regexp/Structure/Main.pm
 ${P5SITE}/PPIx/Regexp/Structure/Modifier.pm
 ${P5SITE}/PPIx/Regexp/Structure/NamedCapture.pm
 ${P5SITE}/PPIx/Regexp/Structure/Quantifier.pm
+${P5SITE}/PPIx/Regexp/Structure/RegexSet.pm
 ${P5SITE}/PPIx/Regexp/Structure/Regexp.pm
 ${P5SITE}/PPIx/Regexp/Structure/Replacement.pm
 ${P5SITE}/PPIx/Regexp/Structure/Subexpression.pm
@@ -82,6 +83,7 @@ ${P5SITE}/PPIx/Regexp/Util.pm
 @man man/man3p/PPIx::Regexp::Structure::Modifier.3p
 @man man/man3p/PPIx::Regexp::Structure::NamedCapture.3p
 @man man/man3p/PPIx::Regexp::Structure::Quantifier.3p
+@man man/man3p/PPIx::Regexp::Structure::RegexSet.3p
 @man man/man3p/PPIx::Regexp::Structure::Regexp.3p
 @man man/man3p/PPIx::Regexp::Structure::Replacement.3p
 @man man/man3p/PPIx::Regexp::Structure::Subexpression.3p

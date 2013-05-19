@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:42:43 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/05/19 20:04:59 sthen Exp $
 
 COMMENT=		parse regular expressions
 
 MODULES=		cpan
-DISTNAME=		PPIx-Regexp-0.020
+DISTNAME=		PPIx-Regexp-0.034
 CATEGORIES=		textproc
-USE_GROFF =		Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
