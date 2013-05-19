@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 10:50:12 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/05/19 15:19:17 abieber Exp $
 
 COMMENT =	generic resource pool for Node.js
 
-NPM_VERSION =	1.0.9
+NPM_VERSION =	2.0.2
 NPM_NAME =	generic-pool
 CATEGORIES =	devel
-
-REVISION =	3
 
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 

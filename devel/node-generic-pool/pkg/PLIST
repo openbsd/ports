@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/03 18:47:26 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/05/19 15:19:17 abieber Exp $
 lib/node_modules/generic-pool/
 lib/node_modules/generic-pool/.npmignore
+lib/node_modules/generic-pool/.travis.yml
+lib/node_modules/generic-pool/Makefile
 lib/node_modules/generic-pool/README.md
 lib/node_modules/generic-pool/fabfile.py
 lib/node_modules/generic-pool/lib/
