@@ -1,0 +1,12 @@
+$OpenBSD: patch-kdm_kfrontend_CMakeLists_txt,v 1.1 2013/05/19 20:04:07 zhuk Exp $
+Unbreak parallel builds.
+--- kdm/kfrontend/CMakeLists.txt.orig	Sun May 19 23:31:59 2013
++++ kdm/kfrontend/CMakeLists.txt	Sun May 19 23:32:17 2013
+@@ -77,6 +77,7 @@ endif (X11_XTest_FOUND)
+ if (WITH_KDM_XCONSOLE)
+   target_link_libraries(kdm_greet ${KDE4_KPTY_LIBS})
+ endif (WITH_KDM_XCONSOLE)
++add_dependencies(kdm_greet ConfigCi)
+ 
+ install(TARGETS kdm_greet DESTINATION ${LIBEXEC_INSTALL_DIR})
+ 

@@ -1,0 +1,13 @@
+$OpenBSD: patch-kdm_CMakeLists_txt,v 1.1 2013/05/19 20:04:07 zhuk Exp $
+Missing dependency.
+--- kdm/CMakeLists.txt.orig	Sun May 19 23:31:32 2013
++++ kdm/CMakeLists.txt	Sun May 19 23:31:44 2013
+@@ -16,7 +16,7 @@ add_custom_command(
+ 	OUTPUT ${confci}
+ 	COMMAND ${PERL_EXECUTABLE} -w ${confproc} ${confdef} ${confci}
+ 	MAIN_DEPENDENCY ${confdef}
+-	DEPENDS ${confproc}
++	DEPENDS ${confproc} ${confdef}
+ )
+ 
+ add_custom_target(ConfigCi DEPENDS ${confci})
