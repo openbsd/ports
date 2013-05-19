@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/06/30 18:35:52 jim Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/05/19 20:05:28 sthen Exp $
 bin/perlcritic
 ${P5SITE}/Perl/Critic/
 ${P5SITE}/Perl/Critic.pm
@@ -97,14 +97,15 @@ ${P5SITE}/Perl/Critic/Policy/InputOutput/RequireBriefOpen.pm
 ${P5SITE}/Perl/Critic/Policy/InputOutput/RequireCheckedClose.pm
 ${P5SITE}/Perl/Critic/Policy/InputOutput/RequireCheckedOpen.pm
 ${P5SITE}/Perl/Critic/Policy/InputOutput/RequireCheckedSyscalls.pm
+${P5SITE}/Perl/Critic/Policy/InputOutput/RequireEncodingWithUTF8Layer.pm
 ${P5SITE}/Perl/Critic/Policy/Miscellanea/
 ${P5SITE}/Perl/Critic/Policy/Miscellanea/ProhibitFormats.pm
 ${P5SITE}/Perl/Critic/Policy/Miscellanea/ProhibitTies.pm
 ${P5SITE}/Perl/Critic/Policy/Miscellanea/ProhibitUnrestrictedNoCritic.pm
 ${P5SITE}/Perl/Critic/Policy/Miscellanea/ProhibitUselessNoCritic.pm
-${P5SITE}/Perl/Critic/Policy/Miscellanea/RequireRcsKeywords.pm
 ${P5SITE}/Perl/Critic/Policy/Modules/
 ${P5SITE}/Perl/Critic/Policy/Modules/ProhibitAutomaticExportation.pm
+${P5SITE}/Perl/Critic/Policy/Modules/ProhibitConditionalUseStatements.pm
 ${P5SITE}/Perl/Critic/Policy/Modules/ProhibitEvilModules.pm
 ${P5SITE}/Perl/Critic/Policy/Modules/ProhibitExcessMainComplexity.pm
 ${P5SITE}/Perl/Critic/Policy/Modules/ProhibitMultiplePackages.pm
@@ -177,6 +178,7 @@ ${P5SITE}/Perl/Critic/Policy/ValuesAndExpressions/RequireNumberSeparators.pm
 ${P5SITE}/Perl/Critic/Policy/ValuesAndExpressions/RequireQuotedHeredocTerminator.pm
 ${P5SITE}/Perl/Critic/Policy/ValuesAndExpressions/RequireUpperCaseHeredocTerminator.pm
 ${P5SITE}/Perl/Critic/Policy/Variables/
+${P5SITE}/Perl/Critic/Policy/Variables/ProhibitAugmentedAssignmentInDeclaration.pm
 ${P5SITE}/Perl/Critic/Policy/Variables/ProhibitConditionalDeclarations.pm
 ${P5SITE}/Perl/Critic/Policy/Variables/ProhibitEvilVariables.pm
 ${P5SITE}/Perl/Critic/Policy/Variables/ProhibitLocalVars.pm
@@ -215,7 +217,9 @@ ${P5SITE}/Perl/Critic/Utils.pm
 ${P5SITE}/Perl/Critic/Utils/Constants.pm
 ${P5SITE}/Perl/Critic/Utils/DataConversion.pm
 ${P5SITE}/Perl/Critic/Utils/McCabe.pm
+${P5SITE}/Perl/Critic/Utils/POD/
 ${P5SITE}/Perl/Critic/Utils/POD.pm
+${P5SITE}/Perl/Critic/Utils/POD/ParseInteriorSequence.pm
 ${P5SITE}/Perl/Critic/Utils/PPI.pm
 ${P5SITE}/Perl/Critic/Utils/Perl.pm
 ${P5SITE}/Perl/Critic/Violation.pm
@@ -305,12 +309,13 @@ ${P5SITE}/Test/Perl/Critic/Policy.pm
 @man man/man3p/Perl::Critic::Policy::InputOutput::RequireCheckedClose.3p
 @man man/man3p/Perl::Critic::Policy::InputOutput::RequireCheckedOpen.3p
 @man man/man3p/Perl::Critic::Policy::InputOutput::RequireCheckedSyscalls.3p
+@man man/man3p/Perl::Critic::Policy::InputOutput::RequireEncodingWithUTF8Layer.3p
 @man man/man3p/Perl::Critic::Policy::Miscellanea::ProhibitFormats.3p
 @man man/man3p/Perl::Critic::Policy::Miscellanea::ProhibitTies.3p
 @man man/man3p/Perl::Critic::Policy::Miscellanea::ProhibitUnrestrictedNoCritic.3p
 @man man/man3p/Perl::Critic::Policy::Miscellanea::ProhibitUselessNoCritic.3p
-@man man/man3p/Perl::Critic::Policy::Miscellanea::RequireRcsKeywords.3p
 @man man/man3p/Perl::Critic::Policy::Modules::ProhibitAutomaticExportation.3p
+@man man/man3p/Perl::Critic::Policy::Modules::ProhibitConditionalUseStatements.3p
 @man man/man3p/Perl::Critic::Policy::Modules::ProhibitEvilModules.3p
 @man man/man3p/Perl::Critic::Policy::Modules::ProhibitExcessMainComplexity.3p
 @man man/man3p/Perl::Critic::Policy::Modules::ProhibitMultiplePackages.3p
@@ -375,6 +380,7 @@ ${P5SITE}/Test/Perl/Critic/Policy.pm
 @man man/man3p/Perl::Critic::Policy::ValuesAndExpressions::RequireNumberSeparators.3p
 @man man/man3p/Perl::Critic::Policy::ValuesAndExpressions::RequireQuotedHeredocTerminator.3p
 @man man/man3p/Perl::Critic::Policy::ValuesAndExpressions::RequireUpperCaseHeredocTerminator.3p
+@man man/man3p/Perl::Critic::Policy::Variables::ProhibitAugmentedAssignmentInDeclaration.3p
 @man man/man3p/Perl::Critic::Policy::Variables::ProhibitConditionalDeclarations.3p
 @man man/man3p/Perl::Critic::Policy::Variables::ProhibitEvilVariables.3p
 @man man/man3p/Perl::Critic::Policy::Variables::ProhibitLocalVars.3p
@@ -411,6 +417,7 @@ ${P5SITE}/Test/Perl/Critic/Policy.pm
 @man man/man3p/Perl::Critic::Utils::DataConversion.3p
 @man man/man3p/Perl::Critic::Utils::McCabe.3p
 @man man/man3p/Perl::Critic::Utils::POD.3p
+@man man/man3p/Perl::Critic::Utils::POD::ParseInteriorSequence.3p
 @man man/man3p/Perl::Critic::Utils::PPI.3p
 @man man/man3p/Perl::Critic::Utils::Perl.3p
 @man man/man3p/Perl::Critic::Violation.3p
