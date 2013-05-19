@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.293 2013/05/19 14:39:38 abieber Exp $
+# $OpenBSD: Makefile,v 1.294 2013/05/19 14:47:16 abieber Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -112,10 +112,8 @@
      SUBDIR += ndesk-dbus
      SUBDIR += ndesk-dbus-glib
      SUBDIR += node-always
-     SUBDIR += node-async
-     SUBDIR += node-buffer-writer
-     SUBDIR += node-cloned
      SUBDIR += node-daemon
+     SUBDIR += node-rmdir
      SUBDIR += node-syslog
      SUBDIR += ns4
      SUBDIR += nut
