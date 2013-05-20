@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/05/19 14:27:47 abieber Exp $
-
-PKG_ARCH =	*
+# $OpenBSD: Makefile,v 1.2 2013/05/20 17:52:31 abieber Exp $
 
 COMMENT =	clone a local or remote git repository at a revision.
 
 NPM_VERSION =	0.0.1
 NPM_NAME =	cloned
-PKGNAME =	cloned-${NPM_VERSION}
 CATEGORIES =	devel
 
 MAINTAINER =	Aaron Bieber <abieber@openbsd.org>

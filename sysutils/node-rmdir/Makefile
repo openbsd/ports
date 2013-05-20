@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/05/19 14:11:35 abieber Exp $
-
-PKG_ARCH =	*
+# $OpenBSD: Makefile,v 1.2 2013/05/20 17:52:56 abieber Exp $
 
 COMMENT =	remove all files in the given path recursively
 
 NPM_VERSION =	1.0.0
 NPM_NAME =	rmdir
-PKGNAME =	rmdir-${NPM_VERSION}
 CATEGORIES =	sysutils
 
 MAINTAINER =	Aaron Bieber <abieber@openbsd.org>

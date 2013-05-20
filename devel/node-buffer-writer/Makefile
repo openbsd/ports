@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/05/19 14:26:39 abieber Exp $
-
-PKG_ARCH =	*
+# $OpenBSD: Makefile,v 1.2 2013/05/20 17:52:07 abieber Exp $
 
 COMMENT =	a fast, efficient buffer writer for nodejs
 
 NPM_VERSION =	1.0.0
 NPM_NAME =	buffer-writer
-PKGNAME =	buffer-writer-${NPM_VERSION}
 CATEGORIES =	devel
 
 MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
