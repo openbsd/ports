@@ -1,0 +1,4 @@
+Ultimate Window Manager (UWM) is a lightweight window manager that does
+not use any special GUI libraries such as QT or GTK+. It uses the
+standard Xlibs, both to keep UWM fast and slim and to avoid
+dependencies. UWM has a unique look and feel.
