@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_util_vircgroup_c,v 1.1 2013/05/20 18:36:03 jasper Exp $
+
+/usr/include/sys/ucred.h:46: error: 'NGROUPS' undeclared here (not in a function)
+
+--- src/util/vircgroup.c.orig	Mon May 20 20:13:08 2013
++++ src/util/vircgroup.c	Mon May 20 20:17:16 2013
+@@ -27,7 +27,8 @@
+ #if defined HAVE_MNTENT_H && defined HAVE_GETMNTENT_R
+ # include <mntent.h>
+ #endif
+-#if defined HAVE_SYS_MOUNT_H
++#if defined HAVE_SYS_MOUNT_H && defined HAVE_SYS_PARAM_H
++# include <sys/param.h>
+ # include <sys/mount.h>
+ #endif
+ #include <fcntl.h>

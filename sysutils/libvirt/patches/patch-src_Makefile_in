@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.6 2013/04/03 06:37:10 jasper Exp $
---- src/Makefile.in.orig	Mon Apr  1 04:55:21 2013
-+++ src/Makefile.in	Tue Apr  2 23:02:13 2013
-@@ -7459,9 +7459,6 @@ install-data-local: install-init install-systemd
+$OpenBSD: patch-src_Makefile_in,v 1.7 2013/05/20 18:36:03 jasper Exp $
+--- src/Makefile.in.orig	Mon May 20 00:05:25 2013
++++ src/Makefile.in	Mon May 20 20:10:02 2013
+@@ -7642,9 +7642,6 @@ install-data-local: install-init install-systemd
  @WITH_LIBVIRTD_TRUE@	$(MKDIR_P) "$(DESTDIR)$(localstatedir)/lib/libvirt/lockd/files"
  @WITH_LIBVIRTD_TRUE@	$(MKDIR_P) "$(DESTDIR)$(localstatedir)/run/libvirt/lockd"
  	$(MKDIR_P) "$(DESTDIR)$(localstatedir)/cache/libvirt"

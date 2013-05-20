@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/03/05 13:06:27 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/05/20 18:36:03 jasper Exp $
 @bin bin/virsh
 @bin bin/virt-host-validate
 bin/virt-pki-validate
@@ -170,6 +170,7 @@ share/libvirt/api/libvirt-api.xml
 share/libvirt/api/libvirt-lxc-api.xml
 share/libvirt/api/libvirt-qemu-api.xml
 share/libvirt/cpu_map.xml
+share/libvirt/libvirtLogo.png
 share/libvirt/schemas/
 share/libvirt/schemas/basictypes.rng
 share/libvirt/schemas/capability.rng
@@ -193,6 +194,9 @@ share/locale/be/LC_MESSAGES/libvirt.mo
 share/locale/bg/LC_MESSAGES/libvirt.mo
 share/locale/bn/LC_MESSAGES/libvirt.mo
 share/locale/bn_IN/LC_MESSAGES/libvirt.mo
+share/locale/bo/
+share/locale/bo/LC_MESSAGES/
+share/locale/bo/LC_MESSAGES/libvirt.mo
 share/locale/bs/LC_MESSAGES/libvirt.mo
 share/locale/ca/LC_MESSAGES/libvirt.mo
 share/locale/cs/LC_MESSAGES/libvirt.mo
