@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/05/20 09:09:29 giovanni Exp $
+bin/dave
+${P5SITE}/HTTP/
+${P5SITE}/HTTP/DAV/
+${P5SITE}/HTTP/DAV.pm
+${P5SITE}/HTTP/DAV/Changes.pod
+${P5SITE}/HTTP/DAV/Comms.pm
+${P5SITE}/HTTP/DAV/Lock.pm
+${P5SITE}/HTTP/DAV/Resource.pm
+${P5SITE}/HTTP/DAV/ResourceList.pm
+${P5SITE}/HTTP/DAV/Response.pm
+${P5SITE}/HTTP/DAV/Utils.pm
+@man man/man1/dave.1
+@man man/man3p/HTTP::DAV.3p
+@man man/man3p/HTTP::DAV::Changes.3p
+@man man/man3p/HTTP::DAV::Lock.3p
+@man man/man3p/HTTP::DAV::Resource.3p
+@man man/man3p/HTTP::DAV::Response.3p
