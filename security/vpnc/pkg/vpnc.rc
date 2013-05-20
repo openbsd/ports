@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $OpenBSD: vpnc.rc,v 1.1 2013/05/20 16:26:51 gonzalo Exp $
+
+daemon="${TRUEPREFIX}/sbin/vpnc"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1
