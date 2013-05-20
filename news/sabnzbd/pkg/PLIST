@@ -1,5 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/06/24 14:32:46 mglocker Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/05/20 18:36:06 abieber Exp $
+@newgroup _sabnzbd:717
+@newuser _sabnzbd:717:_sabnzbd:daemon:Sabnzbd:/var/sabnzbd:/bin/sh
+@owner _sabnzbd
+@group _sabnzbd
+@sample /var/sabnzbd/
 bin/sabnzbd
+@owner
+@group
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/ABOUT.txt
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/CHANGELOG.txt
@@ -433,7 +440,6 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/smpl/templates/stati
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/smpl/templates/status.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/wizard/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/wizard/README.TXT
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/wizard/four.html
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/wizard/inc_bottom.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/wizard/inc_top.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/wizard/index.html
@@ -662,3 +668,4 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/util/apireg.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/util/apireg.pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/util/mailslot.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/util/mailslot.pyc
+@rcscript ${RCDIR}/sabnzbd
