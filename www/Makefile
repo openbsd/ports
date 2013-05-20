@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.608 2013/05/03 23:17:52 rpe Exp $
+# $OpenBSD: Makefile,v 1.609 2013/05/20 09:16:36 giovanni Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -282,6 +282,7 @@
      SUBDIR += p5-HTTP-Async
      SUBDIR += p5-HTTP-Body
      SUBDIR += p5-HTTP-BrowserDetect
+     SUBDIR += p5-HTTP-DAV
      SUBDIR += p5-HTTP-GHTTP
      SUBDIR += p5-HTTP-GetImages
      SUBDIR += p5-HTTP-Lite
