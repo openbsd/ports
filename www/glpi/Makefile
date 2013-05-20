@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:44:42 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/05/20 09:05:48 jasper Exp $
 
 COMMENT=		asset management software
 
-DISTNAME=		glpi-0.83.7
+DISTNAME=		glpi-0.83.8
 CATEGORIES=		www productivity
 
 HOMEPAGE=		http://www.glpi-project.org/
@@ -10,7 +10,7 @@ HOMEPAGE=		http://www.glpi-project.org/
 # GPLv2
 PERMIT_PACKAGE_CDROM=   Yes
 
-MASTER_SITES=		https://forge.indepnet.net/attachments/download/1387/
+MASTER_SITES=		https://forge.indepnet.net/attachments/download/1466/
 
 MODULES=		lang/php
 
