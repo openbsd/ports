@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/03/14 13:25:30 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.10 2013/05/20 07:56:48 dcoppa Exp $
 @bin bin/feh
 bin/feh-cam
 bin/gen-cam-menu
@@ -25,7 +25,8 @@ share/feh/fonts/black.style
 share/feh/fonts/menu.style
 share/feh/fonts/yudit.ttf
 share/feh/images/
-share/feh/images/logo.svg
+share/feh/images/feh.png
+share/feh/images/feh.svg
 share/feh/images/menubg_aluminium.png
 share/feh/images/menubg_aqua.png
 share/feh/images/menubg_black.png
