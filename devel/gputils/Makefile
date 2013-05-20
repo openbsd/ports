@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 10:50:05 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/05/20 08:18:16 benoit Exp $
 
 COMMENT =		GNU PIC assembler and utilities
 
-VERSION =		0.13.7
+VERSION =		1.2.0
 DISTNAME =		gputils-${VERSION}
 CATEGORIES =		devel
 
@@ -23,11 +23,14 @@ DIST_SUBDIR =		gputils
 
 CONFIGURE_STYLE =	autoconf
 CONFIGURE_ENV =		"CC=${CC}" "CPP=${CPP}" "CFLAGS=${CFLAGS}" "CPPFLAGS=${CPPFLAGS}" "LDFLAGS=${LDFLAGS}"
-USE_GROFF =	Yes
+CONFIGURE_ARGS +=	--disable-html-doc
 
-AUTOCONF_VERSION =	2.61
+USE_GROFF =		Yes
+USE_GMAKE =		Yes
 
-do-test:
+AUTOCONF_VERSION =	2.69
+
+do-test: fake
 	cd ${WRKSRC}/gpasm/testsuite && sh ./test all
 
 
