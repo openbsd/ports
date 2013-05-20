@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/11 02:52:07 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2013/05/20 06:52:52 dcoppa Exp $
 
 COMMENT =		Python interface to Redis
 
-MODPY_EGG_VERSION =	2.7.2
-DISTNAME =		redis-${MODPY_EGG_VERSION}
+MODPY_EGG_VERSION =	2.7.5
+DISTNAME =		redis-py-${MODPY_EGG_VERSION}
 PKGNAME =		py-redis-${MODPY_EGG_VERSION}
 CATEGORIES =		databases
 
-HOMEPAGE =		http://github.com/andymccurdy/redis-py/
-MASTER_SITES =		http://github.com/downloads/andymccurdy/redis-py/
+HOMEPAGE =		https://github.com/andymccurdy/redis-py/
+MASTER_SITES =		${HOMEPAGE}archive/${MODPY_EGG_VERSION}.tar.gz?bleh=/
 
 MAINTAINER = 		Remi Pointel <rpointel@openbsd.org>
 
@@ -19,12 +19,14 @@ MODULES =		lang/python
 
 MODPY_SETUPTOOLS =	Yes
 
-# avoid possible conflict with the databases/redis distfile
-DIST_SUBDIR =           py-redis
-WRKDIST =		${WRKDIR}/redis-${MODPY_EGG_VERSION}
+MODPY_BADEGGS =		redis
 
-TEST_DEPENDS =	databases/redis
+TEST_DEPENDS =		databases/redis
 
-TEST_IS_INTERACTIVE = Yes # be sure you have a redis server running on localhost
+# Be sure you have a redis server running on localhost
+TEST_IS_INTERACTIVE =	Yes
+
+do-test:
+	cd ${WRKSRC} && ${MODPY_BIN} ./run_tests
 
 .include <bsd.port.mk>

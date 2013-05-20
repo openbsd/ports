@@ -1,0 +1,27 @@
+$OpenBSD: patch-redis_client_py,v 1.1 2013/05/20 06:52:52 dcoppa Exp $
+
+commit 9e0ca54f3f147f5271fa7a1f0159c256bd5b1b84
+Author: Carpentier Pierre-Francois <carpentier.pf@gmail.com>
+Date:   Wed May 15 17:03:23 2013 -0300
+
+error in the __call__ method of class Script
+
+If "client" is a pipeline, and this pipeline is empty, python
+converts "client" to False when casting in bool because Class
+BasePipeline has a method __len__.
+"client" is reset to self.registered_client, and the script is
+not executed in the pipeline as it should.
+The correct test is to check if "client" equals None.
+
+--- redis/client.py.orig	Mon May 20 07:36:55 2013
++++ redis/client.py	Mon May 20 07:38:12 2013
+@@ -1969,7 +1969,8 @@ class Script(object):
+ 
+     def __call__(self, keys=[], args=[], client=None):
+         "Execute the script, passing any required ``args``"
+-        client = client or self.registered_client
++        if client is None:
++            client = self.registered_client
+         args = tuple(keys) + tuple(args)
+         # make sure the Redis server knows about the script
+         if isinstance(client, BasePipeline):
