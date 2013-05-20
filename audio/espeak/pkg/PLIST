@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/04/17 15:55:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/05/20 08:15:51 ajacoutot Exp $
 @bin bin/espeak
 include/espeak/
 include/espeak/speak_lib.h
@@ -22,7 +22,9 @@ share/doc/espeak/ssml.html
 share/doc/espeak/voices.html
 share/espeak-data/
 share/espeak-data/af_dict
+share/espeak-data/am_dict
 share/espeak-data/an_dict
+share/espeak-data/az_dict
 share/espeak-data/bg_dict
 share/espeak-data/bn_dict
 share/espeak-data/ca_dict
@@ -50,7 +52,9 @@ share/espeak-data/is_dict
 share/espeak-data/it_dict
 share/espeak-data/jbo_dict
 share/espeak-data/ka_dict
+share/espeak-data/kl_dict
 share/espeak-data/kn_dict
+share/espeak-data/ko_dict
 share/espeak-data/ku_dict
 share/espeak-data/la_dict
 share/espeak-data/lt_dict
@@ -97,10 +101,13 @@ share/espeak-data/mbrola_ph/us_phtrans
 share/espeak-data/mbrola_ph/vz_phtrans
 share/espeak-data/mk_dict
 share/espeak-data/ml_dict
+share/espeak-data/ms_dict
+share/espeak-data/nci_dict
 share/espeak-data/ne_dict
 share/espeak-data/nl_dict
 share/espeak-data/no_dict
 share/espeak-data/pa_dict
+share/espeak-data/pap_dict
 share/espeak-data/phondata
 share/espeak-data/phondata-manifest
 share/espeak-data/phonindex
@@ -109,13 +116,17 @@ share/espeak-data/pl_dict
 share/espeak-data/pt_dict
 share/espeak-data/ro_dict
 share/espeak-data/ru_dict
+share/espeak-data/si_dict
 share/espeak-data/sk_dict
+share/espeak-data/sl_dict
 share/espeak-data/soundicons/
 share/espeak-data/sq_dict
 share/espeak-data/sv_dict
 share/espeak-data/sw_dict
 share/espeak-data/ta_dict
+share/espeak-data/te_dict
 share/espeak-data/tr_dict
+share/espeak-data/ur_dict
 share/espeak-data/vi_dict
 share/espeak-data/voices/
 share/espeak-data/voices/!v/
@@ -128,6 +139,7 @@ share/espeak-data/voices/!v/f5
 share/espeak-data/voices/!v/klatt
 share/espeak-data/voices/!v/klatt2
 share/espeak-data/voices/!v/klatt3
+share/espeak-data/voices/!v/klatt4
 share/espeak-data/voices/!v/m1
 share/espeak-data/voices/!v/m2
 share/espeak-data/voices/!v/m3
@@ -148,12 +160,14 @@ share/espeak-data/voices/asia/ka
 share/espeak-data/voices/asia/kn
 share/espeak-data/voices/asia/ku
 share/espeak-data/voices/asia/ml
+share/espeak-data/voices/asia/ms
 share/espeak-data/voices/asia/ne
 share/espeak-data/voices/asia/pa
 share/espeak-data/voices/asia/ta
 share/espeak-data/voices/asia/tr
 share/espeak-data/voices/asia/vi
 share/espeak-data/voices/asia/vi-hue
+share/espeak-data/voices/asia/vi-sgn
 share/espeak-data/voices/asia/zh
 share/espeak-data/voices/asia/zh-yue
 share/espeak-data/voices/de
@@ -260,5 +274,17 @@ share/espeak-data/voices/other/jbo
 share/espeak-data/voices/other/la
 share/espeak-data/voices/other/sw
 share/espeak-data/voices/pt
+share/espeak-data/voices/test/
+share/espeak-data/voices/test/am
+share/espeak-data/voices/test/az
+share/espeak-data/voices/test/bn
+share/espeak-data/voices/test/kl
+share/espeak-data/voices/test/ko
+share/espeak-data/voices/test/nci
+share/espeak-data/voices/test/pap
+share/espeak-data/voices/test/si
+share/espeak-data/voices/test/sl
+share/espeak-data/voices/test/te
+share/espeak-data/voices/test/ur
 share/espeak-data/zh_dict
 share/espeak-data/zhy_dict
