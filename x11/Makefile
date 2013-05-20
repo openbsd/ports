@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.513 2013/04/30 14:57:27 abieber Exp $
+# $OpenBSD: Makefile,v 1.514 2013/05/20 06:39:00 bcallah Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -263,6 +263,7 @@
      SUBDIR += treewm
      SUBDIR += tvtwm
      SUBDIR += type1inst
+     SUBDIR += uwm
      SUBDIR += unclutter
      SUBDIR += vdesk
      SUBDIR += viewfax
