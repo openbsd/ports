@@ -156,7 +156,9 @@
 	native-pathconf: permit
 	native-pipe: permit
 	native-poll: permit
+	native-ppoll: permit
 	native-pread: permit
+	native-pselect: permit
 	native-pwrite: permit
 	native-quotactl: permit
 	native-read: permit
