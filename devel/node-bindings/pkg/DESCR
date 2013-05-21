@@ -1,0 +1,12 @@
+This is a helper module for authors of Node.js native addon modules. It
+is basically the "swiss army knife" of require()ing your native module's
+.node file.
+
+Throughout the course of Node's native addon history, addons have ended
+up being compiled in a variety of different places, depending on which
+build tool and which version of node was used. To make matters worse,
+now the gyp build tool can produce either a Release or Debug build, each
+being built into different locations.
+
+This module checks all the possible locations that a native addon would
+be built at, and returns the first one that loads successfully.

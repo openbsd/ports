@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/05/21 23:00:18 abieber Exp $
+lib/node_modules/bindings/
+lib/node_modules/bindings/README.md
+lib/node_modules/bindings/bindings.js
+lib/node_modules/bindings/package.json
