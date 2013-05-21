@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/05/16 09:16:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2013/05/21 17:00:26 naddy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		weather application for GNOME
 
 GNOME_PROJECT=		gnome-weather
 GNOME_VERSION=		3.8.2
+REVISION=		0
 
 HOMEPAGE=		https://live.gnome.org/Design/Apps/Weather
 
