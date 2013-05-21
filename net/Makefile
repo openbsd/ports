@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.803 2013/05/17 12:49:49 stsp Exp $
+# $OpenBSD: Makefile,v 1.804 2013/05/21 17:22:04 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += BitTorrent
@@ -476,7 +476,6 @@
      SUBDIR += py-nmap
      SUBDIR += py-pcapy
      SUBDIR += py-pcs
-     SUBDIR += py-smbc
      SUBDIR += py-snmp
      SUBDIR += py-twitter
      SUBDIR += py-xmpp
