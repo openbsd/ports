@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_pluginhandler_py,v 1.1 2013/03/08 06:51:46 ajacoutot Exp $
---- installer/pluginhandler.py.orig	Fri Feb 22 17:52:29 2013
-+++ installer/pluginhandler.py	Fri Feb 22 17:54:29 2013
+$OpenBSD: patch-installer_pluginhandler_py,v 1.2 2013/05/21 16:46:43 ajacoutot Exp $
+--- installer/pluginhandler.py.orig	Fri May 10 12:05:46 2013
++++ installer/pluginhandler.py	Tue May 21 18:38:19 2013
 @@ -107,11 +107,11 @@ class PluginHandle(object):
              ARCH = 'x86_%d' % BITNESS
  
@@ -17,7 +17,7 @@ $OpenBSD: patch-installer_pluginhandler_py,v 1.1 2013/03/08 06:51:46 ajacoutot E
  
          copies = []
  
-@@ -269,8 +269,8 @@ class PluginHandle(object):
+@@ -261,8 +261,8 @@ class PluginHandle(object):
      def __setPluginConfFile(self):
          home = sys_conf.get('dirs', 'home')
  

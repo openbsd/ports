@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_core_install_py,v 1.13 2013/03/08 06:51:46 ajacoutot Exp $
---- installer/core_install.py.orig	Wed Feb 13 17:35:01 2013
-+++ installer/core_install.py	Fri Feb 22 15:10:42 2013
+$OpenBSD: patch-installer_core_install_py,v 1.14 2013/05/21 16:46:43 ajacoutot Exp $
+--- installer/core_install.py.orig	Fri May 10 12:05:46 2013
++++ installer/core_install.py	Tue May 21 18:38:19 2013
 @@ -172,7 +172,7 @@ class CoreInstall(object):
          self.endian = utils.LITTLE_ENDIAN
          self.distro, self.distro_name, self.distro_version = DISTRO_UNKNOWN, '', DISTRO_VER_UNKNOWN
@@ -108,7 +108,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.13 2013/03/08 06:51:46 ajacoutot E
              return True
          else:
              return False
-@@ -1558,7 +1556,7 @@ class CoreInstall(object):
+@@ -1569,7 +1567,7 @@ class CoreInstall(object):
      def pre_build(self,distro_ver=None):
          cmds = []
          if self.get_distro_ver_data('fix_ppd_symlink', False,distro_ver):
