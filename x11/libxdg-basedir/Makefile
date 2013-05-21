@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/21 08:48:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2013/05/21 06:22:30 dcoppa Exp $
 
 COMMENT =	implementation of the XDG Base Directory specification
 
@@ -11,7 +11,7 @@ MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	http://n.ethz.ch/student/nevillm/download/libxdg-basedir/
+MASTER_SITES =	http://nevill.ch/libxdg-basedir/downloads/
 
 CONFIGURE_STYLE =	gnu
 
