@@ -1,6 +1,6 @@
-$OpenBSD: patch-source_shared_lib_CMakeLists_txt,v 1.1.1.1 2013/01/28 13:58:49 stsp Exp $
+$OpenBSD: patch-source_shared_lib_CMakeLists_txt,v 1.2 2013/05/21 10:34:14 dcoppa Exp $
 --- source/shared_lib/CMakeLists.txt.orig	Wed Nov 14 20:20:08 2012
-+++ source/shared_lib/CMakeLists.txt	Wed Jan  9 17:48:38 2013
++++ source/shared_lib/CMakeLists.txt	Tue May 21 11:06:22 2013
 @@ -101,13 +101,13 @@ IF(BUILD_MEGAGLEST_MODEL_VIEWER OR BUILD_MEGAGLEST_MAP
  		SET(EXTERNAL_LIBS ${EXTERNAL_LIBS} ${OPENAL_LIBRARY})
  	ENDIF()
@@ -31,7 +31,21 @@ $OpenBSD: patch-source_shared_lib_CMakeLists_txt,v 1.1.1.1 2013/01/28 13:58:49 s
  	        SET(EXTERNAL_LIBS ${EXTERNAL_LIBS} ${LUA_LIBRARIES} "libdl.so")
          ENDIF()
  #        ENDIF()
-@@ -341,6 +341,7 @@ IF(BUILD_MEGAGLEST_MODEL_VIEWER OR BUILD_MEGAGLEST_MAP
+@@ -297,7 +297,12 @@ IF(BUILD_MEGAGLEST_MODEL_VIEWER OR BUILD_MEGAGLEST_MAP
+ 		ADD_DEFINITIONS(-DMINIUPNPC_VERSION_PRE1_6)
+                 message(STATUS "Adding macro for miniupnpc version: pre v1.6")
+ 	ENDIF()
+-        IF(NOT MINIUPNPC_VERSION_PRE1_5 AND NOT MINIUPNPC_VERSION_PRE1_6)
++	IF(MINIUPNPC_VERSION_PRE1_7)
++		ADD_DEFINITIONS(-DMINIUPNPC_VERSION_PRE1_7)
++                message(STATUS "Adding macro for miniupnpc version: pre v1.7")
++	ENDIF()
++
++        IF(NOT MINIUPNPC_VERSION_PRE1_5 AND NOT MINIUPNPC_VERSION_PRE1_6 AND NOT MINIUPNPC_VERSION_PRE1_7)
+                 message(STATUS "**No macros required for miniupnpc version")
+         ENDIF()
+ 
+@@ -341,6 +346,7 @@ IF(BUILD_MEGAGLEST_MODEL_VIEWER OR BUILD_MEGAGLEST_MAP
  
          set(CMAKE_REQUIRED_INCLUDES "${IRCCLIENT_INCLUDE_DIR}")
          set(CMAKE_REQUIRED_LIBRARIES "${IRCCLIENT_LIBRARY}")
