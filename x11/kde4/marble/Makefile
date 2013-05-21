@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:28 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2013/05/21 06:24:30 zhuk Exp $
 
 COMMENT =	world maps
 DISTNAME =	marble-${MODKDE4_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	marblewidget		50.0 # 0.12
 
