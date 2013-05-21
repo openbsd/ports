@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Grabber.pm,v 1.26 2013/01/07 10:59:41 espie Exp $
+# $OpenBSD: Grabber.pm,v 1.27 2013/05/21 20:44:08 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -35,15 +35,19 @@ sub new
 		errors => 0,
 		endcode => $endcode
 	    }, $class;
+	my @values = ();
 	if ($state->{want_fetchinfo}) {
 		require DPB::Fetch;
-		$o->{dpb} = "fetch";
+		push(@values, 'fetch');
 		$o->{fetch} = DPB::Fetch->new($state->distdir, $state->logger,
 		    $state);
 	} else {
-		$o->{dpb} = "normal";
 		$o->{fetch} = DPB::FetchDummy->new;
 	}
+	if ($state->{test}) {
+		push(@values, 'test');
+	}
+	$o->{dpb} = join(' ',  @values);
 	return $o;
 }
 

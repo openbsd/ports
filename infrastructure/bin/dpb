@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.89 2013/04/22 10:06:12 espie Exp $
+# $OpenBSD: dpb,v 1.90 2013/05/21 20:44:08 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -244,7 +244,7 @@ sub handle_options
 		},
 	};
 
-	$state->SUPER::handle_options('acemqrRsuUvh:S:xX:A:C:f:F:I:j:J:M:p:P:b:l:L:',
+	$state->SUPER::handle_options('acemqrRstuUvh:S:xX:A:C:f:F:I:j:J:M:p:P:b:l:L:',
     "[-acemrRsuUvx] [-A arch] [-C plist] [-f N] [-F N] [-I plist] [-J p] [-j N]",
     "[-p parallel] [-P plist] [-h hosts] [-L logdir] [-l lockdir] [-b log]",
     "[-M threshold] [-X plist] [path ...]");
@@ -287,6 +287,9 @@ sub handle_options
 		$state->{random} = 1;
 	}
 
+	if ($state->opt('t')) {
+		$state->{tests} = 1;
+	}
 	$state->{logdir} = $state->expand_path($state->{logdir});
 	$state->{lockdir} = $state->expand_path($state->{lockdir});
 	if ($state->opt('h')) {
