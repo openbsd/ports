@@ -1,0 +1,66 @@
+$OpenBSD: patch-src_libs_zbxsysinfo_openbsd_swap_c,v 1.1 2013/05/21 20:18:52 robert Exp $
+--- src/libs/zbxsysinfo/openbsd/swap.c.orig	Tue May 21 22:11:55 2013
++++ src/libs/zbxsysinfo/openbsd/swap.c	Tue May 21 22:15:42 2013
+@@ -155,7 +155,7 @@ int	SYSTEM_SWAP_SIZE(const char *cmd, const char *para
+ 	return SYSINFO_RET_FAIL;
+ }
+ 
+-static int	get_swap_io(zbx_uint64_t *icount, zbx_uint64_t *ipages, zbx_uint64_t *ocount, zbx_uint64_t *opages)
++static int	get_swap_io(zbx_uint64_t *ipages, zbx_uint64_t *opages)
+ {
+ 	int		mib[2];
+ 	size_t		len;
+@@ -169,17 +169,11 @@ static int	get_swap_io(zbx_uint64_t *icount, zbx_uint6
+ 	if (0 != sysctl(mib, 2, &v, &len, NULL, 0))
+ 		return SYSINFO_RET_FAIL;
+ 
+-	/* int swapins;		swapins */
+-	/* int swapouts;	swapouts */
+ 	/* int pgswapin;	pages swapped in */
+ 	/* int pgswapout;	pages swapped out */
+ 
+-	if (icount)
+-		*icount = (zbx_uint64_t)v.swapins;
+ 	if (ipages)
+ 		*ipages = (zbx_uint64_t)v.pgswapin;
+-	if (ocount)
+-		*ocount = (zbx_uint64_t)v.swapouts;
+ 	if (opages)
+ 		*opages = (zbx_uint64_t)v.pgswapout;
+ 
+@@ -212,16 +206,11 @@ int	SYSTEM_SWAP_IN(const char *cmd, const char *param,
+ 	if (*mode == '\0')
+ 		zbx_snprintf(mode, sizeof(mode), "count");
+ 
+-	if (0 == strcmp(mode, "count"))
++	if (0 == strcmp(mode, "pages"))
+ 	{
+-		if (SYSINFO_RET_OK != get_swap_io(&value, NULL, NULL, NULL))
++		if (SYSINFO_RET_OK != get_swap_io(&value, NULL))
+ 			return SYSINFO_RET_FAIL;
+ 	}
+-	else if (0 == strcmp(mode, "pages"))
+-	{
+-		if (SYSINFO_RET_OK != get_swap_io(NULL, &value, NULL, NULL))
+-			return SYSINFO_RET_FAIL;
+-	}
+ 	else
+ 		return SYSINFO_RET_FAIL;
+ 
+@@ -256,14 +245,9 @@ int	SYSTEM_SWAP_OUT(const char *cmd, const char *param
+ 	if (*mode == '\0')
+ 		zbx_snprintf(mode, sizeof(mode), "count");
+ 
+-	if (0 == strcmp(mode, "count"))
++	if (0 == strcmp(mode,"pages"))
+ 	{
+-		if (SYSINFO_RET_OK != get_swap_io(NULL, NULL, &value, NULL))
+-			return SYSINFO_RET_FAIL;
+-	}
+-	else if (0 == strcmp(mode,"pages"))
+-	{
+-		if (SYSINFO_RET_OK != get_swap_io(NULL, NULL, NULL, &value))
++		if (SYSINFO_RET_OK != get_swap_io(NULL, &value))
+ 			return SYSINFO_RET_FAIL;
+ 	}
+ 	else
