@@ -1,6 +1,6 @@
-$OpenBSD: patch-xuvmstat_c,v 1.3 2005/10/13 17:22:10 pvalchev Exp $
---- xuvmstat.c.orig	Fri Sep  9 07:38:48 2005
-+++ xuvmstat.c	Tue Oct 11 16:55:32 2005
+$OpenBSD: patch-xuvmstat_c,v 1.4 2013/05/21 19:38:08 sthen Exp $
+--- xuvmstat.c.orig	Fri Sep  9 14:38:48 2005
++++ xuvmstat.c	Tue May 21 20:35:56 2013
 @@ -24,6 +24,7 @@
   * xuvmstat.c
   */
@@ -19,7 +19,7 @@ $OpenBSD: patch-xuvmstat_c,v 1.3 2005/10/13 17:22:10 pvalchev Exp $
  #include <uvm/uvm_extern.h>
  #include <X11/Xlib.h>
  #include <X11/Xutil.h>
-@@ -52,6 +50,7 @@ struct graph *gp_faults, *gp_traps, *gp_
+@@ -52,6 +50,7 @@ struct graph *gp_faults, *gp_traps, *gp_intrs, *gp_ctx
  
  #define WIDTH 300
  
@@ -60,4 +60,15 @@ $OpenBSD: patch-xuvmstat_c,v 1.3 2005/10/13 17:22:10 pvalchev Exp $
 +#endif
  
    y += 8;
+ 
+@@ -353,8 +356,8 @@ int was_timeout;
+       static u_long color[3];
+       init = 1;
+       before[0] = &oexp.swtch; after[0] = &cexp.swtch; color[0] = black;
+-      before[1] = &oexp.swapins; after[1] = &cexp.swapins; color[1] = green;
+-      before[2] = &oexp.swapouts; after[2] = &cexp.swapouts; color[2] = red;
++      before[1] = &oexp.pgswapin; after[1] = &cexp.pgswapin; color[1] = green;
++      before[2] = &oexp.pgswapout; after[2] = &cexp.pgswapout; color[2] = red;
+       gp_ctx = create_graph(3, "SWITCH/SWAP", names, before, after, color, white);
+     }  
  

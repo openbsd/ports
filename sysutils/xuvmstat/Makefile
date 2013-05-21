@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:41:33 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/05/21 19:38:08 sthen Exp $
 
 COMMENT=	graphical display for the current uvm status
 
 DISTNAME=	xuvmstat20050909
 PKGNAME=	xuvmstat-20050909
-REVISION =	0
+REVISION=	1
 CATEGORIES=     sysutils x11
 
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		X11 c pthread-stubs xcb
+
+WANTLIB=	X11 c
 
 MASTER_SITES=	http://www.netbsd.org/~chuck/gz/
 
