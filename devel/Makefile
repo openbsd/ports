@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1130 2013/05/19 14:54:00 abieber Exp $
+# $OpenBSD: Makefile,v 1.1131 2013/05/21 23:00:57 abieber Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -440,6 +440,7 @@
      SUBDIR += ninja
      SUBDIR += newt
      SUBDIR += node-async
+     SUBDIR += node-bindings
      SUBDIR += node-buffer-writer
      SUBDIR += node-cloned
      SUBDIR += node-expresso
