@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:41:26 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/05/21 23:17:26 abieber Exp $
 
 COMMENT =	bcrypt hashing library for Node.js
 
-NPM_VERSION =	0.6.0
+NPM_VERSION =	0.7.5
 NPM_NAME =	bcrypt
-REVISION =	1
 CATEGORIES =	security
 
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
@@ -17,6 +16,11 @@ PERMIT_PACKAGE_CDROM = Yes
 MODULES =		lang/node
 
 CONFIGURE_STYLE =	npm ext
+
+BUILD_DEPENDS =		${RUN_DEPENDS}
+RUN_DEPENDS =		devel/node-bindings
+
+MODNODE_DEPENDS =	bindings
 
 pre-configure:
 	${SUBST_CMD} ${WRKDIST}/binding.gyp
