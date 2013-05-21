@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2013/05/05 18:50:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2013/05/21 07:50:28 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	lua bindings to libraries using GObject-Introspection
 
 DISTNAME=	lgi-0.7.1
-REVISION=	0
+REVISION=	1
 PKGNAME=	lua-${DISTNAME}
 CATEGORIES=	devel
 
@@ -32,7 +32,9 @@ TEST_TARGET=	check
 TEST_IS_INTERACTIVE=x11
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/lgi/Makefile
+	${SUBST_CMD} ${WRKSRC}/lgi/Makefile \
+		${WRKSRC}/lgi/core.c \
+		${WRKSRC}/lgi/core.lua
 
 post-install:
 	${INSTALL_DATA_DIR} ${MODLUA_EXAMPLEDIR}

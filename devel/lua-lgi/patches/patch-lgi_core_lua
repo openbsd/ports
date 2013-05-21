@@ -1,0 +1,9 @@
+$OpenBSD: patch-lgi_core_lua,v 1.1 2013/05/21 07:50:28 dcoppa Exp $
+--- lgi/core.lua.orig	Mon May 20 14:17:43 2013
++++ lgi/core.lua	Mon May 20 14:18:24 2013
+@@ -11,4 +11,4 @@
+ -- This module decides what kind of core routines should be loaded.
+ -- Currently only one implementation exists, standard-Lua C-side
+ -- implementation, LuaJIT-FFI-based one is planned.
+-return require 'lgi.corelgilua51'
++return require 'lgi.corelgilua${MODLUA_DEP_VERSION}'

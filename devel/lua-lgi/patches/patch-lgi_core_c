@@ -1,0 +1,12 @@
+$OpenBSD: patch-lgi_core_c,v 1.4 2013/05/21 07:50:28 dcoppa Exp $
+--- lgi/core.c.orig	Mon May 20 14:17:38 2013
++++ lgi/core.c	Mon May 20 14:18:14 2013
+@@ -607,7 +607,7 @@ set_resident (lua_State *L)
+ }
+ 
+ int
+-luaopen_lgi_corelgilua51 (lua_State* L)
++luaopen_lgi_corelgilua${MODLUA_DEP_VERSION} (lua_State* L)
+ {
+   LgiStateMutex *mutex;
+ 
