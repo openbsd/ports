@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2013/05/21 07:33:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.53 2013/05/21 12:31:51 jasper Exp $
 
 COMMENT =	3D creation software
 BROKEN-sparc64 = error: cast from 'ccl::uchar*' to 'CUdeviceptr' loses precision
@@ -12,9 +12,6 @@ HOMEPAGE =	http://www.blender.org/
 MAINTAINER =	Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
 VMEM_WARNING =	Yes
-
-# See description of -J in dpb(1)
-DPB_PROPERTIES =nojunk
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
