@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_check-symbols_sh,v 1.1 2013/03/09 15:25:28 ajacoutot Exp $
---- src/check-symbols.sh.orig	Sat Mar  9 16:15:51 2013
-+++ src/check-symbols.sh	Sat Mar  9 16:16:31 2013
+$OpenBSD: patch-src_check-symbols_sh,v 1.2 2013/05/21 16:34:53 ajacoutot Exp $
+--- src/check-symbols.sh.orig	Thu Apr  4 18:06:34 2013
++++ src/check-symbols.sh	Tue May 21 18:30:18 2013
 @@ -19,7 +19,7 @@ $MAKE $defs > /dev/null
  tested=false
  for def in $defs; do
@@ -8,5 +8,5 @@ $OpenBSD: patch-src_check-symbols_sh,v 1.1 2013/03/09 15:25:28 ajacoutot Exp $
 -	so=.libs/lib${lib}.so
 +	so=.libs/lib${lib}.so.${LIBharfbuzz_VERSION}
  
- 	EXPORTED_SYMBOLS="`nm "$so" | grep ' [BCDGINRSTVW] ' | grep -v ' T _fini\>\| T _init\>\| _fdata\>\| _ftext\>\| __bss_start\>\| __bss_start__\>\| __bss_end__\>\| _edata\>\| _end\>\| _bss_end__\>\| __end__\>' | cut -d' ' -f3`"
+ 	EXPORTED_SYMBOLS="`nm "$so" | grep ' [BCDGINRSTVW] ' | grep -v ' _fini\>\| _init\>\| _fdata\>\| _ftext\>\| __bss_start\>\| __bss_start__\>\| __bss_end__\>\| _edata\>\| _end\>\| _bss_end__\>\| __end__\>' | cut -d' ' -f3`"
  
