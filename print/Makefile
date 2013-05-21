@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2013/03/20 21:56:34 landry Exp $
+# $OpenBSD: Makefile,v 1.106 2013/05/21 17:20:51 ajacoutot Exp $
 
     SUBDIR =
     SUBDIR += a2ps
@@ -57,14 +57,12 @@
     SUBDIR += psutils
     SUBDIR += psutils,a4
     SUBDIR += ptouch-driver
-    SUBDIR += py-cups
     SUBDIR += py-poppler
     SUBDIR += py-relatorio
     SUBDIR += py-reportlab
     SUBDIR += qpdf
     SUBDIR += scribus
     SUBDIR += splix
-    SUBDIR += system-config-printer
     SUBDIR += t1utils
     SUBDIR += texlive
     SUBDIR += transfig
