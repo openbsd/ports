@@ -1,4 +1,0 @@
-CUPS configuration GUI.  Configures a CUPS server. It uses the CUPS API
-to do this. The communication with the server is performed using IPP. As
-a result, it is equally able to configure a remote CUPS server as a
-local one.
