@@ -1,6 +1,6 @@
-$OpenBSD: patch-Changelog,v 1.5 2013/05/07 15:34:47 sthen Exp $
---- Changelog.orig	Mon May  6 19:47:17 2013
-+++ Changelog	Tue May  7 16:04:02 2013
+$OpenBSD: patch-Changelog,v 1.6 2013/05/22 21:17:13 sthen Exp $
+--- Changelog.orig	Wed May 22 09:01:16 2013
++++ Changelog	Wed May 22 22:14:33 2013
 @@ -7,11 +7,9 @@ Thanks to all contributers, testers and developers. Pl
  UPGRADE NOTES
  
@@ -13,5 +13,5 @@ $OpenBSD: patch-Changelog,v 1.5 2013/05/07 15:34:47 sthen Exp $
 -* package locations may differ!
 +	- ${TRUEPREFIX}/share/examples/icinga/updates/
  
- 1.9.0 - 07/05/2013
+ 1.9.1 - 22/05/2013
  
