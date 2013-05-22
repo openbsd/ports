@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.4 2013/04/13 22:31:42 fgsch Exp $
+@comment $OpenBSD: PLIST-tests,v 1.5 2013/05/22 12:39:30 fgsch Exp $
 @option no-default-conflict
 @conflict python-tests->=2.7,<2.8
 lib/python2.7/test/
@@ -1512,7 +1512,6 @@ lib/python2.7/test/test_zlib.pyo
 lib/python2.7/test/testall.py
 lib/python2.7/test/testall.pyc
 lib/python2.7/test/testall.pyo
-lib/python2.7/test/testbz2_bigmem.bz2
 lib/python2.7/test/testcodec.py
 lib/python2.7/test/testcodec.pyc
 lib/python2.7/test/testcodec.pyo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2013/04/13 22:31:42 fgsch Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2013/05/22 12:39:30 fgsch Exp $
 @option no-default-conflict
 @conflict python->=2.7,<2.8
 @conflict python-bz2->=2.7,<2.8
@@ -16,6 +16,7 @@ bin/pydoc2.7
 @bin bin/python2.7
 bin/python2.7-2to3
 bin/python2.7-config
+@comment bin/smtpd.py
 include/python2.7/
 include/python2.7/Python-ast.h
 include/python2.7/Python.h
@@ -188,6 +189,9 @@ lib/python2.7/_pyio.pyo
 lib/python2.7/_strptime.py
 lib/python2.7/_strptime.pyc
 lib/python2.7/_strptime.pyo
+lib/python2.7/_sysconfigdata.py
+lib/python2.7/_sysconfigdata.pyc
+lib/python2.7/_sysconfigdata.pyo
 lib/python2.7/_threading_local.py
 lib/python2.7/_threading_local.pyc
 lib/python2.7/_threading_local.pyo
@@ -1346,7 +1350,7 @@ lib/python2.7/keyword.py
 lib/python2.7/keyword.pyc
 lib/python2.7/keyword.pyo
 lib/python2.7/lib-dynload/
-lib/python2.7/lib-dynload/Python-2.7.4-py2.7.egg-info
+lib/python2.7/lib-dynload/Python-2.7.5-py2.7.egg-info
 lib/python2.7/lib-dynload/_bisect.so
 lib/python2.7/lib-dynload/_codecs_cn.so
 lib/python2.7/lib-dynload/_codecs_hk.so
@@ -1408,9 +1412,9 @@ lib/python2.7/lib-dynload/unicodedata.so
 lib/python2.7/lib-dynload/zlib.so
 lib/python2.7/lib2to3/
 lib/python2.7/lib2to3/Grammar.txt
-lib/python2.7/lib2to3/Grammar2.7.4.final.0.pickle
+lib/python2.7/lib2to3/Grammar2.7.5.final.0.pickle
 lib/python2.7/lib2to3/PatternGrammar.txt
-lib/python2.7/lib2to3/PatternGrammar2.7.4.final.0.pickle
+lib/python2.7/lib2to3/PatternGrammar2.7.5.final.0.pickle
 lib/python2.7/lib2to3/__init__.py
 lib/python2.7/lib2to3/__init__.pyc
 lib/python2.7/lib2to3/__init__.pyo

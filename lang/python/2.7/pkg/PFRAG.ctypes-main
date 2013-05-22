@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.ctypes-main,v 1.1.1.1 2011/04/24 09:31:46 rpointel Exp $
+@comment $OpenBSD: PFRAG.ctypes-main,v 1.2 2013/05/22 12:39:30 fgsch Exp $
 lib/python2.7/ctypes/
 lib/python2.7/ctypes/__init__.py
 lib/python2.7/ctypes/__init__.pyc
@@ -182,6 +182,9 @@ lib/python2.7/ctypes/test/test_varsize_struct.pyo
 lib/python2.7/ctypes/test/test_win32.py
 lib/python2.7/ctypes/test/test_win32.pyc
 lib/python2.7/ctypes/test/test_win32.pyo
+lib/python2.7/ctypes/test/test_wintypes.py
+lib/python2.7/ctypes/test/test_wintypes.pyc
+lib/python2.7/ctypes/test/test_wintypes.pyo
 lib/python2.7/ctypes/util.py
 lib/python2.7/ctypes/util.pyc
 lib/python2.7/ctypes/util.pyo
