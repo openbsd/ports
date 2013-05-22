@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2013/05/18 04:13:16 fgsch Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2013/05/22 12:37:05 fgsch Exp $
 @option no-default-conflict
 @conflict python->=3.3,<3.4
 @pkgpath lang/python3/3.3,-main
@@ -651,6 +651,8 @@ lib/python3.3/ctypes/test/__pycache__/test_varsize_struct.cpython-33.pyc
 lib/python3.3/ctypes/test/__pycache__/test_varsize_struct.cpython-33.pyo
 lib/python3.3/ctypes/test/__pycache__/test_win32.cpython-33.pyc
 lib/python3.3/ctypes/test/__pycache__/test_win32.cpython-33.pyo
+lib/python3.3/ctypes/test/__pycache__/test_wintypes.cpython-33.pyc
+lib/python3.3/ctypes/test/__pycache__/test_wintypes.cpython-33.pyo
 lib/python3.3/ctypes/test/runtests.py
 lib/python3.3/ctypes/test/test_anon.py
 lib/python3.3/ctypes/test/test_array_in_pointer.py
@@ -704,6 +706,7 @@ lib/python3.3/ctypes/test/test_unicode.py
 lib/python3.3/ctypes/test/test_values.py
 lib/python3.3/ctypes/test/test_varsize_struct.py
 lib/python3.3/ctypes/test/test_win32.py
+lib/python3.3/ctypes/test/test_wintypes.py
 lib/python3.3/ctypes/util.py
 lib/python3.3/ctypes/wintypes.py
 lib/python3.3/curses/
@@ -1640,9 +1643,9 @@ lib/python3.3/lib-dynload/xxlimited.so
 lib/python3.3/lib-dynload/zlib.so
 lib/python3.3/lib2to3/
 lib/python3.3/lib2to3/Grammar.txt
-lib/python3.3/lib2to3/Grammar3.3.1.final.0.pickle
+lib/python3.3/lib2to3/Grammar3.3.2.final.0.pickle
 lib/python3.3/lib2to3/PatternGrammar.txt
-lib/python3.3/lib2to3/PatternGrammar3.3.1.final.0.pickle
+lib/python3.3/lib2to3/PatternGrammar3.3.2.final.0.pickle
 lib/python3.3/lib2to3/__init__.py
 lib/python3.3/lib2to3/__main__.py
 lib/python3.3/lib2to3/__pycache__/

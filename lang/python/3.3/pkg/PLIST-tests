@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.1.1.1 2013/04/28 01:29:59 fgsch Exp $
+@comment $OpenBSD: PLIST-tests,v 1.2 2013/05/22 12:37:05 fgsch Exp $
 @option no-default-conflict
 @conflict python-tests->=3.3,<3.4
 @pkgpath lang/python3/3.3,-tests
@@ -814,6 +814,8 @@ lib/python3.3/test/__pycache__/test_wsgiref.cpython-33.pyc
 lib/python3.3/test/__pycache__/test_wsgiref.cpython-33.pyo
 lib/python3.3/test/__pycache__/test_xdrlib.cpython-33.pyc
 lib/python3.3/test/__pycache__/test_xdrlib.cpython-33.pyo
+lib/python3.3/test/__pycache__/test_xml_dom_minicompat.cpython-33.pyc
+lib/python3.3/test/__pycache__/test_xml_dom_minicompat.cpython-33.pyo
 lib/python3.3/test/__pycache__/test_xml_etree.cpython-33.pyc
 lib/python3.3/test/__pycache__/test_xml_etree.cpython-33.pyo
 lib/python3.3/test/__pycache__/test_xml_etree_c.cpython-33.pyc
@@ -1862,6 +1864,7 @@ lib/python3.3/test/test_winsound.py
 lib/python3.3/test/test_with.py
 lib/python3.3/test/test_wsgiref.py
 lib/python3.3/test/test_xdrlib.py
+lib/python3.3/test/test_xml_dom_minicompat.py
 lib/python3.3/test/test_xml_etree.py
 lib/python3.3/test/test_xml_etree_c.py
 lib/python3.3/test/test_xmlrpc.py
