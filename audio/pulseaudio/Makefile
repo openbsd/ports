@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2013/04/28 08:18:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2013/05/22 10:31:33 ajacoutot Exp $
 
 # XXX
 # fix autospawn lock (patch-src_daemon_main_c)
@@ -21,7 +21,7 @@ COMMENT=		cross-platform networked sound server
 VERSION=		3.0
 DISTNAME=		pulseaudio-${VERSION}
 EXTRACT_SUFX=		.tar.xz
-REVISION=		3
+REVISION=		4
 
 SHARED_LIBS +=  pulse                2.0      # .15.3
 SHARED_LIBS +=  pulse-simple         0.0      # .0.3
@@ -37,9 +37,9 @@ HOMEPAGE=		http://www.pulseaudio.org/
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 X11-xcb Xext Xi Xtst c crypto execinfo gdbm
-WANTLIB += glib-2.0 json ltdl m pcre pthread sndfile sndio speexdsp
-WANTLIB += ssl xcb FLAC ogg vorbis vorbisenc
+WANTLIB += FLAC ICE SM X11 X11-xcb Xext Xi Xtst c crypto dbus-1
+WANTLIB += execinfo gdbm glib-2.0 json-c ltdl m ogg pcre pthread
+WANTLIB += sndfile sndio speexdsp ssl vorbis vorbisenc xcb
 
 MASTER_SITES=		http://freedesktop.org/software/pulseaudio/releases/
 
@@ -60,7 +60,11 @@ LIB_DEPENDS=		audio/libsndfile \
 			devel/glib2 \
 			devel/json-c \
 			devel/libexecinfo \
-			devel/libtool,-ltdl
+			devel/libtool,-ltdl \
+			x11/dbus
+
+# module-console-kit.so
+RUN_DEPENDS +=		sysutils/consolekit
 
 CONFIGURE_STYLE=	gnu
 
@@ -83,7 +87,6 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-alsa \
 			--disable-asyncns \
 			--disable-bluez \
-			--disable-dbus \
 			--disable-esound \
 			--disable-gtk2 \
 			--disable-jack \

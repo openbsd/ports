@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2013/01/01 14:12:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2013/05/22 10:31:33 ajacoutot Exp $
 @newgroup _pulse:683
 @newgroup _pulse-access:684
 @newuser _pulse:683:683:daemon:PulseAudio System Daemon:/var/run/pulse:/sbin/nologin
@@ -80,6 +80,8 @@ lib/pulse-${VERSION}/modules/module-cli-protocol-unix.so
 lib/pulse-${VERSION}/modules/module-cli.so
 lib/pulse-${VERSION}/modules/module-combine-sink.so
 lib/pulse-${VERSION}/modules/module-combine.so
+lib/pulse-${VERSION}/modules/module-console-kit.so
+lib/pulse-${VERSION}/modules/module-dbus-protocol.so
 lib/pulse-${VERSION}/modules/module-default-device-restore.so
 lib/pulse-${VERSION}/modules/module-detect.so
 lib/pulse-${VERSION}/modules/module-device-manager.so
@@ -107,6 +109,7 @@ lib/pulse-${VERSION}/modules/module-rescue-streams.so
 lib/pulse-${VERSION}/modules/module-role-cork.so
 lib/pulse-${VERSION}/modules/module-rtp-recv.so
 lib/pulse-${VERSION}/modules/module-rtp-send.so
+lib/pulse-${VERSION}/modules/module-rygel-media-server.so
 lib/pulse-${VERSION}/modules/module-simple-protocol-tcp.so
 lib/pulse-${VERSION}/modules/module-simple-protocol-unix.so
 lib/pulse-${VERSION}/modules/module-sine-source.so
@@ -142,6 +145,10 @@ libexec/pulse/
 @man man/man5/pulse-client.conf.5
 @man man/man5/pulse-daemon.conf.5
 share/examples/pulseaudio/
+share/examples/pulseaudio/dbus-1/
+share/examples/pulseaudio/dbus-1/system.d/
+share/examples/pulseaudio/dbus-1/system.d/pulseaudio-system.conf
+@sample ${SYSCONFDIR}/dbus-1/system.d/pulseaudio-system.conf
 share/examples/pulseaudio/pulse/
 @sample ${SYSCONFDIR}/pulse/
 share/examples/pulseaudio/pulse/client.conf

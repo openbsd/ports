@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_daemon_pulseaudio-system_conf,v 1.1 2013/05/22 10:31:33 ajacoutot Exp $
+--- src/daemon/pulseaudio-system.conf.orig	Wed May 22 10:07:52 2013
++++ src/daemon/pulseaudio-system.conf	Wed May 22 10:08:13 2013
+@@ -23,10 +23,10 @@ USA.
+ 
+ <busconfig>
+ 
+-  <!-- System-wide PulseAudio runs as 'pulse' user. This fragment is
++  <!-- System-wide PulseAudio runs as '_pulse' user. This fragment is
+        not necessary for user PulseAudio instances. -->
+ 
+-  <policy user="pulse">
++  <policy user="_pulse">
+     <allow own="org.pulseaudio.Server"/>
+   </policy>
+ 
