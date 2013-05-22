@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:42:42 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/05/22 15:12:01 edd Exp $
 
 COMMENT=		text-to-HTML conversion tool
 
-MODPY_EGG_VERSION=	2.0.3
+MODPY_EGG_VERSION =	2.3.1
 DISTNAME=		Markdown-${MODPY_EGG_VERSION}
 PKGNAME=		markdown-${MODPY_EGG_VERSION}
-REVISION=		1
 CATEGORIES=		textproc
 
-HOMEPAGE=		http://www.freewisdom.org/projects/python-markdown/
+HOMEPAGE =		https://pypi.python.org/pypi/Markdown
 
 MAINTAINER=		Will Maier <wcmaier@openbsd.org>
 
@@ -19,9 +18,5 @@ MODULES=	lang/python
 
 MASTER_SITES=	${MASTER_SITE_PYPI:=M/Markdown/}
 NO_TEST=	Yes
-
-MODPY_ADJ_FILES= markdown/extensions/headerid.py \
-		markdown/extensions/codehilite.py \
-		markdown/extensions/meta.py
 
 .include <bsd.port.mk>
