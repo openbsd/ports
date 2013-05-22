@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.7 2013/04/29 03:10:24 william Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2013/05/22 02:53:09 william Exp $
 
 COMMENT=	robust and small HTTP server and mail proxy server
 
@@ -55,15 +55,23 @@ CONFIGURE_ARGS+=	--prefix=${SYSCONFDIR}/nginx \
 			--with-http_mp4_module \
 			--with-http_flv_module \
 			--with-http_realip_module \
+			--with-http_spdy_module \
 			--with-mail \
 			--with-mail_ssl_module \
 			--with-ipv6
 
 DISTFILES+=		${DISTNAME}${EXTRACT_SUFX}
+LUAV=			0.8.1
 LUADISTFILES+=		simpl-ngx_devel_kit-v0.2.17-0-gbc97eea.tar.gz:0
-LUADISTFILES+=		chaoslawful-lua-nginx-module-v0.6.1-0-ge282c1c.tar.gz:0
+LUADISTFILES+=		lua-nginx-module-${LUAV}.tar.gz:0
 SUBSTFILES=		conf/nginx.conf
 NAXSIDISTFILES +=	naxsi-core-0.49.tgz:1
+
+DISTNAME0=		nginx_upstream_check_module-20130212.tar.gz
+DISTFILES+=		${DISTNAME0}:0
+CONFIGURE_ARGS+=	--add-module=${WRKDIR}/nginx_upstream_check_module-master
+
+NGX_UPSTREAM_CHECK_PATCH= check_1.2.6+.patch
 
 .if ${FLAVOR:Mpassenger}
 CONFIGURE_ARGS+=	--add-module=${LOCALBASE}/lib/phusion-passenger19/ext/nginx
@@ -74,13 +82,13 @@ WANTLIB+=		m pthread stdc++
 
 .if ${FLAVOR:Mlua}
 CONFIGURE_ARGS+=	--add-module=${WRKSRC}/simpl-ngx_devel_kit
-CONFIGURE_ARGS+=	--add-module=${WRKSRC}/chaoslawful-lua-nginx-module
+CONFIGURE_ARGS+=	--add-module=${WRKSRC}/lua-nginx-module
 CONFIGURE_ENV+=		MODLUA_INCL_DIR=${MODLUA_INCL_DIR} \
 			MODLUA_LIB=${MODLUA_LIB}
 MODULES=		lang/lua
 WANTLIB+=		${MODLUA_WANTLIB} m
 PATCH_LIST=		patch-* lua-*
-SUBSTFILES+=		chaoslawful-lua-nginx-module/config
+SUBSTFILES+=		lua-nginx-module/config
 DISTFILES+=		${LUADISTFILES}
 .else
 SUPDISTFILES+=		${LUADISTFILES}
@@ -93,11 +101,13 @@ ALL_TARGET=
 pre-patch:
 	cd ${WRKSRC} && \
 	    mv ../simpl-ngx_devel_kit-* simpl-ngx_devel_kit && \
-	    mv ../chaoslawful-lua-nginx-module-* chaoslawful-lua-nginx-module
+	    mv ../lua-nginx-module-${LUAV} lua-nginx-module
+
 .endif
 
 pre-configure:
 	@cd ${WRKSRC} && ${SUBST_CMD} ${SUBSTFILES}
+	@${PATCH} -d ${WRKSRC} -p1 < ${WRKDIR}/nginx_upstream_check_module-master/${NGX_UPSTREAM_CHECK_PATCH}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/nginx/
