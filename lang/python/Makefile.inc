@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.100 2013/05/18 04:13:16 fgsch Exp $
+# $OpenBSD: Makefile.inc,v 1.101 2013/05/22 12:36:03 fgsch Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -59,22 +59,28 @@ MULTI_PACKAGES=	-main -tests -gdbm -idle -tkinter
 ONLY_FOR_ARCHS-bsddb=	amd64 i386
 .endif
 
+MODULES +=		devel/gettext
+
 # All subpackages depend on the main python package.
 
 RUN_DEPENDS=		${FULLPKGNAME-main}:lang/python/${VERSION},-main
 LIB_DEPENDS=
 
-LIB_DEPENDS-main =	archivers/bzip2
+LIB_DEPENDS-main =	archivers/bzip2 \
+			${MODGETTEXT_LIB_DEPENDS}
 RUN_DEPENDS-main =
-WANTLIB-main =		ssl panelw m crypto c util z readline pthread \
-			ncursesw stdc++ expat ossaudio bz2
-LIB_DEPENDS-main +=	
-WANTLIB-main +=		sqlite3
-
-.if ${VERSION} == "3.3"
+WANTLIB-main =		bz2 c crypto expat m ncursesw panelw pthread \
+			readline sqlite3 ssl stdc++ util z \
+			${MODGETTEXT_WANTLIB}
+.if ${VERSION} < 3.2
+WANTLIB-main +=		ossaudio
+.elif ${VERSION} == "3.3"
 LIB_DEPENDS-main +=	archivers/xz
 WANTLIB-main +=		lzma
 .endif
+
+WANTLIB-tests =
+WANTLIB-tools =
 
 LIB_DEPENDS-bsddb =	lang/python/${VERSION},-main
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
@@ -83,22 +89,25 @@ LIB_DEPENDS-bsddb +=	databases/db/v4,no_tcl,no_java,bootstrap
 .else
 LIB_DEPENDS-bsddb +=	databases/db/v4
 .endif
+WANTLIB-bsddb =		lib/db4/db>=4 pthread python${VERSION}${LIB_SUFX}
 
-WANTLIB-bsddb =		lib/db4/db>=4 python${VERSION}${LIB_SUFX} c pthread
 LIB_DEPENDS-gdbm =	databases/gdbm \
 			lang/python/${VERSION},-main
-WANTLIB-gdbm =		gdbm>=3 python${VERSION}${LIB_SUFX} c pthread
-RUN_DEPENDS-idle =	${RUN_DEPENDS} \
-			lang/python/${VERSION},-tkinter
+WANTLIB-gdbm =		gdbm>=3 pthread python${VERSION}${LIB_SUFX}
+
+RUN_DEPENDS-idle =	lang/python/${VERSION},-tkinter \
+			${RUN_DEPENDS}
+WANTLIB-idle =
+
 MODULES +=		x11/tk
 # Tcl/Tk version needs to be in sync with patch-setup_py's one
 MODTK_VERSION =		8.5
-LIB_DEPENDS-tkinter =	${MODTK_LIB_DEPENDS} \
-			lang/python/${VERSION},-main
-WANTLIB-tkinter =	X11 ${MODTK_WANTLIB} python${VERSION}${LIB_SUFX}
-WANTLIB-tkinter +=	c pthread
+LIB_DEPENDS-tkinter =	lang/python/${VERSION},-main \
+			${MODTK_LIB_DEPENDS}
+WANTLIB-tkinter =	X11 pthread python${VERSION}${LIB_SUFX} \
+			${MODTK_WANTLIB}
 
-.if ${VERSION} < 3.2
+.if ${VERSION} == "2.5"
 .if ${PROPERTIES:Mlp64}
 PKG_ARGS+=	-Dmm=0
 .else
