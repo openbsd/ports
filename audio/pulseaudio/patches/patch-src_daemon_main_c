@@ -1,8 +1,6 @@
-$OpenBSD: patch-src_daemon_main_c,v 1.6 2013/05/22 10:31:33 ajacoutot Exp $
+$OpenBSD: patch-src_daemon_main_c,v 1.7 2013/05/22 18:45:23 ajacoutot Exp $
 
 XXX deadlock?
-(when this is fixed, check that x11/gnome/gdm still needs to install
-/var/db/gdm/.pulse)
 
 --- src/daemon/main.c.orig	Thu Jul 19 13:29:38 2012
 +++ src/daemon/main.c	Fri Nov 30 11:50:26 2012
