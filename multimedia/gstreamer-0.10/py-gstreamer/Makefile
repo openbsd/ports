@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 11:35:43 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/05/22 07:18:01 ajacoutot Exp $
 
 COMMENT=		Python bindings for GStreamer
 
 V=			0.10.22
 DISTNAME=		gst-python-${V}
 PKGNAME=		py-gstreamer-${V}
-REVISION=		2
+REVISION=		3
 
 HOMEPAGE=		http://gstreamer.freedesktop.org/modules/gst-python.html
 
@@ -30,8 +30,7 @@ LIB_DEPENDS=		${P}/plugins-base
 TEST_DEPENDS=	${P}/plugins-good
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--disable-gcov \
-			--disable-shave
+CONFIGURE_ARGS=		--disable-shave
 
 post-install:
 	@cd ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/ && \
