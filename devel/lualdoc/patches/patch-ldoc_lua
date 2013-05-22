@@ -1,0 +1,9 @@
+$OpenBSD: patch-ldoc_lua,v 1.1.1.1 2013/05/22 10:56:31 dcoppa Exp $
+--- ldoc.lua.orig	Mon May 20 11:29:59 2013
++++ ldoc.lua	Mon May 20 11:30:09 2013
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env lua
++#!${MODLUA_BIN}
+ ---------------
+ -- ## ldoc, a Lua documentation generator.
+ --

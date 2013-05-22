@@ -1,0 +1,9 @@
+LDoc is a second-generation documentation tool that can be used as
+a replacement for LuaDoc.
+
+LDoc can provide integrated documentation with traditional function
+comments, any documents in Markdown format, and specified source
+examples. Lua source in examples and the documents will be prettified.
+
+It is mostly compatible with LuaDoc, except that certain workarounds
+are no longer needed.
