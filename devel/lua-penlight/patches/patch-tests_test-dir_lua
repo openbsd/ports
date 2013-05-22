@@ -1,0 +1,15 @@
+$OpenBSD: patch-tests_test-dir_lua,v 1.1.1.1 2013/05/22 10:52:26 dcoppa Exp $
+--- tests/test-dir.lua.orig	Mon May 20 11:06:18 2013
++++ tests/test-dir.lua	Mon May 20 11:06:39 2013
+@@ -8,9 +8,9 @@ local pretty = require( "pl.pretty" )
+ 
+ local normpath = path.normpath
+ 
+-local expected = {normpath "../docs/config.ld"}
++local expected = {normpath "../doc/config.ld"}
+ 
+-local files = dir.getallfiles( normpath "../docs/", "*.ld" )
++local files = dir.getallfiles( normpath "../doc/", "*.ld" )
+ 
+ asserteq( files, expected )
+ 
