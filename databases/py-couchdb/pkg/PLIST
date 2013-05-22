@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/09/22 18:53:47 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/05/22 10:05:15 fgsch Exp $
 @conflict py-CouchDB-*
 bin/couchdb-dump
 bin/couchdb-load
@@ -29,6 +29,8 @@ lib/python${MODPY_VERSION}/site-packages/couchdb/multipart.pyc
 lib/python${MODPY_VERSION}/site-packages/couchdb/tests/
 lib/python${MODPY_VERSION}/site-packages/couchdb/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/couchdb/tests/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/couchdb/tests/__main__.py
+lib/python${MODPY_VERSION}/site-packages/couchdb/tests/__main__.pyc
 lib/python${MODPY_VERSION}/site-packages/couchdb/tests/client.py
 lib/python${MODPY_VERSION}/site-packages/couchdb/tests/client.pyc
 lib/python${MODPY_VERSION}/site-packages/couchdb/tests/couch_tests.py
@@ -45,6 +47,8 @@ lib/python${MODPY_VERSION}/site-packages/couchdb/tests/package.py
 lib/python${MODPY_VERSION}/site-packages/couchdb/tests/package.pyc
 lib/python${MODPY_VERSION}/site-packages/couchdb/tests/testutil.py
 lib/python${MODPY_VERSION}/site-packages/couchdb/tests/testutil.pyc
+lib/python${MODPY_VERSION}/site-packages/couchdb/tests/tools.py
+lib/python${MODPY_VERSION}/site-packages/couchdb/tests/tools.pyc
 lib/python${MODPY_VERSION}/site-packages/couchdb/tests/view.py
 lib/python${MODPY_VERSION}/site-packages/couchdb/tests/view.pyc
 lib/python${MODPY_VERSION}/site-packages/couchdb/tools/
@@ -58,8 +62,41 @@ lib/python${MODPY_VERSION}/site-packages/couchdb/tools/replicate.py
 lib/python${MODPY_VERSION}/site-packages/couchdb/tools/replicate.pyc
 lib/python${MODPY_VERSION}/site-packages/couchdb/view.py
 lib/python${MODPY_VERSION}/site-packages/couchdb/view.pyc
-share/examples/py-couchdb/
-share/examples/py-couchdb/python.ini
+share/doc/${MODPY_PY_PREFIX}couchdb/
+share/doc/${MODPY_PY_PREFIX}couchdb/_static/
+share/doc/${MODPY_PY_PREFIX}couchdb/_static/ajax-loader.gif
+share/doc/${MODPY_PY_PREFIX}couchdb/_static/basic.css
+share/doc/${MODPY_PY_PREFIX}couchdb/_static/comment-bright.png
+share/doc/${MODPY_PY_PREFIX}couchdb/_static/comment-close.png
+share/doc/${MODPY_PY_PREFIX}couchdb/_static/comment.png
+share/doc/${MODPY_PY_PREFIX}couchdb/_static/default.css
+share/doc/${MODPY_PY_PREFIX}couchdb/_static/doctools.js
+share/doc/${MODPY_PY_PREFIX}couchdb/_static/down-pressed.png
+share/doc/${MODPY_PY_PREFIX}couchdb/_static/down.png
+share/doc/${MODPY_PY_PREFIX}couchdb/_static/file.png
+share/doc/${MODPY_PY_PREFIX}couchdb/_static/jquery.js
+share/doc/${MODPY_PY_PREFIX}couchdb/_static/minus.png
+share/doc/${MODPY_PY_PREFIX}couchdb/_static/plus.png
+share/doc/${MODPY_PY_PREFIX}couchdb/_static/pygments.css
+share/doc/${MODPY_PY_PREFIX}couchdb/_static/searchtools.js
+share/doc/${MODPY_PY_PREFIX}couchdb/_static/sidebar.js
+share/doc/${MODPY_PY_PREFIX}couchdb/_static/underscore.js
+share/doc/${MODPY_PY_PREFIX}couchdb/_static/up-pressed.png
+share/doc/${MODPY_PY_PREFIX}couchdb/_static/up.png
+share/doc/${MODPY_PY_PREFIX}couchdb/_static/websupport.js
+share/doc/${MODPY_PY_PREFIX}couchdb/changes.html
+share/doc/${MODPY_PY_PREFIX}couchdb/client.html
+share/doc/${MODPY_PY_PREFIX}couchdb/genindex.html
+share/doc/${MODPY_PY_PREFIX}couchdb/getting-started.html
+share/doc/${MODPY_PY_PREFIX}couchdb/index.html
+share/doc/${MODPY_PY_PREFIX}couchdb/mapping.html
+share/doc/${MODPY_PY_PREFIX}couchdb/objects.inv
+share/doc/${MODPY_PY_PREFIX}couchdb/py-modindex.html
+share/doc/${MODPY_PY_PREFIX}couchdb/search.html
+share/doc/${MODPY_PY_PREFIX}couchdb/searchindex.js
+share/doc/${MODPY_PY_PREFIX}couchdb/views.html
+share/examples/${MODPY_PY_PREFIX}couchdb/
+share/examples/${MODPY_PY_PREFIX}couchdb/python.ini
 @sample ${SYSCONFDIR}/couchdb/
 @sample ${SYSCONFDIR}/couchdb/local.d/
 @sample ${SYSCONFDIR}/couchdb/local.d/python.ini
