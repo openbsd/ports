@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/03/27 15:19:14 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/05/22 13:07:13 gonzalo Exp $
 @bin bin/smplayer
 @man man/man1/smplayer.1
 share/applications/smplayer.desktop
@@ -7,6 +7,7 @@ share/doc/smplayer/
 share/doc/smplayer/Changelog
 share/doc/smplayer/Copying.txt
 share/doc/smplayer/Copying_BSD.txt
+share/doc/smplayer/Copying_libmaia.txt
 share/doc/smplayer/Finding_subtitles.txt
 share/doc/smplayer/Install.txt
 share/doc/smplayer/Not_so_obvious_things.txt
@@ -89,6 +90,7 @@ share/smplayer/translations/smplayer_ko.qm
 share/smplayer/translations/smplayer_ku.qm
 share/smplayer/translations/smplayer_lt.qm
 share/smplayer/translations/smplayer_mk.qm
+share/smplayer/translations/smplayer_ms_MY.qm
 share/smplayer/translations/smplayer_nl.qm
 share/smplayer/translations/smplayer_pl.qm
 share/smplayer/translations/smplayer_pt.qm
