@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 10:50:11 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/05/22 15:08:43 dcoppa Exp $
 
 PKG_ARCH =      *
 
 COMMENT=	documentation generation tool for Lua
 
 DISTNAME=	luadoc-3.0.1
-REVISION=	3
+REVISION=	4
 CATEGORIES=	devel
 
 HOMEPAGE=	http://luadoc.luaforge.net/
@@ -32,7 +32,8 @@ pre-configure:
 	perl -pi -e 's,/usr/bin/env lua,${MODLUA_BIN},g' ${WRKSRC}/src/luadoc.lua.in
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/src/luadoc.lua.in ${PREFIX}/bin/luadoc
+	${INSTALL_SCRIPT} ${WRKSRC}/src/luadoc.lua.in \
+		${PREFIX}/bin/luadoc${MODLUA_DEP_VERSION}
 	${INSTALL_DATA_DIR} ${MODLUA_DOCDIR}
 	${INSTALL_DATA_DIR} ${DOCLET_DIR} ${TAGLET_DIR}
 	${INSTALL_DATA_DIR} ${HTML_DIR} ${STANDARD_DIR}
