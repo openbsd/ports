@@ -1,9 +1,6 @@
-$OpenBSD: patch-dfeet_bus_watch_py,v 1.1 2013/01/11 16:47:28 ajacoutot Exp $
-
-OpenBSD does not use /proc
-
---- dfeet/bus_watch.py.orig	Sun Nov 11 09:59:45 2012
-+++ dfeet/bus_watch.py	Fri Jan 11 17:42:45 2013
+$OpenBSD: patch-src_dfeet_bus_watch_py,v 1.1 2013/05/22 19:14:05 ajacoutot Exp $
+--- src/dfeet/bus_watch.py.orig	Wed May 15 06:29:45 2013
++++ src/dfeet/bus_watch.py	Wed May 22 20:53:46 2013
 @@ -1,6 +1,7 @@
  # -*- coding: utf-8 -*-
  from __future__ import print_function
@@ -11,7 +8,7 @@ OpenBSD does not use /proc
 +import subprocess
  from gi.repository import GObject, Gtk, Gio
  
- from dfeet._ui.uiloader import UILoader
+ from dfeet.uiloader import UILoader
 @@ -20,9 +21,7 @@ class DBusBusName(GObject.GObject):
  
      def __update_cmdline(self):
