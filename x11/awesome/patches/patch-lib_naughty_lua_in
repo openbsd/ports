@@ -1,21 +1,14 @@
-$OpenBSD: patch-lib_naughty_lua_in,v 1.5 2012/12/31 17:41:44 dcoppa Exp $
---- lib/naughty.lua.in.orig	Mon Dec 24 15:36:05 2012
-+++ lib/naughty.lua.in	Mon Dec 31 17:05:35 2012
-@@ -30,7 +30,7 @@ module("naughty")
- -- @field padding Space between popups and edge of the workarea. Default: 4
- -- @field spacing Spacing between popups. Default: 1
- -- @field icon_dirs List of directories that will be checked by getIcon()
+$OpenBSD: patch-lib_naughty_lua_in,v 1.6 2013/05/22 15:05:50 dcoppa Exp $
+--- lib/naughty.lua.in.orig	Mon May 20 13:49:52 2013
++++ lib/naughty.lua.in	Mon May 20 13:50:20 2013
+@@ -38,8 +38,8 @@ naughty.config.padding = 4
+ --- Spacing between popups. Default: 1
+ naughty.config.spacing = 1
+ --- List of directories that will be checked by getIcon()
 ---   Default: { "/usr/share/pixmaps/", }
+-naughty.config.icon_dirs = { "/usr/share/pixmaps/", }
 +--   Default: { "${LOCALBASE}/share/pixmaps/", }
- -- @field icon_formats List of formats that will be checked by getIcon()
++naughty.config.icon_dirs = { "${LOCALBASE}/share/pixmaps/", }
+ --- List of formats that will be checked by getIcon()
  --   Default: { "png", "gif" }
- -- @field default_preset Preset to be used by default.
-@@ -47,7 +47,7 @@ module("naughty")
- config = {}
- config.padding = 4
- config.spacing = 1
--config.icon_dirs = { "/usr/share/pixmaps/", }
-+config.icon_dirs = { "${LOCALBASE}/share/pixmaps/", }
- config.icon_formats = { "png", "gif" }
- config.notify_callback = nil
- 
+ naughty.config.icon_formats = { "png", "gif" }

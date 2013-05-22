@@ -1,14 +1,14 @@
-$OpenBSD: patch-awesomeConfig_cmake,v 1.10 2012/12/31 19:21:45 dcoppa Exp $
---- awesomeConfig.cmake.orig	Mon Dec 24 15:36:05 2012
-+++ awesomeConfig.cmake	Mon Dec 31 19:57:06 2012
+$OpenBSD: patch-awesomeConfig_cmake,v 1.11 2013/05/22 15:05:50 dcoppa Exp $
+--- awesomeConfig.cmake.orig	Mon May 20 13:19:31 2013
++++ awesomeConfig.cmake	Mon May 20 13:27:36 2013
 @@ -16,12 +16,11 @@ option(COMPRESS_MANPAGES "compress manpages" ON)
- option(GENERATE_LUADOC "generate luadoc" ON)
+ option(GENERATE_DOC "generate API documentation" ON)
  
  # {{{ CFLAGS
--add_definitions(-std=gnu99 -ggdb3 -fno-strict-aliasing -Wall -Wextra
+-add_definitions(-O1 -std=gnu99 -ggdb3 -rdynamic -fno-strict-aliasing -Wall -Wextra
 -    -Wchar-subscripts -Wundef -Wshadow -Wcast-align -Wwrite-strings
 -    -Wsign-compare -Wunused -Wno-unused-parameter -Wuninitialized -Winit-self
--    -Wpointer-arith -Wredundant-decls -Wformat-nonliteral
+-    -Wpointer-arith -Wformat-nonliteral
 -    -Wno-format-zero-length -Wmissing-format-attribute -Wmissing-prototypes
 -    -Wstrict-prototypes)
 +add_definitions(-std=gnu99 -fgnu89-inline -fno-strict-aliasing
@@ -19,15 +19,16 @@ $OpenBSD: patch-awesomeConfig_cmake,v 1.10 2012/12/31 19:21:45 dcoppa Exp $
  # }}}
  
  # {{{ Endianness
-@@ -54,7 +53,6 @@ a_find_program(ASCIIDOC_EXECUTABLE asciidoc FALSE)
+@@ -53,16 +52,15 @@ a_find_program(ASCIIDOC_EXECUTABLE asciidoc FALSE)
  a_find_program(XMLTO_EXECUTABLE xmlto FALSE)
  a_find_program(GZIP_EXECUTABLE gzip FALSE)
  # lua documentation
 -a_find_program(LUA_EXECUTABLE lua FALSE)
- a_find_program(LUADOC_EXECUTABLE luadoc FALSE)
+-a_find_program(LDOC_EXECUTABLE ldoc.lua FALSE)
++a_find_program(LDOC_EXECUTABLE ldoc${MODLUA_DEP_VERSION} FALSE)
  # theme graphics
  a_find_program(CONVERT_EXECUTABLE convert TRUE)
-@@ -62,8 +60,8 @@ a_find_program(CONVERT_EXECUTABLE convert TRUE)
+ # doxygen
  include(FindDoxygen)
  # pkg-config
  include(FindPkgConfig)
@@ -38,7 +39,7 @@ $OpenBSD: patch-awesomeConfig_cmake,v 1.10 2012/12/31 19:21:45 dcoppa Exp $
  # }}}
  
  # {{{ Check if documentation can be build
-@@ -141,9 +139,10 @@ pkg_check_modules(AWESOME_REQUIRED REQUIRED
+@@ -139,9 +137,10 @@ pkg_check_modules(AWESOME_REQUIRED REQUIRED
      xcb-xtest
      xcb-xinerama
      xcb-shape
@@ -51,7 +52,7 @@ $OpenBSD: patch-awesomeConfig_cmake,v 1.10 2012/12/31 19:21:45 dcoppa Exp $
      xcb-image>=0.3.0
      cairo-xcb
      libstartup-notification-1.0>=0.10
-@@ -194,7 +193,7 @@ else()
+@@ -188,7 +187,7 @@ else()
  endif()
  
  # Error check
@@ -60,7 +61,7 @@ $OpenBSD: patch-awesomeConfig_cmake,v 1.10 2012/12/31 19:21:45 dcoppa Exp $
      message(FATAL_ERROR "lua library not found")
  endif()
  
-@@ -263,7 +262,7 @@ endif()
+@@ -256,7 +255,7 @@ endif()
  if(DEFINED AWESOME_MAN_PATH)
     set(AWESOME_MAN_PATH ${AWESOME_MAN_PATH} CACHE PATH "awesome manpage directory")
  else()

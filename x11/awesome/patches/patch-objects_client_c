@@ -1,19 +1,19 @@
-$OpenBSD: patch-client_c,v 1.4 2012/07/17 11:32:00 dcoppa Exp $
+$OpenBSD: patch-objects_client_c,v 1.1 2013/05/22 15:05:50 dcoppa Exp $
 
 Revert to the old xcb-util-0.3.6 API
 
---- client.c.orig	Sun Jul 15 12:12:21 2012
-+++ client.c	Tue Jul 17 13:16:29 2012
-@@ -52,7 +52,7 @@ luaA_client_gc(lua_State *L)
-     client_t *c = luaA_checkudata(L, 1, &client_class);
-     button_array_wipe(&c->buttons);
+--- objects/client.c.orig	Mon May 20 13:35:44 2013
++++ objects/client.c	Mon May 20 13:37:04 2013
+@@ -46,7 +46,7 @@ static void
+ client_wipe(client_t *c)
+ {
      key_array_wipe(&c->keys);
 -    xcb_icccm_get_wm_protocols_reply_wipe(&c->protocols);
 +    xcb_get_wm_protocols_reply_wipe(&c->protocols);
      p_delete(&c->machine);
      p_delete(&c->class);
      p_delete(&c->instance);
-@@ -94,21 +94,21 @@ client_set_urgent(lua_State *L, int cidx, bool urgent)
+@@ -71,20 +71,20 @@ client_set_urgent(lua_State *L, int cidx, bool urgent)
      if(c->urgent != urgent)
      {
          xcb_get_property_cookie_t hints =
@@ -21,7 +21,6 @@ Revert to the old xcb-util-0.3.6 API
 +            xcb_get_wm_hints_unchecked(globalconf.connection, c->window);
  
          c->urgent = urgent;
-         ewmh_client_update_hints(c);
  
          /* update ICCCM hints */
 -        xcb_icccm_wm_hints_t wmh;
@@ -39,21 +38,21 @@ Revert to the old xcb-util-0.3.6 API
 -        xcb_icccm_set_wm_hints(globalconf.connection, c->window, &wmh);
 +        xcb_set_wm_hints(globalconf.connection, c->window, &wmh);
  
-         hook_property(c, "urgent");
          luaA_object_emit_signal(L, cidx, "property::urgent", 0);
-@@ -720,7 +720,7 @@ HANDLE_GEOM(height)
+     }
+@@ -561,7 +561,7 @@ HANDLE_GEOM(height)
       *
       * At this stage it's just safer to keep it in normal state and avoid confusion.
       */
--    window_state_set(c->window, XCB_ICCCM_WM_STATE_NORMAL);
-+    window_state_set(c->window, XCB_WM_STATE_NORMAL);
+-    xwindow_set_state(c->window, XCB_ICCCM_WM_STATE_NORMAL);
++    xwindow_set_state(c->window, XCB_WM_STATE_NORMAL);
  
      if(!startup)
      {
-@@ -766,14 +766,14 @@ client_geometry_hints(client_t *c, area_t geometry)
-     int32_t real_basew = 0, real_baseh = 0;
+@@ -633,26 +633,26 @@ client_apply_size_hints(client_t *c, area_t geometry)
+     /* Size hints are applied to the window without any decoration */
+     client_remove_titlebar_geometry(c, &geometry);
  
-     /* base size is substituted with min size if not specified */
 -    if(c->size_hints.flags & XCB_ICCCM_SIZE_HINT_P_SIZE)
 +    if(c->size_hints.flags & XCB_SIZE_HINT_P_SIZE)
      {
@@ -65,12 +64,11 @@ Revert to the old xcb-util-0.3.6 API
 -    else if(c->size_hints.flags & XCB_ICCCM_SIZE_HINT_P_MIN_SIZE)
 +    else if(c->size_hints.flags & XCB_SIZE_HINT_P_MIN_SIZE)
      {
+         /* base size is substituted with min size if not specified */
          basew = c->size_hints.min_width;
          baseh = c->size_hints.min_height;
-@@ -782,12 +782,12 @@ client_geometry_hints(client_t *c, area_t geometry)
-         basew = baseh = 0;
+     }
  
-     /* min size is substituted with base size if not specified */
 -    if(c->size_hints.flags & XCB_ICCCM_SIZE_HINT_P_MIN_SIZE)
 +    if(c->size_hints.flags & XCB_SIZE_HINT_P_MIN_SIZE)
      {
@@ -80,57 +78,57 @@ Revert to the old xcb-util-0.3.6 API
 -    else if(c->size_hints.flags & XCB_ICCCM_SIZE_HINT_P_SIZE)
 +    else if(c->size_hints.flags & XCB_SIZE_HINT_P_SIZE)
      {
+         /* min size is substituted with base size if not specified */
          minw = c->size_hints.base_width;
-         minh = c->size_hints.base_height;
-@@ -795,7 +795,7 @@ client_geometry_hints(client_t *c, area_t geometry)
-     else
-         minw = minh = 0;
+@@ -660,7 +660,7 @@ client_apply_size_hints(client_t *c, area_t geometry)
+     }
  
+     /* Handle the size aspect ratio */
 -    if(c->size_hints.flags & XCB_ICCCM_SIZE_HINT_P_ASPECT
 +    if(c->size_hints.flags & XCB_SIZE_HINT_P_ASPECT
-        && c->size_hints.min_aspect_den > 0
-        && c->size_hints.max_aspect_den > 0
-        && geometry.height - real_baseh > 0
-@@ -837,7 +837,7 @@ client_geometry_hints(client_t *c, area_t geometry)
-     if(minh)
-         geometry.height = MAX(geometry.height, minh);
+             && c->size_hints.min_aspect_den > 0
+             && c->size_hints.max_aspect_den > 0
+             && geometry.height > real_baseh
+@@ -701,7 +701,7 @@ client_apply_size_hints(client_t *c, area_t geometry)
+     geometry.height = MAX(geometry.height, minh);
  
+     /* Handle the maximum size */
 -    if(c->size_hints.flags & XCB_ICCCM_SIZE_HINT_P_MAX_SIZE)
 +    if(c->size_hints.flags & XCB_SIZE_HINT_P_MAX_SIZE)
      {
          if(c->size_hints.max_width)
              geometry.width = MIN(geometry.width, c->size_hints.max_width);
-@@ -845,7 +845,7 @@ client_geometry_hints(client_t *c, area_t geometry)
-             geometry.height = MIN(geometry.height, c->size_hints.max_height);
+@@ -710,7 +710,7 @@ client_apply_size_hints(client_t *c, area_t geometry)
      }
  
+     /* Handle the size increment */
 -    if(c->size_hints.flags & (XCB_ICCCM_SIZE_HINT_P_RESIZE_INC | XCB_ICCCM_SIZE_HINT_BASE_SIZE)
 +    if(c->size_hints.flags & (XCB_SIZE_HINT_P_RESIZE_INC | XCB_SIZE_HINT_BASE_SIZE)
         && c->size_hints.width_inc && c->size_hints.height_inc)
      {
          uint16_t t1 = geometry.width, t2 = geometry.height;
-@@ -968,9 +968,9 @@ client_set_minimized(lua_State *L, int cidx, bool s)
+@@ -892,9 +892,9 @@ client_set_minimized(lua_State *L, int cidx, bool s)
          c->minimized = s;
-         banning_need_update((c)->screen);
+         banning_need_update();
          if(s)
--            window_state_set(c->window, XCB_ICCCM_WM_STATE_ICONIC);
-+            window_state_set(c->window, XCB_WM_STATE_ICONIC);
+-            xwindow_set_state(c->window, XCB_ICCCM_WM_STATE_ICONIC);
++            xwindow_set_state(c->window, XCB_WM_STATE_ICONIC);
          else
--            window_state_set(c->window, XCB_ICCCM_WM_STATE_NORMAL);
-+            window_state_set(c->window, XCB_WM_STATE_NORMAL);
-         ewmh_client_update_hints(c);
+-            xwindow_set_state(c->window, XCB_ICCCM_WM_STATE_NORMAL);
++            xwindow_set_state(c->window, XCB_WM_STATE_NORMAL);
          if(strut_has_value(&c->strut))
              screen_emit_signal(globalconf.L, c->screen, "property::workarea", 0);
-@@ -1332,7 +1332,7 @@ client_unmanage(client_t *c)
+         luaA_object_emit_signal(L, cidx, "property::minimized", 0);
+@@ -1197,7 +1197,7 @@ client_unmanage(client_t *c, bool window_valid)
  
-     /* Do this last to avoid races with clients. According to ICCCM, clients
-      * arent allowed to re-use the window until after this. */
--    window_state_set(c->window, XCB_ICCCM_WM_STATE_WITHDRAWN);
-+    window_state_set(c->window, XCB_WM_STATE_WITHDRAWN);
+         /* Do this last to avoid races with clients. According to ICCCM, clients
+          * arent allowed to re-use the window until after this. */
+-        xwindow_set_state(c->window, XCB_ICCCM_WM_STATE_WITHDRAWN);
++        xwindow_set_state(c->window, XCB_WM_STATE_WITHDRAWN);
+     }
  
      /* set client as invalid */
-     c->invalid = true;
-@@ -2051,9 +2051,9 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
+@@ -1861,9 +1861,9 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
  
      lua_createtable(L, 0, 1);
  
@@ -142,7 +140,7 @@ Revert to the old xcb-util-0.3.6 API
          u_or_p = "program_position";
  
      if(u_or_p)
-@@ -2067,9 +2067,9 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
+@@ -1877,9 +1877,9 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
          u_or_p = NULL;
      }
  
@@ -154,7 +152,7 @@ Revert to the old xcb-util-0.3.6 API
          u_or_p = "program_size";
  
      if(u_or_p)
-@@ -2082,7 +2082,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
+@@ -1892,7 +1892,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
          lua_setfield(L, -2, u_or_p);
      }
  
@@ -163,7 +161,7 @@ Revert to the old xcb-util-0.3.6 API
      {
          lua_pushnumber(L, c->size_hints.min_width);
          lua_setfield(L, -2, "min_width");
-@@ -2090,7 +2090,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
+@@ -1900,7 +1900,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
          lua_setfield(L, -2, "min_height");
      }
  
@@ -172,7 +170,7 @@ Revert to the old xcb-util-0.3.6 API
      {
          lua_pushnumber(L, c->size_hints.max_width);
          lua_setfield(L, -2, "max_width");
-@@ -2098,7 +2098,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
+@@ -1908,7 +1908,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
          lua_setfield(L, -2, "max_height");
      }
  
@@ -181,7 +179,7 @@ Revert to the old xcb-util-0.3.6 API
      {
          lua_pushnumber(L, c->size_hints.width_inc);
          lua_setfield(L, -2, "width_inc");
-@@ -2106,7 +2106,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
+@@ -1916,7 +1916,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
          lua_setfield(L, -2, "height_inc");
      }
  
@@ -190,7 +188,7 @@ Revert to the old xcb-util-0.3.6 API
      {
          lua_pushnumber(L, c->size_hints.min_aspect_num);
          lua_setfield(L, -2, "min_aspect_num");
-@@ -2118,7 +2118,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
+@@ -1928,7 +1928,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
          lua_setfield(L, -2, "max_aspect_den");
      }
  
@@ -199,7 +197,7 @@ Revert to the old xcb-util-0.3.6 API
      {
          lua_pushnumber(L, c->size_hints.base_width);
          lua_setfield(L, -2, "base_width");
-@@ -2126,7 +2126,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
+@@ -1936,7 +1936,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
          lua_setfield(L, -2, "base_height");
      }
  

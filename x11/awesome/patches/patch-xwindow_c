@@ -1,11 +1,11 @@
-$OpenBSD: patch-window_c,v 1.1 2011/11/30 11:50:58 dcoppa Exp $
+$OpenBSD: patch-xwindow_c,v 1.1 2013/05/22 15:05:50 dcoppa Exp $
 
 Revert to the old xcb-util-0.3.6 API
 
---- window.c.orig	Wed Nov 23 15:08:50 2011
-+++ window.c	Wed Nov 30 11:01:53 2011
-@@ -60,7 +60,7 @@ uint32_t
- window_state_get_reply(xcb_get_property_cookie_t cookie)
+--- xwindow.c.orig	Mon May 20 13:59:54 2013
++++ xwindow.c	Mon May 20 14:00:27 2013
+@@ -62,7 +62,7 @@ uint32_t
+ xwindow_get_state_reply(xcb_get_property_cookie_t cookie)
  {
      /* If no property is set, we just assume a sane default. */
 -    uint32_t result = XCB_ICCCM_WM_STATE_NORMAL;

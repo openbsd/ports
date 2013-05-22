@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.14 2012/12/31 17:41:44 dcoppa Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.15 2013/05/22 15:05:50 dcoppa Exp $
 
 These auto-generated (db2man.xsl) manpages contain a mixture of ISO
 latin-1 characters and numerical HTML entities that neither mandoc
@@ -6,17 +6,19 @@ nor groff can fully understand: do not install them.
 
 Fix usage of -export-dynamic
 
---- CMakeLists.txt.orig	Mon Dec 24 15:36:05 2012
-+++ CMakeLists.txt	Mon Dec 31 12:34:14 2012
-@@ -88,17 +88,16 @@ set(AWE_MAN_SRCS
-     ${SOURCE_DIR}/manpages/awsetbg.1.txt
+--- CMakeLists.txt.orig	Mon Apr  1 13:44:46 2013
++++ CMakeLists.txt	Tue May 21 07:33:13 2013
+@@ -79,7 +79,6 @@ set(AWE_MAN_SRCS
+     ${SOURCE_DIR}/manpages/awesome.1.txt
      ${SOURCE_DIR}/manpages/awesome-client.1.txt
      ${SOURCE_DIR}/manpages/awesomerc.5.txt)
 -set(AWE_MAN_LANGS it es fr de ru)
  
+ # Don't strip RPATH if compiling on Solaris
+ if (${CMAKE_SYSTEM_NAME} MATCHES "SunOS")
+@@ -91,11 +90,11 @@ endif()
  add_executable(${PROJECT_AWE_NAME}
-     ${AWE_SRCS}
-     ${BUILD_DIR}/common/tokenize.c)
+     ${AWE_SRCS})
  
 -# FreeBSD requires dynamic linking
 -if(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
@@ -29,7 +31,18 @@ Fix usage of -export-dynamic
  endif()
  
  target_link_libraries(${PROJECT_AWE_NAME}
-@@ -175,68 +174,45 @@ if(GENERATE_MANPAGES)
+@@ -103,10 +102,6 @@ target_link_libraries(${PROJECT_AWE_NAME}
+     ${AWESOME_REQUIRED_LDFLAGS}
+     ${AWESOME_OPTIONAL_LDFLAGS})
+ 
+-# check for lgi and the needed gobject introspection files
+-add_custom_target(lgi-check ALL
+-    COMMAND ${SOURCE_DIR}/build-utils/lgi-check.sh)
+-
+ # atoms
+ file(MAKE_DIRECTORY ${BUILD_DIR}/common)
+ add_custom_command(
+@@ -155,68 +150,45 @@ if(GENERATE_MANPAGES)
      if(NOT BUILD_DIR STREQUAL SOURCE_DIR)
          file(MAKE_DIRECTORY ${BUILD_DIR}/manpages)
      endif()
@@ -131,7 +144,7 @@ Fix usage of -export-dynamic
      endforeach()
  
      add_custom_target(man ALL DEPENDS ${MAN_FILES})
-@@ -334,13 +310,8 @@ install(DIRECTORY ${BUILD_DIR}/lib DESTINATION ${AWESO
+@@ -304,13 +276,8 @@ install(DIRECTORY ${BUILD_DIR}/lib DESTINATION ${AWESO
  install(FILES ${AWE_CONF_FILE_DEFAULT} DESTINATION ${AWESOME_SYSCONFDIR}
          RENAME ${AWE_CONF_FILE})
  if(GENERATE_MANPAGES)

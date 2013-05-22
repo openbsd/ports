@@ -1,3 +1,6 @@
-Before running awesome, you'll need to create a configuration file.
-Copy the provided ${PREFIX}/share/examples/awesome/rc.lua to 
+Before running awesome, a configuration file needs to be created.
+Copy the provided ${PREFIX}/share/examples/awesome/rc.lua to
 ~/.config/awesome/rc.lua and modify as necessary.
+
+To migrate a custom rc.lua from version 3.4.x to version 3.5.x, see
+http://awesome.naquadah.org/wiki/Awesome_3.4_to_3.5

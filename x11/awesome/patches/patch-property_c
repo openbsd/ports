@@ -1,74 +1,70 @@
-$OpenBSD: patch-property_c,v 1.1 2011/11/30 11:50:58 dcoppa Exp $
+$OpenBSD: patch-property_c,v 1.2 2013/05/22 15:05:50 dcoppa Exp $
 
 Revert to the old xcb-util-0.3.6 API
 
---- property.c.orig	Wed Nov 30 11:25:32 2011
-+++ property.c	Wed Nov 30 11:28:37 2011
-@@ -105,13 +105,13 @@ property_update_wm_transient_for(client_t *c, xcb_get_
- 
-     if(reply)
-     {
--        if(!xcb_icccm_get_wm_transient_for_from_reply(&trans, reply))
-+        if(!xcb_get_wm_transient_for_from_reply(&trans, reply))
-             return;
-     }
-     else
-     {
--        if(!xcb_icccm_get_wm_transient_for_reply(globalconf.connection,
--                                            xcb_icccm_get_wm_transient_for_unchecked(globalconf.connection,
-+        if(!xcb_get_wm_transient_for_reply(globalconf.connection,
-+                                            xcb_get_wm_transient_for_unchecked(globalconf.connection,
-                                                                                      c->window),
-                                             &trans, NULL))
-             return;
-@@ -160,13 +160,13 @@ property_update_wm_normal_hints(client_t *c, xcb_get_p
+--- property.c.orig	Mon May 20 13:43:41 2013
++++ property.c	Mon May 20 13:44:03 2013
+@@ -98,7 +98,7 @@ HANDLE_PROPERTY(net_wm_pid)
+ xcb_get_property_cookie_t
+ property_get_wm_transient_for(client_t *c)
  {
-     if(reply)
-     {
--        if(!xcb_icccm_get_wm_size_hints_from_reply(&c->size_hints, reply))
-+        if(!xcb_get_wm_size_hints_from_reply(&c->size_hints, reply))
-             return;
-     }
-     else
-     {
--        if(!xcb_icccm_get_wm_normal_hints_reply(globalconf.connection,
--                                                xcb_icccm_get_wm_normal_hints_unchecked(globalconf.connection,
-+        if(!xcb_get_wm_normal_hints_reply(globalconf.connection,
-+                                                xcb_get_wm_normal_hints_unchecked(globalconf.connection,
-                                                                                         c->window),
-                                                 &c->size_hints, NULL))
-             return;
-@@ -180,31 +180,31 @@ property_update_wm_normal_hints(client_t *c, xcb_get_p
+-    return xcb_icccm_get_wm_transient_for_unchecked(globalconf.connection, c->window);
++    return xcb_get_wm_transient_for_unchecked(globalconf.connection, c->window);
+ }
+ 
  void
- property_update_wm_hints(client_t *c, xcb_get_property_reply_t *reply)
+@@ -106,7 +106,7 @@ property_update_wm_transient_for(client_t *c, xcb_get_
+ {
+     xcb_window_t trans;
+ 
+-    if(!xcb_icccm_get_wm_transient_for_reply(globalconf.connection,
++    if(!xcb_get_wm_transient_for_reply(globalconf.connection,
+ 					     cookie,
+ 					     &trans, NULL))
+             return;
+@@ -146,7 +146,7 @@ property_update_wm_client_leader(client_t *c, xcb_get_
+ xcb_get_property_cookie_t
+ property_get_wm_normal_hints(client_t *c)
+ {
+-    return xcb_icccm_get_wm_normal_hints_unchecked(globalconf.connection, c->window);
++    return xcb_get_wm_normal_hints_unchecked(globalconf.connection, c->window);
+ }
+ 
+ /** Update the size hints of a client.
+@@ -156,7 +156,7 @@ property_get_wm_normal_hints(client_t *c)
+ void
+ property_update_wm_normal_hints(client_t *c, xcb_get_property_cookie_t cookie)
+ {
+-    xcb_icccm_get_wm_normal_hints_reply(globalconf.connection,
++    xcb_get_wm_normal_hints_reply(globalconf.connection,
+ 					cookie,
+ 					&c->size_hints, NULL);
+ }
+@@ -164,7 +164,7 @@ property_update_wm_normal_hints(client_t *c, xcb_get_p
+ xcb_get_property_cookie_t
+ property_get_wm_hints(client_t *c)
+ {
+-    return xcb_icccm_get_wm_hints_unchecked(globalconf.connection, c->window);
++    return xcb_get_wm_hints_unchecked(globalconf.connection, c->window);
+ }
+ 
+ /** Update the WM hints of a client.
+@@ -174,20 +174,20 @@ property_get_wm_hints(client_t *c)
+ void
+ property_update_wm_hints(client_t *c, xcb_get_property_cookie_t cookie)
  {
 -    xcb_icccm_wm_hints_t wmh;
 +    xcb_wm_hints_t wmh;
  
-     if(reply)
-     {
--        if(!xcb_icccm_get_wm_hints_from_reply(&wmh, reply))
-+        if(!xcb_get_wm_hints_from_reply(&wmh, reply))
-             return;
-     }
-     else
-     {
--        if(!xcb_icccm_get_wm_hints_reply(globalconf.connection,
--                                         xcb_icccm_get_wm_hints_unchecked(globalconf.connection, c->window),
-+        if(!xcb_get_wm_hints_reply(globalconf.connection,
-+                                         xcb_get_wm_hints_unchecked(globalconf.connection, c->window),
-                                          &wmh, NULL))
-             return;
-     }
+-    if(!xcb_icccm_get_wm_hints_reply(globalconf.connection,
++    if(!xcb_get_wm_hints_reply(globalconf.connection,
+ 				     cookie,
+ 				     &wmh, NULL))
+         return;
  
      luaA_object_push(globalconf.L, c);
 -    client_set_urgent(globalconf.L, -1, xcb_icccm_wm_hints_get_urgency(&wmh));
--    if(wmh.flags & XCB_ICCCM_WM_HINT_STATE &&
--       wmh.initial_state == XCB_ICCCM_WM_STATE_WITHDRAWN)
 +    client_set_urgent(globalconf.L, -1, xcb_wm_hints_get_urgency(&wmh));
-+    if(wmh.flags & XCB_WM_HINT_STATE &&
-+       wmh.initial_state == XCB_WM_STATE_WITHDRAWN)
-         client_set_border_width(globalconf.L, -1, 0);
  
 -    if(wmh.flags & XCB_ICCCM_WM_HINT_INPUT)
 +    if(wmh.flags & XCB_WM_HINT_INPUT)
@@ -79,66 +75,58 @@ Revert to the old xcb-util-0.3.6 API
          client_set_group_window(globalconf.L, -1, wmh.window_group);
  
      lua_pop(globalconf.L, 1);
-@@ -217,17 +217,17 @@ property_update_wm_hints(client_t *c, xcb_get_property
+@@ -196,7 +196,7 @@ property_update_wm_hints(client_t *c, xcb_get_property
+ xcb_get_property_cookie_t
+ property_get_wm_class(client_t *c)
+ {
+-    return xcb_icccm_get_wm_class_unchecked(globalconf.connection, c->window);
++    return xcb_get_wm_class_unchecked(globalconf.connection, c->window);
+ }
+ 
+ /** Update WM_CLASS of a client.
+@@ -206,9 +206,9 @@ property_get_wm_class(client_t *c)
  void
- property_update_wm_class(client_t *c, xcb_get_property_reply_t *reply)
+ property_update_wm_class(client_t *c, xcb_get_property_cookie_t cookie)
  {
 -    xcb_icccm_get_wm_class_reply_t hint;
 +    xcb_get_wm_class_reply_t hint;
  
-     if(reply)
-     {
--        if(!xcb_icccm_get_wm_class_from_reply(&hint, reply))
-+        if(!xcb_get_wm_class_from_reply(&hint, reply))
-             return;
-     }
-     else
-     {
--        if(!xcb_icccm_get_wm_class_reply(globalconf.connection,
--                                         xcb_icccm_get_wm_class_unchecked(globalconf.connection, c->window),
-+        if(!xcb_get_wm_class_reply(globalconf.connection,
-+                                         xcb_get_wm_class_unchecked(globalconf.connection, c->window),
-                                          &hint, NULL))
-             return;
-     }
-@@ -238,7 +238,7 @@ property_update_wm_class(client_t *c, xcb_get_property
+-    if(!xcb_icccm_get_wm_class_reply(globalconf.connection,
++    if(!xcb_get_wm_class_reply(globalconf.connection,
+ 				     cookie,
+ 				     &hint, NULL))
+         return;
+@@ -217,7 +217,7 @@ property_update_wm_class(client_t *c, xcb_get_property
+     client_set_class_instance(globalconf.L, -1, hint.class_name, hint.instance_name);
+     lua_pop(globalconf.L, 1);
  
-     /* only delete reply if we get it ourselves */
-     if(!reply)
--        xcb_icccm_get_wm_class_reply_wipe(&hint);
-+        xcb_get_wm_class_reply_wipe(&hint);
+-    xcb_icccm_get_wm_class_reply_wipe(&hint);
++    xcb_get_wm_class_reply_wipe(&hint);
  }
  
  static int
-@@ -308,14 +308,14 @@ property_update_net_wm_pid(client_t *c,
+@@ -280,7 +280,7 @@ property_update_net_wm_pid(client_t *c, xcb_get_proper
+ xcb_get_property_cookie_t
+ property_get_wm_protocols(client_t *c)
+ {
+-    return xcb_icccm_get_wm_protocols_unchecked(globalconf.connection,
++    return xcb_get_wm_protocols_unchecked(globalconf.connection,
+ 						c->window, WM_PROTOCOLS);
+ }
+ 
+@@ -291,15 +291,15 @@ property_get_wm_protocols(client_t *c)
  void
- property_update_wm_protocols(client_t *c, xcb_get_property_reply_t *reply)
+ property_update_wm_protocols(client_t *c, xcb_get_property_cookie_t cookie)
  {
 -    xcb_icccm_get_wm_protocols_reply_t protocols;
 +    xcb_get_wm_protocols_reply_t protocols;
-     xcb_get_property_reply_t *reply_copy;
  
-     if(reply)
-     {
-         reply_copy = p_dup(reply, 1);
- 
--        if(!xcb_icccm_get_wm_protocols_from_reply(reply_copy, &protocols))
-+        if(!xcb_get_wm_protocols_from_reply(reply_copy, &protocols))
-         {
-             p_delete(&reply_copy);
-             return;
-@@ -324,14 +324,14 @@ property_update_wm_protocols(client_t *c, xcb_get_prop
-     else
-     {
-         /* If this fails for any reason, we still got the old value */
--        if(!xcb_icccm_get_wm_protocols_reply(globalconf.connection,
--                                             xcb_icccm_get_wm_protocols_unchecked(globalconf.connection,
-+        if(!xcb_get_wm_protocols_reply(globalconf.connection,
-+                                             xcb_get_wm_protocols_unchecked(globalconf.connection,
-                                                                                   c->window, WM_PROTOCOLS),
-                                              &protocols, NULL))
-             return;
-     }
+     /* If this fails for any reason, we still got the old value */
+-    if(!xcb_icccm_get_wm_protocols_reply(globalconf.connection,
++    if(!xcb_get_wm_protocols_reply(globalconf.connection,
+ 					 cookie,
+ 					 &protocols, NULL))
+         return;
  
 -    xcb_icccm_get_wm_protocols_reply_wipe(&c->protocols);
 +    xcb_get_wm_protocols_reply_wipe(&c->protocols);

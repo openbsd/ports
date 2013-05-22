@@ -1,9 +1,9 @@
-$OpenBSD: patch-selection_c,v 1.1 2011/11/30 11:50:58 dcoppa Exp $
+$OpenBSD: patch-selection_c,v 1.2 2013/05/22 15:05:50 dcoppa Exp $
 
 Revert to the old xcb-util-0.3.6 API
 
---- selection.c.orig	Wed Nov 30 11:29:06 2011
-+++ selection.c	Wed Nov 30 11:29:18 2011
+--- selection.c.orig	Mon May 20 13:45:32 2013
++++ selection.c	Mon May 20 13:45:55 2013
 @@ -86,18 +86,18 @@ luaA_selection_get(lua_State *L)
          if(event_notify->selection == XCB_ATOM_PRIMARY
             && event_notify->property != XCB_NONE)
@@ -13,13 +13,13 @@ Revert to the old xcb-util-0.3.6 API
              xcb_get_property_cookie_t cookie =
 -                xcb_icccm_get_text_property(globalconf.connection,
 +                xcb_get_text_property(globalconf.connection,
-                                             event_notify->requestor,
-                                             event_notify->property);
+ 					    event_notify->requestor,
+ 					    event_notify->property);
  
 -            if(xcb_icccm_get_text_property_reply(globalconf.connection,
 +            if(xcb_get_text_property_reply(globalconf.connection,
-                                                  cookie, &prop, NULL))
-             {
+ 						 cookie, &prop, NULL))
+ 	      {
                  lua_pushlstring(L, prop.name, prop.name_len);
  
 -                xcb_icccm_get_text_property_reply_wipe(&prop);

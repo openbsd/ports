@@ -1,15 +1,15 @@
-$OpenBSD: patch-awesome_c,v 1.4 2012/12/31 17:41:44 dcoppa Exp $
+$OpenBSD: patch-awesome_c,v 1.5 2013/05/22 15:05:50 dcoppa Exp $
 
 Revert to the old xcb-util-0.3.6 API
 
---- awesome.c.orig	Mon Dec 24 15:36:05 2012
-+++ awesome.c	Mon Dec 31 11:54:55 2012
-@@ -139,7 +139,7 @@ scan(xcb_query_tree_cookie_t tree_c[])
+--- awesome.c.orig	Mon May 20 13:31:32 2013
++++ awesome.c	Mon May 20 13:31:52 2013
+@@ -136,7 +136,7 @@ scan(xcb_query_tree_cookie_t tree_c)
  
-             if(!attr_r || attr_r->override_redirect
-                || attr_r->map_state == XCB_MAP_STATE_UNMAPPED
--               || state == XCB_ICCCM_WM_STATE_WITHDRAWN)
-+               || state == XCB_WM_STATE_WITHDRAWN)
-             {
-                 geom_wins[i] = NULL;
-                 p_delete(&attr_r);
+         if(!attr_r || attr_r->override_redirect
+            || attr_r->map_state == XCB_MAP_STATE_UNMAPPED
+-           || state == XCB_ICCCM_WM_STATE_WITHDRAWN)
++           || state == XCB_WM_STATE_WITHDRAWN)
+         {
+             geom_wins[i] = NULL;
+             p_delete(&attr_r);

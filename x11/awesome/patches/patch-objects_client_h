@@ -1,19 +1,19 @@
-$OpenBSD: patch-client_h,v 1.2 2012/07/17 11:32:00 dcoppa Exp $
+$OpenBSD: patch-objects_client_h,v 1.1 2013/05/22 15:05:50 dcoppa Exp $
 
 Revert to the old xcb-util-0.3.6 API
 
---- client.h.orig	Sun Jul 15 12:12:21 2012
-+++ client.h	Tue Jul 17 13:16:29 2012
-@@ -123,7 +123,7 @@ struct client_t
+--- objects/client.h.orig	Mon May 20 13:38:07 2013
++++ objects/client.h	Mon May 20 13:38:31 2013
+@@ -99,7 +99,7 @@ struct client_t
      /** Window holding command needed to start it (session management related) */
      xcb_window_t leader_window;
      /** Client's WM_PROTOCOLS property */
 -    xcb_icccm_get_wm_protocols_reply_t protocols;
 +    xcb_get_wm_protocols_reply_t protocols;
-     /** Client logical screen */
-     screen_t *screen;
-     /** Client physical screen */
-@@ -247,8 +247,8 @@ client_raise(client_t *c)
+     /** Key bindings */
+     key_array_t keys;
+     /** Icon */
+@@ -214,8 +214,8 @@ client_raise(client_t *c)
  static inline bool
  client_isfixed(client_t *c)
  {

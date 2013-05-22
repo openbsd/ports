@@ -1,16 +1,18 @@
-$OpenBSD: patch-lib_awful_util_lua_in,v 1.5 2012/02/18 11:24:44 dcoppa Exp $
---- lib/awful/util.lua.in.orig	Wed Nov 23 15:08:50 2011
-+++ lib/awful/util.lua.in	Sat Feb 18 12:18:53 2012
-@@ -179,10 +179,10 @@ end
+$OpenBSD: patch-lib_awful_util_lua_in,v 1.6 2013/05/22 15:05:50 dcoppa Exp $
+--- lib/awful/util.lua.in.orig	Mon May 20 13:49:04 2013
++++ lib/awful/util.lua.in	Mon May 20 13:49:32 2013
+@@ -181,12 +181,12 @@ end
  -- It searches for the icon path under the directories given w/the right ext
  -- @param iconname The name of the icon to search for.
  -- @param exts Table of image extensions allowed, otherwise { 'png', gif' }
 --- @param dirs Table of dirs to search, otherwise { '/usr/share/pixmaps/' }
 +-- @param dirs Table of dirs to search, otherwise { '${LOCALBASE}/share/pixmaps/' }
- function geticonpath(iconname, exts, dirs)
+ -- @param size Optional size. If this is specified, subdirectories <size>x<size>
+ --             of the dirs are searched first
+ function util.geticonpath(iconname, exts, dirs, size)
      exts = exts or { 'png', 'gif' }
 -    dirs = dirs or { '/usr/share/pixmaps/' }
 +    dirs = dirs or { '${LOCALBASE}/share/pixmaps/' }
      for _, d in pairs(dirs) do
          for _, e in pairs(exts) do
-             local icon = d .. iconname .. '.' .. e
+             local icon
