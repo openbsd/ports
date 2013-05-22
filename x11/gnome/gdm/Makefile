@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.160 2013/05/22 10:08:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.161 2013/05/22 10:12:05 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -35,7 +35,7 @@ MODULES=		devel/gettext \
 BUILD_DEPENDS=		devel/check
 
 # cyclic dependency, see pkg/DESCR
-# bring _all_ runtime dependencies (including sysutils/consolekit and zenity)
+# bring _all_ runtime dependencies (including consolekit and zenity)
 #RUN_DEPENDS +=		x11/gnome/session
 
 # orca-autostart.desktop
