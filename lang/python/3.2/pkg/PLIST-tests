@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.5 2013/04/28 00:55:26 fgsch Exp $
+@comment $OpenBSD: PLIST-tests,v 1.6 2013/05/22 12:38:18 fgsch Exp $
 @option no-default-conflict
 @conflict python-tests->=3.2,<3.3
 @pkgpath lang/python3/3.2,-tests
@@ -1528,7 +1528,6 @@ lib/python3.2/test/test_zipfile64.py
 lib/python3.2/test/test_zipimport.py
 lib/python3.2/test/test_zipimport_support.py
 lib/python3.2/test/test_zlib.py
-lib/python3.2/test/testbz2_bigmem.bz2
 lib/python3.2/test/testcodec.py
 lib/python3.2/test/testtar.tar
 lib/python3.2/test/tf_inherit_check.py

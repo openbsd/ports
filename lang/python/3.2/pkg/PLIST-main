@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2013/04/28 00:55:26 fgsch Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2013/05/22 12:38:18 fgsch Exp $
 @option no-default-conflict
 @conflict python->=3.2,<3.3
 @pkgpath lang/python3/3.2,-main
@@ -1732,7 +1732,7 @@ lib/python3.2/json/scanner.py
 lib/python3.2/json/tool.py
 lib/python3.2/keyword.py
 lib/python3.2/lib-dynload/
-lib/python3.2/lib-dynload/Python-3.2.4-py3.2.egg-info
+lib/python3.2/lib-dynload/Python-3.2.5-py3.2.egg-info
 lib/python3.2/lib-dynload/_bisect.so
 lib/python3.2/lib-dynload/_codecs_cn.so
 lib/python3.2/lib-dynload/_codecs_hk.so
@@ -1787,9 +1787,9 @@ lib/python3.2/lib-dynload/xxlimited.so
 lib/python3.2/lib-dynload/zlib.so
 lib/python3.2/lib2to3/
 lib/python3.2/lib2to3/Grammar.txt
-lib/python3.2/lib2to3/Grammar3.2.4.final.0.pickle
+lib/python3.2/lib2to3/Grammar3.2.5.final.0.pickle
 lib/python3.2/lib2to3/PatternGrammar.txt
-lib/python3.2/lib2to3/PatternGrammar3.2.4.final.0.pickle
+lib/python3.2/lib2to3/PatternGrammar3.2.5.final.0.pickle
 lib/python3.2/lib2to3/__init__.py
 lib/python3.2/lib2to3/__pycache__/
 lib/python3.2/lib2to3/__pycache__/__init__.cpython-32.pyc
