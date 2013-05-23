@@ -1,10 +1,20 @@
-$OpenBSD: patch-avahi-compat-libdns_sd_warn_c,v 1.3 2013/05/09 15:17:32 ajacoutot Exp $
+$OpenBSD: patch-avahi-compat-libdns_sd_warn_c,v 1.4 2013/05/23 13:40:38 ajacoutot Exp $
 
 Stop polluting syslog(3).
 
 --- avahi-compat-libdns_sd/warn.c.orig	Thu Aug 26 02:51:38 2010
-+++ avahi-compat-libdns_sd/warn.c	Thu May  9 17:16:59 2013
-@@ -110,11 +110,13 @@ void avahi_warn_linkage(void) {
++++ avahi-compat-libdns_sd/warn.c	Thu May 23 15:27:58 2013
+@@ -75,6 +75,9 @@ const char *avahi_exe_name(void) {
+     pthread_mutex_unlock(&mutex);
+ 
+     return exe_name;
++#elif defined(__OpenBSD__)
++    extern const char* __progname;
++    return __progname;
+ #else
+ #ifdef __GNUC__
+ #warning "avahi_exe_name() needs to be implemented for your operating system"
+@@ -110,11 +113,13 @@ void avahi_warn_linkage(void) {
      linkage_warning = 1;
      pthread_mutex_unlock(&linkage_mutex);
  
