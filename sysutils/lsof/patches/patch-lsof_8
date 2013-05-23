@@ -1,7 +1,7 @@
-$OpenBSD: patch-lsof_8,v 1.5 2012/03/15 21:36:44 sthen Exp $
---- lsof.8.orig	Sun Jul  3 18:30:18 2011
-+++ lsof.8	Sun Jul  3 18:30:45 2011
-@@ -799,7 +799,8 @@ where:
+$OpenBSD: patch-lsof_8,v 1.6 2013/05/23 15:08:36 dcoppa Exp $
+--- lsof.8.orig	Wed Jan  2 18:52:04 2013
++++ lsof.8	Tue May 21 18:26:15 2013
+@@ -848,7 +848,8 @@ where:
  		applies to all IP versions.
  .br
  	\fIprotocol\fP is a protocol name \- \fBTCP\fP, \fBUDP\fP
