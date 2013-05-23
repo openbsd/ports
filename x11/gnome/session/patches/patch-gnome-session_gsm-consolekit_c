@@ -1,9 +1,9 @@
-$OpenBSD: patch-gnome-session_gsm-consolekit_c,v 1.10 2013/05/23 14:32:59 ajacoutot Exp $
+$OpenBSD: patch-gnome-session_gsm-consolekit_c,v 1.11 2013/05/23 15:23:16 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=700727
 
 --- gnome-session/gsm-consolekit.c.orig	Thu Mar 14 02:41:03 2013
-+++ gnome-session/gsm-consolekit.c	Thu May 23 16:13:48 2013
++++ gnome-session/gsm-consolekit.c	Thu May 23 17:02:26 2013
 @@ -39,7 +39,6 @@
  
  #define CK_NAME      "org.freedesktop.ConsoleKit"
@@ -106,35 +106,25 @@ https://bugzilla.gnome.org/show_bug.cgi?id=700727
                                               G_CALLBACK (on_active_changed), manager, NULL);
          }
  
-@@ -291,11 +323,27 @@ gsm_consolekit_ensure_ck_connection (GsmConsolekit  *m
+@@ -291,11 +323,17 @@ gsm_consolekit_ensure_ck_connection (GsmConsolekit  *m
                                  g_object_unref (manager->priv->ck_proxy);
                                  manager->priv->ck_proxy = NULL;
                          }
 +
-+                        if (manager->priv->session_proxy != NULL) {
-+                                g_clear_object (&manager->priv->session_proxy);
-+                        }
-+
-+                        if (manager->priv->session_id != NULL) {
-+                                g_clear_object (&manager->priv->session_id);
-+                        }
++                        g_clear_object (&manager->priv->session_proxy);
++                        g_clear_object (&manager->priv->session_id);
                  } else if (manager->priv->bus_proxy == NULL) {
                          if (manager->priv->ck_proxy != NULL) {
                                  g_object_unref (manager->priv->ck_proxy);
                                  manager->priv->ck_proxy = NULL;
                          }
 +
-+                        if (manager->priv->session_proxy != NULL) {
-+                                g_clear_object (&manager->priv->session_proxy);
-+                        }
-+
-+                        if (manager->priv->session_id != NULL) {
-+                                g_clear_object (&manager->priv->session_id);
-+                        }
++                        g_clear_object (&manager->priv->session_proxy);
++                        g_clear_object (&manager->priv->session_id);
                  }
          }
  
-@@ -314,6 +362,7 @@ gsm_consolekit_on_name_owner_changed (DBusGProxy    *b
+@@ -314,6 +352,7 @@ gsm_consolekit_on_name_owner_changed (DBusGProxy    *b
          }
  
          g_clear_object (&manager->priv->ck_proxy);
@@ -142,7 +132,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=700727
  
          gsm_consolekit_ensure_ck_connection (manager, NULL);
  
-@@ -340,6 +389,8 @@ gsm_consolekit_free_dbus (GsmConsolekit *manager)
+@@ -340,6 +379,8 @@ gsm_consolekit_free_dbus (GsmConsolekit *manager)
  {
          g_clear_object (&manager->priv->bus_proxy);
          g_clear_object (&manager->priv->ck_proxy);
