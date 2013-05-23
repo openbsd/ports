@@ -1,4 +1,4 @@
-/* $OpenBSD: module-sndio.c,v 1.5 2013/05/22 18:45:23 ajacoutot Exp $ */
+/* $OpenBSD: module-sndio.c,v 1.6 2013/05/23 06:50:26 ajacoutot Exp $ */
 /*
  * Copyright (c) 2012 Eric Faurot <eric@openbsd.org>
  *
@@ -502,7 +502,7 @@ int
 pa__init(pa_module *m)
 {
 	pa_modargs		*ma = NULL;
-	pa_bool_t		 record = TRUE, playback = TRUE;
+	pa_bool_t		 record = FALSE, playback = TRUE;
 	pa_sample_spec		 ss;
 	pa_channel_map		 map;
 	pa_sink_new_data	 sink;
