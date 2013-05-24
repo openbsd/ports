@@ -1,13 +1,10 @@
-$OpenBSD: patch-src_gui_c,v 1.34 2013/05/24 08:31:37 dcoppa Exp $
+$OpenBSD: patch-src_gui_c,v 1.35 2013/05/24 13:34:11 dcoppa Exp $
 
 Make fullscreen work under tiling window managers
 (upstream svn revision r2428)
 
 Fix problem with remembered softvol not being loaded
 (upstream svn revision r2424)
-
-Allow "Default Volume" (alsa disabled) to be changed
-(upstream svn revision r2433)
 
 Make --volume work with and without softvol enabled
 (upstream svn revision r2426)
@@ -17,6 +14,9 @@ Set initial volume in gmtk_media_player when passed on command line
 
 Fix problem with screenshot being done twice
 (upstream svn revision r2430)
+
+Allow "Default Volume" (alsa disabled) to be changed
+(upstream svn revision r2433)
 
 --- src/gui.c.orig	Thu Feb 28 18:07:49 2013
 +++ src/gui.c	Fri May 24 09:24:24 2013

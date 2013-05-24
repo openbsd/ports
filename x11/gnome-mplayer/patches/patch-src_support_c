@@ -1,0 +1,65 @@
+$OpenBSD: patch-src_support_c,v 1.12 2013/05/24 13:34:11 dcoppa Exp $
+
+Unbreak cover art support
+
+--- src/support.c.orig	Mon Feb 18 15:58:47 2013
++++ src/support.c	Fri May 24 14:01:14 2013
+@@ -2558,8 +2558,6 @@ gpointer get_cover_art(gpointer data)
+     gchar *test_file = NULL;
+     gchar *cache_file = NULL;
+     gboolean found_cached = FALSE;
+-    const gchar *artist = NULL;
+-    const gchar *album = NULL;
+     CURLcode result;
+     FILE *art;
+     gpointer pixbuf = NULL;
+@@ -2581,9 +2579,6 @@ gpointer get_cover_art(gpointer data)
+     gm_log_name_this_thread("gca");
+     gm_log(verbose, G_LOG_LEVEL_DEBUG, "get_cover_art(%s)", metadata->uri);
+ 
+-    artist = gmtk_media_player_get_attribute_string(GMTK_MEDIA_PLAYER(media), ATTRIBUTE_ARTIST);
+-    album = gmtk_media_player_get_attribute_string(GMTK_MEDIA_PLAYER(media), ATTRIBUTE_ALBUM);
+-
+     if (metadata->uri != NULL) {
+         md5 = g_compute_checksum_for_string(G_CHECKSUM_MD5, metadata->uri, -1);
+         thumbnail = g_strdup_printf("%s/.thumbnails/normal/%s.png", g_get_home_dir(), md5);
+@@ -2680,8 +2675,8 @@ gpointer get_cover_art(gpointer data)
+         }
+     }
+ 
+-    if (artist != NULL && album != NULL) {
+-        path = g_strdup_printf("%s/gnome-mplayer/cover_art/%s/%s.jpeg", g_get_user_cache_dir(), artist, album);
++    if (metadata->artist != NULL && metadata->album != NULL) {
++        path = g_strdup_printf("%s/gnome-mplayer/cover_art/%s/%s.jpeg", g_get_user_cache_dir(), metadata->artist, metadata->album);
+         if (g_file_test(path, G_FILE_TEST_EXISTS)) {
+             if (cache_file != NULL) {
+                 g_free(cache_file);
+@@ -2693,22 +2688,22 @@ gpointer get_cover_art(gpointer data)
+         g_free(path);
+     }
+ 
+-    if (!found_cached && !disable_cover_art_fetch && artist != NULL) {
+-        url = get_cover_art_url((gchar *) artist, NULL, (gchar *) album);
++    if (!found_cached && !disable_cover_art_fetch && metadata->artist != NULL) {
++        url = get_cover_art_url((gchar *) metadata->artist, NULL, (gchar *) metadata->album);
+ 
+         gm_log(verbose, G_LOG_LEVEL_INFO, "getting cover art from %s", url);
+ 
+         if (url != NULL) {
+-            path = g_strdup_printf("%s/gnome-mplayer/cover_art/%s", g_get_user_cache_dir(), artist);
++            path = g_strdup_printf("%s/gnome-mplayer/cover_art/%s", g_get_user_cache_dir(), metadata->artist);
+ 
+             if (!g_file_test(path, G_FILE_TEST_IS_DIR)) {
+                 g_mkdir_with_parents(path, 0775);
+             }
+             g_free(path);
+-            if (album == NULL) {
+-                path = g_strdup_printf("%s/gnome-mplayer/cover_art/%s/Unknown.jpeg", g_get_user_cache_dir(), artist);
++            if (metadata->album == NULL) {
++                path = g_strdup_printf("%s/gnome-mplayer/cover_art/%s/Unknown.jpeg", g_get_user_cache_dir(), metadata->artist);
+             } else {
+-                path = g_strdup_printf("%s/gnome-mplayer/cover_art/%s/%s.jpeg", g_get_user_cache_dir(), artist, album);
++                path = g_strdup_printf("%s/gnome-mplayer/cover_art/%s/%s.jpeg", g_get_user_cache_dir(), metadata->artist, metadata->album);
+             }
+             gm_log(verbose, G_LOG_LEVEL_INFO, "storing cover art to %s", path);
+ 
