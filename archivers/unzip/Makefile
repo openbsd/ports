@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.44 2013/03/10 22:28:05 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2013/05/24 18:58:40 edd Exp $
 
 COMMENT=	extract, list & test files in a ZIP archive
 
 VERSION=	6.0
 DISTNAME=	unzip${VERSION:S/.//}
 PKGNAME=	unzip-${VERSION}
-REVISION=	0
+REVISION =	1
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=infozip/} \
 		http://mirror.switch.ch/ftp/mirror/infozip/src/ \
 		ftp://ftp.info-zip.org/pub/infozip/src/
 
-HOMEPAGE=	http://www.ctan.org/tex-archive/tools/zip/info-zip/UnZip.html
+HOMEPAGE =	http://www.info-zip.org/UnZip.html
 
 # Conditional
 PERMIT_PACKAGE_CDROM=	Yes
