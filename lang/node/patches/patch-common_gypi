@@ -1,17 +1,17 @@
-$OpenBSD: patch-common_gypi,v 1.3 2012/12/05 00:40:28 abieber Exp $
---- common.gypi.orig	Thu Sep 27 10:39:23 2012
-+++ common.gypi	Tue Oct  9 13:01:32 2012
-@@ -161,9 +161,12 @@
+$OpenBSD: patch-common_gypi,v 1.4 2013/05/24 13:43:41 abieber Exp $
+--- common.gypi.orig	Fri May 17 14:59:10 2013
++++ common.gypi	Sun May 19 10:51:55 2013
+@@ -160,9 +160,12 @@
          ],
        }],
        [ 'OS=="linux" or OS=="freebsd" or OS=="openbsd" or OS=="solaris"', {
--        'cflags': [ '-Wall', '-pthread', ],
-+        'cflags': [ '-Wall', '-pthread', '-I${LOCALBASE}/include'],
+-        'cflags': [ '-Wall', '-Wextra', '-Wno-unused-parameter', '-pthread', ],
++        'cflags': [ '-Wall', '-Wextra', '-Wno-unused-parameter', '-pthread', '-I${LOCALBASE}/include'],
          'cflags_cc': [ '-fno-rtti', '-fno-exceptions' ],
          'ldflags': [ '-pthread', '-rdynamic' ],
-+        'libraries': [
-+          '-L${LOCALBASE}/lib'
-+        ],
-         'conditions': [
-           [ 'target_arch=="ia32"', {
-             'cflags': [ '-m32' ],
++	'libraries': [
++	  '-L${LOCALBASE}/lib'
++	],
+         'target_conditions': [
+           ['_type=="static_library"', {
+             'standalone_static_library': 1, # disable thin archive which needs binutils >= 2.19

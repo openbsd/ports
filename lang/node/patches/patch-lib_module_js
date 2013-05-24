@@ -1,12 +1,12 @@
-$OpenBSD: patch-lib_module_js,v 1.1.1.1 2012/05/23 15:11:43 jasper Exp $
---- lib/module.js.orig	Tue May 15 02:30:00 2012
-+++ lib/module.js	Tue May 15 19:17:28 2012
-@@ -487,6 +487,8 @@ Module.runMain = function() {
- Module._initPaths = function() {
+$OpenBSD: patch-lib_module_js,v 1.2 2013/05/24 13:43:41 abieber Exp $
+--- lib/module.js.orig	Sun May 19 10:45:34 2013
++++ lib/module.js	Sun May 19 10:46:08 2013
+@@ -510,6 +510,8 @@ Module._initPaths = function() {
+ 
    var paths = [path.resolve(process.execPath, '..', '..', 'lib', 'node')];
  
 +  paths.unshift(path.resolve('${TRUEPREFIX}', 'lib', 'node_modules'));
 +
-   if (process.env['HOME']) {
-     paths.unshift(path.resolve(process.env['HOME'], '.node_libraries'));
-     paths.unshift(path.resolve(process.env['HOME'], '.node_modules'));
+   if (homeDir) {
+     paths.unshift(path.resolve(homeDir, '.node_libraries'));
+     paths.unshift(path.resolve(homeDir, '.node_modules'));

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/05/24 13:43:41 abieber Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
@@ -8,7 +8,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=	V8 JavaScript for clients and servers
 
-NODE_VERSION=	v0.8.21
+NODE_VERSION=	v0.10.7
 
 DISTNAME=	node-${NODE_VERSION}
 PKGNAME=	${DISTNAME:S/v//g}
@@ -41,9 +41,6 @@ BUILD_DEPENDS=	sysutils/flock
 RUN_DEPENDS=	devel/gmake \
 		sysutils/flock
 
-MODPY_ADJ_FILES= tools/node-waf \
-		tools/waf-light
-
 TEST_TARGET= test
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS= --openssl-use-sys \
@@ -68,8 +65,7 @@ pre-configure:
 		${WRKDIST}/common.gypi
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/lib/node/wafadmin
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/node
 	${INSTALL_DATA} ${FULLDISTDIR}/${DISTFILES} \
 		${PREFIX}/lib/node/${DISTFILES}
 	ln -s ${TRUEPREFIX}/lib/node_modules/npm/bin/node-gyp-bin/node-gyp \
