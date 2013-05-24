@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/05/24 19:07:31 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2013/05/24 19:17:59 jasper Exp $
 
 COMMENT =		Commodore tape image cleaning utility
 DISTNAME =		tapclean-20130522
@@ -9,8 +9,6 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += c m
 
