@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.30 2013/04/02 10:06:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.31 2013/05/24 13:16:36 ajacoutot Exp $
 @conflict gail-*
 @conflict gtk+2-cups-*
 @conflict gtk+2-docs-*
@@ -275,67 +275,34 @@ include/gtk-unix-print-2.0/gtk/gtkprinter.h
 include/gtk-unix-print-2.0/gtk/gtkprintjob.h
 include/gtk-unix-print-2.0/gtk/gtkprintunixdialog.h
 include/gtk-unix-print-2.0/gtk/gtkunixprint.h
+lib/girepository-1.0/
 lib/girepository-1.0/Gdk-2.0.typelib
 lib/girepository-1.0/GdkX11-2.0.typelib
 lib/girepository-1.0/Gtk-2.0.typelib
 lib/gtk-2.0/
 lib/gtk-2.0/2.10.0/
 lib/gtk-2.0/2.10.0/engines/
-@comment lib/gtk-2.0/2.10.0/engines/libpixmap.a
-@comment lib/gtk-2.0/2.10.0/engines/libpixmap.la
 lib/gtk-2.0/2.10.0/engines/libpixmap.so
 lib/gtk-2.0/2.10.0/immodules/
-@comment lib/gtk-2.0/2.10.0/immodules/im-am-et.a
-@comment lib/gtk-2.0/2.10.0/immodules/im-am-et.la
 lib/gtk-2.0/2.10.0/immodules/im-am-et.so
-@comment lib/gtk-2.0/2.10.0/immodules/im-cedilla.a
-@comment lib/gtk-2.0/2.10.0/immodules/im-cedilla.la
 lib/gtk-2.0/2.10.0/immodules/im-cedilla.so
-@comment lib/gtk-2.0/2.10.0/immodules/im-cyrillic-translit.a
-@comment lib/gtk-2.0/2.10.0/immodules/im-cyrillic-translit.la
 lib/gtk-2.0/2.10.0/immodules/im-cyrillic-translit.so
-@comment lib/gtk-2.0/2.10.0/immodules/im-inuktitut.a
-@comment lib/gtk-2.0/2.10.0/immodules/im-inuktitut.la
 lib/gtk-2.0/2.10.0/immodules/im-inuktitut.so
-@comment lib/gtk-2.0/2.10.0/immodules/im-ipa.a
-@comment lib/gtk-2.0/2.10.0/immodules/im-ipa.la
 lib/gtk-2.0/2.10.0/immodules/im-ipa.so
-@comment lib/gtk-2.0/2.10.0/immodules/im-multipress.a
-@comment lib/gtk-2.0/2.10.0/immodules/im-multipress.la
 lib/gtk-2.0/2.10.0/immodules/im-multipress.so
-@comment lib/gtk-2.0/2.10.0/immodules/im-thai.a
-@comment lib/gtk-2.0/2.10.0/immodules/im-thai.la
 lib/gtk-2.0/2.10.0/immodules/im-thai.so
-@comment lib/gtk-2.0/2.10.0/immodules/im-ti-er.a
-@comment lib/gtk-2.0/2.10.0/immodules/im-ti-er.la
 lib/gtk-2.0/2.10.0/immodules/im-ti-er.so
-@comment lib/gtk-2.0/2.10.0/immodules/im-ti-et.a
-@comment lib/gtk-2.0/2.10.0/immodules/im-ti-et.la
 lib/gtk-2.0/2.10.0/immodules/im-ti-et.so
-@comment lib/gtk-2.0/2.10.0/immodules/im-viqr.a
-@comment lib/gtk-2.0/2.10.0/immodules/im-viqr.la
 lib/gtk-2.0/2.10.0/immodules/im-viqr.so
-@comment lib/gtk-2.0/2.10.0/immodules/im-xim.a
-@comment lib/gtk-2.0/2.10.0/immodules/im-xim.la
 lib/gtk-2.0/2.10.0/immodules/im-xim.so
 lib/gtk-2.0/2.10.0/printbackends/
-@comment lib/gtk-2.0/2.10.0/printbackends/libprintbackend-cups.a
-@comment lib/gtk-2.0/2.10.0/printbackends/libprintbackend-cups.la
 lib/gtk-2.0/2.10.0/printbackends/libprintbackend-cups.so
-@comment lib/gtk-2.0/2.10.0/printbackends/libprintbackend-file.a
-@comment lib/gtk-2.0/2.10.0/printbackends/libprintbackend-file.la
 lib/gtk-2.0/2.10.0/printbackends/libprintbackend-file.so
-@comment lib/gtk-2.0/2.10.0/printbackends/libprintbackend-lpr.a
-@comment lib/gtk-2.0/2.10.0/printbackends/libprintbackend-lpr.la
 lib/gtk-2.0/2.10.0/printbackends/libprintbackend-lpr.so
 lib/gtk-2.0/include/
 lib/gtk-2.0/include/gdkconfig.h
 lib/gtk-2.0/modules/
-@comment lib/gtk-2.0/modules/libferret.a
-@comment lib/gtk-2.0/modules/libferret.la
 lib/gtk-2.0/modules/libferret.so
-@comment lib/gtk-2.0/modules/libgail.a
-@comment lib/gtk-2.0/modules/libgail.la
 lib/gtk-2.0/modules/libgail.so
 lib/libgailutil.a
 lib/libgailutil.la
@@ -346,6 +313,7 @@ lib/libgdk-x11-2.0.la
 lib/libgtk-x11-2.0.a
 lib/libgtk-x11-2.0.la
 @lib lib/libgtk-x11-2.0.so.${LIBgtk-x11-2.0_VERSION}
+lib/pkgconfig/
 lib/pkgconfig/gail.pc
 lib/pkgconfig/gdk-2.0.pc
 lib/pkgconfig/gdk-x11-2.0.pc
@@ -357,6 +325,7 @@ share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/gtk+2/
 share/examples/gtk+2/gtk-2.0/
 share/examples/gtk+2/gtk-2.0/im-multipress.conf
+share/gir-1.0/
 share/gir-1.0/Gdk-2.0.gir
 share/gir-1.0/GdkX11-2.0.gir
 share/gir-1.0/Gtk-2.0.gir
@@ -415,6 +384,8 @@ share/gtk-2.0/demo/textview.c
 share/gtk-2.0/demo/toolpalette.c
 share/gtk-2.0/demo/tree_store.c
 share/gtk-2.0/demo/ui_manager.c
+share/gtk-doc/
+share/gtk-doc/html/
 share/gtk-doc/html/gail-libgail-util/
 share/gtk-doc/html/gail-libgail-util/gail-libgail-util-GailMisc.html
 share/gtk-doc/html/gail-libgail-util/gail-libgail-util-GailTextUtil.html
@@ -1038,18 +1009,32 @@ share/gtk-doc/html/gtk2/zoom-fit-best.png
 share/gtk-doc/html/gtk2/zoom-in.png
 share/gtk-doc/html/gtk2/zoom-original.png
 share/gtk-doc/html/gtk2/zoom-out.png
+share/locale/af/
+share/locale/af/LC_MESSAGES/
 share/locale/af/LC_MESSAGES/gtk20-properties.mo
 share/locale/af/LC_MESSAGES/gtk20.mo
+share/locale/am/
+share/locale/am/LC_MESSAGES/
 share/locale/am/LC_MESSAGES/gtk20-properties.mo
 share/locale/am/LC_MESSAGES/gtk20.mo
+share/locale/ang/
+share/locale/ang/LC_MESSAGES/
 share/locale/ang/LC_MESSAGES/gtk20-properties.mo
 share/locale/ang/LC_MESSAGES/gtk20.mo
+share/locale/ar/
+share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/gtk20-properties.mo
 share/locale/ar/LC_MESSAGES/gtk20.mo
+share/locale/as/
+share/locale/as/LC_MESSAGES/
 share/locale/as/LC_MESSAGES/gtk20-properties.mo
 share/locale/as/LC_MESSAGES/gtk20.mo
+share/locale/ast/
+share/locale/ast/LC_MESSAGES/
 share/locale/ast/LC_MESSAGES/gtk20-properties.mo
 share/locale/ast/LC_MESSAGES/gtk20.mo
+share/locale/az/
+share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/gtk20-properties.mo
 share/locale/az/LC_MESSAGES/gtk20.mo
 share/locale/az_IR/
@@ -1058,38 +1043,60 @@ share/locale/az_IR/LC_MESSAGES/gtk20-properties.mo
 share/locale/az_IR/LC_MESSAGES/gtk20.mo
 share/locale/be/LC_MESSAGES/gtk20-properties.mo
 share/locale/be/LC_MESSAGES/gtk20.mo
+share/locale/be@latin/
+share/locale/be@latin/LC_MESSAGES/
 share/locale/be@latin/LC_MESSAGES/gtk20-properties.mo
 share/locale/be@latin/LC_MESSAGES/gtk20.mo
 share/locale/bg/LC_MESSAGES/gtk20-properties.mo
 share/locale/bg/LC_MESSAGES/gtk20.mo
+share/locale/bn/
+share/locale/bn/LC_MESSAGES/
 share/locale/bn/LC_MESSAGES/gtk20-properties.mo
 share/locale/bn/LC_MESSAGES/gtk20.mo
+share/locale/bn_IN/
+share/locale/bn_IN/LC_MESSAGES/
 share/locale/bn_IN/LC_MESSAGES/gtk20-properties.mo
 share/locale/bn_IN/LC_MESSAGES/gtk20.mo
+share/locale/br/
+share/locale/br/LC_MESSAGES/
 share/locale/br/LC_MESSAGES/gtk20-properties.mo
 share/locale/br/LC_MESSAGES/gtk20.mo
+share/locale/bs/
+share/locale/bs/LC_MESSAGES/
 share/locale/bs/LC_MESSAGES/gtk20-properties.mo
 share/locale/bs/LC_MESSAGES/gtk20.mo
 share/locale/ca/LC_MESSAGES/gtk20-properties.mo
 share/locale/ca/LC_MESSAGES/gtk20.mo
+share/locale/ca@valencia/
+share/locale/ca@valencia/LC_MESSAGES/
 share/locale/ca@valencia/LC_MESSAGES/gtk20-properties.mo
 share/locale/ca@valencia/LC_MESSAGES/gtk20.mo
+share/locale/crh/
+share/locale/crh/LC_MESSAGES/
 share/locale/crh/LC_MESSAGES/gtk20-properties.mo
 share/locale/crh/LC_MESSAGES/gtk20.mo
 share/locale/cs/LC_MESSAGES/gtk20-properties.mo
 share/locale/cs/LC_MESSAGES/gtk20.mo
+share/locale/cy/
+share/locale/cy/LC_MESSAGES/
 share/locale/cy/LC_MESSAGES/gtk20-properties.mo
 share/locale/cy/LC_MESSAGES/gtk20.mo
 share/locale/da/LC_MESSAGES/gtk20-properties.mo
 share/locale/da/LC_MESSAGES/gtk20.mo
 share/locale/de/LC_MESSAGES/gtk20-properties.mo
 share/locale/de/LC_MESSAGES/gtk20.mo
+share/locale/dz/
+share/locale/dz/LC_MESSAGES/
 share/locale/dz/LC_MESSAGES/gtk20-properties.mo
 share/locale/dz/LC_MESSAGES/gtk20.mo
 share/locale/el/LC_MESSAGES/gtk20-properties.mo
 share/locale/el/LC_MESSAGES/gtk20.mo
+share/locale/en_CA/
+share/locale/en_CA/LC_MESSAGES/
 share/locale/en_CA/LC_MESSAGES/gtk20-properties.mo
 share/locale/en_CA/LC_MESSAGES/gtk20.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/gtk20-properties.mo
 share/locale/en_GB/LC_MESSAGES/gtk20.mo
 share/locale/eo/LC_MESSAGES/gtk20-properties.mo
@@ -1100,6 +1107,8 @@ share/locale/et/LC_MESSAGES/gtk20-properties.mo
 share/locale/et/LC_MESSAGES/gtk20.mo
 share/locale/eu/LC_MESSAGES/gtk20-properties.mo
 share/locale/eu/LC_MESSAGES/gtk20.mo
+share/locale/fa/
+share/locale/fa/LC_MESSAGES/
 share/locale/fa/LC_MESSAGES/gtk20-properties.mo
 share/locale/fa/LC_MESSAGES/gtk20.mo
 share/locale/fi/LC_MESSAGES/gtk20-properties.mo
@@ -1110,82 +1119,134 @@ share/locale/ga/LC_MESSAGES/gtk20-properties.mo
 share/locale/ga/LC_MESSAGES/gtk20.mo
 share/locale/gl/LC_MESSAGES/gtk20-properties.mo
 share/locale/gl/LC_MESSAGES/gtk20.mo
+share/locale/gu/
+share/locale/gu/LC_MESSAGES/
 share/locale/gu/LC_MESSAGES/gtk20-properties.mo
 share/locale/gu/LC_MESSAGES/gtk20.mo
 share/locale/he/LC_MESSAGES/gtk20-properties.mo
 share/locale/he/LC_MESSAGES/gtk20.mo
+share/locale/hi/
+share/locale/hi/LC_MESSAGES/
 share/locale/hi/LC_MESSAGES/gtk20-properties.mo
 share/locale/hi/LC_MESSAGES/gtk20.mo
 share/locale/hr/LC_MESSAGES/gtk20-properties.mo
 share/locale/hr/LC_MESSAGES/gtk20.mo
 share/locale/hu/LC_MESSAGES/gtk20-properties.mo
 share/locale/hu/LC_MESSAGES/gtk20.mo
+share/locale/hy/
+share/locale/hy/LC_MESSAGES/
 share/locale/hy/LC_MESSAGES/gtk20-properties.mo
 share/locale/hy/LC_MESSAGES/gtk20.mo
+share/locale/ia/
+share/locale/ia/LC_MESSAGES/
 share/locale/ia/LC_MESSAGES/gtk20-properties.mo
 share/locale/ia/LC_MESSAGES/gtk20.mo
 share/locale/id/LC_MESSAGES/gtk20-properties.mo
 share/locale/id/LC_MESSAGES/gtk20.mo
+share/locale/io/
+share/locale/io/LC_MESSAGES/
 share/locale/io/LC_MESSAGES/gtk20-properties.mo
 share/locale/io/LC_MESSAGES/gtk20.mo
+share/locale/is/
+share/locale/is/LC_MESSAGES/
 share/locale/is/LC_MESSAGES/gtk20-properties.mo
 share/locale/is/LC_MESSAGES/gtk20.mo
 share/locale/it/LC_MESSAGES/gtk20-properties.mo
 share/locale/it/LC_MESSAGES/gtk20.mo
 share/locale/ja/LC_MESSAGES/gtk20-properties.mo
 share/locale/ja/LC_MESSAGES/gtk20.mo
+share/locale/ka/
+share/locale/ka/LC_MESSAGES/
 share/locale/ka/LC_MESSAGES/gtk20-properties.mo
 share/locale/ka/LC_MESSAGES/gtk20.mo
+share/locale/kk/
+share/locale/kk/LC_MESSAGES/
 share/locale/kk/LC_MESSAGES/gtk20-properties.mo
 share/locale/kk/LC_MESSAGES/gtk20.mo
+share/locale/kn/
+share/locale/kn/LC_MESSAGES/
 share/locale/kn/LC_MESSAGES/gtk20-properties.mo
 share/locale/kn/LC_MESSAGES/gtk20.mo
 share/locale/ko/LC_MESSAGES/gtk20-properties.mo
 share/locale/ko/LC_MESSAGES/gtk20.mo
+share/locale/ku/
+share/locale/ku/LC_MESSAGES/
 share/locale/ku/LC_MESSAGES/gtk20-properties.mo
 share/locale/ku/LC_MESSAGES/gtk20.mo
+share/locale/li/
+share/locale/li/LC_MESSAGES/
 share/locale/li/LC_MESSAGES/gtk20-properties.mo
 share/locale/li/LC_MESSAGES/gtk20.mo
+share/locale/lt/
+share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/gtk20-properties.mo
 share/locale/lt/LC_MESSAGES/gtk20.mo
 share/locale/lv/LC_MESSAGES/gtk20-properties.mo
 share/locale/lv/LC_MESSAGES/gtk20.mo
+share/locale/mai/
+share/locale/mai/LC_MESSAGES/
 share/locale/mai/LC_MESSAGES/gtk20-properties.mo
 share/locale/mai/LC_MESSAGES/gtk20.mo
+share/locale/mi/
+share/locale/mi/LC_MESSAGES/
 share/locale/mi/LC_MESSAGES/gtk20-properties.mo
 share/locale/mi/LC_MESSAGES/gtk20.mo
+share/locale/mk/
+share/locale/mk/LC_MESSAGES/
 share/locale/mk/LC_MESSAGES/gtk20-properties.mo
 share/locale/mk/LC_MESSAGES/gtk20.mo
+share/locale/ml/
+share/locale/ml/LC_MESSAGES/
 share/locale/ml/LC_MESSAGES/gtk20-properties.mo
 share/locale/ml/LC_MESSAGES/gtk20.mo
+share/locale/mn/
+share/locale/mn/LC_MESSAGES/
 share/locale/mn/LC_MESSAGES/gtk20-properties.mo
 share/locale/mn/LC_MESSAGES/gtk20.mo
+share/locale/mr/
+share/locale/mr/LC_MESSAGES/
 share/locale/mr/LC_MESSAGES/gtk20-properties.mo
 share/locale/mr/LC_MESSAGES/gtk20.mo
+share/locale/ms/
+share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/gtk20-properties.mo
 share/locale/ms/LC_MESSAGES/gtk20.mo
+share/locale/my/
+share/locale/my/LC_MESSAGES/
 share/locale/my/LC_MESSAGES/gtk20-properties.mo
 share/locale/my/LC_MESSAGES/gtk20.mo
 share/locale/nb/LC_MESSAGES/gtk20-properties.mo
 share/locale/nb/LC_MESSAGES/gtk20.mo
+share/locale/nds/
+share/locale/nds/LC_MESSAGES/
 share/locale/nds/LC_MESSAGES/gtk20-properties.mo
 share/locale/nds/LC_MESSAGES/gtk20.mo
+share/locale/ne/
+share/locale/ne/LC_MESSAGES/
 share/locale/ne/LC_MESSAGES/gtk20-properties.mo
 share/locale/ne/LC_MESSAGES/gtk20.mo
 share/locale/nl/LC_MESSAGES/gtk20-properties.mo
 share/locale/nl/LC_MESSAGES/gtk20.mo
 share/locale/nn/LC_MESSAGES/gtk20-properties.mo
 share/locale/nn/LC_MESSAGES/gtk20.mo
+share/locale/nso/
+share/locale/nso/LC_MESSAGES/
 share/locale/nso/LC_MESSAGES/gtk20-properties.mo
 share/locale/nso/LC_MESSAGES/gtk20.mo
+share/locale/oc/
+share/locale/oc/LC_MESSAGES/
 share/locale/oc/LC_MESSAGES/gtk20-properties.mo
 share/locale/oc/LC_MESSAGES/gtk20.mo
+share/locale/or/
+share/locale/or/LC_MESSAGES/
 share/locale/or/LC_MESSAGES/gtk20-properties.mo
 share/locale/or/LC_MESSAGES/gtk20.mo
 share/locale/pa/LC_MESSAGES/gtk20-properties.mo
 share/locale/pa/LC_MESSAGES/gtk20.mo
 share/locale/pl/LC_MESSAGES/gtk20-properties.mo
 share/locale/pl/LC_MESSAGES/gtk20.mo
+share/locale/ps/
+share/locale/ps/LC_MESSAGES/
 share/locale/ps/LC_MESSAGES/gtk20-properties.mo
 share/locale/ps/LC_MESSAGES/gtk20.mo
 share/locale/pt/LC_MESSAGES/gtk20-properties.mo
@@ -1196,36 +1257,58 @@ share/locale/ro/LC_MESSAGES/gtk20-properties.mo
 share/locale/ro/LC_MESSAGES/gtk20.mo
 share/locale/ru/LC_MESSAGES/gtk20-properties.mo
 share/locale/ru/LC_MESSAGES/gtk20.mo
+share/locale/rw/
+share/locale/rw/LC_MESSAGES/
 share/locale/rw/LC_MESSAGES/gtk20-properties.mo
 share/locale/rw/LC_MESSAGES/gtk20.mo
+share/locale/si/
+share/locale/si/LC_MESSAGES/
 share/locale/si/LC_MESSAGES/gtk20-properties.mo
 share/locale/si/LC_MESSAGES/gtk20.mo
 share/locale/sk/LC_MESSAGES/gtk20-properties.mo
 share/locale/sk/LC_MESSAGES/gtk20.mo
 share/locale/sl/LC_MESSAGES/gtk20-properties.mo
 share/locale/sl/LC_MESSAGES/gtk20.mo
+share/locale/sq/
+share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/gtk20-properties.mo
 share/locale/sq/LC_MESSAGES/gtk20.mo
 share/locale/sr/LC_MESSAGES/gtk20-properties.mo
 share/locale/sr/LC_MESSAGES/gtk20.mo
+share/locale/sr@ije/
+share/locale/sr@ije/LC_MESSAGES/
 share/locale/sr@ije/LC_MESSAGES/gtk20-properties.mo
 share/locale/sr@ije/LC_MESSAGES/gtk20.mo
+share/locale/sr@latin/
+share/locale/sr@latin/LC_MESSAGES/
 share/locale/sr@latin/LC_MESSAGES/gtk20-properties.mo
 share/locale/sr@latin/LC_MESSAGES/gtk20.mo
 share/locale/sv/LC_MESSAGES/gtk20-properties.mo
 share/locale/sv/LC_MESSAGES/gtk20.mo
+share/locale/ta/
+share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/gtk20-properties.mo
 share/locale/ta/LC_MESSAGES/gtk20.mo
+share/locale/te/
+share/locale/te/LC_MESSAGES/
 share/locale/te/LC_MESSAGES/gtk20-properties.mo
 share/locale/te/LC_MESSAGES/gtk20.mo
+share/locale/th/
+share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/gtk20-properties.mo
 share/locale/th/LC_MESSAGES/gtk20.mo
+share/locale/tk/
+share/locale/tk/LC_MESSAGES/
 share/locale/tk/LC_MESSAGES/gtk20-properties.mo
 share/locale/tk/LC_MESSAGES/gtk20.mo
 share/locale/tr/LC_MESSAGES/gtk20-properties.mo
 share/locale/tr/LC_MESSAGES/gtk20.mo
+share/locale/tt/
+share/locale/tt/LC_MESSAGES/
 share/locale/tt/LC_MESSAGES/gtk20-properties.mo
 share/locale/tt/LC_MESSAGES/gtk20.mo
+share/locale/ug/
+share/locale/ug/LC_MESSAGES/
 share/locale/ug/LC_MESSAGES/gtk20-properties.mo
 share/locale/ug/LC_MESSAGES/gtk20.mo
 share/locale/uk/LC_MESSAGES/gtk20-properties.mo
@@ -1234,16 +1317,26 @@ share/locale/ur/
 share/locale/ur/LC_MESSAGES/
 share/locale/ur/LC_MESSAGES/gtk20-properties.mo
 share/locale/ur/LC_MESSAGES/gtk20.mo
+share/locale/uz/
+share/locale/uz/LC_MESSAGES/
 share/locale/uz/LC_MESSAGES/gtk20-properties.mo
 share/locale/uz/LC_MESSAGES/gtk20.mo
+share/locale/uz@cyrillic/
+share/locale/uz@cyrillic/LC_MESSAGES/
 share/locale/uz@cyrillic/LC_MESSAGES/gtk20-properties.mo
 share/locale/uz@cyrillic/LC_MESSAGES/gtk20.mo
 share/locale/vi/LC_MESSAGES/gtk20-properties.mo
 share/locale/vi/LC_MESSAGES/gtk20.mo
+share/locale/wa/
+share/locale/wa/LC_MESSAGES/
 share/locale/wa/LC_MESSAGES/gtk20-properties.mo
 share/locale/wa/LC_MESSAGES/gtk20.mo
+share/locale/xh/
+share/locale/xh/LC_MESSAGES/
 share/locale/xh/LC_MESSAGES/gtk20-properties.mo
 share/locale/xh/LC_MESSAGES/gtk20.mo
+share/locale/yi/
+share/locale/yi/LC_MESSAGES/
 share/locale/yi/LC_MESSAGES/gtk20-properties.mo
 share/locale/yi/LC_MESSAGES/gtk20.mo
 share/locale/zh_CN/LC_MESSAGES/gtk20-properties.mo
