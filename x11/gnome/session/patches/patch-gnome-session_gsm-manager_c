@@ -1,20 +1,33 @@
-$OpenBSD: patch-gnome-session_gsm-manager_c,v 1.11 2013/03/29 15:41:03 ajacoutot Exp $
+$OpenBSD: patch-gnome-session_gsm-manager_c,v 1.12 2013/05/24 06:30:24 ajacoutot Exp $
 
-XXX fix and push upstream
+https://bugzilla.gnome.org/show_bug.cgi?id=700936
 
---- gnome-session/gsm-manager.c.orig	Fri Mar 29 16:27:21 2013
-+++ gnome-session/gsm-manager.c	Fri Mar 29 16:27:56 2013
-@@ -2907,13 +2907,7 @@ is_valid_category (int category)
+--- gnome-session/gsm-manager.c.orig	Tue May 14 05:09:23 2013
++++ gnome-session/gsm-manager.c	Fri May 24 08:12:25 2013
+@@ -2907,13 +2907,25 @@ is_valid_category (int category)
  		LC_COLLATE,
  		LC_MONETARY,
  		LC_MESSAGES,
 -		LC_ALL,
--		LC_PAPER,
--		LC_NAME,
--		LC_ADDRESS,
--		LC_TELEPHONE,
--		LC_MEASUREMENT,
++#if defined (LC_PAPER)
+ 		LC_PAPER,
++#endif
++#if defined (LC_NAME)
+ 		LC_NAME,
++#endif
++#if defined (LC_ADDRESS)
+ 		LC_ADDRESS,
++#endif
++#if defined (LC_TELEPHONE)
+ 		LC_TELEPHONE,
++#endif
++#if defined (LC_MEASUREMENT)
+ 		LC_MEASUREMENT,
 -		LC_IDENTIFICATION
++#endif
++#if defined (LC_IDENTIFICATION)
++		LC_IDENTIFICATION,
++#endif
 +		LC_ALL
  	};
  	guint i;
