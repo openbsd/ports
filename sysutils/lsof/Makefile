@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.88 2013/05/23 15:08:36 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.89 2013/05/24 15:14:03 dcoppa Exp $
 
 COMMENT=	list information about open files
 
 VERSION=	4.87
 DISTNAME=	lsof_${VERSION}
 PKGNAME=	${DISTNAME:S/_/-/}
+REVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.mirrorservice.org/sites/lsof.itap.purdue.edu/pub/tools/unix/lsof/ \
 		ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/ \
@@ -21,6 +22,19 @@ MAINTAINER=     Peter Valchev <pvalchev@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c kvm>=13
+
+MODULES=	perl
+
+MODPERL_ADJ_FILES=	scripts/big_brother.perl5 \
+			scripts/count_pf.perl \
+			scripts/count_pf.perl5 \
+			scripts/identd.perl5 \
+			scripts/idrlogin.perl \
+			scripts/idrlogin.perl5 \
+			scripts/list_NULf.perl5 \
+			scripts/list_fields.perl \
+			scripts/shared.perl5 \
+			scripts/watch_a_file.perl
 
 MAKE_FLAGS=	DEBUG="${CFLAGS}"
 
