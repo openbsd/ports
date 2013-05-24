@@ -1,12 +1,6 @@
-$OpenBSD: patch-bin_smokeping_cgi,v 1.1 2013/01/05 22:52:07 sthen Exp $
+$OpenBSD: patch-bin_smokeping_cgi,v 1.2 2013/05/24 14:45:54 sthen Exp $
 --- bin/smokeping_cgi.orig	Sat Dec  8 22:26:02 2012
 +++ bin/smokeping_cgi	Sat Dec  8 22:30:35 2012
-@@ -1,4 +1,4 @@
--#!/usr/bin/env perl
-+#!/usr/bin/perl
- # -*-perl-*-   
- 
- use strict;
 @@ -18,7 +18,7 @@ use Smokeping;
  
  use CGI::Fast;

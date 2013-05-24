@@ -1,12 +1,6 @@
-$OpenBSD: patch-bin_tSmoke,v 1.1 2013/01/05 22:52:07 sthen Exp $
+$OpenBSD: patch-bin_tSmoke,v 1.2 2013/05/24 14:45:54 sthen Exp $
 --- bin/tSmoke.orig	Sat Dec  8 22:26:25 2012
 +++ bin/tSmoke	Sat Dec  8 22:27:24 2012
-@@ -1,4 +1,4 @@
--#!/usr/bin/env perl
-+#!/usr/bin/perl
- #
- #-----------------------------------------------
- # tSmoke.pl
 @@ -63,7 +63,7 @@ use Pod::Usage;
  use RRDs;
  

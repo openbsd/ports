@@ -1,12 +1,6 @@
-$OpenBSD: patch-bin_smokeping,v 1.1 2013/01/05 22:52:07 sthen Exp $
+$OpenBSD: patch-bin_smokeping,v 1.2 2013/05/24 14:45:54 sthen Exp $
 --- bin/smokeping.orig	Sat Dec  8 22:21:11 2012
 +++ bin/smokeping	Sat Dec  8 22:22:57 2012
-@@ -1,4 +1,4 @@
--#!/usr/bin/env perl
-+#!/usr/bin/perl
- # -*-perl-*-
- 
- use strict;
 @@ -10,8 +10,14 @@ use lib "$FindBin::Bin/../thirdparty/lib/perl5";
  use lib "$FindBin::Bin/../lib";
  

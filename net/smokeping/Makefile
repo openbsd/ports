@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2013/03/21 14:32:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2013/05/24 14:45:54 sthen Exp $
 
 COMMENT=	latency logging and graphing system
 
@@ -38,6 +38,9 @@ FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/smokeping
 
 PMDIR=		libdata/perl5/site_perl
 SUBST_VARS=	PMDIR
+
+MODULES=	perl
+MODPERL_ADJ_FILES= bin/smokeinfo bin/smokeping bin/smokeping_cgi bin/tSmoke
 
 pre-configure:
 	@cd ${WRKSRC} && ${SUBST_CMD} \
