@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: perl.port.mk,v 1.22 2013/05/06 21:16:18 zhuk Exp $
+# $OpenBSD: perl.port.mk,v 1.23 2013/05/24 14:58:45 zhuk Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -10,8 +10,8 @@ SHARED_ONLY ?= No
 
 # set /usr/bin/perl for executable scripts
 MODPERL_BIN_ADJ =	perl -pi \
-	-e '$$. == 1 && s|^.*env perl([\s].*)?$$|\#!/usr/bin/perl$$1|;' \
-	-e '$$. == 1 && s|^.*bin/perl([\s].*)?$$|\#!/usr/bin/perl$$1|;' \
+	-e '$$. == 1 && s|^.*env perl([0-9.]*)([\s].*)?$$|\#!/usr/bin/perl$$2|;' \
+	-e '$$. == 1 && s|^.*bin/perl([0-9.]*)([\s].*)?$$|\#!/usr/bin/perl$$2|;' \
 	-e 'close ARGV if eof;'
 
 MODPERL_ADJ_FILES ?=
