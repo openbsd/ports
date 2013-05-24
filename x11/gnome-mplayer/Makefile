@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.73 2013/04/02 16:16:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.74 2013/05/24 08:31:37 dcoppa Exp $
 
 COMMENT =		GTK+/GNOME frontend for MPlayer
-V =			1.0.7
+V =			1.0.8
 DISTNAME =		gnome-mplayer-${V}
-REVISION =		6
 
 CATEGORIES =		x11 multimedia
 
@@ -16,15 +15,13 @@ MASTER_SITES =		http://gnome-mplayer.googlecode.com/files/
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		GL X11 Xext Xrender Xss atk-1.0 c cairo \
-			cairo-gobject curl dbus-1 dbus-glib-1 \
-			expat fontconfig freetype gdk-3 \
-			gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmlib \
-			gmtk gobject-2.0 gpod gthread-2.0 gtk-3 \
-			m musicbrainz3 neon notify pango-1.0 \
-			pangocairo-1.0 pangoft2-1.0 pixman-1 \
-			png pthread pthread-stubs xcb \
-			xcb-render xcb-shm z
+WANTLIB =		X11 Xss atk-1.0 c cairo cairo-gobject \
+			curl dbus-1 dbus-glib-1 fontconfig \
+			freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 \
+			glib-2.0 gmlib>=2 gmtk>=2 gobject-2.0 \
+			gpod gthread-2.0 gtk-3 m musicbrainz3 \
+			neon notify pango-1.0 pangocairo-1.0 \
+			pangoft2-1.0 pthread z
 
 MODULES =		devel/gettext \
 			devel/dconf
@@ -54,6 +51,7 @@ CONFIGURE_ARGS =	--with-dbus \
 			--with-libnotify \
 			--enable-gtk3 \
 			--without-alsa \
+			--without-libgda \
 			--without-pulseaudio \
 			--disable-nautilus
 

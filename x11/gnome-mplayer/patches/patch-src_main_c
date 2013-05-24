@@ -1,23 +1,71 @@
-$OpenBSD: patch-src_main_c,v 1.23 2012/12/19 15:04:36 dcoppa Exp $
+$OpenBSD: patch-src_main_c,v 1.24 2013/05/24 08:31:38 dcoppa Exp $
 
-Fix some problems on initial volume setup
-(upstream svn revision r2378)
+Set pref_volume to stored volume when asound is disabled
+(upstream svn revision r2427)
 
---- src/main.c.orig	Wed Dec 19 13:36:07 2012
-+++ src/main.c	Wed Dec 19 15:23:05 2012
-@@ -1288,7 +1288,6 @@ int main(int argc, char *argv[])
-     gm_audio_update_device(&audio_device);
+Fix problem with remembered softvol not being loaded
+(upstream svn revision r2424)
+
+Make --volume work with and without softvol enabled
+(upstream svn revision r2426)
+
+--- src/main.c.orig	Mon Feb 18 15:58:47 2013
++++ src/main.c	Fri May 24 09:56:06 2013
+@@ -65,7 +65,6 @@ static gchar *tv_input;
+ static gint tv_width;
+ static gint tv_height;
+ static gint tv_fps;
+-static gint pref_volume;
+ 
+ typedef struct _PlayData {
+     gchar uri[4096];
+@@ -900,6 +899,9 @@ int main(int argc, char *argv[])
+     pplevel = gm_pref_store_get_int(gm_store, PPLEVEL);
+ #ifndef HAVE_ASOUNDLIB
+     volume = gm_pref_store_get_int(gm_store, VOLUME);
++    if (pref_volume == -1) {
++        pref_volume = volume;
++    }
+ #endif
+     audio_channels = gm_pref_store_get_int(gm_store, AUDIO_CHANNELS);
+     use_hw_audio = gm_pref_store_get_boolean(gm_store, USE_HW_AUDIO);
+@@ -1042,7 +1044,9 @@ int main(int argc, char *argv[])
+         printf(_("gmtk v%s\n"), gmtk_version());
+         printf("GTK %i.%i.%i\n", GTK_MAJOR_VERSION, GTK_MINOR_VERSION, GTK_MICRO_VERSION);
+         printf("GLIB %i.%i.%i\n", GLIB_MAJOR_VERSION, GLIB_MINOR_VERSION, GLIB_MICRO_VERSION);
++#ifdef LIBGDA_ENABLED
+         printf("GDA Enabled\n");
++#endif
+     }
+ 
+     if (cache_size == 0)
+@@ -1084,6 +1088,7 @@ int main(int argc, char *argv[])
+         if (remember_softvol && volume_softvol != -1) {
+             gm_log(verbose, G_LOG_LEVEL_INFO, "Using last volume of %f%%", volume_softvol * 100.0);
+             volume = (gdouble) volume_softvol *100.0;
++            audio_device.volume = volume / 100.0;
+         } else {
+             volume = 100.0;
+         }
+@@ -1308,16 +1313,18 @@ int main(int argc, char *argv[])
      // disabling this line seems to help with hangs on startup when using pulseaudio
      //gm_audio_get_volume(&audio_device);
--    gm_audio_set_server_volume_update_callback(&audio_device, set_volume);
      set_media_player_attributes(media);
- 
-     if (!softvol) {
-@@ -1362,6 +1361,7 @@ int main(int argc, char *argv[])
-     safe_to_save_default_playlist = TRUE;
- 
-     // put the request to update the volume into the list of tasks to complete
-+    g_idle_add(hookup_volume, NULL);
-     g_idle_add(set_volume, NULL);
-     gtk_main();
- 
+-    if (!softvol) {
++    if (softvol) {
+         if (pref_volume != -1) {
+             audio_device.volume = (gdouble) pref_volume / 100.0;
+             gm_log(verbose, G_LOG_LEVEL_INFO, "The volume on '%s' is %f", audio_device.description,
+                    audio_device.volume);
+             volume = audio_device.volume * 100;
++        } else {
++            audio_device.volume = volume / 100.0;
+         }
+-    } else {
+-        audio_device.volume = volume / 100.0;
+     }
++    gm_log(verbose, G_LOG_LEVEL_DEBUG, "Volume is %lf Audio Device Volume = %f", volume, audio_device.volume);
++
+ #ifdef GTK2_12_ENABLED
+     gtk_scale_button_set_value(GTK_SCALE_BUTTON(vol_slider), audio_device.volume);
+ #else

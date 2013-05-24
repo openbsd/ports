@@ -1,9 +1,10 @@
-$OpenBSD: patch-apps_gnome-mplayer_preferences_gschema_xml,v 1.8 2012/10/31 13:22:03 dcoppa Exp $
+$OpenBSD: patch-apps_gnome-mplayer_preferences_gschema_xml,v 1.9 2013/05/24 08:31:37 dcoppa Exp $
 
 Set some sane defaults:
 use xv as default video output
 disable bar animation in full screen
 use mplayer's software volume control
+set audio device default volume to -1
 remember the software volume value
 set location of mplayer binary
 use /dev/rcd0c as default optical device
@@ -12,7 +13,7 @@ use English as default language
 disable nautilus plugin
 
 --- apps.gnome-mplayer.preferences.gschema.xml.orig	Wed Jan  4 21:12:33 2012
-+++ apps.gnome-mplayer.preferences.gschema.xml	Tue Oct 16 11:12:53 2012
++++ apps.gnome-mplayer.preferences.gschema.xml	Fri May 24 08:20:05 2013
 @@ -1,7 +1,7 @@
  <schemalist>
    <schema id="apps.gnome-mplayer.preferences" path="/apps/gnome-mplayer/preferences/">
@@ -39,6 +40,15 @@ disable nautilus plugin
 +      <default>true</default>
        <summary>Have mplayer use the softvol option</summary>
        <description>When set to TRUE the softvol option is passed to mplayer, useful for machines without pulseaudio</description>
+     </key>
+@@ -191,7 +191,7 @@
+       <description>Remember location on screen</description>
+     </key>
+     <key name="volume" type="i">
+-      <default>100</default>
++      <default>-1</default>
+       <summary>Default Volume</summary>
+       <description>Default volume to use for mplayer, values of 0 or 100 allow usage of setting from ALSA</description>
      </key>
 @@ -271,7 +271,7 @@
        <description>Configuration value for mplayer to control the number of audio channels</description>
