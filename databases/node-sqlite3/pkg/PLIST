@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/05/10 10:46:17 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/05/24 13:44:28 abieber Exp $
 lib/node_modules/sqlite3/
 lib/node_modules/sqlite3/.npmignore
 lib/node_modules/sqlite3/LICENSE
@@ -8,6 +8,7 @@ lib/node_modules/sqlite3/benchmark/
 lib/node_modules/sqlite3/benchmark/insert-transaction.sql
 lib/node_modules/sqlite3/benchmark/insert.js
 lib/node_modules/sqlite3/binding.gyp
+lib/node_modules/sqlite3/binding.gyp.beforesubst
 lib/node_modules/sqlite3/build/
 lib/node_modules/sqlite3/build/Makefile
 lib/node_modules/sqlite3/build/Release/
@@ -102,6 +103,7 @@ lib/node_modules/sqlite3/test/database_fail.test.js
 lib/node_modules/sqlite3/test/each.test.js
 lib/node_modules/sqlite3/test/exec.test.js
 lib/node_modules/sqlite3/test/extension.test.js
+lib/node_modules/sqlite3/test/fts-content.test.js
 lib/node_modules/sqlite3/test/map.test.js
 lib/node_modules/sqlite3/test/named_columns.test.js
 lib/node_modules/sqlite3/test/named_params.test.js
