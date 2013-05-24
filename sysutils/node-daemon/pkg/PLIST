@@ -1,31 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/06/08 05:54:04 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/05/24 13:45:36 abieber Exp $
 lib/node_modules/daemon/
-lib/node_modules/daemon/.lock-wscript
 lib/node_modules/daemon/.npmignore
+lib/node_modules/daemon/.travis.yml
 lib/node_modules/daemon/LICENSE
 lib/node_modules/daemon/README.md
-lib/node_modules/daemon/build/
-lib/node_modules/daemon/build/.wafpickle-7
-lib/node_modules/daemon/build/Release/
-@bin lib/node_modules/daemon/build/Release/daemon.node
-lib/node_modules/daemon/build/Release/src/
-lib/node_modules/daemon/build/Release/src/daemon_1.o
-lib/node_modules/daemon/build/c4che/
-lib/node_modules/daemon/build/c4che/Release.cache.py
-lib/node_modules/daemon/build/c4che/build.config.py
-lib/node_modules/daemon/build/config.log
 lib/node_modules/daemon/examples/
-lib/node_modules/daemon/examples/bindings.js
-lib/node_modules/daemon/examples/wrapper.js
-lib/node_modules/daemon/install
-lib/node_modules/daemon/lib/
-lib/node_modules/daemon/lib/daemon.js
-@bin lib/node_modules/daemon/lib/daemon.node
+lib/node_modules/daemon/examples/cluster.js
+lib/node_modules/daemon/index.js
 lib/node_modules/daemon/package.json
-lib/node_modules/daemon/src/
-lib/node_modules/daemon/src/daemon.cc
 lib/node_modules/daemon/test/
 lib/node_modules/daemon/test/daemon-test.js
 lib/node_modules/daemon/test/fixtures/
 lib/node_modules/daemon/test/fixtures/.gitkeep
-lib/node_modules/daemon/wscript
+lib/node_modules/daemon/test/fixtures/nodaemon.js
+lib/node_modules/daemon/test/fixtures/simple.js
