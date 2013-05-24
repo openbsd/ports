@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/30 23:10:05 schwarze Exp $
+# $OpenBSD: Makefile,v 1.22 2013/05/24 14:10:01 zhuk Exp $
 
 COMMENT =		GNU troff typesetter
 VERSION =		1.22.2
 SUBST_VARS =		VERSION
 DISTNAME =		groff-${VERSION}
+REVISION =		0
 
 CATEGORIES =		textproc
 DPB_PROPERTIES =	parallel
@@ -22,6 +23,7 @@ MAKE_FLAGS +=		docdir=${PREFIX}/share/doc/groff \
 			exampledir=${PREFIX}/share/examples/groff \
 			ac_cv_path_mkdir=/bin/mkdir
 
+MODULES =		perl
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--without-libiconv-prefix --without-gs --without-x \
 			--with-awk=awk \
@@ -31,7 +33,7 @@ CONFIGURE_ARGS +=	--without-libiconv-prefix --without-gs --without-x \
 MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC} ${WRKSRC}/src/libs/gnulib/build-aux
 
 pre-configure:
-	find ${WRKBUILD} -name \*.pl -type f | \
-		xargs perl -pi -e 's@^#![[:space:]]*/usr/bin/env[[:space:]]+perl@#!/usr/bin/perl@'
+	find ${WRKBUILD} -name \*.pl -type f -print0 | \
+	    xargs -0 ${MODPERL_BIN_ADJ}
 
 .include <bsd.port.mk>
