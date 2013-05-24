@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_Makefile_in,v 1.8 2012/10/31 13:23:04 dcoppa Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.9 2013/05/24 08:32:27 dcoppa Exp $
 
 Fix library linking (remove -ldl)
 
---- src/Makefile.in.orig	Mon Oct  8 15:16:56 2012
-+++ src/Makefile.in	Mon Oct 15 15:17:26 2012
-@@ -379,35 +379,35 @@ gecko_mediaplayer_so_SOURCES = \
+--- src/Makefile.in.orig	Fri Mar  1 23:01:32 2013
++++ src/Makefile.in	Thu May 23 15:53:28 2013
+@@ -389,35 +389,35 @@ gecko_mediaplayer_so_SOURCES = \
  
  gecko_mediaplayer_so_CFLAGS = -fPIC 
  gecko_mediaplayer_so_LDFLAGS = -shared -fPIC
