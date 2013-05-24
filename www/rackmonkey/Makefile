@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/05/05 19:24:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2013/05/24 14:10:01 zhuk Exp $
 
 COMMENT=	web-based tool for managing racks of equipment
 
@@ -19,6 +19,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=rackmonkey/}
 
+MODULES =	perl
+
 RUN_DEPENDS=	p5-DBD-SQLite-*|p5-DBD-Pg-*|p5-DBD-mysql-*:databases/p5-DBD-SQLite \
 		misc/p5-Spreadsheet-WriteExcel \
 		net/p5-Net-DNS \
@@ -31,8 +33,7 @@ PREFIX=		/var/www
 PKG_ARCH=	*
 
 do-configure:
-	find ${WRKSRC}/perl -type f -print0 | \
-	    xargs -r0 perl -pi -e 's,#!/usr/bin/env perl,#!/usr/bin/perl,'
+	find ${WRKSRC}/perl -type f -print0 | xargs -r0 ${MODPERL_BIN_ADJ}
 
 # setup a sample database: not strictly necessary, but makes for
 # easy end-user configuration for the simplest case.
