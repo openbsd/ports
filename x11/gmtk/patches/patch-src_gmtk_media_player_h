@@ -1,0 +1,38 @@
+$OpenBSD: patch-src_gmtk_media_player_h,v 1.5 2013/05/24 08:29:54 dcoppa Exp $
+
+Use case-insensitive parsing of metadata attributes
+(upstream svn revision r212)
+
+--- src/gmtk_media_player.h.orig	Tue Feb 19 18:02:13 2013
++++ src/gmtk_media_player.h	Thu May 23 14:18:48 2013
+@@ -182,7 +182,8 @@ typedef enum {
+     ATTRIBUTE_PROFILE,
+     ATTRIBUTE_PREFERRED_AUDIO_LANGUAGE,
+     ATTRIBUTE_PREFERRED_SUBTITLE_LANGUAGE,
+-    ATTRIBUTE_SPEED_SET
++    ATTRIBUTE_SPEED_SET,
++    ATTRIBUTE_GENRE
+ } GmtkMediaPlayerMediaAttributes;
+ 
+ typedef enum {
+@@ -327,6 +328,7 @@ struct _GmtkMediaPlayer {
+     gchar *artist;
+     gchar *title;
+     gchar *album;
++    gchar *genre;
+     gboolean enable_divx;
+     gboolean disable_xvmc;
+     gboolean retry_on_full_cache;
+@@ -398,6 +400,12 @@ struct _GmtkMediaPlayer {
+ 
+     gboolean disposed;
+     GMutex *player_lock;
++    GRegex *name_regex;
++    GRegex *genre_regex;
++    GRegex *title_regex;
++    GRegex *artist_regex;
++    GRegex *album_regex;
++
+ };
+ 
+ struct _GmtkMediaPlayerClass {

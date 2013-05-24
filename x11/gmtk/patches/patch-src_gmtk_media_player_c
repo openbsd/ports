@@ -1,0 +1,290 @@
+$OpenBSD: patch-src_gmtk_media_player_c,v 1.11 2013/05/24 08:29:54 dcoppa Exp $
+
+Use case-insensitive parsing of metadata attributes
+(upstream svn revision r212)
+
+Fix OSD messages so they only displayed for level 1 and higher
+(upstream svn revision r216)
+
+Exclude input.conf from file not found message
+(upstream svn revision r213)
+
+--- src/gmtk_media_player.c.orig	Tue Feb 19 18:02:13 2013
++++ src/gmtk_media_player.c	Thu May 23 14:22:23 2013
+@@ -477,6 +477,12 @@ static void gmtk_media_player_init(GmtkMediaPlayer * p
+     player->album = NULL;
+     player->disposed = FALSE;
+     player->player_lock = g_mutex_new();
++    player->name_regex = g_regex_new(".*name\\s*:\\s*(.*)\n", G_REGEX_CASELESS, 0, NULL);
++    player->genre_regex = g_regex_new(".*genre\\s*:\\s*(.*)\n", G_REGEX_CASELESS, 0, NULL);
++    player->title_regex = g_regex_new(".*title\\s*:\\s*(.*)\n", G_REGEX_CASELESS, 0, NULL);
++    player->artist_regex = g_regex_new(".*artist\\s*:\\s*(.*)\n", G_REGEX_CASELESS, 0, NULL);
++    player->album_regex = g_regex_new(".*album\\s*:\\s*(.*)\n", G_REGEX_CASELESS, 0, NULL);
++
+     gmtk_media_player_log_state(player, "after init");
+ }
+ 
+@@ -741,7 +747,7 @@ static gboolean player_key_press_event_callback(GtkWid
+         case GDK_d:
+             write_to_mplayer(player, "frame_drop\n");
+             cmd =
+-                g_strdup_printf("osd_show_property_text \"%s: ${framedropping}\"\n",
++                g_strdup_printf("osd_show_property_text \"%s: ${framedropping}\" 1000 1\n",
+                                 g_dgettext(GETTEXT_PACKAGE, "Frame Dropping"));
+             write_to_mplayer(player, cmd);
+             g_free(cmd);
+@@ -755,7 +761,7 @@ static gboolean player_key_press_event_callback(GtkWid
+         case GDK_D:
+             write_to_mplayer(player, "step_property deinterlace\n");
+             cmd =
+-                g_strdup_printf("osd_show_property_text \"%s: ${deinterlace}\"\n",
++                g_strdup_printf("osd_show_property_text \"%s: ${deinterlace}\" 1000 1\n",
+                                 g_dgettext(GETTEXT_PACKAGE, "Deinterlace"));
+             write_to_mplayer(player, cmd);
+             g_free(cmd);
+@@ -1119,7 +1125,7 @@ void gmtk_media_player_send_command(GmtkMediaPlayer * 
+         case COMMAND_SWITCH_FRAME_DROP:
+             write_to_mplayer(player, "frame_drop\n");
+             cmd =
+-                g_strdup_printf("osd_show_property_text \"%s ${framedropping}\"\n",
++                g_strdup_printf("osd_show_property_text \"%s ${framedropping}\" 1000 1\n",
+                                 g_dgettext(GETTEXT_PACKAGE, "Frame Dropping"));
+             write_to_mplayer(player, cmd);
+             g_free(cmd);
+@@ -1147,11 +1153,12 @@ void gmtk_media_player_set_attribute_boolean(GmtkMedia
+             cmd = NULL;
+             if (value) {
+                 cmd =
+-                    g_strdup_printf("osd_show_property_text \"%s\"\n",
++                    g_strdup_printf("osd_show_property_text \"%s\" 1000 1\n",
+                                     g_dgettext(GETTEXT_PACKAGE, "Subtitles Visible"));
+             } else {
+                 cmd =
+-                    g_strdup_printf("osd_show_property_text \"%s\"\n", g_dgettext(GETTEXT_PACKAGE, "Subtitles Hidden"));
++                    g_strdup_printf("osd_show_property_text \"%s\" 1000 1\n",
++                                    g_dgettext(GETTEXT_PACKAGE, "Subtitles Hidden"));
+             }
+             write_to_mplayer(player, cmd);
+             g_free(cmd);
+@@ -1775,6 +1782,14 @@ const gchar *gmtk_media_player_get_attribute_string(Gm
+         }
+         break;
+ 
++    case ATTRIBUTE_GENRE:
++        if (player->genre == NULL || strlen(player->genre) == 0) {
++            value = NULL;
++        } else {
++            value = player->genre;
++        }
++        break;
++
+     case ATTRIBUTE_PROFILE:
+         value = player->profile;
+         break;
+@@ -3042,6 +3057,7 @@ gboolean thread_reader_error(GIOChannel * source, GIOC
+ 
+         if (strstr(mplayer_output->str, "Failed to open") != NULL) {
+             if (strstr(mplayer_output->str, "LIRC") == NULL &&
++                strstr(mplayer_output->str, "input.conf") == NULL &&
+                 strstr(mplayer_output->str, "/dev/rtc") == NULL &&
+                 strstr(mplayer_output->str, "VDPAU") == NULL && strstr(mplayer_output->str, "registry file") == NULL) {
+                 if (strstr(mplayer_output->str, "<") == NULL && strstr(mplayer_output->str, ">") == NULL
+@@ -3161,6 +3177,8 @@ gboolean thread_reader(GIOChannel * source, GIOConditi
+     GmtkMediaPlayerAudioTrack *audio_track = NULL;
+     GList *iter;
+     GtkWidget *dialog;
++    gchar **split;
++    gint index;
+ 
+     if (player == NULL) {
+         gm_log(player->debug, G_LOG_LEVEL_MESSAGE, "player is NULL");
+@@ -3635,94 +3653,119 @@ gboolean thread_reader(GIOChannel * source, GIOConditi
+             gtk_widget_destroy(dialog);
+         }
+ 
+-        if (strstr(mplayer_output->str, "Name   : ") != 0) {
+-            buf = strstr(mplayer_output->str, "Name   : ");
+-            buf = strstr(mplayer_output->str, "Name   : ") + strlen("Name   : ");
+-            buf = g_strchomp(buf);
+-            if (player->title != NULL) {
+-                g_free(player->title);
+-                player->title = NULL;
+-            }
++        if (g_regex_match(player->name_regex, mplayer_output->str, 0, NULL)) {
++            split = g_regex_split(player->name_regex, mplayer_output->str, 0);
++            index = 0;
++            while (split[index]) {
++                if (strlen(split[index]) > 0) {
++                    if (player->title != NULL) {
++                        g_free(player->title);
++                        player->title = NULL;
++                    }
+ 
+-            player->title = g_locale_to_utf8(buf, -1, NULL, NULL, NULL);
+-            if (player->title == NULL) {
+-                player->title = g_strdup(buf);
+-                gm_str_strip_unicode(player->title, strlen(player->title));
++                    player->title = g_locale_to_utf8(split[index], -1, NULL, NULL, NULL);
++                    if (player->title == NULL) {
++                        player->title = g_strdup(split[index]);
++                        gm_str_strip_unicode(player->title, strlen(player->title));
++                    }
++                    player->has_metadata = TRUE;
++                    create_event_int(player, "attribute-changed", ATTRIBUTE_TITLE);
++                }
++                index++;
+             }
+-            player->has_metadata = TRUE;
+-            create_event_int(player, "attribute-changed", ATTRIBUTE_TITLE);
++            g_strfreev(split);
+         }
+ 
+-        if (strstr(mplayer_output->str, "Genre  : ") != 0) {
+-            buf = strstr(mplayer_output->str, "Genre  : ");
+-            buf = strstr(mplayer_output->str, "Genre  : ") + strlen("Genre  : ");
+-            buf = g_strchomp(buf);
+-            if (player->artist != NULL) {
+-                g_free(player->artist);
+-                player->artist = NULL;
+-            }
++        if (g_regex_match(player->genre_regex, mplayer_output->str, 0, NULL)) {
++            split = g_regex_split(player->genre_regex, mplayer_output->str, 0);
++            index = 0;
++            while (split[index]) {
++                if (strlen(split[index]) > 0) {
++                    if (player->title != NULL) {
++                        g_free(player->genre);
++                        player->title = NULL;
++                    }
+ 
+-            player->artist = g_locale_to_utf8(buf, -1, NULL, NULL, NULL);
+-            if (player->artist == NULL) {
+-                player->artist = g_strdup(buf);
+-                gm_str_strip_unicode(player->artist, strlen(player->artist));
++                    player->genre = g_locale_to_utf8(split[index], -1, NULL, NULL, NULL);
++                    if (player->genre == NULL) {
++                        player->genre = g_strdup(split[index]);
++                        gm_str_strip_unicode(player->genre, strlen(player->genre));
++                    }
++                    player->has_metadata = TRUE;
++                    create_event_int(player, "attribute-changed", ATTRIBUTE_GENRE);
++                }
++                index++;
+             }
+-            player->has_metadata = TRUE;
+-            create_event_int(player, "attribute-changed", ATTRIBUTE_ARTIST);
++            g_strfreev(split);
+         }
+ 
+-        if (strstr(mplayer_output->str, "Title: ") != 0) {
+-            buf = strstr(mplayer_output->str, "Title:");
+-            buf = strstr(mplayer_output->str, "Title: ") + strlen("Title: ");
+-            buf = g_strchomp(buf);
+-            if (player->title != NULL) {
+-                g_free(player->title);
+-                player->title = NULL;
+-            }
++        if (g_regex_match(player->title_regex, mplayer_output->str, 0, NULL)) {
++            split = g_regex_split(player->title_regex, mplayer_output->str, 0);
++            index = 0;
++            while (split[index]) {
++                if (strlen(split[index]) > 0) {
++                    if (player->title != NULL) {
++                        g_free(player->title);
++                        player->title = NULL;
++                    }
+ 
+-            player->title = g_locale_to_utf8(buf, -1, NULL, NULL, NULL);
+-            if (player->title == NULL) {
+-                player->title = g_strdup(buf);
+-                gm_str_strip_unicode(player->title, strlen(player->title));
++                    player->title = g_locale_to_utf8(split[index], -1, NULL, NULL, NULL);
++                    if (player->title == NULL) {
++                        player->title = g_strdup(split[index]);
++                        gm_str_strip_unicode(player->title, strlen(player->title));
++                    }
++                    player->has_metadata = TRUE;
++                    create_event_int(player, "attribute-changed", ATTRIBUTE_TITLE);
++                }
++                index++;
+             }
+-            player->has_metadata = TRUE;
+-            create_event_int(player, "attribute-changed", ATTRIBUTE_TITLE);
++            g_strfreev(split);
+         }
+ 
+-        if (strstr(mplayer_output->str, "Artist: ") != 0) {
+-            buf = strstr(mplayer_output->str, "Artist:");
+-            buf = strstr(mplayer_output->str, "Artist: ") + strlen("Artist: ");
+-            buf = g_strchomp(buf);
+-            if (player->artist != NULL) {
+-                g_free(player->artist);
+-                player->artist = NULL;
+-            }
++        if (g_regex_match(player->artist_regex, mplayer_output->str, 0, NULL)) {
++            split = g_regex_split(player->artist_regex, mplayer_output->str, 0);
++            index = 0;
++            while (split[index]) {
++                if (strlen(split[index]) > 0) {
++                    if (player->artist != NULL) {
++                        g_free(player->artist);
++                        player->artist = NULL;
++                    }
+ 
+-            player->artist = g_locale_to_utf8(buf, -1, NULL, NULL, NULL);
+-            if (player->artist == NULL) {
+-                player->artist = g_strdup(buf);
+-                gm_str_strip_unicode(player->artist, strlen(player->artist));
++                    player->artist = g_locale_to_utf8(split[index], -1, NULL, NULL, NULL);
++                    if (player->artist == NULL) {
++                        player->artist = g_strdup(split[index]);
++                        gm_str_strip_unicode(player->artist, strlen(player->artist));
++                    }
++                    player->has_metadata = TRUE;
++                    create_event_int(player, "attribute-changed", ATTRIBUTE_ARTIST);
++                }
++                index++;
+             }
+-            player->has_metadata = TRUE;
+-            create_event_int(player, "attribute-changed", ATTRIBUTE_ARTIST);
++            g_strfreev(split);
+         }
+ 
+-        if (strstr(mplayer_output->str, "Album: ") != 0) {
+-            buf = strstr(mplayer_output->str, "Album:");
+-            buf = strstr(mplayer_output->str, "Album: ") + strlen("Album: ");
+-            buf = g_strchomp(buf);
+-            if (player->album != NULL) {
+-                g_free(player->album);
+-                player->album = NULL;
+-            }
++        if (g_regex_match(player->album_regex, mplayer_output->str, 0, NULL)) {
++            split = g_regex_split(player->album_regex, mplayer_output->str, 0);
++            index = 0;
++            while (split[index]) {
++                if (strlen(split[index]) > 0) {
++                    if (player->album != NULL) {
++                        g_free(player->album);
++                        player->album = NULL;
++                    }
+ 
+-            player->album = g_locale_to_utf8(buf, -1, NULL, NULL, NULL);
+-            if (player->album == NULL) {
+-                player->album = g_strdup(buf);
+-                gm_str_strip_unicode(player->album, strlen(player->album));
++                    player->album = g_locale_to_utf8(split[index], -1, NULL, NULL, NULL);
++                    if (player->album == NULL) {
++                        player->album = g_strdup(split[index]);
++                        gm_str_strip_unicode(player->album, strlen(player->album));
++                    }
++                    player->has_metadata = TRUE;
++                    create_event_int(player, "attribute-changed", ATTRIBUTE_ALBUM);
++                }
++                index++;
+             }
+-            player->has_metadata = TRUE;
+-            create_event_int(player, "attribute-changed", ATTRIBUTE_ALBUM);
++            g_strfreev(split);
+         }
+ 
+         if (player->minimum_mplayer == FALSE) {

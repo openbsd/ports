@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2012/01/05 14:47:10 dcoppa Exp $
-@lib lib/libgmlib.so.${LIBgmlib_VERSION}
-@lib lib/libgmtk.so.${LIBgmtk_VERSION}
