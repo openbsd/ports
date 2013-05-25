@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.40 2013/05/01 21:09:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2013/05/25 02:45:01 brad Exp $
 
 COMMENT =	GNU system administration tool for networks
 
 DISTNAME =	cfengine-3.4.4
+REVISION =	0
 SHARED_LIBS +=  promises	0.0 # 1.0
 CATEGORIES =	sysutils
 HOMEPAGE =	http://cfengine.com/
@@ -49,7 +50,7 @@ CONFIGURE_ARGS +=	--without-postgresql
 .if ${FLAVOR:Mmysql}
 WANTLIB +=		mysqlclient_r
 CONFIGURE_ARGS +=	--with-mysql
-LIB_DEPENDS +=		databases/mysql
+LIB_DEPENDS +=		databases/mariadb
 .else
 CONFIGURE_ARGS +=	--without-mysql
 .endif
