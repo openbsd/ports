@@ -1,0 +1,37 @@
+$OpenBSD: patch-ext_swift_db_postgres_extconf_rb,v 1.1.1.1 2013/05/25 22:18:46 jeremy Exp $
+--- ext/swift/db/postgres/extconf.rb.orig	Wed Dec 31 16:00:00 1969
++++ ext/swift/db/postgres/extconf.rb	Tue Dec  4 11:04:38 2012
+@@ -5,21 +5,13 @@ require 'mkmf'
+ $CFLAGS = '-std=c99 -Os'
+ 
+ inc_paths = %w(
+-  /usr/include/postgresql
+-  /usr/local/include/postgresql
+-  /opt/local/include
+-  /opt/local/include/postgresql90
+-  /opt/local/include/postgresql85
+-  /opt/local/include/postgresql84
+-  /sw/include
++  ${LOCALBASE}/include
++  ${LOCALBASE}/include/postgresql
+ )
+ 
+ lib_paths = %w(
+   /usr/lib
+-  /usr/local/lib
+-  /opt/lib
+-  /opt/local/lib
+-  /sw/lib
++  ${LOCALBASE}/lib
+ )
+ 
+ uuid_inc,  uuid_lib  = dir_config('uuid',  '/usr/include/uuid', '/usr/lib')
+@@ -28,7 +20,7 @@ libpq_inc, libpq_lib = dir_config('postgresql')
+ find_header 'uuid/uuid.h', *inc_paths.dup.unshift(uuid_inc).compact
+ find_header 'libpq-fe.h',  *inc_paths.dup.unshift(libpq_inc).compact
+ 
+-find_library 'uuid', 'main', *lib_paths.dup.unshift(uuid_lib).compact
++find_library 'e2fs-uuid', 'main', *lib_paths.dup.unshift(uuid_lib).compact
+ find_library 'pq',   'main', *lib_paths.dup.unshift(libpq_lib).compact
+ 
+ create_makefile('swift_db_postgres_ext')
