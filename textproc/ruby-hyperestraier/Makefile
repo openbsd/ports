@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2013/03/20 19:13:50 jeremy Exp $
+# $OpenBSD: Makefile,v 1.33 2013/05/25 22:53:46 jeremy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -18,12 +18,16 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=hyperestraier/}
 
-FLAVORS =		ruby19
+FLAVORS =		ruby19 ruby20
 FLAVOR ?=		
 .if ${FLAVOR:Mruby19}
 MODRUBY_REV =		1.9
 FULLPKGNAME =		ruby19-hyperestraier-1.0.0
 BIN_SUFFIX =		19
+.elif ${FLAVOR:Mruby20}
+MODRUBY_REV =		2.0
+FULLPKGNAME =		ruby20-hyperestraier-1.0.0
+BIN_SUFFIX =		20
 .else
 MODRUBY_REV =		1.8
 BIN_SUFFIX =		
@@ -48,8 +52,8 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/estcmd.rb
 
 post-install:
-.if ${FLAVOR:Mruby19}
-	mv ${PREFIX}/bin/estcmd{,19}.rb
+.if ${BIN_SUFFIX}
+	mv ${PREFIX}/bin/estcmd{,${BIN_SUFFIX}}.rb
 .endif
 	${INSTALL_DATA_DIR} ${MODRUBY_EXAMPLEDIR}/hyperestraier
 	${INSTALL_DATA} ${WRKSRC}/example/*.rb \
