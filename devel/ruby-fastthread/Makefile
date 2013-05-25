@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 10:50:29 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/05/25 22:43:54 jeremy Exp $
 
 COMMENT=	optimized replacement for Ruby thread.rb primitives
 
@@ -19,10 +19,10 @@ MODRUBY_TEST_TARGET=-rubygems test/test_all.rb
 
 FLAVOR?=
 
-.if ${FLAVOR:Mruby19} || empty(FLAVOR)
-FASTTHREAD_EXT=	.rb
-.else
+.if ${FLAVOR:Mruby18}
 FASTTHREAD_EXT=	.so
+.else
+FASTTHREAD_EXT=	.rb
 .endif
 
 SUBST_VARS=	FASTTHREAD_EXT
