@@ -1,0 +1,33 @@
+$OpenBSD: patch-yubikey_authentication_php,v 1.1.1.1 2013/05/25 08:55:56 sthen Exp $
+
+https://github.com/northox/roundcube-yubikey-plugin/pull/2
+
+--- yubikey_authentication.php.orig	Wed May  1 02:37:41 2013
++++ yubikey_authentication.php	Fri May 24 16:59:13 2013
+@@ -65,6 +65,14 @@ class yubikey_authentication extends rcube_plugin
+     {
+       $yubikey_otp = get_input_value('_yubikey', RCUBE_INPUT_POST);
+       $yubikey_id = rcmail::get_instance()->config->get('yubikey_id');
++      $yubikey_url = rcmail::get_instance()->config->get('yubikey_api_url');
++      $yubikey_https = true;
++      if (!empty($yubikey_url) && $_url = parse_url($yubikey_url)) {
++        if ($_url['scheme'] == "http") $yubikey_https = false;
++        $yubikey_urlpart = $_url['host'];
++        if (!empty($_url['port'])) $yubikey_urlpart .= ':'.$_url['port'];
++        $yubikey_urlpart .= $_url['path'];
++      }
+ 
+       // make sure that there is a Yubikey ID in the user's prefs
+       // and that it matches the first 12 characters of the OTP
+@@ -78,8 +86,10 @@ class yubikey_authentication extends rcube_plugin
+         {
+           $yubi = new Auth_Yubico(rcmail::get_instance()->config->get('yubikey_api_id'), 
+                                   rcmail::get_instance()->config->get('yubikey_api_key'), 
+-                                  true, 
++                                  $yubikey_https,
+                                   true);
++          if (!empty($yubikey_urlpart))
++            $yubi->addURLpart($yubikey_urlpart);
+           if (PEAR::isError($yubi->verify($yubikey_otp)))
+             $this->fail();
+         }

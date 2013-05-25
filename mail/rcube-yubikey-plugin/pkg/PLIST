@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/05/25 08:55:56 sthen Exp $
+roundcubemail/plugins/yubikey_authentication/
+roundcubemail/plugins/yubikey_authentication/LICENSE
+roundcubemail/plugins/yubikey_authentication/README.md
+roundcubemail/plugins/yubikey_authentication/config.inc.php.dist
+@sample roundcubemail/plugins/yubikey_authentication/config.inc.php
+roundcubemail/plugins/yubikey_authentication/lib/
+roundcubemail/plugins/yubikey_authentication/lib/Yubico.php
+roundcubemail/plugins/yubikey_authentication/localization/
+roundcubemail/plugins/yubikey_authentication/localization/de_DE.inc
+roundcubemail/plugins/yubikey_authentication/localization/en_US.inc
+roundcubemail/plugins/yubikey_authentication/yubikey.js
+roundcubemail/plugins/yubikey_authentication/yubikey_authentication.php

@@ -1,0 +1,27 @@
+$OpenBSD: patch-config_inc_php,v 1.1.1.1 2013/05/25 08:55:56 sthen Exp $
+
+https://github.com/northox/roundcube-yubikey-plugin/pull/2
+
+--- config.inc.php.orig	Wed May  1 02:37:41 2013
++++ config.inc.php	Fri May 24 17:52:25 2013
+@@ -1,10 +1,14 @@
+ <?php
+-// enable / disable yubikey authentication
+-$rcmail_config['yubikey'] = true;
++// enable / disable YubiKey authentication
++$rcmail_config['YubiKey'] = true;
+ 
+-// yubikey API key & ID needed to access the web service API. Visit https://api.yubico.com/get-api-key/
+-$rcmail_config['yubikey_api_id'] = '';
+-$rcmail_config['yubikey_api_key'] = '';
++// YubiKey API key & ID needed to access the web service API.
++// see: http://www.yubico.com/faq/api-key-yubikey-development/
++$rcmail_config['YubiKey_api_id'] = '';
++$rcmail_config['YubiKey_api_key'] = '';
+ 
+-$rcmail_config['debug_logger']['yubikey'] = 'yubikey';
++// YubiKey API URL, defaulting to YubiCloud servers if not specified.
++$rcmail_config['YubiKey_api_url'] = '';
++
++$rcmail_config['debug_logger']['YubiKey'] = 'YubiKey';
+ ?>

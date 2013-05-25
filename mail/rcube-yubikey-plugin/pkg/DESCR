@@ -1,0 +1,7 @@
+Plugin for Roundcube webmail for two-factor authentication, allowing
+the choice (per-account) of requiring YubiKey authentication in addition
+to standard password authentication.
+
+Note: this normally connects to a YubiKey API server over https.
+If your web server runs in a chroot jail, you must copy /etc/ssl/cert.pem
+(or another suitable certificate bundle) to /var/www/etc/ssl/cert.pem.
