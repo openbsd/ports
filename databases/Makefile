@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.243 2013/05/25 00:33:09 brad Exp $
+# $OpenBSD: Makefile,v 1.244 2013/05/25 22:27:12 jeremy Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -209,8 +209,6 @@
      SUBDIR += ruby-mysql,rbx
      SUBDIR += ruby-mysql2
      SUBDIR += ruby-mysql2,ruby18
-     SUBDIR += ruby-mysqlplus
-     SUBDIR += ruby-mysqlplus,ruby18
      SUBDIR += ruby-pg
      SUBDIR += ruby-pg,ruby18
      SUBDIR += ruby-pg,rbx
@@ -230,6 +228,12 @@
      SUBDIR += ruby-sqlite3,ruby18
      SUBDIR += ruby-sqlite3,rbx
      SUBDIR += ruby-swift
+     SUBDIR += ruby-swift-db-mysql,ruby19
+     SUBDIR += ruby-swift-db-mysql,ruby20
+     SUBDIR += ruby-swift-db-postgres,ruby19
+     SUBDIR += ruby-swift-db-postgres,ruby20
+     SUBDIR += ruby-swift-db-sqlite3,ruby19
+     SUBDIR += ruby-swift-db-sqlite3,ruby20
      SUBDIR += ruby-tiny_tds
      SUBDIR += ruby-tiny_tds,ruby18
      SUBDIR += ruby-tiny_tds,rbx
