@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.88 2013/03/29 03:59:45 william Exp $
+# $OpenBSD: Quirks.pm,v 1.89 2013/05/25 08:54:27 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -307,9 +307,12 @@ my $stem_extensions = {
 	'tangogps' => 'foxtrotgps',
 	'cyrus-imapd-perl' => 'cyrus-imapd',
 	'tmw' => 'manaplus',
-        'ruby19-ruby-augeas' => 'ruby19-augeas',
-        'ruby-ruby-augeas' => 'ruby-augeas',
-        'nail' => 's-nail'
+	'ruby19-ruby-augeas' => 'ruby19-augeas',
+	'ruby-ruby-augeas' => 'ruby-augeas',
+	'nail' => 's-nail',
+	'mysql-client' => 'mariadb-client',
+	'mysql-server' => 'mariadb-server',
+	'mysql-tests' => 'mariadb-tests'
 };
 
 # ->is_base_system($handle, $state):
