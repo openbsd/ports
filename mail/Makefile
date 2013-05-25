@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.292 2013/05/14 04:55:17 mglocker Exp $
+# $OpenBSD: Makefile,v 1.293 2013/05/25 08:56:23 sthen Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -182,6 +182,7 @@
      SUBDIR += razor-agents
      SUBDIR += rcube-contextmenu
      SUBDIR += rcube-sieverules
+     SUBDIR += rcube-yubikey-plugin
      SUBDIR += re-alpine
      SUBDIR += relaydb
      SUBDIR += roundcubemail
