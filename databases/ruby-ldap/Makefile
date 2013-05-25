@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2013/03/11 02:52:08 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2013/05/25 23:20:51 jeremy Exp $
 
 COMMENT=	Ruby interface to some common LDAP libraries
 
@@ -26,6 +26,9 @@ CONFIGURE_ARGS=		--without-libldap
 TEST_TARGET=		test
 TEST_DEPENDS=	databases/openldap,-server
 TEST_IS_INTERACTIVE = Yes
+
+pre-build:
+	mkdir -p ${GEM_BASE}/build_info;
 
 do-test:
 	cd ${WRKSRC} &&	/bin/sh ./test/test.sh ruby openldap2 \
