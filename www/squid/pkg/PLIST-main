@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2013/04/30 18:41:50 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2013/05/25 12:33:05 sthen Exp $
 @pkgpath www/squid[,ldap][,ntlm][,snmp][,transparent]
 @newgroup _squid:515
 @newuser _squid:515:_squid:daemon:Squid Account:/nonexistent:/sbin/nologin
@@ -14,10 +14,8 @@ libexec/squid/basic_db_auth
 libexec/squid/basic_pop3_auth
 @bin libexec/squid/basic_radius_auth
 @bin libexec/squid/cachemgr.cgi
-@bin libexec/squid/digest_edirectory_auth
 @bin libexec/squid/digest_file_auth
 @bin libexec/squid/diskd
-@bin libexec/squid/ext_edirectory_userip_acl
 @bin libexec/squid/ext_file_userip_acl
 libexec/squid/ext_sql_session_acl
 @bin libexec/squid/ext_time_quota_acl
@@ -36,7 +34,6 @@ libexec/squid/url_fake_rewrite.sh
 @man man/man8/basic_radius_auth.8
 @man man/man8/cachemgr.cgi.8
 @man man/man8/digest_file_auth.8
-@man man/man8/ext_edirectory_userip_acl.8
 @man man/man8/ext_file_userip_acl.8
 @man man/man8/ext_sql_session_acl.8
 @man man/man8/ext_time_quota_acl.8

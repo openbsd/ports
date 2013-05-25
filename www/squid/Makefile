@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.154 2013/04/30 18:41:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.155 2013/05/25 12:33:05 sthen Exp $
 
 MULTI_PACKAGES=	-main -ntlm
 
@@ -9,7 +9,7 @@ COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
 COMMENT-ntlm=	NTLM authentication/ACL support for Squid
 
-V=		3.3.4
+V=		3.3.5
 
 DISTNAME=	squid-$V
 EXTRACT_SUFX=	.tar.bz2
@@ -30,9 +30,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c m pthread stdc++
 
-WANTLIB-main=	${WANTLIB} asn1 crypto execinfo gssapi krb5 ssl
+WANTLIB-main=	${WANTLIB} asn1 crypto db execinfo gssapi krb5 ssl
 
-LIB_DEPENDS-main= ${LIB_DEPENDS} devel/libexecinfo
+LIB_DEPENDS-main= ${LIB_DEPENDS} \
+		databases/db/v4 \
+		devel/libexecinfo
 
 SYSCONFDIR=	${BASESYSCONFDIR}/squid
 LOCALSTATEDIR=	${BASELOCALSTATEDIR}/squid

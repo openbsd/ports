@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.6 2013/04/30 18:41:50 sthen Exp $
---- configure.ac.orig	Sat Apr 27 04:35:47 2013
-+++ configure.ac	Sat Apr 27 16:25:56 2013
-@@ -3162,6 +3162,14 @@ if test "x$squid_host_os" = "xmingw" ; then
+$OpenBSD: patch-configure_ac,v 1.7 2013/05/25 12:33:05 sthen Exp $
+--- configure.ac.orig	Mon May 20 12:50:55 2013
++++ configure.ac	Sat May 25 12:08:28 2013
+@@ -3166,6 +3166,14 @@ if test "x$squid_host_os" = "xmingw" ; then
    ac_cv_func_statfs='yes'
  fi
  
