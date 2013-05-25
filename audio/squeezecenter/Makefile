@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/10 22:55:05 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/05/25 00:33:09 brad Exp $
 
 COMMENT =	streaming audio server for Squeezebox network music players
 
@@ -8,7 +8,7 @@ COMMENT =	streaming audio server for Squeezebox network music players
 V =		7.3.3
 PKGNAME =	squeezecenter-${V}
 DISTNAME =	squeezecenter-${V}-noCPAN
-REVISION =	3
+REVISION =	4
 CATEGORIES =	audio net
 
 HOMEPAGE =	http://wiki.slimdevices.com/index.php/SqueezeCenter
@@ -34,7 +34,7 @@ WRKDIST =	${WRKDIR}/${DISTNAME:S/.no-cpan-arch//}
 RUN_DEPENDS =	audio/flac \
 		audio/lame \
 		audio/wavpack \
-		databases/mysql,-server \
+		databases/mariadb,-server \
 		devel/p5-Cache-Cache>=1.04 \
 		devel/p5-Carp-Clan>=5.3 \
 		devel/p5-Class-Accessor>=0.31 \

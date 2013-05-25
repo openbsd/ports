@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.177 2013/05/18 08:44:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.178 2013/05/25 00:33:10 brad Exp $
 
 SHARED_ONLY=		Yes
 
@@ -171,7 +171,7 @@ CONFIGURE_ARGS+=	--with-ldap=no
 #
 #COMMENT-mysql=		MySQL support for Asterisk
 #WANTLIB-mysql=		mysqlclient
-#LIB_DEPENDS-mysql=	databases/mysql
+#LIB_DEPENDS-mysql=	databases/mariadb
 #.if !${BUILD_PACKAGES:M-mysql}
 #CONFIGURE_ARGS+=	--with-mysqlclient=no
 #.endif

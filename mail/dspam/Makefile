@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2013/03/21 08:46:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2013/05/25 00:33:09 brad Exp $
 
 COMMENT=	anti-spam filter
 
 VERSION=	3.8.0
 DISTNAME=	dspam-${VERSION}
-REVISION=	4
+REVISION=	5
 SHARED_LIBS=	dspam	8.0
 CATEGORIES=	mail
 
@@ -62,13 +62,12 @@ DRIVER = sqlite3
 FLAVOR += sqlite3
 .endif
 
-
 .if ${DRIVER} == "mysql"
 CONFIGURE_ARGS+=	--with-storage-driver=mysql_drv \
 			--with-mysql-includes=${LOCALBASE}/include/mysql \
 			--with-mysql-libraries=${LOCALBASE}/lib/mysql \
 			--enable-virtual-users
-LIB_DEPENDS+=		databases/mysql
+LIB_DEPENDS+=		databases/mariadb
 WANTLIB+=		z ssl crypto lib/mysql/mysqlclient>=14
 .elif ${DRIVER} == "pgsql"
 CONFIGURE_ARGS+=	--with-storage-driver=pgsql_drv \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:07:40 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/05/25 00:33:09 brad Exp $
 
 V = 0.8.1
 COMMENT-client = race for the galaxy card game
@@ -14,6 +14,7 @@ MULTI_PACKAGES = -client #-server
 SUBPACKAGE ?= -client
 
 REVISION-client =	1
+REVISION-server =	0
 
 # Licence: GPL
 # official authorization from the game publisher (Rio Grande)
@@ -23,7 +24,7 @@ CONFIGURE_STYLE = gnu
 
 LIB_DEPENDS-client = x11/gtk+2
 
-LIB_DEPENDS-server = databases/mysql
+LIB_DEPENDS-server = databases/mariadb
 
 .if ${MULTI_PACKAGES:M-server}
 

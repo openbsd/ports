@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2013/04/25 15:57:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2013/05/25 00:33:10 brad Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,7 +10,6 @@ COMMENT-streaming = Streaming module for Cherokee web server
 
 DIR =		1.2
 VERSION =	${DIR}.101
-REVISION =	1
 DISTNAME =	cherokee-${VERSION}
 
 PKGNAME-main =	${DISTNAME}
@@ -18,6 +17,12 @@ PKGNAME-ldap =	cherokee-ldap-${VERSION}
 PKGNAME-mysql =	cherokee-mysql-${VERSION}
 PKGNAME-geoip =	cherokee-geoip-${VERSION}
 PKGNAME-streaming = cherokee-streaming-${VERSION}
+
+REVISION-main =		1
+REVISION-geoip =	1
+REVISION-ldap =		1
+REVISION-mysql =	2
+REVISION-streaming =	1
 
 SHARED_LIBS =	cherokee-base		0.0 \
 		cherokee-client		0.0 \
@@ -59,7 +64,7 @@ LIB_DEPENDS-ldap =	databases/openldap
 WANTLIB-ldap =		asn1 com_err crypto gssapi krb5 lber-2.4 ldap-2.4 sasl2 ssl
 RUN_DEPENDS-ldap =	${BASE_PKGPATH}
 
-LIB_DEPENDS-mysql =	databases/mysql
+LIB_DEPENDS-mysql =	databases/mariadb
 WANTLIB-mysql =		crypto m mysqlclient>=19 ssl z
 RUN_DEPENDS-mysql =	${BASE_PKGPATH}
 

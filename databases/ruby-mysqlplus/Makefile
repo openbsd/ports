@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 02:52:08 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/05/25 00:33:09 brad Exp $
 
-COMMENT=	enhanced ruby mysql driver, supporting async and threading
+COMMENT=	enhanced Ruby MySQL driver, supporting async and threading
 
 DISTNAME=	mysqlplus-0.1.2
-REVISION =	4
+REVISION=	6
 CATEGORIES=	databases
 
 HOMEPAGE=	http://github.com/oldmoe/mysqlplus
@@ -17,13 +17,13 @@ MODULES=	lang/ruby
 
 WANTLIB=	mysqlclient crypto ssl z
 
-LIB_DEPENDS=	databases/mysql
+LIB_DEPENDS=	databases/mariadb
 
 CONFIGURE_STYLE=ruby gem ext
 
 # Requires running mysql server
 TEST_IS_INTERACTIVE = Yes
-TEST_DEPENDS=databases/mysql,-server \
+TEST_DEPENDS=databases/mariadb,-server \
 		${FULLPKGNAME}:${BUILD_PKGPATH}
 MODRUBY_TEST=rake
 do-test:

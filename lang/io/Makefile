@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/05/18 16:11:39 kirby Exp $
+# $OpenBSD: Makefile,v 1.7 2013/05/25 00:33:09 brad Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS =i386 amd64
@@ -7,7 +7,7 @@ COMMENT =	embeddable prototype-based language
 
 DISTNAME =	stevedekorte-io-2011.09.12-106-g02f9800
 PKGNAME =	io-20110905
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	lang
 
@@ -35,7 +35,7 @@ WANTLIB += yajl z
 
 LIB_DEPENDS =	archivers/lzo2 \
 		audio/libsndfile \
-		mysql-client-*:databases/mysql,-main \
+		databases/mariadb \
 		databases/qdbm \
 		devel/atk \
 		devel/gmp \

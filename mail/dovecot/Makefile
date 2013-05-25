@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.203 2013/04/08 18:53:54 brad Exp $
+# $OpenBSD: Makefile,v 1.204 2013/05/25 00:33:09 brad Exp $
 
 SHARED_ONLY=	Yes
 
@@ -16,6 +16,7 @@ PKGNAME=	dovecot-${V_DOVECOT}
 PKGNAME-server=	dovecot-${V_DOVECOT}
 PKGNAME-ldap=	dovecot-ldap-${V_DOVECOT}
 PKGNAME-mysql=	dovecot-mysql-${V_DOVECOT}
+REVISION-mysql=	0
 PKGNAME-postgresql= dovecot-postgresql-${V_DOVECOT}
 CATEGORIES=	mail
 MASTER_SITES=	${HOMEPAGE}releases/${V_MAJOR}/
@@ -44,7 +45,7 @@ MODULES=	converters/libiconv
 LIB_DEPENDS+=	archivers/bzip2
 LIB_DEPENDS-ldap= databases/openldap
 RUN_DEPENDS-ldap= ${BASE_PKGPATH}=${V_DOVECOT}
-LIB_DEPENDS-mysql= databases/mysql
+LIB_DEPENDS-mysql= databases/mariadb
 RUN_DEPENDS-mysql= ${BASE_PKGPATH}=${V_DOVECOT}
 LIB_DEPENDS-postgresql= databases/postgresql
 RUN_DEPENDS-postgresql= ${BASE_PKGPATH}=${V_DOVECOT}

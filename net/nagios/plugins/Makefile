@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2013/03/21 08:46:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2013/05/25 00:33:10 brad Exp $
 
 COMMENT-main=	nagios base plugins
 COMMENT-fping=	fping plugin
@@ -17,6 +17,7 @@ PKGNAME-fping=	nagios-plugins-fping-$V
 PKGNAME-game=	nagios-plugins-game-$V
 PKGNAME-ldap=	nagios-plugins-ldap-$V
 PKGNAME-mysql=	nagios-plugins-mysql-$V
+REVISION-mysql=	0
 PKGNAME-ntp=	nagios-plugins-ntp-$V
 PKGNAME-pgsql=	nagios-plugins-pgsql-$V
 PKGNAME-samba=	nagios-plugins-samba-$V
@@ -92,7 +93,7 @@ LIB_DEPENDS-ldap=	databases/openldap \
 			${LIB_DEPENDS}
 
 WANTLIB-mysql=		${WANTLIB} crypto m mysqlclient ssl z
-LIB_DEPENDS-mysql=	databases/mysql \
+LIB_DEPENDS-mysql=	databases/mariadb \
 			${LIB_DEPENDS}
 
 WANTLIB-ntp=		${WANTLIB} m

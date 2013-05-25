@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:41:28 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/05/25 00:33:10 brad Exp $
 
 COMMENT-main=		Samhain Intrusion Detection System - documentation
 COMMENT-client=		Samhain Intrusion Detection System - client
@@ -14,7 +14,7 @@ PKGNAME-server=		samhain-server-${VERSION}
 
 REVISION-main=		3
 REVISION-client=	7
-REVISION-server=	5
+REVISION-server=	6
 
 CATEGORIES=		security
 
@@ -45,7 +45,7 @@ SUBST_VARS=		FLAVOR
 .if ${FLAVOR} == "mysql"
 MULTI_PACKAGES+=	-server
 RUN_DEPENDS-server+=	security/samhain,-main
-LIB_DEPENDS-server+=	databases/mysql,-main
+LIB_DEPENDS-server+=	databases/mariadb,-main
 WANTLIB-server+=	c crypto m mysqlclient ssl z
 CONFIGURE_ARGS+=	--with-database=mysql \
 			--enable-xml-log \

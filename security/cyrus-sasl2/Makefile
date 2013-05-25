@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.72 2013/05/11 06:21:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.73 2013/05/25 00:33:10 brad Exp $
 
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
 
 DISTNAME=	cyrus-sasl-2.1.26
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS += sasl2           3.0 # 3.0
 
@@ -72,7 +72,7 @@ CONFIGURE_ARGS+=--without-ldap
 ERRORS+=	${BRKFLAVORMSG}
 .endif
 PKG_ARGS=	-Dsql=1
-LIB_DEPENDS+=	databases/mysql
+LIB_DEPENDS+=	databases/mariadb
 WANTLIB+=	m ssl z lib/mysql/mysqlclient>=10
 CONFIGURE_ARGS+=--enable-sql \
 		--with-mysql \

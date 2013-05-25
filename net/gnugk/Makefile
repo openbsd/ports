@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2013/05/14 15:01:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2013/05/25 00:33:10 brad Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,6 +7,8 @@ COMMENT=	H.323 gatekeeper
 V=		3.3
 DISTNAME=	gnugk-${V}-2
 PKGNAME=	gnugk-${V}
+REVISION=	0
+
 WRKDIST=	${WRKDIR}/gnugk-${V}
 
 CATEGORIES=	net telephony
@@ -26,7 +28,7 @@ MODULES=	lang/lua
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=openh323gk/}
 
-BUILD_DEPENDS=	databases/mysql \
+BUILD_DEPENDS=	databases/mariadb \
 		databases/postgresql
 
 LIB_DEPENDS=	net/h323plus>=1.24.99 \

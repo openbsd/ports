@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/21 08:48:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2013/05/25 00:33:10 brad Exp $
 
 COMMENT-main =		system metrics collection engine
 COMMENT-mysql =		collectd mysql plugin
@@ -16,7 +16,7 @@ PKGNAME-snmp =		collectd-snmp-$V
 CATEGORIES =		sysutils
 
 REVISION-main=		3
-REVISION-mysql =	1
+REVISION-mysql =	2
 REVISION-pgsql =	1
 REVISION-rrdtool =	1
 REVISION-snmp =		1
@@ -35,7 +35,7 @@ MODULES =		devel/gettext
 MULTI_PACKAGES =	-main -mysql -pgsql -rrdtool -snmp
 
 WANTLIB-mysql =		crypto m ssl z mysqlclient pthread
-LIB_DEPENDS-mysql =	databases/mysql
+LIB_DEPENDS-mysql =	databases/mariadb
 RUN_DEPENDS-mysql =	collectd-$V:${BASE_PKGPATH},-main
 
 WANTLIB-pgsql =		pq com_err crypto pthread ssl

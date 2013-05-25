@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/19 23:13:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2013/05/25 00:33:10 brad Exp $
 
 COMMENT =	POCO C++ libraries for network based applications
 
@@ -24,7 +24,7 @@ WANTLIB += c crypto m pthread ssl stdc++ iodbc iodbcinst mysqlclient
 WANTLIB += expat pcre sqlite3 z
 
 LIB_DEPENDS =	databases/iodbc \
-		databases/mysql \
+		databases/mariadb \
 		devel/pcre
 
 USE_GMAKE =		Yes

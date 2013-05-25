@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2013/05/03 18:40:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.60 2013/05/25 00:33:10 brad Exp $
 
 SHARED_ONLY=		Yes
 
@@ -15,6 +15,8 @@ PKGNAME-server=		bacula-server-$V
 FULLPKGNAME-bat=	bacula-bat-$V
 FULLPKGPATH-bat=	${PKGPATH},-bat
 CATEGORIES=		sysutils
+
+REVISION-server=	0
 
 # XXX build fails if a previous version is installed
 SHARED_LIBS +=  bac                  4.0
@@ -137,7 +139,7 @@ CONFIGURE_ARGS+=	--without-postgresql
 WANTLIB-server += mysqlclient_r>=18
 CONFIGURE_ARGS+=	--with-mysql \
 			--enable-batch-insert
-LIB_DEPENDS-server+=	databases/mysql
+LIB_DEPENDS-server+=	databases/mariadb
 BACKEND+=		mysql
 .  else
 CONFIGURE_ARGS+=	--without-mysql
