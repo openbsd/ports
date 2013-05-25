@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2013/03/11 02:52:06 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2013/05/25 18:22:43 rpe Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT=		SQLite drivers for the Perl DBI
 MODULES=		cpan
 DISTNAME=		DBD-SQLite-1.35
 EPOCH=			0
-REVISION =		1
+REVISION =		2
 CATEGORIES=		databases
 USE_GROFF =		Yes
 
@@ -28,5 +28,8 @@ MAKE_FLAGS=		CC='${CC}' \
 			LD='${CC}'
 
 MAKE_ENV +=		AUTOMATED_TESTING=1
+
+post-extract:
+	rm ${WRKSRC}/sqlite3.{c,h}
 
 .include <bsd.port.mk>
