@@ -1,0 +1,31 @@
+$OpenBSD: patch-ext_swift_db_sqlite3_extconf_rb,v 1.1.1.1 2013/05/25 22:20:02 jeremy Exp $
+--- ext/swift/db/sqlite3/extconf.rb.orig	Wed Dec 31 16:00:00 1969
++++ ext/swift/db/sqlite3/extconf.rb	Tue Dec  4 11:03:04 2012
+@@ -6,16 +6,12 @@ $CFLAGS = '-std=c99 -Os'
+ 
+ inc_paths = %w(
+   /usr/include
+-  /usr/local/include
+-  /opt/local/include
+-  /sw/include
++  ${LOCALBASE}/include
+ )
+ 
+ lib_paths = %w(
+   /usr/lib
+-  /usr/local/lib
+-  /opt/local/lib
+-  /sw/lib
++  ${LOCALBASE}/lib
+ )
+ 
+ uuid_inc,  uuid_lib      = dir_config('uuid',  '/usr/include/uuid', '/usr/lib')
+@@ -24,7 +20,7 @@ sqlite3_inc, sqlite3_lib = dir_config('sqlite3')
+ find_header 'uuid/uuid.h', *inc_paths.dup.unshift(uuid_inc).compact
+ find_header 'sqlite3.h',   *inc_paths.dup.unshift(sqlite3_inc).compact
+ 
+-find_library 'uuid',    'main', *lib_paths.dup.unshift(uuid_lib).compact
++find_library 'e2fs-uuid',    'main', *lib_paths.dup.unshift(uuid_lib).compact
+ find_library 'sqlite3', 'main', *lib_paths.dup.unshift(sqlite3_lib).compact
+ 
+ create_makefile('swift_db_sqlite3_ext')
