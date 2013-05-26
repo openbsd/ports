@@ -1,13 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/11 21:27:49 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/05/26 23:01:21 bluhm Exp $
 ${P5SITE}/Net/
 ${P5SITE}/Net/SSLGlue/
 ${P5SITE}/Net/SSLGlue.pm
 ${P5SITE}/Net/SSLGlue/LDAP.pm
 ${P5SITE}/Net/SSLGlue/LWP.pm
+${P5SITE}/Net/SSLGlue/POP3.pm
 ${P5SITE}/Net/SSLGlue/SMTP.pm
 @man man/man3p/Net::SSLGlue.3p
 @man man/man3p/Net::SSLGlue::LDAP.3p
 @man man/man3p/Net::SSLGlue::LWP.3p
+@man man/man3p/Net::SSLGlue::POP3.3p
 @man man/man3p/Net::SSLGlue::SMTP.3p
 share/examples/p5-Net-SSLGlue/
 share/examples/p5-Net-SSLGlue/lwp.pl
