@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/11 11:44:49 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2013/05/26 09:30:55 kirby Exp $
 
 COMMENT=	fast HTTP library and server for Ruby
 
 DISTNAME=	mongrel-1.1.5
-REVISION =	5
+REVISION =	6
 CATEGORIES=	www
 
-HOMEPAGE=	http://mongrel.rubyforge.org/
+HOMEPAGE=	http://rubyforge.org/projects/mongrel/
 
 # Ruby License
 PERMIT_PACKAGE_CDROM=	Yes

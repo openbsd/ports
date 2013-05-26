@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.45 2013/03/11 02:52:05 espie Exp $
+# $OpenBSD: Makefile,v 1.46 2013/05/26 09:30:55 kirby Exp $
 
 COMMENT=	GTK-based LDAP client
 
 DISTNAME=	gq-1.3.4
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	databases sysutils
 
-HOMEPAGE=	http://www.gq-project.org/
+HOMEPAGE=	http://sourceforge.net/projects/gqclient/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,8 +20,7 @@ WANTLIB += gtk-x11-2.0 krb5 lber ldap m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pixman-1 png pthread pthread-stubs ssl
 WANTLIB += xcb xcb-render xcb-shm xml2 z
 
-# tarball from Fedora SRPM
-MASTER_SITES=	http://distfiles.bsdfrog.org/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gqclient/}
 
 MODULES=	devel/gettext \
 		x11/gnome

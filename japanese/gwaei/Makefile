@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/27 18:02:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2013/05/26 09:30:55 kirby Exp $
 
 COMMENT =	japanese-english dictionary program
 
-V =		3.2.0
-DISTNAME =	gwaei-${V}
+DISTNAME =	gwaei-3.2.0
 REVISION =	4
 
 SHARED_LIBS =	waei	0.0
 
 CATEGORIES =	japanese
 
-HOMEPAGE =	http://www.zacharydovel.com/software/gwaei/
+HOMEPAGE =	http://sourceforge.net/projects/gwaei/
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
@@ -24,7 +23,7 @@ WANTLIB =	ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi \
 		pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs \
 		ssl xcb xcb-render xcb-shm z graphite2
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=gwaei/${V}/}
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=gwaei/}
 
 MODULES =	devel/gettext \
 		x11/gnome

@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:44:47 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/05/26 09:30:55 kirby Exp $
 
 COMMENT=	web-based iCal file parser
 
 V=		2.31
 DISTNAME=	phpicalendar${V}
 PKGNAME=	phpicalendar-${V}
-REVISION=	3
+REVISION=	4
 CATEGORIES=	www
 
-HOMEPAGE=	http://phpicalendar.net/
+HOMEPAGE=	http://sourceforge.net/projects/phpicalendar/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

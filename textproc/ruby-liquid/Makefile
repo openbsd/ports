@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:42:46 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/05/26 09:30:55 kirby Exp $
 
 COMMENT =	safe, customer facing template language
 
 DISTNAME =	liquid-2.4.1
+REVISION = 	0
 CATEGORIES =	textproc
 
-HOMEPAGE =	http://www.liquidmarkup.org/
+HOMEPAGE =	 http://wiki.shopify.com/Liquid
 
 # MIT
 PERMIT_PACKAGE_CDROM = Yes

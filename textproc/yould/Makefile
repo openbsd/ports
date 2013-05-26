@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:42:47 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/05/26 09:30:55 kirby Exp $
 
 COMMENT=		generator for pronounceable random words
 
 MODPY_EGG_VERSION=	0.3.7
 DISTNAME=		yould-${MODPY_EGG_VERSION}
-REVISION=		2
+REVISION=		3
 CATEGORIES=		textproc
 
-HOMEPAGE=		http://ygingras.net/yould
+HOMEPAGE=		https://pypi.python.org/pypi/yould/
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		http://ygingras.net/files/
+MASTER_SITES=		${MASTER_SITE_PYPI:=y/yould/}
 
 MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes
