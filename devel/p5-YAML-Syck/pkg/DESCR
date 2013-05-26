@@ -1,3 +1,6 @@
 YAML::Syck is an optimized variation of YAML built on perl code
 (libsyck). It also features a JSON::Syck module, with an interface
 different to the pure-perl JSON module.
+
+Note: this module has a lot of known issues and has only been semi-
+actively maintained since 2007. See YAML::Syck(3p) for more information.
