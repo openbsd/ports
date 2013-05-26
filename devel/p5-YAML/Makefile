@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 10:50:24 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/05/26 15:30:10 sthen Exp $
 
 COMMENT=	YAML ain't a markup language
 
 MODULES=	cpan
 
-DISTNAME=	YAML-0.73
+DISTNAME=	YAML-0.84
 CATEGORIES=	devel
-USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

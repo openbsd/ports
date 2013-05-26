@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/03/24 19:03:44 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/05/26 15:30:10 sthen Exp $
 ${P5SITE}/Test/
 ${P5SITE}/Test/YAML.pm
 ${P5SITE}/YAML/
 ${P5SITE}/YAML.pm
 ${P5SITE}/YAML/Any.pm
-${P5SITE}/YAML/Base.pm
 ${P5SITE}/YAML/Dumper/
 ${P5SITE}/YAML/Dumper.pm
 ${P5SITE}/YAML/Dumper/Base.pm
@@ -13,13 +12,13 @@ ${P5SITE}/YAML/Loader/
 ${P5SITE}/YAML/Loader.pm
 ${P5SITE}/YAML/Loader/Base.pm
 ${P5SITE}/YAML/Marshall.pm
+${P5SITE}/YAML/Mo.pm
 ${P5SITE}/YAML/Node.pm
 ${P5SITE}/YAML/Tag.pm
 ${P5SITE}/YAML/Types.pm
 @man man/man3p/Test::YAML.3p
 @man man/man3p/YAML.3p
 @man man/man3p/YAML::Any.3p
-@man man/man3p/YAML::Base.3p
 @man man/man3p/YAML::Dumper.3p
 @man man/man3p/YAML::Dumper::Base.3p
 @man man/man3p/YAML::Error.3p
