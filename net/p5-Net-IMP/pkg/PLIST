@@ -1,10 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/01/21 20:49:56 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/05/27 21:46:57 bluhm Exp $
 ${P5SITE}/Net/
 ${P5SITE}/Net/IMP/
 ${P5SITE}/Net/IMP.pm
 ${P5SITE}/Net/IMP/Base.pm
 ${P5SITE}/Net/IMP/Cascade.pm
 ${P5SITE}/Net/IMP/Debug.pm
+${P5SITE}/Net/IMP/Example/
+${P5SITE}/Net/IMP/Example/IRCShout.pm
+${P5SITE}/Net/IMP/Example/LogServerCertificate.pm
 ${P5SITE}/Net/IMP/Filter.pm
 ${P5SITE}/Net/IMP/Pattern.pm
 ${P5SITE}/Net/IMP/ProtocolPinning.pm
@@ -13,6 +16,8 @@ ${P5SITE}/Net/IMP/SessionLog.pm
 @man man/man3p/Net::IMP::Base.3p
 @man man/man3p/Net::IMP::Cascade.3p
 @man man/man3p/Net::IMP::Debug.3p
+@man man/man3p/Net::IMP::Example::IRCShout.3p
+@man man/man3p/Net::IMP::Example::LogServerCertificate.3p
 @man man/man3p/Net::IMP::Filter.3p
 @man man/man3p/Net::IMP::Pattern.3p
 @man man/man3p/Net::IMP::ProtocolPinning.3p
