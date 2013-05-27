@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/03 19:23:53 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/05/27 21:56:21 bluhm Exp $
 ${P5SITE}/Net/
 ${P5SITE}/Net/PcapWriter/
 ${P5SITE}/Net/PcapWriter.pm
 ${P5SITE}/Net/PcapWriter/IP.pm
 ${P5SITE}/Net/PcapWriter/TCP.pm
+${P5SITE}/Net/PcapWriter/UDP.pm
 @man man/man3p/Net::PcapWriter.3p
