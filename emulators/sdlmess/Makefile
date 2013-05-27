@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/05/08 14:46:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2013/05/27 10:48:06 bcallah Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -7,7 +7,7 @@ COMMENT =		emulates game consoles and old home computers
 
 V =			148
 DISTNAME =		mame0${V}s
-PKGNAME =		sdlmess-0.${V}pl4
+PKGNAME =		sdlmess-0.${V}pl5
 
 CATEGORIES =		emulators games
 
@@ -40,6 +40,7 @@ DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			0${V}u2_diff.zip:0 \
 			0${V}u3_diff.zip:0 \
 			0${V}u4_diff.zip:0 \
+			0${V}u5_diff.zip:0 \
 			history${V}i.zip:1
 
 MODULES =		devel/gettext \
@@ -71,7 +72,7 @@ post-extract:
 	@${UNZIP} -oq ${WRKDIR}/mame.zip -d ${WRKSRC}
 
 pre-patch:
-.for v in 1 2 3 4
+.for v in 1 2 3 4 5
 	${PATCH} ${PATCH_DIST_ARGS} < ${WRKDIR}/0${V}u${v}.diff
 .endfor
 	@perl -pi -e 's|\r\n|\n|g' ${WRKDIST}/makefile \
