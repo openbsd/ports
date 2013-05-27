@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_gui_c,v 1.35 2013/05/24 13:34:11 dcoppa Exp $
+$OpenBSD: patch-src_gui_c,v 1.36 2013/05/27 11:43:08 dcoppa Exp $
 
 Make fullscreen work under tiling window managers
 (upstream svn revision r2428)
@@ -6,20 +6,11 @@ Make fullscreen work under tiling window managers
 Fix problem with remembered softvol not being loaded
 (upstream svn revision r2424)
 
-Make --volume work with and without softvol enabled
-(upstream svn revision r2426)
-
-Set initial volume in gmtk_media_player when passed on command line
-(upstream svn revision r2432)
-
 Fix problem with screenshot being done twice
 (upstream svn revision r2430)
 
-Allow "Default Volume" (alsa disabled) to be changed
-(upstream svn revision r2433)
-
 --- src/gui.c.orig	Thu Feb 28 18:07:49 2013
-+++ src/gui.c	Fri May 24 09:24:24 2013
++++ src/gui.c	Mon May 27 12:58:01 2013
 @@ -634,7 +634,8 @@ void adjust_layout()
          if (!enable_global_menu) {
              gmtk_get_allocation(menubar, &alloc);
@@ -42,7 +33,7 @@ Allow "Default Volume" (alsa disabled) to be changed
 +    gm_log(verbose, G_LOG_LEVEL_DEBUG, "hookup_volume is %f", audio_device.volume);
 +    if (softvol == FALSE) {
 +        if (gm_audio_update_device(&audio_device)) {
-+            if (softvol || audio_device.type == AUDIO_TYPE_SOFTVOL) {
++            if (audio_device.type == AUDIO_TYPE_SOFTVOL) {
 +                gm_audio_set_server_volume_update_callback(&audio_device, NULL);
 +            } else {
 +                gm_audio_set_server_volume_update_callback(&audio_device, set_volume);
@@ -53,7 +44,7 @@ Allow "Default Volume" (alsa disabled) to be changed
      return FALSE;
  }
  
-@@ -1689,10 +1694,18 @@ gboolean set_volume(void *data)
+@@ -1689,10 +1694,13 @@ gboolean set_volume(void *data)
      IdleData *idle = (IdleData *) data;
      gchar *buf = NULL;
  
@@ -65,16 +56,11 @@ Allow "Default Volume" (alsa disabled) to be changed
 +        if (!(softvol || audio_device.type == AUDIO_TYPE_SOFTVOL)) {
 +            gm_audio_get_volume(&audio_device);
 +        }
-+        if (pref_volume != -1) {
-+            audio_device.volume = (gdouble) pref_volume / 100.0;
-+            gmtk_media_player_set_volume (GMTK_MEDIA_PLAYER(media),audio_device.volume);
-+            pref_volume = -1;
-+        }
 +        gm_log(verbose, G_LOG_LEVEL_DEBUG, "data is null new volume is %f", audio_device.volume);
  #ifdef GTK2_12_ENABLED
          gtk_scale_button_set_value(GTK_SCALE_BUTTON(vol_slider), audio_device.volume);
  #else
-@@ -2108,7 +2121,8 @@ gboolean window_key_callback(GtkWidget * widget, GdkEv
+@@ -2108,7 +2116,8 @@ gboolean window_key_callback(GtkWidget * widget, GdkEv
          case FILE_OPEN_LOCATION:
              break;
          case EDIT_SCREENSHOT:
@@ -84,7 +70,7 @@ Allow "Default Volume" (alsa disabled) to be changed
              return FALSE;
          case EDIT_PREFERENCES:
              break;
-@@ -4304,11 +4318,11 @@ void config_apply(GtkWidget * widget, void *data)
+@@ -4304,11 +4313,11 @@ void config_apply(GtkWidget * widget, void *data)
      }
      audio_device.description = g_strdup(audio_device_name);
      gm_audio_update_device(&audio_device);
@@ -97,12 +83,3 @@ Allow "Default Volume" (alsa disabled) to be changed
          gm_audio_set_server_volume_update_callback(&audio_device, set_volume);
          gmtk_media_player_set_attribute_boolean(GMTK_MEDIA_PLAYER(media), ATTRIBUTE_SOFTVOL, FALSE);
      }
-@@ -5817,7 +5831,7 @@ void menuitem_config_callback(GtkMenuItem * menuitem, 
-     gtk_spin_button_set_value(GTK_SPIN_BUTTON(config_volume), gm_pref_store_get_int(gm_store, VOLUME));
-     gm_pref_store_free(gm_store);
-     gtk_entry_set_width_chars(GTK_ENTRY(config_volume), 6);
--    gtk_editable_set_editable(GTK_EDITABLE(config_volume), FALSE);
-+    gtk_editable_set_editable(GTK_EDITABLE(config_volume), TRUE);
-     gtk_entry_set_alignment(GTK_ENTRY(config_volume), 1);
-     gtk_widget_show(config_volume);
-     i++;

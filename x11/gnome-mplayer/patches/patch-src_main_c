@@ -1,18 +1,10 @@
-$OpenBSD: patch-src_main_c,v 1.25 2013/05/24 13:34:11 dcoppa Exp $
-
-Make --volume work with and without softvol enabled
-(upstream svn revision r2426)
-
-Unbreak cover art support
-
-Set pref_volume to stored volume when asound is disabled
-(upstream svn revision r2427)
+$OpenBSD: patch-src_main_c,v 1.26 2013/05/27 11:43:08 dcoppa Exp $
 
 Fix problem with remembered softvol not being loaded
 (upstream svn revision r2424)
 
 --- src/main.c.orig	Mon Feb 18 15:58:47 2013
-+++ src/main.c	Fri May 24 14:29:58 2013
++++ src/main.c	Mon May 27 12:48:57 2013
 @@ -65,7 +65,6 @@ static gchar *tv_input;
  static gint tv_width;
  static gint tv_height;
@@ -21,42 +13,23 @@ Fix problem with remembered softvol not being loaded
  
  typedef struct _PlayData {
      gchar uri[4096];
-@@ -344,7 +343,6 @@ gint play_iter(GtkTreeIter * playiter, gint restart_se
-     while (gtk_events_pending())
-         gtk_main_iteration();
- 
--    /*
-        // wait for metadata to be available on this item
-        if (!streaming_media(uri) && !device_name(uri)) {
-        i = 0;
-@@ -364,7 +362,7 @@ gint play_iter(GtkTreeIter * playiter, gint restart_se
-        &artist, ALBUM_COLUMN, &album, AUDIO_CODEC_COLUMN,
-        &audio_codec, VIDEO_CODEC_COLUMN, &video_codec,
-        VIDEO_WIDTH_COLUMN, &width, VIDEO_HEIGHT_COLUMN, &height,
--       DEMUXER_COLUMN, &demuxer, COVERART_COLUMN, &pixbuf,
-+       DEMUXER_COLUMN, &demuxer, COVERART_COLUMN, &cover_art_file,
-        SUBTITLE_COLUMN, &subtitle, AUDIOFILE_COLUMN, &audiofile,
-        COUNT_COLUMN, &count, PLAYLIST_COLUMN, &playlist,
-        PLAYABLE_COLUMN, &playable, -1);
-@@ -392,7 +390,6 @@ gint play_iter(GtkTreeIter * playiter, gint restart_se
-        }
- 
-        }
--     */
-     // reset audio meter
-     for (i = 0; i < METER_BARS; i++) {
-         buckets[i] = 0;
-@@ -900,6 +897,9 @@ int main(int argc, char *argv[])
-     pplevel = gm_pref_store_get_int(gm_store, PPLEVEL);
- #ifndef HAVE_ASOUNDLIB
-     volume = gm_pref_store_get_int(gm_store, VOLUME);
-+    if (pref_volume == -1) {
-+        pref_volume = volume;
-+    }
- #endif
-     audio_channels = gm_pref_store_get_int(gm_store, AUDIO_CHANNELS);
-     use_hw_audio = gm_pref_store_get_boolean(gm_store, USE_HW_AUDIO);
-@@ -1042,7 +1042,9 @@ int main(int argc, char *argv[])
+@@ -89,7 +88,6 @@ static GOptionEntry entries[] = {
+      N_("Last software volume percentage- only applied when remember_softvol is set to TRUE"),
+      NULL},
+     {"mixer", 0, 0, G_OPTION_ARG_STRING, &(audio_device.alsa_mixer), N_("Mixer to use"), NULL},
+-    {"volume", 0, 0, G_OPTION_ARG_INT, &(pref_volume), N_("Set initial volume percentage"), NULL},
+     // note that sizeof(gint)==sizeof(gboolean), so we can give &showcontrols here
+     {"showcontrols", 0, 0, G_OPTION_ARG_INT, &showcontrols, N_("Show the controls in window"),
+      "[0|1]"},
+@@ -832,7 +830,6 @@ int main(int argc, char *argv[])
+     update_control_flag = FALSE;
+     skip_fixed_allocation_on_show = FALSE;
+     skip_fixed_allocation_on_hide = FALSE;
+-    pref_volume = -1;
+     use_mplayer2 = FALSE;
+     enable_global_menu = FALSE;
+     cover_art_uri = NULL;
+@@ -1042,7 +1039,9 @@ int main(int argc, char *argv[])
          printf(_("gmtk v%s\n"), gmtk_version());
          printf("GTK %i.%i.%i\n", GTK_MAJOR_VERSION, GTK_MINOR_VERSION, GTK_MICRO_VERSION);
          printf("GLIB %i.%i.%i\n", GLIB_MAJOR_VERSION, GLIB_MINOR_VERSION, GLIB_MICRO_VERSION);
@@ -66,7 +39,7 @@ Fix problem with remembered softvol not being loaded
      }
  
      if (cache_size == 0)
-@@ -1084,6 +1086,7 @@ int main(int argc, char *argv[])
+@@ -1084,6 +1083,7 @@ int main(int argc, char *argv[])
          if (remember_softvol && volume_softvol != -1) {
              gm_log(verbose, G_LOG_LEVEL_INFO, "Using last volume of %f%%", volume_softvol * 100.0);
              volume = (gdouble) volume_softvol *100.0;
@@ -74,22 +47,21 @@ Fix problem with remembered softvol not being loaded
          } else {
              volume = 100.0;
          }
-@@ -1308,16 +1311,18 @@ int main(int argc, char *argv[])
+@@ -1308,16 +1308,11 @@ int main(int argc, char *argv[])
      // disabling this line seems to help with hangs on startup when using pulseaudio
      //gm_audio_get_volume(&audio_device);
      set_media_player_attributes(media);
 -    if (!softvol) {
-+    if (softvol) {
-         if (pref_volume != -1) {
-             audio_device.volume = (gdouble) pref_volume / 100.0;
-             gm_log(verbose, G_LOG_LEVEL_INFO, "The volume on '%s' is %f", audio_device.description,
-                    audio_device.volume);
-             volume = audio_device.volume * 100;
-+        } else {
-+            audio_device.volume = volume / 100.0;
-         }
+-        if (pref_volume != -1) {
+-            audio_device.volume = (gdouble) pref_volume / 100.0;
+-            gm_log(verbose, G_LOG_LEVEL_INFO, "The volume on '%s' is %f", audio_device.description,
+-                   audio_device.volume);
+-            volume = audio_device.volume * 100;
+-        }
 -    } else {
 -        audio_device.volume = volume / 100.0;
++    if (softvol) {
++            audio_device.volume = volume / 100.0;
      }
 +    gm_log(verbose, G_LOG_LEVEL_DEBUG, "Volume is %lf Audio Device Volume = %f", volume, audio_device.volume);
 +
