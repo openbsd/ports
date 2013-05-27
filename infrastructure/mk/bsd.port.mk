@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1226 2013/05/21 12:38:06 ajacoutot Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1227 2013/05/27 16:06:51 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -108,7 +108,7 @@ BULK_TARGETS ?=
 BULK_DO ?=
 CHECK_LIB_DEPENDS ?= No
 FORCE_UPDATE ?= No
-DPB ?= All Fetch
+DPB ?= All Fetch Test
 PREPARE_CHECK_ONLY ?= No
 _SHSCRIPT = sh ${PORTSDIR}/infrastructure/bin
 DPB_PROPERTIES ?=
@@ -122,7 +122,7 @@ _ALL_VARIABLES_PER_ARCH =
 
 _DPB_MULTI = ${BUILD_PACKAGES}
 
-.if ${DPB:L:Mfetch}
+.if ${DPB:L:Mfetch} || ${DPB:L:Mall}
 _ALL_VARIABLES += DISTFILES PATCHFILES SUPDISTFILES DIST_SUBDIR MASTER_SITES \
 	MASTER_SITES0 MASTER_SITES1 MASTER_SITES2 MASTER_SITES3 MASTER_SITES4 \
 	MASTER_SITES5 MASTER_SITES6 MASTER_SITES7 MASTER_SITES8 MASTER_SITES9 \
@@ -130,12 +130,14 @@ _ALL_VARIABLES += DISTFILES PATCHFILES SUPDISTFILES DIST_SUBDIR MASTER_SITES \
 	PERMIT_DISTFILES_FTP
 _DPB_MULTI = ${MULTI_PACKAGES}
 .endif
+.if ${DPB:L:Mtest} || ${DPB:L:Mall}
+_ALL_VARIABLES += NO_TEST TEST_IS_INTERACTIVE TEST_DEPENDS
+.endif
 .if ${DPB:L:Mall}
 _ALL_VARIABLES += HOMEPAGE DISTNAME \
 	BROKEN COMES_WITH \
-	TEST_DEPENDS USE_GMAKE USE_GROFF MODULES FLAVORS \
-	NO_BUILD NO_TEST SHARED_ONLY PSEUDO_FLAVORS \
-	TEST_IS_INTERACTIVE \
+	USE_GMAKE USE_GROFF MODULES FLAVORS \
+	NO_BUILD SHARED_ONLY PSEUDO_FLAVORS \
 	CONFIGURE_STYLE USE_LIBTOOL SEPARATE_BUILD \
 	SHARED_LIBS TARGETS PSEUDO_FLAVOR \
 	MAINTAINER AUTOCONF_VERSION AUTOMAKE_VERSION CONFIGURE_ARGS \
@@ -1116,8 +1118,16 @@ MASTER_SITES := ${MASTER_SITES} ${MASTER_SITE_BACKUP}
 MASTER_SITES := ${MASTER_SITE_OVERRIDE} ${MASTER_SITES}
 .endif
 
+_warn_checksum = :
+.if !empty(MASTER_SITES:M*[^/])
+_warn_checksum += ;echo ">>> MASTER_SITES not ending in /: ${MASTER_SITES:M*[^/]}"
+.endif
+
 .for _I in 0 1 2 3 4 5 6 7 8 9
 .  if defined(MASTER_SITES${_I})
+.    if !empty(MASTER_SITES${_I}:M*[^/])
+_warn_checksum += ;echo ">>> MASTER_SITES${_I} not ending in /: ${MASTER_SITES${_I}:M*[^/]}"
+.    endif
 .    if ${MASTER_SITE_OVERRIDE:L} == "no"
 MASTER_SITES${_I} := ${MASTER_SITES${_I}} ${MASTER_SITE_BACKUP}
 .    else
@@ -1945,6 +1955,7 @@ ${_SYSTRACE_COOKIE}: ${_WRKDIR_COOKIE}
 	fi
 
 makesum: fetch-all
+	@${_warn_checksum}
 .if !defined(NO_CHECKSUM) && !empty(MAKESUMFILES)
 	@rm -f ${CHECKSUM_FILE}
 	@cd ${DISTDIR} && cksum -b -a "${_CIPHERS}" ${MAKESUMFILES} >> ${CHECKSUM_FILE}
@@ -2199,6 +2210,7 @@ _internal-fetch:
 
 
 _internal-checksum: _internal-fetch
+	@${_warn_checksum}
 	@fgrep 2>/dev/null SIZE ${CHECKSUM_FILE} | \
 	sed -e '/SIZE (\(.*\)).*/s//\1/'|\
 	while read i; do \
@@ -2832,7 +2844,7 @@ ${DISTDIR}/$p:
 				else \
 					if grep -q "SIZE ($f)" ${CHECKSUM_FILE}; then \
 						${ECHO_MSG} ">> Size does not match for $$file"; \
-						test `{ wc -c "$$file" 2>/dev/null || echo 0 ; }| awk '{print $$1}'` -lt 30000 && rm -f $$file; \
+						rm -f $$file; \
 					else \
 						${ECHO_MSG} ">> No size recorded for $$file"; \
 						mv $$file $@; \
