@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.89 2013/05/24 15:14:03 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.90 2013/05/27 07:56:31 dcoppa Exp $
 
 COMMENT=	list information about open files
 
 VERSION=	4.87
 DISTNAME=	lsof_${VERSION}
 PKGNAME=	${DISTNAME:S/_/-/}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.mirrorservice.org/sites/lsof.itap.purdue.edu/pub/tools/unix/lsof/ \
 		ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/ \
@@ -43,6 +43,8 @@ CONFIGURE_SCRIPT= Configure
 CONFIGURE_ARGS=	-n openbsd
 CONFIGURE_ENV=	LSOF_CC="${CC}"
 
+NO_TEST=	Yes
+
 SRCBALL_NAME=	${DISTNAME}_src
 WRKDIST=	${WRKDIR}/${DISTNAME}/${SRCBALL_NAME}
 
@@ -58,8 +60,9 @@ pre-configure:
 	    echo ""; \
 	    exit 1; \
 	fi
-
-NO_TEST=	Yes
+# XXX: CVS keyword found in patch
+	perl -pi -e 'print "#!/usr/bin/awk -f\n" if $$. == 1' \
+		${WRKSRC}/scripts/list_fields.awk
 
 do-install:
 	${INSTALL_SCRIPT_DIR} ${PREFIX}/share/lsof
