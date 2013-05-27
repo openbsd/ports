@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2012/12/19 17:00:09 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.11 2013/05/27 14:02:45 giovanni Exp $
 @bin bin/filezilla
 @bin bin/fzputtygen
 @bin bin/fzsftp
@@ -537,6 +537,9 @@ share/icons/hicolor/48x48/apps/filezilla.png
 share/icons/hicolor/scalable/
 share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/filezilla.svg
+share/locale/an/
+share/locale/an/LC_MESSAGES/
+share/locale/an/LC_MESSAGES/filezilla.mo
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/filezilla.mo
@@ -559,6 +562,7 @@ share/locale/es/LC_MESSAGES/filezilla.mo
 share/locale/et_EE/
 share/locale/et_EE/LC_MESSAGES/
 share/locale/et_EE/LC_MESSAGES/filezilla.mo
+share/locale/eu/LC_MESSAGES/filezilla.mo
 share/locale/eu_ES/
 share/locale/eu_ES/LC_MESSAGES/
 share/locale/eu_ES/LC_MESSAGES/filezilla.mo
