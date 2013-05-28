@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/02/26 15:07:40 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.4 2013/05/28 13:51:12 sthen Exp $
 @bin bin/4channels
 @bin bin/dcraw_emu
 @bin bin/dcraw_half
@@ -20,8 +19,10 @@ include/libraw/libraw_types.h
 include/libraw/libraw_version.h
 lib/libraw.a
 lib/libraw.la
+@lib lib/libraw.so.${LIBraw_VERSION}
 lib/libraw_r.a
 lib/libraw_r.la
+@lib lib/libraw_r.so.${LIBraw_r_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/libraw.pc
 lib/pkgconfig/libraw_r.pc

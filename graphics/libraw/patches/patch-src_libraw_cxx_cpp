@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_libraw_cxx_cpp,v 1.2 2012/02/26 15:07:40 ajacoutot Exp $
---- src/libraw_cxx.cpp.orig	Sat Dec 24 15:59:38 2011
-+++ src/libraw_cxx.cpp	Sun Feb 26 15:29:20 2012
-@@ -26,6 +26,8 @@ it under the terms of the one of three licenses as you
+$OpenBSD: patch-src_libraw_cxx_cpp,v 1.3 2013/05/28 13:51:12 sthen Exp $
+--- src/libraw_cxx.cpp.orig	Fri May 17 20:54:17 2013
++++ src/libraw_cxx.cpp	Tue May 28 12:44:02 2013
+@@ -27,6 +27,8 @@ it under the terms of the one of three licenses as you
  #include <sys/types.h>
  #include <sys/stat.h>
  #ifndef WIN32
