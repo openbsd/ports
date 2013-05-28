@@ -1,0 +1,12 @@
+$OpenBSD: patch-themes_default_theme_lua_in,v 1.1 2013/05/28 11:15:44 dcoppa Exp $
+--- themes/default/theme.lua.in.orig	Tue May 28 12:28:23 2013
++++ themes/default/theme.lua.in	Tue May 28 12:29:38 2013
+@@ -91,7 +91,7 @@ theme.layout_dwindle = "@AWESOME_THEMES_PATH@/default/
+ theme.awesome_icon = "@AWESOME_ICON_PATH@/awesome16.png"
+ 
+ -- Define the icon theme for application icons. If not set then the icons 
+--- from /usr/share/icons and /usr/share/icons/hicolor will be used.
++-- from ${LOCALBASE}/share/icons and ${LOCALBASE}/share/icons/hicolor will be used.
+ theme.icon_theme = nil
+ 
+ return theme

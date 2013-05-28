@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.60 2013/05/24 16:15:24 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.61 2013/05/28 11:15:44 dcoppa Exp $
 
 COMMENT=		highly configurable framework window manager
 
 DISTNAME=		awesome-3.5.1
-REVISION=		0
+REVISION=		1
 EXTRACT_SUFX=		.tar.xz
 CATEGORIES=		x11
 
@@ -64,12 +64,14 @@ pre-configure:
 		${WRKSRC}/lib/naughty.lua.in \
 		${WRKSRC}/lib/awful/util.lua.in \
 		${WRKSRC}/lib/menubar/menu_gen.lua.in \
-		${WRKSRC}/lib/menubar/utils.lua.in
+		${WRKSRC}/lib/menubar/utils.lua.in \
+		${WRKSRC}/themes/default/theme.lua.in
 
 post-install:
 	@rm ${WRKINST}/${LOCALBASE}/share/awesome/lib/*.{beforesubst,orig}
 	@rm ${WRKINST}/${LOCALBASE}/share/awesome/lib/awful/*.{beforesubst,orig}
 	@rm ${WRKINST}/${LOCALBASE}/share/awesome/lib/menubar/*.{beforesubst,orig}
+	@rm ${WRKINST}/${LOCALBASE}/share/awesome/themes/default/*.{beforesubst,orig}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/awesome
 	@mv ${WRKINST}/${SYSCONFDIR}/xdg/awesome/rc.lua \
 		${PREFIX}/share/examples/awesome/
