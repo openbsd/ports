@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/04/02 16:16:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2013/05/28 00:12:22 bcallah Exp $
 
 COMMENT =	graphical music player focused on a clean ui
 DISTNAME =	musique-1.2.1
 CATEGORIES =	audio
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://flavio.tordini.org/musique/
 
@@ -23,6 +23,8 @@ MODULES =	x11/qt4
 LIB_DEPENDS =	audio/taglib
 
 RUN_DEPENDS =	devel/desktop-file-utils \
+		multimedia/gstreamer-0.10/plugins-good \
+		multimedia/gstreamer-0.10/plugins-ugly \
 		x11/gtk+2,-guic
 
 WRKDIST =	${WRKDIR}/musique
