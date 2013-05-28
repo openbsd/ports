@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.37 2013/03/11 11:10:52 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2013/05/28 15:03:20 eric Exp $
 
 COMMENT=	creating & editing GIF images and animations
 
-DISTNAME=	gifsicle-1.60
-REVISION=	0
+DISTNAME=	gifsicle-1.70
 CATEGORIES=    	graphics
 
 MAINTAINER=	Eric Faurot <eric@openbsd.org>
@@ -19,7 +18,6 @@ MASTER_SITES=	${HOMEPAGE}/ \
 		ftp://ftp.lcdf.org/pub/OLD-VERSIONS/
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--enable-gifdiff
 
 SEPARATE_BUILD=		Yes
 USE_GROFF =	Yes
