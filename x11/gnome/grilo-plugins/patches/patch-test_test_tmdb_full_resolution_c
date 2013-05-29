@@ -1,6 +1,11 @@
-$OpenBSD: patch-test_test_tmdb_full_resolution_c,v 1.1 2013/05/29 14:50:19 jasper Exp $
+$OpenBSD: patch-test_test_tmdb_full_resolution_c,v 1.2 2013/05/29 14:59:10 jasper Exp $
 
-test_tmdb_full_resolution.c:45: error: 'for' loop initial declaration used outside C99 mode
+From e96cf8fd77bbbda29823b62a5719358fe8928038 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Wed, 29 May 2013 16:55:42 +0000
+Subject: Initialize an iterator variable outside of the for loop to fix a build error.
+
+error: 'for' loop initial declaration used outside C99 mode
 
 --- test/test_tmdb_full_resolution.c.orig	Wed May 29 18:47:36 2013
 +++ test/test_tmdb_full_resolution.c	Wed May 29 18:47:58 2013
