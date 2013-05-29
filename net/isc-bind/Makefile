@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2013/04/13 12:41:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2013/05/29 20:19:15 sthen Exp $
 
-COMMENT=	Berkeley Internet Name Daemon
+COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
-V=		9.9.2-P2
-RV=		9.9.2-P2
-REVISION=	1
+V=		9.9.3
+RV=		9.9.3rc1.unofficial
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
 
@@ -22,10 +21,11 @@ HOMEPAGE=	http://www.isc.org/software/bind
 # ISC
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c crypto m pthread xml2 z
+WANTLIB=	c crypto m pthread xml2 z
 
 MASTER_SITES=	${MASTER_SITE_ISC:=bind9/$V/}
-MASTER_SITES0=	http://ss.vix.su/~vjs/
+MASTER_SITES0=	http://spacehopper.org/mirrors/
+#MASTER_SITES0=	http://ss.vix.su/~vjs/
 
 FLAVORS=	ratelimit
 FLAVOR?=
@@ -36,15 +36,20 @@ PATCHFILES+=	rl-${RV}.patch:0
 SUPDISTFILES+=	rl-${RV}.patch:0
 .endif
 
-MODULES=	converters/libiconv
+MODULES=	converters/libiconv \
+		lang/python
+# used for dnssec-checkds/dnssec-coverage, but don't want to force the run dep.
+MODPY_RUNDEP=	No
 LIB_DEPENDS=	textproc/libxml
 SUBST_VARS=	LOCALSTATEDIR
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--enable-newstats \
 		--enable-threads \
-		--with-libtool
+		--with-libtool \
+		--with-python=${MODPY_BIN}
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/bind9
 

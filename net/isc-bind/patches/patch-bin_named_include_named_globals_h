@@ -1,7 +1,7 @@
-$OpenBSD: patch-bin_named_include_named_globals_h,v 1.1.1.1 2012/07/19 08:36:45 sthen Exp $
---- bin/named/include/named/globals.h.orig	Wed May  9 23:39:51 2012
-+++ bin/named/include/named/globals.h	Sun May 27 11:07:48 2012
-@@ -140,7 +140,7 @@ EXTERN const char *		lwresd_g_defaultpidfile INIT(NS_L
+$OpenBSD: patch-bin_named_include_named_globals_h,v 1.2 2013/05/29 20:19:15 sthen Exp $
+--- bin/named/include/named/globals.h.orig	Fri May 17 05:01:18 2013
++++ bin/named/include/named/globals.h	Wed May 29 14:14:57 2013
+@@ -144,7 +144,7 @@ EXTERN const char *		lwresd_g_defaultpidfile INIT(NS_L
  							     "/run/lwresd.pid");
  #endif
  
