@@ -1,0 +1,18 @@
+$OpenBSD: patch-texk_texlive_linked_scripts_bibexport_bibexport_sh,v 1.1 2013/05/29 20:04:13 zhuk Exp $
+--- texk/texlive/linked_scripts/bibexport/bibexport.sh.origy	Tue Mar 26 12:40:50 2013
++++ texk/texlive/linked_scripts/bibexport/bibexport.sh	Tue Mar 26 12:42:29 2013
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ ##
+ ## This is file `bibexport.sh',
+ ## generated with the docstrip utility.
+@@ -256,7 +256,7 @@ FINALFILE=${OUTPUT};
+ if [ ! "${FINALFILE}" ]; then
+     FINALFILE="bibexport.bib";
+ fi
+-TMPFILE="bibexp.`date +%s`";
++TMPFILE="`mktemp bibexp.XXXXXXXX`";
+ if [ -z "${EXT}" ]; then ## we export all entries
+     if [ -z "${EXTRA}" ]; then ## we have no extra files
+         cat > ${TMPFILE}.aux <<EOF

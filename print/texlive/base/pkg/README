@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.8 2012/08/07 15:15:09 edd Exp $
+$OpenBSD: README,v 1.9 2013/05/29 20:04:13 zhuk Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -86,6 +86,10 @@ As far as I know:
  * TeX Works is editors/texworks
  * latex-mk is print/latex-mk
  * textproc/py-pygments is required for the minted package.
+ * converters/unix2dos is needed for installfont-tl script
+ * x11/tk/${MODTK_VERSION} is needed for epspdftk
+ * lang/ruby/${MODRUBY_LIBREV} is needed for convbkmk, epspdf, and
+   other stuff.
 
 If you know more, please mail the package maintainer: <edd@openbsd.org>
 

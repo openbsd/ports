@@ -1,0 +1,25 @@
+$OpenBSD: patch-texk_texlive_linked_scripts_installfont_installfont-tl,v 1.1 2013/05/29 20:04:13 zhuk Exp $
+--- texk/texlive/linked_scripts/installfont/installfont-tl.origy	Tue Mar 26 12:44:36 2013
++++ texk/texlive/linked_scripts/installfont/installfont-tl	Tue Mar 26 12:45:10 2013
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/ksh
+ #
+ # installfont-tl [options]
+ #
+@@ -85,7 +85,7 @@ then
+   echo -e "`basename $0`: Could not find command line arguments.\nUse the '--help' option for explanation."
+   echo -e "Continue with default script variables? (y/n)"
+   read ANSWER
+-  if [ $ANSWER = "n" -o $ANSWER = "N" ]
++  if [ X"$ANSWER" = "Xn" -o X"$ANSWER" = "XN" ]
+   then
+     exit 1
+   fi
+@@ -582,4 +582,4 @@ then
+   rmdir ./Backup
+ fi
+ echo -e "\n\nThe font(s) should be installed now!"
+-exit 0
+\ No newline at end of file
++exit 0

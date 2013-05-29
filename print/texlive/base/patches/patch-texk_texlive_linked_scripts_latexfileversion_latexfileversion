@@ -1,0 +1,46 @@
+$OpenBSD: patch-texk_texlive_linked_scripts_latexfileversion_latexfileversion,v 1.1 2013/05/29 20:04:13 zhuk Exp $
+--- texk/texlive/linked_scripts/latexfileversion/latexfileversion.origy	Tue Mar 26 12:55:21 2013
++++ texk/texlive/linked_scripts/latexfileversion/latexfileversion	Tue Mar 26 12:57:55 2013
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ ## latexfileversion
+ ##
+ ## This simple shell script prints the version and date of a LaTeX class or
+@@ -41,8 +41,8 @@ then
+ fi
+ 
+ # make temporary directory
+-TMPDIR=`mktemp -d /tmp/latexfileversion.XXXXXX` || exit 1
+-cd $TMPDIR
++MYTMPDIR="`mktemp -dt latexfileversion.XXXXXX`" || exit 1
++cd $MYTMPDIR
+ 
+ # extract basenames for extensions .cls and .sty
+ FILE=$1
+@@ -50,7 +50,7 @@ STYLE=${1%%.sty}
+ CLASS=${1%%.cls}
+ 
+ # handle .cls files and .sty files seperately
+-if [ "$CLASS.cls" == "$FILE" ]
++if [ X"$CLASS.cls" = X"$FILE" ]
+ then
+     echo -n "Looking for class file '$CLASS.cls': "
+     # generate temporary LaTeX file
+@@ -75,7 +75,7 @@ cat << EOM
+ EOM
+ ) > latexfileversion.tex
+ else
+-    if [ "$STYLE.sty" == "$FILE" ]
++    if [ X"$STYLE.sty" = X"$FILE" ]
+     then
+ 	echo -n "Looking for style file '$STYLE.sty': "
+         # generate temporary LaTeX file
+@@ -113,6 +113,6 @@ pdflatex -interaction=nonstopmode latexfileversion.tex
+ grep -e '^VERSION' latexfileversion.log | sed 's/VERSION //' 
+ 
+ # delete temporary directory
+-rm -rf $TMPDIR
++rm -rf $MYTMPDIR
+ 
+ #EOF
