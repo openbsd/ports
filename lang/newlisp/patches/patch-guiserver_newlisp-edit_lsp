@@ -1,13 +1,13 @@
-$OpenBSD: patch-guiserver_newlisp-edit_lsp,v 1.2 2012/12/28 14:48:42 jasper Exp $
---- guiserver/newlisp-edit.lsp.orig	Tue Jul 19 23:32:22 2011
-+++ guiserver/newlisp-edit.lsp	Fri Dec 28 15:46:19 2012
+$OpenBSD: patch-guiserver_newlisp-edit_lsp,v 1.3 2013/05/29 15:46:05 jasper Exp $
+--- guiserver/newlisp-edit.lsp.orig	Wed May 22 02:06:51 2013
++++ guiserver/newlisp-edit.lsp	Fri May 24 17:59:50 2013
 @@ -1,4 +1,4 @@
 -#!/usr/bin/newlisp
 +#!${PREFIX}/bin/newlisp
  
  ; newlisp-edit.lsp - multiple tab LISP editor and support for running code from the editor
  ; needs 9.9.2 version minimum to run
-@@ -155,7 +155,7 @@
+@@ -156,7 +156,7 @@
  			(write-file file (base64-dec text)))
  		(if (= ostype "Win32")
  			(catch (exec (string {newlisp.exe "} currentScriptFile {" } file " > " (string file "out"))) 'result)
@@ -16,7 +16,7 @@ $OpenBSD: patch-guiserver_newlisp-edit_lsp,v 1.2 2012/12/28 14:48:42 jasper Exp 
  		)
  		(if (list? result)
  			(begin
-@@ -223,7 +223,7 @@
+@@ -224,7 +224,7 @@
  		(gs:run-shell 'OutputArea 
  			(string newlispDir "/newlisp.exe " currentExtension " -C -w \"" $HOME "\""))
  		(gs:run-shell 'OutputArea 
@@ -25,7 +25,7 @@ $OpenBSD: patch-guiserver_newlisp-edit_lsp,v 1.2 2012/12/28 14:48:42 jasper Exp 
  	)
  )
  
-@@ -1446,11 +1446,7 @@
+@@ -1447,11 +1447,7 @@
  		; all other UNIX
  		(true 
  			(set 'files '(
