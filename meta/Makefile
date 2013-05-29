@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2013/01/25 19:02:57 bentley Exp $
+# $OpenBSD: Makefile,v 1.8 2013/05/29 14:13:42 jasper Exp $
 
      SUBDIR =
+     SUBDIR += avr
      SUBDIR += geda
      SUBDIR += gnome
      SUBDIR += gnustep
