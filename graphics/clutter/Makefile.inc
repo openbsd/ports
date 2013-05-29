@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.15 2013/05/14 07:15:58 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.16 2013/05/29 14:25:30 jasper Exp $
 
 SHARED_ONLY?=		Yes
 
@@ -14,8 +14,6 @@ MAINTAINER?=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM?=  Yes
-PERMIT_PACKAGE_FTP?=    Yes
-PERMIT_DISTFILES_FTP?=  Yes
 
 MODULES +=		devel/gettext \
 			x11/gnome
