@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2013/05/29 14:08:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.94 2013/05/29 14:10:58 jasper Exp $
 
 COMMENT=	shell-like command line ftp and sftp client
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 
 WANTLIB=	c crypto curses expat m ereadline ssl stdc++ util
 
+# lftp needs add_history_time()
 LIB_DEPENDS=	devel/readline>=6.1p2
 
 MASTER_SITES=	http://ftp.yars.free.net/pub/source/lftp/ \
