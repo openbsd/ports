@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Heuristics.pm,v 1.19 2013/02/02 13:35:17 espie Exp $
+# $OpenBSD: Heuristics.pm,v 1.20 2013/05/29 09:37:17 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -110,7 +110,7 @@ sub special_parameters
 	return 0 if !defined $t;
 	my $p = $v->pkgpath_and_flavors;
 	# we build in memory if we know this port and it's light enough
-	if (defined $t && defined $wrkdir{$p}) {
+	if (defined $wrkdir{$p}) {
 		my $hostname = $core->hostname;
 		$used_per_host->{$hostname} //= 0;
 		if ($used_per_host->{$hostname} + $wrkdir{$p} <= $t) {
