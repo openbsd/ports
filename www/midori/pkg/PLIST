@@ -1,15 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.31 2012/09/26 17:44:56 landry Exp $
+@comment $OpenBSD: PLIST,v 1.32 2013/05/29 23:10:16 landry Exp $
 @bin bin/midori
-include/midori-0.4/
-include/midori-0.4/extensions/
-include/midori-0.4/extensions/delayed-load.h
-include/midori-0.4/extensions/external-download-manager.h
-include/midori-0.4/extensions/history-list.h
+include/midori-0.5/
+include/midori-0.5/extensions/
+include/midori-0.5/extensions/apps.h
+include/midori-0.5/extensions/delayed-load.h
+include/midori-0.5/extensions/external-download-manager.h
+include/midori-0.5/extensions/history-list.h
+include/midori-0.5/extensions/nsplugin-manager.h
+include/midori-0.5/extensions/transfers.h
 lib/midori/
 lib/midori/libadblock.so
 lib/midori/libaddons.so
+lib/midori/libapps.so
 lib/midori/libcolorful-tabs.so
 lib/midori/libcookie-manager.so
+lib/midori/libcookie-permissions.so
 lib/midori/libcopy-tabs.so
 lib/midori/libdelayed-load.so
 lib/midori/libexternal-download-manager.so
@@ -17,12 +22,14 @@ lib/midori/libfeed-panel.so
 lib/midori/libformhistory.so
 lib/midori/libhistory-list.so
 lib/midori/libmouse-gestures.so
+lib/midori/libnsplugin-manager.so
 lib/midori/libshortcuts.so
 lib/midori/libstatus-clock.so
 lib/midori/libstatusbar-features.so
 lib/midori/libtab-panel.so
 lib/midori/libtabs-minimized.so
 lib/midori/libtoolbar-editor.so
+lib/midori/libtransfers.so
 lib/midori/libweb-cache.so
 share/applications/midori-private.desktop
 share/applications/midori.desktop
@@ -66,6 +73,7 @@ share/icons/hicolor/scalable/status/internet-news-reader.svg
 share/locale/ar/LC_MESSAGES/midori.mo
 share/locale/ast/LC_MESSAGES/midori.mo
 share/locale/be/LC_MESSAGES/midori.mo
+share/locale/bg/LC_MESSAGES/midori.mo
 share/locale/ca/LC_MESSAGES/midori.mo
 share/locale/cs/LC_MESSAGES/midori.mo
 share/locale/da/LC_MESSAGES/midori.mo
@@ -85,6 +93,7 @@ share/locale/hu/LC_MESSAGES/midori.mo
 share/locale/id/LC_MESSAGES/midori.mo
 share/locale/it/LC_MESSAGES/midori.mo
 share/locale/ja/LC_MESSAGES/midori.mo
+share/locale/kk/LC_MESSAGES/midori.mo
 share/locale/ko/LC_MESSAGES/midori.mo
 share/locale/lt/LC_MESSAGES/midori.mo
 share/locale/nl/LC_MESSAGES/midori.mo
@@ -114,12 +123,18 @@ share/midori/res/error.html
 share/midori/res/gtk3.css
 share/midori/res/logo-shade.png
 share/midori/res/speeddial-head.html
+share/vala/vapi/apps.deps
+share/vala/vapi/apps.vapi
 share/vala/vapi/delayed-load.deps
 share/vala/vapi/delayed-load.vapi
 share/vala/vapi/external-download-manager.deps
 share/vala/vapi/external-download-manager.vapi
 share/vala/vapi/history-list.deps
 share/vala/vapi/history-list.vapi
+share/vala/vapi/nsplugin-manager.deps
+share/vala/vapi/nsplugin-manager.vapi
+share/vala/vapi/transfers.deps
+share/vala/vapi/transfers.vapi
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
