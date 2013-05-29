@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.25 2011/05/04 00:59:30 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.26 2013/05/29 14:08:06 jasper Exp $
 @bin bin/lftp
 bin/lftpget
 @comment lib/charset.alias
-lib/lftp/
 lib/liblftp-jobs.a
 lib/liblftp-jobs.la
 lib/liblftp-tasks.a
@@ -18,6 +17,7 @@ share/lftp/convert-mozilla-cookies
 share/lftp/import-ncftp
 share/lftp/import-netscape
 share/lftp/verify-file
+share/lftp/xdg-move
 share/locale/cs/LC_MESSAGES/lftp.mo
 share/locale/de/LC_MESSAGES/lftp.mo
 share/locale/es/LC_MESSAGES/lftp.mo

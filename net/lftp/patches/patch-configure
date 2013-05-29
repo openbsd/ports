@@ -1,0 +1,24 @@
+$OpenBSD: patch-configure,v 1.1 2013/05/29 14:08:06 jasper Exp $
+
+Use GNU readline as our base readline lacks add_history_time().
+
+--- configure.orig	Thu May 16 10:57:56 2013
++++ configure	Thu May 16 10:58:22 2013
+@@ -46793,7 +46793,7 @@ if ${lftp_cv_precompiled_readline+:} false; then :
+ else
+ 
+    old_LIBS="$LIBS"
+-   LIBS="-lreadline $READLINE_SUPPLIB $LIBS"
++   LIBS="-lereadline $READLINE_SUPPLIB $LIBS"
+    cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ extern int (*rl_getc_function)();
+@@ -46833,7 +46833,7 @@ if test $lftp_cv_precompiled_readline = yes; then
+    READLINE_DIR=''
+    { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ $as_echo "yes" >&6; }
+-   READLINE='-lreadline'
++   READLINE='-lereadline'
+    READLINE_DEPEND=''
+    COMPILE_READLINE=no
+ else

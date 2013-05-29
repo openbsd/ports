@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Resolver_cc,v 1.9 2011/10/23 10:28:56 sthen Exp $
---- src/Resolver.cc.orig	Tue Sep 13 05:29:47 2011
-+++ src/Resolver.cc	Fri Oct 21 15:05:07 2011
-@@ -794,8 +794,6 @@ void Resolver::LookupOne(const char *name)
+$OpenBSD: patch-src_Resolver_cc,v 1.10 2013/05/29 14:08:06 jasper Exp $
+--- src/Resolver.cc.orig	Mon Sep 24 11:16:03 2012
++++ src/Resolver.cc	Thu May 16 09:53:26 2013
+@@ -800,8 +800,6 @@ void Resolver::LookupOne(const char *name)
  #  undef h_errno // it could be a macro, but we want it to be local variable.
        int h_errno=0;
        ha=getipnodebyname(name,af,0,&h_errno);
