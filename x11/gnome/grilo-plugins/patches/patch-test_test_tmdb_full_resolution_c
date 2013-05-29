@@ -1,0 +1,16 @@
+$OpenBSD: patch-test_test_tmdb_full_resolution_c,v 1.1 2013/05/29 14:50:19 jasper Exp $
+
+test_tmdb_full_resolution.c:45: error: 'for' loop initial declaration used outside C99 mode
+
+--- test/test_tmdb_full_resolution.c.orig	Wed May 29 18:47:36 2013
++++ test/test_tmdb_full_resolution.c	Wed May 29 18:47:58 2013
+@@ -42,7 +42,8 @@ static const gchar*
+ get_region_certificate (GrlMedia *media, const gchar *region)
+ {
+   guint count = grl_data_length (GRL_DATA (media), GRL_METADATA_KEY_REGION);
+-  for (guint i = 0; i < count; ++i) {
++  guint i;
++  for (i = 0; i < count; ++i) {
+     const GDateTime* publication_date = NULL;
+     const gchar *certificate = NULL;
+     const gchar *this_region =
