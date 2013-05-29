@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/05/29 14:13:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/05/29 14:30:42 ajacoutot Exp $
 
 COMMENT=	AVR meta-package
+REVISION=	0
 
 PKGNAME=	avr-0.1
 
