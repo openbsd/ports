@@ -11,5 +11,3 @@ Flavors:
     no_x11 - build command line tool only, no gui
     fftw   - use math/fftw for optimized FFT
     netcdf - use math/netcdf for network common data form support
-    xmhtml - use www/xmhtml to use grace's internal HTML browser
-             for helpfiles etc.

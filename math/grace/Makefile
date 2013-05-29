@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2013/03/11 11:23:54 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2013/05/29 20:46:25 jasper Exp $
 
 COMMENT=	GRaphing, Advanced Computation and Exploration of data
 
 DISTNAME=	grace-5.1.15
-REVISION=	5
+REVISION=	6
 CATEGORIES=	math
 
 HOMEPAGE=	http://plasma-gate.weizmann.ac.il/Grace/
@@ -14,8 +14,7 @@ WANTLIB=		c m z
 
 GRACE_SITES=	ftp://plasma-gate.weizmann.ac.il/pub/ \
 		ftp://ftp.fu-berlin.de/unix/graphics/ \
-		ftp://ftp.u-aizu.ac.jp/pub/SciEng/math/ \
-		ftp://freedom7.swmed.edu/pub/mirrors/
+		ftp://ftp.u-aizu.ac.jp/pub/SciEng/math/
 MASTER_SITES=	${GRACE_SITES:=grace/src/grace5/}
 
 CONFIGURE_STYLE=	gnu
@@ -33,27 +32,17 @@ LIB_DEPENDS =	graphics/jpeg \
 		print/pdflib
 WANTLIB +=	jpeg>=62 png>=2 t1>=5 tiff>=35 pdf>=2
 
-FLAVORS=	no_x11 fftw netcdf xmhtml
+FLAVORS=	no_x11 fftw netcdf
 FLAVOR?=
 
 .if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS+=	--without-x
 NO_TEST=		Yes
-.  if ${FLAVOR:Mxmhtml}
-ERRORS+=	"Fatal: Flavors 'no_x11' and 'xmhtml' are mutually exclusive."
-.  endif
 .else
 TEST_IS_INTERACTIVE=	x11
 LIB_DEPENDS+=		x11/openmotif
 WANTLIB+=		ICE SM X11 Xext Xmu Xpm Xt Xm
-MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
-.  if ${FLAVOR:Mxmhtml}
-LIB_DEPENDS +=		www/xmhtml
-WANTLIB +=		XmHTML>=1
-CONFIGURE_ARGS+=	--enable-xmhtml
-.  else
-CONFIGURE_ARGS+=	--disable-xmhtml
-.  endif
+MAKE_ENV+=		MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 CONFIGURE_ENV=		LDFLAGS=-lm
 .endif
 
@@ -74,6 +63,7 @@ CONFIGURE_ARGS+=	--disable-netcdf
 .endif
 
 GRACE_DIR=${TRUEPREFIX}/grace
+
 post-install:
 .if ${FLAVOR:Mno_x11}
 	ln -sf ${GRACE_DIR}/bin/grace ${PREFIX}/bin/grace
@@ -89,5 +79,5 @@ post-install:
 	ln -sf ../../grace/doc/grace.1 ${PREFIX}/man/man1/grace.1
 	ln -sf ../../grace/doc/gracebat.1 ${PREFIX}/man/man1/gracebat.1
 	ln -sf ../../grace/doc/grconvert.1 ${PREFIX}/man/man1/grconvert.1
-	
+
 .include <bsd.port.mk>
