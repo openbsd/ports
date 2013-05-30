@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/04/16 10:21:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2013/05/30 10:38:11 sthen Exp $
 
 COMMENT =	versatile file searching tool
 
@@ -32,4 +32,3 @@ pre-configure:
 	cd ${WRKSRC} && ${SUBST_CMD} -c catfish.in catfish
 
 .include <bsd.port.mk>
-
