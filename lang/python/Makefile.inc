@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.101 2013/05/22 12:36:03 fgsch Exp $
+# $OpenBSD: Makefile.inc,v 1.102 2013/05/30 14:46:31 ajacoutot Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -45,7 +45,7 @@ MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 # A summary of changes to Python is required to be distributed
 PERMIT_PACKAGE_CDROM=	Yes
 
-.if ${VERSION} < 3.2
+.if ${VERSION} < 3.3
 LIB_SUFX =	
 MULTI_PACKAGES=	-main -tests -tools -gdbm -idle -tkinter -bsddb
 .else
@@ -72,7 +72,7 @@ RUN_DEPENDS-main =
 WANTLIB-main =		bz2 c crypto expat m ncursesw panelw pthread \
 			readline sqlite3 ssl stdc++ util z \
 			${MODGETTEXT_WANTLIB}
-.if ${VERSION} < 3.2
+.if ${VERSION} < 3.3
 WANTLIB-main +=		ossaudio
 .elif ${VERSION} == "3.3"
 LIB_DEPENDS-main +=	archivers/xz
@@ -165,7 +165,7 @@ post-build:
 		${ADJ_FILES}
 
 post-install:
-.if ${VERSION} < 3.2
+.if ${VERSION} < 3.3
 	${INSTALL_SCRIPT} ${WRKSRC}/Tools/scripts/pydoc \
 		${PREFIX}/bin/pydoc${VERSION}
 	@sed -e "s,@VERSION@,${VERSION},g" -e "s,@LOCALBASE@,${LOCALBASE},g" \
