@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:11 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/05/30 16:50:05 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	MessagePack implementation and bindings for Lua
 
 DISTNAME=	lua-cmsgpack-0.3.0
+REVISION=	0
 CATEGORIES=	devel
 
 HOMEPAGE=	https://github.com/antirez/lua-cmsgpack

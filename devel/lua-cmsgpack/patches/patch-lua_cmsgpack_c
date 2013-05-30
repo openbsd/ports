@@ -1,0 +1,29 @@
+$OpenBSD: patch-lua_cmsgpack_c,v 1.1 2013/05/30 16:50:05 jasper Exp $
+--- lua_cmsgpack.c.orig	Mon Nov  5 20:14:43 2012
++++ lua_cmsgpack.c	Thu May 30 20:43:04 2013
+@@ -328,7 +328,7 @@ static void mp_encode_lua_type(lua_State *L, mp_buf *b
+ 
+ /* Convert a lua table into a message pack list. */
+ static void mp_encode_lua_table_as_array(lua_State *L, mp_buf *buf, int level) {
+-    size_t len = lua_objlen(L,-1), j;
++    size_t len = lua_rawlen(L,-1), j;
+ 
+     mp_encode_array(buf,len);
+     for (j = 1; j <= len; j++) {
+@@ -687,14 +687,14 @@ static int mp_unpack(lua_State *L) {
+ 
+ /* ---------------------------------------------------------------------------- */
+ 
+-static const struct luaL_reg thislib[] = {
++static const struct luaL_Reg thislib[] = {
+     {"pack", mp_pack},
+     {"unpack", mp_unpack},
+     {NULL, NULL}
+ };
+ 
+ LUALIB_API int luaopen_cmsgpack (lua_State *L) {
+-    luaL_register(L, "cmsgpack", thislib);
++    luaL_openlib(L, "cmsgpack", thislib, 0);
+ 
+     lua_pushliteral(L, LUACMSGPACK_VERSION);
+     lua_setfield(L, -2, "_VERSION");

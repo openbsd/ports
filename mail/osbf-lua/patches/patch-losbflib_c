@@ -1,6 +1,6 @@
-$OpenBSD: patch-losbflib_c,v 1.1.1.1 2007/03/17 21:37:08 jolan Exp $
+$OpenBSD: patch-losbflib_c,v 1.2 2013/05/30 16:53:49 jasper Exp $
 --- losbflib.c.orig	Sun Jan 14 19:57:19 2007
-+++ losbflib.c	Tue Mar  6 21:44:40 2007
++++ losbflib.c	Thu May 30 20:47:02 2013
 @@ -13,6 +13,8 @@
   *
   */
@@ -22,3 +22,12 @@ $OpenBSD: patch-losbflib_c,v 1.1.1.1 2007/03/17 21:37:08 jolan Exp $
      {
        lua_pushstring (L, cur_dir);
        return 1;
+@@ -743,7 +745,7 @@ dir_gc (lua_State * L)
+ 
+ /**********************************************************/
+ 
+-static const struct luaL_reg osbf[] = {
++static const struct luaL_Reg osbf[] = {
+   {"create_db", lua_osbf_createdb},
+   {"remove_db", lua_osbf_removedb},
+   {"config", lua_osbf_config},

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:23:52 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/05/30 16:53:49 jasper Exp $
 
 COMMENT=	lua text classification module and anti-spam solution
 
 DISTNAME=	osbf-lua-2.0.4
-REVISION =	5
+REVISION =	6
 CATEGORIES=	mail
 
 MASTER_SITES=	http://luaforge.net/frs/download.php/2094/
