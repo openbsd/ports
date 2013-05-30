@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.53 2013/05/21 12:31:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.54 2013/05/30 13:09:20 ajacoutot Exp $
 
 COMMENT =	3D creation software
 BROKEN-sparc64 = error: cast from 'ccl::uchar*' to 'CUdeviceptr' loses precision
 
 DISTNAME =	blender-2.67
+REVISION =	0
 
 CATEGORIES =	graphics
 
@@ -21,7 +22,7 @@ MASTER_SITES =	http://download.blender.org/source/ \
 
 MODULES =	devel/cmake \
 		lang/python
-MODPY_VERSION = 3.3
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 CONFIGURE_ARGS =	-DPYTHON_INCLUDE_DIR="${MODPY_INCDIR}" \
 			-DPYTHON_VERSION=${MODPY_VERSION} \
