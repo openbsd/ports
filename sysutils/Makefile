@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.294 2013/05/19 14:47:16 abieber Exp $
+# $OpenBSD: Makefile,v 1.295 2013/05/30 15:59:27 jasper Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -96,6 +96,7 @@
      SUBDIR += logtail
      SUBDIR += lsof
      SUBDIR += luastatgrab
+     SUBDIR += luastatgrab,lua52
      SUBDIR += mac-robber
      SUBDIR += mcollective
      SUBDIR += memtest86+
