@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/04/13 09:33:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2013/05/30 16:50:49 jasper Exp $
 
 BROKEN-powerpc=	help2man: can't get `--help' info from ./luakit
 
@@ -6,7 +6,7 @@ COMMENT=	fast, small, webkit based browser written in lua
 
 VERSION=	2012.09.13.rc1
 
-REVISION=	5
+REVISION=	6
 
 DISTNAME=	luakit-${VERSION}
 
@@ -31,15 +31,15 @@ WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB += pthread pthread-stubs soup-2.4 sqlite3 unique-1.0 webkitgtk-1.0
 WANTLIB += xcb xcb-render xcb-shm z
 
-MODULES = lang/lua \
+MODULES = 	lang/lua \
 		devel/gettext
 
 BUILD_DEPENDS=	devel/help2man
 
-RUN_DEPENDS=	devel/luafs
+MODLUA_RUN_DEPENDS=	devel/luafs
+MODLUA_LIB_DEPENDS=	lang/luajit
 
-LIB_DEPENDS=	lang/luajit \
-		devel/libunique \
+LIB_DEPENDS=	devel/libunique \
 		www/webkit
 
 # webkit browsing
