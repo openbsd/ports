@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.245 2013/05/30 12:38:08 brad Exp $
+# $OpenBSD: Makefile,v 1.246 2013/05/30 15:43:39 jasper Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -34,7 +34,9 @@
      SUBDIR += libdbi-drivers
      SUBDIR += libpqxx
      SUBDIR += luadbi
+     SUBDIR += luadbi,lua52
      SUBDIR += luasqlite3
+     SUBDIR += luasqlite3,lua52
      SUBDIR += luma
      SUBDIR += mariadb
      SUBDIR += mdbtools/snapshot
@@ -151,6 +153,7 @@
      SUBDIR += postgresql-jdbc
      SUBDIR += postgresql-odbc
      SUBDIR += postgresql-pllua
+     SUBDIR += postgresql-pllua,lua52
      SUBDIR += postgresql-plv8
      SUBDIR += postgresql_autodoc
      SUBDIR += py-axiom

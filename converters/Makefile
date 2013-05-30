@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2012/11/06 07:37:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.64 2013/05/30 15:43:06 jasper Exp $
 
     SUBDIR =
     SUBDIR += base64
@@ -14,6 +14,7 @@
     SUBDIR += libpst
     SUBDIR += libunistring
     SUBDIR += luastruct
+    SUBDIR += luastruct,lua52
     SUBDIR += mimepp
     SUBDIR += mpack
     SUBDIR += p5-Calendar-Simple
