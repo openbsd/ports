@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:41:25 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/05/30 16:01:12 jasper Exp $
 
 COMMENT=	Lua binding for the OpenSSL crypto libraries
 SHARED_ONLY=	Yes
@@ -13,6 +13,7 @@ HOMEPAGE=	http://luacrypto.luaforge.net/
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
+MODLUA_VERSION=	5.1
 USE_GMAKE=	Yes
 WANTLIB=	crypto ssl
 MODLUA_TEST_DEPENDS=security/luacrypto
