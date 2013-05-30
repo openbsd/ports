@@ -1,3 +1,3 @@
-To configure Thunderbird for your language, open the configuration
-editor (Preferences->Advanced->Config Editor) and set the
-"general.useragent.locale" key to the language you want to use.
+To configure Thunderbird for your language, go to add-ons language 
+management (Tools->Add-ons->Languages) and click 'activate' on your
+installed language, then restart Thunderbird.
