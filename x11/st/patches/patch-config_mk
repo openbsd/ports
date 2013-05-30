@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_mk,v 1.4 2013/04/19 19:54:34 bentley Exp $
---- config.mk.orig	Fri Mar 29 12:13:26 2013
-+++ config.mk	Thu Apr  4 22:18:33 2013
-@@ -4,24 +4,24 @@ VERSION = 0.4
+$OpenBSD: patch-config_mk,v 1.5 2013/05/30 09:25:39 jung Exp $
+--- config.mk.orig	Sat Apr 20 15:29:39 2013
++++ config.mk	Mon May 27 18:32:07 2013
+@@ -4,11 +4,11 @@ VERSION = 0.4.1
  # Customize below to fit your system
  
  # paths
@@ -17,15 +17,8 @@ $OpenBSD: patch-config_mk,v 1.4 2013/04/19 19:54:34 bentley Exp $
  
  # includes and libs
  INCS = -I. -I/usr/include -I${X11INC} \
--       $(shell pkg-config --cflags fontconfig) \
--       $(shell pkg-config --cflags freetype2)
-+       `pkg-config --cflags fontconfig` \
-+       `pkg-config --cflags freetype2`
- LIBS = -L/usr/lib -lc -L${X11LIB} -lX11 -lutil -lXext -lXft \
--       $(shell pkg-config --libs fontconfig)  \
--       $(shell pkg-config --libs freetype2)
-+       `pkg-config --libs fontconfig`  \
-+       `pkg-config --libs freetype2`
+@@ -19,9 +19,9 @@ LIBS = -L/usr/lib -lc -L${X11LIB} -lX11 -lutil -lXext 
+        `pkg-config --libs freetype2`
  
  # flags
 -CPPFLAGS = -DVERSION=\"${VERSION}\" -D_BSD_SOURCE -D_XOPEN_SOURCE=600

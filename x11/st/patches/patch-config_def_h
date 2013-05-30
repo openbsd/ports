@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_def_h,v 1.4 2013/04/19 19:54:34 bentley Exp $
---- config.def.h.orig	Fri Mar 29 12:59:39 2013
-+++ config.def.h	Fri Mar 29 13:00:16 2013
+$OpenBSD: patch-config_def_h,v 1.5 2013/05/30 09:25:39 jung Exp $
+--- config.def.h.orig	Sat Apr 20 15:29:39 2013
++++ config.def.h	Mon May 27 18:18:29 2013
 @@ -5,7 +5,7 @@
   *
   * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
@@ -10,7 +10,7 @@ $OpenBSD: patch-config_def_h,v 1.4 2013/04/19 19:54:34 bentley Exp $
  static int borderpx = 2;
  static char shell[] = "/bin/sh";
  
-@@ -33,7 +33,7 @@ static const char *colorname[] = {
+@@ -36,7 +36,7 @@ static const char *colorname[] = {
  	"blue2",
  	"magenta3",
  	"cyan3",
