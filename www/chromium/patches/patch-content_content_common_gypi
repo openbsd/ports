@@ -1,15 +1,14 @@
-$OpenBSD: patch-content_content_common_gypi,v 1.5 2013/04/03 08:19:10 robert Exp $
---- content/content_common.gypi.orig.port	Fri Mar 22 02:13:17 2013
-+++ content/content_common.gypi	Tue Apr  2 21:05:17 2013
-@@ -345,11 +345,8 @@
+$OpenBSD: patch-content_content_common_gypi,v 1.6 2013/05/30 18:42:18 robert Exp $
+--- content/content_common.gypi.orig.port	Thu May 30 00:17:00 2013
++++ content/content_common.gypi	Thu May 30 00:17:19 2013
+@@ -345,10 +345,6 @@
+     'common/sandbox_init_linux.cc',
      'common/sandbox_mac.h',
      'common/sandbox_mac.mm',
-     'common/sandbox_linux.h',
+-    'common/sandbox_linux.h',
 -    'common/sandbox_linux.cc',
-     'common/sandbox_policy.cc',
-     'common/sandbox_policy.h',
 -    'common/sandbox_seccomp_bpf_linux.cc',
 -    'common/sandbox_seccomp_bpf_linux.h',
-     'common/savable_url_schemes.cc',
-     'common/savable_url_schemes.h',
-     'common/set_process_title.cc',
+     'common/sandbox_util.cc',
+     'common/sandbox_util.h',
+     'common/sandbox_win.cc',

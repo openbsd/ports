@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.137 2013/04/20 13:28:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.138 2013/05/30 18:42:18 robert Exp $
 
 BROKEN-i386=		"sad face" at runtime
 
@@ -6,10 +6,8 @@ ONLY_FOR_ARCHS=		i386 amd64
 
 COMMENT=		Chromium browser
 
-V=			26.0.1410.63
+V=			27.0.1453.93
 DISTNAME=		chromium-${V}
-
-REVISION=		2
 
 CATEGORIES=		www
 
@@ -57,6 +55,7 @@ RUN_DEPENDS=	devel/xdg-utils \
 		x11/gnome/libgnome-keyring \
 		x11/gtk+2,-guic
 BUILD_DEPENDS=	archivers/bzip2 \
+		audio/pulseaudio \
 		devel/gperf \
 		devel/bison \
 		devel/flex \

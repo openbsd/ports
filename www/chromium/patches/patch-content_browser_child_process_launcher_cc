@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.9 2013/04/03 08:19:10 robert Exp $
---- content/browser/child_process_launcher.cc.orig.port	Fri Mar 22 02:13:14 2013
-+++ content/browser/child_process_launcher.cc	Tue Apr  2 21:05:17 2013
-@@ -53,7 +53,7 @@ class ChildProcessLauncher::Context
+$OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.10 2013/05/30 18:42:18 robert Exp $
+--- content/browser/child_process_launcher.cc.orig.port	Fri May 17 22:44:18 2013
++++ content/browser/child_process_launcher.cc	Thu May 30 00:10:49 2013
+@@ -55,7 +55,7 @@ class ChildProcessLauncher::Context
          termination_status_(base::TERMINATION_STATUS_NORMAL_TERMINATION),
          exit_code_(RESULT_CODE_NORMAL_EXIT),
          starting_(true)
@@ -10,7 +10,7 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.9 2013/04/03 08:19
          , zygote_(false)
  #endif
          {
-@@ -199,7 +199,7 @@ class ChildProcessLauncher::Context
+@@ -229,7 +229,7 @@ class ChildProcessLauncher::Context
          FileDescriptorInfo(kPrimaryIPCChannel,
                                      base::FileDescriptor(ipcfd, false)));
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.9 2013/04/03 08:19
      GetContentClient()->browser()->
          GetAdditionalMappedFilesForChildProcess(*cmd_line, child_process_id,
                                                  &files_to_register);
-@@ -272,7 +272,7 @@ class ChildProcessLauncher::Context
+@@ -304,7 +304,7 @@ class ChildProcessLauncher::Context
        base::Bind(
            &Context::Notify,
            this_object.get(),
@@ -28,7 +28,7 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.9 2013/04/03 08:19
            use_zygote,
  #endif
            handle));
-@@ -280,7 +280,7 @@ class ChildProcessLauncher::Context
+@@ -312,7 +312,7 @@ class ChildProcessLauncher::Context
    }
  
    void Notify(
@@ -37,7 +37,7 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.9 2013/04/03 08:19
        bool zygote,
  #endif
        base::ProcessHandle handle) {
-@@ -293,7 +293,7 @@ class ChildProcessLauncher::Context
+@@ -325,7 +325,7 @@ class ChildProcessLauncher::Context
      if (!handle)
        LOG(ERROR) << "Failed to launch child process";
  
@@ -46,7 +46,7 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.9 2013/04/03 08:19
      zygote_ = zygote;
  #endif
      if (client_) {
-@@ -316,7 +316,7 @@ class ChildProcessLauncher::Context
+@@ -348,7 +348,7 @@ class ChildProcessLauncher::Context
          BrowserThread::PROCESS_LAUNCHER, FROM_HERE,
          base::Bind(
              &Context::TerminateInternal,
@@ -55,7 +55,7 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.9 2013/04/03 08:19
              zygote_,
  #endif
              process_.handle()));
-@@ -330,7 +330,7 @@ class ChildProcessLauncher::Context
+@@ -362,7 +362,7 @@ class ChildProcessLauncher::Context
    }
  
    static void TerminateInternal(
@@ -64,7 +64,7 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.9 2013/04/03 08:19
        bool zygote,
  #endif
        base::ProcessHandle handle) {
-@@ -344,7 +344,7 @@ class ChildProcessLauncher::Context
+@@ -376,7 +376,7 @@ class ChildProcessLauncher::Context
      process.Terminate(RESULT_CODE_NORMAL_EXIT);
      // On POSIX, we must additionally reap the child.
  #if defined(OS_POSIX)
@@ -73,7 +73,7 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.9 2013/04/03 08:19
      if (zygote) {
        // If the renderer was created via a zygote, we have to proxy the reaping
        // through the zygote process.
-@@ -371,7 +371,7 @@ class ChildProcessLauncher::Context
+@@ -403,7 +403,7 @@ class ChildProcessLauncher::Context
  #if defined(OS_ANDROID)
    // The fd to close after creating the process.
    int ipcfd_;
@@ -82,7 +82,7 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.9 2013/04/03 08:19
    bool zygote_;
  #endif
  };
-@@ -427,7 +427,7 @@ base::TerminationStatus ChildProcessLauncher::GetChild
+@@ -459,7 +459,7 @@ base::TerminationStatus ChildProcessLauncher::GetChild
        *exit_code = context_->exit_code_;
      return context_->termination_status_;
    }

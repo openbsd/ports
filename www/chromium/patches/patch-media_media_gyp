@@ -1,64 +1,51 @@
-$OpenBSD: patch-media_media_gyp,v 1.19 2013/04/03 08:19:10 robert Exp $
---- media/media.gyp.orig.port	Fri Mar 22 02:12:58 2013
-+++ media/media.gyp	Tue Apr  2 21:05:17 2013
-@@ -7,6 +7,8 @@
-     'chromium_code': 1,
-     # Override to dynamically link the PulseAudio library.
-     'use_pulseaudio%': 0,
-+    # Override to dynamically link the sndio library.
-+    'use_sndioaudio%': 0,
-     # Override to dynamically link the cras (ChromeOS audio) library.
-     'use_cras%': 0,
-     'conditions': [
-@@ -139,6 +141,8 @@
-         'audio/openbsd/audio_manager_openbsd.h',
+$OpenBSD: patch-media_media_gyp,v 1.20 2013/05/30 18:42:18 robert Exp $
+--- media/media.gyp.orig.port	Thu May 30 20:10:08 2013
++++ media/media.gyp	Thu May 30 20:12:49 2013
+@@ -29,11 +29,15 @@
+       }, {
+         'use_alsa%': 0,
+       }],
+-      ['os_posix == 1 and OS != "mac" and OS != "ios" and OS != "android" and chromeos != 1', {
++      ['os_posix == 1 and OS != "mac" and OS != "ios" and OS != "android" and chromeos != 1 and os_bsd != 1', {
+         'use_pulseaudio%': 1,
+       }, {
+         'use_pulseaudio%': 0,
+       }],
++      # Override to dynamically link the sndio library.
++      ['OS=="openbsd"', {
++        'use_sndioaudio%': 0,
++      }],
+     ],
+   },
+   'targets': [
+@@ -152,6 +156,8 @@
+         'audio/pulse/audio_manager_pulse.h',
          'audio/pulse/pulse_output.cc',
          'audio/pulse/pulse_output.h',
 +        'audio/sndio/sndio_output.cc',
 +        'audio/sndio/sndio_output.h',
-         'audio/sample_rates.cc',
-         'audio/sample_rates.h',
-         'audio/scoped_loop_observer.cc',
-@@ -474,6 +478,12 @@
-             'filters/vpx_video_decoder.h',
-           ],
-         }],
-+        ['use_system_libvpx == 1', {
-+          'sources!': [
-+            'filters/vpx_video_decoder.cc',
-+            'filters/vpx_video_decoder.h',
+         'audio/pulse/pulse_input.cc',
+         'audio/pulse/pulse_input.h',
+         'audio/pulse/pulse_unified.cc',
+@@ -580,6 +586,21 @@
+             'webm/chromeos/ebml_writer.h',
+             'webm/chromeos/webm_encoder.cc',
+             'webm/chromeos/webm_encoder.h',
 +          ],
 +        }],
-         ['OS == "ios"', {
-           'includes': [
-             # For shared_memory_support_sources variable.
-@@ -550,6 +560,7 @@
-         }],
-         ['OS=="openbsd"', {
-           'sources/': [ ['exclude', '/alsa_' ],
-+                        ['exclude', '/cras_' ],
-                         ['exclude', '/audio_manager_linux' ] ],
-           'link_settings': {
-             'libraries': [
-@@ -621,6 +632,21 @@
-               'sources!': [
-                 'audio/pulse/pulse_output.cc',
-                 'audio/pulse/pulse_output.h',
-+              ],
-+            }],
-+            ['use_sndio == 1', {
-+              'link_settings': {
-+                'libraries': [
-+                  '-lsndio',
-+                ],
-+              },
-+              'defines': [
-+                'USE_SNDIO',
-+              ],
-+            }, {  # else: use_sndio == 0
-+              'sources!': [
-+                'audio/sndio/sndio_output.cc',
-+                'audio/sndio/sndio_output.h',
-               ],
-             }],
++        ['use_sndio == 1', {
++          'link_settings': {
++            'libraries': [
++              '-lsndio',
++            ],
++          },
++          'defines': [
++            'USE_SNDIO',
++          ],
++        }, {  # else: use_sndio == 0
++          'sources!': [
++            'audio/sndio/sndio_output.cc',
++            'audio/sndio/sndio_output.h',
            ],
+         }],
+         ['use_alsa==1', {

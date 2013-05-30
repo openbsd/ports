@@ -1,6 +1,6 @@
-$OpenBSD: patch-content_app_content_main_runner_cc,v 1.7 2013/04/03 08:19:10 robert Exp $
---- content/app/content_main_runner.cc.orig.port	Fri Mar 22 02:13:13 2013
-+++ content/app/content_main_runner.cc	Tue Apr  2 21:05:17 2013
+$OpenBSD: patch-content_app_content_main_runner_cc,v 1.8 2013/05/30 18:42:18 robert Exp $
+--- content/app/content_main_runner.cc.orig.port	Fri May 17 22:44:16 2013
++++ content/app/content_main_runner.cc	Thu May 30 00:10:49 2013
 @@ -79,7 +79,7 @@
  #include "base/posix/global_descriptors.h"
  #include "content/public/common/content_descriptors.h"
@@ -10,7 +10,7 @@ $OpenBSD: patch-content_app_content_main_runner_cc,v 1.7 2013/04/03 08:19:10 rob
  #include "content/public/common/zygote_fork_delegate_linux.h"
  #endif
  
-@@ -99,7 +99,7 @@ extern int PpapiBrokerMain(const MainFunctionParams&);
+@@ -101,7 +101,7 @@ extern int PpapiBrokerMain(const MainFunctionParams&);
  extern int RendererMain(const content::MainFunctionParams&);
  extern int UtilityMain(const MainFunctionParams&);
  extern int WorkerMain(const MainFunctionParams&);
@@ -19,7 +19,7 @@ $OpenBSD: patch-content_app_content_main_runner_cc,v 1.7 2013/04/03 08:19:10 rob
  extern int ZygoteMain(const MainFunctionParams&,
                        ZygoteForkDelegate* forkdelegate);
  #endif
-@@ -236,7 +236,7 @@ void CommonSubprocessInit(const std::string& process_t
+@@ -239,7 +239,7 @@ void CommonSubprocessInit(const std::string& process_t
    MSG msg;
    PeekMessage(&msg, NULL, 0, 0, PM_REMOVE);
  #endif
@@ -28,7 +28,7 @@ $OpenBSD: patch-content_app_content_main_runner_cc,v 1.7 2013/04/03 08:19:10 rob
    // Various things break when you're using a locale where the decimal
    // separator isn't a period.  See e.g. bugs 22782 and 39964.  For
    // all processes except the browser process (where we call system
-@@ -344,7 +344,7 @@ struct MainFunction {
+@@ -347,7 +347,7 @@ struct MainFunction {
    int (*function)(const MainFunctionParams&);
  };
  
@@ -37,7 +37,7 @@ $OpenBSD: patch-content_app_content_main_runner_cc,v 1.7 2013/04/03 08:19:10 rob
  // On platforms that use the zygote, we have a special subset of
  // subprocesses that are launched via the zygote.  This function
  // fills in some process-launching bits around ZygoteMain().
-@@ -451,7 +451,7 @@ int RunNamedProcessTypeMain(
+@@ -456,7 +456,7 @@ int RunNamedProcessTypeMain(
      }
    }
  
@@ -46,7 +46,7 @@ $OpenBSD: patch-content_app_content_main_runner_cc,v 1.7 2013/04/03 08:19:10 rob
    // Zygote startup is special -- see RunZygote comments above
    // for why we don't use ZygoteMain directly.
    if (process_type == switches::kZygoteProcess)
-@@ -579,7 +579,7 @@ class ContentMainRunnerImpl : public ContentMainRunner
+@@ -584,7 +584,7 @@ class ContentMainRunnerImpl : public ContentMainRunner
                 kPrimaryIPCChannel + base::GlobalDescriptors::kBaseDescriptor);
  #endif  // !OS_ANDROID && !OS_IOS
  

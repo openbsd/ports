@@ -1,21 +1,11 @@
-$OpenBSD: patch-third_party_libyuv_libyuv_gyp,v 1.2 2013/04/03 08:19:10 robert Exp $
---- third_party/libyuv/libyuv.gyp.orig.port	Fri Mar 22 02:15:28 2013
-+++ third_party/libyuv/libyuv.gyp	Tue Apr  2 21:05:18 2013
-@@ -21,6 +21,9 @@
+$OpenBSD: patch-third_party_libyuv_libyuv_gyp,v 1.3 2013/05/30 18:42:18 robert Exp $
+--- third_party/libyuv/libyuv.gyp.orig.port	Thu May 30 01:49:17 2013
++++ third_party/libyuv/libyuv.gyp	Thu May 30 02:15:14 2013
+@@ -21,6 +21,7 @@
               '<(DEPTH)/third_party/libjpeg_turbo/libjpeg.gyp:libjpeg',
            ],
          }, {
-+          'include_dirs': [
-+            '/usr/local/include',
-+          ],
++          'include_dirs': [ '/usr/local/include' ],
            'link_settings': {
              'libraries': [
                '-ljpeg',
-@@ -30,6 +33,7 @@
-       ],
-       'defines': [
-         'HAVE_JPEG',
-+        'YUV_DISABLE_ASM',
-         # 'LIBYUV_BUILDING_SHARED_LIBRARY',
-       ],
-       'include_dirs': [
