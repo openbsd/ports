@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_polkitbackend_polkitbackendjsauthority_c,v 1.3 2013/02/19 16:09:16 ajacoutot Exp $
---- src/polkitbackend/polkitbackendjsauthority.c.orig	Wed Jan  9 20:33:52 2013
-+++ src/polkitbackend/polkitbackendjsauthority.c	Tue Feb 19 16:35:39 2013
-@@ -23,7 +23,12 @@
+$OpenBSD: patch-src_polkitbackend_polkitbackendjsauthority_c,v 1.4 2013/05/30 18:22:05 ajacoutot Exp $
+--- src/polkitbackend/polkitbackendjsauthority.c.orig	Mon May  6 20:28:21 2013
++++ src/polkitbackend/polkitbackendjsauthority.c	Thu May 30 20:09:52 2013
+@@ -24,7 +24,12 @@
  #include <errno.h>
  #include <pwd.h>
  #include <grp.h>
@@ -14,16 +14,7 @@ $OpenBSD: patch-src_polkitbackend_polkitbackendjsauthority_c,v 1.3 2013/02/19 16
  #include <string.h>
  #include <glib/gstdio.h>
  #include <locale.h>
-@@ -238,7 +243,7 @@ djs_init (PolkitBackendJsAuthority *authority)
-   guint n;
-   const gchar *library_name;
- 
--  library_name = "libmozjs185.so.1.0";
-+  library_name = "libmozjs185.so";
-   module = g_module_open (library_name, 0);
-   if (module == NULL)
-     goto out;
-@@ -1401,7 +1406,7 @@ get_signal_name (gint signal_number)
+@@ -1286,7 +1291,7 @@ get_signal_name (gint signal_number)
      _HANDLE_SIG (SIGTTIN);
      _HANDLE_SIG (SIGTTOU);
      _HANDLE_SIG (SIGBUS);

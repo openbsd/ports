@@ -1,6 +1,6 @@
-$OpenBSD: patch-docs_man_polkit_xml,v 1.1 2012/11/20 14:11:48 ajacoutot Exp $
---- docs/man/polkit.xml.orig	Wed Nov 14 19:22:07 2012
-+++ docs/man/polkit.xml	Tue Nov 20 14:23:46 2012
+$OpenBSD: patch-docs_man_polkit_xml,v 1.2 2013/05/30 18:22:05 ajacoutot Exp $
+--- docs/man/polkit.xml.orig	Mon May  6 20:28:21 2013
++++ docs/man/polkit.xml	Thu May 30 20:11:52 2013
 @@ -103,14 +103,14 @@ System Context         |                        |
  |    PolicyKit1    |<---------+
  +------------------+          |
@@ -32,7 +32,7 @@ $OpenBSD: patch-docs_man_polkit_xml,v 1.1 2012/11/20 14:11:48 ajacoutot Exp $
        directory.
      </para>
  
-@@ -469,21 +469,21 @@ System Context         |                        |
+@@ -473,21 +473,21 @@ System Context         |                        |
      <para>
        <command>polkitd</command> reads
        <filename class='extension'>.rules</filename> files from the
@@ -62,7 +62,7 @@ $OpenBSD: patch-docs_man_polkit_xml,v 1.1 2012/11/20 14:11:48 ajacoutot Exp $
      </itemizedlist>
      <para>
        Both directories are monitored so if a rules file is changed,
-@@ -563,7 +563,7 @@ System Context         |                        |
+@@ -567,7 +567,7 @@ System Context         |                        |
          called in the order they have been added until one of the
          functions returns a value. Hence, to add an authorization rule
          that is processed before other rules, put it in a file in
@@ -71,7 +71,7 @@ $OpenBSD: patch-docs_man_polkit_xml,v 1.1 2012/11/20 14:11:48 ajacoutot Exp $
          with a name that sorts before other rules files, for example
          <filename>00-early-checks.rules</filename>. Each function should
          return a value from <literal>polkit.Result</literal>
-@@ -679,8 +679,8 @@ polkit.addRule(function(action, subject) {
+@@ -683,8 +683,8 @@ polkit.addRule(function(action, subject) {
          will produce the following when the user runs 'pkexec -u bateman bash -i' from a shell:
        </para>
        <programlisting><![CDATA[
@@ -82,12 +82,12 @@ $OpenBSD: patch-docs_man_polkit_xml,v 1.1 2012/11/20 14:11:48 ajacoutot Exp $
  ]]></programlisting>
  
      </refsect2>
-@@ -912,7 +912,7 @@ polkit.addRule(function(action, subject) {
+@@ -916,7 +916,7 @@ polkit.addRule(function(action, subject) {
        <programlisting><![CDATA[
  polkit.addRule(function(action, subject) {
      if (action.id == "org.freedesktop.policykit.exec" &&
 -        action.lookup("program") == "/usr/bin/cat") {
 +        action.lookup("program") == "/bin/cat") {
-         return polkit.Result.AUTH_SELF;
+         return polkit.Result.AUTH_ADMIN;
      }
  });

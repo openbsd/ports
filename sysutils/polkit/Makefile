@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.45 2013/04/15 16:50:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2013/05/30 18:22:05 ajacoutot Exp $
 
 COMMENT=	framework for granting privileged operations to users
 
-DISTNAME=	polkit-0.110
-REVISION=	2
+DISTNAME=	polkit-0.111
 
 SHARED_LIBS +=  polkit-gobject-1	2.0 # .0.0
 SHARED_LIBS +=  polkit-agent-1		2.0 # .0.0
@@ -17,23 +16,18 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c expat gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 pthread
+WANTLIB += c expat gio-2.0 glib-2.0 gobject-2.0 mozjs185 pthread
 
 MASTER_SITES=	http://www.freedesktop.org/software/polkit/releases/
 
-MODULES=	textproc/intltool \
-		lang/python
+MODULES=	devel/gettext \
+		lang/python \
+		textproc/intltool
 
 BUILD_DEPENDS=	${MODGNU_AUTOMAKE_DEPENDS} \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		devel/gettext \
-		devel/gobject-introspection \
-		devel/spidermonkey
-
-RUN_DEPENDS=	x11/dbus
-
-# dlopen() libmozjs185.so
-RUN_DEPENDS +=	devel/spidermonkey
+		devel/gobject-introspection
 
 # needs AM_PROG_LIBTOOL
 BUILD_DEPENDS+=	devel/libtool
@@ -42,7 +36,10 @@ BUILD_DEPENDS+=	devel/libtool
 # polkit -> gtk-doc -> yelp -> gconf2 -> polkit
 BUILD_DEPENDS+=	textproc/docbook-xsl
 
-LIB_DEPENDS=	devel/glib2
+RUN_DEPENDS=	x11/dbus
+
+LIB_DEPENDS=	devel/glib2 \
+		devel/spidermonkey
 
 AUTOCONF_VERSION= 2.68
 AUTOMAKE_VERSION=1.10
@@ -72,7 +69,6 @@ CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
 MODPY_BUILDDEP=	No
 MODPY_RUNDEP=	No
 USE_GMAKE=	Yes
-USE_GROFF=	Yes
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/polkit
 
