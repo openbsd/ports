@@ -1,0 +1,24 @@
+$OpenBSD: patch-libstatgrab_c,v 1.1 2013/05/30 15:58:31 jasper Exp $
+
+Unbreak build with lua 5.2
+
+--- libstatgrab.c.orig	Thu May 30 19:49:53 2013
++++ libstatgrab.c	Thu May 30 19:50:40 2013
+@@ -364,7 +364,7 @@ Lsg_str_error(lua_State *L) {
+     return 1;
+ }
+ 
+-static const luaL_reg R[] = {
++static const luaL_Reg R[] = {
+     DEF_F(init),
+     DEF_F(drop_privileges),
+ 
+@@ -407,7 +407,7 @@ reg_const(lua_State *L, const char *t, const const_reg
+ }
+ 
+ static void
+-reg_func(lua_State *L, const luaL_reg *nf) {
++reg_func(lua_State *L, const luaL_Reg *nf) {
+     for(; nf->name != NULL; ++nf) {
+         SET_F(nf->name, nf->func);
+     }

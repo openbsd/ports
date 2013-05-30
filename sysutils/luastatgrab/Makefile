@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:41:31 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/05/30 15:58:31 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -37,6 +37,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/API.txt ${MODLUA_DOCDIR}
 
 do-test:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/lua *.lua
+	cd ${WRKSRC} && ${MODLUA_BIN} *.lua
 
 .include <bsd.port.mk>
