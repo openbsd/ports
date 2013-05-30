@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.162 2013/05/22 16:32:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.163 2013/05/30 19:40:59 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		3.8.1.1
-REVISION=		4
+REVISION=		5
 
 HOMEPAGE=		http://projects.gnome.org/gdm/
 
@@ -92,6 +92,10 @@ post-install:
 	mv ${WRKINST}/etc/dbus-1 ${PREFIX}/share/examples/gdm/etc
 	mv ${WRKINST}/etc/dconf ${PREFIX}/share/examples/gdm/etc
 	mv ${WRKINST}/var/db/gdm ${PREFIX}/share/examples/gdm/var/db
+	# see patch-src_daemon_main_c in audio/pulseaudio
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gdm/var/db/gdm/.pulse
+	${INSTALL_DATA} ${FILESDIR}/client.conf \
+		${PREFIX}/share/examples/gdm/var/db/gdm/.pulse
 	${INSTALL_DATA} ${FILESDIR}/i18n \
 		${PREFIX}/share/examples/gdm/etc/gdm/i18n
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/examples/gdm/*
