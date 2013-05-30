@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.93 2013/05/02 19:12:49 stsp Exp $
+# $OpenBSD: OpenBSD,v 1.94 2013/05/30 17:39:49 reyk Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -107,11 +107,11 @@
 52.26		4.63		"camield"	# Camiel Dobbelaar
 52.28083	10.57271	"kili"		# Matthias Kilian
 52.35447	4.630657	"otto"		# Otto Moerbeek
-52.3667		9.71667		"reyk"		# Reyk Floeter
 52.3717		9.73416		"phessler"	# Peter Hessler
 52.3963543	13.107545	"zinke"		# Joerg Zinke
 52.4144		12.5524		"sebastia"	# Sebastian Reitenbach
 52.5		21		"alek"		# Aleksander Piotrowski
+52.584		9.739		"reyk"		# Reyk Floeter
 53.08566	8.13058		"fkr"		# Felix Kronlage
 53.13		9		"jufi"		# Jan-Uwe Finck
 53.30		-6.24		"niallo"	# Niall O'Higgins
