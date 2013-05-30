@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.4 2012/10/10 21:03:40 landry Exp $
+$OpenBSD: README-main,v 1.5 2013/05/30 14:26:50 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -15,10 +15,14 @@ location will be overridden.
 
 Internationalization
 ====================
-This package contains internationalizations for all supported
-languages.  To configure Seamonkey for your language, go to
-Edit->Preferences->Appearance->Languages/Content and select your
-favorite Language/Content pack.
+There are packages containing internationalizations for all supported
+languages. To use Seamonkey in your language, install one of the 
+seamonkey-i18n-* packages and start Seamonkey. If you are not asked for 
+confirmation of activation of the language pack, go to 
+Tools->Add-ons manager->Languages and click 'activate' on your language 
+pack. Then go to
+Edit->Preferences->Appearance and select your favorite Language/Content 
+in the 'User Interface Language' pull down menu. Restart Seamonkey.
 
 Debugging
 =========
