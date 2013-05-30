@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.95 2013/05/30 19:45:41 dtucker Exp $
+# $OpenBSD: OpenBSD,v 1.96 2013/05/30 19:51:34 mcbride Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -16,8 +16,8 @@
 34.710962	-82.872323	"okan"		# Okan Demirmen
 35.083		-106.625	"bentley"	# Anthony J. Bentley
 35.5635277	-97.5437221	"todd"		# Todd T. Fries
-35.62		139.69		"mcbride"	# Ryan Thomas McBride
 35.66834	139.719186	"itojun"	# Jun-ichiro Itojun
+35.698		139.713		"mcbride"	# Ryan Thomas McBride
 36.134		-86.70		"david"		# David Krause
 37.25230	-121.81576	"mlarkin"	# Mike Larkin
 37.3706		-122.0138	"ckuethe"	# Chris Kuethe
