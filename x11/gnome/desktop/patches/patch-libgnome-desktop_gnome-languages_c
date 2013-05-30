@@ -1,0 +1,61 @@
+$OpenBSD: patch-libgnome-desktop_gnome-languages_c,v 1.1 2013/05/30 17:12:35 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=698383
+
+--- libgnome-desktop/gnome-languages.c.orig	Thu May 30 18:46:45 2013
++++ libgnome-desktop/gnome-languages.c	Thu May 30 18:47:24 2013
+@@ -310,11 +310,7 @@ language_name_is_valid (const char *language_name)
+ {
+         char     *old_locale;
+         gboolean  is_valid;
+-#ifdef WITH_INCOMPLETE_LOCALES
+         int lc_type_id = LC_CTYPE;
+-#else
+-        int lc_type_id = LC_MESSAGES;
+-#endif
+ 
+         old_locale = g_strdup (setlocale (lc_type_id, NULL));
+         is_valid = setlocale (lc_type_id, language_name) != NULL;
+@@ -445,7 +441,6 @@ add_locale (const char *language_name,
+         g_free (name);
+         name = NULL;
+ 
+-#ifdef WITH_INCOMPLETE_LOCALES
+         if (utf8_only) {
+                 if (locale->territory_code == NULL || locale->modifier) {
+                         g_debug ("Ignoring '%s' as a locale, since it lacks territory code or modifier", name);
+@@ -453,14 +448,12 @@ add_locale (const char *language_name,
+                         return FALSE;
+                 }
+         }
+-#endif
+ 
+         locale->id = construct_language_name (locale->language_code, locale->territory_code,
+                                               NULL, locale->modifier);
+         locale->name = construct_language_name (locale->language_code, locale->territory_code,
+                                                 locale->codeset, locale->modifier);
+ 
+-#ifndef WITH_INCOMPLETE_LOCALES
+         if (!gnome_language_has_translations (locale->name) &&
+             !gnome_language_has_translations (locale->id) &&
+             !gnome_language_has_translations (locale->language_code) &&
+@@ -469,7 +462,6 @@ add_locale (const char *language_name,
+                 gnome_locale_free (locale);
+                 return FALSE;
+         }
+-#endif
+ 
+         if (!utf8_only) {
+                 g_free (locale->id);
+@@ -684,11 +676,9 @@ collect_locales (void)
+         found_dir_locales = collect_locales_from_directory ();
+ 
+         if (!(found_archive_locales || found_dir_locales)) {
+-#ifndef WITH_INCOMPLETE_LOCALES
+                 g_warning ("Could not read list of available locales from libc, "
+                            "guessing possible locales from available translations, "
+                            "but list may be incomplete!");
+-#endif
+         }
+ 
+ 	count_languages_and_territories ();

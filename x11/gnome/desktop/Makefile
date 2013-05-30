@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2013/05/14 07:21:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.103 2013/05/30 17:12:35 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,6 +7,7 @@ COMMENT=		components for the GNOME desktop
 GNOME_PROJECT=		gnome-desktop
 # sync with meta/gnome "V" variable
 GNOME_VERSION=		3.8.2
+REVISION=		0
 
 SHARED_LIBS +=  gnome-desktop-3      2.0      # 4.0
 
@@ -35,12 +36,6 @@ LIB_DEPENDS=		x11/gtk+3
 
 MODGNOME_TOOLS= 	gi yelp
 
-AUTOCONF_VERSION=	2.69
-CONFIGURE_STYLE=	autoconf
-
 CONFIGURE_ARGS=		--with-gnome-distributor="OpenBSD Ports"
-
-# we lack /usr/lib/locale/locale-archive
-CONFIGURE_ARGS +=	--with-incomplete-locales
 
 .include <bsd.port.mk>
