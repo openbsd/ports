@@ -1,11 +1,11 @@
-# $OpenBSD: OpenBSD,v 1.94 2013/05/30 17:39:49 reyk Exp $
+# $OpenBSD: OpenBSD,v 1.95 2013/05/30 19:45:41 dtucker Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
 
 -37.457132	144.580589	"djm"		# Damien Miller
 -34.709197	-58.395080	"gonzalo"	# Gonzalo L. Rodriguez
--33.81		151.15		"dtucker"	# Darren Tucker
+-33.867		151.192		"dtucker"	# Darren Tucker
 -30.018701	-51.167282	"haesbaert"	# Christiano F. Haesbaert
 -27.28		153.02		"dlg"		# David Gwynne
 -22.88		-43.28		"pedro"		# Pedro Martelletto
