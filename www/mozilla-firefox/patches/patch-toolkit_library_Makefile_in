@@ -1,9 +1,9 @@
-$OpenBSD: patch-toolkit_library_Makefile_in,v 1.23 2013/04/06 14:44:52 landry Exp $
+$OpenBSD: patch-toolkit_library_Makefile_in,v 1.24 2013/05/30 14:17:32 landry Exp $
 https://bugzilla.mozilla.org/show_bug.cgi?id=648726
 https://bugzilla.mozilla.org/show_bug.cgi?id=648730
---- toolkit/library/Makefile.in.orig	Wed Feb 20 14:28:45 2013
-+++ toolkit/library/Makefile.in	Sun Feb 24 17:33:12 2013
-@@ -518,6 +518,12 @@ OS_LIBS += \
+--- toolkit/library/Makefile.in.orig	Tue Apr  2 04:38:31 2013
++++ toolkit/library/Makefile.in	Thu Apr 11 17:37:38 2013
+@@ -522,6 +522,12 @@ OS_LIBS += \
    $(NULL)
  endif
  
@@ -16,7 +16,7 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=648730
  ifeq ($(OS_ARCH),Darwin)
  ifdef MOZ_SYDNEYAUDIO
  OS_LIBS += \
-@@ -530,12 +536,6 @@ OS_LIBS += \
+@@ -534,12 +540,6 @@ OS_LIBS += \
    -framework AppKit \
    -framework Security \
    $(NULL)
