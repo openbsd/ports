@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:11 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/05/30 17:03:59 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		time profiler for Lua
 
 DISTNAME=		luaprofiler-2.0.2
-REVISION=		0
+REVISION=		1
 CATEGORIES=		devel
 
 HOMEPAGE=		http://luaprofiler.luaforge.net/

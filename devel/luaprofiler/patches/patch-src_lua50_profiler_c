@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_lua50_profiler_c,v 1.1 2013/05/30 17:03:59 jasper Exp $
+--- src/lua50_profiler.c.orig	Thu May 30 20:54:19 2013
++++ src/lua50_profiler.c	Thu May 30 20:54:27 2013
+@@ -204,7 +204,7 @@ static float calcCallTime(lua_State *L) {
+   return lprofC_get_seconds(timer) / (float) 100000;
+ }
+ 
+-static const luaL_reg prof_funcs[] = {
++static const luaL_Reg prof_funcs[] = {
+   { "pause", profiler_pause },
+   { "resume", profiler_resume },
+   { "start", profiler_init },
