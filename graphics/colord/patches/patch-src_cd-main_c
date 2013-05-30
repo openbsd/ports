@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_cd-main_c,v 1.8 2013/04/18 13:57:14 ajacoutot Exp $
+$OpenBSD: patch-src_cd-main_c,v 1.9 2013/05/30 18:17:18 ajacoutot Exp $
 
 /var/lib -> /var/db
 
---- src/cd-main.c.orig	Mon Apr  1 21:45:32 2013
-+++ src/cd-main.c	Thu Apr 18 15:51:58 2013
-@@ -2429,7 +2429,7 @@ main (int argc, char *argv[])
+--- src/cd-main.c.orig	Wed Apr 24 22:18:14 2013
++++ src/cd-main.c	Thu May 30 20:08:06 2013
+@@ -2442,7 +2442,7 @@ main (int argc, char *argv[])
  	/* connect to the mapping db */
  	priv->mapping_db = cd_mapping_db_new ();
  	ret = cd_mapping_db_load (priv->mapping_db,
@@ -13,7 +13,7 @@ $OpenBSD: patch-src_cd-main_c,v 1.8 2013/04/18 13:57:14 ajacoutot Exp $
  				  &error);
  	if (!ret) {
  		g_warning ("CdMain: failed to load mapping database: %s",
-@@ -2441,7 +2441,7 @@ main (int argc, char *argv[])
+@@ -2454,7 +2454,7 @@ main (int argc, char *argv[])
  	/* connect to the device db */
  	priv->device_db = cd_device_db_new ();
  	ret = cd_device_db_load (priv->device_db,

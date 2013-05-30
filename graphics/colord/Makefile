@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2013/04/30 09:09:40 stsp Exp $
+# $OpenBSD: Makefile,v 1.27 2013/05/30 18:17:18 ajacoutot Exp $
 
 COMMENT=	device color profile management daemon
 
-V=		0.1.33
-REVISION=	0
+V=		0.1.34
 DISTNAME=	colord-${V}
 EXTRACT_SUFX=	.tar.xz
 
@@ -65,6 +64,9 @@ CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
 # disable: takes a huge amount of time/RAM
 CONFIGURE_ARGS += --disable-print-profiles
 #BUILD_DEPENDS += graphics/argyll
+
+# XXX configure: error: Package requirements (bash-completion >= 2.0) were not met
+CONFIGURE_ARGS += --disable-bash-completion
 
 FAKE_FLAGS=	sysconfdir="${PREFIX}/share/examples/colord"
 

@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure,v 1.10 2013/04/18 13:57:14 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.11 2013/05/30 18:17:18 ajacoutot Exp $
 
 Fix DATADIRNAME: see LOCALBASE/share/aclocal/{glib-gettext.m4,intltool.m4}
 
 /var/lib -> /var/db
 
---- configure.orig	Mon Apr  1 23:03:05 2013
-+++ configure	Thu Apr 18 15:51:58 2013
-@@ -13906,6 +13906,9 @@ else
+--- configure.orig	Wed May  1 10:41:34 2013
++++ configure	Thu May 30 20:08:06 2013
+@@ -13920,6 +13920,9 @@ else
  fi
  
      ;;
@@ -16,7 +16,7 @@ Fix DATADIRNAME: see LOCALBASE/share/aclocal/{glib-gettext.m4,intltool.m4}
      *)
      DATADIRNAME=lib
      ;;
-@@ -17813,7 +17816,7 @@ _ACEOF
+@@ -17938,7 +17941,7 @@ _ACEOF
  fi
  
  # per-machine directory

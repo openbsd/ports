@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2013/04/18 13:57:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2013/05/30 18:17:18 ajacoutot Exp $
 @conflict shared-color-profiles-*
 @conflict shared-color-profiles-extra-*
 @pkgpath graphics/colord
@@ -38,8 +38,10 @@ include/colord-1/colord/cd-it8.h
 include/colord-1/colord/cd-math.h
 include/colord-1/colord/cd-profile-sync.h
 include/colord-1/colord/cd-profile.h
+include/colord-1/colord/cd-quirk.h
 include/colord-1/colord/cd-sensor-sync.h
 include/colord-1/colord/cd-sensor.h
+include/colord-1/colord/cd-transform.h
 include/colord-1/colord/cd-version.h
 lib/colord-sensors/
 lib/girepository-1.0/
@@ -117,10 +119,6 @@ share/dbus-1/services/
 share/dbus-1/services/org.freedesktop.ColorHelper.service
 share/dbus-1/system-services/org.freedesktop.ColorManager.service
 share/examples/colord/
-share/examples/colord/bash_completion.d/
-@sample ${SYSCONFDIR}/bash_completion.d/
-share/examples/colord/bash_completion.d/colormgr-completion.bash
-@sample ${SYSCONFDIR}/bash_completion.d/colormgr-completion.bash
 share/examples/colord/colord.conf
 @sample ${SYSCONFDIR}/colord.conf
 share/examples/colord/dbus-1/
