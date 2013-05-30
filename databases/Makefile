@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.246 2013/05/30 15:43:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.247 2013/05/30 16:51:59 jasper Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -153,7 +153,6 @@
      SUBDIR += postgresql-jdbc
      SUBDIR += postgresql-odbc
      SUBDIR += postgresql-pllua
-     SUBDIR += postgresql-pllua,lua52
      SUBDIR += postgresql-plv8
      SUBDIR += postgresql_autodoc
      SUBDIR += py-axiom
