@@ -1,13 +1,17 @@
-$OpenBSD: patch-Tests_CMakeTests_ModuleNoticesTest_cmake_in,v 1.4 2011/10/14 17:22:10 dcoppa Exp $
---- Tests/CMakeTests/ModuleNoticesTest.cmake.in.orig	Tue Oct  4 18:09:25 2011
-+++ Tests/CMakeTests/ModuleNoticesTest.cmake.in	Fri Oct  7 11:25:43 2011
-@@ -22,6 +22,9 @@ string(REPLACE "\r\r" "\r" notice_regex "${notice_rege
+$OpenBSD: patch-Tests_CMakeTests_ModuleNoticesTest_cmake_in,v 1.5 2013/05/30 08:34:33 dcoppa Exp $
+--- Tests/CMakeTests/ModuleNoticesTest.cmake.in.orig	Tue Nov 27 14:26:34 2012
++++ Tests/CMakeTests/ModuleNoticesTest.cmake.in	Wed May 29 21:21:28 2013
+@@ -21,7 +21,13 @@ string(REPLACE "\r\r" "\r" notice_regex "${notice_rege
+ 
  # Modules that do not require our notice.
  set(notice_exceptions
++  FindBacktrace.cmake
    FindCUDA.cmake # MIT License, distributed here from upstream project
 +  FindIconv.cmake
 +  FindLCMS.cmake
 +  FindLibintl.cmake
++  FindLuaInterp.cmake
++  FindLuaLibs.cmake
    )
  
  # Load the list of modules to check.

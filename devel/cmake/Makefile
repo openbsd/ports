@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2013/05/13 15:02:26 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.81 2013/05/30 08:34:32 dcoppa Exp $
 
 VMEM_WARNING =	Yes
 DPB_PROPERTIES =parallel
@@ -12,7 +12,7 @@ HOMEPAGE =	http://www.cmake.org/
 CATEGORIES =	devel
 COMMENT =	portable build system
 DISTNAME =	cmake-2.8.10.2
-REVISION =	5
+REVISION =	6
 MASTER_SITES =	${HOMEPAGE}files/v2.8/
 
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>
@@ -40,7 +40,7 @@ PORTHOME =		${WRKDIR}
 
 SEPARATE_BUILD =	Yes
 
-TEST_TARGET =	test
+TEST_TARGET =		test
 
 MAKE_FLAGS +=		VERBOSE=1
 
@@ -57,8 +57,7 @@ pre-configure:
 		${WRKSRC}/Modules/FindQt3.cmake \
 		${WRKSRC}/Modules/FindQt4.cmake \
 		${WRKSRC}/Modules/FindSDL.cmake \
-		${WRKSRC}/Modules/FindTCL.cmake \
-		${WRKSRC}/Modules/UseJava.cmake
+		${WRKSRC}/Modules/FindTCL.cmake
 
 post-install:
 	rm ${WRKINST}/${LOCALBASE}/share/cmake/Modules/*.{beforesubst,orig}

@@ -1,12 +1,12 @@
-$OpenBSD: patch-Modules_FindLua51_cmake,v 1.4 2012/12/05 11:32:04 dcoppa Exp $
+$OpenBSD: patch-Modules_FindLua51_cmake,v 1.5 2013/05/30 08:34:32 dcoppa Exp $
 --- Modules/FindLua51.cmake.orig	Tue Nov 27 14:26:32 2012
-+++ Modules/FindLua51.cmake	Wed Dec  5 10:22:21 2012
++++ Modules/FindLua51.cmake	Wed May 29 13:14:45 2013
 @@ -28,7 +28,7 @@
  find_path(LUA_INCLUDE_DIR lua.h
    HINTS
      ENV LUA_DIR
 -  PATH_SUFFIXES include/lua51 include/lua5.1 include/lua include
-+  PATH_SUFFIXES include/lua51 include/lua5.1 include/lua-5.1 include/lua include
++  PATH_SUFFIXES include/lua-5.1 include/lua51 include/lua5.1 include/lua include
    PATHS
    ~/Library/Frameworks
    /Library/Frameworks

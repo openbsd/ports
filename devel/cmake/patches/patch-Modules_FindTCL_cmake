@@ -1,6 +1,6 @@
-$OpenBSD: patch-Modules_FindTCL_cmake,v 1.7 2012/12/05 11:32:04 dcoppa Exp $
+$OpenBSD: patch-Modules_FindTCL_cmake,v 1.8 2013/05/30 08:34:32 dcoppa Exp $
 --- Modules/FindTCL.cmake.orig	Tue Nov 27 14:26:32 2012
-+++ Modules/FindTCL.cmake	Wed Dec  5 10:21:21 2012
++++ Modules/FindTCL.cmake	Wed May 29 13:16:33 2013
 @@ -48,19 +48,36 @@ include(CMakeFindFrameworks)
  include(FindTclsh)
  include(FindWish)
@@ -16,20 +16,18 @@ $OpenBSD: patch-Modules_FindTCL_cmake,v 1.7 2012/12/05 11:32:04 dcoppa Exp $
 +
  if(TCLSH_VERSION_STRING)
    set(TCL_TCLSH_VERSION "${TCLSH_VERSION_STRING}")
--else()
-+else(TCLSH_VERSION_STRING)
+ else()
    get_filename_component(TCL_TCLSH_PATH "${TCL_TCLSH}" PATH)
    get_filename_component(TCL_TCLSH_PATH_PARENT "${TCL_TCLSH_PATH}" PATH)
 -  string(REGEX REPLACE
 -    "^.*tclsh([0-9]\\.*[0-9]).*$" "\\1" TCL_TCLSH_VERSION "${TCL_TCLSH}")
--endif()
 +  if(MODTCL_VERSION)
 +    set(TCL_TCLSH_VERSION "${MODTCL_VERSION}")
 +  else(MODTCL_VERSION)
 +    string(REGEX REPLACE
 +      "^.*tclsh([0-9]\\.*[0-9]).*$" "\\1" TCL_TCLSH_VERSION "${TCL_TCLSH}")
 +  endif(MODTCL_VERSION)
-+endif(TCLSH_VERSION_STRING)
+ endif()
  
  get_filename_component(TK_WISH_PATH "${TK_WISH}" PATH)
  get_filename_component(TK_WISH_PATH_PARENT "${TK_WISH_PATH}" PATH)

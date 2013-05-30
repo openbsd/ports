@@ -1,15 +1,15 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.12 2012/11/11 17:13:31 dcoppa Exp $
---- CMakeLists.txt.orig	Wed Oct 31 16:32:05 2012
-+++ CMakeLists.txt	Fri Nov  2 08:02:49 2012
+$OpenBSD: patch-CMakeLists_txt,v 1.13 2013/05/30 08:34:32 dcoppa Exp $
+--- CMakeLists.txt.orig	Tue Nov 27 14:26:32 2012
++++ CMakeLists.txt	Wed May 29 15:00:28 2013
 @@ -257,6 +257,15 @@ macro (CMAKE_BUILD_UTILITIES)
    # (a macro defined in this file)
    CMAKE_HANDLE_SYSTEM_LIBRARIES()
  
 +  if($ENV{LOCALBASE})
 +    set(OPENBSD_LOCALBASE $ENV{LOCALBASE})
-+  else($ENV{LOCALBASE})
++  else()
 +    set(OPENBSD_LOCALBASE "/usr/local")
-+  endif($ENV{LOCALBASE})
++  endif()
 +
 +  # to find expat and curl
 +  link_directories("${OPENBSD_LOCALBASE}/lib")
@@ -17,7 +17,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.12 2012/11/11 17:13:31 dcoppa Exp $
    #---------------------------------------------------------------------
    # Build zlib library for Curl, CMake, and CTest.
    set(CMAKE_ZLIB_HEADER "cm_zlib.h")
-@@ -395,26 +404,7 @@ macro (CMAKE_BUILD_UTILITIES)
+@@ -395,9 +404,6 @@ macro (CMAKE_BUILD_UTILITIES)
    else ()
      set(BUILD_CursesDialog 0)
    endif ()
@@ -25,22 +25,5 @@ $OpenBSD: patch-CMakeLists_txt,v 1.12 2012/11/11 17:13:31 dcoppa Exp $
 -    add_subdirectory(Source/CursesDialog/form)
 -  endif()
  endmacro ()
--
--#-----------------------------------------------------------------------
--if(CMAKE_CXX_PLATFORM_ID MATCHES "OpenBSD")
--  execute_process(COMMAND ${CMAKE_CXX_COMPILER}
--    ${CMAKE_CXX_COMPILER_ARG1} -dumpversion
--    OUTPUT_VARIABLE _GXX_VERSION
--  )
--  string(REGEX REPLACE "([0-9])\\.([0-9])(\\.[0-9])?" "\\1\\2"
--    _GXX_VERSION_SHORT ${_GXX_VERSION})
--  if(_GXX_VERSION_SHORT EQUAL 33)
--    message(FATAL_ERROR
--      "GXX 3.3 on OpenBSD is known to cause CPack to Crash.\n"
--      "Please use GXX 4.2 or greater to build CMake on OpenBSD\n"
--      "${CMAKE_CXX_COMPILER} version is: ${_GXX_VERSION}")
--  endif()
--endif()
  
  #-----------------------------------------------------------------------
- # The main section of the CMakeLists file

@@ -1,6 +1,6 @@
-$OpenBSD: patch-Modules_FindQt4_cmake,v 1.17 2012/11/22 13:21:49 dcoppa Exp $
---- Modules/FindQt4.cmake.orig	Tue Nov  6 20:41:36 2012
-+++ Modules/FindQt4.cmake	Thu Nov 22 13:36:47 2012
+$OpenBSD: patch-Modules_FindQt4_cmake,v 1.18 2013/05/30 08:34:32 dcoppa Exp $
+--- Modules/FindQt4.cmake.orig	Tue Nov 27 14:26:32 2012
++++ Modules/FindQt4.cmake	Wed May 29 13:42:26 2013
 @@ -497,13 +497,22 @@ get_filename_component(qt_install_version "[HKEY_CURRE
  # check for qmake
  # Debian uses qmake-qt4
@@ -12,14 +12,14 @@ $OpenBSD: patch-Modules_FindQt4_cmake,v 1.17 2012/11/22 13:21:49 dcoppa Exp $
 -  PATH_SUFFIXES bin
 -  DOC "The qmake executable for the Qt installation to use"
 -)
-+if(CMAKE_SYSTEM MATCHES "OpenBSD*")
++if (CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
 +  find_program(QT_QMAKE_EXECUTABLE NAMES qmake4
 +    PATHS
 +      ENV QTDIR
 +    PATH_SUFFIXES bin
 +    DOC "The qmake executable for the Qt installation to use"
 +  )
-+else(CMAKE_SYSTEM MATCHES "OpenBSD*")
++else()
 +  find_program(QT_QMAKE_EXECUTABLE NAMES qmake qmake4 qmake-qt4 qmake-mac
 +    PATHS
 +      ENV QTDIR
@@ -27,7 +27,7 @@ $OpenBSD: patch-Modules_FindQt4_cmake,v 1.17 2012/11/22 13:21:49 dcoppa Exp $
 +    PATH_SUFFIXES bin
 +    DOC "The qmake executable for the Qt installation to use"
 +  )
-+endif(CMAKE_SYSTEM MATCHES "OpenBSD*")
++endif()
  
  # double check that it was a Qt4 qmake, if not, re-find with different names
  if (QT_QMAKE_EXECUTABLE)

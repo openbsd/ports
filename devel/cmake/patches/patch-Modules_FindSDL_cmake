@@ -1,4 +1,7 @@
-$OpenBSD: patch-Modules_FindSDL_cmake,v 1.4 2012/11/15 08:43:25 dcoppa Exp $
+$OpenBSD: patch-Modules_FindSDL_cmake,v 1.5 2013/05/30 08:34:32 dcoppa Exp $
+
+Fix CMake Warning
+
 --- Modules/FindSDL.cmake.orig	Tue Nov  6 20:41:36 2012
 +++ Modules/FindSDL.cmake	Wed Nov 14 12:14:32 2012
 @@ -73,6 +73,11 @@ find_path(SDL_INCLUDE_DIR SDL.h
