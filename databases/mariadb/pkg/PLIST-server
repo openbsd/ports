@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST-server,v 1.2 2013/04/11 21:02:19 brad Exp $
+@comment $OpenBSD: PLIST-server,v 1.3 2013/05/30 12:39:18 brad Exp $
 @conflict mysql-server-*
+@conflict mytop-*
 @pkgpath databases/mysql,-server
+@pkgpath databases/mytop
 @newgroup _mysql:502
 @newuser _mysql:502:_mysql:daemon:MySQL Account:/nonexistent:/sbin/nologin
 @bin bin/aria_chk
@@ -32,6 +34,7 @@ bin/mytop
 @bin bin/resolve_stack_dump
 @bin bin/resolveip
 lib/mysql/plugin/adt_null.so
+lib/mysql/plugin/auth_0x0100.so
 lib/mysql/plugin/auth_socket.so
 lib/mysql/plugin/auth_test_plugin.so
 lib/mysql/plugin/daemon_example.ini
@@ -52,6 +55,7 @@ lib/mysql/plugin/mysql_clear_password.so
 lib/mysql/plugin/qa_auth_client.so
 lib/mysql/plugin/qa_auth_interface.so
 lib/mysql/plugin/qa_auth_server.so
+lib/mysql/plugin/query_cache_info.so
 lib/mysql/plugin/semisync_master.so
 lib/mysql/plugin/semisync_slave.so
 lib/mysql/plugin/sql_errlog.so
