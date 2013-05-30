@@ -1,11 +1,11 @@
-$OpenBSD: patch-doc_makefile_in,v 1.1.1.1 2012/04/20 10:47:40 jasper Exp $
+$OpenBSD: patch-doc_makefile_in,v 1.2 2013/05/30 15:51:47 jasper Exp $
 
 Don't reconstruct the ps file from the PDF, this makes ghostscript shit itself:
 GPL Ghostscript 9.04: Error: Font Renderer Plugin ( FreeType ) return code = -1
 
---- doc/makefile.in.orig	Wed Apr 18 22:09:04 2012
-+++ doc/makefile.in	Wed Apr 18 22:09:11 2012
-@@ -91,7 +91,7 @@ all-pre:
+--- doc/makefile.in.orig	Tue Apr 23 03:05:35 2013
++++ doc/makefile.in	Thu May 30 19:05:52 2013
+@@ -92,7 +92,7 @@ all-pre:
  
  all-post:
  

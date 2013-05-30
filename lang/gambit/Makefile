@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:20:27 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/05/30 15:51:47 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	complete, efficient and reliable implementation of Scheme
 BROKEN-hppa =	cc: Internal error: Illegal instruction
 
-V=		4.6.6
+V=		4.6.8
 DISTNAME=	gambc-v${V:S/./_/g}
 PKGNAME=	gambit-$V
-REVISION=	0
 
 CATEGORIES=	lang
 
@@ -28,7 +27,8 @@ CONFIGURE_ARGS+=--disable-cplusplus \
 		--disable-absolute-shared-libs \
 		--docdir=${PREFIX}/share/doc/gambit-c/ \
 		--includedir=${PREFIX}/include/gambit-c/ \
-		--libdir=${PREFIX}/lib/gambit-c/
+		--libdir=${PREFIX}/lib/gambit-c/ \
+		ac_cv_func_get_fpc_csr=no
 
 MAKE_FILE=	${WRKSRC}/makefile
 
