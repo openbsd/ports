@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.170 2013/04/06 14:50:04 landry Exp $
+# $OpenBSD: Makefile,v 1.171 2013/05/30 14:28:52 landry Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
@@ -7,7 +7,7 @@ BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
 
 # Don't forget to bump mail/thunderbird-i18n after updates.
 
-MOZILLA_VERSION =	17.0.5
+MOZILLA_VERSION =	17.0.6
 MOZILLA_BRANCH =	esr17
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	mail
@@ -19,8 +19,8 @@ ENIG_V =		1.5.1
 PKGNAME-enigmail =	enigmail-${ENIG_V}
 EPOCH-lightning =	0
 EPOCH-enigmail =	0
-REVISION-lightning =	3
-REVISION-enigmail =	1
+REVISION-lightning =	4
+REVISION-enigmail =	2
 
 HOMEPAGE =	http://www.mozilla.org/thunderbird/
 
