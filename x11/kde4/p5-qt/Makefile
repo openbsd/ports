@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/24 18:35:42 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/05/30 20:01:30 zhuk Exp $
 
 COMMENT =	Qt4 bindings for Perl
 DISTNAME =	perlqt-${MODKDE4_VERSION}
 PKGNAME =	p5-qt-${MODKDE4_VERSION}
+REVISION =	0
 
 WANTLIB =  c m perl stdc++ util
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtXml
@@ -18,6 +19,7 @@ WANTLIB += ${KDE4LIB}/smokeqttest ${KDE4LIB}/smokeqtuitools
 WANTLIB += ${KDE4LIB}/smokeqtwebkit ${KDE4LIB}/smokeqtxml
 WANTLIB += ${KDE4LIB}/smokeqtxmlpatterns ${KDE4LIB}/smokeqwt
 
+MODULES =	x11/kde4 perl
 MODKDE4_USE =
 
 LIB_DEPENDS = 	${MODKDE4_DEP_DIR}/smokeqt>=${MODKDE4_DEP_VERSION}
@@ -37,6 +39,6 @@ post-patch:
 
 # XXX: Should find the right way; probably looking in libproxy port could help.
 post-install:
-	ln -fs ${PREFIX}/libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/QtCore4/{lib,}QtCore4.so
+	ln -fs libQtCore4.so ${PREFIX}/${P5ARCH}/auto/QtCore4/QtCore4.so
 
 .include <bsd.port.mk>
