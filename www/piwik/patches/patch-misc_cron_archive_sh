@@ -1,7 +1,7 @@
-$OpenBSD: patch-misc_cron_archive_sh,v 1.1 2011/11/07 11:26:33 giovanni Exp $
---- misc/cron/archive.sh.orig	Mon Nov  7 12:19:56 2011
-+++ misc/cron/archive.sh	Mon Nov  7 12:20:25 2011
-@@ -30,7 +30,7 @@
+$OpenBSD: patch-misc_cron_archive_sh,v 1.2 2013/05/30 13:27:53 giovanni Exp $
+--- misc/cron/archive.sh.orig	Thu May 30 10:57:06 2013
++++ misc/cron/archive.sh	Thu May 30 11:49:35 2013
+@@ -33,7 +33,7 @@
  # enable_browser_archiving_triggering = false
  #===========================================================================
  
