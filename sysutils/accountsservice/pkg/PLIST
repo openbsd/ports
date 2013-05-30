@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/04/19 17:05:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/05/30 18:07:43 ajacoutot Exp $
 @unexec-delete rm -rf /var/db/AccountsService/icons/*
 @unexec-delete rm -rf /var/db/AccountsService/users/*
 include/accountsservice-1.0/
@@ -31,6 +31,7 @@ share/gtk-doc/html/
 share/gtk-doc/html/libaccountsservice/
 share/gtk-doc/html/libaccountsservice/ActUser.html
 share/gtk-doc/html/libaccountsservice/ActUserManager.html
+share/gtk-doc/html/libaccountsservice/annotation-glossary.html
 share/gtk-doc/html/libaccountsservice/api-index-full.html
 share/gtk-doc/html/libaccountsservice/ch01.html
 share/gtk-doc/html/libaccountsservice/home.png
