@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2013/03/26 16:59:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2013/05/30 17:58:03 ajacoutot Exp $
 
 COMMENT=		Foomatic PPD print filters
 
@@ -15,8 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c dbus-1 m
 
-MASTER_SITES=		http://www.openprinting.org/download/foomatic/ \
-			http://www.openprinting.org/download/foomatic/oldstuff/
+MASTER_SITES=		http://www.openprinting.org/download/foomatic/
 
 LIB_DEPENDS=		x11/dbus
 

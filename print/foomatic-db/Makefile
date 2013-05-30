@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2013/05/13 09:26:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2013/05/30 17:58:02 ajacoutot Exp $
 
 PKG_ARCH=		*
 
@@ -18,8 +18,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 # tarballs are only available for a 24 hour period
-#MASTER_SITES=		http://www.openprinting.org/download/foomatic/ \
-#			http://www.openprinting.org/download/foomatic/oldstuff/
+#MASTER_SITES=		http://www.openprinting.org/download/foomatic/
 MASTER_SITES=		http://distfiles.bsdfrog.org/
 
 CONFIGURE_STYLE=	gnu
