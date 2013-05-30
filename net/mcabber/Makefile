@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/21 08:46:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2013/05/30 12:01:17 sthen Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		console jabber client
-DISTNAME=		mcabber-0.10.1
+DISTNAME=		mcabber-0.10.2
 CATEGORIES=		net
-
-REVISION=		2
 
 HOMEPAGE=		http://www.lilotux.net/~mikael/mcabber/
 
@@ -32,6 +30,7 @@ LIB_DEPENDS=		devel/glib2 \
 RUN_DEPENDS=		devel/desktop-file-utils
 
 USE_GROFF =		Yes
+LIBTOOL_FLAGS=		--tag=disable-static
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS= 	--enable-gpgme \

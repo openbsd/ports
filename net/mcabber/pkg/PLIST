@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/06/20 14:08:32 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/05/30 12:01:18 sthen Exp $
 @bin bin/mcabber
 include/mcabber/
 include/mcabber/api.h
@@ -33,10 +33,12 @@ include/mcabber/xmpp_iqrequest.h
 include/mcabber/xmpp_muc.h
 include/mcabber/xmpp_s10n.h
 lib/mcabber/
-lib/mcabber/libbeep.a
 lib/mcabber/libbeep.la
 lib/mcabber/libbeep.so
-lib/mcabber/libxttitle.a
+lib/mcabber/libfifo.la
+lib/mcabber/libfifo.so
+lib/mcabber/liburlregex.la
+lib/mcabber/liburlregex.so
 lib/mcabber/libxttitle.la
 lib/mcabber/libxttitle.so
 lib/pkgconfig/mcabber.pc
