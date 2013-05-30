@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 10:50:02 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/05/30 10:51:23 sthen Exp $
 
 COMMENT =		universal parsing tool & source code generator
 
@@ -37,4 +37,3 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/Documentation/* ${PREFIX}/share/examples/codeworker
 
 .include <bsd.port.mk>
-

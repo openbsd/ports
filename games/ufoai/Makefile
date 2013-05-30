@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/05/27 07:20:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2013/05/30 10:51:22 sthen Exp $
 
 SUBDIR =
 SUBDIR += base
 SUBDIR += data
 
 .include <bsd.port.subdir.mk>
-

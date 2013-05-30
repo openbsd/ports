@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:41:32 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/05/30 10:51:23 sthen Exp $
 
 COMMENT=	tools to extend pipe capabilities
 
@@ -24,4 +24,3 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README.TXT ${PREFIX}/share/doc/shunt
 
 .include <bsd.port.mk>
-

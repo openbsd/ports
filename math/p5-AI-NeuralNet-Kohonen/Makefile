@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:23:55 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/05/30 10:51:23 sthen Exp $
 
-COMMENT=		Kohonen's Self-Organizing Maps
+COMMENT=		Kohonen's Self-Organizing Maps#'
 
 DISTNAME=		AI-NeuralNet-Kohonen-0.142
 REVISION=		1
@@ -13,4 +13,3 @@ MODULES=		cpan
 USE_GROFF =		Yes
 
 .include <bsd.port.mk>
-

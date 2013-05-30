@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/05/25 00:33:09 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2013/05/30 10:51:23 sthen Exp $
 
 COMMENT=		easy to use Bayesian spam filter
 DISTNAME=		bmf-0.9.4
@@ -41,4 +41,3 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/bmf
 
 .include <bsd.port.mk>
-

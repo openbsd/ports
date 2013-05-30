@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:10:51 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/05/30 10:51:23 sthen Exp $
 
 COMMENT=		DICOM toolkit
 
@@ -43,4 +43,3 @@ USE_GROFF =		Yes
 NO_TEST=		Yes
 
 .include <bsd.port.mk>
-

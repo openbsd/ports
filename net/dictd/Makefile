@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:35:46 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/05/30 10:51:23 sthen Exp $
 
 COMMENT-main=	Dictionary Server Protocol client
 COMMENT-server=	Dictionary Server Protocol server
@@ -43,4 +43,3 @@ post-install:
 		${PREFIX}/share/examples/dictd
 
 .include <bsd.port.mk>
-

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:23:55 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/05/30 10:51:23 sthen Exp $
 
-COMMENT=		visualisation of Kohonen's Self-Organizing Maps
+COMMENT=		visualisation of Kohonen's Self-Organizing Maps#'
 
 DISTNAME=		AI-NeuralNet-Kohonen-Visual-0.3
 REVISION=		1
@@ -19,4 +19,3 @@ RUN_DEPENDS=		math/p5-AI-NeuralNet-Kohonen \
 TEST_IS_INTERACTIVE= x11
 
 .include <bsd.port.mk>
-

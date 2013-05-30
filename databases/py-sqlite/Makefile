@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/11 02:52:07 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2013/05/30 10:51:23 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -27,4 +27,3 @@ do-test: fake
 		${MODPY_BIN} ./all_tests.py
 
 .include <bsd.port.mk>
-

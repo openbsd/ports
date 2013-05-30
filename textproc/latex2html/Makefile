@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2013/03/11 11:42:42 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2013/05/30 10:51:23 sthen Exp $
 
 COMMENT=	LaTeX to HTML converter
 
@@ -32,4 +32,3 @@ post-install:
 	cp -R ${WRKSRC}/example/* ${PREFIX}/share/examples/latex2html
 
 .include <bsd.port.mk>
-
