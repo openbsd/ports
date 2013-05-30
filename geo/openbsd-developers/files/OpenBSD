@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.96 2013/05/30 19:51:34 mcbride Exp $
+# $OpenBSD: OpenBSD,v 1.97 2013/05/30 22:47:19 ratchov Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -55,6 +55,7 @@
 44.1		-77.580556	"brynet"	# Bryan Steele
 44.4325		26.103889	"pirofti"	# Paul Irofti
 45.095683	-93.4982	"jim"		# Jim Razmus II
+45.2002, 	5.7222		"ratchov"	# Alexandre Ratchov
 45.43		12.13		"michele"	# Michele Marchetto
 45.4745		-73.6556	"msf"		# Mathieu Sauve-Frankel
 45.5		-122.5		"joshe"		# Joshua Elsasser
