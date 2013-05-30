@@ -1,0 +1,24 @@
+$OpenBSD: patch-lpack_c,v 1.1 2013/05/30 15:37:56 jasper Exp $
+
+Unbreak with lua 5.2.
+
+--- lpack.c.orig	Thu May 30 19:26:28 2013
++++ lpack.c	Thu May 30 19:30:59 2013
+@@ -100,7 +100,7 @@ static int l_unpack(lua_State *L) 		/** unpack(s,f,[in
+  const char *s=luaL_checkstring(L,1);
+  const char *f=luaL_checkstring(L,2);
+  int i=luaL_optnumber(L,3,1)-1;
+- size_t len=lua_strlen(L,1);
++ size_t len=lua_rawlen(L,1);
+  int n=0;
+  int swap=0;
+  lua_pushnil(L);
+@@ -251,7 +251,7 @@ static int l_pack(lua_State *L) 		/** pack(f,...) */
+  return 1;
+ }
+ 
+-static const luaL_reg R[] =
++static const luaL_Reg R[] =
+ {
+ 	{"pack",	l_pack},
+ 	{"unpack",	l_unpack},

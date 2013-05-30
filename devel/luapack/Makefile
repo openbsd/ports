@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 10:50:11 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/05/30 15:37:56 jasper Exp $
 
 COMMENT=	library for packing and unpacking binary data
 DISTNAME=	luapack-20061124
-REVISION =	2
+REVISION =	3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 
