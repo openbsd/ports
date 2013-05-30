@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 11:35:48 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/05/30 16:17:11 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	network support for the lua language
 DISTNAME=	luasocket-2.0.2
-REVISION=	2
+REVISION=	3
 CATEGORIES=	net
 
 MASTER_SITES=	http://luaforge.net/frs/download.php/2664/
@@ -20,6 +20,8 @@ MAKE_FILE=	makefile
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/config
+	# Prevent patching every single file..
+	perl -pi -e 's,luaL_reg,luaL_Reg,g' ${WRKSRC}/src/*.[ch]
 
 do-install:
 	${INSTALL_DATA_DIR} ${MODLUA_DATADIR}/socket ${MODLUA_DATADIR}/mime
