@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:46:18 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/05/31 19:21:48 landry Exp $
 
 COMMENT=	D-Bus thumbnailing service
 
-XFCE_VERSION=	0.1.27
+XFCE_VERSION=	0.1.29
 XFCE_GOODIE=	tumbler
 
 SHARED_LIBS+=	tumbler-1 0.0
@@ -28,16 +28,15 @@ LIB_DEPENDS +=	x11/dbus-glib \
 		graphics/ffmpegthumbnailer \
 		graphics/gdk-pixbuf2
 
-WANTLIB += GL X11 Xau Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xrender Xxf86vm c cairo dbus-1 dbus-glib-1
-WANTLIB += drm expat fontconfig freetype gdk_pixbuf-2.0
+WANTLIB += X11 Xext Xrender c cairo dbus-1 dbus-glib-1
+WANTLIB += expat fontconfig freetype gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 jpeg lcms2 m openjpeg
 WANTLIB += pcre pixman-1 png poppler poppler-glib
 WANTLIB += pthread pthread-stubs xcb xcb-render xcb-shm
-WANTLIB += xml2 z ffi bz2 stdc++ tiff gsf-1
+WANTLIB += xml2 z ffi bz2 tiff gsf-1
 WANTLIB += avcodec avformat avutil ffmpegthumbnailer
 WANTLIB += ogg orc-0.4 swscale
-WANTLIB += crypto curl idn ssl
+WANTLIB += crypto curl idn ssl theoradec vorbis
 
 .include <bsd.port.mk>
