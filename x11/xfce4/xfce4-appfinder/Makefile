@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.39 2013/05/31 15:35:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2013/05/31 19:16:59 landry Exp $
 
 COMMENT=	Xfce4 application finder
 
 XFCE_PROJECT=	xfce4-appfinder
-REVISION=	2
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
