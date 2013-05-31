@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2012/10/18 07:09:29 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2013/05/31 15:00:09 landry Exp $
 @conflict gdal-<=1.8.0
 @pkgpath geo/gdal
 bin/gdal-config
@@ -13,6 +13,7 @@ bin/gdal-config
 @bin bin/gdalinfo
 @bin bin/gdallocationinfo
 @bin bin/gdalmanage
+@bin bin/gdalserver
 @bin bin/gdalsrsinfo
 @bin bin/gdaltindex
 @bin bin/gdaltransform
@@ -38,11 +39,14 @@ include/cpl_minizip_zip.h
 include/cpl_multiproc.h
 include/cpl_odbc.h
 include/cpl_port.h
+include/cpl_progress.h
 include/cpl_quad_tree.h
+include/cpl_spawn.h
 include/cpl_string.h
 include/cpl_time.h
 include/cpl_vsi.h
 include/cpl_vsi_virtual.h
+include/cpl_vsil_curl_priv.h
 include/cpl_win32ce_api.h
 include/cpl_wince.h
 include/cplkeywordparser.h
@@ -55,8 +59,10 @@ include/gdal_pam.h
 include/gdal_priv.h
 include/gdal_proxy.h
 include/gdal_rat.h
+include/gdal_simplesurf.h
 include/gdal_version.h
 include/gdal_vrt.h
+include/gdalexif.h
 include/gdalgrid.h
 include/gdaljp2metadata.h
 include/gdalwarper.h
@@ -67,6 +73,7 @@ include/ogr_api.h
 include/ogr_core.h
 include/ogr_feature.h
 include/ogr_featurestyle.h
+include/ogr_geocoding.h
 include/ogr_geometry.h
 include/ogr_p.h
 include/ogr_spatialref.h
@@ -75,6 +82,7 @@ include/ogrsf_frmts.h
 include/rawdataset.h
 include/thinplatespline.h
 include/vrtdataset.h
+lib/gdalplugins/
 lib/libgdal.a
 lib/libgdal.la
 @lib lib/libgdal.so.${LIBgdal_VERSION}
@@ -103,6 +111,9 @@ share/gdal/gt_ellips.csv
 share/gdal/header.dxf
 share/gdal/nitf_spec.xml
 share/gdal/nitf_spec.xsd
+share/gdal/osmconf.ini
+share/gdal/ozi_datum.csv
+share/gdal/ozi_ellips.csv
 share/gdal/pci_datum.txt
 share/gdal/pci_ellips.txt
 share/gdal/pcs.csv

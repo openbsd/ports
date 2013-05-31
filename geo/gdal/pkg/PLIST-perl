@@ -1,16 +1,11 @@
-@comment $OpenBSD: PLIST-perl,v 1.2 2012/10/18 07:09:29 landry Exp $
+@comment $OpenBSD: PLIST-perl,v 1.3 2013/05/31 15:00:09 landry Exp $
 ${P5ARCH}/
 ${P5ARCH}/Geo/
 ${P5ARCH}/Geo/GDAL/
-${P5ARCH}/Geo/GDAL.dox
 ${P5ARCH}/Geo/GDAL.pm
-${P5ARCH}/Geo/GDAL/Const.dox
 ${P5ARCH}/Geo/GDAL/Const.pm
-${P5ARCH}/Geo/OGR.dox
 ${P5ARCH}/Geo/OGR.pm
-${P5ARCH}/Geo/OSR.dox
 ${P5ARCH}/Geo/OSR.pm
-${P5ARCH}/Geo/check_dox.pl
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Geo/
 ${P5ARCH}/auto/Geo/GDAL/
