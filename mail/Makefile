@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.294 2013/05/30 16:54:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.295 2013/05/31 15:21:51 jturner Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -76,6 +76,7 @@
      SUBDIR += ldapvacation
      SUBDIR += libetpan
      SUBDIR += libspf2
+     SUBDIR += lumail
      SUBDIR += mailcrypt
      SUBDIR += maildrop
      SUBDIR += mailgraph
