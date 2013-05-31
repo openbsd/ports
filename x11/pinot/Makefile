@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2013/04/03 06:45:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2013/05/31 13:44:44 landry Exp $
 
 SHARED_ONLY=	Yes
 
@@ -34,6 +34,7 @@ MASTER_SITES=	http://pinot-search.googlecode.com/files/
 MODULES=	devel/gettext
 
 BUILD_DEPENDS=	devel/boost \
+		devel/desktop-file-utils \
 		devel/libexecinfo
 
 # XXX catppt - catdvi
