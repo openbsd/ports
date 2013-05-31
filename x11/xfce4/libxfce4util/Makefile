@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 11:46:17 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2013/05/31 19:16:16 landry Exp $
 
 COMMENT=	Xfce4 basic utility library
 
 XFCE_PROJECT=	libxfce4util
-REVISION=	1
 
 SHARED_LIBS +=  xfce4util            3.0 #.5.1
 
