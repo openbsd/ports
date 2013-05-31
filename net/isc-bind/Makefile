@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2013/05/29 20:19:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2013/05/31 10:09:03 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
 V=		9.9.3
-RV=		9.9.3rc1.unofficial
+RV=		9.9.3
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
 
@@ -24,8 +24,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=	c crypto m pthread xml2 z
 
 MASTER_SITES=	${MASTER_SITE_ISC:=bind9/$V/}
-MASTER_SITES0=	http://spacehopper.org/mirrors/
-#MASTER_SITES0=	http://ss.vix.su/~vjs/
+MASTER_SITES0=	http://ss.vix.su/~vjs/
 
 FLAVORS=	ratelimit
 FLAVOR?=
