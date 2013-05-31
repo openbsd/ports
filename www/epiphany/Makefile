@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2013/05/31 14:43:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.100 2013/05/31 14:46:01 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -73,6 +73,8 @@ CONFIGURE_ARGS=	--disable-static \
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 
+TEST_DEPENDS=		${BASE_PKGPATH}
 TEST_IS_INTERACTIVE=	X11
+PORTHOME=		/tmp
 
 .include <bsd.port.mk>
