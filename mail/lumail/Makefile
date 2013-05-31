@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/05/31 15:54:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2013/05/31 19:08:15 jturner Exp $
 
 COMMENT =		console-based e-mail client with Lua scripting support
 
@@ -29,10 +29,11 @@ MAKE_ENV =		CXX="${CXX}" \
 				`pkg-config --cflags ${MODLUA_DEP}`" \
 			LDLIBS="`pkg-config --libs ${MODLUA_DEP}` -lcurses -lmimetic"
 
-NO_TEST =		Yes
-
 post-extract:
-	rm ${WRKSRC}/.depend
+	@rm -f ${WRKSRC}/.depend
+
+do-test:
+	@cd ${WRKSRC}/tests && ${MAKE} test
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lumail ${PREFIX}/bin
