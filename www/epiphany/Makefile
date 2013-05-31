@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.98 2013/04/18 14:30:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.99 2013/05/31 14:43:20 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
-GNOME_VERSION=	3.8.1
-REVISION=	0
+GNOME_VERSION=	3.8.2
 
 # NOTE: when M changes, increment M accordingly
 M=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -73,5 +72,7 @@ CONFIGURE_ARGS=	--disable-static \
 		--with-distributor-name="OpenBSD ports"
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
+
+TEST_IS_INTERACTIVE=	X11
 
 .include <bsd.port.mk>
