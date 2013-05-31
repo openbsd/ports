@@ -1,0 +1,12 @@
+$OpenBSD: patch-cppunit_makefile_mk,v 1.1 2013/05/31 14:50:12 robert Exp $
+--- cppunit/makefile.mk.orig.port	Sun May 12 13:07:33 2013
++++ cppunit/makefile.mk	Sun May 12 13:07:47 2013
+@@ -176,7 +176,7 @@ PACKAGE_DIR = \
+ .ELIF "$(OS)" == "AIX"
+ OUT2LIB = ooo-install/lib/libcppunit-1.13.a
+ .ELIF "$(OS)" == "OPENBSD"
+-OUT2LIB = ooo-install/lib/libcppunit-1.13.so.0.0
++OUT2LIB = ooo-install/lib/libcppunit-1.13.so.0.1
+ .ELIF "$(DISABLE_DYNLOADING)" == "TRUE"
+ OUT2LIB = ooo-install/lib/libcppunit.a
+ .ELIF "$(OS)" == "ANDROID"

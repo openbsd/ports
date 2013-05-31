@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-no_java-i18n-nl,v 1.5 2012/10/31 08:34:13 robert Exp $
+@comment $OpenBSD: PFRAG.no-no_java-i18n-nl,v 1.6 2013/05/31 14:50:19 robert Exp $
 lib/libreoffice/help/nl/sbasic.idxl/
 lib/libreoffice/help/nl/sbasic.idxl/_0.cfs
 lib/libreoffice/help/nl/sbasic.idxl/segments.gen
@@ -19,6 +19,9 @@ lib/libreoffice/help/nl/sdraw.idxl/
 lib/libreoffice/help/nl/sdraw.idxl/_0.cfs
 lib/libreoffice/help/nl/sdraw.idxl/segments.gen
 lib/libreoffice/help/nl/sdraw.idxl/segments_3
+lib/libreoffice/help/nl/shared.idxl/
+lib/libreoffice/help/nl/shared.idxl/segments.gen
+lib/libreoffice/help/nl/shared.idxl/segments_1
 lib/libreoffice/help/nl/simpress.idxl/
 lib/libreoffice/help/nl/simpress.idxl/_0.cfs
 lib/libreoffice/help/nl/simpress.idxl/segments.gen
@@ -31,25 +34,9 @@ lib/libreoffice/help/nl/swriter.idxl/
 lib/libreoffice/help/nl/swriter.idxl/_0.cfs
 lib/libreoffice/help/nl/swriter.idxl/segments.gen
 lib/libreoffice/help/nl/swriter.idxl/segments_3
-lib/libreoffice/share/extensions/presenter-screen/help/nl/help.idxl/
-lib/libreoffice/share/extensions/presenter-screen/help/nl/help.idxl/_0.cfs
-lib/libreoffice/share/extensions/presenter-screen/help/nl/help.idxl/segments.gen
-lib/libreoffice/share/extensions/presenter-screen/help/nl/help.idxl/segments_3
 lib/libreoffice/share/extensions/report-builder/description-nl.txt
 lib/libreoffice/share/extensions/wiki-publisher/description-nl.txt
 lib/libreoffice/share/extensions/wiki-publisher/help/nl/
-lib/libreoffice/share/extensions/wiki-publisher/help/nl/caption/
-lib/libreoffice/share/extensions/wiki-publisher/help/nl/caption/com.sun.wiki-publisher%2Fwiki.xhp
-lib/libreoffice/share/extensions/wiki-publisher/help/nl/caption/com.sun.wiki-publisher%2Fwikiaccount.xhp
-lib/libreoffice/share/extensions/wiki-publisher/help/nl/caption/com.sun.wiki-publisher%2Fwikiformats.xhp
-lib/libreoffice/share/extensions/wiki-publisher/help/nl/caption/com.sun.wiki-publisher%2Fwikisend.xhp
-lib/libreoffice/share/extensions/wiki-publisher/help/nl/caption/com.sun.wiki-publisher%2Fwikisettings.xhp
-lib/libreoffice/share/extensions/wiki-publisher/help/nl/content/
-lib/libreoffice/share/extensions/wiki-publisher/help/nl/content/com.sun.wiki-publisher%2Fwiki.xhp
-lib/libreoffice/share/extensions/wiki-publisher/help/nl/content/com.sun.wiki-publisher%2Fwikiaccount.xhp
-lib/libreoffice/share/extensions/wiki-publisher/help/nl/content/com.sun.wiki-publisher%2Fwikiformats.xhp
-lib/libreoffice/share/extensions/wiki-publisher/help/nl/content/com.sun.wiki-publisher%2Fwikisend.xhp
-lib/libreoffice/share/extensions/wiki-publisher/help/nl/content/com.sun.wiki-publisher%2Fwikisettings.xhp
 lib/libreoffice/share/extensions/wiki-publisher/help/nl/help.db_
 lib/libreoffice/share/extensions/wiki-publisher/help/nl/help.ht_
 lib/libreoffice/share/extensions/wiki-publisher/help/nl/help.idxl/
@@ -58,3 +45,4 @@ lib/libreoffice/share/extensions/wiki-publisher/help/nl/help.idxl/segments.gen
 lib/libreoffice/share/extensions/wiki-publisher/help/nl/help.idxl/segments_3
 lib/libreoffice/share/extensions/wiki-publisher/help/nl/help.jar
 lib/libreoffice/share/extensions/wiki-publisher/help/nl/help.key_
+lib/libreoffice/share/extensions/wiki-publisher/help/nl/help.tree

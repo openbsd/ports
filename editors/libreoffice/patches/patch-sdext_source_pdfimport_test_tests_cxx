@@ -1,7 +1,7 @@
-$OpenBSD: patch-sdext_source_pdfimport_test_tests_cxx,v 1.1 2012/10/31 08:34:12 robert Exp $
---- sdext/source/pdfimport/test/tests.cxx.orig.port	Mon Oct  8 19:28:12 2012
-+++ sdext/source/pdfimport/test/tests.cxx	Mon Oct  8 19:28:45 2012
-@@ -125,12 +125,14 @@ namespace
+$OpenBSD: patch-sdext_source_pdfimport_test_tests_cxx,v 1.2 2013/05/31 14:50:15 robert Exp $
+--- sdext/source/pdfimport/test/tests.cxx.orig.port	Thu May  2 17:55:29 2013
++++ sdext/source/pdfimport/test/tests.cxx	Sun May 12 12:52:22 2013
+@@ -91,12 +91,14 @@ namespace
              CPPUNIT_ASSERT_DOUBLES_EQUAL_MESSAGE( "A4 page size (in 100th of points): Height" , m_aPageSize.Height, 59500, 0.0000001 );
              CPPUNIT_ASSERT_MESSAGE( "endPage() called", m_bPageEnded );
              CPPUNIT_ASSERT_EQUAL_MESSAGE( "Num pages equal one", m_nNumPages, (sal_Int32) 1 );

@@ -1,7 +1,7 @@
-$OpenBSD: patch-solenv_bin_ooinstall,v 1.1 2012/10/31 08:34:12 robert Exp $
---- solenv/bin/ooinstall.orig.port	Wed Oct 10 15:12:50 2012
-+++ solenv/bin/ooinstall	Wed Oct 10 15:14:02 2012
-@@ -115,10 +115,12 @@ if ($is_windows) {
+$OpenBSD: patch-solenv_bin_ooinstall,v 1.2 2013/05/31 14:50:15 robert Exp $
+--- solenv/bin/ooinstall.orig.port	Thu May  2 17:55:29 2013
++++ solenv/bin/ooinstall	Sun May 12 12:52:22 2013
+@@ -111,10 +111,12 @@ if ($is_windows) {
  # make distro-pack-install shufle with the SDK installation to make it LSB compliant
  # it creates symlinks from the orignal path to /usr/share; they are not valid with $DESTDIR
  # and potential second ooinstall call fails with strange error messages if the old tree is still there

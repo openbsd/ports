@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2013/04/02 16:41:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.88 2013/05/31 14:50:11 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -6,20 +6,16 @@ COMMENT-main=	multi-platform productivity suite
 COMMENT-kde=	optional integration of LibreOffice to the KDE environment
 COMMENT-java=	optional integration of LibreOffice java features
 
-BV=		3.6
-VERSION=	3.6.5.2
+BV=		4.0
+VERSION=	4.0.3.3
 DISTNAME=	libreoffice-${VERSION}
-WRKDIST=	${WRKDIR}/libreoffice-core-${VERSION}
+WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 PKGNAME=	libreoffice-${VERSION}
 PKGNAME-main=	libreoffice-${VERSION}
 PKGNAME-kde=	libreoffice-kde-${VERSION}
 PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel
-
-REVISION-main =	1
-
-SHARED_LIBS +=  lcms2                     2.3 # 2.3
 
 EPOCH=		0
 
@@ -30,17 +26,17 @@ HOMEPAGE=	http://www.libreoffice.org/
 MASTER_SITES=	http://download.documentfoundation.org/libreoffice/src/${VERSION:C/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/}/ \
 		http://humppa.hu/libreoffice/ \
 		http://download.go-oo.org/src/
-MASTER_SITES0=	http://hg.services.openoffice.org/binaries/ \
+MASTER_SITES0=	http://dev-www.libreoffice.org/src/ \
+		http://hg.services.openoffice.org/binaries/ \
 		http://download.go-oo.org/src/ \
 		http://download.go-oo.org/extern/ \
 		http://www.numbertext.org/linux/ \
-		http://ooo.itc.hu/oxygenoffice/download/libreoffice/ \
-		http://dev-www.libreoffice.org/src/
+		http://ooo.itc.hu/oxygenoffice/download/libreoffice/
 
 TAR=		${LOCALBASE}/bin/gtar
-EDISTFILES=	libreoffice-core-${VERSION}.tar.xz
+EDISTFILES=	libreoffice-${VERSION}.tar.xz
 
-COMPONENTS=	binfilter dictionaries help translations
+COMPONENTS=	dictionaries help translations
 
 .for _dfile in ${COMPONENTS}
 EDISTFILES+=	libreoffice-${_dfile}-${VERSION}.tar.xz
@@ -48,45 +44,55 @@ EDISTFILES+=	libreoffice-${_dfile}-${VERSION}.tar.xz
 EXTRACT_ONLY=	${EDISTFILES:C/:[0-9]$//}
 
 DISTFILES+=	${EDISTFILES} \
-		327348d67c979c88c2dec59a23a17d85-lcms2-2.3.tar.gz:0 \
-		86261f06c097d3e425a2f6d0b0635380-hyphen-2.8.3.tar.gz:0 \
-		6097739c841f671cb21332b9cc593ae7-libexttextcat-3.3.1.tar.bz2:0 \
-		e7a384790b13c29113e22e596ade9687-LinLibertineG-20120116.zip:0 \
-		35efabc239af896dfb79be7ebdd6e6b9-gentiumbasic-fonts-1.10.zip:0 \
-		cfbf1ac6f61bf6cf45342a0cc9381be5-liberation-fonts-ttf-2.00.0.tar.gz:0 \
+		0168229624cfac409e766913506961a8-ucpp-1.3.2.tar.gz:0 \
+		0279a21fab6f245e85a6f85fea54f511-source-code-font-1.009.tar.gz:0 \
 		0be45d54cc5e1c2e3102e32b8c190346-liberation-fonts-ttf-1.07.1.tar.gz:0 \
-		f872f4ac066433d8ff92f5e316b36ff9-dejavu-fonts-ttf-2.33.zip:0 \
-		bd30e9cf5523cdfc019b94f5e1d7fd19-cppunit-1.12.1.tar.gz:0 \
-		e1e255dc43dbcbb34cb19e8a0eba90ae-mythes-1.2.2.tar.gz:0 \
-		ea91f2fb4212a21d708aced277e6e85a-vigra1.4.0.tar.gz:0 \
-		c01351d7db2b205de755d58769288224-libwpd-0.9.4.tar.bz2:0 \
-		d197bd6211669a2fa4ca648faf04bcb1-libwps-0.2.7.tar.bz2:0 \
-		9d283e02441d8cebdcd1e5d9df227d67-libwpg-0.2.1.tar.bz2:0 \
-		94e7f271e38c976462558b4278590178-libvisio-0.0.19.tar.bz2:0 \
-		3c0037fb07dea2f0bbae8386fa7c6a9a-libcdr-0.0.9.tar.bz2:0 \
-		1756c4fa6c616ae15973c104cd8cb256-Adobe-Core35_AFMs-314.tar.gz:0 \
-		9f9e15966b5624834157fe3d748312bc-mdds_0.6.1.tar.bz2:0 \
-		26b3e95ddf3d9c077c480ea45874b3b8-lp_solve_5.5.tar.gz:0 \
 		17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:0 \
+		1756c4fa6c616ae15973c104cd8cb256-Adobe-Core35_AFMs-314.tar.gz:0 \
+		1e9ddfe25ac9577da709d7b2ea36f939-source-sans-font-1.036.tar.gz:0 \
+		1f24ab1d39f4a51faf22244c94a6203f-xmlsec1-1.2.14.tar.gz:0 \
+		26b3e95ddf3d9c077c480ea45874b3b8-lp_solve_5.5.tar.gz:0 \
 		2a177023f9ea8ec8bd00837605c5df1b-jakarta-tomcat-5.0.30-src.tar.gz:0 \
-		a7983f859eafb2677d7ff386a023bc40-xsltml_2.1.2.zip:0 \
-		ada24d37d8d638b3d8a9985e80bc2978-source-9.0.0.7-bj.zip:0 \
-		0d2dcdfbf28d6208751b33057f5361f0-libcmis-0.2.3.tar.gz:0 \
-		af3c3acf618de6108d65fcdc92b492e1-commons-codec-1.3-src.tar.gz:0 \
-		3c219630e4302863a9a83d0efde889db-commons-logging-1.1.1-src.tar.gz:0 \
 		2ae988b339daec234019a7066f96733e-commons-lang-2.3-src.tar.gz:0 \
 		2c9b0f83ed5890af02c0df1c1776f39b-commons-httpclient-3.1-src.tar.gz:0 \
-		eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip:0 \
-		39bb3fcea1514f1369fcfc87542390fd-sacjava-1.3.zip:0 \
-		8ce2fcd72becf06c41f7201d15373ed9-librepository-1.1.6.zip:0 \
 		3404ab6b1792ae5f16bbd603bd1e1d03-libformula-1.1.7.zip:0 \
-		f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip:0 \
-		d8bd5eed178db6e2b18eeed243f85aa8-flute-1.1.6.zip:0 \
-		97b2d4dba862397f446b217e2b623e71-libloader-1.1.6.zip:0 \
+		35c94d2df8893241173de1d16b6034c0-swingExSrc.zip:0 \
+		35efabc239af896dfb79be7ebdd6e6b9-gentiumbasic-fonts-1.10.zip:0 \
+		39bb3fcea1514f1369fcfc87542390fd-sacjava-1.3.zip:0 \
 		3bdf40c0d199af31923e900d082ca2dd-libfonts-1.1.6.zip:0 \
-		db60e4fde8dd6d6807523deb71ee34dc-liblayout-0.2.10.zip:0 \
+		3c219630e4302863a9a83d0efde889db-commons-logging-1.1.1-src.tar.gz:0 \
+		46e92b68e31e858512b680b3b61dc4c1-mythes-1.2.3.tar.gz:0 \
+		54e578c91b1b68e69c72be22adcb2195-liblangtag-0.4.0.tar.bz2:0 \
+		5c781723a0d9ed6188960defba8e91cf-liberation-fonts-ttf-2.00.1.tar.gz:0 \
+		798b2ffdc8bcfe7bca2cf92b62caf685-rhino1_5R5.zip:0 \
+		7a15edea7d415ac5150ea403e27401fd-open-sans-font-ttf-1.10.tar.gz:0 \
+		8755aac23317494a9028569374dc87b2-liborcus_0.3.0.tar.bz2:0 \
+		8ce2fcd72becf06c41f7201d15373ed9-librepository-1.1.6.zip:0 \
+		97b2d4dba862397f446b217e2b623e71-libloader-1.1.6.zip:0 \
+		9d283e02441d8cebdcd1e5d9df227d67-libwpg-0.2.1.tar.bz2:0 \
+		9f9e15966b5624834157fe3d748312bc-mdds_0.6.1.tar.bz2:0 \
+		a2f6010987e1c601274ab5d63b72c944-hyphen-2.8.4.tar.gz:0 \
+		a7983f859eafb2677d7ff386a023bc40-xsltml_2.1.2.zip:0 \
+		ace6ab49184e329db254e454a010f56d-libxml-1.1.7.zip:0 \
+		af3c3acf618de6108d65fcdc92b492e1-commons-codec-1.3-src.tar.gz:0 \
 		ba2930200c9f019c2d93a8c88c651a0f-flow-engine-0.9.4.zip:0 \
-		ace6ab49184e329db254e454a010f56d-libxml-1.1.7.zip:0
+		b2371dc7cf4811c9d32146eec913d296-libcmis-0.3.0.tar.gz:0 \
+		c3c1a8ba7452950636e871d25020ce0d-pt-serif-font-1.0000W.tar.gz:0 \
+		d197bd6211669a2fa4ca648faf04bcb1-libwps-0.2.7.tar.bz2:0 \
+		db60e4fde8dd6d6807523deb71ee34dc-liblayout-0.2.10.zip:0 \
+		dc3d21a3921931096d6e80f6701f6763-libexttextcat-3.4.0.tar.bz2:0 \
+		d8bd5eed178db6e2b18eeed243f85aa8-flute-1.1.6.zip:0 \
+		e7a384790b13c29113e22e596ade9687-LinLibertineG-20120116.zip:0 \
+		e7f84e3199dfee9122949448cab3823f-libwpd-0.9.6.tar.bz2:0 \
+		ea570af93c284aa9e5621cd563f54f4d-bsh-2.0b1-src.tar.gz:0 \
+		ea91f2fb4212a21d708aced277e6e85a-vigra1.4.0.tar.gz:0 \
+		eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip:0 \
+		fa9aa839145cdf860bf596532bb8af97-cppunit-1.13.1.tar.gz:0 \
+		f872f4ac066433d8ff92f5e316b36ff9-dejavu-fonts-ttf-2.33.zip:0 \
+		f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip:0 \
+		libcdr-0.0.12.tar.bz2:0 \
+		libmspub-0.0.5.tar.bz2:0 \
+		libvisio-0.0.26.tar.bz2:0
 
 DIST_SUBDIR=	libreoffice
 
@@ -120,12 +126,16 @@ LIB_DEPENDS-i18n-$l=
 BUILD_DEPENDS+=	archivers/zip \
 		archivers/unzip \
 		archivers/gtar \
+		databases/db/v4 \
+		databases/openldap \
 		devel/bison \
 		devel/gperf \
+		devel/libexecinfo \
 		shells/bash \
 		archivers/p5-Archive-Zip \
 		boost->=1.41.0:devel/boost \
 		misc/findutils \
+		security/nss \
 		sysutils/coreutils \
 		textproc/gsed \
 		textproc/clucene \
@@ -144,38 +154,43 @@ MODGCC4_LANGS=	c++
 MODULES+=	lang/python \
 		devel/gettext
 
+MODPY_VERSION=	3.3
+
 LIB_DEPENDS-main=x11/gtk+2 \
 		${MODPY_LIB_DEPENDS} \
 		databases/postgresql \
-		databases/db/v4 \
+		graphics/lcms2 \
 		lang/gcc/4.6,-estdc>=4.6,<4.7 \
 		textproc/libxslt \
 		net/curl \
 		net/neon \
 		textproc/icu4c \
-		textproc/raptor \
 		textproc/redland \
 		textproc/hunspell \
 		print/poppler
 
 WANTLIB-main=	estdc++ gdk-x11-2.0>=400.14 gtk-x11-2.0>=400.14 \
-		db>=4 xslt>=3 curl>=7 neon>=24 pq>=2 \
+		xslt>=3 curl>=7 neon>=24 pq>=2 \
 		icuuc>=0 icui18n icule \
-		raptor2 rasqal rdf>=0 poppler
+		rdf>=0 poppler
 WANTLIB-main+=	ICE SM X11 Xcomposite Xcursor Xdamage \
 		Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo \
 		crypto expat fontconfig freetype gio-2.0 glib-2.0 \
 		gmodule-2.0 gobject-2.0 gthread-2.0 \
-		jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 \
-		png pthread pthread-stubs ssl xcb xml2 z gdk_pixbuf-2.0 \
+		jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
+		pthread ssl xml2 z gdk_pixbuf-2.0 \
 		util ${MODGETTEXT_WANTLIB}
-WANTLIB-main+=	GL xcb-render xcb-shm
 WANTLIB-main+=	hunspell-1.3 gdk_pixbuf_xlib-2.0
 WANTLIB-main+=	idn
 WANTLIB-main+=	${MODPY_WANTLIB}
+WANTLIB-main+=	Xt clucene-contribs-lib clucene-core clucene-shared
+WANTLIB-main+=	cups exslt gcrypt gpg-error icudata lcms2
+WANTLIB-main+=	nspr4 nss3 nssutil3 plc4 plds4 smime3 softokn3 ssl3
 
 RUN_DEPENDS-main=	devel/desktop-file-utils \
+			devel/libexecinfo \
 			misc/shared-mime-info \
+			security/nss \
 			textproc/clucene \
 			x11/gtk+2,-guic
 
@@ -186,9 +201,8 @@ LIB_DEPENDS-kde=	${MODQT_LIB_DEPENDS} \
 			x11/kde/libs3
 WANTLIB-kde=		${MODQT_WANTLIB} \
 			X11 c estdc++ m pthread \
-			lib/kde3/kabc lib/kde3/kdecore \
+			lib/kde3/kdecore \
 			lib/kde3/kdeui lib/kde3/kio
-WANTLIB-kde+=		ICE SM Xext icule icuuc
 
 .if !${FLAVOR:Mno_java}
 MODULES+=		java
@@ -224,7 +238,7 @@ MAKE_ENV+=	AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		NOCONFIGURE=1
 
-CONFIGURE_ARGS+=--disable-build-mozilla \
+CONFIGURE_ARGS+=\
 		--disable-ccache \
 		--disable-dbus \
 		--disable-epm \
@@ -232,21 +246,15 @@ CONFIGURE_ARGS+=--disable-build-mozilla \
 		--disable-gconf \
 		--disable-gnome-vfs \
 		--disable-kde4 \
-		--disable-mozilla \
 		--disable-lockdown \
 		--disable-odk \
 		--disable-opengl \
 		--disable-randr-link \
 		--disable-unix-qstart-libpng \
-		--disable-xmlsec \
-		--enable-librsvg \
-		--enable-binfilter \
 		--enable-gio \
 		--enable-gstreamer \
 		--enable-kde \
 		--enable-ext-presenter-minimizer \
-		--enable-ext-pdfimport \
-		--enable-ext-presenter-console \
 		--enable-ext-report-builder \
 		--enable-systray \
 		--with-alloc=system \
@@ -259,24 +267,24 @@ CONFIGURE_ARGS+=--disable-build-mozilla \
 		--with-system-boost \
 		--with-system-cairo \
 		--with-system-curl \
-		--with-system-db \
 		--with-system-expat \
 		--with-system-hunspell \
 		--with-system-icu \
 		--with-system-jars \
 		--with-system-jpeg \
+		--with-system-lcms2 \
 		--with-system-mesa-headers \
 		--with-system-neon \
+		--with-system-nss \
+		--with-system-openldap \
 		--with-system-openssl \
 		--with-system-poppler \
 		--with-system-postgresql \
 		--with-system-redland \
-		--with-system-stdlibs \
 		--with-system-zlib \
 		--with-vendor="The OpenBSD project" \
 		--without-junit \
 		--without-krb5 \
-		--without-openldap \
 		--without-system-apache-commons \
 		--without-system-beanshell \
 		--without-system-cppunit \
@@ -284,7 +292,6 @@ CONFIGURE_ARGS+=--disable-build-mozilla \
 		--without-system-jfreereport \
 		--without-system-libwpd \
 		--without-system-mozilla \
-		--without-system-saxon \
 		--without-system-servlet-api \
 		--without-unix-wrapper
 
@@ -293,7 +300,6 @@ BUILD_DEPENDS+=	devel/apache-ant
 
 CONFIGURE_ARGS+=--enable-ext-wiki-publisher \
 		--with-java \
-		--with-java-target-version=1.5 \
 		--with-jdk-home=${JAVA_HOME} \
 		--with-ant-home=${LOCALBASE}/ant
 .else
@@ -303,9 +309,9 @@ CONFIGURE_ARGS+=--without-java
 .if ${FLAVOR:Mparallel}
 NCPU!=		echo $$((`sysctl -n hw.ncpu`+1))
 .else
-NCPU=		0
+NCPU=		1
 .endif
-CONFIGURE_ARGS+=--with-num-cpus=${NCPU}
+CONFIGURE_ARGS+=--with-parallelism=${NCPU}
 
 .if ${FLAVOR:Mdebug}
 CONFIGURE_ARGS+=--enable-debug \
@@ -327,12 +333,7 @@ pre-patch:
 	@ln -fs /usr/local/bin/gfind ${WRKDIR}/bin/find
 	@ln -fs /usr/local/bin/gcat ${WRKDIR}/bin/cat
 	@ln -fs /usr/local/bin/gsed ${WRKDIR}/bin/sed
-.for _c in ${COMPONENTS}
-	rm -rf ${WRKDIR}/libreoffice-${_c}-${VERSION}/git*
-	rm -rf ${WRKDIR}/libreoffice-${_c}-${VERSION}/.*
-	mv ${WRKDIR}/libreoffice-${_c}-${VERSION}/* ${WRKSRC}
-	rmdir ${WRKDIR}/libreoffice-${_c}-${VERSION}
-.endfor
+	@ln -fs /usr/local/bin/gtouch ${WRKDIR}/bin/touch
 	touch ${WRKSRC}/src.downloaded ${WRKSRC}/autogen.lastrun
 
 post-install:

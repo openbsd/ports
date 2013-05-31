@@ -1,0 +1,12 @@
+$OpenBSD: patch-vcl_source_gdi_svgdata_cxx,v 1.1 2013/05/31 14:50:16 robert Exp $
+--- vcl/source/gdi/svgdata.cxx.orig.port	Tue May 14 16:47:55 2013
++++ vcl/source/gdi/svgdata.cxx	Tue May 14 16:51:33 2013
+@@ -166,7 +166,7 @@ SvgData::SvgData(const SvgDataArray& rSvgDataArray, sa
+ 
+ //////////////////////////////////////////////////////////////////////////////
+ SvgData::SvgData(const OUString& rPath):
+-    maSvgDataArray(NULL),
++    maSvgDataArray(),
+     mnSvgDataArrayLength(0),
+     maPath(rPath),
+     maRange(),

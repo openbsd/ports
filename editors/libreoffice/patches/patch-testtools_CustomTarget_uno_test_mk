@@ -1,9 +1,9 @@
-$OpenBSD: patch-testtools_CustomTarget_uno_test_mk,v 1.1 2012/10/31 08:34:12 robert Exp $
---- testtools/CustomTarget_uno_test.mk.orig.port	Tue Oct  9 18:49:01 2012
-+++ testtools/CustomTarget_uno_test.mk	Tue Oct  9 18:49:42 2012
-@@ -34,6 +34,7 @@ $(call gb_CustomTarget_get_target,testtools/uno_test) 
- 		$(call gb_Executable_get_target_for_build,uno) \
- 		$(call gb_InternalUnoApi_get_target,bridgetest)
+$OpenBSD: patch-testtools_CustomTarget_uno_test_mk,v 1.2 2013/05/31 14:50:16 robert Exp $
+--- testtools/CustomTarget_uno_test.mk.orig.port	Thu May  2 17:55:29 2013
++++ testtools/CustomTarget_uno_test.mk	Sun May 12 12:52:22 2013
+@@ -40,6 +40,7 @@ $(call gb_CustomTarget_get_target,testtools/uno_test) 
+ 		$(call gb_Library_get_target,$(gb_CPPU_ENV)_uno) \
+ 		$(call gb_Package_get_target,cppuhelper_unorc)
  	$(call gb_Helper_abbreviate_dirs,\
 +		echo "LD_LIBRARY_PATH=$(OUTDIR)/lib" \
  		$(call gb_Executable_get_target_for_build,uno) \

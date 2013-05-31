@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST-kde,v 1.5 2012/04/03 08:56:50 robert Exp ${BV}0 11:03:07 robert Exp $
-@conflict openoffice-kde-*
-@pkgpath editors/openoffice3,-kde
+@comment $OpenBSD: PLIST-kde,v 1.6 2013/05/31 14:50:24 robert Exp $
 %%SHARED%%
 lib/libreoffice/program/kde-open-url
 @bin lib/libreoffice/program/kdefilepicker

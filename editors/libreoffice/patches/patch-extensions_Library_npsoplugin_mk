@@ -1,7 +1,7 @@
-$OpenBSD: patch-extensions_Library_npsoplugin_mk,v 1.1 2012/10/31 08:34:12 robert Exp $
---- extensions/Library_npsoplugin.mk.orig.port	Mon Oct  8 15:20:32 2012
-+++ extensions/Library_npsoplugin.mk	Mon Oct  8 15:30:00 2012
-@@ -39,9 +39,13 @@ $(eval $(call gb_Library_use_static_libraries,npsoplug
+$OpenBSD: patch-extensions_Library_npsoplugin_mk,v 1.2 2013/05/31 14:50:12 robert Exp $
+--- extensions/Library_npsoplugin.mk.orig.port	Thu May  2 17:55:29 2013
++++ extensions/Library_npsoplugin.mk	Sun May 12 12:52:22 2013
+@@ -44,9 +44,13 @@ $(eval $(call gb_Library_use_static_libraries,npsoplug
  
  ifeq ($(GUI),UNX)
  

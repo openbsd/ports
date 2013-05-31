@@ -1,23 +1,7 @@
-@comment $OpenBSD: PFRAG.no-no_java-i18n-fa,v 1.6 2012/10/31 08:34:13 robert Exp $
-lib/libreoffice/share/extensions/presenter-screen/help/fa/help.idxl/
-lib/libreoffice/share/extensions/presenter-screen/help/fa/help.idxl/_0.cfs
-lib/libreoffice/share/extensions/presenter-screen/help/fa/help.idxl/segments.gen
-lib/libreoffice/share/extensions/presenter-screen/help/fa/help.idxl/segments_3
+@comment $OpenBSD: PFRAG.no-no_java-i18n-fa,v 1.7 2013/05/31 14:50:18 robert Exp $
 lib/libreoffice/share/extensions/report-builder/description-fa.txt
 lib/libreoffice/share/extensions/wiki-publisher/description-fa.txt
 lib/libreoffice/share/extensions/wiki-publisher/help/fa/
-lib/libreoffice/share/extensions/wiki-publisher/help/fa/caption/
-lib/libreoffice/share/extensions/wiki-publisher/help/fa/caption/com.sun.wiki-publisher%2Fwiki.xhp
-lib/libreoffice/share/extensions/wiki-publisher/help/fa/caption/com.sun.wiki-publisher%2Fwikiaccount.xhp
-lib/libreoffice/share/extensions/wiki-publisher/help/fa/caption/com.sun.wiki-publisher%2Fwikiformats.xhp
-lib/libreoffice/share/extensions/wiki-publisher/help/fa/caption/com.sun.wiki-publisher%2Fwikisend.xhp
-lib/libreoffice/share/extensions/wiki-publisher/help/fa/caption/com.sun.wiki-publisher%2Fwikisettings.xhp
-lib/libreoffice/share/extensions/wiki-publisher/help/fa/content/
-lib/libreoffice/share/extensions/wiki-publisher/help/fa/content/com.sun.wiki-publisher%2Fwiki.xhp
-lib/libreoffice/share/extensions/wiki-publisher/help/fa/content/com.sun.wiki-publisher%2Fwikiaccount.xhp
-lib/libreoffice/share/extensions/wiki-publisher/help/fa/content/com.sun.wiki-publisher%2Fwikiformats.xhp
-lib/libreoffice/share/extensions/wiki-publisher/help/fa/content/com.sun.wiki-publisher%2Fwikisend.xhp
-lib/libreoffice/share/extensions/wiki-publisher/help/fa/content/com.sun.wiki-publisher%2Fwikisettings.xhp
 lib/libreoffice/share/extensions/wiki-publisher/help/fa/help.db_
 lib/libreoffice/share/extensions/wiki-publisher/help/fa/help.ht_
 lib/libreoffice/share/extensions/wiki-publisher/help/fa/help.idxl/
@@ -26,3 +10,4 @@ lib/libreoffice/share/extensions/wiki-publisher/help/fa/help.idxl/segments.gen
 lib/libreoffice/share/extensions/wiki-publisher/help/fa/help.idxl/segments_3
 lib/libreoffice/share/extensions/wiki-publisher/help/fa/help.jar
 lib/libreoffice/share/extensions/wiki-publisher/help/fa/help.key_
+lib/libreoffice/share/extensions/wiki-publisher/help/fa/help.tree

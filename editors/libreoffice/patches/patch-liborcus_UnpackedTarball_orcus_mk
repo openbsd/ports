@@ -1,0 +1,12 @@
+$OpenBSD: patch-liborcus_UnpackedTarball_orcus_mk,v 1.1 2013/05/31 14:50:14 robert Exp $
+--- liborcus/UnpackedTarball_orcus.mk.orig.port	Wed May 15 23:40:06 2013
++++ liborcus/UnpackedTarball_orcus.mk	Wed May 15 23:40:18 2013
+@@ -19,6 +19,8 @@ orcus_patches += liborcus_0.1.0-configure.patch
+ # disable boost "auto lib" in MSVC build
+ orcus_patches += liborcus_0.1.0-boost_disable_auto_lib.patch
+ 
++orcus_patches += liborcus_0.1.0-boost_header.patch
++
+ $(eval $(call gb_UnpackedTarball_fix_end_of_line,orcus,\
+ 	vsprojects/liborcus-static-nozip/liborcus-static-nozip.vcproj \
+ ))
