@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/11 10:50:02 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2013/05/31 14:50:27 jasper Exp $
 
 COMMENT=	like make(1), but more powerful and clean
 
 DISTNAME=	cook-2.21
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${HOMEPAGE}
 
-HOMEPAGE=       http://www.canb.auug.org.au/~millerp/cook/
+HOMEPAGE=       http://miller.emu.id.au/pmiller/software/cook/
 
 MODULES=	devel/gettext
 
