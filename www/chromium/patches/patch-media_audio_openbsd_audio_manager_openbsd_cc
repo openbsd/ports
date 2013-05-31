@@ -1,22 +1,22 @@
-$OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_cc,v 1.15 2013/05/30 18:42:18 robert Exp $
---- media/audio/openbsd/audio_manager_openbsd.cc.orig.port	Thu May 30 00:17:28 2013
-+++ media/audio/openbsd/audio_manager_openbsd.cc	Thu May 30 17:09:20 2013
-@@ -4,56 +4,30 @@
+$OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_cc,v 1.16 2013/05/31 15:38:59 robert Exp $
+--- media/audio/openbsd/audio_manager_openbsd.cc.orig.port	Fri May 17 22:45:40 2013
++++ media/audio/openbsd/audio_manager_openbsd.cc	Fri May 31 17:17:31 2013
+@@ -4,56 +4,27 @@
  
  #include "media/audio/openbsd/audio_manager_openbsd.h"
  
 -#include <fcntl.h>
 -
- #include "base/command_line.h"
+-#include "base/command_line.h"
 -#include "base/file_path.h"
- #include "base/stl_util.h"
+-#include "base/stl_util.h"
  #include "media/audio/audio_output_dispatcher.h"
- #include "media/audio/audio_parameters.h"
+-#include "media/audio/audio_parameters.h"
  #include "media/audio/audio_util.h"
 -#include "media/audio/pulse/pulse_output.h"
 -#include "media/audio/pulse/pulse_stubs.h"
+-#include "media/base/channel_layout.h"
 +#include "media/audio/sndio/sndio_output.h"
- #include "media/base/channel_layout.h"
  #include "media/base/limits.h"
  #include "media/base/media_switches.h"
  
@@ -58,17 +58,19 @@ $OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_cc,v 1.15 2013/05/30 1
 -
  bool AudioManagerOpenBSD::HasAudioInputDevices() {
 -  return HasAudioHardware();
++  // not implemented yet
 +  return false;
  }
  
  AudioParameters AudioManagerOpenBSD::GetInputStreamParameters(
-@@ -65,19 +39,7 @@ AudioParameters AudioManagerOpenBSD::GetInputStreamPar
+@@ -65,19 +36,8 @@ AudioParameters AudioManagerOpenBSD::GetInputStreamPar
        kDefaultSampleRate, 16, kDefaultInputBufferSize);
  }
  
 -AudioManagerOpenBSD::AudioManagerOpenBSD()
 -    : pulse_library_is_initialized_(false) {
--  SetMaxOutputStreamsAllowed(kMaxOutputStreams);
++AudioManagerOpenBSD::AudioManagerOpenBSD() {
+   SetMaxOutputStreamsAllowed(kMaxOutputStreams);
 -  StubPathMap paths;
 -
 -  // Check if the pulse library is avialbale.
@@ -79,11 +81,10 @@ $OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_cc,v 1.15 2013/05/30 1
 -  }
 -
 -  pulse_library_is_initialized_ = true;
-+AudioManagerOpenBSD::AudioManagerOpenBSD() {
  }
  
  AudioManagerOpenBSD::~AudioManagerOpenBSD() {
-@@ -86,26 +48,26 @@ AudioManagerOpenBSD::~AudioManagerOpenBSD() {
+@@ -86,33 +46,33 @@ AudioManagerOpenBSD::~AudioManagerOpenBSD() {
  
  AudioOutputStream* AudioManagerOpenBSD::MakeLinearOutputStream(
      const AudioParameters& params) {
@@ -114,13 +115,26 @@ $OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_cc,v 1.15 2013/05/30 1
    NOTIMPLEMENTED();
    return NULL;
  }
-@@ -138,8 +100,7 @@ AudioParameters AudioManagerOpenBSD::GetPreferredOutpu
+ 
+ AudioParameters AudioManagerOpenBSD::GetPreferredOutputStreamParameters(
+     const AudioParameters& input_params) {
+-  static const int kDefaultOutputBufferSize = 512;
++  static const int kDefaultOutputBufferSize = 2048;
+ 
+   ChannelLayout channel_layout = CHANNEL_LAYOUT_STEREO;
+   int sample_rate = kDefaultSampleRate;
+@@ -138,13 +98,9 @@ AudioParameters AudioManagerOpenBSD::GetPreferredOutpu
  
  AudioOutputStream* AudioManagerOpenBSD::MakeOutputStream(
      const AudioParameters& params) {
 -  if (pulse_library_is_initialized_)
 -    return new PulseAudioOutputStream(params, this);
+-
+-  return NULL;
 +    return new SndioAudioOutputStream(params, this);
- 
-   return NULL;
  }
+ 
+-// TODO(xians): Merge AudioManagerOpenBSD with AudioManagerPulse;
+ // static
+ AudioManager* CreateAudioManager() {
+   return new AudioManagerOpenBSD();

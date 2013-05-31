@@ -1,0 +1,32 @@
+$OpenBSD: patch-chrome_browser_resources_plugin_metadata_plugins_linux_json,v 1.1 2013/05/31 15:38:59 robert Exp $
+--- chrome/browser/resources/plugin_metadata/plugins_linux.json.orig.port	Thu May 30 22:40:41 2013
++++ chrome/browser/resources/plugin_metadata/plugins_linux.json	Thu May 30 22:42:13 2013
+@@ -70,28 +70,6 @@
+     "displayurl": true,
+     "group_name_matcher": "Java*"
+   },
+-  "adobe-flash-player": {
+-    "mime_types": [
+-      "application/futuresplash",
+-      "application/x-shockwave-flash"
+-    ],
+-    "matching_mime_types": [
+-      "application/futuresplash"
+-    ],
+-    "versions": [
+-      {
+-        "version": "11.1.102",
+-        "status": "up_to_date",
+-        "reference": "http://www.adobe.com/support/security/bulletins/apsb12-03.html"
+-      }
+-    ],
+-    "lang": "en-US",
+-    "name": "Adobe Flash Player",
+-    "help_url": "https://support.google.com/chrome/?p=plugin_flash",
+-    "url": "http://get.adobe.com/flashplayer/",
+-    "displayurl": true,
+-    "group_name_matcher": "*Shockwave Flash*"
+-  },
+   "lightspark": {
+     "mime_types": [
+       "application/x-lightspark"

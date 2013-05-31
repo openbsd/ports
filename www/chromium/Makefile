@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.138 2013/05/30 18:42:18 robert Exp $
-
-BROKEN-i386=		"sad face" at runtime
+# $OpenBSD: Makefile,v 1.139 2013/05/31 15:38:59 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 
@@ -8,6 +6,8 @@ COMMENT=		Chromium browser
 
 V=			27.0.1453.93
 DISTNAME=		chromium-${V}
+
+REVISION=		0
 
 CATEGORIES=		www
 
