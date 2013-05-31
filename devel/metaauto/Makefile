@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 10:50:11 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/05/31 15:14:15 jasper Exp $
 
 COMMENT =	wrapper for gnu auto*
 
 VERSION =	1.0
+REVISION =	0
 DISTNAME =	metaauto-${VERSION}
 CATEGORIES =	devel
-DISTFILES =	pkg-config-0.21.tar.gz
+DISTFILES =	pkg-config-0.27.1.tar.gz
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
@@ -35,6 +36,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKBUILD}/$i ${PREFIX}/bin
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/aclocal
-	${INSTALL_DATA} ${WRKDIR}/pkg-config-0.21/pkg.m4 ${PREFIX}/share/aclocal
+	${INSTALL_DATA} ${WRKDIR}/pkg-config-0.27.1/pkg.m4 ${PREFIX}/share/aclocal
 
 .include <bsd.port.mk>
