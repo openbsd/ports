@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.98 2013/05/31 03:47:49 matthieu Exp $
+# $OpenBSD: OpenBSD,v 1.99 2013/05/31 21:38:08 bcallah Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -31,7 +31,7 @@
 39.66138	-104.98088	"guenther"	# Philip Guenther
 40.033779	-105.250051	"millert"	# Todd C. Miller
 40.115		-88.02		"drahn"		# Dale Rahn
-40.392935	-74.330056	"bcallah"	# Brian Callahan
+40.382		-74.311		"bcallah"	# Brian Callahan
 40.4		-79.7		"jaredy"	# Jared Yanovich
 40.552889	-8.333124	"rui"		# Rui Reis
 40.721300	-73.858770	"ray"		# Ray Lai
