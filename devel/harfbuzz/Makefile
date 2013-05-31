@@ -1,38 +1,56 @@
-# $OpenBSD: Makefile,v 1.12 2013/05/21 16:34:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2013/05/31 15:28:36 ajacoutot Exp $
 
-COMMENT=	text shaping library
+COMMENT-main=		text shaping library
+COMMENT-icu=		ICU support for libharfbuzz
 
-DISTNAME=	harfbuzz-0.9.17
-EXTRACT_SUFX=	.tar.bz2
+V=			0.9.18
+DISTNAME=		harfbuzz-${V}
+EXTRACT_SUFX=		.tar.bz2
 
-SHARED_LIBS +=  harfbuzz             3.1      # 917.0
+PKGNAME-main=		harfbuzz-${V}
+PKGNAME-icu=		harfbuzz-icu-${V}
 
-CATEGORIES=	devel x11
+SHARED_LIBS +=  harfbuzz             4.0    # 918.0
+SHARED_LIBS +=  harfbuzz-icu         0.0    # 918.0
 
-HOMEPAGE=	http://www.freedesktop.org/wiki/Software/HarfBuzz
+CATEGORIES=		devel graphics textproc
 
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
+HOMEPAGE=		http://www.freedesktop.org/wiki/Software/HarfBuzz
+
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 Xext Xrender c cairo expat ffi fontconfig freetype
-WANTLIB += glib-2.0 gobject-2.0 graphite2 icudata icule icuuc
-WANTLIB += m pcre pixman-1 png pthread pthread-stubs stdc++ xcb
-WANTLIB += xcb-render xcb-shm z
+WANTLIB += ffi freetype glib-2.0 gobject-2.0 graphite2 m pcre pthread
+WANTLIB += stdc++ z
 
-MASTER_SITES=	http://www.freedesktop.org/software/harfbuzz/release/
+MASTER_SITES=		http://www.freedesktop.org/software/harfbuzz/release/
 
-MODULES=	devel/gettext
+MULTI_PACKAGES=		-main -icu
 
-USE_GMAKE=	Yes
+MODULES=		devel/gettext
 
-LIB_DEPENDS=	graphics/cairo \
-		graphics/graphite2 \
-		textproc/icu4c
+USE_GMAKE=		Yes
 
-CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
+WANTLIB-main += ${WANTLIB}
+WANTLIB-main += X11 Xext Xrender c cairo expat fontconfig pixman-1
+WANTLIB-main += png pthread-stubs xcb xcb-render xcb-shm
+
+WANTLIB-icu += ${WANTLIB}
+WANTLIB-icu += harfbuzz icudata icuuc
+
+LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
+			graphics/cairo \
+			graphics/graphite2
+
+LIB_DEPENDS-icu=	devel/harfbuzz,-main=${V} \
+			textproc/icu4c
+
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
+			--with-icu \
+			--with-graphite2
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/check-symbols.sh
