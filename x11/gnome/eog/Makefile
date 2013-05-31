@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.98 2013/05/14 06:50:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.99 2013/05/31 15:35:02 ajacoutot Exp $
 
 COMMENT=		Eye of GNOME, image viewing and cataloging program
 
 GNOME_PROJECT=		eog
 GNOME_VERSION=		3.8.2
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -17,8 +18,8 @@ WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB += c cairo cairo-gobject croco-0.6 dbus-1 exempi exif
 WANTLIB += expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0 gnome-desktop-3
-WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz icudata
-WANTLIB += icule icuuc jpeg lcms2 m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz
+WANTLIB += jpeg lcms2 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre peas-1.0 peas-gtk-1.0 pixman-1 png pthread pthread-stubs
 WANTLIB += rsvg-2 xcb xcb-render xcb-shm xkbfile xml2 z
 

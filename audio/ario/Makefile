@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2013/05/09 14:53:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2013/05/31 15:34:39 ajacoutot Exp $
 
 COMMENT =	GTK2-based MPD client inspired by Rhythmbox
 DISTNAME =	ario-1.5.1
 CATEGORIES =	audio x11
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=	audioscrobbler		0.0 # 0.0
 SHARED_LIBS +=	filesystem		0.0 # 0.0
@@ -26,7 +26,7 @@ WANTLIB += c cairo crypto curl dbus-1 dbus-glib-1 expat ffi fontconfig
 WANTLIB += freetype gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0 gpg-error
 WANTLIB += graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz hogweed
-WANTLIB += icudata icule icuuc idn m mpdclient nettle notify p11-kit
+WANTLIB += idn m mpdclient nettle notify p11-kit
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs soup-2.4 sqlite3 ssl tag
 WANTLIB += tag_c tasn1 unique-1.0 xcb xcb-render xcb-shm xml2 z

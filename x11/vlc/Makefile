@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.170 2013/04/11 17:58:42 brad Exp $
+# $OpenBSD: Makefile,v 1.171 2013/05/31 15:35:15 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -12,6 +12,8 @@ PKGNAME-jack=	vlc-jack-${V}
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
+REVISION-main=	0
+REVISION-jack=	0
 
 SHARED_LIBS=	vlc	2.0 \
 		vlccore	2.0
@@ -31,7 +33,7 @@ WANTLIB-main=	GL ICE lib/qt4/QtGui QtCore SM SDL SDL_image X11 Xcomposite \
 		dvdnav dvdread ebml stdc++ expat ffi fontconfig freetype \
 		fribidi gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
 		gmodule-2.0 gmp gnutls gobject-2.0 gpg-error graphite2 \
-		gthread-2.0 gtk-x11-2.0 harfbuzz hogweed icudata icule icuuc \
+		gthread-2.0 gtk-x11-2.0 harfbuzz hogweed \
 		jpeg matroska nettle notify opus orc-0.4 ogg p11-kit pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png postproc \
 		pthread-stubs samplerate schroedinger-1.0>=2.0 sndio speex \

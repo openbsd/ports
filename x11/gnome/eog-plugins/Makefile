@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2013/05/14 16:57:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.45 2013/05/31 15:35:02 ajacoutot Exp $
 
 COMMENT=		plugins for EOG
 
 GNOME_PROJECT=		eog-plugins
 GNOME_VERSION=		3.8.1
+REVISION=		0
+
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://live.gnome.org/EyeOfGnome/Plugins
@@ -23,8 +25,8 @@ WANTLIB += clutter-1.0 clutter-gtk-1.0 cogl cogl-pango crypto
 WANTLIB += curl dbus-1 exif expat ffi fontconfig freetype gck-1
 WANTLIB += gcr-base-3 gcrypt gdata gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += girepository-1.0 glib-2.0 gmodule-2.0 goa-1.0 gobject-2.0
-WANTLIB += gpg-error graphite2 gthread-2.0 gtk-3 harfbuzz icudata
-WANTLIB += icule icuuc idn json-glib-1.0 m memphis-0.2 nspr4 nss3
+WANTLIB += gpg-error graphite2 gthread-2.0 gtk-3 harfbuzz
+WANTLIB += idn json-glib-1.0 m memphis-0.2 nspr4 nss3
 WANTLIB += oauth p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre peas-1.0 pixman-1 plc4 plds4 png pthread pthread-stubs
 WANTLIB += smime3 softokn3 soup-2.4 soup-gnome-2.4 sqlite3 ssl

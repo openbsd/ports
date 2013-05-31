@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2013/04/16 13:17:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.107 2013/05/31 15:34:43 ajacoutot Exp $
 
 # Don't pull in x11/py-gtk2 on these archs; build fails with binutils 2.15
 NOT_FOR_ARCHS-python=	mips64 mips64el
@@ -14,8 +14,8 @@ SHARED_LIBS+=	vte	14.1    # 2609.0
 FULLPKGNAME-main=	vte-${GNOME_VERSION}
 FULLPKGNAME-python= 	py-${DISTNAME}
 
-REVISION-main =		9
-REVISION-python = 	6
+REVISION-main =		10
+REVISION-python = 	7
 
 CATEGORIES=		devel
 
@@ -37,7 +37,7 @@ WANTLIB += expat ffi fontconfig freetype gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 m ncurses
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread-stubs stdc++ xcb xcb-render xcb-shm z pthread
-WANTLIB += harfbuzz icudata icule icuuc gdk-x11-2.0 gtk-x11-2.0
+WANTLIB += harfbuzz gdk-x11-2.0 gtk-x11-2.0
 
 MODPY_RUNDEP=		No
 MULTI_PACKAGES= 	-main -python

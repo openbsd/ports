@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/04/16 06:28:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2013/05/31 15:35:10 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	quick previewer for Nautilus
 
 GNOME_PROJECT=	sushi
 GNOME_VERSION=	3.8.1
+REVISION=	0
 
 HOMEPAGE=	https://live.gnome.org/ThreePointOne/Features/FilePreviewing
 
@@ -22,7 +23,7 @@ WANTLIB += girepository-1.0 gjs glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gpg-error graphite2 gssapi gstapp-1.0 gstaudio-1.0
 WANTLIB += gstbase-1.0 gstfft-1.0 gstpbutils-1.0 gstreamer-1.0
 WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 gtksourceview-3.0
-WANTLIB += harfbuzz icudata icui18n icule icuuc javascriptcoregtk-3.0
+WANTLIB += harfbuzz icui18n javascriptcoregtk-3.0
 WANTLIB += jpeg json-glib-1.0 krb5 m mozjs185 musicbrainz5 ncursesw
 WANTLIB += neon nspr4 orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png proxy pthread pthread-stubs

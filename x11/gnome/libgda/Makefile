@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2013/05/25 00:33:10 brad Exp $
+# $OpenBSD: Makefile,v 1.76 2013/05/31 15:35:06 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -23,7 +23,7 @@ PKGNAME-ui=		libgda-ui-${GNOME_VERSION}
 
 REVISION-main=		1
 REVISION-mysql=		0
-REVISION-ui=		0
+REVISION-ui=		1
 
 EPOCH-main=		2
 EPOCH-ldap=		0
@@ -122,8 +122,8 @@ WANTLIB-ui += Xi Xinerama Xrandr Xrender atk-1.0 c cairo
 WANTLIB-ui += cairo-gobject expat fontconfig freetype gda-${GDA_MAJOR}
 WANTLIB-ui += gdk-3 gdk_pixbuf-2.0 goocanvas-2.0 gtk-3 gtksourceview-3.0
 WANTLIB-ui += pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB-ui += pthread-stubs xcb xcb-render xcb-shm icuuc
-WANTLIB-ui += ICE SM atk-bridge-2.0 atspi harfbuzz icudata icule dbus-1
+WANTLIB-ui += pthread-stubs xcb xcb-render xcb-shm
+WANTLIB-ui += ICE SM atk-bridge-2.0 atspi harfbuzz dbus-1
 LIB_DEPENDS-ui=		${LIB_DEPENDS} \
 			graphics/goocanvas2 \
 			x11/dbus \

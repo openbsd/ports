@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2013/04/07 13:03:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2013/05/31 15:35:06 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	C++ interface to the graphics library for GNOME
 GNOME_PROJECT=	libgnomecanvasmm
 GNOME_VERSION=	2.26.0
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	7
+REVISION=	8
 
 SHARED_LIBS +=  gnomecanvasmm-2.6         1.0 # 1.6
 
@@ -21,8 +21,8 @@ WANTLIB += Xrandr Xrender art_lgpl_2 atk-1.0 atkmm-1.6 cairo cairomm-1.0
 WANTLIB += expat ffi fontconfig freetype gailutil gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gdkmm-2.4 gio-2.0 giomm-2.4 glib-2.0
 WANTLIB += glibmm-2.4 gmodule-2.0 gnomecanvas-2 gobject-2.0 graphite2
-WANTLIB += gthread-2.0 gtk-x11-2.0 gtkmm-2.4 harfbuzz icudata
-WANTLIB += icule icuuc m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += gthread-2.0 gtk-x11-2.0 gtkmm-2.4 harfbuzz
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pangomm-1.4 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += sigc-2.0 stdc++ xcb xcb-render xcb-shm z
 

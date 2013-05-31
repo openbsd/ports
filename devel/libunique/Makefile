@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/04/25 07:11:43 landry Exp $
+# $OpenBSD: Makefile,v 1.24 2013/05/31 15:34:43 ajacoutot Exp $
 
 # XXX fix building with glib2 >= 2.29 (G_CONST_RETURN is deprecated)
 CFLAGS +=	"-DG_CONST_RETURN=const"
@@ -7,7 +7,7 @@ COMMENT =	library for writing single instance GTK+2 applications
 
 GNOME_PROJECT =	libunique
 GNOME_VERSION =	1.1.6
-REVISION=	5
+REVISION=	6
 
 SHARED_LIBS +=  unique-1.0           2.0      # .100.6
 CATEGORIES =	devel
@@ -23,8 +23,8 @@ WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo dbus-1
 WANTLIB += dbus-glib-1 expat fontconfig freetype gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz icudata
-WANTLIB += icule icuuc m pango-1.0 pangocairo-1.0
+WANTLIB += graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz
+WANTLIB += m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += xcb xcb-render xcb-shm z ffi
 

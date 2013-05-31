@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2013/03/11 11:46:17 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2013/05/31 15:35:17 ajacoutot Exp $
 
 COMMENT=	Xfce4 vte-based terminal
 
 XFCE_VERSION=	0.6.1
 XFCE_GOODIE=	xfce4-terminal
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -23,6 +24,6 @@ WANTLIB=	X11 X11-xcb atk-1.0 c gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 \
 		pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs \
 		xcb xcb-render GL Xxf86vm drm xcb-shm z xcb-aux vte \
 		glib-2.0 gobject-2.0 gtk-x11-2.0 pango-1.0 xfce4util ffi stdc++ \
-		util harfbuzz icudata icule icuuc startup-notification-1 xfce4ui-1
+		util harfbuzz startup-notification-1 xfce4ui-1
 
 .include <bsd.port.mk>

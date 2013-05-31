@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/05/07 10:48:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2013/05/31 15:35:11 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		personal file-sharing service for GNOME
 
 GNOME_PROJECT=		gnome-user-share
 GNOME_VERSION=		3.8.0
-REVISION=		5
+REVISION=		6
 
 CATEGORIES=		www sysutils
 
@@ -18,7 +18,7 @@ WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB += c cairo cairo-gobject canberra canberra-gtk3 dbus-1
 WANTLIB += dbus-glib-1 expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB += gthread-2.0 gtk-3 harfbuzz icudata icule icuuc ltdl
+WANTLIB += gthread-2.0 gtk-3 harfbuzz ltdl
 WANTLIB += m nautilus-extension notify ogg pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += vorbis vorbisfile xcb xcb-render xcb-shm z

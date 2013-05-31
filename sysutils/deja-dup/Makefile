@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/30 19:11:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2013/05/31 15:34:55 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	simple encrypted backup tool for GNOME
 
 GNOME_VERSION=	26.0
 GNOME_PROJECT=	deja-dup
+REVISION=	0
 
 CATEGORIES=	sysutils x11/gnome
 
@@ -21,8 +22,8 @@ WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB += c cairo cairo-gobject dbus-1 expat ffi fontconfig freetype
 WANTLIB += gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
 WANTLIB += glib-2.0 gmodule-2.0 secret-1 gobject-2.0 gpg-error
-WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz icudata icule
-WANTLIB += icuuc m nautilus-extension notify pango-1.0 pangocairo-1.0
+WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz
+WANTLIB += m nautilus-extension notify pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre peas-1.0 pixman-1 png pthread pthread-stubs
 WANTLIB += xcb xcb-render xcb-shm z
 

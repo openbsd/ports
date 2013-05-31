@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 11:46:17 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/05/31 15:35:17 ajacoutot Exp $
 
 COMMENT =	Xfce4 media player
 
 XFCE_VERSION =	0.4.0
 XFCE_GOODIE =	parole
 CATEGORIES +=	audio
+REVISION =	0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
@@ -37,6 +38,6 @@ WANTLIB += xfce4util xml2 z notify tag tag_c xfce4ui-1 orc-0.4
 WANTLIB += gstvideo-0.10 gstinterfaces-0.10 gstreamer-0.10 gstbase-0.10
 WANTLIB += gstaudio-0.10 gstpbutils-0.10 gsttag-0.10 xfconf-0
 WANTLIB += xcb-render GL Xxf86vm drm xcb-shm X11-xcb ffi
-WANTLIB += harfbuzz icudata icule icuuc
+WANTLIB += harfbuzz
 
 .include <bsd.port.mk>

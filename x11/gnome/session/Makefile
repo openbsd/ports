@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.230 2013/05/24 06:30:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.231 2013/05/31 15:35:09 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		3.8.2.1
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		x11
 
@@ -16,8 +16,8 @@ WANTLIB += Xi Xinerama Xrandr Xrender Xtst Xxf86vm atk-1.0 atk-bridge-2.0
 WANTLIB += atspi c cairo cairo-gobject dbus-1 dbus-glib-1 drm
 WANTLIB += execinfo expat ffi fontconfig freetype gconf-2 gdk-3
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3
-WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz icudata
-WANTLIB += icule icuuc json-glib-1.0 m pango-1.0 pangocairo-1.0
+WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz
+WANTLIB += json-glib-1.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += stdc++ upower-glib xcb xcb-render xcb-shm xkbfile z
 

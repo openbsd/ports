@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/11 11:46:18 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2013/05/31 15:35:23 ajacoutot Exp $
 
 COMMENT=	Xfce4 command line panel plugin
 
 XFCE_VERSION=	1.0.0
 XFCE_PLUGIN=	verve
-REVISION =	3
+REVISION =	4
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,6 +20,6 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs startup-notification-1
 WANTLIB += xcb xcb-aux xcb-render xcb-shm xfce4util xfcegui4 z stdc++
-WANTLIB += harfbuzz icudata icule icuuc
+WANTLIB += harfbuzz
 
 .include <bsd.port.mk>

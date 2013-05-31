@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 11:46:18 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/05/31 15:35:22 ajacoutot Exp $
 
 COMMENT=	Xfce4 settings helpers
 
 XFCE_PROJECT=	xfce4-settings
-REVISION =	0
+REVISION =	1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -26,7 +26,7 @@ WANTLIB += gtk-x11-2.0 m notify pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs startup-notification-1
 WANTLIB += xcb xcb-aux xcb-render xcb-shm xfce4kbd-private-2 xfce4ui-1
 WANTLIB += xfce4util xfconf-0 xkbfile xklavier xml2 z stdc++ garcon-1
-WANTLIB += harfbuzz icudata icule icuuc
+WANTLIB += harfbuzz
 
 FAKE_FLAGS =	autostartdir=${PREFIX}/share/examples/xfce4-settings \
 		menudir=${PREFIX}/share/examples/xfce4-settings \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/21 08:46:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2013/05/31 15:34:52 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -7,7 +7,7 @@ COMMENT =		video editor and a VJ tool
 V =			1.0.10
 DISTNAME =		LiVES-${V}
 PKGNAME =		${DISTNAME:L}
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS +=		weed		0.0 # 0.2
 SHARED_LIBS +=		weed_slice	0.0 # 0.2
@@ -24,7 +24,7 @@ WANTLIB += GL SDL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c
 WANTLIB += cairo drm dv expat ffi fontconfig freetype gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz icudata icule icuuc
+WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz
 WANTLIB += m mjpegutils ogg oil-0.3 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs sndio stdc++
 WANTLIB += theora usbhid xcb xcb-render xcb-shm z

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/21 08:45:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2013/05/31 15:34:39 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 
 COMMENT =		CALF LADSPA plugins
 DISTNAME =		calf-0.0.18.5
-REVISION =		7
+REVISION =		8
 CATEGORIES =		audio
 
 HOMEPAGE =		http://tap-plugins.sourceforge.net/
@@ -21,7 +21,7 @@ WANTLIB = 	GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		gtk-x11-2.0 gthread-2.0 m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread \
 		pthread-stubs xcb xcb-render xcb-shm xml2 z \
-		jack glade-2.0 ffi stdc++ harfbuzz icudata icule icuuc
+		jack glade-2.0 ffi stdc++ harfbuzz
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=calf/}
 

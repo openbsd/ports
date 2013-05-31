@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/04/13 09:14:06 landry Exp $
+# $OpenBSD: Makefile,v 1.28 2013/05/31 15:34:40 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -9,8 +9,8 @@ VERSION =	11.8.16
 DISTNAME =	gmpc-plugins-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-wikipedia =	gmpc-wikipedia-${VERSION}
-REVISION-main =		2
-REVISION-wikipedia =	2
+REVISION-main =		3
+REVISION-wikipedia =	3
 
 CATEGORIES =	audio
 
@@ -54,8 +54,7 @@ WANTLIB += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 m mpd pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread-stubs sqlite3 stdc++ xcb
-WANTLIB += xcb-render xcb-shm xml2 z ffi harfbuzz icudata icule
-WANTLIB += icuuc
+WANTLIB += xcb-render xcb-shm xml2 z ffi harfbuzz
 
 RUN_DEPENDS =	audio/gmpc>=${VERSION} \
 		audio/vorbis-tools

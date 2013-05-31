@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2013/05/14 07:40:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2013/05/31 15:35:07 ajacoutot Exp $
 
 # XXX Kerberos support is disabled because our Heimdal is too old
 
@@ -6,6 +6,7 @@ COMMENT=	interfaces for interacting with online accounts
 
 GNOME_PROJECT=	gnome-online-accounts
 GNOME_VERSION=	3.8.2
+REVISION=	0
 
 SHARED_LIBS +=  goa-1.0              2.0      # .0.0
 SHARED_LIBS +=  goa-backend-1.0      2.0      # .0.0
@@ -22,13 +23,13 @@ WANTLIB += fontconfig freetype gailutil-3 gcrypt gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gpg-error gstapp-1.0 gstbase-1.0
 WANTLIB += gstpbutils-1.0 gstreamer-1.0 gstvideo-1.0 gthread-2.0
-WANTLIB += gtk-3 icudata icui18n icuuc javascriptcoregtk-3.0 jpeg
+WANTLIB += gtk-3 icui18n javascriptcoregtk-3.0 jpeg
 WANTLIB += json-glib-1.0 m orc-0.4 pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += rest-0.7 soup-2.4 soup-gnome-2.4 sqlite3 stdc++ webkitgtk-3.0
 WANTLIB += xcb xcb-render xcb-shm xml2 xslt z graphite2
 WANTLIB += dbus-glib-1 geoclue gstaudio-1.0 gstfft-1.0
-WANTLIB += atk-bridge-2.0 atspi harfbuzz icule secret-1 gsttag-1.0 webp
+WANTLIB += atk-bridge-2.0 atspi harfbuzz secret-1 gsttag-1.0 webp
 
 MODULES=		devel/gettext \
 			x11/gnome

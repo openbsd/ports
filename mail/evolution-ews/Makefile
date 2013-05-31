@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/05/12 15:34:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2013/05/31 15:34:51 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	evolution connector for MS Exchange via EWS
 
 GNOME_PROJECT=	evolution-ews
 GNOME_VERSION=	3.8.2
+REVISION=	0
 
 CATEGORIES=	mail
 
@@ -35,8 +36,8 @@ WANTLIB += geoclue gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3
 WANTLIB += gobject-2.0 gpg-error graphite2 gssapi gstapp-1.0 gstaudio-1.0
 WANTLIB += gstbase-1.0 gstfft-1.0 gstpbutils-1.0 gstreamer-1.0
 WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 gtkhtml-4.0
-WANTLIB += gtkhtml-editor-4.0 harfbuzz ical icalss icalvcal icudata
-WANTLIB += icui18n icule icuuc javascriptcoregtk-3.0 jpeg krb5
+WANTLIB += gtkhtml-editor-4.0 harfbuzz ical icalss icalvcal
+WANTLIB += icui18n javascriptcoregtk-3.0 jpeg krb5
 WANTLIB += ltdl m nspr4 nss3 nssutil3 ogg orc-0.4 p11-kit pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4
 WANTLIB += png pthread pthread-stubs secret-1 smime3 softokn3

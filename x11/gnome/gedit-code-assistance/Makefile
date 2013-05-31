@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/05/30 13:09:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2013/05/31 15:35:04 ajacoutot Exp $
 
 BROKEN-powerpc=	clang dumps core
 
@@ -8,7 +8,7 @@ COMMENT=	code assistance for Gedit
 
 GNOME_PROJECT=	gedit-code-assistance
 GNOME_VERSION=	0.2.0
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	editors devel
 
@@ -25,7 +25,7 @@ WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB += cairo cairo-gobject clang dbus-1 expat ffi fontconfig
 WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gee gio-2.0 girepository-1.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
-WANTLIB += gtk-3 gtksourceview-3.0 harfbuzz icudata icule icuuc
+WANTLIB += gtk-3 gtksourceview-3.0 harfbuzz
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre peas-1.0
 WANTLIB += peas-gtk-1.0 pixman-1 png pthread pthread-stubs stdc++
 WANTLIB += xcb xcb-render xcb-shm xml2 z

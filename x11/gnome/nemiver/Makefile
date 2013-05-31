@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/31 13:44:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2013/05/31 15:35:07 ajacoutot Exp $
 
 BROKEN=		runtime issue (seems threads related)
 
@@ -8,6 +8,7 @@ COMMENT=	C/C++ debugger for GNOME
 
 GNOME_PROJECT=	nemiver
 GNOME_VERSION=	0.9.4
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -23,7 +24,7 @@ WANTLIB += ffi fontconfig freetype gailutil-3 gdk-3 gdk_pixbuf-2.0
 WANTLIB += gdkmm-3.0 gdl-3 gdlmm-3.0 gio-2.0 giomm-2.4 glib-2.0
 WANTLIB += glibmm-2.4 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-3 gtkhex-3 gtkmm-3.0 gtksourceview-3.0 gtksourceviewmm-3.0
-WANTLIB += gtop-2.0 harfbuzz icudata icule icuuc kvm m ncurses
+WANTLIB += gtop-2.0 harfbuzz kvm m ncurses
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4 pcre
 WANTLIB += pixman-1 png pthread pthread-stubs sigc-2.0 sqlite3
 WANTLIB += stdc++ util vte2_90 xcb xcb-render xcb-shm xml2 z

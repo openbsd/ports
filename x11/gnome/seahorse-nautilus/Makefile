@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/29 19:45:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2013/05/31 15:35:09 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	GnuPG extension for nautilus(1)
 
 GNOME_PROJECT=	seahorse-nautilus
 GNOME_VERSION=	3.8.0
+REVISION=	0
 
 CATEGORIES=	security
 
@@ -20,7 +21,7 @@ WANTLIB += atspi c cairo cairo-gobject cryptui dbus-1 dbus-glib-1
 WANTLIB += expat ffi fontconfig freetype gck-1 gcr-3 gcr-base-3
 WANTLIB += gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gnome-keyring gobject-2.0 gpg-error gpgme graphite2
-WANTLIB += gthread-2.0 gtk-3 harfbuzz icudata icule icuuc m nautilus-extension
+WANTLIB += gthread-2.0 gtk-3 harfbuzz m nautilus-extension
 WANTLIB += notify p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs stdc++ xcb
 WANTLIB += xcb-render xcb-shm z

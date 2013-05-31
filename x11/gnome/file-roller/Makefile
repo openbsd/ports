@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2013/05/14 06:49:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.86 2013/05/31 15:35:02 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	archive manager utility for GNOME
 
 GNOME_PROJECT=	file-roller
 GNOME_VERSION=	3.8.2
+REVISION=	0
 
 CATEGORIES=	archivers
 
@@ -16,8 +17,8 @@ WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender archive atk-1.0 atk-bridge-2.0
 WANTLIB += atspi bz2 c cairo cairo-gobject dbus-1 expat ffi fontconfig
 WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz icudata
-WANTLIB += icule icuuc json-glib-1.0 lzma m magic nautilus-extension
+WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz
+WANTLIB += json-glib-1.0 lzma m magic nautilus-extension
 WANTLIB += notify pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs xcb xcb-render xcb-shm z
 

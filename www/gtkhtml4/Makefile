@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2013/05/12 15:02:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2013/05/31 15:34:56 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		lightweight HTML rendering/printing/editing engine
 
 GNOME_PROJECT=		gtkhtml
 GNOME_VERSION=		4.6.5
+REVISION=		0
 
 API_VERSION=		4.0
 SUBST_VARS=		API_VERSION
@@ -32,8 +33,8 @@ WANTLIB += gailutil-3 gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 gtk-3 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += stdc++ xcb xcb-render xcb-shm z ffi
-WANTLIB += ICE SM atk-bridge-2.0 atspi dbus-1 harfbuzz icudata
-WANTLIB += icule icuuc graphite2
+WANTLIB += ICE SM atk-bridge-2.0 atspi dbus-1 harfbuzz
+WANTLIB += graphite2
 
 MODULES=		devel/gettext \
 			x11/gnome

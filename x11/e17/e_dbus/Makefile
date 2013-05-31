@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2013/05/09 17:03:55 rpe Exp $
+# $OpenBSD: Makefile,v 1.20 2013/05/31 15:34:58 ajacoutot Exp $
 
 COMMENT =		enlightenment DBus component
 
 DISTNAME =		e_dbus-1.7.6
 EPOCH = 		1
+REVISION =		0
 
 SO_VERSION =		4.0	# 8.6
 .for _lib in edbus enotify econnman0_7x ehal eofono ebluez eukit
@@ -18,7 +19,7 @@ WANTLIB += Xrandr Xrender Xss Xtst c cares crypto curl dbus-1
 WANTLIB += ecore ecore_con ecore_evas ecore_input ecore_input_evas
 WANTLIB += ecore_ipc ecore_x eet eina evas expat ffi fontconfig
 WANTLIB += freetype fribidi glib-2.0 gobject-2.0 graphite2 harfbuzz
-WANTLIB += icudata icule icuuc idn jpeg m pcre pthread pthread-stubs
+WANTLIB += idn jpeg m pcre pthread pthread-stubs
 WANTLIB += ssl xcb z
 
 MODULES =		devel/gettext

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/21 08:46:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2013/05/31 15:34:53 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -9,6 +9,9 @@ V =			1.0.0
 DISTNAME =		ogmrip-$V
 PKGNAME-main =		ogmrip-$V
 PKGNAME-dvdcpy =	dvdcpy-$V
+
+REVISION-main=		0
+REVISION-dvdcpy=	0
 
 SHARED_LIBS +=  ogmdvd-gtk                0.0 # 1.0
 SHARED_LIBS +=  ogmdvd                    0.0 # 1.0
@@ -37,7 +40,7 @@ WANTLIB-main += glade-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB-main += gtk-x11-2.0 jpeg m notify ogg pango-1.0 pangocairo-1.0
 WANTLIB-main += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB-main += stdc++ theora tiff xcb xcb-render xcb-shm xml2 z
-WANTLIB-main += harfbuzz icudata icule icuuc dvdcss graphite2
+WANTLIB-main += harfbuzz dvdcss graphite2
 
 WANTLIB-dvdcpy += c dvdread dvdcss
 

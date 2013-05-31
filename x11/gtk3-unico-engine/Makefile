@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/21 08:48:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2013/05/31 15:35:13 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,6 +7,7 @@ COMMENT=	Unico GTK+3 engine
 V=		1.0.2.1
 DISTNAME=	unico-${V}
 PKGNAME=	gtk3-unico-engine-${V}
+REVISION=	0
 
 CATEGORIES=	x11
 
@@ -20,7 +21,7 @@ WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
 WANTLIB += atk-bridge-2.0 atspi cairo cairo-gobject dbus-1 drm
 WANTLIB += expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += gtk-3 harfbuzz icudata icule icuuc m pango-1.0 pangocairo-1.0
+WANTLIB += gtk-3 harfbuzz m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += stdc++ xcb xcb-render xcb-shm z
 

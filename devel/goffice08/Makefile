@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:04 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/05/31 15:34:42 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ GNOME_PROJECT=	goffice
 GNOME_VERSION=	0.8.17
 EXTRACT_SUFX=	.tar.bz2
 PKGNAME=	goffice08-${GNOME_VERSION}
+REVISION=	0
 
 SHARED_LIBS +=	goffice-0.8          0.0      # .8.0
 
@@ -24,7 +25,7 @@ WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 bz2 cairo
 WANTLIB += dbus-1 dbus-glib-1 drm expat ffi fontconfig freetype
 WANTLIB += gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gsf-1 gthread-2.0 gtk-x11-2.0
-WANTLIB += icudata icule icuuc m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs stdc++ xcb
 WANTLIB += xcb-render xcb-shm xml2 z harfbuzz
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/11 11:46:18 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2013/05/31 15:35:24 ajacoutot Exp $
 
 COMMENT=	Xfce4 WindowMaker dockapps wrapper panel plugin
 
 XFCE_VERSION=	0.2.0
 XFCE_PLUGIN=	wmdock
-REVISION=	12
+REVISION=	13
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -24,6 +24,6 @@ WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += startup-notification-1 wnck-1 xcb xcb-aux xcb-render
 WANTLIB += xcb-shm xfce4util xfcegui4 z stdc++
-WANTLIB += harfbuzz icudata icule icuuc
+WANTLIB += harfbuzz
 
 .include <bsd.port.mk>

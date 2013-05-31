@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2013/03/11 11:46:17 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2013/05/31 15:35:17 ajacoutot Exp $
 
 COMMENT=	Xfce4 notification daemon
 
 XFCE_VERSION=	0.3.7
 XFCE_GOODIE=	notification-daemon-xfce
-REVISION=	20
+REVISION=	21
 
 MASTER_SITES=	http://archive.xfce.org/src/archive/${XFCE_GOODIE}/${XFCE_BRANCH}/
 # GPLv2
@@ -28,6 +28,6 @@ WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		pixman-1 png pthread startup-notification-1 xfce4util xml2 z \
 		pthread-stubs xcb xcb-aux stdc++ \
 		gthread-2.0 xcb-render GL Xxf86vm drm xcb-shm xfcegui4 sexy \
-		X11-xcb ffi notify harfbuzz icudata icule icuuc
+		X11-xcb ffi notify harfbuzz
 
 .include <bsd.port.mk>

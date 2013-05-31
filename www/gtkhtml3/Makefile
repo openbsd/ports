@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2013/04/02 16:16:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2013/05/31 15:34:56 ajacoutot Exp $
 
 # XXX fix building with glib2 >= 2.29 (G_CONST_RETURN is deprecated)
 CFLAGS +=	"-DG_CONST_RETURN=const"
@@ -14,7 +14,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 PKGNAME=		gtkhtml3-${VERSION}
 
-REVISION=		5
+REVISION=		6
 
 HOMEPAGE=		http://www.gnome.org/
 
@@ -33,8 +33,8 @@ WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo dbus-1 dbus-glib-1 enchant
 WANTLIB += expat ffi fontconfig freetype gailutil gconf-2 gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz icudata
-WANTLIB += icule icuuc m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs stdc++ xcb
 WANTLIB += xcb-render xcb-shm z
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.40 2013/04/08 22:28:04 fgsch Exp $
+# $OpenBSD: Makefile,v 1.41 2013/05/31 15:34:41 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	small and lightweight IDE
 
 DISTNAME =	geany-1.23
+REVISION =	0
 
 CATEGORIES=	devel
 
@@ -28,7 +29,7 @@ WANTLIB =	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama \
 		Xrandr Xrender atk-1.0 c cairo expat ffi fontconfig \
 		freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
 		gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0 \
-		harfbuzz icudata icule icuuc m pango-1.0 pangocairo-1.0 \
+		harfbuzz m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs \
 		stdc++ xcb xcb-render xcb-shm z
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2013/05/22 12:45:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2013/05/31 15:35:10 ajacoutot Exp $
 
 # XXX when fixed, add x11/gnome/system-monitor to meta/gnome,-main
 BROKEN=		runtime breakage, our libgtop2 does not implement procopenfiles
@@ -7,6 +7,7 @@ COMMENT=	sytem monitor for GNOME
 
 GNOME_PROJECT=	gnome-system-monitor
 GNOME_VERSION=	3.8.2.1
+REVISION=	0
 
 CATEGORIES=	sysutils
 
@@ -19,7 +20,7 @@ WANTLIB += atkmm-1.6 atspi c cairo cairo-gobject cairomm-1.0 croco-0.6
 WANTLIB += dbus-1 expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
 WANTLIB += gdkmm-3.0 gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 gtkmm-3.0 gtop-2.0
-WANTLIB += harfbuzz icudata icule icuuc kvm m pango-1.0 pangocairo-1.0
+WANTLIB += harfbuzz kvm m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pangomm-1.4 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs rsvg-2 sigc-2.0 startup-notification-1
 WANTLIB += stdc++ wnck-3 xcb xcb-aux xcb-render xcb-shm xml2 z

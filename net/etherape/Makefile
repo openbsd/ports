@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2013/05/08 08:31:29 benoit Exp $
+# $OpenBSD: Makefile,v 1.32 2013/05/31 15:34:53 ajacoutot Exp $
 
 COMMENT =		graphical network monitor
 
 DISTNAME =		etherape-0.9.13
 CATEGORIES =		net
+REVISION =		0
 
 HOMEPAGE =		http://etherape.sourceforge.net/
 
@@ -24,7 +25,7 @@ WANTLIB += pcap pcre pixman-1 png popt pthread pthread-stubs ssl
 WANTLIB += util xcb xml2 z gnomeui-2 glade-2.0 gtk-x11-2.0
 WANTLIB += gailutil gdk-x11-2.0 gdk_pixbuf-2.0 xcb-shm
 WANTLIB += gcrypt gpg-error xcb-render ltdl ogg vorbis vorbisfile
-WANTLIB += ffi harfbuzz icudata icule icuuc graphite2
+WANTLIB += ffi harfbuzz graphite2
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=etherape/}
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 11:46:18 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2013/05/31 15:35:20 ajacoutot Exp $
 
 COMMENT=	Xfce4 generic scriptable monitor panel plugin
 
 XFCE_VERSION=	3.4.0
 XFCE_PLUGIN=	genmon
-REVISION =	0
+REVISION =	1
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,6 +20,6 @@ WANTLIB += pangoft2-1.0 pixman-1 png pthread-stubs xcb
 WANTLIB += xcb-render xcb-shm xfce4util z
 WANTLIB += ICE SM X11-xcb Xau Xdmcp Xxf86vm drm ffi gthread-2.0
 WANTLIB += pcre startup-notification-1 stdc++ xcb-aux xfce4ui-1
-WANTLIB += harfbuzz icudata icule icuuc pthread
+WANTLIB += harfbuzz pthread
 
 .include <bsd.port.mk>

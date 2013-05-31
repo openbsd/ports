@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.83 2013/04/27 11:32:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.84 2013/05/31 15:34:51 ajacoutot Exp $
 
 COMMENT=		spreadsheet application for GNOME
 
 GNOME_PROJECT=		gnumeric
 GNOME_VERSION=		1.12.2
+REVISION=		0
 
 CATEGORIES=    		math
 
@@ -26,8 +27,8 @@ WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB += avahi-common bz2 c cairo cairo-gobject croco-0.6 dbus-1
 WANTLIB += expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 goffice-0.10
-WANTLIB += graphite2 gs gsf-1 gthread-2.0 gtk-3 harfbuzz icudata
-WANTLIB += icule icuuc jpeg lasem-0.4 m pango-1.0 pangocairo-1.0
+WANTLIB += graphite2 gs gsf-1 gthread-2.0 gtk-3 harfbuzz
+WANTLIB += jpeg lasem-0.4 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre perl pixman-1 png pthread pthread-stubs
 WANTLIB += rsvg-2 spectre util xcb xcb-render xcb-shm xml2 z
 

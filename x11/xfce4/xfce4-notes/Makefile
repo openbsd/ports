@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2013/03/11 11:46:18 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2013/05/31 15:35:21 ajacoutot Exp $
 
 COMMENT=	Xfce4 sticky notes panel plugin
 
 XFCE_VERSION=	1.7.7
 XFCE_PLUGIN=	notes
-REVISION=	5
+REVISION=	6
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -27,6 +27,6 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs startup-notification-1 unique-1.0 xcb
 WANTLIB += xcb-aux xcb-render xcb-shm xfce4util xfcegui4 xfconf-0
 WANTLIB += stdc++ z
-WANTLIB += harfbuzz icudata icule icuuc
+WANTLIB += harfbuzz
 
 .include <bsd.port.mk>

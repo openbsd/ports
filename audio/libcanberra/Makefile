@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2013/03/21 08:45:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2013/05/31 15:34:40 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -13,6 +13,10 @@ EXTRACT_SUFX=	.tar.xz
 PKGNAME-main=	${DISTNAME}
 PKGNAME-gtk=	libcanberra-gtk-${V}
 PKGNAME-gtk3=	libcanberra-gtk3-${V}
+
+REVISION-main=	0
+REVISION-gtk=	0
+REVISION-gtk3=	0
 
 SHARED_LIBS +=  canberra             2.0      # 2.5
 SHARED_LIBS +=  canberra-gtk3        1.8      # 1.8
@@ -40,7 +44,7 @@ WANTLIB-gtk += drm expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB-gtk += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB-gtk += gtk-x11-2.0 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB-gtk += pixman-1 png pthread-stubs xcb xcb-render xcb-shm z stdc++
-WANTLIB-gtk += harfbuzz icudata icule icuuc
+WANTLIB-gtk += harfbuzz
 
 WANTLIB-gtk3 += ${cWANTLIB} ${MODGETTEXT_WANTLIB}
 WANTLIB-gtk3 += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
@@ -49,8 +53,8 @@ WANTLIB-gtk3 += cairo-gobject canberra drm expat ffi fontconfig freetype
 WANTLIB-gtk3 += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB-gtk3 += gthread-2.0 gtk-3 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-gtk3 += pcre pixman-1 png pthread-stubs xcb xcb-render
-WANTLIB-gtk3 += xcb-shm z stdc++ icule icuuc
-WANTLIB-gtk3 += ICE SM atk-bridge-2.0 atspi dbus-1 harfbuzz icudata
+WANTLIB-gtk3 += xcb-shm z stdc++
+WANTLIB-gtk3 += ICE SM atk-bridge-2.0 atspi dbus-1 harfbuzz
 
 MODULES=		devel/gettext
 

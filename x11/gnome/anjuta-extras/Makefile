@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/03/30 11:16:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2013/05/31 15:34:59 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	extra plugins for Anjuta IDE
 
 GNOME_PROJECT=	anjuta-extras
 GNOME_VERSION=	3.8.0
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -19,7 +20,7 @@ WANTLIB += Xinerama Xrandr Xrender anjuta-3 atk-1.0 atk-bridge-2.0
 WANTLIB += atspi cairo cairo-gobject dbus-1 expat ffi fontconfig
 WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gdl-3 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
-WANTLIB += harfbuzz icudata icule icuuc m pango-1.0 pangocairo-1.0
+WANTLIB += harfbuzz m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += stdc++ util xcb xcb-render xcb-shm xml2 z
 

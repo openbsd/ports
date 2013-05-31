@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.52 2013/03/11 11:46:18 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2013/05/31 15:35:21 ajacoutot Exp $
 
 COMMENT=	Xfce4 desktop panel
 
 XFCE_PROJECT=	xfce4-panel
 SHARED_LIBS=	xfce4panel-1.0	1.0	# 4.0
-REVISION=	2
+REVISION=	3
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -30,7 +30,7 @@ WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs startup-notification-1
 WANTLIB += wnck-1 xcb xcb-aux xcb-render xcb-shm xfce4ui-1 xfce4util
 WANTLIB += xfconf-0 z stdc++
-WANTLIB += harfbuzz icudata icule icuuc
+WANTLIB += harfbuzz
 
 FAKE_FLAGS=	confdir=${PREFIX}/share/examples/xfce4-panel
 

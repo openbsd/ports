@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2013/03/11 11:46:18 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2013/05/31 15:35:19 ajacoutot Exp $
 
 COMMENT=	Xfce4 clipboard history panel plugin
 
 XFCE_VERSION=	1.2.3
 XFCE_PLUGIN=	clipman
-REVISION=	1
+REVISION=	2
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -30,7 +30,7 @@ WANTLIB =	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		xfce4util z pthread-stubs xcb Xtst stdc++ xfce4ui-1 \
 		X11-xcb ffi xcb-aux xfconf-0 unique-1.0 \
 		gthread-2.0 xcb-render GL Xxf86vm drm xcb-shm \
-		harfbuzz icudata icule icuuc
+		harfbuzz
 
 
 

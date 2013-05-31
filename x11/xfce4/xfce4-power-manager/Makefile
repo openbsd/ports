@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/30 14:53:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2013/05/31 15:35:22 ajacoutot Exp $
 
 COMMENT =	Xfce4 power manager
 
 XFCE_VERSION =	1.2.0
 XFCE_GOODIE =	xfce4-power-manager
-REVISION =	2
+REVISION =	3
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -36,6 +36,6 @@ WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs startup-notification-1 xcb
 WANTLIB += xcb-aux xcb-render xcb-shm xfce4panel-1.0 xfce4ui-1
 WANTLIB += xfce4util xfconf-0 z stdc++
-WANTLIB += harfbuzz icudata icule icuuc
+WANTLIB += harfbuzz
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/05/22 11:02:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2013/05/31 15:34:44 ajacoutot Exp $
 
 COMMENT=	French and Italian conjugation system
 
@@ -6,6 +6,7 @@ DISTNAME=	verbiste-0.1.37
 SHARED_LIBS=	verbiste-0.1	5.0	# .0.0
 CATEGORIES=	education
 HOMEPAGE=	http://sarrazip.com/dev/verbiste.html
+REVISION=	0
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -24,7 +25,7 @@ WANTLIB=	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama \
 		Xrandr Xrender atk-1.0 c cairo expat ffi fontconfig \
 		freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
 		gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0 \
-		harfbuzz icudata icule icuuc m pango-1.0 pangocairo-1.0 \
+		harfbuzz m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs \
 		stdc++ xcb xcb-render xcb-shm xml2 z
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/21 08:48:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2013/05/31 15:34:57 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,7 +6,7 @@ COMMENT =	OpenGL window and compositing manager
 
 V =		0.8.2
 DISTNAME =	compiz-${V}
-REVISION=	15
+REVISION=	16
 
 SHARED_LIBS =	decoration	0.0
 
@@ -25,7 +25,7 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs startup-notification-1
 WANTLIB += wnck-1 xcb xcb-aux xcb-render xcb-shm xml2 xslt z
-WANTLIB += harfbuzz icudata icule icuuc stdc++
+WANTLIB += harfbuzz stdc++
 
 MASTER_SITES =	http://releases.compiz.org/${V}/
 

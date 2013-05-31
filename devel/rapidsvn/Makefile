@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/21 08:45:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2013/05/31 15:34:43 ajacoutot Exp $
 
 # XXX doesn't build if already installed
 COMMENT=	graphical subversion client
@@ -6,6 +6,7 @@ COMMENT=	graphical subversion client
 VERSION=	0.12.1
 DISTNAME=	rapidsvn-${VERSION}
 CATEGORIES=	devel
+REVISION=	0
 
 HOMEPAGE=	http://www.rapidsvn.org/
 
@@ -25,7 +26,7 @@ WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm apr-1 aprutil-1
 WANTLIB += asn1 atk-1.0 c cairo crypto db expat ffi fontconfig
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gssapi gthread-2.0 gtk-x11-2.0
-WANTLIB += harfbuzz icudata icule icuuc iodbc jpeg krb5 m magic mspack
+WANTLIB += harfbuzz iodbc jpeg krb5 m magic mspack
 WANTLIB += neon pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png proxy pthread pthread-stubs sasl2 sndio sqlite3
 WANTLIB += ssl stdc++ svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1

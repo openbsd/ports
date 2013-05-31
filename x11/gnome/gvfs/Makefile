@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2013/05/14 16:51:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.94 2013/05/31 15:35:25 ajacoutot Exp $
 
 COMMENT-main=	GNOME Virtual File System
 COMMENT-smb=	GVFS mount module for samba
@@ -6,6 +6,10 @@ COMMENT-goa=	GVFS volume monitor for gnome-online-account
 
 GNOME_PROJECT=	gvfs
 GNOME_VERSION=	1.16.2
+
+REVISION-main=	0
+REVISION-smb=	0
+REVISION-goa=	0
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-smb=	${GNOME_PROJECT}-smb-${GNOME_VERSION}
@@ -29,7 +33,7 @@ WANTLIB-main += Xext Xfixes Xi Xinerama Xrandr Xrender graphite2 xml2
 WANTLIB-main += atk-1.0 atk-bridge-2.0 atspi avahi-client avahi-common
 WANTLIB-main += avahi-glib bz2 cairo cairo-gobject dbus-1 expat
 WANTLIB-main += fontconfig freetype gdk-3 gdk_pixbuf-2.0 xml2 archive
-WANTLIB-main += gtk-3 harfbuzz icudata icule icuuc lzma m pango-1.0
+WANTLIB-main += gtk-3 harfbuzz lzma m pango-1.0
 WANTLIB-main += pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread-stubs
 WANTLIB-main += soup-2.4 soup-gnome-2.4 sqlite3 gthread-2.0 xcb xcb-render
 WANTLIB-main += gcrypt gpg-error secret-1

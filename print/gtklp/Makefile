@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/21 08:46:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2013/05/31 15:34:54 ajacoutot Exp $
 
 COMMENT=	GTK+2 frontend to CUPS
 
 DISTNAME=	gtklp-1.3.0
 CATEGORIES=	print sysutils x11
+REVISION=	0
 
 EXTRACT_SUFX=	.src.tar.gz
 
@@ -19,7 +20,7 @@ WANTLIB += Xi Xinerama Xrandr Xrender asn1 atk-1.0 avahi-client
 WANTLIB += avahi-common c cairo crypto cups dbus-1 expat ffi
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gssapi gthread-2.0
-WANTLIB += gtk-x11-2.0 harfbuzz icudata icule icuuc krb5 m pango-1.0
+WANTLIB += gtk-x11-2.0 harfbuzz krb5 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs ssl xcb xcb-render xcb-shm z
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2013/05/14 10:03:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2013/05/31 15:35:00 ajacoutot Exp $
 
 COMMENT=		clock application for GNOME
 
 GNOME_PROJECT=		gnome-clocks
 GNOME_VERSION=		3.8.2
+REVISION=		0
 
 HOMEPAGE=		https://live.gnome.org/GnomeClocks
 
@@ -15,7 +16,7 @@ WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB += c cairo cairo-gobject canberra dbus-1 expat ffi fontconfig
 WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gnome-desktop-3 gobject-2.0 graphite2 gthread-2.0 gtk-3
-WANTLIB += gweather-3 harfbuzz icudata icule icuuc ltdl m notify
+WANTLIB += gweather-3 harfbuzz ltdl m notify
 WANTLIB += ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs soup-2.4 sqlite3 vorbis vorbisfile
 WANTLIB += xcb xcb-render xcb-shm xkbfile xml2 z

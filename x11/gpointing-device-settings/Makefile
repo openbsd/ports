@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/04/28 08:18:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2013/05/31 15:35:12 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -7,7 +7,7 @@ COMMENT =		tool for setting pointing devices
 DISTNAME =		gpointing-device-settings-1.5.1
 CATEGORIES =		x11 sysutils
 
-REVISION =		5
+REVISION =		6
 
 SHARED_LIBS +=  gpds                      0.0 # 1.0
 
@@ -20,7 +20,7 @@ WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo dbus-1 dbus-glib-1 expat
 WANTLIB += ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz icudata icule icuuc
+WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs xcb xcb-render xcb-shm z
 

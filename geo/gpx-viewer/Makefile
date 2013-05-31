@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2013/03/30 23:14:07 landry Exp $
+# $OpenBSD: Makefile,v 1.26 2013/05/31 15:34:46 ajacoutot Exp $
 
 COMMENT =	gpx file viewer
 
 VERSION =	0.3.0
 DISTNAME =	gpx-viewer-${VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	geo x11
 
@@ -43,7 +43,6 @@ WANTLIB += gthread-2.0 json-glib-1.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs soup-2.4 soup-gnome-2.4 sqlite3
 WANTLIB += xcb xcb-render xcb-shm xml2 z ffi
-WANTLIB += ICE SM atk-bridge-2.0 atspi graphite2 harfbuzz icudata
-WANTLIB += icule icuuc 
+WANTLIB += ICE SM atk-bridge-2.0 atspi graphite2 harfbuzz
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/05/29 21:50:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2013/05/31 15:34:44 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		terminal emulation library
 
 GNOME_PROJECT=		vte
 GNOME_VERSION=		0.34.5
-REVISION=		0
+REVISION=		1
 
 PKGNAME=		vte3-${GNOME_VERSION}
 
@@ -29,8 +29,8 @@ WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB += c cairo cairo-gobject dbus-1 expat ffi fontconfig freetype
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz icudata icule
-WANTLIB += icuuc m ncurses pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz
+WANTLIB += m ncurses pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs util xcb xcb-render
 WANTLIB += xcb-shm z
 
