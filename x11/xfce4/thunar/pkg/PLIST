@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2013/01/02 18:28:22 landry Exp $
+@comment $OpenBSD: PLIST,v 1.22 2013/05/31 19:23:10 landry Exp $
 @conflict xffm-*
 bin/Thunar
 @bin bin/thunar
@@ -93,6 +93,7 @@ share/locale/am/LC_MESSAGES/Thunar.mo
 share/locale/ar/LC_MESSAGES/Thunar.mo
 share/locale/ast/LC_MESSAGES/Thunar.mo
 share/locale/be/LC_MESSAGES/Thunar.mo
+share/locale/bg/LC_MESSAGES/Thunar.mo
 share/locale/bn/LC_MESSAGES/Thunar.mo
 share/locale/ca/LC_MESSAGES/Thunar.mo
 share/locale/cs/LC_MESSAGES/Thunar.mo
@@ -129,6 +130,7 @@ share/locale/ro/LC_MESSAGES/Thunar.mo
 share/locale/ru/LC_MESSAGES/Thunar.mo
 share/locale/si/LC_MESSAGES/Thunar.mo
 share/locale/sk/LC_MESSAGES/Thunar.mo
+share/locale/sl/LC_MESSAGES/Thunar.mo
 share/locale/sq/LC_MESSAGES/Thunar.mo
 share/locale/sr/LC_MESSAGES/Thunar.mo
 share/locale/sv/LC_MESSAGES/Thunar.mo
