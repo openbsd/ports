@@ -1,17 +1,22 @@
-$OpenBSD: patch-testrunner_SConstruct,v 1.1 2012/08/13 06:38:00 bentley Exp $
---- testrunner/SConstruct.orig	Sat Jul 23 11:02:32 2011
-+++ testrunner/SConstruct	Fri Aug  3 00:33:05 2012
-@@ -2,9 +2,11 @@ global_cflags = ARGUMENTS.get('CFLAGS', '-Wall -Wextra
+$OpenBSD: patch-testrunner_SConstruct,v 1.2 2013/05/31 15:34:56 bentley Exp $
+--- testrunner/SConstruct.orig	Sun May 12 06:51:24 2013
++++ testrunner/SConstruct	Thu May 30 23:21:43 2013
+@@ -1,11 +1,16 @@
+ global_cflags = ARGUMENTS.get('CFLAGS', '-Wall -Wextra -O2 -g')
  global_cxxflags = ARGUMENTS.get('CXXFLAGS', global_cflags + ' -fno-exceptions -fno-rtti')
  global_defines = ' -DHAVE_STDINT_H'
++vars = Variables()
++vars.Add('CC')
++vars.Add('CXX')
  
 -env = Environment(CPPPATH = ['.', '../libgambatte/include'],
 +env = Environment(CPPPATH = ['.', '../libgambatte/include', '${LOCALBASE}/include/libpng'],
                    CFLAGS = global_cflags + global_defines,
--                  CXXFLAGS = global_cxxflags + global_defines)
-+                  CXXFLAGS = global_cxxflags + global_defines,
+                   CXXFLAGS = global_cxxflags + global_defines,
+-                  LIBS = 'm')
 +                  LIBPATH = '${LOCALBASE}/lib',
-+                  LIBS = 'm')
++                  LIBS = 'm',
++                  variables = vars)
  
  sourceFiles = Split('''
  			testrunner.cpp

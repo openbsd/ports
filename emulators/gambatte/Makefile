@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:06:04 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/05/31 15:34:55 bentley Exp $
 
 COMMENT =		highly accurate Game Boy Color emulator
 
-V =			0.5.0
-DISTNAME =		gambatte_src-${V}-wip2v2
-PKGNAME =		gambatte-${V}-beta3
+REV =			532
+DISTNAME =		gambatte_src-r${REV}
+PKGNAME =		gambatte-0.5.0.${REV}
 
 CATEGORIES =		emulators
 
@@ -36,8 +36,6 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/gambatte_sdl/gambatte_sdl ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKDIST}/gambatte_sdl/man/gambatte_sdl.6 \
-		${PREFIX}/man/man6
 
 do-test:
 	${SETENV} ${MAKE_ENV} ${MODSCONS_BIN} -C ${WRKDIST}/testrunner \

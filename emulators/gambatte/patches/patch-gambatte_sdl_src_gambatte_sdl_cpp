@@ -1,0 +1,12 @@
+$OpenBSD: patch-gambatte_sdl_src_gambatte_sdl_cpp,v 1.1 2013/05/31 15:34:56 bentley Exp $
+--- gambatte_sdl/src/gambatte_sdl.cpp.orig	Thu May 30 13:44:21 2013
++++ gambatte_sdl/src/gambatte_sdl.cpp	Thu May 30 13:44:22 2013
+@@ -804,7 +804,7 @@ int GambatteSdl::run(long const sampleRate, int const 
+ 			return 0;
+ 
+ 		BlitterWrapper::Buf const &vbuf = blitter.inBuf();
+-		std::size_t runsamples = gb_samples_per_frame - bufsamples;
++		unsigned runsamples = gb_samples_per_frame - bufsamples;
+ 		std::ptrdiff_t const vidFrameDoneSampleCnt = gambatte.runFor(
+ 			vbuf.pixels, vbuf.pitch, audioBuf + bufsamples, runsamples);
+ 		std::size_t const outsamples = vidFrameDoneSampleCnt >= 0

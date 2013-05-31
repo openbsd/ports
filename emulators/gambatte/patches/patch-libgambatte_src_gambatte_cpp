@@ -1,0 +1,12 @@
+$OpenBSD: patch-libgambatte_src_gambatte_cpp,v 1.1 2013/05/31 15:34:56 bentley Exp $
+--- libgambatte/src/gambatte.cpp.orig	Thu May 30 13:41:10 2013
++++ libgambatte/src/gambatte.cpp	Thu May 30 13:41:15 2013
+@@ -55,7 +55,7 @@ GB::~GB() {
+ }
+ 
+ std::ptrdiff_t GB::runFor(gambatte::uint_least32_t *const videoBuf, std::ptrdiff_t const pitch,
+-                          gambatte::uint_least32_t *const soundBuf, std::size_t &samples) {
++                          gambatte::uint_least32_t *const soundBuf, unsigned &samples) {
+ 	if (!p_->cpu.loaded()) {
+ 		samples = 0;
+ 		return -1;

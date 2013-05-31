@@ -1,0 +1,12 @@
+$OpenBSD: patch-libgambatte_include_gambatte_h,v 1.1 2013/05/31 15:34:56 bentley Exp $
+--- libgambatte/include/gambatte.h.orig	Thu May 30 13:33:56 2013
++++ libgambatte/include/gambatte.h	Thu May 30 13:34:01 2013
+@@ -81,7 +81,7 @@ class GB { (public)
+ 	  *         if no new video frame was completed.
+ 	  */
+ 	std::ptrdiff_t runFor(gambatte::uint_least32_t *videoBuf, std::ptrdiff_t pitch,
+-	                      gambatte::uint_least32_t *audioBuf, std::size_t &samples);
++	                      gambatte::uint_least32_t *audioBuf, unsigned &samples);
+ 
+ 	/**
+ 	  * Reset to initial state.
