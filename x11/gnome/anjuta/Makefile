@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2013/05/31 21:37:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.91 2013/05/31 21:38:40 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -71,7 +71,6 @@ MODGNOME_TOOLS= 	gi yelp vala
 YACC=			bison -y
 
 CONFIGURE_ARGS+=	--disable-static \
-			--enable-plugin-subversion \
 			--with-symbol-db-shm=/tmp
 
 # XXX: needed because of patch-m4_intltool_m4
