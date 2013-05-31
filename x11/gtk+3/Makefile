@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2013/05/13 13:48:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.77 2013/05/31 15:29:41 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -10,6 +10,9 @@ GNOME_PROJECT=		gtk+
 
 PKGNAME-main=		gtk+3-${GNOME_VERSION}
 PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
+
+REVISION-main=		0
+REVISION-cups=		0
 
 CATEGORIES=		x11 devel
 
@@ -29,7 +32,7 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo cairo-gobject
 WANTLIB += expat ffi fontconfig freetype gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs
-WANTLIB += ICE SM dbus-1 harfbuzz icudata icule icuuc pthread
+WANTLIB += ICE SM dbus-1 harfbuzz pthread
 WANTLIB += xcb xcb-render xcb-shm z atk-bridge-2.0 atspi
 
 MULTI_PACKAGES=		-main -cups

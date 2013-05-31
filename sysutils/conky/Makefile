@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2013/03/21 08:48:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2013/05/31 15:29:41 ajacoutot Exp $
 
 ONLY_FOR_ARCHS= ${APM_ARCHS}
 
@@ -7,6 +7,7 @@ COMMENT=	light-weight system monitor
 DISTNAME=	conky-1.9.0
 CATEGORIES=	sysutils
 HOMEPAGE=	http://conky.sourceforge.net/
+REVISION=	0
 
 MAINTAINER=	Benoit Lecocq <benoit@openbsd.org>
 
@@ -16,7 +17,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=conky/}
 PERMIT_PACKAGE_CDROM=   Yes
 
 WANTLIB=	c crypto kvm idn m ncurses ossaudio pthread ssl z \
-		glib-2.0 pcre curl xml2 ${MODLUA_WANTLIB}
+		glib-2.0 pcre curl xml2 pthread-stubs ${MODLUA_WANTLIB}
 
 MODULES=	devel/gettext \
 		lang/lua
@@ -57,7 +58,7 @@ WANTLIB +=	GL ICE Xau Xcomposite Xcursor Xdmcp Xi Xinerama \
 		audclient audcore audgui cairo cairo-gobject \
 		dbus-1 dbus-glib-1 drm ffi gdk-3 gdk_pixbuf-2.0 \
 		gio-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
-		gtk-3 harfbuzz icudata icule icuuc pango-1.0 \
+		gtk-3 harfbuzz pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pixman-1 png \
 		pthread-stubs SM stdc++ xcb-render xcb-shm
 .endif

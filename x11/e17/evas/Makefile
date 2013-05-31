@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2013/05/11 12:10:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2013/05/31 15:29:41 ajacoutot Exp $
 
 COMMENT =		canvas API for X
 
 VERSION = 		1.7.6
 DISTNAME =		evas-${VERSION}.1
 EPOCH =			2
+REVISION =		0
 
 SHARED_LIBS +=	evas                 3.0      # 8.6
 
@@ -13,8 +14,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += GL X11 Xdamage Xext Xfixes Xrender Xxf86vm crypto drm
 WANTLIB += eet eina expat ffi fontconfig freetype fribidi gif
-WANTLIB += glib-2.0 gobject-2.0 graphite2 harfbuzz icudata icule
-WANTLIB += icuuc jpeg m pcre png pthread pthread-stubs ssl stdc++
+WANTLIB += glib-2.0 gobject-2.0 graphite2 harfbuzz
+WANTLIB += jpeg m pcre png pthread pthread-stubs ssl stdc++
 WANTLIB += tiff xcb z
 
 MODULES=		devel/gettext \
