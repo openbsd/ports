@@ -1,7 +1,9 @@
-$OpenBSD: patch-src__gtkagg_cpp,v 1.3 2009/01/19 07:10:28 djm Exp $
---- src/_gtkagg.cpp.orig	Wed Dec 17 04:55:17 2008
-+++ src/_gtkagg.cpp	Mon Jan 19 16:44:05 2009
-@@ -1,5 +1,5 @@
+$OpenBSD: patch-src__gtkagg_cpp,v 1.4 2013/05/31 12:29:41 edd Exp $
+--- src/_gtkagg.cpp.orig	Tue Mar 26 13:04:37 2013
++++ src/_gtkagg.cpp	Thu Apr 18 20:42:27 2013
+@@ -2,7 +2,7 @@
+ /* -*- mode: c++; c-basic-offset: 4 -*- */
+ 
  #include <pygobject.h>
 -#include <pygtk/pygtk.h>
 +#include <pygtk-2.0/pygtk/pygtk.h>
