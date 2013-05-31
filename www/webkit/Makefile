@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2013/05/14 12:04:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.86 2013/05/31 20:07:33 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -11,6 +11,7 @@ EPOCH =		0
 CATEGORIES =	www
 DPB_PROPERTIES =parallel
 EXTRACT_SUFX=	.tar.xz
+REVISION =	0
 
 HOMEPAGE =	http://webkitgtk.org/
 MASTER_SITES =	${HOMEPAGE}/releases/
@@ -79,18 +80,18 @@ MODRUBY_REV =	1.8
 WANTLIB =	ICE SM X11 Xcomposite Xcursor Xdamage Xext \
 		Xfixes Xi Xinerama Xrandr Xrender Xt atk-1.0 c xcb-render \
 		expat fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0 \
-		gobject-2.0 gthread-2.0 jpeg m \
+		gobject-2.0 gthread-2.0 jpeg m harfbuzz-icu \
 		Xxf86vm dbus-1 dbus-glib-1 drm geoclue \
 		gstaudio-1.0 gstfft-1.0 gdk_pixbuf-2.0 orc-0.4 \
 		gstreamer-1.0 gstbase-1.0 gstvideo-1.0 gstapp-1.0 gstpbutils-1.0 \
 		icudata icui18n icuuc sqlite3 xslt enchant soup-2.4 \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pthread GL xcb-shm \
 		z cairo pixman-1 png pthread-stubs xcb xml2 stdc++ ffi \
-		harfbuzz icule graphite2 gcrypt gpg-error gsttag-1.0 secret-1 webp
+		harfbuzz graphite2 gcrypt gpg-error gsttag-1.0 secret-1 webp
 
 LIB_DEPENDS =	multimedia/gstreamer1/core \
 		multimedia/gstreamer1/plugins-base \
-		textproc/icu4c>=4.4 \
+		devel/harfbuzz,-icu \
 		textproc/libxslt \
 		textproc/enchant \
 		geo/geoclue \
