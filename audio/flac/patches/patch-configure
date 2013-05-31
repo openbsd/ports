@@ -1,21 +1,12 @@
-$OpenBSD: patch-configure,v 1.12 2007/09/24 17:23:55 naddy Exp $
---- configure.orig	Tue Sep 18 22:24:27 2007
-+++ configure	Tue Sep 18 22:25:47 2007
-@@ -23490,7 +23490,7 @@ else
+$OpenBSD: patch-configure,v 1.13 2013/05/31 14:34:27 naddy Exp $
+--- configure.orig	Mon May 27 04:11:54 2013
++++ configure	Wed May 29 16:41:05 2013
+@@ -19807,7 +19807,7 @@ else
  	CPPFLAGS="-DNDEBUG $CPPFLAGS"
  	if test "x$GCC" = xyes; then
- 		CPPFLAGS="-DFLaC__INLINE=__inline__ $CPPFLAGS"
--		CFLAGS="-O3 -funroll-loops -finline-functions -Wall -W -Winline $CFLAGS"
-+		CFLAGS="-Wall -W $CFLAGS"
+ 		if test "x$user_cflags" = x; then
+-			CFLAGS="-O3 -funroll-loops -Wall -W -Winline"
++			CFLAGS="-Wall -W $CFLAGS"
+ 		fi
  	fi
  fi
- 
-@@ -24514,7 +24514,7 @@ s,@OGG_CFLAGS@,$OGG_CFLAGS,;t t
- s,@OGG_LIBS@,$OGG_LIBS,;t t
- s,@FLaC__HAS_OGG_TRUE@,$FLaC__HAS_OGG_TRUE,;t t
- s,@FLaC__HAS_OGG_FALSE@,$FLaC__HAS_OGG_FALSE,;t t
--s,@LIBICONV@,$LIBICONV,;t t
-+s,@LIBICONV@,$LTLIBICONV,;t t
- s,@LTLIBICONV@,$LTLIBICONV,;t t
- s,@DOCBOOK_TO_MAN@,$DOCBOOK_TO_MAN,;t t
- s,@FLaC__HAS_DOCBOOK_TO_MAN_TRUE@,$FLaC__HAS_DOCBOOK_TO_MAN_TRUE,;t t
