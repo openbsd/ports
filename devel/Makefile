@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1134 2013/05/31 21:40:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.1135 2013/05/31 21:41:34 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1120,7 +1120,7 @@
      SUBDIR += py-greenlet
      SUBDIR += py-guppy
      SUBDIR += py-hg-git
-     SUBDIR += py-hgtools 
+     SUBDIR += py-hgtools
      SUBDIR += py-html5lib
      SUBDIR += py-iniparse
      SUBDIR += py-isodate
@@ -1175,7 +1175,7 @@
      SUBDIR += py-tz
      SUBDIR += py-unit
      SUBDIR += py-unit,no_x11
-     SUBDIR += py-unittest2 
+     SUBDIR += py-unittest2
      SUBDIR += py-urwid
      SUBDIR += py-virtualenv
      SUBDIR += py-wbem
