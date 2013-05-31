@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_dynamic-plugins_sf_engine_Makefile_in,v 1.5 2013/04/23 02:04:13 lteo Exp $
---- src/dynamic-plugins/sf_engine/Makefile.in.orig	Thu Mar 21 14:07:26 2013
-+++ src/dynamic-plugins/sf_engine/Makefile.in	Thu Apr  4 22:28:12 2013
-@@ -263,7 +263,7 @@ top_builddir = @top_builddir@
+$OpenBSD: patch-src_dynamic-plugins_sf_engine_Makefile_in,v 1.6 2013/05/31 20:26:01 lteo Exp $
+--- src/dynamic-plugins/sf_engine/Makefile.in.orig	Mon Apr 15 15:57:46 2013
++++ src/dynamic-plugins/sf_engine/Makefile.in	Wed Apr 24 14:51:57 2013
+@@ -296,7 +296,7 @@ top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  AUTOMAKE_OPTIONS = foreign no-dependencies
  lib_LTLIBRARIES = libsf_engine.la
