@@ -1,0 +1,8 @@
+Rope is a Python refactoring library, supporting:
+
+- Extracting similar statements in extract refactorings
+- Fixing imports when needed
+- Previewing refactorings
+- Undo/redo refactorings
+- Stopping refactorings
+- Cross-project refactorings
