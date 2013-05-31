@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:46:17 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/05/31 19:21:31 landry Exp $
 
 COMMENT =	Xfce4 freedesktop.org compliant menu implementation
 
 XFCE_PROJECT =	garcon
-XFCE_VERSION =	0.2.0
-REVISION =	0
+XFCE_VERSION =	0.2.1
 
 SHARED_LIBS +=	garcon-1 0.0
 
