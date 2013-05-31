@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/05/31 15:20:21 jturner Exp $
+# $OpenBSD: Makefile,v 1.2 2013/05/31 15:54:28 ajacoutot Exp $
 
 COMMENT =		console-based e-mail client with Lua scripting support
 
@@ -24,7 +24,7 @@ LIB_DEPENDS +=		${MODLUA_LIB_DEPENDS} \
 			mail/mimetic
 
 USE_GMAKE =		Yes
-MAKE_ENV =		CXX="c++" \
+MAKE_ENV =		CXX="${CXX}" \
 			CPPFLAGS="-std=gnu++0x -I${LOCALBASE}/include \
 				`pkg-config --cflags ${MODLUA_DEP}`" \
 			LDLIBS="`pkg-config --libs ${MODLUA_DEP}` -lcurses -lmimetic"
