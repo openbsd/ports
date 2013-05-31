@@ -1,0 +1,15 @@
+$OpenBSD: patch-lumail_lua,v 1.1.1.1 2013/05/31 15:20:22 jturner Exp $
+--- lumail.lua.orig	Fri May 31 05:10:57 2013
++++ lumail.lua	Fri May 31 09:40:00 2013
+@@ -54,6 +54,11 @@ sent_mail( maildir_prefix() .. "/sent-mail" );
+ default_email = "Steve Kemp <steve@steve.org.uk>";
+ from( default_email );
+ 
++--
++-- Set the path to the binary that will actually deliver
++-- outgoing email.
++--
++sendmail_path( "/usr/sbin/sendmail -t" );
+ 
+ --
+ -- Show all folders by default

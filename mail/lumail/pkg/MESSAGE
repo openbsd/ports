@@ -1,0 +1,4 @@
+An example configuration was installed at
+${PREFIX}/share/examples/lumail/lumail.lua. You will need to copy it to
+~/.lumail/config.lua or ${SYSCONFDIR}/lumail.lua and modify it to match
+your needs before running lumail for the first time.

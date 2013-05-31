@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2013/05/31 15:20:22 jturner Exp $
+--- Makefile.orig	Fri May 31 09:40:39 2013
++++ Makefile	Fri May 31 09:40:49 2013
+@@ -25,8 +25,8 @@ TARGET=lumail
+ #
+ # NOTE: We use "-std=gnu++0x" so we can use "unordered_map".
+ #
+-CPPFLAGS=-std=gnu++0x -g -Wall -Werror $(shell pkg-config --cflags lua5.1)
+-LDLIBS=$(shell pkg-config --libs lua5.1) -lcurses -lmimetic
++CPPFLAGS?=-std=gnu++0x -g -Wall -Werror $(shell pkg-config --cflags lua5.1)
++LDLIBS?=$(shell pkg-config --libs lua5.1) -lcurses -lmimetic
+ 
+ 
+ #
