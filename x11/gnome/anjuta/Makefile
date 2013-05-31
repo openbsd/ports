@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2013/05/31 21:38:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.92 2013/05/31 21:49:49 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
 GNOME_VERSION=		3.8.3
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 
@@ -61,6 +61,9 @@ LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 
 # needed by plugins/class-gen/plugin.c
 RUN_DEPENDS +=		devel/autogen
+
+# needed by the python plugin
+RUN_DEPENDS +=		devel/py-rope
 
 LIBTOOL_FLAGS=		--tag=disable-static
 MODGNOME_DESKTOP_FILE=	Yes
