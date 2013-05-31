@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/01/02 17:12:22 landry Exp $
+@comment $OpenBSD: PLIST,v 1.10 2013/05/31 19:24:41 landry Exp $
 lib/thunarx-2/thunar-archive-plugin.so
 libexec/thunar-archive-plugin/ark.tap
 libexec/thunar-archive-plugin/file-roller.tap
@@ -9,6 +9,7 @@ share/icons/hicolor/16x16/apps/tap-extract.png
 share/locale/ar/LC_MESSAGES/thunar-archive-plugin.mo
 share/locale/ast/LC_MESSAGES/thunar-archive-plugin.mo
 share/locale/be/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/bg/LC_MESSAGES/thunar-archive-plugin.mo
 share/locale/ca/LC_MESSAGES/thunar-archive-plugin.mo
 share/locale/cs/LC_MESSAGES/thunar-archive-plugin.mo
 share/locale/da/LC_MESSAGES/thunar-archive-plugin.mo
@@ -27,6 +28,8 @@ share/locale/id/LC_MESSAGES/thunar-archive-plugin.mo
 share/locale/it/LC_MESSAGES/thunar-archive-plugin.mo
 share/locale/ja/LC_MESSAGES/thunar-archive-plugin.mo
 share/locale/kk/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/ko/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/lt/LC_MESSAGES/thunar-archive-plugin.mo
 share/locale/lv/LC_MESSAGES/thunar-archive-plugin.mo
 share/locale/nb/LC_MESSAGES/thunar-archive-plugin.mo
 share/locale/nl/LC_MESSAGES/thunar-archive-plugin.mo
@@ -37,7 +40,9 @@ share/locale/pt_BR/LC_MESSAGES/thunar-archive-plugin.mo
 share/locale/ro/LC_MESSAGES/thunar-archive-plugin.mo
 share/locale/ru/LC_MESSAGES/thunar-archive-plugin.mo
 share/locale/sk/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/sl/LC_MESSAGES/thunar-archive-plugin.mo
 share/locale/sq/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/sr/LC_MESSAGES/thunar-archive-plugin.mo
 share/locale/sv/LC_MESSAGES/thunar-archive-plugin.mo
 share/locale/tr/LC_MESSAGES/thunar-archive-plugin.mo
 share/locale/ug/LC_MESSAGES/thunar-archive-plugin.mo
