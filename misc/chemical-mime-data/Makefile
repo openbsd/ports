@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/28 07:49:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2013/06/01 19:19:16 ajacoutot Exp $
 
 PKG_ARCH =		*
 COMMENT =		MIME types and icons for chemical applications
@@ -22,10 +22,9 @@ RUN_DEPENDS =		misc/shared-mime-info \
 			x11/gnome/mime-data \
 			x11/gtk+2,-guic
 
-AUTOCONF_VERSION=	2.61
 SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
-CONFIGURE_STYLE =	autoconf no-autoheader
+CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--disable-update-database
 
 .include <bsd.port.mk>

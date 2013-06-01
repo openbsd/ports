@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/21 08:46:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2013/06/01 19:19:16 ajacoutot Exp $
 
 COMMENT =	library to deal with Japanese kana-to-kanji conversion
 
@@ -30,6 +30,5 @@ LIB_DEPENDS =	devel/libgee06 \
 USE_GMAKE =	Yes
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ENV =	DATADIRNAME=share
 
 .include <bsd.port.mk>

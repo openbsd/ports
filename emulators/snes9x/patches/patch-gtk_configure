@@ -1,7 +1,4 @@
-$OpenBSD: patch-gtk_configure,v 1.3 2012/09/10 08:08:49 ajacoutot Exp $
-
-Fix DATADIRNAME: see LOCALBASE/share/aclocal/{glib-gettext.m4,intltool.m4}
-
+$OpenBSD: patch-gtk_configure,v 1.4 2013/06/01 19:19:16 ajacoutot Exp $
 --- gtk/configure.orig	Sun Jan 10 18:28:11 2010
 +++ gtk/configure	Sun Oct  2 09:23:54 2011
 @@ -2351,7 +2351,7 @@ ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $
@@ -13,13 +10,3 @@ Fix DATADIRNAME: see LOCALBASE/share/aclocal/{glib-gettext.m4,intltool.m4}
  CXXFLAGS="$CFLAGS"
  
  ac_ext=c
-@@ -5003,6 +5003,9 @@ else
-   DATADIRNAME=lib
- fi
- 
-+    ;;
-+    *-*-openbsd*)
-+    DATADIRNAME=share
-     ;;
-     *)
-     DATADIRNAME=lib

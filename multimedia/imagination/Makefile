@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/05/31 15:34:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2013/06/01 19:19:16 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -27,8 +27,7 @@ WANTLIB += wavpack xcb xcb-render xcb-shm z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=imagination/}
 
-AUTOCONF_VERSION =	2.67
-CONFIGURE_STYLE =	autoconf no-autoheader
+CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--localedir=${PREFIX}/share/locale
 MODULES =		devel/gettext \
 			textproc/intltool
