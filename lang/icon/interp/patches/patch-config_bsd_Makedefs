@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_bsd_Makedefs,v 1.1 2006/10/16 10:01:55 espie Exp $
+$OpenBSD: patch-config_bsd_Makedefs,v 1.2 2013/06/01 14:28:28 ajacoutot Exp $
 --- config/bsd/Makedefs.orig	Thu Jun 16 17:55:17 2005
-+++ config/bsd/Makedefs	Mon Oct 16 10:57:58 2006
++++ config/bsd/Makedefs	Sat Jun  1 16:25:09 2013
 @@ -8,12 +8,14 @@
  #  XPMDEFS  definitions for building XPM library
  #  GDIR     directory of graphics helper library
@@ -14,11 +14,10 @@ $OpenBSD: patch-config_bsd_Makedefs,v 1.1 2006/10/16 10:01:55 espie Exp $
 -RLINK = -Wl,-E
 +RLINK = 
  RLIBS = -lm
--TLIBS = -lpthread
+ TLIBS = -lpthread
 -XLIBS = -Wl,-R/usr/X11R6/lib -L/usr/X11R6/lib -lX11
 -XPMDEFS = -DZPIPE -I/usr/X11R6/include
 -GDIR = xpm
-+TLIBS = -pthread
 +XLIBS = -L$(X11BASE)/lib -lXpm -lX11
 +XPMDEFS = -DZPIPE -I$(X11BASE)/include
 +GDIR = 

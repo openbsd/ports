@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.4 2011/09/23 23:39:57 kurt Exp $
+$OpenBSD: patch-configure,v 1.5 2013/06/01 14:28:28 ajacoutot Exp $
 --- configure.orig	Thu Dec 31 13:41:44 2009
 +++ configure	Wed Sep 14 15:15:27 2011
 @@ -2698,6 +2698,7 @@ powerpc*-*-openbsd*) host_cpu=powerpc host_os=bsd libd
@@ -9,29 +9,3 @@ $OpenBSD: patch-configure,v 1.4 2011/09/23 23:39:57 kurt Exp $
  *) { { $as_echo "$as_me:$LINENO: error: $host not supported" >&5
  $as_echo "$as_me: error: $host not supported" >&2;}
     { (exit 1); exit 1; }; } ;;
-@@ -21329,13 +21330,13 @@ _ACEOF
- else
- 
- 
--{ $as_echo "$as_me:$LINENO: checking for pthread_self in -lpthread" >&5
--$as_echo_n "checking for pthread_self in -lpthread... " >&6; }
-+{ $as_echo "$as_me:$LINENO: checking for pthread_self in -pthread" >&5
-+$as_echo_n "checking for pthread_self in -pthread... " >&6; }
- if test "${ac_cv_lib_pthread_pthread_self+set}" = set; then
-   $as_echo_n "(cached) " >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lpthread  $LIBS"
-+LIBS="-pthread  $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -21399,7 +21400,7 @@ if test "x$ac_cv_lib_pthread_pthread_self" = x""yes; t
- #define HAVE_LIBPTHREAD 1
- _ACEOF
- 
--  LIBS="-lpthread $LIBS"
-+  LIBS="-pthread $LIBS"
- 
- else
-   { { $as_echo "$as_me:$LINENO: error: libpthread is missing" >&5

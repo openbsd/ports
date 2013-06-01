@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/11 11:20:27 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2013/06/01 14:28:28 ajacoutot Exp $
 
 COMMENT-main=		programming language with generators, X11 and more
 COMMENT-main-no_x11=	programming language with generators
@@ -14,7 +14,8 @@ DISTFILES=	icon.v943src.tgz
 MULTI_PACKAGES=		-main -compiler
 
 PKGNAME-main=		icon-interp-${VERSION}
-REVISION-main =		2
+REVISION-main =		3
+REVISION-compiler =	0
 PKGNAME-compiler= 	icon-compiler-${VERSION}
 
 # Public domain

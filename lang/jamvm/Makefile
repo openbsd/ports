@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/21 08:46:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2013/06/01 14:28:28 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386 sparc64
 
@@ -7,6 +7,7 @@ COMMENT=	free, standards-compliant jvm with a small footprint
 DISTNAME=	jamvm-1.5.4
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=jamvm/}
+REVISION=	0
 
 SHARED_LIBS=	jvm	0.0
 

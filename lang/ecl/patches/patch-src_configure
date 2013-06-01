@@ -1,15 +1,6 @@
-$OpenBSD: patch-src_configure,v 1.3 2011/04/20 15:45:16 shadchin Exp $
+$OpenBSD: patch-src_configure,v 1.4 2013/06/01 14:28:28 ajacoutot Exp $
 --- src/configure.orig	Mon Jan 17 02:39:59 2011
 +++ src/configure	Mon Apr 18 20:52:32 2011
-@@ -4866,7 +4866,7 @@ case "${host_os}" in
- 		SHARED_LDFLAGS="-shared ${LDFLAGS}"
- 		BUNDLE_LDFLAGS="-shared ${LDFLAGS}"
- 		ECL_LDRPATH="-Wl,--rpath,~A"
--		clibs="-lpthread -lm"
-+		clibs="-pthread -lm"
- 		SONAME="${SHAREDPREFIX}ecl.${SHAREDEXT}.SOVERSION"
- 		SONAME_LDFLAGS="-Wl,-soname,SONAME"
- 		;;
 @@ -9120,7 +9120,7 @@ if test ${enable_shared} = "yes"; then
  
  $as_echo "#define ENABLE_DLOPEN 1" >>confdefs.h

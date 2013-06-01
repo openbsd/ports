@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/06/01 14:28:28 ajacoutot Exp $
 
 COMMENT=		powerful stack-based, multi-threaded language
 
 V=			5.1.2
 DISTNAME=		onyx-$V
 CATEGORIES=		lang
+REVISION=		0
 
 SHARED_LIBS +=		onyx 0.0
 

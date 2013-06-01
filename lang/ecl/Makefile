@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/21 08:46:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2013/06/01 14:28:28 ajacoutot Exp $
 
 COMMENT = 	embeddable common-lisp
 CATEGORIES = 	lang
@@ -7,7 +7,7 @@ BROKEN-sparc =	infinite loop while building
 
 V =		11.1.1
 DISTNAME = 	ecl-$V
-REVISION=		0
+REVISION=	1
 SHARED_LIBS +=	ecl	2.0
 
 HOMEPAGE = 	http://ecls.sourceforge.net/
