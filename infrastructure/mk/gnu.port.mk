@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: gnu.port.mk,v 1.52 2013/03/11 11:50:17 espie Exp $
+# $OpenBSD: gnu.port.mk,v 1.53 2013/06/01 18:54:27 ajacoutot Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -72,6 +72,10 @@ MODGNU_configure += ; mkdir -p ${MODGNU_SAVE_CACHE_LOCATION}; \
 
 .if ${CONFIGURE_STYLE:L:Mgnu}
 CONFIGURE_ENV += MKDIR_P='mkdir -p'
+# XXX Older versions of glib-gettext.m4 and intltool.m4 used to set
+# DATADIRNAME to "lib" which resulted in locale files being installed
+# under the wrong directory.	 
+CONFIGURE_ENV += DATADIRNAME=share
 .  if ${MODGNU_SAVE_CACHE:L} == "yes"
 CONFIGURE_ARGS += --cache-file=${WRKBUILD}/config.cache
 .  endif
