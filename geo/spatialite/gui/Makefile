@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/03/20 21:55:28 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2013/06/01 12:58:33 ajacoutot Exp $
 
 COMMENT =	GUI for spatialite
 DISTNAME =	spatialite_gui-1.6.0
+REVISION =	0
 
 LIB_DEPENDS +=	x11/wxWidgets \
 		geo/spatialite/libspatialite \
@@ -13,8 +14,8 @@ WANTLIB += ICE SDL SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo
 WANTLIB += expat ffi fontconfig freetype freexl gaiagraphics gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 geos geos_c geotiff gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 icudata
-WANTLIB += icule icuuc iodbc jpeg m mspack pango-1.0 pangocairo-1.0
+WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
+WANTLIB += harfbuzz iodbc jpeg m mspack pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png proj pthread pthread-stubs
 WANTLIB += sndio spatialite sqlite3 stdc++ tiff usbhid wx_base
 WANTLIB += wx_base_net wx_base_odbc wx_base_xml wx_gtk2_adv wx_gtk2_aui
