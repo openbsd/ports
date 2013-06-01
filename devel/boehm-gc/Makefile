@@ -1,18 +1,19 @@
-# $OpenBSD: Makefile,v 1.49 2013/03/21 08:45:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2013/06/01 21:05:28 kurt Exp $
 
 COMMENT-main=	garbage collection and memory leak detection for C and C++
 COMMENT-atomic=	access to hardware provided atomic memory operations
 
-VERSION=	7.0
+VERSION=	7.2d
 DISTNAME=	gc-${VERSION}
-PKGNAME-atomic=	libatomic_ops-1.2
+PKGNAME-atomic=	libatomic_ops-${VERSION}
 PKGNAME-main=	boehm-gc-${VERSION}
-REVISION=	7
 
+WRKDIST=	${WRKDIR}/gc-7.2
 MULTI_PACKAGES=	-main -atomic
 
-SHARED_LIBS +=	gc	3.0	# .1.2
-SHARED_LIBS +=  cord	2.3	# .1.3
+SHARED_LIBS +=	gc	4.0	# .1.3
+SHARED_LIBS +=	gccpp	0.0	# .1.3
+SHARED_LIBS +=	cord	2.3	# .1.3
 
 CATEGORIES=	devel
 
@@ -20,14 +21,12 @@ MASTER_SITES=	${HOMEPAGE}gc_source/
 
 HOMEPAGE=	http://www.hpl.hp.com/personal/Hans_Boehm/gc/
 
-MAINTAINER=	Todd T. Fries <todd@openbsd.org>
-
 # currently works only on most ELF archs
 NOT_FOR_ARCHS=	m68k m88k vax mips64 mips64el
 
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += pthread
+WANTLIB-main += pthread
 
 MAKE_ENV=	CP="cp" \
 		INSTALL_DATA="${INSTALL_DATA}" \
@@ -35,10 +34,11 @@ MAKE_ENV=	CP="cp" \
 
 USE_GROFF =	Yes
 
-AUTOCONF_VERSION= 2.61
+AUTOCONF_VERSION= 2.68
 CONFIGURE_STYLE= autoconf no-autoheader
 
 CONFIGURE_ARGS= ${CONFIGURE_SHARED} \
+		--enable-cplusplus \
 		--enable-threads=pthreads
 
 pre-configure:

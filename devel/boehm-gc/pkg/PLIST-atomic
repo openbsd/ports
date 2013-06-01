@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-atomic,v 1.1 2008/07/01 09:43:19 landry Exp $
+@comment $OpenBSD: PLIST-atomic,v 1.2 2013/06/01 21:05:28 kurt Exp $
 include/atomic_ops/
 include/atomic_ops.h
 include/atomic_ops/generalize-small.h
@@ -11,6 +11,8 @@ include/atomic_ops/sysdeps/all_acquire_release_volatile.h
 include/atomic_ops/sysdeps/all_aligned_atomic_load_store.h
 include/atomic_ops/sysdeps/all_atomic_load_store.h
 include/atomic_ops/sysdeps/ao_t_is_int.h
+include/atomic_ops/sysdeps/armcc/
+include/atomic_ops/sysdeps/armcc/arm_v6.h
 include/atomic_ops/sysdeps/atomic_load_store.h
 include/atomic_ops/sysdeps/char_acquire_release_volatile.h
 include/atomic_ops/sysdeps/char_atomic_load_store.h
@@ -18,12 +20,16 @@ include/atomic_ops/sysdeps/emul_cas.h
 include/atomic_ops/sysdeps/gcc/
 include/atomic_ops/sysdeps/gcc/alpha.h
 include/atomic_ops/sysdeps/gcc/arm.h
+include/atomic_ops/sysdeps/gcc/avr32.h
 include/atomic_ops/sysdeps/gcc/cris.h
+include/atomic_ops/sysdeps/gcc/hexagon.h
 include/atomic_ops/sysdeps/gcc/hppa.h
 include/atomic_ops/sysdeps/gcc/ia64.h
 include/atomic_ops/sysdeps/gcc/m68k.h
+include/atomic_ops/sysdeps/gcc/mips.h
 include/atomic_ops/sysdeps/gcc/powerpc.h
 include/atomic_ops/sysdeps/gcc/s390.h
+include/atomic_ops/sysdeps/gcc/sh.h
 include/atomic_ops/sysdeps/gcc/sparc.h
 include/atomic_ops/sysdeps/gcc/x86.h
 include/atomic_ops/sysdeps/gcc/x86_64.h
@@ -39,6 +45,8 @@ include/atomic_ops/sysdeps/int_acquire_release_volatile.h
 include/atomic_ops/sysdeps/int_aligned_atomic_load_store.h
 include/atomic_ops/sysdeps/int_atomic_load_store.h
 include/atomic_ops/sysdeps/msftc/
+include/atomic_ops/sysdeps/msftc/arm.h
+include/atomic_ops/sysdeps/msftc/common32_defs.h
 include/atomic_ops/sysdeps/msftc/x86.h
 include/atomic_ops/sysdeps/msftc/x86_64.h
 include/atomic_ops/sysdeps/ordered.h
@@ -50,12 +58,16 @@ include/atomic_ops/sysdeps/short_atomic_load_store.h
 include/atomic_ops/sysdeps/standard_ao_double_t.h
 include/atomic_ops/sysdeps/sunc/
 include/atomic_ops/sysdeps/sunc/sparc.h
+include/atomic_ops/sysdeps/sunc/x86.h
+include/atomic_ops/sysdeps/sunc/x86_64.h
 include/atomic_ops/sysdeps/test_and_set_t_is_ao_t.h
 include/atomic_ops/sysdeps/test_and_set_t_is_char.h
 include/atomic_ops_malloc.h
 include/atomic_ops_stack.h
 lib/libatomic_ops.a
 lib/libatomic_ops_gpl.a
+lib/pkgconfig/
+lib/pkgconfig/atomic_ops.pc
 share/libatomic_ops/
 share/libatomic_ops/COPYING
 share/libatomic_ops/LICENSING.txt

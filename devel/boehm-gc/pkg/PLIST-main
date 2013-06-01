@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2008/07/01 09:43:19 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2013/06/01 21:05:28 kurt Exp $
 @pkgpath devel/boehm-gc
-%%SHARED%%
 include/gc/
+include/gc.h
+include/gc/cord.h
 include/gc/gc.h
 include/gc/gc_allocator.h
 include/gc/gc_amiga_redirects.h
@@ -14,13 +15,20 @@ include/gc/gc_mark.h
 include/gc/gc_pthread_redirects.h
 include/gc/gc_tiny_fl.h
 include/gc/gc_typed.h
+include/gc/gc_version.h
 include/gc/leak_detector.h
 include/gc/new_gc_alloc.h
 include/gc/weakpointer.h
+include/gc_cpp.h
 lib/libcord.a
 lib/libcord.la
+@lib lib/libcord.so.${LIBcord_VERSION}
 lib/libgc.a
 lib/libgc.la
+@lib lib/libgc.so.${LIBgc_VERSION}
+lib/libgccpp.a
+lib/libgccpp.la
+@lib lib/libgccpp.so.${LIBgccpp_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/bdw-gc.pc
 @man man/man3/GC_enable_incremental.3
@@ -43,6 +51,7 @@ share/gc/README.amiga
 share/gc/README.arm.cross
 share/gc/README.autoconf
 share/gc/README.changes
+share/gc/README.cmake
 share/gc/README.contributors
 share/gc/README.cords
 share/gc/README.darwin

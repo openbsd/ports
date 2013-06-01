@@ -1,48 +1,25 @@
-$OpenBSD: patch-dyn_load_c,v 1.6 2008/04/01 17:41:13 kurt Exp $
---- dyn_load.c.orig	Thu Jun 28 17:36:03 2007
-+++ dyn_load.c	Thu Mar 20 18:09:28 2008
-@@ -63,6 +63,7 @@ static int (*GC_has_static_roots)(const char *, void *
-     !defined(HPUX) && !(defined(LINUX) && defined(__ELF__)) && \
-     !defined(AIX) && !defined(SCO_ELF) && !defined(DGUX) && \
-     !(defined(FREEBSD) && defined(__ELF__)) && \
-+    !(defined(OPENBSD) && (defined(__ELF__) || defined(M68K))) && \
-     !(defined(NETBSD) && defined(__ELF__)) && !defined(HURD) && \
-     !defined(DARWIN) && !defined(CYGWIN32)
-  --> We only know how to find data segments of dynamic libraries for the
-@@ -84,9 +85,9 @@ static int (*GC_has_static_roots)(const char *, void *
- 
- #if defined(LINUX) && defined(__ELF__) || defined(SCO_ELF) || \
-     (defined(FREEBSD) && defined(__ELF__)) || defined(DGUX) || \
-+    (defined(OPENBSD) && defined(__ELF__)) || \
-     (defined(NETBSD) && defined(__ELF__)) || defined(HURD)
- #   include <stddef.h>
--#   include <elf.h>
- #   include <link.h>
+$OpenBSD: patch-dyn_load_c,v 1.7 2013/06/01 21:05:28 kurt Exp $
+--- dyn_load.c.orig	Thu Aug  9 16:25:13 2012
++++ dyn_load.c	Tue Mar 19 19:39:39 2013
+@@ -83,12 +83,20 @@ STATIC GC_has_static_roots_func GC_has_static_roots = 
+ #   define ELFSIZE ARCH_ELFSIZE
  #endif
  
-@@ -99,7 +100,7 @@ static int (*GC_has_static_roots)(const char *, void *
- #      else
- #        define ElfW(type) Elf64_##type
- #      endif
--#    elif defined(NETBSD)
-+#    elif defined(NETBSD) || defined(OPENBSD)
- #      if ELFSIZE == 32
- #        define ElfW(type) Elf32_##type
- #      else
-@@ -216,6 +217,7 @@ void GC_register_dynamic_libraries()
- 
- #if defined(LINUX) && defined(__ELF__) || defined(SCO_ELF) || \
-     (defined(FREEBSD) && defined(__ELF__)) || defined(DGUX) || \
-+    (defined(OPENBSD) && defined(__ELF__)) || \
-     (defined(NETBSD) && defined(__ELF__)) || defined(HURD)
- 
- 
-@@ -414,7 +416,7 @@ GC_bool GC_register_main_static_data()
- /* This doesn't necessarily work in all cases, e.g. with preloaded
-  * dynamic libraries.						*/
- 
--#if defined(NETBSD)
-+#if defined(NETBSD) || defined(OPENBSD)
- #  include <sys/exec_elf.h>
- /* for compatibility with 1.4.x */
- #  ifndef DT_DEBUG
++#if defined(OPENBSD)
++# include <sys/param.h>
++# include <dlfcn.h>
++# if OpenBSD >= 200519
++#   define HAVE_DL_ITERATE_PHDR
++# endif
++#endif
++
+ #if defined(SCO_ELF) || defined(DGUX) || defined(HURD) \
+     || (defined(__ELF__) && (defined(LINUX) || defined(FREEBSD) \
+                              || defined(NETBSD) || defined(OPENBSD)))
+ # include <stddef.h>
+ # if !defined(OPENBSD) && !defined(PLATFORM_ANDROID)
+-    /* FIXME: Why we exclude it for OpenBSD? */
++    /* OpenBSD doesn't have elf.h. link.h below is sufficent */
+     /* Exclude Android because linker.h below includes its own version. */
+ #   include <elf.h>
+ # endif
