@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2013/06/01 02:15:15 bentley Exp $
+--- configure.ac.orig	Fri May 31 19:32:13 2013
++++ configure.ac	Fri May 31 19:32:30 2013
+@@ -36,7 +36,7 @@ LIBS="$LIBS $LIBINTL"
+ # Checks for libraries.
+ AC_MSG_CHECKING([for Lua package name])
+ PKG_CHECK_EXISTS([lua5.1], [LUA="lua5.1"],
+-    [PKG_CHECK_EXISTS([lua-5.2], [LUA="lua-5.2"], [LUA="lua"])])
++    [PKG_CHECK_EXISTS([lua-5.2], [LUA="lua-5.2"], [LUA="${MODLUA_DEP}"])])
+ AC_MSG_RESULT([$LUA])
+ 
+ PKG_CHECK_EXISTS([zlib], [ZLIB="zlib >= 1.2.3"],
