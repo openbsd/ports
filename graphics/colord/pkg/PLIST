@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2013/05/30 18:17:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2013/06/01 18:35:24 ajacoutot Exp $
 @conflict shared-color-profiles-*
 @conflict shared-color-profiles-extra-*
 @pkgpath graphics/colord
@@ -57,6 +57,7 @@ lib/pkgconfig/colord.pc
 @bin libexec/colord-session
 @man man/man1/cd-create-profile.1
 @man man/man1/cd-fix-profile.1
+@man man/man1/colord.conf.1
 @man man/man1/colormgr.1
 share/color/
 share/color/icc/
