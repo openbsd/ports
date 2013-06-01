@@ -1,30 +1,9 @@
-$OpenBSD: patch-Makefile_am,v 1.1.1.1 2010/10/24 10:32:48 jakemsr Exp $
+$OpenBSD: patch-Makefile_am,v 1.2 2013/06/01 12:15:48 ajacoutot Exp $
 
-- skip plugins that need shm_open
 - use "libtool archives" (PIC) instead of static archives
 
 --- Makefile.am.orig	Tue Aug  8 08:56:35 2006
 +++ Makefile.am	Fri Oct 22 11:45:47 2010
-@@ -4,7 +4,7 @@ plugin_LTLIBRARIES = \
- 	amp_1181.la diode_1185.la \
- 	divider_1186.la shaper_1187.la ringmod_1188.la comb_1190.la \
- 	declip_1195.la foverdrive_1196.la sinus_wavewrapper_1198.la \
--	hermes_filter_1200.la multivoice_chorus_1201.la flanger_1191.la \
-+	multivoice_chorus_1201.la flanger_1191.la \
- 	decimator_1202.la single_para_1203.la triple_para_1204.la \
- 	transient_1206.la fad_delay_1192.la \
- 	dc_remove_1207.la retro_flange_1208.la valve_1209.la \
-@@ -15,8 +15,8 @@ plugin_LTLIBRARIES = \
- 	valve_rect_1405.la split_1406.la alias_1407.la \
- 	satan_maximiser_1408.la karaoke_1409.la gate_1410.la \
- 	comb_splitter_1411.la wave_terrain_1412.la \
--	hard_limiter_1413.la smooth_decimate_1414.la fm_osc_1415.la \
--	analogue_osc_1416.la rate_shifter_1417.la freq_tracker_1418.la \
-+	hard_limiter_1413.la smooth_decimate_1414.la \
-+	rate_shifter_1417.la freq_tracker_1418.la \
- 	mod_delay_1419.la matrix_st_ms_1420.la matrix_ms_st_1421.la \
- 	matrix_spatialiser_1422.la plate_1423.la gong_1424.la \
- 	sc1_1425.la sc2_1426.la sc3_1427.la zm1_1428.la inv_1429.la \
 @@ -43,15 +43,15 @@ plugindir = @prefix@/lib/ladspa
  
  # Uncomment below for Darwin support.  Or add a conditional for this.

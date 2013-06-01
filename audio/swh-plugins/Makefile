@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/21 08:45:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2013/06/01 12:15:48 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		LADSPA plugins from Steve Harris
 
 DISTNAME =		swh-plugins-0.4.15
-REVISION =		1
+REVISION =		2
 CATEGORIES =		audio
 
 HOMEPAGE =		http://plugin.org.uk/
@@ -13,7 +13,7 @@ HOMEPAGE =		http://plugin.org.uk/
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		fftw3f m
+WANTLIB =		fftw3f m pthread
 
 MASTER_SITES =		${HOMEPAGE}/releases/0.4.15/ \
 			http://distfiles.nl/
