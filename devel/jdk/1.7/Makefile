@@ -1,21 +1,20 @@
-# $OpenBSD: Makefile,v 1.63 2013/04/10 02:49:05 kurt Exp $
+# $OpenBSD: Makefile,v 1.64 2013/06/01 21:12:15 kurt Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	i386 amd64
 
 COMMENT-main=	Java2(TM) SE Dev Kit v${V}
 COMMENT-jre=	Java2(TM) SE Runtime Environment v${V}
-V=		1.7.0.17
-B=		b02
+U=		21
+V=		1.7.0.${U}
+B=		b11
 PKGNAME=	jdk-${V}
 PKGNAME-main=	jdk-${V}
 PKGNAME-jre=	jre-${V}
-REVISION-main=	1
-REVISION-jre=	1
 EPOCH=		0
 
 JDK_SRC=	openjdk-7u6-fcs-src-b24-28_aug_2012.zip
-PATCH_SET=	openjdk-7u17-patch-set-20130310.zip
+PATCH_SET=	openjdk-7u${U}-patch-set-20130506.zip
 
 DISTFILES=	${JDK_SRC} ${PATCH_SET}:1
 EXTRACT_ONLY=	${JDK_SRC} ${PATCH_SET}
@@ -87,7 +86,7 @@ MAKE_ENV=	ALT_BOOTDIR=${ALT_BOOTDIR} \
 		USERNAME=${USER} \
 		MILESTONE=fcs \
 		BUILD_NUMBER=${B} \
-		JDK_UPDATE_VERSION=17 \
+		JDK_UPDATE_VERSION=${U} \
 		HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS}
 
 #ALL_TARGET=	debug_build
@@ -128,7 +127,7 @@ post-extract:
 	@cp -f ${FILESDIR}/PLATFORM_API_BSDOS_PCM.c \
 		${WRKDIST}/jdk/src/solaris/native/com/sun/media/sound
 	@cd ${WRKDIST} && \
-		${PATCH} -p0 -z .orig.u17 --quiet < ${WRKDIR}/${PATCH_SET:R}
+		${PATCH} -p0 -z .orig.u${U} --quiet < ${WRKDIR}/${PATCH_SET:R}
 	@perl -pi -e 's|build-policy install-limited|build-policy install-unlimited|' \
 		${WRKDIST}/jdk/make/javax/crypto/Makefile
 
