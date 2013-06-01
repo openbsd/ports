@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2006/01/01 22:23:03 naddy Exp $
-@lib lib/libgdk.so.${LIBgdk_VERSION}
-@lib lib/libgtk.so.${LIBgtk_VERSION}
