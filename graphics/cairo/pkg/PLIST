@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.15 2013/01/16 14:28:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2013/06/01 12:11:52 ajacoutot Exp $
 %%SHARED%%
+@bin bin/cairo-sphinx
 include/cairo/
 include/cairo/cairo-deprecated.h
 include/cairo/cairo-features.h
@@ -19,10 +20,13 @@ include/cairo/cairo.h
 lib/cairo/
 lib/libcairo-gobject.a
 lib/libcairo-gobject.la
+@lib lib/libcairo-gobject.so.${LIBcairo-gobject_VERSION}
 lib/libcairo-script-interpreter.a
 lib/libcairo-script-interpreter.la
+@lib lib/libcairo-script-interpreter.so.${LIBcairo-script-interpreter_VERSION}
 lib/libcairo.a
 lib/libcairo.la
+@lib lib/libcairo.so.${LIBcairo_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/cairo-fc.pc
 lib/pkgconfig/cairo-ft.pc

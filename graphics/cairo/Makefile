@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2013/03/21 08:45:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2013/06/01 12:11:52 ajacoutot Exp $
 
 COMMENT=		vector graphics library
 
@@ -9,14 +9,15 @@ SHARED_LIBS+=		cairo-script-interpreter 1.1
 CATEGORIES=		graphics
 DPB_PROPERTIES=		parallel
 EXTRACT_SUFX=		.tar.xz
+REVISION=		0
 
 HOMEPAGE=		http://cairographics.org/
 
 MAINTAINER=		Eric Faurot <eric@openbsd.org>
 
-WANTLIB += X11 Xau Xdmcp Xext Xrender expat ffi fontconfig freetype
-WANTLIB += glib-2.0 gobject-2.0 gthread-2.0 lzo2 m pcre pixman-1 png
-WANTLIB += pthread pthread-stubs xcb xcb-render xcb-shm z
+WANTLIB += X11 Xau Xdmcp Xext Xrender c expat ffi fontconfig freetype
+WANTLIB += glib-2.0 gobject-2.0 lzo2 m pcre pixman-1 png pthread
+WANTLIB += pthread-stubs xcb xcb-render xcb-shm z
 
 # LGPLv2.1 / MPL 1.1
 PERMIT_PACKAGE_CDROM=	Yes
