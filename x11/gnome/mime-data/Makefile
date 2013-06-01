@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2013/06/01 19:43:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2013/06/01 20:23:15 ajacoutot Exp $
 
 COMMENT=		MIME and application database for GNOME
 
@@ -13,8 +13,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		x11/gnome
-
-CONFIGURE_STYLE= 	gnu old
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/gnome-mime-data/
 
