@@ -1,7 +1,7 @@
-$OpenBSD: patch-gio_tests_file_c,v 1.4 2013/03/27 17:49:34 ajacoutot Exp $
+$OpenBSD: patch-gio_tests_file_c,v 1.5 2013/06/01 22:56:06 ajacoutot Exp $
 
 XXX why isn't this working with kqueue?
-push upstream when the kqueue patch is committed there
+push upstream when fixed
 
 --- gio/tests/file.c.orig	Tue Mar 26 11:03:40 2013
 +++ gio/tests/file.c	Tue Mar 26 11:04:53 2013
