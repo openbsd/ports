@@ -1,6 +1,6 @@
-$OpenBSD: patch-main_c,v 1.2 2002/11/21 05:41:14 pvalchev Exp $
---- main.c.orig	Wed Nov 20 00:27:51 2002
-+++ main.c	Wed Nov 20 01:02:33 2002
+$OpenBSD: patch-main_c,v 1.3 2013/06/01 17:59:55 naddy Exp $
+--- main.c.orig	Fri May 31 22:15:05 2013
++++ main.c	Fri May 31 22:25:10 2013
 @@ -142,9 +142,16 @@ static Bool IsPts = False;
  #define WTMP
  #endif
@@ -41,18 +41,7 @@ $OpenBSD: patch-main_c,v 1.2 2002/11/21 05:41:14 pvalchev Exp $
  #endif
  #include <sys/resource.h>
  #define HAS_UTMP_UT_HOST
-@@ -236,6 +247,10 @@ static Bool IsPts = False;
- #endif
- #endif	/* } !SYSV */
- 
-+#ifdef USE_TTY_GROUP
-+#include <grp.h>
-+#endif
-+
- #ifdef _POSIX_SOURCE
- #define USE_POSIX_WAIT
- #define HAS_POSIX_SAVED_IDS
-@@ -251,6 +266,8 @@ static Bool IsPts = False;
+@@ -251,6 +262,8 @@ static Bool IsPts = False;
  
  #if (BSD >= 199103)
  #define USE_POSIX_WAIT
@@ -61,7 +50,7 @@ $OpenBSD: patch-main_c,v 1.2 2002/11/21 05:41:14 pvalchev Exp $
  #define HAS_POSIX_SAVED_IDS
  #endif
  
-@@ -301,6 +318,10 @@ extern struct utmp *getutid __((struct u
+@@ -301,6 +314,10 @@ extern struct utmp *getutid __((struct utmp *_Id));
  int	Ptyfd;
  #endif /* PUCC_PTYD */
  
@@ -72,18 +61,7 @@ $OpenBSD: patch-main_c,v 1.2 2002/11/21 05:41:14 pvalchev Exp $
  #ifdef sequent
  #define USE_GET_PSEUDOTTY
  #endif
-@@ -362,6 +383,10 @@ int	Ptyfd;
- #define SIGNAL_RETURN return
- #endif
- 
-+#ifndef TTY_GROUP_NAME
-+#define TTY_GROUP_NAME "tty"
-+#endif
-+
- SIGNAL_T Exit();
- 
- #ifndef X_NOT_POSIX
-@@ -407,6 +432,10 @@ static Bool added_utmp_entry = False;
+@@ -407,6 +424,10 @@ static Bool added_utmp_entry = False;
  
  static Bool xterm_exiting = False;
  
@@ -94,17 +72,7 @@ $OpenBSD: patch-main_c,v 1.2 2002/11/21 05:41:14 pvalchev Exp $
  /*
  ** Ordinarily it should be okay to omit the assignment in the following
  ** statement. Apparently the c89 compiler on AIX 4.1.3 has a bug, or does
-@@ -416,6 +445,9 @@ static Bool xterm_exiting = False;
- */
- static char **command_to_exec = NULL;
- 
-+static int get_pty (int *pty);
-+static void set_owner (char *device, int uid, int gid, int mode);
-+
- #ifdef USE_SYSV_TERMIO
- /* The following structures are initialized in main() in order
- ** to eliminate any assumptions about the internal order of their
-@@ -434,6 +466,9 @@ static struct ltchars d_ltc;
+@@ -434,6 +455,9 @@ static struct ltchars d_ltc;
  static unsigned int d_lmode;
  #endif	/* TIOCLSET */
  #else /* not USE_SYSV_TERMIO */
@@ -114,7 +82,7 @@ $OpenBSD: patch-main_c,v 1.2 2002/11/21 05:41:14 pvalchev Exp $
  static struct  sgttyb d_sg = {
          0, 0, 0177, CKILL, EVENP|ODDP|ECHO|XTABS|CRMOD
  };
-@@ -457,6 +492,7 @@ static struct jtchars d_jtc = {
+@@ -457,6 +481,7 @@ static struct jtchars d_jtc = {
  	'J', 'B'
  };
  #endif /* sony */
@@ -122,7 +90,7 @@ $OpenBSD: patch-main_c,v 1.2 2002/11/21 05:41:14 pvalchev Exp $
  #endif /* USE_SYSV_TERMIO */
  
  /* allow use of system default characters if defined and reasonable */
-@@ -1107,37 +1143,47 @@ char **argv;
+@@ -1107,21 +1132,19 @@ char **argv;
  	char *base_name();
  	int xerror(), xioerror();
  
@@ -141,27 +109,17 @@ $OpenBSD: patch-main_c,v 1.2 2002/11/21 05:41:14 pvalchev Exp $
  	if (!ttydev)
  #endif
  	{
--	    fprintf (stderr, 
+ 	    fprintf (stderr, 
 -	    	     "%s:  unable to allocate memory for ttydev or ptydev\n",
--		     ProgramName);
--	    exit (1);
-+		fprintf(stderr,
-+			"%s: unable to allocate memory for ttydev or ptydev\n",
-+			ProgramName);
-+		exit (1);
++	    	     "%s: unable to allocate memory for ttydev or ptydev\n",
+ 		     ProgramName);
+ 	    exit (1);
  	}
- 	strcpy (ttydev, TTYDEV);
- #ifndef __osf__
+@@ -1130,14 +1153,20 @@ char **argv;
  	strcpy (ptydev, PTYDEV);
  #endif
  
 -#ifdef USE_SYSV_TERMIO /* { */
-+#ifdef __OpenBSD__
-+	get_pty(NULL);
-+	seteuid(getuid());
-+	setuid(getuid());
-+#endif /* __OpenBSD__ */
-+
 +	XtSetLanguageProc (NULL, NULL, NULL);
 +
 +#if defined(USE_SYSV_TERMIO) || defined(USE_POSIX_TERMIOS) /* { */
@@ -179,7 +137,7 @@ $OpenBSD: patch-main_c,v 1.2 2002/11/21 05:41:14 pvalchev Exp $
  #if defined(macII) || defined(ATT) || defined(CRAY) /* { */
      	d_tio.c_cflag = B9600|CS8|CREAD|PARENB|HUPCL;
      	d_tio.c_lflag = ISIG|ICANON|ECHO|ECHOE|ECHOK;
-@@ -1161,9 +1207,11 @@ char **argv;
+@@ -1161,9 +1190,11 @@ char **argv;
  	d_tio.c_cc[VEOL2] = CNUL;
  	d_tio.c_cc[VSWTCH] = CNUL;
  
@@ -192,7 +150,7 @@ $OpenBSD: patch-main_c,v 1.2 2002/11/21 05:41:14 pvalchev Exp $
  	d_tio.c_cc[VREPRINT] = CRPRNT;
  	d_tio.c_cc[VDISCARD] = CFLUSH;
  	d_tio.c_cc[VWERASE] = CWERASE;
-@@ -1181,11 +1229,17 @@ char **argv;
+@@ -1181,11 +1212,17 @@ char **argv;
  	d_lmode = 0;
  #endif /* } TIOCLSET */
  #else  /* }{ else !macII, ATT, CRAY */
@@ -210,7 +168,7 @@ $OpenBSD: patch-main_c,v 1.2 2002/11/21 05:41:14 pvalchev Exp $
      	d_tio.c_lflag = ISIG|ICANON|ECHO|ECHOE|ECHOK;
  #ifdef ECHOKE
  	d_tio.c_lflag |= ECHOKE|IEXTEN;
-@@ -1193,11 +1247,13 @@ char **argv;
+@@ -1193,11 +1230,13 @@ char **argv;
  #ifdef ECHOCTL
  	d_tio.c_lflag |= ECHOCTL|IEXTEN;
  #endif
@@ -224,7 +182,7 @@ $OpenBSD: patch-main_c,v 1.2 2002/11/21 05:41:14 pvalchev Exp $
  #ifdef __sgi
          d_tio.c_cflag &= ~(HUPCL|PARENB);
          d_tio.c_iflag |= BRKINT|ISTRIP|IGNPAR;
-@@ -1246,8 +1302,14 @@ char **argv;
+@@ -1246,8 +1285,14 @@ char **argv;
  	    int i;
  
  	    for (i = 0; i <= 2; i++) {
@@ -240,7 +198,7 @@ $OpenBSD: patch-main_c,v 1.2 2002/11/21 05:41:14 pvalchev Exp $
  		    d_tio.c_cc[VINTR] = deftio.c_cc[VINTR];
  		    d_tio.c_cc[VQUIT] = deftio.c_cc[VQUIT];
  		    d_tio.c_cc[VERASE] = deftio.c_cc[VERASE];
-@@ -1302,9 +1364,11 @@ char **argv;
+@@ -1302,9 +1347,11 @@ char **argv;
          d_ltc.t_werasc = '\377';
          d_ltc.t_lnextc = '\377';
  #endif	/* } TIOCSLTC */
@@ -253,7 +211,7 @@ $OpenBSD: patch-main_c,v 1.2 2002/11/21 05:41:14 pvalchev Exp $
  	d_tio.c_cc[VREPRINT] = '\377';
  	d_tio.c_cc[VDISCARD] = '\377';
  	d_tio.c_cc[VWERASE] = '\377';
-@@ -1361,6 +1425,14 @@ char **argv;
+@@ -1361,7 +1408,15 @@ char **argv;
  		(void) fprintf(stderr, "setegid(%d): %s\n",
  			       (int) egid, strerror(errno));
  #endif
@@ -263,64 +221,22 @@ $OpenBSD: patch-main_c,v 1.2 2002/11/21 05:41:14 pvalchev Exp $
 +		/* Can totally revoke group privs */
 +		setegid(getgid());
 +		setgid(getgid());
-+	}
-+#endif
  	}
++#endif
++	}
  
  	waiting_for_initial_map = resource.wait_for_map;
-@@ -1719,6 +1791,32 @@ char *name;
+ 
+@@ -1719,7 +1774,7 @@ char *name;
  get_pty (pty)
      int *pty;
  {
-+#ifdef __OpenBSD__
-+	int result;
-+	static int m_tty = -1;
-+	static int m_pty = -1;
-+	struct group *ttygrp;
-+
-+	if (pty == NULL) {
-+		result = openpty(&m_pty, &m_tty, ttydev, NULL, NULL);
-+
-+		seteuid(0);
-+		if ((ttygrp = getgrnam(TTY_GROUP_NAME)) != 0) {
-+			set_owner(ttydev, getuid(), ttygrp->gr_gid,
-+			    0600);
-+		} else {
-+			set_owner(ttydev, getuid(), getgid(),
-+			    0600);
-+		}
-+		seteuid(getuid());
-+		return result;
-+	} else if (m_pty != -1) {
-+		*pty = m_pty;
-+		return (0);
-+	} else {
-+		return (-1);
-+	}
-+#endif /* __OpenBSD__ */
- #ifdef __osf__
+-#ifdef __osf__
++#if defined(__osf__) || defined(__OpenBSD__)
      int tty;
      return (openpty(pty, &tty, ttydev, NULL, NULL));
-@@ -2034,6 +2132,18 @@ void first_map_occurred ()
- }
- #endif /* USE_HANDSHAKE else !USE_HANDSHAKE */
- 
-+static void
-+set_owner(char *device, int uid, int gid, int mode)
-+{
-+	if (chown (device, uid, gid) < 0) {
-+		if (errno != ENOENT
-+		    && getuid() == 0) {
-+			fprintf(stderr, "Cannot chown %s to %d,%d: %s\n",
-+			    device, uid, gid, strerror(errno));
-+		}
-+	}
-+	chmod (device, mode);
-+}
- 
- spawn ()
- /* 
-@@ -2065,6 +2175,9 @@ spawn ()
+ #endif
+@@ -2065,6 +2120,9 @@ spawn ()
  	int zero = 0;
  	int status;
  #else	/* else not USE_SYSV_TERMIO */
@@ -330,7 +246,7 @@ $OpenBSD: patch-main_c,v 1.2 2002/11/21 05:41:14 pvalchev Exp $
  	unsigned lmode;
  	struct tchars tc;
  	struct ltchars ltc;
-@@ -2073,6 +2186,7 @@ spawn ()
+@@ -2073,6 +2131,7 @@ spawn ()
  	int jmode;
  	struct jtchars jtc;
  #endif /* sony */
@@ -338,7 +254,7 @@ $OpenBSD: patch-main_c,v 1.2 2002/11/21 05:41:14 pvalchev Exp $
  #endif	/* USE_SYSV_TERMIO */
  
  	char termcap [1024];
-@@ -2168,9 +2282,9 @@ spawn ()
+@@ -2168,9 +2227,9 @@ spawn ()
  #ifdef TIOCLSET
  				lmode = d_lmode;
  #endif	/* TIOCLSET */
@@ -350,7 +266,7 @@ $OpenBSD: patch-main_c,v 1.2 2002/11/21 05:41:14 pvalchev Exp $
  				sg = d_sg;
  				tc = d_tc;
  				discipline = d_disipline;
-@@ -2178,7 +2292,7 @@ spawn ()
+@@ -2178,7 +2237,7 @@ spawn ()
  				jmode = d_jmode;
  				jtc = d_jtc;
  #endif /* sony */
@@ -359,7 +275,7 @@ $OpenBSD: patch-main_c,v 1.2 2002/11/21 05:41:14 pvalchev Exp $
  			} else {
  			    SysError(ERROR_OPDEVTTY);
  			}
-@@ -2202,6 +2316,10 @@ spawn ()
+@@ -2202,6 +2261,10 @@ spawn ()
  			        tio = d_tio;
  
  #else	/* not USE_SYSV_TERMIO */
@@ -370,7 +286,7 @@ $OpenBSD: patch-main_c,v 1.2 2002/11/21 05:41:14 pvalchev Exp $
  			if(ioctl(tty, TIOCGETP, (char *)&sg) == -1)
  			        sg = d_sg;
  			if(ioctl(tty, TIOCGETC, (char *)&tc) == -1)
-@@ -2214,6 +2332,7 @@ spawn ()
+@@ -2214,6 +2277,7 @@ spawn ()
  			if(ioctl(tty, TIOCKGETC, (char *)&jtc) == -1)
  				jtc = d_jtc;
  #endif /* sony */
@@ -378,7 +294,7 @@ $OpenBSD: patch-main_c,v 1.2 2002/11/21 05:41:14 pvalchev Exp $
  #endif	/* USE_SYSV_TERMIO */
  			close (tty);
  			/* tty is no longer an open fd! */
-@@ -2507,6 +2626,7 @@ spawn ()
+@@ -2507,6 +2571,7 @@ spawn ()
  				break;
  #endif	/* USE_SYSV_PGRP */
  			}
@@ -386,15 +302,7 @@ $OpenBSD: patch-main_c,v 1.2 2002/11/21 05:41:14 pvalchev Exp $
  
  #ifdef TIOCSCTTY
  			ioctl(tty, TIOCSCTTY, 0);
-@@ -2555,7 +2675,6 @@ spawn ()
- 
- #ifdef USE_TTY_GROUP
- 	{ 
--#include <grp.h>
- 		struct group *ttygrp;
- 		if (ttygrp = getgrnam("tty")) {
- 			/* change ownership of tty to real uid, "tty" gid */
-@@ -2581,7 +2700,7 @@ spawn ()
+@@ -2581,7 +2646,7 @@ spawn ()
  		 * set up the tty modes
  		 */
  		{
@@ -403,7 +311,7 @@ $OpenBSD: patch-main_c,v 1.2 2002/11/21 05:41:14 pvalchev Exp $
  #if defined(umips) || defined(CRAY) || defined(linux)
  		    /* If the control tty had its modes screwed around with,
  		       eg. by lineedit in the shell, or emacs, etc. then tio
-@@ -2598,12 +2717,15 @@ spawn ()
+@@ -2598,12 +2663,15 @@ spawn ()
  		    tio.c_iflag &= ~(INLCR|IGNCR);
  		    tio.c_iflag |= ICRNL;
  		    /* ouput: cr->cr, nl is not return, no delays, ln->cr/nl */
@@ -419,7 +327,7 @@ $OpenBSD: patch-main_c,v 1.2 2002/11/21 05:41:14 pvalchev Exp $
  #ifdef BAUD_0
  		    /* baud rate is 0 (don't care) */
  		    tio.c_cflag &= ~(CBAUD);
-@@ -2612,6 +2734,13 @@ spawn ()
+@@ -2612,6 +2680,13 @@ spawn ()
  		    tio.c_cflag &= ~(CBAUD);
  		    tio.c_cflag |= B9600;
  #endif	/* !BAUD_0 */
@@ -433,7 +341,7 @@ $OpenBSD: patch-main_c,v 1.2 2002/11/21 05:41:14 pvalchev Exp $
  		    tio.c_cflag &= ~CSIZE;
  		    if (screen->input_eight_bits)
  			tio.c_cflag |= CS8;
-@@ -2723,9 +2852,14 @@ spawn ()
+@@ -2723,9 +2798,14 @@ spawn ()
  		    if (ioctl (tty, TIOCLSET, (char *)&lmode) == -1)
  			    HsSysError(cp_pipe[1], ERROR_TIOCLSET);
  #endif	/* TIOCLSET */
@@ -449,14 +357,13 @@ $OpenBSD: patch-main_c,v 1.2 2002/11/21 05:41:14 pvalchev Exp $
  #ifdef KTERM
  		    sg.sg_flags &= ~(ALLDELAY | XTABS | CBREAK | RAW
  						| EVENP | ODDP);
-@@ -3100,6 +3234,15 @@ spawn ()
+@@ -3100,6 +3180,14 @@ spawn ()
  				    close(i);
  				}
  #endif /* LASTLOG */
 +
 +#ifdef __OpenBSD__
 +				/* Switch to real gid after writing utmp entry */
-+				utmpGid = getegid();
 +				if (getgid() != getegid()) {
 +					utmpGid = getegid();
 +					setegid(getgid());
@@ -465,7 +372,7 @@ $OpenBSD: patch-main_c,v 1.2 2002/11/21 05:41:14 pvalchev Exp $
  			} else
  				tslot = -tslot;
  		}
-@@ -3272,11 +3415,11 @@ spawn ()
+@@ -3272,11 +3360,11 @@ spawn ()
  		shname_minus = malloc(strlen(shname) + 2);
  		(void) strcpy(shname_minus, "-");
  		(void) strcat(shname_minus, shname);
@@ -479,7 +386,7 @@ $OpenBSD: patch-main_c,v 1.2 2002/11/21 05:41:14 pvalchev Exp $
  
  #ifdef USE_LOGIN_DASH_P
  		if (term->misc.login_shell && pw && added_utmp_entry)
-@@ -3459,6 +3602,12 @@ Exit(n)
+@@ -3459,6 +3547,12 @@ Exit(n)
  	    && added_utmp_entry
  #endif /* USE_HANDSHAKE */
  	    ) {
