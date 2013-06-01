@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.265 2013/05/20 14:46:29 bcallah Exp $
+# $OpenBSD: Makefile,v 1.266 2013/06/01 02:16:44 bentley Exp $
 
      SUBDIR =
      SUBDIR += abuse
@@ -154,6 +154,7 @@
      SUBDIR += polymorphable
      SUBDIR += prboom
      SUBDIR += prboom-plus
+     SUBDIR += pushover
      SUBDIR += puzzles
      SUBDIR += qgo
      SUBDIR += qstat
