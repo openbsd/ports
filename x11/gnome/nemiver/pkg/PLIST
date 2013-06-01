@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/22 13:57:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/06/01 17:53:21 ajacoutot Exp $
 @bin bin/nemiver
 include/nemiver/
 include/nemiver/common/
@@ -125,8 +125,6 @@ lib/nemiver/plugins/dbgperspective/ui/watchpointdialog.ui
 @man man/man1/nemiver.1
 share/applications/nemiver.desktop
 share/glib-2.0/schemas/org.nemiver.gschema.xml
-share/help/
-share/help/C/
 share/help/C/nemiver/
 share/help/C/nemiver/figures/
 share/help/C/nemiver/figures/attach-dialog.png
@@ -145,7 +143,6 @@ share/help/C/nemiver/figures/set-breakpoint-dialog.png
 share/help/C/nemiver/figures/variable-inspector.png
 share/help/C/nemiver/index.docbook
 share/help/C/nemiver/legal.xml
-share/help/cs/
 share/help/cs/nemiver/
 share/help/cs/nemiver/figures/
 share/help/cs/nemiver/figures/attach-dialog.png
@@ -164,7 +161,6 @@ share/help/cs/nemiver/figures/set-breakpoint-dialog.png
 share/help/cs/nemiver/figures/variable-inspector.png
 share/help/cs/nemiver/index.docbook
 share/help/cs/nemiver/legal.xml
-share/help/de/
 share/help/de/nemiver/
 share/help/de/nemiver/figures/
 share/help/de/nemiver/figures/attach-dialog.png
@@ -202,7 +198,6 @@ share/help/el/nemiver/figures/set-breakpoint-dialog.png
 share/help/el/nemiver/figures/variable-inspector.png
 share/help/el/nemiver/index.docbook
 share/help/el/nemiver/legal.xml
-share/help/es/
 share/help/es/nemiver/
 share/help/es/nemiver/figures/
 share/help/es/nemiver/figures/attach-dialog.png
@@ -221,7 +216,6 @@ share/help/es/nemiver/figures/set-breakpoint-dialog.png
 share/help/es/nemiver/figures/variable-inspector.png
 share/help/es/nemiver/index.docbook
 share/help/es/nemiver/legal.xml
-share/help/fr/
 share/help/fr/nemiver/
 share/help/fr/nemiver/figures/
 share/help/fr/nemiver/figures/attach-dialog.png
@@ -259,7 +253,6 @@ share/help/gl/nemiver/figures/set-breakpoint-dialog.png
 share/help/gl/nemiver/figures/variable-inspector.png
 share/help/gl/nemiver/index.docbook
 share/help/gl/nemiver/legal.xml
-share/help/oc/
 share/help/oc/nemiver/
 share/help/oc/nemiver/figures/
 share/help/oc/nemiver/figures/attach-dialog.png
@@ -278,7 +271,6 @@ share/help/oc/nemiver/figures/set-breakpoint-dialog.png
 share/help/oc/nemiver/figures/variable-inspector.png
 share/help/oc/nemiver/index.docbook
 share/help/oc/nemiver/legal.xml
-share/help/sl/
 share/help/sl/nemiver/
 share/help/sl/nemiver/figures/
 share/help/sl/nemiver/figures/attach-dialog.png
@@ -297,7 +289,6 @@ share/help/sl/nemiver/figures/set-breakpoint-dialog.png
 share/help/sl/nemiver/figures/variable-inspector.png
 share/help/sl/nemiver/index.docbook
 share/help/sl/nemiver/legal.xml
-share/help/sv/
 share/help/sv/nemiver/
 share/help/sv/nemiver/figures/
 share/help/sv/nemiver/figures/attach-dialog.png
@@ -316,7 +307,6 @@ share/help/sv/nemiver/figures/set-breakpoint-dialog.png
 share/help/sv/nemiver/figures/variable-inspector.png
 share/help/sv/nemiver/index.docbook
 share/help/sv/nemiver/legal.xml
-share/help/zh_CN/
 share/help/zh_CN/nemiver/
 share/help/zh_CN/nemiver/figures/
 share/help/zh_CN/nemiver/figures/attach-dialog.png
