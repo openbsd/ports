@@ -1,0 +1,14 @@
+$OpenBSD: patch-main_c,v 1.1 2013/06/01 21:06:20 kurt Exp $
+--- main.c.orig	Thu May 30 12:31:09 2013
++++ main.c	Thu May 30 12:32:02 2013
+@@ -833,7 +833,9 @@ main(int argc, char **argv, char **envp)
+     mySignal(SIGPIPE, SigPipe);
+ #endif
+ 
+-    orig_GC_warn_proc = GC_set_warn_proc(wrap_GC_warn_proc);
++    orig_GC_warn_proc = GC_get_warn_proc();
++    GC_set_warn_proc(wrap_GC_warn_proc);
++
+     err_msg = Strnew();
+     if (load_argc == 0) {
+ 	/* no URL specified */
