@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.7 2012/08/12 17:33:04 jasper Exp $
+$OpenBSD: patch-configure,v 1.8 2013/06/01 14:18:40 ajacoutot Exp $
 --- configure.orig	Wed May 23 22:28:25 2012
 +++ configure	Sun Jul  8 18:18:32 2012
 @@ -2305,8 +2305,8 @@ case `uname -s` in
@@ -83,29 +83,3 @@ $OpenBSD: patch-configure,v 1.7 2012/08/12 17:33:04 jasper Exp $
  
  
  		for i in $dirs ; do
-@@ -4946,13 +4929,13 @@ fi
- done
- 
- 
--{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_create in -lpthread" >&5
--$as_echo_n "checking for pthread_create in -lpthread... " >&6; }
-+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_create in -pthread" >&5
-+$as_echo_n "checking for pthread_create in -pthread... " >&6; }
- if ${ac_cv_lib_pthread_pthread_create+:} false; then :
-   $as_echo_n "(cached) " >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lpthread  $LIBS"
-+LIBS="-pthread  $LIBS"
- cat confdefs.h - <<_ACEOF >conftest.$ac_ext
- /* end confdefs.h.  */
- 
-@@ -4983,7 +4966,7 @@ fi
- { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_pthread_pthread_create" >&5
- $as_echo "$ac_cv_lib_pthread_pthread_create" >&6; }
- if test "x$ac_cv_lib_pthread_pthread_create" = xyes; then :
--  LIBPTHREAD="-lpthread"
-+  LIBPTHREAD="-pthread"
- fi
- 
- if test "$LIBPTHREAD" = ""; then

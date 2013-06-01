@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:35:49 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/06/01 14:18:40 ajacoutot Exp $
 
 COMMENT =	command-line .torrent file creator
 
 DISTNAME =	mktorrent-1.0
 CATEGORIES =	net
 HOMEPAGE =	http://mktorrent.sourceforge.net/
+REVISION =	0
 
 MAINTAINER =	Gonzalo L. R. <gonzalo@openbsd.org>
 

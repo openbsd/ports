@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:35:46 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/06/01 14:18:40 ajacoutot Exp $
 
 COMMENT =		dump unencrypted RTMP media streams
 
 DISTNAME =		flvstreamer-2.1c1
 WRKDIST =		${WRKDIR}/flvstreamer
+REVISION =		0
 
 CATEGORIES =		net
 

@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2010/10/25 23:12:02 steven Exp $
+$OpenBSD: patch-configure,v 1.2 2013/06/01 14:18:40 ajacoutot Exp $
 --- configure.orig	Fri Jan 26 20:22:30 2007
 +++ configure	Tue Sep 23 14:13:54 2008
 @@ -3470,7 +3470,7 @@ fi
@@ -18,22 +18,4 @@ $OpenBSD: patch-configure,v 1.1.1.1 2010/10/25 23:12:02 steven Exp $
 +#   LIBNET_CONFIG="$libnet_config_dir/libnet-config"
  
  
- 
-@@ -6676,7 +6676,7 @@ if test "${ac_cv_lib_pthread_pthread_create+set}" = se
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lpthread  $LIBS"
-+LIBS="-pthread  $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -6736,7 +6736,7 @@ if test $ac_cv_lib_pthread_pthread_create = yes; then
- #define HAVE_LIBPTHREAD 1
- _ACEOF
- 
--  LIBS="-lpthread $LIBS"
-+  LIBS="-pthread $LIBS"
- 
- else
  

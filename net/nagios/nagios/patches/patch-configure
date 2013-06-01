@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.13 2013/05/05 22:13:48 rpe Exp $
+$OpenBSD: patch-configure,v 1.14 2013/06/01 14:18:40 ajacoutot Exp $
 --- configure.orig	Fri Mar 15 12:14:02 2013
 +++ configure	Mon May  6 00:05:06 2013
 @@ -572,7 +572,7 @@ do
@@ -10,64 +10,6 @@ $OpenBSD: patch-configure,v 1.13 2013/05/05 22:13:48 rpe Exp $
  
    -target | --target | --targe | --targ | --tar | --ta | --t)
      ac_prev=target_alias ;;
-@@ -5132,20 +5132,20 @@ fi
- echo "$as_me:$LINENO: result: $ac_cv_lib_cma_pthread_create" >&5
- echo "${ECHO_T}$ac_cv_lib_cma_pthread_create" >&6
- if test $ac_cv_lib_cma_pthread_create = yes; then
--  THREADLIBS="$THREADLIBS -lpthread"
-+  THREADLIBS="$THREADLIBS -pthread"
- fi
- 
- if test $ac_cv_lib_cma_pthread_create = yes; then
- 	have_pthreads="yes"
- fi
- 
--echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
--echo $ECHO_N "checking for pthread_create in -lpthread... $ECHO_C" >&6
-+echo "$as_me:$LINENO: checking for pthread_create in -pthread" >&5
-+echo $ECHO_N "checking for pthread_create in -pthread... $ECHO_C" >&6
- if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lpthread  $LIBS"
-+LIBS="-pthread  $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -5204,19 +5204,19 @@ fi
- echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_create" >&5
- echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6
- if test $ac_cv_lib_pthread_pthread_create = yes; then
--  THREADLIBS="$THREADLIBS -lpthread"
-+  THREADLIBS="$THREADLIBS -pthread"
- fi
- 
- if test $ac_cv_lib_pthread_pthread_create = yes; then
- 	have_pthreads="yes"
- else
--		echo "$as_me:$LINENO: checking for pthread_mutex_init in -lpthread" >&5
--echo $ECHO_N "checking for pthread_mutex_init in -lpthread... $ECHO_C" >&6
-+		echo "$as_me:$LINENO: checking for pthread_mutex_init in -pthread" >&5
-+echo $ECHO_N "checking for pthread_mutex_init in -pthread... $ECHO_C" >&6
- if test "${ac_cv_lib_pthread_pthread_mutex_init+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lpthread  $LIBS"
-+LIBS="-pthread  $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -5275,7 +5275,7 @@ fi
- echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_mutex_init" >&5
- echo "${ECHO_T}$ac_cv_lib_pthread_pthread_mutex_init" >&6
- if test $ac_cv_lib_pthread_pthread_mutex_init = yes; then
--  THREADLIBS="$THREADLIBS -lpthread"
-+  THREADLIBS="$THREADLIBS -pthread"
- fi
- 
- 	if test $ac_cv_lib_pthread_pthread_mutex_init = yes; then
 @@ -5666,7 +5666,7 @@ cat >>confdefs.h <<_ACEOF
  #define DEFAULT_NAGIOS_GROUP "$nagios_grp"
  _ACEOF

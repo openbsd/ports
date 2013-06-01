@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:35:56 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/06/01 14:18:40 ajacoutot Exp $
 
 COMMENT-main =	graphical tools for the MetaGeek Wi-spy spectrum analyser
 COMMENT-utils =	tools for the MetaGeek Wi-spy spectrum analyser
@@ -9,6 +9,8 @@ PKGNAME =	spectrum-tools-$V
 
 FULLPKGNAME-main =  spectrum-tools-${V:S/-//g}
 FULLPKGNAME-utils = spectrum-tools-utils-${V:S/-//g}
+
+REVISION-main=	0
 
 CATEGORIES =	net
 
@@ -52,9 +54,6 @@ CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 USE_GMAKE =		Yes
 
 NO_TEST =		Yes
-
-pre-configure:
-	perl -pi -e 's,-lpthread,-pthread,g' ${WRKSRC}/configure
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/spectrum-tools
