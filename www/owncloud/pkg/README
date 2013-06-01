@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.16 2013/05/01 07:16:15 jasper Exp $
+$OpenBSD: README,v 1.17 2013/06/01 20:30:41 stsp Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -30,9 +30,9 @@ ownCloud attempts to use the UTF-8 locale, which does not work inside
 the /var/www chroot by default. This causes warning messages in
 ownCloud's admin configuration page and log. To prevent this problem,
 run the following as root:
-  # mkdir -p /var/www/usr/share/locale/en_US.UTF-8/
-  # cp /usr/share/locale/en_US.UTF-8/LC_CTYPE \
-          /var/www/usr/share/locale/en_US.UTF-8/
+  # mkdir -p /var/www/usr/share/locale/UTF-8/
+  # cp /usr/share/locale/UTF-8/LC_CTYPE \
+          /var/www/usr/share/locale/UTF-8/
 
 To finish the installation, point your browser to:
     http://<hostname>/owncloud/
