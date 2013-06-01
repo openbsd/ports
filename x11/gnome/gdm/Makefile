@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.164 2013/05/31 15:35:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.165 2013/06/01 13:45:49 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -92,7 +92,6 @@ post-install:
 	mv ${WRKINST}/etc/dbus-1 ${PREFIX}/share/examples/gdm/etc
 	mv ${WRKINST}/etc/dconf ${PREFIX}/share/examples/gdm/etc
 	mv ${WRKINST}/var/db/gdm ${PREFIX}/share/examples/gdm/var/db
-	# see patch-src_daemon_main_c in audio/pulseaudio
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gdm/var/db/gdm/.pulse
 	${INSTALL_DATA} ${FILESDIR}/client.conf \
 		${PREFIX}/share/examples/gdm/var/db/gdm/.pulse
