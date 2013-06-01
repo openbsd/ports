@@ -1,6 +1,6 @@
-$OpenBSD: patch-texmaker_h,v 1.5 2012/03/01 17:57:45 shadchin Exp $
---- texmaker.h.orig	Thu Feb 23 23:04:45 2012
-+++ texmaker.h	Tue Feb 28 00:53:47 2012
+$OpenBSD: patch-texmaker_h,v 1.6 2013/06/01 08:27:57 shadchin Exp $
+--- texmaker.h.orig	Sun Apr 21 14:50:47 2013
++++ texmaker.h	Wed May  8 23:15:53 2013
 @@ -48,7 +48,7 @@
  #include "usertagslistwidget.h"
  #include "xmltagslistwidget.h"

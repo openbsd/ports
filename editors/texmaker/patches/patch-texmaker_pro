@@ -1,17 +1,17 @@
-$OpenBSD: patch-texmaker_pro,v 1.9 2013/01/08 15:43:54 shadchin Exp $
---- texmaker.pro.orig	Fri Nov  2 16:21:34 2012
-+++ texmaker.pro	Sat Nov  3 19:40:37 2012
-@@ -4,7 +4,8 @@ TARGET	 = texmaker
- QT += network \
-       xml \
-       webkit
+$OpenBSD: patch-texmaker_pro,v 1.10 2013/06/01 08:27:57 shadchin Exp $
+--- texmaker.pro.orig	Tue May  7 16:36:02 2013
++++ texmaker.pro	Wed May  8 23:17:40 2013
+@@ -6,7 +6,8 @@ QT += xml webkit network
+ ## QT5
+ #QT += xml webkitwidgets network widgets printsupport concurrent
+ 
 -CONFIG	+= qt warn_off release
 +CONFIG	+= qt warn_off release link_pkgconfig
 +PKGCONFIG = hunspell poppler-qt4
- TEXMAKERVERSION=3.5.2
+ TEXMAKERVERSION=4.0.2
  DEFINES += TEXMAKERVERSION=\\\"$${TEXMAKERVERSION}\\\"
  DEFINES += HAVE_SPLASH
-@@ -68,25 +69,6 @@ HEADERS	+= texmaker.h \
+@@ -71,25 +72,6 @@ HEADERS	+= texmaker.h \
  	synctex_parser_utils.h \
  	usertagslistwidget.h \
  	addtagdialog.h \
@@ -37,7 +37,7 @@ $OpenBSD: patch-texmaker_pro,v 1.9 2013/01/08 15:43:54 shadchin Exp $
  	singleapp/qtlocalpeer.h \
  	singleapp/qtlockedfile.h \
  	singleapp/qtsingleapplication.h \
-@@ -173,18 +155,6 @@ SOURCES	+= main.cpp \
+@@ -177,18 +159,6 @@ SOURCES	+= main.cpp \
  	synctex_parser_utils.c \
  	usertagslistwidget.cpp \
  	addtagdialog.cpp \
@@ -56,11 +56,11 @@ $OpenBSD: patch-texmaker_pro,v 1.9 2013/01/08 15:43:54 shadchin Exp $
  	singleapp/qtlocalpeer.cpp \
  	singleapp/qtlockedfile.cpp \
  	singleapp/qtsingleapplication.cpp \
-@@ -387,35 +357,7 @@ utilities.files = doc/doc1.png \
- 	locale/texmaker_hu.qm \
- 	locale/texmaker_sr.qm \
+@@ -396,35 +366,7 @@ utilities.files = doc/doc1.png \
  	locale/texmaker_el.qm \
--	locale/texmaker_se.qm \
+ 	locale/texmaker_se.qm \
+ 	locale/texmaker_ar.qm \
+-	locale/texmaker_lv.qm \
 -	dictionaries/nl_NL.aff \
 -	dictionaries/nl_NL.dic \
 -	dictionaries/de_DE.aff \
@@ -89,7 +89,7 @@ $OpenBSD: patch-texmaker_pro,v 1.9 2013/01/08 15:43:54 shadchin Exp $
 -	dictionaries/README_DIC_fr_FR.txt \
 -	dictionaries/README_es_ES.txt \
 -	dictionaries/README_en_US.txt
-+	locale/texmaker_se.qm
++	locale/texmaker_lv.qm
  INSTALLS += utilities
  
  desktop.path = $${DESKTOPDIR}
