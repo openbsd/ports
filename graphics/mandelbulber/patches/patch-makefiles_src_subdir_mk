@@ -1,12 +1,12 @@
-$OpenBSD: patch-makefiles_src_subdir_mk,v 1.2 2012/05/24 08:36:05 jasper Exp $
---- makefiles/src/subdir.mk.orig	Sun Feb 12 12:07:21 2012
-+++ makefiles/src/subdir.mk	Thu May 24 10:26:38 2012
-@@ -68,7 +68,7 @@ CPP_DEPS += \
+$OpenBSD: patch-makefiles_src_subdir_mk,v 1.3 2013/06/01 14:51:10 bentley Exp $
+--- makefiles/src/subdir.mk.orig	Tue Apr 23 09:55:16 2013
++++ makefiles/src/subdir.mk	Sun May  5 17:23:45 2013
+@@ -71,7 +71,7 @@ CPP_DEPS += \
  src/%.o: ../src/%.cpp
  	@echo 'Building file: $<'
  	@echo 'Invoking: GCC C++ Compiler'
 -	g++ -O2 -ffast-math -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0 gthread-2.0;` -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o"$@" "$<"
-+	${CXX} -O2 -ffast-math -Wall -c -fmessage-length=0 ${CXXFLAGS} `pkg-config --cflags gtk+-2.0 gthread-2.0;` -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o"$@" "$<"
++	${CXX} -ffast-math -Wall -c -fmessage-length=0 ${CXXFLAGS} `pkg-config --cflags gtk+-2.0 gthread-2.0;` -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o"$@" "$<"
  	@echo 'Finished building: $<'
  	@echo ' '
  

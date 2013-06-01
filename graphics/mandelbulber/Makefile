@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:10:54 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/06/01 14:51:10 bentley Exp $
 
 COMMENT =		3D fractal renderer
 
-V =			1.11
+V =			1.15
 DISTNAME =		mandelbulber${V}
 PKGNAME =		mandelbulber-${V}
 
 CATEGORIES =		graphics
 
-HOMEPAGE =		https://sites.google.com/site/mandelbulber/
+HOMEPAGE =		http://mandelbulber.com
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
@@ -25,10 +25,13 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=mandelbulber/}
 MODULES =		devel/gettext
 LIB_DEPENDS =		graphics/png \
 			x11/gtk+2
+RUN_DEPENDS =		devel/desktop-file-utils
 
 NO_TEST =		Yes
 
-MAKE_FLAGS =		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include"
+MAKE_FLAGS =		CXX="${CXX}" \
+			CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 USE_GMAKE =		Yes
 
