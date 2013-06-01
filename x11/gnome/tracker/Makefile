@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.145 2013/05/31 15:35:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.146 2013/06/01 18:56:09 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -86,9 +86,6 @@ MODPY_RUNDEP=		No
 
 MODPY_ADJ_FILES=	tests/tracker-writeback/01-writeback.py \
 			utils/data-generators/cc/generate
-
-AUTOCONF_VERSION=	2.69
-CONFIGURE_STYLE=	autoconf
 
 CONFIGURE_ARGS=		--disable-static \
 			--disable-miner-thunderbird \

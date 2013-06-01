@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/05/31 15:35:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2013/06/01 18:56:08 ajacoutot Exp $
 
 COMMENT=	integrated LaTeX environment for GNOME
 
@@ -39,7 +39,5 @@ LIB_DEPENDS=	devel/libgee06 \
 MODGNOME_TOOLS= 	yelp
 MODGNOME_ICON_CACHE=	Yes
 MODGNOME_DESKTOP_FILE=	Yes
-
-CONFIGURE_STYLE=gnu
 
 .include <bsd.port.mk>

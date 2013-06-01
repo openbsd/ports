@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/04/16 10:21:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2013/06/01 18:56:09 ajacoutot Exp $
 
 PKG_ARCH=	*
 
@@ -32,8 +32,5 @@ MODPY_ADJ_FILES=gnome-tweak-tool
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
-
-CONFIGURE_STYLE=	autoconf no-autoheader
-AUTOCONF_VERSION=	2.69
 
 .include <bsd.port.mk>

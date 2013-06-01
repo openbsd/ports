@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2013/05/31 15:35:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.105 2013/06/01 18:56:09 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -72,9 +72,6 @@ MODGNOME_ICON_CACHE=	Yes
 MODGNOME_TOOLS=		gi vala yelp
 
 LIBTOOL_FLAGS=		--tag=disable-static
-
-AUTOCONF_VERSION=	2.69
-CONFIGURE_STYLE=	autoconf
 
 CONFIGURE_ARGS=		--disable-static \
 			--disable-browser-plugins \

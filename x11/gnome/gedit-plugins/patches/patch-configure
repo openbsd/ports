@@ -1,20 +1,9 @@
-$OpenBSD: patch-configure,v 1.9 2013/03/30 13:04:46 jasper Exp $
+$OpenBSD: patch-configure,v 1.10 2013/06/01 18:56:08 ajacoutot Exp $
 
-Fix DATADIRNAME: see LOCALBASE/share/aclocal/{glib-gettext.m4,intltool.m4}
 Fix some sed (mis)usage.
 
 --- configure.orig	Mon Mar 25 20:57:20 2013
 +++ configure	Sat Mar 30 13:33:25 2013
-@@ -12456,6 +12456,9 @@ else
- fi
- 
-     ;;
-+    *-*-openbsd*)
-+    DATADIRNAME=share
-+    ;;
-     *)
-     DATADIRNAME=lib
-     ;;
 @@ -15036,7 +15039,7 @@ undef_plugin() {
  		disabled_plugins="$disabled_plugins, $1 ($2)"
  	fi

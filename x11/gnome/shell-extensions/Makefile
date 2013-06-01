@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/05/14 08:59:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2013/06/01 18:56:08 ajacoutot Exp $
 
 PKG_ARCH=		*
 
@@ -25,9 +25,5 @@ BUILD_DEPENDS=		devel/gettext \
 RUN_DEPENDS=		devel/libgtop2 \
 			x11/gnome/desktop \
 			x11/gnome/shell
-
-# Fix DATADIRNAME: see LOCALBASE/share/aclocal/{glib-gettext.m4,intltool.m4}
-# XXX: not using autoconf due to lack of autogen.sh
-FAKE_FLAGS=		DATADIRNAME=share
 
 .include <bsd.port.mk>

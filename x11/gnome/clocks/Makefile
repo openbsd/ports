@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/05/31 15:35:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2013/06/01 18:56:08 ajacoutot Exp $
 
 COMMENT=		clock application for GNOME
 
@@ -34,11 +34,6 @@ LIB_DEPENDS=		audio/libcanberra \
 MODGNOME_TOOLS=		gi vala
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
-
-AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.11
-
-CONFIGURE_STYLE=	autoconf no-autoheader
 
 pre-configure:
 	perl -pi -e 's,.-Wno-unused-but-set-variable,,' \

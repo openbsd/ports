@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2013/05/31 22:20:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.94 2013/06/01 18:56:08 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -75,10 +75,6 @@ YACC=			bison -y
 
 CONFIGURE_ARGS+=	--disable-static \
 			--with-symbol-db-shm=/tmp
-
-# XXX: needed because of patch-m4_intltool_m4
-AUTOCONF_VERSION=	2.69
-CONFIGURE_STYLE=	autoconf
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/plugins/project-wizard/templates/pygtk.wiz.in \

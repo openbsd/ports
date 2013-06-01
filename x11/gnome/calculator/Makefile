@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/05/15 13:39:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2013/06/01 18:56:08 ajacoutot Exp $
 
 COMMENT=		GNOME desktop calculator
 
@@ -28,8 +28,5 @@ RUN_DEPENDS=		x11/gnome/gvfs
 
 MODGNOME_TOOLS= 	vala yelp
 MODGNOME_DESKTOP_FILE=	Yes
-
-AUTOCONF_VERSION =	2.69
-CONFIGURE_STYLE=	autoconf no-autoheader
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2013/05/30 13:21:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2013/06/01 18:56:08 ajacoutot Exp $
 
 # XXX could use brltty and brlapi (with python bindinds) -- not ported yet
 
@@ -32,9 +32,6 @@ MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 MODGNOME_TOOLS= 	yelp
-
-CONFIGURE_STYLE=	autoconf no-autoheader
-AUTOCONF_VERSION=	2.69
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/orca/
 
