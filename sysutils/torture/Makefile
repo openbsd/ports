@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:41:33 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/06/02 14:30:42 beck Exp $
 
 COMMENT =		set of kernel torture tools
 
-DISTNAME =		torture-1.0
-EXTRACT_SUFX =		.tgz
+DISTNAME =		torture-1.1
 CATEGORIES =		sysutils
 
-MAINTAINER =		Thordur I. Bjornsson <thib@openbsd.org>
+MAINTAINER =		Bob Beck <beck@obtuse.com>
 
 # BSD
 PERMIT_PACKAGE_CDROM =   Yes
 
-MASTER_SITES =	http://notendur.hi.is/~thb45/
+MASTER_SITES =	http://foad2.obtuse.com/pub/beck/
 
 NO_TEST =	Yes
 WANTLIB =	c
