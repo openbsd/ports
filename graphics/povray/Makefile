@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2013/03/21 08:45:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2013/06/02 15:38:37 naddy Exp $
 
 COMMENT=	3D image rendering package
 
 DISTNAME=	povray-3.6.1
-REVISION=	4
+REVISION=	5
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.povray.org/
@@ -20,7 +20,7 @@ EXTRACT_SUFX=		.tar.bz2
 # We replace the included ancient copy of libpng with a later release
 # from the 1.2 branch.
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
-PNG_V=			1.2.49
+PNG_V=			1.2.50
 MASTER_SITES0=		${MASTER_SITE_SOURCEFORGE:=libpng/}
 DISTFILES=		${EXTRACT_ONLY} libpng-${PNG_V}.tar.gz:0
 
@@ -37,9 +37,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--includedir=${LOCALBASE}
 
 # POV-Ray 3.6 is incompatible with libpng 1.5.
-# We do not add -I${LOCALBASE}/include/libpng on purpose, so the
-# included libpng 1.2 will be used.
-
+CONFIGURE_ARGS+=	ac_cv_search_png_get_libpng_ver=no	
 CONFIGURE_ENV+= 	COMPILED_BY="OpenBSD Ports <ports@openbsd.org>" \
 			CPPFLAGS="-I${LOCALBASE}/include -DPNG_NO_MMX_CODE" \
 			CXXFLAGS="-I${LOCALBASE}/include" \
