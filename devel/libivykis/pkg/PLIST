@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/19 21:39:12 steven Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2013/06/02 19:57:28 steven Exp $
 include/iv.h
 include/iv_avl.h
 include/iv_event.h
@@ -14,6 +13,7 @@ include/iv_wait.h
 include/iv_work.h
 lib/libivykis.a
 lib/libivykis.la
+@lib lib/libivykis.so.${LIBivykis_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/ivykis.pc
 @man man/man3/IV_EVENT_INIT.3
@@ -43,6 +43,7 @@ lib/pkgconfig/ivykis.pc
 @man man/man3/iv_fd_pump_pump.3
 @man man/man3/iv_fd_register.3
 @man man/man3/iv_fd_register_try.3
+@man man/man3/iv_fd_registered.3
 @man man/man3/iv_fd_set_handler_err.3
 @man man/man3/iv_fd_set_handler_in.3
 @man man/man3/iv_fd_set_handler_out.3
@@ -61,6 +62,7 @@ lib/pkgconfig/ivykis.pc
 @man man/man3/iv_signal_unregister.3
 @man man/man3/iv_task.3
 @man man/man3/iv_task_register.3
+@man man/man3/iv_task_registered.3
 @man man/man3/iv_task_unregister.3
 @man man/man3/iv_thread.3
 @man man/man3/iv_thread_create.3
@@ -68,6 +70,7 @@ lib/pkgconfig/ivykis.pc
 @man man/man3/iv_time.3
 @man man/man3/iv_timer.3
 @man man/man3/iv_timer_register.3
+@man man/man3/iv_timer_registered.3
 @man man/man3/iv_timer_unregister.3
 @man man/man3/iv_tls.3
 @man man/man3/iv_tls_user_ptr.3

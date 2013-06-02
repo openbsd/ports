@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2012/10/19 21:39:12 steven Exp $
-@lib lib/libivykis.so.${LIBivykis_VERSION}
