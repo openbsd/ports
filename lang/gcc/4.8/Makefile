@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/04/20 20:54:04 pascal Exp $
+# $OpenBSD: Makefile,v 1.4 2013/06/02 13:59:35 pascal Exp $
 
 ONLY_FOR_ARCHS = alpha amd64 i386 powerpc sparc64
 
@@ -109,6 +109,8 @@ TEST_DEPENDS += ${BUILD_PKGPATH},-ada
 #.if ${BUILD_PACKAGES:M-go}
 #LANGS := ${LANGS},go
 #.endif
+
+USE_LIBTOOL =			gnu
 
 CONFIGURE_STYLE =		gnu
 MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC} ${WRKSRC}/gcc
