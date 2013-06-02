@@ -1,0 +1,12 @@
+$OpenBSD: patch-i3-dump-log_i3-dump-log_mk,v 1.1 2013/06/02 11:24:06 dcoppa Exp $
+--- i3-dump-log/i3-dump-log.mk.orig	Thu May 23 11:38:40 2013
++++ i3-dump-log/i3-dump-log.mk	Thu May 23 11:40:29 2013
+@@ -21,7 +21,7 @@ i3-dump-log/i3-dump-log: libi3.a $(i3_dump_log_OBJECTS
+ install-i3-dump-log: i3-dump-log/i3-dump-log
+ 	echo "[i3-dump-log] Install"
+ 	$(INSTALL) -d -m 0755 $(DESTDIR)$(PREFIX)/bin
+-	$(INSTALL) -m 0755 i3-dump-log/i3-dump-log $(DESTDIR)$(PREFIX)/bin/
++	${INSTALL_PROGRAM} i3-dump-log/i3-dump-log $(DESTDIR)$(PREFIX)/bin/
+ 
+ clean-i3-dump-log:
+ 	echo "[i3-dump-log] Clean"

@@ -1,98 +1,41 @@
-$OpenBSD: patch-src_log_c,v 1.4 2012/09/21 17:16:14 dcoppa Exp $
+$OpenBSD: patch-src_log_c,v 1.5 2013/06/02 11:24:06 dcoppa Exp $
 
-OpenBSD lacks POSIX shared memory support (shm_open() and friends)
+OpenBSD lacks pthread_condattr_setpshared()
 
---- src/log.c.orig	Wed Sep 19 18:08:09 2012
-+++ src/log.c	Thu Sep 20 14:19:57 2012
-@@ -30,7 +30,9 @@
- #include "log.h"
- #include "i3.h"
- #include "libi3.h"
+--- src/log.c.orig	Mon Mar 18 22:43:36 2013
++++ src/log.c	Sun Jun  2 11:03:45 2013
+@@ -20,7 +20,9 @@
+ #include <sys/mman.h>
+ #include <sys/stat.h>
+ #include <errno.h>
 +#if !defined(__OpenBSD__)
- #include "shmlog.h"
+ #include <pthread.h>
++#endif
+ #if defined(__APPLE__)
+ #include <sys/types.h>
+ #include <sys/sysctl.h>
+@@ -135,11 +137,13 @@ void init_logging(void) {
+ 
+         header = (i3_shmlog_header*)logbuffer;
+ 
++#if !defined(__OpenBSD__)
+         pthread_condattr_t cond_attr;
+         pthread_condattr_init(&cond_attr);
+         if (pthread_condattr_setpshared(&cond_attr, PTHREAD_PROCESS_SHARED) != 0)
+             ELOG("pthread_condattr_setpshared() failed, i3-dump-log -f will not work!\n");
+         pthread_cond_init(&(header->condvar), &cond_attr);
 +#endif
  
- static bool debug_logging = false;
- static bool verbose = false;
-@@ -39,6 +41,7 @@ char *errorfilename;
- 
- /* SHM logging variables */
- 
-+#if !defined(__OpenBSD__)
- /* The name for the SHM (/i3-log-%pid). Will end up on /dev/shm on most
-  * systems. Global so that we can clean up at exit. */
- char *shmlogname = "";
-@@ -70,6 +73,7 @@ static void store_log_markers(void) {
-     header->offset_last_wrap = (loglastwrap - logbuffer);
-     header->size = logbuffer_size;
- }
-+#endif
- 
- /*
-  * Initializes logging by creating an error logfile in /tmp (or
-@@ -90,6 +94,7 @@ void init_logging(void) {
-         }
-     }
- 
-+#if !defined(__OpenBSD__)
-     /* If this is a debug build (not a release version), we will enable SHM
-      * logging by default, unless the user turned it off explicitly. */
-     if (logbuffer == NULL && shmlog_size > 0) {
-@@ -145,6 +150,7 @@ void init_logging(void) {
+         logwalk = logbuffer + sizeof(i3_shmlog_header);
          loglastwrap = logbuffer + logbuffer_size;
-         store_log_markers();
-     }
-+#endif
-     atexit(purge_zerobyte_logfile);
- }
+@@ -228,8 +232,10 @@ static void vlog(const bool print, const char *fmt, va
  
-@@ -197,7 +203,9 @@ static void vlog(const bool print, const char *fmt, va
-      *  false     true   print message only
-      *  false     false  INVALID, never called
-      */
+         store_log_markers();
+ 
 +#if !defined(__OpenBSD__)
-     if (!logbuffer) {
+         /* Wake up all (i3-dump-log) processes waiting for condvar. */
+         pthread_cond_broadcast(&(header->condvar));
 +#endif
- #ifdef DEBUG_TIMING
-         struct timeval tv;
-         gettimeofday(&tv, NULL);
-@@ -206,6 +214,7 @@ static void vlog(const bool print, const char *fmt, va
-         printf("%s", message);
- #endif
-         vprintf(fmt, args);
-+#if !defined(__OpenBSD__)
-     } else {
-         len += vsnprintf(message + len, sizeof(message) - len, fmt, args);
-         if (len >= sizeof(message)) {
-@@ -234,6 +243,7 @@ static void vlog(const bool print, const char *fmt, va
+ 
          if (print)
              fwrite(message, len, 1, stdout);
-     }
-+#endif
- }
- 
- /*
-@@ -244,7 +254,11 @@ static void vlog(const bool print, const char *fmt, va
- void verboselog(char *fmt, ...) {
-     va_list args;
- 
-+#if !defined(__OpenBSD__)
-     if (!logbuffer && !verbose)
-+#else
-+    if (!verbose)
-+#endif
-         return;
- 
-     va_start(args, fmt);
-@@ -279,7 +293,11 @@ void errorlog(char *fmt, ...) {
- void debuglog(char *fmt, ...) {
-     va_list args;
- 
-+#if !defined(__OpenBSD__)
-     if (!logbuffer && !(debug_logging))
-+#else
-+    if (!debug_logging)
-+#endif
-         return;
- 
-     va_start(args, fmt);

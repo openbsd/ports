@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.63 2013/05/17 10:21:42 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.64 2013/06/02 11:24:06 dcoppa Exp $
 
 COMMENT =	improved dynamic tiling window manager
 
 DISTNAME =	i3-4.5.1
-REVISION =	0
+REVISION =	1
 CATEGORIES =	x11
 
 EXTRACT_SUFX =	.tar.bz2
@@ -14,12 +14,11 @@ MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM =   Yes
 
-WANTLIB =	X11 Xcursor c cairo ev fontconfig freetype \
+WANTLIB =	X11 Xcursor c>=68.3 cairo ev fontconfig freetype \
 		glib-2.0 gobject-2.0 m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pcre pthread startup-notification-1 \
-		xcb xcb-atom xcb-aux xcb-event xcb-icccm \
-		xcb-keysyms xcb-property xcb-randr xcb-xinerama \
-		yajl z
+		pangoft2-1.0 pcre startup-notification-1 xcb \
+		xcb-atom xcb-aux xcb-event xcb-icccm xcb-keysyms \
+		xcb-property xcb-randr xcb-xinerama yajl z
 
 MODULES =	converters/libiconv \
 		devel/gettext
@@ -70,7 +69,6 @@ post-install:
 			${PREFIX}/man/man1/i3-dmenu-desktop.1
 	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -m ${MANMODE} \
 		-c ${WRKBUILD}/man/i3.1 ${PREFIX}/man/man1/i3.1
-	@rm ${PREFIX}/man/man1/i3-dump-log.1 \
-		${PREFIX}/man/man1/i3-sensible*.1
+	@rm ${PREFIX}/man/man1/i3-sensible*.1
 
 .include <bsd.port.mk>

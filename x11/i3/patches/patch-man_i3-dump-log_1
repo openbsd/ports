@@ -1,0 +1,12 @@
+$OpenBSD: patch-man_i3-dump-log_1,v 1.1 2013/06/02 11:24:06 dcoppa Exp $
+--- man/i3-dump-log.1.orig	Thu May 23 13:55:30 2013
++++ man/i3-dump-log.1	Thu May 23 13:56:12 2013
+@@ -31,7 +31,7 @@
+ i3-dump-log \- dumps the i3 SHM log
+ .SH "SYNOPSIS"
+ .sp
+-i3\-dump\-log [\-s <socketpath>]
++i3\-dump\-log [\-hVv]
+ .SH "DESCRIPTION"
+ .sp
+ Debug versions of i3 automatically use 1% of your RAM (but 25 MiB max) to store full debug log output\&. This is extremely helpful for bugreports and figuring out what is going on, without permanently logging to a file\&.

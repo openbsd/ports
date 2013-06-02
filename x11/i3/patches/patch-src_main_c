@@ -1,95 +1,13 @@
-$OpenBSD: patch-src_main_c,v 1.8 2013/05/16 18:42:30 dcoppa Exp $
-
-OpenBSD lacks POSIX shared memory support (shm_open() and friends)
-
+$OpenBSD: patch-src_main_c,v 1.9 2013/06/02 11:24:06 dcoppa Exp $
 --- src/main.c.orig	Mon Mar 18 22:43:36 2013
-+++ src/main.c	Mon May 13 08:27:23 2013
-@@ -219,11 +219,13 @@ static void i3_exit(void) {
-     ev_loop_destroy(main_loop);
- #endif
- 
-+#if !defined(__OpenBSD__)
-     if (*shmlogname != '\0') {
-         fprintf(stderr, "Closing SHM log \"%s\"\n", shmlogname);
-         fflush(stderr);
-         shm_unlink(shmlogname);
-     }
-+#endif
- }
- 
- /*
-@@ -233,9 +235,11 @@ static void i3_exit(void) {
-  *
-  */
- static void handle_signal(int sig, siginfo_t *info, void *data) {
-+#if !defined(__OpenBSD__)
-     if (*shmlogname != '\0') {
-         shm_unlink(shmlogname);
-     }
-+#endif
-     raise(sig);
- }
- 
-@@ -263,8 +267,10 @@ int main(int argc, char *argv[]) {
-         {"force-xinerama", no_argument, 0, 0},
-         {"force_xinerama", no_argument, 0, 0},
-         {"disable-signalhandler", no_argument, 0, 0},
-+#if !defined(__OpenBSD__)
-         {"shmlog-size", required_argument, 0, 0},
-         {"shmlog_size", required_argument, 0, 0},
-+#endif
-         {"get-socketpath", no_argument, 0, 0},
-         {"get_socketpath", no_argument, 0, 0},
-         {"fake_outputs", required_argument, 0, 0},
-@@ -290,8 +296,10 @@ int main(int argc, char *argv[]) {
++++ src/main.c	Thu May 23 13:09:14 2013
+@@ -290,8 +290,7 @@ int main(int argc, char *argv[]) {
       * (file) logging. */
      init_logging();
  
-+#if !defined(__OpenBSD__)
-     /* On non-release builds, disable SHM logging by default. */
-     shmlog_size = (is_debug_build() ? 25 * 1024 * 1024 : 0);
-+#endif
+-    /* On non-release builds, disable SHM logging by default. */
+-    shmlog_size = (is_debug_build() ? 25 * 1024 * 1024 : 0);
++    shmlog_size = (25 * 1024 * 1024);
  
      start_argv = argv;
  
-@@ -355,6 +363,7 @@ int main(int argc, char *argv[]) {
-                     }
- 
-                     exit(EXIT_FAILURE);
-+#if !defined(__OpenBSD__)
-                 } else if (strcmp(long_options[option_index].name, "shmlog-size") == 0 ||
-                            strcmp(long_options[option_index].name, "shmlog_size") == 0) {
-                     shmlog_size = atoi(optarg);
-@@ -363,6 +372,7 @@ int main(int argc, char *argv[]) {
-                     init_logging();
-                     LOG("Limiting SHM log size to %d bytes\n", shmlog_size);
-                     break;
-+#endif
-                 } else if (strcmp(long_options[option_index].name, "restart") == 0) {
-                     FREE(layout_path);
-                     layout_path = sstrdup(optarg);
-@@ -398,11 +408,13 @@ int main(int argc, char *argv[]) {
-                 fprintf(stderr, "\t--get-socketpath\n"
-                                 "\tRetrieve the i3 IPC socket path from X11, print it, then exit.\n");
-                 fprintf(stderr, "\n");
-+#if !defined(__OpenBSD__)
-                 fprintf(stderr, "\t--shmlog-size <limit>\n"
-                                 "\tLimits the size of the i3 SHM log to <limit> bytes. Setting this\n"
-                                 "\tto 0 disables SHM logging entirely.\n"
-                                 "\tThe default is %d bytes.\n", shmlog_size);
-                 fprintf(stderr, "\n");
-+#endif
-                 fprintf(stderr, "If you pass plain text arguments, i3 will interpret them as a command\n"
-                                 "to send to a currently running i3 (like i3-msg). This allows you to\n"
-                                 "use nice and logical commands, such as:\n"
-@@ -474,8 +486,10 @@ int main(int argc, char *argv[]) {
-         return 0;
-     }
- 
-+#if !defined(__OpenBSD__)
-     /* Enable logging to handle the case when the user did not specify --shmlog-size */
-     init_logging();
-+#endif
- 
-     /* Try to enable core dumps by default when running a debug build */
-     if (is_debug_build()) {

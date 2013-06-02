@@ -1,19 +1,7 @@
-$OpenBSD: patch-man_i3_1,v 1.5 2013/01/11 09:44:12 dcoppa Exp $
---- man/i3.1.orig	Wed Dec 12 00:08:28 2012
-+++ man/i3.1	Fri Jan 11 10:05:35 2013
-@@ -75,11 +75,6 @@ Use Xinerama instead of RandR\&. This option should on
- .RS 4
- Retrieve the i3 IPC socket path from X11, print it, then exit\&.
- .RE
--.PP
--\-\-shmlog\-size <limit>
--.RS 4
--Limits the size of the i3 SHM log to <limit> bytes\&. Setting this to 0 disables SHM logging entirely\&. The default is 0 bytes\&.
--.RE
- .SH "DESCRIPTION"
- .SS "INTRODUCTION"
- .sp
-@@ -240,7 +235,7 @@ When starting, i3 looks for configuration files in the
+$OpenBSD: patch-man_i3_1,v 1.6 2013/06/02 11:24:06 dcoppa Exp $
+--- man/i3.1.orig	Mon Mar 18 22:43:47 2013
++++ man/i3.1	Thu May 23 11:36:28 2013
+@@ -240,7 +240,7 @@ When starting, i3 looks for configuration files in the
  .sp -1
  .IP "  2." 4.2
  .\}
@@ -22,7 +10,7 @@ $OpenBSD: patch-man_i3_1,v 1.5 2013/01/11 09:44:12 dcoppa Exp $
  .RE
  .sp
  .RS 4
-@@ -262,7 +257,7 @@ When starting, i3 looks for configuration files in the
+@@ -262,7 +262,7 @@ When starting, i3 looks for configuration files in the
  .sp -1
  .IP "  4." 4.2
  .\}
@@ -31,7 +19,7 @@ $OpenBSD: patch-man_i3_1,v 1.5 2013/01/11 09:44:12 dcoppa Exp $
  .RE
  .sp
  You can specify a custom path using the \-c option\&.
-@@ -282,13 +277,13 @@ font \-misc\-fixed\-medium\-r\-normal\-\-13\-120\-75\-
+@@ -282,13 +282,13 @@ font \-misc\-fixed\-medium\-r\-normal\-\-13\-120\-75\-
  floating_modifier Mod1
  
  # start a terminal
@@ -47,7 +35,7 @@ $OpenBSD: patch-man_i3_1,v 1.5 2013/01/11 09:44:12 dcoppa Exp $
  
  # change focus
  bindsym Mod1+j focus left
-@@ -407,7 +402,7 @@ ulimit \-c unlimited
+@@ -407,7 +407,7 @@ ulimit \-c unlimited
  
  # Start i3 and log to ~/\&.i3/logfile
  echo "Starting at $(date)" >> ~/\&.i3/logfile

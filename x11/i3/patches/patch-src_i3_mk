@@ -1,7 +1,19 @@
-$OpenBSD: patch-src_i3_mk,v 1.3 2013/05/16 18:42:30 dcoppa Exp $
+$OpenBSD: patch-src_i3_mk,v 1.4 2013/06/02 11:24:06 dcoppa Exp $
 --- src/i3.mk.orig	Mon Mar 18 22:43:36 2013
-+++ src/i3.mk	Mon May 13 08:27:23 2013
-@@ -73,17 +73,14 @@ install-i3: i3
++++ src/i3.mk	Sun Jun  2 11:13:24 2013
+@@ -6,7 +6,11 @@ i3_SOURCES           := $(filter-out $(i3_SOURCES_GENE
+ i3_HEADERS_CMDPARSER := $(wildcard include/GENERATED_*.h)
+ i3_HEADERS           := $(filter-out $(i3_HEADERS_CMDPARSER),$(wildcard include/*.h))
+ i3_CFLAGS             = $(XCB_CFLAGS) $(XCB_KBD_CFLAGS) $(XCB_WM_CFLAGS) $(X11_CFLAGS) $(XCURSOR_CFLAGS) $(PANGO_CFLAGS) $(YAJL_CFLAGS) $(LIBEV_CFLAGS) $(PCRE_CFLAGS) $(LIBSN_CFLAGS)
++ifneq ($(UNAME),OpenBSD)
+ i3_LIBS               = $(XCB_LIBS) $(XCB_KBD_LIBS) $(XCB_WM_LIBS) $(X11_LIBS) $(XCURSOR_LIBS) $(PANGO_LIBS) $(YAJL_LIBS) $(LIBEV_LIBS) $(PCRE_LIBS) $(LIBSN_LIBS) -lm -lpthread
++else
++i3_LIBS               = $(XCB_LIBS) $(XCB_KBD_LIBS) $(XCB_WM_LIBS) $(X11_LIBS) $(XCURSOR_LIBS) $(PANGO_LIBS) $(YAJL_LIBS) $(LIBEV_LIBS) $(PCRE_LIBS) $(LIBSN_LIBS) -lm
++endif
+ 
+ # When using clang, we use pre-compiled headers to speed up the build. With
+ # gcc, this actually makes the build slower.
+@@ -73,17 +77,14 @@ install-i3: i3
  	$(INSTALL) -d -m 0755 $(DESTDIR)$(PREFIX)/include/i3
  	$(INSTALL) -d -m 0755 $(DESTDIR)$(PREFIX)/share/xsessions
  	$(INSTALL) -d -m 0755 $(DESTDIR)$(PREFIX)/share/applications
