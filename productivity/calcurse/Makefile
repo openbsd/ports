@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:37:54 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/06/02 16:00:53 landry Exp $
 
 COMMENT=	text-based calendar and scheduling application
 
-DISTNAME=	calcurse-2.9.2
-REVISION=	0
+DISTNAME=	calcurse-3.1.4
 CATEGORIES=	productivity
 
 MAINTAINER=	Frederic Culot <frederic@culot.org>
