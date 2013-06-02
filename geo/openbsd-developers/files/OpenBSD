@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.100 2013/06/01 19:18:20 jung Exp $
+# $OpenBSD: OpenBSD,v 1.101 2013/06/02 18:58:12 steven Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -94,7 +94,7 @@
 50.752		-3.276		"sthen"		# Stuart Henderson
 50.7819		6.0856		"mikeb"		# Mike Belopuhov
 50.858		4.3897		"xsa"		# Xavier Santolaria
-50.87		4.37		"steven"	# Steven Mestdagh
+50.85		4.364		"steven"	# Steven Mestdagh
 51.0333		-114.0500	"pvalchev"	# Peter Valchev
 51.05		3.60		"wvdputte"	# Wim Vandeputte
 51.395466	-0.759525	"nigel"		# Nigel Taylor
