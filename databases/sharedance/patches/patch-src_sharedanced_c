@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_sharedanced_c,v 1.1 2013/06/02 15:39:28 landry Exp $
+--- src/sharedanced.c.orig	Sun Jun  2 17:19:47 2013
++++ src/sharedanced.c	Sun Jun  2 17:20:26 2013
+@@ -99,6 +99,7 @@ static void clearargs(int argc, char **argv)
+ #endif
+ }
+ 
++#if 0
+ static void setprogname(const char * const title)
+ {
+ #ifndef NO_PROCNAME_CHANGE
+@@ -119,6 +120,7 @@ static void setprogname(const char * const title)
+ #endif
+     (void) title;
+ }
++#endif
+ 
+ static void usage(void)
+ {
