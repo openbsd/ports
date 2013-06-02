@@ -1,4 +1,4 @@
-# $OpenBSD: lua.port.mk,v 1.27 2013/05/30 16:43:38 jasper Exp $
+# $OpenBSD: lua.port.mk,v 1.28 2013/06/02 16:59:48 jasper Exp $
 
 CATEGORIES+=	lang/lua
 
@@ -64,15 +64,13 @@ _MODLUA_RUN_DEPENDS=	lang/lua/5.1
 _MODLUA_RUN_DEPENDS=	lang/lua/5.2
 .endif
 
+MODLUA_LIB_DEPENDS=	${_MODLUA_RUN_DEPENDS}
+
 MODLUA_BIN=		${LOCALBASE}/bin/lua${MODLUA_DEP_VERSION}
 
 # Propagate the flavor to all dependencies
 .for r in ${MODLUA_RUN_DEPENDS}
 _MODLUA_RUN_DEPS+=	${r},${MODLUA_FLAVOR}
-.endfor
-
-.for l in ${MODLUA_LIB_DEPENDS}
-_MODLUA_LIB_DEPENDS+=	${l},${MODLUA_FLAVOR}
 .endfor
 
 .for b in ${MODLUA_BUILD_DEPENDS}
@@ -117,8 +115,6 @@ RUN_DEPENDS+=		${_MODLUA_RUN_DEPENDS} \
 BUILD_DEPENDS+=		${_MODLUA_BUILD_DEPENDS} \
 			${_MODLUA_RUN_DEPENDS}
 .endif
-
-LIB_DEPENDS +=		${_MODLUA_LIB_DEPENDS}
 
 TEST_DEPENDS+=	${_MODLUA_TEST_DEPENDS}
 
