@@ -1,16 +1,56 @@
-$OpenBSD: patch-src_tree_c,v 1.6 2012/09/27 08:00:06 jasper Exp $
+$OpenBSD: patch-src_tree_c,v 1.7 2013/06/02 18:49:51 kurt Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=653468
 --auto-close broken by fix for #540560
 
---- src/tree.c.orig	Wed Sep 26 00:46:11 2012
-+++ src/tree.c	Wed Sep 26 09:22:29 2012
-@@ -225,7 +225,7 @@ zenity_tree_handle_stdin (GIOChannel  *channel,
+--- src/tree.c.orig	Wed Mar 13 21:46:04 2013
++++ src/tree.c	Sun Jun  2 12:16:46 2013
+@@ -139,6 +139,7 @@ zenity_tree_handle_stdin (GIOChannel  *channel,
+   static gboolean editable;
+   static gboolean toggles;
+   static gboolean first_time = TRUE;
++  gint status = G_IO_STATUS_NORMAL;
+ 
+   tree_view = GTK_TREE_VIEW (data);
+   n_columns = GPOINTER_TO_INT (g_object_get_data (G_OBJECT (tree_view), "n_columns"));
+@@ -152,7 +153,7 @@ zenity_tree_handle_stdin (GIOChannel  *channel,
+     gtk_list_store_append (GTK_LIST_STORE (model), &iter);
+   }
+ 
+-  if ((condition == G_IO_IN) || (condition == G_IO_IN + G_IO_HUP)) {
++  if ((condition & G_IO_IN) == G_IO_IN) {
+     GString *string;
+     GError *error = NULL;
+ 
+@@ -161,8 +162,6 @@ zenity_tree_handle_stdin (GIOChannel  *channel,
+     while ((g_io_channel_get_flags(channel) & G_IO_FLAG_IS_READABLE) != G_IO_FLAG_IS_READABLE)
+       ;
+     do {
+-      gint status;
+-
+       do {
+         if (g_io_channel_get_flags(channel) & G_IO_FLAG_IS_READABLE)
+           status = g_io_channel_read_line_string (channel, string, NULL, &error);
+@@ -221,11 +220,11 @@ zenity_tree_handle_stdin (GIOChannel  *channel,
+ 
+       column_count++;
+ 
+-    } while (g_io_channel_get_buffer_condition (channel) == G_IO_IN); 
++    } while ((g_io_channel_get_buffer_condition (channel) & G_IO_IN) == G_IO_IN && status != G_IO_STATUS_EOF); 
      g_string_free (string, TRUE);
    }
  
 -  if ((condition != G_IO_IN) && (condition != G_IO_IN + G_IO_HUP)) {
-+  if (condition != G_IO_IN) {
++  if ((condition & G_IO_IN) != G_IO_IN || status == G_IO_STATUS_EOF) {
      g_io_channel_shutdown (channel, TRUE, NULL);
      return FALSE;
    }
+@@ -245,7 +244,7 @@ zenity_tree_fill_entries_from_stdin (GtkTreeView  *tre
+   channel = g_io_channel_unix_new (0);
+   g_io_channel_set_encoding (channel, NULL, NULL);
+   g_io_channel_set_flags (channel, G_IO_FLAG_NONBLOCK, NULL);
+-  g_io_add_watch (channel, G_IO_IN | G_IO_HUP, zenity_tree_handle_stdin, tree_view);
++  g_io_add_watch (channel, G_IO_IN, zenity_tree_handle_stdin, tree_view);
+ }
+ 
+ static void

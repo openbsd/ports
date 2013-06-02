@@ -1,16 +1,54 @@
-$OpenBSD: patch-src_progress_c,v 1.8 2012/09/27 08:00:06 jasper Exp $
+$OpenBSD: patch-src_progress_c,v 1.9 2013/06/02 18:49:51 kurt Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=653468
 --auto-close broken by fix for #540560
 
---- src/progress.c.orig	Wed Sep 26 00:46:11 2012
-+++ src/progress.c	Wed Sep 26 09:22:29 2012
-@@ -179,7 +179,7 @@ zenity_progress_handle_stdin (GIOChannel   *channel,
+--- src/progress.c.orig	Wed Mar 13 21:46:04 2013
++++ src/progress.c	Sun Jun  2 12:18:26 2013
+@@ -81,12 +81,13 @@ zenity_progress_handle_stdin (GIOChannel   *channel,
+   static GObject *progress_bar;
+   static GObject *progress_label;
+   float percentage = 0.0;
++  gint status = G_IO_STATUS_NORMAL;
+   
+   progress_data = (ZenityProgressData *) data;
+   progress_bar = gtk_builder_get_object (builder, "zenity_progress_bar");
+   progress_label = gtk_builder_get_object (builder, "zenity_progress_text");
+ 
+-  if ((condition == G_IO_IN) || (condition == G_IO_IN + G_IO_HUP)) {
++  if ((condition & G_IO_IN) != 0) {
+     GString *string;
+     GError *error = NULL;
+ 
+@@ -95,8 +96,6 @@ zenity_progress_handle_stdin (GIOChannel   *channel,
+     while (channel->is_readable != TRUE)
+       ;
+     do {
+-      gint status;
+-
+       do {
+         status = g_io_channel_read_line_string (channel, string, NULL, &error);
+ 
+@@ -175,11 +174,11 @@ zenity_progress_handle_stdin (GIOChannel   *channel,
+         }
+       }
+ 
+-    } while (g_io_channel_get_buffer_condition (channel) == G_IO_IN);
++    } while ((g_io_channel_get_buffer_condition (channel) & G_IO_IN) == G_IO_IN && status != G_IO_STATUS_EOF);
      g_string_free (string, TRUE);
    }
  
 -  if ((condition != G_IO_IN) && (condition != G_IO_IN + G_IO_HUP)) {
-+  if (condition != G_IO_IN) {
++  if ((condition & G_IO_IN) != G_IO_IN || status == G_IO_STATUS_EOF) {
      /* We assume that we are done, so stop the pulsating and de-sensitize the buttons */
      GtkWidget *button;
  
+@@ -216,7 +215,7 @@ zenity_progress_read_info (ZenityProgressData *progres
+   channel = g_io_channel_unix_new (0);
+   g_io_channel_set_encoding (channel, NULL, NULL);
+   g_io_channel_set_flags (channel, G_IO_FLAG_NONBLOCK, NULL);
+-  g_io_add_watch (channel, G_IO_IN | G_IO_HUP, zenity_progress_handle_stdin, progress_data);
++  g_io_add_watch (channel, G_IO_IN, zenity_progress_handle_stdin, progress_data);
+   /* We need to check the pulsate state here, because, the g_io_add_watch
+      doesn't call the zenity_progress_handle_stdin function if there's no
+      input. This fix the Bug 567663 */

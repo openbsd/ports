@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.60 2013/03/29 14:25:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.61 2013/06/02 18:49:51 kurt Exp $
 
 COMMENT=		dialogs for GNOME
 
 GNOME_PROJECT=		zenity
 GNOME_VERSION=		3.8.0
+REVISION=		0
 
 HOMEPAGE=		https://live.gnome.org/Zenity
 
