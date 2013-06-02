@@ -1,6 +1,6 @@
-$OpenBSD: patch-tools_build_Makefile_in,v 1.4 2012/11/05 17:57:51 pascal Exp $
---- tools/build/Makefile.in.orig	Fri Aug 31 22:34:26 2012
-+++ tools/build/Makefile.in	Tue Sep  4 16:05:50 2012
+$OpenBSD: patch-tools_build_Makefile_in,v 1.5 2013/06/02 14:03:19 pascal Exp $
+--- tools/build/Makefile.in.orig	Wed Jan 30 18:29:01 2013
++++ tools/build/Makefile.in	Mon Feb  4 16:19:30 2013
 @@ -17,8 +17,8 @@ PARROT_LIB_DIR     = @libdir@$(PARROT_VERSION)
  PARROT_SRC_DIR     = @srcdir@$(PARROT_VERSION)
  HAS_ICU            = @has_icu@
@@ -12,14 +12,16 @@ $OpenBSD: patch-tools_build_Makefile_in,v 1.4 2012/11/05 17:57:51 pascal Exp $
  EXE           = @exe@
  LD            = @ld@
  LDFLAGS       = @ldflags@ @ld_debug@
-@@ -87,8 +87,8 @@ modules-test:
+@@ -87,10 +87,10 @@ modules-test:
  perl6-debug: $(RD_EXE)
  
  $(RD_EXE): modules-install
 -	$(NQP_EXE) --vmlibs=perl6_group,perl6_ops --target=pir \
--	    --output=$(RD_PIR) $(RD_DIR)/bin/perl6-debug.nqp
 +	cd $(RAKUDO_DIR) && $(NQP_EXE) --vmlibs=perl6_group,perl6_ops --target=pir \
+ 	    --dynext=$(DESTDIR)$(PARROT_LIB_DIR)/dynext/ \
+ 	    --module-path=$(DESTDIR)$(PARROT_LIB_DIR)/languages/nqp/lib \
+-	    --output=$(RD_PIR) $(RD_DIR)/bin/perl6-debug.nqp
 +	    --output=../$(RD_PIR) ../$(RD_DIR)/bin/perl6-debug.nqp
- 	$(PARROT_EXE) -o $(RD_PBC) $(RD_PIR)
+ 	$(PARROT_EXE)  --dynext $(DESTDIR)$(PARROT_LIB_DIR)/dynext/ -o $(RD_PBC) $(RD_PIR)
  	$(PBC_TO_EXE) $(RD_PBC)
  	$(CHMOD) 755 $(RD_EXE)

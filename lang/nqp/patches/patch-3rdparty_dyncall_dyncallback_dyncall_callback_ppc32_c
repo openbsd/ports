@@ -1,16 +1,16 @@
-$OpenBSD: patch-3rdparty_dyncall_dyncallback_dyncall_callback_ppc32_c,v 1.2 2012/06/12 08:21:54 pascal Exp $
---- 3rdparty/dyncall/dyncallback/dyncall_callback_ppc32.c.orig	Wed Apr 25 22:05:34 2012
-+++ 3rdparty/dyncall/dyncallback/dyncall_callback_ppc32.c	Sun Jun  3 13:13:46 2012
-@@ -26,6 +26,8 @@
- #include "dyncall_callback.h"
+$OpenBSD: patch-3rdparty_dyncall_dyncallback_dyncall_callback_ppc32_c,v 1.3 2013/06/02 14:02:59 pascal Exp $
+--- 3rdparty/dyncall/dyncallback/dyncall_callback_ppc32.c.orig	Thu May 23 21:11:20 2013
++++ 3rdparty/dyncall/dyncallback/dyncall_callback_ppc32.c	Sun May 26 19:43:44 2013
+@@ -27,6 +27,8 @@
  #include "dyncall_callback_ppc32.h"
+ #include "dyncall_alloc_wx.h"
  
 +#include "dyncall_alloc_wx.h"
 +
  void dcbInitCallback(DCCallback* pcb, const char* signature, DCCallbackHandler* handler, void* userdata)
  {
    const char* ptr;
-@@ -35,7 +37,7 @@ void dcbInitCallback(DCCallback* pcb, const char* sign
+@@ -36,7 +38,7 @@ void dcbInitCallback(DCCallback* pcb, const char* sign
    pcb->userdata = userdata;
  }
  

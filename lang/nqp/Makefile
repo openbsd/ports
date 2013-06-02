@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/06/02 14:02:59 pascal Exp $
 
 SHARED_ONLY =		Yes
 
@@ -7,10 +7,12 @@ VMEM_WARNING =		Yes
 BROKEN-hppa =		error: unsupported architecture hppa
 COMMENT =		Not Quite Perl
 
-V =			2012.10
-DISTNAME =		nqp-${V}
+V =			2013.05
+DISTNAME =		$V
+PKGNAME =		nqp-${V}
+DIST_SUBDIR =		nqp
 
-PARROT_VERSION =	4.9.0
+PARROT_VERSION =	5.4.0
 SUBST_VARS +=		PARROT_VERSION
 
 CATEGORIES =		lang
@@ -25,7 +27,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += c gmp icudata icuuc m ncurses parrot pthread
 WANTLIB += readline stdc++ util ffi
 
-MASTER_SITES =		http://cloud.github.com/downloads/perl6/nqp/
+MASTER_SITES =		http://github.com/perl6/nqp/archive/
 
 LIB_DEPENDS =		lang/parrot>=${PARROT_VERSION}
 
@@ -35,6 +37,8 @@ CONFIGURE_SCRIPT =	/usr/bin/perl Configure.pl
 CONFIGURE_ARGS =	--with-parrot="${LOCALBASE}/bin/parrot"
 
 MAKE_ENV +=		CC="${CC}"
+
+WRKDIST =		${WRKDIR}/nqp-$V
 
 TEST_TARGET =	test
 

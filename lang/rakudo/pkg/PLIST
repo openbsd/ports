@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/11/05 17:57:51 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/06/02 14:03:19 pascal Exp $
+bin/p6doc
 bin/panda
 @bin bin/perl6
 @bin bin/perl6-debug
@@ -30,7 +31,6 @@ lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Backtrace/
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Backtrace.pod
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Backtrace/Frame.pod
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Bailador/
-lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Bailador.pir
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Bailador.pm
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Bailador/App.pir
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Bailador/App.pm
@@ -45,7 +45,6 @@ lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Bailador/Template.pir
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Bailador/Template.pm
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Bailador/Template/Mojo.pir
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Bailador/Template/Mojo.pm
-lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Bailador/Test.pir
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Bailador/Test.pm
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Block.pod
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Bool.pod
@@ -100,7 +99,6 @@ lib/parrot/${PARROT_VERSION}/languages/perl6/lib/HTTP/
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/HTTP/Easy/
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/HTTP/Easy.pir
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/HTTP/Easy.pm6
-lib/parrot/${PARROT_VERSION}/languages/perl6/lib/HTTP/Easy/PSGI.pir
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/HTTP/Easy/PSGI.pm6
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/HTTP/Status.pir
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/HTTP/Status.pm6
@@ -122,9 +120,6 @@ lib/parrot/${PARROT_VERSION}/languages/perl6/lib/JSON/
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/JSON/RPC/
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/JSON/RPC/Client.pir
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/JSON/RPC/Client.pm
-lib/parrot/${PARROT_VERSION}/languages/perl6/lib/JSON/RPC/Error.pir
-lib/parrot/${PARROT_VERSION}/languages/perl6/lib/JSON/RPC/Error.pm
-lib/parrot/${PARROT_VERSION}/languages/perl6/lib/JSON/RPC/Server.pir
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/JSON/RPC/Server.pm
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/JSON/Tiny/
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/JSON/Tiny.pir
@@ -156,10 +151,14 @@ lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Nil.pod
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Num.pod
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Numeric.pod
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/ObjAt.pod
+lib/parrot/${PARROT_VERSION}/languages/perl6/lib/PSGI.pir
+lib/parrot/${PARROT_VERSION}/languages/perl6/lib/PSGI.pm6
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Pair.pod
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Panda/
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Panda.pir
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Panda.pm
+lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Panda/App.pir
+lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Panda/App.pm
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Panda/Builder.pir
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Panda/Builder.pm
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Panda/Common.pir
@@ -170,8 +169,8 @@ lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Panda/Fetcher.pir
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Panda/Fetcher.pm
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Panda/Installer.pir
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Panda/Installer.pm
-lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Panda/Resources.pir
-lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Panda/Resources.pm
+lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Panda/Project.pir
+lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Panda/Project.pm
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Panda/Tester.pir
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Panda/Tester.pm
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Parameter.pod
@@ -189,8 +188,6 @@ lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Perl6/TypeGraph.pir
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Perl6/TypeGraph.pm
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Perl6/TypeGraph/Viz.pir
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Perl6/TypeGraph/Viz.pm
-lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Pies.pir
-lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Pies.pm
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Pod/
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Pod/Block/
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Pod/Block.pod
@@ -213,7 +210,6 @@ lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Rational.pod
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Real.pod
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Regex.pod
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Routine.pod
-lib/parrot/${PARROT_VERSION}/languages/perl6/lib/SAFE.setting.pbc
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/SVG/
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/SVG.pir
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/SVG.pm
@@ -301,6 +297,9 @@ lib/parrot/${PARROT_VERSION}/languages/perl6/lib/X/IO/Rmdir.pod
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/X/IO/Unlink.pod
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/X/Inheritance/
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/X/Inheritance/Unsupported.pod
+lib/parrot/${PARROT_VERSION}/languages/perl6/lib/X/JSON/
+lib/parrot/${PARROT_VERSION}/languages/perl6/lib/X/JSON/RPC.pir
+lib/parrot/${PARROT_VERSION}/languages/perl6/lib/X/JSON/RPC.pm
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/X/Method/
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/X/Method/InvalidQualifier.pod
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/X/Method/NotFound.pod
@@ -383,6 +382,7 @@ lib/parrot/${PARROT_VERSION}/languages/perl6/lib/XML/
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/XML/Writer.pir
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/XML/Writer.pm
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/classtut.pod
+lib/parrot/${PARROT_VERSION}/languages/perl6/lib/containers.pod
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/glossary.pod
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/lib.pir
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/lib.pm6
@@ -420,4 +420,9 @@ share/doc/rakudo/announce/2012.07
 share/doc/rakudo/announce/2012.08
 share/doc/rakudo/announce/2012.09
 share/doc/rakudo/announce/2012.10
+share/doc/rakudo/announce/2012.11
+share/doc/rakudo/announce/2012.12
+share/doc/rakudo/announce/2013.01
+share/doc/rakudo/announce/2013.02
+share/doc/rakudo/announce/2013.05.md
 share/doc/rakudo/cheatsheet.txt

@@ -1,6 +1,6 @@
-$OpenBSD: patch-rakudo_tools_build_Makefile_in,v 1.1 2012/11/05 17:57:51 pascal Exp $
---- rakudo/tools/build/Makefile.in.orig	Fri Oct 19 03:37:17 2012
-+++ rakudo/tools/build/Makefile.in	Sat Nov  3 12:20:50 2012
+$OpenBSD: patch-rakudo_tools_build_Makefile_in,v 1.2 2013/06/02 14:03:19 pascal Exp $
+--- rakudo/tools/build/Makefile.in.orig	Sat May  4 22:25:14 2013
++++ rakudo/tools/build/Makefile.in	Sat Jun  1 10:23:50 2013
 @@ -324,7 +324,6 @@ install: all
  	$(MKPATH)                     $(DESTDIR)$(DOCDIR)/rakudo
  	$(MKPATH)                     $(DESTDIR)$(DOCDIR)/rakudo/announce
