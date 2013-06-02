@@ -1,99 +1,101 @@
-$OpenBSD: README,v 1.5 2013/04/07 20:07:24 naddy Exp $
+# $OpenBSD: README,v 1.6 2013/06/02 19:09:09 naddy Exp $
+# 
+# +-----------------------------------------------------------------------
+# | Running ${FULLPKGNAME} on OpenBSD
+# +-----------------------------------------------------------------------
+#
+# Original author: Jolan Luff <jolan@openbsd.org>
+#
+# In order to make CVSweb operate in a chroot environment, it is
+# necessary to copy all of the relevant tools, libraries, and perl modules
+# that CVSweb employs into /var/www.
+#
+# NOTE: You can run this README directly with sh(1).
+#
+# First, create the basic directory structure:
 
-+-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
-+-----------------------------------------------------------------------
+cd /var/www
+mkdir tmp usr
+chown www:www tmp	# needs to be writeable for the www user
 
-# Author: Jolan Luff <jolan@openbsd.org>
+cd /var/www/usr
+mkdir -p bin lib libdata/perl5 libexec
 
-In order to make CVSweb operate in a chroot environment, it is
-necessary to copy all of the relevant tools, libraries, and perl modules
-that CVSweb employs into /var/www.
+cd /var/www/usr/libdata/perl5
+mkdir -p File IPC Time warnings `arch -s`-openbsd/5.16.3/auto/Fcntl unicore
 
-First, create the basic directory structure:
+# The "annotate" function requires this empty file:
+#
+# NOTE: You can create an actual null device instead, but that will
+# not work if the filesystem is mounted with the nodev option, and
+# it is not required for cvsweb.
 
-$ cd /var/www
-# mkdir tmp usr
-# chown www:www tmp	(needs to be writeable for the www user)
+cd /var/www/dev
+touch null
 
-$ cd /var/www/usr
-# mkdir -p {bin,lib,libdata/perl5,libexec}
+# Now, the required binaries:
 
-$ cd /var/www/usr/libdata/perl5
-# mkdir -p {File,IPC,Time,warnings,`machine`-openbsd/5.16.3/auto/Fcntl,unicore}
+cd /var/www/usr/bin
+cp -p /usr/bin/{co,cvs,diff,perl,rcsdiff,rlog,uname} .
 
-The "annotate" function requires this empty file:
+# Next, the libraries that the binaries are linked to:
+#
+# NOTE: Wildcards will, of course, copy any old, unused libraries that are
+# lurking around (for example, from an upgrade):
 
-NOTE: You can create an actual null device instead, but that will
-not work if the filesystem is mounted with the nodev option, and
-it is not required for cvsweb.
+cd /var/www/usr/lib
+cp -p /usr/lib/lib{c,crypto,gssapi,krb5,m,perl,pthread,util,z}.so* .
 
-$ cd /var/www/dev
-# touch null
+# Now, the run-time link-editor:
 
-Now, the required binaries:
+cd /var/www/usr/libexec
+cp -p /usr/libexec/ld.so .
 
-$ cd /var/www/usr/bin
-# cp -p /usr/bin/{co,cvs,diff,perl,rcsdiff,rlog,uname} .
+# And finally, the perl modules:
 
-Next, the libraries that the binaries are linked to:
+cd /var/www/usr/libdata/perl5
+cp -p /usr/libdata/perl5/{Carp,Exporter,Symbol,base,integer}.pm .
+cp -p /usr/libdata/perl5/{strict,warnings,vars,constant,utf8}.pm .
+cp -p /usr/libdata/perl5/utf8_heavy.pl .
+cp -p /usr/libdata/perl5/unicore/Heavy.pl ./unicore/
+cp -p /usr/libdata/perl5/File/Basename.pm ./File/
+cp -p /usr/libdata/perl5/IPC/Open{2,3}.pm ./IPC/
+cp -p /usr/libdata/perl5/Time/Local.pm ./Time/
+cp -p /usr/libdata/perl5/warnings/register.pm ./warnings/
+cp -p /usr/libdata/perl5/XSLoader.pm .
 
-NOTE: Wildcards will, of course, copy any old, unused libraries that are
-lurking around (for example, from an upgrade):
-
-$ cd /var/www/usr/lib
-# cp -p /usr/lib/lib{c,crypto,gssapi,krb5,m,perl,pthread,util,z}.so* .
-
-Now, the run-time link-editor:
-
-$ cd /var/www/usr/libexec
-# cp -p /usr/libexec/ld.so .
-
-And finally, the perl modules:
-
-$ cd /var/www/usr/libdata/perl5
-# cp -p /usr/libdata/perl5/{Carp,Exporter,Symbol,base,integer}.pm .
-# cp -p /usr/libdata/perl5/{strict,warnings,vars,constant,utf8}.pm .
-# cp -p /usr/libdata/perl5/utf8_heavy.pl .
-# cp -p /usr/libdata/perl5/unicore/Heavy.pl ./unicore/
-# cp -p /usr/libdata/perl5/File/Basename.pm ./File/
-# cp -p /usr/libdata/perl5/IPC/Open{2,3}.pm ./IPC/
-# cp -p /usr/libdata/perl5/Time/Local.pm ./Time/
-# cp -p /usr/libdata/perl5/warnings/register.pm ./warnings/
-# cp -p /usr/libdata/perl5/XSLoader.pm .
-
-$ cd /var/www/usr/libdata/perl5/`machine`-openbsd/5.16.3
-# cp -p /usr/libdata/perl5/`machine`-openbsd/5.16.3/{Config,Cwd}.pm .
-# cp -p /usr/libdata/perl5/`machine`-openbsd/5.16.3/Config_{git,heavy}.pl .
-# cp -p /usr/libdata/perl5/`machine`-openbsd/5.16.3/DynaLoader.pm .
-# cp -p /usr/libdata/perl5/`machine`-openbsd/5.16.3/Fcntl.pm .
-# cp -p /usr/libdata/perl5/`machine`-openbsd/5.16.3/auto/Fcntl/Fcntl.{bs,so} \
+cd /var/www/usr/libdata/perl5/`arch -s`-openbsd/5.16.3
+cp -p /usr/libdata/perl5/`arch -s`-openbsd/5.16.3/{Config,Cwd}.pm .
+cp -p /usr/libdata/perl5/`arch -s`-openbsd/5.16.3/Config_{git,heavy}.pl .
+cp -p /usr/libdata/perl5/`arch -s`-openbsd/5.16.3/DynaLoader.pm .
+cp -p /usr/libdata/perl5/`arch -s`-openbsd/5.16.3/Fcntl.pm .
+cp -p /usr/libdata/perl5/`arch -s`-openbsd/5.16.3/auto/Fcntl/Fcntl.{bs,so} \
     ./auto/Fcntl/
 
-Editing cvsweb and cvsweb.conf
-------------------------------
-
-The cvsweb program itself and cvsweb.conf both assume Apache is not
-running in a chroot environment, so we need to change some default paths
-so they are relative to /var/www.
-
-In /var/www/cgi-bin/cvsweb:
-
-for ("$mydir/cvsweb.conf", '/var/www/conf/cvsweb/cvsweb.conf') {
-for ("$mydir/cvsweb.conf", '/conf/cvsweb/cvsweb.conf') {
-
-In /var/www/conf/cvsweb/cvsweb.conf:
-
-Change CVSrepositories to reflect the location of the directories which
-contain CVSROOT.  This example shows a local repository NFS mounted over
-loopback into /var/www/cvs, since the directory must be relative to
-/var/www, we use /cvs.
-
-@CVSrepositories = (
-	'local'   => ['Local Repository', '/home/cvs'],	      (default)
-	'local'   => ['Local Repository', '/cvs'],	      (chroot)
-
-And the same idea for $mimetypes:
-
-$mime_types = '/var/www/conf/mime.types';		       (default)
-$mime_types = '/conf/mime.types';			       (chroot)
+# Editing cvsweb and cvsweb.conf
+# ------------------------------
+#
+# The cvsweb program itself and cvsweb.conf both assume Apache is not
+# running in a chroot environment, so we need to change some default paths
+# so they are relative to /var/www.
+#
+# In /var/www/cgi-bin/cvsweb:
+#
+# for ("$mydir/cvsweb.conf", '/var/www/conf/cvsweb/cvsweb.conf') {
+# for ("$mydir/cvsweb.conf", '/conf/cvsweb/cvsweb.conf') {
+# 
+# In /var/www/conf/cvsweb/cvsweb.conf:
+# 
+# Change CVSrepositories to reflect the location of the directories which
+# contain CVSROOT.  This example shows a local repository NFS mounted over
+# loopback into /var/www/cvs, since the directory must be relative to
+# /var/www, we use /cvs.
+#
+# @CVSrepositories = (
+# 	'local'   => ['Local Repository', '/home/cvs'],	      (default)
+# 	'local'   => ['Local Repository', '/cvs'],	      (chroot)
+#
+# And the same idea for $mimetypes:
+#
+# $mime_types = '/var/www/conf/mime.types';		       (default)
+# $mime_types = '/conf/mime.types';			       (chroot)
