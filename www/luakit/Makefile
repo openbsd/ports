@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/05/30 16:50:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2013/06/02 17:00:16 jasper Exp $
 
 BROKEN-powerpc=	help2man: can't get `--help' info from ./luakit
 
@@ -31,15 +31,15 @@ WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB += pthread pthread-stubs soup-2.4 sqlite3 unique-1.0 webkitgtk-1.0
 WANTLIB += xcb xcb-render xcb-shm z
 
-MODULES = 	lang/lua \
+MODULES = lang/lua \
 		devel/gettext
 
 BUILD_DEPENDS=	devel/help2man
 
-MODLUA_RUN_DEPENDS=	devel/luafs
-MODLUA_LIB_DEPENDS=	lang/luajit
+RUN_DEPENDS=	devel/luafs
 
-LIB_DEPENDS=	devel/libunique \
+LIB_DEPENDS=	lang/luajit \
+		devel/libunique \
 		www/webkit
 
 # webkit browsing
