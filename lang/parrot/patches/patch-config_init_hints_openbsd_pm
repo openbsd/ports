@@ -1,28 +1,7 @@
-$OpenBSD: patch-config_init_hints_openbsd_pm,v 1.5 2012/11/05 17:57:51 pascal Exp $
---- config/init/hints/openbsd.pm.orig	Wed Aug  1 09:05:12 2012
-+++ config/init/hints/openbsd.pm	Sat Nov  3 11:33:32 2012
-@@ -17,13 +17,18 @@ sub runstep {
-     $conf->data->set( ccflags => $ccflags );
- 
-     my $libs = $conf->data->get('libs');
-+
-+=for comment
-+
-     if ( $libs !~ /-lpthread\b/ ) {
-         $libs .= ' -lpthread';
-     }
- 
-+=cut
-+
-     my $ldflags = $conf->data->get('ldflags');
--    if ( $ldflags !~ m|-L/usr/local/lib\b| ) {
--        $ldflags .= ' -L/usr/local/lib';
-+    if ( $ldflags !~ m|-L${LOCALBASE}/lib\b| ) {
-+        $ldflags .= ' -L${LOCALBASE}/lib';
-     }
- 
-     $conf->data->set(
-@@ -34,9 +39,8 @@ sub runstep {
+$OpenBSD: patch-config_init_hints_openbsd_pm,v 1.6 2013/06/02 14:02:34 pascal Exp $
+--- config/init/hints/openbsd.pm.orig	Thu Jan  3 07:06:40 2013
++++ config/init/hints/openbsd.pm	Mon Jan 28 00:45:17 2013
+@@ -36,9 +36,8 @@ sub runstep {
  
          has_dynamic_linking    => 1,
          parrot_is_shared       => 1,
@@ -32,5 +11,5 @@ $OpenBSD: patch-config_init_hints_openbsd_pm,v 1.5 2012/11/05 17:57:51 pascal Ex
 +        libparrot_shared       => "libparrot$share_ext.$ENV{LIBparrot_VERSION}",
 +        libparrot_soname       => "",
      );
+     $conf->data->set( dynext_dirs => $dynext_dirs ) if $dynext_dirs;
  
-     if ( ( split( m/-/, $conf->data->get('archname_provisional'), 2 ) )[0] eq 'powerpc' ) {

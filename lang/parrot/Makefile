@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.25 2013/03/11 11:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2013/06/02 14:02:34 pascal Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT=	virtual machine designed for interpreted languages
 
-V=		4.9.0
+V=		5.4.0
 DISTNAME=	parrot-$V
 CATEGORIES=	lang perl6
-SHARED_LIBS=	parrot	7.0
+SHARED_LIBS=	parrot	8.0
 
 HOMEPAGE=	http://www.parrot.org/
 
 MAINTAINER =	Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
-MASTER_SITES=	ftp://ftp.parrot.org/pub/parrot/releases/supported/$V/
+MASTER_SITES=	ftp://ftp.parrot.org/pub/parrot/releases/all/$V/
 
 # Artistic2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -48,6 +48,7 @@ CONFIGURE_ENV =		LIBparrot_VERSION=${LIBparrot_VERSION}
 
 MAKE_ENV=		LIBparrot_VERSION=${LIBparrot_VERSION}
 
+ALL_TARGET =		all docs
 INSTALL_TARGET =	install install-doc
 TEST_TARGET=		fulltest
 

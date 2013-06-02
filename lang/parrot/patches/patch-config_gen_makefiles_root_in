@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_gen_makefiles_root_in,v 1.7 2012/11/05 17:57:51 pascal Exp $
---- config/gen/makefiles/root.in.orig	Tue Oct 16 06:52:24 2012
-+++ config/gen/makefiles/root.in	Sat Nov  3 11:31:33 2012
+$OpenBSD: patch-config_gen_makefiles_root_in,v 1.8 2013/06/02 14:02:34 pascal Exp $
+--- config/gen/makefiles/root.in.orig	Thu Jan 10 22:43:07 2013
++++ config/gen/makefiles/root.in	Mon Jan 28 00:41:04 2013
 @@ -20,7 +20,7 @@
  
  DEVEL           = @DEVEL@
@@ -10,15 +10,3 @@ $OpenBSD: patch-config_gen_makefiles_root_in,v 1.7 2012/11/05 17:57:51 pascal Ex
  
  CONFIG_ARGS     = @configure_args@
  #IF(win32):SHELL           = CMD
-@@ -3094,9 +3094,9 @@ src/glut_nci_thunks$(O) : $(PARROT_H_HEADERS) \
- 	$(INC_PMC_DIR)/pmc_nci.h
- 
- $(LIBGLUTCB_SO): $(LIBPARROT) src/glut_callbacks$(O) src/glut_nci_thunks$(O)
--	$(LD) $(LD_LOAD_FLAGS) $(LDFLAGS) \
-+	$(LD) $(ALL_PARROT_LIBS) $(LD_LOAD_FLAGS) $(LDFLAGS) \
- 	@ld_out@$@ src/glut_callbacks$(O) src/glut_nci_thunks$(O) \
--	$(ALL_PARROT_LIBS) @opengl_lib@
-+	@opengl_lib@
- 
- src/extra_nci_thunks.c : src/nci/extra_thunks.nci $(NCI_THUNK_GEN)
- 	$(NCI_THUNK_GEN) --dynext --no-warn-dups \
