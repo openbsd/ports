@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2013/05/31 15:34:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2013/06/02 16:48:56 naddy Exp $
 
 COMMENT =		video (and audio) codec playback library
 
 DISTNAME =		emotion-1.7.6
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=	emotion                   1.0 # 8.6
 
@@ -32,6 +32,8 @@ LIB_DEPENDS =		devel/orc \
 			x11/e17/edje>=1.7.6v2 \
 			x11/e17/embryo>=1.7.6v2
 
-CONFIGURE_ARGS +=	--disable-doc
+CONFIGURE_ARGS +=	--disable-doc \
+			--disable-xine \
+			--disable-generic-vlc
 
 .include <bsd.port.mk>
