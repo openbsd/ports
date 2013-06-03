@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2013/03/20 00:46:01 brad Exp $
+@comment $OpenBSD: PLIST,v 1.26 2013/06/03 22:34:24 brad Exp $
 @conflict kqemu-*
 @conflict qemu-*
 @pkgpath emulators/kqemu
@@ -20,6 +20,7 @@
 @bin bin/qemu-system-mips64
 @bin bin/qemu-system-mips64el
 @bin bin/qemu-system-mipsel
+@bin bin/qemu-system-moxie
 @bin bin/qemu-system-or32
 @bin bin/qemu-system-ppc
 @bin bin/qemu-system-ppc64
@@ -53,10 +54,24 @@ share/examples/qemu/qemu-ifup
 share/examples/qemu/target-x86_64.conf
 @sample ${SYSCONFDIR}/qemu/
 @sample ${SYSCONFDIR}/qemu/target-x86_64.conf
+share/locale/de_DE/
+share/locale/de_DE/LC_MESSAGES/
+share/locale/de_DE/LC_MESSAGES/qemu.mo
+share/locale/fr_FR/
+share/locale/fr_FR/LC_MESSAGES/
+share/locale/fr_FR/LC_MESSAGES/qemu.mo
+share/locale/it/LC_MESSAGES/qemu.mo
+share/locale/tr/LC_MESSAGES/qemu.mo
 share/qemu/
 share/qemu/acpi-dsdt.aml
 share/qemu/bamboo.dtb
 share/qemu/bios.bin
+share/qemu/efi-e1000.rom
+share/qemu/efi-eepro100.rom
+share/qemu/efi-ne2k_pci.rom
+share/qemu/efi-pcnet.rom
+share/qemu/efi-rtl8139.rom
+share/qemu/efi-virtio.rom
 share/qemu/keymaps/
 share/qemu/keymaps/ar
 share/qemu/keymaps/bepo
@@ -112,6 +127,7 @@ share/qemu/pxe-rtl8139.rom
 share/qemu/pxe-virtio.rom
 share/qemu/q35-acpi-dsdt.aml
 share/qemu/qemu-icon.bmp
+share/qemu/s390-ccw.img
 share/qemu/s390-zipl.rom
 share/qemu/sgabios.bin
 share/qemu/slof.bin
