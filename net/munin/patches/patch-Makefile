@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.4 2013/01/18 12:23:24 gonzalo Exp $
---- Makefile.orig	Wed Jan  9 19:46:54 2013
-+++ Makefile	Fri Jan 11 01:11:03 2013
+$OpenBSD: patch-Makefile,v 1.5 2013/06/03 19:45:32 kirby Exp $
+--- Makefile.orig	Fri May 10 22:59:50 2013
++++ Makefile	Sun May 26 22:02:43 2013
 @@ -72,7 +72,6 @@ install-pre: Makefile Makefile.config
  	mkdir -p $(STATEDIR)
  	mkdir -p $(SPOOLDIR)
@@ -51,6 +51,6 @@ $OpenBSD: patch-Makefile,v 1.4 2013/01/18 12:23:24 gonzalo Exp $
              --install_path bindoc=$(MANDIR)/man1	\
 -            --install_path libdoc=$(MANDIR)/man3	\
 +            --install_path libdoc=$(MANDIR)/man3p	\
-
+ 
  test-%: %/Build
  	cd $* && $(PERL) Build test --verbose=0 || true

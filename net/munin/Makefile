@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2013/03/22 15:00:29 kirby Exp $
+# $OpenBSD: Makefile,v 1.32 2013/06/03 19:45:31 kirby Exp $
 
 COMMENT-main =	flexible network host monitoring, client
 COMMENT-server =flexible network host monitoring, server
 
-V =		2.0.12
+V =		2.0.14
 DISTNAME =	munin-$V
 PKGNAME-main =	munin-node-$V
 PKGNAME-server =munin-server-$V
@@ -74,6 +74,7 @@ post-extract:
 	${SUBST_CMD} -c ${SUBST_LIST}
 	chmod -R +x ${WRKSRC}/plugins/node.d.openbsd
 	rm ${WRKSRC}/plugins/node.d.openbsd/iostat.in # not yet ported
+	rm ${WRKSRC}/plugins/node.d.openbsd/swap.in # we have no in/out fields
 
 # Fixup hardcoded paths in plugins to use TRUEPREFIX/LOCALBASE as appropriate,
 # there are far too many to handle this via patches/SUBST_CMD, and this method

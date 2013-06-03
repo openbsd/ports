@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2013/03/22 15:00:29 kirby Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2013/06/03 19:45:32 kirby Exp $
 @newgroup _munin:644
 @newgroup _munin-plugin:645
 @newuser _munin:644:_munin:daemon:munin user:/nonexistent:/sbin/nologin
@@ -254,7 +254,6 @@ libexec/munin/plugins/squid_objectsize
 libexec/munin/plugins/squid_requests
 libexec/munin/plugins/squid_traffic
 libexec/munin/plugins/surfboard
-libexec/munin/plugins/swap
 libexec/munin/plugins/sybase_space
 libexec/munin/plugins/systat
 libexec/munin/plugins/tomcat_

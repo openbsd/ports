@@ -1,10 +1,10 @@
-$OpenBSD: patch-plugins_node_d_squeezebox__in,v 1.2 2012/10/12 09:46:46 kirby Exp $
+$OpenBSD: patch-plugins_node_d_squeezebox__in,v 1.3 2013/06/03 19:45:32 kirby Exp $
 
 seq -> jot (handily avoiding the need for bashisms)
 correct nc path
 
---- plugins/node.d/squeezebox_.in.orig	Fri Aug 31 19:22:50 2012
-+++ plugins/node.d/squeezebox_.in	Sun Sep 30 23:28:46 2012
+--- plugins/node.d/squeezebox_.in.orig	Fri May 10 22:59:50 2013
++++ plugins/node.d/squeezebox_.in	Sun May 26 22:02:43 2013
 @@ -1,5 +1,5 @@
  #!@@BASH@@
 -# -*- sh -*-
@@ -12,16 +12,7 @@ correct nc path
  
  : <<=cut
  
-@@ -58,7 +58,7 @@ GPLv2
- 
- HOST=${squeezecenter_host:-localhost}
- PORT=${squeezecenter_port:-9090}
--NC=${netcat:-/bin/nc}
-+NC=${netcat:-/usr/bin/nc}
- 
- if [ "$1" = "autoconf" ]; then
-         if [ ! "which $NC 1>/dev/null 2>&1" ]; then
-@@ -145,7 +145,6 @@ if [ "$CMD" = "years" ]; then
+@@ -146,7 +146,6 @@ if [ "$CMD" = "years" ]; then
  	no_of_years=$(printf "%b" "years\nexit\n" | $NC $HOST $PORT | sed 's/%3A/:/g' | cut -d ':' -f 2)
  	years_array=$(printf "%b" "years 0 $no_of_years\nexit\n" | $NC $HOST $PORT | sed 's/%3A/:/g' | cut -d ' ' -f 4- | sed 's/year://g' | cut -d ' ' -f -$no_of_years)
  	arr1=( `echo "$years_array" | tr -s ' ' ' '` )
@@ -29,7 +20,7 @@ correct nc path
  	if [ "$1" = "config" ]; then
                  echo "graph_title Number of years"
                  echo "graph_category Squeezebox"
-@@ -156,7 +155,7 @@ if [ "$CMD" = "years" ]; then
+@@ -157,7 +156,7 @@ if [ "$CMD" = "years" ]; then
  		printf "graph_order y"
          echo $years_array | sed 's/ / y/g'
  
@@ -38,7 +29,7 @@ correct nc path
  			year=$(echo ${arr1[$i]})
  			if [ $year = 0 ]; then
  				echo y0.label No year
-@@ -171,7 +170,7 @@ if [ "$CMD" = "years" ]; then
+@@ -172,7 +171,7 @@ if [ "$CMD" = "years" ]; then
  		done
  		exit 0
  	fi
@@ -47,7 +38,7 @@ correct nc path
  		year=$(echo ${arr1[$i]})
  		printf "y%s.value " ${year}
  		printf "%b" "albums 0 0 year:${year}\nexit\n" | $NC $HOST $PORT | sed 's/%3A/:/g' | cut -d ':' -f 3
-@@ -181,8 +180,7 @@ elif [ "$CMD" = "signalstrength" -o "$CMD" = "mixer vo
+@@ -182,8 +181,7 @@ elif [ "$CMD" = "signalstrength" -o "$CMD" = "mixer vo
              echo "graph_title $TITLE"
              echo "graph_category Squeezebox"
              COUNT=$(printf "%b" "player count ?\nexit\n" | $NC $HOST $PORT | cut -d " " -f 3)
@@ -57,7 +48,7 @@ correct nc path
                  MAC=$(printf "%b" "player id $ID ?\nexit\n" | $NC $HOST $PORT | cut -d " " -f 4 | sed 's/%3A/:/g')
  		NAME=$(printf "%b" "player name $MAC ?\nexit\n" | $NC $HOST $PORT | cut -d " " -f 4 | sed 's/%20/ /g')
  		MAC2=$(echo $MAC | sed 's/://g; s/\./_/g')
-@@ -191,8 +189,7 @@ elif [ "$CMD" = "signalstrength" -o "$CMD" = "mixer vo
+@@ -192,8 +190,7 @@ elif [ "$CMD" = "signalstrength" -o "$CMD" = "mixer vo
              exit 0
          fi
          COUNT=$(printf "%b" "player count ?\nexit\n" | $NC $HOST $PORT | cut -d " " -f 3)
