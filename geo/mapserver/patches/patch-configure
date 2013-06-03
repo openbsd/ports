@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.4 2011/06/22 20:16:43 landry Exp $
+$OpenBSD: patch-configure,v 1.5 2013/06/03 23:07:47 naddy Exp $
 --- configure.orig	Wed Apr 27 09:06:17 2011
 +++ configure	Thu May 26 19:59:16 2011
 @@ -3361,7 +3361,7 @@ if test $ac_cv_lib_m_exp = yes; then
@@ -10,12 +10,3 @@ $OpenBSD: patch-configure,v 1.4 2011/06/22 20:16:43 landry Exp $
  
  
  echo "$as_me:$LINENO: checking for __gxx_personality_v0 in -lstdc++" >&5
-@@ -5363,7 +5363,7 @@ if test -n "$PNG_DIR" ; then
-     test -f $PNG_DIR/lib/libpng.a -o -f $PNG_DIR/lib/libpng.so -o -f $PNG_DIR/lib/libpng.sl -o -f $PNG_DIR/lib/libpng.dylib && PNG_LIBDIR="$PNG_DIR/lib"
-     test -f $PNG_DIR/lib64/libpng.a -o -f $PNG_DIR/lib64/libpng.so -o -f $PNG_DIR/lib64/libpng.sl -o -f $PNG_DIR/libpng.dylib && PNG_LIBDIR="$PNG_DIR/lib64"
-     test -f $PNG_DIR/libpng.a -o -f $PNG_DIR/libpng.so -o -f $PNG_DIR/libpng.sl -o -f $PNG_DIR/libpng.dylib && PNG_LIBDIR="$PNG_DIR"
--    test -f $PNG_DIR/include/png.h && PNG_INCLUDE="$PNG_DIR/include"
-+    test -f $PNG_DIR/include/libpng/png.h && PNG_INCLUDE="$PNG_DIR/include/libpng"
-     test -f $PNG_DIR/lib/png.h && PNG_INCLUDE="$PNG_DIR/lib"
-     test -f $PNG_DIR/png.h && PNG_INCLUDE="$PNG_DIR"
- 
