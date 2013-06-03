@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/06/01 14:28:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2013/06/03 22:47:02 naddy Exp $
 
 COMMENT-main=		programming language with generators, X11 and more
 COMMENT-main-no_x11=	programming language with generators
@@ -63,7 +63,7 @@ post-build:
 do-install:
 	sed -e 's,@PREFIX@,${TRUEPREFIX},' \
 	    ${FILESDIR}/icont.template >${WRKBUILD}/icont
-	${INSTALL_DATA_DIR} ${WRKBUILD}/bin/rt.h ${WRKINST}${LIBDIR}
+	${INSTALL_DATA_DIR} ${WRKINST}${LIBDIR}
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/icont ${WRKINST}${LIBDIR}
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/iconx ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/iconc ${PREFIX}/bin
