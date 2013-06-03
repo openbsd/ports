@@ -1,13 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.26 2013/03/25 00:21:37 brad Exp $
+@comment $OpenBSD: PLIST,v 1.27 2013/06/03 02:46:25 naddy Exp $
 bin/libpng-config
-include/libpng/
-include/libpng/png.h
-include/libpng/pngconf.h
-include/libpng/pnglibconf.h
+bin/libpng15-config
+include/libpng15/
+include/libpng15/png.h
+include/libpng15/pngconf.h
+include/libpng15/pnglibconf.h
+include/png.h
+include/pngconf.h
+include/pnglibconf.h
 lib/libpng.a
+lib/libpng.la
 @lib lib/libpng.so.${LIBpng_VERSION}
+lib/libpng15.a
+lib/libpng15.la
+@lib lib/libpng15.so.${LIBpng15_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/libpng.pc
+lib/pkgconfig/libpng15.pc
 @man man/man3/libpng.3
 @man man/man3/libpngpf.3
 @man man/man5/png.5

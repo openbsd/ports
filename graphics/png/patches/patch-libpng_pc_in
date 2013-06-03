@@ -1,0 +1,11 @@
+$OpenBSD: patch-libpng_pc_in,v 1.1 2013/06/03 02:46:25 naddy Exp $
+--- libpng.pc.in.orig	Wed Mar 27 21:21:26 2013
++++ libpng.pc.in	Sat Jun  1 18:29:52 2013
+@@ -6,6 +6,6 @@ includedir=@includedir@/libpng@PNGLIB_MAJOR@@PNGLIB_MI
+ Name: libpng
+ Description: Loads and saves PNG files
+ Version: @PNGLIB_VERSION@
+-Libs: -L${libdir} -lpng@PNGLIB_MAJOR@@PNGLIB_MINOR@
++Libs: -L${libdir} -lpng
+ Libs.private: @LIBS@
+ Cflags: -I${includedir}
