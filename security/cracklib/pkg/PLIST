@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/01/22 16:49:53 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/06/03 07:26:54 benoit Exp $
 %%SHARED%%
 include/crack.h
 include/packer.h
 lib/libcrack.a
 lib/libcrack.la
+@lib lib/libcrack.so.${LIBcrack_VERSION}
 lib/python${MODPY_VERSION}/site-packages/_cracklib.a
 lib/python${MODPY_VERSION}/site-packages/_cracklib.la
 lib/python${MODPY_VERSION}/site-packages/_cracklib.so
@@ -64,8 +65,6 @@ share/locale/nl/LC_MESSAGES/cracklib.mo
 share/locale/or/
 share/locale/or/LC_MESSAGES/
 share/locale/or/LC_MESSAGES/cracklib.mo
-share/locale/pa/
-share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/cracklib.mo
 share/locale/pl/LC_MESSAGES/cracklib.mo
 share/locale/pt/LC_MESSAGES/cracklib.mo
