@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/06/03 16:25:24 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2013/06/03 22:02:28 ajacoutot Exp $
 
 COMMENT =	Mount remote directories over ssh
 
-VERSION =	2.4
-DISTNAME =	sshfs-fuse-${VERSION}
+DISTNAME =	sshfs-fuse-2.4
 CATEGORIES =	sysutils
 
 HOMEPAGE =	http://fuse.sourceforge.net/sshfs.html
@@ -15,7 +14,7 @@ MAINTAINER =	Gallon Sylvestre <ccna.syl@gmail.com>
 PERMIT_PACKAGE_CDROM =	Yes
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
+
 WANTLIB =	c pthread glib-2.0
 LIB_DEPENDS +=	devel/glib2
 

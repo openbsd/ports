@@ -1,5 +1,6 @@
+$OpenBSD: patch-sshfs_c,v 1.2 2013/06/03 22:02:28 ajacoutot Exp $
 --- sshfs.c.orig	Thu Mar  8 10:34:39 2012
-+++ sshfs.c	Fri Mar 29 10:37:09 2013
++++ sshfs.c	Mon Jun  3 23:47:06 2013
 @@ -11,7 +11,6 @@
  
  #include <fuse.h>
