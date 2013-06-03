@@ -1,10 +1,10 @@
-$OpenBSD: patch-PlugIns_OctreeZone_CMakeLists_txt,v 1.2 2012/10/07 19:53:05 dcoppa Exp $
+$OpenBSD: patch-PlugIns_OctreeZone_CMakeLists_txt,v 1.3 2013/06/03 18:50:06 pascal Exp $
 
 Shared modules cannot be linked into another target
 
---- PlugIns/OctreeZone/CMakeLists.txt.orig	Sat Jan 14 18:40:39 2012
-+++ PlugIns/OctreeZone/CMakeLists.txt	Sun Oct  7 20:16:59 2012
-@@ -24,6 +24,22 @@ set (HEADER_FILES
+--- PlugIns/OctreeZone/CMakeLists.txt.orig	Fri May 25 21:48:44 2012
++++ PlugIns/OctreeZone/CMakeLists.txt	Thu Oct 11 21:03:38 2012
+@@ -17,6 +17,22 @@ set (HEADER_FILES
  )
  
  set (SOURCE_FILES
@@ -24,13 +24,13 @@ Shared modules cannot be linked into another target
 +  ${CMAKE_CURRENT_SOURCE_DIR}/../PCZSceneManager/src/OgrePortal.cpp
 +  ${CMAKE_CURRENT_SOURCE_DIR}/../PCZSceneManager/src/OgrePortalBase.cpp
 +  ${CMAKE_CURRENT_SOURCE_DIR}/../PCZSceneManager/src/OgreSegment.cpp
-   src/OgreHeightmapTerrainZonePageSource.cpp
    src/OgreOctreeZone.cpp
    src/OgreOctreeZoneDll.cpp
-@@ -41,18 +57,10 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../PCZ
+   src/OgreOctreeZoneOctree.cpp
+@@ -28,18 +44,10 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../PCZ
  add_definitions(-D_USRDLL)
  
- add_library(Plugin_OctreeZone ${OGRE_LIB_TYPE} ${HEADER_FILES} ${SOURCE_FILES})
+ ogre_add_library(Plugin_OctreeZone ${OGRE_LIB_TYPE} ${HEADER_FILES} ${SOURCE_FILES})
 -target_link_libraries(Plugin_OctreeZone OgreMain Plugin_PCZSceneManager)
 +target_link_libraries(Plugin_OctreeZone OgreMain)
  if (NOT OGRE_STATIC)
@@ -46,4 +46,4 @@ Shared modules cannot be linked into another target
 -  )
  endif ()
  
- if (APPLE AND NOT OGRE_BUILD_PLATFORM_IPHONE)
+ if (APPLE AND NOT OGRE_BUILD_PLATFORM_APPLE_IOS)

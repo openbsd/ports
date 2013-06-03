@@ -1,12 +1,12 @@
-$OpenBSD: patch-OgreMain_include_OgreStringConverter_h,v 1.1.1.1 2012/03/18 14:31:00 pascal Exp $
---- OgreMain/include/OgreStringConverter.h.orig	Sat Mar 17 18:11:31 2012
-+++ OgreMain/include/OgreStringConverter.h	Sat Mar 17 18:11:51 2012
+$OpenBSD: patch-OgreMain_include_OgreStringConverter_h,v 1.2 2013/06/03 18:50:06 pascal Exp $
+--- OgreMain/include/OgreStringConverter.h.orig	Fri May 25 21:48:44 2012
++++ OgreMain/include/OgreStringConverter.h	Sat May 26 18:42:54 2012
 @@ -91,7 +91,7 @@ namespace Ogre {
          static String toString(int val, unsigned short width = 0, 
              char fill = ' ', 
              std::ios::fmtflags flags = std::ios::fmtflags(0) );
--#if OGRE_ARCH_TYPE == OGRE_ARCHITECTURE_64 || OGRE_PLATFORM == OGRE_PLATFORM_APPLE || OGRE_PLATFORM == OGRE_PLATFORM_IPHONE
-+#if OGRE_ARCH_TYPE == OGRE_ARCHITECTURE_64 || OGRE_PLATFORM == OGRE_PLATFORM_APPLE || OGRE_PLATFORM == OGRE_PLATFORM_IPHONE || defined(__OpenBSD__)
+-#if OGRE_PLATFORM != OGRE_PLATFORM_NACL &&  ( OGRE_ARCH_TYPE == OGRE_ARCHITECTURE_64 || OGRE_PLATFORM == OGRE_PLATFORM_APPLE || OGRE_PLATFORM == OGRE_PLATFORM_APPLE_IOS )
++#if OGRE_PLATFORM != OGRE_PLATFORM_NACL &&  ( OGRE_ARCH_TYPE == OGRE_ARCHITECTURE_64 || OGRE_PLATFORM == OGRE_PLATFORM_APPLE || OGRE_PLATFORM == OGRE_PLATFORM_APPLE_IOS || defined(__OpenBSD__) )
          /** Converts an unsigned int to a String. */
          static String toString(unsigned int val, 
              unsigned short width = 0, char fill = ' ', 

@@ -1,12 +1,12 @@
-$OpenBSD: patch-OgreMain_src_OgreStringConverter_cpp,v 1.1.1.1 2012/03/18 14:31:00 pascal Exp $
---- OgreMain/src/OgreStringConverter.cpp.orig	Sat Mar 17 18:12:05 2012
-+++ OgreMain/src/OgreStringConverter.cpp	Sat Mar 17 18:12:20 2012
-@@ -56,7 +56,7 @@ namespace Ogre {
+$OpenBSD: patch-OgreMain_src_OgreStringConverter_cpp,v 1.2 2013/06/03 18:50:06 pascal Exp $
+--- OgreMain/src/OgreStringConverter.cpp.orig	Fri May 25 21:48:44 2012
++++ OgreMain/src/OgreStringConverter.cpp	Sat May 26 18:43:38 2012
+@@ -62,7 +62,7 @@ namespace Ogre {
          return stream.str();
      }
      //-----------------------------------------------------------------------
--#if OGRE_ARCH_TYPE == OGRE_ARCHITECTURE_64 || OGRE_PLATFORM == OGRE_PLATFORM_APPLE || OGRE_PLATFORM == OGRE_PLATFORM_IPHONE
-+#if OGRE_ARCH_TYPE == OGRE_ARCHITECTURE_64 || OGRE_PLATFORM == OGRE_PLATFORM_APPLE || OGRE_PLATFORM == OGRE_PLATFORM_IPHONE || defined(__OpenBSD__)
+-#if OGRE_PLATFORM != OGRE_PLATFORM_NACL &&  ( OGRE_ARCH_TYPE == OGRE_ARCHITECTURE_64 || OGRE_PLATFORM == OGRE_PLATFORM_APPLE || OGRE_PLATFORM == OGRE_PLATFORM_APPLE_IOS )
++#if OGRE_PLATFORM != OGRE_PLATFORM_NACL &&  ( OGRE_ARCH_TYPE == OGRE_ARCHITECTURE_64 || OGRE_PLATFORM == OGRE_PLATFORM_APPLE || OGRE_PLATFORM == OGRE_PLATFORM_APPLE_IOS || defined(__OpenBSD__) )
      String StringConverter::toString(unsigned int val, 
          unsigned short width, char fill, std::ios::fmtflags flags)
      {

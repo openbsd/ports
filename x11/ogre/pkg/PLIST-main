@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2012/10/07 09:37:46 dcoppa Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2013/06/03 18:50:06 pascal Exp $
 @bin bin/OgreMeshUpgrader
 @bin bin/OgreXMLConverter
 include/OGRE/
@@ -55,7 +55,10 @@ include/OGRE/OgreCustomCompositionPass.h
 include/OGRE/OgreDDSCodec.h
 include/OGRE/OgreDataStream.h
 include/OGRE/OgreDefaultHardwareBufferManager.h
+include/OGRE/OgreDeflate.h
+include/OGRE/OgreDepthBuffer.h
 include/OGRE/OgreDistanceLodStrategy.h
+include/OGRE/OgreDualQuaternion.h
 include/OGRE/OgreDynLib.h
 include/OGRE/OgreDynLibManager.h
 include/OGRE/OgreEdgeListBuilder.h
@@ -87,6 +90,13 @@ include/OGRE/OgreHighLevelGpuProgram.h
 include/OGRE/OgreHighLevelGpuProgramManager.h
 include/OGRE/OgreImage.h
 include/OGRE/OgreImageCodec.h
+include/OGRE/OgreInstanceBatch.h
+include/OGRE/OgreInstanceBatchHW.h
+include/OGRE/OgreInstanceBatchHW_VTF.h
+include/OGRE/OgreInstanceBatchShader.h
+include/OGRE/OgreInstanceBatchVTF.h
+include/OGRE/OgreInstanceManager.h
+include/OGRE/OgreInstancedEntity.h
 include/OGRE/OgreInstancedGeometry.h
 include/OGRE/OgreIteratorRange.h
 include/OGRE/OgreIteratorWrapper.h
@@ -213,6 +223,7 @@ include/OGRE/OgreSkeletonFileFormat.h
 include/OGRE/OgreSkeletonInstance.h
 include/OGRE/OgreSkeletonManager.h
 include/OGRE/OgreSkeletonSerializer.h
+include/OGRE/OgreSmallVector.h
 include/OGRE/OgreSphere.h
 include/OGRE/OgreSpotShadowFadePng.h
 include/OGRE/OgreStableHeaders.h
@@ -250,6 +261,7 @@ include/OGRE/OgreWorkQueue.h
 include/OGRE/OgreZip.h
 include/OGRE/Paging/
 include/OGRE/Paging/OgreGrid2DPageStrategy.h
+include/OGRE/Paging/OgreGrid3DPageStrategy.h
 include/OGRE/Paging/OgrePage.h
 include/OGRE/Paging/OgrePageConnection.h
 include/OGRE/Paging/OgrePageContent.h
@@ -278,31 +290,18 @@ include/OGRE/Plugins/BSPSceneManager/OgreQuake3Shader.h
 include/OGRE/Plugins/BSPSceneManager/OgreQuake3ShaderManager.h
 include/OGRE/Plugins/BSPSceneManager/OgreQuake3Types.h
 include/OGRE/Plugins/OctreeSceneManager/
-include/OGRE/Plugins/OctreeSceneManager/OgreHeightmapTerrainPageSource.h
 include/OGRE/Plugins/OctreeSceneManager/OgreOctree.h
 include/OGRE/Plugins/OctreeSceneManager/OgreOctreeCamera.h
 include/OGRE/Plugins/OctreeSceneManager/OgreOctreeNode.h
 include/OGRE/Plugins/OctreeSceneManager/OgreOctreePlugin.h
+include/OGRE/Plugins/OctreeSceneManager/OgreOctreePrerequisites.h
 include/OGRE/Plugins/OctreeSceneManager/OgreOctreeSceneManager.h
 include/OGRE/Plugins/OctreeSceneManager/OgreOctreeSceneQuery.h
-include/OGRE/Plugins/OctreeSceneManager/OgreTerrainPage.h
-include/OGRE/Plugins/OctreeSceneManager/OgreTerrainPageSource.h
-include/OGRE/Plugins/OctreeSceneManager/OgreTerrainPrerequisites.h
-include/OGRE/Plugins/OctreeSceneManager/OgreTerrainRenderable.h
-include/OGRE/Plugins/OctreeSceneManager/OgreTerrainSceneManager.h
-include/OGRE/Plugins/OctreeSceneManager/OgreTerrainVertexProgram.h
 include/OGRE/Plugins/OctreeZone/
-include/OGRE/Plugins/OctreeZone/OgreHeightmapTerrainZonePageSource.h
 include/OGRE/Plugins/OctreeZone/OgreOctreeZone.h
 include/OGRE/Plugins/OctreeZone/OgreOctreeZoneOctree.h
 include/OGRE/Plugins/OctreeZone/OgreOctreeZonePlugin.h
 include/OGRE/Plugins/OctreeZone/OgreOctreeZonePrerequisites.h
-include/OGRE/Plugins/OctreeZone/OgreTerrainVertexProgram.h
-include/OGRE/Plugins/OctreeZone/OgreTerrainZone.h
-include/OGRE/Plugins/OctreeZone/OgreTerrainZonePage.h
-include/OGRE/Plugins/OctreeZone/OgreTerrainZonePageSource.h
-include/OGRE/Plugins/OctreeZone/OgreTerrainZonePrerequisites.h
-include/OGRE/Plugins/OctreeZone/OgreTerrainZoneRenderable.h
 include/OGRE/Plugins/PCZSceneManager/
 include/OGRE/Plugins/PCZSceneManager/OgreAntiPortal.h
 include/OGRE/Plugins/PCZSceneManager/OgreCapsule.h
@@ -362,9 +361,15 @@ include/OGRE/RTShaderSystem/
 include/OGRE/RTShaderSystem/OgreRTShaderSystem.h
 include/OGRE/RTShaderSystem/OgreShaderCGProgramProcessor.h
 include/OGRE/RTShaderSystem/OgreShaderCGProgramWriter.h
+include/OGRE/RTShaderSystem/OgreShaderExDualQuaternionSkinning.h
+include/OGRE/RTShaderSystem/OgreShaderExHardwareSkinning.h
+include/OGRE/RTShaderSystem/OgreShaderExHardwareSkinningTechnique.h
 include/OGRE/RTShaderSystem/OgreShaderExIntegratedPSSM3.h
+include/OGRE/RTShaderSystem/OgreShaderExLayeredBlending.h
+include/OGRE/RTShaderSystem/OgreShaderExLinearSkinning.h
 include/OGRE/RTShaderSystem/OgreShaderExNormalMapLighting.h
 include/OGRE/RTShaderSystem/OgreShaderExPerPixelLighting.h
+include/OGRE/RTShaderSystem/OgreShaderExTextureAtlasSampler.h
 include/OGRE/RTShaderSystem/OgreShaderFFPColour.h
 include/OGRE/RTShaderSystem/OgreShaderFFPFog.h
 include/OGRE/RTShaderSystem/OgreShaderFFPLighting.h
@@ -374,6 +379,8 @@ include/OGRE/RTShaderSystem/OgreShaderFFPTexturing.h
 include/OGRE/RTShaderSystem/OgreShaderFFPTransform.h
 include/OGRE/RTShaderSystem/OgreShaderFunction.h
 include/OGRE/RTShaderSystem/OgreShaderFunctionAtom.h
+include/OGRE/RTShaderSystem/OgreShaderGLSLESProgramProcessor.h
+include/OGRE/RTShaderSystem/OgreShaderGLSLESProgramWriter.h
 include/OGRE/RTShaderSystem/OgreShaderGLSLProgramProcessor.h
 include/OGRE/RTShaderSystem/OgreShaderGLSLProgramWriter.h
 include/OGRE/RTShaderSystem/OgreShaderGenerator.h
@@ -412,6 +419,7 @@ include/OGRE/RenderSystems/GL/GLX/OgreGLXWindow.h
 include/OGRE/RenderSystems/GL/OgreGLATIFSInit.h
 include/OGRE/RenderSystems/GL/OgreGLContext.h
 include/OGRE/RenderSystems/GL/OgreGLDefaultHardwareBufferManager.h
+include/OGRE/RenderSystems/GL/OgreGLDepthBuffer.h
 include/OGRE/RenderSystems/GL/OgreGLFBOMultiRenderTarget.h
 include/OGRE/RenderSystems/GL/OgreGLFBORenderTexture.h
 include/OGRE/RenderSystems/GL/OgreGLFrameBufferObject.h
@@ -477,9 +485,11 @@ lib/OGRE/cmake/FindOGRE.cmake
 lib/OGRE/cmake/FindOIS.cmake
 lib/OGRE/cmake/FindPkgMacros.cmake
 lib/OGRE/cmake/MacroLogFeature.cmake
+lib/OGRE/cmake/OgreAddTargets.cmake
 lib/OGRE/cmake/OgreConfigTargets.cmake
 lib/OGRE/cmake/OgreFindFrameworks.cmake
 lib/OGRE/cmake/OgreGetVersion.cmake
+lib/OGRE/cmake/PrecompiledHeader.cmake
 lib/OGRE/cmake/PreprocessorUtils.cmake
 @lib lib/libOgreMain.so.${LIBOgreMain_VERSION}
 @lib lib/libOgrePaging.so.${LIBOgrePaging_VERSION}
@@ -496,3 +506,5 @@ share/examples/OGRE/
 @sample ${SYSCONFDIR}/OGRE/
 share/examples/OGRE/plugins.cfg
 @sample ${SYSCONFDIR}/OGRE/plugins.cfg
+share/examples/OGRE/tests.cfg
+@sample ${SYSCONFDIR}/OGRE/tests.cfg
