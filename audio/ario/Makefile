@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2013/06/01 19:01:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2013/06/03 16:26:55 landry Exp $
 
 COMMENT =	GTK2-based MPD client inspired by Rhythmbox
 DISTNAME =	ario-1.5.1
 CATEGORIES =	audio x11
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS +=	audioscrobbler		0.0 # 0.0
 SHARED_LIBS +=	filesystem		0.0 # 0.0
@@ -42,11 +42,11 @@ LIB_DEPENDS =	audio/libmpdclient \
 		devel/libsoup \
 		devel/libunique \
 		net/avahi \
+		net/curl \
 		security/libgcrypt \
 		security/libgpg-error
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		net/curl \
 		x11/gtk+2,-guic
 
 CONFIGURE_STYLE =	gnu
