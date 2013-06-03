@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.171 2013/05/31 15:35:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.172 2013/06/03 22:36:00 brad Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	VideoLAN client; multimedia player
 COMMENT-jack=	JACK audio output module for VLC
 
-V=		2.0.6
+V=		2.0.7
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-jack=	vlc-jack-${V}
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
-REVISION-main=	0
-REVISION-jack=	0
 
 SHARED_LIBS=	vlc	2.0 \
 		vlccore	2.0
@@ -26,10 +24,10 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB-common=	dbus-1 m pthread ${MODGETTEXT_WANTLIB}
+WANTLIB-common=	c dbus-1 m pthread ${MODGETTEXT_WANTLIB}
 WANTLIB-main=	GL ICE lib/qt4/QtGui QtCore SM SDL SDL_image X11 Xcomposite \
 		Xcursor Xdamage Xext Xfixes Xi Xinerama Xpm Xrandr Xrender \
-		ass atk-1.0 avcodec avformat avutil bluray c cairo cddb dvbpsi \
+		ass atk-1.0 avcodec avformat avutil bluray cairo cddb dvbpsi \
 		dvdnav dvdread ebml stdc++ expat ffi fontconfig freetype \
 		fribidi gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
 		gmodule-2.0 gmp gnutls gobject-2.0 gpg-error graphite2 \
