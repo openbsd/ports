@@ -1,0 +1,27 @@
+--- sshfs.c.orig	Thu Mar  8 10:34:39 2012
++++ sshfs.c	Fri Mar 29 10:37:09 2013
+@@ -11,7 +11,6 @@
+ 
+ #include <fuse.h>
+ #include <fuse_opt.h>
+-#include <fuse_lowlevel.h>
+ #include <assert.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+@@ -32,6 +31,7 @@
+ #include <sys/utsname.h>
+ #include <sys/mman.h>
+ #include <sys/poll.h>
++#include <sys/mount.h>
+ #include <netinet/in.h>
+ #include <netinet/tcp.h>
+ #include <glib.h>
+@@ -1543,7 +1543,7 @@ static int sftp_error_to_errno(uint32_t error)
+ 	case SSH_FX_NO_SUCH_FILE:      return ENOENT;
+ 	case SSH_FX_PERMISSION_DENIED: return EACCES;
+ 	case SSH_FX_FAILURE:           return EPERM;
+-	case SSH_FX_BAD_MESSAGE:       return EBADMSG;
++	case SSH_FX_BAD_MESSAGE:       return ENOMSG;
+ 	case SSH_FX_NO_CONNECTION:     return ENOTCONN;
+ 	case SSH_FX_CONNECTION_LOST:   return ECONNABORTED;
+ 	case SSH_FX_OP_UNSUPPORTED:    return EOPNOTSUPP;
