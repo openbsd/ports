@@ -1,0 +1,30 @@
+$OpenBSD: patch-dcoppython_shell_gen_marshal_code_py,v 1.1 2013/06/03 20:07:39 zhuk Exp $
+"as" is a keyword in Python 2.7.
+--- dcoppython/shell/gen_marshal_code.py.orig	Fri May  3 21:15:14 2013
++++ dcoppython/shell/gen_marshal_code.py	Fri May  3 21:16:22 2013
+@@ -120,12 +120,12 @@ class DocType:
+     def __init__(self, type):
+         self.type = type
+         self.demarshal_as = None
+-        self.as = []
++        self.astype = []
+         self.info = []
+ 
+-    def add_as(self, as):
+-        if self.demarshal_as == None: self.demarshal_as = as
+-        self.as += [as]
++    def add_as(self, astype):
++        if self.demarshal_as == None: self.demarshal_as = astype
++        self.astype += [astype]
+ 
+     def add_info(self,info):
+         self.info += [info]
+@@ -133,7 +133,7 @@ class DocType:
+     def xml(self):
+         return ['<type dcoptype="%s">' % self.type,
+                 '  <demarshal-as>%s</demarshal-as>' % self.demarshal_as] + \
+-               ['  <marshal-as>%s</marshal-as>' % as for as in self.as ] + \
++               ['  <marshal-as>%s</marshal-as>' % astype for astype in self.astype ] + \
+                ['  <info>%s</info>' % info for info in self.info ] + \
+                ['</type>']
+ 

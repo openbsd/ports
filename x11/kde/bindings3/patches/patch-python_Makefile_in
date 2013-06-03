@@ -1,0 +1,39 @@
+$OpenBSD: patch-python_Makefile_in,v 1.3 2013/06/03 20:07:39 zhuk Exp $
+--- python/Makefile.in.orig	Wed Aug 20 19:38:15 2008
++++ python/Makefile.in	Wed Nov 21 22:26:15 2012
+@@ -345,7 +345,7 @@ xdg_directorydir = @xdg_directorydir@
+ xdg_menudir = @xdg_menudir@
+ site_packages = @PYTHONMODDIR@/site-packages
+ sip_dir = @datadir@/sip/
+-qt_dir = $(dir @qt_includes@)
++qt_dir = @qt_libraries@
+ python_inc_dir = `echo @PYTHONINC@ | sed s/-I//`
+ 
+ # qassistantclient.h
+@@ -548,7 +548,7 @@ sipdone:
+ 	cd $(srcdir)/sip ; \
+ 	export QTDIR=${qt_dir} ; \
+ 	export PYTHONPATH=$$builddir/sip:$$PYTHONPATH ; \
+-	@PYTHON@ configure.py -b @bindir@ -d ${site_packages} -e ${python_inc_dir} -v ${sip_dir} 
++	@PYTHON@ configure.py -b @bindir@ -d ${site_packages} -e ${python_inc_dir} -v ${sip_dir}
+ 	@(cd sip ; $(MAKE))
+ 	echo "" > sipdone
+ 
+@@ -562,7 +562,7 @@ prepqt: sipdone
+ 	export PYTHONPATH=$$builddir/pyqt:$$PYTHONPATH ; \
+ 	cd $(srcdir)/pyqt ; \
+ 	export QTDIR=${qt_dir} ; \
+-	echo "yes" | @PYTHON@ configure.py -i -b @bindir@ -d ${site_packages} -v ${sip_dir} 
++	echo "yes" | @PYTHON@ configure.py -i -b @bindir@ -d ${site_packages} -v ${sip_dir}
+ 	echo "" > prepqt
+ 
+ prepkde: prepqt
+@@ -576,7 +576,7 @@ prepkde: prepqt
+ 	export PYTHONPATH=$$builddir/pykde:$$PYTHONPATH ; \
+ 	cd $(srcdir)/pykde ; \
+ 	export QTDIR=${qt_dir} ; \
+-	@PYTHON@ configure.py -i -k @prefix@ -d ${site_packages} -v ${sip_dir}
++	@PYTHON@ configure.py -i -k @prefix@ -n ${kde_libraries} -d ${site_packages} -v ${sip_dir}
+ 	echo "" > prepkde
+ 
+ install:
