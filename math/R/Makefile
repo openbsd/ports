@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.55 2013/03/11 11:23:54 espie Exp $
+# $OpenBSD: Makefile,v 1.56 2013/06/03 10:46:45 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	powerful math/statistics/graphics language
-DISTNAME=	R-2.15.2
+DISTNAME=	R-2.15.3
 
-SHARED_LIBS=	R	1.0  \
+SHARED_LIBS=	R	1.1  \
 		Rlapack	31.0 \
 		Rblas	31.0
 
@@ -17,13 +17,11 @@ MAINTAINER=	Rafael Sadowski <rafael@sizeofvoid.org>
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	GL ICE SM X11 Xext Xmu Xrender Xss Xt \
-		bz2 c cairo expat fontconfig freetype glib-2.0 \
-		gobject-2.0 icui18n icuuc jpeg lzma m ncurses \
-		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
-		pixman-1 png pthread-stubs readline tiff \
-		xcb xcb-render xcb-shm z \
-		${MODFORTRAN_WANTLIB} ${MODTK_WANTLIB}
+WANTLIB=	ICE SM X11 Xext Xmu Xss Xt bz2 c cairo \
+		fontconfig freetype glib-2.0 gobject-2.0 \
+		icui18n icuuc jpeg lzma m ncurses pango-1.0 \
+		pangocairo-1.0 pangoft2-1.0 pcre png readline \
+		tiff z ${MODFORTRAN_WANTLIB} ${MODTK_WANTLIB}
 
 MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		ftp://cran.r-project.org/pub/R/src/base/R-2/ \
@@ -59,6 +57,8 @@ LIB_DEPENDS=	${MODFORTRAN_LIB_DEPENDS} \
 		graphics/tiff \
 		textproc/icu4c
 RUN_DEPENDS=	archivers/gtar \
+		archivers/unzip \
+		archivers/zip \
 		devel/xdg-utils
 
 CONFIGURE_STYLE=gnu

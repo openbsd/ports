@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2012/10/29 11:07:29 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.19 2013/06/03 10:46:45 dcoppa Exp $
 bin/R
 @bin bin/Rscript
 lib/R/
@@ -419,7 +419,6 @@ lib/R/library/Matrix/doc/Intro2Matrix.pdf
 lib/R/library/Matrix/doc/Introduction.R
 lib/R/library/Matrix/doc/Introduction.Rnw
 lib/R/library/Matrix/doc/Introduction.pdf
-lib/R/library/Matrix/doc/Matrix.bib
 lib/R/library/Matrix/doc/SuiteSparse/
 lib/R/library/Matrix/doc/SuiteSparse/AMD.txt
 lib/R/library/Matrix/doc/SuiteSparse/CHOLMOD.txt
@@ -514,7 +513,9 @@ lib/R/library/Matrix/html/formatSparseM.html
 lib/R/library/Matrix/html/generalMatrix-class.html
 lib/R/library/Matrix/html/image-methods.html
 lib/R/library/Matrix/html/index-class.html
+lib/R/library/Matrix/html/invPerm.html
 lib/R/library/Matrix/html/is.na-methods.html
+lib/R/library/Matrix/html/is.null.DN.html
 lib/R/library/Matrix/html/isSymmetric-methods.html
 lib/R/library/Matrix/html/kronecker-methods.html
 lib/R/library/Matrix/html/ldenseMatrix-class.html
@@ -919,7 +920,6 @@ lib/R/library/base/html/readLines.html
 lib/R/library/base/html/readRDS.html
 lib/R/library/base/html/readRenviron.html
 lib/R/library/base/html/readline.html
-lib/R/library/base/html/real.html
 lib/R/library/base/html/reg.finalizer.html
 lib/R/library/base/html/regex.html
 lib/R/library/base/html/regmatches.html
@@ -1540,6 +1540,7 @@ lib/R/library/datasets/html/warpbreaks.html
 lib/R/library/datasets/html/women.html
 lib/R/library/datasets/html/zCO2.html
 lib/R/library/foreign/
+lib/R/library/foreign/COPYRIGHTS
 lib/R/library/foreign/DESCRIPTION
 lib/R/library/foreign/INDEX
 lib/R/library/foreign/LICENCE
@@ -3023,7 +3024,9 @@ lib/R/library/rpart/Meta/hsearch.rds
 lib/R/library/rpart/Meta/links.rds
 lib/R/library/rpart/Meta/nsInfo.rds
 lib/R/library/rpart/Meta/package.rds
+lib/R/library/rpart/Meta/vignette.rds
 lib/R/library/rpart/NAMESPACE
+lib/R/library/rpart/NEWS.Rd
 lib/R/library/rpart/R/
 lib/R/library/rpart/R/rpart
 lib/R/library/rpart/R/rpart.rdb
@@ -3032,6 +3035,14 @@ lib/R/library/rpart/data/
 lib/R/library/rpart/data/Rdata.rdb
 lib/R/library/rpart/data/Rdata.rds
 lib/R/library/rpart/data/Rdata.rdx
+lib/R/library/rpart/doc/
+lib/R/library/rpart/doc/index.html
+lib/R/library/rpart/doc/longintro.R
+lib/R/library/rpart/doc/longintro.Rnw
+lib/R/library/rpart/doc/longintro.pdf
+lib/R/library/rpart/doc/usercode.R
+lib/R/library/rpart/doc/usercode.Rnw
+lib/R/library/rpart/doc/usercode.pdf
 lib/R/library/rpart/help/
 lib/R/library/rpart/help/AnIndex
 lib/R/library/rpart/help/aliases.rds
@@ -3042,6 +3053,7 @@ lib/R/library/rpart/html/
 lib/R/library/rpart/html/00Index.html
 lib/R/library/rpart/html/R.css
 lib/R/library/rpart/html/car.test.frame.html
+lib/R/library/rpart/html/car90.html
 lib/R/library/rpart/html/cu.summary.html
 lib/R/library/rpart/html/kyphosis.html
 lib/R/library/rpart/html/labels.rpart.html
@@ -3058,12 +3070,13 @@ lib/R/library/rpart/html/prune.rpart.html
 lib/R/library/rpart/html/residuals.rpart.html
 lib/R/library/rpart/html/rpart-internal.html
 lib/R/library/rpart/html/rpart.control.html
+lib/R/library/rpart/html/rpart.exp.html
 lib/R/library/rpart/html/rpart.html
 lib/R/library/rpart/html/rpart.object.html
-lib/R/library/rpart/html/rpconvert.html
 lib/R/library/rpart/html/rsq.rpart.html
 lib/R/library/rpart/html/snip.rpart.html
 lib/R/library/rpart/html/solder.html
+lib/R/library/rpart/html/stagec.html
 lib/R/library/rpart/html/summary.rpart.html
 lib/R/library/rpart/html/text.rpart.html
 lib/R/library/rpart/html/xpred.rpart.html
@@ -3745,6 +3758,7 @@ lib/R/library/survival/data/Rdata.rds
 lib/R/library/survival/data/Rdata.rdx
 lib/R/library/survival/doc/
 lib/R/library/survival/doc/index.html
+lib/R/library/survival/doc/sourcecode.pdf
 lib/R/library/survival/doc/timedep.R
 lib/R/library/survival/doc/timedep.Rnw
 lib/R/library/survival/doc/timedep.pdf
@@ -3806,6 +3820,7 @@ lib/R/library/survival/html/quantile.survfit.html
 lib/R/library/survival/html/ratetable.html
 lib/R/library/survival/html/ratetableDate.html
 lib/R/library/survival/html/rats.html
+lib/R/library/survival/html/rats2.html
 lib/R/library/survival/html/residuals.coxph.html
 lib/R/library/survival/html/residuals.survreg.html
 lib/R/library/survival/html/ridge.html

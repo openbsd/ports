@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_appl_Makefile_in,v 1.1 2012/07/04 12:38:06 dcoppa Exp $
---- src/appl/Makefile.in.orig	Thu Jun 28 12:57:43 2012
-+++ src/appl/Makefile.in	Thu Jun 28 12:58:09 2012
-@@ -50,7 +50,7 @@ DISTFILES = COPYRIGHT COPYRIGHT.ftn README \
+$OpenBSD: patch-src_appl_Makefile_in,v 1.2 2013/06/03 10:46:45 dcoppa Exp $
+--- src/appl/Makefile.in.orig	Tue Feb  5 00:05:10 2013
++++ src/appl/Makefile.in	Mon Jun  3 09:06:33 2013
+@@ -50,7 +50,7 @@ DISTFILES = \
  @WANT_R_SHLIB_TRUE@ALL_CFLAGS = $(ALL_CFLAGS_LO)
  @WANT_R_SHLIB_TRUE@ALL_FFLAGS = $(ALL_FFLAGS_LO)
  

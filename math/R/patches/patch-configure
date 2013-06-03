@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.15 2012/10/29 11:07:29 dcoppa Exp $
+$OpenBSD: patch-configure,v 1.16 2013/06/03 10:46:45 dcoppa Exp $
 
 Unbreak build on powerpc (relocation truncated to fit: R_PPC_GOT16...)
 
@@ -6,9 +6,9 @@ Fix "--export-dynamic" linker flag
 
 Fix linking with external libintl
 
---- configure.orig	Fri Oct 19 00:05:56 2012
-+++ configure	Fri Oct 26 10:05:45 2012
-@@ -26063,7 +26063,7 @@ if test "${GCC}" = yes; then
+--- configure.orig	Sat Feb 23 00:06:28 2013
++++ configure	Mon Jun  3 09:06:33 2013
+@@ -26069,7 +26069,7 @@ if test "${GCC}" = yes; then
  ## has 32k and so can use -fpic.
  ## However, although the gcc docs do not mention it, it seems s390/s390x
  ## also supports and needs -fPIC
@@ -17,7 +17,7 @@ Fix linking with external libintl
        cpicflags="-fPIC"
        ;;
      *)
-@@ -26074,7 +26074,7 @@ if test "${GCC}" = yes; then
+@@ -26080,7 +26080,7 @@ if test "${GCC}" = yes; then
  fi
  if test "${G77}" = yes; then
    case "${host_cpu}" in
@@ -26,7 +26,7 @@ Fix linking with external libintl
        fpicflags="-fPIC"
        ;;
      *)
-@@ -26084,7 +26084,7 @@ if test "${G77}" = yes; then
+@@ -26090,7 +26090,7 @@ if test "${G77}" = yes; then
  fi
  if test "${GXX}" = yes; then
    case "${host_cpu}" in
@@ -35,7 +35,7 @@ Fix linking with external libintl
        cxxpicflags="-fPIC"
        ;;
      *)
-@@ -26337,7 +26337,7 @@ $as_echo "$as_me: WARNING: Use of flat namespace is re
+@@ -26343,7 +26343,7 @@ $as_echo "$as_me: WARNING: Use of flat namespace is re
    openbsd*)
      ## looks like ${wl} is not defined here.  Perhaps in libtool code?
      if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`"; then
@@ -44,7 +44,7 @@ Fix linking with external libintl
        shlib_ldflags="-shared -fPIC"
      fi
      ;;
-@@ -26528,13 +26528,6 @@ case "${host_os}" in
+@@ -26534,13 +26534,6 @@ case "${host_os}" in
        LAPACK_LDFLAGS="+s"
      fi
      ;;
@@ -58,7 +58,7 @@ Fix linking with external libintl
  esac
  
  if test -z "${DYLIB_LD}"; then
-@@ -38391,7 +38384,7 @@ fi
+@@ -38424,7 +38417,7 @@ fi
  ## use this to pick out gfortran (even though it is unreliable).
  if test "${ac_cv_fc_compiler_gnu}" = yes; then
    case "${host_cpu}" in
@@ -67,7 +67,7 @@ Fix linking with external libintl
        fcpicflags="-fPIC"
        ;;
      *)
-@@ -42499,7 +42492,7 @@ else
+@@ -42533,7 +42526,7 @@ else
    gt_save_CPPFLAGS="$CPPFLAGS"
              CPPFLAGS="$CPPFLAGS $INCINTL"
              gt_save_LIBS="$LIBS"
@@ -76,7 +76,7 @@ Fix linking with external libintl
                          cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  #include <libintl.h>
-@@ -42656,8 +42649,8 @@ $as_echo "$gt_source" >&6; }
+@@ -42690,8 +42683,8 @@ $as_echo "$gt_source" >&6; }
        if { eval "gt_val=\$$gt_func_gnugettext_libintl"; test "$gt_val" = "yes"; }; then
          { $as_echo "$as_me:${as_lineno-$LINENO}: checking how to link with libintl" >&5
  $as_echo_n "checking how to link with libintl... " >&6; }
