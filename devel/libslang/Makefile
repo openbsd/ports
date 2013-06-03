@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2013/03/11 10:50:10 espie Exp $
+# $OpenBSD: Makefile,v 1.56 2013/06/03 02:46:57 naddy Exp $
 
 COMMENT=	stack-based interpreter for terminal applications
 
@@ -28,7 +28,7 @@ AUTOCONF_DIR=		${WRKSRC}/autoconf
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/autoconf
 USE_GROFF=		Yes
 
-CONFIGURE_ARGS=		--with-pnginc=${LOCALBASE}/include/libpng \
+CONFIGURE_ARGS=		--with-pnginc=${LOCALBASE}/include \
 			--with-pnglib=${LOCALBASE}/lib
 TEST_TARGET=		runtests
 TEST_FLAGS=		TCAPLIB="-ltermlib"

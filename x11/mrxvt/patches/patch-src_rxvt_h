@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_rxvt_h,v 1.1 2013/06/03 02:46:57 naddy Exp $
+--- src/rxvt.h.orig	Mon Aug  4 03:41:35 2008
++++ src/rxvt.h	Sun Jun  2 17:13:54 2013
+@@ -335,11 +335,7 @@ typedef char*	    XPointer;
+ #  include <jpeglib.h>
+ # endif
+ # ifdef USE_PNG
+-#  ifdef OS_OPENBSD
+-#   include <libpng/png.h>
+-#  else
+-#   include <png.h>
+-#  endif    /* OS_OPENBSD */
++#  include <png.h>
+ # endif	/* USE_PNG */
+ #endif
+ 

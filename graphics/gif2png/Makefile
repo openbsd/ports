@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2013/03/11 11:10:52 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2013/06/03 02:46:57 naddy Exp $
 
 COMMENT=	converts GIF images to the PNG format
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	graphics/png
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	--with-png-inc="${LOCALBASE}/include/libpng" \
+CONFIGURE_ARGS=	--with-png-inc="${LOCALBASE}/include" \
 		--with-png-lib="${LOCALBASE}/lib"
 
 pre-build:

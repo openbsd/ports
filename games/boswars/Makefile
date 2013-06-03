@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/30 08:31:56 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2013/06/03 02:46:57 naddy Exp $
 
 COMMENT=	real-time strategy game
 
@@ -20,8 +20,7 @@ WANTLIB +=	${MODLUA_WANTLIB}
 
 MODULES=	devel/scons \
 		lang/lua
-MODSCONS_FLAGS=	CPPPATH="${CPPPATH} ${LOCALBASE}/include/libpng" \
-		opengl=1
+MODSCONS_FLAGS=	opengl=1
 BUILD_DEPENDS=	devel/sdl-image
 LIB_DEPENDS=	devel/sdl \
 		multimedia/libtheora \

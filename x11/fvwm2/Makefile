@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2013/03/11 11:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.58 2013/06/03 02:46:57 naddy Exp $
 
 COMMENT-main=	multiple virtual desktop window manager, with icons
 COMMENT-fvicons=multiple virtual desktop window manager icons
@@ -67,8 +67,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS +=	--disable-bidi \
 			--disable-gtk \
 			--without-gnome \
-			--without-stroke-library \
-			--with-png-includes="${LOCALBASE}/include/libpng"
+			--without-stroke-library
 CONFIGURE_ENV +=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 

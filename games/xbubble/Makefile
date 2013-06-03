@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:07:41 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/06/03 02:46:57 naddy Exp $
 
 COMMENT=	x bust a move clone
 
@@ -24,7 +24,7 @@ USE_GMAKE=		Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/libpng" \
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -liconv -lintl"
 
 .include <bsd.port.mk>

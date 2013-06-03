@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:10:51 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/06/03 02:46:57 naddy Exp $
 
 COMMENT =	Context Free Design Grammar
 
@@ -28,7 +28,7 @@ WRKDIST =	${WRKDIR}/${DISTNAME}.tgz/
 
 EXAMPLEDIR =	${PREFIX}/share/examples/cfdg
 
-MAKE_ENV +=	CPPFLAGS="${CFLAGS} -I$(LOCALBASE)/include/libpng"
+MAKE_ENV +=	CPPFLAGS="${CFLAGS} -I$(LOCALBASE)/include"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/cfdg ${PREFIX}/bin

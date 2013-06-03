@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:07:38 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/06/03 02:46:57 naddy Exp $
 
 COMMENT =		downhill racing game
 
@@ -31,7 +31,7 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-tcl="${MODTCL_LIBDIR}" \
 			--with-tcl-inc="${MODTCL_INCDIR}"
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib" \
-			CPPFLAGS="-I${LOCALBASE}/include/libpng"
+			CPPFLAGS="-I${LOCALBASE}/include"
 
 NO_TEST =		Yes
 

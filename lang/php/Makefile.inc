@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.40 2013/05/25 00:33:09 brad Exp $
+# $OpenBSD: Makefile.inc,v 1.41 2013/06/03 02:46:57 naddy Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -138,7 +138,6 @@ LIB_DEPENDS-gd=		graphics/jpeg \
 			graphics/png \
 			devel/t1lib
 WANTLIB-gd=		z jpeg>=62 png>=3 t1>=5 c pthread X11 Xpm freetype
-CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include/libpng"
 CONFIGURE_ARGS+=	--with-gd=shared \
 			--with-jpeg-dir=${LOCALBASE} \
 			--with-png-dir=${LOCALBASE} \

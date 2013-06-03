@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/21 08:45:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2013/06/03 02:46:57 naddy Exp $
 
 COMMENT=	GUI widget library used in MakeHuman
 
@@ -23,9 +23,7 @@ LIB_DEPENDS=	graphics/animorph>=0.3 \
 		graphics/png
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
-			-I${LOCALBASE}/include/GL \
-			-I${LOCALBASE}/include/libpng" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/GL" \
 		LDFLAGS="-L${LOCALBASE}/lib -lz -lm"
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
