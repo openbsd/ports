@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2013/05/31 19:22:12 landry Exp $
+# $OpenBSD: Makefile,v 1.20 2013/06/03 12:38:05 landry Exp $
 
 COMMENT=	Xfce4 alternative notification daemon
 
 XFCE_VERSION=	0.2.4
 XFCE_GOODIE=	xfce4-notifyd
+REVISION =	0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -12,10 +13,8 @@ MODULES=	x11/xfce4
 MODXFCE_DESKTOP_FILE=	Yes
 
 LIB_DEPENDS=	x11/xfce4/libxfce4ui \
+		devel/libnotify \
 		x11/xfce4/xfconf
-
-# uses notify-send for previews
-RUN_DEPENDS =	devel/libnotify
 
 WANTLIB += ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender
