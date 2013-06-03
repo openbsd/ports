@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2012/01/17 18:08:22 espie Exp $
+# $OpenBSD: Makefile,v 1.66 2013/06/03 22:41:09 zhuk Exp $
 
      SUBDIR =
      SUBDIR += arts3
@@ -20,10 +20,8 @@
      SUBDIR += admin3
      SUBDIR += accessibility3
      SUBDIR += office3
-     SUBDIR +=i18n3
-     SUBDIR +=office-i18n3
-     SUBDIR += kdoc3
-     SUBDIR += libs3-doc
+     SUBDIR += i18n3
+     SUBDIR += office-i18n3
      SUBDIR += okle
 
 .include <bsd.port.subdir.mk>
