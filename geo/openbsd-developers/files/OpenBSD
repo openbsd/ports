@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.101 2013/06/02 18:58:12 steven Exp $
+# $OpenBSD: OpenBSD,v 1.102 2013/06/03 18:37:23 jca Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -51,6 +51,7 @@
 43.66		7.18		"pyr"		# Pierre-Yves Ritschard
 43.70		-79.42		"krw"		# Kenneth R. Westerback
 43.875194	10.730377	"dcoppa"	# David Coppa
+43.948818	4.807039	"jca"		# Jeremie Courreges-Anglas
 44.01		-79.93		"ian"		# Ian Darwin
 44.1		-77.580556	"brynet"	# Bryan Steele
 44.4325		26.103889	"pirofti"	# Paul Irofti
