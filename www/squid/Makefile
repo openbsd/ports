@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.155 2013/05/25 12:33:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.156 2013/06/03 11:01:03 sthen Exp $
 
 MULTI_PACKAGES=	-main -ntlm
 
@@ -10,6 +10,7 @@ COMMENT-ldap=	LDAP authentication/ACL support for Squid
 COMMENT-ntlm=	NTLM authentication/ACL support for Squid
 
 V=		3.3.5
+REVISION-main=	0
 
 DISTNAME=	squid-$V
 EXTRACT_SUFX=	.tar.bz2

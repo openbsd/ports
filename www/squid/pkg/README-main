@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.2 2013/04/30 18:41:50 sthen Exp $
+$OpenBSD: README-main,v 1.3 2013/06/03 11:01:04 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -52,7 +52,7 @@ Transparent Proxying with PF
 To configure a transparent proxy, bind to a specific address in
 ${SYSCONFDIR}/squid/squid.conf, for example:
 
-http_port 127.0.0.1:3127 transparent
+http_port 127.0.0.1:3127 intercept
 
 On the machine running Squid, add a firewall rule similar to this:
 
