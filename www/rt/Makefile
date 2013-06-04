@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/11 11:44:49 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2013/06/04 15:14:23 robert Exp $
 
 COMMENT=		industrial-grade ticketing system
 
-DISTNAME=		rt-4.0.10
+DISTNAME=		rt-4.0.13
 CATEGORIES=		www
 
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
