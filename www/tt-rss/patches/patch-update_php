@@ -1,18 +1,18 @@
-$OpenBSD: patch-update_php,v 1.2 2013/04/14 20:28:09 rpe Exp $
---- update.php.orig	Sat Mar 23 07:56:48 2013
-+++ update.php	Tue Apr  2 00:47:41 2013
+$OpenBSD: patch-update_php,v 1.3 2013/06/04 19:59:38 landry Exp $
+--- update.php.orig	Mon May 13 11:34:26 2013
++++ update.php	Tue Jun  4 21:02:03 2013
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env php
 +#!${MODPHP_BIN}
  <?php
  	set_include_path(dirname(__FILE__) ."/include" . PATH_SEPARATOR .
  		get_include_path());
-@@ -15,7 +15,7 @@
+@@ -16,7 +16,7 @@
  	require_once "db-prefs.php";
  
  	if (!defined('PHP_EXECUTABLE'))
 -		define('PHP_EXECUTABLE', '/usr/bin/php');
 +		define('PHP_EXECUTABLE', '${MODPHP_BIN}');
  
- 	// Create a database connection.
- 	$link = db_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+ 	init_plugins();
+ 
