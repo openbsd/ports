@@ -1,15 +1,22 @@
-$OpenBSD: patch-src_tree_c,v 1.7 2013/06/02 18:49:51 kurt Exp $
+$OpenBSD: patch-src_tree_c,v 1.8 2013/06/04 20:16:06 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=653468
---auto-close broken by fix for #540560
+From 7c234ed9b71d5f009abff509ef2bf576f61a0cbb Mon Sep 17 00:00:00 2001
+From: Arx Cruz <arxcruz@gnome.org>
+Date: Thu, 23 May 2013 19:27:58 +0000
+Subject: Bug 698683 - Double clicking an item or hitting enter after selecting an item
 
---- src/tree.c.orig	Wed Mar 13 21:46:04 2013
-+++ src/tree.c	Sun Jun  2 12:16:46 2013
+From c89ce9c3812fdc3a2637fd76b42a07385ad50684 Mon Sep 17 00:00:00 2001
+From: Arx Cruz <arxcruz@gnome.org>
+Date: Tue, 04 Jun 2013 19:27:48 +0000
+Subject: Bug #653468. Fixed by Kurt Miller <kurt@intricatesoftware.com>.
+
+--- src/tree.c.orig	Thu Mar 14 02:46:04 2013
++++ src/tree.c	Tue Jun  4 22:11:58 2013
 @@ -139,6 +139,7 @@ zenity_tree_handle_stdin (GIOChannel  *channel,
    static gboolean editable;
    static gboolean toggles;
    static gboolean first_time = TRUE;
-+  gint status = G_IO_STATUS_NORMAL;
++  GIOStatus status = G_IO_STATUS_NORMAL;
  
    tree_view = GTK_TREE_VIEW (data);
    n_columns = GPOINTER_TO_INT (g_object_get_data (G_OBJECT (tree_view), "n_columns"));
@@ -45,12 +52,16 @@ https://bugzilla.gnome.org/show_bug.cgi?id=653468
      g_io_channel_shutdown (channel, TRUE, NULL);
      return FALSE;
    }
-@@ -245,7 +244,7 @@ zenity_tree_fill_entries_from_stdin (GtkTreeView  *tre
-   channel = g_io_channel_unix_new (0);
-   g_io_channel_set_encoding (channel, NULL, NULL);
-   g_io_channel_set_flags (channel, G_IO_FLAG_NONBLOCK, NULL);
--  g_io_add_watch (channel, G_IO_IN | G_IO_HUP, zenity_tree_handle_stdin, tree_view);
-+  g_io_add_watch (channel, G_IO_IN, zenity_tree_handle_stdin, tree_view);
- }
- 
- static void
+@@ -710,12 +709,6 @@ zenity_tree_row_activated (GtkTreeView *tree_view, Gtk
+                            GtkTreeViewColumn *tree_col, gpointer data)
+ {
+   ZenityData *zen_data = data;
+-  GtkTreeSelection *selection; 
+-  
+-  selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (tree_view));
+-  gtk_tree_selection_selected_foreach (selection, 
+-                                       (GtkTreeSelectionForeachFunc) zenity_tree_dialog_get_selected, 
+-                                       GTK_TREE_VIEW (tree_view));
+  
+   zenity_tree_dialog_output ();
+   zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);

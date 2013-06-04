@@ -1,15 +1,17 @@
-$OpenBSD: patch-src_progress_c,v 1.9 2013/06/02 18:49:51 kurt Exp $
+$OpenBSD: patch-src_progress_c,v 1.10 2013/06/04 20:16:06 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=653468
---auto-close broken by fix for #540560
+From c89ce9c3812fdc3a2637fd76b42a07385ad50684 Mon Sep 17 00:00:00 2001
+From: Arx Cruz <arxcruz@gnome.org>
+Date: Tue, 04 Jun 2013 19:27:48 +0000
+Subject: Bug #653468. Fixed by Kurt Miller <kurt@intricatesoftware.com>.
 
---- src/progress.c.orig	Wed Mar 13 21:46:04 2013
-+++ src/progress.c	Sun Jun  2 12:18:26 2013
+--- src/progress.c.orig	Thu Mar 14 02:46:04 2013
++++ src/progress.c	Tue Jun  4 22:11:55 2013
 @@ -81,12 +81,13 @@ zenity_progress_handle_stdin (GIOChannel   *channel,
    static GObject *progress_bar;
    static GObject *progress_label;
    float percentage = 0.0;
-+  gint status = G_IO_STATUS_NORMAL;
++  GIOStatus status = G_IO_STATUS_NORMAL;
    
    progress_data = (ZenityProgressData *) data;
    progress_bar = gtk_builder_get_object (builder, "zenity_progress_bar");
@@ -43,12 +45,3 @@ https://bugzilla.gnome.org/show_bug.cgi?id=653468
      /* We assume that we are done, so stop the pulsating and de-sensitize the buttons */
      GtkWidget *button;
  
-@@ -216,7 +215,7 @@ zenity_progress_read_info (ZenityProgressData *progres
-   channel = g_io_channel_unix_new (0);
-   g_io_channel_set_encoding (channel, NULL, NULL);
-   g_io_channel_set_flags (channel, G_IO_FLAG_NONBLOCK, NULL);
--  g_io_add_watch (channel, G_IO_IN | G_IO_HUP, zenity_progress_handle_stdin, progress_data);
-+  g_io_add_watch (channel, G_IO_IN, zenity_progress_handle_stdin, progress_data);
-   /* We need to check the pulsate state here, because, the g_io_add_watch
-      doesn't call the zenity_progress_handle_stdin function if there's no
-      input. This fix the Bug 567663 */
