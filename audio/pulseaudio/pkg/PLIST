@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2013/05/22 10:31:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2013/06/04 15:32:05 ajacoutot Exp $
 @newgroup _pulse:683
 @newgroup _pulse-access:684
 @newuser _pulse:683:683:daemon:PulseAudio System Daemon:/var/run/pulse:/sbin/nologin
@@ -105,8 +105,10 @@ lib/pulse-${VERSION}/modules/module-pipe-source.so
 lib/pulse-${VERSION}/modules/module-position-event-sounds.so
 lib/pulse-${VERSION}/modules/module-raop-sink.so
 lib/pulse-${VERSION}/modules/module-remap-sink.so
+lib/pulse-${VERSION}/modules/module-remap-source.so
 lib/pulse-${VERSION}/modules/module-rescue-streams.so
 lib/pulse-${VERSION}/modules/module-role-cork.so
+lib/pulse-${VERSION}/modules/module-role-ducking.so
 lib/pulse-${VERSION}/modules/module-rtp-recv.so
 lib/pulse-${VERSION}/modules/module-rtp-send.so
 lib/pulse-${VERSION}/modules/module-rygel-media-server.so
@@ -145,6 +147,10 @@ libexec/pulse/
 @man man/man5/pulse-client.conf.5
 @man man/man5/pulse-daemon.conf.5
 share/examples/pulseaudio/
+share/examples/pulseaudio/bash_completion.d/
+@sample ${SYSCONFDIR}/bash_completion.d/
+share/examples/pulseaudio/bash_completion.d/pulseaudio-bash-completion.sh
+@sample ${SYSCONFDIR}/bash_completion.d/pulseaudio-bash-completion.sh
 share/examples/pulseaudio/dbus-1/
 share/examples/pulseaudio/dbus-1/system.d/
 share/examples/pulseaudio/dbus-1/system.d/pulseaudio-system.conf

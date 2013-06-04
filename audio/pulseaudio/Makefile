@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2013/06/01 13:44:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2013/06/04 15:32:02 ajacoutot Exp $
 
 # XXX
 # fix autospawn lock (patch-src_daemon_main_c)
@@ -18,13 +18,12 @@ SHARED_ONLY=		Yes
 
 COMMENT=		cross-platform networked sound server
 
-VERSION=		3.0
+VERSION=		4.0
 DISTNAME=		pulseaudio-${VERSION}
 EXTRACT_SUFX=		.tar.xz
-REVISION=		8
 
-SHARED_LIBS +=  pulse                2.0      # .15.3
-SHARED_LIBS +=  pulse-simple         0.0      # .0.3
+SHARED_LIBS +=  pulse                2.1      # .16.2
+SHARED_LIBS +=  pulse-simple         0.0      # .0.4
 SHARED_LIBS +=  pulse-mainloop-glib  0.0      # .0.4
 
 CATEGORIES=		audio
