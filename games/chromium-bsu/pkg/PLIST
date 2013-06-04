@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/03/13 06:42:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/06/04 22:07:33 bcallah Exp $
 @bin bin/chromium-bsu
 @man man/man6/chromium-bsu.6
 share/applications/chromium-bsu.desktop
@@ -54,7 +54,6 @@ share/chromium-bsu/png/heroExplo02.png
 share/chromium-bsu/png/heroShields.png
 share/chromium-bsu/png/heroSuper.png
 share/chromium-bsu/png/icon32.png
-share/chromium-bsu/png/icon64.png
 share/chromium-bsu/png/life.png
 share/chromium-bsu/png/menu_back.png
 share/chromium-bsu/png/menu_updown.png
@@ -92,14 +91,22 @@ share/doc/chromium-bsu/images/powerUp01.jpg
 share/doc/chromium-bsu/images/powerUp02.jpg
 share/doc/chromium-bsu/images/useItem00.jpg
 share/doc/chromium-bsu/info.htm
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/64x64/
+share/icons/hicolor/64x64/apps/
+share/icons/hicolor/64x64/apps/chromium-bsu.png
 share/locale/bg/LC_MESSAGES/chromium-bsu.mo
 share/locale/de/LC_MESSAGES/chromium-bsu.mo
 share/locale/es/LC_MESSAGES/chromium-bsu.mo
 share/locale/fr/LC_MESSAGES/chromium-bsu.mo
 share/locale/it/LC_MESSAGES/chromium-bsu.mo
+share/locale/ru/LC_MESSAGES/chromium-bsu.mo
 share/locale/sv/LC_MESSAGES/chromium-bsu.mo
+share/locale/tr/LC_MESSAGES/chromium-bsu.mo
+share/locale/zh_CN/LC_MESSAGES/chromium-bsu.mo
 share/locale/zh_TW/LC_MESSAGES/chromium-bsu.mo
-share/pixmaps/
-share/pixmaps/chromium-bsu.png
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
