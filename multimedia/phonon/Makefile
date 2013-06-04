@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2013/04/24 08:53:37 zhuk Exp $
+# $OpenBSD: Makefile,v 1.9 2013/06/04 15:32:15 ajacoutot Exp $
 
 COMMENT =	multimedia layer for Qt4/KDE4
 CATEGORIES =	multimedia devel
 VERSION =	4.6.0
 DISTNAME =	phonon-${VERSION}
 HOMEPAGE =	http://phonon.kde.org/
+REVISION =	0
 
 # Renamed to avoid clashing with Qt4's one
 SHARED_LIBS =	phonon_s		0.0 \

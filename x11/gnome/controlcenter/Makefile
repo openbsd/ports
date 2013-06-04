@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2013/05/31 15:35:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.101 2013/06/04 15:32:15 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.8.2
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		x11
 
