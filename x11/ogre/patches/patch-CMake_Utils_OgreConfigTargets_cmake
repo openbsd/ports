@@ -1,0 +1,11 @@
+$OpenBSD: patch-CMake_Utils_OgreConfigTargets_cmake,v 1.1 2013/06/04 14:20:20 dcoppa Exp $
+--- CMake/Utils/OgreConfigTargets.cmake.orig	Sun Sep  2 07:27:14 2012
++++ CMake/Utils/OgreConfigTargets.cmake	Sat Jan 19 18:09:57 2013
+@@ -209,7 +209,6 @@ endfunction(ogre_config_component)
+ # setup plugin build
+ function(ogre_config_plugin PLUGINNAME)
+   ogre_config_common(${PLUGINNAME})
+-  set_target_properties(${PLUGINNAME} PROPERTIES VERSION ${OGRE_SOVERSION})
+   if (OGRE_STATIC)
+     # add static prefix, if compiling static version
+     set_target_properties(${PLUGINNAME} PROPERTIES OUTPUT_NAME ${PLUGINNAME}Static)

@@ -1,0 +1,15 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2013/06/04 14:20:20 dcoppa Exp $
+--- CMakeLists.txt.orig	Fri May 25 21:48:44 2012
++++ CMakeLists.txt	Thu May 31 11:15:18 2012
+@@ -100,7 +100,11 @@ if (CMAKE_COMPILER_IS_GNUCXX OR CMAKE_COMPILER_IS_CLAN
+   # This is a set of sensible warnings that provide meaningful output
+   set(OGRE_WARNING_FLAGS "-Wno-deprecated -Wall -Wctor-dtor-privacy -Winit-self -Wno-overloaded-virtual -Wcast-qual -Wwrite-strings -Wextra -Wno-unused-parameter -pedantic -Wshadow -Wno-missing-field-initializers -Wno-long-long")
+   if (NOT APPLE)
++    execute_process(COMMAND ${CMAKE_C_COMPILER} -dumpversion
++                    OUTPUT_VARIABLE GCC_VERSION)
++    if (GCC_VERSION VERSION_GREATER 4.6 OR GCC_VERSION VERSION_EQUAL 4.6)
+       set(OGRE_WARNING_FLAGS "${OGRE_WARNING_FLAGS} -Wno-unused-but-set-parameter")
++    endif()
+   endif ()
+   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OGRE_WARNING_FLAGS}")
+ endif ()
