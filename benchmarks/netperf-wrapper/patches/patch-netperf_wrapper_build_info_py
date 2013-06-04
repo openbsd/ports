@@ -1,0 +1,9 @@
+$OpenBSD: patch-netperf_wrapper_build_info_py,v 1.1.1.1 2013/06/04 23:45:43 sthen Exp $
+--- netperf_wrapper/build_info.py.orig	Mon Apr 15 13:14:11 2013
++++ netperf_wrapper/build_info.py	Thu Apr 18 20:02:24 2013
+@@ -25,4 +25,4 @@ import os
+ 
+ # this value works for the source distribution
+ VERSION="0.5.6"
+-DATA_DIR=os.path.normpath(os.path.join(os.path.dirname(__file__), '..'))
++DATA_DIR="/usr/local/share/netperf-wrapper"

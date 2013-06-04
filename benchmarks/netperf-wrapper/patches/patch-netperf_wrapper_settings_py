@@ -1,0 +1,12 @@
+$OpenBSD: patch-netperf_wrapper_settings_py,v 1.1.1.1 2013/06/04 23:45:43 sthen Exp $
+--- netperf_wrapper/settings.py.orig	Thu Apr 18 20:43:47 2013
++++ netperf_wrapper/settings.py	Thu Apr 18 21:04:50 2013
+@@ -147,7 +147,7 @@ class TestEnvironment(object):
+                                     stdout=subprocess.PIPE,
+                                     stderr=subprocess.PIPE)
+             out,err = proc.communicate()
+-            if "print timestamp before each output line" in str(out):
++            if "print timestamp before each output line" in str(err):
+                 # fping has timestamp option, use it
+                 # there's no timeout parameter for fping, calculate a total number
+                 # of pings to send
