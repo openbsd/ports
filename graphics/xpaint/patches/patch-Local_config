@@ -1,4 +1,4 @@
-$OpenBSD: patch-Local_config,v 1.4 2005/09/05 13:53:45 espie Exp $
+$OpenBSD: patch-Local_config,v 1.5 2013/06/04 15:41:23 naddy Exp $
 --- Local.config.orig	Sat Apr 30 23:33:14 2005
 +++ Local.config	Mon Sep  5 15:51:50 2005
 @@ -162,6 +162,22 @@ XCOMM CDEBUGFLAGS =
@@ -7,12 +7,12 @@ $OpenBSD: patch-Local_config,v 1.4 2005/09/05 13:53:45 espie Exp $
  
 +#if defined(OpenBSDArchitecture)
 +ARCH_DEFINES = -DHAVE_PARAM_H
-+TIFF_INCLUDE = -I${DEPBASE}/include
-+TIFF_LIB     = -L${DEPBASE}/lib -ltiff
-+JPEG_INCLUDE = -I${DEPBASE}/include
-+JPEG_LIB     = -L${DEPBASE}/lib -ljpeg
-+PNG_INCLUDE  = -I${DEPBASE}/include/libpng
-+PNG_LIB      = -L${DEPBASE}/lib -lpng -lz
++TIFF_INCLUDE = -I${LOCALBASE}/include
++TIFF_LIB     = -L${LOCALBASE}/lib -ltiff
++JPEG_INCLUDE = -I${LOCALBASE}/include
++JPEG_LIB     = -L${LOCALBASE}/lib -ljpeg
++PNG_INCLUDE  = -I${LOCALBASE}/include
++PNG_LIB      = -L${LOCALBASE}/lib -lpng -lz
 +XPM_INCLUDE  = -I${X11BASE}/include/X11
 +BINDIR       = ${TRUEPREFIX}/bin
 +MANDIR       = ${TRUEPREFIX}/man/cat1

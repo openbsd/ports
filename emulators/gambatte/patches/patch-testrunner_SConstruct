@@ -1,6 +1,6 @@
-$OpenBSD: patch-testrunner_SConstruct,v 1.2 2013/05/31 15:34:56 bentley Exp $
---- testrunner/SConstruct.orig	Sun May 12 06:51:24 2013
-+++ testrunner/SConstruct	Thu May 30 23:21:43 2013
+$OpenBSD: patch-testrunner_SConstruct,v 1.3 2013/06/04 15:41:19 naddy Exp $
+--- testrunner/SConstruct.orig	Sun May 12 08:51:24 2013
++++ testrunner/SConstruct	Tue Jun  4 11:04:54 2013
 @@ -1,11 +1,16 @@
  global_cflags = ARGUMENTS.get('CFLAGS', '-Wall -Wextra -O2 -g')
  global_cxxflags = ARGUMENTS.get('CXXFLAGS', global_cflags + ' -fno-exceptions -fno-rtti')
@@ -9,8 +9,7 @@ $OpenBSD: patch-testrunner_SConstruct,v 1.2 2013/05/31 15:34:56 bentley Exp $
 +vars.Add('CC')
 +vars.Add('CXX')
  
--env = Environment(CPPPATH = ['.', '../libgambatte/include'],
-+env = Environment(CPPPATH = ['.', '../libgambatte/include', '${LOCALBASE}/include/libpng'],
+ env = Environment(CPPPATH = ['.', '../libgambatte/include'],
                    CFLAGS = global_cflags + global_defines,
                    CXXFLAGS = global_cxxflags + global_defines,
 -                  LIBS = 'm')

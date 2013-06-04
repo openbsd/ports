@@ -1,4 +1,4 @@
-$OpenBSD: patch-GNUmakefile,v 1.2 2011/01/15 10:13:23 sebastia Exp $
+$OpenBSD: patch-GNUmakefile,v 1.3 2013/06/04 15:41:19 naddy Exp $
 --- GNUmakefile.orig	Sun Aug 30 13:46:42 2009
 +++ GNUmakefile	Fri Jan 14 11:12:36 2011
 @@ -20,10 +20,11 @@ ifeq ($(GNUSTEP_HOST_OS),mingw32)
@@ -7,7 +7,7 @@ $OpenBSD: patch-GNUmakefile,v 1.2 2011/01/15 10:13:23 sebastia Exp $
  	LIBJS_BIN_DIR = $(LIBJS_SRC_DIR)/Linux_All_OPT.OBJ
 -	ADDITIONAL_INCLUDE_DIRS = -I$(LIBJS_SRC_DIR)  -I$(LIBJS_BIN_DIR) -Isrc/SDL -Isrc/Core -Isrc/BSDCompat -Isrc/Core/Scripting -Isrc/Core/Materials -Isrc/Core/Entities -Isrc/Core/OXPVerifier -Isrc/Core/Debug
 +	LIBJS_XCODE_DIR = deps/Cross-platform-deps/SpiderMonkey/js/xcode
-+	ADDITIONAL_INCLUDE_DIRS = -I$(LIBJS_SRC_DIR) -I$(LOCALBASE)/include/libpng -I$(LIBJS_BIN_DIR) -I$(LIBJS_XCODE_DIR) -Isrc/SDL -Isrc/Core -Isrc/BSDCompat -Isrc/Core/Scripting -Isrc/Core/Materials -Isrc/Core/Entities -Isrc/Core/OXPVerifier -Isrc/Core/Debug
++	ADDITIONAL_INCLUDE_DIRS = -I$(LIBJS_SRC_DIR)  -I$(LIBJS_BIN_DIR) -I$(LIBJS_XCODE_DIR) -Isrc/SDL -Isrc/Core -Isrc/BSDCompat -Isrc/Core/Scripting -Isrc/Core/Materials -Isrc/Core/Entities -Isrc/Core/OXPVerifier -Isrc/Core/Debug
  	ADDITIONAL_OBJC_LIBS = -lpng $(LIBJS_BIN_DIR)/libjs.a -lGLU -lGL -lSDL -lSDL_mixer -lgnustep-base
  	ADDITIONAL_CFLAGS = -DLINUX -DNEED_STRLCPY `sdl-config --cflags`
 -	ADDITIONAL_OBJCFLAGS = -std=c99 -DLOADSAVEGUI -DLINUX -DXP_UNIX -Wno-import `sdl-config --cflags`

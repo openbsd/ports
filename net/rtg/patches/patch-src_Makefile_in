@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2008/07/19 13:52:22 sthen Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.2 2013/06/04 15:41:26 naddy Exp $
 --- src/Makefile.in.orig	Thu Oct  2 16:59:33 2003
 +++ src/Makefile.in	Tue Jul  8 15:40:17 2008
 @@ -77,15 +77,17 @@ am__quote = @am__quote@
@@ -12,7 +12,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2008/07/19 13:52:22 sthen Exp $
 +GD_LIB_DIR = @GD_LIB_DIR@
 +PNG_LIB_DIR = @PNG_LIB_DIR@
 +ZLIB_LIB_DIR = @ZLIB_LIB_DIR@
-+INCLUDES = -I$(CGI_LIB_DIR) -I$(GD_LIB_DIR)/include -I$(PNG_LIB_DIR)/include/libpng -I$(ZLIB_LIB_DIR)/include
++INCLUDES = -I$(CGI_LIB_DIR) -I$(GD_LIB_DIR)/include -I$(PNG_LIB_DIR)/include -I$(ZLIB_LIB_DIR)/include
  
 -RTG_LIBS = $(CGI_LIB_DIR)/libcgi.a $(GD_LIB_DIR)/libgd.a \
 -           $(PNG_LIB_DIR)/libpng.a $(ZLIB_LIB_DIR)/libzlib.a

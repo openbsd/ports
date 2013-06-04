@@ -1,6 +1,6 @@
-$OpenBSD: patch-Imakefile,v 1.10 2009/06/09 13:19:44 jasper Exp $
---- Imakefile.pat.orig	Mon Mar 30 17:53:05 2009
-+++ Imakefile	Tue Jun  9 15:07:46 2009
+$OpenBSD: patch-Imakefile,v 1.11 2013/06/04 15:41:23 naddy Exp $
+--- Imakefile.pat.orig	Mon Mar 30 11:53:05 2009
++++ Imakefile	Tue Jun  4 11:17:07 2013
 @@ -68,15 +68,16 @@ XCOMM #define XAW3D1_5E
      XAW_SRC = w_menuentry.c SmeCascade.c SmeBSB.c SimpleMenu.c
      XAW_OBJ = w_menuentry.o SmeCascade.o SmeBSB.o SimpleMenu.o
@@ -16,8 +16,8 @@ $OpenBSD: patch-Imakefile,v 1.10 2009/06/09 13:19:44 jasper Exp $
  
 -PNGLIBDIR = $(USRLIBDIR)
 -PNGINC = -I/usr/local/include
-+PNGLIBDIR = ${DEPBASE}/lib
-+PNGINC = -I${DEPBASE}/include/libpng
++PNGLIBDIR = ${LOCALBASE}/lib
++PNGINC = -I${LOCALBASE}/include
  ZLIBDIR = $(USRLIBDIR)
  
  XCOMM If don't want JPEG support, comment out the #define USEJPEG line
@@ -33,8 +33,8 @@ $OpenBSD: patch-Imakefile,v 1.10 2009/06/09 13:19:44 jasper Exp $
 -	JPEGINC = -I$(JPEGLIBDIR)
 -    #endif /* USEINSTALLEDJPEG */
 +#ifdef USEINSTALLEDJPEG
-+JPEGLIBDIR = ${DEPBASE}/lib
-+JPEGINC = -I${DEPBASE}/include
++JPEGLIBDIR = ${LOCALBASE}/lib
++JPEGINC = -I${LOCALBASE}/include
 +#else
 +JPEGLIBDIR = ../jpeg
 +JPEGINC = -I$(JPEGLIBDIR)

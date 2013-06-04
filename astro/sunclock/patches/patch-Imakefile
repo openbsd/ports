@@ -1,6 +1,6 @@
-$OpenBSD: patch-Imakefile,v 1.5 2009/03/23 17:20:33 naddy Exp $
---- Imakefile.orig	Sun Jun 18 21:58:50 2006
-+++ Imakefile	Mon Mar 23 17:28:30 2009
+$OpenBSD: patch-Imakefile,v 1.6 2013/06/04 15:41:17 naddy Exp $
+--- Imakefile.orig	Sun Jun 18 15:58:50 2006
++++ Imakefile	Tue Jun  4 10:57:37 2013
 @@ -1,5 +1,5 @@
  XCOMM Should install to /usr or /usr/local ??
 -DESTDIR=/usr
@@ -17,7 +17,7 @@ $OpenBSD: patch-Imakefile,v 1.5 2009/03/23 17:20:33 naddy Exp $
  
  XCOMM Name of DOCDIR's subdirectories of DESTDIR:
  DOCDIR=/X11R6/lib/X11/doc 
-@@ -42,31 +42,25 @@ CCOPTIONS = -Ae $(XPMINC) $(JINC) -DZLIB -DSHAREDIR=\"
+@@ -42,31 +42,24 @@ CCOPTIONS = -Ae $(XPMINC) $(JINC) -DZLIB -DSHAREDIR=\"
  #CCOPTIONS=-O -DZLIB -DNEW_CTIME -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\"
  
  # Solaris, Linux
@@ -28,10 +28,9 @@ $OpenBSD: patch-Imakefile,v 1.5 2009/03/23 17:20:33 naddy Exp $
 -#JINC=-I/usr/include
 +XPMLIBDIR=-L${X11BASE}/lib
 +XPMINC=-I${X11BASE}/include/X11
-+JLIBDIR=-L${DEPBASE}/lib
++JLIBDIR=-L${LOCALBASE}/lib
 +ZLIBDIR=
-+JINC=-I${DEPBASE}/include
-+PINC=-I${DEPBASE}/include/libpng
++JINC=-I${LOCALBASE}/include
  
 -CCOPTIONS=-O -DZLIB -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\"
 +CCOPTIONS+= $(JINC) $(PINC) $(XPMINC) -DZLIB -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\"

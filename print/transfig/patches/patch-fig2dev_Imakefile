@@ -1,4 +1,4 @@
-$OpenBSD: patch-fig2dev_Imakefile,v 1.7 2009/08/26 13:40:54 sthen Exp $
+$OpenBSD: patch-fig2dev_Imakefile,v 1.8 2013/06/04 15:41:26 naddy Exp $
 --- fig2dev/Imakefile.pat.orig	Fri Feb  6 18:42:00 2009
 +++ fig2dev/Imakefile	Wed Aug 26 14:30:32 2009
 @@ -34,7 +34,7 @@ XCOMM ******
@@ -27,7 +27,7 @@ $OpenBSD: patch-fig2dev_Imakefile,v 1.7 2009/08/26 13:40:54 sthen Exp $
 +PNGLIBDIR = ${LOCALBASE}/lib
  ZLIBDIR = $(USRLIBDIR)
 -PNGINC = -I/usr/include/X11
-+PNGINC = -I${LOCALBASE}/include/libpng
++PNGINC = -I${LOCALBASE}/include
  #endif
  
  XCOMM ****************

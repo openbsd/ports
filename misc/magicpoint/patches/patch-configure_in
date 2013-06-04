@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.6 2011/07/08 20:38:00 naddy Exp $
---- configure.in.orig	Tue May 22 00:09:42 2001
-+++ configure.in	Thu Jul  7 09:07:23 2011
+$OpenBSD: patch-configure_in,v 1.7 2013/06/04 15:41:24 naddy Exp $
+--- configure.in.orig	Tue May 22 02:09:42 2001
++++ configure.in	Tue Jun  4 11:22:03 2013
 @@ -103,6 +103,8 @@ if test "$mgp_use_freetype" = "yes"; then
   			ac_cv_ft_include="$dir/include"
   		elif test -d $dir/include/freetype -a -f $dir/include/freetype/freetype.h; then
@@ -19,21 +19,7 @@ $OpenBSD: patch-configure_in,v 1.6 2011/07/08 20:38:00 naddy Exp $
  	OPTFLAGS="-I$ac_cv_ft_include $OPTFLAGS"
  	DEPLIBS="$ac_cv_ft_lib/$ac_cv_ft_libpath $DEPLIBS"
  	AC_CHECK_LIB(intl, dgettext)
-@@ -244,7 +246,7 @@ if test "$mgp_use_freetype" = "yes"; then
- fi
- 
- for i in /usr/pkg /usr/local /usr; do
--	if test -f $i/include/png.h; then 
-+	if test -f $i/include/libpng/png.h; then 
- 		if test -f $i/lib/libpng.a ; then
- 			DEPLIBS="$DEPLIBS $i/lib/libpng.a"
- 		elif test -f $i/lib/libpng.so ; then
-@@ -253,11 +255,11 @@ for i in /usr/pkg /usr/local /usr; do
- 			break;
- 		fi
- 		LIBS="$LIBS -L$i/lib"
--		OPTFLAGS="$OPTFLAGS -I$i/include"
-+		OPTFLAGS="$OPTFLAGS -I$i/include/libpng"
+@@ -257,7 +259,7 @@ for i in /usr/pkg /usr/local /usr; do
  		AC_CHECK_LIB(png, png_read_image, 
  			[LIBS="$LIBS -lpng"
  			 AC_DEFINE(USE_PNG)], 
