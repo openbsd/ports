@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/16 08:25:55 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2013/06/04 07:59:54 sthen Exp $
 
 COMMENT=		quilt
 
 DISTNAME=		quilt-0.60
+REVISION=		0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://savannah.nongnu.org/projects/quilt/
@@ -12,9 +13,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c
 
-MASTER_SITES= 		${MASTER_SITE_SAVANNAH:=quilt/}
+MASTER_SITES=		${MASTER_SITE_SAVANNAH:=quilt/}
 
-MODULE=			devel/gettext
+MODULES=		devel/gettext
 
 USE_GMAKE=		Yes
 
@@ -49,5 +50,5 @@ FAKE_FLAGS=		BUILD_ROOT=${WRKINST} \
 
 post-configure:
 	${SUBST_CMD} ${WRKSRC}/test/delete.test
-	
+
 .include <bsd.port.mk>
