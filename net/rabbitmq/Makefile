@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:35:56 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/06/04 07:57:13 fgsch Exp $
 
 COMMENT =	highly reliable Enterprise Messaging System
 
@@ -6,7 +6,7 @@ V =		2.8.4
 DISTNAME =	rabbitmq-server-$V
 PKGNAME =	rabbitmq-$V
 CATEGORIES =	net
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://www.rabbitmq.com/
 
@@ -26,7 +26,6 @@ USE_GROFF =	Yes
 CONFIGURE_STYLE = none
 
 BUILD_DEPENDS =	${RUN_DEPENDS} \
-		${MODPY_JSON} \
 		archivers/unzip \
 		archivers/zip \
 		textproc/docbook \

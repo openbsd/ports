@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2013/04/04 22:36:51 martynas Exp $
+# $OpenBSD: Makefile,v 1.12 2013/06/04 07:57:13 fgsch Exp $
 
 COMMENT =		python documentation generator
 
 MODPY_EGG_VERSION =	1.1.3
 DISTNAME =		Sphinx-${MODPY_EGG_VERSION}
 PKGNAME =		py-sphinx-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		textproc
 
@@ -21,8 +22,7 @@ MODULES =		lang/python
 RUN_DEPENDS =		devel/py-babel \
 			textproc/py-docutils \
 			textproc/py-pygments \
-			www/py-jinja2 \
-			${MODPY_JSON}
+			www/py-jinja2
 BUILD_DEPENDS =		${RUN_DEPENDS}
 TEST_DEPENDS =		devel/py-nose \
 			print/texlive/texmf,-full

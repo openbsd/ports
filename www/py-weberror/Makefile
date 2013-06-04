@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:44:48 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/06/04 07:57:13 fgsch Exp $
 
 COMMENT =	web error handling and exception catching
 
 MODPY_EGG_VERSION = 0.10.3
 DISTNAME =	WebError-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
+REVISION =	0
 
 CATEGORIES =	www devel
 
@@ -18,8 +19,7 @@ MODULES =	lang/python
 RUN_DEPENDS =	textproc/py-pygments \
 		www/py-paste \
 		www/py-tempita \
-		www/py-webob \
-		${MODPY_JSON}
+		www/py-webob
 TEST_DEPENDS = ${RUN_DEPENDS} \
 		  devel/py-nose \
 		  www/py-webtest

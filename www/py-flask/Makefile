@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2013/05/02 20:09:35 fgsch Exp $
+# $OpenBSD: Makefile,v 1.12 2013/06/04 07:57:13 fgsch Exp $
 
 COMMENT = 	microframework based on Werkzeug and Jinja 2
 
 MODPY_EGG_VERSION =	0.9
 DISTNAME =	Flask-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	www devel
 
@@ -22,8 +22,7 @@ MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS =	devel/py-blinker \
 		www/py-jinja2>=2.4 \
-		www/py-werkzeug>=0.7 \
-		${MODPY_JSON}
+		www/py-werkzeug>=0.7
 BUILD_DEPENDS =	textproc/py-sphinx \
 		www/py-werkzeug>=0.7
 TEST_DEPENDS = ${RUN_DEPENDS}

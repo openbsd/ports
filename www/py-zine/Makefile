@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:44:49 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/06/04 07:57:13 fgsch Exp $
 
 COMMENT=		personal publishing platform / weblog engine
 
 DISTNAME=		Zine-0.1.2
 PKGNAME=		py-${DISTNAME:L}
-REVISION=		5
+REVISION=		6
 
 CATEGORIES=		www
 
@@ -29,8 +29,7 @@ DEPENDS=		databases/py-sqlalchemy \
 			www/py-jinja2 \
 			www/py-flup \
 			textproc/py-lxml \
-			textproc/py-pygments \
-			${MODPY_JSON}
+			textproc/py-pygments
 
 BUILD_DEPENDS+=		${DEPENDS}
 RUN_DEPENDS+=		${DEPENDS}

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2013/05/22 10:05:15 fgsch Exp $
+# $OpenBSD: Makefile,v 1.14 2013/06/04 07:57:13 fgsch Exp $
 
 COMMENT =	Python library for working with CouchDB
 
 MODPY_EGG_VERSION = 0.9
 DISTNAME =	CouchDB-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
+REVISION =	0
 
 CATEGORIES =	databases devel
 
@@ -17,7 +18,6 @@ MASTER_SITES =	${MASTER_SITE_PYPI:=C/CouchDB/}
 
 MODULES =	lang/python
 
-RUN_DEPENDS =	${MODPY_JSON}
 BUILD_DEPENDS =	textproc/py-sphinx
 TEST_DEPENDS =	databases/apache-couchdb \
 		${BASE_PKGPATH}
