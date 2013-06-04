@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2013/03/11 11:35:49 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2013/06/04 18:41:54 naddy Exp $
 
 COMMENT =	e-donkey client
 DISTNAME =	mldonkey-3.1.3
@@ -33,8 +33,7 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 
 CONFIGURE_ARGS +=	--enable-gui=newgui2 \
 			--enable-upnp-natpmp
-CONFIGURE_ENV +=	CPPFLAGS='-I${LOCALBASE}/include/libpng \
-			-I${LOCALBASE}/include -I${X11BASE}/include' \
+CONFIGURE_ENV +=	CPPFLAGS='-I${LOCALBASE}/include -I${X11BASE}/include' \
 			LDFLAGS='-L${LOCALBASE}/lib -L${X11BASE}/lib' \
 			ac_cv_prog_RPMBUILD="" \
 			ac_cv_prog_WGET=""

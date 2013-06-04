@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 11:07:39 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2013/06/04 18:41:42 naddy Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -33,8 +33,7 @@ LIB_DEPENDS=	devel/libexecinfo \
 		${MODLUA_LIB_DEPENDS}
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
-			-I${LOCALBASE}/include/libpng" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		PTHREAD_CFLAGS="-pthread" \
 		PTHREAD_LIBS="-pthread" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:07:41 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/06/04 18:41:45 naddy Exp $
 
 COMMENT=	economic and military simulation game
 
@@ -39,7 +39,7 @@ MODSCONS_FLAGS=	\
 	bindir=${PREFIX}/bin \
 	datadir=${PREFIX}/share/widelands \
 	localedir=${PREFIX}/share \
-	extra_compile_flags="-I${LOCALBASE}/include/libpng ${CXXFLAGS}" \
+	extra_compile_flags="${CXXFLAGS}" \
 	extra_include_path=${LOCALBASE}/include \
 	extra_lib_path="${LOCALBASE}/lib"
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2013/05/25 00:33:11 brad Exp $
+# $OpenBSD: Makefile,v 1.108 2013/06/04 18:42:00 naddy Exp $
 
 COMMENT-main=		C++ X11 GUI toolkit
 COMMENT-examples=	examples and tutorial for qt3
@@ -86,7 +86,6 @@ CONFIGURE_ARGS=	-qt-gif -system-libmng -system-libpng -system-libjpeg -system-zl
 		-xinerama \
 		-cups \
 		-inputmethod \
-		-I${LOCALBASE}/include/libpng \
 		-I${X11BASE}/include/freetype2 \
 		-I${LOCALBASE}/include \
 		-L${WRKSRC}/lib \

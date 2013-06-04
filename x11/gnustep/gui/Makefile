@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/05/17 17:16:56 sebastia Exp $
+# $OpenBSD: Makefile,v 1.31 2013/06/04 18:41:58 naddy Exp $
 
 COMMENT=	GNUstep gui library
 
@@ -34,7 +34,7 @@ LIB_DEPENDS=	audio/flite \
 
 AUTOCONF_VERSION = 2.69
 CONFIGURE_STYLE=autoconf gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lstdc++ -lm"
 CONFIGURE_ARGS=	--with-x
 USE_GROFF =	Yes

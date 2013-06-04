@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2013/05/31 12:29:41 edd Exp $
+# $OpenBSD: Makefile,v 1.45 2013/06/04 18:41:50 naddy Exp $
 
 VMEM_WARNING=	Yes
 
@@ -38,7 +38,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	graphics/png
 TEST_DEPENDS =	${RUN_DEPENDS}
 
-MAKE_ENV+=	EXTRA_INCLUDES="${WRKSRC} ${LOCALBASE}/include/libpng ${MODTCL_INCDIR} ${MODTK_INCDIR}" \
+MAKE_ENV+=	EXTRA_INCLUDES="${WRKSRC} ${MODTCL_INCDIR} ${MODTK_INCDIR}" \
 		LDSHARED="${CC} -shared -fPIC"
 
 pre-configure:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2013/05/29 20:04:13 zhuk Exp $
+# $OpenBSD: Makefile,v 1.68 2013/06/04 18:41:57 naddy Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
@@ -162,12 +162,12 @@ CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
 			--with-system-gd \
 			--with-gd-libdir=${LOCALBASE}/lib \
 			--with-system-libpng \
-			--with-libpng-includes=${LOCALBASE}/include/libpng \
+			--with-libpng-includes=${LOCALBASE}/include \
 			--with-libpng-libdir=${LOCALBASE}/lib \
 			--with-system-ncurses \
 			--with-system-pnglib \
 			--with-pnglib-libdir=${LOCALBASE}/lib \
-			--with-pnglib-include=${LOCALBASE}/include/libpng \
+			--with-pnglib-include=${LOCALBASE}/include \
 			--with-system-zlib \
 			--with-system-t1lib \
 			--with-t1lib-libdir=${LOCALBASE}/lib \

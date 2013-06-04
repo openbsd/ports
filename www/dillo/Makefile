@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2013/04/19 14:33:51 bcallah Exp $
+# $OpenBSD: Makefile,v 1.44 2013/06/04 18:41:57 naddy Exp $
 
 COMMENT =		fast and light graphical web browser
 
@@ -34,7 +34,7 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--enable-ipv6 \
 			--disable-threaded-dns \
 			--enable-ssl
-CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 FAKE_FLAGS =		sysconfdir=${PREFIX}/share/examples/dillo/

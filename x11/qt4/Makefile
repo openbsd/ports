@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2013/05/25 00:33:11 brad Exp $
+# $OpenBSD: Makefile,v 1.113 2013/06/04 18:42:00 naddy Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 SHARED_ONLY =		Yes
@@ -96,7 +96,6 @@ CONFIGURE_ARGS =	-system-libpng -system-libjpeg -system-zlib \
 			-cups \
 			-confirm-license \
 			-opensource \
-			-I${LOCALBASE}/include/libpng \
 			-I${X11BASE}/include/freetype2 \
 			-I${X11BASE}/include \
 			-L${WRKBUILD}/lib \

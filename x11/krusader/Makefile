@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/21 08:48:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2013/06/04 18:41:58 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -45,7 +45,7 @@ CONFIGURE_ENV=	${MODKDE_CONFIGURE_ENV}
 CONFIGURE_ARGS=	${MODQT_CONFIGURE_ARGS} \
 		--disable-dependency-tracking \
 		--with-extra-libs="${LOCALBASE}/lib" \
-		--with-extra-includes="${LOCALBASE}/include/libpng:${LOCALBASE}/include" \
+		--with-extra-includes="${LOCALBASE}/include" \
 		--without-acl
 
 pre-configure:

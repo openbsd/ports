@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2013/05/31 15:34:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.96 2013/06/04 18:41:47 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -36,7 +36,6 @@ MODULES=	devel/gettext \
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
-MODGNOME_CPPFLAGS=	-I${LOCALBASE}/include/libpng
 
 LIBTOOL_FLAGS=	--tag=disable-static
 

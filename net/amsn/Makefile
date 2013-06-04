@@ -1,4 +1,4 @@
-#$OpenBSD: Makefile,v 1.27 2013/06/01 14:18:40 ajacoutot Exp $
+#$OpenBSD: Makefile,v 1.28 2013/06/04 18:41:54 naddy Exp $
 
 COMMENT=	open source MSN Messenger clone
 
@@ -41,8 +41,7 @@ CONFIGURE_ARGS+=--disable-libv4l \
 		--with-tcl="${MODTCL_LIBDIR}" \
 		--with-tk="${MODTK_LIBDIR}"
 
-CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include \
-		    -I${LOCALBASE}/include/libpng" \
+CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-lm -L${LOCALBASE}/lib" \
 		TK_INC_SPEC="${MODTK_INCDIR}/generic" \
 		TCLSH="${MODTCL_BIN}"

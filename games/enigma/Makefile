@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 11:07:38 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/06/04 18:41:42 naddy Exp $
 
 COMMENT=	Oxyd/Rock'n'Roll clone
 
@@ -39,11 +39,8 @@ USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-cxxlua=no
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
-			-I${LOCALBASE}/include/libpng \
-			-I${X11BASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib \
-			-L${LOCALBASE}/lib" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
 		LIBS="-lm -lz -lenet -pthread"
 
 .include <bsd.port.mk>

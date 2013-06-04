@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2013/05/31 15:34:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2013/06/04 18:41:52 naddy Exp $
 
 COMMENT=	free video editor
 
@@ -45,8 +45,7 @@ AUTOCONF_VERSION=2.60
 AUTOMAKE_VERSION=1.9
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
-		-I${LOCALBASE}/include/libpng" \
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -logg -lm -lz"
 CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--enable-xv \

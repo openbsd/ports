@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/21 08:45:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2013/06/04 18:41:46 naddy Exp $
 
 COMMENT=		library for powerful image loading capabilities
 
@@ -45,7 +45,7 @@ CONFIGURE_ARGS+=	--with-squish=no \
 
 # This would only install three binary examples, we'll install it manually.
 CONFIGURE_ARGS+=	--with-examples=no
-CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng/ -I${X11BASE}/include" \
+CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lm -lz"
 
 WRKDIST=		${WRKDIR}/${DISTNAME:L}

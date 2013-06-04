@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2013/05/31 15:34:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.90 2013/06/04 18:41:48 naddy Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
@@ -76,7 +76,7 @@ CONFIGURE_ARGS+=--enable-gimp-console \
 		--with-libcurl \
 		--without-gvfs \
 		--without-webkit
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include -I${X11BASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 # If one of these tools is found at configure stage, it might be used,
 # no matter whether we use --disable-gtk-doc or not.

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/11 11:10:52 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2013/06/04 18:41:47 naddy Exp $
 
 VMEM_WARNING =	Yes
 ONLY_FOR_ARCHS = ${GCC4_ARCHS}
@@ -51,7 +51,6 @@ USE_GROFF =	Yes
 
 CPPFLAGS +=	-I${WRKSRC}/src/vigra_impex \
 		-I${LOCALBASE}/include \
-		-I${LOCALBASE}/include/libpng \
 		-I${X11BASE}/include
 
 LDFLAGS +=	-L${LOCALBASE}/lib \

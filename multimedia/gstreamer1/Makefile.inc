@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.7 2013/03/21 08:46:33 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2013/06/04 18:41:53 naddy Exp $
 
 # Most frequent usage of the GStreamer packages:
 # core		base library
@@ -79,7 +79,6 @@ CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
 		ac_cv_path_GTKDOC_MKPDF=""
 
 CPPFLAGS +=		-I${LOCALBASE}/include \
-			-I${LOCALBASE}/include/libpng \
 			-I${X11BASE}/include
 LDFLAGS +=		-L${LOCALBASE}/lib \
 			-L${X11BASE}/lib

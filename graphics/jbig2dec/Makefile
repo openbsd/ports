@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/21 08:45:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2013/06/04 18:41:48 naddy Exp $
 
 SHARED_LIBS +=	jbig2dec             0.0      # 0.0
 
@@ -26,7 +26,6 @@ SEPARATE_BUILD =	Yes
 AUTOCONF_VERSION =	2.63
 CONFIGURE_STYLE =	autoconf
 CONFIGURE_ARGS =	--with-libpng=${LOCALBASE}
-CFLAGS +=		-I${LOCALBASE}/include/libpng
 CONFIGURE_ENV =		LDFLAGS="`pkg-config --libs libpng`"
 
 MODULES =		lang/python

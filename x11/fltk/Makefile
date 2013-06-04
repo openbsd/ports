@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2013/03/22 22:50:25 bcallah Exp $
+# $OpenBSD: Makefile,v 1.47 2013/06/04 18:41:57 naddy Exp $
 
 COMMENT=	Fast-Light Tool Kit
 
@@ -34,7 +34,7 @@ CONFIGURE_STYLE=autoconf no-autoheader
 AUTOCONF_VERSION=2.68
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-threads
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib" \

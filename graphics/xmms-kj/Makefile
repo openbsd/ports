@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 11:10:56 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/06/04 18:41:51 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -31,7 +31,6 @@ MAKE_FILE=      makefile
 ALL_TARGET=	vislib
 NO_TEST=	Yes
 
-CFLAGS+=	-I${LOCALBASE}/include/libpng
 MAKE_FLAGS=	CC="${CC}"
 MTREE_FILE=	${FILESDIR}/mtree
 

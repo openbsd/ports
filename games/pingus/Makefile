@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:07:40 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/06/04 18:41:44 naddy Exp $
 
 COMMENT=	free Lemmings-like game
 
@@ -33,11 +33,8 @@ pre-configure:
 do-configure:
 	cd ${WRKSRC} && ${MODSCONS_BIN} configure \
 		${MODSCONS_ENV} \
-		CPPFLAGS="-I${LOCALBASE}/include \
-			-I${X11BASE}/include \
-			-I${LOCALBASE}/include/libpng" \
-		LINKFLAGS="-L${LOCALBASE}/lib -lz \
-				-L${X11BASE}/lib" \
+		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LINKFLAGS="-L${LOCALBASE}/lib -lz -L${X11BASE}/lib" \
 		with_xinput=1 \
 		with_linuxusbmouse=0 \
 		with_wiimote=0 \

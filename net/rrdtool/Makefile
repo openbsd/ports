@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2013/03/21 08:46:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2013/06/04 18:41:54 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -45,7 +45,6 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--enable-ruby-site-install \
 		--disable-tcl
 CPPFLAGS+=	-I${LOCALBASE}/include/libart-2.0 \
-		-I${LOCALBASE}/include/libpng \
 		-I${X11BASE}/include/ \
 		-I${X11BASE}/include/freetype2
 LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib

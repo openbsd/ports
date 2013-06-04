@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/21 08:46:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2013/06/04 18:41:52 naddy Exp $
 
 COMMENT=	task-based timeclock for KDE
 
@@ -36,7 +36,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	 ${MODQT_CONFIGURE_ARGS}
 CONFIGURE_ARGS+= --disable-debug --enable-final
 CONFIGURE_ARGS+= --with-extra-libs="${LOCALBASE}/lib"
-CONFIGURE_ARGS+= --with-extra-includes="${LOCALBASE}/include/libpng:${LOCALBASE}/include"
+CONFIGURE_ARGS+= --with-extra-includes="${LOCALBASE}/include"
 CONFIGURE_ARGS+= --with-xinerama
 CONFIGURE_ENV=	KDEDIR="${LOCALBASE}"
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/admin

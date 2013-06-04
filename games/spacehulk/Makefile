@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/21 08:45:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2013/06/04 18:41:44 naddy Exp $
 
 COMMENT=	total conversion of the Space Hulk board game
 
@@ -24,7 +24,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS= --with-qt-includes=${MODQT_INCDIR} \
 		--with-qt-libraries=${MODQT_LIBDIR}
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include/libpng"
+		CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include"
 
 USE_GMAKE=	Yes
 

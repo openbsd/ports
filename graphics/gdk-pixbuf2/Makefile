@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/04/16 13:17:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2013/06/04 18:41:47 naddy Exp $
 
 COMMENT=		graphic library for gtk+2
 
@@ -33,7 +33,6 @@ BUILD_DEPENDS +=	misc/shared-mime-info
 RUN_DEPENDS +=		misc/shared-mime-info
 
 MODGNOME_TOOLS=		gi
-MODGNOME_CPPFLAGS=	-I${LOCALBASE}/include/libpng
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-libjasper \

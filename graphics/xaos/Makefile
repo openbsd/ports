@@ -34,8 +34,6 @@ CONFIGURE_ARGS +=	--with-gsl=yes \
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-MAKE_FLAGS =		CPPFLAGS="-I${LOCALBASE}/include/libpng"
-
 pre-configure:
 	perl -pi -e 's#/usr(/share/locale)#${PREFIX}\1#g' \
 		${WRKSRC}/configure ${WRKSRC}/src/ui/ui.c

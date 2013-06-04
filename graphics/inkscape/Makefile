@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2013/04/07 10:37:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2013/06/04 18:41:48 naddy Exp $
 
 COMMENT=	SVG vector drawing application
 
@@ -54,7 +54,7 @@ USE_GROFF=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.68
 CONFIGURE_ARGS=	--without-gnome-vfs
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include/ImageMagick \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/ImageMagick \
 			  -I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 

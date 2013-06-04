@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2013/05/20 07:56:48 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.52 2013/06/04 18:41:47 naddy Exp $
 
 COMMENT=	lightweight image viewer
 
@@ -27,7 +27,6 @@ RUN_DEPENDS=	graphics/jpeg
 RUN_DEPENDS+=	devel/desktop-file-utils
 
 CFLAGS+=	-I${LOCALBASE}/include \
-		-I${LOCALBASE}/include/libpng \
 		-I${X11BASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 MAKE_FLAGS=	LDFLAGS="${LDFLAGS}" man_dir="${DESTDIR}${PREFIX}/man" \

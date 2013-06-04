@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2013/03/21 08:48:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.88 2013/06/04 18:42:00 naddy Exp $
 
 COMMENT-main=		window manager that emulates NEXTSTEP(tm)
 COMMENT-lang=		language subpackage for Window Maker
@@ -30,7 +30,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-datadir="${LOCALBASE}/share/WindowMaker" \
 			--with-nlsdir="${LOCALBASE}/share/locale"
 
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" LIBS="-L${LOCALBASE}/lib" \
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib" \
 			LINGUAS='be bg bs ca cs da de el es et fi fr gl hr hu it ja ko ms nl no pl pt ro ru sk sv tr zh_CN zh_TW'
 
 MULTI_PACKAGES=         -main -lang

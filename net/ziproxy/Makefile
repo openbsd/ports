@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:35:58 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/06/04 18:41:55 naddy Exp $
 
 COMMENT =		compressing non-caching HTTP proxy
 
@@ -29,7 +29,7 @@ SEPARATE_BUILD =	Yes
 
 CONFIGURE_STYLE =	gnu
 
-CPPFLAGS =		-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng
+CPPFLAGS =		-I${LOCALBASE}/include
 
 CONFIGURE_ARGS =	--with-jasper=${LOCALBASE}
 

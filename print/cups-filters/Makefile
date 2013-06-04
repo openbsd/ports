@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/05/16 09:16:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2013/06/04 18:41:55 naddy Exp $
 
 # XXX remove @exec-update when we branch 5.4-current
 
@@ -51,9 +51,7 @@ FAKE_FLAGS=	pkgfontconfigdir=${PREFIX}/share/examples/cups-filters \
 		pkgcupsserverrootdir=${PREFIX}/share/examples/cups-filters/cups
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include \
-			-I${LOCALBASE}/include \
-			-I${LOCALBASE}/include/libpng" \
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \

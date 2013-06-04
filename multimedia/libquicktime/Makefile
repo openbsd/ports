@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2013/03/21 08:46:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2013/06/04 18:41:53 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -50,7 +50,7 @@ CONFIGURE_ARGS=	--enable-gpl \
 		--with-libdv \
 		--without-alsa \
 		--without-faac
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng -I${X11BASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		ac_cv_lib_ossaudio__oss_ioctl=no \
 		ac_cv_header_soundcard_h=no

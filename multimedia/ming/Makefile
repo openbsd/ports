@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/21 08:46:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2013/06/04 18:41:54 naddy Exp $
 
 COMMENT=	Flash 4/5 movie output library
 
@@ -23,7 +23,7 @@ YACC=		bison
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.65
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

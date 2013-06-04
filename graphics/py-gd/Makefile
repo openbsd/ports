@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 11:10:55 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2013/06/04 18:41:50 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -31,7 +31,7 @@ DOCSDIR=	${PREFIX}/share/doc/py-gd
 
 do-configure:
 	@perl -pi -e "s,%%LOCALBASE%%,${LOCALBASE},g;" \
-		-e "s,%%LIBPNG%%,${LOCALBASE}/include/libpng,g" \
+		-e "s,%%LIBPNG%%,${LOCALBASE}/include,g" \
 			${WRKSRC}/${MODPY_SETUP}
 
 post-install:

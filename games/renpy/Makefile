@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/05/10 20:30:31 rpe Exp $
+# $OpenBSD: Makefile,v 1.6 2013/06/04 18:41:44 naddy Exp $
 
 COMMENT =		visual novel engine
 
@@ -29,8 +29,7 @@ LIB_DEPENDS =		devel/fribidi \
 			graphics/ffmpeg \
 			graphics/glew
 
-MAKE_ENV =		RENPY_DEPS_INSTALL=/usr::${LOCALBASE}::${X11BASE} \
-			CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include/libpng"
+MAKE_ENV =		RENPY_DEPS_INSTALL=/usr::${LOCALBASE}::${X11BASE}
 
 NO_TEST =		Yes
 

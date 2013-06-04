@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/05/16 10:10:35 kirby Exp $
+# $OpenBSD: Makefile,v 1.9 2013/06/04 18:41:45 naddy Exp $
 
 COMMENT-main =		squad-based tactical strategy game
 COMMENT-editor = 	UFO:AI map editor
@@ -62,8 +62,7 @@ CONFIGURE_ARGS =	--enable-release \
 			--datadir=${PREFIX}/share/ufoai
 
 CONFIGURE_ENV +=	CFLAGS="${CFLAGS}" \
-			CCFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
-				-I${LOCALBASE}/include/libpng" \
+			CCFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -liconv -lexecinfo" \
 			Q=
 

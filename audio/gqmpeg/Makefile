@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2013/03/10 22:55:02 espie Exp $
+# $OpenBSD: Makefile,v 1.56 2013/06/04 18:41:40 naddy Exp $
 
 COMMENT=		front-end to various audio players
 
@@ -28,8 +28,7 @@ LIB_DEPENDS=		x11/gtk+2
 
 USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/libpng \
-			-I${LOCALBASE}/include" \
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			ac_cv_path_GNOME_CONFIG=no
 

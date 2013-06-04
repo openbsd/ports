@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2013/03/21 08:46:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2013/06/04 18:41:55 naddy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -47,8 +47,7 @@ LIB_DEPENDS=		${MODPY_LIB_DEPENDS}	\
 WRKDIST=		${WRKDIR}/${DISTNAME:S,_full,,}
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include		\
-				  -I${LOCALBASE}/include/libpng"	\
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include"		\
 			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib	\
 				 -lintl -liconv -lz"
 CONFIGURE_ARGS=		--without-freetype-src \

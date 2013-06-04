@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/03/11 11:23:58 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2013/06/04 18:41:52 naddy Exp $
 
 COMMENT=	filemanager for X Window
 
@@ -27,7 +27,7 @@ NO_TEST=	Yes
 CONFIGURE_STYLE=	autoconf old dest
 AUTOCONF_VERSION=	2.13
 
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-x

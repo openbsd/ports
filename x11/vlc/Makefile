@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.172 2013/06/03 22:36:00 brad Exp $
+# $OpenBSD: Makefile,v 1.173 2013/06/04 18:42:00 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -90,7 +90,7 @@ RUN_DEPENDS-jack= ${BUILD_PKGPATH}
 
 MAKE_ENV=	AUTOCONF_VERSION=${AUTOCONF_VERSION} AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
 
-CPPFLAGS=	-I${X11BASE}/include -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng
+CPPFLAGS=	-I${X11BASE}/include -I${LOCALBASE}/include
 
 USE_GMAKE=	Yes
 # Fails to link _pic libs properly resulting in undefined symbols in the live555 plugin

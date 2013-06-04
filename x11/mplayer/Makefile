@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.221 2013/05/05 21:11:32 brad Exp $
+# $OpenBSD: Makefile,v 1.222 2013/06/04 18:41:59 naddy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -82,7 +82,7 @@ CONFIGURE_STYLE = simple
 # CONFIGURE_ARGS for misc stuff
 CONFIGURE_ARGS += --confdir=${CONFDIR} \
 		--mandir=${LOCALBASE}/man \
-		--extra-cflags="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
+		--extra-cflags="-I${LOCALBASE}/include" \
 		--extra-ldflags="-L${LOCALBASE}/lib" \
 		--extra-libs-mplayer="-lrtunes -lcrypto"
 

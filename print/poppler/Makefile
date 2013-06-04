@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2013/03/21 08:46:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2013/06/04 18:41:56 naddy Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt=	qt interface to PDF rendering library
@@ -100,7 +100,7 @@ CONFIGURE_ARGS+= --disable-gtk-doc \
 		--enable-zlib \
 		--disable-gtk-test
 
-CONFIGURE_ENV+= CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
+CONFIGURE_ENV+= CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBJPEG_CFLAGS="-I${LOCALBASE}/include"
 

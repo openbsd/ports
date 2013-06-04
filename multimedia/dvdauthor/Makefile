@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/11 11:35:43 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2013/06/04 18:41:53 naddy Exp $
 
 COMMENT=	creates DVD file structures
 
@@ -25,7 +25,7 @@ MAKE_FLAGS+=	BISON="yacc"
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 WRKDIST=	${WRKDIR}/dvdauthor

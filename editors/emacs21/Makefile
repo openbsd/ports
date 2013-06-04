@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2013/03/15 14:09:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.66 2013/06/04 18:41:41 naddy Exp $
 
 COMMENT-main=		GNU editor: extensible, customizable, self documenting
 COMMENT-el=		elisp sources for those who want to read/modify them
@@ -45,8 +45,7 @@ LDFLAGS +=		-nopie
 CFLAGS +=		-fno-pie
 .endif
 
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
-				  -I${LOCALBASE}/include/libpng" \
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS}"
 
 MAKE_ENV=		INSTALL_EMACS="${INSTALL_SCRIPT}"

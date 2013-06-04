@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2013/03/21 08:48:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2013/06/04 18:41:59 naddy Exp $
 
 COMMENT-main=		Motif toolkit
 COMMENT-demos=		Motif toolkit demos
@@ -34,7 +34,7 @@ CONFIGURE_ARGS=		--enable-themes \
 			--enable-jpeg \
 			--disable-printing \
 			--enable-png
-CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
+CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -lm"
 MAKE_ENV=		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 			AUTOMAKE_VERSION=${AUTOMAKE_VERSION}

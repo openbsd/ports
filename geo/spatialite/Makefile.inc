@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2013/03/21 09:01:56 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2013/06/04 18:41:46 naddy Exp $
 
 CATEGORIES ?=	geo
 
@@ -14,7 +14,7 @@ CONFIGURE_STYLE ?=	gnu
 
 # libpng header needed by gaiagraphics & librasterlite
 # lt_cv_dlopen_libs= needed by libspatialite
-CONFIGURE_ENV ?=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng/" \
+CONFIGURE_ENV ?=	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" lt_cv_dlopen_libs=
 
 LIBTOOL_FLAGS ?=	--tag=disable-static

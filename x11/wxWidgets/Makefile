@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2013/03/11 11:46:17 espie Exp $
+# $OpenBSD: Makefile,v 1.46 2013/06/04 18:42:00 naddy Exp $
 
 SHARED_ONLY =	Yes
 
@@ -89,7 +89,7 @@ CONFIGURE_ARGS =--disable-backtrace \
 		--with-sdl \
 		--without-gnomeprint \
 		--enable-graphics_ctx
-CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng -I${X11BASE}/include" \
+CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		ac_cv_lib_esd_esd_close=no
 

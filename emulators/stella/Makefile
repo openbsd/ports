@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/11 11:06:04 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2013/06/04 18:41:41 naddy Exp $
 
 COMMENT =		Atari 2600 VCS emulator
 
@@ -20,8 +20,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=stella/}
 LIB_DEPENDS =		devel/sdl \
 			graphics/png
 
-CXXFLAGS +=		-I${LOCALBASE}/include/libpng \
-			-I${X11BASE}/include \
+CXXFLAGS +=		-I${X11BASE}/include \
 			-L${LOCALBASE}/lib
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	--disable-gl

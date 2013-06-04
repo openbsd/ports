@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/26 17:00:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2013/06/04 18:41:42 naddy Exp $
 
 ONLY_FOR_ARCHS=		i386
 
@@ -33,7 +33,7 @@ CONFIGURE_ARGS=		--with-sdl-prefix=${LOCALBASE} \
 			--with-opengl \
 			--target=${MACHINE}-unknown-openbsd${OSREV}
 CONFIGURE_ENV+=		LDFLAGS="-lm" \
-			CFLAGS="${CFLAGS:N-O*} -I${X11BASE}/include -I${LOCALBASE}/include/libpng"
+			CFLAGS="${CFLAGS:N-O*} -I${X11BASE}/include"
 ALL_TARGET=
 
 WRKSRC=			${WRKDIST}/src

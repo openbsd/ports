@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2013/05/29 20:46:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2013/06/04 18:41:52 naddy Exp $
 
 COMMENT=	GRaphing, Advanced Computation and Exploration of data
 
@@ -20,7 +20,7 @@ MASTER_SITES=	${GRACE_SITES:=grace/src/grace5/}
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/ac-tools
 CONFIGURE_ARGS+=	--with-bundled-xbae \
-			--with-extra-incpath=${LOCALBASE}/include:${LOCALBASE}/include/libpng \
+			--with-extra-incpath=${LOCALBASE}/include \
 			--with-extra-ldpath=${LOCALBASE}/lib \
 			--enable-grace-home=${PREFIX}/grace
 USE_GROFF =	Yes

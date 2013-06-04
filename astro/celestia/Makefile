@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2013/05/31 15:34:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2013/06/04 18:41:39 naddy Exp $
 
 COMMENT=	free space simulator and planetarium
 
@@ -36,8 +36,7 @@ RUN_DEPENDS=	devel/desktop-file-utils
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include \
-			-I${LOCALBASE}/include/libpng" \
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lGL" \
 		LUA_CFLAGS="`pkg-config --cflags ${MODLUA_DEP}`" \
 		LUA_LIBS="`pkg-config --libs ${MODLUA_DEP}`"

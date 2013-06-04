@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/11 11:07:41 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2013/06/04 18:41:45 naddy Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -40,8 +40,7 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.69
 CONFIGURE_ARGS+= --with-distributor="OpenBSD"
-CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include/libpng \
-		    -I${LOCALBASE}/include" \
+CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
 		PKG_CONFIG_LIBDIR="/usr/lib/pkgconfig:${X11BASE}/lib/pkgconfig:${LOCALBASE}/lib/pkgconfig:${LOCALBASE}/lib/qt4/pkgconfig" \
 		YACC="bison -y" \

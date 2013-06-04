@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/05/16 09:04:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2013/06/04 18:41:49 naddy Exp $
 
 COMMENT=	library to adjust for photographic lens characteristics
 DISTNAME=	lensfun-0.2.7
@@ -34,7 +34,7 @@ CONFIGURE_ARGS+=	--docdir=${PREFIX}/share/doc/lensfun \
 
 NO_TEST =		Yes
 
-CFLAGS+=		-I/usr/include -I${LOCALBASE}/include/libpng
+CFLAGS+=		-I/usr/include
 MAKE_FILE=		GNUmakefile
 
 ALL_TARGET =		all

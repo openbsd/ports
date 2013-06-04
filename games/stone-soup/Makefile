@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 11:07:40 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2013/06/04 18:41:44 naddy Exp $
 
 COMMENT = 	dungeon crawl stone soup
 CATEGORIES = 	games
@@ -15,8 +15,8 @@ BROKEN-arm=	tilegen.elf loops burning cpu
 WRKDIST = 	${WRKDIR}/stone_soup-${VERSION}
 WRKSRC = 	${WRKDIST}/source
 USE_GMAKE = 	Yes
-CFLAGS +=	"-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng -I${LOCALBASE}/include/SDL"
-CXXFLAGS += 	"-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng -I${LOCALBASE}/include/SDL"
+CFLAGS +=	"-I${LOCALBASE}/include -I${LOCALBASE}/include/SDL"
+CXXFLAGS += 	"-I${LOCALBASE}/include -I${LOCALBASE}/include/SDL"
 MAKE_FLAGS = 	CC="${CC}" CXX="${CXX}" \
 		LUA_INCLUDE_DIR=${MODLUA_INCL_DIR} \
 		LUA_LIB=${MODLUA_LIB} \

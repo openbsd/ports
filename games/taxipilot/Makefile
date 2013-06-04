@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/21 08:45:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2013/06/04 18:41:45 naddy Exp $
 
 COMMENT=	silly little game based on Spacetaxi for the C64
 
@@ -35,7 +35,7 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	 ${MODQT_CONFIGURE_ARGS}
 CONFIGURE_ARGS+= --with-extra-libs=${LOCALBASE}/lib
-CONFIGURE_ARGS+= --with-extra-includes=${LOCALBASE}/include/libpng:${LOCALBASE}/include
+CONFIGURE_ARGS+= --with-extra-includes=${LOCALBASE}/include
 CONFIGURE_ENV=	KDEDIR=${LOCALBASE} 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/admin
 

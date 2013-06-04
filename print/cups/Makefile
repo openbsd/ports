@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.156 2013/05/17 13:47:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.157 2013/06/04 18:41:55 naddy Exp $
 
 COMMENT-main=		Common Unix Printing System
 COMMENT-libs=		CUPS libraries and headers
@@ -80,8 +80,7 @@ USE_GMAKE=		Yes
 
 MAKE_ENV=		${LIBS_ENV}
 
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
-				-I${LOCALBASE}/include/libpng" \
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -pthread" \
 			${LIBS_ENV}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2013/03/11 11:37:53 espie Exp $
+# $OpenBSD: Makefile,v 1.97 2013/06/04 18:41:56 naddy Exp $
 
 COMMENT=	GNU PostScript interpreter
 
@@ -39,8 +39,7 @@ LIB_DEPENDS=	graphics/jbig2dec	\
 
 CFLAGS+=	-DSYS_TYPES_HAS_STDINT_TYPES	\
 		-I${LOCALBASE}/include		\
-		-I${LOCALBASE}/include/ijs	\
-		-I${LOCALBASE}/include/libpng
+		-I${LOCALBASE}/include/ijs
 USE_GROFF =	Yes
 
 STDLIBS=	-pthread -lm -liconv

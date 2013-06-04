@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/03/21 08:45:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2013/06/04 18:41:41 naddy Exp $
 
 COMMENT=		Free Unix Spectrum Emulator
 DISTNAME=		fuse-0.10.0.2
@@ -23,7 +23,7 @@ LIB_DEPENDS=		devel/glib2 \
 			audio/libao
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/libpng" \
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			LIBS="-lbz2"
 CONFIGURE_ARGS=		--with-libao

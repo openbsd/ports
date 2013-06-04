@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/21 08:46:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2013/06/04 18:41:56 naddy Exp $
 
 COMMENT=		C library to produce PDF files
 
@@ -33,8 +33,8 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--without-py \
 			--without-tcl
 
-CONFIGURE_ENV=		LDFLAGS="-L${DEPBASE}/lib" \
-			CPPFLAGS="-I${DEPBASE}/include/libpng -I${DEPBASE}/include" \
+CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
+			CPPFLAGS="-I${LOCALBASE}/include" \
 			LIBS="-lm"
 MAKE_ENV=		${CONFIGURE_ENV}
 

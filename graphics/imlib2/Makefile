@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2013/03/21 08:45:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2013/06/04 18:41:48 naddy Exp $
 
 COMMENT=	image manipulation library
 
@@ -29,7 +29,7 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 .if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS+= --disable-mmx
 .endif
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include/libpng -I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

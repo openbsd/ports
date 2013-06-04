@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:10:54 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/06/04 18:41:50 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -22,7 +22,7 @@ LIB_DEPENDS=	graphics/libungif \
 MAKE_ENV=	TEST_POD=Yes
 
 CONFIGURE_ARGS=	--with-jpeg-libs="${LOCALBASE}/lib" \
-		--with-png-include="${LOCALBASE}/include/libpng" \
+		--with-png-include="${LOCALBASE}/include" \
 		--with-png-libs="${LOCALBASE}/lib" \
 		--with-gif-libs="${LOCALBASE}/lib"
 

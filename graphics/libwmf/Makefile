@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/21 08:45:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2013/06/04 18:41:49 naddy Exp $
 
 COMMENT=	WMF handling and conversion library
 
@@ -32,7 +32,6 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-zlib=/usr \
 		--with-gsfontdir=${LOCALBASE}/share/ghostscript/fonts/ \
 		--disable-gd
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng" \
-		PKG_CONFIG="/usr/bin/false"
+CONFIGURE_ENV=	PKG_CONFIG="/usr/bin/false"
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/05/20 14:51:42 rpe Exp $
+# $OpenBSD: Makefile,v 1.12 2013/06/04 18:41:49 naddy Exp $
 
 COMMENT =	toolkit for developing mapping applications
 
@@ -46,7 +46,7 @@ WANTLIB += xcb-shm
 
 MODSCONS_FLAGS =	PREFIX="${TRUEPREFIX}" \
 			DESTDIR="${WRKINST}" \
-			PNG_INCLUDES="${LOCALBASE}/include/libpng/" \
+			PNG_INCLUDES="${LOCALBASE}/include" \
 			INTERNAL_LIBAGG=no \
 			SYSTEM_FONTS="${X11BASE}/lib/X11/fonts/TTF/" \
 			FAST=yes \

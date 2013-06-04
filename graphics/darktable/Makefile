@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2013/04/26 23:10:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2013/06/04 18:41:47 naddy Exp $
 
 # requires SSE
 ONLY_FOR_ARCHS=	i386 amd64
@@ -62,7 +62,7 @@ CONFIGURE_ARGS=	-DCMAKE_BUILD_TYPE=Release \
 		-DBINARY_PACKAGE_BUILD=1
 CFLAGS+= -D_DEBUG
 
-CPPFLAGS+=	-I${LOCALBASE}/include/libpng
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-install:

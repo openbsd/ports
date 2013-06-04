@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 11:46:14 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/06/04 18:41:59 naddy Exp $
 
 COMMENT=	aewm++ based pretty themable window manager
 
@@ -26,8 +26,7 @@ USE_GROFF =	Yes
 NO_TEST=	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
-		-I${LOCALBASE}/include/libpng" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-xinerama
 

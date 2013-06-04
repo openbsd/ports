@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/21 08:46:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2013/06/04 18:41:51 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -35,8 +35,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-skim-support \
 		--with-qt-includes=${MODQT_INCDIR} \
 		--with-qt-libraries=${MODQT_LIBDIR}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
-		-I${LOCALBASE}/include/libpng" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		UIC_PATH=${MODQT_UIC} \
 		QTDIR=${MODQT_QTDIR}

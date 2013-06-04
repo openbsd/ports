@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2013/05/31 15:29:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.78 2013/06/04 18:41:58 naddy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -72,7 +72,7 @@ WANTLIB-cups += asn1 crypto cups gdk-3 gssapi gtk-3 krb5 ssl
 WANTLIB-cups += avahi-client avahi-common colordprivate
 
 MODGNOME_TOOLS=		gi
-MODGNOME_CPPFLAGS=	-I${X11BASE}/include/freetype2 -I${LOCALBASE}/include/libpng
+MODGNOME_CPPFLAGS=	-I${X11BASE}/include/freetype2
 MODGNOME_ICON_CACHE=	Yes
 
 TEST_IS_INTERACTIVE=	x11

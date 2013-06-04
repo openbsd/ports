@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2013/03/11 11:07:38 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2013/06/04 18:41:42 naddy Exp $
 
 COMMENT=	graphical networked AD&D style game
 
@@ -36,11 +36,8 @@ LIB_DEPENDS=	x11/gtk+2 \
 USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
-			-I${LOCALBASE}/include/libpng \
-			-I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib \
-			-L${X11BASE}/lib -lm -lXi -lXmu" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lm -lXi -lXmu" \
 		ac_cv_path_SVNVERSION="" \
 		sndio_sound="yes"
 CONFIGURE_ARGS=	--enable-gtkv2 \

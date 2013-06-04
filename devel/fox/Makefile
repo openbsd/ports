@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/05/08 13:05:33 bcallah Exp $
+# $OpenBSD: Makefile,v 1.26 2013/06/04 18:41:40 naddy Exp $
 
 COMMENT =	C++ toolkit for GUI
 CATEGORIES =	devel
@@ -19,7 +19,7 @@ LIB_DEPENDS =	archivers/bzip2 \
 		graphics/tiff
 
 CONFIGURE_ENV += \
-	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
+	CPPFLAGS="-I${LOCALBASE}/include" \
 	LDFLAGS="-L${LOCALBASE}/lib" 
 CONFIGURE_ARGS += \
 	--x-includes="${X11BASE}/include -I${X11BASE}/include/freetype2" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/21 08:45:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2013/06/04 18:41:49 naddy Exp $
 
 COMMENT =		library for processing panoramic images
 DISTNAME =		libpano13-2.9.18
@@ -35,7 +35,6 @@ LIB_DEPENDS =		graphics/jpeg \
 			graphics/tiff
 
 CPPFLAGS +=		-I${LOCALBASE}/include/ \
-			-I${LOCALBASE}/include/libpng \
 			-I${LOCALBASE}/include/gtk-2.0
 LDFLAGS +=		-L${LOCALBASE}/lib \
 			-L${LOCALBASE}/lib/gtk-2.0

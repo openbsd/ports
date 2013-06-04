@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/05/31 15:34:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2013/06/04 18:41:51 naddy Exp $
 
 COMMENT =	medical image conversion
 
@@ -36,7 +36,7 @@ CONFIGURE_STYLE = gnu
 CONFIGURE_ARGS += ${CONFIGURE_SHARED} \
 		 --enable-static \
 		 --sysconfdir="${SYSCONFDIR}"
-CONFIGURE_ENV = CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
+CONFIGURE_ENV = CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
                          
 NO_TEST =	Yes

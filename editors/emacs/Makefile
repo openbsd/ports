@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2013/05/07 07:06:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.38 2013/06/04 18:41:41 naddy Exp $
 
 BROKEN-hppa =		Invalid function: "DEAD"
 
@@ -32,9 +32,7 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build-aux
 CONFIGURE_ARGS=		--build="${GCCARCH}" \
 			--without-compress-info
 
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
-				  -I${LOCALBASE}/include/libpng \
-				  -DHAVE_SOUND" \
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -DHAVE_SOUND" \
 			LDFLAGS="-L${LOCALBASE}/lib -nopie"
 CFLAGS+=		-fno-pie
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:07:42 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/06/04 18:41:45 naddy Exp $
 
 COMMENT=		Z-code interpreter for X11
 
@@ -23,8 +23,7 @@ USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
-			CPPFLAGS="-I${LOCALBASE}/include \
-				-I${LOCALBASE}/include/libpng"
+			CPPFLAGS="-I${LOCALBASE}/include"
 
 VMEM_WARNING=		Yes
 

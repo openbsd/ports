@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2013/03/21 08:45:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2013/06/04 18:41:48 naddy Exp $
 
 COMMENT=	image manipulation library for X11
 
@@ -29,7 +29,7 @@ SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --disable-modules
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 post-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2013/03/21 08:45:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.72 2013/06/04 18:41:40 naddy Exp $
 
 COMMENT=	tools to connect your PalmOS(R) compatible handheld
 
@@ -31,7 +31,7 @@ USE_GMAKE=		Yes
 USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
+CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -pthread" \
 			PTHREAD_CFLAGS="-pthread" \
 			PTHREAD_LIBS="-pthread" \

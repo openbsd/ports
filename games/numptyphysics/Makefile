@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 11:07:40 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/06/04 18:41:43 naddy Exp $
 
 COMMENT-main =		physics-based drawing puzzle game
 COMMENT-npcomplete =	extra levels for physics-based drawing puzzle game
@@ -40,7 +40,6 @@ AUTOCONF_VERSION =	2.61
 AUTOMAKE_VERSION =	1.9
 
 CPPFLAGS =	-I${LOCALBASE}/include \
-		-I${LOCALBASE}/include/libpng \
 		-I${X11BASE}/include
 LDFLAGS =	-pthread \
 		-L${LOCALBASE}/lib \

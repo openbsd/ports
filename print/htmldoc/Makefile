@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2013/05/08 10:56:45 benoit Exp $
+# $OpenBSD: Makefile,v 1.32 2013/06/04 18:41:56 naddy Exp $
 
 COMMENT=	convert HTML pages to PDF/PS format
 
@@ -29,8 +29,7 @@ LIB_DEPENDS=		graphics/jpeg \
 CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ARGS+=	--without-gui
 CONFIGURE_ENV= 		LDFLAGS="-L${LOCALBASE}/lib" \
-			CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include \
-				-I${LOCALBASE}/include/libpng" \
+			CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 			CPPFLAGS="-I${LOCALBASE}/include"
 PORTHOME=		${WRKDIR}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2013/03/11 11:10:56 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2013/06/04 18:41:51 naddy Exp $
 
 COMMENT=	scanner frontend for SANE
 
@@ -35,8 +35,7 @@ USE_GMAKE=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
-		-I${LOCALBASE}/include/libpng" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -liconv" \
 		gt_cv_func_gettext_libintl=yes
 

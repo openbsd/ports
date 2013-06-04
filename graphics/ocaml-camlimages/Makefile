@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:10:54 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/06/04 18:41:50 naddy Exp $
 
 COMMENT=	image manipulation functions for Objective Caml
 CATEGORIES=	graphics
@@ -28,9 +28,6 @@ BUILD_DEPENDS=	devel/omake \
 		sysutils/findlib \
 		print/ghostscript/gnu
 
-# The camlimages build system seems to need some include paths in CPATH and
-# others in CFLAGS. I don't know why, but this way at least it works.
-MAKE_ENV+=	CPATH="${LOCALBASE}/include/libpng"
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mocaml_native}
 MAKE_ENV +=	OCAML_NATIVE=1

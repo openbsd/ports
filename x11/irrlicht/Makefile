@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:46:13 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/06/04 18:41:58 naddy Exp $
 
 COMMENT =		fast, real time 3D engine
 DISTNAME =		irrlicht-1.8
@@ -38,7 +38,7 @@ MAKE_ENV +=		CC="${CC}" \
 				  -DNO_IRR_COMPILE_WITH_JOYSTICK_EVENTS_" \
 			NDEBUG=1 \
 			SO_VERSION="${SO_VERSION}"
-MAKE_FLAGS +=		CXXINCS="-I../../include -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng -I${X11BASE}/include" \
+MAKE_FLAGS +=		CXXINCS="-I../../include -I${LOCALBASE}/include -I${X11BASE}/include" \
 
 NO_TEST =		Yes
 

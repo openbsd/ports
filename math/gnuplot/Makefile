@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2013/05/29 14:32:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.56 2013/06/04 18:41:52 naddy Exp $
 
 COMMENT =	command-driven interactive function plotting program
 
@@ -31,7 +31,7 @@ CONFIGURE_ARGS =	--without-linux-vga \
 			--disable-qt \
 			--without-lua \
 			--without-pdf
-CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include/libpng" \
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 FAKE_FLAGS =		appdefaultdir="${PREFIX}/lib/X11/app-defaults/"

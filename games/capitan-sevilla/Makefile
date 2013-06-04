@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:07:38 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/06/04 18:41:42 naddy Exp $
 
 COMMENT =		platform game set in seville and in space
 VERSION = 		1.0.3
@@ -33,7 +33,6 @@ USE_GMAKE =		Yes
 NO_TEST =		Yes
 
 CFLAGS =		-O2 -pipe -pthread \
-			-I${LOCALBASE}/include/libpng \
 			-I${X11BASE}/include \
 			-I${X11BASE}/include/freetype2 \
 			-I./include \

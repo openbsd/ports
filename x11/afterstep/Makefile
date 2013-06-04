@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2013/03/11 11:46:08 espie Exp $
+# $OpenBSD: Makefile,v 1.46 2013/06/04 18:41:57 naddy Exp $
 
 COMMENT=	window manager, continuation of the Bowman NeXTSTEP clone
 
@@ -38,7 +38,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-helpcommand="urxvt -e man" \
 		--with-jpeg-includes=${LOCALBASE}/include \
 		--with-jpeg-library=${LOCALBASE}/lib \
-		--with-png-includes=${LOCALBASE}/include/libpng \
+		--with-png-includes=${LOCALBASE}/include \
 		--with-png-library=${LOCALBASE}/lib \
 		--disable-send-postcard-to-developer \
 		--enable-i18n \

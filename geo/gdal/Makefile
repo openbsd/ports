@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/05/31 15:00:08 landry Exp $
+# $OpenBSD: Makefile,v 1.27 2013/06/04 18:41:46 naddy Exp $
 
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
@@ -69,8 +69,7 @@ MAKE_FLAGS =	LIBTOOL_FINISH=:
 USE_GMAKE =	Yes
 NO_TEST =	Yes
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include \
-			  -I${LOCALBASE}/include/libpng" \
+CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -pthread"
 
 CONFIGURE_ARGS =	${CONFIGURE_SHARED} \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/21 08:48:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2013/06/04 18:41:59 naddy Exp $
 
 COMMENT=	GDI+ comptible API
 
@@ -36,8 +36,7 @@ LIB_DEPENDS=	devel/pango \
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include \
-		-I${LOCALBASE}/include/libpng"
+		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-pango
 

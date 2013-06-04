@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2013/05/31 15:34:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.91 2013/06/04 18:41:40 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -68,8 +68,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 #		--disable-collab-backend-tcp
 #		--disable-collab-backend-service
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
-			-I${LOCALBASE}/include/libpng" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 SUBST_VARS=	MAJORVER

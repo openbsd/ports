@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/05/09 00:44:06 bcallah Exp $
+# $OpenBSD: Makefile,v 1.29 2013/06/04 18:42:01 naddy Exp $
 
 COMMENT=	MS-Explorer like file manager for X
 
@@ -28,8 +28,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 			-I${LOCALBASE}/include/fox-1.6 \
 			-I${X11BASE}/include \
-			-I${X11BASE}/include/freetype2 \
-			-I${LOCALBASE}/include/libpng" \
+			-I${X11BASE}/include/freetype2" \
 		LDFLAGS="-L${LOCALBASE}/lib \
 			-L${X11BASE}/lib -lXft -pthread"
 

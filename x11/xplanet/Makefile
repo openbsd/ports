@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2013/03/11 11:46:19 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2013/06/04 18:42:01 naddy Exp $
 
 COMMENT=	draw pictures of the earth textured by an image
 
@@ -34,8 +34,7 @@ CONFIGURE_ARGS=		--without-xscreensaver \
 			--without-pnm --without-tiff \
 			--without-cspice
 
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
-				-I${LOCALBASE}/include/libpng" \
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 post-install:
