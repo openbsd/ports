@@ -4,3 +4,6 @@ Vorbis and Speex for applications where both high quality audio and
 low delay are desired.
 
 This package contains the celt051 API.
+
+Note that the CELT codec has been merged into the IETF Opus codec
+(http://opus-codec.org/) and is now considered obsolete.

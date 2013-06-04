@@ -1,11 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/21 08:45:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2013/06/04 13:31:49 dcoppa Exp $
 
-COMMENT =	ultra-low delay audio codec (051 API)
+# Warning: CELT is experimental software. Neither the API/ABI, nor
+# the bit-stream are stable. Compatibility between different releases
+# (even minor ones) is not preserved.
+
+COMMENT =	experimental ultra-low delay audio codec (051 API)
 
 V =		0.5.1.1
 DISTNAME =	celt-$V
 PKGNAME =	celt051-$V
-REVISION =	0
+REVISION =	1
 CATEGORIES =   	audio
 
 HOMEPAGE =	http://www.celt-codec.org/
