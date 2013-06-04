@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2013/05/05 16:09:38 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.10 2013/06/04 14:00:20 naddy Exp $
 
 COMMENT=		small tiling window manager
 
 SHARED_LIBS=		swmhack 1.0
 
 DISTNAME=		spectrwm-2.3.0
+REVISION=		0
 EXTRACT_SUFX=		.tgz
 CATEGORIES=		x11
 
@@ -40,8 +41,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/spectrwm.conf ${PREFIX}/share/examples/spectrwm
 
 .for i in es cz fr fr_ch se us
-	${INSTALL_DATA_DIR} ${WRKSRC}/spectrwm_$i.conf
-	mv ${WRKSRC}/spectrwm_$i.conf ${PREFIX}/share/examples/spectrwm
+	${INSTALL_DATA} ${WRKSRC}/spectrwm_$i.conf ${PREFIX}/share/examples/spectrwm
 .endfor
 
 .include <bsd.port.mk>
