@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1227 2013/05/27 16:06:51 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1228 2013/06/04 19:35:04 naddy Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2437,11 +2437,6 @@ ${_WRKDIR_COOKIE}:
 ${_EXTRACT_COOKIE}: ${_WRKDIR_COOKIE} ${_SYSTRACE_COOKIE}
 	@${_MAKE} _internal-checksum _internal-prepare
 	@${ECHO_MSG} "===>  Extracting for ${FULLPKGNAME}${_MASTER}"
-.if ${_USE_XZ:L} != "no" && ${SHARED_ONLY:L} != "yes"
-	@echo ""; \
-	echo "*** WARNING: this port uses xz distfiles: it will not build on vax."; \
-	echo ""
-.endif
 .if target(pre-extract)
 	@${_MAKESYS} pre-extract
 .endif
