@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:44:49 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/06/04 07:54:19 fgsch Exp $
 
 COMMENT =	http proxying tools for wsgi apps
 
 MODPY_EGG_VERSION = 0.2.2
 DISTNAME =	WSGIProxy-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
+REVISION =	0
 
 CATEGORIES =	www devel
 
@@ -19,8 +20,8 @@ MODULES =	lang/python
 
 MODPY_SETUPTOOLS =	Yes
 
-RUN_DEPENDS =	www/py-paste \
-		$(MODPY_JSON)
+RUN_DEPENDS =	devel/py-simplejson \
+		www/py-paste
 
 NO_TEST =	Yes
 
