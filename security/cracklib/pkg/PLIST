@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/06/03 07:26:54 benoit Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.7 2013/06/04 19:37:38 landry Exp $
 include/crack.h
 include/packer.h
 lib/libcrack.a
