@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:06:05 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/06/04 13:16:20 sthen Exp $
 
 COMMENT=	Baekmuk Korean truetype fonts
 
 DISTNAME=	baekmuk-ttf-2.2
 PKGNAME=	ko-${DISTNAME}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	fonts korean x11
 
 HOMEPAGE=	http://kldp.net/projects/baekmuk
 
-MAINTAINER=	Jung Lee <openwall77@gmail.com>
+MAINTAINER=	Jung Lee <moorang@gmail.com>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	yes

@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:06:05 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/06/04 13:16:20 sthen Exp $
 
 COMMENT=	extra Korean fonts
 
 V=		2.0
 DISTNAME=	baekmuk-${V}
 PKGNAME=	ko-baekmuk-fonts-${V}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	fonts korean x11
 
 MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/FreeBSD/distfiles/ \
 		ftp://ftp.mizi.com/pub/baekmuk/
 HOMEPAGE=	http://www.mizi.co.kr
 
-MAINTAINER=	Jung Lee <openwall77@gmail.com>
+MAINTAINER=	Jung Lee <moorang@gmail.com>
 
 PERMIT_PACKAGE_CDROM=	Yes
 

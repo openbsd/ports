@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2013/03/20 19:13:50 jeremy Exp $
+# $OpenBSD: Makefile,v 1.28 2013/06/04 13:16:21 sthen Exp $
 
 COMMENT =	powerful webserver security scanner for network
 
 DISTNAME =	arirang-2.02
 PKGNAME =	ruby-${DISTNAME}
-REVISION=	1
+REVISION =	2
 CATEGORIES =	security
 
 MASTER_SITES =	http://monkey.org/~pilot/arirang/ \
@@ -12,7 +12,7 @@ MASTER_SITES =	http://monkey.org/~pilot/arirang/ \
 
 HOMEPAGE =	http://www.monkey.org/~pilot
 
-MAINTAINER =	Jung Lee <openwall77@gmail.com>
+MAINTAINER =	Jung Lee <moorang@gmail.com>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
