@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:41:29 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/06/04 13:47:09 giovanni Exp $
 
 COMMENT=	periodic command scheduler
 
-DISTNAME=	anacron-2.3
-REVISION =	4
+V=		2.5.3
+DISTNAME=	anacron.$V
+PKGNAME=	anacron-$V
 CATEGORIES=	sysutils
-
-HOMEPAGE=	http://sourceforge.net/projects/anacron/
 
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
@@ -14,15 +13,17 @@ MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c
 
-MASTER_SITES=	    ${MASTER_SITE_SOURCEFORGE:=anacron/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=anacron2/}
 
-USE_GMAKE=	    Yes
+USE_GMAKE=	Yes
 
 NO_TEST =	Yes
 
-MAKE_FLAGS=	    ANACRONTAB="${SYSCONFDIR}/anacrontab"
+MAKE_FLAGS=	ANACRONTAB="${SYSCONFDIR}/anacrontab"
+WRKDIST=	${WRKDIR}/anacron-$V
 
 post-extract:
+	rm ${WRKSRC}/*.o
 	cp ${FILESDIR}/obstack.h ${WRKSRC}
 	cp ${FILESDIR}/obstack.c ${WRKSRC}
 
