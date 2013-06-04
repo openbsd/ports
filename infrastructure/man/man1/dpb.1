@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.79 2013/04/30 10:22:36 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.80 2013/06/04 08:59:50 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: April 30 2013 $
+.Dd $Mdocdate: June 4 2013 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -226,6 +226,14 @@ This can be instead set on a per-core basis as the
 .Sq stuck
 property.
 Note that this will always be divided by the core's speed factor.
+.It Ar SYSLOG
+Make
+.Nm
+call
+.Xr syslog 3
+on every task start/end while creating packages.
+This does produce lots of messages, it is intended to route the logging
+on another machine, while tracking down panics and other hangs.
 .It Ar WAIT_TIMEOUT
 Timeout (in seconds) to wait before giving up on NFS packages showing up.
 Set to 0 to disable.
