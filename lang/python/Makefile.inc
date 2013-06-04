@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.102 2013/05/30 14:46:31 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.103 2013/06/04 08:02:20 fgsch Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -45,7 +45,7 @@ MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 # A summary of changes to Python is required to be distributed
 PERMIT_PACKAGE_CDROM=	Yes
 
-.if ${VERSION} < 3.3
+.if ${VERSION} == "2.7"
 LIB_SUFX =	
 MULTI_PACKAGES=	-main -tests -tools -gdbm -idle -tkinter -bsddb
 .else
@@ -72,7 +72,7 @@ RUN_DEPENDS-main =
 WANTLIB-main =		bz2 c crypto expat m ncursesw panelw pthread \
 			readline sqlite3 ssl stdc++ util z \
 			${MODGETTEXT_WANTLIB}
-.if ${VERSION} < 3.3
+.if ${VERSION} == "2.7"
 WANTLIB-main +=		ossaudio
 .elif ${VERSION} == "3.3"
 LIB_DEPENDS-main +=	archivers/xz
@@ -107,14 +107,6 @@ LIB_DEPENDS-tkinter =	lang/python/${VERSION},-main \
 WANTLIB-tkinter =	X11 pthread python${VERSION}${LIB_SUFX} \
 			${MODTK_WANTLIB}
 
-.if ${VERSION} == "2.5"
-.if ${PROPERTIES:Mlp64}
-PKG_ARGS+=	-Dmm=0
-.else
-PKG_ARGS+=	-Dmm=1
-.endif
-.endif
-
 # The ctypes module depends of devel/libffi, not supported on all platforms
 .if ${MACHINE_ARCH:Marm}
 PKG_ARGS+=	-Dctypes=0
@@ -127,7 +119,7 @@ WANTLIB-main +=	ffi
 
 USE_GROFF =	Yes
 
-AUTOCONF_VERSION ?=	2.69
+AUTOCONF_VERSION =	2.69
 
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
@@ -165,7 +157,7 @@ post-build:
 		${ADJ_FILES}
 
 post-install:
-.if ${VERSION} < 3.3
+.if ${VERSION} == "2.7"
 	${INSTALL_SCRIPT} ${WRKSRC}/Tools/scripts/pydoc \
 		${PREFIX}/bin/pydoc${VERSION}
 	@sed -e "s,@VERSION@,${VERSION},g" -e "s,@LOCALBASE@,${LOCALBASE},g" \
@@ -173,14 +165,12 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/idle ${PREFIX}/bin/idle${VERSION}
 	@cd ${WRKSRC}; tar -cf - Tools | (cd ${PREFIX}/lib/python${VERSION}; \
 		tar -xf -)
+	${INSTALL_SCRIPT} ${WRKSRC}/Tools/scripts/2to3 \
+		${PREFIX}/bin/python${VERSION}-2to3
 .endif
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/python${VERSION}
 	${INSTALL_DATA} ${FILESDIR}/CHANGES.OpenBSD \
 		${PREFIX}/share/doc/python${VERSION}/CHANGES.OpenBSD
-.if ${VERSION} == "2.7"
-	${INSTALL_SCRIPT} ${WRKSRC}/Tools/scripts/2to3 \
-		${PREFIX}/bin/python${VERSION}-2to3
-.endif
 
 TEST_TARGET=	test
 TEST_FLAGS=	"EXTRATESTOPTS=-w"

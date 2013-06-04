@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.68 2013/05/30 14:46:31 ajacoutot Exp $
+# $OpenBSD: python.port.mk,v 1.69 2013/06/04 08:02:20 fgsch Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -23,8 +23,7 @@ MODPY_VERSION ?=	${MODPY_DEFAULT_VERSION_2}
 
 # verify if MODPY_VERSION forced is correct
 .else
-.  if ${MODPY_VERSION} != "2.5" && \
-      ${MODPY_VERSION} != "2.7" && \
+.  if ${MODPY_VERSION} != "2.7" && \
       ${MODPY_VERSION} != "3.3"
 ERRORS += "Fatal: unknown or unsupported MODPY_VERSION: ${MODPY_VERSION}"
 .  endif
@@ -57,12 +56,6 @@ MODPY_COMMENT =
 .endif
 
 MODPY_WANTLIB = python${MODPY_VERSION}${MODPY_LIB_SUFFIX}
-
-.if ${MODPY_VERSION} < 2.6
-MODPY_JSON =		devel/py-simplejson
-.else
-MODPY_JSON =
-.endif
 
 MODPY_RUN_DEPENDS =	lang/python/${MODPY_VERSION}
 MODPY_LIB_DEPENDS =	${MODPY_RUN_DEPENDS}
