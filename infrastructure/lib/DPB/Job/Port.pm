@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.104 2013/04/30 10:22:37 espie Exp $
+# $OpenBSD: Port.pm,v 1.105 2013/06/04 03:20:36 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -70,6 +70,9 @@ sub run
 	my $builder = $job->{builder};
 	my $ports = $builder->ports;
 	my $fullpkgpath = $job->{path};
+	if ($core->prop->{syslog}) {
+		Sys::Syslog::syslog('info', "start $fullpkgpath($t)");
+	}
 	$self->handle_output($job);
 	close STDIN;
 	open STDIN, '</dev/null';
@@ -169,6 +172,11 @@ sub finalize
 {
 	my ($self, $core) = @_;
 	$self->SUPER::finalize($core);
+	if ($core->prop->{syslog}) {
+		my $fullpkgpath = $core->job->{path};
+		my $t = $self->{phase};
+		Sys::Syslog::syslog('info', "end $fullpkgpath($t)");
+	}
 	if ($core->{status} == 0) {
 		return 1;
 	}
@@ -387,6 +395,9 @@ sub run
 	my ($self, $core) = @_;
 	my $job = $core->job;
 	my $dep = $job->{depends};
+	if ($core->prop->{syslog}) {
+		Sys::Syslog::syslog('info', "start $job->{path}(depends)");
+	}
 
 	$self->handle_output($job);
 	my @cmd = ('/usr/sbin/pkg_add', '-aI');
