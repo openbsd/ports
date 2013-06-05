@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.4 2013/06/05 14:30:23 ajacoutot Exp $
+$OpenBSD: README-server,v 1.5 2013/06/05 15:05:01 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -71,7 +71,8 @@ The Bacula user needs access to its storage device(s):
 rw mode by the "_bacula-sd" user.
 
 * when backup is stored on tape, the corresponding device node(s) must
-be accessible in rw mode by the "_bacula" user.
+be accessible in rw mode by the "_bacula-sd" user and the autochanger
+device by the "_bacula" user.
 e.g. for an autochanger, add the following lines in rc.conf.local(5)
 chgrp _bacula /dev/ch0
-chgrp _bacula /dev/nrst0
+chgrp _bacula-sd /dev/nrst0
