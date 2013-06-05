@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.69 2013/06/04 08:02:20 fgsch Exp $
+# $OpenBSD: python.port.mk,v 1.70 2013/06/05 11:11:38 sthen Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -43,7 +43,7 @@ MODPY_COMMENT =	"@comment "
 .elif ${MODPY_MAJOR_VERSION} == 3
 MODPY_LIB_SUFFIX =	m
 # replace py- prefix by py3-
-FULLPKGNAME =	${PKGNAME:S/^py-/py3-/}
+FULLPKGNAME ?=	${PKGNAME:S/^py-/py3-/}${FLAVOR_EXT:S/-python3//}
 MODPY_FLAVOR =	,python3
 # use MODPY_SUFFIX for binaries to avoid conflict
 MODPY_BIN_SUFFIX =	-3
