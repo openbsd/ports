@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2013/04/05 07:41:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2013/06/05 12:27:48 ajacoutot Exp $
 
 COMMENT=	GTK C code documentation system
 
-GNOME_VERSION=	1.18
+GNOME_VERSION=	1.19
 GNOME_PROJECT=	gtk-doc
-REVISION=	5
 
 CATEGORIES=    	textproc devel
 
@@ -34,12 +33,5 @@ BUILD_DEPENDS=		textproc/docbook-xsl \
 RUN_DEPENDS=		textproc/docbook-xsl \
 			textproc/openjade \
 			textproc/source-highlight
-
-TEST_DEPENDS=		shells/bash
-
-pre-configure:
-	perl -pi -e "s,/bin/bash,${LOCALBASE}/bin/bash," \
-		${WRKSRC}/tests/fail.sh \
-		${WRKSRC}/tests/tools.sh.in
 
 .include <bsd.port.mk>
