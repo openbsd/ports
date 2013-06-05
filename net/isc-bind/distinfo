@@ -1,4 +1,4 @@
-SHA256 (bind-9.9.3.tar.gz) = 5FwIIX61brNao58rsvb6d+5ia03O8WWhvw9SLiUv1rw=
+SHA256 (bind-9.9.3-P1.tar.gz) = G6oi5Hw7MHxfzHqvZwDdWVO1ubdzfR42EXVFr3vbtDU=
 SHA256 (rl-9.9.3.patch) = QR6I44u0wXtkLGwdVzm9wEPw53ptj6uZF+ytDe6VkBs=
-SIZE (bind-9.9.3.tar.gz) = 7459387
+SIZE (bind-9.9.3-P1.tar.gz) = 7459819
 SIZE (rl-9.9.3.patch) = 103907
