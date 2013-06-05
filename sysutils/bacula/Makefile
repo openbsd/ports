@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2013/06/05 16:12:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2013/06/05 16:23:14 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -16,7 +16,7 @@ FULLPKGNAME-bat=	bacula-bat-$V
 FULLPKGPATH-bat=	${PKGPATH},-bat
 CATEGORIES=		sysutils
 
-REVISION-server=	3
+REVISION-server=	4
 
 # XXX build fails if a previous version is installed
 SHARED_LIBS +=  bac                  4.0

@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.6 2013/06/05 16:12:05 ajacoutot Exp $
+$OpenBSD: README-server,v 1.7 2013/06/05 16:23:14 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -72,7 +72,8 @@ rw mode by the "_bacula-sd" user (and/or the "_bacula" group).
 
 * when backup is stored on tape, the corresponding device node(s) must
 be accessible in rw mode by the "_bacula-sd" user (and/or the "_bacula"
-group).
+group); alternatively the "_bacula-sd" user can be added to the
+"operator" group instead.
 e.g. for an autochanger, add the following lines in rc.conf.local(5)
 chgrp _bacula /dev/ch0
 chgrp _bacula /dev/nrst0
