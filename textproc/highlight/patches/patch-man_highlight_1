@@ -1,22 +1,20 @@
-$OpenBSD: patch-man_highlight_1,v 1.5 2011/04/03 07:45:26 benoit Exp $
---- man/highlight.1.orig	Tue Aug 24 19:26:07 2010
-+++ man/highlight.1	Sat Oct  9 16:32:10 2010
-@@ -184,15 +184,15 @@
- The wrapping options might cause faulty highlighting of multi line comments.
+$OpenBSD: patch-man_highlight_1,v 1.6 2013/06/05 07:33:22 benoit Exp $
+--- man/highlight.1.orig	Mon May 27 23:58:43 2013
++++ man/highlight.1	Tue Jun  4 09:18:30 2013
+@@ -187,13 +187,13 @@
+ The wrapping options might cause faulty highlighting of long single line comments.
  .SH FILES
- The parsing information of the programming languages is stored in
--.I /usr/share/highlight/langDefs/.
-+.I ${PREFIX}/highlight/langDefs/.
- You may enhance
- .B highlight's
- parsing capabilities by adding more *.lang - files to this directory.
- You can also define other directories with --data-dir.
+ The configuration files are stored in
+-.I /usr/share/highlight/.
++.I ${PREFIX}/highlight/.
+ Language definitions, themes and plugins are located in subdirectories.
+ .PP
  Documentation files are stored in
 -.I /usr/share/doc/highlight/
 +.I ${PREFIX}/doc/highlight/
  , configuration files in
 -.I /etc/highlight/.
 +.I ${SYSCONFDIR}/highlight/.
- 
+ .PP
+ See README how to install own scripts in the home directory.
  .SH Examples
- Single file conversion:
