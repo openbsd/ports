@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:08 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/06/05 14:45:14 dcoppa Exp $
 
-COMMENT =		Scrap Your Boilerplate
+COMMENT =		Scrap Your Boilerplate library for generic programming
 
 DISTNAME =		syb-0.3.7
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
