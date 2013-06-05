@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.5 2013/06/05 15:05:01 ajacoutot Exp $
+$OpenBSD: README-server,v 1.6 2013/06/05 16:12:05 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -65,14 +65,14 @@ Creating the DB and tables (default to ${BACULASTATE}/bacula.db).
 Device permissions
 ==================
 
-The Bacula user needs access to its storage device(s):
+The storage daemon needs access to its storage device(s):
 
 * when backup is stored on disk, the mount points must be accessible in
-rw mode by the "_bacula-sd" user.
+rw mode by the "_bacula-sd" user (and/or the "_bacula" group).
 
 * when backup is stored on tape, the corresponding device node(s) must
-be accessible in rw mode by the "_bacula-sd" user and the autochanger
-device by the "_bacula" user.
+be accessible in rw mode by the "_bacula-sd" user (and/or the "_bacula"
+group).
 e.g. for an autochanger, add the following lines in rc.conf.local(5)
 chgrp _bacula /dev/ch0
-chgrp _bacula-sd /dev/nrst0
+chgrp _bacula /dev/nrst0
