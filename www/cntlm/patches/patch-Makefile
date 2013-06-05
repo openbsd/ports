@@ -1,16 +1,16 @@
-$OpenBSD: patch-Makefile,v 1.5 2012/05/15 08:05:19 dcoppa Exp $
---- Makefile.orig	Fri Mar  2 14:18:35 2012
-+++ Makefile	Tue May 15 09:59:18 2012
-@@ -15,7 +15,7 @@ MANDIR=$(DESTDIR)/usr/share/man
- NAME=cntlm
- CC=gcc
- VER=`cat VERSION`
--CFLAGS+=$(FLAGS) -std=c99 -Wall -Wno-unused-but-set-variable -pedantic -O3 -D__BSD_VISIBLE -D_ALL_SOURCE -D_XOPEN_SOURCE=600 -D_POSIX_C_SOURCE=200112 -D_ISOC99_SOURCE -D_REENTRANT -D_BSD_SOURCE -DVERSION=\"`cat VERSION`\"
-+CFLAGS+=-std=c99 -D__BSD_VISIBLE -D_ALL_SOURCE -D_XOPEN_SOURCE=600 -D_POSIX_C_SOURCE=200112 -D_ISOC99_SOURCE -D_REENTRANT -D_BSD_SOURCE -DVERSION=\"`cat VERSION`\"
- OS=$(shell uname -s)
- OSLDFLAGS=$(shell [ $(OS) = "SunOS" ] && echo "-lrt -lsocket -lnsl")
- LDFLAGS:=-lpthread $(OSLDFLAGS)
-@@ -28,19 +28,20 @@ endif
+$OpenBSD: patch-Makefile,v 1.6 2013/06/05 09:29:56 dcoppa Exp $
+--- Makefile.orig	Fri Apr 20 02:28:07 2012
++++ Makefile	Wed Jun  5 10:47:08 2013
+@@ -23,7 +23,7 @@ CYGWIN_REQS	:= cygwin1.dll cyggcc_s-1.dll cygstdc++-6.
+ ifeq ($(DEBUG),1)
+ 	CFLAGS	+= -g  -std=c99 -Wall -pedantic -D__BSD_VISIBLE -D_ALL_SOURCE -D_XOPEN_SOURCE=600 -D_POSIX_C_SOURCE=200112 -D_ISOC99_SOURCE -D_REENTRANT -D_BSD_SOURCE -DVERSION=\"'$(VER)'\"
+ else
+-	CFLAGS	+= -O3 -std=c99 -D__BSD_VISIBLE -D_ALL_SOURCE -D_XOPEN_SOURCE=600 -D_POSIX_C_SOURCE=200112 -D_ISOC99_SOURCE -D_REENTRANT -D_BSD_SOURCE -DVERSION=\"'$(VER)'\"
++	CFLAGS	+= -std=c99 -D__BSD_VISIBLE -D_ALL_SOURCE -D_XOPEN_SOURCE=600 -D_POSIX_C_SOURCE=200112 -D_ISOC99_SOURCE -D_REENTRANT -D_BSD_SOURCE -DVERSION=\"'$(VER)'\"
+ endif
+ 
+ ifneq ($(findstring CYGWIN,$(OS)),)
+@@ -34,19 +34,20 @@ endif
  
  $(NAME): configure-stamp $(OBJS)
  	@echo "Linking $@"
@@ -26,10 +26,10 @@ $OpenBSD: patch-Makefile,v 1.5 2012/05/15 08:05:19 dcoppa Exp $
  		$(CC) $(CFLAGS) -DSYSCONFDIR=\"$(SYSCONFDIR)\" -c main.c -o $@; \
  	fi
  
- .c.o:
+ %.o: %.c
  	@echo "Compiling $<"
 -	@$(CC) $(CFLAGS) -c -o $@ $<
 +	$(CC) $(CFLAGS) -c -o $@ $<
  
- install: $(NAME)
- 	# Special handling for install(1)
+ configure-stamp:
+ 	./configure
