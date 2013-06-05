@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_gmtk_media_player_c,v 1.11 2013/05/24 08:29:54 dcoppa Exp $
+$OpenBSD: patch-src_gmtk_media_player_c,v 1.12 2013/06/05 08:10:57 dcoppa Exp $
 
 Use case-insensitive parsing of metadata attributes
 (upstream svn revision r212)
@@ -9,8 +9,11 @@ Fix OSD messages so they only displayed for level 1 and higher
 Exclude input.conf from file not found message
 (upstream svn revision r213)
 
+Fix issue #682: item names in "Items to Play" replaced with CPUID
+string (upstream svn revision r220)
+
 --- src/gmtk_media_player.c.orig	Tue Feb 19 18:02:13 2013
-+++ src/gmtk_media_player.c	Thu May 23 14:22:23 2013
++++ src/gmtk_media_player.c	Wed Jun  5 09:52:48 2013
 @@ -477,6 +477,12 @@ static void gmtk_media_player_init(GmtkMediaPlayer * p
      player->album = NULL;
      player->disposed = FALSE;
@@ -98,7 +101,7 @@ Exclude input.conf from file not found message
  
      if (player == NULL) {
          gm_log(player->debug, G_LOG_LEVEL_MESSAGE, "player is NULL");
-@@ -3635,94 +3653,119 @@ gboolean thread_reader(GIOChannel * source, GIOConditi
+@@ -3635,94 +3653,120 @@ gboolean thread_reader(GIOChannel * source, GIOConditi
              gtk_widget_destroy(dialog);
          }
  
@@ -110,7 +113,8 @@ Exclude input.conf from file not found message
 -                g_free(player->title);
 -                player->title = NULL;
 -            }
-+        if (g_regex_match(player->name_regex, mplayer_output->str, 0, NULL)) {
++        if (g_regex_match(player->name_regex, mplayer_output->str, 0, NULL) \
++        && (g_strrstr(mplayer_output->str, "CPU vendor name:") == NULL)) {
 +            split = g_regex_split(player->name_regex, mplayer_output->str, 0);
 +            index = 0;
 +            while (split[index]) {
