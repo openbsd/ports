@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.7 2013/03/17 07:21:17 ajacoutot Exp $
+$OpenBSD: README,v 1.8 2013/06/05 14:38:08 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -27,9 +27,9 @@ Now connect to MySQL and create a user and database for Status.net:
 
 	  mysqladmin -u "adminuser" --password="adminpassword" create statusnet
 	  mysql -u "adminuser" --password="adminpassword" statusnet
-	  mysql> GRANT ALL on statusnet.*
-	  TO 'statusnet'@'localhost'
-	  IDENTIFIED BY 'statusnetpassword';
+	  MariaDB [(statusnet)]> GRANT ALL on statusnet.*
+	                      -> TO 'statusnet'@'localhost'
+	                      -> IDENTIFIED BY 'statusnetpassword';
 
 == PostgreSQL ==
 

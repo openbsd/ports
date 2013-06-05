@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2013/03/08 09:54:49 ajacoutot Exp $
+$OpenBSD: README,v 1.2 2013/06/05 14:38:08 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -18,10 +18,10 @@ Database initialization
 When using MySQL (cvechecker-3.2-mysql), a database and user must be
 setup. This step is not needed when using SQLite.
     $ mysql -uroot -p<password>
-    mysql> CREATE DATABASE cvechecker;
-    mysql> GRANT ALL PRIVILEGES ON `cvechecker` . *
-        -> TO 'cvechecker_rw'@'localhost' IDENTIFIED BY 'password4cvechecker_rw';
-    mysql> QUIT
+    MariaDB [(none)]> CREATE DATABASE cvechecker;
+    MariaDB [(none)]> GRANT ALL PRIVILEGES ON `cvechecker` . *
+                   -> TO 'cvechecker_rw'@'localhost' IDENTIFIED BY 'password4cvechecker_rw';
+    MariaDB [(none)]> QUIT
 
 Then the database initialization is done by running:
     $ cvechecker -i
