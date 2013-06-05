@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.3 2013/01/15 12:46:53 ajacoutot Exp $
+$OpenBSD: README-server,v 1.4 2013/06/05 14:30:23 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -51,9 +51,9 @@ Creating the DB, table and bacula user.
 
 Setting up the bacula DB user password.
     $ mysql -u root -p bacula
-    mysql> GRANT ALL PRIVILEGES ON `bacula` . *
-        -> TO 'bacula'@'localhost' IDENTIFIED BY 'dbpassword';
-    mysql> QUIT
+    MariaDB [bacula]> GRANT ALL PRIVILEGES ON `bacula` . *
+                   -> TO 'bacula'@'localhost' IDENTIFIED BY 'dbpassword';
+    MariaDB [bacula]> QUIT
 
 SQLite3
 -------
