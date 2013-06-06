@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.10 2013/06/05 14:38:08 ajacoutot Exp $
+$OpenBSD: README,v 1.11 2013/06/06 13:57:48 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -17,10 +17,10 @@ Before starting the Dashboard, a MySQL database must be configured in:
 
 The following commands can be used to create the database:
     # mysql -uroot -p<password>
-    MariaDB [(none)]> CREATE DATABASE dashboard_production CHARACTER SET utf8;
-    MariaDB [(none)]> CREATE USER 'dashboard'@'localhost' IDENTIFIED BY 'my_password';
-    MariaDB [(none)]> GRANT ALL PRIVILEGES ON dashboard_production.* TO 'dashboard'@'localhost';
-    MariaDB [(none)]> EXIT
+    mysql> CREATE DATABASE dashboard_production CHARACTER SET utf8;
+    mysql> CREATE USER 'dashboard'@'localhost' IDENTIFIED BY 'my_password';
+    mysql> GRANT ALL PRIVILEGES ON dashboard_production.* TO 'dashboard'@'localhost';
+    mysql> EXIT
 
 The MySQL maximum packet size needs to be increased to permit larger
 rows in the database; ${SYSCONFDIR}/my.cnf must be edited to include:

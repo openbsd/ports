@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2013/06/05 14:38:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.86 2013/06/06 13:57:48 ajacoutot Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
@@ -9,7 +9,7 @@ DISTNAME =		zabbix-${VERSION}
 FULLPKGNAME-main =	zabbix-agent-${VERSION}
 FULLPKGPATH-main =	net/zabbix,-main
 PKGNAME-server =	zabbix-server-${VERSION}
-REVISION-server =	1
+REVISION-server =	2
 FULLPKGNAME-web =	zabbix-web-${VERSION}
 FULLPKGPATH-web =	net/zabbix,-web
 CATEGORIES =		net

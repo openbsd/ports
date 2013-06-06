@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.8 2013/06/05 14:38:08 ajacoutot Exp $
+$OpenBSD: README-server,v 1.9 2013/06/06 13:57:48 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -58,10 +58,10 @@ MySQL (InnoDB)
 Connect to MySQL, and create a user and database for Zabbix;
 
     $ mysql -u root -p
-    MariaDB [(none)]> create user zabbix@localhost identified by 'password';
-    MariaDB [(none)]> create database zabbix character set utf8;
-    MariaDB [(none)]> grant all privileges on zabbix.* to zabbix@localhost;
-    MariaDB [(none)]> quit
+    mysql> create user zabbix@localhost identified by 'password';
+    mysql> create database zabbix character set utf8;
+    mysql> grant all privileges on zabbix.* to zabbix@localhost;
+    mysql> quit
 
 Then initialize the database from the files installed in
 ${TRUEPREFIX}/share/examples/zabbix:
