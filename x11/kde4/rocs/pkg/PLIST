@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/05/14 09:16:29 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/06/06 22:56:44 zhuk Exp $
 @bin bin/rocs
 include/kde4/rocs/
 include/kde4/rocs/CoreTypes.h
@@ -21,6 +21,7 @@ lib/kde4/rocs_GraphStructure.so
 lib/kde4/rocs_ListStructure.so
 lib/kde4/rocs_RootedTreeStructure.so
 lib/kde4/rocs_assignvaluesplugin.so
+lib/kde4/rocs_dotfileformat.so
 lib/kde4/rocs_generategraphplugin.so
 lib/kde4/rocs_gmlfileformat.so
 lib/kde4/rocs_kmlfileformat.so
@@ -157,6 +158,7 @@ share/kde4/services/rocs_GraphStructure.desktop
 share/kde4/services/rocs_ListStructure.desktop
 share/kde4/services/rocs_RootedTreeStructure.desktop
 share/kde4/services/rocs_assignvaluesplugin.desktop
+share/kde4/services/rocs_dotfileformatplugin.desktop
 share/kde4/services/rocs_generategraphplugin.desktop
 share/kde4/services/rocs_gmlfileformatplugin.desktop
 share/kde4/services/rocs_kmlfileformatplugin.desktop
