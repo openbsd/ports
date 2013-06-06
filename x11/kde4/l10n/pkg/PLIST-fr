@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-fr,v 1.2 2013/05/14 09:16:27 zhuk Exp $
+@comment $OpenBSD: PLIST-fr,v 1.3 2013/06/06 17:26:45 rpointel Exp $
 share/apps/
 share/apps/autocorrect/
 share/apps/autocorrect/fr.xml
@@ -2291,6 +2291,7 @@ share/locale/fr/LC_MESSAGES/nepomukbackup.mo
 share/locale/fr/LC_MESSAGES/nepomukcleaner.mo
 share/locale/fr/LC_MESSAGES/nepomukcontroller.mo
 share/locale/fr/LC_MESSAGES/nepomukfileindexer.mo
+share/locale/fr/LC_MESSAGES/nepomukpimindexerutility.mo
 share/locale/fr/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/fr/LC_MESSAGES/nepomukserver.mo
 share/locale/fr/LC_MESSAGES/nepomukservicestub.mo
