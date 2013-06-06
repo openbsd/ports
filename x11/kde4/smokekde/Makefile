@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:29 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2013/06/06 08:36:49 zhuk Exp $
 
 CATEGORIES =	devel
 COMMENT =	introspective wrappers around KDE
@@ -26,7 +26,7 @@ SHARED_LIBS +=	smokesoprano		50.0 # 3.0
 SHARED_LIBS +=	smokesopranoclient	50.0 # 3.0
 SHARED_LIBS +=	smokesopranoserver	50.0 # 3.0
 
-WANTLIB =  c m pthread stdc++
+WANTLIB =  m pthread stdc++
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtOpenGL lib/qt4/QtSql
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml

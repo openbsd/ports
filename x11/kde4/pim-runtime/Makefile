@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:28 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2013/06/06 08:36:49 zhuk Exp $
 
 COMMENT =	KDE PIM runtime support
 DISTNAME =	kdepim-runtime-${MODKDE4_VERSION}
+
+DPB_PROPERTIES =	parallel
 
 SHARED_LIBS =	akonadi-filestore	50.0 # 4.7
 SHARED_LIBS +=	akonadi-xml		50.0 # 4.7

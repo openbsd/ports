@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:29 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2013/06/06 08:36:49 zhuk Exp $
 
 CATEGORIES =	devel x11/kde4
 COMMENT =	programming language wrapper generator
@@ -9,7 +9,7 @@ DISTNAME =	smokegen-${MODKDE4_VERSION}
 SHARED_LIBS =	smokebase		50.0 # 3.0
 SHARED_LIBS +=	cppparser		50.0
 
-WANTLIB =  c m stdc++
+WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtXml
 
 MODKDE4_USE =

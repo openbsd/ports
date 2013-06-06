@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_sensors_cpu_cpp,v 1.1 2013/06/06 08:36:49 zhuk Exp $
+--- src/sensors/cpu.cpp.orig	Thu Jun  6 12:30:19 2013
++++ src/sensors/cpu.cpp	Thu Jun  6 12:30:36 2013
+@@ -77,7 +77,7 @@ void CPUSensor::getTicks(long &u, long &s, long &n, lo
+         line = t.readLine();
+         rx.indexIn(line);
+ 
+-        while ((line = t.readLine()) != 0 && rx.cap(0).isEmpty()) {
++        while (!(line = t.readLine()).isNull() && rx.cap(0).isEmpty()) {
+             rx.indexIn(line);
+         }
+         //user

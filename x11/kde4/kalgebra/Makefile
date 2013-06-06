@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2013/04/27 20:45:17 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2013/06/06 08:36:47 zhuk Exp $
 
 COMMENT =	scientific calculator for KDE
 DISTNAME =	kalgebra-${MODKDE4_VERSION}
-REVISION =	0
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += GL GLU
 WANTLIB += lib/qt4/QtDeclarative
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
-WANTLIB += lib/qt4/QtOpenGL lib/qt4/QtSvg
+WANTLIB += lib/qt4/QtOpenGL lib/qt4/QtScript lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml kdeclarative
 WANTLIB += ${KDE4LIB}/analitza ${KDE4LIB}/analitzagui
 WANTLIB += ${KDE4LIB}/analitzaplot ${KDE4LIB}/kdeui ${KDE4LIB}/khtml

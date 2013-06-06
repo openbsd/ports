@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:28 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2013/06/06 08:36:49 zhuk Exp $
 
 COMMENT =	KDE SANE (scanner) wrapper library
 DISTNAME =	libksane-${MODKDE4_VERSION}
 
 SHARED_LIBS =	ksane			50.0	# 0.2
 
-WANTLIB =  c m pthread stdc++
+WANTLIB =  m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg
 WANTLIB += ${KDE4LIB}/kdeui
 WANTLIB += sane

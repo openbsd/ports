@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.3 2013/05/19 15:04:06 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2013/06/06 08:36:47 zhuk Exp $
 
 COMMENT =	KDE Activity rooms management
 DISTNAME =	kactivities-${MODKDE4_VERSION}
-REVISION =	0
 
 SHARED_LIBS =	kactivities		50.0 # 6.0
 SHARED_LIBS +=	kactivities-models	50.0
 
-WANTLIB =  c m pthread
-WANTLIB += ICE SM X11 Xext
+Extra:  ICE.9 QtOpenGL.7 QtScript.2 QtSql.8 SM.8 X11.15 Xext.12
+Extra:  c.68 kcmutils.50 kdeclarative.50 plasma.50
+
+
+WANTLIB =  m pthread
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui lib/qt4/QtNetwork
-WANTLIB += lib/qt4/QtOpenGL lib/qt4/QtScript lib/qt4/QtSql lib/qt4/QtSvg
-WANTLIB += lib/qt4/QtXml
-WANTLIB += ${KDE4LIB}/kcmutils ${KDE4LIB}/kdeclarative ${KDE4LIB}/kdeui
-WANTLIB += ${KDE4LIB}/kio ${KDE4LIB}/nepomukcore ${KDE4LIB}/plasma
+WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml
+WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kio ${KDE4LIB}/nepomukcore
 WANTLIB += soprano
 
 # Force usage of GCC 4.2, to make sure daemon crap remains disabled

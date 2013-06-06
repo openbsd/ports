@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_themelocale_cpp,v 1.1 2013/06/06 08:36:49 zhuk Exp $
+--- src/themelocale.cpp.orig	Thu Jun  6 12:29:03 2013
++++ src/themelocale.cpp	Thu Jun  6 12:29:17 2013
+@@ -135,7 +135,7 @@ void ThemeLocale::unload()
+ 
+ QString ThemeLocale::translate(const QString &text) const
+ {
+-    if (text == 0)
++    if (text.isEmpty())
+         return QString();
+     if (m_domain.data) {
+         QString result = QString::fromUtf8(tl_nl_find_msg(&m_domain, text.toAscii().constData()));

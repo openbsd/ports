@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 18:40:19 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/06/06 08:36:49 zhuk Exp $
 @bin bin/lancelot
 include/kde4/KDE/Lancelot/
 include/kde4/KDE/Lancelot/ActionListModel
@@ -540,7 +540,6 @@ share/icons/hicolor/256x256/apps/eyes.png
 share/icons/hicolor/256x256/apps/lifegame.png
 share/icons/hicolor/32x32/actions/youtube.png
 share/icons/hicolor/32x32/apps/bball.png
-share/icons/hicolor/32x32/apps/eyes.png
 share/icons/hicolor/32x32/apps/kdeobservatory.png
 share/icons/hicolor/32x32/apps/lancelot-start.png
 share/icons/hicolor/32x32/apps/lancelot.png
@@ -560,6 +559,7 @@ share/icons/hicolor/48x48/apps/previewer.png
 share/icons/hicolor/48x48/apps/qalculate-applet.png
 share/icons/hicolor/64x64/actions/youtube.png
 share/icons/hicolor/64x64/apps/bball.png
+share/icons/hicolor/64x64/apps/eyes.png
 share/icons/hicolor/64x64/apps/kdeobservatory.png
 share/icons/hicolor/64x64/apps/lancelot-start.png
 share/icons/hicolor/64x64/apps/lancelot.png

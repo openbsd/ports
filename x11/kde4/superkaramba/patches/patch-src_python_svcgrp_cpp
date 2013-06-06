@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_python_svcgrp_cpp,v 1.1 2013/06/06 08:36:49 zhuk Exp $
+--- src/python/svcgrp.cpp.orig	Thu Jun  6 11:53:48 2013
++++ src/python/svcgrp.cpp	Thu Jun  6 11:54:21 2013
+@@ -41,10 +41,10 @@ static PyObject *get_svc_grp(KServiceGroup::Ptr const&
+ 
+     PyDict_SetItem(dict, PyString_FromString("caption"),
+                    PyString_FromString(g->caption().toAscii().data()));
+-    if (g->comment() != NULL)
++    if (!g->comment().isEmpty())
+         PyDict_SetItem(dict, PyString_FromString("comment"),
+                        PyString_FromString(g->comment().toAscii().data()));
+-    if (g->icon() != NULL)
++    if (!g->icon().isEmpty())
+         PyDict_SetItem(dict, PyString_FromString("icon"),
+                        PyString_FromString(g->icon().toAscii().data()));
+     PyDict_SetItem(dict, PyString_FromString("relpath"),

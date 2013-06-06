@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:29 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2013/06/06 08:36:49 zhuk Exp $
 
 COMMENT =	extra KDE plasmoids
 DISTNAME =	kdeplasma-addons-${MODKDE4_VERSION}
@@ -26,7 +26,7 @@ WANTLIB += ${KDE4LIB}/krosscore ${KDE4LIB}/kunitconversion
 WANTLIB += ${KDE4LIB}/kworkspace ${KDE4LIB}/marblewidget ${KDE4LIB}/nepomuk
 WANTLIB += ${KDE4LIB}/nepomukcore ${KDE4LIB}/nepomukutils ${KDE4LIB}/plasma
 WANTLIB += ${KDE4LIB}/plasmaclock ${KDE4LIB}/solid
-WANTLIB += ${KDE4LIB}/solidcontrol ${KDE4LIB}/taskmanager
+WANTLIB += ${KDE4LIB}/taskmanager
 WANTLIB += ${KDE4LIB}/threadweaver ${KDE4LIB}/weather_ion
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 ibus-1.0
 WANTLIB += scim-1.0

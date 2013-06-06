@@ -1,0 +1,12 @@
+$OpenBSD: patch-jovie_speaker_h,v 1.1 2013/06/06 08:36:47 zhuk Exp $
+--- jovie/speaker.h.orig	Wed Jun  5 16:52:09 2013
++++ jovie/speaker.h	Wed Jun  5 16:52:28 2013
+@@ -40,7 +40,7 @@
+ #ifdef OPENTTS_FOUND
+ #include <opentts/libopentts.h>
+ #elif defined(SPEECHD_FOUND)
+-#include <libspeechd.h>
++#include <speech-dispatcher/libspeechd.h>
+ #endif
+ 
+ #include "filtermgr.h"

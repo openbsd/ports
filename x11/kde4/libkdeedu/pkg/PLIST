@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 18:25:31 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/06/06 08:36:49 zhuk Exp $
 include/kde4/libkdeedu/
 include/kde4/libkdeedu/keduvocarticle.h
 include/kde4/libkdeedu/keduvocconjugation.h
@@ -51,6 +51,7 @@ share/apps/kvtml/en/vegetables.kvtml
 share/apps/kvtml/en/worldcapitals.kvtml
 share/icons/hicolor/16x16/actions/editplots.png
 share/icons/hicolor/16x16/actions/functionhelp.png
+share/icons/hicolor/16x16/actions/integral_func.png
 share/icons/hicolor/16x16/actions/maximum.png
 share/icons/hicolor/16x16/actions/minimum.png
 share/icons/hicolor/16x16/actions/newdifferential.png
@@ -88,7 +89,6 @@ share/icons/hicolor/32x32/actions/newpolar.png
 share/icons/hicolor/32x32/actions/resetview.png
 share/icons/hicolor/48x48/actions/editplots.png
 share/icons/hicolor/48x48/actions/functionhelp.png
-share/icons/hicolor/48x48/actions/integral_func.png
 share/icons/hicolor/48x48/actions/maximum.png
 share/icons/hicolor/48x48/actions/minimum.png
 share/icons/hicolor/48x48/actions/newdifferential.png

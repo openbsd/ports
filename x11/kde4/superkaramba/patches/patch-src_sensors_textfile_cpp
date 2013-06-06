@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_sensors_textfile_cpp,v 1.1 2013/06/06 08:36:49 zhuk Exp $
+--- src/sensors/textfile.cpp.orig	Thu Jun  6 11:55:09 2013
++++ src/sensors/textfile.cpp	Thu Jun  6 12:28:38 2013
+@@ -60,7 +60,7 @@ void TextFileSensor::update()
+             }
+         } else {
+             QTextStream t(&file);
+-            while ((line = t.readLine()) != 0) {
++            while (!(line = t.readLine()).isNull()) {
+                 lines.push_back(line);
+             }
+         }

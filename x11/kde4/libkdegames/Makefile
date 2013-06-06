@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:28 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2013/06/06 08:36:49 zhuk Exp $
 
 COMMENT =	common library for KDE-based games
 DISTNAME =	libkdegames-${MODKDE4_VERSION}
@@ -6,7 +6,7 @@ DISTNAME =	libkdegames-${MODKDE4_VERSION}
 SHARED_LIBS =	kdegames		50.0
 SHARED_LIBS +=	kdegamesprivate		50.0
 
-WANTLIB =  c m pthread stdc++
+WANTLIB =  m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kdnssd ${KDE4LIB}/kio

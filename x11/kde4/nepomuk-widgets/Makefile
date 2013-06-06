@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:28 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2013/06/06 08:36:49 zhuk Exp $
 
 COMMENT =	Nepomuk-based KDE Plasma widgets
 DISTNAME =	nepomuk-widgets-${MODKDE4_VERSION}
@@ -14,5 +14,7 @@ WANTLIB += soprano
 MODKDE4_USE =	libs
 
 LIB_DEPENDS =	${MODKDE4_DEP_DIR}/nepomuk-core>=${MODKDE4_DEP_VERSION}
+
+MAKE_ENV =	LD_TRACE_PLT=1
 
 .include <bsd.port.mk>

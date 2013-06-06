@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/24 19:07:09 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/06/06 08:36:49 zhuk Exp $
 
 COMMENT =	KDE KPart for viewing SVG
 DISTNAME =	svgpart-${MODKDE4_VERSION}
 CATEGORIES =	graphics
 
-WANTLIB =  c m pthread stdc++
+WANTLIB =  m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kio ${KDE4LIB}/kparts

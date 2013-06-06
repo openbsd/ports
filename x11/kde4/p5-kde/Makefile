@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/24 18:34:57 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/06/06 08:36:49 zhuk Exp $
 
 COMMENT =	KDE bindings for Perl
 DISTNAME =	perlkde-${MODKDE4_VERSION}
@@ -20,7 +20,7 @@ WANTLIB += ${KDE4LIB}/smokesolid ${KDE4LIB}/smokesoprano
 WANTLIB += ${KDE4LIB}/smokesopranoclient ${KDE4LIB}/smokesopranoserver
 WANTLIB += ${KDE4LIB}/smokeakonadi
 
-MODKDE4_USE =
+MODKDE4_USE =	libs
 
 BUILD_DEPENDS =	productivity/attica \
 		${MODKDE4_DEP_DIR}/okular>=${MODKDE4_DEP_VERSION} \

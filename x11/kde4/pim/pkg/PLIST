@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/04/24 20:01:23 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/06/06 08:36:49 zhuk Exp $
 @bin bin/akonadi_archivemail_agent
 @bin bin/akonadi_mailfilter_agent
 @bin bin/akonadiconsole
@@ -616,28 +616,28 @@ share/apps/korganizer/sounds/spinout.wav
 share/apps/korganizer/tips
 share/apps/ktimetracker/
 share/apps/ktimetracker/icons/
-share/apps/ktimetracker/icons/oxygen/
-share/apps/ktimetracker/icons/oxygen/128x128/
-share/apps/ktimetracker/icons/oxygen/128x128/actions/
-share/apps/ktimetracker/icons/oxygen/128x128/actions/subtask-new-ktimetracker.png
-share/apps/ktimetracker/icons/oxygen/16x16/
-share/apps/ktimetracker/icons/oxygen/16x16/actions/
-share/apps/ktimetracker/icons/oxygen/16x16/actions/subtask-new-ktimetracker.png
-share/apps/ktimetracker/icons/oxygen/22x22/
-share/apps/ktimetracker/icons/oxygen/22x22/actions/
-share/apps/ktimetracker/icons/oxygen/22x22/actions/subtask-new-ktimetracker.png
-share/apps/ktimetracker/icons/oxygen/32x32/
-share/apps/ktimetracker/icons/oxygen/32x32/actions/
-share/apps/ktimetracker/icons/oxygen/32x32/actions/subtask-new-ktimetracker.png
-share/apps/ktimetracker/icons/oxygen/48x48/
-share/apps/ktimetracker/icons/oxygen/48x48/actions/
-share/apps/ktimetracker/icons/oxygen/48x48/actions/subtask-new-ktimetracker.png
-share/apps/ktimetracker/icons/oxygen/64x64/
-share/apps/ktimetracker/icons/oxygen/64x64/actions/
-share/apps/ktimetracker/icons/oxygen/64x64/actions/subtask-new-ktimetracker.png
-share/apps/ktimetracker/icons/oxygen/scalable/
-share/apps/ktimetracker/icons/oxygen/scalable/actions/
-share/apps/ktimetracker/icons/oxygen/scalable/actions/subtask-new-ktimetracker.svgz
+share/apps/ktimetracker/icons/hicolor/
+share/apps/ktimetracker/icons/hicolor/128x128/
+share/apps/ktimetracker/icons/hicolor/128x128/actions/
+share/apps/ktimetracker/icons/hicolor/128x128/actions/subtask-new-ktimetracker.png
+share/apps/ktimetracker/icons/hicolor/16x16/
+share/apps/ktimetracker/icons/hicolor/16x16/actions/
+share/apps/ktimetracker/icons/hicolor/16x16/actions/subtask-new-ktimetracker.png
+share/apps/ktimetracker/icons/hicolor/22x22/
+share/apps/ktimetracker/icons/hicolor/22x22/actions/
+share/apps/ktimetracker/icons/hicolor/22x22/actions/subtask-new-ktimetracker.png
+share/apps/ktimetracker/icons/hicolor/32x32/
+share/apps/ktimetracker/icons/hicolor/32x32/actions/
+share/apps/ktimetracker/icons/hicolor/32x32/actions/subtask-new-ktimetracker.png
+share/apps/ktimetracker/icons/hicolor/48x48/
+share/apps/ktimetracker/icons/hicolor/48x48/actions/
+share/apps/ktimetracker/icons/hicolor/48x48/actions/subtask-new-ktimetracker.png
+share/apps/ktimetracker/icons/hicolor/64x64/
+share/apps/ktimetracker/icons/hicolor/64x64/actions/
+share/apps/ktimetracker/icons/hicolor/64x64/actions/subtask-new-ktimetracker.png
+share/apps/ktimetracker/icons/hicolor/scalable/
+share/apps/ktimetracker/icons/hicolor/scalable/actions/
+share/apps/ktimetracker/icons/hicolor/scalable/actions/subtask-new-ktimetracker.svgz
 share/apps/ktimetracker/ktimetrackerui.rc
 share/apps/ktimetracker/pics/
 share/apps/ktimetracker/pics/active-icon-0.xpm

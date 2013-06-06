@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:25 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2013/06/06 08:36:47 zhuk Exp $
 
 COMMENT =	KDE KIOslave for accessing audio CDs
 DISTNAME =	audiocd-kio-${MODKDE4_VERSION}
 
 SHARED_LIBS =	audiocdplugins		50.0
 
-WANTLIB =  c m pthread stdc++
+WANTLIB =  m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kcddb ${KDE4LIB}/kcompactdisc ${KDE4LIB}/kdeui

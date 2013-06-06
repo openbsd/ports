@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.12 2013/04/26 09:35:05 zhuk Exp $
+# $OpenBSD: Makefile,v 1.13 2013/06/06 08:36:47 zhuk Exp $
 
 COMMENT =	KDE graphics, styles and icon themes
 DISTNAME =	kdeartwork-${MODKDE4_VERSION}
-REVISION =	0
 
 MODKDE4_USE =	workspace
 

@@ -1,4 +1,4 @@
-$OpenBSD: patch-cmake_FindSpeechd_cmake,v 1.1 2013/05/14 09:16:26 zhuk Exp $
+$OpenBSD: patch-cmake_FindSpeechd_cmake,v 1.2 2013/06/06 08:36:47 zhuk Exp $
 speech-dispatcher uses <speech-dispatcher/foo.h> form, use same here.
 --- cmake/FindSpeechd.cmake.orig	Wed May  8 22:20:20 2013
 +++ cmake/FindSpeechd.cmake	Wed May  8 22:23:04 2013
@@ -6,7 +6,7 @@ speech-dispatcher uses <speech-dispatcher/foo.h> form, use same here.
  # Redistribution and use is allowed according to the terms of the BSD license.
  # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
  
--find_path(SPEECHD_INCLUDE_DIR libspeechd.h)
+-find_path(SPEECHD_INCLUDE_DIR libspeechd.h PATH_SUFFIXES speech-dispatcher)
 +find_path(SPEECHD_INCLUDE_DIR speech-dispatcher/libspeechd.h)
  
  find_library(SPEECHD_LIBRARIES NAMES speechd)

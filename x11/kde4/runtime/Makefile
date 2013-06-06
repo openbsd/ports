@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:29 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2013/06/06 08:36:49 zhuk Exp $
 
 COMMENT =	KDE core run-time components
 DISTNAME =	kde-runtime-${MODKDE4_VERSION}
+
+DPB_PROPERTIES =	parallel
 
 SHARED_LIBS =	kwalletbackend 		50.0
 SHARED_LIBS +=	molletnetwork 		50.0
