@@ -1,9 +1,9 @@
-$OpenBSD: patch-Modules_FindTCL_cmake,v 1.8 2013/05/30 08:34:32 dcoppa Exp $
---- Modules/FindTCL.cmake.orig	Tue Nov 27 14:26:32 2012
-+++ Modules/FindTCL.cmake	Wed May 29 13:16:33 2013
-@@ -48,19 +48,36 @@ include(CMakeFindFrameworks)
- include(FindTclsh)
- include(FindWish)
+$OpenBSD: patch-Modules_FindTCL_cmake,v 1.9 2013/06/06 12:47:06 dcoppa Exp $
+--- Modules/FindTCL.cmake.orig	Wed May 15 19:38:12 2013
++++ Modules/FindTCL.cmake	Wed May 29 09:29:16 2013
+@@ -48,19 +48,36 @@ include(${CMAKE_CURRENT_LIST_DIR}/CMakeFindFrameworks.
+ include(${CMAKE_CURRENT_LIST_DIR}/FindTclsh.cmake)
+ include(${CMAKE_CURRENT_LIST_DIR}/FindWish.cmake)
  
 +set(MODTCL_VERSION $ENV{MODTCL_VERSION})
 +set(MODTK_VERSION $ENV{MODTK_VERSION})
@@ -42,7 +42,7 @@ $OpenBSD: patch-Modules_FindTCL_cmake,v 1.8 2013/05/30 08:34:32 dcoppa Exp $
  
  get_filename_component(TCL_INCLUDE_PATH_PARENT "${TCL_INCLUDE_PATH}" PATH)
  get_filename_component(TK_INCLUDE_PATH_PARENT "${TK_INCLUDE_PATH}" PATH)
-@@ -75,15 +92,35 @@ get_filename_component(TK_LIBRARY_PATH_PARENT "${TK_LI
+@@ -75,19 +92,35 @@ get_filename_component(TK_LIBRARY_PATH_PARENT "${TK_LI
  string(REGEX REPLACE
    "^.*tk([0-9]\\.*[0-9]).*$" "\\1" TK_LIBRARY_VERSION "${TK_LIBRARY}")
  
@@ -53,6 +53,10 @@ $OpenBSD: patch-Modules_FindTCL_cmake,v 1.8 2013/05/30 08:34:32 dcoppa Exp $
 -  "${TK_LIBRARY_PATH}"
 -  "${TCL_TCLSH_PATH_PARENT}/lib"
 -  "${TK_WISH_PATH_PARENT}/lib"
+-  /usr/local/lib/tcl/tcl8.5
+-  /usr/local/lib/tcl/tk8.5
+-  /usr/local/lib/tcl/tcl8.4
+-  /usr/local/lib/tcl/tk8.4
 -  )
 +set(TCLTK_OPENBSD_LIB_PATHS)
  
@@ -86,7 +90,7 @@ $OpenBSD: patch-Modules_FindTCL_cmake,v 1.8 2013/05/30 08:34:32 dcoppa Exp $
  if(WIN32)
    get_filename_component(
      ActiveTcl_CurrentVersion
-@@ -103,31 +140,47 @@ if(WIN32)
+@@ -107,31 +140,47 @@ if(WIN32)
      )
  endif()
  
@@ -158,7 +162,7 @@ $OpenBSD: patch-Modules_FindTCL_cmake,v 1.8 2013/05/30 08:34:32 dcoppa Exp $
  
  CMAKE_FIND_FRAMEWORKS(Tcl)
  CMAKE_FIND_FRAMEWORKS(Tk)
-@@ -151,24 +204,44 @@ if(Tk_FRAMEWORKS)
+@@ -155,28 +204,44 @@ if(Tk_FRAMEWORKS)
    endif()
  endif()
  
@@ -179,6 +183,10 @@ $OpenBSD: patch-Modules_FindTCL_cmake,v 1.8 2013/05/30 08:34:32 dcoppa Exp $
 -  /usr/include/tcl8.3
 -  /usr/include/tcl8.2
 -  /usr/include/tcl8.0
+-  /usr/local/include/tcl8.5
+-  /usr/local/include/tk8.5
+-  /usr/local/include/tcl8.4
+-  /usr/local/include/tk8.4
 -  )
 +set(TCLTK_OPENBSD_INCLUDE_PATHS)
 +

@@ -1,7 +1,7 @@
-$OpenBSD: patch-Source_cmComputeLinkInformation_cxx,v 1.5 2012/10/08 07:23:09 dcoppa Exp $
---- Source/cmComputeLinkInformation.cxx.orig	Thu Aug  9 20:15:19 2012
-+++ Source/cmComputeLinkInformation.cxx	Wed Sep 26 11:45:53 2012
-@@ -1059,12 +1059,21 @@ void cmComputeLinkInformation::AddTargetItem(std::stri
+$OpenBSD: patch-Source_cmComputeLinkInformation_cxx,v 1.6 2013/06/06 12:47:06 dcoppa Exp $
+--- Source/cmComputeLinkInformation.cxx.orig	Wed May 15 19:38:13 2013
++++ Source/cmComputeLinkInformation.cxx	Thu May 30 11:08:06 2013
+@@ -1070,12 +1070,21 @@ void cmComputeLinkInformation::AddTargetItem(std::stri
      this->SharedLibrariesLinked.insert(target);
      }
  

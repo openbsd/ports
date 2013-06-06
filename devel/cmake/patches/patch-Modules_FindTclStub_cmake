@@ -1,7 +1,7 @@
-$OpenBSD: patch-Modules_FindTclStub_cmake,v 1.3 2012/11/11 17:13:32 dcoppa Exp $
---- Modules/FindTclStub.cmake.orig	Fri Nov  2 14:05:49 2012
-+++ Modules/FindTclStub.cmake	Fri Nov  2 14:10:45 2012
-@@ -38,13 +38,21 @@ include(FindTCL)
+$OpenBSD: patch-Modules_FindTclStub_cmake,v 1.4 2013/06/06 12:47:06 dcoppa Exp $
+--- Modules/FindTclStub.cmake.orig	Wed May 15 19:38:12 2013
++++ Modules/FindTclStub.cmake	Tue May 28 20:02:18 2013
+@@ -38,13 +38,21 @@ include(${CMAKE_CURRENT_LIST_DIR}/FindTCL.cmake)
  
  get_filename_component(TCL_TCLSH_PATH "${TCL_TCLSH}" PATH)
  get_filename_component(TCL_TCLSH_PATH_PARENT "${TCL_TCLSH_PATH}" PATH)

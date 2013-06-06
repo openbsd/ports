@@ -1,4 +1,4 @@
-$OpenBSD: patch-Modules_CMakeDetermineJavaCompiler_cmake,v 1.6 2012/12/05 11:32:04 dcoppa Exp $
+$OpenBSD: patch-Modules_CMakeDetermineJavaCompiler_cmake,v 1.7 2013/06/06 12:47:06 dcoppa Exp $
 --- Modules/CMakeDetermineJavaCompiler.cmake.orig	Tue Nov 27 14:26:32 2012
 +++ Modules/CMakeDetermineJavaCompiler.cmake	Wed Dec  5 10:15:58 2012
 @@ -16,6 +16,8 @@
@@ -10,7 +10,7 @@ $OpenBSD: patch-Modules_CMakeDetermineJavaCompiler_cmake,v 1.6 2012/12/05 11:32:
  if(NOT CMAKE_Java_COMPILER)
    # prefer the environment variable CC
    if($ENV{JAVA_COMPILER} MATCHES ".+")
-@@ -42,28 +44,43 @@ if(NOT CMAKE_Java_COMPILER)
+@@ -42,30 +44,43 @@ if(NOT CMAKE_Java_COMPILER)
      endif()
    endif()
  
@@ -35,6 +35,8 @@ $OpenBSD: patch-Modules_CMakeDetermineJavaCompiler_cmake,v 1.6 2012/12/05 11:32:
 -    /usr/java/j2sdk1.4.2_09/bin
 -    /usr/lib/j2sdk1.5-sun/bin
 -    /opt/sun-jdk-1.5.0.04/bin
+-    /usr/local/jdk-1.7.0/bin
+-    /usr/local/jdk-1.6.0/bin
 -    )
 +  if(MODJAVA_VER)
 +    if(MODJAVA_VER MATCHES "^1\\.6$")

@@ -1,0 +1,12 @@
+$OpenBSD: patch-Modules_CMakeCInformation_cmake,v 1.1 2013/06/06 12:47:06 dcoppa Exp $
+--- Modules/CMakeCInformation.cmake.orig	Mon Jun  3 10:05:40 2013
++++ Modules/CMakeCInformation.cmake	Mon Jun  3 10:06:17 2013
+@@ -164,7 +164,7 @@ include(CMakeCommonLanguageInclude)
+ # create a C shared library
+ if(NOT CMAKE_C_CREATE_SHARED_LIBRARY)
+   set(CMAKE_C_CREATE_SHARED_LIBRARY
+-      "<CMAKE_C_COMPILER> <CMAKE_SHARED_LIBRARY_C_FLAGS> <LANGUAGE_COMPILE_FLAGS> <LINK_FLAGS> <CMAKE_SHARED_LIBRARY_CREATE_C_FLAGS> <SONAME_FLAG><TARGET_SONAME> -o <TARGET> <OBJECTS> <LINK_LIBRARIES>")
++      "<CMAKE_C_COMPILER> <CMAKE_SHARED_LIBRARY_C_FLAGS> <LANGUAGE_COMPILE_FLAGS> <LINK_FLAGS> <CMAKE_SHARED_LIBRARY_CREATE_C_FLAGS> -o <TARGET> <OBJECTS> <LINK_LIBRARIES>")
+ endif()
+ 
+ # create a C shared module just copy the shared library rule

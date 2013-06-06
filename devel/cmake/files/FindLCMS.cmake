@@ -39,7 +39,7 @@ find_library(LCMS_LIBRARIES NAMES lcms liblcms lcms-1 liblcms-1
    PATH_SUFFIXES lcms
 )
 
-# Store the LCMS version number in the cache, so we don't have to search everytime again
+# Store the LCMS version number in the cache, so we don't have to search every time again
 if(LCMS_INCLUDE_DIR  AND NOT  LCMS_VERSION)
    file(READ ${LCMS_INCLUDE_DIR}/lcms.h LCMS_VERSION_CONTENT)
    string(REGEX MATCH "#define LCMS_VERSION[ ]*[0-9]*\n" LCMS_VERSION_MATCH ${LCMS_VERSION_CONTENT})

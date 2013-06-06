@@ -1,88 +1,73 @@
-$OpenBSD: patch-Modules_FindQt4_cmake,v 1.18 2013/05/30 08:34:32 dcoppa Exp $
---- Modules/FindQt4.cmake.orig	Tue Nov 27 14:26:32 2012
-+++ Modules/FindQt4.cmake	Wed May 29 13:42:26 2013
-@@ -497,13 +497,22 @@ get_filename_component(qt_install_version "[HKEY_CURRE
- # check for qmake
- # Debian uses qmake-qt4
- # macports' Qt uses qmake-mac
--find_program(QT_QMAKE_EXECUTABLE NAMES qmake qmake4 qmake-qt4 qmake-mac
--  PATHS
--    ENV QTDIR
--    "[HKEY_CURRENT_USER\\Software\\Trolltech\\Versions\\${qt_install_version};InstallDir]"
--  PATH_SUFFIXES bin
--  DOC "The qmake executable for the Qt installation to use"
--)
-+if (CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
-+  find_program(QT_QMAKE_EXECUTABLE NAMES qmake4
-+    PATHS
-+      ENV QTDIR
-+    PATH_SUFFIXES bin
-+    DOC "The qmake executable for the Qt installation to use"
-+  )
-+else()
-+  find_program(QT_QMAKE_EXECUTABLE NAMES qmake qmake4 qmake-qt4 qmake-mac
-+    PATHS
-+      ENV QTDIR
-+      "[HKEY_CURRENT_USER\\Software\\Trolltech\\Versions\\${qt_install_version};InstallDir]"
-+    PATH_SUFFIXES bin
-+    DOC "The qmake executable for the Qt installation to use"
-+  )
-+endif()
+$OpenBSD: patch-Modules_FindQt4_cmake,v 1.19 2013/06/06 12:47:06 dcoppa Exp $
+--- Modules/FindQt4.cmake.orig	Wed May 15 19:38:12 2013
++++ Modules/FindQt4.cmake	Thu May 30 12:15:49 2013
+@@ -569,7 +569,12 @@ endfunction()
  
- # double check that it was a Qt4 qmake, if not, re-find with different names
- if (QT_QMAKE_EXECUTABLE)
-@@ -678,6 +687,7 @@ if (QT_QMAKE_EXECUTABLE AND QTVERSION)
+ set(QT4_INSTALLED_VERSION_TOO_OLD FALSE)
+ 
+-set(_QT4_QMAKE_NAMES qmake qmake4 qmake-qt4 qmake-mac)
++if (CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
++  set(_QT4_QMAKE_NAMES qmake4)
++else()
++  set(_QT4_QMAKE_NAMES qmake qmake4 qmake-qt4 qmake-mac)
++endif()
++
+ _qt4_find_qmake("${_QT4_QMAKE_NAMES}" QT_QMAKE_EXECUTABLE QTVERSION)
+ 
+ if (QT_QMAKE_EXECUTABLE AND QTVERSION)
+@@ -727,6 +732,8 @@ if (QT_QMAKE_EXECUTABLE AND QTVERSION)
  
    # Set QT_INCLUDES
    set( QT_INCLUDES ${QT_MKSPECS_DIR}/default ${QT_INCLUDE_DIR} ${QT_QTCORE_INCLUDE_DIR})
++  # Help QtOpenGL find GL/gl.h
 +  list(APPEND QT_INCLUDES "${X11BASE}/include")
  
  
    # ask qmake for the documentation directory
-@@ -982,13 +992,13 @@ if (QT_QMAKE_EXECUTABLE AND QTVERSION)
+@@ -1139,13 +1146,13 @@ if (QT_QMAKE_EXECUTABLE AND QTVERSION)
    endif()
  
    find_program(QT_MOC_EXECUTABLE
--    NAMES moc-qt4 moc
+-    NAMES moc-qt4 moc moc4
 +    NAMES moc4 moc-qt4 moc
      PATHS ${QT_BINARY_DIR}
      NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH
      )
  
    find_program(QT_UIC_EXECUTABLE
--    NAMES uic-qt4 uic
+-    NAMES uic-qt4 uic uic4
 +    NAMES uic4 uic-qt4 uic
      PATHS ${QT_BINARY_DIR}
      NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH
      )
-@@ -1018,13 +1028,13 @@ if (QT_QMAKE_EXECUTABLE AND QTVERSION)
+@@ -1175,13 +1182,13 @@ if (QT_QMAKE_EXECUTABLE AND QTVERSION)
      )
  
    find_program(QT_LUPDATE_EXECUTABLE
--    NAMES lupdate-qt4 lupdate
+-    NAMES lupdate-qt4 lupdate lupdate4
 +    NAMES lupdate4 lupdate-qt4 lupdate
      PATHS ${QT_BINARY_DIR}
      NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH
      )
  
    find_program(QT_LRELEASE_EXECUTABLE
--    NAMES lrelease-qt4 lrelease
+-    NAMES lrelease-qt4 lrelease lrelease4
 +    NAMES lrelease4 lrelease-qt4 lrelease
      PATHS ${QT_BINARY_DIR}
      NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH
      )
-@@ -1036,13 +1046,13 @@ if (QT_QMAKE_EXECUTABLE AND QTVERSION)
+@@ -1193,13 +1200,13 @@ if (QT_QMAKE_EXECUTABLE AND QTVERSION)
      )
  
    find_program(QT_DESIGNER_EXECUTABLE
--    NAMES designer-qt4 designer
+-    NAMES designer-qt4 designer designer4
 +    NAMES designer4 designer-qt4 designer
      PATHS ${QT_BINARY_DIR}
      NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH
      )
  
    find_program(QT_LINGUIST_EXECUTABLE
--    NAMES linguist-qt4 linguist
+-    NAMES linguist-qt4 linguist linguist4
 +    NAMES linguist4 linguist-qt4 linguist
      PATHS ${QT_BINARY_DIR}
      NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH

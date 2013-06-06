@@ -1,7 +1,7 @@
-$OpenBSD: patch-Modules_Platform_OpenBSD_cmake,v 1.10 2013/05/30 08:34:32 dcoppa Exp $
---- Modules/Platform/OpenBSD.cmake.orig	Tue Nov 27 14:26:32 2012
-+++ Modules/Platform/OpenBSD.cmake	Wed May 29 14:39:43 2013
-@@ -1,5 +1,16 @@
+$OpenBSD: patch-Modules_Platform_OpenBSD_cmake,v 1.11 2013/06/06 12:47:06 dcoppa Exp $
+--- Modules/Platform/OpenBSD.cmake.orig	Wed May 15 19:38:12 2013
++++ Modules/Platform/OpenBSD.cmake	Thu May 30 11:06:11 2013
+@@ -1,4 +1,15 @@
 -include(Platform/NetBSD)
 +set(CMAKE_DL_LIBS "")
 +set(CMAKE_C_COMPILE_OPTIONS_PIC "-fPIC")
@@ -13,17 +13,8 @@ $OpenBSD: patch-Modules_Platform_OpenBSD_cmake,v 1.10 2013/05/30 08:34:32 dcoppa
 +set(CMAKE_SHARED_LIBRARY_RUNTIME_C_FLAG_SEP ":")   # : or empty
 +set(CMAKE_SHARED_LIBRARY_RPATH_LINK_C_FLAG "-Wl,-rpath-link,")
 +set(CMAKE_EXE_EXPORTS_C_FLAG "-Wl,--export-dynamic")
- 
-+include(Platform/UnixPaths)
 +
++include(Platform/UnixPaths)
+ 
  # On OpenBSD, the compile time linker does not share it's configuration with
  # the runtime linker.  This will extract the library search paths from the
- # system's ld.so.hints file which will allow CMake to set the appropriate
-@@ -16,3 +27,7 @@ if(NOT CMAKE_PLATFORM_RUNTIME_PATH)
- endif()
- 
- set_property(GLOBAL PROPERTY FIND_LIBRARY_USE_OPENBSD_VERSIONING 1)
-+
-+# OpenBSD policy requires that shared libraries be installed without
-+# executable permission.
-+set(CMAKE_INSTALL_SO_NO_EXE 1)

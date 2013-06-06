@@ -1,7 +1,7 @@
-$OpenBSD: patch-Modules_FindPythonLibs_cmake,v 1.7 2012/11/11 17:13:31 dcoppa Exp $
---- Modules/FindPythonLibs.cmake.orig	Fri Nov  2 10:56:12 2012
-+++ Modules/FindPythonLibs.cmake	Fri Nov  2 11:04:28 2012
-@@ -36,6 +36,9 @@ include(CMakeFindFrameworks)
+$OpenBSD: patch-Modules_FindPythonLibs_cmake,v 1.8 2013/06/06 12:47:06 dcoppa Exp $
+--- Modules/FindPythonLibs.cmake.orig	Wed May 15 19:38:12 2013
++++ Modules/FindPythonLibs.cmake	Tue May 28 20:02:18 2013
+@@ -36,6 +36,9 @@ include(${CMAKE_CURRENT_LIST_DIR}/CMakeFindFrameworks.
  # Search for the python framework on Apple.
  CMAKE_FIND_FRAMEWORKS(Python)
  

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2013/03/21 10:21:49 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.24 2013/06/06 12:47:06 dcoppa Exp $
 @bin bin/ccmake
 @bin bin/cmake
 @bin bin/cpack
@@ -144,6 +144,7 @@ share/cmake/Modules/CPackDeb.cmake
 share/cmake/Modules/CPackNSIS.cmake
 share/cmake/Modules/CPackPackageMaker.cmake
 share/cmake/Modules/CPackRPM.cmake
+share/cmake/Modules/CPackWIX.cmake
 share/cmake/Modules/CPackZIP.cmake
 share/cmake/Modules/CTest.cmake
 share/cmake/Modules/CTestScriptMode.cmake
@@ -220,6 +221,9 @@ share/cmake/Modules/Compiler/SunPro-ASM.cmake
 share/cmake/Modules/Compiler/SunPro-C.cmake
 share/cmake/Modules/Compiler/SunPro-CXX.cmake
 share/cmake/Modules/Compiler/SunPro-Fortran.cmake
+share/cmake/Modules/Compiler/TI-ASM.cmake
+share/cmake/Modules/Compiler/TI-C.cmake
+share/cmake/Modules/Compiler/TI-CXX.cmake
 share/cmake/Modules/Compiler/TinyCC-C.cmake
 share/cmake/Modules/Compiler/VisualAge-C.cmake
 share/cmake/Modules/Compiler/VisualAge-CXX.cmake
@@ -241,6 +245,8 @@ share/cmake/Modules/DartConfiguration.tcl.in
 share/cmake/Modules/DeployQt4.cmake
 share/cmake/Modules/Documentation.cmake
 share/cmake/Modules/DummyCXXFile.cxx
+share/cmake/Modules/ExternalData.cmake
+share/cmake/Modules/ExternalData_config.cmake.in
 share/cmake/Modules/ExternalProject.cmake
 share/cmake/Modules/FLTKCompatibility.cmake
 share/cmake/Modules/FeatureSummary.cmake
@@ -295,6 +301,7 @@ share/cmake/Modules/FindHTMLHelp.cmake
 share/cmake/Modules/FindHg.cmake
 share/cmake/Modules/FindITK.cmake
 share/cmake/Modules/FindIconv.cmake
+share/cmake/Modules/FindIcotool.cmake
 share/cmake/Modules/FindImageMagick.cmake
 share/cmake/Modules/FindJNI.cmake
 share/cmake/Modules/FindJPEG.cmake
@@ -602,6 +609,8 @@ share/cmake/Modules/Qt4ConfigDependentSettings.cmake
 share/cmake/Modules/Qt4Macros.cmake
 share/cmake/Modules/RepositoryInfo.txt.in
 share/cmake/Modules/SelectLibraryConfigurations.cmake
+share/cmake/Modules/Squish4RunTestCase.bat
+share/cmake/Modules/Squish4RunTestCase.sh
 share/cmake/Modules/SquishRunTestCase.bat
 share/cmake/Modules/SquishRunTestCase.sh
 share/cmake/Modules/SquishTestScript.cmake
@@ -631,6 +640,7 @@ share/cmake/Modules/UseVTKConfig40.cmake
 share/cmake/Modules/Use_wxWindows.cmake
 share/cmake/Modules/UsewxWidgets.cmake
 share/cmake/Modules/VTKCompatibility.cmake
+share/cmake/Modules/WIX.template.in
 share/cmake/Modules/WriteBasicConfigVersionFile.cmake
 share/cmake/Modules/ecos_clean.cmake
 share/cmake/Modules/exportheader.cmake.in
