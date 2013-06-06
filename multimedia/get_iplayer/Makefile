@@ -1,23 +1,24 @@
-# $OpenBSD: Makefile,v 1.66 2013/05/04 09:24:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2013/06/06 21:11:09 sthen Exp $
 
-COMMENT =		download/stream programmes from BBC iPlayer
+COMMENT=		download/stream programmes from BBC iPlayer
 
-DISTNAME =		get_iplayer-2.82pl3
-WRKDIST =		${WRKDIR}/get_iplayer
-CATEGORIES =		multimedia
+DISTNAME=		get_iplayer-2.82pl3
+REVISION=		0
+WRKDIST=		${WRKDIR}/get_iplayer
+CATEGORIES=		multimedia
 
 # http://git.infradead.org/get_iplayer.git
-HOMEPAGE =		http://www.infradead.org/get_iplayer/
+HOMEPAGE=		http://www.infradead.org/get_iplayer/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_CDROM=	Yes
 
-MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
-MASTER_SITES =		http://spacehopper.org/mirrors/
-#MASTER_SITES =		ftp://ftp.infradead.org/pub/get_iplayer/
+MASTER_SITES=		http://spacehopper.org/mirrors/
+#MASTER_SITES=		ftp://ftp.infradead.org/pub/get_iplayer/
 
-RUN_DEPENDS =		audio/id3lib \
+RUN_DEPENDS=		audio/id3lib \
 			audio/p5-MP3-Tag \
 			multimedia/atomicparsley \
 			net/rtmpdump>=2.4 \
@@ -25,10 +26,10 @@ RUN_DEPENDS =		audio/id3lib \
 			www/p5-HTML-Parser \
 			www/p5-libwww>=5.826
 
-BUILD_DEPENDS =		${RUN_DEPENDS}
+BUILD_DEPENDS=		${RUN_DEPENDS}
 
-NO_TEST =		Yes
-PKG_ARCH =		*
+NO_TEST=		Yes
+PKG_ARCH=		*
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/get_iplayer
@@ -39,7 +40,7 @@ do-build:
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/get_iplayer/plugins
 	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -m 644 -c \
-	    ${FILESDIR}/options.sample ${PREFIX}/share/get_iplayer/options.sample
+	   ${FILESDIR}/options.sample ${PREFIX}/share/get_iplayer/options.sample
 	${INSTALL_SCRIPT} ${WRKSRC}/get_iplayer ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/plugins/* \
 	    ${PREFIX}/share/get_iplayer/plugins
