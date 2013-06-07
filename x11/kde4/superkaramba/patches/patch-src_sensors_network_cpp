@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_sensors_network_cpp,v 1.1 2013/06/06 08:36:49 zhuk Exp $
---- src/sensors/network.cpp.orig	Thu Jun  6 12:31:08 2013
-+++ src/sensors/network.cpp	Thu Jun  6 12:31:43 2013
-@@ -96,7 +96,7 @@ void NetworkSensor::refreshDevice() {
-         QString line = t.readLine();   // finally reads something we care about
+$OpenBSD: patch-src_sensors_network_cpp,v 1.2 2013/06/07 10:36:14 zhuk Exp $
+--- src/sensors/network.cpp.orig	Fri Jun  7 14:13:54 2013
++++ src/sensors/network.cpp	Fri Jun  7 14:16:16 2013
+@@ -151,7 +151,7 @@ void NetworkSensor::getInOutBytes(unsigned long &in, u
+         QTextStream t(&file);          // use a text stream
+         line = t.readLine();
  
-         QStringList::ConstIterator listEnd(interfaceList.constEnd());
--        while ((rank != 0) && (line != 0)) {
-+        while ((rank != 0) && !line.isNull()) {
-             int i = 0;
-             for (QStringList::ConstIterator dev = interfaceList.constBegin();
-                 (dev != listEnd) && (i < rank);
+-        while (line != 0 && !line.contains(device)) {
++        while (!line.isNull() && !line.contains(device)) {
+             line = t.readLine();
+         }
+ 
