@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_config_pa_pa_c,v 1.1 2013/01/16 19:28:48 pascal Exp $
---- gcc/config/pa/pa.c.orig	Sat Oct 29 17:40:55 2011
-+++ gcc/config/pa/pa.c	Thu Apr  5 07:45:54 2012
-@@ -3872,6 +3872,9 @@ hppa_expand_prologue (void)
+$OpenBSD: patch-gcc_config_pa_pa_c,v 1.2 2013/06/07 07:54:23 pascal Exp $
+--- gcc/config/pa/pa.c.orig	Thu Dec  6 03:19:48 2012
++++ gcc/config/pa/pa.c	Sat Apr 13 16:20:31 2013
+@@ -3876,6 +3876,9 @@ hppa_expand_prologue (void)
    if (flag_stack_usage)
      current_function_static_stack_size = actual_fsize;
  

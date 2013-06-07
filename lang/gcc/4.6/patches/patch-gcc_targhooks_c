@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_targhooks_c,v 1.2 2012/09/03 13:24:58 pascal Exp $
---- gcc/targhooks.c.orig	Fri Jan 14 10:02:20 2011
-+++ gcc/targhooks.c	Fri Aug 31 22:02:06 2012
+$OpenBSD: patch-gcc_targhooks_c,v 1.3 2013/06/07 07:54:23 pascal Exp $
+--- gcc/targhooks.c.orig	Fri Aug 10 15:26:44 2012
++++ gcc/targhooks.c	Sat Apr 13 16:20:32 2013
 @@ -56,6 +56,7 @@ along with GCC; see the file COPYING3.  If not see
  #include "tree.h"
  #include "expr.h"
@@ -9,7 +9,7 @@ $OpenBSD: patch-gcc_targhooks_c,v 1.2 2012/09/03 13:24:58 pascal Exp $
  #include "diagnostic-core.h"
  #include "function.h"
  #include "target.h"
-@@ -657,7 +658,7 @@ default_stack_protect_guard (void)
+@@ -658,7 +659,7 @@ default_stack_protect_guard (void)
        rtx x;
  
        t = build_decl (UNKNOWN_LOCATION,
@@ -18,7 +18,7 @@ $OpenBSD: patch-gcc_targhooks_c,v 1.2 2012/09/03 13:24:58 pascal Exp $
  		      ptr_type_node);
        TREE_STATIC (t) = 1;
        TREE_PUBLIC (t) = 1;
-@@ -666,6 +667,8 @@ default_stack_protect_guard (void)
+@@ -667,6 +668,8 @@ default_stack_protect_guard (void)
        TREE_THIS_VOLATILE (t) = 1;
        DECL_ARTIFICIAL (t) = 1;
        DECL_IGNORED_P (t) = 1;
@@ -27,7 +27,7 @@ $OpenBSD: patch-gcc_targhooks_c,v 1.2 2012/09/03 13:24:58 pascal Exp $
  
        /* Do not share RTL as the declaration is visible outside of
  	 current function.  */
-@@ -678,67 +681,68 @@ default_stack_protect_guard (void)
+@@ -679,67 +682,68 @@ default_stack_protect_guard (void)
    return t;
  }
  

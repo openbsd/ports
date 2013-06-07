@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_toplev_c,v 1.1 2012/02/16 21:30:15 pascal Exp $
---- gcc/toplev.c.orig	Fri Jan 20 14:23:40 2012
-+++ gcc/toplev.c	Fri Jan 20 14:24:30 2012
-@@ -1580,6 +1580,8 @@ process_options (void)
+$OpenBSD: patch-gcc_toplev_c,v 1.2 2013/06/07 07:54:24 pascal Exp $
+--- gcc/toplev.c.orig	Thu Mar 29 04:15:29 2012
++++ gcc/toplev.c	Sat Apr 13 16:20:32 2013
+@@ -1587,6 +1587,8 @@ process_options (void)
  
    /* Targets must be able to place spill slots at lower addresses.  If the
       target already uses a soft frame pointer, the transition is trivial.  */

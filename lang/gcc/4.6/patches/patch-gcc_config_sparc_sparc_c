@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_config_sparc_sparc_c,v 1.1 2012/03/31 20:02:03 pascal Exp $
---- gcc/config/sparc/sparc.c.orig	Sat Dec 17 00:38:34 2011
-+++ gcc/config/sparc/sparc.c	Mon Mar 12 08:48:46 2012
-@@ -4540,6 +4540,9 @@ sparc_expand_prologue (void)
+$OpenBSD: patch-gcc_config_sparc_sparc_c,v 1.2 2013/06/07 07:54:23 pascal Exp $
+--- gcc/config/sparc/sparc.c.orig	Sun Sep  2 12:37:49 2012
++++ gcc/config/sparc/sparc.c	Sat Apr 13 16:20:32 2013
+@@ -4544,6 +4544,9 @@ sparc_expand_prologue (void)
    actual_fsize
      = sparc_compute_frame_size (get_frame_size(), sparc_leaf_function_p);
  

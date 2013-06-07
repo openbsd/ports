@@ -1,6 +1,6 @@
-$OpenBSD: patch-boehm-gc_include_private_gcconfig_h,v 1.4 2012/10/17 19:58:21 kurt Exp $
---- boehm-gc/include/private/gcconfig.h.orig	Sun Mar 21 15:34:19 2010
-+++ boehm-gc/include/private/gcconfig.h	Tue Oct  9 21:12:42 2012
+$OpenBSD: patch-boehm-gc_include_private_gcconfig_h,v 1.5 2013/06/07 07:54:23 pascal Exp $
+--- boehm-gc/include/private/gcconfig.h.orig	Fri Mar  2 19:21:41 2012
++++ boehm-gc/include/private/gcconfig.h	Sat Apr 13 16:20:18 2013
 @@ -62,7 +62,7 @@
  /* Determine the machine type: */
  # if defined(__arm__) || defined(__thumb__)
@@ -181,7 +181,7 @@ $OpenBSD: patch-boehm-gc_include_private_gcconfig_h,v 1.4 2012/10/17 19:58:21 ku
          || defined(THREE86BSD) || defined(BSDI)
  #	define HEURISTIC2
  	extern char etext[];
-@@ -1471,6 +1515,24 @@
+@@ -1475,6 +1519,24 @@
  #       define STACKBOTTOM ((ptr_t) 0x7ffff000)
  #     endif /* _ELF_ */
  #  endif
@@ -206,7 +206,7 @@ $OpenBSD: patch-boehm-gc_include_private_gcconfig_h,v 1.4 2012/10/17 19:58:21 ku
  # endif
  
  # ifdef RS6000
-@@ -1518,7 +1580,7 @@
+@@ -1522,7 +1584,7 @@
  #     define ALIGNMENT 4
  #     define ALIGN_DOUBLE
  #   endif
@@ -215,7 +215,7 @@ $OpenBSD: patch-boehm-gc_include_private_gcconfig_h,v 1.4 2012/10/17 19:58:21 ku
  #     ifndef LINUX /* For now. */
  #       define MPROTECT_VDB
  #     endif
-@@ -1570,6 +1632,23 @@
+@@ -1574,6 +1636,23 @@
        extern int _end[];
  #     define DATAEND (&_end)
  #   endif /* LINUX */
@@ -239,7 +239,7 @@ $OpenBSD: patch-boehm-gc_include_private_gcconfig_h,v 1.4 2012/10/17 19:58:21 ku
  # endif /* HP_PA */
  
  # ifdef ALPHA
-@@ -1594,15 +1673,21 @@
+@@ -1598,15 +1677,21 @@
  #   endif
  #   ifdef OPENBSD
  #	define OS_TYPE "OPENBSD"
@@ -270,7 +270,7 @@ $OpenBSD: patch-boehm-gc_include_private_gcconfig_h,v 1.4 2012/10/17 19:58:21 ku
  #   endif
  #   ifdef FREEBSD
  #	define OS_TYPE "FREEBSD"
-@@ -1782,6 +1867,7 @@
+@@ -1786,6 +1871,7 @@
  #   ifdef CX_UX
  #	define OS_TYPE "CX_UX"
  #       define DATASTART ((((word)etext + 0x3fffff) & ~0x3fffff) + 0x10000)
@@ -278,7 +278,7 @@ $OpenBSD: patch-boehm-gc_include_private_gcconfig_h,v 1.4 2012/10/17 19:58:21 ku
  #   endif
  #   ifdef  DGUX
  #	define OS_TYPE "DGUX"
-@@ -1892,6 +1978,24 @@
+@@ -1896,6 +1982,24 @@
  #     define OS_TYPE "MSWINCE"
  #     define DATAEND /* not needed */
  #   endif
@@ -303,7 +303,7 @@ $OpenBSD: patch-boehm-gc_include_private_gcconfig_h,v 1.4 2012/10/17 19:58:21 ku
  #   ifdef NOSYS
        /* __data_start is usually defined in the target linker script.  */
        extern int __data_start[];
-@@ -1939,6 +2043,23 @@
+@@ -1943,6 +2047,23 @@
  #       define USE_GENERIC_PUSH_REGS
  #      define DYNAMIC_LOADING
  #   endif
@@ -327,7 +327,7 @@ $OpenBSD: patch-boehm-gc_include_private_gcconfig_h,v 1.4 2012/10/17 19:58:21 ku
  # endif
   
  # ifdef SH4
-@@ -1971,6 +2092,24 @@
+@@ -1975,6 +2096,24 @@
  #   define CPP_WORDSZ 64
  #   ifndef HBLKSIZE
  #     define HBLKSIZE 4096

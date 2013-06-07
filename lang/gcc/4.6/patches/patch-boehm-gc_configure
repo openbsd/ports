@@ -1,6 +1,6 @@
-$OpenBSD: patch-boehm-gc_configure,v 1.5 2012/02/28 20:00:16 pascal Exp $
---- boehm-gc/configure.orig	Wed Oct 26 11:30:24 2011
-+++ boehm-gc/configure	Mon Feb 20 21:59:55 2012
+$OpenBSD: patch-boehm-gc_configure,v 1.6 2013/06/07 07:54:23 pascal Exp $
+--- boehm-gc/configure.orig	Fri Apr 12 11:58:00 2013
++++ boehm-gc/configure	Sat Apr 13 16:20:18 2013
 @@ -10756,7 +10756,7 @@ netbsd*)
    need_version=no
    if echo __ELF__ | $CC -E - | $GREP __ELF__ >/dev/null; then
@@ -39,7 +39,7 @@ $OpenBSD: patch-boehm-gc_configure,v 1.5 2012/02/28 20:00:16 pascal Exp $
  # Darwin needs a few extra special tests to deal with variation in the
  # system headers.
  case "$host" in
-@@ -15294,6 +15298,9 @@ $as_echo "#define DATASTART_IS_ETEXT 1" >>confdefs.h
+@@ -15305,6 +15309,9 @@ $as_echo "#define DATASTART_IS_ETEXT 1" >>confdefs.h
      ;;
   sparc-*-netbsd*)
      machdep="sparc_netbsd_mach_dep.lo"

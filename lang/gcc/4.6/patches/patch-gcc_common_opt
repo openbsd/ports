@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_common_opt,v 1.4 2012/09/01 00:00:32 pascal Exp $
---- gcc/common.opt.orig	Mon Apr 11 17:26:47 2011
-+++ gcc/common.opt	Wed Aug 29 23:44:11 2012
-@@ -543,6 +543,10 @@ Wlarger-than=
+$OpenBSD: patch-gcc_common_opt,v 1.5 2013/06/07 07:54:23 pascal Exp $
+--- gcc/common.opt.orig	Mon Jan 14 17:35:23 2013
++++ gcc/common.opt	Sat Apr 13 16:20:31 2013
+@@ -546,6 +546,10 @@ Wlarger-than=
  Common RejectNegative Joined UInteger Warning
  -Wlarger-than=<number>	Warn if an object is larger than <number> bytes
  
@@ -12,7 +12,7 @@ $OpenBSD: patch-gcc_common_opt,v 1.4 2012/09/01 00:00:32 pascal Exp $
  Wunsafe-loop-optimizations
  Common Var(warn_unsafe_loop_optimizations) Warning
  Warn if the loop cannot be optimized due to nontrivial assumptions.
-@@ -616,7 +620,7 @@ Common Var(warn_switch_enum) Warning
+@@ -619,7 +623,7 @@ Common Var(warn_switch_enum) Warning
  Warn about all enumerated switches missing a specific case
  
  Wsystem-headers
@@ -21,7 +21,7 @@ $OpenBSD: patch-gcc_common_opt,v 1.4 2012/09/01 00:00:32 pascal Exp $
  Do not suppress warnings from system headers
  
  Wtrampolines
-@@ -667,6 +671,10 @@ Wunused-variable
+@@ -670,6 +674,10 @@ Wunused-variable
  Common Var(warn_unused_variable) Init(-1) Warning
  Warn when a variable is unused
  
@@ -32,7 +32,7 @@ $OpenBSD: patch-gcc_common_opt,v 1.4 2012/09/01 00:00:32 pascal Exp $
  Wcoverage-mismatch
  Common Var(warn_coverage_mismatch) Init(1) Warning
  Warn in case profiles in -fprofile-use do not match
-@@ -938,7 +946,7 @@ Common Report Var(flag_delayed_branch) Optimization
+@@ -941,7 +949,7 @@ Common Report Var(flag_delayed_branch) Optimization
  Attempt to fill delay slots of branch instructions
  
  fdelete-null-pointer-checks
@@ -41,7 +41,7 @@ $OpenBSD: patch-gcc_common_opt,v 1.4 2012/09/01 00:00:32 pascal Exp $
  Delete useless null pointer checks
  
  fdevirtualize
-@@ -1161,7 +1169,7 @@ Enable guessing of branch probabilities
+@@ -1164,7 +1172,7 @@ Enable guessing of branch probabilities
  ; On SVR4 targets, it also controls whether or not to emit a
  ; string identifying the compiler.
  fident
@@ -50,7 +50,7 @@ $OpenBSD: patch-gcc_common_opt,v 1.4 2012/09/01 00:00:32 pascal Exp $
  Process #ident directives
  
  fif-conversion
-@@ -1489,7 +1497,7 @@ Common Report Var(flag_pic,2)
+@@ -1492,7 +1500,7 @@ Common Report Var(flag_pic,2)
  Generate position-independent code if possible (large mode)
  
  fPIE
@@ -59,7 +59,7 @@ $OpenBSD: patch-gcc_common_opt,v 1.4 2012/09/01 00:00:32 pascal Exp $
  Generate position-independent code for executables if possible (large mode)
  
  fpic
-@@ -1779,7 +1787,7 @@ Common RejectNegative Joined Var(common_deferred_optio
+@@ -1782,7 +1790,7 @@ Common RejectNegative Joined Var(common_deferred_optio
  -fstack-limit-symbol=<name>	Trap if the stack goes past symbol <name>
  
  fstack-protector
