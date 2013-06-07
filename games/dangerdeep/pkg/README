@@ -1,0 +1,56 @@
+$OpenBSD: README,v 1.1.1.1 2013/06/07 03:41:45 bentley Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Keys
+====
+
+displays
+--------
+F1      Gauges
+F2      Periscope
+F3      UZO
+F4      Bridge
+F5      Map
+F6      Torpedo loading control
+F7      Damage control
+F8      Log book   
+F9      Success records
+F10     Free view
+
+control
+-------
+Cursor keys     Rudder left/right/up/down
+Cursor k.+shift Turn faster
+Return          Center rudders
+1,2,3,4,5,6     Throttle slow,half,full,flank,stop,reverse
+SHIFT 1...6     Fire torpedo in tube 1...6 (bow/stern tube number position
+                relation depends on sub type: as first all bow tubes are
+                enumerated, then the stern tubes)
+Space           Select target
+0 (zero)        Scope up/down
+c               Crash dive (to 150 meters)
+d               Snorkel depth
+f               Snorkel up/down
+h               Set heading to view
+i               identify target
+p               Periscope depth
+s               Surface
+t               Fire torpedo (automatic selection of bow/stern tubes)
+g + SHIFT       Man/unman deck gun
+g               Fire deck gun
+v               Set view to heading
+z               Zoom view (glasses, bridge and periscope view)
++ -             Zoom/unzoom map
+, .             turn view
+; :             turn view fast
+F11/F12         time scale faster/slower
+Pause           (Un)pause game
+ESC             quit
+PRINT           Take screenshot (uncompressed ppm)
+
+special
+-------
+Numpad 8,4,6,2,1,3      step forward/left/right/backward/up/down in freeview

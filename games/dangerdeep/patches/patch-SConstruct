@@ -1,0 +1,55 @@
+$OpenBSD: patch-SConstruct,v 1.1.1.1 2013/06/07 03:41:44 bentley Exp $
+--- SConstruct.orig	Sat May  8 03:41:20 2010
++++ SConstruct	Sat Jun  1 11:12:50 2013
+@@ -207,8 +207,6 @@ else:
+ 	# Set libpath for real
+ 	libpath = [archlib, archlib + '/X11', '/usr/X11R6/lib']
+ 
+-	ccflags += ' -march=' + arch
+-
+ 	env.Append(LINKFLAGS = '`pkg-config --libs-only-L x11`')
+ 	if (debug >= 4):
+ 		ccflags += ' -g -pg -O3' # profiling
+@@ -220,7 +218,6 @@ else:
+ 		env.Append(CPPDEFINES = ['DEBUG'])
+ 	elif (debug == 1):
+ 		# same as debug==0 but with DEBUG defined to make logging work (and probably other stuff)
+-		ccflags += ' -g -O2'
+ 		env.Append(CPPDEFINES = ['DEBUG'])
+ 	elif (debug == -1):
+ 		ccflags += ' -g -O3 -mfpmath=sse -mmmx -msse -m3dnow'
+@@ -258,18 +255,18 @@ else:
+ 	env.Append(CCFLAGS = ccflags)
+ 
+ 	# check for broken libGL, ignore undefined symbols then
+-	if (checkconf == True and os.system('grep glBindProgram /usr/include/GL/gl*.h > /dev/null') == 0):
++	if (checkconf == True and os.system('grep glBindProgram ${X11BASE}/include/GL/gl*.h > /dev/null') == 0):
+ 		gllibdirs = ['/usr/X11R6/lib/', '/usr/lib/', '/usr/local/lib/']
+ 		gllibdir = ''
+ 		for i in gllibdirs:
+-			if (os.system('test -f '+i+'libGL.so') == 0):
++			if (os.system('test -f '+i+'libGL.so*') == 0):
+ 				gllibdir = i
+ 				break
+ 		if (gllibdir == ''):
+ 			print 'ERROR: no libGL.so detected!'
+ 		else:
+ 			print 'Found GL library "'+gllibdir+'libGL.so"'
+-		if (os.system('grep glBindProgram '+gllibdir+'libGL.so > /dev/null') != 0):
++		if (os.system('grep glBindProgram '+gllibdir+'libGL.so* > /dev/null') != 0):
+ 			print 'GL headers declare glBindProgram, but libGL.so has no such symbol! Ignoring all undefined symbols...'
+ 			# I'm not sure which option will hopefully fix the problem... so i use both...
+ 			env.Append(LINKFLAGS = '--unresolved-symbols=ignore-all')
+@@ -289,6 +286,12 @@ target_dir = '#build' + os.sep + build_dir
+ source_base_dir = 'src'
+ libpath = libpath + [target_dir]
+ env.Append(LIBPATH = libpath)
++env.Append(LIBPATH = '${LOCALBASE}/lib')
++env.Append(CPPPATH = ['${X11BASE}/include', '${X11BASE}/include/GL'])
++env.Replace(CC = os.environ['CC'])
++env.Replace(CXX = os.environ['CXX'])
++env.Replace(CFLAGS = os.environ['CFLAGS'])
++env.Replace(CXXFLAGS = os.environ['CXXFLAGS'])
+ 
+ ################ configure
+ if(checkconf == True):
