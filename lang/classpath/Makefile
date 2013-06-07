@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2013/05/31 15:34:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2013/06/07 09:06:44 sthen Exp $
 
 # uses gcj which is only supported on select archs
 ONLY_FOR_ARCHS=	amd64 i386 sparc64
@@ -32,7 +32,7 @@ USE_GROFF =	Yes
 BUILD_DEPENDS=	archivers/zip \
 		lang/antlr3>=3.4p0
 
-RUN_DEPENDS=	lang/gcc/4.6,-java \
+RUN_DEPENDS=	lang/gcc/${MODGCC4_VERSION},-java \
 		lang/antlr3>=3.4p0
 
 LIB_DEPENDS=	x11/gtk+2 \
