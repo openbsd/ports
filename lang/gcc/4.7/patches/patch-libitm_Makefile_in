@@ -1,7 +1,7 @@
-$OpenBSD: patch-libitm_Makefile_in,v 1.1.1.1 2012/04/23 15:56:41 pascal Exp $
---- libitm/Makefile.in.orig	Tue Apr  3 11:56:26 2012
-+++ libitm/Makefile.in	Tue Apr  3 11:58:38 2012
-@@ -369,7 +369,8 @@ nodist_toolexeclib_HEADERS = libitm.spec
+$OpenBSD: patch-libitm_Makefile_in,v 1.2 2013/06/07 07:54:47 pascal Exp $
+--- libitm/Makefile.in.orig	Thu Apr 11 09:59:02 2013
++++ libitm/Makefile.in	Thu Apr 11 13:44:28 2013
+@@ -323,7 +323,8 @@ nodist_toolexeclib_HEADERS = libitm.spec
  @LIBITM_BUILD_VERSIONED_SHLIB_FALSE@libitm_version_dep = 
  @LIBITM_BUILD_VERSIONED_SHLIB_GNU_TRUE@@LIBITM_BUILD_VERSIONED_SHLIB_TRUE@libitm_version_dep = $(top_srcdir)/libitm.map
  @LIBITM_BUILD_VERSIONED_SHLIB_SUN_TRUE@@LIBITM_BUILD_VERSIONED_SHLIB_TRUE@libitm_version_dep = libitm.map-sun

@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_builtins_c,v 1.1.1.1 2012/04/23 15:56:42 pascal Exp $
---- gcc/builtins.c.orig	Thu Mar 15 14:40:13 2012
-+++ gcc/builtins.c	Mon Apr  2 16:38:16 2012
-@@ -6140,9 +6140,11 @@ expand_builtin (tree exp, rtx target, rtx subtarget, e
+$OpenBSD: patch-gcc_builtins_c,v 1.2 2013/06/07 07:54:47 pascal Exp $
+--- gcc/builtins.c.orig	Fri Feb  1 15:00:12 2013
++++ gcc/builtins.c	Thu Apr 11 13:44:27 2013
+@@ -6147,9 +6147,11 @@ expand_builtin (tree exp, rtx target, rtx subtarget, e
        break;
  
      case BUILT_IN_STRCPY:
@@ -13,7 +13,7 @@ $OpenBSD: patch-gcc_builtins_c,v 1.1.1.1 2012/04/23 15:56:42 pascal Exp $
        break;
  
      case BUILT_IN_STRNCPY:
-@@ -6152,9 +6154,11 @@ expand_builtin (tree exp, rtx target, rtx subtarget, e
+@@ -6159,9 +6161,11 @@ expand_builtin (tree exp, rtx target, rtx subtarget, e
        break;
  
      case BUILT_IN_STPCPY:

@@ -1,7 +1,7 @@
-$OpenBSD: patch-libffi_include_Makefile_in,v 1.1.1.1 2012/04/23 15:56:41 pascal Exp $
---- libffi/include/Makefile.in.orig	Sat Nov 12 13:59:51 2011
-+++ libffi/include/Makefile.in	Sat Nov 12 14:00:05 2011
-@@ -413,7 +413,7 @@ info: info-am
+$OpenBSD: patch-libffi_include_Makefile_in,v 1.2 2013/06/07 07:54:47 pascal Exp $
+--- libffi/include/Makefile.in.orig	Thu Sep 20 18:30:06 2012
++++ libffi/include/Makefile.in	Thu Apr 11 13:44:28 2013
+@@ -381,7 +381,7 @@ info: info-am
  
  info-am:
  

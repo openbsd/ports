@@ -1,7 +1,7 @@
-$OpenBSD: patch-libstdc++-v3_src_Makefile_in,v 1.2 2012/07/01 18:56:45 pascal Exp $
---- libstdc++-v3/src/Makefile.in.orig	Tue Apr 17 02:19:12 2012
-+++ libstdc++-v3/src/Makefile.in	Wed Jun 20 14:41:13 2012
-@@ -331,8 +331,10 @@ WARN_CXXFLAGS = \
+$OpenBSD: patch-libstdc++-v3_src_Makefile_in,v 1.3 2013/06/07 07:54:47 pascal Exp $
+--- libstdc++-v3/src/Makefile.in.orig	Mon Dec 10 10:09:44 2012
++++ libstdc++-v3/src/Makefile.in	Thu Apr 11 13:44:28 2013
+@@ -333,8 +333,10 @@ WARN_CXXFLAGS = \
  AM_CPPFLAGS = $(GLIBCXX_INCLUDES)
  SUBDIRS = c++98 c++11
  
@@ -13,7 +13,7 @@ $OpenBSD: patch-libstdc++-v3_src_Makefile_in,v 1.2 2012/07/01 18:56:45 pascal Ex
  @GLIBCXX_LDBL_COMPAT_FALSE@ldbl_compat_sources = 
  @GLIBCXX_LDBL_COMPAT_TRUE@ldbl_compat_sources = compatibility-ldbl.cc
  @ENABLE_PARALLEL_FALSE@parallel_compat_sources = 
-@@ -367,7 +369,7 @@ libstdc___la_DEPENDENCIES = \
+@@ -369,7 +371,7 @@ libstdc___la_DEPENDENCIES = \
  	$(top_builddir)/src/c++11/libc++11convenience.la
  
  libstdc___la_LDFLAGS = \
@@ -22,7 +22,7 @@ $OpenBSD: patch-libstdc++-v3_src_Makefile_in,v 1.2 2012/07/01 18:56:45 pascal Ex
  
  libstdc___la_LINK = $(CXXLINK) $(libstdc___la_LDFLAGS)
  
-@@ -512,7 +514,7 @@ clean-toolexeclibLTLIBRARIES:
+@@ -545,7 +547,7 @@ clean-toolexeclibLTLIBRARIES:
  	  echo "rm -f \"$${dir}/so_locations\""; \
  	  rm -f "$${dir}/so_locations"; \
  	done

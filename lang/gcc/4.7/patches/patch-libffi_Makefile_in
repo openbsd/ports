@@ -1,7 +1,7 @@
-$OpenBSD: patch-libffi_Makefile_in,v 1.1.1.1 2012/04/23 15:56:41 pascal Exp $
---- libffi/Makefile.in.orig	Thu Mar 22 08:37:39 2012
-+++ libffi/Makefile.in	Mon Apr  2 16:52:03 2012
-@@ -477,7 +477,8 @@ libffi_convenience_la_SOURCES = $(libffi_la_SOURCES)
+$OpenBSD: patch-libffi_Makefile_in,v 1.2 2013/06/07 07:54:47 pascal Exp $
+--- libffi/Makefile.in.orig	Thu Apr 11 09:59:02 2013
++++ libffi/Makefile.in	Thu Apr 11 13:44:28 2013
+@@ -437,7 +437,8 @@ libffi_convenience_la_SOURCES = $(libffi_la_SOURCES)
  nodist_libffi_convenience_la_SOURCES = $(nodist_libffi_la_SOURCES)
  AM_CFLAGS = -Wall -g -fexceptions
  LTLDFLAGS = $(shell $(SHELL) $(top_srcdir)/../libtool-ldflags $(LDFLAGS))
@@ -11,7 +11,7 @@ $OpenBSD: patch-libffi_Makefile_in,v 1.1.1.1 2012/04/23 15:56:41 pascal Exp $
  AM_CPPFLAGS = -I. -I$(top_srcdir)/include -Iinclude -I$(top_srcdir)/src
  AM_CCASFLAGS = $(AM_CPPFLAGS)
  all: fficonfig.h
-@@ -1371,9 +1372,9 @@ installdirs-am:
+@@ -1155,9 +1156,9 @@ installdirs-am:
  	for dir in "$(DESTDIR)$(toolexeclibdir)"; do \
  	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
  	done

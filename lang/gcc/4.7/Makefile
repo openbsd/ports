@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.27 2013/05/03 23:13:49 tobiasu Exp $
+# $OpenBSD: Makefile,v 1.28 2013/06/07 07:54:47 pascal Exp $
 
 ONLY_FOR_ARCHS = amd64 i386 powerpc sparc64
 BROKEN-sparc64 = ICE in libgcc
 
-V = 4.7.2
+V = 4.7.3
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
 
-ADASTRAP_LIBC-i386 = 67.0
+ADASTRAP_LIBC-i386 = 68.2
 ADASTRAP_LIBM-i386 = 8.0
-ADASTRAP-i386 = adastrap-i386-$V-1.tar.xz
+ADASTRAP-i386 = adastrap-i386-$V-0.tar.xz
 ADASTRAP_LIBC-amd64 = 67.0
 ADASTRAP_LIBM-amd64 = 8.0
-ADASTRAP-amd64 = adastrap-amd64-$V-1.tar.xz
+ADASTRAP-amd64 = adastrap-amd64-$V-0.tar.xz
 
 PKGNAME-main =  gcc-${FULL_PKGVERSION}
 PKGNAME-c++ =   g++-${FULL_PKGVERSION}
