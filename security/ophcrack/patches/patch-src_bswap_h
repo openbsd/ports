@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_bswap_h,v 1.1 2012/05/20 20:13:39 naddy Exp $
---- src/bswap.h.orig	Sat May 19 20:30:09 2012
-+++ src/bswap.h	Sat May 19 20:36:57 2012
-@@ -41,6 +41,7 @@
+$OpenBSD: patch-src_bswap_h,v 1.2 2013/06/07 10:03:27 benoit Exp $
+--- src/bswap.h.orig	Tue Jun  4 09:42:47 2013
++++ src/bswap.h	Fri Jun  7 11:01:28 2013
+@@ -39,6 +39,7 @@
  #   include <libkern/OSByteOrder.h>
  #   define __bswap_16(x) OSSwapInt16(x)
  #   define __bswap_32(x) OSSwapInt32(x)
@@ -9,7 +9,7 @@ $OpenBSD: patch-src_bswap_h,v 1.1 2012/05/20 20:13:39 naddy Exp $
  #elif HAVE_BYTESWAP_H
  #   include <byteswap.h>
  #else
-@@ -50,5 +51,14 @@
+@@ -48,5 +49,14 @@
  				     (((uint32_t)(x) & 0x00ff0000) >>  8) | \
  				     (((uint32_t)(x) & 0x0000ff00) <<  8) | \
                                       (((uint32_t)(x) & 0x000000ff) << 24)))
