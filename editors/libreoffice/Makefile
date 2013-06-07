@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2013/05/31 14:50:11 robert Exp $
+# $OpenBSD: Makefile,v 1.89 2013/06/07 09:07:50 sthen Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -160,7 +160,7 @@ LIB_DEPENDS-main=x11/gtk+2 \
 		${MODPY_LIB_DEPENDS} \
 		databases/postgresql \
 		graphics/lcms2 \
-		lang/gcc/4.6,-estdc>=4.6,<4.7 \
+		${MODGCC4_CPPLIBDEP} \
 		textproc/libxslt \
 		net/curl \
 		net/neon \
@@ -197,7 +197,7 @@ RUN_DEPENDS-main=	devel/desktop-file-utils \
 MODULES+=		x11/qt3
 RUN_DEPENDS-kde=	editors/libreoffice
 LIB_DEPENDS-kde=	${MODQT_LIB_DEPENDS} \
-			lang/gcc/4.6,-estdc>=4.6,<4.7 \
+			${MODGCC4_CPPLIBDEP} \
 			x11/kde/libs3
 WANTLIB-kde=		${MODQT_WANTLIB} \
 			X11 c estdc++ m pthread \
@@ -209,7 +209,7 @@ MODULES+=		java
 MODJAVA_VER=		1.6
 MODJAVA_JRERUN=		Yes
 .endif
-LIB_DEPENDS-java=	lang/gcc/4.6,-estdc>=4.6,<4.7
+LIB_DEPENDS-java=	${MODGCC4_CPPLIBDEP}
 RUN_DEPENDS-java=	${MODJAVA_RUN_DEPENDS} \
 			databases/db/v4,-java \
 			editors/libreoffice \
