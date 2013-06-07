@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.314 2013/05/30 16:01:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.315 2013/06/07 13:33:24 dcoppa Exp $
 
      SUBDIR =
      SUBDIR += ADMfzap
@@ -124,7 +124,6 @@
      SUBDIR += ocaml-ssl
      SUBDIR += onesixtyone
      SUBDIR += opencdk
-     SUBDIR += openct
      SUBDIR += openpam
      SUBDIR += opensc
      SUBDIR += ophcrack
