@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2013/04/08 08:20:26 pascal Exp $
---- Makefile.in.orig	Mon Jan 14 17:15:21 2013
-+++ Makefile.in	Sun Apr  7 17:35:19 2013
+$OpenBSD: patch-Makefile_in,v 1.2 2013/06/07 07:55:22 pascal Exp $
+--- Makefile.in.orig	Sat Mar 30 12:25:03 2013
++++ Makefile.in	Sat Jun  1 08:55:07 2013
 @@ -2343,7 +2343,7 @@ install:
  	@: $(MAKE); $(unstage)
  	@r=`${PWD_COMMAND}`; export r; \
@@ -172,7 +172,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2013/04/08 08:20:26 pascal Exp $
  	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
  	  --target=${target_alias} $${srcdiroption}  \
  	  || exit 1
-@@ -42374,7 +42374,7 @@ configure-target-libitm: 
+@@ -42364,7 +42364,7 @@ configure-target-libitm: 
  	srcdiroption="--srcdir=$${topdir}/libitm"; \
  	libsrcdir="$$s/libitm"; \
  	rm -f no-such-file || : ; \

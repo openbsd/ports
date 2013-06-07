@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_config_sparc_sparc_c,v 1.1.1.1 2013/04/08 08:20:25 pascal Exp $
---- gcc/config/sparc/sparc.c.orig	Thu Jan 10 21:38:27 2013
-+++ gcc/config/sparc/sparc.c	Wed Jan 23 22:48:29 2013
-@@ -5170,6 +5170,9 @@ sparc_expand_prologue (void)
+$OpenBSD: patch-gcc_config_sparc_sparc_c,v 1.2 2013/06/07 07:55:22 pascal Exp $
+--- gcc/config/sparc/sparc.c.orig	Mon Apr 15 10:31:12 2013
++++ gcc/config/sparc/sparc.c	Sat Jun  1 08:55:09 2013
+@@ -5173,6 +5173,9 @@ sparc_expand_prologue (void)
    if (crtl->uses_pic_offset_table)
      load_got_register ();
  

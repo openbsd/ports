@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_config_sparc_openbsd64_h,v 1.1.1.1 2013/04/08 08:20:25 pascal Exp $
---- gcc/config/sparc/openbsd64.h.orig	Tue Oct 25 10:57:25 2011
-+++ gcc/config/sparc/openbsd64.h	Sat Oct  6 12:45:48 2012
+$OpenBSD: patch-gcc_config_sparc_openbsd64_h,v 1.2 2013/06/07 07:55:22 pascal Exp $
+--- gcc/config/sparc/openbsd64.h.orig	Tue May 21 16:00:41 2013
++++ gcc/config/sparc/openbsd64.h	Sat Jun  1 08:55:09 2013
 @@ -20,7 +20,7 @@ along with GCC; see the file COPYING3.  If not see
  /* XXX - do we really want HARD_QUAD? */
  #undef TARGET_DEFAULT
@@ -22,9 +22,9 @@ $OpenBSD: patch-gcc_config_sparc_openbsd64_h,v 1.1.1.1 2013/04/08 08:20:25 pasca
  	builtin_define ("__sparc64__");		\
  	builtin_define ("__sparcv9__");		\
  	builtin_define ("__sparc_v9__");	\
-@@ -44,14 +41,18 @@ along with GCC; see the file COPYING3.  If not see
- #undef CPP_SUBTARGET_SPEC
- #define CPP_SUBTARGET_SPEC ""
+@@ -41,14 +38,18 @@ along with GCC; see the file COPYING3.  If not see
+     }						\
+   while (0)
  
 -/* Inherited from sp64-elf.  */
 -#undef NO_IMPLICIT_EXTERN_C
@@ -44,7 +44,7 @@ $OpenBSD: patch-gcc_config_sparc_openbsd64_h,v 1.1.1.1 2013/04/08 08:20:25 pasca
  
  /* Layout of source language data types.  */
  #undef WCHAR_TYPE
-@@ -60,6 +61,15 @@ along with GCC; see the file COPYING3.  If not see
+@@ -57,6 +58,15 @@ along with GCC; see the file COPYING3.  If not see
  #undef WCHAR_TYPE_SIZE
  #define WCHAR_TYPE_SIZE 32
  
@@ -60,7 +60,7 @@ $OpenBSD: patch-gcc_config_sparc_openbsd64_h,v 1.1.1.1 2013/04/08 08:20:25 pasca
  #undef LONG_DOUBLE_TYPE_SIZE
  #define LONG_DOUBLE_TYPE_SIZE 128
  
-@@ -69,6 +79,7 @@ along with GCC; see the file COPYING3.  If not see
+@@ -66,6 +76,7 @@ along with GCC; see the file COPYING3.  If not see
     %{shared:-shared} %{R*} \
     %{static:-Bstatic} \
     %{!static:-Bdynamic} \
