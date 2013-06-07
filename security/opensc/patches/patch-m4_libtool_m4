@@ -1,0 +1,17 @@
+$OpenBSD: patch-m4_libtool_m4,v 1.1 2013/06/07 13:27:58 dcoppa Exp $
+
+Use our own libtool from /usr/bin/libtool
+
+--- m4/libtool.m4.orig	Thu Jun  6 08:10:08 2013
++++ m4/libtool.m4	Thu Jun  6 08:10:37 2013
+@@ -88,10 +88,6 @@ _LT_SET_OPTIONS([$0], [$1])
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ltmain"
+ 
+-# Always use our own libtool.
+-LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+-AC_SUBST(LIBTOOL)dnl
+-
+ _LT_SETUP
+ 
+ # Only expand once:

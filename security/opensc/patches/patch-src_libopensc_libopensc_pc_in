@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_libopensc_libopensc_pc_in,v 1.1 2013/06/07 13:27:58 dcoppa Exp $
+
+Unbreak
+
+--- src/libopensc/libopensc.pc.in.orig	Thu Jun  6 15:50:04 2013
++++ src/libopensc/libopensc.pc.in	Thu Jun  6 15:50:17 2013
+@@ -6,6 +6,6 @@ includedir=@includedir@
+ Name: libopensc
+ Description: libopensc
+ Version: @VERSION@
+-Libs: -L${libdir} -lopensc -lscconf
++Libs: -L${libdir} -lopensc
+ Cflags: -I${includedir}
+ 

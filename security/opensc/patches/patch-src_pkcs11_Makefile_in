@@ -1,0 +1,117 @@
+$OpenBSD: patch-src_pkcs11_Makefile_in,v 1.1 2013/06/07 13:27:58 dcoppa Exp $
+
+Do not install shared modules under ${PREFIX}/lib/ and avoid the
+nasty symlink dance
+
+Use --tag=disable-static to disable libtool static archives for
+modules
+
+--- src/pkcs11/Makefile.in.orig	Tue Dec  4 15:43:58 2012
++++ src/pkcs11/Makefile.in	Thu Jun  6 10:28:53 2013
+@@ -74,7 +74,7 @@ am__nobase_list = $(am__nobase_strip_setup); \
+ am__base_list = \
+   sed '$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;s/\n/ /g' | \
+   sed '$$!N;$$!N;$$!N;$$!N;s/\n/ /g'
+-am__installdirs = "$(DESTDIR)$(libdir)"
++am__installdirs = "$(DESTDIR)$(pkcs11dir)"
+ LTLIBRARIES = $(lib_LTLIBRARIES)
+ am__DEPENDENCIES_1 =
+ am__DEPENDENCIES_2 = $(top_builddir)/src/libopensc/libopensc.la \
+@@ -190,6 +190,7 @@ LIBOBJS = @LIBOBJS@
+ LIBRARY_BITNESS = @LIBRARY_BITNESS@
+ LIBS = @LIBS@
+ LIBTOOL = @LIBTOOL@
++LIBTOOLFLAGS = --tag=disable-static
+ LIPO = @LIPO@
+ LN_S = @LN_S@
+ LTLIBOBJS = @LTLIBOBJS@
+@@ -385,25 +386,25 @@ $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
+ $(am__aclocal_m4_deps):
+ install-libLTLIBRARIES: $(lib_LTLIBRARIES)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(libdir)" || $(MKDIR_P) "$(DESTDIR)$(libdir)"
+-	@list='$(lib_LTLIBRARIES)'; test -n "$(libdir)" || list=; \
++	test -z "$(pkcs11dir)" || $(MKDIR_P) "$(DESTDIR)$(pkcs11dir)"
++	@list='$(lib_LTLIBRARIES)'; test -n "$(pkcs11dir)" || list=; \
+ 	list2=; for p in $$list; do \
+ 	  if test -f $$p; then \
+ 	    list2="$$list2 $$p"; \
+ 	  else :; fi; \
+ 	done; \
+ 	test -z "$$list2" || { \
+-	  echo " $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL) $(INSTALL_STRIP_FLAG) $$list2 '$(DESTDIR)$(libdir)'"; \
+-	  $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL) $(INSTALL_STRIP_FLAG) $$list2 "$(DESTDIR)$(libdir)"; \
++	  echo " $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL) $(INSTALL_STRIP_FLAG) $$list2 '$(DESTDIR)$(pkcs11dir)'"; \
++	  $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL) $(INSTALL_STRIP_FLAG) $$list2 "$(DESTDIR)$(pkcs11dir)"; \
+ 	}
+ 
+ uninstall-libLTLIBRARIES:
+ 	@$(NORMAL_UNINSTALL)
+-	@list='$(lib_LTLIBRARIES)'; test -n "$(libdir)" || list=; \
++	@list='$(lib_LTLIBRARIES)'; test -n "$(pkcs11dir)" || list=; \
+ 	for p in $$list; do \
+ 	  $(am__strip_dir) \
+-	  echo " $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=uninstall rm -f '$(DESTDIR)$(libdir)/$$f'"; \
+-	  $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=uninstall rm -f "$(DESTDIR)$(libdir)/$$f"; \
++	  echo " $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=uninstall rm -f '$(DESTDIR)$(pkcs11dir)/$$f'"; \
++	  $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=uninstall rm -f "$(DESTDIR)$(pkcs11dir)/$$f"; \
+ 	done
+ 
+ clean-libLTLIBRARIES:
+@@ -424,9 +425,9 @@ $(top_builddir)/win32/versioninfo.lo:  \
+ 	$(top_builddir)/win32/$(am__dirstamp) \
+ 	$(top_builddir)/win32/$(DEPDIR)/$(am__dirstamp)
+ opensc-pkcs11.la: $(opensc_pkcs11_la_OBJECTS) $(opensc_pkcs11_la_DEPENDENCIES) 
+-	$(AM_V_CCLD)$(opensc_pkcs11_la_LINK) -rpath $(libdir) $(opensc_pkcs11_la_OBJECTS) $(opensc_pkcs11_la_LIBADD) $(LIBS)
++	$(AM_V_CCLD)$(opensc_pkcs11_la_LINK) -rpath $(pkcs11dir) $(opensc_pkcs11_la_OBJECTS) $(opensc_pkcs11_la_LIBADD) $(LIBS)
+ pkcs11-spy.la: $(pkcs11_spy_la_OBJECTS) $(pkcs11_spy_la_DEPENDENCIES) 
+-	$(AM_V_CCLD)$(pkcs11_spy_la_LINK) -rpath $(libdir) $(pkcs11_spy_la_OBJECTS) $(pkcs11_spy_la_LIBADD) $(LIBS)
++	$(AM_V_CCLD)$(pkcs11_spy_la_LINK) -rpath $(pkcs11dir) $(pkcs11_spy_la_OBJECTS) $(pkcs11_spy_la_LIBADD) $(LIBS)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT)
+@@ -566,7 +567,7 @@ check-am: all-am
+ check: check-am
+ all-am: Makefile $(LTLIBRARIES) $(SCRIPTS)
+ installdirs:
+-	for dir in "$(DESTDIR)$(libdir)"; do \
++	for dir in "$(DESTDIR)$(pkcs11dir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+ 	done
+ install: install-am
+@@ -628,7 +629,6 @@ install-dvi-am:
+ 
+ install-exec-am: install-libLTLIBRARIES
+ 	@$(NORMAL_INSTALL)
+-	$(MAKE) $(AM_MAKEFLAGS) install-exec-hook
+ install-html: install-html-am
+ 
+ install-html-am:
+@@ -676,7 +676,7 @@ uninstall-am: uninstall-libLTLIBRARIES
+ 	distclean-compile distclean-generic distclean-libtool \
+ 	distclean-tags distdir dvi dvi-am html html-am info info-am \
+ 	install install-am install-data install-data-am install-dvi \
+-	install-dvi-am install-exec install-exec-am install-exec-hook \
++	install-dvi-am install-exec install-exec-am \
+ 	install-html install-html-am install-info install-info-am \
+ 	install-libLTLIBRARIES install-man install-pdf install-pdf-am \
+ 	install-ps install-ps-am install-strip installcheck \
+@@ -700,18 +700,6 @@ pkcs11-jar: jar-dir
+ 	cp opensc_pkcs11_install.js jar-dir
+ 	signtool -Z"opensc-pkcs11.jar" -i"opensc_pkcs11_install.js" \
+ 		 -k"testcert" jar-dir
+-
+-@WIN32_TRUE@install-exec-hook:
+-@WIN32_TRUE@	$(MKDIR_P) "$(DESTDIR)$(libdir)"
+-@WIN32_TRUE@	for l in opensc-pkcs11.dll pkcs11-spy.dll; do \
+-@WIN32_TRUE@		mv "$(DESTDIR)$(libdir)/$$l" "$(DESTDIR)$(bindir)/$$l"; \
+-@WIN32_TRUE@	done
+-@WIN32_FALSE@install-exec-hook:
+-@WIN32_FALSE@	$(MKDIR_P) "$(DESTDIR)$(pkcs11dir)"
+-@WIN32_FALSE@	for l in opensc-pkcs11$(PKCS11_SUFFIX) pkcs11-spy$(PKCS11_SUFFIX); do \
+-@WIN32_FALSE@		rm -f "$(DESTDIR)$(pkcs11dir)/$$l"; \
+-@WIN32_FALSE@		$(LN_S) ../$$l "$(DESTDIR)$(pkcs11dir)/$$l"; \
+-@WIN32_FALSE@	done
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

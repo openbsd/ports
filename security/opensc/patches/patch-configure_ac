@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure_ac,v 1.1 2013/06/07 13:27:58 dcoppa Exp $
+
+libdl is not required on OpenBSD
+
+--- configure.ac.orig	Tue Dec  4 15:43:40 2012
++++ configure.ac	Thu Jun  6 10:20:51 2013
+@@ -285,14 +285,6 @@ AC_CHECK_LIB(
+ )
+ 
+ if test "${WIN32}" = "no"; then
+-	dnl dl support
+-	AC_CHECK_LIB(
+-		[dl],
+-		[dlopen],
+-		,
+-		[AC_MSG_ERROR([libdl required])]
+-	)
+-
+ 	dnl Special check for pthread support.
+ 	AX_PTHREAD(
+ 		[AC_DEFINE(

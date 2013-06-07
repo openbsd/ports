@@ -1,50 +1,47 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/21 08:48:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2013/06/07 13:27:58 dcoppa Exp $
+
+SHARED_ONLY=	Yes
 
 COMMENT=	set of libraries and utilities to access smart cards
 
-DISTNAME=	opensc-0.11.13
-REVISION=	1
+DISTNAME=	opensc-0.13.0
 CATEGORIES=	security
-SHARED_LIBS +=  scconf               2.0      # .1.0
-SHARED_LIBS +=  opensc               2.0      # .1.0
-SHARED_LIBS +=  pkcs15init           2.0      # .1.0
-SHARED_LIBS +=  opensc               2.0      # .1.0
-SHARED_LIBS +=  pkcs15init           2.0      # .1.0
-MODGNU_SHARED_LIBS=opensc	'' \
-		pkcs15init	'' \
-		scam		'' \
-		scconf		'' \
-		pkcs11		''
+
+SHARED_LIBS +=  opensc 3.0	# 3.0
+SHARED_LIBS +=	smm-local 0.0	# 3.0
 
 HOMEPAGE=	http://www.opensc-project.org/
+
+MAINTAINER=	David Coppa <dcoppa@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${HOMEPAGE}/files/opensc/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=opensc/}
 
-WANTLIB=	c crypto ltdl ncurses readline z openct>=1
+WANTLIB=	c crypto ncurses pthread readline z
 
-LIB_DEPENDS=	security/openct
+BUILD_DEPENDS=	textproc/docbook-xsl \
+		security/pcsc-lite
+RUN_DEPENDS=	security/ccid
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 
-CONFIGURE_STYLE=gnu old
+CONFIGURE_STYLE=autoconf
+AUTOCONF_VERSION=2.67
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-static \
 		--sysconfdir=${SYSCONFDIR} \
-		--enable-openct \
-		--sysconfdir=${SYSCONFDIR}
-CONFIGURE_ENV=	PTHREAD_LIBS=-pthread \
-		LTLIB_CFLAGS="-I${LOCALBASE}/include" \
-		LTLIB_LIBS="-L${LOCALBASE}/lib -lltdl"
+		--enable-sm \
+		--with-xsl-stylesheetsdir=${LOCALBASE}/share/xsl/docbook
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/PCSC"
 
-FAKE_FLAGS=	mandir="${PREFIX}/man/"
+FAKE_FLAGS=	mandir="${PREFIX}/man/" \
+		sysconfdir="${PREFIX}/share/examples/opensc/"
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/opensc
-	${INSTALL_DATA} ${WRKSRC}/etc/opensc.conf \
-		${PREFIX}/share/examples/opensc
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/pkgconfig
+	${INSTALL_DATA} ${WRKBUILD}/src/libopensc/libopensc.pc \
+		${PREFIX}/lib/pkgconfig/
 
 .include <bsd.port.mk>

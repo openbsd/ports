@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/09/14 10:32:06 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/06/07 13:27:58 dcoppa Exp $
 %%SHARED%%
-bin/cardos-info
 @bin bin/cardos-tool
 @bin bin/cryptoflex-tool
 @bin bin/eidenv
+@bin bin/iasecc-tool
 @bin bin/netkey-tool
-bin/opensc-config
+@bin bin/openpgp-tool
 @bin bin/opensc-explorer
 @bin bin/opensc-tool
 @bin bin/piv-tool
@@ -13,115 +13,36 @@ bin/opensc-config
 @bin bin/pkcs15-crypt
 @bin bin/pkcs15-init
 @bin bin/pkcs15-tool
-@bin bin/rutoken-tool
+@bin bin/sc-hsm-tool
 @bin bin/westcos-tool
-include/opensc/
-include/opensc/asn1.h
-include/opensc/cardctl.h
-include/opensc/compression.h
-include/opensc/emv.h
-include/opensc/errors.h
-include/opensc/log.h
-include/opensc/opensc.h
-include/opensc/pkcs11-opensc.h
-include/opensc/pkcs11.h
-include/opensc/pkcs15-init.h
-include/opensc/pkcs15.h
-include/opensc/scconf.h
-include/opensc/types.h
-include/opensc/ui.h
 lib/libopensc.a
 lib/libopensc.la
-lib/libpkcs15init.a
-lib/libpkcs15init.la
-lib/libscconf.a
-lib/libscconf.la
-lib/mozilla/
-lib/mozilla/plugins/
-lib/onepin-opensc-pkcs11.a
-lib/onepin-opensc-pkcs11.la
-lib/opensc-pkcs11.a
-lib/opensc-pkcs11.la
+@lib lib/libopensc.so.${LIBopensc_VERSION}
+lib/libsmm-local.a
+lib/libsmm-local.la
+@lib lib/libsmm-local.so.${LIBsmm-local_VERSION}
 lib/pkcs11/
-lib/pkcs11-spy.a
-lib/pkcs11-spy.la
-lib/pkgconfig/
+lib/pkcs11/opensc-pkcs11.la
+lib/pkcs11/pkcs11-spy.la
 lib/pkgconfig/libopensc.pc
-lib/pkgconfig/libpkcs15init.pc
-lib/pkgconfig/libscconf.pc
 @man man/man1/cardos-tool.1
 @man man/man1/cryptoflex-tool.1
+@man man/man1/eidenv.1
+@man man/man1/iasecc-tool.1
 @man man/man1/netkey-tool.1
-@man man/man1/opensc-config.1
+@man man/man1/openpgp-tool.1
 @man man/man1/opensc-explorer.1
 @man man/man1/opensc-tool.1
+@man man/man1/piv-tool.1
 @man man/man1/pkcs11-tool.1
 @man man/man1/pkcs15-crypt.1
 @man man/man1/pkcs15-init.1
 @man man/man1/pkcs15-tool.1
+@man man/man1/sc-hsm-tool.1
 @man man/man1/westcos-tool.1
-@man man/man3/sc_app_info_t.3
-@man man/man3/sc_append_record.3
-@man man/man3/sc_asn1_decode.3
-@man man/man3/sc_asn1_encode.3
-@man man/man3/sc_asn1_entry.3
-@man man/man3/sc_asn1_find_tag.3
-@man man/man3/sc_asn1_print_tags.3
-@man man/man3/sc_asn1_put_tag.3
-@man man/man3/sc_asn1_read_tag.3
-@man man/man3/sc_asn1_skip_tag.3
-@man man/man3/sc_asn1_verify_tag.3
-@man man/man3/sc_base64_decode.3
-@man man/man3/sc_base64_encode.3
-@man man/man3/sc_card_ctl.3
-@man man/man3/sc_card_t.3
-@man man/man3/sc_card_valid.3
-@man man/man3/sc_check_sw.3
-@man man/man3/sc_connect_card.3
-@man man/man3/sc_copy_asn1_entry.3
-@man man/man3/sc_create_file.3
-@man man/man3/sc_delete_file.3
-@man man/man3/sc_delete_record.3
-@man man/man3/sc_der_clear.3
-@man man/man3/sc_der_copy.3
-@man man/man3/sc_detect_card_presence.3
-@man man/man3/sc_disconnect_card.3
-@man man/man3/sc_enum_apps.3
-@man man/man3/sc_establish_context.3
-@man man/man3/sc_file_dup.3
-@man man/man3/sc_file_free.3
-@man man/man3/sc_file_new.3
-@man man/man3/sc_file_t.3
-@man man/man3/sc_find_app_by_aid.3
-@man man/man3/sc_find_pkcs15_app.3
-@man man/man3/sc_format_apdu.3
-@man man/man3/sc_format_asn1_entry.3
-@man man/man3/sc_free_apps.3
-@man man/man3/sc_get_cache_dir.3
-@man man/man3/sc_get_challenge.3
-@man man/man3/sc_get_data.3
-@man man/man3/sc_list_files.3
-@man man/man3/sc_lock.3
-@man man/man3/sc_make_cache_dir.3
-@man man/man3/sc_put_data.3
-@man man/man3/sc_read_binary.3
-@man man/man3/sc_read_record.3
-@man man/man3/sc_release_context.3
-@man man/man3/sc_select_file.3
-@man man/man3/sc_set_card_driver.3
-@man man/man3/sc_strerror.3
-@man man/man3/sc_transmit_apdu.3
-@man man/man3/sc_unlock.3
-@man man/man3/sc_update_binary.3
-@man man/man3/sc_update_dir.3
-@man man/man3/sc_update_record.3
-@man man/man3/sc_wait_for_event.3
-@man man/man3/sc_write_binary.3
-@man man/man3/sc_write_record.3
 @man man/man5/pkcs15-profile.5
-share/doc/opensc/
-share/doc/opensc/NEWS
-share/doc/opensc/README
+@comment share/doc/opensc/
+@comment share/doc/opensc/NEWS
 share/examples/opensc/
 share/examples/opensc/opensc.conf
 @mode 644
@@ -129,20 +50,31 @@ share/examples/opensc/opensc.conf
 @mode
 share/opensc/
 share/opensc/asepcos.profile
+share/opensc/authentic.profile
 share/opensc/cardos.profile
 share/opensc/cyberflex.profile
 share/opensc/entersafe.profile
+share/opensc/epass2003.profile
 share/opensc/flex.profile
 share/opensc/gpk.profile
+share/opensc/ias_adele_admin1.profile
+share/opensc/ias_adele_admin2.profile
+share/opensc/ias_adele_common.profile
+share/opensc/iasecc.profile
+share/opensc/iasecc_admin_eid.profile
+share/opensc/iasecc_generic_oberthur.profile
+share/opensc/iasecc_generic_pki.profile
 share/opensc/incrypto34.profile
 share/opensc/jcop.profile
 share/opensc/miocos.profile
 share/opensc/muscle.profile
 share/opensc/myeid.profile
 share/opensc/oberthur.profile
+share/opensc/openpgp.profile
 share/opensc/pkcs15.profile
 share/opensc/rutoken.profile
 share/opensc/rutoken_ecp.profile
+share/opensc/sc-hsm.profile
 share/opensc/setcos.profile
 share/opensc/starcos.profile
 share/opensc/westcos.profile
