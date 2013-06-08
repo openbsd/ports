@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.92 2013/06/03 02:46:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.93 2013/06/08 19:39:28 naddy Exp $
 
 COMMENT=	library for manipulating PNG images
 
-VERSION=	1.5.15
-REVISION=	1
+VERSION=	1.6.2
 DISTNAME=	libpng-${VERSION}
 PKGNAME=	png-${VERSION}
-SHARED_LIBS=	png15	16.0 \
-		png	16.0
+SHARED_LIBS=	png16	17.0 \
+		png	17.0
 CATEGORIES=	graphics
 DPB_PROPERTIES=	parallel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libpng/}
@@ -25,6 +24,6 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 post-install:
 	cd ${PREFIX}/lib; \
-	    ln -s libpng15.so.${LIBpng15_VERSION} libpng.so.${LIBpng_VERSION}
+	    ln -s libpng16.so.${LIBpng16_VERSION} libpng.so.${LIBpng_VERSION}
 
 .include <bsd.port.mk>
