@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2013/05/31 15:35:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.105 2013/06/08 10:50:13 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,8 +6,7 @@ COMMENT=		components for the GNOME desktop
 
 GNOME_PROJECT=		gnome-desktop
 # sync with meta/gnome "V" variable
-GNOME_VERSION=		3.8.2
-REVISION=		1
+GNOME_VERSION=		3.8.3
 
 SHARED_LIBS +=  gnome-desktop-3      2.0      # 4.0
 
@@ -22,7 +21,7 @@ WANTLIB += c cairo cairo-gobject dbus-1 expat ffi fontconfig freetype
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png pthread pthread-stubs xcb xcb-render xcb-shm
+WANTLIB += pixman-1 png15 pthread pthread-stubs xcb xcb-render xcb-shm
 WANTLIB += xkbfile z
 
 MODULES=		devel/gettext \
