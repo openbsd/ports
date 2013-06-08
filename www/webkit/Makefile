@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2013/06/04 18:41:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.88 2013/06/08 11:59:46 landry Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -11,7 +11,7 @@ EPOCH =		0
 CATEGORIES =	www
 DPB_PROPERTIES =parallel
 EXTRACT_SUFX=	.tar.xz
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://webkitgtk.org/
 MASTER_SITES =	${HOMEPAGE}/releases/
@@ -38,6 +38,7 @@ CONFIGURE_STYLE =	gnu
 
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lX11" \
+		PORTHOME=${WRKDIST} \
 		ac_cv_path_FLEX=${LOCALBASE}/bin/gflex \
 		ac_cv_path_RUBY=${RUBY}
 
