@@ -1,10 +1,10 @@
-$OpenBSD: patch-dialects_n+obsd_dstore_c,v 1.1 2011/06/30 19:13:58 jasper Exp $
+$OpenBSD: patch-dialects_n+obsd_dstore_c,v 1.2 2013/06/08 11:40:49 dcoppa Exp $
 
-Adjust after FMARK/FDEFER removal.
+Adjust after FMARK/FDEFER/FHASLOCK removal.
 
---- dialects/n+obsd/dstore.c.orig	Thu Jun 30 09:26:50 2011
-+++ dialects/n+obsd/dstore.c	Thu Jun 30 09:28:19 2011
-@@ -103,8 +103,12 @@ struct pff_tab Pff_tab[] = {
+--- dialects/n+obsd/dstore.c.orig	Thu Dec 30 19:42:32 2004
++++ dialects/n+obsd/dstore.c	Sat Jun  8 10:26:55 2013
+@@ -103,9 +103,15 @@ struct pff_tab Pff_tab[] = {
  	{ (long)FRSYNC,		FF_RSYNC	},
  # endif	/* defined(FRSYNC( */
  
@@ -14,6 +14,9 @@ Adjust after FMARK/FDEFER removal.
 +# if	defined(FDEFER)
  	{ (long)FDEFER,		FF_DEFER	},
 +# endif /* defined(FDEFER) */
++# if	defined(FHASLOCK)
  	{ (long)FHASLOCK,	FF_HASLOCK	},
++# endif /* defined(FHASLOCK) */
  	{ (long)O_NOCTTY,	FF_NOCTTY	},
  	{ (long)0,		NULL 		}
+ };
