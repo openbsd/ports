@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.107 2013/06/04 15:32:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.108 2013/06/08 11:16:24 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	GNOME settings daemon
 
 GNOME_PROJECT=	gnome-settings-daemon
-GNOME_VERSION=	3.8.2
-REVISION=	2
+GNOME_VERSION=	3.8.3
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,7 +19,7 @@ WANTLIB += freetype gdbm gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gnome-desktop-3 gobject-2.0 graphite2 gssapi
 WANTLIB += gthread-2.0 gtk-3 harfbuzz ibus-1.0
 WANTLIB += json-c krb5 lcms2 ltdl m notify ogg pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += pangoft2-1.0 pcre pixman-1 png15 pthread pthread-stubs
 WANTLIB += pulse pulse-mainloop-glib sndfile ssl upower-glib vorbis
 WANTLIB += vorbisenc vorbisfile xcb xcb-render xcb-shm xkbfile
 WANTLIB += z
