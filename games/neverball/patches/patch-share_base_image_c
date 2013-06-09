@@ -1,0 +1,15 @@
+$OpenBSD: patch-share_base_image_c,v 1.1 2013/06/09 14:49:22 naddy Exp $
+
+Fix build with png-1.6.
+
+--- share/base_image.c.orig	Sun Sep 20 12:06:00 2009
++++ share/base_image.c	Sun Jun  9 16:46:44 2013
+@@ -94,7 +94,7 @@ static void *image_load_png(const char *filename, int 
+         default: longjmp(png_jmpbuf(readp), -1);
+         }
+ 
+-        if (!(bytep = png_malloc(readp, h * png_sizeof(png_bytep))))
++        if (!(bytep = png_malloc(readp, h * sizeof(png_bytep))))
+             longjmp(png_jmpbuf(readp), -1);
+ 
+         /* Allocate the final pixel buffer and read pixels there. */
