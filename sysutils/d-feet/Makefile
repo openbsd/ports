@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2013/05/25 08:52:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2013/06/09 10:38:14 ajacoutot Exp $
 
 COMMENT=		dbus debugger
 
-GNOME_VERSION=		0.3.4
-REVISION=		0
+GNOME_VERSION=		0.3.5
 GNOME_PROJECT=		d-feet
 MODPY_EGG_VERSION=	${GNOME_VERSION}
 
@@ -20,11 +19,10 @@ MODULES=		devel/dconf \
 
 MODGNOME_TOOLS=		yelp
 
-# needed for tests
-BUILD_DEPENDS=		devel/pep8 \
-			x11/gtk+3
+BUILD_DEPENDS=		x11/gtk+3
 
-TEST_IS_INTERACTIVE=	x11
+# needed for tests
+BUILD_DEPENDS +=	devel/pep8
 
 RUN_DEPENDS=		devel/desktop-file-utils \
 			devel/py-gobject3 \
@@ -33,6 +31,8 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 
 MODPY_ADJ_FILES=	src/d-feet.in \
 			src/tests/tests.py
+
+TEST_IS_INTERACTIVE=	x11
 
 CONFIGURE_STYLE=	gnu
 

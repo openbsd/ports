@@ -1,7 +1,7 @@
-$OpenBSD: patch-data_Makefile_in,v 1.1 2013/05/25 08:52:22 sthen Exp $
---- data/Makefile.in.orig	Fri May 24 23:24:02 2013
-+++ data/Makefile.in	Fri May 24 23:24:31 2013
-@@ -291,7 +291,7 @@ gsettings_SCHEMAS = org.gnome.d-feet.gschema.xml
+$OpenBSD: patch-data_Makefile_in,v 1.2 2013/06/09 10:38:14 ajacoutot Exp $
+--- data/Makefile.in.orig	Sun Jun  9 12:05:08 2013
++++ data/Makefile.in	Sun Jun  9 12:32:28 2013
+@@ -359,7 +359,7 @@ gsettings_SCHEMAS = org.gnome.d-feet.gschema.xml
  desktopdir = $(datadir)/applications
  desktop_in_files = d-feet.desktop.in
  desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
