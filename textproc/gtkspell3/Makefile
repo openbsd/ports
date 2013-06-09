@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2013/06/09 13:55:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2013/06/09 15:26:50 ajacoutot Exp $
 
 COMMENT=	gtk+3 spelling checker
 
 DISTNAME=	gtkspell3-3.0.3
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  gtkspell3-3          0.1      # 1.0
 
@@ -23,7 +23,7 @@ WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 gtk-3 m
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += pthread pthread-stubs stdc++ xcb xcb-render xcb-shm
-WANTLIB += harfbuzz z graphite2 png16
+WANTLIB += harfbuzz z graphite2 png
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gtkspell/}
 
