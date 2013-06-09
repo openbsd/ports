@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2013/06/08 10:43:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2013/06/09 13:55:51 ajacoutot Exp $
 
 COMMENT=		graphic library for gtk+2
 
 GNOME_PROJECT=		gdk-pixbuf
 GNOME_VERSION=		2.28.2
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -18,7 +19,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += X11 c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += jasper jpeg m pcre png15 pthread tiff xcb z
+WANTLIB += jasper jpeg m pcre png16 pthread tiff xcb z
 
 MODULES=		devel/gettext \
 			x11/gnome
