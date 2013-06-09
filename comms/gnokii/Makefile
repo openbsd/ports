@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2013/03/21 08:45:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2013/06/09 10:25:05 ajacoutot Exp $
 
 COMMENT=	tools to talk to GSM cellular phones
 
@@ -10,7 +10,7 @@ SHARED_LIBS +=	gnokii               2.7      # .3.0
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 HOMEPAGE=	http://www.gnokii.org/
-MASTER_SITES=	${HOMEPAGE}download/gnokii/
+MASTER_SITES=	ftp://ftp.slackware.pl/pub/gnokii/gnokii/0.6.x/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
