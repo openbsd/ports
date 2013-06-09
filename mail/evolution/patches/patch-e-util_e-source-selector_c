@@ -1,13 +1,13 @@
-$OpenBSD: patch-e-util_e-source-selector_c,v 1.1 2013/05/14 12:36:36 ajacoutot Exp $
+$OpenBSD: patch-e-util_e-source-selector_c,v 1.2 2013/06/09 10:00:45 ajacoutot Exp $
 
 From f0ee8d9c24fc1725408ddcddb68a6938562749cc Mon Sep 17 00:00:00 2001
 From: Milan Crha <mcrha@redhat.com>
 Date: Tue, 14 May 2013 10:02:32 +0000
 Subject: Bug #699980 - Calendar delete does not remove events from view
 
---- e-util/e-source-selector.c.orig	Wed May  8 14:03:18 2013
-+++ e-util/e-source-selector.c	Tue May 14 13:58:48 2013
-@@ -1638,6 +1638,11 @@ e_source_selector_unselect_source (ESourceSelector *se
+--- e-util/e-source-selector.c.orig	Mon May 20 21:34:52 2013
++++ e-util/e-source-selector.c	Sun Jun  9 11:22:49 2013
+@@ -1607,6 +1607,11 @@ e_source_selector_select_source (ESourceSelector *sele
  	/* Make sure the ESource is in our tree model. */
  	source_index = selector->priv->source_index;
  	reference = g_hash_table_lookup (source_index, source);

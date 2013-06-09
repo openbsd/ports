@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.37 2013/05/12 15:31:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.38 2013/06/09 10:00:45 ajacoutot Exp $
 @conflict evolution-plugins-<=3.2.2p0
 @pkgpath mail/evolution
 @bin bin/evolution
@@ -329,6 +329,8 @@ include/evolution-${R}/e-util/gal-view-new-dialog.h
 include/evolution-${R}/e-util/gal-view.h
 include/evolution-${R}/em-format/
 include/evolution-${R}/em-format/e-mail-extension-registry.h
+include/evolution-${R}/em-format/e-mail-formatter-enums.h
+include/evolution-${R}/em-format/e-mail-formatter-enumtypes.h
 include/evolution-${R}/em-format/e-mail-formatter-extension.h
 include/evolution-${R}/em-format/e-mail-formatter-print.h
 include/evolution-${R}/em-format/e-mail-formatter-quote.h

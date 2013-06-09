@@ -1,10 +1,10 @@
-$OpenBSD: patch-mail_Makefile_in,v 1.3 2013/04/14 16:53:54 ajacoutot Exp $
+$OpenBSD: patch-mail_Makefile_in,v 1.4 2013/06/09 10:00:45 ajacoutot Exp $
 
 XXX push upstream
 
---- mail/Makefile.in.orig	Sun Apr 14 17:29:18 2013
-+++ mail/Makefile.in	Sun Apr 14 18:22:20 2013
-@@ -725,8 +725,7 @@ libevolution_mail_la_LIBADD = \
+--- mail/Makefile.in.orig	Sat Jun  8 20:33:20 2013
++++ mail/Makefile.in	Sun Jun  9 11:22:54 2013
+@@ -724,8 +724,7 @@ libevolution_mail_la_LIBADD = \
  	$(CANBERRA_LIBS)				\
  	$(GTKHTML_LIBS)					\
  	$(SMIME_LIBS)					\
@@ -14,7 +14,7 @@ XXX push upstream
  
  libevolution_mail_la_LDFLAGS = -avoid-version $(NO_UNDEFINED)
  libevolution_mail_la_DEPENDENCIES = em-filter-i18n.h
-@@ -742,8 +741,7 @@ test_mail_autoconfig_SOURCES = \
+@@ -741,8 +740,7 @@ test_mail_autoconfig_SOURCES = \
  
  test_mail_autoconfig_LDADD = \
  	$(EVOLUTION_DATA_SERVER_LIBS)			\
