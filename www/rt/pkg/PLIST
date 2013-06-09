@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2013/06/04 15:14:24 robert Exp $
+@comment $OpenBSD: PLIST,v 1.14 2013/06/09 21:51:58 robert Exp $
 bin/rt
 bin/rt-crontool
 bin/rt-mailgate
@@ -562,7 +562,7 @@ share/examples/rt3/upgrade/4.0.13/schema.Oracle
 share/examples/rt3/upgrade/4.0.13/schema.Pg
 @sample ${SYSCONFDIR}/rt3/upgrade/4.0.13/schema.Pg
 share/examples/rt3/upgrade/4.0.13/schema.mysql
-@sample ${SYSCONFDIR}s/rt3/upgrade/4.0.13/schema.mysql
+@sample ${SYSCONFDIR}/rt3/upgrade/4.0.13/schema.mysql
 share/examples/rt3/upgrade/4.0.3/
 @sample ${SYSCONFDIR}/rt3/upgrade/4.0.3/
 share/examples/rt3/upgrade/4.0.3/content
