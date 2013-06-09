@@ -1,10 +1,48 @@
-$OpenBSD: patch-libproxy_url_cpp,v 1.2 2013/05/08 16:14:34 ajacoutot Exp $
+$OpenBSD: patch-libproxy_url_cpp,v 1.3 2013/06/09 09:40:19 ajacoutot Exp $
 
 https://code.google.com/p/libproxy/source/detail?r=870
+https://code.google.com/p/libproxy/issues/detail?id=196&thanks=196&ts=1370457244
 
---- libproxy/url.cpp.orig	Wed May  8 18:02:23 2013
-+++ libproxy/url.cpp	Wed May  8 18:02:51 2013
-@@ -403,6 +403,7 @@ char* url::get_pac() {
+--- libproxy/url.cpp.orig	Tue Oct 16 13:52:03 2012
++++ libproxy/url.cpp	Wed Jun  5 17:57:46 2013
+@@ -46,6 +46,10 @@
+ using namespace libproxy;
+ using namespace std;
+ 
++#ifndef WIN32
++static pthread_mutex_t servmtx = PTHREAD_MUTEX_INITIALIZER;
++#endif
++
+ // This mime type should be reported by the web server
+ #define PAC_MIME_TYPE "application/x-ns-proxy-autoconfig"
+ // Fall back to checking for this mime type, which servers often report wrong
+@@ -57,14 +61,22 @@ using namespace std;
+ static inline int get_default_port(string scheme) {
+ 	struct servent *serv;
+ 	size_t plus = scheme.find('+');
++	int ret = 0;
+ 
+ 	if (plus != string::npos)
+ 		scheme = scheme.substr(plus + 1);
+ 
+-	if ((serv = getservbyname(scheme.c_str(), NULL)))
+-		return ntohs(serv->s_port);
++#ifndef WIN32
++	pthread_mutex_lock(&servmtx);
++#endif
++	serv = getservbyname(scheme.c_str(), NULL);
++	if (serv)
++		ret = ntohs(serv->s_port);
++#ifndef WIN32
++	pthread_mutex_unlock(&servmtx);
++#endif
+ 
+-	return 0;
++	return ret;
+ }
+ 
+ template <class T>
+@@ -403,6 +415,7 @@ char* url::get_pac() {
  				buffer = NULL;
  			}
  		}
@@ -12,7 +50,7 @@ https://code.google.com/p/libproxy/source/detail?r=870
  		return buffer;
  	}
  
-@@ -496,6 +497,7 @@ char* url::get_pac() {
+@@ -496,6 +509,7 @@ char* url::get_pac() {
  
  	// Clean up
  	shutdown(sock, SHUT_RDWR);

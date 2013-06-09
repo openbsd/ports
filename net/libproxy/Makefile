@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2013/05/08 16:14:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2013/06/09 09:40:19 ajacoutot Exp $
 
 # sync with ONLY_FOR_ARCHS in devel/spidermonkey
 ONLY_FOR_ARCHS-mozilla=	alpha amd64 i386 hppa mips64el mips64 powerpc sparc64
@@ -16,7 +16,9 @@ PKGNAME-main=		libproxy-${VERSION}
 PKGNAME-mozilla=	libproxy-mozilla-${VERSION}
 PKGNAME-webkit=		libproxy-webkit-${VERSION}
 
-REVISION-main=		0
+REVISION-main=		1
+REVISION-mozilla=	0
+REVISION-webkit=	0
 
 CATEGORIES=		net
 
@@ -58,10 +60,10 @@ RUN_DEPENDS-webkit=	${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-webkit=	STEM->=${VERSION}:${BUILD_PKGPATH}, \
 			www/webkit,gtk3
 
-cWANTLIB += m stdc++
+cWANTLIB += m pthread stdc++
 
 WANTLIB-main += ${cWANTLIB} ${MODGETTEXT_WANTLIB}
-WANTLIB-main += c gio-2.0 glib-2.0 gobject-2.0 perl pthread
+WANTLIB-main += c gio-2.0 glib-2.0 gobject-2.0 perl
 
 WANTLIB-mozilla += ${cWANTLIB} mozjs185 nspr4 plc4 plds4 proxy
 
