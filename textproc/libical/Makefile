@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/21 08:48:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2013/06/09 10:53:42 ajacoutot Exp $
 
 COMMENT=	implementation of basic iCAL protocols
 
-DISTNAME=	libical-0.48
-REVISION=	0
+DISTNAME=	libical-1.0
 
 SHARED_LIBS +=  ical                 2.0      # 48.0
 SHARED_LIBS +=  icalss               2.0      # 48.0
@@ -18,6 +17,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freeassociation/}
 # MPL/LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB += pthread
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
