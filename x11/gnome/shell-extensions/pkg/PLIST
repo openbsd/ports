@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/05/14 08:59:34 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/06/10 15:21:12 jasper Exp $
 share/applications/gnome-shell-classic.desktop
 share/glib-2.0/schemas/org.gnome.shell.extensions.alternative-status-menu.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.auto-move-windows.gschema.xml
+share/glib-2.0/schemas/org.gnome.shell.extensions.classic-overrides.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.example.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.native-window-placement.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.user-theme.gschema.xml
@@ -30,11 +31,6 @@ share/gnome-shell/extensions/auto-move-windows@gnome-shell-extensions.gcampax.gi
 share/gnome-shell/extensions/auto-move-windows@gnome-shell-extensions.gcampax.github.com/metadata.json
 share/gnome-shell/extensions/auto-move-windows@gnome-shell-extensions.gcampax.github.com/prefs.js
 share/gnome-shell/extensions/auto-move-windows@gnome-shell-extensions.gcampax.github.com/stylesheet.css
-share/gnome-shell/extensions/default-min-max@gnome-shell-extensions.gcampax.github.com/
-share/gnome-shell/extensions/default-min-max@gnome-shell-extensions.gcampax.github.com/convenience.js
-share/gnome-shell/extensions/default-min-max@gnome-shell-extensions.gcampax.github.com/extension.js
-share/gnome-shell/extensions/default-min-max@gnome-shell-extensions.gcampax.github.com/metadata.json
-share/gnome-shell/extensions/default-min-max@gnome-shell-extensions.gcampax.github.com/stylesheet.css
 share/gnome-shell/extensions/drive-menu@gnome-shell-extensions.gcampax.github.com/
 share/gnome-shell/extensions/drive-menu@gnome-shell-extensions.gcampax.github.com/convenience.js
 share/gnome-shell/extensions/drive-menu@gnome-shell-extensions.gcampax.github.com/extension.js
@@ -62,11 +58,6 @@ share/gnome-shell/extensions/places-menu@gnome-shell-extensions.gcampax.github.c
 share/gnome-shell/extensions/places-menu@gnome-shell-extensions.gcampax.github.com/metadata.json
 share/gnome-shell/extensions/places-menu@gnome-shell-extensions.gcampax.github.com/placeDisplay.js
 share/gnome-shell/extensions/places-menu@gnome-shell-extensions.gcampax.github.com/stylesheet.css
-share/gnome-shell/extensions/static-workspaces@gnome-shell-extensions.gcampax.github.com/
-share/gnome-shell/extensions/static-workspaces@gnome-shell-extensions.gcampax.github.com/convenience.js
-share/gnome-shell/extensions/static-workspaces@gnome-shell-extensions.gcampax.github.com/extension.js
-share/gnome-shell/extensions/static-workspaces@gnome-shell-extensions.gcampax.github.com/metadata.json
-share/gnome-shell/extensions/static-workspaces@gnome-shell-extensions.gcampax.github.com/stylesheet.css
 share/gnome-shell/extensions/systemMonitor@gnome-shell-extensions.gcampax.github.com/
 share/gnome-shell/extensions/systemMonitor@gnome-shell-extensions.gcampax.github.com/convenience.js
 share/gnome-shell/extensions/systemMonitor@gnome-shell-extensions.gcampax.github.com/extension.js
