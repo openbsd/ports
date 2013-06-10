@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/04/13 10:26:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/06/10 05:43:23 ajacoutot Exp $
 bin/gnome-documents
 lib/gnome-documents/
 lib/gnome-documents/girepository-1.0/
@@ -10,6 +10,7 @@ lib/gnome-documents/libgdminer-1.0.so
 lib/gnome-documents/libgdprivate-1.0.so
 @bin libexec/gd-tracker-gdata-miner
 @bin libexec/gd-tracker-zpj-miner
+@man man/man1/gnome-documents.1
 share/applications/gnome-documents.desktop
 share/dbus-1/services/org.gnome.Documents.GDataMiner.service
 share/dbus-1/services/org.gnome.Documents.SearchProvider.service

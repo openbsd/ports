@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2013/05/31 15:35:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2013/06/10 05:43:23 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	document manager for GNOME
 
 GNOME_PROJECT=	gnome-documents
-GNOME_VERSION=	3.8.2.1
-REVISION=	0
+GNOME_VERSION=	3.8.3
 
 HOMEPAGE=	https://live.gnome.org/GnomeDocuments
 
@@ -33,6 +32,7 @@ WANTLIB += plc4 plds4 png pthread pthread-stubs readline rest-0.7
 WANTLIB += secret-1 smime3 softokn3 soup-2.4 soup-gnome-2.4 sqlite3
 WANTLIB += ssl ssl3 stdc++ tracker-miner-0.16 webkitgtk-3.0 webp
 WANTLIB += xcb xcb-render xcb-shm xkbfile xml2 xslt z zapojit-0.0
+WANTLIB += harfbuzz-icu icudata icuuc
 WANTLIB += tracker-sparql-${TRACKER_VERSION}
 WANTLIB += lib/tracker-${TRACKER_VERSION}/tracker-data
 WANTLIB += lib/tracker-${TRACKER_VERSION}/tracker-common
@@ -43,6 +43,9 @@ MODULES=	devel/gettext \
 
 # desktop-file-validate(1), needed for 'make test'
 BUILD_DEPENDS +=devel/desktop-file-utils
+
+# man pages
+BUILD_DEPENDS += textproc/docbook-xsl
 
 LIB_DEPENDS=	devel/libgdata \
 		graphics/evince \
