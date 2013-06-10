@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.45 2013/05/24 15:00:06 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.46 2013/06/10 14:59:12 benoit Exp $
 @group daemon
 phpMyAdmin/
 phpMyAdmin/ChangeLog
@@ -730,6 +730,9 @@ phpMyAdmin/locale/sr@latin/LC_MESSAGES/phpmyadmin.mo
 phpMyAdmin/locale/sv/
 phpMyAdmin/locale/sv/LC_MESSAGES/
 phpMyAdmin/locale/sv/LC_MESSAGES/phpmyadmin.mo
+phpMyAdmin/locale/th/
+phpMyAdmin/locale/th/LC_MESSAGES/
+phpMyAdmin/locale/th/LC_MESSAGES/phpmyadmin.mo
 phpMyAdmin/locale/tr/
 phpMyAdmin/locale/tr/LC_MESSAGES/
 phpMyAdmin/locale/tr/LC_MESSAGES/phpmyadmin.mo
