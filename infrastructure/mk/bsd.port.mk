@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1228 2013/06/04 19:35:04 naddy Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1229 2013/06/10 15:43:04 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -50,10 +50,6 @@ ERRORS += "Fatal: you're not allowed to override $t"
 ERRORS += "Fatal: inclusion of bsd.port.mk from $f"
 .  endif
 .endfor
-
-.if !defined(PIE_ARCH)
-PIE_ARCH = alpha amd64 hppa mips64 mips64el sh sparc64
-.endif
 
 _BSD_PORT_MK = Done
 
