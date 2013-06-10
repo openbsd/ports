@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/06/10 14:37:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/06/10 14:47:56 jasper Exp $
 
 COMMENT=		framework for Model Driven Software Development
 
@@ -14,7 +14,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		lang/ruby
-MODRUBY_REV=		1.8
+FLAVOR=			ruby18
 
 CONFIGURE_STYLE=	ruby gem
 
