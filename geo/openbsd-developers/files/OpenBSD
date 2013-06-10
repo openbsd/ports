@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.102 2013/06/03 18:37:23 jca Exp $
+# $OpenBSD: OpenBSD,v 1.103 2013/06/10 10:08:40 mpi Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -84,7 +84,6 @@
 48.8571		2.44		"chl"		# Charles Longeau
 48.864185	2.355328	"ajacoutot"	# Antoine Jacoutot
 48.87		2.33		"espie"		# Marc Espie
-48.87		2.37		"mpi"		# Martin Pieuchot
 49.0120		8.4165		"schwarze"	# Ingo Schwarze
 49.033		2.0666		"benoit"	# Benoit Lecocq
 49.0816		-0.2885		"eric"		# Eric Faurot
@@ -93,6 +92,7 @@
 49.48		8.42		"naddy"		# Christian Weisgerber
 50.362309	7.586465	"pascal"	# Pascal Stumpf
 50.752		-3.276		"sthen"		# Stuart Henderson
+50.76859	6.10157		"mpi"		# Martin Pieuchot
 50.7819		6.0856		"mikeb"		# Mike Belopuhov
 50.858		4.3897		"xsa"		# Xavier Santolaria
 50.85		4.364		"steven"	# Steven Mestdagh
