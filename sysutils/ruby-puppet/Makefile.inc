@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.9 2013/04/15 08:08:09 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.10 2013/06/10 14:46:59 jasper Exp $
 
 PKG_ARCH ?=	*
 COMMENT ?=	centralised configuration management for networks
@@ -20,6 +20,7 @@ SUBST_VARS +=	RUBY
 # (http://docs.puppetlabs.com/guides/platforms.html).
 # For maintenance/ease of use, the following ports should use the same
 # Ruby version as Puppet:
+#  devel/ruby-rgen
 #  databases/ruby-hiera
 #  sysutils/mcollective
 #  sysutils/ruby-augeas
