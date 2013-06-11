@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1229 2013/06/10 15:43:04 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1230 2013/06/11 10:59:24 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -3092,16 +3092,19 @@ wantlib-args:
 	@${_cache_fragment}; \
 	a=$${_DEPENDS_CACHE}/portstree${SUBPACKAGE}; \
 	b=$${_DEPENDS_CACHE}/inst${SUBPACKAGE}; \
-	cd ${.CURDIR} && \
+	if cd ${.CURDIR} && \
 	${MAKE} port-wantlib-args >$$a && \
-	${MAKE} fake-wantlib-args >$$b; \
-	if cmp -s $$a $$b; \
-	then \
-		cat $$a; \
+	${MAKE} fake-wantlib-args >$$b; then \
+		if cmp -s $$a $$b; \
+		then \
+			cat $$a; \
+		else \
+			echo 1>&2 "Error: Libraries in packing-lists in the ports tree"; \
+			echo 1>&2 "       and libraries from installed packages don't match"; \
+			diff 1>&2 -u $$a $$b; \
+			exit 1; \
+		fi; \
 	else \
-		echo 1>&2 "Error: Libraries in packing-lists in the ports tree"; \
-		echo 1>&2 "       and libraries from installed packages don't match"; \
-		diff 1>&2 -u $$a $$b; \
 		exit 1; \
 	fi
 
