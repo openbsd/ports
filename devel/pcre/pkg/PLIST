@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2013/03/04 17:48:22 robert Exp $
+@comment $OpenBSD: PLIST,v 1.17 2013/06/11 19:03:00 robert Exp $
 bin/pcre-config
 @bin bin/pcregrep
 @bin bin/pcretest
@@ -111,6 +111,7 @@ lib/pkgconfig/libpcreposix.pc
 @man man/man3/pcrecallout.3
 @man man/man3/pcrecompat.3
 @man man/man3/pcrecpp.3
+@man man/man3/pcredemo.3
 @man man/man3/pcrejit.3
 @man man/man3/pcrelimits.3
 @man man/man3/pcrematching.3
@@ -132,10 +133,13 @@ share/doc/pcre/LICENCE
 share/doc/pcre/NEWS
 share/doc/pcre/README
 share/doc/pcre/html/
+share/doc/pcre/html/NON-AUTOTOOLS-BUILD.txt
+share/doc/pcre/html/README.txt
 share/doc/pcre/html/index.html
 share/doc/pcre/html/pcre-config.html
 share/doc/pcre/html/pcre.html
 share/doc/pcre/html/pcre16.html
+share/doc/pcre/html/pcre32.html
 share/doc/pcre/html/pcre_assign_jit_stack.html
 share/doc/pcre/html/pcre_compile.html
 share/doc/pcre/html/pcre_compile2.html
@@ -161,6 +165,7 @@ share/doc/pcre/html/pcre_pattern_to_host_byte_order.html
 share/doc/pcre/html/pcre_refcount.html
 share/doc/pcre/html/pcre_study.html
 share/doc/pcre/html/pcre_utf16_to_host_byte_order.html
+share/doc/pcre/html/pcre_utf32_to_host_byte_order.html
 share/doc/pcre/html/pcre_version.html
 share/doc/pcre/html/pcreapi.html
 share/doc/pcre/html/pcrebuild.html
