@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.11 2013/06/11 13:31:39 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.12 2013/06/11 13:37:14 jasper Exp $
 
 PKG_ARCH ?=	*
 COMMENT ?=	centralised configuration management for networks
@@ -30,6 +30,7 @@ MODRUBY_REV ?=	1.8
 
 BUILD_DEPENDS +=${RUN_DEPENDS}
 RUN_DEPENDS +=	converters/ruby-json,${MODRUBY_FLAVOR} \
+		databases/ruby-hiera,${MODRUBY_FLAVOR} \
 		sysutils/ruby-facter \
 		${MODRUBY_ICONV_DEPENDS}
 
