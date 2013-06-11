@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.515 2013/05/31 22:52:29 jcs Exp $
+# $OpenBSD: Makefile,v 1.516 2013/06/11 22:10:34 bcallah Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -272,6 +272,7 @@
      SUBDIR += waimea
      SUBDIR += wampager
      SUBDIR += wbar
+     SUBDIR += windowlab
      SUBDIR += windowmaker
      SUBDIR += windowmaker-extra
      SUBDIR += winwrangler
