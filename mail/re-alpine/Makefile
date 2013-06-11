@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/06/02 21:27:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2013/06/11 14:59:59 sthen Exp $
 
 COMMENT-main=		UW e-mail client
 COMMENT-c-client=	UW c-client mail access routines
@@ -8,6 +8,7 @@ COMMENT-pico=		UW text editor
 COMMENT-pilot=		UW file system navigator
 
 V=			2.03
+REVISION=		0
 DISTNAME=		re-alpine-${V}
 EXTRACT_SUFX=		.tar.bz2
 
@@ -59,7 +60,9 @@ WANTLIB-pilot=		${WANTLIB} pthread
 
 MODULES=		devel/gettext
 BUILD_DEPENDS=		textproc/aspell/core
-RUN_DEPENDS=		textproc/aspell/core
+RUN_DEPENDS-main=	${RUN_DEPENDS} textproc/aspell/core
+RUN_DEPENDS-pico=	${RUN_DEPENDS} textproc/aspell/core
+RUN_DEPENDS-c-client=	# empty
 
 # Link error: c-client not found!
 USE_LIBTOOL=		gnu
