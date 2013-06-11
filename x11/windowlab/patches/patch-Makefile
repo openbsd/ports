@@ -1,0 +1,21 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2013/06/11 22:09:45 bcallah Exp $
+--- Makefile.orig	Sun Jun  9 20:53:53 2013
++++ Makefile	Sun Jun  9 20:54:20 2013
+@@ -30,13 +30,13 @@ endif
+ DEFINES += -DDEF_MENURC="\"$(MENURC)\""
+ 
+ # Uncomment to add MWM hints support
+-#DEFINES += -DMWM_HINTS
++DEFINES += -DMWM_HINTS
+ 
+ # Uncomment to add freetype support (requires XFree86 4.0.2 or later)
+ # This needs -lXext above, even if you have disabled shape support
+-#DEFINES += -DXFT
+-#EXTRA_INC += `pkg-config --cflags xft`
+-#EXTRA_LIBS += `pkg-config --libs xft`
++DEFINES += -DXFT
++EXTRA_INC += `pkg-config --cflags xft`
++EXTRA_LIBS += `pkg-config --libs xft`
+ 
+ # Uncomment for debugging info (abandon all hope, ye who enter here)
+ #DEFINES += -DDEBUG

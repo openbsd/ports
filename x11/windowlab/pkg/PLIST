@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/06/11 22:09:45 bcallah Exp $
+@bin bin/windowlab
+@man man/man1/windowlab.1
+share/examples/windowlab/
+@sample ${SYSCONFDIR}/X11/windowlab/
+share/examples/windowlab/windowlab.menurc
+@sample ${SYSCONFDIR}/X11/windowlab/windowlab.menurc

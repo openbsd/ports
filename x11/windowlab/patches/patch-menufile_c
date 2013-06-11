@@ -1,0 +1,14 @@
+$OpenBSD: patch-menufile_c,v 1.1.1.1 2013/06/11 22:09:45 bcallah Exp $
+
+Silence bogus error; windowlab does what it's supposed to anyway.
+
+--- menufile.c.orig	Sun Jun  9 21:29:25 2013
++++ menufile.c	Sun Jun  9 21:29:56 2013
+@@ -56,7 +56,6 @@ void get_menuitems(void)
+ 		// get location of the executable
+ 		if ((len = readlink("/proc/self/exe", menurcpath, PATH_MAX - 1)) == -1)
+ 		{
+-			err("readlink() /proc/self/exe failed: %s\n", strerror(errno));
+ 			menurcpath[0] = '.';
+ 			menurcpath[1] = '\0';
+ 		}
