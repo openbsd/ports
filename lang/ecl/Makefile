@@ -1,32 +1,32 @@
-# $OpenBSD: Makefile,v 1.19 2013/06/11 10:30:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2013/06/11 10:31:35 sthen Exp $
 
-COMMENT = 	embeddable common-lisp
-CATEGORIES = 	lang
+COMMENT =	embeddable common-lisp
+CATEGORIES =	lang
 
 BROKEN-sparc =	infinite loop while building
 
 V =		13.5.1
-DISTNAME = 	ecl-$V
+DISTNAME =	ecl-$V
 SHARED_LIBS +=	ecl	3.0
 SHARED_ONLY =	Yes
 
-HOMEPAGE = 	http://ecls.sourceforge.net/
+HOMEPAGE =	http://ecls.sourceforge.net/
 SUBST_VARS =	V
 EXTRACT_SUFX =	.tgz
 
 # GPLv2 or later
-PERMIT_PACKAGE_CDROM = 	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=ecls/}
 
-CONFIGURE_STYLE = 	gnu
-TEST_TARGET = 		check
+CONFIGURE_STYLE =	gnu
+TEST_TARGET =		check
 CONFIGURE_ENV +=	CPPFLAGS=-I${LOCALBASE}/include \
 			ECLLIB_VERSION=${LIBecl_VERSION}
 FLAVORS =		debug
 FLAVOR ?=
 
-CONFIGURE_ARGS += 	--enable-boehm=system \
+CONFIGURE_ARGS +=	--enable-boehm=system \
 			--enable-libatomic=system \
 			--enable-threads=pthreads \
 			--with-system-gmp \
