@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2013/06/11 13:24:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2013/06/11 14:58:46 jasper Exp $
 
 COMMENT=	Ruby library for retrieving facts from operating systems
 
@@ -6,7 +6,7 @@ VERSION=	1.7.0
 
 DISTNAME=	facter-${VERSION}
 PKGNAME=	ruby-${DISTNAME}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
@@ -18,14 +18,14 @@ MASTER_SITES=	https://puppetlabs.com/downloads/facter/
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	lang/ruby
-MODRUBY_REV=	1.8
+MODRUBY_REV=	1.9
 
 NO_BUILD=	Yes
 PKG_ARCH=	*
 
-TEST_DEPENDS=devel/ruby-mocha,${MODRUBY_FLAVOR}
+TEST_DEPENDS=	devel/ruby-mocha,${MODRUBY_FLAVOR}
 BUILD_DEPENDS=	${MODRUBY_BUILD_DEPENDS}
-MODRUBY_TEST=rake rspec2
+MODRUBY_TEST=	rake rspec2
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/lib/facter/util/config.rb \
