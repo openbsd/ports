@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2013/06/11 14:51:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2013/06/11 14:57:59 jasper Exp $
 
 COMMENT=		simple pluggable hierarchical database
 
 V=			1.2.1
 DISTNAME=		hiera-${V}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		databases
 
@@ -16,8 +16,6 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		lang/ruby
-
-FLAVOR=			ruby18
 
 CONFIGURE_STYLE=	ruby gem
 

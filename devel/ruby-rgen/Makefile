@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/06/10 14:47:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2013/06/11 14:57:59 jasper Exp $
 
 COMMENT=		framework for Model Driven Software Development
 
 DISTNAME=		rgen-0.6.2
+REVISION=		0
 CATEGORIES=		devel textproc
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -14,7 +15,6 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		lang/ruby
-FLAVOR=			ruby18
 
 CONFIGURE_STYLE=	ruby gem
 
