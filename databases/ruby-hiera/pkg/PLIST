@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/04/24 08:44:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/06/11 12:05:49 jasper Exp $
 @extraunexec rm -rf /var/db/hiera/*
-${GEM_BIN}/hiera
+${GEM_BIN}/hiera${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/COPYING
