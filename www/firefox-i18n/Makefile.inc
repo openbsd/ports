@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.23 2013/05/30 14:21:11 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.24 2013/06/11 07:28:18 landry Exp $
 
 # keep in sync with working archs.. sigh
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
@@ -6,6 +6,7 @@ ONLY_FOR_ARCHS =	amd64 i386 powerpc
 PKG_ARCH =	*
 
 FV =		21.0
+REVISION =	0
 V =		${FV:C/b.$//}
 NAME =		firefox-i18n
 
@@ -54,5 +55,5 @@ MESSAGE=	${PKGDIR}/MESSAGE
 SUBST_VARS =	V L
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/firefox-$V/extensions
-	${INSTALL_DATA} ${FULLDISTDIR}/$L.xpi ${PREFIX}/lib/firefox-$V/extensions/langpack-$L@firefox.mozilla.org.xpi
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/firefox-$V/browser/extensions
+	${INSTALL_DATA} ${FULLDISTDIR}/$L.xpi ${PREFIX}/lib/firefox-$V/browser/extensions/langpack-$L@firefox.mozilla.org.xpi
