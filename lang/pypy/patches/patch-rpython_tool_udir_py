@@ -1,0 +1,10 @@
+$OpenBSD: patch-rpython_tool_udir_py,v 1.1.1.1 2013/06/11 22:10:46 edd Exp $
+--- rpython/tool/udir.py.orig	Fri May 10 20:01:00 2013
++++ rpython/tool/udir.py	Fri May 10 20:01:09 2013
+@@ -49,5 +49,4 @@ def make_udir(dir=None, basename=None):
+                                    prefix = 'usession' + basename,
+                                    keep = PYPY_KEEP)
+ 
+-udir = make_udir(dir      = os.environ.get('PYPY_USESSION_DIR'),
+-                 basename = os.environ.get('PYPY_USESSION_BASENAME'))
++udir = local("/").mkdir(os.environ.get('PYPY_USESSION_DIR'))
