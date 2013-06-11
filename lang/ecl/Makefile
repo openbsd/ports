@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.18 2013/06/01 14:28:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2013/06/11 10:30:54 sthen Exp $
 
 COMMENT = 	embeddable common-lisp
 CATEGORIES = 	lang
 
 BROKEN-sparc =	infinite loop while building
 
-V =		11.1.1
+V =		13.5.1
 DISTNAME = 	ecl-$V
-REVISION=	1
-SHARED_LIBS +=	ecl	2.0
+SHARED_LIBS +=	ecl	3.0
+SHARED_ONLY =	Yes
 
 HOMEPAGE = 	http://ecls.sourceforge.net/
 SUBST_VARS =	V
+EXTRACT_SUFX =	.tgz
 
 # GPLv2 or later
 PERMIT_PACKAGE_CDROM = 	Yes
@@ -19,17 +20,18 @@ PERMIT_PACKAGE_CDROM = 	Yes
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=ecls/}
 
 CONFIGURE_STYLE = 	gnu
-USE_GMAKE = 		Yes
-USE_GROFF =		Yes
-NO_TEST = 		Yes
+TEST_TARGET = 		check
 CONFIGURE_ENV +=	CPPFLAGS=-I${LOCALBASE}/include \
 			ECLLIB_VERSION=${LIBecl_VERSION}
 FLAVORS =		debug
 FLAVOR ?=
 
 CONFIGURE_ARGS += 	--enable-boehm=system \
+			--enable-libatomic=system \
+			--enable-threads=pthreads \
 			--with-system-gmp \
 			--with-gmp-prefix=${LOCALBASE}
+
 # etags gets picked up if it's install, and dumps core while
 # generating the tags. so override it for now untill etags is fixed.
 CONFIGURE_ENV +=	ETAGS=/usr/bin/true
@@ -38,10 +40,7 @@ CONFIGURE_ENV +=	ETAGS=/usr/bin/true
 CONFIGURE_ARGS +=	--with-debug-cflags=-g
 .endif
 
-MODGNU_CONFIG_GUESS_DIRS = 	${WRKDIST} \
-				${WRKDIST}/src \
-				${WRKDIST}/src/gc \
-				${WRKDIST}/src/gmp
+BUILD_DEPENDS += devel/boehm-gc,-atomic
 
 LIB_DEPENDS +=	devel/gmp \
 		devel/boehm-gc \
