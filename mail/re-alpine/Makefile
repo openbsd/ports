@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/06/11 14:59:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2013/06/12 19:17:05 sthen Exp $
 
 COMMENT-main=		UW e-mail client
 COMMENT-c-client=	UW c-client mail access routines
@@ -8,7 +8,6 @@ COMMENT-pico=		UW text editor
 COMMENT-pilot=		UW file system navigator
 
 V=			2.03
-REVISION=		0
 DISTNAME=		re-alpine-${V}
 EXTRACT_SUFX=		.tar.bz2
 
@@ -30,10 +29,11 @@ EPOCH-c-client=		0
 EPOCH-imap=		0
 EPOCH-mailutil=		0
 
-REVISION-main=		0
-REVISION-imap=		1
-REVISION-pilot=		6
-REVISION-pico=		0
+REVISION=		0
+REVISION-main=		1
+REVISION-imap=		2
+REVISION-pilot=		7
+REVISION-pico=		1
 
 CATEGORIES=		mail
 CATEGORIES-main=	mail news
