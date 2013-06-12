@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 2013/05/30 13:29:50 giovanni Exp $
+# $OpenBSD: Makefile,v 1.37 2013/06/12 20:36:33 brad Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		MySQL drivers for the Perl DBI
 
 DISTNAME=		DBD-mysql-4.023
+REVISION=		0
 CATEGORIES=		databases
 
 MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
@@ -18,8 +19,8 @@ WANTLIB=		c crypto m pthread ssl z
 
 BUILD_DEPENDS=		databases/p5-DBI>=1.08
 RUN_DEPENDS=		databases/p5-DBI>=1.08
-LIB_DEPENDS=		databases/mariadb
-TEST_DEPENDS=		databases/mariadb,-server
+LIB_DEPENDS=		databases/mysql
+TEST_DEPENDS=		databases/mysql,-server
 WANTLIB +=		lib/mysql/mysqlclient>=10
 
 TEST_IS_INTERACTIVE=	Yes

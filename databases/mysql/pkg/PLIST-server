@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST-server,v 1.35 2010/11/09 09:55:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST-server,v 1.36 2013/06/12 20:36:33 brad Exp $
+@conflict mariadb-server-*
+@pkgpath databases/mariadb,-server
 @newgroup _mysql:502
 @newuser _mysql:502:_mysql:daemon:MySQL Account:/nonexistent:/sbin/nologin
 @bin bin/innochecksum

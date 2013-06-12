@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2013/06/04 18:42:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.114 2013/06/12 20:36:34 brad Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 SHARED_ONLY =		Yes
@@ -25,7 +25,7 @@ FULLPKGNAME-html =	qt4-html-${PKGVERSION}
 FULLPKGPATH-html =	${BASE_PKGPATH},-html
 
 REVISION-main=		7
-REVISION-mysql=		2
+REVISION-mysql=		3
 REVISION-postgresql=	1
 REVISION-examples=	0
 REVISION-sqlite2=	1
@@ -216,7 +216,7 @@ WANTLIB-main =		${commonWANTLIB} jpeg mng \
 
 
 LIB_DEPENDS-mysql =	${BUILD_PKGPATH} \
-			databases/mariadb
+			databases/mysql
 WANTLIB-mysql =		${sqlWANTLIB} \
 			crypto ssl z mysqlclient_r
 

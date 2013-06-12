@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.89 2013/05/25 08:54:27 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.90 2013/06/12 20:36:33 brad Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -310,9 +310,9 @@ my $stem_extensions = {
 	'ruby19-ruby-augeas' => 'ruby19-augeas',
 	'ruby-ruby-augeas' => 'ruby-augeas',
 	'nail' => 's-nail',
-	'mysql-client' => 'mariadb-client',
-	'mysql-server' => 'mariadb-server',
-	'mysql-tests' => 'mariadb-tests'
+	'mariadb-client' => 'mysql-client',
+	'mariadb-server' => 'mysql-server',
+	'mariadb-tests' => 'mysql-tests'
 };
 
 # ->is_base_system($handle, $state):

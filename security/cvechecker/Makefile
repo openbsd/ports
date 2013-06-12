@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2013/06/06 13:57:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2013/06/12 20:36:34 brad Exp $
 
 COMMENT=	local CVE checker tool
 
 DISTNAME=	cvechecker-3.2
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	security sysutils
 
@@ -42,7 +42,7 @@ FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/cvechecker
 
 .if ${FLAVOR:Mmysql}
 WANTLIB += crypto m mysqlclient ssl z
-LIB_DEPENDS +=	databases/mariadb
+LIB_DEPENDS +=	databases/mysql
 CONFIGURE_ARGS += --enable-mysql
 .endif
 

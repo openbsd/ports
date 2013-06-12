@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2013/05/25 00:33:10 brad Exp $
+# $OpenBSD: Makefile,v 1.48 2013/06/12 20:36:34 brad Exp $
 
 SHARED_ONLY=	Yes
 SHARED_LIBS +=  freeradius-radius    4.1      # .0.0
@@ -17,7 +17,7 @@ EXTRACT_SUFX=	.tar.bz2
 PKGNAME-main=	freeradius-$V
 PKGNAME-iodbc=	freeradius-iodbc-$V
 PKGNAME-mysql=	freeradius-mysql-$V
-REVISION-mysql=	0
+REVISION-mysql=	1
 PKGNAME-pgsql=	freeradius-pgsql-$V
 PKGNAME-ldap=	freeradius-ldap-$V
 
@@ -105,7 +105,7 @@ WANTLIB-ldap=		${WANTLIB} sasl2 asn1 com_err gssapi krb5 \
 CONFIGURE_ARGS+=	--without-rlm_sql_mysql
 .else
 MULTI_PACKAGES+=	-mysql
-LIB_DEPENDS-mysql=	databases/mariadb
+LIB_DEPENDS-mysql=	databases/mysql
 WANTLIB-mysql=		${WANTLIB} m pthread z mysqlclient_r>=16
 .endif
 

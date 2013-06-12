@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/05/30 12:39:18 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2013/06/12 20:36:33 brad Exp $
 
 SHARED_ONLY=	Yes
 
@@ -15,7 +15,11 @@ CATEGORIES=	databases
 MASTER_SITES=	http://ftp.osuosl.org/pub/mariadb/${DISTNAME}/kvm-tarbake-jaunty-x86/ \
 		http://ftp.heanet.ie/mirrors/mariadb/${DISTNAME}/kvm-tarbake-jaunty-x86/
 
-LIB_VERSION=	22
+REVISION-main=	0
+REVISION-server= 0
+REVISION-tests=	0
+
+LIB_VERSION=	24
 SHARED_LIBS=	mysqlclient_r	${LIB_VERSION}.0 \
 		mysqlclient	${LIB_VERSION}.0
 

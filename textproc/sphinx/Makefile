@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/05/25 00:33:10 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2013/06/12 20:36:34 brad Exp $
 
 COMMENT =	free open-source SQL full-text search engine
 BROKEN-hppa =	internal compiler error: internal consistency failure
@@ -6,7 +6,7 @@ BROKEN-hppa =	internal compiler error: internal consistency failure
 VERSION =	2.0.4
 DISTNAME =	sphinx-${VERSION}-release
 PKGNAME =	sphinx-${VERSION}
-REVISION =	0
+REVISION =	1
 CATEGORIES =	textproc
 
 HOMEPAGE =	http://www.sphinxsearch.com/
@@ -46,7 +46,7 @@ LIB_DEPENDS +=		databases/postgresql
 WANTLIB +=		pq
 .else
 CONFIGURE_ARGS +=	 --with-mysql
-LIB_DEPENDS +=		databases/mariadb
+LIB_DEPENDS +=		databases/mysql
 WANTLIB +=		crypto ssl z mysqlclient
 .endif
 
@@ -55,7 +55,7 @@ TEST_IS_INTERACTIVE =	Yes
 
 TEST_DEPENDS =		lang/php/${MODPHP_VERSION},-mysql \
 			lang/php/${MODPHP_VERSION},-pdo_mysql \
-			databases/mariadb,-server
+			databases/mysql,-server
 MAKE_ENV =		MODPHP_BIN=${MODPHP_BIN}
 
 post-install:

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2013/05/25 00:33:10 brad Exp $
+# $OpenBSD: Makefile,v 1.23 2013/06/12 20:36:34 brad Exp $
 
 COMMENT=	Apache MySQL authentication module
 
-REVISION=	9
+REVISION=	10
 VERSION=	3.2
 DISTNAME=	mod_auth_mysql-${VERSION}
 CATEGORIES=	www
@@ -18,7 +18,7 @@ WANTLIB += lib/mysql/mysqlclient>=10
 
 MODAPACHE_NAME=	auth_mysql
 
-LIB_DEPENDS=    databases/mariadb
+LIB_DEPENDS=    databases/mysql
 
 NO_TEST=	Yes
 

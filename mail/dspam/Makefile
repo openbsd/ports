@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.42 2013/05/25 00:33:09 brad Exp $
+# $OpenBSD: Makefile,v 1.43 2013/06/12 20:36:33 brad Exp $
 
 COMMENT=	anti-spam filter
 
 VERSION=	3.8.0
 DISTNAME=	dspam-${VERSION}
-REVISION=	5
+REVISION=	6
 SHARED_LIBS=	dspam	8.0
 CATEGORIES=	mail
 
@@ -67,7 +67,7 @@ CONFIGURE_ARGS+=	--with-storage-driver=mysql_drv \
 			--with-mysql-includes=${LOCALBASE}/include/mysql \
 			--with-mysql-libraries=${LOCALBASE}/lib/mysql \
 			--enable-virtual-users
-LIB_DEPENDS+=		databases/mariadb
+LIB_DEPENDS+=		databases/mysql
 WANTLIB+=		z ssl crypto lib/mysql/mysqlclient>=14
 .elif ${DRIVER} == "pgsql"
 CONFIGURE_ARGS+=	--with-storage-driver=pgsql_drv \

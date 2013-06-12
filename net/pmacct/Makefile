@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2013/06/01 14:18:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2013/06/12 20:36:34 brad Exp $
 
 COMMENT=	IP accounting software
 
 DISTNAME=	pmacct-0.12.5
-REVISION=	3
+REVISION=	4
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.pmacct.net/
@@ -39,7 +39,7 @@ CONFIGURE_ARGS+= --disable-pgsql
 .endif
 
 .if ${FLAVOR:Mmysql}
-LIB_DEPENDS+=	databases/mariadb
+LIB_DEPENDS+=	databases/mysql
 WANTLIB +=	lib/mysql/mysqlclient>=10
 CONFIGURE_ARGS+= --enable-mysql
 .else

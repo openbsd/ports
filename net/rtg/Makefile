@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2013/05/25 00:33:10 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2013/06/12 20:36:34 brad Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		SNMP statistics monitoring system
 
 DISTNAME =		rtg-0.7.4
-REVISION =		7
+REVISION =		8
 CATEGORIES =		net	
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=rtg/}
 
@@ -22,7 +22,7 @@ WANTLIB =		m crypto c z pthread fontconfig freetype \
 MODULES =		converters/libiconv
 
 LIB_DEPENDS =		net/net-snmp \
-			databases/mariadb \
+			databases/mysql \
 			graphics/gd \
 			graphics/jpeg \
 			graphics/png

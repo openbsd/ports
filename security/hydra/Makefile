@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2013/05/25 00:33:10 brad Exp $
+# $OpenBSD: Makefile,v 1.52 2013/06/12 20:36:34 brad Exp $
 
 COMMENT-main=	parallelized login hacker
 COMMENT-gui=	GTK frontend for hydra
@@ -8,7 +8,7 @@ DISTNAME=	hydra-${VERSION}-src
 PKGNAME-main=	hydra-${VERSION}
 PKGNAME-gui=	hydra-gui-${VERSION}
 CATEGORIES=    	security
-REVISION-main =	1
+REVISION-main=	2
 
 HOMEPAGE=	http://thc.org/thc-hydra/
 
@@ -50,7 +50,7 @@ post-configure:
 	cd ${WRKSRC}/hydra-gtk && ./configure
 .endif
 
-LIB_DEPENDS-main=	databases/mariadb,-main \
+LIB_DEPENDS-main=	databases/mysql,-main \
 			databases/postgresql,-main \
 			devel/libidn \
 			devel/pcre \

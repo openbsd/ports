@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/05/25 02:45:01 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2013/06/12 20:36:34 brad Exp $
 
 CATEGORIES =	productivity
 COMMENT =	PIM cache and access services
@@ -23,7 +23,7 @@ MODKDE4_USE =
 
 # We build support for MySQL and PostgreSQL but SQLite
 # is our default now.
-BUILD_DEPENDS =		databases/mariadb,-server \
+BUILD_DEPENDS =		databases/mysql,-server \
 			x11/qt4,-mysql \
 			x11/qt4,-postgresql
 

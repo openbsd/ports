@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2013/05/25 00:33:09 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2013/06/12 20:36:33 brad Exp $
 
 COMMENT=	modern, simple and very fast MySQL library for Ruby
 
 DISTNAME=	mysql2-0.3.11
-REVISION=	2
+REVISION=	3
 CATEGORIES=	databases
 
 HOMEPAGE=	http://github.com/brianmario/mysql2
@@ -17,14 +17,14 @@ MODULES=	lang/ruby
 
 WANTLIB=	crypto mysqlclient ssl z
 
-LIB_DEPENDS=	databases/mariadb
+LIB_DEPENDS=	databases/mysql
 
 CONFIGURE_STYLE=ruby gem ext
 
 # Regress tests currently don't work, probably because they
 # need RSpec2.  They also need a running MySQL server.
 TEST_IS_INTERACTIVE = Yes
-TEST_DEPENDS=databases/mariadb,-server \
+TEST_DEPENDS=databases/mysql,-server \
 		${FULLPKGNAME}:${BUILD_PKGPATH}
 MODRUBY_TEST=rake rspec
 

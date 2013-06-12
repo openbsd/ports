@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/05/25 00:33:10 brad Exp $
+# $OpenBSD: Makefile,v 1.31 2013/06/12 20:36:34 brad Exp $
 
 SHARED_ONLY=	Yes
 
@@ -28,7 +28,7 @@ MODULES=	lang/lua
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=openh323gk/}
 
-BUILD_DEPENDS=	databases/mariadb \
+BUILD_DEPENDS=	databases/mysql \
 		databases/postgresql
 
 LIB_DEPENDS=	net/h323plus>=1.24.99 \

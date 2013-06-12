@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/05/25 00:33:10 brad Exp $
+# $OpenBSD: Makefile,v 1.29 2013/06/12 20:36:34 brad Exp $
 
 SHARED_ONLY=		Yes
 
@@ -12,7 +12,7 @@ DISTNAME=		pdns-${V}
 PKGNAME=		powerdns-${V}
 PKGNAME-main=		powerdns-${V}
 PKGNAME-mysql=		powerdns-mysql-${V}
-REVISION-mysql=		0
+REVISION-mysql=		1
 PKGNAME-pgsql=		powerdns-pgsql-${V}
 PKGNAME-ldap=		powerdns-ldap-${V}
 CATEGORIES=		net
@@ -45,7 +45,7 @@ CONFIGURE_ARGS+=	--without-mysql
 .else
 MULTI_PACKAGES+=	-mysql
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
-LIB_DEPENDS-mysql=	databases/mariadb
+LIB_DEPENDS-mysql=	databases/mysql
 RUN_DEPENDS-mysql=	${FULLPKGNAME-main}:net/powerdns
 WANTLIB-mysql+=		crypto lib/mysql/mysqlclient>=10 ssl ${WANTLIB}
 BACKENDS+=		gmysql

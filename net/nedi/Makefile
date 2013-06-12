@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2013/05/25 00:33:10 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2013/06/12 20:36:34 brad Exp $
 
 COMMENT =			network discovery tool
 
 DISTNAME =			nedi-bsd-1.0.8
 PKGNAME =			nedi-1.0.8
-REVISION =			0
+REVISION =			1
 EXTRACT_SUFX =			.tgz
 CATEGORIES =			net
 
@@ -18,7 +18,7 @@ MASTER_SITES =			${HOMEPAGE}/pub/
 
 MODULES =			lang/php
 
-RUN_DEPENDS =			databases/mariadb,-server \
+RUN_DEPENDS =			databases/mysql,-server \
 				databases/p5-DBD-mysql \
 				databases/p5-DBI \
 				devel/p5-Algorithm-Diff \

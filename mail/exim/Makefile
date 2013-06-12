@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.92 2013/05/25 00:33:09 brad Exp $
+# $OpenBSD: Makefile,v 1.93 2013/06/12 20:36:33 brad Exp $
 
 CATEGORIES =		mail
 COMMENT-main =		flexible mail transfer agent
 COMMENT-eximon =	X11 monitor tool for Exim MTA
 VERSION =		4.77
-REVISION =		3
+REVISION =		4
 DISTNAME =		exim-${VERSION}
 PKGNAME-main =		exim-${VERSION}
 FULLPKGNAME-eximon =	exim-eximon-${VERSION}
@@ -47,7 +47,7 @@ EXIM_MAKECAT +=		"EXIM_MONITOR=eximon.bin\n"
 EXIM_MAKECAT +=		"LOOKUP_MYSQL=yes\n"
 EXIM_LOOKUP_INCLUDE +=	-I${LOCALBASE}/include/mysql
 EXIM_LOOKUP_LIBS +=	-L${LOCALBASE}/lib/mysql -lmysqlclient
-LIB_DEPENDS-main +=	databases/mariadb
+LIB_DEPENDS-main +=	databases/mysql
 WANTLIB-main +=		lib/mysql/mysqlclient>=10
 .endif
 

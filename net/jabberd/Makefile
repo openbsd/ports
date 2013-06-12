@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.48 2013/05/25 00:33:10 brad Exp $
+# $OpenBSD: Makefile,v 1.49 2013/06/12 20:36:34 brad Exp $
 
 COMMENT=		jabber server
 DISTNAME=		jabberd-2.0s11
-REVISION= 		1
+REVISION= 		2
 EPOCH=			1
 CATEGORIES=		net
 HOMEPAGE=		http://jabberd2.org/
@@ -39,7 +39,7 @@ EXTRA_INCLUDE_PATH=	${LOCALBASE}/include
 EXTRA_LIBRARY_PATH=	${LOCALBASE}/lib
 
 .if ${FLAVOR:Mmysql}
-LIB_DEPENDS+=		databases/mariadb
+LIB_DEPENDS+=		databases/mysql
 WANTLIB +=		lib/mysql/mysqlclient>=10
 CONFIGURE_ARGS+=	--enable-mysql
 .else

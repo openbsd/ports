@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2013/05/26 13:43:54 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2013/06/12 20:36:33 brad Exp $
 
 # XXX use the bundled libtool because it needs some specific options we
 # don't have.
@@ -10,9 +10,9 @@ SUHOSIN_PHPV=	5.2.16
 SUHOSIN_P_V=	0.9.7
 REVISION=	14
 
-REVISION-mysql=		15
-REVISION-mysqli=	15
-REVISION-pdo_mysql=	15
+REVISION-mysql=		16
+REVISION-mysqli=	16
+REVISION-pdo_mysql=	16
 
 # remove if updating; defaulting to tar.bz2 but there's no point
 # fetching new files for 5.2 unless it's updated.

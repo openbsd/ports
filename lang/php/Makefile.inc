@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.41 2013/06/03 02:46:57 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.42 2013/06/12 20:36:33 brad Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -179,14 +179,14 @@ WANTLIB-mcrypt=		c mcrypt ltdl>=1 pthread
 MULTI_PACKAGES+=	-mysql
 COMMENT-mysql=		mysql database access extensions for php5
 CONFIGURE_ARGS+=	--with-mysql=shared,${LOCALBASE}
-LIB_DEPENDS-mysql=	databases/mariadb
+LIB_DEPENDS-mysql=	databases/mysql
 WANTLIB-mysql=		c pthread lib/mysql/mysqlclient>=10
 
 # mysqli
 MULTI_PACKAGES+=	-mysqli
 COMMENT-mysqli=		mysql database access extensions for php5
 CONFIGURE_ARGS+=	--with-mysqli=shared,${LOCALBASE}/bin/mysql_config
-LIB_DEPENDS-mysqli=	databases/mariadb
+LIB_DEPENDS-mysqli=	databases/mysql
 WANTLIB-mysqli=		c crypto m pthread ssl z lib/mysql/mysqlclient>=10
 
 # odbc
@@ -200,7 +200,7 @@ WANTLIB-odbc=		c iodbc>=2 pthread
 MULTI_PACKAGES+=	-pdo_mysql
 COMMENT-pdo_mysql=	PDO mysql database access extensions for php5
 CONFIGURE_ARGS+=	--with-pdo-mysql=shared,${LOCALBASE}
-LIB_DEPENDS-pdo_mysql=	databases/mariadb
+LIB_DEPENDS-pdo_mysql=	databases/mysql
 WANTLIB-pdo_mysql=	c crypto m pthread ssl z lib/mysql/mysqlclient>=10
 
 # pdo-pgsql

@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST-tests,v 1.54 2013/02/08 15:51:56 brad Exp $
+@comment $OpenBSD: PLIST-tests,v 1.55 2013/06/12 20:36:33 brad Exp $
+@conflict mariadb-tests-*
+@pkgpath databases/mariadb,-tests
 @man man/man1/mysql-stress-test.pl.1
 @man man/man1/mysql-test-run.pl.1
 @man man/man1/mysql_client_test.1

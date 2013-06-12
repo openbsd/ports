@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2013/06/06 13:57:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.87 2013/06/12 20:36:34 brad Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
@@ -9,7 +9,7 @@ DISTNAME =		zabbix-${VERSION}
 FULLPKGNAME-main =	zabbix-agent-${VERSION}
 FULLPKGPATH-main =	net/zabbix,-main
 PKGNAME-server =	zabbix-server-${VERSION}
-REVISION-server =	2
+REVISION-server =	3
 FULLPKGNAME-web =	zabbix-web-${VERSION}
 FULLPKGPATH-web =	net/zabbix,-web
 CATEGORIES =		net
@@ -84,7 +84,7 @@ FLAVOR =		sqlite3
 BACKEND =		${FLAVOR}
 .if ${BACKEND} == "mysql"
 MULTI_PACKAGES += -server
-LIB_DEPENDS-server +=	databases/mariadb,-main
+LIB_DEPENDS-server +=	databases/mysql,-main
 CONFIGURE_ARGS +=	--with-mysql
 WANTLIB-server += mysqlclient
 .elif ${BACKEND} == "pgsql"

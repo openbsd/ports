@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2013/06/04 18:42:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.109 2013/06/12 20:36:34 brad Exp $
 
 COMMENT-main=		C++ X11 GUI toolkit
 COMMENT-examples=	examples and tutorial for qt3
@@ -16,7 +16,7 @@ FULLPKGNAME-html=	qt3-html-${VERSION}
 FULLPKGPATH-html=	x11/qt3,-html
 PKGNAME-sqlite2=	qt3-sqlite2-${VERSION}
 
-REVISION-mysql= 	5
+REVISION-mysql= 	6
 REVISION-postgresql= 	4
 REVISION-main= 		7
 REVISION-html= 		1
@@ -155,7 +155,7 @@ WANTLIB-main=		${WANTLIB} pthread c
 
 LIB_DEPENDS-mysql=	${LIB_DEPENDS} \
 			${BUILD_PKGPATH} \
-			databases/mariadb
+			databases/mysql
 WANTLIB-mysql=		${WANTLIB} qt-mt mysqlclient
 
 LIB_DEPENDS-postgresql=	${LIB_DEPENDS} \

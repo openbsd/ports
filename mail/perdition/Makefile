@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/05/26 13:45:00 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2013/06/12 20:36:33 brad Exp $
 
 COMMENT-main=	fully featured POP3 and IMAP4 proxy server
 COMMENT-ldap=	LDAP backend for perdition mail proxy
@@ -11,7 +11,7 @@ DISTNAME=	perdition-${DISTVER}
 PKGNAME-main=	perdition-${DISTVER:S/-//}
 PKGNAME-ldap=	perdition-ldap-${DISTVER:S/-//}
 PKGNAME-mysql=  perdition-mysql-${DISTVER:S/-//}
-REVISION-mysql=	2
+REVISION-mysql=	3
 PKGNAME-pgsql=  perdition-pgsql-${DISTVER:S/-//}
 
 CATEGORIES=	mail
@@ -79,7 +79,7 @@ CONFIGURE_ARGS+=	--with-ldap-libraries=${LOCALBASE}/lib \
 			--disable-ldap-doc
 .endif
 
-LIB_DEPENDS-mysql=	databases/mariadb \
+LIB_DEPENDS-mysql=	databases/mysql \
 			devel/vanessa/adt \
 			devel/vanessa/logger
 WANTLIB-mysql=		crypto ssl util m z lib/mysql/mysqlclient>=10 \
