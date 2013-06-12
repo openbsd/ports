@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.52 2013/03/21 08:45:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2013/06/12 18:53:24 kirby Exp $
 
 COMMENT=	fantasy turn-based strategy game
 
-DISTNAME=	wesnoth-1.10.5
+DISTNAME=	wesnoth-1.10.6
 
 CATEGORIES=	games x11
 
@@ -16,13 +16,11 @@ EXTRACT_SUFX=	.tar.bz2
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL ICE SDL SDL_image SDL_mixer SDL_net SDL_ttf SM X11
-WANTLIB += Xext Xrender boost_iostreams-mt boost_program_options-mt
-WANTLIB += boost_regex-mt boost_system-mt c cairo dbus-1 expat
+WANTLIB += ICE SDL SDL_image SDL_mixer SDL_net SDL_ttf SM X11
+WANTLIB += Xext boost_iostreams-mt boost_program_options-mt
+WANTLIB += boost_regex-mt boost_system-mt c cairo dbus-1
 WANTLIB += fontconfig freetype fribidi glib-2.0 gobject-2.0 m
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB += pthread pthread-stubs stdc++ xcb xcb-render xcb-shm
-WANTLIB += z
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pthread stdc++ z
 
 MODULES=	devel/cmake \
 		devel/gettext

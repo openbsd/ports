@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2012/12/19 20:09:13 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.31 2013/06/12 18:53:24 kirby Exp $
 @pkgpath games/wesnoth,tinygui
 @newgroup _wesnothd:708
 @newuser _wesnothd:708:_wesnothd:daemon:Wesnoth Server:/var/wesnothd:/sbin/nologin
@@ -241,6 +241,7 @@ share/doc/wesnoth/manual.sr.html
 share/doc/wesnoth/manual.sr@ijekavian.html
 share/doc/wesnoth/manual.sr@ijekavianlatin.html
 share/doc/wesnoth/manual.sr@latin.html
+share/doc/wesnoth/manual.vi.html
 share/doc/wesnoth/manual.zh_CN.html
 share/doc/wesnoth/manual.zh_TW.html
 share/doc/wesnoth/styles/
@@ -318,6 +319,8 @@ share/wesnoth/data/campaigns/An_Orcish_Incursion/images/l10n/it/
 share/wesnoth/data/campaigns/An_Orcish_Incursion/images/l10n/it/an-orcish-incursion-map--overlay.png
 share/wesnoth/data/campaigns/An_Orcish_Incursion/images/l10n/lt/
 share/wesnoth/data/campaigns/An_Orcish_Incursion/images/l10n/lt/an-orcish-incursion-map--overlay.png
+share/wesnoth/data/campaigns/An_Orcish_Incursion/images/l10n/pt/
+share/wesnoth/data/campaigns/An_Orcish_Incursion/images/l10n/pt/an-orcish-incursion-map--overlay.png
 share/wesnoth/data/campaigns/An_Orcish_Incursion/images/l10n/ru/
 share/wesnoth/data/campaigns/An_Orcish_Incursion/images/l10n/ru/an-orcish-incursion-map--overlay.png
 share/wesnoth/data/campaigns/An_Orcish_Incursion/images/l10n/sr/
@@ -375,6 +378,8 @@ share/wesnoth/data/campaigns/Dead_Water/images/l10n/it/
 share/wesnoth/data/campaigns/Dead_Water/images/l10n/it/dead-water-map--overlay.png
 share/wesnoth/data/campaigns/Dead_Water/images/l10n/lt/
 share/wesnoth/data/campaigns/Dead_Water/images/l10n/lt/dead-water-map--overlay.png
+share/wesnoth/data/campaigns/Dead_Water/images/l10n/pt/
+share/wesnoth/data/campaigns/Dead_Water/images/l10n/pt/dead-water-map--overlay.png
 share/wesnoth/data/campaigns/Dead_Water/images/overlays/
 share/wesnoth/data/campaigns/Dead_Water/images/overlays/arcane-icon.png
 share/wesnoth/data/campaigns/Dead_Water/images/overlays/flame-sword-icon.png
@@ -647,6 +652,8 @@ share/wesnoth/data/campaigns/Descent_Into_Darkness/images/misc/l10n/it/
 share/wesnoth/data/campaigns/Descent_Into_Darkness/images/misc/l10n/it/descent-into-darkness--overlay.png
 share/wesnoth/data/campaigns/Descent_Into_Darkness/images/misc/l10n/lt/
 share/wesnoth/data/campaigns/Descent_Into_Darkness/images/misc/l10n/lt/descent-into-darkness--overlay.png
+share/wesnoth/data/campaigns/Descent_Into_Darkness/images/misc/l10n/pt/
+share/wesnoth/data/campaigns/Descent_Into_Darkness/images/misc/l10n/pt/descent-into-darkness--overlay.png
 share/wesnoth/data/campaigns/Descent_Into_Darkness/images/misc/l10n/sr/
 share/wesnoth/data/campaigns/Descent_Into_Darkness/images/misc/l10n/sr/descent-into-darkness--overlay.png
 share/wesnoth/data/campaigns/Descent_Into_Darkness/images/misc/l10n/sr@ijekavian/
@@ -763,6 +770,8 @@ share/wesnoth/data/campaigns/Eastern_Invasion/images/l10n/it/
 share/wesnoth/data/campaigns/Eastern_Invasion/images/l10n/it/eastern-invasion-map--overlay.png
 share/wesnoth/data/campaigns/Eastern_Invasion/images/l10n/lt/
 share/wesnoth/data/campaigns/Eastern_Invasion/images/l10n/lt/eastern-invasion-map--overlay.png
+share/wesnoth/data/campaigns/Eastern_Invasion/images/l10n/pt/
+share/wesnoth/data/campaigns/Eastern_Invasion/images/l10n/pt/eastern-invasion-map--overlay.png
 share/wesnoth/data/campaigns/Eastern_Invasion/images/l10n/sr/
 share/wesnoth/data/campaigns/Eastern_Invasion/images/l10n/sr/eastern-invasion-map--overlay.png
 share/wesnoth/data/campaigns/Eastern_Invasion/images/l10n/sr@ijekavian/
@@ -1039,6 +1048,8 @@ share/wesnoth/data/campaigns/Legend_of_Wesmere/images/l10n/it/
 share/wesnoth/data/campaigns/Legend_of_Wesmere/images/l10n/it/legend-of-wesmere-map--overlay.png
 share/wesnoth/data/campaigns/Legend_of_Wesmere/images/l10n/lt/
 share/wesnoth/data/campaigns/Legend_of_Wesmere/images/l10n/lt/legend-of-wesmere-map--overlay.png
+share/wesnoth/data/campaigns/Legend_of_Wesmere/images/l10n/pt/
+share/wesnoth/data/campaigns/Legend_of_Wesmere/images/l10n/pt/legend-of-wesmere-map--overlay.png
 share/wesnoth/data/campaigns/Legend_of_Wesmere/images/l10n/sr/
 share/wesnoth/data/campaigns/Legend_of_Wesmere/images/l10n/sr/legend-of-wesmere-map--overlay.png
 share/wesnoth/data/campaigns/Legend_of_Wesmere/images/l10n/sr@ijekavian/
@@ -1176,6 +1187,8 @@ share/wesnoth/data/campaigns/Liberty/images/maps/l10n/it/
 share/wesnoth/data/campaigns/Liberty/images/maps/l10n/it/liberty-map--overlay.png
 share/wesnoth/data/campaigns/Liberty/images/maps/l10n/lt/
 share/wesnoth/data/campaigns/Liberty/images/maps/l10n/lt/liberty-map--overlay.png
+share/wesnoth/data/campaigns/Liberty/images/maps/l10n/pt/
+share/wesnoth/data/campaigns/Liberty/images/maps/l10n/pt/liberty-map--overlay.png
 share/wesnoth/data/campaigns/Liberty/images/maps/l10n/sr/
 share/wesnoth/data/campaigns/Liberty/images/maps/l10n/sr/liberty-map--overlay.png
 share/wesnoth/data/campaigns/Liberty/images/maps/l10n/sr@ijekavian/
@@ -1434,6 +1447,8 @@ share/wesnoth/data/campaigns/Son_Of_The_Black_Eye/images/l10n/hu/
 share/wesnoth/data/campaigns/Son_Of_The_Black_Eye/images/l10n/hu/farnorth.png
 share/wesnoth/data/campaigns/Son_Of_The_Black_Eye/images/l10n/it/
 share/wesnoth/data/campaigns/Son_Of_The_Black_Eye/images/l10n/it/farnorth--overlay.png
+share/wesnoth/data/campaigns/Son_Of_The_Black_Eye/images/l10n/pt/
+share/wesnoth/data/campaigns/Son_Of_The_Black_Eye/images/l10n/pt/farnorth--overlay.png
 share/wesnoth/data/campaigns/Son_Of_The_Black_Eye/images/l10n/ru/
 share/wesnoth/data/campaigns/Son_Of_The_Black_Eye/images/l10n/ru/farnorth--overlay.png
 share/wesnoth/data/campaigns/Son_Of_The_Black_Eye/images/l10n/sr/
@@ -1782,6 +1797,18 @@ share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/story/l10n/la/
 share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/story/l10n/la/trow-logo.png
 share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/story/l10n/lt/
 share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/story/l10n/lt/trow-logo.png
+share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/story/l10n/nl/
+share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/story/l10n/nl/trow-logo.png
+share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/story/l10n/pt/
+share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/story/l10n/pt/east.png
+share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/story/l10n/pt/tgi-blackmore.png
+share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/story/l10n/pt/tgi-clearwater.png
+share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/story/l10n/pt/tgi-jevyan.png
+share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/story/l10n/pt/tgi-southbay.png
+share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/story/l10n/pt/tgi-stormvale.png
+share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/story/l10n/pt/tgi-thegreenisle.png
+share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/story/l10n/pt/trow-logo.png
+share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/story/l10n/pt/west.png
 share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/story/prince_finds_wesnoth.png
 share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/story/rough_landing.png
 share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/story/story1.png
@@ -3111,6 +3138,10 @@ share/wesnoth/data/core/images/help/l10n/lt/
 share/wesnoth/data/core/images/help/l10n/lt/hpxp.png
 share/wesnoth/data/core/images/help/l10n/lt/recruit.png
 share/wesnoth/data/core/images/help/l10n/lt/tooltip.png
+share/wesnoth/data/core/images/help/l10n/pt/
+share/wesnoth/data/core/images/help/l10n/pt/hpxp.png
+share/wesnoth/data/core/images/help/l10n/pt/recruit.png
+share/wesnoth/data/core/images/help/l10n/pt/tooltip.png
 share/wesnoth/data/core/images/help/l10n/ru/
 share/wesnoth/data/core/images/help/l10n/ru/hpxp.png
 share/wesnoth/data/core/images/help/l10n/ru/recruit.png
@@ -3302,6 +3333,8 @@ share/wesnoth/data/core/images/maps/l10n/la/
 share/wesnoth/data/core/images/maps/l10n/la/wesnoth--overlay.png
 share/wesnoth/data/core/images/maps/l10n/lt/
 share/wesnoth/data/core/images/maps/l10n/lt/wesnoth--overlay.png
+share/wesnoth/data/core/images/maps/l10n/pt/
+share/wesnoth/data/core/images/maps/l10n/pt/wesnoth--overlay.png
 share/wesnoth/data/core/images/maps/l10n/ru/
 share/wesnoth/data/core/images/maps/l10n/ru/wesnoth--overlay.png
 share/wesnoth/data/core/images/maps/l10n/sr/
@@ -3332,12 +3365,18 @@ share/wesnoth/data/core/images/misc/l10n/es/
 share/wesnoth/data/core/images/misc/l10n/es/logo.png
 share/wesnoth/data/core/images/misc/l10n/fr/
 share/wesnoth/data/core/images/misc/l10n/fr/logo.png
+share/wesnoth/data/core/images/misc/l10n/gd/
+share/wesnoth/data/core/images/misc/l10n/gd/logo.png
 share/wesnoth/data/core/images/misc/l10n/hu/
 share/wesnoth/data/core/images/misc/l10n/hu/logo.png
 share/wesnoth/data/core/images/misc/l10n/la/
 share/wesnoth/data/core/images/misc/l10n/la/logo.png
 share/wesnoth/data/core/images/misc/l10n/lt/
 share/wesnoth/data/core/images/misc/l10n/lt/logo.png
+share/wesnoth/data/core/images/misc/l10n/nl/
+share/wesnoth/data/core/images/misc/l10n/nl/logo.png
+share/wesnoth/data/core/images/misc/l10n/pt/
+share/wesnoth/data/core/images/misc/l10n/pt/logo.png
 share/wesnoth/data/core/images/misc/l10n/sr/
 share/wesnoth/data/core/images/misc/l10n/sr/logo.png
 share/wesnoth/data/core/images/misc/l10n/sr@latin/
@@ -12560,12 +12599,18 @@ share/wesnoth/images/misc/l10n/es/
 share/wesnoth/images/misc/l10n/es/logo.png
 share/wesnoth/images/misc/l10n/fr/
 share/wesnoth/images/misc/l10n/fr/logo.png
+share/wesnoth/images/misc/l10n/gd/
+share/wesnoth/images/misc/l10n/gd/logo.png
 share/wesnoth/images/misc/l10n/hu/
 share/wesnoth/images/misc/l10n/hu/logo.png
 share/wesnoth/images/misc/l10n/la/
 share/wesnoth/images/misc/l10n/la/logo.png
 share/wesnoth/images/misc/l10n/lt/
 share/wesnoth/images/misc/l10n/lt/logo.png
+share/wesnoth/images/misc/l10n/nl/
+share/wesnoth/images/misc/l10n/nl/logo.png
+share/wesnoth/images/misc/l10n/pt/
+share/wesnoth/images/misc/l10n/pt/logo.png
 share/wesnoth/images/misc/l10n/sr/
 share/wesnoth/images/misc/l10n/sr/logo.png
 share/wesnoth/images/misc/l10n/sr@latin/
@@ -13400,9 +13445,9 @@ share/wesnoth/translations/zh_TW/LC_MESSAGES/wesnoth-tutorial.mo
 share/wesnoth/translations/zh_TW/LC_MESSAGES/wesnoth-units.mo
 share/wesnoth/translations/zh_TW/LC_MESSAGES/wesnoth-utbs.mo
 share/wesnoth/translations/zh_TW/LC_MESSAGES/wesnoth.mo
+@mode 750
 @owner _wesnothd
 @group _wesnothd
-@mode 770
 @sample /var/wesnothd/
 @owner
 @group
